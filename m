@@ -2,87 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00F25B5508
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 20:13:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F7FEB5538
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 20:19:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XQPB14BJjPq+7q3A4Liu1mVMYmnxOmFNbXSA1lOfGHY=; b=QF6UKn++1keGKF
-	tAeWEX4HeoSjORbBcfBROveM8a7zGtUg2xsEM6oNPn32CxE8iYOQJYum/maFS4H3olVS1Eyy/VbWG
-	jmtnhhbJWEIaCMHIxIaDfIZAHy4Gs1zES21hE9czmxas0Dll6dCdRUv3IowD5d1L6J7m2br/qf5Zk
-	PNetN/w2hV53bqYeg4Zmulx7NVO/WfHJzcUAE3M2+gj3liv99QmwH9u7TZurlXqS44ViYLc4ATZMm
-	gVsNFn79wFPAyVpAl9A1KambW2QxyLwifFNrm6m+gNLOXRFjns7GwSeJl5HIVN+gHObZTwkO2PmOF
-	UOTiQbS1vTRjnTBrvvIw==;
+	List-Owner; bh=frsg0OxtumtTAZazEdIZdyCOGK4WN/u1F3JgQBj4MhU=; b=goFgJeUT6ODmu9
+	EMNOghKyXFo33DY147OR953ajzlZve6NlJI/d/+MVfAC9pM3AFm7A40SBcPYTPFOCAOcWRmYnAR02
+	HLy+f1fHnl4xn8tGVG1jCuvOq2Mo6lwqUVoAG6M3ROLn7EtF7bgI3N0Bq4aKcG/tULXCeGeHZrneQ
+	nRCcL6vhCsOhiv/WlqpuO6Ettc0BS4IdIsCM3j61QbMCV8e58+L+wWklL9HCZD2K9IW1HDh/FOeMF
+	P1MRd6Lv6TSO9c5o0apx68z0ywQpOtgepU07vHKCA1b8GozzxCf4HjfJp2pYxg3AMqpfIlm1L4tEe
+	XMlFGdZ0HDVTD+sW/fuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAHyu-00076f-As; Tue, 17 Sep 2019 18:13:40 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1iAI4j-0000P0-UT; Tue, 17 Sep 2019 18:19:42 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAHye-00075r-W0
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 18:13:27 +0000
-Received: by mail-ot1-f67.google.com with SMTP id e11so2761580otl.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 17 Sep 2019 11:13:24 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=KQ6OBeDuode2twYSlA9ipYN3w4W7GeO3ocNtg3ta1d0=;
- b=tYpA2LlK6BXGUTqckfRpO+hwmItVbfzyMq4mlEQQ+RejteSKtB9C9DOOy9CicCMQRO
- Xy/arMVMp/6Nir17j+lgO7aj16iLNSWtycpSMZK8POrqKgBm+QgOgV6ubvRUHOcOi84C
- myHXGrCnJOXm8EnBUh/RcOs+nh5HD919NHoh5V4V1Ng9Wl3ASVla35ld0N6Ta7i2fMtP
- 3Z9JQKD7JiaIlMs/gF+mR+3iwmIilV2+JH4oCvjQ1YTsLM5fm55KUE5jewMNmvOTfqo2
- 7WfFGhYHIATJ9rNE97UCiHgqg/NXYL6yY1ad/QC6Bvubnqp2fvkW7QJcTgalCNnm4BEE
- 4XZA==
-X-Gm-Message-State: APjAAAWTmKT3MLmG9Z6I6JdYRcqm3viugeRyXCnm3qEP83GjMXBPWTib
- 5FOH7pAJRHxNbgJl6ZM2Kg==
-X-Google-Smtp-Source: APXvYqzapDf3fokSpvCVuLAz5B7sSKanwGbCWsfa7ySh7AxQQjSWEWwVf940e/gnVHbg7SCtd6pd/g==
-X-Received: by 2002:a9d:3f26:: with SMTP id m35mr168799otc.66.1568744004009;
- Tue, 17 Sep 2019 11:13:24 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id e18sm982788oib.57.2019.09.17.11.13.22
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 17 Sep 2019 11:13:22 -0700 (PDT)
-Date: Tue, 17 Sep 2019 13:13:22 -0500
-From: Rob Herring <robh@kernel.org>
-To: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Subject: Re: [PATCH v4 2/6] dt-bindings: samsung: Update the CHIP ID binding
- documentation
-Message-ID: <20190917181322.GA683@bogus>
-References: <20190910123618.27985-1-s.nawrocki@samsung.com>
- <CGME20190910123637eucas1p26d2051f9bdd1bdf4510f1908ea98f641@eucas1p2.samsung.com>
- <20190910123618.27985-3-s.nawrocki@samsung.com>
+ id 1iAI4W-0000OM-Vm
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 18:19:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=eCXNNV9SLez5wvuBaHb0ao/EnouRF1ty87hE3ZUG5bk=; b=w4J8Aj3usTARijjC+Xob01o/A
+ sQB0MsBEye7/3zNy8DMarwU2vYZZYcZya/F+9daAvobbUUKAgegtFMU0G320mXzII/JzuJoOXvPF9
+ /2qz8G0C5shR2UPI/z3jO0TC9+tMgZVOHDYWT8g7cACioGAdBplxfbrT+vns45jPWlu4Zms7AmDOi
+ i8VPET6os2b/WRK9CMvueJ0JU/waIGrnyAfgsHmOrom/yilbfRpQwbCn8DGSIPd8jjzqByH5IQEZ1
+ sTq2mTJhrqv+H1yRAWfihFkFJ+4PK/YzNUAYX81X5iWKgEtIpoKpMvUxe/FFGh4NQlOh7RRKLoP2v
+ Qg4TXSaDQ==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:40730)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iAI4C-0003Qr-BB; Tue, 17 Sep 2019 19:19:08 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iAI49-0001Vw-8G; Tue, 17 Sep 2019 19:19:05 +0100
+Date: Tue, 17 Sep 2019 19:19:05 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Andrew Lunn <andrew@lunn.ch>
+Subject: Re: [PATCH] ARM: dts: imx6dl: SolidRun: add phy node with 100Mb/s
+ max-speed
+Message-ID: <20190917181905.GA25745@shell.armlinux.org.uk>
+References: <20190917125434.GH20778@lunn.ch>
+ <20190917133253.GA1210141@arch-dsk-01>
+ <20190917133942.GR25745@shell.armlinux.org.uk>
+ <20190917151707.GV25745@shell.armlinux.org.uk>
+ <20190917153027.GW25745@shell.armlinux.org.uk>
+ <20190917163427.GA1475935@arch-dsk-01>
+ <20190917170419.GX25745@shell.armlinux.org.uk>
+ <20190917171913.GY25745@shell.armlinux.org.uk>
+ <20190917172658.GB9591@lunn.ch>
+ <20190917173728.GZ25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190910123618.27985-3-s.nawrocki@samsung.com>
+In-Reply-To: <20190917173728.GZ25745@shell.armlinux.org.uk>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_111326_486850_271BD90A 
-X-CRM114-Status: GOOD (  11.45  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20190917_111929_027123_9755BD1C 
+X-CRM114-Status: GOOD (  15.74  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,39 +96,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-pm@vger.kernel.org, vireshk@kernel.org, b.zolnierkie@samsung.com,
- linux-kernel@vger.kernel.org, krzk@kernel.org, robh+dt@kernel.org,
- kgene@kernel.org, Sylwester Nawrocki <s.nawrocki@samsung.com>,
- linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Baruch Siach <baruch@tkos.co.il>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ tinywrkb <tinywrkb@gmail.com>, open list <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 10 Sep 2019 14:36:14 +0200, Sylwester Nawrocki wrote:
-> This patch adds documentation of a new optional "samsung,asv-bin"
-> property in the chipid device node and documents requirement of
-> "syscon" compatible string.  These additions are needed to support
-> Exynos ASV (Adaptive Supply Voltage) feature.
+On Tue, Sep 17, 2019 at 06:37:28PM +0100, Russell King - ARM Linux admin wrote:
+> On Tue, Sep 17, 2019 at 07:26:58PM +0200, Andrew Lunn wrote:
+> > > diff --git a/drivers/net/phy/at803x.c b/drivers/net/phy/at803x.c
+> > > index b3893347804d..85cf4a4a5e81 100644
+> > > --- a/drivers/net/phy/at803x.c
+> > > +++ b/drivers/net/phy/at803x.c
+> > 
+> > Hi Russell
+> > 
+> > This won't work. In the kernel logs, you see 
+> > 
+> > kernel: Generic PHY 2188000.ethernet-1:00: attached PHY driver [Generic PHY]
+> > 
+> > The generic PHY driver is being used, not the at803x driver.
 > 
-> Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
-> ---
-> Changes since v3:
->  - none
-> 
-> Changes since v2:
->  - corrected patch summary line prefix, the patch moved in the
->    sequence
-> 
-> Changes since v1 (RFC):
->  - new patch
-> ---
->  .../devicetree/bindings/arm/samsung/exynos-chipid.txt  | 10 ++++++++--
->  1 file changed, 8 insertions(+), 2 deletions(-)
-> 
+> Well, the _correct_ driver needs to be used for the PHY specific
+> features to be properly controlled.  Using the generic driver
+> in this situation will not be guaranteed to work.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Well, this hasn't worked, but not for the obvious reason.  Register 0x14
+is documented as read/write.  Bits 15:6 are reserved, bit 5 is the
+smart speed enable, 4:2 configures the attempts, bit 1 sets the link
+stable condition, bit 0 is reserved.
+
+Writing 0x80c results in the register reading back 0x82c.  Writing
+0x800 results in the same.  Writing 0 reads back 0x2c.  Writing 0xffff
+seems to prevent packets being passed - and at that point I lost
+control so I couldn't see what the result was.
+
+There is nothing in the data sheet which suggests that there is any
+gating of this register.  So it looks like we're stuck with smartspeed
+enabled.
+
+So, I think there's only two remaining ways forward - to revert commit
+5502b218e001 to restore the old behaviour, read back the advertisement
+from the PHY along with the rest of the status, as I've previously
+stated.  It means that phylib will modify phydev->advertising at
+random points, just as it modifies phydev->lp_advertising, so locking
+may become an issue.  The revert approach is probably best until we
+have something working along those lines.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
