@@ -2,47 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AEA0B4854
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 09:32:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0AEDB48C3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 10:07:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=WgBXonCDdKgirT1F1rFBDkMY/BfguAllWzjKuGXIqGg=; b=pAE
-	0qVRcEwMnqhFHk8Ady6SXzvQ7LWHWTrWeDFOdWbjQ+YXCqQXgU4pAIK1Q6x/2kvTQbUF7I1Xe320C
-	4wuCmlMg0QXtjuwqHhbW3zw4oWL4rUUCOXuBmFnurXDIkRHNMgAzR1UK8Hp7Thx1ub6o55mappBFz
-	jJKN/g2M6tqZYEznX3h5hWwEVUFksn6NxE7Xj5AgwXkM9NFuOebke7yj3l1UnJrSzUXfHoeE/qEE3
-	hmz5gh6vGm+TlpWQHyr7bq6+Vo9u2pxedx58Mo/Ay5HUl7HGASh8UmeoX6dQTVh3yhTcqFqV464fq
-	7BkEZ3YGX0il1q5542xDY7TEiUyjiWQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BeVs67wsHabSBeeX9kNWb6SqCkrj8TUnXbJPET7UQBg=; b=EJKgYRQYzP5wfv
+	jQsBjUG1tR9WKoVPDUVmrF3J8HIdjYBIO3wjltmg36N21ZnwkWZaDUWlWfwxq0b5cDb6lMo7aAAZg
+	ZTgC+GindmniJVuyE4/ZzvGmmZUEBmJGh8Fi5TfFlLiwurg81NQIoJ8yBRu1GcvXhaCQZMP6Hf+US
+	bpDzzYeqBuVa6ryCKcnEof/xMDkByVutaE/HQlHiG85ZjfEF6OTvMLyvH3KUzxucznahSSObuNWuu
+	Wq6qhw9p5EZ1z4wvKATJDy6H4NK4kyvVvNmdKrctpuI8clRi5EYBzE6IOB6VDj/iBIy3gzCJUlu8f
+	0161UC/0GinP8C4VAj3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iA7yf-00089q-Ef; Tue, 17 Sep 2019 07:32:45 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1iA8VS-0002qy-Jg; Tue, 17 Sep 2019 08:06:39 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iA7yR-00089X-8i
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 07:32:33 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 74BF8200676;
- Tue, 17 Sep 2019 09:32:29 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 05C9A200672;
- Tue, 17 Sep 2019 09:32:25 +0200 (CEST)
-Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 830C2402E6;
- Tue, 17 Sep 2019 15:32:19 +0800 (SGT)
-From: Ran Wang <ran.wang_1@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH] arm64: dts: lx2160a: Correct CPU core idle state name
-Date: Tue, 17 Sep 2019 15:33:56 +0800
-Message-Id: <20190917073357.5895-1-ran.wang_1@nxp.com>
-X-Mailer: git-send-email 2.17.1
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1iA8V8-0002qE-6p
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 08:06:19 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id 7546120897;
+ Tue, 17 Sep 2019 10:06:13 +0200 (CEST)
+Received: from [192.168.108.37] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 17E4620840;
+ Tue, 17 Sep 2019 10:06:13 +0200 (CEST)
+Subject: Re: [REGRESSION] sdhci no longer detects SD cards on LX2160A
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Adrian Hunter <adrian.hunter@intel.com>
+References: <20190916171509.GG25745@shell.armlinux.org.uk>
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Message-ID: <b19a0640-5d71-a005-eb0f-c6840f181e5d@free.fr>
+Date: Tue, 17 Sep 2019 10:06:12 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <20190916171509.GG25745@shell.armlinux.org.uk>
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Tue Sep 17 10:06:13 2019 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_003231_586020_2EC1387D 
-X-CRM114-Status: UNSURE (   7.23  )
+X-CRM114-CacheID: sfid-20190917_010618_400431_5E3C73C3 
+X-CRM114-Status: UNSURE (   7.31  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -50,8 +53,10 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ medium trust [212.27.33.1 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -64,186 +69,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, Ran Wang <ran.wang_1@nxp.com>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: linux-mmc@vger.kernel.org, Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-lx2160a support PW15 but not PW20, correct name to avoid confusing.
+On 16/09/2019 19:15, Russell King - ARM Linux admin wrote:
 
-Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
----
- arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi | 36 +++++++++++++-------------
- 1 file changed, 18 insertions(+), 18 deletions(-)
+> The platform has an iommu, which is in pass-through mode, via
+> arm_smmu.disable_bypass=0.
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-index 408e0ec..b032f38 100644
---- a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-@@ -33,7 +33,7 @@
- 			i-cache-line-size = <64>;
- 			i-cache-sets = <192>;
- 			next-level-cache = <&cluster0_l2>;
--			cpu-idle-states = <&cpu_pw20>;
-+			cpu-idle-states = <&cpu_pw15>;
- 		};
- 
- 		cpu@1 {
-@@ -49,7 +49,7 @@
- 			i-cache-line-size = <64>;
- 			i-cache-sets = <192>;
- 			next-level-cache = <&cluster0_l2>;
--			cpu-idle-states = <&cpu_pw20>;
-+			cpu-idle-states = <&cpu_pw15>;
- 		};
- 
- 		cpu@100 {
-@@ -65,7 +65,7 @@
- 			i-cache-line-size = <64>;
- 			i-cache-sets = <192>;
- 			next-level-cache = <&cluster1_l2>;
--			cpu-idle-states = <&cpu_pw20>;
-+			cpu-idle-states = <&cpu_pw15>;
- 		};
- 
- 		cpu@101 {
-@@ -81,7 +81,7 @@
- 			i-cache-line-size = <64>;
- 			i-cache-sets = <192>;
- 			next-level-cache = <&cluster1_l2>;
--			cpu-idle-states = <&cpu_pw20>;
-+			cpu-idle-states = <&cpu_pw15>;
- 		};
- 
- 		cpu@200 {
-@@ -97,7 +97,7 @@
- 			i-cache-line-size = <64>;
- 			i-cache-sets = <192>;
- 			next-level-cache = <&cluster2_l2>;
--			cpu-idle-states = <&cpu_pw20>;
-+			cpu-idle-states = <&cpu_pw15>;
- 		};
- 
- 		cpu@201 {
-@@ -113,7 +113,7 @@
- 			i-cache-line-size = <64>;
- 			i-cache-sets = <192>;
- 			next-level-cache = <&cluster2_l2>;
--			cpu-idle-states = <&cpu_pw20>;
-+			cpu-idle-states = <&cpu_pw15>;
- 		};
- 
- 		cpu@300 {
-@@ -129,7 +129,7 @@
- 			i-cache-line-size = <64>;
- 			i-cache-sets = <192>;
- 			next-level-cache = <&cluster3_l2>;
--			cpu-idle-states = <&cpu_pw20>;
-+			cpu-idle-states = <&cpu_pw15>;
- 		};
- 
- 		cpu@301 {
-@@ -145,7 +145,7 @@
- 			i-cache-line-size = <64>;
- 			i-cache-sets = <192>;
- 			next-level-cache = <&cluster3_l2>;
--			cpu-idle-states = <&cpu_pw20>;
-+			cpu-idle-states = <&cpu_pw15>;
- 		};
- 
- 		cpu@400 {
-@@ -161,7 +161,7 @@
- 			i-cache-line-size = <64>;
- 			i-cache-sets = <192>;
- 			next-level-cache = <&cluster4_l2>;
--			cpu-idle-states = <&cpu_pw20>;
-+			cpu-idle-states = <&cpu_pw15>;
- 		};
- 
- 		cpu@401 {
-@@ -177,7 +177,7 @@
- 			i-cache-line-size = <64>;
- 			i-cache-sets = <192>;
- 			next-level-cache = <&cluster4_l2>;
--			cpu-idle-states = <&cpu_pw20>;
-+			cpu-idle-states = <&cpu_pw15>;
- 		};
- 
- 		cpu@500 {
-@@ -193,7 +193,7 @@
- 			i-cache-line-size = <64>;
- 			i-cache-sets = <192>;
- 			next-level-cache = <&cluster5_l2>;
--			cpu-idle-states = <&cpu_pw20>;
-+			cpu-idle-states = <&cpu_pw15>;
- 		};
- 
- 		cpu@501 {
-@@ -209,7 +209,7 @@
- 			i-cache-line-size = <64>;
- 			i-cache-sets = <192>;
- 			next-level-cache = <&cluster5_l2>;
--			cpu-idle-states = <&cpu_pw20>;
-+			cpu-idle-states = <&cpu_pw15>;
- 		};
- 
- 		cpu@600 {
-@@ -225,7 +225,7 @@
- 			i-cache-line-size = <64>;
- 			i-cache-sets = <192>;
- 			next-level-cache = <&cluster6_l2>;
--			cpu-idle-states = <&cpu_pw20>;
-+			cpu-idle-states = <&cpu_pw15>;
- 		};
- 
- 		cpu@601 {
-@@ -241,7 +241,7 @@
- 			i-cache-line-size = <64>;
- 			i-cache-sets = <192>;
- 			next-level-cache = <&cluster6_l2>;
--			cpu-idle-states = <&cpu_pw20>;
-+			cpu-idle-states = <&cpu_pw15>;
- 		};
- 
- 		cpu@700 {
-@@ -257,7 +257,7 @@
- 			i-cache-line-size = <64>;
- 			i-cache-sets = <192>;
- 			next-level-cache = <&cluster7_l2>;
--			cpu-idle-states = <&cpu_pw20>;
-+			cpu-idle-states = <&cpu_pw15>;
- 		};
- 
- 		cpu@701 {
-@@ -273,7 +273,7 @@
- 			i-cache-line-size = <64>;
- 			i-cache-sets = <192>;
- 			next-level-cache = <&cluster7_l2>;
--			cpu-idle-states = <&cpu_pw20>;
-+			cpu-idle-states = <&cpu_pw15>;
- 		};
- 
- 		cluster0_l2: l2-cache0 {
-@@ -340,9 +340,9 @@
- 			cache-level = <2>;
- 		};
- 
--		cpu_pw20: cpu-pw20 {
-+		cpu_pw15: cpu-pw15 {
- 			compatible = "arm,idle-state";
--			idle-state-name = "PW20";
-+			idle-state-name = "PW15";
- 			arm,psci-suspend-param = <0x0>;
- 			entry-latency-us = <2000>;
- 			exit-latency-us = <2000>;
--- 
-2.7.4
+Could be 954a03be033c7cef80ddc232e7cbdb17df735663
+"iommu/arm-smmu: Break insecure users by disabling bypass by default"
 
+Although it had already landed in v5.2
+
+Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
