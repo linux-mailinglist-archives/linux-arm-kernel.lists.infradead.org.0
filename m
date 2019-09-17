@@ -2,74 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CB2FB4C21
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 12:42:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D7E9B4C2C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 12:45:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xXsUhL8ubEvFC1MFGLtYjSrclB0GL2ZHP0jzNHeergo=; b=n51ctaBkBgqvLV
-	iQlnuHYrJJ029hDQS8l75/FIspwKAHsn/fN36J9HXMFDO/6rP2VP7GBIg9IpJSzVIqZPe+5l9Wcgc
-	LW2GgZwHmsbnyL0Z6oSFaWcAxc+qBK5+y45mO5yfEcaoEDq4V4lxb8Ajqdry0S8KW72U9nQDBXdy3
-	DvUw12lLdm2aIBmLC/3ncMy0TRE2iS96TaWTwJfrrrZ4jWuTIIFr31BLhXz+2YEhw17K+9E3CnGcH
-	pQyHOXg+LvWquLUBhUyg19/wT0My1F6g4gR1UtQfK/saRoivQch4ZXIm+xkkvCWv5AYU7KK3sYDnw
-	wKvZXYx8lgIpYbzpuUFA==;
+	List-Owner; bh=DZCrohAO6gIln+iqatiYLsCxjCdu9aI54VpIeLVuGV4=; b=nfU5gm6wwCzQlx
+	1q3d5QMMbWBo3TLhtcRHcMXRgHtH8Wf0tfQTIRpMi8hZVS777esW1sK8G0JUqgS9uIU5k+h36PXo2
+	oxIyh7zUZc77RN2lRjHUMzKj492L4ad/td4BoA4M39qQIWGSI/nqArMPnE7ptR1f0wpfW6xc8xLOj
+	uP+lFDKq3gsBELJT6VSPG7sp34HLCC1eblM0CfyETqOlTdJ9Hd5ghcqLrrNWvgiuzVQgYzILB9Gt2
+	2e4/GHn+MlRmqmSv6euHnBc5m/RnJhwKzAE4VnUYZxbduDMO5+Ht6wt3Xnqom1fa7/h8RfY8a42Zo
+	AT73IbT2LWPRflJRkA5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAAwF-0007GT-22; Tue, 17 Sep 2019 10:42:27 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iAAzM-0000b0-5V; Tue, 17 Sep 2019 10:45:40 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAAw1-0007FV-FE
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 10:42:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=7qdiIJk4N9Bw2jD8YfHU3M1P1qr7Jq1pFBN4pn0Y7QE=; b=kR8fi0sPqUcDaKIN5TMlRbh+d
- PvTeYxQssHli6bHdeCdwUbDO2p00D/XFd36WblSWfQMe9yeeXXwPwYYpvLx1Q90IpVgcy/LAiZMeP
- Rtysa1EWAI7Hie/KB3ozKNLvc8kmXn+dgO2utj0yy9/bY3waEfXNeTUgo6+rsSe9uDohtwtu7TKW1
- VSFAlib0O5FtHD+Kg74BkSxgHTtZ7u48gOHR4ept3H8TjgAcOvZ9S5x0uB9oxDi5ouA/6eE02zXCb
- rsJXigc/dz3MGkrtGt3PmFcKxW8G0t2MTbiPfT+QvUYoReCYTAlMCtNEuctjwc7mo9nf23c26kJmU
- O7MO9RWUQ==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:33066)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1iAAvq-0001AJ-Br; Tue, 17 Sep 2019 11:42:02 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iAAvo-0001DN-D5; Tue, 17 Sep 2019 11:42:00 +0100
-Date: Tue, 17 Sep 2019 11:42:00 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Adrian Hunter <adrian.hunter@intel.com>
-Subject: Re: [REGRESSION] sdhci no longer detects SD cards on LX2160A
-Message-ID: <20190917104200.GJ25745@shell.armlinux.org.uk>
-References: <20190916171509.GG25745@shell.armlinux.org.uk>
- <b19a0640-5d71-a005-eb0f-c6840f181e5d@free.fr>
- <20190917081931.GI25745@shell.armlinux.org.uk>
+ id 1iAAz6-0000aF-Vj
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 10:45:26 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9309521852;
+ Tue, 17 Sep 2019 10:45:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1568717124;
+ bh=lRD33XVMU31YDKixMT8vCEatLaoLNEVQy4Wzf/bj7LU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=AFxODCLVmBmUj01R26irYPN8YQuPyH1UaOrRml1WD7+1jCwimkkB1M6KsQFFUYhqi
+ PRr2K9zMWyVz9E9koZIbr5XJPWVkIzDVPatCfKxXuyECrCN/Y2DUxWQvq1N6KBI1Zv
+ /nWXbB5STf9OLjKm5R+/bGAn9MIO+UHk1+LmoYG8=
+Date: Tue, 17 Sep 2019 11:45:19 +0100
+From: Will Deacon <will@kernel.org>
+To: Xogium <contact@xogium.me>
+Subject: Re: [breakage] panic() does not halt arm64 systems under certain
+ conditions
+Message-ID: <20190917104518.ovg6ivadyst7h76o@willie-the-truck>
+References: <BX1W47JXPMR8.58IYW53H6M5N@dragonstone>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190917081931.GI25745@shell.armlinux.org.uk>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <BX1W47JXPMR8.58IYW53H6M5N@dragonstone>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_034213_508775_0BD8C937 
-X-CRM114-Status: GOOD (  20.57  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190917_034525_046682_AB6CCAE8 
+X-CRM114-Status: GOOD (  15.19  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -77,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,115 +77,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-mmc@vger.kernel.org, Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arch@vger.kernel.org, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, linux@armlinux.org.uk, mingo@redhat.com,
+ bp@alien8.de, tglx@linutronix.de, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 17, 2019 at 09:19:31AM +0100, Russell King - ARM Linux admin wrote:
-> On Tue, Sep 17, 2019 at 10:06:12AM +0200, Marc Gonzalez wrote:
-> > On 16/09/2019 19:15, Russell King - ARM Linux admin wrote:
-> > 
-> > > The platform has an iommu, which is in pass-through mode, via
-> > > arm_smmu.disable_bypass=0.
-> > 
-> > Could be 954a03be033c7cef80ddc232e7cbdb17df735663
-> > "iommu/arm-smmu: Break insecure users by disabling bypass by default"
-> > 
-> > Although it had already landed in v5.2
-> 
-> It is not - and the two lines that you quoted above are sufficient
-> to negate that as a cause.  (Please read the help for the option that
-> the commit referrs to.)
-> 
-> In fact, with bypass disabled, the SoC fails due to other masters.
-> That's already been discussed privately between myself and Will
-> Deacon.
-> 
-> arm_smmu.disable_bypass=0 re-enables bypass mode irrespective of
-> the default setting in the Kconfig.
+Hi,
 
-Adding some further debugging, and fixing the existing ADMA debugging
-shows:
+[Expanding CC list; original message is here:
+ https://lore.kernel.org/linux-arm-kernel/BX1W47JXPMR8.58IYW53H6M5N@dragonstone/]
 
-mmc0: ADMA error: 0x02000000
+On Mon, Sep 16, 2019 at 09:35:36PM -0400, Xogium wrote:
+> On arm64 in some situations userspace will continue running even after a
+> panic. This means any userspace watchdog daemon will continue pinging,
+> that service managers will keep running and displaying messages in certain
+> cases, and that it is possible to enter via ssh in the now unstable system
+> and to do almost anything except reboot/power off and etc. If
+> CONFIG_PREEMPT=n is set in the kernel's configuration, the issue is fixed.
+> I have reproduced the very same behavior with linux 4.19, 5.2 and 5.3. On
+> x86/x86_64 the issue does not seem to be present at all.
 
-So this is an ADMA error without the transfer having completed.
+I've managed to reproduce this under both 32-bit and 64-bit ARM kernels.
+The issue is that the infinite loop at the end of panic() can run with
+preemption enabled (particularly when invoking by echoing 'c' to
+/proc/sysrq-trigger), so we end up rescheduling user tasks. On x86, this
+doesn't happen because smp_send_stop() disables the local APIC in
+native_stop_other_cpus() and so interrupts are effectively masked while
+spinning.
 
-mmc0: sdhci: Blk size:  0x00000008 | Blk cnt:  0x00000001
+A straightforward fix is to disable preemption explicitly on the panic()
+path (diff below), but I've expanded the cc list to see both what others
+think, but also in case smp_send_stop() is supposed to have the side-effect
+of disabling interrupt delivery for the local CPU.
 
-The block size is 8, with one block.
+Will
 
-mmc0: sdhci: ADMA Err:  0x00000009 | ADMA Ptr: 0x000000236df1d20c
+--->8
 
-The ADMA error is a descriptor error at address 0x000000236df1d20c.
-The descriptor table contains (including the following entry):
-
-mmc0: sdhci: 236df1d200: DMA 0x000000236d40e980, LEN 0x0008, Attr=0x23
-mmc0: sdhci: 236df1d20c: DMA 0x0000000000000000, LEN 0x0000, Attr=0x00
-
-The descriptor table contains one descriptor of 8 bytes, is marked
-as the last (END bit set) and is at DMA address 0x236df1d200.  The
-following descriptor is empty, with VALID=0.
-
-One may be tempted to blame it on the following descriptor, but having
-had another example on eMMC while userspace was booting (rootfs on
-eMMC):
-
-mmc1: ADMA error: 0x02000000
-mmc1: sdhci: Blk size:  0x00000200 | Blk cnt:  0x00000099
-mmc1: sdhci: ADMA Err:  0x00000006 | ADMA Ptr: 0x000000236dbfa26c
-mmc1: sdhci: 236dbfa200: DMA 0x000000236c25c000, LEN 0x2000, Attr=0x21
-mmc1: sdhci: 236dbfa20c: DMA 0x000000236938c000, LEN 0x0000, Attr=0x21
-mmc1: sdhci: 236dbfa218: DMA 0x000000236939c000, LEN 0x5000, Attr=0x21
-mmc1: sdhci: 236dbfa224: DMA 0x0000002368545000, LEN 0x1000, Attr=0x21
-mmc1: sdhci: 236dbfa230: DMA 0x00000023684f1000, LEN 0x1000, Attr=0x21
-mmc1: sdhci: 236dbfa23c: DMA 0x0000002368504000, LEN 0x2000, Attr=0x21
-mmc1: sdhci: 236dbfa248: DMA 0x0000002368546000, LEN 0x2000, Attr=0x21
-mmc1: sdhci: 236dbfa254: DMA 0x00000023684f2000, LEN 0x2000, Attr=0x21
-mmc1: sdhci: 236dbfa260: DMA 0x0000002368500000, LEN 0x1000, Attr=0x23
-mmc1: sdhci: 236dbfa26c: DMA 0x000000236b55d000, LEN 0x1000, Attr=0x21
-
-... which is interesting for several reasons:
-- The ADMA error register indicates a length mismatch error.  The
-  transfer was for 0x99 blocks of 0x200, which is 0x13200 bytes.
-  Summing the ADMA lengths up to the last descriptor (length=0 is
-  0x10000 bytes) gives 0x20000 bytes.  So the DMA table contains more
-  bytes than the requested transfer.
-
-- The ADMA error register indicates ST_CADR, which is described as
-  "This state is never set because do not generate ADMA error in this
-  state."
-
-- The error descriptor is again after the descriptor with END=1, but
-  this time has VALID=1.
-
-This _feels_ like a coherency issue, where the SDHCI engine is not
-correctly seeing the descriptor table, but then I would have expected
-userspace (which is basically debian stable) to fail to boot every
-time given that its rootfs is on eMMC.
-
-The other weird thing is if I wind the core MMC code back via:
-
-$ git diff -u 7559d612dff0..v5.3 drivers/mmc/core | patch -p1 -R
-
-and fix the lack of dma_max_pfn(), then SDHCI is more stable - not
-completely stable, but way better than plain v5.3.  I don't see
-much in that diff which would be responsible for this - although it
-does seem that hch's DMA changes do make the problem more likely.
-(going from 1 in 3 boots with a problem to being not able to boot.)
-
-Note, with v5.2, I _never_ saw any ADMA errors, except if I disabled
-bypass mode on the IOMMU (but then I saw global smmu errors right
-from when the IOMMU had bypass disabled before MMC was probed - the
-reason being is the SoC is not currently setup to have the MMU
-bypass mode disabled.)
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+diff --git a/kernel/panic.c b/kernel/panic.c
+index 057540b6eee9..02d0de31c42d 100644
+--- a/kernel/panic.c
++++ b/kernel/panic.c
+@@ -179,6 +179,7 @@ void panic(const char *fmt, ...)
+	 * after setting panic_cpu) from invoking panic() again.
+	 */
+	local_irq_disable();
++	preempt_disable_notrace();
+ 
+	/*
+	 * It's possible to come here directly from a panic-assertion and
 
 _______________________________________________
 linux-arm-kernel mailing list
