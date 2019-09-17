@@ -2,55 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF31FB5466
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 19:39:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C664CB5477
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 19:44:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n7C8uyvkwyA6ZL0+QKGGv+W1bRnMqREuf6YDQDw3/B4=; b=HNaUzWXhVKy44Q
-	JWSGwLN1eI2sdYMhEZvsC7cvAQbLY6Xw4ZzdkiOBBzqdsQa3XcYzd+mYJgiPhjWsUbfv7gsgaHeP1
-	JnyxKG2kF9/roh/tKndo7/BH+T+4lWhUisoI3px5BcoBTU/EFoafliWWdkityH8uEuH1crLgayjg3
-	CaXyW9zcVesneXvqgEWx2gWwigWkI4/OTIMT4mjIVU3pxXEHonMV8h5RZfOEAiwnUxkJXN8iQPPdt
-	71HoMViWv+r9HO3KDfdbTtuD5Zf37CqafNJX381wGNMjC+OdFTR+Powl2nO2a3bLNLajFC9nyf9Jr
-	JlnhI6zvls9YoFQf15XA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5j4frVGrI8E6n1esxOUfflVnpjxqplTqJ3D1uAIFvmA=; b=it/6m8JNC8ogoN
+	c2KZz2/S+3O/0CTEEn1j3palCjxlJFN2yrNuVtVUMitfvke1qqcybD6hyXTuXEp4GF7dYYQaQxLlc
+	C9eyloW1Ul0sqSCXNiWgq9oRBW1/d852LsTBk9zRISJDiesWfodJuIEk/viyz7bWC3uoV/7IgrIEm
+	wrUXP/TfhFK4SH+WEkg13fu9rChvq4nwY6tIl5OS7gOL3ssHM0fdCJYJF/w9xjOk4UjInPO1a5tAJ
+	fJBLedzO73cdjVmk1eGfvpFcIwL+edWPGZ8/rQdGOq1q8VBbOZxU4no8HyI2vUaSjzjHdkjW/dz4k
+	6+Oo0lzxShzScSRSZNNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAHRd-0008MX-3q; Tue, 17 Sep 2019 17:39:17 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAHRP-0008Ln-LT
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 17:39:05 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D65181000;
- Tue, 17 Sep 2019 10:39:00 -0700 (PDT)
-Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7D78E3F575;
- Tue, 17 Sep 2019 10:38:59 -0700 (PDT)
-Date: Tue, 17 Sep 2019 18:38:56 +0100
-From: Andre Przywara <andre.przywara@arm.com>
-To: Peng Fan <peng.fan@nxp.com>
-Subject: Re: [PATCH V6 2/2] mailbox: introduce ARM SMC based mailbox
-Message-ID: <20190917183856.2342beed@donnerap.cambridge.arm.com>
-In-Reply-To: <1568626884-5189-3-git-send-email-peng.fan@nxp.com>
-References: <1568626884-5189-1-git-send-email-peng.fan@nxp.com>
- <1568626884-5189-3-git-send-email-peng.fan@nxp.com>
-Organization: ARM
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+	id 1iAHWZ-0001d1-3O; Tue, 17 Sep 2019 17:44:23 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iAHWH-0001aW-Ig
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 17:44:07 +0000
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id B67113084244;
+ Tue, 17 Sep 2019 17:44:04 +0000 (UTC)
+Received: from llong.remote.csb (dhcp-17-160.bos.redhat.com [10.18.17.160])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id BFD3B19C70;
+ Tue, 17 Sep 2019 17:44:02 +0000 (UTC)
+Subject: Re: [PATCH v4 3/5] locking/qspinlock: Introduce CNA into the slow
+ path of qspinlock
+To: Alex Kogan <alex.kogan@oracle.com>, linux@armlinux.org.uk,
+ peterz@infradead.org, mingo@redhat.com, will.deacon@arm.com, arnd@arndb.de,
+ linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, tglx@linutronix.de, bp@alien8.de,
+ hpa@zytor.com, x86@kernel.org, guohanjun@huawei.com, jglauber@marvell.com
+References: <20190906142541.34061-1-alex.kogan@oracle.com>
+ <20190906142541.34061-4-alex.kogan@oracle.com>
+From: Waiman Long <longman@redhat.com>
+Organization: Red Hat
+Message-ID: <3ae2b6a2-ffe6-2ca1-e5bf-2292db50e26f@redhat.com>
+Date: Tue, 17 Sep 2019 13:44:02 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
+In-Reply-To: <20190906142541.34061-4-alex.kogan@oracle.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.40]); Tue, 17 Sep 2019 17:44:04 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_103903_790891_781BEBB3 
-X-CRM114-Status: GOOD (  27.53  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190917_104405_657875_F81349E3 
+X-CRM114-Status: GOOD (  42.03  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,275 +76,455 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: rahul.x.yadav@oracle.com, dave.dice@oracle.com, steven.sistare@oracle.com,
+ daniel.m.jordan@oracle.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 16 Sep 2019 09:44:41 +0000
-Peng Fan <peng.fan@nxp.com> wrote:
-
-Hi,
-
-looks quite good now, some smaller comments below.
-I think the only thing left is the "function ID passed by the client" topic.
-
-Have you tried using this interface using hvc, for instance in KVM or Xen? For instance to provide access to a clock for a passed-through platform device?
-Another use case that pops up from time to time is GPIO for guests. This sounds like a use case for using the register interface, also we could use the hvc return value.
-
-> From: Peng Fan <peng.fan@nxp.com>
-> 
-> This mailbox driver implements a mailbox which signals transmitted data
-> via an ARM smc (secure monitor call) instruction. The mailbox receiver
-> is implemented in firmware and can synchronously return data when it
-> returns execution to the non-secure world again.
-> An asynchronous receive path is not implemented.
-> This allows the usage of a mailbox to trigger firmware actions on SoCs
-> which either don't have a separate management processor or on which such
-> a core is not available. A user of this mailbox could be the SCP
-> interface.
-> 
-> Modified from Andre Przywara's v2 patch
-> https://lore.kernel.org/patchwork/patch/812999/
-> 
-> Cc: Andre Przywara <andre.przywara@arm.com>
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+On 9/6/19 10:25 AM, Alex Kogan wrote:
+> In CNA, spinning threads are organized in two queues, a main queue for
+> threads running on the same node as the current lock holder, and a
+> secondary queue for threads running on other nodes. At the unlock time,
+> the lock holder scans the main queue looking for a thread running on
+> the same node. If found (call it thread T), all threads in the main queue
+> between the current lock holder and T are moved to the end of the
+> secondary queue, and the lock is passed to T. If such T is not found, the
+> lock is passed to the first node in the secondary queue. Finally, if the
+> secondary queue is empty, the lock is passed to the next thread in the
+> main queue. For more details, see https://arxiv.org/abs/1810.05600.
+>
+> Note that this variant of CNA may introduce starvation by continuously
+> passing the lock to threads running on the same node. This issue
+> will be addressed later in the series.
+>
+> Enabling CNA is controlled via a new configuration option
+> (NUMA_AWARE_SPINLOCKS). By default, the CNA variant is patched in at the
+> boot time only if we run on a multi-node machine in native environment and
+> the new config is enabled. (For the time being, the patching requires
+> CONFIG_PARAVIRT_SPINLOCKS to be enabled as well. However, this should be
+> resolved once static_call() is available.) This default behavior can be
+> overridden with the new kernel boot command-line option
+> "numa_spinlock=on/off" (default is "auto").
+>
+> Signed-off-by: Alex Kogan <alex.kogan@oracle.com>
+> Reviewed-by: Steve Sistare <steven.sistare@oracle.com>
 > ---
->  drivers/mailbox/Kconfig           |   7 ++
->  drivers/mailbox/Makefile          |   2 +
->  drivers/mailbox/arm-smc-mailbox.c | 167 ++++++++++++++++++++++++++++++++++++++
->  3 files changed, 176 insertions(+)
->  create mode 100644 drivers/mailbox/arm-smc-mailbox.c
-> 
-> diff --git a/drivers/mailbox/Kconfig b/drivers/mailbox/Kconfig
-> index ab4eb750bbdd..7707ee26251a 100644
-> --- a/drivers/mailbox/Kconfig
-> +++ b/drivers/mailbox/Kconfig
-> @@ -16,6 +16,13 @@ config ARM_MHU
->  	  The controller has 3 mailbox channels, the last of which can be
->  	  used in Secure mode only.
+>  arch/x86/Kconfig                 |  19 ++++
+>  arch/x86/include/asm/qspinlock.h |   4 +
+>  arch/x86/kernel/alternative.c    |  41 +++++++
+>  kernel/locking/mcs_spinlock.h    |   2 +-
+>  kernel/locking/qspinlock.c       |  31 +++++-
+>  kernel/locking/qspinlock_cna.h   | 225 +++++++++++++++++++++++++++++++++++++++
+>  6 files changed, 317 insertions(+), 5 deletions(-)
+>  create mode 100644 kernel/locking/qspinlock_cna.h
+>
+> diff --git a/arch/x86/Kconfig b/arch/x86/Kconfig
+> index 222855cc0158..9d0d87edff62 100644
+> --- a/arch/x86/Kconfig
+> +++ b/arch/x86/Kconfig
+> @@ -1567,6 +1567,25 @@ config NUMA
 >  
-> +config ARM_SMC_MBOX
-> +	tristate "Generic ARM smc mailbox"
-> +	depends on OF && HAVE_ARM_SMCCC
+>  	  Otherwise, you should say N.
+>  
+> +config NUMA_AWARE_SPINLOCKS
+> +	bool "Numa-aware spinlocks"
+> +	depends on NUMA
+> +	depends on QUEUED_SPINLOCKS
+> +	# For now, we depend on PARAVIRT_SPINLOCKS to make the patching work.
+> +	# This is awkward, but hopefully would be resolved once static_call()
+> +	# is available.
+> +	depends on PARAVIRT_SPINLOCKS
+> +	default y
 > +	help
-> +	  Generic mailbox driver which uses ARM smc calls to call into
-> +	  firmware for triggering mailboxes.
+> +	  Introduce NUMA (Non Uniform Memory Access) awareness into
+> +	  the slow path of spinlocks.
 > +
->  config IMX_MBOX
->  	tristate "i.MX Mailbox"
->  	depends on ARCH_MXC || COMPILE_TEST
-> diff --git a/drivers/mailbox/Makefile b/drivers/mailbox/Makefile
-> index c22fad6f696b..93918a84c91b 100644
-> --- a/drivers/mailbox/Makefile
-> +++ b/drivers/mailbox/Makefile
-> @@ -7,6 +7,8 @@ obj-$(CONFIG_MAILBOX_TEST)	+= mailbox-test.o
->  
->  obj-$(CONFIG_ARM_MHU)	+= arm_mhu.o
->  
-> +obj-$(CONFIG_ARM_SMC_MBOX)	+= arm-smc-mailbox.o
+> +	  In this variant of qspinlock, the kernel will try to keep the lock
+> +	  on the same node, thus reducing the number of remote cache misses,
+> +	  while trading some of the short term fairness for better performance.
 > +
->  obj-$(CONFIG_IMX_MBOX)	+= imx-mailbox.o
+> +	  Say N if you want absolute first come first serve fairness.
+> +
+>  config AMD_NUMA
+>  	def_bool y
+>  	prompt "Old style AMD Opteron NUMA detection"
+> diff --git a/arch/x86/include/asm/qspinlock.h b/arch/x86/include/asm/qspinlock.h
+> index bd5ac6cc37db..d9b6c34d5eb4 100644
+> --- a/arch/x86/include/asm/qspinlock.h
+> +++ b/arch/x86/include/asm/qspinlock.h
+> @@ -27,6 +27,10 @@ static __always_inline u32 queued_fetch_set_pending_acquire(struct qspinlock *lo
+>  	return val;
+>  }
 >  
->  obj-$(CONFIG_ARMADA_37XX_RWTM_MBOX)	+= armada-37xx-rwtm-mailbox.o
-> diff --git a/drivers/mailbox/arm-smc-mailbox.c b/drivers/mailbox/arm-smc-mailbox.c
-> new file mode 100644
-> index 000000000000..c84aef39c8d9
-> --- /dev/null
-> +++ b/drivers/mailbox/arm-smc-mailbox.c
-> @@ -0,0 +1,167 @@
-> +// SPDX-License-Identifier: GPL-2.0
+> +#ifdef CONFIG_NUMA_AWARE_SPINLOCKS
+> +extern void __cna_queued_spin_lock_slowpath(struct qspinlock *lock, u32 val);
+> +#endif
+> +
+>  #ifdef CONFIG_PARAVIRT_SPINLOCKS
+>  extern void native_queued_spin_lock_slowpath(struct qspinlock *lock, u32 val);
+>  extern void __pv_init_lock_hash(void);
+> diff --git a/arch/x86/kernel/alternative.c b/arch/x86/kernel/alternative.c
+> index ccd32013c47a..d5194e342db9 100644
+> --- a/arch/x86/kernel/alternative.c
+> +++ b/arch/x86/kernel/alternative.c
+> @@ -698,6 +698,33 @@ static void __init int3_selftest(void)
+>  	unregister_die_notifier(&int3_exception_nb);
+>  }
+>  
+> +#if defined(CONFIG_NUMA_AWARE_SPINLOCKS)
 > +/*
-> + * Copyright (C) 2016,2017 ARM Ltd.
-> + * Copyright 2019 NXP
+> + * Constant (boot-param configurable) flag selecting the NUMA-aware variant
+> + * of spinlock.  Possible values: -1 (off) / 0 (auto, default) / 1 (on).
 > + */
+> +static int numa_spinlock_flag;
 > +
-> +#include <linux/arm-smccc.h>
-> +#include <linux/device.h>
-> +#include <linux/kernel.h>
-> +#include <linux/interrupt.h>
-> +#include <linux/mailbox_controller.h>
-> +#include <linux/module.h>
-> +#include <linux/platform_device.h>
-> +
-> +struct arm_smc_chan_data {
-> +	unsigned int function_id;
-> +};
-> +
-> +struct arm_smccc_mbox_cmd {
-> +	unsigned int function_id;
-> +	union {
-> +		unsigned int args_smccc32[6];
-> +		unsigned long args_smccc64[6];
-
-Shouldn't this be u32 and u64 here, as the data type has this explicit length in the SMCCC?
-
-> +	};
-> +};
-
-If this is the data structure that this mailbox controller uses, I would expect this to be documented somewhere, or even exported.
-
-And again, I don't like the idea of having the function ID in here.
-
-> +
-> +typedef unsigned long (smc_mbox_fn)(unsigned int, unsigned long,
-> +				    unsigned long, unsigned long,
-> +				    unsigned long, unsigned long,
-> +				    unsigned long);
-> +static smc_mbox_fn *invoke_smc_mbox_fn;
-> +
-> +static int arm_smc_send_data(struct mbox_chan *link, void *data)
+> +static int __init numa_spinlock_setup(char *str)
 > +{
-> +	struct arm_smc_chan_data *chan_data = link->con_priv;
-> +	struct arm_smccc_mbox_cmd *cmd = data;
-> +	unsigned long ret;
-> +	u32 function_id;
-> +
-> +	function_id = chan_data->function_id;
-> +	if (!function_id)
-> +		function_id = cmd->function_id;
-> +
-> +	if (function_id & BIT(30)) {
-
-	if (ARM_SMCCC_IS_64(function_id)) {
-
-> +		ret = invoke_smc_mbox_fn(function_id, cmd->args_smccc64[0],
-> +					 cmd->args_smccc64[1],
-> +					 cmd->args_smccc64[2],
-> +					 cmd->args_smccc64[3],
-> +					 cmd->args_smccc64[4],
-> +					 cmd->args_smccc64[5]);
-> +	} else {
-> +		ret = invoke_smc_mbox_fn(function_id, cmd->args_smccc32[0],
-> +					 cmd->args_smccc32[1],
-> +					 cmd->args_smccc32[2],
-> +					 cmd->args_smccc32[3],
-> +					 cmd->args_smccc32[4],
-> +					 cmd->args_smccc32[5]);
+> +	if (!strcmp(str, "auto")) {
+> +		numa_spinlock_flag = 0;
+> +		return 1;
+> +	} else if (!strcmp(str, "on")) {
+> +		numa_spinlock_flag = 1;
+> +		return 1;
+> +	} else if (!strcmp(str, "off")) {
+> +		numa_spinlock_flag = -1;
+> +		return 1;
 > +	}
 > +
-> +	mbox_chan_received_data(link, (void *)ret);
-> +
 > +	return 0;
 > +}
 > +
-> +static unsigned long __invoke_fn_hvc(unsigned int function_id,
-> +				     unsigned long arg0, unsigned long arg1,
-> +				     unsigned long arg2, unsigned long arg3,
-> +				     unsigned long arg4, unsigned long arg5)
-> +{
-> +	struct arm_smccc_res res;
+> +__setup("numa_spinlock=", numa_spinlock_setup);
 > +
-> +	arm_smccc_hvc(function_id, arg0, arg1, arg2, arg3, arg4,
-> +		      arg5, 0, &res);
-> +	return res.a0;
-> +}
+> +#endif
 > +
-> +static unsigned long __invoke_fn_smc(unsigned int function_id,
-> +				     unsigned long arg0, unsigned long arg1,
-> +				     unsigned long arg2, unsigned long arg3,
-> +				     unsigned long arg4, unsigned long arg5)
-> +{
-> +	struct arm_smccc_res res;
+>  void __init alternative_instructions(void)
+>  {
+>  	int3_selftest();
+> @@ -738,6 +765,20 @@ void __init alternative_instructions(void)
+>  	}
+>  #endif
+>  
+> +#if defined(CONFIG_NUMA_AWARE_SPINLOCKS)
+> +	/*
+> +	 * By default, switch to the NUMA-friendly slow path for
+> +	 * spinlocks when we have multiple NUMA nodes in native environment.
+> +	 */
+> +	if ((numa_spinlock_flag == 1) ||
+> +	    (numa_spinlock_flag == 0 && nr_node_ids > 1 &&
+> +		    pv_ops.lock.queued_spin_lock_slowpath ==
+> +			native_queued_spin_lock_slowpath)) {
+> +		pv_ops.lock.queued_spin_lock_slowpath =
+> +		    __cna_queued_spin_lock_slowpath;
+> +	}
+> +#endif
 > +
-> +	arm_smccc_smc(function_id, arg0, arg1, arg2, arg3, arg4,
-> +		      arg5, 0, &res);
-> +	return res.a0;
-> +}
+>  	apply_paravirt(__parainstructions, __parainstructions_end);
+>  
+>  	restart_nmi();
+> diff --git a/kernel/locking/mcs_spinlock.h b/kernel/locking/mcs_spinlock.h
+> index 84327ca21650..bd127b21b70c 100644
+> --- a/kernel/locking/mcs_spinlock.h
+> +++ b/kernel/locking/mcs_spinlock.h
+> @@ -17,7 +17,7 @@
+>  
+>  struct mcs_spinlock {
+>  	struct mcs_spinlock *next;
+> -	int locked; /* 1 if lock acquired */
+> +	unsigned int locked; /* 1 if lock acquired */
+>  	int count;  /* nesting count, see qspinlock.c */
+>  };
+>  
+> diff --git a/kernel/locking/qspinlock.c b/kernel/locking/qspinlock.c
+> index 070015156a10..e4e482685fc1 100644
+> --- a/kernel/locking/qspinlock.c
+> +++ b/kernel/locking/qspinlock.c
+> @@ -11,7 +11,7 @@
+>   *          Peter Zijlstra <peterz@infradead.org>
+>   */
+>  
+> -#ifndef _GEN_PV_LOCK_SLOWPATH
+> +#if !defined(_GEN_PV_LOCK_SLOWPATH) && !defined(_GEN_CNA_LOCK_SLOWPATH)
+>  
+>  #include <linux/smp.h>
+>  #include <linux/bug.h>
+> @@ -70,7 +70,8 @@
+>  /*
+>   * On 64-bit architectures, the mcs_spinlock structure will be 16 bytes in
+>   * size and four of them will fit nicely in one 64-byte cacheline. For
+> - * pvqspinlock, however, we need more space for extra data. To accommodate
+> + * pvqspinlock, however, we need more space for extra data. The same also
+> + * applies for the NUMA-aware variant of spinlocks (CNA). To accommodate
+>   * that, we insert two more long words to pad it up to 32 bytes. IOW, only
+>   * two of them can fit in a cacheline in this case. That is OK as it is rare
+>   * to have more than 2 levels of slowpath nesting in actual use. We don't
+> @@ -79,7 +80,7 @@
+>   */
+>  struct qnode {
+>  	struct mcs_spinlock mcs;
+> -#ifdef CONFIG_PARAVIRT_SPINLOCKS
+> +#if defined(CONFIG_PARAVIRT_SPINLOCKS) || defined(CONFIG_NUMA_AWARE_SPINLOCKS)
+>  	long reserved[2];
+>  #endif
+>  };
+> @@ -103,6 +104,8 @@ struct qnode {
+>   * Exactly fits one 64-byte cacheline on a 64-bit architecture.
+>   *
+>   * PV doubles the storage and uses the second cacheline for PV state.
+> + * CNA also doubles the storage and uses the second cacheline for
+> + * CNA-specific state.
+>   */
+>  static DEFINE_PER_CPU_ALIGNED(struct qnode, qnodes[MAX_NODES]);
+>  
+> @@ -316,7 +319,7 @@ static __always_inline void __mcs_pass_lock(struct mcs_spinlock *node,
+>  #define try_clear_tail	__try_clear_tail
+>  #define mcs_pass_lock		__mcs_pass_lock
+>  
+> -#endif /* _GEN_PV_LOCK_SLOWPATH */
+> +#endif /* _GEN_PV_LOCK_SLOWPATH && _GEN_CNA_LOCK_SLOWPATH */
+>  
+>  /**
+>   * queued_spin_lock_slowpath - acquire the queued spinlock
+> @@ -589,6 +592,26 @@ void queued_spin_lock_slowpath(struct qspinlock *lock, u32 val)
+>  EXPORT_SYMBOL(queued_spin_lock_slowpath);
+>  
+>  /*
+> + * Generate the code for NUMA-aware spinlocks
+> + */
+> +#if !defined(_GEN_CNA_LOCK_SLOWPATH) && defined(CONFIG_NUMA_AWARE_SPINLOCKS)
+> +#define _GEN_CNA_LOCK_SLOWPATH
 > +
-> +static const struct mbox_chan_ops arm_smc_mbox_chan_ops = {
-> +	.send_data	= arm_smc_send_data,
+> +#undef try_clear_tail
+> +#define try_clear_tail		cna_try_change_tail
+> +
+> +#undef mcs_pass_lock
+> +#define mcs_pass_lock			cna_pass_lock
+> +
+> +#undef  queued_spin_lock_slowpath
+> +#define queued_spin_lock_slowpath	__cna_queued_spin_lock_slowpath
+> +
+> +#include "qspinlock_cna.h"
+> +#include "qspinlock.c"
+> +
+> +#endif
+> +
+> +/*
+>   * Generate the paravirt code for queued_spin_unlock_slowpath().
+>   */
+>  #if !defined(_GEN_PV_LOCK_SLOWPATH) && defined(CONFIG_PARAVIRT_SPINLOCKS)
+> diff --git a/kernel/locking/qspinlock_cna.h b/kernel/locking/qspinlock_cna.h
+> new file mode 100644
+> index 000000000000..f983debf20bb
+> --- /dev/null
+> +++ b/kernel/locking/qspinlock_cna.h
+> @@ -0,0 +1,225 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +#ifndef _GEN_CNA_LOCK_SLOWPATH
+> +#error "do not include this file"
+> +#endif
+> +
+> +#include <linux/topology.h>
+> +
+> +/*
+> + * Implement a NUMA-aware version of MCS (aka CNA, or compact NUMA-aware lock).
+> + *
+> + * In CNA, spinning threads are organized in two queues, a main queue for
+> + * threads running on the same NUMA node as the current lock holder, and a
+> + * secondary queue for threads running on other nodes. Schematically, it
+> + * looks like this:
+> + *
+> + *    cna_node
+> + *   +----------+    +--------+        +--------+
+> + *   |mcs:next  | -> |mcs:next| -> ... |mcs:next| -> NULL      [Main queue]
+> + *   |mcs:locked|    +--------+        +--------+
+> + *   +----------+
+> + *             |   +--------+         +--------+
+> + *             +-> |mcs:next| -> ...  |mcs:next| -> NULL  [Secondary queue]
+> + *                 |cna:tail| -+      +--------+
+> + *                 +--------+  |        ^
+> + *                              +-------+
+> + *
+> + * N.B. locked = 1 if secondary queue is absent.
+> + *
+> + * At the unlock time, the lock holder scans the main queue looking for a thread
+> + * running on the same node. If found (call it thread T), all threads in the
+> + * main queue between the current lock holder and T are moved to the end of the
+> + * secondary queue, and the lock is passed to T. If such T is not found, the
+> + * lock is passed to the first node in the secondary queue. Finally, if the
+> + * secondary queue is empty, the lock is passed to the next thread in the
+> + * main queue. To avoid starvation of threads in the secondary queue,
+> + * those threads are moved back to the head of the main queue after a certain
+> + * expected number of intra-node lock hand-offs.
+> + *
+> + *
+> + * For more details, see https://arxiv.org/abs/1810.05600.
+> + *
+> + * Authors: Alex Kogan <alex.kogan@oracle.com>
+> + *          Dave Dice <dave.dice@oracle.com>
+> + */
+> +
+> +struct cna_node {
+> +	struct	mcs_spinlock mcs;
+> +	int	numa_node;
+> +	u32	encoded_tail;
+> +	struct	cna_node *tail;    /* points to the secondary queue tail */
 > +};
 > +
-> +static int arm_smc_mbox_probe(struct platform_device *pdev)
+> +static void __init cna_init_nodes_per_cpu(unsigned int cpu)
 > +{
-> +	struct device *dev = &pdev->dev;
-> +	struct mbox_controller *mbox;
-> +	struct arm_smc_chan_data *chan_data;
-> +	int ret;
-> +	u32 function_id = 0;
+> +	struct mcs_spinlock *base = per_cpu_ptr(&qnodes[0].mcs, cpu);
+> +	int numa_node = cpu_to_node(cpu);
+> +	int i;
 > +
-> +	if (of_device_is_compatible(dev->of_node, "arm,smc-mbox"))
-> +		invoke_smc_mbox_fn = __invoke_fn_smc;
-> +	else
-> +		invoke_smc_mbox_fn = __invoke_fn_hvc;
+> +	for (i = 0; i < MAX_NODES; i++) {
+> +		struct cna_node *cn = (struct cna_node *)grab_mcs_node(base, i);
 > +
-> +	mbox = devm_kzalloc(dev, sizeof(*mbox), GFP_KERNEL);
-> +	if (!mbox)
-> +		return -ENOMEM;
+> +		cn->numa_node = numa_node;
+> +		cn->encoded_tail = encode_tail(cpu, i);
+> +		/*
+> +		 * @encoded_tail has to be larger than 1, so we do not confuse
+> +		 * it with other valid values for @locked (0 or 1)
+> +		 */
+> +		WARN_ON(cn->encoded_tail <= 1);
+> +	}
+> +}
 > +
-> +	mbox->num_chans = 1;
-> +	mbox->chans = devm_kzalloc(dev, sizeof(*mbox->chans), GFP_KERNEL);
-> +	if (!mbox->chans)
-> +		return -ENOMEM;
+> +static void __init cna_init_nodes(void)
+> +{
+> +	unsigned int cpu;
 > +
-> +	chan_data = devm_kzalloc(dev, sizeof(*chan_data), GFP_KERNEL);
-> +	if (!chan_data)
-> +		return -ENOMEM;
+> +	BUILD_BUG_ON(sizeof(struct cna_node) > sizeof(struct qnode));
+> +	/* we store an ecoded tail word in the node's @locked field */
+> +	BUILD_BUG_ON(sizeof(u32) > sizeof(unsigned int));
 > +
-> +	of_property_read_u32(dev->of_node, "arm,func-id", &function_id);
-> +	chan_data->function_id = function_id;
+> +	for_each_possible_cpu(cpu)
+> +		cna_init_nodes_per_cpu(cpu);
+> +}
+> +early_initcall(cna_init_nodes);
 > +
-> +	mbox->chans->con_priv = chan_data;
+> +static inline bool cna_try_change_tail(struct qspinlock *lock, u32 val,
+> +				       struct mcs_spinlock *node)
+> +{
+> +	struct cna_node *succ;
+> +	u32 new;
 > +
-> +	mbox->txdone_poll = false;
-> +	mbox->txdone_irq = false;
+> +	/* If the secondary queue is empty, do what MCS does. */
+> +	if (node->locked <= 1)
+> +		return __try_clear_tail(lock, val, node);
+> +
+> +	/*
+> +	 * Try to update the tail value to the last node in the secondary queue.
+> +	 * If successful, pass the lock to the first thread in the secondary
+> +	 * queue. Doing those two actions effectively moves all nodes from the
+> +	 * secondary queue into the main one.
+> +	 */
+> +	succ = (struct cna_node *)decode_tail(node->locked);
+> +	new = succ->tail->encoded_tail + _Q_LOCKED_VAL;
+> +
+> +	if (atomic_try_cmpxchg_relaxed(&lock->val, &val, new)) {
+> +		arch_mcs_pass_lock(&succ->mcs.locked, 1);
+> +		return true;
+> +	}
+> +
+> +	return false;
+> +}
+> +
+> +/*
+> + * cna_splice_tail -- splice nodes in the main queue between [first, last]
+> + * onto the secondary queue.
+> + */
+> +static void cna_splice_tail(struct cna_node *cn, struct cna_node *first,
+> +			    struct cna_node *last)
+> +{
+> +	/* remove [first,last] */
+> +	cn->mcs.next = last->mcs.next;
+> +	last->mcs.next = NULL;
+> +
+> +	/* stick [first,last] on the secondary queue tail */
+> +	if (cn->mcs.locked <= 1) {	/* if secondary queue is empty */
+> +		/* create secondary queue */
+> +		first->tail = last;
+> +		cn->mcs.locked = first->encoded_tail;
+> +	} else {
+> +		/* add to the tail of the secondary queue */
+> +		struct cna_node *head_2nd =
+> +			(struct cna_node *)decode_tail(cn->mcs.locked);
+> +		head_2nd->tail->mcs.next = &first->mcs;
+> +		head_2nd->tail = last;
+> +	}
+> +}
+> +
+> +/*
+> + * cna_try_find_next - scan the main waiting queue looking for the first
+> + * thread running on the same NUMA node as the lock holder. If found (call it
+> + * thread T), move all threads in the main queue between the lock holder and
+> + * T to the end of the secondary queue and return T; otherwise, return NULL.
+> + *
+> + * Schematically, this may look like the following (nn stands for numa_node and
+> + * et stands for encoded_tail).
+> + *
+> + *     when cna_try_find_next() is called (the secondary queue is empty):
+> + *
+> + *  A+------------+   B+--------+   C+--------+   T+--------+
+> + *   |mcs:next    | -> |mcs:next| -> |mcs:next| -> |mcs:next| -> NULL
+> + *   |mcs:locked=1|    |cna:nn=0|    |cna:nn=2|    |cna:nn=1|
+> + *   |cna:nn=1    |    +--------+    +--------+    +--------+
+> + *   +----------- +
+> + *
+> + *     when cna_try_find_next() returns (the secondary queue contains B and C):
+> + *
+> + *  A+----------------+    T+--------+
+> + *   |mcs:next        | ->  |mcs:next| -> NULL
+> + *   |mcs:locked=B.et | -+  |cna:nn=1|
+> + *   |cna:nn=1        |  |  +--------+
+> + *   +--------------- +  |
+> + *                       |
+> + *                       +->  B+--------+   C+--------+
+> + *                             |mcs:next| -> |mcs:next|
+> + *                             |cna:nn=0|    |cna:nn=2|
+> + *                             |cna:tail| -> +--------+
+> + *                             +--------+
+> + *
+> + * The worst case complexity of the scan is O(n), where n is the number
+> + * of current waiters. However, the fast path, which is expected to be the
+> + * common case, is O(1).
+> + */
+> +static struct mcs_spinlock *cna_try_find_next(struct mcs_spinlock *node,
+> +					      struct mcs_spinlock *next)
+> +{
+> +	struct cna_node *cn = (struct cna_node *)node;
+> +	struct cna_node *cni = (struct cna_node *)next;
+> +	struct cna_node *first, *last = NULL;
+> +	int my_numa_node = cn->numa_node;
+> +
+> +	/* fast path: immediate successor is on the same NUMA node */
+> +	if (cni->numa_node == my_numa_node)
+> +		return next;
+> +
+> +	/* find any next waiter on 'our' NUMA node */
+> +	for (first = cni;
+> +	     cni && cni->numa_node != my_numa_node;
+> +	     last = cni, cni = (struct cna_node *)READ_ONCE(cni->mcs.next))
+> +		;
+> +
+> +	/* if found, splice any skipped waiters onto the secondary queue */
+> +	if (cni && last)
+> +		cna_splice_tail(cn, first, last);
+> +
+> +	return (struct mcs_spinlock *)cni;
+> +}
 
-Don't we need to provide something to confirm reception to the client? In our case we can set this as soon as the smc/hvc returns.
+At the Linux Plumbers Conference last week, Will has raised the concern
+about the latency of the O(1) cna_try_find_next() operation that will
+add to the lock hold time. One way to hide some of the latency is to do
+a pre-scan before acquiring the lock. The CNA code could override the
+pv_wait_head_or_lock() function to call cna_try_find_next() as a
+pre-scan and return 0. What do you think?
 
 Cheers,
-Andre.
-
-> +	mbox->ops = &arm_smc_mbox_chan_ops;
-> +	mbox->dev = dev;
-> +
-> +	platform_set_drvdata(pdev, mbox);
-> +
-> +	ret = devm_mbox_controller_register(dev, mbox);
-> +	if (ret)
-> +		return ret;
-> +
-> +	dev_info(dev, "ARM SMC mailbox enabled.\n");
-> +
-> +	return ret;
-> +}
-> +
-> +static int arm_smc_mbox_remove(struct platform_device *pdev)
-> +{
-> +	struct mbox_controller *mbox = platform_get_drvdata(pdev);
-> +
-> +	mbox_controller_unregister(mbox);
-> +	return 0;
-> +}
-> +
-> +static const struct of_device_id arm_smc_mbox_of_match[] = {
-> +	{ .compatible = "arm,smc-mbox", },
-> +	{ .compatible = "arm,hvc-mbox", },
-> +	{},
-> +};
-> +MODULE_DEVICE_TABLE(of, arm_smc_mbox_of_match);
-> +
-> +static struct platform_driver arm_smc_mbox_driver = {
-> +	.driver = {
-> +		.name = "arm-smc-mbox",
-> +		.of_match_table = arm_smc_mbox_of_match,
-> +	},
-> +	.probe		= arm_smc_mbox_probe,
-> +	.remove		= arm_smc_mbox_remove,
-> +};
-> +module_platform_driver(arm_smc_mbox_driver);
-> +
-> +MODULE_AUTHOR("Peng Fan <peng.fan@nxp.com>");
-> +MODULE_DESCRIPTION("Generic ARM smc mailbox driver");
-> +MODULE_LICENSE("GPL v2");
+Longman
 
 
 _______________________________________________
