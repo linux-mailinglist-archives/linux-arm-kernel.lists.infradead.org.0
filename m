@@ -2,71 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FC8DB55DE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 21:01:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6314FB55E4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 21:02:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N/hse2rHxsDQRgVAtfrt7pKoEQEeB6a18C2FeNKy0I0=; b=E24LZMXJ0qrvYg
-	N8dcBFcNPxcu3XlQn6h3PlLiwkTpHf/RqSValbf8edNzOkyrnyEB8oyUPn1GefmBomBZ+6ScFgZqk
-	Hnw2cOjKzYuSISa3qP4VbpKFp67Yz6oJnk0FhIkqBDdun1MaIY71b6CPjEEvkQT+bbo/7B4Lr8H9V
-	I8g+m3bNYyTlqQ271yldn6Ify+QBpy2kgDW9NxvUBKYlasBgnUbIioClBoWd+MY2GDIONmxrPj/mV
-	xIAxh63SzkKB2Bb+pV+FgxihrKYEgqjyXXFapTVQ/dzwyYh5UeCuKqLBMnYt3EFkvuLHTxwLXEoUP
-	zbZi5sWqJ2qPPiBApnjQ==;
+	List-Owner; bh=h4x2HjfMjK3yLl/REBkR6M6FTE4ZJYVjTYFCSqzZtow=; b=QI1mk5c2RPgtag
+	UjH5wrO+vPkaIQdoE6CVoXlZScAuuM1UXctcQTcxTBDdPj8XGNd78Mji9K2fH16T2RfzOO81jYX3r
+	++hmK0hWz+5ntw/5zK5rNsccwSxmR1n3VDzHnkKoO0ED0U+K1xfcQMdDrE+CLHDOLm6ict0bujQ3V
+	XxqKh6CS/Erps3HNsSRK0ZHnrVx8MGsi/RJfM4PYMWXQn4A89xb0ebimudnyXQ4wVWoqM4N4vM0Aq
+	g9Escxxy8Aefm4/U7bfjhhFQO/9h3uKJ6Lyo0TfTc0TjpVBtofIhGCrbGPWzocKvQEeZ17EZR17Hy
+	Vu23nIvuycWijsC98NQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAIit-0005oF-Dn; Tue, 17 Sep 2019 19:01:11 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
+	id 1iAIkT-0006h4-4b; Tue, 17 Sep 2019 19:02:49 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAIiQ-0005mQ-7Z; Tue, 17 Sep 2019 19:00:45 +0000
-Received: by mail-oi1-f195.google.com with SMTP id i185so3812042oif.9;
- Tue, 17 Sep 2019 12:00:41 -0700 (PDT)
+ id 1iAIjw-0006TP-WE
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 19:02:18 +0000
+Received: by mail-ot1-f65.google.com with SMTP id g25so4107831otl.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 17 Sep 2019 12:02:16 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=KMFOJxSDmNk+ep/uvhUIXWKVpfvuQM6FW+WcSok7HNU=;
- b=aYO/q9qD3OwiTovF0xHHax/3n2EfKQBLSVOxnoQlpLNdZg1OIRB/4huKB4aN9BFDaF
- 0MY00ZRyO8wBSCVtLB/Louez5bIi6eyQuHbpPR1wV1/lrA4vyFg5QxmVnp9g0JXTC3S1
- yvLpdzplMz3IL2qdFK4HzbloJlsop2ZlXcc5at9RKtYgDLVoi61q7xVvQI37ipP/h6Pn
- CclYFEeoJdRC2bkLHWG2AdJS6jvzCrEThHDd1W+BiRSlVCWVu66VcCoHz1Mpuptr7wwf
- uyWT+COijh3GefqG5SWaqlQRNs7HR75nGzqIJe090sLjOqpKJoh/iRL52RUlDxASPGEO
- RUAA==
-X-Gm-Message-State: APjAAAVQyvbFujPXVIsFJtp9juraP4/T85Z9bIxFCOjl+4mmiCijPCEM
- oREIJ7oVzXv9c+vNafa1OcV7cNQ=
-X-Google-Smtp-Source: APXvYqyPBAleJPJJgi/jVRhyloWkqDSvUnLKGRJvMyJRlfhxoL2QGkUKIRHmQ4g6WVCXP1CtVtoeVQ==
-X-Received: by 2002:aca:cd58:: with SMTP id d85mr4702733oig.119.1568746841223; 
- Tue, 17 Sep 2019 12:00:41 -0700 (PDT)
+ bh=QlvUu/7EAfaFx2gMfy9waFqB/50P6PISUPQGJqzue/s=;
+ b=Go1y2zqqZBAKEObbnWnaxJAWV9TuCZO9Y9Cy9cCoNbE0kTYlSazyFK8VSwjzpykX8x
+ Z4jfcn7e2AosxQO1BFrt+i/+SNdcYH38rjgbEv8D+JBZKWrHE8DwQoZ9iC+cIn7UQyXV
+ WgnOmg9yrmaxI85oor6RL7KlKOo6dkXeGpZraokETSRSzhTQZ3l8aa7O/stZ9izYWI6A
+ l6dMklgn3zGctWE4YFaO0S9Nb6Ol6TfmhqdVOU6ujIN/iRdlab8VgDryfmhIjw+XYVZy
+ T5lgjx/jrritHf671KnKz2njesBJtqBQwNm45bs47QZRru3bqH5vS0vWRt12N7TFh/Jx
+ bzmQ==
+X-Gm-Message-State: APjAAAXiK3uAYTy49mulzVfImyRJtfHHu0erIA/V8r3T2+duRZZnZ8y3
+ QzSLQaYtkNh2RY4YSQP6YA==
+X-Google-Smtp-Source: APXvYqy2Jk647wLh+T9cbKDUIIqeL8OFFmcgG7XrhimUWJ4jvaqNnTMnSFgdCnH83A+Rsx5xLe87bw==
+X-Received: by 2002:a9d:e92:: with SMTP id 18mr265396otj.321.1568746935862;
+ Tue, 17 Sep 2019 12:02:15 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id t8sm928029oic.46.2019.09.17.12.00.40
+ by smtp.gmail.com with ESMTPSA id k93sm964698otc.30.2019.09.17.12.02.15
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 17 Sep 2019 12:00:40 -0700 (PDT)
-Date: Tue, 17 Sep 2019 14:00:39 -0500
+ Tue, 17 Sep 2019 12:02:15 -0700 (PDT)
+Date: Tue, 17 Sep 2019 14:02:14 -0500
 From: Rob Herring <robh@kernel.org>
-To: Jerry-ch Chen <Jerry-Ch.chen@mediatek.com>
-Subject: Re: [RFC PATCH V3 1/3] dt-bindings: mt8183: Added FD dt-bindings
-Message-ID: <20190917190039.GA6553@bogus>
-References: <20190906101125.3784-1-Jerry-Ch.chen@mediatek.com>
- <20190906101125.3784-2-Jerry-Ch.chen@mediatek.com>
+To: Maxime Ripard <mripard@kernel.org>
+Subject: Re: [PATCH v3 2/2] ASoC: dt-bindings: Convert Allwinner A23 analog
+ codec to a schema
+Message-ID: <20190917190214.GA8947@bogus>
+References: <20190906151221.3148-1-mripard@kernel.org>
+ <20190906151221.3148-2-mripard@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190906101125.3784-2-Jerry-Ch.chen@mediatek.com>
+In-Reply-To: <20190906151221.3148-2-mripard@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_120042_267874_FA632C07 
-X-CRM114-Status: UNSURE (   9.15  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190917_120217_127620_164C1A1E 
+X-CRM114-Status: GOOD (  14.12  )
 X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
+ no trust [209.85.210.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -75,8 +77,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -90,31 +93,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: laurent.pinchart+renesas@ideasonboard.com, Rynn.Wu@mediatek.com,
- po-yang.huang@mediatek.com, Jerry-ch Chen <jerry-ch.chen@mediatek.com>,
- jungo.lin@mediatek.com, hans.verkuil@cisco.com, ck.hu@mediatek.com,
- frederic.chen@mediatek.com, linux-media@vger.kernel.org,
- devicetree@vger.kernel.org, sj.huang@mediatek.com, yuzhao@chromium.org,
- linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, Sean.Cheng@mediatek.com,
- srv_heupstream@mediatek.com, tfiga@chromium.org, christie.yu@mediatek.com,
- zwisler@chromium.org, lkml@metux.net
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ alsa-devel@alsa-project.org, Liam Girdwood <lgirdwood@gmail.com>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Mark Brown <broonie@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 6 Sep 2019 18:11:23 +0800, Jerry-ch Chen wrote:
-> From: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
+On Fri,  6 Sep 2019 18:12:21 +0300, Maxime Ripard wrote:
+> From: Maxime Ripard <maxime.ripard@bootlin.com>
 > 
-> This patch adds DT binding documentation for the Face Detection (FD)
-> unit of the Mediatek's mt8183 SoC.
+> The Allwinner A23 SoC and later have an embedded audio codec that uses a
+> separate controller to drive its analog part, which is supported in Linux,
+> with a matching Device Tree binding.
 > 
-> Signed-off-by: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
+> Now that we have the DT validation in place, let's convert the device tree
+> bindings for that controller over to a YAML schemas.
+> 
+> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+> 
 > ---
->  .../bindings/media/mediatek,mt8183-fd.txt     | 34 +++++++++++++++++++
->  1 file changed, 34 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/mediatek,mt8183-fd.txt
+> 
+> Changes from v2:
+>   - Use an enum instead of a oneOf for the compatibles
+> 
+> Changes from v1:
+>   - Fix subject prefix
+> ---
+>  .../allwinner,sun8i-a23-codec-analog.yaml     | 38 +++++++++++++++++++
+>  .../bindings/sound/sun8i-codec-analog.txt     | 17 ---------
+>  2 files changed, 38 insertions(+), 17 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun8i-a23-codec-analog.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
