@@ -2,56 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0218FB52F0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 18:28:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D2DC9B52FA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 18:32:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y3dxXMqfJhoCfys1WkKmFS++90UIim3J/NVHaaCneuE=; b=kZT830Q1oCj9px
-	WDuywvQisbeKJ3lA6zVOdLKTWT5i67ztViKR5YYaxz2DobRRRL6ap2gXNDZhvfMW8MpHNoX/nmZrc
-	C6Yx7zU42yOnLOx7xqLXr0ypjk4fuo0ab8CtYiWpVAjGcaHUehbDA4peXvK9q8at5zRSeQNA3u1RH
-	yMF9L0KjdLVZ6BOc3vT2UeK8hw1sFW8H//WR29lBV98a7dezVExC/QIXuLcQe1Ps2hYr7W7EAh1ID
-	eouNWuURwbYTzv+H8bTJKB4vo2GnkBFkBdyfpVoCPoAqmhndOEB9iiNctxWKKeV/AsXJ3qKMQ+N9B
-	5gbx+/uxeRTiHYD+mXnQ==;
+	List-Owner; bh=XYGaHL1PL6swrZnsgGDtuTdNIqj8MxVbmkvzbAwzgMc=; b=tmqmaoYR+lZ7qE
+	ui7xrSskGFgw6hFz3qDjprpkr3xVHZYda7e3ac8bzMk6QQx3ntANFOHs7602vVHsPMkywiru+esBS
+	sm2fZEJ3AWkU1NAPZ4TbrNft8ep7hZgZZE0HssOwbIf1ePdUEw5RmyAcVx3jRCsEQHSbV1sjXDOtN
+	JRD3zmrRGqgj94dZelFS9XAsSpBSztHH/L1jTR/dr61/Tp13KNTOw2Ah1HawJiQtgplheVEoX4UkG
+	d1FD/BybEMBASNCIX33tVe8ulX6dj66HoqE+eOvvUg5ryIamwcuvkIVuPwZUccXmcccomC9IiqF6L
+	dEnC7y+ZacL7fCPeayww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAGLC-0006yh-41; Tue, 17 Sep 2019 16:28:34 +0000
+	id 1iAGOy-00009f-UM; Tue, 17 Sep 2019 16:32:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAGKz-0006yL-2w
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 16:28:22 +0000
+ id 1iAGOm-000090-Db
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 16:32:18 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8DC542067B;
- Tue, 17 Sep 2019 16:28:20 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A838020665;
+ Tue, 17 Sep 2019 16:32:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568737700;
- bh=l7quzLRsCIpHwN0A+TZMRT7D5jR/Mzc/7HAgBvrpis4=;
+ s=default; t=1568737935;
+ bh=1806vm0d1S7XVNXelbimfQVWSh7JvueRU/sHh9YNbiw=;
  h=In-Reply-To:References:Cc:To:From:Subject:Date:From;
- b=UiQmuaoaNC66LbDhnM88aOLclzw05mgzmcHzK8EoL1wkHuzWznYddH5eoLOGqvKQ+
- TJxUYdgObC7SqGNzYoN7JtYKDJ4kEtTuC4GnNDYZPvTgzAv7GU0D6YZABnTaEc1r+e
- GUCSZLYiH/JoN5gzKYnKrHr0sxALVGM0O/J9m59c=
+ b=0XD7CRx+1osBMA4zjT/8TmoJe0X55eMamczxKoCew4bKMLIk/41z5gZxyf9kX/2S8
+ um24xOyvI1ebpkxiNyemF5ihma6sqIH+tEiT6/g0hnol6xPXVfJiIrm+YcUEM7rPHA
+ /gboF+03MuWamm3fquJWhPiY4MIqH5gwyYz77DYY=
 MIME-Version: 1.0
-In-Reply-To: <AM0PR04MB4481A31DD68C3C3409E95339888F0@AM0PR04MB4481.eurprd04.prod.outlook.com>
-References: <1568043491-20680-1-git-send-email-peng.fan@nxp.com>
- <AM0PR04MB4481A31DD68C3C3409E95339888F0@AM0PR04MB4481.eurprd04.prod.outlook.com>
-To: "festevam@gmail.com" <festevam@gmail.com>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, Peng Fan <peng.fan@nxp.com>
+In-Reply-To: <VI1PR04MB70239F26BE42AD5E6FC3639DEE8C0@VI1PR04MB7023.eurprd04.prod.outlook.com>
+References: <cover.1566315740.git.leonard.crestez@nxp.com>
+ <90bfeebcb76e76d286ed7f022ea9e0d9a569ebe2.1566315740.git.leonard.crestez@nxp.com>
+ <20190916203312.CF8D02067B@mail.kernel.org>
+ <VI1PR04MB70239F26BE42AD5E6FC3639DEE8C0@VI1PR04MB7023.eurprd04.prod.outlook.com>
+To: Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: RE: [PATCH V3 0/4] clk: imx8m: fix glitch/mux
+Subject: Re: [PATCH v2 1/7] clk: imx8m: Set CLK_GET_RATE_NOCACHE on
+ dram_alt/apb
 User-Agent: alot/0.8.1
-Date: Tue, 17 Sep 2019 09:28:19 -0700
-Message-Id: <20190917162820.8DC542067B@mail.kernel.org>
+Date: Tue, 17 Sep 2019 09:32:14 -0700
+Message-Id: <20190917163215.A838020665@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_092821_150114_F1148E06 
-X-CRM114-Status: UNSURE (   7.18  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190917_093216_500487_29D5B578 
+X-CRM114-Status: GOOD (  21.76  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,30 +79,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Jacky Bai <ping.bai@nxp.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Artur Świgoń <a.swigon@partner.samsung.com>, Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>, Michael Turquette <mturquette@baylibre.com>, Alexandre Bailon <abailon@baylibre.com>, "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>, Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>, Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>, MyungJoo Ham <myungjoo.ham@samsung.com>, dl-linux-imx <linux-imx@nxp.com>, "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>, "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>, Kyungmin Park <kyungmin.park@samsung.com>, "kernel@pengutronix.de" <kernel@pengutronix.de>, Fabio Estevam <fabio.estevam@nxp.com>, Georgi Djakov <georgi.djakov@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Peng Fan (2019-09-16 23:20:15)
-> Hi Stephen, Shawn,
+Quoting Leonard Crestez (2019-09-16 16:03:53)
+> On 2019-09-16 11:33 PM, Stephen Boyd wrote:
+> > Quoting Leonard Crestez (2019-08-20 08:45:06)
+> >> Dram frequency changes required modifying these clocks outside the
+> >> control of clk framework. Mark them as CLK_GET_RATE_NOCACHE so that
+> >> rates are always read back from registers.
+> > 
+> > Why can't we control the clks from the clk framework? Please add that
+> > information in the commit text here.
 > 
-> > Subject: [PATCH V3 0/4] clk: imx8m: fix glitch/mux
+> OK, I will update commit message and comments
 > 
-> Sorry to ping early. Is there a chance to land this patchset in 5.3 release?
+> These clocks are only modified for DRAM frequency switches during which 
+> DRAM is briefly inaccessible. The switch is performed with a SMC call to 
+> by TF-A which runs from a SRAM area. Upon returning to linux several 
+> clocks bits are modified and we need to update them.
 > 
+> For rate bits an easy solution is to just mark with 
+> CLK_GET_RATE_NOCACHE, muxes are handled explicitly.
 
-No, it won't be in 5.3 because that version is released. Shawn already
-sent the PR for 5.4 too so this will most likely be in v5.5 at the
-earliest.
+Is there any reason to expose or control these clks from Linux then? It
+might be easier to just make any children clks of the DRAM frequency clk
+"root" clks and then ignore any frequency that they might have.
+Similarly, because the SMC call is used to change the frequency, it may
+be simpler to handle that completely outside of the clk framework (it
+may already be this way in this patch series but I haven't read
+everything here).
+
+> 
+> Linux code performing the SMC call is also part of this series:
+> 
+>      https://patchwork.kernel.org/patch/11104145/
+> 
+> >> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> >> ---
+> >>   drivers/clk/imx/clk-imx8mm.c | 6 ++++--
+> >>   drivers/clk/imx/clk-imx8mn.c | 6 ++++--
+> >>   drivers/clk/imx/clk-imx8mq.c | 7 ++++---
+> >>   3 files changed, 12 insertions(+), 7 deletions(-)
+> >>
+> >> diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
+> >> index 4ead3ea2713c..6cac80550f43 100644
+> >> --- a/drivers/clk/imx/clk-imx8mm.c
+> >> +++ b/drivers/clk/imx/clk-imx8mm.c
+> >> @@ -526,12 +526,14 @@ static int imx8mm_clocks_probe(struct platform_device *pdev)
+> >>          /* IPG */
+> >>          clks[IMX8MM_CLK_IPG_ROOT] = imx_clk_divider2("ipg_root", "ahb", base + 0x9080, 0, 1);
+> >>          clks[IMX8MM_CLK_IPG_AUDIO_ROOT] = imx_clk_divider2("ipg_audio_root", "audio_ahb", base + 0x9180, 0, 1);
+> >>   
+> >>          /* IP */
+> >> -       clks[IMX8MM_CLK_DRAM_ALT] = imx8m_clk_composite("dram_alt", imx8mm_dram_alt_sels, base + 0xa000);
+> >> -       clks[IMX8MM_CLK_DRAM_APB] = imx8m_clk_composite_critical("dram_apb", imx8mm_dram_apb_sels, base + 0xa080);
+> >> +       clks[IMX8MM_CLK_DRAM_ALT] = __imx8m_clk_composite("dram_alt", imx8mm_dram_alt_sels, base + 0xa000,
+> >> +                       CLK_GET_RATE_NOCACHE);
+> >> +       clks[IMX8MM_CLK_DRAM_APB] = __imx8m_clk_composite("dram_apb", imx8mm_dram_apb_sels, base + 0xa080,
+> >> +                       CLK_IS_CRITICAL | CLK_GET_RATE_NOCACHE);
+> > 
+> > Also, add a comment to this effect about why it can't be done from the
+> > clk framework wherever the CLK_GET_RATE_NOCACHE flag is set. Basically
+> > this flag is a hack and is an example of something that we need to fix.
+> 
+> DRAM freq switch requires multiple clk changes to be performed 
+> atomically while DRAM itself is not accessible so it's not something to 
+> "fix".
+
+Ok. Fix may be the wrong word.
 
 
 _______________________________________________
