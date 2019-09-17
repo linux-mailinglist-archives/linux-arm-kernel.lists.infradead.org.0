@@ -2,72 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 537BEB5718
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 22:41:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 899A1B5723
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 22:47:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q+1BSa7xSfTf1YOJYVG8twhGaROGLEQzBy52ePG+4NA=; b=WW5ruzLPfE+jCE
-	zn8Gk6MWAFBzhH4oPn24Rh+wjI33pGv3vlI1JWCzerQXJzNkfPOTPujNTUf0Jd1LvGByvlPhDecJJ
-	RTuyVdwtSLUltkHb3SrdkDYV6jyMQ0v4qRNB3ob/GJlegSC84BoXwTBYLpzpglKGd/CibDDuyUfJ4
-	bfKow5vN1OciQTU7N0JAWSoZMYEL+TnfovM22XK/9DOVGfbc0Xsd74ZMT/a+dkcpcwt1i1iHNt8H9
-	PR1mQ4RfLyizWr6VAzPnxSil4fjnn7u2jQMXaVC6+T6VKeFcytUP/bvZWmW6tF1yRQI50xxT/sOpT
-	iwEpO8zlqQMz7n2PVDoQ==;
+	List-Owner; bh=ytRimmOgMkxE3VniblTEOaLwX3lAggmIzpDOGOh68ig=; b=sJxyWPugemxOu2
+	Ycgx9mjCCEkOBqDgisGrFWbVSysPJdl+IjnEEu7WTEz7WmF2DnqNlAHu+O0ZpAhdxh1ZobA0d56E3
+	D6vC1ukV5ydfkV/4brdlPRGG7GFZpeT38a6GlXxgw0PWjTq6wC2lp7Lh92pBGmsma3fR0Rtyhskph
+	xMQifwlHyp6oVdXDYkYXAdbl8aRyzpBeDia1VNkbmgk/WcDMcEsYLE4OXxrNilMzeBWdSNeMWfWpr
+	ciggfjXvyS3CE54qHEp6iakXN14Jhq6TaamL1k8yf+lv/9ZdCgEnsdZlSoTSWaMi3ZGPQ42Z1B+GH
+	PiTik768gf5GRGiAEKLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAKHT-00077x-6E; Tue, 17 Sep 2019 20:40:59 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iAKO5-0000NK-Ve; Tue, 17 Sep 2019 20:47:50 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAKHD-00077N-9A
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 20:40:44 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D69A52054F;
- Tue, 17 Sep 2019 20:40:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568752843;
- bh=zU0HD00NHDxc5VqtXTSUFWjVKlZEMVpOor9bnEEN6as=;
- h=In-Reply-To:References:Cc:To:From:Subject:Date:From;
- b=TzwJSuHtK9O6pP7iDKb0A8NndvJr/oVyOTYw79OI8o+5ptcNio8Fg80A43/+DW51X
- 20kK+6EbMB6P/91fBEOHZMMa2E8Zx1CsSN9/MYFlIPV9a3uSNdCuCA1dq/zHi3JOy1
- NqwnirYyqXr6FWANRBgstIYTO8N8yVvIpS/4X9zQ=
+ id 1iAKNk-0000LY-Sa; Tue, 17 Sep 2019 20:47:30 +0000
+Received: by mail-ot1-f66.google.com with SMTP id z26so4369221oto.1;
+ Tue, 17 Sep 2019 13:47:28 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=FoSYGBaKDzCX0ap+/LUel/1p6EkFjnJkCMtNziAAsIA=;
+ b=sX+V9CJJLr66mQGITFGPB96W4q0EyNTDVoax9SD3R7t+HtKt8Ir9Rkvy64iwLNGz1F
+ eywlLpiSwvmtDd8er6KKbzSwrY88/ERDczqjpX3MCVLFH2sldl+4pXW0yebhnrBjXUVj
+ Cjy3Dlzal9+7VstJVkcrangnYPVkcDfKoMLmULB+CnrM0DeMmkSaVCtLKhRUzTj4lO3x
+ XxykWcnbAB50oZtkoz2YHlQXhcwewUcuXcSRFhMYZs0H+89dO5vFL2oRj+GgH0uOWEW2
+ HEPOxHvfqDRyYNNzQqzSTaVfLUQjIVP5/j9Br/L3tniG2P1NmYaZOstnn6VWJhkcF7Qg
+ qbYA==
+X-Gm-Message-State: APjAAAVHHKo7q3X+Voxdacl/GEOuLrHPtteVdGrRhGa90I4GKE9vWGfM
+ Yx8hnzqGO+YCIr4WdmtwNfPB6nKiYA==
+X-Google-Smtp-Source: APXvYqz+B89UMDC9IY7k7wKv0ix99w6NLjJtzUmU9gXsyI/P+JljCrWHrrmyk4+rrKlIMXNQIZBZSg==
+X-Received: by 2002:a9d:829:: with SMTP id 38mr609273oty.372.1568753247649;
+ Tue, 17 Sep 2019 13:47:27 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id e7sm994561otp.64.2019.09.17.13.47.26
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 17 Sep 2019 13:47:26 -0700 (PDT)
+Date: Tue, 17 Sep 2019 15:47:25 -0500
+From: Rob Herring <robh@kernel.org>
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Subject: Re: [V2, 1/2] media: i2c: dw9768: Add DT support and MAINTAINERS entry
+Message-ID: <20190917204725.GA14339@bogus>
+References: <20190905072142.14606-1-dongchun.zhu@mediatek.com>
+ <20190905072142.14606-2-dongchun.zhu@mediatek.com>
+ <20190905101406.GA2680@smile.fi.intel.com>
+ <20190905104829.GB5475@paasikivi.fi.intel.com>
+ <20190905113509.GD2680@smile.fi.intel.com>
+ <CABxcv=knP+-x0O-Ga-Dy8WTNovHk6GfX4ZEv0vVjnQvwchuVzg@mail.gmail.com>
+ <20190905120012.GD5475@paasikivi.fi.intel.com>
+ <20190905122449.GG2680@smile.fi.intel.com>
 MIME-Version: 1.0
-In-Reply-To: <20190916161447.32715-4-manivannan.sadhasivam@linaro.org>
-References: <20190916161447.32715-1-manivannan.sadhasivam@linaro.org>
- <20190916161447.32715-4-manivannan.sadhasivam@linaro.org>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- mturquette@baylibre.com, robh+dt@kernel.org
-From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH v5 3/8] clk: Add clk_hw_unregister_composite helper
- function definition
-User-Agent: alot/0.8.1
-Date: Tue, 17 Sep 2019 13:40:42 -0700
-Message-Id: <20190917204042.D69A52054F@mail.kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20190905122449.GG2680@smile.fi.intel.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_134043_336699_EE282FC0 
-X-CRM114-Status: UNSURE (   6.70  )
+X-CRM114-CacheID: sfid-20190917_134728_927213_92AC8533 
+X-CRM114-Status: UNSURE (   9.50  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.66 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,27 +97,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- darren.tsao@bitmain.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, fisher.cheng@bitmain.com,
- alec.lin@bitmain.com, linux-clk@vger.kernel.org, haitao.suo@bitmain.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ drinkcat@chromium.org, srv_heupstream@mediatek.com, sam.hung@mediatek.com,
+ shengnan.wang@mediatek.com, Tomasz Figa <tfiga@chromium.org>,
+ sj.huang@mediatek.com, linux-mediatek@lists.infradead.org,
+ dongchun.zhu@mediatek.com, Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, bingbu.cao@intel.com,
+ Javier Martinez Canillas <javier@dowhile0.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Manivannan Sadhasivam (2019-09-16 09:14:42)
-> This function has been delcared but not defined anywhere. Hence, this
-> commit adds definition for it.
+On Thu, Sep 05, 2019 at 03:24:49PM +0300, Andy Shevchenko wrote:
+> On Thu, Sep 05, 2019 at 03:00:12PM +0300, Sakari Ailus wrote:
 > 
-> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> ---
+> > And I see no reason to add a separate patch just for
+> > MAINTAINERS change.
+> 
+> It's up to maintainers of the subsystem.
 
-Can you add a fixes tag?
+Just update MAINTAINERS with the driver. It doesn't need to be so 
+complicated or per subsystem. There's enough of what each maintainer 
+wants already.
 
-Fixes: 49cb392d3639 ("clk: composite: Add hw based registration APIs")
-
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
