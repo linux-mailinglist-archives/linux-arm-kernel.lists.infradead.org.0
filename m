@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B791BB45B7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 04:58:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC0F2B45B8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 04:58:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=82QiPIMQA8omKF/I8bj+WbzKp3c6Gr/YJ8OvJhCn69o=; b=AVaS+VM50EOoVksc2sDoLKAyJe
-	V0EE1M+gGehd1+RbHNts/gQ66hS07Ay7X2dBfrPcfWO48PfMdMps9IYoi9N/aLGOvlm95Ukosw0MS
-	d0MYAIBobBwHj5Le1YY1AcI3zw87SaAmnZ9TDUG0qZmRxJoJ5DCBMpgIkK1x7IFoVkzkZCMjDir3T
-	asQhFTZNbXjS8wdGqefohnJXNecVravvdgerSGQWFh9re2ZLVBlz/ioWT7f293M/6211A6wMb1YB0
-	9DDGjpT57M8Ht+tqi88fUc1QlKBE0u/Qs1E46/0d1Ri9xAjyUGnFKvuobVa4ec8U8na2IjouM3yVd
-	U2FdFE9w==;
+	bh=ymTJu/435/MpN3BSdeaHL7Jgdbc3FUf/xMe4KXZHVqE=; b=dKbyoyOW1R2wQhbTBLumydwz8J
+	f+jz6n+0IorihI5IlFsqFM/lVat+U5y2PnPuCzWrVetcUTYOsB0n+TWzwh0UigMgHrCW+Q0KpM+s+
+	M5FGuiioO9p40h7uOJ6YIe5aGDS0D3SqzZ+VkSfmgjhxTKwefOlzvHIj3Fyho3FPSPxTijIMVW2w/
+	m/lDPOjxM0stZGeE9W3ulPzwCOUW7KuF0G8+J9mGocrRtm+3RXcR9ZzIwYLgRXCnYE4aYVm/cCJxU
+	+5GDHc9b1ZYKD9RLGAQNBkfyc1Kok+VppEaMxvFU1j51iOBZjWwrjnFXpyYlxIQ2zQVF7MT7xDp3o
+	YpzzNj4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iA3h3-0000GY-Jj; Tue, 17 Sep 2019 02:58:17 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1iA3hJ-0000Vn-UD; Tue, 17 Sep 2019 02:58:34 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iA3gE-0008F9-5Q
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 02:57:27 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id F2280200637;
- Tue, 17 Sep 2019 04:57:24 +0200 (CEST)
+ id 1iA3gH-0008Hr-Mf
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 02:57:31 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 767561A0B06;
+ Tue, 17 Sep 2019 04:57:28 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1EA9820063C;
- Tue, 17 Sep 2019 04:57:03 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 41B061A0607;
+ Tue, 17 Sep 2019 04:57:07 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 15146402AD;
- Tue, 17 Sep 2019 10:56:50 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id E1580402A6;
+ Tue, 17 Sep 2019 10:56:52 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
@@ -49,16 +49,16 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  m.felsch@pengutronix.de, ping.bai@nxp.com, ronald@innovation.ch,
  stefan@agner.ch, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-input@vger.kernel.org
-Subject: [PATCH V5 3/5] arm64: dts: imx8qxp: Add scu key node
-Date: Tue, 17 Sep 2019 10:55:37 +0800
-Message-Id: <1568688939-13649-3-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V5 4/5] arm64: dts: imx8qxp-mek: Enable scu key
+Date: Tue, 17 Sep 2019 10:55:38 +0800
+Message-Id: <1568688939-13649-4-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1568688939-13649-1-git-send-email-Anson.Huang@nxp.com>
 References: <1568688939-13649-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_195726_364952_6BCC966D 
-X-CRM114-Status: UNSURE (   7.13  )
+X-CRM114-CacheID: sfid-20190916_195729_914847_15579961 
+X-CRM114-Status: UNSURE (   5.80  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -66,7 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -87,41 +87,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add scu key node for i.MX8QXP, disabled by default as it
-depends on board design.
+Enable scu key for i.MX8QXP MEK board.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
 No changes.
 ---
- arch/arm64/boot/dts/freescale/imx8qxp.dtsi | 7 +++++++
- 1 file changed, 7 insertions(+)
+ arch/arm64/boot/dts/freescale/imx8qxp-mek.dts | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-index 1133b41..71e38c1 100644
---- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-@@ -8,6 +8,7 @@
- #include <dt-bindings/clock/imx8-clock.h>
- #include <dt-bindings/firmware/imx/rsrc.h>
- #include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/pinctrl/pads-imx8qxp.h>
- 
-@@ -174,6 +175,12 @@
- 			#power-domain-cells = <1>;
- 		};
- 
-+		scu_key: scu-key {
-+			compatible = "fsl,imx8qxp-sc-key", "fsl,imx-sc-key";
-+			linux,keycode = <KEY_POWER>;
-+			status = "disabled";
-+		};
+diff --git a/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts b/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
+index 1946805..88dd9132 100644
+--- a/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
++++ b/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
+@@ -234,3 +234,7 @@
+ &adma_dsp {
+ 	status = "okay";
+ };
 +
- 		rtc: rtc {
- 			compatible = "fsl,imx8qxp-sc-rtc";
- 		};
++&scu_key {
++	status = "okay";
++};
 -- 
 2.7.4
 
