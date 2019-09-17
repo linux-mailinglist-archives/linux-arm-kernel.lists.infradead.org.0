@@ -2,72 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3FD1B4E91
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 14:55:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81DEDB4EB4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 15:04:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pdUr/oqueQdpCnlNRJ7gyXoywWJVIj1s9FKadEZqYQ8=; b=NpazRNXWjiki/d
-	4f7+x475oKHOcoO5hLNjTIxPwrGqjhnP6zpxAEFO3M5cr20btAaFd4V95tb9XQP0byNwk4kBR9XnF
-	4/W8WqDOE/KDNm1TK2ifoGtFVEs+/XT1VWCWWsQo2FDu6TfdhHKdFzS9rm9llpj8H4T17Q1gm0e4F
-	0XnJBrZNL4dnFvsJMq2CIG7/eBYChnbGjhgHWjLPAqdsfizzN7I5f78/hriVmhk/iZTf+K1EJ+NPR
-	gQDUn9YvCPC8gYD+VuqNTRbKjRsBCUzFvB2JaryUN5vpw4QWHR+Rtyb+ma2+RhSc76wLu+keg7aMc
-	WGkK5phiQL4dQgY5niow==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vfKZNLfCsa7OMtNSINo46ZxbHHuEHLi7lkfjo/JV4eU=; b=R03Vm6gDcT/fxkp0/D12SJVy6
+	Gt6AAjn0JEFlxY5Db86xMz8JDe4rXN9nKhX3nRVfxgSlnveMVKqj2FZsKn8g48+LC1PlTg0xi9+X4
+	u891IKEYSMF1JZYiO79CnFnsH5RzwT1kcvIco3aRVRo9sMM7pJV0Q95DikmpGVSB3h5ojyjjK+u7D
+	7egDeQB8EIcJe8+vagOop355aBcsfZJ5cwomWb/VkvxjHkBbUOjWhrGSS1HYsh53iIU5a5fDKbI5Y
+	C8OHLZkDP6Tm+D0UJUINucnYcQvBV544MrGiyEN2ae2Indnb++RgCiD7vayK1KV64BuN/CfRAMHVJ
+	CqyktLQzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAD0t-0002t1-2K; Tue, 17 Sep 2019 12:55:23 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAD0K-0002sV-9P
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 12:54:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=53HEgi+72KwpP9sgsXsDmzVZkyS10sCz71cZFT+AAfk=; b=Hv2zeqGHZl58IobfJJXo7ZMRQ4
- 32JsM7SK/VJ2h1fe0KuOAIZdw2fZ4U8nin5av2mdlNwqSITfVtkzlY5EQJ/4dM4c0hCNrbIGh19J8
- HclRUpAbE1miLccGX+a0F6uJ996GQ7Yt01oaFVLT61v7hBgxoGDbAfEY6jfkLHxJSiA8=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
- (envelope-from <andrew@lunn.ch>)
- id 1iAD06-0000w9-Vu; Tue, 17 Sep 2019 14:54:34 +0200
-Date: Tue, 17 Sep 2019 14:54:34 +0200
-From: Andrew Lunn <andrew@lunn.ch>
-To: tinywrkb <tinywrkb@gmail.com>
-Subject: Re: [PATCH] ARM: dts: imx6dl: SolidRun: add phy node with 100Mb/s
- max-speed
-Message-ID: <20190917125434.GH20778@lunn.ch>
-References: <20190910155507.491230-1-tinywrkb@gmail.com>
- <20190910185033.GD9761@lunn.ch> <87muf6oyvr.fsf@tarshish>
- <20190915135652.GC3427@lunn.ch>
- <20190917124101.GA1200564@arch-dsk-01>
+	id 1iAD8v-00069s-Bj; Tue, 17 Sep 2019 13:03:43 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iAD8W-00064M-0e
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 13:03:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 535241000;
+ Tue, 17 Sep 2019 06:03:10 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A05543F67D;
+ Tue, 17 Sep 2019 06:03:09 -0700 (PDT)
+Subject: Re: [REGRESSION] sdhci no longer detects SD cards on LX2160A
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Adrian Hunter <adrian.hunter@intel.com>, Will Deacon <will.deacon@arm.com>
+References: <20190916171509.GG25745@shell.armlinux.org.uk>
+ <b19a0640-5d71-a005-eb0f-c6840f181e5d@free.fr>
+ <20190917081931.GI25745@shell.armlinux.org.uk>
+ <20190917104200.GJ25745@shell.armlinux.org.uk>
+ <20190917111631.GL25745@shell.armlinux.org.uk>
+ <20190917114210.GM25745@shell.armlinux.org.uk>
+ <20190917123326.GN25745@shell.armlinux.org.uk>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <1406d22f-fd2e-f101-3efb-63cc52e9ac5f@arm.com>
+Date: Tue, 17 Sep 2019 14:03:04 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190917124101.GA1200564@arch-dsk-01>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <20190917123326.GN25745@shell.armlinux.org.uk>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_055448_483060_ACD94754 
-X-CRM114-Status: GOOD (  21.16  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190917_060316_129515_E1B91EDC 
+X-CRM114-Status: GOOD (  19.24  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,85 +68,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Baruch Siach <baruch@tkos.co.il>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Russell King <linux@armlinux.org.uk>, open list <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-mmc@vger.kernel.org, Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 17, 2019 at 03:41:01PM +0300, tinywrkb wrote:
-> On Sun, Sep 15, 2019 at 03:56:52PM +0200, Andrew Lunn wrote:
-> > > Tinywrkb confirmed to me in private communication that revert of
-> > > 5502b218e001 fixes Ethernet for him on effected system.
-> > > 
-> > > He also referred me to an old Cubox-i spec that lists 10/100 Ethernet
-> > > only for i.MX6 Solo/DualLite variants of Cubox-i. It turns out that
-> > > there was a plan to use a different 10/100 PHY for Solo/DualLite
-> > > SOMs. This plan never materialized. All SolidRun i.MX6 SOMs use the same
-> > > AR8035 PHY that supports 1Gb.
-> > > 
-> > > Commit 5502b218e001 might be triggering a hardware issue on the affected
-> > > Cubox-i. I could not reproduce the issue here with Cubox-i and a Dual
-> > > SOM variant running v5.3-rc8. I have no Solo/DualLite variant handy at
-> > > the moment.
-> > 
-> > Could somebody with an affected device show us the output of ethtool
-> > with and without 5502b218e001. Does one show 1G has been negotiated,
-> > and the other 100Mbps? If this is true, how does it get 100Mbps
-> > without that patch? We are missing a piece of the puzzle.
-> > 
-> > 	Andrew
+On 17/09/2019 13:33, Russell King - ARM Linux admin wrote:
+[...]
+> Further debug shows:
 > 
-> linux-test-5.1rc1-a2703de70942-without_bad_commit
+> coherent=0 - sdhci device is not cache coherent
+> swapper pgtable: 4k pages, 39-bit VAs, pgdp=0000000081cac000
+> [ffffff8010fd5200] pgd=000000237ffff003, pud=000000237ffff003,
+> pmd=000000237fffb003, pte=00e800236d62270f
 > 
-> Settings for eth0:
-> 	Supported ports: [ TP MII ]
-> 	Supported link modes:   10baseT/Half 10baseT/Full
-> 	                        100baseT/Half 100baseT/Full
-> 	                        1000baseT/Full
+> The mapping for the ADMA table seems to be using MAIR index 3, which is
+> MT_MEMORY_NC, so should be non-cacheable.
+> 
+> vmallocinfo:
+> 0xffffff8010fd5000-0xffffff8010fd7000    8192 dma_direct_alloc+0x4c/0x54
+> user
+> 
+> So this memory has been remapped.  Could there be an alias that has
+> cache lines still in the cache for the physical address, and could we
+> be hitting those cache lines while accessing through a non-cacheable
+> mapping?  (On 32-bit ARM, this is "unpredictable" and this problem
+> definitely _feels_ like it has unpredictable attributes!)
+> 
+> Also, given that this memory is mapped NC, then surely
+> __dma_flush_area() should have no effect?  However, it _does_ have the
+> effect of reliably solving the problem, which to me implies that there
+> _are_ cache lines in this NC mapping.
 
-So this means the local device says it can do 1000Mbps.
+The non-cacheable mapping of the descriptor table will still have its 
+cacheable linear map alias, so it's quite likely that the invalidate 
+aspect of __dma_flush_area(), rather than the clean, is what's making 
+the difference - if using __dma_clean_area() instead doesn't help, it 
+would more or less confirm that.
 
+One possibility in that case is that you might actually have the rare 
+backwards coherency problem - if the device *is* actually snooping the 
+cache, then it could hit lines which were speculatively prefetched via 
+the cacheable alias before the descriptors were fully written, rather 
+than the up-to-date data which went straight to RAM via the NC mapping. 
+I'd try declaring the device as "dma-coherent" to see if that's actually 
+true (and it should become pretty obvious if it isn't).
 
-> 	Supported pause frame use: Symmetric
-> 	Supports auto-negotiation: Yes
-> 	Supported FEC modes: Not reported
-> 	Advertised link modes:  10baseT/Half 10baseT/Full
-> 	                        100baseT/Half 100baseT/Full
-> 	                        1000baseT/Full
-
-The link peer can also do 1000Mbps.
-
-
-> 	Advertised pause frame use: Symmetric
-> 	Advertised auto-negotiation: Yes
-> 	Advertised FEC modes: Not reported
-> 	Link partner advertised link modes:  10baseT/Half 10baseT/Full
-> 	                                     100baseT/Half 100baseT/Full
-> 	                                     1000baseT/Full
-> 	Link partner advertised pause frame use: Symmetric
-> 	Link partner advertised auto-negotiation: Yes
-> 	Link partner advertised FEC modes: Not reported
-> 	Speed: 100Mb/s
-
-Yet they have decided to do 100Mbps. 
-
-We need to understand Why? The generic PHY driver would not do this on
-its own. So i'm thinking something has poked a PHY register with some
-value, and this patch is causing it to be over written.
-
-Please can you use mii-tool -v -v to dump the PHY registers in each
-case.
-
-Thanks
-	Andrew
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
