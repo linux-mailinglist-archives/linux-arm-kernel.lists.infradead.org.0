@@ -2,78 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0704B4E07
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 14:40:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EDB6B4E0E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 14:41:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4Uq4GU2UjZMi6ceKjcEBsvKgq32IGtuxbxai+0p+Py0=; b=Z0Bniqjoh545PE
-	CQlEvalTB6uAyOAdA6l3na7mNA2WkG0umInVKR/wIzzqhc6Q68SUycer6xm+mHssoAeE373vmPC5L
-	qDIsq2BxY3YkJwvegyx+CYHhHj9JGo9dPGMkhsHf5fa6QEim48OwcS9fqzac1a5+2X9TBYdsUjiK4
-	BfNDhX0UAPLjH2RAfS6Gh181En5X4hAsKMVNK8Le3kwmooKynCmBNS/xV98pOCt11CIzuhGiZk3Lb
-	lXrBl5S/ExLDuVM/u2hu6WPpOQwtLVM3BmHc4gDkR29HuENqDDR4x5IXeCc8FVQ3Hsbu5a/zE1ENT
-	J66bxK5h8ll0I9Wplfrg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Y4OAPSnDhov4zxheICpuKPxqx6YhHLgPeJsMd3OQoRc=; b=EfISeSr1HhgAjL
+	SyZw1Z7eGACmVF1HKCCu9B7ebA/BQrJc8tEI0AxnBwB/E6vrXsWlm3Gypbd9dn3Rh3gZe8lLAACru
+	kerbXD8PJiGImttzweA5HPWn3HRqCfe4R5KfVCuSGwnMZm02z5O/jXMvOL9QF7MeJ18O6TOIICSsr
+	zLCqunRzl6+HRFfXPkvxqLtGVZ/fBkJIFXtGWe6+HeVjR6IUsM7UO18pKyqx53QoCeQDgVt6ect5s
+	av4KWOmZtrU+L2N9ycSVDGz7sCeu282PsvHUaPRgsTfVNfmIATJRfIIQPCI5nyAmots1vBFchwxqO
+	gS4F30PNBwt3Vp6TcgYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iACmt-0004aO-2u; Tue, 17 Sep 2019 12:40:55 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iACnY-0004xb-KW; Tue, 17 Sep 2019 12:41:36 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iACky-0002i8-2V
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 12:38:58 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x8HCVred000451; Tue, 17 Sep 2019 14:38:42 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=cOyzcoGBpVBGscxdizJshAfCpisInpaxvUv0kh4n7UA=;
- b=hs8Q69x5uVUWDQzS2+p3YDWMe3MHcsv37AZeQ3/0xoguP34cw7Za/Do82lGa69wlPong
- X8Spmagds8nN6KBS31/XpP1tvHJK6x+gGpB3fOtQw20MFfwiJloVOZrxG5ykp4NoOfS8
- /le8tsuXyZhJXCptBSWxeYMui10Wgpufzu9EtEdqlXDLFrxGt9Gyi0GrgqVisvDIxsOS
- jtm71AHG6V1jp3snHSjYWxyg19leJI/8yKsbnPNBIifPWYmNdwYMOfQGdbMQA9gQmAs4
- RoD5bv5Rqg0HESvBG5rafAEhSb35U+wgxG6Y4Y0VkB5xcIUNb+hAiEmVpbrGITiJ+smP lA== 
-Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
- by mx08-00178001.pphosted.com with ESMTP id 2v0nb9hpgw-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Tue, 17 Sep 2019 14:38:42 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 5491C23;
- Tue, 17 Sep 2019 12:38:34 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A1C7C2BDA7E;
- Tue, 17 Sep 2019 14:38:33 +0200 (CEST)
-Received: from SAFEX1HUBCAS22.st.com (10.75.90.92) by Safex1hubcas24.st.com
- (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 17 Sep
- 2019 14:38:33 +0200
-Received: from localhost (10.48.1.232) by Webmail-ga.st.com (10.75.90.48) with
- Microsoft SMTP Server (TLS) id 14.3.439.0;
- Tue, 17 Sep 2019 14:38:33 +0200
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-To: <jic23@kernel.org>
-Subject: [PATCH v2 0/2] iio: stm32-adc: fix a race with dma and irq
-Date: Tue, 17 Sep 2019 14:38:14 +0200
-Message-ID: <1568723896-19063-1-git-send-email-fabrice.gasnier@st.com>
-X-Mailer: git-send-email 2.7.4
+ id 1iACn6-0004wm-So
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 12:41:10 +0000
+Received: by mail-wm1-x343.google.com with SMTP id i16so1071905wmd.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 17 Sep 2019 05:41:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=hizZUkt1pzmfDFqDUimEMS3PJpFvJvmdnN9QD85tRVM=;
+ b=X9e9dUfyzDIoV4U69QseZamZAgKxMmLIaoLCWyNx0hTzBrMyyTjMkMKurBqovIeNTS
+ WX/oEaHYwaP8gfR9vIYmNYzwEjXsqPtlnycJGjwEYtYrTYtZlSw2SCR5hczHezThxAh9
+ +u1L1QBvKxdiN2N1j/YZ6KkKeYij6iImID0xsU9pCL5FC5797qFOafPzymy3hq3t98eO
+ 658Gq1/kg2JeImRN8m4axwOpiz+hzqLbIkaPfh8bj+yrlzeL3jdy5RNbSnk4UAJYym7f
+ U7wR81GHO4mmeyYr4VQdle/WpnrfI9hS0wfUUEmaz2ITlS2NpKttj6742dNnPwQu/xQC
+ fTKw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=hizZUkt1pzmfDFqDUimEMS3PJpFvJvmdnN9QD85tRVM=;
+ b=Tz0yNNNs2XJM/HURWlDOlw6cxTwjDAsp2uc1C0c9IkyMifpJvaMhCxVhT3FE97OVtj
+ aZLy1dkjb5dlVypKRzqAwsw+t3S5brucGU4VPs2Es4nn2wNWvMp6dH2bGOUUTvWcI5br
+ zLxXgH1751wShSj2MwfQWW3FI3Lnlwhd9BTiBC6Jopsl1FPDPll/JwOxqYuWQAp/GXiQ
+ kQwL1nJPhJyOKSFrW6Il/3q1vqOxPa+Kz31xbWvPppraQUYpNE0LCaqKlQvPZ6t8LDix
+ Rq/k15SslbWZ4PBk1Vm6j57AaIxcBmIqhFns4iB47c+V/V9glItT7+apxfF7w5rTKJT8
+ TwYw==
+X-Gm-Message-State: APjAAAUcP5dl5l8KZY+u34ds0nZA2KUKbhc7lAK4waeKPkWoNhxhphbb
+ SfAhAepk4m6OfJr4KP1IzrU=
+X-Google-Smtp-Source: APXvYqy/b7DVG3Z9S8Z/BN1kZJ9gToybyr+XK7b/m/1rgoyXfsEG2M/d2AwWBfbbiwWDWG8H/T4Fqg==
+X-Received: by 2002:a1c:e916:: with SMTP id q22mr3480658wmc.15.1568724067177; 
+ Tue, 17 Sep 2019 05:41:07 -0700 (PDT)
+Received: from arch-dsk-01 ([77.126.41.65])
+ by smtp.gmail.com with ESMTPSA id u10sm4513324wrg.55.2019.09.17.05.41.05
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 17 Sep 2019 05:41:06 -0700 (PDT)
+Date: Tue, 17 Sep 2019 15:41:01 +0300
+From: tinywrkb <tinywrkb@gmail.com>
+To: Andrew Lunn <andrew@lunn.ch>
+Subject: Re: [PATCH] ARM: dts: imx6dl: SolidRun: add phy node with 100Mb/s
+ max-speed
+Message-ID: <20190917124101.GA1200564@arch-dsk-01>
+References: <20190910155507.491230-1-tinywrkb@gmail.com>
+ <20190910185033.GD9761@lunn.ch> <87muf6oyvr.fsf@tarshish>
+ <20190915135652.GC3427@lunn.ch>
 MIME-Version: 1.0
-X-Originating-IP: [10.48.1.232]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
- definitions=2019-09-17_06:2019-09-17,2019-09-17 signatures=0
+Content-Disposition: inline
+In-Reply-To: <20190915135652.GC3427@lunn.ch>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_053856_402017_9F5B02EF 
-X-CRM114-Status: GOOD (  11.01  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190917_054108_953288_68C34479 
+X-CRM114-Status: GOOD (  17.32  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (tinywrkb[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -92,37 +102,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lars@metafoo.de, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
- pmeerw@pmeerw.net, linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- knaack.h@gmx.de, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Baruch Siach <baruch@tkos.co.il>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Russell King <linux@armlinux.org.uk>, open list <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series fixes a race condition observed when using several ADCs with DMA
-and irq.
-There's a precusor patch to the fix. It keeps registers definitions as a whole
-block, to ease readability and allow simple (readl) access path to EOC bits in
-stm32-adc-core driver.
+On Sun, Sep 15, 2019 at 03:56:52PM +0200, Andrew Lunn wrote:
+> > Tinywrkb confirmed to me in private communication that revert of
+> > 5502b218e001 fixes Ethernet for him on effected system.
+> > 
+> > He also referred me to an old Cubox-i spec that lists 10/100 Ethernet
+> > only for i.MX6 Solo/DualLite variants of Cubox-i. It turns out that
+> > there was a plan to use a different 10/100 PHY for Solo/DualLite
+> > SOMs. This plan never materialized. All SolidRun i.MX6 SOMs use the same
+> > AR8035 PHY that supports 1Gb.
+> > 
+> > Commit 5502b218e001 might be triggering a hardware issue on the affected
+> > Cubox-i. I could not reproduce the issue here with Cubox-i and a Dual
+> > SOM variant running v5.3-rc8. I have no Solo/DualLite variant handy at
+> > the moment.
+> 
+> Could somebody with an affected device show us the output of ethtool
+> with and without 5502b218e001. Does one show 1G has been negotiated,
+> and the other 100Mbps? If this is true, how does it get 100Mbps
+> without that patch? We are missing a piece of the puzzle.
+> 
+> 	Andrew
 
----
-Changes in v2:
-- Add a precursor patch to follow Jonathan's comment on readability
+linux-test-5.1rc1-a2703de70942-without_bad_commit
 
-Fabrice Gasnier (2):
-  iio: adc: stm32-adc: move registers definitions
-  iio: adc: stm32-adc: fix a race when using several adcs with dma and
-    irq
+Settings for eth0:
+	Supported ports: [ TP MII ]
+	Supported link modes:   10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	                        1000baseT/Full
+	Supported pause frame use: Symmetric
+	Supports auto-negotiation: Yes
+	Supported FEC modes: Not reported
+	Advertised link modes:  10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	                        1000baseT/Full
+	Advertised pause frame use: Symmetric
+	Advertised auto-negotiation: Yes
+	Advertised FEC modes: Not reported
+	Link partner advertised link modes:  10baseT/Half 10baseT/Full
+	                                     100baseT/Half 100baseT/Full
+	                                     1000baseT/Full
+	Link partner advertised pause frame use: Symmetric
+	Link partner advertised auto-negotiation: Yes
+	Link partner advertised FEC modes: Not reported
+	Speed: 100Mb/s
+	Duplex: Full
+	Port: MII
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: on
+	Supports Wake-on: d
+	Wake-on: d
+	Link detected: yes
 
- drivers/iio/adc/stm32-adc-core.c |  70 +++++++++++---------
- drivers/iio/adc/stm32-adc-core.h | 137 +++++++++++++++++++++++++++++++++++++++
- drivers/iio/adc/stm32-adc.c      | 109 -------------------------------
- 3 files changed, 177 insertions(+), 139 deletions(-)
+journalctl -b | egrep -i 'phy|eth|fec'|grep -v usb
+kernel: Booting Linux on physical CPU 0x0
+kernel: libphy: Fixed MDIO Bus: probed
+kernel: libphy: fec_enet_mii_bus: probed
+kernel: fec 2188000.ethernet eth0: registered PHC device 0
+kernel: dwhdmi-imx 120000.hdmi: Detected HDMI TX controller v1.31a with HDCP (DWC HDMI 3D TX PHY)
+kernel: Generic PHY 2188000.ethernet-1:00: attached PHY driver [Generic PHY] (mii_bus:phy_addr=2188000.ethernet-1:00, irq=POLL)
+kernel: fec 2188000.ethernet eth0: Link is Up - 100Mbps/Full - flow control rx/tx
+kernel: IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+systemd-networkd[243]: eth0: Gained carrier
+systemd-networkd[243]: eth0: DHCPv4 address 192.168.15.101/24 via 192.168.15.1
+systemd-networkd[243]: eth0: Gained IPv6LL
+systemd-networkd[243]: eth0: Configured
 
--- 
-2.7.4
+######################################################################
+
+linux-test-5.1rc1-5502b218e001-with_bad_commit
+
+Settings for eth0:
+        Supported ports: [ TP MII ]
+        Supported link modes:   10baseT/Half 10baseT/Full
+                                100baseT/Half 100baseT/Full
+                                1000baseT/Full
+        Supported pause frame use: Symmetric
+        Supports auto-negotiation: Yes
+        Supported FEC modes: Not reported
+        Advertised link modes:  10baseT/Half 10baseT/Full
+                                100baseT/Half 100baseT/Full
+                                1000baseT/Full
+        Advertised pause frame use: Symmetric
+        Advertised auto-negotiation: Yes
+        Advertised FEC modes: Not reported
+        Link partner advertised link modes:  10baseT/Half 10baseT/Full
+                                             100baseT/Half 100baseT/Full
+                                             1000baseT/Full
+        Link partner advertised pause frame use: Symmetric
+        Link partner advertised auto-negotiation: Yes
+        Link partner advertised FEC modes: Not reported
+        Speed: 1000Mb/s
+        Duplex: Full
+        Port: MII
+        PHYAD: 0
+        Transceiver: internal
+        Auto-negotiation: on
+        Supports Wake-on: d
+        Wake-on: d
+        Link detected: yes
+
+journalctl -b | egrep -i 'phy|eth|fec'|grep -v usb
+kernel: Booting Linux on physical CPU 0x0
+kernel: libphy: Fixed MDIO Bus: probed
+kernel: libphy: fec_enet_mii_bus: probed
+kernel: fec 2188000.ethernet eth0: registered PHC device 0
+kernel: dwhdmi-imx 120000.hdmi: Detected HDMI TX controller v1.31a with HDCP (DWC HDMI 3D TX PHY)
+kernel: Generic PHY 2188000.ethernet-1:00: attached PHY driver [Generic PHY] (mii_bus:phy_addr=2188000.ethernet-1:00, irq=POLL)
+kernel: fec 2188000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
+kernel: IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+systemd-networkd[239]: eth0: Gained carrier
+systemd-networkd[239]: eth0: Gained IPv6LL
 
 
 _______________________________________________
