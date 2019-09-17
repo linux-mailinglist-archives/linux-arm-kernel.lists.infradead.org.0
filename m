@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 743ACB4CDA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 13:26:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7E49B4CDC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 13:26:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=psiRqcyyzWB17y27EZX6SDQiZFUhDSRnqXPKsJRS1hY=; b=ku75w4iqzjMnIVkCyq7wZnCZIM
-	iHjhLbtGINAmKLNKHB3DPkTJ7FutjpvbZF5OJQ3bgdUZ/tOAI3A+JRz5kyXXuUZwQ7m1z1Zu1N1L9
-	+9D+/3Nb7XnylXzEJ3JTgjc2yt6fKb6duhFWyCBPzxzsuL+aCtmw9lBXq1Hw2w0oXfXRBg8xpDlhU
-	huENMi0S6PApPyiH2rUKlxx+5XUWdjuP0sh4O9yEQjaeMi0HKhZxiMjAzW0V8bqsZwbswXewrLHua
-	c6Ma51QS+zV8z5vtwIy2i8q5vLBkeEjDpUpGeKRdSQB37MaFU5qy8oEJYXwuqNHu+H7ibW9th4vZc
-	DVzKYC/Q==;
+	bh=cb6o7hwtK/kYXDpvUtKP6rT0R2qEtOrmV1nrP4fhirc=; b=XH/DFhGHL+amomIQUNEML0ThQk
+	2Rm3aiby+TH4W3Pxm876yUBz9yEWitcAeFw88Q2OrHsnIcUoRHPlbdBHsg1WGPha4MjVObjPlUMSo
+	zIhQtEBiOXYlGl9wid0GmYJkiSdN5dXfr+ZuGIWkWeAwZh9jrM6ZS1RlIaGjaVUi2SPp2q8bENHB+
+	0jG0IcxEEGHELSjGNG+cSJsk1VC4dtF/cxzf6Kkm3wc8o5ldXozFI01HTAbKwPcG2nkOv1uP9lPZO
+	ygL6r0DrYUYRMjOThnZ/ffjjyNNtlbSNxTQxvsCGq09pP8EUVTVc69Ln6/kw6TFLnHLRx6vkSMinV
+	+RJ1+JWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iABcl-0007qb-Le; Tue, 17 Sep 2019 11:26:23 +0000
+	id 1iABdH-0008A4-1X; Tue, 17 Sep 2019 11:26:55 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iABba-0007Bj-LN
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 11:25:12 +0000
+ id 1iABbe-0007EU-7h
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 11:25:16 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 331E81570;
- Tue, 17 Sep 2019 04:25:10 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 594611000;
+ Tue, 17 Sep 2019 04:25:13 -0700 (PDT)
 Received: from entos-d05.shanghai.arm.com (entos-d05.shanghai.arm.com
  [10.169.40.35])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5CFDB3F59C;
- Tue, 17 Sep 2019 04:25:07 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 833AF3F59C;
+ Tue, 17 Sep 2019 04:25:10 -0700 (PDT)
 From: Jianyong Wu <jianyong.wu@arm.com>
 To: netdev@vger.kernel.org, pbonzini@redhat.com,
  sean.j.christopherson@intel.com, maz@kernel.org, richardcochran@gmail.com,
  Mark.Rutland@arm.com, Will.Deacon@arm.com, suzuki.poulose@arm.com
-Subject: [PATCH 3/6] Timer: expose monotonic clock and counter value
-Date: Tue, 17 Sep 2019 07:24:27 -0400
-Message-Id: <20190917112430.45680-4-jianyong.wu@arm.com>
+Subject: [RFC PATCH v2 4/6] arm64: Add hvc call service for ptp_kvm.
+Date: Tue, 17 Sep 2019 07:24:28 -0400
+Message-Id: <20190917112430.45680-5-jianyong.wu@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190917112430.45680-1-jianyong.wu@arm.com>
 References: <20190917112430.45680-1-jianyong.wu@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_042510_902740_7F098631 
-X-CRM114-Status: UNSURE (   9.59  )
+X-CRM114-CacheID: sfid-20190917_042514_773530_2904C2F1 
+X-CRM114-Status: UNSURE (   9.90  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -72,58 +72,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A number of PTP drivers (such as ptp-kvm) are assuming what the
-current clock source is, which could lead to interesting effects on
-systems where the clocksource can change depending on external events.
+This patch is the base of ptp_kvm for arm64.
+ptp_kvm modules will call hvc to get this service.
+The service offers real time and counter cycle of host for guest.
 
-For this purpose, add a new API that retrives both the current
-monotonic clock as well as its counter value.
-
-Signed-off-by: Marc Zyngier <maz@kernel.org>
 Signed-off-by: Jianyong Wu <jianyong.wu@arm.com>
 ---
- include/linux/timekeeping.h |  3 +++
- kernel/time/timekeeping.c   | 13 +++++++++++++
- 2 files changed, 16 insertions(+)
+ include/linux/arm-smccc.h | 12 ++++++++++++
+ virt/kvm/arm/psci.c       | 17 +++++++++++++++++
+ 2 files changed, 29 insertions(+)
 
-diff --git a/include/linux/timekeeping.h b/include/linux/timekeeping.h
-index a8ab0f143ac4..a5389adaa8bc 100644
---- a/include/linux/timekeeping.h
-+++ b/include/linux/timekeeping.h
-@@ -247,6 +247,9 @@ extern int get_device_system_crosststamp(
- 			struct system_time_snapshot *history,
- 			struct system_device_crosststamp *xtstamp);
+diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+index a6e4d3e3d10a..bc0cdad10f35 100644
+--- a/include/linux/arm-smccc.h
++++ b/include/linux/arm-smccc.h
+@@ -94,6 +94,7 @@
  
-+/* Obtain current monotonic clock and its counter value  */
-+extern void get_current_counterval(struct system_counterval_t *sc);
-+
- /*
-  * Simultaneously snapshot realtime and monotonic raw clocks
-  */
-diff --git a/kernel/time/timekeeping.c b/kernel/time/timekeeping.c
-index 44b726bab4bd..07a0969625b1 100644
---- a/kernel/time/timekeeping.c
-+++ b/kernel/time/timekeeping.c
-@@ -1098,6 +1098,19 @@ static bool cycle_between(u64 before, u64 test, u64 after)
- 	return false;
- }
+ /* KVM "vendor specific" services */
+ #define ARM_SMCCC_KVM_FUNC_FEATURES		0
++#define ARM_SMCCC_KVM_PTP			1
+ #define ARM_SMCCC_KVM_FUNC_FEATURES_2		127
+ #define ARM_SMCCC_KVM_NUM_FUNCS			128
  
-+/**
-+ * get_current_counterval - Snapshot the current clocksource and counter value
-+ * @sc:	Pointer to a struct containing the current clocksource and its value
+@@ -103,6 +104,17 @@
+ 			   ARM_SMCCC_OWNER_VENDOR_HYP,			\
+ 			   ARM_SMCCC_KVM_FUNC_FEATURES)
+ 
++/*
++ * This ID used for virtual ptp kvm clock and it will pass second value
++ * and nanosecond value of host real time and system counter by vcpu
++ * register to guest.
 + */
-+void get_current_counterval(struct system_counterval_t *sc)
-+{
-+	struct timekeeper *tk = &tk_core.timekeeper;
++#define ARM_SMCCC_VENDOR_HYP_KVM_PTP_FUNC_ID				\
++	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
++			   ARM_SMCCC_SMC_32,				\
++			   ARM_SMCCC_OWNER_VENDOR_HYP,			\
++			   ARM_SMCCC_KVM_PTP)
 +
-+	sc->cs = READ_ONCE(tk->tkr_mono.clock);
-+	sc->cycles = sc->cs->read(sc->cs);
-+}
-+EXPORT_SYMBOL_GPL(get_current_counterval);
-+
- /**
-  * get_device_system_crosststamp - Synchronously capture system/device timestamp
-  * @get_time_fn:	Callback to get simultaneous device time and
+ #ifndef __ASSEMBLY__
+ 
+ #include <linux/linkage.h>
+diff --git a/virt/kvm/arm/psci.c b/virt/kvm/arm/psci.c
+index 0debf49bf259..2c5d53817a28 100644
+--- a/virt/kvm/arm/psci.c
++++ b/virt/kvm/arm/psci.c
+@@ -392,6 +392,8 @@ int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
+ 	u32 func_id = smccc_get_function(vcpu);
+ 	u32 val[4] = {};
+ 	u32 option;
++	struct timespec *ts;
++	struct system_counterval_t sc;
+ 
+ 	val[0] = SMCCC_RET_NOT_SUPPORTED;
+ 
+@@ -431,6 +433,21 @@ int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
+ 	case ARM_SMCCC_VENDOR_HYP_KVM_FEATURES_FUNC_ID:
+ 		val[0] = BIT(ARM_SMCCC_KVM_FUNC_FEATURES);
+ 		break;
++	/*
++	 * This will used for virtual ptp kvm clock. three
++	 * values will be passed back.
++	 * reg0 stores seconds of host real time;
++	 * reg1 stores nanoseconds of host real time;
++	 * reg2 stores system counter cycle value.
++	 */
++	case ARM_SMCCC_VENDOR_HYP_KVM_PTP_FUNC_ID:
++		getnstimeofday(ts);
++		get_current_counterval(&sc);
++		val[0] = ts->tv_sec;
++		val[1] = ts->tv_nsec;
++		val[2] = sc.cycles;
++		val[3] = 0;
++		break;
+ 	default:
+ 		return kvm_psci_call(vcpu);
+ 	}
 -- 
 2.17.1
 
