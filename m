@@ -2,86 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D32AEB50A0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 16:44:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52D22B50B0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 16:46:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UndCJ9cAzgNnHKu1PBY8mQScEz5+mSXBV2WnBIz/d10=; b=IJySAs0Ki2SS1W
-	GrBWnkthkPUS+AMPA4T0ORYT4otCCrfRZICXUn7nlKdXUhU9Dr/mfODqFuA/ENxlwRogil3ifAoub
-	m2GNGBDeznOwjpIyPZCTuihRQWZnv3Q8N1UuK6vy2Pkp16JOYOSeEHsUoSYGNdnRM0Kx2kbpdIzv6
-	m84LIDM61e/1Ux/wEhKrbtQXBvRTRFViC4NvvgF6UNkA8t/U0IRuw7/v/XGEBTOpksMijYX4PBPJG
-	j/pgAiLx2OvAhYzk/RQPVG1hGA8XRnIMT2UqBryPg2wp3w/cQkyL1hZceBbEcHeCwMy3DOj4fbygP
-	DlZTZdg1tzEcjRILH0Gw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=2isVKRydBE0LxLAHj52TXNb3m3Y/t4JbPktFz/7bnoU=; b=pg7k2IUQDK0c0m
+	zrlymdgiQczibd/HeeAb5ZhVm9O5Ysm4KRvQpopMKsElLd788WcILdYrfZSf4Aj0D331aVpU0sf2F
+	rhgs7pXFL800f47l4+Q9lJjVTsZknpVw/fZJyPBvw16UaQw0X5OTNqbhBX0golzGRlb46RoUVmNZj
+	+kqQIjkzGBbdQM9ZownIeMmYzQIks1HT5JNbG1esINAyLrv//+ZX2rs7ZuvS83XuPZn9dCOB9zKtU
+	seISMzQ33ChEhbPRIxPff+jy254xMTDcEBMg4KBIjQept9P/D+oT1Vv/A5uGi3ALqzJGCrlrkcakZ
+	YEjWmsn6B6fT9C62r5Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAEiU-0007z0-Ar; Tue, 17 Sep 2019 14:44:30 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAEiG-0007xg-Du; Tue, 17 Sep 2019 14:44:18 +0000
-Received: by mail-ot1-f68.google.com with SMTP id g13so3256064otp.8;
- Tue, 17 Sep 2019 07:44:15 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=YwnK4pIMscJKpUNIH9WS0x8BYMP10RHEPdGsIe2GTK8=;
- b=FTBoWlrvGpwVvDYVt4sUkTsbLCVOY/TqyuttlHC+YIBry9ihQ72g7O7ZkePRCaREFb
- zxZEqt4Ngo1pZQiaNj8YYxPmZwRjXLdKupjDnEmtEmVCd7e3u6XHFC7+X37A3lOh00S6
- LLKZISjF/i9kh5NbICq97r/hweccHBKrfPtenj3vDOPKhSo27+YQXUGOd4Rv89TNIDuv
- +nveBcnHFFN3OuHpOeSHYWSJ2dIgTpKRSlArt+DaQo7EScVxUDUt9WXQ4dJvf1J4/ODl
- SISePCbFMhqjg6INWaqQrZpVnfwqQH9W5fFHMLzTKOI6B7N4SwgMsvuKJ0uYhp1hEcV8
- 7jfg==
-X-Gm-Message-State: APjAAAX7CKZvQnpW616H/IT5jIUgxoON543UOAs20f/o9ruYDUqOgHML
- cIEKa65/b9OMtCCzvSzX7SEpWWw=
-X-Google-Smtp-Source: APXvYqx1FbLhv1a9jKgf5RMOiCVzoHqYD3Q5Wg9G+dwariWWOABAA7afzAC9ZFvbbyf6luvEOJZhug==
-X-Received: by 2002:a05:6830:182:: with SMTP id
- q2mr2843274ota.175.1568731454272; 
- Tue, 17 Sep 2019 07:44:14 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id n13sm721322otl.8.2019.09.17.07.44.13
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 17 Sep 2019 07:44:13 -0700 (PDT)
-Date: Tue, 17 Sep 2019 09:44:12 -0500
-From: Rob Herring <robh@kernel.org>
-To: Sakari Ailus <sakari.ailus@linux.intel.com>
-Subject: Re: [V2, 1/2] media: dt-bindings: media: i2c: Add bindings for ov8856
-Message-ID: <20190917144412.GA23952@bogus>
-References: <20190910130446.26413-1-dongchun.zhu@mediatek.com>
- <20190910130446.26413-2-dongchun.zhu@mediatek.com>
- <20190910173743.GI2680@smile.fi.intel.com>
- <20190917120205.GO5781@paasikivi.fi.intel.com>
+	id 1iAEjq-00019E-BP; Tue, 17 Sep 2019 14:45:54 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iAEjd-00018o-AE
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 14:45:42 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5A79028;
+ Tue, 17 Sep 2019 07:45:40 -0700 (PDT)
+Received: from e110467-lin.cambridge.arm.com (e110467-lin.cambridge.arm.com
+ [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 8CE563F575;
+ Tue, 17 Sep 2019 07:45:39 -0700 (PDT)
+From: Robin Murphy <robin.murphy@arm.com>
+To: will@kernel.org,
+	joro@8bytes.org
+Subject: [PATCH v2] iommu/arm-smmu: Report USF more clearly
+Date: Tue, 17 Sep 2019 15:45:34 +0100
+Message-Id: <4febe7a87a95ed607b4dc68ba96b15210df84e9e.1568731534.git.robin.murphy@arm.com>
+X-Mailer: git-send-email 2.21.0.dirty
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190917120205.GO5781@paasikivi.fi.intel.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_074416_470648_DCDCDD5A 
-X-CRM114-Status: GOOD (  10.22  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20190917_074541_401841_09AD483E 
+X-CRM114-Status: GOOD (  13.90  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,40 +59,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, drinkcat@chromium.org,
- srv_heupstream@mediatek.com, shengnan.wang@mediatek.com,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>, tfiga@chromium.org,
- louis.kuo@mediatek.com, sj.huang@mediatek.com,
- linux-mediatek@lists.infradead.org, dongchun.zhu@mediatek.com,
- matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: iommu@lists.linux-foundation.org, Douglas Anderson <dianders@chromium.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 17, 2019 at 03:02:06PM +0300, Sakari Ailus wrote:
-> On Tue, Sep 10, 2019 at 08:37:43PM +0300, Andy Shevchenko wrote:
-> > On Tue, Sep 10, 2019 at 09:04:45PM +0800, dongchun.zhu@mediatek.com wrote:
-> > > From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > 
-> > > This patch adds device tree bindings documentation for the ov8856 CMOS
-> > > image sensor.
-> > 
-> > New bindings in YAML, please.
-> 
-> My understanding is text documents are still fine.
+Although CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT is a welcome tool
+for smoking out inadequate firmware, the failure mode is non-obvious
+and can be confusing for end users. Add some special-case reporting of
+Unidentified Stream Faults to help clarify this particular symptom.
+Since we're adding yet another print to the mix, also break out an
+explicit ratelimit state to make sure everything stays together (and
+reduce the static storage footprint a little).
 
-Schema are preferred, but still up to the subsystem for now.
+CC: Douglas Anderson <dianders@chromium.org>
+Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+---
+ drivers/iommu/arm-smmu.c | 21 ++++++++++++++++-----
+ drivers/iommu/arm-smmu.h |  2 ++
+ 2 files changed, 18 insertions(+), 5 deletions(-)
+
+diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+index b7cf24402a94..b27020fd6c90 100644
+--- a/drivers/iommu/arm-smmu.c
++++ b/drivers/iommu/arm-smmu.c
+@@ -36,6 +36,7 @@
+ #include <linux/pci.h>
+ #include <linux/platform_device.h>
+ #include <linux/pm_runtime.h>
++#include <linux/ratelimit.h>
+ #include <linux/slab.h>
  
-> We don't have things like graph.txt or video-interfaces.txt in YAML yet
-> either.
+ #include <linux/amba/bus.h>
+@@ -485,6 +486,8 @@ static irqreturn_t arm_smmu_global_fault(int irq, void *dev)
+ {
+ 	u32 gfsr, gfsynr0, gfsynr1, gfsynr2;
+ 	struct arm_smmu_device *smmu = dev;
++	static DEFINE_RATELIMIT_STATE(rs, DEFAULT_RATELIMIT_INTERVAL,
++				      DEFAULT_RATELIMIT_BURST);
+ 
+ 	gfsr = arm_smmu_gr0_read(smmu, ARM_SMMU_GR0_sGFSR);
+ 	gfsynr0 = arm_smmu_gr0_read(smmu, ARM_SMMU_GR0_sGFSYNR0);
+@@ -494,11 +497,19 @@ static irqreturn_t arm_smmu_global_fault(int irq, void *dev)
+ 	if (!gfsr)
+ 		return IRQ_NONE;
+ 
+-	dev_err_ratelimited(smmu->dev,
+-		"Unexpected global fault, this could be serious\n");
+-	dev_err_ratelimited(smmu->dev,
+-		"\tGFSR 0x%08x, GFSYNR0 0x%08x, GFSYNR1 0x%08x, GFSYNR2 0x%08x\n",
+-		gfsr, gfsynr0, gfsynr1, gfsynr2);
++	if (__ratelimit(&rs)) {
++		if (IS_ENABLED(CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT) &&
++		    (gfsr & sGFSR_USF))
++			dev_err(smmu->dev,
++				"Blocked unknown Stream ID 0x%hx; boot with \"arm-smmu.disable_bypass=0\" to allow, but this may have security implications\n",
++				(u16)gfsynr1);
++		else
++			dev_err(smmu->dev,
++				"Unexpected global fault, this could be serious\n");
++		dev_err(smmu->dev,
++			"\tGFSR 0x%08x, GFSYNR0 0x%08x, GFSYNR1 0x%08x, GFSYNR2 0x%08x\n",
++			gfsr, gfsynr0, gfsynr1, gfsynr2);
++	}
+ 
+ 	arm_smmu_gr0_write(smmu, ARM_SMMU_GR0_sGFSR, gfsr);
+ 	return IRQ_HANDLED;
+diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
+index c9c13b5785f2..eede28ecda6d 100644
+--- a/drivers/iommu/arm-smmu.h
++++ b/drivers/iommu/arm-smmu.h
+@@ -79,6 +79,8 @@
+ #define ID7_MINOR			GENMASK(3, 0)
+ 
+ #define ARM_SMMU_GR0_sGFSR		0x48
++#define sGFSR_USF			BIT(1)
++
+ #define ARM_SMMU_GR0_sGFSYNR0		0x50
+ #define ARM_SMMU_GR0_sGFSYNR1		0x54
+ #define ARM_SMMU_GR0_sGFSYNR2		0x58
+-- 
+2.21.0.dirty
 
-That doesn't really matter too much. You can assume common properties 
-will have a common schema and just define what's device specific. The 
-device specific bindings have to define 'port' or 'port@N' nodes.
-
-Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
