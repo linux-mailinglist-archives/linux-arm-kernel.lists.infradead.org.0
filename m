@@ -2,87 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D0B6B518F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 17:31:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 541C8B5199
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 17:34:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tQ76bBDro4zBL6rY4pD4Z7xc4FPgiPNbmmLgGk01KTc=; b=loovryIDzNWYNI
-	H+UEQR4G0kXYmEwWMthDRUU63Na8vGfvvitlGaB4MFW8Rig5KnVxBWp8J5GUzzFO3uM0OyUpZsJ+d
-	OOoRARMR9qVsdwwAiFKcmp2M81m9+76lCEC9uHU0ia9rEouolOKDzcWvbgvC5nWD+UJojQN6IeRjl
-	4toI5tMgbs4hPBDoVLlMuQpTpazBScME/jjKa5NgK3KfOYeZILl9SP5CJJzkvRLMaRprondCMRjzN
-	MMIVR6hudXcpZrw09Mlu+kCm3TitJDCoH0xHjKlRihbDvL+WEVPjGUhi27VhX4o0x/Ci49JMhVolD
-	eJkkq7vL/6e+RFDERzwg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
+	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=aF9SdMHoZNbRbiEX5xSZ2Ydl4l/xbG1IIXYwLEa5Nhc=; b=IJeNEslthNX1cg
+	YwcPMV0mb2EyMzMnvQsh/js84UnRLHmlTsJADI9P1jnOEt9rprbG1XMo5CJ9BaVO7pYQs7iQRmEx/
+	+ZIT9VtYnZS4j/JsMYPWmt0FzwomA+gYJKcQvM7FR+4dXy4T1IDRqCldpHk01IP5A7KUz9CHYHNfk
+	D539QomdjF7GJrgU3WrbJc4jXybY6xa45aSyenPc0QUjU8M44frqAj/4LXc+byfpltPkVLP8Fgme8
+	zi/5TYCAETTVXR4ASogaetOmQ2do38r4V+JPRTMtlJ5UrdK/K0lc9FN39DBNqIOI+jr46CN0ocPTl
+	C+uW5P8uZHwR5hf/VqmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAFRV-0007yr-Vc; Tue, 17 Sep 2019 15:31:02 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iAFUO-0008NZ-M6; Tue, 17 Sep 2019 15:34:00 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAFRH-0007x3-8s
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 15:30:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=qll1tloqDQ4i0lnHJuE14voE1ekPEugt3ZzCaYScXbc=; b=vczL669YtI5E4IKwCcpkQJ42K
- Fj1bG6PlOtRzB4ABC47TbZy9qp7UMQIKh/n+/Sc0gh3jtWA8ifD27k0cufo38DVraR5VpDVCWXf3+
- YJWZNGtFm8OsGKA0A699IblZjjyWODcVaqsazbk0J5CQm0vFh6NuPPtv28bZNiwBsEM6n3iQj6yrd
- XgC+DIM+wow3yz8bX41g7H9yJXcwTwaz0VxZ6k1hGmwuKFqJADWxlKrTro+Mo7LCMnu9+gQdi7af0
- xo4+/r3pzO1aKpMEatk2CzqUq2tfkQgkzO+VOzxSuh+v2pEsiwvCzuSxVgqgIrZWhi3cbV7yio9O4
- O6EKQvz7Q==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:40688)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1iAFQz-0002ed-Rp; Tue, 17 Sep 2019 16:30:30 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iAFQx-0001P4-9j; Tue, 17 Sep 2019 16:30:27 +0100
-Date: Tue, 17 Sep 2019 16:30:27 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: tinywrkb <tinywrkb@gmail.com>
-Subject: Re: [PATCH] ARM: dts: imx6dl: SolidRun: add phy node with 100Mb/s
- max-speed
-Message-ID: <20190917153027.GW25745@shell.armlinux.org.uk>
-References: <20190910155507.491230-1-tinywrkb@gmail.com>
- <20190910185033.GD9761@lunn.ch> <87muf6oyvr.fsf@tarshish>
- <20190915135652.GC3427@lunn.ch>
- <20190917124101.GA1200564@arch-dsk-01>
- <20190917125434.GH20778@lunn.ch>
- <20190917133253.GA1210141@arch-dsk-01>
- <20190917133942.GR25745@shell.armlinux.org.uk>
- <20190917151707.GV25745@shell.armlinux.org.uk>
+ id 1iAFUD-0008NC-Na
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 15:33:51 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id C0000204F7;
+ Tue, 17 Sep 2019 17:33:46 +0200 (CEST)
+Received: from [192.168.108.37] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 8AAC720237;
+ Tue, 17 Sep 2019 17:33:46 +0200 (CEST)
+To: alsa-devel@alsa-project.org
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Subject: Propagating audio properties along the audio path
+Message-ID: <f7861989-8a2d-ed89-8f1f-68bad7013a34@free.fr>
+Date: Tue, 17 Sep 2019 17:33:46 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190917151707.GV25745@shell.armlinux.org.uk>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Tue Sep 17 17:33:46 2019 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_083047_651126_273070B1 
-X-CRM114-Status: GOOD (  35.01  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190917_083349_918023_A2A89670 
+X-CRM114-Status: UNSURE (   9.83  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ medium trust [212.27.33.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
+ 2.3 SPOOFED_FREEMAIL       No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,220 +67,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
- Baruch Siach <baruch@tkos.co.il>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- open list <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Takashi Iwai <tiwai@suse.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Jaroslav Kysela <perex@perex.cz>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 17, 2019 at 04:17:07PM +0100, Russell King - ARM Linux admin wrote:
-> On Tue, Sep 17, 2019 at 02:39:43PM +0100, Russell King - ARM Linux admin wrote:
-> > On Tue, Sep 17, 2019 at 04:32:53PM +0300, tinywrkb wrote:
-> > > On Tue, Sep 17, 2019 at 02:54:34PM +0200, Andrew Lunn wrote:
-> > > > On Tue, Sep 17, 2019 at 03:41:01PM +0300, tinywrkb wrote:
-> > > > > On Sun, Sep 15, 2019 at 03:56:52PM +0200, Andrew Lunn wrote:
-> > > > > > > Tinywrkb confirmed to me in private communication that revert of
-> > > > > > > 5502b218e001 fixes Ethernet for him on effected system.
-> > > > > > > 
-> > > > > > > He also referred me to an old Cubox-i spec that lists 10/100 Ethernet
-> > > > > > > only for i.MX6 Solo/DualLite variants of Cubox-i. It turns out that
-> > > > > > > there was a plan to use a different 10/100 PHY for Solo/DualLite
-> > > > > > > SOMs. This plan never materialized. All SolidRun i.MX6 SOMs use the same
-> > > > > > > AR8035 PHY that supports 1Gb.
-> > > > > > > 
-> > > > > > > Commit 5502b218e001 might be triggering a hardware issue on the affected
-> > > > > > > Cubox-i. I could not reproduce the issue here with Cubox-i and a Dual
-> > > > > > > SOM variant running v5.3-rc8. I have no Solo/DualLite variant handy at
-> > > > > > > the moment.
-> > > > > > 
-> > > > > > Could somebody with an affected device show us the output of ethtool
-> > > > > > with and without 5502b218e001. Does one show 1G has been negotiated,
-> > > > > > and the other 100Mbps? If this is true, how does it get 100Mbps
-> > > > > > without that patch? We are missing a piece of the puzzle.
-> > > > > > 
-> > > > > > 	Andrew
-> > > > > 
-> > > > > linux-test-5.1rc1-a2703de70942-without_bad_commit
-> > > > > 
-> > > > > Settings for eth0:
-> > > > > 	Supported ports: [ TP MII ]
-> > > > > 	Supported link modes:   10baseT/Half 10baseT/Full
-> > > > > 	                        100baseT/Half 100baseT/Full
-> > > > > 	                        1000baseT/Full
-> > > > 
-> > > > So this means the local device says it can do 1000Mbps.
-> > > > 
-> > > > 
-> > > > > 	Supported pause frame use: Symmetric
-> > > > > 	Supports auto-negotiation: Yes
-> > > > > 	Supported FEC modes: Not reported
-> > > > > 	Advertised link modes:  10baseT/Half 10baseT/Full
-> > > > > 	                        100baseT/Half 100baseT/Full
-> > > > > 	                        1000baseT/Full
-> > > > 
-> > > > The link peer can also do 1000Mbps.
-> > > > 
-> > > > 
-> > > > > 	Advertised pause frame use: Symmetric
-> > > > > 	Advertised auto-negotiation: Yes
-> > > > > 	Advertised FEC modes: Not reported
-> > > > > 	Link partner advertised link modes:  10baseT/Half 10baseT/Full
-> > > > > 	                                     100baseT/Half 100baseT/Full
-> > > > > 	                                     1000baseT/Full
-> > > > > 	Link partner advertised pause frame use: Symmetric
-> > > > > 	Link partner advertised auto-negotiation: Yes
-> > > > > 	Link partner advertised FEC modes: Not reported
-> > > > > 	Speed: 100Mb/s
-> > > > 
-> > > > Yet they have decided to do 100Mbps. 
-> > > > 
-> > > > We need to understand Why? The generic PHY driver would not do this on
-> > > > its own. So i'm thinking something has poked a PHY register with some
-> > > > value, and this patch is causing it to be over written.
-> > > > 
-> > > > Please can you use mii-tool -v -v to dump the PHY registers in each
-> > > > case.
-> > > > 
-> > > > Thanks
-> > > > 	Andrew
-> > > 
-> > > Here's the output of # mii-tool -v -v eth0 
-> > > 
-> > > * linux-test-5.1rc1-a2703de70942-without_bad_commit
-> > > 
-> > > Using SIOCGMIIPHY=0x8947
-> > > eth0: negotiated 100baseTx-FD flow-control, link ok
-> > >   registers for MII PHY 0:
-> > >     3100 796d 004d d072 15e1 c5e1 000f 0000
-> > >     0000 0000 0800 0000 0000 0000 0000 a000
-> > >     0000 0000 0000 f420 082c 0000 04e8 0000
-> > >     3200 3000 0000 063d 0000 0000 0000 0000
-> > >   product info: vendor 00:13:74, model 7 rev 2
-> > >   basic mode:   autonegotiation enabled
-> > >   basic status: autonegotiation complete, link ok
-> > >   capabilities: 100baseTx-FD 100baseTx-HD 10baseT-FD 10baseT-HD
-> > >   advertising:  100baseTx-FD 100baseTx-HD 10baseT-FD 10baseT-HD flow-control
-> > >   link partner: 1000baseT-FD 100baseTx-FD 100baseTx-HD 10baseT-FD 10baseT-HD flow-control
-> > 
-> > This is *not* advertising 1000baseT modes (register 9).
-> > 
-> > > 
-> > > 
-> > > * linux-test-5.1rc1-5502b218e001-with_bad_commit
-> > > 
-> > > Using SIOCGMIIPHY=0x8947
-> > > eth0: negotiated 100baseTx-FD flow-control, link ok
-> > >   registers for MII PHY 0:
-> > >     3100 796d 004d d072 15e1 c5e1 000d 0000
-> > >     0000 0000 0800 0000 0000 0000 0000 a000
-> > >     0000 0000 0000 0000 082c 0000 04e8 0000
-> > >     3200 3000 0000 063d 0000 0000 0000 0000
-> > >   product info: vendor 00:13:74, model 7 rev 2
-> > >   basic mode:   autonegotiation enabled
-> > >   basic status: autonegotiation complete, link ok
-> > >   capabilities: 100baseTx-FD 100baseTx-HD 10baseT-FD 10baseT-HD
-> > >   advertising:  100baseTx-FD 100baseTx-HD 10baseT-FD 10baseT-HD flow-control
-> > >   link partner: 1000baseT-FD 100baseTx-FD 100baseTx-HD 10baseT-FD 10baseT-HD flow-control
-> > 
-> > Neither is this.
-> > 
-> > However, the kernel and phylib _thinks_ that it is.  My guess is
-> > something has rewritten the PHY registers from userspace, rather
-> > than using ethtool to change the advertisment.  The MAC is still
-> > trying to operate at 1000Mbps (since that is what phylib resolved)
-> > yet the link might be actually operating at 100Mbps - but for that
-> > to happen, we should've seen the link go down and up again.
-> > 
-> > Odd.
-> 
-> For reference, here I see:
-> 
-> Using SIOCGMIIPHY=0x8947
-> eth0: negotiated 1000baseT-FD flow-control, link ok
->   registers for MII PHY 0:
->     3100 796d 004d d072 15e1 c1e1 000d 0000
->     0000 0200 3800 0000 0000 0000 0000 a000
->     0000 0000 0000 0000 082c 0000 04e8 0000
->     3200 3000 0000 060e 0000 0000 0000 0000
->   product info: vendor 00:13:74, model 7 rev 2
->   basic mode:   autonegotiation enabled
->   basic status: autonegotiation complete, link ok
->   capabilities: 1000baseT-FD 100baseTx-FD 100baseTx-HD 10baseT-FD 10baseT-HD
->   advertising:  1000baseT-FD 100baseTx-FD 100baseTx-HD 10baseT-FD 10baseT-HD flow-control
->   link partner: 1000baseT-FD 100baseTx-FD 100baseTx-HD 10baseT-FD 10baseT-HD
-> 
-> Note that userspace writing to register 9 (1G settings) will update
-> the physical PHY's advertisment for 1G speeds, but the kernel's idea
-> will not be updated, so things will become de-sync'd, and the kernel
-> _will_ incorrectly determine the speed.
-> 
-> So, are you using mii-tool or mii-diag to change the negotiation
-> settings, rather than using ethtool?
-> 
-> This is likely the case, as prior to 5502b218e001, we used to read
-> the advertisment registers afresh each time we evaluate the resulting
-> link mode.  After 5502b218e001, we use the advertisment mask cached
-> in phydev->advertising, which, looking at phy_mii_ioctl(), will not
-> be updated if register 9 is written.
+Hello everyone,
 
-Please try this patch - I haven't written a commit message for it yet,
-it's just to prove the above point.
+Disclaimer: I've never worked in the sound/ layer, and it is possible that
+some of my questions are silly or obvious.
 
-Thanks.
+Basically, I'm trying to implement some form of eARC(*) on an arm64 SoC.
+(*) enhanced Audio Return Channel (from HDMI 2.1)
 
- drivers/net/phy/phy.c | 5 +++++
- include/linux/mii.h   | 9 +++++++++
- 2 files changed, 14 insertions(+)
+The setup looks like this:
 
-diff --git a/drivers/net/phy/phy.c b/drivers/net/phy/phy.c
-index 7af390d8bbdb..068a08a50064 100644
---- a/drivers/net/phy/phy.c
-+++ b/drivers/net/phy/phy.c
-@@ -458,6 +458,11 @@ int phy_mii_ioctl(struct phy_device *phydev, struct ifreq *ifr, int cmd)
- 							   val);
- 				change_autoneg = true;
- 				break;
-+			case MII_CTRL1000:
-+				mii_ctrl1000_mod_linkmode_adv_t(phydev->advertising,
-+							        val);
-+				change_autoneg = true;
-+				break;
- 			default:
- 				/* do nothing */
- 				break;
-diff --git a/include/linux/mii.h b/include/linux/mii.h
-index 5cd824c1c0ca..1249d32dbd63 100644
---- a/include/linux/mii.h
-+++ b/include/linux/mii.h
-@@ -455,6 +455,15 @@ static inline void mii_lpa_mod_linkmode_lpa_t(unsigned long *lp_advertising,
- 			 lp_advertising, lpa & LPA_LPACK);
- }
- 
-+static inline void mii_ctrl1000_mod_linkmode_adv_t(unsigned long *advertising,
-+						   u32 ctrl1000)
-+{
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_1000baseT_Half_BIT, advertising,
-+			 ctrl1000 & ADVERTISE_1000HALF);
-+	linkmode_mod_bit(ETHTOOL_LINK_MODE_1000baseT_Full_BIT, advertising,
-+			 ctrl1000 & ADVERTISE_1000FULL);
-+}
-+
- /**
-  * linkmode_adv_to_lcl_adv_t
-  * @advertising:pointer to linkmode advertising
+A = Some kind of audio source, typically a TV or game console
+B = The arm64 SoC, equipped with some nice speakers
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+   HDMI
+A ------> B
+
+If we look inside B, we actually have
+B1 = an eARC receiver (input = HDMI, output = I2S)
+B2 = an audio DSP (input = I2S, output = speakers)
+
+    I2S        ?
+B1 -----> B2 -----> speakers
+
+
+If I read the standard right, B is supposed to advertise which audio formats
+it supports, and A is supposed to pick "the best". For the sake of argument,
+let's say A picks "PCM, 48 kHz, 8 channels, 16b".
+
+At some point, B receives audio packets, parses the Channel Status, and
+determines that A is sending "PCM, 48 kHz, 8 channels, 16b". The driver
+then configures the I2S link, and forwards the audio stream over I2S to
+the DSP.
+
+QUESTION_1:
+How is the DSP supposed to "learn" the properties of the audio stream?
+(AFAIU, they're not embedded in the data, so there must be some side-channel?)
+I assume the driver of B1 is supposed to propagate the info to the driver of B2?
+(Via some call-backs? By calling a function in B2?)
+
+QUESTION_2:
+Does it ever make sense for B2 to ask B1 to change the audio properties?
+(Not sure if B1 is even allowed to renegotiate.)
+
+Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
