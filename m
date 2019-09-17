@@ -2,86 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5787AB5080
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 16:35:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE03EB507D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 16:35:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cgiNb4Ijal1CXY7sz8GK2d2oByvW0MXyq6brx9/TqN4=; b=sY4JRbCC+jLwjI
-	qgpJqZw/jjEoQu7/B2O7Dixh57p8wZgI5i6NJa/WHs4oHecQszUJTCL02GsDQAT1werl6TPHBI7pl
-	v9dHdOZeYX2YcVjZ3v62AVei0RtwQpRzbLFv/mY7jtrfv1psGME7WMBCe2Tt5/vLorlxIWOuLvkUa
-	EzA2bha1P4FLLlG8UY1vQLLyezEeNDU9egLSw6ZfxZ2fwRoEvYXWTkEtY6cf1IEDW8pxrgps3sPvE
-	XhFG4TSwZXlIjhiRrAxrfK+TQzC3EWFiVmbXNPRI7XLnRxz86mUCfOvLiI1Yiz6ybj9es+Ea4+5lF
-	XIFYrvHRKNTc2ONA7hcA==;
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ihD9T26OS9yuN+/gLs0tuoVznc0gHAZr/NQTTLqd9Yk=; b=O2isJ8i7e5sIgV
+	kfDZ71Yg7gYhTm13fMTxs6+CHgSmtBfy7QUSVb/o3rmmfyLiGhbpyUtfvbpIFUGtd1gmdA9GfKdv+
+	N5HsFx0hLsYF+6Yip0Yc5Aqoe0rAoCCikrHlzGenEdti5JAlCDhnBH4MlV0XMDq7M19Qv2EbPG7wJ
+	9oc33PdpPCu/Mbr6HUprNZihn5cR6dWuP0cD7b4j4/5KK46wWhOzpehaxXC2V0BWEW2wYAXju1gPI
+	zKU0P89npooicp/dz+Ne4UT3sAwAATOqcpe7Peop+JCdyNIG+TVrj1ozThR1+poNV35AFChnkVT8A
+	uxZ7R/+ML5M0vPLOJGsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAEa3-0004xs-KW; Tue, 17 Sep 2019 14:35:47 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1iAEZj-0004nh-1z; Tue, 17 Sep 2019 14:35:27 +0000
+Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::5])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAEZY-0004mb-Fw
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 14:35:18 +0000
-Received: by mail-lj1-x244.google.com with SMTP id m7so3104505lji.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 17 Sep 2019 07:35:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=9eGI4/NM5cOizWQeNzvBft8UI2p8lpZEa97UX/N6jZA=;
- b=Zijv/whYVRDItufE1jFHqj1z+GDbb53g0TUXN8UI6M64Ba1VKvinDnxyjkDgz0Cbi8
- LCE/Uycz2X/A5oDTs82BE4UBEC9QxWm0+YViQS5318yk9ZgZ14mVKekgrLvNNVM11Par
- u3qk5tLYDdxgYurev48m4sHhGP8SFYp+wPe1adjkv/IYaB+wstUPVugxvm+mbXdCThy2
- p9RL3n6QP0vPC555DLa0sJp/bBq6YHfSIxWWfsLxWijscjHhElhmAmFVk5ymOpfRe+9U
- 2ifyi8Lqp8y7tq+5GSDVuosPkCvadWfmRuoYT7Py3dnW+SWmZ8koQ3+cFH7g4smtxr4F
- uSxQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=9eGI4/NM5cOizWQeNzvBft8UI2p8lpZEa97UX/N6jZA=;
- b=PwvYfLkSBj/h9A0wxlr9OZ/YWrIrue/thqmYncSsW6zMaNvl64Fv8HDkv4iBbcPMYY
- uhwJ85og5z0JwzTwFOzWCsWT/tJRoXWi38YPLdwvC5mEm+RDhy45GEK5olz/pMTTdjQL
- RsH6cnoFFVu2YRmaW/M4GO7FqU5tqrt8R51/V+SSmlHsmBseaQ42YmIqpz8I847INIfB
- Bp6K2S7bWDk/7qFlNM6JzBffj+ID1RWDS2yJq5PsQxTVhchbRrCsA4Oy3xneaUBToVet
- h++c0pLvyiEzRsxwFKF6ujfFxg3JxJ94Ztjun8OyxmFfmPSqsrgnUwEq8LAWoJlq43cX
- L1xg==
-X-Gm-Message-State: APjAAAVIEKbP7e8RgJen/WHNf9eqhM63+RHvdtLJqypyH/n9zAseKMsd
- GwXJYgZVYPINPJd9oE90NawDVg==
-X-Google-Smtp-Source: APXvYqyMYIluOAUOUZcQMg82w7YPic7WDDMnrJuH3VtTYcT3ixJlyn6c9aEUUDDP8wDEo0Lm7q6LlQ==
-X-Received: by 2002:a2e:9c99:: with SMTP id x25mr2128152lji.9.1568730913136;
- Tue, 17 Sep 2019 07:35:13 -0700 (PDT)
-Received: from localhost.localdomain
- (c-413e70d5.07-21-73746f28.bbcust.telenor.se. [213.112.62.65])
- by smtp.gmail.com with ESMTPSA id o15sm472266lff.22.2019.09.17.07.35.12
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 17 Sep 2019 07:35:12 -0700 (PDT)
-Date: Tue, 17 Sep 2019 15:42:23 +0200
-From: Anders Roxell <anders.roxell@linaro.org>
-To: Cristian Marussi <cristian.marussi@arm.com>
-Subject: Re: [PATCH v6 01/11] kselftest: arm64: extend toplevel skeleton
- Makefile
-Message-ID: <20190917134223.GA2695@localhost.localdomain>
-References: <20190910123111.33478-1-cristian.marussi@arm.com>
- <20190910123111.33478-2-cristian.marussi@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190910123111.33478-2-cristian.marussi@arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+ id 1iAEZW-0004mR-0g
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 14:35:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1568730908;
+ s=strato-dkim-0002; d=goldelico.com;
+ h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=aDkxVMbY8vRvqozEwY9dfWbrp1yfXlJPYl/GV2fom4s=;
+ b=IheBXorFRH5QVvC0COFRlevuawksvfvMO0yqZfHTrzVeiMcBi9xL+r9SZNV5iXu6Qw
+ nQK+f5DEWWdZWrE74EuLXe22lH2BZCuUPcmUd1nDWdlfrRKp3mK5O1Ff2fmc5FAjSR/8
+ tWiW9FlnrymdYnylPwjNScffpEHOYSzxlY4r4naFmv8SfSUPM33mKfxo8GgD9qSmESWN
+ ZpZzRaxVtw01/3MSiVje3B95WRM9bYikoOv3JtRR1b7HI9HCewwUPVwq5M6GTjtvcUFd
+ R9us+Gex1YoTp+qpR0Uypb3QT/L5xdQZkYCvYJiykntSsPI8mWMcH/owLNy4fVQ7mKEg
+ mUOQ==
+X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBp5hRw/qOxWRk4dCyjDPUnsm74p9bR0nKSw0V7uzbYrtFUHmEd2msW"
+X-RZG-CLASS-ID: mo00
+Received: from [IPv6:2001:16b8:266f:d200:e9b9:e9c0:8734:b26d]
+ by smtp.strato.de (RZmta 44.27.0 AUTH)
+ with ESMTPSA id u036f9v8HEZ6XP4
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve secp521r1 with 521 ECDH
+ bits, eq. 15360 bits RSA)) (Client did not present a certificate);
+ Tue, 17 Sep 2019 16:35:06 +0200 (CEST)
+Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
+Subject: Re: [PATCH v3 0/8] OMAP3: convert opp-v1 to opp-v2 and read speed
+ binned / 720MHz grade bits
+From: "H. Nikolaus Schaller" <hns@goldelico.com>
+In-Reply-To: <20190916162816.GF52127@atomide.com>
+Date: Tue, 17 Sep 2019 16:35:22 +0200
+Message-Id: <DAF6ACB4-AD7E-4528-9F4B-C54104B5E260@goldelico.com>
+References: <cover.1568224032.git.hns@goldelico.com>
+ <20190916162816.GF52127@atomide.com>
+To: Tony Lindgren <tony@atomide.com>
+X-Mailer: Apple Mail (2.3124)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_073516_537361_384ED997 
-X-CRM114-Status: GOOD (  21.82  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190917_073514_650890_57219B05 
+X-CRM114-Status: UNSURE (   7.02  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a01:238:20a:202:5302:0:0:5 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -100,195 +85,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andreyknvl@google.com, linux-kselftest@vger.kernel.org,
- amit.kachhap@arm.com, shuah@kernel.org, dave.martin@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ letux-kernel@openphoenux.org, linux-pm@vger.kernel.org,
+ Enric Balletbo i Serra <eballetbo@gmail.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>,
+ =?utf-8?Q?Andr=C3=A9_Roth?= <neolynx@gmail.com>,
+ =?utf-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
+ kernel@pyra-handheld.com, Teresa Remmet <t.remmet@phytec.de>,
+ Javier Martinez Canillas <javier@dowhile0.org>, linux-omap@vger.kernel.org,
+ Adam Ford <aford173@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Roger Quadros <rogerq@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-09-10 13:31, Cristian Marussi wrote:
-> Modify KSFT arm64 toplevel Makefile to maintain arm64 kselftests organized
-> by subsystem, keeping them into distinct subdirectories under arm64 custom
-> KSFT directory: tools/testing/selftests/arm64/
-> 
-> Add to such toplevel Makefile a mechanism to guess the effective location
-> of Kernel headers as installed by KSFT framework.
-> 
-> Fit existing arm64 tags kselftest into this new schema moving them into
-> their own subdirectory (arm64/tags).
-> 
-> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
-> ---
-> Based on:
-> commit 9ce1263033cd ("selftests, arm64: add a selftest for passing
-> 		     tagged pointers to kernel")
-> ---
-> v5 --> v6
-> - using realpath to avoid passing down relative paths
-> - fix commit msg & Copyright
-> - removed unneded Makefile export
-> - added SUBTARGETS specification, to allow building specific only some
->   arm64 test subsystems
-> v4 --> v5
-> - rebased on arm64/for-next/core
-> - merged this patch with KSFT arm64 tags patch, while moving the latter
->   into its own subdir
-> - moved kernel header includes search mechanism from KSFT arm64
->   SIGNAL Makefile
-> - export proper top_srcdir ENV for lib.mk
-> v3 --> v4
-> - comment reword
-> - simplified documentation in README
-> - dropped README about standalone
-> ---
->  tools/testing/selftests/Makefile              |  1 +
->  tools/testing/selftests/arm64/Makefile        | 63 +++++++++++++++++--
->  tools/testing/selftests/arm64/README          | 25 ++++++++
->  tools/testing/selftests/arm64/tags/Makefile   |  6 ++
->  .../arm64/{ => tags}/run_tags_test.sh         |  0
->  .../selftests/arm64/{ => tags}/tags_test.c    |  0
->  6 files changed, 91 insertions(+), 4 deletions(-)
->  create mode 100644 tools/testing/selftests/arm64/README
->  create mode 100644 tools/testing/selftests/arm64/tags/Makefile
->  rename tools/testing/selftests/arm64/{ => tags}/run_tags_test.sh (100%)
->  rename tools/testing/selftests/arm64/{ => tags}/tags_test.c (100%)
-> 
-> diff --git a/tools/testing/selftests/Makefile b/tools/testing/selftests/Makefile
-> index 25b43a8c2b15..1722dae9381a 100644
-> --- a/tools/testing/selftests/Makefile
-> +++ b/tools/testing/selftests/Makefile
-> @@ -1,5 +1,6 @@
->  # SPDX-License-Identifier: GPL-2.0
->  TARGETS = android
-> +TARGETS += arm64
->  TARGETS += bpf
->  TARGETS += breakpoints
->  TARGETS += capabilities
-> diff --git a/tools/testing/selftests/arm64/Makefile b/tools/testing/selftests/arm64/Makefile
-> index a61b2e743e99..cbb2a5a9e3fc 100644
-> --- a/tools/testing/selftests/arm64/Makefile
-> +++ b/tools/testing/selftests/arm64/Makefile
-> @@ -1,11 +1,66 @@
->  # SPDX-License-Identifier: GPL-2.0
->  
-> -# ARCH can be overridden by the user for cross compiling
-> +# When ARCH not overridden for crosscompiling, lookup machine
->  ARCH ?= $(shell uname -m 2>/dev/null || echo not)
->  
->  ifneq (,$(filter $(ARCH),aarch64 arm64))
-> -TEST_GEN_PROGS := tags_test
-> -TEST_PROGS := run_tags_test.sh
-> +SUBTARGETS ?= tags
-> +else
-> +SUBTARGETS :=
->  endif
->  
-> -include ../lib.mk
-> +CFLAGS := -Wall -O2 -g
-> +
-> +# A proper top_srcdir is needed by KSFT(lib.mk)
-> +top_srcdir = $(realpath ../../../../)
-> +
-> +# Additional include paths needed by kselftest.h and local headers
-> +CFLAGS += -I$(top_srcdir)/tools/testing/selftests/
-> +
-> +# Guessing where the Kernel headers could have been installed
-> +# depending on ENV config
-> +ifeq ($(KBUILD_OUTPUT),)
-> +khdr_dir = $(top_srcdir)/usr/include
-> +else
-> +# the KSFT preferred location when KBUILD_OUTPUT is set
-> +khdr_dir = $(KBUILD_OUTPUT)/kselftest/usr/include
-> +endif
-> +
-> +CFLAGS += -I$(khdr_dir)
-> +
-> +export CFLAGS
-> +export top_srcdir
-> +
-> +all:
-> +	@for DIR in $(SUBTARGETS); do				\
-> +		BUILD_TARGET=$(OUTPUT)/$$DIR;			\
-> +		mkdir -p $$BUILD_TARGET;			\
-> +		make OUTPUT=$$BUILD_TARGET -C $$DIR $@;		\
-> +	done
-> +
-> +install: all
-> +	@for DIR in $(SUBTARGETS); do				\
-> +		BUILD_TARGET=$(OUTPUT)/$$DIR;			\
-> +		make OUTPUT=$$BUILD_TARGET -C $$DIR $@;		\
-> +	done
-> +
-> +run_tests: all
-> +	@for DIR in $(SUBTARGETS); do				\
-> +		BUILD_TARGET=$(OUTPUT)/$$DIR;			\
-> +		make OUTPUT=$$BUILD_TARGET -C $$DIR $@;		\
-> +	done
-> +
-> +# Avoid any output on non arm64 on emit_tests
-> +emit_tests: all
-> +	@for DIR in $(SUBTARGETS); do				\
-> +		BUILD_TARGET=$(OUTPUT)/$$DIR;			\
-> +		make OUTPUT=$$BUILD_TARGET -C $$DIR $@;		\
-> +	done
-> +
-> +clean:
-> +	@for DIR in $(SUBTARGETS); do				\
-> +		BUILD_TARGET=$(OUTPUT)/$$DIR;			\
-> +		make OUTPUT=$$BUILD_TARGET -C $$DIR $@;		\
-> +	done
-> +
-> +.PHONY: all clean install run_tests emit_tests
-> diff --git a/tools/testing/selftests/arm64/README b/tools/testing/selftests/arm64/README
-> new file mode 100644
-> index 000000000000..cc1e51796fee
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/README
-> @@ -0,0 +1,25 @@
-> +KSelfTest ARM64
-> +===============
-> +
-> +- These tests are arm64 specific and so not built or run but just skipped
-> +  completely when env-variable ARCH is found to be different than 'arm64'
-> +  and `uname -m` reports other than 'aarch64'.
-> +
-> +- Holding true the above, ARM64 KSFT tests can be run within the KSelfTest
-> +  framework using standard Linux top-level-makefile targets:
-> +
-> +      $ make TARGETS=arm64 kselftest-clean
-> +      $ make TARGETS=arm64 kselftest
-> +
-> +      or
-> +
-> +      $ make -C tools/testing/selftests TARGETS=arm64 \
-> +		INSTALL_PATH=<your-installation-path> install
-> +
-> +      or, alternatively, only specific arm64/ subtargets can be picked:
-> +
-> +      $ make -C tools/testing/selftests TARGETS=arm64 SUBTARGETS="tags signal" \
-> +		INSTALL_PATH=<your-installation-path> install
-> +
-> +   Further details on building and running KFST can be found in:
-> +     Documentation/dev-tools/kselftest.rst
-> diff --git a/tools/testing/selftests/arm64/tags/Makefile b/tools/testing/selftests/arm64/tags/Makefile
-> new file mode 100644
-> index 000000000000..dcc8b0467b68
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/tags/Makefile
-> @@ -0,0 +1,6 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +
-> +TEST_GEN_PROGS := tags_test
+Hi Tony,
 
-This should be TEST_GEN_FILES, since its used by run_tags_test.sh.
-If its TEST_GEN_PROGS it will be added to the script run_kselftest.sh,
-and I don't think thats the intent, even though it looked like that
-before.
+> Am 16.09.2019 um 18:28 schrieb Tony Lindgren <tony@atomide.com>:
+> 
+> * H. Nikolaus Schaller <hns@goldelico.com> [190911 17:48]:
+>> CHANGES V3:
+>> * make omap36xx control the abb-ldo and properly switch mode
+>>  (suggested by Adam Ford <aford173@gmail.com>)
+>> * add a note about enabling the turbo-mode OPPs
+> 
+> Looks good to me, when applying, please provide a
+> minimal immutable branch maybe against v5.3 or v5.4-rc1,
+> that I can also merge in if needed for the dts changes.
 
-Cheers,
-Anders
+Should I resend a v4 with your Acked-By added?
+
+BR and thanks,
+Nikolaus
+
 
 _______________________________________________
 linux-arm-kernel mailing list
