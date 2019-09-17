@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B7D5B4FB2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 15:53:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AEB6B4FB1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 15:52:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wioG2tPvDaL+lXPVxYma/AWGsVX67EO1xyvcwF003Ns=; b=V8FDqdX0eyq9So
-	aHkuGFNQjzkmxzkFbXeiNNnNCaReagNXBv+JAtPY69TEsKXeQVTwhRHt/biXm2g+ymBErZ4mSQE86
-	pAGNh3KcZkwrk84sDoFklwdGGcqjlzaU070dU/D38n+VV/ekVOsiqVwm+Yn3w/4IT8uDxYAyXSPCF
-	x/VwZmJaJvYuToWRe5Ev0s1XxJNsU8cYCLEiv2eVVCENlpsyX0twne96vgmMWXcXZG0UMcgXmxITm
-	bghCDSKMznyeeWuc05fQm1nTHudRGjn7pbTBxoBFJMPH6qA/dk9/RbZxvEuaeO6zl0akKtZi9n/wb
-	HijnYZjS6sTvR7qronWA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GplloDphfzas0T8oC4s4q8z5Ct2iyGDKO5EfbwzpT1E=; b=MNECfm5OuP9Smn
+	Hw02NYxWena7zDnUR0qxGbKGG9Yrsm+8SNGUwPQBB2WhrCd5rnwZJCNJ6zK+B9ZmtNzmElwAJX2gw
+	emPV0eOIVsRxE9FCkrQBXw9xMOBpAW+Lo87d8tKNWzXpDjOuBS8MuRC+bB8ocGMgIQxzQ3VHCr0/C
+	qDsNGe0apbDwy5kvEoUE+N/MpymSxZMIZcRxLkxao42kefxaf/3Jxb2DMzXJq/qkQtYF1SBIZOP95
+	R7tpebpDAbL+6DBygxagsmEtOb3cRu0pLJynOHtmGWTvb89koq60+vFuhpdYS90Z+eGEKlqfvyvkv
+	FLMDsRYWoZg3qO2gOgDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iADua-0004I7-Ve; Tue, 17 Sep 2019 13:52:57 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iADuH-000424-UT; Tue, 17 Sep 2019 13:52:38 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iADts-0003xD-4m
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 13:52:14 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x8HDfoKU019778; Tue, 17 Sep 2019 15:52:08 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=aUuRSQwIFPiGfsmi4Vym/gWuxjE0wuSWUtUhECjq8Vc=;
- b=1pFlI5o2/+K+HEBbhT3MPTQXm7yxt3Gzo2eBe5uTkx372Kt7/Laxyj3Vtx+Gmx5fNMaY
- qloenvWqU1Z3UVZ6ob5J6SZGGLqzSFIEukHcJBFJDDgE6v7YkbEtGXsLmEsYc7CNERVZ
- oT52XBQFinU0phxaysyMRatRlMtYQluA14BOOpCfFdLgx0tRFA/o30A2zrnZ3IoZksSZ
- HvpJe2tLblTVSGlFARLU6FnIeFdgMiXsZN13jX37BGVkT5t+rqZfSPkt2C1mRwmhkn1t
- FN6KiqjXiAlHy01FMmU07yaqY5/IPOS0CTTzQa9WHDo5txYNt4tJw2rZJa18Bgu4XuIL pQ== 
-Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
- by mx08-00178001.pphosted.com with ESMTP id 2v0q3fspqm-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Tue, 17 Sep 2019 15:52:08 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 9777D4D;
- Tue, 17 Sep 2019 13:52:05 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 068FE2C2B9A;
- Tue, 17 Sep 2019 15:52:05 +0200 (CEST)
-Received: from SAFEX1HUBCAS22.st.com (10.75.90.92) by SAFEX1HUBCAS23.st.com
- (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 17 Sep
- 2019 15:52:04 +0200
-Received: from localhost (10.48.1.232) by Webmail-ga.st.com (10.75.90.48) with
- Microsoft SMTP Server (TLS) id 14.3.439.0;
- Tue, 17 Sep 2019 15:52:04 +0200
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-To: <thierry.reding@gmail.com>
-Subject: [PATCH] pwm: stm32-lp: add check in case requested period cannot be
- achieved
-Date: Tue, 17 Sep 2019 15:51:50 +0200
-Message-ID: <1568728310-20948-1-git-send-email-fabrice.gasnier@st.com>
-X-Mailer: git-send-email 2.7.4
+ id 1iADtq-0003vS-Tm
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 13:52:13 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=0kHpPNNmIunZ8PTjKROUxxoBt7miTlYbdWH51X5C1SM=; b=cgm5dIkwieWEw2rYPeRHqe2BB
+ Uv2SyN0l6jOTsy9oaxb5LSe2QiFKFLxcBYR3wHIqrCPKrHwudxiPJLkb8WFszY2hkomxlwdPC/axr
+ 4NXAfYvCV9lXNHkQbzu3gzMGS5mr2hdTRXGc0syLsXedKCl3EyJqRBqTNPISnfTF3Sn5hMAkcDZq5
+ jRDewaqOw3vnLSGydQNpcLNE3Q/mKySAi3GnCmkObAqiI1eZ3tq48HxaSE/MWN+Ce5vVDRUR0U/7c
+ Rc/EQgDXhnj2Gjy/of1KFgsxNiqagieWh2sXvcwpVL+HwtZ5PmBDApzGjFgZ7KBecvB88jtvrIHvH
+ uAz4FnKXg==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:40658)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iADte-0002Ct-RF; Tue, 17 Sep 2019 14:51:58 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iADtd-0001LF-EG; Tue, 17 Sep 2019 14:51:57 +0100
+Date: Tue, 17 Sep 2019 14:51:57 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Fabio Estevam <festevam@gmail.com>
+Subject: Re: [REGRESSION] sdhci no longer detects SD cards on LX2160A
+Message-ID: <20190917135157.GT25745@shell.armlinux.org.uk>
+References: <b19a0640-5d71-a005-eb0f-c6840f181e5d@free.fr>
+ <20190917081931.GI25745@shell.armlinux.org.uk>
+ <20190917104200.GJ25745@shell.armlinux.org.uk>
+ <20190917111631.GL25745@shell.armlinux.org.uk>
+ <20190917114210.GM25745@shell.armlinux.org.uk>
+ <20190917123326.GN25745@shell.armlinux.org.uk>
+ <20190917130759.GO25745@shell.armlinux.org.uk>
+ <CAOMZO5DXv8g5qTGdvobDdLWim+tW=vK4+K=P-VqJK23KERMhJw@mail.gmail.com>
+ <20190917133317.GQ25745@shell.armlinux.org.uk>
+ <CAOMZO5DS_1Uc9TMc29e+8tCg-srvMjf3uth_9P3cnro6det+7A@mail.gmail.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.48.1.232]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
- definitions=2019-09-17_06:2019-09-17,2019-09-17 signatures=0
+Content-Disposition: inline
+In-Reply-To: <CAOMZO5DS_1Uc9TMc29e+8tCg-srvMjf3uth_9P3cnro6det+7A@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_065212_950131_CACB0521 
-X-CRM114-Status: GOOD (  13.57  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190917_065211_293687_C069CBB2 
+X-CRM114-Status: GOOD (  11.24  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -93,48 +95,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, alexandre.torgue@st.com,
- linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- fabrice.gasnier@st.com, linux-arm-kernel@lists.infradead.org
+Cc: dann frazier <dann.frazier@canonical.com>,
+ linux-mmc <linux-mmc@vger.kernel.org>, Adrian Hunter <adrian.hunter@intel.com>,
+ Will Deacon <will.deacon@arm.com>, Nicolin Chen <nicoleotsuka@gmail.com>,
+ Christoph Hellwig <hch@lst.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-LPTimer can use a 32KHz clock for counting. It depends on clock tree
-configuration. In such a case, PWM output frequency range is limited.
-Although unlikely, nothing prevents user from requesting a PWM frequency
-above counting clock (32KHz for instance):
-- This causes (prd - 1) = 0xffff to be written in ARR register later in
-the apply() routine.
-This results in badly configured PWM period (and also duty_cycle).
-Add a check to report an error is such a case.
+On Tue, Sep 17, 2019 at 10:43:35AM -0300, Fabio Estevam wrote:
+> On Tue, Sep 17, 2019 at 10:33 AM Russell King - ARM Linux admin
+> <linux@armlinux.org.uk> wrote:
+> 
+> > That attempts to set bit 12 of the host control register 2 (0x3e).
+> > The LX2160A documentation states that bit 28 of 0x3c (they're 32-bit
+> > wide registers there) is "reserved".
+> >
+> > So, you're asking for a documented reserved bit to be set...
+> 
+> Correct, v4 is not supported here indeed.
+> 
+> From the LX2160 doc:
+> "Conforms to the SD Host Controller Standard Specification version 3.0"
 
-Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
----
- drivers/pwm/pwm-stm32-lp.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+The pressing question seems to be this:
 
-diff --git a/drivers/pwm/pwm-stm32-lp.c b/drivers/pwm/pwm-stm32-lp.c
-index 2211a64..5c2c728 100644
---- a/drivers/pwm/pwm-stm32-lp.c
-+++ b/drivers/pwm/pwm-stm32-lp.c
-@@ -59,6 +59,12 @@ static int stm32_pwm_lp_apply(struct pwm_chip *chip, struct pwm_device *pwm,
- 	/* Calculate the period and prescaler value */
- 	div = (unsigned long long)clk_get_rate(priv->clk) * state->period;
- 	do_div(div, NSEC_PER_SEC);
-+	if (!div) {
-+		/* Fall here in case source clock < period */
-+		dev_err(priv->chip.dev, "Can't reach expected period\n");
-+		return -EINVAL;
-+	}
-+
- 	prd = div;
- 	while (div > STM32_LPTIM_MAX_ARR) {
- 		presc++;
+Are the eSDHC on the LX2160A DMA coherent or are they not?
+
+Any chances of finding out internally what the true answer to that,
+rather than me poking about trying stuff experimentally?  Having a
+definitive answer for a potentially data-corrupting change would
+be really good...
+
 -- 
-2.7.4
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
