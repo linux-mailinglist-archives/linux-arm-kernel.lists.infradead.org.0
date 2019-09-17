@@ -2,38 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF755B45DF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 05:14:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB75DB45E8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 05:14:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Dma8Ie0nM/fi+vrmZhAK+O3njKw6syW0IDuJw/G7Iwg=; b=l8I
-	HFT+bEveRtPf/86gVKZCNZISrewNLWhVa3bxXIKuZ21KcAQstfcgHOrfZdW1cztYshLBiciEh0IVq
-	R522g5qLn/Zqeij2d50Ts1gpe/aEMXSYOigZWPrvbbN/ZYqih1j9oKY0JnXUCAEd3/Jx+n0PDPLlT
-	9Xt9i3C/dulHKciNOKYU07mTqh+92pueUXeD0xVS8/h9MN0N95No9JWyUS1K1BEcPX7l+EKt0P2z0
-	b9CH8Qr606j/qeWrFfpHE1R82JN+YBtoR0a0vPC96CZhw0tZ0vPTJVyCMOkbV0y3XjNoE/N7WoXg7
-	/3eiKeyVCP6yQxOB7CFeqoakVlbYFEQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=vaLE+/peyNlU1pDnBVNyhJiN2gzgOR5G2u6TkHc98Pw=; b=qzgSF8jaHj7wQHPYC0q+YG93at
+	32CyHd+WljSY3UjCAI1cLt01DWeJxJgIIc8GLqYRNjuEvJCozVKqSP1YkmtQlHxW936fPpdENcts1
+	CsbietMUH8fo2HDm+L5ID1WA3siduGd60PyTMjSEJP9QbNGlyZl70MPj5YRh5eTFv3/m2h4N7Wlcd
+	ovYSlO6/HznO3K38+DvKVfNz0XF15yesn3m4rtTfgvJpz7MAxTfAlxipkykR35XeX/s1pyjcuM5/n
+	wTQcm0IZp875v/XRb8eyEQ3eJT3P716jye94eFDWKEqbsb3A29qDl2HFew+ki3YYYxhInro+3P/Jc
+	RUn/9yVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iA3wX-00051u-Ir; Tue, 17 Sep 2019 03:14:17 +0000
+	id 1iA3ws-0005Jp-FS; Tue, 17 Sep 2019 03:14:38 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iA3wH-00050i-Q9
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 03:14:05 +0000
+ id 1iA3wL-00050x-2z
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 03:14:06 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 56B5E200640;
- Tue, 17 Sep 2019 05:14:00 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id CEDCA200642;
+ Tue, 17 Sep 2019 05:14:03 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 5A62820063C;
- Tue, 17 Sep 2019 05:13:39 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 2C5AD200637;
+ Tue, 17 Sep 2019 05:13:42 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 76F84402E6;
- Tue, 17 Sep 2019 11:13:25 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4AC3C402A6;
+ Tue, 17 Sep 2019 11:13:28 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
@@ -48,15 +49,17 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  m.felsch@pengutronix.de, ping.bai@nxp.com, ronald@innovation.ch,
  stefan@agner.ch, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-input@vger.kernel.org
-Subject: [PATCH RESEND V5 1/5] dt-bindings: fsl: scu: add scu key binding
-Date: Tue, 17 Sep 2019 11:12:15 +0800
-Message-Id: <1568689939-8871-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH RESEND V5 2/5] input: keyboard: imx_sc: Add i.MX system
+ controller key support
+Date: Tue, 17 Sep 2019 11:12:16 +0800
+Message-Id: <1568689939-8871-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1568689939-8871-1-git-send-email-Anson.Huang@nxp.com>
+References: <1568689939-8871-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_201401_991842_117D412D 
-X-CRM114-Status: UNSURE (   6.38  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190916_201405_416136_DA6E56F6 
+X-CRM114-Status: GOOD (  16.43  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -84,52 +87,249 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-NXP i.MX8QXP is an ARMv8 SoC with a Cortex-M4 core inside as
-system controller, the system controller is in charge of system
-power, clock and scu key event etc. management, Linux kernel has
+i.MX8QXP is an ARMv8 SoC which has a Cortex-M4 system controller
+inside, the system controller is in charge of controlling power,
+clock and scu key etc..
+
+Adds i.MX system controller key driver support, Linux kernel has
 to communicate with system controller via MU (message unit) IPC
-to get scu key event, add binding doc for i.MX system controller
-key driver.
+to get scu key's status.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
-No changes.
+Changes since V4:
+	- reduce debounce time from 100mS to 30mS;
+	- remove unnecessary delay_check for button release interrupt which is NOT existing at all;
+	- using error instead of ret;
+	- move pm_wakeup_event() to interrupt notify and ONLY calling pm_relax() when button is released;
+	- remove unnecessary logic code of avoiding quick button press/release.
 ---
- .../devicetree/bindings/arm/freescale/fsl,scu.txt          | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+ drivers/input/keyboard/Kconfig      |   7 ++
+ drivers/input/keyboard/Makefile     |   1 +
+ drivers/input/keyboard/imx_sc_key.c | 184 ++++++++++++++++++++++++++++++++++++
+ 3 files changed, 192 insertions(+)
+ create mode 100644 drivers/input/keyboard/imx_sc_key.c
 
-diff --git a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-index c149fad..5eab7d0 100644
---- a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-+++ b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-@@ -157,6 +157,15 @@ Required properties:
- Optional properties:
- - timeout-sec: contains the watchdog timeout in seconds.
+diff --git a/drivers/input/keyboard/Kconfig b/drivers/input/keyboard/Kconfig
+index 8911bc2..00f8428 100644
+--- a/drivers/input/keyboard/Kconfig
++++ b/drivers/input/keyboard/Kconfig
+@@ -469,6 +469,13 @@ config KEYBOARD_IMX
+ 	  To compile this driver as a module, choose M here: the
+ 	  module will be called imx_keypad.
  
-+SCU key bindings based on SCU Message Protocol
-+------------------------------------------------------------
++config KEYBOARD_IMX_SC_KEY
++	tristate "IMX SCU Key Driver"
++	depends on IMX_SCU
++	help
++	  This is the system controller key driver for NXP i.MX SoCs with
++	  system controller inside.
 +
-+Required properties:
-+- compatible: should be:
-+              "fsl,imx8qxp-sc-key"
-+              followed by "fsl,imx-sc-key";
-+- linux,keycodes: See Documentation/devicetree/bindings/input/keys.txt
+ config KEYBOARD_NEWTON
+ 	tristate "Newton keyboard"
+ 	select SERIO
+diff --git a/drivers/input/keyboard/Makefile b/drivers/input/keyboard/Makefile
+index 9510325..f5b1752 100644
+--- a/drivers/input/keyboard/Makefile
++++ b/drivers/input/keyboard/Makefile
+@@ -29,6 +29,7 @@ obj-$(CONFIG_KEYBOARD_HIL)		+= hil_kbd.o
+ obj-$(CONFIG_KEYBOARD_HIL_OLD)		+= hilkbd.o
+ obj-$(CONFIG_KEYBOARD_IPAQ_MICRO)	+= ipaq-micro-keys.o
+ obj-$(CONFIG_KEYBOARD_IMX)		+= imx_keypad.o
++obj-$(CONFIG_KEYBOARD_IMX_SC_KEY)	+= imx_sc_key.o
+ obj-$(CONFIG_KEYBOARD_HP6XX)		+= jornada680_kbd.o
+ obj-$(CONFIG_KEYBOARD_HP7XX)		+= jornada720_kbd.o
+ obj-$(CONFIG_KEYBOARD_LKKBD)		+= lkkbd.o
+diff --git a/drivers/input/keyboard/imx_sc_key.c b/drivers/input/keyboard/imx_sc_key.c
+new file mode 100644
+index 0000000..43485bd
+--- /dev/null
++++ b/drivers/input/keyboard/imx_sc_key.c
+@@ -0,0 +1,184 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright 2019 NXP.
++ */
 +
- Example (imx8qxp):
- -------------
- aliases {
-@@ -220,6 +229,11 @@ firmware {
- 			compatible = "fsl,imx8qxp-sc-rtc";
- 		};
- 
-+		scu_key: scu-key {
-+			compatible = "fsl,imx8qxp-sc-key", "fsl,imx-sc-key";
-+			linux,keycode = <KEY_POWER>;
-+		};
++#include <linux/device.h>
++#include <linux/err.h>
++#include <linux/firmware/imx/sci.h>
++#include <linux/init.h>
++#include <linux/input.h>
++#include <linux/interrupt.h>
++#include <linux/jiffies.h>
++#include <linux/kernel.h>
++#include <linux/module.h>
++#include <linux/of.h>
++#include <linux/of_address.h>
++#include <linux/platform_device.h>
 +
- 		watchdog {
- 			compatible = "fsl,imx8qxp-sc-wdt", "fsl,imx-sc-wdt";
- 			timeout-sec = <60>;
++#define DEBOUNCE_TIME	30
++#define REPEAT_INTERVAL	60
++
++#define SC_IRQ_BUTTON		1
++#define SC_IRQ_GROUP_WAKE	3
++#define IMX_SC_MISC_FUNC_GET_BUTTON_STATUS	18
++
++struct imx_key_drv_data {
++	int keycode;
++	bool keystate;  /* 1: pressed, 0: release */
++	struct delayed_work check_work;
++	struct input_dev *input;
++	struct imx_sc_ipc *key_ipc_handle;
++	struct notifier_block key_notifier;
++};
++
++struct imx_sc_msg_key {
++	struct imx_sc_rpc_msg hdr;
++	u8 state;
++};
++
++static int imx_sc_key_notify(struct notifier_block *nb,
++			     unsigned long event, void *group)
++{
++	struct imx_key_drv_data *priv =
++				 container_of(nb,
++					      struct imx_key_drv_data,
++					      key_notifier);
++
++	if ((event & SC_IRQ_BUTTON) && (*(u8 *)group == SC_IRQ_GROUP_WAKE)) {
++		schedule_delayed_work(&priv->check_work,
++				      msecs_to_jiffies(DEBOUNCE_TIME));
++		pm_wakeup_event(priv->input->dev.parent, 0);
++	}
++
++	return 0;
++}
++
++static void imx_sc_check_for_events(struct work_struct *work)
++{
++	struct imx_key_drv_data *priv =
++				 container_of(work,
++					      struct imx_key_drv_data,
++					      check_work.work);
++	struct input_dev *input = priv->input;
++	struct imx_sc_msg_key msg;
++	struct imx_sc_rpc_msg *hdr = &msg.hdr;
++	bool state;
++	int error;
++
++	hdr->ver = IMX_SC_RPC_VERSION;
++	hdr->svc = IMX_SC_RPC_SVC_MISC;
++	hdr->func = IMX_SC_MISC_FUNC_GET_BUTTON_STATUS;
++	hdr->size = 1;
++
++	error = imx_scu_call_rpc(priv->key_ipc_handle, &msg, true);
++	if (error) {
++		dev_err(&input->dev, "read imx sc key failed, error %d\n", error);
++		return;
++	}
++
++	state = (bool)msg.state;
++
++	if (state ^ priv->keystate) {
++		priv->keystate = state;
++		input_event(input, EV_KEY, priv->keycode, state);
++		input_sync(input);
++		if (!priv->keystate)
++			pm_relax(priv->input->dev.parent);
++	}
++
++	if (state)
++		schedule_delayed_work(&priv->check_work,
++				      msecs_to_jiffies(REPEAT_INTERVAL));
++}
++
++static int imx_sc_key_probe(struct platform_device *pdev)
++{
++	struct device_node *np = pdev->dev.of_node;
++	static struct imx_key_drv_data *priv;
++	struct input_dev *input;
++	int error;
++
++	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
++	if (!priv)
++		return -ENOMEM;
++
++	error = imx_scu_get_handle(&priv->key_ipc_handle);
++	if (error)
++		return error;
++
++	if (of_property_read_u32(np, "linux,keycode", &priv->keycode)) {
++		dev_err(&pdev->dev, "missing KEY_POWER in DT\n");
++		return -EINVAL;
++	}
++
++	INIT_DELAYED_WORK(&priv->check_work, imx_sc_check_for_events);
++
++	input = devm_input_allocate_device(&pdev->dev);
++	if (!input) {
++		dev_err(&pdev->dev, "failed to allocate the input device\n");
++		return -ENOMEM;
++	}
++
++	input->name = pdev->name;
++	input->phys = "imx-sc-key/input0";
++	input->id.bustype = BUS_HOST;
++
++	input_set_capability(input, EV_KEY, priv->keycode);
++
++	error = input_register_device(input);
++	if (error) {
++		dev_err(&pdev->dev, "failed to register input device\n");
++		return error;
++	}
++
++	priv->input = input;
++	platform_set_drvdata(pdev, priv);
++
++	error = imx_scu_irq_group_enable(SC_IRQ_GROUP_WAKE, SC_IRQ_BUTTON, true);
++	if (error) {
++		dev_warn(&pdev->dev, "enable scu group irq failed\n");
++		return error;
++	}
++
++	priv->key_notifier.notifier_call = imx_sc_key_notify;
++	error = imx_scu_irq_register_notifier(&priv->key_notifier);
++	if (error) {
++		imx_scu_irq_group_enable(SC_IRQ_GROUP_WAKE, SC_IRQ_BUTTON, false);
++		dev_warn(&pdev->dev, "register scu notifier failed\n");
++		return error;
++	}
++
++	return 0;
++}
++
++static int imx_sc_key_remove(struct platform_device *pdev)
++{
++	struct imx_key_drv_data *priv = platform_get_drvdata(pdev);
++
++	imx_scu_irq_group_enable(SC_IRQ_GROUP_WAKE, SC_IRQ_BUTTON, false);
++	imx_scu_irq_unregister_notifier(&priv->key_notifier);
++	cancel_delayed_work_sync(&priv->check_work);
++
++	return 0;
++}
++
++static const struct of_device_id imx_sc_key_ids[] = {
++	{ .compatible = "fsl,imx-sc-key" },
++	{ /* sentinel */ }
++};
++MODULE_DEVICE_TABLE(of, imx_sc_key_ids);
++
++static struct platform_driver imx_sc_key_driver = {
++	.driver = {
++		.name = "imx-sc-key",
++		.of_match_table = imx_sc_key_ids,
++	},
++	.probe = imx_sc_key_probe,
++	.remove = imx_sc_key_remove,
++};
++module_platform_driver(imx_sc_key_driver);
++
++MODULE_AUTHOR("Anson Huang <Anson.Huang@nxp.com>");
++MODULE_DESCRIPTION("i.MX System Controller Key Driver");
++MODULE_LICENSE("GPL v2");
 -- 
 2.7.4
 
