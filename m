@@ -2,66 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C68E9B56CE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 22:20:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85F53B56F0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 22:27:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WTS6DAQtkITq/YwndFX/U3ZpcI0yg7BOouiUkfmtR58=; b=EZfowOlYJBTu40
-	BOe9I9tfdpFzK7mUz6p/BIklnHVnXOfgi45l4N21UoydewxFmJdmZv9DFHlSHj4r3KSmCwGkJGjDv
-	yfa+P83TlAg8XHpslmMz8b5j79q1DJEGYxkXnYeYd0w28RtOmRiF+I8MeJnwcyKBqGhu/cW3lBzqD
-	IIFcoCP+7lM8aWxvAAj/4deznK5eq9bVS1VAZcD1GW81Hs6oc4fDpUPuns6EiJ78GlAAKzybc1L8a
-	M3GKpkncbhpY+aDCrZKz5Uc5fOzxzZAbE5eOJ/gcdVxDzYbwpDK5ipYy4FUvw2ihsJcCMG225pL6p
-	HX0dTXklH6TfW2CoPBlg==;
+	List-Owner; bh=Qata+bn4+tTXe87hKpK3xxhVPvIVYQ7kqfyiMwGh2js=; b=od8HAFpkj6YPdw
+	rdDVCXijawEnw/lCNU3t8WuQimnJMvLx5u9yKMo4VZ8Bc0cQq9RMcWVjsoz0faT5FYCUcyZgryybx
+	CIKTKKu8N2kDzDdzx5/TmGb2cZCZWBuilrUbEwESLA5iEBhJSiqN+KG5oiuBcS9fFzIpZldPE29Ox
+	VhAPzoORMae0mG17LhbFlwsB5PdpDV0zwlMYYooDCKz9UpdyI6dkRlVYPo/6NwleJF/KbotS3JBJT
+	9pJFh/KxT51AjfYmFYS5c2r1Ky06K0RjI1YZ3SRtkLTW0LhRBlj8CEN4MK3+BpncxNb4c/5f8R+E+
+	lJlyg30SYATLZ1FANF8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAJxh-0006Qk-Rl; Tue, 17 Sep 2019 20:20:34 +0000
+	id 1iAK4P-0001Hy-3x; Tue, 17 Sep 2019 20:27:29 +0000
 Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAJx9-0006QQ-5r
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 20:20:00 +0000
-Received: by mail-ot1-f68.google.com with SMTP id f21so1106941otl.13
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 17 Sep 2019 13:19:58 -0700 (PDT)
+ id 1iAK46-0001HH-50; Tue, 17 Sep 2019 20:27:11 +0000
+Received: by mail-ot1-f68.google.com with SMTP id f21so1125543otl.13;
+ Tue, 17 Sep 2019 13:27:10 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=lTap6f5G5pylKGfzicQFeJjtWLtSRnIsWooZSm3rQcI=;
- b=V0lTdf4v4N1LrVTYnCzg7e0szQf7mCtH7ONMn1F/EBHD3gNBow5/MjrcluouVjjvAI
- EHv2Yjf+jstFNnblMU96ouP+REHc33noWv33d7rT7Fg/FgFL53WGGZ2JzoZEse2kOzA3
- mye/Q5TA149Hh8C5y7jiG4i5xnZY1OWq0BrCyLznr/uh4lYN7uQSIrWkLD2FaqozKpuX
- G/pwWoxjry3Kdh9xGg38UrCUlkF7Hdh0i/c7ZLwtK7TH3X00TwrRBn9czR3ie6MuHraC
- 47BM2dkQbedKm3Waxb0a0uqoeFQNZFkTs9Roff5r6+8LukhwEuye1vYZ4KVM09xm9Txd
- P9RA==
-X-Gm-Message-State: APjAAAX+NFFoa613JkHjtfuUCSuR6L2UGior6AVn9exdszrIDK+eToC/
- 7XKWxfEhiwi2+Q/okivJnw==
-X-Google-Smtp-Source: APXvYqwWMcToGiqtK7DQ5rkMwWll7z3LWyTHg8U7Vn12++SkQnLN7MxzLClVS2wx0nFJZ0SVJAbvEA==
-X-Received: by 2002:a9d:2043:: with SMTP id n61mr598826ota.17.1568751598063;
- Tue, 17 Sep 2019 13:19:58 -0700 (PDT)
+ bh=s83Wv5uCp+7Qj+4GmDjA5Ca5EmGbCciwbwiS4sYI9qI=;
+ b=R8dynuLMjRVVQ6KijcOW+mGD+pbVj9oWrZ9uFP6uc9GK2sNqeHR3iiWL1FCgHVmLYw
+ PsEDnrSgZGtm+m6mPyiRBMwVOhNmPapvUYZqXW6y+SpJYBRr4SqNhGlFrNVRWifz1qyq
+ Z8SInqLA2mhFDl0TzVgLzY9yDJE0yLbL0wl4/6hpgckIJhhQaGTcLotyyavsUUOMKkBp
+ LzDeNf2EqY8hrCi1qXo0KsKV+06Cytw8GGNpwYHeqXtfEtV3viQ9NvvkeJffzpQ5YJjn
+ vN5W8739nGT86oyVee3oQjM+5yi4R2SPyrGkJ/6Ju50zQNoKpfpH6CgRgzq97GKlSyUp
+ 55sg==
+X-Gm-Message-State: APjAAAVG2cFr1LskNENWOvldW4JmqrgXcCuDU4HUAqxRzZZ7HCYM2ouS
+ 24oCQhxyBisNoahRXq9I8Q==
+X-Google-Smtp-Source: APXvYqyBsKu4pZeTpW1VfblTNNE7l4+9V7A8vmvIBWG8fqYJX20migoouN+/XxWz8CBFdryNxUXvmA==
+X-Received: by 2002:a05:6830:1047:: with SMTP id
+ b7mr625204otp.68.1568752029207; 
+ Tue, 17 Sep 2019 13:27:09 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id z10sm1355232ote.54.2019.09.17.13.19.57
+ by smtp.gmail.com with ESMTPSA id k3sm1026619otn.38.2019.09.17.13.27.08
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 17 Sep 2019 13:19:57 -0700 (PDT)
-Date: Tue, 17 Sep 2019 15:19:56 -0500
+ Tue, 17 Sep 2019 13:27:08 -0700 (PDT)
+Date: Tue, 17 Sep 2019 15:27:08 -0500
 From: Rob Herring <robh@kernel.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [RFCv4 3/7] dt-bindings: devfreq: imx: Describe interconnect
- properties
-Message-ID: <20190917201956.GA10780@bogus>
-References: <cover.1566570260.git.leonard.crestez@nxp.com>
- <3f27038292c09c8bf07a086eac759132c100aedb.1566570260.git.leonard.crestez@nxp.com>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Subject: Re: [PATCH v2 02/11] dt-bindings: phy-mtk-tphy: make the ref clock
+ optional
+Message-ID: <20190917202708.GA11898@bogus>
+References: <1567149298-29366-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1567149298-29366-2-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <3f27038292c09c8bf07a086eac759132c100aedb.1566570260.git.leonard.crestez@nxp.com>
+In-Reply-To: <1567149298-29366-2-git-send-email-chunfeng.yun@mediatek.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_131959_220994_CF1EA645 
-X-CRM114-Status: GOOD (  12.25  )
+X-CRM114-CacheID: sfid-20190917_132710_194207_57FA0606 
+X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.6 points)
@@ -93,41 +93,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Artur =?utf-8?B?xZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- linux-arm-kernel@lists.infradead.org, Saravana Kannan <saravanak@google.com>,
- linux-pm@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Alexandre Bailon <abailon@baylibre.com>, kernel@pengutronix.de,
- Dong Aisheng <aisheng.dong@nxp.com>, Fabio Estevam <fabio.estevam@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, Georgi Djakov <georgi.djakov@linaro.org>,
- devicetree@vger.kernel.org, linux-imx@nxp.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 23, 2019 at 05:36:56PM +0300, Leonard Crestez wrote:
-> The interconnect-node-id property is parsed by the imx interconnect
-> driver to find nodes on which frequencies can be adjusted.
+On Fri, 30 Aug 2019 15:14:49 +0800, Chunfeng Yun wrote:
+> Make the ref clock optional, then we no need refer to a fixed-clock
+> in DTS anymore when the clock of USB3 PHY comes from oscillator
+> directly
 > 
-> Add #interconnect-cells so that device drivers can request paths from
-> bus nodes instead of requiring a separate "virtual" node to represent
-> the interconnect itself.
-> 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 > ---
->  Documentation/devicetree/bindings/devfreq/imx-ddrc.yaml | 5 +++++
->  Documentation/devicetree/bindings/devfreq/imx.yaml      | 5 +++++
->  2 files changed, 10 insertions(+)
+> v2: no changes
+> ---
+>  .../devicetree/bindings/phy/phy-mtk-tphy.txt        | 13 +++++++------
+>  1 file changed, 7 insertions(+), 6 deletions(-)
+> 
 
-Please combine this with the other series for devfreq support.
-
-Rob
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
