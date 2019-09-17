@@ -2,109 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3EB1B56A8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 22:07:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5ED5B56AF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 22:08:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=kxqadAcXmhKY/BiV6A8nY28YXx1te3WfK1XjmTemHZA=; b=NM2J4wPn6VPUmU
-	OaRFBpI/ZIjxVIWRx8rJi7+667/FbwjCt1SX52lvvXghFn3x/3LT31AjgfPmcLun4oUn7NHIieOOA
-	hKsVeoB4mIhwGgf3aW7fm8L3laFj8sC6FvMvHZQUlhYtvC9SxZ4pSHUZ9DbShHA7ZVpVxMOebdv+0
-	UXGL2+Gd/VYG6RZF9zl9pe1mHG8toZnNWSj/hm7zkGYHnMqqcgFx84fVJBuyDR3pAOWGfLaJi1aFv
-	Nl38CusOQXrWZIApxA1Jn2IZuPkGECyDi79HKT8HpQaNUX5dqEQhpoBPLrykmM3nw/1t+8ouX6kSF
-	M4bhs09pZ4L19FZiLMVA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hqYGlpBPwaxmExCIDt0kjYLvEPX5MGWs3EwH5fr9Rt0=; b=IcMM+XWnLXLdn7
+	QBDdRWUfysbVgSQMPvHvK1WOtCzTM9NtiAPPmP5DwicJJxEh+90Lb6/F2EM/TZN09gPhP2w3w407w
+	1EgSVJbhNJ5myDcebXspc3NLMwQABMKV8Le2KaNnwVTNgkazLS5muMOHyxTyNRlbXwSuAu6A0+OeW
+	Um6uM18fUkqhh3dlnJu4V1IAbA+pnkTA6kbClYMwaJP2HKMzf8xhhnRpL+W39BBgs4W6Y5d8xGyY/
+	y4Q+k7Y9Xkf0XM1bU7nKrHeVkoldDniCKXqCKYHHRj0tFw9HrQLtJJ1kGX+SQmhzHbuG+ABKbmOZq
+	n4Q/9HwZ8e03b6vc7iPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAJl3-0002Np-VV; Tue, 17 Sep 2019 20:07:30 +0000
-Received: from mail-eopbgr10085.outbound.protection.outlook.com ([40.107.1.85]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1iAJlk-0002do-QL; Tue, 17 Sep 2019 20:08:13 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAJkp-0002NP-9M
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 20:07:17 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=XQIOqHFInF8xEgyPho/UD8X47msaD79QdgdNsrmf11NHd8T5gQUi4QcuEWeDCao8BzSpYCCiJKExl3FAdYHweuByQFxGNVYUtOI4PdmXzpniHucHkVXWAiQ1RIDXlqgkuD/7nIHSwpyjMWLhPDtM6KO/H8lis79WP8sc5exwxX1nYbuwNy/L6AqRLuxTnOJNQBt7IAkwLV2Eap2n5HUWblUCUCsww+IvCkXoUWceQTI4A1XanB+HS7PFfusqzedX1dGhc0zMYbbAI1qYI1LRTFGv2HZd8qoT5Gv6lYiMPf89a5OceBkeyM+FS4RpXaCoIogAvs9TdH2dFn1qNh8JKg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nnAyjC3Aob1yhpFk02csDqSG/+w7mX1MaNs1jwVzHjQ=;
- b=P5uObUmQ2sVlXqls1R/QZN1nmLCnEYGgCWGmlLwFPtL01ya2DoxYr4Qna7jjb+bTEibQ8aqioeXIoTkwA/f3aGEa/BfZyJJS6/sU2CcN3pRwNzM3xBwFLKy+Yvtj6wb/T6pdZKFRp0+L8hnIx2ysQdhFAQhJRzhb3GGza2rReXscpF3yvqE+LxVVS5p9AjAiNhtqpNfwtOcCinzr+mkXLRy+4i7KhmwHTKgN3nyQlzgV5Z8Lau4ClqZRouIVU1qKi7D+jxoQPV4kluU9vdREDSJmCBXtZxxJqnf62bg3g+5L1uZVG3J7C3csdXGEEz7bab4qfX/D43E9UoNIhMCX6Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nnAyjC3Aob1yhpFk02csDqSG/+w7mX1MaNs1jwVzHjQ=;
- b=VNds1ZzAih133BfooedxLtRfJycx/bTrhHLCLUb716l7cPKjp2zGkB8nQJTZFXIG5bPw/Rz4XVfSpqBbi8hJheBACF7KxbvNvY7mAnhgK7eeb40/biold+9EpwhJJE/y10cL45dLkCCVvJCfGKJKwKj8Jm78azIaBOo8UDc6TFA=
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
- VI1PR04MB6941.eurprd04.prod.outlook.com (52.133.246.77) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2263.20; Tue, 17 Sep 2019 20:07:12 +0000
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::c5e8:90f8:da97:947e]) by VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::c5e8:90f8:da97:947e%3]) with mapi id 15.20.2263.023; Tue, 17 Sep 2019
- 20:07:12 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: "myungjoo.ham@samsung.com" <myungjoo.ham@samsung.com>
-Subject: Re: [PATCH v4 1/6] PM / devfreq: Don't take lock in devfreq_add_device
-Thread-Topic: [PATCH v4 1/6] PM / devfreq: Don't take lock in
- devfreq_add_device
-Thread-Index: AQHVbRUAgHQh/XUwK0KEOpn0GYjB8w==
-Date: Tue, 17 Sep 2019 20:07:12 +0000
-Message-ID: <VI1PR04MB7023542CDF1707E04E7938BAEE8F0@VI1PR04MB7023.eurprd04.prod.outlook.com>
-References: <CGME20190917050135epcms1p15ba77f52d2a34db0236fd81107dba07f@epcms1p1>
- <20190917050135epcms1p15ba77f52d2a34db0236fd81107dba07f@epcms1p1>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [82.144.34.2]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 3fa435a2-93db-4c6d-3bcb-08d73baaa0a2
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600167)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:VI1PR04MB6941; 
-x-ms-traffictypediagnostic: VI1PR04MB6941:
-x-microsoft-antispam-prvs: <VI1PR04MB6941F3D6B586BA03003D641DEE8F0@VI1PR04MB6941.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-forefront-prvs: 01630974C0
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(136003)(396003)(366004)(346002)(39860400002)(199004)(189003)(53546011)(446003)(476003)(52536014)(305945005)(2906002)(8676002)(102836004)(186003)(6116002)(81166006)(256004)(66446008)(66946007)(76116006)(14444005)(64756008)(66556008)(66476007)(6916009)(14454004)(5640700003)(478600001)(6436002)(81156014)(71190400001)(3846002)(229853002)(8936002)(71200400001)(33656002)(44832011)(25786009)(7736002)(86362001)(54906003)(26005)(6506007)(74316002)(6246003)(76176011)(55016002)(4326008)(2351001)(91956017)(7696005)(316002)(5660300002)(486006)(99286004)(9686003)(66066001)(2501003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB6941;
- H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: msMyOFFwXc9ZzXG7rQDVUkOaogQXBPF6kS4dxqfbp99/7DVjmGrycPikDFIBtGWY6iJKsmzFuNfP8ef/ZkbTP05CGwkbZhncDg2DxGbYs2M9fpY1UxcyTkIgnl3Dx3HLfyQQzmCN13hzLuE91hM2pRxaY3F1a/WppFHO9IsbfCpfKbaEPRLDZ/2QXp8YYZLf7NpcCQ6nFvTJ6JHT+cIQG9UQlYdtCXeb7d8jxHNfsHB+k3/dD/yw+MCeRiDFeuz95HRXpQDHrq1GNURt/yLf8ysPjI+Am9SB3Rf2RYW9MwJIBAiowjCTD0rQRSRPOUqI1GugAwMsuOkK1CfKyDu85Z9Mfac8sUwT2Ly72Z1niDMwHvD+IujWBKww/QWjb/d757OtUxmcaZt0j9n8VRkkfJaaQKha5ocBpncQK5HrSnk=
-x-ms-exchange-transport-forked: True
+ id 1iAJlC-0002cu-PK
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 20:07:40 +0000
+Received: by mail-io1-xd41.google.com with SMTP id k5so10700005iol.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 17 Sep 2019 13:07:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Ce6TIk2yBsCUQjQPMJ8ki5Nu2SBqoNexDUHdpPLZySE=;
+ b=IXoQ3vxuaz+/4yYyVZDcNRx1kyPbDpgLdKm9H8fFva0zYnZbhoFmyYyC8gngZ58zyF
+ 6NxP+qTT+//nALDqAjKoS3MOCtXEssE+jNU/o5MfABd/0QfY3+RqJjY3fM9a5qI/F/4T
+ I6epQYin6F+jNcw6aZJIhbXjbp5bKLq+/DjI7wrNkEHGGgqFaC3H0YN1XY/adk4zydhW
+ Xf95qYQNNXA2wAxAS+n54QcFh281JuuxKEOq/L8CTTqsOx4H9/SagURbie47k2iYcAhF
+ B0/AzQQkBqYdmNMEweXoFU7lM61o6RZS8L7cktMGGlkEuw/V+Kp2pD+o1/oJYGlsiLZg
+ WK1A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Ce6TIk2yBsCUQjQPMJ8ki5Nu2SBqoNexDUHdpPLZySE=;
+ b=F4bKFf7gHz7RxKAKgdtJ+1fesgkkFW1NSwcEDyyczy6w38mOIpW5Kr/Y2NVfjGT1OU
+ fq0nYqAB38Tn1J2QgbQluFq75Jdc8+4fDy1owb+WIUeXL5pzXS5k6+WYYvfoPdJZ5kos
+ Ro17R0G5FsmK21B7WMNdTseL6YJQHozzhtTrKX7d+ji3qsG5zC7IExCR+bJ7saz/PXiM
+ reOP2dlUaKuRfq74Uk02b8mB+goI4GhAyVLxvzukZ0U0B8UzXs/r7Js3neqbz7RiCL6m
+ H3AVelsNAsMAe75auxB4GxA0W9yrkqY/YNQ30BnNWJwIhd5qZSpGSJdI+O0DR3SGelPo
+ KP3g==
+X-Gm-Message-State: APjAAAUHtqZS2AtYtDbyLBCAvU6X1g/c8K2gUdbBno0TEVtUmNFqhNOt
+ 6gFjv/MZzP2/YnmfRY54r0ISKZMPeSpx9Pe4fRs=
+X-Google-Smtp-Source: APXvYqx/bywcsKyBZocnzcRUqWxcRIiNYzZKZ+MK31UwJG5x0ScDRR8hwq1bhsfxSgwub9YjCSWmX4ykNdQvx8Skj7k=
+X-Received: by 2002:a5d:8b47:: with SMTP id c7mr733291iot.42.1568750857640;
+ Tue, 17 Sep 2019 13:07:37 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3fa435a2-93db-4c6d-3bcb-08d73baaa0a2
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Sep 2019 20:07:12.0379 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: meEmwYdqHOCmI2EmrNfEllTlQ5XQs2LtXJb5favkBju6ja7ZNgt4NF19MwOYz2qIqFci4/asBaBSQpw10Tm8yQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6941
+References: <20190907172225.10910.34302.stgit@localhost.localdomain>
+ <20190907172545.10910.88045.stgit@localhost.localdomain>
+ <20190917174853.5csycb5pb5zalsxd@willie-the-truck>
+In-Reply-To: <20190917174853.5csycb5pb5zalsxd@willie-the-truck>
+From: Alexander Duyck <alexander.duyck@gmail.com>
+Date: Tue, 17 Sep 2019 13:07:26 -0700
+Message-ID: <CAKgT0Ufoq5BsOwW11SYHDBcy8-U91FgFCxK9XFf5twPWXzpO7g@mail.gmail.com>
+Subject: Re: [PATCH v9 5/8] arm64: Move hugetlb related definitions out of
+ pgtable.h to page-defs.h
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_130715_399254_C29BBE74 
-X-CRM114-Status: UNSURE (   8.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190917_130738_843907_CA1CBF3B 
+X-CRM114-Status: GOOD (  20.07  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.85 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (alexander.duyck[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -123,57 +95,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chanwoo Choi <cw00.choi@samsung.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>
+Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
+ kvm list <kvm@vger.kernel.org>, David Hildenbrand <david@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Michal Hocko <mhocko@kernel.org>,
+ linux-mm <linux-mm@kvack.org>,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>,
+ Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
+ "Michael S. Tsirkin" <mst@redhat.com>, Matthew Wilcox <willy@infradead.org>,
+ "Wang, Wei W" <wei.w.wang@intel.com>, ying.huang@intel.com,
+ Rik van Riel <riel@surriel.com>, Dan Williams <dan.j.williams@intel.com>,
+ lcapitulino@redhat.com, linux-arm-kernel@lists.infradead.org,
+ Oscar Salvador <osalvador@suse.de>, Nitesh Narayan Lal <nitesh@redhat.com>,
+ Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
+ Dave Hansen <dave.hansen@intel.com>, LKML <linux-kernel@vger.kernel.org>,
+ Paolo Bonzini <pbonzini@redhat.com>, Andrew Morton <akpm@linux-foundation.org>,
+ Fengguang Wu <fengguang.wu@intel.com>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-09-17 8:01 AM, MyungJoo Ham wrote:
->> A device usually doesn't need to lock itself during initialization
->> because it is not yet reachable from other threads.
->>
->> This simplifies the code and helps avoid recursive lock warnings.
->>
->> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
->> ---
-> 
-> 
-> 
->  From the line of
-> 
->> err = device_register(&devfreq->dev);
-> 
-> Other threads may access the protected values.
-> Thus, if there are recursive lock warnings, we need to resolve it without eliminating lock usages.
+On Tue, Sep 17, 2019 at 10:49 AM Will Deacon <will@kernel.org> wrote:
+>
+> On Sat, Sep 07, 2019 at 10:25:45AM -0700, Alexander Duyck wrote:
+> > From: Alexander Duyck <alexander.h.duyck@linux.intel.com>
+> >
+> > Move the static definition for things such as HUGETLB_PAGE_ORDER out of
+> > asm/pgtable.h and place it in page-defs.h. By doing this the includes
+> > become much easier to deal with as currently arm64 is the only architecture
+> > that didn't include this definition in the asm/page.h file or a file
+> > included by it.
+> >
+> > It also makes logical sense as PAGE_SHIFT was already defined in
+> > page-defs.h so now we also have HPAGE_SHIFT defined there as well.
+> >
+> > Signed-off-by: Alexander Duyck <alexander.h.duyck@linux.intel.com>
+> > ---
+> >  arch/arm64/include/asm/page-def.h |    9 +++++++++
+> >  arch/arm64/include/asm/pgtable.h  |    9 ---------
+> >  2 files changed, 9 insertions(+), 9 deletions(-)
+> >
+> > diff --git a/arch/arm64/include/asm/page-def.h b/arch/arm64/include/asm/page-def.h
+> > index f99d48ecbeef..1c5b079e2482 100644
+> > --- a/arch/arm64/include/asm/page-def.h
+> > +++ b/arch/arm64/include/asm/page-def.h
+> > @@ -20,4 +20,13 @@
+> >  #define CONT_SIZE            (_AC(1, UL) << (CONT_SHIFT + PAGE_SHIFT))
+> >  #define CONT_MASK            (~(CONT_SIZE-1))
+> >
+> > +/*
+> > + * Hugetlb definitions.
+> > + */
+> > +#define HUGE_MAX_HSTATE              4
+> > +#define HPAGE_SHIFT          PMD_SHIFT
+> > +#define HPAGE_SIZE           (_AC(1, UL) << HPAGE_SHIFT)
+> > +#define HPAGE_MASK           (~(HPAGE_SIZE - 1))
+> > +#define HUGETLB_PAGE_ORDER   (HPAGE_SHIFT - PAGE_SHIFT)
+> > +
+> >  #endif /* __ASM_PAGE_DEF_H */
+> > diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
+> > index 7576df00eb50..06a376de9bd6 100644
+> > --- a/arch/arm64/include/asm/pgtable.h
+> > +++ b/arch/arm64/include/asm/pgtable.h
+> > @@ -305,15 +305,6 @@ static inline int pte_same(pte_t pte_a, pte_t pte_b)
+> >   */
+> >  #define pte_mkhuge(pte)              (__pte(pte_val(pte) & ~PTE_TABLE_BIT))
+> >
+> > -/*
+> > - * Hugetlb definitions.
+> > - */
+> > -#define HUGE_MAX_HSTATE              4
+> > -#define HPAGE_SHIFT          PMD_SHIFT
+> > -#define HPAGE_SIZE           (_AC(1, UL) << HPAGE_SHIFT)
+> > -#define HPAGE_MASK           (~(HPAGE_SIZE - 1))
+> > -#define HUGETLB_PAGE_ORDER   (HPAGE_SHIFT - PAGE_SHIFT)
+> > -
+>
+> Acked-by: Will Deacon <will@kernel.org>
+>
+> I'm assuming you're taking this along with the other patches, but please
+> shout if you'd rather it went via the arm64 tree.
+>
+> Will
 
-The following fields are initialized after device_register:
-   * trans_table
-   * time_in_stable
-   * last_stat_updated
-   * transition_notifier_list
+As it turns out I am close to submitting a v10 that doesn't need this
+patch. I basically just needed to move the list manipulators out of
+mmzone.h and then moved my header file out of there so I no longer
+needed the code.
 
-The transition_notifier_list initialization could be easily moved higher.
+Thanks.
 
-The rest are for transition statistics and in theory if a transition 
-happens his early (how?) or trans_stat_show is called then something bad 
-could happen. It seems that trans_stat_show doesn't even take 
-devfreq->lock anyway?
-
-The code allocating transition stats could be moved higher by dropping 
-devm usage or spliting device_register into device_initialize and 
-device_add (but that's more complicated).
-
-Further on the governor is initialized and started after device 
-registration but (even before my change). This seems fine, a NULL 
-governor is explicitly checked against in various update functions.
-
---
-Regards,
-Leonard
+- Alex
 
 _______________________________________________
 linux-arm-kernel mailing list
