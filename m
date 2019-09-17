@@ -2,60 +2,122 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DE1DB48EA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 10:13:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EAD78B493D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 10:23:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=AfNIGoqdjcUZz4qdEJ6yWOLk/Ulg40WPGtVXSyYpkmg=; b=kt1gB71xNqg++E7XzZwuX5Cbx
-	oBPepIOgPXspvTLzDjW4SxPQW3My2pLeJLM4SeSYCY5cHwE0rZaq98/NLcf+UmR5Ktl5IevtHNZKK
-	+nKACboYRwna37qeirNhVHoXsrlUbaCS6i79PR8HcXMm/SzxM9CGAiHARTKTeIyjDuHx5jdZa/aRg
-	AcpsL3TWRE9+0mxBl0WuOSgdQcaaQ/0UozXjdHVaDL+UuGuMc3oHobFx/ZO0p/1czKfnDijnc9yHC
-	wSazBLx/m7JPDIgwEtjMwN2wob6c7Wibb2w9F0LXoq4XmnW4UOD1P1Rh808gAOahzHBNTdG8yQmPU
-	BX3IFmtAA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uSoW2Cv82OYCP8Hkvcee++fhO+ojRB58kqddhKFZKaw=; b=F06hkepbMsT183
+	HMpSv2yKIn2DbrhcaQzIpMtxzNUSND/BfzeAmRWaAGmcGVSSIEHxM4c1Db1BXudvmEByJS7biJbL0
+	y13YruIXoXtR8O2/DQa6ci9RktgHCP0WqPLYuR02BPqeUJlMTKAXDixT+QmkPOfUVManDdXe5bcbS
+	t7ZafwsMBHbP/9pqBSM19qpt5aD2sjAqq7F2b3SUuujFbbZ13tYJUTER7oTKpBVO4xkxu1rH16/ev
+	odoL2XrqUWNmUbX5aMwyVjfpEUioc86B4eq9274DEB+7VyJvjD+EM/9/CsdIVznV4UsRNLX4zd96C
+	SE3lcHDthEygy1jAB4EQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iA8bz-0004p8-5y; Tue, 17 Sep 2019 08:13:23 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1iA8lq-0000F8-0o; Tue, 17 Sep 2019 08:23:34 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iA8bV-0004oM-05
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 08:12:55 +0000
-Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 0C3B6269A6DB47ECD602;
- Tue, 17 Sep 2019 16:12:43 +0800 (CST)
-Received: from [127.0.0.1] (10.184.12.158) by DGGEMS414-HUB.china.huawei.com
- (10.3.19.214) with Microsoft SMTP Server id 14.3.439.0; Tue, 17 Sep 2019
- 16:12:36 +0800
-Subject: Re: [PATCH] KVM: arm64: vgic-v4: Move the GICv4 residency flow to be
- driven by vcpu_load/put
-To: Marc Zyngier <maz@kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <kvmarm@lists.cs.columbia.edu>, <kvm@vger.kernel.org>
-References: <20190903155747.219802-1-maz@kernel.org>
-From: Zenghui Yu <yuzenghui@huawei.com>
-Message-ID: <5ab75fec-6014-e3b4-92a3-63d5015814c1@huawei.com>
-Date: Tue, 17 Sep 2019 16:10:39 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101
- Thunderbird/64.0
+ id 1iA8lW-0000Ek-25; Tue, 17 Sep 2019 08:23:15 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 2049BAE84;
+ Tue, 17 Sep 2019 08:23:12 +0000 (UTC)
+Subject: Re: [PATCH v3] mm/kasan: dump alloc and free stack for page allocator
+To: Andrey Ryabinin <aryabinin@virtuozzo.com>,
+ Walter Wu <walter-zh.wu@mediatek.com>
+References: <20190911083921.4158-1-walter-zh.wu@mediatek.com>
+ <5E358F4B-552C-4542-9655-E01C7B754F14@lca.pw>
+ <c4d2518f-4813-c941-6f47-73897f420517@suse.cz>
+ <1568297308.19040.5.camel@mtksdccf07>
+ <613f9f23-c7f0-871f-fe13-930c35ef3105@suse.cz>
+ <79fede05-735b-8477-c273-f34db93fd72b@virtuozzo.com>
+ <6d58ce86-b2a4-40af-bf40-c604b457d086@suse.cz>
+ <4e76e7ce-1d61-524a-622b-663c01d19707@virtuozzo.com>
+From: Vlastimil Babka <vbabka@suse.cz>
+Openpgp: preference=signencrypt
+Autocrypt: addr=vbabka@suse.cz; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <a5103bf0-245e-5894-0486-3e92fa830e41@suse.cz>
+Date: Tue, 17 Sep 2019 10:19:15 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190903155747.219802-1-maz@kernel.org>
+In-Reply-To: <4e76e7ce-1d61-524a-622b-663c01d19707@virtuozzo.com>
 Content-Language: en-US
-X-Originating-IP: [10.184.12.158]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_011253_368869_7EAE00A8 
-X-CRM114-Status: GOOD (  27.06  )
+X-CRM114-CacheID: sfid-20190917_012314_396400_BCDC3851 
+X-CRM114-Status: GOOD (  13.99  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,364 +129,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andre Przywara <Andre.Przywara@arm.com>
+Cc: wsd_upstream@mediatek.com, Arnd Bergmann <arnd@arndb.de>,
+ linux-mm@kvack.org, Andrey Konovalov <andreyknvl@google.com>,
+ linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org,
+ kasan-dev@googlegroups.com, Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Alexander Potapenko <glider@google.com>, linux-arm-kernel@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Qian Cai <cai@lca.pw>,
+ Andrew Morton <akpm@linux-foundation.org>, Dmitry Vyukov <dvyukov@google.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
-
-I've run this patch on my box and got the following messages:
-
----8<
-
-[ 2258.490030] BUG: sleeping function called from invalid context at 
-kernel/irq/manage.c:138
-[ 2258.490034] in_atomic(): 1, irqs_disabled(): 0, pid: 59278, name: CPU 
-0/KVM
-[ 2258.490039] CPU: 32 PID: 59278 Comm: CPU 0/KVM Kdump: loaded Tainted: 
-G        W         5.3.0+ #26
-[ 2258.490041] Hardware name: Huawei TaiShan 2280 /BC11SPCD, BIOS 1.58 
-10/29/2018
-[ 2258.490043] Call trace:
-[ 2258.490056]  dump_backtrace+0x0/0x188
-[ 2258.490060]  show_stack+0x24/0x30
-[ 2258.490066]  dump_stack+0xb0/0xf4
-[ 2258.490072]  ___might_sleep+0x10c/0x130
-[ 2258.490074]  __might_sleep+0x58/0x90
-[ 2258.490078]  synchronize_irq+0x58/0xd8
-[ 2258.490079]  disable_irq+0x2c/0x38
-[ 2258.490083]  vgic_v4_load+0x9c/0xc0
-[ 2258.490084]  vgic_v3_load+0x94/0x170
-[ 2258.490088]  kvm_vgic_load+0x3c/0x60
-[ 2258.490092]  kvm_arch_vcpu_load+0xd4/0x1d0
-[ 2258.490095]  vcpu_load+0x50/0x70
-[ 2258.490097]  kvm_arch_vcpu_ioctl_run+0x94/0x978
-[ 2258.490098]  kvm_vcpu_ioctl+0x3d8/0xa28
-[ 2258.490104]  do_vfs_ioctl+0xc4/0x8e8
-[ 2258.490106]  ksys_ioctl+0x8c/0xa0
-[ 2258.490108]  __arm64_sys_ioctl+0x28/0x58
-[ 2258.490112]  el0_svc_common.constprop.0+0x7c/0x188
-[ 2258.490114]  el0_svc_handler+0x34/0xb8
-[ 2258.490117]  el0_svc+0x8/0xc
-[ 2259.497070] BUG: sleeping function called from invalid context at 
-kernel/irq/manage.c:138
-[ 2259.497077] in_atomic(): 1, irqs_disabled(): 0, pid: 59278, name: CPU 
-0/KVM
-[ 2259.497082] CPU: 33 PID: 59278 Comm: CPU 0/KVM Kdump: loaded Tainted: 
-G        W         5.3.0+ #26
-[ 2259.497083] Hardware name: Huawei TaiShan 2280 /BC11SPCD, BIOS 1.58 
-10/29/2018
-[ 2259.497086] Call trace:
-[ 2259.497098]  dump_backtrace+0x0/0x188
-[ 2259.497101]  show_stack+0x24/0x30
-[ 2259.497109]  dump_stack+0xb0/0xf4
-[ 2259.497115]  ___might_sleep+0x10c/0x130
-[ 2259.497117]  __might_sleep+0x58/0x90
-[ 2259.497120]  synchronize_irq+0x58/0xd8
-[ 2259.497122]  disable_irq+0x2c/0x38
-[ 2259.497126]  vgic_v4_load+0x9c/0xc0
-[ 2259.497127]  vgic_v3_load+0x94/0x170
-[ 2259.497130]  kvm_vgic_load+0x3c/0x60
-[ 2259.497134]  kvm_arch_vcpu_load+0xd4/0x1d0
-[ 2259.497137]  kvm_sched_in+0x30/0x40
-[ 2259.497139]  finish_task_switch+0x134/0x258
-[ 2259.497142]  __schedule+0x33c/0x780
-[ 2259.497144]  schedule+0x48/0xd8
-[ 2259.497147]  kvm_vcpu_block+0xb8/0x390
-[ 2259.497148]  kvm_handle_wfx+0xa0/0x230
-[ 2259.497150]  handle_exit+0x14c/0x1c8
-[ 2259.497152]  kvm_arch_vcpu_ioctl_run+0x354/0x978
-[ 2259.497154]  kvm_vcpu_ioctl+0x3d8/0xa28
-[ 2259.497161]  do_vfs_ioctl+0xc4/0x8e8
-[ 2259.497163]  ksys_ioctl+0x8c/0xa0
-[ 2259.497165]  __arm64_sys_ioctl+0x28/0x58
-[ 2259.497168]  el0_svc_common.constprop.0+0x7c/0x188
-[ 2259.497171]  el0_svc_handler+0x34/0xb8
-[ 2259.497175]  el0_svc+0x8/0xc
-
-
-The logic of disabling the doorbell interrupt in vgic_v4_load() might
-need a fix?
-
-
-Thanks,
-zenghui
-
-On 2019/9/3 23:57, Marc Zyngier wrote:
-> When the VHE code was reworked, a lot of the vgic stuff was moved around,
-> but the GICv4 residency code did stay untouched, meaning that we come
-> in and out of residency on each flush/sync, which is obviously suboptimal.
+On 9/16/19 5:57 PM, Andrey Ryabinin wrote:
+>> --- a/mm/page_alloc.c
+>> +++ b/mm/page_alloc.c
+>> @@ -710,8 +710,12 @@ static int __init early_debug_pagealloc(char *buf)
+>>  	if (kstrtobool(buf, &enable))
+>>  		return -EINVAL;
+>>  
+>> -	if (enable)
+>> +	if (enable) {
+>>  		static_branch_enable(&_debug_pagealloc_enabled);
+>> +#ifdef CONFIG_PAGE_OWNER
+>> +		page_owner_free_stack_disabled = false;
 > 
-> To address this, let's move things around a bit:
+> I think this won't work with CONFIG_DEBUG_PAGEALLOC_ENABLE_DEFAULT=y
+
+Good point, thanks.
+
+>> +#endif
+>> +	}
+>>  
+>>  	return 0;
+>>  }
+>> diff --git a/mm/page_owner.c b/mm/page_owner.c
+>> index dee931184788..b589bfbc4795 100644
+>> --- a/mm/page_owner.c
+>> +++ b/mm/page_owner.c
+>> @@ -24,13 +24,15 @@ struct page_owner {
+>>  	short last_migrate_reason;
+>>  	gfp_t gfp_mask;
+>>  	depot_stack_handle_t handle;
+>> -#ifdef CONFIG_DEBUG_PAGEALLOC
+>> +#ifdef CONFIG_PAGE_OWNER_FREE_STACK
+>>  	depot_stack_handle_t free_handle;
+>>  #endif
+>>  };
+>>  
+>>  static bool page_owner_disabled = true;
+>> +bool page_owner_free_stack_disabled = true;
+>>  DEFINE_STATIC_KEY_FALSE(page_owner_inited);
+>> +static DEFINE_STATIC_KEY_FALSE(page_owner_free_stack);
+>>  
+>>  static depot_stack_handle_t dummy_handle;
+>>  static depot_stack_handle_t failure_handle;
+>> @@ -46,6 +48,9 @@ static int __init early_page_owner_param(char *buf)
+>>  	if (strcmp(buf, "on") == 0)
+>>  		page_owner_disabled = false;
+>>  
+>> +	if (!page_owner_disabled && IS_ENABLED(CONFIG_KASAN))
 > 
-> - Residency entry (flush) moves to vcpu_load
-> - Residency exit (sync) moves to vcpu_put
-> - On blocking (entry to WFI), we "put"
-> - On unblocking (exit from WFI, we "load"
+> I'd rather keep all logic in one place, i.e. "if (!page_owner_disabled && (IS_ENABLED(CONFIG_KASAN) || debug_pagealloc_enabled())"
+> With this no changes in early_debug_pagealloc() required and CONFIG_DEBUG_PAGEALLOC_ENABLE_DEFAULT=y should also work correctly.
+
+In this function it would not work if the debug_pagealloc param gets
+processed later than page_owner, but should be doable in
+init_page_owner(), I'll try, thanks.
+
 > 
-> Because these can nest (load/block/put/load/unblock/put, for example),
-> we now have per-VPE tracking of the residency state.
-> 
-> Additionally, vgic_v4_put gains a "need doorbell" parameter, which only
-> gets set to true when blocking because of a WFI. This allows a finer
-> control of the doorbell, which now also gets disabled as soon as
-> it gets signaled.
-> 
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-> ---
->   drivers/irqchip/irq-gic-v4.c       |  7 +++-
->   include/kvm/arm_vgic.h             |  4 +--
->   include/linux/irqchip/arm-gic-v4.h |  2 ++
->   virt/kvm/arm/arm.c                 | 12 ++++---
->   virt/kvm/arm/vgic/vgic-v3.c        |  4 +++
->   virt/kvm/arm/vgic/vgic-v4.c        | 55 ++++++++++++++----------------
->   virt/kvm/arm/vgic/vgic.c           |  4 ---
->   virt/kvm/arm/vgic/vgic.h           |  2 --
->   8 files changed, 48 insertions(+), 42 deletions(-)
-> 
-> diff --git a/drivers/irqchip/irq-gic-v4.c b/drivers/irqchip/irq-gic-v4.c
-> index 563e87ed0766..45969927cc81 100644
-> --- a/drivers/irqchip/irq-gic-v4.c
-> +++ b/drivers/irqchip/irq-gic-v4.c
-> @@ -141,12 +141,17 @@ static int its_send_vpe_cmd(struct its_vpe *vpe, struct its_cmd_info *info)
->   int its_schedule_vpe(struct its_vpe *vpe, bool on)
->   {
->   	struct its_cmd_info info;
-> +	int ret;
->   
->   	WARN_ON(preemptible());
->   
->   	info.cmd_type = on ? SCHEDULE_VPE : DESCHEDULE_VPE;
->   
-> -	return its_send_vpe_cmd(vpe, &info);
-> +	ret = its_send_vpe_cmd(vpe, &info);
-> +	if (!ret)
-> +		vpe->resident = on;
-> +
-> +	return ret;
->   }
->   
->   int its_invall_vpe(struct its_vpe *vpe)
-> diff --git a/include/kvm/arm_vgic.h b/include/kvm/arm_vgic.h
-> index af4f09c02bf1..4dc58d7a0010 100644
-> --- a/include/kvm/arm_vgic.h
-> +++ b/include/kvm/arm_vgic.h
-> @@ -396,7 +396,7 @@ int kvm_vgic_v4_set_forwarding(struct kvm *kvm, int irq,
->   int kvm_vgic_v4_unset_forwarding(struct kvm *kvm, int irq,
->   				 struct kvm_kernel_irq_routing_entry *irq_entry);
->   
-> -void kvm_vgic_v4_enable_doorbell(struct kvm_vcpu *vcpu);
-> -void kvm_vgic_v4_disable_doorbell(struct kvm_vcpu *vcpu);
-> +int vgic_v4_load(struct kvm_vcpu *vcpu);
-> +int vgic_v4_put(struct kvm_vcpu *vcpu, bool need_db);
->   
->   #endif /* __KVM_ARM_VGIC_H */
-> diff --git a/include/linux/irqchip/arm-gic-v4.h b/include/linux/irqchip/arm-gic-v4.h
-> index e6b155713b47..ab1396afe08a 100644
-> --- a/include/linux/irqchip/arm-gic-v4.h
-> +++ b/include/linux/irqchip/arm-gic-v4.h
-> @@ -35,6 +35,8 @@ struct its_vpe {
->   	/* Doorbell interrupt */
->   	int			irq;
->   	irq_hw_number_t		vpe_db_lpi;
-> +	/* VPE resident */
-> +	bool			resident;
->   	/* VPE proxy mapping */
->   	int			vpe_proxy_event;
->   	/*
-> diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
-> index 35a069815baf..4e69268621b6 100644
-> --- a/virt/kvm/arm/arm.c
-> +++ b/virt/kvm/arm/arm.c
-> @@ -321,20 +321,24 @@ void kvm_arch_vcpu_blocking(struct kvm_vcpu *vcpu)
->   	/*
->   	 * If we're about to block (most likely because we've just hit a
->   	 * WFI), we need to sync back the state of the GIC CPU interface
-> -	 * so that we have the lastest PMR and group enables. This ensures
-> +	 * so that we have the latest PMR and group enables. This ensures
->   	 * that kvm_arch_vcpu_runnable has up-to-date data to decide
->   	 * whether we have pending interrupts.
-> +	 *
-> +	 * For the same reason, we want to tell GICv4 that we need
-> +	 * doorbells to be signalled, should an interrupt become pending.
->   	 */
->   	preempt_disable();
->   	kvm_vgic_vmcr_sync(vcpu);
-> +	vgic_v4_put(vcpu, true);
->   	preempt_enable();
-> -
-> -	kvm_vgic_v4_enable_doorbell(vcpu);
->   }
->   
->   void kvm_arch_vcpu_unblocking(struct kvm_vcpu *vcpu)
->   {
-> -	kvm_vgic_v4_disable_doorbell(vcpu);
-> +	preempt_disable();
-> +	vgic_v4_load(vcpu);
-> +	preempt_enable();
->   }
->   
->   int kvm_arch_vcpu_init(struct kvm_vcpu *vcpu)
-> diff --git a/virt/kvm/arm/vgic/vgic-v3.c b/virt/kvm/arm/vgic/vgic-v3.c
-> index 8d69f007dd0c..48307a9eb1d8 100644
-> --- a/virt/kvm/arm/vgic/vgic-v3.c
-> +++ b/virt/kvm/arm/vgic/vgic-v3.c
-> @@ -664,6 +664,8 @@ void vgic_v3_load(struct kvm_vcpu *vcpu)
->   
->   	if (has_vhe())
->   		__vgic_v3_activate_traps(vcpu);
-> +
-> +	WARN_ON(vgic_v4_load(vcpu));
->   }
->   
->   void vgic_v3_vmcr_sync(struct kvm_vcpu *vcpu)
-> @@ -676,6 +678,8 @@ void vgic_v3_vmcr_sync(struct kvm_vcpu *vcpu)
->   
->   void vgic_v3_put(struct kvm_vcpu *vcpu)
->   {
-> +	WARN_ON(vgic_v4_put(vcpu, false));
-> +
->   	vgic_v3_vmcr_sync(vcpu);
->   
->   	kvm_call_hyp(__vgic_v3_save_aprs, vcpu);
-> diff --git a/virt/kvm/arm/vgic/vgic-v4.c b/virt/kvm/arm/vgic/vgic-v4.c
-> index 477af6aebb97..3a8a28854b13 100644
-> --- a/virt/kvm/arm/vgic/vgic-v4.c
-> +++ b/virt/kvm/arm/vgic/vgic-v4.c
-> @@ -85,6 +85,10 @@ static irqreturn_t vgic_v4_doorbell_handler(int irq, void *info)
->   {
->   	struct kvm_vcpu *vcpu = info;
->   
-> +	/* We got the message, no need to fire again */
-> +	if (!irqd_irq_disabled(&irq_to_desc(irq)->irq_data))
-> +		disable_irq_nosync(irq);
-> +
->   	vcpu->arch.vgic_cpu.vgic_v3.its_vpe.pending_last = true;
->   	kvm_make_request(KVM_REQ_IRQ_PENDING, vcpu);
->   	kvm_vcpu_kick(vcpu);
-> @@ -192,20 +196,30 @@ void vgic_v4_teardown(struct kvm *kvm)
->   	its_vm->vpes = NULL;
->   }
->   
-> -int vgic_v4_sync_hwstate(struct kvm_vcpu *vcpu)
-> +int vgic_v4_put(struct kvm_vcpu *vcpu, bool need_db)
->   {
-> -	if (!vgic_supports_direct_msis(vcpu->kvm))
-> +	struct its_vpe *vpe = &vcpu->arch.vgic_cpu.vgic_v3.its_vpe;
-> +	struct irq_desc *desc = irq_to_desc(vpe->irq);
-> +
-> +	if (!vgic_supports_direct_msis(vcpu->kvm) || !vpe->resident)
->   		return 0;
->   
-> -	return its_schedule_vpe(&vcpu->arch.vgic_cpu.vgic_v3.its_vpe, false);
-> +	/*
-> +	 * If blocking, a doorbell is required. Undo the nested
-> +	 * disable_irq() calls...
-> +	 */
-> +	while (need_db && irqd_irq_disabled(&desc->irq_data))
-> +		enable_irq(vpe->irq);
-> +
-> +	return its_schedule_vpe(vpe, false);
->   }
->   
-> -int vgic_v4_flush_hwstate(struct kvm_vcpu *vcpu)
-> +int vgic_v4_load(struct kvm_vcpu *vcpu)
->   {
-> -	int irq = vcpu->arch.vgic_cpu.vgic_v3.its_vpe.irq;
-> +	struct its_vpe *vpe = &vcpu->arch.vgic_cpu.vgic_v3.its_vpe;
->   	int err;
->   
-> -	if (!vgic_supports_direct_msis(vcpu->kvm))
-> +	if (!vgic_supports_direct_msis(vcpu->kvm) || vpe->resident)
->   		return 0;
->   
->   	/*
-> @@ -214,11 +228,14 @@ int vgic_v4_flush_hwstate(struct kvm_vcpu *vcpu)
->   	 * doc in drivers/irqchip/irq-gic-v4.c to understand how this
->   	 * turns into a VMOVP command at the ITS level.
->   	 */
-> -	err = irq_set_affinity(irq, cpumask_of(smp_processor_id()));
-> +	err = irq_set_affinity(vpe->irq, cpumask_of(smp_processor_id()));
->   	if (err)
->   		return err;
->   
-> -	err = its_schedule_vpe(&vcpu->arch.vgic_cpu.vgic_v3.its_vpe, true);
-> +	/* Disabled the doorbell, as we're about to enter the guest */
-> +	disable_irq(vpe->irq);
-> +
-> +	err = its_schedule_vpe(vpe, true);
->   	if (err)
->   		return err;
->   
-> @@ -226,9 +243,7 @@ int vgic_v4_flush_hwstate(struct kvm_vcpu *vcpu)
->   	 * Now that the VPE is resident, let's get rid of a potential
->   	 * doorbell interrupt that would still be pending.
->   	 */
-> -	err = irq_set_irqchip_state(irq, IRQCHIP_STATE_PENDING, false);
-> -
-> -	return err;
-> +	return irq_set_irqchip_state(vpe->irq, IRQCHIP_STATE_PENDING, false);
->   }
->   
->   static struct vgic_its *vgic_get_its(struct kvm *kvm,
-> @@ -335,21 +350,3 @@ int kvm_vgic_v4_unset_forwarding(struct kvm *kvm, int virq,
->   	mutex_unlock(&its->its_lock);
->   	return ret;
->   }
-> -
-> -void kvm_vgic_v4_enable_doorbell(struct kvm_vcpu *vcpu)
-> -{
-> -	if (vgic_supports_direct_msis(vcpu->kvm)) {
-> -		int irq = vcpu->arch.vgic_cpu.vgic_v3.its_vpe.irq;
-> -		if (irq)
-> -			enable_irq(irq);
-> -	}
-> -}
-> -
-> -void kvm_vgic_v4_disable_doorbell(struct kvm_vcpu *vcpu)
-> -{
-> -	if (vgic_supports_direct_msis(vcpu->kvm)) {
-> -		int irq = vcpu->arch.vgic_cpu.vgic_v3.its_vpe.irq;
-> -		if (irq)
-> -			disable_irq(irq);
-> -	}
-> -}
-> diff --git a/virt/kvm/arm/vgic/vgic.c b/virt/kvm/arm/vgic/vgic.c
-> index 45a870cb63f5..99b02ca730a8 100644
-> --- a/virt/kvm/arm/vgic/vgic.c
-> +++ b/virt/kvm/arm/vgic/vgic.c
-> @@ -857,8 +857,6 @@ void kvm_vgic_sync_hwstate(struct kvm_vcpu *vcpu)
->   {
->   	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
->   
-> -	WARN_ON(vgic_v4_sync_hwstate(vcpu));
-> -
->   	/* An empty ap_list_head implies used_lrs == 0 */
->   	if (list_empty(&vcpu->arch.vgic_cpu.ap_list_head))
->   		return;
-> @@ -882,8 +880,6 @@ static inline void vgic_restore_state(struct kvm_vcpu *vcpu)
->   /* Flush our emulation state into the GIC hardware before entering the guest. */
->   void kvm_vgic_flush_hwstate(struct kvm_vcpu *vcpu)
->   {
-> -	WARN_ON(vgic_v4_flush_hwstate(vcpu));
-> -
->   	/*
->   	 * If there are no virtual interrupts active or pending for this
->   	 * VCPU, then there is no work to do and we can bail out without
-> diff --git a/virt/kvm/arm/vgic/vgic.h b/virt/kvm/arm/vgic/vgic.h
-> index 83066a81b16a..c7fefd6b1c80 100644
-> --- a/virt/kvm/arm/vgic/vgic.h
-> +++ b/virt/kvm/arm/vgic/vgic.h
-> @@ -316,7 +316,5 @@ void vgic_its_invalidate_cache(struct kvm *kvm);
->   bool vgic_supports_direct_msis(struct kvm *kvm);
->   int vgic_v4_init(struct kvm *kvm);
->   void vgic_v4_teardown(struct kvm *kvm);
-> -int vgic_v4_sync_hwstate(struct kvm_vcpu *vcpu);
-> -int vgic_v4_flush_hwstate(struct kvm_vcpu *vcpu);
->   
->   #endif
+>> +		page_owner_free_stack_disabled = false;
+>> +
+>>  	return 0;
+>>  }
+>>  early_param("page_owner", early_page_owner_param);
+>  
 > 
 
 
