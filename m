@@ -2,59 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7AD9B653C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 15:59:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D86FB6551
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 16:00:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wiO2Ib3Bzhff583tICIRGP8lwmGeocrdTZyulReo6LE=; b=rnxRKX2bn5vF+b
-	SHlHPQ2qIzMK2HTB2x0elqWr6jsmigGw+CcVJKIGQXVW6SgPlgckL48UaC9efiHydXg/znW42RfOF
-	zFQnWUYLzVCi1/YjVARpBqgDIDgvAqmK97Ln0HMLG1v4qqLhiHWRwbZxKLMNyzIF+XeQTwgd1vK9k
-	voadbvGME01deHa5M52hsDB+QNZTT7bKoHwUQZJDN99/J76kkndvJ4wUFbfPsLaealjxnKVdQmOY1
-	z/503l5FH2/GblF1QcNl25Mcmz4mLftplywwFBqvumv3FfF7aza72ExYeuWqz7QPYOX7Fwghc/d6l
-	FPC3ZzERXkhDYln/dMlA==;
+	List-Owner; bh=h+VKut5iVvl7LsyYb/RU9uOSWkQFBC6IJ84/7UWeNK8=; b=m1nLYrdyzs4KnQ
+	sd9Zdh/6vfM9QAlwefohd401ywfX8mOsAhymjVteJooC5+mSvnd0oNCimbs8MK9zrdzC4f8AJo6Xy
+	NWEQohJkTz4npWO7p63J1ivmfhuSFtvE9BMp4MSpIL/mDPglQ3qj7zzAtJT0uufpjjuLxXzoa1EYa
+	eW2ad7RonoTFxuo23uI7C3fOrPl3xlIuCEnqvCwjd8GhCg5zMQuI9eXNBKFjasYqk6ZulUJ9hkae3
+	P70eAY2bPCuMq20DYtzSVayBJEhJI0EbzQI+xoQsIQZQtMi/o4I0iNN2Twn9KhNjJpNYA322ZQEhN
+	XKjLze6y4LXlWmmqV6rQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAaTq-0004OW-NG; Wed, 18 Sep 2019 13:58:50 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAaTe-0004NT-12
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 13:58:39 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 331341000;
- Wed, 18 Sep 2019 06:58:37 -0700 (PDT)
-Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CFDE23F67D;
- Wed, 18 Sep 2019 06:58:35 -0700 (PDT)
-Date: Wed, 18 Sep 2019 14:58:32 +0100
-From: Andre Przywara <andre.przywara@arm.com>
-To: Jassi Brar <jassisinghbrar@gmail.com>
-Subject: Re: [PATCH V6 2/2] mailbox: introduce ARM SMC based mailbox
-Message-ID: <20190918145832.0bb72e16@donnerap.cambridge.arm.com>
-In-Reply-To: <CABb+yY2G8s9gV8Pu+f__8-bubjCJsVQrQikbVMZXmpTwSMBxiQ@mail.gmail.com>
-References: <1568626884-5189-1-git-send-email-peng.fan@nxp.com>
- <1568626884-5189-3-git-send-email-peng.fan@nxp.com>
- <20190917183856.2342beed@donnerap.cambridge.arm.com>
- <AM0PR04MB44813D62FF7E6762BB17460E888E0@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <20190918110037.4edefb2f@donnerap.cambridge.arm.com>
- <CABb+yY2G8s9gV8Pu+f__8-bubjCJsVQrQikbVMZXmpTwSMBxiQ@mail.gmail.com>
-Organization: ARM
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+	id 1iAaVc-0006EP-Bb; Wed, 18 Sep 2019 14:00:40 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iAaVR-0006D0-Kl
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 14:00:31 +0000
+Received: by mail-ed1-x543.google.com with SMTP id h2so98647edn.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 18 Sep 2019 07:00:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=shutemov-name.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=j2UHjQKs2OgxGL6R7ikxpfBY/dljbR15qg+7qfxHjcE=;
+ b=IZjWryCw0rr2uH7QX0RsTwStJaFrk2aI+h1A5E1rlDUjawxjtZsoOZQQfPACpoV7Yq
+ vq1SOvaeE3pD6n2p95uruz94PuqO6FGKZfKPiDMQrZXrmvrQuv0gcJqNrOSqx5NS/bCi
+ ibiFGPnpTVNSsANXpfZGCsO7aRL5639d38/3q9otDkeEBcKPn24pWTWhwpwS3fLY4lpt
+ SBmj+KeOXdvbTX6tbSrPjaBJy0u5gCrTEYH1YmqZTTUe7LzXjyFIWNfdAu52ziYgvOKv
+ ktSSfLnxeyy0uOOjeeBAwggWKd4EPjyJRU4+CD3IOKozB5XAujmov9nvf1F+fV9ZjWba
+ rtqg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=j2UHjQKs2OgxGL6R7ikxpfBY/dljbR15qg+7qfxHjcE=;
+ b=OH8FiNLj7WbUxNBlkuFXtxXUEbvX5k4c69363ICD2fVibFnlL6lbxwmawfJkSwFrjo
+ rPnufROQW7CtOm4xXrYUr4NaL6KpF1N2Tloy6oOOBTwF7AybDcxkSTuxm0oAz8jp9wH8
+ LrwIrF16yz9nd0mdpjcKOh9HL9na1ez+TXK0uWI9s04yqXWJClLGTS0eN65dKOl64J0A
+ HrXOh9U9HLhLXhdkYnhBDBDYK7e26jPZ1skuykWDljuS9/4v+lAhVjcaRJo1NOVcGvat
+ noaB8zHMiDEL4qNPCDfEFyYpVNNH7F4rSyDwtcdPjm6QaZozHBzsXYEhmTaNMutU0aL7
+ Fg0w==
+X-Gm-Message-State: APjAAAU+2gF05cb8ELUJYFTiQ4gb/J28JeYg8Aevzo5v04Xcriiurx+w
+ adxTPFivfvUJro8o+9jS/d4Gmw==
+X-Google-Smtp-Source: APXvYqyK1VlGTp35C20LNarV/+XSqYp4iDD33GkUhQo8bx3xDETvb6q2bit//qqmiu+su0hBlerZjA==
+X-Received: by 2002:a50:ef02:: with SMTP id m2mr1236847eds.157.1568815225760; 
+ Wed, 18 Sep 2019 07:00:25 -0700 (PDT)
+Received: from box.localdomain ([86.57.175.117])
+ by smtp.gmail.com with ESMTPSA id f29sm1061454eda.76.2019.09.18.07.00.24
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 18 Sep 2019 07:00:24 -0700 (PDT)
+Received: by box.localdomain (Postfix, from userid 1000)
+ id E6C62101B27; Wed, 18 Sep 2019 17:00:27 +0300 (+03)
+Date: Wed, 18 Sep 2019 17:00:27 +0300
+From: "Kirill A. Shutemov" <kirill@shutemov.name>
+To: Jia He <justin.he@arm.com>
+Subject: Re: [PATCH v4 3/3] mm: fix double page fault on arm64 if PTE_AF is
+ cleared
+Message-ID: <20190918140027.ckj32xnryyyesc23@box>
+References: <20190918131914.38081-1-justin.he@arm.com>
+ <20190918131914.38081-4-justin.he@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190918131914.38081-4-justin.he@arm.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_065838_161558_87157A4E 
-X-CRM114-Status: GOOD (  25.40  )
+X-CRM114-CacheID: sfid-20190918_070029_733233_414A0F59 
+X-CRM114-Status: GOOD (  27.27  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,168 +98,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Peng Fan <peng.fan@nxp.com>, "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-mm@kvack.org,
+ Punit Agrawal <punitagrawal@gmail.com>, Will Deacon <will@kernel.org>,
+ Alex Van Brunt <avanbrunt@nvidia.com>, Marc Zyngier <maz@kernel.org>,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ Matthew Wilcox <willy@infradead.org>, Jun Yao <yaojun8558363@gmail.com>,
+ Kaly Xin <Kaly.Xin@arm.com>, hejianet@gmail.com,
+ Ralph Campbell <rcampbell@nvidia.com>, Suzuki Poulose <Suzuki.Poulose@arm.com>,
+ =?utf-8?B?SsOpcsO0bWU=?= Glisse <jglisse@redhat.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 18 Sep 2019 08:31:57 -0500
-Jassi Brar <jassisinghbrar@gmail.com> wrote:
-
-Hi,
-
-> On Wed, Sep 18, 2019 at 5:00 AM Andre Przywara <andre.przywara@arm.com> wrote:
+On Wed, Sep 18, 2019 at 09:19:14PM +0800, Jia He wrote:
+> When we tested pmdk unit test [1] vmmalloc_fork TEST1 in arm64 guest, there
+> will be a double page fault in __copy_from_user_inatomic of cow_user_page.
 > 
-> > >  
-> > > >  
-> > > > > + };
-> > > > > +};  
-> > > >
-> > > > If this is the data structure that this mailbox controller uses, I would expect
-> > > > this to be documented somewhere, or even exported.  
-> > >
-> > > Export this structure in include/linux/mailbox/smc-mailbox.h?  
-> >
-> > For instance, even though I am not sure this is really desired or helpful, since we expect a generic mailbox client (the SCPI or SCMI driver) to deal with that mailbox.
-> >
-> > But at least the expected format should be documented, which could just be in writing, not necessarily in code.
-> >  
-> Yes, the packet format is specified by the controller and defined in
-> some header for clients to include. Other platforms do that already.
+> Below call trace is from arm64 do_page_fault for debugging purpose
+> [  110.016195] Call trace:
+> [  110.016826]  do_page_fault+0x5a4/0x690
+> [  110.017812]  do_mem_abort+0x50/0xb0
+> [  110.018726]  el1_da+0x20/0xc4
+> [  110.019492]  __arch_copy_from_user+0x180/0x280
+> [  110.020646]  do_wp_page+0xb0/0x860
+> [  110.021517]  __handle_mm_fault+0x994/0x1338
+> [  110.022606]  handle_mm_fault+0xe8/0x180
+> [  110.023584]  do_page_fault+0x240/0x690
+> [  110.024535]  do_mem_abort+0x50/0xb0
+> [  110.025423]  el0_da+0x20/0x24
+> 
+> The pte info before __copy_from_user_inatomic is (PTE_AF is cleared):
+> [ffff9b007000] pgd=000000023d4f8003, pud=000000023da9b003, pmd=000000023d4b3003, pte=360000298607bd3
+> 
+> As told by Catalin: "On arm64 without hardware Access Flag, copying from
+> user will fail because the pte is old and cannot be marked young. So we
+> always end up with zeroed page after fork() + CoW for pfn mappings. we
+> don't always have a hardware-managed access flag on arm64."
+> 
+> This patch fix it by calling pte_mkyoung. Also, the parameter is
+> changed because vmf should be passed to cow_user_page()
+> 
+> [1] https://github.com/pmem/pmdk/tree/master/src/test/vmmalloc_fork
+> 
+> Reported-by: Yibo Cai <Yibo.Cai@arm.com>
+> Signed-off-by: Jia He <justin.he@arm.com>
+> ---
+>  mm/memory.c | 35 ++++++++++++++++++++++++++++++-----
+>  1 file changed, 30 insertions(+), 5 deletions(-)
+> 
+> diff --git a/mm/memory.c b/mm/memory.c
+> index e2bb51b6242e..d2c130a5883b 100644
+> --- a/mm/memory.c
+> +++ b/mm/memory.c
+> @@ -118,6 +118,13 @@ int randomize_va_space __read_mostly =
+>  					2;
+>  #endif
+>  
+> +#ifndef arch_faults_on_old_pte
+> +static inline bool arch_faults_on_old_pte(void)
+> +{
+> +	return false;
+> +}
+> +#endif
+> +
+>  static int __init disable_randmaps(char *s)
+>  {
+>  	randomize_va_space = 0;
+> @@ -2140,8 +2147,12 @@ static inline int pte_unmap_same(struct mm_struct *mm, pmd_t *pmd,
+>  	return same;
+>  }
+>  
+> -static inline void cow_user_page(struct page *dst, struct page *src, unsigned long va, struct vm_area_struct *vma)
+> +static inline void cow_user_page(struct page *dst, struct page *src,
+> +				 struct vm_fault *vmf)
+>  {
+> +	struct vm_area_struct *vma = vmf->vma;
+> +	unsigned long addr = vmf->address;
+> +
+>  	debug_dma_assert_idle(src);
+>  
+>  	/*
+> @@ -2152,20 +2163,34 @@ static inline void cow_user_page(struct page *dst, struct page *src, unsigned lo
+>  	 */
+>  	if (unlikely(!src)) {
+>  		void *kaddr = kmap_atomic(dst);
+> -		void __user *uaddr = (void __user *)(va & PAGE_MASK);
+> +		void __user *uaddr = (void __user *)(addr & PAGE_MASK);
+> +		pte_t entry;
+>  
+>  		/*
+>  		 * This really shouldn't fail, because the page is there
+>  		 * in the page tables. But it might just be unreadable,
+>  		 * in which case we just give up and fill the result with
+> -		 * zeroes.
+> +		 * zeroes. On architectures with software "accessed" bits,
+> +		 * we would take a double page fault here, so mark it
+> +		 * accessed here.
+>  		 */
+> +		if (arch_faults_on_old_pte() && !pte_young(vmf->orig_pte)) {
+> +			spin_lock(vmf->ptl);
+> +			if (likely(pte_same(*vmf->pte, vmf->orig_pte))) {
+> +				entry = pte_mkyoung(vmf->orig_pte);
+> +				if (ptep_set_access_flags(vma, addr,
+> +							  vmf->pte, entry, 0))
+> +					update_mmu_cache(vma, addr, vmf->pte);
+> +			}
 
-Yeah, I saw some examples as well, but not every driver was following this apparently.
-I guess since we have a fixed data format we should export the struct then, maybe with a remark that the actual usage of registers is up to the protocol (within the SMCCC limits), so is optional.
+I don't follow.
 
-> > > > > +
-> > > > > +typedef unsigned long (smc_mbox_fn)(unsigned int, unsigned long,
-> > > > > +                             unsigned long, unsigned long,
-> > > > > +                             unsigned long, unsigned long,
-> > > > > +                             unsigned long);
-> > > > > +static smc_mbox_fn *invoke_smc_mbox_fn;
-> > > > > +
-> > > > > +static int arm_smc_send_data(struct mbox_chan *link, void *data) {
-> > > > > + struct arm_smc_chan_data *chan_data = link->con_priv;
-> > > > > + struct arm_smccc_mbox_cmd *cmd = data;
-> > > > > + unsigned long ret;
-> > > > > + u32 function_id;
-> > > > > +
-> > > > > + function_id = chan_data->function_id;
-> > > > > + if (!function_id)
-> > > > > +         function_id = cmd->function_id;
-> > > > > +
-> > > > > + if (function_id & BIT(30)) {  
-> > > >
-> > > >     if (ARM_SMCCC_IS_64(function_id)) {  
-> > >
-> > > ok
-> > >  
-> > > >  
-> > > > > +         ret = invoke_smc_mbox_fn(function_id, cmd->args_smccc64[0],
-> > > > > +                                  cmd->args_smccc64[1],
-> > > > > +                                  cmd->args_smccc64[2],
-> > > > > +                                  cmd->args_smccc64[3],
-> > > > > +                                  cmd->args_smccc64[4],
-> > > > > +                                  cmd->args_smccc64[5]);
-> > > > > + } else {
-> > > > > +         ret = invoke_smc_mbox_fn(function_id, cmd->args_smccc32[0],
-> > > > > +                                  cmd->args_smccc32[1],
-> > > > > +                                  cmd->args_smccc32[2],
-> > > > > +                                  cmd->args_smccc32[3],
-> > > > > +                                  cmd->args_smccc32[4],
-> > > > > +                                  cmd->args_smccc32[5]);
-> > > > > + }
-> > > > > +
-> > > > > + mbox_chan_received_data(link, (void *)ret);
-> > > > > +
-> > > > > + return 0;
-> > > > > +}
-> > > > > +
-> > > > > +static unsigned long __invoke_fn_hvc(unsigned int function_id,
-> > > > > +                              unsigned long arg0, unsigned long arg1,
-> > > > > +                              unsigned long arg2, unsigned long arg3,
-> > > > > +                              unsigned long arg4, unsigned long arg5) {
-> > > > > + struct arm_smccc_res res;
-> > > > > +
-> > > > > + arm_smccc_hvc(function_id, arg0, arg1, arg2, arg3, arg4,
-> > > > > +               arg5, 0, &res);
-> > > > > + return res.a0;
-> > > > > +}
-> > > > > +
-> > > > > +static unsigned long __invoke_fn_smc(unsigned int function_id,
-> > > > > +                              unsigned long arg0, unsigned long arg1,
-> > > > > +                              unsigned long arg2, unsigned long arg3,
-> > > > > +                              unsigned long arg4, unsigned long arg5) {
-> > > > > + struct arm_smccc_res res;
-> > > > > +
-> > > > > + arm_smccc_smc(function_id, arg0, arg1, arg2, arg3, arg4,
-> > > > > +               arg5, 0, &res);
-> > > > > + return res.a0;
-> > > > > +}
-> > > > > +
-> > > > > +static const struct mbox_chan_ops arm_smc_mbox_chan_ops = {
-> > > > > + .send_data      = arm_smc_send_data,
-> > > > > +};
-> > > > > +
-> > > > > +static int arm_smc_mbox_probe(struct platform_device *pdev) {
-> > > > > + struct device *dev = &pdev->dev;
-> > > > > + struct mbox_controller *mbox;
-> > > > > + struct arm_smc_chan_data *chan_data;
-> > > > > + int ret;
-> > > > > + u32 function_id = 0;
-> > > > > +
-> > > > > + if (of_device_is_compatible(dev->of_node, "arm,smc-mbox"))
-> > > > > +         invoke_smc_mbox_fn = __invoke_fn_smc;
-> > > > > + else
-> > > > > +         invoke_smc_mbox_fn = __invoke_fn_hvc;
-> > > > > +
-> > > > > + mbox = devm_kzalloc(dev, sizeof(*mbox), GFP_KERNEL);
-> > > > > + if (!mbox)
-> > > > > +         return -ENOMEM;
-> > > > > +
-> > > > > + mbox->num_chans = 1;
-> > > > > + mbox->chans = devm_kzalloc(dev, sizeof(*mbox->chans), GFP_KERNEL);
-> > > > > + if (!mbox->chans)
-> > > > > +         return -ENOMEM;
-> > > > > +
-> > > > > + chan_data = devm_kzalloc(dev, sizeof(*chan_data), GFP_KERNEL);
-> > > > > + if (!chan_data)
-> > > > > +         return -ENOMEM;
-> > > > > +
-> > > > > + of_property_read_u32(dev->of_node, "arm,func-id", &function_id);
-> > > > > + chan_data->function_id = function_id;
-> > > > > +
-> > > > > + mbox->chans->con_priv = chan_data;
-> > > > > +
-> > > > > + mbox->txdone_poll = false;
-> > > > > + mbox->txdone_irq = false;  
-> > > >
-> > > > Don't we need to provide something to confirm reception to the client? In our
-> > > > case we can set this as soon as the smc/hvc returns.  
-> > >
-> > > As smc/hvc returns, it means the transfer is over and receive is done.  
-> >
-> > I understand that, but was wondering if the Linux mailbox framework knows about that? In my older version I was calling mbox_chan_received_data() after the smc call returned.
-> >  
-> The code already does that at the end of  send_data
+So if pte has changed under you, you don't set the accessed bit, but never
+the less copy from the user.
 
-True, for some reason I totally missed that line, sorry for that.
- 
-> > Also there is mbox_chan_txdone() with which a controller driver can signal TX completion explicitly.
-> >  
-> No. Controller can use that only if it has specified txdone_irq, which
-> is not the case here.
+What makes you think it will not trigger the same problem?
 
-I see. So does the framework handle the case where both txdone_poll and txdone_irq are false?
+I think we need to make cow_user_page() fail in this case and caller --
+wp_page_copy() -- return zero. If the fault was solved by other thread, we
+are fine. If not userspace would re-fault on the same address and we will
+handle the fault from the second attempt.
 
-Cheers,
-Andre.
+> +			spin_unlock(vmf->ptl);
+> +		}
+> +
+>  		if (__copy_from_user_inatomic(kaddr, uaddr, PAGE_SIZE))
+>  			clear_page(kaddr);
+>  		kunmap_atomic(kaddr);
+>  		flush_dcache_page(dst);
+>  	} else
+> -		copy_user_highpage(dst, src, va, vma);
+> +		copy_user_highpage(dst, src, addr, vma);
+>  }
+>  
+>  static gfp_t __get_fault_gfp_mask(struct vm_area_struct *vma)
+> @@ -2318,7 +2343,7 @@ static vm_fault_t wp_page_copy(struct vm_fault *vmf)
+>  				vmf->address);
+>  		if (!new_page)
+>  			goto oom;
+> -		cow_user_page(new_page, old_page, vmf->address, vma);
+> +		cow_user_page(new_page, old_page, vmf);
+>  	}
+>  
+>  	if (mem_cgroup_try_charge_delay(new_page, mm, GFP_KERNEL, &memcg, false))
+> -- 
+> 2.17.1
+> 
+> 
+
+-- 
+ Kirill A. Shutemov
 
 _______________________________________________
 linux-arm-kernel mailing list
