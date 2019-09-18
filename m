@@ -2,74 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DED58B6720
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 17:32:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1BFEB672D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 17:33:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6EkCvHnJoe1ytsAqJVxMNXLXFAU/Mssx0+zCYxZfCQY=; b=BLSYkDN9+uEVM6
-	uv6GQ8wH6kpW3Kvour4CZuKGJqZg/BpxqlyPNKgKJUZhxGmo3Qb4UzlbFegg9ZIvV/6Hw2EC2/86o
-	6j94ffZKYIyRrjz+zorINA9YH9eQTNFS70kYikklBG0PdxNOUIvuw2mOm55ClysRyNvkB0jzSUDsp
-	iGb7D9RnkLVe+bKWcLgB/zG4v/6PM2tv5KbsrHp9Hvznx6dfFY3ekaxgEHGGd5eKOlhMqWpiYoyml
-	PtDXuevxpolAUv0YhZIuaP+otjGEIllJ0Fs5UfySlIDDY+CxvkkVqvTtj+tXmsbDLL3Xot8a6pRDZ
-	BbG9/MKN3mC7XdqXktKw==;
+	List-Owner; bh=mde/yJoqfQReULpp63QP8i3S/sykcmks9N0Xmll8FZg=; b=nkIC8YeJI2cS+l
+	yJ0nhSEXW3FthiIHsyRmAfjV5xw3M7E2TX7058ZhNTyMI2hvHMIC6Mmma2qDGAFmjG+sY8SmaWM+6
+	guBWFhqhSoGH5Jw0bmKyx1kMXNISGw0bG61B3JdfmdApUOZvNdDZtR0aOfSEvM6tr6YtNLk5cLE2a
+	xqjCn05QFirNbdgaCV84FEMTBa3cjQvxOuBAx6vDI+i/Tct2mcm90b72pH9G+anzvKY7gwmI8q/AT
+	Vz9zINhx70O0rYRr6df96ZAQGlTL/2bW3NltPgp6aYnADyysXA8UtOd00LYSeXqXLNRFjJdYQ3nnm
+	K6S5e545SVEmxNFuh4mA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAbwM-0003uX-20; Wed, 18 Sep 2019 15:32:22 +0000
+	id 1iAbx6-0004AJ-IZ; Wed, 18 Sep 2019 15:33:08 +0000
 Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAbwA-0003uC-2w
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 15:32:11 +0000
-Received: by mail-io1-xd42.google.com with SMTP id k5so195720iol.5
+ id 1iAbwt-00049N-23
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 15:32:56 +0000
+Received: by mail-io1-xd42.google.com with SMTP id n197so132274iod.9
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Sep 2019 08:32:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ Wed, 18 Sep 2019 08:32:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=5hHyYF5L2cgk61bB7AKoE7ghGd7YLktDIb71RXFYwSY=;
- b=YGgeI6B01Qbog0Pa8A7w51DPvf6RmdRxnRonGsnP62fuwGd88IDN4UG+lpD6Ddc7xq
- M+ty3J2sAtJwaP6/ch1pJsoyndUWaw/Ub+pS5MixJO1WTrlL/g85/PgB0AqOHxZWJ5ku
- UB6/nJVXTJ4SNxqv1vkhVLB4nAr7no1B5Ux7DR973UTvJ6+Xm5eOQCi3hQryWMqWP4dL
- ggJZqKslPKINu2g/xR4e0Ot7fATqFIXXCz0oQO2mKQudImW1IKjISqfz99SjP9wc8r0j
- cy2m4J16+7lqIDur6yQhPftxjN8F7DpVh6DLNoGvCHae2IbITtYI5w12iOuM9KILqSX0
- yPsA==
+ :cc; bh=xJ/cS8LcWo36On2CRn3NQ8qNeTLdwfUQ9LdgXSyXFCI=;
+ b=hOIAcY9Ksndwp9AC0VindSRz3r66JG/ms4yVbpBtr4zTBwwCAm1t5GAtaDvfp+ULhD
+ J0i3UHDoxR9OxWh8GaBew41KFK6N6DB2SONhSJCHKrag8uZnWBTE1466IDR5Zc7HckLN
+ 46P4yhy7AjIC9487c2WAZqNswJJ5zbiLOocZY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=5hHyYF5L2cgk61bB7AKoE7ghGd7YLktDIb71RXFYwSY=;
- b=fiX5THfu0RGnrdr6Iqopc0IGMKWfTDCBxVnhx+414UHlvuQprxJpc7I0skDyCT6OcK
- D3Mf5cJvusONw38cIFhz1DcUeCu+thrbKQI+po+KoajyzucYxfQf/tyG6zhkK5BlXY0f
- /cWOqFwz2eRQk3h8QkHfx7Eu22Gr9PwR1ptltP5N09XkzYT1RRIViFwZC5w4xP9jozSm
- MUBUrG4IopdlEvIdPuA6e1vpZsdOISU+yG/XzgpTxBX09YF3Bm9b1PXLb2p0P7eulhov
- AbIkkNIDWh+VZFeVdDFa5Folylytm6H6x6tolhpZEcMl/qWjVTrdunch12Kyp9wQ9nlP
- UBSg==
-X-Gm-Message-State: APjAAAWxVATDvnIEW8GVHu6SAxHC1NzjlHiAE/yPXsdDLRqvR1ELIZhj
- BppYf72MEnod+clBejBU4bl3Z/wLaV/QuIWZvvA=
-X-Google-Smtp-Source: APXvYqwk4f9W7fDif2wT0qTh3jeOw9SsTKj3pGjsr5Z9tYewP5UlYXoB5pDU86HPHtHxIvu0cXMLbgMMc0CrPu6wwAI=
-X-Received: by 2002:a5e:c749:: with SMTP id g9mr5644589iop.7.1568820728787;
- Wed, 18 Sep 2019 08:32:08 -0700 (PDT)
+ :message-id:subject:to:cc;
+ bh=xJ/cS8LcWo36On2CRn3NQ8qNeTLdwfUQ9LdgXSyXFCI=;
+ b=lJT3+9JyK0si5dHv4suC4PdNdTAp2QDXmpnRx0sb3i7fJ4beK+b76K9Ou+fNhGqEIN
+ eCXwFJ2sR0OaYTuxdyoqea9SdYjDj/UY/5Z33a0a8ib63gY6DMf8V6kCIC3mKoIkvk1j
+ kO7o4fLWCkC1RbY4frtnx1W+cAWVxtM9SpqSjjAHPhJd2J3jn9MQmla5LLkMZZY81Dcn
+ 44JWLKjBHoWLfcOyxkCrUqu/7XPS3PK/9KkiB3um4bE5168WokD/+kK7BfxoHOugMSWI
+ 0Ail2CKRVX8zwMpTHwOClu1D5VGjN/4ZrPCv57FF374fMkKPyvczRKrywCVlK6DmKcA7
+ Y5Vw==
+X-Gm-Message-State: APjAAAUua1jVO9vJJwstNYCEVm7as6JGioC68LBcdxAtwFNaVLWO7HV4
+ 54SUUxobHfEe2Ihqqv7hBgcSbctHrao=
+X-Google-Smtp-Source: APXvYqweR83THpQorpUMyYi6zyE63vOKyhTtzrn6yMPqypm0biwFCPFKcoUH4pCVH1zxCjjHZg/yMw==
+X-Received: by 2002:a5d:9dd4:: with SMTP id 20mr5886691ioo.1.1568820773898;
+ Wed, 18 Sep 2019 08:32:53 -0700 (PDT)
+Received: from mail-io1-f50.google.com (mail-io1-f50.google.com.
+ [209.85.166.50])
+ by smtp.gmail.com with ESMTPSA id b11sm4632891ion.62.2019.09.18.08.32.52
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 18 Sep 2019 08:32:53 -0700 (PDT)
+Received: by mail-io1-f50.google.com with SMTP id q10so257958iop.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 18 Sep 2019 08:32:52 -0700 (PDT)
+X-Received: by 2002:a6b:b704:: with SMTP id h4mr4680779iof.218.1568820772456; 
+ Wed, 18 Sep 2019 08:32:52 -0700 (PDT)
 MIME-Version: 1.0
-References: <1568626884-5189-1-git-send-email-peng.fan@nxp.com>
- <1568626884-5189-2-git-send-email-peng.fan@nxp.com>
- <20190917183115.3e40180f@donnerap.cambridge.arm.com>
- <CABb+yY2CP1i9fZMoPua=-mLCUpYrcO28xF5UXDeRD2XTYe7mEg@mail.gmail.com>
- <20190918104347.285bd7ad@donnerap.cambridge.arm.com>
- <CABb+yY3drgYHk2_SZMgGhgSisB7wMVKFSx8VVabCcXkGByvgwg@mail.gmail.com>
- <20190918154654.6fb7e7f5@donnerap.cambridge.arm.com>
-In-Reply-To: <20190918154654.6fb7e7f5@donnerap.cambridge.arm.com>
-From: Jassi Brar <jassisinghbrar@gmail.com>
-Date: Wed, 18 Sep 2019 10:31:57 -0500
-Message-ID: <CABb+yY3gJpK5ghS1u-e=f-msO+=oVvX=zDNj3Jg2i0-uJHrLiA@mail.gmail.com>
-Subject: Re: [PATCH V6 1/2] dt-bindings: mailbox: add binding doc for the ARM
- SMC/HVC mailbox
-To: Andre Przywara <andre.przywara@arm.com>
+References: <4febe7a87a95ed607b4dc68ba96b15210df84e9e.1568731534.git.robin.murphy@arm.com>
+In-Reply-To: <4febe7a87a95ed607b4dc68ba96b15210df84e9e.1568731534.git.robin.murphy@arm.com>
+From: Doug Anderson <dianders@chromium.org>
+Date: Wed, 18 Sep 2019 08:32:40 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=W_kSWyWgGZvEpY3bnwEWdgnEWmkHf1qPSS2aQ9i0suJA@mail.gmail.com>
+Message-ID: <CAD=FV=W_kSWyWgGZvEpY3bnwEWdgnEWmkHf1qPSS2aQ9i0suJA@mail.gmail.com>
+Subject: Re: [PATCH v2] iommu/arm-smmu: Report USF more clearly
+To: Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_083210_131495_65FD7249 
-X-CRM114-Status: GOOD (  23.50  )
+X-CRM114-CacheID: sfid-20190918_083255_130182_36AC5E0D 
+X-CRM114-Status: GOOD (  17.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -80,8 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jassisinghbrar[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -89,6 +88,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,86 +100,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Peng Fan <peng.fan@nxp.com>, "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <joro@8bytes.org>,
+ Will Deacon <will@kernel.org>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 18, 2019 at 9:46 AM Andre Przywara <andre.przywara@arm.com> wrote:
->
-> On Wed, 18 Sep 2019 09:19:46 -0500
-> Jassi Brar <jassisinghbrar@gmail.com> wrote:
->
-> Hi,
->
-> > On Wed, Sep 18, 2019 at 4:44 AM Andre Przywara <andre.przywara@arm.com> wrote:
-> >
-> > >
-> > > > which needs 9 arguments to work. The fact that the fist argument is
-> > > > always going to be same on a platform is just the way we use this
-> > > > instruction.
-> > > >
-> > > > > We should be as strict as possible to avoid any security issues.
-> > > > >
-> > > > Any example of such a security issue?
-> > >
-> > > Someone finds a way to trick some mailbox client to send a crafted message to the mailbox.
-> > >
-> > What if someone finds a way to trick the block layer to erase 'sda' ?
->
-> Yes, the Linux block driver control the whole block device, it can do whatever it wants.
->
-Sorry, it doesn't make any sense.
+Hi,
 
-> >  That is called "bug in the code".
-> > It does happen in every subsystem but we don't stop implementing new
-> > features .... we write flexible code and then fix any bug.
-> >
-> >
-> > > Do you have any example of a use case where the mailbox client needs to provide the function ID?
-> > >
-> > FSL_SIP_SCMI_1/2 ?
+On Tue, Sep 17, 2019 at 7:45 AM Robin Murphy <robin.murphy@arm.com> wrote:
 >
-> Huh? Where does the SCPI or SCMI driver provide this? Those clients don't even provide any arguments. Adding some would defeat the whole point of having this mailbox in the first place, which was to provide a drop-in replacement for a hardware mailbox device used on other platforms.
+> Although CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT is a welcome tool
+> for smoking out inadequate firmware, the failure mode is non-obvious
+> and can be confusing for end users. Add some special-case reporting of
+> Unidentified Stream Faults to help clarify this particular symptom.
+> Since we're adding yet another print to the mix, also break out an
+> explicit ratelimit state to make sure everything stays together (and
+> reduce the static storage footprint a little).
 >
-SCPI/SCMI implementation is broken. I did NAK it.
-With the 'smc' mailbox you may get away without have to program the
-channel before transmit, but not every controller is natively so.
+> CC: Douglas Anderson <dianders@chromium.org>
 
-> > But that is not the main point, which is to be consistent (not
-> > ignoring first argument because someone may find a bug to exploit) and
-> > flexible.
->
-> Please read the SMCCC[1]: The first argument is in r1/w1/x1. r0/w0 is the function ID, and this is a specific value (fixed by the firmware implementation, see Peng's ATF patch) and not up to be guessed by a client.
->
-The first argument of smc call is the function-id
-  arm_smccc_hvc(function_id, arg0, arg1, arg2, arg3, arg4, arg5, 0, &res);
+nit: Cc, not CC.
 
 
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> ---
+>  drivers/iommu/arm-smmu.c | 21 ++++++++++++++++-----
+>  drivers/iommu/arm-smmu.h |  2 ++
+>  2 files changed, 18 insertions(+), 5 deletions(-)
 >
-> That's why I think the function ID (which is part of the SMCCC protocol, not of the mailbox service!) should just be set in the controller DT node and nowhere else.
+> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+> index b7cf24402a94..b27020fd6c90 100644
+> --- a/drivers/iommu/arm-smmu.c
+> +++ b/drivers/iommu/arm-smmu.c
+> @@ -36,6 +36,7 @@
+>  #include <linux/pci.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/pm_runtime.h>
+> +#include <linux/ratelimit.h>
+>  #include <linux/slab.h>
 >
-Actually that is the very reason func-id should be a client thing and
-passed via client's DT node :)
-It is general understanding that protocol specific bits should not be
-a part of controller driver, but the client(protocol) driver.
+>  #include <linux/amba/bus.h>
+> @@ -485,6 +486,8 @@ static irqreturn_t arm_smmu_global_fault(int irq, void *dev)
+>  {
+>         u32 gfsr, gfsynr0, gfsynr1, gfsynr2;
+>         struct arm_smmu_device *smmu = dev;
+> +       static DEFINE_RATELIMIT_STATE(rs, DEFAULT_RATELIMIT_INTERVAL,
+> +                                     DEFAULT_RATELIMIT_BURST);
+>
+>         gfsr = arm_smmu_gr0_read(smmu, ARM_SMMU_GR0_sGFSR);
+>         gfsynr0 = arm_smmu_gr0_read(smmu, ARM_SMMU_GR0_sGFSYNR0);
+> @@ -494,11 +497,19 @@ static irqreturn_t arm_smmu_global_fault(int irq, void *dev)
+>         if (!gfsr)
+>                 return IRQ_NONE;
+>
+> -       dev_err_ratelimited(smmu->dev,
+> -               "Unexpected global fault, this could be serious\n");
+> -       dev_err_ratelimited(smmu->dev,
+> -               "\tGFSR 0x%08x, GFSYNR0 0x%08x, GFSYNR1 0x%08x, GFSYNR2 0x%08x\n",
+> -               gfsr, gfsynr0, gfsynr1, gfsynr2);
+> +       if (__ratelimit(&rs)) {
+> +               if (IS_ENABLED(CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT) &&
+> +                   (gfsr & sGFSR_USF))
+> +                       dev_err(smmu->dev,
+> +                               "Blocked unknown Stream ID 0x%hx; boot with \"arm-smmu.disable_bypass=0\" to allow, but this may have security implications\n",
 
-Page-7 Function-ID specifies :-
-1) The service to be invoked.
-2) The function to be invoked.
-3) The calling convention (32-bit or 64-bit) that is in use.
-4) The call type (fast or yielding) that is in use.
+optional nit: "%#hx" instead of "0x%hx"
 
-Even if we turn blind to 2,3 & 4, but (1) shouts like a runtime property.
-
-Thanks.
+Reviewed-by: Douglas Anderson <dianders@chromium.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
