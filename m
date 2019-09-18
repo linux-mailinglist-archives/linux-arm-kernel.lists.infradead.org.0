@@ -2,65 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 949A6B5AD0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 07:21:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9696B5AE3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 07:27:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0PigrriimnApM0yf2bXL2NfXfLyng2iuxWjiblowEho=; b=teRyXmY4GDBQdE
-	F68pDfKdbQ+3gUpkI71Wb3aqjdvtqD8cFIDtJK6bqntO4y6v3xDtsAZFzMIHrJlqJzP/3S56jCkvq
-	JL6LKU0nV5BmXypcx6orjnn5oTryCT1IwZHK8thGzLXNQfWuACwW1giPZP5pnK4a/LJxFX4P6nDu9
-	j+i9iZWlPorVOnyPy5CohCjnASE57syI94qFKVn0KoVmiFjMg2IZCnx9UOa/Hb2FjdcaCUwFEEtGe
-	38mUZpkvblEKUgdv4zeRxqve3Rb9+ryfVnOI6Acbi5swMEp6cbeiGkeCMqZx0/cuv7LEpJEsCsjj9
-	O3OlcbwMFH86Xm6uNK/g==;
+	List-Owner; bh=4eeyq3vIqwk4yQl6D8U74NajucV8kKv1T4jq+Ydw6VM=; b=ThGQfWGK26F4vA
+	RBWgvyN4++1thN9GA+J1C+QxRJFZ23fXUIRxHVvEahT0C8FUKz6SCzSXFQS0MX1PU5iX/kQ5knM7h
+	HH7NSIZVErIHci9XSR/PfJnwBJLR68KZWk5ppWp+mFJELSbI6H2dYqe14Rk0sND8gLL+bHziGp0Js
+	GVooUUOiYeYTM4QAZnZgqjOL7twnfiux6VCVMUQEE55J3A4nFsDdapSiUkJWxNW+X2L5ykS0pnGkl
+	/xj78vTV5EqcZvUiWVgT9gYe2E0kLfw9nF5Vam8dwzjVhGH8N7Cf6OJ5x9g1dhfzJ3+jZVLXj4tBq
+	Ja7mGOOIAZL4eymzeGvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iASPD-0000Vw-Pz; Wed, 18 Sep 2019 05:21:32 +0000
-Received: from mailoutvs40.siol.net ([185.57.226.231] helo=mail.siol.net)
+	id 1iASUw-00027X-TW; Wed, 18 Sep 2019 05:27:27 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iASOy-0000Uq-Mw
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 05:21:19 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 05404521C39;
- Wed, 18 Sep 2019 07:21:03 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id 67akXHG-VlNw; Wed, 18 Sep 2019 07:21:02 +0200 (CEST)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 6C995521C5B;
- Wed, 18 Sep 2019 07:21:02 +0200 (CEST)
-Received: from jernej-laptop.localnet (cpe-86-58-59-25.static.triera.net
- [86.58.59.25]) (Authenticated sender: jernej.skrabec@siol.net)
- by mail.siol.net (Postfix) with ESMTPA id CB081521C73;
- Wed, 18 Sep 2019 07:21:01 +0200 (CEST)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
-To: Chen-Yu Tsai <wens@csie.org>
-Subject: Re: [linux-sunxi] [PATCH] clk: sunxi-ng: h6: Use sigma-delta
- modulation for audio PLL
-Date: Wed, 18 Sep 2019 07:21:00 +0200
-Message-ID: <8129141.yvSaxnLE4m@jernej-laptop>
-In-Reply-To: <CAGb2v640R7edA3EJvC=aJQZXGcfqot50O3-PFyrYj767pUEYrQ@mail.gmail.com>
-References: <20190914135100.327412-1-jernej.skrabec@siol.net>
- <CAGb2v640R7edA3EJvC=aJQZXGcfqot50O3-PFyrYj767pUEYrQ@mail.gmail.com>
+ id 1iASUj-00026c-KS
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 05:27:15 +0000
+Received: by mail-io1-xd44.google.com with SMTP id m11so13315111ioo.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 17 Sep 2019 22:27:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=aeBpu/wksCT1eq18uEHm7Scq/w+GtocYUT2tO+t26F0=;
+ b=vMp8M65KRUlfeZGbM54vJnl7+FvdUgmmaWesiZcW/q5UdEYhMJ7/Ty2eSltd8PLGSm
+ DMt9o6GCsyfy3wpiL2IhV8AYWGbVyBNDanNECOSoSnTx/ieDAogDlwXNWc0rblN/BaYV
+ ttRlnUfsJkyh//HvGDaFJUe+kU04vclfJWM8DxfpdxlJ6DJe7c7Mf2rMQsGlwpzlGg9f
+ QtAzpUp4zU1DzfVu/0TE1p1ELMAe4qFJ2ItweEowoOecSsUhBMZfZCoGzZEGcQiCbUTP
+ 7o6+6ufAfQhqGuB6oLJClyXQFUmCXq82COD21jB54iRw9pvuRDD302YxWCd9GIek2E7Z
+ k/0A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=aeBpu/wksCT1eq18uEHm7Scq/w+GtocYUT2tO+t26F0=;
+ b=eei+XgET56Ja++acNAoq34NNnV9SADvYgxxGSnuPzQXFFWxFA/vEFGIplJIUabTkLT
+ avEB4oj9tH1ALiBpzXnEAO4qLLe03r6JUJbawYyMudlWo6QXFBh8aLAuO8zFvZYY+YMR
+ T/sIXVNQ3vumlHqw98dUEdQ+bsNmKulku7so2zPr940nrZKzePIP6wCx13sztfiNDZw8
+ zSUHB7KxVYxaXhYEcQIpfFXWLXzPKuRfdkhttCWPjK6tRl/b/0iupnj9XrHOEHwqrgMB
+ oiJ9lqE02Vc4laPqvOmhbDbwIav/hevUT3PZpCLvDWNSqD2tlVo69bV/Z2LyitzYE6Li
+ zUmA==
+X-Gm-Message-State: APjAAAUgrKyX9moJaHL+W3dQzCh061xkTq7ifyUmV2h9/H05tvJNi/Zz
+ X5EhwA8r21UFbr8KalJJieBmmnmHpVq/Bps+SNs=
+X-Google-Smtp-Source: APXvYqx5XSrUtThjRZDoB5Q++Oj4nDBjUDfWVblqDIj6KUhujZbYc3JJ8XIGjEO/QXyyA5B6D207fuaYBXrQI9oxlIY=
+X-Received: by 2002:a5d:8a0f:: with SMTP id w15mr3299161iod.239.1568784431907; 
+ Tue, 17 Sep 2019 22:27:11 -0700 (PDT)
 MIME-Version: 1.0
+References: <1568626884-5189-1-git-send-email-peng.fan@nxp.com>
+ <1568626884-5189-2-git-send-email-peng.fan@nxp.com>
+ <20190917183115.3e40180f@donnerap.cambridge.arm.com>
+In-Reply-To: <20190917183115.3e40180f@donnerap.cambridge.arm.com>
+From: Jassi Brar <jassisinghbrar@gmail.com>
+Date: Wed, 18 Sep 2019 00:27:00 -0500
+Message-ID: <CABb+yY2CP1i9fZMoPua=-mLCUpYrcO28xF5UXDeRD2XTYe7mEg@mail.gmail.com>
+Subject: Re: [PATCH V6 1/2] dt-bindings: mailbox: add binding doc for the ARM
+ SMC/HVC mailbox
+To: Andre Przywara <andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_222117_075948_DD28C133 
-X-CRM114-Status: GOOD (  25.45  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190917_222713_676735_C8852C5C 
+X-CRM114-Status: GOOD (  35.61  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.231 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jassisinghbrar[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,145 +96,195 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Boyd <sboyd@kernel.org>, Mike Turquette <mturquette@baylibre.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>, linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-clk <linux-clk@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Peng Fan <peng.fan@nxp.com>, "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Dne torek, 17. september 2019 ob 08:54:08 CEST je Chen-Yu Tsai napisal(a):
-> On Sat, Sep 14, 2019 at 9:51 PM Jernej Skrabec <jernej.skrabec@siol.net> 
-wrote:
-> > Audio devices needs exact clock rates in order to correctly reproduce
-> > the sound. Until now, only integer factors were used to configure H6
-> > audio PLL which resulted in inexact rates. Fix that by adding support
-> > for fractional factors using sigma-delta modulation look-up table. It
-> > contains values for two most commonly used audio base frequencies.
-> > 
-> > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+On Tue, Sep 17, 2019 at 12:31 PM Andre Przywara <andre.przywara@arm.com> wrote:
+>
+> On Mon, 16 Sep 2019 09:44:37 +0000
+> Peng Fan <peng.fan@nxp.com> wrote:
+>
+> Hi,
+>
+> > From: Peng Fan <peng.fan@nxp.com>
+> >
+> > The ARM SMC/HVC mailbox binding describes a firmware interface to trigger
+> > actions in software layers running in the EL2 or EL3 exception levels.
+> > The term "ARM" here relates to the SMC instruction as part of the ARM
+> > instruction set, not as a standard endorsed by ARM Ltd.
+> >
+> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
 > > ---
-> > 
-> >  drivers/clk/sunxi-ng/ccu-sun50i-h6.c | 21 +++++++++++++++------
-> >  1 file changed, 15 insertions(+), 6 deletions(-)
-> > 
-> > diff --git a/drivers/clk/sunxi-ng/ccu-sun50i-h6.c
-> > b/drivers/clk/sunxi-ng/ccu-sun50i-h6.c index d89353a3cdec..ed6338d74474
-> > 100644
-> > --- a/drivers/clk/sunxi-ng/ccu-sun50i-h6.c
-> > +++ b/drivers/clk/sunxi-ng/ccu-sun50i-h6.c
-> > @@ -203,12 +203,21 @@ static struct ccu_nkmp pll_hsic_clk = {
-> > 
-> >   * hardcode it to match with the clock names.
-> >   */
-> >  
-> >  #define SUN50I_H6_PLL_AUDIO_REG                0x078
-> > 
+> >  .../devicetree/bindings/mailbox/arm-smc.yaml       | 96 ++++++++++++++++++++++
+> >  1 file changed, 96 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/mailbox/arm-smc.yaml
+> >
+> > diff --git a/Documentation/devicetree/bindings/mailbox/arm-smc.yaml b/Documentation/devicetree/bindings/mailbox/arm-smc.yaml
+> > new file mode 100644
+> > index 000000000000..bf01bec035fc
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/mailbox/arm-smc.yaml
+> > @@ -0,0 +1,96 @@
+> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/mailbox/arm-smc.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > > +
-> > +static struct ccu_sdm_setting pll_audio_sdm_table[] = {
-> > +       { .rate = 541900800, .pattern = 0xc001288d, .m = 1, .n = 22 },
-> > +       { .rate = 589824000, .pattern = 0xc00126e9, .m = 1, .n = 24 },
-> > +};
+> > +title: ARM SMC Mailbox Interface
 > > +
-> > 
-> >  static struct ccu_nm pll_audio_base_clk = {
-> >  
-> >         .enable         = BIT(31),
-> >         .lock           = BIT(28),
-> >         .n              = _SUNXI_CCU_MULT_MIN(8, 8, 12),
-> >         .m              = _SUNXI_CCU_DIV(1, 1), /* input divider */
-> > 
-> > +       .sdm            = _SUNXI_CCU_SDM(pll_audio_sdm_table,
-> > +                                        BIT(24), 0x178, BIT(31)),
-> > 
-> >         .common         = {
-> > 
-> > +               .features       = CCU_FEATURE_SIGMA_DELTA_MOD,
-> > 
-> >                 .reg            = 0x078,
-> >                 .hw.init        = CLK_HW_INIT("pll-audio-base", "osc24M",
-> >                 
-> >                                               &ccu_nm_ops,
-> > 
-> > @@ -753,12 +762,12 @@ static const struct clk_hw *clk_parent_pll_audio[] =
-> > {> 
-> >  };
-> >  
-> >  /*
-> > 
-> > - * The divider of pll-audio is fixed to 8 now, as pll-audio-4x has a
-> > - * fixed post-divider 2.
-> > + * The divider of pll-audio is fixed to 24 for now, so 24576000 and
-> > 22579200 + * rates can be set exactly in conjunction with sigma-delta
-> > modulation.> 
-> >   */
-> >  
-> >  static CLK_FIXED_FACTOR_HWS(pll_audio_clk, "pll-audio",
-> >  
-> >                             clk_parent_pll_audio,
-> > 
-> > -                           8, 1, CLK_SET_RATE_PARENT);
-> > +                           24, 1, CLK_SET_RATE_PARENT);
-> > 
-> >  static CLK_FIXED_FACTOR_HWS(pll_audio_2x_clk, "pll-audio-2x",
-> >  
-> >                             clk_parent_pll_audio,
-> >                             4, 1, CLK_SET_RATE_PARENT);
-> 
-> You need to fix the factors for the other two outputs as well, since all
-> three are derived from pll-audio-base.
+> > +maintainers:
+> > +  - Peng Fan <peng.fan@nxp.com>
+> > +
+> > +description: |
+> > +  This mailbox uses the ARM smc (secure monitor call) and hvc (hypervisor
+>
+> I think "or" instead of "and" is less confusing.
+>
+> > +  call) instruction to trigger a mailbox-connected activity in firmware,
+> > +  executing on the very same core as the caller. The value of r0/w0/x0
+> > +  the firmware returns after the smc call is delivered as a received
+> > +  message to the mailbox framework, so synchronous communication can be
+> > +  established. The exact meaning of the action the mailbox triggers as
+> > +  well as the return value is defined by their users and is not subject
+> > +  to this binding.
+> > +
+> > +  One use case of this mailbox is the SCMI interface, which uses shared
+>
+>      One example use case of this mailbox ...
+> (to make it more obvious that it's not restricted to this)
+>
+> > +  memory to transfer commands and parameters, and a mailbox to trigger a
+> > +  function call. This allows SoCs without a separate management processor
+> > +  (or when such a processor is not available or used) to use this
+> > +  standardized interface anyway.
+> > +
+> > +  This binding describes no hardware, but establishes a firmware interface.
+> > +  Upon receiving an SMC using one of the described SMC function identifiers,
+>
+>                              ... the described SMC function identifier,
+>
+> > +  the firmware is expected to trigger some mailbox connected functionality.
+> > +  The communication follows the ARM SMC calling convention.
+> > +  Firmware expects an SMC function identifier in r0 or w0. The supported
+> > +  identifiers are passed from consumers,
+>
+>      identifier
+>
+> "passed from consumers": How? Where?
+> But I want to repeat: We should not allow this.
+> This is a binding for a mailbox controller driver, not a generic firmware backdoor.
+>
+Exactly. The mailbox controller here is the  SMC/HVC instruction,
+which needs 9 arguments to work. The fact that the fist argument is
+always going to be same on a platform is just the way we use this
+instruction.
 
-Fix how? pll-audio-2x and pll-audio-4x clocks have fixed divider in regards to 
-pll-audio-base, while pll-audio has not. Unless you mean changing their name?
+> We should be as strict as possible to avoid any security issues.
+>
+Any example of such a security issue?
 
-Best regards,
-Jernej
+> The firmware certainly knows the function ID it implements. The firmware controls the DT. So it is straight-forward to put the ID into the DT. The firmware could even do this at boot time, dynamically, before passing on the DT to the non-secure world (bootloader or kernel).
+>
+> What would be the use case of this functionality?
+>
+At least for flexibility and consistency.
 
-> 
-> ChenYu
-> 
-> > @@ -1215,12 +1224,12 @@ static int sun50i_h6_ccu_probe(struct
-> > platform_device *pdev)> 
-> >         }
-> >         
-> >         /*
-> > 
-> > -        * Force the post-divider of pll-audio to 8 and the output divider
-> > -        * of it to 1, to make the clock name represents the real
-> > frequency. +        * Force the post-divider of pll-audio to 12 and the
-> > output divider +        * of it to 2, so 24576000 and 22579200 rates can
-> > be set exactly.> 
-> >          */
-> >         
-> >         val = readl(reg + SUN50I_H6_PLL_AUDIO_REG);
-> >         val &= ~(GENMASK(21, 16) | BIT(0));
-> > 
-> > -       writel(val | (7 << 16), reg + SUN50I_H6_PLL_AUDIO_REG);
-> > +       writel(val | (11 << 16) | BIT(0), reg + SUN50I_H6_PLL_AUDIO_REG);
-> > 
-> >         /*
-> >         
-> >          * First clock parent (osc32K) is unusable for CEC. But since
-> >          there
-> > 
-> > --
-> > 2.23.0
-> > 
-> > --
-> > You received this message because you are subscribed to the Google Groups
-> > "linux-sunxi" group. To unsubscribe from this group and stop receiving
-> > emails from it, send an email to
-> > linux-sunxi+unsubscribe@googlegroups.com. To view this discussion on the
-> > web, visit
-> > https://groups.google.com/d/msgid/linux-sunxi/20190914135100.327412-1-jer
-> > nej.skrabec%40siol.net.
+> > or listed in the the arm,func-ids
+>
+>                        arm,func-id
+>
+> > +  properties as described below. The firmware can return one value in
+>
+>      property
+>
+> > +  the first SMC result register, it is expected to be an error value,
+> > +  which shall be propagated to the mailbox client.
+> > +
+> > +  Any core which supports the SMC or HVC instruction can be used, as long
+> > +  as a firmware component running in EL3 or EL2 is handling these calls.
+> > +
+> > +properties:
+> > +  compatible:
+> > +    oneOf:
+> > +      - description:
+> > +          For implementations using ARM SMC instruction.
+> > +        const: arm,smc-mbox
+> > +
+> > +      - description:
+> > +          For implementations using ARM HVC instruction.
+> > +        const: arm,hvc-mbox
+>
+> I am not particularly happy with this, but well ...
+>
+> > +
+> > +  "#mbox-cells":
+> > +    const: 1
+>
+> Why is this "1"? What is this number used for? It used to be the channel ID, but since you are describing a single channel controller only, this should be 0 now.
+>
+Yes. I overlooked it and actually queued the patch for pull request.
+But I think the bindings should not carry a 'fix' patch later. Also I
+realise this revision of binding hasn't been reviewed by Rob. Maybe I
+should drop the patch for now.
 
+> > +
+> > +  arm,func-id:
+> > +    description: |
+> > +      An 32-bit value specifying the function ID used by the mailbox.
+>
+>          A single 32-bit value ...
+>
+> > +      The function ID follow the ARM SMC calling convention standard [1].
+>
+>                          follows
+>
+> > +    $ref: /schemas/types.yaml#/definitions/uint32
+> > +
+> > +required:
+> > +  - compatible
+> > +  - "#mbox-cells"
+> > +
+> > +examples:
+> > +  - |
+> > +    sram@93f000 {
+> > +      compatible = "mmio-sram";
+> > +      reg = <0x0 0x93f000 0x0 0x1000>;
+> > +      #address-cells = <1>;
+> > +      #size-cells = <1>;
+> > +      ranges = <0x0 0x93f000 0x1000>;
+> > +
+> > +      cpu_scp_lpri: scp-shmem@0 {
+> > +        compatible = "arm,scmi-shmem";
+> > +        reg = <0x0 0x200>;
+> > +      };
+> > +    };
+> > +
+> > +    smc_tx_mbox: tx_mbox {
+> > +      #mbox-cells = <1>;
+>
+> As mentioned above, should be 0.
+>
+> > +      compatible = "arm,smc-mbox";
+> > +      /* optional */
+>
+> First: having "optional" in a specific example is not helpful, just confusing.
+> Second: It is actually *not* optional in this case, as there is no other way of propagating the function ID. The SCMI driver as the mailbox client has certainly no clue about this.
+> I think I said this previously: Relying on the mailbox client to pass the function ID sounds broken, as this is a property of the mailbox controller driver. The mailbox client does not care about this mailbox communication detail, it just wants to trigger the mailbox.
+>
+Again, the mailbox controller here is the SMC/HVC _instruction_, which
+doesn't care what value the first argument carry.
 
-
-
+Cheers!
 
 _______________________________________________
 linux-arm-kernel mailing list
