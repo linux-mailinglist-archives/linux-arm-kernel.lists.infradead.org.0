@@ -2,58 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 943D0B5AA3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 07:04:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 949A6B5AD0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 07:21:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UIXBP2EBmKjFVB9WWS4/1jcKkr0cMYywvMuxaiLEgx8=; b=QJVa7PkNtFjNoh
-	EZW6aoGhlHZxo0WF0HRx/EkxaWs115h46TvyRltKvu54k2epDKU4unUiQbxEt5o2Y823/CLfeKjYg
-	BdmGgQzMbaTsv0FxmzLxc+3JpgMi7xxs0yd4BEArTETZXZ/2XZJyy5frXiQtb121tJjbmIWw3TX02
-	ErMO5bvq9tsU2VYlLNLBVPkkubyrnm6k1qD57wfjJoeGK9wffz2B9XWGPZ6KOftxZQ13HCaf4GInn
-	564JyimRPxN3Ej76kJ5Yes4N+JQ1B7cC/4QXshtvNVaGvx5LFc72wcOa8DLwDAUF6YnaQUriiAYxo
-	3Rx3M2RaFN49n18LMfDw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0PigrriimnApM0yf2bXL2NfXfLyng2iuxWjiblowEho=; b=teRyXmY4GDBQdE
+	F68pDfKdbQ+3gUpkI71Wb3aqjdvtqD8cFIDtJK6bqntO4y6v3xDtsAZFzMIHrJlqJzP/3S56jCkvq
+	JL6LKU0nV5BmXypcx6orjnn5oTryCT1IwZHK8thGzLXNQfWuACwW1giPZP5pnK4a/LJxFX4P6nDu9
+	j+i9iZWlPorVOnyPy5CohCjnASE57syI94qFKVn0KoVmiFjMg2IZCnx9UOa/Hb2FjdcaCUwFEEtGe
+	38mUZpkvblEKUgdv4zeRxqve3Rb9+ryfVnOI6Acbi5swMEp6cbeiGkeCMqZx0/cuv7LEpJEsCsjj9
+	O3OlcbwMFH86Xm6uNK/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAS8d-0002xl-Gg; Wed, 18 Sep 2019 05:04:23 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAS8P-0002wy-CM; Wed, 18 Sep 2019 05:04:11 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7351F1000;
- Tue, 17 Sep 2019 22:04:05 -0700 (PDT)
-Received: from [10.162.40.136] (p8cg001049571a15.blr.arm.com [10.162.40.136])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- B280D3F575; Tue, 17 Sep 2019 22:03:54 -0700 (PDT)
-Subject: Re: [PATCH V2 2/2] mm/pgtable/debug: Add test validating architecture
- page table helpers
-To: Christophe Leroy <christophe.leroy@c-s.fr>, linux-mm@kvack.org
-References: <1568268173-31302-1-git-send-email-anshuman.khandual@arm.com>
- <1568268173-31302-3-git-send-email-anshuman.khandual@arm.com>
- <ab0ca38b-1e4f-b636-f8b4-007a15903984@c-s.fr>
- <502c497a-9bf1-7d2e-95f2-cfebcd9cf1d9@arm.com>
- <95ed9d92-dd43-4c45-2e52-738aed7f2fb5@c-s.fr>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <f872e6f4-a5cb-069d-2034-78961930cb9f@arm.com>
-Date: Wed, 18 Sep 2019 10:34:09 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1iASPD-0000Vw-Pz; Wed, 18 Sep 2019 05:21:32 +0000
+Received: from mailoutvs40.siol.net ([185.57.226.231] helo=mail.siol.net)
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iASOy-0000Uq-Mw
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 05:21:19 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id 05404521C39;
+ Wed, 18 Sep 2019 07:21:03 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id 67akXHG-VlNw; Wed, 18 Sep 2019 07:21:02 +0200 (CEST)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id 6C995521C5B;
+ Wed, 18 Sep 2019 07:21:02 +0200 (CEST)
+Received: from jernej-laptop.localnet (cpe-86-58-59-25.static.triera.net
+ [86.58.59.25]) (Authenticated sender: jernej.skrabec@siol.net)
+ by mail.siol.net (Postfix) with ESMTPA id CB081521C73;
+ Wed, 18 Sep 2019 07:21:01 +0200 (CEST)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
+To: Chen-Yu Tsai <wens@csie.org>
+Subject: Re: [linux-sunxi] [PATCH] clk: sunxi-ng: h6: Use sigma-delta
+ modulation for audio PLL
+Date: Wed, 18 Sep 2019 07:21:00 +0200
+Message-ID: <8129141.yvSaxnLE4m@jernej-laptop>
+In-Reply-To: <CAGb2v640R7edA3EJvC=aJQZXGcfqot50O3-PFyrYj767pUEYrQ@mail.gmail.com>
+References: <20190914135100.327412-1-jernej.skrabec@siol.net>
+ <CAGb2v640R7edA3EJvC=aJQZXGcfqot50O3-PFyrYj767pUEYrQ@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <95ed9d92-dd43-4c45-2e52-738aed7f2fb5@c-s.fr>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_220409_512650_3B3AF30B 
-X-CRM114-Status: GOOD (  21.09  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190917_222117_075948_DD28C133 
+X-CRM114-Status: GOOD (  25.45  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.231 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,170 +72,147 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
- James Hogan <jhogan@kernel.org>, Heiko Carstens <heiko.carstens@de.ibm.com>,
- Michal Hocko <mhocko@kernel.org>, Dave Hansen <dave.hansen@intel.com>,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
- Jason Gunthorpe <jgg@ziepe.ca>, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Russell King - ARM Linux <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- linux-snps-arc@lists.infradead.org, Kees Cook <keescook@chromium.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
- Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
- linux-arm-kernel@lists.infradead.org,
- Sri Krishna chowdary <schowdary@nvidia.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Vineet Gupta <vgupta@synopsys.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Stephen Boyd <sboyd@kernel.org>, Mike Turquette <mturquette@baylibre.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAwOS8xMy8yMDE5IDAzOjMxIFBNLCBDaHJpc3RvcGhlIExlcm95IHdyb3RlOgo+IAo+IAo+
-IExlIDEzLzA5LzIwMTkgw6AgMTE6MDIsIEFuc2h1bWFuIEtoYW5kdWFsIGEgw6ljcml0wqA6Cj4+
-Cj4+Pj4gKyNpZiAhZGVmaW5lZChfX1BBR0VUQUJMRV9QTURfRk9MREVEKSAmJiAhZGVmaW5lZChf
-X0FSQ0hfSEFTXzRMRVZFTF9IQUNLKQo+Pj4KPj4+ICNpZmRlZnMgaGF2ZSB0byBiZSBhdm9pZGVk
-IGFzIG11Y2ggYXMgcG9zc2libGUsIHNlZSBiZWxvdwo+Pgo+PiBZZWFoIGJ1dCBpdCBoYXMgYmVl
-biBiaXQgZGlmZmljdWx0IHRvIGF2b2lkIGFsbCB0aGVzZSAkaWZkZWYgYmVjYXVzZSBvZiB0aGUK
-Pj4gYXZhaWxhYmlsaXR5IChvciBsYWNrIG9mIGl0KSBmb3IgYWxsIHRoZXNlIHBndGFibGUgaGVs
-cGVycyBpbiB2YXJpb3VzIGNvbmZpZwo+PiBjb21iaW5hdGlvbnMgb24gYWxsIHBsYXRmb3Jtcy4K
-PiAKPiBBcyBmYXIgYXMgSSBjYW4gc2VlIHRoZXNlIHBndGFibGUgaGVscGVycyBzaG91bGQgZXhp
-c3QgZXZlcnl3aGVyZSBhdCBsZWFzdCB2aWEgYXNtLWdlbmVyaWMvIGZpbGVzLgoKQnV0IHRoZXkg
-bWlnaHQgbm90IGFjdHVhbGx5IGRvIHRoZSByaWdodCB0aGluZy4KCj4gCj4gQ2FuIHlvdSBzcG90
-IGEgcGFydGljdWxhciBjb25maWcgd2hpY2ggZmFpbHMgPwoKTGV0cyBjb25zaWRlciB0aGUgZm9s
-bG93aW5nIGV4YW1wbGUgKGFmdGVyIHJlbW92aW5nIHRoZSAkaWZkZWZzIGFyb3VuZCBpdCkKd2hp
-Y2ggdGhvdWdoIGJ1aWxkcyBzdWNjZXNzZnVsbHkgYnV0IGZhaWxzIHRvIHBhc3MgdGhlIGludGVu
-ZGVkIHRlc3QuIFRoaXMKaXMgd2l0aCBhcm02NCBjb25maWcgNEsgcGFnZXMgc2l6ZXMgd2l0aCAz
-OSBiaXRzIFZBIHNwYWNlIHdoaWNoIGVuZHMgdXAKd2l0aCBhIDMgbGV2ZWwgcGFnZSB0YWJsZSBh
-cnJhbmdlbWVudC4KCnN0YXRpYyB2b2lkIF9faW5pdCBwNGRfY2xlYXJfdGVzdHMocDRkX3QgKnA0
-ZHApCnsKICAgICAgICBwNGRfdCBwNGQgPSBSRUFEX09OQ0UoKnA0ZHApOwoKICAgICAgICBwNGQg
-PSBfX3A0ZChwNGRfdmFsKHA0ZCkgfCBSQU5ET01fT1JWQUxVRSk7CiAgICAgICAgV1JJVEVfT05D
-RSgqcDRkcCwgcDRkKTsKICAgICAgICBwNGRfY2xlYXIocDRkcCk7CiAgICAgICAgcDRkID0gUkVB
-RF9PTkNFKCpwNGRwKTsKICAgICAgICBXQVJOX09OKCFwNGRfbm9uZShwNGQpKTsKfQoKVGhlIGZv
-bGxvd2luZyB0ZXN0IGhpdHMgYW4gZXJyb3IgYXQgV0FSTl9PTighcDRkX25vbmUocDRkKSkKClsg
-ICAxNi43NTczMzNdIC0tLS0tLS0tLS0tLVsgY3V0IGhlcmUgXS0tLS0tLS0tLS0tLQpbICAgMTYu
-NzU4MDE5XSBXQVJOSU5HOiBDUFU6IDExIFBJRDogMSBhdCBtbS9hcmNoX3BndGFibGVfdGVzdC5j
-OjE4NyBhcmNoX3BndGFibGVfdGVzdHNfaW5pdCsweDI0Yy8weDQ3NApbICAgMTYuNzU5NDU1XSBN
-b2R1bGVzIGxpbmtlZCBpbjoKWyAgIDE2Ljc1OTk1Ml0gQ1BVOiAxMSBQSUQ6IDEgQ29tbTogc3dh
-cHBlci8wIE5vdCB0YWludGVkIDUuMy4wLW5leHQtMjAxOTA5MTYtMDAwMDUtZzYxYzIxODE1M2Ji
-OC1kaXJ0eSAjMjIyClsgICAxNi43NjE0NDldIEhhcmR3YXJlIG5hbWU6IGxpbnV4LGR1bW15LXZp
-cnQgKERUKQpbICAgMTYuNzYyMTg1XSBwc3RhdGU6IDAwNDAwMDA1IChuemN2IGRhaWYgK1BBTiAt
-VUFPKQpbICAgMTYuNzYyOTY0XSBwYyA6IGFyY2hfcGd0YWJsZV90ZXN0c19pbml0KzB4MjRjLzB4
-NDc0ClsgICAxNi43NjM3NTBdIGxyIDogYXJjaF9wZ3RhYmxlX3Rlc3RzX2luaXQrMHgxNzQvMHg0
-NzQKWyAgIDE2Ljc2NDUzNF0gc3AgOiBmZmZmZmZjMDExZDdiZDUwClsgICAxNi43NjUwNjVdIHgy
-OTogZmZmZmZmYzAxMWQ3YmQ1MCB4Mjg6IGZmZmZmZmZmMTc1NmJhYzAgClsgICAxNi43NjU5MDhd
-IHgyNzogZmZmZmZmODVkZGFmMzAwMCB4MjY6IDAwMDAwMDAwMDAwMDAyZTggClsgICAxNi43NjY3
-NjddIHgyNTogZmZmZmZmYzAxMTFjZTAwMCB4MjQ6IGZmZmZmZjg1ZGRhZjMyZTggClsgICAxNi43
-Njc2MDZdIHgyMzogZmZmZmZmODVkZGFlZjI3OCB4MjI6IDAwMDAwMDQ1Y2M4NDQwMDAgClsgICAx
-Ni43Njg0NDVdIHgyMTogMDAwMDAwMDY1ZGFlZjAwMyB4MjA6IGZmZmZmZmZmMTc1NDAwMDAgClsg
-ICAxNi43NjkyODNdIHgxOTogZmZmZmZmODVkZGI2MDAwMCB4MTg6IDAwMDAwMDAwMDAwMDAwMTQg
-ClsgICAxNi43NzAxMjJdIHgxNzogMDAwMDAwMDA5ODA0MjZiYiB4MTY6IDAwMDAwMDAwNjk4NTk0
-YzYgClsgICAxNi43NzA5NzZdIHgxNTogMDAwMDAwMDA2NmUyNWE4OCB4MTQ6IDAwMDAwMDAwMDAw
-MDAwMDAgClsgICAxNi43NzE4MTNdIHgxMzogZmZmZmZmZmYxNzU0MDAwMCB4MTI6IDAwMDAwMDAw
-MDAwMDAwMGEgClsgICAxNi43NzI2NTFdIHgxMTogZmZmZmZmODVmY2ZkMGE0MCB4MTA6IDAwMDAw
-MDAwMDAwMDAwMDEgClsgICAxNi43NzM0ODhdIHg5IDogMDAwMDAwMDAwMDAwMDAwOCB4OCA6IGZm
-ZmZmZmMwMTE0M2FiMjYgClsgICAxNi43NzQzMzZdIHg3IDogMDAwMDAwMDAwMDAwMDAwMCB4NiA6
-IDAwMDAwMDAwMDAwMDAwMDAgClsgICAxNi43NzUxODBdIHg1IDogMDAwMDAwMDAwMDAwMDAwMCB4
-NCA6IDAwMDAwMDAwMDAwMDAwMDAgClsgICAxNi43NzYwMThdIHgzIDogZmZmZmZmZmYxNzU2YmJl
-OCB4MiA6IDAwMDAwMDA2NWRhZWIwMDMgClsgICAxNi43NzY4NTZdIHgxIDogMDAwMDAwMDAwMDY1
-ZGFlYiB4MCA6IGZmZmZmZmZmZmZmZmYwMDAgClsgICAxNi43Nzc2OTNdIENhbGwgdHJhY2U6Clsg
-ICAxNi43NzgwOTJdICBhcmNoX3BndGFibGVfdGVzdHNfaW5pdCsweDI0Yy8weDQ3NApbICAgMTYu
-Nzc4ODQzXSAgZG9fb25lX2luaXRjYWxsKzB4NzQvMHgxYjAKWyAgIDE2Ljc3OTQ1OF0gIGtlcm5l
-bF9pbml0X2ZyZWVhYmxlKzB4MWNjLzB4MjkwClsgICAxNi43ODAxNTFdICBrZXJuZWxfaW5pdCsw
-eDEwLzB4MTAwClsgICAxNi43ODA3MTBdICByZXRfZnJvbV9mb3JrKzB4MTAvMHgxOApbICAgMTYu
-NzgxMjgyXSAtLS1bIGVuZCB0cmFjZSAwNDJlNmM0MGMwYTNiMDM4IF0tLS0KCk9uIGFybTY0ICg0
-SyBwYWdlIHNpemV8MzkgYml0cyBWQXwzIGxldmVsIHBhZ2UgdGFibGUpCgojZWxpZiBDT05GSUdf
-UEdUQUJMRV9MRVZFTFMgPT0gMwkvKiBBcHBsaWNhYmxlIGhlcmUgKi8KI2RlZmluZSBfX0FSQ0hf
-VVNFXzVMRVZFTF9IQUNLCiNpbmNsdWRlIDxhc20tZ2VuZXJpYy9wZ3RhYmxlLW5vcHVkLmg+CgpX
-aGljaCBwdWxscyBpbiAKCiNpbmNsdWRlIDxhc20tZ2VuZXJpYy9wZ3RhYmxlLW5vcDRkLWhhY2su
-aD4KCndoaWNoIHB1bGxzIGluCgojaW5jbHVkZSA8YXNtLWdlbmVyaWMvNWxldmVsLWZpeHVwLmg+
-Cgp3aGljaCBkZWZpbmVzCgpzdGF0aWMgaW5saW5lIGludCBwNGRfbm9uZShwNGRfdCBwNGQpCnsK
-ICAgICAgICByZXR1cm4gMDsKfQoKd2hpY2ggd2lsbCBpbnZhcmlhYmx5IHRyaWdnZXIgV0FSTl9P
-TighcDRkX25vbmUocDRkKSkuCgpTaW1pbGFybHkgZm9yIG5leHQgdGVzdCBwNGRfcG9wdWxhdGVf
-dGVzdHMoKSB3aGljaCB3aWxsIGFsd2F5cyBiZQpzdWNjZXNzZnVsIGJlY2F1c2UgcDRkX2JhZCgp
-IGludmFyaWFibHkgcmV0dXJucyBuZWdhdGl2ZS4KCnN0YXRpYyBpbmxpbmUgaW50IHA0ZF9iYWQo
-cDRkX3QgcDRkKQp7CiAgICAgICAgcmV0dXJuIDA7Cn0KCnN0YXRpYyB2b2lkIF9faW5pdCBwNGRf
-cG9wdWxhdGVfdGVzdHMoc3RydWN0IG1tX3N0cnVjdCAqbW0sIHA0ZF90ICpwNGRwLAogICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHB1ZF90ICpwdWRwKQp7CiAgICAgICAgcDRk
-X3QgcDRkOwoKICAgICAgICAvKgogICAgICAgICAqIFRoaXMgZW50cnkgcG9pbnRzIHRvIG5leHQg
-bGV2ZWwgcGFnZSB0YWJsZSBwYWdlLgogICAgICAgICAqIEhlbmNlIHRoaXMgbXVzdCBub3QgcXVh
-bGlmeSBhcyBwNGRfYmFkKCkuCiAgICAgICAgICovCiAgICAgICAgcHVkX2NsZWFyKHB1ZHApOwog
-ICAgICAgIHA0ZF9jbGVhcihwNGRwKTsKICAgICAgICBwNGRfcG9wdWxhdGUobW0sIHA0ZHAsIHB1
-ZHApOwogICAgICAgIHA0ZCA9IFJFQURfT05DRSgqcDRkcCk7CiAgICAgICAgV0FSTl9PTihwNGRf
-YmFkKHA0ZCkpOwp9CgpXZSBzaG91bGQgbm90IHJ1biB0aGVzZSB0ZXN0cyBmb3IgdGhlIGFib3Zl
-IGNvbmZpZyBiZWNhdXNlIHRoZXkgYXJlCm5vdCBhcHBsaWNhYmxlIGFuZCB3aWxsIGludmFyaWFi
-bHkgcHJvZHVjZSBzYW1lIHJlc3VsdC4KCj4gCj4+Cj4+Pgo+IAo+IFsuLi5dCj4gCj4+Pj4gKyNp
-ZiAhZGVmaW5lZChfX1BBR0VUQUJMRV9QVURfRk9MREVEKSAmJiAhZGVmaW5lZChfX0FSQ0hfSEFT
-XzVMRVZFTF9IQUNLKQo+Pj4KPj4+IFRoZSBzYW1lIGNhbiBiZSBkb25lIGhlcmUuCj4+Cj4+IElJ
-UkMgbm90IG9ubHkgdGhlIHBhZ2UgdGFibGUgaGVscGVycyBidXQgdGhlcmUgYXJlIGRhdGEgdHlw
-ZXMgKHB4eF90KSB3aGljaAo+PiB3ZXJlIG5vdCBwcmVzZW50IG9uIHZhcmlvdXMgY29uZmlncyBh
-bmQgdGhlc2Ugd3JhcHBlcnMgaGVscCBwcmV2ZW50IGJ1aWxkCj4+IGZhaWx1cmVzLiBBbnkgd2F5
-cyB3aWxsIHRyeSBhbmQgc2VlIGlmIHRoaXMgY2FuIGJlIGltcHJvdmVkIGZ1cnRoZXIuIEJ1dAo+
-PiBtZWFud2hpbGUgaWYgeW91IGhhdmUgc29tZSBzdWdnZXN0aW9ucywgcGxlYXNlIGRvIGxldCBt
-ZSBrbm93Lgo+IAo+IHBndF90IGFuZCBwbWRfdCBhcmUgZXZlcnl3aGVyZSBJIGd1ZXNzLgo+IHRo
-ZW4gcHVkX3QgYW5kIHA0ZF90IGhhdmUgZmFsbGJhY2tzIGluIGFzbS1nZW5lcmljIGZpbGVzLgoK
-TGV0cyB0YWtlIGFub3RoZXIgZXhhbXBsZSB3aGVyZSBpdCBmYWlscyB0byBjb21waWxlLiBPbiBh
-cm02NCB3aXRoIDE2SwpwYWdlIHNpemUsIDQ4IGJpdHMgVkEsIDQgbGV2ZWwgcGFnZSB0YWJsZSBh
-cnJhbmdlbWVudCBpbiB0aGUgZm9sbG93aW5nCnRlc3QsIHBnZF9wb3B1bGF0ZSgpIGRvZXMgbm90
-IGhhdmUgdGhlIHJlcXVpcmVkIHNpZ25hdHVyZS4KCnN0YXRpYyB2b2lkIHBnZF9wb3B1bGF0ZV90
-ZXN0cyhzdHJ1Y3QgbW1fc3RydWN0ICptbSwgcGdkX3QgKnBnZHAsIHA0ZF90ICpwNGRwKQp7CiAg
-ICAgICAgcGdkX3QgcGdkOwoKICAgICAgICBpZiAobW1fcDRkX2ZvbGRlZChtbSkpCiAgICAgICAg
-ICAgICAgICByZXR1cm47CgogICAgICAgLyoKICAgICAgICAgKiBUaGlzIGVudHJ5IHBvaW50cyB0
-byBuZXh0IGxldmVsIHBhZ2UgdGFibGUgcGFnZS4KICAgICAgICAgKiBIZW5jZSB0aGlzIG11c3Qg
-bm90IHF1YWxpZnkgYXMgcGdkX2JhZCgpLgogICAgICAgICAqLwogICAgICAgIHA0ZF9jbGVhcihw
-NGRwKTsKICAgICAgICBwZ2RfY2xlYXIocGdkcCk7CiAgICAgICAgcGdkX3BvcHVsYXRlKG1tLCBw
-Z2RwLCBwNGRwKTsKICAgICAgICBwZ2QgPSBSRUFEX09OQ0UoKnBnZHApOwogICAgICAgIFdBUk5f
-T04ocGdkX2JhZChwZ2QpKTsKfQoKbW0vYXJjaF9wZ3RhYmxlX3Rlc3QuYzogSW4gZnVuY3Rpb24g
-4oCYcGdkX3BvcHVsYXRlX3Rlc3Rz4oCZOgptbS9hcmNoX3BndGFibGVfdGVzdC5jOjI1NDoyNTog
-ZXJyb3I6IHBhc3NpbmcgYXJndW1lbnQgMyBvZiDigJhwZ2RfcG9wdWxhdGXigJkgZnJvbSBpbmNv
-bXBhdGlibGUgcG9pbnRlciB0eXBlIFstV2Vycm9yPWluY29tcGF0aWJsZS1wb2ludGVyLXR5cGVz
-XQogIHBnZF9wb3B1bGF0ZShtbSwgcGdkcCwgcDRkcCk7CiAgICAgICAgICAgICAgICAgICAgICAg
-ICBefn5+CkluIGZpbGUgaW5jbHVkZWQgZnJvbSBtbS9hcmNoX3BndGFibGVfdGVzdC5jOjI3OjA6
-Ci4vYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9wZ2FsbG9jLmg6ODE6MjA6IG5vdGU6IGV4cGVjdGVk
-IOKAmHB1ZF90ICoge2FrYSBzdHJ1Y3QgPGFub255bW91cz4gKn3igJkgYnV0IGFyZ3VtZW50IGlz
-IG9mIHR5cGUg4oCYcGdkX3QgKiB7YWthIHN0cnVjdCA8YW5vbnltb3VzPiAqfeKAmQogc3RhdGlj
-IGlubGluZSB2b2lkIHBnZF9wb3B1bGF0ZShzdHJ1Y3QgbW1fc3RydWN0ICptbSwgcGdkX3QgKnBn
-ZHAsIHB1ZF90ICpwdWRwKQoKVGhlIGJ1aWxkIGZhaWx1cmUgaXMgYmVjYXVzZSBwNGRfdCAqIG1h
-cHMgdG8gcGdkX3QgKiBidXQgdGhlIGFwcGxpY2FibGUKKGl0IGRvZXMgbm90IGZhbGxiYWNrIG9u
-IGdlbmVyaWMgb25lcykgcGdkX3BvcHVsYXRlKCkgZXhwZWN0cyBhIHB1ZF90ICouCgpFeGNlcHQg
-Zm9yIGFyY2hzIHdoaWNoIGhhdmUgNSBsZXZlbCBwYWdlIGFibGUsIHBnZF9wb3B1bGF0ZSgpIGFs
-d2F5cyBhY2NlcHRzCmxvd2VyIGxldmVsIHBhZ2UgdGFibGUgcG9pbnRlcnMgYXMgdGhlIGxhc3Qg
-YXJndW1lbnQgYXMgdGhleSBkb250IGhhdmUgdGhhdAptYW55IGxldmVscy4KCmFyY2gveDg2L2lu
-Y2x1ZGUvYXNtL3BnYWxsb2MuaDpzdGF0aWMgaW5saW5lIHZvaWQgcGdkX3BvcHVsYXRlKHN0cnVj
-dCBtbV9zdHJ1Y3QgKm1tLCBwZ2RfdCAqcGdkLCBwNGRfdCAqcDRkKQphcmNoL3MzOTAvaW5jbHVk
-ZS9hc20vcGdhbGxvYy5oOnN0YXRpYyBpbmxpbmUgdm9pZCBwZ2RfcG9wdWxhdGUoc3RydWN0IG1t
-X3N0cnVjdCAqbW0sIHBnZF90ICpwZ2QsIHA0ZF90ICpwNGQpCgpCdXQgb3RoZXJzCgphcmNoL2Fy
-bTY0L2luY2x1ZGUvYXNtL3BnYWxsb2MuaDpzdGF0aWMgaW5saW5lIHZvaWQgcGdkX3BvcHVsYXRl
-KHN0cnVjdCBtbV9zdHJ1Y3QgKm1tLCBwZ2RfdCAqcGdkcCwgcHVkX3QgKnB1ZHApCmFyY2gvbTY4
-ay9pbmNsdWRlL2FzbS9tb3Rvcm9sYV9wZ2FsbG9jLmg6c3RhdGljIGlubGluZSB2b2lkIHBnZF9w
-b3B1bGF0ZShzdHJ1Y3QgbW1fc3RydWN0ICptbSwgcGdkX3QgKnBnZCwgcG1kX3QgKnBtZCkKYXJj
-aC9taXBzL2luY2x1ZGUvYXNtL3BnYWxsb2MuaDpzdGF0aWMgaW5saW5lIHZvaWQgcGdkX3BvcHVs
-YXRlKHN0cnVjdCBtbV9zdHJ1Y3QgKm1tLCBwZ2RfdCAqcGdkLCBwdWRfdCAqcHVkKQphcmNoL3Bv
-d2VycGMvaW5jbHVkZS9hc20vYm9vazNzLzY0L3BnYWxsb2MuaDpzdGF0aWMgaW5saW5lIHZvaWQg
-cGdkX3BvcHVsYXRlKHN0cnVjdCBtbV9zdHJ1Y3QgKm1tLCBwZ2RfdCAqcGdkLCBwdWRfdCAqcHVk
-KQoKSSByZW1lbWJlciBnb2luZyB0aHJvdWdoIGFsbCB0aGVzZSBjb21iaW5hdGlvbnMgYmVmb3Jl
-IGFycml2aW5nIGF0IHRoZQpjdXJyZW50IHN0YXRlIG9mICNpZmRlZiBleGNsdXNpb25zLiBQcm9i
-YWJseSwgdG8gc29sdmVkIHRoaXMgYWxsIHBsYXRmb3JtcwpoYXZlIHRvIGRlZmluZSBweHhfcG9w
-dWxhdGUoKSBoZWxwZXJzIGFzc3VtaW5nIHRoZXkgc3VwcG9ydCA1IGxldmVsIHBhZ2UKdGFibGUu
-Cgo+IAo+IFNvIGl0IHNob3VsZG4ndCBiZSBhbiBpc3N1ZS4gTWF5YmUgaWYgYSBjb3VwbGUgb2Yg
-YXJjaGVzIG1pc3MgdGhlbSwgdGhlIGJlc3Qgd291bGQgYmUgdG8gZml4IHRoZSBhcmNoZXMsIHNp
-bmNlIHRoYXQncyB0aGUgcHVycG9zZSBvZiB5b3VyIHRlc3RzdWl0ZSBpc24ndCBpdCA/CgpUaGUg
-cnVuIHRpbWUgZmFpbHVyZXMgYXMgZXhwbGFpbmVkIHByZXZpb3VzbHkgaXMgYmVjYXVzZSBvZiB0
-aGUgZm9sZGluZyB3aGljaApuZWVkcyB0byBiZSBwcm90ZWN0ZWQgYXMgdGhleSBhcmUgbm90IGV2
-ZW4gYXBwbGljYWJsZS4gVGhlIGNvbXBpbGUgdGltZQpmYWlsdXJlcyBhcmUgYmVjYXVzZSBweHhf
-cG9wdWxhdGUoKSBzaWduYXR1cmVzIGFyZSBwbGF0Zm9ybSBzcGVjaWZpYyBkZXBlbmRpbmcKb24g
-aG93IG1hbnkgcGFnZSB0YWJsZSBsZXZlbHMgdGhleSByZWFsbHkgc3VwcG9ydC4KCl9fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
-bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Dne torek, 17. september 2019 ob 08:54:08 CEST je Chen-Yu Tsai napisal(a):
+> On Sat, Sep 14, 2019 at 9:51 PM Jernej Skrabec <jernej.skrabec@siol.net> 
+wrote:
+> > Audio devices needs exact clock rates in order to correctly reproduce
+> > the sound. Until now, only integer factors were used to configure H6
+> > audio PLL which resulted in inexact rates. Fix that by adding support
+> > for fractional factors using sigma-delta modulation look-up table. It
+> > contains values for two most commonly used audio base frequencies.
+> > 
+> > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> > ---
+> > 
+> >  drivers/clk/sunxi-ng/ccu-sun50i-h6.c | 21 +++++++++++++++------
+> >  1 file changed, 15 insertions(+), 6 deletions(-)
+> > 
+> > diff --git a/drivers/clk/sunxi-ng/ccu-sun50i-h6.c
+> > b/drivers/clk/sunxi-ng/ccu-sun50i-h6.c index d89353a3cdec..ed6338d74474
+> > 100644
+> > --- a/drivers/clk/sunxi-ng/ccu-sun50i-h6.c
+> > +++ b/drivers/clk/sunxi-ng/ccu-sun50i-h6.c
+> > @@ -203,12 +203,21 @@ static struct ccu_nkmp pll_hsic_clk = {
+> > 
+> >   * hardcode it to match with the clock names.
+> >   */
+> >  
+> >  #define SUN50I_H6_PLL_AUDIO_REG                0x078
+> > 
+> > +
+> > +static struct ccu_sdm_setting pll_audio_sdm_table[] = {
+> > +       { .rate = 541900800, .pattern = 0xc001288d, .m = 1, .n = 22 },
+> > +       { .rate = 589824000, .pattern = 0xc00126e9, .m = 1, .n = 24 },
+> > +};
+> > +
+> > 
+> >  static struct ccu_nm pll_audio_base_clk = {
+> >  
+> >         .enable         = BIT(31),
+> >         .lock           = BIT(28),
+> >         .n              = _SUNXI_CCU_MULT_MIN(8, 8, 12),
+> >         .m              = _SUNXI_CCU_DIV(1, 1), /* input divider */
+> > 
+> > +       .sdm            = _SUNXI_CCU_SDM(pll_audio_sdm_table,
+> > +                                        BIT(24), 0x178, BIT(31)),
+> > 
+> >         .common         = {
+> > 
+> > +               .features       = CCU_FEATURE_SIGMA_DELTA_MOD,
+> > 
+> >                 .reg            = 0x078,
+> >                 .hw.init        = CLK_HW_INIT("pll-audio-base", "osc24M",
+> >                 
+> >                                               &ccu_nm_ops,
+> > 
+> > @@ -753,12 +762,12 @@ static const struct clk_hw *clk_parent_pll_audio[] =
+> > {> 
+> >  };
+> >  
+> >  /*
+> > 
+> > - * The divider of pll-audio is fixed to 8 now, as pll-audio-4x has a
+> > - * fixed post-divider 2.
+> > + * The divider of pll-audio is fixed to 24 for now, so 24576000 and
+> > 22579200 + * rates can be set exactly in conjunction with sigma-delta
+> > modulation.> 
+> >   */
+> >  
+> >  static CLK_FIXED_FACTOR_HWS(pll_audio_clk, "pll-audio",
+> >  
+> >                             clk_parent_pll_audio,
+> > 
+> > -                           8, 1, CLK_SET_RATE_PARENT);
+> > +                           24, 1, CLK_SET_RATE_PARENT);
+> > 
+> >  static CLK_FIXED_FACTOR_HWS(pll_audio_2x_clk, "pll-audio-2x",
+> >  
+> >                             clk_parent_pll_audio,
+> >                             4, 1, CLK_SET_RATE_PARENT);
+> 
+> You need to fix the factors for the other two outputs as well, since all
+> three are derived from pll-audio-base.
+
+Fix how? pll-audio-2x and pll-audio-4x clocks have fixed divider in regards to 
+pll-audio-base, while pll-audio has not. Unless you mean changing their name?
+
+Best regards,
+Jernej
+
+> 
+> ChenYu
+> 
+> > @@ -1215,12 +1224,12 @@ static int sun50i_h6_ccu_probe(struct
+> > platform_device *pdev)> 
+> >         }
+> >         
+> >         /*
+> > 
+> > -        * Force the post-divider of pll-audio to 8 and the output divider
+> > -        * of it to 1, to make the clock name represents the real
+> > frequency. +        * Force the post-divider of pll-audio to 12 and the
+> > output divider +        * of it to 2, so 24576000 and 22579200 rates can
+> > be set exactly.> 
+> >          */
+> >         
+> >         val = readl(reg + SUN50I_H6_PLL_AUDIO_REG);
+> >         val &= ~(GENMASK(21, 16) | BIT(0));
+> > 
+> > -       writel(val | (7 << 16), reg + SUN50I_H6_PLL_AUDIO_REG);
+> > +       writel(val | (11 << 16) | BIT(0), reg + SUN50I_H6_PLL_AUDIO_REG);
+> > 
+> >         /*
+> >         
+> >          * First clock parent (osc32K) is unusable for CEC. But since
+> >          there
+> > 
+> > --
+> > 2.23.0
+> > 
+> > --
+> > You received this message because you are subscribed to the Google Groups
+> > "linux-sunxi" group. To unsubscribe from this group and stop receiving
+> > emails from it, send an email to
+> > linux-sunxi+unsubscribe@googlegroups.com. To view this discussion on the
+> > web, visit
+> > https://groups.google.com/d/msgid/linux-sunxi/20190914135100.327412-1-jer
+> > nej.skrabec%40siol.net.
+
+
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
