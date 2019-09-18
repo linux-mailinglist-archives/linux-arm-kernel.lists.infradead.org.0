@@ -2,90 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A9EBB5F5E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 10:44:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A963EB5F70
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 10:48:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:References:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=0FdN6WmxiAndcYQSoEUK9DWX8wD3QAUMN6kzP7lzDKo=; b=KFwfz3H2PdzMzsGYOq1K4ig71G
-	Yv8BeprWHObp/CUESFKPQCZO4oOR5e7xVm1Wn6MWRfbDgckiRy4k1AmqNySqZf0FyocoK6SOKDNHq
-	Z155VqM+9zBm4SN4hJQq0oj68Y3ssynAnt886V8x2PUv71lwF3KnLqU6/hB2b9t6G/IW993TEhCvS
-	uwDNjzBJsh0Y325XrosWp+9HYAxteUsCHP+OHz8IulyxGvfdKDmH5zZOB8WFfptdYWFF/KRRQRp7n
-	2NEN8O2lNkm+UkzQqtI04XeR/0ti20MMbqyLi977lLmHLEJBu6MHXwcqYPWPjPUZJM3z4mt9ik3gj
-	Q+P2qz7g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Q7c9NM++mP2ANhs+NUaGvaugyBLZQc7B6Me+z979h9A=; b=frM8qkuUtgVWkK
+	7kS/OI8nO3UPa58a18YFxCzOUCG2MMBMxPFhcN7peU2Pf0aOOir7L2saOdLm9LDT9KGgbu6of576G
+	OD0yljlCWTSf06TUCoz3UCJrPVTlHqgO6OvTfuTK9zVt+cnvCzeCwUBYOf5tDzVP8j5tx8Y12M29m
+	IGXvA6HbxLM7XUiW9Vp6O0c7WcPP5CO33rG5jD5hbIlpQK21RXxiT+QfPIl7nMO36zzh6QKBBahrD
+	0BpH83M2YqIjOIczNCtvwlgC6QssgSWh85aleg1dJS21ykMQGYXJ0p3zOKxyYBbv0COQXIgXnLxJ4
+	Y6giY3KvnQMrVgjHkNHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAVZH-0003tW-2J; Wed, 18 Sep 2019 08:44:07 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iAVdA-0005pG-Oh; Wed, 18 Sep 2019 08:48:08 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAVZ3-0003sW-Ci
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 08:43:55 +0000
-Received: by mail-wr1-x442.google.com with SMTP id h7so5929750wrw.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Sep 2019 01:43:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:references:user-agent:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=Es/bmU3c9XGaRtzCiMLIVrPNjr9MNI0eTxg3xMnbUYc=;
- b=S2FCcJGdZtO1gO4SQHnOHraw90NxGk+ySbB9OIxE1vfxheAusATdTaw/syxuwdGWQI
- 92sF2Nr9TgHxs7w9AuZJMkw35AR0EvurNbRLvbFBj0IhXv8+CtvAmZEn4/1JRD/sQl+7
- tNMt7J5QEAw5awSGxUcQ8/C/fS2112pJR0ilZf81yL8vBnGNaugVKY9xmUmAErDUp2Sh
- VlGTEU7rvD1DW5sD4FehEg9RXAfUKfdQ8YV5iBOpMAeohp1oWwhAsgleYcPMPeSmZEgO
- sl+eIrDHwIH3Ei22m0zaGRvVaJHEvtf5PLgIY9dlvf0pyHhxZ0Kxb/8q3jOurf9y3lOh
- +X0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:references:user-agent:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=Es/bmU3c9XGaRtzCiMLIVrPNjr9MNI0eTxg3xMnbUYc=;
- b=XQpMrry84AsXb0o7th/+9FEiAy7WCBJkQA9KDTVFF1niQCTAbBzIp7W9GHxWMzUprI
- X36tiY7VDQoJIe5MlzwN3QRe9bjQCGR0sL72j0FCM2hZD+cs2G0H10kIEPOP3BuABvVK
- k9J3lcDHqlcsiF7OFVFysUEOA9CtSkqIo2YBj805yeowQYsidUeMV4Q2FHbS7evNhH48
- tOYDIXN1ieo7g3RXGxqKyHrFnC1OWbT4yZkKt9/nHh2ccXX+lqB6JApsIwNIHKcQhDxw
- 4tNmguuWvZAVcO0T0N+b4R+Ph+7uqFvhbFE+mt+s/ivd0qiUHFBYvyan2yhfFc354+Qc
- DUdA==
-X-Gm-Message-State: APjAAAXVMY4O76lFLJf6STzmhuU6KyPq/JXV7zLS6YCor4vj8e2ISshR
- tbcm41szQJMUmrWT26u77mvPUA==
-X-Google-Smtp-Source: APXvYqz3Kpju44v9NdaCUS71dFKfNZ3q3V7oya0OqrnOC9uxnDdFSkv5zrOWWA/QCE/CJM9pIPUidg==
-X-Received: by 2002:a5d:52c8:: with SMTP id r8mr2192409wrv.256.1568796231510; 
- Wed, 18 Sep 2019 01:43:51 -0700 (PDT)
-Received: from localhost (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id q10sm9774982wrd.39.2019.09.18.01.43.50
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Sep 2019 01:43:50 -0700 (PDT)
-From: Jerome Brunet <jbrunet@baylibre.com>
-X-Google-Original-From: Jerome Brunet <jbrunet@starbuckisacylon.baylibre.com>
-References: <20190918082500.209281-1-cychiang@chromium.org>
- <20190918082500.209281-3-cychiang@chromium.org>
-User-agent: mu4e 1.3.1; emacs 26.2
-To: Cheng-Yi Chiang <cychiang@chromium.org>
-Subject: Re: [PATCH v6 2/4] drm: dw-hdmi-i2s: Use fixed id for codec device
-In-reply-to: <20190918082500.209281-3-cychiang@chromium.org>
-Date: Wed, 18 Sep 2019 10:43:49 +0200
-Message-ID: <1j7e663sfu.fsf@starbuckisacylon.baylibre.com>
+ id 1iAVcy-0005nP-Do
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 08:47:58 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iAVcr-0001B8-T8; Wed, 18 Sep 2019 10:47:49 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iAVcq-0007mf-Bu; Wed, 18 Sep 2019 10:47:48 +0200
+Date: Wed, 18 Sep 2019 10:47:48 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Peter Rosin <peda@axentia.se>, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>
+Subject: [PATCH v2] of: restore old handling of cells_name=NULL in
+ of_*_phandle_with_args()
+Message-ID: <20190918084748.hnjkiq7wc5b35wjh@pengutronix.de>
+References: <20190918063837.8196-1-u.kleine-koenig@pengutronix.de>
+ <b00ca30f-2c06-7722-96b2-123d15751cb6@axentia.se>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <b00ca30f-2c06-7722-96b2-123d15751cb6@axentia.se>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_014353_436339_9E8CDDB3 
-X-CRM114-Status: GOOD (  17.37  )
+X-CRM114-CacheID: sfid-20190918_014756_461032_8B9C50B5 
+X-CRM114-Status: GOOD (  25.05  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,89 +70,190 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, Heiko Stuebner <heiko@sntech.de>,
- Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- Hans Verkuil <hverkuil@xs4all.nl>, Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Takashi Iwai <tiwai@suse.com>, linux-rockchip@lists.infradead.org,
- dgreid@chromium.org, tzungbi@chromium.org, Jonas Karlman <jonas@kwiboo.se>,
- Liam Girdwood <lgirdwood@gmail.com>, Russell King <rmk+kernel@armlinux.org.uk>,
- Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
- linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
- dianders@chromium.org, Daniel Vetter <daniel@ffwll.ch>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Robin Murphy <robin.murphy@arm.com>, Joerg Roedel <joro@8bytes.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>, Will Deacon <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Before commit e42ee61017f5 ("of: Let of_for_each_phandle fallback to
+non-negative cell_count") the iterator functions calling
+of_for_each_phandle assumed a cell count of 0 if cells_name was NULL.
+This corner case was missed when implementing the fallback logic in
+e42ee61017f5 and resulted in an endless loop.
 
-On Wed 18 Sep 2019 at 10:24, Cheng-Yi Chiang <cychiang@chromium.org> wrote:
+Restore the old behaviour of of_count_phandle_with_args() and
+of_parse_phandle_with_args() and add a check to
+of_phandle_iterator_init() to prevent a similar failure as a safety
+precaution. of_parse_phandle_with_args_map() doesn't need a similar fix
+as cells_name isn't NULL there.
 
-> The problem of using auto ID is that the device name will be like
-> hdmi-audio-codec.<id number>.auto.
->
-> The number might be changed when there are other platform devices being
-> created before hdmi-audio-codec device.
-> Use a fixed name so machine driver can set codec name on the DAI link.
->
-> Using the fixed name should be fine because there will only be one
-> hdmi-audio-codec device.
+Affected drivers are:
+ - drivers/base/power/domain.c
+ - drivers/base/power/domain.c
+ - drivers/clk/ti/clk-dra7-atl.c
+ - drivers/hwmon/ibmpowernv.c
+ - drivers/i2c/muxes/i2c-demux-pinctrl.c
+ - drivers/iommu/mtk_iommu.c
+ - drivers/net/ethernet/freescale/fman/mac.c
+ - drivers/opp/of.c
+ - drivers/perf/arm_dsu_pmu.c
+ - drivers/regulator/of_regulator.c
+ - drivers/remoteproc/imx_rproc.c
+ - drivers/soc/rockchip/pm_domains.c
+ - sound/soc/fsl/imx-audmix.c
+ - sound/soc/fsl/imx-audmix.c
+ - sound/soc/meson/axg-card.c
+ - sound/soc/samsung/tm2_wm5110.c
+ - sound/soc/samsung/tm2_wm5110.c
 
-While this is true all platforms we know of (I suppose), It might not be
-the case later on. I wonder if making such assumption is really
-desirable in a code which is used by quite a few different platforms.
+Thanks to Geert Uytterhoeven for reporting the issue, Peter Rosin for
+helping pinpoint the actual problem and the testers for confirming this
+fix.
 
-Instead of trying to predict what the device name will be, can't you just
-query it in your machine driver ? Using a device tree phandle maybe ?
+Fixes: e42ee61017f5 ("of: Let of_for_each_phandle fallback to non-negative =
+cell_count")
+Tested-by: Marek Szyprowski <m.szyprowski@samsung.com>
+Tested-by: Geert Uytterhoeven <geert+renesas@glider.be>
+Signed-off-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
+---
 
-It is quite usual to set the dai links this way, "simple-card" is a good
-example of this.
+On Wed, Sep 18, 2019 at 08:01:05AM +0000, Peter Rosin wrote:
+> On 2019-09-18 08:38, Uwe Kleine-K=F6nig wrote:
+> >  EXPORT_SYMBOL(of_parse_phandle_with_args);
+> >  =
 
->
-> Fix the codec name in rockchip rk3288_hdmi_analog machine driver.
->
-> Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
-> ---
->  drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c | 2 +-
->  sound/soc/rockchip/rk3288_hdmi_analog.c             | 3 ++-
->  2 files changed, 3 insertions(+), 2 deletions(-)
->
-> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> index d7e65c869415..86bd482b9f94 100644
-> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> @@ -193,7 +193,7 @@ static int snd_dw_hdmi_probe(struct platform_device *pdev)
->  
->  	memset(&pdevinfo, 0, sizeof(pdevinfo));
->  	pdevinfo.parent		= pdev->dev.parent;
-> -	pdevinfo.id		= PLATFORM_DEVID_AUTO;
-> +	pdevinfo.id		= PLATFORM_DEVID_NONE;
->  	pdevinfo.name		= HDMI_CODEC_DRV_NAME;
->  	pdevinfo.data		= &pdata;
->  	pdevinfo.size_data	= sizeof(pdata);
-> diff --git a/sound/soc/rockchip/rk3288_hdmi_analog.c b/sound/soc/rockchip/rk3288_hdmi_analog.c
-> index 767700c34ee2..8286025a8747 100644
-> --- a/sound/soc/rockchip/rk3288_hdmi_analog.c
-> +++ b/sound/soc/rockchip/rk3288_hdmi_analog.c
-> @@ -15,6 +15,7 @@
->  #include <linux/gpio.h>
->  #include <linux/of_gpio.h>
->  #include <sound/core.h>
-> +#include <sound/hdmi-codec.h>
->  #include <sound/jack.h>
->  #include <sound/pcm.h>
->  #include <sound/pcm_params.h>
-> @@ -142,7 +143,7 @@ static const struct snd_soc_ops rk_ops = {
->  SND_SOC_DAILINK_DEFS(audio,
->  	DAILINK_COMP_ARRAY(COMP_EMPTY()),
->  	DAILINK_COMP_ARRAY(COMP_CODEC(NULL, NULL),
-> -			   COMP_CODEC("hdmi-audio-codec.2.auto", "i2s-hifi")),
-> +			   COMP_CODEC(HDMI_CODEC_DRV_NAME, "i2s-hifi")),
->  	DAILINK_COMP_ARRAY(COMP_EMPTY()));
->  
->  static struct snd_soc_dai_link rk_dailink = {
+> > @@ -1765,6 +1779,18 @@ int of_count_phandle_with_args(const struct devi=
+ce_node *np, const char *list_na
+> >  	struct of_phandle_iterator it;
+> >  	int rc, cur_index =3D 0;
+> >  =
 
+> > +	/* If cells_name is NULL we assume a cell count of 0 */
+> > +	if (cells_name =3D=3D NULL) {
+> =
+
+> A couple of nits.
+> =
+
+> I don't know if there are other considerations, but in the previous two
+> hunks you use !cells_name instead of comparing explicitly with NULL.
+> Personally, I find the shorter form more readable, and in the name of
+> consistency bla bla...
+
+Ack, changed to !cells_name here, too.
+
+> =
+
+> Also, the comment explaining this NULL-check didn't really make sense
+> to me until I realized that knowing the cell count to be zero makes
+> counting trivial. Something along those lines should perhaps be in the
+> comment?
+
+You're right, I extended the comment a bit.
+ =
+
+> But as I said, these are nits. Feel free to ignore.
+
+I considered resending already anyhow as I fatfingerd my email address.
+this is fixed now, too. Additionally I fixed a typo in one of the
+comments.
+
+Thanks for your feedback.
+
+Best regards
+Uwe
+
+ drivers/of/base.c | 35 +++++++++++++++++++++++++++++++++--
+ 1 file changed, 33 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/of/base.c b/drivers/of/base.c
+index 2f25d2dfecfa..1d667eb730e1 100644
+--- a/drivers/of/base.c
++++ b/drivers/of/base.c
+@@ -1286,6 +1286,13 @@ int of_phandle_iterator_init(struct of_phandle_itera=
+tor *it,
+ =
+
+ 	memset(it, 0, sizeof(*it));
+ =
+
++	/*
++	 * one of cell_count or cells_name must be provided to determine the
++	 * argument length.
++	 */
++	if (cell_count < 0 && !cells_name)
++		return -EINVAL;
++
+ 	list =3D of_get_property(np, list_name, &size);
+ 	if (!list)
+ 		return -ENOENT;
+@@ -1512,10 +1519,17 @@ int of_parse_phandle_with_args(const struct device_=
+node *np, const char *list_na
+ 				const char *cells_name, int index,
+ 				struct of_phandle_args *out_args)
+ {
++	int cell_count =3D -1;
++
+ 	if (index < 0)
+ 		return -EINVAL;
+-	return __of_parse_phandle_with_args(np, list_name, cells_name, -1,
+-					    index, out_args);
++
++	/* If cells_name is NULL we assume a cell count of 0 */
++	if (!cells_name)
++		cell_count =3D 0;
++
++	return __of_parse_phandle_with_args(np, list_name, cells_name,
++					    cell_count, index, out_args);
+ }
+ EXPORT_SYMBOL(of_parse_phandle_with_args);
+ =
+
+@@ -1765,6 +1779,23 @@ int of_count_phandle_with_args(const struct device_n=
+ode *np, const char *list_na
+ 	struct of_phandle_iterator it;
+ 	int rc, cur_index =3D 0;
+ =
+
++	/*
++	 * If cells_name is NULL we assume a cell count of 0. This makes
++	 * counting the phandles trivial as each 32bit word in the list is a
++	 * phandle and no arguments are to consider. So we don't iterate through
++	 * the list but just use the length to determine the phandle count.
++	 */
++	if (!cells_name) {
++		const __be32 *list;
++		int size;
++
++		list =3D of_get_property(np, list_name, &size);
++		if (!list)
++			return -ENOENT;
++
++		return size / sizeof(*list);
++	}
++
+ 	rc =3D of_phandle_iterator_init(&it, np, list_name, cells_name, -1);
+ 	if (rc)
+ 		return rc;
+-- =
+
+2.23.0
+
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
 
 _______________________________________________
 linux-arm-kernel mailing list
