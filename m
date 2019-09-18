@@ -2,51 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3626EB5D6A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 08:35:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4985CB5D76
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 08:39:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rib2pqFfYJbtjX7/JfjsU0RMbo6lHmj7x4nL4yv1xaM=; b=N2/RjoEhKcV2eb
-	+Vfz3I/lH0zBHKbicx2PGYQlSQ85vCmvV44Bu9R92QGS+C4EvN2MyKPdU/AO/E2rA5yggiDNrCJvE
-	nNHydbG6GTp/rOOzEFFx2cnpQPPlmyNKDE/JnPB0UsnSlGf73yYBqrHlrE/xsxLXdyQz+TK3YEYSY
-	mm/Ltp8ET0M4viiBwU8ROjATTdph+7oN9FZn8RIVOZsbVnB3oms69MZlTRIJvDiIX3MjzU9Npepab
-	LhAj9t3Tzswv5akLLJL/4IsicW/n3l3G/ePGCvmCKPDsHvlvIQwVUlsktvThVD+STiIirLsXJp3q9
-	QTTqkb0Mzv4YZryTAxLQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0AxOzz50QzfuEOluAM2Ze9znm4Nr3rd3nTVWXVaUb68=; b=sZzQEvYwOzf9/g
+	t6p2YYfyMXKHFOPPaO5ZSUd1nH2KEveBxd4ediggY6cZr+12MKV4DTmiZddIBAh/2FCxuRiawSskW
+	CttAB7D317avKdaTYaOTcwJveKSuBg7w2oc3mrNnryvyCofa2Qk2mlbmhL5xHPWD8sFb0mymTXmMe
+	MtLyfs67zDQfJNLnRtgFxsTWd/3hKQ4hePiRrIEx4w/w1eqGmy3kVpgsboD0JZfgo7HIkmIy6uVKK
+	07XVEWz1rYD1MKDjqqueca10ca3JTKzuI0jmb8XoU4nzFBi3UPbZYRrGErcz+5v7E4+8rgD6/cn52
+	uTIsFlJDoNJPGzUuFmgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iATZ8-0001Lk-Sf; Wed, 18 Sep 2019 06:35:50 +0000
-Received: from mail-sz.amlogic.com ([211.162.65.117])
+	id 1iATcJ-0001iL-Eg; Wed, 18 Sep 2019 06:39:07 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iATYr-0001JG-8f; Wed, 18 Sep 2019 06:35:35 +0000
-Received: from [10.28.18.45] (10.28.18.45) by mail-sz.amlogic.com (10.28.11.5)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Wed, 18 Sep
- 2019 14:36:22 +0800
-Subject: Re: [PATCH 2/3] pinctrl: meson-a1: add pinctrl driver for Meson A1 Soc
-To: Jerome Brunet <jbrunet@baylibre.com>
-References: <1568700442-18540-1-git-send-email-qianggui.song@amlogic.com>
- <1568700442-18540-3-git-send-email-qianggui.song@amlogic.com>
- <1jef0f46fj.fsf@starbuckisacylon.baylibre.com>
- <73dc56bd-d6c5-1de7-e97e-91479a89a29e@amlogic.com>
- <1j8sqn3tjt.fsf@starbuckisacylon.baylibre.com>
-From: Qianggui Song <qianggui.song@amlogic.com>
-Message-ID: <45b97927-c771-808a-b214-509af6c16931@amlogic.com>
-Date: Wed, 18 Sep 2019 14:36:22 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iATc5-0001gU-Cq
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 06:38:55 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iATc2-0003Vb-Bq; Wed, 18 Sep 2019 08:38:50 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iATby-0003FW-Lw; Wed, 18 Sep 2019 08:38:46 +0200
+From: =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+To: Rob Herring <robh+dt@kernel.org>,
+	Frank Rowand <frowand.list@gmail.com>
+Subject: [PATCH] of: restore old handling of cells_name=NULL in
+ of_*_phandle_with_args()
+Date: Wed, 18 Sep 2019 08:38:37 +0200
+Message-Id: <20190918063837.8196-1-u.kleine-koenig@pengutronix.de>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-In-Reply-To: <1j8sqn3tjt.fsf@starbuckisacylon.baylibre.com>
-Content-Language: en-US
-X-Originating-IP: [10.28.18.45]
-X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
- (10.28.11.5)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_233533_311252_D7C57253 
-X-CRM114-Status: GOOD (  14.48  )
+X-CRM114-CacheID: sfid-20190917_233853_446822_28496D14 
+X-CRM114-Status: GOOD (  16.78  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,125 +66,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Hanjie Lin <hanjie.lin@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>, Linus Walleij <linus.walleij@linaro.org>,
- linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Carlo Caione <carlo@caione.org>, linux-amlogic@lists.infradead.org,
- Xingyu Chen <xingyu.chen@amlogic.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Geert Uytterhoeven <geert+renesas@glider.be>,
+ =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <uwe@kleine-koenig.org>,
+ Robin Murphy <robin.murphy@arm.com>, Joerg Roedel <joro@8bytes.org>,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ kernel@pengutronix.de, Matthias Brugger <matthias.bgg@gmail.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>, Will Deacon <will@kernel.org>,
+ Peter Rosin <peda@axentia.se>, linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-On 2019/9/17 22:07, Jerome Brunet wrote:
-> 
-> On Tue 17 Sep 2019 at 13:51, Qianggui Song <qianggui.song@amlogic.com> wrote:
->>>> diff --git a/drivers/pinctrl/meson/pinctrl-meson.c b/drivers/pinctrl/meson/pinctrl-meson.c
->>>> index 8bba9d0..885b89d 100644
->>>> --- a/drivers/pinctrl/meson/pinctrl-meson.c
->>>> +++ b/drivers/pinctrl/meson/pinctrl-meson.c
->>>> @@ -688,8 +688,12 @@ static int meson_pinctrl_parse_dt(struct meson_pinctrl *pc,
->>>>  
->>>>  	pc->reg_ds = meson_map_resource(pc, gpio_np, "ds");
->>>>  	if (IS_ERR(pc->reg_ds)) {
->>>> -		dev_dbg(pc->dev, "ds registers not found - skipping\n");
->>>> -		pc->reg_ds = NULL;
->>>> +		if (pc->data->reg_layout == A1_LAYOUT) {
->>>> +			pc->reg_ds = pc->reg_pullen;
->>>
->>> IMO, this kind of ID based init fixup is not going to scale and will
->>> lead to something difficult to maintain in the end.
->>>
->>> The way the different register sets interract with each other is already
->>> pretty complex to follow.
->>>
->>> You could rework this in 2 different ways:
->>> #1 - Have the generic function parse all the register sets and have all
->>> drivers provide a specific (as in gxbb, gxl, axg, etc ...)  function to :
->>>  - Verify the expected sets have been provided
->>>  - Make assignement fixup as above if necessary
->>>
->>> #2 - Rework the driver to have only one single register region
->>>  I think one of your colleague previously mentionned this was not
->>>  possible. It is still unclear to me why ...
->>>
->> Appreciate your advice.  I have an idea based on #1, how about providing
->> only two dt parse function, one is for chips before A1(the old one),
->> another is for A1 and later chips that share the same layout. Assign
->> these two functions to their own driver.
-> 
-> That's roughly the same thing as your initial proposition with function
-> pointer instead of IDs ... IMO, this would still be a quick fix to
-> address your immediate topic instead of dealing with the driver as
-> whole, which is my concern here.
-> 
-For #1. It would be like
-generic_parse_dt()
-{
-	1. parse all register regions (mux gpio pull pull_en ds)
-	
-	2. call  specific function through function pointer in
- 	   meson_pinctrl_data.(each platform should have AO and EE two
-           specific functions for they are not the same)
-	{
-		do work you mentioned above
-	}
-}
-right ?
-If that so, maybe there are a lot of duplicated codes for most Socs
-share the same reg layout. So I guess five specific functions are
-enough: AXG and before(ao,ee), G12A(ao,ee) and A1(will place them in
-pinctrl_meson.c). Since m8 to AXG are the same register layout for both
-ee and ao, G12A with new feature ds and new ao register layout.
-
-Or I misunderstood the #1 ?
->>>> +		} else {
->>>> +			dev_dbg(pc->dev, "ds registers not found - skipping\n");
->>>> +			pc->reg_ds = NULL;
->>>> +		}
->>>>  	}
->>>>  
->>>>  	return 0;
->>>> diff --git a/drivers/pinctrl/meson/pinctrl-meson.h b/drivers/pinctrl/meson/pinctrl-meson.h
->>>> index c696f32..3d0c58d 100644
->>>> --- a/drivers/pinctrl/meson/pinctrl-meson.h
->>>> +++ b/drivers/pinctrl/meson/pinctrl-meson.h
->>>> @@ -80,6 +80,14 @@ enum meson_pinconf_drv {
->>>>  };
->>>>  
->>>>  /**
->>>> + * enum meson_reg_layout - identify two types of reg layout
->>>> + */
->>>> +enum meson_reg_layout {
->>>> +	LEGACY_LAYOUT,
->>>> +	A1_LAYOUT,
->>>> +};
->>>> +
->>>> +/**
->>>>   * struct meson bank
->>>>   *
->>>>   * @name:	bank name
->>>> @@ -114,6 +122,7 @@ struct meson_pinctrl_data {
->>>>  	unsigned int num_banks;
->>>>  	const struct pinmux_ops *pmx_ops;
->>>>  	void *pmx_data;
->>>> +	unsigned int reg_layout;
->>>>  };
->>>>  
->>>>  struct meson_pinctrl {
->>>
->>> .
->>>
-> 
-> .
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RnJvbTogVXdlIEtsZWluZS1Lw7ZuaWcgPHV3ZUBrbGVpbmUta29lbmlnLm9yZz4KCkJlZm9yZSBj
+b21taXQgZTQyZWU2MTAxN2Y1ICgib2Y6IExldCBvZl9mb3JfZWFjaF9waGFuZGxlIGZhbGxiYWNr
+IHRvCm5vbi1uZWdhdGl2ZSBjZWxsX2NvdW50IikgdGhlIGl0ZXJhdG9yIGZ1bmN0aW9ucyBjYWxs
+aW5nCm9mX2Zvcl9lYWNoX3BoYW5kbGUgYXNzdW1lZCBhIGNlbGwgY291bnQgb2YgMCBpZiBjZWxs
+c19uYW1lIHdhcyBOVUxMLgpUaGlzIGNvcm5lciBjYXNlIHdhcyBtaXNzZWQgd2hlbiBpbXBsZW1l
+bnRpbmcgdGhlIGZhbGxiYWNrIGxvZ2ljIGluCmU0MmVlNjEwMTdmNSBhbmQgcmVzdWx0ZWQgaW4g
+YW4gZW5kbGVzcyBsb29wLgoKUmVzdG9yZSB0aGUgb2xkIGJlaGF2aW91ciBvZiBvZl9jb3VudF9w
+aGFuZGxlX3dpdGhfYXJncygpIGFuZApvZl9wYXJzZV9waGFuZGxlX3dpdGhfYXJncygpIGFuZCBh
+ZGQgYSBjaGVjayB0bwpvZl9waGFuZGxlX2l0ZXJhdG9yX2luaXQoKSB0byBwcmV2ZW50IGEgc2lt
+aWxhciBmYWlsdXJlIGFzIGEgc2FmZXR5CnByZWNhdXRpb24uIG9mX3BhcnNlX3BoYW5kbGVfd2l0
+aF9hcmdzX21hcCgpIGRvZXNuJ3QgbmVlZCBhIHNpbWlsYXIgZml4CmFzIGNlbGxzX25hbWUgaXNu
+J3QgTlVMTCB0aGVyZS4KCkFmZmVjdGVkIGRyaXZlcnMgYXJlOgogLSBkcml2ZXJzL2Jhc2UvcG93
+ZXIvZG9tYWluLmMKIC0gZHJpdmVycy9iYXNlL3Bvd2VyL2RvbWFpbi5jCiAtIGRyaXZlcnMvY2xr
+L3RpL2Nsay1kcmE3LWF0bC5jCiAtIGRyaXZlcnMvaHdtb24vaWJtcG93ZXJudi5jCiAtIGRyaXZl
+cnMvaTJjL211eGVzL2kyYy1kZW11eC1waW5jdHJsLmMKIC0gZHJpdmVycy9pb21tdS9tdGtfaW9t
+bXUuYwogLSBkcml2ZXJzL25ldC9ldGhlcm5ldC9mcmVlc2NhbGUvZm1hbi9tYWMuYwogLSBkcml2
+ZXJzL29wcC9vZi5jCiAtIGRyaXZlcnMvcGVyZi9hcm1fZHN1X3BtdS5jCiAtIGRyaXZlcnMvcmVn
+dWxhdG9yL29mX3JlZ3VsYXRvci5jCiAtIGRyaXZlcnMvcmVtb3RlcHJvYy9pbXhfcnByb2MuYwog
+LSBkcml2ZXJzL3NvYy9yb2NrY2hpcC9wbV9kb21haW5zLmMKIC0gc291bmQvc29jL2ZzbC9pbXgt
+YXVkbWl4LmMKIC0gc291bmQvc29jL2ZzbC9pbXgtYXVkbWl4LmMKIC0gc291bmQvc29jL21lc29u
+L2F4Zy1jYXJkLmMKIC0gc291bmQvc29jL3NhbXN1bmcvdG0yX3dtNTExMC5jCiAtIHNvdW5kL3Nv
+Yy9zYW1zdW5nL3RtMl93bTUxMTAuYwoKVGhhbmtzIHRvIEdlZXJ0IFV5dHRlcmhvZXZlbiBmb3Ig
+cmVwb3J0aW5nIHRoZSBpc3N1ZSwgUGV0ZXIgUm9zaW4gZm9yCmhlbHBpbmcgcGlucG9pbnQgdGhl
+IGFjdHVhbCBwcm9ibGVtIGFuZCB0aGUgdGVzdGVycyBmb3IgY29uZmlybWluZyB0aGlzCmZpeC4K
+CkZpeGVzOiBlNDJlZTYxMDE3ZjUgKCJvZjogTGV0IG9mX2Zvcl9lYWNoX3BoYW5kbGUgZmFsbGJh
+Y2sgdG8gbm9uLW5lZ2F0aXZlIGNlbGxfY291bnQiKQpUZXN0ZWQtYnk6IE1hcmVrIFN6eXByb3dz
+a2kgPG0uc3p5cHJvd3NraUBzYW1zdW5nLmNvbT4KVGVzdGVkLWJ5OiBHZWVydCBVeXR0ZXJob2V2
+ZW4gPGdlZXJ0K3JlbmVzYXNAZ2xpZGVyLmJlPgpTaWduZWQtb2ZmLWJ5OiBVd2UgS2xlaW5lLUvD
+tm5pZyA8dS5rbGVpbmUta29lbmlnQHBlbmd1dHJvbml4LmRlPgotLS0KSGVsbG8sCgpjb21wYXJl
+ZCB0byB0aGUgdW50ZXN0ZWQgcGF0Y2ggSSBzZW50IHllc3RlcmRheSBJIGFsc28gZml4ZWQKb2Zf
+cGFyc2VfcGhhbmRsZV93aXRoX2FyZ3Mgd2hpY2ggaGFzIHRocmVlIHVzZXJzIHRoYXQgcGFzcwpj
+ZWxsc19uYW1lPU5VTEwuIChpLmUuIGRyaXZlcnMvY2xrL3RpL2Nsay1kcmE3LWF0bC5jLApzb3Vu
+ZC9zb2MvZnNsL2lteC1hdWRtaXguYywgc291bmQvc29jL3NhbXN1bmcvdG0yX3dtNTExMC5jKSBJ
+IGRpZG4ndApsb29rIGNsb3NlbHksIGJ1dCBtYXliZSB0aGVzZSBjb3VsZCBiZSBjb252ZXJ0ZWQg
+dG8gdXNlIG9mX3BhcnNlX3BoYW5kbGUKYXMgdGhlcmUgYXJlIG5vIGFyZ3VtZW50cyB0byBiZSBw
+cm9jZXNzZWQgd2l0aCBubyBjZWxsc19uYW1lPyEKCkJlc3QgcmVnYXJkcwpVd2UKCiBkcml2ZXJz
+L29mL2Jhc2UuYyB8IDMwICsrKysrKysrKysrKysrKysrKysrKysrKysrKystLQogMSBmaWxlIGNo
+YW5nZWQsIDI4IGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvZHJp
+dmVycy9vZi9iYXNlLmMgYi9kcml2ZXJzL29mL2Jhc2UuYwppbmRleCAyZjI1ZDJkZmVjZmEuLjI1
+ZWUwN2MwYTNjZCAxMDA2NDQKLS0tIGEvZHJpdmVycy9vZi9iYXNlLmMKKysrIGIvZHJpdmVycy9v
+Zi9iYXNlLmMKQEAgLTEyODYsNiArMTI4NiwxMyBAQCBpbnQgb2ZfcGhhbmRsZV9pdGVyYXRvcl9p
+bml0KHN0cnVjdCBvZl9waGFuZGxlX2l0ZXJhdG9yICppdCwKIAogCW1lbXNldChpdCwgMCwgc2l6
+ZW9mKCppdCkpOwogCisJLyoKKwkgKiBvbmUgb2YgY2VsbF9jb3VudCBvciBjZWxsc19uYW1lIG11
+c3QgYmUgcHJvdmlkZWQgdG8gZGV0ZXJtaW5lIHRoZQorCSAqIGFyZ3VtZW50IGxlbmd0aC4KKwkg
+Ki8KKwlpZiAoY2VsbF9jb3VudCA8IDAgJiYgIWNlbGxzX25hbWUpCisJCXJldHVybiAtRUlOVkFM
+OworCiAJbGlzdCA9IG9mX2dldF9wcm9wZXJ0eShucCwgbGlzdF9uYW1lLCAmc2l6ZSk7CiAJaWYg
+KCFsaXN0KQogCQlyZXR1cm4gLUVOT0VOVDsKQEAgLTE1MTIsMTAgKzE1MTksMTcgQEAgaW50IG9m
+X3BhcnNlX3BoYW5kbGVfd2l0aF9hcmdzKGNvbnN0IHN0cnVjdCBkZXZpY2Vfbm9kZSAqbnAsIGNv
+bnN0IGNoYXIgKmxpc3RfbmEKIAkJCQljb25zdCBjaGFyICpjZWxsc19uYW1lLCBpbnQgaW5kZXgs
+CiAJCQkJc3RydWN0IG9mX3BoYW5kbGVfYXJncyAqb3V0X2FyZ3MpCiB7CisJaW50IGNlbGxfY291
+bnQgPSAtMTsKKwogCWlmIChpbmRleCA8IDApCiAJCXJldHVybiAtRUlOVkFMOwotCXJldHVybiBf
+X29mX3BhcnNlX3BoYW5kbGVfd2l0aF9hcmdzKG5wLCBsaXN0X25hbWUsIGNlbGxzX25hbWUsIC0x
+LAotCQkJCQkgICAgaW5kZXgsIG91dF9hcmdzKTsKKworCS8qIElmIGNlbGxzX25hbWUgaWYgTlVM
+TCB3ZSBhc3N1bWUgYSBjZWxsIGNvdW50IG9mIDAgKi8KKwlpZiAoIWNlbGxzX25hbWUpCisJCWNl
+bGxfY291bnQgPSAwOworCisJcmV0dXJuIF9fb2ZfcGFyc2VfcGhhbmRsZV93aXRoX2FyZ3MobnAs
+IGxpc3RfbmFtZSwgY2VsbHNfbmFtZSwKKwkJCQkJICAgIGNlbGxfY291bnQsIGluZGV4LCBvdXRf
+YXJncyk7CiB9CiBFWFBPUlRfU1lNQk9MKG9mX3BhcnNlX3BoYW5kbGVfd2l0aF9hcmdzKTsKIApA
+QCAtMTc2NSw2ICsxNzc5LDE4IEBAIGludCBvZl9jb3VudF9waGFuZGxlX3dpdGhfYXJncyhjb25z
+dCBzdHJ1Y3QgZGV2aWNlX25vZGUgKm5wLCBjb25zdCBjaGFyICpsaXN0X25hCiAJc3RydWN0IG9m
+X3BoYW5kbGVfaXRlcmF0b3IgaXQ7CiAJaW50IHJjLCBjdXJfaW5kZXggPSAwOwogCisJLyogSWYg
+Y2VsbHNfbmFtZSBpcyBOVUxMIHdlIGFzc3VtZSBhIGNlbGwgY291bnQgb2YgMCAqLworCWlmIChj
+ZWxsc19uYW1lID09IE5VTEwpIHsKKwkJY29uc3QgX19iZTMyICpsaXN0OworCQlpbnQgc2l6ZTsK
+KworCQlsaXN0ID0gb2ZfZ2V0X3Byb3BlcnR5KG5wLCBsaXN0X25hbWUsICZzaXplKTsKKwkJaWYg
+KCFsaXN0KQorCQkJcmV0dXJuIC1FTk9FTlQ7CisKKwkJcmV0dXJuIHNpemUgLyBzaXplb2YoKmxp
+c3QpOworCX0KKwogCXJjID0gb2ZfcGhhbmRsZV9pdGVyYXRvcl9pbml0KCZpdCwgbnAsIGxpc3Rf
+bmFtZSwgY2VsbHNfbmFtZSwgLTEpOwogCWlmIChyYykKIAkJcmV0dXJuIHJjOwotLSAKMi4yMy4w
+CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
+YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
+LWtlcm5lbAo=
