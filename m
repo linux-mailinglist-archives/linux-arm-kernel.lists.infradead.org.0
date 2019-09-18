@@ -2,82 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4D15B6287
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 13:53:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6970BB628E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 13:54:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=39X0AsJZdAsWo1kTSCposDdRDBBB/Xs3DtJE4MKYr4w=; b=AsQRWtemfM3yqw
-	iatvwE5SxktW0nub+bFBwcwoB4GDAOM9jJJ2d+yVyLyVpGBm2DjIO83FivKgw2IngiSnGzQF2duWW
-	pxfOSXgVKzCZL3oZvJKNdGqX99eOhTVoIefToYa7GyZMcvNNyJkiBo7QAzfusVMcjc/Tvf4Ap32k1
-	z1xRWMI2A4E9WSCaRKv7etOnMD8oyC3HM3HWniLeXNokaHJexHbgOkRbZG1d2cdYdr4fa6U0QT7H1
-	nc2U8jneEkjdSeWzZQYSjZDxPBQF5paayqX1kZygI18oTzDRkBzaWzHAgU2v4BSaCbhYOflJsjyDF
-	T+oVrrnhCuJrdsOTPUKA==;
+	List-Owner; bh=LN0po/pLgl9jHjjQNhl31OwOwxm9jti77UwwR0skxnU=; b=BWsFBx3gONI9G1
+	0fNj3AmYSFuIDMxmwVSZ/sWhU/dCdAmzfCU48Duyp2+YVlKBwOItipp9rN3rK2eeyblpSwaKsn/rT
+	CStkXufIsGrZxO3Moxm9Tg20VyZTGDrBgLCuN0ledg1WwvXAYMimYgzm1bkPeezWqaxjdL8IPTr0E
+	83E7tUo3u61+UWx98A9B10QCAUqdO/181ttByvqJaetMv7wCME09nGEjLYQjx2QHGw2v5R3i2Xd8N
+	+YLXzlDEta5hde++flz3h5aYCKbNsM8ZbFtmNzRGFLW6rk6wWbrhJhdGFUyng2h68yC1aGgFu3E8Q
+	FSG5R9qAllIFBZxPLY4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAYWm-00018b-73; Wed, 18 Sep 2019 11:53:44 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1iAYXb-0001QV-2b; Wed, 18 Sep 2019 11:54:35 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAYWG-00015u-Et
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 11:53:14 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id w195so4226349vsw.11
+ id 1iAYXB-0001Q4-Np
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 11:54:11 +0000
+Received: from mail-ot1-f46.google.com (mail-ot1-f46.google.com
+ [209.85.210.46])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C7D4321928
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Sep 2019 04:53:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=1KlX045+but4kZYDkxl79NCCq10iOcslEdRaiYLes50=;
- b=fego5LxIL6sB7nuVbbaJVJB9N7WNC8aIjmYR0y5szXrjm/cLvc2AEl4CT76peU8LyO
- ovgIJAkEcVdo/HQkTbgy73bCOznMQ54xCR6vuEpJF43zd/anX3d2aaBum9pZVtNEW2/S
- KaQ6549ctO0oKG1CzL2x+C+6Ci98YSp8YZRfo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=1KlX045+but4kZYDkxl79NCCq10iOcslEdRaiYLes50=;
- b=GEcN43vI4pUffvx654jfeL/Ukcxqc6I8MViAqM0/2UTXFzknSlK3VFt7f98YcNGOH7
- kuuHD9YHKzexAvcVlM21kQsdAGVX3oxkcw9iHNuFVdofVVDxuxxLYyOdDkVsp5SrYCgu
- ODBdC2j9GI4O6YXNN8iTgXoFLi9RUFIT6Wnywp430IETv7kkWMjkkK7czzu5Q4ydnoHb
- efX5LLkrOd8bVwhmRBnhgv1JZ5it1ekbBLdk6Z6YGe7FZYMgBuP0IE1sHHPsMex9MfRi
- CKHiwttDg/Wi76zv5djhKBONdlD6IvoLsf1jDu1+3f+rhDMRGUvUb3F6Kkto5DNjjsGC
- 4+tw==
-X-Gm-Message-State: APjAAAXZRCZJBcvL9i8XSN5dSSDCM/TEo7rqoLfaUXXN2AA3u0AOw4bk
- SiefKQilBb/YThohm4TESea9pHFVezqbUm8yuAbH1w==
-X-Google-Smtp-Source: APXvYqyhL40Vy4UIINlY/uIQouC/knlNQeJfWaG2W2HqYygbGI5RQ+ggz1DPkhARkI89YhNy/gvof3y7jgV5PmDT70U=
-X-Received: by 2002:a67:db8d:: with SMTP id f13mr1855977vsk.163.1568807586619; 
- Wed, 18 Sep 2019 04:53:06 -0700 (PDT)
+ Wed, 18 Sep 2019 11:54:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1568807648;
+ bh=kzrm6fZngJglejuB9xzhoA67Tcw2osTIaU7fAwqMKGc=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=uQx0FUr8IoDdZVaq+Jj+7J6ZqUGHxuLlNwiVaVIlUi/OKI8xJVzEkICj7lvD6EP1D
+ cg3k8nHV8MGRGVhp0WG233Hvc9+LTsHjUbK+a2hgo+NtQSkpkdL23dcoRfVHHIcfnX
+ bwxS0rtdm1HKiG/JYxu29Q/pODBmUpenBF7llt/w=
+Received: by mail-ot1-f46.google.com with SMTP id g13so6028957otp.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 18 Sep 2019 04:54:08 -0700 (PDT)
+X-Gm-Message-State: APjAAAVuHho6Ue4lxfOlAoGL5JaDt4C0HhWRbwc+1XjC+hxAE/iPIo4h
+ 2ch2Fn61KD1RR1ed/pNzc5vi6cycXSynPYOmhuk=
+X-Google-Smtp-Source: APXvYqxMySumqjsahTYagNepSWzduEcZjCnTcXjLZCN9ySJfnCXOJqZVYcNkW0eHFhR5aSfIMwQqCAuFtB0Zu2153L4=
+X-Received: by 2002:a9d:6c9a:: with SMTP id c26mr2573300otr.241.1568807648102; 
+ Wed, 18 Sep 2019 04:54:08 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190918082500.209281-1-cychiang@chromium.org>
- <20190918082500.209281-3-cychiang@chromium.org>
- <1j7e663sfu.fsf@starbuckisacylon.baylibre.com>
-In-Reply-To: <1j7e663sfu.fsf@starbuckisacylon.baylibre.com>
-From: Cheng-yi Chiang <cychiang@chromium.org>
-Date: Wed, 18 Sep 2019 19:52:39 +0800
-Message-ID: <CAFv8Nw+JssR+qJYWaQAjDRbHuNidHXQBPLsbOM7kNs4MN-Nkkw@mail.gmail.com>
-Subject: Re: [PATCH v6 2/4] drm: dw-hdmi-i2s: Use fixed id for codec device
-To: Jerome Brunet <jbrunet@baylibre.com>
+References: <20190909183436.9045-1-krzk@kernel.org>
+ <20190909183436.9045-2-krzk@kernel.org>
+ <20190912175001.GA29884@bogus>
+In-Reply-To: <20190912175001.GA29884@bogus>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Wed, 18 Sep 2019 13:53:56 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPeGMZhCNkKa73gE42baJUim3QtQiV_fRm=j7xL9bb1nFw@mail.gmail.com>
+Message-ID: <CAJKOXPeGMZhCNkKa73gE42baJUim3QtQiV_fRm=j7xL9bb1nFw@mail.gmail.com>
+Subject: Re: [RFC PATCH 2/2] dt-bindings: pwm: Convert Samsung PWM bindings to
+ json-schema
+To: Rob Herring <robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_045312_615201_7907F8F2 
-X-CRM114-Status: GOOD (  23.21  )
-X-Spam-Score: -7.4 (-------)
+X-CRM114-CacheID: sfid-20190918_045409_816315_D68F911C 
+X-CRM114-Status: GOOD (  23.72  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.4 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
@@ -92,106 +88,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:SOUND - SOC LAYER / DYNAMIC AUDIO POWER MANAGEM..."
- <alsa-devel@alsa-project.org>, Heiko Stuebner <heiko@sntech.de>,
- Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, linux-kernel <linux-kernel@vger.kernel.org>,
- Hans Verkuil <hverkuil@xs4all.nl>, Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Takashi Iwai <tiwai@suse.com>, linux-rockchip@lists.infradead.org,
- Dylan Reid <dgreid@chromium.org>, tzungbi@chromium.org,
- Jonas Karlman <jonas@kwiboo.se>, Liam Girdwood <lgirdwood@gmail.com>,
- Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org,
- Jernej Skrabec <jernej.skrabec@siol.net>,
- Doug Anderson <dianders@chromium.org>, Daniel Vetter <daniel@ffwll.ch>
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ Maciej Falkowski <m.falkowski@samsung.com>, devicetree@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>, linux-leds@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 18, 2019 at 4:43 PM Jerome Brunet <jbrunet@baylibre.com> wrote:
+On Fri, 13 Sep 2019 at 16:36, Rob Herring <robh@kernel.org> wrote:
 >
->
-> On Wed 18 Sep 2019 at 10:24, Cheng-Yi Chiang <cychiang@chromium.org> wrote:
->
-> > The problem of using auto ID is that the device name will be like
-> > hdmi-audio-codec.<id number>.auto.
+> On Mon, Sep 09, 2019 at 08:34:36PM +0200, Krzysztof Kozlowski wrote:
+> > Convert Samsung PWM (S3C, S5P and Exynos SoCs) bindings to DT schema
+> > format using json-schema.
 > >
-> > The number might be changed when there are other platform devices being
-> > created before hdmi-audio-codec device.
-> > Use a fixed name so machine driver can set codec name on the DAI link.
-> >
-> > Using the fixed name should be fine because there will only be one
-> > hdmi-audio-codec device.
->
-> While this is true all platforms we know of (I suppose), It might not be
-> the case later on. I wonder if making such assumption is really
-> desirable in a code which is used by quite a few different platforms.
->
-> Instead of trying to predict what the device name will be, can't you just
-> query it in your machine driver ? Using a device tree phandle maybe ?
->
-> It is quite usual to set the dai links this way, "simple-card" is a good
-> example of this.
->
-
-Hi Jerome,
-Thanks for the quick reply!
-And thanks for pointing this out.
-I found that
-soc_component_to_node searches upward for one layer so it can find the
-node which creates hdmi-audio-codec in runtime. This works even that
-hdmi-audio-codec does not have its own node in dts.
-I will change accordingly in v7.
-Thanks!
-
-
-
-> >
-> > Fix the codec name in rockchip rk3288_hdmi_analog machine driver.
-> >
-> > Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+> > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 > > ---
-> >  drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c | 2 +-
-> >  sound/soc/rockchip/rk3288_hdmi_analog.c             | 3 ++-
-> >  2 files changed, 3 insertions(+), 2 deletions(-)
-> >
-> > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> > index d7e65c869415..86bd482b9f94 100644
-> > --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> > +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> > @@ -193,7 +193,7 @@ static int snd_dw_hdmi_probe(struct platform_device *pdev)
-> >
-> >       memset(&pdevinfo, 0, sizeof(pdevinfo));
-> >       pdevinfo.parent         = pdev->dev.parent;
-> > -     pdevinfo.id             = PLATFORM_DEVID_AUTO;
-> > +     pdevinfo.id             = PLATFORM_DEVID_NONE;
-> >       pdevinfo.name           = HDMI_CODEC_DRV_NAME;
-> >       pdevinfo.data           = &pdata;
-> >       pdevinfo.size_data      = sizeof(pdata);
-> > diff --git a/sound/soc/rockchip/rk3288_hdmi_analog.c b/sound/soc/rockchip/rk3288_hdmi_analog.c
-> > index 767700c34ee2..8286025a8747 100644
-> > --- a/sound/soc/rockchip/rk3288_hdmi_analog.c
-> > +++ b/sound/soc/rockchip/rk3288_hdmi_analog.c
-> > @@ -15,6 +15,7 @@
-> >  #include <linux/gpio.h>
-> >  #include <linux/of_gpio.h>
-> >  #include <sound/core.h>
-> > +#include <sound/hdmi-codec.h>
-> >  #include <sound/jack.h>
-> >  #include <sound/pcm.h>
-> >  #include <sound/pcm_params.h>
-> > @@ -142,7 +143,7 @@ static const struct snd_soc_ops rk_ops = {
-> >  SND_SOC_DAILINK_DEFS(audio,
-> >       DAILINK_COMP_ARRAY(COMP_EMPTY()),
-> >       DAILINK_COMP_ARRAY(COMP_CODEC(NULL, NULL),
-> > -                        COMP_CODEC("hdmi-audio-codec.2.auto", "i2s-hifi")),
-> > +                        COMP_CODEC(HDMI_CODEC_DRV_NAME, "i2s-hifi")),
-> >       DAILINK_COMP_ARRAY(COMP_EMPTY()));
-> >
-> >  static struct snd_soc_dai_link rk_dailink = {
+> >  .../devicetree/bindings/pwm/pwm-samsung.txt   |  51 --------
+> >  .../devicetree/bindings/pwm/pwm-samsung.yaml  | 111 ++++++++++++++++++
+> >  2 files changed, 111 insertions(+), 51 deletions(-)
+> >  delete mode 100644 Documentation/devicetree/bindings/pwm/pwm-samsung.txt
+> >  create mode 100644 Documentation/devicetree/bindings/pwm/pwm-samsung.yaml
 >
+>
+> > diff --git a/Documentation/devicetree/bindings/pwm/pwm-samsung.yaml b/Documentation/devicetree/bindings/pwm/pwm-samsung.yaml
+> > new file mode 100644
+> > index 000000000000..90fb467bcdd5
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/pwm/pwm-samsung.yaml
+> > @@ -0,0 +1,111 @@
+> > +# SPDX-License-Identifier: GPL-2.0
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/pwm/pwm-samsung.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: Samsung SoC PWM timers
+> > +
+> > +maintainers:
+> > +  - Thierry Reding <thierry.reding@gmail.com>
+> > +  - Krzysztof Kozlowski <krzk@kernel.org>
+> > +
+> > +description: |+
+> > +  Samsung SoCs contain PWM timer blocks which can be used for system clock source
+> > +  and clock event timers, as well as to drive SoC outputs with PWM signal. Each
+> > +  PWM timer block provides 5 PWM channels (not all of them can drive physical
+> > +  outputs - see SoC and board manual).
+> > +
+> > +  Be aware that the clocksource driver supports only uniprocessor systems.
+> > +
+> > +allOf:
+> > +  - $ref: pwm.yaml#
+> > +
+> > +properties:
+> > +  compatible:
+> > +    enum:
+> > +      - samsung,s3c2410-pwm             # 16-bit, S3C24xx
+> > +      - samsung,s3c6400-pwm             # 32-bit, S3C64xx
+> > +      - samsung,s5p6440-pwm             # 32-bit, S5P64x0
+> > +      - samsung,s5pc100-pwm             # 32-bit, S5PC100, S5PV210, Exynos4210 rev0 SoCs
+> > +      - samsung,exynos4210-pwm          # 32-bit, Exynos
+> > +
+> > +  reg:
+> > +    maxItems: 1
+> > +
+> > +  clocks:
+> > +    minItems: 1
+> > +    maxItems: 3
+> > +
+> > +  clock-names:
+> > +    description: |
+> > +      Should contain all following required clock names:
+> > +      - "timers" - PWM base clock used to generate PWM signals,
+> > +      and any subset of following optional clock names:
+> > +      - "pwm-tclk0" - first external PWM clock source,
+> > +      - "pwm-tclk1" - second external PWM clock source.
+> > +      Note that not all IP variants allow using all external clock sources.
+> > +      Refer to SoC documentation to learn which clock source configurations
+> > +      are available.
+> > +    oneOf:
+> > +      - items:
+> > +        - const: "timers"
+> > +      - items:
+> > +        - const: "timers"
+> > +        - const: "pwm-tclk0"
+> > +      - items:
+> > +        - const: "timers"
+> > +        - const: "pwm-tclk1"
+> > +      - items:
+> > +        - const: "timers"
+> > +        - const: "pwm-tclk0"
+> > +        - const: "pwm-tclk1"
+> > +
+> > +  interrupts:
+> > +    description:
+> > +      One interrupt per timer, starting at timer 0.
+> > +    minItems: 1
+> > +    maxItems: 5
+> > +
+> > +  "#pwm-cells":
+> > +    description:
+> > +      The only third cell flag supported by this binding
+> > +      is PWM_POLARITY_INVERTED.
+> > +    const: 3
+> > +
+> > +  samsung,pwm-outputs:
+> > +    description:
+> > +      A list of PWM channels used as PWM outputs on particular platform.
+> > +      It is an array of up to 5 elements being indices of PWM channels
+> > +      (from 0 to 4), the order does not matter.
+> > +    # TODO: Values should not repeat
+>
+> uniqueItems: true
+>
+> Though it looks like we have to enable that keyword. (As silently
+> ignoring unknown keywords (such as typos) is 'feature' of json-schema,
+> we explicitly list keywords we use.)
+
+This works fine.
+
+>
+> > +    allOf:
+> > +      - $ref: /schemas/types.yaml#/definitions/uint32-array
+> > +      # FIXME: min/max limit of items does not work
+> > +      - items:
+> > +          minItems: 1
+> > +          maxItems: 5
+> > +      - items:
+> > +          minimum: 0
+> > +          maximum: 4
+>
+> I think you want:
+>
+> minItems: 1
+> maxItems: 2
+> items:
+>   minimum: 0
+>   maximum: 4
+
+This not. However I figured out it is not needed. Since these are
+unique values from 0 to 4, then the size of array cannot be longer
+than 5 or shorter than 1.
+
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
