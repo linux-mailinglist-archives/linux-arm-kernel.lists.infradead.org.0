@@ -2,34 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F98EB643C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 15:19:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01AB1B6442
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 15:20:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=zYzyVS4agC2C4awhYRqHxBX4g+K0xpXrCZTwy6FPOsw=; b=Frj
-	pxCeXLuKhLdiC7hBoyhG9DO9Htcjwfwpu0PATWwpIz9dfFnU1ZxSDMeNG+SGoAOv56Ac2p23AM9Do
-	M3Jcu2k+fcMPNNh3WOR0e4FIHYeiahOulXlQ1vdJYAnM4Z6yG7giO7j9x3Y8h6oyhmBsmwJ4rTi8W
-	OTF+iKOPHdO5HHKkRKnwyMuUgWQhB+1pFNs10iy07PLePDQbNrkVbFxebt8qdV+VoDCZwz9ND0qPj
-	I+ovmuf+B7d7QIA0kdjWA4RMu3mCsED+7AZjclfROaxhEEQu1CaRG+flMyvuocxy/Q6qbgCvia3aT
-	/eAg9atpefhYvhq2v+WnkEnQBIbkGmA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=jYf9W32tDfuKNN+AbQvYF55ssTz5jv+xr7DNuttin7I=; b=A7OXj+jOZn7/13pSFK8OAX93eT
+	Lx9p0DFGvegCCk9gVk0hcNvtQRTBp1/SAbMAf23veglsew3zNmHeE/XsE4f4a9/G5ph5XnYmn7sB7
+	iBBUKkRHzZsw48lCTm2IWSGCcNDltg1rOy2G6Qh9LWu8mv8eFe/Cd/yfBXtzIFBTWPtyvYgVisKEE
+	m8Dj1xq1L60xC25mbN9T4MTia5kBdFqeWfG5M0iQ+eJuSyb8Rbj4rZ2fT51gePVlBc7vFVDx1Yu3r
+	NIJFkZ+m2146HOV9tY+/QzFraD3ETbBpXxbajOZb0FNiDhnpuLLqI6QO0yF4HN1TOqKEIMkVWkQVy
+	Ck9NFSVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAZs2-0004hn-7Z; Wed, 18 Sep 2019 13:19:46 +0000
+	id 1iAZsJ-0004uV-AM; Wed, 18 Sep 2019 13:20:03 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAZrp-0004gF-T3
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 13:19:35 +0000
+ id 1iAZrr-0004gw-Bd
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 13:19:36 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 043BE1000;
- Wed, 18 Sep 2019 06:19:29 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B4C21142F;
+ Wed, 18 Sep 2019 06:19:34 -0700 (PDT)
 Received: from localhost.localdomain (entos-thunderx2-02.shanghai.arm.com
  [10.169.40.54])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A36493F575;
- Wed, 18 Sep 2019 06:19:23 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 6AC7B3F575;
+ Wed, 18 Sep 2019 06:19:29 -0700 (PDT)
 From: Jia He <justin.he@arm.com>
 To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>, James Morse <james.morse@arm.com>,
@@ -37,14 +38,15 @@ To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-mm@kvack.org, Suzuki Poulose <Suzuki.Poulose@arm.com>
-Subject: [PATCH v4 0/3] fix double page fault on arm64
-Date: Wed, 18 Sep 2019 21:19:11 +0800
-Message-Id: <20190918131914.38081-1-justin.he@arm.com>
+Subject: [PATCH v4 1/3] arm64: cpufeature: introduce helper cpu_has_hw_af()
+Date: Wed, 18 Sep 2019 21:19:12 +0800
+Message-Id: <20190918131914.38081-2-justin.he@arm.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190918131914.38081-1-justin.he@arm.com>
+References: <20190918131914.38081-1-justin.he@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_061933_980914_C2123EA6 
-X-CRM114-Status: UNSURE (   9.52  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190918_061935_444967_F92130EE 
+X-CRM114-Status: GOOD (  10.28  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -77,32 +79,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When we tested pmdk unit test vmmalloc_fork TEST1 in arm64 guest, there
-will be a double page fault in __copy_from_user_inatomic of cow_user_page.
+We unconditionally set the HW_AFDBM capability and only enable it on
+CPUs which really have the feature. But sometimes we need to know
+whether this cpu has the capability of HW AF. So decouple AF from
+DBM by new helper cpu_has_hw_af().
 
-As told by Catalin: "On arm64 without hardware Access Flag, copying from
-user will fail because the pte is old and cannot be marked young. So we
-always end up with zeroed page after fork() + CoW for pfn mappings. we
-don't always have a hardware-managed access flag on arm64."
+Signed-off-by: Jia He <justin.he@arm.com>
+Suggested-by: Suzuki Poulose <Suzuki.Poulose@arm.com>
+---
+ arch/arm64/include/asm/cpufeature.h | 1 +
+ arch/arm64/kernel/cpufeature.c      | 6 ++++++
+ 2 files changed, 7 insertions(+)
 
-Changes
-v4: introduce cpu_has_hw_af (Suzuki)
-    bail out if !pte_same (Kirill)
-v3: add vmf->ptl lock/unlock (by Kirill A. Shutemov)
-    add arch_faults_on_old_pte (Matthew, Catalin)
-v2: remove FAULT_FLAG_WRITE when setting pte access flag (by Catalin)
-
-Jia He (3):
-  arm64: cpufeature: introduce helper cpu_has_hw_af()
-  arm64: mm: implement arch_faults_on_old_pte() on arm64
-  mm: fix double page fault on arm64 if PTE_AF is cleared
-
- arch/arm64/include/asm/cpufeature.h |  1 +
- arch/arm64/include/asm/pgtable.h    | 12 ++++++++++
- arch/arm64/kernel/cpufeature.c      |  6 +++++
- mm/memory.c                         | 35 ++++++++++++++++++++++++-----
- 4 files changed, 49 insertions(+), 5 deletions(-)
-
+diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
+index c96ffa4722d3..206b6e3954cf 100644
+--- a/arch/arm64/include/asm/cpufeature.h
++++ b/arch/arm64/include/asm/cpufeature.h
+@@ -390,6 +390,7 @@ extern DECLARE_BITMAP(boot_capabilities, ARM64_NPATCHABLE);
+ 	for_each_set_bit(cap, cpu_hwcaps, ARM64_NCAPS)
+ 
+ bool this_cpu_has_cap(unsigned int cap);
++bool cpu_has_hw_af(void);
+ void cpu_set_feature(unsigned int num);
+ bool cpu_have_feature(unsigned int num);
+ unsigned long cpu_get_elf_hwcap(void);
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index b1fdc486aed8..c5097f58649d 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -1141,6 +1141,12 @@ static bool has_hw_dbm(const struct arm64_cpu_capabilities *cap,
+ 	return true;
+ }
+ 
++/* Decouple AF from AFDBM. */
++bool cpu_has_hw_af(void)
++{
++	return (read_cpuid(ID_AA64MMFR1_EL1) & 0xf);
++}
++
+ #endif
+ 
+ #ifdef CONFIG_ARM64_VHE
 -- 
 2.17.1
 
