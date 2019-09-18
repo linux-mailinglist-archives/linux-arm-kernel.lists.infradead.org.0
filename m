@@ -2,82 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9696B5AE3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 07:27:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46185B5B05
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 07:46:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4eeyq3vIqwk4yQl6D8U74NajucV8kKv1T4jq+Ydw6VM=; b=ThGQfWGK26F4vA
-	RBWgvyN4++1thN9GA+J1C+QxRJFZ23fXUIRxHVvEahT0C8FUKz6SCzSXFQS0MX1PU5iX/kQ5knM7h
-	HH7NSIZVErIHci9XSR/PfJnwBJLR68KZWk5ppWp+mFJELSbI6H2dYqe14Rk0sND8gLL+bHziGp0Js
-	GVooUUOiYeYTM4QAZnZgqjOL7twnfiux6VCVMUQEE55J3A4nFsDdapSiUkJWxNW+X2L5ykS0pnGkl
-	/xj78vTV5EqcZvUiWVgT9gYe2E0kLfw9nF5Vam8dwzjVhGH8N7Cf6OJ5x9g1dhfzJ3+jZVLXj4tBq
-	Ja7mGOOIAZL4eymzeGvg==;
+	List-Owner; bh=ONCPuvq5oW59x4ttFarJqyZPbSqzEYdhxnVc6glT4jQ=; b=FVn06kJ1ZBp0xZ
+	ED6uIBEhztZHx//1tesjfvMQX04fh6h2LmWX0BMHXqTELiqkUWNW8NAt5JYIQKMU+/0c3z7WV3ZRJ
+	9WOG1IXtWYnQi6jgypSuxT1qkLWK8hV+FKvsIrWlhz15s3ADu+g3biulAvisVnEE6/xu6c+Vb7pAO
+	CsRBB2As+2B+i1QSESE9SLgW2Jt7wxsimNwlYbdUNfXB+1pj2ohpC6iNsxl4rdDNUvomPc7r59Ckr
+	L0UwMIGYC+1OclQhonj3714a2VpEBymMOmJdVBA320CTSx2v6sVKBmDgAkwZ9aW0Hm5EULiopW8+l
+	breZ5S7v7MkPPAN8Vgvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iASUw-00027X-TW; Wed, 18 Sep 2019 05:27:27 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1iASml-0008CP-1u; Wed, 18 Sep 2019 05:45:51 +0000
+Received: from mail-ve1eur03on060a.outbound.protection.outlook.com
+ ([2a01:111:f400:fe09::60a]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iASUj-00026c-KS
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 05:27:15 +0000
-Received: by mail-io1-xd44.google.com with SMTP id m11so13315111ioo.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 17 Sep 2019 22:27:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=aeBpu/wksCT1eq18uEHm7Scq/w+GtocYUT2tO+t26F0=;
- b=vMp8M65KRUlfeZGbM54vJnl7+FvdUgmmaWesiZcW/q5UdEYhMJ7/Ty2eSltd8PLGSm
- DMt9o6GCsyfy3wpiL2IhV8AYWGbVyBNDanNECOSoSnTx/ieDAogDlwXNWc0rblN/BaYV
- ttRlnUfsJkyh//HvGDaFJUe+kU04vclfJWM8DxfpdxlJ6DJe7c7Mf2rMQsGlwpzlGg9f
- QtAzpUp4zU1DzfVu/0TE1p1ELMAe4qFJ2ItweEowoOecSsUhBMZfZCoGzZEGcQiCbUTP
- 7o6+6ufAfQhqGuB6oLJClyXQFUmCXq82COD21jB54iRw9pvuRDD302YxWCd9GIek2E7Z
- k/0A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=aeBpu/wksCT1eq18uEHm7Scq/w+GtocYUT2tO+t26F0=;
- b=eei+XgET56Ja++acNAoq34NNnV9SADvYgxxGSnuPzQXFFWxFA/vEFGIplJIUabTkLT
- avEB4oj9tH1ALiBpzXnEAO4qLLe03r6JUJbawYyMudlWo6QXFBh8aLAuO8zFvZYY+YMR
- T/sIXVNQ3vumlHqw98dUEdQ+bsNmKulku7so2zPr940nrZKzePIP6wCx13sztfiNDZw8
- zSUHB7KxVYxaXhYEcQIpfFXWLXzPKuRfdkhttCWPjK6tRl/b/0iupnj9XrHOEHwqrgMB
- oiJ9lqE02Vc4laPqvOmhbDbwIav/hevUT3PZpCLvDWNSqD2tlVo69bV/Z2LyitzYE6Li
- zUmA==
-X-Gm-Message-State: APjAAAUgrKyX9moJaHL+W3dQzCh061xkTq7ifyUmV2h9/H05tvJNi/Zz
- X5EhwA8r21UFbr8KalJJieBmmnmHpVq/Bps+SNs=
-X-Google-Smtp-Source: APXvYqx5XSrUtThjRZDoB5Q++Oj4nDBjUDfWVblqDIj6KUhujZbYc3JJ8XIGjEO/QXyyA5B6D207fuaYBXrQI9oxlIY=
-X-Received: by 2002:a5d:8a0f:: with SMTP id w15mr3299161iod.239.1568784431907; 
- Tue, 17 Sep 2019 22:27:11 -0700 (PDT)
+ id 1iASmN-00080k-12
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 05:45:28 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=QDMQJdPAAFovwE860XCtkjjJxj1542O53bvnJ/HSUvlQ+x1iN7wNm+HiZtdGpSaQVg0Q0xuF6ewgu6uxLzR7zJn4qcQ5m6GSMlpeMux0sNbHA4cNQ1mL3YPQVC9ayi4Hw7oK5nuSzghRhKDf6Wgv9Qb+Z/p6itW5sLRP+IUM6aijuYf5V19UI2xeuOR3Hp5SqGHGZG0z35tqAeA3MGZeE4fBQIT+8p5qkIpR89K7icJQmtEYQ93FDry8iGLuWb3w+fOVEOhQ8p2zOHzIzCH3bgTW27a0Em9lWJdl9qsOELFUbFGFEq2mYMSqpJvSCu01GTNYO/UdGlNN5ZBzzHJyzw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=DIYGvlAzKVwDHc+fHZrSrqnqClgmPCOC4LsZaUkcx4s=;
+ b=S9V4a3DGEbFjFavw9cKlBaz3mkdrkyNC1oyNPYadbedQafOKpZcN4QpwT91aQY+oj/HCAQ5Ttq0jSIGALnIISRUH1P1DSV0beDH9xv8AIeKX6ZjRpv60aVDxLXivl1V1F08II0pq8QzGRf06TE7grZFANtEiYLpd7ykFo6U7V2VMM6/+jFu1AnCDhB46peuLPHxex+A7S6tYYmBCu7qTUlCr7iZ2uC55YpXKIihuWkxwm3aVcfzDkWWxsEfuJ/QJYueWTYEpIJl5OQqx1sIIC4qyw2dYtLW+5Lohub1afAydyT74nMoenmXA4yqHV+iBR87mv0QkAo8wt2yhAgHoUg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=DIYGvlAzKVwDHc+fHZrSrqnqClgmPCOC4LsZaUkcx4s=;
+ b=ky5Q9L7acr10Au9+D13iZ4MjKdgBn4fWBrD2fMhAh1UZtho0wzwT8tePQdWO+Zy0LA/gcFKnbUEupekSHcNZaoLhPwj4d6vp0O9vBqpCB1/dCNNXvScRoRho8x6EOS1hm2BGRflxjVjKMXadhhioIyikKnka4QLxNwbEIGqVB5g=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB5747.eurprd04.prod.outlook.com (20.178.119.212) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2263.15; Wed, 18 Sep 2019 05:45:20 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::6ca2:ec08:2b37:8ab8]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::6ca2:ec08:2b37:8ab8%6]) with mapi id 15.20.2263.023; Wed, 18 Sep 2019
+ 05:45:20 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: Stephen Boyd <sboyd@kernel.org>, "festevam@gmail.com"
+ <festevam@gmail.com>, "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>
+Subject: RE: [PATCH V3 0/4] clk: imx8m: fix glitch/mux
+Thread-Topic: [PATCH V3 0/4] clk: imx8m: fix glitch/mux
+Thread-Index: AQHVZsAvxNHrETdja06leIJqZC3kHacvcZcwgACqvYCAAN5xEA==
+Date: Wed, 18 Sep 2019 05:45:20 +0000
+Message-ID: <AM0PR04MB4481D54C4508152E458BA9BE888E0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+References: <1568043491-20680-1-git-send-email-peng.fan@nxp.com>
+ <AM0PR04MB4481A31DD68C3C3409E95339888F0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <20190917162820.8DC542067B@mail.kernel.org>
+In-Reply-To: <20190917162820.8DC542067B@mail.kernel.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 8573167e-1f44-42ba-f944-08d73bfb6484
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600167)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB5747; 
+x-ms-traffictypediagnostic: AM0PR04MB5747:|AM0PR04MB5747:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB574729D21E4F58425ECA13B6888E0@AM0PR04MB5747.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 01644DCF4A
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(136003)(39860400002)(346002)(366004)(396003)(189003)(199004)(51914003)(66476007)(64756008)(71190400001)(66446008)(66556008)(66946007)(71200400001)(7696005)(6506007)(110136005)(81166006)(305945005)(8936002)(316002)(74316002)(81156014)(76176011)(6436002)(26005)(6246003)(5660300002)(9686003)(52536014)(55016002)(6116002)(3846002)(102836004)(76116006)(256004)(86362001)(2501003)(33656002)(54906003)(8676002)(66066001)(2906002)(44832011)(486006)(4326008)(4744005)(7736002)(11346002)(2201001)(476003)(446003)(25786009)(14454004)(186003)(99286004)(478600001)(229853002)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5747;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: GPIIbIENDWkfactZmmUKFpXH1vvnz4L30zi8NdPRT4pC6hWdyXUL9hamM6ZHO6NxvAC3khjJ0uCOVddRW4fteFIkry3aL+nPNnEf3qtAx9/0DwGn45dUJGE2elUEg6OpMDRVxDeWmUht6/lXGJTG6vdLgn36THs2FJoNCZUZtfqliqvd50XoOWA7yx7g7EPu8C+O4CakV4zraLuqQMXrL4n0UvAjIi/zy/h4UziKv6/ffzwki0zGB479lsxRxOpa68dBsG0OQzd3aIgSY0qHdwdNsH5gv9OvlWqfYRS1ZEh0vQvw4JvBiMfCprZ6pj7ZphAHcAk0wZt5cMvOPNQGEa/e7d2Ik/B/FDozCd+A4CwEdMJWtTRSAxLA0zWs4m6aZIut0EZrl0vP4lpJ2sGR2qU7w4B7FjnfomSxkca5Epw=
 MIME-Version: 1.0
-References: <1568626884-5189-1-git-send-email-peng.fan@nxp.com>
- <1568626884-5189-2-git-send-email-peng.fan@nxp.com>
- <20190917183115.3e40180f@donnerap.cambridge.arm.com>
-In-Reply-To: <20190917183115.3e40180f@donnerap.cambridge.arm.com>
-From: Jassi Brar <jassisinghbrar@gmail.com>
-Date: Wed, 18 Sep 2019 00:27:00 -0500
-Message-ID: <CABb+yY2CP1i9fZMoPua=-mLCUpYrcO28xF5UXDeRD2XTYe7mEg@mail.gmail.com>
-Subject: Re: [PATCH V6 1/2] dt-bindings: mailbox: add binding doc for the ARM
- SMC/HVC mailbox
-To: Andre Przywara <andre.przywara@arm.com>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8573167e-1f44-42ba-f944-08d73bfb6484
+X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Sep 2019 05:45:20.3162 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: ugd6h1Tw4hDML8W2fv4bweoM2Nref7HT0XRYC/b3yNMWrzkpbG4nI7EUuV/U7Ev+1tywvTFBctk3IRyQlDxTvA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5747
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_222713_676735_C8852C5C 
-X-CRM114-Status: GOOD (  35.61  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190917_224527_171684_53220333 
+X-CRM114-Status: GOOD (  10.51  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ no trust [2a01:111:f400:fe09:0:0:0:60a listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jassisinghbrar[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -85,6 +117,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.0 FORGED_SPF_HELO        No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,195 +129,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Peng Fan <peng.fan@nxp.com>, "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
+Cc: Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Jacky Bai <ping.bai@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 17, 2019 at 12:31 PM Andre Przywara <andre.przywara@arm.com> wrote:
->
-> On Mon, 16 Sep 2019 09:44:37 +0000
-> Peng Fan <peng.fan@nxp.com> wrote:
->
-> Hi,
->
-> > From: Peng Fan <peng.fan@nxp.com>
+Hi Stephen,
+
+> Subject: RE: [PATCH V3 0/4] clk: imx8m: fix glitch/mux
+> 
+> Quoting Peng Fan (2019-09-16 23:20:15)
+> > Hi Stephen, Shawn,
 > >
-> > The ARM SMC/HVC mailbox binding describes a firmware interface to trigger
-> > actions in software layers running in the EL2 or EL3 exception levels.
-> > The term "ARM" here relates to the SMC instruction as part of the ARM
-> > instruction set, not as a standard endorsed by ARM Ltd.
+> > > Subject: [PATCH V3 0/4] clk: imx8m: fix glitch/mux
 > >
-> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> > ---
-> >  .../devicetree/bindings/mailbox/arm-smc.yaml       | 96 ++++++++++++++++++++++
-> >  1 file changed, 96 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/mailbox/arm-smc.yaml
+> > Sorry to ping early. Is there a chance to land this patchset in 5.3 release?
 > >
-> > diff --git a/Documentation/devicetree/bindings/mailbox/arm-smc.yaml b/Documentation/devicetree/bindings/mailbox/arm-smc.yaml
-> > new file mode 100644
-> > index 000000000000..bf01bec035fc
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/mailbox/arm-smc.yaml
-> > @@ -0,0 +1,96 @@
-> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/mailbox/arm-smc.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: ARM SMC Mailbox Interface
-> > +
-> > +maintainers:
-> > +  - Peng Fan <peng.fan@nxp.com>
-> > +
-> > +description: |
-> > +  This mailbox uses the ARM smc (secure monitor call) and hvc (hypervisor
->
-> I think "or" instead of "and" is less confusing.
->
-> > +  call) instruction to trigger a mailbox-connected activity in firmware,
-> > +  executing on the very same core as the caller. The value of r0/w0/x0
-> > +  the firmware returns after the smc call is delivered as a received
-> > +  message to the mailbox framework, so synchronous communication can be
-> > +  established. The exact meaning of the action the mailbox triggers as
-> > +  well as the return value is defined by their users and is not subject
-> > +  to this binding.
-> > +
-> > +  One use case of this mailbox is the SCMI interface, which uses shared
->
->      One example use case of this mailbox ...
-> (to make it more obvious that it's not restricted to this)
->
-> > +  memory to transfer commands and parameters, and a mailbox to trigger a
-> > +  function call. This allows SoCs without a separate management processor
-> > +  (or when such a processor is not available or used) to use this
-> > +  standardized interface anyway.
-> > +
-> > +  This binding describes no hardware, but establishes a firmware interface.
-> > +  Upon receiving an SMC using one of the described SMC function identifiers,
->
->                              ... the described SMC function identifier,
->
-> > +  the firmware is expected to trigger some mailbox connected functionality.
-> > +  The communication follows the ARM SMC calling convention.
-> > +  Firmware expects an SMC function identifier in r0 or w0. The supported
-> > +  identifiers are passed from consumers,
->
->      identifier
->
-> "passed from consumers": How? Where?
-> But I want to repeat: We should not allow this.
-> This is a binding for a mailbox controller driver, not a generic firmware backdoor.
->
-Exactly. The mailbox controller here is the  SMC/HVC instruction,
-which needs 9 arguments to work. The fact that the fist argument is
-always going to be same on a platform is just the way we use this
-instruction.
+> 
+> No, it won't be in 5.3 because that version is released. Shawn already sent the
+> PR for 5.4 too so this will most likely be in v5.5 at the earliest.
 
-> We should be as strict as possible to avoid any security issues.
->
-Any example of such a security issue?
+Thanks for the info. But this patchset is bugfix, so hope this could be accepted in 5.4.
 
-> The firmware certainly knows the function ID it implements. The firmware controls the DT. So it is straight-forward to put the ID into the DT. The firmware could even do this at boot time, dynamically, before passing on the DT to the non-secure world (bootloader or kernel).
->
-> What would be the use case of this functionality?
->
-At least for flexibility and consistency.
-
-> > or listed in the the arm,func-ids
->
->                        arm,func-id
->
-> > +  properties as described below. The firmware can return one value in
->
->      property
->
-> > +  the first SMC result register, it is expected to be an error value,
-> > +  which shall be propagated to the mailbox client.
-> > +
-> > +  Any core which supports the SMC or HVC instruction can be used, as long
-> > +  as a firmware component running in EL3 or EL2 is handling these calls.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    oneOf:
-> > +      - description:
-> > +          For implementations using ARM SMC instruction.
-> > +        const: arm,smc-mbox
-> > +
-> > +      - description:
-> > +          For implementations using ARM HVC instruction.
-> > +        const: arm,hvc-mbox
->
-> I am not particularly happy with this, but well ...
->
-> > +
-> > +  "#mbox-cells":
-> > +    const: 1
->
-> Why is this "1"? What is this number used for? It used to be the channel ID, but since you are describing a single channel controller only, this should be 0 now.
->
-Yes. I overlooked it and actually queued the patch for pull request.
-But I think the bindings should not carry a 'fix' patch later. Also I
-realise this revision of binding hasn't been reviewed by Rob. Maybe I
-should drop the patch for now.
-
-> > +
-> > +  arm,func-id:
-> > +    description: |
-> > +      An 32-bit value specifying the function ID used by the mailbox.
->
->          A single 32-bit value ...
->
-> > +      The function ID follow the ARM SMC calling convention standard [1].
->
->                          follows
->
-> > +    $ref: /schemas/types.yaml#/definitions/uint32
-> > +
-> > +required:
-> > +  - compatible
-> > +  - "#mbox-cells"
-> > +
-> > +examples:
-> > +  - |
-> > +    sram@93f000 {
-> > +      compatible = "mmio-sram";
-> > +      reg = <0x0 0x93f000 0x0 0x1000>;
-> > +      #address-cells = <1>;
-> > +      #size-cells = <1>;
-> > +      ranges = <0x0 0x93f000 0x1000>;
-> > +
-> > +      cpu_scp_lpri: scp-shmem@0 {
-> > +        compatible = "arm,scmi-shmem";
-> > +        reg = <0x0 0x200>;
-> > +      };
-> > +    };
-> > +
-> > +    smc_tx_mbox: tx_mbox {
-> > +      #mbox-cells = <1>;
->
-> As mentioned above, should be 0.
->
-> > +      compatible = "arm,smc-mbox";
-> > +      /* optional */
->
-> First: having "optional" in a specific example is not helpful, just confusing.
-> Second: It is actually *not* optional in this case, as there is no other way of propagating the function ID. The SCMI driver as the mailbox client has certainly no clue about this.
-> I think I said this previously: Relying on the mailbox client to pass the function ID sounds broken, as this is a property of the mailbox controller driver. The mailbox client does not care about this mailbox communication detail, it just wants to trigger the mailbox.
->
-Again, the mailbox controller here is the SMC/HVC _instruction_, which
-doesn't care what value the first argument carry.
-
-Cheers!
+Thanks,
+Peng.
 
 _______________________________________________
 linux-arm-kernel mailing list
