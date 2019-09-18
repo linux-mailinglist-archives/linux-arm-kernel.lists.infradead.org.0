@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01CB6B61BD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 12:47:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88379B61BF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 12:47:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,102 +11,101 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=uy7bL+kcm1ri5jLH5YkQ/502e8wjKiIAQYLlUkiKBhM=; b=b3a4QszdsPECY6wcBM/bEP9bZQ
-	K3CZcb1OzQLQ5bWzG47MCcA2FtCcRX0C7fgBj9MBKMD6Q+hfwj0AIXX+lFWF2JfYYzXT/qpEq4vpP
-	sINL5YtPS8zrg1pSgrkZpVC9BsqmBNm3pFPFRVbDTgvWEvb+Jn2Bb8jJZNCyEToGfZ7kB3JbR7mVE
-	Ch1VYwyYA03+JiwSSwVPMjCFKhU1fGWHn2CCK3Nu0OyBxzXbId4Xpb5xorbKrVTrF77jtOK/Ig5Ax
-	M3fBc4c4XGoyd5deBzkXX8NkylS4SWLqOtzsSbnNg5233a7amrH19XVlAZUwH7TB7g9pnv7vnJkIl
-	2SKKBNRA==;
+	bh=N96K8ZFCSKhg40uW601QId8Kwq1dmK5AlZ7o1mIT/84=; b=X7j/CnmEx6mSffTe9nhwldXBN+
+	4b7JxtJKuwUejA5IqpbkrUQogPx7HxlqMzgDsMuR8ngE7waKwfz8KHzQRoTpSrT8DyES9Z2FSZ0fw
+	gn1mqxtnss4uen0KSzDY7xJcLYe+sNDDY72BQZAu8IanT2BUHCeZFt9X9ZObThHj17xgwKLhPgAFc
+	goqbzup4A3724QJMMypWMpbPG7obDG4SdvaNKdwn6YH0kcMsBe19k2amGFb3GlkfFgnhk1mz+o8sh
+	WJJqXWuDbaBemW1mCG43YrLOdx31pkzcuY9R7+QU6/bbLyGryZdOlqNfj5RLczs0ojlkDz9MiaEZe
+	i48Y3xug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAXUR-0000X8-C7; Wed, 18 Sep 2019 10:47:15 +0000
+	id 1iAXUi-0000oU-RI; Wed, 18 Sep 2019 10:47:32 +0000
 Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAXU8-0000P1-Tb
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 10:46:58 +0000
+ id 1iAXUB-0000QM-9w
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 10:47:00 +0000
 Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
  by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190918104655euoutp01f7bff19352859924848790372eeaf7ff~FgpOXaATD1222412224euoutp01p
+ 20190918104657euoutp01a50717ab332d2243574fa21548ead80d~FgpQjHGiP1292812928euoutp01L
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Sep 2019 10:46:55 +0000 (GMT)
+ Wed, 18 Sep 2019 10:46:57 +0000 (GMT)
 DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20190918104655euoutp01f7bff19352859924848790372eeaf7ff~FgpOXaATD1222412224euoutp01p
+ 20190918104657euoutp01a50717ab332d2243574fa21548ead80d~FgpQjHGiP1292812928euoutp01L
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1568803615;
- bh=W0m0YckfTXthUtjYcHFKSPQtO04i18UtJ6ZHRQHTJ+Y=;
+ s=mail20170921; t=1568803618;
+ bh=Fg34vQ6u3eTKQ0Qf8Q7c1nFh3IddQHSKx58BNil8ldQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=u8zWtzrE0iztglvtc11sU8TEMgOXSE4PlEc9wj7PsM/f5ylcebV15zJOO2cqqFCNa
- mR2GWkPt3BUdJqIhNaYPxome6TvsQMqbGW8PSVo4egpzWzOHpcN4/Npb4w/G0JO6by
- b5pKVEAGkaCAFbPIlQYpqyv+Uih/8WPSos0OurjE=
-Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
+ b=WJTS+/epT52kLp7u/BlOfIXcntR8+gNImaNYNohCbkwhoPFnWE3xaCuu/Bzo3RU3h
+ pl+ujPwRj0YliFeUKpQUSfV82EEBifo/Ig5nHY7wAvbirS3bJVcbwADddkAFnwQJyU
+ 4VoGY1qxHltCCLrRkmnSaVEmS+vlUSdpWMBZXdXY=
+Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
  eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20190918104654eucas1p1e66884c672d780de895c4e1e46781058~FgpNNBBJD3008830088eucas1p1I;
- Wed, 18 Sep 2019 10:46:54 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges1new.samsung.com (EUCPMTA) with SMTP id D8.16.04469.E1B028D5; Wed, 18
- Sep 2019 11:46:54 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20190918104653eucas1p2e23ccbd05b3b780300adc9f4cb7a4c49~FgpMNee2u2379423794eucas1p2T;
- Wed, 18 Sep 2019 10:46:53 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20190918104653eusmtrp156f91b8f66f54e7b6a70ed449ee7a999~FgpL9nIQq2822328223eusmtrp1-;
- Wed, 18 Sep 2019 10:46:53 +0000 (GMT)
-X-AuditID: cbfec7f2-54fff70000001175-86-5d820b1e07bf
+ 20190918104657eucas1p12201d567faa2f2d7dc6023200a5ca002~FgpPuudRf2818828188eucas1p1L;
+ Wed, 18 Sep 2019 10:46:57 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges3new.samsung.com (EUCPMTA) with SMTP id CB.D3.04374.02B028D5; Wed, 18
+ Sep 2019 11:46:56 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190918104656eucas1p1d9cad1394b08d05a99151c4fbc9425ce~FgpO8LDOy2746227462eucas1p1K;
+ Wed, 18 Sep 2019 10:46:56 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20190918104655eusmtrp270282fc5ffb1f42b02db696e62190d14~FgpOnUrk41555615556eusmtrp2H;
+ Wed, 18 Sep 2019 10:46:55 +0000 (GMT)
+X-AuditID: cbfec7f5-4f7ff70000001116-3e-5d820b20f0a1
 Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id 4E.1C.04117.C1B028D5; Wed, 18
- Sep 2019 11:46:53 +0100 (BST)
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id 58.B6.04166.F1B028D5; Wed, 18
+ Sep 2019 11:46:55 +0100 (BST)
 Received: from AMDC3061.DIGITAL.local (unknown [106.120.51.75]) by
  eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20190918104652eusmtip149538fb126963062e7f1fc6ac44ecb5f~FgpLXSzy60449804498eusmtip1i;
- Wed, 18 Sep 2019 10:46:52 +0000 (GMT)
+ 20190918104655eusmtip168de677be306b2ee05b27ddf12af27aa~FgpN8RAdV0585005850eusmtip1F;
+ Wed, 18 Sep 2019 10:46:55 +0000 (GMT)
 From: Sylwester Nawrocki <s.nawrocki@samsung.com>
 To: broonie@kernel.org
-Subject: [PATCH v1 1/9] ASoC: wm8994: Do not register inapplicable controls
- for WM1811
-Date: Wed, 18 Sep 2019 12:46:26 +0200
-Message-Id: <20190918104634.15216-2-s.nawrocki@samsung.com>
+Subject: [PATCH v1 2/9] mfd: wm8994: Add support for MCLKn clock control
+Date: Wed, 18 Sep 2019 12:46:27 +0200
+Message-Id: <20190918104634.15216-3-s.nawrocki@samsung.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190918104634.15216-1-s.nawrocki@samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA0WSfyyUcRzH+97zPPc8p86ejvh0GuuWSoaYraexluqP+6Naf7RGDV08YTns
- DiUrYn5dSGGEpLJwGC4zNLmdXxO5mGjMOkVMzHJYonTnYf33er8/n/f38/1896Uw0WtCTIVF
- RLOKCFm4hG+BN3Wv6V3sdyf5H+9txZjhQR2PaSisI5j8ySk+M5yiQczzzgGC0evrSWZ1OJ3H
- aL6NEEyh/h2Pqe2cIBnjYjvBpLR1kkzHfBrBDFYu805bSuuNSXxpS9EEKdWoM/jSN+UJ0oKS
- TSTNblQjqVFjf4m8auEdzIaHxbIKt1PXLUIbSgeIqDW3O2XaTpSIfh9VIYoC2hNyaoUqZEGJ
- 6EoE/cktpAoJTGIZwYuZQK5gRFD7rBTfCbRXYZxfgWDswRyPE6aAOisJmdN82h2yurK32Jq2
- gfGSjK0ERm/wYOFPEW4uWNG+sLqxzDMzTjvCijZva7SQ9gJd2+yWD7QDVNdrMTMLaG9Y+mjA
- zQcBrSHhZcoK4prOQcb0HJ9jK5jraSQ5PgB9uZnbgWQEmW/HSU7kIPjSU7ad9oKOnkHCvBxG
- O0Fdqxtn+0BzhYrgdraEzwt7zTZmwidNBRhnCyE9VcR1H4J1dcH2ncXwcGoT51gKXV8Xce5J
- HyH4XhmXgxyK/s8qQ0iNbNkYpTyEVbpHsLddlTK5MiYixDUoUq5Bpt/T97dnqRmtDN3QIZpC
- kj1C+JDoLyJksco4uQ4BhUmshZfuJfiLhMGyuLusIjJQERPOKnXIjsIltsL4XYZrIjpEFs3e
- YtkoVrFT5VECcSK6svxzfdgwmVbs5jG7ljVzWT5gUL0KPZ8QtGTn2T+ff/Ksothl/2E756wa
- R/vRVa2Hh1A8PeEd8MM2tLpJ0jAi83k6tXK/yiZ2lSpPMWaK4svH8g6eeF/V211jCGweqgtY
- OuK8NnUz2O9M2K/HI/G5TmmCWL33RV+B375RMvXCp1wJrgyVuR/DFErZP/qui105AwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFmpnkeLIzCtJLcpLzFFi42I5/e/4XV1Z7qZYg2sxFlcuHmKy2DhjPavF
- 1IdP2CyutG5itJh/5ByrxfnzG9gtvl3pYLLY9Pgaq8WM8/uYLNYeuctu8fn9flaL1r1H2C0O
- v2lntbi44guTA5/Hhs9NbB47Z91l99i0qpPNY/OSeo/pc/4zevRtWcXo8XmTXAB7lJ5NUX5p
- SapCRn5xia1StKGFkZ6hpYWekYmlnqGxeayVkamSvp1NSmpOZllqkb5dgl7GxnnnWAt+6lcs
- OHCEsYHxl0YXIweHhICJxP6VzF2MXBxCAksZJY48m8QMEZeSmN+i1MXICWQKS/y51sUGUfOJ
- UeJg83R2kASbgKFE79E+RhBbREBM4vacTrBBzAJdzBLvd/xiBUkIC4RJ7Fr0kgXEZhFQlfh6
- YApYM6+AtcShvS+YIDbIS6zecIAZxOYUsJH4dOEBWL0QUM2CY9MYJzDyLWBkWMUoklpanJue
- W2ykV5yYW1yal66XnJ+7iREYCduO/dyyg7HrXfAhRgEORiUeXomzDbFCrIllxZW5hxglOJiV
- RHgDautjhXhTEiurUovy44tKc1KLDzGaAh01kVlKNDkfGKV5JfGGpobmFpaG5sbmxmYWSuK8
- HQIHY4QE0hNLUrNTUwtSi2D6mDg4pRoYnR2CpdQk03k33J4ff71ui+AjI+PFZ7hXCwncTm47
- Hl858dXJuzeznTlKGGq1OnbnPFr1dfqKH57hC9yahDO91bra687rX7sh+vdKg4UCe5RDN/sH
- 7vtFj9ZoWs1hCk91UUr7Mv3Fpdi73zcuCjh58FXCSRFbU4Zb36XjdHz1CvqXGStaPaxQYinO
- SDTUYi4qTgQA/8dnWJoCAAA=
-X-CMS-MailID: 20190918104653eucas1p2e23ccbd05b3b780300adc9f4cb7a4c49
+X-Brightmail-Tracker: H4sIAAAAAAAAA0VSeUgUcRj1N7OzM5pr4yr6qZWxdFCWB0WNKGIUNUWlgRRkS606qair7HgW
+ oXjkfRCFiwoqFtqKuK5ieeaVi0XqqoggmqESVhq0GuWRuY7Wf++9773f+/j4UbhUQzhS4cpY
+ TqVURMrEFqLm/t+DJw/uSZW7j+pcmTFDD8Y0qOsJ5tmnOTEzlqFDTHnfIMEMDWlJ5udYFsbo
+ ZscJRj3UiTF1fVMkY/z+hmAyOvpIpvdbJsEYapYxXytWa0wVsy0lUySr02SL2cbnyWxx2SZi
+ C5o0iDXqDviTty28Q7jI8HhO5eZzzyKsuyoNj8miEwuyirEUVCnJQeYU0KdBq1/Ec5AFJaVr
+ EKRMZ4oFsoxgIHN5hxgR5LbmkbuR+e4JJAyqESysDWP/Iur+xW2XmPaA/LcFyIRtaTuYLMve
+ LsHpdQwWN0pEpoENzcJCae92QEQfhubGF9tYQntB1VKlWKhzhlptF27C5rQ3/BieEZkeArqZ
+ hMKO6Z2dLsBS6a+dgA180Tft6Ptgs6UcEwJpCPLaJkmBFCH4qK9AgssLevUGIgdRW/sdg/pW
+ N0E+B+8KJjCTDLQVTCxam2R8Cz5pLsYFWQJZj6WC+xCsaYoxATtC7tymSMAs6L5qSeFChQhG
+ 6rKxIuRc8r+sAiENsufi+KhQjj+l5BJceUUUH6cMdQ2OjtKhrR/0/o9+5TXqXA/qQTSFZJYS
+ +JAilxKKeD4pqgcBhctsJf6PkuVSSYgi6QGnir6riovk+B7kRIlk9pKHZjOBUjpUEctFcFwM
+ p9qdYpS5YwoKVGKXZePpR12fel5euHbF5c71E4bVcL40/fPqpo/EOvFIBJfgoL4Z0pXWnnTR
+ xsnhampQPzFqMDjXqPLjZ9vM8vZfatgI9vUYaB9+dd9rpJHqnqiO22tHusSep2tveDvGW770
+ q7ZbWfdeCpjXnL2llvvN17nnbnh2nEkL8HIgc2UiPkzhcRxX8Yq/skfKLz0DAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFupkkeLIzCtJLcpLzFFi42I5/e/4XV157qZYg7nr9C2uXDzEZLFxxnpW
+ i6kPn7BZXGndxGgx/8g5Vovz5zewW3y70sFksenxNVaLGef3MVmsPXKX3eLz+/2sFq17j7Bb
+ HH7TzmpxccUXJgc+jw2fm9g8ds66y+6xaVUnm8fmJfUe0+f8Z/To27KK0ePzJrkA9ig9m6L8
+ 0pJUhYz84hJbpWhDCyM9Q0sLPSMTSz1DY/NYKyNTJX07m5TUnMyy1CJ9uwS9jIOLm5kLOgQq
+ +jqmMzUwLuTtYuTkkBAwkXh68AZjFyMXh5DAUkaJj9PfMncxcgAlpCTmtyhB1AhL/LnWxQZR
+ 84lRYuWe74wgCTYBQ4neo31gtoiAmMTtOZ3MIEXMAl3MEu93/GIFSQgLeEi8nH2YHcRmEVCV
+ 2LZ5KZjNK2AtsfjdQjaIDfISqzccYAaxOQVsJD5deMACYgsB1Sw4No1xAiPfAkaGVYwiqaXF
+ uem5xYZ6xYm5xaV56XrJ+bmbGIHRsO3Yz807GC9tDD7EKMDBqMTDe+BUQ6wQa2JZcWXuIUYJ
+ DmYlEd6A2vpYId6UxMqq1KL8+KLSnNTiQ4ymQEdNZJYSTc4HRmpeSbyhqaG5haWhubG5sZmF
+ kjhvh8DBGCGB9MSS1OzU1ILUIpg+Jg5OqQbGyrX7TgTKxDqp6aY0P5pzzEQl58bRHT96RUtC
+ bs1ycRWwrmi9f/3U/G2CQk8Xeb7ttgsoeGMjv2nThVIGh3nnnt/5sMQ27lJI58za727ZM276
+ T1GMTI7O4+970WB+cJv6mjMzvu1bfFH19sNLV/Q94vdfU5eyi1Ns/ntz9YTk831OfK9XzD4R
+ rsRSnJFoqMVcVJwIACl+nLCcAgAA
+X-CMS-MailID: 20190918104656eucas1p1d9cad1394b08d05a99151c4fbc9425ce
 X-Msg-Generator: CA
-X-RootMTR: 20190918104653eucas1p2e23ccbd05b3b780300adc9f4cb7a4c49
+X-RootMTR: 20190918104656eucas1p1d9cad1394b08d05a99151c4fbc9425ce
 X-EPHeader: CA
 CMS-TYPE: 201P
-X-CMS-RootMailID: 20190918104653eucas1p2e23ccbd05b3b780300adc9f4cb7a4c49
+X-CMS-RootMailID: 20190918104656eucas1p1d9cad1394b08d05a99151c4fbc9425ce
 References: <20190918104634.15216-1-s.nawrocki@samsung.com>
- <CGME20190918104653eucas1p2e23ccbd05b3b780300adc9f4cb7a4c49@eucas1p2.samsung.com>
+ <CGME20190918104656eucas1p1d9cad1394b08d05a99151c4fbc9425ce@eucas1p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_034657_086904_30D94307 
-X-CRM114-Status: GOOD (  12.80  )
+X-CRM114-CacheID: sfid-20190918_034659_502430_66F171E2 
+X-CRM114-Status: GOOD (  12.55  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -147,137 +146,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In case of WM1811 device there are currently being registered controls
-referring to registers not existing on that device.
-It has been noticed when getting values of "AIF1ADC2 Volume", "AIF1DAC2
-Volume" controls was failing during ALSA state restoring at boot time:
- "amixer: Mixer hw:0 load error: Device or resource busy"
-
-Reading some registers through I2C was failing with EBUSY error and indeed
-those registers were not available according to the datasheet.
-
-To fix this controls not available on WM1811 are moved to a separate array
-and registered only for WM8994 and WM8958.
-
-There are some further differences between WM8994 and WM1811, e.g. registers
-603h, 604h, 605h, which are not covered in this patch.
+The WM1811/WM8994/WM8958 audio CODEC DT bindings specify two optional
+clocks: "MCLK1", "MCLK2". Add code for getting those clocks in the MFD
+part of the wm8994 driver so they can be further handled in the audio
+CODEC part.
 
 Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
 ---
- sound/soc/codecs/wm8994.c | 43 +++++++++++++++++++++++----------------
- 1 file changed, 26 insertions(+), 17 deletions(-)
+ drivers/mfd/wm8994-core.c       | 9 +++++++++
+ include/linux/mfd/wm8994/core.h | 9 +++++++++
+ 2 files changed, 18 insertions(+)
 
-diff --git a/sound/soc/codecs/wm8994.c b/sound/soc/codecs/wm8994.c
-index c3d06e8bc54f..d5fb7f5dd551 100644
---- a/sound/soc/codecs/wm8994.c
-+++ b/sound/soc/codecs/wm8994.c
-@@ -533,13 +533,10 @@ static SOC_ENUM_SINGLE_DECL(dac_osr,
- static SOC_ENUM_SINGLE_DECL(adc_osr,
- 			    WM8994_OVERSAMPLING, 1, osr_text);
+diff --git a/drivers/mfd/wm8994-core.c b/drivers/mfd/wm8994-core.c
+index 1e9fe7d92597..02c19a0bdeb0 100644
+--- a/drivers/mfd/wm8994-core.c
++++ b/drivers/mfd/wm8994-core.c
+@@ -7,6 +7,7 @@
+  * Author: Mark Brown <broonie@opensource.wolfsonmicro.com>
+  */
  
--static const struct snd_kcontrol_new wm8994_snd_controls[] = {
-+static const struct snd_kcontrol_new wm8994_common_snd_controls[] = {
- SOC_DOUBLE_R_TLV("AIF1ADC1 Volume", WM8994_AIF1_ADC1_LEFT_VOLUME,
- 		 WM8994_AIF1_ADC1_RIGHT_VOLUME,
- 		 1, 119, 0, digital_tlv),
--SOC_DOUBLE_R_TLV("AIF1ADC2 Volume", WM8994_AIF1_ADC2_LEFT_VOLUME,
--		 WM8994_AIF1_ADC2_RIGHT_VOLUME,
--		 1, 119, 0, digital_tlv),
- SOC_DOUBLE_R_TLV("AIF2ADC Volume", WM8994_AIF2_ADC_LEFT_VOLUME,
- 		 WM8994_AIF2_ADC_RIGHT_VOLUME,
- 		 1, 119, 0, digital_tlv),
-@@ -556,8 +553,6 @@ SOC_ENUM("AIF2DACR Source", aif2dacr_src),
++#include <linux/clk.h>
+ #include <linux/kernel.h>
+ #include <linux/module.h>
+ #include <linux/slab.h>
+@@ -333,6 +334,14 @@ static int wm8994_device_init(struct wm8994 *wm8994, int irq)
  
- SOC_DOUBLE_R_TLV("AIF1DAC1 Volume", WM8994_AIF1_DAC1_LEFT_VOLUME,
- 		 WM8994_AIF1_DAC1_RIGHT_VOLUME, 1, 96, 0, digital_tlv),
--SOC_DOUBLE_R_TLV("AIF1DAC2 Volume", WM8994_AIF1_DAC2_LEFT_VOLUME,
--		 WM8994_AIF1_DAC2_RIGHT_VOLUME, 1, 96, 0, digital_tlv),
- SOC_DOUBLE_R_TLV("AIF2DAC Volume", WM8994_AIF2_DAC_LEFT_VOLUME,
- 		 WM8994_AIF2_DAC_RIGHT_VOLUME, 1, 96, 0, digital_tlv),
+ 	dev_set_drvdata(wm8994->dev, wm8994);
  
-@@ -565,17 +560,12 @@ SOC_SINGLE_TLV("AIF1 Boost Volume", WM8994_AIF1_CONTROL_2, 10, 3, 0, aif_tlv),
- SOC_SINGLE_TLV("AIF2 Boost Volume", WM8994_AIF2_CONTROL_2, 10, 3, 0, aif_tlv),
- 
- SOC_SINGLE("AIF1DAC1 EQ Switch", WM8994_AIF1_DAC1_EQ_GAINS_1, 0, 1, 0),
--SOC_SINGLE("AIF1DAC2 EQ Switch", WM8994_AIF1_DAC2_EQ_GAINS_1, 0, 1, 0),
- SOC_SINGLE("AIF2 EQ Switch", WM8994_AIF2_EQ_GAINS_1, 0, 1, 0),
- 
- WM8994_DRC_SWITCH("AIF1DAC1 DRC Switch", WM8994_AIF1_DRC1_1, 2),
- WM8994_DRC_SWITCH("AIF1ADC1L DRC Switch", WM8994_AIF1_DRC1_1, 1),
- WM8994_DRC_SWITCH("AIF1ADC1R DRC Switch", WM8994_AIF1_DRC1_1, 0),
- 
--WM8994_DRC_SWITCH("AIF1DAC2 DRC Switch", WM8994_AIF1_DRC2_1, 2),
--WM8994_DRC_SWITCH("AIF1ADC2L DRC Switch", WM8994_AIF1_DRC2_1, 1),
--WM8994_DRC_SWITCH("AIF1ADC2R DRC Switch", WM8994_AIF1_DRC2_1, 0),
--
- WM8994_DRC_SWITCH("AIF2DAC DRC Switch", WM8994_AIF2_DRC_1, 2),
- WM8994_DRC_SWITCH("AIF2ADCL DRC Switch", WM8994_AIF2_DRC_1, 1),
- WM8994_DRC_SWITCH("AIF2ADCR DRC Switch", WM8994_AIF2_DRC_1, 0),
-@@ -594,9 +584,6 @@ SOC_SINGLE("Sidetone HPF Switch", WM8994_SIDETONE, 6, 1, 0),
- SOC_ENUM("AIF1ADC1 HPF Mode", aif1adc1_hpf),
- SOC_DOUBLE("AIF1ADC1 HPF Switch", WM8994_AIF1_ADC1_FILTERS, 12, 11, 1, 0),
- 
--SOC_ENUM("AIF1ADC2 HPF Mode", aif1adc2_hpf),
--SOC_DOUBLE("AIF1ADC2 HPF Switch", WM8994_AIF1_ADC2_FILTERS, 12, 11, 1, 0),
--
- SOC_ENUM("AIF2ADC HPF Mode", aif2adc_hpf),
- SOC_DOUBLE("AIF2ADC HPF Switch", WM8994_AIF2_ADC_FILTERS, 12, 11, 1, 0),
- 
-@@ -637,6 +624,24 @@ SOC_SINGLE("AIF2DAC 3D Stereo Switch", WM8994_AIF2_DAC_FILTERS_2,
- 	   8, 1, 0),
- };
- 
-+/* Controls not available on WM1811 */
-+static const struct snd_kcontrol_new wm8994_snd_controls[] = {
-+SOC_DOUBLE_R_TLV("AIF1ADC2 Volume", WM8994_AIF1_ADC2_LEFT_VOLUME,
-+		 WM8994_AIF1_ADC2_RIGHT_VOLUME,
-+		 1, 119, 0, digital_tlv),
-+SOC_DOUBLE_R_TLV("AIF1DAC2 Volume", WM8994_AIF1_DAC2_LEFT_VOLUME,
-+		 WM8994_AIF1_DAC2_RIGHT_VOLUME, 1, 96, 0, digital_tlv),
++	wm8994->mclk[WM8994_MCLK1].id = "MCLK1";
++	wm8994->mclk[WM8994_MCLK2].id = "MCLK2";
 +
-+SOC_SINGLE("AIF1DAC2 EQ Switch", WM8994_AIF1_DAC2_EQ_GAINS_1, 0, 1, 0),
++	ret = devm_clk_bulk_get_optional(wm8994->dev, ARRAY_SIZE(wm8994->mclk),
++					 wm8994->mclk);
++	if (ret != 0)
++		return ret;
 +
-+WM8994_DRC_SWITCH("AIF1DAC2 DRC Switch", WM8994_AIF1_DRC2_1, 2),
-+WM8994_DRC_SWITCH("AIF1ADC2L DRC Switch", WM8994_AIF1_DRC2_1, 1),
-+WM8994_DRC_SWITCH("AIF1ADC2R DRC Switch", WM8994_AIF1_DRC2_1, 0),
-+
-+SOC_ENUM("AIF1ADC2 HPF Mode", aif1adc2_hpf),
-+SOC_DOUBLE("AIF1ADC2 HPF Switch", WM8994_AIF1_ADC2_FILTERS, 12, 11, 1, 0),
+ 	/* Add the on-chip regulators first for bootstrapping */
+ 	ret = mfd_add_devices(wm8994->dev, 0,
+ 			      wm8994_regulator_devs,
+diff --git a/include/linux/mfd/wm8994/core.h b/include/linux/mfd/wm8994/core.h
+index e8b093522ffd..320297a1b70c 100644
+--- a/include/linux/mfd/wm8994/core.h
++++ b/include/linux/mfd/wm8994/core.h
+@@ -10,12 +10,19 @@
+ #ifndef __MFD_WM8994_CORE_H__
+ #define __MFD_WM8994_CORE_H__
+ 
++#include <linux/clk.h>
+ #include <linux/mutex.h>
+ #include <linux/interrupt.h>
+ #include <linux/regmap.h>
+ 
+ #include <linux/mfd/wm8994/pdata.h>
+ 
++enum {
++	WM8994_MCLK1,
++	WM8994_MCLK2,
++	WM8994_NUM_MCLK
 +};
 +
- static const struct snd_kcontrol_new wm8994_eq_controls[] = {
- SOC_SINGLE_TLV("AIF1DAC1 EQ1 Volume", WM8994_AIF1_DAC1_EQ_GAINS_1, 11, 31, 0,
- 	       eq_tlv),
-@@ -4258,13 +4263,15 @@ static int wm8994_component_probe(struct snd_soc_component *component)
- 	wm8994_handle_pdata(wm8994);
+ enum wm8994_type {
+ 	WM8994 = 0,
+ 	WM8958 = 1,
+@@ -60,6 +67,8 @@ struct wm8994 {
+ 	struct device *dev;
+ 	struct regmap *regmap;
  
- 	wm_hubs_add_analogue_controls(component);
--	snd_soc_add_component_controls(component, wm8994_snd_controls,
--			     ARRAY_SIZE(wm8994_snd_controls));
-+	snd_soc_add_component_controls(component, wm8994_common_snd_controls,
-+				       ARRAY_SIZE(wm8994_common_snd_controls));
- 	snd_soc_dapm_new_controls(dapm, wm8994_dapm_widgets,
- 				  ARRAY_SIZE(wm8994_dapm_widgets));
++	struct clk_bulk_data mclk[WM8994_NUM_MCLK];
++
+ 	bool ldo_ena_always_driven;
  
- 	switch (control->type) {
- 	case WM8994:
-+		snd_soc_add_component_controls(component, wm8994_snd_controls,
-+					       ARRAY_SIZE(wm8994_snd_controls));
- 		snd_soc_dapm_new_controls(dapm, wm8994_specific_dapm_widgets,
- 					  ARRAY_SIZE(wm8994_specific_dapm_widgets));
- 		if (control->revision < 4) {
-@@ -4284,8 +4291,10 @@ static int wm8994_component_probe(struct snd_soc_component *component)
- 		}
- 		break;
- 	case WM8958:
-+		snd_soc_add_component_controls(component, wm8994_snd_controls,
-+					       ARRAY_SIZE(wm8994_snd_controls));
- 		snd_soc_add_component_controls(component, wm8958_snd_controls,
--				     ARRAY_SIZE(wm8958_snd_controls));
-+					       ARRAY_SIZE(wm8958_snd_controls));
- 		snd_soc_dapm_new_controls(dapm, wm8958_dapm_widgets,
- 					  ARRAY_SIZE(wm8958_dapm_widgets));
- 		if (control->revision < 1) {
+ 	int gpio_base;
 -- 
 2.17.1
 
