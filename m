@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86689B5BA4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 08:08:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C556DB5BA6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 08:08:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NGYrJpzKp6635Q502BsZ865ebtqrs0JQN1wQkcvzkeQ=; b=YcpgjtoLHyWZhV
-	5wLKRKAckfwEGFvM9LY1mddIP8JMS3Qv71IPtzmOBHDG1dchqn70qQYRgZjc26HNGN7UNXPBPIgz9
-	3+M/CJhZhe2gb/R6+/313OCPAXPDCpqP3squvzq8Dv+ic1nJPZ8tghiN6nd7+7U+OGVFWbQYW0qGJ
-	vXJcJ+ZL14MBQxApN2+CWNFlBoS0TXnFpkDPhjjhoikpkUq8IzU0Hw0CzNipuPPcDXxv/sYhxIrk/
-	Wym84BWXl0/9qw3e7Sx4fizrz/JDl6+9fP9R3HyUXX3Z7uxlB1rBrz3g61tzm0RjGOV5yepJntM8S
-	6HBmnu/rEAu9sQ1zVYIQ==;
+	List-Owner; bh=3dbQEYYQRfIwZ/IShpEPF1VtwcC/SkDOwz3mRa2wMmQ=; b=N6T1sNbebQk82Z
+	c4Z6Djx+C75kNPtOLyg3Zm6Xm2oeMjZ2s+ENWj5SaFxs///ldrn++t8Cbztmm2gn4Zhe8hXcNcYng
+	XggClYOG6Qaf5p6MNcxb5O/8EzX71h6p6WI8ka7mvMAGLuv6jYXzS6Up+Ost3ziuVwjGhESNuGG9V
+	ERZDGXquduHDGDNMn6yEeMX8gDJMhCIfXNotJcqz2rdrXzJ2SyVICiZCogdA4Fk1RS+8webJjxTOe
+	FuqvsuDZvsvtaH0RYXsBXXWy3QxNKqqX+zpTZDhw0TFJRYBaG4TLsMX95L/rneBPGoMk57iUbJwMH
+	OSwyGWaSZUtDO0tTbXcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAT8O-0007tO-RB; Wed, 18 Sep 2019 06:08:13 +0000
+	id 1iAT8f-00088M-Lu; Wed, 18 Sep 2019 06:08:29 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAT7j-0007XK-GP
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 06:07:32 +0000
+ id 1iAT7n-0007ax-5J
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 06:07:36 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1A60220856;
- Wed, 18 Sep 2019 06:07:31 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B90EA20856;
+ Wed, 18 Sep 2019 06:07:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568786851;
- bh=jNhbz67CJr/g2fdjXe+N+K8ckAY7k1eWl83twN0NrXA=;
+ s=default; t=1568786854;
+ bh=Ts05YE0IjGolvN6Z7Hv/3J3qFt2qBGevkokf4x6n7e0=;
  h=In-Reply-To:References:Cc:To:From:Subject:Date:From;
- b=i2K8gJQM0HbM2ZNZSIwPgK+a8ru9cYl2eYOub+t5Aa/Mll4ya7fal7MFOxBo3K1dg
- pdLVcFKnMNOcHv4rPXBY4N8/rM/YuFsCVOZ0vr/m37Lcis9s47eUYJ2fcQdBGS0Hl5
- qXtjMqa4X5+nBV7I8vdwJIESc5HPNhuRphWFOQIc=
+ b=VdmBBFmXgopq7WcGmLHBMOdq5W0g7H88njURoDcrLWaKfJehCItaEm+WjAX/cGPj0
+ aHSQG2CE+Csjnw3ZTuB0GlFyoXYDY42es+HDJhbIQ7LvhScgwRUvAMXNf/UCej6nTF
+ ImrBB8oBgAcQcaYSzx7PFhDUTBYCi+PaevSVcNc8=
 MIME-Version: 1.0
-In-Reply-To: <1568043491-20680-4-git-send-email-peng.fan@nxp.com>
+In-Reply-To: <1568043491-20680-5-git-send-email-peng.fan@nxp.com>
 References: <1568043491-20680-1-git-send-email-peng.fan@nxp.com>
- <1568043491-20680-4-git-send-email-peng.fan@nxp.com>
+ <1568043491-20680-5-git-send-email-peng.fan@nxp.com>
 To: "festevam@gmail.com" <festevam@gmail.com>,
  "mturquette@baylibre.com" <mturquette@baylibre.com>,
  "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "shawnguo@kernel.org" <shawnguo@kernel.org>, Peng Fan <peng.fan@nxp.com>
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH V3 3/4] clk: imx: imx8mm: fix pll mux bit
+Subject: Re: [PATCH V3 4/4] clk: imx: imx8mn: fix pll mux bit
 User-Agent: alot/0.8.1
-Date: Tue, 17 Sep 2019 23:07:30 -0700
-Message-Id: <20190918060731.1A60220856@mail.kernel.org>
+Date: Tue, 17 Sep 2019 23:07:33 -0700
+Message-Id: <20190918060734.B90EA20856@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_230731_753909_461D3C1D 
-X-CRM114-Status: UNSURE (   7.88  )
+X-CRM114-CacheID: sfid-20190917_230735_338711_45AD8B88 
+X-CRM114-Status: UNSURE (   7.35  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -94,7 +94,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Peng Fan (2019-09-08 20:39:44)
+Quoting Peng Fan (2019-09-08 20:39:50)
 > From: Peng Fan <peng.fan@nxp.com>
 > 
 > pll BYPASS bit should be kept inside pll driver for glitchless freq
@@ -105,7 +105,6 @@ Quoting Peng Fan (2019-09-08 20:39:44)
 > 
 > And drop uneeded set parent, because EXT_BYPASS default is 0.
 > 
-> Fixes: ba5625c3e272 ("clk: imx: Add clock driver support for imx8mm")
 > Suggested-by: Jacky Bai <ping.bai@nxp.com>
 > Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
 > Signed-off-by: Peng Fan <peng.fan@nxp.com>
