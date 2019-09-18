@@ -2,105 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EEF0B6755
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 17:45:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1686AB676A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 17:46:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Resent-To
-	:Resent-Message-ID:Resent-Date:Resent-From:Reply-To:Content-Transfer-Encoding
-	:Content-ID:Content-Description:Resent-Sender:Resent-Cc:List-Owner;
-	bh=xhJhQ+UPD1bXFHCW4hCkGBh1htUcpSwzAm6znfFPqxg=; b=P0JbwucH7N50UE+HeZ43K/V9MZ
-	/HZ5xEWX9ST2wIm4E2skKFsUeHDBsaGJSX8S//CH9FKKHbRmNNIFyPPj/E7zil7eJdSFozDNy//oa
-	SoMWuY4zJLhTTvGuSow4WbSChbs3CoZ+bqNE2b9Q1dgQ6qfLlleCHYAdsFpuL4ZxGigRltRai2nr7
-	XzXHMGTK/aONu0qotL0XKQaoRsd/XN4tMLNzwqJ3YBA2oWbkEUD/nwecRGTEPobiScaMxFidgtqix
-	C3RBJAEsGgpIsE0+ebY4elug2bkl2ZqiA//uQH/ZRLY64GRcwelWyhydvOAInrnVYfkPgbAlZ70gK
-	nLuvHRHg==;
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=8VssxhXXiXqDRiln23X91YPJroD8M1Hr/MgNk/cYSgA=; b=Hhg7uW96609ZLlppPc30Lxstt
+	9iow+tEJVzEVpyf2Iy3+fzTmSuap17b8xzCQ7kySce/qS43gqamHRKEjIz1NtDea58BpC11vqdT52
+	neVhoqO+KBMcDmJy1JfQhDSexaJv+aOZ1ZaMNkx6RG/vzhxUDO7+ifiegXqOrV/GDWyZc1cRV7zGT
+	exXNDodqFtaRw8CmLawQXQSSFagMVFAFR3FsAKV8FjnRuzeNAmTGQGjHU70TlUqZcvMh5iBFu/FzB
+	nd9GJPD9oqyDS/4yeKL5Wbga4cza6BF6BNY3pRBu7P5KWncpb35STc3/QKo7iJzsOKXu4RieIOshG
+	I0fH06mdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAc8i-0007Ui-S3; Wed, 18 Sep 2019 15:45:09 +0000
-Received: from heliosphere.sirena.org.uk ([172.104.155.198])
+	id 1iAcAR-0000rk-AZ; Wed, 18 Sep 2019 15:46:55 +0000
+Received: from mx1.mailbox.org ([2001:67c:2050:104:0:1:25:1])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAc8U-0007UO-9m
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 15:44:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Resent-To:
- Resent-Message-ID:Resent-Date:Resent-From:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Sender:
- Resent-Cc:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=rUMoNwWNL1z50CS0M7MdxnWSzCW+XJ3JElR3BYk0YZo=; b=k
- HbodfzIuqbb9rgQosgPwzx/SjdHlUBgD6Ms4IlBzwEG0j3HivMRGDuGKNa378u99AX1j9fQCEDT2E
- PBU06Fkt/o+JaY5jXH2N/UCV0bEsrpR5xxa1XrG7X0K2bkDGzuTdpcmT2Eyrsof7c24KeGK69G9il
- Ik5NNf1GiQdLF19Q=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.co.uk>) id 1iAc8Q-00068V-SX
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 15:44:50 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 0D1322742927; Wed, 18 Sep 2019 16:44:49 +0100 (BST)
-Resent-From: Mark Brown <broonie@sirena.co.uk>
-Resent-Date: Wed, 18 Sep 2019 16:44:49 +0100
-Resent-Message-ID: <20190918154449.GO2596@sirena.co.uk>
-Resent-To: linux-arm-kernel@lists.infradead.org
-Received: from ypsilon.sirena.org.uk ([2001:470:1f1d:6b5::7])
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.co.uk>) id 1iAbPQ-0005ho-I3
- for alsa-devel@alsa-project.org; Wed, 18 Sep 2019 14:58:20 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id F10BF2742927; Wed, 18 Sep 2019 15:58:19 +0100 (BST)
-Resent-From: Mark Brown <broonie@sirena.co.uk>
-Resent-Date: Wed, 18 Sep 2019 15:58:19 +0100
-Resent-Message-ID: <20190918145819.GL2596@sirena.co.uk>
-Resent-To: alsa-devel@alsa-project.org
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.co.uk>)
- id 1iAZT5-0005DC-0Q; Wed, 18 Sep 2019 12:53:59 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 666D12742927; Wed, 18 Sep 2019 13:53:58 +0100 (BST)
-Date: Wed, 18 Sep 2019 13:53:58 +0100
-From: Mark Brown <broonie@kernel.org>
-To: "Liao, Bard" <bard.liao@intel.com>
-Subject: Re: [PATCH] ASoC: core: delete component->card_list in
- soc_remove_component only
-Message-ID: <20190918125358.GJ2596@sirena.co.uk>
-References: <20190916210353.6318-1-yung-chuan.liao@linux.intel.com>
- <87ef0ewhnd.wl-kuninori.morimoto.gx@renesas.com>
- <567A313375B6F043A9BE3A1D9B8C6E7F0B49706B@SHSMSX101.ccr.corp.intel.com>
- <878sqmw8nh.wl-kuninori.morimoto.gx@renesas.com>
- <567A313375B6F043A9BE3A1D9B8C6E7F0B4970C2@SHSMSX101.ccr.corp.intel.com>
- <875zlqw411.wl-kuninori.morimoto.gx@renesas.com>
- <567A313375B6F043A9BE3A1D9B8C6E7F0B4970DE@SHSMSX101.ccr.corp.intel.com>
- <20190918120743.GG2596@sirena.co.uk>
- <567A313375B6F043A9BE3A1D9B8C6E7F0B497238@SHSMSX101.ccr.corp.intel.com>
+ id 1iAcA8-0000qn-7k
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 15:46:38 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mx1.mailbox.org (Postfix) with ESMTPS id A4F6050D4B;
+ Wed, 18 Sep 2019 17:46:30 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp1.mailbox.org ([80.241.60.240])
+ by spamfilter06.heinlein-hosting.de (spamfilter06.heinlein-hosting.de
+ [80.241.56.125]) (amavisd-new, port 10030)
+ with ESMTP id ZgCJrYNr5TyO; Wed, 18 Sep 2019 17:46:22 +0200 (CEST)
+Date: Wed, 18 Sep 2019 17:46:15 +0200
+From: Aleksa Sarai <cyphar@cyphar.com>
+To: Jann Horn <jannh@google.com>
+Subject: Re: [PATCH v12 05/12] namei: obey trailing magic-link DAC permissions
+Message-ID: <20190918154615.suruy5v5xjftfwyl@yavin.microfocus.com>
+References: <20190904201933.10736-1-cyphar@cyphar.com>
+ <20190904201933.10736-6-cyphar@cyphar.com>
+ <CAG48ez1_64249RdX6Nj_32YS+jhuXZBAd_ZL9ozggbSQy+cc-A@mail.gmail.com>
+ <20190918135100.sdxdmdluq6wlwryv@yavin.microfocus.com>
 MIME-Version: 1.0
-In-Reply-To: <567A313375B6F043A9BE3A1D9B8C6E7F0B497238@SHSMSX101.ccr.corp.intel.com>
-X-Cookie: The devil finds work for idle glands.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190918135100.sdxdmdluq6wlwryv@yavin.microfocus.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_084454_346821_D5A11AD1 
-X-CRM114-Status: UNSURE (   7.19  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190918_084636_578460_6D61E5D4 
+X-CRM114-Status: GOOD (  31.86  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [172.104.155.198 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:67c:2050:104:0:1:25:1 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,52 +68,164 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "tiwai@suse.de" <tiwai@suse.de>,
- "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
- Bard liao <yung-chuan.liao@linux.intel.com>,
- "pierre-louis.bossart@linux.intel.com" <pierre-louis.bossart@linux.intel.com>,
- Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
-Content-Type: multipart/mixed; boundary="===============6142730546919422286=="
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Alexei Starovoitov <ast@kernel.org>,
+ kernel list <linux-kernel@vger.kernel.org>,
+ David Howells <dhowells@redhat.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ sparclinux@vger.kernel.org, Jiri Olsa <jolsa@redhat.com>,
+ linux-arch <linux-arch@vger.kernel.org>,
+ linux-s390 <linux-s390@vger.kernel.org>, Tycho Andersen <tycho@tycho.ws>,
+ Aleksa Sarai <asarai@suse.de>, Shuah Khan <shuah@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ linuxppc-dev@lists.ozlabs.org, linux-m68k@lists.linux-m68k.org,
+ Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
+ David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
+ Linux API <linux-api@vger.kernel.org>, Chanho Min <chanho.min@lge.com>,
+ Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
+ linux-fsdevel <linux-fsdevel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Linux Containers <containers@lists.linux-foundation.org>
+Content-Type: multipart/mixed; boundary="===============7845621687346070681=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============6142730546919422286==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="I3tAPq1Rm2pUxvsp"
+--===============7845621687346070681==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="blplt4ksioniygek"
 Content-Disposition: inline
 
 
---I3tAPq1Rm2pUxvsp
+--blplt4ksioniygek
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-On Wed, Sep 18, 2019 at 12:31:10PM +0000, Liao, Bard wrote:
+On 2019-09-18, Aleksa Sarai <cyphar@cyphar.com> wrote:
+> On 2019-09-17, Jann Horn <jannh@google.com> wrote:
+> > On Wed, Sep 4, 2019 at 10:21 PM Aleksa Sarai <cyphar@cyphar.com> wrote:
+> > > The ability for userspace to "re-open" file descriptors through
+> > > /proc/self/fd has been a very useful tool for all sorts of usecases
+> > > (container runtimes are one common example). However, the current
+> > > interface for doing this has resulted in some pretty subtle security
+> > > holes. Userspace can re-open a file descriptor with more permissions
+> > > than the original, which can result in cases such as /proc/$pid/exe
+> > > being re-opened O_RDWR at a later date even though (by definition)
+> > > /proc/$pid/exe cannot be opened for writing. When combined with O_PATH
+> > > the results can get even more confusing.
+> > [...]
+> > > Instead we have to restrict it in such a way that it doesn't break
+> > > (good) users but does block potential attackers. The solution applied=
+ in
+> > > this patch is to restrict *re-opening* (not resolution through)
+> > > magic-links by requiring that mode of the link be obeyed. Normal
+> > > symlinks have modes of a+rwx but magic-links have other modes. These
+> > > magic-link modes were historically ignored during path resolution, but
+> > > they've now been re-purposed for more useful ends.
+> >=20
+> > Thanks for dealing with this issue!
+> >=20
+> > [...]
+> > > diff --git a/fs/namei.c b/fs/namei.c
+> > > index 209c51a5226c..54d57dad0f91 100644
+> > > --- a/fs/namei.c
+> > > +++ b/fs/namei.c
+> > > @@ -872,7 +872,7 @@ void nd_jump_link(struct path *path)
+> > >
+> > >         nd->path =3D *path;
+> > >         nd->inode =3D nd->path.dentry->d_inode;
+> > > -       nd->flags |=3D LOOKUP_JUMPED;
+> > > +       nd->flags |=3D LOOKUP_JUMPED | LOOKUP_MAGICLINK_JUMPED;
+> > >  }
+> > [...]
+> > > +static int trailing_magiclink(struct nameidata *nd, int acc_mode,
+> > > +                             fmode_t *opath_mask)
+> > > +{
+> > > +       struct inode *inode =3D nd->link_inode;
+> > > +       fmode_t upgrade_mask =3D 0;
+> > > +
+> > > +       /* Was the trailing_symlink() a magic-link? */
+> > > +       if (!(nd->flags & LOOKUP_MAGICLINK_JUMPED))
+> > > +               return 0;
+> > > +
+> > > +       /*
+> > > +        * Figure out the upgrade-mask of the link_inode. Since these=
+ aren't
+> > > +        * strictly POSIX semantics we don't do an acl_permission_che=
+ck() here,
+> > > +        * so we only care that at least one bit is set for each upgr=
+ade-mode.
+> > > +        */
+> > > +       if (inode->i_mode & S_IRUGO)
+> > > +               upgrade_mask |=3D FMODE_PATH_READ;
+> > > +       if (inode->i_mode & S_IWUGO)
+> > > +               upgrade_mask |=3D FMODE_PATH_WRITE;
+> > > +       /* Restrict the O_PATH upgrade-mask of the caller. */
+> > > +       if (opath_mask)
+> > > +               *opath_mask &=3D upgrade_mask;
+> > > +       return may_open_magiclink(upgrade_mask, acc_mode);
+> > >  }
+> >=20
+> > This looks racy because entries in the file descriptor table can be
+> > switched out as long as task->files->file_lock isn't held. Unless I'm
+> > missing something, something like the following (untested) would
+> > bypass this restriction:
+>=20
+> You're absolutely right -- good catch!
+>=20
+> > Perhaps you could change nd_jump_link() to "void nd_jump_link(struct
+> > path *path, umode_t link_mode)", and let proc_pid_get_link() pass the
+> > link_mode through from an out-argument of .proc_get_link()? Then
+> > proc_fd_link() could grab the proper mode in a race-free manner. And
+> > nd_jump_link() could stash the mode in the nameidata.
+>=20
+> This indeed does appear to be the simplest solution -- I'm currently
+> testing a variation of the patch you proposed (with a few extra bits to
+> deal with nd_jump_link and proc_get_link being used elsewhere).
+>=20
+> I'll include this change (assuming it fixes the flaw you found) in the
+> v13 series I'll send around next week. Thanks, Jann!
 
-> May I use your signed-off as first author since that is your idea? :)
+In case you're interested -- I've also included a selftest based on this
+attack in my series (though it uses CLONE_FILES so that we could also
+test O_EMPTYPATH, which wasn't affected because it didn't go through
+procfs and thus couldn't hit the "outdated inode->i_mode" problem).
 
-Suggested-by also works for situations like this (and is a bit better if
-you didn't get sent an actual patch).
+The attack script succeeds around 20% of the time on the original
+patchset, and with the updated patchset it doesn't succeed in several
+hundred thousand attempts (which I've repeated a few times).
 
---I3tAPq1Rm2pUxvsp
+--=20
+Aleksa Sarai
+Senior Software Engineer (Containers)
+SUSE Linux GmbH
+<https://www.cyphar.com/>
+
+--blplt4ksioniygek
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl2CKOUACgkQJNaLcl1U
-h9DJJwf+MelApo69LfNngQmqGRr1UicX8imEGwpIIDWO6oDXmrVp0gzIRpV2zTLw
-Ao9QJuSYQX5Gf75XME5pTGkaMyyBkxlKoIZPClGiDlioH4KOBoKJUMBIzvPGPfqc
-qa1n8+BBuElFMYuflBAhNuhXOVdo83QNFVfxq3/sVfAzaizHkQumppoqBLo/ZTZk
-viAgsM1vEZyGbcpzO72yCm/o46Hat69nfpZoRJNgw2qfMUYEAghR4YDswY6i9A4X
-+XauEQ6n3eJco2uPlYa6XYYRjMUWcDhK3WDiAojMs0YjzNjD/ipKtQrdWhj7wLMM
-qXf6oOhriFDcXGvrT+qTBqabBvWibg==
-=EPyo
+iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXYJRRAAKCRCdlLljIbnQ
+Ep3WAP0cvG8YTD9aS1zuiIbFfMQLKt1nuxBciHwn7LaCHk9Z0QEAtNdPaxztVO/p
+utsBd24Q6vZYzx6vj8OnW5nGpjaLpQA=
+=rL8c
 -----END PGP SIGNATURE-----
 
---I3tAPq1Rm2pUxvsp--
+--blplt4ksioniygek--
 
 
---===============6142730546919422286==
+--===============7845621687346070681==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -168,5 +236,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============6142730546919422286==--
+--===============7845621687346070681==--
 
