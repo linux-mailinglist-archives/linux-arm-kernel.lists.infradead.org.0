@@ -2,60 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1D8EB6663
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 16:47:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A74CB666C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 16:52:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HjpEygTjv0UZii79rR4ypY0gQBNt9xD9u5C4pvhRZgg=; b=nB5EgzyLNXM3Q6
-	rdey9/FZxRXFtTjtbny0jVP4/10TCAtED4Sq/J/40ozDdp6EQRb2wnJawq0sjqT6Fn/EhwIOmLIw6
-	UJrJgUHRv0UCfXcLySQbXUbk+4x1nEAlsRq22P0QiyAQDrHS2/vUy49lV/QhYhTEtClIeHmUO+qRE
-	WNCvbwL1iwiR2GMYeEy4IDzUlP9J6BvJkpyb4dS5vM2FOVxkaFYhRYn3JMZ0V7T4kxIF+E8xjDGsD
-	ho1e636dWe7JlJRO1Ob/Ia3tz5F3Z53/XCESbwCFhO+/zOBsiK904EZ+P4iNBt3I+3gscNIPjB4f9
-	1UI0lzGRBXCoVOp0+TcQ==;
+	List-Owner; bh=ykTDfiOpX93QB1mDokLz5O1Kiw04HFkJqnqIuTD46GQ=; b=qM0PYK38sSKsxV
+	ZVoYcUD7PEzWUmguJll2hebdqqx6U7P67H8OQ00Xhs6qO/yUruED3h7REpxIdbsG4vzUmL8sfiyQt
+	1rfYVByIQtF6UbdoW3zoQre1d0BVQkC87w54CuqimsJkV39i6/nYpdvRbOI0wunKEzF9govtv9isi
+	tngYTnprdeedPFb/gIEnv9doZE/go/t64V+uPy7mO2UvhyLdil93joaxs9GbrWjl0e8WSNWndy3tI
+	RuSV4xYzVulz32CgsheTZuTYiNL22WqHw55vnTfRRvZhsKHLWOJDvaR/oDN/rCoBUjr0SSB776Z2+
+	uQtuy4Rs2B5WB08ZFPvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAbFE-0001yX-4c; Wed, 18 Sep 2019 14:47:48 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAbER-0001jv-3r
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 14:47:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 546751000;
- Wed, 18 Sep 2019 07:46:58 -0700 (PDT)
-Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E98923F67D;
- Wed, 18 Sep 2019 07:46:56 -0700 (PDT)
-Date: Wed, 18 Sep 2019 15:46:54 +0100
-From: Andre Przywara <andre.przywara@arm.com>
-To: Jassi Brar <jassisinghbrar@gmail.com>
-Subject: Re: [PATCH V6 1/2] dt-bindings: mailbox: add binding doc for the
- ARM SMC/HVC mailbox
-Message-ID: <20190918154654.6fb7e7f5@donnerap.cambridge.arm.com>
-In-Reply-To: <CABb+yY3drgYHk2_SZMgGhgSisB7wMVKFSx8VVabCcXkGByvgwg@mail.gmail.com>
-References: <1568626884-5189-1-git-send-email-peng.fan@nxp.com>
- <1568626884-5189-2-git-send-email-peng.fan@nxp.com>
- <20190917183115.3e40180f@donnerap.cambridge.arm.com>
- <CABb+yY2CP1i9fZMoPua=-mLCUpYrcO28xF5UXDeRD2XTYe7mEg@mail.gmail.com>
- <20190918104347.285bd7ad@donnerap.cambridge.arm.com>
- <CABb+yY3drgYHk2_SZMgGhgSisB7wMVKFSx8VVabCcXkGByvgwg@mail.gmail.com>
-Organization: ARM
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+	id 1iAbJL-0003mu-ED; Wed, 18 Sep 2019 14:52:03 +0000
+Received: from mx0b-001ae601.pphosted.com ([67.231.152.168])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iAbJ8-0003ma-FS
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 14:51:51 +0000
+Received: from pps.filterd (m0077474.ppops.net [127.0.0.1])
+ by mx0b-001ae601.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x8IEmnIM003847; Wed, 18 Sep 2019 09:51:44 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cirrus.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=PODMain02222019;
+ bh=5hkaW0zVB7pcDMi7la/yr03m+5UIiW5/+enC+Tt7FrY=;
+ b=NzRZlvVH0WikQpVg4jkJ7trlB5b57VQFLxAmP3HFWcBceJqchsh5EkPnBzJ9Wev9vr47
+ ExQrYrB2Mq3GceLfWSDL5Y7nZBzXyc9JTC1nwaxYQrILhskZ9qqdAHtkUciEZApakSu6
+ V2y8S5Dj3/nKRrHBXaIrWbHGWHijHv86BxWJAuAOxndKE/zYNP2u8JYFSMWF2QHSK9GM
+ ITaHZl/5mByIgMMg43ARiNoWZhCgEcKH+VTeHXLEobqqNTwPrwX01PKApN9D6kSOg9bD
+ 5vbYYVSVbr4qRKAVSCmjiVnXo2wKQLPigFQs0HhOFubmBx1CpCDZiPInnde8rt1+/rRF 9w== 
+Authentication-Results: ppops.net;
+ spf=fail smtp.mailfrom=ckeepax@opensource.cirrus.com
+Received: from ediex01.ad.cirrus.com ([87.246.76.36])
+ by mx0b-001ae601.pphosted.com with ESMTP id 2v37m198ga-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT);
+ Wed, 18 Sep 2019 09:51:44 -0500
+Received: from EDIEX01.ad.cirrus.com (198.61.84.80) by EDIEX01.ad.cirrus.com
+ (198.61.84.80) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Wed, 18 Sep
+ 2019 15:51:42 +0100
+Received: from ediswmail.ad.cirrus.com (198.61.86.93) by EDIEX01.ad.cirrus.com
+ (198.61.84.80) with Microsoft SMTP Server id 15.1.1591.10 via
+ Frontend Transport; Wed, 18 Sep 2019 15:51:42 +0100
+Received: from ediswmail.ad.cirrus.com (ediswmail.ad.cirrus.com [198.61.86.93])
+ by ediswmail.ad.cirrus.com (Postfix) with ESMTP id 584A92C1;
+ Wed, 18 Sep 2019 14:51:42 +0000 (UTC)
+Date: Wed, 18 Sep 2019 14:51:42 +0000
+From: Charles Keepax <ckeepax@opensource.cirrus.com>
+To: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Subject: Re: [PATCH v1 8/9] ASoC: samsung: arndale: Add missing OF node
+ dereferencing
+Message-ID: <20190918145142.GK10204@ediswmail.ad.cirrus.com>
+References: <20190918104634.15216-1-s.nawrocki@samsung.com>
+ <CGME20190918104713eucas1p2ccfa8e9dff2cda9e8f88ac42dda2b680@eucas1p2.samsung.com>
+ <20190918104634.15216-9-s.nawrocki@samsung.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190918104634.15216-9-s.nawrocki@samsung.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
+X-Proofpoint-SPF-Result: fail
+X-Proofpoint-SPF-Record: v=spf1 include:spf-001ae601.pphosted.com
+ include:spf.protection.outlook.com -all
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 clxscore=1015
+ lowpriorityscore=0
+ malwarescore=0 bulkscore=0 phishscore=0 priorityscore=1501 spamscore=0
+ adultscore=0 suspectscore=0 mlxscore=0 mlxlogscore=917 impostorscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-1908290000
+ definitions=main-1909180147
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_074659_530788_B0DFD93E 
-X-CRM114-Status: GOOD (  26.57  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190918_075150_645979_6B83F8A6 
+X-CRM114-Status: GOOD (  10.90  )
+X-Spam-Score: -0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [67.231.152.168 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,81 +102,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Peng Fan <peng.fan@nxp.com>, "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
+ linux-samsung-soc@vger.kernel.org, b.zolnierkie@samsung.com,
+ sbkim73@samsung.com, patches@opensource.cirrus.com, broonie@kernel.org,
+ lgirdwood@gmail.com, krzk@kernel.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 18 Sep 2019 09:19:46 -0500
-Jassi Brar <jassisinghbrar@gmail.com> wrote:
-
-Hi,
-
-> On Wed, Sep 18, 2019 at 4:44 AM Andre Przywara <andre.przywara@arm.com> wrote:
+On Wed, Sep 18, 2019 at 12:46:33PM +0200, Sylwester Nawrocki wrote:
+> Ensure there is no OF node references kept when the driver is removed/unbound.
 > 
-> >  
-> > > which needs 9 arguments to work. The fact that the fist argument is
-> > > always going to be same on a platform is just the way we use this
-> > > instruction.
-> > >  
-> > > > We should be as strict as possible to avoid any security issues.
-> > > >  
-> > > Any example of such a security issue?  
-> >
-> > Someone finds a way to trick some mailbox client to send a crafted message to the mailbox.
-> >  
-> What if someone finds a way to trick the block layer to erase 'sda' ?
+> Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
+> ---
 
-Yes, the Linux block driver control the whole block device, it can do whatever it wants.
-The firmware provides an interface for multiple users, and the mailbox controller just uses *one part* of it. So we should make sure that it's the right part.
+Reviewed-by: Charles Keepax <ckeepax@opensource.cirrus.com>
 
->  That is called "bug in the code".
-> It does happen in every subsystem but we don't stop implementing new
-> features .... we write flexible code and then fix any bug.
-> 
-> 
-> > Do you have any example of a use case where the mailbox client needs to provide the function ID?
-> >  
-> FSL_SIP_SCMI_1/2 ?
-
-Huh? Where does the SCPI or SCMI driver provide this? Those clients don't even provide any arguments. Adding some would defeat the whole point of having this mailbox in the first place, which was to provide a drop-in replacement for a hardware mailbox device used on other platforms.
-
-> But that is not the main point, which is to be consistent (not
-> ignoring first argument because someone may find a bug to exploit) and
-> flexible.
-
-Please read the SMCCC[1]: The first argument is in r1/w1/x1. r0/w0 is the function ID, and this is a specific value (fixed by the firmware implementation, see Peng's ATF patch) and not up to be guessed by a client.
-
-Please keep in mind that we should *NOT* do smc calls without following the SMCCC spec.
-
-> > > > The firmware certainly knows the function ID it implements. The firmware controls the DT. So it is straight-forward to put the ID into the DT. The firmware could even do this at boot time, dynamically, before passing on the DT to the non-secure world (bootloader or kernel).
-> > > >
-> > > > What would be the use case of this functionality?
-> > > >  
-> > > At least for flexibility and consistency.  
-> >
-> > I appreciate the flexibility idea, but when creating an interface, especially a generic one to any kind of firmware, you should be as strict as possible, to avoid clashes in the future.
-> >  
-> I really don't see how there can be clashes with more complete and
-> flexible implementation.
-
-Platform A uses PSCI, but no other SMCCC services, so in your scenario you assign a valid function ID say from the SIP range and tell the mailbox *client* to use it. Now you want to run this client on platform B, which happens to have chosen this very function ID for the "set fire on the device" SMCCC service.
-So now you would need to assign different IDs to the *client*, depending on the platform? That doesn't make sense. The solution is that you just assign the function ID to the controller, in the (platform specific) DT, so it naturally matches the platform requirements. You can even change it over time, as long as you change both the DT and firmware at the same time.
-The client (SCPI, for instance) is totally ignorant about this communication detail, it just needs some mailbox to request services.
-
-That's why I think the function ID (which is part of the SMCCC protocol, not of the mailbox service!) should just be set in the controller DT node and nowhere else.
-
-Cheers,
-Andre.
-
-[1] http://infocenter.arm.com/help/topic/com.arm.doc.den0028b/ARM_DEN0028B_SMC_Calling_Convention.pdf
+Thanks,
+Charles
 
 _______________________________________________
 linux-arm-kernel mailing list
