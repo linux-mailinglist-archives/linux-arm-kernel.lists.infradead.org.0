@@ -2,59 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4985CB5D76
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 08:39:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB6A8B5DB7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 09:01:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0AxOzz50QzfuEOluAM2Ze9znm4Nr3rd3nTVWXVaUb68=; b=sZzQEvYwOzf9/g
-	t6p2YYfyMXKHFOPPaO5ZSUd1nH2KEveBxd4ediggY6cZr+12MKV4DTmiZddIBAh/2FCxuRiawSskW
-	CttAB7D317avKdaTYaOTcwJveKSuBg7w2oc3mrNnryvyCofa2Qk2mlbmhL5xHPWD8sFb0mymTXmMe
-	MtLyfs67zDQfJNLnRtgFxsTWd/3hKQ4hePiRrIEx4w/w1eqGmy3kVpgsboD0JZfgo7HIkmIy6uVKK
-	07XVEWz1rYD1MKDjqqueca10ca3JTKzuI0jmb8XoU4nzFBi3UPbZYRrGErcz+5v7E4+8rgD6/cn52
-	uTIsFlJDoNJPGzUuFmgg==;
+	List-Owner; bh=gGD6/+94+I9j9Cr53NlPnDl/tweQhQQkieaQIRy1DoI=; b=STxJqueROv2XVj
+	dnx7798a0w/4fzoLh3quB8N+OTuD08U7kb/WnO+BOF9cg+DmOFfbAVZaQAVR/De2HlLIsE6hb4OMG
+	Cz9kpI+T/RoPZYKPBzKv7EoUKNvlOcHiM3pBv2QX6IGm4SWkNEBrWjC6TAmx+eTadgWCGQwXmFH1/
+	dIuQxf/IR8tKKoqOIWCkUEnKzsp6ELrGVoQ1iVHzL6UPeBoNU8t7sBCfQgDGxSDF00HxXXG8KaKQG
+	3k6s95h6PbyhkIZ+/iLjyeqZg8DkPtm7WQ7hp+yP/VO1Qii6oUsU8DagQ+Ej+BFij332vEn1WBvoQ
+	iPsmto2gfaTMYhwhvX8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iATcJ-0001iL-Eg; Wed, 18 Sep 2019 06:39:07 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iATxq-0000Ou-7j; Wed, 18 Sep 2019 07:01:22 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iATc5-0001gU-Cq
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 06:38:55 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1iATc2-0003Vb-Bq; Wed, 18 Sep 2019 08:38:50 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1iATby-0003FW-Lw; Wed, 18 Sep 2019 08:38:46 +0200
-From: =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-To: Rob Herring <robh+dt@kernel.org>,
-	Frank Rowand <frowand.list@gmail.com>
-Subject: [PATCH] of: restore old handling of cells_name=NULL in
- of_*_phandle_with_args()
-Date: Wed, 18 Sep 2019 08:38:37 +0200
-Message-Id: <20190918063837.8196-1-u.kleine-koenig@pengutronix.de>
-X-Mailer: git-send-email 2.23.0
+ id 1iATxY-0000Nn-Gx
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 07:01:06 +0000
+Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id B6B8A44CFCDE8B773C2F;
+ Wed, 18 Sep 2019 15:00:58 +0800 (CST)
+Received: from HGHY2Y004646261.china.huawei.com (10.184.12.158) by
+ DGGEMS413-HUB.china.huawei.com (10.3.19.213) with Microsoft SMTP Server id
+ 14.3.439.0; Wed, 18 Sep 2019 15:00:51 +0800
+From: Zenghui Yu <yuzenghui@huawei.com>
+To: <maz@kernel.org>
+Subject: [PATCH] irqchip/gic-v3: Fix GIC_LINE_NR accessor
+Date: Wed, 18 Sep 2019 06:57:30 +0000
+Message-ID: <1568789850-14080-1-git-send-email-yuzenghui@huawei.com>
+X-Mailer: git-send-email 2.6.4.windows.1
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-Originating-IP: [10.184.12.158]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_233853_446822_28496D14 
-X-CRM114-Status: GOOD (  16.78  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190918_000105_202352_93834AEE 
+X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,86 +62,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Geert Uytterhoeven <geert+renesas@glider.be>,
- =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <uwe@kleine-koenig.org>,
- Robin Murphy <robin.murphy@arm.com>, Joerg Roedel <joro@8bytes.org>,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- kernel@pengutronix.de, Matthias Brugger <matthias.bgg@gmail.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>, Will Deacon <will@kernel.org>,
- Peter Rosin <peda@axentia.se>, linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: jason@lakedaemon.net, linux-kernel@vger.kernel.org,
+ Zenghui Yu <yuzenghui@huawei.com>, wanghaibin.wang@huawei.com,
+ tglx@linutronix.de, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogVXdlIEtsZWluZS1Lw7ZuaWcgPHV3ZUBrbGVpbmUta29lbmlnLm9yZz4KCkJlZm9yZSBj
-b21taXQgZTQyZWU2MTAxN2Y1ICgib2Y6IExldCBvZl9mb3JfZWFjaF9waGFuZGxlIGZhbGxiYWNr
-IHRvCm5vbi1uZWdhdGl2ZSBjZWxsX2NvdW50IikgdGhlIGl0ZXJhdG9yIGZ1bmN0aW9ucyBjYWxs
-aW5nCm9mX2Zvcl9lYWNoX3BoYW5kbGUgYXNzdW1lZCBhIGNlbGwgY291bnQgb2YgMCBpZiBjZWxs
-c19uYW1lIHdhcyBOVUxMLgpUaGlzIGNvcm5lciBjYXNlIHdhcyBtaXNzZWQgd2hlbiBpbXBsZW1l
-bnRpbmcgdGhlIGZhbGxiYWNrIGxvZ2ljIGluCmU0MmVlNjEwMTdmNSBhbmQgcmVzdWx0ZWQgaW4g
-YW4gZW5kbGVzcyBsb29wLgoKUmVzdG9yZSB0aGUgb2xkIGJlaGF2aW91ciBvZiBvZl9jb3VudF9w
-aGFuZGxlX3dpdGhfYXJncygpIGFuZApvZl9wYXJzZV9waGFuZGxlX3dpdGhfYXJncygpIGFuZCBh
-ZGQgYSBjaGVjayB0bwpvZl9waGFuZGxlX2l0ZXJhdG9yX2luaXQoKSB0byBwcmV2ZW50IGEgc2lt
-aWxhciBmYWlsdXJlIGFzIGEgc2FmZXR5CnByZWNhdXRpb24uIG9mX3BhcnNlX3BoYW5kbGVfd2l0
-aF9hcmdzX21hcCgpIGRvZXNuJ3QgbmVlZCBhIHNpbWlsYXIgZml4CmFzIGNlbGxzX25hbWUgaXNu
-J3QgTlVMTCB0aGVyZS4KCkFmZmVjdGVkIGRyaXZlcnMgYXJlOgogLSBkcml2ZXJzL2Jhc2UvcG93
-ZXIvZG9tYWluLmMKIC0gZHJpdmVycy9iYXNlL3Bvd2VyL2RvbWFpbi5jCiAtIGRyaXZlcnMvY2xr
-L3RpL2Nsay1kcmE3LWF0bC5jCiAtIGRyaXZlcnMvaHdtb24vaWJtcG93ZXJudi5jCiAtIGRyaXZl
-cnMvaTJjL211eGVzL2kyYy1kZW11eC1waW5jdHJsLmMKIC0gZHJpdmVycy9pb21tdS9tdGtfaW9t
-bXUuYwogLSBkcml2ZXJzL25ldC9ldGhlcm5ldC9mcmVlc2NhbGUvZm1hbi9tYWMuYwogLSBkcml2
-ZXJzL29wcC9vZi5jCiAtIGRyaXZlcnMvcGVyZi9hcm1fZHN1X3BtdS5jCiAtIGRyaXZlcnMvcmVn
-dWxhdG9yL29mX3JlZ3VsYXRvci5jCiAtIGRyaXZlcnMvcmVtb3RlcHJvYy9pbXhfcnByb2MuYwog
-LSBkcml2ZXJzL3NvYy9yb2NrY2hpcC9wbV9kb21haW5zLmMKIC0gc291bmQvc29jL2ZzbC9pbXgt
-YXVkbWl4LmMKIC0gc291bmQvc29jL2ZzbC9pbXgtYXVkbWl4LmMKIC0gc291bmQvc29jL21lc29u
-L2F4Zy1jYXJkLmMKIC0gc291bmQvc29jL3NhbXN1bmcvdG0yX3dtNTExMC5jCiAtIHNvdW5kL3Nv
-Yy9zYW1zdW5nL3RtMl93bTUxMTAuYwoKVGhhbmtzIHRvIEdlZXJ0IFV5dHRlcmhvZXZlbiBmb3Ig
-cmVwb3J0aW5nIHRoZSBpc3N1ZSwgUGV0ZXIgUm9zaW4gZm9yCmhlbHBpbmcgcGlucG9pbnQgdGhl
-IGFjdHVhbCBwcm9ibGVtIGFuZCB0aGUgdGVzdGVycyBmb3IgY29uZmlybWluZyB0aGlzCmZpeC4K
-CkZpeGVzOiBlNDJlZTYxMDE3ZjUgKCJvZjogTGV0IG9mX2Zvcl9lYWNoX3BoYW5kbGUgZmFsbGJh
-Y2sgdG8gbm9uLW5lZ2F0aXZlIGNlbGxfY291bnQiKQpUZXN0ZWQtYnk6IE1hcmVrIFN6eXByb3dz
-a2kgPG0uc3p5cHJvd3NraUBzYW1zdW5nLmNvbT4KVGVzdGVkLWJ5OiBHZWVydCBVeXR0ZXJob2V2
-ZW4gPGdlZXJ0K3JlbmVzYXNAZ2xpZGVyLmJlPgpTaWduZWQtb2ZmLWJ5OiBVd2UgS2xlaW5lLUvD
-tm5pZyA8dS5rbGVpbmUta29lbmlnQHBlbmd1dHJvbml4LmRlPgotLS0KSGVsbG8sCgpjb21wYXJl
-ZCB0byB0aGUgdW50ZXN0ZWQgcGF0Y2ggSSBzZW50IHllc3RlcmRheSBJIGFsc28gZml4ZWQKb2Zf
-cGFyc2VfcGhhbmRsZV93aXRoX2FyZ3Mgd2hpY2ggaGFzIHRocmVlIHVzZXJzIHRoYXQgcGFzcwpj
-ZWxsc19uYW1lPU5VTEwuIChpLmUuIGRyaXZlcnMvY2xrL3RpL2Nsay1kcmE3LWF0bC5jLApzb3Vu
-ZC9zb2MvZnNsL2lteC1hdWRtaXguYywgc291bmQvc29jL3NhbXN1bmcvdG0yX3dtNTExMC5jKSBJ
-IGRpZG4ndApsb29rIGNsb3NlbHksIGJ1dCBtYXliZSB0aGVzZSBjb3VsZCBiZSBjb252ZXJ0ZWQg
-dG8gdXNlIG9mX3BhcnNlX3BoYW5kbGUKYXMgdGhlcmUgYXJlIG5vIGFyZ3VtZW50cyB0byBiZSBw
-cm9jZXNzZWQgd2l0aCBubyBjZWxsc19uYW1lPyEKCkJlc3QgcmVnYXJkcwpVd2UKCiBkcml2ZXJz
-L29mL2Jhc2UuYyB8IDMwICsrKysrKysrKysrKysrKysrKysrKysrKysrKystLQogMSBmaWxlIGNo
-YW5nZWQsIDI4IGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvZHJp
-dmVycy9vZi9iYXNlLmMgYi9kcml2ZXJzL29mL2Jhc2UuYwppbmRleCAyZjI1ZDJkZmVjZmEuLjI1
-ZWUwN2MwYTNjZCAxMDA2NDQKLS0tIGEvZHJpdmVycy9vZi9iYXNlLmMKKysrIGIvZHJpdmVycy9v
-Zi9iYXNlLmMKQEAgLTEyODYsNiArMTI4NiwxMyBAQCBpbnQgb2ZfcGhhbmRsZV9pdGVyYXRvcl9p
-bml0KHN0cnVjdCBvZl9waGFuZGxlX2l0ZXJhdG9yICppdCwKIAogCW1lbXNldChpdCwgMCwgc2l6
-ZW9mKCppdCkpOwogCisJLyoKKwkgKiBvbmUgb2YgY2VsbF9jb3VudCBvciBjZWxsc19uYW1lIG11
-c3QgYmUgcHJvdmlkZWQgdG8gZGV0ZXJtaW5lIHRoZQorCSAqIGFyZ3VtZW50IGxlbmd0aC4KKwkg
-Ki8KKwlpZiAoY2VsbF9jb3VudCA8IDAgJiYgIWNlbGxzX25hbWUpCisJCXJldHVybiAtRUlOVkFM
-OworCiAJbGlzdCA9IG9mX2dldF9wcm9wZXJ0eShucCwgbGlzdF9uYW1lLCAmc2l6ZSk7CiAJaWYg
-KCFsaXN0KQogCQlyZXR1cm4gLUVOT0VOVDsKQEAgLTE1MTIsMTAgKzE1MTksMTcgQEAgaW50IG9m
-X3BhcnNlX3BoYW5kbGVfd2l0aF9hcmdzKGNvbnN0IHN0cnVjdCBkZXZpY2Vfbm9kZSAqbnAsIGNv
-bnN0IGNoYXIgKmxpc3RfbmEKIAkJCQljb25zdCBjaGFyICpjZWxsc19uYW1lLCBpbnQgaW5kZXgs
-CiAJCQkJc3RydWN0IG9mX3BoYW5kbGVfYXJncyAqb3V0X2FyZ3MpCiB7CisJaW50IGNlbGxfY291
-bnQgPSAtMTsKKwogCWlmIChpbmRleCA8IDApCiAJCXJldHVybiAtRUlOVkFMOwotCXJldHVybiBf
-X29mX3BhcnNlX3BoYW5kbGVfd2l0aF9hcmdzKG5wLCBsaXN0X25hbWUsIGNlbGxzX25hbWUsIC0x
-LAotCQkJCQkgICAgaW5kZXgsIG91dF9hcmdzKTsKKworCS8qIElmIGNlbGxzX25hbWUgaWYgTlVM
-TCB3ZSBhc3N1bWUgYSBjZWxsIGNvdW50IG9mIDAgKi8KKwlpZiAoIWNlbGxzX25hbWUpCisJCWNl
-bGxfY291bnQgPSAwOworCisJcmV0dXJuIF9fb2ZfcGFyc2VfcGhhbmRsZV93aXRoX2FyZ3MobnAs
-IGxpc3RfbmFtZSwgY2VsbHNfbmFtZSwKKwkJCQkJICAgIGNlbGxfY291bnQsIGluZGV4LCBvdXRf
-YXJncyk7CiB9CiBFWFBPUlRfU1lNQk9MKG9mX3BhcnNlX3BoYW5kbGVfd2l0aF9hcmdzKTsKIApA
-QCAtMTc2NSw2ICsxNzc5LDE4IEBAIGludCBvZl9jb3VudF9waGFuZGxlX3dpdGhfYXJncyhjb25z
-dCBzdHJ1Y3QgZGV2aWNlX25vZGUgKm5wLCBjb25zdCBjaGFyICpsaXN0X25hCiAJc3RydWN0IG9m
-X3BoYW5kbGVfaXRlcmF0b3IgaXQ7CiAJaW50IHJjLCBjdXJfaW5kZXggPSAwOwogCisJLyogSWYg
-Y2VsbHNfbmFtZSBpcyBOVUxMIHdlIGFzc3VtZSBhIGNlbGwgY291bnQgb2YgMCAqLworCWlmIChj
-ZWxsc19uYW1lID09IE5VTEwpIHsKKwkJY29uc3QgX19iZTMyICpsaXN0OworCQlpbnQgc2l6ZTsK
-KworCQlsaXN0ID0gb2ZfZ2V0X3Byb3BlcnR5KG5wLCBsaXN0X25hbWUsICZzaXplKTsKKwkJaWYg
-KCFsaXN0KQorCQkJcmV0dXJuIC1FTk9FTlQ7CisKKwkJcmV0dXJuIHNpemUgLyBzaXplb2YoKmxp
-c3QpOworCX0KKwogCXJjID0gb2ZfcGhhbmRsZV9pdGVyYXRvcl9pbml0KCZpdCwgbnAsIGxpc3Rf
-bmFtZSwgY2VsbHNfbmFtZSwgLTEpOwogCWlmIChyYykKIAkJcmV0dXJuIHJjOwotLSAKMi4yMy4w
-CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
-YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
-LWtlcm5lbAo=
+As per GIC spec, ITLinesNumber indicates the maximum SPI INTID that
+the GIC implementation supports. And the maximum SPI INTID an
+implementation might support is 1019 (field value 11111).
+
+max(GICD_TYPER_SPIS(...), 1020) is not what we actually want for
+GIC_LINE_NR. Fix it to min(GICD_TYPER_SPIS(...), 1020).
+
+Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
+---
+
+Hi Marc,
+
+I still see "GICv3: 992 SPIs implemented" on the host. I go back to
+https://patchwork.kernel.org/patch/11078623/ and it seems that we
+failed to make the GIC_LINE_NR correct at that time.
+
+ drivers/irqchip/irq-gic-v3.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/irqchip/irq-gic-v3.c b/drivers/irqchip/irq-gic-v3.c
+index 7b0c96b9e02f..f4a49aef5ca4 100644
+--- a/drivers/irqchip/irq-gic-v3.c
++++ b/drivers/irqchip/irq-gic-v3.c
+@@ -59,7 +59,7 @@ static struct gic_chip_data gic_data __read_mostly;
+ static DEFINE_STATIC_KEY_TRUE(supports_deactivate_key);
+ 
+ #define GIC_ID_NR	(1U << GICD_TYPER_ID_BITS(gic_data.rdists.gicd_typer))
+-#define GIC_LINE_NR	max(GICD_TYPER_SPIS(gic_data.rdists.gicd_typer), 1020U)
++#define GIC_LINE_NR	min(GICD_TYPER_SPIS(gic_data.rdists.gicd_typer), 1020U)
+ #define GIC_ESPI_NR	GICD_TYPER_ESPIS(gic_data.rdists.gicd_typer)
+ 
+ /*
+-- 
+2.19.1
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
