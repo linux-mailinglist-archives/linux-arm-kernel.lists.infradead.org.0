@@ -2,80 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 428BFB6329
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 14:25:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F11D3B635F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 14:37:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1B8lmek3p4iNnT9lApnXEdmN+q6FOpoRzWFxdRc/l6Q=; b=jqcu0Vz0yAXjcY
-	sjtPYJZBTtd/8l2oQA6pnpNv1bqCsG9D0MXtYzDNf9pWcJcpzKytZjE6yN7MagyLMPHPNOfM0S2dv
-	vBN9cJ55HB7MT6/E3/EoG977uYDG/F5DG1MDxGWYY1+iWnKNNbxMvRVgbV6/CWbDjXcWYCHnCd+GJ
-	qAwyuqFse9fzLS5fAwGNVfwdqaPppb0+Nzys8bJ624I2OULq6pBadgLd+nEB5uwpPOE+GEj+WvU1e
-	RHlwotkjmQneg88ylNyimbCzKXkGmOWeVwR53u020J/89XpaidQZYmad05AkcMKtS2MMqEd7nW6lh
-	8xkeCWVyPDLvPGRKfPPw==;
+	List-Owner; bh=m+EhrYc7+FkrnBf56faJJydykmNq2sT7T6mscZR+thU=; b=uJ52fi8AI8BL1F
+	zJohUNR+BdooFeBAGB5triatxTfwAxs2wOdye44o1VTcqflucWqV7JWXRVyduXxySTS6qFUD97awT
+	Uw8zMRxU0Q+EBr0dR3rvsjcMlonHsUNP0V2rbgquev2jHBFl/zcAaJ7o60Dd4CCQYRKqkmFEbh7PQ
+	0ysgQs7QwYsvQTAyoK56gK711v9PEcvOwQ4ts2A2jVK2rPGtAudCmMXx1gayaT05AmpaaEWnbUOoZ
+	gBSJgOC1h7IejAQuquL5niB07pmXoM13WNDn42jZD3hoKUSDx2RjOcAHfXown81ejR+vbNN2hQC/W
+	p/9vuLfsqAtAwq96p4CA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAZ1q-0006ky-Kn; Wed, 18 Sep 2019 12:25:50 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iAZDJ-0003JB-7G; Wed, 18 Sep 2019 12:37:41 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAZ1R-0006kQ-9c
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 12:25:27 +0000
-Received: from mail-ot1-f52.google.com (mail-ot1-f52.google.com
- [209.85.210.52])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C298321907
+ id 1iAZCb-0003IP-2p
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 12:36:58 +0000
+Received: by mail-oi1-f196.google.com with SMTP id i16so5823984oie.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Sep 2019 12:25:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568809524;
- bh=SxzYIfH5rjzK9wl9N5FzlwSoGYp9dCn7lmb1V3FIxy4=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=HsARNV7wv+/hb1F5VTpCBxAdSCoV4G9AS4Q2I/2QSEKi6Wu0FLFfuLtIN38Z58ID8
- WnQkBYoLyZR/4XX24wB41fpa0knllyMxXiwhBnPMml89p4K1Sh6cLFGxI9YZkJNFUk
- 25Ol0lYYJz4al1Jb0yNGOKMx4Rl74YHDX4CLk7vQ=
-Received: by mail-ot1-f52.google.com with SMTP id z6so6144860otb.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Sep 2019 05:25:24 -0700 (PDT)
-X-Gm-Message-State: APjAAAWmJPdZqEetzFRLXvMtfBjF/N7AqwlGFsIPmY8V4ZVXjmJn3RF+
- +LIo6Hp5A7pLe3IQprQqUOLdMjmjw/JY1iIfqI0=
-X-Google-Smtp-Source: APXvYqy6hHaWJFNdVYTig4iJmjwL6JG/W+OXmovvhUxmIEhESB9QpIKlBVojQmMW1PINOfm310FkqYRWtGzcN9ishjc=
-X-Received: by 2002:a9d:378a:: with SMTP id x10mr2672823otb.222.1568809524165; 
- Wed, 18 Sep 2019 05:25:24 -0700 (PDT)
+ Wed, 18 Sep 2019 05:36:56 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=TGvS6AhUHn5wf4afwTlLa7uTvF5Onr61XOQ/Aq65EDw=;
+ b=cndDXOcKflRymfhCJ80sg45NTGCwCh98lFzNrnFxjdHP4qG9nLNdvKPbGfAiS6IFi2
+ kkQlsTHspiFI6cTkeIpYLvJ/ec/vZRczS4WYtt0m3GUCXenRvOMEh9JUY9oIc3TMDSD3
+ 2Yd6zdlZ8/4vHcynRsE87wAu+EHk/43f+7RZYtpJdb+pJzNmVmdZjfDeuUc+QvdK8MgT
+ 8f3EL5PC/pfFpLcrgbpncN/qDwJgbrRxcN4K1+92W5WVEjvwM4luih2DaS+P/O/1607T
+ +4vjPdYBNua0MSybWJ4+LMPiFr6WhLip7o2Y/Yh3dCooQUXnrv8m9l24MC7bHevdMZoI
+ IYJg==
+X-Gm-Message-State: APjAAAUAWIS+FZ3F7dNFliTyYvVZVIUYrIXRb6RDzzKuLqwMGAy3Lq4V
+ jUfXq9I5CL2upKMjQ8/7PQ==
+X-Google-Smtp-Source: APXvYqwHsTIV2zcgkEiykj1HNn8414Z7SeIjp6LokpIJB26rTRdmqxJN2riKchid6WJKJLxLC/bZ5Q==
+X-Received: by 2002:aca:1303:: with SMTP id e3mr1821190oii.6.1568810215772;
+ Wed, 18 Sep 2019 05:36:55 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id c12sm1616286otp.49.2019.09.18.05.36.54
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 18 Sep 2019 05:36:55 -0700 (PDT)
+Date: Wed, 18 Sep 2019 07:36:54 -0500
+From: Rob Herring <robh@kernel.org>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v2 08/11] dt-bindings: arm: samsung: Convert Exynos
+ System Registers bindings to json-schema
+Message-ID: <20190918123654.GA318@bogus>
+References: <20190907092007.9946-1-krzk@kernel.org>
+ <20190907092007.9946-8-krzk@kernel.org>
 MIME-Version: 1.0
-References: <20190907144442.16788-1-krzk@kernel.org>
- <5d7ba95e.1c69fb81.bba41.66c2@mx.google.com>
-In-Reply-To: <5d7ba95e.1c69fb81.bba41.66c2@mx.google.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Wed, 18 Sep 2019 14:25:12 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPeCH-hp40gnC4W5Fn8Z0OWqF74H4r1RQOJTCnu72wmrZQ@mail.gmail.com>
-Message-ID: <CAJKOXPeCH-hp40gnC4W5Fn8Z0OWqF74H4r1RQOJTCnu72wmrZQ@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: memory-controllers: Convert Samsung Exynos
- SROM bindings to json-schema
-To: Rob Herring <robh@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20190907092007.9946-8-krzk@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_052525_369675_745A847A 
-X-CRM114-Status: GOOD (  25.64  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190918_053657_128408_4BBFCD6D 
+X-CRM114-Status: GOOD (  18.57  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.196 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,156 +92,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Lars-Peter Clausen <lars@metafoo.de>, devicetree@vger.kernel.org,
+ linux-iio@vger.kernel.org, linux-pm@vger.kernel.org,
+ Sebastian Reichel <sre@kernel.org>, linux-kernel@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
+ linux-rtc@vger.kernel.org, Jonathan Cameron <jic23@kernel.org>,
+ =?utf-8?B?UGF3ZcWC?= Chmiel <pawel.mikolaj.chmiel@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 13 Sep 2019 at 16:36, Rob Herring <robh@kernel.org> wrote:
->
-> On Sat, Sep 07, 2019 at 04:44:42PM +0200, Krzysztof Kozlowski wrote:
-> > Convert Samsung Exynos SROM controller bindings to DT schema format
-> > using json-schema.
-> >
-> > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> > ---
-> >  .../memory-controllers/exynos-srom.txt        |  79 ----------
-> >  .../memory-controllers/exynos-srom.yaml       | 136 ++++++++++++++++++
-> >  2 files changed, 136 insertions(+), 79 deletions(-)
-> >  delete mode 100644 Documentation/devicetree/bindings/memory-controllers/exynos-srom.txt
-> >  create mode 100644 Documentation/devicetree/bindings/memory-controllers/exynos-srom.yaml
->
->
-> > diff --git a/Documentation/devicetree/bindings/memory-controllers/exynos-srom.yaml b/Documentation/devicetree/bindings/memory-controllers/exynos-srom.yaml
-> > new file mode 100644
-> > index 000000000000..9573bcfd68bf
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/memory-controllers/exynos-srom.yaml
-> > @@ -0,0 +1,136 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/memory-controllers/exynos-srom.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Samsung Exynos SoC SROM Controller driver
-> > +
-> > +maintainers:
-> > +  - Krzysztof Kozlowski <krzk@kernel.org>
-> > +
-> > +description: |+
-> > +  The SROM controller can be used to attach external peripherals. In this case
-> > +  extra properties, describing the bus behind it, should be specified.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    items:
-> > +      - const: samsung,exynos4210-srom
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  "#address-cells":
-> > +    const: 2
-> > +
-> > +  "#size-cells":
-> > +    const: 1
-> > +
-> > +  ranges:
-> > +    description: |
-> > +      Reflects the memory layout with four integer values per bank. Format:
-> > +      <bank-number> 0 <parent address of bank> <size>
-> > +
-> > +patternProperties:
-> > +  "^.*@[0-9]+,[0-9]+$":
->
-> How many chip selects? Can be a single digit?
+On Sat, Sep 07, 2019 at 11:20:04AM +0200, Krzysztof Kozlowski wrote:
+> Convert Samsung Exynos System Registers (SYSREG) bindings to DT schema
+> format using json-schema.
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+> 
+> ---
+> 
+> Example somehow fails:
+> Documentation/devicetree/bindings/arm/samsung/pmu.example.dt.yaml:
+> system-controller@10040000: compatible:0: 'samsung,exynos5250-pmu' is
+> not one of ['samsung,exynos4-sysreg', 'samsung,exynos5-sysreg']
+> 
+> It seems that PMU schema is applied to sysreq nodes (and vice-versa).
+> ---
+>  .../bindings/arm/samsung/sysreg.txt           | 19 -----------
+>  .../bindings/arm/samsung/sysreg.yaml          | 33 +++++++++++++++++++
+>  2 files changed, 33 insertions(+), 19 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/arm/samsung/sysreg.txt
+>  create mode 100644 Documentation/devicetree/bindings/arm/samsung/sysreg.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/arm/samsung/sysreg.txt b/Documentation/devicetree/bindings/arm/samsung/sysreg.txt
+> deleted file mode 100644
+> index 4fced6e9d5e4..000000000000
+> --- a/Documentation/devicetree/bindings/arm/samsung/sysreg.txt
+> +++ /dev/null
+> @@ -1,19 +0,0 @@
+> -SAMSUNG S5P/Exynos SoC series System Registers (SYSREG)
+> -
+> -Properties:
+> - - compatible : should contain two values. First value must be one from following list:
+> -		- "samsung,exynos4-sysreg" - for Exynos4 based SoCs,
+> -		- "samsung,exynos5-sysreg" - for Exynos5 based SoCs.
+> -		second value must be always "syscon".
+> - - reg : offset and length of the register set.
+> -
+> -Example:
+> -	syscon@10010000 {
+> -		compatible = "samsung,exynos4-sysreg", "syscon";
+> -		reg = <0x10010000 0x400>;
+> -	};
+> -
+> -	syscon@10050000 {
+> -		compatible = "samsung,exynos5-sysreg", "syscon";
+> -		reg = <0x10050000 0x5000>;
+> -	};
+> diff --git a/Documentation/devicetree/bindings/arm/samsung/sysreg.yaml b/Documentation/devicetree/bindings/arm/samsung/sysreg.yaml
+> new file mode 100644
+> index 000000000000..a3d44646e441
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/arm/samsung/sysreg.yaml
+> @@ -0,0 +1,33 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/arm/samsung/sysreg.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Samsung S5P/Exynos SoC series System Registers (SYSREG)
+> +
+> +maintainers:
+> +  - Krzysztof Kozlowski <krzk@kernel.org>
+> +
+> +properties:
+> +  compatible:
+> +    items:
+> +      - enum:
+> +          - samsung,exynos4-sysreg
+> +          - samsung,exynos5-sysreg
+> +      - const: syscon
 
-Currently up to four banks, so I can limit the pattern.
+The problem is this will by default match any node with 'syscon'. You 
+have to add a custom 'select' entry. See the LVDS panel bindings for an 
+example.
 
->
-> Also, these should be hex values.
+I'd like to kill off 'syscon'...
 
-Sure.
-
->
-> > +    type: object
-> > +    description:
-> > +      The actual device nodes should be added as subnodes to the SROMc node.
-> > +      These subnodes, in addition to regular device specification, should
-> > +      contain the following properties, describing configuration
-> > +      of the relevant SROM bank.
-> > +
-> > +    properties:
-> > +      reg:
-> > +        description:
-> > +          Bank number, base address (relative to start of the bank) and size
-> > +          of the memory mapped for the device. Note that base address will be
-> > +          typically 0 as this is the start of the bank.
-> > +        maxItems: 1
-> > +
-> > +      reg-io-width:
-> > +        allOf:
-> > +          - $ref: /schemas/types.yaml#/definitions/uint32
-> > +          - enum: [1, 2]
-> > +        description:
-> > +          Data width in bytes (1 or 2). If omitted, default of 1 is used.
-> > +
-> > +      samsung,srom-page-mode:
-> > +        description:
-> > +          If page mode is set, 4 data page mode will be configured,
-> > +          else normal (1 data) page mode will be set.
-> > +        type: boolean
-> > +
-> > +      samsung,srom-timing:
-> > +        allOf:
-> > +          - $ref: /schemas/types.yaml#/definitions/uint32-array
-> > +          - items:
-> > +              minItems: 6
-> > +              maxItems: 6
-> > +        description: |
-> > +          Array of 6 integers, specifying bank timings in the following order:
-> > +          Tacp, Tcah, Tcoh, Tacc, Tcos, Tacs.
-> > +          Each value is specified in cycles and has the following meaning
-> > +          and valid range:
-> > +          Tacp: Page mode access cycle at Page mode (0 - 15)
-> > +          Tcah: Address holding time after CSn (0 - 15)
-> > +          Tcoh: Chip selection hold on OEn (0 - 15)
-> > +          Tacc: Access cycle (0 - 31, the actual time is N + 1)
-> > +          Tcos: Chip selection set-up before OEn (0 - 15)
-> > +          Tacs: Address set-up before CSn (0 - 15)
-> > +
-> > +    required:
-> > +      - reg
-> > +      - samsung,srom-timing
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +
-> > +allOf:
-> > +  - if:
-> > +      anyOf:
-> > +        - required: [ "#address-cells" ]
-> > +        - required: [ ranges ]
-> > +        - required: [ "#size-cells" ]
-> > +    then:
-> > +      required:
-> > +        - "#address-cells"
-> > +        - ranges
-> > +        - "#size-cells"
->
-> I don't think this is necessary as the core schema should take care of
-> it. This can also be expressed using 'dependencies'.
-
-I'll skip it then.
-
-Best regards,
-Krzysztof
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +examples:
+> +  - |
+> +    syscon@10010000 {
+> +      compatible = "samsung,exynos4-sysreg", "syscon";
+> +      reg = <0x10010000 0x400>;
+> +    };
+> +
+> +    syscon@10050000 {
+> +      compatible = "samsung,exynos5-sysreg", "syscon";
+> +      reg = <0x10050000 0x5000>;
+> +    };
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
