@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C14C9B63CB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 14:57:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C3C6B63D1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 14:58:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aIF69NqqLqaUI1/atAbGV3ENS0+8sff93Aa9i0jJfMA=; b=VkuHPuqjH64LKd
-	xi9JLRPdlxRNyczRRAyHO6JAomuLNDif7nJhLLJR1gM2ayssQcm2eQl/lXuPoYwI0LnoKcjALwiH4
-	8+rThYa2kGFiiFu0BpOAYdhGCp+LmX+V0yr6WcsOBekKWxk0MHFBTv1hjBSN7sdliKn07XBpWtJeV
-	ctk/XY29rEQlqGUgXAnrmCDARteuZLvlugWqSgkVocgRd7rBLVPMz/kURIx0z2tZ9PwQ9mkZYtK9y
-	l4bh67oEXEFo8ZwH+itIM79KUd2h3kE/afx4gAbukCtlOMDMlah8st+kNS14EtIhPZYdd0oQH11V5
-	IS9m2Z1tSy7Hl3+XhEkw==;
+	List-Owner; bh=l5YLD1Ruds4BIDkYJw4rLXc5DJLYN3b++24Hrp239l8=; b=rHnExNV86teFh+
+	iAo9pu6F9cVovCVd+oxd9Kp4uatu5lUVDfR+dnQfTxm85vW6CGmoV8cGoI0buySIwrTWImmpbvrYq
+	e4fuFctfrBDj9LBb50L8yUbWCLK4NZ5MKQRwZNDmT9cldAJ6m1Lsyqv0BmBpC1QJ/CEItbzZpmiY1
+	Hd+s+67DATKUQzZNx+puwJowS4sRx1BhdAZhigcoQqGOeyaYEdm32yY7gBmNXrV0vGSUUmNntZ69G
+	SzdeyxKReDB5jO/xLJlvbBB1JhNqJ8zJzkEraj8fG3AwBa9zjNj4nfEgi7yg+5J1xg+x1ObQ1MOz2
+	FCYU9j3Aw9iZaqIBNoFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAZWa-0003aW-NH; Wed, 18 Sep 2019 12:57:36 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1iAZX2-0003ni-Iw; Wed, 18 Sep 2019 12:58:04 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAZVA-0003Nb-DA
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 12:56:10 +0000
-Received: by mail-oi1-f196.google.com with SMTP id w17so5834048oiw.8
+ id 1iAZVN-0003Sg-9k
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 12:56:22 +0000
+Received: by mail-oi1-f194.google.com with SMTP id t84so5828457oih.10
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Sep 2019 05:56:08 -0700 (PDT)
+ Wed, 18 Sep 2019 05:56:21 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ReA/o+x2vyuqjFCUqAB1yNYGSIto+aghusagtGQT+Yw=;
- b=gkJR9nFu75A1r8ePt/hNYDstN4cyXJK4hg1Wtxn9Yw4eh7/5uV34YDiJ+hRWZ2jFCa
- WMRXmLstGh6NGaOkiFVmi7BC7eXlOWFIcPu4gBM4KoTBY0LD4QPKS2p6cAVrfRyHdtl9
- RzuZs+VdUvp5PctW5g2zXft2AI/rQb9v7QCcb0eNhwTe5csgOP/hc9hgs8ICdHuaSv3P
- Jdg0pWQTxtLUMPeJuJi0TVqVaevBeMfZ8R4JXAzGILwmak+J/67Rts/lkXywlJKT1Yqq
- cM5oqrhM0VhhEExH8TtCNf8wlr1ZzZUTEcoVeMmcj4ywy9C3qpA0+PtYAL2mVETkL578
- o4wQ==
-X-Gm-Message-State: APjAAAUfKBRkSBZvQ1mxItvf33J2AJEgC3lalanwcr4ZvziURxINPex4
- IYryqM7pTuTMTy/3s2x5EQ==
-X-Google-Smtp-Source: APXvYqyI08mETSJl68juHYwpSNiK/1VK+99TD6jA1kRhVRKRECzk7usQXauXvTJmWRD3J2KLPDFI8g==
-X-Received: by 2002:aca:ed52:: with SMTP id l79mr1885758oih.47.1568811367689; 
- Wed, 18 Sep 2019 05:56:07 -0700 (PDT)
+ bh=9z2gkQffuOGMGL78pWa03VnRChChH9T41AS/dVzZHSw=;
+ b=g/f/kvcIjnBNN/ljWVky2OUGoe4s4d0jxrVMj8ihR8KiCYWKojlGBFaumX2ydi/2k9
+ BCVYDCBkH3CYo0svRufntn++GNXcPkd4gGWxwzEON9cGmPVTiq+5u/Q5onSj+ee3291E
+ pT8psJfN8WrWPcw4O7L+4uWAG8UkcScrLbbf43/U7Ofbggd8R/oGb8X5r8jU0lT3LGx2
+ tBRla0484xyn9e8TUFNg7QUfmEwoKc4Pv39CnlHAKRSHyvvyPUq9rkp4x5bWA4KEbXin
+ PHDG1FOeT399/QI3FsiVKJ7erh1ioW6FjPVn085BNnHrTVgLG7qICCr1Hp8NWvY06Wni
+ TzXg==
+X-Gm-Message-State: APjAAAWebCpzV+9wKkfnNBzOpO9MpbQnNjC6FPYchgrX/Fx/8m2gP4JA
+ Qo1YUz4O3cfKoJ1jrHRAKQ==
+X-Google-Smtp-Source: APXvYqxyqJqx44Na/6zs9v/Q7DffiYnZflmnCo24kvOLEqFzYYmo99uC8KAM0TN40xe5W6QKO83t7g==
+X-Received: by 2002:aca:b909:: with SMTP id j9mr1957210oif.4.1568811380352;
+ Wed, 18 Sep 2019 05:56:20 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id 5sm1815779otp.20.2019.09.18.05.56.06
+ by smtp.gmail.com with ESMTPSA id b5sm1769265oia.20.2019.09.18.05.56.19
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Sep 2019 05:56:07 -0700 (PDT)
-Date: Wed, 18 Sep 2019 07:56:06 -0500
+ Wed, 18 Sep 2019 05:56:19 -0700 (PDT)
+Date: Wed, 18 Sep 2019 07:56:19 -0500
 From: Rob Herring <robh@kernel.org>
 To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH v2 02/11] dt-bindings: power: syscon-poweroff: Convert
- bindings to json-schema
-Message-ID: <20190918125606.GA29089@bogus>
+Subject: Re: [PATCH v2 03/11] dt-bindings: arm: samsung: Convert Samsung
+ board/soc bindings to json-schema
+Message-ID: <20190918125619.GA29595@bogus>
 References: <20190907092007.9946-1-krzk@kernel.org>
- <20190907092007.9946-2-krzk@kernel.org>
+ <20190907092007.9946-3-krzk@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190907092007.9946-2-krzk@kernel.org>
+In-Reply-To: <20190907092007.9946-3-krzk@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_055609_099691_A8446579 
-X-CRM114-Status: GOOD (  10.06  )
+X-CRM114-CacheID: sfid-20190918_055621_449107_59671A8C 
+X-CRM114-Status: GOOD (  12.74  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
+ no trust [209.85.167.194 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -78,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
+ [209.85.167.194 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -103,23 +103,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat,  7 Sep 2019 11:19:58 +0200, Krzysztof Kozlowski wrote:
-> Convert the Syscon poweroff bindings to DT schema format using
-> json-schema.
+On Sat,  7 Sep 2019 11:19:59 +0200, Krzysztof Kozlowski wrote:
+> Convert Samsung S5P and Exynos SoC bindings to DT schema format using
+> json-schema.  This is purely conversion of already documented bindings
+> so it does not cover all of DTS in the Linux kernel (few S5P/Exynos and
+> all S3C are missing).
 > 
 > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 > 
 > ---
 > 
 > Changes since v1:
-> 1. Remove unneeded maxItems from uint32 fields,
-> 2. Simplify if-else-then.
+> 1. Make Google boards latest revision as const.
+> 2. Split secure firmware into separate schema.
 > ---
->  .../bindings/power/reset/syscon-poweroff.txt  | 30 ----------
->  .../bindings/power/reset/syscon-poweroff.yaml | 60 +++++++++++++++++++
->  2 files changed, 60 insertions(+), 30 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/power/reset/syscon-poweroff.txt
->  create mode 100644 Documentation/devicetree/bindings/power/reset/syscon-poweroff.yaml
+>  .../bindings/arm/samsung/samsung-boards.txt   |  83 ---------
+>  .../bindings/arm/samsung/samsung-boards.yaml  | 165 ++++++++++++++++++
+>  .../arm/samsung/samsung-secure-firmware.yaml  |  31 ++++
+>  3 files changed, 196 insertions(+), 83 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/arm/samsung/samsung-boards.txt
+>  create mode 100644 Documentation/devicetree/bindings/arm/samsung/samsung-boards.yaml
+>  create mode 100644 Documentation/devicetree/bindings/arm/samsung/samsung-secure-firmware.yaml
 > 
 
 Applied, thanks.
