@@ -2,98 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C367B64D0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 15:39:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C827B650D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 15:51:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CE86C8irU2/OzxsfeYV2eyB7YM/IsVP7aju8jQiM0po=; b=RCSHuw1Vz7BN/Z
-	3hlgMg3hZIhv82qW6jNnLHk/H2o+xTjPnD5llLpohJk+u4C1pn7ZvdDXA4K1pJ8vd0pPR2VS443wP
-	1uL+cetS76t0F0+gqbp3vUJZj51o8wz+s8XVBSMKD1mrawOqHTTWurQ2DHdvbaERaVXfMBxH3HbaP
-	TbiSpmeB+/W8N+L2f9Q4m8FeJyJkg3vALgdszXDD/KNynZEw6Slg5MKQUl3h8hbjbpL+HGxTFgana
-	NgqaLTSM+6hxpMX++yv01jhf+oxYU4fiYbyLK1MIhc1Mtnby80KJTrVVUj0MenOOPG47S85HHsthy
-	bCIdozXBnmCs2AGBOouA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Y2TglwbqbYC6Il5EoRSFMuBd/aiBILA5hZTjYqpnRrU=; b=Vni0lKLZ87d1tZiNP1F3qeyIN
+	HJVHhBlhxhrypD5I0z4UQ8wkno6V52xCy8X+UhSui1h+h0kThhbjCYj9OZtRc9rD0u3E/UVt1uzty
+	u0SLPwQigRBKdn83C9lLxKXUlIUAroRf1BvF8NNgYP3qLgrql5RRk1r8nL6RbGLV9llJGi5/eVIkZ
+	FarbWLb06Fk2uaXuOmUBIyYMuDH4Qcbduqc852cxJo4+giTataUSdMXMHUbt8E9i8fRQM/lPYwMGi
+	HOzgAubl79Y2fu9Bx/Io/xDg6quJ87/Rm4E+uwhNWLR8/pvcDfSryJka4awFAajmM3/saoPbk22Cc
+	veYX5Acqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAaB6-0005N7-76; Wed, 18 Sep 2019 13:39:28 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1iAaMw-0001zb-Cw; Wed, 18 Sep 2019 13:51:42 +0000
+Received: from mx1.mailbox.org ([2001:67c:2050:104:0:1:25:1])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAaAt-0005Ld-2f
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 13:39:16 +0000
-Received: by mail-pl1-x644.google.com with SMTP id q24so3180957plr.13
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Sep 2019 06:39:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=3coPOKz829YesHs8WeDQ/ai4YhjPoVLGbSy497MH0Io=;
- b=qS7h3ZDAoTFnRgGv1UvQCSos0CEKYa1Ol1rQOd4jzD/JiSP6N5vVOwdF3Z8RuVSoZr
- 1mDJJ7fYVFpPwIN02QXU82nX1V+QV9KrobEe4wkD83KdWXbj43Yh4BTcbIURV2Napwuy
- IgdbW27UiEIT0qhx5u4WUTm62RgWNpl+ewghEdfF28M0X8pHIJn5YRfGbPLFERi2EzQh
- uW5DYqh/4bV9ON4D8XGmAcLmkChMCsh/jlDakaMQu2SgxvoiopdjqpLss1xB9NPiOefk
- 2VRAUUDEYjHdTJ8B2l6jpzLuUONFWHhdDDGzYQSKQr8A3J3URqnCeq/KL0chK7/u1pRV
- g+Mg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=3coPOKz829YesHs8WeDQ/ai4YhjPoVLGbSy497MH0Io=;
- b=SfQAA2dDh3BD1mca/kqkTKGQKxsoKZxT1FRs3/etcwBHMdgRk9exxzBtLL7eT9VuRF
- VPFz2i6PcwienocTp1gZlW3TZwlwehcA9MihNyviGQaEHZ5v9ePqB8loM3ktMRvDtC0o
- HsvSwTTSqoFD8mSDbt/2KLG2W32M8KRQctffsnFS9Q/HwWHhh7rJ0Qo4739ILe8PXT2W
- p+qOpzmKxnMDt4sNDqP1SKUG2sunimzpb5rIDOTccFTEblc9KpvZjEfzoP5jYupRb6mK
- +nUY8FGLTAVxIAzv2EXUYaTtyHdqSSNaDWYDOn5cotfqGeN0IHt1CrYyAGfzjIuClkI6
- /QMg==
-X-Gm-Message-State: APjAAAUSrsBNxrc7ROWQ60peZjFWfRxJ5fnCRHUl29jm9nhBP/n607qo
- UJPOeT9ms68+69Ceokq+SdA=
-X-Google-Smtp-Source: APXvYqx81mSybzdQj0FZPyN7+YBbDAJ170gLkLCt6Wq3XQvIapP6vM/UArMpEQXp4CHtzTBTBTmctA==
-X-Received: by 2002:a17:902:8f90:: with SMTP id
- z16mr4266870plo.138.1568813953713; 
- Wed, 18 Sep 2019 06:39:13 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id 197sm18396233pge.39.2019.09.18.06.39.13
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 18 Sep 2019 06:39:13 -0700 (PDT)
-Date: Wed, 18 Sep 2019 06:39:12 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Markus Elfring <Markus.Elfring@web.de>
-Subject: Re: [PATCH] hwmon: (aspeed-pwm-tacho) Use
- devm_platform_ioremap_resource() in aspeed_pwm_tacho_probe()
-Message-ID: <20190918133912.GA14788@roeck-us.net>
-References: <cd5bab7b-9333-2a43-bcf0-a47bbbe719eb@web.de>
+ id 1iAaMf-0001y5-0z
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 13:51:27 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mx1.mailbox.org (Postfix) with ESMTPS id 4C49450BA7;
+ Wed, 18 Sep 2019 15:51:15 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp1.mailbox.org ([80.241.60.240])
+ by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
+ (amavisd-new, port 10030)
+ with ESMTP id LF0_75sV9oFp; Wed, 18 Sep 2019 15:51:08 +0200 (CEST)
+Date: Wed, 18 Sep 2019 15:51:00 +0200
+From: Aleksa Sarai <cyphar@cyphar.com>
+To: Jann Horn <jannh@google.com>
+Subject: Re: [PATCH v12 05/12] namei: obey trailing magic-link DAC permissions
+Message-ID: <20190918135100.sdxdmdluq6wlwryv@yavin.microfocus.com>
+References: <20190904201933.10736-1-cyphar@cyphar.com>
+ <20190904201933.10736-6-cyphar@cyphar.com>
+ <CAG48ez1_64249RdX6Nj_32YS+jhuXZBAd_ZL9ozggbSQy+cc-A@mail.gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cd5bab7b-9333-2a43-bcf0-a47bbbe719eb@web.de>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <CAG48ez1_64249RdX6Nj_32YS+jhuXZBAd_ZL9ozggbSQy+cc-A@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_063915_131819_3FF95B35 
-X-CRM114-Status: GOOD (  15.99  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20190918_065125_411762_0AA05E38 
+X-CRM114-Status: GOOD (  28.74  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:67c:2050:104:0:1:25:1 listed in]
  [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,64 +67,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-hwmon@vger.kernel.org, Jean Delvare <jdelvare@suse.com>,
- linux-aspeed@lists.ozlabs.org, Andrew Jeffery <andrew@aj.id.au>,
- kernel-janitors@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, Joel Stanley <joel@jms.id.au>,
- linux-arm-kernel@lists.infradead.org,
- Himanshu Jha <himanshujha199640@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Alexei Starovoitov <ast@kernel.org>,
+ kernel list <linux-kernel@vger.kernel.org>,
+ David Howells <dhowells@redhat.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ sparclinux@vger.kernel.org, Jiri Olsa <jolsa@redhat.com>,
+ linux-arch <linux-arch@vger.kernel.org>,
+ linux-s390 <linux-s390@vger.kernel.org>, Tycho Andersen <tycho@tycho.ws>,
+ Aleksa Sarai <asarai@suse.de>, Shuah Khan <shuah@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ linuxppc-dev@lists.ozlabs.org, linux-m68k@lists.linux-m68k.org,
+ Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
+ David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
+ Linux API <linux-api@vger.kernel.org>, Chanho Min <chanho.min@lge.com>,
+ Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
+ linux-fsdevel <linux-fsdevel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Linux Containers <containers@lists.linux-foundation.org>
+Content-Type: multipart/mixed; boundary="===============6397084948842391183=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 18, 2019 at 10:20:09AM +0200, Markus Elfring wrote:
-> From: Markus Elfring <elfring@users.sourceforge.net>
-> Date: Wed, 18 Sep 2019 10:12:31 +0200
-> 
-> Simplify this function implementation by using a known wrapper function.
-> 
-> This issue was detected by using the Coccinelle software.
-> 
-> Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
 
-Applied to hwmon-next.
+--===============6397084948842391183==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="gouyu6bptahztw3s"
+Content-Disposition: inline
 
-Thanks,
-Guenter
 
-> ---
->  drivers/hwmon/aspeed-pwm-tacho.c | 7 +------
->  1 file changed, 1 insertion(+), 6 deletions(-)
-> 
-> --
-> 2.23.0
-> 
-> diff --git a/drivers/hwmon/aspeed-pwm-tacho.c b/drivers/hwmon/aspeed-pwm-tacho.c
-> index 40c489be62ea..33fb54845bf6 100644
-> --- a/drivers/hwmon/aspeed-pwm-tacho.c
-> +++ b/drivers/hwmon/aspeed-pwm-tacho.c
-> @@ -891,17 +891,12 @@ static int aspeed_pwm_tacho_probe(struct platform_device *pdev)
->  	struct device_node *np, *child;
->  	struct aspeed_pwm_tacho_data *priv;
->  	void __iomem *regs;
-> -	struct resource *res;
->  	struct device *hwmon;
->  	struct clk *clk;
->  	int ret;
-> 
->  	np = dev->of_node;
-> -
-> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	if (!res)
-> -		return -ENOENT;
-> -	regs = devm_ioremap_resource(dev, res);
-> +	regs = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(regs))
->  		return PTR_ERR(regs);
->  	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
+--gouyu6bptahztw3s
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On 2019-09-17, Jann Horn <jannh@google.com> wrote:
+> On Wed, Sep 4, 2019 at 10:21 PM Aleksa Sarai <cyphar@cyphar.com> wrote:
+> > The ability for userspace to "re-open" file descriptors through
+> > /proc/self/fd has been a very useful tool for all sorts of usecases
+> > (container runtimes are one common example). However, the current
+> > interface for doing this has resulted in some pretty subtle security
+> > holes. Userspace can re-open a file descriptor with more permissions
+> > than the original, which can result in cases such as /proc/$pid/exe
+> > being re-opened O_RDWR at a later date even though (by definition)
+> > /proc/$pid/exe cannot be opened for writing. When combined with O_PATH
+> > the results can get even more confusing.
+> [...]
+> > Instead we have to restrict it in such a way that it doesn't break
+> > (good) users but does block potential attackers. The solution applied in
+> > this patch is to restrict *re-opening* (not resolution through)
+> > magic-links by requiring that mode of the link be obeyed. Normal
+> > symlinks have modes of a+rwx but magic-links have other modes. These
+> > magic-link modes were historically ignored during path resolution, but
+> > they've now been re-purposed for more useful ends.
+>=20
+> Thanks for dealing with this issue!
+>=20
+> [...]
+> > diff --git a/fs/namei.c b/fs/namei.c
+> > index 209c51a5226c..54d57dad0f91 100644
+> > --- a/fs/namei.c
+> > +++ b/fs/namei.c
+> > @@ -872,7 +872,7 @@ void nd_jump_link(struct path *path)
+> >
+> >         nd->path =3D *path;
+> >         nd->inode =3D nd->path.dentry->d_inode;
+> > -       nd->flags |=3D LOOKUP_JUMPED;
+> > +       nd->flags |=3D LOOKUP_JUMPED | LOOKUP_MAGICLINK_JUMPED;
+> >  }
+> [...]
+> > +static int trailing_magiclink(struct nameidata *nd, int acc_mode,
+> > +                             fmode_t *opath_mask)
+> > +{
+> > +       struct inode *inode =3D nd->link_inode;
+> > +       fmode_t upgrade_mask =3D 0;
+> > +
+> > +       /* Was the trailing_symlink() a magic-link? */
+> > +       if (!(nd->flags & LOOKUP_MAGICLINK_JUMPED))
+> > +               return 0;
+> > +
+> > +       /*
+> > +        * Figure out the upgrade-mask of the link_inode. Since these a=
+ren't
+> > +        * strictly POSIX semantics we don't do an acl_permission_check=
+() here,
+> > +        * so we only care that at least one bit is set for each upgrad=
+e-mode.
+> > +        */
+> > +       if (inode->i_mode & S_IRUGO)
+> > +               upgrade_mask |=3D FMODE_PATH_READ;
+> > +       if (inode->i_mode & S_IWUGO)
+> > +               upgrade_mask |=3D FMODE_PATH_WRITE;
+> > +       /* Restrict the O_PATH upgrade-mask of the caller. */
+> > +       if (opath_mask)
+> > +               *opath_mask &=3D upgrade_mask;
+> > +       return may_open_magiclink(upgrade_mask, acc_mode);
+> >  }
+>=20
+> This looks racy because entries in the file descriptor table can be
+> switched out as long as task->files->file_lock isn't held. Unless I'm
+> missing something, something like the following (untested) would
+> bypass this restriction:
+
+You're absolutely right -- good catch!
+
+> Perhaps you could change nd_jump_link() to "void nd_jump_link(struct
+> path *path, umode_t link_mode)", and let proc_pid_get_link() pass the
+> link_mode through from an out-argument of .proc_get_link()? Then
+> proc_fd_link() could grab the proper mode in a race-free manner. And
+> nd_jump_link() could stash the mode in the nameidata.
+
+This indeed does appear to be the simplest solution -- I'm currently
+testing a variation of the patch you proposed (with a few extra bits to
+deal with nd_jump_link and proc_get_link being used elsewhere).
+
+I'll include this change (assuming it fixes the flaw you found) in the
+v13 series I'll send around next week. Thanks, Jann!
+
+--=20
+Aleksa Sarai
+Senior Software Engineer (Containers)
+SUSE Linux GmbH
+<https://www.cyphar.com/>
+
+--gouyu6bptahztw3s
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXYI2QQAKCRCdlLljIbnQ
+EmFyAQDaPj8ZCZBcO2zL0gyE8hzxrvDfq7RVsdmeagxmIbg+wQD+JIZBdpjvnXYQ
+ZNsb7Dh/C5zkird/0LE1VGr7KfjKnQU=
+=4db+
+-----END PGP SIGNATURE-----
+
+--gouyu6bptahztw3s--
+
+
+--===============6397084948842391183==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6397084948842391183==--
+
