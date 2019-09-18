@@ -2,67 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48C27B6254
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 13:38:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4D15B6287
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 13:53:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OrfYqcbh4oOdmHs9iepXeETJZi/VVsywu45KprglwYI=; b=GA5F/MYMw7bKth
-	LVx8p8z48veYoQFgY4QOA3p/4y7VFk/D+WpVpCAyxUL7FLs8AwZgnO71iwWyRWvTqkb8/1hKhEOOb
-	f2F/ldy1fNFWTL5MMslmINw6/1kxfGaOYmGSHyajNZe082gHQ2efSvGOoWgyRRq49joXOx4zH1k6S
-	HR2QA8F2bXP1cJOE7/1HJrYxo6uq92xV7hfoCOGruhxsn+6y+UhuOYx/6rxvH3ePhWKocwy+e2ajI
-	gXsEfHqdfNLnFPUmn38ni9dMq71Ie2FE9n5Ymi2rZ3R/m6Fv31XZRoZlQXJg+1T9i3khuOj/65m6Z
-	WI2i98XUDdWDprKYFwfQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=39X0AsJZdAsWo1kTSCposDdRDBBB/Xs3DtJE4MKYr4w=; b=AsQRWtemfM3yqw
+	iatvwE5SxktW0nub+bFBwcwoB4GDAOM9jJJ2d+yVyLyVpGBm2DjIO83FivKgw2IngiSnGzQF2duWW
+	pxfOSXgVKzCZL3oZvJKNdGqX99eOhTVoIefToYa7GyZMcvNNyJkiBo7QAzfusVMcjc/Tvf4Ap32k1
+	z1xRWMI2A4E9WSCaRKv7etOnMD8oyC3HM3HWniLeXNokaHJexHbgOkRbZG1d2cdYdr4fa6U0QT7H1
+	nc2U8jneEkjdSeWzZQYSjZDxPBQF5paayqX1kZygI18oTzDRkBzaWzHAgU2v4BSaCbhYOflJsjyDF
+	T+oVrrnhCuJrdsOTPUKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAYHd-0004L6-U8; Wed, 18 Sep 2019 11:38:06 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1iAYWm-00018b-73; Wed, 18 Sep 2019 11:53:44 +0000
+Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAYHK-0004Ke-6a
- for linux-arm-kernel@bombadil.infradead.org; Wed, 18 Sep 2019 11:37:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
- Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=6AdoLle996d0IpXztvlBxtaxvkOL9vC52W+2GSsKy3s=; b=IhXD5+3lP4cEZfkzCQKJGyJZ30
- pIeiykuwTbGgkldp31QZ4rvp4ud/iLzTgGnPkvwQFaj0QU5y5fXc0dx4C9qNpLyPK9h40PRIp0WHi
- zQjIgWTmusCjZ/emRW1aelqvAeCf7Xq78J83HsmpSRlzJkfrVJLmZHWpTQ8S1px/qb3253d9E6tuZ
- 5dEF531+fgUJiAKQGRXCxnaDUN1tAxOoPyT9uZdcNxq4vj4QUL01yz/00fCnWJg1bN31YvYhJldFf
- f7HL/S4JOTwN9hDG9trBFf3LjR3iI+9mcrt8PnSHdCT4DKLLTTPEFN6nHt9XqiCyqStbkTBDurTHJ
- jJqJYcVQ==;
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
- by merlin.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAYHG-0003En-A6
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 11:37:43 +0000
-X-Originating-IP: 86.207.98.53
-Received: from localhost
- (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 98CC920007;
- Wed, 18 Sep 2019 11:37:01 +0000 (UTC)
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: [PATCH v3] pinctrl: at91-pio4: implement .get_multiple and
- .set_multiple
-Date: Wed, 18 Sep 2019 13:36:57 +0200
-Message-Id: <20190918113657.25998-1-alexandre.belloni@bootlin.com>
-X-Mailer: git-send-email 2.21.0
+ id 1iAYWG-00015u-Et
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 11:53:14 +0000
+Received: by mail-vs1-xe43.google.com with SMTP id w195so4226349vsw.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 18 Sep 2019 04:53:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=1KlX045+but4kZYDkxl79NCCq10iOcslEdRaiYLes50=;
+ b=fego5LxIL6sB7nuVbbaJVJB9N7WNC8aIjmYR0y5szXrjm/cLvc2AEl4CT76peU8LyO
+ ovgIJAkEcVdo/HQkTbgy73bCOznMQ54xCR6vuEpJF43zd/anX3d2aaBum9pZVtNEW2/S
+ KaQ6549ctO0oKG1CzL2x+C+6Ci98YSp8YZRfo=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=1KlX045+but4kZYDkxl79NCCq10iOcslEdRaiYLes50=;
+ b=GEcN43vI4pUffvx654jfeL/Ukcxqc6I8MViAqM0/2UTXFzknSlK3VFt7f98YcNGOH7
+ kuuHD9YHKzexAvcVlM21kQsdAGVX3oxkcw9iHNuFVdofVVDxuxxLYyOdDkVsp5SrYCgu
+ ODBdC2j9GI4O6YXNN8iTgXoFLi9RUFIT6Wnywp430IETv7kkWMjkkK7czzu5Q4ydnoHb
+ efX5LLkrOd8bVwhmRBnhgv1JZ5it1ekbBLdk6Z6YGe7FZYMgBuP0IE1sHHPsMex9MfRi
+ CKHiwttDg/Wi76zv5djhKBONdlD6IvoLsf1jDu1+3f+rhDMRGUvUb3F6Kkto5DNjjsGC
+ 4+tw==
+X-Gm-Message-State: APjAAAXZRCZJBcvL9i8XSN5dSSDCM/TEo7rqoLfaUXXN2AA3u0AOw4bk
+ SiefKQilBb/YThohm4TESea9pHFVezqbUm8yuAbH1w==
+X-Google-Smtp-Source: APXvYqyhL40Vy4UIINlY/uIQouC/knlNQeJfWaG2W2HqYygbGI5RQ+ggz1DPkhARkI89YhNy/gvof3y7jgV5PmDT70U=
+X-Received: by 2002:a67:db8d:: with SMTP id f13mr1855977vsk.163.1568807586619; 
+ Wed, 18 Sep 2019 04:53:06 -0700 (PDT)
 MIME-Version: 1.0
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+References: <20190918082500.209281-1-cychiang@chromium.org>
+ <20190918082500.209281-3-cychiang@chromium.org>
+ <1j7e663sfu.fsf@starbuckisacylon.baylibre.com>
+In-Reply-To: <1j7e663sfu.fsf@starbuckisacylon.baylibre.com>
+From: Cheng-yi Chiang <cychiang@chromium.org>
+Date: Wed, 18 Sep 2019 19:52:39 +0800
+Message-ID: <CAFv8Nw+JssR+qJYWaQAjDRbHuNidHXQBPLsbOM7kNs4MN-Nkkw@mail.gmail.com>
+Subject: Re: [PATCH v6 2/4] drm: dw-hdmi-i2s: Use fixed id for codec device
+To: Jerome Brunet <jbrunet@baylibre.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190918_045312_615201_7907F8F2 
+X-CRM114-Status: GOOD (  23.21  )
+X-Spam-Score: -7.4 (-------)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-7.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,122 +92,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Claudiu.Beznea@microchip.com, linux-arm-kernel@lists.infradead.org
+Cc: "moderated list:SOUND - SOC LAYER / DYNAMIC AUDIO POWER MANAGEM..."
+ <alsa-devel@alsa-project.org>, Heiko Stuebner <heiko@sntech.de>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, linux-kernel <linux-kernel@vger.kernel.org>,
+ Hans Verkuil <hverkuil@xs4all.nl>, Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Takashi Iwai <tiwai@suse.com>, linux-rockchip@lists.infradead.org,
+ Dylan Reid <dgreid@chromium.org>, tzungbi@chromium.org,
+ Jonas Karlman <jonas@kwiboo.se>, Liam Girdwood <lgirdwood@gmail.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
+ Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>,
+ Doug Anderson <dianders@chromium.org>, Daniel Vetter <daniel@ffwll.ch>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Implement .get_multiple and .set_multiple to allow reading or setting
-multiple pins simultaneously. Pins in the same bank will all be switched at
-the same time, improving synchronization and performances.
+On Wed, Sep 18, 2019 at 4:43 PM Jerome Brunet <jbrunet@baylibre.com> wrote:
+>
+>
+> On Wed 18 Sep 2019 at 10:24, Cheng-Yi Chiang <cychiang@chromium.org> wrote:
+>
+> > The problem of using auto ID is that the device name will be like
+> > hdmi-audio-codec.<id number>.auto.
+> >
+> > The number might be changed when there are other platform devices being
+> > created before hdmi-audio-codec device.
+> > Use a fixed name so machine driver can set codec name on the DAI link.
+> >
+> > Using the fixed name should be fine because there will only be one
+> > hdmi-audio-codec device.
+>
+> While this is true all platforms we know of (I suppose), It might not be
+> the case later on. I wonder if making such assumption is really
+> desirable in a code which is used by quite a few different platforms.
+>
+> Instead of trying to predict what the device name will be, can't you just
+> query it in your machine driver ? Using a device tree phandle maybe ?
+>
+> It is quite usual to set the dai links this way, "simple-card" is a good
+> example of this.
+>
 
-Keep the driver future proof by allowing its use on 64bits platforms if
-they ever appear with this IP and we end up with a mismatch between
-ATMEL_PIO_NPINS_PER_BANK and BITS_PER_LONG.
+Hi Jerome,
+Thanks for the quick reply!
+And thanks for pointing this out.
+I found that
+soc_component_to_node searches upward for one layer so it can find the
+node which creates hdmi-audio-codec in runtime. This works even that
+hdmi-audio-codec does not have its own node in dts.
+I will change accordingly in v7.
+Thanks!
 
-Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
----
 
-Changes in v3:
- - Add ack from ludovic
- - add comment and amend commit message to explain the ifdefd
 
- drivers/pinctrl/pinctrl-at91-pio4.c | 62 +++++++++++++++++++++++++++++
- 1 file changed, 62 insertions(+)
-
-diff --git a/drivers/pinctrl/pinctrl-at91-pio4.c b/drivers/pinctrl/pinctrl-at91-pio4.c
-index d6de4d360cd4..e380202eb86a 100644
---- a/drivers/pinctrl/pinctrl-at91-pio4.c
-+++ b/drivers/pinctrl/pinctrl-at91-pio4.c
-@@ -328,6 +328,33 @@ static int atmel_gpio_get(struct gpio_chip *chip, unsigned offset)
- 	return !!(reg & BIT(pin->line));
- }
- 
-+static int atmel_gpio_get_multiple(struct gpio_chip *chip, unsigned long *mask,
-+				   unsigned long *bits)
-+{
-+	struct atmel_pioctrl *atmel_pioctrl = gpiochip_get_data(chip);
-+	unsigned int bank;
-+
-+	bitmap_zero(bits, atmel_pioctrl->npins);
-+
-+	for (bank = 0; bank < atmel_pioctrl->nbanks; bank++) {
-+		unsigned int word = bank;
-+		unsigned int offset = 0;
-+		unsigned int reg;
-+
-+#if ATMEL_PIO_NPINS_PER_BANK != BITS_PER_LONG
-+		word = BIT_WORD(bank * ATMEL_PIO_NPINS_PER_BANK);
-+		offset = bank * ATMEL_PIO_NPINS_PER_BANK % BITS_PER_LONG;
-+#endif
-+		if (!mask[word])
-+			continue;
-+
-+		reg = atmel_gpio_read(atmel_pioctrl, bank, ATMEL_PIO_PDSR);
-+		bits[word] |= mask[word] & (reg << offset);
-+	}
-+
-+	return 0;
-+}
-+
- static int atmel_gpio_direction_output(struct gpio_chip *chip, unsigned offset,
- 				       int value)
- {
-@@ -358,11 +385,46 @@ static void atmel_gpio_set(struct gpio_chip *chip, unsigned offset, int val)
- 			 BIT(pin->line));
- }
- 
-+static void atmel_gpio_set_multiple(struct gpio_chip *chip, unsigned long *mask,
-+				    unsigned long *bits)
-+{
-+	struct atmel_pioctrl *atmel_pioctrl = gpiochip_get_data(chip);
-+	unsigned int bank;
-+
-+	for (bank = 0; bank < atmel_pioctrl->nbanks; bank++) {
-+		unsigned int bitmask;
-+		unsigned int word = bank;
-+
-+/*
-+ * On a 64-bit platform, BITS_PER_LONG is 64 so it is necessary to iterate over
-+ * two 32bit words to handle the whole  bitmask
-+ */
-+#if ATMEL_PIO_NPINS_PER_BANK != BITS_PER_LONG
-+		word = BIT_WORD(bank * ATMEL_PIO_NPINS_PER_BANK);
-+#endif
-+		if (!mask[word])
-+			continue;
-+
-+		bitmask = mask[word] & bits[word];
-+		atmel_gpio_write(atmel_pioctrl, bank, ATMEL_PIO_SODR, bitmask);
-+
-+		bitmask = mask[word] & ~bits[word];
-+		atmel_gpio_write(atmel_pioctrl, bank, ATMEL_PIO_CODR, bitmask);
-+
-+#if ATMEL_PIO_NPINS_PER_BANK != BITS_PER_LONG
-+		mask[word] >>= ATMEL_PIO_NPINS_PER_BANK;
-+		bits[word] >>= ATMEL_PIO_NPINS_PER_BANK;
-+#endif
-+	}
-+}
-+
- static struct gpio_chip atmel_gpio_chip = {
- 	.direction_input        = atmel_gpio_direction_input,
- 	.get                    = atmel_gpio_get,
-+	.get_multiple           = atmel_gpio_get_multiple,
- 	.direction_output       = atmel_gpio_direction_output,
- 	.set                    = atmel_gpio_set,
-+	.set_multiple           = atmel_gpio_set_multiple,
- 	.to_irq                 = atmel_gpio_to_irq,
- 	.base                   = 0,
- };
--- 
-2.21.0
-
+> >
+> > Fix the codec name in rockchip rk3288_hdmi_analog machine driver.
+> >
+> > Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+> > ---
+> >  drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c | 2 +-
+> >  sound/soc/rockchip/rk3288_hdmi_analog.c             | 3 ++-
+> >  2 files changed, 3 insertions(+), 2 deletions(-)
+> >
+> > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+> > index d7e65c869415..86bd482b9f94 100644
+> > --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+> > +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+> > @@ -193,7 +193,7 @@ static int snd_dw_hdmi_probe(struct platform_device *pdev)
+> >
+> >       memset(&pdevinfo, 0, sizeof(pdevinfo));
+> >       pdevinfo.parent         = pdev->dev.parent;
+> > -     pdevinfo.id             = PLATFORM_DEVID_AUTO;
+> > +     pdevinfo.id             = PLATFORM_DEVID_NONE;
+> >       pdevinfo.name           = HDMI_CODEC_DRV_NAME;
+> >       pdevinfo.data           = &pdata;
+> >       pdevinfo.size_data      = sizeof(pdata);
+> > diff --git a/sound/soc/rockchip/rk3288_hdmi_analog.c b/sound/soc/rockchip/rk3288_hdmi_analog.c
+> > index 767700c34ee2..8286025a8747 100644
+> > --- a/sound/soc/rockchip/rk3288_hdmi_analog.c
+> > +++ b/sound/soc/rockchip/rk3288_hdmi_analog.c
+> > @@ -15,6 +15,7 @@
+> >  #include <linux/gpio.h>
+> >  #include <linux/of_gpio.h>
+> >  #include <sound/core.h>
+> > +#include <sound/hdmi-codec.h>
+> >  #include <sound/jack.h>
+> >  #include <sound/pcm.h>
+> >  #include <sound/pcm_params.h>
+> > @@ -142,7 +143,7 @@ static const struct snd_soc_ops rk_ops = {
+> >  SND_SOC_DAILINK_DEFS(audio,
+> >       DAILINK_COMP_ARRAY(COMP_EMPTY()),
+> >       DAILINK_COMP_ARRAY(COMP_CODEC(NULL, NULL),
+> > -                        COMP_CODEC("hdmi-audio-codec.2.auto", "i2s-hifi")),
+> > +                        COMP_CODEC(HDMI_CODEC_DRV_NAME, "i2s-hifi")),
+> >       DAILINK_COMP_ARRAY(COMP_EMPTY()));
+> >
+> >  static struct snd_soc_dai_link rk_dailink = {
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
