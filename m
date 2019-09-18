@@ -2,134 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9167CB64BA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 15:37:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C367B64D0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 15:39:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9yEiXIMHDMzbmZFYMk6pYrJHu1KxrPode1cadSQ/gzs=; b=swkeYG5zOKYifF
-	k1devBvoMdz8DBadKmrSsZxoNdky32jjiqExOgl6WIQcE+JJ5eyEllk1qpSGvHd035TvsyWI+YakJ
-	s28lw1X9Q9epMiGaLIijF7hk97UQkUIEjQlREe30f7nnwgauIWAZVzusZBBDKY/jwzENGy37QEqNF
-	AhStDHUOH6OJub0KHvK4dkx6lZSJhJ2e46z1EtvJQ0ds7HmGblFqsmwh/oDFAJl9rw2AfXZxvg/2i
-	P0ncxOLTpAM2U2qrR0sKhCOoQ29iVwjZTP7nP09xlOq/kpHauGVyujrDAhR7t3fbNtudgwI1RVTVH
-	S5qJ+Fnz0T+L0yvB76Ug==;
+	List-Owner; bh=CE86C8irU2/OzxsfeYV2eyB7YM/IsVP7aju8jQiM0po=; b=RCSHuw1Vz7BN/Z
+	3hlgMg3hZIhv82qW6jNnLHk/H2o+xTjPnD5llLpohJk+u4C1pn7ZvdDXA4K1pJ8vd0pPR2VS443wP
+	1uL+cetS76t0F0+gqbp3vUJZj51o8wz+s8XVBSMKD1mrawOqHTTWurQ2DHdvbaERaVXfMBxH3HbaP
+	TbiSpmeB+/W8N+L2f9Q4m8FeJyJkg3vALgdszXDD/KNynZEw6Slg5MKQUl3h8hbjbpL+HGxTFgana
+	NgqaLTSM+6hxpMX++yv01jhf+oxYU4fiYbyLK1MIhc1Mtnby80KJTrVVUj0MenOOPG47S85HHsthy
+	bCIdozXBnmCs2AGBOouA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAa8w-0004zq-Hk; Wed, 18 Sep 2019 13:37:14 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1iAaB6-0005N7-76; Wed, 18 Sep 2019 13:39:28 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAa8j-0004zM-SO
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 13:37:03 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190918133659euoutp01cae1de5367e3cc5837e2504b88005a7b~Fi9tI3npJ1202312023euoutp01J
+ id 1iAaAt-0005Ld-2f
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 13:39:16 +0000
+Received: by mail-pl1-x644.google.com with SMTP id q24so3180957plr.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Sep 2019 13:36:59 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20190918133659euoutp01cae1de5367e3cc5837e2504b88005a7b~Fi9tI3npJ1202312023euoutp01J
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1568813819;
- bh=YwlvZ5lX/q4VkLEO16j7x4girsc6K66AK26JC0JlpFo=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=iirerxl9UKrAyOMptZQviuMceGE91F+/gedY9Y38rhd8eisugbHEj4p8nOHvUtcNE
- be3+8T/TPlCHVP4I24DwBe4332H7eZU5jIzAiB0/eR6g/l9k5njQMmq/6j39NifKX/
- bRqTAbvyPBsCWgXVikyASdYLjJyW9PM7lu/BcNgs=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20190918133658eucas1p11f720977a321b39d052268296184b6aa~Fi9sethIz1988419884eucas1p1o;
- Wed, 18 Sep 2019 13:36:58 +0000 (GMT)
-Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id D2.8D.04374.AF2328D5; Wed, 18
- Sep 2019 14:36:58 +0100 (BST)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20190918133657eucas1p27e58bdca99c69c824fc04b036300a127~Fi9rsJCbQ2092820928eucas1p2x;
- Wed, 18 Sep 2019 13:36:57 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20190918133657eusmtrp2388a1c07e51b9b64131e748bee829b64~Fi9rcDJWk3244532445eusmtrp2T;
- Wed, 18 Sep 2019 13:36:57 +0000 (GMT)
-X-AuditID: cbfec7f5-4f7ff70000001116-d8-5d8232fa5c9e
-Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id C4.4D.04166.9F2328D5; Wed, 18
- Sep 2019 14:36:57 +0100 (BST)
-Received: from [106.120.51.75] (unknown [106.120.51.75]) by
- eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20190918133656eusmtip2d0e86b1d2bce3fc84646bc9522cca37d~Fi9qu70bx2274022740eusmtip2U;
- Wed, 18 Sep 2019 13:36:56 +0000 (GMT)
-Subject: Re: [PATCH v1 2/9] mfd: wm8994: Add support for MCLKn clock control
-To: Charles Keepax <ckeepax@opensource.cirrus.com>
-From: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Message-ID: <e9a10b97-4833-782d-2872-0051bed004cc@samsung.com>
-Date: Wed, 18 Sep 2019 15:36:55 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ Wed, 18 Sep 2019 06:39:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=3coPOKz829YesHs8WeDQ/ai4YhjPoVLGbSy497MH0Io=;
+ b=qS7h3ZDAoTFnRgGv1UvQCSos0CEKYa1Ol1rQOd4jzD/JiSP6N5vVOwdF3Z8RuVSoZr
+ 1mDJJ7fYVFpPwIN02QXU82nX1V+QV9KrobEe4wkD83KdWXbj43Yh4BTcbIURV2Napwuy
+ IgdbW27UiEIT0qhx5u4WUTm62RgWNpl+ewghEdfF28M0X8pHIJn5YRfGbPLFERi2EzQh
+ uW5DYqh/4bV9ON4D8XGmAcLmkChMCsh/jlDakaMQu2SgxvoiopdjqpLss1xB9NPiOefk
+ 2VRAUUDEYjHdTJ8B2l6jpzLuUONFWHhdDDGzYQSKQr8A3J3URqnCeq/KL0chK7/u1pRV
+ g+Mg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=3coPOKz829YesHs8WeDQ/ai4YhjPoVLGbSy497MH0Io=;
+ b=SfQAA2dDh3BD1mca/kqkTKGQKxsoKZxT1FRs3/etcwBHMdgRk9exxzBtLL7eT9VuRF
+ VPFz2i6PcwienocTp1gZlW3TZwlwehcA9MihNyviGQaEHZ5v9ePqB8loM3ktMRvDtC0o
+ HsvSwTTSqoFD8mSDbt/2KLG2W32M8KRQctffsnFS9Q/HwWHhh7rJ0Qo4739ILe8PXT2W
+ p+qOpzmKxnMDt4sNDqP1SKUG2sunimzpb5rIDOTccFTEblc9KpvZjEfzoP5jYupRb6mK
+ +nUY8FGLTAVxIAzv2EXUYaTtyHdqSSNaDWYDOn5cotfqGeN0IHt1CrYyAGfzjIuClkI6
+ /QMg==
+X-Gm-Message-State: APjAAAUSrsBNxrc7ROWQ60peZjFWfRxJ5fnCRHUl29jm9nhBP/n607qo
+ UJPOeT9ms68+69Ceokq+SdA=
+X-Google-Smtp-Source: APXvYqx81mSybzdQj0FZPyN7+YBbDAJ170gLkLCt6Wq3XQvIapP6vM/UArMpEQXp4CHtzTBTBTmctA==
+X-Received: by 2002:a17:902:8f90:: with SMTP id
+ z16mr4266870plo.138.1568813953713; 
+ Wed, 18 Sep 2019 06:39:13 -0700 (PDT)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id 197sm18396233pge.39.2019.09.18.06.39.13
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 18 Sep 2019 06:39:13 -0700 (PDT)
+Date: Wed, 18 Sep 2019 06:39:12 -0700
+From: Guenter Roeck <linux@roeck-us.net>
+To: Markus Elfring <Markus.Elfring@web.de>
+Subject: Re: [PATCH] hwmon: (aspeed-pwm-tacho) Use
+ devm_platform_ioremap_resource() in aspeed_pwm_tacho_probe()
+Message-ID: <20190918133912.GA14788@roeck-us.net>
+References: <cd5bab7b-9333-2a43-bcf0-a47bbbe719eb@web.de>
 MIME-Version: 1.0
-In-Reply-To: <20190918125435.GF10204@ediswmail.ad.cirrus.com>
-Content-Language: en-GB
-X-Brightmail-Tracker: H4sIAAAAAAAAA01SbUhTYRjtvR+7d6vpdSo+mBmMLJKy/IAufUhRP64QFfSnjJUzryap0101
- NUJZVH5rQWrLWpGgDaptzdJKK3UtDVwDsfUhGopIoaXOsqzM7Rr57zznOec9z4GXxhUDZDCd
- mpHNazPUaUqJjHjw4kfvxp9ROtXmqT6K7XN2YKy57h7JXv44ImH7zlkQa+jqJVmHw0SxgzM2
- xH7rK8ZYy3A/ydY52jH2TtcAxU5/eUqy59q6KNbZ5MZ2+nCmaZ2Ea9UPUJzFWCLhPvQ/kXD3
- Gwq52vp5xFVajYibtoQeoONl25P4tNRcXrspNkF2Ys48RWRW4Xk/P1+iilALVoqkNDAxYHY5
- JKVIRiuYJgQNJj0pDm4E1pleShymERgaDeifpbtm1osVTCOCuYfxomgcQcn1OcKz8Gf2wuWi
- PxIPDmCiYNL+DvOIcMaFwQVnqTdcwkRCha3S+5KciYXmRrPXTDBh0HT1Ju7BgcwhmBrqJEWN
- H3RfGfFqpMwO0D23eQNwJgh07tukiFfDw/F63BMGzG8K7t6axMWz98A3m3OxtT98slspEYfA
- fKsBEw1nEZQ/fk+JQzWCQfuNxdLboNPuXIigFyLWw71Hm0R6F/RUujAPDYwPuMb9xCN84NKD
- Wlyk5VB8XiGq18CcsXbxhGAoG5knqpFSv6Safkkd/ZI6+v+5NxBhREF8jpCewgvRGfypCEGd
- LuRkpEQc16Rb0MKne/XHPtOC2n8ldiCGRsoV8tl1OpWCVOcK+ekdCGhcGSA/cKZQpZAnqfML
- eK3mmDYnjRc60EqaUAbJTy8bOqJgUtTZ/Emez+S1/7YYLQ0uQn6qrTVEfM/Fg/Wr9r1NGLWx
- E7LAhisxYVkBY3Wu1kRN+3B5m+Zk6evVjqSjccmV4XlbEqsq9rt93zS/SpX2PLtwKN80xoWO
- 3vx92D1qfZncVtA9FLihN1JfFjYUqyQL2qQTWc7vX90hEWsjQ6M5zR1ZRNzsNl9/n2utvmsa
- dhcuVxLCCXVkOK4V1H8BGp1arnADAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrPIsWRmVeSWpSXmKPExsVy+t/xe7o/jZpiDXo38lpcuXiIyWLjjPWs
- FlMfPmGzuNK6idFi/pFzrBbnz29gt7j/9SijxbcrHUwWmx5fY7WYcX4fk8XaI3fZLT6/389q
- 0br3CLvFxRVfmBz4PDZ8bmLz2DnrLrvHplWdbB53ru1h89i8pN5j+pz/jB59W1YxenzeJBfA
- EaVnU5RfWpKqkJFfXGKrFG1oYaRnaGmhZ2RiqWdobB5rZWSqpG9nk5Kak1mWWqRvl6CX8Xvj
- J5aCfuaKX68nsTcw7mDqYuTkkBAwkTg57QdjFyMXh5DAUkaJziNzWbsYOYASUhLzW5QgaoQl
- /lzrYoOoec0o0bV6NiNIQljAR2Jqwz82EFtEwEji4/FbTCBFzAI3mCSmLLsPNXUlk8SstZ1g
- HWwChhK9R/vAbF4BO4mtyzeygNgsAqoSK2YvZAaxRQUiJA7vmAVVIyhxcuYTsBpOAVuJpoNH
- wbYxC6hL/Jl3iRnCFpdo+rKSFcKWl9j+dg7zBEahWUjaZyFpmYWkZRaSlgWMLKsYRVJLi3PT
- c4sN9YoTc4tL89L1kvNzNzECI3vbsZ+bdzBe2hh8iFGAg1GJh/eHelOsEGtiWXFl7iFGCQ5m
- JRHegNr6WCHelMTKqtSi/Pii0pzU4kOMpkDPTWSWEk3OByadvJJ4Q1NDcwtLQ3Njc2MzCyVx
- 3g6BgzFCAumJJanZqakFqUUwfUwcnFINjB2OwXu78oTzi/nNhB96VXKLSehfYApgvORpZ7Cz
- 4kU8+9uMI7WTb7XG/Qntlsp48KR5m1Pjmu32xdwlaiLuotbTDtq2uukll9voP5w4Oc9R0+yK
- 2TExAbY9Zz2Sc4IubLNrjLN+Z9In4maypDGr5+W8fSYsbUIns3Kemj44xBZ0fsNfh3IlluKM
- REMt5qLiRABLjxF4AgMAAA==
-X-CMS-MailID: 20190918133657eucas1p27e58bdca99c69c824fc04b036300a127
-X-Msg-Generator: CA
-X-RootMTR: 20190918104656eucas1p1d9cad1394b08d05a99151c4fbc9425ce
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20190918104656eucas1p1d9cad1394b08d05a99151c4fbc9425ce
-References: <20190918104634.15216-1-s.nawrocki@samsung.com>
- <CGME20190918104656eucas1p1d9cad1394b08d05a99151c4fbc9425ce@eucas1p1.samsung.com>
- <20190918104634.15216-3-s.nawrocki@samsung.com>
- <49ef7282-3765-9149-285d-a4025417eb58@samsung.com>
- <20190918125435.GF10204@ediswmail.ad.cirrus.com>
+Content-Disposition: inline
+In-Reply-To: <cd5bab7b-9333-2a43-bcf0-a47bbbe719eb@web.de>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_063702_296841_4132F4EF 
-X-CRM114-Status: GOOD (  10.92  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190918_063915_131819_3FF95B35 
+X-CRM114-Status: GOOD (  15.99  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (groeck7[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,30 +105,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
- linux-samsung-soc@vger.kernel.org, b.zolnierkie@samsung.com,
- sbkim73@samsung.com, patches@opensource.cirrus.com, broonie@kernel.org,
- lgirdwood@gmail.com, krzk@kernel.org, robh+dt@kernel.org, lee.jones@linaro.org,
- linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+Cc: linux-hwmon@vger.kernel.org, Jean Delvare <jdelvare@suse.com>,
+ linux-aspeed@lists.ozlabs.org, Andrew Jeffery <andrew@aj.id.au>,
+ kernel-janitors@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, Joel Stanley <joel@jms.id.au>,
+ linux-arm-kernel@lists.infradead.org,
+ Himanshu Jha <himanshujha199640@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 9/18/19 14:54, Charles Keepax wrote:
->>> +	ret = devm_clk_bulk_get_optional(wm8994->dev, ARRAY_SIZE(wm8994->mclk),
->>> +					 wm8994->mclk);
->>> +	if (ret != 0)
->>> +		return ret;
->
-> Would be nice to print a message here as well, make it clear what
-> failed in the log. Apart from that minor nit:
+On Wed, Sep 18, 2019 at 10:20:09AM +0200, Markus Elfring wrote:
+> From: Markus Elfring <elfring@users.sourceforge.net>
+> Date: Wed, 18 Sep 2019 10:12:31 +0200
+> 
+> Simplify this function implementation by using a known wrapper function.
+> 
+> This issue was detected by using the Coccinelle software.
+> 
+> Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
 
-Thanks for reviewing, I will add that modification for v2.
+Applied to hwmon-next.
 
--- 
-Regards,
-Sylwester
+Thanks,
+Guenter
+
+> ---
+>  drivers/hwmon/aspeed-pwm-tacho.c | 7 +------
+>  1 file changed, 1 insertion(+), 6 deletions(-)
+> 
+> --
+> 2.23.0
+> 
+> diff --git a/drivers/hwmon/aspeed-pwm-tacho.c b/drivers/hwmon/aspeed-pwm-tacho.c
+> index 40c489be62ea..33fb54845bf6 100644
+> --- a/drivers/hwmon/aspeed-pwm-tacho.c
+> +++ b/drivers/hwmon/aspeed-pwm-tacho.c
+> @@ -891,17 +891,12 @@ static int aspeed_pwm_tacho_probe(struct platform_device *pdev)
+>  	struct device_node *np, *child;
+>  	struct aspeed_pwm_tacho_data *priv;
+>  	void __iomem *regs;
+> -	struct resource *res;
+>  	struct device *hwmon;
+>  	struct clk *clk;
+>  	int ret;
+> 
+>  	np = dev->of_node;
+> -
+> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> -	if (!res)
+> -		return -ENOENT;
+> -	regs = devm_ioremap_resource(dev, res);
+> +	regs = devm_platform_ioremap_resource(pdev, 0);
+>  	if (IS_ERR(regs))
+>  		return PTR_ERR(regs);
+>  	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
 
 _______________________________________________
 linux-arm-kernel mailing list
