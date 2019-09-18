@@ -2,75 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 481B4B63E2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 14:59:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6F52B63EA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 14:59:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iABjj/bb2bvY39nzGryW0OeqCqOMEKfcHcMJBmAzBLs=; b=fng42PY5wIZIkl
-	VQ3CJJ7ml9fcw/nMEPrtF8Owwt3FjqPjDQTcY/PJHvKEBQBGoPxP5bwmRguSaFD7VThWCHfv7u8id
-	f5WzyWiz3ka/7kiTTUdAxlHX+TDbKKzBavNgCt3Xuclv9Datm2dkKhnfxeu+19uolaemspXgzUz/j
-	ttyJocZuycpEzCeTd7l4QKsIQu1yJaRnFYxnc/9eDCXbPonI57jbt0je5azH34qLsWAKbOFNb8+8k
-	FPAeyx0Bjl2xsXMWB/1LbUVuYibMJ0Y2zMGj/ycB+KgudYKF5BXBb4Mc3bEvtyNfztFTwIgbr8cOO
-	FnaU9OD/ZQKcrWxmJqAQ==;
+	List-Owner; bh=IgWAA54bK98WLMp9eVQTnwMn5fXKG5xK26/i7QpGL7w=; b=as0q788/0zlqQl
+	JnZcuApj2+IpFE2eDW76Wb0IC+XDc4aoiiNgaXOPYRVQLXTM31yRz57du6jL0P098ha3XmPVL/Wwo
+	lJwZuiZf5GmiUBXbnIHNWIM9jCqmrr7Qu/s5TyCxWCFgAnf5N0KATm2XLZ39L22ywvpKcWNJVpz/F
+	iIqaVSTooEdWrf0uKLLcxj5kD88VH7Tr/3EkMMdw3l5ZNGjP7f1WpMzR0gEh9AlNsmfJbJA9r1Typ
+	qZRWW0p40YHQACuuVfiXCVDn1bWZ+7Drf5RSxACeKTuwPvM7T1l1vBI8Qyf17DmjClUWXtCGX0T/I
+	bvl8AEzIrD3/DujeiOWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAZYG-0004kc-GR; Wed, 18 Sep 2019 12:59:20 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1iAZYb-00052u-TP; Wed, 18 Sep 2019 12:59:42 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAZWk-0003rx-1Y
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 12:57:48 +0000
-Received: by mail-ot1-f68.google.com with SMTP id c10so6205241otd.9
+ id 1iAZX2-000414-6g
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 12:58:05 +0000
+Received: by mail-ot1-f67.google.com with SMTP id g13so6196170otp.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Sep 2019 05:57:45 -0700 (PDT)
+ Wed, 18 Sep 2019 05:58:03 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=sZlslgtiFxMqojw+XUrTC/HDPQuvlA94agJki/73aPc=;
- b=ektYtENT0fagQaumUDKyvBnPe9qLEIBPa9/rFv60XQjsGRCQJICffcjW92r/+gIvES
- YCV5YMCwHOO7D4ycEQm+kQaBN5cQvLNYFNbcU3MH/q6ysUsjFygIShBgxV4DgdsgMygt
- /fe6FpDGGfyAnw/mYPP82I9tySQDRK5ZqCuroY/9bVlfKSqWMFEIuLMlH554SceSliT6
- gJwAc0Z356hWw6M6ck82ZuQExoWG2j2qSWR6bqvdA9NbhAFlKXbAAnLwkV5eDsspqXG3
- WwshI92cku/RGJL++9Ju9qJwdTb3ISqguY4WZ7tDXDpgtHIDpkzWNxmTIR3uFNiyCHVv
- vCzg==
-X-Gm-Message-State: APjAAAWTdBXHn8OdASMvMvdV9dLg3kuQQBr03/Fxnexj2TONQJuEhcnx
- L8069qnlrzb8FVKPsT0pnA==
-X-Google-Smtp-Source: APXvYqxAUad55lZRPH+OnFwtM1Ee0BRdn+Zwa1RD0ynMPv4EPCSUXSQNM4bNX8Nhsplcu6KDI8xt5g==
-X-Received: by 2002:a9d:4582:: with SMTP id x2mr2593436ote.159.1568811465379; 
- Wed, 18 Sep 2019 05:57:45 -0700 (PDT)
+ bh=3zFk5MHE8p77ZTvBJ2Ef8rpgfEWBCuHhymRwnVR4wL0=;
+ b=TTHtjHHIMNUgvR8KdEi2bfwCY3ytpsw8NZfnJjyM4B1fir4zCbGXPuDa45EomjVVTY
+ F+4vFKqElNEexI2q4oCgs6E1N/5Xp8ejbokLtstWMJJMfefEzIXlbnSR4BJ7tOnaKyb2
+ kWMK4uhy6ny0ylAK5rR7iTw25PansL79zDGjUkxegv9qkKl1h8YOXj4VEhQneHZz3Eqk
+ fX+gD6hApGAVfIjy5wD5m7FHkngHafOKo0sI0N1AntFe1g36QSu2xwycDn1eJfJlNaFH
+ ymvwcKaxOVjDGFokY80dDzBAeyL0Py7SVRhFLq2olIdT1OH4rjIwC0LRykZ9RdH8iF9f
+ CwNQ==
+X-Gm-Message-State: APjAAAWNJHJr8A6xKXt/a8hLMZskDC0hw41zReFZmU5OQ+xMiwnZ7qPs
+ I177XgAyZVeXmrfUCXR4zw==
+X-Google-Smtp-Source: APXvYqxToU8rop07pJTky58dYQp14T/5DaTXWnKAr6A/JtuqsIRZmPTo+yZGDzHd9PTvx9bgAsyScQ==
+X-Received: by 2002:a9d:744c:: with SMTP id p12mr2787957otk.198.1568811483291; 
+ Wed, 18 Sep 2019 05:58:03 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id 2sm1562037ois.43.2019.09.18.05.57.44
+ by smtp.gmail.com with ESMTPSA id k8sm1704774otl.31.2019.09.18.05.58.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Sep 2019 05:57:44 -0700 (PDT)
-Date: Wed, 18 Sep 2019 07:57:44 -0500
+ Wed, 18 Sep 2019 05:58:02 -0700 (PDT)
+Date: Wed, 18 Sep 2019 07:58:02 -0500
 From: Rob Herring <robh@kernel.org>
 To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH v2 09/11] dt-bindings: rtc: s3c: Convert S3C/Exynos RTC
- bindings to json-schema
-Message-ID: <20190918125744.GA391@bogus>
+Subject: Re: [PATCH v2 10/11] dt-bindings: iio: adc: exynos: Convert Exynos
+ ADC bindings to json-schema
+Message-ID: <20190918125802.GA1051@bogus>
 References: <20190907092007.9946-1-krzk@kernel.org>
- <20190907092007.9946-9-krzk@kernel.org>
+ <20190907092007.9946-10-krzk@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190907092007.9946-9-krzk@kernel.org>
+In-Reply-To: <20190907092007.9946-10-krzk@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_055746_403774_FCF00323 
-X-CRM114-Status: GOOD (  10.17  )
+X-CRM114-CacheID: sfid-20190918_055804_374943_E23A3B67 
+X-CRM114-Status: GOOD (  12.23  )
 X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -79,6 +77,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  provider (robherring2[at]gmail.com)
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
@@ -104,23 +104,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat,  7 Sep 2019 11:20:05 +0200, Krzysztof Kozlowski wrote:
-> Convert Samsung S3C/Exynos Real Time Clock bindings to DT schema format
-> using json-schema.
+On Sat,  7 Sep 2019 11:20:06 +0200, Krzysztof Kozlowski wrote:
+> Convert Samsung Exynos Analog to Digital Converter bindings to DT schema
+> format using json-schema.
+> 
+> This is a direct conversion of existing bindings so it also copies the
+> existing error in the bindings regarding the requirement of two register
+> address ranges for certain compatibles.  The inconsistency in binding
+> was caused by commit fafb37cfae6d ("iio: exyno-adc: use syscon for PMU
+> register access").
 > 
 > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 > 
 > ---
 > 
 > Changes since v1:
-> 1. Use deprecated property instead of custom select,
-> 2. Rework clocks and clock-names matching for specific compatibles.
+> 1. Rework reg, clocks and clock-names matching for specific compatibles,
+> 2. Make samsung,syscon-phandle required only on certain compatibles,
+> 3. Fix indentation.
 > ---
->  .../devicetree/bindings/rtc/s3c-rtc.txt       | 31 -------
->  .../devicetree/bindings/rtc/s3c-rtc.yaml      | 85 +++++++++++++++++++
->  2 files changed, 85 insertions(+), 31 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/rtc/s3c-rtc.txt
->  create mode 100644 Documentation/devicetree/bindings/rtc/s3c-rtc.yaml
+>  .../bindings/iio/adc/samsung,exynos-adc.txt   | 107 ------------
+>  .../bindings/iio/adc/samsung,exynos-adc.yaml  | 163 ++++++++++++++++++
+>  2 files changed, 163 insertions(+), 107 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/iio/adc/samsung,exynos-adc.txt
+>  create mode 100644 Documentation/devicetree/bindings/iio/adc/samsung,exynos-adc.yaml
 > 
 
 Applied, thanks.
