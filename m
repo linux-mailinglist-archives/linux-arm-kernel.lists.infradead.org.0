@@ -2,136 +2,172 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EC07B5B72
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 07:57:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E60CAB5B8A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 08:02:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
-	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nXksR9yfwKHl81qrOU9q0aB/CJlwDB1BTYcUAoeDs30=; b=bpx2EkkDROfW9C
-	rWUK1ZmlNkpAmRCoUGIT1xRjIHT4C9QQV96dw+o2MlTJWAjbMplHiFHQhd4tUVQRAfpo/IszSYARa
-	1MRQAQUMZ014vw4X/PL3l9bL1g/7hgxNpcVfnXhMaUGpMjVgvG44JFKiSB87zrvi8Le87drXyVMg0
-	LlLFsOjoOUrkp0YQJdsPCRdS99SB164YFxxZpBf1sXUdRN81abVI8HUQehHoSvu3WhyZ7xFuLHwip
-	XnakLRmUbdPHed7n4PZagg0rAEjOHw7FKZOEB7K9UlmVAYPkB+QRTS7bB4tP9HbMp+wo9yq3m+FNS
-	9v2GdoJ4PxAgGIiWAIDg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UMiEIqvrUZEiDEBFQ9ZYC074AQbPBfC/a18iXMCpEwA=; b=g8v4snmj7Cf77x
+	IBZv7RzDy7q00tAbtiephhErMDtly1HCmEXs8iO4UlmcAF3pguw1nIOC0ivEo+Xyswk/VRvoFlngZ
+	MExOowd48asX2WtIUAYiZ0xgpEWuYF4aLrGj5tYf7eyzrgRd1Eq7hOdLgXTcsz+ltpeX3nw2wyl6m
+	FfOMNBns5VMEpIrCfjWHxDGKTVq6KtP/zNz5k35MSOBaRiIsZ9mLvsqeCPYTupLmhG+ILX747SmFU
+	V7d8fIDjy9tAAiLrlWIFaVKV0XCXfYFZ+OQwhOV/goq3F2hFx68u/JFEoWOp9dsq9RIgwEY7xpRQi
+	mV40SKtl0wh2E4Va0a4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iASyE-000457-9N; Wed, 18 Sep 2019 05:57:42 +0000
-Received: from mout.web.de ([212.227.15.14])
+	id 1iAT2Y-0005i7-I4; Wed, 18 Sep 2019 06:02:10 +0000
+Received: from mail-eopbgr00045.outbound.protection.outlook.com ([40.107.0.45]
+ helo=EUR02-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iASy1-00044f-29
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 05:57:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1568786234;
- bh=Y31/2jTwqUjZ0NL2AeDbmonMiVQ3DJI61BWgvIIZ3bA=;
- h=X-UI-Sender-Class:To:From:Subject:Cc:Date;
- b=nYQQ8aQMA2FoF/khDuXi2xlN5pxe7fS+thWx171cTDxGuA2XtfbEdYTO4pLef44yt
- A7lyNuwVAqFXn/MBf/Nrov8EneGqEmbZkRfi4tZ2yBVaY23blqSGGaBD0a9mOclPgS
- iySMDwsdfO5Tmk3OiKHZ5CvRDMzgXuLF+HFlYZ3g=
-X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from [192.168.1.2] ([2.244.2.101]) by smtp.web.de (mrweb003
- [213.165.67.108]) with ESMTPSA (Nemesis) id 0M9XP5-1iMsLt1w1H-00D056; Wed, 18
- Sep 2019 07:57:14 +0200
-To: linux-arm-kernel@lists.infradead.org, Jun Nie <jun.nie@linaro.org>,
- Shawn Guo <shawnguo@kernel.org>, Russell King <linux@armlinux.org.uk>
-From: Markus Elfring <Markus.Elfring@web.de>
-Subject: [PATCH] ARM: zx: Use devm_platform_ioremap_resource() in
- zx296702_pd_probe()
-Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
- 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 FEE=
-Message-ID: <30b6c588-6c4b-c8ff-6414-a3fc53867bfe@web.de>
-Date: Wed, 18 Sep 2019 07:57:05 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.0
-MIME-Version: 1.0
+ id 1iAT2K-0005hQ-MQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 06:01:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
+ s=selector2-armh-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=RU27VzIsiqU7nilB7U+07yVO9o8p1lR8kj+eahsonPg=;
+ b=JiyTPGZAXMv302JVGw553l0rEox4CkxBi98W/vYVbf40QRUT6zLc2jEmoXOSnyGs47MQnlOEWEr/HqK3GvJTNm3GAcbOApK3IChdFUXtKvsPmom422BhcFiDlzOSe1nmEXAO/MRwwd38ABxMskQTwm6FofKFeZW4hZnC5hGYFK4=
+Received: from HE1PR08CA0071.eurprd08.prod.outlook.com (2603:10a6:7:2a::42) by
+ VE1PR08MB4749.eurprd08.prod.outlook.com (2603:10a6:802:a2::22) with
+ Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2284.20; Wed, 18 Sep 2019 06:01:51 +0000
+Received: from AM5EUR03FT028.eop-EUR03.prod.protection.outlook.com
+ (2a01:111:f400:7e08::207) by HE1PR08CA0071.outlook.office365.com
+ (2603:10a6:7:2a::42) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2284.18 via Frontend
+ Transport; Wed, 18 Sep 2019 06:01:50 +0000
+Authentication-Results: spf=temperror (sender IP is 63.35.35.123)
+ smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
+ verified) header.d=armh.onmicrosoft.com;lists.infradead.org; dmarc=none
+ action=none header.from=arm.com;
+Received-SPF: TempError (protection.outlook.com: error in processing during
+ lookup of arm.com: DNS Timeout)
+Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
+ AM5EUR03FT028.mail.protection.outlook.com (10.152.16.118) with
+ Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2263.14 via Frontend Transport; Wed, 18 Sep 2019 06:01:49 +0000
+Received: ("Tessian outbound d5a1f2820a4f:v31");
+ Wed, 18 Sep 2019 06:01:43 +0000
+X-CR-MTA-TID: 64aa7808
+Received: from 0b333124ff32.2 (ip-172-16-0-2.eu-west-1.compute.internal
+ [104.47.0.57]) by 64aa7808-outbound-1.mta.getcheckrecipient.com id
+ 56582147-6A58-4446-8240-B293CC1E63B7.1; 
+ Wed, 18 Sep 2019 06:01:38 +0000
+Received: from EUR01-HE1-obe.outbound.protection.outlook.com
+ (mail-he1eur01lp2057.outbound.protection.outlook.com [104.47.0.57])
+ by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id 0b333124ff32.2
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384);
+ Wed, 18 Sep 2019 06:01:38 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=jqHsDtIzGeTFklqlq+VrgAgH397JKMRUBK10EM5eoFUfHVw8+aHHIkBWqnnrztbSJM9GNCRpfZC0s2QA4kGIbj0d8pJH3KwoNz2DNcDHs4Ma5l85j8KCjxn7BDLZIeSL2IMueWkk4ljfxcujVveDQ/kNJ6UQa4QjzZ2SWnM/oemgjd0TpkCkkphQgeJApMbbErkL+KDLwyJmY1liSpeO1/8POR3RQDFVbE/SuCt7yj+ZNc+FKWLutikHwOALsiUB9KyfYrceFX6niPi/8LEyl13cH4AAZT6EjdlHzAxY8IA+VHDBTeOlTvf6yyB6t4W2aRfFzY/oRwYeCb5qdnGQRw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=RU27VzIsiqU7nilB7U+07yVO9o8p1lR8kj+eahsonPg=;
+ b=QwuRhHML1cvZ49LJEMUWTV0zU/CTmFp8kZDrC7wm2CCFiPy/kOwfZLkH0WapOEXmo380uuQLNBs3JD13y8fl0LJiNXYH+22n4M9oelAeY+rH/+IuqGEYQr56Bdnp3kYCdRnHKqCqBHExFE/H2I66iM3CAkq3DZmgyScMECnThIU+qBxdOW/JBgWO/q8l8DtGLE7XeKM59cvd3IntCN8DaW9x1hno31aXA+k1wZjEmcUAVD20xPWCdkVi3cI1crzZppVAVIrypuCdSp9cu06F3b/pLcL+VFghf8yhnHu4bNp4HYO032AjWB9+KWFyBQWR3qmJGoYhd4wWz3+XQd9UrA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
+ header.d=arm.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
+ s=selector2-armh-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=RU27VzIsiqU7nilB7U+07yVO9o8p1lR8kj+eahsonPg=;
+ b=JiyTPGZAXMv302JVGw553l0rEox4CkxBi98W/vYVbf40QRUT6zLc2jEmoXOSnyGs47MQnlOEWEr/HqK3GvJTNm3GAcbOApK3IChdFUXtKvsPmom422BhcFiDlzOSe1nmEXAO/MRwwd38ABxMskQTwm6FofKFeZW4hZnC5hGYFK4=
+Received: from HE1PR0801MB1676.eurprd08.prod.outlook.com (10.168.146.150) by
+ HE1PR0801MB1690.eurprd08.prod.outlook.com (10.168.145.141) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2284.20; Wed, 18 Sep 2019 06:01:34 +0000
+Received: from HE1PR0801MB1676.eurprd08.prod.outlook.com
+ ([fe80::40a2:f892:29a7:2942]) by HE1PR0801MB1676.eurprd08.prod.outlook.com
+ ([fe80::40a2:f892:29a7:2942%10]) with mapi id 15.20.2263.023; Wed, 18 Sep
+ 2019 06:01:34 +0000
+From: "Jianyong Wu (Arm Technology China)" <Jianyong.Wu@arm.com>
+To: Richard Cochran <richardcochran@gmail.com>
+Subject: RE: [PATCH 3/6] Timer: expose monotonic clock and counter value
+Thread-Topic: [PATCH 3/6] Timer: expose monotonic clock and counter value
+Thread-Index: AQHVbUqaDFZ5iqdiL0+E9FJrHymYEKcwy6KAgAAi8UA=
+Date: Wed, 18 Sep 2019 06:01:34 +0000
+Message-ID: <HE1PR0801MB1676AD8E5E50B70F1E3CD9F5F48E0@HE1PR0801MB1676.eurprd08.prod.outlook.com>
+References: <20190917112430.45680-1-jianyong.wu@arm.com>
+ <20190917112430.45680-4-jianyong.wu@arm.com>
+ <20190918034235.GA1469@localhost>
+In-Reply-To: <20190918034235.GA1469@localhost>
+Accept-Language: en-US
 Content-Language: en-US
-X-Provags-ID: V03:K1:ABlpQxnXl+sRFgrhF2Ps9SUkBzUTwIpOLxc+5dv3VxYsm8Cjm12
- Pc4zG+DeqHaaX69urPW1Xyx6Ef+rn48odz6iyGs0biNUvYi62dqSt3vPuoDhvOsfnA0wvE1
- nyv3xpqUAFrNayfCCvma48N2KXOgp1GSDvP39vI8vzu15BnRJP8Hld+Ya7hzRMBXpaxadIe
- jt09f0fIf6IBjnwwwtusg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Q+frnxjj08U=:vCHme45Iqx61x/+nW6Kot/
- TGNyfsj7Lqw886b0zoZeVue0bIs5bQXCFTsDtbVB3VMFcyx4pqjw61PJKbQbcdO6WaIH6gTRw
- DxCHZ9pXGtMszghjBRx+ZoJ/vMg4tpP91xMKVRDEGFHOgCp4rMabIOxSjItGR3BA8nKFuHLhy
- IOgGGe+jsyfBtXYxOJbJLVFStOwXrk0nPlm6r9XixlRMhfcmldZTl239QOwXmK+fT9FERBZgQ
- U/XAi0disScILHEj0l4dz2jXOme7O5fLFvPmyKaeejagS3itrvNeJJcRc2+4dpjImPFRWJHNc
- /IkUF5zF8V8o5hoeCrzWgKstk8GH7etJPXuk2rRzzk00cisEEV6Yv5BH4npDhNo2zcarRbAAI
- BCEERLhC5HC5oqkhHWbPCNcpA8GA3+mK9J4aFfL+FGm1OOGvxK0JK6WmLWP9uc0hV5MKV8FV4
- ejH9blWGYOQpxgr8CHd7/ob5CbGNuXakMf5aydjnSBCS+wMtahptG66BNeV2wslTKc+4I+Xys
- IWPlrSGg6wZBWLXad9P3lTssCMcbxJhboso1l1EuXlaj4C3Z/TLtaz0sYmUfCGhPyBEoqks0K
- UsdttxyNV9sv2WYmuL8E0G38gWh+/n2AndkRbl6gQzWnaUU2C4C8lzMc6gHYD9M67FJmlPBV5
- FKu72MTHDD7Q4KHSfh/Vi8NTRwHZAwowuHvAUJOayU6ZYjc0OcX7S8tq4qwaAMqWh0mbRp7Zu
- wDPkW4MCLwSiornqvmB71cAp4VxfHBHgUPEoA/ZtqdtnJGNR3uTRYEvUj2NfvFpi/8x1aGl6t
- vFfK7Zbk5hvpKRY1ftYMgKXagQVvrPGpPWmoAKyezuG7Wz2tZGkg55oOq+ymSy26wNiBJINRK
- tgyk4KGc1Bd4TJILMOZalhrYYXZoikCEg/9X/IUdrbc8CmqkDUSnknRmXfZjF8b6B2kqNkvHX
- 4YDpG7QxOY2W+AU+HalysiTdAEEf150jFgWYYe94amoCzN+Yp+KAYn/IAdZRGih2afSx5sEx0
- vzi8+K15YymGBw9lxYTCHVbjV0pBxe65X+YGz0+GodyiirTzUBNU4pVqZHAPMIWtph37EQs1T
- nxUxVKRJLsCnEfZN2jE0nMkY9Vb9A1J4KlA7OG5qzNXIGCaK6fSbvO99V4vmlsCLpaqukf0XK
- wRFV/W5MJqNAPEGfkQFHgcKBzNUjbjQAomnEF/NxOqQdmZ5aTASTxPr4Nj/ZUCmxOBQVpmP+T
- TAH/Z2Qq17OW0dYTQ4rjm5iCgAvcBzxJ4onWsrWokf0K29W2rRfec6/9vv3M=
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ts-tracking-id: 608732e4-db59-46e7-920f-83398e68906f.1
+x-checkrecipientchecked: true
+Authentication-Results-Original: spf=none (sender IP is )
+ smtp.mailfrom=Jianyong.Wu@arm.com; 
+x-originating-ip: [113.29.88.7]
+x-ms-publictraffictype: Email
+X-MS-Office365-Filtering-Correlation-Id: df3c044e-23b0-4bb2-5c83-08d73bfdb1c4
+X-MS-Office365-Filtering-HT: Tenant
+X-Microsoft-Antispam-Untrusted: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(7168020)(4627221)(201703031133081)(201702281549075)(8990200)(5600167)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:HE1PR0801MB1690; 
+X-MS-TrafficTypeDiagnostic: HE1PR0801MB1690:|HE1PR0801MB1690:|VE1PR08MB4749:
+x-ms-exchange-transport-forked: True
+X-Microsoft-Antispam-PRVS: <VE1PR08MB47498DE1074641E46C64977EF48E0@VE1PR08MB4749.eurprd08.prod.outlook.com>
+x-checkrecipientrouted: true
+x-ms-oob-tlc-oobclassifiers: OLM:2000;OLM:2000;
+x-forefront-prvs: 01644DCF4A
+X-Forefront-Antispam-Report-Untrusted: SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(366004)(136003)(396003)(376002)(346002)(13464003)(199004)(189003)(186003)(102836004)(6506007)(53546011)(55236004)(66066001)(26005)(33656002)(99286004)(7696005)(66446008)(64756008)(66556008)(66476007)(76116006)(8936002)(66946007)(476003)(11346002)(81166006)(81156014)(8676002)(446003)(3846002)(52536014)(2906002)(5660300002)(486006)(54906003)(76176011)(86362001)(6116002)(316002)(7736002)(6246003)(478600001)(55016002)(14454004)(9686003)(25786009)(6436002)(229853002)(4326008)(71200400001)(71190400001)(1411001)(305945005)(74316002)(256004)(6916009);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:HE1PR0801MB1690;
+ H:HE1PR0801MB1676.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: arm.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Message-Info-Original: l1G1qFjo0Us2Sxndm+WD5HpZPQ32cQmgsKtS2IrPrOn27WJAgOG1p6TYK5f2TMU1l76bqTQwboLBH4xb/CLu3E4PMV62rGQu2bb3xZIT7DwkuicwRybbd5g8eShNpa1LpB3rhxlPXQSiHS2++4qAqCFIUQlUXYpCOaMqd/LawWak5L827xrK4nrjf0FVDyoDzAE+fwFXTJJnip449RuucVmADRVOny/eSLE9t7D5C/OSR9cNSDR9U4ffaCmdIp3ttSO35O0XUMwDTV+KIYKQgp5INMFdAe9H3G/9JikgQcylEWcJBHBg2zOCTAEz3iTr/Tf1dfKFEcXcka+ca48up7YJIfkyzY95nF9Z7qIxLia+ujP0qn5q5HccPlnmEJy786q6X4WmfW2gkvoSJwLQyORYuRgUysdQFluDwfPmhzw=
+MIME-Version: 1.0
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1PR0801MB1690
+Original-Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=Jianyong.Wu@arm.com; 
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: AM5EUR03FT028.eop-EUR03.prod.protection.outlook.com
+X-Forefront-Antispam-Report: CIP:63.35.35.123; IPV:CAL; SCL:-1; CTRY:IE;
+ EFV:NLI; SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(136003)(39860400002)(346002)(396003)(13464003)(199004)(189003)(33656002)(8936002)(478600001)(486006)(6506007)(8676002)(74316002)(8746002)(81156014)(70206006)(305945005)(76130400001)(53546011)(26826003)(76176011)(7696005)(36906005)(229853002)(70586007)(97756001)(14454004)(50466002)(5660300002)(81166006)(102836004)(54906003)(3846002)(2906002)(316002)(11346002)(99286004)(66066001)(86362001)(126002)(4326008)(6862004)(476003)(6116002)(336012)(22756006)(46406003)(26005)(63350400001)(1411001)(7736002)(9686003)(55016002)(356004)(6246003)(23726003)(446003)(25786009)(52536014)(47776003)(186003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR08MB4749;
+ H:64aa7808-outbound-1.mta.getcheckrecipient.com; FPR:; SPF:TempError; LANG:en;
+ PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; A:1; MX:1; 
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 840208ee-0a22-4ad2-17b1-08d73bfda944
+X-Microsoft-Antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600167)(710020)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:VE1PR08MB4749; 
+NoDisclaimer: True
+X-Forefront-PRVS: 01644DCF4A
+X-Microsoft-Antispam-Message-Info: dyzO5nKT9Nqbut81qFQ0KeS5zvdUTNXphFJbsclNdyyyW9fZL8R1P6hJr0PcPZzozyxfBX1BEb7N3hghJrKoID4soySPUyMD87qIwAXa21oyIRp3ZjFbA5Z64omQ5IgwSqbhuzs2safnJvUrbIhPEl4IgyGvvN2X+OS80eA/LOqxUXK3gk+VYelwdulGV3L90uPgZLWrbxkZdHoqw5innVLFE9D3+8pKU5C8erbNhusgG/Isf1/EK8rymS1Pbf9YenAIYuZexZihGX4jxA0znuRn9SGc8es62X3z+3sERmYNTAfS+MmEXr5LBgf0aGrNwilTyjEJ2kXEzEZphYYGhDsPvDLcWkYtOmozgn7fmpR3z6ZQ3rjvY5dRsfqiYtzgT/UTu69j1ZaEb9hQLFGnMzH7piQqNS+xQgnIopyv/Uk=
+X-OriginatorOrg: arm.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Sep 2019 06:01:49.0854 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: df3c044e-23b0-4bb2-5c83-08d73bfdb1c4
+X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
+ Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR08MB4749
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_225729_441927_A52F1136 
-X-CRM114-Status: GOOD (  10.34  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190917_230156_829340_0F6A7E99 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (markus.elfring[at]web.de)
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.14 listed in list.dnswl.org]
+ no trust [40.107.0.45 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -144,57 +180,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bartosz Golaszewski <brgl@bgdev.pl>, kernel-janitors@vger.kernel.org,
- LKML <linux-kernel@vger.kernel.org>,
- Himanshu Jha <himanshujha199640@gmail.com>
+Cc: Mark Rutland <Mark.Rutland@arm.com>, "Justin He \(Arm Technology
+ China\)" <Justin.He@arm.com>, Suzuki Poulose <Suzuki.Poulose@arm.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ Steve Capper <Steve.Capper@arm.com>, Will Deacon <Will.Deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "sean.j.christopherson@intel.com" <sean.j.christopherson@intel.com>, "Kaly
+ Xin \(Arm Technology China\)" <Kaly.Xin@arm.com>,
+ "maz@kernel.org" <maz@kernel.org>, "pbonzini@redhat.com" <pbonzini@redhat.com>,
+ nd <nd@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Markus Elfring <elfring@users.sourceforge.net>
-Date: Wed, 18 Sep 2019 07:40:26 +0200
+Hi Richard,
 
-Simplify this function implementation by using a known wrapper function.
+> -----Original Message-----
+> From: Richard Cochran <richardcochran@gmail.com>
+> Sent: Wednesday, September 18, 2019 11:43 AM
+> To: Jianyong Wu (Arm Technology China) <Jianyong.Wu@arm.com>
+> Cc: netdev@vger.kernel.org; pbonzini@redhat.com;
+> sean.j.christopherson@intel.com; maz@kernel.org; Mark Rutland
+> <Mark.Rutland@arm.com>; Will Deacon <Will.Deacon@arm.com>; Suzuki
+> Poulose <Suzuki.Poulose@arm.com>; linux-kernel@vger.kernel.org; Steve
+> Capper <Steve.Capper@arm.com>; Kaly Xin (Arm Technology China)
+> <Kaly.Xin@arm.com>; Justin He (Arm Technology China)
+> <Justin.He@arm.com>; nd <nd@arm.com>; linux-arm-
+> kernel@lists.infradead.org
+> Subject: Re: [PATCH 3/6] Timer: expose monotonic clock and counter value
+> 
+> On Tue, Sep 17, 2019 at 07:24:27AM -0400, Jianyong Wu wrote:
+> > A number of PTP drivers (such as ptp-kvm) are assuming what the
+> > current clock source is, which could lead to interesting effects on
+> > systems where the clocksource can change depending on external events.
+> >
+> > For this purpose, add a new API that retrives both the current
+> > monotonic clock as well as its counter value.
+> >
+> > Signed-off-by: Marc Zyngier <maz@kernel.org>
+> > Signed-off-by: Jianyong Wu <jianyong.wu@arm.com>
+> > ---
+> >  include/linux/timekeeping.h |  3 +++
+> >  kernel/time/timekeeping.c   | 13 +++++++++++++
+> >  2 files changed, 16 insertions(+)
+> 
+> For core time keeping changes, you must CC lkml, tglx, and John Stultz.
+> 
 
-This issue was detected by using the Coccinelle software.
+Thanks, I will.
 
-Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
----
- arch/arm/mach-zx/zx296702-pm-domain.c | 10 +---------
- 1 file changed, 1 insertion(+), 9 deletions(-)
+Thanks
+Jianyong Wu
 
-diff --git a/arch/arm/mach-zx/zx296702-pm-domain.c b/arch/arm/mach-zx/zx296702-pm-domain.c
-index 7a08bf9dd792..ba4f556b7a13 100644
---- a/arch/arm/mach-zx/zx296702-pm-domain.c
-+++ b/arch/arm/mach-zx/zx296702-pm-domain.c
-@@ -152,7 +152,6 @@ static struct generic_pm_domain *zx296702_pm_domains[] = {
- static int zx296702_pd_probe(struct platform_device *pdev)
- {
- 	struct genpd_onecell_data *genpd_data;
--	struct resource *res;
- 	int i;
-
- 	genpd_data = devm_kzalloc(&pdev->dev, sizeof(*genpd_data), GFP_KERNEL);
-@@ -161,14 +160,7 @@ static int zx296702_pd_probe(struct platform_device *pdev)
-
- 	genpd_data->domains = zx296702_pm_domains;
- 	genpd_data->num_domains = ARRAY_SIZE(zx296702_pm_domains);
--
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	if (!res) {
--		dev_err(&pdev->dev, "no memory resource defined\n");
--		return -ENODEV;
--	}
--
--	pcubase = devm_ioremap_resource(&pdev->dev, res);
-+	pcubase = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(pcubase)) {
- 		dev_err(&pdev->dev, "ioremap fail.\n");
- 		return -EIO;
---
-2.23.0
-
+> Thanks,
+> Richard
 
 _______________________________________________
 linux-arm-kernel mailing list
