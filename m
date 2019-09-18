@@ -2,77 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3922B5E63
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 09:53:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28A36B5E65
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 09:54:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9NSnbpafcLRmmWca3VCZqK2GiztcFJ4WkuQiA2DpA1E=; b=cHNVnqkF57+r7F
-	FHnda7kWXvgK3XYc15XKrZ4bdj5ZIengrkv86L306PddmPhZTmvJDiJVnQ5WtGAtKdqvFPYUL3B33
-	oLA4Ix0Xw1lTA0zUCCfn7ukWxOPqlwaSOqAFIhxWfKM0Ypq2Fop/fqw5WiGpBUROZP6rt3LoKB1P3
-	z15W1on9q5EzyUQCOuPLx76FyPnQ7GC3xd4rBYv9AyCEhwqHaPnid4a9CSM6XeX0H+41Ej2kK22LX
-	GrKvp60+09D7DoKD+RkyqnQdH7z13nKsQZM4M26ipUng9Q9qlEOqKxvWflJ7l2C6kvl58/4YmwpsO
-	Byq2U6g1i50I2CeEAtCw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=m1UIB7dwtdo4PJ8HijpIqsDu7g1Iu9sbE7WNqdWBtnE=; b=deNIvAD60y8GT5
+	8c51y3fxXjIEhTW3KQ6e29YMa4Mlf+q32NuX4ZI500vnpIUwKwg+hlLPyQuHt0GBLAlM7hnWz0whc
+	G43+8/oM7L31lGQL2ELM2D90Dw6pOe5EoS/B7EN8McfiSvlLXdS4FR4c0PL63eTSGYmsmP+0lYQRn
+	Y0H8AWKivbtvK2XWL47yuBPowo4lgl/StQI/Ucs94hZbML6KEYa1Oy76C74QiGmv/9h43uoNO6AU3
+	nepHxKk5vj2kxBNP/S5YNzb51b7NPPx+ppitMDOXUqrKdoNzHpjRok1K4PscvmyY9DpnQBnX7+ujF
+	COweDUzW5C+NWnY8ga9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAUmQ-00011n-Gl; Wed, 18 Sep 2019 07:53:38 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iAUmq-0001LO-QV; Wed, 18 Sep 2019 07:54:04 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAUm4-00011F-A6
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 07:53:17 +0000
-Received: by mail-pg1-x542.google.com with SMTP id i18so3509181pgl.11
+ id 1iAUm7-00011x-Df
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 07:53:21 +0000
+Received: by mail-pf1-x444.google.com with SMTP id q10so3846346pfl.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Sep 2019 00:53:15 -0700 (PDT)
+ Wed, 18 Sep 2019 00:53:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=hSMOl3iSrRpXlHeE5xjCiDIndldeUrDABtlwaJ/jr9M=;
- b=kCTU1lN/PgnOcJLN5S3Tbdb11R26JjYMrwr/xRDnKpdsvfp4kOpnlm+orD+G61a8h5
- 06cI5S1hCaEVAV2JyVDhiC6SSnlL8pm/F9JWfjFs++Ggqf89FEsnnrIa6SAVMvzBlh/b
- 2CPyZTfzW2Pmjvctg1MB5kqgTGmTjrM+2gsE8kJS3n6gKM7IkPYf02Jd+KMhcZsm1KDO
- /G66GWGvd/6ic1i+FLo/q1Kn3Ou3KirFBjRNiz5UnazFOXu6Y4iNwAcNxX8f+tfweXeL
- BOn5S4lFE0f/9pSQocEHor1eDcxMIYyp5SAsWxlDCaOlHsUBAw98h8FFzdqt8XfMyYyH
- X3Wg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=Xjl+nKMauFdQMucZCGYFJNYkEcd8nmtmKLzonD2DvBw=;
+ b=aapYiITKELPyW4PHB8mGw+Qj50qIrsMGCgbf6vimpLFQn0kfedpldxpF+mnmGruaRd
+ 0D8dSrIxudPaQYKYtAJrGcKiT8MvXUOpimKbMaeDoAoX0MlxNUIblfM+rFIUdA6Fa+q0
+ fthHylYRRRyzedpTzlaznmGMzytzDacZRuJ/ge1XH/9Y1p4sdx40bnlddoJYjB64oksE
+ a8XW5eydVr6oBq2MGac+QDMkHOFsmbDn+Te32g8A+A2ELQedhj4qMBs4oKMkLNMEpd6A
+ RdoZHCGo7QdWuRXFOQApsNZa6kL3Mi5LyXDjTJeM7rmc077HB3Z/t+V2mQBDbDe3Dl70
+ 3Zbg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=hSMOl3iSrRpXlHeE5xjCiDIndldeUrDABtlwaJ/jr9M=;
- b=eqVQSXHxn5wW/GKSb5bX1WDVUqRBk5pGKykaKe60vVOtL/TNatPI6Oh7o83EYfYVDL
- QTKJ0aGMgwBMof/SjcBThQJN3w2YLT4TgUBJKRhtXbnOt3l41KpZeP7BeRjUxu2dAnhA
- 6zlQpL87/d06uvAnbYpzCRwAPYfZ9SG1P3OIT3dBM89NLTInoX1oPxCY8ie3UG7bk6SJ
- mJJsy062pM4/Bk9s5iGX9SkN9Y68r6mrNrIwzT0bKXpc5wkDXcowotUmyK32O2C1G/IE
- b3WrTswOMLDsUd/Czt3YHBdd8PnIgubdZ0H4Ss2cK2h6MaiRFB7Hg8sUfFBFdtfv27+B
- QN+g==
-X-Gm-Message-State: APjAAAUhdfz9oOKj2bj302twbqyI64PXqgkjk1CpOPanNHDSF9UcHXKD
- IgbfJWWIT59L8Uv06u5qlxU=
-X-Google-Smtp-Source: APXvYqwvVW9jJdHy5gE8lLIbwy8ELcp/zN9mDprxNkj63ZlbaO61Y0JTesXzYUV6appyqECbirGFMA==
-X-Received: by 2002:a63:70d:: with SMTP id 13mr2796186pgh.326.1568793194471;
- Wed, 18 Sep 2019 00:53:14 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=Xjl+nKMauFdQMucZCGYFJNYkEcd8nmtmKLzonD2DvBw=;
+ b=L7ET7ZnWYp/ZTl7kv8JO0D/wbYqjq2lJ4824PNhRqOK1S3KjYTcSlFWZBcNIirQJQI
+ XmN2HFgxISD6I9Gti+mWhiKltUJ5DSBSO9U3cOzWzPL+z10zbfzyOgm7zEOtTETGMBGc
+ 1WR1NRZycHTLRvNoQkuk1gYnLdDh5zwRCmOOwQGP0g12dQ0FzyaZt57ek9GfiYdphNjN
+ Lbf//Zdl3Id6yAJHYTaZLZ+cf34uXgRP3voGwV87CVr2cYBAfwmgzj1iFtnrqkDBzfdU
+ dwSeroRK4YVdziEcPpgn2UgFmb947d08abf0XuWyYS8wVKO6vkBKryp5prIPF1VJaKeb
+ NwdQ==
+X-Gm-Message-State: APjAAAXiwzWWt2EExi+uff3VgnSYe1RNKz5OT4kBMO/tIixQVestBm/y
+ fKdQGTTE67PRaU2OnweuZyY=
+X-Google-Smtp-Source: APXvYqy5KsztavGnDkcRDa8efg7SqNcEzpfdR8ZQEEx9n/F421fNVbt98mZe0yTO939Qqb5PhBhnRw==
+X-Received: by 2002:a17:90a:2ecb:: with SMTP id
+ h11mr2331197pjs.108.1568793198781; 
+ Wed, 18 Sep 2019 00:53:18 -0700 (PDT)
 Received: from localhost.localdomain ([2001:268:c147:d9df:f819:e399:825f:f2dc])
- by smtp.gmail.com with ESMTPSA id h8sm5580715pfo.64.2019.09.18.00.53.09
+ by smtp.gmail.com with ESMTPSA id h8sm5580715pfo.64.2019.09.18.00.53.14
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Sep 2019 00:53:13 -0700 (PDT)
+ Wed, 18 Sep 2019 00:53:17 -0700 (PDT)
 From: William Breathitt Gray <vilhelm.gray@gmail.com>
 To: jic23@jic23.retrosnub.co.uk
-Subject: [PATCH v2 0/7] counter: Simplify count_read/count_write/signal_read
-Date: Wed, 18 Sep 2019 16:52:41 +0900
-Message-Id: <cover.1568792697.git.vilhelm.gray@gmail.com>
+Subject: [PATCH v2 1/7] counter: Simplify the count_read and count_write
+ callbacks
+Date: Wed, 18 Sep 2019 16:52:42 +0900
+Message-Id: <f7969048e5db977cc6cc9daa8d32b170cf9f4c17.1568792697.git.vilhelm.gray@gmail.com>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <cover.1568792697.git.vilhelm.gray@gmail.com>
+References: <cover.1568792697.git.vilhelm.gray@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_005316_356689_72D8249E 
-X-CRM114-Status: GOOD (  13.20  )
+X-CRM114-CacheID: sfid-20190918_005319_465417_E4A59785 
+X-CRM114-Status: GOOD (  17.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,90 +110,197 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Changes in v2:
- - Update the rest of the drivers under drivers/counter
+The count_read and count_write callbacks are simplified to pass val as
+unsigned long rather than as an opaque data structure. The opaque
+counter_count_read_value and counter_count_write_value structures,
+counter_count_value_type enum, and relevant counter_count_read_value_set
+and counter_count_write_value_get functions, are removed as they are no
+longer used.
 
-The changes in this patchset will not affect the userspace interface.
-Rather, these changes are intended to simplify the kernelspace Counter
-callbacks for counter device driver authors.
+Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
+---
+ drivers/counter/counter.c | 66 +++++----------------------------------
+ include/linux/counter.h   | 43 +++----------------------
+ 2 files changed, 12 insertions(+), 97 deletions(-)
 
-The following main changes are proposed:
-
-* Retire the opaque counter_count_read_value/counter_count_write_value
-  structures and simply represent count data as an unsigned integer.
-
-* Retire the opaque counter_signal_read_value structure and represent
-  Signal data as a counter_signal_value enum.
-
-These changes should reduce some complexity and code in the use and
-implementation of the count_read, count_write, and signal_read
-callbacks.
-
-The opaque structures for Count data and Signal data were introduced
-originally in anticipation of supporting various representations of
-counter data (e.g. arbitrary-precision tallies, floating-point spherical
-coordinate positions, etc). However, with the counter device drivers
-that have appeared, it's become apparent that utilizing opaque
-structures in kernelspace is not the best approach to take.
-
-I believe it is best to let userspace applications decide how to
-interpret the count data they receive. There are a couple of reasons why
-it would be good to do so:
-
-* Users use their devices in unexpected ways.
-
-  For example, a quadrature encoder counter device is typically used to
-  keep track of the position of a motor, but a user could set the device
-  in a pulse-direction mode and instead use it to count sporadic rising
-  edges from an arbitrary signal line unrelated to positioning. Users
-  should have the freedom to decide what their data represents.
-
-* Most counter devices represent data as unsigned integers anyway.
-
-  For example, whether the device is a tally counter or position
-  counter, the count data is represented to the user as an unsigned
-  integer value. So specifying that one device is representing tallies
-  while the other specifies positions does not provide much utility from
-  an interface perspective.
-
-For these reasons, the count_read and count_write callbacks have been
-redefined to pass count data directly as unsigned long instead of passed
-via opaque structures:
-
-        count_read(struct counter_device *counter,
-                   struct counter_count *count, unsigned long *val);
-        count_write(struct counter_device *counter,
-                    struct counter_count *count, unsigned long val);
-
-Similarly, the signal_read is redefined to pass Signal data directly as
-a counter_signal_value enum instead of via an opaque structure:
-
-        signal_read(struct counter_device *counter,
-                    struct counter_signal *signal,
-                    enum counter_signal_value *val);
-
-The counter_signal_value enum is simply the counter_signal_level enum
-redefined to remove the references to the Signal data "level" data type.
-
-William Breathitt Gray (7):
-  counter: Simplify the count_read and count_write callbacks
-  counter: Simplify the signal_read callback
-  docs: driver-api: generic-counter: Update Count and Signal data types
-  counter: 104-quad-8: Update count_read/count_write/signal_read
-    callbacks
-  counter: ftm-quaddec: Update count_read and count_write callbacks
-  counter: stm32-lptimer-cnt: Update count_read callback
-  counter: stm32-timer-cnt: Update count_read and count_write callbacks
-
- Documentation/driver-api/generic-counter.rst |  22 ++--
- drivers/counter/104-quad-8.c                 |  33 ++----
- drivers/counter/counter.c                    | 101 +++----------------
- drivers/counter/ftm-quaddec.c                |  14 +--
- drivers/counter/stm32-lptimer-cnt.c          |   5 +-
- drivers/counter/stm32-timer-cnt.c            |  17 +---
- include/linux/counter.h                      |  74 ++------------
- 7 files changed, 53 insertions(+), 213 deletions(-)
-
+diff --git a/drivers/counter/counter.c b/drivers/counter/counter.c
+index 106bc7180cd8..1d08f1437b1b 100644
+--- a/drivers/counter/counter.c
++++ b/drivers/counter/counter.c
+@@ -246,60 +246,6 @@ void counter_signal_read_value_set(struct counter_signal_read_value *const val,
+ }
+ EXPORT_SYMBOL_GPL(counter_signal_read_value_set);
+ 
+-/**
+- * counter_count_read_value_set - set counter_count_read_value data
+- * @val:	counter_count_read_value structure to set
+- * @type:	property Count data represents
+- * @data:	Count data
+- *
+- * This function sets an opaque counter_count_read_value structure with the
+- * provided Count data.
+- */
+-void counter_count_read_value_set(struct counter_count_read_value *const val,
+-				  const enum counter_count_value_type type,
+-				  void *const data)
+-{
+-	switch (type) {
+-	case COUNTER_COUNT_POSITION:
+-		val->len = sprintf(val->buf, "%lu\n", *(unsigned long *)data);
+-		break;
+-	default:
+-		val->len = 0;
+-	}
+-}
+-EXPORT_SYMBOL_GPL(counter_count_read_value_set);
+-
+-/**
+- * counter_count_write_value_get - get counter_count_write_value data
+- * @data:	Count data
+- * @type:	property Count data represents
+- * @val:	counter_count_write_value structure containing data
+- *
+- * This function extracts Count data from the provided opaque
+- * counter_count_write_value structure and stores it at the address provided by
+- * @data.
+- *
+- * RETURNS:
+- * 0 on success, negative error number on failure.
+- */
+-int counter_count_write_value_get(void *const data,
+-				  const enum counter_count_value_type type,
+-				  const struct counter_count_write_value *const val)
+-{
+-	int err;
+-
+-	switch (type) {
+-	case COUNTER_COUNT_POSITION:
+-		err = kstrtoul(val->buf, 0, data);
+-		if (err)
+-			return err;
+-		break;
+-	}
+-
+-	return 0;
+-}
+-EXPORT_SYMBOL_GPL(counter_count_write_value_get);
+-
+ struct counter_attr_parm {
+ 	struct counter_device_attr_group *group;
+ 	const char *prefix;
+@@ -788,13 +734,13 @@ static ssize_t counter_count_show(struct device *dev,
+ 	const struct counter_count_unit *const component = devattr->component;
+ 	struct counter_count *const count = component->count;
+ 	int err;
+-	struct counter_count_read_value val = { .buf = buf };
++	unsigned long val;
+ 
+ 	err = counter->ops->count_read(counter, count, &val);
+ 	if (err)
+ 		return err;
+ 
+-	return val.len;
++	return sprintf(buf, "%lu\n", val);
+ }
+ 
+ static ssize_t counter_count_store(struct device *dev,
+@@ -806,9 +752,13 @@ static ssize_t counter_count_store(struct device *dev,
+ 	const struct counter_count_unit *const component = devattr->component;
+ 	struct counter_count *const count = component->count;
+ 	int err;
+-	struct counter_count_write_value val = { .buf = buf };
++	unsigned long val;
++
++	err = kstrtoul(buf, 0, &val);
++	if (err)
++		return err;
+ 
+-	err = counter->ops->count_write(counter, count, &val);
++	err = counter->ops->count_write(counter, count, val);
+ 	if (err)
+ 		return err;
+ 
+diff --git a/include/linux/counter.h b/include/linux/counter.h
+index a061cdcdef7c..7e40796598a6 100644
+--- a/include/linux/counter.h
++++ b/include/linux/counter.h
+@@ -300,24 +300,6 @@ struct counter_signal_read_value {
+ 	size_t len;
+ };
+ 
+-/**
+- * struct counter_count_read_value - Opaque Count read value
+- * @buf:	string representation of Count read value
+- * @len:	length of string in @buf
+- */
+-struct counter_count_read_value {
+-	char *buf;
+-	size_t len;
+-};
+-
+-/**
+- * struct counter_count_write_value - Opaque Count write value
+- * @buf:	string representation of Count write value
+- */
+-struct counter_count_write_value {
+-	const char *buf;
+-};
+-
+ /**
+  * struct counter_ops - Callbacks from driver
+  * @signal_read:	optional read callback for Signal attribute. The read
+@@ -328,15 +310,10 @@ struct counter_count_write_value {
+  *			signal_read callback.
+  * @count_read:		optional read callback for Count attribute. The read
+  *			value of the respective Count should be passed back via
+- *			the val parameter. val points to an opaque type which
+- *			should be set only by calling the
+- *			counter_count_read_value_set function from within the
+- *			count_read callback.
++ *			the val parameter.
+  * @count_write:	optional write callback for Count attribute. The write
+  *			value for the respective Count is passed in via the val
+- *			parameter. val points to an opaque type which should be
+- *			accessed only by calling the
+- *			counter_count_write_value_get function.
++ *			parameter.
+  * @function_get:	function to get the current count function mode. Returns
+  *			0 on success and negative error code on error. The index
+  *			of the respective Count's returned function mode should
+@@ -357,11 +334,9 @@ struct counter_ops {
+ 			   struct counter_signal *signal,
+ 			   struct counter_signal_read_value *val);
+ 	int (*count_read)(struct counter_device *counter,
+-			  struct counter_count *count,
+-			  struct counter_count_read_value *val);
++			  struct counter_count *count, unsigned long *val);
+ 	int (*count_write)(struct counter_device *counter,
+-			   struct counter_count *count,
+-			   struct counter_count_write_value *val);
++			   struct counter_count *count, unsigned long val);
+ 	int (*function_get)(struct counter_device *counter,
+ 			    struct counter_count *count, size_t *function);
+ 	int (*function_set)(struct counter_device *counter,
+@@ -486,19 +461,9 @@ enum counter_signal_value_type {
+ 	COUNTER_SIGNAL_LEVEL = 0
+ };
+ 
+-enum counter_count_value_type {
+-	COUNTER_COUNT_POSITION = 0,
+-};
+-
+ void counter_signal_read_value_set(struct counter_signal_read_value *const val,
+ 				   const enum counter_signal_value_type type,
+ 				   void *const data);
+-void counter_count_read_value_set(struct counter_count_read_value *const val,
+-				  const enum counter_count_value_type type,
+-				  void *const data);
+-int counter_count_write_value_get(void *const data,
+-				  const enum counter_count_value_type type,
+-				  const struct counter_count_write_value *const val);
+ 
+ int counter_register(struct counter_device *const counter);
+ void counter_unregister(struct counter_device *const counter);
 -- 
 2.23.0
 
