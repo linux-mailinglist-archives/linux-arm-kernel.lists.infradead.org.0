@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7862DB5BA3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 08:08:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86689B5BA4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 08:08:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rHUqWrDbrgytZ0Ilw2RHgyz9j6VH5xph4CCpqiiAD6M=; b=nH0U8egzj+V6JD
-	ZZ0Fp/iR41ATjOQEG6UHR0jcvADWEdqjSD1K86OhYzOSrNPfNSB+D49K+OUe+a8+Kc82n2aG4PFfY
-	u9ohY2NprOBTVMsK+YLwOlhL9D6VFBHEWhrgUMMOcJHCEz84K5oZS+3P5VE/O4vOhd2TboadHJCyp
-	nXBaMTowuHEOaCTQ33xcdNlGUT/+yKizG1XjlbP7IjQgNA4TCzdcismq8YomBvzHMbbjmRUgDhNy7
-	qRaJOX4xbL79B65xPQwZOP6HenGgoXq2dxuwnvrE45NArHqynF/L2Xsm6SabtOIr9mjXJco01m3Th
-	ygqrJXStIwR0anFtPF9w==;
+	List-Owner; bh=NGYrJpzKp6635Q502BsZ865ebtqrs0JQN1wQkcvzkeQ=; b=YcpgjtoLHyWZhV
+	5wLKRKAckfwEGFvM9LY1mddIP8JMS3Qv71IPtzmOBHDG1dchqn70qQYRgZjc26HNGN7UNXPBPIgz9
+	3+M/CJhZhe2gb/R6+/313OCPAXPDCpqP3squvzq8Dv+ic1nJPZ8tghiN6nd7+7U+OGVFWbQYW0qGJ
+	vXJcJ+ZL14MBQxApN2+CWNFlBoS0TXnFpkDPhjjhoikpkUq8IzU0Hw0CzNipuPPcDXxv/sYhxIrk/
+	Wym84BWXl0/9qw3e7Sx4fizrz/JDl6+9fP9R3HyUXX3Z7uxlB1rBrz3g61tzm0RjGOV5yepJntM8S
+	6HBmnu/rEAu9sQ1zVYIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAT87-0007ec-IP; Wed, 18 Sep 2019 06:07:55 +0000
+	id 1iAT8O-0007tO-RB; Wed, 18 Sep 2019 06:08:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAT7f-0007Tl-T8
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 06:07:29 +0000
+ id 1iAT7j-0007XK-GP
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 06:07:32 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 80D9620856;
- Wed, 18 Sep 2019 06:07:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1A60220856;
+ Wed, 18 Sep 2019 06:07:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568786847;
- bh=E+ag569ps4IxsaujNVfAcc3vW6cQZB2utRWUInlFvl0=;
+ s=default; t=1568786851;
+ bh=jNhbz67CJr/g2fdjXe+N+K8ckAY7k1eWl83twN0NrXA=;
  h=In-Reply-To:References:Cc:To:From:Subject:Date:From;
- b=B/mfeL7Z3g0BD3P7reEQqj6Te/mnLzFSu0Pvz0fE/6GvzjN86KfgOUgtZ1xPr3E5+
- SWNCvzUhHFK0swvgEV7ixEftNkjdzASun579pVK6WcSSJbgZWR0a9l4qyHWSDIib6g
- /osvjDj0ZT6mNesNNpUZlMDoQ8tfSOY/MYNCa84E=
+ b=i2K8gJQM0HbM2ZNZSIwPgK+a8ru9cYl2eYOub+t5Aa/Mll4ya7fal7MFOxBo3K1dg
+ pdLVcFKnMNOcHv4rPXBY4N8/rM/YuFsCVOZ0vr/m37Lcis9s47eUYJ2fcQdBGS0Hl5
+ qXtjMqa4X5+nBV7I8vdwJIESc5HPNhuRphWFOQIc=
 MIME-Version: 1.0
-In-Reply-To: <1568043491-20680-3-git-send-email-peng.fan@nxp.com>
+In-Reply-To: <1568043491-20680-4-git-send-email-peng.fan@nxp.com>
 References: <1568043491-20680-1-git-send-email-peng.fan@nxp.com>
- <1568043491-20680-3-git-send-email-peng.fan@nxp.com>
+ <1568043491-20680-4-git-send-email-peng.fan@nxp.com>
 To: "festevam@gmail.com" <festevam@gmail.com>,
  "mturquette@baylibre.com" <mturquette@baylibre.com>,
  "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "shawnguo@kernel.org" <shawnguo@kernel.org>, Peng Fan <peng.fan@nxp.com>
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH V3 2/4] clk: imx: clk-pll14xx: unbypass PLL by default
+Subject: Re: [PATCH V3 3/4] clk: imx: imx8mm: fix pll mux bit
 User-Agent: alot/0.8.1
-Date: Tue, 17 Sep 2019 23:07:26 -0700
-Message-Id: <20190918060727.80D9620856@mail.kernel.org>
+Date: Tue, 17 Sep 2019 23:07:30 -0700
+Message-Id: <20190918060731.1A60220856@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_230728_084880_E3B18D6D 
-X-CRM114-Status: UNSURE (   7.22  )
+X-CRM114-CacheID: sfid-20190917_230731_753909_461D3C1D 
+X-CRM114-Status: UNSURE (   7.88  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -94,20 +94,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Peng Fan (2019-09-08 20:39:39)
+Quoting Peng Fan (2019-09-08 20:39:44)
 > From: Peng Fan <peng.fan@nxp.com>
 > 
-> When registering the PLL, unbypass the PLL.
-> The PLL has two bypass control bit, BYPASS and EXT_BYPASS.
-> we will expose EXT_BYPASS to clk driver for mux usage, and keep
-> BYPASS inside pll14xx usage. The PLL has a restriction that
-> when M/P change, need to RESET/BYPASS pll to avoid glitch, so
-> we could not expose BYPASS.
+> pll BYPASS bit should be kept inside pll driver for glitchless freq
+> setting following spec. If exposing the bit, that means pll driver and
+> clk driver has two paths to touch this bit, which is wrong.
 > 
-> To make it easy for clk driver usage, unbypass PLL which does
-> not hurt current function.
+> So use EXT_BYPASS bit here.
 > 
-> Fixes: 8646d4dcc7fb ("clk: imx: Add PLLs driver for imx8mm soc")
+> And drop uneeded set parent, because EXT_BYPASS default is 0.
+> 
+> Fixes: ba5625c3e272 ("clk: imx: Add clock driver support for imx8mm")
+> Suggested-by: Jacky Bai <ping.bai@nxp.com>
 > Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
 > Signed-off-by: Peng Fan <peng.fan@nxp.com>
 > ---
