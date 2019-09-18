@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84A0AB67E2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 18:18:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3CAAB67E4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 18:18:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kwi15/1lzGemJ8aS0jxRTTqm6Fm5qtIF57nlymtNKc0=; b=SXhF1mB/s5bc9j
-	yRQx0CKZsLUL/Owg8Imvsy0OnQdP6fxg7Qtkt5foqzip1/2K7Dt7ZAdlgWGCxDc/KMwanmLKUY7SB
-	m0yr1uSPWNLRw+0E85W0JM5fByHzVSy4y5Hq8gRibO41K+wOdumsAx6tZJ4EqPUlFHFWX8TX3PmIi
-	auidK9/WzyxxfoAK1Mj+g/OdjgHKHkwUWH4YOJMJumoWnXOdIKWn/1se+Bkr+r+pBAyUx++2LpwxM
-	STn9XopdSnshCgFVTza+RvS90kyiKNWp0ChEvaO4gzlkg/NgyweAzx1yHueACVED1mQOMFMgeoCCo
-	/tUkxbZksRn90O/KFcKg==;
+	List-Owner; bh=qCQUO6qzgsXu2ovq68YxGXcdl8mP9DFYl6bODCWADc8=; b=k4CIntEx88FxVU
+	IX/xCUzEJXuz5PoqvfKCjP1q5is1Jwli9f/Q22u3SgvEXvb5Ofn65KulKJ8OQr7vxjRLXJI0z1zOl
+	4WCmCxgz3Iv5ZbomAMctJylfyqLn89P1q9zZx9/lcSYc++WGfOdonTXkCKTW/kDjxgVPAaHYw+dMJ
+	bPZX6rN4ohb7OqF8emDnqyfs4zF2rfw7z3x6Wzfh02G/CwQrKswQNEZP7qFNezPBhdX1IRib+n5be
+	B85c7tucy7DvO+Y54fmOvuLuDCJtRAyMlz7QYIP+LhoOZnhABR03ZHTs0EUCDYQPqbTV4YGPF7lLr
+	+EA9Oud0fPpRyPMi65eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAcf2-0004r3-Ut; Wed, 18 Sep 2019 16:18:33 +0000
+	id 1iAcfH-00057u-TD; Wed, 18 Sep 2019 16:18:48 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAceY-0004g0-Sx
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 16:18:04 +0000
+ id 1iAceZ-0004g2-RB
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 16:18:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B33F3142F;
- Wed, 18 Sep 2019 09:18:00 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BBCC71576;
+ Wed, 18 Sep 2019 09:18:01 -0700 (PDT)
 Received: from e110467-lin.cambridge.arm.com (e110467-lin.cambridge.arm.com
  [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id E696C3F59C;
- Wed, 18 Sep 2019 09:17:59 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id E7C043F59C;
+ Wed, 18 Sep 2019 09:18:00 -0700 (PDT)
 From: Robin Murphy <robin.murphy@arm.com>
 To: will@kernel.org
-Subject: [PATCH 1/4] iommu/arm-smmu: Remove .tlb_inv_range indirection
-Date: Wed, 18 Sep 2019 17:17:48 +0100
-Message-Id: <b53e35945c72bfeb6aab6b7bc8993ebff70c91cb.1568820087.git.robin.murphy@arm.com>
+Subject: [PATCH 2/4] iommu/arm-smmu: Remove "leaf" indirection
+Date: Wed, 18 Sep 2019 17:17:49 +0100
+Message-Id: <4d401834469adc87283a173143fa5c6ede2a960a.1568820087.git.robin.murphy@arm.com>
 X-Mailer: git-send-email 2.21.0.dirty
 In-Reply-To: <cover.1568820087.git.robin.murphy@arm.com>
 References: <cover.1568820087.git.robin.murphy@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_091803_018638_D98F0391 
-X-CRM114-Status: GOOD (  15.32  )
+X-CRM114-CacheID: sfid-20190918_091803_964685_80D8D969 
+X-CRM114-Status: GOOD (  14.56  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,194 +67,115 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fill in 'native' iommu_flush_ops callbacks for all the
-arm_smmu_flush_ops variants, and clear up the remains of the previous
-.tlb_inv_range abstraction.
+Now that the "leaf" flag is no longer part of an external interface,
+there's no need to use it to infer a register offset at runtime when
+we can just as easily encode the offset directly in its place.
 
 Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 ---
- drivers/iommu/arm-smmu.c | 110 ++++++++++++++++++++++-----------------
- drivers/iommu/arm-smmu.h |   2 -
- 2 files changed, 63 insertions(+), 49 deletions(-)
+ drivers/iommu/arm-smmu.c | 29 ++++++++++++++++-------------
+ 1 file changed, 16 insertions(+), 13 deletions(-)
 
 diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-index c3ef0cc8f764..f2b81b1ce224 100644
+index f2b81b1ce224..b5b4cd4cae19 100644
 --- a/drivers/iommu/arm-smmu.c
 +++ b/drivers/iommu/arm-smmu.c
-@@ -312,7 +312,7 @@ static void arm_smmu_tlb_inv_context_s2(void *cookie)
+@@ -312,18 +312,16 @@ static void arm_smmu_tlb_inv_context_s2(void *cookie)
  }
  
  static void arm_smmu_tlb_inv_range_s1(unsigned long iova, size_t size,
--				      size_t granule, bool leaf, void *cookie)
-+				      size_t granule, void *cookie, bool leaf)
+-				      size_t granule, void *cookie, bool leaf)
++				      size_t granule, void *cookie, int reg)
  {
  	struct arm_smmu_domain *smmu_domain = cookie;
  	struct arm_smmu_device *smmu = smmu_domain->smmu;
-@@ -342,7 +342,7 @@ static void arm_smmu_tlb_inv_range_s1(unsigned long iova, size_t size,
+ 	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
+-	int reg, idx = cfg->cbndx;
++	int idx = cfg->cbndx;
+ 
+ 	if (smmu->features & ARM_SMMU_FEAT_COHERENT_WALK)
+ 		wmb();
+ 
+-	reg = leaf ? ARM_SMMU_CB_S1_TLBIVAL : ARM_SMMU_CB_S1_TLBIVA;
+-
+ 	if (cfg->fmt != ARM_SMMU_CTX_FMT_AARCH64) {
+ 		iova = (iova >> 12) << 12;
+ 		iova |= cfg->asid;
+@@ -342,16 +340,15 @@ static void arm_smmu_tlb_inv_range_s1(unsigned long iova, size_t size,
  }
  
  static void arm_smmu_tlb_inv_range_s2(unsigned long iova, size_t size,
--				      size_t granule, bool leaf, void *cookie)
-+				      size_t granule, void *cookie, bool leaf)
+-				      size_t granule, void *cookie, bool leaf)
++				      size_t granule, void *cookie, int reg)
  {
  	struct arm_smmu_domain *smmu_domain = cookie;
  	struct arm_smmu_device *smmu = smmu_domain->smmu;
-@@ -362,14 +362,63 @@ static void arm_smmu_tlb_inv_range_s2(unsigned long iova, size_t size,
- 	} while (size -= granule);
- }
+-	int reg, idx = smmu_domain->cfg.cbndx;
++	int idx = smmu_domain->cfg.cbndx;
  
-+static void arm_smmu_tlb_inv_walk_s1(unsigned long iova, size_t size,
-+				     size_t granule, void *cookie)
-+{
-+	arm_smmu_tlb_inv_range_s1(iova, size, granule, cookie, false);
-+	arm_smmu_tlb_sync_context(cookie);
-+}
-+
-+static void arm_smmu_tlb_inv_leaf_s1(unsigned long iova, size_t size,
-+				     size_t granule, void *cookie)
-+{
-+	arm_smmu_tlb_inv_range_s1(iova, size, granule, cookie, true);
-+	arm_smmu_tlb_sync_context(cookie);
-+}
-+
-+static void arm_smmu_tlb_add_page_s1(struct iommu_iotlb_gather *gather,
-+				     unsigned long iova, size_t granule,
-+				     void *cookie)
-+{
-+	arm_smmu_tlb_inv_range_s1(iova, granule, granule, cookie, true);
-+}
-+
-+static void arm_smmu_tlb_inv_walk_s2(unsigned long iova, size_t size,
-+				     size_t granule, void *cookie)
-+{
-+	arm_smmu_tlb_inv_range_s2(iova, size, granule, cookie, false);
-+	arm_smmu_tlb_sync_context(cookie);
-+}
-+
-+static void arm_smmu_tlb_inv_leaf_s2(unsigned long iova, size_t size,
-+				     size_t granule, void *cookie)
-+{
-+	arm_smmu_tlb_inv_range_s2(iova, size, granule, cookie, true);
-+	arm_smmu_tlb_sync_context(cookie);
-+}
-+
-+static void arm_smmu_tlb_add_page_s2(struct iommu_iotlb_gather *gather,
-+				     unsigned long iova, size_t granule,
-+				     void *cookie)
-+{
-+	arm_smmu_tlb_inv_range_s2(iova, granule, granule, cookie, true);
-+}
-+
-+static void arm_smmu_tlb_inv_any_s2_v1(unsigned long iova, size_t size,
-+				       size_t granule, void *cookie)
-+{
-+	arm_smmu_tlb_inv_context_s2(cookie);
-+}
- /*
-  * On MMU-401 at least, the cost of firing off multiple TLBIVMIDs appears
-  * almost negligible, but the benefit of getting the first one in as far ahead
-  * of the sync as possible is significant, hence we don't just make this a
-- * no-op and set .tlb_sync to arm_smmu_tlb_inv_context_s2() as you might think.
-+ * no-op and call arm_smmu_tlb_inv_context_s2() from .iotlb_sync as you might
-+ * think.
-  */
--static void arm_smmu_tlb_inv_vmid_nosync(unsigned long iova, size_t size,
--					 size_t granule, bool leaf, void *cookie)
-+static void arm_smmu_tlb_add_page_s2_v1(struct iommu_iotlb_gather *gather,
-+					unsigned long iova, size_t granule,
-+					void *cookie)
+ 	if (smmu->features & ARM_SMMU_FEAT_COHERENT_WALK)
+ 		wmb();
+ 
+-	reg = leaf ? ARM_SMMU_CB_S2_TLBIIPAS2L : ARM_SMMU_CB_S2_TLBIIPAS2;
+ 	iova >>= 12;
+ 	do {
+ 		if (smmu_domain->cfg.fmt == ARM_SMMU_CTX_FMT_AARCH64)
+@@ -365,14 +362,16 @@ static void arm_smmu_tlb_inv_range_s2(unsigned long iova, size_t size,
+ static void arm_smmu_tlb_inv_walk_s1(unsigned long iova, size_t size,
+ 				     size_t granule, void *cookie)
  {
- 	struct arm_smmu_domain *smmu_domain = cookie;
- 	struct arm_smmu_device *smmu = smmu_domain->smmu;
-@@ -380,66 +429,33 @@ static void arm_smmu_tlb_inv_vmid_nosync(unsigned long iova, size_t size,
- 	arm_smmu_gr0_write(smmu, ARM_SMMU_GR0_TLBIVMID, smmu_domain->cfg.vmid);
+-	arm_smmu_tlb_inv_range_s1(iova, size, granule, cookie, false);
++	arm_smmu_tlb_inv_range_s1(iova, size, granule, cookie,
++				  ARM_SMMU_CB_S1_TLBIVA);
+ 	arm_smmu_tlb_sync_context(cookie);
  }
  
--static void arm_smmu_tlb_inv_walk(unsigned long iova, size_t size,
--				  size_t granule, void *cookie)
--{
--	struct arm_smmu_domain *smmu_domain = cookie;
--	const struct arm_smmu_flush_ops *ops = smmu_domain->flush_ops;
--
--	ops->tlb_inv_range(iova, size, granule, false, cookie);
--	ops->tlb_sync(cookie);
--}
--
--static void arm_smmu_tlb_inv_leaf(unsigned long iova, size_t size,
--				  size_t granule, void *cookie)
--{
--	struct arm_smmu_domain *smmu_domain = cookie;
--	const struct arm_smmu_flush_ops *ops = smmu_domain->flush_ops;
--
--	ops->tlb_inv_range(iova, size, granule, true, cookie);
--	ops->tlb_sync(cookie);
--}
--
--static void arm_smmu_tlb_add_page(struct iommu_iotlb_gather *gather,
--				  unsigned long iova, size_t granule,
--				  void *cookie)
--{
--	struct arm_smmu_domain *smmu_domain = cookie;
--	const struct arm_smmu_flush_ops *ops = smmu_domain->flush_ops;
--
--	ops->tlb_inv_range(iova, granule, granule, true, cookie);
--}
--
- static const struct arm_smmu_flush_ops arm_smmu_s1_tlb_ops = {
- 	.tlb = {
- 		.tlb_flush_all	= arm_smmu_tlb_inv_context_s1,
--		.tlb_flush_walk	= arm_smmu_tlb_inv_walk,
--		.tlb_flush_leaf	= arm_smmu_tlb_inv_leaf,
--		.tlb_add_page	= arm_smmu_tlb_add_page,
-+		.tlb_flush_walk	= arm_smmu_tlb_inv_walk_s1,
-+		.tlb_flush_leaf	= arm_smmu_tlb_inv_leaf_s1,
-+		.tlb_add_page	= arm_smmu_tlb_add_page_s1,
- 	},
--	.tlb_inv_range		= arm_smmu_tlb_inv_range_s1,
- 	.tlb_sync		= arm_smmu_tlb_sync_context,
- };
+ static void arm_smmu_tlb_inv_leaf_s1(unsigned long iova, size_t size,
+ 				     size_t granule, void *cookie)
+ {
+-	arm_smmu_tlb_inv_range_s1(iova, size, granule, cookie, true);
++	arm_smmu_tlb_inv_range_s1(iova, size, granule, cookie,
++				  ARM_SMMU_CB_S1_TLBIVAL);
+ 	arm_smmu_tlb_sync_context(cookie);
+ }
  
- static const struct arm_smmu_flush_ops arm_smmu_s2_tlb_ops_v2 = {
- 	.tlb = {
- 		.tlb_flush_all	= arm_smmu_tlb_inv_context_s2,
--		.tlb_flush_walk	= arm_smmu_tlb_inv_walk,
--		.tlb_flush_leaf	= arm_smmu_tlb_inv_leaf,
--		.tlb_add_page	= arm_smmu_tlb_add_page,
-+		.tlb_flush_walk	= arm_smmu_tlb_inv_walk_s2,
-+		.tlb_flush_leaf	= arm_smmu_tlb_inv_leaf_s2,
-+		.tlb_add_page	= arm_smmu_tlb_add_page_s2,
- 	},
--	.tlb_inv_range		= arm_smmu_tlb_inv_range_s2,
- 	.tlb_sync		= arm_smmu_tlb_sync_context,
- };
+@@ -380,20 +379,23 @@ static void arm_smmu_tlb_add_page_s1(struct iommu_iotlb_gather *gather,
+ 				     unsigned long iova, size_t granule,
+ 				     void *cookie)
+ {
+-	arm_smmu_tlb_inv_range_s1(iova, granule, granule, cookie, true);
++	arm_smmu_tlb_inv_range_s1(iova, granule, granule, cookie,
++				  ARM_SMMU_CB_S1_TLBIVAL);
+ }
  
- static const struct arm_smmu_flush_ops arm_smmu_s2_tlb_ops_v1 = {
- 	.tlb = {
- 		.tlb_flush_all	= arm_smmu_tlb_inv_context_s2,
--		.tlb_flush_walk	= arm_smmu_tlb_inv_walk,
--		.tlb_flush_leaf	= arm_smmu_tlb_inv_leaf,
--		.tlb_add_page	= arm_smmu_tlb_add_page,
-+		.tlb_flush_walk	= arm_smmu_tlb_inv_any_s2_v1,
-+		.tlb_flush_leaf	= arm_smmu_tlb_inv_any_s2_v1,
-+		.tlb_add_page	= arm_smmu_tlb_add_page_s2_v1,
- 	},
--	.tlb_inv_range		= arm_smmu_tlb_inv_vmid_nosync,
- 	.tlb_sync		= arm_smmu_tlb_sync_vmid,
- };
+ static void arm_smmu_tlb_inv_walk_s2(unsigned long iova, size_t size,
+ 				     size_t granule, void *cookie)
+ {
+-	arm_smmu_tlb_inv_range_s2(iova, size, granule, cookie, false);
++	arm_smmu_tlb_inv_range_s2(iova, size, granule, cookie,
++				  ARM_SMMU_CB_S2_TLBIIPAS2);
+ 	arm_smmu_tlb_sync_context(cookie);
+ }
  
-diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
-index b19b6cae9b5e..6edd35ca983c 100644
---- a/drivers/iommu/arm-smmu.h
-+++ b/drivers/iommu/arm-smmu.h
-@@ -306,8 +306,6 @@ enum arm_smmu_domain_stage {
+ static void arm_smmu_tlb_inv_leaf_s2(unsigned long iova, size_t size,
+ 				     size_t granule, void *cookie)
+ {
+-	arm_smmu_tlb_inv_range_s2(iova, size, granule, cookie, true);
++	arm_smmu_tlb_inv_range_s2(iova, size, granule, cookie,
++				  ARM_SMMU_CB_S2_TLBIIPAS2L);
+ 	arm_smmu_tlb_sync_context(cookie);
+ }
  
- struct arm_smmu_flush_ops {
- 	struct iommu_flush_ops		tlb;
--	void (*tlb_inv_range)(unsigned long iova, size_t size, size_t granule,
--			      bool leaf, void *cookie);
- 	void (*tlb_sync)(void *cookie);
- };
+@@ -401,7 +403,8 @@ static void arm_smmu_tlb_add_page_s2(struct iommu_iotlb_gather *gather,
+ 				     unsigned long iova, size_t granule,
+ 				     void *cookie)
+ {
+-	arm_smmu_tlb_inv_range_s2(iova, granule, granule, cookie, true);
++	arm_smmu_tlb_inv_range_s2(iova, granule, granule, cookie,
++				  ARM_SMMU_CB_S2_TLBIIPAS2L);
+ }
  
+ static void arm_smmu_tlb_inv_any_s2_v1(unsigned long iova, size_t size,
 -- 
 2.21.0.dirty
 
