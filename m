@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED924B58ED
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 02:19:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92F3CB58EC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 02:19:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=p5AXZ45/tcSJZSktdov2NQnfzINOqAB3hAGRt+VSRP8=; b=Ph/ZP0uKtkUPb5i1o5feyeuosI
-	/y5EMBFEhyM+044s9cbuKSZ+nQwBG6Kh2KAQGoTEMB6JQx9nX4kOrXF6IED/8rbLH/PoHj+vl28gg
-	GZ0q1JXtnJ5nhejPMXcK+VfGb4XS7NXiKdWKbVIz0wbtWBjx5OZyXVWgS5HlUQWTVCNeXnsTHV233
-	6c+3OM7CIsj/aIZuRJCj/qjC/DbPXZhbqQoUHweyCWbW7S/3LzUGlN94oVhpPt+lsk4xGhQEUMwZ5
-	sAUJkJWUBRs4unXzWdB2xRNxL6Vzkmo6Lq/SkNFkHes10t8gGAn1srEWAt9finXOx1GKcfGi3Z53b
-	EV3Z/jfg==;
+	bh=irq6u3xVOUI+tWNnVxLPHObuRlFciOHno3EljcbWQo8=; b=r45U3wDDZEyCZD2SySKTs48Bim
+	5wqmM4iyK2s+mpEHNXPeEwDvc6pbgoX5eOvKxvnM5JwD9l4oezsQ4K0S3sZxEuqzlwpz7oKNQKXDP
+	1pi1i6AY6uWoZN+q1y81tnZw/AxXTn27haG15TlKerDoR12ayscbYOjlV9UBp5XERUJk4RpKPxZJr
+	gocyfc/vlSov343DHEO1qVBfxqRxqxXk8J2o3eMBB/30LlidjrLqnb9uMA9pqZsaBHaRq4OZrX9Jw
+	E7/LYVVw2OTV0K2bsty0yvnplPuHeHcRawgFkLCYh/sqCNydrwI7E6QH5tYPPddVo624pN6lpEgZK
+	gDc8iy5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iANh9-0002Yf-Ck; Wed, 18 Sep 2019 00:19:43 +0000
+	id 1iANgO-0002RI-BH; Wed, 18 Sep 2019 00:18:56 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iANg0-0002Ow-NH
+ id 1iANg0-0002Oy-NH
  for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 00:18:34 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C5BA11A06F0;
- Wed, 18 Sep 2019 02:18:30 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6AEB61A06EA;
+ Wed, 18 Sep 2019 02:18:31 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B8E211A06EA;
- Wed, 18 Sep 2019 02:18:30 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5E63B1A0700;
+ Wed, 18 Sep 2019 02:18:31 +0200 (CEST)
 Received: from fsr-ub1864-112.ea.freescale.net
  (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 2F38720601;
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id C88CB20601;
  Wed, 18 Sep 2019 02:18:30 +0200 (CEST)
 From: Leonard Crestez <leonard.crestez@nxp.com>
 To: MyungJoo Ham <myungjoo.ham@samsung.com>,
  Kyungmin Park <kyungmin.park@samsung.com>
-Subject: [PATCH 1/8] PM / devfreq: Lock devfreq in trans_stat_show
-Date: Wed, 18 Sep 2019 03:18:20 +0300
-Message-Id: <7d8f4d5c608d45ba19cdd52068fe6ffe30de67c1.1568764439.git.leonard.crestez@nxp.com>
+Subject: [PATCH 2/8] PM / devfreq: Don't fail devfreq_dev_release if not in
+ list
+Date: Wed, 18 Sep 2019 03:18:21 +0300
+Message-Id: <60f8aa909fe209632734b6c637dffbc7554f996c.1568764439.git.leonard.crestez@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1568764439.git.leonard.crestez@nxp.com>
 References: <cover.1568764439.git.leonard.crestez@nxp.com>
@@ -48,8 +49,8 @@ In-Reply-To: <cover.1568764439.git.leonard.crestez@nxp.com>
 References: <cover.1568764439.git.leonard.crestez@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_171832_902984_E430232D 
-X-CRM114-Status: GOOD (  10.24  )
+X-CRM114-CacheID: sfid-20190917_171832_902997_D8E176B2 
+X-CRM114-Status: GOOD (  12.27  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -83,73 +84,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is no locking in this sysfs show function so stats printing can
-race with a devfreq_update_status called as part of freq switching or
-with initialization.
+Right now devfreq_dev_release will print a warning and abort the rest of
+the cleanup if the devfreq instance is not part of the global
+devfreq_list. But this is a valid scenario, for example it can happen if
+the governor can't be found or on any other init error that happens
+after device_register.
 
-Also add an assert in devfreq_update_status to make it clear that lock
-must be held by caller.
+Initialize devfreq->node to an empty list head in devfreq_add_device so
+that list_del becomes a safe noop inside devfreq_dev_release and we can
+continue the rest of the cleanup.
 
 Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 ---
- drivers/devfreq/devfreq.c | 17 +++++++++++++----
- 1 file changed, 13 insertions(+), 4 deletions(-)
+ drivers/devfreq/devfreq.c | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
 
 diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
-index 2494ee16f502..665575228c4f 100644
+index 665575228c4f..a715f27f35fd 100644
 --- a/drivers/devfreq/devfreq.c
 +++ b/drivers/devfreq/devfreq.c
-@@ -159,10 +159,11 @@ int devfreq_update_status(struct devfreq *devfreq, unsigned long freq)
+@@ -582,15 +582,10 @@ static int devfreq_notifier_call(struct notifier_block *nb, unsigned long type,
+ static void devfreq_dev_release(struct device *dev)
  {
- 	int lev, prev_lev, ret = 0;
- 	unsigned long cur_time;
- 
- 	cur_time = jiffies;
-+	lockdep_assert_held(&devfreq->lock);
- 
- 	/* Immediately exit if previous_freq is not initialized yet. */
- 	if (!devfreq->previous_freq)
- 		goto out;
- 
-@@ -1415,15 +1416,20 @@ static ssize_t trans_stat_show(struct device *dev,
  	struct devfreq *devfreq = to_devfreq(dev);
- 	ssize_t len;
- 	int i, j;
- 	unsigned int max_state = devfreq->profile->max_state;
  
-+	mutex_lock(&devfreq->lock);
- 	if (!devfreq->stop_polling &&
--			devfreq_update_status(devfreq, devfreq->previous_freq))
--		return 0;
--	if (max_state == 0)
--		return sprintf(buf, "Not Supported.\n");
-+			devfreq_update_status(devfreq, devfreq->previous_freq)) {
-+		len = 0;
-+		goto out;
-+	}
-+	if (max_state == 0) {
-+		len = sprintf(buf, "Not Supported.\n");
-+		goto out;
-+	}
+ 	mutex_lock(&devfreq_list_lock);
+-	if (IS_ERR(find_device_devfreq(devfreq->dev.parent))) {
+-		mutex_unlock(&devfreq_list_lock);
+-		dev_warn(&devfreq->dev, "releasing devfreq which doesn't exist\n");
+-		return;
+-	}
+ 	list_del(&devfreq->node);
+ 	mutex_unlock(&devfreq_list_lock);
  
- 	len = sprintf(buf, "     From  :   To\n");
- 	len += sprintf(buf + len, "           :");
- 	for (i = 0; i < max_state; i++)
- 		len += sprintf(buf + len, "%10lu",
-@@ -1447,10 +1453,13 @@ static ssize_t trans_stat_show(struct device *dev,
- 			jiffies_to_msecs(devfreq->time_in_state[i]));
- 	}
- 
- 	len += sprintf(buf + len, "Total transition : %u\n",
- 					devfreq->total_trans);
-+
-+out:
-+	mutex_unlock(&devfreq->lock);
- 	return len;
- }
- static DEVICE_ATTR_RO(trans_stat);
- 
- static struct attribute *devfreq_attrs[] = {
+ 	if (devfreq->profile->exit)
+ 		devfreq->profile->exit(devfreq->dev.parent);
+@@ -641,10 +636,11 @@ struct devfreq *devfreq_add_device(struct device *dev,
+ 	mutex_init(&devfreq->lock);
+ 	mutex_lock(&devfreq->lock);
+ 	devfreq->dev.parent = dev;
+ 	devfreq->dev.class = devfreq_class;
+ 	devfreq->dev.release = devfreq_dev_release;
++	INIT_LIST_HEAD(&devfreq->node);
+ 	devfreq->profile = profile;
+ 	strncpy(devfreq->governor_name, governor_name, DEVFREQ_NAME_LEN);
+ 	devfreq->previous_freq = profile->initial_freq;
+ 	devfreq->last_status.current_frequency = profile->initial_freq;
+ 	devfreq->data = data;
 -- 
 2.17.1
 
