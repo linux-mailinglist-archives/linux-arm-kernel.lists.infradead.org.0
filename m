@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 655A4B61C9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 12:48:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B376B61CC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 12:48:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,101 +11,102 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=uPUZL2CgsdkLDaLlffv4565+fr210ew4yQV+ggcZzY0=; b=O5zRh+s+e8nYb2LjdJrmDJpTIK
-	KI26VUnF5Z7o2KwMKU8CDq+3ZohcpRH7+dcUcoQKpg7Z5YEGtZXTcaF3vSO+1aZ2Ow4vgxiZxj581
-	rTlZtHoIdxTvRpFqy/H+6Yj4ZC9qbS3z7vBgNJkMz+n+qeBDoAwFhzss1gYxNvJwiZqz+cYE0L7xY
-	COPftTbhDr2YZHtuBX95usk9tvu1LZMikFTxTpLOugEDTS0CV0HXpynOkrXE8rv+a9I87DnoLFYtv
-	R+PWFTkT41hnoiW8T0yURHRI7aHAL7Q3+MC+mokU2cb3OLvBFfMNrONiyX6lIbdc9AUUOeqO33Oq4
-	9q/j+XsA==;
+	bh=BW/LmU7Ig0lVA8uZX6blXCbL6kDk/huTaQlQrmIFMNA=; b=NxSajM5qaMM9rUOTnoWb/VCUhE
+	/qMWeZDY7VELvwoCn4TMkDGgEAs0lbzLMxJqf3mzsdbMw0mvmTSFl/gx7Z5VBvjP1bmqJUfRJH+fP
+	8RnzXdxw4nzyr/CoRfNRy9h/OclyAHFh4rqJfWgU6UFp5c6mTOjlOoovt5u+OpZm16lKf2NcpUko4
+	7eWq0FfYQ4AmOkG/jnTEl8NPaHbQ82QgyLJB/1JVPTnrZreoXHZXDhBRMAp3gtW+smDVZXtOoAvaP
+	zPl18GYiJGPY4QFuX+kxX8wxG8V379Fv8XEQU5IQEufPPr1v/Uw6ZYRumipJkgR5b4/KbSDPV2gsG
+	PZhYfGfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAXVR-0001na-4n; Wed, 18 Sep 2019 10:48:17 +0000
+	id 1iAXVw-0002UK-6k; Wed, 18 Sep 2019 10:48:48 +0000
 Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAXUK-0000eS-OA
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 10:47:10 +0000
+ id 1iAXUT-0000oo-09
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 10:47:19 +0000
 Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
  by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190918104706euoutp011ccb014b620c4da7290312f413c2ad96~FgpY4WbsZ1215812158euoutp01-
+ 20190918104715euoutp015ce44dc3a8e9447e9f795416a95dd181~Fgpg3pUZP1215812158euoutp01C
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Sep 2019 10:47:06 +0000 (GMT)
+ Wed, 18 Sep 2019 10:47:15 +0000 (GMT)
 DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20190918104706euoutp011ccb014b620c4da7290312f413c2ad96~FgpY4WbsZ1215812158euoutp01-
+ 20190918104715euoutp015ce44dc3a8e9447e9f795416a95dd181~Fgpg3pUZP1215812158euoutp01C
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1568803626;
- bh=zPf3iyJ5rvQFeMs/AofhYQ7+/LnX80QFNAzKaPbWBoM=;
+ s=mail20170921; t=1568803635;
+ bh=xXzfRu9QLTj/XX7HXJ29mEGOJQBJL9qoYmNOwy+z2GM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=n+LHMk7Ac8cBDQ3OEL+cCCL2+2z1PAq3z7UFGuArFCliF2d9I31xoABvqyvxjuNXN
- KwhjiP4PRiz7LiKw9WlUQKA7dNdLa0XY4ynIhRre8Q7XZBrADsJvhv2BQKeS9gZoxZ
- xWLWbzPrAxI4lfMopPFOXfeZDWEbqriCnKf/eN74=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20190918104706eucas1p1717baf670a17dfbc5289a270ddc64015~FgpYTIV9d2746227462eucas1p1U;
- Wed, 18 Sep 2019 10:47:06 +0000 (GMT)
+ b=cBLgTFIlp2xwag5s2nE+XyzqaG6yFfhIwpb5Bph19QJdlHCiBbcwazbIYs06UFuvN
+ rdwIZf23QEEyEL+0d3VgMpGjVp0F5G4WphXgxDSMlsfr1zaytcctEQDuk6bnCNm+ZF
+ FEfkg8IBSoFtui4z2Lx6UI9wHViVUWGPtmmG8jVI=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20190918104714eucas1p2b7218f8911155c2d56c4a1da5d80bf05~FgpgCUZJA2379323793eucas1p2q;
+ Wed, 18 Sep 2019 10:47:14 +0000 (GMT)
 Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id A2.E3.04374.92B028D5; Wed, 18
- Sep 2019 11:47:05 +0100 (BST)
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id FC.B4.04309.23B028D5; Wed, 18
+ Sep 2019 11:47:14 +0100 (BST)
 Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20190918104705eucas1p1c01dc05bff199188677915e2bb8f7472~FgpXb8ZhL3005030050eucas1p1Z;
- Wed, 18 Sep 2019 10:47:05 +0000 (GMT)
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190918104713eucas1p2ccfa8e9dff2cda9e8f88ac42dda2b680~FgpfElMvl2378523785eucas1p2h;
+ Wed, 18 Sep 2019 10:47:13 +0000 (GMT)
 Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
  eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20190918104705eusmtrp2b0eaedc41091611bf96adc1557480c80~FgpXMWQta1555615556eusmtrp20;
- Wed, 18 Sep 2019 10:47:05 +0000 (GMT)
-X-AuditID: cbfec7f5-92d689c000001116-5e-5d820b29e7e7
+ 20190918104713eusmtrp29acc9faf5d3931e383eca1b2ea862182~Fgpe0-fxX1585315853eusmtrp2S;
+ Wed, 18 Sep 2019 10:47:13 +0000 (GMT)
+X-AuditID: cbfec7f4-ae1ff700000010d5-34-5d820b32dad1
 Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id 4F.B6.04166.92B028D5; Wed, 18
- Sep 2019 11:47:05 +0100 (BST)
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id 84.C6.04166.13B028D5; Wed, 18
+ Sep 2019 11:47:13 +0100 (BST)
 Received: from AMDC3061.DIGITAL.local (unknown [106.120.51.75]) by
  eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20190918104704eusmtip10418cadcb9932e28c2051890ec768463~FgpWlYNqI0585305853eusmtip1J;
- Wed, 18 Sep 2019 10:47:04 +0000 (GMT)
+ 20190918104712eusmtip1eb199f3c78fc8fa94af113a38915a02c~FgpeNp1H10494604946eusmtip1E;
+ Wed, 18 Sep 2019 10:47:12 +0000 (GMT)
 From: Sylwester Nawrocki <s.nawrocki@samsung.com>
 To: broonie@kernel.org
-Subject: [PATCH v1 7/9] ASoC: samsung: arndale: Add support for WM1811 CODEC
-Date: Wed, 18 Sep 2019 12:46:32 +0200
-Message-Id: <20190918104634.15216-8-s.nawrocki@samsung.com>
+Subject: [PATCH v1 8/9] ASoC: samsung: arndale: Add missing OF node
+ dereferencing
+Date: Wed, 18 Sep 2019 12:46:33 +0200
+Message-Id: <20190918104634.15216-9-s.nawrocki@samsung.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190918104634.15216-1-s.nawrocki@samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrBKsWRmVeSWpSXmKPExsWy7djP87qa3E2xBvPP2lhcuXiIyWLjjPWs
- FlMfPmGzuNK6idFi/pFzrBbnz29gt/h2pYPJYtPja6wWM87vY7JYe+Quu8Xn9/tZLVr3HmG3
- OPymndXi4oovTA58Hhs+N7F57Jx1l91j06pONo/NS+o9ps/5z+jRt2UVo8fnTXIB7FFcNimp
- OZllqUX6dglcGf+n/mMtmKZbcXHqXvYGxpOqXYycHBICJhLda74wgthCAisYJT4fcOhi5AKy
- vzBK7Hp9jw0i8ZlR4kS7BUzD1jOr2CCKljNKLNo6lRWuY173JrAONgFDid6jfWBjRQTEJG7P
- 6WQGKWIW+MMk8fbvLBaQhLCAj8S6ls2sIDaLgKrEpSmTweK8AtYSB84sZIVYJy+xesMBZhCb
- U8BG4tOFBywggyQEdrFLHHv3nwWiyEXi4srJULawxKvjW9ghbBmJ/zvnM0E0NDNK9Oy+zQ7h
- TGCUuH98ASNElbXE4eMXgdZxAN2nKbF+lz5E2FHi0LrZzCBhCQE+iRtvBUHCzEDmpG3TocK8
- Eh1tQhDVKhK/V01ngrClJLqfwJzmIXFo6nlmSAj1A8O0aTvTBEb5WQjLFjAyrmIUTy0tzk1P
- LTbOSy3XK07MLS7NS9dLzs/dxAhMP6f/Hf+6g3Hfn6RDjAIcjEo8vBJnG2KFWBPLiitzDzFK
- cDArifAG1NbHCvGmJFZWpRblxxeV5qQWH2KU5mBREuetZngQLSSQnliSmp2aWpBaBJNl4uCU
- amC0XfHis+ihdclB5zTrcj/9m6pr3mMWpvdRVnGyc5lc6JaFJoUMoT+6vvKlMFQ4P8qyZK8T
- qnpXN12Jf+OPiIWVNw3nWc9g868WPBrQ7hwZYMjcO4XzQjHrj2n9Zw++3FMustdae1kmn9KO
- B0p7dGaxKc7doMui678/+i7Xuuu6m9UUd1wvsFViKc5INNRiLipOBABqmzV6OwMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFupgkeLIzCtJLcpLzFFi42I5/e/4XV1N7qZYg/VTmS2uXDzEZLFxxnpW
+X-Brightmail-Tracker: H4sIAAAAAAAAA0VSe0hTcRTud+/u7lWbXLfKgz2skUFBmfbgUtIDDFeECP0RGZIzL9Ny03bV
+ sgiH5StNSxOXDdSMtJk6l2kqpk1zVuZcSSUiKmlvldSifObtKv73ne9xzvfHoXBpCeFGhWui
+ Wa1GGSEXO4qqW//atno7JQRt7+x3ZrrsFoyp1FcQTM7AoJjpSjQjJr+lg2BsNhPJ/O5KwRjz
+ x3cEo7c9xZiyll6SGR9tJJjEhhaSaf6RTDD2kgnsgLPCNJ4gVtTm9ZIKszFVrHh0L16Ra5hD
+ iowqI1KMm9cFkIGOPqFsRHgsq/XcF+wYVlNmEEcVuVzIyjQQOtTgfA05UEDvhNfGL9g15EhJ
+ 6RIEg8k3CWGYQDBdmbQwjCP4UX1FvBjpK5wkBaEYgf3r56XIs7c1OO8S015w/XkG4vEKehX0
+ GFJx3oTT0xgMz+SJeEFGH4ORHtO8iaJEtAe06mQ8LaH3QnnpH1K45g6lpqb/Ox1oHxjr7Bfx
+ e4CuI6E4e2Chki8MZbVjApbBN2vVQngNzNXmY0LgCoL0+h5SGG4g6LMWIMG1F5qtdoJvgdOb
+ oaLOU6APQuXV2yRPA+0MH4ZdeBqfh1nVubhASyAlSSq4N8KUMXehghukDc6JBKyA9Lt3/mMp
+ nYlgNDvwBnLPW7pVgJARubIxnFrFct4a9vw2TqnmYjSqbacj1WY0/z+vZq0TT1DddIgF0RSS
+ L5c0vdQFSQllLBentiCgcPkKScDl+CCpJFQZd5HVRp7SxkSwnAWtpkRyV8mlZf0npbRKGc2e
+ ZdkoVruoYpSDmw6t9Mtx996U+3DHuamZxz91BXTtrjPePR6eCVH+yWll+TOH/fT+h/w7uO+U
+ 7+bHvwvC39Turzqeyo6MbZjsJM516/7YGk+UTAUe2ROGGE2b/lfhbvus/qgsJKTtQPeQQ/v6
+ ++VrbxYG+1iKbnmp6oPU1hfvlU5tkfDgU8WOJPf45hy5iAtTem3BtZzyH03DFN87AwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFupgkeLIzCtJLcpLzFFi42I5/e/4XV1D7qZYg+VX+SyuXDzEZLFxxnpW
  i6kPn7BZXGndxGgx/8g5Vovz5zewW3y70sFksenxNVaLGef3MVmsPXKX3eLz+/2sFq17j7Bb
  HH7TzmpxccUXJgc+jw2fm9g8ds66y+6xaVUnm8fmJfUe0+f8Z/To27KK0ePzJrkA9ig9m6L8
- 0pJUhYz84hJbpWhDCyM9Q0sLPSMTSz1DY/NYKyNTJX07m5TUnMyy1CJ9uwS9jP9T/7EWTNOt
- uDh1L3sD40nVLkZODgkBE4mtZ1axdTFycQgJLGWU+Lf2KHMXIwdQQkpifosSRI2wxJ9rXWwg
- tpDAJ0aJd6vlQWw2AUOJ3qN9jCC2iICYxO05ncwgc5gFupgl3u/4xQqSEBbwkVjXshnMZhFQ
- lbg0ZTILiM0rYC1x4MxCVogF8hKrNxxgBrE5BWwkPl14wAKxzFpiwbFpjBMY+RYwMqxiFEkt
- Lc5Nzy021CtOzC0uzUvXS87P3cQIjIVtx35u3sF4aWPwIUYBDkYlHt4DpxpihVgTy4orcw8x
- SnAwK4nwBtTWxwrxpiRWVqUW5ccXleakFh9iNAU6aiKzlGhyPjBO80riDU0NzS0sDc2NzY3N
- LJTEeTsEDsYICaQnlqRmp6YWpBbB9DFxcEo1MGaktHLV5K/Y3/fDLrGy+MOJTqY3YjO/yDHt
- 6UqM5QgWl5DmSKwWyUq8eCv82Lb+r+svh3xT6Qs5/ai4KVNu8fvn7/647Reb83hP0538yUpy
- O/g7JuzV3dU7863hZiP3O4+DC1j33pTkvXL/215/3rsliqsjn1+8xit49ILCuWdMd3XNZXsy
- nymxFGckGmoxFxUnAgCQdq+WmwIAAA==
-X-CMS-MailID: 20190918104705eucas1p1c01dc05bff199188677915e2bb8f7472
+ 0pJUhYz84hJbpWhDCyM9Q0sLPSMTSz1DY/NYKyNTJX07m5TUnMyy1CJ9uwS9jO1r57AVLBas
+ mNQ/h7WBcS9fFyMnh4SAicT9hb/Yuxi5OIQEljJKtCw7x9zFyAGUkJKY36IEUSMs8edaFxtE
+ zSdGiSmnrjOBJNgEDCV6j/YxgtgiAmISt+d0MoMUMQt0MUu83/GLFSQhLBAo8X3iY1aQoSwC
+ qhLHGoRBwrwC1hLrVv9gh1ggL7F6wwFmEJtTwEbi04UHLCC2EFDNgmPTGCcw8i1gZFjFKJJa
+ WpybnltsqFecmFtcmpeul5yfu4kRGAvbjv3cvIPx0sbgQ4wCHIxKPLwHTjXECrEmlhVX5h5i
+ lOBgVhLhDaitjxXiTUmsrEotyo8vKs1JLT7EaAp000RmKdHkfGCc5pXEG5oamltYGpobmxub
+ WSiJ83YIHIwREkhPLEnNTk0tSC2C6WPi4JRqYNS9NoE9X0ZzrqHGyZC9M3oYWeetWj37g7ln
+ slr//CM/ggS3O6w9pWa8WiYoeJv1tMqpYitTZ2/+4D9nRfxZjSDLR+ue9M1oTsvjOqN9wnpz
+ 4f/Gwy8382+Y/OlC6Io2Hcm42G++W+7Yi/kdVpAzmrjBx5fP/bHIk+P/t35cHDgljO/HHosD
+ VyKVWIozEg21mIuKEwEA8vqfmwIAAA==
+X-CMS-MailID: 20190918104713eucas1p2ccfa8e9dff2cda9e8f88ac42dda2b680
 X-Msg-Generator: CA
-X-RootMTR: 20190918104705eucas1p1c01dc05bff199188677915e2bb8f7472
+X-RootMTR: 20190918104713eucas1p2ccfa8e9dff2cda9e8f88ac42dda2b680
 X-EPHeader: CA
 CMS-TYPE: 201P
-X-CMS-RootMailID: 20190918104705eucas1p1c01dc05bff199188677915e2bb8f7472
+X-CMS-RootMailID: 20190918104713eucas1p2ccfa8e9dff2cda9e8f88ac42dda2b680
 References: <20190918104634.15216-1-s.nawrocki@samsung.com>
- <CGME20190918104705eucas1p1c01dc05bff199188677915e2bb8f7472@eucas1p1.samsung.com>
+ <CGME20190918104713eucas1p2ccfa8e9dff2cda9e8f88ac42dda2b680@eucas1p2.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_034709_127242_24A7D061 
-X-CRM114-Status: GOOD (  16.86  )
+X-CRM114-CacheID: sfid-20190918_034717_213036_D063CD87 
+X-CRM114-Status: GOOD (  12.88  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -146,173 +147,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Arndale boards come with different types of the audio daughter
-board.  In order to support the WM1811 one we add new definition of
-an ASoC card which will be registered when the driver matches on
-"samsung,arndale-wm1811" compatible.  There is no runtime detection of
-the audio daughter board type at the moment, compatible string of the
-audio card needs to be adjusted in DT, e.g. by the bootloader,
-depending on actual audio board (CODEC) used.
+Ensure there is no OF node references kept when the driver is removed/unbound.
 
 Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
 ---
- sound/soc/samsung/arndale_rt5631.c | 86 +++++++++++++++++++++++++-----
- 1 file changed, 73 insertions(+), 13 deletions(-)
+ sound/soc/samsung/arndale_rt5631.c | 31 ++++++++++++++++++++++++++++--
+ 1 file changed, 29 insertions(+), 2 deletions(-)
 
 diff --git a/sound/soc/samsung/arndale_rt5631.c b/sound/soc/samsung/arndale_rt5631.c
-index c5c8e3b5772f..3744c47742b8 100644
+index 3744c47742b8..d8da313e898a 100644
 --- a/sound/soc/samsung/arndale_rt5631.c
 +++ b/sound/soc/samsung/arndale_rt5631.c
-@@ -5,6 +5,7 @@
- //  Author: Claude <claude@insginal.co.kr>
+@@ -132,6 +132,17 @@ static struct snd_soc_card arndale_wm1811 = {
+ 	.num_links = ARRAY_SIZE(arndale_wm1811_dai),
+ };
  
- #include <linux/module.h>
-+#include <linux/of_device.h>
- #include <linux/platform_device.h>
- #include <linux/clk.h>
- 
-@@ -13,10 +14,11 @@
- #include <sound/pcm.h>
- #include <sound/pcm_params.h>
- 
-+#include "../codecs/wm8994.h"
- #include "i2s.h"
- 
--static int arndale_hw_params(struct snd_pcm_substream *substream,
--	struct snd_pcm_hw_params *params)
-+static int arndale_rt5631_hw_params(struct snd_pcm_substream *substream,
-+				    struct snd_pcm_hw_params *params)
- {
- 	struct snd_soc_pcm_runtime *rtd = substream->private_data;
- 	struct snd_soc_dai *cpu_dai = rtd->cpu_dai;
-@@ -46,13 +48,45 @@ static int arndale_hw_params(struct snd_pcm_substream *substream,
- 	return 0;
- }
- 
--static struct snd_soc_ops arndale_ops = {
--	.hw_params = arndale_hw_params,
-+static struct snd_soc_ops arndale_rt5631_ops = {
-+	.hw_params = arndale_rt5631_hw_params,
-+};
-+
-+static int arndale_wm1811_hw_params(struct snd_pcm_substream *substream,
-+				    struct snd_pcm_hw_params *params)
++static void arndale_put_of_nodes(struct snd_soc_card *card)
 +{
-+	struct snd_soc_pcm_runtime *rtd = substream->private_data;
-+	struct snd_soc_dai *codec_dai = rtd->codec_dai;
-+	unsigned int rfs, rclk;
++	struct snd_soc_dai_link *dai_link;
++	int i;
 +
-+	/* Ensure AIF1CLK is >= 3 MHz for optimal performance */
-+	if (params_width(params) == 24)
-+		rfs = 384;
-+	else if (params_rate(params) == 8000 || params_rate(params) == 11025)
-+		rfs = 512;
-+	else
-+		rfs = 256;
-+
-+	rclk = params_rate(params) * rfs;
-+
-+	/*
-+	 * We add 1 to the frequency value to ensure proper EPLL setting
-+	 * for each audio sampling rate (see epll_24mhz_tbl in drivers/clk/
-+	 * samsung/clk-exynos5250.c for list of available EPLL rates).
-+	 * The CODEC uses clk API and the value will be rounded hence the MCLK1
-+	 * clock's frequency will still be exact multiple of the sample rate.
-+	 */
-+	return snd_soc_dai_set_sysclk(codec_dai, WM8994_SYSCLK_MCLK1,
-+					rclk + 1, SND_SOC_CLOCK_IN);
++	for_each_card_prelinks(card, i, dai_link) {
++		of_node_put(dai_link->cpus->of_node);
++		of_node_put(dai_link->codecs->of_node);
++	}
 +}
-+
-+static struct snd_soc_ops arndale_wm1811_ops = {
-+	.hw_params = arndale_wm1811_hw_params,
- };
- 
- SND_SOC_DAILINK_DEFS(rt5631_hifi,
- 	DAILINK_COMP_ARRAY(COMP_EMPTY()),
--	DAILINK_COMP_ARRAY(COMP_CODEC(NULL, "rt5631-hifi")),
-+	DAILINK_COMP_ARRAY(COMP_CODEC(NULL, "rt5631-aif1")),
- 	DAILINK_COMP_ARRAY(COMP_EMPTY()));
- 
- static struct snd_soc_dai_link arndale_rt5631_dai[] = {
-@@ -62,11 +96,28 @@ static struct snd_soc_dai_link arndale_rt5631_dai[] = {
- 		.dai_fmt = SND_SOC_DAIFMT_I2S
- 			| SND_SOC_DAIFMT_NB_NF
- 			| SND_SOC_DAIFMT_CBS_CFS,
--		.ops = &arndale_ops,
-+		.ops = &arndale_rt5631_ops,
- 		SND_SOC_DAILINK_REG(rt5631_hifi),
- 	},
- };
- 
-+SND_SOC_DAILINK_DEFS(wm1811_hifi,
-+	DAILINK_COMP_ARRAY(COMP_EMPTY()),
-+	DAILINK_COMP_ARRAY(COMP_CODEC(NULL, "wm8994-aif1")),
-+	DAILINK_COMP_ARRAY(COMP_EMPTY()));
-+
-+static struct snd_soc_dai_link arndale_wm1811_dai[] = {
-+	{
-+		.name = "WM1811 HiFi",
-+		.stream_name = "Primary",
-+		.dai_fmt = SND_SOC_DAIFMT_I2S
-+			| SND_SOC_DAIFMT_NB_NF
-+			| SND_SOC_DAIFMT_CBM_CFM,
-+		.ops = &arndale_wm1811_ops,
-+		SND_SOC_DAILINK_REG(wm1811_hifi),
-+	},
-+};
-+
- static struct snd_soc_card arndale_rt5631 = {
- 	.name = "Arndale RT5631",
- 	.owner = THIS_MODULE,
-@@ -74,13 +125,21 @@ static struct snd_soc_card arndale_rt5631 = {
- 	.num_links = ARRAY_SIZE(arndale_rt5631_dai),
- };
- 
-+static struct snd_soc_card arndale_wm1811 = {
-+	.name = "Arndale WM1811",
-+	.owner = THIS_MODULE,
-+	.dai_link = arndale_wm1811_dai,
-+	.num_links = ARRAY_SIZE(arndale_wm1811_dai),
-+};
 +
  static int arndale_audio_probe(struct platform_device *pdev)
  {
  	struct device_node *np = pdev->dev.of_node;
--	struct snd_soc_card *card = &arndale_rt5631;
-+	struct snd_soc_card *card;
- 	struct snd_soc_dai_link *dai_link;
- 	int ret;
+@@ -156,16 +167,31 @@ static int arndale_audio_probe(struct platform_device *pdev)
+ 	if (!dai_link->codecs->of_node) {
+ 		dev_err(&pdev->dev,
+ 			"Property 'samsung,audio-codec' missing or invalid\n");
+-		return -EINVAL;
++		ret = -EINVAL;
++		goto err_put_of_nodes;
+ 	}
  
-+	card = (struct snd_soc_card *)of_device_get_match_data(&pdev->dev);
- 	card->dev = &pdev->dev;
- 	dai_link = card->dai_link;
+ 	ret = devm_snd_soc_register_card(card->dev, card);
+-	if (ret)
++	if (ret) {
+ 		dev_err(&pdev->dev, "snd_soc_register_card() failed: %d\n", ret);
++		goto err_put_of_nodes;
++	}
  
-@@ -107,18 +166,19 @@ static int arndale_audio_probe(struct platform_device *pdev)
++	return 0;
++
++err_put_of_nodes:
++	arndale_put_of_nodes(card);
  	return ret;
  }
  
--static const struct of_device_id samsung_arndale_rt5631_of_match[] __maybe_unused = {
--	{ .compatible = "samsung,arndale-rt5631", },
--	{ .compatible = "samsung,arndale-alc5631", },
-+static const struct of_device_id arndale_audio_of_match[] __maybe_unused = {
-+	{ .compatible = "samsung,arndale-rt5631",  .data = &arndale_rt5631 },
-+	{ .compatible = "samsung,arndale-alc5631", .data = &arndale_rt5631 },
-+	{ .compatible = "samsung,arndale-wm1811",  .data = &arndale_wm1811 },
- 	{},
- };
--MODULE_DEVICE_TABLE(of, samsung_arndale_rt5631_of_match);
-+MODULE_DEVICE_TABLE(of, arndale_of_match);
- 
- static struct platform_driver arndale_audio_driver = {
- 	.driver = {
--		.name   = "arndale-audio",
-+		.name = "arndale-audio",
- 		.pm = &snd_soc_pm_ops,
--		.of_match_table = of_match_ptr(samsung_arndale_rt5631_of_match),
-+		.of_match_table = arndale_audio_of_match,
++static int arndale_audio_remove(struct platform_device *pdev)
++{
++	struct snd_soc_card *card = platform_get_drvdata(pdev);
++
++	arndale_put_of_nodes(card);
++	return 0;
++}
++
+ static const struct of_device_id arndale_audio_of_match[] __maybe_unused = {
+ 	{ .compatible = "samsung,arndale-rt5631",  .data = &arndale_rt5631 },
+ 	{ .compatible = "samsung,arndale-alc5631", .data = &arndale_rt5631 },
+@@ -181,6 +207,7 @@ static struct platform_driver arndale_audio_driver = {
+ 		.of_match_table = arndale_audio_of_match,
  	},
  	.probe = arndale_audio_probe,
++	.remove = arndale_audio_remove,
  };
+ 
+ module_platform_driver(arndale_audio_driver);
 -- 
 2.17.1
 
