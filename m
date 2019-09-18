@@ -2,70 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7EB7B6366
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 14:39:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1382B636C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 14:40:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hVOfA+0Qu46qT5g+ZevXEkUQvawv18R8zWJ3vVwu+Og=; b=s/agn2yl4gRnuH
-	b8EitFP3CveTwH9EDUJZxI4LXNLtXmeBxZX4WSeBe4/JxPkhGh5HLIgRZUv9X30ndiR4/YmaXW4PC
-	SoWp3OHzc6N6Ev5FL4/U5cDLVf2RM7WMhBCUA/s5pJ3x8uuG/0l3cOFnp2V4aBNILnknXzKxeM/qa
-	fxjn7w5PteOqR+yYh6Q9+iAA+79d0BOhYNvDV5JUAUs+yKEQXfC/mD5zDAvbSMVdItzWKMgvBrtoW
-	xaHOLsQ/8YAo3yb+PDWQZEmYW+rRDHLfYlqkDB480wUdtz4lL0jONCUIWkGqxiO+PXZvP88SwwUO2
-	NMv+UsVDPK85TIU7ykVQ==;
+	List-Owner; bh=7OHPl6An5/tnmOy7DlY2hr8eYXt7UUQby1zQHdaNVyA=; b=CDEpmav1cgvE6O
+	G194ZKt3BMoR4JqCFkSYmIzkUfEqrguf5kknMcAMMn0uJfxeIsIaQmi8LbFhu3dbIlepFNFI0ezld
+	/1GtxNvZFn2ivhC/l6mCcz/V795+A20QvTJVJ4vXVez56V8z2T1VlqE4B4vNUKqhaHLiZ+/mQTnbS
+	Nl/y0Af5gZFZJ4/GEN6Y7fw3TakOVVnR41TluHSlsUGCCnu4tMDDQ0SD0HKGRClPlr3IJsLtMzmMh
+	nysI7SlcHie0o97q7eJIR0Uvwg8ub3f+bn/c3lnCm/wcV5ElBw7HfvtMr29/SnIM22C39tnzXRcZK
+	IJtUmfTJxGmYvzNOH3nQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAZEw-0003nw-2N; Wed, 18 Sep 2019 12:39:22 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iAZFZ-0004Ak-6H; Wed, 18 Sep 2019 12:40:01 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAZEg-0003n9-Os
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 12:39:09 +0000
-Received: by mail-wr1-x444.google.com with SMTP id n14so5854530wrw.9
+ id 1iAZFF-00047y-IR
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 12:39:43 +0000
+Received: by mail-wm1-x344.google.com with SMTP id v17so2410285wml.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Sep 2019 05:39:05 -0700 (PDT)
+ Wed, 18 Sep 2019 05:39:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=95Hn3vPKkFfiEhTsyaC6yK6iZ0/sBJCmVCTbc9IUbFI=;
- b=Bt+O0T7+/zZtxFhOTZCmHV4KBj7kAMLbRKVZFlBEuj/UJXpgWaRjBBDjKVPBR+FPpG
- gs8QN8ajCWzf1ObO+qWjr2Y8NBOCQgocwVbqFLwjdQw1lwI2tJTavClGWprHc/Sj/gds
- A7GWRDJUNRXaNpMp8wmBHWczthXfkINOw8Sgv0GJ6k5kwEhBJaF1xCieW4V6jDb3cFqW
- 02nnhIXoHQQ9rGI8EBPL3C4+tP1liJgpFoXON8IpBZlOjBIqpfGBk5ikEwJ+3PHz8sTe
- gPf/oCufzoOJO3XdysfWJYHtEj4MkYZ3zezBH7L6Pp3QM6+uFpqPLKwGZkyKaha7y7DI
- gY4w==
+ bh=rkEDxPdEl9Iaqh2ExNLmboEh+YYMG69tOVa/FPgt874=;
+ b=W8Mbcm+q/BLzyZpONFpQYn+Lvx9aEqdFtcLKiPU3LrB+cD16pcfciX7kd/0bjmQI33
+ 5Wnj9waO5UMe8YyHPeY3bxN1JMtH5zKx5jqBEZzVGkugyVjN24ySUuRTyQMfQ2OBlAS+
+ DhYTG2Bgbp2JD423EMJCK/rsCLt5YxxyXR2mFOdSjEHnhzqtal9K1uVtPdxILjHr1vEG
+ rEwnDTyQKvV64frd8xWiSGcTrBk7UN9Oo65DRhzTVP4ADWqfF7EY6NZnC0RJh0i2CYMd
+ WukKgVwV41EX1LndYlaAkCBG5DuwoDyKJ069p0ukH7KPsz6F9meh1EwvuNDIeFmqf6Dt
+ tUfQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=95Hn3vPKkFfiEhTsyaC6yK6iZ0/sBJCmVCTbc9IUbFI=;
- b=rvudOC0HgT9kEy0ZCMaOj+iJNEVe7cd0vkKcVOTtnfUsmJcDS84KIaOkJltQRf8Gv8
- PsTEX2rg5dOO9Wwz1ul8Iz2zwAetFBFvPQp6pmInpG8xLtQ+aU/QF4smNhPQXF7nF3yk
- m8MkKutefdZvNlWRIdMzJ1YTdQ5isGilsTapdB0428QxZMY8ukyZrw/REXpZgIgWLgt/
- T1c1j63AEUcQ3pdmHtkPANgnDvTv0qfaM+UP4DKYYjbuuPImW1WGlgwpszoyYj1SGSJU
- 483Jda2HJH5xoSzswJZJyoJcVJqxUBc36vosCItngPRv6JYCyz6lKlw5enqOCNqm7fTY
- CsLA==
-X-Gm-Message-State: APjAAAWayyX/0FJB+HoJAgL2k1xFHBuQiljuqIi3pZy5t8GN6zRw307G
- NDf9vY415bKugRPQsQ3sD15ZCA==
-X-Google-Smtp-Source: APXvYqy1Yv0CSd98/sYCGClYE/YNtt1gQT/PQpw+NKu7BMtngQIQcoy0B2kt/Y0yw9KtpueF5SPZig==
-X-Received: by 2002:adf:df91:: with SMTP id z17mr2773260wrl.116.1568810344552; 
- Wed, 18 Sep 2019 05:39:04 -0700 (PDT)
+ bh=rkEDxPdEl9Iaqh2ExNLmboEh+YYMG69tOVa/FPgt874=;
+ b=tjgh/ubTMTjqkchmgnukVKO4yDsYUuAdrE7Zq8V3VfStOj6vsqg7FQKRQu8vwEMbCB
+ tv72D1TCZguF4TP6X3SLGT8o7UqXycRZOQHeMggzlZHaP9O9vDr24+F6G1LP/F6bRqjX
+ RcDBIhkZQv+y05j9fJ0e0jJtTx7usa7LclEes/i/HmXB6btxCFqvmZusM2+Ozxw2JPSi
+ /BjNmRJvi/NNoKJ7IZcFeKgip4gkHXYbbsbx/easUN2ReIOH63YMMHeqOobBb1c5itfh
+ QDgCZNqrfF6DxSndqykXKKPKi/zHtbZTBCkATLTvqRwLgFSZNOH5iQysxEgC1kxM1hrf
+ L0fA==
+X-Gm-Message-State: APjAAAWTYHyIj8LX4pHND8ZTq/soYMJbjcNncx+y/Vt6PYATFq6qS6Xe
+ JW2GwyCyMeDJY07rCdcvEXoJX0g88ns3eQ==
+X-Google-Smtp-Source: APXvYqzNwqgKrZgEYWkYaBUQgGjKH6qJDUE1rezTzdXX535NLvUqmDDg21g6T9qRUVUwkXDf2nTd8g==
+X-Received: by 2002:a1c:ba08:: with SMTP id k8mr2824736wmf.63.1568810379765;
+ Wed, 18 Sep 2019 05:39:39 -0700 (PDT)
 Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id v64sm3062976wmf.12.2019.09.18.05.39.03
+ by smtp.gmail.com with ESMTPSA id v2sm4749902wmf.18.2019.09.18.05.39.38
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 18 Sep 2019 05:39:03 -0700 (PDT)
-Subject: Re: [PATCH 2/3] dt-bindings: reset: add bindings for the Meson-A1 SoC
- Reset Controller
+ Wed, 18 Sep 2019 05:39:39 -0700 (PDT)
+Subject: Re: [PATCH 3/3] reset: add support for the Meson-A1 SoC Reset
+ Controller
 To: Xingyu Chen <xingyu.chen@amlogic.com>,
  Philipp Zabel <p.zabel@pengutronix.de>, Kevin Hilman <khilman@baylibre.com>
-References: <1568808746-1153-1-git-send-email-xingyu.chen@amlogic.com>
- <1568808746-1153-3-git-send-email-xingyu.chen@amlogic.com>
+References: <1568808749-1196-1-git-send-email-xingyu.chen@amlogic.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -118,23 +117,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <d99786ec-7635-67e5-3e47-738ce131b634@baylibre.com>
-Date: Wed, 18 Sep 2019 14:39:02 +0200
+Message-ID: <ab6b5ef5-f251-3122-ad5b-558c65fe319e@baylibre.com>
+Date: Wed, 18 Sep 2019 14:39:38 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <1568808746-1153-3-git-send-email-xingyu.chen@amlogic.com>
+In-Reply-To: <1568808749-1196-1-git-send-email-xingyu.chen@amlogic.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_053906_831189_3DFDBCE7 
-X-CRM114-Status: GOOD (  19.75  )
+X-CRM114-CacheID: sfid-20190918_053941_609393_D519CBD6 
+X-CRM114-Status: GOOD (  20.63  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -152,117 +151,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
+Cc: Hanjie Lin <hanjie.lin@amlogic.com>, Jianxin Pan <jianxin.pan@amlogic.com>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
 On 18/09/2019 14:12, Xingyu Chen wrote:
-> Add DT bindings for the Meson-A1 SoC Reset Controller include file,
-> and also slightly update documentation.
+> The number of RESET registers and offset of RESET_LEVEL register for
+> Meson-A1 are different from previous SoCs, In order to describe these
+> differences, we introduce the struct meson_reset_param.
 > 
 > Signed-off-by: Xingyu Chen <xingyu.chen@amlogic.com>
 > Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
 > ---
->  .../bindings/reset/amlogic,meson-reset.txt         |  4 +-
-
-The reset bindings has been moved to yaml, either rebase on linux-next or wait for v5.4-rc1 :
-https://kernel.googlesource.com/pub/scm/linux/kernel/git/next/linux-next/+/refs/tags/next-20190917/Documentation/devicetree/bindings/reset/amlogic%2Cmeson-reset.yaml
-
-Neil
-
->  include/dt-bindings/reset/amlogic,meson-a1-reset.h | 59 ++++++++++++++++++++++
->  2 files changed, 61 insertions(+), 2 deletions(-)
->  create mode 100644 include/dt-bindings/reset/amlogic,meson-a1-reset.h
+>  drivers/reset/reset-meson.c | 35 ++++++++++++++++++++++++++++-------
+>  1 file changed, 28 insertions(+), 7 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/reset/amlogic,meson-reset.txt b/Documentation/devicetree/bindings/reset/amlogic,meson-reset.txt
-> index 28ef6c2..011151a 100644
-> --- a/Documentation/devicetree/bindings/reset/amlogic,meson-reset.txt
-> +++ b/Documentation/devicetree/bindings/reset/amlogic,meson-reset.txt
-> @@ -5,8 +5,8 @@ Please also refer to reset.txt in this directory for common reset
->  controller binding usage.
+> diff --git a/drivers/reset/reset-meson.c b/drivers/reset/reset-meson.c
+> index 5242e06..d9541c1 100644
+> --- a/drivers/reset/reset-meson.c
+> +++ b/drivers/reset/reset-meson.c
+> @@ -64,12 +64,16 @@
+>  #include <linux/types.h>
+>  #include <linux/of_device.h>
 >  
->  Required properties:
-> -- compatible: Should be "amlogic,meson8b-reset", "amlogic,meson-gxbb-reset" or
-> -	"amlogic,meson-axg-reset".
-> +- compatible: Should be "amlogic,meson8b-reset", "amlogic,meson-gxbb-reset",
-> +	"amlogic,meson-axg-reset" or "amlogic,meson-a1-reset".
->  - reg: should contain the register address base
->  - #reset-cells: 1, see below
+> -#define REG_COUNT	8
+>  #define BITS_PER_REG	32
+> -#define LEVEL_OFFSET	0x7c
+> +
+> +struct meson_reset_param {
+> +	int reg_count;
+> +	int level_offset;
+> +};
 >  
-> diff --git a/include/dt-bindings/reset/amlogic,meson-a1-reset.h b/include/dt-bindings/reset/amlogic,meson-a1-reset.h
-> new file mode 100644
-> index 00000000..8d76a47
-> --- /dev/null
-> +++ b/include/dt-bindings/reset/amlogic,meson-a1-reset.h
-> @@ -0,0 +1,59 @@
-> +/* SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> + *
-> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
-> + * Author: Xingyu Chen <xingyu.chen@amlogic.com>
-> + *
-> + */
+>  struct meson_reset {
+>  	void __iomem *reg_base;
+> +	const struct meson_reset_param *param;
+>  	struct reset_controller_dev rcdev;
+>  	spinlock_t lock;
+>  };
+> @@ -95,10 +99,12 @@ static int meson_reset_level(struct reset_controller_dev *rcdev,
+>  		container_of(rcdev, struct meson_reset, rcdev);
+>  	unsigned int bank = id / BITS_PER_REG;
+>  	unsigned int offset = id % BITS_PER_REG;
+> -	void __iomem *reg_addr = data->reg_base + LEVEL_OFFSET + (bank << 2);
+> +	void __iomem *reg_addr;
+>  	unsigned long flags;
+>  	u32 reg;
+>  
+> +	reg_addr = data->reg_base + data->param->level_offset + (bank << 2);
 > +
-> +#ifndef _DT_BINDINGS_AMLOGIC_MESON_A1_RESET_H
-> +#define _DT_BINDINGS_AMLOGIC_MESON_A1_RESET_H
+>  	spin_lock_irqsave(&data->lock, flags);
+>  
+>  	reg = readl(reg_addr);
+> @@ -130,10 +136,21 @@ static const struct reset_control_ops meson_reset_ops = {
+>  	.deassert	= meson_reset_deassert,
+>  };
+>  
+> +static const struct meson_reset_param meson8b_param = {
+> +	.reg_count	= 8,
+> +	.level_offset	= 0x7c,
+> +};
 > +
-> +/* RESET0 */
-> +#define RESET_AM2AXI_VAD		1
-> +#define RESET_PSRAM			4
-> +#define RESET_PAD_CTRL			5
-> +#define RESET_TEMP_SENSOR		7
-> +#define RESET_AM2AXI_DEV		8
-> +#define RESET_SPICC_A			10
-> +#define RESET_MSR_CLK			11
-> +#define RESET_AUDIO			12
-> +#define RESET_ANALOG_CTRL		13
-> +#define RESET_SAR_ADC			14
-> +#define RESET_AUDIO_VAD			15
-> +#define RESET_CEC			16
-> +#define RESET_PWM_EF			17
-> +#define RESET_PWM_CD			18
-> +#define RESET_PWM_AB			19
-> +#define RESET_IR_CTRL			21
-> +#define RESET_I2C_S_A			22
-> +#define RESET_I2C_M_D			24
-> +#define RESET_I2C_M_C			25
-> +#define RESET_I2C_M_B			26
-> +#define RESET_I2C_M_A			27
-> +#define RESET_I2C_PROD_AHB		28
-> +#define RESET_I2C_PROD			29
+> +static const struct meson_reset_param meson_a1_param = {
+> +	.reg_count	= 3,
+> +	.level_offset	= 0x40,
+> +};
 > +
-> +/* RESET1 */
-> +#define RESET_ACODEC			32
-> +#define RESET_DMA			33
-> +#define RESET_SD_EMMC_A			34
-> +#define RESET_USBCTRL			36
-> +#define RESET_USBPHY			38
-> +#define RESET_RSA			42
-> +#define RESET_DMC			43
-> +#define RESET_IRQ_CTRL			45
-> +#define RESET_NIC_VAD			47
-> +#define RESET_NIC_AXI			48
-> +#define RESET_RAMA			49
-> +#define RESET_RAMB			50
-> +#define RESET_ROM			53
-> +#define RESET_SPIFC			54
-> +#define RESET_GIC			55
-> +#define RESET_UART_C			56
-> +#define RESET_UART_B			57
-> +#define RESET_UART_A			58
-> +#define RESET_OSC_RING			59
+>  static const struct of_device_id meson_reset_dt_ids[] = {
+> -	 { .compatible = "amlogic,meson8b-reset" },
+> -	 { .compatible = "amlogic,meson-gxbb-reset" },
+> -	 { .compatible = "amlogic,meson-axg-reset" },
+> +	 { .compatible = "amlogic,meson8b-reset",    .data = &meson8b_param},
+> +	 { .compatible = "amlogic,meson-gxbb-reset", .data = &meson8b_param},
+> +	 { .compatible = "amlogic,meson-axg-reset",  .data = &meson8b_param},
+> +	 { .compatible = "amlogic,meson-a1-reset",   .data = &meson_a1_param},
+>  	 { /* sentinel */ },
+>  };
+>  
+> @@ -151,12 +168,16 @@ static int meson_reset_probe(struct platform_device *pdev)
+>  	if (IS_ERR(data->reg_base))
+>  		return PTR_ERR(data->reg_base);
+>  
+> +	data->param = of_device_get_match_data(&pdev->dev);
+> +	if (!data->param)
+> +		return -ENODEV;
 > +
-> +/* RESET2 Reserved */
-> +
-> +#endif
+>  	platform_set_drvdata(pdev, data);
+>  
+>  	spin_lock_init(&data->lock);
+>  
+>  	data->rcdev.owner = THIS_MODULE;
+> -	data->rcdev.nr_resets = REG_COUNT * BITS_PER_REG;
+> +	data->rcdev.nr_resets = data->param->reg_count * BITS_PER_REG;
+>  	data->rcdev.ops = &meson_reset_ops;
+>  	data->rcdev.of_node = pdev->dev.of_node;
+>  
 > 
 
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
