@@ -2,59 +2,142 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD028B601D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 11:28:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17E5EB604F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Sep 2019 11:31:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rwD9vjQ/zTsGJvOFqjEPcQUwIQXZLJv7hdKSV0F6/pM=; b=cPOv96XlZdOdls
-	mav+7wc+9/XltW1kBvMX15CVzZfq2v0AcWiM7GWmUWgAtVZXcsrwjISg0UMouQnz/9PXXO7rARIkt
-	0N/1SVHj6QpydTFazOp/D0DlUWsd7/TBRiJ0xWK0eUN4fm9Z5p6aHtVNS6EPshUKZvcZFLHSYivPK
-	dct5SZD5S7sARYnJLVbnJNNNd6hPB3ol5qvK79+RGcxc5+DFcFMyuTxkK84jZCViVU5PDXpBl/aLI
-	er2QMYHXh4AwmbLp3RtM53pvbKRqHa0cWQKTKCp3sGL1BM2wqg3uAKpM3Ub+N9hqTfq9vq+cbDOXc
-	pOmW38eo2pegxHmUjOIw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
+	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Z06duv4lcVJHySBPuLK4qMWSJgzJXRXqpW8mmm4iTmk=; b=LaJPrWRNxKCEl7
+	rogjG7th6C+9CsAcsfGyCaqqAq/turWyaGPeIPVp2g2btgIIqt5ajhwwQCNa3blHTz+eei4DSOwtK
+	4QXummW8qMPSsXHAIvssXCY/dBhZ/ZQMsS+2AZHg+4BlhUiYyTtZhitKy+rxtZ1ARb1FNEAVsWNNU
+	TMD0WyUQySIFHFFilskys6O9SZs+DRhB5kOWRV+VVfp4nQaospb2bbyRHN3bGSfBctT0ccoOGydnK
+	aqUeNlkbjawE/caBWA9D/v/AtN+26/pfP0TyfeNbyXPfBbxmgF5QiI9ol+DxP/Ah+/PaMjqb8Xz+i
+	t2y+bqQdIEZVHX2gfyLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAWGV-0003hy-B5; Wed, 18 Sep 2019 09:28:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAWGI-0003hI-S1
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Sep 2019 09:28:36 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 23566337;
- Wed, 18 Sep 2019 02:28:34 -0700 (PDT)
-Received: from [10.162.40.136] (p8cg001049571a15.blr.arm.com [10.162.40.136])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- A134F3F59C; Wed, 18 Sep 2019 02:28:26 -0700 (PDT)
-Subject: Re: [PATCH V7 1/3] mm/hotplug: Reorder memblock_[free|remove]() calls
- in try_remove_memory()
-To: Balbir Singh <bsingharora@gmail.com>, linux-mm@kvack.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- akpm@linux-foundation.org, catalin.marinas@arm.com, will@kernel.org
-References: <1567503958-25831-1-git-send-email-anshuman.khandual@arm.com>
- <1567503958-25831-2-git-send-email-anshuman.khandual@arm.com>
- <74bcbd36-3bec-be67-917d-60cd74cbcef0@gmail.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <91efada2-23e3-1982-47bc-82fb93ce944a@arm.com>
-Date: Wed, 18 Sep 2019 14:58:40 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1iAWIi-0005rM-L0; Wed, 18 Sep 2019 09:31:04 +0000
+Received: from mout.web.de ([212.227.15.3])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iAWIU-0005pM-6q; Wed, 18 Sep 2019 09:30:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
+ s=dbaedf251592; t=1568799034;
+ bh=o++p9693E2UvDPwPrIcg8d+RdqZWpYbuZSCZtdvZT5A=;
+ h=X-UI-Sender-Class:To:From:Subject:Cc:Date;
+ b=iDw0YSXB1pmMdVnnBrlRYyPHuVVCX0msHTn+VlCc/AJ7A84YgQxUkeU/4U5Kegjl3
+ KHsb6fKo0HYKabLccl4357VYGzyvTHE3cxxdHkWlkHWy9JPjyLMxEb31crnfh3POAQ
+ Ct+WpoemuRkxuoXPE6SRcmQPSnQdvy8a3rYc7BlY=
+X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
+Received: from [192.168.1.2] ([2.244.2.101]) by smtp.web.de (mrweb001
+ [213.165.67.108]) with ESMTPSA (Nemesis) id 0MS1tK-1idYgt3Kby-00TGlb; Wed, 18
+ Sep 2019 11:30:33 +0200
+To: linux-media@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-renesas-soc@vger.kernel.org,
+ Andrew-CT Chen <andrew-ct.chen@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ =?UTF-8?Q?Niklas_S=c3=b6derlund?= <niklas.soderlund@ragnatech.se>,
+ Tiffany Lin <tiffany.lin@mediatek.com>
+From: Markus Elfring <Markus.Elfring@web.de>
+Subject: [PATCH] media: platform: Use devm_platform_ioremap_resource() in two
+ functions
+Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
+ 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 FEE=
+Message-ID: <d80a685a-c3de-b9c9-ad32-e1da9308c393@web.de>
+Date: Wed, 18 Sep 2019 11:30:30 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.0
 MIME-Version: 1.0
-In-Reply-To: <74bcbd36-3bec-be67-917d-60cd74cbcef0@gmail.com>
 Content-Language: en-US
+X-Provags-ID: V03:K1:WWd+vOer71vAV+x2YMZX0l/l4cPFXevJQvHBjh8biXp3aZE+URz
+ 89oXRc95GDOBlwi24LkdiTxMGtO73uYzJDbry9HLygvcdSA7XLaAELfKbaj9e9Xs0EcuVUQ
+ A8+CQ5EN20icOGdKf2azkRVVd7IH4ykVEjH+D+NfTnHqtUW2R5u65eI7ml66UlCGS4pPp4r
+ w7M+1UjKZiV0ILC6UIPcA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:qnbIG1ZWk68=:Nlg56Kn/36Lq3zdU29JAcd
+ F6oeMg4CRTGKtZZlrSTdtlq5dP/wrOEi1jPscJPUM5dZ8QIESnKllvonqhBZfCYFhrTHLMdXl
+ b8K4dipvY26ZqPEg/ZMAu4eX+OOXoIukJETrrP8yt3FOSzsBtcLmmeIXkTYray70Lf0T2ScpB
+ KDDuoLgZLtBTDYA1hlUySyoYxHFqF4o9l1hkhuyQi0RR6+JFfhjBR22roRGMtV3SgqPBYGATj
+ rjF7X2yf7Rw8NsDVk2ixKIS6BemBTVcJrvO5jUvdvdV7tq6bsJPEChK/kPgo+LFdHsBbPIIQw
+ U8WxIOFcGk3M45N95LAakC9Bfg+/DubWP2xT7PTWGPrsw9b7dl+Mi2ftxVfAe+gJXAywQUch5
+ SPSzwaQuZfkHeImJmmHEwvX0MrXJeXzzZ/RywPRDLsDCldlxN0sqjn/z63t0eugvwHeWufygr
+ Wktb7nPCdFuWCZka8kp+RZYpgiSrfZRUmaBoG+Mxg06GD6/ef/PaLc/E9skJ0LU5H1/WRyHgv
+ msEMBNI0hFPw865tWeqpGdaa2ry+8wI/yhKZJ6l+JPel2WodXfL+jiBHrAVLPQkVM8IqoBnPC
+ 4poqvQJDPTBitTJilXG8gfg3/kpzSHAr750wpQ7GgP6Q4NyznnCpr7HM9OnY54muLQYi9Zika
+ rB2heB2b1fDItcjnBWtj+pzgo10qd+tyRJJ6ykLNtWfRh9vgqd75nsjHazAK/IoLyaySVITSg
+ wZNVa8h0jXPOeLW6OXhKAgaDqDzTxIylh8vFCdEJM7M/i8IzubRIe/oS3+wy57ncbwC1vd4ul
+ SWH4XS5vEDellmKkdmkwevVzei4eWA8n8DnYw+mkvyzB75/VAhX6TCWvrL7x3GsMCuHJN/zzj
+ 5tGAFq+pJ/mDA00wUYQgle4JFRLNvTcW1iFJTXRDb9LvNANGdJnEXLgsIlUL48jqYoP5r4Y89
+ sXSKDYQqVPuAN2rwbjTCbjgSLuW0Md62guUpNPtsfwuXc1BNAkM9M67PxW4jbR0Lct2nnMv+1
+ iIkH+u7F8iPGmKUBHCojHruyI+Q1ur0J1EOPx22KMXW00ifmlmh9uSsAbvcEziyLtdPRr/ax3
+ i6zUr7E0hktjPOUZb2T9pd7VeL6JZtgW5Y2CDQyhvy9FG/UTzzCMV8iYowoIbK/rjYjFpWiKb
+ aOa30QniK2jdFXb6WVuWWhNI5MQeTW4FIBDTIscFE2/YRRZtvi0zCRuHrofWASO9zmk+tACXy
+ LCXFqkkIHkZUKN6ecksIw8N+Lsu9rgjfR+wAcOvNd2zSre7k2xgmrqdMHAd0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_022834_998277_72C3107E 
-X-CRM114-Status: GOOD (  22.36  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190918_023050_586400_53BE5554 
+X-CRM114-Status: UNSURE (   9.90  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.15.3 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (markus.elfring[at]web.de)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,128 +149,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, mhocko@suse.com, david@redhat.com,
- ira.weiny@intel.com, steve.capper@arm.com, mgorman@techsingularity.net,
- steven.price@arm.com, broonie@kernel.org, cai@lca.pw, ard.biesheuvel@arm.com,
- cpandya@codeaurora.org, arunks@codeaurora.org, dan.j.williams@intel.com,
- Robin.Murphy@arm.com, logang@deltatee.com, valentin.schneider@arm.com,
- suzuki.poulose@arm.com, osalvador@suse.de
+Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ kernel-janitors@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
+ Himanshu Jha <himanshujha199640@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Markus Elfring <elfring@users.sourceforge.net>
+Date: Wed, 18 Sep 2019 11:20:48 +0200
 
+Simplify these function implementations by using a known wrapper function.
 
-On 09/16/2019 07:14 AM, Balbir Singh wrote:
-> 
-> 
-> On 3/9/19 7:45 pm, Anshuman Khandual wrote:
->> Memory hot remove uses get_nid_for_pfn() while tearing down linked sysfs
-> 
-> I could not find this path in the code, the only called for get_nid_for_pfn()
-> was register_mem_sect_under_node() when the system is under boot.
-> 
->> entries between memory block and node. It first checks pfn validity with
->> pfn_valid_within() before fetching nid. With CONFIG_HOLES_IN_ZONE config
->> (arm64 has this enabled) pfn_valid_within() calls pfn_valid().
->>
->> pfn_valid() is an arch implementation on arm64 (CONFIG_HAVE_ARCH_PFN_VALID)
->> which scans all mapped memblock regions with memblock_is_map_memory(). This
->> creates a problem in memory hot remove path which has already removed given
->> memory range from memory block with memblock_[remove|free] before arriving
->> at unregister_mem_sect_under_nodes(). Hence get_nid_for_pfn() returns -1
->> skipping subsequent sysfs_remove_link() calls leaving node <-> memory block
->> sysfs entries as is. Subsequent memory add operation hits BUG_ON() because
->> of existing sysfs entries.
->>
->> [   62.007176] NUMA: Unknown node for memory at 0x680000000, assuming node 0
->> [   62.052517] ------------[ cut here ]------------
-> 
-> This seems like arm64 is not ready for probe_store() via drivers/base/memory.c/ode.c
-> 
->> [   62.053211] kernel BUG at mm/memory_hotplug.c:1143!
-> 
-> 
-> 
->> [   62.053868] Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
->> [   62.054589] Modules linked in:
->> [   62.054999] CPU: 19 PID: 3275 Comm: bash Not tainted 5.1.0-rc2-00004-g28cea40b2683 #41
->> [   62.056274] Hardware name: linux,dummy-virt (DT)
->> [   62.057166] pstate: 40400005 (nZcv daif +PAN -UAO)
->> [   62.058083] pc : add_memory_resource+0x1cc/0x1d8
->> [   62.058961] lr : add_memory_resource+0x10c/0x1d8
->> [   62.059842] sp : ffff0000168b3ce0
->> [   62.060477] x29: ffff0000168b3ce0 x28: ffff8005db546c00
->> [   62.061501] x27: 0000000000000000 x26: 0000000000000000
->> [   62.062509] x25: ffff0000111ef000 x24: ffff0000111ef5d0
->> [   62.063520] x23: 0000000000000000 x22: 00000006bfffffff
->> [   62.064540] x21: 00000000ffffffef x20: 00000000006c0000
->> [   62.065558] x19: 0000000000680000 x18: 0000000000000024
->> [   62.066566] x17: 0000000000000000 x16: 0000000000000000
->> [   62.067579] x15: ffffffffffffffff x14: ffff8005e412e890
->> [   62.068588] x13: ffff8005d6b105d8 x12: 0000000000000000
->> [   62.069610] x11: ffff8005d6b10490 x10: 0000000000000040
->> [   62.070615] x9 : ffff8005e412e898 x8 : ffff8005e412e890
->> [   62.071631] x7 : ffff8005d6b105d8 x6 : ffff8005db546c00
->> [   62.072640] x5 : 0000000000000001 x4 : 0000000000000002
->> [   62.073654] x3 : ffff8005d7049480 x2 : 0000000000000002
->> [   62.074666] x1 : 0000000000000003 x0 : 00000000ffffffef
->> [   62.075685] Process bash (pid: 3275, stack limit = 0x00000000d754280f)
->> [   62.076930] Call trace:
->> [   62.077411]  add_memory_resource+0x1cc/0x1d8
->> [   62.078227]  __add_memory+0x70/0xa8
->> [   62.078901]  probe_store+0xa4/0xc8
->> [   62.079561]  dev_attr_store+0x18/0x28
->> [   62.080270]  sysfs_kf_write+0x40/0x58
->> [   62.080992]  kernfs_fop_write+0xcc/0x1d8
->> [   62.081744]  __vfs_write+0x18/0x40
->> [   62.082400]  vfs_write+0xa4/0x1b0
->> [   62.083037]  ksys_write+0x5c/0xc0
->> [   62.083681]  __arm64_sys_write+0x18/0x20
->> [   62.084432]  el0_svc_handler+0x88/0x100
->> [   62.085177]  el0_svc+0x8/0xc
->>
->> Re-ordering memblock_[free|remove]() with arch_remove_memory() solves the
->> problem on arm64 as pfn_valid() behaves correctly and returns positive
->> as memblock for the address range still exists. arch_remove_memory()
->> removes applicable memory sections from zone with __remove_pages() and
->> tears down kernel linear mapping. Removing memblock regions afterwards
->> is safe because there is no other memblock (bootmem) allocator user that
->> late. So nobody is going to allocate from the removed range just to blow
->> up later. Also nobody should be using the bootmem allocated range else
->> we wouldn't allow to remove it. So reordering is indeed safe.
->>
->> Reviewed-by: David Hildenbrand <david@redhat.com>
->> Reviewed-by: Oscar Salvador <osalvador@suse.de>
->> Acked-by: Mark Rutland <mark.rutland@arm.com>
->> Acked-by: Michal Hocko <mhocko@suse.com>
->> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
->> ---
-> 
-> Honestly, the issue is not clear from the changelog, largely
-> because I can't find the use of get_nid_for_pfn()  being used
-> in memory hotunplug. I can see why using pfn_valid() after
-> memblock_free/remove is bad on the architecture.
-> 
-> I think the checks to pfn_valid() can be avoided from the
-> remove paths if we did the following
-> 
-> memblock_isolate_regions()
-> for each isolate_region {
-> 	memblock_free
-> 	memblock_remove
-> 	arch_memory_remove
-> 
-> 	# ensure that __remove_memory can avoid calling pfn_valid
-> }
-> 
-> Having said that, your patch is easier and if your assumption
-> about not using the memblocks is valid (after arch_memory_remove())
-> then might be the least resistant way forward
+This issue was detected by using the Coccinelle software.
 
-The context for this patch has changed a bit which now reflects in
-it's current posting (https://patchwork.kernel.org/patch/11146361/)
+Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
+---
+ drivers/media/platform/mtk-vcodec/mtk_vcodec_dec_drv.c | 8 +-------
+ drivers/media/platform/rcar-vin/rcar-core.c            | 7 +------
+ 2 files changed, 2 insertions(+), 13 deletions(-)
+
+diff --git a/drivers/media/platform/mtk-vcodec/mtk_vcodec_dec_drv.c b/drivers/media/platform/mtk-vcodec/mtk_vcodec_dec_drv.c
+index 00d090df11bb..944771ee5f5c 100644
+--- a/drivers/media/platform/mtk-vcodec/mtk_vcodec_dec_drv.c
++++ b/drivers/media/platform/mtk-vcodec/mtk_vcodec_dec_drv.c
+@@ -253,13 +253,7 @@ static int mtk_vcodec_probe(struct platform_device *pdev)
+ 	}
+
+ 	for (i = 0; i < NUM_MAX_VDEC_REG_BASE; i++) {
+-		res = platform_get_resource(pdev, IORESOURCE_MEM, i);
+-		if (res == NULL) {
+-			dev_err(&pdev->dev, "get memory resource failed.");
+-			ret = -ENXIO;
+-			goto err_res;
+-		}
+-		dev->reg_base[i] = devm_ioremap_resource(&pdev->dev, res);
++		dev->reg_base[i] = devm_platform_ioremap_resource(pdev, i);
+ 		if (IS_ERR((__force void *)dev->reg_base[i])) {
+ 			ret = PTR_ERR((__force void *)dev->reg_base[i]);
+ 			goto err_res;
+diff --git a/drivers/media/platform/rcar-vin/rcar-core.c b/drivers/media/platform/rcar-vin/rcar-core.c
+index 6993484ff0f3..334c62805959 100644
+--- a/drivers/media/platform/rcar-vin/rcar-core.c
++++ b/drivers/media/platform/rcar-vin/rcar-core.c
+@@ -1282,7 +1282,6 @@ static int rcar_vin_probe(struct platform_device *pdev)
+ {
+ 	const struct soc_device_attribute *attr;
+ 	struct rvin_dev *vin;
+-	struct resource *mem;
+ 	int irq, ret;
+
+ 	vin = devm_kzalloc(&pdev->dev, sizeof(*vin), GFP_KERNEL);
+@@ -1301,11 +1300,7 @@ static int rcar_vin_probe(struct platform_device *pdev)
+ 	if (attr)
+ 		vin->info = attr->data;
+
+-	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	if (mem == NULL)
+-		return -EINVAL;
+-
+-	vin->base = devm_ioremap_resource(vin->dev, mem);
++	vin->base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(vin->base))
+ 		return PTR_ERR(vin->base);
+
+--
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
