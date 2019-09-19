@@ -2,58 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3A26B7564
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 10:44:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46CECB75B0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 11:07:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=g8+hNfKPpT0YQsQlDvsrj2tAemWmcWSMYWwonZe5+AY=; b=KhdvTb0bF31LBEIhSweCHUbhBw
-	vX+O8AzpU1GCk520/l9HlFc3onb5+IkOVjgy9rQz3Ut7GRQXqdfZZ5YlQao1Qvtq1ossjuoNbo8yV
-	1dfTzPTnPr6HfsbrPQmXXRwfBS70p0fMWvJPdLZ3rGVy/4PGX/MMsm7GsoLMx5gLk3m3dDF8ejcMS
-	6PXvkSyjzFGFH8qjpYFaqSlONZtguBX98/p38BCqLawim1RVQF24x8t/fj969tjqVBlR8ixtpxVC1
-	4dpBNgWIdKPNB2ShjD6Hjy8zurfzsPrtr3W161g87XdBFYp7OOn4QcLDW3FR6PxOlDARIhYihHQdH
-	oAYqaVfA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JqTOXrHIhM3ChR9GQahwPjOLzBevfYc406l9D+4UUHc=; b=SLnthGdGTl+gdd
+	x48dBu3zlamM5m0fNtLPrytSyhpK7cr0lRuxbe4UJWgimNFoyWL2UFPApZTryMikGcRxWp3Q9U74n
+	LghleJBQykbCAHWQi1XixbqEBlo6yTGnBHTiDO96ApTNCCsCqyENcFfsglKhV5tP9iY89E5hOMWS/
+	aE4FYkeh/Qn0oPJBtXHRDB7fsfHsOfnxNdGxr4acF5F5GQJGYfGGVkNFbl0sUg2Yu5wTWZKdwmkoD
+	urBzpVsdF6dxcGmcLP5Np6M3mOFeGkmPTZ6c6eHH4qjUilsxudf395XeOygazGv04dbp0HPYk/w5k
+	zBSZ0P5SkJUAlPn6U3Fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAs36-0004Xo-LM; Thu, 19 Sep 2019 08:44:26 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1iAsOi-0004oS-Lw; Thu, 19 Sep 2019 09:06:45 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAs2l-0004Wc-Tp
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 08:44:06 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 9B68A7CD0F122A9A5390;
- Thu, 19 Sep 2019 16:43:51 +0800 (CST)
-Received: from [127.0.0.1] (10.202.227.179) by DGGEMS401-HUB.china.huawei.com
- (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0;
- Thu, 19 Sep 2019 16:43:44 +0800
-From: John Garry <john.garry@huawei.com>
-Subject: arm64 iommu groups issue
-To: Robin Murphy <robin.murphy@arm.com>, Marc Zyngier <maz@kernel.org>, "Will
- Deacon" <will@kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, 
- Sudeep Holla <sudeep.holla@arm.com>, "Guohanjun (Hanjun Guo)"
- <guohanjun@huawei.com>
-Message-ID: <9625faf4-48ef-2dd3-d82f-931d9cf26976@huawei.com>
-Date: Thu, 19 Sep 2019 09:43:37 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.3.0
+ id 1iAsOF-0004n5-QE
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 09:06:18 +0000
+Received: by mail-ot1-f66.google.com with SMTP id b2so2397627otq.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Sep 2019 02:06:11 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=wDQS67j3lG7TwomTYu6phRtQVo+Lq0+3xuq57RPV6D8=;
+ b=M0EDnAj3DpRNMOWk0d9R19W4u7x7tu+GLPS1H9bZKpUYyen5eOsvgq3gJACBn3yxQL
+ 5+a1AT9ZL2+5iylmPntVFR65/31nqobpkZDsri9KhnMEFSpdxA3/oCfsUYXwYJFNwKXK
+ I0cZUBx7moimFMcpFl91sradNtp8d9sfLJ70+VU8PNf2uwFVbIndnB6akIOW9RBhdRjg
+ Q1c0hDxAiEepcD91YJ5WjL21S28jHASugXeiOP4QpyRxcX6QtA12WPMdACB7rxeVaBX3
+ onfb4F2Nsy6LyLOi08mR3hF2RCF6pUyUKyd13np2X1aBKSFlJ+CRt8DudcxRh2oi9q3B
+ IIGw==
+X-Gm-Message-State: APjAAAU5YD1hTo8lJcPiiTmrE48fZo2ZdiEsJvQHP0107XjzWz2rZO+e
+ c+yDWIW1xFEeSCcKikaIxp2byZP0zS3yENOtyS8=
+X-Google-Smtp-Source: APXvYqzkCVuzCTBNypl4Lg61PDxEIAb1NQVdXkZR4+Hm131qcRPrUobeyAbVKE3pL8YI02rUdNiF6OshW6FylYOc9ac=
+X-Received: by 2002:a9d:4d0d:: with SMTP id n13mr5907611otf.297.1568883971244; 
+ Thu, 19 Sep 2019 02:06:11 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.202.227.179]
-X-CFilter-Loop: Reflected
+References: <20190731.094150.851749535529247096.davem@davemloft.net>
+ <20190731185023.20954-1-natechancellor@gmail.com>
+ <b3444283-7a77-ece8-7ac6-41756aa7dc60@infradead.org>
+ <64f7ef68-c373-5ff5-ff6d-8a7ce0e30798@infradead.org>
+In-Reply-To: <64f7ef68-c373-5ff5-ff6d-8a7ce0e30798@infradead.org>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Thu, 19 Sep 2019 11:06:00 +0200
+Message-ID: <CAMuHMdXya55UJttU1xvX5+-N658Xqfa0k8sSKTGbtdBHgPEFcg@mail.gmail.com>
+Subject: Re: [PATCH] net: mdio-octeon: Fix build error and Kconfig warning
+To: Randy Dunlap <rdunlap@infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_014404_338181_CF894C6B 
-X-CRM114-Status: GOOD (  12.80  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190919_020616_105898_042A7128 
+X-CRM114-Status: UNSURE (   9.31  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.66 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,109 +86,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Alex Williamson <alex.williamson@redhat.com>,
- Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>,
- Linuxarm <linuxarm@huawei.com>, iommu <iommu@lists.linux-foundation.org>,
- Bjorn Helgaas <bhelgaas@google.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: driverdevel <devel@driverdev.osuosl.org>, Andrew Lunn <andrew@lunn.ch>,
+ Florian Fainelli <f.fainelli@gmail.com>, kbuild test robot <lkp@intel.com>,
+ kernel-build-reports@lists.linaro.org, Greg KH <gregkh@linuxfoundation.org>,
+ Matthew Wilcox <willy@infradead.org>, Mark Brown <broonie@kernel.org>,
+ Linux-Next <linux-next@vger.kernel.org>, netdev <netdev@vger.kernel.org>,
+ Nathan Chancellor <natechancellor@gmail.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
-
-We have noticed a special behaviour on our arm64 D05 board when the SMMU 
-is enabled with regards PCI device iommu groups.
-
-This platform does not support ACS, yet we find that all functions for a 
-PCI device are not grouped together:
-
-root@ubuntu:/sys# dmesg | grep "Adding to iommu group"
-[    7.307539] hisi_sas_v2_hw HISI0162:01: Adding to iommu group 0
-[   12.590533] hns_dsaf HISI00B2:00: Adding to iommu group 1
-[   13.688527] mlx5_core 000a:11:00.0: Adding to iommu group 2
-[   14.324606] mlx5_core 000a:11:00.1: Adding to iommu group 3
-[   14.937090] ehci-platform PNP0D20:00: Adding to iommu group 4
-[   15.276637] pcieport 0002:f8:00.0: Adding to iommu group 5
-[   15.340845] pcieport 0004:88:00.0: Adding to iommu group 6
-[   15.392098] pcieport 0005:78:00.0: Adding to iommu group 7
-[   15.443356] pcieport 000a:10:00.0: Adding to iommu group 8
-[   15.484975] pcieport 000c:20:00.0: Adding to iommu group 9
-[   15.543647] pcieport 000d:30:00.0: Adding to iommu group 10
-[   15.599771] serial 0002:f9:00.0: Adding to iommu group 5
-[   15.690807] serial 0002:f9:00.1: Adding to iommu group 5
-[   84.322097] mlx5_core 000a:11:00.2: Adding to iommu group 8
-[   84.856408] mlx5_core 000a:11:00.3: Adding to iommu group 8
-
-root@ubuntu:/sys#  lspci -tv
-lspci -tvv
--+-[000d:30]---00.0-[31]--
-   +-[000c:20]---00.0-[21]----00.0  Huawei Technologies Co., Ltd.
-   +-[000a:10]---00.0-[11-12]--+-00.0  Mellanox [ConnectX-5]
-   |                           +-00.1  Mellanox [ConnectX-5]
-   |                           +-00.2  Mellanox [ConnectX-5 VF]
-   |                           \-00.3  Mellanox [ConnectX-5 VF]
-   +-[0007:90]---00.0-[91]----00.0  Huawei Technologies Co., ...
-   +-[0006:c0]---00.0-[c1]--
-   +-[0005:78]---00.0-[79]--
-   +-[0004:88]---00.0-[89]--
-   +-[0002:f8]---00.0-[f9]--+-00.0  MosChip Semiconductor Technology ...
-   |                        +-00.1  MosChip Semiconductor Technology ...
-   |                        \-00.2  MosChip Semiconductor Technology ...
-   \-[0000:00]-
-
-For the PCI devices in question - on port 000a:10:00.0 - you will notice 
-that the port and VFs (000a:11:00.2, 3) are in one group, yet the 2 PFs 
-(000a:11:00.0, 000a:11:00.1) are in separate groups.
-
-I also notice the same ordering nature on our D06 platform - the 
-pcieport is added to an iommu group after PF for that port. However this 
-platform supports ACS, so not such a problem.
-
-After some checking, I find that when the pcieport driver probes, the 
-associated SMMU device had not registered yet with the IOMMU framework, 
-so we defer the probe for this device - in iort.c:iort_iommu_xlate(), 
-when no iommu ops are available, we defer.
-
-Yet, when the mlx5 PF devices probe, the iommu ops are available at this 
-stage. So the probe continues and we get an iommu group for the device - 
-but not the same group as the parent port, as it has not yet been added 
-to a group. When the port eventually probes it gets a new, separate group.
-
-This all seems to be as the built-in module init ordering is as follows: 
-pcieport drv, smmu drv, mlx5 drv
-
-I notice that if I build the mlx5 drv as a ko and insert after boot, all 
-functions + pcieport are in the same group:
-
-[   11.530046] hisi_sas_v2_hw HISI0162:01: Adding to iommu group 0
-[   17.301093] hns_dsaf HISI00B2:00: Adding to iommu group 1
-[   18.743600] ehci-platform PNP0D20:00: Adding to iommu group 2
-[   20.212284] pcieport 0002:f8:00.0: Adding to iommu group 3
-[   20.356303] pcieport 0004:88:00.0: Adding to iommu group 4
-[   20.493337] pcieport 0005:78:00.0: Adding to iommu group 5
-[   20.702999] pcieport 000a:10:00.0: Adding to iommu group 6
-[   20.859183] pcieport 000c:20:00.0: Adding to iommu group 7
-[   20.996140] pcieport 000d:30:00.0: Adding to iommu group 8
-[   21.152637] serial 0002:f9:00.0: Adding to iommu group 3
-[   21.346991] serial 0002:f9:00.1: Adding to iommu group 3
-[  100.754306] mlx5_core 000a:11:00.0: Adding to iommu group 6
-[  101.420156] mlx5_core 000a:11:00.1: Adding to iommu group 6
-[  292.481714] mlx5_core 000a:11:00.2: Adding to iommu group 6
-[  293.281061] mlx5_core 000a:11:00.3: Adding to iommu group 6
-
-This does seem like a problem for arm64 platforms which don't support 
-ACS, yet enable an SMMU. Maybe also a problem even if they do support ACS.
-
-Opinion?
-
-Thanks,
-John
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVGh1LCBBdWcgMSwgMjAxOSBhdCAxOjUyIEFNIFJhbmR5IER1bmxhcCA8cmR1bmxhcEBpbmZy
+YWRlYWQub3JnPiB3cm90ZToKPiBIb3dldmVyLCB0aGVyZSBhcmUgbG90cyBvZiB0eXBlL2Nhc3Qg
+d2FybmluZ3MgaW4gYm90aCBtZGlvLW9jdGVvbiBhbmQgbWRpby1jYXZpdW06Cj4KPiAuLi9kcml2
+ZXJzL25ldC9waHkvbWRpby1vY3Rlb24uYzogSW4gZnVuY3Rpb24g4oCYb2N0ZW9uX21kaW9idXNf
+cHJvYmXigJk6Cj4gLi4vZHJpdmVycy9uZXQvcGh5L21kaW8tb2N0ZW9uLmM6NDg6Mzogd2Fybmlu
+ZzogY2FzdCBmcm9tIHBvaW50ZXIgdG8gaW50ZWdlciBvZiBkaWZmZXJlbnQgc2l6ZSBbLVdwb2lu
+dGVyLXRvLWludC1jYXN0XQo+ICAgICh1NjQpZGV2bV9pb3JlbWFwKCZwZGV2LT5kZXYsIG1kaW9f
+cGh5cywgcmVnc2l6ZSk7Cj4gICAgXgoKY2F2aXVtX21kaW9idXMucmVnaXN0ZXJfYmFzZSBzaG91
+bGQgYmUgInZvaWQgX19pb21lbSAqIiBpbnN0ZWFkIG9mICJ1NjQiLAphbmQgdGhlIGNhc3Qgc2hv
+dWxkIGJlIGRyb3BwZWQuCgo+IEluIGZpbGUgaW5jbHVkZWQgZnJvbSAuLi9kcml2ZXJzL25ldC9w
+aHkvbWRpby1vY3Rlb24uYzoxNDowOgo+IC4uL2RyaXZlcnMvbmV0L3BoeS9tZGlvLWNhdml1bS5o
+OjExMzo0ODogd2FybmluZzogY2FzdCB0byBwb2ludGVyIGZyb20gaW50ZWdlciBvZiBkaWZmZXJl
+bnQgc2l6ZSBbLVdpbnQtdG8tcG9pbnRlci1jYXN0XQo+ICAjZGVmaW5lIG9jdF9tZGlvX3dyaXRl
+cSh2YWwsIGFkZHIpIHdyaXRlcSh2YWwsICh2b2lkICopYWRkcikKPiAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBeCgouLi4gd2hpY2ggYWxsb3dzIHRvIGRy
+b3AgdGhpcyBjYXN0IGFzIHdlbGwuCgpDYXN0cyBhcmUgZXZpbCwgYW5kIHVzdWFsbHkgYSBzaWdu
+IHRoYXQgeW91J3JlIGRvaW5nIHNvbWV0aGluZyB3cm9uZy4KCkdye29ldGplLGVldGluZ31zLAoK
+ICAgICAgICAgICAgICAgICAgICAgICAgR2VlcnQKCi0tIApHZWVydCBVeXR0ZXJob2V2ZW4gLS0g
+VGhlcmUncyBsb3RzIG9mIExpbnV4IGJleW9uZCBpYTMyIC0tIGdlZXJ0QGxpbnV4LW02OGsub3Jn
+CgpJbiBwZXJzb25hbCBjb252ZXJzYXRpb25zIHdpdGggdGVjaG5pY2FsIHBlb3BsZSwgSSBjYWxs
+IG15c2VsZiBhIGhhY2tlci4gQnV0CndoZW4gSSdtIHRhbGtpbmcgdG8gam91cm5hbGlzdHMgSSBq
+dXN0IHNheSAicHJvZ3JhbW1lciIgb3Igc29tZXRoaW5nIGxpa2UgdGhhdC4KICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAtLSBMaW51cyBUb3J2YWxkcwoKX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
+c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
