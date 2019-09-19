@@ -2,67 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AC84B7276
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 07:08:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5398B7281
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 07:11:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=BQp+vVj3gKjVqS0tEpieR0hzb7aFYA81kTaSTlZ8VqE=; b=mntF8uSgLKJLX3aED5o21hLNxq
-	a8lcoFEBYeWQVQG9vz+ZDdRaKeNazh0PeCbQBycjtJWe+ucWdY6LbHxAL8qFfdMox0qD3NZN4eHf3
-	iLjlgR8FbjYutkFgbtzluxSCDeK8D14QxFHxCXdotrEV3n5Kx3qx6oyecK3u3NjcCp7txt/Cw3UKZ
-	ZVmt3q3gYO8rupCaXFaJZMDpqFF8DzsYdrP3k35liWVNeiqsybMm1qloFHm06Zk1cJrSe1FVGpOaG
-	fRoepPRkleFyF+iyk0Y8CsTr2zxW99ktv3DEwycROMqe+FH0iUIfRyWN6GfRUnuebFJJAgki9fNTh
-	Ll73pzwQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hwgadk+OjvIwG0zISNxAgwEhkMRh2PcrbPDiyyn/EqI=; b=Lt2n7sBZBAfyQM
+	+r3nhp8rwVcWqTCxkOeIkbTaRg4dDwaOD56P+ZEJVOBAWvUJ4/MMk0ctQxxKMZbrQN1XLQFtJQ692
+	EeHNxilqkPCQ9GuzxqoiDbFHo0QLdUnNnW0F9MKt3zxEB6Ah/rL/t02TBx3KlPi2xd69AUavJraqB
+	xim53koHwpUobebUW4Wy+zwiGpeKfyKhcf7pay8hFGaKDB/WMexbNopKrfdO2cmPFR8AhWWcmeHSo
+	5nb/w1U+gPH2EGUAUT/NCTQg3pbG49YhWfw9A6JOfQ1DOJ7jRcjbTyZag38N6GzGE6IykyWgpHUAQ
+	thZ/n3z7SoQo2lpAjIDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAofX-0005Ls-EV; Thu, 19 Sep 2019 05:07:51 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1iAoiX-0007nh-40; Thu, 19 Sep 2019 05:10:57 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAofK-0005KR-4I
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 05:07:39 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 8113020039E;
- Thu, 19 Sep 2019 07:07:35 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9F8862000D8;
- Thu, 19 Sep 2019 07:07:25 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 9C87F402E6;
- Thu, 19 Sep 2019 13:07:13 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- leonard.crestez@nxp.com, daniel.lezcano@linaro.org, ping.bai@nxp.com,
- daniel.baluta@nxp.com, jun.li@nxp.com, l.stach@pengutronix.de,
- abel.vesa@nxp.com, andrew.smirnov@gmail.com, angus@akkea.ca,
- ccaione@baylibre.com, agx@sigxcpu.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 3/3] arm64: dts: imx8mn: Use correct clock for usdhc's ipg clk
-Date: Thu, 19 Sep 2019 13:05:59 +0800
-Message-Id: <1568869559-28611-3-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1568869559-28611-1-git-send-email-Anson.Huang@nxp.com>
-References: <1568869559-28611-1-git-send-email-Anson.Huang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1iAoiH-0007mW-62
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 05:10:42 +0000
+Received: by mail-wr1-x444.google.com with SMTP id o18so1533737wrv.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 18 Sep 2019 22:10:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ttCTUHrEZ8RqxMqrfUks/MJVxPs2athVlNQVJH23ON0=;
+ b=pdgjowYLRCsuSv+iBZ5rHqIu+XC7Y9/cD2khPCOXEgPLOtByZUabXyd+pJgoS/hJjp
+ 5Ang/uWeIaLhscF6XMOZNYeYPwVJZ6BVKxSZj6aQLbLJxrzjx7GMceAcyq6bi+JjOKah
+ pnZZq33rabWGrHt4TwpO+ApAcTm2EbXb1pVqCRVjWE8wiI4zPoUNfnjv76JJeiVc6CcW
+ towxbanDYZi+wCkEt0gUi8excCGijYHtQyPGRzGC/YFBiQ0k3GBlaQO8jQStkzutmkdv
+ c+UMU7Dtd54b6Y5hndx9o3L9vusx8IPqMHjWjYDrcuPaYzQkv5zVKKngNE5988Ire5rz
+ UK2A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ttCTUHrEZ8RqxMqrfUks/MJVxPs2athVlNQVJH23ON0=;
+ b=L3kb5xt9YFljLVTobpAR8Jsh8bmo5BBGQWvtHgZ4F5tBxq1a4uu3ACwuolqMcMpBMQ
+ qJtmH+aj8vOXxaSLFoC2OPzwf2+T9fpSf8wu3Wg9OBpK/eFN8Z1E+FRgvUW461iguRz9
+ umoImju68fkY4D0pPFNcLOKSVqPcywixbJugYrr+owHOCSXqfyqfdVeLALbCSmGVn+bC
+ OlQrP8u5GIp6RoIgwoqb4JMhx11UQaIdqcuof5cD4hE6ZlqQ6vKXvaZgZlXYL15Wkd3I
+ 4DA7ag2DulKSg+rKDBetzkAOP6Qvi6561m90YA2rmg6IsKycbrxTkaHkA/PzpgjIHHoZ
+ XgUA==
+X-Gm-Message-State: APjAAAVbJRsCOJ4C0nfESZglVqaLvrWBZkafffJefSwlixV2KxAnVd/0
+ TLJ5zhn4d4TcU/SBcrVhk+M=
+X-Google-Smtp-Source: APXvYqzGta9q+xvqr076suhGvyYMAdJl62tIA2pJNMA7bhe1Kn3CF25JtfwxOo/WWeoF4ToKaq1CmQ==
+X-Received: by 2002:adf:f401:: with SMTP id g1mr5140106wro.275.1568869839395; 
+ Wed, 18 Sep 2019 22:10:39 -0700 (PDT)
+Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
+ by smtp.googlemail.com with ESMTPSA id 94sm6575552wrk.92.2019.09.18.22.10.38
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 18 Sep 2019 22:10:38 -0700 (PDT)
+From: Corentin Labbe <clabbe.montjoie@gmail.com>
+To: davem@davemloft.net, herbert@gondor.apana.org.au, mripard@kernel.org,
+ wens@csie.org
+Subject: [PATCH v2 0/2] crypto: sun4i-ss: Enable power management
+Date: Thu, 19 Sep 2019 07:10:33 +0200
+Message-Id: <20190919051035.4111-1-clabbe.montjoie@gmail.com>
+X-Mailer: git-send-email 2.21.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_220738_310862_E8EC525C 
-X-CRM114-Status: UNSURE (   8.40  )
+X-CRM114-CacheID: sfid-20190918_221041_254154_C9F3C05F 
+X-CRM114-Status: UNSURE (   9.61  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (clabbe.montjoie[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,54 +98,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: linux-sunxi@googlegroups.com, Corentin Labbe <clabbe.montjoie@gmail.com>,
+ linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On i.MX8MN, usdhc's ipg clock is from IMX8MN_CLK_IPG_ROOT,
-assign it explicitly instead of using IMX8MN_CLK_DUMMY.
+Hello
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- arch/arm64/boot/dts/freescale/imx8mn.dtsi | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+This serie enables power management in the sun4i-ss driver.
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-index 6cb6c9c..725a3a3 100644
---- a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-@@ -594,7 +594,7 @@
- 				compatible = "fsl,imx8mn-usdhc", "fsl,imx7d-usdhc";
- 				reg = <0x30b40000 0x10000>;
- 				interrupts = <GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>;
--				clocks = <&clk IMX8MN_CLK_DUMMY>,
-+				clocks = <&clk IMX8MN_CLK_IPG_ROOT>,
- 					 <&clk IMX8MN_CLK_NAND_USDHC_BUS>,
- 					 <&clk IMX8MN_CLK_USDHC1_ROOT>;
- 				clock-names = "ipg", "ahb", "per";
-@@ -610,7 +610,7 @@
- 				compatible = "fsl,imx8mn-usdhc", "fsl,imx7d-usdhc";
- 				reg = <0x30b50000 0x10000>;
- 				interrupts = <GIC_SPI 23 IRQ_TYPE_LEVEL_HIGH>;
--				clocks = <&clk IMX8MN_CLK_DUMMY>,
-+				clocks = <&clk IMX8MN_CLK_IPG_ROOT>,
- 					 <&clk IMX8MN_CLK_NAND_USDHC_BUS>,
- 					 <&clk IMX8MN_CLK_USDHC2_ROOT>;
- 				clock-names = "ipg", "ahb", "per";
-@@ -624,7 +624,7 @@
- 				compatible = "fsl,imx8mn-usdhc", "fsl,imx7d-usdhc";
- 				reg = <0x30b60000 0x10000>;
- 				interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
--				clocks = <&clk IMX8MN_CLK_DUMMY>,
-+				clocks = <&clk IMX8MN_CLK_IPG_ROOT>,
- 					 <&clk IMX8MN_CLK_NAND_USDHC_BUS>,
- 					 <&clk IMX8MN_CLK_USDHC3_ROOT>;
- 				clock-names = "ipg", "ahb", "per";
+Regards
+
+Changes since v1:
+- Fixed style in patch #1
+- Check more return code of PM functions
+- Add PM support in hash/prng
+- reworked the probe order of PM functions and the PM strategy
+
+Corentin Labbe (2):
+  crypto: sun4i-ss: simplify enable/disable of the device
+  crypto: sun4i-ss: enable pm_runtime
+
+ drivers/crypto/sunxi-ss/sun4i-ss-cipher.c |   9 ++
+ drivers/crypto/sunxi-ss/sun4i-ss-core.c   | 157 ++++++++++++++++------
+ drivers/crypto/sunxi-ss/sun4i-ss-hash.c   |  12 ++
+ drivers/crypto/sunxi-ss/sun4i-ss-prng.c   |   9 +-
+ drivers/crypto/sunxi-ss/sun4i-ss.h        |   2 +
+ 5 files changed, 149 insertions(+), 40 deletions(-)
+
 -- 
-2.7.4
+2.21.0
 
 
 _______________________________________________
