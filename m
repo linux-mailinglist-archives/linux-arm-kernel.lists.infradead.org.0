@@ -2,63 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88C0EB820E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 22:00:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DF81B8212
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 22:01:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3RvZaRQ2nsmMRvyakqzJUIpiSV56h73ZVMUTtgopC+c=; b=G/NHAu1ybSkv43
-	K0eFOLpvJ0pdp6QN2ClGNc13PyIl4XyWe5y+ZIgSrl243JqlvBXoZynYlQ1thNPO6/sE7RYNQjZri
-	P6HO/1IRoXKz6VPx1xMwzeV5XDuArWmeSZKMm7mXtWnKph+KMw7hWoaugXpTMDTif+ectWwrotier
-	SirbHVyFNPUplJbQZ03iadMdiG6clZBg3Xa7o0cGu9sqNNR1MNXfIkagsPdEeF/FUOS8JV+s9Glip
-	12zYc+Ak18J+B9cqAvWpdguCFsZPOsf0A03vecOFCh72SkbEbPzvJ8Met52G+eI6le9m2HYP1uGNX
-	fFYy2jOhc7d9W7rnIq3g==;
+	List-Owner; bh=4oYC47jBBNOtuJUJoSNNNDcZ7pdRS0+vh3RmCa2SMiU=; b=s5HZnVG89LZnnT
+	6NEysY6ulYh8mE3gjizzZJ2oR7YRF9lZZDY3roLjsPCEnkARp2RQZHHaX9anduUvhFJXEXxLmWdp+
+	b8FDGnQlxYBIZ3zBoKKIWOZKCwkxu4Gg8lVYb5FRzfWE1uSyeph9S4VFialVKsZ71cvic6cAMlDXE
+	R9gd6jg/LUVJtZRCT5rd3lUK0OBVmTGdaZRA1Dw4a+AdZ0V/3PZTc9PVn76xZCwhBaUG3m2XH6pdq
+	gwo5udSjLqUQI5WMFBAXaQtbqlSOoVVhaeXeohBFmjGSiEVZMdDVJQ3FD6zqlphW259W9RwRemAXn
+	7990SlIbbW/7Ay8+HSEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iB2b9-0004Zv-3C; Thu, 19 Sep 2019 20:00:15 +0000
-Received: from mga14.intel.com ([192.55.52.115])
+	id 1iB2bp-0006QB-8I; Thu, 19 Sep 2019 20:00:57 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iB2Gr-0006Vt-7w
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 19:39:19 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
- by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 19 Sep 2019 12:39:16 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,524,1559545200"; d="scan'208";a="217417278"
-Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
- ([10.54.74.41])
- by fmsmga002.fm.intel.com with ESMTP; 19 Sep 2019 12:39:15 -0700
-Date: Thu, 19 Sep 2019 12:39:15 -0700
-From: Sean Christopherson <sean.j.christopherson@intel.com>
-To: Paul Mackerras <paulus@ozlabs.org>
-Subject: Re: [PATCH 10/13] KVM: Provide common implementation for generic
- dirty log functions
-Message-ID: <20190919193915.GC30495@linux.intel.com>
-References: <20190911185038.24341-1-sean.j.christopherson@intel.com>
- <20190911185038.24341-11-sean.j.christopherson@intel.com>
- <20190919002242.GA19503@blackberry>
+ id 1iB2Vw-0007LV-MD
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 19:54:54 +0000
+Received: from mail-qt1-f172.google.com (mail-qt1-f172.google.com
+ [209.85.160.172])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A3CB820678
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Sep 2019 19:54:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1568922891;
+ bh=NKeHsjE9y7nzQ8bAyeySvn4Pq7CKSbTu+e+36rl6Wxo=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=BcSOxA+eFw++/YClQslyED8fMsXKHPPI8vtL84o6dVNJAIbQRkqdc1w565fVgGX3/
+ nYbL7F4fSNBPFIqXi8g3tmc33ZotDgNvGMfGYMLtNS8fGm9e5wvoN8HX0b2emp5GKj
+ 2x53yfrJ0Ar7a+L1vi7eYnnul08bUUK+N+zmHc3Q=
+Received: by mail-qt1-f172.google.com with SMTP id u22so5767148qtq.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Sep 2019 12:54:51 -0700 (PDT)
+X-Gm-Message-State: APjAAAU5jx0N7cBvFdxlXdMyP1depe0WKP3hES9uL83MFCNkjdtkkTfK
+ RA0zMLZPK//zrY08zl4s30m3aesB9kMWOcdigA==
+X-Google-Smtp-Source: APXvYqz+8osRNXbt3CtV46VPmD8JNxl+29Q1bDc72UZd/+b0HeyXjy+hyOaYu5e/za8SVmBxq3mr0divdiMrmZGdnw4=
+X-Received: by 2002:ac8:444f:: with SMTP id m15mr5229280qtn.110.1568922890902; 
+ Thu, 19 Sep 2019 12:54:50 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190919002242.GA19503@blackberry>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+References: <20190917174817.GA27938@bogus>
+ <20190919123001.23081-1-t-kristo@ti.com>
+In-Reply-To: <20190919123001.23081-1-t-kristo@ti.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Thu, 19 Sep 2019 14:54:39 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+x93K9=L4s6ZdmsDb__==kP36WbM_WY1pB-_QNPOhsGw@mail.gmail.com>
+Message-ID: <CAL_Jsq+x93K9=L4s6ZdmsDb__==kP36WbM_WY1pB-_QNPOhsGw@mail.gmail.com>
+Subject: Re: [PATCHv6 01/10] dt-bindings: omap: add new binding for PRM
+ instances
+To: Tero Kristo <t-kristo@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_123917_554169_58FABA18 
-X-CRM114-Status: GOOD (  15.96  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190919_125452_786286_4D49C785 
+X-CRM114-Status: GOOD (  12.11  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.115 listed in list.dnswl.org]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,52 +87,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Thierry <julien.thierry@arm.com>, Cornelia Huck <cohuck@redhat.com>,
- Wanpeng Li <wanpengli@tencent.com>, Janosch Frank <frankja@linux.ibm.com>,
- kvm@vger.kernel.org, Radim =?utf-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>,
- Marc Zyngier <marc.zyngier@arm.com>, James Hogan <jhogan@kernel.org>,
- Joerg Roedel <joro@8bytes.org>, David Hildenbrand <david@redhat.com>,
- linux-mips@vger.kernel.org, kvm-ppc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Christian Borntraeger <borntraeger@de.ibm.com>,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
- kvmarm@lists.cs.columbia.edu, Suzuki K Pouloze <suzuki.poulose@arm.com>,
- Jim Mattson <jmattson@google.com>
+Cc: devicetree@vger.kernel.org, Tony Lindgren <tony@atomide.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Santosh Shilimkar <ssantosh@kernel.org>,
+ linux-omap <linux-omap@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 19, 2019 at 10:22:42AM +1000, Paul Mackerras wrote:
-> On Wed, Sep 11, 2019 at 11:50:35AM -0700, Sean Christopherson wrote:
-> > Move the implementations of KVM_GET_DIRTY_LOG and KVM_CLEAR_DIRTY_LOG
-> > for CONFIG_KVM_GENERIC_DIRTYLOG_READ_PROTECT into common KVM code.
-> > The arch specific implemenations are extremely similar, differing
-> > only in whether the dirty log needs to be sync'd from hardware (x86)
-> > and how the TLBs are flushed.  Add new arch hooks to handle sync
-> > and TLB flush; the sync will also be used for non-generic dirty log
-> > support in a future patch (s390).
-> > 
-> > The ulterior motive for providing a common implementation is to
-> > eliminate the dependency between arch and common code with respect to
-> > the memslot referenced by the dirty log, i.e. to make it obvious in the
-> > code that the validity of the memslot is guaranteed, as a future patch
-> > will rework memslot handling such that id_to_memslot() can return NULL.
-> 
-> I notice you add empty definitions of kvm_arch_sync_dirty_log() for
-> PPC, both Book E and Book 3S.  Given that PPC doesn't select
-> CONFIG_KVM_GENERIC_DIRTYLOG_READ_PROTECT, why is this necessary?
+On Thu, Sep 19, 2019 at 7:30 AM Tero Kristo <t-kristo@ti.com> wrote:
+>
+> Add new binding for OMAP PRM (Power and Reset Manager) instances. Each
+> of these will act as a power domain controller and potentially as a reset
+> provider.
+>
+> Signed-off-by: Tero Kristo <t-kristo@ti.com>
+> ---
+> v6: added common compatible as per request from Tony Lindgren. This is
+>     to simplify the support code in patch #10 of the series slightly
+>
+>  .../devicetree/bindings/arm/omap/prm-inst.txt | 30 +++++++++++++++++++
+>  1 file changed, 30 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/arm/omap/prm-inst.txt
 
-s390 has a non-empty kvm_arch_sync_dirty_log() but doesn't select
-CONFIG_KVM_GENERIC_DIRTYLOG_READ_PROTECT.  Patch 11/13 moves s390's call
-of kvm_arch_sync_dirty_log() from s390's kvm_vm_ioctl_get_dirty_log() into
-the common (but not "generic") kvm_get_dirty_log() so that it's obvious
-that kvm_vm_ioctl_get_dirty_log() and kvm_get_dirty_log() are operating on
-the same memslot, i.e. aren't independently querying id_to_memslot().
-
-I originally made kvm_arch_sync_dirty_log() opt-in with a __KVM_HAVE_ARCH
-macro, but the resulting #ifdeffery felt uglier than having PPC and ARM
-provide empty functions.
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
