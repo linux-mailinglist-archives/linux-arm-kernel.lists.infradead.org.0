@@ -2,58 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91E9BB776F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 12:28:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D7A3B7782
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 12:34:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YbJW6u8lZpbwmwncDg3wXTukZLR2N4j6Ciw9NVPUEaM=; b=cixMszU+iT+JzB
-	hbSgAtzEEpCcCz38Zn2oave2qFYHpdtj04eYRCNFtfShqHMHaRAd04AZlc5QO8gQNM9Wb/5JXHd6T
-	OVASqjiFQdPropAU3t1MZeagl3PyILHNhVv+3YIXarPzgjef3oOnjwsSMJfWBqcC+oF0pw5JsXW6V
-	i1grmz80xtcXxXRoJHxhHW5YYHqFC5OKw0eYWcDFgI6ZmqoinH3cCbtgDQNisUMgUK2shGjY1c3DB
-	vsKUyEWOrhLx52NTHFLlFz0dDk3UFO9gicSJ8TKpoczDt+jvBa4FoFkGMGxa6QuPxRb24qWGhGSGH
-	cBIjznPqyBdtsu5wwCVw==;
+	List-Owner; bh=c5xyNBVN3a+RUJAPCjzcdmPEE98ZVlmhGpegYImORgU=; b=uFaotJzBywxfKB
+	0GReXPGqmyk1xthvJTrvNvVQMGzjpaZxODww7Q8GwJQ6qtF63PqlmixnAg5QEizIu9N1gakuIZNZS
+	x9zuw4cgkawk2MzyF+TXKaqHsSIFyKvS5Y8hM/BMBpZFlxGo51BWs08ofUHmIpHUw0i3E2hLyMWe4
+	S6JOFsF02+PuvqhVmkFvz29hTVr+KCPAxOqZi0XrOxlWW5sJIWeARYITWPoJDMlXWHMa/rROP9DlR
+	9U3mZa/EJ+BuOhTXju962E45JITOfOpfyk3V7DNSH/fJKi6i01ot02pBnkQCYyMqe1w/qb/rmCTOk
+	kdCfKXTQWNg9xK1SVbGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAtfl-0004Ck-V7; Thu, 19 Sep 2019 10:28:26 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iAtl9-0006fw-HF; Thu, 19 Sep 2019 10:33:59 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAtfT-0004Bt-PN
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 10:28:09 +0000
-Received: from kresse.hi.pengutronix.de ([2001:67c:670:100:1d::2a])
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <l.stach@pengutronix.de>)
- id 1iAtfK-0005Fo-Jo; Thu, 19 Sep 2019 12:27:58 +0200
-Message-ID: <7d694da8ffe098c6c8f6fe9c3a2306fda55eb655.camel@pengutronix.de>
-Subject: Re: [PATCH v2 1/3] dmaengine: imx-sdma: fix buffer ownership
-From: Lucas Stach <l.stach@pengutronix.de>
-To: Philipp Puschmann <philipp.puschmann@emlix.com>, 
- linux-kernel@vger.kernel.org
-Date: Thu, 19 Sep 2019 12:27:58 +0200
-In-Reply-To: <20190919102319.23368-2-philipp.puschmann@emlix.com>
+ id 1iAtkp-0006f2-1h
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 10:33:42 +0000
+Received: by mail-lf1-x144.google.com with SMTP id r2so1964569lfn.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Sep 2019 03:33:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Fo7cMzw36a28m/r8Obxok4ZgaWlax9TMyQySR8fq2vo=;
+ b=MEhGOqAMGWMHHchatTX9wNtJQnKTRcZaXQqnzw+IrGnmtSz2Y4HjblXYYKLy8Howpv
+ xkJLR7asVj8OFYdHRzG39xTw1nkFxPOkbwDis7zrga12uLEHcWkrIfnOr4FYZ+Mwh72P
+ 7uzJVGCDKTxJhmMb8Lb5YsVlhKvlrJCz6AoFs1eegPzwtUcaw3hUnhG15lnwijQWZLWW
+ 7dE/NSwDfW0yieAyR80tr4IBa92YXsda8BLA08fzlEYT9T6d2oZYApeYF52WHHedMVuD
+ XoKJ9k9MV+tInTCaC6/zus/C2JQX71j/1wkEWr6cJgfwLAg9zoVFPlTB15GhDgTIbbQN
+ 8WiQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Fo7cMzw36a28m/r8Obxok4ZgaWlax9TMyQySR8fq2vo=;
+ b=gcMdWNdvMx3YKu/99Cq5dAFXo6PebLV+SKVZQlf1EfcmkFeL1MZrntLP31VeNMI75d
+ xPP20Qh4u7pfx4ph9Gg8KjEqEPG3Sy4bM+URnBwngCc3dTIFuPDPYB1AkxWvzJJ7RNa0
+ E+wkyDndI28wsYqZhHYAwmCxPZXQDfh55Rm9O8zcEKb7EcSY9dbpR3fYV/SVLBX4Ho1L
+ tbbPtm3tWKPqoGu450cb5iipwAZF/1IpRN/ckzl941KxRcXblo2X518eYTnGHZYZ5cSE
+ Vwlf0CqOPLEZcZzKGbyW2vXh4s1S0ceSGL6CKnJ/LcGtw/6AcZScX0PtcL93nBfUwG35
+ vFvA==
+X-Gm-Message-State: APjAAAWrT29/PkyV9KK4LzaPCcSN14zhpAdfvPdRGh33Dhf30/IamObj
+ XuFyZKN/xwdrKzlJlvy3iikXy2OjSTNSrLLHf/A=
+X-Google-Smtp-Source: APXvYqw+AnkepIIO8D0IoEIWU57tO3l2Zw5feO8lefnd4aiB/eZJqHOJH6XA9JNFBpT4QPlfg5B+pBZNXOyNP2okf/I=
+X-Received: by 2002:a19:c709:: with SMTP id x9mr4782140lff.20.1568889214837;
+ Thu, 19 Sep 2019 03:33:34 -0700 (PDT)
+MIME-Version: 1.0
 References: <20190911144943.21554-1-philipp.puschmann@emlix.com>
  <20190919102319.23368-1-philipp.puschmann@emlix.com>
- <20190919102319.23368-2-philipp.puschmann@emlix.com>
-User-Agent: Evolution 3.30.5-1.1 
-MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::2a
-X-SA-Exim-Mail-From: l.stach@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20190919102319.23368-1-philipp.puschmann@emlix.com>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Thu, 19 Sep 2019 07:33:33 -0300
+Message-ID: <CAOMZO5Cp9qHSEOx3VnUC9SSbKyZrS2T0a_mTx7ubzs45Weud6Q@mail.gmail.com>
+Subject: Re: [PATCH v2 0/3] Fix UART DMA freezes for i.MX SOCs
+To: Philipp Puschmann <philipp.puschmann@emlix.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_032807_823718_57697F6F 
-X-CRM114-Status: GOOD (  15.20  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190919_033339_117531_4D5C9DFB 
+X-CRM114-Status: UNSURE (   7.23  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,10 +94,13 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: fugang.duan@nxp.com, festevam@gmail.com, s.hauer@pengutronix.de,
- vkoul@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- dmaengine@vger.kernel.org, dan.j.williams@intel.com, yibin.gong@nxp.com,
- shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Fugang Duan <fugang.duan@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Vinod <vkoul@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Dan Williams <dan.j.williams@intel.com>, Robin Gong <yibin.gong@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>, dmaengine@vger.kernel.or,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -76,60 +108,17 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Philipp,
 
-On Do, 2019-09-19 at 12:23 +0200, Philipp Puschmann wrote:
-> BD_DONE flag marks ownership of the buffer. When 1 SDMA owns the
-> buffer, when 0 ARM owns it. When processing the buffers in
-> sdma_update_channel_loop the ownership of the currently processed
-> buffer was set to SDMA again before running the callback function of
-> the buffer and while the sdma script may be running in parallel. So
-> there was the possibility to get the buffer overwritten by SDMA
-> before
-> it has been processed by kernel leading to kind of random errors in
-> the
-> upper layers, e.g. bluetooth.
-> 
-> Signed-off-by: Philipp Puschmann <philipp.puschmann@emlix.com>
-> 
-> ---
-> 
-> Changelog v2:
->  - add dma_wb()
-> 
->  drivers/dma/imx-sdma.c | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
-> index 9ba74ab7e912..e029a2443cfc 100644
-> --- a/drivers/dma/imx-sdma.c
-> +++ b/drivers/dma/imx-sdma.c
-> @@ -802,7 +802,6 @@ static void sdma_update_channel_loop(struct
-> sdma_channel *sdmac)
->  		*/
->  
->  		desc->chn_real_count = bd->mode.count;
-> -		bd->mode.status |= BD_DONE;
->  		bd->mode.count = desc->period_len;
->  		desc->buf_ptail = desc->buf_tail;
->  		desc->buf_tail = (desc->buf_tail + 1) % desc->num_bd;
-> @@ -817,6 +816,9 @@ static void sdma_update_channel_loop(struct
-> sdma_channel *sdmac)
->  		dmaengine_desc_get_callback_invoke(&desc->vd.tx, NULL);
->  		spin_lock(&sdmac->vc.lock);
->  
-> +		dma_wb();
+On Thu, Sep 19, 2019 at 7:23 AM Philipp Puschmann
+<philipp.puschmann@emlix.com> wrote:
 
-Has this change been tested? The function you want here is called
-dma_wmb().
+> Philipp Puschmann (3):
+>   dmaengine: imx-sdma: fix buffer ownership
+>   dmaengine: imx-sdma: fix dma freezes
 
-Regards,
-Lucas
+These two fixes deserve a Fixes tag so that they could be backported
+to the stable tree.
 
-> +		bd->mode.status |= BD_DONE;
-> +
->  		if (error)
->  			sdmac->status = old_status;
->  	}
-
+Thanks
 
 _______________________________________________
 linux-arm-kernel mailing list
