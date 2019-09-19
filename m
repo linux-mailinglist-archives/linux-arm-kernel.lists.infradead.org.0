@@ -2,140 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62D2AB7487
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 09:59:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98BEFB748E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 10:00:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uOjUcJkf+TWmHeutdT1vqClilNaEweoOWsklSrJIboI=; b=cp7E/Ma2EqxL8q
-	ffRWzfjrFJyrGrro5O40CbiJWO1lMaHhcLu3XuvPsIoLZLOlnFj25iQavMJVQllCBohuKsMyhA/wf
-	QL2tFltXyAnVb9WNq3Pm70axYSbzkJnDthdeNq27fUpBRw/ivXaXJpLEEi3s6wc5k3nu5iFIQ3J2e
-	JtZe6Q/U9A9J541uCUuvK/QC7E86knN3SbuPOdFG0MgkrSfx4UiXoWyB1kHm1Dd3V0iyoz++//1SP
-	vhihAbxMLMSPsXCOeMKFYDTVz294RsSQjVlAKtTGZoHM4JK4zVi28r8965vrwVRoP254h5eE1UuD2
-	j8yqWZY197suCYBDnnrQ==;
+	List-Owner; bh=P+h2IXfFm1uJRz/k5d+JuG6iPMSZjPxnornqW0GuGkM=; b=VKLhChkPLnjsb5
+	D/CsVsrx31OCCGMQZ9L95KlrYCoOcvdsn3tGphiO9n7R8ElzE4qzKnjA+JvaCAGlmdg6jUGhSsyX8
+	bWAPhnOTIilGAoJOLf7cGO0q4uWqDh/qXmdWsBz6papjnCLeiTTGZcK0qENB74we7i84l94BImYlw
+	g3zU/IxDTFbhSxTXCoEjzxx3wIHmwWIY63CPFoiXnBnREtDDE2AOvYs6rYu21s4BEUoz38WN0DXt/
+	tDceYjqeE98QHRsPqGfJfUyA9VXWOeD9Ea3wrzbviexZR5LM44ne3K+sxjnZPdyneVwIx1WQaTc06
+	cmhK5FFXZ6ux5FMdAUjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iArLk-0003Ha-Pe; Thu, 19 Sep 2019 07:59:36 +0000
-Received: from smtprelay-out1.synopsys.com ([198.182.61.142])
+	id 1iArMG-0003VZ-3L; Thu, 19 Sep 2019 08:00:08 +0000
+Received: from mail-wm1-f66.google.com ([209.85.128.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iArL7-0003Gn-FL
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 07:58:59 +0000
-Received: from mailhost.synopsys.com (badc-mailhost1.synopsys.com
- [10.192.0.17])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 23CFEC016D;
- Thu, 19 Sep 2019 07:58:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1568879934; bh=7ZGib0D6tQJI8IyzmFat7Pl5E7J1svJZvRVe4/3leF0=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=c4bkFuuVe4rfNIiU3CM7u6shL9nbIdCHB/PGghjwoRwQ9zuZ/xoB4cLwFlHHAGlaY
- JFbePRkgSzHF541Jv2mVn/OZsEpJBNsIqSfeyNkEm1EIGGqYPPjG7ioRaLqhkGnFP9
- 7f/cLtjvNQChufNtqYiNk/Dk3gCKzxa3SuFTwv56VdkabATBtrAM/njrJMTKr0BxZj
- /D0B04Qzv1DUR7wBcp01iByfNsrYIWWPhnYxInXCtE3+1SKy+A+v6HjwtAh10Bjo2p
- n3m9UgGC2s0KnNwcn8VDv7B9nG1N3MtxCdRljvjxkwlU977DUsbGKrzdkxI7xWJfbq
- Bdy6gthc7OkSw==
-Received: from US01WEHTC3.internal.synopsys.com
- (us01wehtc3.internal.synopsys.com [10.15.84.232])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id BFB16A0079;
- Thu, 19 Sep 2019 07:58:52 +0000 (UTC)
-Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Thu, 19 Sep 2019 00:58:51 -0700
-Received: from NAM01-BY2-obe.outbound.protection.outlook.com (10.13.134.195)
- by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Thu, 19 Sep 2019 00:58:51 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=DOyiOi4bUWLUR4Kcb7pJXHkb2FumuJoIfNaCtOFSA1OSXU0c+4b06Tlfm5PS12Mgc399CbdOaO0CN2PbxBTJhF+gOOiARv14bcowaXoXuXi68FCkbho2dq80iueJw1qtQLpXZfP+iyfUlhbyGHYh9Wq868N2pGtvju4GNH0j6uNGDb0Zn0mDxzplahVWoc5h7m/Df4NCY+OckskBiY3zKl/cH+AwuSraq2q6S4x8ayihpnHrJLOWdgA3ckOXWPPAn0TtdUVGRO5/iz45Oy4+aXcYLNKOg0xQzfg9AXtZpM75PHJfCDDDW/l8ghrtsqMknyG/e0FCkjeQZYOc8GVDOw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=AAiZj6E/4uUxoV0CfK9XKfh4VlJGHU1UExUKSlc6wXk=;
- b=M+1Mo6N9yu0O4xHtAoq+uU7VaEpBhHQtQKTeTD0CJ55Q5zyOM+lufpVs162oFdNcSCxLmRPMRW5wVQ7WT5HH1tfgjVFfVl6VxnvYgJLL+/IEqJ9CiKlctYTWZW0oSzOd9wG/b9jVJeAagg3SE9Xh9L+otsjprhRo/L/SOCOp7AzfrV3a+0PVr9o7bJoe64q7ascwSakLqWf6nqzc//snkdJeII4/B3H4OKOlgH7fkv6jB2SE9FGUdZHWOLLmxDMJFq1y3yDGVWWydlA4Yu8/Xv2+v+Jar5IlbBF2v7TgVoX3kbedXGcTcgzflq/wPSihNlRgMuTYi+cz7v4SlwoDog==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
- dkim=pass header.d=synopsys.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=AAiZj6E/4uUxoV0CfK9XKfh4VlJGHU1UExUKSlc6wXk=;
- b=Yjib9lZjkwy1oxYPzaxGqxEF//jJ2TxnBfGgiHmk7pEsNQJP+m/F+3lHvuzq51jPpC2mHqvcpDPjaMiVLUo7gjMa62OPViE5Xma62AxHaYraRQ4Fs0c2zMJWibD7aNBRZmgeybHNs3KD8eTchTKsuUwGyE29AK48G2Dc0ftFaQc=
-Received: from BN8PR12MB3266.namprd12.prod.outlook.com (20.179.67.145) by
- BN8PR12MB2947.namprd12.prod.outlook.com (20.179.67.28) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2284.21; Thu, 19 Sep 2019 07:58:50 +0000
-Received: from BN8PR12MB3266.namprd12.prod.outlook.com
- ([fe80::59fc:d942:487d:15b8]) by BN8PR12MB3266.namprd12.prod.outlook.com
- ([fe80::59fc:d942:487d:15b8%7]) with mapi id 15.20.2263.023; Thu, 19 Sep 2019
- 07:58:50 +0000
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: Arnd Bergmann <arnd@arndb.de>, Giuseppe Cavallaro
- <peppe.cavallaro@st.com>, Alexandre Torgue <alexandre.torgue@st.com>, "David
- S. Miller" <davem@davemloft.net>, Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Subject: RE: [PATCH] stmmac: selftest: avoid large stack usage
-Thread-Topic: [PATCH] stmmac: selftest: avoid large stack usage
-Thread-Index: AQHVblsKA5f8SYRfDU6spEieG1UuDacyof5w
-Date: Thu, 19 Sep 2019 07:58:50 +0000
-Message-ID: <BN8PR12MB3266E044DDF00F227B9B191CD3890@BN8PR12MB3266.namprd12.prod.outlook.com>
-References: <20190918195454.2056139-1-arnd@arndb.de>
-In-Reply-To: <20190918195454.2056139-1-arnd@arndb.de>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=joabreu@synopsys.com; 
-x-originating-ip: [198.182.37.200]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 963955c0-40e0-4e63-e081-08d73cd73548
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600167)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:BN8PR12MB2947; 
-x-ms-traffictypediagnostic: BN8PR12MB2947:
-x-microsoft-antispam-prvs: <BN8PR12MB29475914B34EF6102BD8070AD3890@BN8PR12MB2947.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:773;
-x-forefront-prvs: 016572D96D
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(366004)(39860400002)(396003)(376002)(346002)(136003)(189003)(199004)(11346002)(446003)(486006)(476003)(4326008)(71200400001)(66476007)(64756008)(66556008)(6246003)(316002)(71190400001)(110136005)(54906003)(66446008)(5660300002)(81166006)(81156014)(8676002)(4744005)(256004)(6436002)(55016002)(9686003)(52536014)(86362001)(229853002)(8936002)(478600001)(66066001)(99286004)(33656002)(305945005)(7736002)(3846002)(6116002)(74316002)(14454004)(2906002)(76116006)(102836004)(6506007)(66946007)(186003)(26005)(7696005)(25786009)(76176011);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BN8PR12MB2947;
- H:BN8PR12MB3266.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: synopsys.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: L1tzPgt02GhDOi7hwMEfUsdgXJqOHy4r5KxqkvdPijflMgYIBFaDvu/FqTxU5wtwRvU9JQb0Fn0foyvh7KphH5Zu215dPVGPwOViG+wjY+ebTbYO2Ls4zRo12PgAyTbtHWXLI3nYvtN5Thhjr/FL6+kC/7Jym1kkTIWyIkeG65y4k5xbFB27SWLgXkOHEYyhL6xYTRdzfddDiui33qalWoLT5O3VEjv7srAuJ2Ct9YoxKS6QiLAOeIm9D+tzNYLiXJ1WBPfqNaEfab+xoSNDpkZw0AUQD3fhQZG3FTWnsH00g+blm9yMuu9AJNBZXZbmI2MdRp0FziD48UpXqFZXf/m6Mb+aF71im8s8Ldtm3VYRdCFs1Q7wpCQ9Xpi+nTi3AODdWwubSMeUXf0oRC2fkleW1b3LDzBPuLEaxJ4eSRU=
-x-ms-exchange-transport-forked: True
+ id 1iArLe-0003QN-4L
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 07:59:35 +0000
+Received: by mail-wm1-f66.google.com with SMTP id a6so3147118wma.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Sep 2019 00:59:28 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=yy/C8I+qsXanLkKnOE9DEzrTwx4wGS6sU0a5cnC4r3Y=;
+ b=MqfjdV+MK+r5weNWnpFoW4JaiYapDS5pVPlGWzveucHECj6Oco/a9klcS05yvlRgb4
+ pJPt91hWAmdzJoTGbuATNHdtFxTsOEXM+zDkjED2RXjHyWAO/ZAFVPfj0YZn7AFsYtUr
+ f8wUe7eYNsohBWTbTLdntshJEPMk6GLk3saUJIoTX82Xn+HVBcnUdOKzoeHTLviLSkqj
+ s0w9aoG34diXATlg4akJ9QkDF6rhu1UwTLfkWq1W1BpXKtiK8kr1u7MBGiE1Iy7EGJoI
+ iWHWeIko0rJm3SXqXG4EcH8Ng03u2ei7dch+UetBnHvIx3hH3UkIWhYAUJTDFasy13Qt
+ N5Iw==
+X-Gm-Message-State: APjAAAXG6DSugxMWuCQ9A9+AmuZUZnuI9cwr9WfqIKEGUQffO1iMMhnJ
+ fUALtcnXaCgldUoYy058K+itev1P
+X-Google-Smtp-Source: APXvYqy2o5grp6Rt7mjN78sEBbbA8GDZ94gEvftdESomIA11VKGYguGkQaar5ppls9OkNxJQa4i9kg==
+X-Received: by 2002:a1c:8097:: with SMTP id b145mr1641289wmd.29.1568879967329; 
+ Thu, 19 Sep 2019 00:59:27 -0700 (PDT)
+Received: from pi3 ([194.230.155.145])
+ by smtp.googlemail.com with ESMTPSA id q22sm3339362wmj.5.2019.09.19.00.59.25
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 19 Sep 2019 00:59:26 -0700 (PDT)
+Date: Thu, 19 Sep 2019 09:59:24 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Subject: Re: [PATCH v1 2/9] mfd: wm8994: Add support for MCLKn clock control
+Message-ID: <20190919075924.GB13195@pi3>
+References: <20190918104634.15216-1-s.nawrocki@samsung.com>
+ <CGME20190918104656eucas1p1d9cad1394b08d05a99151c4fbc9425ce@eucas1p1.samsung.com>
+ <20190918104634.15216-3-s.nawrocki@samsung.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 963955c0-40e0-4e63-e081-08d73cd73548
-X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Sep 2019 07:58:50.4808 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: XsYVCUGVKfufyGrw50SAxyg5TXB72mrdURze05f8e74+4/SLe/YawNP9qyZed8ZndSR8ZE16iVh+AJnTaXH4OQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR12MB2947
-X-OriginatorOrg: synopsys.com
+Content-Disposition: inline
+In-Reply-To: <20190918104634.15216-3-s.nawrocki@samsung.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_005857_796255_CE8492E5 
-X-CRM114-Status: GOOD (  10.65  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190919_005930_892979_C0C5ACEA 
+X-CRM114-Status: GOOD (  17.75  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.128.66 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.66 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -147,53 +89,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
+ linux-samsung-soc@vger.kernel.org, ckeepax@opensource.cirrus.com,
+ b.zolnierkie@samsung.com, sbkim73@samsung.com, patches@opensource.cirrus.com,
+ lgirdwood@gmail.com, robh+dt@kernel.org, broonie@kernel.org,
+ linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Sep/18/2019, 20:54:34 (UTC+00:00)
+On Wed, Sep 18, 2019 at 12:46:27PM +0200, Sylwester Nawrocki wrote:
+> The WM1811/WM8994/WM8958 audio CODEC DT bindings specify two optional
+> clocks: "MCLK1", "MCLK2". Add code for getting those clocks in the MFD
+> part of the wm8994 driver so they can be further handled in the audio
+> CODEC part.
 
-> +	if (!cfg || !cfg->enable) {
->  		value &= ~XGMAC_RSSE;
->  		writel(value, ioaddr + XGMAC_RSS_CTRL);
->  		return 0;
->  	}
+I think these are needed only for the codec so how about getting them in
+codec's probe?
+
+Best regards,
+Krzysztof
+
+
+> 
+> Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
+> ---
+>  drivers/mfd/wm8994-core.c       | 9 +++++++++
+>  include/linux/mfd/wm8994/core.h | 9 +++++++++
+>  2 files changed, 18 insertions(+)
+> 
+> diff --git a/drivers/mfd/wm8994-core.c b/drivers/mfd/wm8994-core.c
+> index 1e9fe7d92597..02c19a0bdeb0 100644
+> --- a/drivers/mfd/wm8994-core.c
+> +++ b/drivers/mfd/wm8994-core.c
+> @@ -7,6 +7,7 @@
+>   * Author: Mark Brown <broonie@opensource.wolfsonmicro.com>
+>   */
 >  
->  	for (i = 0; i < (sizeof(cfg->key) / sizeof(u32)); i++) {
-> -		ret = dwxgmac2_rss_write_reg(ioaddr, true, i, *key++);
-> +		if (cfg)
-> +			ret = dwxgmac2_rss_write_reg(ioaddr, true, i, cfg->key[i]);
-> +		else
-> +			ret = dwxgmac2_rss_write_reg(ioaddr, true, i, 0);
-> +
->  		if (ret)
->  			return ret;
->  	}
+> +#include <linux/clk.h>
+>  #include <linux/kernel.h>
+>  #include <linux/module.h>
+>  #include <linux/slab.h>
+> @@ -333,6 +334,14 @@ static int wm8994_device_init(struct wm8994 *wm8994, int irq)
 >  
->  	for (i = 0; i < ARRAY_SIZE(cfg->table); i++) {
-> -		ret = dwxgmac2_rss_write_reg(ioaddr, false, i, cfg->table[i]);
-> +		if (cfg)
-> +			ret = dwxgmac2_rss_write_reg(ioaddr, false, i, cfg->table[i]);
-> +		else
-> +			ret = dwxgmac2_rss_write_reg(ioaddr, false, i, 0);
+>  	dev_set_drvdata(wm8994->dev, wm8994);
+>  
+> +	wm8994->mclk[WM8994_MCLK1].id = "MCLK1";
+> +	wm8994->mclk[WM8994_MCLK2].id = "MCLK2";
 > +
-
-I don't get these "if (cfg)" checks. You already check earlier if cfg is 
-NULL and return if so. I don't think you need these extra checks.
-
-Also, your subject line should be something like: "net: stmmac: 
-selftests: ..."
-
----
-Thanks,
-Jose Miguel Abreu
+> +	ret = devm_clk_bulk_get_optional(wm8994->dev, ARRAY_SIZE(wm8994->mclk),
+> +					 wm8994->mclk);
+> +	if (ret != 0)
+> +		return ret;
+> +
+>  	/* Add the on-chip regulators first for bootstrapping */
+>  	ret = mfd_add_devices(wm8994->dev, 0,
+>  			      wm8994_regulator_devs,
+> diff --git a/include/linux/mfd/wm8994/core.h b/include/linux/mfd/wm8994/core.h
+> index e8b093522ffd..320297a1b70c 100644
+> --- a/include/linux/mfd/wm8994/core.h
+> +++ b/include/linux/mfd/wm8994/core.h
+> @@ -10,12 +10,19 @@
+>  #ifndef __MFD_WM8994_CORE_H__
+>  #define __MFD_WM8994_CORE_H__
+>  
+> +#include <linux/clk.h>
+>  #include <linux/mutex.h>
+>  #include <linux/interrupt.h>
+>  #include <linux/regmap.h>
+>  
+>  #include <linux/mfd/wm8994/pdata.h>
+>  
+> +enum {
+> +	WM8994_MCLK1,
+> +	WM8994_MCLK2,
+> +	WM8994_NUM_MCLK
+> +};
+> +
+>  enum wm8994_type {
+>  	WM8994 = 0,
+>  	WM8958 = 1,
+> @@ -60,6 +67,8 @@ struct wm8994 {
+>  	struct device *dev;
+>  	struct regmap *regmap;
+>  
+> +	struct clk_bulk_data mclk[WM8994_NUM_MCLK];
+> +
+>  	bool ldo_ena_always_driven;
+>  
+>  	int gpio_base;
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
