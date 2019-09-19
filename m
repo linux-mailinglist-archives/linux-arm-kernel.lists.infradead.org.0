@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D433B72AF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 07:30:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A8A0B72B0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 07:30:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2ARSdo7JAxddQowIlnxDJQCa0f5NDscsYbKwLt2Bomo=; b=imauRkJ+QK2zCE
-	3lMK/T0nhpndIVSg4Ekva924aMQmkM8za+/aYLw+tpxXvmmj7SKmcOwKbVbjFKB8ZIruzxx56xWsb
-	0pKn8hWTEPZiWviVL8fwt6SseGIFnKcghnRCrU7ftP+BeIRNdRL5YNwvu8jXbiQLV+NdfDVJncpGv
-	qvCEQH5MK4R96PQMkO4mpCQ5f/0+JZ3/Hzy9BcrX2qfh+ouV4XOZjg6clnrMWeQyVevJ+UPex1k0h
-	mKO51AB00itytWGBefftfUsB/mmLClZphnoljNFG/DXWXJz+taecB4oXUPUSHjEzYSLF4igH9gysq
-	61WHfqScYH7XxF4uSBSA==;
+	List-Owner; bh=3nBvfc3vHJI6lO0Q5LLkUjdRMJc0HaKT2L8uaex4Kdk=; b=uKYdsyomZMP1qo
+	FGVcXoEeREFZ90vDWipGe4dFrJKxXvRMiLtK2HQHYyt0ZblxAjgygplKWio69TPGy+LJrUPnpvhho
+	AyHa88BG6z29oK8vBDn5wTR6wbfOEoqUu4QwYeNgk50+xl+kSMCTxQtH1baTmd0GrOA1pPH3z6oMb
+	AY58NrwctFC+IiNEwNBSoECUbHTjZohtTLcxX6fTkpxd90oRFkGpuYshM4Xu8A1OFT2xy9CvlH20P
+	jkgxs8U/7Q3Hqur3xKbUNMHiKfevK9etHJW2b/PIrXsYYhOK7FspPf4SK69XCxBdKfZrmVXfGKJIw
+	ik1EhlEZGhd+Bw0kwVWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAp1M-0007GY-UP; Thu, 19 Sep 2019 05:30:25 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1iAp1g-0007fp-2p; Thu, 19 Sep 2019 05:30:44 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAp01-0005Bh-El
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 05:29:03 +0000
-Received: by mail-pf1-x442.google.com with SMTP id q21so1479314pfn.11
+ id 1iAp06-0005F6-2J
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 05:29:08 +0000
+Received: by mail-pg1-x542.google.com with SMTP id x10so1197161pgi.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Sep 2019 22:29:01 -0700 (PDT)
+ Wed, 18 Sep 2019 22:29:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=pjzjQZaNXsKJUrobfVyNEoaPXPZ7j/Y7jZihfDcfLTc=;
- b=ma2szWh3fZ0CthnlLq01YhUIhLic/fGiuCo9bW1ntc7zj8RhLiStft18NL8DLCIKhD
- xol1qetrlBNmmOldxCqP5M1RBVdgatiqw+pXn6vDzbf9GnHsMTuvjPKDbxRhYt7WVTXo
- yU1N7/WQtkp69Zn2xKy4/PwlAlrecXGJsszkc=
+ bh=7UOcZwhIF06MhGn+HJKXs6pdfSRqhxVhEIb50OgmNOI=;
+ b=Y7HZPUIUZqEK4jo+BJve1KpFrqXMnsuT4bQMzaur4NSxYR5oJZEaU/x99ezt/hgzfm
+ M8PBWQosHOZYlBM54/Fa5fMIwPZQ7ECsrS5UPQMAhp40MvbZCPvEYUe+LfiUyItaU+O5
+ VrurC+B1oAuvwLo1lyOl7ZjDnYwRIKRGoziX0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=pjzjQZaNXsKJUrobfVyNEoaPXPZ7j/Y7jZihfDcfLTc=;
- b=ehVghf0sV3LuhJIUf8EJCqqXQKcK9Wt/oB80yZRdlLZoO01/SuerOgzEziW11ap5rA
- PbHrVYokcQx6gZfX6vJsFz7hEwFIryBLXh9wNnuDoDr1OcJ3fg9+R423shjjPmu4VlWb
- FT90cQSpZoWlpX3qZQU6KEWcNGBnyF3LTHgFImF1YOJ3HP+cRUNAjeHyREvW3lPFZCiS
- JOnV3x6tPKlPMjZLV2uCKkMeb9spFwphuRfNz0YVbz9HKnCBsr7Y0TYFETTOwUCun4ig
- H2ieDtcmgKvTl/svdJqQ9E+b5McVlSAQ9iSsLZIlji7WvbY7CebHHUblPxOHcEV4SSeP
- 2UeQ==
-X-Gm-Message-State: APjAAAWjYcTXiP1L0aDaqp34uTcsnVUMyp5OTc4Tv/11Zr4OPRzUnkFE
- f3p268FnAQn1vzFt0phjGn3Wkg==
-X-Google-Smtp-Source: APXvYqwMn2793F7u+gsqgIZ7WKzwlSoslHkIYECsncXAbvmDGov1nn2gfmltxgWM2us7xFP2Cmf6JA==
-X-Received: by 2002:a63:1c22:: with SMTP id c34mr7195695pgc.435.1568870940513; 
- Wed, 18 Sep 2019 22:29:00 -0700 (PDT)
+ bh=7UOcZwhIF06MhGn+HJKXs6pdfSRqhxVhEIb50OgmNOI=;
+ b=BlwBeKv8tGpy7Kes/Xyfi/xR9Y0Am6dKtUMuVys80E3iCFxwv0Nij865vyaaVrMNXw
+ CeYyu3uO4uHUh/aLFsofvYzxHudV/+Bx0xHxshvazZvfob9x77xHCBI2p6YyOK4u0dKJ
+ IP0QfuZ0MwmWmnWhtwv/Tf3lTHaiEDYrSpGWxAZ6MIJkDrm/0wj6e6tYh73m2y1bVUdc
+ cX2l9fY2j62FDbGHNQqm6ge6HAlHcwKY1a+/RUMPaR1b75Zb7uyDv3e8RcyoQU3ZXCRW
+ OW69QASkg/b2kyYKuc7Fy/6TRk5IuiQGIqGUZNT+6TxYnkxpk5lsmobYzyCmxDxnjtvJ
+ Ugzw==
+X-Gm-Message-State: APjAAAXjnYEnDe+V4bzBOA3pEcOB2z6ERiY211Amye+GQK2njI7qB+Qp
+ KuJT+MhN6cickBqQbL2iDCI6cg==
+X-Google-Smtp-Source: APXvYqwhNboYAOFo2Eq0/XPNnZNqgcNjmWaxGA4Hw7IJ25NN0lvkUgCVt3/UnpQ1hpCwXf1Vlu0p/A==
+X-Received: by 2002:a62:fb06:: with SMTP id x6mr724333pfm.186.1568870945159;
+ Wed, 18 Sep 2019 22:29:05 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.200.127])
- by smtp.gmail.com with ESMTPSA id z20sm5051930pjn.12.2019.09.18.22.28.56
+ by smtp.gmail.com with ESMTPSA id z20sm5051930pjn.12.2019.09.18.22.29.00
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Sep 2019 22:29:00 -0700 (PDT)
+ Wed, 18 Sep 2019 22:29:04 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Heiko Stuebner <heiko@sntech.de>, Levin Du <djw@t-chip.com.cn>,
  Akash Gajjar <akash@openedev.com>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 4/6] arm64: dts: rockchip: Rename roc-pc with libretech
- notation
-Date: Thu, 19 Sep 2019 10:58:20 +0530
-Message-Id: <20190919052822.10403-5-jagan@amarulasolutions.com>
+Subject: [PATCH 5/6] arm64: dts: rockchip: Rename vcc12v_sys into dc_12v for
+ roc-rk3399-pc
+Date: Thu, 19 Sep 2019 10:58:21 +0530
+Message-Id: <20190919052822.10403-6-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190919052822.10403-1-jagan@amarulasolutions.com>
 References: <20190919052822.10403-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_222901_903924_C11ED192 
-X-CRM114-Status: GOOD (  10.65  )
+X-CRM114-CacheID: sfid-20190918_222906_528656_C508F0EB 
+X-CRM114-Status: GOOD (  11.35  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,47 +106,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Though the ROC-PC is manufactured by firefly, it is co-designed
-by libretch like other Libretech computer boards from allwinner,
-amlogic does.
+It is always better practice to follow regulator naming conventions
+as per the schematics for future references.
 
-So, it is always meaningful to keep maintain those vendors who
-are part of design participation so-that the linux mainline
-code will expose outside world who are the makers of such
-hardware prototypes.
+This would indeed helpful to review and check the naming convention
+directly on schematics, both for the code reviewers and the developers.
 
-So, rename the existing rk3399-roc-pc.dts with libretch notation,
-rk3399-libretech-roc-rk3399-pc.dts
+So, rename vcc12v_sys into dc_12v as per rk3399 power tree as per
+roc-rk3399-pc schematics.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- arch/arm64/boot/dts/rockchip/Makefile                           | 2 +-
- .../{rk3399-roc-pc.dts => rk3399-libretech-roc-rk3399-pc.dts}   | 0
- 2 files changed, 1 insertion(+), 1 deletion(-)
- rename arch/arm64/boot/dts/rockchip/{rk3399-roc-pc.dts => rk3399-libretech-roc-rk3399-pc.dts} (100%)
+ .../boot/dts/rockchip/rk3399-libretech-roc-rk3399-pc.dts  | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
-index 1f18a9392d15..73c10ddb4300 100644
---- a/arch/arm64/boot/dts/rockchip/Makefile
-+++ b/arch/arm64/boot/dts/rockchip/Makefile
-@@ -21,12 +21,12 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-khadas-edge.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-khadas-edge-captain.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-khadas-edge-v.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-leez-p710.dtb
-+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-libretech-roc-rk3399-pc.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-nanopc-t4.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-nanopi-m4.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-nanopi-neo4.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-orangepi.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-puma-haikou.dtb
--dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-roc-pc.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rock-pi-4.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rock960.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rockpro64.dtb
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts b/arch/arm64/boot/dts/rockchip/rk3399-libretech-roc-rk3399-pc.dts
-similarity index 100%
-rename from arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-rename to arch/arm64/boot/dts/rockchip/rk3399-libretech-roc-rk3399-pc.dts
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-libretech-roc-rk3399-pc.dts b/arch/arm64/boot/dts/rockchip/rk3399-libretech-roc-rk3399-pc.dts
+index e09bcbdd92f5..51242ea5447d 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-libretech-roc-rk3399-pc.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-libretech-roc-rk3399-pc.dts
+@@ -57,9 +57,9 @@
+ 	 * should be placed inside mp8859, but not until mp8859 has
+ 	 * its own dt-binding.
+ 	 */
+-	vcc12v_sys: mp8859-dcdc1 {
++	dc_12v: mp8859-dcdc1 {
+ 		compatible = "regulator-fixed";
+-		regulator-name = "vcc12v_sys";
++		regulator-name = "dc_12v";
+ 		regulator-always-on;
+ 		regulator-boot-on;
+ 		regulator-min-microvolt = <12000000>;
+@@ -85,7 +85,7 @@
+ 		regulator-boot-on;
+ 		regulator-min-microvolt = <3300000>;
+ 		regulator-max-microvolt = <3300000>;
+-		vin-supply = <&vcc12v_sys>;
++		vin-supply = <&dc_12v>;
+ 	};
+ 
+ 	/* Actually 3 regulators (host0, 1, 2) controlled by the same gpio */
+@@ -118,7 +118,7 @@
+ 		regulator-boot-on;
+ 		regulator-min-microvolt = <5000000>;
+ 		regulator-max-microvolt = <5000000>;
+-		vin-supply = <&vcc12v_sys>;
++		vin-supply = <&dc_12v>;
+ 	};
+ 
+ 	vdd_log: vdd-log {
 -- 
 2.18.0.321.gffc6fa0e3
 
