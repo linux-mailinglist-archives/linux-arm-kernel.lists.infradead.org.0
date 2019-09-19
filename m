@@ -2,55 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B05DBB7F52
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 18:43:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96905B7F7C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 18:57:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ewgYJg8skm4n7RV2v7XRaKAb8lk5QmONAe0bpI/17o8=; b=f0RSFIAtp9U2Cg
-	yy+IQoggQ/ymlk0YeELC6wGNVS7IGftI3vogNSICawr71EYzPdlG/16hbh0LzCXwCcq6sCpi/T/+V
-	ivyIZpaQerE0ioMHYiR8cQYSDSTVbPNgLYD/37snPZe4cMuUc+u66trWMKap2MueqioUlyjXLokXC
-	b5KJ6ZApR+qQwdLPziZMK4Aq8RNvuOHbtfaG7yWycDMv8vlrqhlmSQnLVNV9KAj2dsCjkMV0qgfU0
-	A+pFBvcqGCRarKc5TTiso1eMQJzhnvR+3+7ghW+qJhm9M9ycdPZ9PfX+hOz1fU7J/yS2vdikzUwOK
-	ZWP3PiTmLl/f7bxXF6dg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=kNlZ0MJil9aIkSBPZJQFCZ39yvBN1yj4K1TF2kfXUMQ=; b=bhUAYylpzw7Vr1vAoH4knJB1L
+	7KRdScj0KIb6Dbj/HvM73b1ra7qZqjytFPFx0lca7FFOA0tXJRX4eTb29UbpGw2jNMAtqs9kkFLB3
+	8AaIjVFIQdwOMizfVTJKd2uZknvPrANyjlSw23+ocYwXmMdH6BZBkXVZ1+PZRVU7ykr9Q87wdB5sw
+	k8nlpoInTbESaOIYv4pxWEozo+KZKTfX8DVOMFLFAawjgogpw/KKAlUDzD8Ni0w/cMmAkLcs+wBS5
+	McoMUeD3Nq8MXZMjRqdUlk/oWq821izgnQYKbPpXgESBOJxM00E1Jo7En62Z1SONd12FNVr6DyZlu
+	HBpEufRoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAzWb-0002P5-OK; Thu, 19 Sep 2019 16:43:22 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAzVU-0002OH-91
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 16:42:14 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2FF0B28;
- Thu, 19 Sep 2019 09:42:11 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 9A4983F575; Thu, 19 Sep 2019 09:42:08 -0700 (PDT)
-Date: Thu, 19 Sep 2019 17:42:06 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Jia He <justin.he@arm.com>
-Subject: Re: [PATCH v5 3/3] mm: fix double page fault on arm64 if PTE_AF is
- cleared
-Message-ID: <20190919164206.GE6472@arrakis.emea.arm.com>
-References: <20190919161204.142796-1-justin.he@arm.com>
- <20190919161204.142796-4-justin.he@arm.com>
+	id 1iAzjn-00070I-GR; Thu, 19 Sep 2019 16:56:59 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iAzit-0006zO-7I
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 16:56:04 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BE9D9206C2;
+ Thu, 19 Sep 2019 16:56:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1568912162;
+ bh=zsfPmeUZCZdmuEtRS/K6Wqpv2tm4qLC9eXVgWfIrPAk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=u4g6J2LMzhF7guyY4SPvfR9r4kprWzEm6OSCjCaYm6nPTL1zNWUWZNqz7TkJHg7si
+ sScSk5E7uMoq7IPXbonY1O8Q4zscoRZKH+eS9CLRj8PXFoHCZ8Ola2hyqQ2aMRpQBo
+ YjL6OTFJVfJ/tVQkgvwsKUHP83mOX1bSDr1eWhBo=
+Date: Thu, 19 Sep 2019 18:55:59 +0200
+From: Maxime Ripard <mripard@kernel.org>
+To: Corentin Labbe <clabbe.montjoie@gmail.com>
+Subject: Re: [PATCH v2 2/2] crypto: sun4i-ss: enable pm_runtime
+Message-ID: <20190919165559.e7xyapggcwp2ukdt@gilmour>
+References: <20190919051035.4111-1-clabbe.montjoie@gmail.com>
+ <20190919051035.4111-3-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190919161204.142796-4-justin.he@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190919051035.4111-3-clabbe.montjoie@gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_094212_652625_123F6FE0 
-X-CRM114-Status: GOOD (  14.10  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190919_095603_322340_870F2EFC 
+X-CRM114-Status: GOOD (  21.54  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,59 +76,193 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kaly Xin <Kaly.Xin@arm.com>,
- Ralph Campbell <rcampbell@nvidia.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Suzuki Poulose <Suzuki.Poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
- Anshuman Khandual <anshuman.khandual@arm.com>, linux-kernel@vger.kernel.org,
- Matthew Wilcox <willy@infradead.org>, linux-mm@kvack.org,
- =?iso-8859-1?B?Suly9G1l?= Glisse <jglisse@redhat.com>,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- Punit Agrawal <punitagrawal@gmail.com>, hejianet@gmail.com,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- Alex Van Brunt <avanbrunt@nvidia.com>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>,
- Robin Murphy <robin.murphy@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: herbert@gondor.apana.org.au, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, wens@csie.org, linux-crypto@vger.kernel.org,
+ davem@davemloft.net, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============3677747472168466275=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 20, 2019 at 12:12:04AM +0800, Jia He wrote:
-> @@ -2152,7 +2163,29 @@ static inline void cow_user_page(struct page *dst, struct page *src, unsigned lo
->  	 */
->  	if (unlikely(!src)) {
->  		void *kaddr = kmap_atomic(dst);
-> -		void __user *uaddr = (void __user *)(va & PAGE_MASK);
-> +		void __user *uaddr = (void __user *)(addr & PAGE_MASK);
-> +		pte_t entry;
+
+--===============3677747472168466275==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="m4buvghxnpijbdft"
+Content-Disposition: inline
+
+
+--m4buvghxnpijbdft
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+Hi,
+
+On Thu, Sep 19, 2019 at 07:10:35AM +0200, Corentin Labbe wrote:
+> This patch enables power management on the Security System.
+>
+> Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+> ---
+>  drivers/crypto/sunxi-ss/sun4i-ss-cipher.c |  9 +++
+>  drivers/crypto/sunxi-ss/sun4i-ss-core.c   | 94 +++++++++++++++++++----
+>  drivers/crypto/sunxi-ss/sun4i-ss-hash.c   | 12 +++
+>  drivers/crypto/sunxi-ss/sun4i-ss-prng.c   |  9 ++-
+>  drivers/crypto/sunxi-ss/sun4i-ss.h        |  2 +
+>  5 files changed, 110 insertions(+), 16 deletions(-)
+>
+> diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c b/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
+> index fa4b1b47822e..c9799cbe0530 100644
+> --- a/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
+> +++ b/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
+> @@ -480,6 +480,7 @@ int sun4i_ss_cipher_init(struct crypto_tfm *tfm)
+>  	struct sun4i_tfm_ctx *op = crypto_tfm_ctx(tfm);
+>  	struct sun4i_ss_alg_template *algt;
+>  	const char *name = crypto_tfm_alg_name(tfm);
+> +	int err;
+>
+>  	memset(op, 0, sizeof(struct sun4i_tfm_ctx));
+>
+> @@ -497,13 +498,21 @@ int sun4i_ss_cipher_init(struct crypto_tfm *tfm)
+>  		return PTR_ERR(op->fallback_tfm);
+>  	}
+>
+> +	err = pm_runtime_get_sync(op->ss->dev);
+> +	if (err < 0)
+> +		goto error_pm;
+>  	return 0;
+
+Newline here
+
+> +error_pm:
+> +	crypto_free_sync_skcipher(op->fallback_tfm);
+> +	return err;
+>  }
+>
+>  void sun4i_ss_cipher_exit(struct crypto_tfm *tfm)
+>  {
+>  	struct sun4i_tfm_ctx *op = crypto_tfm_ctx(tfm);
 > +
-> +		/* On architectures with software "accessed" bits, we would
-> +		 * take a double page fault, so mark it accessed here.
-> +		 */
-> +		if (arch_faults_on_old_pte() && !pte_young(vmf->orig_pte)) {
-> +			spin_lock(vmf->ptl);
-> +			if (likely(pte_same(*vmf->pte, vmf->orig_pte))) {
-> +				entry = pte_mkyoung(vmf->orig_pte);
-> +				if (ptep_set_access_flags(vma, addr,
-> +							  vmf->pte, entry, 0))
-> +					update_mmu_cache(vma, addr, vmf->pte);
-> +			} else {
-> +				/* Other thread has already handled the fault
-> +				 * and we don't need to do anything. If it's
-> +				 * not the case, the fault will be triggered
-> +				 * again on the same address.
-> +				 */
-> +				return -1;
-> +			}
-> +			spin_unlock(vmf->ptl);
+>  	crypto_free_sync_skcipher(op->fallback_tfm);
+> +	pm_runtime_put(op->ss->dev);
+>  }
+>
+>  /* check and set the AES key, prepare the mode to be used */
+> diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-core.c b/drivers/crypto/sunxi-ss/sun4i-ss-core.c
+> index 6c2db5d83b06..311c2653a9c3 100644
+> --- a/drivers/crypto/sunxi-ss/sun4i-ss-core.c
+> +++ b/drivers/crypto/sunxi-ss/sun4i-ss-core.c
+> @@ -44,7 +44,8 @@ static struct sun4i_ss_alg_template ss_algs[] = {
+>  				.cra_blocksize = MD5_HMAC_BLOCK_SIZE,
+>  				.cra_ctxsize = sizeof(struct sun4i_req_ctx),
+>  				.cra_module = THIS_MODULE,
+> -				.cra_init = sun4i_hash_crainit
+> +				.cra_init = sun4i_hash_crainit,
+> +				.cra_exit = sun4i_hash_craexit
 
-Returning with the spinlock held doesn't normally go very well ;).
+You should add a comma at the end to prevent having to modify it again
 
--- 
-Catalin
+>  			}
+>  		}
+>  	}
+> @@ -70,7 +71,8 @@ static struct sun4i_ss_alg_template ss_algs[] = {
+>  				.cra_blocksize = SHA1_BLOCK_SIZE,
+>  				.cra_ctxsize = sizeof(struct sun4i_req_ctx),
+>  				.cra_module = THIS_MODULE,
+> -				.cra_init = sun4i_hash_crainit
+> +				.cra_init = sun4i_hash_crainit,
+> +				.cra_exit = sun4i_hash_craexit
+
+Ditto
+
+>  			}
+>  		}
+>  	}
+> @@ -262,6 +264,61 @@ static int sun4i_ss_enable(struct sun4i_ss_ctx *ss)
+>  	return err;
+>  }
+>
+> +/*
+> + * Power management strategy: The device is suspended unless a TFM exists for
+> + * one of the algorithms proposed by this driver.
+> + */
+> +#if defined(CONFIG_PM)
+> +static int sun4i_ss_pm_suspend(struct device *dev)
+> +{
+> +	struct sun4i_ss_ctx *ss = dev_get_drvdata(dev);
+> +
+> +	sun4i_ss_disable(ss);
+> +	return 0;
+> +}
+> +
+> +static int sun4i_ss_pm_resume(struct device *dev)
+> +{
+> +	struct sun4i_ss_ctx *ss = dev_get_drvdata(dev);
+> +
+> +	return sun4i_ss_enable(ss);
+> +}
+> +#endif
+> +
+
+Why not just have the suspend and resume function and the enable /
+disable functions merged together, you're not using them directy as
+far as I can see.
+
+> +const struct dev_pm_ops sun4i_ss_pm_ops = {
+> +	SET_RUNTIME_PM_OPS(sun4i_ss_pm_suspend, sun4i_ss_pm_resume, NULL)
+> +};
+> +
+> +/*
+> + * When power management is enabled, this function enables the PM and set the
+> + * device as suspended
+> + * When power management is disabled, this function just enables the device
+> + */
+> +static int sun4i_ss_pm_init(struct sun4i_ss_ctx *ss)
+> +{
+> +	int err;
+> +
+> +	pm_runtime_use_autosuspend(ss->dev);
+> +	pm_runtime_set_autosuspend_delay(ss->dev, 2000);
+> +
+> +	err = pm_runtime_set_suspended(ss->dev);
+> +	if (err)
+> +		return err;
+> +	pm_runtime_enable(ss->dev);
+> +#if !defined(CONFIG_PM)
+> +	err = sun4i_ss_enable(ss);
+> +#endif
+> +	return err;
+> +}
+
+This looks nicer:
+https://elixir.bootlin.com/linux/latest/source/drivers/spi/spi-sun4i.c#L492
+
+Or, just make it depend on CONFIG_PM, we should probably do it anyway
+at the ARCH level anyway.
+
+Maxime
+
+--m4buvghxnpijbdft
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXYOzHwAKCRDj7w1vZxhR
+xUwDAP9O9xdsnOnkb0SasX2EtOGv2LlMjbgmiiXL09f4KZYYggEAjIdC2vHA8T6J
+paJO7YWU8+BcPkZ4sPIudoliIvHaxw0=
+=S4zM
+-----END PGP SIGNATURE-----
+
+--m4buvghxnpijbdft--
+
+
+--===============3677747472168466275==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3677747472168466275==--
+
