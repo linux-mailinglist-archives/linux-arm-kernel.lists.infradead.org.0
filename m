@@ -2,67 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C360CB82F7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 22:54:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64DE6B833E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 23:22:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iiHu4hvZ+tJl+Zqq4DEorQ300Uj+il/4oLtPAB2X4Mo=; b=tdycoiICOr3CHa
-	UM8pDMXiW7X2jxH+92olfppOEi8Y+xMTk07NeZ9aEc/4dSv8KN+Ru4g1/gJluROIvWEGP0ohTPfyw
-	F5iAQFo+EkYyMLESFMQqzW8Uq/OfijyRPXviOhBdXfIYFU7Yr8lH5/5iYeKUL9o7OQHmDKrphnbB4
-	AX6sYAy49GSkyg7mYyJ0/1GNn9rF53hOiJyc/0oxdCIoHcBLoi5W0DOfuFUJEPiMhlmf4ZpcM182h
-	zA8bjl+QFPm3h5/LwaMOuMssEoBxrvzQVjtiOYSlOzht9BVRZ2UMKJ4LZyIv7d9BdKbD7gDTUldxY
-	zZogpB6QvQ2W7067t4Dg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=cNZOyEP9XwQfhnQbmee0TKwp+6w2Y57LNPuY9m3GdZ8=; b=Pgmr+UAUPxv460hwzxrs5dHyt
+	ZNJQHoHK3ZohxMzw3IAyxZRqdnJ6xZTW0WuyfVbhZQboxYKYd6obH6NYQs3tzohJMhPHYxyIrFhLe
+	o/VK3N9s9R6TKfhd+ywZsA2FVP3ZLIFVaZDrGwqu0AxY8yx0yU0dEPk2BFyBTDqY4PYK0S3U/JjKh
+	nf5phb+PkUHabpqpafYQ1+Kh3GU0jZaqY4HS926YAlyG9l1htpORMpQsOyisS7GMuhwgijldnmqKi
+	rS445/BeLv8bfokeRLRgC9SahebGOMPrJThANX8ueVRGQhEEj90ue10CyO9Ijr1U77Q5+D3lmFO1A
+	ZGmqaqvoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iB3Rs-0005c4-Et; Thu, 19 Sep 2019 20:54:45 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iB3Rb-0005bI-Un
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 20:54:29 +0000
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+	id 1iB3se-0005qB-I8; Thu, 19 Sep 2019 21:22:24 +0000
+Received: from vulcan.natalenko.name ([2001:19f0:6c00:8846:5400:ff:fe0c:dfa0])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat
+ Linux)) id 1iB3sQ-0005pB-64; Thu, 19 Sep 2019 21:22:12 +0000
+Received: from mail.natalenko.name (vulcan.natalenko.name
+ [IPv6:fe80::5400:ff:fe0c:dfa0])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 02CA97F75E;
- Thu, 19 Sep 2019 20:54:27 +0000 (UTC)
-Received: from llong.remote.csb (dhcp-17-160.bos.redhat.com [10.18.17.160])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 66B4519D70;
- Thu, 19 Sep 2019 20:54:14 +0000 (UTC)
-Subject: Re: [PATCH v4 3/5] locking/qspinlock: Introduce CNA into the slow
- path of qspinlock
-To: Alex Kogan <alex.kogan@oracle.com>
-References: <20190906142541.34061-1-alex.kogan@oracle.com>
- <20190906142541.34061-4-alex.kogan@oracle.com>
- <3ae2b6a2-ffe6-2ca1-e5bf-2292db50e26f@redhat.com>
- <87B87982-670F-4F12-9EE0-DC89A059FAEC@oracle.com>
-From: Waiman Long <longman@redhat.com>
-Organization: Red Hat
-Message-ID: <6c08767a-f60c-077d-4e94-66ea189db6f1@redhat.com>
-Date: Thu, 19 Sep 2019 16:54:13 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ by vulcan.natalenko.name (Postfix) with ESMTPSA id 7C7A75E280C;
+ Thu, 19 Sep 2019 23:22:03 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=natalenko.name;
+ s=dkim-20170712; t=1568928123;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=nvfXNPCQg7B581+MslvcoEWLTwJp2jXTw915+YqYF0w=;
+ b=i+KmjjbSSriAGy62TJ1qhcGVNLO3g7OTsgglPkt+ylvBzx6jO8DN1KJC1G2E6e9r6WBPpC
+ 7jhQtsboDmL2YJti9HlWuBCv+SX3r9pn1DrTs5XWew3eOCy59rO0cShMGjnGs1VIXrHqRR
+ 5WsU9Sl7rOlJFZMVm7RfAOz1hR8C9w0=
 MIME-Version: 1.0
-In-Reply-To: <87B87982-670F-4F12-9EE0-DC89A059FAEC@oracle.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
- (mx1.redhat.com [10.5.110.71]); Thu, 19 Sep 2019 20:54:27 +0000 (UTC)
+Date: Thu, 19 Sep 2019 23:22:03 +0200
+From: Oleksandr Natalenko <oleksandr@natalenko.name>
+To: linux-mediatek@lists.infradead.org
+Subject: Re: mt76x2e hardware restart
+In-Reply-To: <deaafa7a3e9ea2111ebb5106430849c6@natalenko.name>
+References: <deaafa7a3e9ea2111ebb5106430849c6@natalenko.name>
+Message-ID: <c6d621759c190f7810d898765115f3b4@natalenko.name>
+X-Sender: oleksandr@natalenko.name
+User-Agent: Roundcube Webmail/1.3.10
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=natalenko.name; 
+ s=arc-20170712; t=1568928123;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=nvfXNPCQg7B581+MslvcoEWLTwJp2jXTw915+YqYF0w=;
+ b=ETc2q7YURCqlrETsKKeQkoPlDZrCqCFYY89AXGwPNhu+uYOEQZFte02NHPleOvqNzi05+G
+ 48LhJrMbwsTLyDxU3rcisz7iw7H9EfnL0KLSfhvwRodWvQW3eHZFlcgZe9OdbYoM9Qg9Pg
+ TSghhu0PLaDijtfAcg83a9yrI4P0ook=
+ARC-Seal: i=1; s=arc-20170712; d=natalenko.name; t=1568928123; a=rsa-sha256;
+ cv=none;
+ b=FDKorXnDcAKDb8+CrT3w5/PyCrZwO9676UXdBc0WwqcyPOB/xTGw21uNIzbPGPSOJYQNCm
+ z5viRpMuMdaOVmBOTY+aor9YJhQf0kk6lmyVVvh1uRubEjaYOfnyqCYmJGq9C6JaDhCIiY
+ uJj764/pFLr/8vhgqNFjwIDtuc4v+/8=
+ARC-Authentication-Results: i=1; vulcan.natalenko.name;
+ auth=pass smtp.auth=oleksandr@natalenko.name
+ smtp.mailfrom=oleksandr@natalenko.name
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_135428_099708_EEA45398 
-X-CRM114-Status: GOOD (  25.38  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190919_142210_403255_21344F12 
+X-CRM114-Status: UNSURE (   9.13  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2001:19f0:6c00:8846:5400:ff:fe0c:dfa0 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,107 +98,164 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, arnd@arndb.de,
- peterz@infradead.org, dave.dice@oracle.com, jglauber@marvell.com,
- x86@kernel.org, will.deacon@arm.com, linux@armlinux.org.uk,
- linux-kernel@vger.kernel.org, rahul.x.yadav@oracle.com, mingo@redhat.com,
- bp@alien8.de, hpa@zytor.com, steven.sistare@oracle.com, tglx@linutronix.de,
- daniel.m.jordan@oracle.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Ryder Lee <ryder.lee@mediatek.com>, Stanislaw Gruszka <sgruszka@redhat.com>,
+ netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Roy Luo <royluo@google.com>,
+ Lorenzo Bianconi <lorenzo.bianconi83@gmail.com>,
+ Lorenzo Bianconi <lorenzo@kernel.org>, "David S.
+ Miller" <davem@davemloft.net>, Kalle Valo <kvalo@codeaurora.org>,
+ Felix Fietkau <nbd@nbd.name>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gOS8xOS8xOSAxMTo1NSBBTSwgQWxleCBLb2dhbiB3cm90ZToKPj4+ICsvKgo+Pj4gKyAqIGNu
-YV90cnlfZmluZF9uZXh0IC0gc2NhbiB0aGUgbWFpbiB3YWl0aW5nIHF1ZXVlIGxvb2tpbmcgZm9y
-IHRoZSBmaXJzdAo+Pj4gKyAqIHRocmVhZCBydW5uaW5nIG9uIHRoZSBzYW1lIE5VTUEgbm9kZSBh
-cyB0aGUgbG9jayBob2xkZXIuIElmIGZvdW5kIChjYWxsIGl0Cj4+PiArICogdGhyZWFkIFQpLCBt
-b3ZlIGFsbCB0aHJlYWRzIGluIHRoZSBtYWluIHF1ZXVlIGJldHdlZW4gdGhlIGxvY2sgaG9sZGVy
-IGFuZAo+Pj4gKyAqIFQgdG8gdGhlIGVuZCBvZiB0aGUgc2Vjb25kYXJ5IHF1ZXVlIGFuZCByZXR1
-cm4gVDsgb3RoZXJ3aXNlLCByZXR1cm4gTlVMTC4KPj4+ICsgKgo+Pj4gKyAqIFNjaGVtYXRpY2Fs
-bHksIHRoaXMgbWF5IGxvb2sgbGlrZSB0aGUgZm9sbG93aW5nIChubiBzdGFuZHMgZm9yIG51bWFf
-bm9kZSBhbmQKPj4+ICsgKiBldCBzdGFuZHMgZm9yIGVuY29kZWRfdGFpbCkuCj4+PiArICoKPj4+
-ICsgKiAgICAgd2hlbiBjbmFfdHJ5X2ZpbmRfbmV4dCgpIGlzIGNhbGxlZCAodGhlIHNlY29uZGFy
-eSBxdWV1ZSBpcyBlbXB0eSk6Cj4+PiArICoKPj4+ICsgKiAgQSstLS0tLS0tLS0tLS0rICAgQist
-LS0tLS0tLSsgICBDKy0tLS0tLS0tKyAgIFQrLS0tLS0tLS0rCj4+PiArICogICB8bWNzOm5leHQg
-ICAgfCAtPiB8bWNzOm5leHR8IC0+IHxtY3M6bmV4dHwgLT4gfG1jczpuZXh0fCAtPiBOVUxMCj4+
-PiArICogICB8bWNzOmxvY2tlZD0xfCAgICB8Y25hOm5uPTB8ICAgIHxjbmE6bm49MnwgICAgfGNu
-YTpubj0xfAo+Pj4gKyAqICAgfGNuYTpubj0xICAgIHwgICAgKy0tLS0tLS0tKyAgICArLS0tLS0t
-LS0rICAgICstLS0tLS0tLSsKPj4+ICsgKiAgICstLS0tLS0tLS0tLSArCj4+PiArICoKPj4+ICsg
-KiAgICAgd2hlbiBjbmFfdHJ5X2ZpbmRfbmV4dCgpIHJldHVybnMgKHRoZSBzZWNvbmRhcnkgcXVl
-dWUgY29udGFpbnMgQiBhbmQgQyk6Cj4+PiArICoKPj4+ICsgKiAgQSstLS0tLS0tLS0tLS0tLS0t
-KyAgICBUKy0tLS0tLS0tKwo+Pj4gKyAqICAgfG1jczpuZXh0ICAgICAgICB8IC0+ICB8bWNzOm5l
-eHR8IC0+IE5VTEwKPj4+ICsgKiAgIHxtY3M6bG9ja2VkPUIuZXQgfCAtKyAgfGNuYTpubj0xfAo+
-Pj4gKyAqICAgfGNuYTpubj0xICAgICAgICB8ICB8ICArLS0tLS0tLS0rCj4+PiArICogICArLS0t
-LS0tLS0tLS0tLS0tICsgIHwKPj4+ICsgKiAgICAgICAgICAgICAgICAgICAgICAgfAo+Pj4gKyAq
-ICAgICAgICAgICAgICAgICAgICAgICArLT4gIEIrLS0tLS0tLS0rICAgQystLS0tLS0tLSsKPj4+
-ICsgKiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfG1jczpuZXh0fCAtPiB8bWNzOm5leHR8
-Cj4+PiArICogICAgICAgICAgICAgICAgICAgICAgICAgICAgIHxjbmE6bm49MHwgICAgfGNuYTpu
-bj0yfAo+Pj4gKyAqICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8Y25hOnRhaWx8IC0+ICst
-LS0tLS0tLSsKPj4+ICsgKiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgKy0tLS0tLS0tKwo+
-Pj4gKyAqCj4+PiArICogVGhlIHdvcnN0IGNhc2UgY29tcGxleGl0eSBvZiB0aGUgc2NhbiBpcyBP
-KG4pLCB3aGVyZSBuIGlzIHRoZSBudW1iZXIKPj4+ICsgKiBvZiBjdXJyZW50IHdhaXRlcnMuIEhv
-d2V2ZXIsIHRoZSBmYXN0IHBhdGgsIHdoaWNoIGlzIGV4cGVjdGVkIHRvIGJlIHRoZQo+Pj4gKyAq
-IGNvbW1vbiBjYXNlLCBpcyBPKDEpLgo+Pj4gKyAqLwo+Pj4gK3N0YXRpYyBzdHJ1Y3QgbWNzX3Nw
-aW5sb2NrICpjbmFfdHJ5X2ZpbmRfbmV4dChzdHJ1Y3QgbWNzX3NwaW5sb2NrICpub2RlLAo+Pj4g
-KwkJCQkJICAgICAgc3RydWN0IG1jc19zcGlubG9jayAqbmV4dCkKPj4+ICt7Cj4+PiArCXN0cnVj
-dCBjbmFfbm9kZSAqY24gPSAoc3RydWN0IGNuYV9ub2RlICopbm9kZTsKPj4+ICsJc3RydWN0IGNu
-YV9ub2RlICpjbmkgPSAoc3RydWN0IGNuYV9ub2RlICopbmV4dDsKPj4+ICsJc3RydWN0IGNuYV9u
-b2RlICpmaXJzdCwgKmxhc3QgPSBOVUxMOwo+Pj4gKwlpbnQgbXlfbnVtYV9ub2RlID0gY24tPm51
-bWFfbm9kZTsKPj4+ICsKPj4+ICsJLyogZmFzdCBwYXRoOiBpbW1lZGlhdGUgc3VjY2Vzc29yIGlz
-IG9uIHRoZSBzYW1lIE5VTUEgbm9kZSAqLwo+Pj4gKwlpZiAoY25pLT5udW1hX25vZGUgPT0gbXlf
-bnVtYV9ub2RlKQo+Pj4gKwkJcmV0dXJuIG5leHQ7Cj4+PiArCj4+PiArCS8qIGZpbmQgYW55IG5l
-eHQgd2FpdGVyIG9uICdvdXInIE5VTUEgbm9kZSAqLwo+Pj4gKwlmb3IgKGZpcnN0ID0gY25pOwo+
-Pj4gKwkgICAgIGNuaSAmJiBjbmktPm51bWFfbm9kZSAhPSBteV9udW1hX25vZGU7Cj4+PiArCSAg
-ICAgbGFzdCA9IGNuaSwgY25pID0gKHN0cnVjdCBjbmFfbm9kZSAqKVJFQURfT05DRShjbmktPm1j
-cy5uZXh0KSkKPj4+ICsJCTsKPj4+ICsKPj4+ICsJLyogaWYgZm91bmQsIHNwbGljZSBhbnkgc2tp
-cHBlZCB3YWl0ZXJzIG9udG8gdGhlIHNlY29uZGFyeSBxdWV1ZSAqLwo+Pj4gKwlpZiAoY25pICYm
-IGxhc3QpCj4+PiArCQljbmFfc3BsaWNlX3RhaWwoY24sIGZpcnN0LCBsYXN0KTsKPj4+ICsKPj4+
-ICsJcmV0dXJuIChzdHJ1Y3QgbWNzX3NwaW5sb2NrICopY25pOwo+Pj4gK30KPj4gQXQgdGhlIExp
-bnV4IFBsdW1iZXJzIENvbmZlcmVuY2UgbGFzdCB3ZWVrLCBXaWxsIGhhcyByYWlzZWQgdGhlIGNv
-bmNlcm4KPj4gYWJvdXQgdGhlIGxhdGVuY3kgb2YgdGhlIE8oMSkgY25hX3RyeV9maW5kX25leHQo
-KSBvcGVyYXRpb24gdGhhdCB3aWxsCj4+IGFkZCB0byB0aGUgbG9jayBob2xkIHRpbWUuCj4gV2hp
-bGUgdGhlIHdvcnN0IGNhc2UgY29tcGxleGl0eSBvZiB0aGUgc2NhbiBpcyBPKG4pLCBJIF90aGlu
-ayBpdCBjYW4gYmUgcHJvdmVuCj4gdGhhdCB0aGUgYW1vcnRpemVkIGNvbXBsZXhpdHkgaXMgTygx
-KS4gRm9yIGludHVpdGlvbiwgY29uc2lkZXIgYSB0d28tbm9kZSAKPiBzeXN0ZW0gd2l0aCBOIHRo
-cmVhZHMgdG90YWwuIEluIHRoZSB3b3JzdCBjYXNlIHNjZW5hcmlvLCB0aGUgc2NhbiB3aWxsIGdv
-IAo+IG92ZXIgTi8yIHRocmVhZHMgcnVubmluZyBvbiBhIGRpZmZlcmVudCBub2RlLiBJZiB0aGUg
-c2NhbiB1bHRpbWF0ZWx5IOKAnGZhaWxz4oCdCj4gKG5vIHRocmVhZCBmcm9tIHRoZSBsb2NrIGhv
-bGRlcuKAmXMgbm9kZSBpcyBmb3VuZCksIHRoZSBsb2NrIHdpbGwgYmUgcGFzc2VkCj4gdG8gdGhl
-IGZpcnN0IHRocmVhZCBmcm9tIGEgZGlmZmVyZW50IG5vZGUgYW5kIHRoZW4gYmV0d2VlbiBhbGwg
-dGhvc2UgTi8yIHRocmVhZHMsCj4gd2l0aCBhIHNjYW4gb2YganVzdCBvbmUgbm9kZSBmb3IgdGhl
-IG5leHQgTi8yIC0gMSBwYXNzZXMuIE90aGVyd2lzZSwgdGhvc2UgCj4gTi8yIHRocmVhZHMgd2ls
-bCBiZSBtb3ZlZCB0byB0aGUgc2Vjb25kYXJ5IHF1ZXVlLiBPbiB0aGUgbmV4dCBsb2NrIGhhbmRv
-dmVyLCAKPiB3ZSBwYXNzIHRoZSBsb2NrIGVpdGhlciB0byB0aGUgbmV4dCB0aHJlYWQgaW4gdGhl
-IG1haW4gcXVldWUgKGFzIGl0IGhhcyB0byBiZSAKPiBmcm9tIG91ciBub2RlKSBvciB0byB0aGUg
-Zmlyc3Qgbm9kZSBpbiB0aGUgc2Vjb25kYXJ5IHF1ZXVlLiBJbiBib3RoIGNhc2VzLCB3ZSAKPiBz
-Y2FuIGp1c3Qgb25lIG5vZGUsIGFuZCBpbiB0aGUgbGF0dGVyIGNhc2UsIHdlIGhhdmUgYWdhaW4g
-Ti8yIC0gMSBwYXNzZXMgd2l0aCAKPiBhIHNjYW4gb2YganVzdCBvbmUgbm9kZSBlYWNoLgpJIGFn
-cmVlIHRoYXQgaXQgc2hvdWxkIG5vdCBiZSBhIHByb2JsZW0gZm9yIGEgMi1zb2NrZXQuIEZvciBs
-YXJnZXIgU01QCnN5c3RlbXMgd2l0aCA4LCAxNiBvciBldmVuIDMyIHNvY2tldHMsIGl0IGNhbiBi
-ZSBhbiBpc3N1ZSBhcyB0aG9zZQpzeXN0ZW1zIGFyZSBhbHNvIG1vcmUgbGlrZWx5IHRvIGhhdmUg
-bW9yZSBsb2NrIGNvbnRlbnRpb24gYW5kIGhlbmNlCmxvbmdlciB3YWl0IHF1ZXVlcy4KPj4gT25l
-IHdheSB0byBoaWRlIHNvbWUgb2YgdGhlIGxhdGVuY3kgaXMgdG8gZG8KPj4gYSBwcmUtc2NhbiBi
-ZWZvcmUgYWNxdWlyaW5nIHRoZSBsb2NrLiBUaGUgQ05BIGNvZGUgY291bGQgb3ZlcnJpZGUgdGhl
-Cj4+IHB2X3dhaXRfaGVhZF9vcl9sb2NrKCkgZnVuY3Rpb24gdG8gY2FsbCBjbmFfdHJ5X2ZpbmRf
-bmV4dCgpIGFzIGEKPj4gcHJlLXNjYW4gYW5kIHJldHVybiAwLiBXaGF0IGRvIHlvdSB0aGluaz8K
-PiBUaGlzIGlzIGNlcnRhaW5seSBwb3NzaWJsZSwgYnV0IEkgZG8gbm90IHRoaW5rIGl0IHdvdWxk
-IGNvbXBsZXRlbHkgZWxpbWluYXRlIAo+IHRoZSB3b3JzdCBjYXNlIHNjZW5hcmlvLiBJdCB3aWxs
-IHByb2JhYmx5IG1ha2UgaXQgZXZlbiBsZXNzIGxpa2VseSwgYnV0IGF0IAo+IHRoZSBzYW1lIHRp
-bWUsIHdlIHdpbGwgcmVkdWNlIHRoZSBjaGFuY2Ugb2YgYWN0dWFsbHkgZmluZGluZyBhIHRocmVh
-ZCBmcm9tIHRoZQo+IHNhbWUgbm9kZSAodGhhdCBtYXkgZW50ZXIgdGhlIG1haW4gcXVldWUgd2hp
-bGUgd2Ugd2FpdCBmb3IgdGhlIG93bmVyICYgcGVuZGluZyAKPiB0byBnbyBhd2F5KS4KCldoZW4g
-SSBzYWlkIHByZXNjYW4sIEkgbWVhbiB0byBtb3ZlIHRoZSBmcm9udCBxdWV1ZSBlbnRyaWVzIHRo
-YXQgYXJlCmZyb20gbm9uLWxvY2FsIG5vZGVzIHRvIHRoZSBzZWNvbmRhcnkgcXVldWUgYmVmb3Jl
-IGFjcXVpcmluZyB0aGUgbG9jay4KQWZ0ZXIgYWNxdWlyaW5nIHRoZSBsb2NrLCB5b3UgY2FuIHJl
-cGVhdCB0aGUgc2NhbiBpbiBjYXNlIHRoZSBwcmVzY2FuCmRpZG4ndCBmaW5kIGFueSBsb2NhbCBu
-b2RlIHF1ZXVlIGVudHJ5LiBZZXMsIHdlIHdpbGwgbmVlZCB0byBkbyB0aGUKc2ltaWxhciBvcGVy
-YXRpb24gdHdpY2UuCgpZZXMsIGl0IGRvZXMgbm90IGVsaW1pbmF0ZSB0aGUgd29yc3QgY2FzZSBz
-Y2VuYXJpbywgYnV0IGl0IHNob3VsZCBoZWxwCmluIHJlZHVjaW5nIHRoZSBhdmVyYWdlIGxvY2sg
-aG9sZCB0aW1lLgoKT2YgY291cnNlLCB0aGUgcHJvYmFiaWxpc3RpYyAob3IgZGV0ZXJtaW5pc3Rp
-YykgY2hlY2sgdG8gZ28gdG8gdGhlIG5leHQKbG9jYWwgbm9kZSBlbnRyeSBvciB0byB0aGUgc2Vj
-b25kYXJ5IHF1ZXVlIHNob3VsZCBiZSBkb25lIGJlZm9yZQpwcmUtc2NhbiBzbyB0aGF0IHdlIHdv
-bid0IHdhc3RlIHRoZSBlZmZvcnQuCgpDaGVlcnMsCkxvbmdtYW4KCgpfX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
-bGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On 19.09.2019 18:24, Oleksandr Natalenko wrote:
+> [  +9,979664] mt76x2e 0000:01:00.0: Firmware Version: 0.0.00
+> [  +0,000014] mt76x2e 0000:01:00.0: Build: 1
+> [  +0,000010] mt76x2e 0000:01:00.0: Build Time: 201507311614____
+> [  +0,018017] mt76x2e 0000:01:00.0: Firmware running!
+> [  +0,001101] ieee80211 phy4: Hardware restart was requested
+
+IIUC, this happens due to watchdog. I think the following applies.
+
+Watchdog is started here:
+
+=== mt76x02_util.c
+130 void mt76x02_init_device(struct mt76x02_dev *dev)
+131 {
+...
+155         INIT_DELAYED_WORK(&dev->wdt_work, mt76x02_wdt_work);
+===
+
+It checks for TX hang here:
+
+=== mt76x02_mmio.c
+557 void mt76x02_wdt_work(struct work_struct *work)
+558 {
+...
+562     mt76x02_check_tx_hang(dev);
+===
+
+Conditions:
+
+=== mt76x02_mmio.c
+530 static void mt76x02_check_tx_hang(struct mt76x02_dev *dev)
+531 {
+532     if (mt76x02_tx_hang(dev)) {
+533         if (++dev->tx_hang_check >= MT_TX_HANG_TH)
+534             goto restart;
+535     } else {
+536         dev->tx_hang_check = 0;
+537     }
+538
+539     if (dev->mcu_timeout)
+540         goto restart;
+541
+542     return;
+543
+544 restart:
+545     mt76x02_watchdog_reset(dev);
+===
+
+Actual check:
+
+=== mt76x02_mmio.c
+367 static bool mt76x02_tx_hang(struct mt76x02_dev *dev)
+368 {
+369     u32 dma_idx, prev_dma_idx;
+370     struct mt76_queue *q;
+371     int i;
+372
+373     for (i = 0; i < 4; i++) {
+374         q = dev->mt76.q_tx[i].q;
+375
+376         if (!q->queued)
+377             continue;
+378
+379         prev_dma_idx = dev->mt76.tx_dma_idx[i];
+380         dma_idx = readl(&q->regs->dma_idx);
+381         dev->mt76.tx_dma_idx[i] = dma_idx;
+382
+383         if (prev_dma_idx == dma_idx)
+384             break;
+385     }
+386
+387     return i < 4;
+388 }
+===
+
+(I don't quite understand what it does here; why 4? does each device 
+have 4 queues? maybe, my does not? I guess this is where watchdog is 
+triggered, though, because otherwise I'd see mcu_timeout message like 
+"MCU message %d (seq %d) timed out\n")
+
+Once it detects TX hang, the reset is triggered:
+
+=== mt76x02_mmio.c
+446 static void mt76x02_watchdog_reset(struct mt76x02_dev *dev)
+447 {
+...
+485     if (restart)
+486         mt76_mcu_restart(dev);
+===
+
+mt76_mcu_restart() is just a define for this series here:
+
+=== mt76.h
+555 #define mt76_mcu_restart(dev, ...)  
+(dev)->mt76.mcu_ops->mcu_restart(&((dev)->mt76))
+===
+
+Actual OP:
+
+=== mt76x2/pci_mcu.c
+188 int mt76x2_mcu_init(struct mt76x02_dev *dev)
+189 {
+190     static const struct mt76_mcu_ops mt76x2_mcu_ops = {
+191         .mcu_restart = mt76pci_mcu_restart,
+192         .mcu_send_msg = mt76x02_mcu_msg_send,
+193     };
+===
+
+This triggers loading the firmware:
+
+=== mt76x2/pci_mcu.c
+168 static int
+169 mt76pci_mcu_restart(struct mt76_dev *mdev)
+170 {
+...
+179     ret = mt76pci_load_firmware(dev);
+===
+
+which does the printout I observe:
+
+=== mt76x2/pci_mcu.c
+  91 static int
+  92 mt76pci_load_firmware(struct mt76x02_dev *dev)
+  93 {
+...
+156     dev_info(dev->mt76.dev, "Firmware running!\n");
+===
+
+Too bad it doesn't show the actual watchdog message, IOW, why the reset 
+happens. I guess I will have to insert some pr_infos here and there.
+
+Does it make sense? Any ideas why this can happen?
+
+More info on the device during boot:
+
+===
+[  +0,333233] mt76x2e 0000:01:00.0: enabling device (0000 -> 0002)
+[  +0,000571] mt76x2e 0000:01:00.0: ASIC revision: 76120044
+[  +0,017806] mt76x2e 0000:01:00.0: ROM patch build: 20141115060606a
+===
+
+-- 
+   Oleksandr Natalenko (post-factum)
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
