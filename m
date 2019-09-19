@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1445AB7506
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 10:23:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FE37B7517
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 10:28:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hGpwYoF1LftdzH4xICEwjW7JxFUjCi8EYF9Jf7ml2Ps=; b=npoGRArYjEyfWG
-	6UpAEPKEN/Hns0cjXVlqTOJZ2SG5tbS7k2RO6JQlsTSHWbwECybK8zkJvQ0b6BnsQWBjYcnhoKx2z
-	dORQcgHnGu09skTOFH+Z5sontxvoi8Hee/wPAk5Kos2CdazzFUS2Xk38U4alMhxo07CQpsjWhss6K
-	0gSupDO9/mu2GbAvYNLi37RqUhlQxc7je/8pumH2rV4jEiT4JzybrVz40H50OiBysRBwJdgOIzkRw
-	Cu7lUpahH+1OHGC7K7QLK2E92zgA8MV83Q/ijedi2H58KxL2FHN2rLOyuoXgSrn9hsuvGcvmdVZQ6
-	qPJVe7MgYQoPtc39F+sQ==;
+	List-Owner; bh=URGeRa8gOLnZN7HTukzvUXtwUJ8tALNmUmG5z/ubHhY=; b=qlJLbU3LUGGdTH
+	VIe2WjLOX0i9PmglQuRU/da/EKi52XmkLdy7Ek6BAGLAwuw8bPJz0LFHcKFBQ+Ldd+JzXsnYi7KyE
+	QbufkMXDwocWE6vTTGWPJsyJTILUlJZqIs1X3m/CRvrszCPMlrThebtUmFAqpk3eQL1FkCQ4qrXtz
+	a0mmucV0M2uO/QlTGDLgC4rMz+RvY6D76krTNQoeMBO48ML+ORHoE0Oc4kUHZx2sZHq49e24xjE9v
+	sCglpUtrD9XlaP3ouFKC2IyjZOD/rlB0sufTgPxQ6Sy71p0BtWl/NAkInB6qi/A+Y5aQcIMjyEq8v
+	XeulG9ZO05Y0uGSd4WKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAriX-0005Aw-1y; Thu, 19 Sep 2019 08:23:09 +0000
-Received: from mail-wr1-f66.google.com ([209.85.221.66])
+	id 1iArnH-000778-Gi; Thu, 19 Sep 2019 08:28:03 +0000
+Received: from mail-wm1-f65.google.com ([209.85.128.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iArhg-00059v-LH
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 08:22:22 +0000
-Received: by mail-wr1-f66.google.com with SMTP id o18so2030773wrv.13
+ id 1iArli-00070F-Kd
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 08:26:50 +0000
+Received: by mail-wm1-f65.google.com with SMTP id 5so3315281wmg.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Sep 2019 01:22:15 -0700 (PDT)
+ Thu, 19 Sep 2019 01:26:26 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=LeVWiP96skI5eB7uqPIrDv7wt1djjgh1Br2ODaNGKJs=;
- b=tvpdq1Bbpz1JBPvpJNuPlBYoYejP7vJ9TNqFQHixRJwjqT6oKEXJTWDHvJwHRV9n7/
- sEr1NSxWuh0x96Y2i0HU1MdGbF5S0QiizLadY5SNPXVXGTHyH9zeN+H6iL1mrE6e9mjP
- 7C/1JxXGEaQG0xFA8a8dNXUTDqyzesZmEzhR7qrEIf6FZUgBZHb1zrcWcVMHvXnYSUSS
- ztF2LRX10iQmrsQwtKAtIrSVdWfOtRWmpW3xQ8v0xY4M+9RvmjQvguoFlspRndmQd9hj
- Sawgw/UaZwdGlEWSn1Jhxy7keCmdF6iOkHQHmYGnJnHtrlBcJHfyRe5dF5K31j5AuHhQ
- yugw==
-X-Gm-Message-State: APjAAAWY2CefLdDvBSlgDez4adf2bFFa8bOMyLi+0jNYz4cW+s8woNyc
- 4w2PQS+7EurMk4XQg8eIrWw=
-X-Google-Smtp-Source: APXvYqxd+SvRD+xij34ds5Wefq2QoMUwnmH1O7Cuz+Oifi4mcJExLaFEH9KvWL95Bj1jErdjdGqxaQ==
-X-Received: by 2002:adf:fd10:: with SMTP id e16mr6455268wrr.17.1568881334522; 
- Thu, 19 Sep 2019 01:22:14 -0700 (PDT)
+ bh=5Kix1vWVqgxCmDUQkxBHf8UbEBayBPaxaHrzjCVpKWE=;
+ b=BcWVqv1lR8hQ5Uccc1qMkK8Ny6JTVxtDmySrIsCBmbQ/9WvZgfKjMFGjBwzuXHRqIW
+ TUNY/mG/b7k/yf2lhjSoCZamBCw0wRzjY8ajHe8wW5XzbhtSatpodh6R0cxvDEYlpMp7
+ /5zM1rJEwlk/2xB8q3GCd25eX4lnlm9vD1OVVKG0RjXUDQVw01cEmHpEC+INSzwi14nd
+ YCynHNeu+TiCbGBKSuY7UhUyKNo31GrOw250cjBNuK52XQqx7aVGvsHDhw5ZB+aro7yb
+ 39jTsx/boV3bk7aokE9R0lt6fONMdT3uAi/z6+ofYytlrUJimjilrvw6MbcGYb74bNbZ
+ GRXg==
+X-Gm-Message-State: APjAAAUaMACEOPsVfBgl9O3tN0e30beOWYYOJXKirFoOkYarqcdjWjFR
+ iXc/wDIMkylgjQ3aLAujwcoGK7Lo
+X-Google-Smtp-Source: APXvYqzzWYQAyNSPK0OicTAv83TGfnT3qvETBNRtC/3D58bfQtSXgxXkEDBhiDTK0t/7qWUw8Q38HA==
+X-Received: by 2002:a1c:d188:: with SMTP id i130mr1738494wmg.101.1568881585095; 
+ Thu, 19 Sep 2019 01:26:25 -0700 (PDT)
 Received: from pi3 ([194.230.155.145])
- by smtp.googlemail.com with ESMTPSA id s1sm11877105wrg.80.2019.09.19.01.22.12
+ by smtp.googlemail.com with ESMTPSA id n7sm2737843wrt.59.2019.09.19.01.26.22
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Sep 2019 01:22:13 -0700 (PDT)
-Date: Thu, 19 Sep 2019 10:22:11 +0200
+ Thu, 19 Sep 2019 01:26:24 -0700 (PDT)
+Date: Thu, 19 Sep 2019 10:26:21 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Subject: Re: [PATCH v1 8/9] ASoC: samsung: arndale: Add missing OF node
- dereferencing
-Message-ID: <20190919082211.GF13195@pi3>
+Subject: Re: [PATCH v1 9/9] ARM: dts: arndale: Add audio support (WM1811
+ CODEC boards)
+Message-ID: <20190919082621.GG13195@pi3>
 References: <20190918104634.15216-1-s.nawrocki@samsung.com>
- <CGME20190918104713eucas1p2ccfa8e9dff2cda9e8f88ac42dda2b680@eucas1p2.samsung.com>
- <20190918104634.15216-9-s.nawrocki@samsung.com>
+ <CGME20190918104715eucas1p2a051a537a0e86becfbbcb36c172ef705@eucas1p2.samsung.com>
+ <20190918104634.15216-10-s.nawrocki@samsung.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190918104634.15216-9-s.nawrocki@samsung.com>
+In-Reply-To: <20190918104634.15216-10-s.nawrocki@samsung.com>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_012217_283514_D43CE8F4 
-X-CRM114-Status: GOOD (  18.56  )
+X-CRM114-CacheID: sfid-20190919_012633_843457_FA729517 
+X-CRM114-Status: GOOD (  16.03  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.66 listed in list.dnswl.org]
+ no trust [209.85.128.65 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.66 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (k.kozlowski.k[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.65 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -100,84 +100,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 18, 2019 at 12:46:33PM +0200, Sylwester Nawrocki wrote:
-> Ensure there is no OF node references kept when the driver is removed/unbound.
+On Wed, Sep 18, 2019 at 12:46:34PM +0200, Sylwester Nawrocki wrote:
+> Add sound node and the clock configurations for the I2S controller
+> for audio support on the Exynos5250 SoC Arndale boards with
+> WM1811 based audio daugther board.
+> 
+> We need to increase drive strength of the I2S bus, otherwise
+> the audio CODEC doesn't work. Likely the CODEC's master clock
+> is the main issue here.
 > 
 > Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
 > ---
->  sound/soc/samsung/arndale_rt5631.c | 31 ++++++++++++++++++++++++++++--
->  1 file changed, 29 insertions(+), 2 deletions(-)
+>  arch/arm/boot/dts/exynos5250-arndale.dts | 27 +++++++++++++++++++++++-
+>  1 file changed, 26 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm/boot/dts/exynos5250-arndale.dts b/arch/arm/boot/dts/exynos5250-arndale.dts
+> index dc6fa6fe83f1..62aa6720aa88 100644
+> --- a/arch/arm/boot/dts/exynos5250-arndale.dts
+> +++ b/arch/arm/boot/dts/exynos5250-arndale.dts
+> @@ -11,6 +11,7 @@
+>  #include <dt-bindings/interrupt-controller/irq.h>
+>  #include <dt-bindings/input/input.h>
+>  #include <dt-bindings/clock/samsung,s2mps11.h>
+> +#include <dt-bindings/sound/samsung-i2s.h>
+>  #include "exynos5250.dtsi"
+>  
+>  / {
+> @@ -135,6 +136,12 @@
+>  		};
+>  	};
+>  
+> +	sound {
+> +		compatible = "samsung,arndale-wm1811";
+> +		samsung,audio-cpu = <&i2s0>;
+> +		samsung,audio-codec = <&wm1811>;
+> +	};
+> +
+>  	fixed-rate-clocks {
+>  		xxti {
+>  			compatible = "samsung,clock-xxti";
+> @@ -499,12 +506,24 @@
+>  	};
+>  };
+>  
+> +&clock {
+> +	assigned-clocks = <&clock CLK_FOUT_EPLL>;
+> +	assigned-clock-rates = <49152000>;
+> +};
+> +
+> +&clock_audss {
+> +	assigned-clocks = <&clock_audss EXYNOS_MOUT_AUDSS>;
+> +	assigned-clock-parents = <&clock CLK_FOUT_EPLL>;
+> +};
 
-Wasn't this issue introduced in 5/9? It looks weird to fix it here...
+Put them before "cpu" so alphabetical order is preserved.
 
 Best regards,
 Krzysztof
 
-> 
-> diff --git a/sound/soc/samsung/arndale_rt5631.c b/sound/soc/samsung/arndale_rt5631.c
-> index 3744c47742b8..d8da313e898a 100644
-> --- a/sound/soc/samsung/arndale_rt5631.c
-> +++ b/sound/soc/samsung/arndale_rt5631.c
-> @@ -132,6 +132,17 @@ static struct snd_soc_card arndale_wm1811 = {
->  	.num_links = ARRAY_SIZE(arndale_wm1811_dai),
+> +
+>  &i2c_3 {
+>  	status = "okay";
+>  
+> -	wm1811a@1a {
+> +	wm1811: codec@1a {
+>  		compatible = "wlf,wm1811";
+>  		reg = <0x1a>;
+> +		clocks = <&i2s0 CLK_I2S_CDCLK>;
+> +		clock-names = "MCLK1";
+>  
+>  		AVDD2-supply = <&main_dc_reg>;
+>  		CPVDD-supply = <&main_dc_reg>;
+> @@ -540,9 +559,15 @@
 >  };
 >  
-> +static void arndale_put_of_nodes(struct snd_soc_card *card)
-> +{
-> +	struct snd_soc_dai_link *dai_link;
-> +	int i;
-> +
-> +	for_each_card_prelinks(card, i, dai_link) {
-> +		of_node_put(dai_link->cpus->of_node);
-> +		of_node_put(dai_link->codecs->of_node);
-> +	}
-> +}
-> +
->  static int arndale_audio_probe(struct platform_device *pdev)
->  {
->  	struct device_node *np = pdev->dev.of_node;
-> @@ -156,16 +167,31 @@ static int arndale_audio_probe(struct platform_device *pdev)
->  	if (!dai_link->codecs->of_node) {
->  		dev_err(&pdev->dev,
->  			"Property 'samsung,audio-codec' missing or invalid\n");
-> -		return -EINVAL;
-> +		ret = -EINVAL;
-> +		goto err_put_of_nodes;
->  	}
->  
->  	ret = devm_snd_soc_register_card(card->dev, card);
-> -	if (ret)
-> +	if (ret) {
->  		dev_err(&pdev->dev, "snd_soc_register_card() failed: %d\n", ret);
-> +		goto err_put_of_nodes;
-> +	}
->  
-> +	return 0;
-> +
-> +err_put_of_nodes:
-> +	arndale_put_of_nodes(card);
->  	return ret;
->  }
->  
-> +static int arndale_audio_remove(struct platform_device *pdev)
-> +{
-> +	struct snd_soc_card *card = platform_get_drvdata(pdev);
-> +
-> +	arndale_put_of_nodes(card);
-> +	return 0;
-> +}
-> +
->  static const struct of_device_id arndale_audio_of_match[] __maybe_unused = {
->  	{ .compatible = "samsung,arndale-rt5631",  .data = &arndale_rt5631 },
->  	{ .compatible = "samsung,arndale-alc5631", .data = &arndale_rt5631 },
-> @@ -181,6 +207,7 @@ static struct platform_driver arndale_audio_driver = {
->  		.of_match_table = arndale_audio_of_match,
->  	},
->  	.probe = arndale_audio_probe,
-> +	.remove = arndale_audio_remove,
+>  &i2s0 {
+> +	assigned-clocks = <&i2s0 CLK_I2S_RCLK_SRC>;
+> +	assigned-clock-parents = <&clock_audss EXYNOS_I2S_BUS>;
+>  	status = "okay";
 >  };
 >  
->  module_platform_driver(arndale_audio_driver);
+> +&i2s0_bus {
+> +	samsung,pin-drv = <EXYNOS4_PIN_DRV_LV2>;
+> +};
+> +
+>  &mixer {
+>  	status = "okay";
+>  };
 > -- 
 > 2.17.1
 > 
