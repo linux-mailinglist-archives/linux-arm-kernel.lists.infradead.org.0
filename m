@@ -2,85 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBCB2B718E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 04:21:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43FC2B719B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 04:34:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZiBGODZlzvKqyXwlWbtj9CuWjzGJLr8SL948ngNKFfA=; b=nLJeZx0jFo1rOB
-	VdefATAYfv669D/BZlU2tLdcjyKzXFJZPQdUBTgp4v+iLlAsGc3sA4/wulv8eHCrVF/rgeJ9mQFLQ
-	EfoJabcw321WH0w5GWvR7f2xx3YQYtzIYPpsJXkQw5nA3wGy8Ffc6tVzs3rZbgjNV+iQN4ukJ5HIa
-	FDjm72J+WNKEg6WzSpIx1xGIFBkWR9mAFBVRe79u+JiedrhSVmQUDzsJ6g7r7F3POfxxBN1Ku0t/V
-	BvVgqCOcKRBwisuC5pA2CmsUaz2BX5zabSdG4QL9CZUl7VoElK+Ddzp46v1+JeK+y6xBEqghfakUn
-	k8J4qsTsFvjFLTQWtxmg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=RtBNxCxfMF9CS3/1LzogZZCm3uYFA5662POeX1pMCIY=; b=LIGsSAH+7X4yu9238eVkjQYtX
+	XOnPVIzwV2FNxDAS62Mm8KzfHs2dt3e53stc9uR7LheqEyNvBgGpb95BfuiU5tjn0T+ZnFaVl+1TU
+	VjrkZs/WQuH4WTqGG3do3DxTXMd5Nl0Ye0Np6w4Z5PMjWmc9cjqO7HINajAfEABHSpi3G1Hy5GI0A
+	haswqoqwYP3sKxl+f8G7Ivp/sHpfWsFgORimMXDHq2Ab81lWMA5hdz2OI1rOf7wqdMfyy3amwF9am
+	nKI6h6XjAuN3pYnM83tYal3Ta6LkATOR6QT4SxNmrwz0+c4f9FCjzKTxYF24oYjRbOBYK/Iq/AOR9
+	+OL+Enwyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAm4X-0002Ct-9N; Thu, 19 Sep 2019 02:21:29 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1iAmGq-0005PU-QX; Thu, 19 Sep 2019 02:34:12 +0000
+Received: from mail-sz.amlogic.com ([211.162.65.117])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAm4B-0002C4-Vy; Thu, 19 Sep 2019 02:21:09 +0000
-Received: by mail-io1-xd44.google.com with SMTP id j4so3957565iog.11;
- Wed, 18 Sep 2019 19:21:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=28FR0iGdSsSntn0HXavBQASb15ncS9YhNIEPya+d/ZY=;
- b=QMhAwatWpTgV9Q79tPLRXDuYsGcn7T+ASU2X96tHXWftVa4ngLSP3VwpX7kdaEak5Y
- o0a+QXENkjEiRbXSYPCxyyqke/sSSWDHGKpQONvEvFS+7EGAjQbcybOqlenxKw9OZIpA
- zj70GUGkis+eScMnC4lXEsqefD3cvJ089cH9uIhos23Zfz8mDK8fA1gxOzuHRRASfbIm
- 380J4A4iXCdKSNXlajDRMZYPdlVh+jeT8k+NWfP2ZMHwijhtXn6fFwAf6IymDDx9PiZU
- R2vM7p2e9lPGqbyg7rNLqGCdhZAGYIuansGpJwi1I6QriPhQATOKevAnZifIJWidGn5S
- vOpQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=28FR0iGdSsSntn0HXavBQASb15ncS9YhNIEPya+d/ZY=;
- b=ueklFFw3QPXA7VnSsFRHc4qjd5sTxXhlNJ1t4YWcFwb0FlqG2XrlyK1HoDHU0rpEuN
- OLIfxfHHFaaUQMp6fk47GYccgfLzB/3ZTBCbeMBBu53XS0T6EST2OTowmPvdLAGi291M
- BBtTcTXpFYiW9xVvGRBXE8WFd/yKC8ttaYow0TBTk6a83asc5K91qEUag/WcYZa2lG+A
- 8UH12TJdyH4J9idq3O1vKEhiMBBFdMyNmmk/BMAWhYFrynCkwGc5afsdEm5sfkExHvLR
- +AKvBzj0Fb+5pVj14rg6XtpBah4Q2DexK3fQtEdAXsWiyvcjCRvZdvtGXM6wWosLj0w4
- hssw==
-X-Gm-Message-State: APjAAAWgIht7nqd9R+YaBYCPuC4QHshaAePoyfkZTc+NJOd380QUTm3X
- QYlZxSltRQsQeJPnUC5fbUji8aCXfIeLv0UKX+M=
-X-Google-Smtp-Source: APXvYqzIjt/mvoTyN72tqDx3aUGKSUk8fTRKQjQr0hxKDeo1qLTcozizxASVMl1qI0/O8Y1KmhrvWRsYiQhLHkw6u+M=
-X-Received: by 2002:a6b:6d07:: with SMTP id a7mr4459674iod.261.1568859664907; 
- Wed, 18 Sep 2019 19:21:04 -0700 (PDT)
+ id 1iAmGc-0005Ow-0e; Thu, 19 Sep 2019 02:33:59 +0000
+Received: from [10.28.19.63] (10.28.19.63) by mail-sz.amlogic.com (10.28.11.5)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Thu, 19 Sep
+ 2019 10:34:49 +0800
+Subject: Re: [PATCH 2/3] dt-bindings: reset: add bindings for the Meson-A1 SoC
+ Reset Controller
+To: Neil Armstrong <narmstrong@baylibre.com>, Philipp Zabel
+ <p.zabel@pengutronix.de>, Kevin Hilman <khilman@baylibre.com>
+References: <1568808746-1153-1-git-send-email-xingyu.chen@amlogic.com>
+ <1568808746-1153-3-git-send-email-xingyu.chen@amlogic.com>
+ <d99786ec-7635-67e5-3e47-738ce131b634@baylibre.com>
+From: Xingyu Chen <xingyu.chen@amlogic.com>
+Message-ID: <b6d7ad13-1bb4-5aea-ed13-3d695e8218e1@amlogic.com>
+Date: Thu, 19 Sep 2019 10:34:48 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <1568801744-21380-1-git-send-email-gene.chen.richtek@gmail.com>
- <20190918105121.GB5016@dell>
-In-Reply-To: <20190918105121.GB5016@dell>
-From: Gene Chen <gene.chen.richtek@gmail.com>
-Date: Thu, 19 Sep 2019 10:20:53 +0800
-Message-ID: <CAE+NS37XG+kfbj6yJrL5A-d2O_aiRU90yV5TUk3Kfa0Rv7dWmw@mail.gmail.com>
-Subject: Re: [PATCH] mfd: mt6360: add pmic mt6360 driver
-To: Lee Jones <lee.jones@linaro.org>
+In-Reply-To: <d99786ec-7635-67e5-3e47-738ce131b634@baylibre.com>
+Content-Language: en-GB
+X-Originating-IP: [10.28.19.63]
+X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
+ (10.28.11.5)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_192108_064828_73D35D01 
-X-CRM114-Status: GOOD (  12.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190918_193358_058154_D5117B86 
+X-CRM114-Status: GOOD (  14.01  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (gene.chen.richtek[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,38 +65,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: gene_chen@richtek.com, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
- Wilma.Wu@mediatek.com, linux-arm-kernel@lists.infradead.org,
- shufan_lee@richtek.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
+ Jianxin Pan <jianxin.pan@amlogic.com>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TGVlIEpvbmVzIDxsZWUuam9uZXNAbGluYXJvLm9yZz4g5pa8IDIwMTnlubQ55pyIMTjml6Ug6YCx
-5LiJIOS4i+WNiDY6NTHlr6vpgZPvvJoKPgo+IE9uIFdlZCwgMTggU2VwIDIwMTksIEdlbmUgQ2hl
-biB3cm90ZToKPgo+ID4gRnJvbTogR2VuZSBDaGVuIDxnZW5lX2NoZW5AcmljaHRlay5jb20+Cj4g
-Pgo+ID4gQWRkIG1mZCBkcml2ZXIgZm9yIG10NjM2MCBwbWljIGNoaXAgaW5jbHVkZQo+ID4gQmF0
-dGVyeSBDaGFyZ2VyL1VTQl9QRC9GbGFzaCBMRUQvUkdCIExFRC9MRE8vQnVjawo+ID4KPiA+IFNp
-Z25lZC1vZmYtYnk6IEdlbmUgQ2hlbiA8Z2VuZV9jaGVuQHJpY2h0ZWsuY29tCj4gPiAtLS0KPgo+
-IFRoaXMgbG9va3MgZGlmZmVyZW50IGZyb20gdGhlIG9uZSB5b3Ugc2VudCBiZWZvcmUsIGJ1dCBJ
-IGRvbid0IHNlZSBhCj4gdmVyc2lvbiBidW1wIG9yIGFueSBjaGFuZ2Vsb2cgaW4gdGhpcyBzcGFj
-ZS4gIFBsZWFzZSByZS1zdWJtaXQgd2l0aAo+IHRoZSBkaWZmZXJlbmNlcyBub3RlZC4KPgoKdGhl
-IGNoYW5nZSBpcwoxLiBhZGQgbWlzc2luZyBpbmNsdWRlIGZpbGUKMi4gbW9kaWZ5IGNvbW1pdCBt
-ZXNzYWdlCgp0aGlzIHBhdGNoIGlzIHJlZ2FyZGVkIGFzIHZlcnNpb24gMQoKPiA+ICBkcml2ZXJz
-L21mZC9LY29uZmlnICAgICAgICAgICAgICAgIHwgIDEyICsKPiA+ICBkcml2ZXJzL21mZC9NYWtl
-ZmlsZSAgICAgICAgICAgICAgIHwgICAxICsKPiA+ICBkcml2ZXJzL21mZC9tdDYzNjAtY29yZS5j
-ICAgICAgICAgIHwgNDYzICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysKPiA+
-ICBpbmNsdWRlL2xpbnV4L21mZC9tdDYzNjAtcHJpdmF0ZS5oIHwgMjc5ICsrKysrKysrKysrKysr
-KysrKysrKysKPiA+ICBpbmNsdWRlL2xpbnV4L21mZC9tdDYzNjAuaCAgICAgICAgIHwgIDMzICsr
-Kwo+ID4gIDUgZmlsZXMgY2hhbmdlZCwgNzg4IGluc2VydGlvbnMoKykKPiA+ICBjcmVhdGUgbW9k
-ZSAxMDA2NDQgZHJpdmVycy9tZmQvbXQ2MzYwLWNvcmUuYwo+ID4gIGNyZWF0ZSBtb2RlIDEwMDY0
-NCBpbmNsdWRlL2xpbnV4L21mZC9tdDYzNjAtcHJpdmF0ZS5oCj4gPiAgY3JlYXRlIG1vZGUgMTAw
-NjQ0IGluY2x1ZGUvbGludXgvbWZkL210NjM2MC5oCj4KPiAtLQo+IExlZSBKb25lcyBb5p2O55C8
-5pavXQo+IExpbmFybyBTZXJ2aWNlcyBUZWNobmljYWwgTGVhZAo+IExpbmFyby5vcmcg4pSCIE9w
-ZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29Dcwo+IEZvbGxvdyBMaW5hcm86IEZhY2Vib29r
-IHwgVHdpdHRlciB8IEJsb2cKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi, Neil
+Thanks for your review
+
+On 2019/9/18 20:39, Neil Armstrong wrote:
+> Hi,
+> 
+> On 18/09/2019 14:12, Xingyu Chen wrote:
+>> Add DT bindings for the Meson-A1 SoC Reset Controller include file,
+>> and also slightly update documentation.
+>>
+>> Signed-off-by: Xingyu Chen <xingyu.chen@amlogic.com>
+>> Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
+>> ---
+>>   .../bindings/reset/amlogic,meson-reset.txt         |  4 +-
+> 
+> The reset bindings has been moved to yaml, either rebase on linux-next or wait for v5.4-rc1 :
+> https://kernel.googlesource.com/pub/scm/linux/kernel/git/next/linux-next/+/refs/tags/next-20190917/Documentation/devicetree/bindings/reset/amlogic%2Cmeson-reset.yaml
+> 
+> NeilI will fix it in next version.
+> 
+>>   include/dt-bindings/reset/amlogic,meson-a1-reset.h | 59 ++++++++++++++++++++++
+>>   2 files changed, 61 insertions(+), 2 deletions(-)
+>>   create mode 100644 include/dt-bindings/reset/amlogic,meson-a1-reset.h
+>>
+>> diff --git a/Documentation/devicetree/bindings/reset/amlogic,meson-reset.txt b/Documentation/devicetree/bindings/reset/amlogic,meson-reset.txt
+>> index 28ef6c2..011151a 100644
+>> --- a/Documentation/devicetree/bindings/reset/amlogic,meson-reset.txt
+>> +++ b/Documentation/devicetree/bindings/reset/amlogic,meson-reset.txt
+>> @@ -5,8 +5,8 @@ Please also refer to reset.txt in this directory for common reset
+>>   controller binding usage.
+>>   
+>>   Required properties:
+>> -- compatible: Should be "amlogic,meson8b-reset", "amlogic,meson-gxbb-reset" or
+>> -	"amlogic,meson-axg-reset".
+>> +- compatible: Should be "amlogic,meson8b-reset", "amlogic,meson-gxbb-reset",
+>> +	"amlogic,meson-axg-reset" or "amlogic,meson-a1-reset".
+>>   - reg: should contain the register address base
+>>   - #reset-cells: 1, see below
+>>   
+>> diff --git a/include/dt-bindings/reset/amlogic,meson-a1-reset.h b/include/dt-bindings/reset/amlogic,meson-a1-reset.h
+>> new file mode 100644
+>> index 00000000..8d76a47
+>> --- /dev/null
+>> +++ b/include/dt-bindings/reset/amlogic,meson-a1-reset.h
+>> @@ -0,0 +1,59 @@
+>> +/* SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+>> + *
+>> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
+>> + * Author: Xingyu Chen <xingyu.chen@amlogic.com>
+>> + *
+>> + */
+>> +
+>> +#ifndef _DT_BINDINGS_AMLOGIC_MESON_A1_RESET_H
+>> +#define _DT_BINDINGS_AMLOGIC_MESON_A1_RESET_H
+>> +
+>> +/* RESET0 */
+>> +#define RESET_AM2AXI_VAD		1
+>> +#define RESET_PSRAM			4
+>> +#define RESET_PAD_CTRL			5
+>> +#define RESET_TEMP_SENSOR		7
+>> +#define RESET_AM2AXI_DEV		8
+>> +#define RESET_SPICC_A			10
+>> +#define RESET_MSR_CLK			11
+>> +#define RESET_AUDIO			12
+>> +#define RESET_ANALOG_CTRL		13
+>> +#define RESET_SAR_ADC			14
+>> +#define RESET_AUDIO_VAD			15
+>> +#define RESET_CEC			16
+>> +#define RESET_PWM_EF			17
+>> +#define RESET_PWM_CD			18
+>> +#define RESET_PWM_AB			19
+>> +#define RESET_IR_CTRL			21
+>> +#define RESET_I2C_S_A			22
+>> +#define RESET_I2C_M_D			24
+>> +#define RESET_I2C_M_C			25
+>> +#define RESET_I2C_M_B			26
+>> +#define RESET_I2C_M_A			27
+>> +#define RESET_I2C_PROD_AHB		28
+>> +#define RESET_I2C_PROD			29
+>> +
+>> +/* RESET1 */
+>> +#define RESET_ACODEC			32
+>> +#define RESET_DMA			33
+>> +#define RESET_SD_EMMC_A			34
+>> +#define RESET_USBCTRL			36
+>> +#define RESET_USBPHY			38
+>> +#define RESET_RSA			42
+>> +#define RESET_DMC			43
+>> +#define RESET_IRQ_CTRL			45
+>> +#define RESET_NIC_VAD			47
+>> +#define RESET_NIC_AXI			48
+>> +#define RESET_RAMA			49
+>> +#define RESET_RAMB			50
+>> +#define RESET_ROM			53
+>> +#define RESET_SPIFC			54
+>> +#define RESET_GIC			55
+>> +#define RESET_UART_C			56
+>> +#define RESET_UART_B			57
+>> +#define RESET_UART_A			58
+>> +#define RESET_OSC_RING			59
+>> +
+>> +/* RESET2 Reserved */
+>> +
+>> +#endif
+>>
+> 
+> .
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
