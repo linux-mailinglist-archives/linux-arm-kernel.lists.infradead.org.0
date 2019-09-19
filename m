@@ -2,72 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEF98B7A21
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 15:07:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF9A8B7A2A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 15:08:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vnu1Z25jDhzzHS9Ne3QNiTQl5wsaixH4OYWNa168BBA=; b=P6rcrH7YKqlSI2
-	OCv3vC5xbWlZQx4Syvjg9qp64ltbhrsXGZQNXPATfxnXLWr16dmOhghyh1n0QBicyLYSAWtDr9ESM
-	Hgs5TSBMmEEAU9BBSDtKvWOAzY/OLyCaZ7HnabV/HhrWcjiLQk0hcsdZWqdogFGylMY9F5jx4hHhu
-	Sc0NQ+LSHwUvJmZ4ddBgcyCowvr0ct5uGojUmpohgE7uVBL4/ksUO0ZGyKxz0FceK7s/8KYeYq2gG
-	c2DYNU3rYnaHB5RgT1FTbBC/itUexGEUn7XsC4fV7xnMJbtZ3bFmpabinQbx/wFoR3jyUo9gKKZGp
-	/3Rxq5mgNhRMVcSvjKcg==;
+	List-Owner; bh=ibAHzt4p4vdk8T3yHpd5QQvoFBTg22MZHXNrCgPpE7Q=; b=JwraVatWuHEbuD
+	c/IfFoi1bVEspL5muWeYAJ1DuyKVgY34RYZ7OsbuarTXGLxL9F7ItjgqAzi9rV/AVim5CDloHSOcV
+	e35G9DVclkMc/44pbcurmYlmXycj8gS7ph92BKCmI+iMV0mdV4HX6k+sSLxQFrX7O62FYt+p1c0Df
+	mtiNZXKx2x5CK8FwxPqHQwFxjaZo3/QOSwc+7Phd9XLzOChxL4AvW/Rrw8mzRjvfITjt7TAvJhZGn
+	Sfad++Eda82GZErAHxZNqyUEZy2MZOAH9uJ9YDt4AO/xAHYJo0Q4Xkhd8pRZ4FJpGNLzDHkaAbzed
+	eCjv/Xdzd8GG0XrfXsfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAwA4-0006V7-Qr; Thu, 19 Sep 2019 13:07:53 +0000
+	id 1iAwB2-0006pT-6s; Thu, 19 Sep 2019 13:08:52 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAw9g-0006Ud-VR; Thu, 19 Sep 2019 13:07:30 +0000
-Received: from mail-wr1-f46.google.com (mail-wr1-f46.google.com
- [209.85.221.46])
+ id 1iAw9o-0006Yu-PM
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 13:07:38 +0000
+Received: from mail-oi1-f174.google.com (mail-oi1-f174.google.com
+ [209.85.167.174])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 55F2921929;
- Thu, 19 Sep 2019 13:07:28 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 47DE421907
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Sep 2019 13:07:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568898448;
- bh=xDlkbYtekNq2g+j/zLZRiaXJuHeVfYxFX/p6ICWFSTw=;
+ s=default; t=1568898456;
+ bh=7c6x6cciXw60y1MAp5qCF8JC2dTq/q+YgCB8SLyOqPk=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=BCHVqSuL/6xTcR4UIQNbftn+i7ALTmzjbkxcwXg9kdHIXUeW5wKOJj0jG8SGA29kT
- rlFF6uog75GxK0bdFaRZNI0ABOEfr0Om7lb2CRZPfxIDL3GXQYc0LdqrbSwCsSMul1
- OvFGEKKeZ74rerDPYJ6ZKN6QBZCubXMaIdO0VgrU=
-Received: by mail-wr1-f46.google.com with SMTP id a11so3067674wrx.1;
- Thu, 19 Sep 2019 06:07:28 -0700 (PDT)
-X-Gm-Message-State: APjAAAUSg9NrardyUfhUthtWEYgjYsSoLd6aVE1YtetAIAzllPezqVB0
- mVQftB4qTkHQwMJoDPz45c7QnsyeUIbhvcitQ5s=
-X-Google-Smtp-Source: APXvYqyNvo9nMD/j9PGGbZY5fbWhu9DS32hN7clZh4PtaLsYsLNB9DQGeR8UyO6Q34SnbEzf8UHVp/ztmfjTiqTh1Ok=
-X-Received: by 2002:a5d:66d2:: with SMTP id k18mr7066721wrw.7.1568898446854;
- Thu, 19 Sep 2019 06:07:26 -0700 (PDT)
+ b=rLANaBJ7u/o3/Au71CBT1kL7Iz1AesheSrZWNrQYU3KIhPqXcqzDRSt3TNTjU0ICC
+ YtuL2Mb+8MCN3YX+aSM2MYkpVCpoXPE4NM1wK9cZcfe7oqcZVmY34xHX3NiRMA5TJ9
+ dZHIzZ6pmcmn8SJbokPvWglRcXxHBKx41f5cYxfk=
+Received: by mail-oi1-f174.google.com with SMTP id k20so2668107oih.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Sep 2019 06:07:36 -0700 (PDT)
+X-Gm-Message-State: APjAAAXqZMMbh3jXanN/6UiWfxm1OCrhbBqGQIG4t2bbgEol0zGvp1F5
+ +momN/P3vnf6q/zWnGzAySLPq7XVRoQcZ0JtEyc=
+X-Google-Smtp-Source: APXvYqzg4w/tXFpqJXHvHB4lq08/Vt2S/re21Kogpdz8yQzifNkZReFpzmxtyPOoRYJbDiSlFhPpgOR0t+CaR7QIEm8=
+X-Received: by 2002:aca:cf51:: with SMTP id f78mr2186088oig.8.1568898455647;
+ Thu, 19 Sep 2019 06:07:35 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190321163623.20219-12-julien.grall@arm.com>
- <0dfe120b-066a-2ac8-13bc-3f5a29e2caa3@arm.com>
- <CAJF2gTTXHHgDboaexdHA284y6kNZVSjLis5-Q2rDnXCxr4RSmA@mail.gmail.com>
- <c871a5ae-914f-a8bb-9474-1dcfec5d45bf@arm.com>
- <20190619091219.GB7767@fuggles.cambridge.arm.com>
- <CAJF2gTTmFq3yYa9UrdZRAFwJgC=KmKTe2_NFy_UZBUQovqQJPg@mail.gmail.com>
- <20190619123939.GF7767@fuggles.cambridge.arm.com>
- <CAJF2gTSiiiewTLwVAXvPLO7rTSUw1rg8VtFLzANdP2S2EEbTjg@mail.gmail.com>
- <20190624104006.lvm32nahemaqklxc@willie-the-truck>
- <CAJF2gTSC1sGgmiTCgzKUTdPyUZ3LG4H7N8YbMyWr-E+eifGuYg@mail.gmail.com>
- <20190912140256.fwbutgmadpjbjnab@willie-the-truck>
- <CAJF2gTT2c45HRfATF+=zs-HNToFAKgq1inKRmJMV3uPYBo4iVg@mail.gmail.com>
- <CAJF2gTTsHCsSpf1ncVb=ZJS2d=r+AdDi2=5z-REVS=uUg9138A@mail.gmail.com>
- <057a0af3-93f7-271c-170e-4b31e6894c3c@linaro.org>
-In-Reply-To: <057a0af3-93f7-271c-170e-4b31e6894c3c@linaro.org>
-From: Guo Ren <guoren@kernel.org>
-Date: Thu, 19 Sep 2019 21:07:15 +0800
-X-Gmail-Original-Message-ID: <CAJF2gTRbyfrUqAULPqJTXdxx8YOscPqAEuMsoJ+dTNobNrUV1g@mail.gmail.com>
-Message-ID: <CAJF2gTRbyfrUqAULPqJTXdxx8YOscPqAEuMsoJ+dTNobNrUV1g@mail.gmail.com>
-Subject: Re: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
- separate file
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
+References: <20190918104634.15216-1-s.nawrocki@samsung.com>
+ <CGME20190918104656eucas1p1d9cad1394b08d05a99151c4fbc9425ce@eucas1p1.samsung.com>
+ <20190918104634.15216-3-s.nawrocki@samsung.com> <20190919075924.GB13195@pi3>
+ <420d3c8a-a31e-1edf-3112-b9800beace1e@samsung.com>
+In-Reply-To: <420d3c8a-a31e-1edf-3112-b9800beace1e@samsung.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Thu, 19 Sep 2019 15:07:23 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPedjgXMfiGK=frXeynaqkAWvCcgEVqPeFoL0h8og7MXCA@mail.gmail.com>
+Message-ID: <CAJKOXPedjgXMfiGK=frXeynaqkAWvCcgEVqPeFoL0h8og7MXCA@mail.gmail.com>
+Subject: Re: [PATCH v1 2/9] mfd: wm8994: Add support for MCLKn clock control
+To: Sylwester Nawrocki <s.nawrocki@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_060729_059843_045FFC08 
-X-CRM114-Status: GOOD (  20.19  )
+X-CRM114-CacheID: sfid-20190919_060736_995401_F54858A6 
+X-CRM114-Status: GOOD (  18.22  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -96,86 +88,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: aou@eecs.berkeley.edu,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Arnd Bergmann <arnd@arndb.de>, suzuki.poulose@arm.com,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Palmer Dabbelt <palmer@sifive.com>, christoffer.dall@arm.com,
- iommu@lists.linux-foundation.org, Mike Rapoport <rppt@linux.ibm.com>,
- Anup Patel <anup.Patel@wdc.com>, Atish Patra <Atish.Patra@wdc.com>,
- Julien Grall <julien.grall@arm.com>, james.morse@arm.com, gary@garyguo.net,
- Paul Walmsley <paul.walmsley@sifive.com>, linux-riscv@lists.infradead.org,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ ckeepax@opensource.cirrus.com,
+ =?UTF-8?B?QmFydMWCb21pZWogxbtvxYJuaWVya2lld2ljeg==?=
+ <b.zolnierkie@samsung.com>, sbkim73@samsung.com, patches@opensource.cirrus.com,
+ broonie@kernel.org, lgirdwood@gmail.com, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Mon, Sep 16, 2019 at 8:57 PM Jean-Philippe Brucker
-<jean-philippe@linaro.org> wrote:
-> On 13/09/2019 09:13, Guo Ren wrote:
-> > Another idea is seperate remote TLB invalidate into two instructions:
+On Thu, 19 Sep 2019 at 14:49, Sylwester Nawrocki <s.nawrocki@samsung.com> wrote:
+>
+> On 9/19/19 09:59, Krzysztof Kozlowski wrote:
+> > On Wed, Sep 18, 2019 at 12:46:27PM +0200, Sylwester Nawrocki wrote:
+> >> The WM1811/WM8994/WM8958 audio CODEC DT bindings specify two optional
+> >> clocks: "MCLK1", "MCLK2". Add code for getting those clocks in the MFD
+> >> part of the wm8994 driver so they can be further handled in the audio
+> >> CODEC part.
 > >
-> >  - sfence.vma.b.asyc
-> >  - sfence.vma.b.barrier // wait all async TLB invalidate operations
-> > finished for all harts.
+> > I think these are needed only for the codec so how about getting them in
+> > codec's probe?
 >
-> It's not clear to me how this helps, but I probably don't have the whole
-> picture. If you have a place where it is safe to wait for the barrier to
-> complete, why not do the whole invalidate there?
->
-> > (I remember who mentioned me separate them into two instructions after
-> > session. Anup? Is the idea right ?)
-Forget it, I still use irq signal in my formal proposal [1]. I also
-couldn't image the whole picture :P
+> The clocks are specified in the (I2C slave device) DT node which corresponds
+> to the device as a whole and to which binds the MFD driver.  AFAICT those
+> clocks are only needed by the CODEC sub-driver but in general such clocks
+> could be used to provide device's system clock used by other functionalities
+> than audio.  We are doing something similar for other MFD drivers already
+> and I would rather stick to one pattern. IMHO it's clearer to see what
+> device the clocks belong to that way.
 
+The existing pattern is not an excuse for doing some things in a
+uglier way... If we agree that these are codec-only resources, then
+they should be acquired by codec driver. This is one minor step to
+solve difficult inter-device dependencies which stops from reusing
+parts of the code (some child of MFD heavily depends on parent).
+Existing MFD drivers sometimes follow this pattern but that's wrong.
+They follow the ugly or even crappy pattern.
 
-> >     To solve the problem, we could define a async mode in sfence.vma.b to
-> >     slove the problem and finished with per_cpu_irq/exception.
->
-> The solution I had to this problem is pinning the ASID [1] used by the
-> IOMMU, to prevent the CPU from recycling the ASID on rollover. This way
-> the CPU doesn't have to wait for IOMMU invalidations to complete, when
-> scheduling a task that might not even have anything to do with the IOMMU.
->
+Your codec driver still refers to parent and it has its resources,
+e.g. parent's device node pointer.
 
-> In the Arm SMMU, ASID and IOASID (PASID) are separate identifiers. IOASID
-> indexes an entry in the context descriptor table, which contains the ASID.
-> So with unpinned shared ASID you don't need to invalidate the ATC on
-> rollover, since the IOASID doesn't change, but you do need to modify the
-> context descriptor and invalidate cached versions of it.
-The terminology confused me a lot. I perfer use PASID for IOMMU and
-ASID is for CPU.
-Arm's entry of the context descriptor table contains a "IOASID"
-
-IOASID != ASID for CPU_TLB and IOMMU_TLB.
-
-When you say "since the IOASID doesn't change",Is it PASID or my IOASID ? -_*!
-PASID in PCI-sig was used to determine transfer address space.
-For intel, the entry which is indexed by PASID also contain S1/S2.PGD
-and DID(VMID).
-For arm, the entry which is indexed by PASID only contain S1.PGD and
-IOASID. Compare to Intel Vt-d Scalable mode, arm's design can't
-support PCI Virtual Function.
-
->
-> Once you have pinned ASIDs, you could also declare that IOASID = ASID. I
-> don't remember finding an argument to strictly forbid it, even though ASID
-> and IOASID have different sizes on Arm (respectively 8/16 and 20 bits).
-ASID and IOASID are hard to keep the same between CPU system and IOMMU
-system. So I introduce S1/S2.PGD.PPN as a bridge between CPUs and
-IOMMUs.
-See my proposal [1]
-
-1: https://lore.kernel.org/linux-csky/1568896556-28769-1-git-send-email-guoren@kernel.org/T/#u
--- 
-Best Regards
- Guo Ren
-
-ML: https://lore.kernel.org/linux-csky/
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
