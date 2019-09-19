@@ -2,103 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32B1AB771B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 12:05:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86F8DB772C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 12:10:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HQiIOGgEhQQUiSWrmRKWqQhzB5w83rvT7mxRLhhVQi0=; b=AbIooDHi5Yy8ZS
-	Xmf4rEU/vike6GO29meFImjUzoK4iZ3Qv4N1FGqwDxnTlbgl2ar/ETh0M+/TyqJH+SxLC3E1b4m9Y
-	aYFhnmkBZ7iAsNbzIzPUw4bTawwIGAGGdnPz8LsqVbJ+dKQqG6GIDG7XT3fcriLJ/GAuqwGOUkzp6
-	43c6UQ5ZzILycYAwIoYIjN7GRMnph+OxE8Q/yxSuA94bUh2XK4lCLd5MSaZLNGljlBLtMmzNActU2
-	vYWfMDTjUyI7EyCPBFbk83RB/PuQ081YXR86d6K/ipDfACrbtQLwX/TjrJhhEJzT4n32KQYDGzh21
-	OG8BxgrHpx/0yXIhkuXw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=B4M4qg+7MCZD6ZVwyRM1WXtK2nb7b3c5vBq0qlL+/KM=; b=Tl0
+	FzVil+RilzP5FvkchP5o3q8jCLRuF/tAvG3P7CvSCuVhrL4xELHYjL4SSpMHDmz7N/tJ3s/RPZUor
+	gfs/Nq3ap6oA861HoPqPAUxGDzki1FqiKSdlil5sMaUzTdS4U31kB3XIdPPWLUTFnTksJm1OH1My3
+	1v7y/ECzAlN0n+bSvB1C+mdJOrNzMy8i5S6Uf+URrOuHoJIGbpLf0RVtq2ZGYyK0JuC4vpaGhojb+
+	Sx+Zzj3k/CGXugGoo26z2wmwwEJlpmsn050AmcSR6pK+n4PCzbUhyV+GbRmzvwYpudI3Rg61ITdi7
+	H/EExsk5m5clf03DulUSRWVoDXBXcrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAtJ3-00026G-Bo; Thu, 19 Sep 2019 10:04:57 +0000
-Received: from skedge03.snt-world.com ([91.208.41.68])
+	id 1iAtOC-0005Kz-II; Thu, 19 Sep 2019 10:10:16 +0000
+Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAtIp-00025j-7R
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 10:04:44 +0000
-Received: from sntmail10s.snt-is.com (unknown [10.203.32.183])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1iAtNz-0004Pd-5k
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 10:10:05 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
+ [10.225.0.209])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by skedge03.snt-world.com (Postfix) with ESMTPS id 7B5A667B344;
- Thu, 19 Sep 2019 12:04:41 +0200 (CEST)
-Received: from sntmail14r.snt-is.com (10.203.32.184) by sntmail10s.snt-is.com
- (10.203.32.183) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Thu, 19 Sep
- 2019 12:04:41 +0200
-Received: from sntmail14r.snt-is.com ([fe80::c8f3:eae9:52c2:11a8]) by
- sntmail14r.snt-is.com ([fe80::c8f3:eae9:52c2:11a8%3]) with mapi id
- 15.01.1713.004; Thu, 19 Sep 2019 12:04:40 +0200
-From: Schrempf Frieder <frieder.schrempf@kontron.de>
-To: Anson Huang <anson.huang@nxp.com>, "robh+dt@kernel.org"
- <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
- <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, Leonard Crestez
- <leonard.crestez@nxp.com>, "daniel.lezcano@linaro.org"
- <daniel.lezcano@linaro.org>, Jacky Bai <ping.bai@nxp.com>, Daniel Baluta
- <daniel.baluta@nxp.com>, Jun Li <jun.li@nxp.com>, "l.stach@pengutronix.de"
- <l.stach@pengutronix.de>, Abel Vesa <abel.vesa@nxp.com>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>, "angus@akkea.ca"
- <angus@akkea.ca>, "ccaione@baylibre.com" <ccaione@baylibre.com>,
- "agx@sigxcpu.org" <agx@sigxcpu.org>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH 2/3] arm64: dts: imx8mm: Use correct clock for usdhc's ipg
- clk
-Thread-Topic: [PATCH 2/3] arm64: dts: imx8mm: Use correct clock for usdhc's
- ipg clk
-Thread-Index: AQHVbqhJada8Xsj3oEetJoKRBs2eSKcyddCAgAAlboCAAAk3AA==
-Date: Thu, 19 Sep 2019 10:04:40 +0000
-Message-ID: <c1c08d49-3473-b4b1-4ed1-f30276ffbbf1@kontron.de>
-References: <1568869559-28611-1-git-send-email-Anson.Huang@nxp.com>
- <1568869559-28611-2-git-send-email-Anson.Huang@nxp.com>
- <c680d114-1c14-6bf8-226c-2fdd98350158@kontron.de>
- <DB3PR0402MB3916B0DE9EBC0B0F6664CE34F5890@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-In-Reply-To: <DB3PR0402MB3916B0DE9EBC0B0F6664CE34F5890@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-Accept-Language: de-DE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [172.25.9.193]
-x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
-Content-ID: <2798A0465DE2B140910482FC94ED1272@snt-world.com>
-MIME-Version: 1.0
-X-SnT-MailScanner-Information: Please contact the ISP for more information
-X-SnT-MailScanner-ID: 7B5A667B344.AF6E0
-X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
- Provider for details
-X-SnT-MailScanner-SpamCheck: 
-X-SnT-MailScanner-From: frieder.schrempf@kontron.de
-X-SnT-MailScanner-To: abel.vesa@nxp.com, agx@sigxcpu.org,
- andrew.smirnov@gmail.com, angus@akkea.ca, anson.huang@nxp.com,
- ccaione@baylibre.com, daniel.baluta@nxp.com,
- daniel.lezcano@linaro.org, devicetree@vger.kernel.org,
- festevam@gmail.com, jun.li@nxp.com, kernel@pengutronix.de,
- l.stach@pengutronix.de, leonard.crestez@nxp.com,
- linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
- linux-kernel@vger.kernel.org, mark.rutland@arm.com, ping.bai@nxp.com,
- robh+dt@kernel.org, s.hauer@pengutronix.de, shawnguo@kernel.org
-X-Spam-Status: No
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 123DDC03AD;
+ Thu, 19 Sep 2019 10:09:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1568887800; bh=n7F8/d0PuPnpo/lcKpsjJCLtm00c/AoLt+k4nMNl6wM=;
+ h=From:To:Cc:Subject:Date:From;
+ b=fAvZVP+G/vn3I53BBX+eN5FpcVTyArg/2NvhAtz9h+s7hqaiviQeZFv1XbEoiHZRe
+ Z9DD+7GmlTqWeKZ3gDw0I4UXhfcODZR6sDarXw7Txut4pLUI1GZyIu0t6DBRDl+bz7
+ ZXGrrRAd74xQCI03BicosFe+B2ZaaNcLigkMu9jjZyECvFJYGozP068i62ax/MyWIh
+ mJDrcW3xbpgftL0ncnWZlR+rHmIgrMtNyWhcwBaJqLtEiHTdI/74Zx3PWOe3ciFgGw
+ fALdoxX0xgFONP5ItVQFDf/FTLScUXwyNIG4pn+7yNQgz6tgWqKniboeYAXWJPkgTC
+ TW0QlPzPfuE6w==
+Received: from de02dwia024.internal.synopsys.com
+ (de02dwia024.internal.synopsys.com [10.225.19.81])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 4CE25A0080;
+ Thu, 19 Sep 2019 10:09:55 +0000 (UTC)
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: netdev@vger.kernel.org
+Subject: [PATCH net] net: stmmac: selftests: Flow Control test can also run
+ with ASYM Pause
+Date: Thu, 19 Sep 2019 12:09:49 +0200
+Message-Id: <f35fa5a51f52fc1ef17a0a9ecd470e2a6792b3f8.1568887745.git.joabreu@synopsys.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_030443_594500_D72E9FC2 
-X-CRM114-Status: GOOD (  14.27  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190919_031003_234182_08B5A72C 
+X-CRM114-Status: GOOD (  12.95  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [91.208.41.68 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,43 +78,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Anson,
+The Flow Control selftest is also available with ASYM Pause. Lets add
+this check to the test and fix eventual false positive failures.
 
-On 19.09.19 11:31, Anson Huang wrote:
-> Hi, Schrempf
-> 
->> Hi Anson,
->>
->> I have a question, that is not directly related to this patch.
->> I see that for the usdhc1 and usdhc3 nodes, there is an 'assigned-clock'
->> and 'assigned-clock-rates' property but not for usdhc2. The same applies to
->> the mx8mq and mx8mn dtsi file.
->>
->> Is there any reason for this? If not can you fix it?
-> 
-> This patch series is NOT related to 'assigned-clock' or 'assigned-clock-rates'
-> property,
+Fixes: 091810dbded9 ("net: stmmac: Introduce selftests support")
+Signed-off-by: Jose Abreu <joabreu@synopsys.com>
 
-That's exactly what I'm saying. To not cause more confusion, I have sent 
-a message in a new thread: 
-http://lists.infradead.org/pipermail/linux-arm-kernel/2019-September/681426.html
+---
+Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Jose Abreu <joabreu@synopsys.com>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: netdev@vger.kernel.org
+Cc: linux-stm32@st-md-mailman.stormreply.com
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+---
+ drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-> it is just for correcting clock source according to reference manual,
-> the 'ipg' clock is from system's IPG_ROOT clock according to reference manual CCM
-> chapter, using DUMMY clock is NOT a good option, the 'ipg' clock is supposed
-> to be the clock for accessing register, and it should NOT be DUMMY if we know
-> what exactly the clock source is used.
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
+index c56e89e1ae56..4b4b03245f6e 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
+@@ -670,7 +670,7 @@ static int stmmac_test_flowctrl(struct stmmac_priv *priv)
+ 	unsigned int pkt_count;
+ 	int i, ret = 0;
+ 
+-	if (!phydev || !phydev->pause)
++	if (!phydev || (!phydev->pause && !phydev->asym_pause))
+ 		return -EOPNOTSUPP;
+ 
+ 	tpriv = kzalloc(sizeof(*tpriv), GFP_KERNEL);
+-- 
+2.7.4
 
-That's probably right and I didn't mean to question the patch at all.
 
-Thanks,
-Frieder
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
