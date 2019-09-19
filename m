@@ -2,88 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 276F2B72D2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 07:45:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4E37B7319
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 08:20:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=l9y/0/bXgj+jNzVc450TrT69e43cvz7wny8+S5SGPT0=; b=pUQq6FhYjJVf5o4U1Fw8B4npa
-	LsHSAZBdvXR2aaBYOlO8lniodMHCinliD+GGJMJKi9mqK0A2MKWYO52CixgNDI/zotOYYVONeZe3j
-	WFCo6OQUthxRtTxqHxav50lIQiYJZitREgGpqOXHWF9jFxYQO5EtGvgUxk25fc6U0qYkkEhW7pApW
-	9bX40+C1l5tum4TDAWWyYgNJ+xIG1aFoHwtU6aYZJtnAHwa+mWeWd0DMeECN2gwqUXBV0xXasNsgT
-	em8HCw/0Au5GUBT068eyHkiDsnFuskOE0JMgQq5cy4QMSC9BplcBGFEp3mlC6UrsgJ5bo8FIIZ5kC
-	q3nwGy5Rw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BPDgKepi4GOmTsUa0aGuJG5jl/v+yXZdr33+r8O76JQ=; b=gfbFF58twEPmN0
+	/ydmmUqqD4f4PgqYd2cvKM8bi/VqQQVA2Wl0tuXkecZuErspz/kOs7RluDQ+TdvC9h++uZVy+wF2C
+	ujU0/MlpXq6855zMlLxtZabDRQj7WXgQGVQJ8bxa+4MKucC8g8aOT7pdOlWy82aSWWV1Jd/MSfO2S
+	IRuFtfXwEY02bi4XIOFTX9ujUjt2ZBECAn4EMS7eEsycnl4JzmXhJUa7mZy7Sup1wRPLeTFDoinYo
+	AZywO0uxVnsJiEjkRKh0YCHMYrBOJwW16sqkB+zmPvemIPFnr1bLwDliNWC3SmozBL01B5XByYZel
+	ouMxWUOdYFzN5MjYmTxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iApFU-0003t6-Po; Thu, 19 Sep 2019 05:45:00 +0000
-Received: from pegase1.c-s.fr ([93.17.236.30])
+	id 1iApnu-0000s7-6S; Thu, 19 Sep 2019 06:20:34 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iApFH-0003rt-EV; Thu, 19 Sep 2019 05:44:49 +0000
-Received: from localhost (mailhub1-int [192.168.12.234])
- by localhost (Postfix) with ESMTP id 46Ym523Fvpz9vBnB;
- Thu, 19 Sep 2019 07:44:38 +0200 (CEST)
-Authentication-Results: localhost; dkim=pass
- reason="1024-bit key; insecure key"
- header.d=c-s.fr header.i=@c-s.fr header.b=FtPM45xR; dkim-adsp=pass;
- dkim-atps=neutral
-X-Virus-Scanned: Debian amavisd-new at c-s.fr
-Received: from pegase1.c-s.fr ([192.168.12.234])
- by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
- with ESMTP id E1DzxbKi3YAE; Thu, 19 Sep 2019 07:44:38 +0200 (CEST)
-Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
- by pegase1.c-s.fr (Postfix) with ESMTP id 46Ym521sh9z9vBn5;
- Thu, 19 Sep 2019 07:44:38 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
- t=1568871878; bh=u3IPZEW+32C7DaDMfn0DvIJKyx2qRHLH39Ao90Ba2vI=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=FtPM45xRRq+ZMAt65+IvhdTxuzxace0VwgaQdf3cKJJT4y/Eahg1dC/4UOdaGCdh8
- 2keyDA6ggFlB3Ny+FMd2SlwiqZK/16OHJduDKueIBvHCwUrv+TaOH/TmV6EmcQ6aZD
- 62XuqZlFMWXmXNg2d+icfo4iXGpGWnUP9d4AjRIg=
-Received: from localhost (localhost [127.0.0.1])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 1BE5C8B80C;
- Thu, 19 Sep 2019 07:44:39 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at c-s.fr
-Received: from messagerie.si.c-s.fr ([127.0.0.1])
- by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
- with ESMTP id kqE2oHvK7TMH; Thu, 19 Sep 2019 07:44:39 +0200 (CEST)
-Received: from [192.168.4.90] (unknown [192.168.4.90])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id C1DA68B783;
- Thu, 19 Sep 2019 07:44:36 +0200 (CEST)
-Subject: Re: [PATCH] mm/pgtable/debug: Fix test validating architecture page
- table helpers
-To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org
-References: <1892b37d1fd9a4ed39e76c4b999b6556077201c0.1568355752.git.christophe.leroy@c-s.fr>
- <cb338e2e-23b1-b8af-811c-57feb6f4e7b4@arm.com>
-From: Christophe Leroy <christophe.leroy@c-s.fr>
-Message-ID: <cc28ebaf-4167-6bc7-54a7-630cd5ab827c@c-s.fr>
-Date: Thu, 19 Sep 2019 07:44:36 +0200
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iApng-0000qo-6W
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 06:20:21 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iApnJ-0002d9-8T; Thu, 19 Sep 2019 08:19:57 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iApn6-00018G-1u; Thu, 19 Sep 2019 08:19:44 +0200
+Date: Thu, 19 Sep 2019 08:19:44 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Rob Herring <robh+dt@kernel.org>
+Subject: Re: [PATCH v2] of: restore old handling of cells_name=NULL in
+ of_*_phandle_with_args()
+Message-ID: <20190919061943.ga7jwdn4ednulvgs@pengutronix.de>
+References: <20190918063837.8196-1-u.kleine-koenig@pengutronix.de>
+ <b00ca30f-2c06-7722-96b2-123d15751cb6@axentia.se>
+ <20190918084748.hnjkiq7wc5b35wjh@pengutronix.de>
+ <CAL_JsqJuJrOj+D4xkGACC1=zaB5OUkt=SNzCOiOiTVtM9E9z+A@mail.gmail.com>
+ <20190918201954.2phyqxqhoj5jwklt@pengutronix.de>
 MIME-Version: 1.0
-In-Reply-To: <cb338e2e-23b1-b8af-811c-57feb6f4e7b4@arm.com>
-Content-Language: fr
+Content-Disposition: inline
+In-Reply-To: <20190918201954.2phyqxqhoj5jwklt@pengutronix.de>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_224447_785495_E3CE38CC 
-X-CRM114-Status: GOOD (  14.43  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190918_232020_235876_B8817093 
+X-CRM114-Status: GOOD (  12.70  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [93.17.236.30 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,60 +72,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
- James Hogan <jhogan@kernel.org>, Heiko Carstens <heiko.carstens@de.ibm.com>,
- Michal Hocko <mhocko@kernel.org>, Dave Hansen <dave.hansen@intel.com>,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, linux-s390@vger.kernel.org,
- Jason Gunthorpe <jgg@ziepe.ca>, x86@kernel.org,
- Russell King - ARM Linux <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- Vlastimil Babka <vbabka@suse.cz>, linux-snps-arc@lists.infradead.org,
- Kees Cook <keescook@chromium.org>, Mark Brown <broonie@kernel.org>,
- "Kirill A . Shutemov" <kirill@shutemov.name>,
- Thomas Gleixner <tglx@linutronix.de>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- linux-arm-kernel@lists.infradead.org,
- Sri Krishna chowdary <schowdary@nvidia.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Vineet Gupta <vgupta@synopsys.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Robin Murphy <robin.murphy@arm.com>, Joerg Roedel <joro@8bytes.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Will Deacon <will@kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Frank Rowand <frowand.list@gmail.com>, Peter Rosin <peda@axentia.se>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpMZSAxOC8wOS8yMDE5IMOgIDA5OjMyLCBBbnNodW1hbiBLaGFuZHVhbCBhIMOpY3JpdMKgOgo+
-IAo+IAo+IE9uIDA5LzEzLzIwMTkgMTE6NTMgQU0sIENocmlzdG9waGUgTGVyb3kgd3JvdGU6Cj4+
-IEZpeCBidWlsZCBmYWlsdXJlIG9uIHBvd2VycGMuCj4+Cj4+IEZpeCBwcmVlbXB0aW9uIGltYmFs
-YW5jZS4KPj4KPj4gU2lnbmVkLW9mZi1ieTogQ2hyaXN0b3BoZSBMZXJveSA8Y2hyaXN0b3BoZS5s
-ZXJveUBjLXMuZnI+Cj4+IC0tLQo+PiAgIG1tL2FyY2hfcGd0YWJsZV90ZXN0LmMgfCAzICsrKwo+
-PiAgIDEgZmlsZSBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKykKPj4KPj4gZGlmZiAtLWdpdCBhL21t
-L2FyY2hfcGd0YWJsZV90ZXN0LmMgYi9tbS9hcmNoX3BndGFibGVfdGVzdC5jCj4+IGluZGV4IDhi
-NGE5Mjc1NmFkOC4uZjJiM2M5ZWMzNWZhIDEwMDY0NAo+PiAtLS0gYS9tbS9hcmNoX3BndGFibGVf
-dGVzdC5jCj4+ICsrKyBiL21tL2FyY2hfcGd0YWJsZV90ZXN0LmMKPj4gQEAgLTI0LDYgKzI0LDcg
-QEAKPj4gICAjaW5jbHVkZSA8bGludXgvc3dhcC5oPgo+PiAgICNpbmNsdWRlIDxsaW51eC9zd2Fw
-b3BzLmg+Cj4+ICAgI2luY2x1ZGUgPGxpbnV4L3NjaGVkL21tLmg+Cj4+ICsjaW5jbHVkZSA8bGlu
-dXgvaGlnaG1lbS5oPgo+PiAgICNpbmNsdWRlIDxhc20vcGdhbGxvYy5oPgo+PiAgICNpbmNsdWRl
-IDxhc20vcGd0YWJsZS5oPgo+PiAgIAo+PiBAQCAtNDAwLDYgKzQwMSw4IEBAIHN0YXRpYyBpbnQg
-X19pbml0IGFyY2hfcGd0YWJsZV90ZXN0c19pbml0KHZvaWQpCj4+ICAgCXA0ZF9jbGVhcl90ZXN0
-cyhwNGRwKTsKPj4gICAJcGdkX2NsZWFyX3Rlc3RzKG1tLCBwZ2RwKTsKPj4gICAKPj4gKwlwdGVf
-dW5tYXAocHRlcCk7Cj4+ICsKPj4gICAJcG1kX3BvcHVsYXRlX3Rlc3RzKG1tLCBwbWRwLCBzYXZl
-ZF9wdGVwKTsKPj4gICAJcHVkX3BvcHVsYXRlX3Rlc3RzKG1tLCBwdWRwLCBzYXZlZF9wbWRwKTsK
-Pj4gICAJcDRkX3BvcHVsYXRlX3Rlc3RzKG1tLCBwNGRwLCBzYXZlZF9wdWRwKTsKPj4KPiAKPiBI
-ZWxsbyBDaHJpc3RvcGhlLAo+IAo+IEkgYW0gcGxhbm5pbmcgdG8gZm9sZCB0aGlzIGZpeCBpbnRv
-IHRoZSBjdXJyZW50IHBhdGNoIGFuZCByZXRhaW4geW91cgo+IFNpZ25lZC1vZmYtYnkuIEFyZSB5
-b3Ugb2theSB3aXRoIGl0ID8KPiAKCk5vIHByb2JsZW0sIGRvIHdoYXRldmVyIGlzIGNvbnZlbmll
-bnQgZm9yIHlvdS4gWW91IGNhbiBrZWVwIHRoZSAKc2lnbmVkLW9mZi1ieSwgb3IgdXNlIHRlc3Rl
-ZC1ieTogYXMgSSB0ZXN0ZWQgaXQgb24gUFBDMzIuCgpDaHJpc3RvcGhlCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
-bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Wed, Sep 18, 2019 at 10:19:54PM +0200, Uwe Kleine-K=F6nig wrote:
+> On Wed, Sep 18, 2019 at 03:09:06PM -0500, Rob Herring wrote:
+> > Can I get a proper patch please.
+> =
+
+> I don't understand what is wrong with my patch. Can you please expand
+> what you are missing? I just tried to git-am it and the result looks
+> fine.
+
+I see that the commit this patch is fixing isn't in Linus' tree yet. Do
+you want instead of this commit fixing the previous one a single good
+patch that replaces e42ee61017f5 ("of: Let of_for_each_phandle fallback
+to non-negative cell_count")?
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
