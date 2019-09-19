@@ -2,48 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FC27B81DB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 21:53:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3436FB81EE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 21:53:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i4+h5M50tziBasUwxsoWzHjjC7YK6L7VYi0t0iAIH54=; b=TkwBbFYzUzNumL
-	T6hG8MfSLJukbBl6hAQJ/0JlcHfMed3zpzHgDBVnWnEgGK4GdPIV7SDCV8TkH9P4OZIi20IgYqOea
-	2O/yARZJ0gLJop3qOk6jYxD9uHVfh71zoHxZyH1MOei93lQXIXSJvYta2bi0xjBWNxpd//G1Caj4e
-	pMSJOJVGcR2UvTfXtDPwuuBbHihXw2k+Q3FvxdwAesFeJcCGpP3ETM6qZS0fPHvK7zBi4Li1l3fwg
-	tJ4TmfVraZMWPmT6tfePuHRRawLQztPG11OxsJzIcUtLC+rsPjlc549ocUjmsR3qXZpw/k7n6AEJy
-	BujtX5n8G7+CsbKgEXdA==;
+	List-Owner; bh=yxYYVQHosdV25Cj/7EZy3utGflyuJeEVgS/oBsWLYvs=; b=ifc4wqQBsyNzlF
+	/2P5fUtQmToALZFZCsElHpePbr787KGn1Ec/gQe6c2BJooKbLZFbJWO6iGyFn85mLXdo721a1vtoP
+	4fZ017vY69hC1OwQE2IiLVGtDfozuEgfVznPc1wz3p0WjOKt/4b0eflpdPe6OJ3zOeBej5YH+FiV9
+	pkXIUUnWNshqbG2AoDJYUXDHOjvhcuf12v0lTPwGKVfzQbV7/80iLZaRCzMSLx92zfAmf3PYKbb36
+	vkkSV2MJpF0+ujtr80K+QakCbzDRUuPLS6Xm9h5O2U7iWfX2pcYePE+pCZHkwa3IVK0FMoWs9tXfJ
+	H4lmU10njPZ2BnyI8l/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iB2UO-0005gE-RI; Thu, 19 Sep 2019 19:53:16 +0000
+	id 1iB2Un-00068G-KH; Thu, 19 Sep 2019 19:53:41 +0000
 Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iB2Af-0002eW-Jg; Thu, 19 Sep 2019 19:32:55 +0000
+ id 1iB2Ai-0002gA-Cf; Thu, 19 Sep 2019 19:32:58 +0000
 X-Originating-IP: 91.224.148.103
 Received: from localhost.localdomain (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 1588A240007;
- Thu, 19 Sep 2019 19:32:49 +0000 (UTC)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 26558240006;
+ Thu, 19 Sep 2019 19:32:52 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Richard Weinberger <richard@nod.at>, David Woodhouse <dwmw2@infradead.org>,
  Brian Norris <computersforpeace@gmail.com>,
  Marek Vasut <marek.vasut@gmail.com>,
  Tudor Ambarus <Tudor.Ambarus@microchip.com>,
  Vignesh Raghavendra <vigneshr@ti.com>
-Subject: [PATCH v3 31/40] mtd: spinand: Instantiate a SPI-NAND on-die ECC
- engine
-Date: Thu, 19 Sep 2019 21:31:31 +0200
-Message-Id: <20190919193141.7865-32-miquel.raynal@bootlin.com>
+Subject: [PATCH v3 32/40] mtd: nand: Let on-die ECC engines be retrieved from
+ the NAND core
+Date: Thu, 19 Sep 2019 21:31:32 +0200
+Message-Id: <20190919193141.7865-33-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190919193141.7865-1-miquel.raynal@bootlin.com>
 References: <20190919193141.7865-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_123254_118144_C7178EE9 
-X-CRM114-Status: GOOD (  15.63  )
+X-CRM114-CacheID: sfid-20190919_123257_105987_4F894D49 
+X-CRM114-Status: UNSURE (   9.64  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -77,117 +78,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make use of the existing functions taken from the SPI-NAND core to
-instantiate an on-die ECC engine specific to the SPI-NAND core. The
-next step will be to tweak the core to use this object instead of
-calling the helpers directly.
+Before making use of the ECC engines, we must retrieve them. Add the
+necessary boilerplate.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- drivers/mtd/nand/spi/core.c | 69 +++++++++++++++++++++++++++++++++++++
- include/linux/mtd/spinand.h |  9 +++++
- 2 files changed, 78 insertions(+)
+ drivers/mtd/nand/ecc.c   | 6 ++++++
+ include/linux/mtd/nand.h | 1 +
+ 2 files changed, 7 insertions(+)
 
-diff --git a/drivers/mtd/nand/spi/core.c b/drivers/mtd/nand/spi/core.c
-index 49b252bc1352..5a935b7343eb 100644
---- a/drivers/mtd/nand/spi/core.c
-+++ b/drivers/mtd/nand/spi/core.c
-@@ -245,6 +245,75 @@ static const struct mtd_ooblayout_ops spinand_noecc_ooblayout = {
- 	.free = spinand_noecc_ooblayout_free,
- };
+diff --git a/drivers/mtd/nand/ecc.c b/drivers/mtd/nand/ecc.c
+index da3aa2379b94..4f869d33213d 100644
+--- a/drivers/mtd/nand/ecc.c
++++ b/drivers/mtd/nand/ecc.c
+@@ -500,6 +500,12 @@ struct nand_ecc_engine *nand_ecc_get_sw_engine(struct nand_device *nand)
+ }
+ EXPORT_SYMBOL(nand_ecc_get_sw_engine);
  
-+static int spinand_ondie_ecc_init_ctx(struct nand_device *nand)
++struct nand_ecc_engine *nand_ecc_get_ondie_engine(struct nand_device *nand)
 +{
-+	struct spinand_device *spinand = nand_to_spinand(nand);
-+	struct mtd_info *mtd = nanddev_to_mtd(nand);
-+	struct spinand_ondie_ecc_conf *engine_conf;
-+
-+	nand->ecc.ctx.conf.provider = NAND_ON_DIE_ECC_ENGINE;
-+	nand->ecc.ctx.conf.step_size = nand->ecc.requirements.step_size;
-+	nand->ecc.ctx.conf.strength = nand->ecc.requirements.strength;
-+
-+	engine_conf = kzalloc(sizeof(*engine_conf), GFP_KERNEL);
-+	if (!engine_conf)
-+		return -ENOMEM;
-+
-+	nand->ecc.ctx.priv = engine_conf;
-+
-+	if (spinand->eccinfo.ooblayout)
-+		mtd_set_ooblayout(mtd, spinand->eccinfo.ooblayout);
-+	else
-+		mtd_set_ooblayout(mtd, &spinand_noecc_ooblayout);
-+
-+	return 0;
++	return nand->ecc.ondie_engine;
 +}
++EXPORT_SYMBOL(nand_ecc_get_ondie_engine);
 +
-+static void spinand_ondie_ecc_cleanup_ctx(struct nand_device *nand)
-+{
-+	kfree(nand->ecc.ctx.priv);
-+}
-+
-+static int spinand_ondie_ecc_prepare_io_req(struct nand_device *nand,
-+					    struct nand_page_io_req *req,
-+					    void *oobbuf)
-+{
-+	struct spinand_device *spinand = nand_to_spinand(nand);
-+	bool enable = (req->mode != MTD_OPS_RAW);
-+
-+	/* Only enable or disable the engine */
-+	return spinand_ecc_enable(spinand, enable);
-+}
-+
-+static int spinand_ondie_ecc_finish_io_req(struct nand_device *nand,
-+					   struct nand_page_io_req *req,
-+					   void *oobbuf)
-+{
-+	struct spinand_ondie_ecc_conf *engine_conf = nand->ecc.ctx.priv;
-+	struct spinand_device *spinand = nand_to_spinand(nand);
-+
-+	if (req->mode == MTD_OPS_RAW)
-+		return 0;
-+
-+	/* Nothing to do when finishing a page write */
-+	if (req->type == NAND_PAGE_WRITE)
-+		return 0;
-+
-+	/* Finish a page write: check the status, report errors/bitflips */
-+	return spinand_check_ecc_status(spinand, engine_conf->status);
-+}
-+
-+static struct nand_ecc_engine_ops spinand_ondie_ecc_engine_ops = {
-+	.init_ctx = spinand_ondie_ecc_init_ctx,
-+	.cleanup_ctx = spinand_ondie_ecc_cleanup_ctx,
-+	.prepare_io_req = spinand_ondie_ecc_prepare_io_req,
-+	.finish_io_req = spinand_ondie_ecc_finish_io_req,
-+};
-+
-+static __maybe_unused struct nand_ecc_engine spinand_ondie_ecc_engine = {
-+	.ops = &spinand_ondie_ecc_engine_ops,
-+};
-+
- static int spinand_write_enable_op(struct spinand_device *spinand)
- {
- 	struct spi_mem_op op = SPINAND_WR_EN_DIS_OP(true);
-diff --git a/include/linux/mtd/spinand.h b/include/linux/mtd/spinand.h
-index 87d774b7500c..7526e1edb47b 100644
---- a/include/linux/mtd/spinand.h
-+++ b/include/linux/mtd/spinand.h
-@@ -271,6 +271,15 @@ struct spinand_ecc_info {
+ MODULE_LICENSE("GPL");
+ MODULE_AUTHOR("Miquel Raynal <miquel.raynal@bootlin.com>");
+ MODULE_DESCRIPTION("Generic ECC engine");
+diff --git a/include/linux/mtd/nand.h b/include/linux/mtd/nand.h
+index b410ef778e52..b25d17ef9714 100644
+--- a/include/linux/mtd/nand.h
++++ b/include/linux/mtd/nand.h
+@@ -273,6 +273,7 @@ int nand_ecc_finish_io_req(struct nand_device *nand,
+ 			   struct nand_page_io_req *req, void *oobbuf);
+ bool nand_ecc_correction_is_enough(struct nand_device *nand);
+ struct nand_ecc_engine *nand_ecc_get_sw_engine(struct nand_device *nand);
++struct nand_ecc_engine *nand_ecc_get_ondie_engine(struct nand_device *nand);
  
- #define SPINAND_HAS_QE_BIT		BIT(0)
- 
-+/**
-+ * struct spinand_ondie_ecc_conf - private SPI-NAND on-die ECC engine structure
-+ * @status: status of the last wait operation that will be used in case
-+ *          ->get_status() is not populated by the spinand device.
-+ */
-+struct spinand_ondie_ecc_conf {
-+	u8 status;
-+};
-+
  /**
-  * struct spinand_info - Structure used to describe SPI NAND chips
-  * @model: model name
+  * struct nand_ecc - High-level ECC object
 -- 
 2.20.1
 
