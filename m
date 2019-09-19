@@ -2,106 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48637B765C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 11:33:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BECFB766F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 11:37:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yl/cllUBqWuEFPb3JjE8VZfUC0FDjjY9KyxEsm3wJqI=; b=CvL9HWGgLFo52I
-	QfdMhXjeX2aTyU3a+Abn22c/sLpL/GGyFEgjv4t0uFb6IXxt5tOQAdJyQJQUS7fwvE7w4sJELrB7G
-	NNpHSsLZB7xJoUQXr4ff+qgYoEjP9OaSPMuVc7MaEUbHCYSLghD8lc/adtCxj0knw1V2MDt0I57zz
-	+jg1cBgAzzZNnP6Ddc4x8yvlm98+M4jj0Wt6lRJUCnxwfv+GWxWBF5WKjEBUH9inaBu48Sr45k4KO
-	qzbHLNd6yzKpUaGYrexjDHN+1VmjmJhJzhdKuboi0bdK+utohpa0XJvM5D2+8m30hPWbKK6+4GyFX
-	zRv/b7jhQvZ09cuf58Sw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7YZ+sOd57jBHzzrkM5vfMLjaaTTWl0WFHI4wUMGkyW0=; b=My4OtcAKfjUwpM
+	oYyctwdp6FLU7cjWmtswl0n6FPp7FpfcUFl1ReFacPLxZyxTUKGVl8QleXwx72N7T4ibrR1SuvvDz
+	UPBshZkEPX/DpO5lAJFz0iuJMZO9PK7zGSX0RYMYQpDle9rD8cf5cstUjPrIwNGRdFpSysWlmsrVX
+	veh67orfxslZfzDH1qOXUBVtvYEzay63KXcnXG5FoY2BwkedocoSKUZasVr7P+EwOvPGdC05vW9ZZ
+	snbPT07SDaTs9dieRXMhy/PUiuGZUN+Ncm5XTzsynNYRJCiAg8dV/mHLkUlGY75A+WWg0O9dy6mIb
+	5bwupf1haPbmzYrSdlsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAsoV-00040Q-Kp; Thu, 19 Sep 2019 09:33:23 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1iAssA-00067X-23; Thu, 19 Sep 2019 09:37:10 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAsoI-000401-82
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 09:33:11 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x8J9OI66018021;
- Thu, 19 Sep 2019 09:33:02 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=corp-2019-08-05;
- bh=ntE+c9cESazn72DuT4SsObOcii7mo2s3N68Qv9djNSw=;
- b=V54QvGT+VYQNpveqIkWSOpQzqmOSxvNze/4+IsHujmBXR1puO+PnSm+OFjQLE+64pIBH
- 3qP39ipm4Kho7S6ZHmcBOjA8mzJ+e3KCkXQ1xyroKesqkUFXtwtiWMMsOIpv86zuPKSt
- /ze9oN6AhzieZKCrHeXwDd2A5aOEtpP/OYD+iYsC7Na17P/cc5tCkYOz9C4yJLLexgu6
- toq91MbiBoWIcZrvHvkL2caEYqXHl7xWz0Tt+3QG/+GOz6Nuyp6zY8AoedabO5Kx+DTe
- 60nDzRa04VjJqpqmoHOnG6p5qq0WNRsd3SlJSJ8+VrZNsf8cIdLz5mlEWo7zE3NFewin lA== 
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
- by userp2120.oracle.com with ESMTP id 2v3vb4tny5-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 19 Sep 2019 09:33:01 +0000
-Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
- by aserp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x8J9SsYw169589;
- Thu, 19 Sep 2019 09:33:01 GMT
-Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
- by aserp3020.oracle.com with ESMTP id 2v3vbfrjxy-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 19 Sep 2019 09:33:01 +0000
-Received: from abhmp0001.oracle.com (abhmp0001.oracle.com [141.146.116.7])
- by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x8J9Wx3D018214;
- Thu, 19 Sep 2019 09:32:59 GMT
-Received: from kadam (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Thu, 19 Sep 2019 02:32:59 -0700
-Date: Thu, 19 Sep 2019 12:32:46 +0300
-From: Dan Carpenter <dan.carpenter@oracle.com>
-To: Lukasz Luba <l.luba@partner.samsung.com>
-Subject: Re: [PATCH v3 1/2] memory: samsung: exynos5422-dmc: Fix kfree() of
- devm-allocated memory and missing static
-Message-ID: <20190919093246.GF20699@kadam>
-References: <20190919092641.4407-1-l.luba@partner.samsung.com>
- <CGME20190919092652eucas1p12dbf9ba9d60a0c89cb7de05ab61893be@eucas1p1.samsung.com>
- <20190919092641.4407-2-l.luba@partner.samsung.com>
+ id 1iAsrY-0005qW-Q0
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 09:36:35 +0000
+Received: by mail-wm1-x343.google.com with SMTP id v17so3116048wml.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Sep 2019 02:36:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=iI+tkS4PiIp8BCmRgY+UMG+pL+AXGxEv73nrxIiQz5s=;
+ b=Eek7UVSEU0ern91R93g8cvieSXZ4myQs3jTIKt8uNgy3UmF7EY3N6zv6hRWuUA3Aqh
+ pcaLBQay01dui0oEJH2ylcIuEgiM+gdX0FbSy/6S0n3Bam7ZVmYIHEO82hdL6XAU3EWQ
+ moqgrtOEjl41mEsoLXecZ5SSNTBW3e8zElGSSrUEZ4+NACiWB1+1O0jdSRlbSzsflLde
+ SuDMzvOn1adnsaPbBO7sjVdchYm2qlmusAeVbEaDIG6oLbotWY8kECrmD5SqvaO+d0q2
+ 0ajv2GyUCwPVD/iD1LyB9H0isyNQOUiwMYeTX+Wqh/BM6qFTr4kpHdNHLr6wTbyl5RNI
+ xDkg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=iI+tkS4PiIp8BCmRgY+UMG+pL+AXGxEv73nrxIiQz5s=;
+ b=Sy1kK+xwpQQPygfaeb9dUDguJEFfa7dq8DJustsy6R70Hf6Q23Rnw+8I5j6zoeNsYv
+ qKLamsHDadHbnOXljheBti0y7lp8VGZkD5EqMeH5n0exQhUkucuz3BVTK+hPQs/jp5zX
+ 04t4cYVBxhTTms6vGK5RfOAqQ5JWcWXcnz1RQ57iw8s8/jKmM4is0lPQJEZJjrn5IL5c
+ OwJvgfvJNEGkGRSIkb0U23lhohn5G+CWJcmtaVl+SsCnWlGORJmg8ERMhLOZGB0DorTr
+ iBxNR6nYSs1ql7ijAmhmiViSA8ZD+mc1U5JAxJFVZHvqE/3OfAzQD2t/U616I5NzAeKZ
+ h6Ww==
+X-Gm-Message-State: APjAAAWcdIYpPfoWVv0Wn4yLUBvj915Jn86JCblh7l126bFu4yZ/L7xN
+ Z2lAKvMNOlx2hzrQkSitSzaknw==
+X-Google-Smtp-Source: APXvYqznJatZccIrCzOBZuDhpnxTn29NEmTv3f2C4wKt2Z2k+sDqXbS3pe8+3Gdr0QAGBoRbyrmgrA==
+X-Received: by 2002:a05:600c:2153:: with SMTP id
+ v19mr2053035wml.146.1568885789291; 
+ Thu, 19 Sep 2019 02:36:29 -0700 (PDT)
+Received: from bender.baylibre.local
+ (wal59-h01-176-150-251-154.dsl.sta.abo.bbox.fr. [176.150.251.154])
+ by smtp.gmail.com with ESMTPSA id q19sm16701186wra.89.2019.09.19.02.36.28
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 19 Sep 2019 02:36:28 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: jbrunet@baylibre.com
+Subject: [PATCH 0/3] clk: meson: g12a: fixes for DVFS
+Date: Thu, 19 Sep 2019 11:36:24 +0200
+Message-Id: <20190919093627.21245-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190919092641.4407-2-l.luba@partner.samsung.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9384
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1908290000 definitions=main-1909190090
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9384
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1908290000
- definitions=main-1909190090
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_023310_415599_6E39DA61 
-X-CRM114-Status: GOOD (  12.51  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190919_023632_852729_F77169E5 
+X-CRM114-Status: UNSURE (   9.15  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,22 +94,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- willy.mh.wolff.ml@gmail.com, linux-samsung-soc@vger.kernel.org,
- cw00.choi@samsung.com, b.zolnierkie@samsung.com, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, krzk@kernel.org, robh+dt@kernel.org,
- kyungmin.park@samsung.com, kgene@kernel.org, myungjoo.ham@samsung.com,
- s.nawrocki@samsung.com, linux-arm-kernel@lists.infradead.org,
- m.szyprowski@samsung.com
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Thanks!  Looks good.
+This is the first serie of fixes for DVFS support on G12a:
+- Patch 1 fixes a rebase issue where a CLK_SET_RATE_NO_REPARENT
+  appeared on the wrong clock and a SET_RATE_PARENT went missing
+- Patch 2 helps CCF use the right clock tree for the sub 1GHz clock range
+- Patch 3 fixes an issue when we enter suspend with a non-SYS_PLL CPU clock,
+  leading to a SYS_PLL never enabled again
 
-regards,
-dan carpenter
+Neil Armstrong (3):
+  clk: meson: g12a: fix cpu clock rate setting
+  clk: meson: g12a: set CLK_MUX_ROUND_CLOSEST on the cpu clock muxes
+  clk: meson: clk-pll: always enable a critical PLL when setting the
+    rate
+
+ drivers/clk/meson/clk-pll.c |  2 +-
+ drivers/clk/meson/g12a.c    | 13 +++++++++++--
+ 2 files changed, 12 insertions(+), 3 deletions(-)
+
+-- 
+2.22.0
 
 
 _______________________________________________
