@@ -2,97 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75B0BB8120
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 21:01:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4C7DB813B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 21:13:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:From:To:Subject:
-	MIME-Version:References:In-Reply-To:Date:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6bcAyoafrAgsDIgD3WvD4z7dmGcY5sTL9RNijKk2Q5I=; b=XHnDPUSjHH33qN
-	y6Z6/LV1AFZIFror6WznVDALYcBcMK55yNuZizi6dx3SLMTuiqQskcGPun/PH1HGsMTmfFn1KXJNZ
-	WJ2bXUyWKV+O1ruyP94c71O3hQyeXYcs58Os4cnYS0MluHBMyUYDgzMvdSC/4y8RA00Asg9xbOXZX
-	fNCtBHpMFrCEluWJRaEbBcZ7hWdMQZm/S2MkxCaUHbyVnJKblYj2KejQbMbeRIoSPPo3SVBOvJOwe
-	962r5veyI1Gs+4yL+5eDinZc+SSJa6vGyfEYTtauG6h/IxifH3bULLwR05wm/zCxi9mns3oCrXvHc
-	s4V19fdIA+j65J+QAz2g==;
+	List-Owner; bh=Xe4V2SqTYoPo8coWU+PepRtc1Yd5EKnjfPIFMnpocfQ=; b=rwGcvNmC/j7kxz
+	kpVflBjUtCe7ByXTDf/T/Y99yXmbAy4rNWxY7eKBAU0Cr1XYbWlccKbYgn31TpdxmvKngUaQtJ8N0
+	9Gs6+S6W/EJc5LIoWCWfJbq7I2QBXavuuSSWUUlaHGkjXE9tNmjgZ7kQ3nRBw4OCwrNljO0a5FYTp
+	6pKGeMERiBC49lWN/jx1r6cllvZUKrB1eT67o2RDbsAtuLwKMozuhBKWsl0V6y4kkA8qN2KoiYt+O
+	bAvvbuQM1cKdAEwKqLY2YeRI/QrQ3iKK4ScvUb3dTeASlu2r8+rpeHYIV9sqJx5o+YmrDXjMFw5GI
+	5b6oTs8ThxFMMoM7e0Ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iB1fu-0007Wb-Mt; Thu, 19 Sep 2019 19:01:06 +0000
-Received: from mout.gmx.net ([212.227.17.21])
+	id 1iB1rs-0003Ho-1M; Thu, 19 Sep 2019 19:13:28 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iB1fH-0007Hp-Ao; Thu, 19 Sep 2019 19:00:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1568919580;
- bh=hj0v1Dk284VBCCqtbevoonaHYwBxNHrfdQxj3+1olfo=;
- h=X-UI-Sender-Class:Date:In-Reply-To:References:Subject:Reply-to:To:
- CC:From;
- b=Q3ls9dDaa3lO23ToTcVtAxpChrkrT67aZVQKDBGAWOCCrvsABcWRYXnWiuyIoimY0
- 5z/z7hnxea5Qoy+C30DO7BORwklbHAWP4H/Kw0K8Vwx0cuD+UMdUDUHnkQfNdMSaMW
- QU0gINfMFb8OWKPNbB7O7wUPJUuoG2sB9og87XgA=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.10.26] ([80.208.215.153]) by mail.gmx.com (mrgmx105
- [212.227.17.168]) with ESMTPSA (Nemesis) id 1MbAgq-1hdtp60qym-00ba2G; Thu, 19
- Sep 2019 20:59:40 +0200
-Date: Thu, 19 Sep 2019 20:59:35 +0200
-User-Agent: K-9 Mail for Android
-In-Reply-To: <1567059876.15320.3.camel@mtksdaap41>
-References: <1566531931-9772-1-git-send-email-hsin-hsiung.wang@mediatek.com>
- <1566531931-9772-3-git-send-email-hsin-hsiung.wang@mediatek.com>
- <trinity-1f82bff1-535e-47cd-9a2f-8faccb56e356-1566562433314@3c-app-gmx-bs11>
- <e8a918ab-3e7a-b487-db77-df28d56518ce@gmail.com>
- <0A87F427-2D81-412A-9549-09A51A021799@public-files.de>
- <b5a21908-faee-17d1-ce26-99b941c0fa70@gmail.com>
- <trinity-a57f08bb-e30e-4e74-911c-c40e335d00da-1566580580817@3c-app-gmx-bs75>
- <1567059876.15320.3.camel@mtksdaap41>
+ id 1iB1rR-0003HM-K5
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 19:13:03 +0000
+Received: by mail-pg1-x544.google.com with SMTP id u72so2405500pgb.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Sep 2019 12:13:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=fsOi0SFfSN2yoIxCUiiprAv5GXxCTBdV5Rjzv/QvUC4=;
+ b=Ygfi5PLgvOdlLEUfSsLPZjXG42DiRLdkLAvpYnycAmGDmrUr/TIXlWJAcIxsfn79Bs
+ YBh/r0Wba9QRQLdw5gxXI5Pltq2MPJ+fvVPdlXtvGRtMYKgmz+DmXdqNDUq1ZbxsfYxB
+ W+0CLUNYBHYIdtx1phNl/6TFF/PDM/vFDeWxs=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=fsOi0SFfSN2yoIxCUiiprAv5GXxCTBdV5Rjzv/QvUC4=;
+ b=WF/w+GbWIlUI3OKIPQK65cBhMmG6COriKQbPQALomZxtye+VEwUIvo/QyAZ095CiZI
+ KuLzcCR2FPuBCqCXbyqIIgYj6G9pcUHP0fHvIqCYpJFLGyC4csHUs3oQTZUyvIJUfwZN
+ jjE+O/8B5AtzzTq/p39ALMIGa5gL4hAAqYr1r48TqpZ2NcmIpTS+2+LffwZ76/QgUdOU
+ YoJgAExuhv7ExI3BlbDW2ZWWnywQyWemgYuTssyYB4tyz4SuzjzT/ZerQKrvZMeauum0
+ +QJRlT4JzQ7klzbs/OvtfauK23BU0HQdZDnDxzY1b1xnBLKPW5RNpyPs14EjGLPUp9Ln
+ /tbA==
+X-Gm-Message-State: APjAAAVurL5AmzmJjPL7gqGfOA9vvKpZK8k/SMuNGwKaJ+CzVBkzRcXd
+ 9w+PWBiWLzUMsT9Tc6BGcvSshQ==
+X-Google-Smtp-Source: APXvYqzCGWxfh2CHzGuU/6Ulwz6TII5MmWjYtAf1Fq1mgvskK7rVHoYdtG5FhPUFjK9ZNIeMNLYA7Q==
+X-Received: by 2002:a63:9557:: with SMTP id t23mr10546733pgn.236.1568920380569; 
+ Thu, 19 Sep 2019 12:13:00 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
+ by smtp.gmail.com with ESMTPSA id 22sm11354771pfo.131.2019.09.19.12.12.59
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 19 Sep 2019 12:12:59 -0700 (PDT)
+Date: Thu, 19 Sep 2019 12:12:58 -0700
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH 6/8] PM / devfreq: Add dev_pm_qos support
+Message-ID: <20190919191258.GU133864@google.com>
+References: <cover.1568764439.git.leonard.crestez@nxp.com>
+ <feab364d702ba62102f212b7d415d9f768159163.1568764439.git.leonard.crestez@nxp.com>
 MIME-Version: 1.0
-Subject: Re: Aw: Re: [BUG] [PATCH v5 02/10] mfd: mt6397: extract irq related
- code from core driver
-To: linux-mediatek@lists.infradead.org,
- Hsin-hsiung Wang <hsin-hsiung.wang@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>
-From: Frank Wunderlich <frank-w@public-files.de>
-Message-ID: <904EC97A-486D-4C22-9D36-838D25EB7A6F@public-files.de>
-X-Provags-ID: V03:K1:row03C78r7NZowZd8aVAl1Eeyaqqfenw5BZOEshUX8lFBJvuhz4
- T+PL7oTN1F06ozQi0+zBKKCvCjoji4fkxqRZYCs4Niyy/E2/wOLW0QO2w/ZBpvxECmQWl/i
- A6QlqHL6V32iBPMdpj4GYf0evMqUF1ziUcKsrai89pMK9PRtGVWj6HXo3RI2nn0FwZR5Jz+
- lrl7R4R95drFfoDuQz9Wg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:e7BeDAeyJjA=:q/h5IzV1+NgCc3T9CmosSg
- 5EqJDfGKXmoIHjQZkXq8oJq+sjZkfSZvZPdGHFckLlVfGVh5bL98PsKt6DGldZNBHN1p8Yh22
- gSANqdGmtfpzBVbqmWzawdC++Qo/URhEqfAYw5t/5jtZQaPbcETwtqJhaTocnUeRNq7O2m10k
- +giTC5JeqqoydXT5s7p06GpravF0F08jWcA1B5/BtR05ITCeHOhJlIF+gHZD50PqFOALYnfUn
- oOaARwN2zGdGdZRmVB579kngNnoqBcIyI7A0dnwrs1o4TvpFvkvUVHvJ6xIxglodmj0yYnHDz
- JJIWTw93tIZ/s66GZQ2dKEkq2Ds7+KW6e3GysK20VR1rX3r/Ll0iL4tJDV19WRY+oPTqiuipD
- c0Qh1fvK+ew0WTzxbaASsidqATQNvDEOrhKcGvhawSEAYIXo3jI769l7TEelE0RtDp5pon/xq
- wWSbWtnDb4smBSrqADxXE1aXBh0gLJTgwO0s6Qy/sJSvmXyaCP8yfExTQypOoDE51gkDR/l7V
- UoINLG06vd6EaqaYgJgy+92YLhugFzupIcVSP2ZDdHOo/c3bbPSvPWFwyyrPTXR3aDDR4bzWF
- N9xPJZWCLNeqql2BqXyX/BNWPLRwJM49HBfIUJs7OHpYn0pMV5XYI5KM/Zf78qiVNQZ5YHYvV
- 3uiAjYU849vUmDCkwmCFJjZoLqKbEwgaTmKmS9A9i1gE89hEsHOiIa2Qf5Bng9H1Utnysq3lC
- KdssfnlXSmZa4CPktrrC9DqVjtUr+2hVZjujLB5vpumb884hT0Ruz886H/4GQg4ZsL5/K51Kj
- ugJHHH0LTsFdQVGGoFFr1jMdoy/cMDU/jBAnoa9lunXk+b5hPlMLrmEHOjGu0CJU0WRq/yggs
- QpXzZpFp6ulWwdKNnN2ZZL0OnX3r45zjcx4Vf3qOT6nGLoDlXaBfaHwwPyp0+1Krq7N8uJMl5
- sO+lQ9qXsLMNxRaU0Trv/0E0bjZPFylaGGXPnau15KgXPiuInFIgwlcU3Q8XsNvo7xXtO4873
- 6sw++dLvqQu+fBI0pzrJnYwVph+StTcKRW0+qHJ0LrQQZPM/pgplDHHPdV5vBUrMBG1hH3IeL
- wXBRjnkwpGFFAeyz10TtMtqXJHcIpt9wvcc4camaPl5slaFI3rCrt8Xq3qhpBimk5htF+VdVU
- MYhdw0Cjsxc6opGMtremMxOcVHEMcGiCD7lqvu66REZg68HyRdcLnZzDXqYv9H75zooPiMPzE
- bdHoJ3bB+sx8eukAEEgyWXBXIGQge/cIOeL7NxJyMbLQgww1Yphgbj/o7mgk=
+Content-Disposition: inline
+In-Reply-To: <feab364d702ba62102f212b7d415d9f768159163.1568764439.git.leonard.crestez@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_120027_880062_D32A7D34 
-X-CRM114-Status: UNSURE (   4.80  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190919_121301_682689_AA650055 
+X-CRM114-Status: GOOD (  23.35  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.21 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,36 +96,194 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: frank-w@public-files.de
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, srv_heupstream@mediatek.com,
- devicetree@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sean Wang <sean.wang@mediatek.com>, Liam Girdwood <lgirdwood@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org,
- Richard Fontana <rfontana@redhat.com>, Mark Brown <broonie@kernel.org>,
- linux-arm-kernel@lists.infradead.org,
- =?ISO-8859-1?Q?=22Ren=E9_van_Dorst=22?= <opensource@vdorst.com>,
- Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
- Lee Jones <lee.jones@linaro.org>, Kate Stewart <kstewart@linuxfoundation.org>,
- linux-rtc@vger.kernel.org
+Cc: Artur =?utf-8?B?xZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
+ Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
+ linux-pm@vger.kernel.org, Viresh Kumar <viresh.kumar@linaro.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Alexandre Bailon <abailon@baylibre.com>,
+ Georgi Djakov <georgi.djakov@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ Jacky Bai <ping.bai@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi
+On Wed, Sep 18, 2019 at 03:18:25AM +0300, Leonard Crestez wrote:
+> Register notifiers with the pm_qos framework in order to respond to
+> requests for MIN_FREQUENCY and MAX_FREQUENCY.
 
-When is new version ready? First 2 patches are still in next for 5.4 and i see no fix so i guess it is still broken.
+To make it clear that this change on it's own is a NOP maybe add
+something like "No constraints are added for now though.", as in
+67d874c3b2c6 ("cpufreq: Register notifiers with the PM QoS framework")
 
-Regards Frank
+> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> ---
+>  drivers/devfreq/devfreq.c | 71 +++++++++++++++++++++++++++++++++++++++
+>  include/linux/devfreq.h   |  5 +++
+>  2 files changed, 76 insertions(+)
+> 
+> diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
+> index 51a4179e2c69..d8d57318b12c 100644
+> --- a/drivers/devfreq/devfreq.c
+> +++ b/drivers/devfreq/devfreq.c
+> @@ -22,17 +22,20 @@
+>  #include <linux/platform_device.h>
+>  #include <linux/list.h>
+>  #include <linux/printk.h>
+>  #include <linux/hrtimer.h>
+>  #include <linux/of.h>
+> +#include <linux/pm_qos.h>
+>  #include "governor.h"
+>  
+>  #define HZ_PER_KHZ 1000
+>  
+>  #define CREATE_TRACE_POINTS
+>  #include <trace/events/devfreq.h>
+>  
+> +#define HZ_PER_KHZ	1000
+> +
+>  static struct class *devfreq_class;
+>  
+>  /*
+>   * devfreq core provides delayed work based load monitoring helper
+>   * functions. Governors can use these or can implement their own
+> @@ -123,10 +126,16 @@ static void devfreq_get_freq_range(struct devfreq *devfreq,
+>  	} else {
+>  		*min_freq = freq_table[devfreq->profile->max_state - 1];
+>  		*max_freq = freq_table[0];
+>  	}
+>  
+> +	/* constraints from dev_pm_qos: */
 
-Am 29. August 2019 08:24:36 MESZ schrieb Hsin-hsiung Wang <hsin-hsiung.wang@mediatek.com>:
->Hi Frank/Matthias,
->
->Thanks for your comments.
->The root cause seems I didn't split the code well.
->I will fix it in the next version.
+nit: QoS constraints?
+
+> +	*min_freq = max(*min_freq, HZ_PER_KHZ * (unsigned long)dev_pm_qos_read_value(
+> +				devfreq->dev.parent, DEV_PM_QOS_MIN_FREQUENCY));
+> +	*max_freq = min(*max_freq, HZ_PER_KHZ * (unsigned long)dev_pm_qos_read_value(
+> +				devfreq->dev.parent, DEV_PM_QOS_MAX_FREQUENCY));
+> +
+>  	/* constraints from sysfs: */
+>  	*min_freq = max(*min_freq, devfreq->min_freq);
+>  	*max_freq = min(*max_freq, devfreq->max_freq);
+>  
+>  	/* constraints from opp interface: */
+> @@ -605,10 +614,49 @@ static int devfreq_notifier_call(struct notifier_block *nb, unsigned long type,
+>  	mutex_unlock(&devfreq->lock);
+>  
+>  	return ret;
+>  }
+>  
+> +/**
+> + * devfreq_qos_notifier_call() - Common handler for qos freq changes.
+
+nit: QoS
+
+s/freq/constraint/ ?
+
+> + * @devfreq:    the devfreq instance.
+> + */
+> +static int devfreq_qos_notifier_call(struct devfreq *devfreq)
+> +{
+> +	int ret;
+> +
+> +	mutex_lock(&devfreq->lock);
+> +	ret = update_devfreq(devfreq);
+> +	mutex_unlock(&devfreq->lock);
+> +
+> +	return ret;
+> +}
+> +
+> +/**
+> + * devfreq_qos_min_notifier_call() - Callback for qos min_freq changes.
+
+nit: QoS
+
+> + * @nb:		Should to be devfreq->nb_min
+
+s/to//
+
+> + */
+> +static int devfreq_qos_min_notifier_call(struct notifier_block *nb,
+> +					 unsigned long val, void *ptr)
+> +{
+> +	struct devfreq *devfreq = container_of(nb, struct devfreq, nb_min);
+> +
+> +	return devfreq_qos_notifier_call(devfreq);
+> +}
+> +
+> +/**
+> + * devfreq_qos_max_notifier_call() - Callback for qos min_freq changes.
+
+nit: QoS
+
+s/min/max/
+
+> + * @nb:		Should to be devfreq->nb_max
+
+s/to//
+
+> + */
+> +static int devfreq_qos_max_notifier_call(struct notifier_block *nb,
+> +					 unsigned long val, void *ptr)
+> +{
+> +	struct devfreq *devfreq = container_of(nb, struct devfreq, nb_max);
+> +
+> +	return devfreq_qos_notifier_call(devfreq);
+> +}
+> +
+>  /**
+>   * devfreq_dev_release() - Callback for struct device to release the device.
+>   * @dev:	the devfreq device
+>   *
+>   * Remove devfreq from the list and release its resources.
+> @@ -619,10 +667,15 @@ static void devfreq_dev_release(struct device *dev)
+>  
+>  	mutex_lock(&devfreq_list_lock);
+>  	list_del(&devfreq->node);
+>  	mutex_unlock(&devfreq_list_lock);
+>  
+> +	dev_pm_qos_remove_notifier(devfreq->dev.parent, &devfreq->nb_max,
+> +			DEV_PM_QOS_MAX_FREQUENCY);
+> +	dev_pm_qos_remove_notifier(devfreq->dev.parent, &devfreq->nb_min,
+> +			DEV_PM_QOS_MIN_FREQUENCY);
+> +
+
+mega-nit: removing 'max' then 'min' does things in reverse order as
+during initialization, which is common practice. But since the order
+here doesn't really matter I'd stick to the common min/max order,
+might readers save a few milli-seconds wondering why 'max' comes first.
+
+>  	if (devfreq->profile->exit)
+>  		devfreq->profile->exit(devfreq->dev.parent);
+>  
+>  	mutex_destroy(&devfreq->lock);
+>  	kfree(devfreq->time_in_state);
+> @@ -732,10 +785,27 @@ struct devfreq *devfreq_add_device(struct device *dev,
+>  	if (err) {
+>  		put_device(&devfreq->dev);
+>  		goto err_out;
+>  	}
+>  
+> +	/*
+> +	 * Register notifiers for updates to min_freq/max_freq after device is
+
+nit: min/max_freq?
+
+> +	 * initialized (and we can handle notifications) but before the governor
+> +	 * is started (which should do an initial enforcement of constraints)
+> +	 */
+> +	devfreq->nb_min.notifier_call = devfreq_qos_min_notifier_call;
+> +	err = dev_pm_qos_add_notifier(devfreq->dev.parent, &devfreq->nb_min,
+> +				      DEV_PM_QOS_MIN_FREQUENCY);
+> +	if (err)
+> +		goto err_devfreq;
+
+IIUC you rely on the notifiers being removed by
+devfreq_dev_release(). Does dev_pm_qos_remove_notifier() behave
+gracefully if the notifier is not initialized/added or do we need
+to use BLOCKING_NOTIFIER_INIT() or similar?
 
 _______________________________________________
 linux-arm-kernel mailing list
