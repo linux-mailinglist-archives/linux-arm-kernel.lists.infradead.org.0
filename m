@@ -2,143 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E44DB7B5A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 15:57:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4768CB7B74
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 16:02:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
-	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=97M7d4n6h/hszhTBXEGbtslPa8OMsFVQLdnZ4IVUDyA=; b=hbZrVnW3qNuKUN
-	B2eXI+d5qJZWiKVpk6DkZU4MjcweVwq6y7yYkZaDzm5ZFDJqGfEwiWDbSD+VUJF667uMcmD6K2Rld
-	5xtfJr9XHcUw2DJzRLFIYRsNiWgMay7hbDnwHp7nlp1l+pK7s7Nzo7i/Pam8sYg00nuD/55zYOhBi
-	L3yYQnBiCNRMDUOAlr1Lh26l1NAMERYA1dSfJTdxF3Lk7Id9M2oPYqlrjrXEb0XaLYsWR8gDcK86z
-	2zYZgtb7UJQ32zuMj0LIWRqyk5kbqWceEmVOxsnq3MwERQGbIOQ0cOs+PuDTomVRiiuAOGs99AJiM
-	Oy3mlOnVkkBBMPlAlN6Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ReHSPnpYhO6sv+aqWWi2tCAv/2iYYS9lwUbGIE0Z6LI=; b=hTiOuHUQ9dtoXHhIEkNo9URp4
+	1jupN2LfIJt7osdaKGHGud0AB6QT4WpLpxYNQG6ipOXKBjkn5q/rDbBWC/8b0siV8arqjvHT4MtBM
+	oTB+yPqriAgUVfG8kAjzUPtorkEsTItuf+SwHdlOaj2nNACe5/NY8TeyKZxlic7+ZH0VZXoWE0SbZ
+	XDPo/EeFBZbpbVz8jpNWUPs4oaB6SOhr1H1Gibukv30Do1VCQlkb0GsOORASM4kWw/iAIibTbVtTu
+	fI+KlYdgr2cvEf/pzOTyWYowPXpvWtWN/uMT5ZRiw92/5EgQXIG5iSywhD4Uq+s7MrLqibFFU0Yn3
+	1YHxVJ5lw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAwwM-0003Rv-VE; Thu, 19 Sep 2019 13:57:47 +0000
-Received: from mout.web.de ([212.227.15.4])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAww5-0003Qy-P1
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 13:57:32 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1568901419;
- bh=2itNaQy+sSJmv7IRFrgbQVOCGiABDW1aTMQwerda4Ho=;
- h=X-UI-Sender-Class:To:From:Subject:Cc:Date;
- b=j3Ukc1hyBl+sj7qOjIoMpGLxE32dB++axrHRW614ZXkE7SayBfou536TFyFKb00SQ
- 36C5ofQJhq7jhSTojs6+mBhwJJCC3gHnpgf7qgI86L4u2OtXaG/i562jFyewNO/9t/
- EyJ3rEIJ2xzIo+EtrowIinY0X6qyw+It/VqYrJJI=
-X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from [192.168.1.2] ([93.132.191.36]) by smtp.web.de (mrweb001
- [213.165.67.108]) with ESMTPSA (Nemesis) id 0McFgl-1iStie0G07-00Jalj; Thu, 19
- Sep 2019 15:56:59 +0200
-To: linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Arnd Bergmann <arnd@arndb.de>, Felipe Balbi <balbi@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
- Stephen Boyd <swboyd@chromium.org>, Sylvain Lemieux
- <slemieux.tyco@gmail.com>, Vladimir Zapolskiy <vz@mleia.com>,
- Wei Yongjun <weiyongjun1@huawei.com>
-From: Markus Elfring <Markus.Elfring@web.de>
-Subject: [PATCH] usb: gadget: udc: lpc32xx: Use
- devm_platform_ioremap_resource() in lpc32xx_udc_probe()
-Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
- 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 FEE=
-Message-ID: <6671a08a-fb20-f15e-5dbd-8b6b710e0ef9@web.de>
-Date: Thu, 19 Sep 2019 15:56:56 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.0
+	id 1iAx1L-00058v-7q; Thu, 19 Sep 2019 14:02:55 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iAx19-000587-GI
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 14:02:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 765EA337;
+ Thu, 19 Sep 2019 07:02:42 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 55E443F59C;
+ Thu, 19 Sep 2019 07:02:41 -0700 (PDT)
+Subject: Re: [REGRESSION] sdhci no longer detects SD cards on LX2160A
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ "Y.b. Lu" <yangbo.lu@nxp.com>
+References: <b19a0640-5d71-a005-eb0f-c6840f181e5d@free.fr>
+ <20190917081931.GI25745@shell.armlinux.org.uk>
+ <20190917104200.GJ25745@shell.armlinux.org.uk>
+ <20190917111631.GL25745@shell.armlinux.org.uk>
+ <20190917114210.GM25745@shell.armlinux.org.uk>
+ <20190917123326.GN25745@shell.armlinux.org.uk>
+ <20190917130759.GO25745@shell.armlinux.org.uk>
+ <c12e21c3-6bef-38ed-3693-b958be17d555@arm.com>
+ <20190917134947.GS25745@shell.armlinux.org.uk>
+ <ab90e9a4-052d-5a7b-bfae-f2f02f17f1b7@arm.com>
+ <20190919091601.GH25745@shell.armlinux.org.uk>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <20fe58a0-f0ed-733b-87fb-47d667094491@arm.com>
+Date: Thu, 19 Sep 2019 15:02:39 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Language: en-US
-X-Provags-ID: V03:K1:EwaVOO2O/6UCooJydUvagzMuaCL7LXccGb10TPm0rB8mt6OXn3Z
- oHiuBc/IH4SluhKLR8NN0B7YR18T3/zG2bw2QWQ58+3WaxtWpJ2GCvUvPCazbAjxvLwNsde
- Ss8zTpmitBV9ARsXa3p4/U8K1gDbkYlCC0qxYL7s4Ih69a/ThQ3/7qxQMeQ8r7ZJg5Uzf/S
- tTUKTB+vMoHSmLZqVlBZQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:t4gytpA5OsI=:XDaN0S3/D9dLDXnd560fpe
- gwmPoNGF07dsIq1UEj+eDDoHV65kRfLGx2lemSwpADFpvoTEbxFVqaDyucBUYMULwbXbAdACV
- tGpTzluQ7y6esAObxfTP9rJGxxv/Byi2Eu8DrNfzrWFnqhtJbLk/kGE4PF2M9k7nkSNfeCVCO
- Zn47dLVi+/cBY6sUBs5i4e4h7qb6tZPMCQdmry97x5Y5Raaypb57LMYU/2op7uSWlnO3Bs7Dk
- W7bmfzuutAYcFGed+mTBQvY8F+ZszVULlIaiPDl343WCyKRuUkyW4dcodRydHGGo/RjDcGlfs
- GaUSkJ+E4RLkkgM5HfWy5+gBzOrUMphRMUe6s/DvVEM1I+cvn5XSXDw2JJyWBxeEmyJKic17I
- Q4v8RTXkhsV4sUZT7SauKp25uTLs/4yvmCfHR05hIrDf7kA6Y/jhXH8uHTRX5DCNQSEdNoM+Z
- KsLFvjcQWezCInDm3Sb4vJwiFeo6OOHNP6OKg4WoGEpVyXjta4cWfH0EHZ6/8kSxOno2ofKr/
- XkgMaQhLJXuagh4SQ3VGnCP7OKTtiu9/tNapzpnfc4GoyUVQHjja8NVo13878oXPMTyKr2VCi
- xE7NQGFNQsYnQOL8BCjzauWaUm48bcCjK3fWPm8q2Ot64SU7D2O/MIlQSIWCRBPYKtLQlhHAa
- 9+Tvs9oIEeKm9Ww9+8RNchQnG6XILtBvdYBZjFB6g3l0SiD9Eeko2xKkaEF2V5b6T0zZ+bdnJ
- tk6puhjWOwJRSe8urnPq8Z+arvbpqCbji7v8kpQ3gwijwrwJqqiWdxKyi+bM6ddSY1S7wU9ab
- rpUYfbrNNM0ydCa9f4dX2/a/iBzOdRv2ir6zFY5kVKnqcZk7wKgzrvrvjFagqAS/bs3smHpO0
- utSHQZNbmOYk/ZAo+UB299y2ROvvQLwMr88x2ZsUUyJ/Xx1XmwLmgo9MmA8bM9g03USxA9P3h
- b9UnlCOuHyKGoRuUDS68U6Ds3fRWrpdZq+0nlwB4HJ8eF7m8V2UfX52sZc0sxVTfvL5k9/Lg9
- WvmPAVkdYAaSCv9ikwcseGnHg5ikqOcLqY6iEHJ6UQ+XtBVwhcmyErcolrKtxPGxE7da+UKTw
- 0w6i9vf51sYqA2G5uwV+Em1jZrMn4rlDrRIZWgoP97ZLA0uJ7HleKozrbNKyMT6sq/PDtLNTZ
- Nek/k7KZxWdJqvzvJNqdlDrKBeSL+yldAM5kzNVEjLFsMaGwYCl27cq94Hj3QLcOPxrrCeEGn
- x88lAbzqOFb79Dxo6h4k0LyftDy/o8TLvl0PVslMLbeSN9Bv74cOWlonQd1M=
+In-Reply-To: <20190919091601.GH25745@shell.armlinux.org.uk>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_065730_143559_7E57F645 
-X-CRM114-Status: GOOD (  11.12  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190919_070243_632799_6655CFAD 
+X-CRM114-Status: GOOD (  29.99  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.4 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (markus.elfring[at]web.de)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -150,60 +72,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- kernel-janitors@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
- Himanshu Jha <himanshujha199640@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: dann frazier <dann.frazier@canonical.com>, linux-mmc@vger.kernel.org,
+ Adrian Hunter <adrian.hunter@intel.com>, Will Deacon <will.deacon@arm.com>,
+ Nicolin Chen <nicoleotsuka@gmail.com>, Christoph Hellwig <hch@lst.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Markus Elfring <elfring@users.sourceforge.net>
-Date: Thu, 19 Sep 2019 15:47:24 +0200
+On 19/09/2019 10:16, Russell King - ARM Linux admin wrote:
+> On Tue, Sep 17, 2019 at 03:03:29PM +0100, Robin Murphy wrote:
+>> On 17/09/2019 14:49, Russell King - ARM Linux admin wrote:
+>>> As already replied, v4 mode is not documented as being available on
+>>> the LX2160A - the bit in the control register is marked as "reserved".
+>>> This is as expected as it is documented that it is using a v3.00 of
+>>> the SDHCI standard, rather than v4.00.
+>>>
+>>> So, sorry, enabling "v4 mode" isn't a workaround in this scenario.
+>>>
+>>> Given that v4 mode is not mandatory, this shouldn't be a work-around.
+>>>
+>>> Given that it _does_ work some of the time with the table >4GB, then
+>>> this is not an addressing limitation.
+>>
+>> Yes, that's what "something totally different" usually means.
+>>
+>>>> However, the other difference between getting a single page directly from
+>>>> the page allocator vs. the CMA area is that accesses to the linear mapping
+>>>> of the CMA area are probably pretty rare, whereas for the single-page case
+>>>> it's much more likely that kernel tasks using adjacent pages could lead to
+>>>> prefetching of the descriptor page's cacheable alias. That could certainly
+>>>> explain how reverting that commit manages to hide an apparent coherency
+>>>> issue.
+>>>
+>>> Right, so how do we fix this?
+>>
+>> By describing the hardware correctly in the DT.
+> 
+> It would appear that it _is_ correctly described given the default
+> hardware configuration, but the driver sets a bit in a control
+> register that enables cache snooping.
 
-Simplify this function implementation by using a known wrapper function.
+Oh, fun. FWIW, the more general form of that statement would be "by 
+ensuring that the device behaviour and the DT description are 
+consistent", it's just rare to have both degrees of freedom.
 
-This issue was detected by using the Coccinelle software.
+Even in these cases, though, it tends to be ultimately necessary to 
+defer to what the DT says, because there can be situations where the IP 
+believes itself capable of enabling snoops, but the integration failed 
+to wire things up correctly for them to actually work. I know we have to 
+deal with that in arm-smmu, for one example.
 
-Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
----
- drivers/usb/gadget/udc/lpc32xx_udc.c | 6 +-----
- 1 file changed, 1 insertion(+), 5 deletions(-)
+> Adding "dma-coherent" to the DT description does not seem to be the
+> correct solution, as we are reliant on the DT description and driver
+> implementation both agreeing, which is fragile.
+> 
+>  From what I can see, there isn't a way for a driver to say "I've made
+> this device is coherent now" and I suspect making the driver set the
+> DMA snoop bit depending on whether "dma-coherent" is present in DT or
+> not will cause data-corrupting regressions for other people.
+> 
+> So, we're back to where we started - what is the right solution to
+> this problem?
+> 
+> The only thing I can think is that the driver needs to do something
+> like:
+> 
+> 	WARN_ON(!dev_is_dma_coherent(dev));
+> 
+> in esdhc_of_enable_dma() as a first step, and ensuring that the snoop
+> bit matches the state of dev_is_dma_coherent(dev)?  Is it permitted to
+> use dev_is_dma_coherent() in drivers - it doesn't seem to be part of
+> the normal DMA API?
 
-diff --git a/drivers/usb/gadget/udc/lpc32xx_udc.c b/drivers/usb/gadget/udc/lpc32xx_udc.c
-index b3e073fb88c6..0ed3fd8c6610 100644
---- a/drivers/usb/gadget/udc/lpc32xx_udc.c
-+++ b/drivers/usb/gadget/udc/lpc32xx_udc.c
-@@ -3000,7 +3000,6 @@ static int lpc32xx_udc_probe(struct platform_device *pdev)
- 	struct device *dev = &pdev->dev;
- 	struct lpc32xx_udc *udc;
- 	int retval, i;
--	struct resource *res;
- 	dma_addr_t dma_handle;
- 	struct device_node *isp1301_node;
+The safest option would be to query the firmware property layer via 
+device_get_dma_attr() - or potentially short-cut to of_dma_is_coherent() 
+for a pure DT driver. Even disregarding API purity, I don't think the 
+DMA API internals are really generic enough yet to reliably poke at 
+(although FWIW, *certain* cases like dma_direct_ops would now actually 
+work as expected if one did the unspeakable and flipped 
+dev->dma_coherent from a driver, but that would definitely not win any 
+friends).
 
-@@ -3048,9 +3047,6 @@ static int lpc32xx_udc_probe(struct platform_device *pdev)
- 	 *  IORESOURCE_IRQ, USB device interrupt number
- 	 *  IORESOURCE_IRQ, USB transceiver interrupt number
- 	 */
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	if (!res)
--		return -ENXIO;
-
- 	spin_lock_init(&udc->lock);
-
-@@ -3061,7 +3057,7 @@ static int lpc32xx_udc_probe(struct platform_device *pdev)
- 			return udc->udp_irq[i];
- 	}
-
--	udc->udp_baseaddr = devm_ioremap_resource(dev, res);
-+	udc->udp_baseaddr = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(udc->udp_baseaddr)) {
- 		dev_err(udc->dev, "IO map failure\n");
- 		return PTR_ERR(udc->udp_baseaddr);
---
-2.23.0
-
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
