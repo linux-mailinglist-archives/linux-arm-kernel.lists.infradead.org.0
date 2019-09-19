@@ -2,49 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 167FBB7D3D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 16:51:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADAC3B7D41
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 16:51:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=e66Ro2S6SQHoQo9zh71nrZQ+DwymlUzeiEsfg1Hxe/4=; b=WyRy9MotaytQ3l
-	RFxzLzr3sFODPBEdyMjUBTLMsptiNQ4Sqqqv+z3VDUovQLp8lZRIvQIyydC+qTAxfNiqQ5REf09Cd
-	aa/kkDg/hRS6Lc+3O27OEsRJvVABqHQgJ5q96Ycy0AmzsWMPaJLScF6OZ/k+ArLCnJKJw9XgL1c1y
-	NWHEkviZdXNJmLkH/MC+Ps5QSLZaLExQxSDgtHR2xnJLomFa+zAgd4Pi2fTxu+8iQEllOSgISQw+/
-	BT5r8pW9v65p7JsKvGpTW7Gh5QKgO5OI+0/E+vllpqgjM2Km4ov8DfZrlln3sBO878DQhYxslfwYT
-	D3HkZXmoaziSig4cGcjw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8ZNXs73J6vQYOrYxY/gTqfEfvRDOUN9K3P3toNKHmqs=; b=hZUKDnwrSctvAC
+	PLXAQ8StIyJJ10EfQwZFsqlW7yBevuJDP3uawTXyMHYCtmmyiKN6Cqvu37K/0PpJTc4435jK+9Bib
+	/mXvhnbPIguMiMVOfF3B6vpx28yy62qwgm/1e7YvkyOVTrQ1f02xxms/D72N5dfNXrF4ZRCND+aPs
+	WlNXih3FZApvQriN1EQOc3iJpVB2Nm/8F/fRJ3408PO2y26XuOvJGqDiqmC3Rm2DcJ1OdsG4hckpq
+	1NqdatSIRPnJ8ngDBQwlVgC8JbVAiDIp8cf769IIkKVbQAX+a7g6d4Z0ZIGr9yX74cvzkpRc2fVV8
+	4WYSluro0a3efSbj7iOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAxmO-000554-Nz; Thu, 19 Sep 2019 14:51:32 +0000
-Received: from mx1.emlix.com ([188.40.240.192])
+	id 1iAxmh-0005KC-U6; Thu, 19 Sep 2019 14:51:52 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAxmC-00054P-7Z
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 14:51:21 +0000
-Received: from mailer.emlix.com (unknown [81.20.119.6])
- (using TLSv1.2 with cipher ADH-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mx1.emlix.com (Postfix) with ESMTPS id 213045FD85;
- Thu, 19 Sep 2019 16:51:18 +0200 (CEST)
-From: Philipp Puschmann <philipp.puschmann@emlix.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3] serial: imx: adapt rx buffer and dma periods
-Date: Thu, 19 Sep 2019 16:51:14 +0200
-Message-Id: <20190919145114.13006-1-philipp.puschmann@emlix.com>
-X-Mailer: git-send-email 2.23.0
+ id 1iAxmL-00057m-OP
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 14:51:31 +0000
+Received: by mail-ed1-x544.google.com with SMTP id c4so3508772edl.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Sep 2019 07:51:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=vg2zcBttUsMDTXTj6Y52ujR6gzQ0UC888oEHXYicUhU=;
+ b=BB6nymCjrYWzk/ezn8V9Bq8KAzOheOe4V00zoaJQI/atMda4h54Mjta1Uc/U1nU5Sv
+ P6uItwg2j6i5JS/3XBWemgPA5lOFQlGF4omk6PSeLFhTPsuwvLfEdAN8F1cZA7Fy9KDZ
+ A2YZuhQ4yXE1EiOkGERPUkqchDSHIsSEoDo5/WkhC0zhcUY4OtX81qD1iqULmAkagnwK
+ dTz/N78siErEbNh/2BPf/7174+TI8olQ+ElxPCIRoWyvP3GV6e2NqI+7g2CK6e0Opqha
+ WHvMmg1qNdrM9FHLjYqcHpKnPlaJMQWxp/xK1G6+AJFDSKtYA5YRCKwktG72ZCxkar5v
+ W6ig==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=vg2zcBttUsMDTXTj6Y52ujR6gzQ0UC888oEHXYicUhU=;
+ b=L48ipbiK1kw/LOOzFjrbTSTBYosiUCCHYl6OhRjk8wRxjYv3cmmO9c1ltxgwRxJI3D
+ Cb33srmYdYb4hPiXlBlTKNhTGD1uDTWzSu5kAWwQG8RIdfalFvRjdvwskGpx08hFqm/l
+ XZLSwRScprwZuvTPLLVubYVEsZmPobrXnUuoR8BAWaY7IcQyFEP5vMHDoCIpLAz+hAun
+ OVFyGvj3pqVSQ7/ml1Xnins56DAAYgRjEYqqTaNRXeS2Z2XBHbAQHDyiiJdb1bLMARNJ
+ H4e1BDJOIXjylNvTMQzd9TYu2cOdPnlxpULfCKcWRjyz5uWze3f4hhjmmSQ7y6wPic+i
+ wu1Q==
+X-Gm-Message-State: APjAAAVi14I40f+uE3h31PSiP84Txvy6rNiONIOxIynsGGPvJal9uOgE
+ v8r39ELQYtMBdI5rIvVd/kyIng==
+X-Google-Smtp-Source: APXvYqyCvmJGG8xROMmxyF0PjR7AUd5prnHdYr7FnNrvlnFxqdqu5Pi0sRzdrKGCbsxBEQrr2IcUKA==
+X-Received: by 2002:a17:906:31c3:: with SMTP id
+ f3mr15028805ejf.296.1568904685177; 
+ Thu, 19 Sep 2019 07:51:25 -0700 (PDT)
+Received: from lophozonia ([85.195.192.192])
+ by smtp.gmail.com with ESMTPSA id f6sm1666003edr.12.2019.09.19.07.51.23
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 19 Sep 2019 07:51:24 -0700 (PDT)
+Date: Thu, 19 Sep 2019 16:51:22 +0200
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
+To: Auger Eric <eric.auger@redhat.com>
+Subject: Re: [PATCH 3/8] iommu/arm-smmu-v3: Support platform SSID
+Message-ID: <20190919145122.GA1013538@lophozonia>
+References: <20190610184714.6786-1-jean-philippe.brucker@arm.com>
+ <20190610184714.6786-4-jean-philippe.brucker@arm.com>
+ <63d4a71a-8e3f-f663-34bc-6647971b7e4b@redhat.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <63d4a71a-8e3f-f663-34bc-6647971b7e4b@redhat.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_075120_421704_7896A4BC 
-X-CRM114-Status: GOOD (  12.39  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190919_075130_102707_FDE04E29 
+X-CRM114-Status: GOOD (  17.25  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,80 +100,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: festevam@gmail.com, fugang.duan@nxp.com, linux-serial@vger.kernel.org,
- gregkh@linuxfoundation.org, s.hauer@pengutronix.de,
- u.kleine-koenig@pengutronix.de, linux-imx@nxp.com, kernel@pengutronix.de,
- jslaby@suse.com, Philipp Puschmann <philipp.puschmann@emlix.com>,
- yibin.gong@nxp.com, shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org,
- l.stach@pengutronix.de
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ jacob.jun.pan@linux.intel.com, robin.murphy@arm.com, joro@8bytes.org,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ robh+dt@kernel.org, will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Using only 4 DMA periods for UART RX is very few if we have a high
-frequency of small transfers - like in our case using Bluetooth with
-many small packets via UART - causing many dma transfers but in each
-only filling a fraction of a single buffer. Such a case may lead to
-the situation that DMA RX transfer is triggered but no free buffer is
-available. When this happens dma channel ist stopped - with the patch
-"dmaengine: imx-sdma: fix dma freezes" temporarily only - with the
-possible consequences that:
-with disabled hw flow control:
-  If enough data is incoming on UART port the RX FIFO runs over and
-  characters will be lost. What then happens depends on upper layer.
+Hi Eric,
 
-with enabled hw flow control:
-  If enough data is incoming on UART port the RX FIFO reaches a level
-  where CTS is deasserted and remote device sending the data stops.
-  If it fails to stop timely the i.MX' RX FIFO may run over and data
-  get lost. Otherwise it's internal TX buffer may getting filled to
-  a point where it runs over and data is again lost. It depends on
-  the remote device how this case is handled and if it is recoverable.
+Sorry for the delay. I'll see if I can resend this for v5.5, although I
+can't do much testing at the moment.
 
-Obviously we want to avoid having no free buffers available. So we
-decrease the size of the buffers and increase their number and the
-total buffer size.
+On Mon, Jul 08, 2019 at 09:58:22AM +0200, Auger Eric wrote:
+> Hi Jean,
+> 
+> On 6/10/19 8:47 PM, Jean-Philippe Brucker wrote:
+> > For platform devices that support SubstreamID (SSID), firmware provides
+> > the number of supported SSID bits. Restrict it to what the SMMU supports
+> > and cache it into master->ssid_bits.
+> The commit message may give the impression the master's ssid_bits field
+> only is used for platform devices.
 
-Signed-off-by: Philipp Puschmann <philipp.puschmann@emlix.com>
-Reviewed-by: Lucas Stach <l.stach@pengutronix.de>
----
+Ok maybe I should add that this field will be used for PCI PASID as
+well.
 
-Changelog v3:
- - enhance description
+> > @@ -2097,6 +2098,16 @@ static int arm_smmu_add_device(struct device *dev)
+> >  		}
+> >  	}
+> >  
+> > +	master->ssid_bits = min(smmu->ssid_bits, fwspec->num_pasid_bits);
+> In case the device is a PCI device, what is the value taken by
+> fwspec->num_pasid_bits?
 
-Changelog v2:
- - split this patch from series "Fix UART DMA freezes for iMX6"
- - add Reviewed-by tag
+It would be zero, as firmware only specifies a value for platform
+devices. For a PCI device, patch 8/8 fills master->ssid_bits from the
+PCIe PASID capability.
 
- drivers/tty/serial/imx.c | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
+> > +	/*
+> > +	 * If the SMMU doesn't support 2-stage CD, limit the linear
+> > +	 * tables to a reasonable number of contexts, let's say
+> > +	 * 64kB / sizeof(ctx_desc) = 1024 = 2^10
+> ctx_desc is 26B so 11bits would be OK
 
-diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx.c
-index 87c58f9f6390..51dc19833eab 100644
---- a/drivers/tty/serial/imx.c
-+++ b/drivers/tty/serial/imx.c
-@@ -1034,8 +1034,6 @@ static void imx_uart_timeout(struct timer_list *t)
- 	}
- }
- 
--#define RX_BUF_SIZE	(PAGE_SIZE)
--
- /*
-  * There are two kinds of RX DMA interrupts(such as in the MX6Q):
-  *   [1] the RX DMA buffer is full.
-@@ -1118,7 +1116,8 @@ static void imx_uart_dma_rx_callback(void *data)
- }
- 
- /* RX DMA buffer periods */
--#define RX_DMA_PERIODS 4
-+#define RX_DMA_PERIODS	16
-+#define RX_BUF_SIZE	(PAGE_SIZE / 4)
- 
- static int imx_uart_start_rx_dma(struct imx_port *sport)
- {
--- 
-2.23.0
+This refers to the size of the hardware context descriptor, not struct
+arm_smmu_ctx_desc. Next version moves this to a define and makes it
+clearer.
+
+Thanks,
+Jean
 
 
 _______________________________________________
