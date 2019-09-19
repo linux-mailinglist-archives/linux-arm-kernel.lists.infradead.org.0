@@ -2,150 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DC2FB7F07
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 18:26:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73584B7F0C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 18:26:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=msSh0V+781DCNgvEa7XNBOS76o6z1KYqPjZVlKembwo=; b=XboFSQ2bQqJj7l
-	LlEAQyk/4I4tCAl14P538mIn0U1PttLL2VtpjA+cbKtsAyyZXyjTxk8mgcuqumF0iAajeSWBy5b7j
-	8wEaoS0WCcnMDaX7mNnOlm6UXR0gcoWfi9OQq+OcKNZa4FEgdscRvBd8l3rJA64xLOxY8S/WBOdz3
-	5uPAEtmrEgS0J4BVumzNFD8qOCFExBT8R8vtGKRUY7GmOvmI/BGo0WeXRnFJt6PJrJrDmSj95D8SC
-	WdU2Fn8NiCAKm8ptjcf90PXaGAgJkOFqZA9pt0aZp8iD6ByJLXsiJeJ71ItX97DEpOGetHLvQvYQh
-	BgeO9dBpixZ7CMq/IjOw==;
+	List-Owner; bh=JRD7Ph5Vl83X+KM3LPtKh7PTKU14A04eVUsEHBTERHY=; b=Z/+UYHUeL+9YcO
+	V0YUmC629pVIr7Nzfv1VeD4i/HPiu9ce4YiZ7lpN6Ir03oIhRK/CDvPXT1hYjnt/gFaXsWMGqyFqK
+	/PHRlAjJD6rIXYPCrPTvsgaJFPMxT56WNoL7qSHZEWemwUY4QB4/wtPRRupa3ygBHxWWrQihZe1Ck
+	ovmFoMT3jrIvfGlGVXnj+j4MpxA+k3AJTHUDJ9fuerKRYn95aXhjRYOo6wm2/vwqB5cVkohsAmGqi
+	joMB78odK4phbG+txm5jV7hQqoZdk4lqj3pN6AbomseqN0T3EiOXUbFpnTwXKz06QLfU5F9v55hlr
+	VmUYQlo1vN0NFm/qrvBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAzFr-0004m1-Ql; Thu, 19 Sep 2019 16:26:04 +0000
-Received: from esa2.microchip.iphmx.com ([68.232.149.84])
+	id 1iAzGY-00056z-0K; Thu, 19 Sep 2019 16:26:46 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAzFW-0004l9-L3
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 16:25:44 +0000
-Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
- Codrin.Ciubotariu@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
- envelope-from="Codrin.Ciubotariu@microchip.com";
- x-sender="Codrin.Ciubotariu@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa2.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
- envelope-from="Codrin.Ciubotariu@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa2.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Codrin.Ciubotariu@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: Q1XwrhEX3GMlcMGaGJeUKoZVURFaVDmMXjlV0pB33APj0+0NYOpKzs4+SlSICepAmdUBxGxEWO
- hzmGhOe3QLE752HVi0rPXx/MEfA/JIYyLYwmcimQR7Qs4ezuRn2zDJNPa569sqxV4O7tlCgMfy
- ScjcqklgSQWJ/t9lrm5DK1D32JXffHjwEaAe0sUSBYFqvhsPOptjo1npM/T8sCvutWsw+Ts36i
- KWscymcwjBspRvC4P64qKi58JfKIjRNS4pjEcLaSMHJYfqyFDMtplG3GxaKkgK6JzSWIETjWLp
- UsE=
-X-IronPort-AV: E=Sophos;i="5.64,524,1559545200"; d="scan'208";a="49566631"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 19 Sep 2019 09:25:35 -0700
-Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Thu, 19 Sep 2019 09:25:34 -0700
-Received: from NAM01-BN3-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.71) with Microsoft SMTP Server
- (version=TLS1_2, 
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
- Transport; Thu, 19 Sep 2019 09:25:34 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=GTVSbG7m2wu3lPb+UAfG+ZaNKQRPzu40mhaZnIGNF5dT+xM2o/shKn3P51F6lXCAlEdZJ4jv93WFj28BH4PZROeUIJ5dHQcBXuBr2cn8abD03eYu1qPsC5tutcgLWfLak2NrKWs6l6UcsI2oQIWxgNql1zCSquDhbaQ/y+5CSuRnAn2OrY1p0Pf4mWQLYgFzYEc7aTFDbs+qzBRIn6xbBUWxwBiRZ49TOhenFGADts2/VdgurQmfaax6ujICOrS79gnVgttBjnefDEqBY+qhhgNqikhx2ave+4R56mcJfwvDL8PNsLfP26yCoDQXiGy54xAXFu1XiuAVWIzy9VRKtg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=vMUEfJsk9pjwVhXCMLHWKHc41K/itFbtMtAWeMZ00sk=;
- b=WBEruDgEEZEMyCCMjDGUbtS3WrFQVY7tpmjm/wTm6kk+hIzhgHZq0T87kJzmoY3SsWtMu7qjIEG0iqdND9EX8fc8WsNz/KXerUU6LZiM+ywFgCVR5DBL3AnIFX+CTa+G9GkAGYFyanZe1S2u5y5b96tnfJTDyIwMOxqACE+B2HLmfiMylDJxVYSIgwkPjnMMwUdNpdshyOZamaSYkQgk6jCtTwivFOakFpiYeR1EW2E5F6p5QPti+IzsmuH/Xea0CuKN/mW+4V/CUJquvaAKJS+jrXikWuQ9G+K5GPN4NZeKsf/hYVFz0wleVY3ihAl5Mfcd8aOd9H5mj9xhlGi3mg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+ id 1iAzG6-00053e-OP
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 16:26:21 +0000
+Received: by mail-wr1-x443.google.com with SMTP id y19so3776804wrd.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Sep 2019 09:26:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=vMUEfJsk9pjwVhXCMLHWKHc41K/itFbtMtAWeMZ00sk=;
- b=hcPwvtHA6WPobqsLFv5CYoxBn9x7pQ3P9Na+3EkPMY/H/J28Cw3I7WzdCCUh8/CJIby8/gYg1S9oyyo9yaHx1ahR03BmrIjV109DRnsQMEkf3DZMHk1rJl4itLRluA9sa4TC5iXhfTQwaMLLuyKRfat67FPXrlQllfUiQ8coRkI=
-Received: from BY5PR11MB4497.namprd11.prod.outlook.com (52.132.255.220) by
- BY5PR11MB4433.namprd11.prod.outlook.com (52.132.255.140) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2284.21; Thu, 19 Sep 2019 16:25:32 +0000
-Received: from BY5PR11MB4497.namprd11.prod.outlook.com
- ([fe80::acc6:9f49:c974:93b4]) by BY5PR11MB4497.namprd11.prod.outlook.com
- ([fe80::acc6:9f49:c974:93b4%5]) with mapi id 15.20.2284.009; Thu, 19 Sep 2019
- 16:25:32 +0000
-From: <Codrin.Ciubotariu@microchip.com>
-To: <kamel.bouhara@bootlin.com>, <linux-i2c@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH] i2c: at91: Send bus clear command if SCL or SDA is down
-Thread-Topic: [PATCH] i2c: at91: Send bus clear command if SCL or SDA is down
-Thread-Index: AQHVaIebKOCwzWWM9UelAunkToehwaczJoQAgAAWGgA=
-Date: Thu, 19 Sep 2019 16:25:32 +0000
-Message-ID: <d0820574-e677-d261-ac5c-e29bae600b3b@microchip.com>
-References: <20190911095854.5141-1-codrin.ciubotariu@microchip.com>
- <1ed845e5-3835-f1aa-099a-b67c3bc16076@bootlin.com>
-In-Reply-To: <1ed845e5-3835-f1aa-099a-b67c3bc16076@bootlin.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: BYAPR08CA0028.namprd08.prod.outlook.com
- (2603:10b6:a03:100::41) To BY5PR11MB4497.namprd11.prod.outlook.com
- (2603:10b6:a03:1cc::28)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [94.177.32.156]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: d0f4976f-5e91-450b-87d6-08d73d1dfdfb
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600167)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:BY5PR11MB4433; 
-x-ms-traffictypediagnostic: BY5PR11MB4433:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BY5PR11MB4433269BA6E17BBBDF4378CDE7890@BY5PR11MB4433.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4502;
-x-forefront-prvs: 016572D96D
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(39860400002)(346002)(376002)(366004)(136003)(189003)(199004)(186003)(6486002)(6436002)(52116002)(2201001)(2501003)(66556008)(64756008)(66446008)(36756003)(229853002)(66946007)(66476007)(6246003)(6512007)(305945005)(31686004)(54906003)(71190400001)(71200400001)(478600001)(99286004)(76176011)(6506007)(386003)(110136005)(31696002)(53546011)(66066001)(7736002)(446003)(256004)(14444005)(102836004)(11346002)(2616005)(26005)(476003)(2906002)(486006)(81166006)(81156014)(8676002)(8936002)(6116002)(14454004)(3846002)(25786009)(86362001)(5660300002)(316002)(4326008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BY5PR11MB4433;
- H:BY5PR11MB4497.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 37cosASPjiJxXr5VRYetWr15SNZpNFj2ac0f3y2t/E4TvltLDabGy5BtQrvAUogd3TvxUvAi6n4Q5oP8UNicgxyrBmPVI2Di1DDDukIUstsiMsHfKQChif1TNYOX7AuqhwpOy4apRXKmkOLiKTwY6a9MY4k5ug5v264fFRLQqt1x3x7Mi1dQfWTStsfsi88SldSWLgCvs9Ob8eSx6+0ziNCxmPYG7UWO/7mmJISBHlAtPePKv4QoXPQzODcIY2QjH+4lyg/C7iOLG2Rbdp6y1pVDaS0UthDOC2Ovm/ACyVnQ74XtGMDJMQHwjJVMwqylnNvgcrZL+BhjxJHbooi+LZGoOmTjeBEhMZpxCxT0QX82f735Khw7aLVD8czUl8rPl9EUmWAtaF0e/+hduWuWbohbjQDSogZS4WGXIR/q5AQ=
-Content-ID: <EB34E13450DD284088DEB23122EC935E@namprd11.prod.outlook.com>
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=eb8f6VuJqsSMS2/D/ckOQPK7W3A97rYvCXWb3UVC6+4=;
+ b=0TbJzFxYZopHqvYwhH1BVVBEYrOmtm1w81nyw8Wyw5JulXLOQOjIYq9hyFlcqfF52/
+ byLel52p0mJoHcWGe0iYOuZz4+2JFKTd2D7s0t/uPjlZFX2AV7vj0De/JaH0kw/gh1OH
+ fE8W8IHheejwM8ReGx87CVquAnConNpINqlWgRJBXyQlkXQaz6xFoMCNNY0fBWxc3+93
+ 2w1riLyGAZd1mX9ujVzUNWAtUGpNmZk38oQ9RBU7ds2NCOOOQe1+BqCa7q2LzkWDDJk7
+ RBkbkf7r6w2IRiOOiY0M/9mDwYCDgPCcZ1F+2fvKXBPMRen/ng4R6NFp8oVq7StCIKNt
+ ubVw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=eb8f6VuJqsSMS2/D/ckOQPK7W3A97rYvCXWb3UVC6+4=;
+ b=YDgSBulAJILnYffbhXV0bySCoDz7xVufS1lvGtHeo8RbkwFYHRS+oGd20Vsl6tlbYZ
+ 3hEfPZ7csK36kCikAh3lVbn3484N8yawEVAXS8LzmvslfmPjLhipCAeSA0Pz/mk5qQ/4
+ yBZPAbeKIC8ooCB9soHjCNcGryUghaH5k0TFc1tLYyZ3Hwp9sxb+PklWxQIW5ZE4UzZG
+ N5IIcF7+3GjboBoGDZc9Z05mqovvkD5RwNSQO6QlPpU20x+fHKZGSZk5DTYVHS3mb/lp
+ IyVc3vJ7tx73IX3+1TKdSUxZhUxgBRdE6VxO66wh04BKpsnmEyb3hDajj9i/4cCNaFuO
+ kQNw==
+X-Gm-Message-State: APjAAAVil+Poo4IJA7dtoVOXoX7mRajKbhmvFqf7r0j8Uzt5E0MesAa8
+ pbo3K0tKPqsgo+g9lYxW1POR/Q==
+X-Google-Smtp-Source: APXvYqwTyge27dKIdDfTXksz1QHnAKrUp59hkcTX1p/cAbYcmRmSomHcTOHZ1TvU0jQsbUUt0YXudQ==
+X-Received: by 2002:a5d:6647:: with SMTP id f7mr8068290wrw.170.1568910377158; 
+ Thu, 19 Sep 2019 09:26:17 -0700 (PDT)
+Received: from localhost (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id h26sm19458181wrc.13.2019.09.19.09.26.16
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 19 Sep 2019 09:26:16 -0700 (PDT)
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Qianggui Song <qianggui.song@amlogic.com>
+Subject: Re: [PATCH 2/3] pinctrl: meson-a1: add pinctrl driver for Meson A1 Soc
+In-Reply-To: <45b97927-c771-808a-b214-509af6c16931@amlogic.com>
+References: <1568700442-18540-1-git-send-email-qianggui.song@amlogic.com>
+ <1568700442-18540-3-git-send-email-qianggui.song@amlogic.com>
+ <1jef0f46fj.fsf@starbuckisacylon.baylibre.com>
+ <73dc56bd-d6c5-1de7-e97e-91479a89a29e@amlogic.com>
+ <1j8sqn3tjt.fsf@starbuckisacylon.baylibre.com>
+ <45b97927-c771-808a-b214-509af6c16931@amlogic.com>
+Date: Thu, 19 Sep 2019 18:26:15 +0200
+Message-ID: <1jk1a4b6c8.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: d0f4976f-5e91-450b-87d6-08d73d1dfdfb
-X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Sep 2019 16:25:32.2559 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: eyZ3ds2qrvuTja2fouXw8si5HwXcbKfHK8a+q/nUUf45JeabvpMgomA907K9NUbKu6rQuFopGaMW8XC+GUQjHI6S8Ibhkq5uU+htHY2pVH8=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR11MB4433
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_092542_727715_C0DF440A 
-X-CRM114-Status: GOOD (  13.39  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190919_092618_839586_05E7BD18 
+X-CRM114-Status: GOOD (  22.53  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.149.84 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -162,53 +97,166 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ludovic.Desroches@microchip.com, alexandre.belloni@bootlin.com,
- wsa@the-dreams.de
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Hanjie Lin <hanjie.lin@amlogic.com>,
+ Jianxin Pan <jianxin.pan@amlogic.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>, Linus Walleij <linus.walleij@linaro.org>,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Carlo Caione <carlo@caione.org>, linux-amlogic@lists.infradead.org,
+ Xingyu Chen <xingyu.chen@amlogic.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMTkuMDkuMjAxOSAxODowNiwga2JvdWhhcmEgd3JvdGU6DQo+IA0KPiBPbiA5LzExLzE5IDEx
-OjU4IEFNLCBDb2RyaW4gQ2l1Ym90YXJpdSB3cm90ZToNCj4+IEFmdGVyIGEgdHJhbnNmZXIgdGlt
-ZW91dCwgc29tZSBmYXVsdHkgSTJDIHNsYXZlIGRldmljZXMgbWlnaHQgaG9sZCBkb3duDQo+PiB0
-aGUgU0NMIG9yIHRoZSBTREEgcGlucy4gV2UgY2FuIGdlbmVyYXRlIGEgYnVzIGNsZWFyIGNvbW1h
-bmQsIGhvcGluZyB0aGF0DQo+PiB0aGUgc2xhdmUgbWlnaHQgcmVsZWFzZSB0aGUgcGlucy4NCj4+
-DQo+PiBTaWduZWQtb2ZmLWJ5OiBDb2RyaW4gQ2l1Ym90YXJpdSA8Y29kcmluLmNpdWJvdGFyaXVA
-bWljcm9jaGlwLmNvbT4NCj4+IC0tLQ0KPj4gwqAgZHJpdmVycy9pMmMvYnVzc2VzL2kyYy1hdDkx
-LW1hc3Rlci5jIHwgMjAgKysrKysrKysrKysrKysrKysrKysNCj4+IMKgIGRyaXZlcnMvaTJjL2J1
-c3Nlcy9pMmMtYXQ5MS5owqDCoMKgwqDCoMKgwqAgfMKgIDYgKysrKystDQo+PiDCoCAyIGZpbGVz
-IGNoYW5nZWQsIDI1IGluc2VydGlvbnMoKyksIDEgZGVsZXRpb24oLSkNCj4+DQo+PiBkaWZmIC0t
-Z2l0IGEvZHJpdmVycy9pMmMvYnVzc2VzL2kyYy1hdDkxLW1hc3Rlci5jIA0KPj4gYi9kcml2ZXJz
-L2kyYy9idXNzZXMvaTJjLWF0OTEtbWFzdGVyLmMNCj4+IGluZGV4IGEzZmNjMzVmZmQzYi4uNWY1
-NDRhMTZkYjk2IDEwMDY0NA0KPj4gLS0tIGEvZHJpdmVycy9pMmMvYnVzc2VzL2kyYy1hdDkxLW1h
-c3Rlci5jDQo+PiArKysgYi9kcml2ZXJzL2kyYy9idXNzZXMvaTJjLWF0OTEtbWFzdGVyLmMNCj4+
-IEBAIC01OTksNiArNTk5LDI2IEBAIHN0YXRpYyBpbnQgYXQ5MV9kb190d2lfdHJhbnNmZXIoc3Ry
-dWN0IA0KPj4gYXQ5MV90d2lfZGV2ICpkZXYpDQo+PiDCoMKgwqDCoMKgwqDCoMKgwqAgYXQ5MV90
-d2lfd3JpdGUoZGV2LCBBVDkxX1RXSV9DUiwNCj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqAgQVQ5MV9UV0lfVEhSQ0xSIHwgQVQ5MV9UV0lfTE9DS0NMUik7DQo+PiDC
-oMKgwqDCoMKgIH0NCj4+ICsNCj4+ICvCoMKgwqAgLyoNCj4+ICvCoMKgwqDCoCAqIEFmdGVyIHRp
-bWVvdXQsIHNvbWUgZmF1bHR5IEkyQyBzbGF2ZSBkZXZpY2VzIG1pZ2h0IGhvbGQgDQo+PiBTQ0wv
-U0RBIGRvd247DQo+PiArwqDCoMKgwqAgKiB3ZSBjYW4gc2VuZCBhIGJ1cyBjbGVhciBjb21tYW5k
-LCBob3BpbmcgdGhhdCB0aGUgcGlucyB3aWxsIGJlDQo+PiArwqDCoMKgwqAgKiByZWxlYXNlZA0K
-Pj4gK8KgwqDCoMKgICovDQo+PiArwqDCoMKgIGlmICghKGRldi0+dHJhbnNmZXJfc3RhdHVzICYg
-QVQ5MV9UV0lfU0RBKSB8fA0KPj4gK8KgwqDCoMKgwqDCoMKgICEoZGV2LT50cmFuc2Zlcl9zdGF0
-dXMgJiBBVDkxX1RXSV9TQ0wpKSB7DQo+PiArwqDCoMKgwqDCoMKgwqAgZGV2X2RiZyhkZXYtPmRl
-diwNCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICJTREEvU0NMIGFyZSBkb3duOyBzZW5kaW5n
-IGJ1cyBjbGVhciBjb21tYW5kXG4iKTsNCj4+ICvCoMKgwqDCoMKgwqDCoCBpZiAoZGV2LT51c2Vf
-YWx0X2NtZCkgew0KPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgdW5zaWduZWQgaW50IGFjcjsN
-Cj4+ICsNCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGFjciA9IGF0OTFfdHdpX3JlYWQoZGV2
-LCBBVDkxX1RXSV9BQ1IpOw0KPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgYWNyICY9IH5BVDkx
-X1RXSV9BQ1JfREFUQUxfTUFTSzsNCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGF0OTFfdHdp
-X3dyaXRlKGRldiwgQVQ5MV9UV0lfQUNSLCBhY3IpOw0KPj4gK8KgwqDCoMKgwqDCoMKgIH0NCj4+
-ICvCoMKgwqDCoMKgwqDCoCBhdDkxX3R3aV93cml0ZShkZXYsIEFUOTFfVFdJX0NSLCBBVDkxX1RX
-SV9DTEVBUik7DQo+IA0KPiBUaGlzIGJpdCBpcyBub3QgZG9jdW1lbnRlZCBvbiBTb0NzIGJlZm9y
-ZSBTQU1BNUQyL0Q0LCB0aGlzIHdyaXRlIA0KPiBzaG91bGRuJ3QgYmUgZG9uZSB1bmNvbmRpdGlv
-bmFsbHkuDQo+IA0KPiANCg0KSW5kZWVkLCB0aGV5IGFyZSBub3QgcHJlc2VudCBvbiBTQU1BNUQ0
-IG9yIGVhcmxpZXIgU29Dcy4gSXQgaXMgc3VwcG9ydGVkIA0Kb24gU0FNQTVEMiB0aG91Z2guIEkg
-d2lsbCBtYWtlIGEgbmV3IHZlcnNpb24gYW5kIGltcGxlbWVudCB0aGUgQ0xFQVIgDQpjb21tYW5k
-IG9ubHkgZm9yIHRoZSBTb0NzIHRoYXQgc3VwcG9ydCBpdC4NCg0KVGhhbmsgeW91IGZvciB5b3Vy
-IHJldmlldy4NCg0KQmVzdCByZWdhcmRzLA0KQ29kcmluDQpfX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
-aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Wed 18 Sep 2019 at 14:36, Qianggui Song <qianggui.song@amlogic.com> wrote:
+
+> On 2019/9/17 22:07, Jerome Brunet wrote:
+>> 
+>> On Tue 17 Sep 2019 at 13:51, Qianggui Song <qianggui.song@amlogic.com> wrote:
+>>>>> diff --git a/drivers/pinctrl/meson/pinctrl-meson.c b/drivers/pinctrl/meson/pinctrl-meson.c
+>>>>> index 8bba9d0..885b89d 100644
+>>>>> --- a/drivers/pinctrl/meson/pinctrl-meson.c
+>>>>> +++ b/drivers/pinctrl/meson/pinctrl-meson.c
+>>>>> @@ -688,8 +688,12 @@ static int meson_pinctrl_parse_dt(struct meson_pinctrl *pc,
+>>>>>  
+>>>>>  	pc->reg_ds = meson_map_resource(pc, gpio_np, "ds");
+>>>>>  	if (IS_ERR(pc->reg_ds)) {
+>>>>> -		dev_dbg(pc->dev, "ds registers not found - skipping\n");
+>>>>> -		pc->reg_ds = NULL;
+>>>>> +		if (pc->data->reg_layout == A1_LAYOUT) {
+>>>>> +			pc->reg_ds = pc->reg_pullen;
+>>>>
+>>>> IMO, this kind of ID based init fixup is not going to scale and will
+>>>> lead to something difficult to maintain in the end.
+>>>>
+>>>> The way the different register sets interract with each other is already
+>>>> pretty complex to follow.
+>>>>
+>>>> You could rework this in 2 different ways:
+>>>> #1 - Have the generic function parse all the register sets and have all
+>>>> drivers provide a specific (as in gxbb, gxl, axg, etc ...)  function to :
+>>>>  - Verify the expected sets have been provided
+>>>>  - Make assignement fixup as above if necessary
+>>>>
+>>>> #2 - Rework the driver to have only one single register region
+>>>>  I think one of your colleague previously mentionned this was not
+>>>>  possible. It is still unclear to me why ...
+>>>>
+>>> Appreciate your advice.  I have an idea based on #1, how about providing
+>>> only two dt parse function, one is for chips before A1(the old one),
+>>> another is for A1 and later chips that share the same layout. Assign
+>>> these two functions to their own driver.
+>> 
+>> That's roughly the same thing as your initial proposition with function
+>> pointer instead of IDs ... IMO, this would still be a quick fix to
+>> address your immediate topic instead of dealing with the driver as
+>> whole, which is my concern here.
+>> 
+> For #1. It would be like
+> generic_parse_dt()
+> {
+> 	1. parse all register regions (mux gpio pull pull_en ds)
+> 	
+> 	2. call  specific function through function pointer in
+>  	   meson_pinctrl_data.(each platform should have AO and EE two
+>            specific functions for they are not the same)
+> 	{
+> 		do work you mentioned above
+> 	}
+> }
+> right ?
+> If that so, maybe there are a lot of duplicated codes
+
+Only if you make it so. Providing a callback and duplicating code are
+not the same thing
+
+> for most Socs share the same reg layout.
+
+That's not really accurate:
+
+So far they all have the "mux" and "gpio" region but
+
+gxbb, gxl, axg, meson8 EE:
+ has: pull, pull-en
+ remap: non
+ unsupported: ds
+
+gxbb, gxl, axg, meson8 AO:
+ has: pull
+ remap: pull-en -> pull
+ unsupported: ds
+
+g12 and sm1 EE:
+ has: pull, pull-en, ds
+ remap: none
+
+g12 and sm1 AO:
+ has: ds
+ remap: pull->gpio, pull_en->gpio
+
+And now a1 chip remaps "ds" to "pull_en" ...
+
+As said previouly all this is getting pretty difficult to follow and
+maintain. Adding a proper callback for each meson pinctrl would make the
+above explicit in the code ... which helps maintain thing, at least for
+a while ...
+
+Judging by the offsets between those regions, I still think one single
+region would make things a whole lot simpler. If it is not possible to
+map it with one single region, could you tell us why ? What non-pinctrl
+related device do we have there ?
+
+> So I guess five specific functions are
+> enough: AXG and before(ao,ee), G12A(ao,ee) and A1(will place them in
+> pinctrl_meson.c). Since m8 to AXG are the same register layout for both
+> ee and ao, G12A with new feature ds and new ao register layout.
+>
+> Or I misunderstood the #1 ?
+>>>>> +		} else {
+>>>>> +			dev_dbg(pc->dev, "ds registers not found - skipping\n");
+>>>>> +			pc->reg_ds = NULL;
+>>>>> +		}
+>>>>>  	}
+>>>>>  
+>>>>>  	return 0;
+>>>>> diff --git a/drivers/pinctrl/meson/pinctrl-meson.h b/drivers/pinctrl/meson/pinctrl-meson.h
+>>>>> index c696f32..3d0c58d 100644
+>>>>> --- a/drivers/pinctrl/meson/pinctrl-meson.h
+>>>>> +++ b/drivers/pinctrl/meson/pinctrl-meson.h
+>>>>> @@ -80,6 +80,14 @@ enum meson_pinconf_drv {
+>>>>>  };
+>>>>>  
+>>>>>  /**
+>>>>> + * enum meson_reg_layout - identify two types of reg layout
+>>>>> + */
+>>>>> +enum meson_reg_layout {
+>>>>> +	LEGACY_LAYOUT,
+>>>>> +	A1_LAYOUT,
+>>>>> +};
+>>>>> +
+>>>>> +/**
+>>>>>   * struct meson bank
+>>>>>   *
+>>>>>   * @name:	bank name
+>>>>> @@ -114,6 +122,7 @@ struct meson_pinctrl_data {
+>>>>>  	unsigned int num_banks;
+>>>>>  	const struct pinmux_ops *pmx_ops;
+>>>>>  	void *pmx_data;
+>>>>> +	unsigned int reg_layout;
+>>>>>  };
+>>>>>  
+>>>>>  struct meson_pinctrl {
+>>>>
+>>>> .
+>>>>
+>> 
+>> .
+>> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
