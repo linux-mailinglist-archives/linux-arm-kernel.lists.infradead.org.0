@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4122B7013
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 02:24:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 478CCB7012
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 02:23:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7jD1i1AfwQUKzKsLIlqrU6RsGtDCRtVayqEZJEwXyKQ=; b=Oj1hghLhLmhSR1
-	qOTvR3gKlxlIa+mYUZCJ4z9tI2zZsZRD2zRYWk+1a5/94ONuTWf2Utm7VrtiOmbVmG7+nY/Wew5aB
-	Vl/FJdqTw6fvxK5T2zBcx87GueWFriUeUS/IcAlvqKfDcaGa7yw79z7HHpQFTY3TUpR6dMpkOxhsw
-	xmSlgWabtQ7FifJk8z+b8gM377+OExVX0+7ipjIU2uArxiIt3Q5ueIOr10S2Bef5hMp9VLL7cUES8
-	rW84v8WJlBQZxdy/cYqRhiaA1ja7jO+n60wX+YUf3a3dK66vzrx6nnFxdOwGP4WFwDex7jhGHjOMN
-	W3kvHf420Ky0aYv5sHLA==;
+	List-Owner; bh=es8upbe2wWW91A0VSZ7O6L8npKE+hudupxYNjXZUUfY=; b=ITb6yIiY8hCZPe
+	SDHYazwPG+Xk0flt/REHcfWf0uuCVRKx1uL50fNkX3Iuk9kNVq4ZyqRNqBvg1BNaTG3XJCjnzu8VR
+	o0yH0MnYsyDD+WMNrnjW9YFABWBb72yyvxtRieUkEQVLs1YgABwqVOSARaRToa9xTOtOFFB5R2deO
+	mnLkvQ8u3CULoCfRRwJvCnn3HHhWjCBdqKZHBrdXsVJIQtIrfunTHJFjrEUjtHdXTe/z6Nk3Uso11
+	WjpAzkG3msP8idAaKtCiFCseyDBk5mK4fwEApCDiN0GDA+od+LWPOfVXKMfV6zc9+t3nb03by7oNk
+	v90qMnKFCC/jyQSkARBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAkF5-00028b-Mh; Thu, 19 Sep 2019 00:24:15 +0000
+	id 1iAkEk-0001uz-Fp; Thu, 19 Sep 2019 00:23:54 +0000
 Received: from ozlabs.org ([2401:3900:2:1::2])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAkET-0001ts-E5
+ id 1iAkET-0001tu-Fr
  for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 00:23:38 +0000
 Received: by ozlabs.org (Postfix, from userid 1003)
- id 46YcyX5cBKz9sNf; Thu, 19 Sep 2019 10:23:32 +1000 (AEST)
+ id 46YcyX6FPFz9sNF; Thu, 19 Sep 2019 10:23:32 +1000 (AEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ozlabs.org; s=201707;
- t=1568852612; bh=cu6MqzQ+Jjg6jBgAMHqPfsdtuEEEpXwelfg4ezvXdsY=;
+ t=1568852612; bh=cw3bVSIKyGLl8fd6W8ykuEcHQm9lvtEQ4ISh1Suv21A=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Nt4NYXLQPNaOq5EaXwA6J6CUQqtE4sYHQnvkHZSOhCjqqWJ01CdAB4tfDaD7elmpm
- n8+n+jy0vrYBX7bhjUejT61fggDfeR0cgCIUnTuqNkpIC0IXNlLj5BQyxdJITIPcBR
- mnSFYsZrVTQqPYzswqowK1En17cvpVKAST5slijgNdV7bpZykh7hDKsvP4WJVNLb/9
- Ol1XIqjO/OL2LCmIx/vGzkgBlQMKHpTE8RacF1q2tw33WNlisVf3Zmdf+cisE74bOX
- ghUTBd1CuYuzqzcB8Zaw4KJe2JcyTf9IC7kOu6x2wrhVjXAyrW69MyKAvq+7wse73h
- GRj1zPawfFkIQ==
-Date: Thu, 19 Sep 2019 10:22:42 +1000
+ b=R3NvO9RHRrBeHenKeGVQwRwaNzl90QJKU91Oh5UtKsnjPccYcuWsO/+sjMOyqwX7L
+ qXGlMsp052mihy0ZJJ2eIVJLqlRGa9kQM/LgVKA7ED5dZy2xxDU0F7hWJ5Tp54i1Oj
+ k55td7N92nS1j9aJa2rikaxwZ/Rett3ejrVCl2Y6XgJzt/d7qDn+ismHBncyRTAYV+
+ hS8OCe+151b9IycINykjKDkPYC/8MG9vZUkPbnlESnKeZ09ZuP4shL0f/tklBl/8Uc
+ RZALg8LGgjsbVJ+XmBlldREITO6j39TWleHK6T7JSCMg1LLpCOuW1Dvvlzw9Z/mO8v
+ uxbb98hT109Jg==
+Date: Thu, 19 Sep 2019 10:23:28 +1000
 From: Paul Mackerras <paulus@ozlabs.org>
 To: Sean Christopherson <sean.j.christopherson@intel.com>
-Subject: Re: [PATCH 10/13] KVM: Provide common implementation for generic
- dirty log functions
-Message-ID: <20190919002242.GA19503@blackberry>
+Subject: Re: [PATCH 02/13] KVM: PPC: Move memslot memory allocation into
+ prepare_memory_region()
+Message-ID: <20190919002328.GB19503@blackberry>
 References: <20190911185038.24341-1-sean.j.christopherson@intel.com>
- <20190911185038.24341-11-sean.j.christopherson@intel.com>
+ <20190911185038.24341-3-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190911185038.24341-11-sean.j.christopherson@intel.com>
+In-Reply-To: <20190911185038.24341-3-sean.j.christopherson@intel.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_172337_729296_2BB6936A 
-X-CRM114-Status: GOOD (  10.17  )
+X-CRM114-CacheID: sfid-20190918_172337_742053_0BBDF19C 
+X-CRM114-Status: UNSURE (   7.62  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -92,26 +93,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 11, 2019 at 11:50:35AM -0700, Sean Christopherson wrote:
-> Move the implementations of KVM_GET_DIRTY_LOG and KVM_CLEAR_DIRTY_LOG
-> for CONFIG_KVM_GENERIC_DIRTYLOG_READ_PROTECT into common KVM code.
-> The arch specific implemenations are extremely similar, differing
-> only in whether the dirty log needs to be sync'd from hardware (x86)
-> and how the TLBs are flushed.  Add new arch hooks to handle sync
-> and TLB flush; the sync will also be used for non-generic dirty log
-> support in a future patch (s390).
+On Wed, Sep 11, 2019 at 11:50:27AM -0700, Sean Christopherson wrote:
+> Allocate the rmap array during kvm_arch_prepare_memory_region() to pave
+> the way for removing kvm_arch_create_memslot() altogether.  Moving PPC's
+> memory allocation only changes the order of kernel memory allocations
+> between PPC and common KVM code.
 > 
-> The ulterior motive for providing a common implementation is to
-> eliminate the dependency between arch and common code with respect to
-> the memslot referenced by the dirty log, i.e. to make it obvious in the
-> code that the validity of the memslot is guaranteed, as a future patch
-> will rework memslot handling such that id_to_memslot() can return NULL.
+> No functional change intended.
+> 
+> Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 
-I notice you add empty definitions of kvm_arch_sync_dirty_log() for
-PPC, both Book E and Book 3S.  Given that PPC doesn't select
-CONFIG_KVM_GENERIC_DIRTYLOG_READ_PROTECT, why is this necessary?
+Seems OK.
 
-Paul.
+Acked-by: Paul Mackerras <paulus@ozlabs.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
