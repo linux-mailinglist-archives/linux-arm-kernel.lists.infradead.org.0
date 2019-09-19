@@ -2,84 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30716B7988
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 14:34:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68059B798F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 14:34:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GQjsOHjmXLd42paxqhA/qfUcsM8Cb6wgmcPyI2SwRKU=; b=FrOG++zPvnjRTM
-	WR9TRGoa1nHzfpkHvOmrtpKqVCZ2xIHZvesBd/ZrIum/q2phggO9xMHiB/bFwPYM/+hj8i15hDTtG
-	Tj/FQKApJF5chnwa2OjONh0nK7TuvdJz8uJ5evcppa74xvxe6SiAS2mVF1yfTPggSd1+tT7xipRjw
-	dCOdAqH0hoXZ7Iw71593tTztzUi8JR35v68PyyKQ77jKFtWd+x3zOc+gCjVCzCRHy/3BbdmVWM+RR
-	caREAPc61HGuaEGDD46svmt7v32DuZ7D9Wg/ujU/LoxtPmGXM3STmWj9EEv1PixcWllxCcQGfx1Mv
-	tVUYinrS04a8WZ1zrAxA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hkzZTnGla9d7w2SM7nLQuSRNRoi2CbuYgTxDmZuw72A=; b=mVP92MQX44XpCe
+	c070avO1YSvIB/iIBmiJslkI8z8mlMQrSouMsVlhoBxO8lR32RS+tSghPn6BYcHbpEdc4pQT+/CzT
+	rPlYXk8JMb4txoQF6+cjgVpvloQ9+fWwnR5tyKrZFDzedPyHUTrpbpkF8V8QyMi+sDojlw0wcqkqc
+	Jer5y1elTcbonEr+s5qIqHpd0nTESxGoBf2ww5ARpYTQgN4ZFy53OorJoQcDh8kwkUQ6P9SfjB21v
+	NKgTpyXj3TWBA9TaEfZJ3CQfDLpAqaaqbTV1HKHJRrz6orhCj5Rp+U8jbchKKc5/u5ko3nKa1a1Vo
+	0lBvXUEXyc9QME5/ejvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAvdR-0005F4-I2; Thu, 19 Sep 2019 12:34:09 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1iAveB-0005bv-VI; Thu, 19 Sep 2019 12:34:56 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAvcS-0004xv-0V
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 12:33:09 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x8JCX3ZF022919;
- Thu, 19 Sep 2019 07:33:03 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1568896383;
- bh=ZO0958N5aCxnvytAw9cNMsH9aVBWOiBYRFXIEH+HxcA=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=V32yxdTF4MiXT+OdiFMd2y4kHDzuQSGqnpSS0TlP8aXVpGaU7qkpzLygF6gcr12TN
- q0WJ6ph4ynS/oaB6WFkLnqafv8n7Hs9/ZdhSKQOPqzNczbcZZJYtBCV1iW11mrZGWn
- J0syZtF/5lZ74VlSGVGgNC8NrUrWtTNzzj7InOVw=
-Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x8JCX3dZ038051
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 19 Sep 2019 07:33:03 -0500
-Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 19
- Sep 2019 07:32:58 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 19 Sep 2019 07:32:58 -0500
-Received: from sokoban.bb.dnainternet.fi (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x8JCWxIK089133;
- Thu, 19 Sep 2019 07:33:00 -0500
-From: Tero Kristo <t-kristo@ti.com>
-To: <ssantosh@kernel.org>, <p.zabel@pengutronix.de>, <tony@atomide.com>
-Subject: [PATCHv6 10/10] ARM: OMAP2+: pdata-quirks: add PRM data for reset
- support
-Date: Thu, 19 Sep 2019 15:32:58 +0300
-Message-ID: <20190919123258.23172-1-t-kristo@ti.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190912170953.GT52127@atomide.com>
-References: <20190912170953.GT52127@atomide.com>
+ id 1iAvdr-0005bS-LJ
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 12:34:37 +0000
+Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
+ (mreue010 [212.227.15.129]) with ESMTPA (Nemesis) id
+ 1McGp2-1hfAig3hzo-00cgzT; Thu, 19 Sep 2019 14:34:22 +0200
+From: Arnd Bergmann <arnd@arndb.de>
+To: Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Jose Abreu <joabreu@synopsys.com>, "David S. Miller" <davem@davemloft.net>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Subject: [PATCH] [v2] net: stmmac: selftest: avoid large stack usage
+Date: Thu, 19 Sep 2019 14:33:43 +0200
+Message-Id: <20190919123416.3070938-1-arnd@arndb.de>
+X-Mailer: git-send-email 2.20.0
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-Provags-ID: V03:K1:hwVGHTiOG4UXHOWG1ZQ0Jq2hjerVfrIdTmZglraj5oGfDcMkjJd
+ lZQ3pTkKTCk025VehtgWkB4c8x3VxX4C3lZBTJB3DvjHbaazbTBT72d909SmFSvMpH+S3Uz
+ JIwg3QkDBE5yMxexLwXZ4olOrjyvwAtwS8In6/V8uUaJQPy++4Zgn2HU8ypmltpow2eOyDc
+ w0Yh6icl7CivOhhfRlQMA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:c9UPIDxfZwk=:sdxFKpNOGzRYdbJ3z8DWo1
+ bqGnGL9NihWCprhmk50Aj2QHDIPlmok/y9GFE9lTnsCna6EsVYNB6MMbe8PoSgO/ZDe8cB/rN
+ 0nzIgWJlyARVmonQv2a8H6udfl3gzHuONecPTQHwS8BiP9Ha+kdknckDp6o77oWO0dMQ+w8ud
+ lwGuTRqIqZFKIOKs8Ok9QOzyKjgMOzwyf1unkuiNpLnmck02uoWD/smwtXnPt0GA4VSCoTIqc
+ d0nxmgFjhVMlBuc3OA/+aqrUxjr/kCeXBO/a6gzMdu0d6BB5eHX6aFRLoEpgZxHDBACXiLxHv
+ XMUQCd56WP/r3eSG59YCgnXYwBqATNckLhDD4UTssu4tC1KDMzfKzHXZJG7vtgvJtl960wAXk
+ GnrwQLsFt9DLj/B9I5J/niKefml5uvJFgqbqqWIVN2ZC1VaaroYty7IH3FmZCRX9k2jrmanXu
+ lTqCQHO3oxR50ZwqzzpdWsAYKvF1rWhtgD0wX7vnWNMV755VGJ1/o5TCs5XfZB0TcHtJTiC9u
+ nXOsOCZorUiCj7Hoent0M6C2PyXGmaRSp1R+tuhr+qMJX2OiOvXFd0TpPROpVaqmpJmwhs80o
+ L18eQ1SsiiLHaDo0JF147ksAoMVox/m6Nsmqv37ImV3Zwb/DMWKR4me095686hw07g41u1g/g
+ C/w6+Oj9f4FHFqVo6mS8wBlQmZzz1KDYzBL51wSDDWgC+pKFxDY+hnpBmrr0P4iZKw29zQS9c
+ zd+oPGOyAjCuVSc+LKQez9MLR0ENSBm/Pw2giP403UP24zgk/dKjySnNFfdTGLo1N0BC/SW+X
+ SHEYUb0Z3o8ClxL2/kVgCjuR/FpIfWYYyDK2GE8FY+YzDtFKEJ0aoepc1P9WdUxgpckXfhMub
+ y/Jc3/qeFX+KcCNMNKSQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_053308_238867_5F5A4F41 
-X-CRM114-Status: GOOD (  11.19  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190919_053435_991418_3882BB15 
+X-CRM114-Status: GOOD (  14.18  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.131 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,63 +78,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-omap@vger.kernel.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, Arnd Bergmann <arnd@arndb.de>,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The parent clockdomain for reset must be in force wakeup mode, otherwise
-the reset may never complete. Add pdata quirks for this purpose for PRM
-driver.
+Putting a struct stmmac_rss object on the stack is a bad idea,
+as it exceeds the warning limit for a stack frame on 32-bit architectures:
 
-Signed-off-by: Tero Kristo <t-kristo@ti.com>
+drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c:1221:12: error: stack frame size of 1208 bytes in function '__stmmac_test_l3filt' [-Werror,-Wframe-larger-than=]
+drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c:1338:12: error: stack frame size of 1208 bytes in function '__stmmac_test_l4filt' [-Werror,-Wframe-larger-than=]
+
+As the object is the trivial empty case, change the called function
+to accept a NULL pointer to mean the same thing and remove the
+large variable in the two callers.
+
+Fixes: 4647e021193d ("net: stmmac: selftests: Add selftest for L3/L4 Filters")
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 ---
-v6: replaced platform specific compatibles with a single common
-    compatible check
+v2: simply configure function, based on feedback from Jose
+---
+ .../net/ethernet/stmicro/stmmac/dwxgmac2_core.c    |  5 ++---
+ .../net/ethernet/stmicro/stmmac/stmmac_selftests.c | 14 ++++----------
+ 2 files changed, 6 insertions(+), 13 deletions(-)
 
- arch/arm/mach-omap2/pdata-quirks.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
-
-diff --git a/arch/arm/mach-omap2/pdata-quirks.c b/arch/arm/mach-omap2/pdata-quirks.c
-index 6c6f8fce854e..45ffa1204cd2 100644
---- a/arch/arm/mach-omap2/pdata-quirks.c
-+++ b/arch/arm/mach-omap2/pdata-quirks.c
-@@ -25,6 +25,7 @@
- #include <linux/platform_data/ti-sysc.h>
- #include <linux/platform_data/wkup_m3.h>
- #include <linux/platform_data/asoc-ti-mcbsp.h>
-+#include <linux/platform_data/ti-prm.h>
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
+index d5173dd02a71..2b277b2c586b 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
+@@ -523,19 +523,18 @@ static int dwxgmac2_rss_configure(struct mac_device_info *hw,
+ 				  struct stmmac_rss *cfg, u32 num_rxq)
+ {
+ 	void __iomem *ioaddr = hw->pcsr;
+-	u32 *key = (u32 *)cfg->key;
+ 	int i, ret;
+ 	u32 value;
  
- #include "clockdomain.h"
- #include "common.h"
-@@ -565,6 +566,12 @@ void omap_pcs_legacy_init(int irq, void (*rearm)(void))
- 	pcs_pdata.rearm = rearm;
- }
+ 	value = readl(ioaddr + XGMAC_RSS_CTRL);
+-	if (!cfg->enable) {
++	if (!cfg || !cfg->enable) {
+ 		value &= ~XGMAC_RSSE;
+ 		writel(value, ioaddr + XGMAC_RSS_CTRL);
+ 		return 0;
+ 	}
  
-+static struct ti_prm_platform_data ti_prm_pdata = {
-+	.clkdm_deny_idle = clkdm_deny_idle,
-+	.clkdm_allow_idle = clkdm_allow_idle,
-+	.clkdm_lookup = clkdm_lookup,
-+};
-+
- /*
-  * GPIOs for TWL are initialized by the I2C bus and need custom
-  * handing until DSS has device tree bindings.
-@@ -664,6 +671,7 @@ static struct of_dev_auxdata omap_auxdata_lookup[] = {
- 	/* Common auxdata */
- 	OF_DEV_AUXDATA("ti,sysc", 0, NULL, &ti_sysc_pdata),
- 	OF_DEV_AUXDATA("pinctrl-single", 0, NULL, &pcs_pdata),
-+	OF_DEV_AUXDATA("ti,omap-prm-inst", 0, NULL, &ti_prm_pdata),
- 	{ /* sentinel */ },
- };
+ 	for (i = 0; i < (sizeof(cfg->key) / sizeof(u32)); i++) {
+-		ret = dwxgmac2_rss_write_reg(ioaddr, true, i, *key++);
++		ret = dwxgmac2_rss_write_reg(ioaddr, true, i, cfg->key[i]);
+ 		if (ret)
+ 			return ret;
+ 	}
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
+index c56e89e1ae56..9c8d210b2d6a 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
+@@ -1233,12 +1233,9 @@ static int __stmmac_test_l3filt(struct stmmac_priv *priv, u32 dst, u32 src,
+ 		return -EOPNOTSUPP;
+ 	if (!priv->dma_cap.l3l4fnum)
+ 		return -EOPNOTSUPP;
+-	if (priv->rss.enable) {
+-		struct stmmac_rss rss = { .enable = false, };
+-
+-		stmmac_rss_configure(priv, priv->hw, &rss,
++	if (priv->rss.enable)
++		stmmac_rss_configure(priv, priv->hw, NULL,
+ 				     priv->plat->rx_queues_to_use);
+-	}
  
+ 	dissector = kzalloc(sizeof(*dissector), GFP_KERNEL);
+ 	if (!dissector) {
+@@ -1357,12 +1354,9 @@ static int __stmmac_test_l4filt(struct stmmac_priv *priv, u32 dst, u32 src,
+ 		return -EOPNOTSUPP;
+ 	if (!priv->dma_cap.l3l4fnum)
+ 		return -EOPNOTSUPP;
+-	if (priv->rss.enable) {
+-		struct stmmac_rss rss = { .enable = false, };
+-
+-		stmmac_rss_configure(priv, priv->hw, &rss,
++	if (priv->rss.enable)
++		stmmac_rss_configure(priv, priv->hw, NULL,
+ 				     priv->plat->rx_queues_to_use);
+-	}
+ 
+ 	dissector = kzalloc(sizeof(*dissector), GFP_KERNEL);
+ 	if (!dissector) {
 -- 
-2.17.1
+2.20.0
 
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
