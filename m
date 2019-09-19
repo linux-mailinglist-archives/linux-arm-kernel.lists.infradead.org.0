@@ -2,53 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EC0CB7983
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 14:33:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30716B7988
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 14:34:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=DsN0uzhzTFCk36RY39Upz9Msu4qER7Scb1qCe/2hGm4=; b=nOJty2rpVmip19VV5Lpk9iyuw
-	PU4odeBuWiRxWQjBIU0alv6rP+OSgdw1qH5XFA9F8O/jfTLM6NdtjDziBjZzKAQli55Y/eBU29WUT
-	KHV/1oYGnO0tm8VY+rE9+XrQzQbkL0RnYiymeS2ZvAjdWCT0bxM/pjNen9VlOHDnAnRH4oEc7p7cn
-	mrDwZ2lL/9Ho6P2SymX/cp5QfjrJAqB22CkxtVeIuCKniWgJF6dXj1d520D8HI28EThyJF3YzJwib
-	95h7fZFVYHyNZZpoyUYcZikzRkemw0kuzH1To+ANlFSNW7/oBgf6UpNiXzKo8GhTzSoZl2Q3VLRfQ
-	9hizXq9AA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GQjsOHjmXLd42paxqhA/qfUcsM8Cb6wgmcPyI2SwRKU=; b=FrOG++zPvnjRTM
+	WR9TRGoa1nHzfpkHvOmrtpKqVCZ2xIHZvesBd/ZrIum/q2phggO9xMHiB/bFwPYM/+hj8i15hDTtG
+	Tj/FQKApJF5chnwa2OjONh0nK7TuvdJz8uJ5evcppa74xvxe6SiAS2mVF1yfTPggSd1+tT7xipRjw
+	dCOdAqH0hoXZ7Iw71593tTztzUi8JR35v68PyyKQ77jKFtWd+x3zOc+gCjVCzCRHy/3BbdmVWM+RR
+	caREAPc61HGuaEGDD46svmt7v32DuZ7D9Wg/ujU/LoxtPmGXM3STmWj9EEv1PixcWllxCcQGfx1Mv
+	tVUYinrS04a8WZ1zrAxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAvck-0004vB-Ar; Thu, 19 Sep 2019 12:33:26 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1iAvdR-0005F4-I2; Thu, 19 Sep 2019 12:34:09 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAvcK-0004uC-2f; Thu, 19 Sep 2019 12:33:01 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: alyssa) with ESMTPSA id B8C1C28E946
-Date: Thu, 19 Sep 2019 08:32:43 -0400
-From: Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>
-To: Nicolas Boichat <drinkcat@chromium.org>
-Subject: Re: [PATCH] arm64: dts: mt8183: Add node for the Mali GPU
-Message-ID: <20190919123243.GA3457@kevin>
-References: <20190905081546.42716-1-drinkcat@chromium.org>
- <CAL_JsqJCO2G90TTT9Mpy4kjVKQyXWw4aXEEnbRp_SE8X=EGc5g@mail.gmail.com>
- <CANMq1KCTPdFhJG1SLf-i+-557Yx-1WLzWCHu3tT_5Q2BF+JgdQ@mail.gmail.com>
- <20190913181729.GB3115@kevin>
- <CANMq1KD++==d0Mb6T2gKU1T7c_MaedswOYdxqEqEKKUL1bxgiw@mail.gmail.com>
+ id 1iAvcS-0004xv-0V
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 12:33:09 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x8JCX3ZF022919;
+ Thu, 19 Sep 2019 07:33:03 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1568896383;
+ bh=ZO0958N5aCxnvytAw9cNMsH9aVBWOiBYRFXIEH+HxcA=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=V32yxdTF4MiXT+OdiFMd2y4kHDzuQSGqnpSS0TlP8aXVpGaU7qkpzLygF6gcr12TN
+ q0WJ6ph4ynS/oaB6WFkLnqafv8n7Hs9/ZdhSKQOPqzNczbcZZJYtBCV1iW11mrZGWn
+ J0syZtF/5lZ74VlSGVGgNC8NrUrWtTNzzj7InOVw=
+Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x8JCX3dZ038051
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 19 Sep 2019 07:33:03 -0500
+Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 19
+ Sep 2019 07:32:58 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Thu, 19 Sep 2019 07:32:58 -0500
+Received: from sokoban.bb.dnainternet.fi (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x8JCWxIK089133;
+ Thu, 19 Sep 2019 07:33:00 -0500
+From: Tero Kristo <t-kristo@ti.com>
+To: <ssantosh@kernel.org>, <p.zabel@pengutronix.de>, <tony@atomide.com>
+Subject: [PATCHv6 10/10] ARM: OMAP2+: pdata-quirks: add PRM data for reset
+ support
+Date: Thu, 19 Sep 2019 15:32:58 +0300
+Message-ID: <20190919123258.23172-1-t-kristo@ti.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190912170953.GT52127@atomide.com>
+References: <20190912170953.GT52127@atomide.com>
 MIME-Version: 1.0
-In-Reply-To: <CANMq1KD++==d0Mb6T2gKU1T7c_MaedswOYdxqEqEKKUL1bxgiw@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_053300_254284_1A3B3FCB 
-X-CRM114-Status: GOOD (  15.18  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190919_053308_238867_5F5A4F41 
+X-CRM114-Status: GOOD (  11.19  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,94 +91,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Dominik Behr <dbehr@chromium.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Douglas Anderson <dianders@chromium.org>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Steven Price <steven.price@arm.com>,
- Nick Fan <nick.fan@mediatek.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============8878456813461194414=="
+Cc: devicetree@vger.kernel.org, linux-omap@vger.kernel.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The parent clockdomain for reset must be in force wakeup mode, otherwise
+the reset may never complete. Add pdata quirks for this purpose for PRM
+driver.
 
---===============8878456813461194414==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="sm4nu43k4a2Rpi4c"
-Content-Disposition: inline
+Signed-off-by: Tero Kristo <t-kristo@ti.com>
+---
+v6: replaced platform specific compatibles with a single common
+    compatible check
 
+ arch/arm/mach-omap2/pdata-quirks.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
---sm4nu43k4a2Rpi4c
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+diff --git a/arch/arm/mach-omap2/pdata-quirks.c b/arch/arm/mach-omap2/pdata-quirks.c
+index 6c6f8fce854e..45ffa1204cd2 100644
+--- a/arch/arm/mach-omap2/pdata-quirks.c
++++ b/arch/arm/mach-omap2/pdata-quirks.c
+@@ -25,6 +25,7 @@
+ #include <linux/platform_data/ti-sysc.h>
+ #include <linux/platform_data/wkup_m3.h>
+ #include <linux/platform_data/asoc-ti-mcbsp.h>
++#include <linux/platform_data/ti-prm.h>
+ 
+ #include "clockdomain.h"
+ #include "common.h"
+@@ -565,6 +566,12 @@ void omap_pcs_legacy_init(int irq, void (*rearm)(void))
+ 	pcs_pdata.rearm = rearm;
+ }
+ 
++static struct ti_prm_platform_data ti_prm_pdata = {
++	.clkdm_deny_idle = clkdm_deny_idle,
++	.clkdm_allow_idle = clkdm_allow_idle,
++	.clkdm_lookup = clkdm_lookup,
++};
++
+ /*
+  * GPIOs for TWL are initialized by the I2C bus and need custom
+  * handing until DSS has device tree bindings.
+@@ -664,6 +671,7 @@ static struct of_dev_auxdata omap_auxdata_lookup[] = {
+ 	/* Common auxdata */
+ 	OF_DEV_AUXDATA("ti,sysc", 0, NULL, &ti_sysc_pdata),
+ 	OF_DEV_AUXDATA("pinctrl-single", 0, NULL, &pcs_pdata),
++	OF_DEV_AUXDATA("ti,omap-prm-inst", 0, NULL, &ti_prm_pdata),
+ 	{ /* sentinel */ },
+ };
+ 
+-- 
+2.17.1
 
-> > By the time MT8183 shows up in more concrete devices, it will, certainly
-> > in kernel-space and likely in userspace as well. At present, the DDK can
-> > be modified to run on top of the in-tree Mali drivers, i.e. "Bifrost on
-> > mainline linux-next (+ page table/compatible patches), with blob
-> > userspace".
-> >
-> > While the open userspace isn't ready here quite yet, I would definitely
-> > encourage upstream kernel for ChromeOS, since then there's no need to
-> > maintain the out-of-tree GPU driver.
->=20
-> That's an interesting idea, I had no idea, thanks for the info!
->=20
-> Would that work with midgard as well? We have released hardware with
-> RK3288/3399, so it might be nice to experiment with these first.
-
-Yes, the above would work with Midgard as well with no changes needed.
-Ping Steven about thtat (CC'd).
-
-> > More immediately, per Rob's review, it's important that the bindings
-> > accepted upstream work with the in-tree Bifrost driver. Conceptually,
-> > once Mesa supports Bifrost, if I install Debian on a MT8183 board,
-> > everything should just work. I shouldn't need MT-specific changes / need
-> > to change names for the DT. Regardless of which kernel driver you end up
-> > using, minimally sharing the DT is good for everyone :-)
->=20
-> Yes. I'll try to dig further with MTK, but this may take some time.
-
-Thank you!
-
---sm4nu43k4a2Rpi4c
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEQ17gm7CvANAdqvY4/v5QWgr1WA0FAl2DdWcACgkQ/v5QWgr1
-WA1hxw//TRYFfG359ycsk4qVwveSnK9GFoKgfPx0UD6KVttjcVebh10JgmvhdS6P
-MIUe3X2Z55xOliZtP/J8aRTI+GcqodYOm+2NXit9Qrs9ME3wH1PribyPOanVdDeY
-LyVOiz2hKFiXgIQ+Tc3IwbKF8fG/9J1SCuBCPF7WhxWPPCq/M8l9nfis2BptnMri
-e/qXnFjFULKgZqr2PT/iAE4FwqqRwazg3zZrknP+pVyluXKYm2yjVN9wpjG9PD+/
-rxjgLJF8q+YmhTnVsN17bs5/lM0I1DPAMPaQqcDgYXt2BDpqqX1iImmxvLhWo2Gd
-cJ9uLExJvgwlpwGAv/q5S6UDJb6Svm2Hj9vqhE4gc0nRldJ+z61CnoSZZxohSOLP
-c37VB3DCoy2Nq3AYL2RWWESL1e7fmrFvhfXAn+vUguvufzv6khm/ymkV/Fv3sCIf
-pScO4+/WtjsjPVCUJhqE/sJmQAZSGJl3JntNPjW/Wcx/RytrfduL7/xDm36jtC5u
-zMTPdW9gZlS6ljNBVpErL1sq40MLM3aH8uUaeiOZmq+/P8zDYYBPgxAPPQ+oa0Ai
-y3uXXGb80thBw3uCZQlYmfeo5pfGb8opGmvEGejJWy05CC/jZIdDvq7vm0Cw9r0Y
-FniCzNzidydYsTv2Hg6rPNSGHAfh2ZzJq9nSRKhUa4HpZEOK0SY=
-=V95/
------END PGP SIGNATURE-----
-
---sm4nu43k4a2Rpi4c--
-
-
---===============8878456813461194414==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+--
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8878456813461194414==--
-
