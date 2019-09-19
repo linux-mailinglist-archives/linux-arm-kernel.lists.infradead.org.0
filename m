@@ -2,70 +2,36 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5050B8523
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 00:18:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68276B8704
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 00:33:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bvk0X4l2fyCkUJ4SRAOPrFTfQPdV2F2AJOp0Ykm3mB8=; b=A2wbJUjuJZaaTw
-	98ieiMbzc6cXiz3RKyy/CzNVQWg4BxXsyiRcNPrz30X0x7L1H1f+E/t9A7pMdxFXijyrN5n0C+ZB0
-	o3oOcRGIwkXi9C3Jotpmw6jm3rQ341qT6KrenuHByDqs5biCMK5aW/mPDwDzLe2J99S0qcTDzn1Qo
-	w7N/WoE8wGa/k/xCCWubqV/5bVnFsIelnx+bcgAElsx5ILbY9EaduZR0QKTsiFs2iiJXM6TLujEpc
-	ouACP+1oF84w0W3aOcSEwVJKWKs6ly7uerNyY6th5xl7iZq3wSsb1N6rXiOM4TBl60aBZ0maZQbXm
-	0JJd7/ml+Zct+VVF7KXQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=c+DqWpWf+8AqPLooHf22c7vV5TUADgposyWHa8NRLoA=; b=DJkx9IVBE3cq8I
+	dm1R/ceyYa4zoKSk7BbO+dl31D9jyzlVfWuJyyB8EXA5WXxnS3VgmNZuu07bbi71hR7QAVvYHk2TH
+	4y9sEOZoBpd3uDWrlS15A8jhHpvAQDlZkO9pStFP40tr9ITQbDF8yikmrQfTY+IHUPYGmfQ931n6J
+	331mdhBfa6TNMZdHu8AcBt+4lUmi1m488x80Y5Qv9D68cK6pouGEeuggcwK7lE5shQ+PK4o0PqaB2
+	oqSWFNgdgP26zQAXHhPtABfZFUzC1/7vaL/tzJPatq7GLGnlXWcngsyogVxiacIPeXuBzxmpVI0FV
+	k0MVoaKDh5Ei9lyOwJfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iB4ka-0000yV-FO; Thu, 19 Sep 2019 22:18:08 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iB4kK-0000xR-Ux
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 22:17:54 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 853A921907;
- Thu, 19 Sep 2019 22:17:50 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568931470;
- bh=MqV2wpDomJRKYrDCq3ihcJ863yZKr1gH+8fHVxZCNBE=;
- h=In-Reply-To:References:Cc:To:From:Subject:Date:From;
- b=P3fsiJZVHmtqiJdkY+1llOwtbQQ7EKFaNVYdlAiGSgTLv3Yg65XWGVFtjIThaYj2D
- tT3cu1RI5vDhhjBCrSdblPBhae4yl1S2ggg6+I3qPzRgc8A0kw4WFQg8YH1K+ghTe6
- 7Tpdo8rM3QvFyqJtE+0xGFBCNXbdnzzhgtEY5TFk=
+	id 1iB4zV-0006Xg-Lf; Thu, 19 Sep 2019 22:33:33 +0000
+Received: from [2601:1c0:6280:3f0::9a1f]
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iB4zM-0006Wl-EL; Thu, 19 Sep 2019 22:33:24 +0000
+From: Randy Dunlap <rdunlap@infradead.org>
+Subject: [PATCH 1/2] soc: ti: big cleanup of Kconfig file
+To: LKML <linux-kernel@vger.kernel.org>,
+ LAK <linux-arm-kernel@lists.infradead.org>
+Message-ID: <8437a1f9-18f2-dd03-4fea-de5ba71f25c9@infradead.org>
+Date: Thu, 19 Sep 2019 15:33:23 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190919030912.16957-2-chen.fang@nxp.com>
-References: <20190919030912.16957-1-chen.fang@nxp.com>
- <20190919030912.16957-2-chen.fang@nxp.com>
-To: "shawnguo@kernel.org" <shawnguo@kernel.org>, Fancy Fang <chen.fang@nxp.com>
-From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH v2] clk: imx7ulp: remove IMX7ULP_CLK_MIPI_PLL clock
-User-Agent: alot/0.8.1
-Date: Thu, 19 Sep 2019 15:17:49 -0700
-Message-Id: <20190919221750.853A921907@mail.kernel.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_151753_028650_0482E4C6 
-X-CRM114-Status: UNSURE (   8.29  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+Content-Language: en-US
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,38 +43,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mturquette@baylibre.com" <mturquette@baylibre.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Dave Gerlach <d-gerlach@ti.com>, Tony Lindgren <tony@atomide.com>,
+ Keerthy <j-keerthy@ti.com>, Sandeep Nair <sandeep_n@ti.com>,
+ Santosh Shilimkar <ssantosh@kernel.org>, Olof Johansson <olof@lixom.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Fancy Fang (2019-09-18 20:10:48)
-> diff --git a/include/dt-bindings/clock/imx7ulp-clock.h b/include/dt-bindings/clock/imx7ulp-clock.h
-> index 6f66f9005c81..a39b0c40cb41 100644
-> --- a/include/dt-bindings/clock/imx7ulp-clock.h
-> +++ b/include/dt-bindings/clock/imx7ulp-clock.h
-> @@ -49,7 +49,6 @@
->  #define IMX7ULP_CLK_NIC1_DIV           36
->  #define IMX7ULP_CLK_NIC1_BUS_DIV       37
->  #define IMX7ULP_CLK_NIC1_EXT_DIV       38
-> -#define IMX7ULP_CLK_MIPI_PLL           39
+From: Randy Dunlap <rdunlap@infradead.org>
 
-You can't remove this. Just add a comment like /* unused */ or
-something to indicate this shouldn't be used.
+Cleanup drivers/soc/ti/Kconfig:
+- delete duplicate words
+- end sentences with '.'
+- fix typos/spellos
+- Subsystem is one word
+- capitalize acronyms
+- reflow lines to be <= 80 columns
 
->  #define IMX7ULP_CLK_SIRC               40
->  #define IMX7ULP_CLK_SOSC_BUS_CLK       41
->  #define IMX7ULP_CLK_FIRC_BUS_CLK       42
-> -- 
-> 2.17.1
-> 
+Fixes: 41f93af900a2 ("soc: ti: add Keystone Navigator QMSS driver")
+Fixes: 88139ed03058 ("soc: ti: add Keystone Navigator DMA support")
+Fixes: afe761f8d3e9 ("soc: ti: Add pm33xx driver for basic suspend support")
+Fixes: 5a99ae0092fe ("soc: ti: pm33xx: AM437X: Add rtc_only with ddr in self-refresh support")
+Fixes: a869b7b30dac ("soc: ti: Add Support for AM654 SoC config option")
+Fixes: cff377f7897a ("soc: ti: Add Support for J721E SoC config option")
+Signed-off-by: Randy Dunlap <rdunlap@infradead.org>
+Cc: Olof Johansson <olof@lixom.net>
+Cc: Santosh Shilimkar <ssantosh@kernel.org>
+Cc: Sandeep Nair <sandeep_n@ti.com>
+Cc: Dave Gerlach <d-gerlach@ti.com>
+Cc: Keerthy <j-keerthy@ti.com>
+Cc: Tony Lindgren <tony@atomide.com>
+Cc: linux-kernel@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
+---
+@Santosh: MAINTAINERS says that you maintain drivers/soc/ti/*,
+but there is more that Keystone-related code in that subdirectory
+now... just in case you want to update that info.
+
+ drivers/soc/ti/Kconfig |   20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+
+--- lnx-53.orig/drivers/soc/ti/Kconfig
++++ lnx-53/drivers/soc/ti/Kconfig
+@@ -7,12 +7,12 @@ if ARCH_K3
+ config ARCH_K3_AM6_SOC
+ 	bool "K3 AM6 SoC"
+ 	help
+-	  Enable support for TI's AM6 SoC Family support
++	  Enable support for TI's AM6 SoC Family.
+ 
+ config ARCH_K3_J721E_SOC
+ 	bool "K3 J721E SoC"
+ 	help
+-	  Enable support for TI's J721E SoC Family support
++	  Enable support for TI's J721E SoC Family.
+ 
+ endif
+ 
+@@ -27,7 +27,7 @@ menuconfig SOC_TI
+ if SOC_TI
+ 
+ config KEYSTONE_NAVIGATOR_QMSS
+-	tristate "Keystone Queue Manager Sub System"
++	tristate "Keystone Queue Manager Subsystem"
+ 	depends on ARCH_KEYSTONE
+ 	help
+ 	  Say y here to support the Keystone multicore Navigator Queue
+@@ -42,9 +42,9 @@ config KEYSTONE_NAVIGATOR_DMA
+ 	tristate "TI Keystone Navigator Packet DMA support"
+ 	depends on ARCH_KEYSTONE
+ 	help
+-	  Say y tp enable support for the Keystone Navigator Packet DMA on
+-	  on Keystone family of devices. It sets up the dma channels for the
+-	  Queue Manager Sub System.
++	  Say y to enable support for the Keystone Navigator Packet DMA on
++	  on Keystone family of devices. It sets up the DMA channels for the
++	  Queue Manager Subsystem.
+ 
+ 	  If unsure, say N.
+ 
+@@ -53,10 +53,10 @@ config AMX3_PM
+ 	depends on SOC_AM33XX || SOC_AM43XX
+ 	depends on WKUP_M3_IPC && TI_EMIF_SRAM && SRAM && RTC_DRV_OMAP
+ 	help
+-	  Enable power management on AM335x and AM437x. Required for suspend to mem
+-	  and standby states on both AM335x and AM437x platforms and for deeper cpuidle
+-	  c-states on AM335x. Also required for rtc and ddr in self-refresh low
+-	  power mode on AM437x platforms.
++	  Enable power management on AM335x and AM437x. Required for suspend
++	  to mem and standby states on both AM335x and AM437x platforms and
++	  for deeper cpuidle c-states on AM335x. Also required for RTC and
++	  DDR in self-refresh low power mode on AM437x platforms.
+ 
+ config WKUP_M3_IPC
+ 	tristate "TI AMx3 Wkup-M3 IPC Driver"
+
 
 _______________________________________________
 linux-arm-kernel mailing list
