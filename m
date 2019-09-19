@@ -2,82 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D2D2B7D01
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 16:37:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FD75B7D04
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 16:38:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t5na3909O+mKEg45g7A+fviCyRr9IK7voyro9sOWDbs=; b=UtMXmnmJXDUeER
-	S7Ul0MK83Y2xXuX2E2ky9jkTjr0T7vWp3nrmThtvdmpWdeTzNF9w5vsgOVcCLuy2XV45xWx44Hdm2
-	slMAM1SN5V567erYyZP/6AvFDQEJKB9RyQ518DfFIUkCJMP7Xg11AkZkTp8733sqeVpqlSB5g17yf
-	/QlHI4fOUpVd2SY3yi8g1csJ9s04sAglm8Lc+qplVzo9TdKDB029EUtD2xBWB4zsquCpLJtW2qwkS
-	cqpfXZlJMngvOZ/UPvFtEZwKHb9ECvTuFAAZnlDC+yo/7+Bg7MCDQmGH1hhQC81zosR/cI7giOCG4
-	hijfduj2Znu4B1Az02pQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UEDjCghktZ8K7k/yy08bxhdrVN9nm/BCHJP9C2wRs3g=; b=sxJMJhDhPeH34K
+	7Kd9ZNXyiHN5tsGmlEGsN25Qzp1edu98iZqyuxKVBqaoAHldGkmncb4YdPlK+hwSKHo0p18ihzh4H
+	XYw0FmHGZWoc/NIFk7fAaVz+VjA0MNIgL1IUeqQRf3hgMwMX4Ciqi6ZON12xHM9dNZF8yP2MbDzxi
+	TnmtDbrfdlQvDr5DnY8B5ICA57XLdcOQoskef9YUwAd4yS5Q7m+i5yPaUMZh3KCmX1b0wbzGNRxdD
+	6EpHMQLYp1jQVgv2xr79QmSqlyusxWCLDPmPLBGiqb542bVTn1Q5PlbEYt07wDazKbFsFmJfKlp6O
+	kgKUGCnHkKwz5e4zF2FQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAxYz-0007pi-9q; Thu, 19 Sep 2019 14:37:41 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1iAxZk-0008Kh-KY; Thu, 19 Sep 2019 14:38:28 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAxYi-0007oe-6m
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 14:37:25 +0000
-Received: by mail-lf1-x142.google.com with SMTP id y127so2582088lfc.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Sep 2019 07:37:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=C/YKIIlDS8lZho9e4vPUeHyogrERU8xcKbZimBkWeCQ=;
- b=W3UQB2RrUJ6vv2M8HVuZVtFpnWXhc3dHhXFwnUsp6CeKd30GsXdyZZw2GFh1mxC8km
- vK8dfFCRgbYvp6PeqcgtD7al/L9UpnvwUFuj5EeKyCb0WOfA7CScYIPAbsF4N2ksXz+0
- X4t+cFR8bz6VRAnE7V77kNi4ZdoCg+MnmI+sUsyRi/1LTugIZgMwa2ClGlOWdvcHoaH8
- +ciin3FlYbQS3Fy5VogrE4bthJuZjKAoBoA6slyjZ0Dw8KKNftfxZzE7oEjyQLr1T74z
- CqgGfFvOg0nHEtuAYtO/wcP+KA/k+Vxl4lkpGrA4E9ZKdgyxFQShtZE6p9OLLMFcHNy7
- 09og==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=C/YKIIlDS8lZho9e4vPUeHyogrERU8xcKbZimBkWeCQ=;
- b=jLO3KuQflAmeG/t+2r7zfJlXtOGstJ7A7Ac+6Gh7kzi1MORYqBUq9eOaH9W/fv1HT3
- 2ll7igv9GE/Ed9l1w9tL2n8vxip/FsdJbLd9Fb4J8zkljO6Xot1Gow7DB4hVktkKVWpw
- lc2Y5lHMysbOPj5di1C53wkdhGHdh0zBY/Hyoyzq+mdZmfX6WFpnpEl0GNeBHaYsJPK9
- KHmaw3qlm8PSZiMc4EQ52fLAOm6UspY8AX7/isZ8rgdxwQgJLMG6lLEGTsTpUej63YsY
- h4KrQZFCnINuRtR/w2n1xrAPjcsKnWL8gQDX94VANgluzg/YhKMcFh9xyiPZjqwRsOUA
- poWA==
-X-Gm-Message-State: APjAAAUfM+p5d/qqrT9DIAzCaxHrRFUVMglVCUvj2k7OqMqEXNteAPAf
- vU08DmLDN+ABQ/CIq/JJ3F3aMyDjE93RgzsGRLVlIA==
-X-Google-Smtp-Source: APXvYqxsqDiic3hvUIIWYsTzTncSZd01uGcFQSbFPvhTKDCRIprfIO3eszoVG4u+PbsHXQ8Xikg9MTyxZG/mKHhzbIs=
-X-Received: by 2002:ac2:568c:: with SMTP id 12mr5126705lfr.133.1568903841835; 
- Thu, 19 Sep 2019 07:37:21 -0700 (PDT)
+ id 1iAxZJ-00087d-Cw; Thu, 19 Sep 2019 14:38:02 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x8JEbetv115088;
+ Thu, 19 Sep 2019 09:37:40 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1568903860;
+ bh=MF3qsuF4n+o3m2uSbnHwtbN88u+xehQfFPTradyvPmM=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=oop+2cl0Z5hydQEOc7aJzKOUC8+y7z7JdhpUZQ48FCxXjOkcMZ1L5BFe22g4abjTm
+ aGkkCdJjvzrRTBkmVIECVwkY1WTc1zljyPyknqsjQzIVpNZ3t864me2KvRHSmox9Uz
+ lMXRFJyZDKSGM4Eh+6J7GPgsT5E2l92r0G3JPUxA=
+Received: from DFLE113.ent.ti.com (dfle113.ent.ti.com [10.64.6.34])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x8JEbd4H073219
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 19 Sep 2019 09:37:40 -0500
+Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE113.ent.ti.com
+ (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 19
+ Sep 2019 09:37:36 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Thu, 19 Sep 2019 09:37:39 -0500
+Received: from [10.250.132.15] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x8JEbYUO049208;
+ Thu, 19 Sep 2019 09:37:35 -0500
+Subject: Re: [PATCH 00/23] mtd: spi-nor: Quad Enable and (un)lock methods
+To: <Tudor.Ambarus@microchip.com>, <boris.brezillon@collabora.com>,
+ <marek.vasut@gmail.com>, <miquel.raynal@bootlin.com>, <richard@nod.at>,
+ <linux-mtd@lists.infradead.org>
+References: <20190917155426.7432-1-tudor.ambarus@microchip.com>
+From: Vignesh Raghavendra <vigneshr@ti.com>
+Message-ID: <920a9946-af0d-1190-d59c-0b4acee71931@ti.com>
+Date: Thu, 19 Sep 2019 20:07:34 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <1567048502-6064-1-git-send-email-jing-ting.wu@mediatek.com>
- <d5100b2d-46c4-5811-8274-8b06710d2594@arm.com>
- <20190830145501.zadfv2ffuu7j46ft@e107158-lin.cambridge.arm.com>
- <1567689999.2389.5.camel@mtkswgap22>
- <CAKfTPtC3txstND=6YkWBJ16i06cQ7xueUpD5j-j-UfuSf0-z-g@mail.gmail.com>
- <1568892135.4892.10.camel@mtkswgap22>
- <CAKfTPtCuWrpW_o6r5cmGhLf_84PFHJhBk0pJ3fcbU_YgcBnTkQ@mail.gmail.com>
- <20190919142315.vmrrpvljpspqpurp@e107158-lin.cambridge.arm.com>
- <CAKfTPtA9-JLxs+DdLYjBQ6VfVGNxm++QYYi1wy-xS6o==EAPNw@mail.gmail.com>
-In-Reply-To: <CAKfTPtA9-JLxs+DdLYjBQ6VfVGNxm++QYYi1wy-xS6o==EAPNw@mail.gmail.com>
-From: Vincent Guittot <vincent.guittot@linaro.org>
-Date: Thu, 19 Sep 2019 16:37:10 +0200
-Message-ID: <CAKfTPtAy1JSh725GAVXmg_x3fby1UfYn504tq4n2rQs1-JMy6Q@mail.gmail.com>
-Subject: Re: [PATCH 1/1] sched/rt: avoid contend with CFS task
-To: Qais Yousef <qais.yousef@arm.com>
+In-Reply-To: <20190917155426.7432-1-tudor.ambarus@microchip.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_073724_258005_264F637D 
-X-CRM114-Status: GOOD (  26.20  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190919_073801_514940_FBA29499 
+X-CRM114-Status: UNSURE (   9.09  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -87,6 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,69 +93,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream@mediatek.com, Peter Zijlstra <peterz@infradead.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Jing-Ting Wu <jing-ting.wu@mediatek.com>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Valentin Schneider <valentin.schneider@arm.com>,
- LAK <linux-arm-kernel@lists.infradead.org>
+Cc: linux-aspeed@lists.ozlabs.org, andrew@aj.id.au,
+ linux-kernel@vger.kernel.org, vz@mleia.com, linux-mediatek@lists.infradead.org,
+ joel@jms.id.au, matthias.bgg@gmail.com, computersforpeace@gmail.com,
+ dwmw2@infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 19 Sep 2019 at 16:32, Vincent Guittot
-<vincent.guittot@linaro.org> wrote:
->
-> On Thu, 19 Sep 2019 at 16:23, Qais Yousef <qais.yousef@arm.com> wrote:
-> >
-> > On 09/19/19 14:27, Vincent Guittot wrote:
-> > > > > > But for requirement of performance, I think it is better to differentiate between idle CPU and CPU has CFS task.
-> > > > > >
-> > > > > > For example, we use rt-app to evaluate runnable time on non-patched environment.
-> > > > > > There are (NR_CPUS-1) heavy CFS tasks and 1 RT Task. When a CFS task is running, the RT task wakes up and choose the same CPU.
-> > > > > > The CFS task will be preempted and keep runnable until it is migrated to another cpu by load balance.
-> > > > > > But load balance is not triggered immediately, it will be triggered until timer tick hits with some condition satisfied(ex. rq->next_balance).
-> > > > >
-> > > > > Yes you will have to wait for the next tick that will trigger an idle
-> > > > > load balance because you have an idle cpu and 2 runnable tack (1 RT +
-> > > > > 1CFS) on the same CPU. But you should not wait for more than  1 tick
-> > > > >
-> > > > > The current load_balance doesn't handle correctly the situation of 1
-> > > > > CFS and 1 RT task on same CPU while 1 CPU is idle. There is a rework
-> > > > > of the load_balance that is under review on the mailing list that
-> > > > > fixes this problem and your CFS task should migrate to the idle CPU
-> > > > > faster than now
-> > > > >
-> > > >
-> > > > Period load balance should be triggered when current jiffies is behind
-> > > > rq->next_balance, but rq->next_balance is not often exactly the same
-> > > > with next tick.
-> > > > If cpu_busy, interval = sd->balance_interval * sd->busy_factor, and
-> > >
-> > > But if there is an idle CPU on the system, the next idle load balance
-> > > should apply shortly because the busy_factor is not used for this CPU
-> > > which is  not busy.
-> > > In this case, the next_balance interval is sd_weight which is probably
-> > > 4ms at cluster level and 8ms at system level in your case. This means
-> > > between 1 and 2 ticks
-> >
-> > But if the CFS task we're preempting was latency sensitive - this 1 or 2 tick
-> > is too late of a recovery.
-> >
-> > So while it's good we recover, but a preventative approach would be useful too.
-> > Just saying :-) I'm still not sure if this is the best longer term approach.
->
-> like using a rt task ?
+Hi,
 
-I mean, RT task should select a sub optimal CPU because of CFS
-If you want to favor CFS compared to RT it's probably because your
-task should be RT too
+On 17-Sep-19 9:24 PM, Tudor.Ambarus@microchip.com wrote:
+> From: Tudor Ambarus <tudor.ambarus@microchip.com>
+> 
+[...]
+> Tudor Ambarus (23):
+>   mtd: spi-nor: hisi-sfc: Drop nor->erase NULL assignment
+>   mtd: spi-nor: Introduce 'struct spi_nor_controller_ops'
+>   mtd: spi-nor: cadence-quadspi: Fix cqspi_command_read() definition
+>   mtd: spi-nor: Rename nor->params to nor->flash
+>   mtd: spi-nor: Rework read_sr()
+>   mtd: spi-nor: Rework read_fsr()
+>   mtd: spi-nor: Rework read_cr()
+>   mtd: spi-nor: Rework write_enable/disable()
+>   mtd: spi-nor: Fix retlen handling in sst_write()
+>   mtd: spi-nor: Rework write_sr()
+>   mtd: spi-nor: Rework spi_nor_read/write_sr2()
+>   mtd: spi-nor: Report error in spi_nor_xread_sr()
+>   mtd: spi-nor: Void return type for spi_nor_clear_sr/fsr()
+>   mtd: spi-nor: Drop duplicated new line
+>   mtd: spi-nor: Drop spansion_quad_enable()
+>   mtd: spi-nor: Fix errno on quad_enable methods
+>   mtd: spi-nor: Fix clearing of QE bit on lock()/unlock()
+>   mtd: spi-nor: Rework macronix_quad_enable()
+>   mtd: spi-nor: Rework spansion(_no)_read_cr_quad_enable()
+>   mtd: spi-nor: Update sr2_bit7_quad_enable()
+>   mtd: spi-nor: Rework the disabling of block write protection
+>   mtd: spi-nor: Add Global Block Unlock support
+>   mtd: spi-nor: Unlock global block protection on sst26vf064b
 
->
-> >
-> > --
-> > Qais Yousef
+With whole series applied, I see:
+
+drivers/mtd/spi-nor/spi-nor.c:520: warning: Function parameter or member 'cr' not described in 'spi_nor_read_cr'
+drivers/mtd/spi-nor/spi-nor.c:520: warning: Excess function parameter 'fsr' description in 'spi_nor_read_cr'
+drivers/mtd/spi-nor/spi-nor.c:742: warning: Function parameter or member 'len' not described in 'spi_nor_write_sr'
+drivers/mtd/spi-nor/spi-nor.c:889: warning: Function parameter or member 'status_new' not described in 'spi_nor_write_sr1_and_check'
+drivers/mtd/spi-nor/spi-nor.c:889: warning: Function parameter or member 'mask' not described in 'spi_nor_write_sr1_and_check'
+drivers/mtd/spi-nor/spi-nor.c:923: warning: Function parameter or member 'status_new' not described in 'spi_nor_write_16bit_sr_and_check'
+drivers/mtd/spi-nor/spi-nor.c:923: warning: Function parameter or member 'mask' not described in 'spi_nor_write_16bit_sr_and_check'
+drivers/mtd/spi-nor/spi-nor.c:997: warning: Function parameter or member 'status_new' not described in 'spi_nor_write_sr_and_check'
+drivers/mtd/spi-nor/spi-nor.c:997: warning: Function parameter or member 'mask' not described in 'spi_nor_write_sr_and_check'
+
+Could you please fix up docs next time around?
+
+Regards
+Vignesh
+> 
+>  drivers/mtd/spi-nor/aspeed-smc.c      |   23 +-
+>  drivers/mtd/spi-nor/cadence-quadspi.c |   54 +-
+>  drivers/mtd/spi-nor/hisi-sfc.c        |   23 +-
+>  drivers/mtd/spi-nor/intel-spi.c       |   24 +-
+>  drivers/mtd/spi-nor/mtk-quadspi.c     |   25 +-
+>  drivers/mtd/spi-nor/nxp-spifi.c       |   23 +-
+>  drivers/mtd/spi-nor/spi-nor.c         | 1697 ++++++++++++++++++---------------
+>  include/linux/mtd/spi-nor.h           |   75 +-
+>  8 files changed, 1050 insertions(+), 894 deletions(-)
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
