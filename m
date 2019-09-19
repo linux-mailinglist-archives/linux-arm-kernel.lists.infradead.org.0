@@ -2,92 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DAC64B7CD9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 16:31:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E6CDB7CE1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 16:33:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CBl4j8JHicRxfOP+Nn5C4MAsN2EdLkgJvDvtyAFAWig=; b=aU4Q6M3XwNJzC6
-	4DAosf6ioMBOaXfCr59af0KnCsPTsOozobsAiyq1BJe0A8rGJSa2+zKrZe3+yGflPo77Bu8RriiiB
-	c996SYLyf5Tsi/O1iUSjlbYV+sMjZG/Wg3XZq8+gL0Hgr/grq52nq9bIRK+5Uy12W6G5C7lnjtYEW
-	P+hTsaptkwV6l+f3IUjYHca+OlK0MnlFJ8lF6G3HOQSK7N+kkPebqOf1C1jnJJVXKKI1B3rtRkikw
-	wiyJHIVK8s5rL7G5Y/feGPZ2/UJL2W3dEvCrJ/p6Y9aGhBiu2CZSgzQYJGJP5nMzjNvpORAAyQqKd
-	JSUiJOX7Za8ZGxvxqlhQ==;
+	List-Owner; bh=qIzGLgaTJzk7xgItrIG/TxgT0p5Ge69+iMniA9T0ZDc=; b=cDKjjaCs5BhemM
+	wGipjru5xAA6rTBU8nXJpWVfa7tF3kT1kEZE2n8YOt4Q8+IdSs9ZfpjNUt3FVW5c9e3ZpYeAA2ahz
+	4CzrjOF1mDPXgqJ+xiFw27FOybE4/LX2k36Mhan94OmZkIm9V/rqdW71MtZqis4zWLMUL7d9jAdjc
+	d7Bcil8YwYK6TWeRrIeL5yOjDVMws1CF0OSECM0mKA/yzEc/7a9eOLA93xUCSHeNEU3VqlZxi1sy+
+	gkSkFp1C16Kv7g8sFOv9wEa/sLltP1xWdkZOg63g2mIAZimkbE5goXZepodTRX3GriTzmTqGlHt4Z
+	TQDDELAk0mkdss0z0F0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAxTD-0004Jf-AI; Thu, 19 Sep 2019 14:31:43 +0000
-Received: from mx0a-001ae601.pphosted.com ([67.231.149.25]
- helo=mx0b-001ae601.pphosted.com)
+	id 1iAxUy-0004oC-Gq; Thu, 19 Sep 2019 14:33:32 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAxSy-0004JF-90
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 14:31:29 +0000
-Received: from pps.filterd (m0077473.ppops.net [127.0.0.1])
- by mx0a-001ae601.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x8JETFWh020368; Thu, 19 Sep 2019 09:31:19 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cirrus.com;
- h=date : from : to : cc
- : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=PODMain02222019;
- bh=PupjcNRQ2lxRP0e4ia7WEj2POWDctVOG0nBQBB08VYk=;
- b=J9buVC0Zz24St63xLUxx42wcaPWcFSJ06NxtMhirEAqaTpZowp4vkWR5cyxEhD72qaHS
- 3TC0FbJNBs9vblA8iPqYlUzVKbJbU8h3HPyGK22qQEmqOnrx5OrzgICPi8MZV9bkw7Zd
- MyF8HadxeGI/zSooHeNn7CVWfP5YJk28OpEwNECWgPcoXdswkiCGwTiRMMj9CUGyAaYt
- maRdCjfHS1q54R3kZ0p1D7Q6PEu0SjGTDTro5S8Ix5D0eCw9+dpLMOTeNz9GfBMfsLtG
- XBbcorQdVMC6a/kI7lJ2FDP/gZ1fiR35zzOGoP/5x8flkvVYRTsoVDxx8p3Ee/ehlmHo GA== 
-Authentication-Results: ppops.net;
- spf=fail smtp.mailfrom=ckeepax@opensource.cirrus.com
-Received: from ediex02.ad.cirrus.com ([87.246.76.36])
- by mx0a-001ae601.pphosted.com with ESMTP id 2v3vbhs7sk-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT);
- Thu, 19 Sep 2019 09:31:19 -0500
-Received: from EDIEX01.ad.cirrus.com (198.61.84.80) by EDIEX02.ad.cirrus.com
- (198.61.84.81) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Thu, 19 Sep
- 2019 15:31:16 +0100
-Received: from ediswmail.ad.cirrus.com (198.61.86.93) by EDIEX01.ad.cirrus.com
- (198.61.84.80) with Microsoft SMTP Server id 15.1.1591.10 via
- Frontend Transport; Thu, 19 Sep 2019 15:31:16 +0100
-Received: from ediswmail.ad.cirrus.com (ediswmail.ad.cirrus.com [198.61.86.93])
- by ediswmail.ad.cirrus.com (Postfix) with ESMTP id BD7042C3;
- Thu, 19 Sep 2019 14:31:16 +0000 (UTC)
-Date: Thu, 19 Sep 2019 14:31:16 +0000
-From: Charles Keepax <ckeepax@opensource.cirrus.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH v1 2/9] mfd: wm8994: Add support for MCLKn clock control
-Message-ID: <20190919143116.GL10204@ediswmail.ad.cirrus.com>
-References: <20190918104634.15216-1-s.nawrocki@samsung.com>
- <CGME20190918104656eucas1p1d9cad1394b08d05a99151c4fbc9425ce@eucas1p1.samsung.com>
- <20190918104634.15216-3-s.nawrocki@samsung.com>
- <20190919075924.GB13195@pi3> <20190919125020.GJ3642@sirena.co.uk>
+ id 1iAxUb-0004nS-4g
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 14:33:10 +0000
+Received: by mail-lj1-x241.google.com with SMTP id v24so3857784ljj.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Sep 2019 07:33:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=+iAm9PNcP/MqvjLYI90Q8a9MlSIBggvtRha4/yfxSjo=;
+ b=LL11A7S9PPhZPUMJHeB72Hs8rvCUbc4npJmhdqAx0R3688k13FcJsaavtQI4Gie6D6
+ 5bE4wdOBlMEb3cNjI70eyY8TMxrSzSMhJMYt5DWDOgVxOmeId8uLKGhhSHFUOpCIs5ck
+ TDT9zKzbnrwe1RQ3sKU570sKKD0UsSAlBaCUdQJp6r4gXSlnb5zoKVuiUp6AfLfMh15H
+ JTSLVS/JwRuWUptwlfWXp7fFLim+S0v6IPlk9b9mNLKBUvjezs/MfOxUwU6v5XDmbI6C
+ atjg8zRfPFuPa5Yk9ReJYTu3uLIMxbs+VYktJfNtBQNhMTtIZGNJXVwhJr31fRuJVkhl
+ +sVA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=+iAm9PNcP/MqvjLYI90Q8a9MlSIBggvtRha4/yfxSjo=;
+ b=N5FUJYLCA5RCjJuqCXw4ErozqzyCxlzPGBLVge6Y7GammqQ7+7/8g6EHJ5kS3CWDn5
+ k8fEYvc7xjJtYt5Hw507GhSTSjyvik9Ur436D3+GVPVl8q3XgGetSGHgEYhhsnqCGdal
+ i2nzgF7UzSxWeN0WrBlA6zSKn2ffjdmAqmFerdnkbOR6F/PHqN6FOFkE5w6hpwOKd8y1
+ NNht0CSbExqyeJDqw+hSOAcxlgq+0IFjmwjpafGTb2HhdpG7n3I4iX5yj5eAFyjIknXl
+ laJbwyfbOxree0ZVtjobaOKkClo4tsWO2gJQjzfafVsOIZ5lCOnDyFt5uax7H4Ixqz6c
+ Tq6w==
+X-Gm-Message-State: APjAAAXdxhhmrPp61mwbsh1IYvOAvf94HqJk7+0hy4atorLPOjd8YUvp
+ OuDhDuRHYjh+v3+yqaU54dHI2dNsf6AVVHOGqz0gsA==
+X-Google-Smtp-Source: APXvYqyfccvz9I3VLff61MNvieg7GcINgTmqho338fZr4EkAQ0b8VLL9XABOtj1AY6IXkT0A6Bp+jQVUf9txqZahj8Y=
+X-Received: by 2002:a2e:1b56:: with SMTP id b83mr5621468ljb.107.1568903586009; 
+ Thu, 19 Sep 2019 07:33:06 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190919125020.GJ3642@sirena.co.uk>
-User-Agent: Mutt/1.5.21 (2010-09-15)
-X-Proofpoint-SPF-Result: fail
-X-Proofpoint-SPF-Record: v=spf1 include:spf-001ae601.pphosted.com
- include:spf.protection.outlook.com -all
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 clxscore=1015
- priorityscore=1501
- malwarescore=0 phishscore=0 suspectscore=0 lowpriorityscore=0
- impostorscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=938
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-1908290000 definitions=main-1909190137
+References: <1567048502-6064-1-git-send-email-jing-ting.wu@mediatek.com>
+ <d5100b2d-46c4-5811-8274-8b06710d2594@arm.com>
+ <20190830145501.zadfv2ffuu7j46ft@e107158-lin.cambridge.arm.com>
+ <1567689999.2389.5.camel@mtkswgap22>
+ <CAKfTPtC3txstND=6YkWBJ16i06cQ7xueUpD5j-j-UfuSf0-z-g@mail.gmail.com>
+ <1568892135.4892.10.camel@mtkswgap22>
+ <CAKfTPtCuWrpW_o6r5cmGhLf_84PFHJhBk0pJ3fcbU_YgcBnTkQ@mail.gmail.com>
+ <20190919142315.vmrrpvljpspqpurp@e107158-lin.cambridge.arm.com>
+In-Reply-To: <20190919142315.vmrrpvljpspqpurp@e107158-lin.cambridge.arm.com>
+From: Vincent Guittot <vincent.guittot@linaro.org>
+Date: Thu, 19 Sep 2019 16:32:53 +0200
+Message-ID: <CAKfTPtA9-JLxs+DdLYjBQ6VfVGNxm++QYYi1wy-xS6o==EAPNw@mail.gmail.com>
+Subject: Re: [PATCH 1/1] sched/rt: avoid contend with CFS task
+To: Qais Yousef <qais.yousef@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_073128_382169_09C8DB11 
-X-CRM114-Status: GOOD (  16.79  )
-X-Spam-Score: -0.8 (/)
+X-CRM114-CacheID: sfid-20190919_073309_197673_F818A2AD 
+X-CRM114-Status: GOOD (  24.37  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.149.25 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -103,44 +97,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
- linux-samsung-soc@vger.kernel.org, b.zolnierkie@samsung.com,
- sbkim73@samsung.com, patches@opensource.cirrus.com, lgirdwood@gmail.com,
- Krzysztof Kozlowski <krzk@kernel.org>, robh+dt@kernel.org,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+Cc: wsd_upstream@mediatek.com, Peter Zijlstra <peterz@infradead.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Jing-Ting Wu <jing-ting.wu@mediatek.com>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Valentin Schneider <valentin.schneider@arm.com>,
+ LAK <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 19, 2019 at 01:50:20PM +0100, Mark Brown wrote:
-> On Thu, Sep 19, 2019 at 09:59:24AM +0200, Krzysztof Kozlowski wrote:
-> > On Wed, Sep 18, 2019 at 12:46:27PM +0200, Sylwester Nawrocki wrote:
-> > > The WM1811/WM8994/WM8958 audio CODEC DT bindings specify two optional
-> > > clocks: "MCLK1", "MCLK2". Add code for getting those clocks in the MFD
-> > > part of the wm8994 driver so they can be further handled in the audio
-> > > CODEC part.
-> 
-> > I think these are needed only for the codec so how about getting them in
-> > codec's probe?
-> 
-> Yeah.  IIRC when these were added a machine driver was grabbing them.  I
-> don't think that machine driver ever made it's way upstream though.
+On Thu, 19 Sep 2019 at 16:23, Qais Yousef <qais.yousef@arm.com> wrote:
+>
+> On 09/19/19 14:27, Vincent Guittot wrote:
+> > > > > But for requirement of performance, I think it is better to differentiate between idle CPU and CPU has CFS task.
+> > > > >
+> > > > > For example, we use rt-app to evaluate runnable time on non-patched environment.
+> > > > > There are (NR_CPUS-1) heavy CFS tasks and 1 RT Task. When a CFS task is running, the RT task wakes up and choose the same CPU.
+> > > > > The CFS task will be preempted and keep runnable until it is migrated to another cpu by load balance.
+> > > > > But load balance is not triggered immediately, it will be triggered until timer tick hits with some condition satisfied(ex. rq->next_balance).
+> > > >
+> > > > Yes you will have to wait for the next tick that will trigger an idle
+> > > > load balance because you have an idle cpu and 2 runnable tack (1 RT +
+> > > > 1CFS) on the same CPU. But you should not wait for more than  1 tick
+> > > >
+> > > > The current load_balance doesn't handle correctly the situation of 1
+> > > > CFS and 1 RT task on same CPU while 1 CPU is idle. There is a rework
+> > > > of the load_balance that is under review on the mailing list that
+> > > > fixes this problem and your CFS task should migrate to the idle CPU
+> > > > faster than now
+> > > >
+> > >
+> > > Period load balance should be triggered when current jiffies is behind
+> > > rq->next_balance, but rq->next_balance is not often exactly the same
+> > > with next tick.
+> > > If cpu_busy, interval = sd->balance_interval * sd->busy_factor, and
+> >
+> > But if there is an idle CPU on the system, the next idle load balance
+> > should apply shortly because the busy_factor is not used for this CPU
+> > which is  not busy.
+> > In this case, the next_balance interval is sd_weight which is probably
+> > 4ms at cluster level and 8ms at system level in your case. This means
+> > between 1 and 2 ticks
+>
+> But if the CFS task we're preempting was latency sensitive - this 1 or 2 tick
+> is too late of a recovery.
+>
+> So while it's good we recover, but a preventative approach would be useful too.
+> Just saying :-) I'm still not sure if this is the best longer term approach.
 
-If you mean for the Arizona stuff, the machine driver using that
-was sound/soc/samsung/tm2_wm5110.c. Sylwester upstreamed it along
-with the patches.
+like using a rt task ?
 
-I think on wm8994 the clocks probably are only needed by the
-audio part of the driver, so probably can be moved in there,
-although as a disclaimer I have done a lot less with parts
-of that era. However on Arizona the clocking is needed from
-various parts of the driver so couldn't be moved exclusively
-to the codec driver.
-
-Thanks,
-Charles
+>
+> --
+> Qais Yousef
 
 _______________________________________________
 linux-arm-kernel mailing list
