@@ -2,134 +2,157 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50B24B745C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 09:45:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 088B5B7468
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 09:49:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dpoJ4oYLSjHRk/SCy8f2spnKPu/tjSfzajotq1iQKzA=; b=sAM/47afisJ1KM
-	1MnTC0NMAuOwdW8ldpSasoOlb+CcWYuyemAi4kd3Z68pp3n9s0hn6q08RKRU298gCQg1ljMA54wvG
-	SgHlkkT/tDbcCDWlDl43x9BRtdFTl5k2GnJrzaC1rTgLg6Np7Y25uMFk614AgA1VVmvaFw2MqVqXX
-	0LD0C/MzZ6XH0aPATmS7CexQYqpAyac2dJqGDBML06vSkHVWosHqMBn6LF1j6zJ3LayzFiiGxqPNM
-	DV0T2HPSPEiHYXe+3EB5x/QZZ584D6WXpt45ou+5hCd2mXSLKhgIe2woFO2ZhLt/OpDpNBDjCsZlA
-	mFugMluaHKSDZM9mpKvw==;
+	List-Owner; bh=vwGIurXbDjV52GtV1N44Yhtm0lOtJqaxupl40uLOWu4=; b=G0/RB1VIp9Did1
+	a0IJl4uf7oTdhNp43jHO0Vicoui8wGbYr6pHxHDCd/DPGL3BqYKy185BG2ypd7XCF3XgbUm6HGzYT
+	5WvOrqEDwgHRmE4JNr/v3xFqkHEg2RQ76rF3aDY3xPi2vZ75b4Le7J5754q4BjEeE7DhWFvnN9SYu
+	Np0rB5UeWd1m9KNvK8jt5q44COk6MK8t64ccOShHspy0SWxxI0XyyJakGyJXhAkGpIQOyHigdDWu8
+	CoV8UgcDGWU2cqtdq1eS+b5QXhsAms0fsejAFMU6S1ejA4hkzd7ssWgZR3QdxRAEUVudL/tO2IPCN
+	R2VvKa0bILNANbAtXmCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAr7O-0006eV-RF; Thu, 19 Sep 2019 07:44:47 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1iArBw-0008PP-Sb; Thu, 19 Sep 2019 07:49:29 +0000
+Received: from esa2.microchip.iphmx.com ([68.232.149.84])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAr64-0006cT-2z
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 07:43:29 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190919074321euoutp02abd2b4a2839a1d69e73fc4b236be71db~FxyO9pAcu1572615726euoutp02o
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Sep 2019 07:43:21 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20190919074321euoutp02abd2b4a2839a1d69e73fc4b236be71db~FxyO9pAcu1572615726euoutp02o
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1568879001;
- bh=VM4IIbn3EevkeSWzC5pJywlEMfKiPVMT0Ut0ubgYWY4=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=M3fIaDoSEb3ylVYa6JUrMXMcIDPluwbFQjkx+UV92J2JZ1I7MPDhx7/43b3fJ4VfT
- ZxZ8IabQVghTRSLOgLm/gQYS0E1LIH07FYY1h4+fXiA+5ogjdAX0ZsFFChsc3CBv+m
- wi4rpVoUcRtyRPp6+p+8YQNqtmjYzqd8A98hd23Y=
-Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20190919074320eucas1p24957c0a000c67fdfceb824fa47a92d0d~FxyOJzSAT1725317253eucas1p2n;
- Thu, 19 Sep 2019 07:43:20 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges1new.samsung.com (EUCPMTA) with SMTP id 45.6F.04469.891338D5; Thu, 19
- Sep 2019 08:43:20 +0100 (BST)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20190919074319eucas1p161853b43fb7799db11b6eacd89211c98~FxyNSSOKd1048710487eucas1p1w;
- Thu, 19 Sep 2019 07:43:19 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20190919074319eusmtrp2d1b2797578f57c87f1980419ade35036~FxyNCZqbf2055420554eusmtrp2e;
- Thu, 19 Sep 2019 07:43:19 +0000 (GMT)
-X-AuditID: cbfec7f2-54fff70000001175-03-5d8331989d8c
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id 09.B5.04166.791338D5; Thu, 19
- Sep 2019 08:43:19 +0100 (BST)
-Received: from [106.120.51.20] (unknown [106.120.51.20]) by
- eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20190919074318eusmtip1991029d24405dec0743580d437c41e16~FxyMT6ouz1755617556eusmtip1x;
- Thu, 19 Sep 2019 07:43:18 +0000 (GMT)
-Subject: Re: [PATCH v2 3/3] dt-bindings: ddr: Add bindings for Samsung
- LPDDR3 memories
-To: Krzysztof Kozlowski <krzk@kernel.org>
-From: Lukasz Luba <l.luba@partner.samsung.com>
-Message-ID: <4e7b0a6d-491f-a764-f038-1aff5534320f@partner.samsung.com>
-Date: Thu, 19 Sep 2019 09:43:17 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <CAJKOXPfBueaf2UVik8x2L_D_PTxdkvRukuWL3xh_jDiLKtt7pQ@mail.gmail.com>
+ id 1iArAG-0008Nz-CS
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 07:47:54 +0000
+Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
+ Claudiu.Beznea@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="Claudiu.Beznea@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa2.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa2.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: 3h6dpag7N5rKjPg0pJ0Yu0/Y1t/El6KXYl6Vra1dgA85AXqsZ3I67zEtO+SQNCi+qE9XCyv/iZ
+ wDbag4v62GfYT9v7rWvS2oGPNJnEe58r9O9C3/k6DCDMU+fhC29PpG7g8lJTvNG3dSsg4KOM38
+ tUOSHqnJGictf4dvFW8aCXz8NmqQdErIDD7ysVpJiJYDito4fN+Y9eeuoD0vLwRiu1Cf7JK4bQ
+ iGuf7q8KgB+7AyufVaQE2VZ5+LBi6douS5h8pvuGk86IjBHiwQV9gK7H898CcXPBQ26fssLb3b
+ iKk=
+X-IronPort-AV: E=Sophos;i="5.64,522,1559545200"; d="scan'208";a="49492057"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 19 Sep 2019 00:47:40 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Thu, 19 Sep 2019 00:47:34 -0700
+Received: from NAM03-BY2-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Thu, 19 Sep 2019 00:47:35 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=kRq5K5M8IyIJh3XAEzW5yjmPcB35Y4FcwxWOIaLvS6iF1a8WQox/udATNUKfhIXJHtcwF/AmnbhW4CppPBy2WwSNM+gZ8WHHiA9iTvNWwBrqW+mAnJWhJ4QYOK+IkITpCAzChzxqKa10ho6j74MaYfO73vGjXCdMO1ebjRktLm3TqcFLANez9FVpqxy63pPB4fBoaxEKOh9xEiLXIYAoeIL3bbrysoJxZxuH4UBvlC5mW3GVcyDfEVal77ylG6It1FZBGaaJp9a88oStmTOFLEZlvCOHy9QVAtoMKo/WF/7smjdAEWBQnIUw/M/hNXtKe5/ZAe9jr4re26EUtskFXw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=9XQ/GAUEealLUZMMuK8niriOHs6GKPsnLIp2RDO+Mhk=;
+ b=OVoQwKTGRR1ZH1lOpbOwcFHupDXd4OUEMAkkYMWbNldQzAOcK75aUUFxaOLOPB6ktmII59WIIEDHKrEWO26VEA5smV9CTf2y9PT+XwAjxt2AkAVdwvlrcarUZMI9cxh0O5EC8zL608V8lrUyGRxkN3xW5Xlg1eYNA726o5r955avVeyRUkrmFRA84l/K53n/zePOgRAED+vuP30Pf0cZLGtCJSIh3xAKiMv6Wtz2AZdr02yNrVXERKNt52r+xemk9VYFQ/7e169H/9KzSt6hOErSxzp2tb3rczb/BS/b4pjhiDdkwAtlHNuSdINaWGtADR0Ceu8QGMzjsjLuIVJnqw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=9XQ/GAUEealLUZMMuK8niriOHs6GKPsnLIp2RDO+Mhk=;
+ b=sSECsxonJo0rOGZFYgn5CTbwQU9ViGNeaOaJzJoJo9JtsUC6h3Cq9fZt9Gac6R1smEG48ZxPuFesF7h9pnDBGWYtBH4QahL6HjFWCgdW49tZdAnu/Nx2MiKkN2WqLLv1R01PgQvSNLfI7i2C4KBhzpRXJ9C4E8SPN3yq7iaQ/K0=
+Received: from MWHPR11MB1549.namprd11.prod.outlook.com (10.172.54.17) by
+ MWHPR11MB1680.namprd11.prod.outlook.com (10.172.54.145) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2284.20; Thu, 19 Sep 2019 07:47:27 +0000
+Received: from MWHPR11MB1549.namprd11.prod.outlook.com
+ ([fe80::e1f5:745f:84b4:7c7c]) by MWHPR11MB1549.namprd11.prod.outlook.com
+ ([fe80::e1f5:745f:84b4:7c7c%12]) with mapi id 15.20.2263.023; Thu, 19 Sep
+ 2019 07:47:27 +0000
+From: <Claudiu.Beznea@microchip.com>
+To: <kamel.bouhara@bootlin.com>, <thierry.reding@gmail.com>,
+ <linux-pwm@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v2] pwm: atmel: Remove platform_device_id and use only dt
+ bindings
+Thread-Topic: [PATCH v2] pwm: atmel: Remove platform_device_id and use only dt
+ bindings
+Thread-Index: AQHVbr57StGtPvVBBke1anoyhO1u4A==
+Date: Thu, 19 Sep 2019 07:47:27 +0000
+Message-ID: <e3a8f56f-7471-ac84-c266-1ee446531212@microchip.com>
+References: <20190918145716.32022-1-kamel.bouhara@bootlin.com>
+In-Reply-To: <20190918145716.32022-1-kamel.bouhara@bootlin.com>
+Accept-Language: en-US
 Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA01Sa0hTYRj22zln52y1+jYr3zSUVtGNrIHRgSwKIlZBVD8qulCrDlpu03a0
- O3gJL5lTq1W6LS9gKmtizmFqdGFKWsumBS6KUHQSVKvILkqpbTtG/nu+53ne73kfeBlC8YaK
- ZI7rUzmDXqNViqVk05NRz4oS1cWDqx4XhbMNJfUU6/3+nmLL219QbNHgR4L1eO7SbFfWJ5p1
- DPZS7KtWq5gdNrYjtsTzUMTWtb+j2dveHhH7NrNWzGY/aKfZtk+5FPuzcwBtwGp7mR2pW8zv
- aLXDdkmsbqxKVxc6bUg97IjeId4njT/GaY+f4gwr1x+WJj6ZsFApz6PPFJq6yQzkg3wkYQDH
- QeOzKpSPpIwC1yL4OlQpDgoK/B1Bff5uQRhG8KhznPg30XDtIy0INQjcpjuk8PAjyLNbQ+Ph
- eC9k1JpEQTwLLwXv2C8qaCKwi4SS1tGAwDBiHAvNtpNBjwxvhuKRGyE/iRfBD7ePCuLZgX++
- 9bdRgkcOT0t9ZBBL8E7oyu4KZRE4At74ykUCjoF7fisRzAKcyUDBzxFaWHsT9DW4xQIOhw8d
- zkl+Hky0CMOAecgwViIBX4DBoluTnrXQ1tFDBXcmAmXqW1cK9EZ40O0M0YBnwGu/XFhhBlxt
- ukkItAzychSCewk4C7ong+ZAjf0GXYyU5inFzFPKmKeUMf/PrUCkDUVwabwugeNVeu50LK/R
- 8Wn6hNijyToHClyce7zjWzP68fKIC2EGKafLRhZnHVRQmlP8WZ0LAUMoZ8msqwOU7Jjm7DnO
- kHzIkKbleBeKYkhlhOx8WP9+BU7QpHJJHJfCGf6pIkYSmYGidHua1qgbb2obCsq9fypKF/Zm
- ZzeHUZYsW9SB7c/p3l0dhrjW1ITzquq6pV+M/dN4ecv1Dxfkks8mB5+/rXrxyHxTQd2KobkW
- t7dM4l+Ot4zFhB3K/TUQmdKnNBamD8jXVW6N8WfyaKb+clLfiSthOTZHfFTZfUtsbdLvBfuT
- lSSfqFEtIwy85i8uymdrbQMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrPIsWRmVeSWpSXmKPExsVy+t/xu7rTDZtjDc4dkLTYOGM9q8X1L89Z
- LeYfOcdq0f/4NbPF+fMb2C3ONr1ht9j0+BqrxeVdc9gsPvceYbSYcX4fk8XaI3fZLZZev8hk
- cbtxBZtF694j7BaH37SzWnw78YjRQcBjzbw1jB47Z91l99i0qpPNY/OSeo++LasYPT5vkgtg
- i9KzKcovLUlVyMgvLrFVija0MNIztLTQMzKx1DM0No+1MjJV0rezSUnNySxLLdK3S9DLOPZ/
- NmvBGbmKvikXWBoYn0h0MXJySAiYSGyc/Jq9i5GLQ0hgKaPExK3trBAJMYlJ+7azQ9jCEn+u
- dbFBFL1mlDh/5S8TSEJYIEKi59h0sAYRAU2J63+/s4IUMQscYpH4tPU4I0THFGaJxh2PgDo4
- ONgE9CR2rCoEaeAVcJOY8GMa2CAWAVWJr6efgA0SBRp6eMcsRogaQYmTM5+wgNicAoESZ1vP
- soHYzAJmEvM2P2SGsMUlbj2ZzwRhy0tsfzuHeQKj0Cwk7bOQtMxC0jILScsCRpZVjCKppcW5
- 6bnFhnrFibnFpXnpesn5uZsYgZG97djPzTsYL20MPsQowMGoxMP7Q70pVog1say4MvcQowQH
- s5II7xxToBBvSmJlVWpRfnxRaU5q8SFGU6DnJjJLiSbnA5NOXkm8oamhuYWlobmxubGZhZI4
- b4fAwRghgfTEktTs1NSC1CKYPiYOTqkGRl6BOKdfLowz5Czft+cwzzoYHt1a3vB+6/aZrm8d
- 3m870Hv5zZlTD/jWMd7I9ok5ejZm/0k7nui/72dcVDRvqJ4bXFNytjvEk5f7ZO5/7Ywd/Rec
- Zr88UPSr/03vqlef9zQuMkjkD5PaP3cre/7fCV/36RxhO3fY1T1hT4jLRUveI9rnuKUkriqx
- FGckGmoxFxUnAgBc5KIXAgMAAA==
-X-CMS-MailID: 20190919074319eucas1p161853b43fb7799db11b6eacd89211c98
-X-Msg-Generator: CA
-X-RootMTR: 20190916100719eucas1p206fe95982b774840b5d6e62ba9c42c79
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20190916100719eucas1p206fe95982b774840b5d6e62ba9c42c79
-References: <CGME20190916100719eucas1p206fe95982b774840b5d6e62ba9c42c79@eucas1p2.samsung.com>
- <20190916100704.26692-1-l.luba@partner.samsung.com>
- <20190916100704.26692-4-l.luba@partner.samsung.com>
- <CAJKOXPcxG-mMKy5u-b0+xj_sOmrq5yq5-LYJx0Ds6_+yo_=JbA@mail.gmail.com>
- <4a0d1d2c-cd1d-5df4-d4b1-f2dd1ef3bb72@partner.samsung.com>
- <CAJKOXPfBueaf2UVik8x2L_D_PTxdkvRukuWL3xh_jDiLKtt7pQ@mail.gmail.com>
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: VI1PR10CA0095.EURPRD10.PROD.OUTLOOK.COM
+ (2603:10a6:803:28::24) To MWHPR11MB1549.namprd11.prod.outlook.com
+ (2603:10b6:301:c::17)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tagtoolbar-keys: D20190919104717861
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 5708e556-b798-42ed-da3f-08d73cd59dc3
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600167)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:MWHPR11MB1680; 
+x-ms-traffictypediagnostic: MWHPR11MB1680:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <MWHPR11MB1680FF4409690D3352E21D2087890@MWHPR11MB1680.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:125;
+x-forefront-prvs: 016572D96D
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(136003)(366004)(346002)(376002)(396003)(39860400002)(199004)(189003)(54534003)(6116002)(3846002)(8936002)(2616005)(54906003)(53546011)(6506007)(386003)(11346002)(186003)(305945005)(7736002)(110136005)(52116002)(99286004)(486006)(316002)(76176011)(476003)(25786009)(478600001)(81166006)(446003)(102836004)(2906002)(26005)(8676002)(81156014)(71200400001)(71190400001)(229853002)(36756003)(66066001)(14454004)(6436002)(2501003)(31696002)(6486002)(6246003)(4326008)(256004)(5660300002)(66476007)(66946007)(66556008)(64756008)(66446008)(86362001)(31686004)(2201001)(6512007);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR11MB1680;
+ H:MWHPR11MB1549.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: sWwbQxQ/e57MKJB2QTe6EWpdQFG58xW3OpdxPlxYZWaIvtZ0O3p+7/Pljra0ib/VZWKgeJ4S2joLysKdBMp45DvJJTiuD2N2gsfpThzBphFXPttkd+59BoKQvOCSOWdLUg/OI+psnn4pyMlONH7ZlAN/glV/RaV6B+d6NcCJeDY/dIjG/nUwVubP+A57B+fnJLuqIzCT7owMgiJV1aOSBEgWgVGWjXT/SAo93FFoB7DxreTzoCQSxCerCr7DJ+biG+CNymkxtuiFLwj45p6GOQl7gGEzNVjBs2AvqUpsROjX8GUptzdUuj8wb/EHpBVtgggWXs6rtT+QcgaZBqHDGEDYAzzgnQG5/BtUB76JqWHU+rMPt+KlPXFbh0Tuxdk7LZdSSjRvFjzePBiIUBNOVyzOICypDS+d7wG5cInNqbk=
+Content-ID: <E43012DF0B66B14781E1C204C02EE893@namprd11.prod.outlook.com>
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5708e556-b798-42ed-da3f-08d73cd59dc3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Sep 2019 07:47:27.1412 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: +rVx1aKAa4nvNX4dMrttRoTu2P08xR52cmbrXTvPIn4VaYSjay+5dZt8DKBlRfhV/JM4yiKy6EmsFcQla00okEFwLY25dVRhLc3deIwCWFU=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR11MB1680
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_004325_388918_BD23EE3C 
-X-CRM114-Status: GOOD (  26.31  )
-X-Spam-Score: -5.1 (-----)
+X-CRM114-CacheID: sfid-20190919_004745_237216_DE7B8CD0 
+X-CRM114-Status: GOOD (  16.09  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.149.84 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,16 +164,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- willy.mh.wolff.ml@gmail.com,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- =?UTF-8?Q?Bart=c5=82omiej_=c5=bbo=c5=82nierkiewicz?=
- <b.zolnierkie@samsung.com>, linux-pm@vger.kernel.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- robh+dt@kernel.org, Chanwoo Choi <cw00.choi@samsung.com>,
- kyungmin.park@samsung.com, kgene@kernel.org, myungjoo.ham@samsung.com,
- s.nawrocki@samsung.com, linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: alexandre.belloni@bootlin.com, gregory.clement@bootlin.com,
+ Ludovic.Desroches@microchip.com, thomas.petazzoni@bootlin.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -158,100 +174,114 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 9/19/19 9:28 AM, Krzysztof Kozlowski wrote:
-> On Thu, 19 Sep 2019 at 08:49, Lukasz Luba <l.luba@partner.samsung.com> wrote:
->>
->> Hi Krzysztof,
->>
->> On 9/18/19 8:51 PM, Krzysztof Kozlowski wrote:
->>> On Mon, 16 Sep 2019 at 12:07, Lukasz Luba <l.luba@partner.samsung.com> wrote:
->>>>
->>>> Add compatible for Samsung k3qf2f20db LPDDR3 memory bindings.
->>>> Introduce minor fixes in the old documentation.
->>>>
->>>> Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
->>>> ---
->>>>    Documentation/devicetree/bindings/ddr/lpddr3.txt | 9 ++++++---
->>>>    1 file changed, 6 insertions(+), 3 deletions(-)
->>>>
->>>> diff --git a/Documentation/devicetree/bindings/ddr/lpddr3.txt b/Documentation/devicetree/bindings/ddr/lpddr3.txt
->>>> index 3b2485b84b3f..49afe794daaa 100644
->>>> --- a/Documentation/devicetree/bindings/ddr/lpddr3.txt
->>>> +++ b/Documentation/devicetree/bindings/ddr/lpddr3.txt
->>>> @@ -1,7 +1,9 @@
->>>>    * LPDDR3 SDRAM memories compliant to JEDEC JESD209-3C
->>>>
->>>>    Required properties:
->>>> -- compatible : Should be  - "jedec,lpddr3"
->>>> +- compatible : should be one of the following:
->>>> +       Generic default - "jedec,lpddr3".
->>>
->>> The convention is first compatible, then description. I gave you the
->>> example to base on - at25. Why making it different?
->>
->> I have checked at25 that you pointed me to and also checked at24, which
->> has a bit longer "compatible" section.
->>
->> I found that there are many "jedec,spi-nor" compatible devices, which I
->> thought would be a better example for my "jedec,lpddr3".
->> For example, two configurations, where you have a single labels or dual
->> (with specific device)
->> arch/arm/boot/dts/imx6dl-rex-basic.dts:
->> compatible = "sst,sst25vf016b", "jedec,spi-nor";
->> arch/arm/boot/dts/imx6q-ba16.dtsi:
->> compatible = "jedec,spi-nor";
->>
->> The 'compatible' in documentation for the "jedec,spi-nor" is slightly
->> different (similar to at24).
->> Documentation/devicetree/bindings/mtd/jedec,spi-nor.txt
->> It has a long explanation, which is also OK. So I thought that it is
->> quite flexible what you put in there.
+On 18.09.2019 17:57, Kamel Bouhara wrote:
+> Since commit 26202873bb51 ("avr32: remove support for AVR32
+> architecture") there is no more user of platform_device_id and we
+> should only use dt bindings
 > 
-> It is flexible but I see clear pattern in existing sources:
->    jedec,spi-nor.txt
->    compatible : May include a device-specific ..
->    ...
->    Supported chip names:
->      at25df321a
->      ...
-> 
->    at25.txt:
->    - compatible : Should be "<vendor>,<type>", and generic value "atmel,at25".
->      Example "<vendor>,<type>" values:
->        "anvo,anv32e61w"
->        "microchip,25lc040"
-> 
-> In these cases the doc says that "compatible should be" and then you
-> have the list of values. Your example says that the compatible should
-> be "Generic default" or "For Samsung 542x SoC"... :) The difference is
-> slight but putting the value first is a simple and elegant solution.
-> In your case one has to go to the end of sentence to find the most
-> important information - the compatible value.
-> 
->> I have also checked Cadance QSPI controller.
->> Documentation/devicetree/bindings/mtd/cadence-quadspi.txt
->> The controller might be built-in into different vendor SoC's
->> and the "compatible" is ready to reflect it in similar fashion but
->> with a short explanation in this section.
-> 
-> I see. I do not find this pattern as much readable as jedec-spi-nor or
-> at25 therefore I mentioned them as an example to base on ("Exactly the
-> same as AT24 or AT25 EEPROM bindings."). We can avoid also this entire
-> discussion with YAML (which also follows approach of at25 - value
-> first).
-> 
->> Therefore, what you see in the patch draw heavily on Cadence's qspi,
->> with a bit of inspiration from jedec,spi-nor usage.
->>
->> Should I change it to at25 "compatible" style and send next patch?
-> 
-> Yes, please. Or go to YAML and make entire discussion obsolete.
+> Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
 
-OK I will change it to at25 style.
+Acked-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 
-Regards,
-Lukasz
-
+> ---
+> Changelog:
+>  v1->v2
+>  
+>  - Remove whole function atmel_pwm_get_driver_data and call
+>  of_device_get_match_data from atmel_pwm_probe
+> 
+>  drivers/pwm/Kconfig     |  2 +-
+>  drivers/pwm/pwm-atmel.c | 35 +++--------------------------------
+>  2 files changed, 4 insertions(+), 33 deletions(-)
+> 
+> diff --git a/drivers/pwm/Kconfig b/drivers/pwm/Kconfig
+> index a7e57516959e..b51fb1a33aa2 100644
+> --- a/drivers/pwm/Kconfig
+> +++ b/drivers/pwm/Kconfig
+> @@ -44,7 +44,7 @@ config PWM_AB8500
+>  
+>  config PWM_ATMEL
+>  	tristate "Atmel PWM support"
+> -	depends on ARCH_AT91
+> +	depends on ARCH_AT91 && OF
+>  	help
+>  	  Generic PWM framework driver for Atmel SoC.
+>  
+> diff --git a/drivers/pwm/pwm-atmel.c b/drivers/pwm/pwm-atmel.c
+> index e5e1eaf372fa..f7cf0a86a37c 100644
+> --- a/drivers/pwm/pwm-atmel.c
+> +++ b/drivers/pwm/pwm-atmel.c
+> @@ -318,19 +318,6 @@ static const struct atmel_pwm_data mchp_sam9x60_pwm_data = {
+>  	},
+>  };
+>  
+> -static const struct platform_device_id atmel_pwm_devtypes[] = {
+> -	{
+> -		.name = "at91sam9rl-pwm",
+> -		.driver_data = (kernel_ulong_t)&atmel_sam9rl_pwm_data,
+> -	}, {
+> -		.name = "sama5d3-pwm",
+> -		.driver_data = (kernel_ulong_t)&atmel_sama5_pwm_data,
+> -	}, {
+> -		/* sentinel */
+> -	},
+> -};
+> -MODULE_DEVICE_TABLE(platform, atmel_pwm_devtypes);
+> -
+>  static const struct of_device_id atmel_pwm_dt_ids[] = {
+>  	{
+>  		.compatible = "atmel,at91sam9rl-pwm",
+> @@ -350,19 +337,6 @@ static const struct of_device_id atmel_pwm_dt_ids[] = {
+>  };
+>  MODULE_DEVICE_TABLE(of, atmel_pwm_dt_ids);
+>  
+> -static inline const struct atmel_pwm_data *
+> -atmel_pwm_get_driver_data(struct platform_device *pdev)
+> -{
+> -	const struct platform_device_id *id;
+> -
+> -	if (pdev->dev.of_node)
+> -		return of_device_get_match_data(&pdev->dev);
+> -
+> -	id = platform_get_device_id(pdev);
+> -
+> -	return (struct atmel_pwm_data *)id->driver_data;
+> -}
+> -
+>  static int atmel_pwm_probe(struct platform_device *pdev)
+>  {
+>  	const struct atmel_pwm_data *data;
+> @@ -370,7 +344,7 @@ static int atmel_pwm_probe(struct platform_device *pdev)
+>  	struct resource *res;
+>  	int ret;
+>  
+> -	data = atmel_pwm_get_driver_data(pdev);
+> +	data = of_device_get_match_data(&pdev->dev);
+>  	if (!data)
+>  		return -ENODEV;
+>  
+> @@ -396,10 +370,8 @@ static int atmel_pwm_probe(struct platform_device *pdev)
+>  	atmel_pwm->chip.dev = &pdev->dev;
+>  	atmel_pwm->chip.ops = &atmel_pwm_ops;
+>  
+> -	if (pdev->dev.of_node) {
+> -		atmel_pwm->chip.of_xlate = of_pwm_xlate_with_flags;
+> -		atmel_pwm->chip.of_pwm_n_cells = 3;
+> -	}
+> +	atmel_pwm->chip.of_xlate = of_pwm_xlate_with_flags;
+> +	atmel_pwm->chip.of_pwm_n_cells = 3;
+>  
+>  	atmel_pwm->chip.base = -1;
+>  	atmel_pwm->chip.npwm = 4;
+> @@ -437,7 +409,6 @@ static struct platform_driver atmel_pwm_driver = {
+>  		.name = "atmel-pwm",
+>  		.of_match_table = of_match_ptr(atmel_pwm_dt_ids),
+>  	},
+> -	.id_table = atmel_pwm_devtypes,
+>  	.probe = atmel_pwm_probe,
+>  	.remove = atmel_pwm_remove,
+>  };
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
