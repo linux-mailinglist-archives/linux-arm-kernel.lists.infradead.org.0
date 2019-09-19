@@ -2,87 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B102B7893
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 13:38:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF69AB7899
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 13:39:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8VnNDP/PNbJbtXC8p2RDJ1k/6ooCxir6j36HrH2DbP0=; b=fd76C3vm+o7Uz/
-	XU7deBhVlYMyb0sYk/Y2NKi7BbKjePCRfB9sosrOthc63Wdyu22H2X2yFRXYIB3FmqpRSretZhZjD
-	JsUjWriU0N2VnmTNZwhRXiNcs/TMFeAiUD+mQ0uNqmg1gpk2DEyWIiQ77yzYe/zgyINgCR8qFPWjV
-	lhq/F6HfTTcjduw6G+uDZqc25LG3apotLx6ADx7T+IEUHxEwfXDrb0vNTV1qf8PQBZNy+94+Y61JK
-	54STJRjOc+Wps+wYvknAqBzQ39/bbTGZJqA/AQ1cobpY3zrhJCz+PfoswYwxRjTYdj4RhvsTKyOvT
-	tP19l6dRKImQjhl6PbaA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hUicDhmWv0GUt40rdGBt29J06FM4Hq+Nww48laSoSBk=; b=TuMCPmllOHYVgN
+	Pl4c901Ff5IsWItWrxt7LJCIYiWyC5FZYVAK1EBgHablduMASSehG7sU4mjTPUV3Vo2hvwe9hyKk5
+	BTEgt1PWpCW1ocoucbNdLHK29gfeQ+mRFYETIiHWAw7L2FUZfpKme9cshHQt85m00YR4ZYjDWmYxh
+	hYbdcmpNHsUMPJ9Co8SQOYI3orUiDF84qohAjD/Rbh9RGD1PFyk18JU3QPzsWFYFQMxHPJc6Kb/uR
+	p1/4OQBUKdkoGK9JgU+wNCyITCZEscxTQKKZxUdWErSfMUyRHZQILlzlmFzC3oFSNSK2gnN0/WeDq
+	Z5ezgCtUvRGiib0jbx6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAulE-0006F4-2V; Thu, 19 Sep 2019 11:38:08 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAuky-0006EW-OR
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 11:37:54 +0000
-Received: by mail-lj1-x241.google.com with SMTP id q64so3192143ljb.12
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Sep 2019 04:37:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=WfwOF61OoR8M1e7Qa+ZZMY90GfOvjcgebJlSOMqBsC4=;
- b=tmRUxVccdHoZq6Alk7EDBGRJpqo7ps/lgBfHnrJDWLPzw3T14K2tlvbdO7/V1Xj+by
- X2O61E9xCs+4s5w+xOFaTY0XG52MIPGZ97lDfuwNbeq8KGuGHibjkgjq+KJ7vAA/J+3+
- Lwav++NhEBRlYPOQRN879gdJ6V8Oraakm6rPEVhr4HPWixCF/6y8s3iJcr+67KaBnvjl
- OhsyF7nEdI95+w0AW8qDdZwyX6Ckte34WoeIzgq/kW0lC8BSJvhMuNsC2GguDwD+mjtq
- ke3R7EMTP1RryZmqKPgPAkQOrRk7+eSafwLdrGeTlyewV/fxm/ul4OgvJn/F76Yj/rCj
- ixiQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=WfwOF61OoR8M1e7Qa+ZZMY90GfOvjcgebJlSOMqBsC4=;
- b=BXDJHCgSZfRVff+ZLRkJlkHDprHah1W1u9z6tkgA4ZY8IszAKw+f4hIVvrK1Kwzn/H
- dz2a6lOlFuIQGdMVWu1Zmk1fHJtEZDXTmKRez+7dihNjcQcbjEKUiCfVQ163dHvze9ps
- mBIjXnLuBlx84UloMQkuANhfsPTZFR3SwSMj+BuVSZNitxUhtpzsV1tpN+EwYfj/BpRM
- T3KzhpxhNY9opgUkHDdaF9Hk8pLyewxDiixzH/XylAyEpciGg2jH6ZxG60Pl7BrtKY0g
- 4ouJ6eaIyqX26JMrXfTKeMe1InV05jkd6ehwB3UGG4YPZCIahFPt87eyB+rk9G0djE9w
- ReiA==
-X-Gm-Message-State: APjAAAU4VO3E1XfvMEYXvOO6W1IqrmqeVqYfdjCeb+mq6PYwdhZtEOcR
- zsYoF5V8GPcfr4VVv6pVFVqw1l8GTia8IhVydb0=
-X-Google-Smtp-Source: APXvYqynVPBOnd/PXWX66hg1JF9lfC5l9S4O/FDzyttTjdhHtCiVN8anWr3f+Cmi+6Yv9m/24fve30Dlmgd04RambWY=
-X-Received: by 2002:a2e:8184:: with SMTP id e4mr5231120ljg.240.1568893070642; 
- Thu, 19 Sep 2019 04:37:50 -0700 (PDT)
+	id 1iAumU-0006cm-Ig; Thu, 19 Sep 2019 11:39:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iAumF-0006bz-31
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 11:39:12 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7AEB428;
+ Thu, 19 Sep 2019 04:39:09 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 5A7303F67D; Thu, 19 Sep 2019 04:39:07 -0700 (PDT)
+Subject: Re: [RFC PATCH v3 4/6] psci: Add hvc call service for ptp_kvm.
+To: Paolo Bonzini <pbonzini@redhat.com>,
+ "Jianyong Wu (Arm Technology China)" <Jianyong.Wu@arm.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "yangbo.lu@nxp.com" <yangbo.lu@nxp.com>,
+ "john.stultz@linaro.org" <john.stultz@linaro.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "sean.j.christopherson@intel.com" <sean.j.christopherson@intel.com>,
+ "richardcochran@gmail.com" <richardcochran@gmail.com>,
+ Mark Rutland <Mark.Rutland@arm.com>, Will Deacon <Will.Deacon@arm.com>,
+ Suzuki Poulose <Suzuki.Poulose@arm.com>
+References: <20190918080716.64242-1-jianyong.wu@arm.com>
+ <20190918080716.64242-5-jianyong.wu@arm.com>
+ <83ed7fac-277f-a31e-af37-8ec134f39d26@redhat.com>
+ <HE1PR0801MB1676F57B317AE85E3B934B32F48E0@HE1PR0801MB1676.eurprd08.prod.outlook.com>
+ <629538ea-13fb-e666-8df6-8ad23f114755@redhat.com>
+ <HE1PR0801MB167639E2F025998058A77F86F4890@HE1PR0801MB1676.eurprd08.prod.outlook.com>
+ <ef6ab8bd-41ad-88f8-9cfd-dc749ca65310@redhat.com>
+From: Marc Zyngier <maz@kernel.org>
+Organization: Approximate
+Message-ID: <a1b554b8-4417-5305-3419-fe71a8c50842@kernel.org>
+Date: Thu, 19 Sep 2019 12:39:06 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20190919102319.23368-1-philipp.puschmann@emlix.com>
- <20190919104526.29851-1-philipp.puschmann@emlix.com>
- <20190919104526.29851-2-philipp.puschmann@emlix.com>
-In-Reply-To: <20190919104526.29851-2-philipp.puschmann@emlix.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Thu, 19 Sep 2019 08:37:50 -0300
-Message-ID: <CAOMZO5BNvejzMxhZiaJ36E5XES=uVNn_G-+fXQfStzy5W+YbsA@mail.gmail.com>
-Subject: Re: [PATCH v3 1/3] dmaengine: imx-sdma: fix buffer ownership
-To: Philipp Puschmann <philipp.puschmann@emlix.com>
+In-Reply-To: <ef6ab8bd-41ad-88f8-9cfd-dc749ca65310@redhat.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_043752_797238_DAFB236C 
-X-CRM114-Status: GOOD (  11.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190919_043911_219842_9E53BA38 
+X-CRM114-Status: GOOD (  20.05  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,39 +77,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fugang Duan <fugang.duan@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel <linux-kernel@vger.kernel.org>, Vinod <vkoul@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Dan Williams <dan.j.williams@intel.com>, Robin Gong <yibin.gong@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, dmaengine@vger.kernel.or,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Lucas Stach <l.stach@pengutronix.de>
+Cc: "Justin He \(Arm Technology China\)" <Justin.He@arm.com>,
+ "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
+ Steve Capper <Steve.Capper@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "Kaly Xin \(Arm Technology China\)" <Kaly.Xin@arm.com>, nd <nd@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Philipp,
+On 19/09/2019 12:07, Paolo Bonzini wrote:
+> On 19/09/19 11:46, Jianyong Wu (Arm Technology China) wrote:
+>>> On 18/09/19 11:57, Jianyong Wu (Arm Technology China) wrote:
+>>>> Paolo Bonzini wrote:
+>>>>> This is not Y2038-safe.  Please use ktime_get_real_ts64 instead, and
+>>>>> split the 64-bit seconds value between val[0] and val[1].
+>>
+>> Val[] should be long not u32 I think, so in arm64 I can avoid that Y2038_safe, but
+>> also need rewrite for arm32.
+> 
+> I don't think there's anything inherently wrong with u32 val[], and as
+> you notice it lets you reuse code between arm and arm64.  It's up to you
+> and Marc to decide.
+> 
+>>>>> However, it seems to me that the new function is not needed and you
+>>>>> can just use ktime_get_snapshot.  You'll get the time in
+>>>>> systime_snapshot->real and the cycles value in systime_snapshot->cycles.
+>>>>
+>>>> See patch 5/6, I need both counter cycle and clocksource,
+>>> ktime_get_snapshot seems only offer cycles.
+>>>
+>>> No, patch 5/6 only needs the current clock (ptp_sc.cycles is never accessed).
+>>> So you could just use READ_ONCE(tk->tkr_mono.clock).
+>>>
+>> Yeah, patch 5/6 just need clocksource, but I think tk->tkr_mono.clock can't read in external like module,
+>> So I need an API to expose clocksource.
+>>  
+>>> However, even then I don't think it is correct to use ptp_sc.cs blindly in patch
+>>> 5.  I think there is a misunderstanding on the meaning of
+>>> system_counterval.cs as passed to get_device_system_crosststamp.
+>>> system_counterval.cs is not the active clocksource; it's the clocksource on
+>>> which system_counterval.cycles is based.
+>>>
+>>
+>> I think we can use system_counterval_t as pass current clocksource to system_counterval_t.cs and its
+>> corresponding cycles to system_counterval_t.cycles. is it a big problem?
+> 
+> Yes, it is.  Because...
+> 
+>>> Hypothetically, the clocksource could be one for which ptp_sc.cycles is _not_
+>>> a cycle value.  If you set system_counterval.cs to the system clocksource,
+>>> get_device_system_crosststamp will return a bogus value.
+>>
+>> Yeah, but in patch 3/6, we have a corresponding pair of clock source and cycle value. So I think there will be no
+>> that problem in this patch set.
+>> In the implementation of get_device_system_crosststamp:
+>> "
+>> ...
+>> if (tk->tkr_mono.clock != system_counterval.cs)
+>>                         return -ENODEV;
+>> ...
+>> "
+>> We need tk->tkr_mono.clock passed to get_device_system_crosststamp, just like patch 3/6 do, otherwise will return error.
+> 
+> ... if the hypercall returns an architectural timer value, you must not
+> pass tk->tkr.mono.clock to get_device_system_crosststamp: you must pass
+> &clocksource_counter.  This way, PTP is disabled when using any other
+> clocksource.
+> 
+>>> So system_counterval.cs should be set to something like
+>>> &clocksource_counter (from drivers/clocksource/arm_arch_timer.c).
+>>> Perhaps the right place to define kvm_arch_ptp_get_clock_fn is in that file?
+>>>
+>> I have checked that ptp_sc.cs is arch_sys_counter.
+>> Also move the module API to arm_arch_timer.c will looks a little
+>> ugly and it's not easy to be accept by arm side I think.
+> 
+> I don't think it's ugly but more important, using tk->tkr_mono.clock is
+> incorrect.  See how the x86 code hardcodes &kvm_clock, it's the same for
+> ARM.
 
-On Thu, Sep 19, 2019 at 7:45 AM Philipp Puschmann
-<philipp.puschmann@emlix.com> wrote:
->
-> BD_DONE flag marks ownership of the buffer. When 1 SDMA owns the
-> buffer, when 0 ARM owns it. When processing the buffers in
-> sdma_update_channel_loop the ownership of the currently processed
-> buffer was set to SDMA again before running the callback function of
-> the buffer and while the sdma script may be running in parallel. So
-> there was the possibility to get the buffer overwritten by SDMA before
-> it has been processed by kernel leading to kind of random errors in the
-> upper layers, e.g. bluetooth.
->
-> Fixes: broken since start
+Not really. The guest kernel is free to use any clocksource it wishes.
+In some cases, it is actually desirable (like these broken systems that
+cannot use an in-kernel irqchip...). Maybe it is that on x86 the guest
+only uses the kvm_clock, but that's a much harder sell on ARM. The fact
+that ptp_kvm assumes that the clocksource is fixed doesn't seem correct
+in that case.
 
-The Fixes tag requires a commit ID like this:
-
-Fixes: 1ec1e82f2510 ("dmaengine: Add Freescale i.MX SDMA support")
-
-Same applies to the other patch.
+	M.
+-- 
+Jazz is not dead, it just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
