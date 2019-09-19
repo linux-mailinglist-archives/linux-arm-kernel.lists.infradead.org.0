@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FB4EB77AD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 12:46:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 961F7B77B1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 12:47:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AOWgDQ+dssJqFrjNzN0XntvhexW1oQXERqbyS/HMz/k=; b=ZUAMhbl7k+OiX4
-	YtO3x4KhjohldAH6pC//h/uR8EUpZslFtsErUd84C+gP8SUoRkHuFPLSxxpBLcRh5bn+5lR1IisJP
-	Sk0Pk82y59hFYwdBt3pQN6SSJf/PCzfOd8z5IdYe/7eG7YHU3ihT8WyQcJS4xAokQ6o74gXppeJsK
-	/SSlQ330dSgUTK/T42KZv9agju5uqAI7GXrA2TUV2A2RckEOY6W9cOF9JjTHKJDCdm0HvxGI4oKyy
-	zv+oJuv0O+xETU8MB8UD79FG4/dNELK3IjGhgrB1IEOFeY0iUHomAFn0dk4nvahBS0Qh4gdhd/xvy
-	KbHbav0eZg039EqDlL2A==;
+	List-Owner; bh=WM8Kg23znsb43O6iUQdAIVGNH4trRvqNDM6bW++bREQ=; b=GwLUbmHfNuX6ep
+	/QZDmzXqzxO+j2aPeDLBXftyYHkXjTCAOuiU4NyWUoP5+L5HN37UbY8SbiwDsBz8AI9xMO9A7jrdV
+	Ye2UhcrsYOZk/grbtOCZMqgDK7poYfa4X5n3gk2fEWLXc7QX2EJRlKCQp9U4N4NQC7T4Sjd7F/GP9
+	ZgD1qvTk1HN3X2jcg8RfhmmR8JkqJa8VcdkM3fnsGAGFerC4+U+dU5hvR5KFLi/IXVsfzZf5xsdBE
+	72jQVQowYQJheKoHNT65FSRcR1vKP1YAvsfpTrYoRGxFO1W3NlRC1h0jmsmsDZciNHDyLPm0J5uxw
+	P60meBhm2xNqYWXXmdGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAtwx-0003ZC-4n; Thu, 19 Sep 2019 10:46:11 +0000
+	id 1iAtyU-0004SG-TJ; Thu, 19 Sep 2019 10:47:47 +0000
 Received: from mx1.emlix.com ([188.40.240.192])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAtwK-0003XV-0x
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 10:45:33 +0000
+ id 1iAtwK-0003XW-Dr
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 10:45:35 +0000
 Received: from mailer.emlix.com (unknown [81.20.119.6])
  (using TLSv1.2 with cipher ADH-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mx1.emlix.com (Postfix) with ESMTPS id 73100603DE;
- Thu, 19 Sep 2019 12:45:30 +0200 (CEST)
+ by mx1.emlix.com (Postfix) with ESMTPS id 3A861603E1;
+ Thu, 19 Sep 2019 12:45:31 +0200 (CEST)
 From: Philipp Puschmann <philipp.puschmann@emlix.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3 1/3] dmaengine: imx-sdma: fix buffer ownership
-Date: Thu, 19 Sep 2019 12:45:24 +0200
-Message-Id: <20190919104526.29851-2-philipp.puschmann@emlix.com>
+Subject: [PATCH v3 2/3] dmaengine: imx-sdma: fix dma freezes
+Date: Thu, 19 Sep 2019 12:45:25 +0200
+Message-Id: <20190919104526.29851-3-philipp.puschmann@emlix.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20190919104526.29851-1-philipp.puschmann@emlix.com>
 References: <20190919102319.23368-1-philipp.puschmann@emlix.com>
  <20190919104526.29851-1-philipp.puschmann@emlix.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_034532_222601_59C7B397 
-X-CRM114-Status: GOOD (  11.54  )
+X-CRM114-CacheID: sfid-20190919_034532_620055_2D452737 
+X-CRM114-Status: GOOD (  15.95  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,52 +69,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-BD_DONE flag marks ownership of the buffer. When 1 SDMA owns the
-buffer, when 0 ARM owns it. When processing the buffers in
-sdma_update_channel_loop the ownership of the currently processed
-buffer was set to SDMA again before running the callback function of
-the buffer and while the sdma script may be running in parallel. So
-there was the possibility to get the buffer overwritten by SDMA before
-it has been processed by kernel leading to kind of random errors in the
-upper layers, e.g. bluetooth.
+For some years and since many kernel versions there are reports that the
+RX UART SDMA channel stops working at some point. The workaround was to
+disable DMA for RX. This commit tries to fix the problem itself.
 
-Fixes: broken since start
+Due to its license i wasn't able to debug the sdma script itself but it
+somehow leads to blocking the scheduling of the channel script when a
+running sdma script does not find any free descriptor in the ring to put
+its data into.
+
+If we detect such a potential case we manually restart the channel.
+
+As sdmac->desc is constant we can move desc out of the loop.
+
+Fixes: broken UART RX DMA. broken since start
 Signed-off-by: Philipp Puschmann <philipp.puschmann@emlix.com>
-
+Reviewed-by: Lucas Stach <l.stach@pengutronix.de>
 ---
 
 Changelog v3:
  - use correct dma_wmb() instead of dma_wb()
  - add fixes tag
-
+ 
 Changelog v2:
- - add dma_wb()
+ - clarify comment and commit description
 
- drivers/dma/imx-sdma.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/dma/imx-sdma.c | 21 +++++++++++++++++----
+ 1 file changed, 17 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
-index 9ba74ab7e912..e029a2443cfc 100644
+index e029a2443cfc..a32b5962630e 100644
 --- a/drivers/dma/imx-sdma.c
 +++ b/drivers/dma/imx-sdma.c
-@@ -802,7 +802,6 @@ static void sdma_update_channel_loop(struct sdma_channel *sdmac)
- 		*/
+@@ -775,21 +775,23 @@ static void sdma_start_desc(struct sdma_channel *sdmac)
+ static void sdma_update_channel_loop(struct sdma_channel *sdmac)
+ {
+ 	struct sdma_buffer_descriptor *bd;
+-	int error = 0;
+-	enum dma_status	old_status = sdmac->status;
++	struct sdma_desc *desc = sdmac->desc;
++	int error = 0, cnt = 0;
++	enum dma_status old_status = sdmac->status;
  
- 		desc->chn_real_count = bd->mode.count;
--		bd->mode.status |= BD_DONE;
- 		bd->mode.count = desc->period_len;
- 		desc->buf_ptail = desc->buf_tail;
- 		desc->buf_tail = (desc->buf_tail + 1) % desc->num_bd;
-@@ -817,6 +816,9 @@ static void sdma_update_channel_loop(struct sdma_channel *sdmac)
- 		dmaengine_desc_get_callback_invoke(&desc->vd.tx, NULL);
- 		spin_lock(&sdmac->vc.lock);
+ 	/*
+ 	 * loop mode. Iterate over descriptors, re-setup them and
+ 	 * call callback function.
+ 	 */
+-	while (sdmac->desc) {
+-		struct sdma_desc *desc = sdmac->desc;
++	while (desc) {
  
-+		dma_wmb();
-+		bd->mode.status |= BD_DONE;
+ 		bd = &desc->bd[desc->buf_tail];
+ 
+ 		if (bd->mode.status & BD_DONE)
+ 			break;
+ 
++		cnt++;
 +
+ 		if (bd->mode.status & BD_RROR) {
+ 			bd->mode.status &= ~BD_RROR;
+ 			sdmac->status = DMA_ERROR;
+@@ -822,6 +824,17 @@ static void sdma_update_channel_loop(struct sdma_channel *sdmac)
  		if (error)
  			sdmac->status = old_status;
  	}
++
++	/* In some situations it may happen that the sdma does not found any
++	 * usable descriptor in the ring to put data into. The channel is
++	 * stopped then. While there is no specific error condition we can
++	 * check for, a necessary condition is that all available buffers for
++	 * the current channel have been written to by the sdma script. In
++	 * this case and after we have made the buffers available again,
++	 * we restart the channel.
++	 */
++	if (cnt >= desc->num_bd)
++		sdma_enable_channel(sdmac->sdma, sdmac->channel);
+ }
+ 
+ static void mxc_sdma_handle_channel_normal(struct sdma_channel *data)
 -- 
 2.23.0
 
