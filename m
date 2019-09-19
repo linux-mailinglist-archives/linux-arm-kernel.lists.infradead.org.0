@@ -2,85 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC1D4B7A92
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 15:33:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D463B7AA4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 15:37:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6ucXx8Bs9NBCw79RBPQiinT1I51WRLfHFSOeUcEik7Y=; b=gghEqLqDtfkamy
-	zNqY71LeJK6NiI115M98nF7gKPn9uOfiCIwpOQIErHik44xUPiAiFoOk1ty8oSpVqVU6WYhJUF5hp
-	IjmS02/areGVl9wb4s0QZhXv1kTd9m+mUXmYMl7dC0W5jF3xS6/m09SDdn4/iwR1HWdVHhBd1u5Y9
-	6v/Dn+vLiWuy09BzhOI5qSrJopChwGuQErPJ1Y/Q50a6v8lMGQJrEsbPxs9jUtNkPrvAjTUiepWKM
-	Wnee8jBiTMje0LN3epXBd01ME0CHqM0kPTL1SX3wCVK7Xtz2KOLePQ0u1tTyw2mLOrIkY9iVpkQl0
-	eDg6DktGK7qggiKlp7mg==;
+	List-Owner; bh=MVqszyr1jM5obCReGl0jvJtvkO2KaBGyBWSsh/psnmQ=; b=FX5hbEpELKThcB
+	tdfgdCqfi4DdPSwnASIUix6AK5pFWkd/u8Nu+OCeOrd4qi957250d+bqHHdp7C+yXVJeB/0J4szCc
+	XxLI1Vz4tzCZuhCeMoSpzSGZ69s39fjrIXAvEa/bHqsCuWphHgpKdsngoH8M7AWVpst24ifLE3qyT
+	QM110qTJv1k90Vb1ubMnVqSV6D7s8vVWt9sEgvbp7HAWJ+KWEChU0wWK6heJgqwiNK74+B2IAHmKN
+	5BZMhyj63BARGdiDs7/4CAl3H/IrMm/hGq54ebb2dJ2QW46QKNBDTforAocnK9PyDcwsIo0itX0/J
+	rsYGGaaGdw2wCusX9LCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAwYS-0001AN-2O; Thu, 19 Sep 2019 13:33:04 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
+	id 1iAwcn-00038X-7S; Thu, 19 Sep 2019 13:37:33 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAwY9-00018w-SK; Thu, 19 Sep 2019 13:32:47 +0000
-Received: by mail-oi1-f195.google.com with SMTP id k9so2706050oib.7;
- Thu, 19 Sep 2019 06:32:44 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=6Vbzint3TNkF0RwuJRnvSz0zFNi0mSUxmrLncCYz9Sc=;
- b=PM3tuzWgUr5BKphmKG3kMi7IUwDsPoe4HOwhIrGKXAg/xwCr8GmK0m5ogg8TnlwV/+
- N+jchDcjc/f99lNQ+MRbrBBfRqajZRPVaeYW9gtByfwOzJexwE+uytWOuN9E76TB4MA1
- uUnk5Dh4T/FPPcGtrFstMc4QBuZThr0LKCjcdnhl3r3YNW7TsygdObz+jHJz7PdDo3+j
- gr4AvigzRrR+7we1wEmOndLQlrwF0KWujpucf0F7Qs1CYosofy7hsdVPyIHUjCofhjsV
- vaQZCB2WG1gXz4MKIifMtPjxC5e7bfsLgfC4C0j2r1sovqjUgyBdE3LXmif+HV9k3FGC
- OBzg==
-X-Gm-Message-State: APjAAAVm0lSP2QEcLzDW6orhmshctiHfHbH9Fe2T8fc4FVHM64z+DGAF
- be9oM0DsYi6ZApGlZVgQgA==
-X-Google-Smtp-Source: APXvYqzK08G1BtpQyRdlr3bjTtuu66Pn1FaJm7NcodUZdbVk+gT9gx+YwSgdEuoRELSfmX52YLpvVA==
-X-Received: by 2002:aca:dcc4:: with SMTP id t187mr2208633oig.136.1568899963907; 
- Thu, 19 Sep 2019 06:32:43 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id 17sm482618oiz.3.2019.09.19.06.32.42
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Sep 2019 06:32:42 -0700 (PDT)
-Date: Thu, 19 Sep 2019 08:32:42 -0500
-From: Rob Herring <robh@kernel.org>
-To: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: Re: [PATCH v2] of: restore old handling of cells_name=NULL in
- of_*_phandle_with_args()
-Message-ID: <20190919133242.GA27990@bogus>
-References: <20190918063837.8196-1-u.kleine-koenig@pengutronix.de>
- <b00ca30f-2c06-7722-96b2-123d15751cb6@axentia.se>
- <20190918084748.hnjkiq7wc5b35wjh@pengutronix.de>
+ id 1iAwcS-00037i-WD; Thu, 19 Sep 2019 13:37:14 +0000
+Received: from mail-wr1-f54.google.com (mail-wr1-f54.google.com
+ [209.85.221.54])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B164F21D7E;
+ Thu, 19 Sep 2019 13:37:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1568900232;
+ bh=4h3Wk30EhI1KisIg5rn7cH+Dc4+DOKJ7JCZLxO6zmPI=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=mwBzoNaTiK9xjLVihi6v8b+ryPsg0IP++84Wia1oIqwwNfxtQ14YDYKpBHJ3dYMni
+ fBW0yG7v0NaSg/4OkKv0v7bY4ZNVgMqn10+8QuxFJes4isxMfpfRJSSSnElwMfLq/C
+ aLk1/rm+0igwywEd+xuqNGYA8E4GRYk48izsxAtU=
+Received: by mail-wr1-f54.google.com with SMTP id i1so3142042wro.4;
+ Thu, 19 Sep 2019 06:37:11 -0700 (PDT)
+X-Gm-Message-State: APjAAAW8dgMQNJRE1bjCpAla3if5YuhWtSuHvyGBGjh2U/65RLc+KgKd
+ HDUyzAhL/KhRwRw0Eu2F2wMfIv729E19BKYhQME=
+X-Google-Smtp-Source: APXvYqzlXvVrim8rTycGbIV+PmHAEsjEw4YXguoJ0i5mulID6kS2AA+pRkt/c/jlP2DTaZZMrey31vSOQlTtKW2gKOA=
+X-Received: by 2002:a5d:6b49:: with SMTP id x9mr6988060wrw.80.1568900230203;
+ Thu, 19 Sep 2019 06:37:10 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190918084748.hnjkiq7wc5b35wjh@pengutronix.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190912140256.fwbutgmadpjbjnab@willie-the-truck>
+ <mhng-166dcd4f-9483-4aab-a83a-914d70ddb5a4@palmer-si-x1e>
+ <MN2PR04MB606117F2AC47385EF23D267D8D8D0@MN2PR04MB6061.namprd04.prod.outlook.com>
+ <20190916181800.7lfpt3t627byoomt@willie-the-truck>
+ <MN2PR04MB60612846CD50ED157DE5AB548D8F0@MN2PR04MB6061.namprd04.prod.outlook.com>
+In-Reply-To: <MN2PR04MB60612846CD50ED157DE5AB548D8F0@MN2PR04MB6061.namprd04.prod.outlook.com>
+From: Guo Ren <guoren@kernel.org>
+Date: Thu, 19 Sep 2019 21:36:58 +0800
+X-Gmail-Original-Message-ID: <CAJF2gTRu4cSPd09mXkUOxnL2HO0wnAzqeVr3a3He0AFGCFD00g@mail.gmail.com>
+Message-ID: <CAJF2gTRu4cSPd09mXkUOxnL2HO0wnAzqeVr3a3He0AFGCFD00g@mail.gmail.com>
+Subject: Re: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
+ separate file
+To: Anup Patel <Anup.Patel@wdc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_063245_917589_3A1EC98D 
-X-CRM114-Status: GOOD (  22.18  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190919_063713_084149_3B2959CA 
+X-CRM114-Status: GOOD (  18.39  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,133 +87,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>, Will Deacon <will@kernel.org>,
- Joerg Roedel <joro@8bytes.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Frank Rowand <frowand.list@gmail.com>, Peter Rosin <peda@axentia.se>,
+Cc: "julien.thierry@arm.com" <julien.thierry@arm.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ Palmer Dabbelt <palmer@sifive.com>, Will Deacon <will.deacon@arm.com>,
+ "christoffer.dall@arm.com" <christoffer.dall@arm.com>,
+ Atish Patra <Atish.Patra@wdc.com>,
+ "julien.grall@arm.com" <julien.grall@arm.com>,
+ "gary@garyguo.net" <gary@garyguo.net>,
+ "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
+ Will Deacon <will@kernel.org>,
+ "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ "rppt@linux.ibm.com" <rppt@linux.ibm.com>,
+ Christoph Hellwig <hch@infradead.org>,
+ "aou@eecs.berkeley.edu" <aou@eecs.berkeley.edu>, Arnd Bergmann <arnd@arndb.de>,
+ "suzuki.poulose@arm.com" <suzuki.poulose@arm.com>,
+ "marc.zyngier@arm.com" <marc.zyngier@arm.com>,
+ Paul Walmsley <paul.walmsley@sifive.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Robin Murphy <robin.murphy@arm.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
+ "james.morse@arm.com" <james.morse@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 18 Sep 2019 10:47:48 +0200, Uwe =3D?iso-8859-1?Q?Kleine-K=3DF6nig?=
-=3D          wrote:
-> Before commit e42ee61017f5 ("of: Let of_for_each_phandle fallback to
-> non-negative cell_count") the iterator functions calling
-> of_for_each_phandle assumed a cell count of 0 if cells_name was NULL.
-> This corner case was missed when implementing the fallback logic in
-> e42ee61017f5 and resulted in an endless loop.
-> =
+Hi,
 
-> Restore the old behaviour of of_count_phandle_with_args() and
-> of_parse_phandle_with_args() and add a check to
-> of_phandle_iterator_init() to prevent a similar failure as a safety
-> precaution. of_parse_phandle_with_args_map() doesn't need a similar fix
-> as cells_name isn't NULL there.
-> =
+On Tue, Sep 17, 2019 at 11:42 AM Anup Patel <Anup.Patel@wdc.com> wrote:
 
-> Affected drivers are:
->  - drivers/base/power/domain.c
->  - drivers/base/power/domain.c
->  - drivers/clk/ti/clk-dra7-atl.c
->  - drivers/hwmon/ibmpowernv.c
->  - drivers/i2c/muxes/i2c-demux-pinctrl.c
->  - drivers/iommu/mtk_iommu.c
->  - drivers/net/ethernet/freescale/fman/mac.c
->  - drivers/opp/of.c
->  - drivers/perf/arm_dsu_pmu.c
->  - drivers/regulator/of_regulator.c
->  - drivers/remoteproc/imx_rproc.c
->  - drivers/soc/rockchip/pm_domains.c
->  - sound/soc/fsl/imx-audmix.c
->  - sound/soc/fsl/imx-audmix.c
->  - sound/soc/meson/axg-card.c
->  - sound/soc/samsung/tm2_wm5110.c
->  - sound/soc/samsung/tm2_wm5110.c
-> =
+> >
+> > With a reply stating that the patch "absolutely does not work" ;)
+>
+> This patch was tested on existing HW (which does not have ASID implementation)
+> and tested on QEMU (which has very simplistic Implementation of ASID).
+>
+> When I asked Gary Guo about way to get access to their HW (in same patch
+> email thread), I did not get any reply. After so many months passed, I now
+> doubt the his comment "absolutely does not work".
+> >
+> > What exactly do you want people to do with that? It's an awful lot of effort to
+> > review this sort of stuff and given that Guo Ren is talking about sharing page
+> > tables between the CPU and an accelerator, maybe you're better off
+> > stabilising Linux for the platforms that you can actually test rather than
+> > getting so far ahead of yourselves that you end up with a bunch of wasted
+> > work on patches that probably won't get merged any time soon.
+>
+> The intention of the ASID patch was to encourage RISC-V implementations
+> having ASID in HW and also ensure that things don't break on existing HW.
+>
+> I don't see our efforts being wasted in trying to make Linux RISC-V feature
+> complete and encouraging more feature rich RISC-V CPUs.
+>
+> Delays in merging patches are fine as long as people have something to try
+> on their RISC-V CPU implementations.
+>
+I'm the supporter of that patch:
+http://archive.lwn.net:8080/linux-kernel/20190329045111.14040-1-anup.patel@wdc.com/T/#u
 
-> Thanks to Geert Uytterhoeven for reporting the issue, Peter Rosin for
-> helping pinpoint the actual problem and the testers for confirming this
-> fix.
-> =
+Because it implicit hw broadcast tlb invalidation optimization.
 
-> Fixes: e42ee61017f5 ("of: Let of_for_each_phandle fallback to non-negativ=
-e cell_count")
-> Tested-by: Marek Szyprowski <m.szyprowski@samsung.com>
-> Tested-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> Signed-off-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
-> ---
-> =
+Honestly it's not suitable for remote tlb flush with software IPI, but
+it's still much better than current RISC-V's.
 
-> On Wed, Sep 18, 2019 at 08:01:05AM +0000, Peter Rosin wrote:
-> > On 2019-09-18 08:38, Uwe Kleine-K=F6nig wrote:
-> > >  EXPORT_SYMBOL(of_parse_phandle_with_args);
-> > >  =
+I'll try it on our hardware: 910. wait a moment :)
 
-> > > @@ -1765,6 +1779,18 @@ int of_count_phandle_with_args(const struct de=
-vice_node *np, const char *list_na
-> > >  	struct of_phandle_iterator it;
-> > >  	int rc, cur_index =3D 0;
-> > >  =
+-- 
+Best Regards
+ Guo Ren
 
-> > > +	/* If cells_name is NULL we assume a cell count of 0 */
-> > > +	if (cells_name =3D=3D NULL) {
-> > =
-
-> > A couple of nits.
-> > =
-
-> > I don't know if there are other considerations, but in the previous two
-> > hunks you use !cells_name instead of comparing explicitly with NULL.
-> > Personally, I find the shorter form more readable, and in the name of
-> > consistency bla bla...
-> =
-
-> Ack, changed to !cells_name here, too.
-> =
-
-> > =
-
-> > Also, the comment explaining this NULL-check didn't really make sense
-> > to me until I realized that knowing the cell count to be zero makes
-> > counting trivial. Something along those lines should perhaps be in the
-> > comment?
-> =
-
-> You're right, I extended the comment a bit.
->  =
-
-> > But as I said, these are nits. Feel free to ignore.
-> =
-
-> I considered resending already anyhow as I fatfingerd my email address.
-> this is fixed now, too. Additionally I fixed a typo in one of the
-> comments.
-> =
-
-> Thanks for your feedback.
-> =
-
-> Best regards
-> Uwe
-> =
-
->  drivers/of/base.c | 35 +++++++++++++++++++++++++++++++++--
->  1 file changed, 33 insertions(+), 2 deletions(-)
-> =
-
-
-Applied, thanks.
-
-Rob
+ML: https://lore.kernel.org/linux-csky/
 
 _______________________________________________
 linux-arm-kernel mailing list
