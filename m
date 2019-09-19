@@ -2,55 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C35A2B8209
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 21:58:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88C0EB820E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 22:00:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J17hvyo/kDxYXnN2geY6tXvVUbLdbm3sb3n6LpztP7k=; b=jWa8va0YJZ++kv
-	LfELYhU1gq7hhoYlLITsq4ue5ryheFfxIkV8fnEqHlxnS2TFUyjTeLfQN1SiV6nsUbSGsJ/mWOA2u
-	W1WhX6OE4cTjdtfAGzkkuAQCD2/H2r5QQKdxJvQbkLEU/Rl6Z1rTXr+DaRG2NVe/VQzU/zPbDdkmA
-	LVBtwW4YIWKvQAHCZN9e+G2h0lJUpKOSAcFoFGK5uvEmRhjZQjP8x5jrdeDS2TjDPE4msjw4dGshC
-	81CcvrQnE1Os/+I07+7BMnEwufq/gafj9pZQ3oGBMU63fKdYjSMAApxTRQ727BgEPtK2uuPzTsrhL
-	FEsip/1mNZvbDk0Dkxow==;
+	List-Owner; bh=3RvZaRQ2nsmMRvyakqzJUIpiSV56h73ZVMUTtgopC+c=; b=G/NHAu1ybSkv43
+	K0eFOLpvJ0pdp6QN2ClGNc13PyIl4XyWe5y+ZIgSrl243JqlvBXoZynYlQ1thNPO6/sE7RYNQjZri
+	P6HO/1IRoXKz6VPx1xMwzeV5XDuArWmeSZKMm7mXtWnKph+KMw7hWoaugXpTMDTif+ectWwrotier
+	SirbHVyFNPUplJbQZ03iadMdiG6clZBg3Xa7o0cGu9sqNNR1MNXfIkagsPdEeF/FUOS8JV+s9Glip
+	12zYc+Ak18J+B9cqAvWpdguCFsZPOsf0A03vecOFCh72SkbEbPzvJ8Met52G+eI6le9m2HYP1uGNX
+	fFYy2jOhc7d9W7rnIq3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iB2ZD-00037B-IC; Thu, 19 Sep 2019 19:58:15 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1iB2b9-0004Zv-3C; Thu, 19 Sep 2019 20:00:15 +0000
+Received: from mga14.intel.com ([192.55.52.115])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iB2B0-0002qT-LS; Thu, 19 Sep 2019 19:33:17 +0000
-X-Originating-IP: 91.224.148.103
-Received: from localhost.localdomain (unknown [91.224.148.103])
- (Authenticated sender: miquel.raynal@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 221D0240003;
- Thu, 19 Sep 2019 19:33:11 +0000 (UTC)
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Richard Weinberger <richard@nod.at>, David Woodhouse <dwmw2@infradead.org>,
- Brian Norris <computersforpeace@gmail.com>,
- Marek Vasut <marek.vasut@gmail.com>,
- Tudor Ambarus <Tudor.Ambarus@microchip.com>,
- Vignesh Raghavendra <vigneshr@ti.com>
-Subject: [PATCH v3 40/40] mtd: nand: ecc: Add infrastructure to support
- hardware engines
-Date: Thu, 19 Sep 2019 21:31:40 +0200
-Message-Id: <20190919193141.7865-41-miquel.raynal@bootlin.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190919193141.7865-1-miquel.raynal@bootlin.com>
-References: <20190919193141.7865-1-miquel.raynal@bootlin.com>
+ id 1iB2Gr-0006Vt-7w
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 19:39:19 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga002.fm.intel.com ([10.253.24.26])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 19 Sep 2019 12:39:16 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,524,1559545200"; d="scan'208";a="217417278"
+Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
+ ([10.54.74.41])
+ by fmsmga002.fm.intel.com with ESMTP; 19 Sep 2019 12:39:15 -0700
+Date: Thu, 19 Sep 2019 12:39:15 -0700
+From: Sean Christopherson <sean.j.christopherson@intel.com>
+To: Paul Mackerras <paulus@ozlabs.org>
+Subject: Re: [PATCH 10/13] KVM: Provide common implementation for generic
+ dirty log functions
+Message-ID: <20190919193915.GC30495@linux.intel.com>
+References: <20190911185038.24341-1-sean.j.christopherson@intel.com>
+ <20190911185038.24341-11-sean.j.christopherson@intel.com>
+ <20190919002242.GA19503@blackberry>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190919002242.GA19503@blackberry>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_123315_100694_83348FDB 
-X-CRM114-Status: GOOD (  18.42  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190919_123917_554169_58FABA18 
+X-CRM114-Status: GOOD (  15.96  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.115 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,238 +70,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tudor Ambarus <tudor.ambarus@microchip.com>,
- Julien Su <juliensu@mxic.com.tw>,
- Schrempf Frieder <frieder.schrempf@kontron.de>,
- Paul Cercueil <paul@crapouillou.net>,
- Boris Brezillon <boris.brezillon@collabora.com>, linux-mtd@lists.infradead.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
+Cc: Julien Thierry <julien.thierry@arm.com>, Cornelia Huck <cohuck@redhat.com>,
+ Wanpeng Li <wanpengli@tencent.com>, Janosch Frank <frankja@linux.ibm.com>,
+ kvm@vger.kernel.org, Radim =?utf-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, James Hogan <jhogan@kernel.org>,
+ Joerg Roedel <joro@8bytes.org>, David Hildenbrand <david@redhat.com>,
+ linux-mips@vger.kernel.org, kvm-ppc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Christian Borntraeger <borntraeger@de.ibm.com>,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
+ kvmarm@lists.cs.columbia.edu, Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ Jim Mattson <jmattson@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the necessary helpers to register/unregister hardware ECC engines
-that will be called from ECC engine drivers.
+On Thu, Sep 19, 2019 at 10:22:42AM +1000, Paul Mackerras wrote:
+> On Wed, Sep 11, 2019 at 11:50:35AM -0700, Sean Christopherson wrote:
+> > Move the implementations of KVM_GET_DIRTY_LOG and KVM_CLEAR_DIRTY_LOG
+> > for CONFIG_KVM_GENERIC_DIRTYLOG_READ_PROTECT into common KVM code.
+> > The arch specific implemenations are extremely similar, differing
+> > only in whether the dirty log needs to be sync'd from hardware (x86)
+> > and how the TLBs are flushed.  Add new arch hooks to handle sync
+> > and TLB flush; the sync will also be used for non-generic dirty log
+> > support in a future patch (s390).
+> > 
+> > The ulterior motive for providing a common implementation is to
+> > eliminate the dependency between arch and common code with respect to
+> > the memslot referenced by the dirty log, i.e. to make it obvious in the
+> > code that the validity of the memslot is guaranteed, as a future patch
+> > will rework memslot handling such that id_to_memslot() can return NULL.
+> 
+> I notice you add empty definitions of kvm_arch_sync_dirty_log() for
+> PPC, both Book E and Book 3S.  Given that PPC doesn't select
+> CONFIG_KVM_GENERIC_DIRTYLOG_READ_PROTECT, why is this necessary?
 
-Also add helpers to get the right engine from the user
-perspective. Keep a reference on the engine in use to prevent modules
-to be unloaded. Put the reference if the engine is retired.
+s390 has a non-empty kvm_arch_sync_dirty_log() but doesn't select
+CONFIG_KVM_GENERIC_DIRTYLOG_READ_PROTECT.  Patch 11/13 moves s390's call
+of kvm_arch_sync_dirty_log() from s390's kvm_vm_ioctl_get_dirty_log() into
+the common (but not "generic") kvm_get_dirty_log() so that it's obvious
+that kvm_vm_ioctl_get_dirty_log() and kvm_get_dirty_log() are operating on
+the same memslot, i.e. aren't independently querying id_to_memslot().
 
-A static list of hardware (only) ECC engines is setup to keep track of
-the registered engines.
-
-Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
----
- drivers/mtd/nand/core.c  |  10 ++--
- drivers/mtd/nand/ecc.c   | 103 +++++++++++++++++++++++++++++++++++++++
- include/linux/mtd/nand.h |  12 +++++
- 3 files changed, 122 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/mtd/nand/core.c b/drivers/mtd/nand/core.c
-index 062a65e131db..55dc1920deae 100644
---- a/drivers/mtd/nand/core.c
-+++ b/drivers/mtd/nand/core.c
-@@ -232,7 +232,9 @@ static int nanddev_get_ecc_engine(struct nand_device *nand)
- 		nand->ecc.engine = nand_ecc_get_ondie_engine(nand);
- 		break;
- 	case NAND_HW_ECC_ENGINE:
--		pr_err("Hardware ECC engines not supported yet\n");
-+		nand->ecc.engine = nand_ecc_get_hw_engine(nand);
-+		if (PTR_ERR(nand->ecc.engine) == -EPROBE_DEFER)
-+			return -EPROBE_DEFER;
- 		break;
- 	default:
- 		pr_err("Missing ECC engine provider\n");
-@@ -252,7 +254,7 @@ static int nanddev_put_ecc_engine(struct nand_device *nand)
- {
- 	switch (nand->ecc.ctx.conf.provider) {
- 	case NAND_HW_ECC_ENGINE:
--		pr_err("Hardware ECC engines not supported yet\n");
-+		nand_ecc_put_hw_engine(nand);
- 		break;
- 	case NAND_NO_ECC_ENGINE:
- 	case NAND_SOFT_ECC_ENGINE:
-@@ -297,7 +299,9 @@ int nanddev_ecc_engine_init(struct nand_device *nand)
- 	/* Look for the ECC engine to use */
- 	ret = nanddev_get_ecc_engine(nand);
- 	if (ret) {
--		pr_err("No ECC engine found\n");
-+		if (ret != -EPROBE_DEFER)
-+			pr_err("No ECC engine found\n");
-+
- 		return ret;
- 	}
- 
-diff --git a/drivers/mtd/nand/ecc.c b/drivers/mtd/nand/ecc.c
-index 4f869d33213d..eabf936c5a50 100644
---- a/drivers/mtd/nand/ecc.c
-+++ b/drivers/mtd/nand/ecc.c
-@@ -96,6 +96,10 @@
- 
- #include <linux/module.h>
- #include <linux/mtd/nand.h>
-+#include <linux/of_platform.h>
-+
-+static LIST_HEAD(hw_engines);
-+static DEFINE_MUTEX(hw_engines_mutex);
- 
- int nand_ecc_init_ctx(struct nand_device *nand)
- {
-@@ -480,6 +484,39 @@ bool nand_ecc_correction_is_enough(struct nand_device *nand)
- }
- EXPORT_SYMBOL(nand_ecc_correction_is_enough);
- 
-+int nand_ecc_register_hw_engine(struct nand_ecc_engine *engine)
-+{
-+	struct nand_ecc_engine *item;
-+
-+	if (!engine)
-+		return -ENOTSUPP;
-+
-+	/* Prevent multiple registrations of one engine */
-+	list_for_each_entry(item, &hw_engines, node)
-+		if (item == engine)
-+			return 0;
-+
-+	mutex_lock(&hw_engines_mutex);
-+	list_add_tail(&engine->node, &hw_engines);
-+	mutex_unlock(&hw_engines_mutex);
-+
-+	return 0;
-+}
-+EXPORT_SYMBOL(nand_ecc_register_hw_engine);
-+
-+int nand_ecc_unregister_hw_engine(struct nand_ecc_engine *engine)
-+{
-+	if (!engine)
-+		return -ENOTSUPP;
-+
-+	mutex_lock(&hw_engines_mutex);
-+	list_del(&engine->node);
-+	mutex_unlock(&hw_engines_mutex);
-+
-+	return 0;
-+}
-+EXPORT_SYMBOL(nand_ecc_unregister_hw_engine);
-+
- struct nand_ecc_engine *nand_ecc_get_sw_engine(struct nand_device *nand)
- {
- 	unsigned int algo = nand->ecc.user_conf.algo;
-@@ -506,6 +543,72 @@ struct nand_ecc_engine *nand_ecc_get_ondie_engine(struct nand_device *nand)
- }
- EXPORT_SYMBOL(nand_ecc_get_ondie_engine);
- 
-+struct nand_ecc_engine *nand_ecc_match_hw_engine(struct device *dev)
-+{
-+	struct nand_ecc_engine *item;
-+
-+	list_for_each_entry(item, &hw_engines, node)
-+		if (item->dev == dev)
-+			return item;
-+
-+	return NULL;
-+}
-+EXPORT_SYMBOL(nand_ecc_match_hw_engine);
-+
-+struct nand_ecc_engine *nand_ecc_get_hw_engine(struct nand_device *nand)
-+{
-+	struct nand_ecc_engine *engine = NULL;
-+	struct device *dev = &nand->mtd.dev;
-+	struct platform_device *pdev;
-+	struct device_node *np;
-+
-+	if (list_empty(&hw_engines))
-+		return NULL;
-+
-+	/* Check for an explicit ecc-engine property in the parent */
-+	np = of_parse_phandle(dev->of_node->parent, "ecc-engine", 0);
-+	if (np) {
-+
-+		pdev = of_find_device_by_node(np);
-+		if (!pdev)
-+			return ERR_PTR(-EPROBE_DEFER);
-+
-+		engine = nand_ecc_match_hw_engine(&pdev->dev);
-+		of_dev_put(pdev);
-+		of_node_put(np);
-+	}
-+
-+	/* Support DTs without ecc-engine property: check the parent node */
-+	if (!engine) {
-+		pdev = of_find_device_by_node(dev->of_node->parent);
-+		if (pdev) {
-+			engine = nand_ecc_match_hw_engine(&pdev->dev);
-+			of_dev_put(pdev);
-+		}
-+	}
-+
-+	/* Support no DT or very old DTs: check the node itself */
-+	if (!engine) {
-+		pdev = of_find_device_by_node(dev->of_node);
-+		if (pdev) {
-+			engine = nand_ecc_match_hw_engine(&pdev->dev);
-+			of_dev_put(pdev);
-+		}
-+	}
-+
-+	if (engine)
-+		get_device(engine->dev);
-+
-+	return engine;
-+}
-+EXPORT_SYMBOL(nand_ecc_get_hw_engine);
-+
-+void nand_ecc_put_hw_engine(struct nand_device *nand)
-+{
-+	put_device(nand->ecc.engine->dev);
-+}
-+EXPORT_SYMBOL(nand_ecc_put_hw_engine);
-+
- MODULE_LICENSE("GPL");
- MODULE_AUTHOR("Miquel Raynal <miquel.raynal@bootlin.com>");
- MODULE_DESCRIPTION("Generic ECC engine");
-diff --git a/include/linux/mtd/nand.h b/include/linux/mtd/nand.h
-index 5a745f74eb35..673d6c893f01 100644
---- a/include/linux/mtd/nand.h
-+++ b/include/linux/mtd/nand.h
-@@ -258,10 +258,16 @@ struct nand_ecc_engine_ops {
- 
- /**
-  * struct nand_ecc_engine - Generic ECC engine abstraction for NAND devices
-+ * @dev: Host device
-+ * @node: Private field for registration time
-  * @ops: ECC engine operations
-+ * @priv: Private data
-  */
- struct nand_ecc_engine {
-+	struct device *dev;
-+	struct list_head node;
- 	struct nand_ecc_engine_ops *ops;
-+	void *priv;
- };
- 
- void nand_ecc_read_user_conf(struct nand_device *nand);
-@@ -272,8 +278,14 @@ int nand_ecc_prepare_io_req(struct nand_device *nand,
- int nand_ecc_finish_io_req(struct nand_device *nand,
- 			   struct nand_page_io_req *req, void *oobbuf);
- bool nand_ecc_correction_is_enough(struct nand_device *nand);
-+int nand_ecc_register_hw_engine(struct nand_ecc_engine *engine);
-+int nand_ecc_unregister_hw_engine(struct nand_ecc_engine *engine);
- struct nand_ecc_engine *nand_ecc_get_sw_engine(struct nand_device *nand);
- struct nand_ecc_engine *nand_ecc_get_ondie_engine(struct nand_device *nand);
-+struct nand_ecc_engine *nand_ecc_get_hw_engine(struct nand_device *nand);
-+struct nand_ecc_engine *nand_ecc_match_hw_engine(struct device *dev);
-+void nand_ecc_put_hw_engine(struct nand_device *nand);
-+
- 
- /**
-  * struct nand_ecc - High-level ECC object
--- 
-2.20.1
-
+I originally made kvm_arch_sync_dirty_log() opt-in with a __KVM_HAVE_ARCH
+macro, but the resulting #ifdeffery felt uglier than having PPC and ARM
+provide empty functions.
 
 _______________________________________________
 linux-arm-kernel mailing list
