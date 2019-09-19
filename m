@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 034DDB8361
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 23:30:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5050B8523
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 00:18:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wq/mYyeiPodzcclk7lnoHj3VhMmBfHYtJ2xU49nQea4=; b=m7rRo6qu8qsVcw
-	hVgcem+Cqxs9SL1PGAA3ubfLcoEEkcWh+pUcnok0XaPHbIDhXoGxycXWWmBKFU3Twf2aj8vVpGGvx
-	rB0lPvOZ5MAkt/J1bcPPWyiKfx6V76jeZ0txflTEaMxJd0fqna/NL5tMaA39RwG2Eq1mtR4/NPA5x
-	9I/lBB1FA27vYRT5BWuRj31RSd90H2DIxYAP826M1Qw0hKH/Ho3y6bUg48toXTgFsuxcal19Txoqy
-	4KzheHiCeyh/B+vTUjcWEoY0saZFO7mjrtH3rV5qOYLe3s04Cee5L1j20g3N6s/cA8wAr+xeTJdMl
-	poYKhJjFeke/sPzmuSTA==;
+	List-Owner; bh=Bvk0X4l2fyCkUJ4SRAOPrFTfQPdV2F2AJOp0Ykm3mB8=; b=A2wbJUjuJZaaTw
+	98ieiMbzc6cXiz3RKyy/CzNVQWg4BxXsyiRcNPrz30X0x7L1H1f+E/t9A7pMdxFXijyrN5n0C+ZB0
+	o3oOcRGIwkXi9C3Jotpmw6jm3rQ341qT6KrenuHByDqs5biCMK5aW/mPDwDzLe2J99S0qcTDzn1Qo
+	w7N/WoE8wGa/k/xCCWubqV/5bVnFsIelnx+bcgAElsx5ILbY9EaduZR0QKTsiFs2iiJXM6TLujEpc
+	ouACP+1oF84w0W3aOcSEwVJKWKs6ly7uerNyY6th5xl7iZq3wSsb1N6rXiOM4TBl60aBZ0maZQbXm
+	0JJd7/ml+Zct+VVF7KXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iB40j-0001cG-QD; Thu, 19 Sep 2019 21:30:45 +0000
+	id 1iB4ka-0000yV-FO; Thu, 19 Sep 2019 22:18:08 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iB40V-0001bU-3f
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 21:30:32 +0000
-Subject: Re: [GIT PULL] Mailbox changes for v5.4
+ id 1iB4kK-0000xR-Ux
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 22:17:54 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 853A921907;
+ Thu, 19 Sep 2019 22:17:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568928630;
- bh=7QLoY0TmVf5TxqnRKSt0gr657YgnCczDsDlWsNpHq6I=;
- h=From:In-Reply-To:References:Date:To:Cc:From;
- b=NafkI1t4rxJ/tuDwle5AQacC81y3YCyQPl7bqmyxlYaylFByX0BznKgDRb4SGgHNx
- KaIfuccbrVEWtdQST55pFuyKVttSuVynVPa2AksOSCoZq/wRI8WLSh04B3AfFuvDXD
- mIjQYi7mzrDdF5wKIadkCdG3chTcbVGvvk4EP4/I=
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <CABb+yY2AFK4G8i765--h0D7h1xcsrhSP2fKzWmcza9OcrdT22g@mail.gmail.com>
-References: <CABb+yY2AFK4G8i765--h0D7h1xcsrhSP2fKzWmcza9OcrdT22g@mail.gmail.com>
-X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
-X-PR-Tracked-Message-Id: <CABb+yY2AFK4G8i765--h0D7h1xcsrhSP2fKzWmcza9OcrdT22g@mail.gmail.com>
-X-PR-Tracked-Remote: git://git.linaro.org/landing-teams/working/fujitsu/integration.git
- tags/mailbox-v5.4
-X-PR-Tracked-Commit-Id: 556a0964e28c4441dcdd50fb07596fd042246bd5
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: b682242f6012dddf81ef94b7ce5d2ec5ac8f8047
-Message-Id: <156892863073.30913.11510470179158516843.pr-tracker-bot@kernel.org>
-Date: Thu, 19 Sep 2019 21:30:30 +0000
-To: Jassi Brar <jassisinghbrar@gmail.com>
+ s=default; t=1568931470;
+ bh=MqV2wpDomJRKYrDCq3ihcJ863yZKr1gH+8fHVxZCNBE=;
+ h=In-Reply-To:References:Cc:To:From:Subject:Date:From;
+ b=P3fsiJZVHmtqiJdkY+1llOwtbQQ7EKFaNVYdlAiGSgTLv3Yg65XWGVFtjIThaYj2D
+ tT3cu1RI5vDhhjBCrSdblPBhae4yl1S2ggg6+I3qPzRgc8A0kw4WFQg8YH1K+ghTe6
+ 7Tpdo8rM3QvFyqJtE+0xGFBCNXbdnzzhgtEY5TFk=
+MIME-Version: 1.0
+In-Reply-To: <20190919030912.16957-2-chen.fang@nxp.com>
+References: <20190919030912.16957-1-chen.fang@nxp.com>
+ <20190919030912.16957-2-chen.fang@nxp.com>
+To: "shawnguo@kernel.org" <shawnguo@kernel.org>, Fancy Fang <chen.fang@nxp.com>
+From: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH v2] clk: imx7ulp: remove IMX7ULP_CLK_MIPI_PLL clock
+User-Agent: alot/0.8.1
+Date: Thu, 19 Sep 2019 15:17:49 -0700
+Message-Id: <20190919221750.853A921907@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_143031_174548_5156F3F1 
-X-CRM114-Status: UNSURE (   2.50  )
+X-CRM114-CacheID: sfid-20190919_151753_028650_0482E4C6 
+X-CRM114-Status: UNSURE (   8.29  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,27 +77,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Torvalds <torvalds@linux-foundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The pull request you sent on Wed, 18 Sep 2019 11:00:28 -0500:
+Quoting Fancy Fang (2019-09-18 20:10:48)
+> diff --git a/include/dt-bindings/clock/imx7ulp-clock.h b/include/dt-bindings/clock/imx7ulp-clock.h
+> index 6f66f9005c81..a39b0c40cb41 100644
+> --- a/include/dt-bindings/clock/imx7ulp-clock.h
+> +++ b/include/dt-bindings/clock/imx7ulp-clock.h
+> @@ -49,7 +49,6 @@
+>  #define IMX7ULP_CLK_NIC1_DIV           36
+>  #define IMX7ULP_CLK_NIC1_BUS_DIV       37
+>  #define IMX7ULP_CLK_NIC1_EXT_DIV       38
+> -#define IMX7ULP_CLK_MIPI_PLL           39
 
-> git://git.linaro.org/landing-teams/working/fujitsu/integration.git tags/mailbox-v5.4
+You can't remove this. Just add a comment like /* unused */ or
+something to indicate this shouldn't be used.
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/b682242f6012dddf81ef94b7ce5d2ec5ac8f8047
-
-Thank you!
-
--- 
-Deet-doot-dot, I am a bot.
-https://korg.wiki.kernel.org/userdoc/prtracker
+>  #define IMX7ULP_CLK_SIRC               40
+>  #define IMX7ULP_CLK_SOSC_BUS_CLK       41
+>  #define IMX7ULP_CLK_FIRC_BUS_CLK       42
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
