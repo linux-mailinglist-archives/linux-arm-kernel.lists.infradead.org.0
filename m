@@ -2,88 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B93DB73B3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 09:06:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 730F5B73EA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 09:18:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=evrCPWOdXYEo8avPcxN+XwUx2z1OzXZFoibQ2EdGwas=; b=oMM/egU0H5XUDJ
-	maUwx2uZ2oWp14nEP+5lzjk4G1htA+eOYsZRqRiueuILoAi6UDD3XsPD6vm75AZuiBHVooT5tnrm9
-	GlbhKkPNxDlDTmdUg95eY9Dpw26DOkajwv4i8UWjAxNdQalauyUkk7IWzKOcRstH7FP6kaUHb+vZr
-	JyFcMtTWciYCDkfbcpZvRGHQmKAO5Z1ImFCxuFaK/J2Be2EXC0mGX4d/iaSrGZaQghEiRqThWwP+y
-	i4OTR3MYJraP5udpoVt/M1dI1u9NpyY0ZmxaDbzjcfaW3Fw4FwwdKaCqOTVG9JHLz3PTKKg1lFRoP
-	KwkzJ6YZ3TYwHLHAM6gg==;
+	List-Owner; bh=ZpLrxqcS3wsKacVE2DLa7/T92VlcVxRJfeKyBSXqySg=; b=U7bgTsg2sJdmzO
+	TfhYaEAXQyxBKr0BV4uBdEhjNaDvY4ozUImjitBjZ2Nbq0L5TeHsRwcmfQ+vcI8s6URFXnlhgCB1g
+	+d/hJ1HeOmmPZ1JY1Rrl6n61CGXAfkmF/IqGuRyqir3Oo2K6w+ByFPF4902V742dJXLT0uIY/pmcQ
+	tlr7XVDL3Tzts+B6bBADyy3rzYI3rJB+bKf3rV8oPykrSsMmZhVPYHP8q0RVqwEH8IBl2euQxTvZZ
+	qVLLrunkGtLUf8zqGmet41lJAxDKi8ehXMYvDQ3wf/+OuoXi7H7vpW/xVrZuvfgpz5ChkoyjuIx8/
+	XQShovTYP2CxlroGhl2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAqWU-000886-IA; Thu, 19 Sep 2019 07:06:39 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iAqi8-0004DY-9S; Thu, 19 Sep 2019 07:18:40 +0000
+Received: from skedge03.snt-world.com ([91.208.41.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAqUw-0006jc-7u
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 07:05:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
- Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=CzzM8AvrkmEVXVXrnko+0JmV21yIkEG1rABUx/hxf8I=; b=kwOclrrxr/ZF75yoEZy3V+oCq
- hvN6n4dsS1IwsY0OHDE3Mp1U9fY91B1zSm8kBS5DfsoaCot4bn9anw9TP2G4Hcxc7D+VPpqZmXURq
- QPv76J4HmXjHp/SAbkaPsQ8JbBSZW6wu8oZRZvIRL+6d8dMfBYe2zI0NO797gqMHy1M8NZyf8Pp1K
- NNzPSYw7f+u5d+/hNitIHjC3M9lCrzl6nqIztM+hBQm+A5Ovos53p7Q8NIi6HBPLgOfnR6iD/xIHb
- tNFjn9+FTdanPvzaSDjbJALnh/aREyljiuOaY3nbXda5kFRe7EzMs5Iyr6/9sBUxS3b6kHPXbXu53
- mWA9apaqQ==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:41352)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1iAqUa-0004b0-Be; Thu, 19 Sep 2019 08:04:40 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iAqUV-00033L-68; Thu, 19 Sep 2019 08:04:35 +0100
-Date: Thu, 19 Sep 2019 08:04:35 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: "Y.b. Lu" <yangbo.lu@nxp.com>
-Subject: Re: [REGRESSION] sdhci no longer detects SD cards on LX2160A
-Message-ID: <20190919070435.GF25745@shell.armlinux.org.uk>
-References: <20190917114210.GM25745@shell.armlinux.org.uk>
- <20190917123326.GN25745@shell.armlinux.org.uk>
- <20190917130759.GO25745@shell.armlinux.org.uk>
- <CAOMZO5DXv8g5qTGdvobDdLWim+tW=vK4+K=P-VqJK23KERMhJw@mail.gmail.com>
- <20190917133317.GQ25745@shell.armlinux.org.uk>
- <CAOMZO5DS_1Uc9TMc29e+8tCg-srvMjf3uth_9P3cnro6det+7A@mail.gmail.com>
- <20190917135157.GT25745@shell.armlinux.org.uk>
- <CAOMZO5BDirX0Fwo716v1ddYaaO+OL8Woht63mw8OEhDuMBTb8Q@mail.gmail.com>
- <CADRPPNQ-WTY0QC7_bX=N0QeueKve=k0SaMvbjOrByyvzFojz2g@mail.gmail.com>
- <VI1PR0401MB22376A0EA85123B2AEB72EDEF8890@VI1PR0401MB2237.eurprd04.prod.outlook.com>
+ id 1iAqhR-0004CG-B5
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 07:18:00 +0000
+Received: from sntmail10s.snt-is.com (unknown [10.203.32.183])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by skedge03.snt-world.com (Postfix) with ESMTPS id E59A367AB45;
+ Thu, 19 Sep 2019 09:17:44 +0200 (CEST)
+Received: from sntmail14r.snt-is.com (10.203.32.184) by sntmail10s.snt-is.com
+ (10.203.32.183) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Thu, 19 Sep
+ 2019 09:17:44 +0200
+Received: from sntmail14r.snt-is.com ([fe80::c8f3:eae9:52c2:11a8]) by
+ sntmail14r.snt-is.com ([fe80::c8f3:eae9:52c2:11a8%3]) with mapi id
+ 15.01.1713.004; Thu, 19 Sep 2019 09:17:44 +0200
+From: Schrempf Frieder <frieder.schrempf@kontron.de>
+To: Anson Huang <Anson.Huang@nxp.com>, "robh+dt@kernel.org"
+ <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>, "leonard.crestez@nxp.com"
+ <leonard.crestez@nxp.com>, "daniel.lezcano@linaro.org"
+ <daniel.lezcano@linaro.org>, "ping.bai@nxp.com" <ping.bai@nxp.com>,
+ "daniel.baluta@nxp.com" <daniel.baluta@nxp.com>, "jun.li@nxp.com"
+ <jun.li@nxp.com>, "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
+ "abel.vesa@nxp.com" <abel.vesa@nxp.com>, "andrew.smirnov@gmail.com"
+ <andrew.smirnov@gmail.com>, "angus@akkea.ca" <angus@akkea.ca>,
+ "ccaione@baylibre.com" <ccaione@baylibre.com>, "agx@sigxcpu.org"
+ <agx@sigxcpu.org>, "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, 
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH 2/3] arm64: dts: imx8mm: Use correct clock for usdhc's ipg
+ clk
+Thread-Topic: [PATCH 2/3] arm64: dts: imx8mm: Use correct clock for usdhc's
+ ipg clk
+Thread-Index: AQHVbqhJada8Xsj3oEetJoKRBs2eSKcyddCA
+Date: Thu, 19 Sep 2019 07:17:44 +0000
+Message-ID: <c680d114-1c14-6bf8-226c-2fdd98350158@kontron.de>
+References: <1568869559-28611-1-git-send-email-Anson.Huang@nxp.com>
+ <1568869559-28611-2-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1568869559-28611-2-git-send-email-Anson.Huang@nxp.com>
+Accept-Language: de-DE, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [172.25.9.193]
+x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
+Content-ID: <F14B5A1009A44548B13FE27527380192@snt-world.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <VI1PR0401MB22376A0EA85123B2AEB72EDEF8890@VI1PR0401MB2237.eurprd04.prod.outlook.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SnT-MailScanner-Information: Please contact the ISP for more information
+X-SnT-MailScanner-ID: E59A367AB45.A1B78
+X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
+ Provider for details
+X-SnT-MailScanner-SpamCheck: 
+X-SnT-MailScanner-From: frieder.schrempf@kontron.de
+X-SnT-MailScanner-To: abel.vesa@nxp.com, agx@sigxcpu.org,
+ andrew.smirnov@gmail.com, angus@akkea.ca, anson.huang@nxp.com,
+ ccaione@baylibre.com, daniel.baluta@nxp.com,
+ daniel.lezcano@linaro.org, devicetree@vger.kernel.org,
+ festevam@gmail.com, jun.li@nxp.com, kernel@pengutronix.de,
+ l.stach@pengutronix.de, leonard.crestez@nxp.com,
+ linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
+ linux-kernel@vger.kernel.org, mark.rutland@arm.com, ping.bai@nxp.com,
+ robh+dt@kernel.org, s.hauer@pengutronix.de, shawnguo@kernel.org
+X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_000504_048042_B73A731A 
-X-CRM114-Status: GOOD (  19.74  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190919_001757_938649_AF6BFEC0 
+X-CRM114-Status: GOOD (  15.86  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [91.208.41.68 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,69 +109,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dann frazier <dann.frazier@canonical.com>,
- Will Deacon <will.deacon@arm.com>, Adrian Hunter <adrian.hunter@intel.com>,
- Leo Li <leoyang.li@nxp.com>, Nicolin Chen <nicoleotsuka@gmail.com>,
- linux-mmc <linux-mmc@vger.kernel.org>, Fabio Estevam <festevam@gmail.com>,
- Christoph Hellwig <hch@lst.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "Linux-imx@nxp.com" <Linux-imx@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpUaGlzIGlzIG5vdCB0aGUgaXNzdWUsIHNpbmNlIHRoZSBwcm9ibGVtIGhhcyBiZWVuIG9i
-c2VydmVkIHdpdGggZU1NQwp0b28sIGFuZCBpcyBzcG9yYWRpYyBpbiBuYXR1cmUuCgpQbGVhc2Ug
-Y291bGQgeW91IGFuc3dlciB0aGUgcXVlc3Rpb24gcG9zZWQ6IGFyZSB0aGUgZVNESEMgY29udHJv
-bGxlcnMKRE1BIGNvaGVyZW50IG9yIGFyZSB0aGV5IG5vdCBjb2hlcmVudD8KClRoYW5rcy4KCk9u
-IFRodSwgU2VwIDE5LCAyMDE5IGF0IDA0OjEzOjIwQU0gKzAwMDAsIFkuYi4gTHUgd3JvdGU6Cj4g
-U29ycnkuIE15IGVtYWlsIHdhcyByZWplY3RlZCBieSBtYWlsaW5nIGxpc3RzLiBMZXQgbWUgcmUt
-c2VuZC4KPiAKPiBIaSBSdXNzZWxsLAo+IAo+IEnigJltIG5vdCBzdXJlIHdoYXQgYm9hcmQgeW91
-IHdlcmUgdXNpbmcgZm9yIExYMjE2MEEuCj4gV2UgaGFkIGFuIGtub3duIGlzc3VlIGZvciBlU0RI
-QyBjb250cm9sbGVyIGFuZCBhbGwgTlhQIExheWVyc2NhcGUgUkRCIGJvYXJkcy4KPiBlU0RIQyBj
-b3VsZG7igJl0IHByb3ZpZGUgcG93ZXItY3ljbGUgdG8gU0QgY2FyZCwgYW5kIGV2ZW4gd29yc2Us
-IGJvYXJkIHJlc2V0IGNvdWxkbuKAmXQgcHJvdmlkZSBwb3dlci1jeWNsZSB0byBTRCBjYXJkIGVp
-dGhlci4KPiBCdXQgZm9yIFVIUy1JIFNEIGNhcmQsIGl04oCZcyByZXF1aXJlZCB0byBoYXZlIGEg
-cG93ZXItY3ljbGUgdG8gcmVzZXQgY2FyZCBpZiBpdCBnb2VzIGludG8gVUhTLUkgbW9kZS4gT3Ro
-ZXJ3aXNlLCB3ZSBkb27igJl0IGtub3cgd2hhdCB3aWxsIGhhcHBlbiB3aGVuIGtlcm5lbCBpbml0
-aWFsaXplcyBTRCBjYXJkIGFmdGVyIGEgcmVib290L3Jlc2V0Lgo+IAo+IEkgY291bGQgcmVwcm9k
-dWNlIHRoYXQgaXNzdWUgd2l0aCBiZWxvdyBzdGVwcyBvbiBsYXRlc3QgbWFpbmxpbmUga2VybmVs
-Lgo+IDEuIFBvd2VyIG9mZiBib2FyZCwgYW5kIHBvd2VyIG9uIGJvYXJkLgo+IDIuIFN0YXJ0IHVw
-IGtlcm5lbCwgdGhlIFNEIGNhcmQgd29ya3MgZmluZSBpbiBVSFMtSSBtb2RlLgo+IDMuIFJlYm9v
-dC9yZXNldCBib2FyZC4gKFRoaXMgY291bGRu4oCZdCBwcm92aWRlIHBvd2VyLWN5Y2xlIHRvIFNE
-IGNhcmQpCj4gNC4gU3RhcnQgdXAga2VybmVsLCB0aGUgU0QgY2FyZCBnZXRzIHRoYXQgQURNQSBl
-cnJvciBpc3N1ZS4KPiAKPiBTbyBjb3VsZCB5b3UgaGF2ZSBhIHRyeSB0byBwb3dlciBvZmYvcG93
-ZXIgb24gdGhlIGJvYXJkLCBhbmQgdGhlbiBzdGFydCB1cCBrZXJuZWwuIERvbuKAmXQgdXNlIHJl
-Ym9vdCwgb3IgYm9hcmQgcmVzZXQgYnV0dG9uLgo+IE9yIHlvdSBjYW4gcmVtb3ZlIFNEIGNhcmQg
-YW5kIHN0YXJ0IHVwIGtlcm5lbCwgYW5kIGluc2VydCBTRCBjYXJkIHdoZW4ga2VybmVsIGhhcyBi
-ZWVuIHN0YXJ0ZWQgdXAuCj4gVGhhbmtzIGEgbG90Lgo+IAo+IEJlc3QgcmVnYXJkcywKPiBZYW5n
-Ym8gTHUKPiAKPiAKPiBGcm9tOiBMaSBZYW5nIDxsZW95YW5nLmxpQG54cC5jb20+IAo+IFNlbnQ6
-IFdlZG5lc2RheSwgU2VwdGVtYmVyIDE4LCAyMDE5IDE6NDggQU0KPiBUbzogRmFiaW8gRXN0ZXZh
-bSA8ZmVzdGV2YW1AZ21haWwuY29tPjsgWS5iLiBMdSA8eWFuZ2JvLmx1QG54cC5jb20+Cj4gQ2M6
-IEFkcmlhbiBIdW50ZXIgPGFkcmlhbi5odW50ZXJAaW50ZWwuY29tPjsgQ2hyaXN0b3BoIEhlbGx3
-aWcgPGhjaEBsc3QuZGU+OyBMaW51eCBBUk0gPGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
-ZWFkLm9yZz47IE5pY29saW4gQ2hlbiA8bmljb2xlb3RzdWthQGdtYWlsLmNvbT47IFJ1c3NlbGwg
-S2luZyAtIEFSTSBMaW51eCBhZG1pbiA8bGludXhAYXJtbGludXgub3JnLnVrPjsgV2lsbCBEZWFj
-b24gPHdpbGwuZGVhY29uQGFybS5jb20+OyBkYW5uIGZyYXppZXIgPGRhbm4uZnJhemllckBjYW5v
-bmljYWwuY29tPjsgbGludXgtbW1jIDxsaW51eC1tbWNAdmdlci5rZXJuZWwub3JnPgo+IFN1Ympl
-Y3Q6IFJlOiBbUkVHUkVTU0lPTl0gc2RoY2kgbm8gbG9uZ2VyIGRldGVjdHMgU0QgY2FyZHMgb24g
-TFgyMTYwQQo+IAo+IAo+IAo+IE9uIFR1ZSwgU2VwIDE3LCAyMDE5IGF0IDY6MzEgUE0gRmFiaW8g
-RXN0ZXZhbSA8bWFpbHRvOmZlc3RldmFtQGdtYWlsLmNvbT4gd3JvdGU6Cj4gW0FkZGluZyBMaSBZ
-YW5nXQo+IAo+IE9uIFR1ZSwgU2VwIDE3LCAyMDE5IGF0IDEwOjUyIEFNIFJ1c3NlbGwgS2luZyAt
-IEFSTSBMaW51eCBhZG1pbgo+IDxtYWlsdG86bGludXhAYXJtbGludXgub3JnLnVrPiB3cm90ZToK
-PiAKPiA+IFRoZSBwcmVzc2luZyBxdWVzdGlvbiBzZWVtcyB0byBiZSB0aGlzOgo+ID4KPiA+IEFy
-ZSB0aGUgZVNESEMgb24gdGhlIExYMjE2MEEgRE1BIGNvaGVyZW50IG9yIGFyZSB0aGV5IG5vdD8K
-PiA+Cj4gPiBBbnkgY2hhbmNlcyBvZiBmaW5kaW5nIG91dCBpbnRlcm5hbGx5IHdoYXQgdGhlIHRy
-dWUgYW5zd2VyIHRvIHRoYXQsCj4gPiByYXRoZXIgdGhhbiBtZSBwb2tpbmcgYWJvdXQgdHJ5aW5n
-IHN0dWZmIGV4cGVyaW1lbnRhbGx5P8KgIEhhdmluZyBhCj4gPiBkZWZpbml0aXZlIGFuc3dlciBm
-b3IgYSBwb3RlbnRpYWxseSBkYXRhLWNvcnJ1cHRpbmcgY2hhbmdlIHdvdWxkCj4gPiBiZSByZWFs
-bHkgZ29vZC4uLgo+IAo+IExpIFlhbmcsCj4gCj4gQ291bGQgeW91IHBsZWFzZSBoZWxwIHRvIGNv
-bmZpcm0gUnVzc2VsbCdzIHF1ZXN0aW9uPwo+IEFkZGluZyBZYW5nYm8gd2hvIGlzIHdvcmtpbmcg
-b24gU0RIQy4KPiAKPiBSZWdhcmRzLAo+IExlbwoKLS0gClJNSydzIFBhdGNoIHN5c3RlbTogaHR0
-cHM6Ly93d3cuYXJtbGludXgub3JnLnVrL2RldmVsb3Blci9wYXRjaGVzLwpGVFRDIGJyb2FkYmFu
-ZCBmb3IgMC44bWlsZSBsaW5lIGluIHN1YnVyYmlhOiBzeW5jIGF0IDEyLjFNYnBzIGRvd24gNjIy
-a2JwcyB1cApBY2NvcmRpbmcgdG8gc3BlZWR0ZXN0Lm5ldDogMTEuOU1icHMgZG93biA1MDBrYnBz
-IHVwCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
-eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
-cm0ta2VybmVsCg==
+Hi Anson,
+
+I have a question, that is not directly related to this patch.
+I see that for the usdhc1 and usdhc3 nodes, there is an 'assigned-clock' 
+and 'assigned-clock-rates' property but not for usdhc2. The same applies 
+to the mx8mq and mx8mn dtsi file.
+
+Is there any reason for this? If not can you fix it?
+
+Thanks,
+Frieder
+
+On 19.09.19 07:05, Anson Huang wrote:
+> On i.MX8MM, usdhc's ipg clock is from IMX8MM_CLK_IPG_ROOT,
+> assign it explicitly instead of using IMX8MM_CLK_DUMMY.
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+>   arch/arm64/boot/dts/freescale/imx8mm.dtsi | 6 +++---
+>   1 file changed, 3 insertions(+), 3 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> index 7c4dcce..8aafad2 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> @@ -694,7 +694,7 @@
+>   				compatible = "fsl,imx8mm-usdhc", "fsl,imx7d-usdhc";
+>   				reg = <0x30b40000 0x10000>;
+>   				interrupts = <GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>;
+> -				clocks = <&clk IMX8MM_CLK_DUMMY>,
+> +				clocks = <&clk IMX8MM_CLK_IPG_ROOT>,
+>   					 <&clk IMX8MM_CLK_NAND_USDHC_BUS>,
+>   					 <&clk IMX8MM_CLK_USDHC1_ROOT>;
+>   				clock-names = "ipg", "ahb", "per";
+> @@ -710,7 +710,7 @@
+>   				compatible = "fsl,imx8mm-usdhc", "fsl,imx7d-usdhc";
+>   				reg = <0x30b50000 0x10000>;
+>   				interrupts = <GIC_SPI 23 IRQ_TYPE_LEVEL_HIGH>;
+> -				clocks = <&clk IMX8MM_CLK_DUMMY>,
+> +				clocks = <&clk IMX8MM_CLK_IPG_ROOT>,
+>   					 <&clk IMX8MM_CLK_NAND_USDHC_BUS>,
+>   					 <&clk IMX8MM_CLK_USDHC2_ROOT>;
+>   				clock-names = "ipg", "ahb", "per";
+> @@ -724,7 +724,7 @@
+>   				compatible = "fsl,imx8mm-usdhc", "fsl,imx7d-usdhc";
+>   				reg = <0x30b60000 0x10000>;
+>   				interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
+> -				clocks = <&clk IMX8MM_CLK_DUMMY>,
+> +				clocks = <&clk IMX8MM_CLK_IPG_ROOT>,
+>   					 <&clk IMX8MM_CLK_NAND_USDHC_BUS>,
+>   					 <&clk IMX8MM_CLK_USDHC3_ROOT>;
+>   				clock-names = "ipg", "ahb", "per";
+> 
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
