@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CF49B7EDB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 18:13:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D10E4B7EDF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 18:14:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,26 +11,26 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=QdtZSwuS25S/hUo+7Io15loCA+D/C1XABQZVpKjiv6I=; b=H5AK13UD7jfYyt1HEWJ8t+iTPU
-	yWoB8SunZQqKFZ+cmoPv5JNxOqVKKImXtbB0Nk4g0sEQJq80pV/AjtCRwnlrz3cYeqo/E0I7H4AyQ
-	C5GDN+ghDJOeT4/cySpo/VUN9pVcdgrhkzNnpVvtY+n6R2T+9+NYRxOSPsA1NZWLpNUfdQn4bVl4j
-	BVXWa9ildijZs8fIdWYnPqtCbiwOC8EbGLHWmXFdBNVdGEY3mgy4dzbVItqHLzdMLm6ld21dmE09S
-	qrrb28nuY0TfUxPloSWsnYqlt/gBCUxkMof1dmEjZbX+/tMOLLaB6oUlUBJIQGO+kotsN0FkR7oYf
-	GyKog22g==;
+	bh=ZYTJZOOxelPuFmWCtINgVa3ziI2vTJUqcd4wofxmw5k=; b=J3PelRTXitGBhOHBAvzKZmuf5q
+	lHNmEnRh52Tk+h/C8Ro2IHkHiK4R8wzCcwIo7CJqBmsuVdbzoUl+tkULN8d8YK9g1eQyrAZj5jVvj
+	lxVFqxuJ1rluQrRmtrLht9L2y57NR1Ket82rWBkzEcVPrqbhbQXx/y2pe9lnJaf2DhYrUQp8gL3xh
+	iWm3disimT20t8lKgowychv5LgTD7Muy8ZqZHPB/IVMg4bdDdvo/STxN06u8laIRvbCkM/69Cbt1r
+	Jzd4KG41nJVAlx5byvTYFvHhAGGHxHqEtSb6L7Yx1/b1Q32DFsocnr5DN4brtb8z+l5EDYoytJtCe
+	doInYLdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAz3q-0007et-UX; Thu, 19 Sep 2019 16:13:39 +0000
+	id 1iAz4M-0007t9-U2; Thu, 19 Sep 2019 16:14:11 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAz2g-0007AU-L6
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 16:12:32 +0000
+ id 1iAz2l-0007CL-DD
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 16:12:33 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D8CB01597;
- Thu, 19 Sep 2019 09:12:25 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9470C15A2;
+ Thu, 19 Sep 2019 09:12:30 -0700 (PDT)
 Received: from localhost.localdomain (entos-thunderx2-02.shanghai.arm.com
  [10.169.40.54])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 84D6C3F575;
- Thu, 19 Sep 2019 09:12:21 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3DF9F3F575;
+ Thu, 19 Sep 2019 09:12:26 -0700 (PDT)
 From: Jia He <justin.he@arm.com>
 To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>, James Morse <james.morse@arm.com>,
@@ -38,15 +38,15 @@ To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-mm@kvack.org, Suzuki Poulose <Suzuki.Poulose@arm.com>
-Subject: [PATCH v5 2/3] arm64: mm: implement arch_faults_on_old_pte() on arm64
-Date: Fri, 20 Sep 2019 00:12:03 +0800
-Message-Id: <20190919161204.142796-3-justin.he@arm.com>
+Subject: [PATCH v5 3/3] mm: fix double page fault on arm64 if PTE_AF is cleared
+Date: Fri, 20 Sep 2019 00:12:04 +0800
+Message-Id: <20190919161204.142796-4-justin.he@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190919161204.142796-1-justin.he@arm.com>
 References: <20190919161204.142796-1-justin.he@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_091227_883641_B65AF214 
-X-CRM114-Status: GOOD (  11.14  )
+X-CRM114-CacheID: sfid-20190919_091231_606167_FD762DE7 
+X-CRM114-Status: GOOD (  18.96  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -78,42 +78,154 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On arm64 without hardware Access Flag, copying fromuser will fail because
-the pte is old and cannot be marked young. So we always end up with zeroed
-page after fork() + CoW for pfn mappings. we don't always have a
-hardware-managed access flag on arm64.
+When we tested pmdk unit test [1] vmmalloc_fork TEST1 in arm64 guest, there
+will be a double page fault in __copy_from_user_inatomic of cow_user_page.
 
-Hence implement arch_faults_on_old_pte on arm64 to indicate that it might
-cause page fault when accessing old pte.
+Below call trace is from arm64 do_page_fault for debugging purpose
+[  110.016195] Call trace:
+[  110.016826]  do_page_fault+0x5a4/0x690
+[  110.017812]  do_mem_abort+0x50/0xb0
+[  110.018726]  el1_da+0x20/0xc4
+[  110.019492]  __arch_copy_from_user+0x180/0x280
+[  110.020646]  do_wp_page+0xb0/0x860
+[  110.021517]  __handle_mm_fault+0x994/0x1338
+[  110.022606]  handle_mm_fault+0xe8/0x180
+[  110.023584]  do_page_fault+0x240/0x690
+[  110.024535]  do_mem_abort+0x50/0xb0
+[  110.025423]  el0_da+0x20/0x24
 
+The pte info before __copy_from_user_inatomic is (PTE_AF is cleared):
+[ffff9b007000] pgd=000000023d4f8003, pud=000000023da9b003, pmd=000000023d4b3003, pte=360000298607bd3
+
+As told by Catalin: "On arm64 without hardware Access Flag, copying from
+user will fail because the pte is old and cannot be marked young. So we
+always end up with zeroed page after fork() + CoW for pfn mappings. we
+don't always have a hardware-managed access flag on arm64."
+
+This patch fix it by calling pte_mkyoung. Also, the parameter is
+changed because vmf should be passed to cow_user_page()
+
+Add a WARN_ON_ONCE when __copy_from_user_inatomic() returns error
+in case there can be some obscure use-case.(by Kirill)
+
+[1] https://github.com/pmem/pmdk/tree/master/src/test/vmmalloc_fork
+
+Reported-by: Yibo Cai <Yibo.Cai@arm.com>
 Signed-off-by: Jia He <justin.he@arm.com>
 ---
- arch/arm64/include/asm/pgtable.h | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+ mm/memory.c | 59 ++++++++++++++++++++++++++++++++++++++++++++++++-----
+ 1 file changed, 54 insertions(+), 5 deletions(-)
 
-diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-index e09760ece844..4a9939615e41 100644
---- a/arch/arm64/include/asm/pgtable.h
-+++ b/arch/arm64/include/asm/pgtable.h
-@@ -868,6 +868,18 @@ static inline void update_mmu_cache(struct vm_area_struct *vma,
- #define phys_to_ttbr(addr)	(addr)
+diff --git a/mm/memory.c b/mm/memory.c
+index e2bb51b6242e..cf681963b2f5 100644
+--- a/mm/memory.c
++++ b/mm/memory.c
+@@ -118,6 +118,13 @@ int randomize_va_space __read_mostly =
+ 					2;
  #endif
  
-+/*
-+ * On arm64 without hardware Access Flag, copying fromuser will fail because
-+ * the pte is old and cannot be marked young. So we always end up with zeroed
-+ * page after fork() + CoW for pfn mappings. we don't always have a
-+ * hardware-managed access flag on arm64.
-+ */
++#ifndef arch_faults_on_old_pte
 +static inline bool arch_faults_on_old_pte(void)
 +{
-+	return !cpu_has_hw_af();
++	return false;
 +}
-+#define arch_faults_on_old_pte arch_faults_on_old_pte
++#endif
 +
- #endif /* !__ASSEMBLY__ */
+ static int __init disable_randmaps(char *s)
+ {
+ 	randomize_va_space = 0;
+@@ -2140,8 +2147,12 @@ static inline int pte_unmap_same(struct mm_struct *mm, pmd_t *pmd,
+ 	return same;
+ }
  
- #endif /* __ASM_PGTABLE_H */
+-static inline void cow_user_page(struct page *dst, struct page *src, unsigned long va, struct vm_area_struct *vma)
++static inline int cow_user_page(struct page *dst, struct page *src,
++				struct vm_fault *vmf)
+ {
++	struct vm_area_struct *vma = vmf->vma;
++	unsigned long addr = vmf->address;
++
+ 	debug_dma_assert_idle(src);
+ 
+ 	/*
+@@ -2152,7 +2163,29 @@ static inline void cow_user_page(struct page *dst, struct page *src, unsigned lo
+ 	 */
+ 	if (unlikely(!src)) {
+ 		void *kaddr = kmap_atomic(dst);
+-		void __user *uaddr = (void __user *)(va & PAGE_MASK);
++		void __user *uaddr = (void __user *)(addr & PAGE_MASK);
++		pte_t entry;
++
++		/* On architectures with software "accessed" bits, we would
++		 * take a double page fault, so mark it accessed here.
++		 */
++		if (arch_faults_on_old_pte() && !pte_young(vmf->orig_pte)) {
++			spin_lock(vmf->ptl);
++			if (likely(pte_same(*vmf->pte, vmf->orig_pte))) {
++				entry = pte_mkyoung(vmf->orig_pte);
++				if (ptep_set_access_flags(vma, addr,
++							  vmf->pte, entry, 0))
++					update_mmu_cache(vma, addr, vmf->pte);
++			} else {
++				/* Other thread has already handled the fault
++				 * and we don't need to do anything. If it's
++				 * not the case, the fault will be triggered
++				 * again on the same address.
++				 */
++				return -1;
++			}
++			spin_unlock(vmf->ptl);
++		}
+ 
+ 		/*
+ 		 * This really shouldn't fail, because the page is there
+@@ -2160,12 +2193,17 @@ static inline void cow_user_page(struct page *dst, struct page *src, unsigned lo
+ 		 * in which case we just give up and fill the result with
+ 		 * zeroes.
+ 		 */
+-		if (__copy_from_user_inatomic(kaddr, uaddr, PAGE_SIZE))
++		if (__copy_from_user_inatomic(kaddr, uaddr, PAGE_SIZE)) {
++			/* In case there can be some obscure use-case */
++			WARN_ON_ONCE(1);
+ 			clear_page(kaddr);
++		}
+ 		kunmap_atomic(kaddr);
+ 		flush_dcache_page(dst);
+ 	} else
+-		copy_user_highpage(dst, src, va, vma);
++		copy_user_highpage(dst, src, addr, vma);
++
++	return 0;
+ }
+ 
+ static gfp_t __get_fault_gfp_mask(struct vm_area_struct *vma)
+@@ -2318,7 +2356,16 @@ static vm_fault_t wp_page_copy(struct vm_fault *vmf)
+ 				vmf->address);
+ 		if (!new_page)
+ 			goto oom;
+-		cow_user_page(new_page, old_page, vmf->address, vma);
++
++		if (cow_user_page(new_page, old_page, vmf)) {
++			/* COW failed, if the fault was solved by other,
++			 * it's fine. If not, userspace would re-fault on
++			 * the same address and we will handle the fault
++			 * from the second attempt.
++			 */
++			put_page(new_page);
++			goto normal;
++		}
+ 	}
+ 
+ 	if (mem_cgroup_try_charge_delay(new_page, mm, GFP_KERNEL, &memcg, false))
+@@ -2420,6 +2467,8 @@ static vm_fault_t wp_page_copy(struct vm_fault *vmf)
+ 		}
+ 		put_page(old_page);
+ 	}
++
++normal:
+ 	return page_copied ? VM_FAULT_WRITE : 0;
+ oom_free_new:
+ 	put_page(new_page);
 -- 
 2.17.1
 
