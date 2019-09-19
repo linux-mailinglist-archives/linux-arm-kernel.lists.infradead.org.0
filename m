@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96905B7F7C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 18:57:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91958B7FA9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 19:06:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kNlZ0MJil9aIkSBPZJQFCZ39yvBN1yj4K1TF2kfXUMQ=; b=bhUAYylpzw7Vr1vAoH4knJB1L
-	7KRdScj0KIb6Dbj/HvM73b1ra7qZqjytFPFx0lca7FFOA0tXJRX4eTb29UbpGw2jNMAtqs9kkFLB3
-	8AaIjVFIQdwOMizfVTJKd2uZknvPrANyjlSw23+ocYwXmMdH6BZBkXVZ1+PZRVU7ykr9Q87wdB5sw
-	k8nlpoInTbESaOIYv4pxWEozo+KZKTfX8DVOMFLFAawjgogpw/KKAlUDzD8Ni0w/cMmAkLcs+wBS5
-	McoMUeD3Nq8MXZMjRqdUlk/oWq821izgnQYKbPpXgESBOJxM00E1Jo7En62Z1SONd12FNVr6DyZlu
-	HBpEufRoA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=R+YnbSOtu+Q5nr68GFqXk6pRpAcNEUQoum8O/en1Oec=; b=cuqjihbBCAaANF
+	sdpHIHu0gwTntIG36CFxpa9wdWyLoIuYRvrmXfwVuIAEIqEEAcjDA3OxQiKDDDEZqD0j5YKx9xLdw
+	HJDLzNCDEnR0vi3BN/8BgJTXnUnEQ3n8K1XZGXGkmKG3Jy/pZDGvlP78oW24WqWt5ICIEd/tPHmAs
+	/f2BcFL2FI+wFSgScVV9rSbgnnbdwqs16pfDEuKsp0yjSV1tdjfBmX1F46f7lsv4BJ3AiTh9uB+3k
+	TrR3V822ULfbDR/AZE9f3aBjskIvepSq1NwSZIPfX0UBdQQuHLboc+rWS3Ud9ctfiuwUm564ZFSey
+	rLw1Hh9LkwohLyqkPIAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAzjn-00070I-GR; Thu, 19 Sep 2019 16:56:59 +0000
+	id 1iAztJ-0001tA-4u; Thu, 19 Sep 2019 17:06:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAzit-0006zO-7I
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 16:56:04 +0000
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BE9D9206C2;
- Thu, 19 Sep 2019 16:56:01 +0000 (UTC)
+ id 1iAzsh-0001rY-9h; Thu, 19 Sep 2019 17:06:12 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 541D620644;
+ Thu, 19 Sep 2019 17:06:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568912162;
- bh=zsfPmeUZCZdmuEtRS/K6Wqpv2tm4qLC9eXVgWfIrPAk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=u4g6J2LMzhF7guyY4SPvfR9r4kprWzEm6OSCjCaYm6nPTL1zNWUWZNqz7TkJHg7si
- sScSk5E7uMoq7IPXbonY1O8Q4zscoRZKH+eS9CLRj8PXFoHCZ8Ola2hyqQ2aMRpQBo
- YjL6OTFJVfJ/tVQkgvwsKUHP83mOX1bSDr1eWhBo=
-Date: Thu, 19 Sep 2019 18:55:59 +0200
-From: Maxime Ripard <mripard@kernel.org>
-To: Corentin Labbe <clabbe.montjoie@gmail.com>
-Subject: Re: [PATCH v2 2/2] crypto: sun4i-ss: enable pm_runtime
-Message-ID: <20190919165559.e7xyapggcwp2ukdt@gilmour>
-References: <20190919051035.4111-1-clabbe.montjoie@gmail.com>
- <20190919051035.4111-3-clabbe.montjoie@gmail.com>
+ s=default; t=1568912770;
+ bh=FRD3cLqXl21dfjVTSUUFS+CztYthOlCax3P4tSmWNxo=;
+ h=In-Reply-To:References:Cc:To:From:Subject:Date:From;
+ b=U6NcaTMNde1Oip6/3oJe2Rq3emdMiuBNKMTvl9ioWGPXRl0567TcrCjB/dvM+62er
+ jUqNJLjhOvXukdqRUlbxxk+kS1rPQujQehuR0aGc7kYpxrkx4R0z3jQZwNaBbyDI6H
+ BzVl2I+9DajPMLvWU9n4Taf829gZ04Hr9RLjV5FU=
 MIME-Version: 1.0
-In-Reply-To: <20190919051035.4111-3-clabbe.montjoie@gmail.com>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <1j1rwce8yf.fsf@starbuckisacylon.baylibre.com>
+References: <20190919093627.21245-1-narmstrong@baylibre.com>
+ <20190919093809.21364-1-narmstrong@baylibre.com>
+ <1j1rwce8yf.fsf@starbuckisacylon.baylibre.com>
+To: Jerome Brunet <jbrunet@baylibre.com>,
+ Neil Armstrong <narmstrong@baylibre.com>
+From: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH 3/3] clk: meson: clk-pll: always enable a critical PLL
+ when setting the rate
+User-Agent: alot/0.8.1
+Date: Thu, 19 Sep 2019 10:06:09 -0700
+Message-Id: <20190919170610.541D620644@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_095603_322340_870F2EFC 
-X-CRM114-Status: GOOD (  21.54  )
+X-CRM114-CacheID: sfid-20190919_100611_406212_DA1CE36E 
+X-CRM114-Status: GOOD (  24.46  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,193 +78,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: herbert@gondor.apana.org.au, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, wens@csie.org, linux-crypto@vger.kernel.org,
- davem@davemloft.net, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3677747472168466275=="
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Neil Armstrong <narmstrong@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Quoting Jerome Brunet (2019-09-19 06:01:28)
+> On Thu 19 Sep 2019 at 11:38, Neil Armstrong <narmstrong@baylibre.com> wrote:
+> 
+> > Make sure we always enable a PLL on a set_rate() when the PLL is
+> > flagged as critical.
+> >
+> > This fixes the case when the Amlogic G12A SYS_PLL gets disabled by the
+> > PSCI firmware when resuming from suspend-to-memory, in the case
+> > where the CPU was not clocked by the SYS_PLL, but by the fixed PLL
+> > fixed divisors.
+> > In this particular case, when changing the PLL rate, CCF doesn't handle
+> > the fact the PLL could have been disabled in the meantime and set_rate()
+> > only changes the rate and never enables it again.
+> >
+> > Fixes: d6e81845b7d9 ("clk: meson: clk-pll: check if the clock is already enabled')
+> > Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> > ---
+> >  drivers/clk/meson/clk-pll.c | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> >
+> > diff --git a/drivers/clk/meson/clk-pll.c b/drivers/clk/meson/clk-pll.c
+> > index ddb1e5634739..8c5adccb7959 100644
+> > --- a/drivers/clk/meson/clk-pll.c
+> > +++ b/drivers/clk/meson/clk-pll.c
+> > @@ -379,7 +379,7 @@ static int meson_clk_pll_set_rate(struct clk_hw *hw, unsigned long rate,
+> >       }
+> >  
+> >       /* If the pll is stopped, bail out now */
+> > -     if (!enabled)
+> > +     if (!(hw->init->flags & CLK_IS_CRITICAL) && !enabled)
+> 
+> This is surely a work around to the issue at hand but:
+> 
+> * Enabling the clock, critical or not, should not be done but the
+> set_rate() callback. This is not the purpose of this callback.
+> 
+> * Enabling the clock in such way does not walk the tree. So, if there is
+> ever another PSCI Fw which disable we would get into the same issue
+> again. IOW, This is not specific to the PLL driver so it should not have
+> to deal with this.
 
---===============3677747472168466275==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="m4buvghxnpijbdft"
-Content-Disposition: inline
+Exactly.
 
+> 
+> Since this clock can change out of CCF maybe it should be marked with
+> CLK_GET_RATE_NOCACHE ?
 
---m4buvghxnpijbdft
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-Hi,
-
-On Thu, Sep 19, 2019 at 07:10:35AM +0200, Corentin Labbe wrote:
-> This patch enables power management on the Security System.
->
-> Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
-> ---
->  drivers/crypto/sunxi-ss/sun4i-ss-cipher.c |  9 +++
->  drivers/crypto/sunxi-ss/sun4i-ss-core.c   | 94 +++++++++++++++++++----
->  drivers/crypto/sunxi-ss/sun4i-ss-hash.c   | 12 +++
->  drivers/crypto/sunxi-ss/sun4i-ss-prng.c   |  9 ++-
->  drivers/crypto/sunxi-ss/sun4i-ss.h        |  2 +
->  5 files changed, 110 insertions(+), 16 deletions(-)
->
-> diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c b/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
-> index fa4b1b47822e..c9799cbe0530 100644
-> --- a/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
-> +++ b/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
-> @@ -480,6 +480,7 @@ int sun4i_ss_cipher_init(struct crypto_tfm *tfm)
->  	struct sun4i_tfm_ctx *op = crypto_tfm_ctx(tfm);
->  	struct sun4i_ss_alg_template *algt;
->  	const char *name = crypto_tfm_alg_name(tfm);
-> +	int err;
->
->  	memset(op, 0, sizeof(struct sun4i_tfm_ctx));
->
-> @@ -497,13 +498,21 @@ int sun4i_ss_cipher_init(struct crypto_tfm *tfm)
->  		return PTR_ERR(op->fallback_tfm);
->  	}
->
-> +	err = pm_runtime_get_sync(op->ss->dev);
-> +	if (err < 0)
-> +		goto error_pm;
->  	return 0;
-
-Newline here
-
-> +error_pm:
-> +	crypto_free_sync_skcipher(op->fallback_tfm);
-> +	return err;
->  }
->
->  void sun4i_ss_cipher_exit(struct crypto_tfm *tfm)
->  {
->  	struct sun4i_tfm_ctx *op = crypto_tfm_ctx(tfm);
-> +
->  	crypto_free_sync_skcipher(op->fallback_tfm);
-> +	pm_runtime_put(op->ss->dev);
->  }
->
->  /* check and set the AES key, prepare the mode to be used */
-> diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-core.c b/drivers/crypto/sunxi-ss/sun4i-ss-core.c
-> index 6c2db5d83b06..311c2653a9c3 100644
-> --- a/drivers/crypto/sunxi-ss/sun4i-ss-core.c
-> +++ b/drivers/crypto/sunxi-ss/sun4i-ss-core.c
-> @@ -44,7 +44,8 @@ static struct sun4i_ss_alg_template ss_algs[] = {
->  				.cra_blocksize = MD5_HMAC_BLOCK_SIZE,
->  				.cra_ctxsize = sizeof(struct sun4i_req_ctx),
->  				.cra_module = THIS_MODULE,
-> -				.cra_init = sun4i_hash_crainit
-> +				.cra_init = sun4i_hash_crainit,
-> +				.cra_exit = sun4i_hash_craexit
-
-You should add a comma at the end to prevent having to modify it again
-
->  			}
->  		}
->  	}
-> @@ -70,7 +71,8 @@ static struct sun4i_ss_alg_template ss_algs[] = {
->  				.cra_blocksize = SHA1_BLOCK_SIZE,
->  				.cra_ctxsize = sizeof(struct sun4i_req_ctx),
->  				.cra_module = THIS_MODULE,
-> -				.cra_init = sun4i_hash_crainit
-> +				.cra_init = sun4i_hash_crainit,
-> +				.cra_exit = sun4i_hash_craexit
-
-Ditto
-
->  			}
->  		}
->  	}
-> @@ -262,6 +264,61 @@ static int sun4i_ss_enable(struct sun4i_ss_ctx *ss)
->  	return err;
->  }
->
-> +/*
-> + * Power management strategy: The device is suspended unless a TFM exists for
-> + * one of the algorithms proposed by this driver.
-> + */
-> +#if defined(CONFIG_PM)
-> +static int sun4i_ss_pm_suspend(struct device *dev)
-> +{
-> +	struct sun4i_ss_ctx *ss = dev_get_drvdata(dev);
-> +
-> +	sun4i_ss_disable(ss);
-> +	return 0;
-> +}
-> +
-> +static int sun4i_ss_pm_resume(struct device *dev)
-> +{
-> +	struct sun4i_ss_ctx *ss = dev_get_drvdata(dev);
-> +
-> +	return sun4i_ss_enable(ss);
-> +}
-> +#endif
-> +
-
-Why not just have the suspend and resume function and the enable /
-disable functions merged together, you're not using them directy as
-far as I can see.
-
-> +const struct dev_pm_ops sun4i_ss_pm_ops = {
-> +	SET_RUNTIME_PM_OPS(sun4i_ss_pm_suspend, sun4i_ss_pm_resume, NULL)
-> +};
-> +
-> +/*
-> + * When power management is enabled, this function enables the PM and set the
-> + * device as suspended
-> + * When power management is disabled, this function just enables the device
-> + */
-> +static int sun4i_ss_pm_init(struct sun4i_ss_ctx *ss)
-> +{
-> +	int err;
-> +
-> +	pm_runtime_use_autosuspend(ss->dev);
-> +	pm_runtime_set_autosuspend_delay(ss->dev, 2000);
-> +
-> +	err = pm_runtime_set_suspended(ss->dev);
-> +	if (err)
-> +		return err;
-> +	pm_runtime_enable(ss->dev);
-> +#if !defined(CONFIG_PM)
-> +	err = sun4i_ss_enable(ss);
-> +#endif
-> +	return err;
-> +}
-
-This looks nicer:
-https://elixir.bootlin.com/linux/latest/source/drivers/spi/spi-sun4i.c#L492
-
-Or, just make it depend on CONFIG_PM, we should probably do it anyway
-at the ARCH level anyway.
-
-Maxime
-
---m4buvghxnpijbdft
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXYOzHwAKCRDj7w1vZxhR
-xUwDAP9O9xdsnOnkb0SasX2EtOGv2LlMjbgmiiXL09f4KZYYggEAjIdC2vHA8T6J
-paJO7YWU8+BcPkZ4sPIudoliIvHaxw0=
-=S4zM
------END PGP SIGNATURE-----
-
---m4buvghxnpijbdft--
+Yes, or figure out a way to make the clk state match what PSCI leaves it
+in on resume from suspend.
 
 
---===============3677747472168466275==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> 
+> When CCF hits a clock with CLK_GET_RATE_NOCACHE while walking the tree,
+> in addition to to calling get_rate(), CCF could also call is_enabled()
+> if the clock has CLK_IS_CRITICAL and possibly .enable() ?
+
+This logic should go under a new flag. The CLK_GET_RATE_NOCACHE flag
+specifically means get rate shouldn't be a cached operation. It doesn't
+relate to the enable state. I hope that you can implement some sort of
+resume hook that synchronizes the state though so that you don't need to
+rely on clk_set_rate() or clk_get_rate() to trigger a sync.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3677747472168466275==--
-
