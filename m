@@ -2,85 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8281B7611
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 11:18:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65E54B7624
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 11:20:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9ZjYX4Qq/ct1cvU6QU0H+n3dfTJpiJ3EscDvIj05xbM=; b=P5UzbE2U59pW94
-	4iQmB/XfBvHPBdAbMibbeKABQ4IejcrcCX0SRIx4fFZNh+cMxu6HP3etIbzlb3Cvz/eU6SBXayyIH
-	5XN5TZBCfokzvJ1kEhCdq7jTNzY5cINYKZKsXmL57PlGopGmKodJO2B+4Wwpi/E4pNRYUV/Lrul84
-	ENMi0Aa5q3t4SusDD0XB4+87sC0MMOQYu6tn5a+/cwLgqVz9C4566NLhCSWoP46bTi3bwBqHF0D14
-	60LOgNcdo3SsRiU8LrJ5qluYnyswoj0anMyK7q/KZo+cHQu1+aTQdQAEN/BVK67T2KAKmm2rXc5Tf
-	MJ1hHqsxWoX8kuq7LiHQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Z/F+zGARFcJcek7R9IDi1IVydUKKGqypXErJzOAYY4U=; b=FhTvnrjgKkt9ww
+	KBijug2zexkMd+7SuoWyv/+t3ByVzpfDS9y+eGavIL9e/Jdtfn7Tm2Wt5gUDwVQdBwZbe7H4XHM56
+	3WhLKXCdqrPVYxB/XPKpva5dnUybeTtg/so5ESbGm0hLvo+P8zLaM+7xhuf/S6yfzm/fEyOaknjgg
+	KoFaWw2r7NUJssGQh8IdwUlpyPSL9yBn2W/UfeehTckNbvbfqQkLUpoi0wvPa4A9xasEROruOinWg
+	1QoYxvc4G7oFqhKEPK40EM1p7w+c+wJ7y0KMPv1qOeRbBYbzT19ox7NyQfVEmGE/wE7GdMtXc/03w
+	kQbniGCKj3NdGdPriMww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAsZb-0005W9-3f; Thu, 19 Sep 2019 09:17:59 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1iAscI-0007WI-ED; Thu, 19 Sep 2019 09:20:46 +0000
+Received: from mx1.emlix.com ([188.40.240.192])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAsZH-0005QL-OT
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 09:17:41 +0000
-Received: by mail-lf1-x143.google.com with SMTP id r134so1773901lff.12
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Sep 2019 02:17:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=rasmusvillemoes.dk; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=d5jEgfLonWDOY4gG+bQfNvM3LOy7AfPuT16vQNF0Rko=;
- b=YFWb/OnKgEGSzwhOTk8kfD9okuzk0BzEGCLfTis5hVAJfxOgbf0kFsfDJOY3GC35Mm
- io9DQ9d0PWtExT99gqG2Eh0R31/mvlKOtoNGmK2XUeuFrcUx/aNk4BePlU/97Ikm3n1T
- 7muS0OZKkkqB+4A84Pxo3WwqACT6GLrGbMKDo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=d5jEgfLonWDOY4gG+bQfNvM3LOy7AfPuT16vQNF0Rko=;
- b=TStHPJ95Am7wl0f0Lpz0qbHMO1z3iX+wpXCNX+LT9T3VNbC4x7j6otW/PVVi8NKTTx
- m0+NYDyU5TdbGZQkjDyuvseBMyeyyhDyupmhqIBta60o+mPDcKeU6N62TTVQUMKmBiNA
- EyyEDtiQY1DtKBZOkXWSJtOm/UJvSq3FEd4IS4sHHSvKlwXwNBwux3HgOmjXyL6DoVif
- ABYpOmWZ5S9RHGPHnafcA5tecYWDtZPjswQLLRoIiSTVWqB31+/uDnSbmoGq8/DLwMqB
- mLLToZkf4viOqn5P6PyyQiI+OQJpeymau07qDXpDRrcbbWPi9KJUV+s6huKTPXdK2QmO
- nTgA==
-X-Gm-Message-State: APjAAAUCFRn51+sRmclDj6SjcFNHnGNkV7waaMNtXbx7tIJ3ZcY7kZ3b
- kD6A6S8Qm/j/nSd/nuV/WiNcXg==
-X-Google-Smtp-Source: APXvYqyR+914Hiw1xUs+Gf6+FLCIiUoW+UOwUI4tZt260/8zlZZWIulKWowmqIvYgV6xS0TfcnyIkA==
-X-Received: by 2002:a19:14f:: with SMTP id 76mr4339385lfb.92.1568884657005;
- Thu, 19 Sep 2019 02:17:37 -0700 (PDT)
-Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id x3sm1016789ljm.103.2019.09.19.02.17.35
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Sep 2019 02:17:36 -0700 (PDT)
-From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-To: Thierry Reding <thierry.reding@gmail.com>, Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH] pwm: rockchip: simplify rockchip_pwm_get_state()
-Date: Thu, 19 Sep 2019 11:17:27 +0200
-Message-Id: <20190919091728.24756-1-linux@rasmusvillemoes.dk>
-X-Mailer: git-send-email 2.20.1
+ id 1iAsbt-0007VP-7h
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 09:20:23 +0000
+Received: from mailer.emlix.com (unknown [81.20.119.6])
+ (using TLSv1.2 with cipher ADH-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mx1.emlix.com (Postfix) with ESMTPS id 3D96C603BE;
+ Thu, 19 Sep 2019 11:20:17 +0200 (CEST)
+Subject: Re: [PATCH 1/4] dmaengine: imx-sdma: fix buffer ownership
+To: Lucas Stach <l.stach@pengutronix.de>, linux-kernel@vger.kernel.org
+References: <20190911144943.21554-1-philipp.puschmann@emlix.com>
+ <20190911144943.21554-2-philipp.puschmann@emlix.com>
+ <9bcf315369449a025828410396935b679aae14bf.camel@pengutronix.de>
+From: Philipp Puschmann <philipp.puschmann@emlix.com>
+Openpgp: preference=signencrypt
+Message-ID: <bd6ff4fb-0cbd-675e-a4f2-d311cfe2c62d@emlix.com>
+Date: Thu, 19 Sep 2019 11:20:16 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <9bcf315369449a025828410396935b679aae14bf.camel@pengutronix.de>
+Content-Language: de-DE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_021739_948752_F15F053E 
-X-CRM114-Status: GOOD (  10.43  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190919_022021_428481_F58F172F 
+X-CRM114-Status: GOOD (  16.31  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,50 +63,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- David Wu <david.wu@rock-chips.com>, linux-arm-kernel@lists.infradead.org
+Cc: festevam@gmail.com, kernel@pengutronix.de, gregkh@linuxfoundation.org,
+ s.hauer@pengutronix.de, vkoul@kernel.org, linux-imx@nxp.com,
+ linux-serial@vger.kernel.org, jslaby@suse.com, dmaengine@vger.kernel.org,
+ dan.j.williams@intel.com, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The way state->enabled is computed is rather convoluted and hard to
-read - both branches of the if() actually do the exact same thing. So
-remove the if(), and further simplify "<boolean condition> ? true :
-false" to "<boolean condition>".
+Am 16.09.19 um 16:17 schrieb Lucas Stach:
+> On Mi, 2019-09-11 at 16:49 +0200, Philipp Puschmann wrote:
+>> BD_DONE flag marks ownership of the buffer. When 1 SDMA owns the buffer,
+>> when 0 ARM owns it. When processing the buffers in
+>> sdma_update_channel_loop the ownership of the currently processed buffer
+>> was set to SDMA again before running the callback function of the the
+>> buffer and while the sdma script may be running in parallel. So there was
+>> the possibility to get the buffer overwritten by SDMA before it has been
+>> processed by kernel leading to kind of random errors in the upper layers,
+>> e.g. bluetooth.
+>>
+>> It may be further a good idea to make the status struct member volatile or
+>> access it using writel or similar to rule out that the compiler sets the
+>> BD_DONE flag before the callback routine has finished.
+>>
+>> Signed-off-by: Philipp Puschmann <philipp.puschmann@emlix.com>
+>> ---
+>>  drivers/dma/imx-sdma.c | 3 ++-
+>>  1 file changed, 2 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
+>> index a01f4b5d793c..1abb14ff394d 100644
+>> --- a/drivers/dma/imx-sdma.c
+>> +++ b/drivers/dma/imx-sdma.c
+>> @@ -802,7 +802,6 @@ static void sdma_update_channel_loop(struct sdma_channel *sdmac)
+>>  		*/
+>>  
+>>  		desc->chn_real_count = bd->mode.count;
+>> -		bd->mode.status |= BD_DONE;
+>>  		bd->mode.count = desc->period_len;
+>>  		desc->buf_ptail = desc->buf_tail;
+>>  		desc->buf_tail = (desc->buf_tail + 1) % desc->num_bd;
+>> @@ -817,6 +816,8 @@ static void sdma_update_channel_loop(struct sdma_channel *sdmac)
+>>  		dmaengine_desc_get_callback_invoke(&desc->vd.tx, NULL);
+>>  		spin_lock(&sdmac->vc.lock);
+> 
+> To address your comment from the second paragraph of the commit message
+> there should be a dma_wmb() here before changing the status flag.
+> 
+> Regards,
+> Lucas
 
-Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
----
-I stumbled on this while trying to understand how the pwm subsystem
-works. This patch is a semantic no-op, but it's also possible that,
-say, the first branch simply contains a "double negative" so either
-the != should be == or the "false : true" should be "true : false".
+Hi Lucas,
 
- drivers/pwm/pwm-rockchip.c | 7 +------
- 1 file changed, 1 insertion(+), 6 deletions(-)
+thanks for your feedback. I will apply the hints to v2 of the patches.
 
-diff --git a/drivers/pwm/pwm-rockchip.c b/drivers/pwm/pwm-rockchip.c
-index 51b96cb7dd25..54c6399e3f00 100644
---- a/drivers/pwm/pwm-rockchip.c
-+++ b/drivers/pwm/pwm-rockchip.c
-@@ -83,12 +83,7 @@ static void rockchip_pwm_get_state(struct pwm_chip *chip,
- 	state->duty_cycle =  DIV_ROUND_CLOSEST_ULL(tmp, clk_rate);
- 
- 	val = readl_relaxed(pc->base + pc->data->regs.ctrl);
--	if (pc->data->supports_polarity)
--		state->enabled = ((val & enable_conf) != enable_conf) ?
--				 false : true;
--	else
--		state->enabled = ((val & enable_conf) == enable_conf) ?
--				 true : false;
-+	state->enabled = ((val & enable_conf) == enable_conf);
- 
- 	if (pc->data->supports_polarity) {
- 		if (!(val & PWM_DUTY_POSITIVE))
--- 
-2.20.1
-
+Regards,
+Philipp
+> 
+>> +		bd->mode.status |= BD_DONE;
+>> +
+>>  		if (error)
+>>  			sdmac->status = old_status;
+>>  	}
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
