@@ -2,85 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA03BB813E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 21:14:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D91F1B8144
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 21:17:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=s+ire1xTijNQlUclkyIxEemI602LMFw8pA3dveXm0hM=; b=p0kBkQMwnuJxBS
-	6j+H62Vzy0XUVivh5AHiF+fv4Y7kP5KhmNfh0dShmKtBXdl49JhuuHmvpuI9c500+7eF6bZu9o+cP
-	6gmij73vS86AxL1KiplqcelRPr8uPg6gZcEaGr0BfLHpMsjXvd403jouUIjG8b1PMmhvq8T2+7e5p
-	/0qfBdsnPbZpTwX2+EYzmppmQhzVWngXHU8RflV3SYHQfzvnVkbH7bOFhBuCcqMDYu4gstatzQrti
-	ZPjzi+uOoQZuYU047bUVKz0G6dQ47dlxNVJsVN3EZsGrNa89WDeZ74pXcyFemC6wLK2wkYFBsAYEX
-	+GAMyvmMr2JQ3t+bHI+g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7Qgqkv6nBFvOVi5u6noLq/TwMmVdobFXAKlOKvCIqWs=; b=uoQrIbZGoEfO8i
+	uOnw+Z2LMKtCzvFX9GifNJ1ZDG9LGHI/Ll6UpLG9X0wGOFMj3F+y4UXWryqB42lEA1db2xjWWb4dw
+	t+uspCzwcXvOvkxPm1jk3VEjniS5o7A/mvBEKIWLox4l4kMqpHCvA917VUtHctuoD57M0hNe4QE7B
+	LLFQfzhi1aq0skfWEbgFANDprEsrX4dTRpKxxu1cHBZJzy6x4mI4wywzZdMTfiMvmqtje0WR4lC75
+	HSZAmXaOPFvwBuck6UpSshKVf5D61QMkcLjh7WBXhW/QAenDJIsRcabt5+6HsT8j7sBmZ5hcYXKG0
+	fmtjlBowPhtUW8+1sj9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iB1sd-0003kp-LA; Thu, 19 Sep 2019 19:14:15 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iB1va-0005KU-Ew; Thu, 19 Sep 2019 19:17:18 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iB1rp-0003Ny-Oh
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 19:13:28 +0000
-Received: by mail-wm1-x342.google.com with SMTP id a6so5916261wma.5
+ id 1iB1vK-0005K6-Cd
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 19:17:03 +0000
+Received: by mail-pg1-x541.google.com with SMTP id x10so2430658pgi.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Sep 2019 12:13:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=4bRE1SwpWzkrRf9rMiyxpvEkd4F8FV3SaPHqPTXxucs=;
- b=OzGv2uGkAkQ3OObYFBTtQTJ3Jq02i5gPJXSGUn25fOd4YOyHtgZig5Aye7nJIuluVX
- xWXapjDynfY0EdOATl1Y6vPkShPB0tRYsaXZq4oDKbc5FoDXEygDK1f45Jz4VsjwRj++
- hh9+V0XSFh3IY/o9JDvE18L2IX66qpkhUlcE8R2uVb/0mpLeeMuZ5T0iYY2PXuw2Tt/n
- C7BP9tVOB0S+PHy01qP09DfVfqKLoloyM2V4RxrDAX1clupP/3XkJR/Aj8Ok5jx6Oj2m
- pQoYzl0VuqgOuy3I0x4iELLGaWk2AM9bJCKAkfvNznFBYSk1S4xlh/H8bd+29shkQsRV
- tJKA==
+ Thu, 19 Sep 2019 12:17:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=3dlQ6O4U4Y6iTe68DKUl7bDSDWocpATfaoQJw9GaTwA=;
+ b=BEAvPSDMRYZ7psL5CsA0bF0/tyiZdL5Pj4Blz60FpJHTg9+O6iIVTQAikrSRVEtX50
+ jS+ZLqYWO7Qik2WlNNIa2T98BHbLrXnHn9ZZbAJZLxQlr2pVEQ/FMHv+QuOeQ+g4oBDZ
+ 9aTq09z4U3DkpRkdfiJcMWFXho8VFmc6AFMn8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=4bRE1SwpWzkrRf9rMiyxpvEkd4F8FV3SaPHqPTXxucs=;
- b=aicK7Xlp0x6pTMTvt1apIDWV3k12cY4T/wi3yLXVm8sleiZcZGY96vScYF6i+FUqjN
- w/vAysRQWEUxhwaXolvXAPMph9BW/2Dtn21aclTqG/F7+8k+ei2BMmIjazUcGmFYuWFQ
- ZR8h9ZWTAqzrRiSKBQsceN16rKd60xIdFThw4MifD4j2x76ET7Z9jJ2OybtFGWTgBJzu
- CggwL5g5KCfARnAcCb+jfGVAYl9kokDvE71yZPPRWbGhfE4zZ06+Y5FxvSw4JgewfKuI
- UkOiR+NGkl89aOVVdW3oFolTNOKBDIaCOOipwfaZqgMSMtSxKqIMvMOx4rBaxSSrd70F
- Q0uA==
-X-Gm-Message-State: APjAAAXuJkxcP5XFxKW99gPJnrKdqXAtI5XICJmznA+cLryvgZ2ilVUn
- VRi9Nlql6RujdVCk1CgYpMp9xw==
-X-Google-Smtp-Source: APXvYqyi7gVXVXkDcrGdHkNH4pi8r87F6soB0gNTjPFPNN8m6+OdndqJ96TXmSuGOCfxCFT4VF2Ocw==
-X-Received: by 2002:a1c:c589:: with SMTP id v131mr3977886wmf.163.1568920401576; 
- Thu, 19 Sep 2019 12:13:21 -0700 (PDT)
-Received: from localhost.localdomain ([2a01:e34:ecba:5540:2c05:40e4:899d:aef0])
- by smtp.gmail.com with ESMTPSA id y12sm11037513wrn.74.2019.09.19.12.13.20
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Sep 2019 12:13:20 -0700 (PDT)
-From: Fabien Parent <fparent@baylibre.com>
-To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-mediatek@lists.infradead.org
-Subject: [PATCH] clocksource: mediatek: fix error handling
-Date: Thu, 19 Sep 2019 21:13:15 +0200
-Message-Id: <20190919191315.25190-1-fparent@baylibre.com>
-X-Mailer: git-send-email 2.23.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=3dlQ6O4U4Y6iTe68DKUl7bDSDWocpATfaoQJw9GaTwA=;
+ b=JdYAFVrJaV/UjwFhtze9ueYO8mHWxl9v62tr/brMmrkUuI/3gQU6+VGHdy7XVFKM9V
+ 7P/k/VA1hvtN4uo36cJeNvrsC66mMcRyfNYtiAH9IHYgY6bZmZcdGlgYYlK2oeOhJ8jf
+ FznmkfhNt7ptzrSVqSlNzf1MX023AFBxA353Bq/6rgTvhUCUqIdVwz4YZJEveTFw3iNT
+ JM2HK0sjLa8546j8Hz2ikwdFnFAW5Ayvm+lfs93+97QGut5En53ftiEI2foc4GkFdMbx
+ ey9LzojaD0QHtYiMLJ83BIL4KJJLGCpyDi+bHMnJfBg2z/jYGh7ZH7r8AR9nIssEVIV1
+ qzBw==
+X-Gm-Message-State: APjAAAWHL5lOwJpNUnFBHC/Js2D15b1OxXueUlf5araJHvMNdsET+vvn
+ mAZaZFDxPc82jHIECV563Tc61g==
+X-Google-Smtp-Source: APXvYqyw0vY+LzMWyvC/PtDI3LAIIJ38He/wxtDobfuFTls9VDxuKUu1wJ2FE63lnnsle4oR6+aIIg==
+X-Received: by 2002:a65:4002:: with SMTP id f2mr10770258pgp.447.1568920621694; 
+ Thu, 19 Sep 2019 12:17:01 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
+ by smtp.gmail.com with ESMTPSA id a17sm11919735pfc.26.2019.09.19.12.17.00
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 19 Sep 2019 12:17:00 -0700 (PDT)
+Date: Thu, 19 Sep 2019 12:16:59 -0700
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH 3/8] PM / devfreq: Move more initialization before
+ registration
+Message-ID: <20190919191659.GV133864@google.com>
+References: <cover.1568764439.git.leonard.crestez@nxp.com>
+ <59bd0d871fad520eb417ca46943fa7f86ef9186a.1568764439.git.leonard.crestez@nxp.com>
+ <20190918232904.GP133864@google.com>
+ <VI1PR04MB702350FA21534747D540C04FEE890@VI1PR04MB7023.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <VI1PR04MB702350FA21534747D540C04FEE890@VI1PR04MB7023.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_121325_862737_831471FB 
-X-CRM114-Status: GOOD (  14.27  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190919_121702_433951_9B4E6FF5 
+X-CRM114-Status: GOOD (  26.68  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,139 +99,156 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: matthias.bgg@gmail.com, Fabien Parent <fparent@baylibre.com>,
- tglx@linutronix.de, daniel.lezcano@linaro.org
+Cc: Artur =?utf-8?B?xZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
+ Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Alexandre Bailon <abailon@baylibre.com>,
+ Georgi Djakov <georgi.djakov@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Jacky Bai <ping.bai@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When timer_of_init fails, it cleans up after itself by undoing
-everything it did during the initialization function.
+On Thu, Sep 19, 2019 at 06:52:07PM +0000, Leonard Crestez wrote:
+> On 19.09.2019 02:29, Matthias Kaehlcke wrote:
+> > Hi Leonard,
+> > 
+> > On Wed, Sep 18, 2019 at 03:18:22AM +0300, Leonard Crestez wrote:
+> >> In general it is a better to initialize an object before making it
+> >> accessible externally (through device_register).
+> >>
+> >> This make it possible to avoid relying on locking a partially
+> >> initialized object.
+> >>
+> >> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> >> ---
+> >>   drivers/devfreq/devfreq.c | 38 ++++++++++++++++++++------------------
+> >>   1 file changed, 20 insertions(+), 18 deletions(-)
+> >>
+> >> diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
+> >> index a715f27f35fd..57a217fc92de 100644
+> >> --- a/drivers/devfreq/devfreq.c
+> >> +++ b/drivers/devfreq/devfreq.c
+> >> @@ -589,10 +589,12 @@ static void devfreq_dev_release(struct device *dev)
+> >>   
+> >>   	if (devfreq->profile->exit)
+> >>   		devfreq->profile->exit(devfreq->dev.parent);
+> >>   
+> >>   	mutex_destroy(&devfreq->lock);
+> >> +	kfree(devfreq->time_in_state);
+> >> +	kfree(devfreq->trans_table);
+> >>   	kfree(devfreq);
+> >>   }
+> >>   
+> >>   /**
+> >>    * devfreq_add_device() - Add devfreq feature to the device
+> >> @@ -671,44 +673,43 @@ struct devfreq *devfreq_add_device(struct device *dev,
+> >>   	devfreq->max_freq = devfreq->scaling_max_freq;
+> >>   
+> >>   	devfreq->suspend_freq = dev_pm_opp_get_suspend_opp_freq(dev);
+> >>   	atomic_set(&devfreq->suspend_count, 0);
+> >>   
+> >> -	dev_set_name(&devfreq->dev, "devfreq%d",
+> >> -				atomic_inc_return(&devfreq_no));
+> >> -	err = device_register(&devfreq->dev);
+> >> -	if (err) {
+> >> -		mutex_unlock(&devfreq->lock);
+> >> -		put_device(&devfreq->dev);
+> >> -		goto err_out;
+> >> -	}
+> >> -
+> >> -	devfreq->trans_table = devm_kzalloc(&devfreq->dev,
+> >> +	devfreq->trans_table = kzalloc(
+> >>   			array3_size(sizeof(unsigned int),
+> >>   				    devfreq->profile->max_state,
+> >>   				    devfreq->profile->max_state),
+> >>   			GFP_KERNEL);
+> >>   	if (!devfreq->trans_table) {
+> >>   		mutex_unlock(&devfreq->lock);
+> >>   		err = -ENOMEM;
+> >> -		goto err_devfreq;
+> >> +		goto err_dev;
+> >>   	}
+> >>   
+> >> -	devfreq->time_in_state = devm_kcalloc(&devfreq->dev,
+> >> -			devfreq->profile->max_state,
+> >> -			sizeof(unsigned long),
+> >> -			GFP_KERNEL);
+> >> +	devfreq->time_in_state = kcalloc(devfreq->profile->max_state,
+> >> +					 sizeof(unsigned long),
+> >> +					 GFP_KERNEL);
+> >>   	if (!devfreq->time_in_state) {
+> >>   		mutex_unlock(&devfreq->lock);
+> >>   		err = -ENOMEM;
+> >> -		goto err_devfreq;
+> >> +		goto err_dev;
+> >>   	}
+> >>   
+> >>   	devfreq->last_stat_updated = jiffies;
+> >>   
+> >>   	srcu_init_notifier_head(&devfreq->transition_notifier_list);
+> >>   
+> >> +	dev_set_name(&devfreq->dev, "devfreq%d",
+> >> +				atomic_inc_return(&devfreq_no));
+> >> +	err = device_register(&devfreq->dev);
+> >> +	if (err) {
+> >> +		mutex_unlock(&devfreq->lock);
+> >> +		put_device(&devfreq->dev);
+> >> +		goto err_out;
+> > 
+> >    		goto err_dev;
+> > 
+> >> +	}
+> >> +
+> >>   	mutex_unlock(&devfreq->lock);
+> >>   
+> >>   	mutex_lock(&devfreq_list_lock);
+> >>   
+> >>   	governor = try_then_request_governor(devfreq->governor_name);
+> >> @@ -734,14 +735,15 @@ struct devfreq *devfreq_add_device(struct device *dev,
+> >>   
+> >>   	return devfreq;
+> >>   
+> >>   err_init:
+> >>   	mutex_unlock(&devfreq_list_lock);
+> >> -err_devfreq:
+> >>   	devfreq_remove_device(devfreq);
+> >> -	devfreq = NULL;
+> >> +	return ERR_PTR(err);
+> > 
+> > The two return paths in the unwind part are unorthodox, but I
+> > see why they are needed. Maybe add an empty line between the two paths
+> > to make it a bit more evident that they are separate.
+> 
+> Old code did "devfreq = NULL" just so that the later kfree did nothing. 
+> There were already two unwind paths, it's just that the second one was 
+> less obvious. I will add a comment.
+> 
+> >>   err_dev:
+> > 
+> > This code path should include
+> > 
+> > 	mutex_destroy(&devfreq->lock);
+> > 
+> > That was already missing in the original code though.
+> 
+> Yes, that would be a separate patch.
+> 
+> > Actually with the later device registration the mutex could be
+> > initialized later and doesn't need to be held. This would
+> > obsolete the mutex_unlock() calls in the error paths
+> Next patch already removes mutex_lock before device_register (that's the 
+> purpose of the cleanup). If you're suggesting to move mutex_init around 
+> it's not clear what would be gained?
 
-mtk_syst_init and mtk_gpt_init both call timer_of_cleanup if
-timer_of_init fails. timer_of_cleanup try to release the resource taken.
-Since these resources have already been cleaned up by timer_of_init,
-we end up getting a few warnings printed:
-
-[    0.001935] WARNING: CPU: 0 PID: 0 at __clk_put+0xe8/0x128
-[    0.002650] Modules linked in:
-[    0.003058] CPU: 0 PID: 0 Comm: swapper/0 Not tainted 4.19.67+ #1
-[    0.003852] Hardware name: MediaTek MT8183 (DT)
-[    0.004446] pstate: 20400085 (nzCv daIf +PAN -UAO)
-[    0.005073] pc : __clk_put+0xe8/0x128
-[    0.005555] lr : clk_put+0xc/0x14
-[    0.005988] sp : ffffff80090b3ea0
-[    0.006422] x29: ffffff80090b3ea0 x28: 0000000040e20018
-[    0.007121] x27: ffffffc07bfff780 x26: 0000000000000001
-[    0.007819] x25: ffffff80090bda80 x24: ffffff8008ec5828
-[    0.008517] x23: ffffff80090bd000 x22: ffffff8008d8b2e8
-[    0.009216] x21: 0000000000000001 x20: fffffffffffffdfb
-[    0.009914] x19: ffffff8009166180 x18: 00000000002bffa8
-[    0.010612] x17: ffffffc012996980 x16: 0000000000000000
-[    0.011311] x15: ffffffbf004a6800 x14: 3536343038393334
-[    0.012009] x13: 2079726576652073 x12: 7eb9c62c5c38f100
-[    0.012707] x11: ffffff80090b3ba0 x10: ffffff80090b3ba0
-[    0.013405] x9 : 0000000000000004 x8 : 0000000000000040
-[    0.014103] x7 : ffffffc079400270 x6 : 0000000000000000
-[    0.014801] x5 : ffffffc079400248 x4 : 0000000000000000
-[    0.015499] x3 : 0000000000000000 x2 : 0000000000000000
-[    0.016197] x1 : ffffff80091661c0 x0 : fffffffffffffdfb
-[    0.016896] Call trace:
-[    0.017218]  __clk_put+0xe8/0x128
-[    0.017654]  clk_put+0xc/0x14
-[    0.018048]  timer_of_cleanup+0x60/0x7c
-[    0.018551]  mtk_syst_init+0x8c/0x9c
-[    0.019020]  timer_probe+0x6c/0xe0
-[    0.019469]  time_init+0x14/0x44
-[    0.019893]  start_kernel+0x2d0/0x46c
-[    0.020378] ---[ end trace 8c1efabea1267649 ]---
-[    0.020982] ------------[ cut here ]------------
-[    0.021586] Trying to vfree() nonexistent vm area ((____ptrval____))
-[    0.022427] WARNING: CPU: 0 PID: 0 at __vunmap+0xd0/0xd8
-[    0.023119] Modules linked in:
-[    0.023524] CPU: 0 PID: 0 Comm: swapper/0 Tainted: G        W         4.19.67+ #1
-[    0.024498] Hardware name: MediaTek MT8183 (DT)
-[    0.025091] pstate: 60400085 (nZCv daIf +PAN -UAO)
-[    0.025718] pc : __vunmap+0xd0/0xd8
-[    0.026176] lr : __vunmap+0xd0/0xd8
-[    0.026632] sp : ffffff80090b3e90
-[    0.027066] x29: ffffff80090b3e90 x28: 0000000040e20018
-[    0.027764] x27: ffffffc07bfff780 x26: 0000000000000001
-[    0.028462] x25: ffffff80090bda80 x24: ffffff8008ec5828
-[    0.029160] x23: ffffff80090bd000 x22: ffffff8008d8b2e8
-[    0.029858] x21: 0000000000000000 x20: 0000000000000000
-[    0.030556] x19: ffffff800800d000 x18: 00000000002bffa8
-[    0.031254] x17: 0000000000000000 x16: 0000000000000000
-[    0.031952] x15: ffffffbf004a6800 x14: 3536343038393334
-[    0.032651] x13: 2079726576652073 x12: 7eb9c62c5c38f100
-[    0.033349] x11: ffffff80090b3b40 x10: ffffff80090b3b40
-[    0.034047] x9 : 0000000000000005 x8 : 5f5f6c6176727470
-[    0.034745] x7 : 5f5f5f5f28282061 x6 : ffffff80091c86ef
-[    0.035443] x5 : ffffff800852b690 x4 : 0000000000000000
-[    0.036141] x3 : 0000000000000002 x2 : 0000000000000002
-[    0.036839] x1 : 7eb9c62c5c38f100 x0 : 7eb9c62c5c38f100
-[    0.037536] Call trace:
-[    0.037859]  __vunmap+0xd0/0xd8
-[    0.038271]  vunmap+0x24/0x30
-[    0.038664]  __iounmap+0x2c/0x34
-[    0.039088]  timer_of_cleanup+0x70/0x7c
-[    0.039591]  mtk_syst_init+0x8c/0x9c
-[    0.040060]  timer_probe+0x6c/0xe0
-[    0.040507]  time_init+0x14/0x44
-[    0.040932]  start_kernel+0x2d0/0x46c
-
-This commit remove the calls to timer_of_cleanup when timer_of_init
-fails since it is unnecessary and actually cause warnings to be printed.
-
-Signed-off-by: Fabien Parent <fparent@baylibre.com>
----
- drivers/clocksource/timer-mediatek.c | 10 ++--------
- 1 file changed, 2 insertions(+), 8 deletions(-)
-
-diff --git a/drivers/clocksource/timer-mediatek.c b/drivers/clocksource/timer-mediatek.c
-index a562f491b0f8..9318edcd8963 100644
---- a/drivers/clocksource/timer-mediatek.c
-+++ b/drivers/clocksource/timer-mediatek.c
-@@ -268,15 +268,12 @@ static int __init mtk_syst_init(struct device_node *node)
- 
- 	ret = timer_of_init(node, &to);
- 	if (ret)
--		goto err;
-+		return ret;
- 
- 	clockevents_config_and_register(&to.clkevt, timer_of_rate(&to),
- 					TIMER_SYNC_TICKS, 0xffffffff);
- 
- 	return 0;
--err:
--	timer_of_cleanup(&to);
--	return ret;
- }
- 
- static int __init mtk_gpt_init(struct device_node *node)
-@@ -293,7 +290,7 @@ static int __init mtk_gpt_init(struct device_node *node)
- 
- 	ret = timer_of_init(node, &to);
- 	if (ret)
--		goto err;
-+		return ret;
- 
- 	/* Configure clock source */
- 	mtk_gpt_setup(&to, TIMER_CLK_SRC, GPT_CTRL_OP_FREERUN);
-@@ -311,9 +308,6 @@ static int __init mtk_gpt_init(struct device_node *node)
- 	mtk_gpt_enable_irq(&to, TIMER_CLK_EVT);
- 
- 	return 0;
--err:
--	timer_of_cleanup(&to);
--	return ret;
- }
- TIMER_OF_DECLARE(mtk_mt6577, "mediatek,mt6577-timer", mtk_gpt_init);
- TIMER_OF_DECLARE(mtk_mt6765, "mediatek,mt6765-timer", mtk_syst_init);
--- 
-2.23.0
-
+As per my earlier reply to self: I didn't look at the next patch
+before writing this, it's all good, nothing to do here :)
 
 _______________________________________________
 linux-arm-kernel mailing list
