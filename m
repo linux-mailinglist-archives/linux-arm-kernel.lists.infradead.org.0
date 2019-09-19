@@ -2,72 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F552B80BA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 20:22:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFC94B80C1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 20:26:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=AV0wbsKqlIRQWAIVP+XmARV53Vx4Xsmj1FAbsNhMJBQ=; b=uQAU8vDj0jeylctRODg8Tkfc3
-	DB2jUz87WzdWW0IC/37MR9HOzit8GsOncalaBEqFfwaHqHOUh6o23r+6misjxGs7cKnNfWiAxxZUT
-	CwOICFbHqhTpHnKemERTvxlHw+lkrIebJEbfKKJeHdeamtnoIJCkZAdmZt7+EIpWUBzQDdrONV9EG
-	nYpTEOs7NZJQwO0jgN7bMSfVOeRt6scJA6EcZEZhCOlLGcNrhoHh7H8AV+jLiTxQTsXauCoSKHqUN
-	5z4GGOfKlTLKBrxlsMZyNvGTlevoJD6fKaOTbh4xjkDXRZOF1UoqgmdF1F5fY/LognCtWXEkMrDu9
-	jCHCU+s1g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1lqG7gtkZtbQuRMO1noy3IN4URvDXYFI3Bjmb866We0=; b=YgsprKJfEOaosX
+	WVW63/oygJQc67+oPcAr8wO3Nbz3UsxkW08gFGt6TcdP3VZYL6ELSkni84Cx3oOx1eNAMeNUCQYRM
+	RUDff7TRltCqZv41KxoCDzFRQzumlAvr0irFR7KPAwH9NWBbqdgdFc1Zo1gQ5kVzTLf8ZDF6/3Trz
+	Z2D9+BD50Wc3+p6osGB4owQTm1K7SnXiG3DZgPdV+W8yYQ+bIm54rUyzDewjQbI6D3/EIhmNlMaiK
+	6F7rSzm90VS9wQPYaEf2e5ERXV+2xqQvd6+pJMtUnXMchzMBND//9TOE7+xyOzTzZLIvcBZ9TQg46
+	Hpmfndfu8Mq4DzxCmonQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iB13a-0000bY-BE; Thu, 19 Sep 2019 18:21:31 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iB17u-0002Tr-Ep; Thu, 19 Sep 2019 18:25:59 +0000
+Received: from mail-wm1-f66.google.com ([209.85.128.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iB10q-0000YM-MY
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 18:18:55 +0000
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6CEEA21928;
- Thu, 19 Sep 2019 18:18:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568917119;
- bh=TCa764fDVm0BUS6jXDj8jA5f2AYG6d9jG3RP2yK6Qgg=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=K8lPzaOs5uyswM5REgjEu/RUFpspu42cKGkuvs/ihehMn4NjIoqOcdyAN505ZZ700
- PWs5ixGmCLcsweiD7ajKJO52oDKH9L5Eq01aWAC9Ey/nF8LA3e2OK3oBU1W6LB7NwD
- N4xHYVc6nA5ef4YDOdpicOZD/WNqJfleo5hkvsKo=
-Date: Thu, 19 Sep 2019 20:18:37 +0200
-From: Maxime Ripard <mripard@kernel.org>
-To: Chen-Yu Tsai <wens@csie.org>
-Subject: Re: [linux-sunxi] [PATCH] clk: sunxi-ng: h6: Use sigma-delta
- modulation for audio PLL
-Message-ID: <20190919181837.yuhmqnojxpoqp35a@gilmour>
-References: <20190914135100.327412-1-jernej.skrabec@siol.net>
- <CAGb2v640R7edA3EJvC=aJQZXGcfqot50O3-PFyrYj767pUEYrQ@mail.gmail.com>
- <8129141.yvSaxnLE4m@jernej-laptop>
- <CAGb2v65KQf_OX1sX9+4DAKKMKHP464cCZKjCRsn3LzTKRGLTcQ@mail.gmail.com>
+ id 1iB121-0000im-1x
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 18:20:34 +0000
+Received: by mail-wm1-f66.google.com with SMTP id 3so5088412wmi.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Sep 2019 11:19:48 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=MS71DLSrsr/G7o0fTmBzjlmIBqxvb7B9GSSu+P2PwIg=;
+ b=jmRJ4djqkHo97FPFH6z4uGejpa01Mkk36U8xyBEI9G++l5ylBk/0VS0tz09IYDs0r2
+ cSe9HqnuBSX4jLXINbMgB3/lYa31j61r3emI3SGcs3/tCzICsrNVetnDY1asVbaZ4RkC
+ +6f3fiSWJ/tC6SpgI6vuwZrS1Y44SE+fjC37h+876tqbhDxZC+v/wIR5v5Ta5UA8+PwS
+ jw6WdJ8dLpwBQa5zHeGaK8OHbRn458laeYMoZYu7bMPGpf6rT1Ib2zMutJ7ZVmCdM0Ct
+ GDaahigGgVZYtCeFgkDcQJAcoac0Z6p12P8BCxCCsZtxPoKyoTXAppS0Z+hlNuh27fNl
+ zT/w==
+X-Gm-Message-State: APjAAAVbefdEgvgJwYZ90tuIQwXeRc/kZ3aBp3kKlayLeivTtPKqMPl+
+ oJ5V7gyx3IFXuNroWtOi4zg=
+X-Google-Smtp-Source: APXvYqzDQmkkIzntHgwlryzOqeRBmIg4C0xnns499J6+IhQ83PPvBY71St9Lwr2+SJuP95RGKnOA6Q==
+X-Received: by 2002:a1c:6508:: with SMTP id z8mr4156412wmb.93.1568917187038;
+ Thu, 19 Sep 2019 11:19:47 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.145])
+ by smtp.googlemail.com with ESMTPSA id r13sm13927274wrn.0.2019.09.19.11.19.45
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 19 Sep 2019 11:19:46 -0700 (PDT)
+Date: Thu, 19 Sep 2019 20:19:43 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Lukasz Luba <l.luba@partner.samsung.com>
+Subject: Re: [PATCH v3 1/2] memory: samsung: exynos5422-dmc: Fix kfree() of
+ devm-allocated memory and missing static
+Message-ID: <20190919181943.GA10759@kozik-lap>
+References: <20190919092641.4407-1-l.luba@partner.samsung.com>
+ <CGME20190919092652eucas1p12dbf9ba9d60a0c89cb7de05ab61893be@eucas1p1.samsung.com>
+ <20190919092641.4407-2-l.luba@partner.samsung.com>
 MIME-Version: 1.0
-In-Reply-To: <CAGb2v65KQf_OX1sX9+4DAKKMKHP464cCZKjCRsn3LzTKRGLTcQ@mail.gmail.com>
-User-Agent: NeoMutt/20180716
+Content-Disposition: inline
+In-Reply-To: <20190919092641.4407-2-l.luba@partner.samsung.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_111842_867669_5C6BEED7 
-X-CRM114-Status: GOOD (  21.41  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190919_112001_599016_591D80F9 
+X-CRM114-Status: GOOD (  10.28  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.128.66 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.66 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,164 +90,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jernej Skrabec <jernej.skrabec@siol.net>, Stephen Boyd <sboyd@kernel.org>,
- Mike Turquette <mturquette@baylibre.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-clk <linux-clk@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============7291981448303815785=="
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ willy.mh.wolff.ml@gmail.com, linux-samsung-soc@vger.kernel.org,
+ b.zolnierkie@samsung.com, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, cw00.choi@samsung.com,
+ kyungmin.park@samsung.com, kgene@kernel.org, myungjoo.ham@samsung.com,
+ s.nawrocki@samsung.com, dan.carpenter@oracle.com,
+ linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, Sep 19, 2019 at 11:26:40AM +0200, Lukasz Luba wrote:
+> Fix issues captured by static checkers: used kfree() and missing 'static'
+> in the private function.
+> 
+> Fixes Smatch warning:
+>     drivers/memory/samsung/exynos5422-dmc.c:272
+>         exynos5_init_freq_table() warn: passing devm_ allocated variable to kfree. 'dmc->opp'
+> 
+> Fixes Sparse warning:
+>     drivers/memory/samsung/exynos5422-dmc.c:736:1:
+>         warning: symbol 'exynos5_dmc_align_init_freq' was not declared.
+> 
+> Reported-by: kbuild test robot <lkp@intel.com>
+> Reported-by: Dan Carpenter <dan.carpenter@oracle.com>
+> Reported-by: Krzysztof Kozlowski <krzk@kernel.org>
+> Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
+> ---
+>  drivers/memory/samsung/exynos5422-dmc.c | 6 ++----
 
---===============7291981448303815785==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="pfkcvjqh5wmcwf4x"
-Content-Disposition: inline
+Thanks, applied.
 
+Best regards,
+Krzysztof
 
---pfkcvjqh5wmcwf4x
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, Sep 18, 2019 at 01:46:34PM +0800, Chen-Yu Tsai wrote:
-> On Wed, Sep 18, 2019 at 1:21 PM Jernej =C5=A0krabec <jernej.skrabec@siol.=
-net> wrote:
-> >
-> > Dne torek, 17. september 2019 ob 08:54:08 CEST je Chen-Yu Tsai napisal(=
-a):
-> > > On Sat, Sep 14, 2019 at 9:51 PM Jernej Skrabec <jernej.skrabec@siol.n=
-et>
-> > wrote:
-> > > > Audio devices needs exact clock rates in order to correctly reprodu=
-ce
-> > > > the sound. Until now, only integer factors were used to configure H6
-> > > > audio PLL which resulted in inexact rates. Fix that by adding suppo=
-rt
-> > > > for fractional factors using sigma-delta modulation look-up table. =
-It
-> > > > contains values for two most commonly used audio base frequencies.
-> > > >
-> > > > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> > > > ---
-> > > >
-> > > >  drivers/clk/sunxi-ng/ccu-sun50i-h6.c | 21 +++++++++++++++------
-> > > >  1 file changed, 15 insertions(+), 6 deletions(-)
-> > > >
-> > > > diff --git a/drivers/clk/sunxi-ng/ccu-sun50i-h6.c
-> > > > b/drivers/clk/sunxi-ng/ccu-sun50i-h6.c index d89353a3cdec..ed6338d7=
-4474
-> > > > 100644
-> > > > --- a/drivers/clk/sunxi-ng/ccu-sun50i-h6.c
-> > > > +++ b/drivers/clk/sunxi-ng/ccu-sun50i-h6.c
-> > > > @@ -203,12 +203,21 @@ static struct ccu_nkmp pll_hsic_clk =3D {
-> > > >
-> > > >   * hardcode it to match with the clock names.
-> > > >   */
-> > > >
-> > > >  #define SUN50I_H6_PLL_AUDIO_REG                0x078
-> > > >
-> > > > +
-> > > > +static struct ccu_sdm_setting pll_audio_sdm_table[] =3D {
-> > > > +       { .rate =3D 541900800, .pattern =3D 0xc001288d, .m =3D 1, .=
-n =3D 22 },
-> > > > +       { .rate =3D 589824000, .pattern =3D 0xc00126e9, .m =3D 1, .=
-n =3D 24 },
-> > > > +};
-> > > > +
-> > > >
-> > > >  static struct ccu_nm pll_audio_base_clk =3D {
-> > > >
-> > > >         .enable         =3D BIT(31),
-> > > >         .lock           =3D BIT(28),
-> > > >         .n              =3D _SUNXI_CCU_MULT_MIN(8, 8, 12),
-> > > >         .m              =3D _SUNXI_CCU_DIV(1, 1), /* input divider =
-*/
-> > > >
-> > > > +       .sdm            =3D _SUNXI_CCU_SDM(pll_audio_sdm_table,
-> > > > +                                        BIT(24), 0x178, BIT(31)),
-> > > >
-> > > >         .common         =3D {
-> > > >
-> > > > +               .features       =3D CCU_FEATURE_SIGMA_DELTA_MOD,
-> > > >
-> > > >                 .reg            =3D 0x078,
-> > > >                 .hw.init        =3D CLK_HW_INIT("pll-audio-base", "=
-osc24M",
-> > > >
-> > > >                                               &ccu_nm_ops,
-> > > >
-> > > > @@ -753,12 +762,12 @@ static const struct clk_hw *clk_parent_pll_au=
-dio[] =3D
-> > > > {>
-> > > >  };
-> > > >
-> > > >  /*
-> > > >
-> > > > - * The divider of pll-audio is fixed to 8 now, as pll-audio-4x has=
- a
-> > > > - * fixed post-divider 2.
-> > > > + * The divider of pll-audio is fixed to 24 for now, so 24576000 and
-> > > > 22579200 + * rates can be set exactly in conjunction with sigma-del=
-ta
-> > > > modulation.>
-> > > >   */
-> > > >
-> > > >  static CLK_FIXED_FACTOR_HWS(pll_audio_clk, "pll-audio",
-> > > >
-> > > >                             clk_parent_pll_audio,
-> > > >
-> > > > -                           8, 1, CLK_SET_RATE_PARENT);
-> > > > +                           24, 1, CLK_SET_RATE_PARENT);
-> > > >
-> > > >  static CLK_FIXED_FACTOR_HWS(pll_audio_2x_clk, "pll-audio-2x",
-> > > >
-> > > >                             clk_parent_pll_audio,
-> > > >                             4, 1, CLK_SET_RATE_PARENT);
-> > >
-> > > You need to fix the factors for the other two outputs as well, since =
-all
-> > > three are derived from pll-audio-base.
-> >
-> > Fix how? pll-audio-2x and pll-audio-4x clocks have fixed divider in reg=
-ards to
-> > pll-audio-base, while pll-audio has not. Unless you mean changing their=
- name?
->
-> Argh... I got it wrong. It looks good actually.
->
-> Acked-by: Chen-Yu Tsai <wens@csie.org>
-
-Queued for 5.5, thanks
-
-Maxime
-
---pfkcvjqh5wmcwf4x
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXYPGfQAKCRDj7w1vZxhR
-xfhxAQCQlPrCxV4nnEbqZUIhSmWlxP/HXHmMx5Kk4J83e7xUfgEAsQrTGvWtLAcb
-3mTnYeJg0Ko41ya+QDycztsT65ffCAA=
-=NCZi
------END PGP SIGNATURE-----
-
---pfkcvjqh5wmcwf4x--
-
-
---===============7291981448303815785==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7291981448303815785==--
-
