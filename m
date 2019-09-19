@@ -2,85 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83D71B7A02
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 15:02:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B0F6B7A18
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 15:06:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=38XPqfa+QetNXOPSAjKHZS9MV/Y15g1icUAxws9X29g=; b=uV4MO4rb0mceqG
-	hIt3BaT1eeVdSOFm1TbZ0Z+cm+AueUteKE6d/OFusN2QLrC5psIfW6fmdxUoPy1b4CbsOTXHMQHLM
-	ooI9tapytMuq0BB+1MLyskYmGvrIDW2ceJAcQ92Qq0nOjCF3XyWiFOOSUXn3CcPTIW/t6ZenCA1n1
-	UGv9G6hmKN+UdVxdSPnqUYQgtgy8jG+Tz+4kq0XoRI5JC7xON6fDiUmP4WE7zCzPKqdzlEZTMWzhk
-	XTwTOmKnX/hEEhY1HPodqzRZGQ4ExDb36VRESWUaSfSwoidc90twEJksfxCsoIZT7xZvwC0dglHtX
-	ffU8fWeePCcxgmI5lfZA==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:Date:To:From:Subject:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=f8bwRBZfTQYGoeK507yPU1JKtCtfp997qIRCG0yC/AE=; b=OPvM4Zo+uZkMUR
+	scEQDeZ2HfW1VuxJ/inLbeZjUhDPUgAgSWWmO/fgCkjGpg4R4Zxw4giO8xpYr75xXTS+7AJOOqPSW
+	GEN+dwtqgDxfevLc6C8sPtszwXdjHjzDMLU++sLx/3e3l4Py8CGdC3Hog/fBCaRsL0ZDfkRuJ7U7t
+	YJSHpZX8jg5lbLJQURWwyR/RRnL4ADb3Z61UB9kjapB2gJJ8j6+qoVzM1BH55dLZAVgD/6sx4p9wj
+	iHfpe3FolCTK1M39QDrvRD8E3NQgTah7rZL8D8YpMhA11P4SFtRHVQOVv9rlQKsm+Cjo0QMAevr5i
+	WDgJ5xm7YnqUgElVV/aQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAw4O-00041a-VA; Thu, 19 Sep 2019 13:02:01 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iAw93-0006EL-8i; Thu, 19 Sep 2019 13:06:49 +0000
+Received: from mail-qt1-x82d.google.com ([2607:f8b0:4864:20::82d])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAw3w-00040U-3k
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 13:01:34 +0000
-Received: by mail-wr1-x444.google.com with SMTP id v8so3032592wrt.2
+ id 1iAw8d-0006CM-Eb
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 13:06:25 +0000
+Received: by mail-qt1-x82d.google.com with SMTP id r5so4142649qtd.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Sep 2019 06:01:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=T/oUm0WVxShCr4Uz7hk8J9IALquJO7fiM1qSUhv05Fw=;
- b=hn5FeatfnL4cSmnI9pQY3P9osYNKz/jSMr9nvitnLWGqkM6yvb/KGWYyxLf0EWZMEI
- KgwmvOwSr91t9Mdl7+1BaWEye0QJfGIrTU3vNMygFbaStWk0TycOssQlLpCEvM/clXy+
- 3c3DwwJsbMG7A8Q9+NOW0CeeOeSpBuu+QCb79uhRFq52xorUxM7W5ZX6CRCE0mcZhwO7
- ervFdUK+7qMMaDaMDg9nDlOQ4Qdivk2ccaWWMpBlMbmTOcQmIvHKqKAi5f2OioQOt96K
- 6MzEc5hr0Hxo8IPf6+sVZSw0qiqkjUIhdcrxZWM2/ugwrQApKhoIZA2uC/hFihcP+ihK
- Wwzg==
+ Thu, 19 Sep 2019 06:06:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
+ h=message-id:subject:from:to:cc:date:mime-version
+ :content-transfer-encoding;
+ bh=IsqRTG9caaUhIK42xkXjoF6FO3aLA3ZmBQE/WyKykk4=;
+ b=bX/AXmcFaVfglElnWxWB7XeLoIyuIUuRKwnBOcGM8irKFzDRRnerNcio0q3i5A4QrZ
+ cfFzUyk/XPWkTKIGmie6qNNsLqV3OjcAW21aEtGGX5BW7Vqb7/nIiFfi5NvzNi5UMBCl
+ vFTUFcnYZ6/7As8USO7Ch8DcS8WfbQzYIxx8Hqiu05tQ3XGoQaOdcXJG7Jt5dpfpHyVR
+ 3aHQeoHgD5Izv4STeOm35bEQ90niIoP/7YpU/COMAvtqXjRIfuVTVdlEFaOguucjrf3P
+ lx5c4aT8F2WZq20vqoSn59Mec7fzVcOEhrBwWS5b0+SCHG0DiWNihwNhgs7u8wkBJIRK
+ Ooiw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=T/oUm0WVxShCr4Uz7hk8J9IALquJO7fiM1qSUhv05Fw=;
- b=P/SZypDk1a1dTp8UAm9XXWuHQvsjBTw56HsUmgh8WqOgi28XaRo+WrHCYs1pnrQgC1
- zKqKKEcU9potxQYN13m5D6WQuOs29xzRzUi5hS9HLve8FvgnD0YZK9ViGl0pK9gzmzEO
- VDMcna3HX/uFqPYhUXD10E5hb+z0HZH6W0PMRVyYA7Mcylh74m435Bt8wzN8cbmp3Ewf
- ZdwfUdyp2gH004mLPlzMaoz4LNVcm9huxP8Q2DtCN0jpw+qg2nSiNyPFKlQVL88MbccM
- 6e+UsrtdxualTIIxKMdsM0Ua0396WF3WB9DmuKvFpLtbHEojQcz3PQUKdat2ATNqiWMV
- o9CQ==
-X-Gm-Message-State: APjAAAV8w18R0P64XySFTVTmw/Xwhn8c/h/i1MqCC7xzTKYDGAjLBv9k
- LOT6J16H0qH+eIEesBa22z+bhA==
-X-Google-Smtp-Source: APXvYqxKBAJr87TccDhptPDgvDzaS8VrHoiGhYT2TmlGfQgTSWUsboVo13NiIL/acFFfMXMWH02NEg==
-X-Received: by 2002:adf:e485:: with SMTP id i5mr1971966wrm.175.1568898090150; 
- Thu, 19 Sep 2019 06:01:30 -0700 (PDT)
-Received: from localhost (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id a18sm20259922wrh.25.2019.09.19.06.01.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Sep 2019 06:01:29 -0700 (PDT)
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Neil Armstrong <narmstrong@baylibre.com>, Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH 3/3] clk: meson: clk-pll: always enable a critical PLL
- when setting the rate
-In-Reply-To: <20190919093809.21364-1-narmstrong@baylibre.com>
-References: <20190919093627.21245-1-narmstrong@baylibre.com>
- <20190919093809.21364-1-narmstrong@baylibre.com>
-Date: Thu, 19 Sep 2019 15:01:28 +0200
-Message-ID: <1j1rwce8yf.fsf@starbuckisacylon.baylibre.com>
-MIME-Version: 1.0
+ h=x-gm-message-state:message-id:subject:from:to:cc:date:mime-version
+ :content-transfer-encoding;
+ bh=IsqRTG9caaUhIK42xkXjoF6FO3aLA3ZmBQE/WyKykk4=;
+ b=ilIY6Kl/39UtEyjZiAsMDiVHfA5jCDXgLICo6wGxSePe+7iJ7ZJkDn1+Q39wQccCJa
+ a7hxncFHMzYOQrDCqesdUwy8go+Ms2XMvdHtNbIE7BNySSwoYoBbCZFziTaXLyT+wSfp
+ 7yZpfdZ3nUk1o9lH4NaieRXAzxPkDvrAe/vk8VriB+6D8meOLE/34ivy3t38fIbINfOp
+ GebjJEespNstMCVIAOK5bzaYAgFUOAnumCkvk/mZjUfXPVOUv+Imuxaq6uhE0s77Wbda
+ cV5yN13GrkkTpZahvhooSgVOdX8x51XBCfCWHqgSHELPJTcNqfjggm6AoYpeVqSESX3E
+ Fj2Q==
+X-Gm-Message-State: APjAAAXhEvobsdhv+gDGYhRcGFA0s/ZFxFv595Xb/4ps49BuFmv+aywT
+ 3rhX4KER2veKvoH57PcD4S7Xuw==
+X-Google-Smtp-Source: APXvYqzasIZpl9AANzlifB7I5Xk/YzI5eRwkZmoUJoB3pNCXKoD51RWkv6AWvvdUe41/RXWOpLAw6A==
+X-Received: by 2002:ac8:7502:: with SMTP id u2mr2829778qtq.216.1568898379188; 
+ Thu, 19 Sep 2019 06:06:19 -0700 (PDT)
+Received: from dhcp-41-57.bos.redhat.com (nat-pool-bos-t.redhat.com.
+ [66.187.233.206])
+ by smtp.gmail.com with ESMTPSA id u132sm4708482qka.50.2019.09.19.06.06.17
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 19 Sep 2019 06:06:18 -0700 (PDT)
+Message-ID: <1568898377.5576.186.camel@lca.pw>
+Subject: "arm64: use asm-generic/dma-mapping.h" introduced a kbuild warning
+From: Qian Cai <cai@lca.pw>
+To: Christoph Hellwig <hch@lst.de>
+Date: Thu, 19 Sep 2019 09:06:17 -0400
+X-Mailer: Evolution 3.22.6 (3.22.6-10.el7) 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_060132_479145_575A5F3F 
-X-CRM114-Status: GOOD (  23.60  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190919_060623_714520_4A2302D9 
+X-CRM114-Status: UNSURE (   6.52  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:82d listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -94,68 +96,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Neil Armstrong <narmstrong@baylibre.com>
+Cc: Michal Marek <michal.lkml@markovi.net>, linux-kbuild@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Stefano Stabellini <sstabellini@kernel.org>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu 19 Sep 2019 at 11:38, Neil Armstrong <narmstrong@baylibre.com> wrote:
+The commit 5489c8e0cf03 ("arm64: use asm-generic/dma-mapping.h") introduced a
+kbuild warning,
 
-> Make sure we always enable a PLL on a set_rate() when the PLL is
-> flagged as critical.
->
-> This fixes the case when the Amlogic G12A SYS_PLL gets disabled by the
-> PSCI firmware when resuming from suspend-to-memory, in the case
-> where the CPU was not clocked by the SYS_PLL, but by the fixed PLL
-> fixed divisors.
-> In this particular case, when changing the PLL rate, CCF doesn't handle
-> the fact the PLL could have been disabled in the meantime and set_rate()
-> only changes the rate and never enables it again.
->
-> Fixes: d6e81845b7d9 ("clk: meson: clk-pll: check if the clock is already enabled')
-> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> ---
->  drivers/clk/meson/clk-pll.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/drivers/clk/meson/clk-pll.c b/drivers/clk/meson/clk-pll.c
-> index ddb1e5634739..8c5adccb7959 100644
-> --- a/drivers/clk/meson/clk-pll.c
-> +++ b/drivers/clk/meson/clk-pll.c
-> @@ -379,7 +379,7 @@ static int meson_clk_pll_set_rate(struct clk_hw *hw, unsigned long rate,
->  	}
->  
->  	/* If the pll is stopped, bail out now */
-> -	if (!enabled)
-> +	if (!(hw->init->flags & CLK_IS_CRITICAL) && !enabled)
+scripts/Makefile.asm-generic:25: redundant generic-y found in
+arch/arm64/include/asm/Kbuild: dma-mapping.h
 
-This is surely a work around to the issue at hand but:
 
-* Enabling the clock, critical or not, should not be done but the
-set_rate() callback. This is not the purpose of this callback.
-
-* Enabling the clock in such way does not walk the tree. So, if there is
-ever another PSCI Fw which disable we would get into the same issue
-again. IOW, This is not specific to the PLL driver so it should not have
-to deal with this.
-
-Since this clock can change out of CCF maybe it should be marked with
-CLK_GET_RATE_NOCACHE ?
-
-When CCF hits a clock with CLK_GET_RATE_NOCACHE while walking the tree,
-in addition to to calling get_rate(), CCF could also call is_enabled()
-if the clock has CLK_IS_CRITICAL and possibly .enable() ?
-
-Stephen, what do you think ?
-
->  		return 0;
->  
->  	if (meson_clk_pll_enable(hw)) {
-> -- 
-> 2.22.0
 
 _______________________________________________
 linux-arm-kernel mailing list
