@@ -2,52 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB373B7E67
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 17:41:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5ADA7B7E6C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 17:42:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nvutGW2jcFNCI2M+wgjJ6kvNQW/OfPuAQnGNolHZRzM=; b=rmcOJFCVemi70L
-	y2zpJH266sE61vTSGxuvLa5cj8z5kTc9zIjog1XaAFtCvqwUcMKkwVEJgRfCOJ2ZiP6qq0yELEXq9
-	ha2n6YqJ6i4MUnYIFeKFbH/5iU8i+1qh3PrTCc0swOxdnuRfuou8iiLumP7Xs9p73O9IVzjXJ0zUZ
-	Z2HiaEIfNL7k3DuUX9GgyEd/rDDj30JWimsY0bc4gTudXsMxNeSh082RlrrndQiv5/NKpUYxri54y
-	zqQNjVzw+W924Jz7j7wHojB5j+P11kdxXAwMFigEI0CuNyEMHAamYKsB3RLvjp/vFJaH9FQkK/nqo
-	s6RMTZeyRDvJBwMhlh9A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5mjzV/bDCSaNp3e8KCzU9ySYIrFUmHQ4OaX/Mbpk2aE=; b=pXvQtnU4BwK2PB
+	OoiG4wbtKPF9P/205nE7WdN7nuMawE1V+UfFGuOugAaVESjX+OdoYauCPW0lkVfLKMWhe6X2zWJLX
+	kwe8sSwQ1e/Y6NUsNer/61tMpWX6hK8t/72fzSCsB5fQmWYa96nEEG5LZ2DtvwDJxr5B303njkH1d
+	fmskhwEcporiwvvvAwtzjtjDGz+72DdIaPmeSB8XUfhzUjesJZryIg2jW1dmmVII7DgFUR+86j/6P
+	CR3cAuyy8inMpZiXYHBH96kr1IrLOfznaYks0YVctDSGU98G3mIkwE8v/tQv3shnaYRl1CRvZb/tS
+	prEAxClcq6W9ZWbXGOmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAyYG-0002WQ-Tm; Thu, 19 Sep 2019 15:41:02 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAyY2-0002U0-H9
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 15:40:48 +0000
-X-Originating-IP: 86.207.98.53
-Received: from localhost
- (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
- (Authenticated sender: gregory.clement@bootlin.com)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id E80E8C0002;
- Thu, 19 Sep 2019 15:40:41 +0000 (UTC)
-From: Gregory CLEMENT <gregory.clement@bootlin.com>
-To: Mark Brown <broonie@kernel.org>, linux-spi@vger.kernel.org,
- linux-kernel@vger.kernel.org, Nicolas Ferre <nicolas.ferre@microchip.com>
-Subject: [PATCH] spi: atmel: Remove AVR32 leftover
-Date: Thu, 19 Sep 2019 17:40:34 +0200
-Message-Id: <20190919154034.7489-1-gregory.clement@bootlin.com>
-X-Mailer: git-send-email 2.23.0
+	id 1iAyZJ-0002sE-Jm; Thu, 19 Sep 2019 15:42:05 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iAyZ3-0002rU-MT
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 15:41:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B199628;
+ Thu, 19 Sep 2019 08:41:48 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ E65BC3F575; Thu, 19 Sep 2019 08:41:45 -0700 (PDT)
+Date: Thu, 19 Sep 2019 16:41:43 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: "Kirill A. Shutemov" <kirill@shutemov.name>
+Subject: Re: [PATCH v4 3/3] mm: fix double page fault on arm64 if PTE_AF is
+ cleared
+Message-ID: <20190919154143.GA6472@arrakis.emea.arm.com>
+References: <20190918131914.38081-1-justin.he@arm.com>
+ <20190918131914.38081-4-justin.he@arm.com>
+ <20190918140027.ckj32xnryyyesc23@box>
+ <20190918180029.GB20601@iMac.local>
+ <20190919150007.k7scjplcya53j7r4@box>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190919150007.k7scjplcya53j7r4@box>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_084046_749765_2954FC47 
-X-CRM114-Status: UNSURE (   7.51  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190919_084149_819612_D00C713D 
+X-CRM114-Status: GOOD (  25.78  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,70 +65,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-arm-kernel@lists.infradead.org,
- Gregory CLEMENT <gregory.clement@bootlin.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-mm@kvack.org,
+ Punit Agrawal <punitagrawal@gmail.com>, Will Deacon <will@kernel.org>,
+ Alex Van Brunt <avanbrunt@nvidia.com>, Jia He <justin.he@arm.com>,
+ Marc Zyngier <maz@kernel.org>, Anshuman Khandual <anshuman.khandual@arm.com>,
+ Matthew Wilcox <willy@infradead.org>, Jun Yao <yaojun8558363@gmail.com>,
+ Kaly Xin <Kaly.Xin@arm.com>, hejianet@gmail.com,
+ Ralph Campbell <rcampbell@nvidia.com>, Suzuki Poulose <Suzuki.Poulose@arm.com>,
+ =?iso-8859-1?B?Suly9G1l?= Glisse <jglisse@redhat.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-AV32 support has been from the kernel a few release ago, but there was
-still some specific macro for this architecture in this driver. Lets
-remove it.
+On Thu, Sep 19, 2019 at 06:00:07PM +0300, Kirill A. Shutemov wrote:
+> On Wed, Sep 18, 2019 at 07:00:30PM +0100, Catalin Marinas wrote:
+> > On Wed, Sep 18, 2019 at 05:00:27PM +0300, Kirill A. Shutemov wrote:
+> > > On Wed, Sep 18, 2019 at 09:19:14PM +0800, Jia He wrote:
+> > > > @@ -2152,20 +2163,34 @@ static inline void cow_user_page(struct page *dst, struct page *src, unsigned lo
+> > > >  	 */
+> > > >  	if (unlikely(!src)) {
+> > > >  		void *kaddr = kmap_atomic(dst);
+> > > > -		void __user *uaddr = (void __user *)(va & PAGE_MASK);
+> > > > +		void __user *uaddr = (void __user *)(addr & PAGE_MASK);
+> > > > +		pte_t entry;
+> > > >  
+> > > >  		/*
+> > > >  		 * This really shouldn't fail, because the page is there
+> > > >  		 * in the page tables. But it might just be unreadable,
+> > > >  		 * in which case we just give up and fill the result with
+> > > > -		 * zeroes.
+> > > > +		 * zeroes. On architectures with software "accessed" bits,
+> > > > +		 * we would take a double page fault here, so mark it
+> > > > +		 * accessed here.
+> > > >  		 */
+> > > > +		if (arch_faults_on_old_pte() && !pte_young(vmf->orig_pte)) {
+> > > > +			spin_lock(vmf->ptl);
+> > > > +			if (likely(pte_same(*vmf->pte, vmf->orig_pte))) {
+> > > > +				entry = pte_mkyoung(vmf->orig_pte);
+> > > > +				if (ptep_set_access_flags(vma, addr,
+> > > > +							  vmf->pte, entry, 0))
+> > > > +					update_mmu_cache(vma, addr, vmf->pte);
+> > > > +			}
+> > > 
+> > > I don't follow.
+> > > 
+> > > So if pte has changed under you, you don't set the accessed bit, but never
+> > > the less copy from the user.
+> > > 
+> > > What makes you think it will not trigger the same problem?
+> > > 
+> > > I think we need to make cow_user_page() fail in this case and caller --
+> > > wp_page_copy() -- return zero. If the fault was solved by other thread, we
+> > > are fine. If not userspace would re-fault on the same address and we will
+> > > handle the fault from the second attempt.
+> > 
+> > It would be nice to clarify the semantics of this function and do as
+> > you suggest but the current comment is slightly confusing:
+> > 
+> > 	/*
+> > 	 * If the source page was a PFN mapping, we don't have
+> > 	 * a "struct page" for it. We do a best-effort copy by
+> > 	 * just copying from the original user address. If that
+> > 	 * fails, we just zero-fill it. Live with it.
+> > 	 */
+> > 
+> > Would any user-space rely on getting a zero-filled page here instead of
+> > a recursive fault?
+> 
+> I don't see the point in zero-filled page in this case. SIGBUS sounds like
+> more appropriate response, no?
 
-Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
----
- drivers/spi/spi-atmel.c | 24 ------------------------
- 1 file changed, 24 deletions(-)
+I think misunderstood your comment. So, if !pte_same(), we should let
+userspace re-fault. This wouldn't be a user ABI change and it is
+bounded, can't end up in an infinite re-fault loop.
 
-diff --git a/drivers/spi/spi-atmel.c b/drivers/spi/spi-atmel.c
-index bb94f5927819..de1e1861a70c 100644
---- a/drivers/spi/spi-atmel.c
-+++ b/drivers/spi/spi-atmel.c
-@@ -222,37 +222,13 @@
- 	  | SPI_BF(name, value))
- 
- /* Register access macros */
--#ifdef CONFIG_AVR32
--#define spi_readl(port, reg) \
--	__raw_readl((port)->regs + SPI_##reg)
--#define spi_writel(port, reg, value) \
--	__raw_writel((value), (port)->regs + SPI_##reg)
--
--#define spi_readw(port, reg) \
--	__raw_readw((port)->regs + SPI_##reg)
--#define spi_writew(port, reg, value) \
--	__raw_writew((value), (port)->regs + SPI_##reg)
--
--#define spi_readb(port, reg) \
--	__raw_readb((port)->regs + SPI_##reg)
--#define spi_writeb(port, reg, value) \
--	__raw_writeb((value), (port)->regs + SPI_##reg)
--#else
- #define spi_readl(port, reg) \
- 	readl_relaxed((port)->regs + SPI_##reg)
- #define spi_writel(port, reg, value) \
- 	writel_relaxed((value), (port)->regs + SPI_##reg)
--
--#define spi_readw(port, reg) \
--	readw_relaxed((port)->regs + SPI_##reg)
- #define spi_writew(port, reg, value) \
- 	writew_relaxed((value), (port)->regs + SPI_##reg)
- 
--#define spi_readb(port, reg) \
--	readb_relaxed((port)->regs + SPI_##reg)
--#define spi_writeb(port, reg, value) \
--	writeb_relaxed((value), (port)->regs + SPI_##reg)
--#endif
- /* use PIO for small transfers, avoiding DMA setup/teardown overhead and
-  * cache operations; better heuristics consider wordsize and bitrate.
-  */
+In case of a __copy_from_user_inatomic() error, SIGBUS would make more
+sense but it changes the current behaviour (zero-filling the page). This
+can be left for a separate patch, doesn't affect the arm64 case here.
+
 -- 
-2.23.0
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
