@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B458B7F41
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 18:37:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B05DBB7F52
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 18:43:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LywwLddk3Pv3vw4E3OAEVE+/oE+vl4tE3rgJkaEN7r8=; b=FR3ojEZkpHvTqL
-	sCAtIu6VHUJho/n2GhrIcFckIDCgEYMnoprvb/wOTWbHE4S3VH4B8i/NN/a2BT+U0IF26fNTlByq4
-	5ldmMvoGONfx1YccE647WnEMAOxoQL8isym0GpR3sF1Fccv9uXAjRlPSJhWfpotBq0fV69UPZTRFb
-	Ls/r8sfHcS+41D0K7IZW35MSg6qXKz1z4RFLc5eaCjXusAQULam6AXobAUMJexqHV3JrLSTdSYmJ+
-	8miYNN1kUWiB64Tds6rDYMlmscClsA+OgfDjz6Y0e6/bKi8eWZuOdxp0JAKlvbiBuIkWlvLimc9l1
-	y76DeXZfWPgNUZ5f+aZw==;
+	List-Owner; bh=ewgYJg8skm4n7RV2v7XRaKAb8lk5QmONAe0bpI/17o8=; b=f0RSFIAtp9U2Cg
+	yy+IQoggQ/ymlk0YeELC6wGNVS7IGftI3vogNSICawr71EYzPdlG/16hbh0LzCXwCcq6sCpi/T/+V
+	ivyIZpaQerE0ioMHYiR8cQYSDSTVbPNgLYD/37snPZe4cMuUc+u66trWMKap2MueqioUlyjXLokXC
+	b5KJ6ZApR+qQwdLPziZMK4Aq8RNvuOHbtfaG7yWycDMv8vlrqhlmSQnLVNV9KAj2dsCjkMV0qgfU0
+	A+pFBvcqGCRarKc5TTiso1eMQJzhnvR+3+7ghW+qJhm9M9ycdPZ9PfX+hOz1fU7J/yS2vdikzUwOK
+	ZWP3PiTmLl/f7bxXF6dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAzQY-0000ov-F3; Thu, 19 Sep 2019 16:37:07 +0000
+	id 1iAzWb-0002P5-OK; Thu, 19 Sep 2019 16:43:22 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAzQI-0000ny-1o
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 16:36:51 +0000
+ id 1iAzVU-0002OH-91
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 16:42:14 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 683B228;
- Thu, 19 Sep 2019 09:36:49 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2FF0B28;
+ Thu, 19 Sep 2019 09:42:11 -0700 (PDT)
 Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- D0C8F3F575; Thu, 19 Sep 2019 09:36:46 -0700 (PDT)
-Date: Thu, 19 Sep 2019 17:36:44 +0100
+ 9A4983F575; Thu, 19 Sep 2019 09:42:08 -0700 (PDT)
+Date: Thu, 19 Sep 2019 17:42:06 +0100
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: Jia He <justin.he@arm.com>
-Subject: Re: [PATCH v5 1/3] arm64: cpufeature: introduce helper cpu_has_hw_af()
-Message-ID: <20190919163644.GD6472@arrakis.emea.arm.com>
+Subject: Re: [PATCH v5 3/3] mm: fix double page fault on arm64 if PTE_AF is
+ cleared
+Message-ID: <20190919164206.GE6472@arrakis.emea.arm.com>
 References: <20190919161204.142796-1-justin.he@arm.com>
- <20190919161204.142796-2-justin.he@arm.com>
+ <20190919161204.142796-4-justin.he@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190919161204.142796-2-justin.he@arm.com>
+In-Reply-To: <20190919161204.142796-4-justin.he@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_093650_142872_AF50CF26 
-X-CRM114-Status: GOOD (  12.25  )
+X-CRM114-CacheID: sfid-20190919_094212_652625_123F6FE0 
+X-CRM114-Status: GOOD (  14.10  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -79,36 +80,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 20, 2019 at 12:12:02AM +0800, Jia He wrote:
-> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> index b1fdc486aed8..fb0e9425d286 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -1141,6 +1141,16 @@ static bool has_hw_dbm(const struct arm64_cpu_capabilities *cap,
->  	return true;
->  }
->  
-> +/* Decouple AF from AFDBM. */
-> +bool cpu_has_hw_af(void)
-> +{
-> +	return (read_cpuid(ID_AA64MMFR1_EL1) & 0xf);
-> +}
-> +#else /* CONFIG_ARM64_HW_AFDBM */
-> +bool cpu_has_hw_af(void)
-> +{
-> +	return false;
-> +}
->  #endif
+On Fri, Sep 20, 2019 at 12:12:04AM +0800, Jia He wrote:
+> @@ -2152,7 +2163,29 @@ static inline void cow_user_page(struct page *dst, struct page *src, unsigned lo
+>  	 */
+>  	if (unlikely(!src)) {
+>  		void *kaddr = kmap_atomic(dst);
+> -		void __user *uaddr = (void __user *)(va & PAGE_MASK);
+> +		void __user *uaddr = (void __user *)(addr & PAGE_MASK);
+> +		pte_t entry;
+> +
+> +		/* On architectures with software "accessed" bits, we would
+> +		 * take a double page fault, so mark it accessed here.
+> +		 */
+> +		if (arch_faults_on_old_pte() && !pte_young(vmf->orig_pte)) {
+> +			spin_lock(vmf->ptl);
+> +			if (likely(pte_same(*vmf->pte, vmf->orig_pte))) {
+> +				entry = pte_mkyoung(vmf->orig_pte);
+> +				if (ptep_set_access_flags(vma, addr,
+> +							  vmf->pte, entry, 0))
+> +					update_mmu_cache(vma, addr, vmf->pte);
+> +			} else {
+> +				/* Other thread has already handled the fault
+> +				 * and we don't need to do anything. If it's
+> +				 * not the case, the fault will be triggered
+> +				 * again on the same address.
+> +				 */
+> +				return -1;
+> +			}
+> +			spin_unlock(vmf->ptl);
 
-Please place this function in cpufeature.h directly, no need for an
-additional function call. Something like:
-
-static inline bool cpu_has_hw_af(void)
-{
-	if (IS_ENABLED(CONFIG_ARM64_HW_AFDBM))
-		return read_cpuid(ID_AA64MMFR1_EL1) & 0xf;
-	return false;
-}
+Returning with the spinlock held doesn't normally go very well ;).
 
 -- 
 Catalin
