@@ -2,67 +2,157 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B253B7E8E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 17:51:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED2E8B7E9C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Sep 2019 17:55:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FWAO/M5JXk6z/o0MaL17/V82HA/xdGO9A5eE4o/ZJcc=; b=TD2D5pSi8E02oZ
-	C/cBCmHKxmwZ1iCjXUBwfwOCAQ7VCySvE6D7AwVQLA/a7qDV0lsUTJht1chpZjFQt+iG7o/VNzWgN
-	0P/paKQGF2UeCFTI3GF/nXcvIhFI2LcHTWi8dzgtcQmkPPJLOvB31MW9oBNQvIVdAjGDLm2lDw32D
-	X/rDz36c6GWGcSSij3Ln7mJLGRrOtFpQuZWi+6LknXj4+Oq4T+IQYQkRA5vhMDhPA9w15mt6LQcuA
-	9Z/OapReLlUe9+mP42LhoTavFV1Aa6mkIrax7dCBieqo1YxoYqkxxTTXsWEKAOv/JhIJFEkdtgbYt
-	5z9IeDgtWLdIiSqiRnVw==;
+	List-Owner; bh=nQFneZ36MLUOUAUFynZTfnbFAP2OcIIsRckvOJ0ab0w=; b=kSnXkQovXIgzlz
+	DZEOn7BTVzjH0AOL92eA2zH2Ju/ifIueHfIpL2QRTwWYFlQXU1oeF6SggZTz06336dyJINhNrFt0l
+	c2ayLhE9pfgwPvuZX5Nmlp6PyZt7y9p9NR3wU1zR1TeorYu4NM/cvf3p0x49crpG7W9RAUrOUgv+v
+	YrcxJZSfj2M4s2+Wtp2rTwGIRpgbHPODK7ofsZEvdw9ZlHB7l22pfPwxCjEMpjtbHyOoxbINNkj5T
+	4109RYdJk5p12E49cjJc6f9XMSuNFYnb+VH0sssfmJU/ZtmFZqEcjASdkv0gIUwFrHr2ppfgeCuZy
+	aWdscQlz2W+LsojiUR/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAyii-0006Xe-Fg; Thu, 19 Sep 2019 15:51:48 +0000
-Received: from mga04.intel.com ([192.55.52.120])
+	id 1iAym7-0006yq-Lm; Thu, 19 Sep 2019 15:55:19 +0000
+Received: from esa2.microchip.iphmx.com ([68.232.149.84])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAyiS-0006Wx-SM
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Sep 2019 15:51:34 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from orsmga007.jf.intel.com ([10.7.209.58])
- by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 19 Sep 2019 08:51:31 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,524,1559545200"; d="scan'208";a="178091248"
-Received: from black.fi.intel.com ([10.237.72.28])
- by orsmga007.jf.intel.com with ESMTP; 19 Sep 2019 08:51:25 -0700
-Received: by black.fi.intel.com (Postfix, from userid 1000)
- id 61703BD; Thu, 19 Sep 2019 18:51:24 +0300 (EEST)
-Date: Thu, 19 Sep 2019 18:51:24 +0300
-From: "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v4 3/3] mm: fix double page fault on arm64 if PTE_AF is
- cleared
-Message-ID: <20190919155124.56ps5vsd5al6g7hm@black.fi.intel.com>
-References: <20190918131914.38081-1-justin.he@arm.com>
- <20190918131914.38081-4-justin.he@arm.com>
- <20190918140027.ckj32xnryyyesc23@box>
- <20190918180029.GB20601@iMac.local>
- <20190919150007.k7scjplcya53j7r4@box>
- <20190919154143.GA6472@arrakis.emea.arm.com>
+ id 1iAylj-0006x1-TA; Thu, 19 Sep 2019 15:54:57 +0000
+Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
+ Tudor.Ambarus@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Tudor.Ambarus@microchip.com";
+ x-sender="Tudor.Ambarus@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa2.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Tudor.Ambarus@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa2.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Tudor.Ambarus@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: uG3XXq3hZkH/QxyvTJBYqH0W9vM6Is/CidOWH92hUE+R+IKWq+qXmj+qNRsM7OYWriMl+U0Dkl
+ rj+hpwtqBNpzS9yFbfkVpi61eIhxXE57wk+oN47+6jRT3qLlvXCQaYnRROwkKlsxMv0ZN3t1cO
+ TotMPXazP+N48Th/NKYZJqRbM2O1SyA6USjHzcP4JQ9NoMpGIIxRsF0zHb8k4Er8dsgLYhEzsV
+ Dn1D1gEP5alO3EcW5EPS9I7e19PdHnGHsmpyDy2N5YDdRYhdQkZFwu355GKEKVbVdUpIrKzoUP
+ q7U=
+X-IronPort-AV: E=Sophos;i="5.64,524,1559545200"; d="scan'208";a="49559752"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 19 Sep 2019 08:54:53 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Thu, 19 Sep 2019 08:54:53 -0700
+Received: from NAM05-CO1-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Thu, 19 Sep 2019 08:54:53 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=HMbXIbZSDM5/o3m4JYCJ85rAk+CGGZDsfh84YSst+5kOJrp45C485fYNtpRIL6Cg9LVeagH8QW/duzQNnfnSyjraKP6176TyscvHWskKCHS3eJj+Ol7QuMkrv4M12nWdFNI5dJXxFLO5acTxYBobeBwP/xlImmUwucTIUv9GMvjLk3UQYKZjlm6Ij3vuJdSmviErbY5Hx+Omowzsh6OBqLrJ1xzLr4+2JvTNW7Btr823TGNAhDZEU4xWYp0YbbZ5b9PCYQWJtzy+sCYdRHqFmGCOrwwjF4Z6OFjxq83s6fTQ3XP8QCbBN1zIrq7bXcWqSq1yi0oNMYKM5XhY3RfLeg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=RvBqlTjjUjcU2RJnUhN/ybdRGZUNSe6dRYQbGHmm1aY=;
+ b=HyWeNvoHEHMMRIbpx3MkfLvX49yUzTS835y1cp5Bk3W6bMerISaZfAeD86FMh3ooRfdu9U4+1Y83px6otdYLCENH+5+VKhkhFsGdQWbp4blZ0DAFlhTxq2GGnCvweCNfP+gJX3f6X569wbWNTDMB390AdEXASZEp7Dae03EficO2qC39TvzdSHjUIAyHDdmCJt4PiNJEZHfm+fkBQSBvOqaz/UHdBImx8tmg3fIXiWY1s3uQOE8DjBpzvlKO/7IV3zXN56BE3ZBq7H5WYoHAz05Vo6SHnIfb+JF58fWAS5exIvk652mZItZHnlj08mUd6migzU/0zHp1tBxWYeQbLg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=RvBqlTjjUjcU2RJnUhN/ybdRGZUNSe6dRYQbGHmm1aY=;
+ b=lU8DoV05xdX1C/i3lEOzAbVBvzkzx9rJYizP0nL53y0OsdBHR2zC6mYwDLWPp6/1mEyJxEigrexeY1ZzYvZwpQxqhWqlCKWmPcS+1eJk7k6CQzMk0+v1oz9NS+9mMAczZqSFAT+BXrWDsVOpbycV0yzXw2hB5fIQtv43brnrP+s=
+Received: from MN2PR11MB4448.namprd11.prod.outlook.com (52.135.39.157) by
+ MN2PR11MB3565.namprd11.prod.outlook.com (20.178.250.159) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2263.13; Thu, 19 Sep 2019 15:54:52 +0000
+Received: from MN2PR11MB4448.namprd11.prod.outlook.com
+ ([fe80::c951:b15a:e4b3:30f7]) by MN2PR11MB4448.namprd11.prod.outlook.com
+ ([fe80::c951:b15a:e4b3:30f7%7]) with mapi id 15.20.2263.023; Thu, 19 Sep 2019
+ 15:54:52 +0000
+From: <Tudor.Ambarus@microchip.com>
+To: <vigneshr@ti.com>, <boris.brezillon@collabora.com>,
+ <marek.vasut@gmail.com>, <miquel.raynal@bootlin.com>, <richard@nod.at>,
+ <linux-mtd@lists.infradead.org>
+Subject: Re: [PATCH 17/23] mtd: spi-nor: Fix clearing of QE bit on
+ lock()/unlock()
+Thread-Topic: [PATCH 17/23] mtd: spi-nor: Fix clearing of QE bit on
+ lock()/unlock()
+Thread-Index: AQHVbXBXffWwZrBoIkKrGGyrhA4/GaczE40AgAAWrYA=
+Date: Thu, 19 Sep 2019 15:54:52 +0000
+Message-ID: <b44e398a-037a-8f32-58dd-15b7f714a8a3@microchip.com>
+References: <20190917155426.7432-1-tudor.ambarus@microchip.com>
+ <20190917155426.7432-18-tudor.ambarus@microchip.com>
+ <dceca616-2b98-9bc8-73e4-32fb06fc753d@ti.com>
+In-Reply-To: <dceca616-2b98-9bc8-73e4-32fb06fc753d@ti.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: VI1PR0601CA0032.eurprd06.prod.outlook.com
+ (2603:10a6:800:1e::42) To MN2PR11MB4448.namprd11.prod.outlook.com
+ (2603:10b6:208:193::29)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [86.120.240.252]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: d864dd75-6ef7-43f1-b1eb-08d73d19b529
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600167)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:MN2PR11MB3565; 
+x-ms-traffictypediagnostic: MN2PR11MB3565:
+x-microsoft-antispam-prvs: <MN2PR11MB35653728F4E9B9C744509A04F0890@MN2PR11MB3565.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 016572D96D
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(136003)(376002)(396003)(346002)(366004)(189003)(199004)(2201001)(316002)(7736002)(66066001)(386003)(6116002)(53546011)(102836004)(36756003)(305945005)(7416002)(52116002)(54906003)(14454004)(2906002)(6486002)(5660300002)(6506007)(99286004)(86362001)(76176011)(31696002)(81166006)(256004)(8676002)(66476007)(66446008)(66946007)(81156014)(71200400001)(478600001)(25786009)(6436002)(26005)(110136005)(229853002)(486006)(64756008)(2501003)(3846002)(11346002)(66556008)(186003)(31686004)(6512007)(8936002)(2616005)(6246003)(4326008)(476003)(446003)(71190400001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR11MB3565;
+ H:MN2PR11MB4448.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: ZM4OLvXnRBoH4hsXSleSV5Pms57QMkr/UZmqCE/g8If+16KIv/YovGT9jA+bXC1/2BpK+AhyxQ5F2jGSGSwGFkvfbqapvy2+ZcZmG1hJ1knOXWdt0tKa94GTQREwppdw2XrJDxIM19d+qi68cprp3rA1xDLhiZpRUaABWwfDfcLSuKpVf2DsL95zYI/ywqEX/66HqhdxuGJ8P2q728TLOxHJdnlh5/7HquCiI2hFjWA+DGWT9YNeiOBA2EAym8cZmPbC+Gm9Grtd/QjF4ikAE8UbZvJgnALaWw6FkWFNo2MHVOxICi5Um495hV+0vkErpzCihluETRE2Uxwl27P0khWcnw03QuNT1OZgCSykRr0WFUOB8xbIlsRKnkVS7E8zs31DvBiSGdu8NAoc09zSEfyH+pGECbV8aci3shgWvg8=
+x-ms-exchange-transport-forked: True
+Content-ID: <D3CB4932602AE44EB0B07313F1DB679F@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190919154143.GA6472@arrakis.emea.arm.com>
-User-Agent: NeoMutt/20170714-126-deb55f (1.8.3)
+X-MS-Exchange-CrossTenant-Network-Message-Id: d864dd75-6ef7-43f1-b1eb-08d73d19b529
+X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Sep 2019 15:54:52.1538 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: jpQtW4wR+cplVTj5uECnldbPOZpTn4Pb+uJ3vkyn4Lwni9tOZBCiMcArC+xk3XNSYhSjEVsPGk/90UgoAlqnxJMMlmzCUMOSXV1bnCRYPgQ=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR11MB3565
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_085132_928501_7DDA92B4 
-X-CRM114-Status: GOOD (  28.38  )
+X-CRM114-CacheID: sfid-20190919_085456_152722_06446027 
+X-CRM114-Status: GOOD (  12.96  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.120 listed in list.dnswl.org]
+ medium trust [68.232.149.84 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,100 +164,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-mm@kvack.org,
- Punit Agrawal <punitagrawal@gmail.com>, Will Deacon <will@kernel.org>,
- Alex Van Brunt <avanbrunt@nvidia.com>, Jia He <justin.he@arm.com>,
- Marc Zyngier <maz@kernel.org>, Anshuman Khandual <anshuman.khandual@arm.com>,
- Matthew Wilcox <willy@infradead.org>, Jun Yao <yaojun8558363@gmail.com>,
- Kaly Xin <Kaly.Xin@arm.com>, hejianet@gmail.com,
- Ralph Campbell <rcampbell@nvidia.com>, Suzuki Poulose <Suzuki.Poulose@arm.com>,
- =?iso-8859-1?B?Suly9G1l?= Glisse <jglisse@redhat.com>,
- "Kirill A. Shutemov" <kirill@shutemov.name>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>
+Cc: linux-aspeed@lists.ozlabs.org, andrew@aj.id.au,
+ linux-kernel@vger.kernel.org, vz@mleia.com, linux-mediatek@lists.infradead.org,
+ joel@jms.id.au, matthias.bgg@gmail.com, computersforpeace@gmail.com,
+ dwmw2@infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 19, 2019 at 03:41:43PM +0000, Catalin Marinas wrote:
-> On Thu, Sep 19, 2019 at 06:00:07PM +0300, Kirill A. Shutemov wrote:
-> > On Wed, Sep 18, 2019 at 07:00:30PM +0100, Catalin Marinas wrote:
-> > > On Wed, Sep 18, 2019 at 05:00:27PM +0300, Kirill A. Shutemov wrote:
-> > > > On Wed, Sep 18, 2019 at 09:19:14PM +0800, Jia He wrote:
-> > > > > @@ -2152,20 +2163,34 @@ static inline void cow_user_page(struct page *dst, struct page *src, unsigned lo
-> > > > >  	 */
-> > > > >  	if (unlikely(!src)) {
-> > > > >  		void *kaddr = kmap_atomic(dst);
-> > > > > -		void __user *uaddr = (void __user *)(va & PAGE_MASK);
-> > > > > +		void __user *uaddr = (void __user *)(addr & PAGE_MASK);
-> > > > > +		pte_t entry;
-> > > > >  
-> > > > >  		/*
-> > > > >  		 * This really shouldn't fail, because the page is there
-> > > > >  		 * in the page tables. But it might just be unreadable,
-> > > > >  		 * in which case we just give up and fill the result with
-> > > > > -		 * zeroes.
-> > > > > +		 * zeroes. On architectures with software "accessed" bits,
-> > > > > +		 * we would take a double page fault here, so mark it
-> > > > > +		 * accessed here.
-> > > > >  		 */
-> > > > > +		if (arch_faults_on_old_pte() && !pte_young(vmf->orig_pte)) {
-> > > > > +			spin_lock(vmf->ptl);
-> > > > > +			if (likely(pte_same(*vmf->pte, vmf->orig_pte))) {
-> > > > > +				entry = pte_mkyoung(vmf->orig_pte);
-> > > > > +				if (ptep_set_access_flags(vma, addr,
-> > > > > +							  vmf->pte, entry, 0))
-> > > > > +					update_mmu_cache(vma, addr, vmf->pte);
-> > > > > +			}
-> > > > 
-> > > > I don't follow.
-> > > > 
-> > > > So if pte has changed under you, you don't set the accessed bit, but never
-> > > > the less copy from the user.
-> > > > 
-> > > > What makes you think it will not trigger the same problem?
-> > > > 
-> > > > I think we need to make cow_user_page() fail in this case and caller --
-> > > > wp_page_copy() -- return zero. If the fault was solved by other thread, we
-> > > > are fine. If not userspace would re-fault on the same address and we will
-> > > > handle the fault from the second attempt.
-> > > 
-> > > It would be nice to clarify the semantics of this function and do as
-> > > you suggest but the current comment is slightly confusing:
-> > > 
-> > > 	/*
-> > > 	 * If the source page was a PFN mapping, we don't have
-> > > 	 * a "struct page" for it. We do a best-effort copy by
-> > > 	 * just copying from the original user address. If that
-> > > 	 * fails, we just zero-fill it. Live with it.
-> > > 	 */
-> > > 
-> > > Would any user-space rely on getting a zero-filled page here instead of
-> > > a recursive fault?
-> > 
-> > I don't see the point in zero-filled page in this case. SIGBUS sounds like
-> > more appropriate response, no?
+
+
+On 09/19/2019 05:33 PM, Vignesh Raghavendra wrote:
+> Hi Tudor
 > 
-> I think misunderstood your comment. So, if !pte_same(), we should let
-> userspace re-fault. This wouldn't be a user ABI change and it is
-> bounded, can't end up in an infinite re-fault loop.
 
-Right. !pte_same() can only happen if we raced with somebody else.
-I cannot imagine situation when the race will happen more than few times
-in a row.
+Hi, Vignesh,
 
-> In case of a __copy_from_user_inatomic() error, SIGBUS would make more
-> sense but it changes the current behaviour (zero-filling the page). This
-> can be left for a separate patch, doesn't affect the arm64 case here.
+> [...]
+> 
+> On 17-Sep-19 9:25 PM, Tudor.Ambarus@microchip.com wrote:
+>> +static int spi_nor_write_16bit_sr_and_check(struct spi_nor *nor, u8 status_new,
+>> +					    u8 mask)
+>> +{
+>> +	int ret;
+>> +	u8 *sr_cr = nor->bouncebuf;
+>> +	u8 cr_written;
+>> +
+>> +	/* Make sure we don't overwrite the contents of Status Register 2. */
+>> +	if (!(nor->flags & SNOR_F_NO_READ_CR)) {
+> Assuming SNOR_F_NO_READ_CR is not set...
+> 
+when SNOR_F_NO_READ_CR is not set, I read the Status Register 2 on the next line:
 
-I think it's safer to leave it as is. Maybe put WARN_ON_ONCE() or
-something. There can be some obscure use-case that I don't see.
+>> +		ret = spi_nor_read_cr(nor, &sr_cr[1]);
+>> +		if (ret)
+>> +			return ret;
+>> +	} else if (nor->flash.quad_enable) {
+>> +		/*
+>> +		 * If the Status Register 2 Read command (35h) is not
+>> +		 * supported, we should at least be sure we don't
+>> +		 * change the value of the SR2 Quad Enable bit.
+>> +		 *
+>> +		 * We can safely assume that when the Quad Enable method is
+>> +		 * set, the value of the QE bit is one, as a consequence of the
+>> +		 * nor->flash.quad_enable() call.
+>> +		 *
+>> +		 * We can safely assume that the Quad Enable bit is present in
+>> +		 * the Status Register 2 at BIT(1). According to the JESD216
+>> +		 * revB standard, BFPT DWORDS[15], bits 22:20, the 16-bit
+>> +		 * Write Status (01h) command is available just for the cases
+>> +		 * in which the QE bit is described in SR2 at BIT(1).
+>> +		 */
 
--- 
- Kirill A. Shutemov
+when SNOR_F_NO_READ_CR is set and nor->flash.quad_enable != NULL, Status
+Register 2 (CR) is equal to CR_QUAD_EN_SPAN.
 
+>> +		sr_cr[1] = CR_QUAD_EN_SPAN;
+>> +	} else {
+
+if SNOR_F_NO_READ_CR is set and nor->flash.quad_enable == NULL we don't need to
+enable Quad Mode, so Status Register 2 is 0.
+
+>> +		sr_cr[1] = 0;
+>> +	}
+>> +
+> CR_QUAD_EN_SPAN will not be in sr_cr[1] when we reach here. So code
+> won't enable quad mode.
+> 
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
