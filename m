@@ -2,89 +2,120 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 79685B8D0C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 10:40:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37A0FB8D2F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 10:50:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H4Bt0dFjEtUg10W18jLWvHRF0CH/Z/93fAwNxOVmWFs=; b=oGloqmyNwpDpxm
-	TErRX27i4aWV7LDgOsVuMxalkWsM8D3m+R4legx8apFuSDi4582sE7KtvAlauz21rLC/S/D+350Ze
-	G4TpysGoYYRNW4lyW7vIgk4LOjQyiJzr/aOn9q71VFGWEocgsoX9FnLXfdloKrnwyGImoMwWRpUi5
-	WmqCdHXLRpGwDWVdGIxaIKc+WIK12jtbNpG9LJ0YHmSD+Um9ATOgsZyy33ln8QLx7k5CCvR/YgBee
-	0utpDThjtC+9mCUautLPZz5FuZFbgYklYlVNBJB/AbcvxUQ0L0JhIWbe1jAqNuyQBNwPkF9AQeUA2
-	ia/YvwpNIBaJOzB/fhaA==;
+	List-Owner; bh=M+bNsonntZq/C+lzK8oLinkwMe8kURP08yJnA2O/kys=; b=DT8O1G9SpbaUoc
+	558iCn3ZyPbDSIKYO8zTOahX549xD+tNmk2O0fRE99rtacR//Znc0WXTm5qnkd9RLqqrIp8yEY8s3
+	nHyEajrDQdl70W/40gEv/DBlzE3kEAnAWJkIUgPnRhxdjMpSWO769wOXeT9y280avbkNFkklGQvg1
+	xnvuvaJTmKbjFmOX9NIf28kQsNrN4YJvkWuI4Dob22+qKAGWhAi+ULXFlcrkiBRnuqJT8Rg5OI+jj
+	52P3le6pQi6+NYXy3eByCqBa1BNhNY+RCp6NWXtzO6VYofNtlNG/uEcnwle+AicKz/1MGLjIH34XW
+	m+iPofVBG7Uc/JyoE8Vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBESX-0000Gx-RF; Fri, 20 Sep 2019 08:40:09 +0000
-Received: from mail-ed1-f65.google.com ([209.85.208.65])
+	id 1iBEcH-0004Pf-Bp; Fri, 20 Sep 2019 08:50:13 +0000
+Received: from mail-eopbgr80075.outbound.protection.outlook.com ([40.107.8.75]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBESL-0000Ge-4H
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 08:39:58 +0000
-Received: by mail-ed1-f65.google.com with SMTP id r9so5579552edl.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 20 Sep 2019 01:39:56 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=WCr8CPJIbQdsDFVeXzCBJIO+AejaAKprgzLbff1WJj4=;
- b=EvdWwwe+3ktXsEtY1hvcKIoAvrvy9HLRv30DOT4qauN29NBxpmWQicFPU2goPvMQNy
- Z8uZWi9OTw4PKuZj6J0j5khY88o4/dZ/12AyJOvhLYmk7PGxMSn8jcZfO987dViDBaOH
- fJMOGKktIlq+K3Rf26pMJz7d2DW4aRMmzimB7+UhOA258mrZwKunXkDaQ7ZeiqvISbtT
- czk/Mdx3CH9NoD5jMManzeMNvwkKeM1hTM5zilRGVQZzVNpt8VkQqVeWiwItjl9iQmRA
- kLUj48oHMkU6+QxINlCxXSa/9bgrTAPMZg7kprXc006sVhvZny++2zDf26XNFiWrCLgA
- WZkA==
-X-Gm-Message-State: APjAAAVH6YDBIuNNn9GHXXgxJaSgHW/PKwj1DdImc/+wKfB3llHazl0a
- oLvJz2yFlPCeQYBQL+LpboueoCJuqzc=
-X-Google-Smtp-Source: APXvYqyKUib3YbH86kQ6UUMFpZJeZTy6Bwhd15TN99AKqi/1aLmdmDEBvTN7jez+vhYhVa+EBQNRTA==
-X-Received: by 2002:a17:906:255b:: with SMTP id
- j27mr18184362ejb.96.1568968794441; 
- Fri, 20 Sep 2019 01:39:54 -0700 (PDT)
-Received: from mail-wr1-f49.google.com (mail-wr1-f49.google.com.
- [209.85.221.49])
- by smtp.gmail.com with ESMTPSA id x17sm205142edl.64.2019.09.20.01.39.53
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 20 Sep 2019 01:39:53 -0700 (PDT)
-Received: by mail-wr1-f49.google.com with SMTP id o18so5812118wrv.13
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 20 Sep 2019 01:39:53 -0700 (PDT)
-X-Received: by 2002:a5d:668d:: with SMTP id l13mr11159369wru.279.1568968793107; 
- Fri, 20 Sep 2019 01:39:53 -0700 (PDT)
+ id 1iBEc3-0004Er-UX
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 08:50:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=eHrAYpbJ7yM1A7ebyppihakOEJkUqH6B7Dz6SoINgHi/Zv0CwbxvnH7MhDk13vQEDeSbzS+p2Bh6w4acPY4XEosS7xpFkp80XoFgjRFRZKBzIx/KsaAD9D9ke1Eu/DAfyngaWyFSo0KRtGAh3Q4nMZ/qQ4hnb5tQZbfB7IbVpLoFueiL18QH/THynsVWWsEnVAc+gwZZVCsgbIYIgEOwR0RUd+c70MujjrTxyN44IKAnKspt4dcAvBQr/QQLpL4uaxf9ga5p+TtC6weE3IqI19mRUs9YCXZY2ToteGCxryAEPPDzxxCpfQNUdXdpyUrOPw8ANyXqz4+pT3qTIS1X7A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=TL6lnL4ivLzmv6u+ZIQrRcMDG88TCOHTE/3mxQXKiwM=;
+ b=AMAocfLfk1xtmGHfF6q/FLtNUrltlTBp8CMj1+WBkQGV1J61vhjIFvZ3EeJByaIoYJZzJ9DQz0afBkI3yr4jysKWFA/qMepb6usA8znprebe82Fl8zKLHrwAJqJ54lvuUiuIB6vm8vJJfzJh/8F4gNY1/2vygNY+p4kmPyDdRHHySZ2AuHF0YZj+7cYIhVMIH2lvZuceD3Hyf1LyIgy7LKdIGFA686DVNO3bvs9C8vVCy5EuPRKWMXAV8GqQnTgmhwilwsev23SeKd8+HUM/KUH1D7Z1TZhTo1W0i6tVEvwnDQdjBKQlJjs1rbfGJSq65rflqSu5+VuWf0+zx/r2Nw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=TL6lnL4ivLzmv6u+ZIQrRcMDG88TCOHTE/3mxQXKiwM=;
+ b=lVqbg1WOJr+jBTbsbFDDfHrEciHPFoBJ/Ot6PfgYKS70W7X+SbdrdwC1nyR2GE91D7pNC3UNaf3uXJOGadoNZPdSAI7F815TBMVbCicYcHpIkNFqYdEenRXeMRrdhf4d6YjkZ/CKM3pm1aR+hQuSrCJfvovKrj1A/ckd2XDyu+o=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3769.eurprd04.prod.outlook.com (52.134.71.140) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2284.23; Fri, 20 Sep 2019 08:49:54 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::8958:299c:bc54:2a38]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::8958:299c:bc54:2a38%7]) with mapi id 15.20.2284.023; Fri, 20 Sep 2019
+ 08:49:54 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: =?utf-8?B?VXdlIEtsZWluZS1Lw7ZuaWc=?= <u.kleine-koenig@pengutronix.de>
+Subject: RE: [PATCH] pwm: mxs: use devm_platform_ioremap_resource() to
+ simplify code
+Thread-Topic: [PATCH] pwm: mxs: use devm_platform_ioremap_resource() to
+ simplify code
+Thread-Index: AQHVPQnp3vOphZGlaUm/vNIIqkC+RKbPuYMAgDQEZACABe0wAIAq+wHQ
+Date: Fri, 20 Sep 2019 08:49:53 +0000
+Message-ID: <DB3PR0402MB39167A2F613F92FD8CA145C8F5880@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <20190718013205.24919-1-Anson.Huang@nxp.com>
+ <AM0PR04MB42116F0753C9C6A619A2D8EC80C80@AM0PR04MB4211.eurprd04.prod.outlook.com>
+ <DB3PR0402MB3916423A6E334EDD4C06B884F5AB0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <20190824002634.nfrhof3kpsrcc742@pengutronix.de>
+In-Reply-To: <20190824002634.nfrhof3kpsrcc742@pengutronix.de>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 07061f5f-f715-474f-565b-08d73da781b0
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600167)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3769; 
+x-ms-traffictypediagnostic: DB3PR0402MB3769:|DB3PR0402MB3769:
+x-ms-exchange-purlcount: 1
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB37696F556964CDA727F32685F5880@DB3PR0402MB3769.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1417;
+x-forefront-prvs: 0166B75B74
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(136003)(366004)(346002)(39860400002)(376002)(199004)(189003)(966005)(478600001)(14454004)(45080400002)(476003)(6246003)(11346002)(4326008)(486006)(44832011)(33656002)(446003)(256004)(229853002)(86362001)(6436002)(6116002)(3846002)(71190400001)(71200400001)(25786009)(55016002)(6306002)(9686003)(2906002)(54906003)(66446008)(316002)(66556008)(64756008)(76176011)(5660300002)(52536014)(76116006)(6506007)(74316002)(66946007)(66476007)(7696005)(99286004)(81166006)(8676002)(81156014)(8936002)(66066001)(186003)(26005)(6916009)(305945005)(102836004)(7736002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3769;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: YF5rfLm8nm0DAaXgU4dJt02tSJJBT0o6vkKNS3eimk+9pstyTcFxm4fY9ymJP58bSSsV2z7AvH+mkh+tJ+Sd1jU4eaptLrqqzXI/3QbnwFX7oRqnlTpoTAnL5qLFfgvCZE0zRy2VBj6u5vMLFjZVtE4IKTcs5BCGJC2e21Vnz6VzF9CghgtQr+xBYZDrsL5DqiRMuAsRNmxQjjv5wEuWw2dzavmQkdXUGCEGse20gGbIajWOkLbKPx99H+gTgf0L3FRfl/J36puHU+nEaxwX5//2LRppLPQeHhLRQjsv55OXRraKp4HEygR5Qw7dU1oOVbQM3QXMfZ9NIsfmGF+EuwxNHpeiQQXapTw3hhPwP8OIa9ExsylvwWFgmLLP6pXTBa0PX5Fcve7AiXQRF/qC/0eyfP8FqaCXzz/EOJSclyg=
 MIME-Version: 1.0
-References: <20190920083237.GA11657@plaes.org>
-In-Reply-To: <20190920083237.GA11657@plaes.org>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Fri, 20 Sep 2019 16:39:41 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65JrZXV9vb6pbCHfJvE3AawBxcWEpQH7C3woxnXpbN7vw@mail.gmail.com>
-Message-ID: <CAGb2v65JrZXV9vb6pbCHfJvE3AawBxcWEpQH7C3woxnXpbN7vw@mail.gmail.com>
-Subject: Re: [BUG] sun4i: axp209: no atomic i2c transfer handler
-To: Priit Laes <plaes@plaes.org>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 07061f5f-f715-474f-565b-08d73da781b0
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Sep 2019 08:49:53.9125 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: BjxKXvqIQXyws/gKRPInHRn6dHDR2bV1gENa7RYuilusZUfnuGtd+/1TvcdRqwZ/2e+/Oi+nynElNGseljR+3w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3769
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_013957_179823_A77E3EA1 
-X-CRM114-Status: GOOD (  11.82  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190920_015000_063753_7A743588 
+X-CRM114-Status: GOOD (  12.21  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.65 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (wens213[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wens213[at]gmail.com)
+ no trust [40.107.8.75 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.65 listed in wl.mailspike.net]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,62 +127,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wolfram Sang <wsa@the-dreams.de>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>, linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-i2c@vger.kernel.org, priit.laes@paf.com,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ "linux-pwm@vger.kernel.org" <linux-pwm@vger.kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "thierry.reding@gmail.com" <thierry.reding@gmail.com>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 20, 2019 at 4:32 PM Priit Laes <plaes@plaes.org> wrote:
->
-> Heya!
->
-> I have seen following warning message for few times when shutting down the
-> machine (Olinuxino Lime2-emmc) running the mainline kernel.
->
-> [snip]
-> WARNING: CPU: 0 PID: 1 at drivers/i2c/i2c-core.h:41 i2c_transfer+0xe8/0xf4
-> No atomic I2C transfer handler for 'i2c-1'
-> Modules linked in: enc28j60
-> CPU: 0 PID: 1 Comm: systemd-shutdow Not tainted 5.3.0-rc8-paf+ #28
-> Hardware name: Allwinner sun7i (A20) Family
-> [<c010ee08>] (unwind_backtrace) from [<c010b5b8>] (show_stack+0x10/0x14)
-> [<c010b5b8>] (show_stack) from [<c06bf2b4>] (dump_stack+0x88/0x9c)
-> [<c06bf2b4>] (dump_stack) from [<c011e044>] (__warn+0xd4/0xf0)
-> [<c011e044>] (__warn) from [<c011dbe4>] (warn_slowpath_fmt+0x48/0x6c)
-> [<c011dbe4>] (warn_slowpath_fmt) from [<c051ce20>] (i2c_transfer+0xe8/0xf4)
-> [<c051ce20>] (i2c_transfer) from [<c051ce78>] (i2c_transfer_buffer_flags+0x4c/0x70)
-> [<c051ce78>] (i2c_transfer_buffer_flags) from [<c046c2a4>] (regmap_i2c_write+0x14/0x30)
-> [<c046c2a4>] (regmap_i2c_write) from [<c0468180>] (_regmap_raw_write_impl+0x588/0x63c)
-> [<c0468180>] (_regmap_raw_write_impl) from [<c0468b50>] (regmap_write+0x3c/0x5c)
-> [<c0468b50>] (regmap_write) from [<c046f554>] (axp20x_power_off+0x2c/0x38)
-> [<c046f554>] (axp20x_power_off) from [<c013e8a4>] (sys_reboot+0x14c/0x1e0)
-> [<c013e8a4>] (sys_reboot) from [<c0101000>] (ret_fast_syscall+0x0/0x54)
-> Exception stack(0xef04ffa8 to 0xef04fff0)
-> ffa0:                   00427954 00000000 fee1dead 28121969 4321fedc 16814300
-> ffc0: 00427954 00000000 00000000 00000058 bec15c78 00000000 bec15c10 004266f8
-> ffe0: 00000058 bec15b6c b6f69d45 b6eeb746
-> [/snip]
->
-> The enc28j60 module is SPI, so it has nothing to do with the message.
->
-> Any ideas where to look?
-
-This looks like it's complaining that i2c-1 (i2c-mv64xxx) does not have
-.master_xfer_atomic , which should be used in atomic contexts.
-
-include/linux/i2c.h says:
-
-   @master_xfer_atomic: same as @master_xfer. Yet, only using atomic context
-     so e.g. PMICs can be accessed very late before shutdown. Optional.
-
-ChenYu
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+UGluZy4uLiwgMSBtb250aCBwYXNzZWQsIE5PVCBzdXJlIHdoYXQgaXMgdGhlIGxhdGVzdCBzdGF0
+dXMuDQoNCkFuc29uDQoNCj4gT24gVHVlLCBBdWcgMjAsIDIwMTkgYXQgMDU6NTY6NDBBTSArMDAw
+MCwgQW5zb24gSHVhbmcgd3JvdGU6DQo+ID4gR2VudGxlIHBpbmcuLi4NCj4gDQo+IE15IGltcHJl
+c3Npb25bMV0gaXMgdGhhdCBUaGllcnJ5IGNvbGxlY3RzIHBhdGNoZXMgaW4gYnVsayBvbmNlIG9y
+IHR3aWNlIHBlcg0KPiByZWxlYXNlIGN5Y2xlLiBUaGUgbGFzdCB0d28gc3VjaCBidWxrcyB3ZXJl
+IGJldHdlZW4gNS4yLXJjNiBhbmQNCj4gNS4yLXJjNyBhbmQgaW4gdGhlIDUuMiBtZXJnZSB3aW5k
+b3cuIFNvIGdpdmVuIHdlJ3JlIGF0IHY1LjMtcmM1IG5vdyBJIGV4cGVjdA0KPiBzb21lIGFjdGlv
+biBzb29uIDotKQ0KPiANCj4gPiA+ID4gRnJvbTogQW5zb24uSHVhbmdAbnhwLmNvbSA8QW5zb24u
+SHVhbmdAbnhwLmNvbT4NCj4gPiA+ID4gU2VudDogVGh1cnNkYXksIEp1bHkgMTgsIDIwMTkgOToz
+MiBBTQ0KPiA+ID4gPg0KPiA+ID4gPiBVc2UgdGhlIG5ldyBoZWxwZXIgZGV2bV9wbGF0Zm9ybV9p
+b3JlbWFwX3Jlc291cmNlKCkgd2hpY2ggd3JhcHMNCj4gPiA+ID4gdGhlDQo+ID4gPiA+IHBsYXRm
+b3JtX2dldF9yZXNvdXJjZSgpIGFuZCBkZXZtX2lvcmVtYXBfcmVzb3VyY2UoKSB0b2dldGhlciwg
+dG8NCj4gPiA+ID4gc2ltcGxpZnkgdGhlIGNvZGUuDQo+ID4gPiA+DQo+ID4gPiA+IFNpZ25lZC1v
+ZmYtYnk6IEFuc29uIEh1YW5nIDxBbnNvbi5IdWFuZ0BueHAuY29tPg0KPiA+ID4NCj4gPiA+IFJl
+dmlld2VkLWJ5OiBEb25nIEFpc2hlbmcgPGFpc2hlbmcuZG9uZ0BueHAuY29tPg0KPiANCj4gQWNr
+ZWQtYnk6IFV3ZSBLbGVpbmUtS8O2bmlnIDx1LmtsZWluZS1rb2VuaWdAcGVuZ3V0cm9uaXguZGU+
+DQo+IA0KPiBCZXN0IHJlZ2FyZHMNCj4gVXdlDQo+IA0KPiBbMV0gZnJvbSBnaXQgbG9nIC0tY29t
+bWl0dGVyPVRoaWVycnkgLS1mb3JtYXQ9JWNpIGRyaXZlcnMvcHdtIHwgY3V0IC1kXCAgLWYxIHwN
+Cj4gdW5pcSAtYw0KPiAtLQ0KPiBQZW5ndXRyb25peCBlLksuICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgfCBVd2UgS2xlaW5lLUvDtm5pZyAgICAgICAgICAgIHwNCj4gSW5kdXN0cmlhbCBMaW51
+eCBTb2x1dGlvbnMgICAgICAgICAgICAgICAgIHwNCj4gaHR0cHM6Ly9ldXIwMS5zYWZlbGlua3Mu
+cHJvdGVjdGlvbi5vdXRsb29rLmNvbS8/dXJsPWh0dHAlM0ElMkYlMkZ3d3cucA0KPiBlbmd1dHJv
+bml4LmRlJTJGJmFtcDtkYXRhPTAyJTdDMDElN0NhbnNvbi5odWFuZyU0MG54cC5jb20lN0MzNA0K
+PiBlZDc4ZTViOTA2NDJlNjE3M2QwOGQ3MjgyOWJjNjUlN0M2ODZlYTFkM2JjMmI0YzZmYTkyY2Q5
+OWM1YzMwMTYzDQo+IDUlN0MwJTdDMCU3QzYzNzAyMjAzMjAyNjc1NTMxMCZhbXA7c2RhdGE9Uk0w
+RGpOOUIlMkZvbXhTU2xHcA0KPiBhZHhYNTB5WWVzTmpPQUZUWGFnaGt4eU9DUSUzRCZhbXA7cmVz
+ZXJ2ZWQ9MCAgfA0KX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtYXJtLWtlcm5lbAo=
