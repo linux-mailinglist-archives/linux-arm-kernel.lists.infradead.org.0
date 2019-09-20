@@ -2,92 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 605D2B99DD
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Sep 2019 00:56:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01277B9ABB
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Sep 2019 01:31:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=33sZ9uaw9fZbM2HygkgWnfY+032W+YO83Y6wjs7Cr44=; b=qtBcbPpw2YBXzF
-	heD3fqHIHDbpAzkGWed4hL7r/Hyd10Y5a8ZgElbftAe9a5WZuJ6OYyTUYD20sfk2PBPzLd+feTIoR
-	Lk3y57yAv30WiFzbr7E1ZBkVMMHWTFQdGh6TKNd6BaWdII4HKenR2slJP9YyWbwDbJ0HfCu93fbjr
-	iG/MNACxkivPOqsuyNjCB4yq7RsAWQGZemtlPBB7kB4Tgty2wtm8Bdz4nnmx6PLYA/UkmCaq2wFzd
-	K0dDeor7vMFN76DxT1YqOJ1o+pJl4sQ5aRuUZvQNq9RDLO6Ac5GbyxW9aDpvJL7cZH07+AAfqEfTf
-	BUMbd20nBT7rvbMeIFSA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XthkSqHPOqz1g5MN0TDD+45gCMarfZ4bk2ZrCQJ9tms=; b=EYM6dGhwPpAhlI
+	c1wjAtxnF6aCrH092J6KiKWtytaOf1bo12ILUXLsYiKXUe2W5FeVM6hYiYwTC8AMgsVF9+hoEuqjQ
+	LFFunMXqnHyRLK+t6AdJlsOWPP15QKVY6QY8ec4fdkhZAxcWxwfZZqJoRQRgUfdo+wNP7+eeFSUfh
+	xXvJB3bMgBJEDDMjSe+njHQkfSyk6pAiK2ir/JuGA8cz0q2FMT0YIiWH+gu6TUIy0r2No0ZsCnXpu
+	9YlYiHFjStXV5Zq7vEzwXluCKsyjZyB1EggKjc13+RlG/b4w8Tn9Qbzi5GWslvpwbijCPfuhxYQHH
+	Hdcyb/icaoLtglfV4qVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBRoZ-0004fm-E6; Fri, 20 Sep 2019 22:55:47 +0000
-Received: from mout.gmx.net ([212.227.15.19])
+	id 1iBSMm-0008Tq-V9; Fri, 20 Sep 2019 23:31:08 +0000
+Received: from perceval.ideasonboard.com
+ ([2001:4b98:dc2:55:216:3eff:fef7:d647])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBRoS-0004fM-Ex
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 22:55:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1569020123;
- bh=fg+Fhu6V5VJyuACGUBLseXFjv2kSmmWXdJJcK6kyNNY=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=gKJUcSTOAUmRIRlqF0chMUVnkrHWKQcJ1D9WFftnxHSmTtH5vy+iIofPK6i8Oxw4s
- QFBEwkr9HpJlANo0lk/+Bn7LmNdiIz+meEpt5xTKVHBcTqh8fRjpYJkZ8kd2YhDpLu
- BmCgQyASHJHhZCeq4KDW/n15Q4IRATP5YyJ1Y85I=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.1.162] ([37.4.249.90]) by mail.gmx.com (mrgmx004
- [212.227.17.190]) with ESMTPSA (Nemesis) id 1MIMbO-1iNZIV2E0C-00EKWI; Sat, 21
- Sep 2019 00:55:23 +0200
-Subject: Re: [PATCH] Revert "ARM: bcm283x: Switch V3D over to using the PM
- driver instead of firmware."
-To: Florian Fainelli <f.fainelli@gmail.com>, Eric Anholt <eric@anholt.net>,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- boris.brezillon@bootlin.com
-References: <1567957493-4567-1-git-send-email-wahrenst@gmx.net>
- <09f15af6-a849-a5eb-ac39-f4cdb07ebfb9@gmail.com>
-From: Stefan Wahren <wahrenst@gmx.net>
-Message-ID: <3b5db3d9-147b-6cbe-a3be-16569b5fa5b0@gmx.net>
-Date: Sat, 21 Sep 2019 00:55:21 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iBSMd-0008Sm-Lr; Fri, 20 Sep 2019 23:31:03 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id ACB032F9;
+ Sat, 21 Sep 2019 01:30:51 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1569022251;
+ bh=RZAv6t1HDBJx8+GXuL4a8GG/MLE/yBiOrDBlPfyn46g=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=CDdGwhbD2sNE4DULnISJRdn0z6Ed/PjaX+0RLsZfIuu8zLp0el958seM98a1ZXJPM
+ 3MExTQSFMt3niqrfD0awAJ/lYo8u92kNUgqGMN4PufvSTuLqgv8eBXvXtkv1cw+0na
+ bc/X8u/Aw8vrQfNyJfzm/edv++C3VpjWJHnSziGs=
+Date: Sat, 21 Sep 2019 02:30:42 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Subject: Re: [RFC, v3, 1/4] dt-binding: mt8183: Add Mediatek MDP3 dt-bindings
+Message-ID: <20190920233042.GI12672@pendragon.ideasonboard.com>
+References: <20190911093406.5688-1-bibby.hsieh@mediatek.com>
+ <20190911093406.5688-2-bibby.hsieh@mediatek.com>
 MIME-Version: 1.0
-In-Reply-To: <09f15af6-a849-a5eb-ac39-f4cdb07ebfb9@gmail.com>
-Content-Language: en-US
-X-Provags-ID: V03:K1:fvhcLD5NIXoijsnJbghoo73iDEDtCLM7Oh+qleIkLeb3h9niSfO
- 0wsgJf0BMb1IqJfXSpk9EOsD6qIGQC/bQYWnAnWEbr8pRuCxWcj2XZg7hpovodcHsco7SGL
- PpzmESTGMs87zGwuwB2NnQ461gmxw7mfFRDDftU7fBaMogkzwtpjD51Gn14I5oQJcJaJjnm
- D5LKHnEU5mWFJ51PvyLgA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:oGkxg6wEmkY=:UTTqj+UGIQ/jKVxdAI6upI
- f52frNj8xcvkOpGY2YZquOhvfG9p7CmL5pV+VmsTHYQQclc0llluyw0JRyKDmyY9UgbelUXn7
- yaN6FBb7ORlvVbe9LmjDhLEDYNuOU61hRaOW3b/7LUm1qmLq5Og+0Ml9wqvzLRMhu3bRYmbRS
- MQLRj6W+SEPQxBp/CxAIj98ShQFEWiOs3XpVCUz7EVt2zcnKz6zbMxKZRLE5KtaG/dmjmAeqb
- d1lene6LwfVLetV/29jKpEQOlbjiktJCZwi/EWzW9Y2KISKs5Tx/Oi+9Wg6jM/4NEv/vOzvKw
- ehaAVQnQLrYVxD1FMdr5PtbGhsc8r7Nm0+IXLPw1n+cPIFc4B8nvNpt/baUl9ZmIiP4NuNOJ/
- DXXp01j4UGc54lyVeCAgKPvDJYTewq58eZuthTm+eVAFGSWRNbY4IbYIL+Cm5u0Zu/oHQLrQN
- lv8ymHuJUl4+0iL6wKZme83zMfQpWvD7D0MoNQ2cBuHTv+xrN2020fGc+eIHgGkC5rcZrHkR6
- JmlgETDL5ILhdkVU4w5Cw0FxLAr5nzS3KW+rVH3iAUEVMwpNERo2MheQ5bB4rCCm183Hc2QTF
- 1+RgGWXW5w/RKtS6UMIn2xiV6+bgwBFjHt2jc9tnEuF1iiFLAZwEImAlDbpisoBArXuJuWrGg
- 8H8Cfz43UFJIqTarQytvu4Xzc2uOfAtzU3kVblKbzTxUibQIaKI8spaBBlK/sQJWjxyT+tDUV
- lKPLUbmOJi5A85r7fNUcU8KWo5DHVXZVRxdRAP6/r5Gqzf7IBvisIB7R5kS4GYLNOx/sm0TLh
- pIqC/lzuHhovlVX3EM05AElKuPS8kiO818jGhaPIrCf8Tm+0I0J/qz9JoR86YMl/RpCT48nVl
- NeLhQs1jdvNY6xEsbd38wq23uj/6dFfCYTLWLg9wKvj6WeUkNOF2sOHKbiSNTgxoa+SDeoAm7
- fvzu1j4Bbl1o10sVcPm6zTpUy/c9K3GcpiUZsEjjY1mkMFTtlVv4mZik20oOCGCFxXhAb51+7
- wYJULKJpqOfyo3jHuZZ1CqLFWEvp6xtH4XzSbrJW9HCfadWHCf1Z7SfJBXDeXZsyt43W/Pq44
- pIAGu8HxtI5DDTopkUegy26Luis1AjbHl+uIZSMbwKc9iZIFGBnV1XvaHPjptJ0RRjhhdl5me
- rVKeoAHKcFrGRoyX7deeYi2DM8G+XJi2FxZRPc6lT5HD/bJeUc22K9Sx6Ld2RUmzh+tSOLbWR
- xXRhWX9z6KucEV/wma4U/AMtFTEOsQGKbiJlyU9KxeUOc4XdrNnN/RiIjcJI=
+Content-Disposition: inline
+In-Reply-To: <20190911093406.5688-2-bibby.hsieh@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_155540_835143_09D9CE39 
-X-CRM114-Status: GOOD (  13.79  )
+X-CRM114-CacheID: sfid-20190920_163100_024002_3782D05F 
+X-CRM114-Status: GOOD (  16.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.19 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -106,45 +73,261 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stable@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org
+Cc: laurent.pinchart+renesas@ideasonboard.com, Rynn.Wu@mediatek.com,
+ Jerry-ch.Chen@mediatek.com, jungo.lin@mediatek.com, hans.verkuil@cisco.com,
+ Ping-Hsun Wu <ping-hsun.wu@mediatek.com>, frederic.chen@mediatek.com,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ Daoyuan.Huang@mediatek.com, holmes.chiou@mediatek.com, sj.huang@mediatek.com,
+ yuzhao@chromium.org, linux-mediatek@lists.infradead.org,
+ matthias.bgg@gmail.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, Sean.Cheng@mediatek.com,
+ srv_heupstream@mediatek.com, tfiga@chromium.org, christie.yu@mediatek.com,
+ zwisler@chromium.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Florian,
+Hi Bibby,
 
-Am 20.09.19 um 19:52 schrieb Florian Fainelli:
-> On 9/8/19 8:44 AM, Stefan Wahren wrote:
->> Since release of the new BCM2835 PM driver there has been several reports
->> of V3D probing issues. This is caused by timeouts during powering-up the
->> GRAFX PM domain:
->>
->>   bcm2835-power: Timeout waiting for grafx power OK
->>
->> I was able to reproduce this reliable on my Raspberry Pi 3B+ after setting
->> force_turbo=1 in the firmware configuration. Since there are no issues
->> using the firmware PM driver with the same setup, there must be an issue
->> in the BCM2835 PM driver.
->>
->> Unfortunately there hasn't been much progress in identifying the root cause
->> since June (mostly in the lack of documentation), so i decided to switch
->> back until the issue in the BCM2835 PM driver is fixed.
->>
->> Link: https://github.com/raspberrypi/linux/issues/3046
->> Fixes: e1dc2b2e1bef (" ARM: bcm283x: Switch V3D over to using the PM driver instead of firmware.")
->> Cc: stable@vger.kernel.org
->> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-> Do you want me to pick up this change directly, or would you want to
-> issue a pull request for 5.4-rcX with other fixes?
+Thank you for the patch.
 
-there aren't any other fixes, please pick up this directly.
+On Wed, Sep 11, 2019 at 05:34:03PM +0800, Bibby Hsieh wrote:
+> From: daoyuan huang <daoyuan.huang@mediatek.com>
+> 
+> This patch adds DT binding document for Media Data Path 3 (MDP3)
+> a unit in multimedia system used for scaling and color format convert.
+> 
+> Signed-off-by: Ping-Hsun Wu <ping-hsun.wu@mediatek.com>
+> Signed-off-by: daoyuan huang <daoyuan.huang@mediatek.com>
+> ---
+>  .../bindings/media/mediatek,mt8183-mdp3.txt   | 201 ++++++++++++++++++
+>  1 file changed, 201 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/media/mediatek,mt8183-mdp3.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/media/mediatek,mt8183-mdp3.txt b/Documentation/devicetree/bindings/media/mediatek,mt8183-mdp3.txt
+> new file mode 100644
+> index 000000000000..0d15326d12c1
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/media/mediatek,mt8183-mdp3.txt
+> @@ -0,0 +1,201 @@
+> +* Mediatek Media Data Path 3
+> +
+> +Media Data Path 3 (MDP3) is used for scaling and color space conversion.
+> +
+> +Required properties (controller node):
+> +- compatible: "mediatek,mt8183-mdp"
 
-Thanks
+This compatible string isn't used in the example below nor in any other
+patch within this series. Did you mean "mediatek,mt8183-mdp3" ?
 
-Stefan
+> +- mediatek,scp: the node of system control processor (SCP), using the
+> +  remoteproc & rpmsg framework, see
+> +  Documentation/devicetree/bindings/remoteproc/mtk,scp.txt for details.
+> +- mediatek,mmsys: the node of mux(multiplexer) controller for HW connections.
+> +- mediatek,mm-mutex: the node of sof(start of frame) signal controller.
+> +- mediatek,mailbox-gce: the node of global command engine (GCE), used to
+> +  read/write registers with critical time limitation, see
+> +  Documentation/devicetree/bindings/mailbox/mtk-gce.txt for details.
+> +- mboxes: mailbox number used to communicate with GCE.
+> +- gce-subsys: sub-system id corresponding to the register address.
+> +- gce-event-names: in use event name list, used to correspond to event IDs.
+> +- gce-events: in use event IDs list, all IDs are defined in
+> +  'dt-bindings/gce/mt8183-gce.h'.
+> +
+> +Required properties (all function blocks, child node):
+> +- compatible: Should be one of
+> +        "mediatek,mt8183-mdp-rdma"  - read DMA
+> +        "mediatek,mt8183-mdp-rsz"   - resizer
+> +        "mediatek,mt8183-mdp-wdma"  - write DMA
+> +        "mediatek,mt8183-mdp-wrot"  - write DMA with rotation
+> +        "mediatek,mt8183-mdp-ccorr" - color correction with 3X3 matrix
+> +- reg: Physical base address and length of the function block register space
+> +- clocks: device clocks, see
+> +  Documentation/devicetree/bindings/clock/clock-bindings.txt for details.
+> +- power-domains: a phandle to the power domain, see
+> +  Documentation/devicetree/bindings/power/power_domain.txt for details.
+> +- mediatek,mdp-id: HW index to distinguish same functionality modules.
+> +
+> +Required properties (DMA function blocks, child node):
+> +- compatible: Should be one of
+> +        "mediatek,mt8183-mdp-rdma"
+> +        "mediatek,mt8183-mdp-wdma"
+> +        "mediatek,mt8183-mdp-wrot"
+> +- iommus: should point to the respective IOMMU block with master port as
+> +  argument, see Documentation/devicetree/bindings/iommu/mediatek,iommu.txt
+> +  for details.
+> +- mediatek,larb: must contain the local arbiters in the current Socs, see
+> +  Documentation/devicetree/bindings/memory-controllers/mediatek,smi-larb.txt
+> +  for details.
+> +
+> +Required properties (input path selection node):
+> +- compatible:
+> +        "mediatek,mt8183-mdp-dl"    - MDP direct link input source selection
+> +- reg: Physical base address and length of the function block register space
+> +- clocks: device clocks, see
+> +  Documentation/devicetree/bindings/clock/clock-bindings.txt for details.
+> +- mediatek,mdp-id: HW index to distinguish same functionality modules.
+> +
+> +Required properties (ISP PASS2 (DIP) module path selection node):
+> +- compatible:
+> +        "mediatek,mt8183-mdp-imgi"  - input DMA of ISP PASS2 (DIP) module for raw image input
+> +- reg: Physical base address and length of the function block register space
+> +- mediatek,mdp-id: HW index to distinguish same functionality modules.
+> +
+> +Required properties (SW node):
+> +- compatible: Should be one of
+> +        "mediatek,mt8183-mdp-exto"  - output DMA of ISP PASS2 (DIP) module for yuv image output
+> +        "mediatek,mt8183-mdp-path"  - MDP output path selection
+> +- mediatek,mdp-id: HW index to distinguish same functionality modules.
 
+Do all these nodes really describe separate IP cores ? This looks
+extremely complicated to model something as simple as a scaler and color
+space converter. It feels like you're trying to model in DT the
+individual sub-blocks from the MDP3, while a single DT node to model the
+MDP3 as a whole could be enough.
+
+> +
+> +Example:
+> +		mdp_camin@14000000 {
+> +			compatible = "mediatek,mt8183-mdp-dl";
+> +			mediatek,mdp-id = <0>;
+> +			reg = <0 0x14000000 0 0x1000>;
+> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0 0x1000>;
+> +			clocks = <&mmsys CLK_MM_MDP_DL_TXCK>,
+> +				<&mmsys CLK_MM_MDP_DL_RX>;
+> +		};
+> +
+> +		mdp_camin2@14000000 {
+> +			compatible = "mediatek,mt8183-mdp-dl";
+> +			mediatek,mdp-id = <1>;
+> +			reg = <0 0x14000000 0 0x1000>;
+> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0 0x1000>;
+> +			clocks = <&mmsys CLK_MM_IPU_DL_TXCK>,
+> +				<&mmsys CLK_MM_IPU_DL_RX>;
+> +		};
+> +
+> +		mdp_rdma0: mdp_rdma0@14001000 {
+> +			compatible = "mediatek,mt8183-mdp-rdma",
+> +				     "mediatek,mt8183-mdp3";
+> +			mediatek,scp = <&scp>;
+> +			mediatek,mdp-id = <0>;
+> +			reg = <0 0x14001000 0 0x1000>;
+> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x1000 0x1000>;
+> +			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
+> +			clocks = <&mmsys CLK_MM_MDP_RDMA0>,
+> +				<&mmsys CLK_MM_MDP_RSZ1>;
+> +			iommus = <&iommu M4U_PORT_MDP_RDMA0>;
+> +			mediatek,larb = <&larb0>;
+> +			mediatek,mmsys = <&mmsys>;
+> +			mediatek,mm-mutex = <&mutex>;
+> +			mediatek,mailbox-gce = <&gce>;
+> +			mboxes = <&gce 20 CMDQ_THR_PRIO_LOWEST 0>,
+> +				<&gce 21 CMDQ_THR_PRIO_LOWEST 0>,
+> +				<&gce 22 CMDQ_THR_PRIO_LOWEST 0>,
+> +				<&gce 23 CMDQ_THR_PRIO_LOWEST 0>;
+> +			gce-subsys = <&gce 0x14000000 SUBSYS_1400XXXX>,
+> +				<&gce 0x14010000 SUBSYS_1401XXXX>,
+> +				<&gce 0x14020000 SUBSYS_1402XXXX>,
+> +				<&gce 0x15020000 SUBSYS_1502XXXX>;
+> +			mediatek,gce-events = <CMDQ_EVENT_MDP_RDMA0_SOF>,
+> +				<CMDQ_EVENT_MDP_RDMA0_EOF>,
+> +				<CMDQ_EVENT_MDP_RSZ0_SOF>,
+> +				<CMDQ_EVENT_MDP_RSZ1_SOF>,
+> +				<CMDQ_EVENT_MDP_TDSHP_SOF>,
+> +				<CMDQ_EVENT_MDP_WROT0_SOF>,
+> +				<CMDQ_EVENT_MDP_WROT0_EOF>,
+> +				<CMDQ_EVENT_MDP_WDMA0_SOF>,
+> +				<CMDQ_EVENT_MDP_WDMA0_EOF>,
+> +				<CMDQ_EVENT_ISP_FRAME_DONE_P2_0>,
+> +				<CMDQ_EVENT_ISP_FRAME_DONE_P2_1>,
+> +				<CMDQ_EVENT_ISP_FRAME_DONE_P2_2>,
+> +				<CMDQ_EVENT_ISP_FRAME_DONE_P2_3>,
+> +				<CMDQ_EVENT_ISP_FRAME_DONE_P2_4>,
+> +				<CMDQ_EVENT_ISP_FRAME_DONE_P2_5>,
+> +				<CMDQ_EVENT_ISP_FRAME_DONE_P2_6>,
+> +				<CMDQ_EVENT_ISP_FRAME_DONE_P2_7>,
+> +				<CMDQ_EVENT_ISP_FRAME_DONE_P2_8>,
+> +				<CMDQ_EVENT_ISP_FRAME_DONE_P2_9>,
+> +				<CMDQ_EVENT_ISP_FRAME_DONE_P2_10>,
+> +				<CMDQ_EVENT_ISP_FRAME_DONE_P2_11>,
+> +				<CMDQ_EVENT_ISP_FRAME_DONE_P2_12>,
+> +				<CMDQ_EVENT_ISP_FRAME_DONE_P2_13>,
+> +				<CMDQ_EVENT_ISP_FRAME_DONE_P2_14>,
+> +				<CMDQ_EVENT_WPE_A_DONE>,
+> +				<CMDQ_EVENT_SPE_B_DONE>;
+> +		};
+> +
+> +		mdp_imgi@15020000 {
+> +			compatible = "mediatek,mt8183-mdp-imgi";
+> +			mediatek,mdp-id = <0>;
+> +			reg = <0 0x15020000 0 0x1000>;
+> +			mediatek,gce-client-reg = <&gce SUBSYS_1502XXXX 0 0x1000>;
+> +		};
+> +
+> +		mdp_img2o@15020000 {
+> +			compatible = "mediatek,mt8183-mdp-exto";
+> +			mediatek,mdp-id = <1>;
+> +		};
+> +
+> +		mdp_rsz0: mdp_rsz0@14003000 {
+> +			compatible = "mediatek,mt8183-mdp-rsz";
+> +			mediatek,mdp-id = <0>;
+> +			reg = <0 0x14003000 0 0x1000>;
+> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x3000 0x1000>;
+> +			clocks = <&mmsys CLK_MM_MDP_RSZ0>;
+> +		};
+> +
+> +		mdp_rsz1: mdp_rsz1@14004000 {
+> +			compatible = "mediatek,mt8183-mdp-rsz";
+> +			mediatek,mdp-id = <1>;
+> +			reg = <0 0x14004000 0 0x1000>;
+> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x4000 0x1000>;
+> +			clocks = <&mmsys CLK_MM_MDP_RSZ1>;
+> +		};
+> +
+> +		mdp_wrot0: mdp_wrot0@14005000 {
+> +			compatible = "mediatek,mt8183-mdp-wrot";
+> +			mediatek,mdp-id = <0>;
+> +			reg = <0 0x14005000 0 0x1000>;
+> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x5000 0x1000>;
+> +			clocks = <&mmsys CLK_MM_MDP_WROT0>;
+> +			iommus = <&iommu M4U_PORT_MDP_WROT0>;
+> +			mediatek,larb = <&larb0>;
+> +		};
+> +
+> +		mdp_path0_sout@14005000 {
+> +			compatible = "mediatek,mt8183-mdp-path";
+> +			mediatek,mdp-id = <0>;
+> +		};
+> +
+> +		mdp_wdma: mdp_wdma@14006000 {
+> +			compatible = "mediatek,mt8183-mdp-wdma";
+> +			mediatek,mdp-id = <0>;
+> +			reg = <0 0x14006000 0 0x1000>;
+> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x6000 0x1000>;
+> +			clocks = <&mmsys CLK_MM_MDP_WDMA0>;
+> +			iommus = <&iommu M4U_PORT_MDP_WDMA0>;
+> +			mediatek,larb = <&larb0>;
+> +		};
+> +
+> +		mdp_path1_sout@14006000 {
+> +			compatible = "mediatek,mt8183-mdp-path";
+> +			mediatek,mdp-id = <1>;
+> +		};
+> +
+> +		mdp_ccorr: mdp_ccorr@1401c000 {
+> +			compatible = "mediatek,mt8183-mdp-ccorr";
+> +			mediatek,mdp-id = <0>;
+> +			reg = <0 0x1401c000 0 0x1000>;
+> +			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0xc000 0x1000>;
+> +			clocks = <&mmsys CLK_MM_MDP_CCORR>;
+> +		};
+
+-- 
+Regards,
+
+Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
