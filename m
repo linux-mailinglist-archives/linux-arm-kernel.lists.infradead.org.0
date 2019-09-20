@@ -2,54 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5C9AB959B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 18:25:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BB82B95A4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 18:26:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0diB8TkIPYFarP4njEeb+0hlYUgMplX0pBcmUJDl3rA=; b=iZCnKRRsnd6iw6
-	IB9jhFmyrv589Qq3MWokeX5Y90w56AOBwa+WtGsFJLFheu1pbswUowYrvsgHkg6y6JT0OnmHOVDnV
-	znbq69ats7EGVJ12TcnC6HucLeEDsLjBQgoc1iH9oRFLpVmUQEdt/Bivp7m/XGVWuglAFidd9u7bz
-	Wss4tEvf1MTC3G7aL37KNhO6BXyJb7e5mlqr7p0Mvv5S+1IlB+4xvsZ72ZBWveOR6IyxWWHUumRWE
-	QPGCYu+sBwyeRcGh6JJ5g+FK+JztedL0JifGJ2UFunX+WyCY7ZS0Mmz80gCbJ8Zl0idVKz2030FOy
-	qUpYP9EdIzhX163QgBDg==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=akjelrrl4nAHpjwwfZkYM9TW5sgHsQr8jAZF2HYAJiA=; b=hqb40S7puHy13G
+	H2Jd7uw/VZrRaH9xmn1vw9IO+rPTr5/xSwQsX3hmbr864h7fQ3mR7yKg3tgKeu0Cszyvnp5cHqOJV
+	8Vj8vIBmTC/1yO6wCrNYlIg784mNmahyU4VQRMPPHWRp8V44YaGYsbXrkcTeomPz1J8YOmdUk4/+7
+	CXktOt7LUg/4pbNLtd2HATjgI7posBJB2ERFIZZfiLsTF7rThDMa9D1SEFIH8djGdrUB/f0PIfIhQ
+	//I2cAZ1/GnDthV8F7BrUl+zYacbKyStnoh1xVM9wGkv0PhTwx8w9BtjkuW7JPz+PzEnA2MljeEp4
+	u4XPeOTAQSI3jVR2ZrOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBLii-0000Xa-Sw; Fri, 20 Sep 2019 16:25:20 +0000
+	id 1iBLje-0000ts-II; Fri, 20 Sep 2019 16:26:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBLiS-0008B7-KV
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 16:25:05 +0000
+ id 1iBLjX-0000st-FN
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 16:26:12 +0000
 Received: from localhost.localdomain (unknown [194.230.155.145])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5C057208C0;
- Fri, 20 Sep 2019 16:25:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D97722086A;
+ Fri, 20 Sep 2019 16:26:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568996704;
- bh=r0Q4VB/j5PL/rgZkRPpQzQ1S0oUxFSc3euGBv7t4Az4=;
- h=From:To:Subject:Date:In-Reply-To:References:From;
- b=EeauKISn3XTY7h2mK8ciT18hLAcp6T//K9mDk0nLPYHS/5uhaCHsroOMs6niZEKk3
- YzSGC3EhzzlooZ1puJqs5dVD1GVS2B6wDU0Yh/4umNgotzRJvNP3Ghnwj2Jrn7PLaw
- Z7s0SC2ir3XDpxVlHzskMmDyeCdlgbLTDhOCcgQI=
+ s=default; t=1568996771;
+ bh=GUw8grGduxFbca/EbGXq/H60ev8333pzA+JdOdyVLFc=;
+ h=From:To:Subject:Date:From;
+ b=WHK6o1wY8neT06pAUK8D5i6Gxbw9dxeag4NyU4Z/XLdU5OGQ5vMibCqgWlIcujQen
+ EcKxwjku+WFR4EUjlf+RpoDk57lMZ7Fhvo74GRTXPNV1m29MQzuwbzfmBvJ40AnlSC
+ sSVBu0uo9ihraZB+y2ZY0UJmBsxLFEMZ+MQ+qIJo=
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 2/2] arm64: dts: exynos: Rename Multi Core Timer node to just
- timer
-Date: Fri, 20 Sep 2019 18:24:56 +0200
-Message-Id: <20190920162456.7294-2-krzk@kernel.org>
+To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: [PATCH v3 1/2] dt-bindings: arm: samsung: Convert Exynos System
+ Registers bindings to json-schema
+Date: Fri, 20 Sep 2019 18:25:59 +0200
+Message-Id: <20190920162600.7486-1-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190920162456.7294-1-krzk@kernel.org>
-References: <20190920162456.7294-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_092504_705508_826949A8 
-X-CRM114-Status: GOOD (  13.03  )
+X-CRM114-CacheID: sfid-20190920_092611_533534_F02B86CA 
+X-CRM114-Status: GOOD (  12.60  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -84,28 +82,99 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The device node name should reflect generic class of a device so rename
-the Multi Core Timer node from "mct" to "timer".  This will be also in
-sync with upcoming DT schema.  No functional change.
+Convert Samsung Exynos System Registers (SYSREG) bindings to DT schema
+format using json-schema.
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
----
- arch/arm64/boot/dts/exynos/exynos5433.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/exynos/exynos5433.dtsi b/arch/arm64/boot/dts/exynos/exynos5433.dtsi
-index a76f620f7f35..8baf3c645eae 100644
---- a/arch/arm64/boot/dts/exynos/exynos5433.dtsi
-+++ b/arch/arm64/boot/dts/exynos/exynos5433.dtsi
-@@ -754,7 +754,7 @@
- 			status = "disabled";
- 		};
- 
--		mct@101c0000 {
-+		timer@101c0000 {
- 			compatible = "samsung,exynos4210-mct";
- 			reg = <0x101c0000 0x800>;
- 			interrupts = <GIC_SPI 102 IRQ_TYPE_LEVEL_HIGH>,
+---
+
+Changes since v2:
+1. Use select to skip other syscon nodes,
+2. Indent example with four spaces (more readable),
+---
+ .../bindings/arm/samsung/sysreg.txt           | 19 --------
+ .../bindings/arm/samsung/sysreg.yaml          | 45 +++++++++++++++++++
+ 2 files changed, 45 insertions(+), 19 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/arm/samsung/sysreg.txt
+ create mode 100644 Documentation/devicetree/bindings/arm/samsung/sysreg.yaml
+
+diff --git a/Documentation/devicetree/bindings/arm/samsung/sysreg.txt b/Documentation/devicetree/bindings/arm/samsung/sysreg.txt
+deleted file mode 100644
+index 4fced6e9d5e4..000000000000
+--- a/Documentation/devicetree/bindings/arm/samsung/sysreg.txt
++++ /dev/null
+@@ -1,19 +0,0 @@
+-SAMSUNG S5P/Exynos SoC series System Registers (SYSREG)
+-
+-Properties:
+- - compatible : should contain two values. First value must be one from following list:
+-		- "samsung,exynos4-sysreg" - for Exynos4 based SoCs,
+-		- "samsung,exynos5-sysreg" - for Exynos5 based SoCs.
+-		second value must be always "syscon".
+- - reg : offset and length of the register set.
+-
+-Example:
+-	syscon@10010000 {
+-		compatible = "samsung,exynos4-sysreg", "syscon";
+-		reg = <0x10010000 0x400>;
+-	};
+-
+-	syscon@10050000 {
+-		compatible = "samsung,exynos5-sysreg", "syscon";
+-		reg = <0x10050000 0x5000>;
+-	};
+diff --git a/Documentation/devicetree/bindings/arm/samsung/sysreg.yaml b/Documentation/devicetree/bindings/arm/samsung/sysreg.yaml
+new file mode 100644
+index 000000000000..3b7811804cb4
+--- /dev/null
++++ b/Documentation/devicetree/bindings/arm/samsung/sysreg.yaml
+@@ -0,0 +1,45 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/arm/samsung/sysreg.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Samsung S5P/Exynos SoC series System Registers (SYSREG)
++
++maintainers:
++  - Krzysztof Kozlowski <krzk@kernel.org>
++
++# Custom select to avoid matching all nodes with 'syscon'
++select:
++  properties:
++    compatible:
++      contains:
++        enum:
++          - samsung,exynos4-sysreg
++          - samsung,exynos5-sysreg
++  required:
++    - compatible
++
++properties:
++  compatible:
++    allOf:
++      - items:
++          - enum:
++              - samsung,exynos4-sysreg
++              - samsung,exynos5-sysreg
++          - const: syscon
++
++  reg:
++    maxItems: 1
++
++examples:
++  - |
++    syscon@10010000 {
++        compatible = "samsung,exynos4-sysreg", "syscon";
++        reg = <0x10010000 0x400>;
++    };
++
++    syscon@10050000 {
++        compatible = "samsung,exynos5-sysreg", "syscon";
++        reg = <0x10050000 0x5000>;
++    };
 -- 
 2.17.1
 
