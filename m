@@ -2,96 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCA03B89D5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 05:58:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30015B89E5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 06:06:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ofgu9vKke/iZIS9YaCGPRfGZ101YnH1jlAR6X+fX9DA=; b=OjUiqn343J1hJe
-	qftA1H3bBCeZAq8jt0ke5hMbheuyGMcPAbxBiSmaPpwcNsdS0l4bpSh89jnNW3YaRU2p0lUj0/XHk
-	9DTBMmqeEsgu5z9aGyuOe7Z87rPt6TvQRlgihqscYSePQ7g5wwfE3GHKALj7nfIyMmJ+guIRb0Vfj
-	yIoNb93NSDbYIQTQ4dXE/9A4PIe7qCCrUwO6iNRVaJCRfhD5qxQa1Vn3uVI5ZkgE4JlgH7dKdjvjF
-	R/7F3hKE54q+Rqr7HdVDD99dA+H7sM82yss3pVoc9upZhI+VmrgTn77n454dteLQQqB4LWo0E9DvR
-	QH0hjGjcaN6u46BGCiKg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mxO8Taek3JZoJVrtBIMp2o2xF7pqPk+VP5/9KkF8rvA=; b=sUc+VM7re2Ra3e
+	V4jsLpQ4x90m8ZsPOMUvKIetIBH+OqREr6Gu1mDA8lQUXv8LbpUFOSSp7TriTMIHFrmn86kZ9p6/6
+	c5ceHGpZJO6++ML24VepRjJv+O1DcWDMANmN7zpTaOSReHJu8AvlgWDa/C2orvVxnhXm4dnU6hNso
+	6J3afTcSuaQnLWMno8xSrORy05wqfBR9HDREwB1DFyob5mgh15KFNWbVMZD7+NIt7Te7C5K8uv/UZ
+	WfJcL8mJuiHyeOxfGgyE7CdXoCgV953gEs8XrwRk7MJxEzGW9O8Aaod5dYaVpEHrN8XAebg4Jxr2R
+	GhDlCZSo3VOW6VR3TBNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBA3x-0005u6-EH; Fri, 20 Sep 2019 03:58:29 +0000
-Received: from wout4-smtp.messagingengine.com ([64.147.123.20])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBA3n-0005tJ-K3
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 03:58:21 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.west.internal (Postfix) with ESMTP id 0864651D;
- Thu, 19 Sep 2019 23:58:10 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Thu, 19 Sep 2019 23:58:11 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=AwV62kTNWV1jZgcM4jPwwCG4XtzAi+s
- qJivMwhaTchc=; b=S8ckP3TAWc1jyzr+qcZAPlqrX8KRAlPRLZKIWSF89qVSmcE
- D8BPpqg52UK5Vv2M4heoG52ODs17JYWWls0jh1lb3cnHQaC9gL3o3iYe78Dc3wNv
- 1pAh5C9Rtr995F52EAhIf2D+uUcDJbBqv6k19AbWaBVo7SeNsF7c68MHgYS2hgZX
- DjnjPRh8ZfxXZTyr8xQV1IRTbJKJLCMFIIjEuTrV2KEmangiztW4r1L3Fnidsylk
- 1hIeL0P48hds+PCyrcqeIJYDnFzVBu8T0xxLA8fjTSasi469bT0eBpl9ycEM8dOx
- S3T83yBYJKf6uO3qHsovZOlWwXF7le2FoTMJjvQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=AwV62k
- TNWV1jZgcM4jPwwCG4XtzAi+sqJivMwhaTchc=; b=FRHf49tMarkCKSUmMeqRl9
- 5TvM3gJKpOvcZDjmp7HjNRaHAmx2sEFCO8bx8ArOpkQDsssxOaBhF6jbMJfxGc0H
- Eaq2CIQo2QBaun7iXTlJtunt9SRljS2Wa98t/UK1PWN6sJ5DWd9QAtz5VdmLaDL5
- lNL+t2TASpVypuUpy6Gagt5wx0boP/CQQPwcnl66O1xzFSN2Ba9174IarvJ+QCZ5
- GGv4MvKUoPdm9jTZO4ahtikq0qord+LzqklRzuJzVeGfaJIcX0GafRmQaZIOIL90
- 2NiLEcV9KHAeD3EsP6YP/HGwwHgPE+jDV61igL0RhcehhWnUHtmKamrZXRWy1/7w
- ==
-X-ME-Sender: <xms:UU6EXWncKUZATjzQ6SVbRB_s1Vu0x-lp4Hclj7kEghwwxXWtq5AsfA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvddugdejjecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
- vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrghrrg
- hmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghr
- ufhiiigvpedt
-X-ME-Proxy: <xmx:UU6EXfuWkx0_SGevbBY3kDZos3ksb9bMIlDi1p2762yqs7MPPsbeTg>
- <xmx:UU6EXZQHoRVXKsIhuxJPSHyfLzrXjPiHK2262XMS2h6M5zuB-lNLEw>
- <xmx:UU6EXZF6OMpqJDST6zd_srIDGMmC-vTtxvtQNm91c7RdZxSy-i6OZg>
- <xmx:Uk6EXb0vLp6bK7FaIOmBMOilaAlTtAtEtwXP2hWaIB4dGmZL1yOZuA>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id A3D12E00A9; Thu, 19 Sep 2019 23:58:09 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.7-238-g170a812-fmstable-20190913v1
-Mime-Version: 1.0
-Message-Id: <14d2f55b-c31e-4c1f-b75f-aff6b4729c80@www.fastmail.com>
-In-Reply-To: <20190919142654.1578823-1-arnd@arndb.de>
-References: <20190919142654.1578823-1-arnd@arndb.de>
-Date: Fri, 20 Sep 2019 13:28:46 +0930
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Arnd Bergmann" <arnd@arndb.de>, "Joel Stanley" <joel@jms.id.au>
-Subject: Re: [PATCH] ARM: aspeed: ast2500 is ARMv6K
+	id 1iBABf-0000Rq-9Y; Fri, 20 Sep 2019 04:06:27 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iBABR-0000RM-Qf; Fri, 20 Sep 2019 04:06:15 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 08718337;
+ Thu, 19 Sep 2019 21:06:10 -0700 (PDT)
+Received: from [10.162.40.137] (p8cg001049571a15.blr.arm.com [10.162.40.137])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 85C4F3F67D; Thu, 19 Sep 2019 21:05:57 -0700 (PDT)
+Subject: Re: [PATCH V2 2/2] mm/pgtable/debug: Add test validating architecture
+ page table helpers
+To: Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ Christophe Leroy <christophe.leroy@c-s.fr>
+References: <1568268173-31302-1-git-send-email-anshuman.khandual@arm.com>
+ <1568268173-31302-3-git-send-email-anshuman.khandual@arm.com>
+ <ab0ca38b-1e4f-b636-f8b4-007a15903984@c-s.fr>
+ <502c497a-9bf1-7d2e-95f2-cfebcd9cf1d9@arm.com>
+ <95ed9d92-dd43-4c45-2e52-738aed7f2fb5@c-s.fr>
+ <f872e6f4-a5cb-069d-2034-78961930cb9f@arm.com>
+ <64504101-d9dd-f273-02f9-e9a8b178eecc@c-s.fr>
+ <20190918202243.37e709df@thinkpad>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <5a6045af-bcfb-12c2-0f4a-3b49a905ec4d@arm.com>
+Date: Fri, 20 Sep 2019 09:36:12 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
+MIME-Version: 1.0
+In-Reply-To: <20190918202243.37e709df@thinkpad>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_205819_683279_0A1F1C38 
-X-CRM114-Status: UNSURE (   7.20  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190919_210613_954674_D2F043C0 
+X-CRM114-Status: GOOD (  21.97  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.20 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,8 +69,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ James Hogan <jhogan@kernel.org>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
+ linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, linux-arm-kernel@lists.infradead.org,
+ linux-snps-arc@lists.infradead.org, Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -112,19 +101,52 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On Thu, 19 Sep 2019, at 23:56, Arnd Bergmann wrote:
-> Linux supports both the original ARMv6 level (early ARM1136) and ARMv6K
-> (later ARM1136, ARM1176 and ARM11mpcore).
+On 09/18/2019 11:52 PM, Gerald Schaefer wrote:
+> On Wed, 18 Sep 2019 18:26:03 +0200
+> Christophe Leroy <christophe.leroy@c-s.fr> wrote:
 > 
-> ast2500 falls into the second categoy, being based on arm1176jzf-s.
-> This is enabled by default when using ARCH_MULTI_V6, so we should
-> not 'select CPU_V6'.
+> [..] 
+>> My suggestion was not to completely drop the #ifdef but to do like you 
+>> did in pgd_clear_tests() for instance, ie to add the following test on 
+>> top of the function:
+>>
+>> 	if (mm_pud_folded(mm) || is_defined(__ARCH_HAS_5LEVEL_HACK))
+>> 		return;
+>>
 > 
-> Removing this will lead to more efficient use of atomic instructions.
-> 
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> Ah, very nice, this would also fix the remaining issues for s390. Since
+> we have dynamic page table folding, neither __PAGETABLE_PXX_FOLDED nor
+> __ARCH_HAS_XLEVEL_HACK is defined, but mm_pxx_folded() will work.
 
-Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
+Like Christophe mentioned earlier on the other thread, we will convert
+all __PGTABLE_PXX_FOLDED checks as mm_pxx_folded() but looks like 
+ARCH_HAS_[4 and 5]LEVEL_HACK macros will still be around. Will respin
+the series with all agreed upon changes first and probably we can then
+discuss pending issues from there.
+
+> 
+> mm_alloc() returns with a 3-level page table by default on s390, so we
+> will run into issues in p4d_clear/populate_tests(), and also at the end
+> with p4d/pud_free() (double free).
+> 
+> So, adding the mm_pud_folded() check to p4d_clear/populate_tests(),
+> and also adding mm_p4d/pud_folded() checks at the end before calling> p4d/pud_free(), would make it all work on s390.
+
+Atleast p4d_clear/populate_tests() tests will be taken care.
+
+> 
+> BTW, regarding p4d/pud_free(), I'm not sure if we should rather check
+> the folding inside our s390 functions, similar to how we do it for
+> p4d/pud_free_tlb(), instead of relying on not being called for folded
+> p4d/pud. So far, I see no problem with this behavior, all callers of
+> p4d/pud_free() should be fine because of our folding check within
+> p4d/pud_present/none(). But that doesn't mean that it is correct not
+> to check for the folding inside p4d/pud_free(). At least, with this
+> test module we do now have a caller of p4d/pud_free() on potentially
+> folded entries, so instead of adding pxx_folded() checks to this
+> test module, we could add them to our p4d/pud_free() functions.
+> Any thoughts on this?
+Agreed, it seems better to do the check inside p4d/pud_free() functions.
 
 _______________________________________________
 linux-arm-kernel mailing list
