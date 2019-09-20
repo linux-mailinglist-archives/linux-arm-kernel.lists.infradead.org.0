@@ -2,73 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87E4BB96C4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 19:51:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC343B96C7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 19:52:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jN9a8Kaq4hGE4ms9E4dyU7ko3QMG3V7DJo1PbM//umw=; b=c6KwMFQmZAHDWe
-	ucvch7NnykI2KqmXo/p4JGQz+N3s3GKrV8YvO+5JrTi7XDy5LxdMEI4cf1bQosh4f8FScifWP1zHq
-	s5hyJQfs4GNIsM04tbT1QuMxGuntoOlmnGlGcUuxF8PpRhqRLmfIAMPqhImb8LNB3XmCVVKVYn2En
-	DpCgWssE6okMzrOgCDm3pnppGR6yuNR/9S+UqrZG8aW9cSr/NsuY0tCkx6X7qHR8PmMcWVszPX41G
-	QGL0MDM7W3rpkW8ZKuEbx808PD24g6gjzCtJ9cmuPWoKM6FPRTT3Ur95Ugn9Dky7gol5UyGPZBcTP
-	GJFfIPbymSouuiYjd7EQ==;
+	List-Owner; bh=H5hGm47adezOUxNVRbf/l48qcExSAYDoiSajAanuujg=; b=VOOleC7XgsEBq8
+	lbzMwT/ZDC85Wmklam8wdg12Wbrcnhju4Vh0moTPsMQPNqg2yf089CUegLxt+5xZ560s1PXYFP6+F
+	75eZrtOmz4R/pmcoXPSWA833j3rTTXBLCfu3puqPplXvCCH0oWmlx92ilYF+Xdk1KluPKhE9uCQD0
+	cjN6zr3vCpXDgwJ12NdiHo9/Bq8gD9+TrkvEeHc3a/ptnW4zfIe7pkKz8mJWaBRjBDfncP/9ZzpLb
+	Q2tVQQeiVk5yHIRA43kP6NoyRXztLNU8HLpQZOGpGQrYozpoGV63I5RpFlFhtunGQaeZSqdZmQ5oy
+	6R1i2PacDWAvy8gnBiTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBN46-0004mr-AS; Fri, 20 Sep 2019 17:51:30 +0000
+	id 1iBN53-0005Dz-2C; Fri, 20 Sep 2019 17:52:29 +0000
 Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBN40-0004mP-AG; Fri, 20 Sep 2019 17:51:25 +0000
-Received: by mail-pl1-x641.google.com with SMTP id d22so3512134pll.7;
- Fri, 20 Sep 2019 10:51:23 -0700 (PDT)
+ id 1iBN4v-0005Dc-I0
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 17:52:22 +0000
+Received: by mail-pl1-x641.google.com with SMTP id t10so3511505plr.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 20 Sep 2019 10:52:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=3CrXeC4LhwNob4cmLLTWLe1VRgX4UE5/WFGL96oHNLk=;
- b=TrQNrlHGD2A6CG6toILqFSZ+vNbuGpDD/qERbwPB8t5QRwLcdiplvDxV4lzNQLRwET
- 47GVkU+rIxZ9EoekBlMcThpKURaResIfGQC7CIHckq/I+DhHlbSjCPfLqJWv7509wMLD
- c2K201WjGbH7tD8rbzS+3jkRH7QLjwB5usBxfzkOR3mFRcCM0mTgQU7BbVKutJHral3a
- +tDjEEKGmSAhXO3deGZjqlp14chLHoTiE36Htisrl3l+WFjUoXUja14QfYZ3j5076rI2
- swIOFK9yQFsA1cuNQK3Im0puhGz5lmWUokedz6jQzr1e8Co/QTvbU5kbHhTahllNE+08
- xTLg==
+ bh=ynxoenyM+InuPtGnmU7JFYqYrrx9ed4gAhVFtGW6oSg=;
+ b=LY0ywgWxFLkIulrr/XdOTSZQ9+YCd1uAMjcQ/GfA6SuoTbunbUc/M3IBm/zFX5U3iU
+ Typg5FhyWodXq7l6DwCu38mVyo8Rc2eEb2MJ/7eX6TAbrnWWCBMyX0FcByGsd8SHjRMf
+ QBa+tF0LJrZg9+ehlvaeJV474/njKizrs3muwJjSomzd5E/qLQs6aKBZgxsCUw5WgSvK
+ /mrbkt/TNS+PJunpTd+wE3MLcu00HAPvW/gIC8mqu46nPow+Ma3KAUApdbapPyvIial9
+ t4Y18BFlbWg1UFr+PqaJbfYmV/Qn4YxCSiGpxDIsrVSrXVzk7x+71HhlECjdsHgqxFTQ
+ 3iNw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=3CrXeC4LhwNob4cmLLTWLe1VRgX4UE5/WFGL96oHNLk=;
- b=jCnVdUpaNrVFhuxLt8tUfn+TdWTjtrd5D95B5L9yrLgo2evVMP9UwYGQCJmN+VHXrl
- EaN6L5memsiak+hu5CqFPZY6h1oBS3UrrrH9ykGlzadg0GqERitMsrzHRpZqYVob+pwF
- rMPbPMrso0+mZiYdxeBugS6P1HXmjNLmV9c+TJnfGGUTRy7VN5ilbWtjg1Lh/NmRnG0+
- PXsuBcyG76jgpHqon4DjU8LvjpuFm+ss3ot0phJtC0XDz3V+qs+3NboiDQ7/mHQk7VOw
- 4oiaD2ewQwx5n5PliYGLz/O55b6VAo0rSPuPYyet6FONjda99V7sgPGax6kDHRJBzxay
- 9A7w==
-X-Gm-Message-State: APjAAAUubfdBGlEdyh6fD+XaLeWriIrAMR+RbFVN3VQfszUCans0JCYw
- Dg5+3Nv1u2lhM44gUjZBqXE=
-X-Google-Smtp-Source: APXvYqzk73FAfuUXnbLbApgqtdj/qWIfb3TIp7RRMyrJcUHPLOSc3v7s5M1snaWsK4U+Ym9vSNWe1A==
-X-Received: by 2002:a17:902:b617:: with SMTP id
- b23mr17802447pls.184.1569001883457; 
- Fri, 20 Sep 2019 10:51:23 -0700 (PDT)
+ bh=ynxoenyM+InuPtGnmU7JFYqYrrx9ed4gAhVFtGW6oSg=;
+ b=GyK4Q3qokmM7ZXhdUnpIxCoCjiedGyuxbY5+B1tHxI3iQNUCOs7pjWgSMt3USU10xr
+ iG2CCBiLEOfmLYh4zqepHU6DZPvGVZEpa++aVfw0c0rL/yOSFLk+HW7N7W3hyiW/n8Fj
+ ChQNBZ6L1jpY7IdShRSALK15t3vIRhyE8U3BLjTa3/I1LeHS9MwKLw6RHlPVVxsBkSWW
+ v6guun+PZPKd5KfSCtjOqNFO2iJGJkR2C5bA37dWAVMEUICBr5Q/uUrxw1NI32b/IbKq
+ Ds+mXf74RJDJAFFJbRnu+fCglfpdeOcJXApQcPg8osICOAH/BE69z+xQMnTrm1539+4Q
+ AbRA==
+X-Gm-Message-State: APjAAAUD1sjJc7szd8D81NQHHrrOezHOASw+sbLsDgugpUwUFj6sqZcG
+ qp4bcX1aGqHItkYGesrAqvQ=
+X-Google-Smtp-Source: APXvYqzG0G32qP0bYFipLzA1PrvD62zWQIo5Me16U5y/KZ8/ppUW/0ktZ9UTZa/LqIX5/onkGTXe+Q==
+X-Received: by 2002:a17:902:fe12:: with SMTP id
+ g18mr17465318plj.97.1569001940903; 
+ Fri, 20 Sep 2019 10:52:20 -0700 (PDT)
 Received: from [10.67.50.53] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id
- c128sm2840117pfc.166.2019.09.20.10.51.21
+ by smtp.googlemail.com with ESMTPSA id 127sm2373889pgi.46.2019.09.20.10.52.18
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 20 Sep 2019 10:51:22 -0700 (PDT)
-Subject: Re: [PATCH] serial: bcm2835: Use devm_platform_ioremap_resource() in
- bcm2835aux_serial_probe()
-To: Markus Elfring <Markus.Elfring@web.de>, linux-serial@vger.kernel.org,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- bcm-kernel-feedback-list@broadcom.com, Eric Anholt <eric@anholt.net>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Jiri Slaby
- <jslaby@suse.com>, Martin Sperl <kernel@martin.sperl.org>,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- Stefan Wahren <wahrenst@gmx.net>, Stephen Boyd <swboyd@chromium.org>
-References: <fcb34c72-89c7-9993-fc0a-ba3a61708bec@web.de>
+ Fri, 20 Sep 2019 10:52:20 -0700 (PDT)
+Subject: Re: [PATCH] Revert "ARM: bcm283x: Switch V3D over to using the PM
+ driver instead of firmware."
+To: Stefan Wahren <wahrenst@gmx.net>, Eric Anholt <eric@anholt.net>,
+ Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ boris.brezillon@bootlin.com
+References: <1567957493-4567-1-git-send-email-wahrenst@gmx.net>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
@@ -125,16 +123,16 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9Za0Dx0yyp44iD1OvHtkEI
  M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <b874901f-8dc2-e0ec-b2da-26b37e75ec26@gmail.com>
-Date: Fri, 20 Sep 2019 10:51:20 -0700
+Message-ID: <09f15af6-a849-a5eb-ac39-f4cdb07ebfb9@gmail.com>
+Date: Fri, 20 Sep 2019 10:52:18 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <fcb34c72-89c7-9993-fc0a-ba3a61708bec@web.de>
+In-Reply-To: <1567957493-4567-1-git-send-email-wahrenst@gmx.net>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_105124_378046_9A8C3FBA 
-X-CRM114-Status: GOOD (  12.49  )
+X-CRM114-CacheID: sfid-20190920_105221_596349_5254A17A 
+X-CRM114-Status: GOOD (  18.12  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -165,25 +163,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- kernel-janitors@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
- Himanshu Jha <himanshujha199640@gmail.com>
+Cc: stable@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 9/18/19 1:12 PM, Markus Elfring wrote:
-> From: Markus Elfring <elfring@users.sourceforge.net>
-> Date: Wed, 18 Sep 2019 22:00:14 +0200
+On 9/8/19 8:44 AM, Stefan Wahren wrote:
+> Since release of the new BCM2835 PM driver there has been several reports
+> of V3D probing issues. This is caused by timeouts during powering-up the
+> GRAFX PM domain:
 > 
-> Simplify this function implementation by using a known wrapper function.
+>   bcm2835-power: Timeout waiting for grafx power OK
 > 
-> This issue was detected by using the Coccinelle software.
+> I was able to reproduce this reliable on my Raspberry Pi 3B+ after setting
+> force_turbo=1 in the firmware configuration. Since there are no issues
+> using the firmware PM driver with the same setup, there must be an issue
+> in the BCM2835 PM driver.
 > 
-> Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
+> Unfortunately there hasn't been much progress in identifying the root cause
+> since June (mostly in the lack of documentation), so i decided to switch
+> back until the issue in the BCM2835 PM driver is fixed.
+> 
+> Link: https://github.com/raspberrypi/linux/issues/3046
+> Fixes: e1dc2b2e1bef (" ARM: bcm283x: Switch V3D over to using the PM driver instead of firmware.")
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 
-Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+Do you want me to pick up this change directly, or would you want to
+issue a pull request for 5.4-rcX with other fixes?
 -- 
 Florian
 
