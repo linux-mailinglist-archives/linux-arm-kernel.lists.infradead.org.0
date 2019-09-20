@@ -2,75 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BA1DB9498
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 17:54:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9875B953E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 18:22:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KX2Y7pOC/uP3/SIZ8lmF3jXTuhaXoN6lYGaI8d1hFBw=; b=E6pep3VnTLwGroguWOGKo2XXF
-	F0Onz/QCdFPtpCpNDv67cjsqGD8Mzl9pfyovvN9UXIl2Nn4M7SYDbiWd8ns1PxWUySbzQT9MMLTpJ
-	0DWfbNYeLdcPfIvXEXcDFhwXipeDEMJnfgA/yuEn2Ud2nCnWsWsH+16YBtJRt5yoMBXZmO7azw4j5
-	zyzlKw4r81Q/yG+VziEUwGeFlnUGTOLjKWJf8z85R0MjxqLLLdADn27h7zEX/yN0lBLiO+nkUU5LC
-	Yo3ar9Xj1VsvuGS1ZpTkKYuMjgxuCk7jezgaGNwhagBcSj03KiUyA6UGj6pB5el9p/+UNl8QXAxZz
-	Dev/l36Vw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=74o9rQGhPYAkICuVucVoGUAHFJDCfmbC+fHWRD8nwVA=; b=X+q
+	3ZXi1bToGrgTpxdmokTITjr0DjSSvSBQixnd+I1c2dIWbE6sLv8lLz3d/nqhNnhf7rvSALynHV9kp
+	n/xTo6YDCtuvzrNnLvYBglmTk84Vp39wlvhdl0Krg6qpBXkBv8YYjMH0cj4FGFKRHsE73y6KqJLse
+	sBik20En6K6Yj6JYxFGMsWUDsGmA0EKO7WO9AGusDP8PrtvODVMnH3Hp/vodsHhnxYk4F5jWzeEDU
+	vkh6iqvfpfAF6UdISzSy3lXq3kT8vnSiYlGwdnZrVJ2/dyYkLnM+OU3+23EuTGzNrBcNUCrAHeXdo
+	Bla3oZ+EoyCaPlzCuONY/Bi8Oa5ukiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBLEX-0004eF-N0; Fri, 20 Sep 2019 15:54:09 +0000
-Received: from heliosphere.sirena.org.uk ([172.104.155.198])
+	id 1iBLfG-0005eg-QX; Fri, 20 Sep 2019 16:21:46 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBLER-0004Ve-ME
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 15:54:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=zLDrH1bjiD0FaVml2s6dPvH5HKK+NUEXFEsWfY1kDG8=; b=wgkf1wLSxZsRbDLbrQvjuR0V1
- VqsQPFVu3UU+r6FlfgdK9st2Wglyrogw9fAxJhZXA5aC0+kvs81kFNrg/tTrdeM+fRgHq4sNGLVSf
- AMVw21lXO5cyePhrCH2h4+tEW8D6uSGyac+KlQZi0WU++YjX/TUFVtUwNmwIZ+3S0eGhQ=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.co.uk>)
- id 1iBLEQ-0002uH-1M; Fri, 20 Sep 2019 15:54:02 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 30BB8274293F; Fri, 20 Sep 2019 16:54:01 +0100 (BST)
-Date: Fri, 20 Sep 2019 16:54:01 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Gregory CLEMENT <gregory.clement@bootlin.com>
-Subject: Re: [PATCH] spi: atmel: Fix crash when using more than 4 gpio CS
-Message-ID: <20190920155400.GH3822@sirena.co.uk>
-References: <20190919153847.7179-1-gregory.clement@bootlin.com>
- <20190919160315.GQ3642@sirena.co.uk>
- <20190919172350.GZ21254@piout.net>
- <20190920105101.GA3822@sirena.co.uk> <87a7az7zt6.fsf@FE-laptop>
-MIME-Version: 1.0
-In-Reply-To: <87a7az7zt6.fsf@FE-laptop>
-X-Cookie: Stay away from hurricanes for a while.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1iBLf7-0005d8-UW; Fri, 20 Sep 2019 16:21:39 +0000
+Received: from localhost.localdomain (unknown [194.230.155.145])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0DB6520C01;
+ Fri, 20 Sep 2019 16:21:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1568996496;
+ bh=G4ZWXDDOctrbtK9IV3kMcbrs/YmvosJWapnn4V56nvQ=;
+ h=From:To:Cc:Subject:Date:From;
+ b=2dMv4gKGZ2vVFWgyWkGWdSMy2Di/pvOoU6hPZv63Uy16TKnhnB6kYGji2GP8gVwC9
+ 6sxGbRg41pP6pwfavuLFXjJFxNmnkJ88MbUuKZVlNjgmR8fUDyrlfZN5r0KZ1hm23F
+ IhnUK0hl/KOLKz0NhWnM6pOSrFuAC9P/OsyH3FyM=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Guenter Roeck <linux@roeck-us.net>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Kevin Hilman <khilman@baylibre.com>,
+ linux-watchdog@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH v2 1/3] dt-bindings: watchdog: Convert Samsung SoC watchdog
+ bindings to json-schema
+Date: Fri, 20 Sep 2019 18:21:22 +0200
+Message-Id: <20190920162124.7036-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_085403_735247_FBD04327 
-X-CRM114-Status: UNSURE (   8.94  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190920_092138_031735_70C72CF7 
+X-CRM114-Status: GOOD (  14.47  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [172.104.155.198 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,64 +77,147 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, stable@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-spi@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1252143047209736490=="
+Cc: Krzysztof Kozlowski <krzk@kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Convert Samsung S3C/S5P/Exynos watchdog bindings to DT schema format
+using json-schema.
 
---===============1252143047209736490==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="nFBW6CQlri5Qm8JQ"
-Content-Disposition: inline
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 
+---
 
---nFBW6CQlri5Qm8JQ
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Changes since v1:
+1. Indent example with four spaces (more readable),
+2. Remove unneeded timeout-sec description and include generic bindings.
+---
+ .../bindings/watchdog/samsung-wdt.txt         | 35 ----------
+ .../bindings/watchdog/samsung-wdt.yaml        | 65 +++++++++++++++++++
+ 2 files changed, 65 insertions(+), 35 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/watchdog/samsung-wdt.txt
+ create mode 100644 Documentation/devicetree/bindings/watchdog/samsung-wdt.yaml
 
-On Fri, Sep 20, 2019 at 05:27:49PM +0200, Gregory CLEMENT wrote:
+diff --git a/Documentation/devicetree/bindings/watchdog/samsung-wdt.txt b/Documentation/devicetree/bindings/watchdog/samsung-wdt.txt
+deleted file mode 100644
+index 46dcb48e75b4..000000000000
+--- a/Documentation/devicetree/bindings/watchdog/samsung-wdt.txt
++++ /dev/null
+@@ -1,35 +0,0 @@
+-* Samsung's Watchdog Timer Controller
+-
+-The Samsung's Watchdog controller is used for resuming system operation
+-after a preset amount of time during which the WDT reset event has not
+-occurred.
+-
+-Required properties:
+-- compatible : should be one among the following
+-	- "samsung,s3c2410-wdt" for S3C2410
+-	- "samsung,s3c6410-wdt" for S3C6410, S5PV210 and Exynos4
+-	- "samsung,exynos5250-wdt" for Exynos5250
+-	- "samsung,exynos5420-wdt" for Exynos5420
+-	- "samsung,exynos7-wdt" for Exynos7
+-
+-- reg : base physical address of the controller and length of memory mapped
+-	region.
+-- interrupts : interrupt number to the cpu.
+-- samsung,syscon-phandle : reference to syscon node (This property required only
+-	in case of compatible being "samsung,exynos5250-wdt" or "samsung,exynos5420-wdt".
+-	In case of Exynos5250 and 5420 this property points to syscon node holding the PMU
+-	base address)
+-
+-Optional properties:
+-- timeout-sec : contains the watchdog timeout in seconds.
+-
+-Example:
+-
+-watchdog@101d0000 {
+-	compatible = "samsung,exynos5250-wdt";
+-	reg = <0x101D0000 0x100>;
+-	interrupts = <0 42 0>;
+-	clocks = <&clock 336>;
+-	clock-names = "watchdog";
+-	samsung,syscon-phandle = <&pmu_syscon>;
+-};
+diff --git a/Documentation/devicetree/bindings/watchdog/samsung-wdt.yaml b/Documentation/devicetree/bindings/watchdog/samsung-wdt.yaml
+new file mode 100644
+index 000000000000..5a3a3cec8e20
+--- /dev/null
++++ b/Documentation/devicetree/bindings/watchdog/samsung-wdt.yaml
+@@ -0,0 +1,65 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/watchdog/samsung-wdt.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Samsung SoC Watchdog Timer Controller
++
++maintainers:
++  - Krzysztof Kozlowski <krzk@kernel.org>
++
++description: |+
++  The Samsung's Watchdog controller is used for resuming system operation
++  after a preset amount of time during which the WDT reset event has not
++  occurred.
++
++properties:
++  compatible:
++    enum:
++      - samsung,s3c2410-wdt                   # for S3C2410
++      - samsung,s3c6410-wdt                   # for S3C6410, S5PV210 and Exynos4
++      - samsung,exynos5250-wdt                # for Exynos5250
++      - samsung,exynos5420-wdt                # for Exynos5420
++      - samsung,exynos7-wdt                   # for Exynos7
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  samsung,syscon-phandle:
++    $ref: /schemas/types.yaml#/definitions/phandle
++    description:
++      Phandle to the PMU system controller node (in case of Exynos5250
++      and Exynos5420).
++
++required:
++  - compatible
++  - interrupts
++  - reg
++
++allOf:
++  - $ref: watchdog.yaml#
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - samsung,exynos5250-wdt
++              - samsung,exynos5420-wdt
++    then:
++      required:
++        - samsung,syscon-phandle
++
++examples:
++  - |
++    watchdog@101d0000 {
++        compatible = "samsung,exynos5250-wdt";
++        reg = <0x101D0000 0x100>;
++        interrupts = <0 42 0>;
++        clocks = <&clock 336>;
++        clock-names = "watchdog";
++        samsung,syscon-phandle = <&pmu_syscon>;
++    };
+-- 
+2.17.1
 
-> But after going further in the details of the driver, this patch could
-> cause a regression for on the old controllers.
-
-> I also found other issues in this driver in the chip select
-> management. So I will send a new series fixing all of it.
-
-OK, great - glad at least one of us spotted a real problem!
-
---nFBW6CQlri5Qm8JQ
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl2E9hgACgkQJNaLcl1U
-h9DuOQf/d1YSSM95RC3kUN0e8uki1dRX6P/DzkwsU8aq/UjqRJWFqJfINJoq/iX2
-Bxv2so1RItyHhc7DeDbguqZd3q7ZoGEIdpydEs0YiCe0ZsIC2WO5oQYbzR+StoUP
-Go9tnNJxG00tYTUoOLSkuFt0oF28j6+IiBOqU028GK0CcCpEY5gK6bdLrO3Yg/bp
-x7dnew+UZGVIqBygo6Gf4o781L0aV9exnr8toNx2meSItYSd53qBOywiLt+olUPB
-i1y7ZIBMFvM/CADLLfgT8u+3bu8q6tVFs7olDfPXfiSqWC9tOzur/x3aDfY4CdQz
-8iOeWl80Sr4wXQgZWxBJGWp6Gz1JHA==
-=vx4t
------END PGP SIGNATURE-----
-
---nFBW6CQlri5Qm8JQ--
-
-
---===============1252143047209736490==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1252143047209736490==--
-
