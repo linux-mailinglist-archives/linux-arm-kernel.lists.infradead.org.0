@@ -2,62 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DF21B9797
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 21:10:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A3FCB97BA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 21:20:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T4dix3+mwul44oD8u8wDboAO2FB79F88lOSTEpNodaU=; b=RiRTJQhD7GAzpW
-	cbW364lm6RsjjVkmGn0lnKFqeOqmD4Mg7cYeNY8cEN2O0Og5/c46ORRKD+gNv/eXCU0HsSH8wiHtX
-	RAeHCLc+b1Q55wXD2wmOhsPfDr33IdBi3KU6ZD/DiukRjcohPHQK5zeseFMprLKf+irzurTEqBzRy
-	hXQtcV11cvK0vr/G4c2CVhcrO/XHe5aihMPzvgzJmRJ6R/mDeU6K94i9DjS2SnTRXxATFQb/b3Jjo
-	rC8Fw7ITwH1A6GkZiFkFVP53diQnIT+hAHkBJBcyXaLj/FU9zaSikcvzU7/EvubzkVaekvAb/p1hv
-	/cBMVwYHBbm0z4Uh1L7A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NCSTqJM96vapp+8ovAve4BXvdmshy3EKSa4exfV8J0I=; b=CO8vAfqyTFt/rUMRJK/57RIu6
+	h/cOkBABBeNVpveFC019cFKM/SZUXjAG5WsULLjCD/2t0OtaSwDR+mueEbY3OvN0n+3lA9no678t8
+	Xd64Ecvqjymhqp+VHaGo7pAyDWYuedOx6TmTKichKWqWqx7/CXLC2rq5b49nktGgl7zJspU8zTmaW
+	czoMBsAcglToDin7Rd+bjElgDdkFh8nYAd6W2mvTiNmqcI2eDzzOf2XOsym4Vtw1uaPid5RWWD92Q
+	xRT/wy5Mv4dTx2eACpqo46iwRYnSnsbvkwmU0nh7iuf2MHEyLvq1cAhqbuLIBWHfejBsHK+6Yngo0
+	28boxWg/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBOIh-0007Jy-7j; Fri, 20 Sep 2019 19:10:39 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iBOSD-0002QX-PP; Fri, 20 Sep 2019 19:20:29 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBOIZ-0007J7-Jj
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 19:10:32 +0000
-Subject: Re: [GIT PULL] arm64: Fixes for -rc1
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569006628;
- bh=pT4cIq+qbYDvYC6eSboDOcSlbJFd/dK46BWKrrQuBVg=;
- h=From:In-Reply-To:References:Date:To:Cc:From;
- b=AfobFpd5wnOH68p49BwHvrCu65OSX5Y3A7MSvqPVOfRin99GT4AXtjqG3ZewXiCJd
- /4JH5BaDA4AY8vCPUZZf5HzECe2Xif7b5qc1flLQ0bxeQI0KfWSzhs60co9KyqbiTt
- ItxF+IqWV1nbJ8ZjVjN9RHqhD6NbzcdAvbqbTudE=
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <20190920133703.zor3t4dvwam6uyqj@willie-the-truck>
-References: <20190920133703.zor3t4dvwam6uyqj@willie-the-truck>
-X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
-X-PR-Tracked-Message-Id: <20190920133703.zor3t4dvwam6uyqj@willie-the-truck>
-X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
- tags/arm64-fixes
-X-PR-Tracked-Commit-Id: 799c85105233514309b201a2d2d7a7934458c999
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: 8c2b418c3f95a488f5226870eee68574d323f0f8
-Message-Id: <156900662888.23740.6256981181910647860.pr-tracker-bot@kernel.org>
-Date: Fri, 20 Sep 2019 19:10:28 +0000
-To: Will Deacon <will@kernel.org>
+ id 1iBOS6-0002QB-CG
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 19:20:23 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x8KJEGx6115790;
+ Fri, 20 Sep 2019 19:20:00 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2019-08-05;
+ bh=NTgWiBq1iOSn7E4DUsV0oOzifM6YvCmeXgLvP8GhXpQ=;
+ b=YJKcSsRRnT6afxtXsPMppGt9Rgkn3BMTmHFs4rS80XEMtJlg07xr3xOg0BkHYrBPE0P7
+ plAegF0BTsqJu3KYg89buLvo30tikcoaGPK7xcVr6YI2vauuoTBbUT6nOf9U7dlcdRad
+ ksMXwxFoKnzLkVIwm1/8z4NUq81YrXd97kh5mglsvKTBdG7cLzQPpCn4LQxC0MVhvIOP
+ 46S2wPdldNUvautuBloWAPBCLrIvnJ4sZIpXw/RApFzhFx8Y7C0tXE3rxpMAv5RjaBz1
+ Qk4KFmbHZsXoFcpggeo6XsUZ0bp4GGdmKQeQOTQFugjOmL42rH0tpChD4HavXf+SaMnj bQ== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2130.oracle.com with ESMTP id 2v3vb5cb1m-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 20 Sep 2019 19:19:59 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x8KJJWuj126991;
+ Fri, 20 Sep 2019 19:19:59 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by userp3020.oracle.com with ESMTP id 2v4vpmtufj-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 20 Sep 2019 19:19:59 +0000
+Received: from abhmp0001.oracle.com (abhmp0001.oracle.com [141.146.116.7])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x8KJJvCb002952;
+ Fri, 20 Sep 2019 19:19:58 GMT
+Received: from [10.209.227.25] (/10.209.227.25)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Fri, 20 Sep 2019 12:19:57 -0700
+Subject: Re: [PATCHv5 00/10] soc: ti: add OMAP PRM driver (for reset)
+To: Tony Lindgren <tony@atomide.com>, Tero Kristo <t-kristo@ti.com>
+References: <20190912113916.20093-1-t-kristo@ti.com>
+ <20190920142849.GS5610@atomide.com>
+From: santosh.shilimkar@oracle.com
+Organization: Oracle Corporation
+Message-ID: <13a77bd8-72bd-6a44-9141-d5492be82d82@oracle.com>
+Date: Fri, 20 Sep 2019 12:19:56 -0700
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
+ Gecko/20100101 Thunderbird/60.7.2
+MIME-Version: 1.0
+In-Reply-To: <20190920142849.GS5610@atomide.com>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9386
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1908290000 definitions=main-1909200156
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9386
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1908290000
+ definitions=main-1909200156
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_121031_672415_01BA1B4A 
-X-CRM114-Status: UNSURE (   1.43  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190920_122022_555298_40E54FBE 
+X-CRM114-Status: GOOD (  17.01  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -77,27 +112,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, ndesaulniers@google.com,
- torvalds@linux-foundation.org, linux-kernel@vger.kernel.org,
+Cc: devicetree@vger.kernel.org, linux-omap@vger.kernel.org, robh+dt@kernel.org,
+ p.zabel@pengutronix.de, ssantosh@kernel.org,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The pull request you sent on Fri, 20 Sep 2019 14:37:04 +0100:
+On 9/20/19 7:28 AM, Tony Lindgren wrote:
+> * Tero Kristo <t-kristo@ti.com> [190912 04:39]:
+>> Hi,
+>>
+>> V5 of the series, re-sent the whole series as one patch was dropped.
+>> Changes compared to v3/v4:
+>>
+>> - removed dependency towards clock driver (patch #5 was completely
+>>    dropped compared to v3/v4)
+>> - dropped clocks property from dt binding
+>> - re-added the pdata patch which was accidentally dropped out (it has
+>>    dependency towards this series.)
+>>
+>> The new implementation (without clock driver dependency) relies on the
+>> bus driver to sequence events properly, otherwise some timeouts will
+>> occur either at clock driver or reset driver end.
+> 
+> With the two updated patches seems like we're done with this
+> series?
+> 
+> If so, I suggest either Santosh or me sets up an immutable
+> branch against v5.3 or v5.4-rc1 that we all can merge in.
+> I will need it for the related dts changes at least.
+> 
+I will pick this up Tony and apply it once v5.4-rc1 is out.
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git tags/arm64-fixes
-
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/8c2b418c3f95a488f5226870eee68574d323f0f8
-
-Thank you!
-
--- 
-Deet-doot-dot, I am a bot.
-https://korg.wiki.kernel.org/userdoc/prtracker
+Regards,
+Santosh
 
 _______________________________________________
 linux-arm-kernel mailing list
