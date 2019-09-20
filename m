@@ -2,58 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27F5CB8EC5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 13:02:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 337E2B8ECD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 13:09:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2TGW+dF3/57/gRNGdirDDZ+w864imRutgjvJJMF3WSA=; b=UNlyUOJYLZd0Hj2id4r3ur9GC
-	9xmuFwrGoKLKRII5iKduJE7RgziJ23pUzFdOHCibzq3D1cMBA/Zy/WRDAd3wB2kBJHTpVNaYQPm7x
-	LBYGLo1DlEQSrb+HS56XvyNS/XoZ6cuwnsBq6oTavRRDdHcWi5zHVrKsgy1xepKYgXq4ph/xOkjxs
-	E3X2a5ZF4t20TH1r5aDWs2/he+um1VqtKnW3RZ4rNko9ReXOHbZNzON/I4Bbt+N2Xn9uYl2dE1i8N
-	H33gPvWl+Y2gAYnS95yqvKq4dz4n8v6GdF0OM0eeTMSZESBLg6hNWc9sQ3/jQUv8FlMLCrhoG3YpB
-	TuFns5B8A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=qQPUESowOr+oprDwxDSTvSJ0yZ40DzJj8ED1HrJYvHA=; b=kLU
+	Y7LBnq+92rHckYiqeqzYA6InyXaZYi7DV2lB7tiPqXABfTGRCzPY61EEpSB6RECZjkmZulJhjvGEd
+	haLv3lIES1zZGLaOezjjqKep9khyuo/sXAMDhOizAv4v/AmoLG2u2aJsEpLJXLGcsquBM1WvfM/LC
+	cVwoWilCQyDf5f7g/fQ6uUPqo/aPy6VroEXv+o2fEMH0F2pt/9XZnoysltvOoLAw+bko6A/AeUNsr
+	2Z4fZGYdljnr6uBig5HtlauSmoYOQ5BJs+NJC3QFhI1u+rFgLQCpH78IrqYZMCE0LzQaNWPgKAF67
+	ytQQ3aaSbJeaCzQ4x2k22aEdpsczZtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBGg6-0000Ve-TJ; Fri, 20 Sep 2019 11:02:18 +0000
+	id 1iBGnO-0002FA-Dr; Fri, 20 Sep 2019 11:09:50 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBGg0-0000VE-0R
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 11:02:13 +0000
+ id 1iBGnG-0002EN-W0
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 11:09:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=TvSJPXCNUj0sKtwLV+ZZRK3DKaY/Th/BDTAKK7SPRmI=; b=tFnaNCfFVD5quhenDzNWlPLBG
- H1xR7Ud+5LuOoeOUM1tufkeG1zX+z7B13lZOVDrq0n/h50BtlvgUZbCNfLo71wEfUnHvJylKDJnKH
- JVPaH2d6OIxUuxi3/Y8tZob3xE5cXJnuxTmfZ2uYN9+5Thph8DtRipWc/HVyLQ27OCZPc=;
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=7hI+o+psndomB3D9UFiMpJ0vG6hUICZeMtbHv4aGnFM=; b=QjwpV5xqBv3i
+ AiENJx7jAxaoq64XWnIS8Crc3lqcWpOcO1GebVWnT921L8jlaCL9cXXct1N3vuMFzu3dLh+B8LRnU
+ Uy+KaKy8BAPj69WYVHDqzsgxZjq+MoghCQLZcaBIdadyaFp19MyCEZ38Jw3UyrdiWOM49pa6NTyKf
+ 9oXUM=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iBGfv-0001bE-Nx; Fri, 20 Sep 2019 11:02:07 +0000
+ id 1iBGnE-0001ck-JL; Fri, 20 Sep 2019 11:09:40 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id D53BD274293C; Fri, 20 Sep 2019 12:02:06 +0100 (BST)
-Date: Fri, 20 Sep 2019 12:02:06 +0100
+ id 22EDD274293C; Fri, 20 Sep 2019 12:09:40 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Re: [PATCH 1/4] spi: mxic: Fix transmit path
-Message-ID: <20190920110206.GC3822@sirena.co.uk>
-References: <20190919202504.9619-1-miquel.raynal@bootlin.com>
-MIME-Version: 1.0
-In-Reply-To: <20190919202504.9619-1-miquel.raynal@bootlin.com>
-X-Cookie: Stay away from hurricanes for a while.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Subject: Applied "spi: mxic: Fix DMAS_CTRL register layout" to the spi tree
+In-Reply-To: <20190919202504.9619-4-miquel.raynal@bootlin.com>
+X-Patchwork-Hint: ignore
+Message-Id: <20190920110940.22EDD274293C@ypsilon.sirena.org.uk>
+Date: Fri, 20 Sep 2019 12:09:40 +0100 (BST)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_040212_057517_D68F3776 
-X-CRM114-Status: UNSURE (   8.01  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190920_040943_040163_AA5677E4 
+X-CRM114-Status: GOOD (  12.53  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -79,60 +77,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Su <juliensu@mxic.com.tw>, stable@vger.kernel.org,
- linux-spi@vger.kernel.org, Boris Brezillon <boris.brezillon@collabora.com>,
+Cc: Julien Su <juliensu@mxic.com.tw>, linux-spi@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
  Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8744415775278694002=="
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The patch
 
---===============8744415775278694002==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="TYecfFk8j8mZq+dy"
-Content-Disposition: inline
+   spi: mxic: Fix DMAS_CTRL register layout
 
+has been applied to the spi tree at
 
---TYecfFk8j8mZq+dy
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.4
 
-On Thu, Sep 19, 2019 at 10:25:01PM +0200, Miquel Raynal wrote:
-> In certain circumstances, it is needed to check INT_TX_EMPTY and
-> INT_RX_NOT_EMPTY in the transmit path, not only in the receive
-> path. In both cases, the delay penalty is negligible.
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
 
-In which circumstances and why is this required?
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
 
---TYecfFk8j8mZq+dy
-Content-Type: application/pgp-signature; name="signature.asc"
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
 
------BEGIN PGP SIGNATURE-----
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl2Esa0ACgkQJNaLcl1U
-h9AgbAf/WGzhQIKCPqtpT234KXwcBHp9ZJZEvag3OQYnGwCZ2HTkbFi2GxY82UT4
-FnSIj9o6IaTk1y4lFcXSoVfYJFm6ik+CksaPPCOKp/yX6Wdh+zcszod8nYGb9MDH
-8JodKY8SteqX+PB9bxuZzip9vNkX6VaS+4ZA7Z/y+645Jmjo8FS1Yk83J/H87FJg
-FroH17yf9TsGUgggStqTfz10e7sT17uPFpF6e3s/rGU3GVYqaYgtQS65vM2ARXbR
-1OLvYa+4ogLGFE/JfxVFbyHDUQa7dQKZ/3fxlEXN4huhVJ9vRR0kPztathlfdX46
-3TqFUQ7tJLD/tzeEt7hfU6OMdItB0A==
-=717f
------END PGP SIGNATURE-----
+Thanks,
+Mark
 
---TYecfFk8j8mZq+dy--
+From 6fe7ab3837bdbc4830addac9898a5e4bc0783dcc Mon Sep 17 00:00:00 2001
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+Date: Thu, 19 Sep 2019 22:25:04 +0200
+Subject: [PATCH] spi: mxic: Fix DMAS_CTRL register layout
 
+Fix the current layout which only matches early non-public revisions
+of the IP. Since its official distribution, two bytes of the SPI
+controller DMAS_CTRL register have been inverted.
 
---===============8744415775278694002==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Suggested-by: Mason Yang <masonccyang@mxic.com.tw>
+Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+Link: https://lore.kernel.org/r/20190919202504.9619-4-miquel.raynal@bootlin.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ drivers/spi/spi-mxic.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/spi/spi-mxic.c b/drivers/spi/spi-mxic.c
+index b641954fdc4b..a736fdf47119 100644
+--- a/drivers/spi/spi-mxic.c
++++ b/drivers/spi/spi-mxic.c
+@@ -145,8 +145,8 @@
+ #define LWR_SUSP_CTRL_EN	BIT(31)
+ 
+ #define DMAS_CTRL		0x9c
+-#define DMAS_CTRL_DIR_READ	BIT(31)
+-#define DMAS_CTRL_EN		BIT(30)
++#define DMAS_CTRL_EN		BIT(31)
++#define DMAS_CTRL_DIR_READ	BIT(30)
+ 
+ #define DATA_STROB		0xa0
+ #define DATA_STROB_EDO_EN	BIT(2)
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8744415775278694002==--
-
