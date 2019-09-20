@@ -2,52 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC27BB8DF0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 11:40:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFAB9B8DFA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 11:46:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FkKoH8338Y1OT/0V9Wunqr7ijnOg6A4e4pV6rhY13cc=; b=MggtPUWupt0Fmk
-	mwun4MNgeiIIUNhfFQvDQQbdxuqho+pV/fK3ETMeOa/Vu6Qc4AD8htXYhYiobSUzJzpk5cZWR8fpk
-	sx5t3Sh8TXLtoOwzP9fmo6v+aG2ty0us09t4lSZckEJvPWDSETV9HGQFZml/GrJh+t41V6thxoa9I
-	bID3jOIB+oPAmHsjlT/TCQkacL+1pp/v1S2OI4Ia+F0RmzTQ0q5HVOS2CAOpx3XhLP1O2nt44QUO2
-	Ep/EtW01fO+oQyXSvd+xAPhW84UmlwJcXh5vyKUuRMs2e/g0uKxlDlTHjH2r434cnmLF77nrMV3J4
-	ZY7G/Qjf9mERew3/FaiA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=nivfFTC/kCw3+Ud3/b3LdQ/qibhdgZ1xRIjKY5luU8Q=; b=Ne1FxGwGmoVmVyEPIy4s5AxqG
+	fxwvfuBGdbx+jGCW6Go/YEat4ws0hz7Sw/9A+34GTHxTEkjRk/JEnyMriQk/qKupYejheMKVADzAs
+	GtAgShZMd3PHg402XAgyt1LCxurrQyIJPzUq3myLGMcJhpITk2Qp0htwRy0m2zlbTANbgP/TCL2B2
+	iORj7XfYkWqz0GAOpDIP+cNfj/0OTDE/S0hv2G2lPs2zEpYV75oFK568TBfvtuN5J2Yi7/4QqfnwF
+	tLRJqZMHZXiKQaJGirKCQmz0U0l+FauUlXlQyDIpS6ySZd+s0gc69oUcxR39aJ4dlC/6sdJ9K+25x
+	3elZvrIeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBFPD-0006St-NT; Fri, 20 Sep 2019 09:40:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBFP2-0006SQ-7U
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 09:40:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2C430337;
- Fri, 20 Sep 2019 02:40:34 -0700 (PDT)
-Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 938673F575;
- Fri, 20 Sep 2019 02:40:33 -0700 (PDT)
-Date: Fri, 20 Sep 2019 10:40:26 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Itaru Kitayama <itaru.kitayama@riken.jp>
+	id 1iBFUo-0008Bo-SI; Fri, 20 Sep 2019 09:46:34 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iBFUf-0008Bg-2p
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 20 Sep 2019 09:46:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
+ In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=33QtEeokaGjZW8nFPq9maDMMKqn+EPER5RzoaOYXoeg=; b=ANlv+kl58JCydSuaqXEWR8aedp
+ EEelnXCXgcZFt+KjPlbAAMQeysOUNKTcKpeW6W9Pcx76+5NU+ICpIiD0GHk5DNfL8SFGJl8PgA1y8
+ rwjkTV1MAJfX95E3V/k9b44pChRpf0RA8wN4qUA+zEMsGD8a5Lq4zngaTZZ7FxY3at/n4bWN4NkU6
+ 4XKFsalklXx+AUPQUyH1KxegbKjE0xEE1xPANpxaJ7VUSY/WP6ZUhI+XczbBV3O6aVBeGfldNozk+
+ Le6+7M55hCFIi+qjm8MRklTRAFOLzTVpIwldBs3cymue4R1wgyCXBpEHYY1UeHxqYZ4WBcF1EggIv
+ 6XGGOJNQ==;
+Received: from postman-ex2.riken.go.jp ([134.160.33.92]
+ helo=postman-ex2.riken.jp)
+ by casper.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iBFUt-0007lh-8T
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 09:46:41 +0000
+Received: from postman-ex2.riken.jp (localhost [127.0.0.1])
+ by localhost (Postfix) with SMTP id 31BB5660326;
+ Fri, 20 Sep 2019 18:45:44 +0900 (JST)
+Received: from postman.riken.jp (unknown [192.168.60.185])
+ by postman-ex2.riken.jp (Postfix) with ESMTP id 2D07D66023D;
+ Fri, 20 Sep 2019 18:45:44 +0900 (JST)
+Received: from postman.riken.jp (localhost.localdomain [127.0.0.1])
+ by postman.riken.jp (Postfix) with SMTP id 1358594148;
+ Fri, 20 Sep 2019 18:45:44 +0900 (JST)
+Received: from MacBook-Pro.local (anet27.r-ccs.riken.jp [134.160.184.6])
+ by postman.riken.jp (Postfix) with ESMTPA id DBDC9940F8;
+ Fri, 20 Sep 2019 18:45:43 +0900 (JST)
 Subject: Re: SPE capable Arm CPUs in the fields
-Message-ID: <20190920094009.GA13906@bogus>
+To: Sudeep Holla <sudeep.holla@arm.com>
 References: <864D2B3A-E49A-4F9E-9277-E8B64B36E02B@riken.jp>
+ <20190920094009.GA13906@bogus>
+From: Itaru Kitayama <itaru.kitayama@riken.jp>
+Message-ID: <c41d681c-3486-022e-e988-9445f78c3ef8@riken.jp>
+Date: Fri, 20 Sep 2019 18:45:43 +0900
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
+ Gecko/20100101 Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <864D2B3A-E49A-4F9E-9277-E8B64B36E02B@riken.jp>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190920094009.GA13906@bogus>
+Content-Language: en-US
+X-PMX-Version: 6.3.3.2656215, Antispam-Engine: 2.7.2.2107409,
+ Antispam-Data: 2019.9.20.93617, AntiVirus-Engine: 5.65.0,
+ AntiVirus-Data: 2019.9.20.5650001
+X-PMX-Version: 6.3.3.2656215, Antispam-Engine: 2.7.2.2107409,
+ Antispam-Data: 2019.4.5.53016, AntiVirus-Engine: 5.60.0,
+ AntiVirus-Data: 2019.4.5.5600000
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_024036_313277_2BAD767F 
-X-CRM114-Status: UNSURE (   7.06  )
+X-CRM114-CacheID: sfid-20190920_104639_540700_FBDCAF7D 
+X-CRM114-Status: UNSURE (   9.68  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [134.160.33.92 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,25 +94,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Sudeep Holla <sudeep.holla@arm.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 20, 2019 at 05:23:38AM +0900, Itaru Kitayama wrote:
-> Will,
-> Though SPE is just an optional feature of the Armv8.2-A extension, I am
-> wondering whether CPUs are already out in the fields or some vendors are
-> planning to make one of two in the near future.
->
+Thank you Sudeep. I look forward to more N1 variants showing up in the market in 2020.
 
-SPE is available on Neoverse-N1 cores.
-
---
-Regards,
-Sudeep
-
+On 2019/09/20 18:40, Sudeep Holla wrote:
+> On Fri, Sep 20, 2019 at 05:23:38AM +0900, Itaru Kitayama wrote:
+>> Will,
+>> Though SPE is just an optional feature of the Armv8.2-A extension, I am
+>> wondering whether CPUs are already out in the fields or some vendors are
+>> planning to make one of two in the near future.
+>>
+> 
+> SPE is available on Neoverse-N1 cores.
+> 
+> --
+> Regards,
+> Sudeep
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
