@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 337E2B8ECD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 13:09:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59313B8ECE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 13:10:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=qQPUESowOr+oprDwxDSTvSJ0yZ40DzJj8ED1HrJYvHA=; b=kLU
-	Y7LBnq+92rHckYiqeqzYA6InyXaZYi7DV2lB7tiPqXABfTGRCzPY61EEpSB6RECZjkmZulJhjvGEd
-	haLv3lIES1zZGLaOezjjqKep9khyuo/sXAMDhOizAv4v/AmoLG2u2aJsEpLJXLGcsquBM1WvfM/LC
-	cVwoWilCQyDf5f7g/fQ6uUPqo/aPy6VroEXv+o2fEMH0F2pt/9XZnoysltvOoLAw+bko6A/AeUNsr
-	2Z4fZGYdljnr6uBig5HtlauSmoYOQ5BJs+NJC3QFhI1u+rFgLQCpH78IrqYZMCE0LzQaNWPgKAF67
-	ytQQ3aaSbJeaCzQ4x2k22aEdpsczZtg==;
+	References:List-Owner; bh=2U2ZzjNVQUe2LxFDEpVdzmNwzsUQwwJzq8s0UqysSow=; b=uG3
+	hPf5ovS0jMQ311N+JWYqzUWMRMqsOfk4UFw/YJpg2vMENt3u558+irc36atVieDBpZRLg8lWY7YJI
+	6EGv3V12ccCpa+T1z0SmrtPx3c+Da4bkXEfbUvfZsFPO4a/v2dnIBe9wWkYuViRDY9dwhvLwFyRY0
+	uMiERqACUF2QrhklPLGcIWotUo3tBB3uDthWHGcvkdsFGikb0rC8tA7/5Z4OMYozyPLFHZbP6pChT
+	TwO4bEp5tViiI3ZjsoEdJ9RhWijknE4YEjN8WTaGbHwmY6a72fZBu4oXuhXE0vCrtNTqmKEq56tLg
+	rN2pCUxZdOY3XDuPlXokgc/KPykxZjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBGnO-0002FA-Dr; Fri, 20 Sep 2019 11:09:50 +0000
+	id 1iBGnW-0002LP-Jh; Fri, 20 Sep 2019 11:09:58 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBGnG-0002EN-W0
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 11:09:44 +0000
+ id 1iBGnJ-0002Eh-Mh
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 11:09:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=7hI+o+psndomB3D9UFiMpJ0vG6hUICZeMtbHv4aGnFM=; b=QjwpV5xqBv3i
- AiENJx7jAxaoq64XWnIS8Crc3lqcWpOcO1GebVWnT921L8jlaCL9cXXct1N3vuMFzu3dLh+B8LRnU
- Uy+KaKy8BAPj69WYVHDqzsgxZjq+MoghCQLZcaBIdadyaFp19MyCEZ38Jw3UyrdiWOM49pa6NTyKf
- 9oXUM=;
+ List-Archive; bh=Z5dOD+9ZrY4bJlHtSzZwLx5yP4utZlZkCbGX9HlEhco=; b=FU44sVc97lba
+ y7AucrgrxRoSO4Fwpr8E6+lf9YfyDwtImRpmG+C1+Rv9QNhBdQheXjI82vF24W/THw8wZQPs7japX
+ YbX26x6JWKwWKZTTdjfTytHaDHSP0bP//B9pOYBOaNYpe17NM+HdrIdDckoa/ZRECA34cLYDA9g4S
+ EegnU=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iBGnE-0001ck-JL; Fri, 20 Sep 2019 11:09:40 +0000
+ id 1iBGnE-0001cm-QS; Fri, 20 Sep 2019 11:09:40 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 22EDD274293C; Fri, 20 Sep 2019 12:09:40 +0100 (BST)
+ id 5A0AB274293F; Fri, 20 Sep 2019 12:09:40 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Applied "spi: mxic: Fix DMAS_CTRL register layout" to the spi tree
-In-Reply-To: <20190919202504.9619-4-miquel.raynal@bootlin.com>
+Subject: Applied "spi: mxic: Select SPI_NOR type by default" to the spi tree
+In-Reply-To: <20190919202504.9619-3-miquel.raynal@bootlin.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20190920110940.22EDD274293C@ypsilon.sirena.org.uk>
+Message-Id: <20190920110940.5A0AB274293F@ypsilon.sirena.org.uk>
 Date: Fri, 20 Sep 2019 12:09:40 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_040943_040163_AA5677E4 
-X-CRM114-Status: GOOD (  12.53  )
+X-CRM114-CacheID: sfid-20190920_040945_743333_0C5835AE 
+X-CRM114-Status: GOOD (  15.12  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -90,7 +90,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: mxic: Fix DMAS_CTRL register layout
+   spi: mxic: Select SPI_NOR type by default
 
 has been applied to the spi tree at
 
@@ -115,38 +115,37 @@ to this mail.
 Thanks,
 Mark
 
-From 6fe7ab3837bdbc4830addac9898a5e4bc0783dcc Mon Sep 17 00:00:00 2001
+From 4a82fe0e184263b5ed8f9d8079f7dfd144598127 Mon Sep 17 00:00:00 2001
 From: Miquel Raynal <miquel.raynal@bootlin.com>
-Date: Thu, 19 Sep 2019 22:25:04 +0200
-Subject: [PATCH] spi: mxic: Fix DMAS_CTRL register layout
+Date: Thu, 19 Sep 2019 22:25:03 +0200
+Subject: [PATCH] spi: mxic: Select SPI_NOR type by default
 
-Fix the current layout which only matches early non-public revisions
-of the IP. Since its official distribution, two bytes of the SPI
-controller DMAS_CTRL register have been inverted.
+The SPI_NAND bit is a (wrongly named) placeholder that is intended
+to be used in the future. Right now SPI_NOR (which is currently
+identical to SPI_NAND in this version of the IP) should be used in
+both cases.
 
 Suggested-by: Mason Yang <masonccyang@mxic.com.tw>
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-Link: https://lore.kernel.org/r/20190919202504.9619-4-miquel.raynal@bootlin.com
+Link: https://lore.kernel.org/r/20190919202504.9619-3-miquel.raynal@bootlin.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-mxic.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/spi/spi-mxic.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/spi/spi-mxic.c b/drivers/spi/spi-mxic.c
-index b641954fdc4b..a736fdf47119 100644
+index f48563c09b97..b641954fdc4b 100644
 --- a/drivers/spi/spi-mxic.c
 +++ b/drivers/spi/spi-mxic.c
-@@ -145,8 +145,8 @@
- #define LWR_SUSP_CTRL_EN	BIT(31)
- 
- #define DMAS_CTRL		0x9c
--#define DMAS_CTRL_DIR_READ	BIT(31)
--#define DMAS_CTRL_EN		BIT(30)
-+#define DMAS_CTRL_EN		BIT(31)
-+#define DMAS_CTRL_DIR_READ	BIT(30)
- 
- #define DATA_STROB		0xa0
- #define DATA_STROB_EDO_EN	BIT(2)
+@@ -275,7 +275,7 @@ static void mxic_spi_hw_init(struct mxic_spi *mxic)
+ 	writel(0, mxic->regs + HC_EN);
+ 	writel(0, mxic->regs + LRD_CFG);
+ 	writel(0, mxic->regs + LRD_CTRL);
+-	writel(HC_CFG_NIO(1) | HC_CFG_TYPE(0, HC_CFG_TYPE_SPI_NAND) |
++	writel(HC_CFG_NIO(1) | HC_CFG_TYPE(0, HC_CFG_TYPE_SPI_NOR) |
+ 	       HC_CFG_SLV_ACT(0) | HC_CFG_MAN_CS_EN | HC_CFG_IDLE_SIO_LVL(1),
+ 	       mxic->regs + HC_CFG);
+ }
 -- 
 2.20.1
 
