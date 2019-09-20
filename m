@@ -2,67 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6E19B8C31
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 10:01:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50A48B8C34
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 10:01:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eL14uvaWZFa0krQE2Tnun86DFIlGJJojXF/8eYMt4ho=; b=Rpzv2szlTuz94y
-	Sf+Z1CgYYsyHmI97TZp6gbZa0y0YrRA8Hce9jLpMQVG0TiYPlXQr4B9bLVbbM39/1CBVwbvApXs74
-	7HA9B5MXj3GqxIYcU7+sKjbh6uedY8tsZxgSj6RlYedtUTvLByhZZSnp0V7YX4larmkP2NWQdz/FB
-	gcubFH14XybFKJJMFGvSghBnx9TjOaUxYITwO4p6yDnRd/X1nXQl0QVB1/SCgSI3opRKbWEYdkfQB
-	sc4LKigzp0ttB45Wmj4E0uPNMOkiaX2XBS4UkFPcdxFKCOWecw7ZZ7c+uKrCcSfc502MCPl/ZgWei
-	kKMivqhDusvLJ7GV1KMA==;
+	List-Owner; bh=ffZbo1FeazEuRfOk9dalWTQjw9NY5Ce5QysXpRDgv7Y=; b=E9taCP3ftlOCXX
+	C76of6JlTHd23DWuND0S5MgssQOm6y5tCiR7DhP/I635h3GGan9emsuXM5cWX16S8qFlBFWOBZr+2
+	1sluAcvM8gO5cexK9yyNPEvSxVXryhIuTg/SYFw9Fqis/LGEq5//FCCeDDF25Um6MIX3FiTSVOsnc
+	kcHO56WyZlBDU1yQLJNzVeUMjQ8X3u8HkMb1WJMdcK72NtefSgvaPBbxazgKfsHngq5msPDrHVQ6H
+	QgOrq7EJDjPysyWSczAafFPt8xfHgDANJcXl/MUTTiGYEC+UvTtsFu6D7bt03mxYSURDS2FJ2zWAT
+	2sp7u81nrVJZwHzLleBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBDqg-0003gK-CT; Fri, 20 Sep 2019 08:01:02 +0000
+	id 1iBDqw-0003wH-1C; Fri, 20 Sep 2019 08:01:18 +0000
 Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBDpk-00023r-H0
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 08:00:06 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x8K7xviX035637;
- Fri, 20 Sep 2019 02:59:57 -0500
+ id 1iBDpu-0003A5-Tx
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 08:00:16 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x8K802R5035673;
+ Fri, 20 Sep 2019 03:00:02 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1568966397;
- bh=NxwuVo0T+us0h+x9zXFAnE213YwmEGZylga/7E0/EBk=;
+ s=ti-com-17Q1; t=1568966402;
+ bh=hPVf1Poa33Pi1B+Nvl5mwDLiUwBQdGQUSOya3aDoUBw=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=HZXB9zcnSX5YTG+7J0OU8B40rk6GHtc7DWGesWjWv01vGLQxjDdtYb7LRRIKRiUia
- cJVqFJUCq5hkLOb+iSTS/PZre4nhwACLXiwArrfmyjhokxEuPOC8GXmW+YkPL7FXSe
- yFNd0XcgOEFm/ahQ6Abb68zev+O8Ykd/ICCyqQ9I=
-Received: from DLEE115.ent.ti.com (dlee115.ent.ti.com [157.170.170.26])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id x8K7xvn9033720;
- Fri, 20 Sep 2019 02:59:57 -0500
-Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
+ b=A+H7cEw/NCFrGPzd+iSisGTGUTC0Du6kPLR4a4dNGW4bJaqK42Iv2RIW3tBBJlKUw
+ DUokoPkjMKKcqn6I3j5t4eXtc3l81zN0Hx1KVcMp+Yn/Z7C5reH/e+WefrriVVzIXj
+ In6hctgr4LvyUe+nLudEMeRx7ImXUGwTQ1yWipwc=
+Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x8K802VM058080
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 20 Sep 2019 03:00:02 -0500
+Received: from DLEE100.ent.ti.com (157.170.170.30) by DLEE105.ent.ti.com
+ (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 20
- Sep 2019 02:59:56 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE113.ent.ti.com
- (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ Sep 2019 02:59:57 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Fri, 20 Sep 2019 02:59:52 -0500
+ Frontend Transport; Fri, 20 Sep 2019 03:00:01 -0500
 Received: from a0393675ula.india.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x8K7xeXV118255;
- Fri, 20 Sep 2019 02:59:53 -0500
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x8K7xeXW118255;
+ Fri, 20 Sep 2019 02:59:57 -0500
 From: Keerthy <j-keerthy@ti.com>
 To: <arnd@arndb.de>, <nsekhar@ti.com>, <olof@lixom.net>, <t-kristo@ti.com>,
  <catalin.marinas@arm.com>, <will@kernel.org>, <tony@atomide.com>
-Subject: [PATCH v2 linux-next 3/4] arm: configs: multi_v7_defconfig: Change
+Subject: [PATCH v2 linux-next 4/4] arm64: configs: defconfig: Change
  CONFIG_REMOTEPROC from m to y
-Date: Fri, 20 Sep 2019 13:29:45 +0530
-Message-ID: <20190920075946.13282-4-j-keerthy@ti.com>
+Date: Fri, 20 Sep 2019 13:29:46 +0530
+Message-ID: <20190920075946.13282-5-j-keerthy@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190920075946.13282-1-j-keerthy@ti.com>
 References: <20190920075946.13282-1-j-keerthy@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_010004_720944_9AA8A6B2 
-X-CRM114-Status: GOOD (  10.87  )
+X-CRM114-CacheID: sfid-20190920_010015_083234_F3D61E0C 
+X-CRM114-Status: GOOD (  11.30  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -103,27 +104,27 @@ changes CONFIG_REMOTEPROC to a boolean from a tristate config
 option which inhibits all defconfigs marking CONFIG_REMOTEPROC as
 a module in compiling the remoteproc and dependent config options.
 
-So fix the multi_v7_defconfig to have CONFIG_REMOTEPROC built in.
+So fix the defconfig to have CONFIG_REMOTEPROC built in.
 
 Fixes: 6334150e9a36 ("remoteproc: don't allow modular build")
 Signed-off-by: Keerthy <j-keerthy@ti.com>
 ---
- arch/arm/configs/multi_v7_defconfig | 2 +-
+ arch/arm64/configs/defconfig | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
-index 13ba53286901..198de8e36d92 100644
---- a/arch/arm/configs/multi_v7_defconfig
-+++ b/arch/arm/configs/multi_v7_defconfig
-@@ -933,7 +933,7 @@ CONFIG_BCM2835_MBOX=y
- CONFIG_ROCKCHIP_IOMMU=y
- CONFIG_TEGRA_IOMMU_GART=y
- CONFIG_TEGRA_IOMMU_SMMU=y
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 8e05c39eab08..c9a867ac32d4 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -723,7 +723,7 @@ CONFIG_TEGRA_IOMMU_SMMU=y
+ CONFIG_ARM_SMMU=y
+ CONFIG_ARM_SMMU_V3=y
+ CONFIG_QCOM_IOMMU=y
 -CONFIG_REMOTEPROC=m
 +CONFIG_REMOTEPROC=y
- CONFIG_ST_REMOTEPROC=m
- CONFIG_RPMSG_VIRTIO=m
- CONFIG_ASPEED_LPC_CTRL=m
+ CONFIG_QCOM_Q6V5_MSS=m
+ CONFIG_QCOM_Q6V5_PAS=m
+ CONFIG_QCOM_SYSMON=m
 -- 
 2.17.1
 
