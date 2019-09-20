@@ -2,80 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BFF0B93A1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 17:01:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22E64B93C1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 17:11:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=eI60C3cnEEPocOFm9ps8JPDxvX8529f835VsLGCsf5c=; b=JUyvYMamP0raeP
-	fBDIGP7MzRbvRq0N0AoBwJKWXit5B9FmRjmVM4Va7qx5XqKaPAV2G6gCzLeIFf7GkuPKLR5J5RSq7
-	Deoyh6YdoduDM3bYlvKzyYVLFx5CKDlRUn0nyJNdIGbrx9snYRBMlQNHLCiaFd3NLaV4+emrBSJVy
-	F3etUehRO8pyXmzlkSZon6s5R8KB/f5aQqZ+Gfdv7mADjMj6Se7se5ZVtOncIt+c71Hx+hZ/tOF3S
-	cpYZj2muydNyaD+Y1Q8+JsEUYolq+ImpskwHcUvd8Pn0PyQ7FwXGtZE9QwwLmn0HdY/1djsb/BNZS
-	9qhYQk4tw35oOMDQIJTg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CRRzLW7Zi7TYIS31qLN4j0Y1uy90/LoxC4UBoXMbWqE=; b=RFFhhuP+RmwsaN
+	0ZPzLN0YcjVhJtXyDJ1AflaSh+YeBg5tObxA0xOSNlarP5iHSPAnyHo89/W2QqCi8Jkv+Jek7ADw9
+	GV/M4AisE8/Rcv4BfazEXi+/AOMA04g8av4B3ycHibo1mxfNy6aY8Lv+ZPSoNAYIE4YJRSOZ4EtC4
+	Q5E3qZ+wCgWo1swgrNKwwQKVYgODmazjOji22Of/PX+7+QXHHHwgszNLtbNxXvMrOx0aL26kZeuRa
+	RuZbq+o08FoFaupo2JXab87hM1whYXGie+x98Id29znUH25rwWWAUiiDI65o7k1Oo0zCCX+xdwM5I
+	0VdUtoeSakS2N0cwg1Ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBKPS-0002wT-Ag; Fri, 20 Sep 2019 15:01:22 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iBKZc-0006BN-PR; Fri, 20 Sep 2019 15:11:52 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBKPF-0002v3-UT
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 15:01:11 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x8KEkiJj029770; Fri, 20 Sep 2019 17:00:53 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=oN0Ax4lbm8sphTOWdTDGK6SWkUe4Md0Mb1/rUapNH9A=;
- b=uPQqAmfNkYWi1r1JZK+EtXG9FXviggq1tThrcve0oFOTlnxOK3uQ7OIqA50wipTg4SRc
- iYekMVwt+OwDzXOYRVolZVRYsht5EUdyJ2WB/iWoJHq7S5nChZLMYA2xi5zzKGseQ6QT
- J5aIjfllyOQQbpniNQigUSj8UydenJpxkQPdSC97oG9FWCT/YUvfprGNXJYWgKgQB1/h
- 77jdN3o7ZXTmSgptjVhcCyj5rc4vbImFqIt4mWGaPW6QTWUbrLebewGNUbFlTXfSEjp2
- vT570KghSzBxFdDVsZwO1ISy2An9dOzSK36D+m6iofOnl3ZMeewFRJ7cZEaHd/ikJ3ER cA== 
-Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
- by mx07-00178001.pphosted.com with ESMTP id 2v3vc4kcsw-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 20 Sep 2019 17:00:53 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 8F1584B;
- Fri, 20 Sep 2019 15:00:49 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B850A2D3798;
- Fri, 20 Sep 2019 17:00:48 +0200 (CEST)
-Received: from SAFEX1HUBCAS21.st.com (10.75.90.45) by Safex1hubcas24.st.com
- (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 20 Sep
- 2019 17:00:48 +0200
-Received: from localhost (10.201.23.25) by Webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 20 Sep 2019 17:00:48
- +0200
-From: Fabien Dessenne <fabien.dessenne@st.com>
-To: Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>, 
- Marc Zyngier <marc.zyngier@arm.com>, Maxime Coquelin
- <mcoquelin.stm32@gmail.com>, Alexandre Torgue <alexandre.torgue@st.com>,
- <linux-kernel@vger.kernel.org>, <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH] irqchip/stm32-exti: Use the hwspin_lock_timeout_in_atomic()
- API
-Date: Fri, 20 Sep 2019 17:00:43 +0200
-Message-ID: <1568991643-7549-1-git-send-email-fabien.dessenne@st.com>
-X-Mailer: git-send-email 2.7.4
+ id 1iBKZV-0006Aj-Jt
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 15:11:47 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7B5BE2086A;
+ Fri, 20 Sep 2019 15:11:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1568992305;
+ bh=P03LHVKn6LA/jWFaOHU7Nv1MBzcqutnGsNgTkam26qY=;
+ h=Date:From:To:Subject:References:In-Reply-To:From;
+ b=PUiMZ93OuJDn+LjWStwl90tsdFKa1BD/U+Q67U8KHQwJq05X/bx7xf7+D31/Nq6vi
+ kRf3XANvqkoSmIpDlCXAF873HIniYr1RMJKwMlrGbiG7HfxFoGAsmbdoLKAuzWOiAr
+ St+hu0yLlgkJEO9oiUHQiZ5c8dbY1W6hdRWZmKxU=
+Date: Fri, 20 Sep 2019 17:11:42 +0200
+From: Maxime Ripard <mripard@kernel.org>
+To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Chen-Yu Tsai <wens@csie.org>, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] drm: sun8i-ui/vi: Fix layer zpos change/atomic modesetting
+Message-ID: <20190920151142.ijistzhtcaenehx6@gilmour>
+References: <20190914220337.646719-1-megous@megous.com>
+ <20190918141734.kerdbbaynwutrxf6@gilmour>
+ <20190918152309.j2dbu63jaru6jn2t@core.my.home>
+ <20190918201617.5gwzmshoxbcxbmrx@gilmour>
+ <20190919122058.fhpuafogdq7oir2d@core.my.home>
+ <20190919131244.35hmnp7jizegltp7@core.my.home>
 MIME-Version: 1.0
-X-Originating-IP: [10.201.23.25]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
- definitions=2019-09-20_05:2019-09-20,2019-09-20 signatures=0
+Content-Disposition: inline
+In-Reply-To: <20190919131244.35hmnp7jizegltp7@core.my.home>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_080110_460348_5BDC46AB 
-X-CRM114-Status: GOOD (  16.14  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190920_081145_700937_B02A0F58 
+X-CRM114-Status: GOOD (  31.79  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -85,6 +71,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,144 +83,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabien Dessenne <fabien.dessenne@st.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that the hwspin_lock_timeout_in_atomic() API is available use it.
-
-Signed-off-by: Fabien Dessenne <fabien.dessenne@st.com>
----
- drivers/irqchip/irq-stm32-exti.c | 65 +++++++++++++---------------------------
- 1 file changed, 20 insertions(+), 45 deletions(-)
-
-diff --git a/drivers/irqchip/irq-stm32-exti.c b/drivers/irqchip/irq-stm32-exti.c
-index e00f2fa..7fc0d1f 100644
---- a/drivers/irqchip/irq-stm32-exti.c
-+++ b/drivers/irqchip/irq-stm32-exti.c
-@@ -25,7 +25,6 @@
- #define IRQS_PER_BANK 32
- 
- #define HWSPNLCK_TIMEOUT	1000 /* usec */
--#define HWSPNLCK_RETRY_DELAY	100  /* usec */
- 
- struct stm32_exti_bank {
- 	u32 imr_ofst;
-@@ -277,55 +276,24 @@ static int stm32_exti_set_type(struct irq_data *d,
- 	return 0;
- }
- 
--static int stm32_exti_hwspin_lock(struct stm32_exti_chip_data *chip_data)
--{
--	int ret, timeout = 0;
--
--	if (!chip_data->host_data->hwlock)
--		return 0;
--
--	/*
--	 * Use the x_raw API since we are under spin_lock protection.
--	 * Do not use the x_timeout API because we are under irq_disable
--	 * mode (see __setup_irq())
--	 */
--	do {
--		ret = hwspin_trylock_raw(chip_data->host_data->hwlock);
--		if (!ret)
--			return 0;
--
--		udelay(HWSPNLCK_RETRY_DELAY);
--		timeout += HWSPNLCK_RETRY_DELAY;
--	} while (timeout < HWSPNLCK_TIMEOUT);
--
--	if (ret == -EBUSY)
--		ret = -ETIMEDOUT;
--
--	if (ret)
--		pr_err("%s can't get hwspinlock (%d)\n", __func__, ret);
--
--	return ret;
--}
--
--static void stm32_exti_hwspin_unlock(struct stm32_exti_chip_data *chip_data)
--{
--	if (chip_data->host_data->hwlock)
--		hwspin_unlock_raw(chip_data->host_data->hwlock);
--}
--
- static int stm32_irq_set_type(struct irq_data *d, unsigned int type)
- {
- 	struct irq_chip_generic *gc = irq_data_get_irq_chip_data(d);
- 	struct stm32_exti_chip_data *chip_data = gc->private;
- 	const struct stm32_exti_bank *stm32_bank = chip_data->reg_bank;
-+	struct hwspinlock *hwlock = chip_data->host_data->hwlock;
- 	u32 rtsr, ftsr;
- 	int err;
- 
- 	irq_gc_lock(gc);
- 
--	err = stm32_exti_hwspin_lock(chip_data);
--	if (err)
--		goto unlock;
-+	if (hwlock) {
-+		err = hwspin_lock_timeout_in_atomic(hwlock, HWSPNLCK_TIMEOUT);
-+		if (err) {
-+			pr_err("%s can't get hwspinlock (%d)\n", __func__, err);
-+			goto unlock;
-+		}
-+	}
- 
- 	rtsr = irq_reg_readl(gc, stm32_bank->rtsr_ofst);
- 	ftsr = irq_reg_readl(gc, stm32_bank->ftsr_ofst);
-@@ -338,7 +306,8 @@ static int stm32_irq_set_type(struct irq_data *d, unsigned int type)
- 	irq_reg_writel(gc, ftsr, stm32_bank->ftsr_ofst);
- 
- unspinlock:
--	stm32_exti_hwspin_unlock(chip_data);
-+	if (hwlock)
-+		hwspin_unlock_in_atomic(hwlock);
- unlock:
- 	irq_gc_unlock(gc);
- 
-@@ -504,15 +473,20 @@ static int stm32_exti_h_set_type(struct irq_data *d, unsigned int type)
- {
- 	struct stm32_exti_chip_data *chip_data = irq_data_get_irq_chip_data(d);
- 	const struct stm32_exti_bank *stm32_bank = chip_data->reg_bank;
-+	struct hwspinlock *hwlock = chip_data->host_data->hwlock;
- 	void __iomem *base = chip_data->host_data->base;
- 	u32 rtsr, ftsr;
- 	int err;
- 
- 	raw_spin_lock(&chip_data->rlock);
- 
--	err = stm32_exti_hwspin_lock(chip_data);
--	if (err)
--		goto unlock;
-+	if (hwlock) {
-+		err = hwspin_lock_timeout_in_atomic(hwlock, HWSPNLCK_TIMEOUT);
-+		if (err) {
-+			pr_err("%s can't get hwspinlock (%d)\n", __func__, err);
-+			goto unlock;
-+		}
-+	}
- 
- 	rtsr = readl_relaxed(base + stm32_bank->rtsr_ofst);
- 	ftsr = readl_relaxed(base + stm32_bank->ftsr_ofst);
-@@ -525,7 +499,8 @@ static int stm32_exti_h_set_type(struct irq_data *d, unsigned int type)
- 	writel_relaxed(ftsr, base + stm32_bank->ftsr_ofst);
- 
- unspinlock:
--	stm32_exti_hwspin_unlock(chip_data);
-+	if (hwlock)
-+		hwspin_unlock_in_atomic(hwlock);
- unlock:
- 	raw_spin_unlock(&chip_data->rlock);
- 
--- 
-2.7.4
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVGh1LCBTZXAgMTksIDIwMTkgYXQgMDM6MTI6NDRQTSArMDIwMCwgT25kxZllaiBKaXJtYW4g
+d3JvdGU6Cj4gT24gVGh1LCBTZXAgMTksIDIwMTkgYXQgMDI6MjA6NThQTSArMDIwMCwgbWVnb3Vz
+IGhsYXZuaSB3cm90ZToKPiA+IE9uIFdlZCwgU2VwIDE4LCAyMDE5IGF0IDEwOjE2OjE3UE0gKzAy
+MDAsIE1heGltZSBSaXBhcmQgd3JvdGU6Cj4gPiA+IE9uIFdlZCwgU2VwIDE4LCAyMDE5IGF0IDA1
+OjIzOjA5UE0gKzAyMDAsIE9uZMWZZWogSmlybWFuIHdyb3RlOgo+ID4gPiA+IEhpLAo+ID4gPiA+
+Cj4gPiA+ID4gT24gV2VkLCBTZXAgMTgsIDIwMTkgYXQgMDQ6MTc6MzRQTSArMDIwMCwgTWF4aW1l
+IFJpcGFyZCB3cm90ZToKPiA+ID4gPiA+IEhpLAo+ID4gPiA+ID4KPiA+ID4gPiA+IE9uIFN1biwg
+U2VwIDE1LCAyMDE5IGF0IDEyOjAzOjM3QU0gKzAyMDAsIG1lZ291c0BtZWdvdXMuY29tIHdyb3Rl
+Ogo+ID4gPiA+ID4gPiBGcm9tOiBPbmRyZWogSmlybWFuIDxtZWdvdXNAbWVnb3VzLmNvbT4KPiA+
+ID4gPiA+ID4KPiA+ID4gPiA+ID4gVGhlcmUgYXJlIHZhcmlvdXMgaXNzdWVzIHRoYXQgdGhpcyBy
+ZS13b3JrIG9mIHN1bjhpX1t1dl1pX2xheWVyX2VuYWJsZQo+ID4gPiA+ID4gPiBmdW5jdGlvbiBm
+aXhlczoKPiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gLSBNYWtlIHN1cmUgdGhhdCB3ZSByZS1pbml0
+aWFsaXplIHpwb3Mgb24gcmVzZXQKPiA+ID4gPiA+ID4gLSBNaW5pbWl6ZSByZWdpc3RlciB1cGRh
+dGVzIGJ5IGRvaW5nIHRoZW0gb25seSB3aGVuIHN0YXRlIGNoYW5nZXMKPiA+ID4gPiA+ID4gLSBG
+aXggaXNzdWUgd2hlcmUgREUgcGlwZSBtaWdodCBnZXQgZGlzYWJsZWQgZXZlbiBpZiBpdCBpcyBu
+byBsb25nZXIKPiA+ID4gPiA+ID4gICB1c2VkIGJ5IHRoZSBsYXllciB0aGF0J3MgY3VycmVudGx5
+IGNhbGxpbmcgc3VuOGlfdWlfbGF5ZXJfZW5hYmxlCj4gPiA+ID4gPiA+IC0gLmF0b21pY19kaXNh
+YmxlIGNhbGxiYWNrIGlzIG5vdCByZWFsbHkgbmVlZGVkIGJlY2F1c2UgLmF0b21pY191cGRhdGUK
+PiA+ID4gPiA+ID4gICBjYW4gZG8gdGhlIGRpc2FibGUgdG9vLCBzbyBkcm9wIHRoZSBkdXBsaWNh
+dGUgY29kZQo+ID4gPiA+ID4gPgo+ID4gPiA+ID4gPiBTaWduZWQtb2ZmLWJ5OiBPbmRyZWogSmly
+bWFuIDxtZWdvdXNAbWVnb3VzLmNvbT4KPiA+ID4gPiA+Cj4gPiA+ID4gPiBJdCBsb29rcyBsaWtl
+IHRoZXNlIGZpeGVzIHNob3VsZCBiZSBpbiBzZXBhcmF0ZSBwYXRjaGVzLiBJcyB0aGVyZSBhbnkK
+PiA+ID4gPiA+IHJlYXNvbiBpdCdzIG5vdCB0aGUgY2FzZT8KPiA+ID4gPgo+ID4gPiA+IEJ1bGxl
+dCBwb2ludHMganVzdCBkZXNjcmliZSB0aGUgcmVzdWx0aW5nIGVmZmVjdC9iZW5lZml0cyBvZiB0
+aGUgY2hhbmdlIHRvIGZpeAo+ID4gPiA+IHRoZSBwaXBlIGNvbnRyb2wgcmVnaXN0ZXIgdXBkYXRl
+IGlzc3VlIChzZWUgdGhlIHJlZmVyZW5jZWQgZS1tYWlsKS4KPiA+ID4KPiA+ID4gSXQncyBkZWZp
+bml0ZWx5IG9rIHRvIGhhdmUgbXVsdGlwbGUgcGF0Y2hlcyBuZWVkZWQgdG8gYWRkcmVzcyBhIHNp
+bmdsZQo+ID4gPiBwZXJjZWl2ZWQgaXNzdWUuCj4gPgo+ID4gWWVzLCBidXQgSSBjYW4ndCBzaW1w
+bHkgc3BsaXQgdGhlIHBhdGNoLiBJbiBvcmRlciBmb3IgZWFjaCBjaGFuZ2UgdG8gd29yayBvbiBp
+dHMKPiA+IG93biwgdGhleSdkIGhhdmUgdG8gYmUgZG9uZSBkaWZmZXJlbnRseSB0aGFuIHRoZSBm
+aW5hbCByZXN1bHQuCj4gPgo+ID4gSSB3b3VsZG4ndCBtaW5kIGF0IGFsbCBpZiBpdCB3YXMganVz
+dCBhIHNpbXBsZSBzcGxpdHRpbmcsIGJ1dCB5b3UncmUgYXNraW5nCj4gPiBmb3IgdG9vIG11Y2gg
+d29yaywgdGhpcyB0aW1lLCBmb3Igbm8gYmVuZWZpdCB0aGF0IEkgY2FuIHNlZS4KPiA+Cj4gPiA+
+IEEgY29tbWl0IGlzIG5vdCBhYm91dCB3aGF0IHlvdSdyZSBmaXhpbmcgYnV0IHdoYXQgeW91J3Jl
+IGNoYW5naW5nLiBBbmQKPiA+ID4gdGhlIGZhY3QgdGhhdCB5b3UgaGF2ZSB0aGEgYnVsbGV0IGxp
+c3QgaW4gdGhlIGZpcnN0IHBsYWNlIHByb3ZlcyB0aGF0Cj4gPiA+IHlvdSBoYXZlIG11bHRpcGxl
+IGxvZ2ljYWwgY2hhbmdlcyBpbiB5b3VyIHBhdGNoLgo+ID4gPgo+ID4gPiBBbmQgZXZlbiB0aGVu
+LCB5b3VyIGNvbW1pdCBsb2cgbWVudGlvbnMgdGhhdCB5b3UncmUgZml4aW5nIG11bHRpcGxlCj4g
+PiA+IGlzc3VlcyAod2l0aG91dCBleHBsYWluaW5nIHRoZW0pLgo+ID4KPiA+IEkgY2FuIHJld29y
+ZCB0aGUgY29tbWl0IG1lc3NhZ2UgaWYgdGhhdCBoZWxwcywgYW5kIHNraXAgdGhlIGJ1bGxldCBs
+aXN0IGlmIGl0Cj4gPiBpcyBjb25mdXNpbmcuIFRoZXJlJ3MgYSBzaW5nbGUgY29yZSBpc3N1ZSBh
+bmQgdGhhdCBpcyB0aGF0IHRoZSBkcml2ZXIgZG9lc24ndAo+ID4gdXBkYXRlIHRoZSBwaXBlL2No
+YW5uZWwgY29uZmlndXJhdGlvbiBjb3JyZWN0bHkgbGVhZGluZyB0byBkaXNhYmxpbmcgb2YKPiA+
+IGFyYml0cmFyeSBsYXllcnMgKG5vdCBldmVuIHRob3NlIGJlaW5nIHVwZGF0ZWQgLSB1cGRhdGUg
+b2YgVUkgbGF5ZXIgbWF5IGRpc2FibGUKPiA+IFZJIGxheWVyIGFzIGEgc2lkZSBlZmZlY3QgZm9y
+IGV4YW1wbGUpIGF0IHdyb25nIHRpbWVzLiBBbmQgb25seSBjaGFuZ2VzCj4gPiBuZWNlc3Nhcnkg
+dG8gZGVidWcvZml4IHRoaXMgYXJlIGluY2x1ZGVkLgo+Cj4gSG93IGFib3V0IHRoaXM6Cj4KPiAg
+QSBwcm9ibGVtIHdhcyBmb3VuZCB3aGVyZSBpZGVudGljYWwgY29uZmlndXJhdGlvbiBvZiBwbGFu
+ZXMgbGVhZHMKPiAgdG8gZGlmZmVyZW50IHJlZ2lzdGVyIHNldHRpbmdzIGF0IHRoZSBIVyBsYXll
+ciB3aGVuIHVzaW5nIGEgWCBzZXJ2ZXIKPiAgd2l0aCBtb2Rlc2V0dGluZyBkcml2ZXIgYW5kIG9u
+ZSBwbGFuZSBtYXJrZWQgYXMgYSBjdXJzb3IuCgpXZSBkb24ndCBoYXZlIGEgY3Vyc29yIHBsYW5l
+LgoKPiAgT24gZmlyc3QgcnVuIG9mIHRoZSBYIHNlcnZlciwgb25seSB0aGUgYmxhY2sgc2NyZWVu
+IGFuZCB0aGUgbGF5ZXIKPiAgY29udGFpbmluZyB0aGUgY3Vyc29yIGlzIHZpc2libGUuIFN3aXRj
+aGluZyB0byBjb25zb2xlIGFuZCBiYWNrCj4gIGNvcnJlY3RzIHRoZSBzaXR1YXRpb24uCj4KPiAg
+SSBoYXZlIGR1bXBlZCByZWdpc3RlcnMsIGFuZCBmb3VuZCBvdXQgdGhpczoKPgo+ICAoSW4gYm90
+aCBjYXNlcyB0aGVyZSBhcmUgdHdvIGVuYWJsZWQgcGxhbmVzLCBwbGFuZSAxIHdpdGggenBvcyAw
+IGFuZAo+ICBwbGFuZSAzIHdpdGggenBvcyAxKS4KPgo+ICAxKSBGaXJzdCBYb3JnIHJ1bjoKPgo+
+ICAgIDB4MDExMDEwMDAgOiAwMDAwMDIwMQo+ICAgIDB4MDExMDEwODAgOiAwMDAwMDAzMAo+Cj4g
+ICAgQkxEX0ZJTExfQ09MT1JfQ1RMOiAoYWthIFNVTjhJX01JWEVSX0JMRU5EX1BJUEVfQ1RMKQo+
+ICAgICAgUDFfRU4KPgo+ICAgIEJMRF9DSF9SVENUTDogKGFrYSBTVU44SV9NSVhFUl9CTEVORF9S
+T1VURSkKPiAgICAgIFAwX1JUQ1RMIGNoYW5uZWwwCj4gICAgICBQMV9SVENUTCBjaGFubmVsMwo+
+Cj4gIDIpIEFmdGVyIHN3aXRjaCB0byBjb25zb2xlIGFuZCBiYWNrIHRvIFhvcmc6Cj4KPiAgMHgw
+MTEwMTAwMCA6IDAwMDAwMzAxCj4gIDB4MDExMDEwODAgOiAwMDAwMDAzMQo+Cj4gICAgQkxEX0ZJ
+TExfQ09MT1JfQ1RMOgo+ICAgICAgUDFfRU4gYW5kIFAwX0VOCj4KPiAgICBCTERfQ0hfUlRDVEw6
+Cj4gICAgICBQMF9SVENUTCBjaGFubmVsMQo+ICAgICAgUDFfUlRDVEwgY2hhbm5lbDMKPgo+ICBX
+aGF0IGhhcHBlbnMgaXMgdGhhdCBzdW44aV91aV9sYXllcl9lbmFibGUoKSBmdW5jdGlvbiBtYXkg
+ZGlzYWJsZQo+ICBibGVuZGluZyBwaXBlcyBldmVuIGlmIGl0IGlzIG5vIGxvbmdlciBhc3NpZ25l
+ZCB0byBpdHMgbGF5ZXIsIGJlY2F1c2UKPiAgb2YgaW5jb3JyZWN0IHN0YXRlL3pwb3MgdHJhY2tp
+bmcgaW4gdGhlIGRyaXZlci4KPgo+ICBJbiBwYXJ0aWN1bGFyLCBsYXllciAxIGlzIGNvbmZpZ3Vy
+ZWQgdG8genBvcyAwIGFuZCB0aHVzIHVzZXMgcGlwZSAwLgo+ICBXaGVuIGxheWVyIDMgaXMgZW5h
+YmxlZCBieSBYIHNlcnZlciwgc3VuOGlfdWlfbGF5ZXJfZW5hYmxlKCkgd2lsbCBnZXQKPiAgY2Fs
+bGVkIHdpdGggb2xkX3pwb3M9MCB6cG9zPTEsIHdoaWNoIHdpbGwgbGVhZCB0byBkaXNhYmxpbmcg
+b2YgcGlwZSAwLgo+Cj4gIEluIGdlbmVyYWwgdGhpcyBpc3N1ZSBjYW4gaGFwcGVuIHRvIGFueSBs
+YXllciBkdXJpbmcgZW5hYmxlIG9yIHpwb3MKPiAgY2hhbmdlcyBvbiBtdWx0aXBsZSBsYXllcnMg
+YXQgb25jZS4KPgo+ICBUbyBjb3JyZWN0IHRoaXMgd2Ugbm93IHBhc3MgcHJldmlvdXMgZW5hYmxl
+ZC9kaXNhYmxlZCBzdGF0ZSBvZiB0aGUKPiAgbGF5ZXIsIGFuZCBwYXNzIHJlYWwgcHJldmlvdXMg
+enBvcyBvZiB0aGUgbGF5ZXIgdG8KPiAgc3VuOGlfdWlfbGF5ZXJfZW5hYmxlKCkgYW5kIHJld29y
+ayB0aGUgc3VuOGlfdWlfbGF5ZXJfZW5hYmxlKCkgZnVuY3Rpb24KPiAgdG8gcmVhY3QgdG8gdGhl
+IHN0YXRlIGNoYW5nZXMgY29ycmVjdGx5LiBJbiBvcmRlciB0byBub3QgY29tcGxpY2F0ZQo+ICB0
+aGUgYXRvbWljX2Rpc2FibGUgY2FsbGJhY2sgd2l0aCBhbGwgb2YgdGhlIGFib3ZlIGNoYW5nZXMs
+IHdlIHNpbXBseQo+ICByZW1vdmUgaXQgYW5kIGltcGxlbWVudCBhbGwgdGhlIGNoYW5lcyBhcyBw
+YXJ0IG9mIGF0b21pY191cGRhdGUsIHdoaWNoCj4gIGFsc28gcmVkdWNlcyB0aGUgY29kZSBkdXBs
+aWNhdGlvbi4KCkknbSBub3QgZXZlbiBzdXJlIHdoeSB3ZSBuZWVkIHRoYXQgb2xkIHN0YXRlLiBD
+YW4ndCB3ZSBqdXN0IHJlc2V0CmNvbXBsZXRlbHkgdGhlIHdob2xlIHRoaW5nIGFuZCBkbyB0aGUg
+Y29uZmlndXJhdGlvbiBhbGwgb3ZlciBhZ2Fpbj8KClRoYXQgZGVzY3JpcHRpb24ganVzdCBsb29r
+cyB0byBtZSBsaWtlIHRoZSByZXNldCBpcyBub3QgZG9uZSBwcm9wZXJseSwKYW5kIG5vdyB3ZSBo
+YXZlIHRvIGRlYWwgd2l0aCB0aGUgZmFsbG91dHMgbGF0ZXIgb24uCgo+ICBUbyBtYWtlIHRoaXMg
+YWxsIHdvcmssIGluaXRpYWwgenBvcyBwb3NpdGlvbnMgb2YgYWxsIGxheWVycyBuZWVkIHRvIGJl
+Cj4gIHJlc3RvcmVkIHRvIGluaXRpYWwgdmFsdWVzIG9uIHJlc2V0LgoKQW5kIHRoaXMgYWxzbyBm
+aXhlcyBhIHdob2xlIG90aGVyIGJ1bmNoIG9mIGlzc3VlcywgYW5kIGNhbiBiZSBtYWRlCnZlcnkg
+dHJpdmlhbGx5IGluIGEgc2VwYXJhdGUgcGF0Y2guCgpNYXhpbWUKCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
+aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
