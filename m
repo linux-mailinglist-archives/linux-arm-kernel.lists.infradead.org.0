@@ -2,56 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73FAEB9548
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 18:22:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 325A2B956B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 18:23:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=yclWdCSBl97mbG6+J5Hy4brJAw5LkBwW+5KjVWPXMQo=; b=p66LB/uHIuXwTl/aAig1Olw4P2
-	jC2E3VH6LnLGRJNZvTbfbCmnkRvZfcYczIbhIRKV2UAmFMI4p1hZG/2iFiPJH+lCJNDDxt0dWRqNv
-	DI5ZzHnRRFrYdXalwxkOWauBD79+FPELeYZqhHSybH9+KHGJF+FvMhnjjnDUs+4+w376+Xk6as/O9
-	mzYZt9zGiv/42X9X9IvUQmoqhhMh4XqrtIkWMr5q7OyyKYiOoI0gzuHDHnDXqtyM+oeiqwHinWclM
-	Li6H9M5hD2xAcbiJflJ7ols5DYJoocCX42DgUHen8HUW1mUjTxiiRRmBbeuSdA9tqmXncpcGSZpmH
-	j7BrbTKA==;
+	bh=6LwMQKYKmXzp3B1QtPY71Hf20FZFZceRbAZ2DZCuOAM=; b=WqxnqD8i/KfMAM85wDLBBfdPDm
+	1zVDizUx0OKEzUW/shYrTtrL3jafvLxGR8Ji0f8azFFXmK/9LUH66Fr6oQhpvlnW0EcK21is6Qk5n
+	ckZoGCTwmY7LFH7xWWLS+xkjP+yNPFmKwI9eFjQdMhbHtvYXHjnH8oQSq8dBMRfOCVK0vsV73CVMK
+	auaJ1ahHOWpRfWz7Jtt9lnxhWQ5TAbMA72XZgVlTZY+usJrew8Yqmuvp5MsTgOF4cs7tRI/bBFwgE
+	V+f9ev2v7WWAVyOHxn776QVl2ohf8WseNGI8EGLBdcECdE3NccVAZhhJr/tYmahHPxlqLTRqJO/1C
+	uRhfbUog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBLfe-0006BN-0n; Fri, 20 Sep 2019 16:22:10 +0000
+	id 1iBLgp-0006hP-TH; Fri, 20 Sep 2019 16:23:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBLfD-0005gb-3s; Fri, 20 Sep 2019 16:21:44 +0000
-Received: from localhost.localdomain (unknown [194.230.155.145])
+ id 1iBLgg-0006dV-MN; Fri, 20 Sep 2019 16:23:15 +0000
+Received: from mail-ot1-f43.google.com (mail-ot1-f43.google.com
+ [209.85.210.43])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0D4BB218AE;
- Fri, 20 Sep 2019 16:21:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4F05921907;
+ Fri, 20 Sep 2019 16:23:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568996502;
- bh=lj7T3kTvphhZDzZZ9VayMSkoBtQCOWfhYBk4KfxHg50=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=wW63Fcj6lhiCHAAQ3qQvBNpuB524I5PssySEdWtT/9BPu39PT+9aqVD3ijxpxk9FJ
- 98Y0pifE0or9ZRF4g8VvjzXa096CeFEweNiXIkCcXZeCBm9X3LXkexu6CpmpHRI/F5
- fHwSsEgKU3FXPynRyLmUQ4/miqcvEhVzkMhkA4SY=
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Wim Van Sebroeck <wim@linux-watchdog.org>,
- Guenter Roeck <linux@roeck-us.net>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>, Kevin Hilman <khilman@baylibre.com>,
- linux-watchdog@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH v2 3/3] dt-bindings: watchdog: meson-gxbb-wdt: Include generic
- watchdog bindings
-Date: Fri, 20 Sep 2019 18:21:24 +0200
-Message-Id: <20190920162124.7036-3-krzk@kernel.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190920162124.7036-1-krzk@kernel.org>
+ s=default; t=1568996594;
+ bh=/gY3eyN/99Vwc+rE/mubQe3N1CXXiv7Fbgs2nWfoFDc=;
+ h=References:In-Reply-To:From:Date:Subject:To:From;
+ b=I5p+hmb6P8nedLs1fqxO6ODqniyBYw/gRUMEovWLLh1yw3O5O1q0GGiWUqwik8sOA
+ J4KQSaEWgWFGD4nuUdpolKf4JfqyV5QNVcdSxNLyi13n+KU9g7P53wBElx8Z0Shnn5
+ 5JMp4vX8nT/yLz1zQIn2jblCh2b9N7frBmft6TGU=
+Received: by mail-ot1-f43.google.com with SMTP id 21so6642308otj.11;
+ Fri, 20 Sep 2019 09:23:14 -0700 (PDT)
+X-Gm-Message-State: APjAAAWuvABjchhnLGMICJdowx1Km59FHj9fhVPeEoqVPGyVVsnqe0vw
+ t+AM+8psRuuvu1VOyfhAu0uWnviC+GghPP+iVs0=
+X-Google-Smtp-Source: APXvYqyo+eHqYY+wd1hJeskVQu73EQIp1tU7G1a9ZEYeGtJO8llZMStv0HcB/C9UjvxekPWe0ZjxxZedr3kEHQe+9Lc=
+X-Received: by 2002:a05:6830:10cc:: with SMTP id
+ z12mr6558999oto.20.1568996593576; 
+ Fri, 20 Sep 2019 09:23:13 -0700 (PDT)
+MIME-Version: 1.0
 References: <20190920162124.7036-1-krzk@kernel.org>
+In-Reply-To: <20190920162124.7036-1-krzk@kernel.org>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Fri, 20 Sep 2019 18:23:00 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPcsSjVoHmCJN_AF8a2gkVN3+kQh4D+J01GnxGmMOZh4Hg@mail.gmail.com>
+Message-ID: <CAJKOXPcsSjVoHmCJN_AF8a2gkVN3+kQh4D+J01GnxGmMOZh4Hg@mail.gmail.com>
+Subject: Re: [PATCH v2 1/3] dt-bindings: watchdog: Convert Samsung SoC
+ watchdog bindings to json-schema
+To: Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Guenter Roeck <linux@roeck-us.net>, 
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, 
+ Kevin Hilman <khilman@baylibre.com>, linux-watchdog@vger.kernel.org, 
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-amlogic@lists.infradead.org, 
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_092143_202884_E929B3EF 
-X-CRM114-Status: UNSURE (   9.02  )
+X-CRM114-CacheID: sfid-20190920_092314_749066_77DAC707 
+X-CRM114-Status: UNSURE (   7.89  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -81,38 +92,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Include generic watchdog DT schema bindings in Amlogic GXBB Watchdog
-bindings.
+On Fri, 20 Sep 2019 at 18:21, Krzysztof Kozlowski <krzk@kernel.org> wrote:
+>
+> Convert Samsung S3C/S5P/Exynos watchdog bindings to DT schema format
+> using json-schema.
+>
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+>
+> ---
+>
+> Changes since v1:
+> 1. Indent example with four spaces (more readable),
+> 2. Remove unneeded timeout-sec description and include generic bindings.
 
-Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
----
- .../devicetree/bindings/watchdog/amlogic,meson-gxbb-wdt.yaml   | 3 +++
- 1 file changed, 3 insertions(+)
+My bad, this is actually v3.
 
-diff --git a/Documentation/devicetree/bindings/watchdog/amlogic,meson-gxbb-wdt.yaml b/Documentation/devicetree/bindings/watchdog/amlogic,meson-gxbb-wdt.yaml
-index d7352f709b37..4ddae6feef3b 100644
---- a/Documentation/devicetree/bindings/watchdog/amlogic,meson-gxbb-wdt.yaml
-+++ b/Documentation/devicetree/bindings/watchdog/amlogic,meson-gxbb-wdt.yaml
-@@ -10,6 +10,9 @@ title: Meson GXBB SoCs Watchdog timer
- maintainers:
-   - Neil Armstrong <narmstrong@baylibre.com>
- 
-+allOf:
-+  - $ref: watchdog.yaml#
-+
- properties:
-   compatible:
-     enum:
--- 
-2.17.1
-
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
