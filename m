@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59049B9046
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 15:04:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21FA5B904B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 15:05:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,101 +11,102 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=nTHRDiZZADcejfGrjW+Oh7qdsxWbJpdvQbj+JGacHms=; b=Hg1SYAjdqTCEkb0FBAvM3b4PEy
-	hpF5S9CKYLke9/MeTm8QcESm7vV3q6kXGs0a7ACGaznNucfB40PUXZTGHX3u5DizK++eeAV9/e4YR
-	LjtUuC87Fn3EwiG3LSLW64jixqOXPN+JejHmXurhBdH1BFY4nZfD29PgsXq0mNC030mmkspxKyx3N
-	5ATsiEbwbS6O6PtnKMIaiGLgGnmJ4uvDr8uOkJSFWpFDUAOudqmy747Ed81VmaNuRi7sM7Ox5JOcs
-	hYnZsKDeL51oD+Zp+GPHRie6taggEb/Onzs5vKkTHzUs+spM9fgHuEWs0DyJRP5glriS46s8pkOVs
-	aE/xYdYA==;
+	bh=23yxtgZx/4szzooafe4p2xQP5tyGOsW+WFSrS+IKZmw=; b=kVSa4USUkG6fLRRUaxhdKfmHyO
+	rsmvGLxpjcm8n1H0xOvQMpGbLBzav4l1bTCYUo9SKIuo/MyRkYC+TqsT7TiW3G9uybYepaYdtcoP+
+	mBhK/pwjZosV/cwxOuWVqtocLDlViMg08bpDFoegS+5Uou38XWMHDFoD1KBMzu7OzwnUXlwf8+1vl
+	q+ea+LQB4qmTBrx6sEkGqbfJ39QN3kasfsoX32powyq8gn9NSCRqcq3e2QbJ9vGq20Qm/Ac79fiz0
+	oTomDn3QeZZlv8Mb1cpmLpAjFA5//Yw6l+fFTXoonqC/aRuPYMXJVSf148dJtP4yY3VFw6wKLO0yU
+	8Aac52Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBIaf-00053O-PM; Fri, 20 Sep 2019 13:04:49 +0000
+	id 1iBIb0-0005V9-Ih; Fri, 20 Sep 2019 13:05:10 +0000
 Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBIZK-0003Nh-Lv
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 13:03:28 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ id 1iBIZR-0003XC-7V
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 13:03:35 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
  by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190920130325euoutp012e87c9a9714ab2a8dfc69721e8fccd51~GJy_Llu2o3045630456euoutp01h
+ 20190920130325euoutp0107da0408819f3656b5e93e50d33eaffc~GJy_xUA6X3045730457euoutp01j
  for <linux-arm-kernel@lists.infradead.org>;
  Fri, 20 Sep 2019 13:03:25 +0000 (GMT)
 DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20190920130325euoutp012e87c9a9714ab2a8dfc69721e8fccd51~GJy_Llu2o3045630456euoutp01h
+ 20190920130325euoutp0107da0408819f3656b5e93e50d33eaffc~GJy_xUA6X3045730457euoutp01j
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1568984605;
- bh=6Pr3bvlwTEEuaJryJIjyun0TpsiDiHDMaMQxx7hutTk=;
+ s=mail20170921; t=1568984606;
+ bh=y4Kvy/he22nbkNnh3UtlDLg5F84jBQHhkJan8z/Dg4I=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ubMgNsHARLMq1TeGGWcA+08NV7BWgfXB58Pll3imGPzTllhXVFCsaU9V6SnZ3MQub
- 8qc+B6C+GmTdlCueYGuSoKPzv3P1H3GaQTKDUlpRWhOUp/5IT7ZgmKwKT/mWzZ8BXu
- XsP0v/NDoGDJjACX4uTZY7AQXEsczYCixit7Evvo=
-Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ b=reh4OU8rVu5iGu+lGWWMQfJ7h4gdclU/318CVSIL9C7qMv3GyO4KGpgvCuLQ+0eXs
+ cUN8zXJT95fmblWDPwlntoYQeDuFP8vbPecdvWKymx0Ggw2K7k4pj2TtlIYAywyE/i
+ tmTDnVXr1S2Cc6455m+JrgoPxMrZlaZciHN3QfGE=
+Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
  eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20190920130324eucas1p2026e88c13bccc5334aa475f44156ae9a~GJy9YmXuM1572315723eucas1p2Y;
- Fri, 20 Sep 2019 13:03:24 +0000 (GMT)
+ 20190920130325eucas1p2fc72e9073210a504295088ca09b9013d~GJy_VE9wR1581315813eucas1p2m;
+ Fri, 20 Sep 2019 13:03:25 +0000 (GMT)
 Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges2new.samsung.com (EUCPMTA) with SMTP id 57.DB.04309.B1EC48D5; Fri, 20
- Sep 2019 14:03:23 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20190920130323eucas1p218c6822eca3869eb0d3b7380497bbca4~GJy8Pm_q91587515875eucas1p2n;
- Fri, 20 Sep 2019 13:03:23 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20190920130322eusmtrp18133960dcc519cdf00c91349b024d1ed~GJy7_A22n0476604766eusmtrp1j;
- Fri, 20 Sep 2019 13:03:22 +0000 (GMT)
-X-AuditID: cbfec7f4-afbff700000010d5-fa-5d84ce1bac4a
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id BC.DC.04469.D1EC48D5; Fri, 20
+ Sep 2019 14:03:25 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190920130324eucas1p118bfab45306a29752bf4c1cfdd8f61a1~GJy9gDx6M2867428674eucas1p1i;
+ Fri, 20 Sep 2019 13:03:24 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20190920130324eusmtrp258dccde01909620f4f0c634d76513d12~GJy9M3cFN1022710227eusmtrp2H;
+ Fri, 20 Sep 2019 13:03:24 +0000 (GMT)
+X-AuditID: cbfec7f2-569ff70000001175-7d-5d84ce1d21ac
 Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id 82.11.04117.A1EC48D5; Fri, 20
- Sep 2019 14:03:22 +0100 (BST)
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id D9.2B.04166.C1EC48D5; Fri, 20
+ Sep 2019 14:03:24 +0100 (BST)
 Received: from AMDC3061.DIGITAL.local (unknown [106.120.51.75]) by
  eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20190920130322eusmtip22fb2f23f6afc2355304e5de35b82149b~GJy7UlkfU1284812848eusmtip2f;
- Fri, 20 Sep 2019 13:03:22 +0000 (GMT)
+ 20190920130323eusmtip273f4ce49ec2238905b885382f032410c~GJy8io9MM1303613036eusmtip29;
+ Fri, 20 Sep 2019 13:03:23 +0000 (GMT)
 From: Sylwester Nawrocki <s.nawrocki@samsung.com>
 To: broonie@kernel.org, krzk@kernel.org
-Subject: [PATCH v2 08/10] ASoC: samsung: Rename Arndale card driver
-Date: Fri, 20 Sep 2019 15:02:17 +0200
-Message-Id: <20190920130218.32690-9-s.nawrocki@samsung.com>
+Subject: [PATCH v2 09/10] ARM: dts: arndale: Add audio support (WM1811 CODEC
+ boards)
+Date: Fri, 20 Sep 2019 15:02:18 +0200
+Message-Id: <20190920130218.32690-10-s.nawrocki@samsung.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190920130218.32690-1-s.nawrocki@samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA0WSa0hTYRjHe89l5zidnqbim0bGNEvBWyWdUCKpYF+CPpYXaupBpW3ajloW
- qJmmeWtoMVHDUd6amDZ1lWGTeVl4m6MhkpqXBLPSAq3UQvN4tL79nv/z/7/Pw8NLouJ63J1M
- VKYwKqVMLhEIMUPfmsXfYzgnOmhplaZtVhNCPy9vxumHM3MC2parB3R1zzBOWywtBP3Tlo/Q
- +o+jOF1ueYPQTT2TBL38zYjTuZ09BN39NQ+nrQ0ryGlHactytkD6qmKSkOp19wTS1ppMqaZq
- E0hL2nRAuqw/cIGIEIbFMfLENEYVeOqKMKG/rBAkz4hvmNoWkSww7VQA7EhIHYfZxlqMYzHV
- AKDul6QACLd4BcDR8nWML5YBrNT2CXYTU+1tOJ+oB3Bx0PdfYmOiHeEaAioYFveWAI5dqMNw
- qjwb50wotYBAde+zbZMzdQZ+erBKFACSxKhD8N3a9gARFQo7520EP8wTNrZ0oRzbUWFwYewx
- wr0DKQMBX2wOAd50FlbOzO9s5ww/m9t2wvvhQFkRxgfuAFj0epzgCzWAU2btTjoUdputOLcF
- SvnC5o5AXg6HS9UWhJMh5QjHFvdyMrqFpQYNyssimH9XzLu94W+dBuHZHRbObWI8S+FanRnn
- D3QfwLmBdYEaeFb8H6YFQAfcmFRWEc+wR5XM9QBWpmBTlfEBsUkKPdj6PgMb5pWXoONPjAlQ
- JJA4iLRvc6LFuCyNTVeYACRRiYuoKiQ7WiyKk6XfZFRJl1WpcoY1AQ8Sk7iJbu2ZjhRT8bIU
- 5irDJDOq3S5C2rlngUvekZagifovXn6Z+zzEyWhTl6GOPTcodwrOGE54umqMcbDqNImufobI
- wSMjj/KcvN7P9tcpjQarfCXKtarhRO3F8Wtlx2wZtWEK7dDtH9/9o4oLfTyLMkcE9t20/YSx
- dBhz8iw2h8QKK8LPq2Z91I0bT5CaIeXBiJPTH8ZagyQYmyAL9kNVrOwvfUZ2BjoDAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFupgkeLIzCtJLcpLzFFi42I5/e/4PV2pcy2xBhPvWVpcuXiIyWLjjPWs
+X-Brightmail-Tracker: H4sIAAAAAAAAA0WSa0gUYRSG+2ZndkZpZdwV/NJSWoowyk1ZYSKRiqKhX6HUj8xq0kGXvO54
+ D9S8tZptFpriBTfvGnlZxWtqueoGgYtiJoipua15ScPV6ELaTmP17znved/vHA4fIZLWYS6E
+ KjKWVUcy4XKxPdox8t10/MBoZtCJtj47amJsEKFai5sxqnDeLKYmsvSAqhgaxSiTqQWnvk5o
+ EEq/MIlRxaZ+hHo+NINT1vUBjMrqG8Ipw+o9jBqr30ROO9At1nQx3V0yg9P6xhwx3VadSheV
+ 7QBa294IaKve7RJ+1d43hA1XxbNqhd9N+7Ds3mEs+qljYvX4OpoGtiW5gCAgqYQ9W665wI6Q
+ kvUA6ivRXGBv400ANzKmgVBYAWwunxTzLj6Q19uCCYk6ABcX9v1LrGlrUb4hJr3gg2Et4NmJ
+ PAJni9Mx3iQilxCYP9yE8A0ZeQV26N7+eQklD0Pj9ADOs4T0hd8sJiBMc4fPWl6KeLaz6UtT
+ lQj/ECT1OLQU/sAE0zk4vKxDBZbBZWM7LvB+uNNdsRvIALa9p3GhyAdw1qjbHXEKGoxjGH8N
+ EekBm3sUgnwGfswz4MKRHODUZ0deFtnwcUeRSJAlUJMtFdyH4M/GIkRgF3jfvLO7Dg21JTmI
+ cKGHAH54+gnPB+4l/4fpAGgEzmwcFxHKcl6RbIInx0RwcZGhnsFREXpg+z5vto0bXWBr/NYg
+ IAkg3yuhRzKDpBgTzyVFDAJIiOROkjKf9CCpJIRJSmbVUTfUceEsNwhcCVTuLLmzZy5QSoYy
+ sextlo1m1X+7CGHnkgaaGhT0r5h3A/O9j3KXV5Sta4p4WUrVeb8ep83o8pTVFweLZYn+K4ZS
+ g9nxfYUbo/RgzCtYoKfqbP/dy5ak7pquzoSw1E6ppkqnyVY2oF9KS5+sF3jEuF57daEhgfHR
+ LdaeVDYEeHuHzF0vuGgJ6alJVkcdMwUXyOpU/gFlr41ylAtjvI6K1BzzGwqJZI86AwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFmpnkeLIzCtJLcpLzFFi42I5/e/4PV2Zcy2xBsumCVhcuXiIyWLjjPWs
  FlMfPmGzuNK6idFi/pFzrBbnz29gt/h2pYPJYtPja6wWM87vY7JYe+Quu8Xn9/tZLVr3HmG3
  OPymndXi4oovTA58Hhs+N7F57Jx1l91j06pONo/NS+o9ps/5z+jRt2UVo8fnTXIB7FF6NkX5
- pSWpChn5xSW2StGGFkZ6hpYWekYmlnqGxuaxVkamSvp2NimpOZllqUX6dgl6GacmdzMWPBSq
- OLTlLVMD4wP+LkZODgkBE4n7W7ewdjFycQgJLGWUWLvkIUsXIwdQQkpifosSRI2wxJ9rXWwQ
- NZ8YJfaeWcAMkmATMJToPdrHCGKLCGhKdMy7DTaIWeA7k8SBxyfBioQFnCVeTPnBDjKURUBV
- 4vJPNpAwr4C1xN7nV9ghFshLrN5wAKycU8BG4uWNRUwgthBQzel9e9knMPItYGRYxSiSWlqc
- m55bbKRXnJhbXJqXrpecn7uJERgL24793LKDsetd8CFGAQ5GJR5ej2MtsUKsiWXFlbmHGCU4
- mJVEeOeYNsUK8aYkVlalFuXHF5XmpBYfYjQFumkis5Rocj4wTvNK4g1NDc0tLA3Njc2NzSyU
- xHk7BA7GCAmkJ5akZqemFqQWwfQxcXBKNTDGXkt1fTIv2cpUc+FjR9OdYlP+yVUVrr1Ut2BN
- aPf2o/wF9a/3i7ds57ereF5oUjDDnVPdNXJa3JcDJWuPT1c+OlVoJecklZPpvy8+fsm8R9Gs
- p/fa5r72nxuMGS4/0HiiWOC333yXsM1Myz0c0219DOfM/PNha3ySxe/XRT+q11atXvtwxXVH
- JZbijERDLeai4kQA4wv62JsCAAA=
-X-CMS-MailID: 20190920130323eucas1p218c6822eca3869eb0d3b7380497bbca4
+ pSWpChn5xSW2StGGFkZ6hpYWekYmlnqGxuaxVkamSvp2NimpOZllqUX6dgl6GW27j7IWLBSs
+ WHLpPUsD4z/eLkZODgkBE4me3RtYuxi5OIQEljJKPO6aAeRwACWkJOa3KEHUCEv8udbFBmIL
+ CXxilHj2MBvEZhMwlOg92scIYosIaEp0zLsNNodZ4DuTxIHHJ5lB5ggLhEg8vMsHUsMioCpx
+ /PZ+dhCbV8BG4sez84wQ8+UlVm84wAxicwLFX95YxASxy1ri9L697BMY+RYwMqxiFEktLc5N
+ zy021CtOzC0uzUvXS87P3cQIjIRtx35u3sF4aWPwIUYBDkYlHt4FJ1pihVgTy4orcw8xSnAw
+ K4nwzjFtihXiTUmsrEotyo8vKs1JLT7EaAp01ERmKdHkfGCU5pXEG5oamltYGpobmxubWSiJ
+ 83YIHIwREkhPLEnNTk0tSC2C6WPi4JRqYIxZY7Ih9eLfByvZ4vvcqnjSHBY6hK3d+mXihRLJ
+ O1mJd73Xu63pn1a80LpDtk/WSIXxbdSCtevClbsmOfClzvufUfBsVvbSUyXyOTMyAhbMXiwl
+ 8y2sLcnuZ9WVZ0JTNdurLjgdW6AULNu9aNkOoxChySGvSpaFpyseVzkY4td96MlU7wlVa5RY
+ ijMSDbWYi4oTAX30pqWaAgAA
+X-CMS-MailID: 20190920130324eucas1p118bfab45306a29752bf4c1cfdd8f61a1
 X-Msg-Generator: CA
-X-RootMTR: 20190920130323eucas1p218c6822eca3869eb0d3b7380497bbca4
+X-RootMTR: 20190920130324eucas1p118bfab45306a29752bf4c1cfdd8f61a1
 X-EPHeader: CA
 CMS-TYPE: 201P
-X-CMS-RootMailID: 20190920130323eucas1p218c6822eca3869eb0d3b7380497bbca4
+X-CMS-RootMailID: 20190920130324eucas1p118bfab45306a29752bf4c1cfdd8f61a1
 References: <20190920130218.32690-1-s.nawrocki@samsung.com>
- <CGME20190920130323eucas1p218c6822eca3869eb0d3b7380497bbca4@eucas1p2.samsung.com>
+ <CGME20190920130324eucas1p118bfab45306a29752bf4c1cfdd8f61a1@eucas1p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_060326_866220_294A750A 
-X-CRM114-Status: GOOD (  10.90  )
+X-CRM114-CacheID: sfid-20190920_060333_473128_48BEE3AC 
+X-CRM114-Status: GOOD (  13.08  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -146,65 +147,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rename arndale_rt5631.c to just arnddale.c as we support other CODECs
-than RT5631.  While at it replace spaces in Kconfig with tabs.
+Add sound node and the clock configurations for the I2S controller
+for audio support on the Exynos5250 SoC Arndale boards with
+WM1811 based audio daughter board.
+
+We need to increase drive strength of the I2S bus, otherwise
+the audio CODEC doesn't work. Likely the CODEC's master clock
+is the main issue here.
 
 Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
 ---
 Changes since v1:
- - new patch.
+ - moved &clock, &clock_audss parts to preserve alphabetical order
 ---
- sound/soc/samsung/Kconfig                         | 10 +++++-----
- sound/soc/samsung/Makefile                        |  4 ++--
- sound/soc/samsung/{arndale_rt5631.c => arndale.c} |  0
- 3 files changed, 7 insertions(+), 7 deletions(-)
- rename sound/soc/samsung/{arndale_rt5631.c => arndale.c} (100%)
+ arch/arm/boot/dts/exynos5250-arndale.dts | 27 +++++++++++++++++++++++-
+ 1 file changed, 26 insertions(+), 1 deletion(-)
 
-diff --git a/sound/soc/samsung/Kconfig b/sound/soc/samsung/Kconfig
-index 6803cbfa9e46..1a0b163ca47b 100644
---- a/sound/soc/samsung/Kconfig
-+++ b/sound/soc/samsung/Kconfig
-@@ -194,11 +194,11 @@ config SND_SOC_ODROID
- 	help
- 	  Say Y here to enable audio support for the Odroid XU3/XU4.
+diff --git a/arch/arm/boot/dts/exynos5250-arndale.dts b/arch/arm/boot/dts/exynos5250-arndale.dts
+index dc6fa6fe83f1..7247efe2ec12 100644
+--- a/arch/arm/boot/dts/exynos5250-arndale.dts
++++ b/arch/arm/boot/dts/exynos5250-arndale.dts
+@@ -11,6 +11,7 @@
+ #include <dt-bindings/interrupt-controller/irq.h>
+ #include <dt-bindings/input/input.h>
+ #include <dt-bindings/clock/samsung,s2mps11.h>
++#include <dt-bindings/sound/samsung-i2s.h>
+ #include "exynos5250.dtsi"
  
--config SND_SOC_ARNDALE_RT5631_ALC5631
--        tristate "Audio support for RT5631(ALC5631) on Arndale Board"
--        depends on I2C
--        select SND_SAMSUNG_I2S
--        select SND_SOC_RT5631
-+config SND_SOC_ARNDALE
-+	tristate "Audio support for Arndale Board"
-+	depends on I2C
-+	select SND_SAMSUNG_I2S
-+	select SND_SOC_RT5631
- 	select MFD_WM8994
- 	select SND_SOC_WM8994
+ / {
+@@ -135,6 +136,12 @@
+ 		};
+ 	};
  
-diff --git a/sound/soc/samsung/Makefile b/sound/soc/samsung/Makefile
-index c3b76035f69c..8f5dfe20b9f1 100644
---- a/sound/soc/samsung/Makefile
-+++ b/sound/soc/samsung/Makefile
-@@ -39,7 +39,7 @@ snd-soc-lowland-objs := lowland.o
- snd-soc-littlemill-objs := littlemill.o
- snd-soc-bells-objs := bells.o
- snd-soc-odroid-objs := odroid.o
--snd-soc-arndale-rt5631-objs := arndale_rt5631.o
-+snd-soc-arndale-objs := arndale.o
- snd-soc-tm2-wm5110-objs := tm2_wm5110.o
++	sound {
++		compatible = "samsung,arndale-wm1811";
++		samsung,audio-cpu = <&i2s0>;
++		samsung,audio-codec = <&wm1811>;
++	};
++
+ 	fixed-rate-clocks {
+ 		xxti {
+ 			compatible = "samsung,clock-xxti";
+@@ -151,6 +158,16 @@
+ 	};
+ };
  
- obj-$(CONFIG_SND_SOC_SAMSUNG_JIVE_WM8750) += snd-soc-jive-wm8750.o
-@@ -62,5 +62,5 @@ obj-$(CONFIG_SND_SOC_LOWLAND) += snd-soc-lowland.o
- obj-$(CONFIG_SND_SOC_LITTLEMILL) += snd-soc-littlemill.o
- obj-$(CONFIG_SND_SOC_BELLS) += snd-soc-bells.o
- obj-$(CONFIG_SND_SOC_ODROID) += snd-soc-odroid.o
--obj-$(CONFIG_SND_SOC_ARNDALE_RT5631_ALC5631) += snd-soc-arndale-rt5631.o
-+obj-$(CONFIG_SND_SOC_ARNDALE) += snd-soc-arndale.o
- obj-$(CONFIG_SND_SOC_SAMSUNG_TM2_WM5110) += snd-soc-tm2-wm5110.o
-diff --git a/sound/soc/samsung/arndale_rt5631.c b/sound/soc/samsung/arndale.c
-similarity index 100%
-rename from sound/soc/samsung/arndale_rt5631.c
-rename to sound/soc/samsung/arndale.c
++&clock {
++	assigned-clocks = <&clock CLK_FOUT_EPLL>;
++	assigned-clock-rates = <49152000>;
++};
++
++&clock_audss {
++	assigned-clocks = <&clock_audss EXYNOS_MOUT_AUDSS>;
++	assigned-clock-parents = <&clock CLK_FOUT_EPLL>;
++};
++
+ &cpu0 {
+ 	cpu0-supply = <&buck2_reg>;
+ };
+@@ -502,9 +519,11 @@
+ &i2c_3 {
+ 	status = "okay";
+ 
+-	wm1811a@1a {
++	wm1811: codec@1a {
+ 		compatible = "wlf,wm1811";
+ 		reg = <0x1a>;
++		clocks = <&i2s0 CLK_I2S_CDCLK>;
++		clock-names = "MCLK1";
+ 
+ 		AVDD2-supply = <&main_dc_reg>;
+ 		CPVDD-supply = <&main_dc_reg>;
+@@ -540,9 +559,15 @@
+ };
+ 
+ &i2s0 {
++	assigned-clocks = <&i2s0 CLK_I2S_RCLK_SRC>;
++	assigned-clock-parents = <&clock_audss EXYNOS_I2S_BUS>;
+ 	status = "okay";
+ };
+ 
++&i2s0_bus {
++	samsung,pin-drv = <EXYNOS4_PIN_DRV_LV2>;
++};
++
+ &mixer {
+ 	status = "okay";
+ };
 -- 
 2.17.1
 
