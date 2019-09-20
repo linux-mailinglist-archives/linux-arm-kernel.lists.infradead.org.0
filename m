@@ -2,148 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04B0EB95F0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 18:45:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DA1FB95FF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 18:53:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:Subject:From:References:To:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=YPmcX0odH2nTIT4ZBMBriGpjT8mrjygh7JhEUvR86dg=; b=OgUDbuIO7GSBZ1n2bWgVCd2PXF
-	4KiaZJ1QIc75Fs3KOFSDQlc1AVMNLQX8D/wyN6KFKSPueT5falXv4q4X0G7OiyPsgabRr6OuLRjDJ
-	pQC7apoj4k7d+EpIHOdHj0Obli0c9ZDUKGqGgzh0eUGcLkiBzl7lqkuBQg4kc4cAGnVe9F2eAHNq/
-	lSHtB8qxPZHMGq9tCQUi0Hb5KMSYc3IH9TtA0PGBqf+VfUKdD1XLp0STyyLjN+U4y7Qtlm3lZHqxv
-	gc9KFvcaxiUNc1ZecuKnvMxRGvwxafhcqC+5McMtKt/BP+OlPgeV3bnGa248TKBa5jwTE6KgRPgcb
-	POcJlh2A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZoRiZoWOJecVc/gomhrNESUEP1nBmytAsgQVm88o1ck=; b=oCMdHkewM2LrqT
+	bNPx1t6I/G5znuRmFQRdF7lKIhv+tEZIw2XerbvWxddIBrLhsOSEEEgBcNpJsgZPFYyBzSRdSTReJ
+	2VBrWxInklcRPKdpmTFkjVdY3nbzdrG+4AKFR8Ut6RkuegtOMq+RNlwKAU8TBKjZ4YRliTteGe7Le
+	DSR8KjReQ2PUQAkMceUmiV7t/YPoiiMMLw284dNYWejfDz0y5p9H4JaG5ZwVLIHVHdZ4Vv+1RKQ9z
+	1a8ZCq3YdNF3nCoHw94mlvDbFOnFDAYHgulRS1RbAUhpSkCXTyPq8xgJxPBsK7ChQh7eq13grHuKb
+	Uo8lC2kkdtX6rr0/E8kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBM2P-00081W-MB; Fri, 20 Sep 2019 16:45:41 +0000
-Received: from gateway31.websitewelcome.com ([192.185.143.234])
+	id 1iBM9L-0001JN-AS; Fri, 20 Sep 2019 16:52:51 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBM2I-00080T-Sd
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 16:45:36 +0000
-Received: from cm13.websitewelcome.com (cm13.websitewelcome.com [100.42.49.6])
- by gateway31.websitewelcome.com (Postfix) with ESMTP id 598DFFACB
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 20 Sep 2019 11:45:22 -0500 (CDT)
-Received: from gator4166.hostgator.com ([108.167.133.22]) by cmsmtp with SMTP
- id BM26iWhCS3Qi0BM26i7ZVd; Fri, 20 Sep 2019 11:45:22 -0500
-X-Authority-Reason: nr=8
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=embeddedor.com; s=default; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:Subject:From:References:To:Sender:
- Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=5iTGY/iZKBM5pTYJE4uJXR7l9zLmKTHVaxZNgy/AAJ0=; b=oQg+QDU/KnmpswhtXGTEs6gy4L
- lDCFWbcZsUApx5t/2BUBcxJaAKauYHjsUYAIJ5il3L57iXLo8PSW8FRlROy9cQlQqfBwPP0IKqoTZ
- xl6qkWiEapThHHk/7hP6mrr7vYkq63fkPXPobZNiUQLZqgbcijfz/qf1I4qTNJZgyaiTJ9TAwmt/k
- m/m04M+eAdDzc9084QU5eaigb4iddCx03nPQgGAWuBLAbVTjqgC4xaig2K2d8MiatFL9JnAgi17lK
- qsKi+62l+HWBYEMo4vP3IZZHNntUqXGTUWK2gOPL7pzBoPB/6aveKxf+Cw3D2kbuZEirwATpBJLvj
- 40QfZWyQ==;
-Received: from lfbn-1-12653-249.w90-90.abo.wanadoo.fr ([90.90.196.249]:34510
- helo=[192.168.1.21]) by gator4166.hostgator.com with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92)
- (envelope-from <gustavo@embeddedor.com>)
- id 1iBM25-002h2k-LH; Fri, 20 Sep 2019 11:45:21 -0500
-To: Felix Fietkau <nbd@nbd.name>, linux-wireless@vger.kernel.org,
- Lorenzo Bianconi <lorenzo.bianconi83@gmail.com>, Roy Luo
- <royluo@google.com>, Kalle Valo <kvalo@codeaurora.org>,
- "David S. Miller" <davem@davemloft.net>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Networking <netdev@vger.kernel.org>, linux-arm-kernel@lists.infradead.org,
- linux-mediatek@lists.infradead.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Ryder Lee <ryder.lee@mediatek.com>
-References: <20190704155324.56693-1-nbd@nbd.name>
- <20190704155324.56693-4-nbd@nbd.name>
-From: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=gustavo@embeddedor.com; keydata=
- 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
- VtSixD1uOgytAP7RWS474w==
-Subject: Re: [PATCH 4/4] mt76: mt7615: sync with mt7603 rate control changes
-Message-ID: <ee49c064-1ea6-8262-7672-b91d1a9a037e@embeddedor.com>
-Date: Fri, 20 Sep 2019 18:44:31 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iBM9D-0001IP-Nc; Fri, 20 Sep 2019 16:52:45 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2C8BB207FC;
+ Fri, 20 Sep 2019 16:52:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1568998363;
+ bh=TYstjFpPpmJlXXPM8BgcwsN3SWwWCF707s2P3uizfwk=;
+ h=In-Reply-To:References:Cc:To:From:Subject:Date:From;
+ b=0JoVOOxQBmIIvROvdiQqjgNG0IVfCMPOzHRIqpFM4J+X8aI3tOc6/GqDoGvuAD7b+
+ W1N1tvawHZdnGOKDoCELxkcxaAbcB5W7P2pDeIVG0L0cx9EZm934l+NS0DiT84+T48
+ yTDO8/XrcVZmt9fc2wBxlbAaT1M2AOWZq2xDww8g=
 MIME-Version: 1.0
-In-Reply-To: <20190704155324.56693-4-nbd@nbd.name>
-Content-Language: en-US
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - gator4166.hostgator.com
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - embeddedor.com
-X-BWhitelist: no
-X-Source-IP: 90.90.196.249
-X-Source-L: No
-X-Exim-ID: 1iBM25-002h2k-LH
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
-X-Source-Sender: lfbn-1-12653-249.w90-90.abo.wanadoo.fr ([192.168.1.21])
- [90.90.196.249]:34510
-X-Source-Auth: gustavo@embeddedor.com
-X-Email-Count: 9
-X-Source-Cap: Z3V6aWRpbmU7Z3V6aWRpbmU7Z2F0b3I0MTY2Lmhvc3RnYXRvci5jb20=
-X-Local-Domain: yes
+In-Reply-To: <2551a729-5379-e039-4d5a-a83fa877fb14@baylibre.com>
+References: <20190919093627.21245-1-narmstrong@baylibre.com>
+ <20190919093809.21364-1-narmstrong@baylibre.com>
+ <1j1rwce8yf.fsf@starbuckisacylon.baylibre.com>
+ <20190919170610.541D620644@mail.kernel.org>
+ <2551a729-5379-e039-4d5a-a83fa877fb14@baylibre.com>
+To: Jerome Brunet <jbrunet@baylibre.com>,
+ Neil Armstrong <narmstrong@baylibre.com>
+From: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH 3/3] clk: meson: clk-pll: always enable a critical PLL
+ when setting the rate
+User-Agent: alot/0.8.1
+Date: Fri, 20 Sep 2019 09:52:42 -0700
+Message-Id: <20190920165243.2C8BB207FC@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_094535_004494_99C7717C 
-X-CRM114-Status: GOOD (  10.22  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190920_095243_817255_5A1C06F2 
+X-CRM114-Status: GOOD (  30.99  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [192.185.143.234 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 DATE_IN_FUTURE_06_12   Date: is 6 to 12 hours after Received: date
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -151,6 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -162,67 +80,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+Quoting Neil Armstrong (2019-09-20 01:06:58)
+> Hi Stephen,
+> 
+> On 19/09/2019 19:06, Stephen Boyd wrote:
+> > Quoting Jerome Brunet (2019-09-19 06:01:28)
+> >> On Thu 19 Sep 2019 at 11:38, Neil Armstrong <narmstrong@baylibre.com> wrote:
+> >>
+> >>> Make sure we always enable a PLL on a set_rate() when the PLL is
+> >>> flagged as critical.
+> >>>
+> >>> This fixes the case when the Amlogic G12A SYS_PLL gets disabled by the
+> >>> PSCI firmware when resuming from suspend-to-memory, in the case
+> >>> where the CPU was not clocked by the SYS_PLL, but by the fixed PLL
+> >>> fixed divisors.
+> >>> In this particular case, when changing the PLL rate, CCF doesn't handle
+> >>> the fact the PLL could have been disabled in the meantime and set_rate()
+> >>> only changes the rate and never enables it again.
+> >>>
+> >>> Fixes: d6e81845b7d9 ("clk: meson: clk-pll: check if the clock is already enabled')
+> >>> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> >>> ---
+> >>>  drivers/clk/meson/clk-pll.c | 2 +-
+> >>>  1 file changed, 1 insertion(+), 1 deletion(-)
+> >>>
+> >>> diff --git a/drivers/clk/meson/clk-pll.c b/drivers/clk/meson/clk-pll.c
+> >>> index ddb1e5634739..8c5adccb7959 100644
+> >>> --- a/drivers/clk/meson/clk-pll.c
+> >>> +++ b/drivers/clk/meson/clk-pll.c
+> >>> @@ -379,7 +379,7 @@ static int meson_clk_pll_set_rate(struct clk_hw *hw, unsigned long rate,
+> >>>       }
+> >>>  
+> >>>       /* If the pll is stopped, bail out now */
+> >>> -     if (!enabled)
+> >>> +     if (!(hw->init->flags & CLK_IS_CRITICAL) && !enabled)
+> >>
+> >> This is surely a work around to the issue at hand but:
+> >>
+> >> * Enabling the clock, critical or not, should not be done but the
+> >> set_rate() callback. This is not the purpose of this callback.
+> >>
+> >> * Enabling the clock in such way does not walk the tree. So, if there is
+> >> ever another PSCI Fw which disable we would get into the same issue
+> >> again. IOW, This is not specific to the PLL driver so it should not have
+> >> to deal with this.
+> > 
+> > Exactly.
+> > 
+> >>
+> >> Since this clock can change out of CCF maybe it should be marked with
+> >> CLK_GET_RATE_NOCACHE ?
+> > 
+> > Yes, or figure out a way to make the clk state match what PSCI leaves it
+> > in on resume from suspend.
+> > 
+> > 
+> >>
+> >> When CCF hits a clock with CLK_GET_RATE_NOCACHE while walking the tree,
+> >> in addition to to calling get_rate(), CCF could also call is_enabled()
+> >> if the clock has CLK_IS_CRITICAL and possibly .enable() ?
+> > 
+> > This logic should go under a new flag. The CLK_GET_RATE_NOCACHE flag
+> > specifically means get rate shouldn't be a cached operation. It doesn't
+> > relate to the enable state. I hope that you can implement some sort of
+> > resume hook that synchronizes the state though so that you don't need to
+> > rely on clk_set_rate() or clk_get_rate() to trigger a sync.
+> > 
+> 
+> It's exactly the goal of [1] where I resync a clock tree after a resume.
 
-On 7/4/19 10:53, Felix Fietkau wrote:
-[..]
-> +	for (i = 0, idx = first_idx; count && idx <= last_idx; idx++) {
-> +		struct ieee80211_tx_rate *cur_rate;
-> +		int cur_count;
->  
-> -		info->status.rates[i].count = cur_count;
-> -		final_idx = i;
-> +		cur_rate = &rs->rates[idx / 2];
-> +		cur_count = min_t(int, MT7615_RATE_RETRY, count);
->  		count -= cur_count;
-> +
-> +		if (idx && (cur_rate->idx != info->status.rates[i].idx ||
-> +			    cur_rate->flags != info->status.rates[i].flags)) {
-> +			i++;
-> +			if (i == ARRAY_SIZE(info->status.rates))
+Ok. I haven't looked at that series yet. We can move this discussion
+there if you like.
 
-Is this actually possible  ^^^^^^^ ?? in case it is, see my comments below...
+> 
+> But I don't check the enable state, would you mean that:
+> if core->ops->enable && core->enable_count > 0 && !clk_core_is_enabled(core)
+>     core->ops->enable(core->hw)
+> 
+> along the parent/rate resync ?
+> 
+> Isn't that dangerous ?
+> 
 
-> +				break;
-> +
-> +			info->status.rates[i] = *cur_rate;
-> +			info->status.rates[i].count = 0;
-> +		}
-> +
-> +		info->status.rates[i].count += cur_count;
->  	}
->  
->  out:
-> -	final_rate_flags = info->status.rates[final_idx].flags;
-> +	final_rate_flags = info->status.rates[i].flags;
+Why is it dangerous? If the clk state is lost across suspend/resume we
+need to restore the state of the clk somehow. One way would be to have
+the clk driver tell the framework that this clk is now off and to drop
+the enable counts for any consumers. Then consumers will need to call
+clk_enable() again to turn the clk back on in the consumer resume
+callback. Or we can try to be smarter/nicer and restore the clk state to
+what the consumer is expecting across suspend/resume. I haven't thought
+about what is better or worse.
 
-There is an out-of-bounds access here........^^^ and see below...
+On the one hand, device drivers already handle some things not being
+saved/restored during system low power modes. But on the other hand I
+don't know what the policy is for external resources that a device uses,
+such as clks or regulators or pinctrl muxing, etc.
 
->  
->  	switch (FIELD_GET(MT_TX_RATE_MODE, final_rate)) {
->  	case MT_PHY_TYPE_CCK:
-> @@ -713,8 +778,8 @@ static bool mt7615_fill_txs(struct mt7615_dev *dev, struct mt7615_sta *sta,
->  		return false;
->  	}
->  
-> -	info->status.rates[final_idx].idx = final_rate;
-> -	info->status.rates[final_idx].flags = final_rate_flags;
-> +	info->status.rates[i].idx = final_rate;
-> +	info->status.rates[i].flags = final_rate_flags;
-
-here too ............... ^^^^
-
->  
->  	return true;
->  }
-
---
-Gustavo
 
 _______________________________________________
 linux-arm-kernel mailing list
