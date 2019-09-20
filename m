@@ -2,30 +2,30 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FD64B8A30
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 06:44:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 292A7B8A67
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 07:24:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SylDhPmOPwNhCRwx75zgCBQ4UV+fqyn66CXWPXAnYQQ=; b=O3v59iUAyhiDcv
-	IQhb4fZIs/Q1zTDQvPNM48fDZysNGt36yuwzpWnO9FaxsyXMZZgk7AkXVcWk6L97sQtqaDM6gYtla
-	7tbThYpMFQzYj6j1Xmv1vR0zyOqChHYkwq1l37m/2cJC/tFih2ypKLJH3XFBIa27F5VwuFDDQZCpx
-	bk3hkjAumCxpIeYXyWJmR6PYh0o+HtNecyrygyDz24Q2THoctU+v2VDr0038kd2FXJmM/A9lIbFcr
-	7EvDEbKiKHOV/c/aEH84uPONpuPtTGI0/3iLmzJEI0dkmDMoujJrmvhuSUrRuzKqWTK5yQOzrhliG
-	+v4kyRsO2fezRLvWgxtA==;
+	List-Owner; bh=U6k2/k0BJOd4fMG4YQbMbsk+0nITs+Nz+ZwI/r+5Enc=; b=sqohSEtwBkP5A2
+	CXqPLdrviaAts/raYrN88mwzavJYwnNv4vljx7+ivEiBv6pALYk8D3Kfj4Zy6/vE+kbcll45VqZ/c
+	QZ8i8BMHKa5u9RHQnGI+gttM3B6VE+/2X8WzE19/RACrI4cOXojsWunRjrtpPRDlQqFU8joWaLdzF
+	au6ibbD2xl1kn56bap3RfsS7gnoKP2F26UqjmYfr9ruDI+vJPF4QFOO7t+u1uHfNN8f98teYj2OlJ
+	UfAhuRBgzowteUgrKh+Ha0nKmnKl7EoY2wdtZ00XIbeOYlUGfWDVIZTgScjdzxDeEW0sBB4AzlNh+
+	34d90JTz20PKsA92i79w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBAm4-0002E8-3I; Fri, 20 Sep 2019 04:44:04 +0000
-Received: from esa5.microchip.iphmx.com ([216.71.150.166])
+	id 1iBBOy-0005bQ-Ck; Fri, 20 Sep 2019 05:24:16 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBAl4-0002CZ-K9; Fri, 20 Sep 2019 04:43:05 +0000
-Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
+ id 1iBBOI-0005Zz-R9; Fri, 20 Sep 2019 05:23:37 +0000
+Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
  Tudor.Ambarus@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
  envelope-from="Tudor.Ambarus@microchip.com";
  x-sender="Tudor.Ambarus@microchip.com";
  x-conformance=spf_only; x-record-type="v=spf1";
@@ -33,42 +33,43 @@ Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
  a:smtpout.microchip.com a:mx1.microchip.iphmx.com
  a:mx2.microchip.iphmx.com include:servers.mcsv.net
  include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa5.microchip.iphmx.com: no sender
+Received-SPF: None (esa1.microchip.iphmx.com: no sender
  authenticity information available from domain of
  postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
  envelope-from="Tudor.Ambarus@microchip.com";
  x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa5.microchip.iphmx.com;
+Authentication-Results: esa1.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Tudor.Ambarus@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: LIxxENpqWuRWV43cAx0uoDz5mVGs9Qcvo24Xv5fVpHCyhs816mZZMnpyFbonrNdgnfYoZSsI66
- 20TlCBGLM/ouO07OHao1jAZ2d5xK4gGYAlc5d8CT7WTkaEp0lERbtitnxO9MVUP/Q+RykKZdUu
- SkARdvOwQRmxCRBM5Z+sHMOoxpDrGSLjbRMQkiQwXTqrWzp8qtKlMy0wwn+0SnX45GrkzzELZI
- d9gkbJThL1NhTAUPRlVtukfLxinkKYdqUlFcFEuyknV3Jjx9W+9QejNMUUQQotWJ7MYUg5KY1T
- NH0=
-X-IronPort-AV: E=Sophos;i="5.64,527,1559545200"; d="scan'208";a="48273344"
+IronPort-SDR: CPVOfobjbAvwT/NF9DlL7QYo/26jpxI75ES9vjrLrR35SoQhNvQFmnOWSSIAHXlHGDjIZc1OMd
+ fpGDQ+tTVd267cRj/7ka8RlLgRgWrZ9dSZjVOfdMX7ck0RyEh9tBcdY28t19KlVH9zgG7u5CfW
+ ZQJhuBzugx54SegJWykl1ZHgGalfhMcW9qWrcekpydekW3kADKWVBWV2BYZSnQxARoEbGiHsHc
+ FRlAPjSdOnUSnGIUZah8yBQ4nstUMif4QgXjkoAUaT2jFHrBBVIoS3BAIfh+AxL2HapDYvyT+L
+ nyU=
+X-IronPort-AV: E=Sophos;i="5.64,527,1559545200"; d="scan'208";a="51221959"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 19 Sep 2019 21:42:58 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 19 Sep 2019 22:23:28 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Thu, 19 Sep 2019 21:42:56 -0700
-Received: from NAM01-BN3-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5
- via Frontend Transport; Thu, 19 Sep 2019 21:42:56 -0700
+ 15.1.1713.5; Thu, 19 Sep 2019 22:23:28 -0700
+Received: from NAM02-CY1-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Thu, 19 Sep 2019 22:23:28 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=i14/oZzAakvJPQVISzhZkpkQQ0SeZ+am45W2V/62/2rVvKHLTsoOwOCQq81GZn2OGqSjQDAAWj2tAjCeJvxuPb3y8eEWOblsLFBk6p4MU+eXydFYVTYnGfIR8qczGFgzRjqL7g3PmbQYVevudr7YLg/e1yLQDMrN03zP3T3AcU1SDHbVs/spg90ovRPgOzUA1O2BuoWbkPRCqbzKIaYrXXjltd+Gf40INencjc4/yPWNzKC1rckbfefyz/aDcWiWkq11Yd86/AUO/ugl07Bn/hNgj/gkeIJ9c6BeJQpMFGP7hhbRi5X9p0I/I5Y+jYwp0Tz+PTEC/A97RdwCwxOVdA==
+ b=BCbPi9aLFQs4TTtyFJC8Drdc69m9emXYsWxD1mV1SkN1c8JIClf/JV7VbSN+2ei8xp5QVZTD2BiGX7ajwJF3XSJl5Junhb+IFn9ioI4Heif65HTpAhD2tTEHeYVY0EsePTjrtJEWXnHBekel4UyrFn7U+ztbn0rpA9MIH6a0p0UF5vZ3LGfxMBmNJZXt+0AmIX7Octyo8y79KAHQLTtgb7X4r+w1xvsxy0bvZiDvbZ4MHfSTOlbyvywXbRHHb4FV7Q4c3yRXWTBrkLXvQRtXI2zCebaE0+k3V0UPyWyBzzwN4pVp/w9nMTmXSsNKl14U+C8hB9rT7URqvoWyusgszg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=1tQNxPEKjrYCnvC0Yrn3RhSnDeBBw6x4Bx5j2FIqAFA=;
- b=RBflWBL1H+TOYPIYw/PINzABAjymvjrntyVxmhuw99J6X2FQP29lobeEL74IAHOh3gnBc5vVRxTtsmi0+ojnmVv46fZ3q0LNAqwzaP4UDUMM5uLdqcnnoJnFNEKYfTWvW3gQl4VwFA91dR0tN8VHEXI2WjwqcfsPvkN46YheFHTcPWObXWxBnvvPj+TVvhZiZnVXqcjsyWQYGUMCXHdGXDkJwlSG/FKhFZHX8IZm1xL5fgDyIBAT6q2aG/tPjexcsf0KHPe++KRxUb/5ffseixGPaKJdllbXI48dXxbnG5ViOZBFh098cz/4xG2zsaT4nhpVDiUEHYq1Ixtknt9IIQ==
+ bh=AaOemcgOXJ1MG2hxzAouc6CXqsDMmP0ta0KYa6QkY7I=;
+ b=lCF01A1xXZNHFx3Wb1hvu2ToxpCDVGRBT/0EeaLSxtAZFspGXGNNuL5HKHFed2qlHD4Qv1hD5Qf7SCVRINh2AVKaueq6FYFR+56LNK+jTFWQGSrw6EpRCt6/bWpe7s0WMgjakFSSwaUNRVDxBqSOX3vK2MSHK8UY4BV7Z5QU7gNJbYaFbITAi3W5H8Q9MBhl3EJ4bUXH+kVuyc377VZ96yO9YfMxI7KRMRX0qwX1796eHWO7oa/hSFDdEveZyt9hxk8dWWvTR2FMXzHyJ+9q0miAkAMDvti9hmjI8ibOF7GHs18MnrzdtYFgQ3nvEK721G+puHR5LdZo6JoYYPi1Vw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=microchip.com; dmarc=pass action=none
  header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
@@ -76,80 +77,80 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=microchiptechnology.onmicrosoft.com;
  s=selector2-microchiptechnology-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=1tQNxPEKjrYCnvC0Yrn3RhSnDeBBw6x4Bx5j2FIqAFA=;
- b=XoWHmMXtFUfPMGr3I51GKV+8GhgdBWMmpmShsbhCfnkd2tfOdA3N670v6lVp9JbEXVt5WYgDPuH4oLHYolDg7mqPwVlsYp3292GByGAlD3xkMVShDRVbsxsWySvrocxmWCvqTklnxZAlXluQJqRvAgWjFZGXk5bWPbKOxFo2CUY=
+ bh=AaOemcgOXJ1MG2hxzAouc6CXqsDMmP0ta0KYa6QkY7I=;
+ b=WubN7XfzN64R49QaAIUaK0LhmoRqO4xZMAXhEOI16PPGMNeuiJVs26VgHBNazSNabH80r2p/Qkhs6GdKnmmweZnHkADq48h6WpBruVYcodH3HpQUyIg+qPDNpufqnaQLNLL0IhI0ky5+t9eZKt2W3l2VnyZAJfIG6COtR4heKcM=
 Received: from MN2PR11MB4448.namprd11.prod.outlook.com (52.135.39.157) by
- MN2PR11MB3695.namprd11.prod.outlook.com (20.178.252.156) with Microsoft SMTP
+ MN2PR11MB3790.namprd11.prod.outlook.com (20.178.253.154) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2284.19; Fri, 20 Sep 2019 04:42:55 +0000
+ 15.20.2263.17; Fri, 20 Sep 2019 05:23:26 +0000
 Received: from MN2PR11MB4448.namprd11.prod.outlook.com
  ([fe80::c951:b15a:e4b3:30f7]) by MN2PR11MB4448.namprd11.prod.outlook.com
  ([fe80::c951:b15a:e4b3:30f7%7]) with mapi id 15.20.2263.023; Fri, 20 Sep 2019
- 04:42:55 +0000
+ 05:23:26 +0000
 From: <Tudor.Ambarus@microchip.com>
 To: <vigneshr@ti.com>, <boris.brezillon@collabora.com>,
  <marek.vasut@gmail.com>, <miquel.raynal@bootlin.com>, <richard@nod.at>,
  <linux-mtd@lists.infradead.org>
-Subject: Re: [PATCH 19/23] mtd: spi-nor: Rework
- spansion(_no)_read_cr_quad_enable()
-Thread-Topic: [PATCH 19/23] mtd: spi-nor: Rework
- spansion(_no)_read_cr_quad_enable()
-Thread-Index: AQHVbXBbffKexv8yJ0aKaPhVIe5RwqczRgmAgAC6x4A=
-Date: Fri, 20 Sep 2019 04:42:55 +0000
-Message-ID: <9aa3cc95-33f1-74b5-d739-d4e7ef92d242@microchip.com>
+Subject: Re: [PATCH 17/23] mtd: spi-nor: Fix clearing of QE bit on
+ lock()/unlock()
+Thread-Topic: [PATCH 17/23] mtd: spi-nor: Fix clearing of QE bit on
+ lock()/unlock()
+Thread-Index: AQHVbXBXffWwZrBoIkKrGGyrhA4/GaczE40AgAD4lQA=
+Date: Fri, 20 Sep 2019 05:23:26 +0000
+Message-ID: <06a6e4e8-6802-3f85-ec3c-6295cd703c85@microchip.com>
 References: <20190917155426.7432-1-tudor.ambarus@microchip.com>
- <20190917155426.7432-20-tudor.ambarus@microchip.com>
- <f811a9a6-4b88-e017-5cc6-ad758edbcab3@ti.com>
-In-Reply-To: <f811a9a6-4b88-e017-5cc6-ad758edbcab3@ti.com>
+ <20190917155426.7432-18-tudor.ambarus@microchip.com>
+ <dceca616-2b98-9bc8-73e4-32fb06fc753d@ti.com>
+In-Reply-To: <dceca616-2b98-9bc8-73e4-32fb06fc753d@ti.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-clientproxiedby: VI1PR0901CA0085.eurprd09.prod.outlook.com
- (2603:10a6:800:7e::11) To MN2PR11MB4448.namprd11.prod.outlook.com
+x-clientproxiedby: VI1PR08CA0186.eurprd08.prod.outlook.com
+ (2603:10a6:800:d2::16) To MN2PR11MB4448.namprd11.prod.outlook.com
  (2603:10b6:208:193::29)
 x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [94.177.32.156]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c5ba3ef4-8ed8-4cff-6be9-08d73d8500a8
+x-ms-office365-filtering-correlation-id: c0cac818-8de3-4874-6805-08d73d8aa9f9
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600167)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:MN2PR11MB3695; 
-x-ms-traffictypediagnostic: MN2PR11MB3695:
-x-microsoft-antispam-prvs: <MN2PR11MB36952425A353A9878BB3E73EF0880@MN2PR11MB3695.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
+ SRVR:MN2PR11MB3790; 
+x-ms-traffictypediagnostic: MN2PR11MB3790:
+x-microsoft-antispam-prvs: <MN2PR11MB37900B6CB67A8F69ED04A320F0880@MN2PR11MB3790.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
 x-forefront-prvs: 0166B75B74
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(39860400002)(136003)(376002)(346002)(396003)(199004)(189003)(36756003)(110136005)(8936002)(54906003)(81166006)(4326008)(76176011)(81156014)(8676002)(446003)(11346002)(2906002)(5660300002)(478600001)(99286004)(229853002)(186003)(256004)(71190400001)(71200400001)(31686004)(2201001)(6116002)(316002)(31696002)(386003)(53546011)(86362001)(2501003)(305945005)(66556008)(66066001)(6486002)(7736002)(6246003)(102836004)(66946007)(25786009)(3846002)(66476007)(476003)(486006)(52116002)(26005)(14454004)(6506007)(66446008)(2616005)(6512007)(64756008)(7416002)(6436002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR11MB3695;
+ SFS:(10009020)(39860400002)(396003)(136003)(376002)(346002)(366004)(199004)(189003)(54906003)(71200400001)(316002)(6506007)(3846002)(386003)(476003)(102836004)(446003)(71190400001)(186003)(53546011)(486006)(229853002)(66446008)(99286004)(2616005)(6246003)(6116002)(52116002)(305945005)(11346002)(31686004)(7736002)(4326008)(66556008)(5660300002)(2501003)(6436002)(86362001)(66476007)(81156014)(81166006)(8936002)(110136005)(14454004)(25786009)(2201001)(256004)(7416002)(66066001)(6512007)(36756003)(8676002)(76176011)(26005)(14444005)(64756008)(2906002)(478600001)(66946007)(31696002)(6486002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR11MB3790;
  H:MN2PR11MB4448.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: microchip.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: lpHRKGhtAGQ+DmkK9SrwEeEz3Dw7UEoBgfpQg1fNb1BRljd4dN7VsmMdaB8iaqJogaxSZC3zgvwnESMxhlu6dSChOHwwg4lflScMd+RjIYYAmifFwf8nLKkr74PtYNwZdHKjszdCcv6VwdTfE1A5/Kl9vXb/csX02Dd1QPsHZ0QNCmt/zTO1C0KNb8u9tBs5eopilNzC1Ed/b2LJXPwsYgkVy0BwWIWmW1/VzPTACR5Rj2/wvzr8erIzE1qiugCHBiTBexsswYR7KfAYh4gH2kYDmJNWTr87ihXTDbrcqpv6XFxZlYVBy+39Me1NA3yqpuo1zY5XB+tnXhWcamrW3D7x/30iuKfK4WwqikgTACNDqAfEREVCVvshNJNvz7p5je8JFR9kgV13x6AB1D7f5MhLUyj/aSAlG3l1Z9opkps=
+x-microsoft-antispam-message-info: ZvOAhhsGaIPRHiKwLZyw5Kj+71YuARSIsiUQE2y8O/gyJc1HpjD6YTc20hQySt29uyO9Ne/HXSlH7jbyplXAPUeFp7WO9KGPpgAy40e4syIQC7nnhjk0VVW1Nz4T6DJIFnLBeJOT/yWuyMA9vJB4LeJ/9NPlsOp4WHgQAYc05y5JjbJ4dHZdwwlHgbTKgJ9mjzZ5Pa3Ji+Hm//npbqPH3GKTA8wR9kQIDblD5OHGJIiwpCzs6+DKrBNydXo4S09WngUNl2dxVLuLjr6z5dHQYdTT53v+BvBBBra6NcjHsvoGYGpVCNVf+czL4imv0s/LZ68hruo6J7HmEumXrGo+Wlp3g0dXLYs6PT3f5I0MGi/nUrujZTZhaNyA+W9i5fSkz22aKUxSgZptsEanvMfkCwT9n5AtNvLPxGxlzngo8fA=
 x-ms-exchange-transport-forked: True
-Content-ID: <24E54A8CF30EF742803303509F7A70A7@namprd11.prod.outlook.com>
+Content-ID: <C2F6B467087FEE42995F694D31906562@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: c5ba3ef4-8ed8-4cff-6be9-08d73d8500a8
-X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Sep 2019 04:42:55.0634 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: c0cac818-8de3-4874-6805-08d73d8aa9f9
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Sep 2019 05:23:26.4389 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 5uij9KwNbeFPEATt+34zvL7td4y5VVodem5GHTS6aGMexI6mk3Pq/LCemIyOm6eemDLikwTwwAf2tAz0LTzVGdHF0PWIJ52C5PqUl4iqzPk=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR11MB3695
+X-MS-Exchange-CrossTenant-userprincipalname: 9PzirPctoByOqdv7vJqix1HJ7MgDqMLB7PSmQPXDFmcT7pS/udGktDjkuqVlL99g68j6C6rH043rutTyZrKqkAbsxP8hWlx44UaOfOEf0QM=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR11MB3790
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_214302_725681_8CA601A5 
-X-CRM114-Status: GOOD (  16.19  )
+X-CRM114-CacheID: sfid-20190919_222335_103199_08CFD28A 
+X-CRM114-Status: GOOD (  14.04  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.150.166 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -173,228 +174,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi, Vignesh,
 
-
-On 09/19/2019 08:34 PM, Vignesh Raghavendra wrote:
+On 09/19/2019 05:33 PM, Vignesh Raghavendra wrote:
+> External E-Mail
 > 
+> 
+> Hi Tudor
+> 
+> [...]
 > 
 > On 17-Sep-19 9:25 PM, Tudor.Ambarus@microchip.com wrote:
->> From: Tudor Ambarus <tudor.ambarus@microchip.com>
->>
->> Merge:
->> spansion_no_read_cr_quad_enable()
->> spansion_read_cr_quad_enable()
->>
->> in spi_nor_sr2_bit1_quad_enable().
->>
->> Avoid duplication of code by using spi_nor_write_16bit_sr_and_check(),
->> the SNOR_F_NO_READ_CR case is treated there.
->>
->> We now do the Read Back test even for the old
->> spansion_no_read_cr_quad_enable() case.
->>
->> Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
->> ---
->>  drivers/mtd/spi-nor/spi-nor.c | 89 ++++++++++---------------------------------
->>  include/linux/mtd/spi-nor.h   |  4 +-
->>  2 files changed, 22 insertions(+), 71 deletions(-)
->>
->> diff --git a/drivers/mtd/spi-nor/spi-nor.c b/drivers/mtd/spi-nor/spi-nor.c
->> index 2f79923e7db5..8648666fb9bd 100644
->> --- a/drivers/mtd/spi-nor/spi-nor.c
->> +++ b/drivers/mtd/spi-nor/spi-nor.c
->> @@ -907,7 +907,7 @@ static int spi_nor_write_16bit_sr_and_check(struct spi_nor *nor, u8 status_new,
->>  		 * Write Status (01h) command is available just for the cases
->>  		 * in which the QE bit is described in SR2 at BIT(1).
->>  		 */
->> -		sr_cr[1] = CR_QUAD_EN_SPAN;
->> +		sr_cr[1] = SR2_QUAD_EN_BIT1;
->>  	} else {
->>  		sr_cr[1] = 0;
->>  	}
->> @@ -1963,81 +1963,34 @@ static int spi_nor_sr1_bit6_quad_enable(struct spi_nor *nor)
->>  }
->>  
->>  /**
->> - * spansion_no_read_cr_quad_enable() - set QE bit in Configuration Register.
->> + * spi_nor_sr2_bit1_quad_enable() - set the Quad Enable BIT(1) in the Status
->> + * Register 2.
->>   * @nor:	pointer to a 'struct spi_nor'
->>   *
->> - * Set the Quad Enable (QE) bit in the Configuration Register.
->> - * This function should be used with QSPI memories not supporting the Read
->> - * Configuration Register (35h) instruction.
->> - *
->> - * bit 1 of the Configuration Register is the QE bit for Spansion like QSPI
->> - * memories.
->> - *
->> - * Return: 0 on success, -errno otherwise.
->> - */
->> -static int spansion_no_read_cr_quad_enable(struct spi_nor *nor)
->> -{
->> -	u8 *sr_cr = nor->bouncebuf;
->> -	int ret;
->> -
->> -	/* Keep the current value of the Status Register. */
->> -	ret = spi_nor_read_sr(nor, &sr_cr[0]);
->> -	if (ret)
->> -		return ret;
->> -
->> -	sr_cr[1] = CR_QUAD_EN_SPAN;
->> -
->> -	return spi_nor_write_sr(nor, sr_cr, 2);
->> -}
->> -
->> -/**
->> - * spansion_read_cr_quad_enable() - set QE bit in Configuration Register.
->> - * @nor:	pointer to a 'struct spi_nor'
->> - *
->> - * Set the Quad Enable (QE) bit in the Configuration Register.
->> - * This function should be used with QSPI memories supporting the Read
->> - * Configuration Register (35h) instruction.
->> - *
->> - * bit 1 of the Configuration Register is the QE bit for Spansion like QSPI
->> - * memories.
->> + * Bit 1 of the Status Register 2 is the QE bit for Spansion like QSPI memories.
->>   *
->>   * Return: 0 on success, -errno otherwise.
->>   */
->> -static int spansion_read_cr_quad_enable(struct spi_nor *nor)
->> +static int spi_nor_sr2_bit1_quad_enable(struct spi_nor *nor)
->>  {
->> -	u8 *sr_cr = nor->bouncebuf;
->>  	int ret;
->>  
->> -	/* Check current Quad Enable bit value. */
->> -	ret = spi_nor_read_cr(nor, &sr_cr[1]);
->> -	if (ret)
->> -		return ret;
->> -
->> -	if (sr_cr[1] & CR_QUAD_EN_SPAN)
->> -		return 0;
+>> +static int spi_nor_write_16bit_sr_and_check(struct spi_nor *nor, u8 status_new,
+>> +					    u8 mask)
+>> +{
+>> +	int ret;
+>> +	u8 *sr_cr = nor->bouncebuf;
+>> +	u8 cr_written;
+>> +
+>> +	/* Make sure we don't overwrite the contents of Status Register 2. */
 >> +	if (!(nor->flags & SNOR_F_NO_READ_CR)) {
->> +		/* Check current Quad Enable bit value. */
->> +		ret = spi_nor_read_cr(nor, &nor->bouncebuf[0]);
+> 
+> Assuming SNOR_F_NO_READ_CR is not set...
+> 
+>> +		ret = spi_nor_read_cr(nor, &sr_cr[1]);
 >> +		if (ret)
 >> +			return ret;
->>  
->> -	sr_cr[1] |= CR_QUAD_EN_SPAN;
->> +		if (nor->bouncebuf[0] & SR2_QUAD_EN_BIT1)
->> +			return 0;
+>> +	} else if (nor->flash.quad_enable) {
+>> +		/*
+>> +		 * If the Status Register 2 Read command (35h) is not
+>> +		 * supported, we should at least be sure we don't
+>> +		 * change the value of the SR2 Quad Enable bit.
+>> +		 *
+>> +		 * We can safely assume that when the Quad Enable method is
+>> +		 * set, the value of the QE bit is one, as a consequence of the
+>> +		 * nor->flash.quad_enable() call.
+>> +		 *
+>> +		 * We can safely assume that the Quad Enable bit is present in
+>> +		 * the Status Register 2 at BIT(1). According to the JESD216
+>> +		 * revB standard, BFPT DWORDS[15], bits 22:20, the 16-bit
+>> +		 * Write Status (01h) command is available just for the cases
+>> +		 * in which the QE bit is described in SR2 at BIT(1).
+>> +		 */
+>> +		sr_cr[1] = CR_QUAD_EN_SPAN;
+>> +	} else {
+>> +		sr_cr[1] = 0;
 >> +	}
->>  
->>  	/* Keep the current value of the Status Register. */
->> -	ret = spi_nor_read_sr(nor, &sr_cr[0]);
->> -	if (ret)
->> -		return ret;
->> -
->> -	ret = spi_nor_write_sr(nor, sr_cr, 2);
->> -	if (ret)
->> -		return ret;
->> -
->> -	/* Read back and check it. */
->> -	ret = spi_nor_read_cr(nor, &sr_cr[1]);
->> +	ret = spi_nor_read_sr(nor, &nor->bouncebuf[0]);
->>  	if (ret)
->>  		return ret;
->>  
->> -	if (!(sr_cr[1] & CR_QUAD_EN_SPAN)) {
->> -		dev_err(nor->dev, "Spansion Quad bit not set\n");
->> -		return -EIO;
->> -	}
->> -
->> -	return 0;
+>> +
 > 
-> You need to set QE bit here before writing to CR register. This function
-> does not do that.>
->> +	return spi_nor_write_16bit_sr_and_check(nor, nor->bouncebuf[0], 0xFF);>
-> Neither does spi_nor_write_16bit_sr_and_check().
+> CR_QUAD_EN_SPAN will not be in sr_cr[1] when we reach here. So code
+> won't enable quad mode.
+> 
 
-pff, you're right, I thought I did set it in spi_nor_write_16bit_sr_and_check(),
-but in spi_nor_write_16bit_sr_and_check() I just read the CR, without setting
-the QE bit. Will respin the entire series, thanks for catching this!
+I get the problem now. spi_nor_write_16bit_sr_and_check() does not modify the
+value of the QE bit, which is good in the lock/unlock() case. We want to
+lock/unlock() without enabling or disabling the Quad Mode.
 
-> We need a function that allows to modify SR2/CR register content as well
-> so as to set QE bit right?
-> 
-> Regards
-> Vignesh
-> 
->>  }
->>  
->>  /**
->> @@ -2117,7 +2070,7 @@ static int spi_nor_clear_sr_bp(struct spi_nor *nor)
->>   *
->>   * Read-modify-write function that clears the Block Protection bits from the
->>   * Status Register without affecting other bits. The function is tightly
->> - * coupled with the spansion_read_cr_quad_enable() function. Both assume that
->> + * coupled with the spi_nor_sr2_bit1_quad_enable() function. Both assume that
->>   * the Write Register with 16 bits, together with the Read Configuration
->>   * Register (35h) instructions are supported.
->>   *
->> @@ -2138,7 +2091,7 @@ static int spi_nor_spansion_clear_sr_bp(struct spi_nor *nor)
->>  	 * When the configuration register Quad Enable bit is one, only the
->>  	 * Write Status (01h) command with two data bytes may be used.
->>  	 */
->> -	if (sr_cr[1] & CR_QUAD_EN_SPAN) {
->> +	if (sr_cr[1] & SR2_QUAD_EN_BIT1) {
->>  		ret = spi_nor_read_sr(nor, &sr_cr[0]);
->>  		if (ret)
->>  			return ret;
->> @@ -3642,7 +3595,7 @@ static int spi_nor_parse_bfpt(struct spi_nor *nor,
->>  		 * supported.
->>  		 */
->>  		nor->flags |= SNOR_F_NO_READ_CR;
->> -		flash->quad_enable = spansion_no_read_cr_quad_enable;
->> +		flash->quad_enable = spi_nor_sr2_bit1_quad_enable;
->>  		break;
->>  
->>  	case BFPT_DWORD15_QER_SR1_BIT6:
->> @@ -3663,7 +3616,7 @@ static int spi_nor_parse_bfpt(struct spi_nor *nor,
->>  		 * assumption of a 16-bit Write Status (01h) command.
->>  		 */
->>  		nor->flags |= SNOR_F_HAS_16BIT_SR;
->> -		flash->quad_enable = spansion_read_cr_quad_enable;
->> +		flash->quad_enable = spi_nor_sr2_bit1_quad_enable;
->>  		break;
->>  
->>  	default:
->> @@ -4626,7 +4579,7 @@ static void spi_nor_info_init_flash_params(struct spi_nor *nor)
->>  	u8 i, erase_mask;
->>  
->>  	/* Initialize legacy flash parameters and settings. */
->> -	flash->quad_enable = spansion_read_cr_quad_enable;
->> +	flash->quad_enable = spi_nor_sr2_bit1_quad_enable;
->>  	flash->set_4byte = spansion_set_4byte;
->>  	flash->setup = spi_nor_default_setup;
->>  	/* Default to 16-bit Write Status (01h) Command */
->> @@ -4844,7 +4797,7 @@ static int spi_nor_init(struct spi_nor *nor)
->>  	int err;
->>  
->>  	if (nor->clear_sr_bp) {
->> -		if (nor->flash.quad_enable == spansion_read_cr_quad_enable)
->> +		if (nor->flash.quad_enable == spi_nor_sr2_bit1_quad_enable)
->>  			nor->clear_sr_bp = spi_nor_spansion_clear_sr_bp;
->>  
->>  		err = nor->clear_sr_bp(nor);
->> diff --git a/include/linux/mtd/spi-nor.h b/include/linux/mtd/spi-nor.h
->> index 3a835de90b6a..5590a36eb43e 100644
->> --- a/include/linux/mtd/spi-nor.h
->> +++ b/include/linux/mtd/spi-nor.h
->> @@ -144,10 +144,8 @@
->>  #define FSR_P_ERR		BIT(4)	/* Program operation status */
->>  #define FSR_PT_ERR		BIT(1)	/* Protection error bit */
->>  
->> -/* Configuration Register bits. */
->> -#define CR_QUAD_EN_SPAN		BIT(1)	/* Spansion Quad I/O */
->> -
->>  /* Status Register 2 bits. */
->> +#define SR2_QUAD_EN_BIT1	BIT(1)
->>  #define SR2_QUAD_EN_BIT7	BIT(7)
->>  
->>  /* Supported SPI protocols */
->>
-> 
+As you found, the problem comes later in spi_nor_sr2_bit1_quad_enable() because
+I use there spi_nor_write_16bit_sr_and_check() which keeps the value of the QE
+bit, without setting it to one, so the spi_nor_sr2_bit1_quad_enable() did not
+enable the Quad Mode if not previously enabled.
+
+What I'll do is to introduce a new argument to:
+static int spi_nor_write_16bit_sr_and_check(struct spi_nor *nor, u8 status_new,
+					    u8 mask, bool set_quad_enable)
+
+and do a
+if (set_quad_enable)
+	sr_cr[1] |= CR_QUAD_EN_SPAN;
+after initializing sr_cr[1]
+
+The lock/unlock() methods will call the function with set_quad_enable being
+false (we don't want to modify the QE value), and the
+spi_nor_sr2_bit1_quad_enable() will call it with set_quad_enable being true, we
+want to set QE to one (we don't care of the QE bit previous value).
+
+We'll avoid code duplication, lock/unlock() and spi_nor_sr2_bit1_quad_enable()
+calling the same method.
+
+Cheers,
+ta
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
