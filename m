@@ -2,91 +2,142 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85D60B8D62
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 11:04:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3FCEB8D91
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 11:23:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ie7vvbuwgeVtyTkewZZ2EVOMv5dCVBvNhR+/jVxOQmQ=; b=NiRBOkvDoz3EVk
-	xm7QitFieDbSPvdTlavk/cVvxhV02FiNsk6Jzcor4DRRyDYXexRGlLm/spBkzwhLCag3/G6hc/mB0
-	V9pRUhNGCuQ+YVRk2vlY8DkeAE/NCvv5qRAK93RECuBkA2Im9VBhehhBaJSp3NXY+klEIf4LXj2Rj
-	OBv60ANx8/LLEmW45oEG77lNnfyb4w6XfxSR84Fz9mFBB/oG4S4ziz+8tl0bE+QNOhHXqPaLOs0OH
-	p5yIXU4ZjlKRvmHJGWxILHA8jLSyObWTLgKviJ8ggUWZQWwxDMF1diA/44FW2uO9obe0JBiy6BruN
-	EJasH7e6TFWs8M/rKHOg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jkJPK3yTP75z8CBu786JYnnWQXBV7Nkfb0hB+D0PtHk=; b=N9+d1wX81tUGlc
+	oK02wvgkhWxcs3cg6L23AR9QJvk6MQCp2Vg7IXaV8L/dy8vIRC6qbrDsIASrsrBkcVVBWX8c94fpa
+	Wd4s6XBP+dYSiEkLbLRfn27RIUfUyws4NXsNnfiht9AH+bVLsNWskHrY6bGtN8Kd5IQr76aCQvxX+
+	qKeT/dZhxps1rK3RcImybmZoUW1MlYMxHOA0NfrSOcNGgsZY5q0AXmCQ4sSIqEO3XyZFn+3FCePr2
+	OGg5ZuUKu/n7Ay9nZ6kIIjw5rpGe5SVWpsv7x7X/ufSr3oX5dKuh/AnhdoFEqXQLXy8GJE0cFuGhQ
+	YZd/ItlFvJdn6upwMxFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBEpb-0001Xv-8p; Fri, 20 Sep 2019 09:03:59 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1iBF8e-00084T-ID; Fri, 20 Sep 2019 09:23:40 +0000
+Received: from mout.web.de ([212.227.15.3])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBEpM-0001Wx-Bi
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 09:03:46 +0000
-Received: by mail-ed1-x541.google.com with SMTP id r9so5643847edl.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 20 Sep 2019 02:03:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=shutemov-name.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=7f7iIewityqCPGZx7dQm7jfBt0RvFj0GrtCbkpP6ccU=;
- b=w5w0Jz+jH7Pg37OdeijB29i5yxb9yKmdsDbkLFFQjznoGPwxm3fzMCgxsaIrfLCzzc
- OJnMMYN8y9lFwzlL1QUOoXOUiGTbq7EDPjgNs9UzQwaVMCpEnMCFO23sSonOWti0utit
- a/l4E+vlM5oP6rLPtk4qybkOL3h2nhd5AGyLli/SlFfI/h2fXpXvlE5GyE9WNrASaAR4
- Lh5BUwHfYLvfvjcgG9rSLWsvwbeYQoVOrfjl4DR+qRNG93dEZ1cVSZhoi5fu5U14VUdl
- fg3To7OKWvBt4fkNatKsyo+x0G8U/BbQBt9/cbVJ9LYelUYqtvjThZeOrKNVh35P3fpb
- mXCA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=7f7iIewityqCPGZx7dQm7jfBt0RvFj0GrtCbkpP6ccU=;
- b=bU2Ayd1gpFNEqs9X/rc5tjRbjKNGB+sds5AKllNRuf9JqKvFHZQi/HugNNxt0dxd//
- GvRdJEywlO9uLOR3meUQBH4MIPSv55ZMkQhw+pRqB68Rw0ZH6q5RyUGeyg0d7jN1T7TA
- tMcNj6u/Iq10qfK/GpXCQv6I/4QdCWfigV1WOVgnDuaD8SzNZlUKinV0HEAV4fI55wMz
- ZrtPOZI+C5OSiz7YGh1vbSHayR2Ecumq1WtTPwThxFisqeE9YA2uuv+RV0PHXkckRMzm
- pwdoC242DIkVb0G/u9pJGcZw78dh/6xSWjBl8Ckv15TX+ZDn6FgK/9XFgMCSh3WWUA6Q
- iEmg==
-X-Gm-Message-State: APjAAAU+R8ysoHUY74uMZb6eOsRJdfpZTtzogt8k52eL4v+efssF9Hue
- XPGHSyMvl0bb+BjXlchDMgNZ4A==
-X-Google-Smtp-Source: APXvYqySJJLb2ToIjdZWEjdisjwCvQmt8kW2QvOzzR1Iyip5v/Cl1a++EDimj/ghAzYeSyWZlm2w9g==
-X-Received: by 2002:a17:906:3110:: with SMTP id
- 16mr11058571ejx.306.1568970221772; 
- Fri, 20 Sep 2019 02:03:41 -0700 (PDT)
-Received: from box.localdomain ([86.57.175.117])
- by smtp.gmail.com with ESMTPSA id v4sm214627edy.54.2019.09.20.02.03.40
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 20 Sep 2019 02:03:40 -0700 (PDT)
-Received: by box.localdomain (Postfix, from userid 1000)
- id D180310077B; Fri, 20 Sep 2019 12:03:40 +0300 (+03)
-Date: Fri, 20 Sep 2019 12:03:40 +0300
-From: "Kirill A. Shutemov" <kirill@shutemov.name>
-To: Jia He <justin.he@arm.com>
-Subject: Re: [PATCH v6 3/3] mm: fix double page fault on arm64 if PTE_AF is
- cleared
-Message-ID: <20190920090340.6emsac4s6gdd75sj@box>
-References: <20190920022132.149467-1-justin.he@arm.com>
- <20190920022132.149467-4-justin.he@arm.com>
+ id 1iBF8V-00083t-10
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 09:23:32 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
+ s=dbaedf251592; t=1568971395;
+ bh=n4wmlEpIxeMGtEm71cttecdZaNY+CTMNrXv01ql06WI=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=SUEHIhMMI6o/3mClDMFOY1RjdGGlEOrME2mYFKlqu70BvHhnTMv3CFPHE4JI1hOVC
+ p/9s+2tpTDoGOCRWbeZ/eeULBEyq1dNHDc7r344xSdnssI4kros4LfXqBH3vxQZ1zT
+ Enyq7TFmMO0bZ/e9PV/uOI6i1FAVmzN6Y6MvzxOg=
+X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
+Received: from [192.168.1.2] ([2.244.117.22]) by smtp.web.de (mrweb001
+ [213.165.67.108]) with ESMTPSA (Nemesis) id 0MIvJx-1iDi6l4A01-002TX4; Fri, 20
+ Sep 2019 11:23:15 +0200
+Subject: [PATCH v2] ethernet: gemini: Use devm_platform_ioremap_resource() in
+ gemini_ethernet_probe()
+To: netdev@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ "David S. Miller" <davem@davemloft.net>,
+ Hans Ulli Kroll <ulli.kroll@googlemail.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Radhey Shyam Pandey <radheys@xilinx.com>
+References: <af65355e-c2f8-9142-4d0b-6903f23a98b2@web.de>
+ <CH2PR02MB700047AFFFE08FE5FD563541C78E0@CH2PR02MB7000.namprd02.prod.outlook.com>
+From: Markus Elfring <Markus.Elfring@web.de>
+Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
+ 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 FEE=
+Message-ID: <bd860b05-f493-20e6-083d-66ef3cb61f60@web.de>
+Date: Fri, 20 Sep 2019 11:23:05 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190920022132.149467-4-justin.he@arm.com>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <CH2PR02MB700047AFFFE08FE5FD563541C78E0@CH2PR02MB7000.namprd02.prod.outlook.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:E/YSl/pVxZOVaMlSuToRZB9j18SuzSKs7/OpR/QbkpV7cgHn4l+
+ mrIzs0OaehmnFdqS2+HNJfIBxBemBdK5oIno3xlKn85UpQZwyMinEE1BFEu7wQB5NZKcxzm
+ JHgFoFqza7gBrfViN+V6ZguTim5C1Wl7GMTrzoZWUlBxRO5kpk821PMHvOb3pZw6KLjo89G
+ W2s3sSwIfCQTgNX/PWTrw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:tUzNvkgXqCc=:QLSgv6PXtMq5ZNrz3bj3G8
+ IpntKqLAdz3e05t7AS/kLr4tTQVvz5rV3SohxTmLvDNgweQ+2Gx6rZbePcgl8gxpPoEtrRiSo
+ oelKMsCTZwC8FmECByfMtAvXkfa7BiSZMc8epRsYlQ/UB2iv7CzHACbjw1SFc/k7XdITSF0bM
+ t53mbkYcmMcw3ACEcdzV5bmCf0cWVEDpn8+cHMi7zj8eSnDd9iqpIC9a4PAd+Rxpo/6Wkt3L+
+ qL/WoUoetXzJYgW94wv6PzN1io+liSHHcH1tSmm4NzscUMF/Z9xU6lwjYzWw+w/7eeUjaqmSp
+ AREbPuDLgn3UOx3EkSAT3y55uXoTx8MWga7TBV3yNw5obGm3YGc3YZDN4pFBaQaz3qi/hjzBv
+ xq2QKW5sU57gpIVNE2Yr8Czl+ZfxUTfHfPPyfKfvofTho+XCgoHSF1F0qpkVyWqWI4wlFnzLB
+ lCv9O6uTP/KYDhu4Sb3XZeS+SZGP3z0Fa8IUaAluD6IsVs3J4Pm4d1wuX5G5G0uw9cARHygLl
+ cFEyuz74fpM5jQRkoElFVv4eZycxq5yv4/dei5mrk8FCMctDivUITFr0Yj/PQiMnI5MiaYhZm
+ klAneL7wkiCZnIEpGADcd+CophYdVCVsC7B7M/vUvVXPDvGmlmOWnYNaoHP9ukktqObcPbXEK
+ WMe1/Eul7kUlBFBwjZRhfFXQ94NWxBP1ycG8Dt8a5TADnTva7c4sbZl8YVUQNZQXtpr/HZpRE
+ NOYZlshOevzaDJQhelS06VExqj8S+9AJiwJ7C/4uTasLugtrwTe099gB3fT/qB/AofX3vEAXU
+ sbv6xB/89qh67ZSx72TlhN2t8Wz/TClMJLd9wr8ydq0+u4VzIXqvJyUK8smE47Rz/iQgok7UF
+ ZRzzrZ8ThyK9ip8xjlGk6Y3cQuHO3JilzGo9EsIUvwr8FiPQY2BXzde0YyLcMg2u8HE/HKbxo
+ u2lMKpNW8Bgmm0z5TNiQ0kUsY4zGBv+X2hnyp90MrIV9yoHqOr2vCmfe2qiG4k4/vlhewCZoy
+ 7WI/Bw881mN2tp2WxPiAjWIozozPrVclDgap5jGTq1GS1nriQ708f0umsf389/Nbn0n2atLDL
+ 1vIA2dAY9TfAMQY1ZeuM52XJ5UYHhxte+jTmIAE9iClMwPQ8n96F9CMc1DSENPAaHlP6kVFVe
+ k1ot+TJoWrPjcTLXbbS7zTYxso2r2WqdbGftB8jGq8wjGs5mxinJRjbIEGkedm8+QGbgb/1N5
+ 9VoAxgLD74rykHXV9lW/MdOJzxSZeO9rPGUbcORGkfahGsDq2HBU0DARnU3I=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_020344_466164_656266D4 
-X-CRM114-Status: GOOD (  30.35  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190920_022331_407919_62A8AA84 
+X-CRM114-Status: GOOD (  10.61  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [212.227.15.3 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (markus.elfring[at]web.de)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -99,208 +150,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-mm@kvack.org,
- Punit Agrawal <punitagrawal@gmail.com>, Will Deacon <will@kernel.org>,
- Alex Van Brunt <avanbrunt@nvidia.com>, Marc Zyngier <maz@kernel.org>,
- Anshuman Khandual <anshuman.khandual@arm.com>,
- Matthew Wilcox <willy@infradead.org>, Jun Yao <yaojun8558363@gmail.com>,
- Kaly Xin <Kaly.Xin@arm.com>, hejianet@gmail.com,
- Ralph Campbell <rcampbell@nvidia.com>, Suzuki Poulose <Suzuki.Poulose@arm.com>,
- =?utf-8?B?SsOpcsO0bWU=?= Glisse <jglisse@redhat.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kernel-janitors@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 20, 2019 at 10:21:32AM +0800, Jia He wrote:
-> When we tested pmdk unit test [1] vmmalloc_fork TEST1 in arm64 guest, there
-> will be a double page fault in __copy_from_user_inatomic of cow_user_page.
-> 
-> Below call trace is from arm64 do_page_fault for debugging purpose
-> [  110.016195] Call trace:
-> [  110.016826]  do_page_fault+0x5a4/0x690
-> [  110.017812]  do_mem_abort+0x50/0xb0
-> [  110.018726]  el1_da+0x20/0xc4
-> [  110.019492]  __arch_copy_from_user+0x180/0x280
-> [  110.020646]  do_wp_page+0xb0/0x860
-> [  110.021517]  __handle_mm_fault+0x994/0x1338
-> [  110.022606]  handle_mm_fault+0xe8/0x180
-> [  110.023584]  do_page_fault+0x240/0x690
-> [  110.024535]  do_mem_abort+0x50/0xb0
-> [  110.025423]  el0_da+0x20/0x24
-> 
-> The pte info before __copy_from_user_inatomic is (PTE_AF is cleared):
-> [ffff9b007000] pgd=000000023d4f8003, pud=000000023da9b003, pmd=000000023d4b3003, pte=360000298607bd3
-> 
-> As told by Catalin: "On arm64 without hardware Access Flag, copying from
-> user will fail because the pte is old and cannot be marked young. So we
-> always end up with zeroed page after fork() + CoW for pfn mappings. we
-> don't always have a hardware-managed access flag on arm64."
-> 
-> This patch fix it by calling pte_mkyoung. Also, the parameter is
-> changed because vmf should be passed to cow_user_page()
-> 
-> Add a WARN_ON_ONCE when __copy_from_user_inatomic() returns error
-> in case there can be some obscure use-case.(by Kirill)
-> 
-> [1] https://github.com/pmem/pmdk/tree/master/src/test/vmmalloc_fork
-> 
-> Reported-by: Yibo Cai <Yibo.Cai@arm.com>
-> Signed-off-by: Jia He <justin.he@arm.com>
-> ---
->  mm/memory.c | 65 ++++++++++++++++++++++++++++++++++++++++++++++++-----
->  1 file changed, 59 insertions(+), 6 deletions(-)
-> 
-> diff --git a/mm/memory.c b/mm/memory.c
-> index e2bb51b6242e..7c38c1ce5440 100644
-> --- a/mm/memory.c
-> +++ b/mm/memory.c
-> @@ -118,6 +118,13 @@ int randomize_va_space __read_mostly =
->  					2;
->  #endif
->  
-> +#ifndef arch_faults_on_old_pte
-> +static inline bool arch_faults_on_old_pte(void)
-> +{
-> +	return false;
-> +}
-> +#endif
-> +
->  static int __init disable_randmaps(char *s)
->  {
->  	randomize_va_space = 0;
-> @@ -2140,8 +2147,12 @@ static inline int pte_unmap_same(struct mm_struct *mm, pmd_t *pmd,
->  	return same;
->  }
->  
-> -static inline void cow_user_page(struct page *dst, struct page *src, unsigned long va, struct vm_area_struct *vma)
-> +static inline int cow_user_page(struct page *dst, struct page *src,
-> +				struct vm_fault *vmf)
->  {
-> +	struct vm_area_struct *vma = vmf->vma;
-> +	unsigned long addr = vmf->address;
-> +
->  	debug_dma_assert_idle(src);
->  
->  	/*
-> @@ -2151,21 +2162,52 @@ static inline void cow_user_page(struct page *dst, struct page *src, unsigned lo
->  	 * fails, we just zero-fill it. Live with it.
->  	 */
->  	if (unlikely(!src)) {
-> -		void *kaddr = kmap_atomic(dst);
-> -		void __user *uaddr = (void __user *)(va & PAGE_MASK);
-> +		void *kaddr;
-> +		void __user *uaddr = (void __user *)(addr & PAGE_MASK);
-> +		pte_t entry;
-> +
-> +		/* On architectures with software "accessed" bits, we would
-> +		 * take a double page fault, so mark it accessed here.
-> +		 */
-> +		if (arch_faults_on_old_pte() && !pte_young(vmf->orig_pte)) {
-> +			spin_lock(vmf->ptl);
-
-It's probably okay for arm64, but for archs with highmem it will be
-a problem.
-
-Use pte_offset_map_lock() instead.
-
-> +			if (likely(pte_same(*vmf->pte, vmf->orig_pte))) {
-> +				entry = pte_mkyoung(vmf->orig_pte);
-> +				if (ptep_set_access_flags(vma, addr,
-> +							  vmf->pte, entry, 0))
-> +					update_mmu_cache(vma, addr, vmf->pte);
-> +			} else {
-> +				/* Other thread has already handled the fault
-> +				 * and we don't need to do anything. If it's
-> +				 * not the case, the fault will be triggered
-> +				 * again on the same address.
-> +				 */
-> +				spin_unlock(vmf->ptl);
-
-And pte_unmap_unlock() here...
-
-> +				return -1;
-> +			}
-> +			spin_unlock(vmf->ptl);
-
-and here.
-
-> +		}
->  
-> +		kaddr = kmap_atomic(dst);
->  		/*
->  		 * This really shouldn't fail, because the page is there
->  		 * in the page tables. But it might just be unreadable,
->  		 * in which case we just give up and fill the result with
->  		 * zeroes.
->  		 */
-> -		if (__copy_from_user_inatomic(kaddr, uaddr, PAGE_SIZE))
-> +		if (__copy_from_user_inatomic(kaddr, uaddr, PAGE_SIZE)) {
-> +			/* Give a warn in case there can be some obscure
-> +			 * use-case
-> +			 */
-> +			WARN_ON_ONCE(1);
->  			clear_page(kaddr);
-> +		}
->  		kunmap_atomic(kaddr);
->  		flush_dcache_page(dst);
->  	} else
-> -		copy_user_highpage(dst, src, va, vma);
-> +		copy_user_highpage(dst, src, addr, vma);
-> +
-> +	return 0;
->  }
->  
->  static gfp_t __get_fault_gfp_mask(struct vm_area_struct *vma)
-> @@ -2318,7 +2360,16 @@ static vm_fault_t wp_page_copy(struct vm_fault *vmf)
->  				vmf->address);
->  		if (!new_page)
->  			goto oom;
-> -		cow_user_page(new_page, old_page, vmf->address, vma);
-> +
-> +		if (cow_user_page(new_page, old_page, vmf)) {
-> +			/* COW failed, if the fault was solved by other,
-> +			 * it's fine. If not, userspace would re-fault on
-> +			 * the same address and we will handle the fault
-> +			 * from the second attempt.
-> +			 */
-> +			put_page(new_page);
-
-I think you also need to give the reference on the old page back:
-
-			if (old_page)
-				put_page(old_page);
-
-> +			goto normal;
-
-I don't see much point in this goto. Just return 0.
-> +		}
->  	}
->  
->  	if (mem_cgroup_try_charge_delay(new_page, mm, GFP_KERNEL, &memcg, false))
-> @@ -2420,6 +2471,8 @@ static vm_fault_t wp_page_copy(struct vm_fault *vmf)
->  		}
->  		put_page(old_page);
->  	}
-> +
-> +normal:
->  	return page_copied ? VM_FAULT_WRITE : 0;
->  oom_free_new:
->  	put_page(new_page);
-> -- 
-> 2.17.1
-> 
-> 
-
--- 
- Kirill A. Shutemov
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RnJvbTogTWFya3VzIEVsZnJpbmcgPGVsZnJpbmdAdXNlcnMuc291cmNlZm9yZ2UubmV0PgpEYXRl
+OiBGcmksIDIwIFNlcCAyMDE5IDEwOjUyOjU2ICswMjAwCgpTaW1wbGlmeSB0aGlzIGZ1bmN0aW9u
+IGltcGxlbWVudGF0aW9uIGJ5IHVzaW5nIHRoZSB3cmFwcGVyIGZ1bmN0aW9uCuKAnGRldm1fcGxh
+dGZvcm1faW9yZW1hcF9yZXNvdXJjZeKAnSBpbnN0ZWFkIG9mIGNhbGxpbmcgdGhlIGZ1bmN0aW9u
+cwrigJxwbGF0Zm9ybV9nZXRfcmVzb3VyY2XigJ0gYW5kIOKAnGRldm1faW9yZW1hcF9yZXNvdXJj
+ZeKAnSBkaXJlY3RseS4KCiogVGh1cyByZWR1Y2UgYWxzbyBhIGJpdCBvZiBleGNlcHRpb24gaGFu
+ZGxpbmcgY29kZSBoZXJlLgoqIERlbGV0ZSB0aGUgbG9jYWwgdmFyaWFibGUg4oCccmVz4oCdLgoK
+VGhpcyBpc3N1ZSB3YXMgZGV0ZWN0ZWQgYnkgdXNpbmcgdGhlIENvY2NpbmVsbGUgc29mdHdhcmUu
+CgpTaWduZWQtb2ZmLWJ5OiBNYXJrdXMgRWxmcmluZyA8ZWxmcmluZ0B1c2Vycy5zb3VyY2Vmb3Jn
+ZS5uZXQ+Ci0tLQoKdjI6CkZ1cnRoZXIgY2hhbmdlcyB3ZXJlIHJlcXVlc3RlZCBieSBSYWRoZXkg
+U2h5YW0gUGFuZGV5LgoKaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvci9DSDJQUjAyTUI3MDAwNDdB
+RkZGRTA4RkU1RkQ1NjM1NDFDNzhFMEBDSDJQUjAyTUI3MDAwLm5hbXByZDAyLnByb2Qub3V0bG9v
+ay5jb20vCgoKCiogVXBkYXRlcyBmb3IgdGhyZWUgbW9kdWxlcyB3ZXJlIHNwbGl0IGludG8KIGEg
+c2VwYXJhdGUgcGF0Y2ggZm9yIGVhY2ggZHJpdmVyLgoqIFRoZSBjb21taXQgZGVzY3JpcHRpb24g
+d2FzIGFkanVzdGVkLgoKCgogZHJpdmVycy9uZXQvZXRoZXJuZXQvY29ydGluYS9nZW1pbmkuYyB8
+IDYgKy0tLS0tCiAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDUgZGVsZXRpb25zKC0p
+CgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9uZXQvZXRoZXJuZXQvY29ydGluYS9nZW1pbmkuYyBiL2Ry
+aXZlcnMvbmV0L2V0aGVybmV0L2NvcnRpbmEvZ2VtaW5pLmMKaW5kZXggZTczNmNlMmM1OGNhLi5m
+MDA5NDE1ZWU0ZDggMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvbmV0L2V0aGVybmV0L2NvcnRpbmEvZ2Vt
+aW5pLmMKKysrIGIvZHJpdmVycy9uZXQvZXRoZXJuZXQvY29ydGluYS9nZW1pbmkuYwpAQCAtMjU0
+OSwxNyArMjU0OSwxMyBAQCBzdGF0aWMgaW50IGdlbWluaV9ldGhlcm5ldF9wcm9iZShzdHJ1Y3Qg
+cGxhdGZvcm1fZGV2aWNlICpwZGV2KQogCXN0cnVjdCBkZXZpY2UgKmRldiA9ICZwZGV2LT5kZXY7
+CiAJc3RydWN0IGdlbWluaV9ldGhlcm5ldCAqZ2V0aDsKIAl1bnNpZ25lZCBpbnQgcmV0cnkgPSA1
+OwotCXN0cnVjdCByZXNvdXJjZSAqcmVzOwogCXUzMiB2YWw7CgogCS8qIEdsb2JhbCByZWdpc3Rl
+cnMgKi8KIAlnZXRoID0gZGV2bV9remFsbG9jKGRldiwgc2l6ZW9mKCpnZXRoKSwgR0ZQX0tFUk5F
+TCk7CiAJaWYgKCFnZXRoKQogCQlyZXR1cm4gLUVOT01FTTsKLQlyZXMgPSBwbGF0Zm9ybV9nZXRf
+cmVzb3VyY2UocGRldiwgSU9SRVNPVVJDRV9NRU0sIDApOwotCWlmICghcmVzKQotCQlyZXR1cm4g
+LUVOT0RFVjsKLQlnZXRoLT5iYXNlID0gZGV2bV9pb3JlbWFwX3Jlc291cmNlKGRldiwgcmVzKTsK
+KwlnZXRoLT5iYXNlID0gZGV2bV9wbGF0Zm9ybV9pb3JlbWFwX3Jlc291cmNlKHBkZXYsIDApOwog
+CWlmIChJU19FUlIoZ2V0aC0+YmFzZSkpCiAJCXJldHVybiBQVFJfRVJSKGdldGgtPmJhc2UpOwog
+CWdldGgtPmRldiA9IGRldjsKLS0KMi4yMy4wCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
+YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
