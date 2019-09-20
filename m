@@ -2,60 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D3C6B8E0B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 11:51:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0079AB8E2A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 11:58:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=46jEvnVfFCOt8xHrmPam0WEm1K28d/Yg/RcFSUg/mCs=; b=AeahGc872KpmFv
-	7XWrtEZVyE7NsdSwDa3Gixm+QSw16dRHqpSGEKVnJpykpdlm0MnwV/U/TDm1WDFPt2WMXxpNN6n3G
-	Xk5teExsYzsUDvjsWYEuybleZLYJQ/qCXfc4l2ENxnYtieGMqp1+A3rPXCjHBmDNb+9U50JYGcfWt
-	rWS93Q9Xh2uBBe0reNY0uOEy6IO+OOvYYeU14BjhANyo8Wb1pDtqeqhgDxJ+/7PqVmzIKHwE47eSd
-	UUpsmsefCjjYrFXn26NqmWXNOcU0o+AKoz7USsQtbuYYkXT/nQPGnDpKFAA6prD23maUT+3hNGrQv
-	FjjEVjutJziG16XR8U2Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VhHlUiHOZfvxdo/FEO3ysu18DXYxO+uD+oo80ol+Mfk=; b=j/icbprJ6deKvR
+	KOw2Zahpj3xld7NFMRKVDgNJkhJxmoAK88RSzdEX66U7nrpI36/6xJA3N/FHXPhx2kZnx9NfmGL+d
+	bEvsDtmt6GobAw/937mCPk9cRMDG27886bTFdPLOSLH8E+q9+Twrgk6IrEBFNvVwkyTZdhS956uuA
+	e/22KRmGuTgVDYN0FOODOLGMtBt+xC8wtuIqqhjjNlp5SQ7HVSUkj7sp/nRjM2jwJ6BYc8UoDvqWR
+	RsZf3hPE+a0m7M/5dRWXZPOHifWyIG/9W3HxxpuNNXJpo2ZrTlXKkWkZ2+VYqxto9rJctgQ40WqTE
+	bUAao7n4N5mMsFPu0hog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBFZA-0001Hm-0n; Fri, 20 Sep 2019 09:51:04 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1iBFfv-0003cc-Il; Fri, 20 Sep 2019 09:58:03 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBFYy-0001GH-RS
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 09:50:54 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id ECD44206C4;
- Fri, 20 Sep 2019 11:50:47 +0200 (CEST)
-Received: from [192.168.108.37] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id A703720140;
- Fri, 20 Sep 2019 11:50:47 +0200 (CEST)
-Subject: Re: Propagating audio properties along the audio path
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-To: alsa-devel@alsa-project.org
-References: <f7861989-8a2d-ed89-8f1f-68bad7013a34@free.fr>
-Message-ID: <d67b68b9-49c0-6f78-4649-27b3b437a65f@free.fr>
-Date: Fri, 20 Sep 2019 11:50:47 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iBFfj-0003We-7T
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 09:57:53 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=jXWirqOZI7OTVmbbiy3+nYhKp7MIr2rSyozgJUuAczU=; b=DDvDW8CVsiqktRTcTBofhJanq
+ vMO3J0bwjxtWlFuYELPtZyN/MRajiBOoL9uBs4jgHPm+Ai/Nt/Cc9dGBxInWw2wcCZ1vKjeUVw4jR
+ dBpblcRE37LolNlQ51ijrtRFDRkoYNO+L8ahgcA+RjHRBdIMXO/MVtUCa1v7q0CHWDyUxAcat5Aa9
+ 4dG0slx2PQcuKi69KYJFY+Nq1JJRQDu9phbHnkJrdlS75Bpwj5jCc4+F4pUtZVKrhGmCyldPF0eUa
+ +rMa7+3Opv8CtzhrZJJrFkN59H/zYHsCc/RH3b/EUKZCA9IDvixca56OL6xHq0vtwZoNUATZqgH2R
+ JA5a1+kLA==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:34294)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iBFdL-0003B7-40; Fri, 20 Sep 2019 10:55:25 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iBFdH-0005iB-Js; Fri, 20 Sep 2019 10:55:19 +0100
+Date: Fri, 20 Sep 2019 10:55:19 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [REGRESSION] sdhci no longer detects SD cards on LX2160A
+Message-ID: <20190920095519.GK25745@shell.armlinux.org.uk>
+References: <20190917111631.GL25745@shell.armlinux.org.uk>
+ <20190917114210.GM25745@shell.armlinux.org.uk>
+ <20190917123326.GN25745@shell.armlinux.org.uk>
+ <20190917130759.GO25745@shell.armlinux.org.uk>
+ <c12e21c3-6bef-38ed-3693-b958be17d555@arm.com>
+ <20190917134947.GS25745@shell.armlinux.org.uk>
+ <ab90e9a4-052d-5a7b-bfae-f2f02f17f1b7@arm.com>
+ <20190919091601.GH25745@shell.armlinux.org.uk>
+ <20fe58a0-f0ed-733b-87fb-47d667094491@arm.com>
+ <20190919172349.GJ25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <f7861989-8a2d-ed89-8f1f-68bad7013a34@free.fr>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Fri Sep 20 11:50:47 2019 +0200 (CEST)
+Content-Disposition: inline
+In-Reply-To: <20190919172349.GJ25745@shell.armlinux.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_025053_187373_B7EBE67A 
-X-CRM114-Status: GOOD (  17.47  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190920_025751_525476_06B4F322 
+X-CRM114-Status: GOOD (  40.78  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,89 +95,167 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Takashi Iwai <tiwai@suse.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Jaroslav Kysela <perex@perex.cz>
+Cc: dann frazier <dann.frazier@canonical.com>, linux-mmc@vger.kernel.org,
+ Adrian Hunter <adrian.hunter@intel.com>, Will Deacon <will.deacon@arm.com>,
+ Nicolin Chen <nicoleotsuka@gmail.com>, "Y.b. Lu" <yangbo.lu@nxp.com>,
+ Christoph Hellwig <hch@lst.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 17/09/2019 17:33, Marc Gonzalez wrote:
-
-> Disclaimer: I've never worked in the sound/ layer, and it is possible that
-> some of my questions are silly or obvious.
+On Thu, Sep 19, 2019 at 06:23:49PM +0100, Russell King - ARM Linux admin wrote:
+> On Thu, Sep 19, 2019 at 03:02:39PM +0100, Robin Murphy wrote:
+> > On 19/09/2019 10:16, Russell King - ARM Linux admin wrote:
+> > > On Tue, Sep 17, 2019 at 03:03:29PM +0100, Robin Murphy wrote:
+> > > > On 17/09/2019 14:49, Russell King - ARM Linux admin wrote:
+> > > > > As already replied, v4 mode is not documented as being available on
+> > > > > the LX2160A - the bit in the control register is marked as "reserved".
+> > > > > This is as expected as it is documented that it is using a v3.00 of
+> > > > > the SDHCI standard, rather than v4.00.
+> > > > > 
+> > > > > So, sorry, enabling "v4 mode" isn't a workaround in this scenario.
+> > > > > 
+> > > > > Given that v4 mode is not mandatory, this shouldn't be a work-around.
+> > > > > 
+> > > > > Given that it _does_ work some of the time with the table >4GB, then
+> > > > > this is not an addressing limitation.
+> > > > 
+> > > > Yes, that's what "something totally different" usually means.
+> > > > 
+> > > > > > However, the other difference between getting a single page directly from
+> > > > > > the page allocator vs. the CMA area is that accesses to the linear mapping
+> > > > > > of the CMA area are probably pretty rare, whereas for the single-page case
+> > > > > > it's much more likely that kernel tasks using adjacent pages could lead to
+> > > > > > prefetching of the descriptor page's cacheable alias. That could certainly
+> > > > > > explain how reverting that commit manages to hide an apparent coherency
+> > > > > > issue.
+> > > > > 
+> > > > > Right, so how do we fix this?
+> > > > 
+> > > > By describing the hardware correctly in the DT.
+> > > 
+> > > It would appear that it _is_ correctly described given the default
+> > > hardware configuration, but the driver sets a bit in a control
+> > > register that enables cache snooping.
+> > 
+> > Oh, fun. FWIW, the more general form of that statement would be "by ensuring
+> > that the device behaviour and the DT description are consistent", it's just
+> > rare to have both degrees of freedom.
+> > 
+> > Even in these cases, though, it tends to be ultimately necessary to defer to
+> > what the DT says, because there can be situations where the IP believes
+> > itself capable of enabling snoops, but the integration failed to wire things
+> > up correctly for them to actually work. I know we have to deal with that in
+> > arm-smmu, for one example.
+> > 
+> > > Adding "dma-coherent" to the DT description does not seem to be the
+> > > correct solution, as we are reliant on the DT description and driver
+> > > implementation both agreeing, which is fragile.
+> > > 
+> > >  From what I can see, there isn't a way for a driver to say "I've made
+> > > this device is coherent now" and I suspect making the driver set the
+> > > DMA snoop bit depending on whether "dma-coherent" is present in DT or
+> > > not will cause data-corrupting regressions for other people.
+> > > 
+> > > So, we're back to where we started - what is the right solution to
+> > > this problem?
+> > > 
+> > > The only thing I can think is that the driver needs to do something
+> > > like:
+> > > 
+> > > 	WARN_ON(!dev_is_dma_coherent(dev));
+> > > 
+> > > in esdhc_of_enable_dma() as a first step, and ensuring that the snoop
+> > > bit matches the state of dev_is_dma_coherent(dev)?  Is it permitted to
+> > > use dev_is_dma_coherent() in drivers - it doesn't seem to be part of
+> > > the normal DMA API?
+> > 
+> > The safest option would be to query the firmware property layer via
+> > device_get_dma_attr() - or potentially short-cut to of_dma_is_coherent() for
+> > a pure DT driver. Even disregarding API purity, I don't think the DMA API
+> > internals are really generic enough yet to reliably poke at (although FWIW,
+> > *certain* cases like dma_direct_ops would now actually work as expected if
+> > one did the unspeakable and flipped dev->dma_coherent from a driver, but
+> > that would definitely not win any friends).
 > 
-> Basically, I'm trying to implement some form of eARC(*) on an arm64 SoC.
-> (*) enhanced Audio Return Channel (from HDMI 2.1)
+> So, I prepared a few options, and option 2 was:
 > 
-> The setup looks like this:
+>  drivers/mmc/host/sdhci-of-esdhc.c | 8 +++++++-
+>  1 file changed, 7 insertions(+), 1 deletion(-)
 > 
-> A = Some kind of audio source, typically a TV or game console
-> B = The arm64 SoC, equipped with some nice speakers
+> diff --git a/drivers/mmc/host/sdhci-of-esdhc.c b/drivers/mmc/host/sdhci-of-esdhc.c
+> index 4dd43b1adf2c..8076a1322499 100644
+> --- a/drivers/mmc/host/sdhci-of-esdhc.c
+> +++ b/drivers/mmc/host/sdhci-of-esdhc.c
+> @@ -19,6 +19,7 @@
+>  #include <linux/clk.h>
+>  #include <linux/ktime.h>
+>  #include <linux/dma-mapping.h>
+> +#include <linux/dma-noncoherent.h>
+>  #include <linux/mmc/host.h>
+>  #include <linux/mmc/mmc.h>
+>  #include "sdhci-pltfm.h"
+> @@ -495,7 +496,12 @@ static int esdhc_of_enable_dma(struct sdhci_host *host)
+>  		dma_set_mask_and_coherent(dev, DMA_BIT_MASK(40));
+>  
+>  	value = sdhci_readl(host, ESDHC_DMA_SYSCTL);
+> -	value |= ESDHC_DMA_SNOOP;
+> +
+> +	if (dev_is_dma_coherent(dev))
+> +		value |= ESDHC_DMA_SNOOP;
+> +	else
+> +		value &= ~ESDHC_DMA_SNOOP;
+> +
+>  	sdhci_writel(host, value, ESDHC_DMA_SYSCTL);
+>  	return 0;
+>  }
 > 
->    HDMI
-> A ------> B
+> The dev_is_dma_coherent() could be changed to something like
+> device_get_dma_attr() if that's the correct thing to base this
+> off of.  However, if it returns DEV_DMA_NOT_SUPPORTED, then what?
+> Assume non-coherent or assume coherent?  What will the DMA API
+> layer assume?
 > 
-> If we look inside B, we actually have
-> B1 = an eARC receiver (input = HDMI, output = I2S)
-> B2 = an audio DSP (input = I2S, output = speakers)
-> 
->     I2S        ?
-> B1 -----> B2 -----> speakers
-> 
-> 
-> If I read the standard right, B is supposed to advertise which audio formats
-> it supports, and A is supposed to pick "the best". For the sake of argument,
-> let's say A picks "PCM, 48 kHz, 8 channels, 16b".
-> 
-> At some point, B receives audio packets, parses the Channel Status, and
-> determines that A is sending "PCM, 48 kHz, 8 channels, 16b". The driver
-> then configures the I2S link, and forwards the audio stream over I2S to
-> the DSP.
-> 
-> QUESTION_1:
-> How is the DSP supposed to "learn" the properties of the audio stream?
-> (AFAIU, they're not embedded in the data, so there must be some side-channel?)
-> I assume the driver of B1 is supposed to propagate the info to the driver of B2?
-> (Via some call-backs? By calling a function in B2?)
-> 
-> QUESTION_2:
-> Does it ever make sense for B2 to ask B1 to change the audio properties?
-> (Not sure if B1 is even allowed to renegotiate.)
+> It seems to me that we want the DMA API layer and the driver to
+> both agree whether the device is to be coherent or not, and for
+> the sake of data integrity, we do not want any possibility for
+> them to deviate in that decision making process.
 
-I think it boils down to the "Dynamic PCM" abstraction?
+I think using of_dma_is_coherent() is the safest, as if the driver
+needs to be updated to ACPI, the problem will need to be readdressed.
+The conditions on which dev->dma_coherent is set by the ACPI code
+differs from the conditions that determine the return value of
+acpi_get_dma_attr().
 
-	https://www.kernel.org/doc/html/latest/sound/soc/dpcm.html
+So, how about this:
 
+ drivers/mmc/host/sdhci-of-esdhc.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
 
-The downstream driver (7500 lines) is tough to ingest for a noob.
-
-	https://source.codeaurora.org/quic/la/kernel/msm-4.4/tree/sound/soc/msm/msm8998.c?h=LE.UM.1.3.r3.25
-
-I'll keep chipping at whatever docs I can find.
-
-
-One more concern popped up: if the audio stream changes mid-capture
-(for example, a different TV program uses different audio settings),
-then I would detect this in the eARC receiver, but it's not clear
-(to me) how to propagate the info to the DSP...
-
-I'm not even sure when the HW params actually get applied...
-Is it for SNDRV_PCM_IOCTL_PREPARE? SNDRV_PCM_IOCTL_START?
-
-I couldn't find much documentation for the IOCTLs in the kernel:
-
-$ git grep SNDRV_PCM_IOCTL  Documentation/
-Documentation/sound/designs/tracepoints.rst:value to these parameters, then execute ioctl(2) with SNDRV_PCM_IOCTL_HW_REFINE
-Documentation/sound/designs/tracepoints.rst:or SNDRV_PCM_IOCTL_HW_PARAMS. The former is used just for refining available
-Documentation/sound/designs/tracepoints.rst:        SNDRV_PCM_IOCTL_HW_REFINE only. Applications can select which
-Documentation/sound/designs/tracepoints.rst:        SNDRV_PCM_IOCTL_HW_PARAMS, this mask is ignored and all of parameters
-Documentation/sound/designs/tracepoints.rst:        SNDRV_PCM_IOCTL_HW_REFINE to retrieve this flag, then decide candidates
-Documentation/sound/designs/tracepoints.rst:        of parameters and execute ioctl(2) with SNDRV_PCM_IOCTL_HW_PARAMS to
-
-
-Regards.
+diff --git a/drivers/mmc/host/sdhci-of-esdhc.c b/drivers/mmc/host/sdhci-of-esdhc.c
+index 4dd43b1adf2c..74de5e8c45c8 100644
+--- a/drivers/mmc/host/sdhci-of-esdhc.c
++++ b/drivers/mmc/host/sdhci-of-esdhc.c
+@@ -495,7 +495,12 @@ static int esdhc_of_enable_dma(struct sdhci_host *host)
+ 		dma_set_mask_and_coherent(dev, DMA_BIT_MASK(40));
+ 
+ 	value = sdhci_readl(host, ESDHC_DMA_SYSCTL);
+-	value |= ESDHC_DMA_SNOOP;
++
++	if (of_dma_is_coherent(dev->of_node))
++		value |= ESDHC_DMA_SNOOP;
++	else
++		value &= ~ESDHC_DMA_SNOOP;
++
+ 	sdhci_writel(host, value, ESDHC_DMA_SYSCTL);
+ 	return 0;
+ }
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
