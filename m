@@ -2,58 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D951AB913A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 15:55:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5466B9145
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 15:58:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=fisKYON3DzxVY0UGaZaiaJpwWhiLXREh+Q9SVIsB8x8=; b=U8HVSYFBUNS25Im3/R56pq+VoM
-	zcBwGc4GK2mtnOpi9G/uIwxpNhF3+YERXuSxXk7OUxwBZ+z1CrF+MxCGZv2o2AKOb8cHTFmDI3t06
-	zHzv9CoDj9h2oKaxbzDdMbiwW5M1o/j9x6cmImHBjR14nYOZ8XwYJi2PHoYq65/1EQjzfYrWRWJa3
-	8koLV5DJZBSZ32Y9/TdcLHkz+6rGcnGEYMJa0/e+TqJIzJS7NPMGvFO9L+1gau9xl0mDDwEcZTf61
-	svtlFjr/Du8ShCyYoQ2KNNEbceAH0vTFaMePM2n2UPrFLw/hkOfuo5IrW8oUungTbGE2HvfW7WB9R
-	kgvJm4Wg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=BtXFjgseD1/svcW5MuEKePwHCw4N73/qTtrKFDIJ6kM=; b=WTGw40Tc1Ghnds92hUpc9bAcq
+	/iCK5KmwJqIU19HmCjhEV+U229bvVrjlB+UXeKrhtGTcCOfyiyUI8U/Mcc+ShdyhE3RNL9aNbO5fW
+	cKVVr7cYXS/jn9s54wF5tjR7yUY74imO/KbSAq9GyMxI/J41DZI+kW/5uu8dTGHdonAYo/+HKgt2m
+	gKrAH5iAR6aczrdwImHDqmXCy+BoPSV4rlgPsAMVz6wab8+qdo3p2rQKyonF2RKhWybeYYDvScjK8
+	xjOdLFonSJt61N2D9r6MIOZxi1k03dk8NehWC1cxBJPNSdurXgofkUyWy8ChiX1KIJF/TCJh/8/ov
+	orEZb8TxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBJNf-0001To-D3; Fri, 20 Sep 2019 13:55:27 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBJNN-0000d0-Q3
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 13:55:12 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 85C741597;
- Fri, 20 Sep 2019 06:55:07 -0700 (PDT)
-Received: from localhost.localdomain (entos-thunderx2-02.shanghai.arm.com
- [10.169.40.54])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 1A7653F67D;
- Fri, 20 Sep 2019 06:55:02 -0700 (PDT)
-From: Jia He <justin.he@arm.com>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>, James Morse <james.morse@arm.com>,
- Marc Zyngier <maz@kernel.org>, Matthew Wilcox <willy@infradead.org>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Suzuki Poulose <Suzuki.Poulose@arm.com>
-Subject: [PATCH v7 3/3] mm: fix double page fault on arm64 if PTE_AF is cleared
-Date: Fri, 20 Sep 2019 21:54:37 +0800
-Message-Id: <20190920135437.25622-4-justin.he@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190920135437.25622-1-justin.he@arm.com>
-References: <20190920135437.25622-1-justin.he@arm.com>
+	id 1iBJQd-00029C-Ap; Fri, 20 Sep 2019 13:58:31 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iBJQV-00028Y-UC
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 13:58:25 +0000
+Received: from mail-wm1-f69.google.com (mail-wm1-f69.google.com
+ [209.85.128.69])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id BD9D185536
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 20 Sep 2019 13:58:22 +0000 (UTC)
+Received: by mail-wm1-f69.google.com with SMTP id r21so1032287wme.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 20 Sep 2019 06:58:22 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=spCZuDFD0EPU5ozujvfnvvEa34kbUMxIApAez+Dggu8=;
+ b=Y2LF+cBAgpimf4DFz7X+z7FbV8/dbiSpToWLKHeyBQ1e5zzsBzlgR4hkF1Ratpras0
+ EXKigDs+3dOrSyl3j9Nk1f4WMIL2o/ctdkKDvW6EGJwFokpnf+jyEvAnC/gcNlFqgiDp
+ tThcnVDTr8WeGDg0vxVQn4IhILTValzteOKkPyFV7p02UK8Eid24GGiwYMvYwqFuPk9b
+ RM3BqQEzX0kf2H8AhlRFenFi9iRyA78JbxDa0oJ2Um5COMdUQ3L4wfwSBYnz0W/70Dpx
+ reHqUF9nSGOnYowsIUD2WjSJhcWbhIdMdrNiuREMjXn5x4oS525JzVLyv1f+Dwq3WYaY
+ O/SQ==
+X-Gm-Message-State: APjAAAUtdgK+okUxUua/mqYH0vJ8efh2SiQBM3TKqRDSLaCGIaYoTu64
+ MEOEZj8h2Ugkq9X/7rED1Rjx022VEREmMiz0OuTYWv2SqTM+SC+1SgGHLHRHGwlflz5VwEnoCWv
+ a8ksEly5gQ946smVtTBbHpMtxmXzEfJAa2Oc=
+X-Received: by 2002:a05:600c:241:: with SMTP id
+ 1mr3641705wmj.162.1568987901457; 
+ Fri, 20 Sep 2019 06:58:21 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqxaL42VK6Hbg90QmZTlVy0wuDzSPLddZwEiO+ZOepAYrKU0ro0hZ5/EONlchkImHxvmp3T81A==
+X-Received: by 2002:a05:600c:241:: with SMTP id
+ 1mr3641679wmj.162.1568987901220; 
+ Fri, 20 Sep 2019 06:58:21 -0700 (PDT)
+Received: from localhost.localdomain (nat-pool-mxp-t.redhat.com.
+ [149.6.153.186])
+ by smtp.gmail.com with ESMTPSA id r6sm1834884wmh.38.2019.09.20.06.58.19
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 20 Sep 2019 06:58:20 -0700 (PDT)
+Date: Fri, 20 Sep 2019 15:58:17 +0200
+From: Lorenzo Bianconi <lorenzo.bianconi@redhat.com>
+To: Colin King <colin.king@canonical.com>
+Subject: Re: [PATCH] mt7601u: phy: simplify zero check on val
+Message-ID: <20190920135817.GC6456@localhost.localdomain>
+References: <20190920125414.15507-1-colin.king@canonical.com>
+MIME-Version: 1.0
+In-Reply-To: <20190920125414.15507-1-colin.king@canonical.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_065510_280595_39761FB7 
-X-CRM114-Status: GOOD (  18.53  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190920_065824_011618_93E7F1B7 
+X-CRM114-Status: GOOD (  20.03  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,173 +91,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ralph Campbell <rcampbell@nvidia.com>, Jia He <justin.he@arm.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>,
- Alex Van Brunt <avanbrunt@nvidia.com>, Kaly Xin <Kaly.Xin@arm.com>,
- =?UTF-8?q?J=C3=A9r=C3=B4me=20Glisse?= <jglisse@redhat.com>,
- Punit Agrawal <punitagrawal@gmail.com>, hejianet@gmail.com,
- Andrew Morton <akpm@linux-foundation.org>, nd@arm.com,
- Robin Murphy <robin.murphy@arm.com>, Thomas Gleixner <tglx@linutronix.de>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kernel-janitors@vger.kernel.org, Jakub Kicinski <kubakici@wp.pl>,
+ netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>, Kalle Valo <kvalo@codeaurora.org>
+Content-Type: multipart/mixed; boundary="===============1673142495853108599=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When we tested pmdk unit test [1] vmmalloc_fork TEST1 in arm64 guest, there
-will be a double page fault in __copy_from_user_inatomic of cow_user_page.
 
-Below call trace is from arm64 do_page_fault for debugging purpose
-[  110.016195] Call trace:
-[  110.016826]  do_page_fault+0x5a4/0x690
-[  110.017812]  do_mem_abort+0x50/0xb0
-[  110.018726]  el1_da+0x20/0xc4
-[  110.019492]  __arch_copy_from_user+0x180/0x280
-[  110.020646]  do_wp_page+0xb0/0x860
-[  110.021517]  __handle_mm_fault+0x994/0x1338
-[  110.022606]  handle_mm_fault+0xe8/0x180
-[  110.023584]  do_page_fault+0x240/0x690
-[  110.024535]  do_mem_abort+0x50/0xb0
-[  110.025423]  el0_da+0x20/0x24
+--===============1673142495853108599==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="i7F3eY7HS/tUJxUd"
+Content-Disposition: inline
 
-The pte info before __copy_from_user_inatomic is (PTE_AF is cleared):
-[ffff9b007000] pgd=000000023d4f8003, pud=000000023da9b003, pmd=000000023d4b3003, pte=360000298607bd3
 
-As told by Catalin: "On arm64 without hardware Access Flag, copying from
-user will fail because the pte is old and cannot be marked young. So we
-always end up with zeroed page after fork() + CoW for pfn mappings. we
-don't always have a hardware-managed access flag on arm64."
+--i7F3eY7HS/tUJxUd
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-This patch fix it by calling pte_mkyoung. Also, the parameter is
-changed because vmf should be passed to cow_user_page()
+> From: Colin Ian King <colin.king@canonical.com>
+>=20
+> Currently the zero check on val to break out of a loop
+> is a little obscure.  Replace the val is zero and break check
+> with a loop while value is non-zero.
+>=20
+> Signed-off-by: Colin Ian King <colin.king@canonical.com>
+> ---
+>  drivers/net/wireless/mediatek/mt7601u/phy.c | 4 +---
+>  1 file changed, 1 insertion(+), 3 deletions(-)
+>=20
+> diff --git a/drivers/net/wireless/mediatek/mt7601u/phy.c b/drivers/net/wi=
+reless/mediatek/mt7601u/phy.c
+> index 06f5702ab4bd..4e0e473caae1 100644
+> --- a/drivers/net/wireless/mediatek/mt7601u/phy.c
+> +++ b/drivers/net/wireless/mediatek/mt7601u/phy.c
+> @@ -213,9 +213,7 @@ int mt7601u_wait_bbp_ready(struct mt7601u_dev *dev)
+> =20
+>  	do {
+>  		val =3D mt7601u_bbp_rr(dev, MT_BBP_REG_VERSION);
+> -		if (val && ~val)
+> -			break;
 
-Add a WARN_ON_ONCE when __copy_from_user_inatomic() returns error
-in case there can be some obscure use-case.(by Kirill)
+I think this is not correct since (not considering the cast) we should break
+=66rom the loop if val !=3D 0 and val !=3D 0xff, so the right approach I gu=
+ess is:
 
-[1] https://github.com/pmem/pmdk/tree/master/src/test/vmmalloc_fork
+diff --git a/drivers/net/wireless/mediatek/mt7601u/phy.c b/drivers/net/wire=
+less/mediatek/mt7601u/phy.c
+index 06f5702ab4bd..d863ab4a66c9 100644
+--- a/drivers/net/wireless/mediatek/mt7601u/phy.c
++++ b/drivers/net/wireless/mediatek/mt7601u/phy.c
+@@ -213,7 +213,7 @@ int mt7601u_wait_bbp_ready(struct mt7601u_dev *dev)
+=20
+ 	do {
+ 		val =3D mt7601u_bbp_rr(dev, MT_BBP_REG_VERSION);
+-		if (val && ~val)
++		if (val && val !=3D 0xff)
+ 			break;
+ 	} while (--i);
 
-Reported-by: Yibo Cai <Yibo.Cai@arm.com>
-Signed-off-by: Jia He <justin.he@arm.com>
----
- mm/memory.c | 67 ++++++++++++++++++++++++++++++++++++++++++++++++-----
- 1 file changed, 61 insertions(+), 6 deletions(-)
+> -	} while (--i);
+> +	} while (val && --i);
+> =20
+>  	if (!i) {
+>  		dev_err(dev->dev, "Error: BBP is not ready\n");
+> --=20
+> 2.20.1
+>=20
 
-diff --git a/mm/memory.c b/mm/memory.c
-index e2bb51b6242e..3e39e40fee87 100644
---- a/mm/memory.c
-+++ b/mm/memory.c
-@@ -118,6 +118,13 @@ int randomize_va_space __read_mostly =
- 					2;
- #endif
- 
-+#ifndef arch_faults_on_old_pte
-+static inline bool arch_faults_on_old_pte(void)
-+{
-+	return false;
-+}
-+#endif
-+
- static int __init disable_randmaps(char *s)
- {
- 	randomize_va_space = 0;
-@@ -2140,8 +2147,13 @@ static inline int pte_unmap_same(struct mm_struct *mm, pmd_t *pmd,
- 	return same;
- }
- 
--static inline void cow_user_page(struct page *dst, struct page *src, unsigned long va, struct vm_area_struct *vma)
-+static inline int cow_user_page(struct page *dst, struct page *src,
-+				struct vm_fault *vmf)
- {
-+	struct vm_area_struct *vma = vmf->vma;
-+	struct mm_struct *mm = vma->vm_mm;
-+	unsigned long addr = vmf->address;
-+
- 	debug_dma_assert_idle(src);
- 
- 	/*
-@@ -2151,21 +2163,53 @@ static inline void cow_user_page(struct page *dst, struct page *src, unsigned lo
- 	 * fails, we just zero-fill it. Live with it.
- 	 */
- 	if (unlikely(!src)) {
--		void *kaddr = kmap_atomic(dst);
--		void __user *uaddr = (void __user *)(va & PAGE_MASK);
-+		void *kaddr;
-+		pte_t entry;
-+		void __user *uaddr = (void __user *)(addr & PAGE_MASK);
- 
-+		/* On architectures with software "accessed" bits, we would
-+		 * take a double page fault, so mark it accessed here.
-+		 */
-+		if (arch_faults_on_old_pte() && !pte_young(vmf->orig_pte)) {
-+			vmf->pte = pte_offset_map_lock(mm, vmf->pmd, addr,
-+						       &vmf->ptl);
-+			if (likely(pte_same(*vmf->pte, vmf->orig_pte))) {
-+				entry = pte_mkyoung(vmf->orig_pte);
-+				if (ptep_set_access_flags(vma, addr,
-+							  vmf->pte, entry, 0))
-+					update_mmu_cache(vma, addr, vmf->pte);
-+			} else {
-+				/* Other thread has already handled the fault
-+				 * and we don't need to do anything. If it's
-+				 * not the case, the fault will be triggered
-+				 * again on the same address.
-+				 */
-+				pte_unmap_unlock(vmf->pte, vmf->ptl);
-+				return -1;
-+			}
-+			pte_unmap_unlock(vmf->pte, vmf->ptl);
-+		}
-+
-+		kaddr = kmap_atomic(dst);
- 		/*
- 		 * This really shouldn't fail, because the page is there
- 		 * in the page tables. But it might just be unreadable,
- 		 * in which case we just give up and fill the result with
- 		 * zeroes.
- 		 */
--		if (__copy_from_user_inatomic(kaddr, uaddr, PAGE_SIZE))
-+		if (__copy_from_user_inatomic(kaddr, uaddr, PAGE_SIZE)) {
-+			/* Give a warn in case there can be some obscure
-+			 * use-case
-+			 */
-+			WARN_ON_ONCE(1);
- 			clear_page(kaddr);
-+		}
- 		kunmap_atomic(kaddr);
- 		flush_dcache_page(dst);
- 	} else
--		copy_user_highpage(dst, src, va, vma);
-+		copy_user_highpage(dst, src, addr, vma);
-+
-+	return 0;
- }
- 
- static gfp_t __get_fault_gfp_mask(struct vm_area_struct *vma)
-@@ -2318,7 +2362,18 @@ static vm_fault_t wp_page_copy(struct vm_fault *vmf)
- 				vmf->address);
- 		if (!new_page)
- 			goto oom;
--		cow_user_page(new_page, old_page, vmf->address, vma);
-+
-+		if (cow_user_page(new_page, old_page, vmf)) {
-+			/* COW failed, if the fault was solved by other,
-+			 * it's fine. If not, userspace would re-fault on
-+			 * the same address and we will handle the fault
-+			 * from the second attempt.
-+			 */
-+			put_page(new_page);
-+			if (old_page)
-+				put_page(old_page);
-+			return 0;
-+		}
- 	}
- 
- 	if (mem_cgroup_try_charge_delay(new_page, mm, GFP_KERNEL, &memcg, false))
--- 
-2.17.1
+--i7F3eY7HS/tUJxUd
+Content-Type: application/pgp-signature; name="signature.asc"
 
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCXYTa9wAKCRA6cBh0uS2t
+rETyAP42WJmgG0YWFN4dtvNtHUZL2FS46W+Tt/OXQTdrQfEfYQEA6DLVOjMTQzuG
+hmE5irsv5UEh9sDb73OcIUNJYu7aPAg=
+=LFi7
+-----END PGP SIGNATURE-----
+
+--i7F3eY7HS/tUJxUd--
+
+
+--===============1673142495853108599==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1673142495853108599==--
+
