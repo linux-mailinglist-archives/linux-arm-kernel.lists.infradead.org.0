@@ -2,132 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EB95B8F05
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 13:31:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A6CFB8F40
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 13:51:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xnooUpJ0YdsJOffyY2gvYS01/z49M3qzDELlpBUBIf8=; b=A3ZDWu8jT1s3Ve
-	gEYgYo9Aa0J5Ij9diihO5Z3ZJ2ZhBBXMjb1EPdqSgIMjYm4uwtroxKRcp9qroMIWc4S4Fk4luSLQ0
-	w4OQE3paqC7uv4KOgjgeSA3a5ByCL0XWO2Jtbtj/V3A5aC0o33F0omiZmi2SRbSIpzOzfF6RpjlfW
-	iUqIsqfxGKWKiwqLWcaGakDV0nGvAsPqk3gUnROGy0gNtUrKWJ5ex/G+QfvMg+cfBi6xPrzgY3S4v
-	GgzamY5oVpUj0oCoZ+xm+An/ISfdqM3BZTLpnyGk8TDVoNYIt4SPSYNJTCh8CdzXSL2Ba7Qyu0bCo
-	aidgFlk0GXzzyrYIuxIw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+skqXZJ/bYNwInX4RpjWQbUkl7HiFBN9ea0oAAunAvU=; b=aml14ASMjmuLt5
+	4d84m0p6Vlw/LD9zqhRekS/sinDShBuDwHbBrGqUcvetC36YZCv+ByyA0GnOS+A+nXVhrneqsid2l
+	H+60jICGHIjYsoXHg/1hWAiL2hrd+UjZ290ZXxu+pElNLKNcts/Qejek0AryLCTTfq5zr0RX1icAQ
+	lfpuOt8A7SFET2PQhtyYuxh+k8OAVPKNCYCdNZYLTfnOwrd7a1CFWVoQ4LWC8gqLHthaOXOopbwYJ
+	nPxzoRr2UBtViKqaMRYs8FVb3smUQJO05Jkch+y7Bw5bL5HMjUAetwiuOthgOv8lyvCoEcFzyQgVm
+	c4yVzQzAfd+zxOOb0Bwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBH7s-0001aX-1j; Fri, 20 Sep 2019 11:31:00 +0000
-Received: from mout.web.de ([212.227.15.4])
+	id 1iBHRF-0002ku-0w; Fri, 20 Sep 2019 11:51:01 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBH7k-0001a8-Sh
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 11:30:54 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1568979037;
- bh=6u/lrL0YjFWeNKufdCoJnqJ/iIRy/jFjcRoEoLmbNRg=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=bsXxou1FKiQZZOXDYnHT2F3sFl4uBqiUv5k4bjUI2VFQQEsaisZymicPD2v1g21EB
- tbn79Nlql7TKrJeVUeG4yHm7dMvTmh4dKQPxRNsszBKeBESnOhmJO2g01njMhaLDmN
- MIRiUfrTgWyzWXcI+jVw1lPrbMJRNCTgqaQ8YvIw=
-X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from [192.168.1.2] ([2.244.117.22]) by smtp.web.de (mrweb001
- [213.165.67.108]) with ESMTPSA (Nemesis) id 0LnBTZ-1hhh7g28R3-00hKw8; Fri, 20
- Sep 2019 13:30:37 +0200
-Subject: [PATCH v2] ethernet: axienet: Use devm_platform_ioremap_resource() in
- axienet_probe()
-To: netdev@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- "David S. Miller" <davem@davemloft.net>, Michal Simek <michals@xilinx.com>,
- Radhey Shyam Pandey <radheys@xilinx.com>
-References: <af65355e-c2f8-9142-4d0b-6903f23a98b2@web.de>
- <CH2PR02MB700047AFFFE08FE5FD563541C78E0@CH2PR02MB7000.namprd02.prod.outlook.com>
-From: Markus Elfring <Markus.Elfring@web.de>
-Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
- 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 FEE=
-Message-ID: <604a6376-0298-ebcd-ee84-435945370374@web.de>
-Date: Fri, 20 Sep 2019 13:30:35 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.0
+ id 1iBHR7-0002g9-6N
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 11:50:55 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x8KBkIj2017548; Fri, 20 Sep 2019 13:50:41 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=qUuOTKALdP6xNmW1oAipJOYX3UVnQd9Jlvbx4RkfGQg=;
+ b=RDi/UqUssIhajsuP9V869QvATLwVnCGN4VOHYR63QRaGVj1K4CJdnd02HsMtxlHQ4H29
+ Yfn/VGooOfsQeFUzAKXIUBcUPWeZZ8Mav5hWJtwbuPpFYFeMGk4SzY+BFloOKFhhzkdE
+ LGkJgaNcnUFeQ9if1VAyW19oiw/stPA1c7jN9wkUi1t7DvdS4jyMms0Z1aRzTzrqe0OE
+ 4Ny+s8ZYyBRYwWPVLkpDXHmHZBPI+H2E2La/b5wltRbgx8onco7FjusJvYv9AiyFJVdI
+ uuqAdD94r+9Inj/aRazDX71Gy8F+9hBcku30FAFP9luwWeyZvNmkqQ8GMcVLAox7R0dE yA== 
+Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2v3va2jg6e-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Fri, 20 Sep 2019 13:50:41 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 2301823;
+ Fri, 20 Sep 2019 11:50:32 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 57C112BEC43;
+ Fri, 20 Sep 2019 13:50:31 +0200 (CEST)
+Received: from SAFEX1HUBCAS22.st.com (10.75.90.92) by Safex1hubcas24.st.com
+ (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 20 Sep
+ 2019 13:50:31 +0200
+Received: from localhost (10.48.1.232) by Webmail-ga.st.com (10.75.90.48) with
+ Microsoft SMTP Server (TLS) id 14.3.439.0;
+ Fri, 20 Sep 2019 13:50:30 +0200
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+To: <jic23@kernel.org>
+Subject: [PATCH] iio: adc: stm32-adc: fix kernel-doc warnings
+Date: Fri, 20 Sep 2019 13:50:06 +0200
+Message-ID: <1568980206-5428-1-git-send-email-fabrice.gasnier@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-In-Reply-To: <CH2PR02MB700047AFFFE08FE5FD563541C78E0@CH2PR02MB7000.namprd02.prod.outlook.com>
-Content-Language: en-US
-X-Provags-ID: V03:K1:6SRgYF57pdwisiSOfQg1UlbC32Jh8S0JVlx+KF5kzO9pVIQbQ2K
- iRjI+uMuwp2Dh6DhZKSc9QSQhmgk96hR1spxlpNLq+TUzfYzhB4EjgMoHGWTKwAO4thnf0p
- S4WbEy8DT62mC5yIO7GvaDBYoSDLgX2svhNSxlA3dvG5V6r0oElMxaCowKGsZZZwIowAmaI
- 8kwv2IqrC5n/HAqzYkGUw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:qeu4r5QVVrQ=:yP+b0esX9R5pV6FoUHsJbD
- 5b4yGkvMRHiG45WlgYxnYfewaZT5f9DkNHWpTJ62I5Yb/X55s+NsebxepbvNVAuWD0pf56obg
- iFIIJNWDoNtaElbJvySPOp2kL5UkytO0jKkkxEPZwyzQY5+s2wG98WDvl5gIL5vj7j5hIE80m
- ta7HosB+bLPJ8o0aoX9z2UtU0Tjw56jLFWhxpvmlE90usD6DNxrQrPJdvSt5oEQiPGs5hvBtA
- evxtiFwv8kV0YRBJr35RdzqqVfhQyzMPYGgoVWPAa6K4qurQhTfYJXGS8h/baUz24Qbx4uf3C
- GIpuvz+RscL06kHJHcVo7laCFPOr5e3MwYz5jZtR1JMWdBpBUtugEIQJrkGnLfZiIsG+10IBl
- HAmxT149FTFmZ0JWIwj+TgyK7Xo8bcnhMT0r+VFp6UD1zMfvntHdmK/Lb97tcad5Opos5U3OZ
- bRHBO9yaCr0RAq89eVFMaYIltua95IXBL3hXhYHONUOX6ckfTqEGgXtq52RE6KTolskMQoT7p
- S3FMajIeg3Ys7BdZde5InniIaNPtMZ6UMJiAtfUMEzPr2o5HRCv0XiMxAe4eHBMJ5IKXnqjO2
- TFn101EXT0PaJsJ4y8ty0T6PRrxpVFNkphq3OaH2hpU5ljweCvANAUPvzpflmvrsWaViInBz4
- 3Y1jXDLrQevanKpOrJXJMkqnlLcIx1kbPFii+pk8VOKQMle9HlTJvCs4gv6wiB+76ZjX8jmr6
- 2NgFXmefu/aDRvKjqjZNYlltDw+jPYpTZhD84Ezf9ata7kREcQTyBYH+eG25v25l0CuQBfYKJ
- Rh7EFNFm5hGXfiTLXcjiGlOQWeWDHVZ0PPc631jp68UOcm1eRDEp1ksAKQclz6TzLTTkNXgob
- 9rTKCNu4JuCJz1QrX/eln19HttnDNv6sUDYliuUif9VKN//nvvM1EOc6DvhhvsWA5ClqIdPa5
- A70ZMr1cRAUTcSGSF33Htzrr3tk6c84ERnV82t8ESgv32jE5YjUKwmpG1CgeW2Yv8xU7r0PbG
- akZhmFxsjhIeMxP8Hj/R+2HB2L2vx6K5FOx1C8AXCNzbm6Okjx3EHKyU4ml0/Ie33o9a9oep+
- hSWjZmBfQPhqOPPamOX689V0COjHw3fTT/s748wW+NLX6PzQ/DYjW/2cuC27f3fucZHQ0IMF5
- 9tLxeg0u9myVvyKX/iiB+/DJBETdiPrb0sx6EkgI98fSgQloKCgJPgBHTWIjNtW5vCZBYZ5et
- +jj/4zviV3UETxY/XkZ4ndw7x15L69SXps8UeS90nn7FDhgJHzv19NVyW4P0=
+X-Originating-IP: [10.48.1.232]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
+ definitions=2019-09-20_03:2019-09-20,2019-09-20 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_043053_224811_616B4AA3 
-X-CRM114-Status: GOOD (  11.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190920_045053_704177_C66FBF01 
+X-CRM114-Status: GOOD (  13.26  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.4 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (markus.elfring[at]web.de)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -148,45 +91,189 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: lars@metafoo.de, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
+ pmeerw@pmeerw.net, linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ knaack.h@gmx.de, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogTWFya3VzIEVsZnJpbmcgPGVsZnJpbmdAdXNlcnMuc291cmNlZm9yZ2UubmV0PgpEYXRl
-OiBGcmksIDIwIFNlcCAyMDE5IDEzOjE3OjAxICswMjAwCgpTaW1wbGlmeSB0aGlzIGZ1bmN0aW9u
-IGltcGxlbWVudGF0aW9uIGJ5IHVzaW5nIHRoZSB3cmFwcGVyIGZ1bmN0aW9uCuKAnGRldm1fcGxh
-dGZvcm1faW9yZW1hcF9yZXNvdXJjZeKAnSBpbnN0ZWFkIG9mIGNhbGxpbmcgdGhlIGZ1bmN0aW9u
-cwrigJxwbGF0Zm9ybV9nZXRfcmVzb3VyY2XigJ0gYW5kIOKAnGRldm1faW9yZW1hcF9yZXNvdXJj
-ZeKAnSBkaXJlY3RseS4KCiogVGh1cyByZWR1Y2UgYWxzbyBhIGJpdCBvZiBleGNlcHRpb24gaGFu
-ZGxpbmcgY29kZSBoZXJlLgoqIERlbGV0ZSB0aGUgbG9jYWwgdmFyaWFibGUg4oCccmVz4oCdLgoK
-VGhpcyBpc3N1ZSB3YXMgZGV0ZWN0ZWQgYnkgdXNpbmcgdGhlIENvY2NpbmVsbGUgc29mdHdhcmUu
-CgpTaWduZWQtb2ZmLWJ5OiBNYXJrdXMgRWxmcmluZyA8ZWxmcmluZ0B1c2Vycy5zb3VyY2Vmb3Jn
-ZS5uZXQ+Ci0tLQoKdjI6CkZ1cnRoZXIgY2hhbmdlcyB3ZXJlIHJlcXVlc3RlZCBieSBSYWRoZXkg
-U2h5YW0gUGFuZGV5LgpodHRwczovL2xvcmUua2VybmVsLm9yZy9yL0NIMlBSMDJNQjcwMDA0N0FG
-RkZFMDhGRTVGRDU2MzU0MUM3OEUwQENIMlBSMDJNQjcwMDAubmFtcHJkMDIucHJvZC5vdXRsb29r
-LmNvbS8KCiogVXBkYXRlcyBmb3IgdGhyZWUgbW9kdWxlcyB3ZXJlIHNwbGl0IGludG8gYSBzZXBh
-cmF0ZSBwYXRjaCBmb3IgZWFjaCBkcml2ZXIuCiogVGhlIGNvbW1pdCBkZXNjcmlwdGlvbiB3YXMg
-YWRqdXN0ZWQuCgoKIGRyaXZlcnMvbmV0L2V0aGVybmV0L3hpbGlueC94aWxpbnhfYXhpZW5ldF9t
-YWluLmMgfCA5ICstLS0tLS0tLQogMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCA4IGRl
-bGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvbmV0L2V0aGVybmV0L3hpbGlueC94aWxp
-bnhfYXhpZW5ldF9tYWluLmMgYi9kcml2ZXJzL25ldC9ldGhlcm5ldC94aWxpbngveGlsaW54X2F4
-aWVuZXRfbWFpbi5jCmluZGV4IDRmYzYyN2ZiNGQxMS4uOTI3ODNhYWFhMGEyIDEwMDY0NAotLS0g
-YS9kcml2ZXJzL25ldC9ldGhlcm5ldC94aWxpbngveGlsaW54X2F4aWVuZXRfbWFpbi5jCisrKyBi
-L2RyaXZlcnMvbmV0L2V0aGVybmV0L3hpbGlueC94aWxpbnhfYXhpZW5ldF9tYWluLmMKQEAgLTE3
-ODcsMTQgKzE3ODcsNyBAQCBzdGF0aWMgaW50IGF4aWVuZXRfcHJvYmUoc3RydWN0IHBsYXRmb3Jt
-X2RldmljZSAqcGRldikKIAkJb2Zfbm9kZV9wdXQobnApOwogCQlscC0+ZXRoX2lycSA9IHBsYXRm
-b3JtX2dldF9pcnEocGRldiwgMCk7CiAJfSBlbHNlIHsKLQkJLyogQ2hlY2sgZm9yIHRoZXNlIHJl
-c291cmNlcyBkaXJlY3RseSBvbiB0aGUgRXRoZXJuZXQgbm9kZS4gKi8KLQkJc3RydWN0IHJlc291
-cmNlICpyZXMgPSBwbGF0Zm9ybV9nZXRfcmVzb3VyY2UocGRldiwKLQkJCQkJCQkgICAgIElPUkVT
-T1VSQ0VfTUVNLCAxKTsKLQkJaWYgKCFyZXMpIHsKLQkJCWRldl9lcnIoJnBkZXYtPmRldiwgInVu
-YWJsZSB0byBnZXQgRE1BIG1lbW9yeSByZXNvdXJjZVxuIik7Ci0JCQlnb3RvIGZyZWVfbmV0ZGV2
-OwotCQl9Ci0JCWxwLT5kbWFfcmVncyA9IGRldm1faW9yZW1hcF9yZXNvdXJjZSgmcGRldi0+ZGV2
-LCByZXMpOworCQlscC0+ZG1hX3JlZ3MgPSBkZXZtX3BsYXRmb3JtX2lvcmVtYXBfcmVzb3VyY2Uo
-cGRldiwgMSk7CiAJCWxwLT5yeF9pcnEgPSBwbGF0Zm9ybV9nZXRfaXJxKHBkZXYsIDEpOwogCQls
-cC0+dHhfaXJxID0gcGxhdGZvcm1fZ2V0X2lycShwZGV2LCAwKTsKIAkJbHAtPmV0aF9pcnEgPSBw
-bGF0Zm9ybV9nZXRfaXJxKHBkZXYsIDIpOwotLQoyLjIzLjAKCgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
-dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Fix the following warnings when documentation is built:
+drivers/iio/adc/stm32-adc-core.c:62: warning: cannot understand function
+ prototype: 'struct stm32_adc_common_regs '
+drivers/iio/adc/stm32-adc-core.c:78: warning: cannot understand function
+ prototype: 'struct stm32_adc_priv_cfg '
+drivers/iio/adc/stm32-adc-core.c:123: warning: Function parameter or
+ member 'pdev' not described in 'stm32f4_adc_clk_sel'
+drivers/iio/adc/stm32-adc.c:219: warning: cannot understand function
+ prototype: 'struct stm32_adc_regs '
+drivers/iio/adc/stm32-adc.c:237: warning: cannot understand function
+ prototype: 'struct stm32_adc_regspec '
+drivers/iio/adc/stm32-adc.c:264: warning: cannot understand function
+ prototype: 'struct stm32_adc_cfg '
+drivers/iio/adc/stm32-adc.c:323: warning: Function parameter or member
+ 'difsel' not described in 'N'
+drivers/iio/adc/stm32-adc.c:323: warning: Function parameter or member
+ 'pcsel' not described in 'stm32_adc'
+drivers/iio/adc/stm32-adc.c:371: warning: cannot understand function
+ prototype: 'const struct stm32_adc_regs stm32f4_sq[STM32_ADC_MAX_SQ + 1]
+drivers/iio/adc/stm32-adc.c:417: warning: cannot understand function
+ prototype: 'const struct stm32_adc_regs stm32f4_smp_bits[] = '
+drivers/iio/adc/stm32-adc.c:508: warning: cannot understand function
+ prototype: 'const struct stm32_adc_regs stm32h7_smp_bits[] = '
+drivers/iio/adc/stm32-adc.c:1112: warning: Function parameter or member
+ 'indio_dev' not described in 'stm32_adc_get_trig_extsel'
+drivers/iio/adc/stm32-adc.c:1420: warning: Function parameter or member
+ 'indio_dev' not described in 'stm32_adc_debugfs_reg_access'
+drivers/iio/adc/stm32-adc.c:1420: warning: Function parameter or member
+ 'reg' not described in 'stm32_adc_debugfs_reg_access'
+drivers/iio/adc/stm32-adc.c:1420: warning: Function parameter or member
+ 'writeval' not described in 'stm32_adc_debugfs_reg_access'
+drivers/iio/adc/stm32-adc.c:1420: warning: Function parameter or member
+ 'readval' not described in 'stm32_adc_debugfs_reg_access'
+
+Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+---
+Note: this applies on top of "iio: adc: stm32-adc: fix a race when using
+several adcs with dma and irq"
+---
+ drivers/iio/adc/stm32-adc-core.c | 11 ++++++-----
+ drivers/iio/adc/stm32-adc.c      | 21 +++++++++++++--------
+ 2 files changed, 19 insertions(+), 13 deletions(-)
+
+diff --git a/drivers/iio/adc/stm32-adc-core.c b/drivers/iio/adc/stm32-adc-core.c
+index 93a096a..20c626c 100644
+--- a/drivers/iio/adc/stm32-adc-core.c
++++ b/drivers/iio/adc/stm32-adc-core.c
+@@ -38,12 +38,12 @@
+ #define HAS_ANASWVDD		BIT(1)
+ 
+ /**
+- * stm32_adc_common_regs - stm32 common registers, compatible dependent data
++ * struct stm32_adc_common_regs - stm32 common registers
+  * @csr:	common status register offset
+  * @ccr:	common control register offset
+- * @eoc1:	adc1 end of conversion flag in @csr
+- * @eoc2:	adc2 end of conversion flag in @csr
+- * @eoc3:	adc3 end of conversion flag in @csr
++ * @eoc1_msk:	adc1 end of conversion flag in @csr
++ * @eoc2_msk:	adc2 end of conversion flag in @csr
++ * @eoc3_msk:	adc3 end of conversion flag in @csr
+  * @ier:	interrupt enable register offset for each adc
+  * @eocie_msk:	end of conversion interrupt enable mask in @ier
+  */
+@@ -60,7 +60,7 @@ struct stm32_adc_common_regs {
+ struct stm32_adc_priv;
+ 
+ /**
+- * stm32_adc_priv_cfg - stm32 core compatible configuration data
++ * struct stm32_adc_priv_cfg - stm32 core compatible configuration data
+  * @regs:	common registers for all instances
+  * @clk_sel:	clock selection routine
+  * @max_clk_rate_hz: maximum analog clock rate (Hz, from datasheet)
+@@ -117,6 +117,7 @@ static int stm32f4_pclk_div[] = {2, 4, 6, 8};
+ 
+ /**
+  * stm32f4_adc_clk_sel() - Select stm32f4 ADC common clock prescaler
++ * @pdev: platform device
+  * @priv: stm32 ADC core private data
+  * Select clock prescaler used for analog conversions, before using ADC.
+  */
+diff --git a/drivers/iio/adc/stm32-adc.c b/drivers/iio/adc/stm32-adc.c
+index 663f8a5..76a247b 100644
+--- a/drivers/iio/adc/stm32-adc.c
++++ b/drivers/iio/adc/stm32-adc.c
+@@ -102,7 +102,7 @@ struct stm32_adc_calib {
+ };
+ 
+ /**
+- * stm32_adc_regs - stm32 ADC misc registers & bitfield desc
++ * struct stm32_adc_regs - stm32 ADC misc registers & bitfield desc
+  * @reg:		register offset
+  * @mask:		bitfield mask
+  * @shift:		left shift
+@@ -114,7 +114,7 @@ struct stm32_adc_regs {
+ };
+ 
+ /**
+- * stm32_adc_regspec - stm32 registers definition, compatible dependent data
++ * struct stm32_adc_regspec - stm32 registers definition
+  * @dr:			data register offset
+  * @ier_eoc:		interrupt enable register & eocie bitfield
+  * @isr_eoc:		interrupt status register & eoc bitfield
+@@ -140,7 +140,7 @@ struct stm32_adc_regspec {
+ struct stm32_adc;
+ 
+ /**
+- * stm32_adc_cfg - stm32 compatible configuration data
++ * struct stm32_adc_cfg - stm32 compatible configuration data
+  * @regs:		registers descriptions
+  * @adc_info:		per instance input channels definitions
+  * @trigs:		external trigger sources
+@@ -183,8 +183,8 @@ struct stm32_adc_cfg {
+  * @rx_buf:		dma rx buffer cpu address
+  * @rx_dma_buf:		dma rx buffer bus address
+  * @rx_buf_sz:		dma rx buffer size
+- * @difsel		bitmask to set single-ended/differential channel
+- * @pcsel		bitmask to preselect channels on some devices
++ * @difsel:		bitmask to set single-ended/differential channel
++ * @pcsel:		bitmask to preselect channels on some devices
+  * @smpr_val:		sampling time settings (e.g. smpr1 / smpr2)
+  * @cal:		optional calibration data on some devices
+  * @chan_name:		channel name array
+@@ -254,7 +254,7 @@ static const struct stm32_adc_info stm32h7_adc_info = {
+ 	.num_res = ARRAY_SIZE(stm32h7_adc_resolutions),
+ };
+ 
+-/**
++/*
+  * stm32f4_sq - describe regular sequence registers
+  * - L: sequence len (register & bit field)
+  * - SQ1..SQ16: sequence entries (register & bit field)
+@@ -301,7 +301,7 @@ static struct stm32_adc_trig_info stm32f4_adc_trigs[] = {
+ 	{}, /* sentinel */
+ };
+ 
+-/**
++/*
+  * stm32f4_smp_bits[] - describe sampling time register index & bit fields
+  * Sorted so it can be indexed by channel number.
+  */
+@@ -392,7 +392,7 @@ static struct stm32_adc_trig_info stm32h7_adc_trigs[] = {
+ 	{},
+ };
+ 
+-/**
++/*
+  * stm32h7_smp_bits - describe sampling time register index & bit fields
+  * Sorted so it can be indexed by channel number.
+  */
+@@ -994,6 +994,7 @@ static int stm32_adc_conf_scan_seq(struct iio_dev *indio_dev,
+ 
+ /**
+  * stm32_adc_get_trig_extsel() - Get external trigger selection
++ * @indio_dev: IIO device structure
+  * @trig: trigger
+  *
+  * Returns trigger extsel value, if trig matches, -EINVAL otherwise.
+@@ -1297,6 +1298,10 @@ static int stm32_adc_of_xlate(struct iio_dev *indio_dev,
+ 
+ /**
+  * stm32_adc_debugfs_reg_access - read or write register value
++ * @indio_dev: IIO device structure
++ * @reg: register offset
++ * @writeval: value to write
++ * @readval: value to read
+  *
+  * To read a value from an ADC register:
+  *   echo [ADC reg offset] > direct_reg_access
+-- 
+2.7.4
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
