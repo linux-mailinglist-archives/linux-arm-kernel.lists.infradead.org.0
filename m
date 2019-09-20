@@ -2,84 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5466B9145
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 15:58:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 617C4B9193
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 16:21:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BtXFjgseD1/svcW5MuEKePwHCw4N73/qTtrKFDIJ6kM=; b=WTGw40Tc1Ghnds92hUpc9bAcq
-	/iCK5KmwJqIU19HmCjhEV+U229bvVrjlB+UXeKrhtGTcCOfyiyUI8U/Mcc+ShdyhE3RNL9aNbO5fW
-	cKVVr7cYXS/jn9s54wF5tjR7yUY74imO/KbSAq9GyMxI/J41DZI+kW/5uu8dTGHdonAYo/+HKgt2m
-	gKrAH5iAR6aczrdwImHDqmXCy+BoPSV4rlgPsAMVz6wab8+qdo3p2rQKyonF2RKhWybeYYDvScjK8
-	xjOdLFonSJt61N2D9r6MIOZxi1k03dk8NehWC1cxBJPNSdurXgofkUyWy8ChiX1KIJF/TCJh/8/ov
-	orEZb8TxQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oXNuJT5Ko6aZIkOJbncb5lx/5m8AzC0WbzCVAWdBRoo=; b=Ig7tnDIaS8xmXb
+	Ja9gjnd5sJIjxdTzvl3bKUuD463bnNNNHtjZQbbaO0nkBY1sm1IUCUvKAn6+S15bEbTCW4UxYylNq
+	glwbCKeyAP5QJXpmQlgdLMRNBK0V6mpD4SzTVZwHpB8/JNVQbSTZmcROTFUgZob091bNqfb07GAUw
+	u8sbC56JOEC4WdbdsN5r8auQQvh0MGGKq34aBz60duMz2FrYmdxy3DXaPocbdkAklvwcqzSZ+qaga
+	t2T+w+Kkb105xMKyq5byMfoZWZdeMGgjXOvXYQihUmSTvFwbmBDksmTwSFf8imblQHDG74mrvtKvW
+	8DMv1jF4CNMou0vTrv5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBJQd-00029C-Ap; Fri, 20 Sep 2019 13:58:31 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1iBJmk-0002O3-3J; Fri, 20 Sep 2019 14:21:22 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBJQV-00028Y-UC
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 13:58:25 +0000
-Received: from mail-wm1-f69.google.com (mail-wm1-f69.google.com
- [209.85.128.69])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id BD9D185536
+ id 1iBJmd-0002NA-Mr
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 14:21:17 +0000
+Received: by mail-ed1-x541.google.com with SMTP id t3so6554320edw.13
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 20 Sep 2019 13:58:22 +0000 (UTC)
-Received: by mail-wm1-f69.google.com with SMTP id r21so1032287wme.5
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 20 Sep 2019 06:58:22 -0700 (PDT)
+ Fri, 20 Sep 2019 07:21:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=shutemov-name.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=BsObysdauMqFxQskSLuaANmrbU7y5OuxMxy3HbJkoH8=;
+ b=yLfvnX9xGqCtoBtlknnpzBw2B3alTmNk3CXvDaf3MoBnN9PZaUdqLKOkT9Zzh/n2OZ
+ SbD1/4Gj6cP3aQ3iwHLpmUQ2nYoif61BK45NZZpQ4xgYet8vCIJtZZ0g2qNLLsC7NQ8Z
+ DjkOXKCNXhfgfNkhIvAiJmmSTB3991s02/L1RlMXWEpQWTyCZBRv0OCy9MJOENQS/bav
+ 6t/uTMbrBaUhwoSZkv76hO5m1yScZU92EeaOPA4UzOax8JCzIFw23PfzQl3JBdx6KdyI
+ hsQ4SUOsTdBkoEC4cbFw3wKzPEQvIhKU7o5rgqrJlGmwI5fBkqR0xZ8bMGc+EnyV6y67
+ ZWPA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=spCZuDFD0EPU5ozujvfnvvEa34kbUMxIApAez+Dggu8=;
- b=Y2LF+cBAgpimf4DFz7X+z7FbV8/dbiSpToWLKHeyBQ1e5zzsBzlgR4hkF1Ratpras0
- EXKigDs+3dOrSyl3j9Nk1f4WMIL2o/ctdkKDvW6EGJwFokpnf+jyEvAnC/gcNlFqgiDp
- tThcnVDTr8WeGDg0vxVQn4IhILTValzteOKkPyFV7p02UK8Eid24GGiwYMvYwqFuPk9b
- RM3BqQEzX0kf2H8AhlRFenFi9iRyA78JbxDa0oJ2Um5COMdUQ3L4wfwSBYnz0W/70Dpx
- reHqUF9nSGOnYowsIUD2WjSJhcWbhIdMdrNiuREMjXn5x4oS525JzVLyv1f+Dwq3WYaY
- O/SQ==
-X-Gm-Message-State: APjAAAUtdgK+okUxUua/mqYH0vJ8efh2SiQBM3TKqRDSLaCGIaYoTu64
- MEOEZj8h2Ugkq9X/7rED1Rjx022VEREmMiz0OuTYWv2SqTM+SC+1SgGHLHRHGwlflz5VwEnoCWv
- a8ksEly5gQ946smVtTBbHpMtxmXzEfJAa2Oc=
-X-Received: by 2002:a05:600c:241:: with SMTP id
- 1mr3641705wmj.162.1568987901457; 
- Fri, 20 Sep 2019 06:58:21 -0700 (PDT)
-X-Google-Smtp-Source: APXvYqxaL42VK6Hbg90QmZTlVy0wuDzSPLddZwEiO+ZOepAYrKU0ro0hZ5/EONlchkImHxvmp3T81A==
-X-Received: by 2002:a05:600c:241:: with SMTP id
- 1mr3641679wmj.162.1568987901220; 
- Fri, 20 Sep 2019 06:58:21 -0700 (PDT)
-Received: from localhost.localdomain (nat-pool-mxp-t.redhat.com.
- [149.6.153.186])
- by smtp.gmail.com with ESMTPSA id r6sm1834884wmh.38.2019.09.20.06.58.19
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 20 Sep 2019 06:58:20 -0700 (PDT)
-Date: Fri, 20 Sep 2019 15:58:17 +0200
-From: Lorenzo Bianconi <lorenzo.bianconi@redhat.com>
-To: Colin King <colin.king@canonical.com>
-Subject: Re: [PATCH] mt7601u: phy: simplify zero check on val
-Message-ID: <20190920135817.GC6456@localhost.localdomain>
-References: <20190920125414.15507-1-colin.king@canonical.com>
+ bh=BsObysdauMqFxQskSLuaANmrbU7y5OuxMxy3HbJkoH8=;
+ b=sJ/x3sV+6c6Ts92ItkYlqBjAcncgsiVu6K4a5996ELQtFvsf6mvVlW8y1xk05782Jj
+ jcTYRWt3cL38SE+Mp8+kFbWfirPVoek/zu1QGt0dOHNVb1I23yl/6/mzMwUiYxOUCC/U
+ Itc7JKKs+n6WGaHjznOeK2adBvXFxShPq3j2HvSjtFY10B2enUVGXwVyp67KuHqHnSjJ
+ ehntVpRoxpZTVfrtYu7M3gxD97kPl3Mh7hgRd7y3nVR2imj3/WM8+rJqT8oW+y5Hl2ZN
+ MB7vYpFuFEqnIsdRVD/vbsaxPb1O6OWqBmJuAJo/diHyShz4wlI0idr6wMas87xfBreu
+ l/Ew==
+X-Gm-Message-State: APjAAAVSnZsdoO2mBsInypvvHlnQ+9Fokl5JEy+GhF3sPFWhXrMqj+un
+ i9XLn974ERKLK4xwndDd1BJVkw==
+X-Google-Smtp-Source: APXvYqynqm5TTKBimN51b6OZzEkRrwe+U7oN1i3ygL0xADjoA6jCeUaZdJrdhbRfLIjJwN06Jc3i/Q==
+X-Received: by 2002:a17:906:6d95:: with SMTP id
+ h21mr19767726ejt.192.1568989273886; 
+ Fri, 20 Sep 2019 07:21:13 -0700 (PDT)
+Received: from box.localdomain ([86.57.175.117])
+ by smtp.gmail.com with ESMTPSA id g15sm352149edp.0.2019.09.20.07.21.13
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 20 Sep 2019 07:21:13 -0700 (PDT)
+Received: by box.localdomain (Postfix, from userid 1000)
+ id 6733D101405; Fri, 20 Sep 2019 17:21:13 +0300 (+03)
+Date: Fri, 20 Sep 2019 17:21:13 +0300
+From: "Kirill A. Shutemov" <kirill@shutemov.name>
+To: Jia He <justin.he@arm.com>
+Subject: Re: [PATCH v7 3/3] mm: fix double page fault on arm64 if PTE_AF is
+ cleared
+Message-ID: <20190920142113.52mdiflo4yghlsmu@box>
+References: <20190920135437.25622-1-justin.he@arm.com>
+ <20190920135437.25622-4-justin.he@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190920125414.15507-1-colin.king@canonical.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+Content-Disposition: inline
+In-Reply-To: <20190920135437.25622-4-justin.he@arm.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_065824_011618_93E7F1B7 
-X-CRM114-Status: GOOD (  20.03  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190920_072115_752000_58C53FE6 
+X-CRM114-Status: GOOD (  14.45  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,102 +99,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, Jakub Kicinski <kubakici@wp.pl>,
- netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "David S . Miller" <davem@davemloft.net>, Kalle Valo <kvalo@codeaurora.org>
-Content-Type: multipart/mixed; boundary="===============1673142495853108599=="
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-mm@kvack.org,
+ Punit Agrawal <punitagrawal@gmail.com>, Will Deacon <will@kernel.org>,
+ Alex Van Brunt <avanbrunt@nvidia.com>, Marc Zyngier <maz@kernel.org>,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ Matthew Wilcox <willy@infradead.org>, Kaly Xin <Kaly.Xin@arm.com>,
+ hejianet@gmail.com, Ralph Campbell <rcampbell@nvidia.com>,
+ Suzuki Poulose <Suzuki.Poulose@arm.com>,
+ =?utf-8?B?SsOpcsO0bWU=?= Glisse <jglisse@redhat.com>,
+ Thomas Gleixner <tglx@linutronix.de>, nd@arm.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Andrew Morton <akpm@linux-foundation.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, Sep 20, 2019 at 09:54:37PM +0800, Jia He wrote:
+> When we tested pmdk unit test [1] vmmalloc_fork TEST1 in arm64 guest, there
+> will be a double page fault in __copy_from_user_inatomic of cow_user_page.
+> 
+> Below call trace is from arm64 do_page_fault for debugging purpose
+> [  110.016195] Call trace:
+> [  110.016826]  do_page_fault+0x5a4/0x690
+> [  110.017812]  do_mem_abort+0x50/0xb0
+> [  110.018726]  el1_da+0x20/0xc4
+> [  110.019492]  __arch_copy_from_user+0x180/0x280
+> [  110.020646]  do_wp_page+0xb0/0x860
+> [  110.021517]  __handle_mm_fault+0x994/0x1338
+> [  110.022606]  handle_mm_fault+0xe8/0x180
+> [  110.023584]  do_page_fault+0x240/0x690
+> [  110.024535]  do_mem_abort+0x50/0xb0
+> [  110.025423]  el0_da+0x20/0x24
+> 
+> The pte info before __copy_from_user_inatomic is (PTE_AF is cleared):
+> [ffff9b007000] pgd=000000023d4f8003, pud=000000023da9b003, pmd=000000023d4b3003, pte=360000298607bd3
+> 
+> As told by Catalin: "On arm64 without hardware Access Flag, copying from
+> user will fail because the pte is old and cannot be marked young. So we
+> always end up with zeroed page after fork() + CoW for pfn mappings. we
+> don't always have a hardware-managed access flag on arm64."
+> 
+> This patch fix it by calling pte_mkyoung. Also, the parameter is
+> changed because vmf should be passed to cow_user_page()
+> 
+> Add a WARN_ON_ONCE when __copy_from_user_inatomic() returns error
+> in case there can be some obscure use-case.(by Kirill)
+> 
+> [1] https://github.com/pmem/pmdk/tree/master/src/test/vmmalloc_fork
+> 
+> Reported-by: Yibo Cai <Yibo.Cai@arm.com>
+> Signed-off-by: Jia He <justin.he@arm.com>
 
---===============1673142495853108599==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="i7F3eY7HS/tUJxUd"
-Content-Disposition: inline
+Acked-by: Kirill A. Shutemov <kirill.shutemov@linux.intel.com>
 
-
---i7F3eY7HS/tUJxUd
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-> From: Colin Ian King <colin.king@canonical.com>
->=20
-> Currently the zero check on val to break out of a loop
-> is a little obscure.  Replace the val is zero and break check
-> with a loop while value is non-zero.
->=20
-> Signed-off-by: Colin Ian King <colin.king@canonical.com>
-> ---
->  drivers/net/wireless/mediatek/mt7601u/phy.c | 4 +---
->  1 file changed, 1 insertion(+), 3 deletions(-)
->=20
-> diff --git a/drivers/net/wireless/mediatek/mt7601u/phy.c b/drivers/net/wi=
-reless/mediatek/mt7601u/phy.c
-> index 06f5702ab4bd..4e0e473caae1 100644
-> --- a/drivers/net/wireless/mediatek/mt7601u/phy.c
-> +++ b/drivers/net/wireless/mediatek/mt7601u/phy.c
-> @@ -213,9 +213,7 @@ int mt7601u_wait_bbp_ready(struct mt7601u_dev *dev)
-> =20
->  	do {
->  		val =3D mt7601u_bbp_rr(dev, MT_BBP_REG_VERSION);
-> -		if (val && ~val)
-> -			break;
-
-I think this is not correct since (not considering the cast) we should break
-=66rom the loop if val !=3D 0 and val !=3D 0xff, so the right approach I gu=
-ess is:
-
-diff --git a/drivers/net/wireless/mediatek/mt7601u/phy.c b/drivers/net/wire=
-less/mediatek/mt7601u/phy.c
-index 06f5702ab4bd..d863ab4a66c9 100644
---- a/drivers/net/wireless/mediatek/mt7601u/phy.c
-+++ b/drivers/net/wireless/mediatek/mt7601u/phy.c
-@@ -213,7 +213,7 @@ int mt7601u_wait_bbp_ready(struct mt7601u_dev *dev)
-=20
- 	do {
- 		val =3D mt7601u_bbp_rr(dev, MT_BBP_REG_VERSION);
--		if (val && ~val)
-+		if (val && val !=3D 0xff)
- 			break;
- 	} while (--i);
-
-> -	} while (--i);
-> +	} while (val && --i);
-> =20
->  	if (!i) {
->  		dev_err(dev->dev, "Error: BBP is not ready\n");
-> --=20
-> 2.20.1
->=20
-
---i7F3eY7HS/tUJxUd
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCXYTa9wAKCRA6cBh0uS2t
-rETyAP42WJmgG0YWFN4dtvNtHUZL2FS46W+Tt/OXQTdrQfEfYQEA6DLVOjMTQzuG
-hmE5irsv5UEh9sDb73OcIUNJYu7aPAg=
-=LFi7
------END PGP SIGNATURE-----
-
---i7F3eY7HS/tUJxUd--
-
-
---===============1673142495853108599==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+ Kirill A. Shutemov
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1673142495853108599==--
-
