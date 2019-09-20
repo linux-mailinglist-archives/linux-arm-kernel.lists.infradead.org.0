@@ -2,56 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2798EB8B65
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 09:06:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5A6CB8B6F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 09:18:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2uUyNqfU976EPfZNFmKcuhFVHsLDIs/SlbK4mE6YkPs=; b=j6BSCKwSF5jeL7
-	8IKg7vRspkdjBb40rOzochX1GtQ31JiupqLI8cIiw3XTb6xxCpw65E3fBwNsaPoAGxi5UECg3LhjV
-	GixMlOPshSjdr9OUr4igZWp1siPBKwmRPl1FwmMTXd8jxMzLVfNJrXdXWiw/DjunEklKHIeGgiUVx
-	uzUj8lH65iau8YT9btwS0GgZ1gP7mkG5NZ29LJAYBwfbHJcc7+3Ed1fsP4xeJeva6v1UE5RmEldog
-	vZ4kZHvWWsYMVhjj/YEbiSdmf/LpzcTdcKEIIJZ/FKS22/8ccA5NKAb77V8gHNywnV7Jg3C3kKtvx
-	qgEOSn7rLJEgk/NEDqtQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5+KxnIWCoHXzYkO63lGcQkwFOLYNe8CHEiIK68s0Wo8=; b=XAER/opLWJMNLS
+	4qrQpBl851zKTRIazmVIzbcjTlkh/8JRxs/ilt7+pztVe53Z31JRyxA5H6Q/XsmgXAPeVpTl/Qai1
+	15ATld/491fcgei9WA+bWbuTyCyxxkNYAnxpM4bwuBXJw8H3n/eGK3q8TM4TMsAHz33pkdc8G2olv
+	wRGXsRo+5jy/nJoF5fZJpTgyDTVVStMLU9BAJO5x//NcHiFTXmlz4sgQtIDEGout6ux12tCpvZZV/
+	ZiTHzCy0sBGv2N+79uRHhmsG62xqpPcZ3S7UWID242n57HxT2sYFBf7Jlg0+LGxmIfRgPQZxUvwCv
+	Bjj4ucQcJB4Zgd32hyRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBCzl-00071o-9S; Fri, 20 Sep 2019 07:06:21 +0000
-Received: from mx1.emlix.com ([188.40.240.192])
+	id 1iBDBj-0001vr-Sf; Fri, 20 Sep 2019 07:18:44 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBCzX-000717-PO
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 07:06:09 +0000
-Received: from mailer.emlix.com (unknown [81.20.119.6])
- (using TLSv1.2 with cipher ADH-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mx1.emlix.com (Postfix) with ESMTPS id A4BD55FB2E;
- Fri, 20 Sep 2019 09:06:03 +0200 (CEST)
-Subject: Re: [EXT] [PATCH v3] serial: imx: adapt rx buffer and dma periods
-To: Andy Duan <fugang.duan@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-References: <20190919145114.13006-1-philipp.puschmann@emlix.com>
- <VI1PR0402MB3600CA068AEBAC63D3CE6A4CFF880@VI1PR0402MB3600.eurprd04.prod.outlook.com>
-From: Philipp Puschmann <philipp.puschmann@emlix.com>
-Openpgp: preference=signencrypt
-Message-ID: <ac67f010-1b2c-6996-f542-ab955ca86489@emlix.com>
-Date: Fri, 20 Sep 2019 09:06:03 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iBDBS-0001v9-Bl
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 07:18:27 +0000
+Received: by mail-ed1-x544.google.com with SMTP id h33so5368008edh.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 20 Sep 2019 00:18:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=BUHblpDIooIrZQuKvaVSkR4gzneP4UJ1DcsQqZl+esY=;
+ b=PxlvuUd0/XaEgntK4rFzZoabSaLZYdKu65/CtEXGWfgiVeEBvKri54p1YtHbV54Vso
+ sabWrBBBMhYzdp7d9KnVvJ/FiP9nwjBPydyvYFnlc7zKZcYqw5CKdFoVfJbkKzEkyW8J
+ CbOHOI8iEMOPf8+cqLKWOimzXm8Ft2DbTDipqB28PvufFkFwN/HwQpvHtkb5hPqIHcos
+ at6f3Y25OcKlt53k4/1F7Xocn9shMsVcmKDZVF/Qf1zQR0/4p7zv4zjgJkoeiz/cOxq8
+ Bsk9EtGiHn+FXXRvu8plA2+/ymlFBMGxhfBebvI67y9BIVOMgwSqDpoC7Orus1cUkvNB
+ UyHQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=BUHblpDIooIrZQuKvaVSkR4gzneP4UJ1DcsQqZl+esY=;
+ b=frSHkFDEiElv2TlT4iqRg6AxhsmTVfuDB2bLbMLDVFnOVgziLdpuN80FKXoRAsNfMT
+ nh4IAgj07i20JednKt8CbViH4rzrUpQQwLtls68v+NhUkeiFqb8KdIEP6p3jZDi1CQFk
+ m93ltgTnahVcS50oJ5xWQ6g3XbVHqZy3ZQPXzq2bNut7tXfUnaCydGkq+dpY49jRZIoN
+ UesAJc01BcugA0kjzT15B3jLd6Z0YSv0uZh3xzWn14x2NQjqSKviAtd5O45K5frExv5X
+ GhLGCrEXIZa6XA1Qj+SfD7uLyqs23gOKlV2/Wu2Lz+s82FvEEKD3TUUu4WC9fZjOxXaE
+ LNaw==
+X-Gm-Message-State: APjAAAX1vjC6R4FR4vfI2NSW7zI5xinsxWFtrWvf/12jV771XKjEUFDQ
+ LmV1lvDgpAX87LEpUoyfNtqrlg==
+X-Google-Smtp-Source: APXvYqzlWVFt2wqR2XV+/SkmRXHJ3VguPiEFC4D4xWO75dtqYKoxP+71EoOFdi2jld8XfBiJJ9aMHA==
+X-Received: by 2002:a05:6402:17eb:: with SMTP id
+ t11mr19808894edy.97.1568963904689; 
+ Fri, 20 Sep 2019 00:18:24 -0700 (PDT)
+Received: from lophozonia ([85.195.192.192])
+ by smtp.gmail.com with ESMTPSA id e13sm55819eje.52.2019.09.20.00.18.23
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 20 Sep 2019 00:18:24 -0700 (PDT)
+Date: Fri, 20 Sep 2019 09:18:21 +0200
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
+To: Guo Ren <guoren@kernel.org>
+Subject: Re: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
+ separate file
+Message-ID: <20190920071821.GA1229556@lophozonia>
+References: <CAJF2gTSiiiewTLwVAXvPLO7rTSUw1rg8VtFLzANdP2S2EEbTjg@mail.gmail.com>
+ <20190624104006.lvm32nahemaqklxc@willie-the-truck>
+ <CAJF2gTSC1sGgmiTCgzKUTdPyUZ3LG4H7N8YbMyWr-E+eifGuYg@mail.gmail.com>
+ <20190912140256.fwbutgmadpjbjnab@willie-the-truck>
+ <CAJF2gTT2c45HRfATF+=zs-HNToFAKgq1inKRmJMV3uPYBo4iVg@mail.gmail.com>
+ <CAJF2gTTsHCsSpf1ncVb=ZJS2d=r+AdDi2=5z-REVS=uUg9138A@mail.gmail.com>
+ <057a0af3-93f7-271c-170e-4b31e6894c3c@linaro.org>
+ <CAJF2gTRbyfrUqAULPqJTXdxx8YOscPqAEuMsoJ+dTNobNrUV1g@mail.gmail.com>
+ <20190919151844.GG1013538@lophozonia>
+ <CAJF2gTQtk7VhBgUan6WOZgc3UaQzHL8SxMi=yiHG-8eC207BbQ@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <VI1PR0402MB3600CA068AEBAC63D3CE6A4CFF880@VI1PR0402MB3600.eurprd04.prod.outlook.com>
-Content-Language: de-DE
+Content-Disposition: inline
+In-Reply-To: <CAJF2gTQtk7VhBgUan6WOZgc3UaQzHL8SxMi=yiHG-8eC207BbQ@mail.gmail.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_000608_124767_4E596311 
-X-CRM114-Status: GOOD (  20.16  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190920_001826_437640_C465426E 
+X-CRM114-Status: GOOD (  12.67  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,114 +108,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "festevam@gmail.com" <festevam@gmail.com>,
- "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "jslaby@suse.com" <jslaby@suse.com>, Robin Gong <yibin.gong@nxp.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+Cc: aou@eecs.berkeley.edu,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>, suzuki.poulose@arm.com,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Palmer Dabbelt <palmer@sifive.com>, christoffer.dall@arm.com,
+ iommu@lists.linux-foundation.org, Mike Rapoport <rppt@linux.ibm.com>,
+ Anup Patel <anup.Patel@wdc.com>, Atish Patra <Atish.Patra@wdc.com>,
+ Julien Grall <julien.grall@arm.com>, james.morse@arm.com, gary@garyguo.net,
+ Paul Walmsley <paul.walmsley@sifive.com>, linux-riscv@lists.infradead.org,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andy,
-
-Am 20.09.19 um 05:42 schrieb Andy Duan:
-> From: Philipp Puschmann <philipp.puschmann@emlix.com> Sent: Thursday, September 19, 2019 10:51 PM
->> Using only 4 DMA periods for UART RX is very few if we have a high frequency
->> of small transfers - like in our case using Bluetooth with many small packets
->> via UART - causing many dma transfers but in each only filling a fraction of a
->> single buffer. Such a case may lead to the situation that DMA RX transfer is
->> triggered but no free buffer is available. When this happens dma channel ist
->> stopped - with the patch
->> "dmaengine: imx-sdma: fix dma freezes" temporarily only - with the possible
->> consequences that:
->> with disabled hw flow control:
->>   If enough data is incoming on UART port the RX FIFO runs over and
->>   characters will be lost. What then happens depends on upper layer.
->>
->> with enabled hw flow control:
->>   If enough data is incoming on UART port the RX FIFO reaches a level
->>   where CTS is deasserted and remote device sending the data stops.
->>   If it fails to stop timely the i.MX' RX FIFO may run over and data
->>   get lost. Otherwise it's internal TX buffer may getting filled to
->>   a point where it runs over and data is again lost. It depends on
->>   the remote device how this case is handled and if it is recoverable.
->>
->> Obviously we want to avoid having no free buffers available. So we decrease
->> the size of the buffers and increase their number and the total buffer size.
->>
->> Signed-off-by: Philipp Puschmann <philipp.puschmann@emlix.com>
->> Reviewed-by: Lucas Stach <l.stach@pengutronix.de>
->> ---
->>
->> Changelog v3:
->>  - enhance description
->>
->> Changelog v2:
->>  - split this patch from series "Fix UART DMA freezes for iMX6"
->>  - add Reviewed-by tag
->>
->>  drivers/tty/serial/imx.c | 5 ++---
->>  1 file changed, 2 insertions(+), 3 deletions(-)
->>
->> diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx.c index
->> 87c58f9f6390..51dc19833eab 100644
->> --- a/drivers/tty/serial/imx.c
->> +++ b/drivers/tty/serial/imx.c
->> @@ -1034,8 +1034,6 @@ static void imx_uart_timeout(struct timer_list *t)
->>         }
->>  }
->>
->> -#define RX_BUF_SIZE    (PAGE_SIZE)
->> -
->>  /*
->>   * There are two kinds of RX DMA interrupts(such as in the MX6Q):
->>   *   [1] the RX DMA buffer is full.
->> @@ -1118,7 +1116,8 @@ static void imx_uart_dma_rx_callback(void
->> *data)  }
->>
->>  /* RX DMA buffer periods */
->> -#define RX_DMA_PERIODS 4
->> +#define RX_DMA_PERIODS 16
->> +#define RX_BUF_SIZE    (PAGE_SIZE / 4)
->>
-> Why to decrease the DMA RX buffer size here ?
+On Fri, Sep 20, 2019 at 08:07:38AM +0800, Guo Ren wrote:
+> On Thu, Sep 19, 2019 at 11:18 PM Jean-Philippe Brucker
+> <jean-philippe@linaro.org> wrote:
 > 
-> The current DMA implementation support DMA cyclic mode, one SDMA BD receive one Bluetooth frame can
-> bring better performance.
-> As you know, for L2CAP, a maximum transmission unit (MTU) associated with the largest Baseband payload
-> is 341 bytes for DH5 packets.
-> 
-> So I suggest to increase RX_BUF_SIZE along with RX_DMA_PERIODS to feasible value.
+> >
+> > The SMMU does support PCI Virtual Function - an hypervisor can assign a
+> > VF to a guest, and let that guest partition the VF into smaller contexts
+> > by using PASID.  What it can't support is assigning partitions of a PCI
+> > function (VF or PF) to multiple Virtual Machines, since there is a
+> > single S2 PGD per function (in the Stream Table Entry), rather than one
+> > S2 PGD per PASID context.
+> >
+> In my concept, the two sentences "The SMMU does support PCI Virtual
+> Functio" v.s. "What it can't support is assigning partitions of a PCI
+> function (VF or PF) to multiple Virtual Machines" are conflict and I
+> don't want to play naming game :)
 
-I debugged and developed this patches on a system with a 4.15 kernel. When prepared for upstream i have adapted
-some details and missed a important thing here. It should say:
+That's fine. But to prevent the spread of misinformation: Arm SMMU
+supports PCI Virtual Functions.
 
-+#define RX_BUF_SIZE    (RX_DMA_PERIODS * PAGE_SIZE / 4)
-
-Yes, i wanted to increase the total buffer size too, even wrote it in the description.
-I will prepare a version 4, thanks for the hint.
-
-Just for info: A single RX DMA period aka buffer can be filled with mutliple packets in regard of the upper layer, here BT.
-
-
-Regards,
-Philipp
-> 
-> Andy
-> 
->>  static int imx_uart_start_rx_dma(struct imx_port *sport)  {
->> --
->> 2.23.0
-> 
-
+Thanks,
+Jean
 
 _______________________________________________
 linux-arm-kernel mailing list
