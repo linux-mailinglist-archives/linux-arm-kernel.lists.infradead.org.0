@@ -2,88 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9ABEB8AA8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 07:53:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5EFBB8AAD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Sep 2019 08:02:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gr0K0UWSKZjGZucTTMvwoQTtoWDaDjgMxXcatFfp7yU=; b=mOJKIGgsjYdf7i
-	ZZPFuCK5Ko1898H/VFukOJt1o+PW1mWaW3w4egYvGuw1Jsqp3ZApiih0HMRc5DryCs7yjWiOzs6mv
-	YHgxW2lN52EwywPi/Yhf6ZuDIMNiVcy80JT0p79BV/HPCzuiLP17yi83JYo8pvlvjr30Tf7fi47+j
-	I3jHul+xrl/i0/E3NRS8vOQ0AgcyfpUvTfsIBrc6B1AVCsUs1AadclM72lpY/CbcOFRsduwAoJ7vt
-	gUbzZW+Gcqkh31yYmQc7eqLTx2WfdBoG19JQBUm0algNvWUs0bQuKbzs+qZSfCXQmGZ/mO3iiK0Me
-	1BPIa3aZ3lFkDYbPNslg==;
+	List-Owner; bh=8Z0JAkCYE2orV3vnCFu5IJTFBEMOIMHBkr2q34pXoO8=; b=oxfkKiv75MN6/T
+	+I7yCIKRRcPvrr6AV22ZeeLdDPi4QOIkk3XE1arnqpYIrOMH1D2h5a8+U3LIyy8w+l3xSdkEnPflt
+	FyD4mQYP3jQs8mTyNKMq+ZUzVd9MMHvNZ9R6V6gsse5e69pP6+m70sf705bmw5xDaZF1vGRkR+tUb
+	NtCcjIHTU5usvbXG9hnVQ9eHS6Y2jrmtMm1iiU4iq3Ze5zzf7B92QQisgK00qcX9TLll+ERVDygqx
+	LriwNHxk4Bhl/5P5t7c5zq5o4esS+a1Mcskn58d8dW6MK6IoEW7dWpINi9LV6+gcToBZ8hSg0voBC
+	Wy2I6RXwXsjqST8/rR+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBBrT-0007im-Ko; Fri, 20 Sep 2019 05:53:44 +0000
-Received: from wout3-smtp.messagingengine.com ([64.147.123.19])
+	id 1iBBzr-0002F8-P8; Fri, 20 Sep 2019 06:02:24 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBBrG-0007i3-C3
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 05:53:31 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.west.internal (Postfix) with ESMTP id B096155D;
- Fri, 20 Sep 2019 01:53:26 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Fri, 20 Sep 2019 01:53:27 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=sYqoSELWDB8JtRDLGnIHP2w4CWUd69D
- 2d/NJIApm9X4=; b=F5uLX2noa80V2YgZkxsR/Ju/5z1IDtVut1FBoQ3K/K2q3mD
- FE6eXLmDmKqMneAD0c04mrhmY4lp00+nxzO6fDYkLKzKgUfKeryBcERc+HbIFQsz
- T+DyyH66+F0qBBALece+nVYTr6G8kwe4v9LpXRca9QQ+guy5hDULbhoz1EqYfAMk
- Lp0IO+LgtNJ74k8ttvSXpu31yYRKy00qqakUSgjvoaI8sDd5K0akorMRsXz4PVGS
- WChHRRqFcroepQWNK/1Bc2IBkvilH3aUBmLiaI2kuyzmUyRJ2UlYevcoOQSAaDi9
- rebW2epsehsCl4/f4wR6hQyj5v5cpvTUWAPb8yQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=sYqoSE
- LWDB8JtRDLGnIHP2w4CWUd69D2d/NJIApm9X4=; b=X5MFIhyam3OwRQGxeEFfqN
- vbZqP7dsUy3wq0Y2PwKLDdy5Yva5q5pHE5lZOWAUTLh+QnJ+kUk/xDOcjLhdW5gj
- +u67i2DkQ/kP0zmMvE/8GOO0uD4r9hBaITdSLSBAT7obvobxl99ZMwNkfnS8Rbyq
- RkF7Nlt9xw7L6EM709+FUgHeyIoYog/VrwVGjd/1AxRA22JIrxXsbmAdfrd67i/o
- L+tIex7vBBfGGdDq52mkqguAm1sCAjCz6urP72b4vq0QvPdttyuJcazsDjwvune3
- P42qiZK68dFQwy7WS80Nv8qleKFNQw6LWOEoY9r104qIsVgxMI65KbOoPC3oLNvA
- ==
-X-ME-Sender: <xms:VWmEXQnLmTqB_ZYGyZLv6wMBigE-jyluAPiu9gh8CJSwdmVLHyeUAw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvddugddutddtucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepofgfggfkjghffffhvffutgesthdtredtreertdenucfhrhhomhepfdetnhgu
- rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecurfgrrh
- grmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgv
- rhfuihiivgeptd
-X-ME-Proxy: <xmx:VWmEXddD0WcvobIQxoECsJpegeP3Mx3I0K1CUx3Bd_9afJ_Ghprpgg>
- <xmx:VWmEXWCeeQLUHUt88jH6xISWu-YyomLDowuhLtkmvtZtUDHpzMEy_w>
- <xmx:VWmEXUx7umQBGJFWRPFYV9eZAcgRofrJwONCOvswIf4lAfz_7jd1gw>
- <xmx:VmmEXedHSKeRbg6evgvXPcH7JKpCfkj_PGivqKOqAJFNlJBEDFygZQ>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 1AF35E00A9; Fri, 20 Sep 2019 01:53:25 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.7-238-g170a812-fmstable-20190913v1
-Mime-Version: 1.0
-Message-Id: <a26c90b8-8f85-4fe5-9dab-d7213f181efd@www.fastmail.com>
-In-Reply-To: <20190919142654.1578823-1-arnd@arndb.de>
-References: <20190919142654.1578823-1-arnd@arndb.de>
-Date: Fri, 20 Sep 2019 15:24:01 +0930
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Arnd Bergmann" <arnd@arndb.de>, "Joel Stanley" <joel@jms.id.au>
-Subject: Re: [PATCH] ARM: aspeed: ast2500 is ARMv6K
+ id 1iBByw-0002Ej-BX
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Sep 2019 06:01:27 +0000
+Received: by mail-wm1-x341.google.com with SMTP id y135so8718332wmc.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Sep 2019 23:01:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=KrJRto0V1tQECL7z3O9ZKJjMZZ7EfCuDScReljEVoD0=;
+ b=Q3u2Mh8gz2fE3BJI573A/4KXqhnj4eoXlYMoZGGughIFG6Vb5FrwRq4f2U9S4oq1Vr
+ Hbt9FsxwAgyBIq9a+hMcsz5uxfp8u73hXd7+1A6OV9p60H1OKGviHoiZWKnWNb7g7hfF
+ mYVifC0KgoucYeWRHf5UYbWqoMgIslcMNPW+A=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=KrJRto0V1tQECL7z3O9ZKJjMZZ7EfCuDScReljEVoD0=;
+ b=QMRqk6goYIHT/p0jfowVLeVJVLXsi5hI0/XyJSM9IDMxHhZ6qbUstuNcJC85e7IgPd
+ JaIrUVbuz5nDCJS/Re/cf5EB4x1O4GGY7Jx20fTGLz35WodyuA0Ydku/gULJlrLDP0MV
+ zmfT+BmChqKg++a6OxLQZHnxZjF6GXeV0MXun2653p8xvM4j7tXNFWGZlzI1AxxnHSPd
+ iNPEpp4Y8NmctIrIhGxMUJ3QYdiD6LuJj3+vwa47JGDdWmfb8Jlmg9quEeFQ2ARdkYCx
+ XxD1nUXHqdgN8Qy6kX0dFQUxc58jJluOwLK0+iyMAPfrIEtethTPYZk0vqUnO/p42QWV
+ Sntw==
+X-Gm-Message-State: APjAAAXK2HKSN1kllBk/I0svTO2O+sKMmy2iDTs31icIumDFDtR7WmR9
+ lkSTKk29pJiPxq4YQdActVKj3yxtCbNhtvhLpdQDGw==
+X-Google-Smtp-Source: APXvYqzFCzSm0CfSfkwqk1qJj+FBKaMsFKoHb8kBLAJykpfyPHgRhuUNr7Y+6up7GrQ+zsoM2UYZ1XpAH5PFF+zHhXg=
+X-Received: by 2002:a05:600c:217:: with SMTP id
+ 23mr1913029wmi.76.1568959283898; 
+ Thu, 19 Sep 2019 23:01:23 -0700 (PDT)
+MIME-Version: 1.0
+References: <1567054348-19685-1-git-send-email-srinath.mannam@broadcom.com>
+ <1567054348-19685-3-git-send-email-srinath.mannam@broadcom.com>
+ <CACRpkdYyHMHknkrH_Gm45tgwv6dgjFxdoeg+Hj_KBWWyQqV1og@mail.gmail.com>
+In-Reply-To: <CACRpkdYyHMHknkrH_Gm45tgwv6dgjFxdoeg+Hj_KBWWyQqV1og@mail.gmail.com>
+From: Srinath Mannam <srinath.mannam@broadcom.com>
+Date: Fri, 20 Sep 2019 11:31:12 +0530
+Message-ID: <CABe79T7h7=Y_fMv0n81hTS=nFnpRHXEFZTev-kLQsb6-eCGUdg@mail.gmail.com>
+Subject: Re: [PATCH 2/2] gpio: iproc-gpio: Handle interrupts for multiple
+ instances
+To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_225330_694097_ABEDCDA4 
-X-CRM114-Status: GOOD (  12.92  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190919_230126_413973_4C6BF3F4 
+X-CRM114-Status: GOOD (  15.34  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.19 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -91,6 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,45 +92,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: Scott Branden <sbranden@broadcom.com>,
+ Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>,
+ Ray Jui <rjui@broadcom.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Linus,
 
+We have tested patch with your changes, it works fine.
+Thanks a lot for all the help.
 
-On Thu, 19 Sep 2019, at 23:56, Arnd Bergmann wrote:
-> Linux supports both the original ARMv6 level (early ARM1136) and ARMv6K
-> (later ARM1136, ARM1176 and ARM11mpcore).
-> 
-> ast2500 falls into the second categoy, being based on arm1176jzf-s.
-> This is enabled by default when using ARCH_MULTI_V6, so we should
-> not 'select CPU_V6'.
-> 
-> Removing this will lead to more efficient use of atomic instructions.
-> 
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> ---
->  arch/arm/mach-aspeed/Kconfig | 1 -
->  1 file changed, 1 deletion(-)
-> 
-> diff --git a/arch/arm/mach-aspeed/Kconfig b/arch/arm/mach-aspeed/Kconfig
-> index a293137f5814..163931a03136 100644
-> --- a/arch/arm/mach-aspeed/Kconfig
-> +++ b/arch/arm/mach-aspeed/Kconfig
-> @@ -26,7 +26,6 @@ config MACH_ASPEED_G4
->  config MACH_ASPEED_G5
->  	bool "Aspeed SoC 5th Generation"
->  	depends on ARCH_MULTI_V6
-> -	select CPU_V6
->  	select PINCTRL_ASPEED_G5 if !CC_IS_CLANG
+Regards,
+Srinath.
 
-Unrelated, but I'm intrigued by this. Looks like I should try compile it with clang
-and fix the fallout.
-
-Andrew
+On Wed, Sep 11, 2019 at 3:13 PM Linus Walleij <linus.walleij@linaro.org> wrote:
+>
+> On Thu, Aug 29, 2019 at 5:52 AM Srinath Mannam
+> <srinath.mannam@broadcom.com> wrote:
+>
+> > From: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
+> >
+> > When multiple instance of iproc-gpio chips are present, a fix up
+> > message[1] is printed during the probe of second and later instances.
+> >
+> > This issue is because driver sharing same irq_chip data structure
+> > among multiple instances of driver.
+> >
+> > Fix this by allocating irq_chip data structure per instance of
+> > iproc-gpio.
+> >
+> > [1] fix up message addressed by this patch
+> > [  7.862208] gpio gpiochip2: (689d0000.gpio): detected irqchip that
+> >    is shared with multiple gpiochips: please fix the driver.
+> >
+> > Fixes: 616043d58a89 ("pinctrl: Rename gpio driver from cygnus to iproc")
+> > Signed-off-by: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
+>
+> Patch applied, I had to rewrite it a bit to fit the new code that
+> set up the irqchip when adding the gpio_chip, please check that
+> the result works.
+>
+> Yours,
+> Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
