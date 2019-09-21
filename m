@@ -2,82 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3579B9EA0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Sep 2019 17:21:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 979E4B9EA2
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Sep 2019 17:21:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bfZLCN5Q3xwslAkNreB++4k//+c3rsAfLdSximeMrTk=; b=jGfnpGS0kyukaw
-	lRiJnnO//Edh1I/H3CLwDPtgEB6ZN5PGuFdbv4rJ6nmRHhBjpdDcNupHhzOzNwDr0JOogCBJ3YC/r
-	pnIWkwinf2fiuUKE7mVZW4Kobz8ARLCi79MrwX/qdvO1m6JfROGf7qE9Wa5pABEkxdNgVyj/+1kZF
-	BLmiACv269RtlC8+YmrRdzd2Zm7+9xH7cZfCw77lTdc+xvhxbQ2mO2MXs+DqdOdSBPHPHc2b5AEI3
-	+vNj2pXS9hZMrW+g1dw3yxppm6N44nzUyrmrvNJIFoMPFrwoL/k3wa4ERnQsz9iQbLus1Jg1GxvgZ
-	g1+w4qZMgpUigaVTFKjQ==;
+	List-Owner; bh=mXDIqgr3rcWWC6JjfZITCHpfp6ZS5i0+JVG6OrOv+JQ=; b=dTdqJGuK6EcN37
+	fjpWo8zli0J/vn94RQW1hsh9oJk9MYngHt70k3lNCKxunHGazNk/bpl0B/Qwern4gogC/nyyuekEi
+	eCdXl4hza7/N00f0uGHCrv/aTn9FVpnWD6KgAJwxNM37UNA9jrTevBUoyvGDseh5RJBZaIMT7fhXS
+	bdJXgROhWG9JiBC9jBvEiZRV82S88ac4Ob3YY4Hs5CaZNORG7TIAc5GbDB6wUNXPPcYzstXS9FCLv
+	iBrlK14m5WVeawfbaZN9vOWEXJNktH9/kQe9+JtrmPVmDvUricaXNUPS2t8YkSS9WEwmvBl/ZrvU8
+	ZP7UwbbpJGRJbcFCLK8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBhBz-0004mw-T4; Sat, 21 Sep 2019 15:21:00 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iBhCI-000560-99; Sat, 21 Sep 2019 15:21:18 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBh9z-000284-1Q; Sat, 21 Sep 2019 15:18:56 +0000
-Received: by mail-wm1-x342.google.com with SMTP id a6so5373936wma.5;
- Sat, 21 Sep 2019 08:18:54 -0700 (PDT)
+ id 1iBhA0-00028x-6W; Sat, 21 Sep 2019 15:18:57 +0000
+Received: by mail-wm1-x343.google.com with SMTP id i16so5390386wmd.3;
+ Sat, 21 Sep 2019 08:18:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=FR91Xkho7A58iCTl5ApNx6Gn9blyxo7jlHkr4Z2ufbE=;
- b=KWRSBJVsDsKJOmZiT5h/pv4+GIz8T9Vn5Sg/QFlaN8AL6lpIc1VBJZRBiglIK0acUE
- I3dWlqeUmi5lESjDBd6eVVY/oe0QcxsXIiUsgm8iyKkH45U0jTjcZ+AW0SHByk0LJ7CB
- VWrOs6MKnx4J7EUGSv4VqEHMZddFyBeCYc3HwSrh80uTIV2QwkjsQ48C/iQdRtltTsUH
- zJhAfbRzf8oB2sLRFT/h10adWMx+BQ/HkJgch2fFN1QNfLxoXG6Rc+ITjehYR9n9IKgY
- ynAE5QCmoybHDI8BN1BJVEhTDhXRcNnOTzuOdg15ms4wnY8vWzupygv0snfKJA6MgOd/
- /+cg==
+ bh=ryY1C6V/Fnndw45BEkZbgWqU1CO6K4z5Y17d3HMNBz4=;
+ b=jbSHNaXEeYn6hTwnob4r0cFK1tawMR7cK74NLvuSDg9K1Q+i9UN9MDMzyPNum1rg3u
+ 3+Zlha3bTktCHxytNPYwWn53kVqaCHTgDo1L0cjl3wRSBAjIgHQkbY/BPedgCdfd+m9m
+ JA6TQEeNuoNw7bN0LVMoBnGgKOo5DmAPmrUPyP62jHCdLV+yumcWomD7WbfFLICNTIMl
+ wOB/n0k8in4sKU/Ftefui+uGHNdWEvAMHFdPXAUmYacmj0L6jE0PslD3GpFqk++rcNG6
+ 8ykti5lqNIIgp4jx0YLk0usYFU/nzwdGlTbqK72AnwmeBGV/FbdcGgiN58hjVeP3yfjM
+ XSnA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=FR91Xkho7A58iCTl5ApNx6Gn9blyxo7jlHkr4Z2ufbE=;
- b=ejtOHA9u0JKXDCk31px3ntT/YDBv9wOqDXEuBxcBfUit7caPw0AtyzWbBwYCA1s3N4
- 5EoOXNXNMqmPA+y3oxTRYrJL1qDBs6qrDQBIRDdIlRKEkFZQcE5rdYGZRLunwgdnsN+G
- qUVTLxCdqX/wIks3cxmHwdDfsr++gMzCGf8UmjBJmvDaILeHG6QPtjW7CORjJz1VnWuE
- nVQ4MtZD6Lt8kwzLIAteO0cLAG/X0zHsFFyWTkrtxq+jmNfTMAYnx6Doozob/7MRqa9Z
- tOV4RaNHcK/IplzQRztIx2+S762azxdWPYAv6DP5+5/DWh6L6QWygJ+JoxpMkOsvXcth
- HH7g==
-X-Gm-Message-State: APjAAAXbTO0gUH0Zqhu+w66mAHjOAWBNSbFwsV5i8NmWeCJ4ecNXtkR2
- yE1tISlgkf/oelnXbNUAjX0=
-X-Google-Smtp-Source: APXvYqxVJaRV1NZ9p+a9UvRRJxgcRUElyATnSz2niSamFqTnFOLRoyRIYqzSD+uFEQH+1eVwneDFYg==
-X-Received: by 2002:a1c:ba08:: with SMTP id k8mr7603515wmf.63.1569079133659;
- Sat, 21 Sep 2019 08:18:53 -0700 (PDT)
+ bh=ryY1C6V/Fnndw45BEkZbgWqU1CO6K4z5Y17d3HMNBz4=;
+ b=WeV0wzWlmV2BFryMx+NeAnaicgXagkWvGZRr0qICkHPZ3exoV+itlno+hSv9tBv3Ck
+ N98FXBvA9K52hUGs+R+t/DnSzAp3lb7bAnJliQO3++pMWfu3po9Tah960xElKJzfHoFf
+ JtnbXG31tu4V+0OuLUmd9dQ47N8f05sdg2A/iM0x3QtL9g80ZquQYOrBoTbfi2o46wv0
+ qqMs+YO762+LgvfrMcS95Nzq0PuWHg50iTILUEK2TgWgS0T6Wq8ub5g6p+5i9qT7odOU
+ Sl5Hmqe62c1neRwRfo2eR20h3r30ua8wZUNLblN0vKutTYcYbZkaI7Im0dYhgqrK0EED
+ 4ANg==
+X-Gm-Message-State: APjAAAX59/MgA6w9J1Iyw6mmnWgMKTsfEw6J+UgkErHYAsqR2JuwJEes
+ mzYROX+m63tOCXio0cetm+w=
+X-Google-Smtp-Source: APXvYqzBWlO/a1o7buEzHL4fJp72XmAnFcohUCZlv806SiF/cVfQ3RUOZrNiEOVvXdyUtLEN+b6d2A==
+X-Received: by 2002:a05:600c:217:: with SMTP id
+ 23mr7868145wmi.76.1569079134900; 
+ Sat, 21 Sep 2019 08:18:54 -0700 (PDT)
 Received: from blackbox.darklights.net
  (p200300F133CE0B0028BAA8C744A6F562.dip0.t-ipconnect.de.
  [2003:f1:33ce:b00:28ba:a8c7:44a6:f562])
- by smtp.googlemail.com with ESMTPSA id c6sm6003120wrb.60.2019.09.21.08.18.52
+ by smtp.googlemail.com with ESMTPSA id c6sm6003120wrb.60.2019.09.21.08.18.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 21 Sep 2019 08:18:53 -0700 (PDT)
+ Sat, 21 Sep 2019 08:18:54 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: narmstrong@baylibre.com, jbrunet@baylibre.com, robh+dt@kernel.org,
  mark.rutland@arm.com, linux-amlogic@lists.infradead.org,
  devicetree@vger.kernel.org, khilman@baylibre.com
-Subject: [PATCH 5/6] ARM: dts: meson8: add the DDR clock controller
-Date: Sat, 21 Sep 2019 17:18:34 +0200
-Message-Id: <20190921151835.770263-6-martin.blumenstingl@googlemail.com>
+Subject: [PATCH 6/6] ARM: dts: meson8b: add the DDR clock controller
+Date: Sat, 21 Sep 2019 17:18:35 +0200
+Message-Id: <20190921151835.770263-7-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20190921151835.770263-1-martin.blumenstingl@googlemail.com>
 References: <20190921151835.770263-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190921_081855_079984_9507599B 
-X-CRM114-Status: GOOD (  11.01  )
+X-CRM114-CacheID: sfid-20190921_081856_317762_AE96A5F3 
+X-CRM114-Status: GOOD (  11.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -115,27 +116,27 @@ inputs for the audio clock muxes.
 
 Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- arch/arm/boot/dts/meson8.dtsi | 13 +++++++++++--
+ arch/arm/boot/dts/meson8b.dtsi | 13 +++++++++++--
  1 file changed, 11 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/meson8.dtsi b/arch/arm/boot/dts/meson8.dtsi
-index 4f59a4c8f036..257c1364864c 100644
---- a/arch/arm/boot/dts/meson8.dtsi
-+++ b/arch/arm/boot/dts/meson8.dtsi
-@@ -3,6 +3,7 @@
-  * Copyright 2014 Carlo Caione <carlo@caione.org>
+diff --git a/arch/arm/boot/dts/meson8b.dtsi b/arch/arm/boot/dts/meson8b.dtsi
+index 1934666ff60f..8ac8bdfaf58f 100644
+--- a/arch/arm/boot/dts/meson8b.dtsi
++++ b/arch/arm/boot/dts/meson8b.dtsi
+@@ -4,6 +4,7 @@
+  * Author: Carlo Caione <carlo@endlessm.com>
   */
  
 +#include <dt-bindings/clock/meson8-ddr-clkc.h>
  #include <dt-bindings/clock/meson8b-clkc.h>
- #include <dt-bindings/gpio/meson8-gpio.h>
- #include <dt-bindings/reset/amlogic,meson8b-clkc-reset.h>
-@@ -195,6 +196,14 @@
+ #include <dt-bindings/gpio/meson8b-gpio.h>
+ #include <dt-bindings/reset/amlogic,meson8b-reset.h>
+@@ -172,6 +173,14 @@
  		#size-cells = <1>;
  		ranges = <0x0 0xc8000000 0x8000>;
  
 +		ddr_clkc: clock-controller@400 {
-+			compatible = "amlogic,meson8-ddr-clkc";
++			compatible = "amlogic,meson8b-ddr-clkc";
 +			reg = <0x400 0x20>;
 +			clocks = <&xtal>;
 +			clock-names = "xtal";
@@ -145,7 +146,7 @@ index 4f59a4c8f036..257c1364864c 100644
  		dmcbus: bus@6000 {
  			compatible = "simple-bus";
  			reg = <0x6000 0x400>;
-@@ -455,8 +464,8 @@
+@@ -434,8 +443,8 @@
  &hhi {
  	clkc: clock-controller {
  		compatible = "amlogic,meson8-clkc";
