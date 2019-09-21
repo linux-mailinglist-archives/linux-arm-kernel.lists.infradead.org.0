@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F2C2B9F0F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Sep 2019 19:03:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 700CCB9F10
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Sep 2019 19:04:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,31 +11,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ij2dWyUK8CJv/0wlfw11k2OMXFayR56Ku3rPrECey5U=; b=LftLXhtfH7XmqJnklFWkWrb2RF
-	4Mpc8K3SEtL66P15FOtVe3hvfPCIdYZjbEhl7GmnT9x7aJA/PVRFPI4XfVxvgz0pCJQZoNNtvD7GR
-	5uIF9hHDnun8KY6yWNnh4SvKxeg8yqdov167bkvcZwAT6YQvDr23CRfnCZwsLewSj0ExoSKw6s3FN
-	RQtaRaInp+OaQQZtihx3VTIyjIgUAOt3OGDratDQQiY6Y7ivpRXuPwn258SpXiVIDQDpkTGFyutCs
-	F9cjk4lUBHbj41zo1yDUlBi190nA9GClT3QasWzBk/clOquYWUsdsKuVbpz3p/8KeD3xBchSmvJk4
-	qaw/MSiQ==;
+	bh=Sw8AF7h2Ow0DfIdo8cS2c9MTqlPtABjW4/Jf+YgKFts=; b=DSQNJU7cm+9DqhTLqnLs16Oj7D
+	IbThoNFrwnB8syCxOhOeWNbphU1jfCUxFpkAlQtinhRaRmFJ/C0mYcHnzZOJToFDXav9mzNekz9jo
+	QqpT2TXyYiCCF9FEe3Tk2dWVUUFEtbUXQJ8HFJv/D+eCdKnr29CtNehxhbLIGAMcQ0tgKWdxu9eBQ
+	gYwSknPGpXJjJ6ynZEPy0ksUNPr4TfXEy6j8O1G39tonvGKBH40Ll0Q4Q3gwYJU5FzGDx/ZKldUjn
+	twwlMMnwsVBKtveURcaDNY8VeNvq0oJAszvDihVvyJ7rjzPwSKhwbFFTrR4VF72fO85QGNMz+qaB5
+	+WhJuQyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBinN-0002xC-Ii; Sat, 21 Sep 2019 17:03:41 +0000
+	id 1iBind-0003CK-LI; Sat, 21 Sep 2019 17:03:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBim2-00021e-U0
- for linux-arm-kernel@lists.infradead.org; Sat, 21 Sep 2019 17:02:20 +0000
+ id 1iBim6-00025g-Mb
+ for linux-arm-kernel@lists.infradead.org; Sat, 21 Sep 2019 17:02:24 +0000
 Received: from localhost.localdomain (unknown [194.230.155.145])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5E4212190F;
- Sat, 21 Sep 2019 17:02:15 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 22C3020820;
+ Sat, 21 Sep 2019 17:02:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569085338;
- bh=ZhlatAQJ3gbAFsTaWLwFfMHgUb56DQV27LgklGme05w=;
+ s=default; t=1569085342;
+ bh=7bM9pWcEH6BpytbPP5wmLlyloc+4k6xwQpF8p+f70xM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=tBysDp4gwW+VrTrbK206X0kuUyh0if1grnyL8UMjAAS14VgeSsqtTDx3uZ5e9SP34
- C9zjLhxaj8MzDzvI5GSN3UxPu2facYXgjFJ3nniZ9CwpfkoqjDdW0nLXcgm+eXGSN5
- /fQq2btfTyZc95vwHuJHsh3vbZ5yjgQRNbeUWdBc=
+ b=qR2E8wm+9EaURawg/o+x76l6LzAuuiYPNDPR/GYxJO1kUtrcZVxbyzG/a8SpZCisk
+ qBmOAmoVdbLFSv+xHT8mm1y8mjn09dZ75YSaBv9J5G0w/wfPph3DUxiwtyZcT+M0cf
+ BVHSVrSUUUP+uHBlSyXnVzt8DBIWYUxytrsrZanY=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Daniel Lezcano <daniel.lezcano@linaro.org>,
  Thomas Gleixner <tglx@linutronix.de>, Rob Herring <robh+dt@kernel.org>,
@@ -43,16 +43,16 @@ To: Daniel Lezcano <daniel.lezcano@linaro.org>,
  Krzysztof Kozlowski <krzk@kernel.org>, linux-kernel@vger.kernel.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-samsung-soc@vger.kernel.org
-Subject: [RFT v3 5/8] ARM: dts: exynos: Remove MCT subnode for interrupt map
- on Exynos4412
-Date: Sat, 21 Sep 2019 19:01:49 +0200
-Message-Id: <20190921170152.5033-5-krzk@kernel.org>
+Subject: [RFT v3 6/8] ARM: dts: exynos: Remove MCT subnode for interrupt map
+ on Exynos5250
+Date: Sat, 21 Sep 2019 19:01:50 +0200
+Message-Id: <20190921170152.5033-6-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190921170152.5033-1-krzk@kernel.org>
 References: <20190921170152.5033-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190921_100219_023007_B690011F 
-X-CRM114-Status: GOOD (  11.77  )
+X-CRM114-CacheID: sfid-20190921_100223_285395_8A377D88 
+X-CRM114-Status: GOOD (  12.00  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -95,50 +95,60 @@ GIC and combiner.  This was modeled with a interrupt-map within a
 subnode but can be expressed in an easier and more common way, directly
 in the node itself.
 
-Tested on Odroid U3 (Exynos4412).
-
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
----
- arch/arm/boot/dts/exynos4412.dtsi | 18 +++++++-----------
- 1 file changed, 7 insertions(+), 11 deletions(-)
 
-diff --git a/arch/arm/boot/dts/exynos4412.dtsi b/arch/arm/boot/dts/exynos4412.dtsi
-index 8b6d5875c75d..7e2dabefd53f 100644
---- a/arch/arm/boot/dts/exynos4412.dtsi
-+++ b/arch/arm/boot/dts/exynos4412.dtsi
-@@ -243,25 +243,21 @@
- 			clock-names = "aclk200", "aclk400_mcuisp";
+---
+
+Not tested.
+---
+ arch/arm/boot/dts/exynos5250.dtsi | 30 ++++++++++++------------------
+ 1 file changed, 12 insertions(+), 18 deletions(-)
+
+diff --git a/arch/arm/boot/dts/exynos5250.dtsi b/arch/arm/boot/dts/exynos5250.dtsi
+index 7a01349317a3..e0fcf3c2f537 100644
+--- a/arch/arm/boot/dts/exynos5250.dtsi
++++ b/arch/arm/boot/dts/exynos5250.dtsi
+@@ -233,28 +233,22 @@
+ 			power-domains = <&pd_mau>;
  		};
  
--		timer@10050000 {
-+		mct: timer@10050000 {
- 			compatible = "samsung,exynos4412-mct";
- 			reg = <0x10050000 0x800>;
+-		timer@101c0000 {
++		mct: timer@101c0000 {
+ 			compatible = "samsung,exynos4210-mct";
+ 			reg = <0x101C0000 0x800>;
+-			interrupt-controller;
+-			#interrupt-cells = <2>;
 -			interrupt-parent = <&mct_map>;
--			interrupts = <0>, <1>, <2>, <3>, <4>;
+-			interrupts = <0 0>, <1 0>, <2 0>, <3 0>,
+-				     <4 0>, <5 0>;
  			clocks = <&clock CLK_FIN_PLL>, <&clock CLK_MCT>;
  			clock-names = "fin_pll", "mct";
 -
 -			mct_map: mct-map {
--				#interrupt-cells = <1>;
+-				#interrupt-cells = <2>;
 -				#address-cells = <0>;
 -				#size-cells = <0>;
--				interrupt-map =
--					<0 &gic 0 57 IRQ_TYPE_LEVEL_HIGH>,
+-				interrupt-map = <0x0 0 &combiner 23 3>,
+-						<0x1 0 &combiner 23 4>,
+-						<0x2 0 &combiner 25 2>,
+-						<0x3 0 &combiner 25 3>,
+-						<0x4 0 &gic 0 120 IRQ_TYPE_LEVEL_HIGH>,
+-						<0x5 0 &gic 0 121 IRQ_TYPE_LEVEL_HIGH>;
+-			};
 +			#address-cells = <0>;
 +			#size-cells = <0>;
 +			#interrupt-cells = <1>;
 +			interrupt-parent = <&mct>;
-+			interrupts = <0>, <1>, <2>, <3>, <4>;
-+			interrupt-map = <0 &gic 0 57 IRQ_TYPE_LEVEL_HIGH>,
- 					<1 &combiner 12 5>,
- 					<2 &combiner 12 6>,
- 					<3 &combiner 12 7>,
- 					<4 &gic 1 12 IRQ_TYPE_LEVEL_HIGH>;
--			};
++			interrupts = <0>, <1>, <2>, <3>, <4>, <5>;
++			interrupt-map = <0 &combiner 23 3>,
++					<1 &combiner 23 4>,
++					<2 &combiner 25 2>,
++					<3 &combiner 25 3>,
++					<4 &gic 0 120 IRQ_TYPE_LEVEL_HIGH>,
++					<5 &gic 0 121 IRQ_TYPE_LEVEL_HIGH>;
  		};
  
- 		watchdog: watchdog@10060000 {
+ 		pinctrl_0: pinctrl@11400000 {
 -- 
 2.17.1
 
