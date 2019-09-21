@@ -2,69 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA643B9DF6
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Sep 2019 15:05:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A427B9DFD
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Sep 2019 15:15:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Skyfa4WaYuZTKwc9gJE3STW7jUV6MT4zcSQtMpWH8L8=; b=iPOKlQPbfNDq31
-	TkW61sFmuFk0OfCo6BloQdb+xO6p0waWHiFfERrHNm8xol8QVg3fIgjpspCoxTaayFsemg41BV8wq
-	U76KGYtAPp0LRFgFsZviT93XobkGtSUtUdFfnFZ8kaFjSFyflgyQwu5vycNm2SMS4PUZz95VctPtT
-	48jVFHC5S0Y5yO+cfKlh2Mh3AqExzNi/FEqRCTQdwMZ9Sap+nHzqkwXvksejgsgweaI6JdkjaS11a
-	tFulEEg2jZyU9ZX3dJJ20CSA6a9UOpHbgLgG0GPq5zOF59xmQv+4vtye80Q8+nwNdMcp1sy28H840
-	2qIc37koAQrPGxcsMLhA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=QLfO79ztbvlytyrABYnU/Ie8WNhDlpOUcFlxv1bWAE0=; b=W5W
+	Nb2TTjjSFXpARxovU0gOdO72UtLrMdXbc9I5OSMOqQEbYRXyDnfj5yxtTPyEDEdPNIP0C+CINfgqP
+	i7tvTWHEJ+WLQl6W5x9rWLoj02r3L2huGNpc5wjq+YZe20bFzs9eRe1leAnmghM8UAnvP496rcA18
+	haBwaAQzZoECuKW3x+uDJ5eehlnL9OhnPUXpYYaOLBBiBg0jOPFlA/FIMUzY7IXRQrlzgSVcAN6pR
+	Ls+x5RBZZyQQqm9RfmChVRfa2NKhWD/TjnjLEfCYB0IovxrY3ar4mLmYeGm9ladShqqfLX8zhY0+8
+	OaTRBY64J4Yfk8owMuN7Rr+D4O12ndQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBf53-0007gw-1X; Sat, 21 Sep 2019 13:05:41 +0000
-Received: from mail-m973.mail.163.com ([123.126.97.3])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBf4k-0007gS-LH
- for linux-arm-kernel@lists.infradead.org; Sat, 21 Sep 2019 13:05:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
- s=s110527; h=From:Subject:Date:Message-Id:MIME-Version; bh=w0t/w
- YDFIo3k1zk7BQGWh+CvPwbHogEVFBzHqTKZ5w0=; b=CJjuHNf0ggvPC7hWoYCCK
- VZMFFp7n8GrCeR+XFutCXHDMxS0LSp1z465CtQF5k/IE99lJXQur2+u3mNcFZ6s4
- +1SDpMXabasf+0oHrYaQnTTTrNoxF5wLwrw+Wk2r5B5chbOWxQOYf3XaoftfYJVN
- 0BXGFWlM6LRPA7lTtTWNJk=
-Received: from localhost.localdomain (unknown [101.206.228.127])
- by smtp3 (Coremail) with SMTP id G9xpCgD3ps_3H4Zd6P8gAw--.89S2;
- Sat, 21 Sep 2019 21:04:57 +0800 (CST)
-From: Yu Chen <33988979@163.com>
-To: rmk+kernel@armlinux.org.uk,
-	linux@armlinux.org.uk
-Subject: [PATCH] arm: export memblock_reserve()d regions via /proc/iomem
-Date: Sat, 21 Sep 2019 21:02:49 +0800
-Message-Id: <1569070969-5168-1-git-send-email-33988979@163.com>
-X-Mailer: git-send-email 2.7.4
-MIME-Version: 1.0
-X-CM-TRANSID: G9xpCgD3ps_3H4Zd6P8gAw--.89S2
-X-Coremail-Antispam: 1Uf129KBjvJXoW7ur4rAr1UKFW7AFW7Kry3Jwb_yoW8tw1kpw
- 47Zw1Ygr48Gr1xXa93Ar1UuFs5Z3WIvrW3WrW3trWfZa1Dtr17Jr10qryj9Fyav3yxKr1a
- vr1vyFWI93yUJaDanT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
- 9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07j-4SrUUUUU=
-X-Originating-IP: [101.206.228.127]
-X-CM-SenderInfo: attzmmqzxzqiywtou0bp/1tbiKxk3slQHRUSb3AAAsi
+	id 1iBfEZ-0002Op-Ea; Sat, 21 Sep 2019 13:15:31 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iBfEL-0002O9-AK; Sat, 21 Sep 2019 13:15:18 +0000
+Received: by mail-wm1-x341.google.com with SMTP id p7so5200464wmp.4;
+ Sat, 21 Sep 2019 06:15:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=CUIiObmZUoLOjlcmGuE4Z8qsrk1peXb9nnaXkFScf1o=;
+ b=aEQ/uRYvCsbX944pwrZC5Zi5+pI6s/P143IvpXdlQXMblp/gr0TEwvb4/jIY8KcTPb
+ h+OCadPSshMmMPvaxG+aDklS4bI+8UV1JUuif5+/cH6ND7u1pCPlRypNjKUUSwZlcfVY
+ fmOmGc8jEjdrmt2rxdLStr2mvlAdNsGDr/SrNSboflvindXVGUKuxoMwkhXbfAgD7kXD
+ ds2xaFd7dONWCaZm0mLYpGcfY18vZi6cbUNr7JCDZAZ7y8bfR+bZaJZLCL3MaN0W9/8b
+ tqoH4C7+jAVoy4HWXeff+DTBMlGe4VHPROBfJn0KzOOWdKjEpBrMct/Vjc06IqQSo+hy
+ Tt8g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=CUIiObmZUoLOjlcmGuE4Z8qsrk1peXb9nnaXkFScf1o=;
+ b=h+cy8eJs/UTeiJzt803DJY4bgVbfMVP/Z49o/wr03kqhpNI9ydIH+ar2zzI2iWexpM
+ ZzgUMv/1GPmqL5YPESh7p9gigoIQ5a7lDX7pO7mqxC0PNyeyZKSsrNhMZLKEZkErPY1f
+ 8IhO3DYPn2TROfHNhrKazqoojHc845188c8sTkxVvAf6AmfwYAMl9ca12NZBmVQR36NN
+ XhN4VYehR2XAzE9AcGOTZvyBa9ebhSMG7u5Q/OiSAckDPmZ6B26Px96jwwRvRW/PBfPB
+ yiXMvWNnRqBaIx9cdHDFXEMccoB/3RNR//uNJmlHwCy6Kn0F7toMgVi8AauCtbUQsgwQ
+ cIpg==
+X-Gm-Message-State: APjAAAVE1l4BxwL8Z1YLGXAhzhm5VGSZTLQmSXQg6+3ibumsSm+bxwaN
+ BBaU69sXBc8Y2h20jUfrC6I=
+X-Google-Smtp-Source: APXvYqwjrERzxUIeZTPWyTYAXdg1ZTPDKGaLOeQoXI2vdua+67gV4Ml3mGFKjPE7ijQS8GUVUSa4Hw==
+X-Received: by 2002:a05:600c:295d:: with SMTP id
+ n29mr6713359wmd.36.1569071712994; 
+ Sat, 21 Sep 2019 06:15:12 -0700 (PDT)
+Received: from apple.sigmaris.info ([84.93.172.212])
+ by smtp.gmail.com with ESMTPSA id g11sm5676349wmh.45.2019.09.21.06.15.11
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Sat, 21 Sep 2019 06:15:12 -0700 (PDT)
+From: Hugh Cole-Baker <sigmaris@gmail.com>
+To: devicetree@vger.kernel.org
+Subject: [PATCH] arm64: dts: rockchip: fix Rockpro64 RK808 interrupt line
+Date: Sat, 21 Sep 2019 14:14:57 +0100
+Message-Id: <20190921131457.36258-1-sigmaris@gmail.com>
+X-Mailer: git-send-email 2.17.2 (Apple Git-113)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190921_060523_076675_12C94103 
-X-CRM114-Status: UNSURE (   9.29  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190921_061517_383773_FFE10321 
+X-CRM114-Status: GOOD (  13.01  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [123.126.97.3 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (33988979[at]163.com)
- 0.0 RCVD_IN_MSPIKE_L5      RBL: Very bad reputation (-5)
- [123.126.97.3 listed in bl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (33988979[at]163.com)
+ provider (sigmaris[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -73,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 RCVD_IN_MSPIKE_BL      Mailspike blacklisted
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,53 +92,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: yu.chen3@zte.com.cn, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Akash Gajjar <Akash_Gajjar@mentor.com>, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Hugh Cole-Baker <sigmaris@gmail.com>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogWXUgQ2hlbiA8eXUuY2hlbjNAenRlLmNvbS5jbj4KCm1lbWJsb2NrIHJlc2VydmVkIHJl
-Z2lvbnMgYXJlIG5vdCByZXBvcnRlZCB2aWEgL3Byb2MvaW9tZW0gb24gQVJNLCBrZXhlYydzCnVz
-ZXItc3BhY2UgZG9lc24ndCBrbm93IGFib3V0IG1lbWJsb2NrX3Jlc2VydmUoKWQgcmVnaW9ucyBh
-bmQgdGh1cwpwb3NzaWJsZSBmb3Iga2V4ZWMgdG8gb3ZlcndyaXRlIHdpdGggdGhlIG5ldyBrZXJu
-ZWwgb3IgaW5pdHJkLgoKWyDCoCDCoDAuMDAwMDAwXSBCb290aW5nIExpbnV4IG9uIHBoeXNpY2Fs
-IENQVSAweGYwMApbIMKgIMKgMC4wMDAwMDBdIExpbnV4IHZlcnNpb24gNC45LjExNS1ydDkzLWRp
-cnR5ICh5dWNoZW5AbG9jYWxob3N0LmxvY2FsZG9tYWluKSAoZ2NjIHZlcnNpb24gNi4yLjAgKFpU
-RSBFbWJzeXMtVFNQIFYzLjA3LjIKMCkgKSAjNjIgU01QIFBSRUVNUFQgRnJpIFNlcCAyMCAxMDoz
-OToyOSBDU1QgMjAxOQpbIMKgIMKgMC4wMDAwMDBdIENQVTogQVJNdjcgUHJvY2Vzc29yIFs0MTBm
-YzA3NV0gcmV2aXNpb24gNSAoQVJNdjcpLCBjcj0zMGM1Mzg3ZApbIMKgIMKgMC4wMDAwMDBdIENQ
-VTogZGl2IGluc3RydWN0aW9ucyBhdmFpbGFibGU6IHBhdGNoaW5nIGRpdmlzaW9uIGNvZGUKWyDC
-oCDCoDAuMDAwMDAwXSBDUFU6IFBJUFQgLyBWSVBUIG5vbmFsaWFzaW5nIGRhdGEgY2FjaGUsIFZJ
-UFQgYWxpYXNpbmcgaW5zdHJ1Y3Rpb24gY2FjaGUKWyDCoCDCoDAuMDAwMDAwXSBPRjogZmR0Ok1h
-Y2hpbmUgbW9kZWw6IExTMTAyMUEgVFdSIEJvYXJkClsgwqAgwqAwLjAwMDAwMF0gSU5JVFJEOiAw
-eDgwZjdmMDAwKzB4MDM2OTVlNDAgb3ZlcmxhcHMgaW4tdXNlIG1lbW9yeSByZWdpb24gLSBkaXNh
-YmxpbmcgaW5pdHJkCgpTaWduZWQtb2ZmLWJ5OiBZdSBDaGVuIDx5dS5jaGVuM0B6dGUuY29tLmNu
-PgpSZXZpZXdlZC1ieTogSnVuaHVhIEh1YW5nIDxodWFuZy5qdW5odWFAenRlLmNvbS5jbj4KLS0t
-CiBhcmNoL2FybS9rZXJuZWwvc2V0dXAuYyB8IDI4ICsrKysrKysrKysrKysrKysrKysrKysrKysr
-KysKIDEgZmlsZSBjaGFuZ2VkLCAyOCBpbnNlcnRpb25zKCspCgpkaWZmIC0tZ2l0IGEvYXJjaC9h
-cm0va2VybmVsL3NldHVwLmMgYi9hcmNoL2FybS9rZXJuZWwvc2V0dXAuYwppbmRleCBkMGE0NjRl
-Li42MDZkMWFjIDEwMDY0NAotLS0gYS9hcmNoL2FybS9rZXJuZWwvc2V0dXAuYworKysgYi9hcmNo
-L2FybS9rZXJuZWwvc2V0dXAuYwpAQCAtOTExLDYgKzkxMSwzNCBAQCBzdGF0aWMgdm9pZCBfX2lu
-aXQgcmVxdWVzdF9zdGFuZGFyZF9yZXNvdXJjZXMoY29uc3Qgc3RydWN0IG1hY2hpbmVfZGVzYyAq
-bWRlc2MpCiAJCXJlcXVlc3RfcmVzb3VyY2UoJmlvcG9ydF9yZXNvdXJjZSwgJmxwMik7CiB9CiAK
-K3N0YXRpYyBpbnQgX19pbml0IHJlc2VydmVfbWVtYmxvY2tfcmVzZXJ2ZWRfcmVnaW9ucyh2b2lk
-KQoreworCXU2NCBpLCBqOworCisJZm9yIChpID0gMDsgaSA8IG51bV9zdGFuZGFyZF9yZXNvdXJj
-ZXM7ICsraSkgeworCQlzdHJ1Y3QgcmVzb3VyY2UgKm1lbSA9ICZzdGFuZGFyZF9yZXNvdXJjZXNb
-aV07CisJCXBoeXNfYWRkcl90IHJfc3RhcnQsIHJfZW5kLCBtZW1fc2l6ZSA9IHJlc291cmNlX3Np
-emUobWVtKTsKKworCQlpZiAoIW1lbWJsb2NrX2lzX3JlZ2lvbl9yZXNlcnZlZChtZW0tPnN0YXJ0
-LCBtZW1fc2l6ZSkpCisJCQljb250aW51ZTsKKworCQlmb3JfZWFjaF9yZXNlcnZlZF9tZW1fcmVn
-aW9uKGosICZyX3N0YXJ0LCAmcl9lbmQpIHsKKwkJCXJlc291cmNlX3NpemVfdCBzdGFydCwgZW5k
-OworCisJCQlzdGFydCA9IG1heChQRk5fUEhZUyhQRk5fRE9XTihyX3N0YXJ0KSksIG1lbS0+c3Rh
-cnQpOworCQkJZW5kID0gbWluKFBGTl9QSFlTKFBGTl9VUChyX2VuZCkpIC0gMSwgbWVtLT5lbmQp
-OworCisJCQlpZiAoc3RhcnQgPiBtZW0tPmVuZCB8fCBlbmQgPCBtZW0tPnN0YXJ0KQorCQkJCWNv
-bnRpbnVlOworCisJCQlyZXNlcnZlX3JlZ2lvbl93aXRoX3NwbGl0KG1lbSwgc3RhcnQsIGVuZCwg
-InJlc2VydmVkIik7CisJCX0KKwl9CisKKwlyZXR1cm4gMDsKK30KK2FyY2hfaW5pdGNhbGwocmVz
-ZXJ2ZV9tZW1ibG9ja19yZXNlcnZlZF9yZWdpb25zKTsKKwogI2lmIGRlZmluZWQoQ09ORklHX1ZH
-QV9DT05TT0xFKSB8fCBkZWZpbmVkKENPTkZJR19EVU1NWV9DT05TT0xFKSB8fCBcCiAgICAgZGVm
-aW5lZChDT05GSUdfRUZJKQogc3RydWN0IHNjcmVlbl9pbmZvIHNjcmVlbl9pbmZvID0gewotLSAK
-Mi43LjQKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
-aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
-eC1hcm0ta2VybmVsCg==
+Fix the pinctrl and interrupt specifier for RK808 to use GPIO3_B2. On the
+Rockpro64 schematic [1] page 16, it shows GPIO3_B2 used for the interrupt
+line PMIC_INT_L from the RK808, and there's a note which translates as:
+"PMU termination GPIO1_C5 changed to this".
+
+Tested by setting an RTC wakealarm and checking /proc/interrupts counters.
+Without this patch, neither the rockchip_gpio_irq counter for the RK808,
+nor the RTC alarm counter increment when the alarm time is reached.
+With this patch, both interrupt counters increment by 1 as expected.
+
+[1] http://files.pine64.org/doc/rockpro64/rockpro64_v21-SCH.pdf
+
+Fixes: e4f3fb4 ("arm64: dts: rockchip: add initial dts support for Rockpro64")
+Signed-off-by: Hugh Cole-Baker <sigmaris@gmail.com>
+---
+ arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+index 0401d4ec1f45..c27d8a6ae1c5 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+@@ -247,8 +247,8 @@
+ 	rk808: pmic@1b {
+ 		compatible = "rockchip,rk808";
+ 		reg = <0x1b>;
+-		interrupt-parent = <&gpio1>;
+-		interrupts = <21 IRQ_TYPE_LEVEL_LOW>;
++		interrupt-parent = <&gpio3>;
++		interrupts = <10 IRQ_TYPE_LEVEL_LOW>;
+ 		#clock-cells = <1>;
+ 		clock-output-names = "xin32k", "rk808-clkout2";
+ 		pinctrl-names = "default";
+@@ -574,7 +574,7 @@
+ 
+ 	pmic {
+ 		pmic_int_l: pmic-int-l {
+-			rockchip,pins = <1 RK_PC5 RK_FUNC_GPIO &pcfg_pull_up>;
++			rockchip,pins = <3 RK_PB2 RK_FUNC_GPIO &pcfg_pull_up>;
+ 		};
+ 
+ 		vsel1_gpio: vsel1-gpio {
+-- 
+2.17.2 (Apple Git-113)
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
