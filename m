@@ -2,96 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10D91B9E0B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Sep 2019 15:20:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15E62B9E27
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Sep 2019 15:51:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=EYtqr3rfYe6jYmJ741f1dsEQUPEbDd4rigc88U4DPQA=; b=oQ+qZPuLkddxOwdMwmSjPgPrg
-	z5WZlmFbOZv7k1Rl/KncrGV532dUt3AQQCYgxqasHALKCbXKON77KhpQknJ5yZEYpRRd8cSfKUcQz
-	YVoEDdHYhdyGG4zidxp9MchReSiyiNZAv/I6xPgbELPSn3KeFI1PYe+XcVBMQrnTvP3J5P7jIGJHX
-	io1WWH6nur8ZhBQKM/Gy50quLH9d9Ce1wJT/EcKlobXEbtkse9CdJb4zRn5yEueL3PfgM1q9S17tg
-	QAE2EmVp302AIocZHMN2xKGKB0E0x+W6msgWMKwwZSTZH9Ig9JdzH2t5E8MK150kq350JXZpYw1Zd
-	WGpOerFXg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=hdgwTFx0wCxJ4a2oNI4YV63psm+ItMRiPWf8OCRqEaM=; b=K/j
+	zR9JkGHrzKuqzWOMZhMepRlYN0bXfpjAlaHfn077HLmpEBwxqphzozGNQKxQeIQONT5+JuvTBEbrD
+	nYVPuDNfhYT8/6SqsC7B1Bx9Riz7yA8wONS99g1g7cjr5LEOb4A3zMOSRfRMUtO1yifHWZNHcGXdx
+	ds+hbNoHsSzHa6T8Rj1uYh6Hs4DTGSMD7aPdc6cOpGBG8oaFLGSBa5IaEoVlzZpzhMwQQeFPyglxY
+	4N0dvoyW/cbTdovr8S73KXnx84qO+CO5KvLLjIYPgO3FoBQJWux8igqKrIgClXKft1V7VkNzwRd86
+	nJpPGXjlTJsNxtz3EYlQQcBHu54pREQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBfJF-0003H8-35; Sat, 21 Sep 2019 13:20:21 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBfIo-00037l-MP
- for linux-arm-kernel@lists.infradead.org; Sat, 21 Sep 2019 13:19:56 +0000
-Received: by mail-pg1-x542.google.com with SMTP id d4so2305529pgd.10
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 21 Sep 2019 06:19:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding;
- bh=W+8ekTa9bxVsBuWJwU/8AJ+YtRXTgXJvM5aflsiRw9k=;
- b=uV1iPiYQk1e6NbfNJ8We8iK7oluOWL0Hk/ZMhuNR/wjLhXsjJTusXf9UaZmH2Q0smn
- XtW9GB/AJkWCGsk8XFi4goxBDmeexyzPbU8dolM29bc2w10bdNX1OZ8FHmhb83mBoFfr
- cZRPBsw6cFySPnUfGpXU2GXwraRqgtPx9YeG6qXrVCBfVp1rL0kqadMOa83zSH7CnTF5
- kxholiBotGcFAj8yDqBO/onLZEDfdwRjQ+10a+NS2vlPl5xnim4sOyWVZRvzgcxevPxQ
- TJn2z6Ny9m282Ymd9CipIPgk7VvugoclMMFIvSxEH4mRjnNi5qQAHyNSAhmuGzuhpJCN
- me9A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding;
- bh=W+8ekTa9bxVsBuWJwU/8AJ+YtRXTgXJvM5aflsiRw9k=;
- b=YoIFQxZiCXBH+sYBC0wU1aL4wnPT0jaM6UENs7Xf/2zd4NHqVEKVSbFFsiRWGcuiGk
- MgHsbFTIXC59mwgcBCQHiOkUmJ+E+WYpKn/U/Cnl6OXdoxE+JJC7AODTxaCeC1A4869r
- cxFYNiEpKU30eoGAcqqBbzf+X0lnRDm1DEIE81qxvenho4ygyoaaSM2xQQkBSl7A/eLm
- 22Xp/mr9moMADWJn3LJa/mdwZ6eH9DnlQaM4ye88tHmkhlaVZYvL+heFw6+dRMHFaLNW
- 3PB9rHUjvUAO/O84lsGVyQQvOkEof+DdADod611Fi8o43XQwHlllmPraWfdfJNa/fm3S
- Ijsg==
-X-Gm-Message-State: APjAAAX42D7HE7rGGiJ4rNX/C6afzzMtaFQOuz2kM434utWi4YgckYda
- g52I8LOe3j71Jsy7Tk6u2x4=
-X-Google-Smtp-Source: APXvYqxWEUGpJd2yL4QrtTGoorZe0rFzJ80dXXaylsMldnIkT9DQkSFOhoFFuZ/0b5RKiu4t41Ut7g==
-X-Received: by 2002:a17:90a:3387:: with SMTP id
- n7mr10004663pjb.26.1569071993741; 
- Sat, 21 Sep 2019 06:19:53 -0700 (PDT)
-Received: from [0.0.0.0] (104.129.187.94.16clouds.com. [104.129.187.94])
- by smtp.gmail.com with ESMTPSA id d76sm7941194pfd.185.2019.09.21.06.19.38
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 21 Sep 2019 06:19:52 -0700 (PDT)
-Subject: Re: [PATCH v7 3/3] mm: fix double page fault on arm64 if PTE_AF is
- cleared
-To: Matthew Wilcox <willy@infradead.org>, Jia He <justin.he@arm.com>
-References: <20190920135437.25622-1-justin.he@arm.com>
- <20190920135437.25622-4-justin.he@arm.com>
- <20190920155300.GC15392@bombadil.infradead.org>
-From: Jia He <hejianet@gmail.com>
-Message-ID: <dbfc9da4-6650-5c9e-59c6-16e0f234b9c8@gmail.com>
-Date: Sat, 21 Sep 2019 21:19:34 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <20190920155300.GC15392@bombadil.infradead.org>
+	id 1iBfnI-0006J3-Bz; Sat, 21 Sep 2019 13:51:24 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iBfn4-0006IO-4S
+ for linux-arm-kernel@lists.infradead.org; Sat, 21 Sep 2019 13:51:11 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0419A1570;
+ Sat, 21 Sep 2019 06:51:07 -0700 (PDT)
+Received: from localhost.localdomain (entos-thunderx2-02.shanghai.arm.com
+ [10.169.40.54])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id C57413F67D;
+ Sat, 21 Sep 2019 06:51:01 -0700 (PDT)
+From: Jia He <justin.he@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, James Morse <james.morse@arm.com>,
+ Marc Zyngier <maz@kernel.org>, Matthew Wilcox <willy@infradead.org>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, Suzuki Poulose <Suzuki.Poulose@arm.com>
+Subject: [PATCH v8 0/3] fix double page fault on arm64
+Date: Sat, 21 Sep 2019 21:50:51 +0800
+Message-Id: <20190921135054.142360-1-justin.he@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190921_061954_836386_E44F2B0D 
-X-CRM114-Status: GOOD (  19.77  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190921_065110_221356_51436DFB 
+X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (hejianet[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,85 +63,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kaly Xin <Kaly.Xin@arm.com>,
- Ralph Campbell <rcampbell@nvidia.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Suzuki Poulose <Suzuki.Poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- Punit Agrawal <punitagrawal@gmail.com>, Marc Zyngier <maz@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, nd@arm.com,
- Will Deacon <will@kernel.org>, Alex Van Brunt <avanbrunt@nvidia.com>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>,
- Robin Murphy <robin.murphy@arm.com>
+Cc: Ralph Campbell <rcampbell@nvidia.com>, Jia He <justin.he@arm.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ Alex Van Brunt <avanbrunt@nvidia.com>, Kaly Xin <Kaly.Xin@arm.com>,
+ =?UTF-8?q?J=C3=A9r=C3=B4me=20Glisse?= <jglisse@redhat.com>,
+ Punit Agrawal <punitagrawal@gmail.com>, hejianet@gmail.com,
+ Andrew Morton <akpm@linux-foundation.org>, nd@arm.com,
+ Robin Murphy <robin.murphy@arm.com>, Thomas Gleixner <tglx@linutronix.de>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[On behalf of justin.he@arm.com]
+When we tested pmdk unit test vmmalloc_fork TEST1 in arm64 guest, there
+will be a double page fault in __copy_from_user_inatomic of cow_user_page.
 
-Hi Matthew
+As told by Catalin: "On arm64 without hardware Access Flag, copying from
+user will fail because the pte is old and cannot be marked young. So we
+always end up with zeroed page after fork() + CoW for pfn mappings. we
+don't always have a hardware-managed access flag on arm64."
 
-On 2019/9/20 23:53, Matthew Wilcox wrote:
-> On Fri, Sep 20, 2019 at 09:54:37PM +0800, Jia He wrote:
->> -static inline void cow_user_page(struct page *dst, struct page *src, unsigned long va, struct vm_area_struct *vma)
->> +static inline int cow_user_page(struct page *dst, struct page *src,
->> +				struct vm_fault *vmf)
->>   {
-> Can we talk about the return type here?
->
->> +			} else {
->> +				/* Other thread has already handled the fault
->> +				 * and we don't need to do anything. If it's
->> +				 * not the case, the fault will be triggered
->> +				 * again on the same address.
->> +				 */
->> +				pte_unmap_unlock(vmf->pte, vmf->ptl);
->> +				return -1;
-> ...
->> +	return 0;
->>   }
-> So -1 for "try again" and 0 for "succeeded".
->
->> +		if (cow_user_page(new_page, old_page, vmf)) {
-> Then we use it like a bool.  But it's kind of backwards from a bool because
-> false is success.
->
->> +			/* COW failed, if the fault was solved by other,
->> +			 * it's fine. If not, userspace would re-fault on
->> +			 * the same address and we will handle the fault
->> +			 * from the second attempt.
->> +			 */
->> +			put_page(new_page);
->> +			if (old_page)
->> +				put_page(old_page);
->> +			return 0;
-> And we don't use the return value; in fact we invert it.
->
-> Would this make more sense:
->
-> static inline bool cow_user_page(struct page *dst, struct page *src,
-> 					struct vm_fault *vmf)
-> ...
-> 				pte_unmap_unlock(vmf->pte, vmf->ptl);
-> 				return false;
-> ...
-> 	return true;
-> ...
-> 		if (!cow_user_page(new_page, old_page, vmf)) {
->
-> That reads more sensibly for me.  We could also go with returning a
-> vm_fault_t, but that would be more complex than needed today, I think.
+Changes
+v8: change cow_user_page's return type (Matthew)
+v7: s/pte_spinlock/pte_offset_map_lock (Kirill)
+v6: fix error case of returning with spinlock taken (Catalin)
+    move kmap_atomic to avoid handling kunmap_atomic
+v5: handle the case correctly when !pte_same
+    fix kbuild test failed
+v4: introduce cpu_has_hw_af (Suzuki)
+    bail out if !pte_same (Kirill)
+v3: add vmf->ptl lock/unlock (Kirill A. Shutemov)
+    add arch_faults_on_old_pte (Matthew, Catalin)
+v2: remove FAULT_FLAG_WRITE when setting pte access flag (Catalin)
 
-Ok, will change the return type to bool as you suggested.
-Thanks
+Jia He (3):
+  arm64: cpufeature: introduce helper cpu_has_hw_af()
+  arm64: mm: implement arch_faults_on_old_pte() on arm64
+  mm: fix double page fault on arm64 if PTE_AF is cleared
 
----
-Cheers,
-Justin (Jia He)
+ arch/arm64/include/asm/cpufeature.h | 10 +++++
+ arch/arm64/include/asm/pgtable.h    | 12 ++++++
+ mm/memory.c                         | 67 ++++++++++++++++++++++++++---
+ 3 files changed, 83 insertions(+), 6 deletions(-)
+
+-- 
+2.17.1
 
 
 _______________________________________________
