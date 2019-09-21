@@ -2,34 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15E62B9E27
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Sep 2019 15:51:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB2B6B9E28
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Sep 2019 15:51:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=hdgwTFx0wCxJ4a2oNI4YV63psm+ItMRiPWf8OCRqEaM=; b=K/j
-	zR9JkGHrzKuqzWOMZhMepRlYN0bXfpjAlaHfn077HLmpEBwxqphzozGNQKxQeIQONT5+JuvTBEbrD
-	nYVPuDNfhYT8/6SqsC7B1Bx9Riz7yA8wONS99g1g7cjr5LEOb4A3zMOSRfRMUtO1yifHWZNHcGXdx
-	ds+hbNoHsSzHa6T8Rj1uYh6Hs4DTGSMD7aPdc6cOpGBG8oaFLGSBa5IaEoVlzZpzhMwQQeFPyglxY
-	4N0dvoyW/cbTdovr8S73KXnx84qO+CO5KvLLjIYPgO3FoBQJWux8igqKrIgClXKft1V7VkNzwRd86
-	nJpPGXjlTJsNxtz3EYlQQcBHu54pREQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=wuJtfYstU8Sg9ZEFnTnODPDc3gDPufq1iNdN3DNNQBU=; b=WwvFokKSzBelFsXzInNG4Puslt
+	WgK79vkj/ARqE0958xfVqvjgJj1CEvaf9SZcLH9kQf5InmS8x6EIO6sBSQ8C9NQXL/EA/Y/TstCu6
+	QuloWAs9x45f0uxGAAUMm3THxKaIQ7fRgtQRfL3eegL0liKKOQRoWkS4UEJpKV9S/UzXxlrs0RUkk
+	wgjdzSa226DOLyAfDDCq6Ex29mRmG4BNvf+QID7knRcbIF0BWbcgLm05p3Drcx495TnIphAiYjJr/
+	4Ik+z0qR2DgCch+U9SOv+uZcBgVf5ur234GOvh9JYZD3OitFtwMIdhVyFjLPbCIag4ocWLOIb/N9r
+	mzGlDK6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBfnI-0006J3-Bz; Sat, 21 Sep 2019 13:51:24 +0000
+	id 1iBfne-0006c6-7G; Sat, 21 Sep 2019 13:51:46 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBfn4-0006IO-4S
- for linux-arm-kernel@lists.infradead.org; Sat, 21 Sep 2019 13:51:11 +0000
+ id 1iBfn7-0006J4-1L
+ for linux-arm-kernel@lists.infradead.org; Sat, 21 Sep 2019 13:51:14 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0419A1570;
- Sat, 21 Sep 2019 06:51:07 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 99A861597;
+ Sat, 21 Sep 2019 06:51:12 -0700 (PDT)
 Received: from localhost.localdomain (entos-thunderx2-02.shanghai.arm.com
  [10.169.40.54])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id C57413F67D;
- Sat, 21 Sep 2019 06:51:01 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 65E6C3F67D;
+ Sat, 21 Sep 2019 06:51:07 -0700 (PDT)
 From: Jia He <justin.he@arm.com>
 To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>, James Morse <james.morse@arm.com>,
@@ -37,14 +38,15 @@ To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-mm@kvack.org, Suzuki Poulose <Suzuki.Poulose@arm.com>
-Subject: [PATCH v8 0/3] fix double page fault on arm64
-Date: Sat, 21 Sep 2019 21:50:51 +0800
-Message-Id: <20190921135054.142360-1-justin.he@arm.com>
+Subject: [PATCH v8 1/3] arm64: cpufeature: introduce helper cpu_has_hw_af()
+Date: Sat, 21 Sep 2019 21:50:52 +0800
+Message-Id: <20190921135054.142360-2-justin.he@arm.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190921135054.142360-1-justin.he@arm.com>
+References: <20190921135054.142360-1-justin.he@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190921_065110_221356_51436DFB 
-X-CRM114-Status: UNSURE (   9.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190921_065113_125544_33203AAC 
+X-CRM114-Status: GOOD (  11.40  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -76,37 +78,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When we tested pmdk unit test vmmalloc_fork TEST1 in arm64 guest, there
-will be a double page fault in __copy_from_user_inatomic of cow_user_page.
+We unconditionally set the HW_AFDBM capability and only enable it on
+CPUs which really have the feature. But sometimes we need to know
+whether this cpu has the capability of HW AF. So decouple AF from
+DBM by new helper cpu_has_hw_af().
 
-As told by Catalin: "On arm64 without hardware Access Flag, copying from
-user will fail because the pte is old and cannot be marked young. So we
-always end up with zeroed page after fork() + CoW for pfn mappings. we
-don't always have a hardware-managed access flag on arm64."
+Reported-by: kbuild test robot <lkp@intel.com>
+Suggested-by: Suzuki Poulose <Suzuki.Poulose@arm.com>
+Signed-off-by: Jia He <justin.he@arm.com>
+---
+ arch/arm64/include/asm/cpufeature.h | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-Changes
-v8: change cow_user_page's return type (Matthew)
-v7: s/pte_spinlock/pte_offset_map_lock (Kirill)
-v6: fix error case of returning with spinlock taken (Catalin)
-    move kmap_atomic to avoid handling kunmap_atomic
-v5: handle the case correctly when !pte_same
-    fix kbuild test failed
-v4: introduce cpu_has_hw_af (Suzuki)
-    bail out if !pte_same (Kirill)
-v3: add vmf->ptl lock/unlock (Kirill A. Shutemov)
-    add arch_faults_on_old_pte (Matthew, Catalin)
-v2: remove FAULT_FLAG_WRITE when setting pte access flag (Catalin)
-
-Jia He (3):
-  arm64: cpufeature: introduce helper cpu_has_hw_af()
-  arm64: mm: implement arch_faults_on_old_pte() on arm64
-  mm: fix double page fault on arm64 if PTE_AF is cleared
-
- arch/arm64/include/asm/cpufeature.h | 10 +++++
- arch/arm64/include/asm/pgtable.h    | 12 ++++++
- mm/memory.c                         | 67 ++++++++++++++++++++++++++---
- 3 files changed, 83 insertions(+), 6 deletions(-)
-
+diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
+index c96ffa4722d3..46caf934ba4e 100644
+--- a/arch/arm64/include/asm/cpufeature.h
++++ b/arch/arm64/include/asm/cpufeature.h
+@@ -667,6 +667,16 @@ static inline u32 id_aa64mmfr0_parange_to_phys_shift(int parange)
+ 	default: return CONFIG_ARM64_PA_BITS;
+ 	}
+ }
++
++/* Decouple AF from AFDBM. */
++static inline bool cpu_has_hw_af(void)
++{
++	if (IS_ENABLED(CONFIG_ARM64_HW_AFDBM))
++		return read_cpuid(ID_AA64MMFR1_EL1) & 0xf;
++
++	return false;
++}
++
+ #endif /* __ASSEMBLY__ */
+ 
+ #endif
 -- 
 2.17.1
 
