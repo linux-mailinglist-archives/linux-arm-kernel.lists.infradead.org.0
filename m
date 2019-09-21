@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9480B9E4B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Sep 2019 17:04:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B133DB9E60
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Sep 2019 17:13:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=IXZMXN1qMSxX4KkniZqe5NCVkGftvi5QlcXcS0EzDxI=; b=BhGbSgqhLUM37K
-	W0XcX2GHou01/DU9kx6BAux1kVP+2GJ6A+qyyFQ/XLooNPJt3eMZeh67/+avHnKSKUqInRT7x0SQD
-	J9Oc+ndZiqVEFl6ADBbnCbzrwIeGZYV7W+3RF2Fqrl2HW49iI47XAEKE2+ZnrceTr1f7luFdmPCZe
-	b55fVlYtm1UWiYuEGAPGSXv/KuSrcYmVuKe0XTmku9TS4dmlxtMKYzshxbRSKSFjXZu32KgeUHhrT
-	MW/2YybqTwcmRvNTHj0B1GtHEoL01KMrkeajZbnsY4V5xlG+KnwHGKpWvf7Li4IQOR1OOmHZ/Siz0
-	5VjggDlMMb4QTuMPHldg==;
+	List-Owner; bh=EXJd5K9WrIqbeGSMFEM3wrbq41WVy2CnUoe8tSW3xis=; b=uuY1e7Nqo9rcCo
+	XiU8FO0Qp4y9NA6SVWYbx2MOd6gCz+eBkt0eoM7qZBJGfTX7xbRQicoXzwALyn90lHQbCrRrY0oVd
+	X9SsjmZWnqLaVqqdoBL0KmpEFeoAp9rL/LBh4Yy7AUKEtNldn8OCASlfxZ2DtZWzQpHW6ZZyp+13k
+	cpk+hRS26ow66jS0sbpIFucff1F533CWagCoR8o/Auvb9j7x/3TxEHAbR2gVQ+4uvudnfzZhgXuTI
+	mPIcPH4KVyEnzKzq1trLxL1ASrJXHadTXYZ6k1jJRN3Tjkq5AD6UYZjUrUV+rP7phzhapX6NQ2F15
+	CuKsZh9XA4bQDxBXD/Jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBgwR-0003wn-U6; Sat, 21 Sep 2019 15:04:56 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iBh4K-00079d-7U; Sat, 21 Sep 2019 15:13:04 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBgw8-0003vp-OU; Sat, 21 Sep 2019 15:04:38 +0000
-Received: by mail-wm1-x342.google.com with SMTP id 3so4902279wmi.3;
- Sat, 21 Sep 2019 08:04:33 -0700 (PDT)
+ id 1iBh41-00077F-Jq; Sat, 21 Sep 2019 15:12:46 +0000
+Received: by mail-wr1-x443.google.com with SMTP id v8so9623199wrt.2;
+ Sat, 21 Sep 2019 08:12:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=LGv9DZLsLql8R0RI6uFoY3WPJO94bAE/bq+K0Di3JjU=;
- b=U4wBRIWkDsI4icvUsrtiriqteXBT0yMa+Xqw/3INETjgirlcoMtLUbdTCSP/DZ1ZQ5
- 21NjqIWk1uACxeE90JxDe/JQtX/5AJS2ZBTdwW3Hh2d1YyXU37iLuTPWkHV/wW2yxqN8
- SuKZ2PkqY6F97Z0iSvzZRzGLw4aBw+f6y1ndSn6NHGGEmy59WJqlmOE84SXbrgFZKjOL
- WKi5zMpjOjVQJA6pwb6INga0YJ1/wIhO8Vu88eNkS4mB6LZZd1CiqWWxOav2KD2rHvx3
- V+GroTZC78nbo6KpCUinANLvJ0Gih6krhAtwkot15FwCBluKGKarVySBPS762dMsV6KA
- Uh1Q==
+ bh=cy8BeFSyyxwCJlrN4qHH8AR4EXYnev9cLyrShu/UrkQ=;
+ b=k3ebWKuhTvDBaawmONRTOFMM7lDUOFLxEasIcVIStcSneASkrQBwEuItFSSDjr6B6Y
+ FKWFRvcEQPXg2Dd19GWK2TKxBjMZ2hVNlD5X/F6Rx4Xt8+yaPHAeD8mCowQMYBOEY3an
+ ga1FPmCX/J4lWpGGJnSkWSNVzkTK2D3vDe3nAX7+TK++LbxiHMyJOXWufs8ACJx7iXH4
+ s5Tgf9j1diNERktWhqYDIExnwrcf4tumXTylzW1J5jBZz1F2lOkWJDBbIIuoSWy44C16
+ CYG8kbsWaJmtwZikJBokiia/zDpwyZr7khG+xqZGkk7ImZD9UM1tqlS8tPraGmEnIamM
+ WHyA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=LGv9DZLsLql8R0RI6uFoY3WPJO94bAE/bq+K0Di3JjU=;
- b=T2sx9Inq6PSsmYJ1ANanCN33XeayjSradYwQQHqH7IG9VKkxVKDvb5dlcN3tbb+KWT
- jMNV3XsSSSdXw7NnBoNa1dZ1vj7f4T3RqcoDbdh+P3ezaOzGxFJSJEpamplLbMyTZPQR
- BB7oZEr8DS8LHg+Vs4RUCsnUZchJTlex5UBNgTjfCW0Hk72XXakO+pPDNP7stAE/QCHC
- yoTlGmfpnQ/+y9l03GxEXeZr5T3gAsH7N/6sTDirvbtbDV3ID2IWzC2KHVhoLp2tEVfp
- w9fdiArcimVwFIDvcNqFYALdS5NkN7I7MrbtSC7jOhfgT7rGfECMv4lcjYwyVDYbOZeQ
- eIbg==
-X-Gm-Message-State: APjAAAUms9PC8/zNyr3i3eouc4C+GQoaUZvFL6y460aRVaX7SuEUdMHA
- wXxpRwXPgRPvBLYOjWnkESgXy+S5
-X-Google-Smtp-Source: APXvYqynjJRqs2bHOp/DdMfbh05bDAD/XBKHx85KCLbrsN0bIXyPSuRIggxSw4x+yHMqdHzbOENSfw==
-X-Received: by 2002:a1c:c789:: with SMTP id x131mr7235719wmf.20.1569078272512; 
- Sat, 21 Sep 2019 08:04:32 -0700 (PDT)
+ bh=cy8BeFSyyxwCJlrN4qHH8AR4EXYnev9cLyrShu/UrkQ=;
+ b=DsO5qOGbOs9ojWgT/v3d2RNZt7dXnc/+vjHdTo1GtjSXY5wU4QEmMM2RYl+hlhV6Xj
+ 7Xc0AXx/EVhEMxthFicyaNwkGfb2yhwEtJ22CQvnZe46M8/3F1xE9Sk3+QsAMwBd6wDe
+ 0/CwpBFWOE/WLgRjovI5OYM8DpfP/kmPDT4pUGfy6iIKLZsjVubzXeLxC3/tmYIwCLPP
+ StAIOMC+DJMxRBvX/CHO/D44z6e+K2btpPOi43kUylJ1PdprQlttp0Rjz+Bsm3WaO4Um
+ SkSp1Z32WwzEEsekeUE7pQciM/VHJv/UvPM/xMFWUtEr/j++rQYsqTDs4VLIxTi+NaIa
+ zGFw==
+X-Gm-Message-State: APjAAAXp75XiurtAgWV7AyjKNXycEq0zFG9HjC6+R7UazT/w/l8mwqyY
+ PYwBIrSzkNFHLXMISiex+AE=
+X-Google-Smtp-Source: APXvYqw/V5JLWLvUR93P5+Lb2v8QiSrmRjA9KV1rVw9muLj69o9nmSCWZTmtDbJFGQj4P8XZwTRQ3Q==
+X-Received: by 2002:adf:ec44:: with SMTP id w4mr14678602wrn.251.1569078763876; 
+ Sat, 21 Sep 2019 08:12:43 -0700 (PDT)
 Received: from blackbox.darklights.net
  (p200300F133CE0B0028BAA8C744A6F562.dip0.t-ipconnect.de.
  [2003:f1:33ce:b00:28ba:a8c7:44a6:f562])
- by smtp.googlemail.com with ESMTPSA id r20sm10987422wrg.61.2019.09.21.08.04.30
+ by smtp.googlemail.com with ESMTPSA id
+ y186sm10712491wmb.41.2019.09.21.08.12.42
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 21 Sep 2019 08:04:31 -0700 (PDT)
+ Sat, 21 Sep 2019 08:12:43 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-To: narmstrong@baylibre.com, jbrunet@baylibre.com,
- linux-amlogic@lists.infradead.org
-Subject: [PATCH 1/1] clk: meson: gxbb: let sar_adc_clk_div set the parent
- clock rate
-Date: Sat, 21 Sep 2019 17:04:11 +0200
-Message-Id: <20190921150411.767290-1-martin.blumenstingl@googlemail.com>
+To: narmstrong@baylibre.com, jbrunet@baylibre.com, robh+dt@kernel.org,
+ mark.rutland@arm.com, linux-amlogic@lists.infradead.org,
+ devicetree@vger.kernel.org, khilman@baylibre.com
+Subject: [PATCH 0/5] provide the XTAL clock via OF on Meson8/8b/8m2
+Date: Sat, 21 Sep 2019 17:12:18 +0200
+Message-Id: <20190921151223.768842-1-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190921_080436_823624_540A8504 
-X-CRM114-Status: UNSURE (   9.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190921_081245_679098_33597EAA 
+X-CRM114-Status: GOOD (  12.33  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -108,36 +108,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The meson-saradc driver manually sets the input clock for
-sar_adc_clk_sel. Update the GXBB clock driver (which is used on GXBB,
-GXL and GXM) so the rate settings on sar_adc_clk_div are propagated up
-to sar_adc_clk_sel which will let the common clock framework select the
-best matching parent clock if we want that.
+So far the HHI clock controller has been providing the XTAL clock on
+Amlogic Meson8/Meson8b/Meson8m2 SoCs.
+This is not correct because the XTAL is actually a crystal on the
+boards and the SoC has a dedicated input for it.
 
-This makes sar_adc_clk_div consistent with the axg-aoclk and g12a-aoclk
-drivers, which both also specify CLK_SET_RATE_PARENT.
+This updates the dt-bindings of the HHI clock controller and defines
+a fixed-clock in meson.dtsi (along with switching everything over to
+use this clock).
+The clock driver needs three updates to use this:
+- patch #2 uses clk_hw_set_parent in the CPU clock notifier. This drops
+  the explicit reference to CLKID_XTAL while at the same time making
+  the code much easier (thanks to Neil for providing this new method
+  as part of the G12A CPU clock bringup!)
+- patch #3 ensures that the clock driver doesn't rely on it's internal
+  XTAL clock while not losing support for older .dtbs that don't have
+  the XTAL clock input yet
+- with patch #4 the clock controller's own XTAL clock is not registered
+  anymore when a clock input is provided via OF
 
-Fixes: 33d0fcdfe0e870 ("clk: gxbb: add the SAR ADC clocks and expose them")
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
----
-This is a small consistency fix which I found while debugging an
-unrelated problem.
+This series is a functional no-op. It's main goal is to better represent
+how the actual hardware looks like.
 
- drivers/clk/meson/gxbb.c | 1 +
- 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/clk/meson/gxbb.c b/drivers/clk/meson/gxbb.c
-index 7cfb998eeb3e..1f9c056e684c 100644
---- a/drivers/clk/meson/gxbb.c
-+++ b/drivers/clk/meson/gxbb.c
-@@ -935,6 +935,7 @@ static struct clk_regmap gxbb_sar_adc_clk_div = {
- 			&gxbb_sar_adc_clk_sel.hw
- 		},
- 		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
- 	},
- };
- 
+Martin Blumenstingl (5):
+  dt-bindings: clock: meson8b: add the clock inputs
+  clk: meson: meson8b: use clk_hw_set_parent in the CPU clock notifier
+  clk: meson: meson8b: change references to the XTAL clock to use the
+    name
+  clk: meson: meson8b: don't register the XTAL clock when provided via
+    OF
+  ARM: dts: meson: provide the XTAL clock using a fixed-clock
+
+ .../bindings/clock/amlogic,meson8b-clkc.txt   |   5 +
+ arch/arm/boot/dts/meson.dtsi                  |   7 ++
+ arch/arm/boot/dts/meson6.dtsi                 |   7 --
+ arch/arm/boot/dts/meson8.dtsi                 |  15 +--
+ arch/arm/boot/dts/meson8b-ec100.dts           |   2 +-
+ arch/arm/boot/dts/meson8b-mxq.dts             |   2 +-
+ arch/arm/boot/dts/meson8b-odroidc1.dts        |   2 +-
+ arch/arm/boot/dts/meson8b.dtsi                |  15 +--
+ drivers/clk/meson/meson8b.c                   | 106 +++++++++---------
+ 9 files changed, 87 insertions(+), 74 deletions(-)
+
 -- 
 2.23.0
 
