@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF7AEBA406
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Sep 2019 20:51:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DD30BA409
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Sep 2019 20:51:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8W/LQ0zYj8n3jhkd20oNiyn6JT/7QCOMfzXPgfnHJLo=; b=TnWblG/Nwj18F9
-	9qO04o1eRUCemwq4lTHd6RXgRkHieKNThjR7I+9r7ylshDNB+pyC1LgZ3O2myIFo8ExY/uKvVDcLt
-	oBZRCCrz930RUgjguANW2OGn/YN4N3Zr4+EdFKR10Sk3686SGSZ9ZTqIEnC0CUOZeVFel59G6V9ot
-	6ZtSckE3gq615uQf5l/lkCD6+G7WskYmfIMWziHZzXGU98lvAd8MoSFTqZevqhDa6/1kxlDrlC2Sz
-	ceJSK1Z7qKZVPpodOv8Ap4IFSJXODy4NG5q7WQZlSwbK5mLx2oLu02mSwhKzobPdNoIx8BHGtoOXQ
-	ZoY4dDIXtilKi25RDjCw==;
+	List-Owner; bh=STOo/aDK12MI4wxlfJlY975WoPinoPMOUOS4Zf+cEFU=; b=Igp8o1MvhJ5wCg
+	ncphxHV0477NggO75efpviKHsdKdUHC6jaim30m2yWBAJ5zOscM9ETsxTFqUhUhf8KstHlHLwWVta
+	91kp14thWPPd3k66P/NY/9zLBrZPFqcpbeizmWxcVmsZuBQ5da2hxmItTczVi5PKPxQbx7AmGW+eW
+	H2p46Y1z6PviSvGcPQHvG0QOonPkiB77/fuUQJV+bsqqPY4ZhUFKJSABlHkwLc5yTcDuPkwDG4Y97
+	e0MkaZ4OTt54soG+QeuNq9WRnZ5jEq7CQMy7PzYvyHTYVN3c677hVuGL7tAbt0kzBxL2mxgDFW5xy
+	Iz7AFIQnih9sGzsOGU3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iC6x7-0001X7-8C; Sun, 22 Sep 2019 18:51:21 +0000
+	id 1iC6xZ-0001pO-SU; Sun, 22 Sep 2019 18:51:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iC6wt-0001VB-CK
- for linux-arm-kernel@lists.infradead.org; Sun, 22 Sep 2019 18:51:08 +0000
+ id 1iC6xK-0001oX-Qh
+ for linux-arm-kernel@lists.infradead.org; Sun, 22 Sep 2019 18:51:37 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6144B21D79;
- Sun, 22 Sep 2019 18:51:06 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 076C421D7A;
+ Sun, 22 Sep 2019 18:51:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569178267;
- bh=iupxWFpcY6/cgaLlrAWuYCcnrImMYlOV5CQiGwgF2WE=;
+ s=default; t=1569178294;
+ bh=+nlBK2vyN5izE22ffvkSwChP4eNtYgnqDLRcWZgvep8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=o3PTa4Sx/xDtZJQp95sKECAcRfeuvF/J0Sf0VzxeY266bighM+nsMCOpefuZyOJ/b
- exJHBc/oovFDUH+xayMtt3Fc4U7psOO4eSdc04ibp93iA+p61YlA5pWXixJkArIbXj
- xH5xCEuylzPD8KAamabfkJCU7ye8VVUvKfGnb30M=
+ b=b+QZ3V1uSVrxct3wl+NMkrXJwGwPPlT96AVp8ypWFW/b/pxJda/HwxLub3Z82mARk
+ Q8O4r5BLD6unGLZ8nSMBC9fN6XiSywMn72EK/XBpimjsuo2vsM8abViPH0CCZA4pp+
+ yf903oqBti0c8RQzDRKYm5AmpK5OVU93rmqtNWRQ=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.2 054/185] firmware: arm_scmi: Check if platform has
- released shmem before using
-Date: Sun, 22 Sep 2019 14:47:12 -0400
-Message-Id: <20190922184924.32534-54-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.2 070/185] perf ftrace: Use CAP_SYS_ADMIN instead of
+ euid==0
+Date: Sun, 22 Sep 2019 14:47:28 -0400
+Message-Id: <20190922184924.32534-70-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190922184924.32534-1-sashal@kernel.org>
 References: <20190922184924.32534-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190922_115107_437541_77C6E424 
-X-CRM114-Status: GOOD (  11.83  )
+X-CRM114-CacheID: sfid-20190922_115134_881638_03F7B10D 
+X-CRM114-Status: GOOD (  12.33  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,59 +80,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Jim Quinlan <james.quinlan@broadcom.com>, Sudeep Holla <sudeep.holla@arm.com>
+Cc: Sasha Levin <sashal@kernel.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki Poulouse <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Alexey Budankov <alexey.budankov@linux.intel.com>,
+ Igor Lubashev <ilubashe@akamai.com>, James Morris <jmorris@namei.org>,
+ Arnaldo Carvalho de Melo <acme@redhat.com>,
+ Peter Zijlstra <peterz@infradead.org>, Jiri Olsa <jolsa@kernel.org>,
+ Namhyung Kim <namhyung@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Sudeep Holla <sudeep.holla@arm.com>
+From: Igor Lubashev <ilubashe@akamai.com>
 
-[ Upstream commit 9dc34d635c67e57051853855c43249408641a5ab ]
+[ Upstream commit c766f3df635de14295e410c6dd5410bc416c24a0 ]
 
-Sometimes platfom may take too long to respond to the command and OS
-might timeout before platform transfer the ownership of the shared
-memory region to the OS with the response.
+The kernel requires CAP_SYS_ADMIN instead of euid==0 to mount debugfs
+for ftrace.  Make perf do the same.
 
-Since the mailbox channel associated with the channel is freed and new
-commands are dispatch on the same channel, OS needs to wait until it
-gets back the ownership. If not, either OS may end up overwriting the
-platform response for the last command(which is fine as OS timed out
-that command) or platform might overwrite the payload for the next
-command with the response for the old.
-
-The latter is problematic as platform may end up interpretting the
-response as the payload. In order to avoid such race, let's wait until
-the OS gets back the ownership before we prepare the shared memory with
-the payload for the next command.
-
-Reported-by: Jim Quinlan <james.quinlan@broadcom.com>
-Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+Signed-off-by: Igor Lubashev <ilubashe@akamai.com>
+Acked-by: Jiri Olsa <jolsa@kernel.org>
+Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+Cc: Alexey Budankov <alexey.budankov@linux.intel.com>
+Cc: James Morris <jmorris@namei.org>
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+Cc: Namhyung Kim <namhyung@kernel.org>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Link: http://lkml.kernel.org/r/bd8763b72ed4d58d0b42d44fbc7eb474d32e53a3.1565188228.git.ilubashe@akamai.com
+Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/firmware/arm_scmi/driver.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ tools/perf/builtin-ftrace.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
-index b5bc4c7a8fab2..b49c9e6f4bf10 100644
---- a/drivers/firmware/arm_scmi/driver.c
-+++ b/drivers/firmware/arm_scmi/driver.c
-@@ -271,6 +271,14 @@ static void scmi_tx_prepare(struct mbox_client *cl, void *m)
- 	struct scmi_chan_info *cinfo = client_to_scmi_chan_info(cl);
- 	struct scmi_shared_mem __iomem *mem = cinfo->payload;
+diff --git a/tools/perf/builtin-ftrace.c b/tools/perf/builtin-ftrace.c
+index 22386ab350504..2026364a61dc2 100644
+--- a/tools/perf/builtin-ftrace.c
++++ b/tools/perf/builtin-ftrace.c
+@@ -13,6 +13,7 @@
+ #include <signal.h>
+ #include <fcntl.h>
+ #include <poll.h>
++#include <linux/capability.h>
  
-+	/*
-+	 * Ideally channel must be free by now unless OS timeout last
-+	 * request and platform continued to process the same, wait
-+	 * until it releases the shared memory, otherwise we may endup
-+	 * overwriting its response with new message payload or vice-versa
-+	 */
-+	spin_until_cond(ioread32(&mem->channel_status) &
-+			SCMI_SHMEM_CHAN_STAT_CHANNEL_FREE);
- 	/* Mark channel busy + clear error */
- 	iowrite32(0x0, &mem->channel_status);
- 	iowrite32(t->hdr.poll_completion ? 0 : SCMI_SHMEM_FLAG_INTR_ENABLED,
+ #include "debug.h"
+ #include <subcmd/parse-options.h>
+@@ -21,6 +22,7 @@
+ #include "target.h"
+ #include "cpumap.h"
+ #include "thread_map.h"
++#include "util/cap.h"
+ #include "util/config.h"
+ 
+ 
+@@ -281,7 +283,7 @@ static int __cmd_ftrace(struct perf_ftrace *ftrace, int argc, const char **argv)
+ 		.events = POLLIN,
+ 	};
+ 
+-	if (geteuid() != 0) {
++	if (!perf_cap__capable(CAP_SYS_ADMIN)) {
+ 		pr_err("ftrace only works for root!\n");
+ 		return -1;
+ 	}
 -- 
 2.20.1
 
