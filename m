@@ -2,46 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A34C1BA1F3
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Sep 2019 13:00:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E01DABA1F9
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Sep 2019 13:15:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
 	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=yW5nYxd+TvXSUK25pv0BMI/7TqSwa7T9fju0vUJvuoM=; b=QwBh9IcfW5TVxv
-	rRO8fVXiIA7F5NeP6n+PQFdfahaGG37Xx4jnMZjiizSc1VkiZvfuTxiO+Vw8LBjO8gselilJv0tQS
-	prUhxRFZrP8E2Y5nDe7GyMCmdjr75bK0as2Ps8zd0rF9ZnT2McP3SP78G+O2fI43inw5ltXBQ0I/R
-	2W3yff6Oy3VF5oNetbwIa19S2bZ2vut8UshlhAkG1reJ/wUYXY8pypG6GViQC3VwqsGNoTbEiBtu8
-	1YEzGeT2TNYj/xNoAtGE/+HrXcUAbWBCxUPV4HvIZkttOsMOMw4k7iYT7jojCm3sh85sWiuFpoGJA
-	KiXBPRAb93QJ5vqwqrJw==;
+	List-Owner; bh=J7zlE7IlAzLnMcTRHh8z7s28P+PSTyBvZtGqEcdMJJw=; b=hau6YWIc+PP1+5
+	rPuRRHt1fIO+3f0wfTqC5hcsqp1lLmG88MbXCOsCr1WdY5evijs/8vQ6hmOE2ETPQIorgPyzeBEqu
+	ffyhX/6ZsVHfeghpUT8GmoJOOB5AGAxTR8fQkCxCQJ3UKDVERkNdzOyD+AhlE+6OzQengJYdjxdV0
+	W4FZbnNelrvqr0BdzE+H4quhW7rstY1Z+Uc/+17mK7qYi3X0vJCClYw1qjP7AgKP377xACj5GIWqb
+	AD3QSzelskla/qw86Vz2F4BIOx8kQj7mwuzqG6KBeperR3JgVsUe9URuwYriBo6hrXw+XwuYpSv1u
+	/bdXTYxWkCQjDPrvS9ZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBzbf-0007iI-Um; Sun, 22 Sep 2019 11:00:44 +0000
-Received: from mout.web.de ([212.227.17.12])
+	id 1iBzpv-0003kB-AD; Sun, 22 Sep 2019 11:15:27 +0000
+Received: from mout.web.de ([217.72.192.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBzbS-0007hd-Lq
- for linux-arm-kernel@lists.infradead.org; Sun, 22 Sep 2019 11:00:34 +0000
+ id 1iBzpm-0003j2-RL; Sun, 22 Sep 2019 11:15:20 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1569150012;
- bh=31q+m6nv3NSTbrLlF0GK7cMZgO8xqs0OAU+VDW2WZe8=;
+ s=dbaedf251592; t=1569150854;
+ bh=HuSS/Nsmyiy+vIY6/zgMOHSKw4ilNpjLipl2kbPtCcw=;
  h=X-UI-Sender-Class:To:Cc:From:Subject:Date;
- b=JgUbv4dgXxeHxMoiW0EbcII+BzWxAT4v3nzlJfC55P8pgNVfAjRibaWnj7EtKlKht
- D0CzORZdZ2+5Fow2eUDV0OeoPbE2+ReeQPa8u/aGFfKsC3ea6xsxIFymRvrVa2Xfe8
- v8FWdn7I9v8K/1aHNcrUuDwLdu3rr5iWzJljRHzg=
+ b=p6KVUwmDPn4qI48673CO2xPXKnvjrHqoRUVYNggR4CW9T0e7apUUbMRZiimWrRXZR
+ 6Muje6+f1yneAZN6tNmWnRlitjO75FvOYYUzkH5Ue3W9ubQZUtw8dRUPLN3UfXOARx
+ N50IwpGkpeq2ZWnudNYhbzxmMGwW2wTNnLpGeSUs=
 X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
 Received: from [192.168.1.2] ([2.244.8.78]) by smtp.web.de (mrweb103
- [213.165.67.124]) with ESMTPSA (Nemesis) id 0Lhvpu-1hpbKb3yOA-00n9AT; Sun, 22
- Sep 2019 13:00:12 +0200
+ [213.165.67.124]) with ESMTPSA (Nemesis) id 0MIN2h-1iCGvy3Hah-0048JC; Sun, 22
+ Sep 2019 13:14:13 +0200
 To: dmaengine@vger.kernel.org, linux-mediatek@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, Dan Williams
- <dan.j.williams@intel.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- Sean Wang <sean.wang@mediatek.com>, Shun-Chih Yu
- <shun-chih.yu@mediatek.com>, Vinod Koul <vkoul@kernel.org>
+ <dan.j.williams@intel.com>, Long Cheng <long.cheng@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Sean Wang
+ <sean.wang@mediatek.com>, Vinod Koul <vkoul@kernel.org>
 From: Markus Elfring <Markus.Elfring@web.de>
 Subject: [PATCH] dmaengine: mediatek: Use devm_platform_ioremap_resource() in
- mtk_cqdma_probe()
+ mtk_uart_apdma_probe()
 Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
  mQINBFg2+xABEADBJW2hoUoFXVFWTeKbqqif8VjszdMkriilx90WB5c0ddWQX14h6w5bT/A8
  +v43YoGpDNyhgA0w9CEhuwfZrE91GocMtjLO67TAc2i2nxMc/FJRDI0OemO4VJ9RwID6ltwt
@@ -85,46 +84,47 @@ Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
  Z/wsLiWTgKlih2QYULvW61XU+mWsK8+ZlYUrRMpkauN4CJ5yTpvp+Orcz5KixHQmc5tbkLWf
  x0n1QFc1xxJhbzN+r9djSGGN/5IBDfUqSANC8cWzHpWaHmSuU3JSAMB/N+yQjIad2ztTckZY
  pwT6oxng29LzZspTYUEzMz3wK2jQHw+U66qBFk8whA7B2uAU1QdGyPgahLYSOa4XAEGb6wbI FEE=
-Message-ID: <c7e3bbae-44fa-9019-18ee-c6cdfd7c2a14@web.de>
-Date: Sun, 22 Sep 2019 13:00:09 +0200
+Message-ID: <366e776c-8760-eeb7-c248-7380c9f4fd34@web.de>
+Date: Sun, 22 Sep 2019 13:14:11 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.1.0
 MIME-Version: 1.0
 Content-Language: en-US
-X-Provags-ID: V03:K1:hAXADknAtGNYATmVWj93rnsc4+dPRkCq4IiYKz204pSpN0HWOTp
- F2WSVct/qhgaupn0VeWpSXbddaIZpOS0m0Re0Mpr3+6JT+pHpLle7a6JlH4BcidWm6TT+vF
- 7jGdM1RKg9wj+lBNnSVMIqbFpyQzAQFJn2ViR0nr32JoSP5GASQouJidE0HhTjD6MFaAXFQ
- pSX0HKZlLnyVZdaBdJq+Q==
+X-Provags-ID: V03:K1:mIx0kndBCm9PK7nwYec+TCvEc8ha5HPNssCT96eBiG2moCEQroz
+ 2Uv9dJfWfkMuf2jKFstVCfpsNb7CSfY5gTEDo5u+3lkXgb1EViJMgltiRfwvkFgy0MMqPx0
+ 52jDxwoHa6x9lUFaZfRwdu8NB38VQsCSlI7eAg9ncr/t6KUasHNJsVLDl1YH9/YAeN5u20x
+ D30UZ2z4h6V+b8TOEPCXQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Z4RCimlTYfI=:z0KqTyPUk4pIEwxeayyqmr
- oJwkWUI2bGwQkePKBV58Ou6gEuTmsRCHq1m2eSKhc6yiq4MEbUp/LQigcFehU+76MbigXcFS3
- 5CKgGA/sf/mWWuHbX/2KV1qdFOD6lhiHO0J88SYtnicNW0JjTkQbTsPwxQjnMuGtUOdJe+TB9
- NXLF3P1r4tyFv1/qj56vOEqQoETUC/cC9+dbdXdNbG4sQtUJ1IR/C+a+6BQOLbauvWrbEMjS6
- HVuZtF5gjv3a70ZKxTReHDf+LBJ045A550XQhB/FT7oC0ps/d+M4lA7E9xUq1J6ZbOkSfNrgo
- RlEazPIgA3ju6UR9oystpcpdyr5U+NGKTTY/WLqxW3LkyTm7lADgv/shqu6Ai/tR8eAH7JbM/
- 3mqPIbN8ikiWLztOQM1PfubJdJ3BFv68OGa9B7uV9mncJrjd8BOYfHnFiqetZNnTILmQgdJdB
- JWktWIVKVDAqAb9Fe+4aLz2sqx7i9kQiSlgD4gkDvMXfUXt+ds2Z2lMMVFRwO04Qb9GL7ZQ5W
- /uqkKlb4ac4cFru7ByLKJVKQ7v8H1EZFWN1TNqPzUF3IynmDVjwW71K0RTU7sr6EGXNS3a/HB
- D+G1vjYXV2C1iaES+/6jaO4wdsPem3WsAZRQ4rGRPo0H5as0Bu851vExcr8+zhUvP9avO3lip
- XguEvRPbZG2b5o5J9aEUL8sXQGmDjLFkBz5lnEj/HgG5Sgv/GdIB1suVEl1vfkUc8/zbbYno4
- 89ocPjmsg86ct3HE4MLRK7/x89xYa7F6AVq/jDHcRMiN7EyR/+/z1876lPdaC870IN882txWc
- WnkQ0Db9E9U71fKwkWvDiPXGc7+Te/a7lIJJSMa8MWiUVexXWbD2dK4/k4LBlo+yteBYd5cSp
- szR9eLF8wvkAU7uXocPkKt3CdvAluffiENFW3ep1VdqsDaATmYnH1VGSthkZa5zrywln6wE2A
- 0LQBB2OZcGEKQ7gYJurvS2UvVdnnkaXxiXB6D34GwayKeH27EvqH+jPV0y1Iwmkk3GfWTdWNi
- FHYP65eRP9g2y/afJoYc/H/EgfiTgME6v2HYmUa9hBXt14UBLvLZvaw5BdlkO3fpA3A/uk2S4
- dFErNAIGY3YvcLYkyUvrvUZey9WVTeZplNc5oAcBCT9uoxbvfs6IhZXqtY0/pCbW/KEv9Xp8D
- jx3+/yjt3gWyKIPTxsSLhlaApLTjtxo6Nc0JLn1op4W7sh8ff4O5W1OsYl6CImLf3nV9uvao7
- q9H4j1pGentPgA3UvsAkECEybVfob2eWSlNYBMLDud03q9fAacoItdUh7NgA=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:+YCwXgrbzpU=:X5LnqEYcMCnLddjynce+x/
+ SLLuBpQpACUF8VkPIs8VC4HyrG5EN5OscdhHky+X+5vCj316ycBkpKvztxIrosd4fVKRg82ci
+ ylDs0YjOFNZwUC/G1wJ7/d3ivxXl3HV7bx7z+rBtmUtlW/2h4lfzryje5sHBPZS/Y930ui5g6
+ yMGA6wLz+K0JNMzlxIizxJulvv5XF1w1CvBgacdWsscS3SvUovsnD3Zx8g0u452Ov49OgeTIq
+ V86NgD2e9xj6uTIhHKDC326mGAoBZ2ee9Aw3/JZh9ZcwWy/MLl1CxBn/6aoFP1u3eCHjEefJs
+ HuZ6+m4fnLfazO6TXbukR2pj7H82+BFt1RiE5Uo5f3AFfYPHlJCke2lo6aLclwErsL3Y7Id8d
+ SXeGqJg4ueH1n5kAjnnGcNGhhol0LfcMu7vSk/WgfxhFSSywPlKQFBQOj8Q222pN1NL2OeNPg
+ g1QJXLJDP7iGGm1weopL6NGwYuCxkQxCZUlpSFPT1ex6vi/NRxXdvX1eZYaupPDnhtxrvIuUc
+ 1kxk8BoTCmcW9AIQi7SAD1yEUP3VXW7ZYDmOOEw3NtakL5KQp9X5hHw3nocR/npQJ0z3Ml+Rl
+ Y5DdRlZe0IzbRD5GLFF8s9GLehY2zDMG+Z6glRNHVZwb9pGFxRv2H2Js8935v71/YdC+1kZ+y
+ FQ3NXf3+b1bbAFc0jxA6Q3gJ7pv7d7jTVcmHN1eZlOsvHJ0pIVMmfQdO7E9BFdy6JgeFGnR8v
+ G7IuFXcMUwOhTmRojPdWoVEAsMEVrTeSJBYrYgRSRNFcLxaqB2sY35A65bAmfuns32Uz0kQhx
+ 2jt5Z6ZTWzJBFnKirEZDonGlShXbp+VaR8PQlnWsGiZHpgdxa6qLhN9mTCb5kMwyXi8YGby6c
+ EAFWke3kGzuz4HJTyIcRQzT0xJGkRhOmToNQzXEv9FogK8DrTC6Ct82molH+mxHPdyFyZ8kTi
+ yktnwEEAUTJRxv2KpgBJt1fc/lZaUW9lYpbWgrUKzdpqqEr2BJJrV+vXMPpzI8tr91cCC9ve6
+ SLHazyBYJLhgah3n99BKoUcqxZq0yghhEg0LsMCr3ylsDca2jZObvo5+OpCd59/5VItED7tkd
+ +yk4OD7zSavQF/ev9o3jYUmPKMnlyxGot2WrxBIrO/CASBIOm7n4edc40XmucJzWXr9VPQLPu
+ gJDF7akjZuhLq1mPrN5kZ9tjRgKVrwMplwTM854rbEd+F6m55dLVJZ9W2gVtJJvFKczVJPYWx
+ LsHrskQg/y5xWWR4YvVX/ndAK62hrpsdd+N+HlPR1wtbUCDaLoGoQATrIKiY=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190922_040031_266706_104E5E9C 
-X-CRM114-Status: GOOD (  10.30  )
+X-CRM114-CacheID: sfid-20190922_041519_242358_0FD7F038 
+X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.12 listed in list.dnswl.org]
+ low trust [217.72.192.78 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (markus.elfring[at]web.de)
@@ -154,39 +154,44 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 From: Markus Elfring <elfring@users.sourceforge.net>
-Date: Sun, 22 Sep 2019 12:52:25 +0200
+Date: Sun, 22 Sep 2019 13:07:41 +0200
 
-Simplify this function implementation a bit by using
-a known wrapper function.
+Simplify this function implementation by using a known wrapper function.
 
 This issue was detected by using the Coccinelle software.
 
 Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
 ---
- drivers/dma/mediatek/mtk-cqdma.c | 10 +---------
- 1 file changed, 1 insertion(+), 9 deletions(-)
+ drivers/dma/mediatek/mtk-uart-apdma.c | 9 +--------
+ 1 file changed, 1 insertion(+), 8 deletions(-)
 
-diff --git a/drivers/dma/mediatek/mtk-cqdma.c b/drivers/dma/mediatek/mtk-cqdma.c
-index 723b11c190b3..6bf838e63be1 100644
---- a/drivers/dma/mediatek/mtk-cqdma.c
-+++ b/drivers/dma/mediatek/mtk-cqdma.c
-@@ -819,15 +819,7 @@ static int mtk_cqdma_probe(struct platform_device *pdev)
- 		INIT_LIST_HEAD(&cqdma->pc[i]->queue);
- 		spin_lock_init(&cqdma->pc[i]->lock);
- 		refcount_set(&cqdma->pc[i]->refcnt, 0);
--
+diff --git a/drivers/dma/mediatek/mtk-uart-apdma.c b/drivers/dma/mediatek/mtk-uart-apdma.c
+index f40051d6aecb..c20e6bd4e298 100644
+--- a/drivers/dma/mediatek/mtk-uart-apdma.c
++++ b/drivers/dma/mediatek/mtk-uart-apdma.c
+@@ -475,7 +475,6 @@ static int mtk_uart_apdma_probe(struct platform_device *pdev)
+ 	struct device_node *np = pdev->dev.of_node;
+ 	struct mtk_uart_apdmadev *mtkd;
+ 	int bit_mask = 32, rc;
+-	struct resource *res;
+ 	struct mtk_chan *c;
+ 	unsigned int i;
+
+@@ -532,13 +531,7 @@ static int mtk_uart_apdma_probe(struct platform_device *pdev)
+ 			goto err_no_dma;
+ 		}
+
 -		res = platform_get_resource(pdev, IORESOURCE_MEM, i);
 -		if (!res) {
--			dev_err(&pdev->dev, "No mem resource for %s\n",
--				dev_name(&pdev->dev));
--			return -EINVAL;
+-			rc = -ENODEV;
+-			goto err_no_dma;
 -		}
 -
--		cqdma->pc[i]->base = devm_ioremap_resource(&pdev->dev, res);
-+		cqdma->pc[i]->base = devm_platform_ioremap_resource(pdev, i);
- 		if (IS_ERR(cqdma->pc[i]->base))
- 			return PTR_ERR(cqdma->pc[i]->base);
-
+-		c->base = devm_ioremap_resource(&pdev->dev, res);
++		c->base = devm_platform_ioremap_resource(pdev, i);
+ 		if (IS_ERR(c->base)) {
+ 			rc = PTR_ERR(c->base);
+ 			goto err_no_dma;
 --
 2.23.0
 
