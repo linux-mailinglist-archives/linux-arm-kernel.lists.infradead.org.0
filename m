@@ -2,90 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C973BBD37
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 22:40:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD411BBD51
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 22:50:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=72ZkHPOMrgM468bj35LEmFTOqusNFi9cjUcNwj4ffD4=; b=ojKZqDOO5mSAJy
-	SL6GKI8hdXp0KePPylNioYJHMwkpghr8I/4J6bjIcrRlVwhtQ5sjDuXt6x3QLvq6euwCG6CWdP+N9
-	ePD68Ed++bKGZM27HI9/9/nvDaJ6NRp1lkuVmkWi3auXEZVC4KcE4z/P7e0COaFnUmK6taTtd2n5G
-	3I/atEDdtrqGaeKBQi6t/P2cIAEMVZIq+jjJBclKkvCy6mxTje27Inpqu09AvvNILHHGfdRavG+ez
-	DvimA6dfDEJNO89l7cYGBww5cRIcNiy1Jkqe7d28TwXUr0KVp/g1SJK8zUza4Be0Wint6XVbYhCSA
-	XLXFyR06drJIKreT3jtQ==;
+	List-Owner; bh=hi/4VUirPIEgoPtVU5udCJZayeOSH4i7d5EJ1TigQfE=; b=bi9B9xHrF/8zxl
+	8gbFUd5ilAetMH0tuC+06/+ZkviejQhk+gwLS8jAcsgZhxKtIxfHeYPYHKbUscfpvthgBADlMmZ2l
+	jjZcZFINeAzt21j5ThZwOn/seYwCyRKfGXaFBG4wFmc35NHIskjS5+WeYKUcjAOmlVdhb13YUF+1t
+	X5NF4n1Q9Kf2ol6z+4MuTJ/XDaSfddf9cCC4CZChCkWL4hQiX60OSpHH/pjVRY3hOe5LDkK/Yj8ah
+	mpsq5y3OtGN2tfJbwfKmlrEz3wk5JQtFGdiJj4jgJ/xityn2zOUvkKY+DSZDhDO2CmiBwy/UyrQDf
+	ruOuZTFr7DmiXKBcgYiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCV84-00007e-7o; Mon, 23 Sep 2019 20:40:16 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iCVHa-00041O-F9; Mon, 23 Sep 2019 20:50:06 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCV3J-000487-0W
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 20:35:29 +0000
-Received: by mail-pg1-x543.google.com with SMTP id w10so8640437pgj.7
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Sep 2019 13:35:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=from:to:subject:date:message-id:in-reply-to:references:mime-version
- :content-transfer-encoding;
- bh=1RZkZY1cm3fyZ1mRNLzSw31HBeKwrW9anL0qGMNckK8=;
- b=OGxUtTFa9LaWeK9KWDL+UrpALkAR0k4TOpQ/i5LOqHeEZUnm9DzsAJH0AJoYBMJyCq
- AJAkfoRHvjs7vrby58uPHeZVHQuHzxJq0zIilBoi5UL1euBtHrkenJI7AY4dD4Uaz0JG
- 8CuvUY9Rr1En5VdqB9AF0arxAtsqsFfospIeoHu5RcflKy5E9k3SY/Eee/yh/L4kivDM
- Sy6QctDd+iWsKf7muddwV5gbQEEhohuxP2PlbCdVQwr411Vs9fyZ8JS0yTNvuQMDtDhs
- e3tT8fIoTpvCURZVTF+CWRAUVCytkY835vqmtVOOIxqQdoDVApa6XffZ96s6fnKGUq5f
- KFww==
+ id 1iCVHK-0003za-Oh; Mon, 23 Sep 2019 20:49:52 +0000
+Received: by mail-ot1-x342.google.com with SMTP id k32so13406146otc.4;
+ Mon, 23 Sep 2019 13:49:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=MAD3Xg1lcz/vWNfKOXbNQkNK8JcAqagoLevWw8c1H8w=;
+ b=Uc1rJg9EHlGwJNJeN6soMEoo/3M+ZsjMSxAMCVEA+f9rOyJvTLPXhHKYXJwgIcEzBr
+ e+3CndfndOMezv1Ptw3MLfFegfdCU9l142+6xMNb6yc4r537qDyguMUGRJy+2tVBa8tR
+ F3znac2BBuFbLhadIwE1d+eNekHVycr0brsa51/cTtZc6+gj6CyZzfwmL64hoJreYrbK
+ BNsn+vt4zqHzlSpK9FPzf9skcHsynz8YunjI1ogBbKbkLYBspiO7cYeF+/GORadBkgQs
+ BoXGJUuzpml3+FLUCkphSuXEpIZ0v82lo8jO+mArHKkjDH3EoiOUfBwEJn5ZHqf0JXAZ
+ jGjg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=1RZkZY1cm3fyZ1mRNLzSw31HBeKwrW9anL0qGMNckK8=;
- b=ulQYDEX+SMUJFoORnyLgN2hLOIf599Hvv+N7EIfHCxWt8XR7nY0tXV8HTeAhQir8y4
- 3jrkE0vkZobTrq52ghTP7c+20XkCDTrp9W6Ua1YcI0fgeZd64nsobTNgAgkxBmk3z6oY
- FdYBiEJ/M5UNU5wuGTuogoVVuHB7E0LoftLhyLj9KolEnAuERmlabkAAP+Z8xwR5IRrG
- 6Df3TYEOhabA9l8Jvh+yPT/gBxyGT6Hh+tqcyl5B75W8IH7HrxQAr5Xp/DgKocJpC++0
- kt9waQA1DrAFCA5hVGD7NmFfO9NbLfBrBislzXpHpgn3o+mDluS+HscYXFrp38+K0N7r
- teeA==
-X-Gm-Message-State: APjAAAXEjzlHtUKztVs6E0QmWGpzX7t4RjqvSPbhNc3v+JWzkwsrArMo
- M9lhAJzY6+PO0pK8wLONCtn/OQ==
-X-Google-Smtp-Source: APXvYqySVpP3jOsDcUDVSEo8IRqXfNNcCJU5Z6f4uLaJN3tO9ol6cdCc0j5ahgjr6Yxtc3Lb9w5hEw==
-X-Received: by 2002:a63:a54c:: with SMTP id r12mr1758722pgu.5.1569270919910;
- Mon, 23 Sep 2019 13:35:19 -0700 (PDT)
-Received: from xakep.corp.microsoft.com (c-73-69-118-222.hsd1.nh.comcast.net.
- [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id n29sm12798676pgm.4.2019.09.23.13.35.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 23 Sep 2019 13:35:19 -0700 (PDT)
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
- ebiederm@xmission.com, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
- will@kernel.org, linux-arm-kernel@lists.infradead.org,
- marc.zyngier@arm.com, james.morse@arm.com, vladimir.murzin@arm.com,
- matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org,
- mark.rutland@arm.com
-Subject: [PATCH v5 16/17] arm64: kexec: configure trans_pgd page table for
- kexec
-Date: Mon, 23 Sep 2019 16:34:26 -0400
-Message-Id: <20190923203427.294286-17-pasha.tatashin@soleen.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20190923203427.294286-1-pasha.tatashin@soleen.com>
-References: <20190923203427.294286-1-pasha.tatashin@soleen.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=MAD3Xg1lcz/vWNfKOXbNQkNK8JcAqagoLevWw8c1H8w=;
+ b=k2vKxFePKV1OJVY5o82v5IQhRKWvMBqA3D+cA8f532wY2kPx50lT/NYxR0pCtmw8a+
+ BFacWZlS1wbMKFpxA5iyAc1HRqyKSdmSgqpRR2zozNLhgxKcdpK1WJgUqMTZJBV+4rMt
+ 9Fza6mfFxvXriOXa8vjYGedSbU74J8w1nrL7arlm9KMgmiXeW7qLC4lNgX7BrfLLXLXi
+ vRILKFA3wVxtVNYb6WyMN+RjSO9TnUBYWTUdKL7s3jXmGwmzbOXtGxAMq2tVC0Oxos4U
+ j43O1vttOEE12BcA86ZTCEaVQo4961AtmaR+HYGJBuZX9ylYPRfC8kRw9P+6H2z42DwZ
+ xYBQ==
+X-Gm-Message-State: APjAAAWgvpvIVDRUaxha1lvJSrLqsDKVHX34M1auN6uHzCC9TCyEDHlp
+ Zc5XIKaNqS+ohDyA+gKv0ly492u5V0aAMoFzKzA=
+X-Google-Smtp-Source: APXvYqxg9tfZ17T4nhNMMZMbP5FnSoEzZH0Yj/hpHqWL0Dt5cVhCyLOpWwrFdj59nZDuupSIBtRiMaKO4g+TxYTiSnw=
+X-Received: by 2002:a9d:7d17:: with SMTP id v23mr161527otn.81.1569271789175;
+ Mon, 23 Sep 2019 13:49:49 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190921151835.770263-1-martin.blumenstingl@googlemail.com>
+ <1jsgons4wy.fsf@starbuckisacylon.baylibre.com>
+In-Reply-To: <1jsgons4wy.fsf@starbuckisacylon.baylibre.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Mon, 23 Sep 2019 22:49:37 +0200
+Message-ID: <CAFBinCAHD+D=a2mHeHMGq12MvoksHBr308jSrdcH+UYsUmwd8w@mail.gmail.com>
+Subject: Re: [PATCH 0/6] add the DDR clock controller on Meson8 and Meson8b
+To: Jerome Brunet <jbrunet@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_133521_127106_EBEE3C3E 
-X-CRM114-Status: GOOD (  19.39  )
+X-CRM114-CacheID: sfid-20190923_134950_832933_DB413C05 
+X-CRM114-Status: GOOD (  15.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martin.blumenstingl[at]googlemail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -104,307 +92,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Neil Armstrong <narmstrong@baylibre.com>, khilman@baylibre.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Configure a page table located in kexec-safe memory that has
-the following mappings:
+Hi Jerome,
 
-1. identity mapping for text of relocation function with executable
-   permission.
-2. identity mapping for argument for relocation function.
-3. linear mappings for all source ranges
-4. linear mappings for all destination ranges.
+On Mon, Sep 23, 2019 at 12:06 PM Jerome Brunet <jbrunet@baylibre.com> wrote:
+>
+> On Sat 21 Sep 2019 at 17:18, Martin Blumenstingl <martin.blumenstingl@googlemail.com> wrote:
+>
+> > Meson8 and Meson8b SoCs embed a DDR clock controller in their MMCBUS
+> > registers. This series:
+> > - adds support for this DDR clock controller (patches 0 and 1)
+> > - wires up the DDR PLL as input for two audio clocks (patches 2 and 3)
+>
+> Have you been able to validate somehow that DDR rate calculated by CCF
+> is the actual rate that gets to the audio clocks ?
+no, I haven't been able to validate this (yet)
 
-Also, configure el2_vector, that is used to jump to new kernel from EL2 on
-non-VHE kernels.
+> While I understand the interest for completeness, I suspect the having
+> the DDR clock as an audio parent was just for debugging purpose. IOW,
+> I'm not sure if adding this parent is useful to an actual audio use
+> case. As far as audio would be concerned, I think we are better of
+> without this parent.
+there at least three other (potential) consumers of the ddr_pll clocks
+on the 32-bit SoCs:
+- CPU clock mux [0]
+- clk81 mux [1]
+- USB PHY [2]
 
-Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
----
- arch/arm64/include/asm/kexec.h      |  32 +++++++
- arch/arm64/kernel/asm-offsets.c     |   6 ++
- arch/arm64/kernel/machine_kexec.c   | 125 ++++++++++++++++++++++++++--
- arch/arm64/kernel/relocate_kernel.S |  16 +++-
- 4 files changed, 170 insertions(+), 9 deletions(-)
+I have not validated any of these either
 
-diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
-index d5b79d4c7fae..450d8440f597 100644
---- a/arch/arm64/include/asm/kexec.h
-+++ b/arch/arm64/include/asm/kexec.h
-@@ -90,6 +90,23 @@ static inline void crash_prepare_suspend(void) {}
- static inline void crash_post_resume(void) {}
- #endif
- 
-+#if defined(CONFIG_KEXEC_CORE)
-+/* Global variables for the arm64_relocate_new_kernel routine. */
-+extern const unsigned char arm64_relocate_new_kernel[];
-+extern const unsigned long arm64_relocate_new_kernel_size;
-+
-+/* Body of the vector for escalating to EL2 from relocation routine */
-+extern const unsigned char kexec_el1_sync[];
-+extern const unsigned long kexec_el1_sync_size;
-+
-+#define KEXEC_EL2_VECTOR_TABLE_SIZE	2048
-+#define KEXEC_EL2_SYNC_OFFSET		(KEXEC_EL2_VECTOR_TABLE_SIZE / 2)
-+
-+#endif
-+
-+#define KEXEC_SRC_START	PAGE_OFFSET
-+#define KEXEC_DST_START	(PAGE_OFFSET + \
-+			((UL(0xffffffffffffffff) - PAGE_OFFSET) >> 1) + 1)
- /*
-  * kern_reloc_arg is passed to kernel relocation function as an argument.
-  * head		kimage->head, allows to traverse through relocation segments.
-@@ -97,6 +114,15 @@ static inline void crash_post_resume(void) {}
-  *		kernel, or purgatory entry address).
-  * kern_arg0	first argument to kernel is its dtb address. The other
-  *		arguments are currently unused, and must be set to 0
-+ * trans_ttbr0	idmap for relocation function and its argument
-+ * trans_ttbr1	linear map for source/destination addresses.
-+ * el2_vector	If present means that relocation routine will go to EL1
-+ *		from EL2 to do the copy, and then back to EL2 to do the jump
-+ *		to new world. This vector contains only the final jump
-+ *		instruction at KEXEC_EL2_SYNC_OFFSET.
-+ * src_addr	linear map for source pages.
-+ * dst_addr	linear map for destination pages.
-+ * copy_len	Number of bytes that need to be copied
-  */
- struct kern_reloc_arg {
- 	unsigned long	head;
-@@ -105,6 +131,12 @@ struct kern_reloc_arg {
- 	unsigned long	kern_arg1;
- 	unsigned long	kern_arg2;
- 	unsigned long	kern_arg3;
-+	unsigned long	trans_ttbr0;
-+	unsigned long	trans_ttbr1;
-+	unsigned long	el2_vector;
-+	unsigned long	src_addr;
-+	unsigned long	dst_addr;
-+	unsigned long	copy_len;
- };
- 
- #define ARCH_HAS_KIMAGE_ARCH
-diff --git a/arch/arm64/kernel/asm-offsets.c b/arch/arm64/kernel/asm-offsets.c
-index 900394907fd8..7c2ba09a8ceb 100644
---- a/arch/arm64/kernel/asm-offsets.c
-+++ b/arch/arm64/kernel/asm-offsets.c
-@@ -135,6 +135,12 @@ int main(void)
-   DEFINE(KRELOC_KERN_ARG1,	offsetof(struct kern_reloc_arg, kern_arg1));
-   DEFINE(KRELOC_KERN_ARG2,	offsetof(struct kern_reloc_arg, kern_arg2));
-   DEFINE(KRELOC_KERN_ARG3,	offsetof(struct kern_reloc_arg, kern_arg3));
-+  DEFINE(KRELOC_TRANS_TTBR0,	offsetof(struct kern_reloc_arg, trans_ttbr0));
-+  DEFINE(KRELOC_TRANS_TTBR1,	offsetof(struct kern_reloc_arg, trans_ttbr1));
-+  DEFINE(KRELOC_EL2_VECTOR,	offsetof(struct kern_reloc_arg, el2_vector));
-+  DEFINE(KRELOC_SRC_ADDR,	offsetof(struct kern_reloc_arg, src_addr));
-+  DEFINE(KRELOC_DST_ADDR,	offsetof(struct kern_reloc_arg, dst_addr));
-+  DEFINE(KRELOC_COPY_LEN,	offsetof(struct kern_reloc_arg, copy_len));
- #endif
-   return 0;
- }
-diff --git a/arch/arm64/kernel/machine_kexec.c b/arch/arm64/kernel/machine_kexec.c
-index fb6138a1c9ff..71479013dd24 100644
---- a/arch/arm64/kernel/machine_kexec.c
-+++ b/arch/arm64/kernel/machine_kexec.c
-@@ -20,13 +20,10 @@
- #include <asm/mmu.h>
- #include <asm/mmu_context.h>
- #include <asm/page.h>
-+#include <asm/trans_pgd.h>
- 
- #include "cpu-reset.h"
- 
--/* Global variables for the arm64_relocate_new_kernel routine. */
--extern const unsigned char arm64_relocate_new_kernel[];
--extern const unsigned long arm64_relocate_new_kernel_size;
--
- /**
-  * kexec_image_info - For debugging output.
-  */
-@@ -74,15 +71,124 @@ static void *kexec_page_alloc(void *arg)
- 	return page_address(page);
- }
- 
-+/*
-+ * Map source segments starting from KEXEC_SRC_START, and map destination
-+ * segments starting from KEXEC_DST_START, and return size of copy in
-+ * *copy_len argument.
-+ * Relocation function essentially needs to do:
-+ * memcpy(KEXEC_DST_START, KEXEC_SRC_START, copy_len);
-+ */
-+static int map_segments(struct kimage *kimage, pgd_t *pgdp,
-+			struct trans_pgd_info *info,
-+			unsigned long *copy_len)
-+{
-+	unsigned long *ptr = 0;
-+	unsigned long dest = 0;
-+	unsigned long src_va = KEXEC_SRC_START;
-+	unsigned long dst_va = KEXEC_DST_START;
-+	unsigned long len = 0;
-+	unsigned long entry, addr;
-+	int rc;
-+
-+	for (entry = kimage->head; !(entry & IND_DONE); entry = *ptr++) {
-+		addr = entry & PAGE_MASK;
-+
-+		switch (entry & IND_FLAGS) {
-+		case IND_DESTINATION:
-+			dest = addr;
-+			break;
-+		case IND_INDIRECTION:
-+			ptr = __va(addr);
-+			if (rc)
-+				return rc;
-+			break;
-+		case IND_SOURCE:
-+			rc = trans_pgd_map_page(info, pgdp, __va(addr),
-+						src_va, PAGE_KERNEL);
-+			if (rc)
-+				return rc;
-+			rc = trans_pgd_map_page(info, pgdp, __va(dest),
-+						dst_va, PAGE_KERNEL);
-+			if (rc)
-+				return rc;
-+			dest += PAGE_SIZE;
-+			src_va += PAGE_SIZE;
-+			dst_va += PAGE_SIZE;
-+			len += PAGE_SIZE;
-+		}
-+	}
-+	*copy_len = len;
-+
-+	return 0;
-+}
-+
-+static int mmu_relocate_setup(struct kimage *kimage, unsigned long kern_reloc,
-+			      struct kern_reloc_arg *kern_reloc_arg)
-+{
-+	struct trans_pgd_info info = {
-+		.trans_alloc_page	= kexec_page_alloc,
-+		.trans_alloc_arg	= kimage,
-+	};
-+
-+	pgd_t *trans_ttbr0 = kexec_page_alloc(kimage);
-+	pgd_t *trans_ttbr1 = kexec_page_alloc(kimage);
-+	int rc;
-+
-+	if (!trans_ttbr0 || !trans_ttbr1)
-+		return -ENOMEM;
-+
-+	rc = map_segments(kimage, trans_ttbr1, &info,
-+			  &kern_reloc_arg->copy_len);
-+	if (rc)
-+		return rc;
-+
-+	/* Map relocation function va == pa */
-+	rc = trans_pgd_map_page(&info, trans_ttbr0,  __va(kern_reloc),
-+				kern_reloc, PAGE_KERNEL_EXEC);
-+	if (rc)
-+		return rc;
-+
-+	/* Map relocation function argument va == pa */
-+	rc = trans_pgd_map_page(&info, trans_ttbr0, kern_reloc_arg,
-+				__pa(kern_reloc_arg), PAGE_KERNEL);
-+	if (rc)
-+		return rc;
-+
-+	kern_reloc_arg->trans_ttbr0 = phys_to_ttbr(__pa(trans_ttbr0));
-+	kern_reloc_arg->trans_ttbr1 = phys_to_ttbr(__pa(trans_ttbr1));
-+	kern_reloc_arg->src_addr = KEXEC_SRC_START;
-+	kern_reloc_arg->dst_addr = KEXEC_DST_START;
-+
-+	return 0;
-+}
-+
- int machine_kexec_post_load(struct kimage *kimage)
- {
-+	unsigned long el2_vector = 0;
- 	unsigned long kern_reloc;
- 	struct kern_reloc_arg *kern_reloc_arg;
-+	int rc = 0;
-+
-+	/*
-+	 * Sanity check that relocation function + el2_vector fit into one
-+	 * page.
-+	 */
-+	if (arm64_relocate_new_kernel_size > KEXEC_EL2_VECTOR_TABLE_SIZE) {
-+		pr_err("can't fit relocation function and el2_vector in one page");
-+		return -ENOMEM;
-+	}
- 
- 	kern_reloc = page_to_phys(kimage->control_code_page);
- 	memcpy(__va(kern_reloc), arm64_relocate_new_kernel,
- 	       arm64_relocate_new_kernel_size);
- 
-+	/* Setup vector table only when EL2 is available, but no VHE */
-+	if (is_hyp_mode_available() && !is_kernel_in_hyp_mode()) {
-+		el2_vector = kern_reloc + KEXEC_EL2_VECTOR_TABLE_SIZE;
-+		memcpy(__va(el2_vector + KEXEC_EL2_SYNC_OFFSET), kexec_el1_sync,
-+		       kexec_el1_sync_size);
-+	}
-+
- 	kern_reloc_arg = kexec_page_alloc(kimage);
- 	if (!kern_reloc_arg)
- 		return -ENOMEM;
-@@ -92,10 +198,19 @@ int machine_kexec_post_load(struct kimage *kimage)
- 
- 	kern_reloc_arg->head = kimage->head;
- 	kern_reloc_arg->entry_addr = kimage->start;
-+	kern_reloc_arg->el2_vector = el2_vector;
- 	kern_reloc_arg->kern_arg0 = kimage->arch.dtb_mem;
- 
-+	/*
-+	 * If relocation is not needed, we do not need to enable MMU in
-+	 * relocation routine, therefore do not create page tables for
-+	 * scenarios such as crash kernel
-+	 */
-+	if (!(kimage->head & IND_DONE))
-+		rc = mmu_relocate_setup(kimage, kern_reloc, kern_reloc_arg);
-+
- 	kexec_image_info(kimage);
--	return 0;
-+	return rc;
- }
- 
- /**
-diff --git a/arch/arm64/kernel/relocate_kernel.S b/arch/arm64/kernel/relocate_kernel.S
-index d352faf7cbe6..14243a678277 100644
---- a/arch/arm64/kernel/relocate_kernel.S
-+++ b/arch/arm64/kernel/relocate_kernel.S
-@@ -83,17 +83,25 @@ ENTRY(arm64_relocate_new_kernel)
- 	ldr	x1, [x0, #KRELOC_KERN_ARG1]
- 	ldr	x0, [x0, #KRELOC_KERN_ARG0]	/* x0 = dtb address */
- 	br	x4
-+.ltorg
-+.Larm64_relocate_new_kernel_end:
- END(arm64_relocate_new_kernel)
- 
--.ltorg
-+ENTRY(kexec_el1_sync)
-+	br	x4				/* Jump to new world from el2 */
-+.Lkexec_el1_sync_end:
-+END(kexec_el1_sync)
-+
- .align 3	/* To keep the 64-bit values below naturally aligned. */
--.Lcopy_end:
- .org	KEXEC_CONTROL_PAGE_SIZE
--
- /*
-  * arm64_relocate_new_kernel_size - Number of bytes to copy to the
-  * control_code_page.
-  */
- .globl arm64_relocate_new_kernel_size
- arm64_relocate_new_kernel_size:
--	.quad	.Lcopy_end - arm64_relocate_new_kernel
-+	.quad	.Larm64_relocate_new_kernel_end - arm64_relocate_new_kernel
-+
-+.globl kexec_el1_sync_size
-+kexec_el1_sync_size:
-+	.quad	.Lkexec_el1_sync_end - kexec_el1_sync
--- 
-2.23.0
+> > - adds the DDR clock controller to meson8.dtsi and meson8b.dtsi
+> >
+>
+> Could you please separate the driver and DT series in the future ? Those
+> take different paths and are meant for different maintainers.
+sure - so far Kevin has been doing a great job of still tracking these
+but I'm happy to split this into two patchsets
 
+
+Martin
+
+
+[0] https://github.com/endlessm/u-boot-meson/blob/345ee7eb02903f5ecb1173ffb2cd36666e44ebed/board/amlogic/m8b_m201_v1/firmware/timming.c#L441
+[1] https://github.com/endlessm/u-boot-meson/blob/345ee7eb02903f5ecb1173ffb2cd36666e44ebed/board/amlogic/m8b_m201_v1/firmware/timming.c#L452
+[2] https://github.com/endlessm/u-boot-meson/blob/f1ee03e3f7547d03e1478cc1fc967a9e5a121d92/arch/arm/cpu/aml_meson/m8/firmware/usb_boot/platform.c#L22
 
 _______________________________________________
 linux-arm-kernel mailing list
