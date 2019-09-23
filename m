@@ -2,81 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8EA7BBC10
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 21:11:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7666ABBC19
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 21:13:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iv5RDQv3ZwKTCqBy4po4RkYC3G4W0ymDZK/R1g40WsA=; b=tRIyWBH5B00uDh
-	27jcIphlPDs6ufa0kTR9IKi688q4is0LWpwitpa0ppZLHf4RePzoaxBGhnNKXjR1PLdhkSkCvyNbK
-	AvDgXxb2KaWfSHs6sSTR6wv5OtLUxD5RPydC5hZ7YtqCDNvsogRKawVMFOOPUI2+FtumiTfzsXh3C
-	0zgWj1mHDZaHIse5cUA3elgpOl1HOTtvhYP6YXbLdYYijsoRaPN/nVYfk1lYY9HTWshILp6MULZ18
-	xgDBOamwfPskG9cXnLwEW7ChW9wigf17GXMUOdwbuiDEmFPxWBMcVMZMobcON6ehgSa//QwPDiO28
-	LV62auV2rQTN3DXya5Mg==;
+	List-Owner; bh=/3R+qwcbSAK912gCnQsAKSSXBcPfiPew8d7AJQ20TDY=; b=L1ewbA9/b9aKxW
+	8PhqLSEci5LEHlfH7jeHvjVeKO1nEfs8GdmbDwhep61LBvEyP7qOOocjCxTmX3LZ4NmjZ89PhXyQC
+	rrJc8PKQWBNsbtoxOH0yFQafUaWPE4XZT1X5KVqpLfhiSd1gqBfDNiSPi2Z2gjQJGhE9EKXfzdoHM
+	QLUO8jn1PtqsKcKygBHMX16VG9y0bpiMEhfvyPfACcxHgOHLT1PmfYM08F6J6TLKADuwzb+nSYOLx
+	L+B3JKiCGLUmxOw0l1HmYT1izmvuBnQ2ZcMpVaOyl0F7/uAPhclGIbXiwultSctdW4mfthQ/7mzeZ
+	la9rpnCFFzGO7w/4Rraw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCTk5-00014Q-MK; Mon, 23 Sep 2019 19:11:25 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1iCTmB-0001Vj-9x; Mon, 23 Sep 2019 19:13:35 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCTju-000146-Gs
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 19:11:16 +0000
-Received: by mail-pl1-x642.google.com with SMTP id s17so5429626plp.6
+ id 1iCTm0-0001VK-NL
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 19:13:26 +0000
+Received: by mail-ed1-x544.google.com with SMTP id h33so13956599edh.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Sep 2019 12:11:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=0vOcjEDzn9cUMJbiIHyNLx5k494Rzn8kxsOq8BmSW5w=;
- b=ih7XoQay/sQAFk+o1MFyOBRr7ErO9WjWCT3O9wwBmDsouG7VBjjbELYwgVpblyuwcB
- clu27mk5wTL5Xnhmw0ibcl/ct2br9/Ab+FaDYzGp+YC6dNtk35u/uGDiT6OCSn0Oj9bH
- eEp4GlKTS8f2gnbLgbPCUwRHbLz66sY+KjVs0=
+ Mon, 23 Sep 2019 12:13:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=stujTPtuGxuh59HTJ15B3m0skvzv4BxR2W0z7AHqmAs=;
+ b=oyQ71NyOLCUCt3yrY4nzC3lmDE+RcloHR0cEYYRhtoJqaMrnTmBYWSRql93lKpdu/2
+ bQrXfU9nfGQiEaAJlAXpotQPEAdsSUEJzcK1TJZdtDuOUgQpzT68LYoBtLzhCFlZpTRJ
+ sOnLNz+ZCb/ooZ7Iz+F3s9J4d0eKTxzB9FAn34SubnMWewIiyOjoe9FDaI1tIMpIlgun
+ AK+RuOBGaMOfBm1D/kLl4+++0qsBgwRznMqymwyisovqATfNnGBGb/epBk1cSr2HYziZ
+ oBCaqwi4skj15AXxVrdUY03bPLGkEMGpebrDS+lLUEFOg8+Rrbn4NAaqNBqr7ymyjR8s
+ BdVw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=0vOcjEDzn9cUMJbiIHyNLx5k494Rzn8kxsOq8BmSW5w=;
- b=bO0kNyfZkMy5LrHWSNXOPgsJrRARCNN+hUON6Km/SJPGRgt18YhyrHabCLpPWTQ0E5
- Gqigqr8ITXpPRFchvhC40EpwlGolqTmufHk/avQvtSxlMPUlltiKrj0nKCYcK+vWPK/H
- JUF0xzgUqDdjh8gwo5BLaCLSLchYnW3XxxQmuA/auYxu2704tgRGSGL76ka5yvSFfL8G
- 3MbnY1iPQn/9rXcT/9FJYLExQTwA0zemZ5RTRiVVbVLCDtpRafH5ogfKLu6tsj8q4TnX
- p3g4dBdRpHvK13n6DfBi7zgJQI+jx+JWc/C9g9gKzr1gRVIA5UanzFEdLEWS4OrzBdAF
- KXgw==
-X-Gm-Message-State: APjAAAX1clbbd6aa0iRvFV/YPUKTsHZplGalAboXjyybuxee4+VgRnfP
- 7JFLOxORf0oIal7Bps8m9HoQhw==
-X-Google-Smtp-Source: APXvYqxSftqIm52bSa85DwFlcfJgctwn0cyraxKGm8Ki6rsdrE88uyP9fshRinMsH2EaA2YWvLyhYQ==
-X-Received: by 2002:a17:902:9346:: with SMTP id g6mr1398924plp.0.1569265873814; 
- Mon, 23 Sep 2019 12:11:13 -0700 (PDT)
-Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
- by smtp.gmail.com with ESMTPSA id w6sm20191999pfj.17.2019.09.23.12.11.12
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 23 Sep 2019 12:11:13 -0700 (PDT)
-Date: Mon, 23 Sep 2019 12:11:11 -0700
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH v6 2/6] PM / devfreq: Move more initialization before
- registration
-Message-ID: <20190923191111.GE133864@google.com>
-References: <cover.1569252537.git.leonard.crestez@nxp.com>
- <0ad496507cd7e6731e46249b1499dfdebe205c16.1569252537.git.leonard.crestez@nxp.com>
- <20190923181057.GY133864@google.com>
- <VI1PR04MB7023C94F93C4E0E6E229F80AEE850@VI1PR04MB7023.eurprd04.prod.outlook.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=stujTPtuGxuh59HTJ15B3m0skvzv4BxR2W0z7AHqmAs=;
+ b=QjO/PsFwd7/ne81U1JD+0Uhj0bBMGll5XNiE9vAJle/4LB4cdnelwq7I3widWu/s/X
+ 9H5p5+OkJD5CDbS1zmHGWla7PwEEfbKayfpd8tZep5hV/1E0v4rUZpsmbPnTHSoAJfkL
+ e0bzy7op8L7OAINAkxvAm2ds8dZCjN7L/mkDdW4KAQG8OhcpfpkJJ7WRnTmFjtt31j9W
+ eThcy8QAmILfRtAceN9wc1YHoeWvM/r3R3oZ1x6FIcBoOqpOLoZFc+LOXdzWtJqMLRFA
+ y/vhr2SF67AHRPuAIcrmeQjxFSwhAUHPy03hVhucKpBqx8nXM+s8P0pERMkltOvL08Pq
+ J1vA==
+X-Gm-Message-State: APjAAAXrZucTAdkMZf5l9rOT3ijL1g84TULQTW2buolq5lifKc7cpGlR
+ 0gY+dvjD5bOIrWL40G8l/hbnQk6Sffrdl83+IAplcg==
+X-Google-Smtp-Source: APXvYqwRmTK/cSlvNliNjYHt44n1Pba7VrLA3KdlnvROdyhykOSCNlF6ArPxqorDu7Day5E1074ogmGxE30V3X5XG3E=
+X-Received: by 2002:aa7:d7d3:: with SMTP id e19mr1824376eds.80.1569266002752; 
+ Mon, 23 Sep 2019 12:13:22 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <VI1PR04MB7023C94F93C4E0E6E229F80AEE850@VI1PR04MB7023.eurprd04.prod.outlook.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190722103330.255312-1-marc.zyngier@arm.com>
+ <CA+CK2bAFgDcc6ySCz7zzyeN0wg5WTcxFrKYQ6y5sz7grw-BfAw@mail.gmail.com>
+ <86k1c9nrsa.wl-marc.zyngier@arm.com>
+In-Reply-To: <86k1c9nrsa.wl-marc.zyngier@arm.com>
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+Date: Mon, 23 Sep 2019 15:13:11 -0400
+Message-ID: <CA+CK2bBzoxDz2BgqbJn8-MzL-aaSon+mqKuAmikH-nBnwm0O2g@mail.gmail.com>
+Subject: Re: [PATCH 0/3] arm64: Allow early timestamping of kernel log
+To: Marc Zyngier <marc.zyngier@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_121114_589529_1E6DF987 
-X-CRM114-Status: GOOD (  22.92  )
+X-CRM114-CacheID: sfid-20190923_121325_184107_DBB21E70 
+X-CRM114-Status: GOOD (  16.30  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -87,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,167 +92,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Artur =?utf-8?B?xZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>, dl-linux-imx <linux-imx@nxp.com>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Lukasz Luba <l.luba@partner.samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Alexandre Bailon <abailon@baylibre.com>,
- Georgi Djakov <georgi.djakov@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Jacky Bai <ping.bai@nxp.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Petr Mladek <pmladek@suse.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
+ John Stultz <john.stultz@linaro.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 23, 2019 at 06:56:28PM +0000, Leonard Crestez wrote:
-> On 23.09.2019 21:11, Matthias Kaehlcke wrote:
-> > On Mon, Sep 23, 2019 at 06:51:05PM +0300, Leonard Crestez wrote:
-> >> In general it is a better to initialize an object before making it
-> >> accessible externally (through device_register).
-> >>
-> >> This makes it possible to avoid relying on locking a partially
-> >> initialized object.
-> >>
-> >> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> >> ---
-> >>   drivers/devfreq/devfreq.c | 43 +++++++++++++++++++++++----------------
-> >>   1 file changed, 25 insertions(+), 18 deletions(-)
-> >>
-> >> diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
-> >> index 323d43315d1e..b4d2bfebb140 100644
-> >> --- a/drivers/devfreq/devfreq.c
-> >> +++ b/drivers/devfreq/devfreq.c
-> >> @@ -587,10 +587,12 @@ static void devfreq_dev_release(struct device *dev)
-> >>   	mutex_unlock(&devfreq_list_lock);
-> >>   
-> >>   	if (devfreq->profile->exit)
-> >>   		devfreq->profile->exit(devfreq->dev.parent);
-> >>   
-> >> +	kfree(devfreq->time_in_state);
-> >> +	kfree(devfreq->trans_table);
-> >>   	mutex_destroy(&devfreq->lock);
-> >>   	kfree(devfreq);
-> >>   }
-> >>   
-> >>   /**
-> >> @@ -670,44 +672,43 @@ struct devfreq *devfreq_add_device(struct device *dev,
-> >>   	devfreq->max_freq = devfreq->scaling_max_freq;
-> >>   
-> >>   	devfreq->suspend_freq = dev_pm_opp_get_suspend_opp_freq(dev);
-> >>   	atomic_set(&devfreq->suspend_count, 0);
-> >>   
-> >> -	dev_set_name(&devfreq->dev, "devfreq%d",
-> >> -				atomic_inc_return(&devfreq_no));
-> >> -	err = device_register(&devfreq->dev);
-> >> -	if (err) {
-> >> -		mutex_unlock(&devfreq->lock);
-> >> -		put_device(&devfreq->dev);
-> >> -		goto err_out;
-> >> -	}
-> >> -
-> >> -	devfreq->trans_table = devm_kzalloc(&devfreq->dev,
-> >> +	devfreq->trans_table = kzalloc(
-> >>   			array3_size(sizeof(unsigned int),
-> >>   				    devfreq->profile->max_state,
-> >>   				    devfreq->profile->max_state),
-> >>   			GFP_KERNEL);
-> >>   	if (!devfreq->trans_table) {
-> >>   		mutex_unlock(&devfreq->lock);
-> >>   		err = -ENOMEM;
-> >> -		goto err_devfreq;
-> >> +		goto err_dev;
-> >>   	}
-> >>   
-> >> -	devfreq->time_in_state = devm_kcalloc(&devfreq->dev,
-> >> -			devfreq->profile->max_state,
-> >> -			sizeof(unsigned long),
-> >> -			GFP_KERNEL);
-> >> +	devfreq->time_in_state = kcalloc(devfreq->profile->max_state,
-> >> +					 sizeof(unsigned long),
-> >> +					 GFP_KERNEL);
-> >>   	if (!devfreq->time_in_state) {
-> >>   		mutex_unlock(&devfreq->lock);
-> >>   		err = -ENOMEM;
-> >> -		goto err_devfreq;
-> >> +		goto err_dev;
-> >>   	}
-> >>   
-> >>   	devfreq->last_stat_updated = jiffies;
-> >>   
-> >>   	srcu_init_notifier_head(&devfreq->transition_notifier_list);
-> >>   
-> >> +	dev_set_name(&devfreq->dev, "devfreq%d",
-> >> +				atomic_inc_return(&devfreq_no));
-> >> +	err = device_register(&devfreq->dev);
-> >> +	if (err) {
-> >> +		mutex_unlock(&devfreq->lock);
-> >> +		put_device(&devfreq->dev);
-> >> +		goto err_out;
-> > 
-> > As per my comment on v5 I think the goto needs to go to 'err_dev'. The
-> > device registration failed, hence devfreq_dev_release() won't be
-> > called to free allocated memory.
-> 
-> This code is not modified in the patch, it only shows up as +added 
-> because diff got confused but there is an identical -removed chunk 
-> higher up.
-> 
-> The device_register documentation mentions the following:
-> 
->   * NOTE: _Never_ directly free @dev after calling this function, even
->   * if it returned an error! Always use put_device() to give up the
->   * reference initialized in this function instead.
-> 
-> Cleanup path then goes like this (from a hacked error in device_add):
->   dump_stack+0xdc/0x144 
->  
-> 
->   devfreq_dev_release+0x38/0xc0 
->  
-> 
->   device_release+0x34/0x90 
->  
-> 
->   kobject_put+0x8c/0x1f0 
->  
-> 
->   put_device+0x24/0x30 
->  
-> 
->   devfreq_add_device+0x540/0x570 
->  
-> 
->   devm_devfreq_add_device+0x60/0xd0 
->  
-> 
->   imx_ddrc_probe+0x35c/0x4c8
+On Tue, Jul 23, 2019 at 3:17 AM Marc Zyngier <marc.zyngier@arm.com> wrote:
+>
+> On Mon, 22 Jul 2019 21:52:42 +0100,
+> Pavel Tatashin <pasha.tatashin@soleen.com> wrote:
+> >
+> > On Mon, Jul 22, 2019 at 3:33 AM Marc Zyngier <marc.zyngier@arm.com> wrote:
+> > >
+> > > So far, we've let the arm64 kernel start its meaningful time stamping
+> > > of the kernel log pretty late, which is caused by sched_clock() being
+> > > initialised rather late compared to other architectures.
+> > >
+> > > Pavel Tatashin proposed[1] to move the initialisation of sched_clock
+> > > much earlier, which I had objections to. The reason for initialising
+> > > sched_clock late is that a number of systems have broken counters, and
+> > > we need to apply all kind of terrifying workarounds to avoid time
+> > > going backward on the affected platforms. Being able to identify the
+> > > right workaround comes pretty late in the kernel boot, and providing
+> > > an unreliable sched_clock, even for a short period of time, isn't an
+> > > appealing prospect.
+> > >
+> > > To address this, I'm proposing that we allow an architecture to chose
+> > > to (1) divorce time stamping and sched_clock during the early phase of
+> > > booting, and (2) inherit the time stamping clock as the new epoch the
+> > > first time a sched_sched clock gets registered.
 
-Good to know, thanks for the pointer!
+Hi Marc,
 
-> Can I add your "Reviewed-By" for the rest of the series if I fix the nits?
+I know we briefly discussed this at plumbers, but I want to bring it
+up again, because I am still puzzled why it is not possible to
+stabilize unstable clock early in boot.
 
-By now you should have it for most patches. For this one:
+Here is an example where clock is stabilized:
+https://soleen.com/source/xref/linux/kernel/sched/clock.c?r=457c8996#265
 
-Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
+It uses a value that is read at last ticks to normalize clock, and
+because ticks are not available early in boot instead we can make sure
+that early in boot sched_clock() never returns value smaller than
+previously returned value, and if we want to be extra careful, we can
+also make sure that sched_clock() early in boot does not jump ahead by
+more than some fixed amount of time i.e. more than one hour.
 
-There is one doubt I have left on "PM / devfreq: Add PM QoS support" that I
-posted on v5:
+If sched_clock() is available early we will get the benefit of having
+other tracers that use it to debug early boot information.
 
-"IIUC you rely on the notifiers being removed by devfreq_dev_release().
-Does dev_pm_qos_remove_notifier() behave gracefully if the notifier is
-not initialized/added or do we need to use BLOCKING_NOTIFIER_INIT() or
-similar?"
-
-Could you clarify this replying to the thread? Besides that and the
-nits (which are optional to fix) the patch looks good to me.
-
-
-
+Pasha
 
 _______________________________________________
 linux-arm-kernel mailing list
