@@ -2,62 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6B33BB269
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 12:47:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F304BB29B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 13:05:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Tq/2b3kjy5vD/WXGgAfT6rxH3oop6JYnythUX1F3w4s=; b=VHRDxaAoKR+++S
-	tHVdQM4gLHXUZoJHMmTjRR+hvk2HPzgQ68XxJSVcAZ4L5yZelRIZt3u8NXO8JeeThbE+xNZlY5DNW
-	GvMfYD6ALdpkI2MhTxDapXhEuH9NIGRxBqh/5N7ZB6Xvd8G7KT+fu4DXFPPGgAlwHAECrBpFdCvVv
-	m2QXW7NBCWyx37/Nga3XhGy82x0jx5J2EZKqq7gIYUgDyWRgPxr1eBusrIM9Hkc1z5DtMmxb9HSOR
-	EJjbXgD0OFWUU1GdZwGxO2MqwEfu+0L5geoFkFnR5BWZD4mCK4nizl4clBm9YOMy1PLALwcAKWTDf
-	f8TacSKiEwHInlErnCrw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=QAFIiv0sKX+4Jsix6DfHfocMLRAdvKaV6ClnjWyt/W0=; b=pCJMKsSsO+vCBX54c8UNC4cHz
+	FUVa7zXGetTXlvSKD0poK3EajdADOWAyQK8r2rXmrXVM60ZcKvPUpyOMScYVJtHpbkS6T4Ux41Z9V
+	bOq4JnmNkMYdmVXzJvt4SuxEODjqHf5ONlzc1AWFT4NHI4iHHSqlifVb/jtCI4wouPECBLr3OrgAr
+	u3JGFi/ZJdT4NbbOXoQFGLFM6pnfASByjd/+nHHSwiCbHAf87mgZP8gln1LfeebARQ5oIyODbx1ko
+	JJo62pJm4+KM30+xpvW5tnzJJXXce+A+LR+HpX+iFN+JJ6U4qK80XfBEriYHKUIupAD0pOouiO4Wk
+	7W1EYrpjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCLsg-0000ik-1I; Mon, 23 Sep 2019 10:47:46 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCLsY-0000i4-St
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 10:47:40 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 279971FF3E;
- Mon, 23 Sep 2019 12:47:34 +0200 (CEST)
-Received: from [192.168.108.37] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id 891ED1FF27;
- Mon, 23 Sep 2019 12:47:33 +0200 (CEST)
-Subject: Re: Propagating audio properties along the audio path
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-To: alsa-devel@alsa-project.org
-References: <f7861989-8a2d-ed89-8f1f-68bad7013a34@free.fr>
- <d67b68b9-49c0-6f78-4649-27b3b437a65f@free.fr>
-Message-ID: <878168cb-07e0-cdfd-37e9-9b9fb229155b@free.fr>
-Date: Mon, 23 Sep 2019 12:47:33 +0200
+	id 1iCM9Z-0006qw-Qx; Mon, 23 Sep 2019 11:05:13 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iCM9U-0006Rr-70
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 11:05:09 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 38646142F;
+ Mon, 23 Sep 2019 04:05:05 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A27D83F694;
+ Mon, 23 Sep 2019 04:05:00 -0700 (PDT)
+Subject: Re: [PATCH 0/3] iommu/io-pgtable-arm: Mali LPAE improvements
+To: Tomeu Vizoso <tomeu.vizoso@collabora.com>, Will Deacon <will@kernel.org>
+References: <cover.1568211045.git.robin.murphy@arm.com>
+ <d77047c2-1f16-eded-17ba-7463310d4bba@baylibre.com>
+ <20190911162024.i2sda7uzy3pbrnyd@willie-the-truck>
+ <83c45e97-8398-349d-5593-03af23b39c59@arm.com>
+ <20190919083035.tv446nelad6ki6db@willie-the-truck>
+ <CAAObsKCja0xTaiayNq5TWE7YJ0RPiJbq5OqOdEtpKdCQivR0uw@mail.gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <f2dfd90a-9f9a-b16f-7d03-85f169cff0c0@arm.com>
+Date: Mon, 23 Sep 2019 12:04:58 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <d67b68b9-49c0-6f78-4649-27b3b437a65f@free.fr>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Mon Sep 23 12:47:34 2019 +0200 (CEST)
+In-Reply-To: <CAAObsKCja0xTaiayNq5TWE7YJ0RPiJbq5OqOdEtpKdCQivR0uw@mail.gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_034739_073219_E1E046F4 
-X-CRM114-Status: UNSURE (   9.92  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190923_040508_302142_B0527E5E 
+X-CRM114-Status: GOOD (  14.11  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,42 +66,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Takashi Iwai <tiwai@suse.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Jaroslav Kysela <perex@perex.cz>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Rob Herring <robh@kernel.org>, Neil Armstrong <narmstrong@baylibre.com>,
+ Joerg Roedel <joro@8bytes.org>, Steven Price <steven.price@arm.com>,
+ Linux IOMMU <iommu@lists.linux-foundation.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 20/09/2019 11:50, Marc Gonzalez wrote:
+Hi Tomeu,
 
-> One more concern popped up: if the audio stream changes mid-capture
-> (for example, a different TV program uses different audio settings),
-> then I would detect this in the eARC receiver, but it's not clear
-> (to me) how to propagate the info to the DSP...
+On 23/09/2019 09:17, Tomeu Vizoso wrote:
+>>> There is some argument for taking #1 and #2 as 5.4 fixes, though - the
+>>> upcoming Mesa 19.2 release will enable T820 support on the userspace side -
+>>> so let's pick that discussion up again in a few weeks.
+>>
+>> Ok, I'll include those two in my fixes pull to Joerg at -rc1.
 > 
-> I'm not even sure when the HW params actually get applied...
-> Is it for SNDRV_PCM_IOCTL_PREPARE? SNDRV_PCM_IOCTL_START?
+> Hi Will,
+> 
+> Looks like this didn't end up happening?
 
-I enabled debug logs in the sound layer:
-echo "file sound/* +fpm" > /sys/kernel/debug/dynamic_debug/control
+Don't panic, there's still another week until rc1 is even out to base a 
+PR on ;)
 
-and sprinkled dump_stack() in several driver callbacks.
+FWIW I was planning to rebase and resend these with the review tags 
+included early next week, once the dust has settled and queues are 
+opening again.
 
-When I run 'tinycap /tmp/earc.wav -t 10 -r 44100 -b 32'
-I see the open/SyS_openat call and the capture ioctl call
-which together generate calls to
-1) dpcm_fe_dai_open
-2) dpcm_fe_dai_hw_params
-3) dpcm_fe_dai_prepare
-4) dpcm_fe_dai_trigger
-
-But everything looks "synchronous", as in "reaction to user-space commands".
-I don't see how "asynchronous" events are dealt with, such as the stream
-params changing while a capture is active?
-
-Regards.
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
