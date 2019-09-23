@@ -2,84 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41712BB76C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 17:01:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2750DBB780
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 17:07:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UpnkxiYra391jxiXql1RLG1LlTNUtl3D0uMgLW/KY6w=; b=QyeklOEjQkYxke
-	uuTz8idUNrNqNHKdbrT/hH4VZshOV2XG6s5t4dBOhmpocLnE/MVRHsZTooquX6EKJWxElOAzushZv
-	qFYUWNJi+IH8mmhEek8Yp1EcqcRsFhuqlbleHepdkGLbv2Cm2NnXoBLtwSUoknLUMAFGQeMG1oq3b
-	nAUCmIg+O1fuW8oXJPof34p3cPE4JEz+R0gq5B9YPrJGn5uFnBIYhxOn24xCcekSZdPis371xS4P6
-	KJWC2u4vEABxM8+eIcEq05AD/5nKNMO29dUZ/WqijyH5fVgcqJLK2Obr042+UDNOYDa7muI23Nr8x
-	Lv9/Pc9Ns2ldghroyigA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=orUcAeDJTYmIrh5bkbYWO4ho1X7YP3dyOi3YP0F5XrE=; b=CUEyZlv8ccaPsY
+	P9TSaQq4G8rVs552oWF+ER/w37H3DFK5m13p592xSWHdn6R5ulh+Y+txqLNAJUEwB/nPnnanJ3b3h
+	10mDx16equWp3JZ6DJwlbmLt2NNxJKVLi+i5opPNezWabPDYA23rSuNO4ofZ1EmE6o275JzOodkOf
+	2M2FqFfS5F7SsNdDyZyZKk4HQDUyeth5kdYYFxwBYiKihpa66ka+RQYTY5D+Dvas7U/6VVUGMt+Ya
+	nQRqcA5GBk+lYL5g+wKwYO17FagVjeskazduxrd2GvHYEj1csSi891obQkBP70KfrGTpbX4pLPcKD
+	LxhUJwML3sHuc+f4LACw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCPqL-0006Q5-82; Mon, 23 Sep 2019 15:01:37 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1iCPvP-0008Dz-4Z; Mon, 23 Sep 2019 15:06:51 +0000
+Received: from mx1.emlix.com ([188.40.240.192])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCPpL-0006Mi-7e
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 15:00:36 +0000
-Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com
- [209.85.160.197])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1iCPvB-0008D1-Eh
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 15:06:39 +0000
+Received: from mailer.emlix.com (unknown [81.20.119.6])
+ (using TLSv1.2 with cipher ADH-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 8E5887652E
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Sep 2019 15:00:33 +0000 (UTC)
-Received: by mail-qt1-f197.google.com with SMTP id c8so17569601qtd.20
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Sep 2019 08:00:33 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=QNoXmel+GlMigZDcUd1vYpLYfL7zFiKdxBF3l1k0lPQ=;
- b=r3gG9lJ+tdMF+S6zQOXsfRWRhM3lA7f2cUQ5LPO4WBdSalzF8xkszkawofxbBFh6aN
- TWi4qQzKM5gyY+DQdXW3YAD6aDrodRTtH0VutjL9Jc2NR5JQVQg0leHwAMLGHSdrNqKx
- 7H0PgmTt/QZKi25VAwVWWYlKzI/EBIqtTk2ErsW4yGuNR62TTIhwgTv4MkCu9vcXtaAK
- 5r1InPTueLU7R2BRzyF1LnYaY4wc4oFokBkwinXHQYllYDLfIoOdxzJydKnA4F0rikFy
- wlc0JcLUGrGzFkpNSckK02brmqIRjArm1K/6TKPlHU/Bdv0Ckb8I624zWQhpBuTiwuZW
- QwzQ==
-X-Gm-Message-State: APjAAAUNZUT+OGDQTjPWHjDStVsNYs0m1b8xg/miUJ/f65bH8V3tCtRr
- tox6NSNGSeleHuisEcKlpzQ7zzHGMh67AM5SXcx+JOsFrjWGBQ7wpOpK6+7/VkNEUJbuo51GbO2
- jMuJjD4Ii6JgBnLWfKcAw5PjydWhQt1vDo/s=
-X-Received: by 2002:ac8:2c50:: with SMTP id e16mr317607qta.257.1569250832851; 
- Mon, 23 Sep 2019 08:00:32 -0700 (PDT)
-X-Google-Smtp-Source: APXvYqyFUJn6BvXztT9hmWoUunZD0ZUcW4uUuFms3FLLwyr9jPXb7ZlVF254P3OydfcVZPOAJdBaaA==
-X-Received: by 2002:ac8:2c50:: with SMTP id e16mr317578qta.257.1569250832651; 
- Mon, 23 Sep 2019 08:00:32 -0700 (PDT)
-Received: from redhat.com (bzq-79-176-40-226.red.bezeqint.net. [79.176.40.226])
- by smtp.gmail.com with ESMTPSA id j17sm5330553qki.99.2019.09.23.08.00.25
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 23 Sep 2019 08:00:31 -0700 (PDT)
-Date: Mon, 23 Sep 2019 11:00:23 -0400
-From: "Michael S. Tsirkin" <mst@redhat.com>
-To: Alexander Duyck <alexander.duyck@gmail.com>
-Subject: Re: [PATCH v10 3/6] mm: Introduce Reported pages
-Message-ID: <20190923105746-mutt-send-email-mst@kernel.org>
-References: <20190918175109.23474.67039.stgit@localhost.localdomain>
- <20190918175249.23474.51171.stgit@localhost.localdomain>
- <20190923041330-mutt-send-email-mst@kernel.org>
- <CAKgT0UfFBO9h3heGSo+AaZgUNpy5uuOm3yh62bYwYJ5dq+t1gQ@mail.gmail.com>
+ by mx1.emlix.com (Postfix) with ESMTPS id 9141A5FD5D;
+ Mon, 23 Sep 2019 17:06:34 +0200 (CEST)
+Subject: Re: [PATCH v5 0/3] Fix UART DMA freezes for i.MX SOCs
+To: Adam Ford <aford173@gmail.com>
+References: <20190923135808.815-1-philipp.puschmann@emlix.com>
+ <CAHCN7xJL_x1ryOoNW+R2hOZ9dMFem9wni8Uo8QOA3wxpzKLbqQ@mail.gmail.com>
+From: Philipp Puschmann <philipp.puschmann@emlix.com>
+Openpgp: preference=signencrypt
+Message-ID: <2443c553-c593-2f23-4cca-c2f03676adc9@emlix.com>
+Date: Mon, 23 Sep 2019 17:06:34 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKgT0UfFBO9h3heGSo+AaZgUNpy5uuOm3yh62bYwYJ5dq+t1gQ@mail.gmail.com>
+In-Reply-To: <CAHCN7xJL_x1ryOoNW+R2hOZ9dMFem9wni8Uo8QOA3wxpzKLbqQ@mail.gmail.com>
+Content-Language: de-DE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_080035_321515_FF5C7FD0 
-X-CRM114-Status: GOOD (  24.35  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190923_080637_792666_57C76809 
+X-CRM114-Status: GOOD (  21.45  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,81 +62,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
- kvm list <kvm@vger.kernel.org>, David Hildenbrand <david@redhat.com>,
- Michal Hocko <mhocko@kernel.org>, linux-mm <linux-mm@kvack.org>,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>,
- Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
- Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
- Matthew Wilcox <willy@infradead.org>, "Wang, Wei W" <wei.w.wang@intel.com>,
- Vlastimil Babka <vbabka@suse.cz>, Rik van Riel <riel@surriel.com>,
- Dan Williams <dan.j.williams@intel.com>, lcapitulino@redhat.com,
- linux-arm-kernel@lists.infradead.org, Oscar Salvador <osalvador@suse.de>,
- Nitesh Narayan Lal <nitesh@redhat.com>, Dave Hansen <dave.hansen@intel.com>,
- LKML <linux-kernel@vger.kernel.org>, Paolo Bonzini <pbonzini@redhat.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Mel Gorman <mgorman@techsingularity.net>
+Cc: fugang.duan@nxp.com, jlu@pengutronix.de, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, vkoul@kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ Robin Gong <yibin.gong@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 23, 2019 at 07:50:15AM -0700, Alexander Duyck wrote:
-> > > +static inline void
-> > > +page_reporting_reset_boundary(struct zone *zone, unsigned int order, int mt)
-> > > +{
-> > > +     int index;
-> > > +
-> > > +     if (order < PAGE_REPORTING_MIN_ORDER)
-> > > +             return;
-> > > +     if (!test_bit(ZONE_PAGE_REPORTING_ACTIVE, &zone->flags))
-> > > +             return;
-> > > +
-> > > +     index = get_reporting_index(order, mt);
-> > > +     reported_boundary[index] = &zone->free_area[order].free_list[mt];
-> > > +}
-> >
-> > So this seems to be costly.
-> > I'm guessing it's the access to flags:
-> >
-> >
-> >         /* zone flags, see below */
-> >         unsigned long           flags;
-> >
-> >         /* Primarily protects free_area */
-> >         spinlock_t              lock;
-> >
-> >
-> >
-> > which is in the same cache line as the lock.
-> 
-> I'm not sure what you mean by this being costly?
+Hi Adam,
 
-I've just been wondering why does will it scale report a 1.5% regression
-with this patch.
-
-> Also, at least on my system, pahole seems to indicate they are in
-> different cache lines.
+Am 23.09.19 um 16:55 schrieb Adam Ford:
+> On Mon, Sep 23, 2019 at 8:58 AM Philipp Puschmann
+> <philipp.puschmann@emlix.com> wrote:
+>>
+>> For some years and since many kernel versions there are reports that
+>> RX UART DMA channel stops working at one point. So far the usual
+>> workaround was to disable RX DMA. This patches fix the underlying
+>> problem.
+>>
+>> When a running sdma script does not find any usable destination buffer
+>> to put its data into it just leads to stopping the channel being
+>> scheduled again. As solution we manually retrigger the sdma script for
+>> this channel and by this dissolve the freeze.
+>>
+>> While this seems to work fine so far, it may come to buffer overruns
+>> when the channel - even temporary - is stopped. This case has to be
+>> addressed by device drivers by increasing the number of DMA periods.
+>>
+>> This patch series was tested with the current kernel and backported to
+>> kernel 4.15 with a special use case using a WL1837MOD via UART and
+>> provoking the hanging of UART RX DMA within seconds after starting a
+>> test application. It resulted in well known
+>>   "Bluetooth: hci0: command 0x0408 tx timeout"
+>> errors and complete stop of UART data reception. Our Bluetooth traffic
+>> consists of many independent small packets, mostly only a few bytes,
+>> causing high usage of periods.
+>>
 > 
-> /* --- cacheline 3 boundary (192 bytes) --- */
-> struct zone_padding        _pad1_;               /*   192     0 */
-> struct free_area           free_area[11];        /*   192  1144 */
-> /* --- cacheline 20 boundary (1280 bytes) was 56 bytes ago --- */
-> long unsigned int          flags;                /*  1336     8 */
-> /* --- cacheline 21 boundary (1344 bytes) --- */
-> spinlock_t                 lock;                 /*  1344     4 */
-> 
-> Basically these flags aren't supposed to be touched unless we are
-> holding the lock anyway so I am not sure it would be all that costly
-> for this setup. Basically we are holding the lock when the flag is set
-> or cleared, and we only set it if it is not already set. If needed
-> though I suppose I could look at moving the flags if you think that is
-> an issue. However I would probably need to add some additional padding
-> to prevent the lock from getting into the same cache line as the
-> free_area values.
+> Using the 4.19.y branch, this seems to working just fine for me with an i.MX6Q
+> with WL1837MOD Bluetooth connected to UART2.  I am still seeing some
+> timeouts with 5.3, but I'm going to continue to run some tests.
 
--- 
-MST
+Thanks for testing.
+With my local setup i still have very few tx timeouts too. But i think they have a different
+cause and especially different consequences. When the problem addressed by this series
+appear you get a whole bunch of tx timeouts (and maybe errors from Bluetooth
+layer) and monitoring received Bluetooth packets with hciconfig shows a
+complete freeze of rx counter. Only resetting the hci_uart driver and the wl1837mon then helps.
+With these patches applied the rx data shold still coming in even if a single or
+multiple tx timeout error happen. I'm not sure where the error comes from and what the
+consequences for the Bluetooth layer are.
+
+Regards,
+Philipp
+> 
+> Tested-by: Adam Ford <aford173@gmail.com> #imx6q w/ 4.19 Kernel
+> 
+>> Signed-off-by: Philipp Puschmann <philipp.puschmann@emlix.com>
+>> Reviewed-by: Fugang Duan <fugang.duan@nxp.com>
+>>
+>> ---
+>>
+>> Changelog v5:
+>>  - join with patch version from Jan Luebbe
+>>  - adapt comments and patch descriptions
+>>  - add Reviewed-by
+>>
+>> Changelog v4:
+>>  - fixed the fixes tags
+>>
+>> Changelog v3:
+>>  - fixes typo in dma_wmb
+>>  - add fixes tags
+>>
+>> Changelog v2:
+>>  - adapt title (this patches are not only for i.MX6)
+>>  - improve some comments and patch descriptions
+>>  - add a dma_wb() around BD_DONE flag
+>>  - add Reviewed-by tags
+>>  - split off  "serial: imx: adapt rx buffer and dma periods"
+>>
+>> Philipp Puschmann (3):
+>>   dmaengine: imx-sdma: fix buffer ownership
+>>   dmaengine: imx-sdma: fix dma freezes
+>>   dmaengine: imx-sdma: drop redundant variable
+>>
+>>  drivers/dma/imx-sdma.c | 37 +++++++++++++++++++++++++++----------
+>>  1 file changed, 27 insertions(+), 10 deletions(-)
+>>
+>> --
+>> 2.23.0
+>>
+>>
+>> _______________________________________________
+>> linux-arm-kernel mailing list
+>> linux-arm-kernel@lists.infradead.org
+>> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
