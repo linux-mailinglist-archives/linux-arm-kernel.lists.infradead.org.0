@@ -2,119 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6888EBAC5C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 03:17:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECE87BAC78
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 03:59:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vk5GhctHDZucU+TPrB+/RrQKjVD0RA/7JcbEEdz35GI=; b=OgzEeOhYQ2qqmt
-	WHVZ7TeL3cjWf6GPksLG/b2Cf/MYeaOJ0VYauHqRcM1T9DEniVDMJ0Qv9vjDZCQR8G/YqVO6XHEoy
-	fKHLKAYvuxU9VxjKuMC3cHRZGkZ0DkbjVj0ep6u4O874ZOa6FehCCPI292r/JrbzLavSYwM7aFus3
-	sw0iYnYdNtPYk6fe5+zqhAOR2tubw7wCnnUqJEWHORItN3HxMBOnQLu2mC+vsPjFjA+Ewn8THG3u1
-	Mj/xjYr2T4fW0WB9xjGyAFRyFRE1fJajHkSMa/Gcu6A6FUfgL+w0KEJnP9NOKAsJodAnJJdCq/xlo
-	NQ/rYFcPWbtArRlo0ZnQ==;
+	List-Owner; bh=o+NXF9gjivQuGGjPl4rBlwutOOJgb6B9oxlgwKowafI=; b=T4FjpGwe8mR6Bv
+	EjsP1r5zmdqhHD/jobbDcmUH44EmepuTsyrBzZx+wbQ8Vn/fXdIJ0tFvtL8nEx4kuVmJSrjvEcQi5
+	x8ar5EtDlELrPe5WpGlRLqZ8cngRBTVVP0+O5mKc7R8rqEfcXmr/ojDcKY7fF0kAl4H6IjKuxU2bR
+	RR1l4aqjgiseI0AiGDvcvaXpif/3pPpk2bkl6xfOAtFxpSeixvGtTD75NNd+pDJ+qXQOQvKAwV2FU
+	/Qm2xOr0OFYLIGbJTBwwYK7qVxgYmRl8ibmy/bZpJ8L6aK7gywZ2F4b2m92aVAUKXJdiSz5M8oHQk
+	OlheoHRhAe4p6EDkkTxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCCys-0003bC-Mn; Mon, 23 Sep 2019 01:17:34 +0000
-Received: from mail-eopbgr60067.outbound.protection.outlook.com ([40.107.6.67]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1iCDd5-0006we-Tc; Mon, 23 Sep 2019 01:59:08 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCCyY-0003aH-0b
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 01:17:15 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=dOHBBvlcrINS2PdQgtVd2JKmLBEnOGn+/di26ec3KQBpBmDQYGDjTQdwYry86n07DAIaxKW36KsMFb35N4sUIfdwAh6PApHCZsUFWFCvxpMq0/J4l7pfknHptH8u9mFq6Gr8mtNKR50+x3UjikXJ91mDPwVS4u/PDNVRT6cpaeV5953W5K5jCbo5GMWizaBwL1o09O899I9uzSkySKGsctok7bcmccMu3oAKWfc95aClT7C9AS3WFUdbHxq5oPD1l/O2YzqkWAQ8RBORWTctZZSBjSgM4Gw2/qu2RRGTr2tlK1/BfMViF5ARVBz1QehR9pCoz19oUgzlB5wlBsU62A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5RWkkE+qNYv/wMXOcrPAKu7EyZ7G9XQtzMkAM07OuBw=;
- b=ZzTynZtnio8S+nXDvm/GmriM+AfktdPWru73CYsPZBIFC3Nj4pVn5DxAqkjRDO4ced4vd6CL3UuU/bdNwNl7g1GKoI8alPZYIiviooxnd7+zo1Nya0XGb8SCD3JOiJmMhGoK7d5DJ67wwecBawfPbTLqjrVPLFt9XpSKQEZ3b9TD5etmU1TDfZh67fd6H+QdwUD67BrgFcQ6+C8Ygyyb7VacaAQ/MXxK1mmiNWS37OSNqupcoFtsIJJnVj0iyxZNL6uUipeGL1LUeOsxyb0Iq05nneLuPqqVV5YiklbS74/IFcxOoltDS+5+fsqAaOVCxl2FxLcSInwM0t3SI1/jHw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5RWkkE+qNYv/wMXOcrPAKu7EyZ7G9XQtzMkAM07OuBw=;
- b=DJwMPcxwLDRFtEFZ7KVfu9wLP7BeIlX6cu8scIkxJDzqxumNlVnyeW0gUUyoBNK60wGEkCmS2zgJ4XRY7Au5E4kMp3jKJ5QDYxBnWNNHMfUXSMYMYXoUta2bpmFqOQ37klY1791d17Gpy6UDtwQjB+VXjWC/P8nKGTeT4Ld2YkA=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB5937.eurprd04.prod.outlook.com (20.178.114.146) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2284.20; Mon, 23 Sep 2019 01:17:08 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::6ca2:ec08:2b37:8ab8]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::6ca2:ec08:2b37:8ab8%6]) with mapi id 15.20.2284.023; Mon, 23 Sep 2019
- 01:17:08 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
- <s.hauer@pengutronix.de>
-Subject: RE: [PATCH 2/2] nvmem: imx: scu: support write
-Thread-Topic: [PATCH 2/2] nvmem: imx: scu: support write
-Thread-Index: AQHVV89l2gZHrF0tR0yZfYtuVeLxmqceUPbwgAAs4wCAGiuDYA==
-Date: Mon, 23 Sep 2019 01:17:08 +0000
-Message-ID: <AM0PR04MB4481D9B6CF392263E2BE7D8F88850@AM0PR04MB4481.eurprd04.prod.outlook.com>
-References: <1566356496-30493-1-git-send-email-peng.fan@nxp.com>
- <1566356496-30493-2-git-send-email-peng.fan@nxp.com>
- <AM0PR04MB448144701DB63A3C9F05B3E488BA0@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <dd82e84d-ab22-9dd9-f895-776570f46fee@linaro.org>
-In-Reply-To: <dd82e84d-ab22-9dd9-f895-776570f46fee@linaro.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-originating-ip: [119.31.174.71]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: d5c3a3d3-65a7-4d62-c015-08d73fc3c0d6
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600167)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB5937; 
-x-ms-traffictypediagnostic: AM0PR04MB5937:|AM0PR04MB5937:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB593731361613925D1D05CC7C88850@AM0PR04MB5937.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-forefront-prvs: 0169092318
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(396003)(346002)(39860400002)(366004)(376002)(189003)(199004)(52536014)(3846002)(6116002)(7696005)(76176011)(6506007)(186003)(9686003)(316002)(54906003)(55016002)(2906002)(33656002)(229853002)(446003)(99286004)(6246003)(486006)(66066001)(4326008)(102836004)(44832011)(476003)(74316002)(11346002)(66446008)(64756008)(25786009)(66556008)(66946007)(76116006)(66476007)(14444005)(256004)(6436002)(305945005)(8676002)(2201001)(7736002)(110136005)(8936002)(26005)(478600001)(86362001)(5660300002)(14454004)(81166006)(2501003)(71200400001)(71190400001)(81156014);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5937;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: +u+CM8H6HUguHt29ZmTzU8BwLA1v5AOLk4JCmJpoHq8D1pgGOr2laUEhhug0K4glURap42dzcqfctYoAJV5/oClJ+1ha+gyejuMTgQiZbUqWYb3QFFPnQd+VRH/kz8j8I+CxFR15GRGGMoPPefl/Iz7qrmHCDASpT+L76jFMVwi1IM9vayjw1cq7IcUl8rBWksuhGZ1nfasWpWN/V9bynB/GtSoBotfSKCfjWy0FKlhjhJEAOPj6pSqrEiWZVY7ud9VUbpDg58eBpF4sByVRxuhTaeNUXd5pbWNXjh1+7F1VggaL5Jaiww7waUCtVbr+Q/vzlkBxgZHTb+kACZyeCWo7oBMhgier/8WS4E3wdv9RGdZe5DdExKZqmNgU8BXQSKe/PWyjDV7jxG0Ig4Em2bL9RUyOYETzdNSaEKcPthg=
+ id 1iCDcn-0006w0-Aq; Mon, 23 Sep 2019 01:58:52 +0000
+X-UUID: 13258898e95742e68de2a53f9a3597d3-20190922
+X-UUID: 13258898e95742e68de2a53f9a3597d3-20190922
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 2123156907; Sun, 22 Sep 2019 17:58:41 -0800
+Received: from MTKMBS06N1.mediatek.inc (172.21.101.129) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 22 Sep 2019 18:58:40 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs06n1.mediatek.inc (172.21.101.129) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 23 Sep 2019 09:58:40 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 23 Sep 2019 09:58:39 +0800
+Message-ID: <1569203920.25491.9.camel@mtksdaap41>
+Subject: Re: [RFC, v3, 4/4] media: platform: mtk-mdp3: Add Mediatek MDP3 driver
+From: CK Hu <ck.hu@mediatek.com>
+To: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Date: Mon, 23 Sep 2019 09:58:40 +0800
+In-Reply-To: <20190911094013.5892-1-bibby.hsieh@mediatek.com>
+References: <20190911094013.5892-1-bibby.hsieh@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d5c3a3d3-65a7-4d62-c015-08d73fc3c0d6
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Sep 2019 01:17:08.1287 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: EVnxqjiikXaQJDuW9w2pWwJFQZLzCPTuUvObqYDUAuBl96BjZsSEnhMsQDrjkpB32s5CuQ8740EXVzL/uLfjDw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5937
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190922_181714_143316_91854C41 
-X-CRM114-Status: GOOD (  21.82  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190922_185849_380142_73393253 
+X-CRM114-Status: GOOD (  16.46  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.6.67 listed in list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,199 +72,231 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: laurent.pinchart+renesas@ideasonboard.com, Rynn.Wu@mediatek.com,
+ Jerry-ch.Chen@mediatek.com, jungo.lin@mediatek.com, hans.verkuil@cisco.com,
+ Ping-Hsun Wu <ping-hsun.wu@mediatek.com>, frederic.chen@mediatek.com,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ daoyuan huang <daoyuan.huang@mediatek.com>, holmes.chiou@mediatek.com,
+ sj.huang@mediatek.com, yuzhao@chromium.org, linux-mediatek@lists.infradead.org,
+ matthias.bgg@gmail.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, Sean.Cheng@mediatek.com,
+ srv_heupstream@mediatek.com, tfiga@chromium.org, christie.yu@mediatek.com,
+ zwisler@chromium.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Srinivas,
+Hi, Bibby:
 
-> >> Subject: [PATCH 2/2] nvmem: imx: scu: support write
-> >
-> > Ping..
-> >
-> Thanks for your patience!
-> I normally do not take patches after rc5 for nvmem.
-> These will be applied after rc1 is released!
-
-Sorry to ping again. Will you pick up since merge window is open?
-
-Thanks,
-Peng.
-
+On Wed, 2019-09-11 at 17:40 +0800, Bibby Hsieh wrote:
+> From: daoyuan huang <daoyuan.huang@mediatek.com>
 > 
-> Thanks,
-> srini
-> > Thanks,
-> > Peng.
-> >
-> >>
-> >> From: Peng Fan <peng.fan@nxp.com>
-> >>
-> >> The fuse programming from non-secure world is blocked, so we could
-> >> only use Arm Trusted Firmware SIP call to let ATF program fuse.
-> >>
-> >> Because there is ECC region that could only be programmed once, so
-> >> add a heler in_ecc to check the ecc region.
-> >>
-> >> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> >> ---
-> >>
-> >> The ATF patch will soon be posted to ATF community.
-> >>
-> >>   drivers/nvmem/imx-ocotp-scu.c | 73
-> >> ++++++++++++++++++++++++++++++++++++++++++-
-> >>   1 file changed, 72 insertions(+), 1 deletion(-)
-> >>
-> >> diff --git a/drivers/nvmem/imx-ocotp-scu.c
-> >> b/drivers/nvmem/imx-ocotp-scu.c index 2f339d7432e6..0f064f2e74a8
-> >> 100644
-> >> --- a/drivers/nvmem/imx-ocotp-scu.c
-> >> +++ b/drivers/nvmem/imx-ocotp-scu.c
-> >> @@ -7,6 +7,7 @@
-> >>    * Peng Fan <peng.fan@nxp.com>
-> >>    */
-> >>
-> >> +#include <linux/arm-smccc.h>
-> >>   #include <linux/firmware/imx/sci.h>
-> >>   #include <linux/module.h>
-> >>   #include <linux/nvmem-provider.h>
-> >> @@ -14,6 +15,9 @@
-> >>   #include <linux/platform_device.h>
-> >>   #include <linux/slab.h>
-> >>
-> >> +#define IMX_SIP_OTP			0xC200000A
-> >> +#define IMX_SIP_OTP_WRITE		0x2
-> >> +
-> >>   enum ocotp_devtype {
-> >>   	IMX8QXP,
-> >>   };
-> >> @@ -45,6 +49,8 @@ struct imx_sc_msg_misc_fuse_read {
-> >>   	u32 word;
-> >>   } __packed;
-> >>
-> >> +static DEFINE_MUTEX(scu_ocotp_mutex);
-> >> +
-> >>   static struct ocotp_devtype_data imx8qxp_data = {
-> >>   	.devtype = IMX8QXP,
-> >>   	.nregs = 800,
-> >> @@ -73,6 +79,23 @@ static bool in_hole(void *context, u32 index)
-> >>   	return false;
-> >>   }
-> >>
-> >> +static bool in_ecc(void *context, u32 index) {
-> >> +	struct ocotp_priv *priv = context;
-> >> +	const struct ocotp_devtype_data *data = priv->data;
-> >> +	int i;
-> >> +
-> >> +	for (i = 0; i < data->num_region; i++) {
-> >> +		if (data->region[i].flag & ECC_REGION) {
-> >> +			if ((index >= data->region[i].start) &&
-> >> +			    (index <= data->region[i].end))
-> >> +				return true;
-> >> +		}
-> >> +	}
-> >> +
-> >> +	return false;
-> >> +}
-> >> +
-> >>   static int imx_sc_misc_otp_fuse_read(struct imx_sc_ipc *ipc, u32
-> word,
-> >>   				     u32 *val)
-> >>   {
-> >> @@ -116,6 +139,8 @@ static int imx_scu_ocotp_read(void *context,
-> >> unsigned int offset,
-> >>   	if (!p)
-> >>   		return -ENOMEM;
-> >>
-> >> +	mutex_lock(&scu_ocotp_mutex);
-> >> +
-> >>   	buf = p;
-> >>
-> >>   	for (i = index; i < (index + count); i++) { @@ -126,6 +151,7 @@
-> >> static int imx_scu_ocotp_read(void *context, unsigned int offset,
-> >>
-> >>   		ret = imx_sc_misc_otp_fuse_read(priv->nvmem_ipc, i, buf);
-> >>   		if (ret) {
-> >> +			mutex_unlock(&scu_ocotp_mutex);
-> >>   			kfree(p);
-> >>   			return ret;
-> >>   		}
-> >> @@ -134,18 +160,63 @@ static int imx_scu_ocotp_read(void *context,
-> >> unsigned int offset,
-> >>
-> >>   	memcpy(val, (u8 *)p + offset % 4, bytes);
-> >>
-> >> +	mutex_unlock(&scu_ocotp_mutex);
-> >> +
-> >>   	kfree(p);
-> >>
-> >>   	return 0;
-> >>   }
-> >>
-> >> +static int imx_scu_ocotp_write(void *context, unsigned int offset,
-> >> +			       void *val, size_t bytes)
-> >> +{
-> >> +	struct ocotp_priv *priv = context;
-> >> +	struct arm_smccc_res res;
-> >> +	u32 *buf = val;
-> >> +	u32 tmp;
-> >> +	u32 index;
-> >> +	int ret;
-> >> +
-> >> +	/* allow only writing one complete OTP word at a time */
-> >> +	if ((bytes != 4) || (offset % 4))
-> >> +		return -EINVAL;
-> >> +
-> >> +	index = offset >> 2;
-> >> +
-> >> +	if (in_hole(context, index))
-> >> +		return -EINVAL;
-> >> +
-> >> +	if (in_ecc(context, index)) {
-> >> +		pr_warn("ECC region, only program once\n");
-> >> +		mutex_lock(&scu_ocotp_mutex);
-> >> +		ret = imx_sc_misc_otp_fuse_read(priv->nvmem_ipc, index, &tmp);
-> >> +		mutex_unlock(&scu_ocotp_mutex);
-> >> +		if (ret)
-> >> +			return ret;
-> >> +		if (tmp) {
-> >> +			pr_warn("ECC region, already has value: %x\n", tmp);
-> >> +			return -EIO;
-> >> +		}
-> >> +	}
-> >> +
-> >> +	mutex_lock(&scu_ocotp_mutex);
-> >> +
-> >> +	arm_smccc_smc(IMX_SIP_OTP, IMX_SIP_OTP_WRITE, index, *buf,
-> >> +		      0, 0, 0, 0, &res);
-> >> +
-> >> +	mutex_unlock(&scu_ocotp_mutex);
-> >> +
-> >> +	return res.a0;
-> >> +}
-> >> +
-> >>   static struct nvmem_config imx_scu_ocotp_nvmem_config = {
-> >>   	.name = "imx-scu-ocotp",
-> >> -	.read_only = true,
-> >> +	.read_only = false,
-> >>   	.word_size = 4,
-> >>   	.stride = 1,
-> >>   	.owner = THIS_MODULE,
-> >>   	.reg_read = imx_scu_ocotp_read,
-> >> +	.reg_write = imx_scu_ocotp_write,
-> >>   };
-> >>
-> >>   static const struct of_device_id imx_scu_ocotp_dt_ids[] = {
-> >> --
-> >> 2.16.4
-> >
+> This patch adds driver for Media Data Path 3 (MDP3).
+> Each modules' related operation control is sited in mtk-mdp3-comp.c
+> Each modules' register table is defined in file with "mdp_reg_"
+> and "mmsys_" prefix
+> GCE related API, operation control  sited in mtk-mdp3-cmdq.c
+> V4L2 m2m device functions are implemented in mtk-mdp3-m2m.c
+> Probe, power, suspend/resume, system level functions are defined in
+> mtk-mdp3-core.c
+> 
+> Signed-off-by: Ping-Hsun Wu <ping-hsun.wu@mediatek.com>
+> Signed-off-by: daoyuan huang <daoyuan.huang@mediatek.com>
+> ---
+
+[snip]
+
+> +
+> diff --git a/drivers/media/platform/mtk-mdp3/mtk-mdp3-cmdq.c b/drivers/media/platform/mtk-mdp3/mtk-mdp3-cmdq.c
+> new file mode 100644
+> index 000000000000..bd8f274fcaa9
+> --- /dev/null
+> +++ b/drivers/media/platform/mtk-mdp3/mtk-mdp3-cmdq.c
+> @@ -0,0 +1,504 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (c) 2018 MediaTek Inc.
+> + * Author: Ping-Hsun Wu <ping-hsun.wu@mediatek.com>
+> + */
+> +
+> +#include <linux/platform_device.h>
+> +#include "mtk-mdp3-cmdq.h"
+> +#include "mtk-mdp3-comp.h"
+> +#include "mtk-mdp3-core.h"
+> +#include "mtk-mdp3-m2m.h"
+> +
+> +#include "mdp-platform.h"
+> +#include "mmsys_mutex.h"
+> +
+> +#define DISP_MUTEX_MDP_FIRST	(5)
+> +#define DISP_MUTEX_MDP_COUNT	(5)
+> +
+> +#define MDP_PATH_MAX_COMPS	IMG_MAX_COMPONENTS
+> +
+> +struct mdp_path {
+> +	struct mdp_dev		*mdp_dev;
+> +	struct mdp_comp_ctx	comps[MDP_PATH_MAX_COMPS];
+> +	u32			num_comps;
+> +	const struct img_config	*config;
+> +	const struct img_ipi_frameparam *param;
+> +	const struct v4l2_rect	*composes[IMG_MAX_HW_OUTPUTS];
+> +	struct v4l2_rect	bounds[IMG_MAX_HW_OUTPUTS];
+> +};
+> +
+> +#define has_op(ctx, op) \
+> +	(ctx->comp->ops && ctx->comp->ops->op)
+> +#define call_op(ctx, op, ...) \
+> +	(has_op(ctx, op) ? ctx->comp->ops->op(ctx, ##__VA_ARGS__) : 0)
+> +
+> +struct mdp_path_subfrm {
+> +	s32	mutex_id;
+> +	u32	mutex_mod;
+> +	s32	sofs[MDP_PATH_MAX_COMPS];
+> +	u32	num_sofs;
+> +};
+> +
+> +static bool is_output_disable(const struct img_compparam *param, u32 count)
+> +{
+> +	return (count < param->num_subfrms) ?
+> +		(param->frame.output_disable ||
+> +		param->subfrms[count].tile_disable) :
+> +		true;
+> +}
+> +
+> +static int mdp_path_subfrm_require(struct mdp_path_subfrm *subfrm,
+> +				   const struct mdp_path *path,
+> +				   struct mdp_cmd *cmd, u32 count)
+> +{
+> +	const struct img_config *config = path->config;
+> +	const struct mdp_comp_ctx *ctx;
+> +	phys_addr_t mm_mutex = path->mdp_dev->mm_mutex.reg_base;
+> +	s32 mutex_id = -1;
+> +	u32 mutex_sof = 0;
+> +	int mdp_color = 0;
+> +	int index;
+> +	u8 subsys_id = path->mdp_dev->mm_mutex.subsys_id;
+> +
+> +	/* Default value */
+> +	memset(subfrm, 0, sizeof(*subfrm));
+> +
+> +	for (index = 0; index < config->num_components; index++) {
+> +		ctx = &path->comps[index];
+> +		if (is_output_disable(ctx->param, count))
+> +			continue;
+> +		switch (ctx->comp->id) {
+> +		/**********************************************
+> +		 * Name            MSB LSB
+> +		 * DISP_MUTEX_MOD   23   0
+> +		 *
+> +		 * Specifies which modules are in this mutex.
+> +		 * Every bit denotes a module. Bit definition:
+> +		 *  2 mdp_rdma0
+> +		 *  4 mdp_rsz0
+> +		 *  5 mdp_rsz1
+> +		 *  6 mdp_tdshp
+> +		 *  7 mdp_wrot0
+> +		 *  8 mdp_wdma
+> +		 *  13 mdp_color
+> +		 *  23 mdp_aal
+> +		 *  24 mdp_ccorr
+> +		 **********************************************/
+> +		case MDP_AAL0:
+> +			subfrm->mutex_mod |= 1 << 23;
+> +			break;
+> +		case MDP_CCORR0:
+> +			subfrm->mutex_mod |= 1 << 24;
+> +			break;
+> +		case MDP_COLOR0:
+> +			if (mdp_color)
+> +				subfrm->mutex_mod |= 1 << 13;
+> +			break;
+> +		case MDP_WDMA:
+> +			subfrm->mutex_mod |= 1 << 8;
+> +			subfrm->sofs[subfrm->num_sofs++] = MDP_WDMA;
+> +			break;
+> +		case MDP_WROT0:
+> +			subfrm->mutex_mod |= 1 << 7;
+> +			subfrm->sofs[subfrm->num_sofs++] = MDP_WROT0;
+> +			break;
+> +		case MDP_TDSHP0:
+> +			subfrm->mutex_mod |= 1 << 6;
+> +			subfrm->sofs[subfrm->num_sofs++] = MDP_TDSHP0;
+> +			break;
+> +		case MDP_SCL1:
+> +			subfrm->mutex_mod |= 1 << 5;
+> +			subfrm->sofs[subfrm->num_sofs++] = MDP_SCL1;
+> +			break;
+> +		case MDP_SCL0:
+> +			subfrm->mutex_mod |= 1 << 4;
+> +			subfrm->sofs[subfrm->num_sofs++] = MDP_SCL0;
+> +			break;
+> +		case MDP_RDMA0:
+> +			mutex_id = DISP_MUTEX_MDP_FIRST + 1;
+> +			subfrm->mutex_mod |= 1 << 2;
+> +			subfrm->sofs[subfrm->num_sofs++] = MDP_RDMA0;
+> +			break;
+> +		case MDP_IMGI:
+> +			mutex_id = DISP_MUTEX_MDP_FIRST;
+> +			break;
+> +		case MDP_WPEI:
+> +			mutex_id = DISP_MUTEX_MDP_FIRST + 3;
+> +			break;
+> +		case MDP_WPEI2:
+> +			mutex_id = DISP_MUTEX_MDP_FIRST + 4;
+> +			break;
+> +		default:
+> +			break;
+> +		}
+> +	}
+> +
+> +	subfrm->mutex_id = mutex_id;
+> +	if (-1 == mutex_id) {
+> +		mdp_err("No mutex assigned");
+> +		return -EINVAL;
+> +	}
+> +
+> +	if (subfrm->mutex_mod) {
+> +		/* Set mutex modules */
+> +		MM_REG_WRITE(cmd, subsys_id, mm_mutex, MM_MUTEX_MOD,
+> +			     subfrm->mutex_mod, 0x07FFFFFF);
+> +		MM_REG_WRITE(cmd, subsys_id, mm_mutex, MM_MUTEX_SOF,
+> +			     mutex_sof, 0x00000007);
+> +	}
+
+In [1], mdp3 device has a pointer to mutex device, and you directly
+write mutex register in mdp3 driver.
+
+		mdp_rdma0: mdp_rdma0@14001000 {
+			compatible = "mediatek,mt8183-mdp-rdma",
+				     "mediatek,mt8183-mdp3";
+
+			mediatek,mm-mutex = <&mutex>;
+		};
+
+
+ 		mutex: mutex@14016000 {
+ 			compatible = "mediatek,mt8183-disp-mutex";
+ 			reg = <0 0x14016000 0 0x1000>;
+ 		};
+
+But mutex already has its own driver in mediatek drm driver [2]. This is
+not a good design. I would like all mutex device register is controlled
+in single driver. 
+
+[1] https://patchwork.kernel.org/patch/11140747/
+[2]
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/mediatek/mtk_drm_ddp.c?h=v5.3#n429
+
+Regards,
+CK
+
+> +	return 0;
+> +}
+
+
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
