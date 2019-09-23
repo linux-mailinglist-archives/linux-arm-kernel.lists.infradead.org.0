@@ -2,64 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37456BB13D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 11:18:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69872BB13C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 11:18:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Aru32Ixc+/Z3n8p+dzPd00UYAyawTQwxyF7rX1Pd6uU=; b=GcDRTtAHBWkjph
-	O4Hkp5obm1BLTbz8r/jQdUDw5nkS8jcetZAFx1ohPZtK8gMfEGjtSyCz96DWPRIudBLVK1dYHpdsO
-	oI2wLZ3CbLbjNWyu3+nR7mUy5Q8KhaCmHGjWBkyVs5vXwby2f1rrdivTORJVJaV86oI2N4GmiwhXh
-	jh86YYbVK2E5TPQPanT1pHKGR+srO9GjW3XNssW64mgXQ6TOQ8RU4O5sGz2ohAgxEZXNrlZRin1Cv
-	mR4UVllbGseCpCsMPcQZB7DKrg5XMJFEgbqYNZBilxf/WCrNIlE/n31a0hUwPonBfoblgTXqKgiXN
-	NhmVrDoy1p8+nZO3eKag==;
+	List-Owner; bh=6wADLwFRNAvjOvTXgreouWE5q17RDVGuPsjsbQdSD9Q=; b=doGYYfiSc3E+f4
+	CqYniWza84Q/9bmmed1vFBZ12btMm1BuEvBtyM0eYbOHu8hLxl2Uv1kD5TAcTX1gGdVqioGliDke3
+	uJ2Dpug6HrzFj9NgrTuV9ZHqXKkoMSzN8hWUDWXPuUaQweKKQZ89+ZjjyzsCb83v/63bU9optComa
+	JKzgpBa4O93SG2LG3T0wX1/pt1uA/z4GHrms3zkJz2AyD9ZhI2hvB9cxop4+X6mglYm8g1RBRw7Xw
+	bZMlvbscrywEFXcx8IpOD24ahAkPjfKQTAJTCJTrOw3+k7+i7zjhMtjsxSmgB8nSqQuBArtxbUv4x
+	i7n1juLoaUP2uXE7bXJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCKUK-0002vR-IP; Mon, 23 Sep 2019 09:18:32 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iCKTx-0002dt-UV; Mon, 23 Sep 2019 09:18:10 +0000
+Received: from mail-wr1-f65.google.com ([209.85.221.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCKTp-0002ht-4x
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 09:18:03 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1iCKTc-0005wP-Px; Mon, 23 Sep 2019 11:17:48 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1iCKTZ-0001wK-TP; Mon, 23 Sep 2019 11:17:45 +0200
-Date: Mon, 23 Sep 2019 11:17:45 +0200
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Russell King <linux@armlinux.org.uk>
-Subject: Re: [PATCH 1/4] pwm: mxs: implement ->apply
-Message-ID: <20190923091745.ehvz4zi2riyanmug@pengutronix.de>
-References: <20190923081348.6843-1-linux@rasmusvillemoes.dk>
- <20190923081348.6843-2-linux@rasmusvillemoes.dk>
- <20190923082459.huqpbz5eseonkscv@pengutronix.de>
- <a6407644-0b5b-ba46-9435-0d14be9066a5@rasmusvillemoes.dk>
+ id 1iCKTf-0002dH-3Y
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 09:17:52 +0000
+Received: by mail-wr1-f65.google.com with SMTP id o18so13005131wrv.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 23 Sep 2019 02:17:51 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=MqnEXcdlN87EqTUKJmOH+iKlmaz8lFCv3VuvTRPKNYg=;
+ b=msh/V7FXUEyBBG13tJZOqpvumUcEBKSjnV2kwkj16350Mm8yg0UWSKbo9hqndIPMCX
+ j5UaBpCa31770gPWnCr7SwME1Lj+WRB1A8PQ/YQf4aGrFf+t6EvKeDt79C3nBlZs6NOd
+ zkIlHkNqLkeHpeFMh0mObbJR9EIYAolCIvZQKhGydh8D8/dDOtFJevufnByZgQJa8T/R
+ Cnyhu5uoJ1LmFDj4ms+05+J6goUXgv+ZY+HlDwjku7PwIRmCNheC1cRDtH36Q8GedPAa
+ Ts2DRQyL6KbY2EKwWogWgD0EdZk9yeATjyMWpCS7tTWasr0/JBTInGVB52/77vDcDloF
+ XUMA==
+X-Gm-Message-State: APjAAAXSp2K3zHDWbzTzB4rC/qUPsFR8lDqEEZSwyL0JsuRi5Kd6k6Rg
+ jXXbQ8XkdQp+DwPXMzLC68g=
+X-Google-Smtp-Source: APXvYqyX2jsTQWCdkodTgpoobxQ2dq01kENJEKFTxZS+dJ/vtJUB1wHtTZ9GqHaa13+NkGl3qyyvLg==
+X-Received: by 2002:a05:6000:14b:: with SMTP id
+ r11mr1293264wrx.58.1569230269807; 
+ Mon, 23 Sep 2019 02:17:49 -0700 (PDT)
+Received: from pi3 ([194.230.155.145])
+ by smtp.googlemail.com with ESMTPSA id y13sm13602712wrg.8.2019.09.23.02.17.48
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 23 Sep 2019 02:17:48 -0700 (PDT)
+Date: Mon, 23 Sep 2019 11:17:46 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Subject: Re: [PATCH v2 08/10] ASoC: samsung: Rename Arndale card driver
+Message-ID: <20190923091746.GD4577@pi3>
+References: <20190920130218.32690-1-s.nawrocki@samsung.com>
+ <CGME20190920130323eucas1p218c6822eca3869eb0d3b7380497bbca4@eucas1p2.samsung.com>
+ <20190920130218.32690-9-s.nawrocki@samsung.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <a6407644-0b5b-ba46-9435-0d14be9066a5@rasmusvillemoes.dk>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20190920130218.32690-9-s.nawrocki@samsung.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_021801_204432_8692EBA0 
-X-CRM114-Status: GOOD (  13.13  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190923_021751_148571_94FB2EBC 
+X-CRM114-Status: GOOD (  11.02  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.221.65 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.221.65 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,46 +90,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-pwm@vger.kernel.org,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
+ linux-samsung-soc@vger.kernel.org, ckeepax@opensource.cirrus.com,
+ b.zolnierkie@samsung.com, sbkim73@samsung.com, patches@opensource.cirrus.com,
+ lgirdwood@gmail.com, robh+dt@kernel.org, broonie@kernel.org,
+ linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+On Fri, Sep 20, 2019 at 03:02:17PM +0200, Sylwester Nawrocki wrote:
+> Rename arndale_rt5631.c to just arnddale.c as we support other CODECs
+> than RT5631.  While at it replace spaces in Kconfig with tabs.
+> 
+> Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
+> ---
+> Changes since v1:
+>  - new patch.
+> ---
+>  sound/soc/samsung/Kconfig                         | 10 +++++-----
+>  sound/soc/samsung/Makefile                        |  4 ++--
+>  sound/soc/samsung/{arndale_rt5631.c => arndale.c} |  0
+>  3 files changed, 7 insertions(+), 7 deletions(-)
+>  rename sound/soc/samsung/{arndale_rt5631.c => arndale.c} (100%)
 
-[expanded the recipents to include RMK and the clk list]
+Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
 
-On Mon, Sep 23, 2019 at 11:04:39AM +0200, Rasmus Villemoes wrote:
-> On 23/09/2019 10.24, Uwe Kleine-K=F6nig wrote:
-> > Also there is a bug already in .config: You are not supposed to call
-> > clk_get_rate if the clk might be off.
-> =
+Best regards,
+Krzysztof
 
-> Interesting, I didn't know that. So the prepare_enable logic needs to be
-> moved before we start computing the period/duty cycles. Do you know why
-> it has apparently worked so far? I would have thought such a rule would
-> be enforced by the clock framework, or at least produced a warning.
-
-FTR: This is documented in the kerneldoc code comment to clk_get_rate in
-include/linux/clk.h.
-
-Assuming this is relevant, it might indeed make sense to add a
-WARN_ONCE for this.
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
 
 _______________________________________________
 linux-arm-kernel mailing list
