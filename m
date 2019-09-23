@@ -2,113 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B97B9BBDC4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 23:23:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33473BBDCB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 23:23:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=vjwKTQbj3VDPSZTyiug1ejOk67crqpUTI6SYtWaB7bE=; b=joS+XRaRHGILkx
-	9VokqS6t7qW0TQAt/o8uzX2SG8X46b0ZaCuH20TvCahxsgIpOiVHtRcie++WP9pExdOCiyyVz17qL
-	nQXQpmRQDvDzG3WPB7Tnq0xzeWWe4q34XqOz8O4HXz2pAtfJ/R9Khm2v9Ls4aKwnPgY6ff5oTwp3y
-	IHk3hjInqjgqRXvADzUnyuC3Agx0DjkVUOAAhMTXqPxyDV8Q5R0uB+vKwvOEPaqDJ7fmw/YGHbAVy
-	pKZ/Hr5+xrl7EUfOAtVEUVo1DrtCWW8+HFVdvhlDrmjRynInRHeORwR3zsnjsYgnhc+9X9R1rvmI8
-	aAmUE57fXiK3OClJnmAA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=HsOoWkWm3vIBH5cY4nop9yCA0Lt0Iprovi75mD7C3WU=; b=cfn
+	iyaV28vY6Mu+p2EUf+bdeUCHVsAzL+0dZq+bzGwp7VK57YTlh0vlXLUIDFjC4G1IK+sRvj5IJ3+yQ
+	WDO/ZkvK8oieNe5EJpZ1iI+gvyImehmNAHXDuL7Oq5uUIiS0AwD6Ht21hgKCeeH6e5RowNU6k/hU4
+	qdha5IlfyqSFTklDM6J2ZWPfR81fbtNUg0ZAyCd8DM6/m8/5tHrVTbjwViNhXVi7RwIV0bP8wGmjX
+	zznpSCUSZLBJUnWZpKBpLsFNs6nretFmaCUXwk7y/eeUk3UMIVK8vho35Gba9nEc4ylzjEk47c5xf
+	KO6CXDlkAXeWC5i/7NuXgi29TF5RWeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCVnO-0008VV-UR; Mon, 23 Sep 2019 21:22:59 +0000
-Received: from mail-eopbgr20089.outbound.protection.outlook.com ([40.107.2.89]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1iCVnj-0000IE-RA; Mon, 23 Sep 2019 21:23:19 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCVnE-0008V6-K3
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 21:22:50 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=HXBgHV8PT+RgfrFox7fTSVFfHAHcoAiU8KadqMKvMnD31x1SoQDeT0btvmMzt/WB+AwOL+UGDXJZ1IsZk6Pb5EPuDe3sAqZ+XDdT7+aW1m6TL406hSjLGUWuY5r29PLIZX5KBRgBt4XILGs22Hp+iRB7GITShxp8AAQTx2Z60HiMpd+adb6eKUAZMsdi4memQcslEJMd/kLPGdfm6uU8pc1JzHzCgVuuzb6goCkLNFP0sslD7M8ArewTuN4yUm4u/NGPF0IMtsNMP/9VDm87Hys7FMTnj/WvW8INd7HpwvoXTHk6/Q097sMY0w86UXpBC1axDAF6uwFSc+qrKd/BYA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7WkgFVCu6l6w0LNhI6zd9HqQOgO0mVRm6PYkVke1oXU=;
- b=AzQrY3oZWTeZeDhRgFrgau3qm1au9XjEQ7rAKnSDn2Zp/nAiAowznBkNGHbhlR2SfsK/1qmnMzAbkCJsHvwHQkOkaAKHFn3kq2juGXljikN/ojVZWHcG+FDXsmvRG5yR0oe5fSpoyyOASHkqz5IEj8U2jJddAEYroJMcWqOpYw43Zag1CtIUWyYr/JBvRj/TJCeVqr8iMA2IBS9cLxHsS6lc+7+umkB+oC1CUIuQLnFloTobxMNZRY1ohGglsQjSY9mkFfqWCTUcPAj5vodK4CjbNMsYqutk7jX62cE5V/Hm5qxDb5NHyvFuwkbYPVHnCBdi46MgYH9+Z+kpyAxDug==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7WkgFVCu6l6w0LNhI6zd9HqQOgO0mVRm6PYkVke1oXU=;
- b=jiNKkvAcCsmmlkufZqYP/A0qQjIXi8UBxUXyxKUn30daruYdht0Qff+2MiUy0N7oLraa5d5zIms5Ba6guxn2/qlZqiYRrmKj7RO+C+jjGBa7Zx4WVEhYIFwFG2+I17J0TadntW21i/7AEflC2U3UzYWYkNiyb8Mf6abLGgyZDPI=
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
- VI1PR04MB7101.eurprd04.prod.outlook.com (10.186.159.79) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2284.20; Mon, 23 Sep 2019 21:22:45 +0000
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::15cd:b6e7:5016:ae8]) by VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::15cd:b6e7:5016:ae8%2]) with mapi id 15.20.2284.023; Mon, 23 Sep 2019
- 21:22:45 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Martin Kepplinger <martink@posteo.de>, Jacky Bai <ping.bai@nxp.com>, Anson
- Huang <anson.huang@nxp.com>
-Subject: Re: [RFCv4 0/7] interconnect: Add imx support via devfreq
-Thread-Topic: [RFCv4 0/7] interconnect: Add imx support via devfreq
-Thread-Index: AQHVWcA7xPiNhLrdqkSG10Lu7U9EhQ==
-Date: Mon, 23 Sep 2019 21:22:45 +0000
-Message-ID: <VI1PR04MB7023C5382635F6959EAF9330EE850@VI1PR04MB7023.eurprd04.prod.outlook.com>
-References: <cover.1566570260.git.leonard.crestez@nxp.com>
- <4440b392-d968-4a54-2ea0-ffd5beba02d1@posteo.de>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: d9ff94f6-e142-42ec-3549-08d7406c2d36
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600167)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB7101; 
-x-ms-traffictypediagnostic: VI1PR04MB7101:|VI1PR04MB7101:
-x-ms-exchange-purlcount: 4
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB710123D6905510EEBE2D5376EE850@VI1PR04MB7101.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0169092318
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(376002)(396003)(136003)(366004)(39860400002)(199004)(189003)(8676002)(14454004)(6116002)(7696005)(76116006)(64756008)(316002)(102836004)(446003)(66556008)(478600001)(9686003)(26005)(66476007)(99286004)(6246003)(7736002)(305945005)(66446008)(25786009)(110136005)(7416002)(2906002)(476003)(186003)(91956017)(71200400001)(71190400001)(8936002)(5660300002)(256004)(229853002)(76176011)(54906003)(33656002)(4326008)(86362001)(14444005)(44832011)(74316002)(486006)(53546011)(6636002)(6436002)(55016002)(81156014)(66066001)(6506007)(6306002)(3846002)(52536014)(81166006)(66946007)(966005);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB7101;
- H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: jdy2i6brLVbS6tOAxIC/z0rAv5FlK08RfDi5zvcwrXbxaqvcT+ZTrtyOfTZA4vkQY+cm2baAB1JFK2v6963b6hr0IG7DMluAPwVwppKStpqsQo+eb0/8SaKVoOQA4FbfK/qEHKmC51N0AO7aptfM1BZxtUUWSSNVSZ06jlU1aqkvG6tQGhOz5fXq3YtQkhB3+C6+Rs+2jfLqonH9lWQFdHUHXAI9gmXeRH3ZbAwEjwb+LzSp9ULb5JDb3HIzggx2Woqj7ly49/t7vOtOwgyzMXQ8gIkVOg6l92tCXcYc4C/yP6lQxA4LGE6dq6S6zrgW3cMY/1bJPWKOGuDwr6Hw98P3jpGYsk5fVkFs8Bpn7T3sks85VpOTBEp7ENTYRwoGGw8vGNokYYAuidYNELLSNm+2sxx/F42LRxIWdSYlj38=
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d9ff94f6-e142-42ec-3549-08d7406c2d36
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Sep 2019 21:22:45.3425 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: MOuS9ilYoZSSLw5cRRHs0clzmYMeNRc3ntRF3PirmclsLjfvAZWKVKZm+OkxlrM6fM99kU0iDgikav956AYShg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB7101
+ id 1iCVnV-0000Ga-NI
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 21:23:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=bWmHVulB7Ia3zVa8uWWuDJ6sdbuUGFEHD8sBOacMu8g=; b=QB4vkNcmVCFF
+ tNE6wEDzsTxsMFfra4xABuUGgxu5gAkDXKXKejrOhpKwDvxUu2SA7HCo/8qfY+HMBzVIH9PyXKfxn
+ WslcpxZ2NUCXy4V1ut6mj11NxcnFxBzi9LoAPkov2kcOFa8mmU98x63OgPvae4jmKEjdE/c7+lSbG
+ nT71M=;
+Received: from [12.157.10.114] (helo=fitzroy.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1iCVnQ-0005WS-C0; Mon, 23 Sep 2019 21:23:00 +0000
+Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
+ id B13CDD02FDA; Mon, 23 Sep 2019 22:22:58 +0100 (BST)
+From: Mark Brown <broonie@kernel.org>
+To: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Subject: Applied "ASoC: wm8994: Do not register inapplicable controls for
+ WM1811" to the asoc tree
+In-Reply-To: <20190920130218.32690-2-s.nawrocki@samsung.com>
+X-Patchwork-Hint: ignore
+Message-Id: <20190923212258.B13CDD02FDA@fitzroy.sirena.org.uk>
+Date: Mon, 23 Sep 2019 22:22:58 +0100 (BST)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_142249_011783_816965BF 
-X-CRM114-Status: GOOD (  13.29  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190923_142305_905395_062E480A 
+X-CRM114-Status: GOOD (  15.47  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.89 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [172.104.155.198 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -123,112 +79,189 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- =?iso-8859-2?Q?Artur_=A6wigo=F1?= <a.swigon@partner.samsung.com>,
- Peng Fan <peng.fan@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Alexandre Bailon <abailon@baylibre.com>,
- Saravana Kannan <saravanak@google.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Chanwoo Choi <cw00.choi@samsung.com>, MyungJoo Ham <myungjoo.ham@samsung.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>, Stephen Boyd <sboyd@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Georgi Djakov <georgi.djakov@linaro.org>
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
+ linux-samsung-soc@vger.kernel.org, ckeepax@opensource.cirrus.com,
+ b.zolnierkie@samsung.com, sbkim73@samsung.com, patches@opensource.cirrus.com,
+ lgirdwood@gmail.com, Krzysztof Kozlowski <krzk@kernel.org>, robh+dt@kernel.org,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ m.szyprowski@samsung.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 21.09.2019 09:07, Martin Kepplinger wrote:
-> On 23.08.19 16:36, Leonard Crestez wrote:
->> This series add imx support for interconnect via devfreq: the ICC
->> framework is used to aggregate requests from devices and then those are
->> converted to DEV_PM_QOS_MIN_FREQUENCY requests for devfreq.
->>
->> The devfreq parts are posted separately, this series only intersects in
->> devicetree.
->>
->> Since there is no single devicetree node that can represent the "interconnect"
->> new API is added to allow individual devfreq nodes to act as parsing proxies
->> all mapping to a single soc-level icc provider. This is still RFC
->> because this
->>
->> The rest of the changes are small and deal with review comments.
+The patch
 
-> on imx8mq, probe() fails:
-> 
-> [    1.082847] imx-ddrc-devfreq 3d400000.dram-controller: failed to init
-> firmware freq info: -19
-> [    1.091434] imx-ddrc-devfreq: probe of 3d400000.dram-controller
-> rejects match -19
-> 
-> in imx_ddrc_init_freq_info()'s check:
-> 
-> if (priv->freq_count <= 0 || priv->freq_count > IMX_DDRC_MAX_FREQ_COUNT)
-> 
-> That would indicate that I'm missing something in ATF? I'm pretty sure
-> I'm running your tree though.
+   ASoC: wm8994: Do not register inapplicable controls for WM1811
 
-What is your board and uboot version? I tested on imx8mq-evk (SOC Rev 
-B1) with NXP uboot. For example this uboot release works:
+has been applied to the asoc tree at
 
-https://source.codeaurora.org/external/imx/uboot-imx/log/?h=imx_v2019.04_4.19.35_1.0.0
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.4
 
-It is uboot which trains DDR for multiple frequencies and then passes 
-that info to ATF. I'm not sure about the steps required to enable this 
-for 3rd-party boards, should be same as for busfreq from NXP tree.
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
 
-Getting this to work on a 3rd-party board would be interesting.
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
 
-> Does anything come to your mind what I might be doing wrong? Am I
-> running your "correct" linux tree? Remember I'm on imx8mq, so I don't
-> exactly test this RFC of yours.
-> 
-> Also, how are your plans to rebase / update your ATF tree?
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
 
-The ATF changes will show up in a future release of NXP ATF branch, when 
-that happens I will drop my branch. NXP ATF releases are on CAF:
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
 
-     https://source.codeaurora.org/external/imx/imx-atf/
+Thanks,
+Mark
 
-> And since there's a lot in there: what additions are necessary for this
-> devfreq to work?
+From ca2347190adb5e4eece73a2b16e96e651c46246b Mon Sep 17 00:00:00 2001
+From: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Date: Fri, 20 Sep 2019 15:02:10 +0200
+Subject: [PATCH] ASoC: wm8994: Do not register inapplicable controls for
+ WM1811
 
-devfreq imx support here: https://patchwork.kernel.org/cover/11104113/
-Interconnect support also needs PM QoS support for devfreq:
+In case of WM1811 device there are currently being registered controls
+referring to registers not existing on that device.
+It has been noticed when getting values of "AIF1ADC2 Volume", "AIF1DAC2
+Volume" controls was failing during ALSA state restoring at boot time:
+ "amixer: Mixer hw:0 load error: Device or resource busy"
 
-     https://patchwork.kernel.org/cover/11157649/
+Reading some registers through I2C was failing with EBUSY error and
+indeed these registers were not available according to the datasheet.
 
-> Lastly, how do you test? Is /sys/class/devfreq supposted to get populated?
+To fix this controls not available on WM1811 are moved to a separate
+array and registered only for WM8994 and WM8958.
 
-Yes, and only the devfreq patches are required for that.
+There are some further differences between WM8994 and WM1811,
+e.g. registers 603h, 604h, 605h, which are not covered in this patch.
 
-# cat /sys/class/devfreq/devfreq0/available_frequencies
-25000000 100000000 800000000
-# cat /sys/class/devfreq/devfreq0/cur_freq
-800000000
+Acked-by: Charles Keepax <ckeepax@opensource.cirrus.com>
+Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
+Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Link: https://lore.kernel.org/r/20190920130218.32690-2-s.nawrocki@samsung.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ sound/soc/codecs/wm8994.c | 43 +++++++++++++++++++++++----------------
+ 1 file changed, 26 insertions(+), 17 deletions(-)
 
-You should be able to control frequencies manually with the userspace 
-governor:
-# echo "userspace" > /sys/class/devfreq/devfreq0/governor
-# echo "25000000" > /sys/class/devfreq/devfreq0/userspace/set_freq
+diff --git a/sound/soc/codecs/wm8994.c b/sound/soc/codecs/wm8994.c
+index c3d06e8bc54f..d5fb7f5dd551 100644
+--- a/sound/soc/codecs/wm8994.c
++++ b/sound/soc/codecs/wm8994.c
+@@ -533,13 +533,10 @@ static SOC_ENUM_SINGLE_DECL(dac_osr,
+ static SOC_ENUM_SINGLE_DECL(adc_osr,
+ 			    WM8994_OVERSAMPLING, 1, osr_text);
+ 
+-static const struct snd_kcontrol_new wm8994_snd_controls[] = {
++static const struct snd_kcontrol_new wm8994_common_snd_controls[] = {
+ SOC_DOUBLE_R_TLV("AIF1ADC1 Volume", WM8994_AIF1_ADC1_LEFT_VOLUME,
+ 		 WM8994_AIF1_ADC1_RIGHT_VOLUME,
+ 		 1, 119, 0, digital_tlv),
+-SOC_DOUBLE_R_TLV("AIF1ADC2 Volume", WM8994_AIF1_ADC2_LEFT_VOLUME,
+-		 WM8994_AIF1_ADC2_RIGHT_VOLUME,
+-		 1, 119, 0, digital_tlv),
+ SOC_DOUBLE_R_TLV("AIF2ADC Volume", WM8994_AIF2_ADC_LEFT_VOLUME,
+ 		 WM8994_AIF2_ADC_RIGHT_VOLUME,
+ 		 1, 119, 0, digital_tlv),
+@@ -556,8 +553,6 @@ SOC_ENUM("AIF2DACR Source", aif2dacr_src),
+ 
+ SOC_DOUBLE_R_TLV("AIF1DAC1 Volume", WM8994_AIF1_DAC1_LEFT_VOLUME,
+ 		 WM8994_AIF1_DAC1_RIGHT_VOLUME, 1, 96, 0, digital_tlv),
+-SOC_DOUBLE_R_TLV("AIF1DAC2 Volume", WM8994_AIF1_DAC2_LEFT_VOLUME,
+-		 WM8994_AIF1_DAC2_RIGHT_VOLUME, 1, 96, 0, digital_tlv),
+ SOC_DOUBLE_R_TLV("AIF2DAC Volume", WM8994_AIF2_DAC_LEFT_VOLUME,
+ 		 WM8994_AIF2_DAC_RIGHT_VOLUME, 1, 96, 0, digital_tlv),
+ 
+@@ -565,17 +560,12 @@ SOC_SINGLE_TLV("AIF1 Boost Volume", WM8994_AIF1_CONTROL_2, 10, 3, 0, aif_tlv),
+ SOC_SINGLE_TLV("AIF2 Boost Volume", WM8994_AIF2_CONTROL_2, 10, 3, 0, aif_tlv),
+ 
+ SOC_SINGLE("AIF1DAC1 EQ Switch", WM8994_AIF1_DAC1_EQ_GAINS_1, 0, 1, 0),
+-SOC_SINGLE("AIF1DAC2 EQ Switch", WM8994_AIF1_DAC2_EQ_GAINS_1, 0, 1, 0),
+ SOC_SINGLE("AIF2 EQ Switch", WM8994_AIF2_EQ_GAINS_1, 0, 1, 0),
+ 
+ WM8994_DRC_SWITCH("AIF1DAC1 DRC Switch", WM8994_AIF1_DRC1_1, 2),
+ WM8994_DRC_SWITCH("AIF1ADC1L DRC Switch", WM8994_AIF1_DRC1_1, 1),
+ WM8994_DRC_SWITCH("AIF1ADC1R DRC Switch", WM8994_AIF1_DRC1_1, 0),
+ 
+-WM8994_DRC_SWITCH("AIF1DAC2 DRC Switch", WM8994_AIF1_DRC2_1, 2),
+-WM8994_DRC_SWITCH("AIF1ADC2L DRC Switch", WM8994_AIF1_DRC2_1, 1),
+-WM8994_DRC_SWITCH("AIF1ADC2R DRC Switch", WM8994_AIF1_DRC2_1, 0),
+-
+ WM8994_DRC_SWITCH("AIF2DAC DRC Switch", WM8994_AIF2_DRC_1, 2),
+ WM8994_DRC_SWITCH("AIF2ADCL DRC Switch", WM8994_AIF2_DRC_1, 1),
+ WM8994_DRC_SWITCH("AIF2ADCR DRC Switch", WM8994_AIF2_DRC_1, 0),
+@@ -594,9 +584,6 @@ SOC_SINGLE("Sidetone HPF Switch", WM8994_SIDETONE, 6, 1, 0),
+ SOC_ENUM("AIF1ADC1 HPF Mode", aif1adc1_hpf),
+ SOC_DOUBLE("AIF1ADC1 HPF Switch", WM8994_AIF1_ADC1_FILTERS, 12, 11, 1, 0),
+ 
+-SOC_ENUM("AIF1ADC2 HPF Mode", aif1adc2_hpf),
+-SOC_DOUBLE("AIF1ADC2 HPF Switch", WM8994_AIF1_ADC2_FILTERS, 12, 11, 1, 0),
+-
+ SOC_ENUM("AIF2ADC HPF Mode", aif2adc_hpf),
+ SOC_DOUBLE("AIF2ADC HPF Switch", WM8994_AIF2_ADC_FILTERS, 12, 11, 1, 0),
+ 
+@@ -637,6 +624,24 @@ SOC_SINGLE("AIF2DAC 3D Stereo Switch", WM8994_AIF2_DAC_FILTERS_2,
+ 	   8, 1, 0),
+ };
+ 
++/* Controls not available on WM1811 */
++static const struct snd_kcontrol_new wm8994_snd_controls[] = {
++SOC_DOUBLE_R_TLV("AIF1ADC2 Volume", WM8994_AIF1_ADC2_LEFT_VOLUME,
++		 WM8994_AIF1_ADC2_RIGHT_VOLUME,
++		 1, 119, 0, digital_tlv),
++SOC_DOUBLE_R_TLV("AIF1DAC2 Volume", WM8994_AIF1_DAC2_LEFT_VOLUME,
++		 WM8994_AIF1_DAC2_RIGHT_VOLUME, 1, 96, 0, digital_tlv),
++
++SOC_SINGLE("AIF1DAC2 EQ Switch", WM8994_AIF1_DAC2_EQ_GAINS_1, 0, 1, 0),
++
++WM8994_DRC_SWITCH("AIF1DAC2 DRC Switch", WM8994_AIF1_DRC2_1, 2),
++WM8994_DRC_SWITCH("AIF1ADC2L DRC Switch", WM8994_AIF1_DRC2_1, 1),
++WM8994_DRC_SWITCH("AIF1ADC2R DRC Switch", WM8994_AIF1_DRC2_1, 0),
++
++SOC_ENUM("AIF1ADC2 HPF Mode", aif1adc2_hpf),
++SOC_DOUBLE("AIF1ADC2 HPF Switch", WM8994_AIF1_ADC2_FILTERS, 12, 11, 1, 0),
++};
++
+ static const struct snd_kcontrol_new wm8994_eq_controls[] = {
+ SOC_SINGLE_TLV("AIF1DAC1 EQ1 Volume", WM8994_AIF1_DAC1_EQ_GAINS_1, 11, 31, 0,
+ 	       eq_tlv),
+@@ -4258,13 +4263,15 @@ static int wm8994_component_probe(struct snd_soc_component *component)
+ 	wm8994_handle_pdata(wm8994);
+ 
+ 	wm_hubs_add_analogue_controls(component);
+-	snd_soc_add_component_controls(component, wm8994_snd_controls,
+-			     ARRAY_SIZE(wm8994_snd_controls));
++	snd_soc_add_component_controls(component, wm8994_common_snd_controls,
++				       ARRAY_SIZE(wm8994_common_snd_controls));
+ 	snd_soc_dapm_new_controls(dapm, wm8994_dapm_widgets,
+ 				  ARRAY_SIZE(wm8994_dapm_widgets));
+ 
+ 	switch (control->type) {
+ 	case WM8994:
++		snd_soc_add_component_controls(component, wm8994_snd_controls,
++					       ARRAY_SIZE(wm8994_snd_controls));
+ 		snd_soc_dapm_new_controls(dapm, wm8994_specific_dapm_widgets,
+ 					  ARRAY_SIZE(wm8994_specific_dapm_widgets));
+ 		if (control->revision < 4) {
+@@ -4284,8 +4291,10 @@ static int wm8994_component_probe(struct snd_soc_component *component)
+ 		}
+ 		break;
+ 	case WM8958:
++		snd_soc_add_component_controls(component, wm8994_snd_controls,
++					       ARRAY_SIZE(wm8994_snd_controls));
+ 		snd_soc_add_component_controls(component, wm8958_snd_controls,
+-				     ARRAY_SIZE(wm8958_snd_controls));
++					       ARRAY_SIZE(wm8958_snd_controls));
+ 		snd_soc_dapm_new_controls(dapm, wm8958_dapm_widgets,
+ 					  ARRAY_SIZE(wm8958_dapm_widgets));
+ 		if (control->revision < 1) {
+-- 
+2.20.1
 
-This series allows devices to request guaranteed bandwidth for 
-themselves through the interconnect subsystem, without it DRAM freq will 
-still switch but you'll have problems like display corruption as it 
-turns on before freq goes up. You can check that probe worked by doing
-
-# cat /sys/kernel/debug/interconnect/interconnect_summary
-
---
-Regards,
-Leonard
 
 _______________________________________________
 linux-arm-kernel mailing list
