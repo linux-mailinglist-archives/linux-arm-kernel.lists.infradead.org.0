@@ -2,84 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6AA8FBAE57
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 09:14:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88218BAE7E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 09:29:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O7U2k9EB8ZtDSxRXIvmeUmxwcwL+Rm7PUEljQkTy3e0=; b=QTC+tKZLzk7s59
-	kvu0DTWCUCs5gUNurTmUceTiEcwPBlcMnDGmQRI2vQ3crQ+pRkaRoaQHrdi9ck+Olbjfg14Tk4BKs
-	m/UFoLCs8SVbzqs526ibwbe/loNmwmpq2L4RAHcMbcXYauxZqV5yMieH39aMiAbSOF0VAYpbdrUDp
-	4DTQczCebyMtgS2/jbBQKhgAi/WW9vyfXNK61VaBYlOvJrsydYSbBPKNEUVUNFvg748yc6Obzlch9
-	0HRjCrX3Bf20ussrCbR7gaiBLVWdPMOfJLVPSxpfkOKZzqa2dZtWiWKraGzlev9a6pJT1kYUVGop4
-	c6lWHmDH8l23KUs5D+fQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZMheVibTgDsEFemnivUNLXdGEghsWne1mrcD7vOUbEM=; b=hfcVKMTyh3gtfg
+	E21pe9vMyYit9pyp8HJLHk7q4nf7Nl4WHhK1vaWqY1YvoT8zd7IZk0g3Ghx+QiUuCAA9+9BW5q0D3
+	gVUnfg7q2x1WMEnqr/MqekpuGWrovNKzAHdjHz2qSxM1oGVkeAYrEHS10m4J9skSP+BrO9e6MaB21
+	gosPtTdMPIFQDeu32N2aMdfd9fuQWmDNC4dQsFynKwtKUW2BpR1fxX/s8DJPXKoDvX5KfdWTWpROI
+	krSd2BfyATBn7EmjFdHxc8EVp3rmXvojAibnWujYpZcnI5HSGl2RXFyK3xR32gFEa9ZCTMi8zXcOj
+	XyyebVq2SaXAT+UeRuoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCIY3-0001Dr-Lc; Mon, 23 Sep 2019 07:14:16 +0000
-Received: from mail-wr1-f41.google.com ([209.85.221.41])
+	id 1iCImA-0006M8-T4; Mon, 23 Sep 2019 07:28:50 +0000
+Received: from mail-sz.amlogic.com ([211.162.65.117])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCIXD-0001Cu-Cn
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 07:13:37 +0000
-Received: by mail-wr1-f41.google.com with SMTP id r3so12598502wrj.6
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Sep 2019 00:13:22 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=VSmtFloVdT4HdH3hqBjqDRmLKrDCbhhNO9xFa74XQG8=;
- b=ajrQedPr7HWPQ3gwFpCx7+ilDzn9AN4LOn+jj1kFNFLdXK4EMiOhZOQ12cd6M1SkN1
- ngakBqLXUlB3xC1wdjVuNEQOdd1IO9w2bJ2lq/V4UlPBkHFypoe28EXSYBr0YPC3iC9h
- T+xHjBNFOX0dae21uOmWhZn+KVmBeS2bWWp/zkKNApDT6wAFZNjc5ZzfXrqCeQGFeNHh
- JRmepkrWPTAyy7yVfEP/DaXQwmekhRnGbs9vFXfu7FFVLAedBC9nQtYyzzxZs3E9JVHa
- 7qxhO8WafT4J3kxTjHn/LlTaQ8D3o9axFNjKx8NmmjYMPAxY6OOT5ySYosNSgigcXl+q
- be+g==
-X-Gm-Message-State: APjAAAXt/HOGnLBhIn0zx8GMJ9d3E3e0UIxsqW0frLD9kWqSxwn4EUnQ
- 6S99IucUY0oUOnVTUbq7/28=
-X-Google-Smtp-Source: APXvYqzX7JpyywmwssCCGsX2MCih3fvE8W7RgPMGaeHxIMgUzIQu7rnAOAOtO0lypZquJEuBiDcaVQ==
-X-Received: by 2002:a5d:5381:: with SMTP id d1mr9285624wrv.315.1569222800656; 
- Mon, 23 Sep 2019 00:13:20 -0700 (PDT)
-Received: from pi3 ([194.230.155.145])
- by smtp.googlemail.com with ESMTPSA id a18sm20701185wrh.25.2019.09.23.00.13.19
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 23 Sep 2019 00:13:19 -0700 (PDT)
-Date: Mon, 23 Sep 2019 09:13:17 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Marek Szyprowski <m.szyprowski@samsung.com>
-Subject: Re: [RFT v3 4/8] ARM: dts: exynos: Remove MCT subnode for interrupt
- map on Exynos4210
-Message-ID: <20190923071317.GA4246@pi3>
-References: <20190921170152.5033-1-krzk@kernel.org>
- <CGME20190921203810epcas3p39f3d9e3224d2c5ef61c1e18df2ab403d@epcas3p3.samsung.com>
- <20190921170152.5033-4-krzk@kernel.org>
- <c1d02aa3-b5f2-1c5b-0b7b-8749e7c0ce9a@samsung.com>
+ id 1iCIlV-0006KP-5O; Mon, 23 Sep 2019 07:28:10 +0000
+Received: from [10.28.18.45] (10.28.18.45) by mail-sz.amlogic.com (10.28.11.5)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Mon, 23 Sep
+ 2019 15:29:00 +0800
+Subject: Re: [PATCH 2/3] pinctrl: meson-a1: add pinctrl driver for Meson A1 Soc
+To: Jerome Brunet <jbrunet@baylibre.com>
+References: <1568700442-18540-1-git-send-email-qianggui.song@amlogic.com>
+ <1568700442-18540-3-git-send-email-qianggui.song@amlogic.com>
+ <1jef0f46fj.fsf@starbuckisacylon.baylibre.com>
+ <73dc56bd-d6c5-1de7-e97e-91479a89a29e@amlogic.com>
+ <1j8sqn3tjt.fsf@starbuckisacylon.baylibre.com>
+ <45b97927-c771-808a-b214-509af6c16931@amlogic.com>
+ <1jk1a4b6c8.fsf@starbuckisacylon.baylibre.com>
+From: Qianggui Song <qianggui.song@amlogic.com>
+Message-ID: <2c476d5b-2c16-ede0-58c3-d83b286b7d8a@amlogic.com>
+Date: Mon, 23 Sep 2019 15:29:00 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <c1d02aa3-b5f2-1c5b-0b7b-8749e7c0ce9a@samsung.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <1jk1a4b6c8.fsf@starbuckisacylon.baylibre.com>
+Content-Language: en-US
+X-Originating-IP: [10.28.18.45]
+X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
+ (10.28.11.5)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_001326_954183_256B9FB5 
-X-CRM114-Status: GOOD (  12.28  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20190923_002809_204210_F699062A 
+X-CRM114-Status: GOOD (  21.68  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.41 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.41 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,37 +67,214 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Sylwester Nawrocki <snawrocki@kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Hanjie Lin <hanjie.lin@amlogic.com>,
+ Jianxin Pan <jianxin.pan@amlogic.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>, Linus Walleij <linus.walleij@linaro.org>,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Carlo Caione <carlo@caione.org>, linux-amlogic@lists.infradead.org,
+ Xingyu Chen <xingyu.chen@amlogic.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 23, 2019 at 08:56:46AM +0200, Marek Szyprowski wrote:
-> Hi Krzysztof,
+
+
+On 2019/9/20 0:26, Jerome Brunet wrote:
+> On Wed 18 Sep 2019 at 14:36, Qianggui Song <qianggui.song@amlogic.com> wrote:
 > 
-> On 21.09.2019 19:01, Krzysztof Kozlowski wrote:
-> > Multi Core Timer node has interrupts routed to two different parents -
-> > GIC and combiner.  This was modeled with a interrupt-map within a
-> > subnode but can be expressed in an easier and more common way, directly
-> > in the node itself.
+>> On 2019/9/17 22:07, Jerome Brunet wrote:
+>>>
+>>> On Tue 17 Sep 2019 at 13:51, Qianggui Song <qianggui.song@amlogic.com> wrote:
+>>>>>> diff --git a/drivers/pinctrl/meson/pinctrl-meson.c b/drivers/pinctrl/meson/pinctrl-meson.c
+>>>>>> index 8bba9d0..885b89d 100644
+>>>>>> --- a/drivers/pinctrl/meson/pinctrl-meson.c
+>>>>>> +++ b/drivers/pinctrl/meson/pinctrl-meson.c
+>>>>>> @@ -688,8 +688,12 @@ static int meson_pinctrl_parse_dt(struct meson_pinctrl *pc,
+>>>>>>  
+>>>>>>  	pc->reg_ds = meson_map_resource(pc, gpio_np, "ds");
+>>>>>>  	if (IS_ERR(pc->reg_ds)) {
+>>>>>> -		dev_dbg(pc->dev, "ds registers not found - skipping\n");
+>>>>>> -		pc->reg_ds = NULL;
+>>>>>> +		if (pc->data->reg_layout == A1_LAYOUT) {
+>>>>>> +			pc->reg_ds = pc->reg_pullen;
+>>>>>
+>>>>> IMO, this kind of ID based init fixup is not going to scale and will
+>>>>> lead to something difficult to maintain in the end.
+>>>>>
+>>>>> The way the different register sets interract with each other is already
+>>>>> pretty complex to follow.
+>>>>>
+>>>>> You could rework this in 2 different ways:
+>>>>> #1 - Have the generic function parse all the register sets and have all
+>>>>> drivers provide a specific (as in gxbb, gxl, axg, etc ...)  function to :
+>>>>>  - Verify the expected sets have been provided
+>>>>>  - Make assignement fixup as above if necessary
+>>>>>
+>>>>> #2 - Rework the driver to have only one single register region
+>>>>>  I think one of your colleague previously mentionned this was not
+>>>>>  possible. It is still unclear to me why ...
+>>>>>
+>>>> Appreciate your advice.  I have an idea based on #1, how about providing
+>>>> only two dt parse function, one is for chips before A1(the old one),
+>>>> another is for A1 and later chips that share the same layout. Assign
+>>>> these two functions to their own driver.
+>>>
+>>> That's roughly the same thing as your initial proposition with function
+>>> pointer instead of IDs ... IMO, this would still be a quick fix to
+>>> address your immediate topic instead of dealing with the driver as
+>>> whole, which is my concern here.
+>>>
+>> For #1. It would be like
+>> generic_parse_dt()
+>> {
+>> 	1. parse all register regions (mux gpio pull pull_en ds)
+>> 	
+>> 	2. call  specific function through function pointer in
+>>  	   meson_pinctrl_data.(each platform should have AO and EE two
+>>            specific functions for they are not the same)
+>> 	{
+>> 		do work you mentioned above
+>> 	}
+>> }
+>> right ?
+>> If that so, maybe there are a lot of duplicated codes
 > 
-> Maybe we should simply use 'interrupts-extended' based approach and 
-> simplify mct node even more (get rid of interrupt-parent, interrupts, 
-> size/address cells)?
+> Only if you make it so. Providing a callback and duplicating code are
+> not the same thing
+> 
+>> for most Socs share the same reg layout.
+> 
+> That's not really accurate:
+> 
+> So far they all have the "mux" and "gpio" region but
+> 
+> gxbb, gxl, axg, meson8 EE:
+>  has: pull, pull-en
+>  remap: non
+>  unsupported: ds
+> 
+> gxbb, gxl, axg, meson8 AO:
+>  has: pull
+>  remap: pull-en -> pull
+>  unsupported: ds
+> 
+> g12 and sm1 EE:
+>  has: pull, pull-en, ds
+>  remap: none
+> 
+> g12 and sm1 AO:
+>  has: ds
+>  remap: pull->gpio, pull_en->gpio
+> 
+> And now a1 chip remaps "ds" to "pull_en" ...
+> 
+> As said previouly all this is getting pretty difficult to follow and
+> maintain. Adding a proper callback for each meson pinctrl would make the
+> above explicit in the code ... which helps maintain thing, at least for
+> a while ...
+> 
+> Judging by the offsets between those regions, I still think one single
+> region would make things a whole lot simpler. If it is not possible to
+> map it with one single region, could you tell us why ? What non-pinctrl
+> related device do we have there ?
+>Here I mean duplicated is that m8/m8b/gxl/gxbb/axg use the same layout,
+while g12a/b/sm1 are the same, so don't need to implement every Socs
+parser functions just as I said below AXG type for m8/m8b/gxl/gxbb/axg,
+g12a type for g12a/b/sm1, the last one is for a1. three types functions
+(with ao and ee) can cover all platform. But I still consider that
+providing an extra meson_a1_pasert_dt like function for a1 or later is
+more simpler.
 
-Indeed, that looks like the tool for this job. Thanks for hint, I'll try
-it.
+The reason why we can not use one single region for previous Socs, it'
+that there is non-pinctrl related device for some Socs region.
+Take an example for g12a:
 
-Best regards,
-Krzysztof
+#define	PREG_PAD_GPIO0_EN_N	(0xff634400 + (0x010 << 2))
+#define	PREG_PAD_GPIO0_O	(0xff634400 + (0x011 << 2))
+#define	PREG_PAD_GPIO0_I	(0xff634400 + (0x012 << 2))
 
+	...continue region...
+
+#define	PAD_PULL_UP_EN_REG5	(0xff634400 + (0x04d << 2))
+
+	... ETH/NAND/VPU/TIMER...  a lot of no-pinctrl registers
+
+#define	PERIPHS_PIN_MUX_0	(0xff634400 + (0x0b0 << 2))
+
+	...continue region...
+
+#define	PERIPHS_PIN_MUX_F	(0xff634400 + (0x0bf << 2))
+
+	...no use region...
+
+#define	EFUSE_CFG_LOCK		(0xff634400 + (0x0c0 << 2))
+
+	...other EFUSE relative registers...
+	...no use region...
+
+#define	PAD_DS_REG0A		(0xff634400 + (0x0d0 << 2))
+
+	...continue region for all ds...
+
+#define	PAD_DS_REG5A		(0xff634400 + (0x0d6 << 2))
+
+So from the above we can see there are lots of other registers between
+gpio and ds register.When map gpio to ds region, they will bury a lot of
+other registers.
+
+>> So I guess five specific functions are
+>> enough: AXG and before(ao,ee), G12A(ao,ee) and A1(will place them in
+>> pinctrl_meson.c). Since m8 to AXG are the same register layout for both
+>> ee and ao, G12A with new feature ds and new ao register layout.
+>>
+>> Or I misunderstood the #1 ?
+>>>>>> +		} else {
+>>>>>> +			dev_dbg(pc->dev, "ds registers not found - skipping\n");
+>>>>>> +			pc->reg_ds = NULL;
+>>>>>> +		}
+>>>>>>  	}
+>>>>>>  
+>>>>>>  	return 0;
+>>>>>> diff --git a/drivers/pinctrl/meson/pinctrl-meson.h b/drivers/pinctrl/meson/pinctrl-meson.h
+>>>>>> index c696f32..3d0c58d 100644
+>>>>>> --- a/drivers/pinctrl/meson/pinctrl-meson.h
+>>>>>> +++ b/drivers/pinctrl/meson/pinctrl-meson.h
+>>>>>> @@ -80,6 +80,14 @@ enum meson_pinconf_drv {
+>>>>>>  };
+>>>>>>  
+>>>>>>  /**
+>>>>>> + * enum meson_reg_layout - identify two types of reg layout
+>>>>>> + */
+>>>>>> +enum meson_reg_layout {
+>>>>>> +	LEGACY_LAYOUT,
+>>>>>> +	A1_LAYOUT,
+>>>>>> +};
+>>>>>> +
+>>>>>> +/**
+>>>>>>   * struct meson bank
+>>>>>>   *
+>>>>>>   * @name:	bank name
+>>>>>> @@ -114,6 +122,7 @@ struct meson_pinctrl_data {
+>>>>>>  	unsigned int num_banks;
+>>>>>>  	const struct pinmux_ops *pmx_ops;
+>>>>>>  	void *pmx_data;
+>>>>>> +	unsigned int reg_layout;
+>>>>>>  };
+>>>>>>  
+>>>>>>  struct meson_pinctrl {
+>>>>>
+>>>>> .
+>>>>>
+>>>
+>>> .
+>>>
+> 
+> .
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
