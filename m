@@ -2,92 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3D66BB674
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 16:16:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C082ABB689
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 16:20:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=NsKWT7mt6SA2XqERVpsOWaGGh7P7wuGUU6/73TyH8Js=; b=jgGWdZGQw2lHtyYNzVTx361oBe
-	DsePMlWFidD53kkKGsf1oAL2A1nkZpui6dG1yxq9yCyrJTP5fe2OLqpDk+FKDpLdkw4zgItZ64RxC
-	AZSZLQwepzs2tdl6EIQ1QSR1k4bsrhvFV4xL3gLhA0lf6iwv7Kj7CE7BxFWmapdXlAp65X/JJu1gY
-	fUk6mOy7Ux45iA/VGfUVP9f9aq6wzVN1ogBnZXPS89KX+kGvsFxknMeu8Qh4qGWAskr2Y4s6jaoQI
-	fys8gyqjTl7X5WbbvjM/pVct7vUyNQXuso5isrlpsjUrzDCm1SG9Cnp8TWcQV/Asx6cAV1VblZrAa
-	axruhdVQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jggV6SkcQo1DMjx0G9vlujkO0CX9aY1Xza7PVmBGliA=; b=o0obuuvAmeTZDX
+	ci2kkLUx5Zl3WnnVD/L/6EPTvNaKMR3wuM11dCmp0UncW9urhkOq6Y9IaoMxlXKKLbZW7rYDXCpbm
+	viXK0CtXfOM2cMokcAAf+5eprW0SxoZan1UEDAulYKvwJhEvBNia8woa3sVk/d2Vgf3D1/ERMo3KQ
+	xTgDY+33ICXpbHrEYYYXU92eD0qQhhQPf7LOZeq1eVOGkYqx06Xt7196/AJNhKo2DAdWIy1L9nyIg
+	NeRC8N6GfNXsg+pv1P6M60amyq3ks9HFcQX1aNpy5J+oaDLaP0k8+QUfzPBETcO05mylAHF2RQ0wn
+	ndAz/T+BIVuwNNJ22XAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCP8x-0007rS-6L; Mon, 23 Sep 2019 14:16:47 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCP79-00052p-It; Mon, 23 Sep 2019 14:14:57 +0000
-Received: by mail-wr1-x444.google.com with SMTP id l11so14144133wrx.5;
- Mon, 23 Sep 2019 07:14:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=emn6Xm78NUBB7eMFob8g15MdJDVuO6SVCWjxeEKYexs=;
- b=AQK4lMPcxtR+M2HciPCKHjdVZMQlAk+u5FMh3022ObPdueA58SlZVPmX0g6yKqmGZD
- R+vE+etreamHI4/tNZqAWQcd1l+Dd3ZMAPanWFtGVGDZ3SRWroqNVGBjdsXzRHwmxT5N
- H5YiMbRpvpWU6s2/J5hSo4lJDMFsO2PWK1L0APr/Bd1M5oZezk3RUITUskPntmgZV0Tt
- fUoHzTYzk86EhLmo/VKYn3jpX4QLBbmOV8u7ZjcoHFZGaBZStbNcvfFm3uyZArUpUkRK
- BnSS/dKUpY+5qMXJZqRxAwCUJuYbGK2CsexM5klRJzypk4nca62akfx8DzTwO06JmiEb
- jujg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=emn6Xm78NUBB7eMFob8g15MdJDVuO6SVCWjxeEKYexs=;
- b=obo6lVDeHcbQNa1FTnKKImLnAdfC2F1mkURaZWWZuKliSSltTwRTOGW04oKs0Z/cm0
- zYeOpvPFcGOVWZP1fkIR3pJsHiagPfKNTEGcI4XZ91DwUwfQF5qjIxdRwLsleCkGCp06
- ZJjzl7g6nhTIPHexv+LXsWIE1vUiHfoWG+kcHBlTlTfuLcmjBI0lXF4XHC4tAakUhZw8
- 5bP7SuKFr6Uk6KNyayMQggDsa2qFIjbMZNsMGsPlPbP3PXiVNwHDl6KVMgie1JCgSizM
- XjGSsuaAPrUS5bJObafuwjGq2v6gdBH9plOMbbeSqsUKxcekESwPgvmZ9dCUJfQMQ/MK
- 1Y/Q==
-X-Gm-Message-State: APjAAAW4tn55PocFJLn8pxEFJxhewdOCJt9uVIFUDe5ft74Au+hlY0MI
- AhI4Bm7JQhB3fsTJ5oIQWa+JBixSmt4=
-X-Google-Smtp-Source: APXvYqwh0NsEcOZuw7i+bYvHLWhpl9fV3DpgTW7jM6D+8dThvZa8cMhFih1xhPkiLMosK7ht5U+3kw==
-X-Received: by 2002:a5d:4744:: with SMTP id o4mr21017647wrs.95.1569248094139; 
- Mon, 23 Sep 2019 07:14:54 -0700 (PDT)
-Received: from localhost.localdomain ([94.204.252.234])
- by smtp.gmail.com with ESMTPSA id h17sm7001700wmb.33.2019.09.23.07.14.51
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 23 Sep 2019 07:14:53 -0700 (PDT)
-From: Christian Hewitt <christianshewitt@gmail.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH v5 3/3] arm64: dts: meson-g12b-ugoos-am6: add initial
- device-tree
-Date: Mon, 23 Sep 2019 18:13:56 +0400
-Message-Id: <1569248036-6729-4-git-send-email-christianshewitt@gmail.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1569248036-6729-1-git-send-email-christianshewitt@gmail.com>
-References: <1569248036-6729-1-git-send-email-christianshewitt@gmail.com>
+	id 1iCPCf-0001Bz-P2; Mon, 23 Sep 2019 14:20:37 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iCPCU-0001AC-5Z
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 14:20:28 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E9C161000;
+ Mon, 23 Sep 2019 07:20:16 -0700 (PDT)
+Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8091C3F59C;
+ Mon, 23 Sep 2019 07:20:14 -0700 (PDT)
+Subject: Re: [RFC PATCH v2 01/12] smp: add generic SMP-stop support to common
+ code
+From: Cristian Marussi <cristian.marussi@arm.com>
+To: linux-kernel@vger.kernel.org
+References: <20190913181953.45748-1-cristian.marussi@arm.com>
+ <20190913181953.45748-2-cristian.marussi@arm.com>
+Message-ID: <1d7e90b7-71d8-3c12-9c1b-7049a1d7e32f@arm.com>
+Date: Mon, 23 Sep 2019 15:20:12 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <20190913181953.45748-2-cristian.marussi@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_071455_717005_77D73F36 
-X-CRM114-Status: GOOD (  17.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190923_072026_295366_560BA527 
+X-CRM114-Status: GOOD (  31.59  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (christianshewitt[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,617 +63,229 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Oleg Ivanov <balbes-150@yandex.ru>,
- Christian Hewitt <christianshewitt@gmail.com>
-MIME-Version: 1.0
+Cc: linux-arch@vger.kernel.org, mark.rutland@arm.com,
+ sparclinux@vger.kernel.org, dzickus@redhat.com, ehabkost@redhat.com,
+ peterz@infradead.org, catalin.marinas@arm.com, x86@kernel.org,
+ linux@armlinux.org.uk, davem@davemloft.net, hch@infradead.org,
+ takahiro.akashi@linaro.org, mingo@redhat.com, james.morse@arm.com,
+ hidehiro.kawai.ez@hitachi.com, tglx@linutronix.de, will@kernel.org,
+ dave.martin@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Ugoos AM6 is based on the Amlogic W400 (G12B) reference design using the
-S922X chipset. Hardware specifications:
+On 13/09/2019 19:19, Cristian Marussi wrote:
+> There was a lot of code duplication across architectures regarding the
+> SMP stop procedures' logic; moreover some of this duplicated code logic
+> happened to be similarly faulty across a few architectures: while fixing
+> such logic, move such generic logic as much as possible inside common
+> code.
+> 
+> Collect all the common logic related to SMP stop operations into the
+> common SMP code; any architecture willing to use such centralized logic
+> can select CONFIG_ARCH_USE_COMMON_STOP=y and provide the related
+> arch-specific helpers: in such a scenario, those architectures will
+> transparently start using the common code provided by smp_send_stop()
+> common function.
+> 
+> On the other side, Architectures not willing to use common code SMP stop
+> logic will simply leave CONFIG_ARCH_USE_COMMON_STOP undefined and carry
+> on executing their local arch-specific smp_send_stop() as before.
+> 
+> Suggested-by: Dave Martin <Dave.Martin@arm.com>
+> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+> ---
+> v1 --> v2
+> - moved related Kconfig to common code inside arch/Kconfig
+> - introduced additional CONFIG_USE_COMMON_STOP selected by
+>   CONFIG_ARCH_USE_COMMON_STOP
+> - introduced helpers to let architectures optionally alter
+>   the default common code behaviour while waiting for CPUs:
+>   change timeout or wait for ever. (will be needed by x86)
+> ---
+>  arch/Kconfig        |  7 +++++
+>  include/linux/smp.h | 55 +++++++++++++++++++++++++++++++++++++
+>  kernel/smp.c        | 67 +++++++++++++++++++++++++++++++++++++++++++++
+>  3 files changed, 129 insertions(+)
+> 
+> diff --git a/arch/Kconfig b/arch/Kconfig
+> index a7b57dd42c26..89766e6c0ac8 100644
+> --- a/arch/Kconfig
+> +++ b/arch/Kconfig
+> @@ -166,6 +166,13 @@ config ARCH_USE_BUILTIN_BSWAP
+>  	 instructions should set this. And it shouldn't hurt to set it
+>  	 on architectures that don't have such instructions.
+>  
+> +config ARCH_USE_COMMON_SMP_STOP
+> +       def_bool n
+> +
+> +config USE_COMMON_SMP_STOP
+> +       depends on SMP && ARCH_USE_COMMON_SMP_STOP
+> +       def_bool y
+> +
+>  config KRETPROBES
+>  	def_bool y
+>  	depends on KPROBES && HAVE_KRETPROBES
+> diff --git a/include/linux/smp.h b/include/linux/smp.h
+> index 6fc856c9eda5..381a14bfcd96 100644
+> --- a/include/linux/smp.h
+> +++ b/include/linux/smp.h
+> @@ -77,6 +77,61 @@ int smp_call_function_single_async(int cpu, call_single_data_t *csd);
+>   */
+>  extern void smp_send_stop(void);
+>  
+> +#ifdef CONFIG_USE_COMMON_SMP_STOP
+> +static atomic_t wait_forever;
+> +static atomic_t wait_timeout = ATOMIC_INIT(USEC_PER_SEC);
+> +
+> +/*
+> + * An Architecture can optionally decide to use this helper to change the
+> + * waiting behaviour of common STOP logic, forcing to wait forever for
+> + * all CPUs to be stopped.
+> + */
+> +static inline void smp_stop_set_wait_forever(int wait)
+> +{
+> +	atomic_set(&wait_forever, wait);
+> +	/* ensure wait atomic-op is visible */
+> +	smp_mb__after_atomic();
+> +}
+> +
 
-- 2GB LPDDR4 RAM
-- 16GB eMMC storage
-- 10/100/1000 Base-T Ethernet using External RGMII PHY
-- 802.11 a/b/g/b/ac + BT 5.0 sdio wireless (Ampak 6398S)
-- HDMI 2.0 (4k@60p) video
-- Composite video + 2-channel audio output on 3.5mm jack
-- S/PDIF audio output
-- Aux input
-- 1x USB 3.0
-- 3x USB 2.0
-- 1x micro SD card slot
+These new helpers I added in V2 to let x86 configure wait/timeout SMP common stop behavior
+are in fact deadly broken as of now since based on underlying static header-globals.
+I'll fix in V3.
 
-The device-tree is largely based on meson-g12b-odroid-n2 but with audio
-and USB config copied from meson-g12a-x96-max.
+Cheers
 
-Tested-by: Oleg Ivanov <balbes-150@yandex.ru>
-Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
----
- arch/arm64/boot/dts/amlogic/Makefile               |   1 +
- .../boot/dts/amlogic/meson-g12b-ugoos-am6.dts      | 557 +++++++++++++++++++++
- 2 files changed, 558 insertions(+)
- create mode 100644 arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts
+Cristian
 
-diff --git a/arch/arm64/boot/dts/amlogic/Makefile b/arch/arm64/boot/dts/amlogic/Makefile
-index 07b861f..21e2810 100644
---- a/arch/arm64/boot/dts/amlogic/Makefile
-+++ b/arch/arm64/boot/dts/amlogic/Makefile
-@@ -4,6 +4,7 @@ dtb-$(CONFIG_ARCH_MESON) += meson-g12a-sei510.dtb
- dtb-$(CONFIG_ARCH_MESON) += meson-g12a-u200.dtb
- dtb-$(CONFIG_ARCH_MESON) += meson-g12a-x96-max.dtb
- dtb-$(CONFIG_ARCH_MESON) += meson-g12b-odroid-n2.dtb
-+dtb-$(CONFIG_ARCH_MESON) += meson-g12b-ugoos-am6.dtb
- dtb-$(CONFIG_ARCH_MESON) += meson-gxbb-nanopi-k2.dtb
- dtb-$(CONFIG_ARCH_MESON) += meson-gxbb-nexbox-a95x.dtb
- dtb-$(CONFIG_ARCH_MESON) += meson-gxbb-odroidc2.dtb
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts
-new file mode 100644
-index 0000000..ccd0bce
---- /dev/null
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts
-@@ -0,0 +1,557 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (c) 2019 BayLibre, SAS
-+ * Author: Neil Armstrong <narmstrong@baylibre.com>
-+ * Copyright (c) 2019 Christian Hewitt <christianshewitt@gmail.com>
-+ */
-+
-+/dts-v1/;
-+
-+#include "meson-g12b.dtsi"
-+#include "meson-g12b-s922x.dtsi"
-+#include <dt-bindings/input/input.h>
-+#include <dt-bindings/gpio/meson-g12a-gpio.h>
-+#include <dt-bindings/sound/meson-g12a-tohdmitx.h>
-+
-+/ {
-+	compatible = "ugoos,am6", "amlogic,g12b";
-+	model = "Ugoos AM6";
-+
-+	aliases {
-+		serial0 = &uart_AO;
-+		ethernet0 = &ethmac;
-+	};
-+
-+	chosen {
-+		stdout-path = "serial0:115200n8";
-+	};
-+
-+	memory@0 {
-+		device_type = "memory";
-+		reg = <0x0 0x0 0x0 0x40000000>;
-+	};
-+
-+	emmc_pwrseq: emmc-pwrseq {
-+		compatible = "mmc-pwrseq-emmc";
-+		reset-gpios = <&gpio BOOT_12 GPIO_ACTIVE_LOW>;
-+	};
-+
-+	sdio_pwrseq: sdio-pwrseq {
-+		compatible = "mmc-pwrseq-simple";
-+		reset-gpios = <&gpio GPIOX_6 GPIO_ACTIVE_LOW>;
-+		clocks = <&wifi32k>;
-+		clock-names = "ext_clock";
-+	};
-+
-+	spdif_dit: audio-codec-1 {
-+		#sound-dai-cells = <0>;
-+		compatible = "linux,spdif-dit";
-+		status = "okay";
-+		sound-name-prefix = "DIT";
-+	};
-+
-+	flash_1v8: regulator-flash_1v8 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "FLASH_1V8";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+		vin-supply = <&vcc_3v3>;
-+		regulator-always-on;
-+	};
-+
-+	main_12v: regulator-main_12v {
-+		compatible = "regulator-fixed";
-+		regulator-name = "12V";
-+		regulator-min-microvolt = <12000000>;
-+		regulator-max-microvolt = <12000000>;
-+		regulator-always-on;
-+	};
-+
-+	vcc_5v: regulator-vcc_5v {
-+		compatible = "regulator-fixed";
-+		regulator-name = "VCC_5V";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		vin-supply = <&main_12v>;
-+
-+		gpio = <&gpio GPIOH_8 GPIO_OPEN_DRAIN>;
-+		enable-active-high;
-+	};
-+
-+	vcc_1v8: regulator-vcc_1v8 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "VCC_1V8";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+		vin-supply = <&vcc_3v3>;
-+		regulator-always-on;
-+	};
-+
-+	vcc_3v3: regulator-vcc_3v3 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "VCC_3V3";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		vin-supply = <&vddao_3v3>;
-+		regulator-always-on;
-+		/* FIXME: actually controlled by VDDCPU_B_EN */
-+	};
-+
-+	vddcpu_a: regulator-vddcpu-a {
-+		/*
-+		 * MP1653 Regulator.
-+		 */
-+		compatible = "pwm-regulator";
-+
-+		regulator-name = "VDDCPU_A";
-+		regulator-min-microvolt = <721000>;
-+		regulator-max-microvolt = <1022000>;
-+
-+		vin-supply = <&main_12v>;
-+
-+		pwms = <&pwm_ab 0 1250 0>;
-+		pwm-dutycycle-range = <100 0>;
-+
-+		regulator-boot-on;
-+		regulator-always-on;
-+	};
-+
-+	vddcpu_b: regulator-vddcpu-b {
-+		/*
-+		 * MP1652 Regulator.
-+		 */
-+		compatible = "pwm-regulator";
-+
-+		regulator-name = "VDDCPU_B";
-+		regulator-min-microvolt = <721000>;
-+		regulator-max-microvolt = <1022000>;
-+
-+		vin-supply = <&main_12v>;
-+
-+		pwms = <&pwm_AO_cd 1 1250 0>;
-+		pwm-dutycycle-range = <100 0>;
-+
-+		regulator-boot-on;
-+		regulator-always-on;
-+	};
-+
-+	usb1_pow: regulator-usb1-pow {
-+		compatible = "regulator-fixed";
-+		regulator-name = "USB1_POW";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		vin-supply = <&vcc_5v>;
-+
-+		/* connected to SY6280A Power Switch */
-+		gpio = <&gpio GPIOA_8 GPIO_ACTIVE_HIGH>;
-+		enable-active-high;
-+	};
-+
-+	usb_pwr_en: regulator-usb-pwr-en {
-+		compatible = "regulator-fixed";
-+		regulator-name = "USB_PWR_EN";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		vin-supply = <&vcc_5v>;
-+
-+		/* Connected to USB3 Type-A Port power enable */
-+		gpio = <&gpio GPIOAO_7 GPIO_ACTIVE_HIGH>;
-+		enable-active-high;
-+	};
-+
-+	vddao_1v8: regulator-vddao-1v8 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "VDDAO_1V8";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+		vin-supply = <&vddao_3v3>;
-+		regulator-always-on;
-+	};
-+
-+	vddao_3v3: regulator-vddao-3v3 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "VDDAO_3V3";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		vin-supply = <&main_12v>;
-+		regulator-always-on;
-+	};
-+
-+	cvbs-connector {
-+		compatible = "composite-video-connector";
-+
-+		port {
-+			cvbs_connector_in: endpoint {
-+				remote-endpoint = <&cvbs_vdac_out>;
-+			};
-+		};
-+	};
-+
-+	hdmi-connector {
-+		compatible = "hdmi-connector";
-+		type = "a";
-+
-+		port {
-+			hdmi_connector_in: endpoint {
-+				remote-endpoint = <&hdmi_tx_tmds_out>;
-+			};
-+		};
-+	};
-+
-+	sound {
-+		compatible = "amlogic,axg-sound-card";
-+		model = "G12B-UGOOS-AM6";
-+		audio-aux-devs = <&tdmout_b>;
-+		audio-routing = "TDMOUT_B IN 0", "FRDDR_A OUT 1",
-+				"TDMOUT_B IN 1", "FRDDR_B OUT 1",
-+				"TDMOUT_B IN 2", "FRDDR_C OUT 1",
-+				"TDM_B Playback", "TDMOUT_B OUT",
-+				"SPDIFOUT IN 0", "FRDDR_A OUT 3",
-+				"SPDIFOUT IN 1", "FRDDR_B OUT 3",
-+				"SPDIFOUT IN 2", "FRDDR_C OUT 3";
-+
-+		assigned-clocks = <&clkc CLKID_MPLL2>,
-+				  <&clkc CLKID_MPLL0>,
-+				  <&clkc CLKID_MPLL1>;
-+		assigned-clock-parents = <0>, <0>, <0>;
-+		assigned-clock-rates = <294912000>,
-+				       <270950400>,
-+				       <393216000>;
-+		status = "okay";
-+
-+		dai-link-0 {
-+			sound-dai = <&frddr_a>;
-+		};
-+
-+		dai-link-1 {
-+			sound-dai = <&frddr_b>;
-+		};
-+
-+		dai-link-2 {
-+			sound-dai = <&frddr_c>;
-+		};
-+
-+		/* 8ch hdmi interface */
-+		dai-link-3 {
-+			sound-dai = <&tdmif_b>;
-+			dai-format = "i2s";
-+			dai-tdm-slot-tx-mask-0 = <1 1>;
-+			dai-tdm-slot-tx-mask-1 = <1 1>;
-+			dai-tdm-slot-tx-mask-2 = <1 1>;
-+			dai-tdm-slot-tx-mask-3 = <1 1>;
-+			mclk-fs = <256>;
-+
-+			codec {
-+				sound-dai = <&tohdmitx TOHDMITX_I2S_IN_B>;
-+			};
-+		};
-+
-+		/* spdif hdmi or toslink interface */
-+		dai-link-4 {
-+			sound-dai = <&spdifout>;
-+
-+			codec-0 {
-+				sound-dai = <&spdif_dit>;
-+			};
-+
-+			codec-1 {
-+				sound-dai = <&tohdmitx TOHDMITX_SPDIF_IN_A>;
-+			};
-+		};
-+
-+		/* spdif hdmi interface */
-+		dai-link-5 {
-+			sound-dai = <&spdifout_b>;
-+
-+			codec {
-+				sound-dai = <&tohdmitx TOHDMITX_SPDIF_IN_B>;
-+			};
-+		};
-+
-+		/* hdmi glue */
-+		dai-link-6 {
-+			sound-dai = <&tohdmitx TOHDMITX_I2S_OUT>;
-+
-+			codec {
-+				sound-dai = <&hdmi_tx>;
-+			};
-+		};
-+	};
-+
-+	wifi32k: wifi32k {
-+		compatible = "pwm-clock";
-+		#clock-cells = <0>;
-+		clock-frequency = <32768>;
-+		pwms = <&pwm_ef 0 30518 0>; /* PWM_E at 32.768KHz */
-+	};
-+};
-+
-+&arb {
-+	status = "okay";
-+};
-+
-+&cec_AO {
-+	pinctrl-0 = <&cec_ao_a_h_pins>;
-+	pinctrl-names = "default";
-+	status = "disabled";
-+	hdmi-phandle = <&hdmi_tx>;
-+};
-+
-+&cecb_AO {
-+	pinctrl-0 = <&cec_ao_b_h_pins>;
-+	pinctrl-names = "default";
-+	status = "okay";
-+	hdmi-phandle = <&hdmi_tx>;
-+};
-+
-+&clkc_audio {
-+	status = "okay";
-+};
-+
-+&cpu0 {
-+	cpu-supply = <&vddcpu_b>;
-+	operating-points-v2 = <&cpu_opp_table_0>;
-+	clocks = <&clkc CLKID_CPU_CLK>;
-+	clock-latency = <50000>;
-+};
-+
-+&cpu1 {
-+	cpu-supply = <&vddcpu_b>;
-+	operating-points-v2 = <&cpu_opp_table_0>;
-+	clocks = <&clkc CLKID_CPU_CLK>;
-+	clock-latency = <50000>;
-+};
-+
-+&cpu100 {
-+	cpu-supply = <&vddcpu_a>;
-+	operating-points-v2 = <&cpub_opp_table_1>;
-+	clocks = <&clkc CLKID_CPUB_CLK>;
-+	clock-latency = <50000>;
-+};
-+
-+&cpu101 {
-+	cpu-supply = <&vddcpu_a>;
-+	operating-points-v2 = <&cpub_opp_table_1>;
-+	clocks = <&clkc CLKID_CPUB_CLK>;
-+	clock-latency = <50000>;
-+};
-+
-+&cpu102 {
-+	cpu-supply = <&vddcpu_a>;
-+	operating-points-v2 = <&cpub_opp_table_1>;
-+	clocks = <&clkc CLKID_CPUB_CLK>;
-+	clock-latency = <50000>;
-+};
-+
-+&cpu103 {
-+	cpu-supply = <&vddcpu_a>;
-+	operating-points-v2 = <&cpub_opp_table_1>;
-+	clocks = <&clkc CLKID_CPUB_CLK>;
-+	clock-latency = <50000>;
-+};
-+
-+&cvbs_vdac_port {
-+	cvbs_vdac_out: endpoint {
-+		remote-endpoint = <&cvbs_connector_in>;
-+	};
-+};
-+
-+&ext_mdio {
-+	external_phy: ethernet-phy@0 {
-+		/* Realtek RTL8211F (0x001cc916) */
-+		reg = <0>;
-+		max-speed = <1000>;
-+
-+		reset-assert-us = <10000>;
-+		reset-deassert-us = <30000>;
-+		reset-gpios = <&gpio GPIOZ_15 (GPIO_ACTIVE_LOW | GPIO_OPEN_DRAIN)>;
-+
-+		interrupt-parent = <&gpio_intc>;
-+		/* MAC_INTR on GPIOZ_14 */
-+		interrupts = <26 IRQ_TYPE_LEVEL_LOW>;
-+	};
-+};
-+
-+&ethmac {
-+	pinctrl-0 = <&eth_pins>, <&eth_rgmii_pins>;
-+	pinctrl-names = "default";
-+	status = "okay";
-+	phy-mode = "rgmii";
-+	phy-handle = <&external_phy>;
-+	amlogic,tx-delay-ns = <2>;
-+};
-+
-+&frddr_a {
-+	status = "okay";
-+};
-+
-+&frddr_b {
-+	status = "okay";
-+};
-+
-+&frddr_c {
-+	status = "okay";
-+};
-+
-+&hdmi_tx {
-+	status = "okay";
-+	pinctrl-0 = <&hdmitx_hpd_pins>, <&hdmitx_ddc_pins>;
-+	pinctrl-names = "default";
-+	hdmi-supply = <&vcc_5v>;
-+};
-+
-+&hdmi_tx_tmds_port {
-+	hdmi_tx_tmds_out: endpoint {
-+		remote-endpoint = <&hdmi_connector_in>;
-+	};
-+};
-+
-+&ir {
-+	status = "okay";
-+	pinctrl-0 = <&remote_input_ao_pins>;
-+	pinctrl-names = "default";
-+	linux,rc-map-name = "rc-khadas";
-+};
-+
-+&pwm_ab {
-+	pinctrl-0 = <&pwm_a_e_pins>;
-+	pinctrl-names = "default";
-+	clocks = <&xtal>;
-+	clock-names = "clkin0";
-+	status = "okay";
-+};
-+
-+&pwm_AO_cd {
-+	pinctrl-0 = <&pwm_ao_d_e_pins>;
-+	pinctrl-names = "default";
-+	clocks = <&xtal>;
-+	clock-names = "clkin1";
-+	status = "okay";
-+};
-+
-+&pwm_ef {
-+	pinctrl-0 = <&pwm_e_pins>;
-+	pinctrl-names = "default";
-+	clocks = <&xtal>;
-+	clock-names = "clkin0";
-+	status = "okay";
-+};
-+
-+/* SDIO */
-+&sd_emmc_a {
-+	status = "okay";
-+	pinctrl-0 = <&sdio_pins>;
-+	pinctrl-1 = <&sdio_clk_gate_pins>;
-+	pinctrl-names = "default", "clk-gate";
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+
-+	bus-width = <4>;
-+	cap-sd-highspeed;
-+	sd-uhs-sdr50;
-+	max-frequency = <100000000>;
-+
-+	non-removable;
-+	disable-wp;
-+
-+	mmc-pwrseq = <&sdio_pwrseq>;
-+
-+	vmmc-supply = <&vddao_3v3>;
-+	vqmmc-supply = <&vddao_1v8>;
-+
-+	brcmf: wifi@1 {
-+		reg = <1>;
-+		compatible = "brcm,bcm4329-fmac";
-+	};
-+};
-+
-+/* SD card */
-+&sd_emmc_b {
-+	status = "okay";
-+	pinctrl-0 = <&sdcard_c_pins>;
-+	pinctrl-1 = <&sdcard_clk_gate_c_pins>;
-+	pinctrl-names = "default", "clk-gate";
-+
-+	bus-width = <4>;
-+	cap-sd-highspeed;
-+	max-frequency = <50000000>;
-+	disable-wp;
-+
-+	cd-gpios = <&gpio GPIOC_6 GPIO_ACTIVE_LOW>;
-+	vmmc-supply = <&vddao_3v3>;
-+	vqmmc-supply = <&vddao_3v3>;
-+};
-+
-+/* eMMC */
-+&sd_emmc_c {
-+	status = "okay";
-+	pinctrl-0 = <&emmc_pins>, <&emmc_ds_pins>;
-+	pinctrl-1 = <&emmc_clk_gate_pins>;
-+	pinctrl-names = "default", "clk-gate";
-+
-+	bus-width = <8>;
-+	cap-mmc-highspeed;
-+	max-frequency = <100000000>;
-+	disable-wp;
-+
-+	mmc-pwrseq = <&emmc_pwrseq>;
-+	vmmc-supply = <&vcc_3v3>;
-+	vqmmc-supply = <&flash_1v8>;
-+};
-+
-+&spdifout {
-+	pinctrl-0 = <&spdif_out_h_pins>;
-+	pinctrl-names = "default";
-+	status = "okay";
-+};
-+
-+&spdifout_b {
-+	status = "okay";
-+};
-+
-+&tdmif_b {
-+	status = "okay";
-+};
-+
-+&tdmout_b {
-+	status = "okay";
-+};
-+
-+&tohdmitx {
-+	status = "okay";
-+};
-+
-+&uart_A {
-+	status = "okay";
-+	pinctrl-0 = <&uart_a_pins>, <&uart_a_cts_rts_pins>;
-+	pinctrl-names = "default";
-+	uart-has-rtscts;
-+
-+	bluetooth {
-+		compatible = "brcm,bcm43438-bt";
-+		shutdown-gpios = <&gpio GPIOX_17 GPIO_ACTIVE_HIGH>;
-+		max-speed = <2000000>;
-+		clocks = <&wifi32k>;
-+	clock-names = "lpo";
-+	};
-+};
-+
-+&uart_AO {
-+	status = "okay";
-+	pinctrl-0 = <&uart_ao_a_pins>;
-+	pinctrl-names = "default";
-+};
-+
-+&usb {
-+	status = "okay";
-+	dr_mode = "host";
-+	vbus-regulator = <&usb_pwr_en>;
-+};
-+
-+&usb2_phy0 {
-+	phy-supply = <&usb1_pow>;
-+};
-+
-+&usb2_phy1 {
-+	phy-supply = <&usb1_pow>;
-+};
--- 
-2.7.4
+
+> +/*
+> + * An Architecture can optionally decide to use this helper to change the
+> + * waiting timeout of common STOP logic. A ZERO timeout means no timeout
+> + * at all as long as wait_forever was not previously set.
+> + *
+> + * Note that wait_forever and timeout must remain individually selectable:
+> + * so you can temporarily request wait_forever while keeping the same timeout
+> + * settings.
+> + */
+> +static inline void smp_stop_set_wait_timeout_us(unsigned long timeout)
+> +{
+> +	atomic_set(&wait_timeout, timeout);
+> +	/* ensure timeout atomic-op is visible */
+> +	smp_mb__after_atomic();
+> +}
+> +
+> +/* Retrieve the current wait settings. */
+> +static inline bool smp_stop_get_wait_timeout_us(unsigned long *timeout)
+> +{
+> +	if (timeout)
+> +		*timeout = atomic_read(&wait_timeout);
+> +	return atomic_read(&wait_forever);
+> +}
+> +
+> +/*
+> + * Any Architecture willing to use STOP common logic implementation
+> + * MUST at least provide the arch_smp_stop_call() helper which is in
+> + * charge of its own arch-specific CPU-stop mechanism.
+> + */
+> +extern void arch_smp_stop_call(cpumask_t *cpus);
+> +
+> +/*
+> + * An Architecture CAN also provide the arch_smp_cpus_stop_complete()
+> + * dedicated helper, to perform any final arch-specific operation on
+> + * the local CPU once the other CPUs have been successfully stopped.
+> + */
+> +void arch_smp_cpus_stop_complete(void);
+> +#endif
+> +
+>  /*
+>   * sends a 'reschedule' event to another CPU:
+>   */
+> diff --git a/kernel/smp.c b/kernel/smp.c
+> index 7dbcb402c2fc..72f99bf13fd0 100644
+> --- a/kernel/smp.c
+> +++ b/kernel/smp.c
+> @@ -20,6 +20,7 @@
+>  #include <linux/sched.h>
+>  #include <linux/sched/idle.h>
+>  #include <linux/hypervisor.h>
+> +#include <linux/delay.h>
+>  
+>  #include "smpboot.h"
+>  
+> @@ -817,3 +818,69 @@ int smp_call_on_cpu(unsigned int cpu, int (*func)(void *), void *par, bool phys)
+>  	return sscs.ret;
+>  }
+>  EXPORT_SYMBOL_GPL(smp_call_on_cpu);
+> +
+> +#ifdef CONFIG_USE_COMMON_SMP_STOP
+> +void __weak arch_smp_cpus_stop_complete(void) { }
+> +
+> +static inline bool any_other_cpus_online(cpumask_t *mask,
+> +					 unsigned int this_cpu_id)
+> +{
+> +	cpumask_copy(mask, cpu_online_mask);
+> +	cpumask_clear_cpu(this_cpu_id, mask);
+> +
+> +	return !cpumask_empty(mask);
+> +}
+> +
+> +/*
+> + * This centralizes the common logic to:
+> + *
+> + *  - evaluate which CPUs are online and needs to be notified for stop,
+> + *    while considering properly the status of the calling CPU
+> + *
+> + *  - call the arch-specific helpers to request the effective stop
+> + *
+> + *  - wait for the stop operation to be completed across all involved CPUs
+> + *    monitoring the cpu_online_mask
+> + */
+> +void smp_send_stop(void)
+> +{
+> +	unsigned int this_cpu_id;
+> +	cpumask_t mask;
+> +
+> +	this_cpu_id = smp_processor_id();
+> +	if (any_other_cpus_online(&mask, this_cpu_id)) {
+> +		bool wait;
+> +		unsigned long timeout;
+> +		unsigned int this_cpu_online = cpu_online(this_cpu_id);
+> +
+> +		if (system_state <= SYSTEM_RUNNING)
+> +			pr_crit("stopping secondary CPUs\n");
+> +		arch_smp_stop_call(&mask);
+> +
+> +		/*
+> +		 * Defaults to wait up to one second for other CPUs to stop;
+> +		 * architectures can modify the default timeout or request
+> +		 * to wait forever.
+> +		 *
+> +		 * Here we rely simply on cpu_online_mask to sync with
+> +		 * arch-specific stop code without bloating the code with an
+> +		 * additional atomic_t ad-hoc counter.
+> +		 *
+> +		 * As a consequence we'll need proper explicit memory barriers
+> +		 * in case the other CPUs running the arch-specific stop-code
+> +		 * would need to commit to memory some data (like saved_regs).
+> +		 */
+> +		wait = smp_stop_get_wait_timeout_us(&timeout);
+> +		while (num_online_cpus() > this_cpu_online &&
+> +		       (wait || timeout--))
+> +			udelay(1);
+> +		/* ensure any stopping-CPUs memory access is made visible */
+> +		smp_rmb();
+> +		if (num_online_cpus() > this_cpu_online)
+> +			pr_warn("failed to stop secondary CPUs %*pbl\n",
+> +				cpumask_pr_args(cpu_online_mask));
+> +	}
+> +	/* Perform final (possibly arch-specific) work on this CPU */
+> +	arch_smp_cpus_stop_complete();
+> +}
+> +#endif
+> 
 
 
 _______________________________________________
