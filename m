@@ -2,59 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39D4DBB135
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 11:17:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37456BB13D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 11:18:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LAE1Wc7itbUK10ovJHwRZs5Zhkb6tAA6yqeommgdqbY=; b=PiGr4TiVGze9pE
-	THG747Uvgtu+3LZWnycMjpYh/IInPTJtOSUoqwPI0a03rFF2mw4PCysggQ2AXQftqGlcfZiiffPkr
-	JLQxYD0JVFB/6EAqU7+ITbjYhbdgNHPlB69p3+7NGzlfYiE3c1KtktFWdIbmoUnRXafgHIElHF+Ie
-	8nI+UO26SOfUFoxwh7yZS8m4pGzmv+EgqS9vdg3q0npCd4sj1YRCBdFBhL4iqofTJ/uxBkJmjs+rA
-	3lc5sfeVizpdqZk0jW4CIsq5qSOZnf4C7WxdP5Tp4ifpZQbrEaH7w5mDxvLhrpfYzIiUab46iDP7M
-	zAv6p8raUBIIMQ/aCmCA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Aru32Ixc+/Z3n8p+dzPd00UYAyawTQwxyF7rX1Pd6uU=; b=GcDRTtAHBWkjph
+	O4Hkp5obm1BLTbz8r/jQdUDw5nkS8jcetZAFx1ohPZtK8gMfEGjtSyCz96DWPRIudBLVK1dYHpdsO
+	oI2wLZ3CbLbjNWyu3+nR7mUy5Q8KhaCmHGjWBkyVs5vXwby2f1rrdivTORJVJaV86oI2N4GmiwhXh
+	jh86YYbVK2E5TPQPanT1pHKGR+srO9GjW3XNssW64mgXQ6TOQ8RU4O5sGz2ohAgxEZXNrlZRin1Cv
+	mR4UVllbGseCpCsMPcQZB7DKrg5XMJFEgbqYNZBilxf/WCrNIlE/n31a0hUwPonBfoblgTXqKgiXN
+	NhmVrDoy1p8+nZO3eKag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCKTE-0002LO-QL; Mon, 23 Sep 2019 09:17:24 +0000
-Received: from 9.mo178.mail-out.ovh.net ([46.105.75.45])
+	id 1iCKUK-0002vR-IP; Mon, 23 Sep 2019 09:18:32 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCKSy-0002I0-9h
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 09:17:10 +0000
-Received: from player718.ha.ovh.net (unknown [10.108.42.23])
- by mo178.mail-out.ovh.net (Postfix) with ESMTP id 60BBB7A0AD
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Sep 2019 11:17:03 +0200 (CEST)
-Received: from armadeus.com (lfbn-1-7591-179.w90-126.abo.wanadoo.fr
- [90.126.248.179])
- (Authenticated sender: sebastien.szymanski@armadeus.com)
- by player718.ha.ovh.net (Postfix) with ESMTPSA id BC385A087C8B;
- Mon, 23 Sep 2019 09:16:50 +0000 (UTC)
-From: =?UTF-8?q?S=C3=A9bastien=20Szymanski?= <sebastien.szymanski@armadeus.com>
-To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>
-Subject: [PATCH 1/1] ARM: dts: imx28: add poweroff support
-Date: Mon, 23 Sep 2019 11:17:00 +0200
-Message-Id: <20190923091700.22517-1-sebastien.szymanski@armadeus.com>
-X-Mailer: git-send-email 2.21.0
+ id 1iCKTp-0002ht-4x
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 09:18:03 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iCKTc-0005wP-Px; Mon, 23 Sep 2019 11:17:48 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iCKTZ-0001wK-TP; Mon, 23 Sep 2019 11:17:45 +0200
+Date: Mon, 23 Sep 2019 11:17:45 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Russell King <linux@armlinux.org.uk>
+Subject: Re: [PATCH 1/4] pwm: mxs: implement ->apply
+Message-ID: <20190923091745.ehvz4zi2riyanmug@pengutronix.de>
+References: <20190923081348.6843-1-linux@rasmusvillemoes.dk>
+ <20190923081348.6843-2-linux@rasmusvillemoes.dk>
+ <20190923082459.huqpbz5eseonkscv@pengutronix.de>
+ <a6407644-0b5b-ba46-9435-0d14be9066a5@rasmusvillemoes.dk>
 MIME-Version: 1.0
-X-Ovh-Tracer-Id: 10200090206580266236
-X-VR-SPAMSTATE: OK
-X-VR-SPAMSCORE: -100
-X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgedufedrvdekgddugecutefuodetggdotefrodftvfcurfhrohhfihhlvgemucfqggfjpdevjffgvefmvefgnecuuegrihhlohhuthemucehtddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
+Content-Disposition: inline
+In-Reply-To: <a6407644-0b5b-ba46-9435-0d14be9066a5@rasmusvillemoes.dk>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_021708_503660_4805C8D2 
-X-CRM114-Status: GOOD (  11.10  )
+X-CRM114-CacheID: sfid-20190923_021801_204432_8692EBA0 
+X-CRM114-Status: GOOD (  13.13  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.105.75.45 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,30 +71,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Julien Boibessot <julien.boibessot@armadeus.com>,
- Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, linux-pwm@vger.kernel.org,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VGhpcyBhZGQgcG93ZXJvZmYgc3VwcG9ydCB1c2luZyB0aGUgZ2VuZXJpYyBzeXNjb24tcG93ZXJv
-ZmYgZHJpdmVyLgoKU2lnbmVkLW9mZi1ieTogU8OpYmFzdGllbiBTenltYW5za2kgPHNlYmFzdGll
-bi5zenltYW5za2lAYXJtYWRldXMuY29tPgotLS0KIGFyY2gvYXJtL2Jvb3QvZHRzL2lteDI4LmR0
-c2kgfCAxMCArKysrKysrKystCiAxIGZpbGUgY2hhbmdlZCwgOSBpbnNlcnRpb25zKCspLCAxIGRl
-bGV0aW9uKC0pCgpkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvaW14MjguZHRzaSBiL2Fy
-Y2gvYXJtL2Jvb3QvZHRzL2lteDI4LmR0c2kKaW5kZXggZTE0ZDhlZjAxNThiLi4zN2ZhODEzMWEw
-MjIgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL2lteDI4LmR0c2kKKysrIGIvYXJjaC9h
-cm0vYm9vdC9kdHMvaW14MjguZHRzaQpAQCAtMTExNCw4ICsxMTE0LDE2IEBACiAJCQl9OwogCiAJ
-CQlwb3dlcjogcG93ZXJAODAwNDQwMDAgeworCQkJCWNvbXBhdGlibGUgPSAic3lzY29uIiwgInNp
-bXBsZS1tZmQiOwogCQkJCXJlZyA9IDwweDgwMDQ0MDAwIDB4MjAwMD47Ci0JCQkJc3RhdHVzID0g
-ImRpc2FibGVkIjsKKworCQkJCW14c19wb3dlcm9mZjogbXhzLXBvd2Vyb2ZmIHsKKwkJCQkJY29t
-cGF0aWJsZSA9ICJzeXNjb24tcG93ZXJvZmYiOworCQkJCQlyZWdtYXAgPSA8JnBvd2VyPjsKKwkJ
-CQkJb2Zmc2V0ID0gPDB4MTA0PjsKKwkJCQkJdmFsdWUgPSA8MHgzRTc3MDAwMT47CisJCQkJCXN0
-YXR1cyA9ICJkaXNhYmxlZCI7CisJCQkJfTsKIAkJCX07CiAKIAkJCXNhaWYxOiBzYWlmQDgwMDQ2
-MDAwIHsKLS0gCjIuMjEuMAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hello,
+
+[expanded the recipents to include RMK and the clk list]
+
+On Mon, Sep 23, 2019 at 11:04:39AM +0200, Rasmus Villemoes wrote:
+> On 23/09/2019 10.24, Uwe Kleine-K=F6nig wrote:
+> > Also there is a bug already in .config: You are not supposed to call
+> > clk_get_rate if the clk might be off.
+> =
+
+> Interesting, I didn't know that. So the prepare_enable logic needs to be
+> moved before we start computing the period/duty cycles. Do you know why
+> it has apparently worked so far? I would have thought such a rule would
+> be enforced by the clock framework, or at least produced a warning.
+
+FTR: This is documented in the kerneldoc code comment to clk_get_rate in
+include/linux/clk.h.
+
+Assuming this is relevant, it might indeed make sense to add a
+WARN_ONCE for this.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
