@@ -2,60 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74D07BACB2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 04:34:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30A04BACBE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 04:43:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H5qEI1IfF3HNKICiYbUebby8lrqASJaZj0v4s13h0vc=; b=FkUP+x22ONYQGU
-	ZeCKiz1pTwqTpKu2I9YP0G/jiAOpCUm2zH6F8m2P7VlqtwYYsqiK1r3RND6Io+SBVirSfhkyBRHWX
-	d5B2WArSWcSIy/Bnsbi+8dKLAd8VzS6K06OSNJT2h2s4Nntg9UG08bpjzgfpFuAdJGKRQQeJr/9oJ
-	trPdOZ3uxV9BeKDbJ/6/4uhtWeUpwYXwCvVqMSYBY8xy6XSRvsO1ETNRKx3U4IbOVsppAJgChwcCr
-	0AXF/bWd94N7CVTZpmiCO4dedkHtkcDHHZc5s8CE9Rc9UJaNb78ipG34zJKTk3csNBBdx8kgAIG8d
-	kFyhbqZy/t9Eh8ANOHDw==;
+	List-Owner; bh=CAftto5zkrNZHMqioElgZkVbcrzfcFmZ3gdmOlw7asY=; b=iLLoUbTB7ySUdr
+	lU07S3MYshqtyIiN+J+Nx7ygY+YkbXNWaY3mcPT5yDng2Ei0R0idEYwx6LwpguHlO4jBsa7A/7L8P
+	0Qc8j5Ew2zhrx2nVttojBcyYwC2d3/b/vsm1YzN9ZwtZ5N9nzzmpjek2OlYFYj0LfW/SMc81LT4Re
+	9zy3oJDUAWBpATznIw7lZPopSWyjj70ui9rI0lN02ilzxivebjbzNVFUxfmvLp3dqCbSWjWKZfevH
+	ZwpIufTy0X959AvCuA8ZSel0+jbT2hIHBTAFiVR49rkdNcFFkCokLbN9hkEGgPWz0SEmcJbblfCXA
+	tHvEAZXbTEGfAgCYgUwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCEBY-0001U1-4G; Mon, 23 Sep 2019 02:34:44 +0000
-Received: from mail-eopbgr40061.outbound.protection.outlook.com ([40.107.4.61]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1iCEJt-0004yn-Nm; Mon, 23 Sep 2019 02:43:22 +0000
+Received: from mail-eopbgr80080.outbound.protection.outlook.com ([40.107.8.80]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCEB1-0001EH-4g
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 02:34:12 +0000
+ id 1iCEJg-0004yM-Bf
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 02:43:09 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=mg4vD9ymds1DhtMIKmBv6QCg2T63Wmf+TEszKqft23a0TYmEe2DLm1QJSi8gUdGgyJ/ztLGrf/60UAfCuXk8HAOPekh6L8YgmA4i9/f8l6F8Z0LwOVd0Qu4K1edxIuiFPjvV92tkRGJgBas1Vb7orefRcLRGcqUqtW8J4IUdhfH8vTAlXsZYpkRW5B3k/zO8MzR5TuDSb2vGi95zWpG97K7lTWlIfqyUhjwQlRgha1xGCrjzRxWkH+lbJQ1jVh4u1WlNaRsDTZYMQj5qayEG6q9J77KzNz1Dyjg7poLbucpq6GWhv79W9cFncRTzKr3RfuaYtcwAdp+JCxOU00GQFw==
+ b=WWGExeEh32Hh3t8E0MCJ2yOiM5FQoeY1bGkn63JNmdOZ4Uoa5/GuW88NoKvjIIlHZmf0bouZpBW1bPR0DQ2fRdluXEP/dC/H9laasbWEqkh5QD6fNA5US9YoH1hHNSUa0HVIayNybvTkN7j8Tr9n37THaTCvLC6BmjZ5s8IggtBuOQssIFGC/B+yOmT4bLdfVjDsBiHXFlrPt7xpU1c3FPEhi52nxKaadZaI1n96Y/ECPQR7R/q/8lNwFLkDPTStJbcPAN9RcxE2Hq5hWC6bdWJRa8IVFMeLe8+uDkEEtvf1gVS4hL37p5fagOfmlEvJIg3UZ0KZMnk6p8O8EoGPtg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=BIB8reF8ZJulh2+Bq0eXH3RvKOKQJBYzvqQ4/KEr0wU=;
- b=kf02hr2r28BKy60kRRrg2eL/f6K64NoyaPOzGTPsmk/bMcbqgq0XUFkFyGievZCKQSCmAn6DdkCvnRDweO4cgUSB7joCCVLGzeB0ITUX2+p21ykjNbDHpnpxFX8av/mqHWg/3pxwLHqDjNNYBNN70YlrYCc2ykYSkDyTfPhQbmQZ8wnJlIVooZ7Cgz5BAZKJKw7ItvBAA3S6YSXYErs6IoEmJgeR7L+4Aj+zqvOYG9ZntPwkwOug1oPv3u10pRdoGh1pcPbSdj76vNfRRm9rR1bW3SqPqfdnD11jSSRlJG4CZtsumPd05JwfL9FA+SfxLNRL7O/gMFwAzWSyVw0/8g==
+ bh=kZ3WwySqHZpVC3nCDqJzq9KyMX1d7jOomWbYLq2ukYw=;
+ b=kakvkf1wcBmKe4liDdoCy2bA7X4w5kft6t5jBNIrNMwVDQbrDv+yJ9czFwriBlHsLn8yJmta9mByMCh61A6E2+8owHzQIz9Pig15H1vZgPd0fqbp97Mo3bteYCeAhMaWyvVtvU1hL3Hjg1O2NMePEQROCZrGNahY7moxr/25O8kXLzP4WsWAUOJR1RsSMK39s3luGwb0HmjNDBZTjPV6e/daUBaftmeqvNuOiMrdy84IFcQahfddX/d70asVXPBgKJbjXn1531I90fjbI0e+di7TPTLOKPL8X+6FiFdl+dpkXVsJPsBJv1JdC35bLBu3JKHB9ihqSPcKojjlosKiWg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=BIB8reF8ZJulh2+Bq0eXH3RvKOKQJBYzvqQ4/KEr0wU=;
- b=VeY2Vi3Nlf/WGhISQCqZPdHK0NKwcOeog/omtNVTxPAhFVsrNiE7fb/5GN9cB6ZNs5TBgXoPJHKfCsFbQw7EtqiGmPkoH4H/gXB/DSbcDUI8zGeXkZ13GLRLHin70IIz49mPqLXFN8RPrVreS8RHb/lOHTHE9vWZ5EpRd1WI2Zo=
+ bh=kZ3WwySqHZpVC3nCDqJzq9KyMX1d7jOomWbYLq2ukYw=;
+ b=Qu4GPOCjRgkNDSl39ZZj/wVddzU0m642lTw5rSHWtHTZ3Lj4tHPbZ3qtOvg75c/EHqsX4RTpx9UdYYvJdd6tq/mnUjomIMCnLQOnUsvF3q7Fl7r+zf6OGaisjaxT6NO9eMdA1EpBfqZfJncYPdA4Th0u4PoPj0aoIx7ccez6PdQ=
 Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3945.eurprd04.prod.outlook.com (52.134.65.149) with Microsoft SMTP
+ DB3PR0402MB3643.eurprd04.prod.outlook.com (52.134.66.153) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2284.20; Mon, 23 Sep 2019 02:34:07 +0000
+ 15.20.2284.23; Mon, 23 Sep 2019 02:43:04 +0000
 Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
  ([fe80::8958:299c:bc54:2a38]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
  ([fe80::8958:299c:bc54:2a38%7]) with mapi id 15.20.2284.023; Mon, 23 Sep 2019
- 02:34:07 +0000
+ 02:43:04 +0000
 From: Anson Huang <anson.huang@nxp.com>
 To: Pavel Machek <pavel@ucw.cz>
-Subject: RE: [PATCH V2 1/5] dt-bindings: fsl: scu: add scu power key binding
-Thread-Topic: [PATCH V2 1/5] dt-bindings: fsl: scu: add scu power key binding
-Thread-Index: AQHVYfv+INaxBRtrokqtKaL9fDhNpqc3/ZaAgACs9fA=
-Date: Mon, 23 Sep 2019 02:34:07 +0000
-Message-ID: <DB3PR0402MB3916F48DA2A16E57C624432BF5850@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1567519424-32271-1-git-send-email-Anson.Huang@nxp.com>
- <20190922161415.GD1999@bug>
-In-Reply-To: <20190922161415.GD1999@bug>
+Subject: RE: [PATCH V4 2/5] input: keyboard: imx_sc: Add i.MX system
+ controller key support
+Thread-Topic: [PATCH V4 2/5] input: keyboard: imx_sc: Add i.MX system
+ controller key support
+Thread-Index: AQHVbDoTG9IptYOIlUSe8in/1bTkN6cu+20AgAAdosCACNAggIAArZGA
+Date: Mon, 23 Sep 2019 02:43:04 +0000
+Message-ID: <DB3PR0402MB39164F6EB8141BA5CC4F26FCF5850@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1568602373-14164-1-git-send-email-Anson.Huang@nxp.com>
+ <1568602373-14164-2-git-send-email-Anson.Huang@nxp.com>
+ <20190916235330.GI237523@dtor-ws>
+ <DB3PR0402MB3916859326C76BC9BC1F781CF58F0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <20190922161432.GE1999@bug>
+In-Reply-To: <20190922161432.GE1999@bug>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -64,44 +69,44 @@ authentication-results: spf=none (sender IP is )
  smtp.mailfrom=anson.huang@nxp.com; 
 x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 82796835-2c6a-456e-12ce-08d73fce825a
+x-ms-office365-filtering-correlation-id: 4408efaa-c25f-4aee-1ace-08d73fcfc259
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600167)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3945; 
-x-ms-traffictypediagnostic: DB3PR0402MB3945:|DB3PR0402MB3945:
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600167)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3643; 
+x-ms-traffictypediagnostic: DB3PR0402MB3643:|DB3PR0402MB3643:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB39453BEC49A7526822837F8CF5850@DB3PR0402MB3945.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-microsoft-antispam-prvs: <DB3PR0402MB3643932DA00AB294F52AC51FF5850@DB3PR0402MB3643.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 0169092318
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(366004)(346002)(39860400002)(376002)(136003)(189003)(199004)(256004)(6436002)(305945005)(8676002)(66446008)(66476007)(64756008)(76116006)(66946007)(66556008)(25786009)(476003)(11346002)(81166006)(14454004)(5660300002)(71200400001)(71190400001)(81156014)(6916009)(26005)(86362001)(7736002)(478600001)(7416002)(74316002)(8936002)(76176011)(6506007)(186003)(9686003)(52536014)(33656002)(7696005)(3846002)(486006)(6246003)(102836004)(99286004)(66066001)(4326008)(44832011)(55016002)(2906002)(316002)(54906003)(446003)(6116002)(229853002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3945;
+ SFS:(10009020)(4636009)(346002)(376002)(396003)(39860400002)(136003)(366004)(199004)(189003)(316002)(9686003)(14454004)(6246003)(66946007)(186003)(26005)(6916009)(25786009)(86362001)(478600001)(4326008)(66446008)(64756008)(11346002)(66476007)(66556008)(52536014)(446003)(5660300002)(76116006)(102836004)(7696005)(256004)(76176011)(99286004)(81156014)(486006)(3846002)(66066001)(71190400001)(71200400001)(6506007)(8936002)(8676002)(81166006)(7416002)(2906002)(476003)(305945005)(7736002)(6116002)(74316002)(44832011)(229853002)(6436002)(55016002)(54906003)(33656002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3643;
  H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
+ PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: eYvOSZWaT2i+bXf8YtdrpBVstRzdWnVy3aF6Z4SjJWMS6NVS+4cak2NgxasN++EtpZnxTLoXh+bsM8aKaFrBdaNiUuCmZtNRK2nSt94IlkFIA7rC4wenUj5W5d8XXs5M20uoc7+qTNBG//I1YD0W9QnQxDGMSOlXDb+NjELTYwNZQSM333YPNPMb2GhCVZQlqx45W4DEPernFq0ntQcVRHezFgqE4b+1IRlejLH16uQWLIGlVtMOyMQ3KAkH8NVnp3qYlXM04XSa40jao1WF1EX2V5q8J4ZJ2hRZQ57sALhvYy/Vcx8VAosukI5sMs4oliQ3HNTn3oBddYKG8TjKFfF4hd7KjUwSA3g30oVftgYd8NL39zDCzS0msgqOnFf4uJzxshnSuNRBcaByB30eFUpkm5lF+QMDYo/MmVMHddE=
+x-microsoft-antispam-message-info: K6s2ph1cijMBXRPia0JJifM4zEgMRqFIrfi42wGGQJdFAPFxnN5XeB2nwdz/RiHKIkweTI4qylbOg+6XKE4t0SZQqetmrdYtsOrri9JGw+nUYiF5xpeTeZSMDwj8yDD8IWnJOWsAnjiZxoM3s5cEn5uE1O+LtBoxnRCnLOL5gujSIHQuIcYoozE9BTiycVUbKO5aaJO1wnhtrUcUt4ABvoPmho1gCN1bUuIXCTOJdr1h+H3/mtWN4U+x9yLnzcl6mBchC0QF2Sdt/NgUGBhNAw7KOVNFRF9aceriY9/8/emIMW0iAvnYjghLSfTd26iJOsEij+NhypzpNnGFBnyKMtQPanXT5HjVuoUl6tyQdO9g/EpTqAzsPhHIGInE+u75n96SSRcSeHc+9SSAxK0Yux/eOvoAMst/T/ookruszos=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 82796835-2c6a-456e-12ce-08d73fce825a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Sep 2019 02:34:07.7689 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4408efaa-c25f-4aee-1ace-08d73fcfc259
+X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Sep 2019 02:43:04.6115 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Jh5FZn2/A0J4G8IN0IlN2v5qppsDBDo9nvOQhd5NX7ZAy5Df1RYHS90/i6YZaLARo7bNV0bcBRT9dyGnInxTPw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3945
+X-MS-Exchange-CrossTenant-userprincipalname: SpKDS5+vS2eabR49MXeoOr0S65YqxLagLrrgrbA0QqoImE6JCoYubS2OTZvbngGy2sBPgtyO5fEc0npp5l92+Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3643
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190922_193411_317705_C8BE3F6F 
-X-CRM114-Status: GOOD (  16.85  )
+X-CRM114-CacheID: sfid-20190922_194308_403700_E674EF59 
+X-CRM114-Status: GOOD (  19.56  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.61 listed in list.dnswl.org]
+ no trust [40.107.8.80 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -132,6 +137,7 @@ Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
  "festevam@gmail.com" <festevam@gmail.com>,
  "yuehaibing@huawei.com" <yuehaibing@huawei.com>,
  "marcin.juszkiewicz@linaro.org" <marcin.juszkiewicz@linaro.org>,
+ "cw00.choi@samsung.com" <cw00.choi@samsung.com>,
  "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
  "linux-input@vger.kernel.org" <linux-input@vger.kernel.org>,
  "ronald@innovation.ch" <ronald@innovation.ch>,
@@ -141,14 +147,13 @@ Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
  "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "mripard@kernel.org" <mripard@kernel.org>,
  "m.felsch@pengutronix.de" <m.felsch@pengutronix.de>,
+ "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
  "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
  "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>,
  Daniel Baluta <daniel.baluta@nxp.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
  Aisheng Dong <aisheng.dong@nxp.com>, Andy Duan <fugang.duan@nxp.com>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "dmitry.torokhov@gmail.com" <dmitry.torokhov@gmail.com>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  "dinguyen@kernel.org" <dinguyen@kernel.org>,
  "kernel@pengutronix.de" <kernel@pengutronix.de>,
@@ -160,53 +165,59 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi, Pavel
 
-> Subject: Re: [PATCH V2 1/5] dt-bindings: fsl: scu: add scu power key binding
+> Subject: Re: [PATCH V4 2/5] input: keyboard: imx_sc: Add i.MX system
+> controller key support
 > 
-> On Tue 2019-09-03 10:03:40, Anson Huang wrote:
-> > NXP i.MX8QXP is an ARMv8 SoC with a Cortex-M4 core inside as system
-> > controller, the system controller is in charge of system power, clock
-> > and power key event etc. management, Linux kernel has to communicate
-> > with system controller via MU (message unit) IPC to get power key
-> > event, add binding doc for i.MX system controller power key driver.
-> >
-> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > ---
-> > Changes since V1:
-> > 	- remove "wakeup-source" property, as it is NOT needed for SCU
-> interrupt;
-> > 	- remove "status" in example.
-> > ---
-> >  .../devicetree/bindings/arm/freescale/fsl,scu.txt          | 14
-> ++++++++++++++
-> >  1 file changed, 14 insertions(+)
-> >
-> > diff --git
-> > a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-> > b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-> > index c149fad..f93e2e4 100644
-> > --- a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-> > +++ b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-> > @@ -157,6 +157,15 @@ Required properties:
-> >  Optional properties:
-> >  - timeout-sec: contains the watchdog timeout in seconds.
-> >
-> > +Power key bindings based on SCU Message Protocol
-> > +------------------------------------------------------------
-> > +
-> > +Required properties:
-> > +- compatible: should be:
-> > +              "fsl,imx8qxp-sc-pwrkey"
-> > +              followed by "fsl,imx-sc-pwrkey";
-> > +- linux,keycodes: See
-> > +Documentation/devicetree/bindings/input/keys.txt
+> Hi!
 > 
-> Note you have keycode_s_ here, but keycode in the example and in the dts
-> patch.
+> > > > +	ret = imx_scu_call_rpc(priv->key_ipc_handle, &msg, true);
+> > > > +	if (ret) {
+> > > > +		dev_err(&input->dev, "read imx sc key failed, ret %d\n", ret);
+> > > > +		return;
+> > > > +	}
+> > > > +
+> > > > +	state = (bool)msg.state;
+> > > > +
+> > > > +	if (!state && !priv->keystate)
+> > > > +		state = true;
+> > >
+> > > This needs an explanation please.
+> >
+> > This is to handle the quick press of button, e.g., when button is
+> > pressed and released very quickly, when the delay work is scheduled,
+> > the button state read from SCU FW is actually a release state (0), the press
+> state is (1), so the quick press/release will be ignored.
+> >
+> > However, after double check and test, I think this should be handled
+> > by debounce time, if the button is pressed/release very quickly, the
+> > event should be ignored, I will remove it and reduce the debounce time to
+> 30mS, previous 100mS is too long, using 30mS as debounce time, I did NOT
+> see similar issue no matter how quick I press/release the button.
+> 
+> Are you sure this is expected behaviour?
+> 
+> AFAIK microswitches can bounce when the button is pressed and released,
+> but will not generate glitches when the button was not pressed, so even
+> short presses are real and should be propagated...
 
-NOT quite understand your point, could you please provide more details?
+Latest version of patch handle the quick press as below:
+
+- When the button is pressed, the delayed work will be scheduled;
+- In the delayed work, the button state will be read, once the state is different as previous
+  state, it will be propagated;
+- If the state is a press state, another delayed work will be scheduled for handling release
+  event.
+
+So there could be a small window of DEBOUNCE_TIME (30mS) between button press and the delayed
+work scheduled for reading the button state, if the button is released in less than 30ms, then the
+state read could be a release state which is same as previous state and it will be ignored.
+
+Do you think in this case, we should also propagated the press event? If yes, then what about the
+release event? Although from what I tested, no matter how quick I press the button, the driver
+can always receive both the press and release event, as the 30mS is very short.
 
 Thanks,
-Anson
+Anson 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
