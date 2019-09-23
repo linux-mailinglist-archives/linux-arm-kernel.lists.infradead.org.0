@@ -2,112 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8552FBBC8D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 21:57:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDB14BBCFB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 22:35:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=MfGdKBxdCdKmPngCeeIXZRkQIH9P9cPfI72CQj1VJiA=; b=ncc7hB3oLUKOx4
-	O8FEerKVsLKdTDtmYFZAi9jLDSOMqFmW5LXpOwoD5CTn0qLzMuqPW0OMOwktzuBJUhp9zHulYNQyS
-	g1GcTEO1o7SGzNbvANwo8nBNEo6GJ17hjOJhA13fK5so5P3IRd1SQfl3iLR11VDMyExyFySqtUgk3
-	1O7N2SavyByzWVrpoLW86UEVfoP/TxMI4cP+FNKnavpWfkxJOwEoMd41z9vgc6g8IVArk9P/dODI+
-	u+NW/83GNjqFO295ARf0gAGEunhIpvyhtxrCBNmznhbqHPIYvsoPH2aQPzeWtRZY01XgsPR5fcxzr
-	fLKT7TlJIksVK+yQSMhA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KXV9t6hwDaO3AkgGqbNz+eEkqStgh8YrtBUuL0EOZfM=; b=SeI2QW3GQya1z+
+	9jTZhH8jFT6+eZ16IQcpdMt+fTB+Ju8xynHNFD9/GyAhyvW6sLsa8Oo2y1V2Oz0uevtAVz2pJKc/N
+	4bcGTo9Wk9wJiagRN2P/YAYfPMHnriMygQkzHXf/pOAShYqgtLTgKp0wj93QFFIeXobatjf9lXG2H
+	J11l5Ti1QM09NSGmMJdfNqtQ2/l/WzTnMZxikB1dfK4/mQfBNGV/pdcehzZkyQFLrhTw3waMLIc8E
+	cUdjwFsoh50ycoNLyD4XQPppwS04p+aqwxWpYA2spQzkcGVDNtlXpT8H3KweTNnwTKlkoudHsiNz8
+	U4HzB0pOtc+QwoCn8csA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCUSG-0007gA-Np; Mon, 23 Sep 2019 19:57:04 +0000
-Received: from mail-eopbgr30066.outbound.protection.outlook.com ([40.107.3.66]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1iCV3V-0003Up-Gu; Mon, 23 Sep 2019 20:35:33 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCUS7-0007fh-0n
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 19:56:57 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=BFgbrMqlr7cel0+orsLJzCxyuSdA1U1k7rT6eH3Iesrj08gaam6NQRn1DvHpfOa5UyPlG+Z//CUwls1pAHPzRq9ZUr9KbCnw1aWBNNyRfJqfD3sk7ye0hP1Pki/zziluJQUXto74dwBALQjMENvQx8bLpEoK3Gfv9G4LP3VHV8pLBaomLB8ThE+B+/uwWGvFdyD8HCe02mS5E8M/MLWu8eoKBvwTHZoreFtsKw9zIBp2VqkjJ4vz+020jwXpOiky0Iq6pZfohCwI8/tgLgIxdog+sUWKh6noC99yA/CNMPGWX2Dx/bFtvo8rlZIcnClwfXpIko07nS/h5UsZVdcQfg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hhKkkocm6HK6AXDk7smCIHDE5QWNKiUg2bXdf1/0IFQ=;
- b=L0s7WXkpwmW0GJ3EvErjsDM6VV6DBOlVU5Xs9EceWbFG7Ip4rzYolzebKHPP9KOUm9dJqHyox9xBuHMfcj37HV19jDxdH1UEcL4mqU2dUnsQ6NfpC25on3ZavYXIIUftquWfOJPN2tqB5WMiTtKz+AXPlMcbWxkLY3+44cYFfXJYT8ZH6mlcLgjuQZQNqZwXRXv2mUXF2c+3Ffvm7B/gZInJ9F7J0dj+4NJFHnvWhShRHDzGgg+5nksDdKGTRtKloleaZL6XhAsWlS4JFhjauDbuHi+397qOMgHUeHjHT9rfYOgOrsie76QGSsc5g8bNVl6IucaO+AW+tnogLHo1MQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hhKkkocm6HK6AXDk7smCIHDE5QWNKiUg2bXdf1/0IFQ=;
- b=Gl7WUN2SJQ2kFxyfvKgR8AjFwoeRljL0D2REKOPc8CnVXd94+n2/LArjJoCzFCwjapgtqQDMCA9rS1SZkbjwYSMhut13hk4fNPwFw/c7k8ImQrlrkdqFTgeEohfb+gYoyNWCt6AFx7oWkjVBQ7Lcn/fDhlvHsIL3fU2SIPBPvuc=
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
- VI1PR04MB5934.eurprd04.prod.outlook.com (20.178.205.84) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2284.20; Mon, 23 Sep 2019 19:56:52 +0000
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::15cd:b6e7:5016:ae8]) by VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::15cd:b6e7:5016:ae8%2]) with mapi id 15.20.2284.023; Mon, 23 Sep 2019
- 19:56:52 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Matthias Kaehlcke <mka@chromium.org>
-Subject: Re: [PATCH v6 2/6] PM / devfreq: Move more initialization before
- registration
-Thread-Topic: [PATCH v6 2/6] PM / devfreq: Move more initialization before
- registration
-Thread-Index: AQHVcia8XApMx2vUsE+43WtJMSpWjg==
-Date: Mon, 23 Sep 2019 19:56:51 +0000
-Message-ID: <VI1PR04MB7023E58A11DF398FC90F98C7EE850@VI1PR04MB7023.eurprd04.prod.outlook.com>
-References: <cover.1569252537.git.leonard.crestez@nxp.com>
- <0ad496507cd7e6731e46249b1499dfdebe205c16.1569252537.git.leonard.crestez@nxp.com>
- <20190923181057.GY133864@google.com>
- <VI1PR04MB7023C94F93C4E0E6E229F80AEE850@VI1PR04MB7023.eurprd04.prod.outlook.com>
- <20190923191111.GE133864@google.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 36c04759-ed1e-4c5c-582f-08d740602d8c
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600167)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB5934; 
-x-ms-traffictypediagnostic: VI1PR04MB5934:|VI1PR04MB5934:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB5934BC214FA60E5DFFC9D2FDEE850@VI1PR04MB5934.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 0169092318
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(376002)(346002)(396003)(136003)(366004)(199004)(189003)(51914003)(53546011)(6916009)(9686003)(26005)(14454004)(7736002)(186003)(55016002)(76176011)(7416002)(102836004)(81156014)(81166006)(66066001)(71190400001)(71200400001)(8676002)(478600001)(86362001)(476003)(6506007)(3846002)(446003)(6116002)(8936002)(91956017)(25786009)(54906003)(7696005)(66446008)(99286004)(64756008)(66476007)(6246003)(256004)(66556008)(66946007)(486006)(2906002)(6436002)(44832011)(316002)(5660300002)(14444005)(229853002)(52536014)(74316002)(4326008)(33656002)(76116006)(305945005);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5934;
- H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: JPr9XughU5zx91ovYciU5SvA/iYzdhMEuMXlIuKQLnt+tM/aX5VAHexZmSJmy78HWrmdzyX861QZuNTeCxHuHblIhwsriuUnd7Pm8d5tqAti4SVUq1mYpaL9r97aAdmhMhtzJAmFooUIlLkBltqkhNVEfYGWAeATrKpOn0ZpsSvIW1E4LWly2c1L26ls81sn2gprMkN6no9KjK84+lw5e3iTKBrwEocansNEJfXWBGW1ZqEk9000iMi5DwkssWgUssie2F3icpUSFFr2ubvLBNUj2JrzW4Ge/+3c+epjhsInh3wRkPcsOSearwYrmlcOovDkCjl1lUGFZ0sySIAFyVhBDMEqfPszU9F6X8Tp4A9rvX0UXzqoIvOejRYHJ7xxd/fgcpa1wvHESO05Fh3WEf3B+Xd53dGyK/O+UgvaYs4=
+ id 1iCV2f-0002CT-SD
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 20:34:43 +0000
+Received: by mail-pg1-x541.google.com with SMTP id y35so2862299pgl.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 23 Sep 2019 13:34:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=lqhPf0WylVWrQq3bujKuRCUKeKaYyeeOquS4YZjsMbs=;
+ b=RZqJZ2jMiQ4jrVlplk0gInJ2H9AKuD/9MozDl+VOtFFs+4z68Obn9Bk09TPSSP0cT0
+ TgSq1ja39iNbYKpWpf2355Susly26z95NREFOtyfSXBVLGy0QcVGFyAqEJPlhtAXuf+5
+ ZhM4VuRkGoU1gCHP7HrwbPv/kneZVTtd8XT/Dr74pWEsIaeBKVMFUgWTxuDKidTRFGH4
+ DYIgov3lFIa6nyaSKl6SWF+sKjNRXovwtcRZOJuuefq27ulSTsDsjQqQJWu1yYIHq37p
+ cEiLZJfEBTIsAv4SjPs9UQ7m7C7ejeKkUZb2vg2neglAqqwH1ckgtbxGzZCCp3MX1wht
+ 1NFg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=lqhPf0WylVWrQq3bujKuRCUKeKaYyeeOquS4YZjsMbs=;
+ b=rl3xYOA/iMGuKo+4DSk0eJl/PIjhS0f3a2D9sxdgofi+PEOF99PTKcbqf4i4kKynI9
+ NaVg9x0ksQVjTxffUmpVmoZMV6FqyoCyP1tfhEN5et63DhfsrFjTeVND15bWQXHWe196
+ U7ytIheyiyZ63/+jNX8V2acpgcOyVRBrq19SiQ1oJ3LTLOm+bv2ew2nXRGnzQD9Fr13+
+ 7m7H6BtWS9aNvvQPv1/jceceOIVqRksnWJxs1Tv3vFbbX6XajIPCJauT7TiPmKgzswYS
+ lhY6w9Zmjoym4g1SSaz9QKSpLQ7P+f3DTityd7K+tUazW/zrXQEAV929+yQbmJlQVzsC
+ 4i/Q==
+X-Gm-Message-State: APjAAAUsL5ZqvPtBMK7FewNQHnFlFFdaArt6/k7gZu0/W4yjlS0wyGGA
+ 58Ybw509gCUMx6AA4+S17v9hdQ==
+X-Google-Smtp-Source: APXvYqyI36p0gwtWDtXSdCopzx1YDRzh+phPa0M6jgW9Gv5XSjc6bvVBD+vSl5ERXkzo6iljFFSZ7Q==
+X-Received: by 2002:a63:2943:: with SMTP id p64mr1669712pgp.98.1569270876837; 
+ Mon, 23 Sep 2019 13:34:36 -0700 (PDT)
+Received: from xakep.corp.microsoft.com (c-73-69-118-222.hsd1.nh.comcast.net.
+ [73.69.118.222])
+ by smtp.gmail.com with ESMTPSA id n29sm12798676pgm.4.2019.09.23.13.34.34
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 23 Sep 2019 13:34:36 -0700 (PDT)
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
+ ebiederm@xmission.com, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org,
+ marc.zyngier@arm.com, james.morse@arm.com, vladimir.murzin@arm.com,
+ matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org,
+ mark.rutland@arm.com
+Subject: [PATCH v5 00/17] arm64: MMU enabled kexec relocation
+Date: Mon, 23 Sep 2019 16:34:10 -0400
+Message-Id: <20190923203427.294286-1-pasha.tatashin@soleen.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 36c04759-ed1e-4c5c-582f-08d740602d8c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Sep 2019 19:56:52.0093 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 9gjdHM4T+mTVYgT2Y6siXLy+3bBIO4gO0QddPaVYbrkNRVTYp1gltU9pXNg36DlluifV/EIn0A8hut6YnkJPwA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5934
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_125655_282654_6673A879 
-X-CRM114-Status: GOOD (  18.88  )
+X-CRM114-CacheID: sfid-20190923_133441_910389_43B67175 
+X-CRM114-Status: GOOD (  14.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.66 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -126,179 +101,154 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?iso-8859-2?Q?Artur_=A6wigo=F1?= <a.swigon@partner.samsung.com>,
- Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>, dl-linux-imx <linux-imx@nxp.com>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Lukasz Luba <l.luba@partner.samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Alexandre Bailon <abailon@baylibre.com>,
- Georgi Djakov <georgi.djakov@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Jacky Bai <ping.bai@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 23.09.2019 22:11, Matthias Kaehlcke wrote:
-> On Mon, Sep 23, 2019 at 06:56:28PM +0000, Leonard Crestez wrote:
->> On 23.09.2019 21:11, Matthias Kaehlcke wrote:
->>> On Mon, Sep 23, 2019 at 06:51:05PM +0300, Leonard Crestez wrote:
->>>> In general it is a better to initialize an object before making it
->>>> accessible externally (through device_register).
->>>>
->>>> This makes it possible to avoid relying on locking a partially
->>>> initialized object.
->>>>
->>>> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
->>>> ---
->>>>    drivers/devfreq/devfreq.c | 43 +++++++++++++++++++++++----------------
->>>>    1 file changed, 25 insertions(+), 18 deletions(-)
->>>>
->>>> diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
->>>> index 323d43315d1e..b4d2bfebb140 100644
->>>> --- a/drivers/devfreq/devfreq.c
->>>> +++ b/drivers/devfreq/devfreq.c
->>>> @@ -587,10 +587,12 @@ static void devfreq_dev_release(struct device *dev)
->>>>    	mutex_unlock(&devfreq_list_lock);
->>>>    
->>>>    	if (devfreq->profile->exit)
->>>>    		devfreq->profile->exit(devfreq->dev.parent);
->>>>    
->>>> +	kfree(devfreq->time_in_state);
->>>> +	kfree(devfreq->trans_table);
->>>>    	mutex_destroy(&devfreq->lock);
->>>>    	kfree(devfreq);
->>>>    }
->>>>    
->>>>    /**
->>>> @@ -670,44 +672,43 @@ struct devfreq *devfreq_add_device(struct device *dev,
->>>>    	devfreq->max_freq = devfreq->scaling_max_freq;
->>>>    
->>>>    	devfreq->suspend_freq = dev_pm_opp_get_suspend_opp_freq(dev);
->>>>    	atomic_set(&devfreq->suspend_count, 0);
->>>>    
->>>> -	dev_set_name(&devfreq->dev, "devfreq%d",
->>>> -				atomic_inc_return(&devfreq_no));
->>>> -	err = device_register(&devfreq->dev);
->>>> -	if (err) {
->>>> -		mutex_unlock(&devfreq->lock);
->>>> -		put_device(&devfreq->dev);
->>>> -		goto err_out;
->>>> -	}
->>>> -
->>>> -	devfreq->trans_table = devm_kzalloc(&devfreq->dev,
->>>> +	devfreq->trans_table = kzalloc(
->>>>    			array3_size(sizeof(unsigned int),
->>>>    				    devfreq->profile->max_state,
->>>>    				    devfreq->profile->max_state),
->>>>    			GFP_KERNEL);
->>>>    	if (!devfreq->trans_table) {
->>>>    		mutex_unlock(&devfreq->lock);
->>>>    		err = -ENOMEM;
->>>> -		goto err_devfreq;
->>>> +		goto err_dev;
->>>>    	}
->>>>    
->>>> -	devfreq->time_in_state = devm_kcalloc(&devfreq->dev,
->>>> -			devfreq->profile->max_state,
->>>> -			sizeof(unsigned long),
->>>> -			GFP_KERNEL);
->>>> +	devfreq->time_in_state = kcalloc(devfreq->profile->max_state,
->>>> +					 sizeof(unsigned long),
->>>> +					 GFP_KERNEL);
->>>>    	if (!devfreq->time_in_state) {
->>>>    		mutex_unlock(&devfreq->lock);
->>>>    		err = -ENOMEM;
->>>> -		goto err_devfreq;
->>>> +		goto err_dev;
->>>>    	}
->>>>    
->>>>    	devfreq->last_stat_updated = jiffies;
->>>>    
->>>>    	srcu_init_notifier_head(&devfreq->transition_notifier_list);
->>>>    
->>>> +	dev_set_name(&devfreq->dev, "devfreq%d",
->>>> +				atomic_inc_return(&devfreq_no));
->>>> +	err = device_register(&devfreq->dev);
->>>> +	if (err) {
->>>> +		mutex_unlock(&devfreq->lock);
->>>> +		put_device(&devfreq->dev);
->>>> +		goto err_out;
->>>
->>> As per my comment on v5 I think the goto needs to go to 'err_dev'. The
->>> device registration failed, hence devfreq_dev_release() won't be
->>> called to free allocated memory.
->>
->> This code is not modified in the patch, it only shows up as +added
->> because diff got confused but there is an identical -removed chunk
->> higher up.
->>
->> The device_register documentation mentions the following:
->>
->>    * NOTE: _Never_ directly free @dev after calling this function, even
->>    * if it returned an error! Always use put_device() to give up the
->>    * reference initialized in this function instead.
->>
->> Cleanup path then goes like this (from a hacked error in device_add):
->>    dump_stack+0xdc/0x144
->>   
->>
->>    devfreq_dev_release+0x38/0xc0
->>   
->>
->>    device_release+0x34/0x90
->>   
->>
->>    kobject_put+0x8c/0x1f0
->>   
->>
->>    put_device+0x24/0x30
->>   
->>
->>    devfreq_add_device+0x540/0x570
->>   
->>
->>    devm_devfreq_add_device+0x60/0xd0
->>   
->>
->>    imx_ddrc_probe+0x35c/0x4c8
-> 
-> Good to know, thanks for the pointer!
-> 
->> Can I add your "Reviewed-By" for the rest of the series if I fix the nits?
-> 
-> By now you should have it for most patches. For this one:
-> 
-> Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
-> 
-> There is one doubt I have left on "PM / devfreq: Add PM QoS support" that I
-> posted on v5:
-> 
-> "IIUC you rely on the notifiers being removed by devfreq_dev_release().
-> Does dev_pm_qos_remove_notifier() behave gracefully if the notifier is
-> not initialized/added or do we need to use BLOCKING_NOTIFIER_INIT() or
-> similar?"
+Changelog:
+v5:
+	- Addressed comments from Matthias Brugger: added review-by's, improved
+	  comments, and made cleanups to swsusp_arch_resume() in addition to
+	  create_safe_exec_page().
+	- Synced with mainline tip.
 
-Sorry for missing that.
-> Could you clarify this replying to the thread? Besides that and the
-> nits (which are optional to fix) the patch looks good to me.
+v4:
+	- Addressed comments from James Morse.
+	- Split "check pgd table allocation" into two patches, and moved to
+	  the beginning of series  for simpler backport of the fixes.
+	  Added "Fixes:" tags to commit logs.
+	- Changed "arm64, hibernate:" to "arm64: hibernate:"
+	- Added Reviewed-by's
+	- Moved "add PUD_SECT_RDONLY" earlier in series to be with other
+	  clean-ups
+	- Added "Derived from:" to arch/arm64/mm/trans_pgd.c
+	- Removed "flags" from trans_info
+	- Changed .trans_alloc_page assumption to return zeroed page.
+	- Simplify changes to trans_pgd_map_page(), by keeping the old
+	  code.
+	- Simplify changes to trans_pgd_create_copy, by keeping the old
+	  code.
+	- Removed: "add trans_pgd_create_empty"
+	- replace init_mm with NULL, and keep using non "__" version of
+	  populate functions.
+v3:
+	- Split changes to create_safe_exec_page() into several patches for
+	  easier review as request by Mark Rutland. This is why this series
+	  has 3 more patches.
+	- Renamed trans_table to tans_pgd as agreed with Mark. The header
+	  comment in trans_pgd.c explains that trans stands for
+	  transitional page tables. Meaning they are used in transition
+	  between two kernels.
+v2:
+	- Fixed hibernate bug reported by James Morse
+	- Addressed comments from James Morse:
+	  * More incremental changes to trans_table
+	  * Removed TRANS_FORCEMAP
+	  * Added kexec reboot data for image with 380M in size.
 
-The blocking_notifier_head structs are managed by PM QoS inside 
-dev_pm_qos_constraints_allocate and dev_pm_qos_constraints_destroy. The 
-devfreq subsystem only registers a notifier_block, that's a 
-NULL-terminated singly-linked list for which zero-initialization from 
-kzalloc should be sufficient.
+Enable MMU during kexec relocation in order to improve reboot performance.
 
-But now that I look at this again I should warn and return NOTIFY_DONE 
-from devfreq_qos_notifier_call instead of propagating a negative errno.
+If kexec functionality is used for a fast system update, with a minimal
+downtime, the relocation of kernel + initramfs takes a significant portion
+of reboot.
 
---
-Regards,
-Leonard
+The reason for slow relocation is because it is done without MMU, and thus
+not benefiting from D-Cache.
+
+Performance data
+----------------
+For this experiment, the size of kernel plus initramfs is small, only 25M.
+If initramfs was larger, than the improvements would be greater, as time
+spent in relocation is proportional to the size of relocation.
+
+Previously:
+kernel shutdown	0.022131328s
+relocation	0.440510736s
+kernel startup	0.294706768s
+
+Relocation was taking: 58.2% of reboot time
+
+Now:
+kernel shutdown	0.032066576s
+relocation	0.022158152s
+kernel startup	0.296055880s
+
+Now: Relocation takes 6.3% of reboot time
+
+Total reboot is x2.16 times faster.
+
+With bigger userland (fitImage 380M), the reboot time is improved by 3.57s,
+and is reduced from 3.9s down to 0.33s
+
+Previous approaches and discussions
+-----------------------------------
+https://lore.kernel.org/lkml/20190909181221.309510-1-pasha.tatashin@soleen.com
+version 4 of this series
+
+https://lore.kernel.org/lkml/20190821183204.23576-1-pasha.tatashin@soleen.com
+version 3 of this series
+
+https://lore.kernel.org/lkml/20190817024629.26611-1-pasha.tatashin@soleen.com
+version 2 of this series
+
+https://lore.kernel.org/lkml/20190801152439.11363-1-pasha.tatashin@soleen.com
+version 1 of this series
+
+https://lore.kernel.org/lkml/20190709182014.16052-1-pasha.tatashin@soleen.com
+reserve space for kexec to avoid relocation, involves changes to generic code
+to optimize a problem that exists on arm64 only:
+
+https://lore.kernel.org/lkml/20190716165641.6990-1-pasha.tatashin@soleen.com
+The first attempt to enable MMU, some bugs that prevented performance
+improvement. The page tables unnecessary configured idmap for the whole
+physical space.
+
+https://lore.kernel.org/lkml/20190731153857.4045-1-pasha.tatashin@soleen.com
+No linear copy, bug with EL2 reboots.
+
+Pavel Tatashin (17):
+  kexec: quiet down kexec reboot
+  arm64: hibernate: pass the allocated pgdp to ttbr0
+  arm64: hibernate: check pgd table allocation
+  arm64: hibernate: use get_safe_page directly
+  arm64: hibernate: remove gotos as they are not needed
+  arm64: hibernate: rename dst to page in create_safe_exec_page
+  arm64: hibernate: add PUD_SECT_RDONLY
+  arm64: hibernate: add trans_pgd public functions
+  arm64: hibernate: move page handling function to new trans_pgd.c
+  arm64: trans_pgd: make trans_pgd_map_page generic
+  arm64: trans_pgd: pass allocator trans_pgd_create_copy
+  arm64: trans_pgd: pass NULL instead of init_mm to *_populate functions
+  kexec: add machine_kexec_post_load()
+  arm64: kexec: move relocation function setup and clean up
+  arm64: kexec: add expandable argument to relocation function
+  arm64: kexec: configure trans_pgd page table for kexec
+  arm64: kexec: enable MMU during kexec relocation
+
+ arch/arm64/Kconfig                     |   4 +
+ arch/arm64/include/asm/kexec.h         |  51 ++++-
+ arch/arm64/include/asm/pgtable-hwdef.h |   1 +
+ arch/arm64/include/asm/trans_pgd.h     |  34 ++++
+ arch/arm64/kernel/asm-offsets.c        |  14 ++
+ arch/arm64/kernel/cpu-reset.S          |   4 +-
+ arch/arm64/kernel/cpu-reset.h          |   8 +-
+ arch/arm64/kernel/hibernate.c          | 245 +++++--------------------
+ arch/arm64/kernel/machine_kexec.c      | 196 ++++++++++++++++----
+ arch/arm64/kernel/relocate_kernel.S    | 196 ++++++++++----------
+ arch/arm64/mm/Makefile                 |   1 +
+ arch/arm64/mm/trans_pgd.c              | 244 ++++++++++++++++++++++++
+ kernel/kexec.c                         |   4 +
+ kernel/kexec_core.c                    |   8 +-
+ kernel/kexec_file.c                    |   4 +
+ kernel/kexec_internal.h                |   2 +
+ 16 files changed, 674 insertions(+), 342 deletions(-)
+ create mode 100644 arch/arm64/include/asm/trans_pgd.h
+ create mode 100644 arch/arm64/mm/trans_pgd.c
+
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
