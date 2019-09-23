@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E5EBBBAFE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 20:11:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DA67BBB17
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 20:16:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ximoH/va+KLZWTGR3q8Nn84mCgg47eaMEZQ5htoHNbM=; b=g3Jk3VDW8Q2p8y
-	YL4mdSM+mPZ+AugJ22nvAeLBd9xOf1mtJ+WD2Req9A0NQdRJsArjf7LTfOwdrjZXATR2bDLluwyzi
-	+mUlxXcDyXWgBF01zDMbCe6Fn39+moUo5op5+o0WXBIylkzg4sJtvcFAACgz2INC8UZbKLYbJQgfQ
-	UWVwgUloNcZZ7MMkxktpxJaeM3OWEL75Uq4Xrt5S1fG1J1S0IR9ov5Mwtpwiuy2q3Sf11meA+f5nE
-	iELCoMl+CgPPausadTIVHgRYjFw73FoaXLm1jp0TcTmYfe1Muw0nTKt86ySt+28YDi9X/q5yTawQO
-	nTJ9iIqYIsL7fL3bxAbg==;
+	List-Owner; bh=JanZ814T4Z57JDa7cu4SowVRwlJLVOJ2Clq4GzWfuIc=; b=b25s/743nLL4dN
+	FGbQMUDJwuVH/A2qWLs13NYWTIH7UCooQp52XIXnB236vsEJg5U+JTd6/1dDIbk5asNRzTasdY+UX
+	oCCevqLrY0htvMME1z/mHtBvu4eS1KcgiDLuMJSqOs6k7HgssuH5NR/upA4EQrzsZMLjauabnaf5l
+	ypehlgCpAPiUFOvcqom+rLkiHupnegT5eStQn7gBa2HDke7Xg1DxNLGfO2uqQGplMqWGPFEV9sEbG
+	R0/Bio74jL47ztUHduIn37pEIrLclySZnI9+04Pv43HPWvrvMiTwnP5uiwIfOVPeWIN7wlpOXhU5N
+	9XXhZ8MKTCcGUQTPC8sA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCSnr-0005Hm-Us; Mon, 23 Sep 2019 18:11:15 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1iCSt5-0006s3-Hr; Mon, 23 Sep 2019 18:16:39 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCSni-0005HP-Ls
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 18:11:08 +0000
-Received: by mail-pf1-x442.google.com with SMTP id h195so9599022pfe.5
+ id 1iCSsu-0006rN-TJ
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 18:16:30 +0000
+Received: by mail-pl1-x642.google.com with SMTP id d3so6860183plr.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Sep 2019 11:11:06 -0700 (PDT)
+ Mon, 23 Sep 2019 11:16:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=GhhEfz31mW+PGEj7W6BTGm1I2h8u/1sNMqll07GDL+o=;
- b=B7/uc71+COCmNXISDVfuToHc/7xx6ZbHiSybhzuIUp8h/Tt38f23peYPKn6WRkizxY
- e2rzZOXHikdJrasBPddOGEaZxJrHf7hv3/a4fvk/PoFHBY9wAdQxl+domZZ9HLso7x26
- 5adXM1HlLH8vzy16lYKAJtMCAPZPzVJkkG1Zg=
+ bh=Vw7ucBLn0ZbzDzhmmxoraRDIIubl19a+e3bBuBAnE2o=;
+ b=M8np/UJlBo7tVJWtpIt1PcoXWyVTeDHBWbtFCVw56+7tMv+17h1Us/NOYFli+Q770u
+ x223+PMH/1POgLy3EfqXqH4i/uYEbwfwqKF5ml4s7zpCsoF0Eq+E828aPAHwxR/2KF74
+ ZVgKl6wMHlLivZMwUYrFnOC1zqmJTahQrbznc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=GhhEfz31mW+PGEj7W6BTGm1I2h8u/1sNMqll07GDL+o=;
- b=JhWa1hY0tsxmwb0436DypSa9/WY4bpn1Wx8KYuWyXbGQuUbWV8cYbNfziXueAM7+sk
- iVTAWwGG/+Zjsg6OwDY8w1ifa/uHc5hzqyzMU1u5iDinqRFIYxeWX05W+Ps69n5K+ywl
- N8ranGt6TFgkXlnemTyQkjdXdAS+xK5bdnLMRIdzGgYxqtamMsPTG8RoMq3cK4/26CQp
- ruHsS3l5G5Ujc5SSotz/NEbBvnw5vq/gbiI8O1WQlY3Xkx5urKLUhQ08acsAt4MgRy7f
- Uxuo2YRuoWiaeZDD5Wljt0mJ7pnihA6UVrAlUYVtexqhDeYP6M22qpjuzYXBSbIN0vkD
- 2T6A==
-X-Gm-Message-State: APjAAAXn9Ob0JQdaAJQsqyCVxf5NfHLWrSfAmt64YDp1lRjWuMVr+r8F
- R+92tu6rZf2lPHOSH+zoAUEGJQ==
-X-Google-Smtp-Source: APXvYqyEAISPVu49vXFMaEKnhfTAY2pgrrhfN6m8wDPmAHv/uMsb1KW1tng8IFPDpi2B77m4daL4jw==
-X-Received: by 2002:a63:5652:: with SMTP id g18mr1124229pgm.393.1569262265523; 
- Mon, 23 Sep 2019 11:11:05 -0700 (PDT)
+ bh=Vw7ucBLn0ZbzDzhmmxoraRDIIubl19a+e3bBuBAnE2o=;
+ b=pzHRV0ALyUGHeRRCASk6HogDVH6YZ827wHp0QBmg8y8ZcsX/ebqTM4NXJCpyxbjVgd
+ EjYiZ+si2XDurfqQA7DTyMHwzzVaimOW1JvQkGUVHtlNQ2vQh8eLdnHb5OeFgJdxjq5X
+ 37WnCAiJCva7TmZHr1qWS54XBLAHgvc1dZJ7vMqKMndEGXM24Gkyjrqxdku+j4E3142v
+ tVbQblpmNp5qnZtGEc3SDF+ql8nqkWRCEflDp1hVNi5gPN4ZO6aZJksvVfs2hbBdcjtv
+ 055+CBkcM0dg9PT82fGetEDiugI3Z7dqVLtii4hyN4px6qX8oSKNPfsErC6ThNbbEDQy
+ BE3Q==
+X-Gm-Message-State: APjAAAUuE+cc1dVjv41uWm3oJ/MZwjkhh/jt5UdaBircrTB0ZbP4z+EL
+ C1ebXw7K1sk3K3zyQes+jKCqDg==
+X-Google-Smtp-Source: APXvYqzxaKiS4VMFgo0T1NX5al8ob1EuWBc3Mno/vG+KmJKLuitifLrCXvQifoB2KoAgAMHn6TjESg==
+X-Received: by 2002:a17:902:d891:: with SMTP id
+ b17mr1023058plz.119.1569262587256; 
+ Mon, 23 Sep 2019 11:16:27 -0700 (PDT)
 Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
- by smtp.gmail.com with ESMTPSA id g12sm9678516pgb.26.2019.09.23.11.11.04
+ by smtp.gmail.com with ESMTPSA id q2sm14639650pfg.144.2019.09.23.11.16.26
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 23 Sep 2019 11:11:04 -0700 (PDT)
-Date: Mon, 23 Sep 2019 11:10:57 -0700
+ Mon, 23 Sep 2019 11:16:26 -0700 (PDT)
+Date: Mon, 23 Sep 2019 11:16:24 -0700
 From: Matthias Kaehlcke <mka@chromium.org>
 To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH v6 2/6] PM / devfreq: Move more initialization before
- registration
-Message-ID: <20190923181057.GY133864@google.com>
+Subject: Re: [PATCH v6 4/6] PM / devfreq: Introduce devfreq_get_freq_range
+Message-ID: <20190923181624.GZ133864@google.com>
 References: <cover.1569252537.git.leonard.crestez@nxp.com>
- <0ad496507cd7e6731e46249b1499dfdebe205c16.1569252537.git.leonard.crestez@nxp.com>
+ <4e274855585940ec6fb0e219c7539d4cf600d9f1.1569252537.git.leonard.crestez@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <0ad496507cd7e6731e46249b1499dfdebe205c16.1569252537.git.leonard.crestez@nxp.com>
+In-Reply-To: <4e274855585940ec6fb0e219c7539d4cf600d9f1.1569252537.git.leonard.crestez@nxp.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_111106_743987_4080409E 
-X-CRM114-Status: GOOD (  19.95  )
+X-CRM114-CacheID: sfid-20190923_111628_975739_2BD99D3F 
+X-CRM114-Status: GOOD (  22.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -112,126 +112,220 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 23, 2019 at 06:51:05PM +0300, Leonard Crestez wrote:
-> In general it is a better to initialize an object before making it
-> accessible externally (through device_register).
+On Mon, Sep 23, 2019 at 06:51:07PM +0300, Leonard Crestez wrote:
+> Moving handling of min/max freq to a single function and call it from
+> update_devfreq and for printing min/max freq values in sysfs.
 > 
-> This makes it possible to avoid relying on locking a partially
-> initialized object.
+> This changes the behavior of out-of-range min_freq/max_freq: clamping
+> is now done at evaluation time. This means that if an out-of-range
+> constraint is imposed by sysfs and it later becomes valid then it will
+> be enforced.
 > 
 > Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
 > ---
->  drivers/devfreq/devfreq.c | 43 +++++++++++++++++++++++----------------
->  1 file changed, 25 insertions(+), 18 deletions(-)
+>  drivers/devfreq/devfreq.c | 111 +++++++++++++++++++++-----------------
+>  1 file changed, 63 insertions(+), 48 deletions(-)
 > 
 > diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
-> index 323d43315d1e..b4d2bfebb140 100644
+> index 0eee4dd79fbb..b6acb827fee5 100644
 > --- a/drivers/devfreq/devfreq.c
 > +++ b/drivers/devfreq/devfreq.c
-> @@ -587,10 +587,12 @@ static void devfreq_dev_release(struct device *dev)
->  	mutex_unlock(&devfreq_list_lock);
+> @@ -24,10 +24,12 @@
+>  #include <linux/printk.h>
+>  #include <linux/hrtimer.h>
+>  #include <linux/of.h>
+>  #include "governor.h"
 >  
->  	if (devfreq->profile->exit)
->  		devfreq->profile->exit(devfreq->dev.parent);
+> +#define HZ_PER_KHZ 1000
+> +
+>  #define CREATE_TRACE_POINTS
+>  #include <trace/events/devfreq.h>
 >  
-> +	kfree(devfreq->time_in_state);
-> +	kfree(devfreq->trans_table);
->  	mutex_destroy(&devfreq->lock);
->  	kfree(devfreq);
+>  static struct class *devfreq_class;
+>  
+> @@ -96,10 +98,50 @@ static unsigned long find_available_max_freq(struct devfreq *devfreq)
+>  		dev_pm_opp_put(opp);
+>  
+>  	return max_freq;
 >  }
 >  
->  /**
-> @@ -670,44 +672,43 @@ struct devfreq *devfreq_add_device(struct device *dev,
->  	devfreq->max_freq = devfreq->scaling_max_freq;
->  
->  	devfreq->suspend_freq = dev_pm_opp_get_suspend_opp_freq(dev);
->  	atomic_set(&devfreq->suspend_count, 0);
->  
-> -	dev_set_name(&devfreq->dev, "devfreq%d",
-> -				atomic_inc_return(&devfreq_no));
-> -	err = device_register(&devfreq->dev);
-> -	if (err) {
-> -		mutex_unlock(&devfreq->lock);
-> -		put_device(&devfreq->dev);
-> -		goto err_out;
-> -	}
-> -
-> -	devfreq->trans_table = devm_kzalloc(&devfreq->dev,
-> +	devfreq->trans_table = kzalloc(
->  			array3_size(sizeof(unsigned int),
->  				    devfreq->profile->max_state,
->  				    devfreq->profile->max_state),
->  			GFP_KERNEL);
->  	if (!devfreq->trans_table) {
->  		mutex_unlock(&devfreq->lock);
->  		err = -ENOMEM;
-> -		goto err_devfreq;
-> +		goto err_dev;
->  	}
->  
-> -	devfreq->time_in_state = devm_kcalloc(&devfreq->dev,
-> -			devfreq->profile->max_state,
-> -			sizeof(unsigned long),
-> -			GFP_KERNEL);
-> +	devfreq->time_in_state = kcalloc(devfreq->profile->max_state,
-> +					 sizeof(unsigned long),
-> +					 GFP_KERNEL);
->  	if (!devfreq->time_in_state) {
->  		mutex_unlock(&devfreq->lock);
->  		err = -ENOMEM;
-> -		goto err_devfreq;
-> +		goto err_dev;
->  	}
->  
->  	devfreq->last_stat_updated = jiffies;
->  
->  	srcu_init_notifier_head(&devfreq->transition_notifier_list);
->  
-> +	dev_set_name(&devfreq->dev, "devfreq%d",
-> +				atomic_inc_return(&devfreq_no));
-> +	err = device_register(&devfreq->dev);
-> +	if (err) {
-> +		mutex_unlock(&devfreq->lock);
-> +		put_device(&devfreq->dev);
-> +		goto err_out;
-
-As per my comment on v5 I think the goto needs to go to 'err_dev'. The
-device registration failed, hence devfreq_dev_release() won't be
-called to free allocated memory.
-
+> +/**
+> + * devfreq_get_freq_range() - Get the current freq range
+> + * @devfreq:	the devfreq instance
+> + * @min_freq:	the min frequency
+> + * @max_freq:	the max frequency
+> + *
+> + * This takes into consideration all constraints.
+> + */
+> +static void devfreq_get_freq_range(struct devfreq *devfreq,
+> +				   unsigned long *min_freq,
+> +				   unsigned long *max_freq)
+> +{
+> +	unsigned long *freq_table = devfreq->profile->freq_table;
+> +
+> +	lockdep_assert_held(&devfreq->lock);
+> +
+> +	/* Init min/max frequency from freq table */
+> +	if (freq_table[0] < freq_table[devfreq->profile->max_state - 1]) {
+> +		*min_freq = freq_table[0];
+> +		*max_freq = freq_table[devfreq->profile->max_state - 1];
+> +	} else {
+> +		*min_freq = freq_table[devfreq->profile->max_state - 1];
+> +		*max_freq = freq_table[0];
 > +	}
 > +
->  	mutex_unlock(&devfreq->lock);
->  
->  	mutex_lock(&devfreq_list_lock);
->  
->  	governor = try_then_request_governor(devfreq->governor_name);
-> @@ -733,14 +734,20 @@ struct devfreq *devfreq_add_device(struct device *dev,
->  
->  	return devfreq;
->  
->  err_init:
->  	mutex_unlock(&devfreq_list_lock);
-> -err_devfreq:
->  	devfreq_remove_device(devfreq);
-> -	devfreq = NULL;
-> +	return ERR_PTR(err);
+> +	/* constraints from sysfs: */
+
+one more nit if you are respinning anyway: remove colon
+
+> +	*min_freq = max(*min_freq, devfreq->min_freq);
+> +	*max_freq = min(*max_freq, devfreq->max_freq);
 > +
->  err_dev:
-> +	/*
-> +	 * Cleanup path for errors that happen before registration.
-> +	 * Otherwise we rely on devfreq_dev_release
+> +	/* constraints from OPP interface: */
 
-nit: add a period at the end of the second sentence.
+ditto
 
-> +	 */
-> +	kfree(devfreq->time_in_state);
-> +	kfree(devfreq->trans_table);
->  	kfree(devfreq);
->  err_out:
->  	return ERR_PTR(err);
+> +	*min_freq = max(*min_freq, devfreq->scaling_min_freq);
+> +	/* scaling_max_freq can be zero on error */
+> +	if (devfreq->scaling_max_freq)
+> +		*max_freq = min(*max_freq, devfreq->scaling_max_freq);
+> +
+> +	/* max_freq takes precedence over min_freq */
+> +	if (*min_freq > *max_freq)
+> +		*min_freq = *max_freq;
+> +}
+> +
+>  /**
+>   * devfreq_get_freq_level() - Lookup freq_table for the frequency
+>   * @devfreq:	the devfreq instance
+>   * @freq:	the target frequency
+>   */
+> @@ -348,21 +390,13 @@ int update_devfreq(struct devfreq *devfreq)
+>  
+>  	/* Reevaluate the proper frequency */
+>  	err = devfreq->governor->get_target_freq(devfreq, &freq);
+>  	if (err)
+>  		return err;
+> +	devfreq_get_freq_range(devfreq, &min_freq, &max_freq);
+>  
+> -	/*
+> -	 * Adjust the frequency with user freq, QoS and available freq.
+> -	 *
+> -	 * List from the highest priority
+> -	 * max_freq
+> -	 * min_freq
+> -	 */
+> -	max_freq = min(devfreq->scaling_max_freq, devfreq->max_freq);
+> -	min_freq = max(devfreq->scaling_min_freq, devfreq->min_freq);
+> -
+> +	/* max freq takes priority over min freq */
+>  	if (freq < min_freq) {
+>  		freq = min_freq;
+>  		flags &= ~DEVFREQ_FLAG_LEAST_UPPER_BOUND; /* Use GLB */
+>  	}
+>  	if (freq > max_freq) {
+> @@ -1297,40 +1331,28 @@ static ssize_t min_freq_store(struct device *dev, struct device_attribute *attr,
+>  	ret = sscanf(buf, "%lu", &value);
+>  	if (ret != 1)
+>  		return -EINVAL;
+>  
+>  	mutex_lock(&df->lock);
+> -
+> -	if (value) {
+> -		if (value > df->max_freq) {
+> -			ret = -EINVAL;
+> -			goto unlock;
+> -		}
+> -	} else {
+> -		unsigned long *freq_table = df->profile->freq_table;
+> -
+> -		/* Get minimum frequency according to sorting order */
+> -		if (freq_table[0] < freq_table[df->profile->max_state - 1])
+> -			value = freq_table[0];
+> -		else
+> -			value = freq_table[df->profile->max_state - 1];
+> -	}
+> -
+>  	df->min_freq = value;
+>  	update_devfreq(df);
+> -	ret = count;
+> -unlock:
+>  	mutex_unlock(&df->lock);
+> -	return ret;
+> +
+> +	return count;
 >  }
->  EXPORT_SYMBOL(devfreq_add_device);
+>  
+>  static ssize_t min_freq_show(struct device *dev, struct device_attribute *attr,
+>  			     char *buf)
+>  {
+>  	struct devfreq *df = to_devfreq(dev);
+> +	unsigned long min_freq, max_freq;
+>  
+> -	return sprintf(buf, "%lu\n", max(df->scaling_min_freq, df->min_freq));
+> +	mutex_lock(&df->lock);
+> +	devfreq_get_freq_range(df, &min_freq, &max_freq);
+> +	mutex_unlock(&df->lock);
+> +
+> +	return sprintf(buf, "%lu\n", min_freq);
+>  }
+>  
+>  static ssize_t max_freq_store(struct device *dev, struct device_attribute *attr,
+>  			      const char *buf, size_t count)
+>  {
+> @@ -1342,40 +1364,33 @@ static ssize_t max_freq_store(struct device *dev, struct device_attribute *attr,
+>  	if (ret != 1)
+>  		return -EINVAL;
+>  
+>  	mutex_lock(&df->lock);
+>  
+> -	if (value) {
+> -		if (value < df->min_freq) {
+> -			ret = -EINVAL;
+> -			goto unlock;
+> -		}
+> -	} else {
+> -		unsigned long *freq_table = df->profile->freq_table;
+> -
+> -		/* Get maximum frequency according to sorting order */
+> -		if (freq_table[0] < freq_table[df->profile->max_state - 1])
+> -			value = freq_table[df->profile->max_state - 1];
+> -		else
+> -			value = freq_table[0];
+> -	}
+> +	/* Interpret zero as "don't care" */
+> +	if (!value)
+> +		value = ULONG_MAX;
+>  
+>  	df->max_freq = value;
+>  	update_devfreq(df);
+> -	ret = count;
+> -unlock:
+>  	mutex_unlock(&df->lock);
+> -	return ret;
+> +
+> +	return count;
+>  }
+>  static DEVICE_ATTR_RW(min_freq);
+>  
+>  static ssize_t max_freq_show(struct device *dev, struct device_attribute *attr,
+>  			     char *buf)
+>  {
+>  	struct devfreq *df = to_devfreq(dev);
+> +	unsigned long min_freq, max_freq;
+> +
+> +	mutex_lock(&df->lock);
+> +	devfreq_get_freq_range(df, &min_freq, &max_freq);
+> +	mutex_unlock(&df->lock);
+>  
+> -	return sprintf(buf, "%lu\n", min(df->scaling_max_freq, df->max_freq));
+> +	return sprintf(buf, "%lu\n", max_freq);
+>  }
+>  static DEVICE_ATTR_RW(max_freq);
+>  
+>  static ssize_t available_frequencies_show(struct device *d,
+>  					  struct device_attribute *attr,
 
 _______________________________________________
 linux-arm-kernel mailing list
