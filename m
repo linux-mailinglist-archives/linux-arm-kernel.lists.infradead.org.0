@@ -2,84 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDA2CBB1F1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 12:10:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55615BB1F9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 12:11:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y0uunnMB8qZPLKSxim2QlXIoDn5UHuKM/rDLOnNFMsc=; b=NmPnEs/ydCIfLc
-	VwdusogkfqXMeJY91++Qf42/e8GEE0yGj5QSJzQV/yiPUSCTBgtLCcCoyr2DvwaBP/ZPRNg9COImY
-	36EY09NtNgpR7d1FtwBQErzIbKK3Tq67lxipg0Sypla8dWAtzMmm7SLlWwGwZ14wl/vBCBdVldGut
-	RbkByYQsFivPFZ8MNNWiIEbkfA2AmEHvkbF/iR0ycxTIg4McAszVlUFwBbpPkDFVFVemHZerNiL4i
-	thwwUrSVYzx1OMPhg3lCh6aLnkvse90oYCFyB8YhqXlYei0MFR/0XBsEi6FP2F7z3ENACIA66E1VG
-	xtBhParhIc0wNPE5JV7g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NlZyYTWXNbqar26kAgEyrIa2rEUG8R5Iq4eOi5Uc3LM=; b=duAXDD1Yjmurfe
+	d8tMkLPUqbGw00/1fg46fZSUaEZi891z/uWORy2BOFfX9iYVMaLm7SVF8tNpkbCzHEN6Hcqovj6g6
+	0J7NS7+gL+LtTQ70PcgTwjuOcz3dR0Yq5IOF6tQlDioeeF0ujGqhN8BkTd3Ipp4geLyM4DpwtUETH
+	DxANdM+OvRL9wZTjdEqZnSQ3lwi0Xy6spumrDWyJSMFWhu2WWqGDr8ioKPX2i+21nUxMYLnGfvVKn
+	PZ25+1zPMnwzQzHw16uVPnIAGGBaJEtyHj43CmUe+q+weMucX4utnkcatlMD6yzWULT0XOET6I7+o
+	2KuoztSWmaKQr1Bl/1oQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCLIO-0005Sa-IW; Mon, 23 Sep 2019 10:10:16 +0000
-Received: from mail-wm1-f65.google.com ([209.85.128.65])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCLIB-0004PR-Of
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 10:10:05 +0000
-Received: by mail-wm1-f65.google.com with SMTP id f22so1466974wmc.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Sep 2019 03:10:02 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=h9qXlBn1SwboKu5LtxJjQDTNKEcy+/lavbTXOBsjGHM=;
- b=Xuo7HEuShsxfeeih9MPRLXUtuc3Tll8mGUh6fsOXqctNc1yf+CwAMJxBc29G3sYBJB
- wv/CIyFoonJxkH8/nPdK0q5GMnHH+Y+Fcw7F/Oq7CzUGG4ZU/JjUCsy4G6ttdRS/V7hb
- gA+VgJB5a+Yjfu0NVC6G/cIHU5JChtyOmH0uQSKMPnZ8zpzX5MKflD4PeTfJpQ6Iaj5X
- LPZM68mnffZQ3piL0+OaWkyOgb32+pbQG+XZ7l97/mVq7+Za+zEjWXdSNpCteKa6QIQP
- YmmovtRsLwUIYVC/8+akv+Oai/VLIeiwOSIwc3QA2xb5QhMt2UInfTiLPfLu6c+8GWki
- 7GVg==
-X-Gm-Message-State: APjAAAVULIc1+bDIt4SCtGgtM34ipTmllnbfIdQLDg5R5rr9LJgbG2Ze
- MHEV2o3x1QipzSi5w9rpZ+4=
-X-Google-Smtp-Source: APXvYqwZ70GVq/wsIIytWY8nE0tIFLrgynh5FI/RtkKc0x6HwJVU1rez82f8Fjm1XocHptXshd8PFg==
-X-Received: by 2002:a1c:150:: with SMTP id 77mr2056857wmb.116.1569233401030;
- Mon, 23 Sep 2019 03:10:01 -0700 (PDT)
-Received: from pi3 ([194.230.155.145])
- by smtp.googlemail.com with ESMTPSA id l9sm9539317wme.45.2019.09.23.03.09.59
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 23 Sep 2019 03:10:00 -0700 (PDT)
-Date: Mon, 23 Sep 2019 12:09:57 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Subject: Re: [PATCH v2 03/10] ASoC: wm8994: Add support for setting MCLK
- clock rate
-Message-ID: <20190923100957.GA4723@pi3>
-References: <20190920130218.32690-1-s.nawrocki@samsung.com>
- <CGME20190920130316eucas1p2de713006a13c62c0b895c2e33e0d14c7@eucas1p2.samsung.com>
- <20190920130218.32690-4-s.nawrocki@samsung.com>
- <7334ce45-f192-4421-aa3d-d142582153ef@samsung.com>
+	id 1iCLJj-0005yh-QL; Mon, 23 Sep 2019 10:11:39 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iCLJd-0005xw-Ne
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 10:11:35 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C59CA1000;
+ Mon, 23 Sep 2019 03:11:31 -0700 (PDT)
+Received: from [10.162.40.137] (p8cg001049571a15.blr.arm.com [10.162.40.137])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 537933F694; Mon, 23 Sep 2019 03:11:29 -0700 (PDT)
+Subject: Re: [PATCH] arm64: use generic free_initrd_mem()
+To: Mike Rapoport <rppt@kernel.org>, Laura Abbott <labbott@redhat.com>
+References: <1568618488-19055-1-git-send-email-rppt@kernel.org>
+ <0ba20aa4-d2dd-2263-6b5f-16a5c8a39f67@redhat.com>
+ <20190916135542.GC5196@rapoport-lnx>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <e1ffc4f9-91cc-a4e1-b549-c28a392bdc71@arm.com>
+Date: Mon, 23 Sep 2019 15:41:46 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <7334ce45-f192-4421-aa3d-d142582153ef@samsung.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <20190916135542.GC5196@rapoport-lnx>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_031003_998344_B66F09F5 
-X-CRM114-Status: GOOD (  11.15  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190923_031133_856878_6C5E6F93 
+X-CRM114-Status: GOOD (  20.83  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.65 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.65 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,35 +63,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
- linux-samsung-soc@vger.kernel.org, ckeepax@opensource.cirrus.com,
- b.zolnierkie@samsung.com, sbkim73@samsung.com, patches@opensource.cirrus.com,
- lgirdwood@gmail.com, robh+dt@kernel.org, broonie@kernel.org,
- linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-arch@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Mike Rapoport <rppt@linux.ibm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 23, 2019 at 11:10:48AM +0200, Sylwester Nawrocki wrote:
-> On 9/20/19 15:02, Sylwester Nawrocki wrote:
-> > Extend the set_sysclk() handler so we also set frequency of the MCLK1,
-> > MCLK2 clocks through clk API when those clocks are specified in DT.
-> > 
-> > Reviewed-by: Charles Keepax <ckeepax@opensource.cirrus.com>
-> > Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
+
+
+On 09/16/2019 07:25 PM, Mike Rapoport wrote:
+> (added linux-arch)
 > 
-> Sorry, I squashed other patch to this one but forgot to remove above tags, 
-> not sure if those still stand as there was rather significant change in 
-> the patch. 
+> On Mon, Sep 16, 2019 at 08:23:29AM -0400, Laura Abbott wrote:
+>> On 9/16/19 8:21 AM, Mike Rapoport wrote:
+>>> From: Mike Rapoport <rppt@linux.ibm.com>
+>>>
+>>> arm64 calls memblock_free() for the initrd area in its implementation of
+>>> free_initrd_mem(), but this call has no actual effect that late in the boot
+>>> process. By the time initrd is freed, all the reserved memory is managed by
+>>> the page allocator and the memblock.reserved is unused, so there is no
+>>> point to update it.
+>>>
+>>
+>> People like to use memblock for keeping track of memory even if it has no
+>> actual effect. We made this change explicitly (see 05c58752f9dc ("arm64: To remove
+>> initrd reserved area entry from memblock") That said, moving to the generic
+>> APIs would be nice. Maybe we can find another place to update the accounting?
+> 
+> Any other place in arch/arm64 would make it messy because it would have to
+> duplicate keepinitrd logic.
+> 
+> We could put the memblock_free() in the generic free_initrd_mem() with
+> something like:
+> 
+> diff --git a/init/initramfs.c b/init/initramfs.c
+> index c47dad0..403c6a0 100644
+> --- a/init/initramfs.c
+> +++ b/init/initramfs.c
+> @@ -531,6 +531,10 @@ void __weak free_initrd_mem(unsigned long start,
+> unsigned long end)
+>  {
+>         free_reserved_area((void *)start, (void *)end, POISON_FREE_INITMEM,
+>                         "initrd");
+> +
+> +#ifdef CONFIG_ARCH_KEEP_MEMBLOCK
+> +       memblock_free(__virt_to_phys(start), end - start);
+> +#endif
+>  }
 
-It's good. For the record:
+This makes sense.
 
-Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
+>  
+>  #ifdef CONFIG_KEXEC_CORE
+> 
+> 
+> Then powerpc and s390 folks will also be able to track the initrd memory :)
 
-Best regards,
-Krzysztof
+Sure.
 
+> 
+>>> Without the memblock_free() call the only difference between arm64 and the
+>>> generic versions of free_initrd_mem() is the memory poisoning. Switching
+>>> arm64 to the generic version will enable the poisoning.
+>>>
+>>> Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
+>>> ---
+>>>
+>>> I've boot tested it on qemu and I've checked that kexec works.
+>>>
+>>>  arch/arm64/mm/init.c | 8 --------
+>>>  1 file changed, 8 deletions(-)
+>>>
+>>> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+>>> index f3c7952..8ad2934 100644
+>>> --- a/arch/arm64/mm/init.c
+>>> +++ b/arch/arm64/mm/init.c
+>>> @@ -567,14 +567,6 @@ void free_initmem(void)
+>>>  	unmap_kernel_range((u64)__init_begin, (u64)(__init_end - __init_begin));
+>>>  }
+>>> -#ifdef CONFIG_BLK_DEV_INITRD
+>>> -void __init free_initrd_mem(unsigned long start, unsigned long end)
+>>> -{
+>>> -	free_reserved_area((void *)start, (void *)end, 0, "initrd");
+>>> -	memblock_free(__virt_to_phys(start), end - start);
+>>> -}
+>>> -#endif
+>>> -
+>>>  /*
+>>>   * Dump out memory limit information on panic.
+>>>   */
+>>>
+>>
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
