@@ -2,92 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04895BBA38
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 19:13:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74775BBA90
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 19:33:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E7JPJAAKiAV1hHhPXVzfjAyn9eqbkp4fOZ6idzoXhyw=; b=YtC8xhwGUs8WZ2
-	KCndpOWqPE+OAkgwuf1eHDiCbAKP0WxynI/gKm8/GQb1FnoqTpqDEeTGVBHqcv2qPQaezI8/YY8yh
-	aqoIvJdmAquWQE+ONkBhRLyolE6SwTyKyZQ+ZTdBLsrnuAbzDf7zhnN4FBNNyQgBttIVgjDw+uWHv
-	ofwJfhMy6cIJw09yq9SjKVEoFU6+c4C2bY4URqckeEldRTthUrbqEDHtxI/E72U1Ak1XtYY1aeFgz
-	aTNARA0v3i6ZxT1spgtrD7LtZbSs65fhIenswUvxD7Du6pSB7UZCI7//1IkikYAWLpL4suY4UiX1O
-	8s5JVCQ0pzOaHJaJBuSg==;
+	List-Owner; bh=HaGkG/FsnGdOQmshNxd8vkcOO4Q1G0d/N2KTsvOVpfs=; b=F6zMrphG6CbpBW
+	gP+8SURywd8UPN98nCJ7TG9pAxSGiD9XoPxHy5q0cCKyH88GKOq5LC2JC2QD7IwFELwcYeybG3Nnv
+	rNxwBWy4fLRYO/qTtLEr5/+R0SuYxq7sLpQiHwaGwNC7P0ki6G+dy/f/38qZ5psGDQXz3byfl146n
+	20rym5YHsQtOpLjTCufutwB18USKfYJKTNems0DFYjSWwhDMmCCIihubmoxstrtpcDb3I0JIDmkhe
+	KXbicEQ13dTXDHjk+CK8QZGX+5fNiCsSivV3icbLQA0Mu7VigZUdGUs1pGXpZbGkFYG9rKXBA1IUq
+	wDADENkH51l8Tqw1KEpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCRu9-0001eF-TW; Mon, 23 Sep 2019 17:13:41 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iCSDK-0000d6-Fq; Mon, 23 Sep 2019 17:33:30 +0000
+Received: from asavdk3.altibox.net ([109.247.116.14])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCRtx-0001dv-Gu
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 17:13:30 +0000
-Received: by mail-pg1-x541.google.com with SMTP id z12so8333289pgp.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Sep 2019 10:13:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=tfsTLDFY1ccam3FUWWjnqOYmfdpnpNmRoJABJz0j6Jw=;
- b=rab4KjXC1CDcjeIdsHH50MINA6B4H/cQqstbVol6cCKHf8vYra1z5ei7gFXzGhZ7EP
- 8UDoshJz8VTK87htqLNecFQnuHN2Ros1upeW6VtbuQutaANFFrZeNKMAo2Mt9+iK13dy
- iB+LgWZOkjm70B6aiNKMch4exZwDrSmzHvw+3Rr9p3Xr8gDGSQYL3m6BDHsroTlcYXcV
- y+N8jGyOGGOPIpzuG2w2iOUZDCO/DgEBjv5thouZgICXauIz9IYxe8bsHD2wjU/ro0l/
- +hyx5B4MwnUTvBXhX7KZZspApVhXEdmo+laC4zAtkrQU8Mu8zGA8ltQVBrNQOUVVidx1
- hpTg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=tfsTLDFY1ccam3FUWWjnqOYmfdpnpNmRoJABJz0j6Jw=;
- b=I+SlpTur2kiDDI2ss68QaxbYSHW+DYuVdJ4/2bykeLvClXXQcU+9vF2bXiLfFP7WOu
- azkWk9wJK9rMntlYm6OCDilGJH5nFWMhMP7p7cKMS1ukcE7lHxkEATxItCqZ2E/O46G7
- 2PDWstelCj0oJZkNnishYw34cBsYyapRIxObDH6naJNbLXuXbNc9BzEFT+w5NsOqmXMw
- vZQ8ZFswMCvCAUfUSQc2O41NeVI65Cfid/CqETQ3NHK7GuZxt0514RI7DplCAr2++e59
- qqw3g8QnqHzkIDX4g5MY6WrcnEEpNNqV/9TnjvPF3BsdQS/M9q4hDl39h5eodv5DO11R
- Qfgw==
-X-Gm-Message-State: APjAAAWLx33+bex73qp50GAS7evL5A0wtrvLD9+HtLibS4FaR6kPMifo
- PlIbht5G5/Zfl+6UuDdibnszyw2R3z22Vw==
-X-Google-Smtp-Source: APXvYqy1QDC5+llAVuCG+6Lt9rco93xnDb1jqsxs2nUWrC/qkddy16J7Ri3SZxWDWN2mMuhNCaAgNg==
-X-Received: by 2002:a63:f74a:: with SMTP id f10mr931166pgk.171.1569258808707; 
- Mon, 23 Sep 2019 10:13:28 -0700 (PDT)
-Received: from leoy-ThinkPad-X240s ([12.206.46.62])
- by smtp.gmail.com with ESMTPSA id k4sm11217132pjl.9.2019.09.23.10.13.27
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 23 Sep 2019 10:13:27 -0700 (PDT)
-Date: Tue, 24 Sep 2019 01:13:25 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
-Subject: Re: [PATCH v2 1/5] perf cs-etm: Refactor instruction size handling
-Message-ID: <20190923171325.GA29675@leoy-ThinkPad-X240s>
-References: <20190923160759.14866-1-leo.yan@linaro.org>
- <20190923160759.14866-2-leo.yan@linaro.org>
- <2b675e24-8b06-fbd6-ab73-214a6afb2a07@arm.com>
+ id 1iCSD9-0000ZO-LN
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 17:33:21 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by asavdk3.altibox.net (Postfix) with ESMTPS id 3E7FF20042;
+ Mon, 23 Sep 2019 19:31:08 +0200 (CEST)
+Date: Mon, 23 Sep 2019 19:31:06 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
+To: Sandy Huang <hjc@rock-chips.com>
+Subject: Re: [PATCH 22/36] drm/atmel-hlcdc: use bpp instead of cpp for
+ drm_format_info
+Message-ID: <20190923173106.GA13649@ravnborg.org>
+References: <1569243119-183293-1-git-send-email-hjc@rock-chips.com>
+ <1569243119-183293-2-git-send-email-hjc@rock-chips.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <2b675e24-8b06-fbd6-ab73-214a6afb2a07@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <1569243119-183293-2-git-send-email-hjc@rock-chips.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=dqr19Wo4 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=s8YR1HE3AAAA:8
+ a=GZYic5qFh62CaahH_tAA:9 a=CjuIK1q_8ugA:10 a=jGH_LyMDp9YhSvY-UuyI:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_101329_565809_31DC6CA4 
-X-CRM114-Status: GOOD (  26.25  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190923_103319_876363_9A67C9DA 
+X-CRM114-Status: GOOD (  16.91  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ no trust [109.247.116.14 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,110 +68,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Coresight ML <coresight@lists.linaro.org>, linux-kernel@vger.kernel.org,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
- Jiri Olsa <jolsa@redhat.com>, linux-arm-kernel@lists.infradead.org,
- Mike Leach <mike.leach@linaro.org>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Boris Brezillon <bbrezillon@kernel.org>, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Suzuki,
+Hi Sandy.
 
-On Mon, Sep 23, 2019 at 05:51:04PM +0100, Suzuki K Poulose wrote:
-> Hi Leo,
-> 
-> On 23/09/2019 17:07, Leo Yan wrote:
-> > In cs-etm.c there have several functions need to know instruction size
-> > based on address, e.g. cs_etm__instr_addr() and cs_etm__copy_insn()
-> > these two functions both calculate the instruction size separately.
-> > Furthermore, if we consider to add new features later which also might
-> > require to calculate instruction size.
-> > 
-> > For this reason, this patch refactors the code to introduce a new
-> > function cs_etm__instr_size(), it will be a central place to calculate
-> > the instruction size based on ISA type and instruction address.
-> > 
-> > For a neat implementation, cs_etm__instr_addr() will always execute the
-> > loop without checking ISA type, this allows cs_etm__instr_size() and
-> > cs_etm__instr_addr() have no any duplicate code with each other and both
-> > functions can be changed independently later without breaking anything.
-> > As a side effect, cs_etm__instr_addr() will do a few more iterations for
-> > A32/A64 instructions, this would be fine if consider perf tool runs in
-> > the user space.
-> > 
-> > Signed-off-by: Leo Yan <leo.yan@linaro.org>
-> 
-> Your changes look fine to me. However, please see my comment below.
-> 
-> > ---
-> >   tools/perf/util/cs-etm.c | 48 +++++++++++++++++++++++-----------------
-> >   1 file changed, 28 insertions(+), 20 deletions(-)
-> > 
-> > diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-> > index f87b9c1c9f9a..1de3f9361193 100644
-> > --- a/tools/perf/util/cs-etm.c
-> > +++ b/tools/perf/util/cs-etm.c
-> > @@ -917,6 +917,26 @@ static inline int cs_etm__t32_instr_size(struct cs_etm_queue *etmq,
-> >   	return ((instrBytes[1] & 0xF8) >= 0xE8) ? 4 : 2;
-> >   }
-> > +static inline int cs_etm__instr_size(struct cs_etm_queue *etmq,
-> > +				     u8 trace_chan_id,
-> > +				     enum cs_etm_isa isa,
-> > +				     u64 addr)
-> > +{
-> > +	int insn_len;
-> > +
-> > +	/*
-> > +	 * T32 instruction size might be 32-bit or 16-bit, decide by calling
-> > +	 * cs_etm__t32_instr_size().
-> > +	 */
-> > +	if (isa == CS_ETM_ISA_T32)
-> > +		insn_len = cs_etm__t32_instr_size(etmq, trace_chan_id, addr);
-> > +	/* Otherwise, A64 and A32 instruction size are always 32-bit. */
-> > +	else
-> > +		insn_len = 4;
-> > +
-> > +	return insn_len;
-> > +}
-> > +
-> >   static inline u64 cs_etm__first_executed_instr(struct cs_etm_packet *packet)
-> >   {
-> >   	/* Returns 0 for the CS_ETM_DISCONTINUITY packet */
-> > @@ -941,19 +961,15 @@ static inline u64 cs_etm__instr_addr(struct cs_etm_queue *etmq,
-> >   				     const struct cs_etm_packet *packet,
-> >   				     u64 offset)
-> >   {
-> > -	if (packet->isa == CS_ETM_ISA_T32) {
-> > -		u64 addr = packet->start_addr;
-> > +	u64 addr = packet->start_addr;
-> > -		while (offset > 0) {
-> > -			addr += cs_etm__t32_instr_size(etmq,
-> > -						       trace_chan_id, addr);
-> > -			offset--;
-> > -		}
-> > -		return addr;
-> > +	while (offset > 0) {
-> 
-> Given that offset is u64, the check above is not appropriate. You could either
-> change it to :
-> 	while (offset) // if you are sure (s64)offset always is a postive
-> integer and we always reduce it by 1.
-> 
-> Otherwise you may switch the offset to a signed type. I understand that this
-> is not introduced by your changes. But you may fix that up in a separate patch.
+Thanks for taking care of this, but...
 
-Thanks a lot for the review.  Seems to me the reliable fix is to change
-to a signed type.  Will add this fix in next spin.
+On Mon, Sep 23, 2019 at 08:51:45PM +0800, Sandy Huang wrote:
+> cpp[BytePerPlane] can't describe the 10bit data format correctly,
+> So we use bpp[BitPerPlane] to instead cpp.
+> 
+> Signed-off-by: Sandy Huang <hjc@rock-chips.com>
+> ---
+>  drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c
+> index 89f5a75..ab7d423 100644
+> --- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c
+> +++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c
+> @@ -644,7 +644,7 @@ static int atmel_hlcdc_plane_atomic_check(struct drm_plane *p,
+>  		int xdiv = i ? fb->format->hsub : 1;
+>  		int ydiv = i ? fb->format->vsub : 1;
+>  
+> -		state->bpp[i] = fb->format->cpp[i];
+> +		state->bpp[i] = fb->format->bpp[i] / 8;
+>  		if (!state->bpp[i])
+>  			return -EINVAL;
 
-Thanks,
-Leo Yan
+Awaiting conclusion on Daniels comment on PATCH 1 and has dropped this
+patch for now.
+And please address the concerns Rob has about bisectability in your
+cover letter for v2.
+
+	Sam
 
 _______________________________________________
 linux-arm-kernel mailing list
