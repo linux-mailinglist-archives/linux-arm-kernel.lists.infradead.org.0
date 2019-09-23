@@ -2,55 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E11FDBBA06
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 18:55:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43CBCBBA0F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 18:59:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wXpTc762U1AVM5rbuA8RGgLYbWp3fwQh7PGdl04ktRo=; b=lXrcXSJt5oQsAG
-	+jW6dHPzxqd8L/phjGHyZEPPlrsT1wFw1I6Uwss491p3S5+ogwM1sTg15W8ooFV6dn05P8vN0C1bK
-	OK0hy7NNY3ytM0pYyQu6/1vFaoUOuG6G1/bjmGrMaDCsytAlmLcjiTKqyRfpwuFiAi9ltBNTv9397
-	I9KC7TDV2B1LehVUTA0VEWFzSnTiCluak9r001uypeHGelVZ+nhhsCWxZnuu9Q8+oUCL5HAKSuk99
-	A08IhWaAjzdF6nqZU+P3wOrojgyx4DJHAEaK56EICjSHNQ5lUDH7/Gk/01RzDcbqCc9DbCByP2T0i
-	LqtAFRGIh2g2Pnfr6cdA==;
+	List-Owner; bh=tmkl+/XRcknVqf9SW7pNYYApL6I9k6zMZp2j4Z1eUKY=; b=G89uvjUBtkL9Vy
+	Ua0C9C8iENAVpLvqlHiM4A4CvvImqBFF5qhX8vwkILEd5guF9eLTnsHUinH5XvXwQGHMuUaAQJU6F
+	FHxANYYjCmc6ucDfhHSiYS6frT8GPKH800VmdCXVSWtpJ8wyyVKhxYK3UKpeyckIuGtG0l17X9OZ5
+	D7FSKqwV6wZ5jyV+7as87YEq1aPtBdDHO2ltXtzat1jDXh+qSgLg8LqSvaNAb5rQyI1zzvKFlusXL
+	r5zVlDrsvJPgEneOe9XgBVM5qJA7gnfNiUqAj4FgZeE2FamDxKR5i9lBOro4WcZuwGhvja+1cswQ5
+	qhyGAoSO2gevkl/El7kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCRc3-00027o-Au; Mon, 23 Sep 2019 16:54:59 +0000
+	id 1iCRfw-0003kj-9v; Mon, 23 Sep 2019 16:59:00 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCRbo-00026j-Ky
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 16:54:45 +0000
+ id 1iCRfk-0003kH-J8
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 16:58:50 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D1B1C20882;
- Mon, 23 Sep 2019 16:54:43 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3108A20882;
+ Mon, 23 Sep 2019 16:58:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569257683;
- bh=WIRo18P9vD/7u8trD2h5S5GUAMjZkH6LD3wnIxh+LOU=;
+ s=default; t=1569257928;
+ bh=6gBQ7evWxUnQAjE4LnejUIeFNjWc40aXwInkVoD3GN8=;
  h=In-Reply-To:References:Cc:To:From:Subject:Date:From;
- b=fX3kSzm/O/ZTERhPGEutWFuA1d/8Ed2hikLwxeh5MenpYAXPjUKlP3dfXISawejj5
- xeQc8eKDua9XPOO55Rrz9O1fkhEVBinMe2ccKxfmk32T4jNVJEwGulEIAeRQ2UPToM
- y5+IBkiYLYvmn4dwpBZ97FWmejIAmww4YSNNsOXs=
+ b=mz45B+ZlhYZ8MLwOENGu02lQPt3tWca5h/8MSI2M2QIm9qT1lNCGeRfDMmXEyi832
+ /2ylmJYkuMIp4QJhyumZmyl9E1NW2Io2Lhc7uCJ5H4W9rveRMggU124f7kQn7CmyKw
+ kKlW/lyxj2cPFIQTLDYrnMcIQFqusTQC+7XLkLKA=
 MIME-Version: 1.0
-In-Reply-To: <1569248002-2485-6-git-send-email-laurentiu.palcu@nxp.com>
-References: <1569248002-2485-1-git-send-email-laurentiu.palcu@nxp.com>
- <1569248002-2485-6-git-send-email-laurentiu.palcu@nxp.com>
-To: Fabio Estevam <festevam@gmail.com>,
- Laurentiu Palcu <laurentiu.palcu@nxp.com>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Sascha Hauer <s.hauer@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>
+In-Reply-To: <20190920153906.20887-1-alexandre.belloni@bootlin.com>
+References: <20190920153906.20887-1-alexandre.belloni@bootlin.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH 5/5] arm64: dts: imx8mq: add DCSS node
+Subject: Re: [PATCH] clk: at91: avoid sleeping early
 User-Agent: alot/0.8.1
-Date: Mon, 23 Sep 2019 09:54:42 -0700
-Message-Id: <20190923165443.D1B1C20882@mail.kernel.org>
+Date: Mon, 23 Sep 2019 09:58:47 -0700
+Message-Id: <20190923165848.3108A20882@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_095444_714196_85B7D882 
-X-CRM114-Status: UNSURE (   8.41  )
+X-CRM114-CacheID: sfid-20190923_095848_654078_737550AE 
+X-CRM114-Status: UNSURE (   9.09  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -80,54 +76,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, agx@sigxcpu.org, linux-kernel@vger.kernel.org,
- Laurentiu Palcu <laurentiu.palcu@nxp.com>,
- linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org, Uwe Kleine-König <u.kleine-koenig@pengutronix.de>, Claudiu Beznea <claudiu.beznea@microchip.com>, linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Laurentiu Palcu (2019-09-23 07:13:19)
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> index 52aae34..d4aa778 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> @@ -871,6 +871,31 @@
->                                 interrupt-controller;
->                                 #interrupt-cells = <1>;
->                         };
-> +
-> +                       dcss: dcss@0x32e00000 {
-
-Drop the 0x prefix on node names.
-
-> +                               #address-cells = <1>;
-> +                               #size-cells = <0>;
-> +                               compatible = "nxp,imx8mq-dcss";
-> +                               reg = <0x32e00000 0x2D000>, <0x32e2f000 0x1000>;
-> +                               interrupts = <6>, <8>, <9>;
-> +                               interrupt-names = "ctx_ld", "ctxld_kick", "vblank";
-> +                               interrupt-parent = <&irqsteer>;
-> +                               clocks = <&clk IMX8MQ_CLK_DISP_APB_ROOT>,
-> +                                        <&clk IMX8MQ_CLK_DISP_AXI_ROOT>,
-> +                                        <&clk IMX8MQ_CLK_DISP_RTRM_ROOT>,
-> +                                        <&clk IMX8MQ_VIDEO2_PLL_OUT>,
-> +                                        <&clk IMX8MQ_CLK_DISP_DTRC>;
-> +                               clock-names = "apb", "axi", "rtrm", "pix", "dtrc";
-> +                               assigned-clocks = <&clk IMX8MQ_CLK_DISP_AXI>,
-> +                                                 <&clk IMX8MQ_CLK_DISP_RTRM>,
-> +                                                 <&clk IMX8MQ_VIDEO2_PLL1_REF_SEL>;
-> +                               assigned-clock-parents = <&clk IMX8MQ_SYS1_PLL_800M>,
-> +                                                        <&clk IMX8MQ_SYS1_PLL_800M>,
-> +                                                        <&clk IMX8MQ_CLK_27M>;
-> +                               assigned-clock-rates = <800000000>,
-> +                                                          <400000000>;
-> +                               status = "disabled";
-> +                       };
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+UXVvdGluZyBBbGV4YW5kcmUgQmVsbG9uaSAoMjAxOS0wOS0yMCAwODozOTowNikKPiBJdCBpcyBu
+b3QgYWxsb3dlZCB0byBzbGVlcCB0byBlYXJseSBpbiB0aGUgYm9vdCBwcm9jZXNzIGFuZCB0aGlz
+IG1heSBsZWFkCj4gdG8ga2VybmVsIGlzc3VlcyBpZiB0aGUgYm9vdGxvYWRlciBkaWRuJ3QgcHJl
+cGFyZSB0aGUgc2xvdyBjbG9jayBhbmQgbWFpbgo+IGNsb2NrLgo+IAo+IFRoaXMgcmVzdWx0cyBp
+biB0aGUgZm9sbG93aW5nIGVycm9yIGFuZCBkdW1wIHN0YWNrIG9uIHRoZSBBcmlldHRhRzI1Ogo+
+ICAgIGJhZDogc2NoZWR1bGluZyBmcm9tIHRoZSBpZGxlIHRocmVhZCEKPiAKPiBFbnN1cmUgaXQg
+aXMgcG9zc2libGUgdG8gc2xlZXAsIGVsc2Ugc2ltcGx5IGhhdmUgYSBkZWxheS4KPiAKPiBSZXBv
+cnRlZC1ieTogVXdlIEtsZWluZS1Lw7ZuaWcgPHUua2xlaW5lLWtvZW5pZ0BwZW5ndXRyb25peC5k
+ZT4KPiBTaWduZWQtb2ZmLWJ5OiBBbGV4YW5kcmUgQmVsbG9uaSA8YWxleGFuZHJlLmJlbGxvbmlA
+Ym9vdGxpbi5jb20+Cj4gLS0tCj4gCj4gTm90ZSB0aGF0IHRoaXMgd2FzIGFscmVhZHkgZGlzY3Vz
+c2VkIGEgd2hpbGUgYWdvIGFuZCBBcm5kIHNhaWQgdGhpcyBhcHByb2FjaCB3YXMKPiByZWFzb25h
+YmxlOgo+ICAgaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGttbC82MTIwODE4Lk15ZUpaNzRoWWFA
+d3VlcmZlbC8KCkRvZXMgdGhpcyBuZWVkIGEgRml4ZXM6IHRhZz8KCgpfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
+bGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
