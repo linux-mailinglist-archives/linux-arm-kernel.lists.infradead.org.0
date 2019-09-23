@@ -2,62 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51162BB9EF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 18:51:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E11FDBBA06
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 18:55:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=eOq4JAkm46BtbGcAwXliQYDCq1haiRXe9OcOUj4+ikM=; b=sr9/WQ+1Bm9ub57xNpD+0gQCa
-	aYBKLuUbOHbH5nbtu/v+Jsxh7qq/wH6JWmVuJdIhP9HNsXZv9x+7OOqgnK22v4JwoPuJOrwmbpnGU
-	B2TvyflF4AYXT3IKRumlQ3ocoz80fYA0FmbfVuDp11rtKwNVXlfGAdH7UBuUSG+WZP3EjlXBF9d2d
-	28qPw8boXcYdqr828oYUbYBuCQgcCof2iuodi67wHzHgBl5rh+XUKYfvdSC0inlQ/IFuNT2ztNbUV
-	JSpiAfbLlrX1m6eqv7NYk1e3ccJfyrLFra6OTmiD7j0Ka0ctsd3puMybKtCJplZBlzr4fOri68Rnn
-	PXSi7Y9WA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wXpTc762U1AVM5rbuA8RGgLYbWp3fwQh7PGdl04ktRo=; b=lXrcXSJt5oQsAG
+	+jW6dHPzxqd8L/phjGHyZEPPlrsT1wFw1I6Uwss491p3S5+ogwM1sTg15W8ooFV6dn05P8vN0C1bK
+	OK0hy7NNY3ytM0pYyQu6/1vFaoUOuG6G1/bjmGrMaDCsytAlmLcjiTKqyRfpwuFiAi9ltBNTv9397
+	I9KC7TDV2B1LehVUTA0VEWFzSnTiCluak9r001uypeHGelVZ+nhhsCWxZnuu9Q8+oUCL5HAKSuk99
+	A08IhWaAjzdF6nqZU+P3wOrojgyx4DJHAEaK56EICjSHNQ5lUDH7/Gk/01RzDcbqCc9DbCByP2T0i
+	LqtAFRGIh2g2Pnfr6cdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCRYd-0001af-Ax; Mon, 23 Sep 2019 16:51:27 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCRYS-0001Zu-Us
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 16:51:18 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 415371000;
- Mon, 23 Sep 2019 09:51:14 -0700 (PDT)
-Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F22DD3F67D;
- Mon, 23 Sep 2019 09:51:06 -0700 (PDT)
-Subject: Re: [PATCH v2 1/5] perf cs-etm: Refactor instruction size handling
-To: Leo Yan <leo.yan@linaro.org>, Arnaldo Carvalho de Melo <acme@kernel.org>, 
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Peter Zijlstra <peterz@infradead.org>, Ingo Molnar <mingo@redhat.com>,
- Mark Rutland <mark.rutland@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Jiri Olsa <jolsa@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- Mike Leach <mike.leach@linaro.org>, Coresight ML <coresight@lists.linaro.org>
-References: <20190923160759.14866-1-leo.yan@linaro.org>
- <20190923160759.14866-2-leo.yan@linaro.org>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <2b675e24-8b06-fbd6-ab73-214a6afb2a07@arm.com>
-Date: Mon, 23 Sep 2019 17:51:04 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.0
+	id 1iCRc3-00027o-Au; Mon, 23 Sep 2019 16:54:59 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iCRbo-00026j-Ky
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 16:54:45 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D1B1C20882;
+ Mon, 23 Sep 2019 16:54:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1569257683;
+ bh=WIRo18P9vD/7u8trD2h5S5GUAMjZkH6LD3wnIxh+LOU=;
+ h=In-Reply-To:References:Cc:To:From:Subject:Date:From;
+ b=fX3kSzm/O/ZTERhPGEutWFuA1d/8Ed2hikLwxeh5MenpYAXPjUKlP3dfXISawejj5
+ xeQc8eKDua9XPOO55Rrz9O1fkhEVBinMe2ccKxfmk32T4jNVJEwGulEIAeRQ2UPToM
+ y5+IBkiYLYvmn4dwpBZ97FWmejIAmww4YSNNsOXs=
 MIME-Version: 1.0
-In-Reply-To: <20190923160759.14866-2-leo.yan@linaro.org>
-Content-Language: en-US
+In-Reply-To: <1569248002-2485-6-git-send-email-laurentiu.palcu@nxp.com>
+References: <1569248002-2485-1-git-send-email-laurentiu.palcu@nxp.com>
+ <1569248002-2485-6-git-send-email-laurentiu.palcu@nxp.com>
+To: Fabio Estevam <festevam@gmail.com>,
+ Laurentiu Palcu <laurentiu.palcu@nxp.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>
+From: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH 5/5] arm64: dts: imx8mq: add DCSS node
+User-Agent: alot/0.8.1
+Date: Mon, 23 Sep 2019 09:54:42 -0700
+Message-Id: <20190923165443.D1B1C20882@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_095117_084431_704BF19F 
-X-CRM114-Status: GOOD (  25.64  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190923_095444_714196_85B7D882 
+X-CRM114-Status: UNSURE (   8.41  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,98 +80,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: devicetree@vger.kernel.org, agx@sigxcpu.org, linux-kernel@vger.kernel.org,
+ Laurentiu Palcu <laurentiu.palcu@nxp.com>,
+ linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Leo,
-
-On 23/09/2019 17:07, Leo Yan wrote:
-> In cs-etm.c there have several functions need to know instruction size
-> based on address, e.g. cs_etm__instr_addr() and cs_etm__copy_insn()
-> these two functions both calculate the instruction size separately.
-> Furthermore, if we consider to add new features later which also might
-> require to calculate instruction size.
-> 
-> For this reason, this patch refactors the code to introduce a new
-> function cs_etm__instr_size(), it will be a central place to calculate
-> the instruction size based on ISA type and instruction address.
-> 
-> For a neat implementation, cs_etm__instr_addr() will always execute the
-> loop without checking ISA type, this allows cs_etm__instr_size() and
-> cs_etm__instr_addr() have no any duplicate code with each other and both
-> functions can be changed independently later without breaking anything.
-> As a side effect, cs_etm__instr_addr() will do a few more iterations for
-> A32/A64 instructions, this would be fine if consider perf tool runs in
-> the user space.
-> 
-> Signed-off-by: Leo Yan <leo.yan@linaro.org>
-
-Your changes look fine to me. However, please see my comment below.
-
-> ---
->   tools/perf/util/cs-etm.c | 48 +++++++++++++++++++++++-----------------
->   1 file changed, 28 insertions(+), 20 deletions(-)
-> 
-> diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-> index f87b9c1c9f9a..1de3f9361193 100644
-> --- a/tools/perf/util/cs-etm.c
-> +++ b/tools/perf/util/cs-etm.c
-> @@ -917,6 +917,26 @@ static inline int cs_etm__t32_instr_size(struct cs_etm_queue *etmq,
->   	return ((instrBytes[1] & 0xF8) >= 0xE8) ? 4 : 2;
->   }
->   
-> +static inline int cs_etm__instr_size(struct cs_etm_queue *etmq,
-> +				     u8 trace_chan_id,
-> +				     enum cs_etm_isa isa,
-> +				     u64 addr)
-> +{
-> +	int insn_len;
+Quoting Laurentiu Palcu (2019-09-23 07:13:19)
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> index 52aae34..d4aa778 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> @@ -871,6 +871,31 @@
+>                                 interrupt-controller;
+>                                 #interrupt-cells = <1>;
+>                         };
 > +
-> +	/*
-> +	 * T32 instruction size might be 32-bit or 16-bit, decide by calling
-> +	 * cs_etm__t32_instr_size().
-> +	 */
-> +	if (isa == CS_ETM_ISA_T32)
-> +		insn_len = cs_etm__t32_instr_size(etmq, trace_chan_id, addr);
-> +	/* Otherwise, A64 and A32 instruction size are always 32-bit. */
-> +	else
-> +		insn_len = 4;
-> +
-> +	return insn_len;
-> +}
-> +
->   static inline u64 cs_etm__first_executed_instr(struct cs_etm_packet *packet)
->   {
->   	/* Returns 0 for the CS_ETM_DISCONTINUITY packet */
-> @@ -941,19 +961,15 @@ static inline u64 cs_etm__instr_addr(struct cs_etm_queue *etmq,
->   				     const struct cs_etm_packet *packet,
->   				     u64 offset)
->   {
-> -	if (packet->isa == CS_ETM_ISA_T32) {
-> -		u64 addr = packet->start_addr;
-> +	u64 addr = packet->start_addr;
->   
-> -		while (offset > 0) {
-> -			addr += cs_etm__t32_instr_size(etmq,
-> -						       trace_chan_id, addr);
-> -			offset--;
-> -		}
-> -		return addr;
-> +	while (offset > 0) {
+> +                       dcss: dcss@0x32e00000 {
 
-Given that offset is u64, the check above is not appropriate. You could either
-change it to :
-	while (offset) // if you are sure (s64)offset always is a postive
-integer and we always reduce it by 1.
+Drop the 0x prefix on node names.
 
-Otherwise you may switch the offset to a signed type. I understand that this
-is not introduced by your changes. But you may fix that up in a separate patch.
+> +                               #address-cells = <1>;
+> +                               #size-cells = <0>;
+> +                               compatible = "nxp,imx8mq-dcss";
+> +                               reg = <0x32e00000 0x2D000>, <0x32e2f000 0x1000>;
+> +                               interrupts = <6>, <8>, <9>;
+> +                               interrupt-names = "ctx_ld", "ctxld_kick", "vblank";
+> +                               interrupt-parent = <&irqsteer>;
+> +                               clocks = <&clk IMX8MQ_CLK_DISP_APB_ROOT>,
+> +                                        <&clk IMX8MQ_CLK_DISP_AXI_ROOT>,
+> +                                        <&clk IMX8MQ_CLK_DISP_RTRM_ROOT>,
+> +                                        <&clk IMX8MQ_VIDEO2_PLL_OUT>,
+> +                                        <&clk IMX8MQ_CLK_DISP_DTRC>;
+> +                               clock-names = "apb", "axi", "rtrm", "pix", "dtrc";
+> +                               assigned-clocks = <&clk IMX8MQ_CLK_DISP_AXI>,
+> +                                                 <&clk IMX8MQ_CLK_DISP_RTRM>,
+> +                                                 <&clk IMX8MQ_VIDEO2_PLL1_REF_SEL>;
+> +                               assigned-clock-parents = <&clk IMX8MQ_SYS1_PLL_800M>,
+> +                                                        <&clk IMX8MQ_SYS1_PLL_800M>,
+> +                                                        <&clk IMX8MQ_CLK_27M>;
+> +                               assigned-clock-rates = <800000000>,
+> +                                                          <400000000>;
+> +                               status = "disabled";
+> +                       };
 
-
-Kind regards
-Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
