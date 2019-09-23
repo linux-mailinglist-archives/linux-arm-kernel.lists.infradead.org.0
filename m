@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33473BBDCB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 23:23:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 834FDBBDCF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 23:23:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=HsOoWkWm3vIBH5cY4nop9yCA0Lt0Iprovi75mD7C3WU=; b=cfn
-	iyaV28vY6Mu+p2EUf+bdeUCHVsAzL+0dZq+bzGwp7VK57YTlh0vlXLUIDFjC4G1IK+sRvj5IJ3+yQ
-	WDO/ZkvK8oieNe5EJpZ1iI+gvyImehmNAHXDuL7Oq5uUIiS0AwD6Ht21hgKCeeH6e5RowNU6k/hU4
-	qdha5IlfyqSFTklDM6J2ZWPfR81fbtNUg0ZAyCd8DM6/m8/5tHrVTbjwViNhXVi7RwIV0bP8wGmjX
-	zznpSCUSZLBJUnWZpKBpLsFNs6nretFmaCUXwk7y/eeUk3UMIVK8vho35Gba9nEc4ylzjEk47c5xf
-	KO6CXDlkAXeWC5i/7NuXgi29TF5RWeA==;
+	References:List-Owner; bh=ywQg4PhwXKSoAZT3dbyBHMyxPcYtBlEI3rH4MzS/vs4=; b=rWj
+	RVqYq0+F9f2UNuaYNao7jdJCSprv/0miFliN+BNeCCinap9vOIGW3E2Zl7hsw8VUL59Bfa+p+HBH3
+	4w2ImMGNYAeZEVMVEF1eLG5AX3/0UdQZE/Gj3d9enhMflJYvBvQe5oesBIrJswSUHHj6CDxRgglzX
+	b3BguUgzFlKMQ+ys7BrhhJv6cnl3UPUi0DdcfQEX9M/JwMV7go7yNFhCsQaBGPH2Vd9Ks1zwgeaUv
+	WgN23Y1CcxenNRblCpfWmEtUsMnIFUWwU2DlFLzTZNblcT1+sVnl0GXQsN5oE3mauh3Ua71x4vu/V
+	FZ1aLf6ZusREmZGGCLaGyPiZtKa0ZEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCVnj-0000IE-RA; Mon, 23 Sep 2019 21:23:19 +0000
+	id 1iCVnv-0000VD-Tc; Mon, 23 Sep 2019 21:23:32 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCVnV-0000Ga-NI
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 21:23:07 +0000
+ id 1iCVnW-0000Gn-6j
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 21:23:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=bWmHVulB7Ia3zVa8uWWuDJ6sdbuUGFEHD8sBOacMu8g=; b=QB4vkNcmVCFF
- tNE6wEDzsTxsMFfra4xABuUGgxu5gAkDXKXKejrOhpKwDvxUu2SA7HCo/8qfY+HMBzVIH9PyXKfxn
- WslcpxZ2NUCXy4V1ut6mj11NxcnFxBzi9LoAPkov2kcOFa8mmU98x63OgPvae4jmKEjdE/c7+lSbG
- nT71M=;
+ List-Archive; bh=Z30npgjJlfsX3pcTiPkG0AL67G6fDNe+i+Vmfku2RTI=; b=SN5JixZECNnp
+ KI8DVqCg95UnVrrspPqxew/gm2Ds+7MkbiFVeEkA990dDCSvzz/HQdHcvCjubGAziBfYZBbdot4Aq
+ DQJPbZjeHIP1DI0Gy0/+B+okYNLR5xGb/L8GwJ3mqqRttUAUz/tSA40HF2h7omqp83kRK6I4TU2GZ
+ j1LH0=;
 Received: from [12.157.10.114] (helo=fitzroy.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.org.uk>)
- id 1iCVnQ-0005WS-C0; Mon, 23 Sep 2019 21:23:00 +0000
+ id 1iCVnR-0005WT-3u; Mon, 23 Sep 2019 21:23:01 +0000
 Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
- id B13CDD02FDA; Mon, 23 Sep 2019 22:22:58 +0100 (BST)
+ id 7F00DD02FE4; Mon, 23 Sep 2019 22:22:59 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Subject: Applied "ASoC: wm8994: Do not register inapplicable controls for
- WM1811" to the asoc tree
-In-Reply-To: <20190920130218.32690-2-s.nawrocki@samsung.com>
+Subject: Applied "ASoC: samsung: arndale: Add missing OF node dereferencing"
+ to the asoc tree
+In-Reply-To: <20190920130218.32690-3-s.nawrocki@samsung.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20190923212258.B13CDD02FDA@fitzroy.sirena.org.uk>
-Date: Mon, 23 Sep 2019 22:22:58 +0100 (BST)
+Message-Id: <20190923212259.7F00DD02FE4@fitzroy.sirena.org.uk>
+Date: Mon, 23 Sep 2019 22:22:59 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_142305_905395_062E480A 
-X-CRM114-Status: GOOD (  15.47  )
+X-CRM114-CacheID: sfid-20190923_142306_240681_B0438406 
+X-CRM114-Status: GOOD (  15.75  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -93,7 +93,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: wm8994: Do not register inapplicable controls for WM1811
+   ASoC: samsung: arndale: Add missing OF node dereferencing
 
 has been applied to the asoc tree at
 
@@ -118,147 +118,97 @@ to this mail.
 Thanks,
 Mark
 
-From ca2347190adb5e4eece73a2b16e96e651c46246b Mon Sep 17 00:00:00 2001
+From fb629fa2587d0c150792d87e3053664bfc8dc78c Mon Sep 17 00:00:00 2001
 From: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Date: Fri, 20 Sep 2019 15:02:10 +0200
-Subject: [PATCH] ASoC: wm8994: Do not register inapplicable controls for
- WM1811
+Date: Fri, 20 Sep 2019 15:02:11 +0200
+Subject: [PATCH] ASoC: samsung: arndale: Add missing OF node dereferencing
 
-In case of WM1811 device there are currently being registered controls
-referring to registers not existing on that device.
-It has been noticed when getting values of "AIF1ADC2 Volume", "AIF1DAC2
-Volume" controls was failing during ALSA state restoring at boot time:
- "amixer: Mixer hw:0 load error: Device or resource busy"
+Ensure there is no OF node references kept when the driver
+is removed/unbound.
 
-Reading some registers through I2C was failing with EBUSY error and
-indeed these registers were not available according to the datasheet.
-
-To fix this controls not available on WM1811 are moved to a separate
-array and registered only for WM8994 and WM8958.
-
-There are some further differences between WM8994 and WM1811,
-e.g. registers 603h, 604h, 605h, which are not covered in this patch.
-
-Acked-by: Charles Keepax <ckeepax@opensource.cirrus.com>
-Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
+Reviewed-by: Charles Keepax <ckeepax@opensource.cirrus.com>
 Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Link: https://lore.kernel.org/r/20190920130218.32690-2-s.nawrocki@samsung.com
+Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
+Link: https://lore.kernel.org/r/20190920130218.32690-3-s.nawrocki@samsung.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/codecs/wm8994.c | 43 +++++++++++++++++++++++----------------
- 1 file changed, 26 insertions(+), 17 deletions(-)
+ sound/soc/samsung/arndale_rt5631.c | 34 ++++++++++++++++++++++++++----
+ 1 file changed, 30 insertions(+), 4 deletions(-)
 
-diff --git a/sound/soc/codecs/wm8994.c b/sound/soc/codecs/wm8994.c
-index c3d06e8bc54f..d5fb7f5dd551 100644
---- a/sound/soc/codecs/wm8994.c
-+++ b/sound/soc/codecs/wm8994.c
-@@ -533,13 +533,10 @@ static SOC_ENUM_SINGLE_DECL(dac_osr,
- static SOC_ENUM_SINGLE_DECL(adc_osr,
- 			    WM8994_OVERSAMPLING, 1, osr_text);
+diff --git a/sound/soc/samsung/arndale_rt5631.c b/sound/soc/samsung/arndale_rt5631.c
+index c213913eb984..fd8c6642fb0d 100644
+--- a/sound/soc/samsung/arndale_rt5631.c
++++ b/sound/soc/samsung/arndale_rt5631.c
+@@ -5,6 +5,7 @@
+ //  Author: Claude <claude@insginal.co.kr>
  
--static const struct snd_kcontrol_new wm8994_snd_controls[] = {
-+static const struct snd_kcontrol_new wm8994_common_snd_controls[] = {
- SOC_DOUBLE_R_TLV("AIF1ADC1 Volume", WM8994_AIF1_ADC1_LEFT_VOLUME,
- 		 WM8994_AIF1_ADC1_RIGHT_VOLUME,
- 		 1, 119, 0, digital_tlv),
--SOC_DOUBLE_R_TLV("AIF1ADC2 Volume", WM8994_AIF1_ADC2_LEFT_VOLUME,
--		 WM8994_AIF1_ADC2_RIGHT_VOLUME,
--		 1, 119, 0, digital_tlv),
- SOC_DOUBLE_R_TLV("AIF2ADC Volume", WM8994_AIF2_ADC_LEFT_VOLUME,
- 		 WM8994_AIF2_ADC_RIGHT_VOLUME,
- 		 1, 119, 0, digital_tlv),
-@@ -556,8 +553,6 @@ SOC_ENUM("AIF2DACR Source", aif2dacr_src),
+ #include <linux/module.h>
++#include <linux/of_device.h>
+ #include <linux/platform_device.h>
+ #include <linux/clk.h>
  
- SOC_DOUBLE_R_TLV("AIF1DAC1 Volume", WM8994_AIF1_DAC1_LEFT_VOLUME,
- 		 WM8994_AIF1_DAC1_RIGHT_VOLUME, 1, 96, 0, digital_tlv),
--SOC_DOUBLE_R_TLV("AIF1DAC2 Volume", WM8994_AIF1_DAC2_LEFT_VOLUME,
--		 WM8994_AIF1_DAC2_RIGHT_VOLUME, 1, 96, 0, digital_tlv),
- SOC_DOUBLE_R_TLV("AIF2DAC Volume", WM8994_AIF2_DAC_LEFT_VOLUME,
- 		 WM8994_AIF2_DAC_RIGHT_VOLUME, 1, 96, 0, digital_tlv),
- 
-@@ -565,17 +560,12 @@ SOC_SINGLE_TLV("AIF1 Boost Volume", WM8994_AIF1_CONTROL_2, 10, 3, 0, aif_tlv),
- SOC_SINGLE_TLV("AIF2 Boost Volume", WM8994_AIF2_CONTROL_2, 10, 3, 0, aif_tlv),
- 
- SOC_SINGLE("AIF1DAC1 EQ Switch", WM8994_AIF1_DAC1_EQ_GAINS_1, 0, 1, 0),
--SOC_SINGLE("AIF1DAC2 EQ Switch", WM8994_AIF1_DAC2_EQ_GAINS_1, 0, 1, 0),
- SOC_SINGLE("AIF2 EQ Switch", WM8994_AIF2_EQ_GAINS_1, 0, 1, 0),
- 
- WM8994_DRC_SWITCH("AIF1DAC1 DRC Switch", WM8994_AIF1_DRC1_1, 2),
- WM8994_DRC_SWITCH("AIF1ADC1L DRC Switch", WM8994_AIF1_DRC1_1, 1),
- WM8994_DRC_SWITCH("AIF1ADC1R DRC Switch", WM8994_AIF1_DRC1_1, 0),
- 
--WM8994_DRC_SWITCH("AIF1DAC2 DRC Switch", WM8994_AIF1_DRC2_1, 2),
--WM8994_DRC_SWITCH("AIF1ADC2L DRC Switch", WM8994_AIF1_DRC2_1, 1),
--WM8994_DRC_SWITCH("AIF1ADC2R DRC Switch", WM8994_AIF1_DRC2_1, 0),
--
- WM8994_DRC_SWITCH("AIF2DAC DRC Switch", WM8994_AIF2_DRC_1, 2),
- WM8994_DRC_SWITCH("AIF2ADCL DRC Switch", WM8994_AIF2_DRC_1, 1),
- WM8994_DRC_SWITCH("AIF2ADCR DRC Switch", WM8994_AIF2_DRC_1, 0),
-@@ -594,9 +584,6 @@ SOC_SINGLE("Sidetone HPF Switch", WM8994_SIDETONE, 6, 1, 0),
- SOC_ENUM("AIF1ADC1 HPF Mode", aif1adc1_hpf),
- SOC_DOUBLE("AIF1ADC1 HPF Switch", WM8994_AIF1_ADC1_FILTERS, 12, 11, 1, 0),
- 
--SOC_ENUM("AIF1ADC2 HPF Mode", aif1adc2_hpf),
--SOC_DOUBLE("AIF1ADC2 HPF Switch", WM8994_AIF1_ADC2_FILTERS, 12, 11, 1, 0),
--
- SOC_ENUM("AIF2ADC HPF Mode", aif2adc_hpf),
- SOC_DOUBLE("AIF2ADC HPF Switch", WM8994_AIF2_ADC_FILTERS, 12, 11, 1, 0),
- 
-@@ -637,6 +624,24 @@ SOC_SINGLE("AIF2DAC 3D Stereo Switch", WM8994_AIF2_DAC_FILTERS_2,
- 	   8, 1, 0),
+@@ -74,6 +75,17 @@ static struct snd_soc_card arndale_rt5631 = {
+ 	.num_links = ARRAY_SIZE(arndale_rt5631_dai),
  };
  
-+/* Controls not available on WM1811 */
-+static const struct snd_kcontrol_new wm8994_snd_controls[] = {
-+SOC_DOUBLE_R_TLV("AIF1ADC2 Volume", WM8994_AIF1_ADC2_LEFT_VOLUME,
-+		 WM8994_AIF1_ADC2_RIGHT_VOLUME,
-+		 1, 119, 0, digital_tlv),
-+SOC_DOUBLE_R_TLV("AIF1DAC2 Volume", WM8994_AIF1_DAC2_LEFT_VOLUME,
-+		 WM8994_AIF1_DAC2_RIGHT_VOLUME, 1, 96, 0, digital_tlv),
++static void arndale_put_of_nodes(struct snd_soc_card *card)
++{
++	struct snd_soc_dai_link *dai_link;
++	int i;
 +
-+SOC_SINGLE("AIF1DAC2 EQ Switch", WM8994_AIF1_DAC2_EQ_GAINS_1, 0, 1, 0),
++	for_each_card_prelinks(card, i, dai_link) {
++		of_node_put(dai_link->cpus->of_node);
++		of_node_put(dai_link->codecs->of_node);
++	}
++}
 +
-+WM8994_DRC_SWITCH("AIF1DAC2 DRC Switch", WM8994_AIF1_DRC2_1, 2),
-+WM8994_DRC_SWITCH("AIF1ADC2L DRC Switch", WM8994_AIF1_DRC2_1, 1),
-+WM8994_DRC_SWITCH("AIF1ADC2R DRC Switch", WM8994_AIF1_DRC2_1, 0),
-+
-+SOC_ENUM("AIF1ADC2 HPF Mode", aif1adc2_hpf),
-+SOC_DOUBLE("AIF1ADC2 HPF Switch", WM8994_AIF1_ADC2_FILTERS, 12, 11, 1, 0),
-+};
-+
- static const struct snd_kcontrol_new wm8994_eq_controls[] = {
- SOC_SINGLE_TLV("AIF1DAC1 EQ1 Volume", WM8994_AIF1_DAC1_EQ_GAINS_1, 11, 31, 0,
- 	       eq_tlv),
-@@ -4258,13 +4263,15 @@ static int wm8994_component_probe(struct snd_soc_component *component)
- 	wm8994_handle_pdata(wm8994);
- 
- 	wm_hubs_add_analogue_controls(component);
--	snd_soc_add_component_controls(component, wm8994_snd_controls,
--			     ARRAY_SIZE(wm8994_snd_controls));
-+	snd_soc_add_component_controls(component, wm8994_common_snd_controls,
-+				       ARRAY_SIZE(wm8994_common_snd_controls));
- 	snd_soc_dapm_new_controls(dapm, wm8994_dapm_widgets,
- 				  ARRAY_SIZE(wm8994_dapm_widgets));
- 
- 	switch (control->type) {
- 	case WM8994:
-+		snd_soc_add_component_controls(component, wm8994_snd_controls,
-+					       ARRAY_SIZE(wm8994_snd_controls));
- 		snd_soc_dapm_new_controls(dapm, wm8994_specific_dapm_widgets,
- 					  ARRAY_SIZE(wm8994_specific_dapm_widgets));
- 		if (control->revision < 4) {
-@@ -4284,8 +4291,10 @@ static int wm8994_component_probe(struct snd_soc_component *component)
+ static int arndale_audio_probe(struct platform_device *pdev)
+ {
+ 	int n, ret;
+@@ -103,18 +115,31 @@ static int arndale_audio_probe(struct platform_device *pdev)
+ 		if (!arndale_rt5631_dai[0].codecs->of_node) {
+ 			dev_err(&pdev->dev,
+ 			"Property 'samsung,audio-codec' missing or invalid\n");
+-			return -EINVAL;
++			ret = -EINVAL;
++			goto err_put_of_nodes;
  		}
- 		break;
- 	case WM8958:
-+		snd_soc_add_component_controls(component, wm8994_snd_controls,
-+					       ARRAY_SIZE(wm8994_snd_controls));
- 		snd_soc_add_component_controls(component, wm8958_snd_controls,
--				     ARRAY_SIZE(wm8958_snd_controls));
-+					       ARRAY_SIZE(wm8958_snd_controls));
- 		snd_soc_dapm_new_controls(dapm, wm8958_dapm_widgets,
- 					  ARRAY_SIZE(wm8958_dapm_widgets));
- 		if (control->revision < 1) {
+ 	}
+ 
+ 	ret = devm_snd_soc_register_card(card->dev, card);
++	if (ret) {
++		dev_err(&pdev->dev, "snd_soc_register_card() failed: %d\n", ret);
++		goto err_put_of_nodes;
++	}
++	return 0;
+ 
+-	if (ret)
+-		dev_err(&pdev->dev, "snd_soc_register_card() failed:%d\n", ret);
+-
++err_put_of_nodes:
++	arndale_put_of_nodes(card);
+ 	return ret;
+ }
+ 
++static int arndale_audio_remove(struct platform_device *pdev)
++{
++	struct snd_soc_card *card = platform_get_drvdata(pdev);
++
++	arndale_put_of_nodes(card);
++	return 0;
++}
++
+ static const struct of_device_id samsung_arndale_rt5631_of_match[] __maybe_unused = {
+ 	{ .compatible = "samsung,arndale-rt5631", },
+ 	{ .compatible = "samsung,arndale-alc5631", },
+@@ -129,6 +154,7 @@ static struct platform_driver arndale_audio_driver = {
+ 		.of_match_table = of_match_ptr(samsung_arndale_rt5631_of_match),
+ 	},
+ 	.probe = arndale_audio_probe,
++	.remove = arndale_audio_remove,
+ };
+ 
+ module_platform_driver(arndale_audio_driver);
 -- 
 2.20.1
 
