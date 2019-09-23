@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C568BBAF19
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 10:15:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11B18BAF12
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 10:14:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+3lksixH8DwkH4j5j5ohf5NTDlV0ZXkHhttCZc32+88=; b=fY4GMFcr2KLBa6
-	a3kLsTFxYKCYMar3iIxxFVtV3V3qt3NSUQd+dKd+VWIHpR16QI8+SZsjcSiY97CoGqRCoprgIHKgQ
-	wKyiH74BrtzFDoc54diSjdpDtjd9CARWzst/14FMpMSOnzlEJnNC0K3DutM6wIrAMNV3gqqySmgJY
-	W97dYcwEFcYmo2ZI7OU+LND3aBYlDMUT9bXQZZfB14j0daLqSU/Ta8r70tFS6z1TQE6MBBjH7UwhR
-	94fNHmo8vvZ16Mk7xRw2M6nc/Aun6M7grUR4ytnc5Zfz3FSs7ONjg+XrtTrLut8kySpgSjin/cw5k
-	ANe+/r8gWKSP4ZY1zLmQ==;
+	List-Owner; bh=8PBbiTFplkJtzhK+Zh2Zemabn3WlUOg8+YP/F6pcIWU=; b=bsKazjj+z9iPgc
+	X36KlNfjPbpkhcjzeUEMlP/BiqeMhJ3dRNadQ/U04CspuQn+U4UuOPeEdQYhXpltTuTTnBbXx/fRA
+	nmYNLbdCPmymmrJs1X4wRfTbN7av0M9cC2BCdiUQkXixBHzSw4ns9kibm5UdkWH9dA8yWYoiM9nrg
+	CwW9Z6aZjsn5XandS80NyIOYpMmD9wv0CPGsHVOWGMZ0A04ZRbY7jvVQ6zADGpiTYI2NSbaYNMwDO
+	1cNwGoFIy7yl4X67YyOc2HlZrk34hiSoelvbnWluhhwR3WmGKeXJ7l17KeQScflbnUrRKFK8282ib
+	pmV8hS3cbqqQklwpUNiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCJV3-0005kz-RJ; Mon, 23 Sep 2019 08:15:14 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1iCJUX-0005Th-38; Mon, 23 Sep 2019 08:14:41 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCJTn-0005CH-U4
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 08:13:59 +0000
-Received: by mail-lf1-x144.google.com with SMTP id 72so9376827lfh.6
+ id 1iCJTo-0005CM-36
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 08:13:58 +0000
+Received: by mail-lf1-x143.google.com with SMTP id r134so9354000lff.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Sep 2019 01:13:54 -0700 (PDT)
+ Mon, 23 Sep 2019 01:13:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Y0u2P7pamoOhyJrqwJt38ESkhZ0sdWB5inGNjp2B0iE=;
- b=hQS6oY/JaqwIwiWR3QGBGTrvnZ0Ox9Tp21cnMGLGOBTSqAv6Pxu1Uo7aVpspDOwoKs
- ICEjPp6uhe0tKO00gdZLNcWvQ1ZE1Fx63MnumVq1Xw7e18d7WTJ8a4/ZgU/UEQqPFM9q
- aS6UZDZ/Vv1kDFZtq8xRAmhcKq+JziDPGf8Kg=
+ bh=lD0e8xFBv1AR2F4JhSacxWgoKrl7ntnXXGEiOwHJH74=;
+ b=HgcQ1K4tr0a4wAHLWjvdmktJUM3BVu3dL17gzfeF3nAdsClcj6wJpQRG6DTVB1hHUz
+ Ocxoxx1M7JSEGyy/x1h5RDBNGIkNUresJDZanlEHiG4f+3mLRDMjpRIMk4Ihi6/cdnfz
+ LY3qlvifzD2By4oG01tO2WS6ZIhOkjr2PMAdk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Y0u2P7pamoOhyJrqwJt38ESkhZ0sdWB5inGNjp2B0iE=;
- b=cW+byfH/x6GLz7MKCPCw1Q+iBsmTi3ZnqYzzYaG8vVI9JHJzrUbmqASdDDDYJ/4ySJ
- eOWcK/1OpxgkfchJsC7rbEeUENMwP11XKERoRm4RNNiuj+9AKoxTHPZjUEb6VmIunNci
- hw9QlgI4XZFcM8u87RX2JMzearnDjvtOEati2Zf9zlCG4wN/a7nyiKu6KW0i927Exz1P
- gQiGDkQgNI6OlP6Smo5pI2U/IOV8jHBhLvBC8CgffsVMFlLzOMvIwL5eL5gsK5xgqK6o
- Q2aPQDIxO020WFNB5BG7pUBXMk5reaB6KxzjFfiZBnWjuQ/3AT6jW0DEnOdF3cHOtrnN
- /sKg==
-X-Gm-Message-State: APjAAAV3n4Jc3VRddEaUMP1lfnBiTmPqjclddzm1eSKxyqw3TNSJgtxu
- TV+yfDMZFKhYNlRq/yQCT8q2mA==
-X-Google-Smtp-Source: APXvYqyXbJD3jcPtkfunH7p5W/yiqrLQ0jizMCztCXox/YlwFtfX/7WaU2GXsONN3ApveQi4vG9rwg==
-X-Received: by 2002:a19:22cd:: with SMTP id
- i196mr15644550lfi.160.1569226433180; 
- Mon, 23 Sep 2019 01:13:53 -0700 (PDT)
+ bh=lD0e8xFBv1AR2F4JhSacxWgoKrl7ntnXXGEiOwHJH74=;
+ b=DqiHyjiTiQBUE78yJHpsHxHBAmHsqfRAxGUQZLQCTNzB//5jUVw67Mw3Gw837UdmFW
+ 3yADZSsp9UWakJCcupxHQ3z7c5Cg2U9cZwTyDIWKYFMPSSPFZTV38S3IuVQG15YVdHCP
+ XuzjU7sM+yTIHoh+kD+Ky2ERO8BVRQq4fLuSan6n9M1WaDaxJ7J7w0P6D9QWfgj/NJ2n
+ aXESKw70V0NklqaEJ/jBsiqJ99AqWpmAllGfFJBwLB5iAIndlrxH4Vi8104oixJdsjcZ
+ RYsXLe0xY/i57V99idrxdo/n99bLk/SiJZw62LleVIRflI//8oQE6hnDulPTRCjJH8H1
+ KASQ==
+X-Gm-Message-State: APjAAAXgz6wN/fcmKEDAOUq9s82qfU83kjfGuJh8sqDv7aFGi5Xt+Pfu
+ k2krUMzGwrlkz3ctsIG3poPyHQ==
+X-Google-Smtp-Source: APXvYqw1MEjTQxg98Niosegmp9jqiu0UU9wKr4JajogIk6AZhpzsknKDrE5TkAC9EB5KWFhVZyxHSQ==
+X-Received: by 2002:a19:6455:: with SMTP id b21mr16301336lfj.167.1569226434462; 
+ Mon, 23 Sep 2019 01:13:54 -0700 (PDT)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id c21sm2054946lff.61.2019.09.23.01.13.52
+ by smtp.gmail.com with ESMTPSA id c21sm2054946lff.61.2019.09.23.01.13.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 23 Sep 2019 01:13:52 -0700 (PDT)
+ Mon, 23 Sep 2019 01:13:54 -0700 (PDT)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Thierry Reding <thierry.reding@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
  Sascha Hauer <s.hauer@pengutronix.de>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
  Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>
-Subject: [PATCH 1/4] pwm: mxs: implement ->apply
-Date: Mon, 23 Sep 2019 10:13:45 +0200
-Message-Id: <20190923081348.6843-2-linux@rasmusvillemoes.dk>
+Subject: [PATCH 2/4] pwm: mxs: remove legacy methods
+Date: Mon, 23 Sep 2019 10:13:46 +0200
+Message-Id: <20190923081348.6843-3-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190923081348.6843-1-linux@rasmusvillemoes.dk>
 References: <20190923081348.6843-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_011356_727990_76676666 
-X-CRM114-Status: GOOD (  17.46  )
+X-CRM114-CacheID: sfid-20190923_011356_724530_0EDE36CB 
+X-CRM114-Status: GOOD (  14.80  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,101 +105,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In preparation for supporting setting the polarity, switch the driver
-to support the ->apply method.
+Since we now have ->apply, these are no longer relevant.
 
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/pwm/pwm-mxs.c | 62 +++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 62 insertions(+)
+ drivers/pwm/pwm-mxs.c | 77 -------------------------------------------
+ 1 file changed, 77 deletions(-)
 
 diff --git a/drivers/pwm/pwm-mxs.c b/drivers/pwm/pwm-mxs.c
-index 04c0f6b95c1a..c70c26a9ff68 100644
+index c70c26a9ff68..284107784dad 100644
 --- a/drivers/pwm/pwm-mxs.c
 +++ b/drivers/pwm/pwm-mxs.c
-@@ -26,6 +26,7 @@
- #define  PERIOD_PERIOD_MAX	0x10000
- #define  PERIOD_ACTIVE_HIGH	(3 << 16)
- #define  PERIOD_INACTIVE_LOW	(2 << 18)
-+#define  PERIOD_POLARITY_NORMAL	(PERIOD_ACTIVE_HIGH | PERIOD_INACTIVE_LOW)
- #define  PERIOD_CDIV(div)	(((div) & 0x7) << 20)
- #define  PERIOD_CDIV_MAX	8
- 
-@@ -41,6 +42,66 @@ struct mxs_pwm_chip {
- 
- #define to_mxs_pwm_chip(_chip) container_of(_chip, struct mxs_pwm_chip, chip)
- 
-+static int mxs_pwm_apply(struct pwm_chip *chip, struct pwm_device *pwm,
-+			 struct pwm_state *state)
-+{
-+	struct mxs_pwm_chip *mxs = to_mxs_pwm_chip(chip);
-+	int ret, div = 0;
-+	unsigned int period_cycles, duty_cycles;
-+	unsigned long rate;
-+	unsigned long long c;
-+
-+	if (state->polarity != PWM_POLARITY_NORMAL)
-+		return -ENOTSUPP;
-+
-+	rate = clk_get_rate(mxs->clk);
-+	while (1) {
-+		c = rate / cdiv[div];
-+		c = c * state->period;
-+		do_div(c, 1000000000);
-+		if (c < PERIOD_PERIOD_MAX)
-+			break;
-+		div++;
-+		if (div >= PERIOD_CDIV_MAX)
-+			return -EINVAL;
-+	}
-+
-+	period_cycles = c;
-+	c *= state->duty_cycle;
-+	do_div(c, state->period);
-+	duty_cycles = c;
-+
-+	/*
-+	 * If the PWM channel is disabled, make sure to turn on the clock
-+	 * before writing the register. Otherwise, keep it enabled.
-+	 */
-+	if (!pwm_is_enabled(pwm)) {
-+		ret = clk_prepare_enable(mxs->clk);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	writel(duty_cycles << 16,
-+	       mxs->base + PWM_ACTIVE0 + pwm->hwpwm * 0x20);
-+	writel(PERIOD_PERIOD(period_cycles) | PERIOD_POLARITY_NORMAL | PERIOD_CDIV(div),
-+	       mxs->base + PWM_PERIOD0 + pwm->hwpwm * 0x20);
-+
-+	if (state->enabled) {
-+		if (!pwm_is_enabled(pwm)) {
-+			/*
-+			 * The clock was enabled above. Just enable
-+			 * the channel in the control register.
-+			 */
-+			writel(1 << pwm->hwpwm, mxs->base + PWM_CTRL + SET);
-+		}
-+	} else {
-+		if (pwm_is_enabled(pwm))
-+			writel(1 << pwm->hwpwm, mxs->base + PWM_CTRL + CLR);
-+		clk_disable_unprepare(mxs->clk);
-+	}
-+	return 0;
-+}
-+
- static int mxs_pwm_config(struct pwm_chip *chip, struct pwm_device *pwm,
- 			  int duty_ns, int period_ns)
- {
-@@ -116,6 +177,7 @@ static void mxs_pwm_disable(struct pwm_chip *chip, struct pwm_device *pwm)
+@@ -102,85 +102,8 @@ static int mxs_pwm_apply(struct pwm_chip *chip, struct pwm_device *pwm,
+ 	return 0;
  }
  
+-static int mxs_pwm_config(struct pwm_chip *chip, struct pwm_device *pwm,
+-			  int duty_ns, int period_ns)
+-{
+-	struct mxs_pwm_chip *mxs = to_mxs_pwm_chip(chip);
+-	int ret, div = 0;
+-	unsigned int period_cycles, duty_cycles;
+-	unsigned long rate;
+-	unsigned long long c;
+-
+-	rate = clk_get_rate(mxs->clk);
+-	while (1) {
+-		c = rate / cdiv[div];
+-		c = c * period_ns;
+-		do_div(c, 1000000000);
+-		if (c < PERIOD_PERIOD_MAX)
+-			break;
+-		div++;
+-		if (div >= PERIOD_CDIV_MAX)
+-			return -EINVAL;
+-	}
+-
+-	period_cycles = c;
+-	c *= duty_ns;
+-	do_div(c, period_ns);
+-	duty_cycles = c;
+-
+-	/*
+-	 * If the PWM channel is disabled, make sure to turn on the clock
+-	 * before writing the register. Otherwise, keep it enabled.
+-	 */
+-	if (!pwm_is_enabled(pwm)) {
+-		ret = clk_prepare_enable(mxs->clk);
+-		if (ret)
+-			return ret;
+-	}
+-
+-	writel(duty_cycles << 16,
+-			mxs->base + PWM_ACTIVE0 + pwm->hwpwm * 0x20);
+-	writel(PERIOD_PERIOD(period_cycles) | PERIOD_ACTIVE_HIGH |
+-	       PERIOD_INACTIVE_LOW | PERIOD_CDIV(div),
+-			mxs->base + PWM_PERIOD0 + pwm->hwpwm * 0x20);
+-
+-	/*
+-	 * If the PWM is not enabled, turn the clock off again to save power.
+-	 */
+-	if (!pwm_is_enabled(pwm))
+-		clk_disable_unprepare(mxs->clk);
+-
+-	return 0;
+-}
+-
+-static int mxs_pwm_enable(struct pwm_chip *chip, struct pwm_device *pwm)
+-{
+-	struct mxs_pwm_chip *mxs = to_mxs_pwm_chip(chip);
+-	int ret;
+-
+-	ret = clk_prepare_enable(mxs->clk);
+-	if (ret)
+-		return ret;
+-
+-	writel(1 << pwm->hwpwm, mxs->base + PWM_CTRL + SET);
+-
+-	return 0;
+-}
+-
+-static void mxs_pwm_disable(struct pwm_chip *chip, struct pwm_device *pwm)
+-{
+-	struct mxs_pwm_chip *mxs = to_mxs_pwm_chip(chip);
+-
+-	writel(1 << pwm->hwpwm, mxs->base + PWM_CTRL + CLR);
+-
+-	clk_disable_unprepare(mxs->clk);
+-}
+-
  static const struct pwm_ops mxs_pwm_ops = {
-+	.apply = mxs_pwm_apply,
- 	.config = mxs_pwm_config,
- 	.enable = mxs_pwm_enable,
- 	.disable = mxs_pwm_disable,
+ 	.apply = mxs_pwm_apply,
+-	.config = mxs_pwm_config,
+-	.enable = mxs_pwm_enable,
+-	.disable = mxs_pwm_disable,
+ 	.owner = THIS_MODULE,
+ };
+ 
 -- 
 2.20.1
 
