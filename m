@@ -2,64 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24A8BBAC0F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 00:53:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DCBE5BAC20
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 02:06:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Eo6AaeKQLPsPFQkyCNMZH3M0ZQd2CGgPWXDCsnXMirY=; b=kT9py+rRzlBAYo
-	FhpScIalZlk8GH6oNVfsN5cYfv0Y82ih+a8AwDMkadCwvSJD0QD+VkdIBZ5TnwpQGRnMiam5BrCpr
-	RVZT+YI4omfUTymOfA2LF0z49O2DudZSK1vaYGjei91O+Ak3Ct0COEhEp57dBqzunXvbo/Or5jH3h
-	uP0kIVxuY2KVit68R8RT0mEWzjEMec1Ilf0g6hmRAh1/yiDaxMglgNeCX0xP5Z9lZU1bO7e7Qtd6p
-	h/qha0ZRLkubnQKUhShkTOw002gKncDeX7f7FH7GBYilZXDB/zFdxb8Zyh10TWljaq2ani9+TApVk
-	mowzYKjWyc03sQcCtiYQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=3rL7yyfHUX5hbxshKdkhot0RV7al9f4agwqrwjMNa+s=; b=sdx3gpQvD9xsC2WxwQhlmEAGS
+	fvkF+Ghbls2fI7VNBGkq5FGK0hSSXeT8IqZFFCjzU6Ly8fFnNTAALOyJahuaGwaUhnY4ngjqJPHda
+	5RgHAgEweazHW4qpQ30b1Wm5dmSs0SOB9BzCvgY6GkMd5mhi5TGlkvMG1iedjp7PxJoiR3JoS7YFy
+	VTXlhjq+cYs516qqQ/SMQ4Pj1chrG83zeBrC2AFLE8dnWTLUSbcS7uqhHtqYjdL4e9GsqmmeVdeqT
+	nTvP4qbbkGdz+DUYPp6tqWVMx8UhLbuBXeskHrS+f6z+ODi1YgSMJ0KIi0c0ms8TKBt0lGM8ENq6r
+	jUfMXSzgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCAjK-0004dl-Vh; Sun, 22 Sep 2019 22:53:23 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1iCBsN-00007K-Ld; Mon, 23 Sep 2019 00:06:47 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCAj8-0004cN-G1
- for linux-arm-kernel@lists.infradead.org; Sun, 22 Sep 2019 22:53:12 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 22 Sep 2019 15:53:04 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,538,1559545200"; d="scan'208";a="182339433"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by orsmga008.jf.intel.com with ESMTP; 22 Sep 2019 15:52:59 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1iCAix-0002dh-6t; Mon, 23 Sep 2019 06:52:59 +0800
-Date: Mon, 23 Sep 2019 06:52:35 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-Subject: Re: [PATCH v6 2/2] drm/bridge: Add NWL MIPI DSI host controller
- support
-Message-ID: <201909230644.qfSKbNf9%lkp@intel.com>
-References: <c0ac0b203fb65ae7efd1b9b54664b491ca2fb157.1569170717.git.agx@sigxcpu.org>
+ id 1iCBsC-00006x-BU
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 00:06:37 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x8N04cKD035584;
+ Mon, 23 Sep 2019 00:06:06 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2019-08-05;
+ bh=aU7M5LCio0fxm4qTM0vCotZ+jtgfst/hqgJYmzVKKb8=;
+ b=H301uengOiZWM3iD+AI26UsGbCCTaV0aJzB6XwsI6/CqI6LULs1SVgsQKMmXnuAFLXaV
+ +uYD5WQsbiCutbmjDS14GdMfqOWmnQlGVJ/n9gxukAvQ4TmXXebzBp3+B0bMlm/VU6Gr
+ wS0Z5uzi0Nt9+xZV49luN58UWZogRBnfeeHxmgC+GEu1sA+2TBMIy7dUvuhSBbr/ur9E
+ ZS4BaUO4fm0sB26XcI6EHUQHBLxFVDasTCm0NVsAZM9PAn4wl4XrPcOXqq8061JxyKWS
+ UtK5Uv/sLdj+mzd9p94zfjWE5+ycZkPAWVIeJAp9gUPp55dFhFMJvfMXnTA9Xrm4n6jX YA== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by userp2120.oracle.com with ESMTP id 2v5cgqkpax-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 23 Sep 2019 00:06:06 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x8N04HS1155112;
+ Mon, 23 Sep 2019 00:06:05 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by userp3030.oracle.com with ESMTP id 2v590ja534-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 23 Sep 2019 00:06:05 +0000
+Received: from abhmp0014.oracle.com (abhmp0014.oracle.com [141.146.116.20])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x8N05tcG000312;
+ Mon, 23 Sep 2019 00:05:56 GMT
+Received: from [192.168.86.205] (/69.181.241.203)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Sun, 22 Sep 2019 17:05:54 -0700
+Subject: Re: [PATCH 2/2] soc: ti: move 2 driver config options into the TI SOC
+ drivers menu
+To: Randy Dunlap <rdunlap@infradead.org>, LKML <linux-kernel@vger.kernel.org>,
+ LAK <linux-arm-kernel@lists.infradead.org>
+References: <ae4b494c-9723-1bc2-e471-e0e9f7df6e8f@infradead.org>
+ <2f0cd6cf-83c3-f60f-3d72-fd0cec64105e@infradead.org>
+From: santosh.shilimkar@oracle.com
+Organization: Oracle Corporation
+Message-ID: <4205a7aa-1f51-23bd-b661-f71f55391c5b@oracle.com>
+Date: Sun, 22 Sep 2019 17:05:52 -0700
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
+ Gecko/20100101 Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <c0ac0b203fb65ae7efd1b9b54664b491ca2fb157.1569170717.git.agx@sigxcpu.org>
-X-Patchwork-Hint: ignore
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <2f0cd6cf-83c3-f60f-3d72-fd0cec64105e@infradead.org>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9388
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=902
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1908290000 definitions=main-1909220257
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9388
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=988 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1908290000
+ definitions=main-1909220257
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190922_155310_577244_C37BE833 
-X-CRM114-Status: GOOD (  14.65  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190922_170636_526676_F8E18C19 
+X-CRM114-Status: GOOD (  17.04  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
+ medium trust [156.151.31.85 listed in list.dnswl.org]
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,126 +114,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Sam Ravnborg <sam@ravnborg.org>,
- Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>,
- dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Fabio Estevam <festevam@gmail.com>, Lee Jones <lee.jones@linaro.org>,
- NXP Linux Team <linux-imx@nxp.com>, Robert Chiras <robert.chiras@nxp.com>,
- devicetree@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- Arnd Bergmann <arnd@arndb.de>, Jonas Karlman <jonas@kwiboo.se>,
- Sascha Hauer <s.hauer@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
- linux-kernel@vger.kernel.org, kbuild-all@01.org,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Nishanth Menon <nm@ti.com>, Benjamin Fair <b-fair@ti.com>,
+ Tony Lindgren <tony@atomide.com>, Tero Kristo <t-kristo@ti.com>,
+ Santosh Shilimkar <ssantosh@kernel.org>, Olof Johansson <olof@lixom.net>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi "Guido,
 
-I love your patch! Perhaps something to improve:
 
-[auto build test WARNING on linus/master]
-[cannot apply to v5.3 next-20190920]
-[if your patch is applied to the wrong git tree, please drop us a note to help
-improve the system. BTW, we also suggest to use '--base' option to specify the
-base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
-
-url:    https://github.com/0day-ci/linux/commits/Guido-G-nther/drm-bridge-Add-NWL-MIPI-DSI-host-controller-support/20190923-005010
-
-If you fix the issue, kindly add following tag
-Reported-by: kbuild test robot <lkp@intel.com>
-
-smatch warnings:
-drivers/gpu/drm/bridge/nwl-dsi.c:272 nwl_dsi_config_dpi() warn: unsigned 'color_format' is never less than zero.
-
-vim +/color_format +272 drivers/gpu/drm/bridge/nwl-dsi.c
-
-   245	
-   246	static int nwl_dsi_config_dpi(struct nwl_dsi *dsi)
-   247	{
-   248		u32 color_format, mode;
-   249		bool burst_mode;
-   250		int hfront_porch, hback_porch, vfront_porch, vback_porch;
-   251		int hsync_len, vsync_len;
-   252	
-   253		hfront_porch = dsi->mode.hsync_start - dsi->mode.hdisplay;
-   254		hsync_len = dsi->mode.hsync_end - dsi->mode.hsync_start;
-   255		hback_porch = dsi->mode.htotal - dsi->mode.hsync_end;
-   256	
-   257		vfront_porch = dsi->mode.vsync_start - dsi->mode.vdisplay;
-   258		vsync_len = dsi->mode.vsync_end - dsi->mode.vsync_start;
-   259		vback_porch = dsi->mode.vtotal - dsi->mode.vsync_end;
-   260	
-   261		DRM_DEV_DEBUG_DRIVER(dsi->dev, "hfront_porch = %d\n", hfront_porch);
-   262		DRM_DEV_DEBUG_DRIVER(dsi->dev, "hback_porch = %d\n", hback_porch);
-   263		DRM_DEV_DEBUG_DRIVER(dsi->dev, "hsync_len = %d\n", hsync_len);
-   264		DRM_DEV_DEBUG_DRIVER(dsi->dev, "hdisplay = %d\n", dsi->mode.hdisplay);
-   265		DRM_DEV_DEBUG_DRIVER(dsi->dev, "vfront_porch = %d\n", vfront_porch);
-   266		DRM_DEV_DEBUG_DRIVER(dsi->dev, "vback_porch = %d\n", vback_porch);
-   267		DRM_DEV_DEBUG_DRIVER(dsi->dev, "vsync_len = %d\n", vsync_len);
-   268		DRM_DEV_DEBUG_DRIVER(dsi->dev, "vactive = %d\n", dsi->mode.vdisplay);
-   269		DRM_DEV_DEBUG_DRIVER(dsi->dev, "clock = %d kHz\n", dsi->mode.clock);
-   270	
-   271		color_format = nwl_dsi_get_dpi_pixel_format(dsi->format);
- > 272		if (color_format < 0) {
-   273			DRM_DEV_ERROR(dsi->dev, "Invalid color format 0x%x\n",
-   274				      dsi->format);
-   275			return color_format;
-   276		}
-   277		DRM_DEV_DEBUG_DRIVER(dsi->dev, "pixel fmt = %d\n", dsi->format);
-   278	
-   279		nwl_dsi_write(dsi, NWL_DSI_INTERFACE_COLOR_CODING, NWL_DSI_DPI_24_BIT);
-   280		nwl_dsi_write(dsi, NWL_DSI_PIXEL_FORMAT, color_format);
-   281		/*
-   282		 * Adjusting input polarity based on the video mode results in
-   283		 * a black screen so always pick active low:
-   284		 */
-   285		nwl_dsi_write(dsi, NWL_DSI_VSYNC_POLARITY,
-   286			      NWL_DSI_VSYNC_POLARITY_ACTIVE_LOW);
-   287		nwl_dsi_write(dsi, NWL_DSI_HSYNC_POLARITY,
-   288			      NWL_DSI_HSYNC_POLARITY_ACTIVE_LOW);
-   289	
-   290		burst_mode = (dsi->dsi_mode_flags & MIPI_DSI_MODE_VIDEO_BURST) &&
-   291			     !(dsi->dsi_mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE);
-   292	
-   293		if (burst_mode) {
-   294			nwl_dsi_write(dsi, NWL_DSI_VIDEO_MODE, NWL_DSI_VM_BURST_MODE);
-   295			nwl_dsi_write(dsi, NWL_DSI_PIXEL_FIFO_SEND_LEVEL, 256);
-   296		} else {
-   297			mode = ((dsi->dsi_mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE) ?
-   298					NWL_DSI_VM_BURST_MODE_WITH_SYNC_PULSES :
-   299					NWL_DSI_VM_NON_BURST_MODE_WITH_SYNC_EVENTS);
-   300			nwl_dsi_write(dsi, NWL_DSI_VIDEO_MODE, mode);
-   301			nwl_dsi_write(dsi, NWL_DSI_PIXEL_FIFO_SEND_LEVEL,
-   302				      dsi->mode.hdisplay);
-   303		}
-   304	
-   305		nwl_dsi_write(dsi, NWL_DSI_HFP, hfront_porch);
-   306		nwl_dsi_write(dsi, NWL_DSI_HBP, hback_porch);
-   307		nwl_dsi_write(dsi, NWL_DSI_HSA, hsync_len);
-   308	
-   309		nwl_dsi_write(dsi, NWL_DSI_ENABLE_MULT_PKTS, 0x0);
-   310		nwl_dsi_write(dsi, NWL_DSI_BLLP_MODE, 0x1);
-   311		nwl_dsi_write(dsi, NWL_DSI_USE_NULL_PKT_BLLP, 0x0);
-   312		nwl_dsi_write(dsi, NWL_DSI_VC, 0x0);
-   313	
-   314		nwl_dsi_write(dsi, NWL_DSI_PIXEL_PAYLOAD_SIZE, dsi->mode.hdisplay);
-   315		nwl_dsi_write(dsi, NWL_DSI_VACTIVE, dsi->mode.vdisplay - 1);
-   316		nwl_dsi_write(dsi, NWL_DSI_VBP, vback_porch);
-   317		nwl_dsi_write(dsi, NWL_DSI_VFP, vfront_porch);
-   318	
-   319		return 0;
-   320	}
-   321	
-
----
-0-DAY kernel test infrastructure                Open Source Technology Center
-https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
+On 9/21/19 1:46 PM, Randy Dunlap wrote:
+> Hi Santosh,
+> 
+> Would you also pick up patch 2/2, which I didn't Cc: you on?    :(
+> 
+> Do I need to resend it?
+> 
+Yes please. I don't have your 2/2
 
 _______________________________________________
 linux-arm-kernel mailing list
