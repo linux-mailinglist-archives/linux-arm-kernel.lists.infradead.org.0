@@ -2,44 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2F3EBB5EC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 15:58:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BE5DBB601
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 15:59:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nUw/D5w4REspz64w2isNgpG7YsxXu6jzf9uenyohlTc=; b=NpioNAT7SzUZNS
-	RxQ50XF1Pce8HVmkkd9zsaABkWej7Vllk4yiezuNFMGuvEhOXfr2cwj7vw5thAgAB1YLKdFbzfyy0
-	sVKD6d29qY+mnAohSdrbJzR+26DC14slw48muoy6KP/gtcVzL2IxQC0oElCTu/FfQaKlvF4d9bVkH
-	DrFAOD9fPkqLbzQew/xPjF5BHu2C5b5gJwnaugmCbt6W8JD8LJtEronO6IuYDSU0A2fV1qFejzAkU
-	mCDeNbY9z+p1m+nfq6o1GqfmjflXFr45j++cfb4azUvARLP0QidyoJdyVSR7zEufE3d6l2MWc2fcI
-	uYjMwTnnz4wljZtxxKgw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ku9zQbqznHW0OjI6jw/rP129OD1Eg6IYyCtoDJWDHqg=; b=Y6lIN/g3PiOGLO
+	Wqe9P8UqTY+v/0ICWDy92uZmAXVBeTZQX/LFVbysNRFmgc5MOhPKcKfSpcHCQWOXoCqjEen465QzH
+	7gvLiFIZ8lZTFcqfbfFSe/QXnVeBD/19KB72lmcySdjUdm8byGVOI7eCxo7dOiq0uO3AJWBbaX31Y
+	hxoVlUu7v8qt7hvRtMX3YhD3uEKnKH7NhPU1fq80n7jwW5IBRMTCC7WoagXhgntgUMeZUaV0md93B
+	DzGPbdvQnscBYKHAqsow5qpiyA4NYQmUVcpKd4EVj/716y4K/ZCF37s23L8SqVrqSfQGT2IN7gs+W
+	UL0lPLe84HVdm8Y6vsuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCOrZ-0005oD-0h; Mon, 23 Sep 2019 13:58:49 +0000
+	id 1iCOsO-0006dL-14; Mon, 23 Sep 2019 13:59:40 +0000
 Received: from mx1.emlix.com ([188.40.240.192])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCOr5-0005Xq-2r
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 13:58:20 +0000
+ id 1iCOrU-0005wq-Ge
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 13:58:46 +0000
 Received: from mailer.emlix.com (unknown [81.20.119.6])
  (using TLSv1.2 with cipher ADH-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mx1.emlix.com (Postfix) with ESMTPS id 57A3C600FF;
- Mon, 23 Sep 2019 15:58:14 +0200 (CEST)
+ by mx1.emlix.com (Postfix) with ESMTPS id 476D85FBA6;
+ Mon, 23 Sep 2019 15:58:43 +0200 (CEST)
 From: Philipp Puschmann <philipp.puschmann@emlix.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v5 3/3] dmaengine: imx-sdma: drop redundant variable
-Date: Mon, 23 Sep 2019 15:58:08 +0200
-Message-Id: <20190923135808.815-4-philipp.puschmann@emlix.com>
+Subject: [PATCH v3] serial: imx: adapt rx buffer and dma periods
+Date: Mon, 23 Sep 2019 15:58:42 +0200
+Message-Id: <20190923135842.956-1-philipp.puschmann@emlix.com>
 X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20190923135808.815-1-philipp.puschmann@emlix.com>
-References: <20190923135808.815-1-philipp.puschmann@emlix.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_065819_290573_CE42968B 
-X-CRM114-Status: GOOD (  10.07  )
+X-CRM114-CacheID: sfid-20190923_065844_797634_0F13BC80 
+X-CRM114-Status: GOOD (  12.16  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -58,64 +56,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: fugang.duan@nxp.com, jlu@pengutronix.de, festevam@gmail.com,
- s.hauer@pengutronix.de, vkoul@kernel.org, linux-imx@nxp.com,
- kernel@pengutronix.de, dmaengine@vger.kernel.org, dan.j.williams@intel.com,
- yibin.gong@nxp.com, shawnguo@kernel.org,
- Philipp Puschmann <philipp.puschmann@emlix.com>,
- linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
+Cc: festevam@gmail.com, fugang.duan@nxp.com, linux-serial@vger.kernel.org,
+ gregkh@linuxfoundation.org, s.hauer@pengutronix.de,
+ u.kleine-koenig@pengutronix.de, linux-imx@nxp.com, kernel@pengutronix.de,
+ jslaby@suse.com, Philipp Puschmann <philipp.puschmann@emlix.com>,
+ yibin.gong@nxp.com, shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org,
+ l.stach@pengutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In sdma_prep_dma_cyclic buf is redundant. Drop it.
+Using only 4 DMA periods for UART RX is very few if we have a high
+frequency of small transfers - like in our case using Bluetooth with
+many small packets via UART - causing many dma transfers but in each
+only filling a fraction of a single buffer. Such a case may lead to
+the situation that DMA RX transfer is triggered but no free buffer is
+available. When this happens dma channel ist stopped - with the patch
+"dmaengine: imx-sdma: fix dma freezes" temporarily only - with the
+possible consequences that:
+with disabled hw flow control:
+  If enough data is incoming on UART port the RX FIFO runs over and
+  characters will be lost. What then happens depends on upper layer.
+
+with enabled hw flow control:
+  If enough data is incoming on UART port the RX FIFO reaches a level
+  where CTS is deasserted and remote device sending the data stops.
+  If it fails to stop timely the i.MX' RX FIFO may run over and data
+  get lost. Otherwise it's internal TX buffer may getting filled to
+  a point where it runs over and data is again lost. It depends on
+  the remote device how this case is handled and if it is recoverable.
+
+Obviously we want to avoid having no free buffers available. So we
+decrease the size of the buffers and increase their number and the
+total buffer size.
 
 Signed-off-by: Philipp Puschmann <philipp.puschmann@emlix.com>
 Reviewed-by: Lucas Stach <l.stach@pengutronix.de>
 ---
 
-Changelog v3,v4,v5:
- - no changes
+Changelog v4:
+ - fix total buffer size
+
+Changelog v3:
+ - enhance description
 
 Changelog v2:
+ - split this patch from series "Fix UART DMA freezes for iMX6"
  - add Reviewed-by tag
 
- drivers/dma/imx-sdma.c | 7 ++-----
- 1 file changed, 2 insertions(+), 5 deletions(-)
+ drivers/tty/serial/imx.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
-index 0b1d6a62423d..0d62664e534e 100644
---- a/drivers/dma/imx-sdma.c
-+++ b/drivers/dma/imx-sdma.c
-@@ -1549,7 +1549,7 @@ static struct dma_async_tx_descriptor *sdma_prep_dma_cyclic(
- 	struct sdma_engine *sdma = sdmac->sdma;
- 	int num_periods = buf_len / period_len;
- 	int channel = sdmac->channel;
--	int i = 0, buf = 0;
-+	int i;
- 	struct sdma_desc *desc;
- 
- 	dev_dbg(sdma->dev, "%s channel: %d\n", __func__, channel);
-@@ -1570,7 +1570,7 @@ static struct dma_async_tx_descriptor *sdma_prep_dma_cyclic(
- 		goto err_bd_out;
+diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx.c
+index 87c58f9f6390..51dc19833eab 100644
+--- a/drivers/tty/serial/imx.c
++++ b/drivers/tty/serial/imx.c
+@@ -1034,8 +1034,6 @@ static void imx_uart_timeout(struct timer_list *t)
  	}
+ }
  
--	while (buf < buf_len) {
-+	for (i = 0; i < num_periods; i++) {
- 		struct sdma_buffer_descriptor *bd = &desc->bd[i];
- 		int param;
- 
-@@ -1597,9 +1597,6 @@ static struct dma_async_tx_descriptor *sdma_prep_dma_cyclic(
- 		bd->mode.status = param;
- 
- 		dma_addr += period_len;
--		buf += period_len;
+-#define RX_BUF_SIZE	(PAGE_SIZE)
 -
--		i++;
- 	}
+ /*
+  * There are two kinds of RX DMA interrupts(such as in the MX6Q):
+  *   [1] the RX DMA buffer is full.
+@@ -1118,7 +1116,8 @@ static void imx_uart_dma_rx_callback(void *data)
+ }
  
- 	return vchan_tx_prep(&sdmac->vc, &desc->vd, flags);
+ /* RX DMA buffer periods */
+-#define RX_DMA_PERIODS 4
++#define RX_DMA_PERIODS	16
++#define RX_BUF_SIZE	(RX_DMA_PERIODS * PAGE_SIZE / 4)
+ 
+ static int imx_uart_start_rx_dma(struct imx_port *sport)
+ {
 -- 
 2.23.0
 
