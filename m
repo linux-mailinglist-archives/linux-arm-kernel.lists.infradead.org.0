@@ -2,76 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7666ABBC19
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 21:13:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE650BBC4B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 21:35:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/3R+qwcbSAK912gCnQsAKSSXBcPfiPew8d7AJQ20TDY=; b=L1ewbA9/b9aKxW
-	8PhqLSEci5LEHlfH7jeHvjVeKO1nEfs8GdmbDwhep61LBvEyP7qOOocjCxTmX3LZ4NmjZ89PhXyQC
-	rrJc8PKQWBNsbtoxOH0yFQafUaWPE4XZT1X5KVqpLfhiSd1gqBfDNiSPi2Z2gjQJGhE9EKXfzdoHM
-	QLUO8jn1PtqsKcKygBHMX16VG9y0bpiMEhfvyPfACcxHgOHLT1PmfYM08F6J6TLKADuwzb+nSYOLx
-	L+B3JKiCGLUmxOw0l1HmYT1izmvuBnQ2ZcMpVaOyl0F7/uAPhclGIbXiwultSctdW4mfthQ/7mzeZ
-	la9rpnCFFzGO7w/4Rraw==;
+	List-Owner; bh=BoOPj5nQpsCFocMBLL2lPiKC1DPbwlN8sxEQGXCjcoI=; b=iO/Q4D+rFuxXYG
+	Mn2J1egoo72N8lSwmibXzwlWd+bNLfA3XeyxaL0wIuLpRCCRepEoD4Rop4Jkk8SsBWfI7xBVwQk4D
+	/82vDjLF0vouz7HTNfyCH6HC6/x5waFEUeAyZ7A39Tdzo1sNufLA06kjDb2bKBY6qt5Ip82k5409S
+	Dim8XHDvsoN/wJ3Je/HAaI+1yLmf3SPUjBEoUGuob60R3i6Euh9p19ZM5bCzkLAZ64/6r82eTGa+g
+	9nttQ5ChGv2GWY/T93Ii1AH7v6K2STEkHNb8uA8t75Lu8nLsMUefRVxVcTp5GFxnGru7pf1foRM00
+	wEwOnnBUm/bSVJ0if74Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCTmB-0001Vj-9x; Mon, 23 Sep 2019 19:13:35 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1iCU6q-0007rn-Vs; Mon, 23 Sep 2019 19:34:57 +0000
+Received: from mail.skyhub.de ([5.9.137.197])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCTm0-0001VK-NL
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 19:13:26 +0000
-Received: by mail-ed1-x544.google.com with SMTP id h33so13956599edh.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Sep 2019 12:13:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=stujTPtuGxuh59HTJ15B3m0skvzv4BxR2W0z7AHqmAs=;
- b=oyQ71NyOLCUCt3yrY4nzC3lmDE+RcloHR0cEYYRhtoJqaMrnTmBYWSRql93lKpdu/2
- bQrXfU9nfGQiEaAJlAXpotQPEAdsSUEJzcK1TJZdtDuOUgQpzT68LYoBtLzhCFlZpTRJ
- sOnLNz+ZCb/ooZ7Iz+F3s9J4d0eKTxzB9FAn34SubnMWewIiyOjoe9FDaI1tIMpIlgun
- AK+RuOBGaMOfBm1D/kLl4+++0qsBgwRznMqymwyisovqATfNnGBGb/epBk1cSr2HYziZ
- oBCaqwi4skj15AXxVrdUY03bPLGkEMGpebrDS+lLUEFOg8+Rrbn4NAaqNBqr7ymyjR8s
- BdVw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=stujTPtuGxuh59HTJ15B3m0skvzv4BxR2W0z7AHqmAs=;
- b=QjO/PsFwd7/ne81U1JD+0Uhj0bBMGll5XNiE9vAJle/4LB4cdnelwq7I3widWu/s/X
- 9H5p5+OkJD5CDbS1zmHGWla7PwEEfbKayfpd8tZep5hV/1E0v4rUZpsmbPnTHSoAJfkL
- e0bzy7op8L7OAINAkxvAm2ds8dZCjN7L/mkDdW4KAQG8OhcpfpkJJ7WRnTmFjtt31j9W
- eThcy8QAmILfRtAceN9wc1YHoeWvM/r3R3oZ1x6FIcBoOqpOLoZFc+LOXdzWtJqMLRFA
- y/vhr2SF67AHRPuAIcrmeQjxFSwhAUHPy03hVhucKpBqx8nXM+s8P0pERMkltOvL08Pq
- J1vA==
-X-Gm-Message-State: APjAAAXrZucTAdkMZf5l9rOT3ijL1g84TULQTW2buolq5lifKc7cpGlR
- 0gY+dvjD5bOIrWL40G8l/hbnQk6Sffrdl83+IAplcg==
-X-Google-Smtp-Source: APXvYqwRmTK/cSlvNliNjYHt44n1Pba7VrLA3KdlnvROdyhykOSCNlF6ArPxqorDu7Day5E1074ogmGxE30V3X5XG3E=
-X-Received: by 2002:aa7:d7d3:: with SMTP id e19mr1824376eds.80.1569266002752; 
- Mon, 23 Sep 2019 12:13:22 -0700 (PDT)
+ id 1iCU6g-0007qu-J3; Mon, 23 Sep 2019 19:34:48 +0000
+Received: from zn.tnic (p200300EC2F060400F036B51F4D309BFC.dip0.t-ipconnect.de
+ [IPv6:2003:ec:2f06:400:f036:b51f:4d30:9bfc])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 743B11EC06F3;
+ Mon, 23 Sep 2019 21:34:41 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
+ t=1569267281;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
+ bh=cOtIH+ThVHQpxFENK80/GDkwsFcGH4JpmGhb1RD1kuE=;
+ b=sXcWlOo1Cf6BR+lWrajtGnsDDTS9hIUvKwljeKpj+Nm0t85WnvDMx+6rvJziYTomTou4ZU
+ KJLHPsr3OayePY/9EaXJutOEAxwUyYEMBQhiKuIXOj1m1wxS4/oVgmW1g7TaW7gHxxULSV
+ 12ky9HQnuiXhbMI4N6FQqTBFzrVrbF0=
+Date: Mon, 23 Sep 2019 21:34:46 +0200
+From: Borislav Petkov <bp@alien8.de>
+To: Andy Lutomirski <luto@kernel.org>
+Subject: Re: [PATCH] seccomp: remove unused arg from secure_computing()
+Message-ID: <20190923193446.GL15355@zn.tnic>
+References: <20190920131907.6886-1-christian.brauner@ubuntu.com>
+ <20190923094916.GB15355@zn.tnic>
+ <CALCETrU_fs_At-hTpr231kpaAd0z7xJN4ku-DvzhRU6cvcJA_w@mail.gmail.com>
 MIME-Version: 1.0
-References: <20190722103330.255312-1-marc.zyngier@arm.com>
- <CA+CK2bAFgDcc6ySCz7zzyeN0wg5WTcxFrKYQ6y5sz7grw-BfAw@mail.gmail.com>
- <86k1c9nrsa.wl-marc.zyngier@arm.com>
-In-Reply-To: <86k1c9nrsa.wl-marc.zyngier@arm.com>
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Mon, 23 Sep 2019 15:13:11 -0400
-Message-ID: <CA+CK2bBzoxDz2BgqbJn8-MzL-aaSon+mqKuAmikH-nBnwm0O2g@mail.gmail.com>
-Subject: Re: [PATCH 0/3] arm64: Allow early timestamping of kernel log
-To: Marc Zyngier <marc.zyngier@arm.com>
+Content-Disposition: inline
+In-Reply-To: <CALCETrU_fs_At-hTpr231kpaAd0z7xJN4ku-DvzhRU6cvcJA_w@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_121325_184107_DBB21E70 
-X-CRM114-Status: GOOD (  16.30  )
+X-CRM114-CacheID: sfid-20190923_123446_779609_0E19FC1C 
+X-CRM114-Status: GOOD (  11.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
+ no trust [5.9.137.197 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -92,62 +79,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Petr Mladek <pmladek@suse.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- John Stultz <john.stultz@linaro.org>, Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-s390 <linux-s390@vger.kernel.org>, Will Drewry <wad@chromium.org>,
+ Kees Cook <keescook@chromium.org>, Parisc List <linux-parisc@vger.kernel.org>,
+ X86 ML <x86@kernel.org>, linux-um@lists.infradead.org,
+ LKML <linux-kernel@vger.kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ Christian Brauner <christian.brauner@ubuntu.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 23, 2019 at 3:17 AM Marc Zyngier <marc.zyngier@arm.com> wrote:
->
-> On Mon, 22 Jul 2019 21:52:42 +0100,
-> Pavel Tatashin <pasha.tatashin@soleen.com> wrote:
+On Mon, Sep 23, 2019 at 11:41:59AM -0700, Andy Lutomirski wrote:
+> On Mon, Sep 23, 2019 at 2:49 AM Borislav Petkov <bp@alien8.de> wrote:
 > >
-> > On Mon, Jul 22, 2019 at 3:33 AM Marc Zyngier <marc.zyngier@arm.com> wrote:
-> > >
-> > > So far, we've let the arm64 kernel start its meaningful time stamping
-> > > of the kernel log pretty late, which is caused by sched_clock() being
-> > > initialised rather late compared to other architectures.
-> > >
-> > > Pavel Tatashin proposed[1] to move the initialisation of sched_clock
-> > > much earlier, which I had objections to. The reason for initialising
-> > > sched_clock late is that a number of systems have broken counters, and
-> > > we need to apply all kind of terrifying workarounds to avoid time
-> > > going backward on the affected platforms. Being able to identify the
-> > > right workaround comes pretty late in the kernel boot, and providing
-> > > an unreliable sched_clock, even for a short period of time, isn't an
-> > > appealing prospect.
-> > >
-> > > To address this, I'm proposing that we allow an architecture to chose
-> > > to (1) divorce time stamping and sched_clock during the early phase of
-> > > booting, and (2) inherit the time stamping clock as the new epoch the
-> > > first time a sched_sched clock gets registered.
+> > On Fri, Sep 20, 2019 at 03:19:09PM +0200, Christian Brauner wrote:
+> > > While touching seccomp code I realized that the struct seccomp_data
+> > > argument to secure_computing() seems to be unused by all current
+> > > callers. So let's remove it unless there is some subtlety I missed.
+> > > Note, I only tested this on x86.
+> >
+> > What was amluto thinking in
+> >
+> > 2f275de5d1ed ("seccomp: Add a seccomp_data parameter secure_computing()")
+> 
+> IIRC there was a period of time in which x86 used secure_computing()
+> for normal syscalls, and it was a good deal faster to have the arch
+> code supply seccomp_data.  x86 no longer works like this, and syscalls
+> aren't fast anymore ayway :(
 
-Hi Marc,
+Uhuh, thanks Andy.
 
-I know we briefly discussed this at plumbers, but I want to bring it
-up again, because I am still puzzled why it is not possible to
-stabilize unstable clock early in boot.
+Christian, pls add that piece of history to the commit message.
 
-Here is an example where clock is stabilized:
-https://soleen.com/source/xref/linux/kernel/sched/clock.c?r=457c8996#265
+Thx.
 
-It uses a value that is read at last ticks to normalize clock, and
-because ticks are not available early in boot instead we can make sure
-that early in boot sched_clock() never returns value smaller than
-previously returned value, and if we want to be extra careful, we can
-also make sure that sched_clock() early in boot does not jump ahead by
-more than some fixed amount of time i.e. more than one hour.
+-- 
+Regards/Gruss,
+    Boris.
 
-If sched_clock() is available early we will get the benefit of having
-other tracers that use it to debug early boot information.
-
-Pasha
+https://people.kernel.org/tglx/notes-about-netiquette
 
 _______________________________________________
 linux-arm-kernel mailing list
