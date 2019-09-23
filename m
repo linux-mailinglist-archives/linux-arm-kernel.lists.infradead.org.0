@@ -2,54 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D37B0BAEDE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 10:05:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B68DFBAF10
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 10:14:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zO7sPmgciBLWqkng527AjYPMBo9V0Rg2YQxbhWqa+q0=; b=eOGRMZz0ZhjqEF
-	owmKs8M50fBVGeSnzriTazFsYJwhPKX3YJ6+7V33beMazacvf+Ca6gAD2XouPi33tKY4Kh4B53yon
-	hDIBA7q/MHHFyPqrEUFImPH/xlNDRZ6AqLw5aoGmMgiu4zo5jdmcmvXuojixJhZ6xdkoucJqx4oFE
-	vs7WA/OZrZrPoj0KmxLZsoGALA2eh5RnHkdBUIKiEQllwRwIMBAWsaxTGobLwd2ZM2cVdY6OZf3CF
-	/1OjyOWI+2CUJ6Y3mMqZmyrLsNY1qqBuQtbvzlaOVJG2cwkEkmVjGvS0kdTIlDFwjAWFFhlr4LOor
-	15UWtf6bo/IZZZYZwWnA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uo8ujQDtqcN80i4vU/PE4bYidevwYWu673KtHdsc5Aw=; b=Vd++6tVpeDDOtp
+	aXa9hpRHMtZH4rkkyHDL8H/W8AEYNmuEZeqZfACMMddvYQsH+l9C9VLEgOeJyaiQ8v0GfzJCExly9
+	/a8tFtocw8NJxMJBoIT4hwpqQKHs9fr5U81LTXFlb+do5hmmdvMGk2wJf3hq2NLLhVi82nyg3RHwW
+	lUbVppBWPjEnGgVgrEe5g9A3ZCevmw4WQol8FmDo4f74BkSLhRHJQoTGm4VZZE/yEidrF9+efK2Oj
+	TzfJylXJNpyMjB8JHHlyOF18rISOU30CniKsgDUQomHTFTr1yVKmuWUAIXovUM5XAtGtPV2zEcyO/
+	4JFNV9ZwseqryMAXKSMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCJLu-00032e-3p; Mon, 23 Sep 2019 08:05:46 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCJLg-00031T-CX; Mon, 23 Sep 2019 08:05:34 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B41541000;
- Mon, 23 Sep 2019 01:05:28 -0700 (PDT)
-Received: from [192.168.1.113] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1FE1A3F59C;
- Mon, 23 Sep 2019 01:08:00 -0700 (PDT)
-Subject: Re: [PATCH 1/1] sched/eas: introduce system-wide overutil indicator
-To: YT Chang <yt.chang@mediatek.com>, Peter Zijlstra <peterz@infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>
-References: <1568877622-28073-1-git-send-email-yt.chang@mediatek.com>
-From: Dietmar Eggemann <dietmar.eggemann@arm.com>
-Message-ID: <17c5f3bf-b739-b041-c71a-3d568be6f46d@arm.com>
-Date: Mon, 23 Sep 2019 10:05:25 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1iCJU2-0005E9-1T; Mon, 23 Sep 2019 08:14:10 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iCJTn-0005CE-NZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 08:13:58 +0000
+Received: by mail-lf1-x142.google.com with SMTP id x80so9389866lff.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 23 Sep 2019 01:13:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=rasmusvillemoes.dk; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=YP0Dty02K/PU7snWf9QCmnq9+d/+lpZCzmP6b7jH6B4=;
+ b=BJ5LbRkdAmmWPoS4xoIHkGfseBJtqsTjDT8/SzOvXN4s2EcGhdbg44m+jOXBELIcM7
+ 4ANJ7E6jTSF9ZV6PoV9s6M/UvcK5qxO/EEGJRfM6MxvXh4CH8RQ83T9QQeE2spGj3wZG
+ z1XbDZZvAk5dflfZlTdavY3SuAp8xmzsLydtE=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=YP0Dty02K/PU7snWf9QCmnq9+d/+lpZCzmP6b7jH6B4=;
+ b=e7c0O1EOG1PlxO29OIxhqosyGbcQROEanRKpxNmlz3lfj4lNLFGmCZm0CZBrJmnq3i
+ WXl0AQl9KGeL3nL4/syK1VwtqE95Ap5eGQc24Kii20D3qrwVw1pXvNnzbv3lFdRJQBS4
+ m3vdICF9NAtC+kGRn0y6AI4RaPNgVqJMbNBiK2GAx6sVvEH38u+CRnnhJ8SEAkPGP/aH
+ RUAEL6q/eReQ9b41Ry/MqgMXg/cAhkJXGtnP7bchJSywzr2YWIeOpNqAMbqpDPxWuPwH
+ hxgUbnucUTK4MsWEd0qCOfg52VVeK+sQ2ncQaYar6tvVaC6VIZbawGyb3hutE7qilVJT
+ 95rg==
+X-Gm-Message-State: APjAAAU0hPZj/PbeLPL4sc9HmpjmfBGXkniIrcxQLHTYb1ReEH4U9xfU
+ u2z2vT/AB59jyjaMdFzrn2AMSg==
+X-Google-Smtp-Source: APXvYqz1aK8MYGtYecVVxc/h+5tNAbQ8QHxsPIQq+G8SCQClVwWdZ7aqolsB4dTq+uFnHjerMW4hNQ==
+X-Received: by 2002:a05:6512:4dd:: with SMTP id
+ w29mr15905123lfq.2.1569226431814; 
+ Mon, 23 Sep 2019 01:13:51 -0700 (PDT)
+Received: from prevas-ravi.prevas.se ([81.216.59.226])
+ by smtp.gmail.com with ESMTPSA id c21sm2054946lff.61.2019.09.23.01.13.50
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 23 Sep 2019 01:13:51 -0700 (PDT)
+From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+To: Thierry Reding <thierry.reding@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ linux-pwm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 0/4] pwm: mxs: add support for setting polarity via DT
+Date: Mon, 23 Sep 2019 10:13:44 +0200
+Message-Id: <20190923081348.6843-1-linux@rasmusvillemoes.dk>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <1568877622-28073-1-git-send-email-yt.chang@mediatek.com>
-Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_010532_516365_91FDFAFC 
-X-CRM114-Status: GOOD (  25.15  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190923_011356_727041_71864E4B 
+X-CRM114-Status: UNSURE (   9.51  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,132 +100,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, wsd_upstream@mediatek.com
+Cc: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 9/19/19 9:20 AM, YT Chang wrote:
-> When the system is overutilization, the load-balance crossing
-> clusters will be triggered and scheduler will not use energy
-> aware scheduling to choose CPUs.
+This series adds support for setting the polarity via DT to the
+pwm-mxs driver.
 
-We're currently transitioning from traditional big.LITTLE (the CPUs of 1
-cluster (all having the same CPU (original) capacity) represent a DIE
-Sched Domain (SD) level Sched Group (SG)) to DynamIQ systems. Later can
-share CPUs with different CPU (original) capacity in one cluster.
-In Linux mainline with today's DynamIQ systems (1 cluster) you will
-only have 1 cluster, i.e. 1 MC SD level SG.
+The DT binding is updated, but I'm not touching the existing .dts or
+.dtsi files - it seems that the same was done for bcm2835 in commits
+46421d9d8e802e570dfa4d793a4938d2642ec7a7 and
+8a88b2a2017d1e7e80db53080baff591fd454722, while
+arch/arm/boot/dts/bcm283x.dtsi still has #pwm-cells = <2>.
 
-For those systems the current approach is much more applicable.
+Rasmus Villemoes (4):
+  pwm: mxs: implement ->apply
+  pwm: mxs: remove legacy methods
+  pwm: mxs: add support for inverse polarity
+  dt-bindings: pwm: mxs-pwm: Increase #pwm-cells
 
-Or do you apply the out-of-tree Phantom Domain concept, which creates n
-(n=2 or 3 ((huge,) big, little)) DIE SGs on your 1 cluster DynamIQ system?
+ .../devicetree/bindings/pwm/mxs-pwm.txt       |  4 +-
+ drivers/pwm/pwm-mxs.c                         | 73 ++++++++-----------
+ 2 files changed, 34 insertions(+), 43 deletions(-)
 
-> The overutilization means the loading of  ANY CPUs
-> exceeds threshold (80%).
-> 
-> However, only 1 heavy task or while-1 program will run on highest
-> capacity CPUs and it still result to trigger overutilization. So
-> the system will not use Energy Aware scheduling.
+-- 
+2.20.1
 
-The patch-header of commit 2802bf3cd936 ("sched/fair: Add
-over-utilization/tipping point indicator") mentioned why the current
-approach is so conservatively defined.
-
-> To avoid it, a system-wide over-utilization indicator to trigger
-> load-balance cross clusters.
-> 
-> The policy is:
-> 	The loading of "ALL CPUs in the highest capacity"
-> 						exceeds threshold(80%) or
-> 	The loading of "Any CPUs not in the highest capacity"
-> 						exceed threshold(80%)
-
-We experimented with an overutilized (tipping point) indicator per SD
-from Thara Gopinath (Linaro), mentioned by Vincent already, till v2 of
-the Energy Aware Scheduling patch-set in 2018 but we couldn't find any
-advantage using it over the one you now find in mainline.
-
-https://lore.kernel.org/r/20180406153607.17815-4-dietmar.eggemann@arm.com
-
-Maybe you can have a look at this patch and see if it gives you an
-advantage with your use cases and system topology layout?
-
-The 'system-wide' in the name of the patch is misleading. The current
-approach is also system-wide, we have the overutilized information on
-the root domain (system here stands for root domain). You change the
-detection mechanism from per-CPU to a mixed-mode detection (per-CPU and
-per-SG).
-
-> Signed-off-by: YT Chang <yt.chang@mediatek.com>
-> ---
->  kernel/sched/fair.c | 76 +++++++++++++++++++++++++++++++++++++++++++++--------
->  1 file changed, 65 insertions(+), 11 deletions(-)
-> 
-> diff --git a/kernel/sched/fair.c b/kernel/sched/fair.c
-> index 036be95..f4c3d70 100644
-> --- a/kernel/sched/fair.c
-> +++ b/kernel/sched/fair.c
-> @@ -5182,10 +5182,71 @@ static inline bool cpu_overutilized(int cpu)
->  static inline void update_overutilized_status(struct rq *rq)
->  {
->  	if (!READ_ONCE(rq->rd->overutilized) && cpu_overutilized(rq->cpu)) {
-> -		WRITE_ONCE(rq->rd->overutilized, SG_OVERUTILIZED);
-> -		trace_sched_overutilized_tp(rq->rd, SG_OVERUTILIZED);
-> +		if (capacity_orig_of(cpu_of(rq)) < rq->rd->max_cpu_capacity) {
-> +			WRITE_ONCE(rq->rd->overutilized, SG_OVERUTILIZED);
-> +			trace_sched_overutilized_tp(rq->rd, SG_OVERUTILIZED);
-> +		}
->  	}
->  }
-> +
-> +static
-> +void update_system_overutilized(struct sched_domain *sd, struct cpumask *cpus)
-> +{
-> +	unsigned long group_util;
-> +	bool intra_overutil = false;
-> +	unsigned long max_capacity;
-> +	struct sched_group *group = sd->groups;
-> +	struct root_domain *rd;
-> +	int this_cpu;
-> +	bool overutilized;
-> +	int i;
-> +
-> +	this_cpu = smp_processor_id();
-> +	rd = cpu_rq(this_cpu)->rd;
-> +	overutilized = READ_ONCE(rd->overutilized);
-> +	max_capacity = rd->max_cpu_capacity;
-> +
-> +	do {
-> +		group_util = 0;
-> +		for_each_cpu_and(i, sched_group_span(group), cpus) {
-> +			group_util += cpu_util(i);
-> +			if (cpu_overutilized(i)) {
-> +				if (capacity_orig_of(i) < max_capacity) {
-> +					intra_overutil = true;
-> +					break;
-> +				}
-> +			}
-> +		}
-> +
-> +		/*
-> +		 * A capacity base hint for over-utilization.
-> +		 * Not to trigger system overutiled if heavy tasks
-> +		 * in Big.cluster, so
-> +		 * add the free room(20%) of Big.cluster is impacted which means
-> +		 * system-wide over-utilization,
-> +		 * that considers whole cluster not single cpu
-> +		 */
-> +		if (group->group_weight > 1 && (group->sgc->capacity * 1024 <
-> +						group_util * capacity_margin)) {
-
-Why 'group->group_weight > 1' ? Do you have some out-of-tree code which
-lets SGs with 1 CPU survive?
-
-[...]
 
 _______________________________________________
 linux-arm-kernel mailing list
