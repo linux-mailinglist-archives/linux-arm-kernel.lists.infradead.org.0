@@ -2,55 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3A96BBA23
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 19:05:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04895BBA38
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 19:13:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aaLy9Z/8yrO+2WS1UBQ25StCtbZAQNkDtFvsO6+lGeQ=; b=Z1gWOypu8B0DSw
-	KTggtPtUYVSIHJvheanw+HP7o7HVORNdxkr+TbOr9Q4Ah115XcNZ/YDH0kmeJem1tX24+sFTk5f/y
-	25stlWwMv7fV/K1FKSnzfsKCJtkLuTmxIyesipcmthSFYcQErhoPeHtg2UH/VmKpj0yOsqVFS/4aE
-	Mbj587O28ste/KjScPEr6YDTA3WyzWs1ev97RedZ0I8/BGh16fv1xTuAPagwXQ401Q5C1gx30z94c
-	n/UKwWx8wgZgwoob4OFa4YGT0BJgT5MrJKZfIqG5netH8BptzKpVGtbZZ5kNmzz8ESu+dlRzxXR+t
-	wlZM82Y47E79ayA3IUKw==;
+	List-Owner; bh=E7JPJAAKiAV1hHhPXVzfjAyn9eqbkp4fOZ6idzoXhyw=; b=YtC8xhwGUs8WZ2
+	KCndpOWqPE+OAkgwuf1eHDiCbAKP0WxynI/gKm8/GQb1FnoqTpqDEeTGVBHqcv2qPQaezI8/YY8yh
+	aqoIvJdmAquWQE+ONkBhRLyolE6SwTyKyZQ+ZTdBLsrnuAbzDf7zhnN4FBNNyQgBttIVgjDw+uWHv
+	ofwJfhMy6cIJw09yq9SjKVEoFU6+c4C2bY4URqckeEldRTthUrbqEDHtxI/E72U1Ak1XtYY1aeFgz
+	aTNARA0v3i6ZxT1spgtrD7LtZbSs65fhIenswUvxD7Du6pSB7UZCI7//1IkikYAWLpL4suY4UiX1O
+	8s5JVCQ0pzOaHJaJBuSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCRlk-00062z-Iu; Mon, 23 Sep 2019 17:05:00 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCRlQ-0005px-Bp
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 17:04:42 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2EBAE1000;
- Mon, 23 Sep 2019 10:04:39 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 7E0523F67D; Mon, 23 Sep 2019 10:04:36 -0700 (PDT)
-Date: Mon, 23 Sep 2019 18:04:34 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Jia He <justin.he@arm.com>
-Subject: Re: [PATCH v8 3/3] mm: fix double page fault on arm64 if PTE_AF is
- cleared
-Message-ID: <20190923170433.GE10192@arrakis.emea.arm.com>
-References: <20190921135054.142360-1-justin.he@arm.com>
- <20190921135054.142360-4-justin.he@arm.com>
+	id 1iCRu9-0001eF-TW; Mon, 23 Sep 2019 17:13:41 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iCRtx-0001dv-Gu
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 17:13:30 +0000
+Received: by mail-pg1-x541.google.com with SMTP id z12so8333289pgp.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 23 Sep 2019 10:13:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=tfsTLDFY1ccam3FUWWjnqOYmfdpnpNmRoJABJz0j6Jw=;
+ b=rab4KjXC1CDcjeIdsHH50MINA6B4H/cQqstbVol6cCKHf8vYra1z5ei7gFXzGhZ7EP
+ 8UDoshJz8VTK87htqLNecFQnuHN2Ros1upeW6VtbuQutaANFFrZeNKMAo2Mt9+iK13dy
+ iB+LgWZOkjm70B6aiNKMch4exZwDrSmzHvw+3Rr9p3Xr8gDGSQYL3m6BDHsroTlcYXcV
+ y+N8jGyOGGOPIpzuG2w2iOUZDCO/DgEBjv5thouZgICXauIz9IYxe8bsHD2wjU/ro0l/
+ +hyx5B4MwnUTvBXhX7KZZspApVhXEdmo+laC4zAtkrQU8Mu8zGA8ltQVBrNQOUVVidx1
+ hpTg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=tfsTLDFY1ccam3FUWWjnqOYmfdpnpNmRoJABJz0j6Jw=;
+ b=I+SlpTur2kiDDI2ss68QaxbYSHW+DYuVdJ4/2bykeLvClXXQcU+9vF2bXiLfFP7WOu
+ azkWk9wJK9rMntlYm6OCDilGJH5nFWMhMP7p7cKMS1ukcE7lHxkEATxItCqZ2E/O46G7
+ 2PDWstelCj0oJZkNnishYw34cBsYyapRIxObDH6naJNbLXuXbNc9BzEFT+w5NsOqmXMw
+ vZQ8ZFswMCvCAUfUSQc2O41NeVI65Cfid/CqETQ3NHK7GuZxt0514RI7DplCAr2++e59
+ qqw3g8QnqHzkIDX4g5MY6WrcnEEpNNqV/9TnjvPF3BsdQS/M9q4hDl39h5eodv5DO11R
+ Qfgw==
+X-Gm-Message-State: APjAAAWLx33+bex73qp50GAS7evL5A0wtrvLD9+HtLibS4FaR6kPMifo
+ PlIbht5G5/Zfl+6UuDdibnszyw2R3z22Vw==
+X-Google-Smtp-Source: APXvYqy1QDC5+llAVuCG+6Lt9rco93xnDb1jqsxs2nUWrC/qkddy16J7Ri3SZxWDWN2mMuhNCaAgNg==
+X-Received: by 2002:a63:f74a:: with SMTP id f10mr931166pgk.171.1569258808707; 
+ Mon, 23 Sep 2019 10:13:28 -0700 (PDT)
+Received: from leoy-ThinkPad-X240s ([12.206.46.62])
+ by smtp.gmail.com with ESMTPSA id k4sm11217132pjl.9.2019.09.23.10.13.27
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 23 Sep 2019 10:13:27 -0700 (PDT)
+Date: Tue, 24 Sep 2019 01:13:25 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH v2 1/5] perf cs-etm: Refactor instruction size handling
+Message-ID: <20190923171325.GA29675@leoy-ThinkPad-X240s>
+References: <20190923160759.14866-1-leo.yan@linaro.org>
+ <20190923160759.14866-2-leo.yan@linaro.org>
+ <2b675e24-8b06-fbd6-ab73-214a6afb2a07@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190921135054.142360-4-justin.he@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <2b675e24-8b06-fbd6-ab73-214a6afb2a07@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_100440_684422_AE05A1FD 
-X-CRM114-Status: GOOD (  19.98  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190923_101329_565809_31DC6CA4 
+X-CRM114-Status: GOOD (  26.25  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,127 +99,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kaly Xin <Kaly.Xin@arm.com>,
- Ralph Campbell <rcampbell@nvidia.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Suzuki Poulose <Suzuki.Poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
- Anshuman Khandual <anshuman.khandual@arm.com>, linux-kernel@vger.kernel.org,
- Matthew Wilcox <willy@infradead.org>, linux-mm@kvack.org,
- =?iso-8859-1?B?Suly9G1l?= Glisse <jglisse@redhat.com>,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- Punit Agrawal <punitagrawal@gmail.com>, hejianet@gmail.com,
- Thomas Gleixner <tglx@linutronix.de>, nd@arm.com,
- Will Deacon <will@kernel.org>, Alex Van Brunt <avanbrunt@nvidia.com>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>,
- Robin Murphy <robin.murphy@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Coresight ML <coresight@lists.linaro.org>, linux-kernel@vger.kernel.org,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
+ Jiri Olsa <jolsa@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Sep 21, 2019 at 09:50:54PM +0800, Jia He wrote:
-> @@ -2151,21 +2163,53 @@ static inline void cow_user_page(struct page *dst, struct page *src, unsigned lo
->  	 * fails, we just zero-fill it. Live with it.
->  	 */
->  	if (unlikely(!src)) {
-> -		void *kaddr = kmap_atomic(dst);
-> -		void __user *uaddr = (void __user *)(va & PAGE_MASK);
-> +		void *kaddr;
-> +		pte_t entry;
-> +		void __user *uaddr = (void __user *)(addr & PAGE_MASK);
->  
-> +		/* On architectures with software "accessed" bits, we would
-> +		 * take a double page fault, so mark it accessed here.
-> +		 */
+Hi Suzuki,
 
-Nitpick: please follow the kernel coding style for multi-line comments
-(above and the for the rest of the patch):
+On Mon, Sep 23, 2019 at 05:51:04PM +0100, Suzuki K Poulose wrote:
+> Hi Leo,
+> 
+> On 23/09/2019 17:07, Leo Yan wrote:
+> > In cs-etm.c there have several functions need to know instruction size
+> > based on address, e.g. cs_etm__instr_addr() and cs_etm__copy_insn()
+> > these two functions both calculate the instruction size separately.
+> > Furthermore, if we consider to add new features later which also might
+> > require to calculate instruction size.
+> > 
+> > For this reason, this patch refactors the code to introduce a new
+> > function cs_etm__instr_size(), it will be a central place to calculate
+> > the instruction size based on ISA type and instruction address.
+> > 
+> > For a neat implementation, cs_etm__instr_addr() will always execute the
+> > loop without checking ISA type, this allows cs_etm__instr_size() and
+> > cs_etm__instr_addr() have no any duplicate code with each other and both
+> > functions can be changed independently later without breaking anything.
+> > As a side effect, cs_etm__instr_addr() will do a few more iterations for
+> > A32/A64 instructions, this would be fine if consider perf tool runs in
+> > the user space.
+> > 
+> > Signed-off-by: Leo Yan <leo.yan@linaro.org>
+> 
+> Your changes look fine to me. However, please see my comment below.
+> 
+> > ---
+> >   tools/perf/util/cs-etm.c | 48 +++++++++++++++++++++++-----------------
+> >   1 file changed, 28 insertions(+), 20 deletions(-)
+> > 
+> > diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
+> > index f87b9c1c9f9a..1de3f9361193 100644
+> > --- a/tools/perf/util/cs-etm.c
+> > +++ b/tools/perf/util/cs-etm.c
+> > @@ -917,6 +917,26 @@ static inline int cs_etm__t32_instr_size(struct cs_etm_queue *etmq,
+> >   	return ((instrBytes[1] & 0xF8) >= 0xE8) ? 4 : 2;
+> >   }
+> > +static inline int cs_etm__instr_size(struct cs_etm_queue *etmq,
+> > +				     u8 trace_chan_id,
+> > +				     enum cs_etm_isa isa,
+> > +				     u64 addr)
+> > +{
+> > +	int insn_len;
+> > +
+> > +	/*
+> > +	 * T32 instruction size might be 32-bit or 16-bit, decide by calling
+> > +	 * cs_etm__t32_instr_size().
+> > +	 */
+> > +	if (isa == CS_ETM_ISA_T32)
+> > +		insn_len = cs_etm__t32_instr_size(etmq, trace_chan_id, addr);
+> > +	/* Otherwise, A64 and A32 instruction size are always 32-bit. */
+> > +	else
+> > +		insn_len = 4;
+> > +
+> > +	return insn_len;
+> > +}
+> > +
+> >   static inline u64 cs_etm__first_executed_instr(struct cs_etm_packet *packet)
+> >   {
+> >   	/* Returns 0 for the CS_ETM_DISCONTINUITY packet */
+> > @@ -941,19 +961,15 @@ static inline u64 cs_etm__instr_addr(struct cs_etm_queue *etmq,
+> >   				     const struct cs_etm_packet *packet,
+> >   				     u64 offset)
+> >   {
+> > -	if (packet->isa == CS_ETM_ISA_T32) {
+> > -		u64 addr = packet->start_addr;
+> > +	u64 addr = packet->start_addr;
+> > -		while (offset > 0) {
+> > -			addr += cs_etm__t32_instr_size(etmq,
+> > -						       trace_chan_id, addr);
+> > -			offset--;
+> > -		}
+> > -		return addr;
+> > +	while (offset > 0) {
+> 
+> Given that offset is u64, the check above is not appropriate. You could either
+> change it to :
+> 	while (offset) // if you are sure (s64)offset always is a postive
+> integer and we always reduce it by 1.
+> 
+> Otherwise you may switch the offset to a signed type. I understand that this
+> is not introduced by your changes. But you may fix that up in a separate patch.
 
-		/*
-		 * Your multi-line comment.
-		 */
+Thanks a lot for the review.  Seems to me the reliable fix is to change
+to a signed type.  Will add this fix in next spin.
 
-> +		if (arch_faults_on_old_pte() && !pte_young(vmf->orig_pte)) {
-> +			vmf->pte = pte_offset_map_lock(mm, vmf->pmd, addr,
-> +						       &vmf->ptl);
-> +			if (likely(pte_same(*vmf->pte, vmf->orig_pte))) {
-> +				entry = pte_mkyoung(vmf->orig_pte);
-> +				if (ptep_set_access_flags(vma, addr,
-> +							  vmf->pte, entry, 0))
-> +					update_mmu_cache(vma, addr, vmf->pte);
-> +			} else {
-> +				/* Other thread has already handled the fault
-> +				 * and we don't need to do anything. If it's
-> +				 * not the case, the fault will be triggered
-> +				 * again on the same address.
-> +				 */
-> +				pte_unmap_unlock(vmf->pte, vmf->ptl);
-> +				return false;
-> +			}
-> +			pte_unmap_unlock(vmf->pte, vmf->ptl);
-> +		}
-
-Another nit, you could rewrite this block slightly to avoid too much
-indentation. Something like (untested):
-
-		if (arch_faults_on_old_pte() && !pte_young(vmf->orig_pte)) {
-			vmf->pte = pte_offset_map_lock(mm, vmf->pmd, addr,
-						       &vmf->ptl);
-			if (unlikely(!pte_same(*vmf->pte, vmf->orig_pte))) {
-				/*
-				 * Other thread has already handled the fault
-				 * and we don't need to do anything. If it's
-				 * not the case, the fault will be triggered
-				 * again on the same address.
-				 */
-				pte_unmap_unlock(vmf->pte, vmf->ptl);
-				return false;
-			}
-			entry = pte_mkyoung(vmf->orig_pte);
-			if (ptep_set_access_flags(vma, addr,
-						  vmf->pte, entry, 0))
-				update_mmu_cache(vma, addr, vmf->pte);
-			pte_unmap_unlock(vmf->pte, vmf->ptl);
-		}
-
-> +
-> +		kaddr = kmap_atomic(dst);
-
-Since you moved the kmap_atomic() here, could the above
-arch_faults_on_old_pte() run in a preemptible context? I suggested to
-add a WARN_ON in patch 2 to be sure.
-
->  		/*
->  		 * This really shouldn't fail, because the page is there
->  		 * in the page tables. But it might just be unreadable,
->  		 * in which case we just give up and fill the result with
->  		 * zeroes.
->  		 */
-> -		if (__copy_from_user_inatomic(kaddr, uaddr, PAGE_SIZE))
-> +		if (__copy_from_user_inatomic(kaddr, uaddr, PAGE_SIZE)) {
-> +			/* Give a warn in case there can be some obscure
-> +			 * use-case
-> +			 */
-> +			WARN_ON_ONCE(1);
-
-That's more of a question for the mm guys: at this point we do the
-copying with the ptl released; is there anything else that could have
-made the pte old in the meantime? I think unuse_pte() is only called on
-anonymous vmas, so it shouldn't be the case here.
-
->  			clear_page(kaddr);
-> +		}
->  		kunmap_atomic(kaddr);
->  		flush_dcache_page(dst);
->  	} else
-> -		copy_user_highpage(dst, src, va, vma);
-> +		copy_user_highpage(dst, src, addr, vma);
-> +
-> +	return true;
->  }
-
--- 
-Catalin
+Thanks,
+Leo Yan
 
 _______________________________________________
 linux-arm-kernel mailing list
