@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A02A6BBD01
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 22:35:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2450CBBD05
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 22:36:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0okwdDH8atGyXDLKmsXAwsEhvwhWi2ugu3PvAyAaaEo=; b=M8tLZZ6UPHiNVM
-	+UsVWHG41uxGfJzVdpZkK0RVRqBilhhUpByw2C0Xu0NYUCHo8Lwoioi6R9EZ0Tf+xP89/oNwmwEpD
-	oQk5ORlyqbBy/3377LC1oDySB3n2QZmwVjrysb8ohQ8N6rS25jJLoYpqaFXEwkivswu9DyOoOLXMk
-	JbkLg/XaVl4d6kUTHauRtn1Sf8eYZtWVjm+cvv/ZJL7v/CeS5gUOr95wLJe/8tRaRjjzh0aYJimlg
-	kBK4pbTzrpp9LM2RCZPu2u+DLV5BDsIJdMMYi+F7V2xiAMeoGoGUkpon8Hs1wqqRCmCedC7Pj7oHj
-	5gYXdCuRh+DlHaCm4ROA==;
+	List-Owner; bh=utW/NIT9JR35RyFowCHt5xpjKGpOI6rjkLWHsRVplzg=; b=PTjwtDhVWDAdWF
+	NvBpZUqom5hZgKFrg0gDepcFUxPCMYs+GcDTaXgkveZ1ky37n7vV/4ctbT0HMGbEBBsKj/yH4cqXE
+	1vWlOjMOezMsob0dt7M4VU0APNOX83gNJLZalW3oWSXvDXAudbBJJUp16qHH75G4tw1ThdPOAQRej
+	j8WU98MPQspGuwPgPaXTQlWAu6piJmF5EzRvG2jOuhP9wf+9iDROU4vQKHoDKBxP2Q5ZEeFP6Rgdz
+	3s7h3Xr5AIRj+nvPx2d8nE3DodJ2IE3L8zp7Wbw4A9c9n46c01o57XO2SkK/OJzw7ug1b8N79Uv0X
+	RPpTFzLYpE3Odefr+sTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCV3o-0004Mh-RC; Mon, 23 Sep 2019 20:35:52 +0000
+	id 1iCV45-0004ce-4x; Mon, 23 Sep 2019 20:36:09 +0000
 Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCV2h-0002EG-VT
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 20:34:45 +0000
-Received: by mail-pl1-x643.google.com with SMTP id d22so7001341pll.7
+ id 1iCV2j-0002FU-Hl
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 20:34:46 +0000
+Received: by mail-pl1-x643.google.com with SMTP id u12so6996105pls.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Sep 2019 13:34:42 -0700 (PDT)
+ Mon, 23 Sep 2019 13:34:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=3zTijyt8B1oVtT9JT6yCKls7nJQIDBWuYolaWDAK7ic=;
- b=NPdkNIm0wrZOKAEjjebCfOXhVt9BA9UfqiHQ6RuQplwNC6RxIM1b11Cd8A5afWNV07
- O6nrgyrp1NE11jqQQCyB9u5TPHar+d5IM2aGGaZIYmpdW8dv7YMiMNhr1NSeN1HdA17Q
- qA5tfNc/q4JkZV2xI+YaOcH/q+gypgvpqre3Jkl1CqhZ7D587jfQ0Spvdkvxzjv8zD2N
- CRZ62EB12Q0TusTaPfzTP14sUgiy/v1N1+PCc2ulUmZTK1P7yRF5UBuYnlTdZVPkmV33
- LOXk1q2Arz2juRQsSya+z99tARblhJgNSrG3P6W3AXLNVCUaP7uV2C1cIZnhzMYJ/rur
- HjSQ==
+ bh=4PNhEWMnxTPqUB+Gwx2nqJhU+kkzlGq5UWgg81CPAOk=;
+ b=oWTaiXQUOW/n+bZ3aNPNA4OtwzBJkIcKJ7w8UHidzdwXhLyBh7H6XeCFOH4hrLa0TF
+ 5tO48HD+yimpY3hC6jgRBluPwrr5tgxt77/q6RSoQIg8t/tRCWOU6l8oYNCNvsXRKB4D
+ Z8cHhyCyQ6gPEYAU2u5cdpMqDzvOZEnFOvri1Ewy4jmdOYjAh+x8UWdyU39v2SL5rPSV
+ K4dkoFFYKtiBQ1BjRZfz7omkXdFczekyPXcpEcNWyxECRtdRYNCDtUFUDOsq8wHx+W9f
+ xkjwmwwuLO8WLQ/ZZtLJsCija11LteHo6qyLnvLelyuoP2vORsoEtQA4U9vpzDPIcO1V
+ 1N7Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=3zTijyt8B1oVtT9JT6yCKls7nJQIDBWuYolaWDAK7ic=;
- b=jazzxZoOpmVKxbH2JskkXMjR6EUj6hFa+J4C66aoDjycTYmBBmCZ1aIczT6eMF/5io
- y0FsBHrE0FSf1hrmLHXvINju0uKAoIMfo6W7KKunQBF4o//8sGHJYvMf1lVsSEzvWjBO
- qxiUQolnANi5lVR19Yxt0BRlUV1hWhCBSwiLVFZVc/U5zi3e9NjtExiq++eHuGEEV4Qz
- 1yQ8icwzLgTPzyVsxFcLxWJ1zdPmfd/9hAdXWxawIBoV43F8UcSh6yEMj9tTtyilPQ7h
- Q+QJLCnzXDw0dbPq/UKrZ6aWNAOvrHzivpOlp30tk8zzjwrOIEzrwVsJoBDdWfRlwzE8
- bt6g==
-X-Gm-Message-State: APjAAAXUjvIKWe+miOC7+uVYUz2iyxU6Wmwg+jXghJKda2ozWvO60GjI
- BUzUVToWhJ9vWK2znv3cvsfehQ==
-X-Google-Smtp-Source: APXvYqyM+tozPszKt/AHnpXbGQE8m+WydlkTbUy8bM7XQTkOKWP6qGml1eU2fXHZcpiqnRJpO7UwYA==
-X-Received: by 2002:a17:902:ba89:: with SMTP id
- k9mr1747223pls.44.1569270882293; 
- Mon, 23 Sep 2019 13:34:42 -0700 (PDT)
+ bh=4PNhEWMnxTPqUB+Gwx2nqJhU+kkzlGq5UWgg81CPAOk=;
+ b=EWd7Efez9RWZblWKEdcnnHeiBvKcRyG+CvkknV1l5vkSt5qL8ZjCGTB/JHQtNeDBwk
+ Z9jNEujsYfxeXrhC/1UPa1rDAvZG/qK8p+G+uDA4+IbH2OMli8f9ZwRxvyll6Gjzqt6r
+ /v7AIhMuZYa1Z8NWn4NMjv/m93hZZtoeQa28bOfA6kwJgy9qHs5f0ml/0CSnb6hTgAV8
+ BAHULgk21q8rU8uImiEsqqD8qBbwBDqsFWZHbJfDzOUhu7+t73T0AgBGVGzLJgzUFXB3
+ /+NOB9q+wednOUm+ST2/UcoDvgAaPWAJVO+3NZBSYsXS7bV7RXm9+GFdNIRO7+nTNDU8
+ Byeg==
+X-Gm-Message-State: APjAAAUPfpMz7IR1rpUuiKEFqJB9wQZZkAxSnsUuN+c2d0MFyyo9yXas
+ Vkhgw/dEXekVyTH5lCq1oAyC0g==
+X-Google-Smtp-Source: APXvYqzyh38AtgfcuB6R0U6M0N80Ipw7rS/QgbnW4pA75DgBWBEPXi74l8ts5ld5MRP7duUrSaZIBA==
+X-Received: by 2002:a17:902:8492:: with SMTP id
+ c18mr1658221plo.279.1569270884919; 
+ Mon, 23 Sep 2019 13:34:44 -0700 (PDT)
 Received: from xakep.corp.microsoft.com (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id n29sm12798676pgm.4.2019.09.23.13.34.39
+ by smtp.gmail.com with ESMTPSA id n29sm12798676pgm.4.2019.09.23.13.34.42
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 23 Sep 2019 13:34:41 -0700 (PDT)
+ Mon, 23 Sep 2019 13:34:44 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
@@ -66,16 +66,16 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  marc.zyngier@arm.com, james.morse@arm.com, vladimir.murzin@arm.com,
  matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org,
  mark.rutland@arm.com
-Subject: [PATCH v5 02/17] arm64: hibernate: pass the allocated pgdp to ttbr0
-Date: Mon, 23 Sep 2019 16:34:12 -0400
-Message-Id: <20190923203427.294286-3-pasha.tatashin@soleen.com>
+Subject: [PATCH v5 03/17] arm64: hibernate: check pgd table allocation
+Date: Mon, 23 Sep 2019 16:34:13 -0400
+Message-Id: <20190923203427.294286-4-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20190923203427.294286-1-pasha.tatashin@soleen.com>
 References: <20190923203427.294286-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_133444_021651_A1134BF9 
-X-CRM114-Status: GOOD (  11.24  )
+X-CRM114-CacheID: sfid-20190923_133445_605872_B1AFD2F3 
+X-CRM114-Status: GOOD (  10.73  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -109,48 +109,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ttbr0 should be set to the beginning of pgdp, however, currently
-in create_safe_exec_page it is set to pgdp after pgd_offset_raw(),
-which works by accident.
+There is a bug in create_safe_exec_page(), when page table is allocated
+it is not checked that table is allocated successfully:
 
-Fixes: 0194e760f7d2 ("arm64: hibernate: avoid potential TLB conflict")
+But it is dereferenced in: pgd_none(READ_ONCE(*pgdp)).  Check that
+allocation was successful.
+
+Fixes: 82869ac57b5d ("arm64: kernel: Add support for hibernate/suspend-to-disk")
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
 ---
- arch/arm64/kernel/hibernate.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ arch/arm64/kernel/hibernate.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
 diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
-index e0a7fce0e01c..d52f69462c8f 100644
+index d52f69462c8f..ef46ce66d7e8 100644
 --- a/arch/arm64/kernel/hibernate.c
 +++ b/arch/arm64/kernel/hibernate.c
-@@ -201,6 +201,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
- 				 gfp_t mask)
- {
- 	int rc = 0;
-+	pgd_t *trans_pgd;
- 	pgd_t *pgdp;
- 	pud_t *pudp;
- 	pmd_t *pmdp;
-@@ -215,7 +216,8 @@ static int create_safe_exec_page(void *src_start, size_t length,
- 	memcpy((void *)dst, src_start, length);
+@@ -217,6 +217,11 @@ static int create_safe_exec_page(void *src_start, size_t length,
  	__flush_icache_range(dst, dst + length);
  
--	pgdp = pgd_offset_raw(allocator(mask), dst_addr);
-+	trans_pgd = allocator(mask);
-+	pgdp = pgd_offset_raw(trans_pgd, dst_addr);
+ 	trans_pgd = allocator(mask);
++	if (!trans_pgd) {
++		rc = -ENOMEM;
++		goto out;
++	}
++
+ 	pgdp = pgd_offset_raw(trans_pgd, dst_addr);
  	if (pgd_none(READ_ONCE(*pgdp))) {
  		pudp = allocator(mask);
- 		if (!pudp) {
-@@ -262,7 +264,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
- 	 */
- 	cpu_set_reserved_ttbr0();
- 	local_flush_tlb_all();
--	write_sysreg(phys_to_ttbr(virt_to_phys(pgdp)), ttbr0_el1);
-+	write_sysreg(phys_to_ttbr(virt_to_phys(trans_pgd)), ttbr0_el1);
- 	isb();
- 
- 	*phys_dst_addr = virt_to_phys((void *)dst);
 -- 
 2.23.0
 
