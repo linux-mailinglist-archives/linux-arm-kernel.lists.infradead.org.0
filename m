@@ -2,67 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF6BFBACAA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 04:34:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74D07BACB2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 04:34:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/XWFSXoVGbmZj8k/1QiFPKhHNxwMYWDfBI5+KX+w4yY=; b=FGOZiGbJKiWe06
-	xVd8y1OLvy72aTvcnxLJZROpvGtgW5u1pHhpVlkRlSyf835lwQyxWQA0wgK++28xGmWWyZYcDD3Vy
-	Et+ek+7mbJyuFmrUi9TwU9ZXAu1Zv8v3rPG60Rig8agatouIxjq71GcqIDbq9o8ZMFTzWJNoy2imQ
-	NhkVgCdT30LY7tMf7IH6wWusPBow8jMQVOmS1Ng18QFzyzprjtHJI9i30LLHcLFioJmBwz6RC666W
-	wTghtnVdr+Kj7gXSTVbAJKeyfKm8TWDzNTqlsZ4Yq/MmTr9iKMtwxKtMtY1/hgdw9lDzSfVpCP84Y
-	eLbbNOhj8yK4wR8d/NzA==;
+	List-Owner; bh=H5qEI1IfF3HNKICiYbUebby8lrqASJaZj0v4s13h0vc=; b=FkUP+x22ONYQGU
+	ZeCKiz1pTwqTpKu2I9YP0G/jiAOpCUm2zH6F8m2P7VlqtwYYsqiK1r3RND6Io+SBVirSfhkyBRHWX
+	d5B2WArSWcSIy/Bnsbi+8dKLAd8VzS6K06OSNJT2h2s4Nntg9UG08bpjzgfpFuAdJGKRQQeJr/9oJ
+	trPdOZ3uxV9BeKDbJ/6/4uhtWeUpwYXwCvVqMSYBY8xy6XSRvsO1ETNRKx3U4IbOVsppAJgChwcCr
+	0AXF/bWd94N7CVTZpmiCO4dedkHtkcDHHZc5s8CE9Rc9UJaNb78ipG34zJKTk3csNBBdx8kgAIG8d
+	kFyhbqZy/t9Eh8ANOHDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCEAy-0000yb-0n; Mon, 23 Sep 2019 02:34:08 +0000
-Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat
- Linux)) id 1iCEAX-0000pW-MD
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 02:33:43 +0000
-Authenticated-By: 
-X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID x8N2WsLZ016325,
- This message is accepted by code: ctloc85258
-Received: from mail.realtek.com (RTITCASV01.realtek.com.tw[172.21.6.18])
- by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id x8N2WsLZ016325
- (version=TLSv1 cipher=DHE-RSA-AES256-SHA bits=256 verify=NOT);
- Mon, 23 Sep 2019 10:32:54 +0800
-Received: from RTITMBSVM04.realtek.com.tw ([fe80::e404:880:2ef1:1aa1]) by
- RTITCASV01.realtek.com.tw ([::1]) with mapi id 14.03.0468.000; Mon, 23 Sep
- 2019 10:32:53 +0800
-From: James Tai <james.tai@realtek.com>
-To: "'Masahiro Yamada'" <yamada.masahiro@socionext.com>, Arnd Bergmann
- <arnd@arndb.de>
-Subject: RE: [PATCH] ARM: Add support for Realtek SOC
-Thread-Topic: [PATCH] ARM: Add support for Realtek SOC
-Thread-Index: AQHVY67V+8blpY45FUyr2dN3mgK/RqccOwQAgAf67ACAAW8fgIAABQEAgBI1EbA=
-Date: Mon, 23 Sep 2019 02:32:52 +0000
-Message-ID: <43B123F21A8CFE44A9641C099E4196FFCF8E7CEE@RTITMBSVM04.realtek.com.tw>
-References: <20190905054647.1235-1-james.tai@realtek.com>
- <CAK8P3a13=VBZnj6E=s7mZk0o7Q3XkMHgcsL12s-3psuOWsfOtQ@mail.gmail.com>
- <43B123F21A8CFE44A9641C099E4196FFCF8DA1D0@RTITMBSVM04.realtek.com.tw>
- <CAK8P3a39VrC1Xn+HZc5gvh1-nUYKywDGjTfO9WPCqim89WtGAg@mail.gmail.com>
- <CAK7LNATpbAMGU1u6T_1tX57mHbCR-57q+kDwXMOHAJ2R5kvfrg@mail.gmail.com>
-In-Reply-To: <CAK7LNATpbAMGU1u6T_1tX57mHbCR-57q+kDwXMOHAJ2R5kvfrg@mail.gmail.com>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
+	id 1iCEBY-0001U1-4G; Mon, 23 Sep 2019 02:34:44 +0000
+Received: from mail-eopbgr40061.outbound.protection.outlook.com ([40.107.4.61]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iCEB1-0001EH-4g
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 02:34:12 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=mg4vD9ymds1DhtMIKmBv6QCg2T63Wmf+TEszKqft23a0TYmEe2DLm1QJSi8gUdGgyJ/ztLGrf/60UAfCuXk8HAOPekh6L8YgmA4i9/f8l6F8Z0LwOVd0Qu4K1edxIuiFPjvV92tkRGJgBas1Vb7orefRcLRGcqUqtW8J4IUdhfH8vTAlXsZYpkRW5B3k/zO8MzR5TuDSb2vGi95zWpG97K7lTWlIfqyUhjwQlRgha1xGCrjzRxWkH+lbJQ1jVh4u1WlNaRsDTZYMQj5qayEG6q9J77KzNz1Dyjg7poLbucpq6GWhv79W9cFncRTzKr3RfuaYtcwAdp+JCxOU00GQFw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=BIB8reF8ZJulh2+Bq0eXH3RvKOKQJBYzvqQ4/KEr0wU=;
+ b=kf02hr2r28BKy60kRRrg2eL/f6K64NoyaPOzGTPsmk/bMcbqgq0XUFkFyGievZCKQSCmAn6DdkCvnRDweO4cgUSB7joCCVLGzeB0ITUX2+p21ykjNbDHpnpxFX8av/mqHWg/3pxwLHqDjNNYBNN70YlrYCc2ykYSkDyTfPhQbmQZ8wnJlIVooZ7Cgz5BAZKJKw7ItvBAA3S6YSXYErs6IoEmJgeR7L+4Aj+zqvOYG9ZntPwkwOug1oPv3u10pRdoGh1pcPbSdj76vNfRRm9rR1bW3SqPqfdnD11jSSRlJG4CZtsumPd05JwfL9FA+SfxLNRL7O/gMFwAzWSyVw0/8g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=BIB8reF8ZJulh2+Bq0eXH3RvKOKQJBYzvqQ4/KEr0wU=;
+ b=VeY2Vi3Nlf/WGhISQCqZPdHK0NKwcOeog/omtNVTxPAhFVsrNiE7fb/5GN9cB6ZNs5TBgXoPJHKfCsFbQw7EtqiGmPkoH4H/gXB/DSbcDUI8zGeXkZ13GLRLHin70IIz49mPqLXFN8RPrVreS8RHb/lOHTHE9vWZ5EpRd1WI2Zo=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3945.eurprd04.prod.outlook.com (52.134.65.149) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2284.20; Mon, 23 Sep 2019 02:34:07 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::8958:299c:bc54:2a38]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::8958:299c:bc54:2a38%7]) with mapi id 15.20.2284.023; Mon, 23 Sep 2019
+ 02:34:07 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Pavel Machek <pavel@ucw.cz>
+Subject: RE: [PATCH V2 1/5] dt-bindings: fsl: scu: add scu power key binding
+Thread-Topic: [PATCH V2 1/5] dt-bindings: fsl: scu: add scu power key binding
+Thread-Index: AQHVYfv+INaxBRtrokqtKaL9fDhNpqc3/ZaAgACs9fA=
+Date: Mon, 23 Sep 2019 02:34:07 +0000
+Message-ID: <DB3PR0402MB3916F48DA2A16E57C624432BF5850@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1567519424-32271-1-git-send-email-Anson.Huang@nxp.com>
+ <20190922161415.GD1999@bug>
+In-Reply-To: <20190922161415.GD1999@bug>
+Accept-Language: en-US
+Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-originating-ip: [172.21.190.187]
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 82796835-2c6a-456e-12ce-08d73fce825a
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600167)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3945; 
+x-ms-traffictypediagnostic: DB3PR0402MB3945:|DB3PR0402MB3945:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB39453BEC49A7526822837F8CF5850@DB3PR0402MB3945.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 0169092318
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(366004)(346002)(39860400002)(376002)(136003)(189003)(199004)(256004)(6436002)(305945005)(8676002)(66446008)(66476007)(64756008)(76116006)(66946007)(66556008)(25786009)(476003)(11346002)(81166006)(14454004)(5660300002)(71200400001)(71190400001)(81156014)(6916009)(26005)(86362001)(7736002)(478600001)(7416002)(74316002)(8936002)(76176011)(6506007)(186003)(9686003)(52536014)(33656002)(7696005)(3846002)(486006)(6246003)(102836004)(99286004)(66066001)(4326008)(44832011)(55016002)(2906002)(316002)(54906003)(446003)(6116002)(229853002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3945;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: eYvOSZWaT2i+bXf8YtdrpBVstRzdWnVy3aF6Z4SjJWMS6NVS+4cak2NgxasN++EtpZnxTLoXh+bsM8aKaFrBdaNiUuCmZtNRK2nSt94IlkFIA7rC4wenUj5W5d8XXs5M20uoc7+qTNBG//I1YD0W9QnQxDGMSOlXDb+NjELTYwNZQSM333YPNPMb2GhCVZQlqx45W4DEPernFq0ntQcVRHezFgqE4b+1IRlejLH16uQWLIGlVtMOyMQ3KAkH8NVnp3qYlXM04XSa40jao1WF1EX2V5q8J4ZJ2hRZQ57sALhvYy/Vcx8VAosukI5sMs4oliQ3HNTn3oBddYKG8TjKFfF4hd7KjUwSA3g30oVftgYd8NL39zDCzS0msgqOnFf4uJzxshnSuNRBcaByB30eFUpkm5lF+QMDYo/MmVMHddE=
 MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 82796835-2c6a-456e-12ce-08d73fce825a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Sep 2019 02:34:07.7689 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Jh5FZn2/A0J4G8IN0IlN2v5qppsDBDo9nvOQhd5NX7ZAy5Df1RYHS90/i6YZaLARo7bNV0bcBRT9dyGnInxTPw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3945
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190922_193341_880625_44EF41C0 
-X-CRM114-Status: GOOD (  17.11  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190922_193411_317705_C8BE3F6F 
+X-CRM114-Status: GOOD (  16.85  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.4.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,52 +122,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob
- Herring <robh@kernel.org>, "Jason A . Donenfeld" <Jason@zx2c4.com>, Thierry
- Reding <treding@nvidia.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- =?utf-8?B?Q1lfSHVhbmdb6buD6Ymm5pmPXQ==?= <cy.huang@realtek.com>, Linus
- Walleij <linus.walleij@linaro.org>, Nicolas Pitre <nico@fluxnic.net>,
- Nick Desaulniers <ndesaulniers@google.com>,
- Russell King <linux@armlinux.org.uk>, Stefan Agner <stefan@agner.ch>,
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>,
+ Jacky Bai <ping.bai@nxp.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ Peng Fan <peng.fan@nxp.com>, "stefan@agner.ch" <stefan@agner.ch>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>, "will@kernel.org" <will@kernel.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "yuehaibing@huawei.com" <yuehaibing@huawei.com>,
+ "marcin.juszkiewicz@linaro.org" <marcin.juszkiewicz@linaro.org>,
+ "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
+ "linux-input@vger.kernel.org" <linux-input@vger.kernel.org>,
+ "ronald@innovation.ch" <ronald@innovation.ch>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "arnd@arndb.de" <arnd@arndb.de>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "mripard@kernel.org" <mripard@kernel.org>,
+ "m.felsch@pengutronix.de" <m.felsch@pengutronix.de>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Aisheng Dong <aisheng.dong@nxp.com>, Andy Duan <fugang.duan@nxp.com>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "dmitry.torokhov@gmail.com" <dmitry.torokhov@gmail.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Paul Burton <paul.burton@mips.com>,
- Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- "jamestai.sky@gmail.com" <jamestai.sky@gmail.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- =?utf-8?B?QW5kcmVhcyBGw6RyYmVy?= <afaerber@suse.de>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Doug Anderson <armlinux@m.disordat.com>, Mike Rapoport <rppt@linux.ibm.com>,
- Phinex Hung <phinex@realtek.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ "dinguyen@kernel.org" <dinguyen@kernel.org>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "olof@lixom.net" <olof@lixom.net>, "shawnguo@kernel.org" <shawnguo@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-PiBTdWJqZWN0OiBSZTogW1BBVENIXSBBUk06IEFkZCBzdXBwb3J0IGZvciBSZWFsdGVrIFNPQw0K
-PiANCj4gT24gV2VkLCBTZXAgMTEsIDIwMTkgYXQgNToxNyBQTSBBcm5kIEJlcmdtYW5uIDxhcm5k
-QGFybmRiLmRlPiB3cm90ZToNCj4gPg0KPiA+IE9uIFdlZCwgU2VwIDExLCAyMDE5IGF0IDk6NDYg
-QU0gSmFtZXMgVGFpW+aItOW/l+WzsF0NCj4gPGphbWVzLnRhaUByZWFsdGVrLmNvbT4gd3JvdGU6
-DQo+ID4gPiA+IFN1YmplY3Q6IFJlOiBbUEFUQ0hdIEFSTTogQWRkIHN1cHBvcnQgZm9yIFJlYWx0
-ZWsgU09DDQo+ID4NCj4gPiA+ID4gPiBAQCAtMTQ4LDYgKzE0OCw3IEBAIGVuZGlmDQo+ID4gPiA+
-ID4gIHRleHRvZnMtJChDT05GSUdfQVJDSF9NU004WDYwKSA6PSAweDAwMjA4MDAwDQo+ID4gPiA+
-ID4gIHRleHRvZnMtJChDT05GSUdfQVJDSF9NU004OTYwKSA6PSAweDAwMjA4MDAwDQo+ID4gPiA+
-ID4gIHRleHRvZnMtJChDT05GSUdfQVJDSF9NRVNPTikgOj0gMHgwMDIwODAwMA0KPiA+ID4gPiA+
-ICt0ZXh0b2ZzLSQoQ09ORklHX0FSQ0hfUkVBTFRFSykgOj0gMHgwMDIwODAwMA0KPiA+ID4gPiA+
-ICB0ZXh0b2ZzLSQoQ09ORklHX0FSQ0hfQVhYSUEpIDo9IDB4MDAzMDgwMDANCj4gPiA+ID4NCj4g
-PiA+ID4gQ2FuIHlvdSBleHBsYWluIHdoeSB0aGlzIGlzIG5lZWRlZCBmb3IgeW91ciBwbGF0Zm9y
-bT8NCj4gPiA+ID4NCj4gPiA+IFdlIG5lZWQgdG8gcmVzZXJ2ZSBtZW1vcnkgKDB4MDAwMDAwMDAg
-fiAweDAwMUIwMDAwKSBmb3Igcm9tIGFuZCBib290DQo+IGNvZGUuDQo+ID4NCj4gPiBPay4NCj4g
-DQo+IA0KPiBJIGRvIG5vdCBsaWtlIHRoaXMgbXVjaC4NCj4gDQo+IFRoaXMgcGxhdGZvcm0gaXMg
-QVJDSF9NVUxUSV9WNy4NCj4gDQo+IEFSTV9QQVRDSF9QSFlTX1ZJUlQgYWxsb3dzIHlvdSB0byBw
-bGFjZSB0aGUga2VybmVsIGltYWdlIGFueXdoZXJlIGluDQo+IG1lbW9yeSBhcyBsb25nIGFzIHRo
-ZSBiYXNlIGlzIGFsaWduZWQgYXQgMTZNQi4NCj4gDQo+IFRoZSBtaW5pbXVtICd0ZXh0b2ZzLXkg
-Oj0gMHgwMDA4MDAwJyArIGV4dHJhIDE2TUIgb2Zmc2V0IHdpbGwgY3JlYXRlIGEgc3BhY2UNCj4g
-KDB4MDAwMDAwMDAgfiAweDAxMDA4MDAwKS4NCj4gDQo+IFRoaXMgaXMgbW9yZSB0aGFuIG5lZWRl
-ZCwgYnV0IGl0IGlzIG5vdCBhIGJpZyBkZWFsIHRvIHdhc3RlIHNvbWUgbWVnYWJ5dGVzIG9mDQo+
-IG1lbW9yeS4NCj4gDQoNCk9LLiBJIHVuZGVyc3RhbmQuDQoNCj4gLS0NCj4gQmVzdCBSZWdhcmRz
-DQo+IE1hc2FoaXJvIFlhbWFkYQ0KPiANCj4gLS0tLS0tUGxlYXNlIGNvbnNpZGVyIHRoZSBlbnZp
-cm9ubWVudCBiZWZvcmUgcHJpbnRpbmcgdGhpcyBlLW1haWwuDQpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
-dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi, Pavel
+
+> Subject: Re: [PATCH V2 1/5] dt-bindings: fsl: scu: add scu power key binding
+> 
+> On Tue 2019-09-03 10:03:40, Anson Huang wrote:
+> > NXP i.MX8QXP is an ARMv8 SoC with a Cortex-M4 core inside as system
+> > controller, the system controller is in charge of system power, clock
+> > and power key event etc. management, Linux kernel has to communicate
+> > with system controller via MU (message unit) IPC to get power key
+> > event, add binding doc for i.MX system controller power key driver.
+> >
+> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > ---
+> > Changes since V1:
+> > 	- remove "wakeup-source" property, as it is NOT needed for SCU
+> interrupt;
+> > 	- remove "status" in example.
+> > ---
+> >  .../devicetree/bindings/arm/freescale/fsl,scu.txt          | 14
+> ++++++++++++++
+> >  1 file changed, 14 insertions(+)
+> >
+> > diff --git
+> > a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
+> > b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
+> > index c149fad..f93e2e4 100644
+> > --- a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
+> > +++ b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
+> > @@ -157,6 +157,15 @@ Required properties:
+> >  Optional properties:
+> >  - timeout-sec: contains the watchdog timeout in seconds.
+> >
+> > +Power key bindings based on SCU Message Protocol
+> > +------------------------------------------------------------
+> > +
+> > +Required properties:
+> > +- compatible: should be:
+> > +              "fsl,imx8qxp-sc-pwrkey"
+> > +              followed by "fsl,imx-sc-pwrkey";
+> > +- linux,keycodes: See
+> > +Documentation/devicetree/bindings/input/keys.txt
+> 
+> Note you have keycode_s_ here, but keycode in the example and in the dts
+> patch.
+
+NOT quite understand your point, could you please provide more details?
+
+Thanks,
+Anson
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
