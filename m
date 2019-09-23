@@ -2,60 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88218BAE7E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 09:29:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7B68BAE87
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Sep 2019 09:31:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZMheVibTgDsEFemnivUNLXdGEghsWne1mrcD7vOUbEM=; b=hfcVKMTyh3gtfg
-	E21pe9vMyYit9pyp8HJLHk7q4nf7Nl4WHhK1vaWqY1YvoT8zd7IZk0g3Ghx+QiUuCAA9+9BW5q0D3
-	gVUnfg7q2x1WMEnqr/MqekpuGWrovNKzAHdjHz2qSxM1oGVkeAYrEHS10m4J9skSP+BrO9e6MaB21
-	gosPtTdMPIFQDeu32N2aMdfd9fuQWmDNC4dQsFynKwtKUW2BpR1fxX/s8DJPXKoDvX5KfdWTWpROI
-	krSd2BfyATBn7EmjFdHxc8EVp3rmXvojAibnWujYpZcnI5HSGl2RXFyK3xR32gFEa9ZCTMi8zXcOj
-	XyyebVq2SaXAT+UeRuoQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=9uB1vb/0WteoAAqLt+Yckm6EAQXM0K5if03kslnRo8c=; b=dMX
+	jKd4/pSo5oSh6IffQqTOWGxYVkkitXGVzzSQVEyHeawcP21sXVM/utxkWSVLlLJnYUGfkIRP56JxB
+	j9xfIoPrNP/s0BwnpNLKiIbX/RYvbrOwBUuRjw2a4ESGTnd66+1fkrnSCvba7q2fQn3v+hu1Q+Q4N
+	has2K5jVVFur1NVsrHSAALkWJWYGMbQAZbSrtGZB0FmwEc3BK2iJdrL827dHCvt0sjedfrpuc4zBC
+	/6Rfpigk/MDmnpDwtgHX+1iUzGEaqW7GMpYhOk9Qt5gQVcOs3AAHCNhQF0/YiJm/5fByv0A4a4QkT
+	lrthXn5MOd7pzT5Ewy9ogXwReZTvy6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCImA-0006M8-T4; Mon, 23 Sep 2019 07:28:50 +0000
-Received: from mail-sz.amlogic.com ([211.162.65.117])
+	id 1iCIp3-00084V-MY; Mon, 23 Sep 2019 07:31:50 +0000
+Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCIlV-0006KP-5O; Mon, 23 Sep 2019 07:28:10 +0000
-Received: from [10.28.18.45] (10.28.18.45) by mail-sz.amlogic.com (10.28.11.5)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Mon, 23 Sep
- 2019 15:29:00 +0800
-Subject: Re: [PATCH 2/3] pinctrl: meson-a1: add pinctrl driver for Meson A1 Soc
-To: Jerome Brunet <jbrunet@baylibre.com>
-References: <1568700442-18540-1-git-send-email-qianggui.song@amlogic.com>
- <1568700442-18540-3-git-send-email-qianggui.song@amlogic.com>
- <1jef0f46fj.fsf@starbuckisacylon.baylibre.com>
- <73dc56bd-d6c5-1de7-e97e-91479a89a29e@amlogic.com>
- <1j8sqn3tjt.fsf@starbuckisacylon.baylibre.com>
- <45b97927-c771-808a-b214-509af6c16931@amlogic.com>
- <1jk1a4b6c8.fsf@starbuckisacylon.baylibre.com>
-From: Qianggui Song <qianggui.song@amlogic.com>
-Message-ID: <2c476d5b-2c16-ede0-58c3-d83b286b7d8a@amlogic.com>
-Date: Mon, 23 Sep 2019 15:29:00 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <1jk1a4b6c8.fsf@starbuckisacylon.baylibre.com>
-Content-Language: en-US
-X-Originating-IP: [10.28.18.45]
-X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
- (10.28.11.5)
+ id 1iCIoL-00083W-5V
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Sep 2019 07:31:06 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
+ [10.225.0.210])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 423F3C0389;
+ Mon, 23 Sep 2019 07:31:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1569223863; bh=Xe7pJOKmi9PdaROLmoA5GLu3+ELilg5mJJ8WIbPwsjM=;
+ h=From:To:Cc:Subject:Date:From;
+ b=SLNeZWRKs9a98d13s37oxkygB2cM6X8LCVDsxufZJaTgnV48wee/FlPvgEglew6TJ
+ TIlR3RHbDQH+jlUROGsyU3BdEo5T/ejWA2fmmIzy236/VGQRt/EJm3G5hWI151Pabf
+ 67lKHOybZbEb38u2qP6KnLGdFjzxUih1YNgcthppD82QF3Dk6xWx12ZttWMXfk841L
+ nor99mvPb2CCynvVXMvAzPxfFaNoYqnWiHJGal7pnNSLvElNjQUUZqLAqwEXmbHkKv
+ LhUxbwFpbicOBOyhUmR0sDQlmR/cYqMu8XAVK1jaCJeBgXEHonUQb5JQmXcwKVcyoc
+ RZ8BCftF8VMgw==
+Received: from de02dwia024.internal.synopsys.com
+ (de02dwia024.internal.synopsys.com [10.225.19.81])
+ by mailhost.synopsys.com (Postfix) with ESMTP id BFD84A005F;
+ Mon, 23 Sep 2019 07:30:59 +0000 (UTC)
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: netdev@vger.kernel.org
+Subject: [PATCH net] net: stmmac: selftests: Flow Control test can also run
+ with ASYM Pause
+Date: Mon, 23 Sep 2019 09:30:43 +0200
+Message-Id: <da7e2fb08061b4b89332c0ef014e053f98832894.1569223775.git.Jose.Abreu@synopsys.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_002809_204210_F699062A 
-X-CRM114-Status: GOOD (  21.68  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190923_003105_212605_EA3970F0 
+X-CRM114-Status: GOOD (  12.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,214 +78,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Hanjie Lin <hanjie.lin@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>, Linus Walleij <linus.walleij@linaro.org>,
- linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Carlo Caione <carlo@caione.org>, linux-amlogic@lists.infradead.org,
- Xingyu Chen <xingyu.chen@amlogic.com>
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Jose Abreu <joabreu@synopsys.com>
 
+The Flow Control selftest is also available with ASYM Pause. Lets add
+this check to the test and fix eventual false positive failures.
 
-On 2019/9/20 0:26, Jerome Brunet wrote:
-> On Wed 18 Sep 2019 at 14:36, Qianggui Song <qianggui.song@amlogic.com> wrote:
-> 
->> On 2019/9/17 22:07, Jerome Brunet wrote:
->>>
->>> On Tue 17 Sep 2019 at 13:51, Qianggui Song <qianggui.song@amlogic.com> wrote:
->>>>>> diff --git a/drivers/pinctrl/meson/pinctrl-meson.c b/drivers/pinctrl/meson/pinctrl-meson.c
->>>>>> index 8bba9d0..885b89d 100644
->>>>>> --- a/drivers/pinctrl/meson/pinctrl-meson.c
->>>>>> +++ b/drivers/pinctrl/meson/pinctrl-meson.c
->>>>>> @@ -688,8 +688,12 @@ static int meson_pinctrl_parse_dt(struct meson_pinctrl *pc,
->>>>>>  
->>>>>>  	pc->reg_ds = meson_map_resource(pc, gpio_np, "ds");
->>>>>>  	if (IS_ERR(pc->reg_ds)) {
->>>>>> -		dev_dbg(pc->dev, "ds registers not found - skipping\n");
->>>>>> -		pc->reg_ds = NULL;
->>>>>> +		if (pc->data->reg_layout == A1_LAYOUT) {
->>>>>> +			pc->reg_ds = pc->reg_pullen;
->>>>>
->>>>> IMO, this kind of ID based init fixup is not going to scale and will
->>>>> lead to something difficult to maintain in the end.
->>>>>
->>>>> The way the different register sets interract with each other is already
->>>>> pretty complex to follow.
->>>>>
->>>>> You could rework this in 2 different ways:
->>>>> #1 - Have the generic function parse all the register sets and have all
->>>>> drivers provide a specific (as in gxbb, gxl, axg, etc ...)  function to :
->>>>>  - Verify the expected sets have been provided
->>>>>  - Make assignement fixup as above if necessary
->>>>>
->>>>> #2 - Rework the driver to have only one single register region
->>>>>  I think one of your colleague previously mentionned this was not
->>>>>  possible. It is still unclear to me why ...
->>>>>
->>>> Appreciate your advice.  I have an idea based on #1, how about providing
->>>> only two dt parse function, one is for chips before A1(the old one),
->>>> another is for A1 and later chips that share the same layout. Assign
->>>> these two functions to their own driver.
->>>
->>> That's roughly the same thing as your initial proposition with function
->>> pointer instead of IDs ... IMO, this would still be a quick fix to
->>> address your immediate topic instead of dealing with the driver as
->>> whole, which is my concern here.
->>>
->> For #1. It would be like
->> generic_parse_dt()
->> {
->> 	1. parse all register regions (mux gpio pull pull_en ds)
->> 	
->> 	2. call  specific function through function pointer in
->>  	   meson_pinctrl_data.(each platform should have AO and EE two
->>            specific functions for they are not the same)
->> 	{
->> 		do work you mentioned above
->> 	}
->> }
->> right ?
->> If that so, maybe there are a lot of duplicated codes
-> 
-> Only if you make it so. Providing a callback and duplicating code are
-> not the same thing
-> 
->> for most Socs share the same reg layout.
-> 
-> That's not really accurate:
-> 
-> So far they all have the "mux" and "gpio" region but
-> 
-> gxbb, gxl, axg, meson8 EE:
->  has: pull, pull-en
->  remap: non
->  unsupported: ds
-> 
-> gxbb, gxl, axg, meson8 AO:
->  has: pull
->  remap: pull-en -> pull
->  unsupported: ds
-> 
-> g12 and sm1 EE:
->  has: pull, pull-en, ds
->  remap: none
-> 
-> g12 and sm1 AO:
->  has: ds
->  remap: pull->gpio, pull_en->gpio
-> 
-> And now a1 chip remaps "ds" to "pull_en" ...
-> 
-> As said previouly all this is getting pretty difficult to follow and
-> maintain. Adding a proper callback for each meson pinctrl would make the
-> above explicit in the code ... which helps maintain thing, at least for
-> a while ...
-> 
-> Judging by the offsets between those regions, I still think one single
-> region would make things a whole lot simpler. If it is not possible to
-> map it with one single region, could you tell us why ? What non-pinctrl
-> related device do we have there ?
->Here I mean duplicated is that m8/m8b/gxl/gxbb/axg use the same layout,
-while g12a/b/sm1 are the same, so don't need to implement every Socs
-parser functions just as I said below AXG type for m8/m8b/gxl/gxbb/axg,
-g12a type for g12a/b/sm1, the last one is for a1. three types functions
-(with ao and ee) can cover all platform. But I still consider that
-providing an extra meson_a1_pasert_dt like function for a1 or later is
-more simpler.
+Fixes: 091810dbded9 ("net: stmmac: Introduce selftests support")
+Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
-The reason why we can not use one single region for previous Socs, it'
-that there is non-pinctrl related device for some Socs region.
-Take an example for g12a:
+---
+Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Jose Abreu <joabreu@synopsys.com>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: netdev@vger.kernel.org
+Cc: linux-stm32@st-md-mailman.stormreply.com
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+---
+ drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-#define	PREG_PAD_GPIO0_EN_N	(0xff634400 + (0x010 << 2))
-#define	PREG_PAD_GPIO0_O	(0xff634400 + (0x011 << 2))
-#define	PREG_PAD_GPIO0_I	(0xff634400 + (0x012 << 2))
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
+index 9c8d210b2d6a..5f66f6161629 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
+@@ -670,7 +670,7 @@ static int stmmac_test_flowctrl(struct stmmac_priv *priv)
+ 	unsigned int pkt_count;
+ 	int i, ret = 0;
+ 
+-	if (!phydev || !phydev->pause)
++	if (!phydev || (!phydev->pause && !phydev->asym_pause))
+ 		return -EOPNOTSUPP;
+ 
+ 	tpriv = kzalloc(sizeof(*tpriv), GFP_KERNEL);
+-- 
+2.7.4
 
-	...continue region...
-
-#define	PAD_PULL_UP_EN_REG5	(0xff634400 + (0x04d << 2))
-
-	... ETH/NAND/VPU/TIMER...  a lot of no-pinctrl registers
-
-#define	PERIPHS_PIN_MUX_0	(0xff634400 + (0x0b0 << 2))
-
-	...continue region...
-
-#define	PERIPHS_PIN_MUX_F	(0xff634400 + (0x0bf << 2))
-
-	...no use region...
-
-#define	EFUSE_CFG_LOCK		(0xff634400 + (0x0c0 << 2))
-
-	...other EFUSE relative registers...
-	...no use region...
-
-#define	PAD_DS_REG0A		(0xff634400 + (0x0d0 << 2))
-
-	...continue region for all ds...
-
-#define	PAD_DS_REG5A		(0xff634400 + (0x0d6 << 2))
-
-So from the above we can see there are lots of other registers between
-gpio and ds register.When map gpio to ds region, they will bury a lot of
-other registers.
-
->> So I guess five specific functions are
->> enough: AXG and before(ao,ee), G12A(ao,ee) and A1(will place them in
->> pinctrl_meson.c). Since m8 to AXG are the same register layout for both
->> ee and ao, G12A with new feature ds and new ao register layout.
->>
->> Or I misunderstood the #1 ?
->>>>>> +		} else {
->>>>>> +			dev_dbg(pc->dev, "ds registers not found - skipping\n");
->>>>>> +			pc->reg_ds = NULL;
->>>>>> +		}
->>>>>>  	}
->>>>>>  
->>>>>>  	return 0;
->>>>>> diff --git a/drivers/pinctrl/meson/pinctrl-meson.h b/drivers/pinctrl/meson/pinctrl-meson.h
->>>>>> index c696f32..3d0c58d 100644
->>>>>> --- a/drivers/pinctrl/meson/pinctrl-meson.h
->>>>>> +++ b/drivers/pinctrl/meson/pinctrl-meson.h
->>>>>> @@ -80,6 +80,14 @@ enum meson_pinconf_drv {
->>>>>>  };
->>>>>>  
->>>>>>  /**
->>>>>> + * enum meson_reg_layout - identify two types of reg layout
->>>>>> + */
->>>>>> +enum meson_reg_layout {
->>>>>> +	LEGACY_LAYOUT,
->>>>>> +	A1_LAYOUT,
->>>>>> +};
->>>>>> +
->>>>>> +/**
->>>>>>   * struct meson bank
->>>>>>   *
->>>>>>   * @name:	bank name
->>>>>> @@ -114,6 +122,7 @@ struct meson_pinctrl_data {
->>>>>>  	unsigned int num_banks;
->>>>>>  	const struct pinmux_ops *pmx_ops;
->>>>>>  	void *pmx_data;
->>>>>> +	unsigned int reg_layout;
->>>>>>  };
->>>>>>  
->>>>>>  struct meson_pinctrl {
->>>>>
->>>>> .
->>>>>
->>>
->>> .
->>>
-> 
-> .
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
