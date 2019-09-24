@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0A66BC462
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 11:02:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D725BC467
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 11:03:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=aCMFv/TyGL6s4DqhMPDnztMGLkkVy5khZFgcZy0Dfic=; b=C8q
-	67ezt9Cr/mkireWE1IYtB5cE/jfwrMxZPKSK+Tspj//6fxXo3Jlvljmoghtj4ZJDFSxcxWei3HS2d
-	t+eYFfkH8+ZnXxvX1jPkH/uDLnnUPETj4pVgtTDim57h56+/1sGdSWomkP+SbCfRXRykdiV7dSj3u
-	3DLB52Q2FW/L5SKJ4IhGKiseYS1J8s7O5hJObRmLj6IjicFsf23m3zRsR7y1IjkmV82TwEJmItxSg
-	FLpWjj/nzBGqE61zxRkG0u0WD1AbakvO9hTXszcIkCSlcLMI47ULjNOXhl0eNlS8quZOsE/w/ae4s
-	qJHyB+046jVu5IqaA27tDMfpyl0+x2A==;
+	References:List-Owner; bh=UzPLGu3TS1trRVKJCkjsszzbZEbZxwGpYlBCNu4C0Vs=; b=o7s
+	Le2WQwLkZh7n3prOq+ZuuMEc9csliBRBaDJpiqhvKprSzTbAE//PURuFBpmdqe5O21egaby0QnXFU
+	2dBD/Jo6XHq8ToLifj6IYP/K64kYgqXJ3+pQwBZ8ImRntvQnKuodxVJ9SK3/R/41BS7g2L3qbXz5B
+	c4B3xQHVNrHFMGoW6OvETcSgFIyDsOb4+lfEcI3mIY9UNjnjlTZov+BEcerKGH/jDlCKGAcKfjHYe
+	M7YaSX0w8POpKtkUBD6YFOW35G5VEY605Gu6pEcsJJgjCJ5dYEf/GicCg/uVgj4iUaZGZAFt5iaMS
+	Zu2erYl5iaKfJqrHYKK7+puWV05FKnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCgi4-0002Cz-NN; Tue, 24 Sep 2019 09:02:12 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1iCgip-0002S6-MZ; Tue, 24 Sep 2019 09:02:59 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCghr-0002CG-II
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 09:02:01 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C0AD1200857;
- Tue, 24 Sep 2019 11:01:56 +0200 (CEST)
+ id 1iCgib-0002Rf-5C
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 09:02:46 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5F3151A00D4;
+ Tue, 24 Sep 2019 11:02:43 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 8EF1620077E;
- Tue, 24 Sep 2019 11:01:52 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3048E1A0169;
+ Tue, 24 Sep 2019 11:02:39 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 22B6A4029F;
- Tue, 24 Sep 2019 17:01:47 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id BB501402ED;
+ Tue, 24 Sep 2019 17:02:33 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: thierry.reding@gmail.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
  kernel@pengutronix.de, festevam@gmail.com, linux-pwm@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] pwm: pwm-imx27: Use 'dev' instead of dereferencing it
+Subject: [PATCH] pwm: pwm-imx-tpm: Use 'dev' instead of dereferencing it
  repeatedly
-Date: Tue, 24 Sep 2019 16:59:53 +0800
-Message-Id: <1569315593-769-1-git-send-email-Anson.Huang@nxp.com>
+Date: Tue, 24 Sep 2019 17:01:07 +0800
+Message-Id: <1569315667-1525-1-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_020159_746227_0FA2DA3C 
-X-CRM114-Status: UNSURE (   8.63  )
+X-CRM114-CacheID: sfid-20190924_020245_340864_85AE2AA6 
+X-CRM114-Status: UNSURE (   9.24  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -54,7 +54,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -79,55 +79,63 @@ Add helper variable dev = &pdev->dev to simply the code.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- drivers/pwm/pwm-imx27.c | 13 +++++++------
+ drivers/pwm/pwm-imx-tpm.c | 13 +++++++------
  1 file changed, 7 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/pwm/pwm-imx27.c b/drivers/pwm/pwm-imx27.c
-index 434a351..3afee29 100644
---- a/drivers/pwm/pwm-imx27.c
-+++ b/drivers/pwm/pwm-imx27.c
-@@ -290,27 +290,28 @@ MODULE_DEVICE_TABLE(of, pwm_imx27_dt_ids);
+diff --git a/drivers/pwm/pwm-imx-tpm.c b/drivers/pwm/pwm-imx-tpm.c
+index e8385c1..4385801 100644
+--- a/drivers/pwm/pwm-imx-tpm.c
++++ b/drivers/pwm/pwm-imx-tpm.c
+@@ -337,11 +337,12 @@ static const struct pwm_ops imx_tpm_pwm_ops = {
  
- static int pwm_imx27_probe(struct platform_device *pdev)
+ static int pwm_imx_tpm_probe(struct platform_device *pdev)
  {
 +	struct device *dev = &pdev->dev;
- 	struct pwm_imx27_chip *imx;
+ 	struct imx_tpm_pwm_chip *tpm;
+ 	int ret;
+ 	u32 val;
  
--	imx = devm_kzalloc(&pdev->dev, sizeof(*imx), GFP_KERNEL);
-+	imx = devm_kzalloc(dev, sizeof(*imx), GFP_KERNEL);
- 	if (imx == NULL)
+-	tpm = devm_kzalloc(&pdev->dev, sizeof(*tpm), GFP_KERNEL);
++	tpm = devm_kzalloc(dev, sizeof(*tpm), GFP_KERNEL);
+ 	if (!tpm)
  		return -ENOMEM;
  
- 	platform_set_drvdata(pdev, imx);
+@@ -351,23 +352,23 @@ static int pwm_imx_tpm_probe(struct platform_device *pdev)
+ 	if (IS_ERR(tpm->base))
+ 		return PTR_ERR(tpm->base);
  
--	imx->clk_ipg = devm_clk_get(&pdev->dev, "ipg");
-+	imx->clk_ipg = devm_clk_get(dev, "ipg");
- 	if (IS_ERR(imx->clk_ipg)) {
--		dev_err(&pdev->dev, "getting ipg clock failed with %ld\n",
-+		dev_err(dev, "getting ipg clock failed with %ld\n",
- 				PTR_ERR(imx->clk_ipg));
- 		return PTR_ERR(imx->clk_ipg);
- 	}
- 
--	imx->clk_per = devm_clk_get(&pdev->dev, "per");
-+	imx->clk_per = devm_clk_get(dev, "per");
- 	if (IS_ERR(imx->clk_per)) {
- 		int ret = PTR_ERR(imx->clk_per);
- 
+-	tpm->clk = devm_clk_get(&pdev->dev, NULL);
++	tpm->clk = devm_clk_get(dev, NULL);
+ 	if (IS_ERR(tpm->clk)) {
+ 		ret = PTR_ERR(tpm->clk);
  		if (ret != -EPROBE_DEFER)
 -			dev_err(&pdev->dev,
 +			dev_err(dev,
- 				"failed to get peripheral clock: %d\n",
- 				ret);
- 
-@@ -318,7 +319,7 @@ static int pwm_imx27_probe(struct platform_device *pdev)
+ 				"failed to get PWM clock: %d\n", ret);
+ 		return ret;
  	}
  
- 	imx->chip.ops = &pwm_imx27_ops;
--	imx->chip.dev = &pdev->dev;
-+	imx->chip.dev = dev;
- 	imx->chip.base = -1;
- 	imx->chip.npwm = 1;
+ 	ret = clk_prepare_enable(tpm->clk);
+ 	if (ret) {
+-		dev_err(&pdev->dev,
++		dev_err(dev,
+ 			"failed to prepare or enable clock: %d\n", ret);
+ 		return ret;
+ 	}
+ 
+-	tpm->chip.dev = &pdev->dev;
++	tpm->chip.dev = dev;
+ 	tpm->chip.ops = &imx_tpm_pwm_ops;
+ 	tpm->chip.base = -1;
+ 	tpm->chip.of_xlate = of_pwm_xlate_with_flags;
+@@ -381,7 +382,7 @@ static int pwm_imx_tpm_probe(struct platform_device *pdev)
+ 
+ 	ret = pwmchip_add(&tpm->chip);
+ 	if (ret) {
+-		dev_err(&pdev->dev, "failed to add PWM chip: %d\n", ret);
++		dev_err(dev, "failed to add PWM chip: %d\n", ret);
+ 		clk_disable_unprepare(tpm->clk);
+ 	}
  
 -- 
 2.7.4
