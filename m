@@ -2,57 +2,154 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34291BC5B2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 12:33:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37322BC5BD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 12:39:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QLKvopYHS1rF2QIKLnRyJpmk0ErZewV53S+WuMLtxPI=; b=L1QKrVlyakAM2M
-	s2Uacj2I23ZZbNoXMTuQ4wiFX319PlnEXLUx2QK/g/LFVevtPdbe4zutWiPRya7bTh6o6eyFQEF/7
-	K/G7Y0nJjCcrQByLjEuDxcna9IiPmT/30nxMJrxUkdyfECwGrcJ8fjY44RtConYlblJIxAPAu5H7f
-	3OKnfDmJ0wfn8FVSX7QR/XjzEEgt2BPH9e3m1D5+iMqqNG+TpHx/DP2VDWP1TXmPaOzBzH0EyTZjw
-	9y87V5PosbEuI7nTUirVP4u7hth9x8CAZy2eFxmkMDB9bizmPBR+WcefdL4uO/SRJivieE9qKG6ps
-	QwsiUiPgpGdEzHKYJKBw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=InIzy0TAp9goNhlL0EGpR40+DpMES2bUMkYykxrojeU=; b=uQTXKU1BW5KCPh
+	iAQROWC1epZ8m7+tXrbkEB5THchZ60aEBGiAmzUrm/RTKAJkU+/3gpjYEnufQjfAV1RXheujbc6Df
+	JC7iwiWE1ZiAls/KPPaHdCR/+dUyeOY7HHWfHApj4D4eMQ9Q46P+bMaD5gxWKWfXPfxOM0i26OHZ7
+	OR/0/FxI+UQL9qwSq7OtzI2+DO7KvmyA5ih15o7Z+7qtCobJKCNQCXZaOx3ZTwqHjp0EX+3qgLGPm
+	+ThPgTnQhfnPRJJtv6m3QFVe9cL0C29ABiu+rkLuByxo1L73N4ZkjR6IcSmm8cPASr2HGwOnhqemP
+	h+fnVCt0WH1vkQahclbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCi8j-0002cu-JJ; Tue, 24 Sep 2019 10:33:49 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCi8S-0002c8-Te
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 10:33:34 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2B94C142F;
- Tue, 24 Sep 2019 03:33:30 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 77BFE3F67D; Tue, 24 Sep 2019 03:33:27 -0700 (PDT)
-Date: Tue, 24 Sep 2019 11:33:25 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: "Justin He (Arm Technology China)" <Justin.He@arm.com>
-Subject: Re: [PATCH v8 3/3] mm: fix double page fault on arm64 if PTE_AF is
- cleared
-Message-ID: <20190924103324.GB41214@arrakis.emea.arm.com>
-References: <20190921135054.142360-1-justin.he@arm.com>
- <20190921135054.142360-4-justin.he@arm.com>
- <20190923170433.GE10192@arrakis.emea.arm.com>
- <DB7PR08MB3082BC38536AE16B056AEA05F7840@DB7PR08MB3082.eurprd08.prod.outlook.com>
+	id 1iCiET-0004Lm-Ao; Tue, 24 Sep 2019 10:39:45 +0000
+Received: from esa2.microchip.iphmx.com ([68.232.149.84])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iCiEA-0004Kz-S5
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 10:39:30 +0000
+Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
+ Eugen.Hristev@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Eugen.Hristev@microchip.com";
+ x-sender="Eugen.Hristev@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa2.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Eugen.Hristev@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa2.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Eugen.Hristev@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: yxcAnS5Cx+0OSZh7J9sGXRZzFwMaKALUT2joS+c3oZ+pjIhgJzfrS6DW9efHMJ7aUQVffBHa12
+ 8xAZdP4IZRSePdj07+6BBana0UolKoCCxVZlUsVtTYDq5+gczOx8wqZ5+++u0dF7oCNBtf8XBD
+ bzILHuBSf+tiQsy0cHLizs0bgroWJuQ3U3b6xzEcXTRX2jVMiyEUd6/7U1priV4DsTSRSk2SQc
+ IFi1d5TsNxKd64m9wRLi5brV4PQWIGm7uzYrRzzLp0E9MM3CF4PEd76psVn2U/QRtdJtg5PKAI
+ +1U=
+X-IronPort-AV: E=Sophos;i="5.64,543,1559545200"; d="scan'208";a="50092179"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 24 Sep 2019 03:39:12 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Tue, 24 Sep 2019 03:39:10 -0700
+Received: from NAM03-BY2-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.71) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Tue, 24 Sep 2019 03:39:10 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=knu2YOFDwn3FBf1C3HU6ryty9bfxJIlZGRdEdPjpu35r3nfRTOofTbDu9dkrOIFK+nuvjORK+dulZx7UqYfPNpg3WuV7dg1oEMZHmalc5W/X9iVbP804BfkZDJkySIPK2g8hUzi8ESPJSIR6oWwhnohJOWS2Z19OKq1eOCqkeYyqYf/eMB0qgdLDHqWjHLubOW68z3B3mNp3Ai7mTLr7MjQnWtrnD2vhCumGGVRi9tzJvnsCWxpHWrYoG+zV0ln31pJ795lgKkUbnoTbtbtpTiLCQVsV3TOn1YHVsemboIBBf/tX3I3nxFM3CXtyamR+2539zELLofgFY44FWbQk5Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=As+ms4wjLa7Le5WArmHHH+aFlBCBe04coxYEtc3ySY4=;
+ b=Uguk2v15AC0hpfpfjmJJR90dwEj6uYHtAgxoED4PtKtRjzO6nRG4NPMbsWj4HcTkkemXNu3ULapD8KBVhMjgzy3VN2GTHUd7oojZlTLgj71dlL1gWfQO0jo4sBmQ0oc1m6QqdnSv4DY8dS86wen5tQSb+KHqKWCMqb9UEffUL+WTnVM1fy/QXBzyL0VhLRbSoONXPxPqcPY4E79wc1GwNitsa5D7s0uFmlNvvef0vDGdRhml99avz9M2jYC1pgep2OlrlEShgF9UZyjIQ36B+EgufIC/pcROOB44utDFKy24fyHgJxr1FkdqqBcFPgh5B6Y3gqs95+Fpbnh7WoolOw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=As+ms4wjLa7Le5WArmHHH+aFlBCBe04coxYEtc3ySY4=;
+ b=bDdAXuOu3i5Vo7iE3DxyiosTvnvcQbcWiW2UcqIu1L0gsN4k4Rr4A9p9F7S2awOjxh5yGKlxjnhRs1woi8qxueyCPRasJ6S31yGbJG+rmCrlZLugBwOXsU/e022eODkXH0BNgqdWLWguBTgyiuk6ek4vwDR3KyfSrspGxSStCM4=
+Received: from DM5PR11MB1242.namprd11.prod.outlook.com (10.168.108.8) by
+ DM5PR11MB1499.namprd11.prod.outlook.com (10.172.36.17) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2284.18; Tue, 24 Sep 2019 10:39:09 +0000
+Received: from DM5PR11MB1242.namprd11.prod.outlook.com
+ ([fe80::a141:1974:9668:fbe2]) by DM5PR11MB1242.namprd11.prod.outlook.com
+ ([fe80::a141:1974:9668:fbe2%12]) with mapi id 15.20.2284.023; Tue, 24 Sep
+ 2019 10:39:09 +0000
+From: <Eugen.Hristev@microchip.com>
+To: <mturquette@baylibre.com>, <sboyd@kernel.org>,
+ <alexandre.belloni@bootlin.com>, <linux-clk@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH] clk: at91: sam9x60: fix programmable clock
+Thread-Topic: [PATCH] clk: at91: sam9x60: fix programmable clock
+Thread-Index: AQHVcsRMYTeAx/4mlU+eM6N6BpGrrQ==
+Date: Tue, 24 Sep 2019 10:39:09 +0000
+Message-ID: <1569321191-27606-1-git-send-email-eugen.hristev@microchip.com>
+Accept-Language: en-US, ro-RO
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: VI1PR08CA0253.eurprd08.prod.outlook.com
+ (2603:10a6:803:dc::26) To DM5PR11MB1242.namprd11.prod.outlook.com
+ (2603:10b6:3:14::8)
+x-mailer: git-send-email 2.7.4
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: eb2a32c4-f020-4372-ac07-08d740db6e6f
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600167)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:DM5PR11MB1499; 
+x-ms-traffictypediagnostic: DM5PR11MB1499:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DM5PR11MB149913BF3E3D3E8F806F74F9E8840@DM5PR11MB1499.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6430;
+x-forefront-prvs: 0170DAF08C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(346002)(136003)(396003)(366004)(376002)(189003)(199004)(6506007)(71190400001)(66066001)(4326008)(6486002)(256004)(486006)(71200400001)(66946007)(2616005)(3846002)(6116002)(81156014)(81166006)(14454004)(6436002)(186003)(26005)(8936002)(2501003)(107886003)(54906003)(36756003)(50226002)(66446008)(52116002)(476003)(305945005)(99286004)(6512007)(8676002)(66476007)(110136005)(4744005)(2906002)(316002)(66556008)(64756008)(7736002)(25786009)(478600001)(386003)(5660300002)(86362001)(2201001)(102836004);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR11MB1499;
+ H:DM5PR11MB1242.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 8Vix6hbLYP+kAVTxq9EiNHIylqXiM0kNFM9T4WzeqiEpunr2lF2J5TkIMQVyswh9MXOIFgV4tAyxvniDTBAtweKIhIpRa9lfd29+/CxLMLUT/ILJPc5Ui35EFyE0gyUz+H48eJ5R4fx2eCRDDyi5FuyOrz5Q7bu3IqnsxxNbH/beiFyzEwdoArWKeUdz3pOYJgZymmttipXvVGnqd25WsFImeZcNdehr3bMp6I/3O4Jjsi/UGvbgZ53cIODNZA0W4W0qREEXOAaTCU9nEAKeaKfD0jAmGMRWHLZH4r51s+5GyZZ4hXknYYmYlAcB21gTV82N3jK54q6Jm+2Fh8yIRTaTkvmDInx/OwjIdRKQ6SZTvntWzJZF7tCACPwntQbNyegFvneB4qR8lfgYP/+lts7WTWdI/u1bC0hJFuwSgpM=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <DB7PR08MB3082BC38536AE16B056AEA05F7840@DB7PR08MB3082.eurprd08.prod.outlook.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-MS-Exchange-CrossTenant-Network-Message-Id: eb2a32c4-f020-4372-ac07-08d740db6e6f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Sep 2019 10:39:09.5110 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: I9vAC58vMy3FKJEHDO50y/jnT8UuPDFMuvfFMiZNb/cZEg0fOUt55dXWOIyhHnqW+QWwGFKEV3wv1S9/uvBRHbrKv3E7XpJREzuzMGQ8AF0=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR11MB1499
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_033333_041580_7AB05018 
-X-CRM114-Status: GOOD (  25.02  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190924_033926_986692_78F8B09D 
+X-CRM114-Status: UNSURE (   9.16  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.149.84 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,116 +161,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- "Kaly Xin \(Arm Technology China\)" <Kaly.Xin@arm.com>,
- Ralph Campbell <rcampbell@nvidia.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Suzuki Poulose <Suzuki.Poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
- Anshuman Khandual <Anshuman.Khandual@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Matthew Wilcox <willy@infradead.org>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>,
- =?iso-8859-1?B?Suly9G1l?= Glisse <jglisse@redhat.com>,
- James Morse <James.Morse@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Punit Agrawal <punitagrawal@gmail.com>,
- "hejianet@gmail.com" <hejianet@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, nd <nd@arm.com>,
- Will Deacon <will@kernel.org>, Alex Van Brunt <avanbrunt@nvidia.com>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>,
- Robin Murphy <Robin.Murphy@arm.com>
+Cc: Eugen.Hristev@microchip.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 24, 2019 at 06:43:06AM +0000, Justin He (Arm Technology China) wrote:
-> Catalin Marinas wrote:
-> > On Sat, Sep 21, 2019 at 09:50:54PM +0800, Jia He wrote:
-> > > @@ -2151,21 +2163,53 @@ static inline void cow_user_page(struct page *dst, struct page *src, unsigned lo
-> > >  	 * fails, we just zero-fill it. Live with it.
-> > >  	 */
-> > >  	if (unlikely(!src)) {
-> > > -		void *kaddr = kmap_atomic(dst);
-> > > -		void __user *uaddr = (void __user *)(va & PAGE_MASK);
-> > > +		void *kaddr;
-> > > +		pte_t entry;
-> > > +		void __user *uaddr = (void __user *)(addr & PAGE_MASK);
-> > >
-> > > +		/* On architectures with software "accessed" bits, we would
-> > > +		 * take a double page fault, so mark it accessed here.
-> > > +		 */
-[...]
-> > > +		if (arch_faults_on_old_pte() && !pte_young(vmf->orig_pte)) {
-> > > +			vmf->pte = pte_offset_map_lock(mm, vmf->pmd, addr,
-> > > +						       &vmf->ptl);
-> > > +			if (likely(pte_same(*vmf->pte, vmf->orig_pte))) {
-> > > +				entry = pte_mkyoung(vmf->orig_pte);
-> > > +				if (ptep_set_access_flags(vma, addr,
-> > > +							  vmf->pte, entry, 0))
-> > > +					update_mmu_cache(vma, addr, vmf->pte);
-> > > +			} else {
-> > > +				/* Other thread has already handled the fault
-> > > +				 * and we don't need to do anything. If it's
-> > > +				 * not the case, the fault will be triggered
-> > > +				 * again on the same address.
-> > > +				 */
-> > > +				pte_unmap_unlock(vmf->pte, vmf->ptl);
-> > > +				return false;
-> > > +			}
-> > > +			pte_unmap_unlock(vmf->pte, vmf->ptl);
-> > > +		}
-[...]
-> > > +
-> > > +		kaddr = kmap_atomic(dst);
-> > 
-> > Since you moved the kmap_atomic() here, could the above
-> > arch_faults_on_old_pte() run in a preemptible context? I suggested to
-> > add a WARN_ON in patch 2 to be sure.
-> 
-> Should I move kmap_atomic back to the original line? Thus, we can make sure
-> that arch_faults_on_old_pte() is in the context of preempt_disabled?
-> Otherwise, arch_faults_on_old_pte() may cause plenty of warning if I add
-> a WARN_ON in arch_faults_on_old_pte.  I tested it when I enable the PREEMPT=y
-> on a ThunderX2 qemu guest.
+From: Eugen Hristev <eugen.hristev@microchip.com>
 
-So we have two options here:
+The prescaler mask for sam9x60 must be 0xff (8 bits).
+Being set to 0, means that we cannot set any prescaler, thus the
+programmable clocks do not work (except the case with prescaler 0)
+Set the mask accordingly in layout struct.
 
-1. Change arch_faults_on_old_pte() scope to the whole system rather than
-   just the current CPU. You'd have to wire up a new arm64 capability
-   for the access flag but this way we don't care whether it's
-   preemptible or not.
+Fixes: 01e2113de9a5 ("clk: at91: add sam9x60 pmc driver")
+Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
+---
+ drivers/clk/at91/sam9x60.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-2. Keep the arch_faults_on_old_pte() per-CPU but make sure we are not
-   preempted here. The kmap_atomic() move would do but you'd have to
-   kunmap_atomic() before the return.
-
-I think the answer to my question below also has some implication on
-which option to pick:
-
-> > >  		/*
-> > >  		 * This really shouldn't fail, because the page is there
-> > >  		 * in the page tables. But it might just be unreadable,
-> > >  		 * in which case we just give up and fill the result with
-> > >  		 * zeroes.
-> > >  		 */
-> > > -		if (__copy_from_user_inatomic(kaddr, uaddr, PAGE_SIZE))
-> > > +		if (__copy_from_user_inatomic(kaddr, uaddr, PAGE_SIZE)) {
-> > > +			/* Give a warn in case there can be some obscure
-> > > +			 * use-case
-> > > +			 */
-> > > +			WARN_ON_ONCE(1);
-> > 
-> > That's more of a question for the mm guys: at this point we do the
-> > copying with the ptl released; is there anything else that could have
-> > made the pte old in the meantime? I think unuse_pte() is only called on
-> > anonymous vmas, so it shouldn't be the case here.
-
-If we need to hold the ptl here, you could as well have an enclosing
-kmap/kunmap_atomic (option 2) with some goto instead of "return false".
-
+diff --git a/drivers/clk/at91/sam9x60.c b/drivers/clk/at91/sam9x60.c
+index 9790ddf..86238d5 100644
+--- a/drivers/clk/at91/sam9x60.c
++++ b/drivers/clk/at91/sam9x60.c
+@@ -43,6 +43,7 @@ static const struct clk_pll_characteristics upll_characteristics = {
+ };
+ 
+ static const struct clk_programmable_layout sam9x60_programmable_layout = {
++	.pres_mask = 0xff,
+ 	.pres_shift = 8,
+ 	.css_mask = 0x1f,
+ 	.have_slck_mck = 0,
 -- 
-Catalin
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
