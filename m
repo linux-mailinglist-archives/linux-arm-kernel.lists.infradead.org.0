@@ -2,94 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EF07BCC52
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 18:21:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38ECBBCC89
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 18:36:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=tAmYmBn38upn4rSrMUUy+oNHYor8wZXVEoZ+PWw2mHs=; b=qmy22UaJNoLy1bntwWGbNvDKlK
-	Xe2esLYaSdcdrrH5L1Hw0OnbF+ztqAwj4s+1glpMQ7olaSc11xAzXO6odrdHPzJNz/rHixVm7VBLz
-	LcHfrU9oNEt20LdjgJxYHFjcHpox4DFnxuHUUTF60j2eLOI8ITU9I1nhAdRbdgL3qC0u7f2gct/y8
-	yM11I6K6zIOwxHACYjovE1CqFSwYHCinEOtjCPzPHvAYfgj7wYj9+YbDgHe1MqrFxIVZYPAxEU3hl
-	T8cjHuBpybzpDgRb++kmN7ySlDzwCcwswpsNBNqyL4/s28wvJXEIWfjwldvFmeZnwbMh9O4pnG6BR
-	MVutgOzQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=v6VEJ0GX6F9MzRT1X2sVokrHKN0ZY+Ts3aWM6fwl5Yc=; b=d15MwZHZLMOKdx
+	h78J+JdCzzSfht8zk5QZBKwkaafhv0+sLCBhkE/I87Hkz1yPyCDieBUTwgz825nerVz/TGgNWzJ75
+	ywnw3CqhgiMhPq0l9akB/CaGhBgTRiDDHSE50X35MMj+QCgjkA3QQtSSyNAM0XGrR3kvIE7bgl7wy
+	X74oM1sP2sXJd6WYaPDRYQZFJioZvrjR6G1vzW5JdX31J7hWy4qC7XCFdNci1NQoKxy9foWSP2Oxs
+	QWvHf6TtnoT9CnwjXAQcpvBS1Hy+D3JWOlJDajjJ0ge2boQ6QEKbdOtN7QIGyAz3YMp0jux5k6951
+	WXtF8w4W9/HLg6b+sauw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCnZU-0005sA-LA; Tue, 24 Sep 2019 16:21:49 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCnYW-0005Tc-E8
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 16:20:51 +0000
-Received: by mail-ed1-x542.google.com with SMTP id h33so2359384edh.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Sep 2019 09:20:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=R58Kb157ep6c8GzMZ5iH2a7Abz3RXZ7gceObCId280k=;
- b=H/+pYlP/St5XsrLNgwmqaEPyLEbW7oIFZZj2LrABCvMtMsiVPeJ0WWQOO8e5/5+VZZ
- X9dCmLRzRrEcjO+JXJ8RJimK7SLrJjM7/Gbrig5+e6rin5wL2JfQ2FC4o8PiS7qgeuFz
- K3I8oSrVcEDRs55I81bfcdX4z0YQGmioHqmRvpfzPrOlwH3s4nfFKM6nDFsQBRQWGjAR
- WIuTtYdH/Q/Rh5lnh+ybUsn7Jzri5CzsCkdrMJYTsnLqVk/4BtsQRzoiMJDwrnYuFGPO
- c6pR+pJHaJZ6Me6pbDAnxnTrX4oytb1dUF0KO4cjmwx/PORfYsTUZd2//Qh4MDAMKgd+
- fxQw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=R58Kb157ep6c8GzMZ5iH2a7Abz3RXZ7gceObCId280k=;
- b=jQGZcaPJCS3lM3D+nX98lwejt/RKdCOBouDdIN/GJpUyq9dOHwJyc9EeV4bAAyBQbF
- 60ZxwEQTB5LLleVve281EYgXrXSJuFvry7xRz5pLF4HKmVtJScu7tckep6sY3u0eEgSz
- T2OpF6NeF2mEPZLpasDVzguBmxX/MO0SG/GauIscwH39Lxttrc/g88nCOxQoT87/PrvK
- oDKfjxXi2K4S+7oV7Tpb/WBQlL69TsOK5I2UxSJWKvq8HQS2YxQcAp56i3AMfRBlsZDp
- tosrPGRYVQcvjKZ2LZmJlxh2PvcKjKyRzazrje8atVQfQxgqj/OqV2qxH8AFLB6NmWDz
- MuRQ==
-X-Gm-Message-State: APjAAAWK6CsI1JEA/GHc7c6Df/Wet1XXmpbHrVM6wIRWkdrvyOV1xAkI
- 0YusnAJgMotHlbPTihuDEcI=
-X-Google-Smtp-Source: APXvYqx270FBMcG4BeFC2rahDeGuqriP8V1JEPycwz4+HfMUZlreH8JT37Zrz/qv9Q+zNWLA9d1dhg==
-X-Received: by 2002:a17:907:11c8:: with SMTP id
- va8mr3252527ejb.111.1569342047159; 
- Tue, 24 Sep 2019 09:20:47 -0700 (PDT)
-Received: from localhost (ip1f113d5e.dynamic.kabel-deutschland.de.
- [31.17.61.94])
- by smtp.gmail.com with ESMTPSA id a26sm443885edm.45.2019.09.24.09.20.46
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 24 Sep 2019 09:20:46 -0700 (PDT)
-From: Oliver Graute <oliver.graute@gmail.com>
-To: shawnguo@kernel.org
-Subject: [PATCHv6 2/2] ARM: dts: Add support for i.MX6 UltraLite DART
- Variscite Customboard
-Date: Tue, 24 Sep 2019 18:20:21 +0200
-Message-Id: <1569342022-15901-3-git-send-email-oliver.graute@gmail.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1569342022-15901-1-git-send-email-oliver.graute@gmail.com>
-References: <1569342022-15901-1-git-send-email-oliver.graute@gmail.com>
-X-Patchwork-Bot: notify
+	id 1iCnnM-0002Kh-9m; Tue, 24 Sep 2019 16:36:08 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iCnn4-0002Jx-Pw
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 16:35:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5589A142F;
+ Tue, 24 Sep 2019 09:35:47 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ A49143F694; Tue, 24 Sep 2019 09:35:44 -0700 (PDT)
+Date: Tue, 24 Sep 2019 17:35:42 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Jia He <hejianet@gmail.com>
+Subject: Re: [PATCH v8 3/3] mm: fix double page fault on arm64 if PTE_AF is
+ cleared
+Message-ID: <20190924163542.GI41214@arrakis.emea.arm.com>
+References: <20190921135054.142360-1-justin.he@arm.com>
+ <20190921135054.142360-4-justin.he@arm.com>
+ <20190923170433.GE10192@arrakis.emea.arm.com>
+ <DB7PR08MB3082BC38536AE16B056AEA05F7840@DB7PR08MB3082.eurprd08.prod.outlook.com>
+ <20190924103324.GB41214@arrakis.emea.arm.com>
+ <6267b685-5162-85ac-087f-112303bb7035@gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <6267b685-5162-85ac-087f-112303bb7035@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_092049_490600_A32A3AAF 
-X-CRM114-Status: GOOD (  16.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190924_093550_930047_7482BC4B 
+X-CRM114-Status: GOOD (  26.22  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (oliver.graute[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,278 +66,190 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- narmstrong@baylibre.com, Sascha Hauer <s.hauer@pengutronix.de>,
- m.felsch@pengutronix.de, linux-kernel@vger.kernel.org, oliver.graute@gmail.com,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <Mark.Rutland@arm.com>,
+ "Kaly Xin \(Arm Technology China\)" <Kaly.Xin@arm.com>,
+ Ralph Campbell <rcampbell@nvidia.com>,
+ "Justin He \(Arm Technology China\)" <Justin.He@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Suzuki Poulose <Suzuki.Poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Anshuman Khandual <Anshuman.Khandual@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Matthew Wilcox <willy@infradead.org>,
+ "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ =?iso-8859-1?B?Suly9G1l?= Glisse <jglisse@redhat.com>,
+ James Morse <James.Morse@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Punit Agrawal <punitagrawal@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
+ nd <nd@arm.com>, Will Deacon <will@kernel.org>,
+ Alex Van Brunt <avanbrunt@nvidia.com>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>,
+ Robin Murphy <Robin.Murphy@arm.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds DeviceTree Source for the i.MX6 UltraLite DART NAND/WIFI
+On Tue, Sep 24, 2019 at 11:29:07PM +0800, Jia He wrote:
+> On 2019/9/24 18:33, Catalin Marinas wrote:
+> > On Tue, Sep 24, 2019 at 06:43:06AM +0000, Justin He (Arm Technology Chi=
+na) wrote:
+> > > Catalin Marinas wrote:
+> > > > On Sat, Sep 21, 2019 at 09:50:54PM +0800, Jia He wrote:
+> > > > >   		/*
+> > > > >   		 * This really shouldn't fail, because the page is there
+> > > > >   		 * in the page tables. But it might just be unreadable,
+> > > > >   		 * in which case we just give up and fill the result with
+> > > > >   		 * zeroes.
+> > > > >   		 */
+> > > > > -		if (__copy_from_user_inatomic(kaddr, uaddr, PAGE_SIZE))
+> > > > > +		if (__copy_from_user_inatomic(kaddr, uaddr, PAGE_SIZE)) {
+> > > > > +			/* Give a warn in case there can be some obscure
+> > > > > +			 * use-case
+> > > > > +			 */
+> > > > > +			WARN_ON_ONCE(1);
+> > > > That's more of a question for the mm guys: at this point we do the
+> > > > copying with the ptl released; is there anything else that could ha=
+ve
+> > > > made the pte old in the meantime? I think unuse_pte() is only calle=
+d on
+> > > > anonymous vmas, so it shouldn't be the case here.
+> >
+> > If we need to hold the ptl here, you could as well have an enclosing
+> > kmap/kunmap_atomic (option 2) with some goto instead of "return false".
+> =
 
-Signed-off-by: Oliver Graute <oliver.graute@gmail.com>
-Cc: Shawn Guo <shawnguo@kernel.org>
-Cc: Neil Armstrong <narmstrong@baylibre.com>
-Cc: Marco Felsch <m.felsch@pengutronix.de>
----
-Changelog:
-v6:
- - added some muxing
- - added codec in sound node
- - added adc1 node
+> I am not 100% sure that I understand your suggestion well, so I
+> drafted the patch
 
- arch/arm/boot/dts/Makefile                      |   1 +
- arch/arm/boot/dts/imx6ul-var-6ulcustomboard.dts | 221 ++++++++++++++++++++++++
- 2 files changed, 222 insertions(+)
- create mode 100644 arch/arm/boot/dts/imx6ul-var-6ulcustomboard.dts
+Well, however you think the code is cleaner really.
 
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index a24a6a1..a2a69e4 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -579,6 +579,7 @@ dtb-$(CONFIG_SOC_IMX6UL) += \
- 	imx6ul-tx6ul-0010.dtb \
- 	imx6ul-tx6ul-0011.dtb \
- 	imx6ul-tx6ul-mainboard.dtb \
-+	imx6ul-var-6ulcustomboard.dtb \
- 	imx6ull-14x14-evk.dtb \
- 	imx6ull-colibri-eval-v3.dtb \
- 	imx6ull-colibri-wifi-eval-v3.dtb \
-diff --git a/arch/arm/boot/dts/imx6ul-var-6ulcustomboard.dts b/arch/arm/boot/dts/imx6ul-var-6ulcustomboard.dts
-new file mode 100644
-index 00000000..031d8d4
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6ul-var-6ulcustomboard.dts
-@@ -0,0 +1,221 @@
-+// SPDX-License-Identifier: (GPL-2.0)
-+/*
-+ * Support for Variscite DART-6UL Module
-+ *
-+ * Copyright (C) 2015 Freescale Semiconductor, Inc.
-+ * Copyright (C) 2015-2016 Variscite Ltd. - http://www.variscite.com
-+ * Copyright (C) 2018-2019 Oliver Graute <oliver.graute@gmail.com>
-+ */
-+
-+/dts-v1/;
-+
-+#include <dt-bindings/input/input.h>
-+#include "imx6ul-imx6ull-var-dart-common.dtsi"
-+
-+/ {
-+	model = "Variscite i.MX6 UltraLite Carrier-board";
-+	compatible = "variscite,6ulcustomboard", "fsl,imx6ul";
-+
-+	backlight {
-+		compatible = "pwm-backlight";
-+		pwms = <&pwm1 0 20000>;
-+		brightness-levels = <0 4 8 16 32 64 128 255>;
-+		default-brightness-level = <6>;
-+		status = "okay";
-+	};
-+
-+	gpio-keys {
-+		compatible = "gpio-keys";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_gpio_keys>;
-+
-+		user {
-+			gpios = <&gpio1 0 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_BACK>;
-+			gpio-key,wakeup;
-+		};
-+	};
-+
-+	gpio-leds {
-+		compatible = "gpio-leds";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_gpio_leds>;
-+
-+		d16-led {
-+			gpios = <&gpio4 20 GPIO_ACTIVE_HIGH>;
-+			linux,default-trigger = "heartbeat";
-+		};
-+	};
-+
-+	sound {
-+		compatible = "simple-audio-card";
-+		simple-audio-card,name = "wm8731audio";
-+		simple-audio-card,widgets =
-+			"Headphone", "Headphone Jack",
-+			"Line", "Line Jack",
-+			"Microphone", "Mic Jack";
-+		simple-audio-card,routing =
-+			"Headphone Jack", "RHPOUT",
-+			"Headphone Jack", "LHPOUT",
-+			"LLINEIN", "Line Jack",
-+			"RLINEIN", "Line Jack",
-+			"MICIN", "Mic Bias",
-+			"Mic Bias", "Mic Jack";
-+		simple-audio-card,format = "i2s";
-+		simple-audio-card,bitclock-master = <&codec_dai>;
-+		simple-audio-card,frame-master = <&codec_dai>;
-+
-+		cpu_dai: simple-audio-card,cpu {
-+				sound-dai = <&sai2>;
-+		};
-+
-+		codec_dai: simple-audio-card,codec {
-+			sound-dai = <&wm8731>;
-+			system-clock-frequency = <12288000>;
-+		};
-+	};
-+};
-+
-+&adc1 {
-+	vref-supply = <&reg_touch_3v3>;
-+	status = "okay";
-+};
-+
-+&can1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_flexcan1>;
-+	status = "okay";
-+};
-+
-+&can2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_flexcan2>;
-+	status = "okay";
-+};
-+
-+&fec1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_enet1>;
-+	status = "okay";
-+};
-+
-+&fec2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_enet2>;
-+	status = "okay";
-+};
-+
-+&i2c1 {
-+	clock-frequency = <400000>;
-+	status = "okay";
-+};
-+
-+&i2c2 {
-+	clock_frequency = <100000>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_i2c2>;
-+	status = "okay";
-+
-+	wm8731: audio-codec@1a {
-+		compatible = "wlf,wm8731";
-+		reg = <0x1a>;
-+		#sound-dai-cells = <0>;
-+		clocks = <&clks IMX6UL_CLK_SAI2>;
-+		clock-names = "mclk";
-+	};
-+
-+	touchscreen@38 {
-+		compatible = "edt,edt-ft5x06";
-+		reg = <0x38>;
-+		interrupt-parent = <&gpio3>;
-+		interrupts = <4 IRQ_TYPE_NONE>;
-+		touchscreen-size-x = <800>;
-+		touchscreen-size-y = <480>;
-+		touchscreen-inverted-x;
-+		touchscreen-inverted-y;
-+		wakeup-source;
-+	};
-+
-+	rtc@68 {
-+		compatible = "dallas,ds1337";
-+		reg = <0x68>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_rtc>;
-+		interrupt-parent = <&gpio5>;
-+		interrupts = <7 IRQ_TYPE_EDGE_FALLING>;
-+	};
-+};
-+
-+&lcdif {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_lcdif>;
-+	display = <&display0>;
-+	status = "okay";
-+
-+	display0: display0 {
-+		bits-per-pixel = <16>;
-+		bus-width = <24>;
-+
-+		display-timings {
-+			native-mode = <&timing0>;
-+			timing0: timing0 {
-+				clock-frequency =<35000000>;
-+				hactive = <800>;
-+				vactive = <480>;
-+				hfront-porch = <40>;
-+				hback-porch = <40>;
-+				hsync-len = <48>;
-+				vback-porch = <29>;
-+				vfront-porch = <13>;
-+				vsync-len = <3>;
-+				hsync-active = <0>;
-+				vsync-active = <0>;
-+				de-active = <1>;
-+				pixelclk-active = <0>;
-+			};
-+		};
-+	};
-+};
-+
-+&pwm1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_pwm1>;
-+	status = "okay";
-+};
-+
-+&uart1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_uart1>;
-+	status = "okay";
-+};
-+
-+&uart2 {
-+	status = "okay";
-+};
-+
-+&uart3 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_uart3>;
-+	uart-has-rtscts;
-+	status = "okay";
-+};
-+
-+&usbotg1 {
-+	disable-over-current;
-+	dr_mode = "host";
-+	status = "okay";
-+};
-+
-+&usbotg2 {
-+	disable-over-current;
-+	dr_mode = "host";
-+	status = "okay";
-+};
-+
-+&iomuxc {
-+	pinctrl_rtc: rtcgrp {
-+		fsl,pins = <
-+			MX6UL_PAD_SNVS_TAMPER7__GPIO5_IO07	0x1b0b0
-+		>;
-+	};
-+};
--- 
-2.7.4
+The copy/paste didn't work well, tabs disappeared (or rather the
+Exchange server corrupting outgoing emails) but I'll try to comment
+below:
 
+> -static inline void cow_user_page(struct page *dst, struct page *src,
+>   unsigned long va, struct vm_area_struct *vma)
+> +static inline bool cow_user_page(struct page *dst, struct page *src,
+> +=A0=A0=A0 =A0=A0=A0 =A0=A0=A0 =A0=A0=A0 =A0struct vm_fault *vmf)
+> =A0{
+> +=A0=A0=A0 struct vm_area_struct *vma =3D vmf->vma;
+> +=A0=A0=A0 struct mm_struct *mm =3D vma->vm_mm;
+> +=A0=A0=A0 unsigned long addr =3D vmf->address;
+> +=A0=A0=A0 bool ret;
+> +=A0=A0=A0 pte_t entry;
+> +=A0=A0=A0 void *kaddr;
+> +=A0=A0=A0 void __user *uaddr;
+> +
+> =A0=A0=A0=A0 debug_dma_assert_idle(src);
+> =
+
+> +=A0=A0=A0 if (likely(src)) {
+> +=A0=A0=A0 =A0=A0=A0 copy_user_highpage(dst, src, addr, vma);
+> +=A0=A0=A0 =A0=A0=A0 return true;
+> +=A0=A0=A0 }
+> +
+> =A0=A0=A0=A0 /*
+> =A0=A0=A0=A0 =A0* If the source page was a PFN mapping, we don't have
+> =A0=A0=A0=A0 =A0* a "struct page" for it. We do a best-effort copy by
+> =A0=A0=A0=A0 =A0* just copying from the original user address. If that
+> =A0=A0=A0=A0 =A0* fails, we just zero-fill it. Live with it.
+> =A0=A0=A0=A0 =A0*/
+> -=A0=A0=A0 if (unlikely(!src)) {
+> -=A0=A0=A0 =A0=A0=A0 void *kaddr =3D kmap_atomic(dst);
+> -=A0=A0=A0 =A0=A0=A0 void __user *uaddr =3D (void __user *)(va & PAGE_MAS=
+K);
+> +=A0=A0=A0 kaddr =3D kmap_atomic(dst);
+> +=A0=A0=A0 uaddr =3D (void __user *)(addr & PAGE_MASK);
+> +
+> +=A0=A0=A0 /*
+> +=A0=A0=A0 =A0* On architectures with software "accessed" bits, we would
+> +=A0=A0=A0 =A0* take a double page fault, so mark it accessed here.
+> +=A0=A0=A0 =A0*/
+> +=A0=A0=A0 vmf->pte =3D pte_offset_map_lock(mm, vmf->pmd, addr, &vmf->ptl=
+);
+> +=A0=A0=A0 if (arch_faults_on_old_pte() && !pte_young(vmf->orig_pte)) {
+
+I'd move the pte_offset_map_lock() inside the 'if' block as we don't
+want to affect architectures that handle old ptes automatically.
+
+> +=A0=A0=A0 =A0=A0=A0 if (!likely(pte_same(*vmf->pte, vmf->orig_pte))) {
+> +=A0=A0=A0 =A0=A0=A0 =A0=A0=A0 /*
+> +=A0=A0=A0 =A0=A0=A0 =A0=A0=A0 =A0* Other thread has already handled the =
+fault
+> +=A0=A0=A0 =A0=A0=A0 =A0=A0=A0 =A0* and we don't need to do anything. If =
+it's
+> +=A0=A0=A0 =A0=A0=A0 =A0=A0=A0 =A0* not the case, the fault will be trigg=
+ered
+> +=A0=A0=A0 =A0=A0=A0 =A0=A0=A0 =A0* again on the same address.
+> +=A0=A0=A0 =A0=A0=A0 =A0=A0=A0 =A0*/
+> +=A0=A0=A0 =A0=A0=A0 =A0=A0=A0 ret =3D false;
+> +=A0=A0=A0 =A0=A0=A0 =A0=A0=A0 goto pte_unlock;
+> +=A0=A0=A0 =A0=A0=A0 }
+> +
+> +=A0=A0=A0 =A0=A0=A0 entry =3D pte_mkyoung(vmf->orig_pte);
+> +=A0=A0=A0 =A0=A0=A0 if (ptep_set_access_flags(vma, addr, vmf->pte, entry=
+, 0))
+> +=A0=A0=A0 =A0=A0=A0 =A0=A0=A0 update_mmu_cache(vma, addr, vmf->pte);
+> +=A0=A0=A0 }
+> =
+
+> +=A0=A0=A0 /*
+> +=A0=A0=A0 =A0* This really shouldn't fail, because the page is there
+> +=A0=A0=A0 =A0* in the page tables. But it might just be unreadable,
+> +=A0=A0=A0 =A0* in which case we just give up and fill the result with
+> +=A0=A0=A0 =A0* zeroes.
+> +=A0=A0=A0 =A0*/
+> +=A0=A0=A0 if (__copy_from_user_inatomic(kaddr, uaddr, PAGE_SIZE)) {
+> =A0=A0=A0=A0 =A0=A0=A0 /*
+> -=A0=A0=A0 =A0=A0=A0 =A0* This really shouldn't fail, because the page is=
+ there
+> -=A0=A0=A0 =A0=A0=A0 =A0* in the page tables. But it might just be unread=
+able,
+> -=A0=A0=A0 =A0=A0=A0 =A0* in which case we just give up and fill the resu=
+lt with
+> -=A0=A0=A0 =A0=A0=A0 =A0* zeroes.
+> +=A0=A0=A0 =A0=A0=A0 =A0* Give a warn in case there can be some obscure
+> +=A0=A0=A0 =A0=A0=A0 =A0* use-case
+> =A0=A0=A0=A0 =A0=A0=A0 =A0*/
+> -=A0=A0=A0 =A0=A0=A0 if (__copy_from_user_inatomic(kaddr, uaddr, PAGE_SIZ=
+E))
+> -=A0=A0=A0 =A0=A0=A0 =A0=A0=A0 clear_page(kaddr);
+> -=A0=A0=A0 =A0=A0=A0 kunmap_atomic(kaddr);
+> -=A0=A0=A0 =A0=A0=A0 flush_dcache_page(dst);
+> -=A0=A0=A0 } else
+> -=A0=A0=A0 =A0=A0=A0 copy_user_highpage(dst, src, va, vma);
+> +=A0=A0=A0 =A0=A0=A0 WARN_ON_ONCE(1);
+> +=A0=A0=A0 =A0=A0=A0 clear_page(kaddr);
+> +=A0=A0=A0 }
+> +
+> +=A0=A0=A0 ret =3D true;
+> +
+> +pte_unlock:
+> +=A0=A0=A0 pte_unmap_unlock(vmf->pte, vmf->ptl);
+
+Since the locking would be moved in the 'if' block above, we need
+another check here before unlocking:
+
+	if (arch_faults_on_old_pte() && !pte_young(vmf->orig_pte))
+		pte_unmap_unlock(vmf->pte, vmf->ptl);
+
+You could probably replace the two calls to arch_faults_on_old_pte()
+with a single bool variable initialisation, something like:
+
+	force_mkyoung =3D arch_faults_on_old_pte() &&
+		!pte_young(vmf->orig_pte)
+
+and only check for "if (force_mkyoung)" in both cases.
+
+> +=A0=A0=A0 kunmap_atomic(kaddr);
+> +=A0=A0=A0 flush_dcache_page(dst);
+> +
+> +=A0=A0=A0 return ret;
+> =A0}
+
+-- =
+
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
