@@ -2,91 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81FD6BCBBA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 17:44:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD629BCBE0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 17:52:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4X2IV1jilnyPnDxuKjxn/Y1XGTx6eJrayxvR4omRFEg=; b=uIGSMzv3lN/jKV
-	l8bSnY43Wihm8YWFvFM4AkWELiJES7iyOnI17Xp9UXxAf+H89/8fZhHTIXQ8rJaEyhVxkr1uN8OgK
-	pYxQdP+ppQ/8Rg23a0JPW6vi6Qqr7MEF0jvqbbjZW7rydezwUtQv/lMhzXF/hpdtNVOeGmX+oaZFJ
-	Y92KMorfcuDzRMQqnEISX0tOIek5Ikgx+PyHzW7gGE1uBXLaJvS7JhxjB7cUJ2TD337HSXZ3oIvhK
-	1IiEeOP8PFPmUv5qT9RdZ5VIt8HFtx+MGkE58dEM9/6AM/3QlJXbjhT1xYl+wsU27vvdmMQ90uz+L
-	A/km25AlvKxDCRHeFPgA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NPeS8EH5LsFls4cIo8Gtpr/Ke3y83dqBzEBDzTaBRnc=; b=Db5B/sdcoKD9DS
+	rCvhsHgFeBGKHZALyeuZVgxAS111IQYtFi1F94z40NVQ7oykRTby0nqSgLkgtdTuHNYKPZ1vP8ZIn
+	bPr78Y3mfVqbxMJpVAaH1Ypqj9Uqmwi4h9oDJJgIXyH157C47v+YQSAkCcWF5/s2lSSdYltIQp9Px
+	I2cRNrkOd43JD6VughK7rUGEh35/2Ob6JRHGGytPtFoa5/UPMgEeW8S+UNUHEWOYQwJ0r1dyBKANy
+	HqVMu+HBdK9Ex0RShEKd2cPf/oyjGPtISCSKOlGiWiXvme3YJBOOKkWxDX6cRmTcD24lS51vfo+9J
+	OggUQ8ZyF2KGt8OVZFaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCmzb-0005nc-Cf; Tue, 24 Sep 2019 15:44:43 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1iCn6v-0000bd-O1; Tue, 24 Sep 2019 15:52:17 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCmzO-0005mw-Ak
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 15:44:31 +0000
-Received: by mail-pf1-x443.google.com with SMTP id a2so1591806pfo.10
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Sep 2019 08:44:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=FRqhU1AihYJ2QqMEDa4hoNnJ00l/92NY2n3WTvQE51k=;
- b=N59VSQNOtKoruFGih+9OfLHlJDZghgi0SHzvbDJnCjmSJNCbKIz4xT3qDUWkkpVZuO
- ur7WnjtgGzFrGmmpJRPHZwLXT4NhVxGKX3IkxFpKapUI/PEIpDJaXgVZz4Px4iE8fDDh
- dOcpxkfz0wQxC/P5g5kJaBwjLMrBhJMwany9k=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=FRqhU1AihYJ2QqMEDa4hoNnJ00l/92NY2n3WTvQE51k=;
- b=Fu5h1iJMo1gfApH4iynaAdlSFP1xpnKVxW/t5Z2ywu7EGrlIseE+2LJ0qfEphGljvk
- qlbrYVEMRM2AbtqhVm4e7b8fMubbHJ63P72W+JZYuY7yQcjfVVrC9u0x+Ehr3NmVpOfL
- BSbrVuBw8tdIHy3/EFNyOfH9wad4tggO6kMG/0+zH8zaj63A0g6nIFp0v6A6YfLs6F02
- ftEeBAuPU+ir1l7h6hbz4jWKkCGYN5WOdNS2JphSGpQ+Q7Ezq/RVFsxg5Gd6BZiJUmke
- 8XFirrdXZ+NWjx6oT+uaErPBGh8/EnBB+/OjNvd38j0qAUclPSnRLHT5BuHSy+iJDBRo
- ihKQ==
-X-Gm-Message-State: APjAAAXpzCKhAHzyFMnU77d84vGigmtKW9+uN5qG6SdUT+69JEpBIPYZ
- 8Q7YwYwE5vc5Wr2/DofMTY+Q+Q==
-X-Google-Smtp-Source: APXvYqyy/dekHqlB0kdPWKwq8sUxNkiNic4QkQj9ZSqM6+zm9tsd2AmEmoeo9mAVn3VjMCVJaICECQ==
-X-Received: by 2002:a63:531d:: with SMTP id h29mr3906627pgb.52.1569339868740; 
- Tue, 24 Sep 2019 08:44:28 -0700 (PDT)
-Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
- by smtp.gmail.com with ESMTPSA id q13sm321184pjq.0.2019.09.24.08.44.26
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 24 Sep 2019 08:44:26 -0700 (PDT)
-Date: Tue, 24 Sep 2019 08:44:24 -0700
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH] PM / devfreq: Lock devfreq in trans_stat_show
-Message-ID: <20190924154424.GI133864@google.com>
-References: <CGME20190923162736epcas3p2c1db3bf767a07f17b609bc91fbbd9648@epcas3p2.samsung.com>
- <714675448e7fbf3c930b0dca6fbe54fa5f87211b.1569256001.git.leonard.crestez@nxp.com>
- <979d107f-0a52-3aa4-a397-acb0ff754a3c@samsung.com>
- <VI1PR04MB7023BF1AD2C61C8A5ABAD5FEEE840@VI1PR04MB7023.eurprd04.prod.outlook.com>
+ id 1iCn6e-0000ay-El
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 15:52:01 +0000
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 836E418CB8E8;
+ Tue, 24 Sep 2019 15:51:59 +0000 (UTC)
+Received: from [10.18.17.163] (dhcp-17-163.bos.redhat.com [10.18.17.163])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 47787600CC;
+ Tue, 24 Sep 2019 15:51:43 +0000 (UTC)
+Subject: Re: [PATCH v10 0/6] mm / virtio: Provide support for unused page
+ reporting
+To: David Hildenbrand <david@redhat.com>, Michal Hocko <mhocko@kernel.org>,
+ Alexander Duyck <alexander.duyck@gmail.com>
+References: <20190918175109.23474.67039.stgit@localhost.localdomain>
+ <20190924142342.GX23050@dhcp22.suse.cz>
+ <d2a7acdd-3bb9-05c9-42d0-70a500801cd6@redhat.com>
+From: Nitesh Narayan Lal <nitesh@redhat.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=nitesh@redhat.com; prefer-encrypt=mutual; keydata=
+ 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
+ VujM7c/b4pps
+Organization: Red Hat Inc,
+Message-ID: <fc288e95-2203-2db8-1f34-a1bbcfa1f24d@redhat.com>
+Date: Tue, 24 Sep 2019 11:51:42 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <VI1PR04MB7023BF1AD2C61C8A5ABAD5FEEE840@VI1PR04MB7023.eurprd04.prod.outlook.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <d2a7acdd-3bb9-05c9-42d0-70a500801cd6@redhat.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
+ (mx1.redhat.com [10.5.110.63]); Tue, 24 Sep 2019 15:51:59 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_084430_398343_204B3A84 
-X-CRM114-Status: GOOD (  14.96  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190924_085200_533048_AD63757B 
+X-CRM114-Status: GOOD (  18.61  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,52 +118,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Artur =?utf-8?B?xZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Lukasz Luba <l.luba@partner.samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, dl-linux-imx <linux-imx@nxp.com>,
- Georgi Djakov <georgi.djakov@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: yang.zhang.wz@gmail.com, pagupta@redhat.com, kvm@vger.kernel.org,
+ mst@redhat.com, lcapitulino@redhat.com, linux-mm@kvack.org,
+ alexander.h.duyck@linux.intel.com, aarcange@redhat.com,
+ virtio-dev@lists.oasis-open.org, riel@surriel.com, willy@infradead.org,
+ wei.w.wang@intel.com, vbabka@suse.cz, konrad.wilk@oracle.com,
+ dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org,
+ osalvador@suse.de, dave.hansen@intel.com, linux-kernel@vger.kernel.org,
+ pbonzini@redhat.com, akpm@linux-foundation.org, mgorman@techsingularity.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 24, 2019 at 07:44:16AM +0000, Leonard Crestez wrote:
-> On 2019-09-24 5:07 AM, Chanwoo Choi wrote:
 
-> >> @@ -1507,16 +1508,22 @@ static ssize_t trans_stat_show(struct device *dev,
-> >>   	struct devfreq *devfreq = to_devfreq(dev);
-> >>   	ssize_t len;
-> >>   	int i, j;
-> >>   	unsigned int max_state = devfreq->profile->max_state;
-> >>   
-> >> -	if (!devfreq->stop_polling &&
-> >> -			devfreq_update_status(devfreq, devfreq->previous_freq))
-> >> -		return 0;
-> >>   	if (max_state == 0)
-> >>   		return sprintf(buf, "Not Supported.\n");
-> >>   
-> >> +	/* lock and update */
-> > 
-> > It is not necessary. Anyone can know that this code is related to mutex lock/unlock.
-> 
-> OK. You're the second person to mention this but it's quite strange to 
-> see objections raised against comments.
+On 9/24/19 11:32 AM, David Hildenbrand wrote:
+> On 24.09.19 16:23, Michal Hocko wrote:
+>> On Wed 18-09-19 10:52:25, Alexander Duyck wrote:
+>> [...]
+>>> In order to try and keep the time needed to find a non-reported page to
+>>> a minimum we maintain a "reported_boundary" pointer. This pointer is used
+>>> by the get_unreported_pages iterator to determine at what point it should
+>>> resume searching for non-reported pages. In order to guarantee pages do
+>>> not get past the scan I have modified add_to_free_list_tail so that it
+>>> will not insert pages behind the reported_boundary.
+>>>
+>>> If another process needs to perform a massive manipulation of the free
+>>> list, such as compaction, it can either reset a given individual boundary
+>>> which will push the boundary back to the list_head, or it can clear the
+>>> bit indicating the zone is actively processing which will result in the
+>>> reporting process resetting all of the boundaries for a given zone.
+>> Is this any different from the previous version? The last review
+>> feedback (both from me and Mel) was that we are not happy to have an
+>> externally imposed constrains on how the page allocator is supposed to
+>> maintain its free lists.
+>>
+>> If this is really the only way to go forward then I would like to hear
+>> very convincing arguments about other approaches not being feasible.
+> Adding to what Alexander said, I don't consider the other approaches
+> (especially the bitmap-based approach Nitesh is currently working on)
+> infeasible. There might be more rough edges (e.g., sparse zones) and
+> eventually sometimes a little more work to be done, but definitely
+> feasible. Incorporating stuff into the buddy might make some tasks
+> (e.g., identify free pages) more efficient.
 
-Comments are great if they add value, in this case the comment is
-stating the obvious, which IMO just adds noise to the code.
+My plan was to get a framework ready which can perform decently and
+is acceptable upstream (keeping core-mm changes to a minimum) and then keep
+optimizing it for different use-cases.
+Indeed, the bitmap-based approach may not be efficient for every available use
+case. But then I am not sure if we want to target that, considering it may require
+mm-changes.
 
-The coding style guidelines also briefly touch this topic:
+> I still somewhat like the idea of capturing hints of free pages (in
+> whatever data structure) and then going over the hints, seeing if the
+> pages are still free. Then only temporarily isolating the still-free
+> pages, reporting them, and un-isolating them after they were reported. I
+> like the idea that the pages are not fake-allocated but only temporarily
+> blocked. That works nicely e.g., with the movable zone (contain only
+> movable data).
+>
+> But anyhow, after decades of people working on free page
+> hinting/reporting, I am happy with anything that gets accepted upstream :D
 
-  8) Commenting
-  -------------
++1
 
-  Comments are good, but there is also a danger of over-commenting.
+>
+-- 
+Nitesh
 
-Documentation/process/coding-style.rst
 
 _______________________________________________
 linux-arm-kernel mailing list
