@@ -2,31 +2,31 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60D86BD1A4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 20:14:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27615BD1A9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 20:15:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pDk1ESu68bkwQ/YtTjC58gid+ClJu4zkuDzr0i84y/U=; b=SRb+nOzx32gDyj
-	JjJiPh/bWLHS9+Oqsr3X/+cu+ntODz6Oeky1Sb5TFt8bnO3qZyG2KCBoyW8woo72TjEJ9l9AploDy
-	6sx1frgJ71HaBlX8ePDHwbrgt6bL8mPhwPHHTOhfFOD8K+ebG/a4gkXAAINUr9TvVyOpgUdqjH4Z3
-	n8EttkGFdiyDqFEIP9ONiVWb0QU0J0b9gyeurqIULVV1T1xjAukHH4APf7OOu8yOdSy0flJUovIVr
-	PV1ukrOxM0FOVRIFRF5fKjKaX+Vq7RiB1EwxyZq7kEyStJHnt9rmWv4VEfT6+1VBVGHfC7jCe17xF
-	iR0PVGXx1JPxp6utoA8A==;
+	List-Owner; bh=TtQrQSphG2VgTvRLlFWsyxlVaDhAufZpe1LmBnJ6EYM=; b=NEMPesgOQFa7a7
+	QdNa6rzrEJxapNbqiFgMorkpYIwnYBzzkxViUqV0FDTmHqAndq8c1SdNXoREjpEwNjGLjDhTQxw5V
+	dmdIULG/IJUFXyGs1HjqQVcvqLwXS42cFec129KOea96ZkkIUTCCvhQK3pMcmgPEnt0a0BiGT/lAw
+	3FiTelNmyjzOKYnlcQnUfpabQphRhgWcdauZOQ+2q2XfJg05TFYVupZdlSdu5gYVtc0PL6sf4xoV6
+	ZTp3dj6OWnMYvynzASl5iJNIX7mPfxpbsvfZUmp0O66OpZVFNPUWld6/YSeaMeQEDKEwni3kIIjV4
+	LTHfb777/s/iN7mzxZKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCpKZ-00040W-TO; Tue, 24 Sep 2019 18:14:32 +0000
+	id 1iCpKy-0004FK-4u; Tue, 24 Sep 2019 18:14:56 +0000
 Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCpJ1-00034Q-N0
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 18:12:58 +0000
+ id 1iCpJ2-00034b-IU
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 18:12:59 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id A1202AF03;
- Tue, 24 Sep 2019 18:12:52 +0000 (UTC)
+ by mx1.suse.de (Postfix) with ESMTP id E4980AEF8;
+ Tue, 24 Sep 2019 18:12:53 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: robh+dt@kernel.org, devicetree@vger.kernel.org, frowand.list@gmail.com,
  linux-arm-kernel@lists.infradead.org, linux-wireless@vger.kernel.org,
@@ -35,16 +35,16 @@ To: robh+dt@kernel.org, devicetree@vger.kernel.org, frowand.list@gmail.com,
  dri-devel@lists.freedesktop.org, xen-devel@lists.xenproject.org,
  linux-tegra@vger.kernel.org, linux-media@vger.kernel.org,
  linux-pci@vger.kernel.org
-Subject: [PATCH 02/11] of: base: introduce __of_n_*_cells_parent()
-Date: Tue, 24 Sep 2019 20:12:33 +0200
-Message-Id: <20190924181244.7159-3-nsaenzjulienne@suse.de>
+Subject: [PATCH 03/11] of: address: use parent DT node in bus->count_cells()
+Date: Tue, 24 Sep 2019 20:12:34 +0200
+Message-Id: <20190924181244.7159-4-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20190924181244.7159-1-nsaenzjulienne@suse.de>
 References: <20190924181244.7159-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_111256_128302_95D7F25C 
-X-CRM114-Status: GOOD (  11.32  )
+X-CRM114-CacheID: sfid-20190924_111256_896314_48A19E4F 
+X-CRM114-Status: GOOD (  12.05  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -73,105 +73,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Master PCI devices might not appear in the device tree, yet they still
-need to get the underlying cells properties in order to calculate the
-bus DMA constraints. This conflicts with of_n_*_cells() as it's designed
-under the assumption it'll receive a device OF node.
-
-Create __of_n_*_cells_parent() in order to deal with this limitation.
-For now, it'll only be available privately to OF code.
+The function provides the cell sizes for a specific bus type. Instead of
+passing it the device DT node sitting on top of that bus we directly
+pass its parent which is the actual node the function will start looking
+from.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
 
- drivers/of/base.c       | 44 +++++++++++++++++++++++++++++------------
- drivers/of/of_private.h |  3 +++
- 2 files changed, 34 insertions(+), 13 deletions(-)
+ drivers/of/address.c | 18 ++++++++++--------
+ 1 file changed, 10 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/of/base.c b/drivers/of/base.c
-index 1d667eb730e1..94f83051910c 100644
---- a/drivers/of/base.c
-+++ b/drivers/of/base.c
-@@ -86,34 +86,52 @@ static bool __of_node_is_type(const struct device_node *np, const char *type)
- 	return np && match && type && !strcmp(match, type);
- }
+diff --git a/drivers/of/address.c b/drivers/of/address.c
+index 0f898756199d..9c1e638fa8ea 100644
+--- a/drivers/of/address.c
++++ b/drivers/of/address.c
+@@ -14,6 +14,8 @@
+ #include <linux/slab.h>
+ #include <linux/string.h>
  
--int of_n_addr_cells(struct device_node *np)
-+int __of_n_addr_cells_parent(struct device_node *parent)
++#include "of_private.h"
++
+ /* Max address size we deal with */
+ #define OF_MAX_ADDR_CELLS	4
+ #define OF_CHECK_ADDR_COUNT(na)	((na) > 0 && (na) <= OF_MAX_ADDR_CELLS)
+@@ -42,7 +44,7 @@ struct of_bus {
+ 	const char	*name;
+ 	const char	*addresses;
+ 	int		(*match)(struct device_node *parent);
+-	void		(*count_cells)(struct device_node *child,
++	void		(*count_cells)(struct device_node *parent,
+ 				       int *addrc, int *sizec);
+ 	u64		(*map)(__be32 *addr, const __be32 *range,
+ 				int na, int ns, int pna);
+@@ -54,13 +56,13 @@ struct of_bus {
+  * Default translator (generic bus)
+  */
+ 
+-static void of_bus_default_count_cells(struct device_node *dev,
++static void of_bus_default_count_cells(struct device_node *parent,
+ 				       int *addrc, int *sizec)
  {
- 	u32 cells;
- 
--	do {
--		if (np->parent)
--			np = np->parent;
--		if (!of_property_read_u32(np, "#address-cells", &cells))
-+	while (parent) {
-+		if (!of_property_read_u32(parent, "#address-cells", &cells))
- 			return cells;
--	} while (np->parent);
-+
-+		parent = parent->parent;
-+	}
-+
- 	/* No #address-cells property for the root node */
- 	return OF_ROOT_NODE_ADDR_CELLS_DEFAULT;
+ 	if (addrc)
+-		*addrc = of_n_addr_cells(dev);
++		*addrc = __of_n_addr_cells_parent(parent);
+ 	if (sizec)
+-		*sizec = of_n_size_cells(dev);
++		*sizec = __of_n_size_cells_parent(parent);
  }
-+
-+int of_n_addr_cells(struct device_node *np)
-+{
-+	if (np->parent)
-+		np = np->parent;
-+
-+	return __of_n_addr_cells_parent(np);
-+}
- EXPORT_SYMBOL(of_n_addr_cells);
  
--int of_n_size_cells(struct device_node *np)
-+int __of_n_size_cells_parent(struct device_node *parent)
- {
- 	u32 cells;
+ static u64 of_bus_default_map(__be32 *addr, const __be32 *range,
+@@ -192,7 +194,7 @@ const __be32 *of_get_pci_address(struct device_node *dev, int bar_no, u64 *size,
+ 		of_node_put(parent);
+ 		return NULL;
+ 	}
+-	bus->count_cells(dev, &na, &ns);
++	bus->count_cells(parent, &na, &ns);
+ 	of_node_put(parent);
+ 	if (!OF_CHECK_ADDR_COUNT(na))
+ 		return NULL;
+@@ -592,7 +594,7 @@ static u64 __of_translate_address(struct device_node *dev,
+ 	bus = of_match_bus(parent);
  
--	do {
--		if (np->parent)
--			np = np->parent;
--		if (!of_property_read_u32(np, "#size-cells", &cells))
-+	while (parent) {
-+		if (!of_property_read_u32(parent, "#size-cells", &cells))
- 			return cells;
--	} while (np->parent);
--	/* No #size-cells property for the root node */
-+
-+		parent = parent->parent;
-+	}
-+
-+	/* No #address-cells property for the root node */
- 	return OF_ROOT_NODE_SIZE_CELLS_DEFAULT;
- }
-+
-+int of_n_size_cells(struct device_node *np)
-+{
-+	if (np->parent)
-+		np = np->parent;
-+
-+	return __of_n_size_cells_parent(np);
-+}
- EXPORT_SYMBOL(of_n_size_cells);
+ 	/* Count address cells & copy address locally */
+-	bus->count_cells(dev, &na, &ns);
++	bus->count_cells(parent, &na, &ns);
+ 	if (!OF_CHECK_COUNTS(na, ns)) {
+ 		pr_debug("Bad cell count for %pOF\n", dev);
+ 		goto bail;
+@@ -634,7 +636,7 @@ static u64 __of_translate_address(struct device_node *dev,
  
- #ifdef CONFIG_NUMA
-diff --git a/drivers/of/of_private.h b/drivers/of/of_private.h
-index 24786818e32e..b528304be244 100644
---- a/drivers/of/of_private.h
-+++ b/drivers/of/of_private.h
-@@ -39,6 +39,9 @@ extern struct mutex of_mutex;
- extern struct list_head aliases_lookup;
- extern struct kset *of_kset;
- 
-+int __of_n_addr_cells_parent(struct device_node *parent);
-+int __of_n_size_cells_parent(struct device_node *parent);
-+
- #if defined(CONFIG_OF_DYNAMIC)
- extern int of_property_notify(int action, struct device_node *np,
- 			      struct property *prop, struct property *old_prop);
+ 		/* Get new parent bus and counts */
+ 		pbus = of_match_bus(parent);
+-		pbus->count_cells(dev, &pna, &pns);
++		pbus->count_cells(parent, &pna, &pns);
+ 		if (!OF_CHECK_COUNTS(pna, pns)) {
+ 			pr_err("Bad cell count for %pOF\n", dev);
+ 			break;
+@@ -726,7 +728,7 @@ const __be32 *of_get_address(struct device_node *dev, int index, u64 *size,
+ 	if (parent == NULL)
+ 		return NULL;
+ 	bus = of_match_bus(parent);
+-	bus->count_cells(dev, &na, &ns);
++	bus->count_cells(parent, &na, &ns);
+ 	of_node_put(parent);
+ 	if (!OF_CHECK_ADDR_COUNT(na))
+ 		return NULL;
 -- 
 2.23.0
 
