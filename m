@@ -2,40 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D801BBCB2A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 17:23:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8FB4BCB2E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 17:23:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H1L10VSMOn+e6Kf3iVDVee9iI+SN0aImlBIdmxs/rus=; b=o7hAbx7hGP5zDC
-	yMCFARFE1TLxt21JucjfnfYZHRSItKYErfY7u67GYcnA3e9BuLMRQj1XS30Y8IJzNOKfaRwDs0XCg
-	WudwgMACyj76hM2wv67bwi+DUKuMNKefY87ymuqYoxZd2urwLUk5/Go2khgIsw9gs/uPuje7/Lzzw
-	lpjYFAWBZ9/1kyaP/8mPmn0/wAkDLDFzFwDP5HtJ2sWR17pOmrL/8DMo/lkyasrBtL2Le6cflvpsC
-	oUGEYlqctM+2vddEtmexCQM/mV6y2vOwoCxnt6kZmZLCzKloDtXP9kPe4NCPb9a1yJUxWOhw0VeyQ
-	mIm6JmNZa/hmpbfQWWGw==;
+	List-Owner; bh=Iie+ycq9f1QjB3qhh7R0ta7IYNn6Ge5cTaeS8fRtVSE=; b=lyhhPpQHLLh8FM
+	PWa15/D8F7iw6CSwYVXd/yvetVg2Dvm3YqjfMtq+dko9gaucxgHmkbpj9R+6M95puVvYZQHr79LIr
+	FlTBvs0Pa2XlFP1UtFnZ+tCaOF/ezyNfWgFCPteysVTWjvhGT8PZdXcMV/taFWRsDu4EP96Lv9aAy
+	u9hNnjZgbwzcQqrPIx7nJcBLlhgQYntfO7RjnbBxc7DfqVN0zziofmCzERZ5szbHZkcQlAQLABw/K
+	ONM7/TtHJ9KXd+bY+mmrzoTbzx7oSWDhNJ8O7F8ImG3jUaPpqo6kmPLN/ror/ZSJVCT85IW0pvh8T
+	oLMGyNQLEWAlWH8mNyXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCmeh-0002Xq-4e; Tue, 24 Sep 2019 15:23:07 +0000
+	id 1iCmey-0002mY-VP; Tue, 24 Sep 2019 15:23:25 +0000
 Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCme7-0002LI-88
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 15:22:33 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 3D655AAB33C626A11C05;
- Tue, 24 Sep 2019 23:22:29 +0800 (CST)
+ id 1iCmeC-0002Q1-M8
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 15:22:39 +0000
+Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 4F6A85461CE3B3AB5C3B;
+ Tue, 24 Sep 2019 23:22:34 +0800 (CST)
 Received: from linux-Bxxcye.huawei.com (10.175.104.222) by
  DGGEMS401-HUB.china.huawei.com (10.3.19.201) with Microsoft SMTP Server id
- 14.3.439.0; Tue, 24 Sep 2019 23:22:20 +0800
+ 14.3.439.0; Tue, 24 Sep 2019 23:22:24 +0800
 From: Heyi Guo <guoheyi@huawei.com>
 To: <linux-arm-kernel@lists.infradead.org>, <kvmarm@lists.cs.columbia.edu>,
  <linux-kernel@vger.kernel.org>, <kvm@vger.kernel.org>, <qemu-arm@nongnu.org>
-Subject: [RFC PATCH 1/2] kvm/arm: add capability to forward hypercall to user
- space
-Date: Tue, 24 Sep 2019 23:20:53 +0800
-Message-ID: <1569338454-26202-2-git-send-email-guoheyi@huawei.com>
+Subject: [RFC PATCH 2/2] kvm/arm64: expose hypercall_forwarding capability
+Date: Tue, 24 Sep 2019 23:20:54 +0800
+Message-ID: <1569338454-26202-3-git-send-email-guoheyi@huawei.com>
 X-Mailer: git-send-email 1.8.3.1
 In-Reply-To: <1569338454-26202-1-git-send-email-guoheyi@huawei.com>
 References: <1569338454-26202-1-git-send-email-guoheyi@huawei.com>
@@ -43,8 +42,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.175.104.222]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_082231_593637_DD549E76 
-X-CRM114-Status: GOOD (  17.37  )
+X-CRM114-CacheID: sfid-20190924_082237_032261_91FC84A6 
+X-CRM114-Status: GOOD (  10.73  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -69,173 +68,67 @@ Cc: Mark Rutland <mark.rutland@arm.com>,
  Peter Maydell <peter.maydell@linaro.org>,
  Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Russell King <linux@armlinux.org.uk>, James Morse <james.morse@arm.com>,
+ =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>,
+ James Morse <james.morse@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
  Heyi Guo <guoheyi@huawei.com>, wanghaibin.wang@huawei.com,
  Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
  Julien Thierry <julien.thierry.kdev@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As more SMC/HVC usages emerge on arm64 platforms, like SDEI, it makes
-sense for kvm to have the capability of forwarding such calls to user
-space for further emulation.
-
-We reuse the existing term "hypercall" for SMC/HVC, as well as the
-hypercall structure in kvm_run to exchange arguments and return
-values. The definition on arm64 is as below:
-
-exit_reason: KVM_EXIT_HYPERCALL
-
-Input:
-  nr: the immediate value of SMC/HVC calls; not really used today.
-  args[6]: x0..x5 (This is not fully conform with SMCCC which requires
-           x6 as argument as well, but use space can use GET_ONE_REG
-           ioctl for such rare case).
-
-Return:
-  args[0..3]: x0..x3 as defined in SMCCC. We need to extract
-              args[0..3] and write them to x0..x3 when hypercall exit
-              returns.
-
-Flag hypercall_forward is added to turn on/off hypercall forwarding
-and the default is false. Another flag hypercall_excl_psci is to
-exclude PSCI from forwarding for backward compatible, and it only
-makes sense to check its value when hypercall_forward is enabled.
-
-Signed-off-by: Heyi Guo <guoheyi@huawei.com>
-Cc: Peter Maydell <peter.maydell@linaro.org>
-Cc: Dave Martin <Dave.Martin@arm.com>
-Cc: Marc Zyngier <marc.zyngier@arm.com>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: James Morse <james.morse@arm.com>
-Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-CC: Russell King <linux@armlinux.org.uk>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
----
- arch/arm/include/asm/kvm_host.h   |  5 +++++
- arch/arm64/include/asm/kvm_host.h |  5 +++++
- include/kvm/arm_psci.h            |  1 +
- virt/kvm/arm/arm.c                |  2 ++
- virt/kvm/arm/psci.c               | 30 ++++++++++++++++++++++++++++--
- 5 files changed, 41 insertions(+), 2 deletions(-)
-
-diff --git a/arch/arm/include/asm/kvm_host.h b/arch/arm/include/asm/kvm_host.h
-index 8a37c8e..68ccaf0 100644
---- a/arch/arm/include/asm/kvm_host.h
-+++ b/arch/arm/include/asm/kvm_host.h
-@@ -76,6 +76,11 @@ struct kvm_arch {
- 
- 	/* Mandated version of PSCI */
- 	u32 psci_version;
-+
-+	/* Flags to control hypercall forwarding to userspace */
-+	bool hypercall_forward;
-+	/* Exclude PSCI from hypercall forwarding and let kvm to handle it */
-+	bool hypercall_excl_psci;
- };
- 
- #define KVM_NR_MEM_OBJS     40
-diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-index f656169..e47ac25 100644
---- a/arch/arm64/include/asm/kvm_host.h
-+++ b/arch/arm64/include/asm/kvm_host.h
-@@ -83,6 +83,11 @@ struct kvm_arch {
- 
- 	/* Mandated version of PSCI */
- 	u32 psci_version;
-+
-+	/* Flags to control hypercall forwarding to userspace */
-+	bool hypercall_forward;
-+	/* Exclude PSCI from hypercall forwarding and let kvm to handle it */
-+	bool hypercall_excl_psci;
- };
- 
- #define KVM_NR_MEM_OBJS     40
-diff --git a/include/kvm/arm_psci.h b/include/kvm/arm_psci.h
-index 632e78b..9c9a2dc 100644
---- a/include/kvm/arm_psci.h
-+++ b/include/kvm/arm_psci.h
-@@ -48,5 +48,6 @@ static inline int kvm_psci_version(struct kvm_vcpu *vcpu, struct kvm *kvm)
- int kvm_arm_copy_fw_reg_indices(struct kvm_vcpu *vcpu, u64 __user *uindices);
- int kvm_arm_get_fw_reg(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg);
- int kvm_arm_set_fw_reg(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg);
-+void kvm_handle_hypercall_return(struct kvm_vcpu *vcpu, struct kvm_run *run);
- 
- #endif /* __KVM_ARM_PSCI_H__ */
-diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
-index 35a0698..2f4ca21 100644
---- a/virt/kvm/arm/arm.c
-+++ b/virt/kvm/arm/arm.c
-@@ -673,6 +673,8 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *run)
- 		ret = kvm_handle_mmio_return(vcpu, vcpu->run);
- 		if (ret)
- 			return ret;
-+	} else if (run->exit_reason == KVM_EXIT_HYPERCALL) {
-+		kvm_handle_hypercall_return(vcpu, vcpu->run);
- 	}
- 
- 	if (run->immediate_exit)
-diff --git a/virt/kvm/arm/psci.c b/virt/kvm/arm/psci.c
-index 87927f7..7e1f735 100644
---- a/virt/kvm/arm/psci.c
-+++ b/virt/kvm/arm/psci.c
-@@ -389,6 +389,7 @@ static int kvm_psci_call(struct kvm_vcpu *vcpu)
- 
- int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
- {
-+	struct kvm *kvm = vcpu->kvm;
- 	u32 func_id = smccc_get_function(vcpu);
- 	u32 val = SMCCC_RET_NOT_SUPPORTED;
- 	u32 feature;
-@@ -428,8 +429,27 @@ int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
- 			break;
- 		}
- 		break;
--	default:
--		return kvm_psci_call(vcpu);
-+	default: {
-+		if (!kvm->arch.hypercall_forward ||
-+		    kvm->arch.hypercall_excl_psci) {
-+			u32 id = func_id & ~PSCI_0_2_64BIT;
-+
-+			if (id >= PSCI_0_2_FN_BASE && id <= PSCI_0_2_FN(0x1f))
-+				return kvm_psci_call(vcpu);
-+		}
-+
-+		if (kvm->arch.hypercall_forward) {
-+			/* Exit to user space to process */
-+			vcpu->run->exit_reason = KVM_EXIT_HYPERCALL;
-+			vcpu->run->hypercall.nr = kvm_vcpu_get_hsr(vcpu) &
-+						  ESR_ELx_ISS_MASK;
-+			vcpu->run->hypercall.args[0] = func_id;
-+			vcpu->run->hypercall.args[1] = smccc_get_arg1(vcpu);
-+			vcpu->run->hypercall.args[2] = smccc_get_arg2(vcpu);
-+			vcpu->run->hypercall.args[3] = smccc_get_arg3(vcpu);
-+			return 0;
-+		}
-+	}
- 	}
- 
- 	smccc_set_retval(vcpu, val, 0, 0, 0);
-@@ -603,3 +623,9 @@ int kvm_arm_set_fw_reg(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
- 
- 	return -EINVAL;
- }
-+
-+void kvm_handle_hypercall_return(struct kvm_vcpu *vcpu, struct kvm_run *run)
-+{
-+	smccc_set_retval(vcpu, run->hypercall.args[0], run->hypercall.args[1],
-+			 run->hypercall.args[2], run->hypercall.args[3]);
-+}
--- 
-1.8.3.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QWRkIG5ldyBLVk0gY2FwYWJpbGl0eSAiS1ZNX0NBUF9GT1JXQVJEX0hZUEVSQ0FMTCIgZm9yIHVz
+ZXIgc3BhY2UgdG8KcHJvYmUgd2hldGhlciBLVk0gc3VwcG9ydHMgZm9yd2FyZGluZyBoeXBlcmNh
+bGwuCgpUaGUgY2FwYWJpbGl0eSBzaG91bGQgYmUgZW5hYmxlZCBieSB1c2VyIHNwYWNlIGV4cGxp
+Y2l0bHksIGZvciB3ZQpkb24ndCB3YW50IHVzZXIgc3BhY2UgYXBwbGljYXRpb24gdG8gZGVhbCB3
+aXRoIHVuZXhwZWN0ZWQgaHlwZXJjYWxsCmV4aXRzLiBXZSBhbHNvIHVzZSBhbiBhZGRpdGlvbmFs
+IGFyZ3VtZW50IHRvIHBhc3MgZXhjZXB0aW9uIGJpdCBtYXNrLAp0byByZXF1ZXN0IEtWTSB0byBm
+b3J3YXJkIGFsbCBoeXBlcmNhbGxzIGV4Y2VwdCB0aGUgY2xhc3NlcyBzcGVjaWZpZWQKaW4gdGhl
+IGJpdCBtYXNrLgoKQ3VycmVudGx5IG9ubHkgUFNDSSBjYW4gYmUgc2V0IGFzIGV4Y2VwdGlvbiwg
+c28gdGhhdCB3ZSBjYW4gc3RpbGwga2VlcApjb25zaXN0ZW50IHdpdGggdGhlIG9sZCBQU0NJIHBy
+b2Nlc3NpbmcgZmxvdy4KClNpZ25lZC1vZmYtYnk6IEhleWkgR3VvIDxndW9oZXlpQGh1YXdlaS5j
+b20+CkNjOiBQZXRlciBNYXlkZWxsIDxwZXRlci5tYXlkZWxsQGxpbmFyby5vcmc+CkNjOiBEYXZl
+IE1hcnRpbiA8RGF2ZS5NYXJ0aW5AYXJtLmNvbT4KQ2M6IE1hcmMgWnluZ2llciA8bWFyYy56eW5n
+aWVyQGFybS5jb20+CkNjOiBNYXJrIFJ1dGxhbmQgPG1hcmsucnV0bGFuZEBhcm0uY29tPgpDYzog
+SmFtZXMgTW9yc2UgPGphbWVzLm1vcnNlQGFybS5jb20+CkNjOiBKdWxpZW4gVGhpZXJyeSA8anVs
+aWVuLnRoaWVycnkua2RldkBnbWFpbC5jb20+CkNjOiBTdXp1a2kgSyBQb3Vsb3NlIDxzdXp1a2ku
+cG91bG9zZUBhcm0uY29tPgpDYzogQ2F0YWxpbiBNYXJpbmFzIDxjYXRhbGluLm1hcmluYXNAYXJt
+LmNvbT4KQ2M6IFdpbGwgRGVhY29uIDx3aWxsQGtlcm5lbC5vcmc+CkNjOiBQYW9sbyBCb256aW5p
+IDxwYm9uemluaUByZWRoYXQuY29tPgpDYzogIlJhZGltIEtyxI1tw6HFmSIgPHJrcmNtYXJAcmVk
+aGF0LmNvbT4KLS0tCiBhcmNoL2FybTY0L2t2bS9yZXNldC5jICAgfCAyNSArKysrKysrKysrKysr
+KysrKysrKysrKysrCiBpbmNsdWRlL3VhcGkvbGludXgva3ZtLmggfCAgMyArKysKIDIgZmlsZXMg
+Y2hhbmdlZCwgMjggaW5zZXJ0aW9ucygrKQoKZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQva3ZtL3Jl
+c2V0LmMgYi9hcmNoL2FybTY0L2t2bS9yZXNldC5jCmluZGV4IGY0YThhZTkuLjIyMDFiNjIgMTAw
+NjQ0Ci0tLSBhL2FyY2gvYXJtNjQva3ZtL3Jlc2V0LmMKKysrIGIvYXJjaC9hcm02NC9rdm0vcmVz
+ZXQuYwpAQCAtOTUsNiArOTUsOSBAQCBpbnQga3ZtX2FyY2hfdm1faW9jdGxfY2hlY2tfZXh0ZW5z
+aW9uKHN0cnVjdCBrdm0gKmt2bSwgbG9uZyBleHQpCiAJCXIgPSBoYXNfdmhlKCkgJiYgc3lzdGVt
+X3N1cHBvcnRzX2FkZHJlc3NfYXV0aCgpICYmCiAJCQkJIHN5c3RlbV9zdXBwb3J0c19nZW5lcmlj
+X2F1dGgoKTsKIAkJYnJlYWs7CisJY2FzZSBLVk1fQ0FQX0ZPUldBUkRfSFlQRVJDQUxMOgorCQly
+ID0gMTsKKwkJYnJlYWs7CiAJZGVmYXVsdDoKIAkJciA9IDA7CiAJfQpAQCAtMTAyLDYgKzEwNSwy
+OCBAQCBpbnQga3ZtX2FyY2hfdm1faW9jdGxfY2hlY2tfZXh0ZW5zaW9uKHN0cnVjdCBrdm0gKmt2
+bSwgbG9uZyBleHQpCiAJcmV0dXJuIHI7CiB9CiAKK2ludCBrdm1fdm1faW9jdGxfZW5hYmxlX2Nh
+cChzdHJ1Y3Qga3ZtICprdm0sCisJCQkgICAgc3RydWN0IGt2bV9lbmFibGVfY2FwICpjYXApCit7
+CisJaWYgKGNhcC0+ZmxhZ3MpCisJCXJldHVybiAtRUlOVkFMOworCisJc3dpdGNoIChjYXAtPmNh
+cCkgeworCWNhc2UgS1ZNX0NBUF9GT1JXQVJEX0hZUEVSQ0FMTDogeworCQlfX3U2NCBleGNsdWRl
+X2ZsYWdzID0gY2FwLT5hcmdzWzBdOworCQkvKiBPbmx5IHN1cHBvcnQgZXhjbHVkaW5nIFBTQ0kg
+cmlnaHQgbm93ICovCisJCWlmIChleGNsdWRlX2ZsYWdzICYgfktWTV9DQVBfRk9SV0FSRF9IWVBF
+UkNBTExfRVhDTF9QU0NJKQorCQkJcmV0dXJuIC1FSU5WQUw7CisJCWt2bS0+YXJjaC5oeXBlcmNh
+bGxfZm9yd2FyZCA9IHRydWU7CisJCWlmIChleGNsdWRlX2ZsYWdzICYgS1ZNX0NBUF9GT1JXQVJE
+X0hZUEVSQ0FMTF9FWENMX1BTQ0kpCisJCQlrdm0tPmFyY2guaHlwZXJjYWxsX2V4Y2xfcHNjaSA9
+IHRydWU7CisJCXJldHVybiAwOworCX0KKwl9CisKKwlyZXR1cm4gLUVJTlZBTDsKK30KKwogdW5z
+aWduZWQgaW50IGt2bV9zdmVfbWF4X3ZsOwogCiBpbnQga3ZtX2FybV9pbml0X3N2ZSh2b2lkKQpk
+aWZmIC0tZ2l0IGEvaW5jbHVkZS91YXBpL2xpbnV4L2t2bS5oIGIvaW5jbHVkZS91YXBpL2xpbnV4
+L2t2bS5oCmluZGV4IDVlM2YxMmQuLmUzZTU3ODcgMTAwNjQ0Ci0tLSBhL2luY2x1ZGUvdWFwaS9s
+aW51eC9rdm0uaAorKysgYi9pbmNsdWRlL3VhcGkvbGludXgva3ZtLmgKQEAgLTcxMSw2ICs3MTEs
+OCBAQCBzdHJ1Y3Qga3ZtX2VuYWJsZV9jYXAgewogCV9fdTggIHBhZFs2NF07CiB9OwogCisjZGVm
+aW5lIEtWTV9DQVBfRk9SV0FSRF9IWVBFUkNBTExfRVhDTF9QU0NJCSgxIDw8IDApCisKIC8qIGZv
+ciBLVk1fUFBDX0dFVF9QVklORk8gKi8KIAogI2RlZmluZSBLVk1fUFBDX1BWSU5GT19GTEFHU19F
+Vl9JRExFICAgKDE8PDApCkBAIC05OTYsNiArOTk4LDcgQEAgc3RydWN0IGt2bV9wcGNfcmVzaXpl
+X2hwdCB7CiAjZGVmaW5lIEtWTV9DQVBfQVJNX1BUUkFVVEhfQUREUkVTUyAxNzEKICNkZWZpbmUg
+S1ZNX0NBUF9BUk1fUFRSQVVUSF9HRU5FUklDIDE3MgogI2RlZmluZSBLVk1fQ0FQX1BNVV9FVkVO
+VF9GSUxURVIgMTczCisjZGVmaW5lIEtWTV9DQVBfRk9SV0FSRF9IWVBFUkNBTEwgMTc0CiAKICNp
+ZmRlZiBLVk1fQ0FQX0lSUV9ST1VUSU5HCiAKLS0gCjEuOC4zLjEKCgpfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
+bGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
