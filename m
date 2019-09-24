@@ -2,133 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09968BC042
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 04:41:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B92C5BC056
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 04:48:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JziyZp/6ijDF9MeY7WpoM3iL2IaiE7NjDh1ZDYSjKak=; b=C/oWOD3abcl71C
-	6BroKpbltvOe6B8uqvrVvFsPzHvVr3ynMFhstnH3JQvfhL2xJHk9kkJSXUnfo15loqXFBHV3CZuur
-	q+my0s9d8a3v+lBTRYsUAFMmxnxATF7BKLuMEEE7k4hNyTFTMwUpiXpCgfKEyxM5KKk8dMYlf35kD
-	UkcCLzDKnnxSoAysOkV9rFNs5EAcmDD8bleY2YHAlfxQzTrTb7WnAIE9YEEJHz+LaDo98XGZpBvtZ
-	gsxPsMrnz1c6g8p1czTUq+UBpde0qbRYtVYqRAc1a8V8ZGFjHlhp5YcbXV/ILhzgUntb91M4zT5sx
-	EtsbnReYijxS99EcANzA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eQpUHRmdDmoY7xyPQ1/ye/iaTWYMxzYrypZZY1n2k7E=; b=nzAesDV1XZFQy/
+	EL947+rzkklSnr0n1eXfr9uX8FG+3K4S3ZQoVeun5CkJZIxkD0C0GfpNqHoJ52riPfi2IBM15v6H1
+	wlXJoCUnIhih2Ws1KpIBdiBTp9OIm2epyuLBN6Pqmp2h2g8MunUUCVfmWTCYRInv5v+gMMpWTaRQU
+	nmXkzupV+jFixJGUX+/4iFg8fS8QQuRjFZJydXBarOd1Az80Oa9f6rVhXYw3HVtz+Ibm1ouUEsJT8
+	JqshqvNAj/RjnCDCbHL3BnVsUKjEhqzqgPQUg2QqWi1/R5fRGmq0TOgx8cBAC3AdiXf8Q/IQhkh5W
+	OR9MHoAtMad1fIoUG3fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCalf-0001Jw-0j; Tue, 24 Sep 2019 02:41:31 +0000
-Received: from mailout2.samsung.com ([203.254.224.25])
+	id 1iCasZ-0003Jk-Q5; Tue, 24 Sep 2019 02:48:39 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCalV-0001Ia-Vh
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 02:41:23 +0000
-Received: from epcas1p1.samsung.com (unknown [182.195.41.45])
- by mailout2.samsung.com (KnoxPortal) with ESMTP id
- 20190924024118epoutp02e805f560ff66c14549aeb88866b11427~HP48Nv2_u1035210352epoutp02M
+ id 1iCasQ-0003J0-QE
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 02:48:32 +0000
+Received: by mail-pl1-x644.google.com with SMTP id d3so286318plr.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Sep 2019 02:41:18 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com
- 20190924024118epoutp02e805f560ff66c14549aeb88866b11427~HP48Nv2_u1035210352epoutp02M
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1569292878;
- bh=HlTZWWkWqFE8ty1ADmXiBqGkS4yKkQpOAILmlR6nLNg=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=YXEz485ACZdXx1VbCK3UjxzXKa4OK6wUznmIsF59l01ggL1Zg6hv0GIMR8cGccWpV
- I8JkV00beo6XdSe/Wrv0VP8uAYyR2fcg0+5C5Ip977BG8prE0YvUYxMjAirltLr4d8
- WEvaZePEWfMV8vKZUDr17ZJRfE3pZbxjoPCLUDPo=
-Received: from epsnrtp4.localdomain (unknown [182.195.42.165]) by
- epcas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20190924024118epcas1p244fc261204e4423c350defcd83404635~HP47phaQ41986719867epcas1p2J;
- Tue, 24 Sep 2019 02:41:18 +0000 (GMT)
-Received: from epsmges1p5.samsung.com (unknown [182.195.40.154]) by
- epsnrtp4.localdomain (Postfix) with ESMTP id 46cln66p9zzMqYkg; Tue, 24 Sep
- 2019 02:41:14 +0000 (GMT)
-Received: from epcas1p2.samsung.com ( [182.195.41.46]) by
- epsmges1p5.samsung.com (Symantec Messaging Gateway) with SMTP id
- C9.A3.04068.A42898D5; Tue, 24 Sep 2019 11:41:14 +0900 (KST)
-Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
- epcas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20190924024114epcas1p1c2c0b2a843625f9d2351d64dec20804e~HP44BTlnn0063400634epcas1p1J;
- Tue, 24 Sep 2019 02:41:14 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20190924024114epsmtrp25544a27cd34b882c45cf66a0337aaa2a~HP43-mMao2863428634epsmtrp2M;
- Tue, 24 Sep 2019 02:41:14 +0000 (GMT)
-X-AuditID: b6c32a39-f47ff70000000fe4-4c-5d89824a4597
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 89.A1.04081.A42898D5; Tue, 24 Sep 2019 11:41:14 +0900 (KST)
-Received: from [10.113.221.102] (unknown [10.113.221.102]) by
- epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20190924024113epsmtip2bcf0c4366cc6ffa79c9370965f15493f~HP43tHsPu1806518065epsmtip2X;
- Tue, 24 Sep 2019 02:41:13 +0000 (GMT)
-Subject: Re: [PATCH v7 1/6] PM / devfreq: Don't fail devfreq_dev_release if
- not in list
-To: Leonard Crestez <leonard.crestez@nxp.com>, MyungJoo Ham
- <myungjoo.ham@samsung.com>, Kyungmin Park <kyungmin.park@samsung.com>,
- Matthias Kaehlcke <mka@chromium.org>
-From: Chanwoo Choi <cw00.choi@samsung.com>
-Organization: Samsung Electronics
-Message-ID: <2b72c253-0e83-c102-93e2-13f45ffe2702@samsung.com>
-Date: Tue, 24 Sep 2019 11:45:38 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ Mon, 23 Sep 2019 19:48:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=deTOHyUuNbmlHO4aRp949wtOhcFU4gVUPh8sJQJUCQ4=;
+ b=acEtyVqI1ptDNYGn6laviDUrBylL5GoPdDcuHygbZ+r0EG6dJgy3UhfejSjbj/MxY/
+ pJo+0Pl8XVXXJsj7QoI6/Qng9qMCYChNMpBE5TfxDx8EMI29QMb1oOFKu75IjTwYNUA1
+ GW9CIg+GUJAbOsi+aTfiA/a4NGmVsdPtl95NR6j0a3zMoa091keyiT2mQyvQyjIzawaT
+ CErq+02tdfxO/i4eBlVu0q5HPQpSBDn98Ww9nDI8ztlF8C5w6fUPqtfDhvXNs2OXIO2r
+ R9toIqwVwxXpPBXywaSEZhoOfbX/JM+pF+9/3x3Nh44napQ0D/vXSRvRstOt3bOQa0xA
+ piWw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=deTOHyUuNbmlHO4aRp949wtOhcFU4gVUPh8sJQJUCQ4=;
+ b=hIB0Q2MR99w9irpcCOOQ9GHOXGM5pOWateoi5BuEG6+jvQiCnp1qz6qHXEOuFZ/3mk
+ 6/3AkfWDVSQry6k2z1tGFESXoU1tLRXOe0HZ5H06mQ+pb35yudXQzQrRjRCY9M9hH3JP
+ ljaj6txQye+zEZfF3eBycQg5bkGBWtNZXuccX5cnc3Yn/528Votmgdzl2DTIgL3mXjef
+ a/M1dse1Eq3SyvapzdtctTMuy/PAO7ytq9xf+/a9FxMsJa0fcX/V7bTulqmlZ+Uhd4YY
+ BuFg82W92f53kX+Q9cHbo9wOqlEZPGtTWggNRAVl/17G2UEh6uYTMXWH9brWW7DisU9v
+ /58g==
+X-Gm-Message-State: APjAAAWf0ksNfLiNms3WJU5M3bS60prUFIjYPaMyj+vV//MAfevesyDw
+ 1YI1cmjhU7j9oweAHfkaX2A=
+X-Google-Smtp-Source: APXvYqwod2IWhSzAzWT7j2NclyNInJfApNQQnV0sqhYQNVBP35uINV509q2WmEDB4J1pRDnwm0n1fQ==
+X-Received: by 2002:a17:902:5a44:: with SMTP id f4mr442688plm.31.1569293309631; 
+ Mon, 23 Sep 2019 19:48:29 -0700 (PDT)
+Received: from [10.230.28.130] ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id a17sm150278pfi.178.2019.09.23.19.48.28
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 23 Sep 2019 19:48:28 -0700 (PDT)
+Subject: Re: [PATCH V8 2/2] mailbox: introduce ARM SMC based mailbox
+To: Peng Fan <peng.fan@nxp.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
+ "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
+ "andre.przywara@arm.com" <andre.przywara@arm.com>
+References: <1569287538-10854-1-git-send-email-peng.fan@nxp.com>
+ <1569287538-10854-3-git-send-email-peng.fan@nxp.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Message-ID: <1f01ea8e-8953-82ae-933c-721385dc0c13@gmail.com>
+Date: Mon, 23 Sep 2019 19:48:27 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.0
 MIME-Version: 1.0
-In-Reply-To: <06523b8ebc7006e13d92032c2e8494d2a919deac.1569272883.git.leonard.crestez@nxp.com>
+In-Reply-To: <1569287538-10854-3-git-send-email-peng.fan@nxp.com>
 Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrEJsWRmVeSWpSXmKPExsWy7bCmnq5XU2esweSNZhaHjm1lt/h6+hSj
- xbJLRxktpu/dxGZx/vwGdouzTW/YLW41yFisuPuR1WLT42usFl2/VjJbfO49wmhxbcVEVovP
- Gx4zWtxuXMFmsfrcQTaLrkN/2Sw2fvVwEPR4f6OV3WN2w0UWjwWbSj02repk87hzbQ+bx+Yl
- 9R4b3+1g8jj4bg+Tx6/Doh59W1YxenzeJBfAHZVtk5GamJJapJCal5yfkpmXbqvkHRzvHG9q
- ZmCoa2hpYa6kkJeYm2qr5OIToOuWmQP0kZJCWWJOKVAoILG4WEnfzqYov7QkVSEjv7jEVim1
- ICWnwLJArzgxt7g0L10vOT/XytDAwMgUqDAhO+PN/YNMBc8EK1ZuW8TSwPiKr4uRg0NCwESi
- /Zh5FyMXh5DADkaJR1P2sUA4nxglvr2cygrhfGOU+L3iApDDCdax6NBeqKq9jBKz9s1jgnDe
- M0qsXnCQDaRKWCBS4uihFWwgCRGB1YwSLUvvMII4zAK9LBI77newgFSxCWhJ7H9xA6yDX0BR
- 4uqPx4wgNq+AncTkKxPAalgEVCWu/znODmKLCkRIfHpwmBWiRlDi5MwnYDWcAnESsw7dYwKx
- mQXEJW49mQ9ly0s0b53NDLJYQuARu8TjbfuhnnCR2HJqAQuELSzx6vgWdghbSuLzu71sEHa1
- xMqTR9ggmjsYJbbsh4WAscT+pZOZQOHHLKApsX6XPkRYUWLn77mMEIv5JN597WGFBDGvREeb
- EESJssTlB3eZIGxJicXtnWwTGJVmIXlnFpIXZiF5YRbCsgWMLKsYxVILinPTU4sNC0yR43sT
- Izi9a1nuYDx2zucQowAHoxIPb8GOjlgh1sSy4srcQ4wSHMxKIrybtNpihXhTEiurUovy44tK
- c1KLDzGaAkN7IrOUaHI+MPfklcQbmhoZGxtbmBiamRoaKonzeqQ3xAoJpCeWpGanphakFsH0
- MXFwSjUwxl7cuuy1fMxZkR1HFb45S8RdWFxdErzFb31ohd+e27//nF+pkTu5QOXnvYm3J83y
- 5nzT7m0g8rppbzt3qaBTCZfYzeZ1R75fMf3YqG6bteDqvPqot0Hv3jwr9u9dX8G/2lh3I8+X
- 17OD7eeH7rtlXHrqS9L0ngmNvteSXrk+unNNU+fqi+iHs5VYijMSDbWYi4oTAeNzFvoFBAAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrDIsWRmVeSWpSXmKPExsWy7bCSvK5XU2eswf91PBaHjm1lt/h6+hSj
- xbJLRxktpu/dxGZx/vwGdouzTW/YLW41yFisuPuR1WLT42usFl2/VjJbfO49wmhxbcVEVovP
- Gx4zWtxuXMFmsfrcQTaLrkN/2Sw2fvVwEPR4f6OV3WN2w0UWjwWbSj02repk87hzbQ+bx+Yl
- 9R4b3+1g8jj4bg+Tx6/Doh59W1YxenzeJBfAHcVlk5Kak1mWWqRvl8CV8eb+QaaCZ4IVK7ct
- YmlgfMXXxcjJISFgIrHo0F6WLkYuDiGB3YwSE3bPYoRISEpMu3iUuYuRA8gWljh8uBii5i2j
- xPqLPUwgNcICkRJHD61gA7FFBNYySsw57wBSxCzQyyLRdHAFO0THI0aJ5vWX2UGq2AS0JPa/
- uAHWwS+gKHH1x2OwbbwCdhKTr0xgAbFZBFQlrv85DlYvKhAhcXjHLKgaQYmTM5+A1XAKxEnM
- OnQP7ApmAXWJP/MuMUPY4hK3nsyHistLNG+dzTyBUXgWkvZZSFpmIWmZhaRlASPLKkbJ1ILi
- 3PTcYsMCw7zUcr3ixNzi0rx0veT83E2M4DjX0tzBeHlJ/CFGAQ5GJR7egh0dsUKsiWXFlbmH
- GCU4mJVEeDdptcUK8aYkVlalFuXHF5XmpBYfYpTmYFES532adyxSSCA9sSQ1OzW1ILUIJsvE
- wSnVwCjD/qFytXmkyMek48q1mXEPNmhqnT34dN9tte5rYWHnlz1O2LmiJJW1lZ1TS0ag4cvk
- 1i1ContmLLOaETi5KMNEvMVTMdpK/cXRptoJ1j9XvP0j6uN/ZMORezumBXjPWB96dpKLR4fK
- BqEzcc5G/04/eq66KOtAmuOdK5cy6r9yfMve3H5BhU2JpTgj0VCLuag4EQC6Ihyr7wIAAA==
-X-CMS-MailID: 20190924024114epcas1p1c2c0b2a843625f9d2351d64dec20804e
-X-Msg-Generator: CA
-X-Sendblock-Type: SVC_REQ_APPROVE
-CMS-TYPE: 101P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20190923211043epcas1p1dace897328bf65fef5a620067548789c
-References: <cover.1569272883.git.leonard.crestez@nxp.com>
- <CGME20190923211043epcas1p1dace897328bf65fef5a620067548789c@epcas1p1.samsung.com>
- <06523b8ebc7006e13d92032c2e8494d2a919deac.1569272883.git.leonard.crestez@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_194122_356822_A2C64900 
-X-CRM114-Status: GOOD (  24.43  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190923_194830_872679_C05AF763 
+X-CRM114-Status: GOOD (  15.74  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.25 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -136,7 +95,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -148,58 +106,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
- linux-pm@vger.kernel.org, Viresh Kumar <viresh.kumar@linaro.org>,
- NXP Linux Team <linux-imx@nxp.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Lukasz Luba <l.luba@partner.samsung.com>,
- Alexandre Bailon <abailon@baylibre.com>, Martin Kepplinger <martink@posteo.de>,
- Georgi Djakov <georgi.djakov@linaro.org>, linux-arm-kernel@lists.infradead.org,
- Jacky Bai <ping.bai@nxp.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ dl-linux-imx <linux-imx@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpPbiAxOS4gOS4gMjQuIOyYpOyghCA2OjEwLCBMZW9uYXJkIENyZXN0ZXogd3JvdGU6Cj4g
-UmlnaHQgbm93IGRldmZyZXFfZGV2X3JlbGVhc2Ugd2lsbCBwcmludCBhIHdhcm5pbmcgYW5kIGFi
-b3J0IHRoZSByZXN0IG9mCj4gdGhlIGNsZWFudXAgaWYgdGhlIGRldmZyZXEgaW5zdGFuY2UgaXMg
-bm90IHBhcnQgb2YgdGhlIGdsb2JhbAo+IGRldmZyZXFfbGlzdC4gQnV0IHRoaXMgaXMgYSB2YWxp
-ZCBzY2VuYXJpbywgZm9yIGV4YW1wbGUgaXQgY2FuIGhhcHBlbiBpZgo+IHRoZSBnb3Zlcm5vciBj
-YW4ndCBiZSBmb3VuZCBvciBvbiBhbnkgb3RoZXIgaW5pdCBlcnJvciB0aGF0IGhhcHBlbnMKPiBh
-ZnRlciBkZXZpY2VfcmVnaXN0ZXIuCj4gCj4gSW5pdGlhbGl6ZSBkZXZmcmVxLT5ub2RlIHRvIGFu
-IGVtcHR5IGxpc3QgaGVhZCBpbiBkZXZmcmVxX2FkZF9kZXZpY2Ugc28KPiB0aGF0IGxpc3RfZGVs
-IGJlY29tZXMgYSBzYWZlIG5vb3AgaW5zaWRlIGRldmZyZXFfZGV2X3JlbGVhc2UgYW5kIHdlIGNh
-bgo+IGNvbnRpbnVlIHRoZSByZXN0IG9mIHRoZSBjbGVhbnVwLgo+IAo+IFNpZ25lZC1vZmYtYnk6
-IExlb25hcmQgQ3Jlc3RleiA8bGVvbmFyZC5jcmVzdGV6QG54cC5jb20+Cj4gUmV2aWV3ZWQtYnk6
-IE1hdHRoaWFzIEthZWhsY2tlIDxta2FAY2hyb21pdW0ub3JnPgo+IC0tLQo+ICBkcml2ZXJzL2Rl
-dmZyZXEvZGV2ZnJlcS5jIHwgNiArLS0tLS0KPiAgMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9u
-KCspLCA1IGRlbGV0aW9ucygtKQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2RldmZyZXEvZGV2
-ZnJlcS5jIGIvZHJpdmVycy9kZXZmcmVxL2RldmZyZXEuYwo+IGluZGV4IGU5ZTZjOGYxZGM0Yi4u
-ZjViZWE3MzUwZjcyIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvZGV2ZnJlcS9kZXZmcmVxLmMKPiAr
-KysgYi9kcml2ZXJzL2RldmZyZXEvZGV2ZnJlcS5jCj4gQEAgLTU4MiwxNSArNTgyLDEwIEBAIHN0
-YXRpYyBpbnQgZGV2ZnJlcV9ub3RpZmllcl9jYWxsKHN0cnVjdCBub3RpZmllcl9ibG9jayAqbmIs
-IHVuc2lnbmVkIGxvbmcgdHlwZSwKPiAgc3RhdGljIHZvaWQgZGV2ZnJlcV9kZXZfcmVsZWFzZShz
-dHJ1Y3QgZGV2aWNlICpkZXYpCj4gIHsKPiAgCXN0cnVjdCBkZXZmcmVxICpkZXZmcmVxID0gdG9f
-ZGV2ZnJlcShkZXYpOwo+ICAKPiAgCW11dGV4X2xvY2soJmRldmZyZXFfbGlzdF9sb2NrKTsKPiAt
-CWlmIChJU19FUlIoZmluZF9kZXZpY2VfZGV2ZnJlcShkZXZmcmVxLT5kZXYucGFyZW50KSkpIHsK
-PiAtCQltdXRleF91bmxvY2soJmRldmZyZXFfbGlzdF9sb2NrKTsKPiAtCQlkZXZfd2FybigmZGV2
-ZnJlcS0+ZGV2LCAicmVsZWFzaW5nIGRldmZyZXEgd2hpY2ggZG9lc24ndCBleGlzdFxuIik7Cj4g
-LQkJcmV0dXJuOwo+IC0JfQo+ICAJbGlzdF9kZWwoJmRldmZyZXEtPm5vZGUpOwo+ICAJbXV0ZXhf
-dW5sb2NrKCZkZXZmcmVxX2xpc3RfbG9jayk7Cj4gIAo+ICAJaWYgKGRldmZyZXEtPnByb2ZpbGUt
-PmV4aXQpCj4gIAkJZGV2ZnJlcS0+cHJvZmlsZS0+ZXhpdChkZXZmcmVxLT5kZXYucGFyZW50KTsK
-PiBAQCAtNjQxLDEwICs2MzYsMTEgQEAgc3RydWN0IGRldmZyZXEgKmRldmZyZXFfYWRkX2Rldmlj
-ZShzdHJ1Y3QgZGV2aWNlICpkZXYsCj4gIAltdXRleF9pbml0KCZkZXZmcmVxLT5sb2NrKTsKPiAg
-CW11dGV4X2xvY2soJmRldmZyZXEtPmxvY2spOwo+ICAJZGV2ZnJlcS0+ZGV2LnBhcmVudCA9IGRl
-djsKPiAgCWRldmZyZXEtPmRldi5jbGFzcyA9IGRldmZyZXFfY2xhc3M7Cj4gIAlkZXZmcmVxLT5k
-ZXYucmVsZWFzZSA9IGRldmZyZXFfZGV2X3JlbGVhc2U7Cj4gKwlJTklUX0xJU1RfSEVBRCgmZGV2
-ZnJlcS0+bm9kZSk7Cj4gIAlkZXZmcmVxLT5wcm9maWxlID0gcHJvZmlsZTsKPiAgCXN0cm5jcHko
-ZGV2ZnJlcS0+Z292ZXJub3JfbmFtZSwgZ292ZXJub3JfbmFtZSwgREVWRlJFUV9OQU1FX0xFTik7
-Cj4gIAlkZXZmcmVxLT5wcmV2aW91c19mcmVxID0gcHJvZmlsZS0+aW5pdGlhbF9mcmVxOwo+ICAJ
-ZGV2ZnJlcS0+bGFzdF9zdGF0dXMuY3VycmVudF9mcmVxdWVuY3kgPSBwcm9maWxlLT5pbml0aWFs
-X2ZyZXE7Cj4gIAlkZXZmcmVxLT5kYXRhID0gZGF0YTsKPiAKCkl0J3MgcmVhc29uYWJsZS4gVGhh
-bmtzLgpSZXZpZXdlZC1ieTogQ2hhbndvbyBDaG9pIDxjdzAwLmNob2lAc2Ftc3VuZy5jb20+CgoK
-LS0gCkJlc3QgUmVnYXJkcywKQ2hhbndvbyBDaG9pClNhbXN1bmcgRWxlY3Ryb25pY3MKCl9fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJu
-ZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi Peng,
+
+On 9/23/2019 6:14 PM, Peng Fan wrote:
+> From: Peng Fan <peng.fan@nxp.com>
+> 
+> This mailbox driver implements a mailbox which signals transmitted data
+> via an ARM smc (secure monitor call) instruction. The mailbox receiver
+> is implemented in firmware and can synchronously return data when it
+> returns execution to the non-secure world again.
+> An asynchronous receive path is not implemented.
+> This allows the usage of a mailbox to trigger firmware actions on SoCs
+> which either don't have a separate management processor or on which such
+> a core is not available. A user of this mailbox could be the SCP
+> interface.
+> 
+> Modified from Andre Przywara's v2 patch
+> https://lore.kernel.org/patchwork/patch/812999/
+> 
+> Cc: Andre Przywara <andre.przywara@arm.com>
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> ---
+
+[snip]
+
+> +typedef unsigned long (smc_mbox_fn)(unsigned int, unsigned long,
+> +				    unsigned long, unsigned long,
+> +				    unsigned long, unsigned long,
+> +				    unsigned long);
+> +static smc_mbox_fn *invoke_smc_mbox_fn;
+
+Sorry for spotting this so late, the only thing that concerns me here
+with this singleton is if we happen to have both an arm,smc-mbox and
+arm,hvc-mbox configured in the system, this would not work. I do not
+believe this could be a functional use case, but we should probably
+guard against that or better yet, move that into the arm_smc_chan_data
+private structure?
+-- 
+Florian
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
