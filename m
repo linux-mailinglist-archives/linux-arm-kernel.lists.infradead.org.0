@@ -2,54 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F36CBC637
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 13:07:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C084BC685
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 13:19:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/ucaeiVpPeAvGlbcGPWkx/A5EPCSvZ5IWl/9a1HHQWU=; b=Vu2apYUzVI9a4G
-	s9Xv5qgcaQ6iwHu0WnC2vCB0b8HrQ+NMzTrQWKTujLhJyd+L6urdf7pj547I0f/t5jBMuWAZpEb8v
-	97LPfLQy7RO9QLzuIECkAEoXD3E6QS5sSwbv1RhTGyzlhsClRcxolSUsYCNSU7Q/+4YCVv91t+Bz8
-	pHA9kUvE/fqxspRRRLoXMlTJa2OYCPPhUL78uAQcgipqT8aIEc9RpFIrvGueP/2fcTD9Ukx7jrI5N
-	YrBe+LPQgaI26KFQwRRgH11pc9fv2OQhbpZUYYEb26/KkUHSgaT8pwG+nvTq/tRksni4hu16Apb4P
-	WYN43TZRmrI2L+CStaRw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=zsG7v4SvmfRgVXE958i2tp/rIFi6eT5HUgFMvk3mfq0=; b=TJn
+	ua68exEldZ3UcRa8ClX00ITzpXLRPX+FSRZV074z/9/KbxIDT9aKGj80PWZj9U1hvVGh4z0OfqrmC
+	eh16Ji0b4cZbw5Z/HSSk3iaaKgvrYr8+eS8HK9PnUAYovYtdVtMeveFOwe5Z8MxnMz4RFFTVcNeql
+	MG/BYzhk2m7OPOIykWsaetJO2sQkHoaxye/B728taVJzfKRb68lN21VeTBsWeESmeqKlvZYbTQ7FK
+	HJbA+kIA5WLOVXUvvE3DUCgT7nFpHTpMCRBPTD05CKI1nWiMXhSl41WNCYJSwxa3XGejhpud5iklA
+	LVe44f2VJBfrDOgL5TsThPpb3gt0Y3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCiet-0008Ja-IJ; Tue, 24 Sep 2019 11:07:03 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iCiqe-0004kM-86; Tue, 24 Sep 2019 11:19:12 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCieb-0008JB-Ma
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 11:06:47 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 32D60AE39;
- Tue, 24 Sep 2019 11:06:40 +0000 (UTC)
-Date: Tue, 24 Sep 2019 13:06:39 +0200
-From: Petr Tesarik <ptesarik@suse.cz>
-To: Sergey Brutyan <sergey_brutyan@ehayq.am>
-Subject: Re: ARM core blob list
-Message-ID: <20190924130639.5485a21a@ezekiel.suse.cz>
-In-Reply-To: <214b72fe-3162-6c7b-dd6a-ddba9e5851ce@gmx.net>
-References: <7c52fab5-825a-b019-ec46-6fb731336cfe@ehayq.am>
- <214b72fe-3162-6c7b-dd6a-ddba9e5851ce@gmx.net>
-Organization: SUSE Linux, s.r.o.
-X-Mailer: Claws Mail 3.16.0 (GTK+ 2.24.32; x86_64-suse-linux-gnu)
-MIME-Version: 1.0
+ id 1iCiqQ-0004jf-7M
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 11:18:59 +0000
+Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BBA3A20872;
+ Tue, 24 Sep 2019 11:18:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1569323936;
+ bh=tFkdaGeZtd91YFNsc/Pa5qegXdqG8lH//NYPnIEFC0E=;
+ h=From:To:Cc:Subject:Date:From;
+ b=JYJhhKII+1lGyJPnOcRgDW0y3p7vpBNb6VukZh4HmqfEZv59sbB4CQRgeEcnVMP9I
+ Bo6SwQy6R603X31CvMg/QZo1oDPMOKhAi6jAGVVX77srXHsEVIeitfRvXmQWz7MlG0
+ wCAudZ2K8f4Y7Na0+qyumGF3G2NvnpjwSZUuHfME=
+From: Mike Rapoport <rppt@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH v2] arm64: use generic free_initrd_mem()
+Date: Tue, 24 Sep 2019 14:18:48 +0300
+Message-Id: <1569323928-10154-1-git-send-email-rppt@kernel.org>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_040645_884409_EB1CA46C 
-X-CRM114-Status: GOOD (  14.91  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190924_041858_286551_69111C90 
+X-CRM114-Status: GOOD (  11.05  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,51 +73,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <wahrenst@gmx.net>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mike Rapoport <rppt@linux.ibm.com>, Laura Abbott <labbott@redhat.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Anshuman Khandual <anshuman.khandual@arm.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCAyMCBTZXAgMjAxOSAxODozNjo1MCArMDIwMApTdGVmYW4gV2FocmVuIDx3YWhyZW5z
-dEBnbXgubmV0PiB3cm90ZToKCj4gSGkgU2VyZ2V5LAo+IAo+IEFtIDIwLjA5LjE5IHVtIDEyOjE1
-IHNjaHJpZWIgU2VyZ2V5IEJydXR5YW46Cj5bLi4uXQo+ID4gwqDCoMKgIEJyb2FkY29tIEJDTTI4
-MzcgIAo+IAo+IGhlcmUgaXMgdGhlIGxpc3QgZm9yIExpbnV4IDUuMzoKPiAKPiBjcHVmcmVxL3Jh
-c3BiZXJyeXBpLWNwdWZyZXEuYwo+IGdwaW8vZ3Bpby1yYXNwYmVycnlwaS1leHAuYwo+IGNsay9i
-Y20vY2xrLXJhc3BiZXJyeXBpLmMKPiBzdGFnaW5nL3ZjMDRfc2VydmljZXMvYmNtMjgzNS1hdWRp
-by9iY20yODM1LXBjbS5jCj4gc3RhZ2luZy92YzA0X3NlcnZpY2VzL2ludGVyZmFjZS92Y2hpcV9h
-cm0vdmNoaXFfYXJtLmMKPiBzdGFnaW5nL3ZjMDRfc2VydmljZXMvYmNtMjgzNS1jYW1lcmEvbW1h
-bC12Y2hpcS5jCj4gZmlybXdhcmUvcmFzcGJlcnJ5cGkuYwo+IGh3bW9uL3Jhc3BiZXJyeXBpLWh3
-bW9uLmMKPiBzb2MvYmNtL3Jhc3BiZXJyeXBpLXBvd2VyLmMgKCopCj4gCj4gKCopIFRoZXJlIGlz
-IGFscmVhZHkgYSBibG9iLWZyZWUgZHJpdmVyIGNhbGxlZCBzb2MvYmNtL2JjbTI4MzUtcG93ZXIu
-YywKPiBidXQgaXQgc3RpbGwgbmVlZHMgaW1wcm92ZW1lbnRzLgo+IAo+IFNpbmNlIHRoZSBBUk0g
-Y29yZXMgZG9lc24ndCBoYXZlIGZ1bGwgYWNjZXNzLCBpdCBtYXkgbm90IHBvc3NpYmxlIHRvCj4g
-cmVwbGFjZSBhbGwgdGhlc2UgZHJpdmVycy4gQW4gYWx0ZXJuYXRpdmUgYXBwcm9hY2ggZm9yIGJs
-b2ItZnJlZW5lc3Mgb24KPiBCQ00yODM3IHdvdWxkIGJlIGFuIG9wZW4gVkM0IGZpcm13YXJlIFsx
-XS4KPiAKPiBbMV0gLSBodHRwczovL2dpdGh1Yi5jb20vY2hyaXN0aW5hYS9ycGktb3Blbi1maXJt
-d2FyZQoKVGhpcyBwcm9qZWN0IGhhcyBiZWVuIG9uIGhvbGQuIE5vdGUgdGhhdCB0aGUgVkM0IHBs
-YXRmb3JtIGl0c2VsZiBpcwpyZXZlcnNlLWVuZ2luZWVyZWQsIGFuZCB0aGVyZSBpcyBubyBvZmZp
-Y2lhbCBzdXBwb3J0IGluIGJpbnV0aWxzIGFuZApnY2MsIGFsdGhvdWdoIGl0IG1pZ2h0IGJlIHBv
-c3NpYmxlIHRvIHJlYmFzZSB0aGUgZXhpc3RpbmcgY29kZSBvbiBhCm1vcmUgY3VycmVudCB2ZXJz
-aW9uLgoKQW5vdGhlciBjYXZlYXQgaXMgdGhhdCB0aGUgYWJvdmUgZmlybXdhcmUgcHJvamVjdCB3
-YXMgbWVhbnQgdG8gYmUKbG9hZGVkIGRpcmVjdGx5IGJ5IHRoZSBST00gY29kZSwgaS5lLiBpdCB3
-b3VsZCByZXBsYWNlIGJvb3Rjb2RlLmJpbiBvbgphIFJQaTMuIFdpdGggUlBpNCwgdGhpcyBjb2Rl
-IGhhcyBtb3ZlZCBpbnRvIHRoZSBFRVBST00gYW5kIHJlcXVpcmVzIGEKc2lnbmF0dXJlLCBvdGhl
-cndpc2UgdGhlIFJPTSBjb2RlIHdpbGwgcmVmdXNlIHRvIHJ1biBpdC4KCkFGQUlDVCBpdCBzaG91
-bGQgYmUgcG9zc2libGUgdG8gYnVpbGQgdGhlIG9wZW4gZmlybXdhcmUgYXMgc3RhcnQuZWxmIG9y
-CnN0YXJ0NC5lbGYsIHdoaWNoIG5lZWQgbm90IGJlIHNpZ25lZC4KCklmIHlvdSdyZSBzdGlsbCBp
-bnRlcmVzdGVkLCBmZWVsIGZyZWUgdG8gY29udGFjdCBtZS4KCkdvb2QgbHVjayEKUGV0ciBUCgo+
-IEdvb2QgbHVjawo+IAo+IFN0ZWZhbgo+IAo+ID4gwqDCoMKgIFJlYWx0ZWsgUlREMTM5NQo+ID4g
-wqDCoMKgIE1lZGlhVGVrIE1UNzYyM04KPiA+Cj4gPgo+ID4gQW5kIGFsc28gcGxlYXNlIG9mZmVy
-IHVzIHdoaWNoIGlzIHRoZSBiZXN0IFNvQyBmb3IgYmxvYi1mcmVlIGxpbnV4Cj4gPiBkZXZlbG9w
-bWVudC4KPiA+Cj4gPiBCZXN0IHJlZ2FyZHMuIFNlcmdleS4KPiA+Cj4gPgo+ID4gX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiA+IGxpbnV4LWFybS1rZXJu
-ZWwgbWFpbGluZyBsaXN0Cj4gPiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
-PiA+IGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
-LWtlcm5lbCAgCj4gCj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX18KPiBsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAo+IGxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwo+IGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
-bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+From: Mike Rapoport <rppt@linux.ibm.com>
+
+arm64 calls memblock_free() for the initrd area in its implementation of
+free_initrd_mem(), but this call has no actual effect that late in the boot
+process. By the time initrd is freed, all the reserved memory is managed by
+the page allocator and the memblock.reserved is unused, so the only purpose
+of the memblock_free() call is to keep track of initrd memory for debugging
+and accounting.
+
+Without the memblock_free() call the only difference between arm64 and the
+generic versions of free_initrd_mem() is the memory poisoning.
+
+Move memblock_free() call to the generic code, enable it there
+for the architectures that define ARCH_KEEP_MEMBLOCK and use the generic
+implementation of free_initrd_mem() on arm64.
+
+Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
+---
+
+v2 changes:
+* add memblock_free() to the generic free_initrd_mem()
+* rebase on the current upstream
+
+ arch/arm64/mm/init.c | 12 ------------
+ init/initramfs.c     |  4 ++++
+ 2 files changed, 4 insertions(+), 12 deletions(-)
+
+diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+index 45c00a5..87a0e3b 100644
+--- a/arch/arm64/mm/init.c
++++ b/arch/arm64/mm/init.c
+@@ -580,18 +580,6 @@ void free_initmem(void)
+ 	unmap_kernel_range((u64)__init_begin, (u64)(__init_end - __init_begin));
+ }
+ 
+-#ifdef CONFIG_BLK_DEV_INITRD
+-void __init free_initrd_mem(unsigned long start, unsigned long end)
+-{
+-	unsigned long aligned_start, aligned_end;
+-
+-	aligned_start = __virt_to_phys(start) & PAGE_MASK;
+-	aligned_end = PAGE_ALIGN(__virt_to_phys(end));
+-	memblock_free(aligned_start, aligned_end - aligned_start);
+-	free_reserved_area((void *)start, (void *)end, 0, "initrd");
+-}
+-#endif
+-
+ /*
+  * Dump out memory limit information on panic.
+  */
+diff --git a/init/initramfs.c b/init/initramfs.c
+index c47dad0..403c6a0 100644
+--- a/init/initramfs.c
++++ b/init/initramfs.c
+@@ -531,6 +531,10 @@ void __weak free_initrd_mem(unsigned long start, unsigned long end)
+ {
+ 	free_reserved_area((void *)start, (void *)end, POISON_FREE_INITMEM,
+ 			"initrd");
++
++#ifdef CONFIG_ARCH_KEEP_MEMBLOCK
++	memblock_free(__virt_to_phys(start), end - start);
++#endif
+ }
+ 
+ #ifdef CONFIG_KEXEC_CORE
+-- 
+2.7.4
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
