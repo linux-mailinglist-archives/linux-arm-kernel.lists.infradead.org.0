@@ -2,70 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48185BD374
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 22:20:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB314BD386
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 22:26:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MDzBeHXWCawK+mfdxCnx+bOC5n6DOaPJQoXcWPM3sDE=; b=dg9VJ5Icz5d8m8
-	lvc/LB2yYFlGxQG3qh30SlWWO5Opdi2dLUsm9Ezvws6Gx8Prf3qUF3uvtl9BYdRIdZjjC4PLM0QLk
-	FB2Mu5/KKFjrKL1ykF6FLvUj6hF4yjyrGmkfexVv6U1b4fTYtOx22KGLzGNepStDRLG29eBDhU+M+
-	x3f/fAeYgg8yyHdZ9Gw9YvA27VAfVRhFZAQF4pH3+mvr+cDx7WJp79QgWb+ABk1KtL+vKi+c/K5es
-	QoJQH/i0dWa+juaKqlLXQ+7/7RsNKh3D4oFFY+DkIhIu18Xz8CnPvxaGcb2vk1sjhdDk7y6JkqnTS
-	Ylah06mJVOiehCq5P9xg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=UvmU4Gc9SrkBII3evsY6iOoAY5w7bX5Qm1S5jGYxnYo=; b=I6QNHAE+E3zWMxLTFIbflFcgA4
+	3sh/SYFG9zbFdM6K0V/Gwkw/wHqmRALOeXFsdMryifRjP8F9SB8UQD7mm8hH2mP8raNKAn1Re/naP
+	zcGTA9ddglV0RXQFLwn7H1sR/bkdCoDAX/apEJfu7OIWrQv19jlxm1dUNxo0PNk2bfOJUn69/LZhR
+	Tkk+J40yMnPFwcLH6mHAmKp12ZyVTZn3Qggxkr46vCAlAwAToeUYWC4yzYabAVY73l3KtF9j11v+x
+	MlPuBqpw/6bqNot96VSSprdrV4pSBl/67Moxyx4yFENSWZeWPt7btVo6TJXOG5Yyq7bZShKr+BJuC
+	a25w5Xwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCrIT-0003E6-Bf; Tue, 24 Sep 2019 20:20:29 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iCrOL-00051A-Qq; Tue, 24 Sep 2019 20:26:34 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCrIG-0003Dg-Pu
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 20:20:18 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EFEBF20640;
- Tue, 24 Sep 2019 20:20:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569356416;
- bh=1CorAmS8XtFV4yXtNftl8NnpMjYiQ/U6EHGYysnVmmQ=;
- h=In-Reply-To:References:Cc:To:From:Subject:Date:From;
- b=T3Vd7fmkABMggKs4QJTa2QS19/Mp7JeXBuGWJlrfj3AFrKdWzVDNxkS27ltN080+7
- PForK+42VCuwL8nN5QWwd2rPhWVhehGEznqoSpWz83fT9hZnFIx4GKMAy5tJp/gpMe
- MuKGeKUfk4UUuysJNCgXkDzyWtCaFhrUZebjkbOI=
+ id 1iCrO8-00050l-AK; Tue, 24 Sep 2019 20:26:21 +0000
+Received: from pps.filterd (m0098394.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x8OKMnQm018744; Tue, 24 Sep 2019 16:25:40 -0400
+Received: from ppma04wdc.us.ibm.com (1a.90.2fa9.ip4.static.sl-reverse.com
+ [169.47.144.26])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2v7qx052qj-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 24 Sep 2019 16:25:40 -0400
+Received: from pps.filterd (ppma04wdc.us.ibm.com [127.0.0.1])
+ by ppma04wdc.us.ibm.com (8.16.0.27/8.16.0.27) with SMTP id x8OKPCJl024377;
+ Tue, 24 Sep 2019 20:25:38 GMT
+Received: from b03cxnp08026.gho.boulder.ibm.com
+ (b03cxnp08026.gho.boulder.ibm.com [9.17.130.18])
+ by ppma04wdc.us.ibm.com with ESMTP id 2v5bg77kp5-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 24 Sep 2019 20:25:38 +0000
+Received: from b03ledav006.gho.boulder.ibm.com
+ (b03ledav006.gho.boulder.ibm.com [9.17.130.237])
+ by b03cxnp08026.gho.boulder.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x8OKPbxO58261872
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 24 Sep 2019 20:25:38 GMT
+Received: from b03ledav006.gho.boulder.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id DD1B3C6057;
+ Tue, 24 Sep 2019 20:25:37 +0000 (GMT)
+Received: from b03ledav006.gho.boulder.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 3D1DCC6055;
+ Tue, 24 Sep 2019 20:25:33 +0000 (GMT)
+Received: from morokweng.localdomain (unknown [9.85.203.235])
+ by b03ledav006.gho.boulder.ibm.com (Postfix) with ESMTPS;
+ Tue, 24 Sep 2019 20:25:32 +0000 (GMT)
+References: <20190913225009.3406-1-prsriva@linux.microsoft.com>
+ <20190913225009.3406-2-prsriva@linux.microsoft.com>
+ <87zhiz1x9l.fsf@morokweng.localdomain>
+ <02234482-b095-e064-f4d6-1c6255a4ff9f@linux.microsoft.com>
+User-agent: mu4e 1.2.0; emacs 26.2
+From: Thiago Jung Bauermann <bauerman@linux.ibm.com>
+To: prsriva <prsriva@linux.microsoft.com>
+Subject: Re: [RFC PATCH v1 1/1] Add support for arm64 to carry ima measurement
+ log in kexec_file_load
+In-reply-to: <02234482-b095-e064-f4d6-1c6255a4ff9f@linux.microsoft.com>
+Date: Tue, 24 Sep 2019 17:25:30 -0300
+Message-ID: <87zhit5tmt.fsf@morokweng.localdomain>
 MIME-Version: 1.0
-In-Reply-To: <20190924122147.fojcu5u44letrele@pengutronix.de>
-References: <20190920153906.20887-1-alexandre.belloni@bootlin.com>
- <20190924122147.fojcu5u44letrele@pengutronix.de>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- <u.kleine-koenig@pengutronix.de>
-From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH] clk: at91: avoid sleeping early
-User-Agent: alot/0.8.1
-Date: Tue, 24 Sep 2019 13:20:15 -0700
-Message-Id: <20190924202015.EFEBF20640@mail.kernel.org>
+X-TM-AS-GCONF: 00
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-09-24_07:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1908290000 definitions=main-1909240166
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_132016_866640_500FA96B 
+X-CRM114-CacheID: sfid-20190924_132620_364811_9C488A22 
 X-CRM114-Status: GOOD (  15.10  )
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.156.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,62 +99,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Claudiu Beznea <claudiu.beznea@microchip.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, jean-philippe@linaro.org, arnd@arndb.de,
+ yamada.masahiro@socionext.com, sboyd@kernel.org, catalin.marinas@arm.com,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org, zohar@linux.ibm.com,
+ takahiro.akashi@linaro.org, kristina.martsenko@arm.org, duwe@lst.de,
+ linux-arm-kernel@lists.infradead.org, james.morse@arm.org,
+ linux-integrity@vger.kernel.org, tglx@linutronix.de, allison@lohutok.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Uwe  (2019-09-24 05:21:47)
-> On Fri, Sep 20, 2019 at 05:39:06PM +0200, Alexandre Belloni wrote:
-> > Note that this was already discussed a while ago and Arnd said this approach was
-> > reasonable:
-> >   https://lore.kernel.org/lkml/6120818.MyeJZ74hYa@wuerfel/
-> > 
-> >  drivers/clk/at91/clk-main.c |  5 ++++-
-> >  drivers/clk/at91/sckc.c     | 20 ++++++++++++++++----
-> >  2 files changed, 20 insertions(+), 5 deletions(-)
-> > 
-> > diff --git a/drivers/clk/at91/clk-main.c b/drivers/clk/at91/clk-main.c
-> > index f607ee702c83..ccd48e7a3d74 100644
-> > --- a/drivers/clk/at91/clk-main.c
-> > +++ b/drivers/clk/at91/clk-main.c
-> > @@ -293,7 +293,10 @@ static int clk_main_probe_frequency(struct regmap *regmap)
-> >               regmap_read(regmap, AT91_CKGR_MCFR, &mcfr);
-> >               if (mcfr & AT91_PMC_MAINRDY)
-> >                       return 0;
-> > -             usleep_range(MAINF_LOOP_MIN_WAIT, MAINF_LOOP_MAX_WAIT);
-> > +             if (system_state < SYSTEM_RUNNING)
-> > +                     udelay(MAINF_LOOP_MIN_WAIT);
-> > +             else
-> > +                     usleep_range(MAINF_LOOP_MIN_WAIT, MAINF_LOOP_MAX_WAIT);
-> 
-> Given that this construct is introduced several times, I wonder if we
-> want something like:
-> 
->         static inline void early_usleep_range(unsigned long min, unsigned long max)
->         {
->                 if (system_state < SYSTEM_RUNNING)
->                         udelay(min);
->                 else
->                         usleep_range(min, max);
->         }
-> 
 
-Maybe, but I think the intent is to not encourage this behavior? So
-providing a wrapper will make it "easy" and then we'll have to tell
-users to stop calling it. Another idea would be to make usleep_range()
-"do the right thing" and call udelay if the system isn't running. And
-another idea from tlgx[1] is to pull the delay logic into another clk op
-that we can call to see when the enable or prepare is done. That may be
-possible by introducing another clk_ops callback that when present
-indicates we should sleep or delay for so much time while waiting for
-the prepare or enable to complete.
+Hello,
 
-[1] https://lkml.kernel.org/r/alpine.DEB.2.11.1606061448010.28031@nanos
+prsriva <prsriva@linux.microsoft.com> writes:
 
+> On 9/19/19 8:07 PM, Thiago Jung Bauermann wrote:
+>> Hello Prakhar,
+>>
+>> Prakhar Srivastava <prsriva@linux.microsoft.com> writes:
+>>
+>>> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+>>> index 3adcec05b1f6..f39b12dbf9e8 100644
+>>> --- a/arch/arm64/Kconfig
+>>> +++ b/arch/arm64/Kconfig
+>>> @@ -976,6 +976,13 @@ config KEXEC_VERIFY_SIG
+>>>   	  verification for the corresponding kernel image type being
+>>>   	  loaded in order for this to work.
+>>>
+>>> +config HAVE_IMA_KEXEC
+>>> +	bool "Carry over IMA measurement log during kexec_file_load() syscall"
+>>> +	depends on KEXEC_FILE
+>>> +	help
+>>> +	  Select this option to carry over IMA measurement log during
+>>> +	  kexec_file_load.
+>>> +
+>>>   config KEXEC_IMAGE_VERIFY_SIG
+>>>   	bool "Enable Image signature verification support"
+>>>   	default y
+>> This is not right. As it stands, HAVE_IMA_KEXEC is essentially a synonym
+>> for IMA_KEXEC.
+>>
+>> It's not meant to be user-visible in the config process. Instead, it's
+>> meant to be selected by the arch Kconfig (probably by the ARM64 config
+>> symbol) to signal to IMA's Kconfig that it can offer the IMA_KEXEC
+>> option.
+>>
+>> I also mentioned in my previous review that config HAVE_IMA_KEXEC should
+>> be defined in arch/Kconfig, not separately in both arch/arm64/Kconfig
+>> and arch/powerpc/Kconfig.
+>
+> I see the entry exists in arch/Kconfig and is overwritten.
+> I will remove entries both from powerpc and arm64.
+>
+> How do i cross-compile for powerpc?
+
+There are some instructions here:
+
+https://github.com/linuxppc/wiki/wiki/Building-powerpc-kernels
+
+>>> diff --git a/arch/arm64/include/asm/ima.h b/arch/arm64/include/asm/ima.h
+>>> new file mode 100644
+>>> index 000000000000..e23cee84729f
+>>> --- /dev/null
+>>> +++ b/arch/arm64/include/asm/ima.h
+>>> @@ -0,0 +1,29 @@
+>>> +/* SPDX-License-Identifier: GPL-2.0 */
+>>> +#ifndef _ASM_ARM64_IMA_H
+>>> +#define _ASM_ARM64_IMA_H
+>>> +
+>>> +struct kimage;
+>>> +
+>>> +int ima_get_kexec_buffer(void **addr, size_t *size);
+>>> +int ima_free_kexec_buffer(void);
+>>> +
+>>> +#ifdef CONFIG_IMA
+>>> +void remove_ima_buffer(void *fdt, int chosen_node);
+>>> +#else
+>>> +static inline void remove_ima_buffer(void *fdt, int chosen_node) {}
+>>> +#endif
+>> I mentioned in my previous review that remove_ima_buffer() should exist
+>> even if CONFIG_IMA isn't set. Did you arrive at a different conclusion?
+>
+> I made the needed changed in makefile, missed removing the
+>
+> configs here. Thanks for pointing this out.
+
+Thanks.
+
+-- 
+Thiago Jung Bauermann
+IBM Linux Technology Center
 
 _______________________________________________
 linux-arm-kernel mailing list
