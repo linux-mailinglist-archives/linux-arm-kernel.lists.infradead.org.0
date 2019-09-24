@@ -2,95 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 011F8BD087
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 19:23:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2C53BD099
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 19:28:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=zGRw7Wvc807B1DNO7dMsZ72dqNCfziPdti5TTrF56WQ=; b=aGPZDL+k8cjz1qlOZy1JOTBBA
-	m8n3mthC9XY56RIj8vCEubcO9CnQ83qel3UBGOXgPwPdx1V4NSQwaMydHwgx5mHG9YfeB6+v303Pk
-	x31dlRenYjGTohHUEZSjKwOnR228dL4kntLBL0BT4iLuU++wnc+ZlCPIt4Uo3tw7xs8PFWgIUj+oC
-	CQYy4+fk0dMfhN0/+MfckMJau48HaIKQRd6RW1ZfoCpHM9uspLgTAr2OnfndW8U3i3j2iHTijeMx8
-	12ltJZUW2uJ0LbjGAy7eC2TeWEpvGWeOYeUWctLpcJd9YVx1xW/SbQVeepRzLJJoCo3l671hYdvE0
-	RemF/GIpw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1NDTc4W595AHUCg5cZya2EKwjU7GRFKAAEp702L8vwo=; b=bZOGalELvbIrQy
+	SpVKwCuAXui76kcO35zTJ13Nplge3/d1ClsM+UwsYLqUiOp60JKK0KnlsZojfEce0ocl1OatZseyC
+	xF7Wb6cxo9ydocKOT54VEw9+w9ZArNW+/hcgBwlofvFoxTNDoGlo4SXw2caM1El0wKyQZf+iIerda
+	wN3vq7XV/85C+ehuUWR98LgBcM1BH5WVyfBMwY0NaZsCAY0RoX0Yv7j3DhM5YzDSjblizhJnzuw5l
+	fpM+XkmdpFACT9iyGyvt+C03DDTnNUQ8byNCq9DL+/ug9zoHHdjU7Gt3JJTZ0J/BXgf9ZHRRrYIHy
+	h8sMjZCSAjzil2hkSN7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCoXM-00032N-70; Tue, 24 Sep 2019 17:23:40 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iCocM-0004iL-1Z; Tue, 24 Sep 2019 17:28:50 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCoX3-000323-En
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 17:23:22 +0000
-Received: by mail-wr1-x442.google.com with SMTP id l11so2853613wrx.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Sep 2019 10:23:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=zojDqhIDCVa616KN7v7PXKcR+n3TBwC2cffseILAS8Y=;
- b=V0acmw1iJ5RBkC5LpIbyw+IvcVgmzKokEwS7utek9s8pSqnOYmD545QAUQGVet8zNs
- 6g+6V8Fds7Z2wu0dO4BufUP+UOAGIL5yk4vrfRXCNmXsuyHxPP8WbCyx5R3z53xAty0z
- E/A+HJ2vV6CvIFmfp9xG8Cc/0FAt/2AGAr2dM=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=zojDqhIDCVa616KN7v7PXKcR+n3TBwC2cffseILAS8Y=;
- b=J8SeI7N2slHThmHAaXJAghc8YPBdl84D32M62WnYWE2jhIi6kqt35Z/t8mJCJ+IBZZ
- 7yKRRTPrUPRckh0YpYuneqSToJQp29ttRG24T0bHMxb/jQMGV+hD62lnEpIwBS+eYbBq
- v+1xvj5MiWvQXiMqWSn/8aaRK/FybzynOKAILTJ0pkVuHIlbOm80rN1bNK0uwbpDOtyD
- +2x2hIaUDSRsTJUnAjKJqgDDB/RwSzzgybcPv+xrWRbXzqaVxYjs+EXD4NldJH5IcNXz
- AHLxh3a2vfxH0FTYIEAWHuqymjOZpzBLNJoVzvIOvhsjgA8M2qugOLSL5nKpj06F1G3p
- Q35Q==
-X-Gm-Message-State: APjAAAW0QSZDJvpkJ3PmJ+dTY8wZvbwQx/Jn0bwzTcL5m48nHO2BaRrT
- uH5nzMnIA4Vm1+N4SkZk0WzUuw==
-X-Google-Smtp-Source: APXvYqzr1eNgy01G5ZmPie1GWfVJKyFXlGRTrtigOTJblOF8z3EvSnaXA/4EHakD7hQmv1T23Zruag==
-X-Received: by 2002:a5d:6951:: with SMTP id r17mr3365604wrw.208.1569345798765; 
- Tue, 24 Sep 2019 10:23:18 -0700 (PDT)
-Received: from rj-aorus.ric.broadcom.com ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id o12sm4269440wrm.23.2019.09.24.10.23.14
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 24 Sep 2019 10:23:18 -0700 (PDT)
-Subject: Re: [PATCH v1 1/1] i2c: iproc: Add i2c repeated start capability
-To: Wolfram Sang <wsa@the-dreams.de>
-References: <1565150941-27297-1-git-send-email-rayagonda.kokatanur@broadcom.com>
- <20190830125626.GC2870@ninjato>
- <3e70fa7e-de13-4edd-2e17-b7c56e91d220@broadcom.com>
- <20190831094940.GA1138@kunai>
- <540c4e2d-0dd5-5260-30b2-e1589b279d71@broadcom.com>
- <20190904213745.GG23608@ninjato>
-From: Ray Jui <ray.jui@broadcom.com>
-Message-ID: <5ab79d0e-eb54-8fe1-1ca3-e763a17c6426@broadcom.com>
-Date: Tue, 24 Sep 2019 10:23:12 -0700
+ id 1iCoc7-0004gV-3i
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 17:28:37 +0000
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 2544E85362;
+ Tue, 24 Sep 2019 17:28:33 +0000 (UTC)
+Received: from [10.36.116.245] (ovpn-116-245.ams2.redhat.com [10.36.116.245])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 9A88619C58;
+ Tue, 24 Sep 2019 17:28:20 +0000 (UTC)
+Subject: Re: [PATCH v10 0/6] mm / virtio: Provide support for unused page
+ reporting
+To: Alexander Duyck <alexander.duyck@gmail.com>
+References: <20190918175109.23474.67039.stgit@localhost.localdomain>
+ <20190924142342.GX23050@dhcp22.suse.cz>
+ <d2a7acdd-3bb9-05c9-42d0-70a500801cd6@redhat.com>
+ <CAKgT0UedoNBk3cp64SpCzXJqjtqBWZQSB7QzF7R_jhTDXbzNPg@mail.gmail.com>
+From: David Hildenbrand <david@redhat.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
+ 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
+ SE+xAvmumFBY
+Organization: Red Hat GmbH
+Message-ID: <2fc579f6-9096-4162-9980-1f7f22c5f4ae@redhat.com>
+Date: Tue, 24 Sep 2019 19:28:19 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190904213745.GG23608@ninjato>
+In-Reply-To: <CAKgT0UedoNBk3cp64SpCzXJqjtqBWZQSB7QzF7R_jhTDXbzNPg@mail.gmail.com>
 Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.25]); Tue, 24 Sep 2019 17:28:33 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_102321_502722_AA3F022E 
-X-CRM114-Status: GOOD (  18.00  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190924_102835_187994_E9CE14B9 
+X-CRM114-Status: GOOD (  26.47  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,69 +118,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Lori Hikichi <lori.hikichi@broadcom.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Shivaraj Shetty <sshetty1@broadcom.com>,
- Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>,
- linux-kernel@vger.kernel.org, Icarus Chau <icarus.chau@broadcom.com>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
+ kvm list <kvm@vger.kernel.org>, "Michael S. Tsirkin" <mst@redhat.com>,
+ Michal Hocko <mhocko@kernel.org>, linux-mm <linux-mm@kvack.org>,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>,
+ Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
+ Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
+ Matthew Wilcox <willy@infradead.org>, "Wang, Wei W" <wei.w.wang@intel.com>,
+ Vlastimil Babka <vbabka@suse.cz>, Rik van Riel <riel@surriel.com>,
+ Dan Williams <dan.j.williams@intel.com>, lcapitulino@redhat.com,
+ linux-arm-kernel@lists.infradead.org, Oscar Salvador <osalvador@suse.de>,
+ Nitesh Narayan Lal <nitesh@redhat.com>, Dave Hansen <dave.hansen@intel.com>,
+ LKML <linux-kernel@vger.kernel.org>, Paolo Bonzini <pbonzini@redhat.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Mel Gorman <mgorman@techsingularity.net>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Wolfram,
-
-On 9/4/19 2:37 PM, Wolfram Sang wrote:
-> 
->> I think you are right that the controller does not seem to support
->> additional I2C features in addition to SMBUS.
+On 24.09.19 19:07, Alexander Duyck wrote:
+> On Tue, Sep 24, 2019 at 8:32 AM David Hildenbrand <david@redhat.com> wrote:
 >>
->> However, my concern of switching to the smbus_xfer API is:
+>> On 24.09.19 16:23, Michal Hocko wrote:
+>>> On Wed 18-09-19 10:52:25, Alexander Duyck wrote:
+>>> [...]
+>>>> In order to try and keep the time needed to find a non-reported page to
+>>>> a minimum we maintain a "reported_boundary" pointer. This pointer is used
+>>>> by the get_unreported_pages iterator to determine at what point it should
+>>>> resume searching for non-reported pages. In order to guarantee pages do
+>>>> not get past the scan I have modified add_to_free_list_tail so that it
+>>>> will not insert pages behind the reported_boundary.
+>>>>
+>>>> If another process needs to perform a massive manipulation of the free
+>>>> list, such as compaction, it can either reset a given individual boundary
+>>>> which will push the boundary back to the list_head, or it can clear the
+>>>> bit indicating the zone is actively processing which will result in the
+>>>> reporting process resetting all of the boundaries for a given zone.
+>>>
+>>> Is this any different from the previous version? The last review
+>>> feedback (both from me and Mel) was that we are not happy to have an
+>>> externally imposed constrains on how the page allocator is supposed to
+>>> maintain its free lists.
+>>>
+>>> If this is really the only way to go forward then I would like to hear
+>>> very convincing arguments about other approaches not being feasible.
 >>
->> 1) Some customers might have used I2C_RDWR based API from i2cdev. Changing
->> from master_xfer to smbus_xfer may break the existing applications that are
->> already developed.
+>> Adding to what Alexander said, I don't consider the other approaches
+>> (especially the bitmap-based approach Nitesh is currently working on)
+>> infeasible. There might be more rough edges (e.g., sparse zones) and
+>> eventually sometimes a little more work to be done, but definitely
+>> feasible. Incorporating stuff into the buddy might make some tasks
+>> (e.g., identify free pages) more efficient.
+>>
+>> I still somewhat like the idea of capturing hints of free pages (in
+>> whatever data structure) and then going over the hints, seeing if the
+>> pages are still free. Then only temporarily isolating the still-free
+>> pages, reporting them, and un-isolating them after they were reported. I
+>> like the idea that the pages are not fake-allocated but only temporarily
+>> blocked. That works nicely e.g., with the movable zone (contain only
+>> movable data).
 > 
-> Well, given that you add new quirks in the original patch here, you are
-> kind of breaking it already. Most transfers which are not SMBus-alike
-> transfers would now be rejected. For SMBus-alike transfers which are
-> sent via I2C_RDWR (which is ugly), I have to think about it.
+> One other change in this patch set is that I split the headers so that
+> there is an internal header that resides in the mm tree and an
+> external one that provides the page reporting device structure and the
+> register/unregister functions. All that virtio-balloon knows is that
+> it is registering a notifier and will be called with scatter gather
+> lists for memory that is not currently in use by the kernel. It has no
+> visibility into the internal free_areas or the current state of the
+> buddy allocator. Rather than having two blocks that are both trying to
+> maintain that state, I have consolidated it all into the buddy
+> allocator with page reporting.
 > 
->> 2) The sound subsystem I2C regmap based implementation seems to be using
->> i2c_ based API instead of smbus_ based API. Does this mean this will also
->> break most of the audio codec drivers with I2C regmap API based usage?
+>> But anyhow, after decades of people working on free page
+>> hinting/reporting, I am happy with anything that gets accepted upstream :D
 > 
-> I don't think so. If you check regmap_get_i2c_bus() then it checks the
-> adapter functionality and chooses the best transfer option then. I may
-> be missing something but I would wonder if the sound system does
-> something special and different.
+> Agreed. After working on this for 9 months I would be happy to get
+> something upstream that addresses this.
+
+IBM upstreamed their proprietary solution - 45e576b1c3d0 ("S390] guest
+page hinting light") - in 2008.
+
+Rik has presented a generic approach in 2011 (!)
+https://www.linux-kvm.org/images/f/ff/2011-forum-memory-overcommit.pdf
+
+I think Nitesh has been working on this (initially as an Intern) since
+Mid 2017.
+
+So yeah, this stuff has quite some history :)
+
+> 
+> - Alex
 > 
 
-We did more investigation on this.
 
-First of all, like you said, there's no concern on regmap based API, the 
-smbus_xfer only based approach should just work.
+-- 
 
-Secondly, for most i2ctools like i2cget, i2cset, i2cdump, there's no 
-concern either, given that they already use I2C_SMBUS based IOCTL.
+Thanks,
 
-However, for i2ctransfer or any customer applications that use I2C_RDWR 
-IOCTL, i2c_transfer (master_xfer) is the only supported function. And we 
-can confirm we do have at least one customer using i2ctransfer for 
-EEPROM access on their system, e.g.,  i2ctransfer 1 w2@0x50 0x00 0x00 r64.
-
-In my opinion, it's probably better to continue to support master_xfer 
-in our driver (with obvious limitations), in order to allow i2ctransfer 
-(or any apps that use I2C RDWR) to continue to work.
-
-What do you think?
-
-Regards,
-
-Ray
+David / dhildenb
 
 _______________________________________________
 linux-arm-kernel mailing list
