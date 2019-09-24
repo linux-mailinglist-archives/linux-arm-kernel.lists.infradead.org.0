@@ -2,39 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9113CBCB4D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 17:26:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9BEEBCB59
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 17:27:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jyovbc7V4oVPDcWcpLfTepDstqtPno4JElT1TdOwCsU=; b=FojHN+DrffC/BD
-	LpCVEmoGC637vzMblzHobV9a3Q3WYEMIAGJRfUKDTYJ9Yh2mpFPxuVgcCD8NLfPCBZJZJyrsPMqs3
-	jWxGqmUSjMMYWiwFUws2WEYNhOAE+FmlLP2cRQvW61WPywsrJoNny8kXLFnMRLolk9DK8Y7AVNAv5
-	v/rURFiCuBAgEUSHEPjwRMjQrU2LCZrZvBdWlmkVNCGlyDYI/sd403Cx+OvybdNxyz4/QdaEnB+/4
-	OVtaLSMSkYF2RA77HgT1sPkQ8Y67XEaAAMT7mUgiloBFifNH9br5lPoSI0mft0U7vKRsEO8MQ2fjV
-	oxo7WiuXq10uazzJn45g==;
+	List-Owner; bh=fEmeFgjSnUVeB5amDk4utnPtCwanS/+eaFKeufatnNY=; b=ERrQrkQ5kBfmV8
+	OPtgFqZfz5gu9hPSigEbRmfWWIUIe6jL1udBYMDkCmJXLxkeOab7RXXeLe1+9EhrJ4NSbCbadglZh
+	tYy0fadDAybKojQU3Xew4/zc7CILpSc9rtz1Wjb7rp5n6XlpRPj6KEgffs4u1uwlVQ3WHhJBGYDP2
+	L73Ww01xf1fjVsMHns+mTNm+8LMhgZvgYRVXcw4XINbtSR9v7aJuCh3jAmSAm8pYo54tTTh0GKVLx
+	JLCy3TFqVhgYccII1gk/C0sH+l1J/zzcDUHtr/btG4aeqkgTO3LAS/37XFGRgs6LS60mUBrHI2vGC
+	lwklux5BLbdYv94ByjUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCmhg-00069H-P6; Tue, 24 Sep 2019 15:26:12 +0000
+	id 1iCmif-0006zO-KC; Tue, 24 Sep 2019 15:27:13 +0000
 Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCmf3-00035j-Mp
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 15:23:33 +0000
-Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 6C35B257579530C63335;
- Tue, 24 Sep 2019 23:23:27 +0800 (CST)
+ id 1iCmf8-0003A0-3A
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 15:23:36 +0000
+Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 619AEE0D577D65100598;
+ Tue, 24 Sep 2019 23:23:32 +0800 (CST)
 Received: from linux-Bxxcye.huawei.com (10.175.104.222) by
  DGGEMS409-HUB.china.huawei.com (10.3.19.209) with Microsoft SMTP Server id
  14.3.439.0; Tue, 24 Sep 2019 23:23:21 +0800
 From: Heyi Guo <guoheyi@huawei.com>
 To: <qemu-arm@nongnu.org>, <qemu-devel@nongnu.org>,
  <linux-arm-kernel@lists.infradead.org>, <kvmarm@lists.cs.columbia.edu>
-Subject: [RFC PATCH 10/12] arm/sdei: check KVM cap and enable SDEI
-Date: Tue, 24 Sep 2019 23:21:49 +0800
-Message-ID: <1569338511-3572-11-git-send-email-guoheyi@huawei.com>
+Subject: [RFC PATCH 11/12] arm/kvm: handle guest exit of hypercall
+Date: Tue, 24 Sep 2019 23:21:50 +0800
+Message-ID: <1569338511-3572-12-git-send-email-guoheyi@huawei.com>
 X-Mailer: git-send-email 1.8.3.1
 In-Reply-To: <1569338511-3572-1-git-send-email-guoheyi@huawei.com>
 References: <1569338511-3572-1-git-send-email-guoheyi@huawei.com>
@@ -42,8 +42,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.175.104.222]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_082330_754024_6A2B69E7 
-X-CRM114-Status: GOOD (  10.61  )
+X-CRM114-CacheID: sfid-20190924_082334_728354_808CD7C8 
+X-CRM114-Status: GOOD (  10.14  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -73,8 +73,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Check KVM hypercall forward capability and enable it, and set global
-flag "sdei_enabled" to true if everything works well.
+Add support to handle guest exit of hypercall, and forward to SDEI
+dispatcher if SDEI is enabled and it is an SDEI request.
 
 Signed-off-by: Heyi Guo <guoheyi@huawei.com>
 Cc: Peter Maydell <peter.maydell@linaro.org>
@@ -83,65 +83,51 @@ Cc: Marc Zyngier <marc.zyngier@arm.com>
 Cc: Mark Rutland <mark.rutland@arm.com>
 Cc: James Morse <james.morse@arm.com>
 ---
- target/arm/sdei.c | 17 +++++++++++++++++
- target/arm/sdei.h |  2 ++
- 2 files changed, 19 insertions(+)
+ target/arm/kvm.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
 
-diff --git a/target/arm/sdei.c b/target/arm/sdei.c
-index efdb681..000545e 100644
---- a/target/arm/sdei.c
-+++ b/target/arm/sdei.c
-@@ -43,6 +43,7 @@
- #define TYPE_QEMU_SDEI "qemu_sdei"
- #define QEMU_SDEI(obj) OBJECT_CHECK(QemuSDEState, (obj), TYPE_QEMU_SDEI)
+diff --git a/target/arm/kvm.c b/target/arm/kvm.c
+index b2eaa50..97a67b1 100644
+--- a/target/arm/kvm.c
++++ b/target/arm/kvm.c
+@@ -30,6 +30,7 @@
+ #include "hw/boards.h"
+ #include "hw/irq.h"
+ #include "qemu/log.h"
++#include "sdei.h"
  
-+bool sdei_enabled;
- static QemuSDEState *sde_state;
- 
- typedef struct QemuSDEIBindNotifyEntry {
-@@ -1465,6 +1466,7 @@ static const VMStateDescription vmstate_sde_state = {
- static void sdei_initfn(Object *obj)
- {
-     QemuSDEState *s = QEMU_SDEI(obj);
-+    KVMState *kvm = KVM_STATE(current_machine->accelerator);
- 
-     if (sde_state) {
-         error_report("Only one SDEI dispatcher is allowed!");
-@@ -1474,6 +1476,21 @@ static void sdei_initfn(Object *obj)
- 
-     qemu_sde_init(s);
-     qemu_register_reset(qemu_sde_reset, s);
-+
-+    if (kvm_check_extension(kvm, KVM_CAP_FORWARD_HYPERCALL)) {
-+        int ret;
-+        ret = kvm_vm_enable_cap(kvm, KVM_CAP_FORWARD_HYPERCALL, 0,
-+                                KVM_CAP_FORWARD_HYPERCALL_EXCL_PSCI);
-+        if (ret < 0) {
-+            error_report("Enable hypercall forwarding failed: %s",
-+                         strerror(-ret));
-+            abort();
-+        }
-+        sdei_enabled = true;
-+        info_report("qemu sdei enabled");
-+    } else {
-+        info_report("KVM does not support forwarding hypercall.");
-+    }
+ const KVMCapabilityInfo kvm_arch_required_capabilities[] = {
+     KVM_CAP_LAST_INFO
+@@ -668,6 +669,19 @@ MemTxAttrs kvm_arch_post_run(CPUState *cs, struct kvm_run *run)
  }
  
- static void qemu_sde_class_init(ObjectClass *klass, void *data)
-diff --git a/target/arm/sdei.h b/target/arm/sdei.h
-index feaaf1a..95e7d8d 100644
---- a/target/arm/sdei.h
-+++ b/target/arm/sdei.h
-@@ -29,6 +29,8 @@
  
- #define SDEI_MAX_REQ        SDEI_1_0_FN(0x12)
- 
-+extern bool sdei_enabled;
++static void kvm_arm_handle_hypercall(CPUState *cs, struct kvm_run *run)
++{
++    uint32_t func_id = run->hypercall.args[0];
 +
- void sdei_handle_request(CPUState *cs, struct kvm_run *run);
- 
- /*
++    if (sdei_enabled &&
++        func_id >= SDEI_1_0_FN_BASE && func_id <= SDEI_MAX_REQ) {
++        sdei_handle_request(cs, run);
++    } else {
++        run->hypercall.args[0] = -1;
++    }
++}
++
++
+ int kvm_arch_handle_exit(CPUState *cs, struct kvm_run *run)
+ {
+     int ret = 0;
+@@ -678,6 +692,9 @@ int kvm_arch_handle_exit(CPUState *cs, struct kvm_run *run)
+             ret = EXCP_DEBUG;
+         } /* otherwise return to guest */
+         break;
++    case KVM_EXIT_HYPERCALL:
++        kvm_arm_handle_hypercall(cs, run);
++        break;
+     default:
+         qemu_log_mask(LOG_UNIMP, "%s: un-handled exit reason %d\n",
+                       __func__, run->exit_reason);
 -- 
 1.8.3.1
 
