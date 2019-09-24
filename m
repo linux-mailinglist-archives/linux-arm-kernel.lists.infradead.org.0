@@ -2,111 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD629BCBE0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 17:52:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7F1FBCBE9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 17:53:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NPeS8EH5LsFls4cIo8Gtpr/Ke3y83dqBzEBDzTaBRnc=; b=Db5B/sdcoKD9DS
-	rCvhsHgFeBGKHZALyeuZVgxAS111IQYtFi1F94z40NVQ7oykRTby0nqSgLkgtdTuHNYKPZ1vP8ZIn
-	bPr78Y3mfVqbxMJpVAaH1Ypqj9Uqmwi4h9oDJJgIXyH157C47v+YQSAkCcWF5/s2lSSdYltIQp9Px
-	I2cRNrkOd43JD6VughK7rUGEh35/2Ob6JRHGGytPtFoa5/UPMgEeW8S+UNUHEWOYQwJ0r1dyBKANy
-	HqVMu+HBdK9Ex0RShEKd2cPf/oyjGPtISCSKOlGiWiXvme3YJBOOKkWxDX6cRmTcD24lS51vfo+9J
-	OggUQ8ZyF2KGt8OVZFaA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=w5zVWt66oxb2g+yXiUL3VKZgMejHNRkgUMJZqFmNDs4=; b=MGZgOM01zE52WG
+	ytsKPgGTQsOubfCEhSXsrk7MHHqvomGmWjJ2qvz4xD5vC0AeigLU/sJ4m11fcnHaiuqcpoLwg9A8F
+	HvqYOJ/bPv0vnPgLExkxxiHracE6hB4+nq1SOBeiAU76puY9Gaq8Lftduyc6Dc5G9Oah60MJggwE1
+	FJdMC8fr+Dr88awKcrAJu0JER9G71AYa4Lt0rOOwtSL+Q+inq/hJ269u5I+eqnowJnbdCfrsfp3kp
+	j+k/Li6VN3718dqlqhL7LhU4MEGsXHEA2BVYuQp7QU8p6fGZVRJeMQ5J/50OcLCzUzvo7GqcUIrd0
+	lBUw6CLFwO/tAqrKIkbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCn6v-0000bd-O1; Tue, 24 Sep 2019 15:52:17 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1iCn7j-0000ub-7A; Tue, 24 Sep 2019 15:53:07 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCn6e-0000ay-El
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 15:52:01 +0000
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 836E418CB8E8;
- Tue, 24 Sep 2019 15:51:59 +0000 (UTC)
-Received: from [10.18.17.163] (dhcp-17-163.bos.redhat.com [10.18.17.163])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 47787600CC;
- Tue, 24 Sep 2019 15:51:43 +0000 (UTC)
-Subject: Re: [PATCH v10 0/6] mm / virtio: Provide support for unused page
- reporting
-To: David Hildenbrand <david@redhat.com>, Michal Hocko <mhocko@kernel.org>,
- Alexander Duyck <alexander.duyck@gmail.com>
-References: <20190918175109.23474.67039.stgit@localhost.localdomain>
- <20190924142342.GX23050@dhcp22.suse.cz>
- <d2a7acdd-3bb9-05c9-42d0-70a500801cd6@redhat.com>
-From: Nitesh Narayan Lal <nitesh@redhat.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=nitesh@redhat.com; prefer-encrypt=mutual; keydata=
- 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
- VujM7c/b4pps
-Organization: Red Hat Inc,
-Message-ID: <fc288e95-2203-2db8-1f34-a1bbcfa1f24d@redhat.com>
-Date: Tue, 24 Sep 2019 11:51:42 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iCn7N-0000sm-Ep
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 15:52:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=uMRpyMWNwJKJpnxqT6YsZkEtepZFeyzBpvTiDie8B1U=; b=SL7nl0vhym8w2ntt4lOTF8EIZ
+ 7lXGyEXmwwuTutRwU+thNstMMLoWA90wZo+Et5Mz2dSjtpkrDvK2CcsOLH/EOFIT9wy7HXPjtfBds
+ ZQQAm8ndFpuCDNj2iLUswNzCtWOHL4QuSvq2AI7v74FNirop5a34IC5A0NfukWcyp+2fApJNwDDbv
+ 8VFdiDElJqOeX9NxVWrggo0iHrOObLDqIt+ZtUoPwhq+FaKCOu+s0R6ULK8ilvAhCZVUfh39xdJjZ
+ R5fgbY+tEid44gduh7Xk710exO9IVilCgknT99AufgYMaBzjUGd2POCtUV+o335BbVFNR/CBXAGM4
+ f1e2pq69w==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:47694)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iCn74-0002kh-Vk; Tue, 24 Sep 2019 16:52:27 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iCn71-0001Np-Pk; Tue, 24 Sep 2019 16:52:23 +0100
+Date: Tue, 24 Sep 2019 16:52:23 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Xiaowei Bao <xiaowei.bao@nxp.com>
+Subject: Re: [PATCH 0/6] Add the Mobiveil EP and Layerscape Gen4 EP driver
+ support
+Message-ID: <20190924155223.GX25745@shell.armlinux.org.uk>
+References: <20190916021742.22844-1-xiaowei.bao@nxp.com>
+ <20190924141847.GW25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <d2a7acdd-3bb9-05c9-42d0-70a500801cd6@redhat.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
- (mx1.redhat.com [10.5.110.63]); Tue, 24 Sep 2019 15:51:59 +0000 (UTC)
+Content-Disposition: inline
+In-Reply-To: <20190924141847.GW25745@shell.armlinux.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_085200_533048_AD63757B 
-X-CRM114-Status: GOOD (  18.61  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190924_085245_846113_E7EA19E0 
+X-CRM114-Status: GOOD (  18.74  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -118,74 +88,157 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: yang.zhang.wz@gmail.com, pagupta@redhat.com, kvm@vger.kernel.org,
- mst@redhat.com, lcapitulino@redhat.com, linux-mm@kvack.org,
- alexander.h.duyck@linux.intel.com, aarcange@redhat.com,
- virtio-dev@lists.oasis-open.org, riel@surriel.com, willy@infradead.org,
- wei.w.wang@intel.com, vbabka@suse.cz, konrad.wilk@oracle.com,
- dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org,
- osalvador@suse.de, dave.hansen@intel.com, linux-kernel@vger.kernel.org,
- pbonzini@redhat.com, akpm@linux-foundation.org, mgorman@techsingularity.net
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ linux-pci@vger.kernel.org, Zhiqiang.Hou@nxp.com, linux-kernel@vger.kernel.org,
+ leoyang.li@nxp.com, Minghuan.Lian@nxp.com, robh+dt@kernel.org,
+ mingkai.hu@nxp.com, bhelgaas@google.com, andrew.murray@arm.com, kishon@ti.com,
+ shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Sep 24, 2019 at 03:18:47PM +0100, Russell King - ARM Linux admin wrote:
+> On Mon, Sep 16, 2019 at 10:17:36AM +0800, Xiaowei Bao wrote:
+> > This patch set are for adding Mobiveil EP driver and adding PCIe Gen4
+> > EP driver of NXP Layerscape platform.
+> > 
+> > This patch set depends on:
+> > https://patchwork.kernel.org/project/linux-pci/list/?series=159139
+> > 
+> > Xiaowei Bao (6):
+> >   PCI: mobiveil: Add the EP driver support
+> >   dt-bindings: Add DT binding for PCIE GEN4 EP of the layerscape
+> >   PCI: mobiveil: Add PCIe Gen4 EP driver for NXP Layerscape SoCs
+> >   PCI: mobiveil: Add workaround for unsupported request error
+> >   arm64: dts: lx2160a: Add PCIe EP node
+> >   misc: pci_endpoint_test: Add the layerscape PCIe GEN4 EP device
+> >     support
+> > 
+> >  .../bindings/pci/layerscape-pcie-gen4.txt          |  28 +-
+> >  MAINTAINERS                                        |   3 +
+> >  arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi     |  56 ++
+> >  drivers/misc/pci_endpoint_test.c                   |   2 +
+> >  drivers/pci/controller/mobiveil/Kconfig            |  22 +-
+> >  drivers/pci/controller/mobiveil/Makefile           |   2 +
+> >  .../controller/mobiveil/pcie-layerscape-gen4-ep.c  | 169 ++++++
+> >  drivers/pci/controller/mobiveil/pcie-mobiveil-ep.c | 568 +++++++++++++++++++++
+> >  drivers/pci/controller/mobiveil/pcie-mobiveil.c    |  99 +++-
+> >  drivers/pci/controller/mobiveil/pcie-mobiveil.h    |  72 +++
+> >  10 files changed, 1009 insertions(+), 12 deletions(-)
+> >  create mode 100644 drivers/pci/controller/mobiveil/pcie-layerscape-gen4-ep.c
+> >  create mode 100644 drivers/pci/controller/mobiveil/pcie-mobiveil-ep.c
+> 
+> Hi,
+> 
+> I've applied "PCI: mobiveil: Fix the CPU base address setup in inbound
+> window" and your patch set to 5.3, which seems to be able to detect the
+> PCIe card I have plugged in:
+> 
+> layerscape-pcie-gen4 3800000.pcie: host bridge /soc/pcie@3800000 ranges:
+> layerscape-pcie-gen4 3800000.pcie:   MEM 0xa040000000..0xa07fffffff -> 0x40000000
+> layerscape-pcie-gen4 3800000.pcie: PCI host bridge to bus 0000:00
+> pci_bus 0000:00: root bus resource [bus 00-ff]
+> pci_bus 0000:00: root bus resource [mem 0xa040000000-0xa07fffffff] (bus address
+> [0x40000000-0x7fffffff])
+> pci 0000:00:00.0: [1957:8d90] type 01 class 0x060400
+> pci 0000:00:00.0: enabling Extended Tags
+> pci 0000:00:00.0: supports D1 D2
+> pci 0000:00:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+> pci 0000:01:00.0: [15b3:6750] type 00 class 0x020000
+> pci 0000:01:00.0: reg 0x10: [mem 0xa040000000-0xa0400fffff 64bit]
+> pci 0000:01:00.0: reg 0x18: [mem 0xa040800000-0xa040ffffff 64bit pref]
+> pci 0000:01:00.0: reg 0x30: [mem 0xa041000000-0xa0410fffff pref]
+> pci 0000:00:00.0: up support 3 enabled 0
+> pci 0000:00:00.0: dn support 1 enabled 0
+> pci 0000:00:00.0: BAR 9: assigned [mem 0xa040000000-0xa0407fffff 64bit pref]
+> pci 0000:00:00.0: BAR 8: assigned [mem 0xa040800000-0xa0409fffff]
+> pci 0000:01:00.0: BAR 2: assigned [mem 0xa040000000-0xa0407fffff 64bit pref]
+> pci 0000:01:00.0: BAR 0: assigned [mem 0xa040800000-0xa0408fffff 64bit]
+> pci 0000:01:00.0: BAR 6: assigned [mem 0xa040900000-0xa0409fffff pref]
+> pci 0000:00:00.0: PCI bridge to [bus 01-ff]
+> pci 0000:00:00.0:   bridge window [mem 0xa040800000-0xa0409fffff]
+> pci 0000:00:00.0:   bridge window [mem 0xa040000000-0xa0407fffff 64bit pref]
+> pci 0000:00:00.0: Max Payload Size set to  256/ 256 (was  128), Max Read Rq  256pci 0000:01:00.0: Max Payload Size set to  256/ 256 (was  128), Max Read Rq  256pcieport 0000:00:00.0: PCIe capabilities: 0x13
+> pcieport 0000:00:00.0: init_service_irqs: -19
+> 
+> However, a bit later in the kernel boot, I get:
+> 
+> SError Interrupt on CPU1, code 0xbf000002 -- SError
+> CPU: 1 PID: 1 Comm: swapper/0 Not tainted 5.3.0+ #392
+> Hardware name: SolidRun LX2160A COM express type 7 module (DT)
+> pstate: 60400085 (nZCv daIf +PAN -UAO)
+> pc : pci_generic_config_read+0xb0/0xc0
+> lr : pci_generic_config_read+0x1c/0xc0
+> sp : ffffff8010f9baf0
+> x29: ffffff8010f9baf0 x28: ffffff8010d620a0
+> x27: ffffff8010d79000 x26: ffffff8010d62000
+> x25: ffffff8010cb06d4 x24: 0000000000000000
+> x23: ffffff8010e499b8 x22: ffffff8010f9bbaf
+> x21: 0000000000000000 x20: ffffffe2eda11800
+> x19: ffffff8010f62158 x18: ffffff8010bdede0
+> x17: ffffff8010bdede8 x16: ffffff8010b96970
+> x15: ffffffffffffffff x14: ffffffffff000000
+> x13: ffffffffffffffff x12: 0000000000000030
+> x11: 0101010101010101 x10: 7f7f7f7f7f7f7f7f
+> x9 : 2dff716475687163 x8 : ffffffffffffffff
+> x7 : fefefefefefefefe x6 : 0000000000000000
+> x5 : 0000000000000000 x4 : ffffff8010f9bb6c
+> x3 : 0000000000000001 x2 : 0000000000000003
+> x1 : 0000000000000000 x0 : 0000000000000000
+> Kernel panic - not syncing: Asynchronous SError Interrupt
+> CPU: 1 PID: 1 Comm: swapper/0 Not tainted 5.3.0+ #392
+> Hardware name: SolidRun LX2160A COM express type 7 module (DT)
+> Call trace:
+>  dump_backtrace+0x0/0x120
+>  show_stack+0x14/0x1c
+>  dump_stack+0x9c/0xc0
+>  panic+0x148/0x34c
+>  print_tainted+0x0/0xa8
+>  arm64_serror_panic+0x74/0x80
+>  do_serror+0x8c/0x13c
+>  el1_error+0xbc/0x160
+>  pci_generic_config_read+0xb0/0xc0
+>  pci_bus_read_config_byte+0x64/0x90
+>  pci_read_config_byte+0x40/0x48
+>  pci_assign_irq+0x34/0xc8
+>  pci_device_probe+0x28/0x148
+>  really_probe+0x1c4/0x2d0
+>  driver_probe_device+0x58/0xfc
+>  device_driver_attach+0x68/0x70
+>  __driver_attach+0x94/0xdc
+>  bus_for_each_dev+0x50/0xa0
+>  driver_attach+0x20/0x28
+>  bus_add_driver+0x14c/0x200
+>  driver_register+0x6c/0x124
+>  __pci_register_driver+0x48/0x50
+>  mlx4_init+0x154/0x180
+>  do_one_initcall+0x30/0x250
+>  kernel_init_freeable+0x23c/0x32c
+>  kernel_init+0x10/0xfc
+>  ret_from_fork+0x10/0x18
+> SMP: stopping secondary CPUs
+> Kernel Offset: disabled
+> CPU features: 0x0002,21006008
+> Memory Limit: none
+> 
+> and there it dies.  Any ideas?
 
-On 9/24/19 11:32 AM, David Hildenbrand wrote:
-> On 24.09.19 16:23, Michal Hocko wrote:
->> On Wed 18-09-19 10:52:25, Alexander Duyck wrote:
->> [...]
->>> In order to try and keep the time needed to find a non-reported page to
->>> a minimum we maintain a "reported_boundary" pointer. This pointer is used
->>> by the get_unreported_pages iterator to determine at what point it should
->>> resume searching for non-reported pages. In order to guarantee pages do
->>> not get past the scan I have modified add_to_free_list_tail so that it
->>> will not insert pages behind the reported_boundary.
->>>
->>> If another process needs to perform a massive manipulation of the free
->>> list, such as compaction, it can either reset a given individual boundary
->>> which will push the boundary back to the list_head, or it can clear the
->>> bit indicating the zone is actively processing which will result in the
->>> reporting process resetting all of the boundaries for a given zone.
->> Is this any different from the previous version? The last review
->> feedback (both from me and Mel) was that we are not happy to have an
->> externally imposed constrains on how the page allocator is supposed to
->> maintain its free lists.
->>
->> If this is really the only way to go forward then I would like to hear
->> very convincing arguments about other approaches not being feasible.
-> Adding to what Alexander said, I don't consider the other approaches
-> (especially the bitmap-based approach Nitesh is currently working on)
-> infeasible. There might be more rough edges (e.g., sparse zones) and
-> eventually sometimes a little more work to be done, but definitely
-> feasible. Incorporating stuff into the buddy might make some tasks
-> (e.g., identify free pages) more efficient.
+The failing access seems to be:
 
-My plan was to get a framework ready which can perform decently and
-is acceptable upstream (keeping core-mm changes to a minimum) and then keep
-optimizing it for different use-cases.
-Indeed, the bitmap-based approach may not be efficient for every available use
-case. But then I am not sure if we want to target that, considering it may require
-mm-changes.
+        pci_read_config_byte(dev, PCI_INTERRUPT_PIN, &pin);
 
-> I still somewhat like the idea of capturing hints of free pages (in
-> whatever data structure) and then going over the hints, seeing if the
-> pages are still free. Then only temporarily isolating the still-free
-> pages, reporting them, and un-isolating them after they were reported. I
-> like the idea that the pages are not fake-allocated but only temporarily
-> blocked. That works nicely e.g., with the movable zone (contain only
-> movable data).
->
-> But anyhow, after decades of people working on free page
-> hinting/reporting, I am happy with anything that gets accepted upstream :D
+for the Mellanox Ethernet card.  Presumably, being a PCIe ethernet
+card, it doesn't implement this register (just a guess), and aborts
+the PCI transaction, which is presumably triggering the above SError.
 
-+1
+Note that I've used this card with the Macchiatobin (Armada 8040)
+without issue.
 
->
 -- 
-Nitesh
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
