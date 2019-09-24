@@ -2,30 +2,30 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C8BFBD19E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 20:14:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14D9BBD154
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 20:13:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XzwVxP1YR2H6IlWArt8OYXKGLx4MhWdxofbphSFiQlE=; b=OC5A13wtTJfVi0
-	tjPTvLZXx6x1DGHZ4nCAPry93K35Meu/Ba//9t+XNSclUaNTw97aQ+wRoaoYHhhPUw8U71hA/Gwnz
-	aXzaW2ln1N4yAWXiUBw8h0yrmC/I3BMmOdEV1jRBilopnuXMcA8gbrDOd8Gaebz6aca0H7IuCoFMm
-	Y4kvSCN2ttXsIOFYGw7cWWkE0Tq+RLGzem5941ximfA2jr2A0iNIBFssZxjETfHxX60C5r/LznszQ
-	uG3FBO/9A2T/U0reNiJG/5r7FaW11HoAmwv2Jya1F5TxA+bypoIMyVHIEJcFlw3zQIDuk8baScpg+
-	G3pA05YFonV/mx6g+xaw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HI24ApXOr1dPpetpMjX6XdrENZunCbBhN4FP0C3s8Ss=; b=isCFJ4hcAQWoBU
+	ycow/PJ7Ml7xoOs7Lo0e/SI3xkzAjlf6t2K0oGcz6NUN7pS5SD9yOS1o6U4Qt3tAduGmjhUQpmKcg
+	fcIoevSIhk9r9mo1Yn7tzsDwGlgkgXLECoosDTlBYEvAU2n22INtdnYGiDdYH9BZs52ghQHO4o12Z
+	HGWlPSyU98b0kcXZ+9+47AdROMZc9zyA5edyCLIt8DmMrgIUeuiauwjxTLo+T2YSD5BE0k1ljMQbv
+	+8j/YwkuvDwUHKp3/LsHfo+XbeCirrQCH9aJdXoLS5t7IqAtOqrPX8cGtaPbjdXKleZKUkkBm6NbI
+	nnC3CwjGtMYX8gPKZaiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCpKH-0003j9-V6; Tue, 24 Sep 2019 18:14:14 +0000
+	id 1iCpJg-0003JW-4w; Tue, 24 Sep 2019 18:13:36 +0000
 Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCpJ1-00034C-Mz
+ id 1iCpJ1-00034D-My
  for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 18:12:57 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 22E57AC93;
+ by mx1.suse.de (Postfix) with ESMTP id 3AA7DAEF1;
  Tue, 24 Sep 2019 18:12:51 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: robh+dt@kernel.org, devicetree@vger.kernel.org, frowand.list@gmail.com,
@@ -35,14 +35,18 @@ To: robh+dt@kernel.org, devicetree@vger.kernel.org, frowand.list@gmail.com,
  dri-devel@lists.freedesktop.org, xen-devel@lists.xenproject.org,
  linux-tegra@vger.kernel.org, linux-media@vger.kernel.org,
  linux-pci@vger.kernel.org
-Subject: [PATCH 00/11] of: Fix DMA configuration for non-DT masters
-Date: Tue, 24 Sep 2019 20:12:31 +0200
-Message-Id: <20190924181244.7159-1-nsaenzjulienne@suse.de>
+Subject: [PATCH 01/11] of: address: clean-up unused variable in
+ of_dma_get_range()
+Date: Tue, 24 Sep 2019 20:12:32 +0200
+Message-Id: <20190924181244.7159-2-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20190924181244.7159-1-nsaenzjulienne@suse.de>
+References: <20190924181244.7159-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_111256_128175_58642537 
-X-CRM114-Status: GOOD (  11.48  )
+X-CRM114-CacheID: sfid-20190924_111255_928074_3056E7A8 
+X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -63,89 +67,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, freedreno@lists.freedesktop.org, mbrugger@suse.com,
- wahrenst@gmx.net, james.quinlan@broadcom.com,
- Dan Williams <dan.j.williams@intel.com>, robin.murphy@arm.com,
+Cc: f.fainelli@gmail.com, mbrugger@suse.com, wahrenst@gmx.net,
+ james.quinlan@broadcom.com, robin.murphy@arm.com,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi All,
-this series tries to address one of the issues blocking us from
-upstreaming Broadcom's STB PCIe controller[1]. Namely, the fact that
-devices not represented in DT which sit behind a PCI bus fail to get the
-bus' DMA addressing constraints.
+'len' in of_dma_get_range() is used to check the 'dma-ranges' property
+length. After the fact, some calculations are run on the variable to be
+then left unused.
 
-This is due to the fact that of_dma_configure() assumes it's receiving a
-DT node representing the device being configured, as opposed to the PCIe
-bridge node we currently pass. This causes the code to directly jump
-into PCI's parent node when checking for 'dma-ranges' and misses
-whatever was set there.
-
-To address this I create a new API in OF - inspired from Robin Murphys
-original proposal[2] - which accepts a bus DT node as it's input in
-order to configure a device's DMA constraints. The changes go deep into
-of/address.c's implementation, as a device being having a DT node
-assumption was pretty strong.
-
-On top of this work, I also cleaned up of_dma_configure() removing its
-redundant arguments and creating an alternative function for the special cases
-not applicable to either the above case or the default usage.
-
-IMO the resulting functions are more explicit. They will probably
-surface some hacky usages that can be properly fixed as I show with the
-DT fixes on the Layerscape platform.
-
-This was also tested on a Raspberry Pi 4 with a custom PCIe driver and
-on a Seattle AMD board.
-
-Regards,
-Nicolas
-
-[1] https://patchwork.kernel.org/patch/9650345/#20294961
-[2] https://patchwork.kernel.org/patch/9650345/
-
+Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
 
-Nicolas Saenz Julienne (11):
-  of: address: clean-up unused variable in of_dma_get_range()
-  of: base: introduce __of_n_*_cells_parent()
-  of: address: use parent DT node in bus->count_cells()
-  of: address: introduce of_translate_dma_address_parent()
-  of: expose __of_get_dma_parent() to OF subsystem
-  of: address: use parent OF node in of_dma_get_range()
-  dts: arm64: layerscape: add dma-ranges property to qoric-mc node
-  dts: arm64: layerscape: add dma-ranges property to pcie nodes
-  of: device: remove comment in of_dma_configure()
-  of: device: introduce of_dma_configure_parent()
-  of: simplify of_dma_config()'s arguments
+ drivers/of/address.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
 
- .../arm64/boot/dts/freescale/fsl-ls1088a.dtsi |   1 +
- .../arm64/boot/dts/freescale/fsl-ls208xa.dtsi |   5 +
- .../arm64/boot/dts/freescale/fsl-lx2160a.dtsi |   1 +
- drivers/base/platform.c                       |   2 +-
- drivers/bcma/main.c                           |   2 +-
- drivers/bus/fsl-mc/fsl-mc-bus.c               |   2 +-
- drivers/dma/qcom/hidma_mgmt.c                 |   2 +-
- drivers/gpu/drm/etnaviv/etnaviv_drv.c         |   2 +-
- drivers/gpu/drm/msm/adreno/a6xx_gmu.c         |   2 +-
- drivers/gpu/drm/sun4i/sun4i_backend.c         |   2 +-
- drivers/gpu/drm/xen/xen_drm_front.c           |   2 +-
- drivers/gpu/host1x/bus.c                      |   4 +-
- drivers/media/platform/qcom/venus/firmware.c  |   2 +-
- drivers/media/platform/s5p-mfc/s5p_mfc.c      |   2 +-
- drivers/of/address.c                          | 136 +++++++++---------
- drivers/of/base.c                             |  69 +++++++--
- drivers/of/device.c                           |  59 +++++++-
- drivers/of/of_private.h                       |   5 +
- drivers/pci/pci-driver.c                      |   3 +-
- drivers/xen/gntdev.c                          |   2 +-
- include/linux/of_address.h                    |   8 +-
- include/linux/of_device.h                     |  23 ++-
- 22 files changed, 223 insertions(+), 113 deletions(-)
-
+diff --git a/drivers/of/address.c b/drivers/of/address.c
+index 978427a9d5e6..0f898756199d 100644
+--- a/drivers/of/address.c
++++ b/drivers/of/address.c
+@@ -922,7 +922,7 @@ int of_dma_get_range(struct device_node *np, u64 *dma_addr, u64 *paddr, u64 *siz
+ {
+ 	struct device_node *node = of_node_get(np);
+ 	const __be32 *ranges = NULL;
+-	int len, naddr, nsize, pna;
++	int naddr, nsize, pna;
+ 	int ret = 0;
+ 	u64 dmaaddr;
+ 
+@@ -931,6 +931,7 @@ int of_dma_get_range(struct device_node *np, u64 *dma_addr, u64 *paddr, u64 *siz
+ 
+ 	while (1) {
+ 		struct device_node *parent;
++		int len;
+ 
+ 		naddr = of_n_addr_cells(node);
+ 		nsize = of_n_size_cells(node);
+@@ -962,8 +963,6 @@ int of_dma_get_range(struct device_node *np, u64 *dma_addr, u64 *paddr, u64 *siz
+ 		goto out;
+ 	}
+ 
+-	len /= sizeof(u32);
+-
+ 	pna = of_n_addr_cells(node);
+ 
+ 	/* dma-ranges format:
 -- 
 2.23.0
 
