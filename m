@@ -2,95 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 085B5BD3B4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 22:39:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F8CABD488
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 23:47:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kMRQwfH0r6wFDqg8mud3Ze6u3Fd42OBO7eWYSLzIdZI=; b=qOR/T/UV0KW5r/
-	dwhVtIiUZzUCbWEUQg+LCzT51x+d1St1bY/XGpwtU7ddTuz1gbxMceX3KBYQLnMwSzYFu0o4U4UmP
-	oWWkeHa8vwVNIdzcObnciymPCKbRqaRgP8GjLdk1x6URbQtz/TVwqZrpzQDU5pC/iKOPvKhRNZBgL
-	Jk+ikl5PDXkorO2jW9iVV/qFHZJiQ5UVG2/0faGJZuQ7PMoGt3Tu61ZZHkA5+vkOrPCxcbgPzN2PF
-	rtfZBMPto9icqhFlZDVbLQsdIKfjK8aj0NyS6T5uhqVzvaAWyqKWiBLaYUzyNqFsVUc0Xw/jkP6jD
-	BSeziyVuDMq5TvCAhnWA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=y2PeQ8r1hwDZI6WHUMbLPSVXAqbzuuk6gH8Ha0r+nO0=; b=uIq/HaVTcVBBXa
+	tTgFsrOZvZzE0rDxV/40JEn3JMhZGcVYD01wSTw0MfwLL2FFgPrWHmJVP+9ZaFYldgY5fTcKKbzWT
+	7wwUBZxlHGqXeH1xzbFw9GGZrAb3iiqt9F5BTO9yI47WKB7nJeC8aORPP3HyYwYHmU9CpxeucAlOT
+	JwSlZBZgJZl6++K9jC3lgImUgbh4KJlxyXsGRHI6/s6Y6SIhG+iWCFMEDAxi1l1shVKd2i8lJIYWe
+	HNoW15JKUAQWoJYJ2NUM/Me2xq2GsoyZqReNWBIdInaKuZuyHYkPp2Sm1JCmUI97ofaWqCLBEiqvq
+	Mkhlhr2fFwTVbeMDmRMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCraV-0000cc-UG; Tue, 24 Sep 2019 20:39:08 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1iCseA-0005QX-FO; Tue, 24 Sep 2019 21:46:58 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCraH-0000bn-DK
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 20:38:54 +0000
-Received: by mail-pl1-x642.google.com with SMTP id t10so1457506plr.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Sep 2019 13:38:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=UZKL+542wWKMtqmPB6ZvBJSdUhAfyCh5/zN16bhGakE=;
- b=S0wL3sdM8d7Q+5AXyTcUlMHv1TTpJejEloFuec4WRpAkLmKcvHmgitE1IokWm23HwW
- r+9a9GSziwe0GDztbRTKWzAGkdkec6tLYLINYCNpRX4PHpC0cddz5w3l5+XtquS5NnVf
- fqZP5D1nV0ZUJ3VrRp4xuEQCDLBuOei31MZ46orV7epEfNhvEqwIQRRhQwUBcicvJemG
- GtcJW6qW0BukiLlU7p2kqS9cW28NB0Nc31/537h0CJ2uZgTBhbTcC1u/fcAjbn2qQr6R
- /IrlFVVrpBoMcVo6YOVTGQpYmQozhHHkxJOaefCm35jiP1t3VYNpqYcs7dvWrgZLHXrm
- Fn3g==
+ id 1iCsdl-0005PC-R5; Tue, 24 Sep 2019 21:46:35 +0000
+Received: by mail-ot1-f67.google.com with SMTP id y39so2899847ota.7;
+ Tue, 24 Sep 2019 14:46:33 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=UZKL+542wWKMtqmPB6ZvBJSdUhAfyCh5/zN16bhGakE=;
- b=JIqULP/cAOQwXEtlmV+06cJs68FZRwLAryJimPox54NDkCzQi6oMh5IQbrQh3qkKz0
- MP64GpSeQdWLo0FwLc8nAFR7mqHLQDo/6GabNfNR+DtyhdOroO3RCROfNX+5pDNsAMyL
- GyAvB1bStreNjlY+TxmW+LvAiaNxlXbFawBvHBJo0Xzl3YD62Y/yUkqQH+/oHjxbh2f9
- GeNnxv1fZcWtAQUmSU0BoU3ouPXQ9zbGXWUlEWdsqm8oe76flwsRe0d1kJgIgehRX4GS
- LBLidqMPnOugWVgRuKPKCX1T0MjGzF5pcn4ItdMHyq8Wq1Ao73MKCVkLEXOSqF9Voft5
- Y30g==
-X-Gm-Message-State: APjAAAUQ3Q9r+FewP5WgWXUTKSuRsuxWq2GehJUAiFbZJ63mzwlxCN+s
- duoYYMNvrUjP/kTDV78+njIGvohOTrABLg==
-X-Google-Smtp-Source: APXvYqys8CWbFt5YPo4VOMno8TMWKcB9zMouJBRLLd0jC5kTZUKLp1yNC4y6Yy2B+9rsAj0o0qbsHA==
-X-Received: by 2002:a17:902:20b:: with SMTP id 11mr5302676plc.62.1569357531963; 
- Tue, 24 Sep 2019 13:38:51 -0700 (PDT)
-Received: from dell ([12.157.10.114])
- by smtp.gmail.com with ESMTPSA id p88sm865032pjp.22.2019.09.24.13.38.50
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 24 Sep 2019 13:38:51 -0700 (PDT)
-Date: Tue, 24 Sep 2019 21:38:48 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Gene Chen <gene.chen.richtek@gmail.com>
-Subject: Re: [PATCH] mfd: mt6360: add pmic mt6360 driver
-Message-ID: <20190924203848.GC4469@dell>
-References: <1568801744-21380-1-git-send-email-gene.chen.richtek@gmail.com>
- <20190918105121.GB5016@dell>
- <CAE+NS37XG+kfbj6yJrL5A-d2O_aiRU90yV5TUk3Kfa0Rv7dWmw@mail.gmail.com>
- <20190919071828.GC5016@dell>
- <CAE+NS342Kn6OEz4D9Y0yfXStnW6KQ6N2yuQtgN2q2bXafofShg@mail.gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=1EA8rb2xQcb5dg7rm6kSLl37zgnf6FJeYhc+aCc8i8Q=;
+ b=NBGeVv4WpxmfgBaZR4tlQU898UNg3nu6qU7gpKR/78cBRTKw6HZuCpPNU1jc1dQbeJ
+ WsgRarQ4XK/M7VZyFN5z7tn5fGUo80oR8snKXMQd2gSgqxDPRZAqUl2tvNY2yCUfCI28
+ yWWi30xOfSOFOAftsWIa+sTa7sWKNdsrnaAjkNGBw8S1rk9GbQuXUrRW8Q/1X5+y9+zw
+ FicEMamN8BsI6IZklAk1MQrYBwiYDFLcSBU/ocJpaP0RHIFO9f9Z9H0St6A8iAt/nRP8
+ CcKT6ANSkD30GUoDpzlZIsvhPRXxgWMBlo/SdS+X+hES4fd9zmMiVKFpEPFNdjblmg7S
+ aZOQ==
+X-Gm-Message-State: APjAAAXmmcSsk3LtU0lvBi3rUf8kpH4ldCVJ79eTpHLJQUsi8o6NO2vd
+ F/d0nkvxoGIBc13S115T3w==
+X-Google-Smtp-Source: APXvYqyfVq4l/5/hBZkfgpAi1Pc1khFxc5Y5xwdvEOTzeXf8zarYTh54eCs4NscjomBDZ62d4/y0HA==
+X-Received: by 2002:a05:6830:16da:: with SMTP id
+ l26mr3762822otr.339.1569361592670; 
+ Tue, 24 Sep 2019 14:46:32 -0700 (PDT)
+Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.googlemail.com with ESMTPSA id s66sm976787otb.65.2019.09.24.14.46.30
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 24 Sep 2019 14:46:31 -0700 (PDT)
+From: Rob Herring <robh@kernel.org>
+To: linux-pci@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Subject: [PATCH 00/11] PCI dma-ranges parsing consolidation
+Date: Tue, 24 Sep 2019 16:46:19 -0500
+Message-Id: <20190924214630.12817-1-robh@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAE+NS342Kn6OEz4D9Y0yfXStnW6KQ6N2yuQtgN2q2bXafofShg@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_133853_591007_620C2643 
-X-CRM114-Status: GOOD (  18.63  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190924_144633_901500_2301D59C 
+X-CRM114-Status: GOOD (  11.66  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,46 +88,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: gene_chen@richtek.com, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
- Wilma.Wu@mediatek.com, linux-arm-kernel@lists.infradead.org,
- shufan_lee@richtek.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Heiko Stuebner <heiko@sntech.de>,
+ Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>,
+ Shawn Lin <shawn.lin@rock-chips.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Toan Le <toan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
+ Ryder Lee <ryder.lee@mediatek.com>, Michal Simek <michal.simek@xilinx.com>,
+ linux-rockchip@lists.infradead.org, bcm-kernel-feedback-list@broadcom.com,
+ Linus Walleij <linus.walleij@linaro.org>, Ray Jui <rjui@broadcom.com>,
+ Hou Zhiqiang <Zhiqiang.Hou@nxp.com>, Simon Horman <horms@verge.net.au>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Scott Branden <sbranden@broadcom.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>, rfi@lists.rocketboards.org,
+ linux-renesas-soc@vger.kernel.org, Tom Joseph <tjoseph@cadence.com>,
+ Jingoo Han <jingoohan1@gmail.com>, Ley Foon Tan <lftan@altera.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCAyNCBTZXAgMjAxOSwgR2VuZSBDaGVuIHdyb3RlOgoKPiAyMDE5LTA5LTE5IDE1OjE4
-IEdNVCswODowMCwgTGVlIEpvbmVzIDxsZWUuam9uZXNAbGluYXJvLm9yZz46Cj4gPiBPbiBUaHUs
-IDE5IFNlcCAyMDE5LCBHZW5lIENoZW4gd3JvdGU6Cj4gPgo+ID4+IExlZSBKb25lcyA8bGVlLmpv
-bmVzQGxpbmFyby5vcmc+IOaWvCAyMDE55bm0OeaciDE45pelIOmAseS4iSDkuIvljYg2OjUx5a+r
-6YGT77yaCj4gPj4gPgo+ID4+ID4gT24gV2VkLCAxOCBTZXAgMjAxOSwgR2VuZSBDaGVuIHdyb3Rl
-Ogo+ID4+ID4KPiA+PiA+ID4gRnJvbTogR2VuZSBDaGVuIDxnZW5lX2NoZW5AcmljaHRlay5jb20+
-Cj4gPj4gPiA+Cj4gPj4gPiA+IEFkZCBtZmQgZHJpdmVyIGZvciBtdDYzNjAgcG1pYyBjaGlwIGlu
-Y2x1ZGUKPiA+PiA+ID4gQmF0dGVyeSBDaGFyZ2VyL1VTQl9QRC9GbGFzaCBMRUQvUkdCIExFRC9M
-RE8vQnVjawo+ID4+ID4gPgo+ID4+ID4gPiBTaWduZWQtb2ZmLWJ5OiBHZW5lIENoZW4gPGdlbmVf
-Y2hlbkByaWNodGVrLmNvbQo+ID4+ID4gPiAtLS0KPiA+PiA+Cj4gPj4gPiBUaGlzIGxvb2tzIGRp
-ZmZlcmVudCBmcm9tIHRoZSBvbmUgeW91IHNlbnQgYmVmb3JlLCBidXQgSSBkb24ndCBzZWUgYQo+
-ID4+ID4gdmVyc2lvbiBidW1wIG9yIGFueSBjaGFuZ2Vsb2cgaW4gdGhpcyBzcGFjZS4gIFBsZWFz
-ZSByZS1zdWJtaXQgd2l0aAo+ID4+ID4gdGhlIGRpZmZlcmVuY2VzIG5vdGVkLgo+ID4+ID4KPiA+
-Pgo+ID4+IHRoZSBjaGFuZ2UgaXMKPiA+PiAxLiBhZGQgbWlzc2luZyBpbmNsdWRlIGZpbGUKPiA+
-PiAyLiBtb2RpZnkgY29tbWl0IG1lc3NhZ2UKPiA+Pgo+ID4+IHRoaXMgcGF0Y2ggaXMgcmVnYXJk
-ZWQgYXMgdmVyc2lvbiAxCj4gPgo+ID4gSXQncyBkaWZmZXJlbnQgdG8gdGhlIGZpcnN0IG9uZSB5
-b3Ugc2VudCB0byB0aGUgbGlzdCwgc28gaXQgbmVlZHMgYQo+ID4gdmVyc2lvbiBidW1wIGFuZCBh
-IGNoYW5nZSBsb2cuICBUaGVyZSBhbHNvIGFwcGVhcnMgdG8gc3RpbGwgYmUgaXNzdWVzCj4gPiB3
-aXRoIGl0LCBpZiB0aGUgYXV0by1idWlsZGVycyBhcmUgdG8gYmUgYmVsaWV2ZWQuCj4gPgo+ID4g
-RG8gZW5zdXJlIHlvdSB0aG9yb3VnaGx5IHRlc3QgeW91ciBwYXRjaGVzIGJlZm9yZSBzZW5kaW5n
-IHVwc3RyZWFtLgo+ID4KPiA+IFBsZWFzZSBmaXggdGhlIGlzc3VlcyBhbmQgcmVzdWJtaXQgeW91
-ciB2MyB3aXRoIGEgbmljZSBjaGFuZ2Vsb2cuCj4gPgo+IAo+IHRoYW5rIHlvdSBmb3Igc3VnZ2Vz
-dGlvbgo+IG1heSBpIGFzayBob3cgdG8gZGlzYWJsZSBrYnVpbGQgdGVzdCByZWJvb3QgZm9yIHMz
-OTAveDg2XzY0L2lhNjQ/Cj4gd2Ugd2FudCBzdXBwb3J0IG9ubHkgY3Jvc3MgY29tcGlsZXIgPSAg
-YWFyY2g2NC1saW51eC1nbnUtCj4gYW5kIHdlIGhhdmUgdGVzdCBidWlsZCBwYXNzIHdpdGggb3Vy
-IHBhdGNoCgpZb3UgY2FuJ3QgYW5kIHdlIHdvdWxkbid0IHdhbnQgdG8uCgpJZiB0aGlzIGRyaXZl
-ciBzaG91bGQgb25seSBiZSBidWlsdC90ZXN0ZWQgZm9yIEFBcmNoNjQsIHlvdSBuZWVkIHRvCmVu
-c3VyZSB0aGUgS2NvbmZpZyByZXByZXNlbnRzIHRoYXQuCgotLSAKTGVlIEpvbmVzIFvmnY7nkLzm
-lq9dCkxpbmFybyBTZXJ2aWNlcyBUZWNobmljYWwgTGVhZApMaW5hcm8ub3JnIOKUgiBPcGVuIHNv
-dXJjZSBzb2Z0d2FyZSBmb3IgQVJNIFNvQ3MKRm9sbG93IExpbmFybzogRmFjZWJvb2sgfCBUd2l0
-dGVyIHwgQmxvZwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo=
+This series moves the DT 'dma-ranges' parsing into common helpers
+utilizing a resource list. In the process of doing this, I noticed
+several cases where pci_parse_request_of_pci_ranges() could be used so
+I converted those drivers first. The last 5 patches make the actual
+change to use the common 'dma_ranges' resource list. There's no
+(intended) functional change in this series though I'm also working on
+a separate series to improve the handling of 'dma-ranges' and dma
+masks.
+
+pci-rcar-gen2 is the only remaining driver doing its own dma-ranges
+handling as it is still using the old ARM PCI functions. Looks like it
+is the last one (in drivers/pci/).
+
+Compile tested only.
+
+Rob
+
+Rob Herring (11):
+  PCI: aardvark: Use pci_parse_request_of_pci_ranges()
+  PCI: altera: Use pci_parse_request_of_pci_ranges()
+  PCI: mediatek: Use pci_parse_request_of_pci_ranges()
+  PCI: versatile: Enable COMPILE_TEST
+  PCI: versatile: Use pci_parse_request_of_pci_ranges()
+  PCI: of: Add inbound resource parsing to helpers
+  PCI: ftpci100: Use inbound resources for setup
+  PCI: v3-semi: Use inbound resources for setup
+  PCI: xgene: Use inbound resources for setup
+  PCI: iproc: Use inbound resources for setup
+  PCI: rcar: Use inbound resources for setup
+
+ drivers/pci/controller/Kconfig                |  2 +-
+ .../pci/controller/dwc/pcie-designware-host.c |  3 +-
+ drivers/pci/controller/pci-aardvark.c         | 58 ++---------------
+ drivers/pci/controller/pci-ftpci100.c         | 29 ++++-----
+ drivers/pci/controller/pci-host-common.c      |  2 +-
+ drivers/pci/controller/pci-v3-semi.c          | 40 +++++-------
+ drivers/pci/controller/pci-versatile.c        | 62 ++++--------------
+ drivers/pci/controller/pci-xgene.c            | 33 ++++------
+ drivers/pci/controller/pcie-altera.c          | 38 +----------
+ drivers/pci/controller/pcie-cadence-host.c    |  2 +-
+ drivers/pci/controller/pcie-iproc-platform.c  |  1 +
+ drivers/pci/controller/pcie-iproc.c           | 63 +++----------------
+ drivers/pci/controller/pcie-mediatek.c        | 47 +++++---------
+ drivers/pci/controller/pcie-mobiveil.c        |  4 +-
+ drivers/pci/controller/pcie-rcar.c            | 48 ++++++--------
+ drivers/pci/controller/pcie-rockchip-host.c   |  3 +-
+ drivers/pci/controller/pcie-xilinx-nwl.c      |  2 +-
+ drivers/pci/controller/pcie-xilinx.c          |  2 +-
+ drivers/pci/of.c                              | 44 ++++++++++++-
+ drivers/pci/pci.h                             |  8 ++-
+ include/linux/pci.h                           |  2 +
+ 21 files changed, 162 insertions(+), 331 deletions(-)
+
+--
+2.20.1
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
