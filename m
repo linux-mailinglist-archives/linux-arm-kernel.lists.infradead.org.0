@@ -2,89 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34E01BD269
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 21:10:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D9B9BD26F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 21:11:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=caaKBMljqPW7yopSDd6Ls1mm1gm92/yBF/jkrSzzf1w=; b=qO86yTRf1lxXcx
-	Bb2kYCf53ww5xxkVzZJ18myZj/p17KcdFHX3cSZ7X6sXSfSgzQkf0GXc2LnqMoZ3nSXA19Gz63RTY
-	j/Np+BSBwkXzXHEk+wvrUiEoguMQnWXQUBwimrlwDggjQ1Pr/TRGRgLx/2W+T8bSTX1maF5U5i0mR
-	i6M9JCRSSznMTEKH44de223vs68m7xeczPUzrad3+tLFG8xVRjI5oZWm235g3UPr1Lfva5TgH6Gjt
-	W75d/tifCH2r6OlRdTgzJy7nO4HCc5RiGyKL4s9Tq2LNzep+MEL6RR/a2wvvBHomdmapkeLb28zVt
-	5aqzuuJltYQ8U60UGhzA==;
+	List-Owner; bh=5vnaFxFFeIg455hUQj98FZvzrQv4k0Vx8ShacIS8ufk=; b=nF5Q21W1FrgdSC
+	9hE7CQwfuzNwSRuz50p/Q6XLytiXUz9fU5kND82VU92bkfUHX5lnDIQaEc5iJUBf3vpCnXnitjT7w
+	rjZqVBqEQpbzOHAujlayBoxC2KsDTY9YKHvrFVAGXt5tUjY0n9bZBc8wun1qleqQZ88AJ8vpUTZw6
+	7Uccxve0a8MsdIEgyC4wiG5VOqkax3jJwNZAo5+TLDjVTD/a4UEYHrzPKzTKlnXHNRWPsQsuN01c9
+	aMXZFNSzeUZIvjUM+YpdUa6LbsessQcF4uQXCcsyeHueZhUeNX9lgc2Xx9/KYaOjLEb4TH5mh1cG5
+	r+qEN1LSA8+exq4ni4PA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCqCf-00058M-Cj; Tue, 24 Sep 2019 19:10:25 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1iCqDv-0005TR-HP; Tue, 24 Sep 2019 19:11:43 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCqCN-0004yv-9r
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 19:10:08 +0000
-Received: by mail-pf1-x443.google.com with SMTP id q12so1905497pff.9
+ id 1iCqDg-0005Sw-DU
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 19:11:31 +0000
+Received: by mail-pg1-x543.google.com with SMTP id u17so1817907pgi.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Sep 2019 12:10:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=ztDGYJ4coyv+LAVfttrEQdgcMXqg4Kriy9EN3YGCljM=;
- b=hc1sn9qIKaebOSz9we8ltrjhoIMvLleyAzfBIFg8oVbgZeB7q2cJhQXmas+QaBgGwa
- YJRVIUXVwHz9kWqcapUr6Ipz/YkKWU8bQ56QBM4F+kT616StfYzq1mHTTQyPKQI9C/CH
- 8uIOTgdLeZ7flUAX/Rz6SL27oqnDGmx/pe4hErHmDDAFA1YrDPz2YjqgbGCLikM3f99P
- kjJjgMxmLwyYf32EXJ843imgVokwY/HHzSNj1ZtQfCz97/Pv8lgHx06XEEJm7xokK9zp
- LhIpX18Y/qNxzlhJckURdplDuevo97mSKW/ciISFXQeSuzmnXMs42TyHjyfxYIQU/dKy
- Z6dQ==
+ Tue, 24 Sep 2019 12:11:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=DR2VitmOL1QcaChutYPiTVC0w58w/UkjdupN/fmWcR4=;
+ b=HJNRMaM2N+FZ/gIAOAKQam1gJGnSw9J/vcA+UJZH5iJdYFXdgiTGlvxjT3t3euachh
+ juH6Eh+uazNTGHOM2DFeSbwCTgUq74sizZEQi73PaIEj+kTHzmllAUtJ63ABesG2dPRH
+ VLG8lM1cJe59PxURS6nBrK6nB9UCwlc7wXYLY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=ztDGYJ4coyv+LAVfttrEQdgcMXqg4Kriy9EN3YGCljM=;
- b=YG7lavQ2ad59VpXPmvV7DXCFE8UJzxWNMTTExn5DDR1qSTHVSWIhsS4gJwwrWZEDPH
- LxllsHSuV2W/1OnCYSq/vWG+qKFURhG92Ah5P7hpHi0PLsnNz26H2EuuPaVbo/uIbUxM
- iLq5yxGf9kO0MleJS5paFpv2ku84/869F2WoZFStMUrpCgEzJDSCBb7I3+vybPuIeggI
- uc09l4raxS8BdTHp6V/BG0UdYSGusovo5t64uMfliWzbXb1DgY5LG3uw9aTZ/8QJjMwo
- 3sHhBVZW60nIGU40oRRnJPrhS40NRchtecY4EDtZiO1oLGGJSIgRopKJlqeGnsLXduN6
- SuIQ==
-X-Gm-Message-State: APjAAAUFZl1aotC8GC0IIwfo2q4YSzI+acbTFiSr8BRKsHTAY8C+tlbb
- 9OF2zmiw8IvPSYc8VWTVZ4vXeA==
-X-Google-Smtp-Source: APXvYqya2nPu+2RWqeknPa0vJCecXJC5BrkFYN+q1VPzP0Et4zZGP3Bc2YytDsgp84YFrMCkeCvzpw==
-X-Received: by 2002:a62:53c7:: with SMTP id h190mr5059698pfb.208.1569352206681; 
- Tue, 24 Sep 2019 12:10:06 -0700 (PDT)
-Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
- [71.197.186.152])
- by smtp.gmail.com with ESMTPSA id r28sm3261936pfg.62.2019.09.24.12.10.05
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 24 Sep 2019 12:10:05 -0700 (PDT)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Christian Hewitt <christianshewitt@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] arm64: dts: meson: Add capacity-dmips-mhz attributes to
- G12B
-In-Reply-To: <1568429380-3231-1-git-send-email-christianshewitt@gmail.com>
-References: <1568429380-3231-1-git-send-email-christianshewitt@gmail.com>
-Date: Tue, 24 Sep 2019 12:10:05 -0700
-Message-ID: <7htv915x4i.fsf@baylibre.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=DR2VitmOL1QcaChutYPiTVC0w58w/UkjdupN/fmWcR4=;
+ b=Y3SkGcvm4XfCO1s9fSjJCp1tfy0VBvH2l18ZVVkoEX2NGzV6onUJ2hnRb6mdk4j+YQ
+ ZUxOjn/XAIkmVxIvuEkZsjLXaBEI8KMI/KYJo6Ywwp5a9LwPj+Xzl4qKg1K/bMiGjdUL
+ C63cGBed03xJCaI0aNVI+2rokNqgx/h858MHtT4SUUPpLC+9eB1zc9RQNar4pymwFHNf
+ g6B7fN0UyxCE72UI1JiN/co1uz5UxBRN4XPUA1XVgrT6NSQC5DyfijPIb2SEsKX5afYM
+ UIOmsUMZk7Mz48W17MlE0gLyfQN5bbFKPv5Wj3gX6BPVwttj8V/9ok1aqVfs+9nKdcS3
+ JupQ==
+X-Gm-Message-State: APjAAAVQCYpy5QKVuDatOigFb+GS21Hbyr5bSVR/kYxSGFSTivV39ntS
+ FK+E6AkPW+jRA0R+kN7IjGB/bA==
+X-Google-Smtp-Source: APXvYqymt/aK7Y4we0b/lvxFn9Qe8uVGQPu8bA3GOe2Lv0/RUV+DaR0eX9nkbfIlmO29Kxnj+WlZog==
+X-Received: by 2002:aa7:8b17:: with SMTP id f23mr5180364pfd.143.1569352287524; 
+ Tue, 24 Sep 2019 12:11:27 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
+ by smtp.gmail.com with ESMTPSA id 26sm704115pjg.21.2019.09.24.12.11.26
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 24 Sep 2019 12:11:26 -0700 (PDT)
+Date: Tue, 24 Sep 2019 12:11:24 -0700
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH v8 5/6] PM / devfreq: Add PM QoS support
+Message-ID: <20190924191124.GJ133864@google.com>
+References: <cover.1569319738.git.leonard.crestez@nxp.com>
+ <58fdd2c226a4e76a3d9427baab7dd5c23af842ab.1569319738.git.leonard.crestez@nxp.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <58fdd2c226a4e76a3d9427baab7dd5c23af842ab.1569319738.git.leonard.crestez@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_121007_350301_7CE456A5 
-X-CRM114-Status: GOOD (  10.39  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190924_121128_484917_AC202E5B 
+X-CRM114-Status: GOOD (  16.54  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,43 +96,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Frank Hartung <supervisedthinking@gmail.com>,
- Christian Hewitt <christianshewitt@gmail.com>
+Cc: Artur =?utf-8?B?xZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
+ Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
+ linux-pm@vger.kernel.org, Viresh Kumar <viresh.kumar@linaro.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Lukasz Luba <l.luba@partner.samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Alexandre Bailon <abailon@baylibre.com>,
+ Georgi Djakov <georgi.djakov@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ Jacky Bai <ping.bai@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Christian Hewitt <christianshewitt@gmail.com> writes:
+On Tue, Sep 24, 2019 at 01:11:29PM +0300, Leonard Crestez wrote:
+> Register notifiers with the PM QoS framework in order to respond to
+> requests for DEV_PM_QOS_MIN_FREQUENCY and DEV_PM_QOS_MAX_FREQUENCY.
+> 
+> No notifiers are added by this patch but PM QoS constraints can be
+> imposed externally (for example from other devices).
+> 
+> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
+> ---
+>  drivers/devfreq/devfreq.c | 75 +++++++++++++++++++++++++++++++++++++++
+>  include/linux/devfreq.h   |  5 +++
+>  2 files changed, 80 insertions(+)
+> 
+> diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
+> index eee403e70c84..784f3e40536a 100644
+> --- a/drivers/devfreq/devfreq.c
+> +++ b/drivers/devfreq/devfreq.c
+> @@ -22,15 +22,18 @@
+>  #include <linux/platform_device.h>
+>  #include <linux/list.h>
+>  #include <linux/printk.h>
+>  #include <linux/hrtimer.h>
+>  #include <linux/of.h>
+> +#include <linux/pm_qos.h>
+>  #include "governor.h"
+>  
+>  #define CREATE_TRACE_POINTS
+>  #include <trace/events/devfreq.h>
+>  
+> +#define HZ_PER_KHZ	1000
+> +
+>  static struct class *devfreq_class;
+>  
+>  /*
+>   * devfreq core provides delayed work based load monitoring helper
+>   * functions. Governors can use these or can implement their own
+> @@ -109,10 +112,11 @@ static unsigned long find_available_max_freq(struct devfreq *devfreq)
+>  static void get_freq_range(struct devfreq *devfreq,
+>  			   unsigned long *min_freq,
+>  			   unsigned long *max_freq)
+>  {
+>  	unsigned long *freq_table = devfreq->profile->freq_table;
+> +	unsigned long qos_min_freq, qos_max_freq;
+>  
+>  	lockdep_assert_held(&devfreq->lock);
+>  
+>  	/*
+>  	 * Init min/max frequency from freq table.
+> @@ -125,10 +129,18 @@ static void get_freq_range(struct devfreq *devfreq,
+>  	} else {
+>  		*min_freq = freq_table[devfreq->profile->max_state - 1];
+>  		*max_freq = freq_table[0];
+>  	}
+>  
+> +	/* constraints from PM QoS */
+> +	qos_min_freq = dev_pm_qos_read_value(devfreq->dev.parent,
+> +					     DEV_PM_QOS_MIN_FREQUENCY);
+> +	qos_max_freq = dev_pm_qos_read_value(devfreq->dev.parent,
+> +					     DEV_PM_QOS_MIN_FREQUENCY);
 
-> From: Frank Hartung <supervisedthinking@gmail.com>
->
-> From: Frank Hartung <supervisedthinking@gmail.com>
+This needs to be DEV_PM_QOS_MAX_FREQUENCY. I missed this in the earlier
+reviews, but stumbled across it when testing.
 
-nit: duplicate From line.  Removed when applying.
-
-> Meson G12B SoCs (S922X and A311D) are a big-little design where not all CPUs
-> are equal; the A53s cores are weaker than the A72s.
->
-> Include capacity-dmips-mhz properties to tell the OS there is a difference
-> in processing capacity. The dmips values are based on similar submissions for
-> other A53/A72 SoCs: HiSilicon 3660 [1] and Rockchip RK3399 [2].
->
-> This change is particularly beneficial for use-cases like retro gaming where
-> emulators often run on a single core. The OS now chooses an A72 core instead
-> of an A53 core.
->
-> [1] https://lore.kernel.org/patchwork/patch/862742/
-> [2] https://patchwork.kernel.org/patch/10836577/
->
-> Signed-off-by: Frank Hartung <supervisedthinking@gmail.com>
-> Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
-
-Queued for v5.5,
-
-Thanks!
-
-Kevin
+!Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
