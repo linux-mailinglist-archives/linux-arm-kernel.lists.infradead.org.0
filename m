@@ -2,82 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20929BC239
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 09:05:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E44D3BC258
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 09:10:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SXRSfcE+4wqxE16+duXlEzIiQw8MjK23wksljhKBigw=; b=St4wFqtKplsx75
-	hcsGiXDtNLcEXNR9x6IV5yOZtE7C6/cDwRJQ+Y/gJqAY/p69C/7PhZyacgVIGZFxAYLtgh5GM/Iv7
-	GGwUT4q4UfZ6TDVDplb/2rjpp2Slva0kCkQE3wBj2HbCNg3g/+0Ch2KmwnhrL0b8iyIZsQgaKoFtJ
-	WBr1IKeQqFXxK1wuNuJbApjFpxjqJ7P7TGtEDgeuPiXbIIcNSmdf6WMVgTGUV/TG22fXoX1QmqS87
-	2xcsVxTxJTL6gmp1dy74XYE5wmI+xvesAP76WGQCAJqikPfZ1FnRafhPUSLtDCdDfvY0+PFYruHTw
-	OBwKq4K9/pObfrLke+tg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=90Kxs+NEG6xTb2iV8qaB0gdbn/h4YzR9y5SnEcalG8c=; b=IG3
+	CvvTOjQ6uUq3BRVqOZb5KkMzMarL+GZzDPXQSz/+NN8dcu/8e2EFXAvylaBOVrcMlejSzYalE1Yd+
+	yRzqCLUhZlFGAc55nTastoR0dLI/vcsMSaIKoi7pkFEhHWEn29Av0qTYOrNe4pYZjIPs696jwy0xo
+	2ebhAYqaZvD0Brazb8Dtla+j4bOAJseOoQwtxRUy1mWQ5IBZgt/FgGRfWmyPHlodVZpE7EjKZZ3BR
+	Rbh/SOTak4h6VefCcbDk5DDFiNCVYOFZ7imzTansDWT8539LZLMHek3Hwbn/PAgGY8TiqJivnBTWh
+	fUGkMVTMERi8TzN92f8+ColBXtykErg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCesS-0001bj-MK; Tue, 24 Sep 2019 07:04:48 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iCexn-0003mc-Es; Tue, 24 Sep 2019 07:10:20 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCepN-0001MU-HL
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 07:01:57 +0000
-Received: from mail-ot1-f47.google.com (mail-ot1-f47.google.com
- [209.85.210.47])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9180E217D7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Sep 2019 07:01:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569308483;
- bh=5h4RjjXT6Y1QOlkrf+E8Ulhz1Az+W+fntEF2LT7QCYM=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=1SI2QAIxn+9P+9+ZXLQOcENmeJvKQZ7IxWXebwQwwyiQPnp5bLMSct+YijIUXHdm1
- 2RNZJoedR7RYaJB4W951JOl8Y+/QgL+3eRGwSxR51phVgUzwpHhiJEmMTxsVbaAZhz
- ev9EDY/7q7/k0R70PB000kUrGUGzHXQ95yYqAW4c=
-Received: by mail-ot1-f47.google.com with SMTP id k32so556256otc.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Sep 2019 00:01:23 -0700 (PDT)
-X-Gm-Message-State: APjAAAVaCzNcWbm+/HCxFyrVVk5DO9/sQ5PE/d4JHkacOiQMkQfI9X8O
- 87jyNeVgf2Ln+l86PojjytdGh+1RzchcwzIaCcA=
-X-Google-Smtp-Source: APXvYqxSVm+0t2DZ+pXLOjqfSf7/0N3VzaSsLciWrai0ViqCVP8GbXcUaRjcovauaSZEeA9dFQh1yAnhP42V2hGdtnI=
-X-Received: by 2002:a9d:4597:: with SMTP id x23mr724863ote.185.1569308482898; 
- Tue, 24 Sep 2019 00:01:22 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190923161411.9236-1-krzk@kernel.org>
- <CGME20190923161450epcas4p32dfa1273d244c1392c7bfb4c352f2d3e@epcas4p3.samsung.com>
- <20190923161411.9236-6-krzk@kernel.org>
- <7ad1898d-3aa7-db49-78c1-c42b34568c60@samsung.com>
-In-Reply-To: <7ad1898d-3aa7-db49-78c1-c42b34568c60@samsung.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Tue, 24 Sep 2019 09:01:11 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPck6GhOk-ewByb=UtQsX7_NxVH=Aci77ODEAh3YfJKmiQ@mail.gmail.com>
-Message-ID: <CAJKOXPck6GhOk-ewByb=UtQsX7_NxVH=Aci77ODEAh3YfJKmiQ@mail.gmail.com>
-Subject: Re: [RFT v4 6/8] ARM: dts: exynos: Remove MCT subnode for interrupt
- map on Exynos5250
-To: Marek Szyprowski <m.szyprowski@samsung.com>
+ id 1iCewN-0003kn-8Y
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 07:08:54 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 997852003A5;
+ Tue, 24 Sep 2019 09:08:45 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 078FE200114;
+ Tue, 24 Sep 2019 09:08:41 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 15848402B4;
+ Tue, 24 Sep 2019 15:08:35 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: wim@linux-watchdog.org, linux@roeck-us.net, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ linux-watchdog@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH 1/3] watchdog: imx2_wdt: Remove unnecessary blank line
+Date: Tue, 24 Sep 2019 15:07:06 +0800
+Message-Id: <1569308828-8320-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_000143_234375_C5E7FFF2 
-X-CRM114-Status: GOOD (  11.40  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190924_000852_243900_6E672C2C 
+X-CRM114-Status: UNSURE (   5.70  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,34 +68,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- Sylwester Nawrocki <snawrocki@kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Andrzej Hajda <a.hajda@samsung.com>,
- Kukjin Kim <kgene@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 24 Sep 2019 at 08:58, Marek Szyprowski <m.szyprowski@samsung.com> wrote:
->
->
-> On 23.09.2019 18:14, Krzysztof Kozlowski wrote:
-> > Multi Core Timer node has interrupts routed to two different parents -
-> > GIC and combiner.  This was modeled with a interrupt-map within a
-> > subnode but can be expressed in an easier and more common way, directly
-> > in the node itself.
-> >
-> > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> Tested-by: Marek Szyprowski <m.szyprowski@samsung.com>
->
-> Works fine on Arndale and Snow boards.
+Remove unnecessary blank line.
 
-Thanks for testing!
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ drivers/watchdog/imx2_wdt.c | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/drivers/watchdog/imx2_wdt.c b/drivers/watchdog/imx2_wdt.c
+index 8d019a9..6711b4e 100644
+--- a/drivers/watchdog/imx2_wdt.c
++++ b/drivers/watchdog/imx2_wdt.c
+@@ -72,7 +72,6 @@ module_param(nowayout, bool, 0);
+ MODULE_PARM_DESC(nowayout, "Watchdog cannot be stopped once started (default="
+ 				__MODULE_STRING(WATCHDOG_NOWAYOUT) ")");
+ 
+-
+ static unsigned timeout;
+ module_param(timeout, uint, 0);
+ MODULE_PARM_DESC(timeout, "Watchdog timeout in seconds (default="
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
