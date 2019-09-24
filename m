@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B523BC589
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 12:13:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D45F2BC58A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 12:13:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=DEEOX8jnm5zeOZHQSup7eX3v3dPegjNluSOpse3yYBQ=; b=Ey44lEfMoTmzp8rNu3+MOrD7Xi
-	dYUvPh6KiAB/L+5RRL0lKLkk7L17slRplbRGxYGsecxqmz6EmlXQaygeOb4E1Xa32jQWqFA5kc8AD
-	NZgXpcutAr9yvLM9u2FO0QWkf20MiGlIh8JUgXdTL9qGpRUMm+VD4Aip8gJrfXtQZREvuCN2TtaEl
-	sDKGQbJ6kCllhsNFOfxwI9Q5nXA7Im7vncDmsn3GNIYU7HDuld3xvxqmPyJHYxGYPRhGqvBDt0tEp
-	M7gw+oJrjJipYObl79qgc6ETArRkCwS1k4b8z013x15YDMjV1dlXC4/70++ToCcR/UZBOBlMlgWWC
-	p2JF5CkA==;
+	bh=TaxofTi/3F85blG8qsfsQiBnfAYg+03OTsg/se/3RR8=; b=FGSWSzwS1MiaEmc+cuRKETx5BB
+	1QTq1y40/dR8cPSr68m6kZlbi0ezWRxRKONtJIoumauyMYCCWhUsgN5yiMVbvgFCzPASyCEL/1yGJ
+	Z4r5rDOBPolvct6TdsVnYtMSebo1ksDng6+SdXieYM1JporZkzOI7MxZ8JuYPje9OkQqfEgxt6jix
+	JNenbYEaIyQ0Rbn46fO3fcjBRHF42G2MpqqUy+Fe5snH42DcfPSD1ZSzR68v9psJ66xf5rNNQoHP7
+	WbMzfB7r0Kh95MuULDWS4WDV1VU8OoqR8yoo759nf/C1ZYEpCmmkQMqH1olZ6rgBMulHw/1euqsG4
+	WOMbMV1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iChof-0003So-KE; Tue, 24 Sep 2019 10:13:05 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1iChow-0003lZ-5e; Tue, 24 Sep 2019 10:13:22 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iChnF-0002Rk-A5
+ id 1iChnG-0002S4-6d
  for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 10:11:39 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1C3A41A039C;
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id D40FE2003D6;
  Tue, 24 Sep 2019 12:11:36 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0EE381A0192;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C539C200797;
  Tue, 24 Sep 2019 12:11:36 +0200 (CEST)
 Received: from fsr-ub1864-112.ea.freescale.net
  (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 5DB8D205E6;
- Tue, 24 Sep 2019 12:11:35 +0200 (CEST)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 1FC88205E6;
+ Tue, 24 Sep 2019 12:11:36 +0200 (CEST)
 From: Leonard Crestez <leonard.crestez@nxp.com>
 To: MyungJoo Ham <myungjoo.ham@samsung.com>,
  Kyungmin Park <kyungmin.park@samsung.com>,
  Matthias Kaehlcke <mka@chromium.org>
-Subject: [PATCH v8 4/6] PM / devfreq: Introduce get_freq_range helper
-Date: Tue, 24 Sep 2019 13:11:28 +0300
-Message-Id: <674fe91065034083fd7c8c1810305cd01551bb80.1569319738.git.leonard.crestez@nxp.com>
+Subject: [PATCH v8 5/6] PM / devfreq: Add PM QoS support
+Date: Tue, 24 Sep 2019 13:11:29 +0300
+Message-Id: <58fdd2c226a4e76a3d9427baab7dd5c23af842ab.1569319738.git.leonard.crestez@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1569319738.git.leonard.crestez@nxp.com>
 References: <cover.1569319738.git.leonard.crestez@nxp.com>
@@ -49,15 +49,15 @@ In-Reply-To: <cover.1569319738.git.leonard.crestez@nxp.com>
 References: <cover.1569319738.git.leonard.crestez@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_031137_625921_2B0844B6 
-X-CRM114-Status: GOOD (  15.58  )
+X-CRM114-CacheID: sfid-20190924_031138_521926_EB9DCA25 
+X-CRM114-Status: GOOD (  14.34  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -85,202 +85,211 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Moving handling of min/max freq to a single function and call it from
-update_devfreq and for printing min/max freq values in sysfs.
+Register notifiers with the PM QoS framework in order to respond to
+requests for DEV_PM_QOS_MIN_FREQUENCY and DEV_PM_QOS_MAX_FREQUENCY.
 
-This changes the behavior of out-of-range min_freq/max_freq: clamping
-is now done at evaluation time. This means that if an out-of-range
-constraint is imposed by sysfs and it later becomes valid then it will
-be enforced.
+No notifiers are added by this patch but PM QoS constraints can be
+imposed externally (for example from other devices).
 
 Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
 ---
- drivers/devfreq/devfreq.c | 112 ++++++++++++++++++++++----------------
- 1 file changed, 64 insertions(+), 48 deletions(-)
+ drivers/devfreq/devfreq.c | 75 +++++++++++++++++++++++++++++++++++++++
+ include/linux/devfreq.h   |  5 +++
+ 2 files changed, 80 insertions(+)
 
 diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
-index 4a878baa809e..eee403e70c84 100644
+index eee403e70c84..784f3e40536a 100644
 --- a/drivers/devfreq/devfreq.c
 +++ b/drivers/devfreq/devfreq.c
-@@ -96,10 +96,54 @@ static unsigned long find_available_max_freq(struct devfreq *devfreq)
- 		dev_pm_opp_put(opp);
+@@ -22,15 +22,18 @@
+ #include <linux/platform_device.h>
+ #include <linux/list.h>
+ #include <linux/printk.h>
+ #include <linux/hrtimer.h>
+ #include <linux/of.h>
++#include <linux/pm_qos.h>
+ #include "governor.h"
  
- 	return max_freq;
+ #define CREATE_TRACE_POINTS
+ #include <trace/events/devfreq.h>
+ 
++#define HZ_PER_KHZ	1000
++
+ static struct class *devfreq_class;
+ 
+ /*
+  * devfreq core provides delayed work based load monitoring helper
+  * functions. Governors can use these or can implement their own
+@@ -109,10 +112,11 @@ static unsigned long find_available_max_freq(struct devfreq *devfreq)
+ static void get_freq_range(struct devfreq *devfreq,
+ 			   unsigned long *min_freq,
+ 			   unsigned long *max_freq)
+ {
+ 	unsigned long *freq_table = devfreq->profile->freq_table;
++	unsigned long qos_min_freq, qos_max_freq;
+ 
+ 	lockdep_assert_held(&devfreq->lock);
+ 
+ 	/*
+ 	 * Init min/max frequency from freq table.
+@@ -125,10 +129,18 @@ static void get_freq_range(struct devfreq *devfreq,
+ 	} else {
+ 		*min_freq = freq_table[devfreq->profile->max_state - 1];
+ 		*max_freq = freq_table[0];
+ 	}
+ 
++	/* constraints from PM QoS */
++	qos_min_freq = dev_pm_qos_read_value(devfreq->dev.parent,
++					     DEV_PM_QOS_MIN_FREQUENCY);
++	qos_max_freq = dev_pm_qos_read_value(devfreq->dev.parent,
++					     DEV_PM_QOS_MIN_FREQUENCY);
++	*min_freq = max(*min_freq, HZ_PER_KHZ * qos_min_freq);
++	*max_freq = min(*max_freq, HZ_PER_KHZ * qos_max_freq);
++
+ 	/* constraints from sysfs */
+ 	*min_freq = max(*min_freq, devfreq->min_freq);
+ 	*max_freq = min(*max_freq, devfreq->max_freq);
+ 
+ 	/* constraints from OPP interface */
+@@ -606,10 +618,49 @@ static int devfreq_notifier_call(struct notifier_block *nb, unsigned long type,
+ 	mutex_unlock(&devfreq->lock);
+ 
+ 	return ret;
  }
  
 +/**
-+ * get_freq_range() - Get the current freq range
-+ * @devfreq:	the devfreq instance
-+ * @min_freq:	the min frequency
-+ * @max_freq:	the max frequency
-+ *
-+ * This takes into consideration all constraints.
++ * qos_notifier_call() - Common handler for QoS constraints.
++ * @devfreq:    the devfreq instance.
 + */
-+static void get_freq_range(struct devfreq *devfreq,
-+			   unsigned long *min_freq,
-+			   unsigned long *max_freq)
++static int qos_notifier_call(struct devfreq *devfreq)
 +{
-+	unsigned long *freq_table = devfreq->profile->freq_table;
++	int err;
 +
-+	lockdep_assert_held(&devfreq->lock);
++	mutex_lock(&devfreq->lock);
++	err = update_devfreq(devfreq);
++	mutex_unlock(&devfreq->lock);
++	if (err)
++		dev_err(devfreq->dev.parent,
++				"failed to update frequency for PM QoS constraints (%d)\n",
++				err);
 +
-+	/*
-+	 * Init min/max frequency from freq table.
-+	 * Drivers can initialize this in either ascending or descending order
-+	 * and devfreq core supports both.
-+	 */
-+	if (freq_table[0] < freq_table[devfreq->profile->max_state - 1]) {
-+		*min_freq = freq_table[0];
-+		*max_freq = freq_table[devfreq->profile->max_state - 1];
-+	} else {
-+		*min_freq = freq_table[devfreq->profile->max_state - 1];
-+		*max_freq = freq_table[0];
-+	}
++	return NOTIFY_OK;
++}
 +
-+	/* constraints from sysfs */
-+	*min_freq = max(*min_freq, devfreq->min_freq);
-+	*max_freq = min(*max_freq, devfreq->max_freq);
++/**
++ * qos_min_notifier_call() - Callback for QoS min_freq changes.
++ * @nb:		Should be devfreq->nb_min
++ */
++static int qos_min_notifier_call(struct notifier_block *nb,
++					 unsigned long val, void *ptr)
++{
++	return qos_notifier_call(container_of(nb, struct devfreq, nb_min));
++}
 +
-+	/* constraints from OPP interface */
-+	*min_freq = max(*min_freq, devfreq->scaling_min_freq);
-+	/* scaling_max_freq can be zero on error */
-+	if (devfreq->scaling_max_freq)
-+		*max_freq = min(*max_freq, devfreq->scaling_max_freq);
-+
-+	/* max_freq takes precedence over min_freq */
-+	if (*min_freq > *max_freq)
-+		*min_freq = *max_freq;
++/**
++ * qos_max_notifier_call() - Callback for QoS max_freq changes.
++ * @nb:		Should be devfreq->nb_max
++ */
++static int qos_max_notifier_call(struct notifier_block *nb,
++					 unsigned long val, void *ptr)
++{
++	return qos_notifier_call(container_of(nb, struct devfreq, nb_max));
 +}
 +
  /**
-  * devfreq_get_freq_level() - Lookup freq_table for the frequency
-  * @devfreq:	the devfreq instance
-  * @freq:	the target frequency
-  */
-@@ -349,20 +393,11 @@ int update_devfreq(struct devfreq *devfreq)
+  * devfreq_dev_release() - Callback for struct device to release the device.
+  * @dev:	the devfreq device
+  *
+  * Remove devfreq from the list and release its resources.
+@@ -620,10 +671,15 @@ static void devfreq_dev_release(struct device *dev)
  
- 	/* Reevaluate the proper frequency */
- 	err = devfreq->governor->get_target_freq(devfreq, &freq);
- 	if (err)
- 		return err;
--
--	/*
--	 * Adjust the frequency with user freq, QoS and available freq.
--	 *
--	 * List from the highest priority
--	 * max_freq
--	 * min_freq
--	 */
--	max_freq = min(devfreq->scaling_max_freq, devfreq->max_freq);
--	min_freq = max(devfreq->scaling_min_freq, devfreq->min_freq);
-+	get_freq_range(devfreq, &min_freq, &max_freq);
+ 	mutex_lock(&devfreq_list_lock);
+ 	list_del(&devfreq->node);
+ 	mutex_unlock(&devfreq_list_lock);
  
- 	if (freq < min_freq) {
- 		freq = min_freq;
- 		flags &= ~DEVFREQ_FLAG_LEAST_UPPER_BOUND; /* Use GLB */
++	dev_pm_qos_remove_notifier(devfreq->dev.parent, &devfreq->nb_max,
++			DEV_PM_QOS_MAX_FREQUENCY);
++	dev_pm_qos_remove_notifier(devfreq->dev.parent, &devfreq->nb_min,
++			DEV_PM_QOS_MIN_FREQUENCY);
++
+ 	if (devfreq->profile->exit)
+ 		devfreq->profile->exit(devfreq->dev.parent);
+ 
+ 	kfree(devfreq->time_in_state);
+ 	kfree(devfreq->trans_table);
+@@ -733,10 +789,28 @@ struct devfreq *devfreq_add_device(struct device *dev,
+ 	if (err) {
+ 		put_device(&devfreq->dev);
+ 		goto err_out;
  	}
-@@ -1298,40 +1333,28 @@ static ssize_t min_freq_store(struct device *dev, struct device_attribute *attr,
- 	ret = sscanf(buf, "%lu", &value);
- 	if (ret != 1)
- 		return -EINVAL;
  
- 	mutex_lock(&df->lock);
--
--	if (value) {
--		if (value > df->max_freq) {
--			ret = -EINVAL;
--			goto unlock;
--		}
--	} else {
--		unsigned long *freq_table = df->profile->freq_table;
--
--		/* Get minimum frequency according to sorting order */
--		if (freq_table[0] < freq_table[df->profile->max_state - 1])
--			value = freq_table[0];
--		else
--			value = freq_table[df->profile->max_state - 1];
--	}
--
- 	df->min_freq = value;
- 	update_devfreq(df);
--	ret = count;
--unlock:
- 	mutex_unlock(&df->lock);
--	return ret;
++	/*
++	 * Register notifiers for updates to min/max_freq after device is
++	 * initialized (and we can handle notifications) but before the
++	 * governor is started (which should do an initial enforcement of
++	 * constraints).
++	 */
++	devfreq->nb_min.notifier_call = qos_min_notifier_call;
++	err = dev_pm_qos_add_notifier(devfreq->dev.parent, &devfreq->nb_min,
++				      DEV_PM_QOS_MIN_FREQUENCY);
++	if (err)
++		goto err_devfreq;
 +
-+	return count;
- }
- 
- static ssize_t min_freq_show(struct device *dev, struct device_attribute *attr,
- 			     char *buf)
- {
- 	struct devfreq *df = to_devfreq(dev);
-+	unsigned long min_freq, max_freq;
++	devfreq->nb_max.notifier_call = qos_max_notifier_call;
++	err = dev_pm_qos_add_notifier(devfreq->dev.parent, &devfreq->nb_max,
++				      DEV_PM_QOS_MAX_FREQUENCY);
++	if (err)
++		goto err_devfreq;
 +
-+	mutex_lock(&df->lock);
-+	get_freq_range(df, &min_freq, &max_freq);
-+	mutex_unlock(&df->lock);
+ 	mutex_lock(&devfreq_list_lock);
  
--	return sprintf(buf, "%lu\n", max(df->scaling_min_freq, df->min_freq));
-+	return sprintf(buf, "%lu\n", min_freq);
- }
+ 	governor = try_then_request_governor(devfreq->governor_name);
+ 	if (IS_ERR(governor)) {
+ 		dev_err(dev, "%s: Unable to find governor for the device\n",
+@@ -760,10 +834,11 @@ struct devfreq *devfreq_add_device(struct device *dev,
  
- static ssize_t max_freq_store(struct device *dev, struct device_attribute *attr,
- 			      const char *buf, size_t count)
- {
-@@ -1343,40 +1366,33 @@ static ssize_t max_freq_store(struct device *dev, struct device_attribute *attr,
- 	if (ret != 1)
- 		return -EINVAL;
+ 	return devfreq;
  
- 	mutex_lock(&df->lock);
+ err_init:
+ 	mutex_unlock(&devfreq_list_lock);
++err_devfreq:
+ 	devfreq_remove_device(devfreq);
+ 	return ERR_PTR(err);
  
--	if (value) {
--		if (value < df->min_freq) {
--			ret = -EINVAL;
--			goto unlock;
--		}
--	} else {
--		unsigned long *freq_table = df->profile->freq_table;
--
--		/* Get maximum frequency according to sorting order */
--		if (freq_table[0] < freq_table[df->profile->max_state - 1])
--			value = freq_table[df->profile->max_state - 1];
--		else
--			value = freq_table[0];
--	}
-+	/* Interpret zero as "don't care" */
-+	if (!value)
-+		value = ULONG_MAX;
+ err_dev:
+ 	/*
+diff --git a/include/linux/devfreq.h b/include/linux/devfreq.h
+index c3cbc15fdf08..dac0dffeabb4 100644
+--- a/include/linux/devfreq.h
++++ b/include/linux/devfreq.h
+@@ -134,10 +134,12 @@ struct devfreq_dev_profile {
+  * @total_trans:	Number of devfreq transitions
+  * @trans_table:	Statistics of devfreq transitions
+  * @time_in_state:	Statistics of devfreq states
+  * @last_stat_updated:	The last time stat updated
+  * @transition_notifier_list: list head of DEVFREQ_TRANSITION_NOTIFIER notifier
++ * @nb_min:		Notifier block for DEV_PM_QOS_MIN_FREQUENCY
++ * @nb_max:		Notifier block for DEV_PM_QOS_MAX_FREQUENCY
+  *
+  * This structure stores the devfreq information for a give device.
+  *
+  * Note that when a governor accesses entries in struct devfreq in its
+  * functions except for the context of callbacks defined in struct
+@@ -176,10 +178,13 @@ struct devfreq {
+ 	unsigned int *trans_table;
+ 	unsigned long *time_in_state;
+ 	unsigned long last_stat_updated;
  
- 	df->max_freq = value;
- 	update_devfreq(df);
--	ret = count;
--unlock:
- 	mutex_unlock(&df->lock);
--	return ret;
+ 	struct srcu_notifier_head transition_notifier_list;
 +
-+	return count;
- }
- static DEVICE_ATTR_RW(min_freq);
++	struct notifier_block nb_min;
++	struct notifier_block nb_max;
+ };
  
- static ssize_t max_freq_show(struct device *dev, struct device_attribute *attr,
- 			     char *buf)
- {
- 	struct devfreq *df = to_devfreq(dev);
-+	unsigned long min_freq, max_freq;
-+
-+	mutex_lock(&df->lock);
-+	get_freq_range(df, &min_freq, &max_freq);
-+	mutex_unlock(&df->lock);
- 
--	return sprintf(buf, "%lu\n", min(df->scaling_max_freq, df->max_freq));
-+	return sprintf(buf, "%lu\n", max_freq);
- }
- static DEVICE_ATTR_RW(max_freq);
- 
- static ssize_t available_frequencies_show(struct device *d,
- 					  struct device_attribute *attr,
+ struct devfreq_freqs {
+ 	unsigned long old;
+ 	unsigned long new;
 -- 
 2.17.1
 
