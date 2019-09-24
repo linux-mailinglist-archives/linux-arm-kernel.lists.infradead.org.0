@@ -2,110 +2,129 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C01FBBFC5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 03:39:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96EE7BBFCD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Sep 2019 03:49:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hk2kZcsIs34geci4wYDm4K/pGuJtQg206x1gEuiLOj8=; b=ejsDTXPORxxGwr
-	gVRySqbGCUc5FSMxyfRokRBb2irU8EhD1X+dJI9BTZhWldX1Mm3radZze7/sVH37oGSV7d0u1vwfv
-	yYWxyS+M6IufPVRp2bwXge+gk/WxgYDZv9WEasYAzk4lON1FlYZwdOIuUh/MzYLSy7kaM13CSojZj
-	Qctmfso42o6DSP5DRaqTpaL7mW9OuDJpewUzXS02ULg8WLQZHHRa3Tc3bEEz2FHgKIl1q8Lpj3iPZ
-	8HdkRGW4vgtGp8xxt2UGfC3wDHA7RLG2zqieWlYX9juAhEnNzhg/famtfqt2YFOgp1qGkx2dnjwJr
-	pP9xrCosSPd8WzWEInlw==;
+	List-Owner; bh=a6gQ8ya6VN7AOaA0ffSezLj3r9OHIV9LGUBM5WDG1ms=; b=oAICjMVLpMtCot
+	z4Zyy57A+hZ25GqsfSTzOBpiSZEzXv4irJodApbRCaNRZbVL1RFbS9URA8RrwXtV+IPVw8Z6fuOo3
+	yObnHjcCmMrxTnc6Llxq93rZmdpYbYO6TU+iI6BUdPLk5mkJLeMcnWNj9OFRuU+9B6ScIN6SFS33i
+	0vS+pg+tExxBGIU5sAs4EXi8ZsHdd7L9UQk4FewFpiOrx8xTXlMFIR3tF9MFAyrGxAOi0dLwsVhAP
+	6wjkJqb8I5TeDg2tZAy9sx1yqsGq+s5soxHQ5rflfAbXQkeh7F/aBWB9wmx5YfTZggkF64ILg7ub9
+	DdZ9HHY9QGmMsrdc3cbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCZnF-0003IS-0y; Tue, 24 Sep 2019 01:39:05 +0000
-Received: from mail-he1eur02on0602.outbound.protection.outlook.com
- ([2a01:111:f400:fe05::602]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1iCZwj-0006JH-5y; Tue, 24 Sep 2019 01:48:53 +0000
+Received: from mailout3.samsung.com ([203.254.224.33])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCZn5-0003Hw-Hh
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 01:38:57 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=mAPveNLFgHkKg0TnuMrVYFysQRnB8C1Ld1HcEEMPWRqt2OpB0H6frUePkaffrrpmGfGcA2yERhCEI40jCiaKO8pGnExjV/6W9eY6j/7lSzHhqfzv15raFSJeMFoBnS3XPVu295Cd7ZT8HHAXo0iR3/1CQzQIFp7lxHXinjJ36GLg5LHYBKzEe9s9tnthCHbIJJj7jtrArIVQLcCaj9uSt4QHDITbm+vOmx4a4VyYUaES4HEwAmW4mjNChZhfnIwD5PSWJX5oWZDAudwnBY99fQkYon1jcLbOoOrPJMOMxKrZpuSRWFeXzRh0qXFvCDdEUkcSNWy9nXHSnN7FtdAHkQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=YnIRD6or0+5xL1WvTSxYAdQ6kcMLorgwl0F7Avgbquc=;
- b=KC1pbbNj7jLb32BD/3pg/Lv4AXT/3OgYRSKPFczh8bqz9bePK+caujnvkxHqY0oBA8BrlvTlzduLc1TAyuJk72BJG0TBjs0Kl2ro/pQZQAcBddAqhUjSJ+idmGzCRJd/QoTKL/pGvQi37abAQCTFrsqz6MuE7s8OFdIZe1nIjZaBc518yogiYZJaeQ811zIj3Lyvxx48jl+uvdqPR02rj96qR3LPHkS72OJkLm9qhksjDmLchIL0wnpEcl92T+Oj9NwpIHx+c1ku9+7h82/4RseYwiVehHK+lR5mPyMJtApUTN+4kfyGcDilQrQEU0NV/yahITY/FX0VBrjp7sBynA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=YnIRD6or0+5xL1WvTSxYAdQ6kcMLorgwl0F7Avgbquc=;
- b=aonNFhheYhPtkvoN68UcAlvGR/KyaAPFcBI8y3upkLE3LdfG/qFYJl8EyqW0ywAW4xayEZCizYb++FgZ8IuUunZ+dqkeE4/NWfqtd1AiV5/HDHc2PvxiK3AbkdBzNFE4NtOj9BKNjTxGX0MD6JCOLGxhsjpHkKY+9w/HxxH3xqU=
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (20.179.232.15) by
- VE1PR04MB6511.eurprd04.prod.outlook.com (20.179.233.161) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2284.20; Tue, 24 Sep 2019 01:38:50 +0000
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::35d1:8d88:10f4:561]) by VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::35d1:8d88:10f4:561%5]) with mapi id 15.20.2284.023; Tue, 24 Sep 2019
- 01:38:50 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: Philipp Puschmann <philipp.puschmann@emlix.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH v4 2/3] dmaengine: imx-sdma: fix dma freezes
-Thread-Topic: [PATCH v4 2/3] dmaengine: imx-sdma: fix dma freezes
-Thread-Index: AQHVbvaw7dXFB7AvOUuEjPPnVNzhIKc6C1wA
-Date: Tue, 24 Sep 2019 01:38:50 +0000
-Message-ID: <VE1PR04MB66383C69998D640F66A8D1DC89840@VE1PR04MB6638.eurprd04.prod.outlook.com>
-References: <20190919142942.12469-1-philipp.puschmann@emlix.com>
- <20190919142942.12469-3-philipp.puschmann@emlix.com>
-In-Reply-To: <20190919142942.12469-3-philipp.puschmann@emlix.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=yibin.gong@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: b706b8f7-867d-4cf2-45de-08d7408ff34d
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600167)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VE1PR04MB6511; 
-x-ms-traffictypediagnostic: VE1PR04MB6511:|VE1PR04MB6511:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VE1PR04MB6511825891C91BFD8A405ED789840@VE1PR04MB6511.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6108;
-x-forefront-prvs: 0170DAF08C
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(376002)(39860400002)(346002)(366004)(136003)(54534003)(199004)(189003)(52536014)(102836004)(5660300002)(11346002)(66446008)(76116006)(86362001)(81166006)(81156014)(478600001)(8676002)(305945005)(7736002)(25786009)(26005)(9686003)(6246003)(186003)(316002)(8936002)(14454004)(486006)(6506007)(33656002)(66476007)(7696005)(66556008)(74316002)(3846002)(66946007)(6116002)(55016002)(7416002)(71190400001)(4326008)(4001150100001)(64756008)(54906003)(66066001)(2906002)(76176011)(476003)(99286004)(256004)(229853002)(6436002)(2501003)(71200400001)(110136005)(14444005)(446003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6511;
- H:VE1PR04MB6638.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: d4PhIgDP3xSAym6ielLfsL+JGcpZuIw4y+Obo32w4jX71+d90ijTs0d0PI1sWSzaBon0R0JhBEeMYHZlaLdxNpdNsiDIAbqw3BNNlSflZlfQjgSskRvURErubELSJprs97w/Evg3UtOXNErrZJho7U7Zp7ldoBTlqhgzWyj/LRshOZ33iU/tyUSsQo4q1Wc3+e2DkadWwz202XmGVnplCPvc8R7+mhozj3gDovlV5yYR8iNVUfA6XL/V/mYeg64g9oIzWuBglCu97/eLcXdPqiupUVaR4pclTwWGY3G6xsc6+W7BxcYAXqq54aRKXC5iHrxG2eLvdiiwQUUkcvIzl718wR0g5zV68RSZNA11e6ez78SOi1kmVwPasM8fK0l95PBe/lgUAhMli4cjMroXzmdNPzRqeaoRc2uWq5f7UDo=
+ id 1iCZwa-0006Ie-Cd
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Sep 2019 01:48:46 +0000
+Received: from epcas1p4.samsung.com (unknown [182.195.41.48])
+ by mailout3.samsung.com (KnoxPortal) with ESMTP id
+ 20190924014840epoutp033b4f774cfe1fc8ba8898d20bd19a244b~HPK_ez0i92790027900epoutp03s
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 24 Sep 2019 01:48:40 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com
+ 20190924014840epoutp033b4f774cfe1fc8ba8898d20bd19a244b~HPK_ez0i92790027900epoutp03s
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1569289720;
+ bh=pJpHgTiVkNpubEJdZxNYCQu8eOFl0FLblp7ke2xtmf0=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=o2AJKqm8449qKKw+a7es/bzWGOrQSBi4x6rgpf/lit2uasPJ/KHW/FY6xyV+Zxalu
+ p2i141blPw1DHZySR38rQF458nyC5nxNBR2OotRnrcaqkaXog7wEiLrfPyv+cbWCT1
+ ktOEQ5A529McFnpOrN/FG9gRQ8o/lnYSe/0417EY=
+Received: from epsnrtp1.localdomain (unknown [182.195.42.162]) by
+ epcas1p3.samsung.com (KnoxPortal) with ESMTP id
+ 20190924014839epcas1p36af68c6e22c22a0b1657c067d86065c6~HPK_DIj-F0605906059epcas1p3D;
+ Tue, 24 Sep 2019 01:48:39 +0000 (GMT)
+Received: from epsmges1p5.samsung.com (unknown [182.195.40.155]) by
+ epsnrtp1.localdomain (Postfix) with ESMTP id 46ckcL6CTSzMqYlr; Tue, 24 Sep
+ 2019 01:48:34 +0000 (GMT)
+Received: from epcas1p3.samsung.com ( [182.195.41.47]) by
+ epsmges1p5.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 18.C0.04068.DE5798D5; Tue, 24 Sep 2019 10:48:29 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+ epcas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190924014828epcas1p2051e6043f723fb31f124e33d96f1d9d2~HPKz9b8h52249722497epcas1p2v;
+ Tue, 24 Sep 2019 01:48:28 +0000 (GMT)
+Received: from epsmgms1p2new.samsung.com (unknown [182.195.42.42]) by
+ epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190924014828epsmtrp1e1d592f9fba9c92ba0622f993aa8975d~HPKz4HvTn0112501125epsmtrp1w;
+ Tue, 24 Sep 2019 01:48:28 +0000 (GMT)
+X-AuditID: b6c32a39-f5fff70000000fe4-9c-5d8975ed6da2
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+ epsmgms1p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 7F.9D.03889.CE5798D5; Tue, 24 Sep 2019 10:48:28 +0900 (KST)
+Received: from [10.113.221.102] (unknown [10.113.221.102]) by
+ epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190924014828epsmtip2b25f355d8bcd37a7bfa96664b0f50f2e~HPKzr6mpL1407214072epsmtip2L;
+ Tue, 24 Sep 2019 01:48:28 +0000 (GMT)
+Subject: Re: [PATCH] PM / devfreq: Check NULL governor in
+ available_governors_show
+To: Leonard Crestez <leonard.crestez@nxp.com>, Matthias Kaehlcke
+ <mka@chromium.org>, MyungJoo Ham <myungjoo.ham@samsung.com>, Kyungmin Park
+ <kyungmin.park@samsung.com>
+From: Chanwoo Choi <cw00.choi@samsung.com>
+Organization: Samsung Electronics
+Message-ID: <d6ea004f-4fbb-9a16-407e-ad8542abe1dc@samsung.com>
+Date: Tue, 24 Sep 2019 10:52:53 +0900
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b706b8f7-867d-4cf2-45de-08d7408ff34d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Sep 2019 01:38:50.0734 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: ovwGFaxgfyN7uByQkGRxUPOlP+dQSUXA5egx4VjtvrzMq1o61p5PEwIzXVDYFmTfyQJ0nFMTkDSmpwBzIbZHTw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6511
+In-Reply-To: <96f459015e6418cee4fa20fdbdb80c4caf417c19.1569256298.git.leonard.crestez@nxp.com>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA01Ta0hTYRjm29nOzqzVcVm9WZme0Egwd5yrY2UESQwyEupHN1sHd5zibu1s
+ mfXDdWG57GLY1RCDFGwZ2ryw7DKapkmUShfFEqsJXTTDS1HUj7YdI/89z/c+D8/3fBcCU7Ti
+ 0US+ycZZTayBwiPELW0rk5PG7K5sZV1LDOPvaJYy3d0NUubZsVEpM+BYwtQOjksYT+C1hJk8
+ 046YyYYAYt4crcU3yjTXHL1ijcftwjWN1cWaO2NekebR2H2R5myTG2kmPTFZ0t0F6/M4VsdZ
+ YzlTjlmXb9KnU1u2azdp1auVdBKdxqyhYk2skUunMjKzkjbnG4Ibo2IPsgZ7cCmL5XkqecN6
+ q9lu42LzzLwtneIsOoMlzbKKZ4283aRflWM2rqWVyhR1ULi/IK9h5DFmqZEfet/WiTlQX8Qp
+ JCOATIWnz5+hUyiCUJBeBC/7AyKBTCCoap7CBfIDQc3b29J/lkv1/dOWBwg6S+vEAvmGwHn8
+ MRZSzSN3QF9Hb3gQRd5CcOHJlDREMHIAQWX5lCikwslE8H3qx0N4LhkHr34GUAjLyQ0w+GFc
+ HMJiMh7aR31hzXxyJ0y8a5MImkjoujoc1sjIfTDUfCWcjJELYWC4SiTgZXC8+RoWCgayVApD
+ 3T9woUQGBBorMQHPgy+dTdPlouHzOec0PgI3u9pxwVyCoMnXIxEGKvDVlAcTiGDCSqhvTRaW
+ 4+Du70okBM+Bse+nJSEJkHIocSoEyXJ48W5QJOBFcOOkCy9DVMWMOhUzKlTMqFDxP+w6ErvR
+ As7CG/UcT1vUMy/cg8LvNjHNizqeZ/oRSSBqttziLclWSNiDfJHRj4DAqCi5J9GZrZDr2KLD
+ nNWstdoNHO9H6uBpn8ei5+eYg7/AZNPS6hSVSsWk0qvVNE0tlGv0jmwFqWdtXAHHWTjrP5+I
+ kEU70AOXJPXyggRXhnnJ/bpCedHhb72dS/foTnTtr084pI0f7COqicK9sxZ37yrcqrLdKXsU
+ +SuztilX9TW398BSmS9HeXHv2aGJuFvx7uKyk+OO0p4Uz+XGmFa3M7L4472SdS8fuj06k18/
+ mvTne4b2aUz5itxtOusRb1Talte+kfKeMkrM57F0Imbl2b93WiIrzQMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrEIsWRmVeSWpSXmKPExsWy7bCSvO6b0s5Yg95rGhaHjm1ltzh/fgO7
+ xdmmN+wWtxpkLFbc/chqsenxNVaLz71HGC0+b3jMaHG7cQWbA6fH7IaLLB6bVnWyeWxeUu+x
+ 8d0OJo+D7/YwefRtWcXo8XmTXAB7FJdNSmpOZllqkb5dAlfGhtdHmQuW8lY8PHycuYHxOlcX
+ IyeHhICJxLT1Nxi7GLk4hAR2M0qcOPmCGSIhKTHt4lEgmwPIFpY4fLgYouYto8SkjtuMIDXC
+ AiES149dZAGxRQRWM0q86fUHKWIWuMUo8WzXYbBBQgIbGSUuLXUCsdkEtCT2v7jBBmLzCyhK
+ XP3xGGwQr4CdxN1HH8EGsQioShx5sx+sRlQgQuLwjllQNYISJ2c+AavhFIiTuL91Bth8ZgF1
+ iT/zLkHZ4hK3nsxngrDlJZq3zmaewCg8C0n7LCQts5C0zELSsoCRZRWjZGpBcW56brFhgVFe
+ arlecWJucWleul5yfu4mRnDMaWntYDxxIv4QowAHoxIPr8S2jlgh1sSy4srcQ4wSHMxKIryb
+ tNpihXhTEiurUovy44tKc1KLDzFKc7AoifPK5x+LFBJITyxJzU5NLUgtgskycXBKNTDy2vE+
+ LcvoMmTbYae/8d0xRrZi4UMTuC6yWXgJdoRumG3N1pOxZvb0xs0T2t+qFKzJig7vcvENf1Lb
+ Mjmhw676ZNEuvu8fD/Ev4l3Zv+OHx24JoWnmPUt+XbTYV23E/ejTHqvFN27kJj6+eNXoD88R
+ NcGwd71nr+mfKHfa/nuXIqt7oXGbvZYSS3FGoqEWc1FxIgAqLJSKtQIAAA==
+X-CMS-MailID: 20190924014828epcas1p2051e6043f723fb31f124e33d96f1d9d2
+X-Msg-Generator: CA
+X-Sendblock-Type: SVC_REQ_APPROVE
+CMS-TYPE: 101P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20190923163453epcas4p1f9cff7d9f1a33fabcf4c980560d6c27d
+References: <CGME20190923163453epcas4p1f9cff7d9f1a33fabcf4c980560d6c27d@epcas4p1.samsung.com>
+ <96f459015e6418cee4fa20fdbdb80c4caf417c19.1569256298.git.leonard.crestez@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_183855_593295_5937C4A0 
-X-CRM114-Status: GOOD (  23.60  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20190923_184844_763875_8255445F 
+X-CRM114-Status: GOOD (  21.96  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe05:0:0:0:602 listed in]
- [list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.33 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -113,7 +132,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 1.0 FORGED_SPF_HELO        No description available.
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,121 +145,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andy Duan <fugang.duan@nxp.com>, "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "vkoul@kernel.org" <vkoul@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "dmaengine@vger.kernel.or" <dmaengine@vger.kernel.or>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
+ linux-pm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Lukasz Luba <l.luba@partner.samsung.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-On 2019-9-19 22:30 Philipp Puschmann <philipp.puschmann@emlix.com> wrote 
-> For some years and since many kernel versions there are reports that the RX
-> UART SDMA channel stops working at some point. The workaround was to
-> disable DMA for RX. This commit tries to fix the problem itself.
-> 
-> Due to its license i wasn't able to debug the sdma script itself but it somehow
-> leads to blocking the scheduling of the channel script when a running sdma
-> script does not find any free descriptor in the ring to put its data into.
-> 
-> If we detect such a potential case we manually restart the channel.
-> 
-> As sdmac->desc is constant we can move desc out of the loop.
-> 
-> Fixes: 1ec1e82f2510 ("dmaengine: Add Freescale i.MX SDMA support")
-In fact, it's a refine patch rather than bug fix, just restore cyclic transfer
-back in the corner case. There are two causes for such 'corner case':
-1. improper number of BD or length of BD setting for cyclic, so that BD could
-be consumed very quickly, worst case is uart Aging timer which one byte
-may consume one BD. So for such case, enlarge more BDs is the right way as
-your UART patch.
-2. High cpu loading so that SDMA interrupt handler can't run in time to set 
-BD_DONE flag back again, at last all BDs consumed. In such case, this patch
-may blind other coding issues such as long time window of disable irq(spin_lock_irq)
-. So I think this patch is much like a refine/restore patch, and it's better to add
-a clear print information to hint user channel is restoring and unexpected high cpu
-loading is coming...
-
-> Signed-off-by: Philipp Puschmann <philipp.puschmann@emlix.com>
-> Reviewed-by: Lucas Stach <l.stach@pengutronix.de>
-> ---
-> 
-> Changelog v4:
->  - fixed the fixes tag
-> 
-> Changelog v3:
->  - use correct dma_wmb() instead of dma_wb()
->  - add fixes tag
-> 
-> Changelog v2:
->  - clarify comment and commit description
-> 
->  drivers/dma/imx-sdma.c | 21 +++++++++++++++++----
->  1 file changed, 17 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c index
-> e029a2443cfc..a32b5962630e 100644
-> --- a/drivers/dma/imx-sdma.c
-> +++ b/drivers/dma/imx-sdma.c
-> @@ -775,21 +775,23 @@ static void sdma_start_desc(struct sdma_channel
-> *sdmac)  static void sdma_update_channel_loop(struct sdma_channel
-> *sdmac)  {
->  	struct sdma_buffer_descriptor *bd;
-> -	int error = 0;
-> -	enum dma_status	old_status = sdmac->status;
-> +	struct sdma_desc *desc = sdmac->desc;
-> +	int error = 0, cnt = 0;
-> +	enum dma_status old_status = sdmac->status;
-> 
->  	/*
->  	 * loop mode. Iterate over descriptors, re-setup them and
->  	 * call callback function.
->  	 */
-> -	while (sdmac->desc) {
-> -		struct sdma_desc *desc = sdmac->desc;
-> +	while (desc) {
-> 
->  		bd = &desc->bd[desc->buf_tail];
-> 
->  		if (bd->mode.status & BD_DONE)
->  			break;
-> 
-> +		cnt++;
-> +
->  		if (bd->mode.status & BD_RROR) {
->  			bd->mode.status &= ~BD_RROR;
->  			sdmac->status = DMA_ERROR;
-> @@ -822,6 +824,17 @@ static void sdma_update_channel_loop(struct
-> sdma_channel *sdmac)
->  		if (error)
->  			sdmac->status = old_status;
->  	}
-> +
-> +	/* In some situations it may happen that the sdma does not found any
-> +	 * usable descriptor in the ring to put data into. The channel is
-> +	 * stopped then. While there is no specific error condition we can
-> +	 * check for, a necessary condition is that all available buffers for
-> +	 * the current channel have been written to by the sdma script. In
-> +	 * this case and after we have made the buffers available again,
-> +	 * we restart the channel.
-> +	 */
-> +	if (cnt >= desc->num_bd)
-> +		sdma_enable_channel(sdmac->sdma, sdmac->channel);
->  }
-> 
->  static void mxc_sdma_handle_channel_normal(struct sdma_channel *data)
-> --
-> 2.23.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpPbiAxOS4gOS4gMjQuIOyYpOyghCAxOjM0LCBMZW9uYXJkIENyZXN0ZXogd3JvdGU6Cj4g
+VGhlIGdvdmVybm9yIGlzIGluaXRpYWxpemVkIGFmdGVyIHN5c2ZzIGF0dHJpYnV0ZXMgYmVjb21l
+IHZpc2libGUgc28gaW4KPiB0aGVvcnkgdGhlIGdvdmVybm9yIGZpZWxkIGNhbiBiZSBOVUxMIGhl
+cmUuCj4gCj4gU2lnbmVkLW9mZi1ieTogTGVvbmFyZCBDcmVzdGV6IDxsZW9uYXJkLmNyZXN0ZXpA
+bnhwLmNvbT4KPiAtLS0KPiAgZHJpdmVycy9kZXZmcmVxL2RldmZyZXEuYyB8IDIgKy0KPiAgMSBm
+aWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRlbGV0aW9uKC0pCj4gCj4gRm91bmQgdGhp
+cyBieSBoYWNraW5nIGRldmljZSBjb3JlIHRvIGNhbGwgYXR0cmlidXRlICJzaG93IiBmdW5jdGlv
+bnMKPiBmcm9tIGluc2lkZSBkZXZpY2VfYWRkLgo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2Rl
+dmZyZXEvZGV2ZnJlcS5jIGIvZHJpdmVycy9kZXZmcmVxL2RldmZyZXEuYwo+IGluZGV4IDAwZmMy
+M2ZlYTViMi4uODk2ZmIyMzEyZjJmIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvZGV2ZnJlcS9kZXZm
+cmVxLmMKPiArKysgYi9kcml2ZXJzL2RldmZyZXEvZGV2ZnJlcS5jCj4gQEAgLTEzMjIsMTEgKzEz
+MjIsMTEgQEAgc3RhdGljIHNzaXplX3QgYXZhaWxhYmxlX2dvdmVybm9yc19zaG93KHN0cnVjdCBk
+ZXZpY2UgKmQsCj4gIAo+ICAJLyoKPiAgCSAqIFRoZSBkZXZmcmVxIHdpdGggaW1tdXRhYmxlIGdv
+dmVybm9yIChlLmcuLCBwYXNzaXZlKSBzaG93cwo+ICAJICogb25seSBvd24gZ292ZXJub3IuCj4g
+IAkgKi8KPiAtCWlmIChkZi0+Z292ZXJub3ItPmltbXV0YWJsZSkgewo+ICsJaWYgKGRmLT5nb3Zl
+cm5vciAmJiBkZi0+Z292ZXJub3ItPmltbXV0YWJsZSkgewo+ICAJCWNvdW50ID0gc2NucHJpbnRm
+KCZidWZbY291bnRdLCBERVZGUkVRX05BTUVfTEVOLAo+ICAJCQkJICAiJXMgIiwgZGYtPmdvdmVy
+bm9yX25hbWUpOwo+ICAJLyoKPiAgCSAqIFRoZSBkZXZmcmVxIGRldmljZSBzaG93cyB0aGUgcmVn
+aXN0ZXJlZCBnb3Zlcm5vciBleGNlcHQgZm9yCj4gIAkgKiBpbW11dGFibGUgZ292ZXJub3JzIHN1
+Y2ggYXMgcGFzc2l2ZSBnb3Zlcm5vciAuCj4gCgpBcyB5b3UgbWVudGlvbmVkLCBpdCBjcmVhdGUg
+c3lzZnMgYW5kIHRoZW4gaW5pdGlhbGl6ZSB0aGUgZ292ZXJub3IgaW5zdGFuY2UKYXMgZm9sbG93
+aW5nOgoKCWRldmljZV9yZWdpc3RlcigpCgkJZGV2aWNlX2FkZCgpCgkJCWRldmljZV9hZGRfYXR0
+cnMoKQoJCQkJY3JlYXRpbmcgc3lzZnMgZW50cmllcy4KCWdvdmVybm9yID0gdHJ5X3RoZW5fcmVx
+dWVzdF9nb3Zlcm5vciguLi4pCgoKVGhhbmtzIGZvciBmaXgtdXAuClJldmlld2VkLWJ5OiBDaGFu
+d29vIENob2kgPGN3MDAuY2hvaUBzYW1zdW5nLmNvbT4KCgpBZGRpdGlvbmFsbHksIHlvdSBoYXZl
+IHRvIGFkZCB0aGUgZm9sbG93aW5nICdmaXhlcycgdGFnCmFuZCB0aGVuIHNlbmQgaXQgdG8gc3Rh
+YmxlIG1haWxpbmcgbGlzdChzdGFibGVAdmdlci5rZXJuZWwub3JnKS4KLSBGaXhlczogYmNmMjNj
+NzljNGU0NiAoIlBNIC8gZGV2ZnJlcTogRml4IGF2YWlsYWJsZV9nb3Zlcm5vciBzeXNmcyIpCgot
+LSAKQmVzdCBSZWdhcmRzLApDaGFud29vIENob2kKU2Ftc3VuZyBFbGVjdHJvbmljcwoKX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
+bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
+Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
