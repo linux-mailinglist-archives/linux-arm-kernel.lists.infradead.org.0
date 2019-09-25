@@ -2,54 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECB7DBDFE8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 16:20:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E273FBE002
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 16:30:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MKbQR5MDJOtkcg8QIBD69kTLLyNEc0UxSNOhJSUexIM=; b=heBy9TLVBn/+P7
-	lNH1LqPeOM1KEhZd6jBELDPg1kcUwBYZJfJUWboBP/J05MRKXQ+EqW1AgHf8BqSnC/iP5ynSC67Gt
-	Id7iese8jLsNsIaYvNlmK7s13dsyvERTm11PwJjcicg1U/9L0UGsMaJcia37wMVXpp1tR4crzKa0C
-	f7VXgUG8TijUtkt+fTayepiWXT93KQA81eVdl+zDYWab4+tGilAJmaeCyI8j74fBEJ/r02cmK00xa
-	1zK3LlIsuk/WhZMyJ22oTUvd6gSnisVADU3IpZsen3JSJJFofQSdPqi+7XHbjfspKfQWMiqvbY3NB
-	USACQinGFOFqFEt/U5SA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zHHfAMII+kTxMaB0r/BaNoWNmh6dB74Cn16k18w4EKc=; b=XxBQa5aB/WrwYJ
+	7KzsAuG09YdwIwLRekiDwJJmn9x97lyGCBZGUTqpqNoLEDnVKuB83dB3aYRIB/GO99qPuO75UY0X0
+	Nc9t3k5PoIfDm4VQJN3bW7qm/v1DQP+cPUo3E3LfroswYv7Ljf8sL2M+nPNzfS7pdReXIJP2PKsJd
+	QYrY+N/e6JOifLcvtiTf3FAtum2ZK9jY2B2J2AMCopZWEIBRmgkXq1R+WeNKX0XYOjsxZE/k2fLcO
+	Sg8CAMYLxGj2V40+EPO3ZeuHPa0D9aDXnIfJfBGoLgvZt8P40r8VB/PLtw4NhiDIGZeAWKNfOQwTA
+	56lPLzOH9cWp824fCF0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iD89Q-00037u-34; Wed, 25 Sep 2019 14:20:16 +0000
-Received: from imap1.codethink.co.uk ([176.9.8.82])
+	id 1iD8JK-0007nJ-Ii; Wed, 25 Sep 2019 14:30:31 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iD86R-0001pq-8m
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 14:17:14 +0000
-Received: from [167.98.27.226] (helo=rainbowdash.codethink.co.uk)
- by imap1.codethink.co.uk with esmtpsa (Exim 4.84_2 #1 (Debian))
- id 1iD86P-0000GA-LL; Wed, 25 Sep 2019 15:17:09 +0100
-Received: from ben by rainbowdash.codethink.co.uk with local (Exim 4.92.2)
- (envelope-from <ben@rainbowdash.codethink.co.uk>)
- id 1iD86O-00068b-Vb; Wed, 25 Sep 2019 15:17:08 +0100
-From: Ben Dooks <ben.dooks@codethink.co.uk>
-To: linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] clk: hisilicon: fix sparse warnings in clk-hi3670.c
-Date: Wed, 25 Sep 2019 15:17:05 +0100
-Message-Id: <20190925141706.23549-1-ben.dooks@codethink.co.uk>
-X-Mailer: git-send-email 2.23.0
+ id 1iD8Ie-0007ld-LJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 14:29:52 +0000
+Received: by mail-wr1-x441.google.com with SMTP id r5so7184307wrm.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 25 Sep 2019 07:29:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=01Kh5AUUblqFWi3ZNkHBI22OYBLpt/UY9FlNGz+JAZo=;
+ b=TqcyhXTeBpjPbXHmATEWSbSMssHKlceadH9bNBK2rEENOV8S59lTjB19hASMn9u81X
+ Uy53gHROuQETn6BSE3uKBX6Cc2RA0fAdrZx5yXDdezp2nLFGbasbMavfwf7uHfWF7j6G
+ 0cvSzxdT58fjITWfyWuC2b8+l6b0lt4N3OMerdFAbiWKZa+NjbD9T3kKONiLTpNnNIWl
+ fLlOG5d9ez5gNmTciSj0ziVc3cr7T/pZh2Vv/fOd4E8DREYe7DDPddyw2hzLHKNWrafD
+ nQva2H+kPP1F+lSYq5sQfjH+uHcxz0TfCRYNQH4UhPQ0AE81x2sJLZom1dCejyBfP0j/
+ 2yDA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=01Kh5AUUblqFWi3ZNkHBI22OYBLpt/UY9FlNGz+JAZo=;
+ b=Eh+hWJCoju6iCchfXNsJVVV8XJMyGXFGdJhFGQ+JnIwfb5AYHENy0UeOQRPXL2WHSv
+ UooXQfq6nJ64H8WyQGsG05I+mPWgLNOi/od3YYFW87rD2Ykaxro0qJs7T9H13h833Sr/
+ q99Dfa8GxNmqmjtE8CkGIiM51J+iy5Mw8IzeFhXf+zNEi7zrMpRQphVMqbDtnEv6nEUI
+ LGoduJyu5nluLQqNasXn0DpW1aey0FZsUO1zbNjobj++Vt6uQ5Z4NeCqyNnmlvsht7/p
+ PC+JZCngPgVLAJpSc9Sf+SxDGIKAeW6nPXJsOrdeVucAccvukJzRPd8vjPqkFFhXfnyV
+ 3hTA==
+X-Gm-Message-State: APjAAAWKAW11qqrtFVu08qJNtnMAHhlt0B03lCMQqqiz7a27Xg/hDitP
+ O1FAu32AKo4IAJdDMFBMUuUqeA==
+X-Google-Smtp-Source: APXvYqw6ta3lyXW5QXoDceAQYURMJqtEe8XE0Kee6BcYwayFrIM0iklE0ITqg8crPV7uy5OUMdOb5Q==
+X-Received: by 2002:a5d:6812:: with SMTP id w18mr9321474wru.250.1569421784891; 
+ Wed, 25 Sep 2019 07:29:44 -0700 (PDT)
+Received: from localhost (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id i5sm3814592wmd.21.2019.09.25.07.29.44
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 25 Sep 2019 07:29:44 -0700 (PDT)
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Jian Hu <jian.hu@amlogic.com>, Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH 1/2] dt-bindings: clock: meson: add A1 clock controller
+ bindings
+In-Reply-To: <1569411888-98116-2-git-send-email-jian.hu@amlogic.com>
+References: <1569411888-98116-1-git-send-email-jian.hu@amlogic.com>
+ <1569411888-98116-2-git-send-email-jian.hu@amlogic.com>
+Date: Wed, 25 Sep 2019 16:29:43 +0200
+Message-ID: <1j4l10motk.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_071711_853172_9708CF6E 
-X-CRM114-Status: UNSURE (   8.69  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190925_072948_704639_822431E7 
+X-CRM114-Status: GOOD (  16.38  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [176.9.8.82 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,369 +94,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ben Dooks <ben.dooks@codethink.co.uk>, Russell King <linux@armlinux.org.uk>
+Cc: Rob Herring <robh@kernel.org>, Jianxin Pan <jianxin.pan@amlogic.com>,
+ devicetree@vger.kernel.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Jian Hu <jian.hu@amlogic.com>,
+ Qiufang Dai <qiufang.dai@amlogic.com>, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix the following warnings from sparse by removing the 0 initialiser
-that is actually a pointer.
+On Wed 25 Sep 2019 at 19:44, Jian Hu <jian.hu@amlogic.com> wrote:
 
-drivers/clk/hisilicon/clk-hi3670.c:298:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:300:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:302:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:304:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:306:63: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:308:63: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:310:63: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:312:63: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:314:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:316:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:318:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:320:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:322:63: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:324:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:326:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:328:63: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:330:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:332:63: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:334:63: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:336:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:338:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:340:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:342:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:344:63: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:346:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:348:65: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:350:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:352:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:488:69: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:490:70: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:492:70: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:494:69: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:496:70: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:498:69: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:500:69: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:502:70: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:504:69: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:506:69: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:508:69: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:510:70: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:512:69: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:514:70: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:516:69: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:518:70: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:520:69: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:522:69: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:524:70: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:526:70: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:528:69: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:530:69: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:532:70: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:534:71: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:536:71: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:538:69: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:611:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:614:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:616:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:653:70: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:655:70: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:657:70: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:659:70: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:661:70: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:663:70: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:665:70: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:735:63: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:737:63: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:739:63: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:741:63: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:743:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:745:64: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:802:69: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:804:69: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:806:69: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:808:69: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:810:70: warning: Using plain integer as NULL pointer
-drivers/clk/hisilicon/clk-hi3670.c:812:69: warning: Using plain integer as NULL pointer
+In addition to the comment expressed by Stephen on patch 2
 
-Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
----
- drivers/clk/hisilicon/clk-hi3670.c | 152 ++++++++++++++---------------
- 1 file changed, 76 insertions(+), 76 deletions(-)
+> Add the documentation to support Amlogic A1 clock driver,
+> and add A1 clock controller bindings.
+>
+> Signed-off-by: Jian Hu <jian.hu@amlogic.com>
+> Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
+> ---
+>  .../devicetree/bindings/clock/amlogic,a1-clkc.yaml |  65 +++++++++++++
+>  include/dt-bindings/clock/a1-clkc.h                | 102 +++++++++++++++++++++
+>  2 files changed, 167 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/clock/amlogic,a1-clkc.yaml
+>  create mode 100644 include/dt-bindings/clock/a1-clkc.h
+>
+> diff --git a/Documentation/devicetree/bindings/clock/amlogic,a1-clkc.yaml b/Documentation/devicetree/bindings/clock/amlogic,a1-clkc.yaml
+> new file mode 100644
+> index 0000000..f012eb2
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/clock/amlogic,a1-clkc.yaml
+> @@ -0,0 +1,65 @@
+> +/* SPDX-License-Identifier: (GPL-2.0+ OR MIT) */
+> +/*
+> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
+> + */
+> +%YAML 1.2
+> +---
+> +$id: "http://devicetree.org/schemas/clock/amlogic,a1-clkc.yaml#"
+> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> +
+> +title: Amlogic Meson A1 Clock Control Unit Device Tree Bindings
+> +
+> +maintainers:
+> +  - Neil Armstrong <narmstrong@baylibre.com>
+> +  - Jerome Brunet <jbrunet@baylibre.com>
+> +  - Jian Hu <jian.hu@jian.hu.com>
+> +
+> +properties:
+> +  compatible:
+> +    - enum:
+> +        - amlogic,a1-clkc
+> +
+> +  reg:
+> +    minItems: 1
+> +    maxItems: 3
+> +    items:
+> +      - description: peripheral registers
+> +      - description: cpu registers
+> +      - description: pll registers
+> +
+> +  reg-names:
+> +    items:
+> +      - const: peripheral
+> +      - const: pll
+> +      - const: cpu
+> +
+> +  clocks:
+> +    maxItems: 1
+> +    items:
+> +      - description: Input Oscillator (usually at 24MHz)
+> +
+> +  clock-names:
+> +    maxItems: 1
+> +    items:
+> +      - const: xtal
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - clocks
+> +  - clock-names
+> +  - "#clock-cells"
+> +
+> +examples:
+> +  - |
+> +    clkc: clock-controller {
+> +        compatible = "amlogic,a1-clkc";
+> +        reg = <0x0 0xfe000800 0x0 0x100>,
+> +              <0x0 0xfe007c00 0x0 0x21c>,
+> +              <0x0 0xfd000080 0x0 0x20>;
+> +        reg-names = "peripheral", "pll", "cpu";
 
-diff --git a/drivers/clk/hisilicon/clk-hi3670.c b/drivers/clk/hisilicon/clk-hi3670.c
-index fd8c837a6ea3..4d05a71683a5 100644
---- a/drivers/clk/hisilicon/clk-hi3670.c
-+++ b/drivers/clk/hisilicon/clk-hi3670.c
-@@ -295,61 +295,61 @@ static const struct hisi_gate_clock hi3670_crgctrl_gate_sep_clks[] = {
- 
- static const struct hisi_gate_clock hi3670_crgctrl_gate_clks[] = {
- 	{ HI3670_AUTODIV_SYSBUS, "autodiv_sysbus", "clk_div_sysbus",
--	  CLK_SET_RATE_PARENT, 0x404, 5, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x404, 5, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_AUTODIV_EMMC0BUS, "autodiv_emmc0bus", "autodiv_sysbus",
--	  CLK_SET_RATE_PARENT, 0x404, 1, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x404, 1, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_PCLK_ANDGT_MMC1_PCIE, "pclk_andgt_mmc1_pcie", "clk_div_320m",
--	  CLK_SET_RATE_PARENT, 0xf8, 13, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xf8, 13, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_GATE_VCODECBUS_GT, "clk_gate_vcodecbus_gt", "clk_mux_vcodecbus",
--	  CLK_SET_RATE_PARENT, 0x0F0, 8, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x0F0, 8, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ANDGT_SD, "clk_andgt_sd", "clk_mux_sd_pll",
--	  CLK_SET_RATE_PARENT, 0xF4, 3, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xF4, 3, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_SD_SYS_GT, "clk_sd_sys_gt", "clkin_sys",
--	  CLK_SET_RATE_PARENT, 0xF4, 5, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xF4, 5, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ANDGT_SDIO, "clk_andgt_sdio", "clk_mux_sdio_pll",
--	  CLK_SET_RATE_PARENT, 0xF4, 8, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xF4, 8, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_SDIO_SYS_GT, "clk_sdio_sys_gt", "clkin_sys",
--	  CLK_SET_RATE_PARENT, 0xF4, 6, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xF4, 6, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_A53HPM_ANDGT, "clk_a53hpm_andgt", "clk_mux_a53hpm",
--	  CLK_SET_RATE_PARENT, 0x0F4, 7, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x0F4, 7, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_320M_PLL_GT, "clk_320m_pll_gt", "clk_mux_320m",
--	  CLK_SET_RATE_PARENT, 0xF8, 10, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xF8, 10, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ANDGT_UARTH, "clk_andgt_uarth", "clk_div_320m",
--	  CLK_SET_RATE_PARENT, 0xF4, 11, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xF4, 11, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ANDGT_UARTL, "clk_andgt_uartl", "clk_div_320m",
--	  CLK_SET_RATE_PARENT, 0xF4, 10, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xF4, 10, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ANDGT_UART0, "clk_andgt_uart0", "clk_div_320m",
--	  CLK_SET_RATE_PARENT, 0xF4, 9, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xF4, 9, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ANDGT_SPI, "clk_andgt_spi", "clk_div_320m",
--	  CLK_SET_RATE_PARENT, 0xF4, 13, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xF4, 13, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ANDGT_PCIEAXI, "clk_andgt_pcieaxi", "clk_mux_pcieaxi",
--	  CLK_SET_RATE_PARENT, 0xfc, 15, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xfc, 15, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_AO_ASP_GT, "clk_div_ao_asp_gt", "clk_mux_ao_asp",
--	  CLK_SET_RATE_PARENT, 0xF4, 4, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xF4, 4, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_GATE_CSI_TRANS, "clk_gate_csi_trans", "clk_ppll2",
--	  CLK_SET_RATE_PARENT, 0xF4, 14, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xF4, 14, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_GATE_DSI_TRANS, "clk_gate_dsi_trans", "clk_ppll2",
--	  CLK_SET_RATE_PARENT, 0xF4, 1, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xF4, 1, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ANDGT_PTP, "clk_andgt_ptp", "clk_div_320m",
--	  CLK_SET_RATE_PARENT, 0xF8, 5, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xF8, 5, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ANDGT_OUT0, "clk_andgt_out0", "clk_ppll0",
--	  CLK_SET_RATE_PARENT, 0xF0, 10, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xF0, 10, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ANDGT_OUT1, "clk_andgt_out1", "clk_ppll0",
--	  CLK_SET_RATE_PARENT, 0xF0, 11, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xF0, 11, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLKGT_DP_AUDIO_PLL_AO, "clkgt_dp_audio_pll_ao", "clk_ppll6",
--	  CLK_SET_RATE_PARENT, 0xF8, 15, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xF8, 15, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ANDGT_VDEC, "clk_andgt_vdec", "clk_mux_vdec",
--	  CLK_SET_RATE_PARENT, 0xF0, 13, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xF0, 13, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ANDGT_VENC, "clk_andgt_venc", "clk_mux_venc",
--	  CLK_SET_RATE_PARENT, 0xF0, 9, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xF0, 9, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ISP_SNCLK_ANGT, "clk_isp_snclk_angt", "clk_div_a53hpm",
--	  CLK_SET_RATE_PARENT, 0x108, 2, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x108, 2, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ANDGT_RXDPHY, "clk_andgt_rxdphy", "clk_div_a53hpm",
--	  CLK_SET_RATE_PARENT, 0x0F0, 12, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x0F0, 12, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ANDGT_ICS, "clk_andgt_ics", "clk_mux_ics",
--	  CLK_SET_RATE_PARENT, 0xf0, 14, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xf0, 14, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_AUTODIV_DMABUS, "autodiv_dmabus", "autodiv_sysbus",
--	  CLK_SET_RATE_PARENT, 0x404, 3, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x404, 3, CLK_GATE_HIWORD_MASK, },
- };
- 
- static const char *const
-@@ -485,57 +485,57 @@ static const struct hisi_mux_clock hi3670_crgctrl_mux_clks[] = {
- 
- static const struct hisi_divider_clock hi3670_crgctrl_divider_clks[] = {
- 	{ HI3670_CLK_DIV_CFGBUS, "clk_div_cfgbus", "clk_div_sysbus",
--	  CLK_SET_RATE_PARENT, 0xEC, 0, 2, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xEC, 0, 2, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_MMC0BUS, "clk_div_mmc0bus", "autodiv_emmc0bus",
--	  CLK_SET_RATE_PARENT, 0x0EC, 2, 1, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x0EC, 2, 1, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_MMC1BUS, "clk_div_mmc1bus", "clk_div_sysbus",
--	  CLK_SET_RATE_PARENT, 0x0EC, 3, 1, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x0EC, 3, 1, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_PCLK_DIV_MMC1_PCIE, "pclk_div_mmc1_pcie", "pclk_andgt_mmc1_pcie",
--	  CLK_SET_RATE_PARENT, 0xb4, 6, 4, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xb4, 6, 4, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_VCODECBUS, "clk_div_vcodecbus", "clk_gate_vcodecbus_gt",
--	  CLK_SET_RATE_PARENT, 0x0BC, 0, 6, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x0BC, 0, 6, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_SD, "clk_div_sd", "clk_andgt_sd",
--	  CLK_SET_RATE_PARENT, 0xB8, 0, 4, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xB8, 0, 4, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_SDIO, "clk_div_sdio", "clk_andgt_sdio",
--	  CLK_SET_RATE_PARENT, 0xC0, 0, 4, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xC0, 0, 4, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_UARTH, "clk_div_uarth", "clk_andgt_uarth",
--	  CLK_SET_RATE_PARENT, 0xB0, 12, 4, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xB0, 12, 4, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_UARTL, "clk_div_uartl", "clk_andgt_uartl",
--	  CLK_SET_RATE_PARENT, 0xB0, 8, 4, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xB0, 8, 4, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_UART0, "clk_div_uart0", "clk_andgt_uart0",
--	  CLK_SET_RATE_PARENT, 0xB0, 4, 4, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xB0, 4, 4, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_I2C, "clk_div_i2c", "clk_div_320m",
--	  CLK_SET_RATE_PARENT, 0xE8, 4, 4, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xE8, 4, 4, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_SPI, "clk_div_spi", "clk_andgt_spi",
--	  CLK_SET_RATE_PARENT, 0xC4, 12, 4, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xC4, 12, 4, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_PCIEAXI, "clk_div_pcieaxi", "clk_andgt_pcieaxi",
--	  CLK_SET_RATE_PARENT, 0xb4, 0, 5, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xb4, 0, 5, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_AO_ASP, "clk_div_ao_asp", "clk_div_ao_asp_gt",
--	  CLK_SET_RATE_PARENT, 0x108, 6, 4, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x108, 6, 4, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_CSI_TRANS, "clk_div_csi_trans", "clk_gate_csi_trans",
--	  CLK_SET_RATE_PARENT, 0xD4, 0, 5, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xD4, 0, 5, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_DSI_TRANS, "clk_div_dsi_trans", "clk_gate_dsi_trans",
--	  CLK_SET_RATE_PARENT, 0xD4, 10, 5, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xD4, 10, 5, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_PTP, "clk_div_ptp", "clk_andgt_ptp",
--	  CLK_SET_RATE_PARENT, 0xD8, 0, 4, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xD8, 0, 4, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_CLKOUT0_PLL, "clk_div_clkout0_pll", "clk_andgt_out0",
--	  CLK_SET_RATE_PARENT, 0xe0, 4, 6, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xe0, 4, 6, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_CLKOUT1_PLL, "clk_div_clkout1_pll", "clk_andgt_out1",
--	  CLK_SET_RATE_PARENT, 0xe0, 10, 6, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xe0, 10, 6, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLKDIV_DP_AUDIO_PLL_AO, "clkdiv_dp_audio_pll_ao", "clkgt_dp_audio_pll_ao",
--	  CLK_SET_RATE_PARENT, 0xBC, 11, 4, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xBC, 11, 4, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_VDEC, "clk_div_vdec", "clk_andgt_vdec",
--	  CLK_SET_RATE_PARENT, 0xC4, 0, 6, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xC4, 0, 6, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_VENC, "clk_div_venc", "clk_andgt_venc",
--	  CLK_SET_RATE_PARENT, 0xC0, 8, 6, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xC0, 8, 6, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_ISP_SNCLK_DIV0, "clk_isp_snclk_div0", "clk_isp_snclk_fac",
--	  CLK_SET_RATE_PARENT, 0x108, 0, 2, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x108, 0, 2, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_ISP_SNCLK_DIV1, "clk_isp_snclk_div1", "clk_isp_snclk_fac",
--	  CLK_SET_RATE_PARENT, 0x10C, 14, 2, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x10C, 14, 2, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_ISP_SNCLK_DIV2, "clk_isp_snclk_div2", "clk_isp_snclk_fac",
--	  CLK_SET_RATE_PARENT, 0x10C, 11, 2, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x10C, 11, 2, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_ICS, "clk_div_ics", "clk_andgt_ics",
--	  CLK_SET_RATE_PARENT, 0xE4, 9, 6, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0xE4, 9, 6, CLK_DIVIDER_HIWORD_MASK, },
- };
- 
- /* clk_pmuctrl */
-@@ -608,12 +608,12 @@ static const struct hisi_gate_clock hi3670_sctrl_gate_sep_clks[] = {
- 
- static const struct hisi_gate_clock hi3670_sctrl_gate_clks[] = {
- 	{ HI3670_CLK_ANDGT_IOPERI, "clk_andgt_ioperi", "clk_ppll0",
--	  CLK_SET_RATE_PARENT, 0x270, 6, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x270, 6, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLKANDGT_ASP_SUBSYS_PERI, "clkandgt_asp_subsys_peri",
- 	  "clk_ppll0",
--	  CLK_SET_RATE_PARENT, 0x268, 3, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x268, 3, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ANGT_ASP_SUBSYS, "clk_angt_asp_subsys", "clk_ppll0",
--	  CLK_SET_RATE_PARENT, 0x258, 0, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x258, 0, CLK_GATE_HIWORD_MASK, },
- };
- 
- static const char *const
-@@ -650,19 +650,19 @@ static const struct hisi_mux_clock hi3670_sctrl_mux_clks[] = {
- 
- static const struct hisi_divider_clock hi3670_sctrl_divider_clks[] = {
- 	{ HI3670_CLK_DIV_AOBUS, "clk_div_aobus", "clk_ppll0",
--	  CLK_SET_RATE_PARENT, 0x254, 0, 6, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x254, 0, 6, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_UFS_SUBSYS, "clk_div_ufs_subsys", "clk_mux_ufs_subsys",
--	  CLK_SET_RATE_PARENT, 0x274, 0, 6, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x274, 0, 6, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_IOPERI, "clk_div_ioperi", "clk_andgt_ioperi",
--	  CLK_SET_RATE_PARENT, 0x270, 0, 6, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x270, 0, 6, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_CLKOUT0_TCXO, "clk_div_clkout0_tcxo", "clkin_sys",
--	  CLK_SET_RATE_PARENT, 0x254, 6, 3, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x254, 6, 3, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_CLKOUT1_TCXO, "clk_div_clkout1_tcxo", "clkin_sys",
--	  CLK_SET_RATE_PARENT, 0x254, 9, 3, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x254, 9, 3, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_ASP_SUBSYS_PERI_DIV, "clk_asp_subsys_peri_div", "clkandgt_asp_subsys_peri",
--	  CLK_SET_RATE_PARENT, 0x268, 0, 3, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x268, 0, 3, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_ASP_SUBSYS, "clk_div_asp_subsys", "clk_angt_asp_subsys",
--	  CLK_SET_RATE_PARENT, 0x250, 0, 3, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x250, 0, 3, CLK_DIVIDER_HIWORD_MASK, },
- };
- 
- /* clk_iomcu */
-@@ -732,17 +732,17 @@ static const struct hisi_gate_clock hi3670_media1_gate_sep_clks[] = {
- 
- static const struct hisi_gate_clock hi3670_media1_gate_clks[] = {
- 	{ HI3670_CLK_GATE_VIVOBUS_ANDGT, "clk_gate_vivobus_andgt", "clk_mux_vivobus",
--	  CLK_SET_RATE_PARENT, 0x84, 3, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x84, 3, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ANDGT_EDC0, "clk_andgt_edc0", "clk_mux_edc0",
--	  CLK_SET_RATE_PARENT, 0x84, 7, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x84, 7, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ANDGT_LDI0, "clk_andgt_ldi0", "clk_mux_ldi0",
--	  CLK_SET_RATE_PARENT, 0x84, 9, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x84, 9, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_ANDGT_LDI1, "clk_andgt_ldi1", "clk_mux_ldi1",
--	  CLK_SET_RATE_PARENT, 0x84, 8, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x84, 8, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_CLK_MMBUF_PLL_ANDGT, "clk_mmbuf_pll_andgt", "clk_sw_mmbuf",
--	  CLK_SET_RATE_PARENT, 0x84, 14, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x84, 14, CLK_GATE_HIWORD_MASK, },
- 	{ HI3670_PCLK_MMBUF_ANDGT, "pclk_mmbuf_andgt", "aclk_div_mmbuf",
--	  CLK_SET_RATE_PARENT, 0x84, 15, CLK_GATE_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x84, 15, CLK_GATE_HIWORD_MASK, },
- };
- 
- static const char *const
-@@ -799,17 +799,17 @@ static const struct hisi_mux_clock hi3670_media1_mux_clks[] = {
- 
- static const struct hisi_divider_clock hi3670_media1_divider_clks[] = {
- 	{ HI3670_CLK_DIV_VIVOBUS, "clk_div_vivobus", "clk_gate_vivobus_andgt",
--	  CLK_SET_RATE_PARENT, 0x74, 0, 6, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x74, 0, 6, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_EDC0, "clk_div_edc0", "clk_andgt_edc0",
--	  CLK_SET_RATE_PARENT, 0x68, 0, 6, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x68, 0, 6, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_LDI0, "clk_div_ldi0", "clk_andgt_ldi0",
--	  CLK_SET_RATE_PARENT, 0x60, 0, 6, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x60, 0, 6, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_CLK_DIV_LDI1, "clk_div_ldi1", "clk_andgt_ldi1",
--	  CLK_SET_RATE_PARENT, 0x64, 0, 6, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x64, 0, 6, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_ACLK_DIV_MMBUF, "aclk_div_mmbuf", "clk_mmbuf_pll_andgt",
--	  CLK_SET_RATE_PARENT, 0x7C, 10, 6, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x7C, 10, 6, CLK_DIVIDER_HIWORD_MASK, },
- 	{ HI3670_PCLK_DIV_MMBUF, "pclk_div_mmbuf", "pclk_mmbuf_andgt",
--	  CLK_SET_RATE_PARENT, 0x78, 0, 2, CLK_DIVIDER_HIWORD_MASK, 0, },
-+	  CLK_SET_RATE_PARENT, 0x78, 0, 2, CLK_DIVIDER_HIWORD_MASK, },
- };
- 
- /* clk_media2 */
--- 
-2.23.0
+I'm sorry but I don't agree with this. You are trying to regroup several
+controllers into one with this, and it is not OK
 
+By the looks of it there are 3 different controllers, including one you
+did not implement in the driver.
+
+> +        clocks = <&xtal;
+> +        clock-names = "xtal";
+> +        #clock-cells = <1>;
 
 _______________________________________________
 linux-arm-kernel mailing list
