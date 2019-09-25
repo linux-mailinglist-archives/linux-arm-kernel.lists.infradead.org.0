@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D76ABDF08
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 15:32:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87330BDF0D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 15:33:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rYwCZTJ1qobmNMBIOGw67b8Teh90+7advh0weHGVzGs=; b=KPpxY+56MHMbrs
-	cwB+FR7HaXlbf52+h2k8dpoQ3w3vbcYKSyDDXtJm2j25ODnzIai4TUjVhk0cPCRcMSZnjkpGnf2Lr
-	a2zJNSwSpZ0bltZ6F3idV0STV39ay88O37uBiHF3k3ooALJ2BlFR9qdG0CvTcfKz9cnezqdk71XFS
-	6Fl0nnhyuSA6MndJ6EXoqyxeIcM96Ukd0nrKdS9yRzkf7kprv6+pwDqMDbvCoe2aDqQ6KxtMWXI8P
-	/eSGIR6RObVo5Ob1ovhngGeHrorP5NHpcsX7z5ZEaWOby4NLqCqIu5nfOzoeue16XsPJFaIu4+OPr
-	5irwRZd5gjXZUk5gbSGQ==;
+	List-Owner; bh=rYwCZTJ1qobmNMBIOGw67b8Teh90+7advh0weHGVzGs=; b=msYfQePJGhenLT
+	E2PVYJ/PI31zQ+oBliksn+IlkVhyZO0czeTdTmvjhVrhgEVevxZd0Y17U17i2qsw4lTIxMReq0VTn
+	nYqP3pOdA0w2yqBgEdsk2SZpUtZ5/x7/Y1C0g9fCltRaBXVXoCvJrO3zpzeJcYCaK2cJiGHkrf0vY
+	XV16owYGwZWizRHb/nJ2YbmL8yvt1Bd6BdThN+FVcoS1ivzkMhK4G9pT51GFkuqws/lPHv4IUzs+P
+	mdEIWSwoETiRoYcctMwU1LunE4Jv3LlUc5hqpvI3z6+CZXQ6M382oRON18/LJEtKGKGznqBU7f0VB
+	e6ZIclSsu/YVsESF/V6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iD7P0-0002Z7-KI; Wed, 25 Sep 2019 13:32:18 +0000
+	id 1iD7QE-0002nm-A6; Wed, 25 Sep 2019 13:33:34 +0000
 Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iD7No-0002Y5-I5; Wed, 25 Sep 2019 13:31:07 +0000
+ id 1iD7OO-0002bx-GW; Wed, 25 Sep 2019 13:31:43 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 0E98BAC4D;
- Wed, 25 Sep 2019 13:31:00 +0000 (UTC)
-Message-ID: <4f5c99ddfbe0abadccf754e9ff282c39d8849b3f.camel@suse.de>
+ by mx1.suse.de (Postfix) with ESMTP id 3EEEDAFCC;
+ Wed, 25 Sep 2019 13:31:33 +0000 (UTC)
+Message-ID: <9c4d699b20fb2a8416279ed770c6a238420c40ff.camel@suse.de>
 Subject: Re: [PATCH v1] ARM: Add support for Realtek SOC
 From: Andreas =?ISO-8859-1?Q?F=E4rber?= <afaerber@suse.de>
 To: James Tai <james.tai@realtek.com>, 'Masahiro Yamada'
  <yamada.masahiro@socionext.com>, 'Arnd Bergmann' <arnd@arndb.de>
-Date: Wed, 25 Sep 2019 15:30:58 +0200
+Date: Wed, 25 Sep 2019 15:31:32 +0200
 In-Reply-To: <43B123F21A8CFE44A9641C099E4196FFCF8EA2B1@RTITMBSVM04.realtek.com.tw>
 References: <43B123F21A8CFE44A9641C099E4196FFCF8EA2B1@RTITMBSVM04.realtek.com.tw>
 Organization: SUSE Linux GmbH
 User-Agent: Evolution 3.32.4 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_063104_935359_FF291EBA 
+X-CRM114-CacheID: sfid-20190925_063140_950517_9B034070 
 X-CRM114-Status: GOOD (  22.30  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
