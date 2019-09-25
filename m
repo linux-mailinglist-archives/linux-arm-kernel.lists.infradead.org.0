@@ -2,75 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B17DBE2CF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 18:51:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD650BE2E2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 18:53:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=f22tpK7C54pnKURRgtzhR5m0OXSaWCLlHDqn1Dm/bUA=; b=YbJ2Y6gpToBHahm6Gty5Ncwmp
-	e16E25dd0FfMvVFNQb1JEgFU2e/5DKkLq652gjxXmi1y4iPTfdOF7Lo/9R0bHR38ECFQPUM/7EE6u
-	+phCNyfu+g8MbMl0p90JAWKSelEv4Juxx68Oz7WEMbG4Ue8gYjoSka8Ny/OivOzi1hJM0AMrqPC+7
-	E92n+SAIjDWST46Ib/LAucQnHeJw5NG2YL8t20pXh/H1Yoj9e8Bvi/i7fR+3qjAMtGfbI7EuBDv2T
-	Ka8a2hnzC3E8Af/kksnCXrnY/AQba/s+wrOVN0OeWcAZjSN+ehbn7qFgyepoD8OCkIskih91/7H83
-	W5SpQiw+Q==;
+	 bh=6AMT3KItJPeagULkZx5RrSchBRYiSuj3+VHtouL/NiA=; b=SnyMxKFJ7NpEl4LHescHFa9nd
+	VrgsH0ZYsc3oBjjaSB0IGc6geeexWxFOAVqzdSQhvhS4w5YB08sKHsQaYPBvr/rbkYNOEjej4hSAA
+	4uhWCVZivaUl2+NiJVmBlBo8w3VZpBalqkHWHRTSb5Q3QkAgXJdyS1c7IjI6S3UrjiiJV2Mq5AhNB
+	gJlthB6qRf2o7ZuZEic9nYlC3GX2iHqVY9z+xb024Zb9hQh3SvjmQA866skMe6fZ5qUwFUyefa9vV
+	jxnn2Dz99kFwYlnXmJr6BvWVHvTYvKsDF4+vKWVSf21JnADobY0iT2EeWNRTw5DWNUyifrx7FooqL
+	/0u6CvgBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDAV9-00052x-Dq; Wed, 25 Sep 2019 16:50:51 +0000
-Received: from heliosphere.sirena.org.uk ([172.104.155.198])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDAUp-00052M-MG; Wed, 25 Sep 2019 16:50:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=naZYuWITcaswjPtwwbtHxt7UXmfEBcDn8wWuUVMvZ0E=; b=ZFKIHEtEGwRsj+oveJPSkwZ6E
- Bo0OeIxRfEr4ejlG2bw7+jJBq3M+qUDaRP3zNMX7fVEFkrcH7kxPDk7gEOFCYmW2MgQb5H/Zrypxr
- Y52OmdJA0DZiUNYkF0WxF1TWaWZzxWqbBzxnOPfK75gUgxNQ146HbFwvFRp6vyY4dnacM=;
-Received: from [12.157.10.118] (helo=fitzroy.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.org.uk>)
- id 1iDAUj-0007w3-V4; Wed, 25 Sep 2019 16:50:26 +0000
-Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
- id F0CE4D01BD1; Wed, 25 Sep 2019 17:50:23 +0100 (BST)
-Date: Wed, 25 Sep 2019 09:50:23 -0700
-From: Mark Brown <broonie@kernel.org>
-To: Richtek Jeff Chang <richtek.jeff.chang@gmail.com>
-Subject: Re: [PATCH] [MT6660] Mediatek Smart Amplifier Driver
-Message-ID: <20190925165023.GJ2036@sirena.org.uk>
-References: <1567494501-3427-1-git-send-email-richtek.jeff.chang@gmail.com>
- <20190903163829.GB7916@sirena.co.uk>
- <1a776762-ee65-7344-4bca-c82e16badffa@gmail.com>
- <20190904115630.GA4348@sirena.co.uk>
- <3a9f66b3-bdb7-9bec-a9c4-ac58d3efa543@gmail.com>
+	id 1iDAXM-0005ZJ-V6; Wed, 25 Sep 2019 16:53:09 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iDAX2-0005XO-CW
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 16:52:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 37EA81570;
+ Wed, 25 Sep 2019 09:52:46 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2F5133F67D;
+ Wed, 25 Sep 2019 09:52:41 -0700 (PDT)
+Subject: Re: [PATCH 00/11] of: Fix DMA configuration for non-DT masters
+To: Rob Herring <robh+dt@kernel.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+References: <20190924181244.7159-1-nsaenzjulienne@suse.de>
+ <CAL_Jsq+v+svTyna7UzQdRVqfNc5Z_bgWzxNRXv7-Wqv3NwDu2g@mail.gmail.com>
+ <d1a31a2ec8eb2f226b1fb41f6c24ffb47c3bf7c7.camel@suse.de>
+ <e404c65b-5a66-6f91-5b38-8bf89a7697b2@arm.com>
+ <43fb5fe1de317d65a4edf592f88ea150c6e3b8cc.camel@suse.de>
+ <CAL_JsqLhx500cx3YLoC7HL1ux3bBpV+fEA2Qnk7D5RFGgiGzSw@mail.gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <aa4c8d62-7990-e385-2bb1-cec55148f0a8@arm.com>
+Date: Wed, 25 Sep 2019 17:52:39 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <3a9f66b3-bdb7-9bec-a9c4-ac58d3efa543@gmail.com>
-X-Cookie: Be careful!  UGLY strikes 9 out of 10!
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CAL_JsqLhx500cx3YLoC7HL1ux3bBpV+fEA2Qnk7D5RFGgiGzSw@mail.gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_095031_737732_9F96BFE1 
-X-CRM114-Status: GOOD (  20.86  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190925_095248_546503_A1ACD42F 
+X-CRM114-Status: GOOD (  25.42  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [172.104.155.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,107 +67,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org, tiwai@suse.com,
- lgirdwood@gmail.com, linux-mediatek@lists.infradead.org,
- matthias.bgg@gmail.com, perex@perex.cz, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1286266860759516056=="
+Cc: devicetree@vger.kernel.org, Matthias Brugger <mbrugger@suse.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ linux-wireless <linux-wireless@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, etnaviv@lists.freedesktop.org,
+ "open list:DMA GENERIC OFFLOAD ENGINE SUBSYSTEM" <dmaengine@vger.kernel.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, Stefan Wahren <wahrenst@gmx.net>,
+ james.quinlan@broadcom.com, linux-pci@vger.kernel.org,
+ linux-tegra@vger.kernel.org, xen-devel@lists.xenproject.org,
+ Dan Williams <dan.j.williams@intel.com>,
+ freedreno <freedreno@lists.freedesktop.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 25/09/2019 17:16, Rob Herring wrote:
+> On Wed, Sep 25, 2019 at 10:30 AM Nicolas Saenz Julienne
+> <nsaenzjulienne@suse.de> wrote:
+>>
+>> On Wed, 2019-09-25 at 16:09 +0100, Robin Murphy wrote:
+>>> On 25/09/2019 15:52, Nicolas Saenz Julienne wrote:
+>>>> On Tue, 2019-09-24 at 16:59 -0500, Rob Herring wrote:
+>>>>> On Tue, Sep 24, 2019 at 1:12 PM Nicolas Saenz Julienne
+>>>>> <nsaenzjulienne@suse.de> wrote:
+>>>>>> Hi All,
+>>>>>> this series tries to address one of the issues blocking us from
+>>>>>> upstreaming Broadcom's STB PCIe controller[1]. Namely, the fact that
+>>>>>> devices not represented in DT which sit behind a PCI bus fail to get the
+>>>>>> bus' DMA addressing constraints.
+>>>>>>
+>>>>>> This is due to the fact that of_dma_configure() assumes it's receiving a
+>>>>>> DT node representing the device being configured, as opposed to the PCIe
+>>>>>> bridge node we currently pass. This causes the code to directly jump
+>>>>>> into PCI's parent node when checking for 'dma-ranges' and misses
+>>>>>> whatever was set there.
+>>>>>>
+>>>>>> To address this I create a new API in OF - inspired from Robin Murphys
+>>>>>> original proposal[2] - which accepts a bus DT node as it's input in
+>>>>>> order to configure a device's DMA constraints. The changes go deep into
+>>>>>> of/address.c's implementation, as a device being having a DT node
+>>>>>> assumption was pretty strong.
+>>>>>>
+>>>>>> On top of this work, I also cleaned up of_dma_configure() removing its
+>>>>>> redundant arguments and creating an alternative function for the special
+>>>>>> cases
+>>>>>> not applicable to either the above case or the default usage.
+>>>>>>
+>>>>>> IMO the resulting functions are more explicit. They will probably
+>>>>>> surface some hacky usages that can be properly fixed as I show with the
+>>>>>> DT fixes on the Layerscape platform.
+>>>>>>
+>>>>>> This was also tested on a Raspberry Pi 4 with a custom PCIe driver and
+>>>>>> on a Seattle AMD board.
+>>>>>
+>>>>> Humm, I've been working on this issue too. Looks similar though yours
+>>>>> has a lot more churn and there's some other bugs I've found.
+>>>>
+>>>> That's good news, and yes now that I see it, some stuff on my series is
+>>>> overly
+>>>> complicated. Specially around of_translate_*().
+>>>>
+>>>> On top of that, you removed in of_dma_get_range():
+>>>>
+>>>> -   /*
+>>>> -    * At least empty ranges has to be defined for parent node if
+>>>> -    * DMA is supported
+>>>> -    */
+>>>> -   if (!ranges)
+>>>> -           break;
+>>>>
+>>>> Which I assumed was bound to the standard and makes things easier.
+>>>>
+>>>>> Can you test out this branch[1]. I don't have any h/w needing this,
+>>>>> but wrote a unittest and tested with modified QEMU.
+>>>>
+>>>> I reviewed everything, I did find a minor issue, see the patch attached.
+>>>
+>>> WRT that patch, the original intent of "force_dma" was purely to
+>>> consider a device DMA-capable regardless of the presence of
+>>> "dma-ranges". Expecting of_dma_configure() to do anything for a non-OF
+>>> device has always been bogus - magic paravirt devices which appear out
+>>> of nowhere and expect to be treated as genuine DMA masters are a
+>>> separate problem that we haven't really approached yet.
+>>
+>> I agree it's clearly abusing the function. I have no problem with the behaviour
+>> change if it's OK with you.
 
---===============1286266860759516056==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="FO0yZLwVDWUwTKck"
-Content-Disposition: inline
+Thinking about it, you could probably just remove that call from the Xen 
+DRM driver now anyway - since the dma-direct rework, we lost the ability 
+to set dma_dummy_ops by default, and NULL ops now represent what it 
+(presumably) wants.
 
+>> Robin, have you looked into supporting multiple dma-ranges? It's the next thing
+>> we need for BCM STB's PCIe. I'll have a go at it myself if nothing is in the
+>> works already.
+> 
+> Multiple dma-ranges as far as configuring inbound windows should work
+> already other than the bug when there's any parent translation. But if
+> you mean supporting multiple DMA offsets and masks per device in the
+> DMA API, there's nothing in the works yet.
 
---FO0yZLwVDWUwTKck
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+There's also the in-between step of making of_dma_get_range() return a 
+size based on all the dma-ranges entries rather than only the first one 
+- otherwise, something like [1] can lead to pretty unworkable default 
+masks. We implemented that when doing acpi_dma_get_range(), it's just 
+that the OF counterpart never caught up.
 
-On Wed, Sep 25, 2019 at 06:04:23PM +0800, Richtek Jeff Chang wrote:
-> Mark Brown =E6=96=BC 2019/9/4 =E4=B8=8B=E5=8D=887:56 =E5=AF=AB=E9=81=93:
-> > On Wed, Sep 04, 2019 at 03:07:06PM +0800, Richtek Jeff Chang wrote:
+Robin.
 
-> > > > It would be good to implement a regmap rather than open coding
-> > > > *everything* - it'd give you things like this without needing to op=
-en
-> > > > code them.  Providing you don't use the cache code it should cope f=
-ine
-> > > > with variable register sizes.
-
-> > > Due to our hardware design, it is hard to implement regmap for MT6660.
-> > You definitely can't use all the functionality due to the variable
-> > register sizes but using reg_write() and reg_read() should get you most
-> > of it.
-
-> =C2=A0=C2=A0=C2=A0 How can I fill the val_bits for variable register size?
-
-> =C2=A0=C2=A0=C2=A0 I try to use all 32 bits val_bits, but our chip some r=
-egisters are
-> overlap...
-
-> =C2=A0=C2=A0=C2=A0 Do you have any suggestion for this issue?=C2=A0 Thank=
- you very much!
-
-If you use reg_read() and reg_write() operations you can hide the
-register size within them - the rest of the code thinks the
-registers are all the 32 bits but when doing I/O it can use the
-appropriate size for a given register.
-
-> > > > > +	for (i =3D 0; i < len; i++) {
-> > > > > +		ret =3D mt6660_i2c_update_bits(chip, init_table[i].addr,
-> > > > > +				init_table[i].mask, init_table[i].data);
-> > > > > +		if (ret < 0)
-> > > > > +			return ret;
-
-> > > > Why are we not using the chip defaults here?
-
-> > > Because MT6660 needs this initial setting for working well.
-> > What are these settings?  Are you sure they are generic settings and
-> > not board specific?
-
-> Yes, they are generic setting. It comes from our hardware designers.
-
-You should probably be using the regmap register patch feature,
-it's for things like this where the chip should always be used
-with a different set of defaults to the silicon.
-
-> Should I send new patch file to you in this mail loop, or I should send n=
-ew
-> patch via new Email Loop?
-
-A new one please.
-
---FO0yZLwVDWUwTKck
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl2Lms8ACgkQJNaLcl1U
-h9DWyAf9GJg6rx9ZA0HyG5Q6KMBXqXHcD5FiF/ew+TDWG91wurQF0lIa3JOuBM6P
-5MIzrRqWv0j0DFyUD+E0TLtruxSh5zWNV8De2kE84wswFX1f6QA7FYOKqs9iTQ/I
-RdCU8CfdrVviYD7cphFaaaF2Aq/dlSGA/kRINOiWswGyYaHLB78Z/TYLD9L5tPTk
-yo5ju5eLjrAL4PPOso49/VhONhU6BOcIjmOBiix3NkL45BzNS1gPVGsggRcFC3Rc
-aaBv1Fd3lPfExjOG9p5H6PGzGLjtPh5DwK7AuXs0RaW8cUWdrIsvRARD6R6+OTCr
-5g84bg+BvEfqAeb1XolhPuf7EpZ/Ow==
-=C2/G
------END PGP SIGNATURE-----
-
---FO0yZLwVDWUwTKck--
-
-
---===============1286266860759516056==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+[1] 
+http://linux-arm.org/git?p=linux-rm.git;a=commitdiff;h=a2814af56b3486c2985a95540a88d8f9fa3a699f
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1286266860759516056==--
-
