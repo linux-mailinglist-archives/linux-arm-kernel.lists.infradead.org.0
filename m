@@ -2,136 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72D87BDF2E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 15:41:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6E44BDFA7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 16:08:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K84uT0eqES12plExirLsGCaG75Q9DvELt3tTaduHfM4=; b=F5JiYyORuJqEqP
-	DNsZKdMULLLfwRg2OpCMI+Rd6jq/ZHOL+fZoKNEhVffT012Uq0zpDUZciqvOGI4el6p2Wvx7r7Cc1
-	e66sMZUqQnyzPoIcN6X+sYYLhXql3dFeKe5/Ag+db8UpiLSVBwwOyHxmv5P47JMGjJcox7wyJEo27
-	O3+VhWnbJyC+duQwp8dD6bx8/rv0/5EqWZMRdkl3CbDF5bbupdXHaW7BY6x0JfJhptJ4zMy0huLv8
-	wtKIiHW/Y5iaWeYvayVkMciFQokpCQ+aSzelEyUpHKal9WPH7+1TA90cBwOccnRdMOfEDf1t7MOGA
-	61I81Z72Jyd7eDO1RPPQ==;
+	List-Owner; bh=ZL/30k4+TZB7RZ9UkSokA4LlIIebDLR618mc1/6M9gs=; b=tw5VtoHY5rTvWO
+	pZ8LYTeGwv/ImuNfJ0Hn5aQCZpKuiQoly00gweOWf0DxmfIEsZfhVylZn/KhuCRu9rwLA5nzRRCLm
+	UCD1FrGVhLV9hEgbFj+02rkk1tTd/aC3IMwX/B0GfBBFTW43SIMOv2ef4SmuvwnsPVrqxvCOABlDU
+	ao0a5UA3IQtVVRCc+QkTxc9+1v8v65wIFloSDR7opYC3Z88LbWmYn3IDdf+KrvxpP70mjmGGqMl9C
+	iAHJYZeDAdfN7nvUBJ68iktxnfel+ooigiy81ZWVgVPfROlMv56mP+UxNrffAwkTks0GUNJdxnziu
+	A3IJUZfHI0Z3nBvkZt3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iD7Xe-00065Y-PY; Wed, 25 Sep 2019 13:41:14 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1iD7xU-00066U-LQ; Wed, 25 Sep 2019 14:07:57 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iD7XN-00064o-Ov
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 13:41:00 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190925134054euoutp01ed7ec19677e84246c3ec723a2921b9c2~HsiH8nE-91726617266euoutp01x
+ id 1iD7x1-00065X-63
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 14:07:29 +0000
+Received: by mail-oi1-f196.google.com with SMTP id e18so5003181oii.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 25 Sep 2019 13:40:54 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20190925134054euoutp01ed7ec19677e84246c3ec723a2921b9c2~HsiH8nE-91726617266euoutp01x
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1569418854;
- bh=f0AmX9FlrHbNXAtWzVC0R1bkttK0ZP6JLzQMl2nV4tE=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=eqkYlGR4HRz72LogFFLyNnujDq2XUmoyio/fF5sAwF80SVZJaJdwhA6VMXoopqPFD
- It7Tq50zESTrfNh7GtTwIKwh0wgiZMjjydWHBsZqPbvPQFIknkKwaEAjTxgrwYYFUp
- sCLggefj65v1dOuFIDi0liBJu6ldM3nmxhbpshIU=
-Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20190925134053eucas1p17263031006a31308e81603811f36a295~HsiHkiLAV1688916889eucas1p17;
- Wed, 25 Sep 2019 13:40:53 +0000 (GMT)
-Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
- eusmges2new.samsung.com (EUCPMTA) with SMTP id 59.2A.04309.56E6B8D5; Wed, 25
- Sep 2019 14:40:53 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20190925134053eucas1p1ae1d6b5a345046b685c0fa0de1c31746~HsiHSaIqk0883308833eucas1p1P;
- Wed, 25 Sep 2019 13:40:53 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20190925134053eusmtrp1eba1efa09fcd37e1938ba9bac3fa0ec6~HsiHRVdx_1297212972eusmtrp1_;
- Wed, 25 Sep 2019 13:40:53 +0000 (GMT)
-X-AuditID: cbfec7f4-afbff700000010d5-96-5d8b6e65a650
-Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id DB.A1.04166.56E6B8D5; Wed, 25
- Sep 2019 14:40:53 +0100 (BST)
-Received: from [106.120.51.15] (unknown [106.120.51.15]) by
- eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20190925134052eusmtip2106b84878db25e3d1385666da6f83d53~HsiGprZQ51295012950eusmtip24;
- Wed, 25 Sep 2019 13:40:52 +0000 (GMT)
-Subject: Re: [PATCH v4 1/8] dt-bindings: timer: Convert Exynos MCT bindings
- to json-schema
-To: Krzysztof Kozlowski <krzk@kernel.org>, Daniel Lezcano
- <daniel.lezcano@linaro.org>, Thomas Gleixner <tglx@linutronix.de>, Rob
- Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, Kukjin
- Kim <kgene@kernel.org>, Andrzej Hajda <a.hajda@samsung.com>,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
-From: Marek Szyprowski <m.szyprowski@samsung.com>
-Message-ID: <aa4acd33-eff3-175f-b86a-459ba8c1d17c@samsung.com>
-Date: Wed, 25 Sep 2019 15:40:52 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ Wed, 25 Sep 2019 07:07:25 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=gNzfLxyphufZW7oX+loBgrNcosGjw89AhG0FkoAT9T0=;
+ b=ZVJf4hHWlumfrad2fpobpnADP09g2sQ3XMYyja5SluMdPGCJ2Q6m3S1AXSYWlgW5t6
+ HaHL7IO3qPO6io4GUSDrFtEHQROhHQKYlVzJ1um19Dl9/FNb1khhly7XYUZfTP/WoKqw
+ 7rMWUEuiF9Ds89NbpxlpaHN8bkc5CdZGXYZQJdyVRpZ9MXWMJ39GlMHMhLGI4AzBr18R
+ 0un2X57mxEY3Y1G/3ApcXpOtTRPh7H3WQPawm/H+m9R6IKBZM2RCk9S7aFn7zcS+KZLB
+ nFOeF6pRw9oYfM0kICAhQgAKguDaX7Gi5st+rmRojxlH50/tlG++If+0N18qLA1jOb5k
+ XVtA==
+X-Gm-Message-State: APjAAAWd075k+8ojXikh+ir+STJ2HRYN5BQ3tfB+SjCbx1AS9iacrWjZ
+ evx+WMFaZP9AuH9VqBc8a+HTEcm6
+X-Google-Smtp-Source: APXvYqyXUJiLdx/29bxedTiE+6H7/KJdZGHTDAQlwUZL5bOkSbqvIYRaOHFMNr0lVAE3AC3doV1fJQ==
+X-Received: by 2002:aca:b286:: with SMTP id b128mr4757609oif.100.1569420443932; 
+ Wed, 25 Sep 2019 07:07:23 -0700 (PDT)
+Received: from mail-oi1-f175.google.com (mail-oi1-f175.google.com.
+ [209.85.167.175])
+ by smtp.gmail.com with ESMTPSA id y11sm1533983oih.18.2019.09.25.07.07.23
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 25 Sep 2019 07:07:23 -0700 (PDT)
+Received: by mail-oi1-f175.google.com with SMTP id x3so5008308oig.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 25 Sep 2019 07:07:23 -0700 (PDT)
+X-Received: by 2002:aca:d988:: with SMTP id q130mr4486320oig.13.1569420442960; 
+ Wed, 25 Sep 2019 07:07:22 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190923161411.9236-1-krzk@kernel.org>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA02SfyyUcRzH+97z3D3P3Zw9d5hPQttttakQq/WQWay1Z2rNYtqEOnlG4067
- 8yP6I1HiiJYKl7AwTpx2RKnIKVczJzTMWj8cNem0RRubrDtPyn+vz/vz/jzvz+e7h8SkQ3w3
- 8pwyjVUp5SkygQjvHFgxe7PKoti9k79201N6M5+uXvSga17aoNQyj9HDww8J2mAZ59Nj3VUC
- umK4h0c3TIzw6KvPXxL0tdk5jG433MYOOTAt1S2IMTQXCpj3488EzILZTDDt9ZeYko5mxCwa
- PMOJaFFQAptyLoNV+QafESVZ9E3E+Y7jF4pKB1AOWgjQICEJ1D7QlNzDNUhESqkmBNfzPvK5
- YgnB6sJTgisWEVjnegUbI3fbOhDXaERQWzWB7A0pZUXQ/iPMzk5UDLR1ra2bnKkyDHr7devT
- GOUN5QvfMTsLKD/QWDXrupgKBt2VlXUdp3ZAXZ2ZZ2cXKhY+LJswziOBN5UzuJ2Fti3qCywE
- 983t0GWtwjh2hamZGp49GKhpAmZ/azBu7cPw886Xv+wE30wdBMfuMFhWjHMDeQg+m1sJrihG
- MJZbgTjXQeg3jdiehrRFeEFbty8nh8Cr1zqeXQbKESatEm4JR7jZWY5xshgK8qWceydoTfp/
- sX1vR7EbSKbddJp20znaTedo/+fWIrwZubLpakUiq/ZXspk+arlCna5M9DmbqjAg2082uGZa
- eoy6V+ONiCKRzEH8IqooVsqXZ6izFEYEJCZzFmvdNbFScYI8K5tVpZ5WpaewaiPaRuIyV/HF
- LZ9OSalEeRqbzLLnWdVGl0cK3XKQf75Vld2jK1/VNTp/Fe6nvYZaP+H6oZCjYQeOUfEBjMdl
- YfT09ISWnY2onI7waYjM26qID9N79hTenzrBRLvFdYaOJge2RZamGyuNkvll0a34qLns8CNB
- KVkSS2DoZH7nu8A+BJk0czItxoXeUxLnNZ4rdlp+wH80JXlCimW4OknutwtTqeV/ACdIsm9g
- AwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrHIsWRmVeSWpSXmKPExsVy+t/xe7qped2xBttnSFjcWneO1WLeZ1mL
- +UeAjP7Hr5ktzp/fwG6x6fE1VovLu+awWcw4v4/JYun1i0wWrXuPsFu0P33JbLF501RmBx6P
- NfPWMHpsWtXJ5nHn2h42j3fnzrF7bF5S79G3ZRWjx+dNcgHsUXo2RfmlJakKGfnFJbZK0YYW
- RnqGlhZ6RiaWeobG5rFWRqZK+nY2Kak5mWWpRfp2CXoZj9etYC/Y4lfR3X+MsYHxnWUXIyeH
- hICJxOz1Wxi7GLk4hASWMkr8+n+UBSIhI3FyWgMrhC0s8edaFxtE0WtGiX8r1zGCJIQFYiR2
- 73rLDmKLCExllrh5qRbEZhbQlZj+7g0zREM7o8SBvsdgRWwChhJdb0EmcXLwCthJrGz5yQxi
- swioSixefI6pi5GDQ1QgVmLTXjOIEkGJkzOfgB3ECXTpkg6IMcwCZhLzNj9khrDlJba/nQNl
- i0vcejKfaQKj0Cwk7bOQtMxC0jILScsCRpZVjCKppcW56bnFhnrFibnFpXnpesn5uZsYgXG7
- 7djPzTsYL20MPsQowMGoxMN7IKw7Vog1say4MvcQowQHs5II7yyZrlgh3pTEyqrUovz4otKc
- 1OJDjKZAv01klhJNzgemlLySeENTQ3MLS0NzY3NjMwslcd4OgYMxQgLpiSWp2ampBalFMH1M
- HJxSDYwsj2XKirRiPk26x845Z7Xc3KnuT5gUX9z/yzDF3C2Hyd8ieV/Xvxkugg6ie29rBk6U
- VnHxKTsmbLV+vkVJrNJN9er6X9elVxelePpmlWx7prEg8BTbuy1la17VzGe8ylh0qnTB/lqz
- AyujDukeePRlcqXEdtEr0mcyY1f53DQSiCxabWyoK6PEUpyRaKjFXFScCAAxGhDE8QIAAA==
-X-CMS-MailID: 20190925134053eucas1p1ae1d6b5a345046b685c0fa0de1c31746
-X-Msg-Generator: CA
-X-RootMTR: 20190923161449epcas3p4bf25ddc76d4893a93b9472c3a286f410
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20190923161449epcas3p4bf25ddc76d4893a93b9472c3a286f410
-References: <CGME20190923161449epcas3p4bf25ddc76d4893a93b9472c3a286f410@epcas3p4.samsung.com>
- <20190923161411.9236-1-krzk@kernel.org>
+References: <20190924024548.4356-1-biwen.li@nxp.com>
+ <20190924024548.4356-3-biwen.li@nxp.com>
+ <AM0PR04MB667690EE76D327D0FC09F7818F840@AM0PR04MB6676.eurprd04.prod.outlook.com>
+ <DB7PR04MB449034C4BBAA89685A2130F78F870@DB7PR04MB4490.eurprd04.prod.outlook.com>
+ <AM0PR04MB66762594DDFC6E5B00BD103C8F870@AM0PR04MB6676.eurprd04.prod.outlook.com>
+ <DB7PR04MB4490FECDC76507AADC35948E8F870@DB7PR04MB4490.eurprd04.prod.outlook.com>
+ <AM0PR04MB6676BD24B814C3D1D67CF9F88F870@AM0PR04MB6676.eurprd04.prod.outlook.com>
+ <DB7PR04MB4490EAE9591B5AE7112C9D188F870@DB7PR04MB4490.eurprd04.prod.outlook.com>
+ <AM0PR04MB6676B8A6F7C7C3BC822B45B28F870@AM0PR04MB6676.eurprd04.prod.outlook.com>
+ <DB7PR04MB44902BADDDFD090BAF4178C68F870@DB7PR04MB4490.eurprd04.prod.outlook.com>
+ <DB7PR04MB4490684FE0E95695E89173948F870@DB7PR04MB4490.eurprd04.prod.outlook.com>
+In-Reply-To: <DB7PR04MB4490684FE0E95695E89173948F870@DB7PR04MB4490.eurprd04.prod.outlook.com>
+From: Li Yang <leoyang.li@nxp.com>
+Date: Wed, 25 Sep 2019 09:07:12 -0500
+X-Gmail-Original-Message-ID: <CADRPPNQ+=au2qRL2K-tzhH8HK1+sO+ut9YBhYw4UhWSv5FF88A@mail.gmail.com>
+Message-ID: <CADRPPNQ+=au2qRL2K-tzhH8HK1+sO+ut9YBhYw4UhWSv5FF88A@mail.gmail.com>
+Subject: Re: [v3, 3/3] Documentation: dt: binding: fsl: Add 'fsl,
+ ippdexpcr-alt-addr' property
+To: Biwen Li <biwen.li@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_064058_157579_4D73B438 
-X-CRM114-Status: GOOD (  29.40  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190925_070727_365042_47053BEE 
+X-CRM114-Status: GOOD (  33.31  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.196 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pku.leo[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -143,274 +104,155 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sylwester Nawrocki <snawrocki@kernel.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Ran Wang <ran.wang_1@nxp.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Krzysztof,
+On Tue, Sep 24, 2019 at 11:27 PM Biwen Li <biwen.li@nxp.com> wrote:
+>
+> > > >
+> > > > > > > > > >
+> > > > > > > > > > The 'fsl,ippdexpcr-alt-addr' property is used to handle
+> > > > > > > > > > an errata
+> > > > > > > > > > A-008646 on LS1021A
+> > > > > > > > > >
+> > > > > > > > > > Signed-off-by: Biwen Li <biwen.li@nxp.com>
+> > > > > > > > > > ---
+> > > > > > > > > > Change in v3:
+> > > > > > > > > >       - rename property name
+> > > > > > > > > >         fsl,rcpm-scfg -> fsl,ippdexpcr-alt-addr
+> > > > > > > > > >
+> > > > > > > > > > Change in v2:
+> > > > > > > > > >       - update desc of the property 'fsl,rcpm-scfg'
+> > > > > > > > > >
+> > > > > > > > > >  Documentation/devicetree/bindings/soc/fsl/rcpm.txt | 14
+> > > > > > > > > > ++++++++++++++
+> > > > > > > > > >  1 file changed, 14 insertions(+)
+> > > > > > > > > >
+> > > > > > > > > > diff --git
+> > > > > > > > > > a/Documentation/devicetree/bindings/soc/fsl/rcpm.txt
+> > > > > > > > > > b/Documentation/devicetree/bindings/soc/fsl/rcpm.txt
+> > > > > > > > > > index 5a33619d881d..157dcf6da17c 100644
+> > > > > > > > > > --- a/Documentation/devicetree/bindings/soc/fsl/rcpm.txt
+> > > > > > > > > > +++ b/Documentation/devicetree/bindings/soc/fsl/rcpm.txt
+> > > > > > > > > > @@ -34,6 +34,11 @@ Chassis Version            Example
+> > > > Chips
+> > > > > > > > > >  Optional properties:
+> > > > > > > > > >   - little-endian : RCPM register block is Little Endian.
+> > > > > > > > > > Without it
+> > > > > RCPM
+> > > > > > > > > >     will be Big Endian (default case).
+> > > > > > > > > > + - fsl,ippdexpcr-alt-addr : Must add the property for
+> > > > > > > > > > + SoC LS1021A,
+> > > > > > > > >
+> > > > > > > > > You probably should mention this is related to a hardware
+> > > > > > > > > issue on LS1021a and only needed on LS1021a.
+> > > > > > > > Okay, got it, thanks, I will add this in v4.
+> > > > > > > > >
+> > > > > > > > > > +   Must include n + 1 entries (n =
+> > > > > > > > > > + #fsl,rcpm-wakeup-cells, such
+> > > as:
+> > > > > > > > > > +   #fsl,rcpm-wakeup-cells equal to 2, then must include
+> > > > > > > > > > + 2
+> > > > > > > > > > + +
+> > > > > > > > > > + 1
+> > > > > entries).
+> > > > > > > > >
+> > > > > > > > > #fsl,rcpm-wakeup-cells is the number of IPPDEXPCR
+> > > > > > > > > registers on an
+> > > > > SoC.
+> > > > > > > > > However you are defining an offset to scfg registers here.
+> > > > > > > > > Why these two are related?  The length here should
+> > > > > > > > > actually be related to the #address-cells of the soc/.
+> > > > > > > > > But since this is only needed for LS1021, you can
+> > > > > > > > just make it 3.
+> > > > > > > > I need set the value of IPPDEXPCR resgiters from ftm_alarm0
+> > > > > > > > device node(fsl,rcpm-wakeup = <&rcpm 0x0 0x20000000>;
+> > > > > > > > 0x0 is a value for IPPDEXPCR0, 0x20000000 is a value for
+> > > > > IPPDEXPCR1).
+> > > > > > > > But because of the hardware issue on LS1021A, I need store
+> > > > > > > > the value of IPPDEXPCR registers to an alt address. So I
+> > > > > > > > defining an offset to scfg registers, then RCPM driver get
+> > > > > > > > an abosolute address from offset, RCPM driver write the
+> > > > > > > > value of IPPDEXPCR registers to these abosolute
+> > > > > > > > addresses(backup the value of IPPDEXPCR
+> > > > > registers).
+> > > > > > >
+> > > > > > > I understand what you are trying to do.  The problem is that
+> > > > > > > the new fsl,ippdexpcr-alt-addr property contains a phandle and an
+> > offset.
+> > > > > > > The size of it shouldn't be related to #fsl,rcpm-wakeup-cells.
+> > > > > > You maybe like this: fsl,ippdexpcr-alt-addr = <&scfg 0x51c>;/*
+> > > > > > SCFG_SPARECR8 */
+> > > > >
+> > > > > No.  The #address-cell for the soc/ is 2, so the offset to scfg
+> > > > > should be 0x0 0x51c.  The total size should be 3, but it shouldn't
+> > > > > be coming from #fsl,rcpm-wakeup-cells like you mentioned in the
+> > binding.
+> > > > Oh, I got it. You want that fsl,ippdexpcr-alt-add is relative with
+> > > > #address-cells instead of #fsl,rcpm-wakeup-cells.
+> > >
+> > > Yes.
+> > I got an example from drivers/pci/controller/dwc/pci-layerscape.c
+> > and arch/arm/boot/dts/ls1021a.dtsi as follows:
+> > fsl,pcie-scfg = <&scfg 0>, 0 is an index
+> >
+> > In my fsl,ippdexpcr-alt-addr = <&scfg 0x0 0x51c>, It means that 0x0 is an alt
+> > offset address for IPPDEXPCR0, 0x51c is an alt offset address For
+> > IPPDEXPCR1 instead of 0x0 and 0x51c compose to an alt address of
+> > SCFG_SPARECR8.
+> Maybe I need write it as:
+> fsl,ippdexpcr-alt-addr = <&scfg 0x0 0x0 0x0 0x51c>;
+> first two 0x0 compose an alt offset address for IPPDEXPCR0,
+> last 0x0 and 0x51c compose an alt address for IPPDEXPCR1,
 
-On 23.09.2019 18:14, Krzysztof Kozlowski wrote:
-> Convert Samsung Exynos Soc Multi Core Timer bindings to DT schema format
-> using json-schema.
->
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
->
-> ---
->
-> Changes since v3:
-> 1. Use interrupts-extended instead of interrupts-map.
->
-> Changes since v1:
-> 1. Indent example with four spaces (more readable),
-> 2. Rename nodes in example to timer,
-> 3. Remove mct-map subnode.
-> ---
->   .../bindings/timer/samsung,exynos4210-mct.txt |  88 ------------
->   .../timer/samsung,exynos4210-mct.yaml         | 125 ++++++++++++++++++
->   2 files changed, 125 insertions(+), 88 deletions(-)
->   delete mode 100644 Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.txt
->   create mode 100644 Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.yaml
->
-> diff --git a/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.txt b/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.txt
-> deleted file mode 100644
-> index 8f78640ad64c..000000000000
-> --- a/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.txt
-> +++ /dev/null
-> @@ -1,88 +0,0 @@
-> -Samsung's Multi Core Timer (MCT)
-> -
-> -The Samsung's Multi Core Timer (MCT) module includes two main blocks, the
-> -global timer and CPU local timers. The global timer is a 64-bit free running
-> -up-counter and can generate 4 interrupts when the counter reaches one of the
-> -four preset counter values. The CPU local timers are 32-bit free running
-> -down-counters and generate an interrupt when the counter expires. There is
-> -one CPU local timer instantiated in MCT for every CPU in the system.
-> -
-> -Required properties:
-> -
-> -- compatible: should be "samsung,exynos4210-mct".
-> -  (a) "samsung,exynos4210-mct", for mct compatible with Exynos4210 mct.
-> -  (b) "samsung,exynos4412-mct", for mct compatible with Exynos4412 mct.
-> -
-> -- reg: base address of the mct controller and length of the address space
-> -  it occupies.
-> -
-> -- interrupts: the list of interrupts generated by the controller. The following
-> -  should be the order of the interrupts specified. The local timer interrupts
-> -  should be specified after the four global timer interrupts have been
-> -  specified.
-> -
-> -	0: Global Timer Interrupt 0
-> -	1: Global Timer Interrupt 1
-> -	2: Global Timer Interrupt 2
-> -	3: Global Timer Interrupt 3
-> -	4: Local Timer Interrupt 0
-> -	5: Local Timer Interrupt 1
-> -	6: ..
-> -	7: ..
-> -	i: Local Timer Interrupt n
-> -
-> -  For MCT block that uses a per-processor interrupt for local timers, such
-> -  as ones compatible with "samsung,exynos4412-mct", only one local timer
-> -  interrupt might be specified, meaning that all local timers use the same
-> -  per processor interrupt.
-> -
-> -Example 1: In this example, the IP contains two local timers, using separate
-> -	   interrupts, so two local timer interrupts have been specified,
-> -	   in addition to four global timer interrupts.
-> -
-> -	mct@10050000 {
-> -		compatible = "samsung,exynos4210-mct";
-> -		reg = <0x10050000 0x800>;
-> -		interrupts = <0 57 0>, <0 69 0>, <0 70 0>, <0 71 0>,
-> -			     <0 42 0>, <0 48 0>;
-> -	};
-> -
-> -Example 2: In this example, the timer interrupts are connected to two separate
-> -	   interrupt controllers. Hence, an interrupt-map is created to map
-> -	   the interrupts to the respective interrupt controllers.
-> -
-> -	mct@101c0000 {
-> -		compatible = "samsung,exynos4210-mct";
-> -		reg = <0x101C0000 0x800>;
-> -		interrupt-parent = <&mct_map>;
-> -		interrupts = <0>, <1>, <2>, <3>, <4>, <5>;
-> -
-> -		mct_map: mct-map {
-> -			#interrupt-cells = <1>;
-> -			#address-cells = <0>;
-> -			#size-cells = <0>;
-> -			interrupt-map = <0 &gic 0 57 0>,
-> -					<1 &gic 0 69 0>,
-> -					<2 &combiner 12 6>,
-> -					<3 &combiner 12 7>,
-> -					<4 &gic 0 42 0>,
-> -					<5 &gic 0 48 0>;
-> -		};
-> -	};
-> -
-> -Example 3: In this example, the IP contains four local timers, but using
-> -	   a per-processor interrupt to handle them. Either all the local
-> -	   timer interrupts can be specified, with the same interrupt specifier
-> -	   value or just the first one.
-> -
-> -	mct@10050000 {
-> -		compatible = "samsung,exynos4412-mct";
-> -		reg = <0x10050000 0x800>;
-> -
-> -		/* Both ways are possible in this case. Either: */
-> -		interrupts = <0 57 0>, <0 69 0>, <0 70 0>, <0 71 0>,
-> -			     <0 42 0>;
-> -		/* or: */
-> -		interrupts = <0 57 0>, <0 69 0>, <0 70 0>, <0 71 0>,
-> -			     <0 42 0>, <0 42 0>, <0 42 0>, <0 42 0>;
-> -	};
-> diff --git a/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.yaml b/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.yaml
-> new file mode 100644
-> index 000000000000..bff3f54a398f
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.yaml
-> @@ -0,0 +1,125 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/timer/samsung,exynos4210-mct.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Samsung Exynos SoC Multi Core Timer (MCT)
-> +
-> +maintainers:
-> +  - Krzysztof Kozlowski <krzk@kernel.org>
-> +
-> +description: |+
-> +  The Samsung's Multi Core Timer (MCT) module includes two main blocks, the
-> +  global timer and CPU local timers. The global timer is a 64-bit free running
-> +  up-counter and can generate 4 interrupts when the counter reaches one of the
-> +  four preset counter values. The CPU local timers are 32-bit free running
-> +  down-counters and generate an interrupt when the counter expires. There is
-> +  one CPU local timer instantiated in MCT for every CPU in the system.
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - samsung,exynos4210-mct
-> +      - samsung,exynos4412-mct
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    description: |
-> +      Interrupts should be put in specific order. This is, the local timer
-> +      interrupts should be specified after the four global timer interrupts
-> +      have been specified:
-> +      0: Global Timer Interrupt 0
-> +      1: Global Timer Interrupt 1
-> +      2: Global Timer Interrupt 2
-> +      3: Global Timer Interrupt 3
-> +      4: Local Timer Interrupt 0
-> +      5: Local Timer Interrupt 1
-> +      6: ..
-> +      7: ..
-> +      i: Local Timer Interrupt n
-> +      For MCT block that uses a per-processor interrupt for local timers, such
-> +      as ones compatible with "samsung,exynos4412-mct", only one local timer
-> +      interrupt might be specified, meaning that all local timers use the same
-> +      per processor interrupt.
-> +    minItems: 5               # 4 Global + 1 local
-> +    maxItems: 20              # 4 Global + 16 local
-> +
-> +  interrupts-extended:
-> +    description: |
-> +      If interrupts are coming from different controllers, this property
-> +      can be used instead of regular "interrupts" property.
-> +      The format is exactly the same as with "interrupts".
-> +      Interrupts should be put in specific order. This is, the local timer
-> +    minItems: 5               # 4 Global + 1 local
-> +    maxItems: 20              # 4 Global + 16 local
-> +
-> +required:
-> +  - compatible
-> +  - interrupts
-> +  - reg
-> +
-> +allOf:
-> +  - if:
-> +      not:
-> +        required:
-> +          - interrupts
-> +    then:
-> +      required:
-> +        - interrupts-extended
-> +
-> +examples:
-> +  - |
-> +    // In this example, the IP contains two local timers, using separate
-> +    // interrupts, so two local timer interrupts have been specified,
-> +    // in addition to four global timer interrupts.
-> +
-> +    timer@10050000 {
-> +        compatible = "samsung,exynos4210-mct";
-> +        reg = <0x10050000 0x800>;
-> +        interrupts = <0 57 0>, <0 69 0>, <0 70 0>, <0 71 0>,
-> +                     <0 42 0>, <0 48 0>;
-> +    };
-> +
-> +  - |
-> +    // In this example, the timer interrupts are connected to two separate
-> +    // interrupt controllers. Hence, an interrupts-extended is needed.
-> +
-> +    timer@101c0000 {
-> +        compatible = "samsung,exynos4210-mct";
-> +        reg = <0x101C0000 0x800>;
-> +        interrupts-extended = <&gic 0 57 0>,
-> +                              <&gic 0 69 0>,
-> +                              <&combiner 12 6>,
-> +                              <&combiner 12 7>,
-> +                              <&gic 0 42 0>,
-> +                              <&gic 0 48 0>;
-> +    };
-> +
-> +  - |
-> +    // In this example, the IP contains four local timers, but using
-> +    // a per-processor interrupt to handle them. Only one first local
-> +    // interrupt is specified.
-> +
-> +    timer@10050000 {
-> +        compatible = "samsung,exynos4412-mct";
-> +        reg = <0x10050000 0x800>;
-> +
-> +        interrupts = <0 57 0>, <0 69 0>, <0 70 0>, <0 71 0>,
-> +                     <0 42 0>;
-> +    };
-> +
-> +  - |
-> +    // In this example, the IP contains four local timers, but using
-> +    // a per-processor interrupt to handle them. All the local timer
-> +    // interrupts are specified.
-> +
-> +    timer@10050000 {
-> +        compatible = "samsung,exynos4412-mct";
-> +        reg = <0x10050000 0x800>;
-> +
-> +        interrupts = <0 57 0>, <0 69 0>, <0 70 0>, <0 71 0>,
-> +                     <0 42 0>, <0 42 0>, <0 42 0>, <0 42 0>;
-> +    };
-I would add "#include <dt-bindings/interrupt-controller/arm-gic.h>" and
-replace zeros with proper defines like GIC_SPI and GIC_PPI. The last two
-examples describes per-processor-interrupts, but have 0 in the specifier
-cell 0. I would also use proper IRQ_TYPE_LEVEL_HIGH at cell 3 instead
-of 0. I would also consider adding artificial 'interrupt-parent = &git'
-property to the 1st, 3rd and 4th examples to make it clear that they
-refer to ARM GIC bindings.
+I remember the hardware issue is only is only related to IPPDEXPCR1
+register, no idea why you need to define IPPDEXPCR0 in the binding.
 
-Best regards
--- 
-Marek Szyprowski, PhD
-Samsung R&D Institute Poland
-
+>
+> Best Regards,
+> Biwen Li
+> > >
+> > > Regards,
+> > > Leo
+> > > > >
+> > > > > > >
+> > > > > > > > >
+> > > > > > > > > > +   The first entry must be a link to the SCFG device node.
+> > > > > > > > > > +   The non-first entry must be offset of registers of SCFG.
+> > > > > > > > > >
+> > > > > > > > > >  Example:
+> > > > > > > > > >  The RCPM node for T4240:
+> > > > > > > > > > @@ -43,6 +48,15 @@ The RCPM node for T4240:
+> > > > > > > > > >               #fsl,rcpm-wakeup-cells = <2>;
+> > > > > > > > > >       };
+> > > > > > > > > >
+> > > > > > > > > > +The RCPM node for LS1021A:
+> > > > > > > > > > +     rcpm: rcpm@1ee2140 {
+> > > > > > > > > > +             compatible = "fsl,ls1021a-rcpm", "fsl,qoriq-rcpm-
+> > > > > > 2.1+";
+> > > > > > > > > > +             reg = <0x0 0x1ee2140 0x0 0x8>;
+> > > > > > > > > > +             #fsl,rcpm-wakeup-cells = <2>;
+> > > > > > > > > > +             fsl,ippdexpcr-alt-addr = <&scfg 0x0 0x51c>; /*
+> > > > > > > > > > SCFG_SPARECR8 */
+> > > > > > > > > > +     };
+> > > > > > > > > > +
+> > > > > > > > > > +
+> > > > > > > > > >  * Freescale RCPM Wakeup Source Device Tree Bindings
+> > > > > > > > > >  -------------------------------------------
+> > > > > > > > > >  Required fsl,rcpm-wakeup property should be added to a
+> > > > > > > > > > device node if the device
+> > > > > > > > > > --
+> > > > > > > > > > 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
