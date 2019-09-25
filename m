@@ -2,89 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F0EABE8A4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 01:00:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C269BBE8F8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 01:33:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=93ZERkudWHHjRsjkBu4BpdEbZuw7L/QADkTikSKz7KI=; b=MPkZHdHNNDVSUc
-	6lf4nGIHTWZoMAY4/1QehOLXgyyvKMWUvo047XbjnuDwadrqTITvlfCv/uUbrQaYA6B/Os1YCtGa6
-	Spn1dhkNS5Cx7cZ9OH8H0C4RXIfCEJnRktG5k5czPL7Ae0+n174EJis+/Th8h8wh3INVwyeUwvbGI
-	/lvYT38Io+SsW+ddG429bchTFgL419J/70dBloI+yJcU9P39mf/i1F0k9Xv1byVR0O53gj9LC304N
-	wheG3nPjnhW+jC7qp8nDnLBhx8t9Nc14xBe093KPaoCzXZb3hlL1GmvlNewcFbVXxxpW080QOIN0V
-	wj0nnGbxOr4OK/4CzYIg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Lt1nfmT6h8wmMLf9pXwTDasjIJqlGc4FXpLClUK/ZTQ=; b=R5yYm7OacTG5lM
+	DXAoLtXE5oggDAs3tF3Wnme//AWmNhl37q2PPKBPb0gF1D2+L2Rqv2l6VBuZHcaP15ISe0ehH7D1g
+	6RTKL8zaJCErDa6Ig0ieXvgEqhpQbFUtwUKBv7ialPF8SWnWtg3Ee2Aj2saFvITteLoZn5k6W3I9x
+	jasZLKAwx457fhc0eiyrFWcWcBJYiWtWYoX2JhKmsEoHpePmqXhgrszNcvVtOAkdC5hLbpak5L2gB
+	nW0Jj94UVBV/hVWhbsZ26+Uzzw/0rtkrfez9fHOAtNKtYbOmr74v0x6Qc5b7PxPv+iqMDikhDNU8n
+	jV0qcHOmvHrJLRMGm37g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDGGc-0003zY-SU; Wed, 25 Sep 2019 23:00:15 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDGFB-0002sX-QV
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 22:58:47 +0000
-Received: by mail-pl1-x642.google.com with SMTP id e5so73931pls.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 25 Sep 2019 15:58:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=a8l1h42oL5P23xHtbf5VYzA5ZkeKmzbH6tKjUBSBl+E=;
- b=mZdbN7PU15gvrkxboOz4EvcivX/ux1fVAqsJCq6EgzispzgwuhEsAlz2ZHeBFsy6AF
- nFJVLzl+LytoIKO4/YdZ1xWZH80l5SKrIIa2WxgJD+p+QXWSPvNvoGV2JOLti0PYNVZd
- IpeblEXMS3gfQeMUmm75yJ/NL7jP6a/9DNtx4=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=a8l1h42oL5P23xHtbf5VYzA5ZkeKmzbH6tKjUBSBl+E=;
- b=fmkbCiKDbpEJuqwpjgGuJOxKxdgtkarib1J9zD+xKbM8O51kPR3Y0ooEnOnoMPgD70
- OLFU5JkS3J9+MEFZHUQWjSEvwf3DY4zlaUcUVkjXyXMygmPVcQeVcWoPx6tUcQP1RbAo
- wJBZOTuNi6Ze1lAUUwIznHW5L6hNdriTQ2n5FXhXQrlFnJP5oY2MCE6QUzzsf3Zdt+Sw
- XiPA2izc3cT2fyCehubbOmpqK19eMqhbuxwGKozRP4RunxVqh7SlSshkAy0NN/5LGD7Z
- z89e/zaiHrHRvGJ/4cxU/l0b0a1J/3Jcm81q/9otV60u2xTLLx2zaBwJfRLoz5XleGLN
- Ntyg==
-X-Gm-Message-State: APjAAAXOjYSEroSHA1qCunpiAr9DWeyJaKq6ZQAz89VTquIYZPd6++HT
- FdIwY9nD114OUObImAu3yLuGdg==
-X-Google-Smtp-Source: APXvYqzDNs3vEprSzaoe6gRCguGllX+tDvFlstkCquRzzh0Piq6427vQeaol87qaa+E6o95eLxbqbg==
-X-Received: by 2002:a17:902:b68e:: with SMTP id
- c14mr539964pls.306.1569452325220; 
- Wed, 25 Sep 2019 15:58:45 -0700 (PDT)
-Received: from exogeni.mtv.corp.google.com
- ([2620:15c:202:1:5be8:f2a6:fd7b:7459])
- by smtp.gmail.com with ESMTPSA id j24sm76185pff.71.2019.09.25.15.58.43
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 25 Sep 2019 15:58:44 -0700 (PDT)
-From: Derek Basehore <dbasehore@chromium.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v8 4/4] drm/mtk: add panel orientation property
-Date: Wed, 25 Sep 2019 15:58:33 -0700
-Message-Id: <20190925225833.7310-5-dbasehore@chromium.org>
-X-Mailer: git-send-email 2.23.0.351.gc4317032e6-goog
-In-Reply-To: <20190925225833.7310-1-dbasehore@chromium.org>
-References: <20190925225833.7310-1-dbasehore@chromium.org>
+	id 1iDGn2-00061Z-LJ; Wed, 25 Sep 2019 23:33:45 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iDGmo-00060Z-Jy
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 23:33:32 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 338911000;
+ Wed, 25 Sep 2019 16:33:27 -0700 (PDT)
+Received: from [172.23.27.158] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 792373F67D;
+ Wed, 25 Sep 2019 16:33:25 -0700 (PDT)
+Subject: Re: [PATCH] arm64: Allow disabling of the compat vDSO
+To: Nick Desaulniers <ndesaulniers@google.com>,
+ Catalin Marinas <catalin.marinas@arm.com>
+References: <20190925130926.50674-1-catalin.marinas@arm.com>
+ <CAKwvOdn2Sf7aAt0zqUUqGY6nXg-C3be7An9amy4tfiNr_8ERJw@mail.gmail.com>
+ <20190925170838.GK7042@arrakis.emea.arm.com>
+ <CAKwvOd=GcF0Tv2-h0LNMvCzx+tm5skKW1J7P=NTf8xYbmPiOPw@mail.gmail.com>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <868f7611-4f66-7273-a7fd-65a8a6d9216d@arm.com>
+Date: Thu, 26 Sep 2019 00:35:06 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <CAKwvOd=GcF0Tv2-h0LNMvCzx+tm5skKW1J7P=NTf8xYbmPiOPw@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_155845_895890_B16797F5 
-X-CRM114-Status: GOOD (  11.68  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190925_163330_746676_013ADF00 
+X-CRM114-Status: GOOD (  25.14  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,60 +65,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Derek Basehore <dbasehore@chromium.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Sam Ravnborg <sam@ravnborg.org>,
- intel-gfx@lists.freedesktop.org,
- Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Jani Nikula <jani.nikula@linux.intel.com>, David Airlie <airlied@linux.ie>,
- Thierry Reding <thierry.reding@gmail.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, dri-devel@lists.freedesktop.org,
- Daniel Vetter <daniel@ffwll.ch>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
- CK Hu <ck.hu@mediatek.com>, linux-mediatek@lists.infradead.org,
- Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org
+Cc: Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This inits the panel orientation property for the mediatek dsi driver
-if the panel orientation (connector.display_info.panel_orientation) is
-not DRM_MODE_PANEL_ORIENTATION_UNKNOWN.
+On 9/25/19 6:31 PM, Nick Desaulniers wrote:
+> On Wed, Sep 25, 2019 at 10:08 AM Catalin Marinas
+> <catalin.marinas@arm.com> wrote:
+>>
+>> This is just a temporary hiding of the issue, not a complete fix.
+> 
+> Yep.
+> 
+>> Vincenzo will do the fix later on.
+> 
+> Appreciated, I'm happy to help discuss, review, and test.
+> 
+>>>> - check whether COMPATCC is clang or not rather than CC_IS_CLANG, which
+>>>>   only checks the native compiler
+>>>
+>>> When cross compiling, IIUC CC_IS_CLANG is referring to CC which is the
+>>> cross compiler, which is different than HOSTCC which is the host
+>>> compiler.  HOSTCC is used mostly for things in scripts/ while CC is
+>>> used to compile a majority of the kernel in a cross compile.
+>>
+>> We need the third compiler here for the compat vDSO (at least with gcc),
+>> COMPATCC. I'm tempted to just drop the CONFIG_CROSS_COMPILE_COMPAT_VDSO
+>> altogether and only rely on a COMPATCC. This way we can add
+>> COMPATCC_IS_CLANG etc. in the Kconfig checks directly.
+> 
+> Oh, man, yeah 3 compilers in that case:
+> 1. HOSTCC
+> 2. CC
+> 3. COMPATCC
+>
 
-Signed-off-by: Derek Basehore <dbasehore@chromium.org>
-Acked-by: Sam Ravnborg <sam@ravnborg.org>
-Reviewed-by: CK Hu <ck.hu@mediatek.com>
----
- drivers/gpu/drm/mediatek/mtk_dsi.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
+The easier way I found to encapsulate the three compilers is using
+CONFIG_CROSS_COMPILE_COMPAT_VDSO, hence I would prefer to not drop it.
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
-index 224afb666881..2936932344eb 100644
---- a/drivers/gpu/drm/mediatek/mtk_dsi.c
-+++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
-@@ -792,10 +792,18 @@ static int mtk_dsi_create_connector(struct drm_device *drm, struct mtk_dsi *dsi)
- 			DRM_ERROR("Failed to attach panel to drm\n");
- 			goto err_connector_cleanup;
- 		}
-+
-+		ret = drm_connector_init_panel_orientation_property(&dsi->conn);
-+		if (ret) {
-+			DRM_ERROR("Failed to init panel orientation\n");
-+			goto err_panel_detach;
-+		}
- 	}
- 
- 	return 0;
- 
-+err_panel_detach:
-+	drm_panel_detach(dsi->panel);
- err_connector_cleanup:
- 	drm_connector_cleanup(&dsi->conn);
- 	return ret;
+In the case of gcc:
+-------------------
+
+CROSS_COMPILE_COMPAT ?= $(CONFIG_CROSS_COMPILE_COMPAT_VDSO:"%"=%)
+
+$(CROSS_COMPILE_COMPAT)gcc ...
+
+In the case of clang:
+---------------------
+
+CLANG_TRIPLE ?= $(CONFIG_CROSS_COMPILE_COMPAT_VDSO:"%-"=%)
+
+clang --target=$(notdir $CLANG_TRIPLE)
+
+This will prevent the vdso32 library generation to depend from a fixed
+configuration that might change in future.
+
+Based on this work we will be able to add COMPAT_CC_IS_CLANG, COMPAT_CC_IS_GCC
+and COMPAT_CC_GCC_VERSION, COMPAT_CC_CLANG_VERSION which will help us in a more
+fine grain control of the compiler versions.
+
+The clang support will be added shortly after the header problems have been
+addressed, because without that and the possibility to have 32bit headers in
+arm64 would result in a broken target.
+
+>>
+>> If clang can build both 32 and 64-bit with the same binary (just
+>> different options), we could maybe have COMPATCC default to CC and add a
+>> check on whether COMPATCC generates 32-bit binaries.
+> 
+> Cross compilation work differently between GCC and Clang from a
+> developers perspective. In GCC, at ./configure time you select which
+> architecture you'd like to cross compile for, and you get one binary
+> that targets one architecture.  You get a nice compiler that can do
+> mostly static dispatch at the cost of needing multiple binaries in
+> admittedly rare scenarios like the one we have here.  Clang defaults
+> to all backends enabled when invoking cmake (though there are options
+> to enable certain backends; Sony for instance enables only x86_64 for
+> their PS4 SDK (and thus I break their build frequently with my arm64
+> unit tests)).
+> 
+> Clang can do all of the above with one binary.  The codebase makes
+> heavy use of OOP+virtual dispatch to run ISA specific and general code
+> transformations (virtual dispatch is slower than static dispatch, but
+> relative to what the compiler is actually doing, I suspect the effects
+> are minimal. Folks are also heavily invested in researching
+> "devirtualization").  With one clang binary, I can do:
+> 
+> # implicitly uses the host's ISA, for me that's x86_64-linux-gnu
+> $ clang foo.c
+> $ clang -target aarch64-linux-gnu foo.c
+> $ clang -target arm-linux-gnueabi foo.c
+> 
+> Admittedly, it's not as simple for the kernel's case; the top level
+> Makefile sets some flags to support invoking Clang from a non-standard
+> location, and telling it where to find binutils because we can't
+> assemble the kernel with LLVM's substitute for GAS).
+> 
+
+Thank you for the explanation, if I understand it correctly the strategy
+proposed above should cover all the cased proposed. Please, let me know if i
+need to tweak something.
+
+The plan is to use binutils to build the vdso libraries with both the compilers.
+
 -- 
-2.23.0.351.gc4317032e6-goog
-
+Regards,
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
