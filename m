@@ -2,88 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B44FBE707
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 23:26:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6437ABE753
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 23:33:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1HxE/26VRUfUGxJkqGNsTu0Mxzo7bpsOnLzsZLi/SGI=; b=S+GCBPKBgKA0iE
-	Jq4jXinM9c5CilGcY0/Ao7y2RMU2aJLfOxsbjzkQPrIy443u4kq7sMbbzH2gmlh0QefmhvOtmpCZf
-	Q3U23oXMUn0tJtUzongKxp78Lyr1uHbVFnlyD0Jzpdh/BYNJxDzSL1gNV22PKzswd19tJgZstxsvF
-	v/xVU21BYlEdQeZDR3GjDjCNRdpr3bRL/Ql8DJNJPZR4S0OZuxoG+9oqY+qRUnP0wgCCFr3CQXqgQ
-	MzJTqBy4q7rx7rvPfE2y6ivLKru4+EufrF+kXPJOwtV53NtPtMH/BNPZ68OBWuknxxp/55ESy8Sxl
-	gWk7jee8Jl3Hi5b0BkDg==;
+	List-Owner; bh=Ut/57LJ17sQREZZSN6Fy/b07utHdlNPeGhN0xfiRFjQ=; b=Q/kLJhrYh2JnEw
+	Y4zzw3TIWwOi+eJuvyq6LxTpK6lF9FrYLIs/lnlBKdm/tgDx7qCzzUt0hkkTqmJTcBgBzitjwrTwo
+	zKcCaesJQiKDo5vkUNcd1b2bMsCtez/xkGgEcdM2dt132IeKmjvyhKvVqVP2VMZwEzTtc66ukxN00
+	BI0e/z2oNLnTv8DEygySLC+deWR9IUAoNuiORh9k5NGYuXXt52VTavjXd7DbnaqRQgY4OsWrzWF0i
+	fpV4Rei7zfY5+DJjwEiJa5mqpFqXM1K6+bHaVL/y/qQNlRqbq21/9dwmZq4RVXJacedQ234vb30by
+	piTFfk2ImUfX7pYp13sQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDEnQ-0005V6-Sa; Wed, 25 Sep 2019 21:26:00 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1iDEuy-0007Ms-Tq; Wed, 25 Sep 2019 21:33:49 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDEnC-0005Tm-0J
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 21:25:47 +0000
-Received: by mail-pf1-x443.google.com with SMTP id q21so220660pfn.11
+ id 1iDEum-0007MD-Gz
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 21:33:38 +0000
+Received: from mail-qt1-f181.google.com (mail-qt1-f181.google.com
+ [209.85.160.181])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9EB8E222C1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 25 Sep 2019 14:25:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=1Y1J1Kw/LXYSdUV06b1dy3Hdb52qSoFy0DppBDWha44=;
- b=fDG7GLpWOijl3/znkPByFyhC2Hzp+IvPmDBuEn9x9EfiC8H7q1Mt/fO3YAofHgjPni
- io2vWxqDMyaMj0cJs2bjquKDfDbWJfym4YrTr7UUokWpPqe01xFaXadxSTIRfp9LHBjA
- 68atluJ2Q1iKYX3MuXlDh79prBM9tS4F2dHDnm5M7ff+Q6mV+uawWu5WRb85e/yJwerU
- FN+X/Acm1R02RsIVxHPG/5UOnQ3coOZyhOl2cJYKPqUqe2/nlRQ1ffvjKfv6LPUsgE1q
- fEyS1vl+EAQT3pjO4wZBxIEgqOXH4bvMqaM8hvpC3iMSSUQLMek7TioHNItI24HpGDw7
- p1Og==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=1Y1J1Kw/LXYSdUV06b1dy3Hdb52qSoFy0DppBDWha44=;
- b=Yf0aP7ydrrfqRrWsm1rdLH5TlHZmGsfvgdBWp6OFvYXUK/XUl+5Mmi4r6Szr7+AhO5
- aGNBQ14Pw7zlxsR+gPdUod8rsJawNyDbakxZGY4HuhAU0kUXi/ei3NK1fUz4c6wThP2o
- F09Sr5oi1XmTCoGaPWqfEvNxiiCS3OPP5OFuH8m8D09VOHoV4T8VYLJJ1qmma1imQs22
- sWxz0I1IfD6172F4DbaFg3QSdPj4YKpK/c+WsvGcw3VmnhpPfD9dranynKiv9Dp4vJeA
- n+UzsSmE8OdEpP2IDMDm6qt4ElKql+ypeF8paVZMBqPWZwh27vZ9XzTF6XbfzVWxW6BT
- 0pPw==
-X-Gm-Message-State: APjAAAXYqRNAoA4eq/kVXOOvXKHX0nNogOZeoFFJudYrjSgDTgpKTU+k
- lj2wYRc3T00zYlAU33Q7DyucIw==
-X-Google-Smtp-Source: APXvYqwgUR4Z8HtrG9mlqqRXWQIUNeORyF7p+25oUPoAEWkRMulS2hiRlTY2wV+lUnYfhKuGjxHm6Q==
-X-Received: by 2002:a17:90b:d91:: with SMTP id
- bg17mr8643532pjb.79.1569446744835; 
- Wed, 25 Sep 2019 14:25:44 -0700 (PDT)
-Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
- [71.197.186.152])
- by smtp.gmail.com with ESMTPSA id 5sm488979pgk.75.2019.09.25.14.25.44
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 25 Sep 2019 14:25:44 -0700 (PDT)
-From: Kevin Hilman <khilman@baylibre.com>
-To: linux-amlogic@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH 2/2] soc: amlogic: ee-pwrc: ensure driver state maches HW
- state
-In-Reply-To: <20190925191233.22253-3-khilman@baylibre.com>
-References: <20190925191233.22253-1-khilman@baylibre.com>
- <20190925191233.22253-3-khilman@baylibre.com>
-Date: Wed, 25 Sep 2019 14:25:43 -0700
-Message-ID: <7hftkkukyw.fsf@baylibre.com>
+ Wed, 25 Sep 2019 21:33:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1569447215;
+ bh=TszXw7S5GIEzEo992EEMfz4W0WtzSxu1MBpaBhf4tmw=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=QlI2Sj1D5LJahPlbpQRPzC/Kfp42A3NwekR29GtyvfIPAZlvPN1zAfycydpBTfcd8
+ IvT8WVCyptqcO23hrQq7/1AbSsfzPRa68TLRQRP+hrXx+5Qsz/4M4CfEt25gMVn9on
+ EMq0EmayAeKNvnaIFqzE8CzGz5kGoSiMNjw4W64I=
+Received: by mail-qt1-f181.google.com with SMTP id w14so240145qto.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 25 Sep 2019 14:33:35 -0700 (PDT)
+X-Gm-Message-State: APjAAAW4K6FFJxtU/Yhlo4HTr4csSowFMmKr25bLdMA+b3/YzNUxpQ5u
+ awkDftrAtWK7Ma44gzDFLWx1BZPKeRfsT74YFg==
+X-Google-Smtp-Source: APXvYqy9YJ9VRUtFzrkZ+iKb5Tx5rlamJJuwaAKBRmCflwCEbYKpuVBbZPPVrEImTOCJgn8Jl5TlEwRQfbhe0HNZXOU=
+X-Received: by 2002:a0c:8a6d:: with SMTP id 42mr1647258qvu.138.1569447214653; 
+ Wed, 25 Sep 2019 14:33:34 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190924181244.7159-1-nsaenzjulienne@suse.de>
+ <CAL_Jsq+v+svTyna7UzQdRVqfNc5Z_bgWzxNRXv7-Wqv3NwDu2g@mail.gmail.com>
+ <d1a31a2ec8eb2f226b1fb41f6c24ffb47c3bf7c7.camel@suse.de>
+ <e404c65b-5a66-6f91-5b38-8bf89a7697b2@arm.com>
+ <43fb5fe1de317d65a4edf592f88ea150c6e3b8cc.camel@suse.de>
+ <CAL_JsqLhx500cx3YLoC7HL1ux3bBpV+fEA2Qnk7D5RFGgiGzSw@mail.gmail.com>
+ <aa4c8d62-7990-e385-2bb1-cec55148f0a8@arm.com>
+In-Reply-To: <aa4c8d62-7990-e385-2bb1-cec55148f0a8@arm.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Wed, 25 Sep 2019 16:33:23 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqKKYcHPnA80ZwLY=Sk3e5MqrimedUhWQ5+iuPZXQxYHdA@mail.gmail.com>
+Message-ID: <CAL_JsqKKYcHPnA80ZwLY=Sk3e5MqrimedUhWQ5+iuPZXQxYHdA@mail.gmail.com>
+Subject: Re: [PATCH 00/11] of: Fix DMA configuration for non-DT masters
+To: Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_142546_052311_F61065F6 
-X-CRM114-Status: GOOD (  18.38  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190925_143336_612123_9800F83C 
+X-CRM114-Status: GOOD (  30.93  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,76 +91,134 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
+Cc: "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, devicetree@vger.kernel.org,
+ Matthias Brugger <mbrugger@suse.com>, Frank Rowand <frowand.list@gmail.com>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ linux-wireless <linux-wireless@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, etnaviv@lists.freedesktop.org,
+ "open list:DMA GENERIC OFFLOAD ENGINE SUBSYSTEM" <dmaengine@vger.kernel.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, Stefan Wahren <wahrenst@gmx.net>,
+ james.quinlan@broadcom.com, linux-pci@vger.kernel.org,
+ linux-tegra@vger.kernel.org, xen-devel@lists.xenproject.org,
+ Dan Williams <dan.j.williams@intel.com>,
+ freedreno <freedreno@lists.freedesktop.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Kevin Hilman <khilman@baylibre.com> writes:
-
-> During init, ensure that the driver on/off state as well as clock
-> state matches the hardware state by calling drivers on/off functions
-> based on whether the HW state is on/off.
+On Wed, Sep 25, 2019 at 11:52 AM Robin Murphy <robin.murphy@arm.com> wrote:
 >
-> Signed-off-by: Kevin Hilman <khilman@baylibre.com>
-> ---
->  drivers/soc/amlogic/meson-ee-pwrc.c | 30 +++++++++--------------------
->  1 file changed, 9 insertions(+), 21 deletions(-)
+> On 25/09/2019 17:16, Rob Herring wrote:
+> > On Wed, Sep 25, 2019 at 10:30 AM Nicolas Saenz Julienne
+> > <nsaenzjulienne@suse.de> wrote:
+> >>
+> >> On Wed, 2019-09-25 at 16:09 +0100, Robin Murphy wrote:
+> >>> On 25/09/2019 15:52, Nicolas Saenz Julienne wrote:
+> >>>> On Tue, 2019-09-24 at 16:59 -0500, Rob Herring wrote:
+> >>>>> On Tue, Sep 24, 2019 at 1:12 PM Nicolas Saenz Julienne
+> >>>>> <nsaenzjulienne@suse.de> wrote:
+> >>>>>> Hi All,
+> >>>>>> this series tries to address one of the issues blocking us from
+> >>>>>> upstreaming Broadcom's STB PCIe controller[1]. Namely, the fact that
+> >>>>>> devices not represented in DT which sit behind a PCI bus fail to get the
+> >>>>>> bus' DMA addressing constraints.
+> >>>>>>
+> >>>>>> This is due to the fact that of_dma_configure() assumes it's receiving a
+> >>>>>> DT node representing the device being configured, as opposed to the PCIe
+> >>>>>> bridge node we currently pass. This causes the code to directly jump
+> >>>>>> into PCI's parent node when checking for 'dma-ranges' and misses
+> >>>>>> whatever was set there.
+> >>>>>>
+> >>>>>> To address this I create a new API in OF - inspired from Robin Murphys
+> >>>>>> original proposal[2] - which accepts a bus DT node as it's input in
+> >>>>>> order to configure a device's DMA constraints. The changes go deep into
+> >>>>>> of/address.c's implementation, as a device being having a DT node
+> >>>>>> assumption was pretty strong.
+> >>>>>>
+> >>>>>> On top of this work, I also cleaned up of_dma_configure() removing its
+> >>>>>> redundant arguments and creating an alternative function for the special
+> >>>>>> cases
+> >>>>>> not applicable to either the above case or the default usage.
+> >>>>>>
+> >>>>>> IMO the resulting functions are more explicit. They will probably
+> >>>>>> surface some hacky usages that can be properly fixed as I show with the
+> >>>>>> DT fixes on the Layerscape platform.
+> >>>>>>
+> >>>>>> This was also tested on a Raspberry Pi 4 with a custom PCIe driver and
+> >>>>>> on a Seattle AMD board.
+> >>>>>
+> >>>>> Humm, I've been working on this issue too. Looks similar though yours
+> >>>>> has a lot more churn and there's some other bugs I've found.
+> >>>>
+> >>>> That's good news, and yes now that I see it, some stuff on my series is
+> >>>> overly
+> >>>> complicated. Specially around of_translate_*().
+> >>>>
+> >>>> On top of that, you removed in of_dma_get_range():
+> >>>>
+> >>>> -   /*
+> >>>> -    * At least empty ranges has to be defined for parent node if
+> >>>> -    * DMA is supported
+> >>>> -    */
+> >>>> -   if (!ranges)
+> >>>> -           break;
+> >>>>
+> >>>> Which I assumed was bound to the standard and makes things easier.
+> >>>>
+> >>>>> Can you test out this branch[1]. I don't have any h/w needing this,
+> >>>>> but wrote a unittest and tested with modified QEMU.
+> >>>>
+> >>>> I reviewed everything, I did find a minor issue, see the patch attached.
+> >>>
+> >>> WRT that patch, the original intent of "force_dma" was purely to
+> >>> consider a device DMA-capable regardless of the presence of
+> >>> "dma-ranges". Expecting of_dma_configure() to do anything for a non-OF
+> >>> device has always been bogus - magic paravirt devices which appear out
+> >>> of nowhere and expect to be treated as genuine DMA masters are a
+> >>> separate problem that we haven't really approached yet.
+> >>
+> >> I agree it's clearly abusing the function. I have no problem with the behaviour
+> >> change if it's OK with you.
 >
-> diff --git a/drivers/soc/amlogic/meson-ee-pwrc.c b/drivers/soc/amlogic/meson-ee-pwrc.c
-> index dcce8e694a07..2cb5341aedfa 100644
-> --- a/drivers/soc/amlogic/meson-ee-pwrc.c
-> +++ b/drivers/soc/amlogic/meson-ee-pwrc.c
-> @@ -323,6 +323,8 @@ static int meson_ee_pwrc_init_domain(struct platform_device *pdev,
->  				     struct meson_ee_pwrc *pwrc,
->  				     struct meson_ee_pwrc_domain *dom)
->  {
-> +	bool is_off;
-> +
->  	dom->pwrc = pwrc;
->  	dom->num_rstc = dom->desc.reset_names_count;
->  	dom->num_clks = dom->desc.clk_names_count;
-> @@ -356,27 +358,13 @@ static int meson_ee_pwrc_init_domain(struct platform_device *pdev,
->  	dom->base.power_on = meson_ee_pwrc_on;
->  	dom->base.power_off = meson_ee_pwrc_off;
->  
-> -	/*
-> -         * TOFIX: This is a special case for the VPU power domain, which can
-> -	 * be enabled previously by the bootloader. In this case the VPU
-> -         * pipeline may be functional but no driver maybe never attach
-> -         * to this power domain, and if the domain is disabled it could
-> -         * cause system errors. This is why the pm_domain_always_on_gov
-> -         * is used here.
-> -         * For the same reason, the clocks should be enabled in case
-> -         * we need to power the domain off, otherwise the internal clocks
-> -         * prepare/enable counters won't be in sync.
-> -         */
-> -	if (dom->num_clks && dom->desc.is_off && !dom->desc.is_off(dom)) {
-> -		int ret = clk_bulk_prepare_enable(dom->num_clks, dom->clks);
-> -		if (ret)
-> -			return ret;
-> -
-> -		pm_genpd_init(&dom->base, &pm_domain_always_on_gov, false);
-> -	} else
-> -		pm_genpd_init(&dom->base, NULL,
-> -			      (dom->desc.is_off ?
-> -			       dom->desc.is_off(dom) : true));
-> +	/* Ensure that driver state matches HW state */
-> +	is_off = dom->desc.is_off ? dom->desc.is_off(dom) : true;
-> +	if (is_off)
-> +		meson_ee_pwrc_off(&dom->base);
+> Thinking about it, you could probably just remove that call from the Xen
+> DRM driver now anyway - since the dma-direct rework, we lost the ability
+> to set dma_dummy_ops by default, and NULL ops now represent what it
+> (presumably) wants.
 
-Neil pointed out off-list that this isn't quite right.
+Not xen_dma_ops? In any case, I'll send out a patch for the the Xen
+folks to comment on.
 
-This _off() call can potentially try to disable clocks that have never
-been enabled (by the clock fwk) resulting in noisy warnings.
+> >> Robin, have you looked into supporting multiple dma-ranges? It's the next thing
+> >> we need for BCM STB's PCIe. I'll have a go at it myself if nothing is in the
+> >> works already.
+> >
+> > Multiple dma-ranges as far as configuring inbound windows should work
+> > already other than the bug when there's any parent translation. But if
+> > you mean supporting multiple DMA offsets and masks per device in the
+> > DMA API, there's nothing in the works yet.
+>
+> There's also the in-between step of making of_dma_get_range() return a
+> size based on all the dma-ranges entries rather than only the first one
+> - otherwise, something like [1] can lead to pretty unworkable default
+> masks. We implemented that when doing acpi_dma_get_range(), it's just
+> that the OF counterpart never caught up.
 
-I'll send a v2 which always calls _on() and then optionall calls _off().
-That will ensure that the drivers notion of the clock state also matches
-the HW state.
+Right. I suppose we assume any holes in the ranges are addressable by
+the device but won't get used for other reasons (such as no memory
+there). However, to be correct, the range of the dma offset plus mask
+would need to be within the min start and max end addresses. IOW,
+while we need to round up (0xa_8000_0000 - 0x2c1c_0000) to the next
+power of 2, the 'correct' thing to do is round down.
 
-Kevin
+Rob
+
+> [1]
+> http://linux-arm.org/git?p=linux-rm.git;a=commitdiff;h=a2814af56b3486c2985a95540a88d8f9fa3a699f
 
 _______________________________________________
 linux-arm-kernel mailing list
