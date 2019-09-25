@@ -2,90 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DCF2BDEFE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 15:29:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D76ABDF08
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 15:32:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Subject:From:To:References:
-	In-Reply-To:MIME-Version:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VIAg8mreS9AC+sDe1M3CEn/2SwDFeIiyPNIBpx1+PFo=; b=euUYljvzsx05TW
-	i6zfqr0696bBpDeS1j/iSfcl9pjn2r6x3up5dzCrQAAY6ceRf76jr9b14dBJS4yirqQ8yA87QduKF
-	95BaDl+wYojhp6DIKRFGo3OpakuyCOdBL3X5AVIgX0dcBXfAD/NY2nN52CJ42xhwerre9vfnOkMNk
-	3hQeuynMbdvxBS1/b2knC3aZYbrJv/lHKNKv4/nBHAu30pCdioq0iy/CLLxKoTM+RBmV+I7iI2ZIp
-	BYHRl9d+0VWyli320Mlr0acsKIahMlLBrzDJgcxyH9nZAXcx33vRnxb2g9LHEqbR1W/9WXNqCjgZB
-	dWqL8Vlg7IRjoOrMCgtg==;
+	List-Owner; bh=rYwCZTJ1qobmNMBIOGw67b8Teh90+7advh0weHGVzGs=; b=KPpxY+56MHMbrs
+	cwB+FR7HaXlbf52+h2k8dpoQ3w3vbcYKSyDDXtJm2j25ODnzIai4TUjVhk0cPCRcMSZnjkpGnf2Lr
+	a2zJNSwSpZ0bltZ6F3idV0STV39ay88O37uBiHF3k3ooALJ2BlFR9qdG0CvTcfKz9cnezqdk71XFS
+	6Fl0nnhyuSA6MndJ6EXoqyxeIcM96Ukd0nrKdS9yRzkf7kprv6+pwDqMDbvCoe2aDqQ6KxtMWXI8P
+	/eSGIR6RObVo5Ob1ovhngGeHrorP5NHpcsX7z5ZEaWOby4NLqCqIu5nfOzoeue16XsPJFaIu4+OPr
+	5irwRZd5gjXZUk5gbSGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iD7M9-0000rX-K5; Wed, 25 Sep 2019 13:29:21 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iD7P0-0002Z7-KI; Wed, 25 Sep 2019 13:32:18 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iD7Le-0000qB-Sr
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 13:28:53 +0000
-Received: by mail-pg1-x544.google.com with SMTP id o10so128536pgs.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 25 Sep 2019 06:28:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=message-id:mime-version:content-transfer-encoding:in-reply-to
- :references:cc:to:from:subject:user-agent:date;
- bh=7Qtpz8pP6Xtu5hQMQ/OiLIkOhJi8maiQgK4EToDIyWo=;
- b=hVpA5j2jkOlUR1iZj0yYcJSI/3wijEBgu5VEoQl7T6aKe26hhNP35ZCbaju9c2MrkK
- mqw6fvaSnImSH61s1jS6oKzkUazLpBpwO09F+fslKYjNG8rs2hnfdqonQSXsrHoTBhY7
- P6Q5ISOKhcmaxqLIV8gsrLUT2FTrF3icZpIcQ=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:mime-version
- :content-transfer-encoding:in-reply-to:references:cc:to:from:subject
- :user-agent:date;
- bh=7Qtpz8pP6Xtu5hQMQ/OiLIkOhJi8maiQgK4EToDIyWo=;
- b=mKHcUC7ndgCC800R28r9Hpq9wht9szthW+xT0eczjDWTAUwRFE4S/QndTZcRlznIoN
- X58QhdwoNH4tVD6dpn+q19ie2b4aGx0bECrx/C7KSn1GgcU0oFy6NsjHBk71faiCM28p
- E5KVUD7/CI32Wmiop/MbH1jOeVRZn+0WFBkDN+1FTYN4cbqw3ySmZ1+G2rFE+Z2LZ5R6
- CT7M5hhwxeAP+ih2y2aCqEBo9OaBu2qik+AwPB4CXE4UQ2BLDBSUS3L6FGON3pN7zeMe
- 8lJG406ZTHMvsBwNFk6VbVVHbBWkkEAYsEUKAPvlgtrtc5OeyPmwhJFh5hjaP3rcF0ga
- q3GQ==
-X-Gm-Message-State: APjAAAWWoQzdbV4+ZEH1e8j/qWB+9xMJzNr1tDLJnF1X7mPWhGfHdmCv
- eAUAA8crJS/7Z6eG8Mec4Nta5XWunlk=
-X-Google-Smtp-Source: APXvYqwuTDywmZkXR49l0QQyuPDwUOxcYvZ2qEuCze7dUJp0lEXUsMF+xad0MMk/74xUr8QHQOF1Pw==
-X-Received: by 2002:a62:27c3:: with SMTP id n186mr9544535pfn.58.1569418124305; 
- Wed, 25 Sep 2019 06:28:44 -0700 (PDT)
-Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
- by smtp.gmail.com with ESMTPSA id c1sm4606591pfb.135.2019.09.25.06.28.43
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 25 Sep 2019 06:28:43 -0700 (PDT)
-Message-ID: <5d8b6b8b.1c69fb81.14b36.c053@mx.google.com>
+ id 1iD7No-0002Y5-I5; Wed, 25 Sep 2019 13:31:07 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 0E98BAC4D;
+ Wed, 25 Sep 2019 13:31:00 +0000 (UTC)
+Message-ID: <4f5c99ddfbe0abadccf754e9ff282c39d8849b3f.camel@suse.de>
+Subject: Re: [PATCH v1] ARM: Add support for Realtek SOC
+From: Andreas =?ISO-8859-1?Q?F=E4rber?= <afaerber@suse.de>
+To: James Tai <james.tai@realtek.com>, 'Masahiro Yamada'
+ <yamada.masahiro@socionext.com>, 'Arnd Bergmann' <arnd@arndb.de>
+Date: Wed, 25 Sep 2019 15:30:58 +0200
+In-Reply-To: <43B123F21A8CFE44A9641C099E4196FFCF8EA2B1@RTITMBSVM04.realtek.com.tw>
+References: <43B123F21A8CFE44A9641C099E4196FFCF8EA2B1@RTITMBSVM04.realtek.com.tw>
+Organization: SUSE Linux GmbH
+User-Agent: Evolution 3.32.4 
 MIME-Version: 1.0
-In-Reply-To: <20190925055933.GA2810@tuxbook-pro>
-References: <20190925054133.206992-1-swboyd@chromium.org>
- <20190925055933.GA2810@tuxbook-pro>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-From: Stephen Boyd <swboyd@chromium.org>
-Subject: Re: [RFC PATCH] interconnect: Replace of_icc_get() with icc_get() and
- reduce DT binding
-User-Agent: alot/0.8.1
-Date: Wed, 25 Sep 2019 06:28:42 -0700
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_062850_939074_054DFE07 
-X-CRM114-Status: GOOD (  36.31  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190925_063104_935359_FF291EBA 
+X-CRM114-Status: GOOD (  22.30  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,134 +60,188 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, David Dai <daidavid1@codeaurora.org>,
- linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Evan Green <evgreen@chromium.org>,
- Georgi Djakov <georgi.djakov@linaro.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "'Jason A
+ . Donenfeld'" <Jason@zx2c4.com>, linux-realtek-soc@lists.infradead.org,
+ =?UTF-8?Q?CY=5FHuang=5B=E9=BB=83=E9=89=A6=E6=99=8F=5D?= <cy.huang@realtek.com>,
+ 'Linus Walleij' <linus.walleij@linaro.org>, 'Stefan Agner' <stefan@agner.ch>,
+ 'Benjamin Gaignard' <benjamin.gaignard@linaro.org>,
+ Simon =?UTF-8?Q?Hsu=5B=E5=BE=90=E6=96=87=E7=BF=B0=5D?= <simon_hsu@realtek.com>,
+ 'Mauro Carvalho Chehab' <mchehab+samsung@kernel.org>,
+ Tom =?UTF-8?Q?Ting=5B=E4=B8=81=E9=83=81=E5=BA=AD=5D?= <tom_ting@realtek.com>,
+ Jim Tsai =?UTF-8?Q?=5B=E8=94=A1=E7=B6=AD=E6=99=89=5D?= <tsaijim10@realtek.com>,
+ Phinex Hung <phinex@realtek.com>,
+ Edward =?UTF-8?Q?Wu=5B=E5=90=B3=E5=A5=95=E5=AF=AC=5D?= <edwardwu@realtek.com>,
+ 'Rob Herring' <robh@kernel.org>,
+ 'Lorenzo Pieralisi' <Lorenzo.Pieralisi@arm.com>,
+ 'Russell King' <linux@armlinux.org.uk>, 'Mike Rapoport' <rppt@linux.ibm.com>,
+ =?UTF-8?Q?YH=5FHsieh=5B=E8=AC=9D=E5=AE=87=E5=8B=B3=5D?= <yh_hsieh@realtek.com>,
+ =?UTF-8?Q?TY=5FChang=5B=E5=BC=B5=E5=AD=90=E9=80=B8=5D?= <tychang@realtek.com>,
+ 'Thierry Reding' <treding@nvidia.com>,
+ "'jamestai.sky@gmail.com'" <jamestai.sky@gmail.com>,
+ =?UTF-8?Q?ZR=5FChen=5B=E9=99=B3=E6=8C=AF=E6=A6=AE=5D?=
+ <zhenrcaaron@realtek.com>, Hau <hau@realtek.com>, Yukuen <yukuen@realtek.com>,
+ =?UTF-8?Q?Jinn=2ECheng=5B=E9=84=AD=E6=89=8D=E9=80=B2=5D?=
+ <jinn.cheng@realtek.com>,
+ Chase Yen =?UTF-8?Q?=5B=E9=A1=8F=E5=91=88=E8=82=B2=5D?=
+ <chase.yen@realtek.com>,
+ Stanley =?UTF-8?Q?Chang=5B=E6=98=8C=E8=82=B2=E5=BE=B7=5D?=
+ <stanley_chang@realtek.com>, 'Doug Anderson' <armlinux@m.disordat.com>,
+ 'Linux ARM' <linux-arm-kernel@lists.infradead.org>,
+ Eric =?UTF-8?Q?Wang=5B=E7=8E=8B=E5=81=89=E5=85=A8=5D?= <ericwang@realtek.com>,
+ Adklei <adklei@realtek.com>,
+ Edgar Lee =?UTF-8?Q?=5B=E6=9D=8E=E6=89=BF=E8=AB=AD=5D?= <cylee12@realtek.com>,
+ 'Ard Biesheuvel' <ard.biesheuvel@linaro.org>,
+ "PK.Chuang =?UTF-8?Q?=5B=E8=8E=8A=E5=8D=9A=E5=87=B1=5D?="
+ <pk.chuang@realtek.com>, 'Nicolas Pitre' <nico@fluxnic.net>,
+ 'Nick Desaulniers' <ndesaulniers@google.com>,
+ "'linux-kernel@vger.kernel.org'" <linux-kernel@vger.kernel.org>,
+ 'Paul Burton' <paul.burton@mips.com>, phelic <phelic@realtek.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Bjorn Andersson (2019-09-24 22:59:33)
-> On Tue 24 Sep 22:41 PDT 2019, Stephen Boyd wrote:
-> 
-> > The DT binding could also be simplified somewhat. Currently a path needs
-> > to be specified in DT for each and every use case that is possible for a
-> > device to want. Typically the path is to memory, which looks to be
-> > reserved for in the binding with the "dma-mem" named path, but sometimes
-> > the path is from a device to the CPU or more generically from a device
-> > to another device which could be a CPU, cache, DMA master, or another
-> > device if some sort of DMA to DMA scenario is happening. Let's remove
-> > the pair part of the binding so that we just list out a device's
-> > possible endpoints on the bus or busses that it's connected to.
-> > 
-> > If the kernel wants to figure out what the path is to memory or the CPU
-> > or a cache or something else it should be able to do that by finding the
-> > node for the "destination" endpoint, extracting that node's
-> > "interconnects" property, and deriving the path in software. For
-> > example, we shouldn't need to write out each use case path by path in DT
-> > for each endpoint node that wants to set a bandwidth to memory. We
-> > should just be able to indicate what endpoint(s) a device sits on based
-> > on the interconnect provider in the system and then walk the various
-> > interconnects to find the path from that source endpoint to the
-> > destination endpoint.
-> > 
-> 
-> But doesn't this implies that the other end of the path is always some
-> specific node, e.g. DDR? With a single node how would you describe
-> CPU->LLCC or GPU->OCIMEM?
-
-By only specifying the endpoint the device uses it describes what the
-hardware block interfaces with. It doesn't imply that there's only one
-other end of the path. It implies that the paths should be discoverable
-by walking the interconnect graph given some source device node and
-target device node. In most cases the target device node will be a DDR
-controller node, but sometimes it could be LLCC or OCIMEM. We may need
-to add some sort of "get the DDR controller device" API or work it into
-the interconnect API somehow to indicate what target endpoint is
-desired. By not listing all those paths in DT we gain flexibility to add
-more paths later on without having to update or tweak DT to describe
-more paths/routes through the interconnect.
-
-> 
-> > Obviously this patch doesn't compile but I'm sending it out to start
-> > this discussion so we don't get stuck on the binding or the kernel APIs
-> > for a long time. It looks like we should be OK in terms of backwards
-> > compatibility because we can just ignore the second element in an old
-> > binding, but maybe we'll want to describe paths in different directions
-> > (e.g. the path from the CPU to the SD controller may be different than
-> > the path the SD controller takes to the CPU) and that may require
-> > extending interconnect-names to indicate what direction/sort of path it
-> > is. I'm basically thinking about master vs. slave ports in AXI land.
-> > 
-> > Cc: Maxime Ripard <mripard@kernel.org>
-> > Cc: <linux-pm@vger.kernel.org>
-> > Cc: Rob Herring <robh+dt@kernel.org>
-> > Cc: <devicetree@vger.kernel.org>
-> > Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
-> > Cc: Evan Green <evgreen@chromium.org>
-> > Cc: David Dai <daidavid1@codeaurora.org>
-> > Signed-off-by: Stephen Boyd <swboyd@chromium.org>
-> > ---
-> >  .../bindings/interconnect/interconnect.txt    | 19 ++++---------------
-> >  include/linux/interconnect.h                  | 13 ++-----------
-> >  2 files changed, 6 insertions(+), 26 deletions(-)
-> > 
-> > diff --git a/Documentation/devicetree/bindings/interconnect/interconnect.txt b/Documentation/devicetree/bindings/interconnect/interconnect.txt
-> > index 6f5d23a605b7..f8979186b8a7 100644
-> > --- a/Documentation/devicetree/bindings/interconnect/interconnect.txt
-> > +++ b/Documentation/devicetree/bindings/interconnect/interconnect.txt
-> > @@ -11,7 +11,7 @@ The interconnect provider binding is intended to represent the interconnect
-> >  controllers in the system. Each provider registers a set of interconnect
-> >  nodes, which expose the interconnect related capabilities of the interconnect
-> >  to consumer drivers. These capabilities can be throughput, latency, priority
-> > -etc. The consumer drivers set constraints on interconnect path (or endpoints)
-> > +etc. The consumer drivers set constraints on interconnect paths (or endpoints)
-> >  depending on the use case. Interconnect providers can also be interconnect
-> >  consumers, such as in the case where two network-on-chip fabrics interface
-> >  directly.
-> > @@ -42,23 +42,12 @@ multiple paths from different providers depending on use case and the
-> >  components it has to interact with.
-> >  
-> >  Required properties:
-> > -interconnects : Pairs of phandles and interconnect provider specifier to denote
-> > -             the edge source and destination ports of the interconnect path.
-> > -
-> > -Optional properties:
-> > -interconnect-names : List of interconnect path name strings sorted in the same
-> > -                  order as the interconnects property. Consumers drivers will use
-> > -                  interconnect-names to match interconnect paths with interconnect
-> > -                  specifier pairs.
-> > -
-> > -                     Reserved interconnect names:
-> > -                      * dma-mem: Path from the device to the main memory of
-> > -                                 the system
-> > +interconnects : phandle and interconnect provider specifier to denote
-> > +             the edge source for this node.
-> >  
-> >  Example:
-> >  
-> >       sdhci@7864000 {
-> >               ...
-> > -             interconnects = <&pnoc MASTER_SDCC_1 &bimc SLAVE_EBI_CH0>;
-> > -             interconnect-names = "sdhc-mem";
-> > +             interconnects = <&pnoc MASTER_SDCC_1>;
-> 
-> This example seems incomplete, as it doesn't describe the path between
-> CPU and the config space, with this in place I think you need the
-> interconnect-names.
-> 
-> 
-> But with a single interconnect, the interconnect-names should be
-> omitted, as done in other frameworks.
-> 
-
-Sure, no names makes sense when it's just one path.
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgSmFtZXMsCgpBbSBNaXR0d29jaCwgZGVuIDI1LjA5LjIwMTksIDA2OjQzICswMDAwIHNjaHJp
+ZWIgSmFtZXMgVGFpOgo+IEZyb206ICJqYW1lcy50YWkiIDxqYW1lcy50YWlAcmVhbHRlay5jb20+
+Cj4gCj4gVGhpcyBwYXRjaCBhZGRzIHRoZSBiYXNpYyBtYWNoaW5lIGZpbGUgZm9yCj4gdGhlIFJl
+YWx0ZWsgUlREMTZYWCBhbmQgUlREMTNYWCBwbGF0Zm9ybS4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBq
+YW1lcy50YWkgPGphbWVzLnRhaUByZWFsdGVrLmNvbT4KPiAtLS0KPiBDaGFuZ2VzIHNpbmNlIGxh
+c3QgdmVyc2lvbjoKPiAJLSBBZGQgUlREMTNYWCBwbGF0Zm9ybS4KPiAJLSBBZGQgUFNDSSBzdXBw
+b3J0Lgo+IAktIEFkZCBBUkNIX01VTFRJX1Y3IGNvbmZpZy4KPiAJLSByZW1vdmUgJ3RleHRvZnMt
+JChDT05GSUdfQVJDSF9SRUFMVEVLKSA6PSAweDAwMjA4MDAwJyBmcm9tIAo+IAkgICdhcmNoL2Fy
+bS9NYWtlZmlsZScuCj4gCS0gcmVtb3ZlIG1hcF9pbyxpbml0X3RpbWUsaW5pdF9tYWNoaW5lIGFu
+ZCBzbXBfaW5pdCBmcm9tCj4gbWFjaGluZQo+IAkgIGRlc2NyaXB0b3IuCgpUaGFua3MgZm9yIHlv
+dXIgcGF0Y2guIFBsZWFzZSBzdWJzY3JpYmUgeW91cnNlbGYgYW5kIGNvbGxlYWd1ZXMgdG8gdGhl
+CmV4aXN0aW5nIGxpbnV4LXJlYWx0ZWstc29jQGxpc3RzLmluZnJhZGVhZC5vcmcgbWFpbGluZyBs
+aXN0IGFuZCBtYWtlCnN1cmUgaXQgaXMgaW4gQ0MgZm9yIHlvdXIgcGF0Y2hlczoKCmh0dHA6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcmVhbHRlay1zb2MKCkZ1
+cnRoZXIgY29tbWVudHMgaW5saW5lOgoKPiAtLS0KPiAgYXJjaC9hcm0vS2NvbmZpZyAgICAgICAg
+ICAgICAgICB8ICAyICsrCj4gIGFyY2gvYXJtL01ha2VmaWxlICAgICAgICAgICAgICAgfCAgMSAr
+Cj4gIGFyY2gvYXJtL21hY2gtcmVhbHRlay9LY29uZmlnICAgfCAyMCArKysrKysrKysrKysrCj4g
+IGFyY2gvYXJtL21hY2gtcmVhbHRlay9NYWtlZmlsZSAgfCAgMyArKwo+ICBhcmNoL2FybS9tYWNo
+LXJlYWx0ZWsvcGxhdHNtcC5jIHwgNTEKPiArKysrKysrKysrKysrKysrKysrKysrKysrKysrKysr
+KysKPiAgYXJjaC9hcm0vbWFjaC1yZWFsdGVrL3BsYXRzbXAuaCB8ICA2ICsrKysKPiAgYXJjaC9h
+cm0vbWFjaC1yZWFsdGVrL3JlYWx0ZWsuYyB8IDQzICsrKysrKysrKysrKysrKysrKysrKysrKysr
+Kwo+ICA3IGZpbGVzIGNoYW5nZWQsIDEyNiBpbnNlcnRpb25zKCspCj4gIGNyZWF0ZSBtb2RlIDEw
+MDY0NCBhcmNoL2FybS9tYWNoLXJlYWx0ZWsvS2NvbmZpZwo+ICBjcmVhdGUgbW9kZSAxMDA2NDQg
+YXJjaC9hcm0vbWFjaC1yZWFsdGVrL01ha2VmaWxlCj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBhcmNo
+L2FybS9tYWNoLXJlYWx0ZWsvcGxhdHNtcC5jCj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBhcmNoL2Fy
+bS9tYWNoLXJlYWx0ZWsvcGxhdHNtcC5oCj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBhcmNoL2FybS9t
+YWNoLXJlYWx0ZWsvcmVhbHRlay5jCgpBcyBBcm5kIGhhcyBhbHJlYWR5IGV4cHJlc3NlZCwgYXQg
+bGVhc3QgUlREMTN4eCAoaWYgbm90IGFsc28gUlREMTZ4eD8pCmlzIGEgNjQtYml0IFNvQywgYW5k
+IHdlIGFscmVhZHkgaGF2ZSBjb2RlIC0gY29udHJpYnV0ZWQgYW5kIG1haW50YWluZWQKYnkgbWUg
+LSBmb3IgYXJjaC9hcm02NC8uIFBsZWFzZSBjb250cmlidXRlIHRvIHRob3NlIGVmZm9ydHMgaW5z
+dGVhZCBvZgpidWlsZGluZyB5b3VyIG93biBzYW5kY2FzdGxlIGluIGFyY2gvYXJtLy4gSW4gZmFj
+dCwgeW91ciB3b3JrIGNvbGxpZGVzCndpdGggcGF0Y2hlcyBxdWV1ZWQgaW4gbXkgcnRkMTI5eC1u
+ZXh0IGJyYW5jaCBmb3IgUlREMTE5NSwgYW4gYWN0dWFsCjMyLWJpdCBwbGF0Zm9ybS4gQW1vbmcg
+b3RoZXIgY29tbWl0czoKCmh0dHBzOi8vZ2l0aHViLmNvbS9hZmFlcmJlci9saW51eC9jb21taXQv
+YjQzZmE0Zjc5MDE4M2Q0NmUyYjJjN2Y1YWYzNGYzMDEwZDMxNTA3MwoKVGhvc2UgcHJldmlvdXMg
+YXJtNjQgUlREMTI5eCBhbmQgYXJtIFJURDExOTUgZWZmb3J0cyB3ZXJlIGFuZCBhcmUKYmxvY2tl
+ZCBieSBpcnFjaGlwLCB3aGljaCBJIGRvbid0IHNlZSBhZGRyZXNzZWQgaW4gdGhpcyBzaW5nbGUg
+cGF0Y2guCgpodHRwczovL2dpdGh1Yi5jb20vYWZhZXJiZXIvbGludXgvY29tbWl0cy9ydGQxMjk1
+LW5leHQKCj4gCj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtL0tjb25maWcgYi9hcmNoL2FybS9LY29u
+ZmlnCj4gaW5kZXggMzNiMDA1NzliZWZmLi4xZjc5NjdjOTcyNjcgMTAwNjQ0Cj4gLS0tIGEvYXJj
+aC9hcm0vS2NvbmZpZwo+ICsrKyBiL2FyY2gvYXJtL0tjb25maWcKPiBAQCAtNzkzLDYgKzc5Myw4
+IEBAIHNvdXJjZSAiYXJjaC9hcm0vbWFjaC1yZWFsdmlldy9LY29uZmlnIgo+ICAKPiAgc291cmNl
+ICJhcmNoL2FybS9tYWNoLXJvY2tjaGlwL0tjb25maWciCj4gIAo+ICtzb3VyY2UgImFyY2gvYXJt
+L21hY2gtcmVhbHRlay9LY29uZmlnIgoKT3JkZXJpbmcgd3JvbmcuCgo+ICsKPiAgc291cmNlICJh
+cmNoL2FybS9tYWNoLXMzYzI0eHgvS2NvbmZpZyIKPiAgCj4gIHNvdXJjZSAiYXJjaC9hcm0vbWFj
+aC1zM2M2NHh4L0tjb25maWciCj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtL01ha2VmaWxlIGIvYXJj
+aC9hcm0vTWFrZWZpbGUKPiBpbmRleCBjMzYyNGNhNmMwYmMuLjU2MGFlN2Q3MmFhYiAxMDA2NDQK
+PiAtLS0gYS9hcmNoL2FybS9NYWtlZmlsZQo+ICsrKyBiL2FyY2gvYXJtL01ha2VmaWxlCj4gQEAg
+LTIwNSw2ICsyMDUsNyBAQCBtYWNoaW5lLSQoQ09ORklHX0FSQ0hfUkRBKQkJKz0gcmRhCj4gIG1h
+Y2hpbmUtJChDT05GSUdfQVJDSF9SRUFMVklFVykJCSs9IHJlYWx2aWV3Cj4gIG1hY2hpbmUtJChD
+T05GSUdfQVJDSF9ST0NLQ0hJUCkJCSs9IHJvY2tjaGlwCj4gIG1hY2hpbmUtJChDT05GSUdfQVJD
+SF9SUEMpCQkrPSBycGMKPiArbWFjaGluZS0kKENPTkZJR19BUkNIX1JFQUxURUspCQkrPSByZWFs
+dGVrCgpEaXR0by4KCj4gIG1hY2hpbmUtJChDT05GSUdfQVJDSF9TM0MyNFhYKQkJKz0gczNjMjR4
+eAo+ICBtYWNoaW5lLSQoQ09ORklHX0FSQ0hfUzNDNjRYWCkJCSs9IHMzYzY0eHgKPiAgbWFjaGlu
+ZS0kKENPTkZJR19BUkNIX1M1UFYyMTApCQkrPSBzNXB2MjEwCj4gZGlmZiAtLWdpdCBhL2FyY2gv
+YXJtL21hY2gtcmVhbHRlay9LY29uZmlnIGIvYXJjaC9hcm0vbWFjaC0KPiByZWFsdGVrL0tjb25m
+aWcKPiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+IGluZGV4IDAwMDAwMDAwMDAwMC4uYTYzOGY0MzIy
+YmIyCj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL2FyY2gvYXJtL21hY2gtcmVhbHRlay9LY29uZmln
+Cj4gQEAgLTAsMCArMSwyMCBAQAo+ICsjIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4w
+LW9ubHkKPiArbWVudWNvbmZpZyBBUkNIX1JFQUxURUsKPiArCWJvb2wgIlJlYWx0ZWsgU29DIFN1
+cHBvcnQiCj4gKwlkZXBlbmRzIG9uIEFSQ0hfTVVMVElfVjcKPiArCWhlbHAKPiArCSAgU3VwcG9y
+dCBmb3IgUmVhbHRlayBydGQxNnh4ICYgcnRkMTN4eCBTb0NzLgo+ICsKPiAraWYgQVJDSF9SRUFM
+VEVLCj4gKwo+ICtjb25maWcgQVJDSF9SVEQxM1hYCj4gKwlib29sICJFbmFibGUgc3VwcG9ydCBm
+b3IgUlREMTMxOSIKPiArCXNlbGVjdCBBUk1fR0lDX1YzCj4gKwlzZWxlY3QgQVJNX1BTQ0kKPiAr
+Cj4gK2NvbmZpZyBBUkNIX1JURDE2WFgKPiArCWJvb2wgIkVuYWJsZSBzdXBwb3J0IGZvciBSVEQx
+NjE5Igo+ICsJc2VsZWN0IEFSTV9HSUNfVjMKPiArCXNlbGVjdCBBUk1fUFNDSQo+ICsKPiArZW5k
+aWYKPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vbWFjaC1yZWFsdGVrL01ha2VmaWxlIGIvYXJjaC9h
+cm0vbWFjaC0KPiByZWFsdGVrL01ha2VmaWxlCj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRl
+eCAwMDAwMDAwMDAwMDAuLjljZGMxZjFmMjkxNwo+IC0tLSAvZGV2L251bGwKPiArKysgYi9hcmNo
+L2FybS9tYWNoLXJlYWx0ZWsvTWFrZWZpbGUKPiBAQCAtMCwwICsxLDMgQEAKPiArIyBTUERYLUxp
+Y2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMC1vbmx5Cj4gK29iai0kKENPTkZJR19BUkNIX1JFQUxU
+RUspICs9IHJlYWx0ZWsubwo+ICtvYmotJChDT05GSUdfU01QKSArPSBwbGF0c21wLm8KPiBkaWZm
+IC0tZ2l0IGEvYXJjaC9hcm0vbWFjaC1yZWFsdGVrL3BsYXRzbXAuYyBiL2FyY2gvYXJtL21hY2gt
+Cj4gcmVhbHRlay9wbGF0c21wLmMKPiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+IGluZGV4IDAwMDAw
+MDAwMDAwMC4uYjNmYzk5NDQ3YWQ0Cj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL2FyY2gvYXJtL21h
+Y2gtcmVhbHRlay9wbGF0c21wLmMKPiBAQCAtMCwwICsxLDUxIEBACj4gKy8vIFNQRFgtTGljZW5z
+ZS1JZGVudGlmaWVyOiBHUEwtMi4wLW9ubHkKPiArLyoKPiArICogQ29weXJpZ2h0IChjKSAyMDE5
+IFJlYWx0ZWsgU2VtaWNvbmR1Y3RvciBDb3JwLgo+ICsgKi8KPiArCj4gKyNpbmNsdWRlIDxsaW51
+eC9pbml0Lmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9kZWxheS5oPgo+ICsjaW5jbHVkZSA8bGludXgv
+amlmZmllcy5oPgo+ICsjaW5jbHVkZSA8bGludXgvaW8uaD4KPiArI2luY2x1ZGUgPGxpbnV4L21l
+bW9yeS5oPgo+ICsjaW5jbHVkZSA8bGludXgvc21wLmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9vZi5o
+Pgo+ICsjaW5jbHVkZSA8bGludXgvYXJtLXNtY2NjLmg+Cj4gKyNpbmNsdWRlIDxhc20vc21wX3Bs
+YXQuaD4KPiArI2luY2x1ZGUgPGFzbS9jYWNoZWZsdXNoLmg+Cj4gKyNpbmNsdWRlIDxhc20vY3Ax
+NS5oPgo+ICsjaW5jbHVkZSA8YXNtL2JhcnJpZXIuaD4KPiArCj4gKyNkZWZpbmUgQkwzMV9DTUQg
+MHg4NDAwZmYwNAo+ICsjZGVmaW5lIEJMMzFfREFUIDB4MDAwMDE2MTkKPiArI2RlZmluZSBDT1JF
+X1BXUkROX0VOIDB4MQo+ICsKPiArI2RlZmluZSBDUFVQV1JDVExSIF9fQUNDRVNTX0NQMTUoYzE1
+LCAwLCBjMiwgNykKPiArCj4gKyNpZmRlZiBDT05GSUdfSE9UUExVR19DUFUKPiArCj4gK3N0YXRp
+YyB2b2lkIHJ0a19jcHVfZGllKHVuc2lnbmVkIGludCBjcHUpCj4gK3sKPiArCXN0cnVjdCBhcm1f
+c21jY2NfcmVzIHJlczsKPiArCXVuc2lnbmVkIGludCBjcHVfcHdyX2N0cmw7Cj4gKwo+ICsJLyog
+bm90aWZ5IEJMMzEgY3B1IGhvdHBsdWcgKi8KPiArCWFybV9zbWNjY19zbWMoQkwzMV9DTUQsIEJM
+MzFfREFULCAwLCAwLCAwLCAwLCAwLCAwLCAmcmVzKTsKCkJMMzEgaXMgY2xlYXJseSBmb3IgNjQt
+Yml0IG9ubHkgYW5kIHdpbGwgbm90IHdvcmsgZm9yIFJURDExOTUsIHNvIHRoZQpuYW1pbmcgaXMg
+bXVjaCB0b28gZ2VuZXJpYy4KCj4gKwl2N19leGl0X2NvaGVyZW5jeV9mbHVzaChsb3Vpcyk7Cj4g
+Kwo+ICsJY3B1X3B3cl9jdHJsID0gcmVhZF9zeXNyZWcoQ1BVUFdSQ1RMUik7Cj4gKwljcHVfcHdy
+X2N0cmwgfD0gQ09SRV9QV1JETl9FTjsKPiArCXdyaXRlX3N5c3JlZyhjcHVfcHdyX2N0cmwsIENQ
+VVBXUkNUTFIpOwo+ICsKPiArCWRzYihzeSk7Cj4gKwo+ICsJZm9yICg7OykKPiArCQl3ZmkoKTsK
+PiArfQo+ICsjZW5kaWYKPiArCj4gK3N0cnVjdCBzbXBfb3BlcmF0aW9ucyBydGtfc21wX29wcyBf
+X2luaXRkYXRhID0gewo+ICsjaWZkZWYgQ09ORklHX0hPVFBMVUdfQ1BVCj4gKwkuY3B1X2RpZSA9
+IHJ0a19jcHVfZGllLAo+ICsjZW5kaWYKPiArfTsKPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vbWFj
+aC1yZWFsdGVrL3BsYXRzbXAuaCBiL2FyY2gvYXJtL21hY2gtCj4gcmVhbHRlay9wbGF0c21wLmgK
+PiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+IGluZGV4IDAwMDAwMDAwMDAwMC4uYzljNGQ3MTIzNjlj
+Cj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL2FyY2gvYXJtL21hY2gtcmVhbHRlay9wbGF0c21wLmgK
+PiBAQCAtMCwwICsxLDYgQEAKPiArLyogU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjAt
+b25seSAqLwo+ICsvKgo+ICsgKiBDb3B5cmlnaHQgKGMpIDIwMTkgUmVhbHRlayBTZW1pY29uZHVj
+dG9yIENvcnAuCj4gKyAqLwo+ICsKPiArZXh0ZXJuIHN0cnVjdCBzbXBfb3BlcmF0aW9ucyBydGtf
+c21wX29wczsKPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vbWFjaC1yZWFsdGVrL3JlYWx0ZWsuYyBi
+L2FyY2gvYXJtL21hY2gtCj4gcmVhbHRlay9yZWFsdGVrLmMKPiBuZXcgZmlsZSBtb2RlIDEwMDY0
+NAo+IGluZGV4IDAwMDAwMDAwMDAwMC4uMjY5MmFjNTNmNTliCj4gLS0tIC9kZXYvbnVsbAo+ICsr
+KyBiL2FyY2gvYXJtL21hY2gtcmVhbHRlay9yZWFsdGVrLmMKPiBAQCAtMCwwICsxLDQzIEBACj4g
+Ky8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4wLW9ubHkKPiArLyoKPiArICogQ29w
+eXJpZ2h0IChjKSAyMDE5IFJlYWx0ZWsgU2VtaWNvbmR1Y3RvciBDb3JwLgo+ICsgKi8KPiArCj4g
+KyNpbmNsdWRlIDxsaW51eC9jbGstcHJvdmlkZXIuaD4KPiArI2luY2x1ZGUgPGxpbnV4L2Nsb2Nr
+c291cmNlLmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9rZXJuZWwuaD4KPiArI2luY2x1ZGUgPGxpbnV4
+L2luaXQuaD4KPiArI2luY2x1ZGUgPGxpbnV4L2lycWNoaXAuaD4KPiArI2luY2x1ZGUgPGxpbnV4
+L29mX2FkZHJlc3MuaD4KPiArI2luY2x1ZGUgPGxpbnV4L29mX2lycS5oPgo+ICsjaW5jbHVkZSA8
+bGludXgvb2ZfcGxhdGZvcm0uaD4KPiArI2luY2x1ZGUgPGxpbnV4L2lvLmg+Cj4gKyNpbmNsdWRl
+IDxsaW51eC9tZW1ibG9jay5oPgo+ICsjaW5jbHVkZSA8bGludXgvZGVsYXkuaD4KPiArI2luY2x1
+ZGUgPGxpbnV4L2Nsb2NrY2hpcHMuaD4KPiArI2luY2x1ZGUgPGFzbS9tYWNoL2FyY2guaD4KPiAr
+I2luY2x1ZGUgPGFzbS9tYWNoL21hcC5oPgo+ICsjaW5jbHVkZSA8YXNtL3N5c3RlbV9taXNjLmg+
+Cj4gKyNpbmNsdWRlIDxhc20vc3lzdGVtX2luZm8uaD4KPiArCj4gKyNpbmNsdWRlICJwbGF0c21w
+LmgiCj4gKwo+ICtzdGF0aWMgY29uc3QgY2hhciAqY29uc3QgcnRkMTN4eF9ib2FyZF9kdF9jb21w
+YXRbXSA9IHsKPiArCSJyZWFsdGVrLHJ0ZDEzMTkiLAo+ICsJTlVMTCwKPiArfTsKPiArCj4gK3N0
+YXRpYyBjb25zdCBjaGFyICpjb25zdCBydGQxNnh4X2JvYXJkX2R0X2NvbXBhdFtdID0gewo+ICsJ
+InJlYWx0ZWsscnRkMTYxOSIsCj4gKwlOVUxMLAo+ICt9Owo+ICsKPiArRFRfTUFDSElORV9TVEFS
+VChSVEQxM1hYLCAiUmVhbHRlayBydGQxM3h4IHBsYXRmb3JtIikKPiArCS5kdF9jb21wYXQgPSBy
+dGQxM3h4X2JvYXJkX2R0X2NvbXBhdCwKPiArCS5zbXAgPSBzbXBfb3BzKHJ0a19zbXBfb3BzKSwK
+PiArTUFDSElORV9FTkQKPiArCj4gK0RUX01BQ0hJTkVfU1RBUlQoUlREMTZYWCwgIlJlYWx0ZWsg
+cnRkMTZ4eCBwbGF0Zm9ybSIpCj4gKwkuZHRfY29tcGF0ID0gcnRkMTZ4eF9ib2FyZF9kdF9jb21w
+YXQsCj4gKwkuc21wID0gc21wX29wcyhydGtfc21wX29wcyksCj4gK01BQ0hJTkVfRU5ECgpJIHJl
+Y2FsbCB0aGF0IDMyLWJpdCBhcm0gU01QIGNhbiBiZSBzZWxlY3RlZCB2aWEgdGhlIERUIGFuZCB0
+aGVuIGRvZXMKbm90IG5lZWQgbXVsdGlwbGUgc3VjaCBzdHJ1Y3RzIHBlciBTb0MsIGluIHBhcnRp
+Y3VsYXIgdGhleSBkb24ndCBkaWZmZXIKYXQgYWxsIGFuZCBjb3VsZCB1c2UgdGhlIGRlZmF1bHQg
+bWFjaGluZSB0YWtpbmcgdGhlIHRleHQgZnJvbSB0aGUgRFQuCgpBbHNvIG5vdGUgdGhhdCB3aGVu
+ZXZlciBwb3NzaWJsZSBJIHBlcnNvbmFsbHkgaGF2ZSBhIHByZWZlcmVuY2UgZm9yCkdQTC0yLjAt
+b3ItbGF0ZXIgYW5kIGxpY2Vuc2VkIG15IGNvZGUgdGhhdCB3YXkgd2hlbmV2ZXIgcG9zc2libGUu
+CgpRdWVzdGlvbjogV2h5IGFyZSB5b3Ugbm90IGp1c3QgaW1wbGVtZW50aW5nIHRoZSBhYm92ZSBD
+UFUgbG9naWMgaW4gVEYtQSAKQkwzMSBhbmQgbGV0IExpbnV4IHVzZSB0aGUgZXhpc3RpbmcgUFND
+SSBjb2RlIHBhdGhzPyBUaGF0IHdpbGwgYmUgdGhlCm9ubHkgdXBzdHJlYW0tYWNjZXB0ZWQgc29s
+dXRpb24gZm9yIGFybTY0LgoKVGhhbmtzLApBbmRyZWFzCgotLSAKU1VTRSBTb2Z0d2FyZSBTb2x1
+dGlvbnMgR2VybWFueSBHbWJICk1heGZlbGRzdHIuIDUsIDkwNDA5IE7DvHJuYmVyZywgR2VybWFu
+eQpHRjogRmVsaXggSW1lbmTDtnJmZmVyCkhSQiAyNDcxNjUgKEFHIE3DvG5jaGVuKQoKCl9fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJu
+ZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
+Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
