@@ -2,51 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62D6DBE09A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 16:53:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAF50BE09E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 16:54:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3WfjR8VoEUo5eulCyHGbIRDD+JxnzrAn5TBVd63hwuc=; b=cBzOU+O982FqgrGSIkeDFIs4I
-	F2bPIX5fH142B8TQuWyTTDYGyeEenoEy7d0DUlnBsbmdPK/pxTHAtyRQoP/Iu4wzIHa9mafJhctVA
-	tLrtmafCgIO9TuCRKkk299cJ7dMP5I3NXi+1DRH1MPxVf7sLOGdLSP0U+l+xQXriE8aSiSJVJuzNg
-	1yhiS53OyDPhWrtPESH+haFOILSVarX9Z7VlpmGJikdyENEEpIcpZzF7Y+OeceJHyvGVXewdynC8O
-	NDmDyDAz5yY9a1kDCK7URKQXQ7853zNKK6DGcV9bT6pJ+UV0tL/IpkHDoip56GYHRGysjnrHIvKiW
-	bHxmxIOdw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xlpFzfOcE4WjG9OTcVkpNJ8BWmssUL/QUF6R29vnayw=; b=eNj+mQap7q05Wz
+	tmUCvEnAyctqOHqCNQJ9SUVavDRwCD1y1z4PwefdID0zdD9jPYzO3TAmIBaydpPkRBANXnfYXmfNa
+	D0704rDRNwVMDxO2yvvPkUziFulpY4K8leQAMl/CPCkc6vGrZKNvZPBBjNAA93Nv+aRIDyr0gFeC7
+	cGigcvjNqVUp+c6NpngiZ/UFtqIJ1zHcXiJSnmuffG805FskaEMgjE3+tNe8pc//SUMe0Su1ZJ2Fw
+	QIBQtBlQIjiWgB0QP04QPMrjMl9l/dKtYJelCfM/Dq+rejChMKhFZc3zDi/fZ7ihw9wXRYVXzKbLT
+	vtBDQf6KI7KRM4EteBVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iD8fT-00012a-BN; Wed, 25 Sep 2019 14:53:23 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iD8fz-0001Iv-4U; Wed, 25 Sep 2019 14:53:55 +0000
+Received: from skedge03.snt-world.com ([91.208.41.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iD8fC-00011j-JU
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 14:53:08 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 47F59AEE1;
- Wed, 25 Sep 2019 14:53:02 +0000 (UTC)
-Message-ID: <d1a31a2ec8eb2f226b1fb41f6c24ffb47c3bf7c7.camel@suse.de>
-Subject: Re: [PATCH 00/11] of: Fix DMA configuration for non-DT masters
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Rob Herring <robh+dt@kernel.org>
-Date: Wed, 25 Sep 2019 16:52:59 +0200
-In-Reply-To: <CAL_Jsq+v+svTyna7UzQdRVqfNc5Z_bgWzxNRXv7-Wqv3NwDu2g@mail.gmail.com>
-References: <20190924181244.7159-1-nsaenzjulienne@suse.de>
- <CAL_Jsq+v+svTyna7UzQdRVqfNc5Z_bgWzxNRXv7-Wqv3NwDu2g@mail.gmail.com>
-User-Agent: Evolution 3.32.4 
+ id 1iD8fj-0001Hj-1A
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 14:53:41 +0000
+Received: from sntmail10s.snt-is.com (unknown [10.203.32.183])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by skedge03.snt-world.com (Postfix) with ESMTPS id 09BAE67A659;
+ Wed, 25 Sep 2019 16:53:30 +0200 (CEST)
+Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail10s.snt-is.com
+ (10.203.32.183) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Wed, 25 Sep
+ 2019 16:53:29 +0200
+Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
+ sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
+ 15.01.1713.004; Wed, 25 Sep 2019 16:53:29 +0200
+From: Schrempf Frieder <frieder.schrempf@kontron.de>
+To: Robin Gong <yibin.gong@nxp.com>
+Subject: Re: [PATCH v5 11/15] dmaengine: imx-sdma: fix ecspi1 rx dma not work
+ on i.mx8mm
+Thread-Topic: [PATCH v5 11/15] dmaengine: imx-sdma: fix ecspi1 rx dma not work
+ on i.mx8mm
+Thread-Index: AQHVctvU4cuMSjzwIEqWCaN8EgDgaac8IOgAgAA51YA=
+Date: Wed, 25 Sep 2019 14:53:29 +0000
+Message-ID: <1307d229-4c49-80e3-04ba-377c0caeae9c@kontron.de>
+References: <20190610081753.11422-12-yibin.gong@nxp.com>
+ <29cf9f29-bdb4-94db-00b0-56ec36386f7a@kontron.de>
+ <VE1PR04MB6638639EF4F580E04689538E89870@VE1PR04MB6638.eurprd04.prod.outlook.com>
+In-Reply-To: <VE1PR04MB6638639EF4F580E04689538E89870@VE1PR04MB6638.eurprd04.prod.outlook.com>
+Accept-Language: de-DE, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [172.25.9.193]
+x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
+Content-ID: <8326CD696BB9F14CBFF37C6E31B2574A@snt-world.com>
 MIME-Version: 1.0
+X-SnT-MailScanner-Information: Please contact the ISP for more information
+X-SnT-MailScanner-ID: 09BAE67A659.A3106
+X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
+ Provider for details
+X-SnT-MailScanner-SpamCheck: 
+X-SnT-MailScanner-From: frieder.schrempf@kontron.de
+X-SnT-MailScanner-To: dan.j.williams@intel.com, dmaengine@vger.kernel.org,
+ festevam@gmail.com, kernel@pengutronix.de,
+ linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
+ linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
+ s.hauer@pengutronix.de, shawnguo@kernel.org, vkoul@kernel.org,
+ yibin.gong@nxp.com
+X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_075306_940633_3876E6DB 
-X-CRM114-Status: GOOD (  27.43  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190925_075339_400219_D9E19003 
+X-CRM114-Status: GOOD (  12.66  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [91.208.41.68 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -60,175 +92,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Matthias Brugger <mbrugger@suse.com>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- freedreno <freedreno@lists.freedesktop.org>,
- linux-wireless <linux-wireless@vger.kernel.org>,
+Cc: Fabio Estevam <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, etnaviv@lists.freedesktop.org,
- linux-tegra@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
- Stefan Wahren <wahrenst@gmx.net>, james.quinlan@broadcom.com,
- linux-pci@vger.kernel.org, "open list:DMA GENERIC OFFLOAD ENGINE
- SUBSYSTEM" <dmaengine@vger.kernel.org>, xen-devel@lists.xenproject.org,
- Dan Williams <dan.j.williams@intel.com>, Robin Murphy <robin.murphy@arm.com>,
- Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
-Content-Type: multipart/mixed; boundary="===============5882416185891835697=="
+ "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
+ "vkoul@kernel.org" <vkoul@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 25.09.19 13:26, Robin Gong wrote:
+> On 2019-9-24 21:28 Schrempf Frieder <frieder.schrempf@kontron.de> wrote:
+>>
+>> Hi Robin,
+>>
+>>> From: Robin Gong <yibin.gong at nxp.com>
+>>>
+>>> Because the number of ecspi1 rx event on i.mx8mm is 0, the condition
+>>> check ignore such special case without dma channel enabled, which
+>>> caused
+>>> ecspi1 rx works failed. Actually, no need to check event_id0/event_id1
+>>> and replace checking 'event_id1' with 'DMA_DEV_TO_DEV', so that
+>>> configure
+>>> event_id1 only in case DEV_TO_DEV.
+>>>
+>>> Signed-off-by: Robin Gong <yibin.gong at nxp.com>
+>>> Acked-by: Vinod Koul <vkoul at kernel.org>
+>>
+>> I have a custom board with i.MX8MM and SPI flash on ecspi1. I'm currently
+>> testing with v5.3 and as SPI didn't work, I tried two different things:
+>>
+>> 1. Removing 'dmas' and 'dma-names' from the ecspi1 node in imx8mm.dtsi,
+>>      to use PIO instead of DMA. This works as expected and the driver
+>>      boots with the following messages:
+>>
+>>          spi_imx 30820000.spi: dma setup error -19, use pio
+>>          m25p80 spi0.0: mx25v8035f (1024 Kbytes)
+>>          spi_imx 30820000.spi: probed
+>>
+>> 2. Applying your patchset and use DMA. In this case, the flash also
+>>      works fine, but there are some error messages printed while booting:
+>>
+>>          spi_master spi0: I/O Error in DMA RX
+>>          m25p80 spi0.0: SPI transfer failed: -110
+>>          spi_master spi0: failed to transfer one message from queue
+>>          m25p80 spi0.0: mx25v8035f (1024 Kbytes)
+>>          spi_imx 30820000.spi: probed
+>>
+>> It would be great to get your patches merged and fix SPI + DMA, but for
+>> i.MX8MM, we need to get rid of the error messages. Do you have an idea,
+>> what's wrong?
 
---===============5882416185891835697==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-5Mzcra9IsjRjM5vnaomh"
+> Could you check if the length of spi message is bigger than fifo_size during
+> spi_nor probe? If yes, at that time maybe sdma firmware not loaded.
+> if (transfer->len < spi_imx->devtype_data->fifo_size)
 
+Indeed, most of the transfers triggered by the SPI NOR dirver are below 
+fifo_size and work fine, but some are bigger. The transfers therefore 
+try to use DMA, but the firmware is not loaded yet.
 
---=-5Mzcra9IsjRjM5vnaomh
-Content-Type: multipart/mixed; boundary="=-QzsDiLgE5dpWVAyKk5Wj"
+How is this supposed to work? Shouldn't all transfers use PIO as long as 
+the SDMA firmware is not loaded yet?
 
-
---=-QzsDiLgE5dpWVAyKk5Wj
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, 2019-09-24 at 16:59 -0500, Rob Herring wrote:
-> On Tue, Sep 24, 2019 at 1:12 PM Nicolas Saenz Julienne
-> <nsaenzjulienne@suse.de> wrote:
-> > Hi All,
-> > this series tries to address one of the issues blocking us from
-> > upstreaming Broadcom's STB PCIe controller[1]. Namely, the fact that
-> > devices not represented in DT which sit behind a PCI bus fail to get th=
-e
-> > bus' DMA addressing constraints.
-> >=20
-> > This is due to the fact that of_dma_configure() assumes it's receiving =
-a
-> > DT node representing the device being configured, as opposed to the PCI=
-e
-> > bridge node we currently pass. This causes the code to directly jump
-> > into PCI's parent node when checking for 'dma-ranges' and misses
-> > whatever was set there.
-> >=20
-> > To address this I create a new API in OF - inspired from Robin Murphys
-> > original proposal[2] - which accepts a bus DT node as it's input in
-> > order to configure a device's DMA constraints. The changes go deep into
-> > of/address.c's implementation, as a device being having a DT node
-> > assumption was pretty strong.
-> >=20
-> > On top of this work, I also cleaned up of_dma_configure() removing its
-> > redundant arguments and creating an alternative function for the specia=
-l
-> > cases
-> > not applicable to either the above case or the default usage.
-> >=20
-> > IMO the resulting functions are more explicit. They will probably
-> > surface some hacky usages that can be properly fixed as I show with the
-> > DT fixes on the Layerscape platform.
-> >=20
-> > This was also tested on a Raspberry Pi 4 with a custom PCIe driver and
-> > on a Seattle AMD board.
->=20
-> Humm, I've been working on this issue too. Looks similar though yours
-> has a lot more churn and there's some other bugs I've found.
-
-That's good news, and yes now that I see it, some stuff on my series is ove=
-rly
-complicated. Specially around of_translate_*().
-
-On top of that, you removed in of_dma_get_range():
-
--	/*
--	 * At least empty ranges has to be defined for parent node if
--	 * DMA is supported
--	 */
--	if (!ranges)
--		break;
-
-Which I assumed was bound to the standard and makes things easier.
-
-> Can you test out this branch[1]. I don't have any h/w needing this,
-> but wrote a unittest and tested with modified QEMU.
-
-I reviewed everything, I did find a minor issue, see the patch attached.
-
-Also I tested your branch both on an RPi4, with a PCI device that depends o=
-n
-these changes and by comparing the OF debugs logs on a Layerscape board whi=
-ch
-uses dma-ranges, dma-coherent and IOMMU. All works as expected.
-
-Will you send this series for v5.5? Please keep me in the loop, I'll review=
- and
-test the final version.
-
-Regards,
-Nicolas
-
-
---=-QzsDiLgE5dpWVAyKk5Wj
-Content-Disposition: attachment;
-	filename*0=0001-of-device-do-not-bail-of_dma_configure-when-force_dm.pat;
-	filename*1=ch
-Content-Type: text/x-patch;
-	name="0001-of-device-do-not-bail-of_dma_configure-when-force_dm.patch";
-	charset="UTF-8"
-Content-Transfer-Encoding: base64
-
-RnJvbSAyNmQ1MTg1M2MyNWMwNGMyOGRiYzA5MDYxOTUxYTkzYzEwMmRhYmNkIE1vbiBTZXAgMTcg
-MDA6MDA6MDAgMjAwMQpGcm9tOiBOaWNvbGFzIFNhZW56IEp1bGllbm5lIDxuc2FlbnpqdWxpZW5u
-ZUBzdXNlLmRlPgpEYXRlOiBXZWQsIDI1IFNlcCAyMDE5IDE2OjI2OjU3ICswMjAwClN1YmplY3Q6
-IFtQQVRDSF0gb2Y6IGRldmljZTogZG8gbm90IGJhaWwgb2ZfZG1hX2NvbmZpZ3VyZSgpIHdoZW4g
-Zm9yY2VfZG1hIGlzCiBzZXQKClNvbWUgWGVuIGRldmljZXMgY2FsbCBvZl9kbWFfY29uZmlndXJl
-KCkgd2l0aG91dCBhbiBhY3R1YWwgRFQgbm9kZSBpbgpvcmRlciBmb3IgaXQgdG8gc2V0IGl0cyAn
-ZG1hX29wcycuIFRoYXQncyB0aGUgb3JpZ2luYWwgaW50ZW50IG9mCidmb3JjZV9kbWEnLCBob25v
-ciB0aGF0IGJlaGF2aW91ci4KClNpZ25lZC1vZmYtYnk6IE5pY29sYXMgU2FlbnogSnVsaWVubmUg
-PG5zYWVuemp1bGllbm5lQHN1c2UuZGU+Ci0tLQogZHJpdmVycy9vZi9kZXZpY2UuYyB8IDIgLS0K
-IDEgZmlsZSBjaGFuZ2VkLCAyIGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvb2Yv
-ZGV2aWNlLmMgYi9kcml2ZXJzL29mL2RldmljZS5jCmluZGV4IGE0NTI2MWUyMTE0NC4uN2JjMDBm
-NzI0NjhmIDEwMDY0NAotLS0gYS9kcml2ZXJzL29mL2RldmljZS5jCisrKyBiL2RyaXZlcnMvb2Yv
-ZGV2aWNlLmMKQEAgLTEwMCw4ICsxMDAsNiBAQCBpbnQgb2ZfZG1hX2NvbmZpZ3VyZShzdHJ1Y3Qg
-ZGV2aWNlICpkZXYsIHN0cnVjdCBkZXZpY2Vfbm9kZSAqcGFyZW50LCBib29sIGZvcmNlXwogCW5w
-ID0gZGV2LT5vZl9ub2RlOwogCWlmICghbnApCiAJCW5wID0gcGFyZW50OwotCWlmICghbnApCi0J
-CXJldHVybiAtRU5PREVWOwogCiAJcmV0ID0gb2ZfZG1hX2dldF9yYW5nZShucCwgJmRtYV9hZGRy
-LCAmcGFkZHIsICZzaXplKTsKIAlpZiAocmV0IDwgMCkgewotLSAKMi4yMy4wCgo=
-
-
---=-QzsDiLgE5dpWVAyKk5Wj--
-
---=-5Mzcra9IsjRjM5vnaomh
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl2Lf0sACgkQlfZmHno8
-x/7mvQf6A++shc7v4vCUvlFLh6kIZ0UPBKuSnxpUpUn+R3BMoS6J5Ce/ma0SOzIJ
-MRQmawROuL2F6qf0g3ykdpnaSD14TAEB9UnJzLoTkprKRFRhdq4pQjCDGDWIpWSO
-fW6GnBbCLaTa0r38siU1DvnV3ZXCNnmN+lO5mqEp380R7cLwMj0hrH4mzkNuSUHK
-uKWLMd/ZZyDk7e2j1qZ2bXg6PRRSfXZfU7Oqtwt6k7JNoPB/HneraMxoO43EyzDA
-qt4Fxx6cDsZQAPbqJPChpSN4USdi0rN171NlKW3+PRsGfZN4LzUF3MoK2uvReV0n
-DhW7JoNOzqhh0pk2iPTRov0M+zbYEg==
-=jmQ8
------END PGP SIGNATURE-----
-
---=-5Mzcra9IsjRjM5vnaomh--
-
-
-
---===============5882416185891835697==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
+(+ Cc: linux-spi@vger.kernel.org)
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5882416185891835697==--
-
-
