@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4432BDFE6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 16:19:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECB7DBDFE8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 16:20:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MKbQR5MDJOtkcg8QIBD69kTLLyNEc0UxSNOhJSUexIM=; b=EIzXBdMREALwj/
-	UE47ToLD4lFYaHXpeStbFJXUQJ3U0cj9x+doHZQFRPn7yZBJBikHQ2c6AHbgBlFoD9Y5kEwzywghD
-	RavSv+H27hkjrypSlg/sn88uAUyVTxUBI0tOwmCaEzvS4NPWgB+o2sLgFHAPKIpBrJXaH2cA+kyFu
-	dl+cupuGdtoPwClog8NN8ZncsjljRWbFoo+IKDpCoAeI35dQFBAH+UtQ7xAbHtvkx/QJzN5MMzykj
-	+v+biGyOewxCZiiBy8upYuzw4IBdWIAuru6O2Um6S05bsHvz6j9mUbXoue/LOIfnrAOPqZgKhJaVQ
-	Vtkf7GQKey1tut6xz1tg==;
+	List-Owner; bh=MKbQR5MDJOtkcg8QIBD69kTLLyNEc0UxSNOhJSUexIM=; b=heBy9TLVBn/+P7
+	lNH1LqPeOM1KEhZd6jBELDPg1kcUwBYZJfJUWboBP/J05MRKXQ+EqW1AgHf8BqSnC/iP5ynSC67Gt
+	Id7iese8jLsNsIaYvNlmK7s13dsyvERTm11PwJjcicg1U/9L0UGsMaJcia37wMVXpp1tR4crzKa0C
+	f7VXgUG8TijUtkt+fTayepiWXT93KQA81eVdl+zDYWab4+tGilAJmaeCyI8j74fBEJ/r02cmK00xa
+	1zK3LlIsuk/WhZMyJ22oTUvd6gSnisVADU3IpZsen3JSJJFofQSdPqi+7XHbjfspKfQWMiqvbY3NB
+	USACQinGFOFqFEt/U5SA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iD890-0002ox-2g; Wed, 25 Sep 2019 14:19:50 +0000
+	id 1iD89Q-00037u-34; Wed, 25 Sep 2019 14:20:16 +0000
 Received: from imap1.codethink.co.uk ([176.9.8.82])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iD85r-0001bs-Ta
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 14:16:39 +0000
+ id 1iD86R-0001pq-8m
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 14:17:14 +0000
 Received: from [167.98.27.226] (helo=rainbowdash.codethink.co.uk)
  by imap1.codethink.co.uk with esmtpsa (Exim 4.84_2 #1 (Debian))
- id 1iD85q-0000Eu-DC; Wed, 25 Sep 2019 15:16:34 +0100
+ id 1iD86P-0000GA-LL; Wed, 25 Sep 2019 15:17:09 +0100
 Received: from ben by rainbowdash.codethink.co.uk with local (Exim 4.92.2)
  (envelope-from <ben@rainbowdash.codethink.co.uk>)
- id 1iD85p-00066k-Mm; Wed, 25 Sep 2019 15:16:33 +0100
+ id 1iD86O-00068b-Vb; Wed, 25 Sep 2019 15:17:08 +0100
 From: Ben Dooks <ben.dooks@codethink.co.uk>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 1/5] clk: hisilicon: fix sparse warnings in clk-hi3670.c
-Date: Wed, 25 Sep 2019 15:16:28 +0100
-Message-Id: <20190925141632.23434-1-ben.dooks@codethink.co.uk>
+Subject: [PATCH 1/2] clk: hisilicon: fix sparse warnings in clk-hi3670.c
+Date: Wed, 25 Sep 2019 15:17:05 +0100
+Message-Id: <20190925141706.23549-1-ben.dooks@codethink.co.uk>
 X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_071636_511537_886950C8 
+X-CRM114-CacheID: sfid-20190925_071711_853172_9708CF6E 
 X-CRM114-Status: UNSURE (   8.69  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
