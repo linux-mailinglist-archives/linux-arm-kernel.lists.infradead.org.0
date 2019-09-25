@@ -2,62 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 479E6BD968
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 09:54:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B07FBD98E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 10:08:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VsKvvsBlQhmFJIV6QIbjmILW9k9PK6NDZZ5OJ9Wf8q4=; b=dwHatwwflOSj8R
-	p/BMfpWWe5MdIpyEJPDtFWz/YJc53Ue4Gp0YG6hMpRZ2z6fzcAdA+M03pR5trMC9JiQVBnunyaJtQ
-	eaYAZNikYkDHmSCYNnvOLT910K0uokhoQcJT/SFKRprmP7MpWH3qALewiwpO4jvqgjZLA6SZRSFUh
-	H31QqN3el3GSwn8ewkNNgGyk/U4ZFlw+/qw//3hAwAtBELjL8tN7XJekRTpfCxZW5dU6tmYT1bhdi
-	/+pOrOhmuZETa42ziPZFL1XyWDPT+E9BPj2hMuKyrdjBWFb4TO1d0YUxf13JsKRwPWQVQhSybvE45
-	//Ruza6jN0m7xDjxs4Pw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=kl+GxJGFOh6F2/QX3rU7FYH2xwjbidQIns9kbemKkuc=; b=uxhQNzIDXzcj0kZPsJZC6r6XIa
+	ppGjTpvtGAo1SSmKQAStYTPVQOZPfWSggh4sDf+bGXn+PMGEFmbCFUfPG5F7EDmqyXzTeDTETovY7
+	4LDMlu/OM0h27oE0fWRcSlG/6e3Slalh8XVrs3upBxoVWAmeSSI6gfvdHHaBvOjEKFFxfvXp5/9+6
+	h9yomUeedALIRWmuh1XjOCnF2ntqQd/l1IshpNTAl8Spch+aezt/y8DQ/tb+3vY+UJdzHpq/9Ub73
+	h8KGZ6NH0O+oMOMvdxevnV0oPZ+RDuOSctRR2MA6+MRB1mjhVthbsN0o7vKYv2356Kl+P/VMhVPzi
+	3YgEK/IQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iD27y-0008Qv-8p; Wed, 25 Sep 2019 07:54:22 +0000
-Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat
- Linux)) id 1iD27b-0008QO-6F
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 07:54:01 +0000
-Authenticated-By: 
-X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID x8P7rcYj024491,
- This message is accepted by code: ctloc85258
-Received: from mail.realtek.com (RTITCASV02.realtek.com.tw[172.21.6.19])
- by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id x8P7rcYj024491
- (version=TLSv1 cipher=DHE-RSA-AES256-SHA bits=256 verify=NOT);
- Wed, 25 Sep 2019 15:53:38 +0800
-Received: from RTITMBSVM04.realtek.com.tw ([fe80::e404:880:2ef1:1aa1]) by
- RTITCASV02.realtek.com.tw ([::1]) with mapi id 14.03.0468.000; Wed, 25 Sep
- 2019 15:53:38 +0800
-From: James Tai <james.tai@realtek.com>
-To: "'Arnd Bergmann'" <arnd@arndb.de>
-Subject: [PATCH v1] ARM: config: Add Realtek defconfig
-Thread-Topic: [PATCH v1] ARM: config: Add Realtek defconfig
-Thread-Index: AdVzdepXa6KnsffKRqK+GYhRS4tW0w==
-Date: Wed, 25 Sep 2019 07:53:37 +0000
-Message-ID: <43B123F21A8CFE44A9641C099E4196FFCF8EA3B6@RTITMBSVM04.realtek.com.tw>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [172.21.6.95]
-MIME-Version: 1.0
+	id 1iD2LF-0005D3-M7; Wed, 25 Sep 2019 08:08:05 +0000
+Received: from regular1.263xmail.com ([211.150.70.202])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iD2Kk-00059A-1S; Wed, 25 Sep 2019 08:07:41 +0000
+Received: from hjc?rock-chips.com (unknown [192.168.167.42])
+ by regular1.263xmail.com (Postfix) with ESMTP id 00F882D5;
+ Wed, 25 Sep 2019 16:07:11 +0800 (CST)
+X-263anti-spam: KSV:0;BIG:0;
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-KSVirus-check: 0
+X-ADDR-CHECKED4: 1
+X-ABS-CHECKED: 1
+X-SKE-CHECKED: 1
+X-ANTISPAM-LEVEL: 2
+Received: from localhost.localdomain (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P2645T139744972404480S1569398812082049_; 
+ Wed, 25 Sep 2019 16:07:10 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <4eb4121ae0eabc237eee6c7347c4a621>
+X-RL-SENDER: hjc@rock-chips.com
+X-SENDER: hjc@rock-chips.com
+X-LOGIN-NAME: hjc@rock-chips.com
+X-FST-TO: dri-devel@lists.freedesktop.org
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+From: Sandy Huang <hjc@rock-chips.com>
+To: dri-devel@lists.freedesktop.org, Sandy Huang <hjc@rock-chips.com>,
+ =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>
+Subject: [PATCH 2/3] drm/rockchip: Add vop_format_get_bpp to get format bpp
+Date: Wed, 25 Sep 2019 16:06:39 +0800
+Message-Id: <1569398801-92201-3-git-send-email-hjc@rock-chips.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1569398801-92201-1-git-send-email-hjc@rock-chips.com>
+References: <1569398801-92201-1-git-send-email-hjc@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_005359_491685_B33ED091 
-X-CRM114-Status: UNSURE (   8.55  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.2 (+)
+X-CRM114-CacheID: sfid-20190925_010734_907701_B8BC1AF6 
+X-CRM114-Status: GOOD (  11.66  )
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.2 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [211.150.70.202 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [211.150.70.202 listed in wl.mailspike.net]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.2 UPPERCASE_75_100       message body is 75-100% uppercase
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,466 +84,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: pro_dhc_kernel <pro_dhc_kernel@realtek.com>,
- "'linux-kernel@vger.kernel.org'" <linux-kernel@vger.kernel.org>,
- 'Linux ARM' <linux-arm-kernel@lists.infradead.org>, 'Russell
- King' <linux@armlinux.org.uk>
+Cc: linux-rockchip@lists.infradead.org, Ayan.Halder@arm.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "james.tai" <james.tai@realtek.com>
+For 10bit yuv format, we need to get format bpp each plane, so we
+Add vop_format_get_bpp() to instead of format->cpp[];
 
-Add a defconfig for Realtek RTD16XX and RTD13XX platform.
-
-Signed-off-by: james.tai <james.tai@realtek.com>
+Signed-off-by: Sandy Huang <hjc@rock-chips.com>
 ---
-Changes since last version:
-	- disable CONFIG_EMBEDDED.
-	- disable CONFIG_ARM_THUMBEE.
-	- disable CONFIG_SCHED_SMT.
-	- disable CONFIG_OABI_COMPAT.
-	- disable CONFIG_EFI.
-	- disable CONFIG_QORIQ_CPUFREQ.
-	- disable CONFIG_NET_DSA.
-	- disable CONFIG_CAN.
-	- disable CONFIG_CAN_FLEXCAN.
-	- disable CONFIG_CAN_RCAR.
-	- disable CONFIG_BT.
-	- disable CONFIG_BT_HCIUART.
-	- disable CONFIG_BT_HCIUART_BCM.
-	- disable CONFIG_BT_MRVL.
-	- disable CONFIG_BT_MRVL_SDIO.
-	- disable CONFIG_MTD.
-	- disable CONFIG_MTD_CMDLINE_PARTS.
-	- disable CONFIG_MTD_BLOCK.
-	- disable CONFIG_MTD_CFI.
-	- disable CONFIG_MTD_PHYSMAP.
-	- disable CONFIG_MTD_PHYSMAP_OF.
-	- disable CONFIG_MTD_RAW_NAND.
-	- disable CONFIG_MTD_NAND_DENALI_DT.
-	- disable CONFIG_MTD_NAND_BRCMNAND.
-	- disable CONFIG_BLK_DEV_RAM_SIZE.
-	- disable CONFIG_USB_PEGASUS.
-	- disable CONFIG_USB_RTL8152.
-	- disable CONFIG_USB_LAN78XX.
-	- disable CONFIG_USB_USBNET.
-	- disable CONFIG_USB_NET_SMSC75XX.
-	- disable CONFIG_USB_NET_SMSC95XX.
-	- disable CONFIG_BRCMFMAC.
-	- disable CONFIG_MWIFIEX.
-	- disable CONFIG_MWIFIEX_SDIO.
-	- disable CONFIG_RT2X00.
-	- disable CONFIG_RT2800USB.
-	- enable CONFIG_NET_VENDOR_3COM.
-	- enable CONFIG_NET_VENDOR_ADAPTEC.
-	- enable CONFIG_NET_VENDOR_AGERE.
-	- enable CONFIG_NET_VENDOR_ALACRITECH.
-	- enable CONFIG_NET_VENDOR_ALTEON.
----
- arch/arm/configs/realtek_defconfig | 390 +++++++++++++++++++++++++++++
- 1 file changed, 390 insertions(+)
- create mode 100644 arch/arm/configs/realtek_defconfig
+ drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 26 +++++++++++++++++++++++---
+ 1 file changed, 23 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm/configs/realtek_defconfig b/arch/arm/configs/realtek_defconfig
-new file mode 100644
-index 000000000000..5effebf14c02
---- /dev/null
-+++ b/arch/arm/configs/realtek_defconfig
-@@ -0,0 +1,390 @@
-+CONFIG_SYSVIPC=y
-+CONFIG_NO_HZ=y
-+CONFIG_HIGH_RES_TIMERS=y
-+CONFIG_CGROUPS=y
-+CONFIG_BLK_DEV_INITRD=y
-+CONFIG_PERF_EVENTS=y
-+CONFIG_ARCH_REALTEK=y
-+CONFIG_ARCH_RTD13XX=y
-+CONFIG_ARCH_RTD16XX=y
-+# CONFIG_CACHE_L2X0 is not set
-+# CONFIG_ARM_ERRATA_643719 is not set
-+CONFIG_ARM_ERRATA_814220=y
-+CONFIG_SMP=y
-+CONFIG_SCHED_MC=y
-+CONFIG_HAVE_ARM_ARCH_TIMER=y
-+CONFIG_MCPM=y
-+CONFIG_NR_CPUS=6
-+CONFIG_HZ_250=y
-+CONFIG_HIGHMEM=y
-+CONFIG_FORCE_MAX_ZONEORDER=12
-+CONFIG_SECCOMP=y
-+CONFIG_ARM_APPENDED_DTB=y
-+CONFIG_ARM_ATAG_DTB_COMPAT=y
-+CONFIG_KEXEC=y
-+CONFIG_CPU_FREQ=y
-+CONFIG_CPU_FREQ_STAT=y
-+CONFIG_CPU_FREQ_DEFAULT_GOV_ONDEMAND=y
-+CONFIG_CPU_FREQ_GOV_POWERSAVE=m
-+CONFIG_CPU_FREQ_GOV_USERSPACE=m
-+CONFIG_CPU_FREQ_GOV_CONSERVATIVE=m
-+CONFIG_CPU_FREQ_GOV_SCHEDUTIL=y
-+CONFIG_CPUFREQ_DT=y
-+CONFIG_CPU_IDLE=y
-+CONFIG_ARM_CPUIDLE=y
-+CONFIG_VFP=y
-+CONFIG_NEON=y
-+CONFIG_KERNEL_MODE_NEON=y
-+CONFIG_TRUSTED_FOUNDATIONS=y
-+CONFIG_EFI_VARS=m
-+CONFIG_EFI_CAPSULE_LOADER=m
-+CONFIG_ARM_CRYPTO=y
-+CONFIG_CRYPTO_SHA1_ARM_NEON=m
-+CONFIG_CRYPTO_SHA1_ARM_CE=m
-+CONFIG_CRYPTO_SHA2_ARM_CE=m
-+CONFIG_CRYPTO_SHA512_ARM=m
-+CONFIG_CRYPTO_AES_ARM=m
-+CONFIG_CRYPTO_AES_ARM_BS=m
-+CONFIG_CRYPTO_AES_ARM_CE=m
-+CONFIG_CRYPTO_GHASH_ARM_CE=m
-+CONFIG_CRYPTO_CRC32_ARM_CE=m
-+CONFIG_CRYPTO_CHACHA20_NEON=m
-+CONFIG_JUMP_LABEL=y
-+CONFIG_MODULES=y
-+CONFIG_MODULE_UNLOAD=y
-+CONFIG_PARTITION_ADVANCED=y
-+CONFIG_CMDLINE_PARTITION=y
-+CONFIG_CMA=y
-+CONFIG_NET=y
-+CONFIG_PACKET=y
-+CONFIG_UNIX=y
-+CONFIG_INET=y
-+CONFIG_IP_PNP=y
-+CONFIG_IP_PNP_DHCP=y
-+CONFIG_IP_PNP_BOOTP=y
-+CONFIG_IP_PNP_RARP=y
-+CONFIG_IPV6_ROUTER_PREF=y
-+CONFIG_IPV6_OPTIMISTIC_DAD=y
-+CONFIG_INET6_AH=m
-+CONFIG_INET6_ESP=m
-+CONFIG_INET6_IPCOMP=m
-+CONFIG_IPV6_MIP6=m
-+CONFIG_IPV6_TUNNEL=m
-+CONFIG_IPV6_MULTIPLE_TABLES=y
-+CONFIG_CFG80211=m
-+CONFIG_MAC80211=m
-+CONFIG_RFKILL=y
-+CONFIG_RFKILL_INPUT=y
-+CONFIG_RFKILL_GPIO=y
-+CONFIG_PCI=y
-+CONFIG_PCIEPORTBUS=y
-+CONFIG_DEVTMPFS=y
-+CONFIG_DEVTMPFS_MOUNT=y
-+CONFIG_MTD_SPI_NOR=y
-+CONFIG_MTD_UBI=y
-+CONFIG_OF_OVERLAY=y
-+CONFIG_VIRTIO_BLK=y
-+CONFIG_AD525X_DPOT=y
-+CONFIG_AD525X_DPOT_I2C=y
-+CONFIG_SRAM=y
-+CONFIG_BLK_DEV_SD=y
-+CONFIG_BLK_DEV_SR=y
-+CONFIG_ATA=y
-+CONFIG_SATA_AHCI=y
-+CONFIG_SATA_AHCI_PLATFORM=y
-+# CONFIG_ATA_SFF is not set
-+CONFIG_NETDEVICES=y
-+CONFIG_VIRTIO_NET=y
-+CONFIG_B53_MDIO_DRIVER=m
-+CONFIG_B53_MMAP_DRIVER=m
-+CONFIG_B53_SRAB_DRIVER=m
-+CONFIG_B53_SERDES=m
-+CONFIG_NET_DSA_BCM_SF2=m
-+CONFIG_NET_VENDOR_3COM=y
-+CONFIG_NET_VENDOR_ADAPTEC=y
-+CONFIG_NET_VENDOR_AGERE=y
-+CONFIG_NET_VENDOR_ALACRITECH=y
-+CONFIG_NET_VENDOR_ALTEON=y
-+# CONFIG_NET_VENDOR_AMAZON is not set
-+# CONFIG_NET_VENDOR_AMD is not set
-+# CONFIG_NET_VENDOR_AQUANTIA is not set
-+# CONFIG_NET_VENDOR_ARC is not set
-+# CONFIG_NET_VENDOR_ATHEROS is not set
-+# CONFIG_NET_VENDOR_AURORA is not set
-+# CONFIG_NET_VENDOR_BROADCOM is not set
-+# CONFIG_NET_VENDOR_BROCADE is not set
-+# CONFIG_NET_VENDOR_CADENCE is not set
-+# CONFIG_NET_VENDOR_CAVIUM is not set
-+# CONFIG_NET_VENDOR_CHELSIO is not set
-+# CONFIG_NET_VENDOR_CIRRUS is not set
-+# CONFIG_NET_VENDOR_CISCO is not set
-+# CONFIG_NET_VENDOR_CORTINA is not set
-+# CONFIG_NET_VENDOR_DEC is not set
-+# CONFIG_NET_VENDOR_DLINK is not set
-+# CONFIG_NET_VENDOR_EMULEX is not set
-+# CONFIG_NET_VENDOR_EZCHIP is not set
-+# CONFIG_NET_VENDOR_FARADAY is not set
-+# CONFIG_NET_VENDOR_GOOGLE is not set
-+# CONFIG_NET_VENDOR_HISILICON is not set
-+# CONFIG_NET_VENDOR_HP is not set
-+# CONFIG_NET_VENDOR_HUAWEI is not set
-+# CONFIG_NET_VENDOR_INTEL is not set
-+# CONFIG_NET_VENDOR_MARVELL is not set
-+# CONFIG_NET_VENDOR_MELLANOX is not set
-+# CONFIG_NET_VENDOR_MICREL is not set
-+# CONFIG_NET_VENDOR_MICROCHIP is not set
-+# CONFIG_NET_VENDOR_MICROSEMI is not set
-+# CONFIG_NET_VENDOR_MYRI is not set
-+# CONFIG_NET_VENDOR_NATSEMI is not set
-+# CONFIG_NET_VENDOR_NETERION is not set
-+# CONFIG_NET_VENDOR_NETRONOME is not set
-+# CONFIG_NET_VENDOR_NI is not set
-+# CONFIG_NET_VENDOR_NVIDIA is not set
-+# CONFIG_NET_VENDOR_OKI is not set
-+# CONFIG_NET_VENDOR_PACKET_ENGINES is not set
-+# CONFIG_NET_VENDOR_QLOGIC is not set
-+# CONFIG_NET_VENDOR_QUALCOMM is not set
-+# CONFIG_NET_VENDOR_RDC is not set
-+# CONFIG_NET_VENDOR_REALTEK is not set
-+# CONFIG_NET_VENDOR_RENESAS is not set
-+# CONFIG_NET_VENDOR_ROCKER is not set
-+# CONFIG_NET_VENDOR_SAMSUNG is not set
-+# CONFIG_NET_VENDOR_SEEQ is not set
-+# CONFIG_NET_VENDOR_SOLARFLARE is not set
-+# CONFIG_NET_VENDOR_SILAN is not set
-+# CONFIG_NET_VENDOR_SIS is not set
-+# CONFIG_NET_VENDOR_SMSC is not set
-+# CONFIG_NET_VENDOR_SOCIONEXT is not set
-+# CONFIG_NET_VENDOR_STMICRO is not set
-+# CONFIG_NET_VENDOR_SUN is not set
-+# CONFIG_NET_VENDOR_SYNOPSYS is not set
-+# CONFIG_NET_VENDOR_TEHUTI is not set
-+# CONFIG_NET_VENDOR_TI is not set
-+# CONFIG_NET_VENDOR_VIA is not set
-+# CONFIG_NET_VENDOR_WIZNET is not set
-+# CONFIG_NET_VENDOR_XILINX is not set
-+CONFIG_INPUT_JOYDEV=y
-+CONFIG_INPUT_EVDEV=y
-+CONFIG_KEYBOARD_QT1070=m
-+CONFIG_KEYBOARD_GPIO=y
-+CONFIG_KEYBOARD_SAMSUNG=m
-+CONFIG_KEYBOARD_CROS_EC=m
-+CONFIG_KEYBOARD_BCM=y
-+CONFIG_MOUSE_PS2_ELANTECH=y
-+CONFIG_MOUSE_CYAPA=m
-+CONFIG_MOUSE_ELAN_I2C=y
-+CONFIG_INPUT_TOUCHSCREEN=y
-+CONFIG_TOUCHSCREEN_ADC=m
-+CONFIG_TOUCHSCREEN_ATMEL_MXT=m
-+CONFIG_TOUCHSCREEN_ELAN=m
-+CONFIG_TOUCHSCREEN_MMS114=m
-+CONFIG_TOUCHSCREEN_ST1232=m
-+CONFIG_TOUCHSCREEN_STMPE=y
-+CONFIG_INPUT_MISC=y
-+CONFIG_INPUT_MAX77693_HAPTIC=m
-+CONFIG_INPUT_MAX8997_HAPTIC=m
-+CONFIG_INPUT_AXP20X_PEK=m
-+CONFIG_INPUT_ADXL34X=m
-+CONFIG_INPUT_STPMIC1_ONKEY=y
-+CONFIG_SERIAL_8250=y
-+CONFIG_SERIAL_8250_CONSOLE=y
-+CONFIG_SERIAL_8250_EXTENDED=y
-+CONFIG_SERIAL_8250_SHARE_IRQ=y
-+CONFIG_SERIAL_8250_DW=y
-+CONFIG_SERIAL_OF_PLATFORM=y
-+CONFIG_SERIAL_DEV_BUS=y
-+CONFIG_VIRTIO_CONSOLE=y
-+CONFIG_HW_RANDOM=y
-+CONFIG_TCG_TPM=m
-+CONFIG_TCG_TIS_I2C_INFINEON=m
-+CONFIG_I2C_CHARDEV=y
-+CONFIG_I2C_MUX=y
-+CONFIG_I2C_SLAVE=y
-+CONFIG_I2C_SLAVE_EEPROM=y
-+CONFIG_PINCTRL_SINGLE=y
-+CONFIG_GPIOLIB=y
-+CONFIG_GPIO_GENERIC_PLATFORM=y
-+CONFIG_POWER_SUPPLY=y
-+CONFIG_SENSORS_IIO_HWMON=y
-+CONFIG_SENSORS_PWM_FAN=m
-+CONFIG_THERMAL=y
-+CONFIG_CPU_THERMAL=y
-+CONFIG_WATCHDOG=y
-+CONFIG_WATCHDOG_CORE=y
-+CONFIG_MFD_ACT8945A=y
-+CONFIG_MFD_AS3711=y
-+CONFIG_MFD_AS3722=y
-+CONFIG_MFD_ATMEL_FLEXCOM=y
-+CONFIG_MFD_ATMEL_HLCDC=m
-+CONFIG_MFD_BCM590XX=y
-+CONFIG_MFD_AXP20X_I2C=y
-+CONFIG_MFD_CROS_EC=m
-+CONFIG_MFD_CROS_EC_CHARDEV=m
-+CONFIG_MFD_DA9063=m
-+CONFIG_MFD_MAX14577=y
-+CONFIG_MFD_MAX77686=y
-+CONFIG_MFD_MAX77693=m
-+CONFIG_MFD_MAX8907=y
-+CONFIG_MFD_MAX8997=y
-+CONFIG_MFD_MAX8998=y
-+CONFIG_MFD_PM8XXX=y
-+CONFIG_MFD_RK808=y
-+CONFIG_MFD_RN5T618=y
-+CONFIG_MFD_SEC_CORE=y
-+CONFIG_ABX500_CORE=y
-+CONFIG_MFD_STMPE=y
-+CONFIG_MFD_SYSCON=y
-+CONFIG_MFD_PALMAS=y
-+CONFIG_MFD_TPS65090=y
-+CONFIG_MFD_TPS65217=y
-+CONFIG_MFD_TPS65218=y
-+CONFIG_MFD_TPS6586X=y
-+CONFIG_MFD_TPS65910=y
-+CONFIG_TWL4030_CORE=y
-+CONFIG_TWL4030_POWER=y
-+CONFIG_MFD_WM8994=m
-+CONFIG_MFD_STPMIC1=y
-+CONFIG_MFD_STMFX=y
-+CONFIG_REGULATOR=y
-+CONFIG_REGULATOR_FIXED_VOLTAGE=y
-+CONFIG_REGULATOR_PWM=y
-+CONFIG_MEDIA_SUPPORT=m
-+CONFIG_MEDIA_CAMERA_SUPPORT=y
-+CONFIG_MEDIA_CEC_SUPPORT=y
-+CONFIG_MEDIA_CONTROLLER=y
-+CONFIG_VIDEO_V4L2_SUBDEV_API=y
-+CONFIG_MEDIA_USB_SUPPORT=y
-+CONFIG_USB_VIDEO_CLASS=m
-+CONFIG_V4L_PLATFORM_DRIVERS=y
-+CONFIG_V4L_MEM2MEM_DRIVERS=y
-+CONFIG_V4L_TEST_DRIVERS=y
-+CONFIG_VIDEO_VIVID=m
-+CONFIG_CEC_PLATFORM_DRIVERS=y
-+# CONFIG_MEDIA_SUBDRV_AUTOSELECT is not set
-+CONFIG_DRM=y
-+CONFIG_DRM_PANEL_SIMPLE=y
-+CONFIG_DRM_PANEL_ORISETECH_OTM8009A=m
-+CONFIG_DRM_PANEL_RAYDIUM_RM68200=m
-+CONFIG_DRM_PANEL_SAMSUNG_S6E63J0X03=m
-+CONFIG_DRM_PANEL_SAMSUNG_S6E8AA0=m
-+CONFIG_DRM_DUMB_VGA_DAC=m
-+CONFIG_DRM_NXP_PTN3460=m
-+CONFIG_DRM_PARADE_PS8622=m
-+CONFIG_DRM_SII902X=m
-+CONFIG_DRM_SII9234=m
-+CONFIG_DRM_TOSHIBA_TC358764=m
-+CONFIG_DRM_I2C_ADV7511=m
-+CONFIG_DRM_I2C_ADV7511_AUDIO=y
-+CONFIG_DRM_PANFROST=m
-+CONFIG_DRM_LEGACY=y
-+CONFIG_FB_MODE_HELPERS=y
-+CONFIG_FB_EFI=y
-+CONFIG_FB_SIMPLE=y
-+CONFIG_LCD_PLATFORM=m
-+CONFIG_BACKLIGHT_CLASS_DEVICE=y
-+CONFIG_BACKLIGHT_PWM=y
-+CONFIG_BACKLIGHT_GPIO=y
-+CONFIG_FRAMEBUFFER_CONSOLE=y
-+CONFIG_FRAMEBUFFER_CONSOLE_ROTATION=y
-+CONFIG_SOUND=m
-+CONFIG_SND=m
-+CONFIG_SND_DYNAMIC_MINORS=y
-+CONFIG_SND_USB_AUDIO=m
-+CONFIG_SND_SOC=m
-+CONFIG_SND_SOC_FSL_SAI=m
-+CONFIG_SND_SIMPLE_CARD=m
-+CONFIG_USB=y
-+CONFIG_USB_OTG=y
-+CONFIG_USB_XHCI_HCD=y
-+CONFIG_USB_STORAGE=y
-+CONFIG_USB_UAS=y
-+CONFIG_USB_DWC3=y
-+# CONFIG_USB_DWC3_HAPS is not set
-+# CONFIG_USB_DWC3_OF_SIMPLE is not set
-+CONFIG_NOP_USB_XCEIV=y
-+CONFIG_USB_GPIO_VBUS=y
-+CONFIG_USB_ULPI=y
-+CONFIG_USB_GADGET=y
-+CONFIG_USB_SNP_UDC_PLAT=y
-+CONFIG_USB_BDC_UDC=y
-+CONFIG_USB_CONFIGFS=m
-+CONFIG_USB_CONFIGFS_SERIAL=y
-+CONFIG_USB_CONFIGFS_ACM=y
-+CONFIG_USB_CONFIGFS_OBEX=y
-+CONFIG_USB_CONFIGFS_NCM=y
-+CONFIG_USB_CONFIGFS_ECM=y
-+CONFIG_USB_CONFIGFS_ECM_SUBSET=y
-+CONFIG_USB_CONFIGFS_RNDIS=y
-+CONFIG_USB_CONFIGFS_EEM=y
-+CONFIG_USB_CONFIGFS_MASS_STORAGE=y
-+CONFIG_USB_CONFIGFS_F_LB_SS=y
-+CONFIG_USB_CONFIGFS_F_FS=y
-+CONFIG_USB_CONFIGFS_F_UAC1=y
-+CONFIG_USB_CONFIGFS_F_UAC1_LEGACY=y
-+CONFIG_USB_CONFIGFS_F_UAC2=y
-+CONFIG_USB_CONFIGFS_F_MIDI=y
-+CONFIG_USB_CONFIGFS_F_HID=y
-+CONFIG_USB_CONFIGFS_F_UVC=y
-+CONFIG_USB_CONFIGFS_F_PRINTER=y
-+CONFIG_USB_ETH=m
-+CONFIG_USB_ROLE_SWITCH=y
-+CONFIG_USB_ULPI_BUS=y
-+CONFIG_MMC=y
-+CONFIG_MMC_BLOCK_MINORS=16
-+CONFIG_MMC_SDHCI=y
-+CONFIG_MMC_SDHCI_PLTFM=y
-+CONFIG_MMC_CQHCI=y
-+CONFIG_EDAC=y
-+CONFIG_RTC_CLASS=y
-+CONFIG_DMADEVICES=y
-+CONFIG_SW_SYNC=y
-+CONFIG_UDMABUF=y
-+CONFIG_VIRTIO_PCI=y
-+CONFIG_VIRTIO_MMIO=y
-+CONFIG_STAGING=y
-+CONFIG_CROS_EC_I2C=m
-+CONFIG_REMOTEPROC=m
-+CONFIG_RPMSG_VIRTIO=m
-+CONFIG_MEMORY=y
-+CONFIG_IIO=y
-+CONFIG_IIO_BUFFER_HW_CONSUMER=m
-+CONFIG_IIO_KFIFO_BUF=y
-+CONFIG_IIO_SW_TRIGGER=y
-+CONFIG_IIO_CROS_EC_SENSORS_CORE=m
-+CONFIG_IIO_CROS_EC_SENSORS=m
-+CONFIG_IIO_HRTIMER_TRIGGER=y
-+CONFIG_PWM=y
-+CONFIG_RESET_CONTROLLER=y
-+CONFIG_GENERIC_PHY=y
-+CONFIG_EXT4_FS=y
-+CONFIG_AUTOFS4_FS=y
-+CONFIG_MSDOS_FS=y
-+CONFIG_VFAT_FS=y
-+CONFIG_NTFS_FS=y
-+CONFIG_TMPFS=y
-+CONFIG_TMPFS_POSIX_ACL=y
-+CONFIG_UBIFS_FS=y
-+CONFIG_SQUASHFS=y
-+CONFIG_SQUASHFS_LZO=y
-+CONFIG_SQUASHFS_XZ=y
-+CONFIG_PSTORE=y
-+CONFIG_PSTORE_CONSOLE=y
-+CONFIG_PSTORE_PMSG=y
-+CONFIG_PSTORE_RAM=y
-+CONFIG_NFS_FS=y
-+CONFIG_NFS_V3_ACL=y
-+CONFIG_NFS_V4=y
-+CONFIG_ROOT_NFS=y
-+CONFIG_NLS_CODEPAGE_437=y
-+CONFIG_NLS_ISO8859_1=y
-+CONFIG_NLS_UTF8=y
-+CONFIG_CRYPTO_USER=m
-+CONFIG_CRYPTO_SHA512=m
-+CONFIG_CRYPTO_USER_API_HASH=m
-+CONFIG_CRYPTO_USER_API_SKCIPHER=m
-+CONFIG_CRYPTO_USER_API_RNG=m
-+CONFIG_CRYPTO_USER_API_AEAD=m
-+CONFIG_DMA_CMA=y
-+CONFIG_CMA_SIZE_MBYTES=64
-+CONFIG_PRINTK_TIME=y
-+CONFIG_MAGIC_SYSRQ=y
+diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+index 2f821c5..ce5b45d 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
++++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+@@ -249,6 +249,25 @@ static bool has_rb_swapped(uint32_t format)
+ 	}
+ }
+ 
++static int vop_format_get_bpp(u32 format, u8 plane)
++{
++	const struct drm_format_info *info;
++
++	info = drm_format_info(format);
++	if (!info || plane >= info->num_planes)
++		return 0;
++
++	if (info->cpp[0] == 0) {
++		/* only support DRM_FORMAT_NVxx_10 now */
++		if (plane == 0)
++			return 10;
++		else
++			return 20;
++	}
++
++	return info->cpp[plane] * 8;
++}
++
+ static enum vop_data_format vop_convert_format(uint32_t format)
+ {
+ 	switch (format) {
+@@ -832,7 +851,8 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
+ 	dsp_sty = dest->y1 + crtc->mode.vtotal - crtc->mode.vsync_start;
+ 	dsp_st = dsp_sty << 16 | (dsp_stx & 0xffff);
+ 
+-	offset = (src->x1 >> 16) * fb->format->cpp[0];
++	offset = (src->x1 >> 16) *
++			vop_format_get_bpp(fb->format->format, 0) / 8;
+ 	offset += (src->y1 >> 16) * fb->pitches[0];
+ 	dma_addr = rk_obj->dma_addr + offset + fb->offsets[0];
+ 
+@@ -859,12 +879,12 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
+ 	if (is_yuv) {
+ 		int hsub = fb->format->hsub;
+ 		int vsub = fb->format->vsub;
+-		int bpp = fb->format->cpp[1];
++		int bpp = vop_format_get_bpp(fb->format->format, 1);
+ 
+ 		uv_obj = fb->obj[1];
+ 		rk_uv_obj = to_rockchip_obj(uv_obj);
+ 
+-		offset = (src->x1 >> 16) * bpp / hsub;
++		offset = (src->x1 >> 16) * bpp / 8 / hsub;
+ 		offset += (src->y1 >> 16) * fb->pitches[1] / vsub;
+ 
+ 		dma_addr = rk_uv_obj->dma_addr + offset + fb->offsets[1];
 -- 
-2.17.1
+2.7.4
+
+
 
 
 _______________________________________________
