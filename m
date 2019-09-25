@@ -2,75 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C558CBD98F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 10:08:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99CB1BD9A1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 10:13:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=T66TvYUxEhPRTK7K/BjI8y5ftgLiMnSqzZu1yOYy7Gw=; b=mq3cqloHywIFkXv+u+zaBm9Zlg
-	yuK4niLfje5u8xYgzwUANtjdfK14vWt/eupfuX/U3PCQdkFhqYry+bsgmtlXpyxa5cWD21NIyfStq
-	5SIJpCErEDn91FKAbFPTqUdRyxMpa0cm5LutH/+TUybw4oCoQsIv4/s2W1zCgkUdv8Mr14fdtgyKv
-	KuXEq5EPokh3KZs4y0hEffYnANDAg863WpB5QiEp0zGQy9NaVGOProD8aXQphrLyU7N12ZMJPim8r
-	LvK9DGpD3eECCG9S7YtTzcsLUSJOxjR96lrYaBukxzSBur/kjca8KvMq9blhH407atx9e72VqC8NU
-	C3gBrQFQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=bO8WXIRD2EmJ7n5DkG5CPVv2Ml736k6bsNcc0BDEcnM=; b=PBhGOpevqvkFLOB2BmRCw5XXr
+	HxAw4wPNp7Hyymn81sMEK2Lrwg8oQJ9gAfizfgJE+qq/VQJ4wlWbNK/y6Feqx5wgDLWHLf/cu3yCI
+	sAFdZ3GSuKXKUPYKAK6f1XovW9DoO/TNjkGqVyaf4O/MqM+H5cmMBBIlZ6cSA2n1PFJacY3xWzLts
+	th6jbGzn7a6tq24CGk0oXsoQLZcJazW7OdFzeyNChB211qYTkPNcaqyi2NKEpOdya3UORzwdGWzme
+	bv+BbCr5r7FQSH9I4xC6ta0uKTW6RsDyvQQGPGnmojIzWq4/4dyffQTIA3J0oTlxGnbYo0dj8kcFH
+	iBGiWWa+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iD2Lo-0005KJ-TW; Wed, 25 Sep 2019 08:08:41 +0000
-Received: from regular1.263xmail.com ([211.150.70.203])
+	id 1iD2QN-0007CD-AR; Wed, 25 Sep 2019 08:13:23 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iD2Kj-000599-P7; Wed, 25 Sep 2019 08:07:41 +0000
-Received: from hjc?rock-chips.com (unknown [192.168.167.42])
- by regular1.263xmail.com (Postfix) with ESMTP id 832DC43D;
- Wed, 25 Sep 2019 16:07:12 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P2645T139744972404480S1569398812082049_; 
- Wed, 25 Sep 2019 16:07:12 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <5d8ea79ab9f3f7b7a98cad262bf6bc0b>
-X-RL-SENDER: hjc@rock-chips.com
-X-SENDER: hjc@rock-chips.com
-X-LOGIN-NAME: hjc@rock-chips.com
-X-FST-TO: dri-devel@lists.freedesktop.org
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-From: Sandy Huang <hjc@rock-chips.com>
-To: dri-devel@lists.freedesktop.org, Sandy Huang <hjc@rock-chips.com>,
- =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>
-Subject: [PATCH 3/3] drm/rockchip: Add support 10bit yuv format
-Date: Wed, 25 Sep 2019 16:06:40 +0800
-Message-Id: <1569398801-92201-4-git-send-email-hjc@rock-chips.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1569398801-92201-1-git-send-email-hjc@rock-chips.com>
-References: <1569398801-92201-1-git-send-email-hjc@rock-chips.com>
+ id 1iD2Pp-0007Bo-H6
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 08:12:52 +0000
+Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id EF74175CD047DB4EC037;
+ Wed, 25 Sep 2019 16:12:44 +0800 (CST)
+Received: from [127.0.0.1] (10.133.216.73) by DGGEMS409-HUB.china.huawei.com
+ (10.3.19.209) with Microsoft SMTP Server id 14.3.439.0; Wed, 25 Sep 2019
+ 16:12:35 +0800
+Subject: Re: [RFC PATCH 01/12] linux-headers: import arm_sdei.h
+To: "Michael S. Tsirkin" <mst@redhat.com>
+References: <1569338511-3572-1-git-send-email-guoheyi@huawei.com>
+ <1569338511-3572-2-git-send-email-guoheyi@huawei.com>
+ <20190924113640-mutt-send-email-mst@kernel.org>
+From: Guoheyi <guoheyi@huawei.com>
+Message-ID: <f0096ac1-e7d4-78d2-9e8a-21a7f6f266ad@huawei.com>
+Date: Wed, 25 Sep 2019 16:12:33 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.1
+MIME-Version: 1.0
+In-Reply-To: <20190924113640-mutt-send-email-mst@kernel.org>
+X-Originating-IP: [10.133.216.73]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_010734_907567_7A98BDB4 
-X-CRM114-Status: GOOD (  11.10  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190925_011249_963705_E0877D11 
+X-CRM114-Status: GOOD (  12.58  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.203 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,94 +66,137 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Ayan.Halder@arm.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Peter Maydell <peter.maydell@linaro.org>, Marc Zyngier <marc.zyngier@arm.com>,
+ Cornelia Huck <cohuck@redhat.com>, qemu-devel@nongnu.org,
+ Dave Martin <Dave.Martin@arm.com>, qemu-arm@nongnu.org,
+ James Morse <james.morse@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
+ wanghaibin.wang@huawei.com, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support 10bit yuv format display for rockchip some socs,
-include:
-    RK3288/RK3228/RK3328/RK3368/RK3399
 
-Signed-off-by: Sandy Huang <hjc@rock-chips.com>
----
- drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 16 ++++++++++++++++
- drivers/gpu/drm/rockchip/rockchip_drm_vop.h |  1 +
- drivers/gpu/drm/rockchip/rockchip_vop_reg.c |  2 ++
- 3 files changed, 19 insertions(+)
 
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-index ce5b45d..9cb9fff 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-@@ -249,6 +249,21 @@ static bool has_rb_swapped(uint32_t format)
- 	}
- }
- 
-+static bool is_yuv_10bit(uint32_t format)
-+{
-+	switch (format) {
-+	case DRM_FORMAT_NV12_10:
-+	case DRM_FORMAT_NV21_10:
-+	case DRM_FORMAT_NV16_10:
-+	case DRM_FORMAT_NV61_10:
-+	case DRM_FORMAT_NV24_10:
-+	case DRM_FORMAT_NV42_10:
-+		return true;
-+	default:
-+		return false;
-+	}
-+}
-+
- static int vop_format_get_bpp(u32 format, u8 plane)
- {
- 	const struct drm_format_info *info;
-@@ -890,6 +905,7 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
- 		dma_addr = rk_uv_obj->dma_addr + offset + fb->offsets[1];
- 		VOP_WIN_SET(vop, win, uv_vir, DIV_ROUND_UP(fb->pitches[1], 4));
- 		VOP_WIN_SET(vop, win, uv_mst, dma_addr);
-+		VOP_WIN_SET(vop, win, fmt_10, is_yuv_10bit(fb->format->format));
- 
- 		for (i = 0; i < NUM_YUV2YUV_COEFFICIENTS; i++) {
- 			VOP_WIN_YUV2YUV_COEFFICIENT_SET(vop,
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
-index 2149a889..adc2b0b5 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
-@@ -133,6 +133,7 @@ struct vop_win_phy {
- 	struct vop_reg gate;
- 	struct vop_reg format;
- 	struct vop_reg rb_swap;
-+	struct vop_reg fmt_10;
- 	struct vop_reg act_info;
- 	struct vop_reg dsp_info;
- 	struct vop_reg dsp_st;
-diff --git a/drivers/gpu/drm/rockchip/rockchip_vop_reg.c b/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
-index d1494be..732e535 100644
---- a/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
-@@ -544,6 +544,7 @@ static const struct vop_win_phy rk3288_win01_data = {
- 	.nformats = ARRAY_SIZE(formats_win_full),
- 	.enable = VOP_REG(RK3288_WIN0_CTRL0, 0x1, 0),
- 	.format = VOP_REG(RK3288_WIN0_CTRL0, 0x7, 1),
-+	.fmt_10 = VOP_REG(RK3288_WIN0_CTRL0, 0x1, 4),
- 	.rb_swap = VOP_REG(RK3288_WIN0_CTRL0, 0x1, 12),
- 	.act_info = VOP_REG(RK3288_WIN0_ACT_INFO, 0x1fff1fff, 0),
- 	.dsp_info = VOP_REG(RK3288_WIN0_DSP_INFO, 0x0fff0fff, 0),
-@@ -674,6 +675,7 @@ static const struct vop_win_phy rk3368_win01_data = {
- 	.nformats = ARRAY_SIZE(formats_win_full),
- 	.enable = VOP_REG(RK3368_WIN0_CTRL0, 0x1, 0),
- 	.format = VOP_REG(RK3368_WIN0_CTRL0, 0x7, 1),
-+	.fmt_10 = VOP_REG(RK3368_WIN0_CTRL0, 0x1, 4),
- 	.rb_swap = VOP_REG(RK3368_WIN0_CTRL0, 0x1, 12),
- 	.x_mir_en = VOP_REG(RK3368_WIN0_CTRL0, 0x1, 21),
- 	.y_mir_en = VOP_REG(RK3368_WIN0_CTRL0, 0x1, 22),
--- 
-2.7.4
+On 2019/9/24 23:39, Michael S. Tsirkin wrote:
+> On Tue, Sep 24, 2019 at 11:21:40PM +0800, Heyi Guo wrote:
+>> Import Linux header file include/uapi/linux/arm_sdei.h from kernel
+>> v5.3 release.
+>>
+>> This is to prepare for qemu SDEI emulation.
+>>
+>> Signed-off-by: Heyi Guo <guoheyi@huawei.com>
+>> Cc: Peter Maydell <peter.maydell@linaro.org>
+>> Cc: Dave Martin <Dave.Martin@arm.com>
+>> Cc: Marc Zyngier <marc.zyngier@arm.com>
+>> Cc: Mark Rutland <mark.rutland@arm.com>
+>> Cc: James Morse <james.morse@arm.com>
+>> Cc: "Michael S. Tsirkin" <mst@redhat.com>
+>> Cc: Cornelia Huck <cohuck@redhat.com>
+>> Cc: Paolo Bonzini <pbonzini@redhat.com>
+> Some issues with this.  First linux-headers is for linux as a host.
+> This is for linux as a guest, so belongs in include/standard-headers.
+>
+> Second, please add to scripts/update-linux-headers.sh in a 1st patch,
+> then add the file in the second patch.
 
+Thanks; now I understand the differences. I'll do that in next version.
+
+HG
+
+>
+>
+>
+>> ---
+>>   linux-headers/linux/arm_sdei.h | 73 ++++++++++++++++++++++++++++++++++++++++++
+>>   1 file changed, 73 insertions(+)
+>>   create mode 100644 linux-headers/linux/arm_sdei.h
+>>
+>> diff --git a/linux-headers/linux/arm_sdei.h b/linux-headers/linux/arm_sdei.h
+>> new file mode 100644
+>> index 0000000..af0630b
+>> --- /dev/null
+>> +++ b/linux-headers/linux/arm_sdei.h
+>> @@ -0,0 +1,73 @@
+>> +/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
+>> +/* Copyright (C) 2017 Arm Ltd. */
+>> +#ifndef _UAPI_LINUX_ARM_SDEI_H
+>> +#define _UAPI_LINUX_ARM_SDEI_H
+>> +
+>> +#define SDEI_1_0_FN_BASE			0xC4000020
+>> +#define SDEI_1_0_MASK				0xFFFFFFE0
+>> +#define SDEI_1_0_FN(n)				(SDEI_1_0_FN_BASE + (n))
+>> +
+>> +#define SDEI_1_0_FN_SDEI_VERSION			SDEI_1_0_FN(0x00)
+>> +#define SDEI_1_0_FN_SDEI_EVENT_REGISTER			SDEI_1_0_FN(0x01)
+>> +#define SDEI_1_0_FN_SDEI_EVENT_ENABLE			SDEI_1_0_FN(0x02)
+>> +#define SDEI_1_0_FN_SDEI_EVENT_DISABLE			SDEI_1_0_FN(0x03)
+>> +#define SDEI_1_0_FN_SDEI_EVENT_CONTEXT			SDEI_1_0_FN(0x04)
+>> +#define SDEI_1_0_FN_SDEI_EVENT_COMPLETE			SDEI_1_0_FN(0x05)
+>> +#define SDEI_1_0_FN_SDEI_EVENT_COMPLETE_AND_RESUME	SDEI_1_0_FN(0x06)
+>> +#define SDEI_1_0_FN_SDEI_EVENT_UNREGISTER		SDEI_1_0_FN(0x07)
+>> +#define SDEI_1_0_FN_SDEI_EVENT_STATUS			SDEI_1_0_FN(0x08)
+>> +#define SDEI_1_0_FN_SDEI_EVENT_GET_INFO			SDEI_1_0_FN(0x09)
+>> +#define SDEI_1_0_FN_SDEI_EVENT_ROUTING_SET		SDEI_1_0_FN(0x0A)
+>> +#define SDEI_1_0_FN_SDEI_PE_MASK			SDEI_1_0_FN(0x0B)
+>> +#define SDEI_1_0_FN_SDEI_PE_UNMASK			SDEI_1_0_FN(0x0C)
+>> +#define SDEI_1_0_FN_SDEI_INTERRUPT_BIND			SDEI_1_0_FN(0x0D)
+>> +#define SDEI_1_0_FN_SDEI_INTERRUPT_RELEASE		SDEI_1_0_FN(0x0E)
+>> +#define SDEI_1_0_FN_SDEI_PRIVATE_RESET			SDEI_1_0_FN(0x11)
+>> +#define SDEI_1_0_FN_SDEI_SHARED_RESET			SDEI_1_0_FN(0x12)
+>> +
+>> +#define SDEI_VERSION_MAJOR_SHIFT			48
+>> +#define SDEI_VERSION_MAJOR_MASK				0x7fff
+>> +#define SDEI_VERSION_MINOR_SHIFT			32
+>> +#define SDEI_VERSION_MINOR_MASK				0xffff
+>> +#define SDEI_VERSION_VENDOR_SHIFT			0
+>> +#define SDEI_VERSION_VENDOR_MASK			0xffffffff
+>> +
+>> +#define SDEI_VERSION_MAJOR(x)	(x>>SDEI_VERSION_MAJOR_SHIFT & SDEI_VERSION_MAJOR_MASK)
+>> +#define SDEI_VERSION_MINOR(x)	(x>>SDEI_VERSION_MINOR_SHIFT & SDEI_VERSION_MINOR_MASK)
+>> +#define SDEI_VERSION_VENDOR(x)	(x>>SDEI_VERSION_VENDOR_SHIFT & SDEI_VERSION_VENDOR_MASK)
+>> +
+>> +/* SDEI return values */
+>> +#define SDEI_SUCCESS		0
+>> +#define SDEI_NOT_SUPPORTED	-1
+>> +#define SDEI_INVALID_PARAMETERS	-2
+>> +#define SDEI_DENIED		-3
+>> +#define SDEI_PENDING		-5
+>> +#define SDEI_OUT_OF_RESOURCE	-10
+>> +
+>> +/* EVENT_REGISTER flags */
+>> +#define SDEI_EVENT_REGISTER_RM_ANY	0
+>> +#define SDEI_EVENT_REGISTER_RM_PE	1
+>> +
+>> +/* EVENT_STATUS return value bits */
+>> +#define SDEI_EVENT_STATUS_RUNNING	2
+>> +#define SDEI_EVENT_STATUS_ENABLED	1
+>> +#define SDEI_EVENT_STATUS_REGISTERED	0
+>> +
+>> +/* EVENT_COMPLETE status values */
+>> +#define SDEI_EV_HANDLED	0
+>> +#define SDEI_EV_FAILED	1
+>> +
+>> +/* GET_INFO values */
+>> +#define SDEI_EVENT_INFO_EV_TYPE			0
+>> +#define SDEI_EVENT_INFO_EV_SIGNALED		1
+>> +#define SDEI_EVENT_INFO_EV_PRIORITY		2
+>> +#define SDEI_EVENT_INFO_EV_ROUTING_MODE		3
+>> +#define SDEI_EVENT_INFO_EV_ROUTING_AFF		4
+>> +
+>> +/* and their results */
+>> +#define SDEI_EVENT_TYPE_PRIVATE			0
+>> +#define SDEI_EVENT_TYPE_SHARED			1
+>> +#define SDEI_EVENT_PRIORITY_NORMAL		0
+>> +#define SDEI_EVENT_PRIORITY_CRITICAL		1
+>> +
+>> +#endif /* _UAPI_LINUX_ARM_SDEI_H */
+>> -- 
+>> 1.8.3.1
+> .
+>
 
 
 
