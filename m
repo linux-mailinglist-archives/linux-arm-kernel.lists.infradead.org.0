@@ -2,47 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6A45BE312
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 19:09:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08151BE317
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 19:09:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+pqk2QKwMFBG+Pi3FbfPsaKZrOXUXCs2vW7bwQUgcYY=; b=Cq7B6hf3YlLNcw
-	u/oHN/3tUgw5XJx9U9ep0gkP60eF7sUdmKu4XAihhCmouMRIMI4poROGqYHQEnXIa05iC/3m8SoXa
-	TPyyqjHS9cis4yg2v7yedH20vCHobie0TcTfQqA7B9FS/wwQK1PjHlUjQYSQ/cOgN11ElDkoQA01I
-	5wyl9MdPbs7M5IB4bJULY720vxQW5HGwCGfkjrcS3rMBaH4J422iyQor40xSzHJsIEB1g/KGOS83q
-	kp69qDd41Own0kqT/gURbdibeNetmXOIyaOLyDPbyX8W3aHpiHmrVKSWf7oUtAX7QYfw2TnD8gClm
-	p68G8M4xweKIPKlxkEnw==;
+	List-Owner; bh=Z8YiB3TbC4upTH2VSKBP2sPsj4dOUp1JwDVCKj933e8=; b=e/18e7qH9+1Y8y
+	D2jWixLT3SVgpshajf5Gq/sWbrYsiUmlnbtel1ae3uNgCrzGgXrQv4PEK4WGp/P7vFtLNDxIGbg4X
+	OIr/arq9fDyLNeQGf0Ykb0YOzz8kv/nPVceO0iQbcsHjMK83WkR1CWnRMMx7GvCq48VCi2tO+LbHH
+	1U31GXkuA1l2ImnNxszyGJLIA3pRVdZcIE7eLyZGK1+IrJ8tLSIiwE6RGfLCHfLf7crK7h22uo5f4
+	YgxQhzWIF6n0Zev4QbZlrPVFwiwQ7kh9YPm/pgeCuWZoDV7hKHcfoYkUXhUBMKuv964u1FV6EM2D2
+	/POx9h+YAepvHodfTf+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDAmo-000419-Bc; Wed, 25 Sep 2019 17:09:06 +0000
+	id 1iDAnE-0004Ia-NM; Wed, 25 Sep 2019 17:09:32 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDAmS-0003pH-UF
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 17:08:46 +0000
+ id 1iDAmy-0004HE-LX
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 17:09:18 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6799C1570;
- Wed, 25 Sep 2019 10:08:42 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 646543F694; Wed, 25 Sep 2019 10:08:41 -0700 (PDT)
-Date: Wed, 25 Sep 2019 18:08:39 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Nick Desaulniers <ndesaulniers@google.com>
-Subject: Re: [PATCH] arm64: Allow disabling of the compat vDSO
-Message-ID: <20190925170838.GK7042@arrakis.emea.arm.com>
-References: <20190925130926.50674-1-catalin.marinas@arm.com>
- <CAKwvOdn2Sf7aAt0zqUUqGY6nXg-C3be7An9amy4tfiNr_8ERJw@mail.gmail.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 849E11570;
+ Wed, 25 Sep 2019 10:09:13 -0700 (PDT)
+Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2A55C3F694;
+ Wed, 25 Sep 2019 10:09:12 -0700 (PDT)
+Date: Wed, 25 Sep 2019 18:09:01 +0100
+From: Andre Przywara <andre.przywara@arm.com>
+To: Peng Fan <peng.fan@nxp.com>
+Subject: Re: [PATCH V9 1/2] dt-bindings: mailbox: add binding doc for the
+ ARM SMC/HVC mailbox
+Message-ID: <20190925180901.11fe5165@donnerap.cambridge.arm.com>
+In-Reply-To: <1569377224-5755-2-git-send-email-peng.fan@nxp.com>
+References: <1569377224-5755-1-git-send-email-peng.fan@nxp.com>
+ <1569377224-5755-2-git-send-email-peng.fan@nxp.com>
+Organization: ARM
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKwvOdn2Sf7aAt0zqUUqGY6nXg-C3be7An9amy4tfiNr_8ERJw@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_100845_092903_CECA9B98 
-X-CRM114-Status: GOOD (  26.05  )
+X-CRM114-CacheID: sfid-20190925_100916_789484_4261AD64 
+X-CRM114-Status: GOOD (  25.34  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,93 +63,152 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- LKML <linux-kernel@vger.kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
+ "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 25, 2019 at 09:53:16AM -0700, Nick Desaulniers wrote:
-> On Wed, Sep 25, 2019 at 6:09 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> >
-> > The compat vDSO building requires a cross-compiler than produces AArch32
-> > binaries, defined via CONFIG_CROSS_COMPILE_COMPAT_VDSO or the
-> > CROSS_COMPILE_COMPAT environment variable. If none of these is defined,
-> > building the kernel always prints a warning as there is no way to
-> > deselect the compat vDSO.
-> >
-> > Add an arm64 Kconfig entry to allow the deselection of the compat vDSO.
-> > In addition, make it an EXPERT option, default n, until other issues
-> > with the compat vDSO are solved (64-bit only kernel headers included in
-> > user-space vDSO code, CC_IS_CLANG irrelevant to CROSS_COMPILE_COMPAT).
+On Wed, 25 Sep 2019 02:09:08 +0000
+Peng Fan <peng.fan@nxp.com> wrote:
+
+Hi,
+
+> From: Peng Fan <peng.fan@nxp.com>
 > 
-> CC_IS_CLANG might be because then CC can be reused with different
-> flags, rather than providing a different cross compiler binary via
-> config option.
+> The ARM SMC/HVC mailbox binding describes a firmware interface to trigger
+> actions in software layers running in the EL2 or EL3 exception levels.
+> The term "ARM" here relates to the SMC instruction as part of the ARM
+> instruction set, not as a standard endorsed by ARM Ltd.
 > 
-> >
-> > Fixes: bfe801ebe84f ("arm64: vdso: Enable vDSO compat support")
-> > Cc: Will Deacon <will@kernel.org>
-> > Cc: Vincenzo Frascino <vincenzo.frascino@arm.com>
-> > Cc: Thomas Gleixner <tglx@linutronix.de>
-> > Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+> ---
+>  .../devicetree/bindings/mailbox/arm-smc.yaml       | 96 ++++++++++++++++++++++
+>  1 file changed, 96 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/mailbox/arm-smc.yaml
 > 
-> Thanks for the patch.
-> Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
-> Link: https://github.com/ClangBuiltLinux/linux/issues/595
+> diff --git a/Documentation/devicetree/bindings/mailbox/arm-smc.yaml b/Documentation/devicetree/bindings/mailbox/arm-smc.yaml
+> new file mode 100644
+> index 000000000000..b061954d1678
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/mailbox/arm-smc.yaml
+> @@ -0,0 +1,96 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/mailbox/arm-smc.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: ARM SMC Mailbox Interface
+> +
+> +maintainers:
+> +  - Peng Fan <peng.fan@nxp.com>
+> +
+> +description: |
+> +  This mailbox uses the ARM smc (secure monitor call) or hvc (hypervisor
+> +  call) instruction to trigger a mailbox-connected activity in firmware,
+> +  executing on the very same core as the caller. The value of r0/w0/x0
+> +  the firmware returns after the smc call is delivered as a received
+> +  message to the mailbox framework, so synchronous communication can be
+> +  established. The exact meaning of the action the mailbox triggers as
+> +  well as the return value is defined by their users and is not subject
+> +  to this binding.
+> +
+> +  One example use case of this mailbox is the SCMI interface, which uses
+> +  shared memory to transfer commands and parameters, and a mailbox to
+> +  trigger a function call. This allows SoCs without a separate management
+> +  processor (or when such a processor is not available or used) to use
+> +  this standardized interface anyway.
+> +
+> +  This binding describes no hardware, but establishes a firmware interface.
+> +  Upon receiving an SMC using the described SMC function identifier, the
+> +  firmware is expected to trigger some mailbox connected functionality.
+> +  The communication follows the ARM SMC calling convention.
+> +  Firmware expects an SMC function identifier in r0 or w0. The supported
+> +  identifier are passed from consumers, or listed in the the arm,func-id
 
-This is just a temporary hiding of the issue, not a complete fix.
-Vincenzo will do the fix later on.
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+		This is now obsolete.
 
-> Overall, this work is important to Android; the ARMv8-A series of
-> mobile SoCs we see today have to support 32b and 64b (A32+A64?) for at
-> least a few more years; we would like gettimeofday() and friends to be
-> fast for 32b and 64b applications.
+The rest looks good to me, thanks for the changes!
 
-I agree, it just needs some tweaking and hopefully we get most of it
-fixed in 5.4.
+Reviewed-by: Andre Przywara <andre.przywara@arm.com>
 
-> > Suggestions for future improvements of the compat vDSO handling:
-> >
-> > - replace the CROSS_COMPILE_COMPAT prefix with a full COMPATCC; maybe
-> >   check that it indeed produces 32-bit code
-> >
-> > - check whether COMPATCC is clang or not rather than CC_IS_CLANG, which
-> >   only checks the native compiler
-> 
-> When cross compiling, IIUC CC_IS_CLANG is referring to CC which is the
-> cross compiler, which is different than HOSTCC which is the host
-> compiler.  HOSTCC is used mostly for things in scripts/ while CC is
-> used to compile a majority of the kernel in a cross compile.
+Cheers,
+Andre.
 
-We need the third compiler here for the compat vDSO (at least with gcc),
-COMPATCC. I'm tempted to just drop the CONFIG_CROSS_COMPILE_COMPAT_VDSO
-altogether and only rely on a COMPATCC. This way we can add
-COMPATCC_IS_CLANG etc. in the Kconfig checks directly.
+> +  property as described below. The firmware can return one value in
+> +  the first SMC result register, it is expected to be an error value,
+> +  which shall be propagated to the mailbox client.
+> +
+> +  Any core which supports the SMC or HVC instruction can be used, as long
+> +  as a firmware component running in EL3 or EL2 is handling these calls.
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - description:
+> +          For implementations using ARM SMC instruction.
+> +        const: arm,smc-mbox
+> +
+> +      - description:
+> +          For implementations using ARM HVC instruction.
+> +        const: arm,hvc-mbox
+> +
+> +  "#mbox-cells":
+> +    const: 0
+> +
+> +  arm,func-id:
+> +    description: |
+> +      An single 32-bit value specifying the function ID used by the mailbox.
+> +      The function ID follows the ARM SMC calling convention standard.
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +
+> +required:
+> +  - compatible
+> +  - "#mbox-cells"
+> +  - arm,func-id
+> +
+> +examples:
+> +  - |
+> +    sram@93f000 {
+> +      compatible = "mmio-sram";
+> +      reg = <0x0 0x93f000 0x0 0x1000>;
+> +      #address-cells = <1>;
+> +      #size-cells = <1>;
+> +      ranges = <0x0 0x93f000 0x1000>;
+> +
+> +      cpu_scp_lpri: scp-shmem@0 {
+> +        compatible = "arm,scmi-shmem";
+> +        reg = <0x0 0x200>;
+> +      };
+> +    };
+> +
+> +    smc_tx_mbox: tx_mbox {
+> +      #mbox-cells = <0>;
+> +      compatible = "arm,smc-mbox";
+> +      arm,func-id = <0xc20000fe>;
+> +    };
+> +
+> +    firmware {
+> +      scmi {
+> +        compatible = "arm,scmi";
+> +        mboxes = <&smc_tx_mbox>;
+> +        mbox-names = "tx";
+> +        shmem = <&cpu_scp_lpri>;
+> +      };
+> +    };
+> +
+> +...
 
-If clang can build both 32 and 64-bit with the same binary (just
-different options), we could maybe have COMPATCC default to CC and add a
-check on whether COMPATCC generates 32-bit binaries.
-
-> > - clean up the headers includes; vDSO should not include kernel-only
-> >   headers that may even contain code patched at run-time
-> 
-> This is a big one; Clang validates the inline asm constraints for
-> extended inline assembly, GCC does not for dead code.  So Clang chokes
-> on the inclusion of arm64 headers using extended inline assembly when
-> being compiled for arm-linux-gnueabi.
-
-Whether clang or gcc, I'd like this fixed anyway. At some point we may
-inadvertently rely on some code which is patched at boot time for the
-kernel code but not for the vDSO.
-
-Thanks.
-
--- 
-Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
