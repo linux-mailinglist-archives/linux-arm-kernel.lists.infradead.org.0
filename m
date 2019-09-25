@@ -2,55 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90224BE31A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 19:10:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C629ABE366
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 19:32:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xM5JNy2y2NrO0xYlBZEQMRssCWY9dE+6MBLdyDDGx2A=; b=WRfOYpW9pHG2r/
-	OGKpr45azHrqM2A+QpsL3WeHTx77ueUomxTd7T38LwHBzmnmFVKn7W8JUvtmI/bqnAonukWv0OUIe
-	EPHqmcKDjgRPNCJVOq1G84quLCoo73M1m+Jfq+CWMIWKnLoArWeS8RtblNN8MOi0sonX56nu2uPZu
-	hbKr5qEHF9RiB2oJhk9vCd3YbA3oBNgXF/HrXcZWaH9m16sBcG+E9AZhYkxH4vXgmGs5DB4hIL/HQ
-	sR7GuRSISbCGya0mwqtFXKBTIy6Bky69N9QR7pw3cBzKvZs12hUV0b5SDwpko0swuw1RW5aVvaJb6
-	IkPb6zuWPlsZcarO6duA==;
+	List-Owner; bh=VUvyFSEAW9eJo+N48697ldK5yxRObN/ySZFisW6Oohw=; b=ZFnDmu+A1Ow0DC
+	iYapONpia9snMZE6/+1nprQRxIY4ZfQEjlXuzBCgq+xyjRlXMmATrldCB8z6zNEbB+STcdghN/rsW
+	HeuovxhaGmUEsLWeoxxvk1C/0CU57hfDvkclFeqK75TTfVAaYDD9mR6+ejxaPX9pr1/j4EzrF8DMd
+	EGV+br3AEoVkLKll7d8HMloQFpWOE4Sp+UZqDkTwoSCGfh4MZhOCV5bRtxe5YDAlnFLNlMYh1YolA
+	WRYiW1Fy7M3do3nPxrdKadkpVrMFB/C+H54D9520spgeZ/zqQwOrWpUoSnjD6+l/xgVJVGzV4HF4B
+	ri+4UpXAZSc5h/qelt6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDAne-0004Xw-3N; Wed, 25 Sep 2019 17:09:58 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDAnO-0004X9-Om
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 17:09:44 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 58B191570;
- Wed, 25 Sep 2019 10:09:42 -0700 (PDT)
-Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 021EE3F694;
- Wed, 25 Sep 2019 10:09:40 -0700 (PDT)
-Date: Wed, 25 Sep 2019 18:09:38 +0100
-From: Andre Przywara <andre.przywara@arm.com>
-To: Peng Fan <peng.fan@nxp.com>
-Subject: Re: [PATCH V9 2/2] mailbox: introduce ARM SMC based mailbox
-Message-ID: <20190925180938.6f3609f4@donnerap.cambridge.arm.com>
-In-Reply-To: <1569377224-5755-3-git-send-email-peng.fan@nxp.com>
-References: <1569377224-5755-1-git-send-email-peng.fan@nxp.com>
- <1569377224-5755-3-git-send-email-peng.fan@nxp.com>
-Organization: ARM
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+	id 1iDB9A-00046L-8T; Wed, 25 Sep 2019 17:32:12 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iDB8x-00045c-Mj
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 17:32:01 +0000
+Received: by mail-pl1-x644.google.com with SMTP id f21so415699plj.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 25 Sep 2019 10:31:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=T9jMC9IG3snO17QWN/ztIxptE5ObHM9y3wrRE9rosy4=;
+ b=tJbPaZd8No6mBXlk39pF1VnwAu+VU+36E+RQXXRob7D+tkC0JFCvg53yEFwVxhmUEF
+ 72Al+pifPLwC41lE4kODfF/ZLM6wSYuUju2VMmGnWDo6bcmUC3QmbCQgnAYDgHyedmTI
+ 7I7QHt8zkAUw3wIZ6rfolSCfy1Lkwenw90lBcIG9bclVeo8S1bDtL1m93U6IXeJiJKck
+ jc5WOzLG0q4u5FguEubFJZjXfxcTVrVaFU2u3nJEXEWRR6U1rFvIZEJiEygm9DoEzYCq
+ zCo6UgPplDK4KQ9Ald4Xk3/IXFQJXWCmIpUKwx0DTcx8X/YwLL1dmqLm3OE309n2NeLm
+ +yAQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=T9jMC9IG3snO17QWN/ztIxptE5ObHM9y3wrRE9rosy4=;
+ b=FqVSXn/ZcMlEH4ZpzlfrDpucIF+cepH7A3SsRN6tmQJx7Qy632ytSXq2eKoHKuh65x
+ tYmTBMs9+W971Sd5K4o/ApcocVreJKJI6JqOkLk0kq7aIlNzyHuIHTArh2PoyLFGcY4X
+ so8TdXVNtnnMlBC9DsAZQANWq9oNoVbIbGDYSa9DEHAwjih5Ny7ovlNXYoB8h4gwMzeb
+ 00rOHO5oieiHwyIlon27A0fVnLVcjCRUj407HSm3OdDJm3XgN3c+8yLjE+ebQEsKnfSw
+ tHwpKgtbrwBnjQ12vNqwy8URvFnET/K7LHhJ/VsV9e5egGB6QI5wynk4/DdOWADmcjhY
+ 44WA==
+X-Gm-Message-State: APjAAAXIo6Tc98og7NvcNSq+IF7OAqTLZwQCAEzHCahltX3IuegNodTY
+ 8QxLjfj5TyuMx0mmjl2PoyC9U+6HdYAfw7ZMnA5I4g==
+X-Google-Smtp-Source: APXvYqyhIESqzzm+gg0yP7ezEx19FYcGL0tK4r8blzfA2HJBIuYhPZv3aVEEJ1ViytNwQYWogBOpkjL73cQ/l/t7hcE=
+X-Received: by 2002:a17:902:8484:: with SMTP id
+ c4mr10148671plo.223.1569432717179; 
+ Wed, 25 Sep 2019 10:31:57 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190925130926.50674-1-catalin.marinas@arm.com>
+ <CAKwvOdn2Sf7aAt0zqUUqGY6nXg-C3be7An9amy4tfiNr_8ERJw@mail.gmail.com>
+ <20190925170838.GK7042@arrakis.emea.arm.com>
+In-Reply-To: <20190925170838.GK7042@arrakis.emea.arm.com>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Wed, 25 Sep 2019 10:31:45 -0700
+Message-ID: <CAKwvOd=GcF0Tv2-h0LNMvCzx+tm5skKW1J7P=NTf8xYbmPiOPw@mail.gmail.com>
+Subject: Re: [PATCH] arm64: Allow disabling of the compat vDSO
+To: Catalin Marinas <catalin.marinas@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_100942_891739_79B7B2C2 
-X-CRM114-Status: GOOD (  24.91  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190925_103159_768712_DD7C8543 
+X-CRM114-Status: GOOD (  17.82  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,294 +99,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ LKML <linux-kernel@vger.kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 25 Sep 2019 02:09:11 +0000
-Peng Fan <peng.fan@nxp.com> wrote:
+On Wed, Sep 25, 2019 at 10:08 AM Catalin Marinas
+<catalin.marinas@arm.com> wrote:
+>
+> This is just a temporary hiding of the issue, not a complete fix.
 
-Hi,
+Yep.
 
-> From: Peng Fan <peng.fan@nxp.com>
-> 
-> This mailbox driver implements a mailbox which signals transmitted data
-> via an ARM smc (secure monitor call) instruction. The mailbox receiver
-> is implemented in firmware and can synchronously return data when it
-> returns execution to the non-secure world again.
-> An asynchronous receive path is not implemented.
-> This allows the usage of a mailbox to trigger firmware actions on SoCs
-> which either don't have a separate management processor or on which such
-> a core is not available. A user of this mailbox could be the SCP
-> interface.
-> 
-> Modified from Andre Przywara's v2 patch
-> https://lore.kernel.org/patchwork/patch/812999/
-> 
-> Cc: Andre Przywara <andre.przywara@arm.com>
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> Vincenzo will do the fix later on.
 
-Many thanks for the changes, that looks good to me now!
+Appreciated, I'm happy to help discuss, review, and test.
 
-One tiny thing below, but anyway:
+> > > - check whether COMPATCC is clang or not rather than CC_IS_CLANG, which
+> > >   only checks the native compiler
+> >
+> > When cross compiling, IIUC CC_IS_CLANG is referring to CC which is the
+> > cross compiler, which is different than HOSTCC which is the host
+> > compiler.  HOSTCC is used mostly for things in scripts/ while CC is
+> > used to compile a majority of the kernel in a cross compile.
+>
+> We need the third compiler here for the compat vDSO (at least with gcc),
+> COMPATCC. I'm tempted to just drop the CONFIG_CROSS_COMPILE_COMPAT_VDSO
+> altogether and only rely on a COMPATCC. This way we can add
+> COMPATCC_IS_CLANG etc. in the Kconfig checks directly.
 
-Reviewed-by: Andre Przywara <andre.przywara@arm.com>
+Oh, man, yeah 3 compilers in that case:
+1. HOSTCC
+2. CC
+3. COMPATCC
 
-> ---
->  drivers/mailbox/Kconfig                |   7 ++
->  drivers/mailbox/Makefile               |   2 +
->  drivers/mailbox/arm-smc-mailbox.c      | 167 +++++++++++++++++++++++++++++++++
->  include/linux/mailbox/arm-smccc-mbox.h |  20 ++++
->  4 files changed, 196 insertions(+)
->  create mode 100644 drivers/mailbox/arm-smc-mailbox.c
->  create mode 100644 include/linux/mailbox/arm-smccc-mbox.h
-> 
-> diff --git a/drivers/mailbox/Kconfig b/drivers/mailbox/Kconfig
-> index ab4eb750bbdd..7707ee26251a 100644
-> --- a/drivers/mailbox/Kconfig
-> +++ b/drivers/mailbox/Kconfig
-> @@ -16,6 +16,13 @@ config ARM_MHU
->  	  The controller has 3 mailbox channels, the last of which can be
->  	  used in Secure mode only.
->  
-> +config ARM_SMC_MBOX
-> +	tristate "Generic ARM smc mailbox"
-> +	depends on OF && HAVE_ARM_SMCCC
-> +	help
-> +	  Generic mailbox driver which uses ARM smc calls to call into
-> +	  firmware for triggering mailboxes.
-> +
->  config IMX_MBOX
->  	tristate "i.MX Mailbox"
->  	depends on ARCH_MXC || COMPILE_TEST
-> diff --git a/drivers/mailbox/Makefile b/drivers/mailbox/Makefile
-> index c22fad6f696b..93918a84c91b 100644
-> --- a/drivers/mailbox/Makefile
-> +++ b/drivers/mailbox/Makefile
-> @@ -7,6 +7,8 @@ obj-$(CONFIG_MAILBOX_TEST)	+= mailbox-test.o
->  
->  obj-$(CONFIG_ARM_MHU)	+= arm_mhu.o
->  
-> +obj-$(CONFIG_ARM_SMC_MBOX)	+= arm-smc-mailbox.o
-> +
->  obj-$(CONFIG_IMX_MBOX)	+= imx-mailbox.o
->  
->  obj-$(CONFIG_ARMADA_37XX_RWTM_MBOX)	+= armada-37xx-rwtm-mailbox.o
-> diff --git a/drivers/mailbox/arm-smc-mailbox.c b/drivers/mailbox/arm-smc-mailbox.c
-> new file mode 100644
-> index 000000000000..6f0b5fd6ad1b
-> --- /dev/null
-> +++ b/drivers/mailbox/arm-smc-mailbox.c
-> @@ -0,0 +1,167 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (C) 2016,2017 ARM Ltd.
-> + * Copyright 2019 NXP
-> + */
-> +
-> +#include <linux/arm-smccc.h>
-> +#include <linux/device.h>
-> +#include <linux/kernel.h>
-> +#include <linux/interrupt.h>
+>
+> If clang can build both 32 and 64-bit with the same binary (just
+> different options), we could maybe have COMPATCC default to CC and add a
+> check on whether COMPATCC generates 32-bit binaries.
 
-We don't need this include anymore.
+Cross compilation work differently between GCC and Clang from a
+developers perspective. In GCC, at ./configure time you select which
+architecture you'd like to cross compile for, and you get one binary
+that targets one architecture.  You get a nice compiler that can do
+mostly static dispatch at the cost of needing multiple binaries in
+admittedly rare scenarios like the one we have here.  Clang defaults
+to all backends enabled when invoking cmake (though there are options
+to enable certain backends; Sony for instance enables only x86_64 for
+their PS4 SDK (and thus I break their build frequently with my arm64
+unit tests)).
 
-Cheers,
-Andre.
+Clang can do all of the above with one binary.  The codebase makes
+heavy use of OOP+virtual dispatch to run ISA specific and general code
+transformations (virtual dispatch is slower than static dispatch, but
+relative to what the compiler is actually doing, I suspect the effects
+are minimal. Folks are also heavily invested in researching
+"devirtualization").  With one clang binary, I can do:
 
-> +#include <linux/mailbox_controller.h>
-> +#include <linux/mailbox/arm-smccc-mbox.h>
-> +#include <linux/module.h>
-> +#include <linux/platform_device.h>
-> +
-> +typedef unsigned long (smc_mbox_fn)(unsigned int, unsigned long,
-> +				    unsigned long, unsigned long,
-> +				    unsigned long, unsigned long,
-> +				    unsigned long);
-> +
-> +struct arm_smc_chan_data {
-> +	unsigned int function_id;
-> +	smc_mbox_fn *invoke_smc_mbox_fn;
-> +};
-> +
-> +static int arm_smc_send_data(struct mbox_chan *link, void *data)
-> +{
-> +	struct arm_smc_chan_data *chan_data = link->con_priv;
-> +	struct arm_smccc_mbox_cmd *cmd = data;
-> +	unsigned long ret;
-> +
-> +	if (ARM_SMCCC_IS_64(chan_data->function_id)) {
-> +		ret = chan_data->invoke_smc_mbox_fn(chan_data->function_id,
-> +						    cmd->args_smccc64[0],
-> +						    cmd->args_smccc64[1],
-> +						    cmd->args_smccc64[2],
-> +						    cmd->args_smccc64[3],
-> +						    cmd->args_smccc64[4],
-> +						    cmd->args_smccc64[5]);
-> +	} else {
-> +		ret = chan_data->invoke_smc_mbox_fn(chan_data->function_id,
-> +						    cmd->args_smccc32[0],
-> +						    cmd->args_smccc32[1],
-> +						    cmd->args_smccc32[2],
-> +						    cmd->args_smccc32[3],
-> +						    cmd->args_smccc32[4],
-> +						    cmd->args_smccc32[5]);
-> +	}
-> +
-> +	mbox_chan_received_data(link, (void *)ret);
-> +
-> +	return 0;
-> +}
-> +
-> +static unsigned long __invoke_fn_hvc(unsigned int function_id,
-> +				     unsigned long arg0, unsigned long arg1,
-> +				     unsigned long arg2, unsigned long arg3,
-> +				     unsigned long arg4, unsigned long arg5)
-> +{
-> +	struct arm_smccc_res res;
-> +
-> +	arm_smccc_hvc(function_id, arg0, arg1, arg2, arg3, arg4,
-> +		      arg5, 0, &res);
-> +	return res.a0;
-> +}
-> +
-> +static unsigned long __invoke_fn_smc(unsigned int function_id,
-> +				     unsigned long arg0, unsigned long arg1,
-> +				     unsigned long arg2, unsigned long arg3,
-> +				     unsigned long arg4, unsigned long arg5)
-> +{
-> +	struct arm_smccc_res res;
-> +
-> +	arm_smccc_smc(function_id, arg0, arg1, arg2, arg3, arg4,
-> +		      arg5, 0, &res);
-> +	return res.a0;
-> +}
-> +
-> +static const struct mbox_chan_ops arm_smc_mbox_chan_ops = {
-> +	.send_data	= arm_smc_send_data,
-> +};
-> +
-> +static struct mbox_chan *
-> +arm_smc_mbox_of_xlate(struct mbox_controller *mbox,
-> +		      const struct of_phandle_args *sp)
-> +{
-> +	return mbox->chans;
-> +}
-> +
-> +static int arm_smc_mbox_probe(struct platform_device *pdev)
-> +{
-> +	struct device *dev = &pdev->dev;
-> +	struct mbox_controller *mbox;
-> +	struct arm_smc_chan_data *chan_data;
-> +	int ret;
-> +
-> +	mbox = devm_kzalloc(dev, sizeof(*mbox), GFP_KERNEL);
-> +	if (!mbox)
-> +		return -ENOMEM;
-> +
-> +	mbox->of_xlate = arm_smc_mbox_of_xlate;
-> +	mbox->num_chans = 1;
-> +	mbox->chans = devm_kzalloc(dev, sizeof(*mbox->chans), GFP_KERNEL);
-> +	if (!mbox->chans)
-> +		return -ENOMEM;
-> +
-> +	chan_data = devm_kzalloc(dev, sizeof(*chan_data), GFP_KERNEL);
-> +	if (!chan_data)
-> +		return -ENOMEM;
-> +
-> +	ret = of_property_read_u32(dev->of_node, "arm,func-id",
-> +				   &chan_data->function_id);
-> +	if (ret)
-> +		return ret;
-> +
-> +	if (of_device_is_compatible(dev->of_node, "arm,smc-mbox"))
-> +		chan_data->invoke_smc_mbox_fn = __invoke_fn_smc;
-> +	else
-> +		chan_data->invoke_smc_mbox_fn = __invoke_fn_hvc;
-> +
-> +
-> +	mbox->chans->con_priv = chan_data;
-> +
-> +	mbox->txdone_poll = false;
-> +	mbox->txdone_irq = false;
-> +	mbox->ops = &arm_smc_mbox_chan_ops;
-> +	mbox->dev = dev;
-> +
-> +	platform_set_drvdata(pdev, mbox);
-> +
-> +	ret = devm_mbox_controller_register(dev, mbox);
-> +	if (ret)
-> +		return ret;
-> +
-> +	dev_info(dev, "ARM SMC mailbox enabled.\n");
-> +
-> +	return ret;
-> +}
-> +
-> +static int arm_smc_mbox_remove(struct platform_device *pdev)
-> +{
-> +	struct mbox_controller *mbox = platform_get_drvdata(pdev);
-> +
-> +	mbox_controller_unregister(mbox);
-> +	return 0;
-> +}
-> +
-> +static const struct of_device_id arm_smc_mbox_of_match[] = {
-> +	{ .compatible = "arm,smc-mbox", },
-> +	{ .compatible = "arm,hvc-mbox", },
-> +	{},
-> +};
-> +MODULE_DEVICE_TABLE(of, arm_smc_mbox_of_match);
-> +
-> +static struct platform_driver arm_smc_mbox_driver = {
-> +	.driver = {
-> +		.name = "arm-smc-mbox",
-> +		.of_match_table = arm_smc_mbox_of_match,
-> +	},
-> +	.probe		= arm_smc_mbox_probe,
-> +	.remove		= arm_smc_mbox_remove,
-> +};
-> +module_platform_driver(arm_smc_mbox_driver);
-> +
-> +MODULE_AUTHOR("Peng Fan <peng.fan@nxp.com>");
-> +MODULE_DESCRIPTION("Generic ARM smc mailbox driver");
-> +MODULE_LICENSE("GPL v2");
-> diff --git a/include/linux/mailbox/arm-smccc-mbox.h b/include/linux/mailbox/arm-smccc-mbox.h
-> new file mode 100644
-> index 000000000000..d35fb89a77f5
-> --- /dev/null
-> +++ b/include/linux/mailbox/arm-smccc-mbox.h
-> @@ -0,0 +1,20 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +
-> +#ifndef _LINUX_ARM_SMCCC_MBOX_H_
-> +#define _LINUX_ARM_SMCCC_MBOX_H_
-> +
-> +#include <linux/types.h>
-> +
-> +/**
-> + * struct arm_smccc_mbox_cmd - ARM SMCCC message structure
-> + * @args_smccc32/64:	actual usage of registers is up to the protocol
-> + *			(within the SMCCC limits)
-> + */
-> +struct arm_smccc_mbox_cmd {
-> +	union {
-> +		u32 args_smccc32[6];
-> +		u64 args_smccc64[6];
-> +	};
-> +};
-> +
-> +#endif /* _LINUX_ARM_SMCCC_MBOX_H_ */
+# implicitly uses the host's ISA, for me that's x86_64-linux-gnu
+$ clang foo.c
+$ clang -target aarch64-linux-gnu foo.c
+$ clang -target arm-linux-gnueabi foo.c
 
+Admittedly, it's not as simple for the kernel's case; the top level
+Makefile sets some flags to support invoking Clang from a non-standard
+location, and telling it where to find binutils because we can't
+assemble the kernel with LLVM's substitute for GAS).
+-- 
+Thanks,
+~Nick Desaulniers
 
 _______________________________________________
 linux-arm-kernel mailing list
