@@ -2,115 +2,130 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 158E2BD64D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 04:10:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73A4DBD653
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 04:11:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t1vSD3P65AZ+L3cHj04YjLu/oraklUTMl7IJrE6kwus=; b=mq3CBP2dxsSJ2G
-	89wz1DfKlSQ5hrTSHsT7KwlwFVjMoIWxAWKsC4pdb3Csw7nuVLvscWjkVFA8aWIFbrFG4P1ITVNAi
-	w/8TG3bt1neo4AoWl9GmJxBw+QUtgaFCi+kZIGpjH6KTCpqp9qW6ZUKPOclx3KLxPjkjneF7CcoVm
-	+q0LoUXe15kAV67IFg1In/yF4fUTWLi+Z9uLxcwJJzqjgHtW5JYbWGP5xj6VqJTZyc57iBWTI0FDF
-	O50Ro+EyiI2wCc8iU7wuxcA8ryB7BydvVeWTWh11PuKhLASqGfDa863QW5JzP7Mbfs8IjC3lgR946
-	JlT/U+K/RrRRhtHx71FQ==;
+	List-Owner; bh=lF6woaAKU6fs+lCBODQ1hAkQHG8dENqdNoXCP9SvpJ8=; b=rQ6cTLOkuxOaAo
+	S6fuBdqp9Q7Nkzg/G0Qx9Nl21T3asLMuPbJnVkv3IUrtNcpun6p2LdeRtxyqzaWRPvMmOgSUNg9Ny
+	YZRiOakVq/Di5FgSwm0qEvcLWM9xwThL8vEQ8vs5wYK0TSirn+q86V1XRolqGffJKg0aaOKIsA4rC
+	W1hHp1vvRjhpY+C9gjzlxJ6OGOA8OZSgp9Lo0+TrUKL5cVaLdU4hcTrNb4H66hsS/cKsNtURyklPc
+	hpnvhk3HKnsekXmbaJFFARN/zdYQK1p8/56EHN/KdAybqF5e2E9goxdcr0CJoR0dL2V5kKGLdlokN
+	qj67UNLINrdHG0qEwrRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCwkf-00086p-Uj; Wed, 25 Sep 2019 02:09:58 +0000
-Received: from mail-eopbgr50056.outbound.protection.outlook.com ([40.107.5.56]
- helo=EUR03-VE1-obe.outbound.protection.outlook.com)
+	id 1iCwmF-0001Sw-DV; Wed, 25 Sep 2019 02:11:35 +0000
+Received: from mailout2.samsung.com ([203.254.224.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCwjx-0007ek-H1
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 02:09:15 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=UgPFqyUJlgdwoqv9rLPvHPlil/ZKH9Hkr+xGRnwBJ86/UImRnl2O/uCmIYIla17XYBeRRZUbVbHlv3Yfndriv9VC+18oLmq1UmsPvqL5IlcE5TCda/V+QRwsq4+0sm2cpZug07O9nAww/rzefT5Rybzc1+RmOr/fmkH2BDRG1Fb3UsRKtPSS0tBRYOvbEyJkwbjaZGFJaSLcqlr1Vi0RFDK/2zNCgXS+5aww7euh+cOFIWN52Jqx43RyOXQhN2hDTh0jTMUwsRvw2DzzMKPheqGGo6WipwS1AKjDJrdPxL2qKLaAd5/jmbHun0WgpckZajVkCF0+0GaSV90kgId9uQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zRZDNMKXjQ0UPKE7WIBqw9OLRKXAwRYqivA6GpCvmLc=;
- b=ge8Z6RQDMf1G/fpcQQCrl7h1MKLUZPAujqdG05Sbb1nZlpWkYkhGnCj6wCt7cFbhJe7R2bn4Nac5Rz6rP/Or+Dc3l2ivDg0VpMak3c9dj7m0lcvT/3Nm3pbQWf73xP1AyS0QH9hgBkijmidZcTW9dHAKhSY0J/HLroFCxKZXheF0JsCZX5RArBkXwDs4+3rWQGERcefAomFURBcroCd9b/ISfBwJWQmiwN4cRKgWl6qKF78s5vFjhg7ebKFfeyrLR1HZT6zOkSV46FcUTf6BqULdIJMp63W/G76CF8IWAJ81IeUHQODcZLOAOuCzSWqBaugMPRopBC5gEICF8WKCIQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zRZDNMKXjQ0UPKE7WIBqw9OLRKXAwRYqivA6GpCvmLc=;
- b=GkJCwQl6G1Jb6YJa/oRSNWWv80Yvy8lJXnadh9S12PaiHbhFyt0vlOBUzXyQtbTfB3SF5nqkZGo8VxMkPgZ7yOZYxBZhScyQ4wfpWUObbhTX/OrTkuc0Pt9c+I6LAUehpxFka+U13X2ceI4yHw1zfPbYtTAQwI8nRFZqLAUUnVQ=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB4451.eurprd04.prod.outlook.com (52.135.149.12) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2284.25; Wed, 25 Sep 2019 02:09:11 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::6ca2:ec08:2b37:8ab8]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::6ca2:ec08:2b37:8ab8%6]) with mapi id 15.20.2284.023; Wed, 25 Sep 2019
- 02:09:11 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
- <mark.rutland@arm.com>, "jassisinghbrar@gmail.com"
- <jassisinghbrar@gmail.com>, "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "andre.przywara@arm.com" <andre.przywara@arm.com>, "f.fainelli@gmail.com"
- <f.fainelli@gmail.com>
-Subject: [PATCH V9 2/2] mailbox: introduce ARM SMC based mailbox
-Thread-Topic: [PATCH V9 2/2] mailbox: introduce ARM SMC based mailbox
-Thread-Index: AQHVc0Y4wdHLx7HssEii123ZZ3l8/w==
-Date: Wed, 25 Sep 2019 02:09:11 +0000
-Message-ID: <1569377224-5755-3-git-send-email-peng.fan@nxp.com>
-References: <1569377224-5755-1-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1569377224-5755-1-git-send-email-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK0PR03CA0041.apcprd03.prod.outlook.com
- (2603:1096:203:2f::29) To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: b634eece-d37c-41fe-c925-08d7415d5b38
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600167)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:AM0PR04MB4451; 
-x-ms-traffictypediagnostic: AM0PR04MB4451:|AM0PR04MB4451:
-x-ms-exchange-purlcount: 1
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB44517C02C8A9052DD485ECBF88870@AM0PR04MB4451.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7691;
-x-forefront-prvs: 01713B2841
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(366004)(396003)(136003)(39860400002)(346002)(189003)(199004)(8676002)(2501003)(66446008)(6116002)(66946007)(6512007)(6306002)(102836004)(6436002)(66476007)(64756008)(26005)(186003)(86362001)(44832011)(386003)(6506007)(54906003)(76176011)(66556008)(486006)(316002)(8936002)(2616005)(446003)(11346002)(476003)(25786009)(7736002)(256004)(15650500001)(305945005)(99286004)(66066001)(14454004)(71200400001)(50226002)(81166006)(81156014)(110136005)(3846002)(478600001)(2906002)(52116002)(966005)(2201001)(36756003)(5660300002)(71190400001)(4326008)(6486002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4451;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: Z5YTnrCM8zPtFmEcDdY0/bQitb3gDp+2IvqM6GLRdopREITQnIR8BxcEPvRLgp8VgVQkf6ytg5/H83ofYgE2rwS5flaNznL38jN3pnW1u5Nj3CtcAMqjTxE8Va+STQDJR705BE3UMOafcIAe9UbPvHyNqNvCigXEpxKmx5oki7aBglk+Rbc79Vyk4Ga/z62mSIv8Uggp9AmCIr9GCDUhYfbhHEcNJ/SfPwyyfYum+J/TWiIsFxOUzMQJ5VzL7ewITvqJmIAvaDKmhzboXno+pThDHkFbxBPiqDuNX18cOZb31+U2lbKuEh59ykK2/RT61vGJoiC4Zn4/PsSl1WCHQA3b5vR0PkfY2R5WvVZ56C3JRFjstvw1vbHxg6FzDm1yCnS0o9m5w3/ybcWMesNljsVsO8+GvlDOJjnt8RR/Y+Qfab5ObjJ5m0WKgyIZiXlPeQqAzyO7xFocAxlGFktiVA==
+ id 1iCwm0-0001SS-LB
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 02:11:23 +0000
+Received: from epcas1p3.samsung.com (unknown [182.195.41.47])
+ by mailout2.samsung.com (KnoxPortal) with ESMTP id
+ 20190925021117epoutp02379d43934aeca6eb0973ea87a8793121~HjIAl-Spp2990829908epoutp02T
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 25 Sep 2019 02:11:17 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com
+ 20190925021117epoutp02379d43934aeca6eb0973ea87a8793121~HjIAl-Spp2990829908epoutp02T
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1569377477;
+ bh=VDVXq7IxSweeNsC/J6QvU1m/j6KrjZrXRBglDbAyZxI=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=Wsm1gMXHqcfhP518caymH5muq11OqQTmvX2T5Qk5Cm5eLn8uM5JZkgg0kAtsANTXt
+ ANpwnGc8YK7cou57OcOl47MzhANhXN+ClYvjk8266GjjDztBfNLYxOrcQhkI8uq7Fl
+ P8LOVIDf+ascU8bZBnFGxCCUQPSLJ0uxkB/fn44k=
+Received: from epsnrtp6.localdomain (unknown [182.195.42.167]) by
+ epcas1p4.samsung.com (KnoxPortal) with ESMTP id
+ 20190925021116epcas1p4d00682476f01f11b0402276f59af2887~HjIAEzIaR2206122061epcas1p4C;
+ Wed, 25 Sep 2019 02:11:16 +0000 (GMT)
+Received: from epsmges1p4.samsung.com (unknown [182.195.40.157]) by
+ epsnrtp6.localdomain (Postfix) with ESMTP id 46dM41633rzMqYkk; Wed, 25 Sep
+ 2019 02:11:13 +0000 (GMT)
+Received: from epcas1p3.samsung.com ( [182.195.41.47]) by
+ epsmges1p4.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 2A.63.04224.1CCCA8D5; Wed, 25 Sep 2019 11:11:13 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+ epcas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190925021113epcas1p2ac23b18f9d1285b6af984657183c952e~HjH9En7D60134301343epcas1p24;
+ Wed, 25 Sep 2019 02:11:13 +0000 (GMT)
+Received: from epsmgms1p2new.samsung.com (unknown [182.195.42.42]) by
+ epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190925021113epsmtrp128f8e2e67ade04cba255e4e03066612b~HjH9DqeVR1655016550epsmtrp1a;
+ Wed, 25 Sep 2019 02:11:13 +0000 (GMT)
+X-AuditID: b6c32a38-d43ff70000001080-b9-5d8accc11a1d
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+ epsmgms1p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ D4.78.03889.1CCCA8D5; Wed, 25 Sep 2019 11:11:13 +0900 (KST)
+Received: from [10.113.221.102] (unknown [10.113.221.102]) by
+ epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190925021112epsmtip28e98ea100e68dcd6d501346db5544235~HjH8rFlwW0843508435epsmtip2d;
+ Wed, 25 Sep 2019 02:11:12 +0000 (GMT)
+Subject: Re: [PATCH v8 5/6] PM / devfreq: Add PM QoS support
+To: Leonard Crestez <leonard.crestez@nxp.com>, MyungJoo Ham
+ <myungjoo.ham@samsung.com>, Kyungmin Park <kyungmin.park@samsung.com>,
+ Matthias Kaehlcke <mka@chromium.org>
+From: Chanwoo Choi <cw00.choi@samsung.com>
+Organization: Samsung Electronics
+Message-ID: <40885624-8f11-4eea-d5bf-d6bb50fa44dd@samsung.com>
+Date: Wed, 25 Sep 2019 11:15:36 +0900
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b634eece-d37c-41fe-c925-08d7415d5b38
-X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Sep 2019 02:09:11.6275 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: h/3nVOZbafyhB8RP7BvH8SQOk9+Cu4UvTnkDBXl4y9k4KYsRGAHHnBX8qrU4jl/Whqge88q5iyWZCfpjO85f6A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4451
+In-Reply-To: <58fdd2c226a4e76a3d9427baab7dd5c23af842ab.1569319738.git.leonard.crestez@nxp.com>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrKJsWRmVeSWpSXmKPExsWy7bCmvu7BM12xBl/nGVocOraV3eLr6VOM
+ FssuHWW0mL53E5vF+fMb2C3ONr1ht7jVIGOx4u5HVotNj6+xWnT9Wsls8bn3CKPF5w2PGS1u
+ N65gs1h97iCbRdehv2wWG796OAh4vL/Ryu4xu+Eii8eCTaUem1Z1snncubaHzWPzknqPje92
+ MHkcfLeHyaNvyypGj8+b5AK4orJtMlITU1KLFFLzkvNTMvPSbZW8g+Od403NDAx1DS0tzJUU
+ 8hJzU22VXHwCdN0yc4AeUVIoS8wpBQoFJBYXK+nb2RTll5akKmTkF5fYKqUWpOQUWBboFSfm
+ Fpfmpesl5+daGRoYGJkCFSZkZyy9V1Uw0b5ixvxOpgbGc0ZdjBwcEgImErPfOXYxcnEICexg
+ lDi4+DAjhPOJUWLRmbvsEM43Ron3X/eww3Q8naYMEd/LKLH131qooveMEnd/HGLrYuTkEBaw
+ kfh/9SMbSEJEYDWjRMvSO4wgCWaBJ8wSe9bLg9hsAloS+1/cAGvgF1CUuPrjMVgNr4CdxJtL
+ J8BsFgFViYYdK5hAbFGBCIlPDw6zQtQISpyc+YQFxOYUiJNo2DyPFWK+uMStJ/OZIGx5ieat
+ s5lBjpAQOMUu8XXGGiaIF1wkVq30AqmREBCWeHV8CzuELSXxsr8Nyq6WWHnyCBtEbwejxJb9
+ F1ghEsYS+5dOBpvDLKApsX6XPkRYUWLn77lQP/JJvPvawwqxileio00IokRZ4vKDu0wQtqTE
+ 4vZOtgmMSrOQfDMLyQezkHwwC2HZAkaWVYxiqQXFuempxYYFJshxvYkRnMS1LHYw7jnnc4hR
+ gINRiYfXgbUrVog1say4MvcQowQHs5II7ywZoBBvSmJlVWpRfnxRaU5q8SFGU2BgT2SWEk3O
+ B2aYvJJ4Q1MjY2NjCxNDM1NDQyVxXo/0hlghgfTEktTs1NSC1CKYPiYOTqkGRktl7axpT78c
+ Sm8/HR3Qld1W+DJO4qylyqeUMjkPoVePyjXE2mcmVE2sCPgpkBE76X+Xi8LtZZpClcw9Qp+/
+ Tv/GyJ9dqZ7F0qOhsdx9nr/4RVvBCXmaH5+pbz/dt7qosPWe/ezkBaGfTh6P7AzaV37iB+fd
+ oGAWa6Er4TEc3zdc66irjRVTYinOSDTUYi4qTgQAZ0SkpfgDAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrAIsWRmVeSWpSXmKPExsWy7bCSvO7BM12xBsd/ClocOraV3eLr6VOM
+ FssuHWW0mL53E5vF+fMb2C3ONr1ht7jVIGOx4u5HVotNj6+xWnT9Wsls8bn3CKPF5w2PGS1u
+ N65gs1h97iCbRdehv2wWG796OAh4vL/Ryu4xu+Eii8eCTaUem1Z1snncubaHzWPzknqPje92
+ MHkcfLeHyaNvyypGj8+b5AK4orhsUlJzMstSi/TtErgylt6rKphoXzFjfidTA+M5oy5GDg4J
+ AROJp9OUuxi5OIQEdjNKrLg1jaWLkRMoLikx7eJRZogaYYnDh4shat4ySjw68gGsRljARuL/
+ 1Y9sILaIwFpGiTnnHUBsZoFnzBIndqVBNDxilJjUu4oRJMEmoCWx/8UNsAZ+AUWJqz8eg8V5
+ Bewk3lw6AWazCKhKNOxYwQRiiwpESBzeMQuqRlDi5MwnYIs5BeIkGjbPY4VYpi7xZ94lZghb
+ XOLWk/lMELa8RPPW2cwTGIVnIWmfhaRlFpKWWUhaFjCyrGKUTC0ozk3PLTYsMMpLLdcrTswt
+ Ls1L10vOz93ECI5nLa0djCdOxB9iFOBgVOLhdWDtihViTSwrrsw9xCjBwawkwjtLBijEm5JY
+ WZValB9fVJqTWnyIUZqDRUmcVz7/WKSQQHpiSWp2ampBahFMlomDU6qBkefr6pbGz7ZMl/4u
+ ucIjsaqj6ybnarunhstvPBUPeZ3kn9BdZlIpdppvyo5mhvK9IeERs9XfTUiOLfqsqSd1b/o/
+ jQQr5lS5O243foXXTuizq0p0XGkrIsslddNpwqdPpfGF/5Zu/6N05PaVxYbbprDqL/ZON3+1
+ aEIUn/QevilHNUXWyS36rMRSnJFoqMVcVJwIAHRynM/jAgAA
+X-CMS-MailID: 20190925021113epcas1p2ac23b18f9d1285b6af984657183c952e
+X-Msg-Generator: CA
+X-Sendblock-Type: SVC_REQ_APPROVE
+CMS-TYPE: 101P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20190924101145epcas4p37f7d25b8743c25520b33fa392cd80d45
+References: <cover.1569319738.git.leonard.crestez@nxp.com>
+ <CGME20190924101145epcas4p37f7d25b8743c25520b33fa392cd80d45@epcas4p3.samsung.com>
+ <58fdd2c226a4e76a3d9427baab7dd5c23af842ab.1569319738.git.leonard.crestez@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_190913_604606_A060B29F 
-X-CRM114-Status: GOOD (  18.17  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190924_191121_381591_0BAEBB03 
+X-CRM114-Status: GOOD (  32.43  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.5.56 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.25 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -120,6 +135,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,277 +147,157 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Peng Fan <peng.fan@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- dl-linux-imx <linux-imx@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
+ Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
+ linux-pm@vger.kernel.org, Viresh Kumar <viresh.kumar@linaro.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Lukasz Luba <l.luba@partner.samsung.com>,
+ Alexandre Bailon <abailon@baylibre.com>,
+ Georgi Djakov <georgi.djakov@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ Jacky Bai <ping.bai@nxp.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
-
-This mailbox driver implements a mailbox which signals transmitted data
-via an ARM smc (secure monitor call) instruction. The mailbox receiver
-is implemented in firmware and can synchronously return data when it
-returns execution to the non-secure world again.
-An asynchronous receive path is not implemented.
-This allows the usage of a mailbox to trigger firmware actions on SoCs
-which either don't have a separate management processor or on which such
-a core is not available. A user of this mailbox could be the SCP
-interface.
-
-Modified from Andre Przywara's v2 patch
-https://lore.kernel.org/patchwork/patch/812999/
-
-Cc: Andre Przywara <andre.przywara@arm.com>
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
----
- drivers/mailbox/Kconfig                |   7 ++
- drivers/mailbox/Makefile               |   2 +
- drivers/mailbox/arm-smc-mailbox.c      | 167 +++++++++++++++++++++++++++++++++
- include/linux/mailbox/arm-smccc-mbox.h |  20 ++++
- 4 files changed, 196 insertions(+)
- create mode 100644 drivers/mailbox/arm-smc-mailbox.c
- create mode 100644 include/linux/mailbox/arm-smccc-mbox.h
-
-diff --git a/drivers/mailbox/Kconfig b/drivers/mailbox/Kconfig
-index ab4eb750bbdd..7707ee26251a 100644
---- a/drivers/mailbox/Kconfig
-+++ b/drivers/mailbox/Kconfig
-@@ -16,6 +16,13 @@ config ARM_MHU
- 	  The controller has 3 mailbox channels, the last of which can be
- 	  used in Secure mode only.
- 
-+config ARM_SMC_MBOX
-+	tristate "Generic ARM smc mailbox"
-+	depends on OF && HAVE_ARM_SMCCC
-+	help
-+	  Generic mailbox driver which uses ARM smc calls to call into
-+	  firmware for triggering mailboxes.
-+
- config IMX_MBOX
- 	tristate "i.MX Mailbox"
- 	depends on ARCH_MXC || COMPILE_TEST
-diff --git a/drivers/mailbox/Makefile b/drivers/mailbox/Makefile
-index c22fad6f696b..93918a84c91b 100644
---- a/drivers/mailbox/Makefile
-+++ b/drivers/mailbox/Makefile
-@@ -7,6 +7,8 @@ obj-$(CONFIG_MAILBOX_TEST)	+= mailbox-test.o
- 
- obj-$(CONFIG_ARM_MHU)	+= arm_mhu.o
- 
-+obj-$(CONFIG_ARM_SMC_MBOX)	+= arm-smc-mailbox.o
-+
- obj-$(CONFIG_IMX_MBOX)	+= imx-mailbox.o
- 
- obj-$(CONFIG_ARMADA_37XX_RWTM_MBOX)	+= armada-37xx-rwtm-mailbox.o
-diff --git a/drivers/mailbox/arm-smc-mailbox.c b/drivers/mailbox/arm-smc-mailbox.c
-new file mode 100644
-index 000000000000..6f0b5fd6ad1b
---- /dev/null
-+++ b/drivers/mailbox/arm-smc-mailbox.c
-@@ -0,0 +1,167 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2016,2017 ARM Ltd.
-+ * Copyright 2019 NXP
-+ */
-+
-+#include <linux/arm-smccc.h>
-+#include <linux/device.h>
-+#include <linux/kernel.h>
-+#include <linux/interrupt.h>
-+#include <linux/mailbox_controller.h>
-+#include <linux/mailbox/arm-smccc-mbox.h>
-+#include <linux/module.h>
-+#include <linux/platform_device.h>
-+
-+typedef unsigned long (smc_mbox_fn)(unsigned int, unsigned long,
-+				    unsigned long, unsigned long,
-+				    unsigned long, unsigned long,
-+				    unsigned long);
-+
-+struct arm_smc_chan_data {
-+	unsigned int function_id;
-+	smc_mbox_fn *invoke_smc_mbox_fn;
-+};
-+
-+static int arm_smc_send_data(struct mbox_chan *link, void *data)
-+{
-+	struct arm_smc_chan_data *chan_data = link->con_priv;
-+	struct arm_smccc_mbox_cmd *cmd = data;
-+	unsigned long ret;
-+
-+	if (ARM_SMCCC_IS_64(chan_data->function_id)) {
-+		ret = chan_data->invoke_smc_mbox_fn(chan_data->function_id,
-+						    cmd->args_smccc64[0],
-+						    cmd->args_smccc64[1],
-+						    cmd->args_smccc64[2],
-+						    cmd->args_smccc64[3],
-+						    cmd->args_smccc64[4],
-+						    cmd->args_smccc64[5]);
-+	} else {
-+		ret = chan_data->invoke_smc_mbox_fn(chan_data->function_id,
-+						    cmd->args_smccc32[0],
-+						    cmd->args_smccc32[1],
-+						    cmd->args_smccc32[2],
-+						    cmd->args_smccc32[3],
-+						    cmd->args_smccc32[4],
-+						    cmd->args_smccc32[5]);
-+	}
-+
-+	mbox_chan_received_data(link, (void *)ret);
-+
-+	return 0;
-+}
-+
-+static unsigned long __invoke_fn_hvc(unsigned int function_id,
-+				     unsigned long arg0, unsigned long arg1,
-+				     unsigned long arg2, unsigned long arg3,
-+				     unsigned long arg4, unsigned long arg5)
-+{
-+	struct arm_smccc_res res;
-+
-+	arm_smccc_hvc(function_id, arg0, arg1, arg2, arg3, arg4,
-+		      arg5, 0, &res);
-+	return res.a0;
-+}
-+
-+static unsigned long __invoke_fn_smc(unsigned int function_id,
-+				     unsigned long arg0, unsigned long arg1,
-+				     unsigned long arg2, unsigned long arg3,
-+				     unsigned long arg4, unsigned long arg5)
-+{
-+	struct arm_smccc_res res;
-+
-+	arm_smccc_smc(function_id, arg0, arg1, arg2, arg3, arg4,
-+		      arg5, 0, &res);
-+	return res.a0;
-+}
-+
-+static const struct mbox_chan_ops arm_smc_mbox_chan_ops = {
-+	.send_data	= arm_smc_send_data,
-+};
-+
-+static struct mbox_chan *
-+arm_smc_mbox_of_xlate(struct mbox_controller *mbox,
-+		      const struct of_phandle_args *sp)
-+{
-+	return mbox->chans;
-+}
-+
-+static int arm_smc_mbox_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct mbox_controller *mbox;
-+	struct arm_smc_chan_data *chan_data;
-+	int ret;
-+
-+	mbox = devm_kzalloc(dev, sizeof(*mbox), GFP_KERNEL);
-+	if (!mbox)
-+		return -ENOMEM;
-+
-+	mbox->of_xlate = arm_smc_mbox_of_xlate;
-+	mbox->num_chans = 1;
-+	mbox->chans = devm_kzalloc(dev, sizeof(*mbox->chans), GFP_KERNEL);
-+	if (!mbox->chans)
-+		return -ENOMEM;
-+
-+	chan_data = devm_kzalloc(dev, sizeof(*chan_data), GFP_KERNEL);
-+	if (!chan_data)
-+		return -ENOMEM;
-+
-+	ret = of_property_read_u32(dev->of_node, "arm,func-id",
-+				   &chan_data->function_id);
-+	if (ret)
-+		return ret;
-+
-+	if (of_device_is_compatible(dev->of_node, "arm,smc-mbox"))
-+		chan_data->invoke_smc_mbox_fn = __invoke_fn_smc;
-+	else
-+		chan_data->invoke_smc_mbox_fn = __invoke_fn_hvc;
-+
-+
-+	mbox->chans->con_priv = chan_data;
-+
-+	mbox->txdone_poll = false;
-+	mbox->txdone_irq = false;
-+	mbox->ops = &arm_smc_mbox_chan_ops;
-+	mbox->dev = dev;
-+
-+	platform_set_drvdata(pdev, mbox);
-+
-+	ret = devm_mbox_controller_register(dev, mbox);
-+	if (ret)
-+		return ret;
-+
-+	dev_info(dev, "ARM SMC mailbox enabled.\n");
-+
-+	return ret;
-+}
-+
-+static int arm_smc_mbox_remove(struct platform_device *pdev)
-+{
-+	struct mbox_controller *mbox = platform_get_drvdata(pdev);
-+
-+	mbox_controller_unregister(mbox);
-+	return 0;
-+}
-+
-+static const struct of_device_id arm_smc_mbox_of_match[] = {
-+	{ .compatible = "arm,smc-mbox", },
-+	{ .compatible = "arm,hvc-mbox", },
-+	{},
-+};
-+MODULE_DEVICE_TABLE(of, arm_smc_mbox_of_match);
-+
-+static struct platform_driver arm_smc_mbox_driver = {
-+	.driver = {
-+		.name = "arm-smc-mbox",
-+		.of_match_table = arm_smc_mbox_of_match,
-+	},
-+	.probe		= arm_smc_mbox_probe,
-+	.remove		= arm_smc_mbox_remove,
-+};
-+module_platform_driver(arm_smc_mbox_driver);
-+
-+MODULE_AUTHOR("Peng Fan <peng.fan@nxp.com>");
-+MODULE_DESCRIPTION("Generic ARM smc mailbox driver");
-+MODULE_LICENSE("GPL v2");
-diff --git a/include/linux/mailbox/arm-smccc-mbox.h b/include/linux/mailbox/arm-smccc-mbox.h
-new file mode 100644
-index 000000000000..d35fb89a77f5
---- /dev/null
-+++ b/include/linux/mailbox/arm-smccc-mbox.h
-@@ -0,0 +1,20 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+
-+#ifndef _LINUX_ARM_SMCCC_MBOX_H_
-+#define _LINUX_ARM_SMCCC_MBOX_H_
-+
-+#include <linux/types.h>
-+
-+/**
-+ * struct arm_smccc_mbox_cmd - ARM SMCCC message structure
-+ * @args_smccc32/64:	actual usage of registers is up to the protocol
-+ *			(within the SMCCC limits)
-+ */
-+struct arm_smccc_mbox_cmd {
-+	union {
-+		u32 args_smccc32[6];
-+		u64 args_smccc64[6];
-+	};
-+};
-+
-+#endif /* _LINUX_ARM_SMCCC_MBOX_H_ */
--- 
-2.16.4
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMTkuIDkuIDI0LiDsmKTtm4QgNzoxMSwgTGVvbmFyZCBDcmVzdGV6IHdyb3RlOgo+IFJlZ2lz
+dGVyIG5vdGlmaWVycyB3aXRoIHRoZSBQTSBRb1MgZnJhbWV3b3JrIGluIG9yZGVyIHRvIHJlc3Bv
+bmQgdG8KPiByZXF1ZXN0cyBmb3IgREVWX1BNX1FPU19NSU5fRlJFUVVFTkNZIGFuZCBERVZfUE1f
+UU9TX01BWF9GUkVRVUVOQ1kuCj4gCj4gTm8gbm90aWZpZXJzIGFyZSBhZGRlZCBieSB0aGlzIHBh
+dGNoIGJ1dCBQTSBRb1MgY29uc3RyYWludHMgY2FuIGJlCj4gaW1wb3NlZCBleHRlcm5hbGx5IChm
+b3IgZXhhbXBsZSBmcm9tIG90aGVyIGRldmljZXMpLgo+IAo+IFNpZ25lZC1vZmYtYnk6IExlb25h
+cmQgQ3Jlc3RleiA8bGVvbmFyZC5jcmVzdGV6QG54cC5jb20+Cj4gUmV2aWV3ZWQtYnk6IE1hdHRo
+aWFzIEthZWhsY2tlIDxta2FAY2hyb21pdW0ub3JnPgo+IC0tLQo+ICBkcml2ZXJzL2RldmZyZXEv
+ZGV2ZnJlcS5jIHwgNzUgKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrCj4g
+IGluY2x1ZGUvbGludXgvZGV2ZnJlcS5oICAgfCAgNSArKysKPiAgMiBmaWxlcyBjaGFuZ2VkLCA4
+MCBpbnNlcnRpb25zKCspCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvZGV2ZnJlcS9kZXZmcmVx
+LmMgYi9kcml2ZXJzL2RldmZyZXEvZGV2ZnJlcS5jCj4gaW5kZXggZWVlNDAzZTcwYzg0Li43ODRm
+M2U0MDUzNmEgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9kZXZmcmVxL2RldmZyZXEuYwo+ICsrKyBi
+L2RyaXZlcnMvZGV2ZnJlcS9kZXZmcmVxLmMKPiBAQCAtMjIsMTUgKzIyLDE4IEBACj4gICNpbmNs
+dWRlIDxsaW51eC9wbGF0Zm9ybV9kZXZpY2UuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L2xpc3QuaD4K
+PiAgI2luY2x1ZGUgPGxpbnV4L3ByaW50ay5oPgo+ICAjaW5jbHVkZSA8bGludXgvaHJ0aW1lci5o
+Pgo+ICAjaW5jbHVkZSA8bGludXgvb2YuaD4KPiArI2luY2x1ZGUgPGxpbnV4L3BtX3Fvcy5oPgo+
+ICAjaW5jbHVkZSAiZ292ZXJub3IuaCIKPiAgCj4gICNkZWZpbmUgQ1JFQVRFX1RSQUNFX1BPSU5U
+Uwo+ICAjaW5jbHVkZSA8dHJhY2UvZXZlbnRzL2RldmZyZXEuaD4KPiAgCj4gKyNkZWZpbmUgSFpf
+UEVSX0tIWgkxMDAwCj4gKwo+ICBzdGF0aWMgc3RydWN0IGNsYXNzICpkZXZmcmVxX2NsYXNzOwo+
+ICAKPiAgLyoKPiAgICogZGV2ZnJlcSBjb3JlIHByb3ZpZGVzIGRlbGF5ZWQgd29yayBiYXNlZCBs
+b2FkIG1vbml0b3JpbmcgaGVscGVyCj4gICAqIGZ1bmN0aW9ucy4gR292ZXJub3JzIGNhbiB1c2Ug
+dGhlc2Ugb3IgY2FuIGltcGxlbWVudCB0aGVpciBvd24KPiBAQCAtMTA5LDEwICsxMTIsMTEgQEAg
+c3RhdGljIHVuc2lnbmVkIGxvbmcgZmluZF9hdmFpbGFibGVfbWF4X2ZyZXEoc3RydWN0IGRldmZy
+ZXEgKmRldmZyZXEpCj4gIHN0YXRpYyB2b2lkIGdldF9mcmVxX3JhbmdlKHN0cnVjdCBkZXZmcmVx
+ICpkZXZmcmVxLAo+ICAJCQkgICB1bnNpZ25lZCBsb25nICptaW5fZnJlcSwKPiAgCQkJICAgdW5z
+aWduZWQgbG9uZyAqbWF4X2ZyZXEpCj4gIHsKPiAgCXVuc2lnbmVkIGxvbmcgKmZyZXFfdGFibGUg
+PSBkZXZmcmVxLT5wcm9maWxlLT5mcmVxX3RhYmxlOwo+ICsJdW5zaWduZWQgbG9uZyBxb3NfbWlu
+X2ZyZXEsIHFvc19tYXhfZnJlcTsKPiAgCj4gIAlsb2NrZGVwX2Fzc2VydF9oZWxkKCZkZXZmcmVx
+LT5sb2NrKTsKPiAgCj4gIAkvKgo+ICAJICogSW5pdCBtaW4vbWF4IGZyZXF1ZW5jeSBmcm9tIGZy
+ZXEgdGFibGUuCj4gQEAgLTEyNSwxMCArMTI5LDE4IEBAIHN0YXRpYyB2b2lkIGdldF9mcmVxX3Jh
+bmdlKHN0cnVjdCBkZXZmcmVxICpkZXZmcmVxLAo+ICAJfSBlbHNlIHsKPiAgCQkqbWluX2ZyZXEg
+PSBmcmVxX3RhYmxlW2RldmZyZXEtPnByb2ZpbGUtPm1heF9zdGF0ZSAtIDFdOwo+ICAJCSptYXhf
+ZnJlcSA9IGZyZXFfdGFibGVbMF07Cj4gIAl9Cj4gIAo+ICsJLyogY29uc3RyYWludHMgZnJvbSBQ
+TSBRb1MgKi8KCkFzIEkgY29tbWVudGVkIG9uIHBhdGNoNCwKJ2NvbnN0cmFpbnRzJyAtPiAnQ29u
+c3RyYWludCcgYmVjYXVzZSBmaXJzdCB2ZXJiIGhhdmUgdG8gYmUgdXNlZAphcyB0aGUgc2lndWxh
+ciB2ZXJicy4KCkkgcHJlZmVyIHRvIHVzZSBmb2xsb3dpbmcgY29tbWVudHM6IAoKCS8qIENvbnN0
+cmFpbnQgbWluaW11bS9tYXhpbXVtIGZyZXF1ZW5jeSBmcm9tIFBNIFFvUyBjb25zdHJhaW50cyAq
+LwoKPiArCXFvc19taW5fZnJlcSA9IGRldl9wbV9xb3NfcmVhZF92YWx1ZShkZXZmcmVxLT5kZXYu
+cGFyZW50LAo+ICsJCQkJCSAgICAgREVWX1BNX1FPU19NSU5fRlJFUVVFTkNZKTsKPiArCXFvc19t
+YXhfZnJlcSA9IGRldl9wbV9xb3NfcmVhZF92YWx1ZShkZXZmcmVxLT5kZXYucGFyZW50LAo+ICsJ
+CQkJCSAgICAgREVWX1BNX1FPU19NSU5fRlJFUVVFTkNZKTsKPiArCSptaW5fZnJlcSA9IG1heCgq
+bWluX2ZyZXEsIEhaX1BFUl9LSFogKiBxb3NfbWluX2ZyZXEpOwo+ICsJKm1heF9mcmVxID0gbWlu
+KCptYXhfZnJlcSwgSFpfUEVSX0tIWiAqIHFvc19tYXhfZnJlcSk7Cj4gKwo+ICAJLyogY29uc3Ry
+YWludHMgZnJvbSBzeXNmcyAqLwo+ICAJKm1pbl9mcmVxID0gbWF4KCptaW5fZnJlcSwgZGV2ZnJl
+cS0+bWluX2ZyZXEpOwo+ICAJKm1heF9mcmVxID0gbWluKCptYXhfZnJlcSwgZGV2ZnJlcS0+bWF4
+X2ZyZXEpOwo+ICAKPiAgCS8qIGNvbnN0cmFpbnRzIGZyb20gT1BQIGludGVyZmFjZSAqLwo+IEBA
+IC02MDYsMTAgKzYxOCw0OSBAQCBzdGF0aWMgaW50IGRldmZyZXFfbm90aWZpZXJfY2FsbChzdHJ1
+Y3Qgbm90aWZpZXJfYmxvY2sgKm5iLCB1bnNpZ25lZCBsb25nIHR5cGUsCj4gIAltdXRleF91bmxv
+Y2soJmRldmZyZXEtPmxvY2spOwo+ICAKPiAgCXJldHVybiByZXQ7Cj4gIH0KPiAgCj4gKy8qKgo+
+ICsgKiBxb3Nfbm90aWZpZXJfY2FsbCgpIC0gQ29tbW9uIGhhbmRsZXIgZm9yIFFvUyBjb25zdHJh
+aW50cy4KPiArICogQGRldmZyZXE6ICAgIHRoZSBkZXZmcmVxIGluc3RhbmNlLgo+ICsgKi8KPiAr
+c3RhdGljIGludCBxb3Nfbm90aWZpZXJfY2FsbChzdHJ1Y3QgZGV2ZnJlcSAqZGV2ZnJlcSkKPiAr
+ewo+ICsJaW50IGVycjsKPiArCj4gKwltdXRleF9sb2NrKCZkZXZmcmVxLT5sb2NrKTsKPiArCWVy
+ciA9IHVwZGF0ZV9kZXZmcmVxKGRldmZyZXEpOwo+ICsJbXV0ZXhfdW5sb2NrKCZkZXZmcmVxLT5s
+b2NrKTsKPiArCWlmIChlcnIpCj4gKwkJZGV2X2VycihkZXZmcmVxLT5kZXYucGFyZW50LAo+ICsJ
+CQkJImZhaWxlZCB0byB1cGRhdGUgZnJlcXVlbmN5IGZvciBQTSBRb1MgY29uc3RyYWludHMgKCVk
+KVxuIiwKCklzIGl0IG5vdCBvdmVyIDgwIGNoYXI/Cgo+ICsJCQkJZXJyKTsKPiArCj4gKwlyZXR1
+cm4gTk9USUZZX09LOwo+ICt9Cj4gKwo+ICsvKioKPiArICogcW9zX21pbl9ub3RpZmllcl9jYWxs
+KCkgLSBDYWxsYmFjayBmb3IgUW9TIG1pbl9mcmVxIGNoYW5nZXMuCj4gKyAqIEBuYjoJCVNob3Vs
+ZCBiZSBkZXZmcmVxLT5uYl9taW4KPiArICovCj4gK3N0YXRpYyBpbnQgcW9zX21pbl9ub3RpZmll
+cl9jYWxsKHN0cnVjdCBub3RpZmllcl9ibG9jayAqbmIsCj4gKwkJCQkJIHVuc2lnbmVkIGxvbmcg
+dmFsLCB2b2lkICpwdHIpCj4gK3sKPiArCXJldHVybiBxb3Nfbm90aWZpZXJfY2FsbChjb250YWlu
+ZXJfb2YobmIsIHN0cnVjdCBkZXZmcmVxLCBuYl9taW4pKTsKPiArfQo+ICsKPiArLyoqCj4gKyAq
+IHFvc19tYXhfbm90aWZpZXJfY2FsbCgpIC0gQ2FsbGJhY2sgZm9yIFFvUyBtYXhfZnJlcSBjaGFu
+Z2VzLgo+ICsgKiBAbmI6CQlTaG91bGQgYmUgZGV2ZnJlcS0+bmJfbWF4Cj4gKyAqLwo+ICtzdGF0
+aWMgaW50IHFvc19tYXhfbm90aWZpZXJfY2FsbChzdHJ1Y3Qgbm90aWZpZXJfYmxvY2sgKm5iLAo+
+ICsJCQkJCSB1bnNpZ25lZCBsb25nIHZhbCwgdm9pZCAqcHRyKQo+ICt7Cj4gKwlyZXR1cm4gcW9z
+X25vdGlmaWVyX2NhbGwoY29udGFpbmVyX29mKG5iLCBzdHJ1Y3QgZGV2ZnJlcSwgbmJfbWF4KSk7
+Cj4gK30KPiArCj4gIC8qKgo+ICAgKiBkZXZmcmVxX2Rldl9yZWxlYXNlKCkgLSBDYWxsYmFjayBm
+b3Igc3RydWN0IGRldmljZSB0byByZWxlYXNlIHRoZSBkZXZpY2UuCj4gICAqIEBkZXY6CXRoZSBk
+ZXZmcmVxIGRldmljZQo+ICAgKgo+ICAgKiBSZW1vdmUgZGV2ZnJlcSBmcm9tIHRoZSBsaXN0IGFu
+ZCByZWxlYXNlIGl0cyByZXNvdXJjZXMuCj4gQEAgLTYyMCwxMCArNjcxLDE1IEBAIHN0YXRpYyB2
+b2lkIGRldmZyZXFfZGV2X3JlbGVhc2Uoc3RydWN0IGRldmljZSAqZGV2KQo+ICAKPiAgCW11dGV4
+X2xvY2soJmRldmZyZXFfbGlzdF9sb2NrKTsKPiAgCWxpc3RfZGVsKCZkZXZmcmVxLT5ub2RlKTsK
+PiAgCW11dGV4X3VubG9jaygmZGV2ZnJlcV9saXN0X2xvY2spOwo+ICAKPiArCWRldl9wbV9xb3Nf
+cmVtb3ZlX25vdGlmaWVyKGRldmZyZXEtPmRldi5wYXJlbnQsICZkZXZmcmVxLT5uYl9tYXgsCj4g
+KwkJCURFVl9QTV9RT1NfTUFYX0ZSRVFVRU5DWSk7Cj4gKwlkZXZfcG1fcW9zX3JlbW92ZV9ub3Rp
+ZmllcihkZXZmcmVxLT5kZXYucGFyZW50LCAmZGV2ZnJlcS0+bmJfbWluLAo+ICsJCQlERVZfUE1f
+UU9TX01JTl9GUkVRVUVOQ1kpOwo+ICsKCkp1c3QgcHJpbnQgZXJyb3Igd2l0aCBkZXZfZXJyKCkg
+d2l0aG91dCBzdG9wcGluZyB0aGUgcmVsZWFzZSBzdGVwLgoKSSBwcmVmZXIgdG8gaGFuZGxlIHRo
+ZSByZXR1cm4gdmFsdWUgaWYga2VybmVsIEFQSSBwcm92aWRlcwp0aGUgZXJyb3IgY29kZS4KCj4g
+IAlpZiAoZGV2ZnJlcS0+cHJvZmlsZS0+ZXhpdCkKPiAgCQlkZXZmcmVxLT5wcm9maWxlLT5leGl0
+KGRldmZyZXEtPmRldi5wYXJlbnQpOwo+ICAKPiAgCWtmcmVlKGRldmZyZXEtPnRpbWVfaW5fc3Rh
+dGUpOwo+ICAJa2ZyZWUoZGV2ZnJlcS0+dHJhbnNfdGFibGUpOwo+IEBAIC03MzMsMTAgKzc4OSwy
+OCBAQCBzdHJ1Y3QgZGV2ZnJlcSAqZGV2ZnJlcV9hZGRfZGV2aWNlKHN0cnVjdCBkZXZpY2UgKmRl
+diwKPiAgCWlmIChlcnIpIHsKPiAgCQlwdXRfZGV2aWNlKCZkZXZmcmVxLT5kZXYpOwo+ICAJCWdv
+dG8gZXJyX291dDsKPiAgCX0KPiAgCj4gKwkvKgo+ICsJICogUmVnaXN0ZXIgbm90aWZpZXJzIGZv
+ciB1cGRhdGVzIHRvIG1pbi9tYXhfZnJlcSBhZnRlciBkZXZpY2UgaXMKPiArCSAqIGluaXRpYWxp
+emVkIChhbmQgd2UgY2FuIGhhbmRsZSBub3RpZmljYXRpb25zKSBidXQgYmVmb3JlIHRoZQo+ICsJ
+ICogZ292ZXJub3IgaXMgc3RhcnRlZCAod2hpY2ggc2hvdWxkIGRvIGFuIGluaXRpYWwgZW5mb3Jj
+ZW1lbnQgb2YKPiArCSAqIGNvbnN0cmFpbnRzKS4KPiArCSAqLwoKTXkgcHJldmlvdXMgY29tbWVu
+dCBpcyBub3QgZW5vdWdoIHdoeSBJIHByZWZlciB0byByZW1vdmUgaXQuIFNvcnJ5LgpBY3R1YWxs
+eSwgdW50aWwgbm93LCB0aGUgZGV2ZnJlcV9hZGRfZGV2aWNlKCkgZG9uJ3QgaGF2ZSB0aGUgZGV0
+YWlsZWQKY29tbWVudHMgYmVjYXVzZSB0aGUgbGluZSBjb2RlIGlzIG5vdCB0b28gbG9uZy4gQnV0
+LCBhdCB0aGUgcHJlc2VudCB0aW1lLApkZXZmcmVxX2FkZF9kZXZpY2UoKSBpcyB0b28gbG9uZy4g
+SXQgbWVhbnMgdGhhdCB0aGUgZGV0YWlsZWQgY29tbWVudAphcmUgbmVjZXNzYXJ5LiAKClNvLCBJ
+J2xsIGFkZCB0aGUgZGV0YWlsZWQgY29tbWVudCBmb3IgZWFjaCBzdGVwIG9mIGRldmZyZXFfYWRk
+X2RldmljZSgpCm9uIHNlcGFyYXRlIHBhdGNoIHRvIGtlZXAgdGhlIHNhbWUgc3R5bGUuIEknbGwg
+c2VuZCB0aGUgcGF0Y2ggdG8geW91CmZvciB0aGUgcmV2aWV3LgoKPiArCWRldmZyZXEtPm5iX21p
+bi5ub3RpZmllcl9jYWxsID0gcW9zX21pbl9ub3RpZmllcl9jYWxsOwo+ICsJZXJyID0gZGV2X3Bt
+X3Fvc19hZGRfbm90aWZpZXIoZGV2ZnJlcS0+ZGV2LnBhcmVudCwgJmRldmZyZXEtPm5iX21pbiwK
+PiArCQkJCSAgICAgIERFVl9QTV9RT1NfTUlOX0ZSRVFVRU5DWSk7Cj4gKwlpZiAoZXJyKQo+ICsJ
+CWdvdG8gZXJyX2RldmZyZXE7Cj4gKwo+ICsJZGV2ZnJlcS0+bmJfbWF4Lm5vdGlmaWVyX2NhbGwg
+PSBxb3NfbWF4X25vdGlmaWVyX2NhbGw7Cj4gKwllcnIgPSBkZXZfcG1fcW9zX2FkZF9ub3RpZmll
+cihkZXZmcmVxLT5kZXYucGFyZW50LCAmZGV2ZnJlcS0+bmJfbWF4LAo+ICsJCQkJICAgICAgREVW
+X1BNX1FPU19NQVhfRlJFUVVFTkNZKTsKPiArCWlmIChlcnIpCj4gKwkJZ290byBlcnJfZGV2ZnJl
+cTsKPiArCj4gIAltdXRleF9sb2NrKCZkZXZmcmVxX2xpc3RfbG9jayk7Cj4gIAo+ICAJZ292ZXJu
+b3IgPSB0cnlfdGhlbl9yZXF1ZXN0X2dvdmVybm9yKGRldmZyZXEtPmdvdmVybm9yX25hbWUpOwo+
+ICAJaWYgKElTX0VSUihnb3Zlcm5vcikpIHsKPiAgCQlkZXZfZXJyKGRldiwgIiVzOiBVbmFibGUg
+dG8gZmluZCBnb3Zlcm5vciBmb3IgdGhlIGRldmljZVxuIiwKPiBAQCAtNzYwLDEwICs4MzQsMTEg
+QEAgc3RydWN0IGRldmZyZXEgKmRldmZyZXFfYWRkX2RldmljZShzdHJ1Y3QgZGV2aWNlICpkZXYs
+Cj4gIAo+ICAJcmV0dXJuIGRldmZyZXE7Cj4gIAo+ICBlcnJfaW5pdDoKPiAgCW11dGV4X3VubG9j
+aygmZGV2ZnJlcV9saXN0X2xvY2spOwo+ICtlcnJfZGV2ZnJlcToKPiAgCWRldmZyZXFfcmVtb3Zl
+X2RldmljZShkZXZmcmVxKTsKPiAgCXJldHVybiBFUlJfUFRSKGVycik7Cj4gIAo+ICBlcnJfZGV2
+Ogo+ICAJLyoKPiBkaWZmIC0tZ2l0IGEvaW5jbHVkZS9saW51eC9kZXZmcmVxLmggYi9pbmNsdWRl
+L2xpbnV4L2RldmZyZXEuaAo+IGluZGV4IGMzY2JjMTVmZGYwOC4uZGFjMGRmZmVhYmI0IDEwMDY0
+NAo+IC0tLSBhL2luY2x1ZGUvbGludXgvZGV2ZnJlcS5oCj4gKysrIGIvaW5jbHVkZS9saW51eC9k
+ZXZmcmVxLmgKPiBAQCAtMTM0LDEwICsxMzQsMTIgQEAgc3RydWN0IGRldmZyZXFfZGV2X3Byb2Zp
+bGUgewo+ICAgKiBAdG90YWxfdHJhbnM6CU51bWJlciBvZiBkZXZmcmVxIHRyYW5zaXRpb25zCj4g
+ICAqIEB0cmFuc190YWJsZToJU3RhdGlzdGljcyBvZiBkZXZmcmVxIHRyYW5zaXRpb25zCj4gICAq
+IEB0aW1lX2luX3N0YXRlOglTdGF0aXN0aWNzIG9mIGRldmZyZXEgc3RhdGVzCj4gICAqIEBsYXN0
+X3N0YXRfdXBkYXRlZDoJVGhlIGxhc3QgdGltZSBzdGF0IHVwZGF0ZWQKPiAgICogQHRyYW5zaXRp
+b25fbm90aWZpZXJfbGlzdDogbGlzdCBoZWFkIG9mIERFVkZSRVFfVFJBTlNJVElPTl9OT1RJRklF
+UiBub3RpZmllcgo+ICsgKiBAbmJfbWluOgkJTm90aWZpZXIgYmxvY2sgZm9yIERFVl9QTV9RT1Nf
+TUlOX0ZSRVFVRU5DWQo+ICsgKiBAbmJfbWF4OgkJTm90aWZpZXIgYmxvY2sgZm9yIERFVl9QTV9R
+T1NfTUFYX0ZSRVFVRU5DWQo+ICAgKgo+ICAgKiBUaGlzIHN0cnVjdHVyZSBzdG9yZXMgdGhlIGRl
+dmZyZXEgaW5mb3JtYXRpb24gZm9yIGEgZ2l2ZSBkZXZpY2UuCj4gICAqCj4gICAqIE5vdGUgdGhh
+dCB3aGVuIGEgZ292ZXJub3IgYWNjZXNzZXMgZW50cmllcyBpbiBzdHJ1Y3QgZGV2ZnJlcSBpbiBp
+dHMKPiAgICogZnVuY3Rpb25zIGV4Y2VwdCBmb3IgdGhlIGNvbnRleHQgb2YgY2FsbGJhY2tzIGRl
+ZmluZWQgaW4gc3RydWN0Cj4gQEAgLTE3NiwxMCArMTc4LDEzIEBAIHN0cnVjdCBkZXZmcmVxIHsK
+PiAgCXVuc2lnbmVkIGludCAqdHJhbnNfdGFibGU7Cj4gIAl1bnNpZ25lZCBsb25nICp0aW1lX2lu
+X3N0YXRlOwo+ICAJdW5zaWduZWQgbG9uZyBsYXN0X3N0YXRfdXBkYXRlZDsKPiAgCj4gIAlzdHJ1
+Y3Qgc3JjdV9ub3RpZmllcl9oZWFkIHRyYW5zaXRpb25fbm90aWZpZXJfbGlzdDsKPiArCj4gKwlz
+dHJ1Y3Qgbm90aWZpZXJfYmxvY2sgbmJfbWluOwo+ICsJc3RydWN0IG5vdGlmaWVyX2Jsb2NrIG5i
+X21heDsKPiAgfTsKPiAgCj4gIHN0cnVjdCBkZXZmcmVxX2ZyZXFzIHsKPiAgCXVuc2lnbmVkIGxv
+bmcgb2xkOwo+ICAJdW5zaWduZWQgbG9uZyBuZXc7Cj4gCgoKLS0gCkJlc3QgUmVnYXJkcywKQ2hh
+bndvbyBDaG9pClNhbXN1bmcgRWxlY3Ryb25pY3MKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4
+LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
+Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
