@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3662DBE243
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 18:18:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CF8ABE255
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 18:19:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lyuL7ah7G0JF2I4iSZoZxgi+2LVhfyPxHhMeSUM7gPM=; b=gt33bye3/w4fjH
-	mlY80cyyxvYTbviEfDZJBNQe46WRizvAEDAQA9NbEa01yHfFtQLi9uQYmlG7KvPS/1u/pSFF198l6
-	poR0DPQE12Crgiv0i2eIFyKLyJafew6ZSThnYVnpwC7hr80aYvGh4fmNfubdggq+FZ5Im94A0a1To
-	3M90Wj170AbmGIJYAQzDZinWzzGoa9jw3x8QctVzl0wBIMsBI/KzkJBpzPPOZ2dxweJ3uYl34fsbN
-	Of+TaCPfpHRlJmPMFAl4+52jdJqTqn6s/sWbTUU9tx+kOOmKwtp2Jbb++TqjTG7Y7LzVRMrEwCXWe
-	NmZb1N7e5HjBXwKaOCaw==;
+	List-Owner; bh=svJiKKXQbZhcBqaMCYOR+QJq4Xyfh8vS8XOFavJ1xN4=; b=s49F3tVEudLkst
+	idKyEYasrezDr3hwIbn1vG6bwthx/QN/ubdUH0eb9yHF5lntq9QkkURA3PWuw9yUZdsVqbuAMVHiu
+	RQlN9SnHmNvEBYss7Mbq8OpZ9Np6QtL0RiUBDvQfnusHwMqEEfuz9pu+sfaSP/RJjo3ll+AUHA6lx
+	mZbP84fc35uIp6TJL2pkZfVSEHrDNG6gId0gvW/IUDvrfhEtNK/13MEm0nNfVVjLEi5gr6bf+x82F
+	2br2B2vlE9hhns2zo6UC4feN5CiRf85OzFqP9fpg/GKoTDhuEsVQMQFrqP03FG0yl4woJo9Lq4Q/j
+	QCvoPOqHNYnwGcEVBacw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iD9zs-0007wm-Hz; Wed, 25 Sep 2019 16:18:32 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1iDA0J-0008I8-56; Wed, 25 Sep 2019 16:18:59 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iD9vY-000401-8J
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 16:14:06 +0000
-Received: by mail-wr1-x443.google.com with SMTP id n14so7640722wrw.9
+ id 1iD9vh-00045V-PV
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 16:14:17 +0000
+Received: by mail-wr1-x441.google.com with SMTP id h7so7644519wrw.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 25 Sep 2019 09:14:04 -0700 (PDT)
+ Wed, 25 Sep 2019 09:14:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=GHZTUsgGCCxhaUqhh6GFmynzyGA2xAGilsSBrwWL8Ec=;
- b=EZelB1bmBbVqkj69RFWzhZDiyl+QrRS1Ld/4jAK9o8wa+U3Y4C9KupSUIqj2czhl7k
- ITiHGURXEqXrMJmGJNB9KMIUGwxFnx7bIhXwPlyP3otwQoRuaqODihXzE3AhyE+SuMOe
- Eupyf7hjZZlON1Utlzp/RmQMPvLJn2rjU8LmbXlYIzGZ+eXKz+3lmREZnr2u+zWgdOnC
- DnAE1RwkIUI90BBXqLfP2SQt/xl177ryb9XkpwBkxrUMcHJChPVU9vFbBntefNklJgCR
- eMbWcs4UmklFy7RjjpAUH6gGYaPbUv9a9jmIlTOejjFpzVISicNuFbq7E+U5L0HF88Yg
- IqzQ==
+ bh=0Jn67cgHpegjUHsejza3rXvNu+oyRcsIfVJ14lUdJdc=;
+ b=XRKs2NYw1E8U9jJNC8URLm1v/D0E45ZGzjruLuYncb+se4PRgodkTOSbJKomErYA8A
+ aBx3lV2el3sxyCNKIL4eXbNQPuR1xtPQ7AqCKcspizIUydpWF8XSp1d/12gAYylUfZkW
+ Vq2CGQalEf6bYg4NWNLgpr4GZbbJ3I7nj8HX65C6pUaO256ht0C6HhxLS98Arc0Bdtbf
+ t9NJmmRz17ZRwZ2KtyMCn2begsYmiEYQfixNVxYVzjqwsxv2xGCLr4vQAJz+w5NX5tiV
+ 0aMtvtcgmSHOgQautTSanq/Mc/wFnViTtqZPwXuEVF+Ycc9wGZRGOk4F+AEA8/eJCIF0
+ qasQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=GHZTUsgGCCxhaUqhh6GFmynzyGA2xAGilsSBrwWL8Ec=;
- b=T5ABYLXmO3W9T9GXjrpSXV3Y9vTq1A4mtXoYWyG56WZWuGYQ8ut4iTHG7a55U1XMXn
- KQUtKknqDbxglHDthQQvznO0j5T4qrSJnq3FJMtOAiyqI1UZ0GqEH8S0Zh/j07IdSo5J
- 3oI6Fad2G+4LuG8SNu9fWPqwf+TJG+ZETxK+K9MgIMVNYT/ryH9i4fFohlFqR53bbEpd
- Ao/Iw6jXGDcXTppdiR8Teph5RQxdv8a7seBZQqShVLS0A4sATivkjyymg4JaVZL4pvy7
- Z1x5Od/h86gOtS3UbLAewkDt83XxvRlHD4voDirkBD6ngnLFzpO+KKPCex4bZa8Qnhrh
- 7Siw==
-X-Gm-Message-State: APjAAAV/W72IiUFTRLEwlxjJVZspm3W1PPARV2brrfEHK4EytW8XPfTu
- dwWvZnUhzjelCZkOEB7lYNb24Q==
-X-Google-Smtp-Source: APXvYqz1sBIY8jpDffs/GzFrwhS+OK125T+2rgBRUTsh9BLcog3Q1msw/qOOPlbx/V81RfwvRmI7vA==
-X-Received: by 2002:a5d:62c6:: with SMTP id o6mr9945348wrv.243.1569428043029; 
- Wed, 25 Sep 2019 09:14:03 -0700 (PDT)
+ bh=0Jn67cgHpegjUHsejza3rXvNu+oyRcsIfVJ14lUdJdc=;
+ b=TGUDq4oGi0Bq1BLRGB5WbLfViAtOpOAxYw4PDGmuaVDOCOag+apY0cKzjKHxjahvgX
+ pwD6c1XbM07JTWSW/98M5FsAcB2qR5ynh8W3RraOnL8uH72MWtuA9Efnk3QPBQHvVlMb
+ rPPDj1R84c0tUMgt14h08GYB65KjXMA7geyUhH6OGoOc/13KKIjHPSX2fi5RHZ1k6pR4
+ kXKn1VfqlZ3Uwdv/w6kDQK10DyodITwVoF1S/HIYDB83X5+DlUuYWvHQfoDErBzhQX9j
+ vAfjBGEM10dLwJeMk/aYca4LVGKInBLmmCqhBZmG4bU1aBreoiOYHs+TXb2knWLWVL6Y
+ doHg==
+X-Gm-Message-State: APjAAAUFNVJ08PYOKVDUODzWfZnE1U0G8YVC7FbXcGtIqc2zXvfUCbrh
+ kUYxJV33O3VHq7ybh7B/Knagjg==
+X-Google-Smtp-Source: APXvYqxG3ZsPD1p2O9Mgdd9cJrxp7TwXatNXcNgf+8foDbIum7T7zIqBBIHsTAaJyjCie+BmcAs/Ug==
+X-Received: by 2002:adf:e908:: with SMTP id f8mr9903669wrm.210.1569428052551; 
+ Wed, 25 Sep 2019 09:14:12 -0700 (PDT)
 Received: from localhost.localdomain
  (laubervilliers-657-1-83-120.w92-154.abo.wanadoo.fr. [92.154.90.120])
- by smtp.gmail.com with ESMTPSA id o70sm4991085wme.29.2019.09.25.09.14.01
+ by smtp.gmail.com with ESMTPSA id o70sm4991085wme.29.2019.09.25.09.14.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 25 Sep 2019 09:14:02 -0700 (PDT)
+ Wed, 25 Sep 2019 09:14:11 -0700 (PDT)
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 To: linux-crypto@vger.kernel.org
-Subject: [RFC PATCH 11/18] int128: move __uint128_t compiler test to Kconfig
-Date: Wed, 25 Sep 2019 18:12:48 +0200
-Message-Id: <20190925161255.1871-12-ard.biesheuvel@linaro.org>
+Subject: [RFC PATCH 16/18] netlink: use new strict length types in policy for
+ 5.2
+Date: Wed, 25 Sep 2019 18:12:53 +0200
+Message-Id: <20190925161255.1871-17-ard.biesheuvel@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190925161255.1871-1-ard.biesheuvel@linaro.org>
 References: <20190925161255.1871-1-ard.biesheuvel@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_091404_575543_BC3701D1 
-X-CRM114-Status: GOOD (  15.09  )
+X-CRM114-CacheID: sfid-20190925_091414_132361_26CCDF43 
+X-CRM114-Status: GOOD (  10.98  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -97,7 +98,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Jason A . Donenfeld" <Jason@zx2c4.com>,
+Cc: Bruno Wolff III <bruno@wolff.to>, "Jason A . Donenfeld" <Jason@zx2c4.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
  Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>,
@@ -111,77 +112,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to use 128-bit integer arithmetic in C code, the architecture
-needs to have declared support for it by setting ARCH_SUPPORTS_INT128,
-and it requires a version of the toolchain that supports this at build
-time. This is why all existing tests for ARCH_SUPPORTS_INT128 also test
-whether __SIZEOF_INT128__ is defined, since this is only the case for
-compilers that can support 128-bit integers.
+Taken from
+https://git.zx2c4.com/WireGuard/commit/src?id=3120425f69003be287cb2d308f89c7a6a0335ff0
 
-Let's fold this additional test into the Kconfig declaration of
-ARCH_SUPPORTS_INT128 so that we can also use the symbol in Makefiles,
-e.g., to decide whether a certain object needs to be included in the
-first place.
-
-Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Reported-by: Bruno Wolff III <bruno@wolff.to>
 ---
- crypto/ecc.c | 2 +-
- init/Kconfig | 1 +
- lib/ubsan.c  | 2 +-
- lib/ubsan.h  | 2 +-
- 4 files changed, 4 insertions(+), 3 deletions(-)
+ drivers/net/wireguard/netlink.c | 17 ++++++++---------
+ 1 file changed, 8 insertions(+), 9 deletions(-)
 
-diff --git a/crypto/ecc.c b/crypto/ecc.c
-index dfe114bc0c4a..6e6aab6c987c 100644
---- a/crypto/ecc.c
-+++ b/crypto/ecc.c
-@@ -336,7 +336,7 @@ static u64 vli_usub(u64 *result, const u64 *left, u64 right,
- static uint128_t mul_64_64(u64 left, u64 right)
- {
- 	uint128_t result;
--#if defined(CONFIG_ARCH_SUPPORTS_INT128) && defined(__SIZEOF_INT128__)
-+#if defined(CONFIG_ARCH_SUPPORTS_INT128)
- 	unsigned __int128 m = (unsigned __int128)left * right;
- 
- 	result.m_low  = m;
-diff --git a/init/Kconfig b/init/Kconfig
-index bd7d650d4a99..e66f64a26d7d 100644
---- a/init/Kconfig
-+++ b/init/Kconfig
-@@ -785,6 +785,7 @@ config ARCH_WANT_BATCHED_UNMAP_TLB_FLUSH
- #
- config ARCH_SUPPORTS_INT128
- 	bool
-+	depends on !$(cc-option,-D__SIZEOF_INT128__=0)
- 
- # For architectures that (ab)use NUMA to represent different memory regions
- # all cpu-local but of different latencies, such as SuperH.
-diff --git a/lib/ubsan.c b/lib/ubsan.c
-index e7d31735950d..b652cc14dd60 100644
---- a/lib/ubsan.c
-+++ b/lib/ubsan.c
-@@ -119,7 +119,7 @@ static void val_to_string(char *str, size_t size, struct type_descriptor *type,
- {
- 	if (type_is_int(type)) {
- 		if (type_bit_width(type) == 128) {
--#if defined(CONFIG_ARCH_SUPPORTS_INT128) && defined(__SIZEOF_INT128__)
-+#if defined(CONFIG_ARCH_SUPPORTS_INT128)
- 			u_max val = get_unsigned_val(type, value);
- 
- 			scnprintf(str, size, "0x%08x%08x%08x%08x",
-diff --git a/lib/ubsan.h b/lib/ubsan.h
-index b8fa83864467..7b56c09473a9 100644
---- a/lib/ubsan.h
-+++ b/lib/ubsan.h
-@@ -78,7 +78,7 @@ struct invalid_value_data {
- 	struct type_descriptor *type;
+diff --git a/drivers/net/wireguard/netlink.c b/drivers/net/wireguard/netlink.c
+index 3763e8c14ea5..676d36725120 100644
+--- a/drivers/net/wireguard/netlink.c
++++ b/drivers/net/wireguard/netlink.c
+@@ -21,8 +21,8 @@ static struct genl_family genl_family;
+ static const struct nla_policy device_policy[WGDEVICE_A_MAX + 1] = {
+ 	[WGDEVICE_A_IFINDEX]		= { .type = NLA_U32 },
+ 	[WGDEVICE_A_IFNAME]		= { .type = NLA_NUL_STRING, .len = IFNAMSIZ - 1 },
+-	[WGDEVICE_A_PRIVATE_KEY]	= { .len = NOISE_PUBLIC_KEY_LEN },
+-	[WGDEVICE_A_PUBLIC_KEY]		= { .len = NOISE_PUBLIC_KEY_LEN },
++	[WGDEVICE_A_PRIVATE_KEY]	= { .type = NLA_EXACT_LEN, .len = NOISE_PUBLIC_KEY_LEN },
++	[WGDEVICE_A_PUBLIC_KEY]		= { .type = NLA_EXACT_LEN, .len = NOISE_PUBLIC_KEY_LEN },
+ 	[WGDEVICE_A_FLAGS]		= { .type = NLA_U32 },
+ 	[WGDEVICE_A_LISTEN_PORT]	= { .type = NLA_U16 },
+ 	[WGDEVICE_A_FWMARK]		= { .type = NLA_U32 },
+@@ -30,12 +30,12 @@ static const struct nla_policy device_policy[WGDEVICE_A_MAX + 1] = {
  };
  
--#if defined(CONFIG_ARCH_SUPPORTS_INT128) && defined(__SIZEOF_INT128__)
-+#if defined(CONFIG_ARCH_SUPPORTS_INT128)
- typedef __int128 s_max;
- typedef unsigned __int128 u_max;
- #else
+ static const struct nla_policy peer_policy[WGPEER_A_MAX + 1] = {
+-	[WGPEER_A_PUBLIC_KEY]				= { .len = NOISE_PUBLIC_KEY_LEN },
+-	[WGPEER_A_PRESHARED_KEY]			= { .len = NOISE_SYMMETRIC_KEY_LEN },
++	[WGPEER_A_PUBLIC_KEY]				= { .type = NLA_EXACT_LEN, .len = NOISE_PUBLIC_KEY_LEN },
++	[WGPEER_A_PRESHARED_KEY]			= { .type = NLA_EXACT_LEN, .len = NOISE_SYMMETRIC_KEY_LEN },
+ 	[WGPEER_A_FLAGS]				= { .type = NLA_U32 },
+-	[WGPEER_A_ENDPOINT]				= { .len = sizeof(struct sockaddr) },
++	[WGPEER_A_ENDPOINT]				= { .type = NLA_MIN_LEN, .len = sizeof(struct sockaddr) },
+ 	[WGPEER_A_PERSISTENT_KEEPALIVE_INTERVAL]	= { .type = NLA_U16 },
+-	[WGPEER_A_LAST_HANDSHAKE_TIME]			= { .len = sizeof(struct __kernel_timespec) },
++	[WGPEER_A_LAST_HANDSHAKE_TIME]			= { .type = NLA_EXACT_LEN, .len = sizeof(struct __kernel_timespec) },
+ 	[WGPEER_A_RX_BYTES]				= { .type = NLA_U64 },
+ 	[WGPEER_A_TX_BYTES]				= { .type = NLA_U64 },
+ 	[WGPEER_A_ALLOWEDIPS]				= { .type = NLA_NESTED },
+@@ -44,7 +44,7 @@ static const struct nla_policy peer_policy[WGPEER_A_MAX + 1] = {
+ 
+ static const struct nla_policy allowedip_policy[WGALLOWEDIP_A_MAX + 1] = {
+ 	[WGALLOWEDIP_A_FAMILY]		= { .type = NLA_U16 },
+-	[WGALLOWEDIP_A_IPADDR]		= { .len = sizeof(struct in_addr) },
++	[WGALLOWEDIP_A_IPADDR]		= { .type = NLA_MIN_LEN, .len = sizeof(struct in_addr) },
+ 	[WGALLOWEDIP_A_CIDR_MASK]	= { .type = NLA_U8 }
+ };
+ 
+@@ -591,12 +591,10 @@ static const struct genl_ops genl_ops[] = {
+ 		.start = wg_get_device_start,
+ 		.dumpit = wg_get_device_dump,
+ 		.done = wg_get_device_done,
+-		.policy = device_policy,
+ 		.flags = GENL_UNS_ADMIN_PERM
+ 	}, {
+ 		.cmd = WG_CMD_SET_DEVICE,
+ 		.doit = wg_set_device,
+-		.policy = device_policy,
+ 		.flags = GENL_UNS_ADMIN_PERM
+ 	}
+ };
+@@ -608,6 +606,7 @@ static struct genl_family genl_family __ro_after_init = {
+ 	.version = WG_GENL_VERSION,
+ 	.maxattr = WGDEVICE_A_MAX,
+ 	.module = THIS_MODULE,
++	.policy = device_policy,
+ 	.netnsok = true
+ };
+ 
 -- 
 2.20.1
 
