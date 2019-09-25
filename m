@@ -2,62 +2,112 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0853FBDEAB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 15:13:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DA4EBDEAF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 15:13:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hsryi5CX+6j6SrtUHN/ZZnJjKXvIm9cNgEMsLQEnFB0=; b=bVxMhfzkg+7VxB
-	1xtIdekhLNU8hmZUdlxAgDVGkdl//YbAjJ/6qZXfjvOD11cHntUxHco9f90zDvTSIIZzymhzjMwHi
-	yTXNfujl6Vl9W+lcsPiX8ej9Wyvy4DIMq9MG/wSlwIfURRLZfEB6kIJ5M9Ps09vPwlk6+8dlI6hhT
-	cT/0sBfZ7bgB3dPcq2ntji08vDe04lOatycmo49gQQrm5oeJfcCnGJt2oriDvckNUY4P9R3I7+jAa
-	dZwH4HQ2H29VRiwC8+mr1JoF0nyKQD5kCSzJ429UhC59AJoXqmJb50X5pm1mDq5G7bP5ITj9Wucds
-	IivkMKXhtr/5ZFIyMFJA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=NdS6IrvmteVtY2xVSYwUJsFTOhmgSLoNEj9Fqn0WX/A=; b=oKS7gU/F4mzfX2
+	wweK5tnOpd5kZxU0aOVmsVbGMqxA3ZkPWrgLGa4XU8qwFru49qVmSWyYI3qwFtahpX7vfEKlN9amI
+	MalWr9jY0cz9liHxXtCG6raIm1Uk9rc3yxWYsnCsUy32E0csl4/wv0Xcegj6GoEfi28wTSZoBA/04
+	OKxtllB4tGyGeAVqnLrW1MDbDAscPiXnD780vC85qE4XEJWUlxcLh5FMeK1K/tMhXrLczkVFZJgIF
+	GiQXgDR0MSpSlpguZNEbg5p+1oDsrJJh3p1bEKDi6zGWyM4qw8R7ElS1+al2OpuRAKMuy2+2vCIhd
+	kBHD1yxcC93Gm8oX3nbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iD76F-0003nk-FH; Wed, 25 Sep 2019 13:12:55 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iD76t-00048G-3Z; Wed, 25 Sep 2019 13:13:35 +0000
+Received: from mail-he1eur04on0619.outbound.protection.outlook.com
+ ([2a01:111:f400:fe0d::619]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iD75s-0003m6-Qa; Wed, 25 Sep 2019 13:12:34 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4751020640;
- Wed, 25 Sep 2019 13:12:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569417152;
- bh=AaD74a0PCviH3ASjVa4uhtW3hNJxUotze4MI2kShMJ8=;
- h=In-Reply-To:References:Cc:To:From:Subject:Date:From;
- b=tsOpwJ5S9fDmc4Pig1XjNj6oLCGe0M4hVsW7WQl+PPUlaPGYjFsdvDpJGyLSCkYXl
- RwoiYlq1n4QdPzXJR0cX4hpiE3clNqWYqt4fHMwGiMMHQFCwQh9F3LlMVFCxX4YDLV
- n9hY1eXpcN13X/mM4pOEay05xt499/QddSCpAgX4=
+ id 1iD76R-00045e-Nx
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 13:13:10 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=A6cgG2Jr5FdXOsOuMwUtwTY0q4NYmyaidMv1eCjmliXzWgGwlUFDcgH3AxbZy5qKFlOpETM+cw9LcgpyNhGaZqDRz9PhJ2zRXXB0qQeC3gOzblBezTa0k58kMQM1ogOkdV1V4+sJMKyxQ3LxGgpk12Pub2g7Dloz8HqzNaBKyiQd8mWelo5zzyYwyYF+VVQxQD4E+zHcovZU43FWYscYOJr6RGA8l1YhyNLQQmhe9jy3mZbGwQqZzs3Scxj7w78cHPXCSwc8Ji7eptV4R6BlMCFQBlUc9bW7LE937qbaskIDyVkCYTWmoekEZN7gErVcRgEX52/t2tZTnFkjGmNoVw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=yijX3nsW6Eu8F/x5H+sE1PiV9eRcmfiPEs8Eod6KO5A=;
+ b=V9NqwJBfJQM9/5FYUnAZhVWV65oBgLl0yuNX3m6CYFAV/5NIvVRxph6vFtPblmwfWpWBxVmKR2K+LXu9FzymyrTv5r2X12Tksq9GIlMJULlUPMf+ZIikcJw83i2skQVfac5jA3yWNVBHrzFCJlFI2iCkib/X/W/97hV4zNPbawqjYImrvBmqCCLUb/uDxYROjN9K+kPeJMYXIuB/4kr0Ms4pDLNjzRHBXDaWmdqOtadLjnciUQq6fChzgoO2eaw4b/DaKZ5DT3VyOxFNp7kK0CoyZacaBREukoD1pP8zkp3r4iM02ibW0zglZcPkEgBgVZa1oF2Hi9nVdKUB78UrsQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=yijX3nsW6Eu8F/x5H+sE1PiV9eRcmfiPEs8Eod6KO5A=;
+ b=IiPGDc/v959ZurmIg6Lrb9AxOtwCjPBCiCXZiYOAeguv7110EgSkbp610R1A0tpw6frmiP3lUix10Bz9YfGKIeJLXP0067qRU1dCVztmhNCB9HnS8+8ewkn4l2eKhc+wOPOhLLlXPZO7VqHo2c9i6Zsb3r1fAEnM1O76g9ZqEXM=
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
+ VI1SPR01MB023.eurprd04.prod.outlook.com (52.134.18.160) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2284.20; Wed, 25 Sep 2019 13:13:03 +0000
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::15cd:b6e7:5016:ae8]) by VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::15cd:b6e7:5016:ae8%2]) with mapi id 15.20.2284.023; Wed, 25 Sep 2019
+ 13:13:02 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>, Aisheng Dong <aisheng.dong@nxp.com>
+Subject: Re: [PATCH] firmware: imx: Skip return value check for some special
+ SCU firmware APIs
+Thread-Topic: [PATCH] firmware: imx: Skip return value check for some special
+ SCU firmware APIs
+Thread-Index: AQHVc4lSn4nBMGf230anvZh0PllY6g==
+Date: Wed, 25 Sep 2019 13:13:02 +0000
+Message-ID: <VI1PR04MB70232DEA67972332611480CAEE870@VI1PR04MB7023.eurprd04.prod.outlook.com>
+References: <1569406066-16626-1-git-send-email-Anson.Huang@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [89.37.124.34]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 2526283c-1931-412f-009b-08d741ba18a9
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600167)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:VI1SPR01MB023; 
+x-ms-traffictypediagnostic: VI1SPR01MB023:|VI1SPR01MB023:
+x-ms-exchange-purlcount: 1
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1SPR01MB0239392B88A58BA2D3E113BEE870@VI1SPR01MB023.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 01713B2841
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(39860400002)(366004)(396003)(376002)(136003)(199004)(189003)(6636002)(316002)(102836004)(186003)(26005)(305945005)(6506007)(7696005)(8936002)(5660300002)(53546011)(76116006)(66946007)(9686003)(76176011)(7736002)(66066001)(91956017)(45080400002)(54906003)(6306002)(478600001)(66556008)(66476007)(81156014)(110136005)(64756008)(25786009)(66446008)(8676002)(71200400001)(71190400001)(86362001)(81166006)(229853002)(3846002)(6246003)(2501003)(99286004)(33656002)(6116002)(14454004)(44832011)(55016002)(2906002)(446003)(14444005)(966005)(4326008)(476003)(52536014)(256004)(486006)(6436002)(74316002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1SPR01MB023;
+ H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 66u+VoyOVB0RdKZ0ocp5uO9BaQSYUkMSetPZaxq86rSvYvFHXVeEjfto7tyV70LC371fmfcJxnFBcbVPtnanA6jAk1tjnNUDrD9hZbBvXt+1gMc3VxaRqhKagu0FxfiHcNq1034/PSRDkssAJ//a5sqiCagxFdZROr8VmGH+Wra8pTwIqkTvSl7QwCyWabCTJZnHzKCN6sG901QPSIte8HYS5z20bi6YiAgtmTNP9AtjwipXVbI+pkStgUkPz6Ys4bxsU6Ry37he+OeuCsAq/XoBiOGcedOjB22qsmpmqz4GDGcV5e2aXjrCcjEu25AgycE0Tr2i4lNcsZMYPRJDyMzUfb+ryc15YgrAWFY5roXM16zDB/Bsv1pBVXYHS7XdWloNg/+Sjj/pn6EWPHMhIgzRqLJo02w2saNhsRoORqGMIE/RgreqF3jW3tNmPRBcZ2FUzpdNCYq+9C7IY7GQhA==
 MIME-Version: 1.0
-In-Reply-To: <1569411888-98116-3-git-send-email-jian.hu@amlogic.com>
-References: <1569411888-98116-1-git-send-email-jian.hu@amlogic.com>
- <1569411888-98116-3-git-send-email-jian.hu@amlogic.com>
-To: Jerome Brunet <jbrunet@baylibre.com>, Jian Hu <jian.hu@amlogic.com>,
- Neil Armstrong <narmstrong@baylibre.com>
-From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH 2/2] clk: meson: a1: add support for Amlogic A1 clock
- driver
-User-Agent: alot/0.8.1
-Date: Wed, 25 Sep 2019 06:12:31 -0700
-Message-Id: <20190925131232.4751020640@mail.kernel.org>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2526283c-1931-412f-009b-08d741ba18a9
+X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Sep 2019 13:13:02.8264 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: I2ZvYu/9RCXozIhCIO+YRWSZ88ZLHxrJ/LeexbbRmitPfGQrW6/v1GrL7J6WOLK9uCykYC5EL0SfwG6XHwer8A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1SPR01MB023
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_061232_907032_3E788D8B 
-X-CRM114-Status: GOOD (  18.34  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190925_061308_184608_732C24BD 
+X-CRM114-Status: GOOD (  15.78  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:111:f400:fe0d:0:0:0:619 listed in]
+ [list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -65,7 +115,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 1.0 FORGED_SPF_HELO        No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,218 +127,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Jianxin Pan <jianxin.pan@amlogic.com>,
- devicetree@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Jian Hu <jian.hu@amlogic.com>, Qiufang Dai <qiufang.dai@amlogic.com>,
- linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Jian Hu (2019-09-25 04:44:48)
-> The Amlogic A1 clock includes three parts:
-> peripheral clocks, pll clocks, CPU clocks.
-> sys pll and CPU clocks will be sent in next patch.
+On 25.09.2019 13:09, Anson Huang wrote:
+> The SCU firmware does NOT always have return value stored in message
+> header's function element even the API has response data, those special
+> APIs are defined as void function in SCU firmware, so they should be
+> treated as return success always.
 > 
-> Unlike the previous series, there is no EE/AO domain
-> in A1 CLK controllers.
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+> 	- This patch is based on the patch of https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpatchwork.kernel.org%2Fpatch%2F11129553%2F&amp;data=02%7C01%7Cleonard.crestez%40nxp.com%7Cc0ced6cd07f04023977008d741a07367%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637050029712216472&amp;sdata=Ccq%2Fb2RJdMqmnL7VXrl8YhOlUwC7bWiUG%2BNmiw4OsSM%3D&amp;reserved=0
+> ---
+>   drivers/firmware/imx/imx-scu.c | 34 ++++++++++++++++++++++++++++++++--
+>   1 file changed, 32 insertions(+), 2 deletions(-)
 > 
-> Signed-off-by: Jian Hu <jian.hu@amlogic.com>
-> Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
-
-This second name didn't send the patch. Please follow the signoff
-procedures documented in Documentation/process/submitting-patches.rst
-
-> diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
-> index 16d7614..a48f67d 100644
-> --- a/arch/arm64/Kconfig.platforms
-> +++ b/arch/arm64/Kconfig.platforms
-> @@ -138,6 +138,7 @@ config ARCH_MESON
->         select COMMON_CLK_AXG
->         select COMMON_CLK_G12A
->         select MESON_IRQ_GPIO
-> +       select COMMON_CLK_A1
-
-Sort?
-
->         help
->           This enables support for the arm64 based Amlogic SoCs
->           such as the s905, S905X/D, S912, A113X/D or S905X/D2
-> diff --git a/drivers/clk/meson/Kconfig b/drivers/clk/meson/Kconfig
-> index dabeb43..e6cb4c3 100644
-> --- a/drivers/clk/meson/Kconfig
-> +++ b/drivers/clk/meson/Kconfig
-> @@ -107,3 +107,13 @@ config COMMON_CLK_G12A
->         help
->           Support for the clock controller on Amlogic S905D2, S905X2 and S905Y2
->           devices, aka g12a. Say Y if you want peripherals to work.
-> +
-> +config COMMON_CLK_A1
-
-Probably should be placed somewhere alphabetically in this file?
-
-> +       bool
-> +       depends on ARCH_MESON
-> +       select COMMON_CLK_MESON_REGMAP
-> +       select COMMON_CLK_MESON_DUALDIV
-> +       select COMMON_CLK_MESON_PLL
-> +       help
-> +         Support for the clock controller on Amlogic A113L device,
-> +         aka a1. Say Y if you want peripherals to work.
-> diff --git a/drivers/clk/meson/Makefile b/drivers/clk/meson/Makefile
-> index 3939f21..6be3a8f 100644
-> --- a/drivers/clk/meson/Makefile
-> +++ b/drivers/clk/meson/Makefile
-> @@ -19,3 +19,4 @@ obj-$(CONFIG_COMMON_CLK_AXG_AUDIO) += axg-audio.o
->  obj-$(CONFIG_COMMON_CLK_GXBB) += gxbb.o gxbb-aoclk.o
->  obj-$(CONFIG_COMMON_CLK_G12A) += g12a.o g12a-aoclk.o
->  obj-$(CONFIG_COMMON_CLK_MESON8B) += meson8b.o
-> +obj-$(CONFIG_COMMON_CLK_A1) += a1.o
-
-I would guess this should be sorted on Kconfig name in this file?
-
-> diff --git a/drivers/clk/meson/a1.c b/drivers/clk/meson/a1.c
-> new file mode 100644
-> index 0000000..26edae0f
-> --- /dev/null
-> +++ b/drivers/clk/meson/a1.c
-> @@ -0,0 +1,2617 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> +/*
-> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
-> + */
-> +
-> +#include <linux/clk-provider.h>
-> +#include <linux/init.h>
-> +#include <linux/of_device.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/of_address.h>
-> +#include "clk-mpll.h"
-> +#include "clk-pll.h"
-> +#include "clk-regmap.h"
-> +#include "vid-pll-div.h"
-> +#include "clk-dualdiv.h"
-> +#include "meson-eeclk.h"
-> +#include "a1.h"
-> +
-[...]
-> +
-> +/*
-> + * The Meson A1 HIFI PLL is 614.4M, it requires
-> + * a strict register sequence to enable the PLL.
-> + * set meson_clk_pcie_pll_ops as its ops
-
-Please remove this last line as it's obvious from the code what ops are
-used.
-
-> + */
-> +static struct clk_regmap a1_hifi_pll = {
-> +       .data = &(struct meson_clk_pll_data){
-> +               .en = {
-> +                       .reg_off = ANACTRL_HIFIPLL_CTRL0,
-> +                       .shift   = 28,
-> +                       .width   = 1,
-> +               },
-> +               .m = {
-> +                       .reg_off = ANACTRL_HIFIPLL_CTRL0,
-> +                       .shift   = 0,
-> +                       .width   = 8,
-> +               },
-> +               .n = {
-> +                       .reg_off = ANACTRL_HIFIPLL_CTRL0,
-> +                       .shift   = 10,
-> +                       .width   = 5,
-> +               },
-> +               .frac = {
-> +                       .reg_off = ANACTRL_HIFIPLL_CTRL1,
-> +                       .shift   = 0,
-> +                       .width   = 19,
-> +               },
-> +               .l = {
-> +                       .reg_off = ANACTRL_HIFIPLL_STS,
-> +                       .shift   = 31,
-> +                       .width   = 1,
-> +               },
-> +               .table = a1_hifi_pll_params_table,
-> +               .init_regs = a1_hifi_init_regs,
-> +               .init_count = ARRAY_SIZE(a1_hifi_init_regs),
-> +       },
-> +       .hw.init = &(struct clk_init_data){
-> +               .name = "hifi_pll",
-> +               .ops = &meson_clk_pcie_pll_ops,
-> +               .parent_hws = (const struct clk_hw *[]) {
-> +                       &a1_xtal_hifipll.hw
-> +               },
-> +               .num_parents = 1,
-> +       },
+> diff --git a/drivers/firmware/imx/imx-scu.c b/drivers/firmware/imx/imx-scu.c
+> index 869be7a..ced5b12 100644
+> --- a/drivers/firmware/imx/imx-scu.c
+> +++ b/drivers/firmware/imx/imx-scu.c
+> @@ -78,6 +78,11 @@ static int imx_sc_linux_errmap[IMX_SC_ERR_LAST] = {
+>   	-EIO,	 /* IMX_SC_ERR_FAIL */
+>   };
+>   
+> +static const struct imx_sc_rpc_msg whitelist[] = {
+> +	{ .svc = IMX_SC_RPC_SVC_MISC, .func = IMX_SC_MISC_FUNC_UNIQUE_ID },
+> +	{ .svc = IMX_SC_RPC_SVC_MISC, .func = IMX_SC_MISC_FUNC_GET_BUTTON_STATUS },
 > +};
+
+Until now this low level IPC code didn't treat any svc/func specially 
+and this seems good.
+
+The imx_scu_call_rpc function already has an have_resp argument and 
+callers are responsible to fill it. Can't we deal with this by adding an 
+additional err_ret flag passed by the caller?
+
+We can add wrapper functions to avoid tree-wide changes for all callers.
+
 > +
-[..]
+>   static struct imx_sc_ipc *imx_sc_ipc_handle;
+>   
+>   static inline int imx_sc_to_linux_errno(int errno)
+> @@ -157,11 +162,24 @@ static int imx_scu_ipc_write(struct imx_sc_ipc *sc_ipc, void *msg)
+>   	return 0;
+>   }
+>   
+> +static bool imx_scu_call_skip_return_value_check(uint8_t svc, uint8_t func)
+> +{
+> +	int i;
 > +
-> +static struct clk_regmap a1_fclk_div2 = {
-> +       .data = &(struct clk_regmap_gate_data){
-> +               .offset = ANACTRL_FIXPLL_CTRL0,
-> +               .bit_idx = 21,
-> +       },
-> +       .hw.init = &(struct clk_init_data){
-> +               .name = "fclk_div2",
-> +               .ops = &clk_regmap_gate_ops,
-> +               .parent_hws = (const struct clk_hw *[]) {
-> +                       &a1_fclk_div2_div.hw
-> +               },
-> +               .num_parents = 1,
-> +               /*
-> +                * add CLK_IS_CRITICAL flag to avoid being disabled by clk core
-> +                * or its children clocks.
-
-This comment is useless. Please replace it with an actual reason for
-keeping the clk on instead of describing what the flag does.
-
-> +                */
-> +               .flags = CLK_IS_CRITICAL,
-> +       },
-> +};
+> +	for (i = 0; i < ARRAY_SIZE(whitelist); i++)
+> +		if (svc == whitelist[i].svc &&
+> +			func == whitelist[i].func)
+> +			return true;
 > +
-[..]
-> +static struct clk_regmap a1_dmc = {
-> +       .data = &(struct clk_regmap_gate_data){
-> +               .offset = DMC_CLK_CTRL,
-> +               .bit_idx = 8,
-> +       },
-> +       .hw.init = &(struct clk_init_data) {
-> +               .name = "dmc",
-> +               .ops = &clk_regmap_gate_ops,
-> +               .parent_hws = (const struct clk_hw *[]) {
-> +                       &a1_dmc_sel2.hw
-> +               },
-> +               .num_parents = 1,
-> +               /*
-> +                * add CLK_IGNORE_UNUSED to avoid hangup
-> +                * DDR clock should not change at runtime
-> +                */
-> +               .flags = CLK_SET_RATE_PARENT | CLK_IGNORE_UNUSED,
-
-So not CLK_IS_CRITICAL?
-
-> +       },
-> +};
+> +	return false;
+> +}
 > +
-[...]
-> +
-> +/*
-> + * cpu clock register base address is 0xfd000080
-> + */
-> +static struct clk_regmap *const a1_cpu_clk_regmaps[] = {
-> +       /* TODO */
+>   /*
+>    * RPC command/response
+>    */
+>   int imx_scu_call_rpc(struct imx_sc_ipc *sc_ipc, void *msg, bool have_resp)
+>   {
+> +	uint8_t saved_svc, saved_func;
+>   	struct imx_sc_rpc_msg *hdr;
+>   	int ret;
+>   
+> @@ -171,8 +189,11 @@ int imx_scu_call_rpc(struct imx_sc_ipc *sc_ipc, void *msg, bool have_resp)
+>   	mutex_lock(&sc_ipc->lock);
+>   	reinit_completion(&sc_ipc->done);
+>   
+> -	if (have_resp)
+> +	if (have_resp) {
+>   		sc_ipc->msg = msg;
+> +		saved_svc = ((struct imx_sc_rpc_msg *)msg)->svc;
+> +		saved_func = ((struct imx_sc_rpc_msg *)msg)->func;
+> +	}
+>   	sc_ipc->count = 0;
+>   	ret = imx_scu_ipc_write(sc_ipc, msg);
+>   	if (ret < 0) {
+> @@ -190,7 +211,16 @@ int imx_scu_call_rpc(struct imx_sc_ipc *sc_ipc, void *msg, bool have_resp)
+>   
+>   		/* response status is stored in hdr->func field */
+>   		hdr = msg;
+> -		ret = hdr->func;
+> +		/*
+> +		 * Some special SCU firmware APIs do NOT have return value
+> +		 * in hdr->func, but they do have response data, those special
+> +		 * APIs are defined as void function in SCU firmware, so they
+> +		 * should be treated as return success always.
+> +		 */
+> +		if (!imx_scu_call_skip_return_value_check(saved_svc, saved_func))
+> +			ret = hdr->func;
+> +		else
+> +			ret = 0;
+>   	}
+>   
+>   out:
+> 
 
-Can it be done?
-
-> +};
 
 _______________________________________________
 linux-arm-kernel mailing list
