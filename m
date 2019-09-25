@@ -2,121 +2,130 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FAFDBD667
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 04:36:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FD3EBD66E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 04:38:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hav19DJIpmy2kgBlBf0R8ZzgXAqTGwUEtyN3pRfNGdw=; b=fD4tKZzMz00oV7
-	oDoxrMwgc7tTyNboEOcbfxM/2nlhvZKErOojbf6qELCf7EopAhjqB+WQsEsg/STiD/Qme48fk0NEp
-	3ICbZcFn71KY5lh23sBUtxOWLdIyNOO962UrhylSxwpvNe+q9hG5GGEaKQRDOzat2BQeS6jG7+pEH
-	Nwhsx5jHJcECvX5fr9BBCcrhb7KxCVL8iDfQW6vO2KIauZMnJxsOJIQ0obVHik5VP7NFcwHYfDhs2
-	Lq4cF3fU/u1Ot4mubT/rfPathhHil+kyxDiob6cPoOy6ul4C+D3uvt7A5n4lntQl5qN14LxFqiiFN
-	MNtgfWMdGsZLqxBQZIyw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZS3n2BufWZRJhTipJw3X/2xsNdeiIssMwLXQ6CY9VsE=; b=m4sskjCh1jcJ5m
+	1cd30Kadw/iLkzPigUuvxs12QmtjfKVc6eN4dq/HEOjGcv0eXoBPk5Ptv1L5+PgvTV1efjfVdzLFx
+	FKnXzxXknWe5K3DlenmnXH5cF6dHi9YMvJuJ4hNXLJABTPPuVn18N2E8TvZW8LDHu+BtzsXFMg3iB
+	rViKQHeQCrOfE2361dxW+1XxSuE6pdHR8+BQ7AEF6YL6Tr90XCFVrU8cQb4mO+YfuLyAd+T5Djva0
+	i2FrFtMokxlDCdyDQyizzW3KyGHjRd9DWMiX9bjZx3TJ4JpkGxv6YKBUN2z8xpcagTeg9dNfRgvuF
+	cNePKoMmPLBgLr4Sc0NQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCxAQ-0001Xo-D5; Wed, 25 Sep 2019 02:36:34 +0000
-Received: from mail-eopbgr130053.outbound.protection.outlook.com
- ([40.107.13.53] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1iCxCC-0002GI-Uc; Wed, 25 Sep 2019 02:38:25 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCxAF-0001X5-EY
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 02:36:24 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=mBtoDBtkoz0lQkfdualSj5SI9idwkkgIS4StGySE2GclLxRajBHCpJx+nQexPnXTpIdbOVUtOXHRm3pWRfqmAf5e31kxV6GK1Zpj37wxXGIEMDtqdT6GnJrZz/CObH/s4yYJKzmvzeHIoE/b/gcOlBmBCU72RIDD2T8QuIoCCJTTORao8Uc2wspF6EoCxdT06rokIRsWYSakBRbPJ4yrdGpJsBl77lxj8Bd1J/790Jh6iMa+nN7RnSKOB7sSiviRnq999557z+Zcwss98WgCQMnUIpzlNgtO7uo/ez+o9JUNqvIKc7/gg5qPj5f6Uutf+6eS5uPzKAebVMrAyLS5nQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=oTMY0GcYbBLTZctPnUK/z/R3ID7zD3s50PYhxLe9Mdg=;
- b=XMGVsxEwOlAYqOe6Svjot1evG/Qn4bkJNUIMcxrCwB5H4AEDYl3rEEeZEecaHPAM/KkheTf74PGDA5MUbMpN8MP9gPZoG1B+TrLCed9sDyCOPbWvuWOU6W2lfwMrE/T+CYLFpB8StYASYyBjYSStkuzKTzR2jcsY/UU11gBucn6H8yoWciaFPid2/DW0xZ0x8kX3hZAlFoCPpXsLcVbW0fe1P9i9CyqoaesVbirDeLdcgk9DBX1aK3TkRygEm6MMg80+0AFVGsJdcbQ6RMhWk13sLJkNcFVrvH2svc8kEQqrFa065Gge/OSiBo+rmz6Huk39Gh1QnKjSchIk72muuQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=oTMY0GcYbBLTZctPnUK/z/R3ID7zD3s50PYhxLe9Mdg=;
- b=ZCNkPX0Y8ErBdzktxHStLv4zMflH4OX5JFpLC0fpLwNiwHoOYVPAU5IiODLvS5j7MCfvbKlhbnn9NTEuOmsNdFaIFHMug6q+q+KqUJvMcqyxz9DHdbSmmyqIQxuwRGQsjRy5M2PNaTwigzpAeunAlERaXjmKusHBLyZ1jjKmDIc=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3913.eurprd04.prod.outlook.com (52.134.65.143) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2284.20; Wed, 25 Sep 2019 02:36:16 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::8958:299c:bc54:2a38]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::8958:299c:bc54:2a38%7]) with mapi id 15.20.2284.023; Wed, 25 Sep 2019
- 02:36:16 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: David Laight <David.Laight@ACULAB.COM>, "thierry.reding@gmail.com"
- <thierry.reding@gmail.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
- <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
- "linux-pwm@vger.kernel.org" <linux-pwm@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH] pwm: pwm-imx27: Use 'dev' instead of dereferencing it
- repeatedly
-Thread-Topic: [PATCH] pwm: pwm-imx27: Use 'dev' instead of dereferencing it
- repeatedly
-Thread-Index: AQHVcra4SlIMDowCwkO5fDgX0dE1dKc6lGgAgAADXwCAAAyggIABCfgA
-Date: Wed, 25 Sep 2019 02:36:16 +0000
-Message-ID: <DB3PR0402MB3916A7A0C79C10B82B304BAAF5870@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1569315593-769-1-git-send-email-Anson.Huang@nxp.com>
- <6cfb1595992b46dc884731555e6f0334@AcuMS.aculab.com>
- <DB3PR0402MB3916FFD66797DAC0AB1110D8F5840@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <37b2481ac9094f27bf21325e2770abdb@AcuMS.aculab.com>
-In-Reply-To: <37b2481ac9094f27bf21325e2770abdb@AcuMS.aculab.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 966542ed-75ff-4499-c164-08d741612403
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600167)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3913; 
-x-ms-traffictypediagnostic: DB3PR0402MB3913:|DB3PR0402MB3913:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB3913AA66297A44A31AADAA38F5870@DB3PR0402MB3913.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 01713B2841
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(136003)(366004)(376002)(396003)(39860400002)(189003)(199004)(71200400001)(6246003)(6506007)(186003)(5660300002)(76176011)(6436002)(7696005)(316002)(81166006)(55016002)(99286004)(86362001)(25786009)(2501003)(446003)(26005)(102836004)(229853002)(110136005)(6116002)(52536014)(8936002)(256004)(8676002)(81156014)(14444005)(476003)(66066001)(66946007)(2201001)(66446008)(3846002)(2906002)(76116006)(4326008)(11346002)(9686003)(14454004)(478600001)(66476007)(66556008)(7736002)(33656002)(305945005)(44832011)(486006)(74316002)(71190400001)(64756008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3913;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: otlQjttsMe/3TA8fYLn6yB0Nt4RxCdK+hWQAkTzLh+NRPMmm2CpLOdJAek9ohhaDhfo8Vo3/0crbftFZFZIMZl3xSZSbjR9PuRGMunzkvWHkNM8Pz6Av0iXl6zu+qrJa5VNtWvhfo7B31W6JIe5sBQ5tCf8pwNz713kFTkVRtl1WOnm21jMDFHpL0Zzg0aQ+uZwoR0Z0R+CfYWlfLPo/7HOGTIPWYC23XwiqawSSsHYy2MmDYYNoh4yJhoKeGAFpbfdnq7kvjC+qM/pHwDaV0aMUZb91cmwOYm1nQGQu7zbglRnwYswaAFltWAsmQpuTncEN/4keqqEWb1jZ1aHn6w+p53i5j4as4eThrCZC0aQIU1QjT2XbHoNFREXFBcetuyB/bDgvALb+mqya6R6N0vBuu3h6qNFg6JcVP9gRPuo=
+ id 1iCxBs-0002Fx-QJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 02:38:06 +0000
+Received: by mail-wm1-x342.google.com with SMTP id i16so2724076wmd.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 24 Sep 2019 19:38:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=HCLrXCyTc7kRmItMmApfFBrbXPpLKB3je1Qh4DxO1lE=;
+ b=SI4cjaQOO5OGPTBzjrDMDxsy3wFb1Ydf3/0tcjgO0pClq6aT+LSPN8Umi3jhvozS6E
+ suroxPjBbde13X1ix7OIiaJ9CvfrE3obro1D1FVkvKPkZFOAcNfL8LQL/rkypnHP//QA
+ wymDV4CoB/Bt/03jXeMnNk6ug9jFFaFoz2D30DiF7FgF+KY7U1a1EFP2pQRJ0EU3vORS
+ dgQKZqttUr5cj4X0I58lBU0pNHGCYctbvtklPvFh+XJXf89DGH8DDMxLiEutLU2XgbEn
+ UgKZZh9cYI5T/nOYMkF/lqPd34eOsL6DK38piVk40hlhEDT8Q+SEEgcDRginHrisP9n9
+ qteQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :message-id:date:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=HCLrXCyTc7kRmItMmApfFBrbXPpLKB3je1Qh4DxO1lE=;
+ b=UKwxfDZqcpl4/sCzEgl1VNj/uigzZjM/Tv3OR5M3JEucf6QiW7XU4cQbOsCTkoJ84U
+ +oZ0vfsuhUiAU+9Mzn0EP46KDQ6vdN8ZUiYsBpNXIDm2RJJzxJM1ohPIm+6sCT+XFt5K
+ 6aq1tiqwSkZ5zKMsvNVN3u69vUW6vvboVvoReQcuRGKKc3K1OjMp62moYkMPwBp4Mg4/
+ fSw3Vv9amxBXnrxD5VUEq0iaVCZvUjZDXlxiXBSubok28/yeCkiDIbVYGeGFBsK83yz7
+ ilS0LaJMXDihcCWqoy7uOAVITrVAICngzyz8qradToYVZrxQMbFxwlvHGV26qnZP5as0
+ lrKw==
+X-Gm-Message-State: APjAAAUVEGqfTf3kZ8+/Pv4unFmWQXVhe5QVIq/y5aKwzcRRL39g4UPF
+ encVfbeiqn+wbqJEYIz0m4ZZ/Gb0GjWBqfsp
+X-Google-Smtp-Source: APXvYqw2z25gXcAh6NsGQG9x5KJKCmJKDU6r3JdNFetfu182Q+6Tu/8Tb3luJZx+s8JT6jxu7cc50A==
+X-Received: by 2002:a1c:60c1:: with SMTP id u184mr4191443wmb.32.1569379081825; 
+ Tue, 24 Sep 2019 19:38:01 -0700 (PDT)
+Received: from [10.44.66.8] ([212.45.67.2])
+ by smtp.googlemail.com with ESMTPSA id q10sm7857791wrd.39.2019.09.24.19.37.55
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 24 Sep 2019 19:38:01 -0700 (PDT)
+Subject: Re: [RFCv4 0/7] interconnect: Add imx support via devfreq
+To: Leonard Crestez <leonard.crestez@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>
+References: <cover.1566570260.git.leonard.crestez@nxp.com>
+ <VI1PR04MB702373BE28E4404C7F2CE75FEE8C0@VI1PR04MB7023.eurprd04.prod.outlook.com>
+From: Georgi Djakov <georgi.djakov@linaro.org>
+Openpgp: preference=signencrypt
+Autocrypt: addr=georgi.djakov@linaro.org; prefer-encrypt=mutual; keydata=
+ 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
+ KEmKjLDvB0pePJkdTw==
+Message-ID: <02d3fe6a-53a6-3290-deab-d79e940978ff@linaro.org>
+Date: Tue, 24 Sep 2019 19:37:53 -0700
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 966542ed-75ff-4499-c164-08d741612403
-X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Sep 2019 02:36:16.6934 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 2qjkrbUiVkHnw1imT2VaYrznRiYBDRgUub4oFYSjX1xzliuGItB8yzRC4+uexH4Eq4rDSlmol4ZUe/XfXcrz0g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3913
+In-Reply-To: <VI1PR04MB702373BE28E4404C7F2CE75FEE8C0@VI1PR04MB7023.eurprd04.prod.outlook.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_193623_501892_A97F4648 
-X-CRM114-Status: GOOD (  19.29  )
+X-CRM114-CacheID: sfid-20190924_193804_868015_B3094062 
+X-CRM114-Status: GOOD (  14.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.13.53 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.13.53 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -135,75 +144,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
+ Saravana Kannan <saravanak@google.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Alexandre Bailon <abailon@baylibre.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, David
+Hi Leonard,
 
-> Subject: RE: [PATCH] pwm: pwm-imx27: Use 'dev' instead of dereferencing it
-> repeatedly
+On 9/16/19 05:34, Leonard Crestez wrote:
+> On 23.08.2019 17:37, Leonard Crestez wrote:
+>> This series add imx support for interconnect via devfreq: the ICC
+>> framework is used to aggregate requests from devices and then those are
+>> converted to DEV_PM_QOS_MIN_FREQUENCY requests for devfreq.
+>>  
+>> Since there is no single devicetree node that can represent the "interconnect"
+>> new API is added to allow individual devfreq nodes to act as parsing proxies
+>> all mapping to a single soc-level icc provider. This is still RFC
+>> because of this
 > 
-> From: Anson Huang
-> > Sent: 24 September 2019 11:03
-> > Hi, David
-> >
-> > > Subject: RE: [PATCH] pwm: pwm-imx27: Use 'dev' instead of
-> > > dereferencing it repeatedly
-> > >
-> > > From: Anson Huang
-> > > > Sent: 24 September 2019 10:00
-> > > > Add helper variable dev = &pdev->dev to simply the code.
-> > > >
-> ...
-> > > >  static int pwm_imx27_probe(struct platform_device *pdev)  {
-> > > > +	struct device *dev = &pdev->dev;
-> > > >  	struct pwm_imx27_chip *imx;
-> > > >
-> > > > -	imx = devm_kzalloc(&pdev->dev, sizeof(*imx), GFP_KERNEL);
-> > > > +	imx = devm_kzalloc(dev, sizeof(*imx), GFP_KERNEL);
-> ...
-> > > Hopefully the compiler will optimise this back otherwise you've
-> > > added another local variable which may cause spilling to stack.
-> > > For a setup function it probably doesn't matter, but in general it
-> > > might have a small negative performance impact.
-> > >
-> > > In any case this doesn't shorten any lines enough to remove
-> > > line-wrap and using &pdev->dev is really one less variable to
-> > > mentally track when reading the code.
-> >
-> > Do we know which compiler will optimize this? I saw many of the
-> > patches doing this to avoid a lot of dereference, I understand it does
-> > NOT save lines, but my intention is to avoid dereference which might save
-> some instructions.
-> >
-> > I thought saving instructions is more important. So now there are
-> > different opinion about doing this?
+> Any comments? I made a lot of changes relative to previous versions, 
+> most of them solely to avoid adding a virtual node in DT bindings.
 > 
-> Remember &pdev->dev is just 'pdev + constant'.
-> Assuming 'pdev' is held in a callee saved register (which you want it to be)
-> then to access
-> dev->foo the compiler can remember the constant and use an offset from
-> dev->'pdev' instead of
-> an extra 'dev' variable.
-> On most modern ABI the first function call arguments are passed in registers.
-> So an add  instruction (probably lea) can be used to add the constant offset
-> at the same time as the value is moved into the argument register.
-> 
-> However your extra variable could easily get spilled out to the stack.
-> So you get an extra memory read rather than (at most) an extra 'add'
-> instruction.
-> 
-> Even if pdev->dev were a pointer, repeatedly reading it from pdev->dev
-> could easily generate better code than having an extra variable that would
-> mean the value was repeatedly read from the stack.
+> The only current interconnect provider implementation is for qcom and it 
+> uses a firmware node as the provider node (with #interconnect-cells). 
+> However there is no obvious equivalent of that for imx and many other SOCs.
 
-Thanks for detail education about it, please ignore these patches.
+Not sure if it will help, but have you seen the qcs404 interconnect driver?
+There is also mt8183 interconnect provider driver on LKML.
+
+> On imx there are multiple pieces of scalable fabric which can be defined 
+> in DT as devfreq devices and it sort of makes sense to add 
+> #interconnect-cells to those. However when it comes to describing the 
+> SOC interconnect graph it's much more convenient to have a single 
+> per-SOC platform driver.
+
+Is all the NoC configuration done only by ATF? Are there any NoC related memory
+mapped registers?
 
 Thanks,
-Anson
+Georgi
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
