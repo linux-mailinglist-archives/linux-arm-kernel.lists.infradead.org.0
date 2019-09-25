@@ -2,52 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15E01BDCAE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 13:06:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59164BDCBB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 13:09:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=X4MQ/M6y+QQe+2QuXCYdSR/bUls4w0490owG3SWOZlY=; b=Qk0suEgCXizd03kPBuPj8p2KD
-	74lx7/i/Y5mIuUCMJnhjVjIVpDJHFlmoRyPN9Pt4FalV3KEd1IdXZMIdPYYNP6sZ4z2kWF5xCBJBQ
-	1vDt2XHj/ch/Wfxh/l1Iq8A9+m+rdribhfQ4iOpLNgZNEEhfpIXEgp9Hv0J92B3EKT6SNpoLLRbHK
-	e5sWdQ7eqVhRpCAkB1Thz2TQ+lD1kLG4WZBXcRVE7N2LyQB6gqmKFmkD4gALvCYfSGqvomAwmvHHH
-	6tQNSwHjwZKUGglh3IqWgwAOo/XMcTq00bsHrejzzolO6gKM+W0tIDJJ6R6yDoRIjf3kuYmw5AcPm
-	NVmWIHGWQ==;
+	 bh=JqUGvawphpYlA8SQ/dTYPhpqT1ccG/5XZYm0q8l6SdQ=; b=tl+7A6mHnuihjPDSpv6ldEuT8
+	MT2KhbNpfgNU5Anwc+S4dxevZcJPqdKdTgENdQkNI1lrzgorOoCh2UIsu0KD4M3r+C5JB7z5OgQzb
+	UDGVSDQVWqo97JBfRJBOIlQyUJqw69PfMrJt+7K9EICuzp52kVUGBl4BweNpF2ZOM4UBLLKlQE+Dh
+	JInQ3gpH2MxJ5cUcTv4Kk/AoCe5DNQXc5mwPBFQnFkcTKO2DejBm5/R5vFmLL8BXWyUYKmLQOsDqc
+	YnhAdzbBzvxM/zFYfICpdWT/X8unFmHi0R6T0v/FiXj72NTIuRIR+pVey3X8QKMUW22Qke8d5ue5O
+	x4ih+DLHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iD57D-0000vD-L9; Wed, 25 Sep 2019 11:05:48 +0000
+	id 1iD5AU-0001X2-A6; Wed, 25 Sep 2019 11:09:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iD56q-0000uT-JI
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 11:05:25 +0000
+ id 1iD5A7-0001Wb-OC
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 11:08:49 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4FB592082F;
- Wed, 25 Sep 2019 11:05:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E87692082F;
+ Wed, 25 Sep 2019 11:08:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569409523;
- bh=/puB6B6PVKDxmNtkS5LQbtyHN2zHMrrYX7SAlqLe9sE=;
+ s=default; t=1569409727;
+ bh=FMDS8H1Rv7cPuJUqBeDnNtTPKy6Ryfmb3rVdLRw8l9s=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Wp8VnmbJnm8bwlyysvBz9wNIDjnZd8LK2RmHB52rb6eQLRXmGXgsE8IZeKZ7pjeys
- a1kY7TiE8A8mvxThlGZTR3n9GahOVvDMCtkQMXjLEzGr6YL3m8zKjfmNt0FefMAl+p
- gpqhM3Eb9aDPKCau92d2cKNWhWnhwGFoVV9NzHks=
-Date: Wed, 25 Sep 2019 13:05:21 +0200
+ b=Lj4oicj7cJomaLMxHcbWE1rG5FrENpsW1jl+RsL9x5er1qVQYkoSJY0yn10wz6AB+
+ Lj+HNMxEgLqmFVWgK3ottEq09ElWg180t4nwcklu03yNkJYU62yghpTpItEQuxm3Y4
+ lVw/xkgnCx6kjo7/gDQbhoGB+G9pTcTFT0VQWprI=
+Date: Wed, 25 Sep 2019 13:08:44 +0200
 From: Maxime Ripard <mripard@kernel.org>
-To: Corentin Labbe <clabbe.montjoie@gmail.com>
-Subject: Re: [PATCH v3 2/2] crypto: sun4i-ss: enable pm_runtime
-Message-ID: <20190925110521.ad3igh3dkhtzl22d@gilmour>
-References: <20190924080832.18694-1-clabbe.montjoie@gmail.com>
- <20190924080832.18694-3-clabbe.montjoie@gmail.com>
+To: Vasily Khoruzhick <anarsoul@gmail.com>
+Subject: Re: [PATCH] arm64: dts: allwinner: a64: Drop PMU node
+Message-ID: <20190925110844.qfm5ris7xeze44th@gilmour>
+References: <CA+E=qVeAR4AFN99ZVy8EZLW6p_8ucTewOdMis37wnpV3DObaGg@mail.gmail.com>
+ <20190807115614.phm7sbyae6yajkug@flea>
+ <CA+E=qVdh3MHMsEC9XKe5-7O8fGTHFh76WLOgVf+PZPv7c4JE9w@mail.gmail.com>
+ <20190808162628.pthvy3tgf3naj76s@flea>
+ <CA+E=qVeiWoRGn05HpMzx_5yidit4GM18tBrziW5MBo00f_-PKQ@mail.gmail.com>
+ <20190812080420.saelmqb36vkelxn4@flea>
+ <CA+E=qVchsqOF_hVD-qBuKwi7PTMYtUR-LE2dD_mpptFJcWE_yw@mail.gmail.com>
+ <20190813053905.hu2hyi7fah2vujzz@flea>
+ <CA+E=qVegU8M09tmbxGUaBSoueGU6PRsAtr9XWrc8V8HnCPjULg@mail.gmail.com>
+ <CA+E=qVeArUV0u_17ty=HgaU35TwcBfQjSOJf0A5yM6L6+W-0Og@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190924080832.18694-3-clabbe.montjoie@gmail.com>
+In-Reply-To: <CA+E=qVeArUV0u_17ty=HgaU35TwcBfQjSOJf0A5yM6L6+W-0Og@mail.gmail.com>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_040524_698655_AC305C01 
-X-CRM114-Status: GOOD (  11.09  )
+X-CRM114-CacheID: sfid-20190925_040847_829517_22A0CCD4 
+X-CRM114-Status: GOOD (  32.84  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,52 +84,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: herbert@gondor.apana.org.au, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, wens@csie.org, linux-crypto@vger.kernel.org,
- davem@davemloft.net, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1095793440942579602=="
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ "Jared D . McNeill" <jmcneill@netbsd.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Harald Geyer <harald@ccbib.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============7100334768661815615=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============1095793440942579602==
+--===============7100334768661815615==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="epxq7jf6b7rjqwnd"
+	protocol="application/pgp-signature"; boundary="xfvtyfmvyh5dzqpu"
 Content-Disposition: inline
 
 
---epxq7jf6b7rjqwnd
+--xfvtyfmvyh5dzqpu
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Tue, Sep 24, 2019 at 10:08:32AM +0200, Corentin Labbe wrote:
-> This patch enables power management on the Security System.
-> sun4i-ss now depends on PM because it simplify code and prevent some ifdef.
-> But this is not a problem since arch maintainer want ARCH_SUNXI to
-> depend on PM in the future.
+On Mon, Sep 23, 2019 at 04:55:59PM -0700, Vasily Khoruzhick wrote:
+> On Mon, Sep 23, 2019 at 4:51 PM Vasily Khoruzhick <anarsoul@gmail.com> wrote:
+> >
+> > On Mon, Aug 12, 2019 at 10:39 PM Maxime Ripard
+> > <maxime.ripard@bootlin.com> wrote:
+> > >
+> > > On Mon, Aug 12, 2019 at 11:01:51AM -0700, Vasily Khoruzhick wrote:
+> > > > On Mon, Aug 12, 2019 at 1:04 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> > > > >
+> > > > > On Thu, Aug 08, 2019 at 12:59:07PM -0700, Vasily Khoruzhick wrote:
+> > > > > > On Thu, Aug 8, 2019 at 9:26 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> > > > > > >
+> > > > > > > On Wed, Aug 07, 2019 at 10:36:08AM -0700, Vasily Khoruzhick wrote:
+> > > > > > > > On Wed, Aug 7, 2019 at 4:56 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> > > > > > > > >
+> > > > > > > > > On Tue, Aug 06, 2019 at 07:39:26PM -0700, Vasily Khoruzhick wrote:
+> > > > > > > > > > On Tue, Aug 6, 2019 at 2:14 PM Robin Murphy <robin.murphy@arm.com> wrote:
+> > > > > > > > > > >
+> > > > > > > > > > > On 2019-08-06 9:52 pm, Vasily Khoruzhick wrote:
+> > > > > > > > > > > > On Tue, Aug 6, 2019 at 1:19 PM Harald Geyer <harald@ccbib.org> wrote:
+> > > > > > > > > > > >>
+> > > > > > > > > > > >> Vasily Khoruzhick writes:
+> > > > > > > > > > > >>> On Tue, Aug 6, 2019 at 7:35 AM Robin Murphy <robin.murphy@arm.com> wrote:
+> > > > > > > > > > > >>>>
+> > > > > > > > > > > >>>> On 06/08/2019 15:01, Vasily Khoruzhick wrote:
+> > > > > > > > > > > >>>>> Looks like PMU in A64 is broken, it generates no interrupts at all and
+> > > > > > > > > > > >>>>> as result 'perf top' shows no events.
+> > > > > > > > > > > >>>>
+> > > > > > > > > > > >>>> Does something like 'perf stat sleep 1' at least count cycles correctly?
+> > > > > > > > > > > >>>> It could well just be that the interrupt numbers are wrong...
+> > > > > > > > > > > >>>
+> > > > > > > > > > > >>> Looks like it does, at least result looks plausible:
+> > > > > > > > > > > >>
+> > > > > > > > > > > >> I'm using perf stat regularly (cache benchmarks) and it works fine.
+> > > > > > > > > > > >>
+> > > > > > > > > > > >> Unfortunately I wasn't aware that perf stat is a poor test for
+> > > > > > > > > > > >> the interrupts part of the node, when I added it. So I'm not too
+> > > > > > > > > > > >> surprised I got it wrong.
+> > > > > > > > > > > >>
+> > > > > > > > > > > >> However, it would be unfortunate if the node got removed completely,
+> > > > > > > > > > > >> because perf stat would not work anymore. Maybe we can only remove
+> > > > > > > > > > > >> the interrupts or just fix them even if the HW doesn't work?
+> > > > > > > > > > > >
+> > > > > > > > > > > > I'm not familiar with PMU driver. Is it possible to get it working
+> > > > > > > > > > > > without interrupts?
+> > > > > > > > > > >
+> > > > > > > > > > > Yup - you get a grumpy message from the driver, it will refuse sampling
+> > > > > > > > > > > events (the ones which weren't working anyway), and if you measure
+> > > > > > > > > > > anything for long enough that a counter overflows you'll get wonky
+> > > > > > > > > > > results. But for counting hardware events over relatively short periods
+> > > > > > > > > > > it'll still do the job.
+> > > > > > > > > >
+> > > > > > > > > > I tried to drop interrupts completely from the node but 'perf top' is
+> > > > > > > > > > still broken. Though now in different way: it complains "cycles: PMU
+> > > > > > > > > > Hardware doesn't support sampling/overflow-interrupts. Try 'perf
+> > > > > > > > > > stat'"
+> > > > > > > > >
+> > > > > > > > > I have no idea if that's the culprit, but what is the state of the
+> > > > > > > > > 0x09010000 register?
+> > > > > > > >
+> > > > > > > > What register is that and how do I check it?
+> > > > > > >
+> > > > > > > It's in the CPUX Configuration block, and the bits are labelled as CPU
+> > > > > > > Debug Reset.
+> > > > > > >
+> > > > > > > And if you have busybox, you can use devmem.
+> > > > > >
+> > > > > > CPUX configuration block is at 0x01700000 according to A64 user
+> > > > > > manual, and particular register you're interested in is at 0x01700080,
+> > > > > > its value is 0x1110110F.
+> > > > > >
+> > > > > > Bits 16-19 are not defined in user manual and are not set.
+> > > > >
+> > > > > Sorry, I somehow thought this was for the H6...
+> > > > >
+> > > > > I don't have any idea then :/
+> > > >
+> > > > OK, so what should we do? 'perf top'/'perf record' work fine if PMU
+> > > > node is dropped, but they don't work if PMU node is present (even with
+> > > > interrupts dropped). I'd prefer to have 'perf top' and 'perf record'
+> > > > working instead of 'perf stat'
+> > >
+> > > Well, it doesn't work so we should just remove the node, and if
+> > > someone wants it back, they should figure it out.
+> >
+> > Hey Maxime,
+> >
+> > So can you merge this patch?
 >
-> Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+> Added new Maxime's email to CC
 
-Acked-by: Maxime Ripard <mripard@kernel.org>
-
-Thanks!
+Queued as a fix for 5.4, thanks!
 Maxime
 
---epxq7jf6b7rjqwnd
+--xfvtyfmvyh5dzqpu
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXYtJ8QAKCRDj7w1vZxhR
-xbUxAP9Pd7pxZ4HyWKEAjwRXgd0MYbOY1Igq24YqzLBkqoyWgAEAyOOvUiM/YyHN
-RXo0PiTmebIKKPZ+S6FfAI3GeLQdEwk=
-=/Pb0
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXYtKvAAKCRDj7w1vZxhR
+xR1uAP97hTHRaN8dhsyjKWxKH1xeWMcMtioTmtYPAjmrULwgpQD+PRLN3idwDWf8
+1xX4j9HiktGKEPSFa5JcdzrqH2NtLAU=
+=roCs
 -----END PGP SIGNATURE-----
 
---epxq7jf6b7rjqwnd--
+--xfvtyfmvyh5dzqpu--
 
 
---===============1095793440942579602==
+--===============7100334768661815615==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -132,5 +224,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============1095793440942579602==--
+--===============7100334768661815615==--
 
