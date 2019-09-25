@@ -2,72 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F4D4BE58A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 21:21:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A818BE594
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 21:22:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eZrXr6/43nR96PAODHHygerNAHpEiLp2HDjMRlNMOzE=; b=Ns2sLG7LyINic+
-	ZTiq9ghSMssEWOmC2lHDG5FEmengQVoKOMK2XS5vqpyUpeaxrf/bgD1Kn+rSGgQohe8dSka+5yMy/
-	15N+xLS+Aifc6Wf4fW/JWG7sRtSJo7214u4Td/uo7me1PQcBFpJks8C3ObkwSeAXK2j6CZ95R7CRd
-	8zWlBHCPY6Xy+74p5x3D63EDscbXxkw3etFZ2qSmWB3pTsDM2zIfxamccyNBzBdkN4mjvgnIw9Kr0
-	gFm6ubuKML+EoTmfOpen6FdmgerPYWjybuTvVf4OG4Dl/JFbSYJ5gyyZLh2uQ4VUmqb1Fm+Kiyj4/
-	/rP751mPERmWgsUoIFGw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FqPjRwCcN9ptZBUCmqzV6jR0qWH56tFy3LxDxtxD2Ec=; b=srcnP8YH9nMRYs
+	PJglZDT6mKINAOw6L4FI/KHQNyYVWd/JW0mYqgwLEgSkLNm+eH/QWGIUDpDQ83DWoon/FTrCgEFQw
+	MMjz6xmpPUtJMyzwp3hq2JHH7XcDaCUHtA+U3qxC67MFFy7mZ7nmG0xzeHqJqZ9ndA6GYOFRz7iHn
+	25621Xs3GMQ1/L7bffLxI6+kS5fm97bXyiGzzUNNsb4QiojMMzdqaT0cVeWlbGGigDVVFzSRvqYiP
+	4NSDZJnvkGLSTv1lxaZuaogElQrSXlrc3YGEfxWP6v8MWpolu3KDKkV6zqYD4L5jjshUkD5yANuJR
+	taC1Q3Ej10eTzrc/wgJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDCqb-00054v-6D; Wed, 25 Sep 2019 19:21:09 +0000
-Received: from atlmailgw1.ami.com ([63.147.10.40])
+	id 1iDCs3-0005Ye-RY; Wed, 25 Sep 2019 19:22:39 +0000
+Received: from atlmailgw2.ami.com ([63.147.10.42])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDCqL-00051C-64
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 19:20:54 +0000
-X-AuditID: ac1060b2-791ff700000017bd-b6-5d8bbe11adce
+ id 1iDCrq-0005Y1-Pn
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 19:22:28 +0000
+X-AuditID: ac10606f-35bff7000000187d-ce-5d8bbe713dbc
 Received: from atlms1.us.megatrends.com (atlms1.us.megatrends.com
  [172.16.96.144])
  (using TLS with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
  (Client did not present a certificate)
- by atlmailgw1.ami.com (Symantec Messaging Gateway) with SMTP id
- 03.CA.06077.11EBB8D5; Wed, 25 Sep 2019 15:20:50 -0400 (EDT)
+ by atlmailgw2.ami.com (Symantec Messaging Gateway) with SMTP id
+ 3A.7C.06269.17EBB8D5; Wed, 25 Sep 2019 15:22:25 -0400 (EDT)
 Received: from hongweiz-Ubuntu-AMI.us.megatrends.com (172.16.98.93) by
  atlms1.us.megatrends.com (172.16.96.144) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Wed, 25 Sep 2019 15:20:50 -0400
+ 14.3.408.0; Wed, 25 Sep 2019 15:22:24 -0400
 From: Hongwei Zhang <hongweiz@ami.com>
-To: Linus Walleij <linus.walleij@linaro.org>, Andrew Jeffery
- <andrew@aj.id.au>, <linux-gpio@vger.kernel.org>, Joel Stanley
+To: Andrew Jeffery <andrew@aj.id.au>, Linus Walleij
+ <linus.walleij@linaro.org>, <linux-gpio@vger.kernel.org>, Joel Stanley
  <joel@jms.id.au>
-Subject: [v1, 0/1] gpio: dts: aspeed: Add SGPIO driver
-Date: Wed, 25 Sep 2019 15:20:48 -0400
-Message-ID: <1569439248-10430-1-git-send-email-hongweiz@ami.com>
+Subject: [v2, 0/2] gpio: dts: aspeed: Add SGPIO driver 
+Date: Wed, 25 Sep 2019 15:22:15 -0400
+Message-ID: <1569439337-10482-1-git-send-email-hongweiz@ami.com>
 X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1569351740-6285-1-git-send-email-hongweiz@ami.com>
-References: <1569351740-6285-1-git-send-email-hongweiz@ami.com>
 MIME-Version: 1.0
 X-Originating-IP: [172.16.98.93]
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrIIsWRmVeSWpSXmKPExsWyRiBhgq7Qvu5YgxkrmS3mrF/DZrHrMofF
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprBIsWRmVeSWpSXmKPExsWyRiBhgm7hvu5YgwX7rCzmrF/DZrHrMofF
  /w+7GS2+75/FavF30jF2i6ZDp9gsvsw9xWIx/8g5Vovf5/8yW0z5s5zJYtPja6wWzavPMVts
  nv+H0eLyrjlsFoem7mW0WHr9IpPF+0+dTBate4+wW9yY0sBmsffeZ0YHEY+r7bvYPdbMW8Po
  cfnaRWaP378mMXq8v9HK7nHx4zFmj02rOtk87lzbw+ZxYsZvFo8Jiw4wemxeUu9xfsZCRo+/
- jV/ZPU5M/87i8XmTXAB/FJdNSmpOZllqkb5dAldGb08rU8EL1orpswsaGM+wdDFyckgImEjs
- uXedqYuRi0NIYBeTxKkN0xkhnMOMEqc+fmUFqWITUJPYu3kOWJWIQD+jxPUdTWwgDrPAVlaJ
- 7QeawKqEBcwkOqfOBbNZBFQlLrXfZQSxeQUcJG5dbmaE2CcncfNcJzOIzQkUv7z4A9gdQgL2
- EqsXnISqF5Q4OfMJWJxZQELi4IsXzBA1shK3Dj1mgpijIPG87zHLBEaBWUhaZiFpWcDItIpR
- KLEkJzcxMye93FAvMTdTLzk/dxMjJFo37WBsuWh+iJGJg/EQowQHs5II7yyZrlgh3pTEyqrU
- ovz4otKc1OJDjNIcLErivCvXfIsREkhPLEnNTk0tSC2CyTJxcEo1MC59Wrj1TlnSxR5PR4H0
- jeeUD7zzczCc/kL2xue9d7R7f7pOyVwYqm9ey7tkh4rj86+yooqnb8Z8ioxWaJF7bLugZ+Xh
- v1vPBx1qXLn81RLrsrVN9W+uN5exZZw/9OSA1hc/uxmMr94sfbFQ5ew2f93uCpXSro3Grz3Z
- ms9/vW73wuz4b2frVdeVWIozEg21mIuKEwFFarKcxAIAAA==
+ jV/ZPU5M/87i8XmTXAB/FJdNSmpOZllqkb5dAlfGnI897AUP2Srun5nI1MA4h7WLkZNDQsBE
+ 4tnDzywgtpDALiaJlsnWEPZhRomfPYUgNpuAmsTezXOYuhi5OEQE+hklFsyZC+YwC2xlldh+
+ oAlskrCAucT0a/eZQWwWAVWJ7TPPsYPYvAIOEleW32OG2CYncfNcJzNEXFDi5MwnYJuZBSQk
+ Dr54wQyxWVbi1qHHTBD1ChLP+x6zTGDkm4WkZRaSlgWMTKsYhRJLcnITM3PSy430EnMz9ZLz
+ czcxQmIvfwfjx4/mhxiZOBgPMUpwMCuJ8M6S6YoV4k1JrKxKLcqPLyrNSS0+xCjNwaIkzrtq
+ zbcYIYH0xJLU7NTUgtQimCwTB6dUA6M3E5Ppn1OZtVOCM+7m7ZD7vVx6d3/6RYbl7wX+rpmk
+ UuuYvZ+3S49b707Cmd8r+6/Jisq5Rrqrn2XbGF4r+rlR1KnnSuf8orNTp02sEZ7xdXPAj3q+
+ H8IpaY+FHH7WnF3nPlNyZqq7H49fwrStmzg3K+t2Xcua8kDEOY7JqKlMMvb/tM98T5RYijMS
+ DbWYi4oTAb5SBiarAgAA
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_122053_288335_2E10F316 
-X-CRM114-Status: GOOD (  14.49  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190925_122226_900157_AC8CF004 
+X-CRM114-Status: GOOD (  11.59  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.147.10.40 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [63.147.10.42 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -98,29 +96,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> 
-> > The related SGPIO driver has been accepted and merged into v5.4:
-> > _http://patchwork.ozlabs.org/patch/1150357/
-> 
-> Oh what a mess, it didn't add the necessary code into Kconfig and Makefile, also names it sgpio-gpio.c 
-> when everything else is named gpio-sgpio.c.
-> 
-> I guess I have to fix it up. My fault for missing.
-> 
-> Linus Walleij
+Hello,
 
-Thanks Linus,
+This short series introduce the Kconfig, Makefile, and dts for the 
+Aspeed AST2500 SGPIO controller. This is the last patch set.
+Please review.
 
-It's not your fault, I misunderstood a earlier comment from another 
-reviewer and thought I should wait until the driver is accecpted, 
-and then submit the patch to include / enable it.
+[v2]:	changes between v1 and v2:
+	- split the patches based on review feedback.
 
-As Bart suggested, I splitte the patches. 
+[v1]:	Initial commit
 
-Regarding the driver name, following the gpio-SoC_name.o convention 
-in the Makefile, we choose sgpio-aspeed.o .
+The related SGPIO driver has been accepted and merged into v5.4:
+_http://patchwork.ozlabs.org/patch/1150357/
 
---Hongwei
+The related SGPM pinmux dt-binding document, dts, and pinctrl driver
+updates have been accepted and merged:
+_http://patchwork.ozlabs.org/patch/1110210/
+
+Thanks!
+Hongwei Zhang (1):
+  gpio: dts: aspeed: Add SGPIO driver
+
+ arch/arm/Kconfig                 |  2 ++
+ arch/arm/boot/dts/aspeed-g5.dtsi | 16 +++++++++++++++-
+ drivers/gpio/Kconfig             |  8 ++++++++
+ drivers/gpio/Makefile            |  1 +
+ 4 files changed, 26 insertions(+), 1 deletion(-)
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
