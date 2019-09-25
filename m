@@ -2,55 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F25EBDC43
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 12:38:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FAB7BDC9D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Sep 2019 13:03:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A6LIOyD5zcwG7yjTqeyOOnlu8z6Z9hDO2lQLPxU3HYU=; b=r5B4HEd7rj+HkY
-	M9wz4YQ9Qklf2ChtWc0o8lqsjQe0s1lolFccs7Ut1pc9XmS1n3OcgdHv//QbYBIUSxUD6l7bJUaRg
-	FNeOtUdPfgDTnabhwOz9ioYQ9n1FBGiRkEcBJxwys66S/XOccjcGIzG7hj986HYEMu9p9mDAG5qLa
-	unvca4drk9X6G3+XJePqvAGdQvT5XRA8QAT/U05jJImA76DcS/+lJW9wzvY/8xf2OLmeupAs/Dffe
-	6XvDjCgA9jceSuOXglzcE59nBD+MqdcivLa/C0e5vnGO0ivVHj//O1mpAFJudgUir37T4nbvXIjK/
-	33LKtskG1v0qsNJ3f54A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=dEyl9oDqKNjViJYrRnE20Ey7M6WD7WxuWNKFram6sR8=; b=JN9v6YVbqD99CBhdmXoLyGSOd
+	M8BYuMarjXIXo9BPfqaySC5BP1490JGYneznyEKU1HDuBRdENOckOAgC5e6jG5hOWg0vzW7qrj2l3
+	M35xs0nIuu/UEjfHp1XHXc9zpyxGqSUFfiYBxiAaHdwpvD44HTRZUKuNOPaP+Rfv+Xrgvt95/UOlb
+	304pBSmal5rf2kwby10/mHiPESkqxvXIVb5u/3Vm45GZ9rSVaQ2aRwUVySE04h+8MDK46rd0sAA75
+	krixsT8NothM+GTn3mrJlPB6dns19ALdQ8dbOJAXyFPB1UzFLz7ykv0abrI5D2951FBZVwu+dqUu3
+	yWyaQm1YA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iD4gr-0006m1-JG; Wed, 25 Sep 2019 10:38:33 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iD4gK-0006kq-8N
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 10:38:02 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 44E331570;
- Wed, 25 Sep 2019 03:37:55 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B14223F694;
- Wed, 25 Sep 2019 03:37:54 -0700 (PDT)
-Date: Wed, 25 Sep 2019 11:37:53 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 05/11] PCI: versatile: Use
- pci_parse_request_of_pci_ranges()
-Message-ID: <20190925103752.GS9720@e119886-lin.cambridge.arm.com>
-References: <20190924214630.12817-1-robh@kernel.org>
- <20190924214630.12817-6-robh@kernel.org>
+	id 1iD54n-0007Oa-4M; Wed, 25 Sep 2019 11:03:17 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iD54H-0007OE-Fq
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 11:02:46 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D52872082F;
+ Wed, 25 Sep 2019 11:02:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1569409363;
+ bh=t5aOuh6J+On4+Pn59tRyXi6l/3EnNBN8n3FvtMFOYN4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=P5emlFats5ujg3ZZYd0V2tMJ2RZIMqZFw+QhEeiLJxnByTx2otMU9uaJ7RtVuIull
+ KthHZvt7DJ9qPJ05HVsOKdXOlgJcXwZ0ft7U3xdlAk3Ga+lR9BixXPcMMXhe1+JenO
+ MGg8OnSYNEA9/c7S47pzceth/Ep1vWB2TyoS1Q8o=
+Date: Wed, 25 Sep 2019 13:02:39 +0200
+From: Maxime Ripard <mripard@kernel.org>
+To: Sergey Brutyan <sergey_brutyan@ehayq.am>
+Subject: Re: ARM core blob list
+Message-ID: <20190925110239.yu22bhkdw5t63mc2@gilmour>
+References: <7c52fab5-825a-b019-ec46-6fb731336cfe@ehayq.am>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190924214630.12817-6-robh@kernel.org>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <7c52fab5-825a-b019-ec46-6fb731336cfe@ehayq.am>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_033800_752241_21DFAD5E 
-X-CRM114-Status: GOOD (  21.55  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190925_040245_563749_8CAB1276 
+X-CRM114-Status: GOOD (  12.06  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,130 +75,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bjorn Helgaas <bhelgaas@google.com>, linux-pci@vger.kernel.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7681797212531617592=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 24, 2019 at 04:46:24PM -0500, Rob Herring wrote:
-> Convert ARM Versatile host bridge to use the common
-> pci_parse_request_of_pci_ranges().
-> 
-> Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> Cc: Bjorn Helgaas <bhelgaas@google.com>
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
->  drivers/pci/controller/pci-versatile.c | 62 +++++---------------------
->  1 file changed, 11 insertions(+), 51 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/pci-versatile.c b/drivers/pci/controller/pci-versatile.c
-> index f59ad2728c0b..237b1abb26f2 100644
-> --- a/drivers/pci/controller/pci-versatile.c
-> +++ b/drivers/pci/controller/pci-versatile.c
-> @@ -62,60 +62,12 @@ static struct pci_ops pci_versatile_ops = {
->  	.write	= pci_generic_config_write,
->  };
->  
-> -static int versatile_pci_parse_request_of_pci_ranges(struct device *dev,
-> -						     struct list_head *res)
-> -{
-> -	int err, mem = 1, res_valid = 0;
-> -	resource_size_t iobase;
-> -	struct resource_entry *win, *tmp;
-> -
-> -	err = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff, res, &iobase);
-> -	if (err)
-> -		return err;
-> -
-> -	err = devm_request_pci_bus_resources(dev, res);
-> -	if (err)
-> -		goto out_release_res;
-> -
-> -	resource_list_for_each_entry_safe(win, tmp, res) {
-> -		struct resource *res = win->res;
-> -
-> -		switch (resource_type(res)) {
-> -		case IORESOURCE_IO:
-> -			err = devm_pci_remap_iospace(dev, res, iobase);
-> -			if (err) {
-> -				dev_warn(dev, "error %d: failed to map resource %pR\n",
-> -					 err, res);
-> -				resource_list_destroy_entry(win);
-> -			}
-> -			break;
-> -		case IORESOURCE_MEM:
-> -			res_valid |= !(res->flags & IORESOURCE_PREFETCH);
-> -
-> -			writel(res->start >> 28, PCI_IMAP(mem));
-> -			writel(PHYS_OFFSET >> 28, PCI_SMAP(mem));
-> -			mem++;
-> -
-> -			break;
-> -		}
-> -	}
-> -
-> -	if (res_valid)
-> -		return 0;
-> -
-> -	dev_err(dev, "non-prefetchable memory resource required\n");
-> -	err = -EINVAL;
-> -
-> -out_release_res:
-> -	pci_free_resource_list(res);
-> -	return err;
-> -}
-> -
->  static int versatile_pci_probe(struct platform_device *pdev)
->  {
->  	struct device *dev = &pdev->dev;
->  	struct resource *res;
-> -	int ret, i, myslot = -1;
-> +	struct resource_entry *entry;
-> +	int ret, i, myslot = -1, mem = 0;
 
-I think 'mem' should be initialised to 1, at least that's what the original
-code did. However I'm not sure why it should start from 1.
+--===============7681797212531617592==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="x4kr3o3xnjv5v7l7"
+Content-Disposition: inline
 
-Thanks,
 
-Andrew Murray
+--x4kr3o3xnjv5v7l7
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
->  	u32 val;
->  	void __iomem *local_pci_cfg_base;
->  	struct pci_bus *bus, *child;
-> @@ -141,10 +93,18 @@ static int versatile_pci_probe(struct platform_device *pdev)
->  	if (IS_ERR(versatile_cfg_base[1]))
->  		return PTR_ERR(versatile_cfg_base[1]);
->  
-> -	ret = versatile_pci_parse_request_of_pci_ranges(dev, &pci_res);
-> +	ret = pci_parse_request_of_pci_ranges(dev, &pci_res, NULL);
->  	if (ret)
->  		return ret;
->  
-> +	resource_list_for_each_entry(entry, &pci_res) {
-> +		if (resource_type(entry->res) == IORESOURCE_MEM) {
-> +			writel(entry->res->start >> 28, PCI_IMAP(mem));
-> +			writel(PHYS_OFFSET >> 28, PCI_SMAP(mem));
-> +			mem++;
-> +		}
-> +	}
-> +
->  	/*
->  	 * We need to discover the PCI core first to configure itself
->  	 * before the main PCI probing is performed
-> -- 
-> 2.20.1
-> 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+On Fri, Sep 20, 2019 at 02:15:37PM +0400, Sergey Brutyan wrote:
+> Dear all we are company of hard/soft design and integration mostly based
+> on ARM cores.
+> We are currently working on Libre Linux development for ARM based SBC.
+>
+> And ready to put professional effort for having complete blob-free Linux
+> kernel, as we have done research there is most problem with bootloaders
+> and Mali or PowerVR GPU units in SoC.
+>
+> We are looking forward to cooperate and=A0 now have several need of
+> information.
+>
+> Can you send us list for blob drivers for this SoC:
+>
+> =A0=A0=A0 Allwinner A20
+> =A0=A0=A0 Allwinner R40
+
+Aside from the Mali that you already mentionned (and wifi, usually,
+depending on the board you're using), there's no blob involved on
+those two SoCs.
+
+And the Mali itself is being worked on as part of the lima effort, so
+it shouldn't be a problem for very long.
+
+Maxime
+
+--x4kr3o3xnjv5v7l7
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXYtJTgAKCRDj7w1vZxhR
+xSOpAPsEdjA1yioJoXoqflghEgDyi7+fzuWD7XSx0MAu4QlcsgD+MQszCTIldNcM
+/r6fj2ehQQ64QgpKrcMcriNMtT0bHQQ=
+=OGUG
+-----END PGP SIGNATURE-----
+
+--x4kr3o3xnjv5v7l7--
+
+
+--===============7681797212531617592==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7681797212531617592==--
+
