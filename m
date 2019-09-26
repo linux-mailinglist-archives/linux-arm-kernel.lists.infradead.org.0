@@ -2,68 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CED66BFBF7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 01:29:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC078BFBF9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 01:29:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=azM3hPT6xDpZhc1Au9EJaB+SkudpaMUokALfQCb5l9Q=; b=eBkdimjraCqlcf
-	Cevrn3Blacj5WRsUKjfOZa9A8Q9xbZyW7h1eh4ONksB9vesfqJAlqfbW2pp+CtWdj8cx56X4+akJJ
-	sAY27+CmFUdAa5kkXT3+B/XMWIsFC8R+g8N/jeb0phMFmMdeE4FVdlzW9PgInxyXWEUrNr7TCohpd
-	+AYp6t1LKCk2t2aOXoe71140a39OYa1PqSmgVfrj2cppOapd7+hB3N1MTrDKEJnWhoIoLQ6XNIHqF
-	ym/5KV7McCRSjBN+VsvUcikhLecBhL3SJI1jJpLM8D9rWNLJv+RlEtRolv6MtPYeb5/fBmwJWyZ1m
-	mKAxzK3WHyKZVflB5oDQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MusDmFHMml1n44BPl1EVjT+c2LK0nFORQntQTkD5Hto=; b=twxKxzsDX+LIPo
+	3uGNUepsRxN/6tCYz6684giovnFCOx08r3FwWfe2ZTvpk39oVR8cQ4gUkU4c1A3RaZ00kJZA8Uc70
+	8NXqOcc3+SpgiQIvi7UuN145o+iax0shN58fq/nxDHCWulV1RVfJ53rPqXjWzFnpx8k6niyDw/5Tz
+	Jkp4lyZHRmMqAHkf7tC56YjCsYhflLrtWKznwyYPgSmuEDYafdzVU/PpvQU7cjLS2kjgPA9GUWkKg
+	xOkhHk9dwOwH5xBNYA+4FieGnJq9n2E3Zu1A/ZZu0hccTs4tjHgx00YZSHngl5sxyCD8Vwi0iahWc
+	nU2EzMwdka2SX+gzR9TQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDdCA-0000yS-37; Thu, 26 Sep 2019 23:29:10 +0000
-Received: from gate2.alliedtelesis.co.nz ([2001:df5:b000:5::4])
+	id 1iDdCd-0001R1-9P; Thu, 26 Sep 2019 23:29:39 +0000
+Received: from gate2.alliedtelesis.co.nz ([202.36.163.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDdBf-0000if-12
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 23:28:40 +0000
+ id 1iDdBh-0000ih-Sb
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 23:28:43 +0000
 Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (Client did not present a certificate)
- by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id A07FB886BF;
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 9FD898365B;
  Fri, 27 Sep 2019 11:28:26 +1200 (NZST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
  s=mail181024; t=1569540506;
- bh=6RbE8qI20kMEdMD7hJsrS7/ArZwF7p3FRXfaz2j2zVo=;
- h=From:To:Cc:Subject:Date;
- b=AOasu4YE/rNgmlEt3wbns6XCP6oVTh0K6isgfuhvYjMlI+JPZzJPV0IrCnkbSQL6/
- YmO4JqAy9/taOwnxf1lBz1p8OSiMIPw2L8dlmbm9sHA6Xs1mqBBHDZTsOXU/PJHZHc
- Y/qRJ4aehuhymI5FtPp+LsRmVjygQS1hOu7piaVucp99TDvH28u2maRlzH/sDzTlND
- GW5njq0M2kljLxlfGyVjFryKJ53NrVQrx7fevF1+cooONCK/PGu3snPG+vbKh+UEst
- +0JqDG7Fbo3WKXWWN4chJ9rXxviLH+F4H3Dkg+V6kxop0GqD0zjARCvu7V1qplJM/3
- JZZ+fYXkSK8qw==
+ bh=l6bAe+xtedR+bltocjAHq5456NfUIQhNENNdw3LBmWI=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=Onq1sluNBuPq6cASMObOcHpSgaHREZ06kCSE+4G6DHCUBwZE8JWDj/kL7dsgr2Jzd
+ Z+CLfKZ1Kc2J+ZwrK1vrQl9T47Uh9nrjVWaEtPcJI/ZvFmgzY454BqtqDMhEOBv0wt
+ v3nKtEfHX4Ze78Tl05NTkPDO4MeGSxfrjoC2AVIgJb1DppCRlCGngqc3UmDqAZAPIb
+ 51LruL8F4o/D8IMeTMDLRZ1Cy+Q7DYdgWy+TMqn0VroEp0QdIrKwnl6D1mGtiEY2Xn
+ zi4dwzBCtNYqQ9z0tn/vAJh1hH5vN+I65utbpFTonKq95vzwq9FgekqHDSJk7mguk+
+ WVPvn8Hn8jo8w==
 Received: from smtp (Not Verified[10.32.16.33]) by mmarshal3.atlnz.lc with
  Trustwave SEG (v7, 5, 8, 10121)
- id <B5d8d49980000>; Fri, 27 Sep 2019 11:28:26 +1200
+ id <B5d8d49980001>; Fri, 27 Sep 2019 11:28:26 +1200
 Received: from chrisp-dl.ws.atlnz.lc (chrisp-dl.ws.atlnz.lc [10.33.22.20])
- by smtp (Postfix) with ESMTP id 13C2C13EED0;
+ by smtp (Postfix) with ESMTP id 3006713EEFB;
  Fri, 27 Sep 2019 11:28:28 +1200 (NZST)
 Received: by chrisp-dl.ws.atlnz.lc (Postfix, from userid 1030)
- id 592FD28003E; Fri, 27 Sep 2019 11:28:24 +1200 (NZST)
+ id 7638B28003E; Fri, 27 Sep 2019 11:28:24 +1200 (NZST)
 From: Chris Packham <chris.packham@alliedtelesis.co.nz>
 To: jason@lakedaemon.net, andrew@lunn.ch, gregory.clement@bootlin.com,
  sebastian.hesselbarth@gmail.com, robh+dt@kernel.org, mark.rutland@arm.com
-Subject: [PATCH 0/3] ARM: dts: SDRAM and L2 cache EDAC for Armada SoCs
-Date: Fri, 27 Sep 2019 11:28:17 +1200
-Message-Id: <20190926232820.27676-1-chris.packham@alliedtelesis.co.nz>
+Subject: [PATCH 1/3] ARM: dts: armada-xp: enable L2 cache parity and ecc on
+ db-xc3-24g4xg
+Date: Fri, 27 Sep 2019 11:28:18 +1200
+Message-Id: <20190926232820.27676-2-chris.packham@alliedtelesis.co.nz>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20190926232820.27676-1-chris.packham@alliedtelesis.co.nz>
+References: <20190926232820.27676-1-chris.packham@alliedtelesis.co.nz>
 MIME-Version: 1.0
 x-atlnz-ls: pat
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_162839_242833_BF3003E6 
-X-CRM114-Status: UNSURE (   9.82  )
+X-CRM114-CacheID: sfid-20190926_162842_191090_0E8280A9 
+X-CRM114-Status: UNSURE (   8.49  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [202.36.163.20 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -92,24 +97,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series was waiting for the armada_xp edac driver to be accepted.
-Now that it has the relevant nodes can be added to the Armada SoCs. So
-that boards can use the EDAC driver if they have the hardware support.
+Enable L2 cache parity and ECC on the db-xc3-24g4xg board so that cache
+operations are protected and errors can be flagged to the EDAC
+subsystem.
 
-The db-xc3-24g4xg.dts board doesn't have an ECC chip for it's DDR but it
-can use the L2 cache parity and ecc support.
-
-Chris Packham (3):
-  ARM: dts: armada-xp: enable L2 cache parity and ecc on db-xc3-24g4xg
-  ARM: dts: mvebu: add sdram controller node to Armada-38x
-  ARM: dts: armada-xp: add label to sdram-controller node
-
- arch/arm/boot/dts/armada-38x.dtsi             | 5 +++++
- arch/arm/boot/dts/armada-xp-98dx3236.dtsi     | 2 +-
+Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+---
  arch/arm/boot/dts/armada-xp-db-xc3-24g4xg.dts | 5 +++++
- arch/arm/boot/dts/armada-xp.dtsi              | 2 +-
- 4 files changed, 12 insertions(+), 2 deletions(-)
+ 1 file changed, 5 insertions(+)
 
+diff --git a/arch/arm/boot/dts/armada-xp-db-xc3-24g4xg.dts b/arch/arm/boot/dts/armada-xp-db-xc3-24g4xg.dts
+index df048050615f..4ec0ae01b61d 100644
+--- a/arch/arm/boot/dts/armada-xp-db-xc3-24g4xg.dts
++++ b/arch/arm/boot/dts/armada-xp-db-xc3-24g4xg.dts
+@@ -33,6 +33,11 @@
+ 	};
+ };
+ 
++&L2 {
++	arm,parity-enable;
++	marvell,ecc-enable;
++};
++
+ &devbus_bootcs {
+ 	status = "okay";
+ 
 -- 
 2.23.0
 
