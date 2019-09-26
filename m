@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 951F5BFA22
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 21:33:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78E15BFA23
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 21:33:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zHbZ5QNe8Z9RXeHIT2QLZhN9xNtHrZzKMI380Gg3+ug=; b=dXxRfD07gdcj3A
-	FrFMIQH+MXDRB+DrFqNNERruhyK+vrQ+1WUysLjWyive9dzWuRcOVAWeak17VjGg17c4OweEdPF2j
-	/mq1EkEsbbyx5jRfzP9t/YmvhqlOJwlDDapj4gwchit3qOEPXVVsIH00xAewHI+9DM6sWgAYwJmfu
-	USQmq17yXm4zUI9sIPhDy/opEVFwcuFRbkDHCjeAFaxtaLxTcE5CuE2JltGQaD6sIYn++iiCeXrQL
-	UYTTF03cvzwkmvLcPJWEP9+tMvN5n2gluaQ3THRdSgoTR9N9rkvzCIrxf9LmAMa48RWbWSWy05SE/
-	AUDr6AdpNfpESF+qaFwQ==;
+	List-Owner; bh=Rb7r8376RSf2NJHO2SEk15Gbs49Hk1EkKNbLTh8FD78=; b=Ff/9LZV/+ctMAD
+	TdhqCQquM6crmQj+1ve12TqvVxeubwRREKqgzcn44vGClh5ce7U6RI4Gjpf2gHO9+/oKcmEoafSB/
+	dcqsu6X2BCjMrwfaqyOM9/l4gom9TZu8hConePTsMK86fVZtpobASAO/Ae5eUes6y00kA5DJBF/a9
+	7eL4dieVjRWjnTi1Ue8kj2iHw6IXe33mZsIW//dDPFRgybgnelvws43JTuQzHV0gi9zZhY/FT5ayI
+	ikcpArHmLkI9XZuk0I9xnNMDULkx6EvyJ1Ph/D0J3okkTtGhvt2o8uGBkLEgl5UxoYXkRppvMWVt3
+	22hX5/alGIrWsNp/BD6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDZVT-0004Dp-Vn; Thu, 26 Sep 2019 19:32:52 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1iDZVp-0004SV-OB; Thu, 26 Sep 2019 19:33:14 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDZTk-000264-DE
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 19:31:06 +0000
-Received: by mail-lj1-x241.google.com with SMTP id 7so89933ljw.7
+ id 1iDZTo-00028D-Fo
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 19:31:10 +0000
+Received: by mail-lf1-x144.google.com with SMTP id r22so88283lfm.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Sep 2019 12:31:04 -0700 (PDT)
+ Thu, 26 Sep 2019 12:31:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=z8nKiwxqvEVkSC8bjnHhL2rSKeHZeY+99QwUiS0BzNY=;
- b=x6e5ZgDDdZyxGUBJfhfmqswAYXEyDmuPKFoVH2fpMRnIDRkVbvE/k+nQyZyoyOtZ1y
- iq2BS34ltXtkhNncT5YWLrq2rdDBGE99wix6R0bQxgbpvSYJtqjrJPpKvHlPvC1K3AK8
- M+9J0nzpvH2fOuP8fSyFsuaSTtRiPhZ/36EmbWzIQLUJp6XIj+CZ0meDo6VBumXdGxay
- aTg3YNYBTZHF2MLJBqKgAYilmPDLGYtRMliMrhUJLPuUuKBENWlM6MMQLapW8k3c6cZL
- Ls+vEIhE61K4r90KjOP3iLXvDNKA1otUNHa1I5avo4FHvKfhjp5jWgl57dxTrtaWBSIL
- MDiQ==
+ bh=rsypJ4JyedaYNx6RWWvSX6imROFVDBxRCyA4sdErGA8=;
+ b=GGPdS2W3eZpVUxY0pzLQKQL4b6bUB+zr3B0dSzIZ52sgkbgf54Z+wh4mK88Q+QyecM
+ +fcma3S18yM9+zLeODW3nTvueYR67NpfHssNxOn+R6w7wd6p5EhTxeQ6EvwOztt8jAzp
+ 4Iqulu98JyL0Q1C5RNfHt9rtdGuVyvN0zUpElsAQu2S1lxk8YOR0hopbfSzlOEhDVtJo
+ F+s8VqdaV+ja9h/8xEcZhtGaNW9DNsp+cns47N/aKEQR5CaOa+z39IbLuGZYUNV1qklF
+ tKdlsBow8VsCfDd5jGa2CQQuV3Zf/JVt/jFmFN/XU1TjFJ0/bBI1xtEsL8jOfVH+2KiM
+ z0ew==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=z8nKiwxqvEVkSC8bjnHhL2rSKeHZeY+99QwUiS0BzNY=;
- b=Bv1nVNHZNbyl5gV2uKS+qWXwbILlwiq1kSSH+kAxtqD2SayH8R+KBo6DUY3SpI+/zt
- Mo8ZgEOjKrO4DkX2v/MFjN2bhruVBQqeykCHcybcSuHN5VfUKSpTQw7jf4U5+/BY5av4
- qMexwHEcXn4U1Vd2sP1UTC3lm8HmJ49LrVE/cnzdzh5bq/1VaUhA1rpF79Qo4675vTbT
- TSRbwz+cOkZ4Z3/nlPUwTMQL730ZB9GgdSXsnod/WxdbSrhcX/vO8npJhvjPYyC0oMXx
- DDw99skP936ou1uMfu1vEBOyvhe1br2fO292NELauaD5h79OgDXgFQrYUPiTHzZ4sasl
- 1mhA==
-X-Gm-Message-State: APjAAAWgYI0imbsLNCJRu7S1gBtii0WRzflQNZycO9NzvQu/yCQ47THk
- la68MsJkboFE+jIBlv5eFiMIcQ==
-X-Google-Smtp-Source: APXvYqyPCLciNb7qX4Zjm7aNczaVgDK+J+9vmAw3bKwlSiQhmh0siXn6ZKwOs2oTn76/1DnH4277HA==
-X-Received: by 2002:a2e:7d0d:: with SMTP id y13mr213314ljc.170.1569526262671; 
- Thu, 26 Sep 2019 12:31:02 -0700 (PDT)
+ bh=rsypJ4JyedaYNx6RWWvSX6imROFVDBxRCyA4sdErGA8=;
+ b=pD8mXwVLioYrT8/gkL0iTMzV1OxiisvXBxHeHupc+DOfsMqKLIC7aYCwsytAo8rbj5
+ G8g5D5PZdHqqdIMbXkzVsLC3+zg4JOIM0IjiucDkp2i0jPjFNZZgTMGO8J4cQiOS/kZr
+ c81y/ESZPmAqDv0xM3l4HbccJGKZOxsb6LgoVZbuSzkcp4RjVZeZpyuZEyeCD1/VINtB
+ v41QTX9fLvoLbB3eWyTQr8aYff3c72kBM3/cekmveNIriXKXzMj9UkRsE1h6MuVjj3MF
+ aXm0r4YuDXogHpwvW/Ai0lqhBZkpbu3ieltx1Vsh7G9d7tQBgbbj+eGtfGg8+u72oZkk
+ y9gw==
+X-Gm-Message-State: APjAAAVgk/pXww8vNYoEZT2hXTBhlCqBmDupG/9WFIONNFu0ARqKnHgO
+ gCrIuODVYWxQbnjV1OVP8Rn6Pw==
+X-Google-Smtp-Source: APXvYqwKed/w/gxyhfXpvPb+gb1Vek3IYxj+Vzi00MuyUbDuhzDUjYBRMvHbgH1ysbuGBj0rnrhdlg==
+X-Received: by 2002:ac2:5451:: with SMTP id d17mr114619lfn.77.1569526266912;
+ Thu, 26 Sep 2019 12:31:06 -0700 (PDT)
 Received: from localhost (c-413e70d5.07-21-73746f28.bbcust.telenor.se.
  [213.112.62.65])
- by smtp.gmail.com with ESMTPSA id c16sm31923lfj.8.2019.09.26.12.31.01
+ by smtp.gmail.com with ESMTPSA id r6sm17998ljr.77.2019.09.26.12.31.06
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 26 Sep 2019 12:31:01 -0700 (PDT)
+ Thu, 26 Sep 2019 12:31:06 -0700 (PDT)
 From: Anders Roxell <anders.roxell@linaro.org>
 To: catalin.marinas@arm.com,
 	will@kernel.org
-Subject: [PATCH 2/3] arm64: configs: unset CMDLINE_FORCE
-Date: Thu, 26 Sep 2019 21:30:29 +0200
-Message-Id: <20190926193030.5843-4-anders.roxell@linaro.org>
+Subject: [PATCH 3/3] arm64: configs: unset CPU_BIG_ENDIAN
+Date: Thu, 26 Sep 2019 21:30:30 +0200
+Message-Id: <20190926193030.5843-5-anders.roxell@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190926193030.5843-1-anders.roxell@linaro.org>
 References: <20190926193030.5843-1-anders.roxell@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_123105_316613_94A0FBD1 
-X-CRM114-Status: GOOD (  10.13  )
+X-CRM114-CacheID: sfid-20190926_123108_832422_B7B3F053 
+X-CRM114-Status: UNSURE (   9.91  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,13 +107,12 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 When building allmodconfig KCONFIG_ALLCONFIG=$(pwd)/arch/arm64/configs/defconfig
-CONFIG_CMDLINE_FORCE gets enabled. Which forces the user to pass the
-full cmdline to CONFIG_CMDLINE="...".
+CONFIG_CPU_BIG_ENDIAN gets enabled. Which tends not to be what most
+people wants.
 
-Rework so that we disable CONFIG_CMDLINE_FORCE in the defconfig file so
-we don't have to pass in the CONFIG_CMDLINE="..." when building an
-allmodconfig kernel. Since CONFIG_CMDLINE_FORCE is unset default, so
-when doing 'make savedefconfig' CONFIG_CMDLINE_FORCE will be dropped.
+Rework so that we disable CONFIG_CPU_BIG_ENDIAN in the defcinfig file so
+it doesn't get enabled when building allmodconfig kernels. When doing a
+'make savedefconfig' CONFIG_CPU_BIG_ENDIAN will be dropped.
 
 Signed-off-by: Anders Roxell <anders.roxell@linaro.org>
 ---
@@ -120,14 +120,14 @@ Signed-off-by: Anders Roxell <anders.roxell@linaro.org>
  1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 52a32b53b2ed..878f379d8d84 100644
+index 878f379d8d84..c9aa6b9ee996 100644
 --- a/arch/arm64/configs/defconfig
 +++ b/arch/arm64/configs/defconfig
-@@ -854,3 +854,4 @@ CONFIG_MAGIC_SYSRQ=y
- CONFIG_DEBUG_KERNEL=y
+@@ -855,3 +855,4 @@ CONFIG_DEBUG_KERNEL=y
  # CONFIG_SCHED_DEBUG is not set
  CONFIG_MEMTEST=y
-+# CONFIG_CMDLINE_FORCE is not set
+ # CONFIG_CMDLINE_FORCE is not set
++# CONFIG_CPU_BIG_ENDIAN is not set
 -- 
 2.20.1
 
