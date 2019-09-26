@@ -2,78 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72350BF93D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 20:35:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46D37BF947
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 20:37:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ao4NnqUPmftTpoXA43kpR0pMu2NxITwl+Fch79Zt1VU=; b=fzDiTp9NaTOsvF
-	TcreJzsbEJaXWrKYLR452qVm3ERg6Xc9Gm8VOTpBKMzIuUAYOQxeVK9JGfbsQW/oshHoQ4CqOSnmM
-	4pht8shFmhw1JB7Mw3EsRW6u7SWpCSxHlHAVsZxLik4v2hcDKSrwD+fGfSR45cHL9dCtcBy5gBURU
-	eewdxqecGHrTExMvtnmb5cSMFl6952TLX9ct78nWY2lSv2AbnuFDH5Rud0bfxuGmMxLzQ4DFQDr8G
-	GTFzxW/uiZpz1lwSNHM4vN+24R1k+0ltObbMJP1lCIBTHrIgs3W1Bn7h1LFSaX7lu1GxjmOIj0HGJ
-	Bp3qlQNxQedu0Y49qIfw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=FJ5rMfgd0sK4XE08U1YPmT5Z2gSIkh+8syxovWXry4Q=; b=jRL
+	4C9gpJvxiA4236s6m4b9GtdIku+/Eu3zXLgDDW52AOg6DIc1k6vj3dg44T0CPzdvlLh8e+gA0WUKK
+	kn+e/Lkrz1udD8q+Q4a91QRxLDTiyNHlqWaffDMIPk40BB7TqsjQbD2d9FeFG4XHJyv2vEHvXPRaY
+	4r5mv4UEJRrEUdWgTQZGl6SA9vuFFZ9TJTcewYwfPkbIUVaLZ2csNx0jyTpEC7a3H59GIY5NPQr/L
+	eBFNeWpJB7ZXFJ8Qq4pOBhidYIZ2CwaT3F7uoMwj4OQVml3g3CNi8Z0bmrE3viDGbIzNF5KKJhHzo
+	IPnmb7U/Gi5ccdOuXmvU/eIyLzE2hCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDYbU-0000Ll-4M; Thu, 26 Sep 2019 18:35:00 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1iDYdf-0002MF-Lh; Thu, 26 Sep 2019 18:37:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDYbE-0000Jw-Ph; Thu, 26 Sep 2019 18:34:46 +0000
-Received: by mail-oi1-x243.google.com with SMTP id e18so3023086oii.0;
- Thu, 26 Sep 2019 11:34:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=NGmse8tCqZQZ4pc5Rd9nycCZrtTO2C0KKH3W2gH74ZQ=;
- b=UgV7Uh+BjMLCWW04clvdJpCdRfDq+LPqUWtOYblF8YWz4YKYeXATM5GBrymb/Sk+uQ
- S81PNoDJWIh2MnYlFgrJJyqp4nJIPSEnWcQcU9diyD7BzDBQk15Xq03a2s9hdNP2x0Gv
- LycDh6FqujeKrx/3oAaZ1qrF9pDZklAuacpqB1EbUABmeQEyCF3XqGsYD7ya6ukjJAek
- DEZHtXpSpDRBRERpBikNPBMDwlpHgQgE9z6uGXS/Ge9WNOrjEdT4a86+wC0dfksXnAB5
- 6wACcrdJIdl5YFIKME8vJ7Blt1qGTY/vzSMBgtbkwKLvPS3zxgplPCWYOS0jKRSfbq/p
- diGw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=NGmse8tCqZQZ4pc5Rd9nycCZrtTO2C0KKH3W2gH74ZQ=;
- b=JyDq4zWFIAFJgcKTULeNm611Jngtn6rJRyYSHqyY474FLL6zdpvIsgQqxkIybcFeQA
- Wt4Ms91iVTf73dmrebUaKmm4/DRcs+59QJVRjFdD/QWgzy7yanqHhEyBn3jtbxAh50q5
- 3RBKCC8OO1fH5wG4020rXyBvMuwYMIW+TnIJ0Xx54L4IvDwlIhbCVhzlqlf0XL3ZfHU9
- vmk+chYKksWG7pl5YhiaZ93U0Tt9442Dd38pJX5ozi2BV5oGJ9/h/1jvka+Nzq4zMnSa
- wjHOPLhyeE/UwX2IH6q6yW+8zlgZj18hsm4ptEnsCXbfg2qEWhow/KtNSYJBwuH46aEk
- U55Q==
-X-Gm-Message-State: APjAAAXPb9SjOvZoTmJPm9gRAqNaEd5xIW9MoMKCOGtASpJngOLS5fX5
- wTjxA75/XDda452cK5eXYMtQ1Lbm+/Y/Za0xNjg=
-X-Google-Smtp-Source: APXvYqxuPwoB6TKSeyJqIwODjZis0k+ZmHBg9WFAB8/8pKYdueaEYWwk2+HM7MX9vjrMpv/LByMTiav/h+fuf+x5A5g=
-X-Received: by 2002:aca:4d08:: with SMTP id a8mr3946038oib.39.1569522879867;
- Thu, 26 Sep 2019 11:34:39 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190921151223.768842-1-martin.blumenstingl@googlemail.com>
- <1jzhivs6n6.fsf@starbuckisacylon.baylibre.com>
- <CAFBinCA0NaCJEDfNEg+LRfW3wxfNFGbXmGS+z7D5792TsupVAA@mail.gmail.com>
- <7h7e5wt2m1.fsf@baylibre.com>
-In-Reply-To: <7h7e5wt2m1.fsf@baylibre.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Thu, 26 Sep 2019 20:34:28 +0200
-Message-ID: <CAFBinCAv=_3vWSanQg1S5EXBVzdgTu2Ub3Hyad_ajF3v6PcbGQ@mail.gmail.com>
-Subject: Re: [PATCH 0/5] provide the XTAL clock via OF on Meson8/8b/8m2
-To: Kevin Hilman <khilman@baylibre.com>
+ id 1iDYdU-0002Ln-95
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 18:37:05 +0000
+Received: from localhost.localdomain (unknown [194.230.155.145])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 38AD820872;
+ Thu, 26 Sep 2019 18:37:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1569523023;
+ bh=mp0cAdKqEqH/s9D+3ht8kbYbJ5u3i3m3qD9oNpDN+K4=;
+ h=From:To:Cc:Subject:Date:From;
+ b=h9Edz85612LyGIUz2DxRyySgApO6Tt3gb7FCJN5UBhbsJSfrIe/yWvrl1nlYoGuEs
+ IZ4hJF6ntWeoZ3YD0fSUKRjxj2BWLCLtv2q6qip3DdKlZkwfl//fsqL7Q84QkCePh6
+ 9/5293kg2lwsw7idmxCfCLhQb6oG30V/G0lRtxHY=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Kukjin Kim <kgene@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org
+Subject: [PATCH] dt-bindings: timer: Use defines instead of numbers in Exynos
+ MCT examples
+Date: Thu, 26 Sep 2019 20:36:43 +0200
+Message-Id: <20190926183643.7118-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_113444_838299_DA8666FC 
-X-CRM114-Status: GOOD (  26.10  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190926_113704_375225_45466A67 
+X-CRM114-Status: GOOD (  10.91  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -83,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,86 +78,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Jerome Brunet <jbrunet@baylibre.com>
+Cc: Marek Szyprowski <m.szyprowski@samsung.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Kevin,
+Make the examples in Exynos Multi Core Timer bindings more readable and
+bring them closer to real DTS by using defines for interrupt flags.
 
-On Thu, Sep 26, 2019 at 12:47 AM Kevin Hilman <khilman@baylibre.com> wrote:
->
-> Martin Blumenstingl <martin.blumenstingl@googlemail.com> writes:
->
-> > Hi Jerome,
-> >
-> > On Mon, Sep 23, 2019 at 11:29 AM Jerome Brunet <jbrunet@baylibre.com> wrote:
-> >>
-> >> On Sat 21 Sep 2019 at 17:12, Martin Blumenstingl <martin.blumenstingl@googlemail.com> wrote:
-> >>
-> >> > So far the HHI clock controller has been providing the XTAL clock on
-> >> > Amlogic Meson8/Meson8b/Meson8m2 SoCs.
-> >> > This is not correct because the XTAL is actually a crystal on the
-> >> > boards and the SoC has a dedicated input for it.
-> >> >
-> >> > This updates the dt-bindings of the HHI clock controller and defines
-> >> > a fixed-clock in meson.dtsi (along with switching everything over to
-> >> > use this clock).
-> >> > The clock driver needs three updates to use this:
-> >> > - patch #2 uses clk_hw_set_parent in the CPU clock notifier. This drops
-> >> >   the explicit reference to CLKID_XTAL while at the same time making
-> >> >   the code much easier (thanks to Neil for providing this new method
-> >> >   as part of the G12A CPU clock bringup!)
-> >> > - patch #3 ensures that the clock driver doesn't rely on it's internal
-> >> >   XTAL clock while not losing support for older .dtbs that don't have
-> >> >   the XTAL clock input yet
-> >> > - with patch #4 the clock controller's own XTAL clock is not registered
-> >> >   anymore when a clock input is provided via OF
-> >> >
-> >> > This series is a functional no-op. It's main goal is to better represent
-> >> > how the actual hardware looks like.
-> >>
-> >> I'm a bit unsure about this series.
-> >>
-> >> On one hand, I totally agree with you ... having the xtal in DT is the
-> >> right way to do it ... when done from the start
-> > yep
-> >
-> >> On the other hand, things have been this way for years, they are working
-> >> and going for xtal in DT does not solve any pending issue. Doing this
-> >> means adding complexity in the driver to support both methods. It is
-> >> also quite a significant change in DT :/
-> > my two main motivations were:
-> > - keeping the 32-bit SoCs as similar as possible to the 64-bit ones in
-> > terms of "how are the [clock] drivers implemented"
-> > - with the DDR clock controller the .dts looked weird: &ddr_clkc took
-> > CLKID_XTAL from &clkc as input and &clkc took DDR_CLKID_DDR_PLL as
-> > input from &ddr_clkc
-> >
-> > RE complexity in the driver to support both:
-> > I still have a cleanup of the meson8b.c init code on my TODO-list
-> > because we're still supporting .dtbs without parent syscon
-> > my plan is to drop that code-path along with the newly added fallback
-> > for "skip CLKID_XTAL" (assuming this is accepted) together for v5.6 or
-> > v5.7
->
-> TBH, I'm big(ish) "functional no-op" changes like this are not things I
-> get super exicted about, especially for SoCs that have been working well
-> for awhile, and are do not have a large (upstream) userbase.
->
-> OTOH, since Martin is doing most of the heavy lifting for keeping this
-> platform working upstream, I'm happy to take the changes, as long as
-> Martin is willing to deal with any fallout.
-I agree: it has to work and if it doesn't then I will have to fix it so it is
-so I will be taking care of any fallout
+Suggested-by: Marek Szyprowski <m.szyprowski@samsung.com>
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 
+---
 
-Martin
+Rebased on top of:
+https://patchwork.kernel.org/project/linux-samsung-soc/list/?series=177667&state=*
+---
+ .../timer/samsung,exynos4210-mct.yaml         | 37 ++++++++++++++-----
+ 1 file changed, 27 insertions(+), 10 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.yaml b/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.yaml
+index bff3f54a398f..c4d152009f76 100644
+--- a/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.yaml
++++ b/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.yaml
+@@ -75,51 +75,68 @@ examples:
+     // In this example, the IP contains two local timers, using separate
+     // interrupts, so two local timer interrupts have been specified,
+     // in addition to four global timer interrupts.
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
+ 
+     timer@10050000 {
+         compatible = "samsung,exynos4210-mct";
+         reg = <0x10050000 0x800>;
+-        interrupts = <0 57 0>, <0 69 0>, <0 70 0>, <0 71 0>,
+-                     <0 42 0>, <0 48 0>;
++        interrupts = <GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 70 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 48 IRQ_TYPE_LEVEL_HIGH>;
+     };
+ 
+   - |
+     // In this example, the timer interrupts are connected to two separate
+     // interrupt controllers. Hence, an interrupts-extended is needed.
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
+ 
+     timer@101c0000 {
+         compatible = "samsung,exynos4210-mct";
+         reg = <0x101C0000 0x800>;
+-        interrupts-extended = <&gic 0 57 0>,
+-                              <&gic 0 69 0>,
++        interrupts-extended = <&gic GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>,
++                              <&gic GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>,
+                               <&combiner 12 6>,
+                               <&combiner 12 7>,
+-                              <&gic 0 42 0>,
+-                              <&gic 0 48 0>;
++                              <&gic GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>,
++                              <&gic GIC_SPI 48 IRQ_TYPE_LEVEL_HIGH>;
+     };
+ 
+   - |
+     // In this example, the IP contains four local timers, but using
+     // a per-processor interrupt to handle them. Only one first local
+     // interrupt is specified.
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
+ 
+     timer@10050000 {
+         compatible = "samsung,exynos4412-mct";
+         reg = <0x10050000 0x800>;
+ 
+-        interrupts = <0 57 0>, <0 69 0>, <0 70 0>, <0 71 0>,
+-                     <0 42 0>;
++        interrupts = <GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 70 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
+     };
+ 
+   - |
+     // In this example, the IP contains four local timers, but using
+     // a per-processor interrupt to handle them. All the local timer
+     // interrupts are specified.
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
+ 
+     timer@10050000 {
+         compatible = "samsung,exynos4412-mct";
+         reg = <0x10050000 0x800>;
+ 
+-        interrupts = <0 57 0>, <0 69 0>, <0 70 0>, <0 71 0>,
+-                     <0 42 0>, <0 42 0>, <0 42 0>, <0 42 0>;
++        interrupts = <GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 70 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
+     };
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
