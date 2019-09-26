@@ -2,57 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC61EBF0AC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 12:58:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 578EFBF0B1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 13:00:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XfeyFwCu/QwSggAu8tavTHZbTJXY24B/DG+IcT84pXo=; b=IM08hPdcVfi14O
-	JhUgFzah6pX+GwzZXXkkyNvbpgXcACVudW/j9Cy/ehQjDPFSgBpGbetnwKAqsHap6khtNxuYIsKPd
-	1Mpb8l1DMTht5dPRX+OBDWfZZGlmmkbuZu/fLEZ6lH8nO67Rl8WY0QJh0dCx/GPGNmHIhydEUQ/F+
-	4Ct032kU66HTQ4UOSJuXWirtYbKbTrUnxpWzFXMZ1gsx/oFgcGa/SN3qz7c8owoWRTdmcZ1YzYPnA
-	VR5h9qpTdmZzFjCUfgA1GJfTTIzskO0rMyB7LIKo4NDfNscnCwbNJgKq9NQVXSv7qSexhLquzul2G
-	hsac2JzyQBtrpeyw6vNA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=brG1XW7+dMP2cGkF/YzNFnPz2qoO9GD8vR6d4aei2x0=; b=omwdwl/Yu53vg6
+	y0oVcPKOC5brxz5QTmlFHI9VRSvwgsiKMveiQAbg0ojJhU0TBca2t1YrQiKPiin2gL6s/FzNtzrbD
+	0qnV1vvitFp2Rxw3yluDXtbWTzY8o+oziASYKG4/QOJ4jIrX1NdwgtiI6IWG3x3wkYXucOMFeMQKd
+	cULlbydtuv4XSq+X1IeJmbAgbarzPxH6NJodEQs/h4IXutW3HBngZjlGSTaKTIxlaTXLp84V9WArS
+	0UHv2+iSboyW59mN7zlpp2NqMHCP/xoMC+xEvq1LmW9dxxu+NoQ6065LQMNzODwGtzSsWcg8gQtPf
+	aTrqQh8ToHlFPgcp1Iig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDRTI-0005Pb-CZ; Thu, 26 Sep 2019 10:58:04 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDRTB-0005Oo-Fz
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 10:57:58 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D79FE1000;
- Thu, 26 Sep 2019 03:57:56 -0700 (PDT)
-Received: from [192.168.1.158] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 46CDC3F67D;
- Thu, 26 Sep 2019 03:57:55 -0700 (PDT)
-Subject: Re: [PATCH 2/4] arm64: vdso32: Detect binutils support for dmb ishld
-To: Catalin Marinas <catalin.marinas@arm.com>
-References: <20190920142738.qlsjwguc6bpnez63@willie-the-truck>
- <20190926060353.54894-1-vincenzo.frascino@arm.com>
- <20190926060353.54894-3-vincenzo.frascino@arm.com>
- <20190926083039.GC26802@iMac.local>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <d4483638-cba6-eedc-df85-ffe8b0895c89@arm.com>
-Date: Thu, 26 Sep 2019 11:59:44 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1iDRVQ-0006tP-BS; Thu, 26 Sep 2019 11:00:16 +0000
+Received: from frisell.zx2c4.com ([192.95.5.64])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iDRVI-0006aK-FQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 11:00:10 +0000
+Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTP id 0ce53a4c
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 26 Sep 2019 10:14:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=zx2c4.com; h=mime-version
+ :references:in-reply-to:from:date:message-id:subject:to:cc
+ :content-type; s=mail; bh=OMOzv5omucJd4GVIqn0w61KzgP4=; b=w5GqWH
+ S/5rIueHmdHNJQ2ozR3M8N4Op4jY1IjXhStqrTHSfZfZ2h/2hH7hpOXFd0O68jxN
+ tnOulFFLFa6fgZq2Cq8cRk48Nk/RE9UEH8OBMN1tt6kKh4zk1kXJFPtt0z1efNei
+ codu7TURoH7SD+fJmkoBmuVVYGIU+S83mHWod36cA8wI9jubXCEhdkxG9s47DYuh
+ uCGVanB+c7tk9NiHo+IxLA5V1VeWJrVKP4v9CEywvqIF5CUTUO1i9aOSwX1tCbq0
+ GppXdHrUFCKw3PFVLiyjy4D2xDTRKjOCCZv4F9lTH0G/VFg/uM7kjiF6glgEZ9ej
+ gHBwoegJiT377New==
+Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTPSA id b02b4d71
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256:NO)
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 26 Sep 2019 10:14:11 +0000 (UTC)
+Received: by mail-oi1-f169.google.com with SMTP id e18so1715609oii.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 26 Sep 2019 04:00:03 -0700 (PDT)
+X-Gm-Message-State: APjAAAV4g/wupZEbT50HWuDP1C0AvM0FSRZXRzbNgmF1B6ZznhfleYUw
+ J2w1h1qn3OKHNVqrVLsylnRcIamnKPFittLSw4E=
+X-Google-Smtp-Source: APXvYqw7XDVbdEQOtu6Uk43Zy457ni1rT1sdFCQhIJbCnoxqGO04mdmpZeChsNbk+yAB1w+VwttiF7uo/vkUohYeCNk=
+X-Received: by 2002:a54:4807:: with SMTP id j7mr1970768oij.122.1569495601762; 
+ Thu, 26 Sep 2019 04:00:01 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190926083039.GC26802@iMac.local>
-Content-Language: en-US
+References: <20190925161255.1871-1-ard.biesheuvel@linaro.org>
+ <CAHmME9oDhnv7aX77oEERof0TGihk4mDe9B_A3AntaTTVsg9aoA@mail.gmail.com>
+ <MN2PR20MB29733663686FB38153BAE7EACA860@MN2PR20MB2973.namprd20.prod.outlook.com>
+In-Reply-To: <MN2PR20MB29733663686FB38153BAE7EACA860@MN2PR20MB2973.namprd20.prod.outlook.com>
+From: "Jason A. Donenfeld" <Jason@zx2c4.com>
+Date: Thu, 26 Sep 2019 12:59:50 +0200
+X-Gmail-Original-Message-ID: <CAHmME9rsUoU6N6pQnUmz=NQeaaJzu7_E7R47M095JptPhk7nbQ@mail.gmail.com>
+Message-ID: <CAHmME9rsUoU6N6pQnUmz=NQeaaJzu7_E7R47M095JptPhk7nbQ@mail.gmail.com>
+Subject: Re: [RFC PATCH 00/18] crypto: wireguard using the existing crypto API
+To: Pascal Van Leeuwen <pvanleeuwen@verimatrix.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_035757_575375_F666E106 
-X-CRM114-Status: GOOD (  15.42  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190926_040008_804057_F174EE25 
+X-CRM114-Status: GOOD (  10.72  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [192.95.5.64 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,56 +88,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ard.biesheuvel@linaro.org, ndesaulniers@google.com,
- linux-kernel@vger.kernel.org, tglx@linutronix.de, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg KH <gregkh@linuxfoundation.org>, Eric Biggers <ebiggers@google.com>,
+ Samuel Neves <sneves@dei.uc.pt>, Will Deacon <will@kernel.org>,
+ Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
+ Andy Lutomirski <luto@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Dan Carpenter <dan.carpenter@oracle.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ David Miller <davem@davemloft.net>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 9/26/19 9:30 AM, Catalin Marinas wrote:
-> On Thu, Sep 26, 2019 at 07:03:51AM +0100, Vincenzo Frascino wrote:
->> diff --git a/arch/arm64/include/asm/vdso/compat_barrier.h b/arch/arm64/include/asm/vdso/compat_barrier.h
->> index fb60a88b5ed4..3fd8fd6d8fc2 100644
->> --- a/arch/arm64/include/asm/vdso/compat_barrier.h
->> +++ b/arch/arm64/include/asm/vdso/compat_barrier.h
->> @@ -20,7 +20,7 @@
->>  
->>  #define dmb(option) __asm__ __volatile__ ("dmb " #option : : : "memory")
->>  
->> -#if __LINUX_ARM_ARCH__ >= 8
->> +#if __LINUX_ARM_ARCH__ >= 8 && defined(CONFIG_AS_DMB_ISHLD)
->>  #define aarch32_smp_mb()	dmb(ish)
->>  #define aarch32_smp_rmb()	dmb(ishld)
->>  #define aarch32_smp_wmb()	dmb(ishst)
->> diff --git a/arch/arm64/kernel/vdso32/Makefile b/arch/arm64/kernel/vdso32/Makefile
->> index 1fba0776ed40..1a3299d901b1 100644
->> --- a/arch/arm64/kernel/vdso32/Makefile
->> +++ b/arch/arm64/kernel/vdso32/Makefile
->> @@ -55,6 +55,9 @@ endif
->>  VDSO_CAFLAGS += -fPIC -fno-builtin -fno-stack-protector
->>  VDSO_CAFLAGS += -DDISABLE_BRANCH_PROFILING
->>  
->> +# Check for binutils support for dmb ishld
->> +dmbinstr := $(call as-instr,dmb ishld,-DCONFIG_AS_DMB_ISHLD=1)
-> 
-> Is this check for the compat gas or the native one? Looking at
-> scripts/Kbuild.include, as-instr uses CC but you'd need a COMPATCC here
-> instead.
-> 
-> I may have missed something but I don't think this fixes the issue
-> Will's issue since he reported the problem with an old compat binutils.
-> 
+On Thu, Sep 26, 2019 at 12:19 PM Pascal Van Leeuwen
+<pvanleeuwen@verimatrix.com> wrote:
+> Actually, that assumption is factually wrong. I don't know if anything
+> is *publicly* available, but I can assure you the silicon is running in
+> labs already.
 
-Good catch I thought that it was sufficient to put it in the correct makefile,
-but I missed that COMPATCC != CC. This selects the wrong binutils.
-
-Need to add something in Kbuild for that.
-
--- 
-Regards,
-Vincenzo
+Great to hear, and thanks for the information. I'll follow up with
+some questions on this in another thread.
 
 _______________________________________________
 linux-arm-kernel mailing list
