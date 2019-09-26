@@ -2,87 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C1E9BEF8C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 12:26:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2384ABEF8F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 12:26:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YfBiEadDN4xXpC7yBdn3vTRtTx+3UegAVF8qprIEwH0=; b=fYLMJJTNxoXxhl
-	8nq9+i4aPZkAtFomXGmEDrWtTNpSvfIuPSLoyGxWE3Byxil1a7ENfpH6XiPYoVkaAoIO9HIJakuZ2
-	xk2XCWUn21qahv8n4zAl9tQTFNZ4J1DVgkoeqmK7tPXA80ZboURAYmVat5IJjkPpSfvaUrUZtVRv+
-	XU9jq8DrCNVvhSKCdEnpiBt41eriYZ8cFSHkJ9AGqlansnUJJFJveIDHMSbdHEh/eZ+L0hUUDK/oI
-	J88jyIP/Am5h0n/jIaetKSTzqXXl3Rr+da4VskABoTMvfvs3J9+qFezJIdUqyOf/MT5f79GXLy22X
-	Yt1Qyrq6YkLwb/T/6+4Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HzKeZ4DZ3ROZtbCYftmvWCQ3Puw1N+/o1b+vwH/fu2o=; b=j2J2C0iluzwFa5
+	6X9nMZROfIlCvIjCEL8dM2Yd29iCBUIjv+JbLHl8jWRupkvrU1IdeBD0ZOS0xAneprH04M8mXNXmj
+	COxGT6AeyT1QrZivnX/MWQlNIgdNRquWwvkSZGtedLqPWUFhEjoe8YKKGKHfyDKRXtCa3OUogTcN6
+	TAiEQVrpNKAaTp3/MwRxs8bFfaRiFi3FcsZcLcdxd7kGdLuQkQp73w+IJG0tWkReTQPNN92ZeyfJt
+	n2lIvn545bDuTp7ncps4iSuJNVCJLI1c6DAKDnijQby6GSDYmE+vQm0mg1uqvHybH2djdg/g4Q4T9
+	rYUp+xMxBN4gPuwbgQWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDQyG-0005Xq-9f; Thu, 26 Sep 2019 10:26:00 +0000
-Received: from esa2.microchip.iphmx.com ([68.232.149.84])
+	id 1iDQyW-0005jY-UN; Thu, 26 Sep 2019 10:26:17 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDQy2-0005Wy-Fy
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 10:25:50 +0000
-Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
- Claudiu.Beznea@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="Claudiu.Beznea@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa2.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa2.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: kuTEBVO5mat0bWcf8a4WUFA2aMY97JikdthveT3f7hfCRrFI6dxZimH9+Ggbq37CCurs4kZuq1
- n20IDb0F/EZESYspkqd53q3qEvfnA2iDUKzmBESHmKbTyy369vzKNx43tB6q/KPjFVPmj+JGlJ
- spItzd1r66BppXGV6cAqYN5fbt6aSuRfSn5zW6IfFEY5gyDjtIfCn+VHiyOR9jawoSZAanr7iv
- TWn6rTz7xRoFsJPu4Zpn1Gw0qhu8hN1F6JKJd3OZTfpuldGHw00QvvQkXHG7xxcdxuLLNpu4eu
- lWQ=
-X-IronPort-AV: E=Sophos;i="5.64,551,1559545200"; d="scan'208";a="50409875"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 26 Sep 2019 03:25:43 -0700
-Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Thu, 26 Sep 2019 03:25:43 -0700
-Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Thu, 26 Sep 2019 03:25:41 -0700
-From: Claudiu Beznea <claudiu.beznea@microchip.com>
-To: <nicolas.ferre@microchip.com>, <sre@kernel.org>,
- <alexandre.belloni@bootlin.com>, <ludovic.desroches@microchip.com>
-Subject: [PATCH] power: reset: at91-poweroff: lookup for proper PMC DT node
-Date: Thu, 26 Sep 2019 13:25:37 +0300
-Message-ID: <1569493537-7612-1-git-send-email-claudiu.beznea@microchip.com>
-X-Mailer: git-send-email 2.7.4
+ id 1iDQyE-0005dn-Oa
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 10:26:00 +0000
+Received: by mail-ed1-x542.google.com with SMTP id f20so1468706edv.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 26 Sep 2019 03:25:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=shutemov-name.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=sZySFJLySHqAg+L9VV4WCP/n21XzxDuSfHpOa9dXZmk=;
+ b=V6fllti1rZHNM40XpXtG1W2Ot4VDBW2UHagEWW0u0MoI0rDFExg7qiEEC4Kx0BkJUO
+ N39Zd2scOCpcawHLCt9EgBnxj3aafD0HolLGIy87seuTK4yUMVbDI6o0IMeV8c8kl2q3
+ Wf5SnYx+eKbP+/RCIcXsFXduLye95DPO+JQHh/WCLvCUGlPh8nGmH+sogm+pvP4xBNfx
+ h4JNIqEgrzXC8r7pu68KwoXWKMGCd2MHljTYxWD05iLCWWxyObBk3ZBW/VCrlMrvtx7F
+ z59l19lWm8GhC67PPTck26crrkv0RUiagsUS97uZ2h069vyeKg0ny5eU8/EERwCbbDGs
+ R3hA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=sZySFJLySHqAg+L9VV4WCP/n21XzxDuSfHpOa9dXZmk=;
+ b=YIKxrUgaIlXHNhcTAqCs4nt5sVquQDoBjEzfGhQZ6Up9AbQf/ChcT2pokvGyIT0SQ5
+ bdyr4mVwTOE4UtP7NcdIEuaLacTWdbFFviQIEwjZViFNmUljddmPDMQiBGmj/x+G7CFF
+ Nb1fouruF7Z1GXjC45nkLkwV+f+q6jhA33ciTDv2Rktn0RrXiwS3pDdHu7kMoQFOeWFr
+ ThrVjEQ4kF04AMpMZRVXnlq06iLAteUlXR1+TcD+k402h8xhrT9Df8IvOpeq/zEVyKaI
+ b3N2zPDqu/v3kuM7PwWj+wVMhqRkVV3uJ+Bqx/eSh2E9boxwWMzXP1fE1INp2Jv5eVsf
+ j8AA==
+X-Gm-Message-State: APjAAAXN7uW1h7sWE6pnRLZvcUYojJ4ToIzUPNMb5ql9ICGm3taVunPZ
+ Y87fB2SKN933P5atPsn9Qwqxpg==
+X-Google-Smtp-Source: APXvYqys0ai/BvbbRaO+GKiiNYldqfE2MTNlpzGoSrB2YWZd0rbFIaSycO3c42IMKl9185PoXnzMPg==
+X-Received: by 2002:a50:cfc7:: with SMTP id i7mr2606367edk.89.1569493556435;
+ Thu, 26 Sep 2019 03:25:56 -0700 (PDT)
+Received: from box.localdomain ([86.57.175.117])
+ by smtp.gmail.com with ESMTPSA id ng5sm187555ejb.9.2019.09.26.03.25.55
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 26 Sep 2019 03:25:55 -0700 (PDT)
+Received: by box.localdomain (Postfix, from userid 1000)
+ id 7FBCC1004E0; Thu, 26 Sep 2019 13:25:58 +0300 (+03)
+Date: Thu, 26 Sep 2019 13:25:58 +0300
+From: "Kirill A. Shutemov" <kirill@shutemov.name>
+To: Jia He <justin.he@arm.com>
+Subject: Re: [PATCH v9 3/3] mm: fix double page fault on arm64 if PTE_AF is
+ cleared
+Message-ID: <20190926102558.jlessqelf5k3havb@box>
+References: <20190925025922.176362-1-justin.he@arm.com>
+ <20190925025922.176362-4-justin.he@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190925025922.176362-4-justin.he@arm.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_032546_567916_D7024199 
-X-CRM114-Status: UNSURE (   8.94  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190926_032558_826316_032921D6 
+X-CRM114-Status: GOOD (  15.57  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.149.84 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,53 +98,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Claudiu Beznea <claudiu.beznea@microchip.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-mm@kvack.org,
+ Punit Agrawal <punitagrawal@gmail.com>, Will Deacon <will@kernel.org>,
+ Alex Van Brunt <avanbrunt@nvidia.com>, Marc Zyngier <maz@kernel.org>,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ Matthew Wilcox <willy@infradead.org>, Kaly Xin <Kaly.Xin@arm.com>,
+ hejianet@gmail.com, Ralph Campbell <rcampbell@nvidia.com>,
+ Suzuki Poulose <Suzuki.Poulose@arm.com>,
+ =?utf-8?B?SsOpcsO0bWU=?= Glisse <jglisse@redhat.com>,
+ Thomas Gleixner <tglx@linutronix.de>, nd@arm.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Andrew Morton <akpm@linux-foundation.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Driver has been enabled also for SAM9X60. At the moment the patch which did
-this has been sent to mainline the PMC for SAM9X60 wasn't integrated.
-SAM9X60 has a new PMC compatible (see commit 01e2113de9a5
-("clk: at91: add sam9x60 pmc driver")). Do to this we have to
-look for proper PMC compatible here, in SHDWC driver.
+On Wed, Sep 25, 2019 at 10:59:22AM +0800, Jia He wrote:
+> When we tested pmdk unit test [1] vmmalloc_fork TEST1 in arm64 guest, there
+> will be a double page fault in __copy_from_user_inatomic of cow_user_page.
+> 
+> Below call trace is from arm64 do_page_fault for debugging purpose
+> [  110.016195] Call trace:
+> [  110.016826]  do_page_fault+0x5a4/0x690
+> [  110.017812]  do_mem_abort+0x50/0xb0
+> [  110.018726]  el1_da+0x20/0xc4
+> [  110.019492]  __arch_copy_from_user+0x180/0x280
+> [  110.020646]  do_wp_page+0xb0/0x860
+> [  110.021517]  __handle_mm_fault+0x994/0x1338
+> [  110.022606]  handle_mm_fault+0xe8/0x180
+> [  110.023584]  do_page_fault+0x240/0x690
+> [  110.024535]  do_mem_abort+0x50/0xb0
+> [  110.025423]  el0_da+0x20/0x24
+> 
+> The pte info before __copy_from_user_inatomic is (PTE_AF is cleared):
+> [ffff9b007000] pgd=000000023d4f8003, pud=000000023da9b003, pmd=000000023d4b3003, pte=360000298607bd3
+> 
+> As told by Catalin: "On arm64 without hardware Access Flag, copying from
+> user will fail because the pte is old and cannot be marked young. So we
+> always end up with zeroed page after fork() + CoW for pfn mappings. we
+> don't always have a hardware-managed access flag on arm64."
+> 
+> This patch fix it by calling pte_mkyoung. Also, the parameter is
+> changed because vmf should be passed to cow_user_page()
+> 
+> Add a WARN_ON_ONCE when __copy_from_user_inatomic() returns error
+> in case there can be some obscure use-case.(by Kirill)
+> 
+> [1] https://github.com/pmem/pmdk/tree/master/src/test/vmmalloc_fork
+> 
+> Signed-off-by: Jia He <justin.he@arm.com>
+> Reported-by: Yibo Cai <Yibo.Cai@arm.com>
 
-Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
----
- drivers/power/reset/at91-sama5d2_shdwc.c | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
+Acked-by: Kirill A. Shutemov <kirill.shutemov@linux.intel.com>
 
-diff --git a/drivers/power/reset/at91-sama5d2_shdwc.c b/drivers/power/reset/at91-sama5d2_shdwc.c
-index e341cc5c0ea6..1c18f465a245 100644
---- a/drivers/power/reset/at91-sama5d2_shdwc.c
-+++ b/drivers/power/reset/at91-sama5d2_shdwc.c
-@@ -269,6 +269,12 @@ static const struct of_device_id at91_shdwc_of_match[] = {
- };
- MODULE_DEVICE_TABLE(of, at91_shdwc_of_match);
- 
-+static const struct of_device_id at91_pmc_ids[] = {
-+	{ .compatible = "atmel,sama5d2-pmc" },
-+	{ .compatible = "microchip,sam9x60-pmc" },
-+	{ /* Sentinel. */ }
-+};
-+
- static int __init at91_shdwc_probe(struct platform_device *pdev)
- {
- 	struct resource *res;
-@@ -313,7 +319,7 @@ static int __init at91_shdwc_probe(struct platform_device *pdev)
- 
- 	at91_shdwc_dt_configure(pdev);
- 
--	np = of_find_compatible_node(NULL, NULL, "atmel,sama5d2-pmc");
-+	np = of_find_matching_node(NULL, at91_pmc_ids);
- 	if (!np) {
- 		ret = -ENODEV;
- 		goto clk_disable;
 -- 
-2.7.4
-
+ Kirill A. Shutemov
 
 _______________________________________________
 linux-arm-kernel mailing list
