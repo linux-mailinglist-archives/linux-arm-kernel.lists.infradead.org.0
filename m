@@ -2,57 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 943B0BF63D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 17:52:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 440A8BF649
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 17:56:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c1t452c8GqjUu+IO7ZonnJRhfk4kzoCn9HpRqh36Azo=; b=jO5Dhy5gAniU81
-	7nQ2GUXvqWgI/GG92iNRHRYE8BQOazB3GedLFbvD6UtxWDO5Hhgv99z6d6FuIw2PWO74Pu+W2ZIaT
-	m/ibSA+B0dXb8XLPJ9Zn9mkENE/kZbyhMl7V1RM7KWsJobn9tpOtQU33bcskYrvGF01h6aoAP6+ue
-	APiac9YB+nnGd7Qmg6ICNuwnZ6e10cHHugNvLA+BjyL/KTqkag62QUEQ7PqV445oGePupcQr3xhHT
-	//zJxp44/5W6DqCtMXwAoGZd6ZOm813pz9f3BljhzQNR9n4uxoQE5cG0YyBiF0qHfPpnhDTsAZMTp
-	kYTmONL6Ya9gNWPZsoCA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=syf+8YG33qnw9NqU7mvbeWs6rigan7X10O55w7uUGNA=; b=A0h9qI6mXJ9Lv+
+	i1mZSOHO9dkZMrvf9HRLfT9liZ3MIt5ETuJL/dPILYONUG5fRjIh8KOTR1bczlumEI7q9AqzMdTJJ
+	utssbIdqz7ZsAsPkiKtDyV86BAyVHwhqbrcftSE7g5fRLwssyogy8QJfnlKbFKS9NmZvJX34Xu6gS
+	bOrmiwAnpCCuEOdF5Wsnv0/kMN0Fx97V4O8hP7jDsL7Mw9m+QowZFk3o+tXJrsgHrxoaPRagZQUFK
+	Lp3WUQsgOISKHeDTphTBN+WcLwb/vg4fTE0VEgxinRXoPTkc7CWyIx4EFaehkNqOgwJOoXvboPBC1
+	7VrebKLkekRFlMOU/Gnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDW3p-0005ql-6H; Thu, 26 Sep 2019 15:52:05 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDW3b-0005qQ-OX
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 15:51:53 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DCE1028;
- Thu, 26 Sep 2019 08:51:50 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- DA1793F534; Thu, 26 Sep 2019 08:51:49 -0700 (PDT)
-Date: Thu, 26 Sep 2019 16:51:47 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH] arm64: Allow disabling of the compat vDSO
-Message-ID: <20190926155147.GL9689@arrakis.emea.arm.com>
-References: <20190925130926.50674-1-catalin.marinas@arm.com>
- <CAKwvOdn2Sf7aAt0zqUUqGY6nXg-C3be7An9amy4tfiNr_8ERJw@mail.gmail.com>
- <20190925170838.GK7042@arrakis.emea.arm.com>
- <a7e06b86-facd-21de-c47c-246d0da8d80d@arm.com>
- <20190926074717.GA26802@iMac.local>
+	id 1iDW7X-0007Nd-7i; Thu, 26 Sep 2019 15:55:55 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iDW7M-0007NH-9B
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 15:55:45 +0000
+Received: by mail-wm1-x341.google.com with SMTP id 5so3402195wmg.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 26 Sep 2019 08:55:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=+pFOILDteLs1G9dcmBbAs9+Xx43dXKfMhbXX78aolpU=;
+ b=ocEzXFyrDMDNNTqDxb6k2SzrmJrAsPAnZirHH3Kvzd5rbCXfsxdIOtsIGnd+UTNRNM
+ yahWX2QAcH4oGusJldWBOlivyIYR0Nug8t8JiTTsmd9XY9ICKH9D8nbfTOpA665/ex5U
+ hKOlqQk2mxrR9K4rCC0pztbWeO5xjwYrYhqK6voqQ11h9RnIUDN7C+9UWe4f4bbiiSa+
+ /yeFFm2RhU3cdlaBUYWoVQlJ603zASrg32UWVaDKXU0mERpCqcEtyzUz2RkvvghMwDYW
+ DwQhLl+grXBeqP0l8jFnctZuYTt2X4uE8DFsqQgdeIj4kJtNxnXTFtbW51MLCKpsJGNG
+ lHxQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=+pFOILDteLs1G9dcmBbAs9+Xx43dXKfMhbXX78aolpU=;
+ b=O76E0q3KxMztjvuQBjoXRsLgeumOWu3cYdFoFUUjast3OvmqJtY+705NZtwgGUrqyS
+ 6W21LNXeIusl0u4zwwj8wQ/otwQC0V6NX7C2ig1rDFwwFXrDGNP//beMR3KoROoIDYGm
+ bpPjqnW2SwSr4vDTyMvdsuCpjQfUzBtXoR9dwHGiJ5EXpJTbXGzIQuHP689zZBfQzm/s
+ qDRvnLE3FEqcH0v4h6EDy3rBSEZnjGNtraLyGUs99gEi7/2gT1q4ASukEOqsmYBm8hQg
+ OXoB7M04L1WRMXMiZ6hjmUYb21S1wHQTAtdEoCPHlPd3UA7PG9q02/+7YNgkZnJ+qyW/
+ rXVA==
+X-Gm-Message-State: APjAAAWOs8SfJCT9XClHkNghpv3iJNMKfK8yS4Y6TqmJzttBiyZYdDwV
+ IMEBCLPxZKC8AbkMhGZ8Q3Y=
+X-Google-Smtp-Source: APXvYqxJR/GW0YsDT3R3ajEjRVC+xU5wALlX3bWVdIz9CTZ5KKgsTQGUDT72X5cUhJGh7HwgBkbQIw==
+X-Received: by 2002:a1c:c1cc:: with SMTP id r195mr3854113wmf.50.1569513342192; 
+ Thu, 26 Sep 2019 08:55:42 -0700 (PDT)
+Received: from sausagefarm (31-34-101-110.abo.bbox.fr. [31.34.101.110])
+ by smtp.gmail.com with ESMTPSA id p7sm3902157wma.34.2019.09.26.08.55.41
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 26 Sep 2019 08:55:41 -0700 (PDT)
+Date: Thu, 26 Sep 2019 17:55:39 +0200
+From: Jeeeun Evans <jeeeunevans@gmail.com>
+To: rmfrfs@gmail.com, slongerbeam@gmail.com, p.zabel@pengutronix.de,
+ mchehab@kernel.org, gregkh@linuxfoundation.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ linux-imx@nxp.com
+Subject: [PATCH] staging: media: imx: Use devm_platform_ioremap_resource().
+Message-ID: <20190926155539.GA20744@sausagefarm>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190926074717.GA26802@iMac.local>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_085151_843226_6DC11A71 
-X-CRM114-Status: GOOD (  17.87  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190926_085544_356031_7E8003FC 
+X-CRM114-Status: GOOD (  10.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jeeeunevans[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,48 +99,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Nick Desaulniers <ndesaulniers@google.com>,
- LKML <linux-kernel@vger.kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devel@driverdev.osuosl.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 26, 2019 at 08:47:18AM +0100, Catalin Marinas wrote:
-> On Thu, Sep 26, 2019 at 01:06:50AM +0100, Vincenzo Frascino wrote:
-> > On 9/25/19 6:08 PM, Catalin Marinas wrote:
-> > > On Wed, Sep 25, 2019 at 09:53:16AM -0700, Nick Desaulniers wrote:
-> > >> On Wed, Sep 25, 2019 at 6:09 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> > >>> - clean up the headers includes; vDSO should not include kernel-only
-> > >>>   headers that may even contain code patched at run-time
-> > >>
-> > >> This is a big one; Clang validates the inline asm constraints for
-> > >> extended inline assembly, GCC does not for dead code.  So Clang chokes
-> > >> on the inclusion of arm64 headers using extended inline assembly when
-> > >> being compiled for arm-linux-gnueabi.
-> > > 
-> > > Whether clang or gcc, I'd like this fixed anyway. At some point we may
-> > > inadvertently rely on some code which is patched at boot time for the
-> > > kernel code but not for the vDSO.
-> > 
-> > Do we have any code of this kind in header files?
-> > 
-> > The vDSO library uses only a subset of the headers (mainly Macros) hence all the
-> > unused symbols should be compiled out. Is your concern only theoretical or do
-> > you have an example on where this could be happening?
-> 
-> At the moment it's rather theoretical.
+This patch fixes a warning by coccicheck:
+drivers/staging/media/imx/imx7-mipi-csis.c:973:1-12: WARNING: Use devm_platform_ioremap_resource for state -> regs
 
-Actually, it's not. The moment the compat vdso Makefile needs the line
-below, we are doing it wrong:
+Use devm_platform_ioremap_resource helper which wraps platform_get_resource()
+and devm_ioremap_resource() together.
 
-VDSO_CFLAGS += -D__uint128_t='void*'
+Signed-off-by: Jeeeun Evans <jeeeunevans@gmail.com>
+---
+ drivers/staging/media/imx/imx7-mipi-csis.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
+diff --git a/drivers/staging/media/imx/imx7-mipi-csis.c b/drivers/staging/media/imx/imx7-mipi-csis.c
+index 73d8354e618c..bf21db38441f 100644
+--- a/drivers/staging/media/imx/imx7-mipi-csis.c
++++ b/drivers/staging/media/imx/imx7-mipi-csis.c
+@@ -947,7 +947,6 @@ static void mipi_csis_debugfs_exit(struct csi_state *state)
+ static int mipi_csis_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+-	struct resource *mem_res;
+ 	struct csi_state *state;
+ 	int ret;
+ 
+@@ -969,8 +968,7 @@ static int mipi_csis_probe(struct platform_device *pdev)
+ 	mipi_csis_phy_init(state);
+ 	mipi_csis_phy_reset(state);
+ 
+-	mem_res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	state->regs = devm_ioremap_resource(dev, mem_res);
++	state->regs = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(state->regs))
+ 		return PTR_ERR(state->regs);
+ 
 -- 
-Catalin
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
