@@ -2,63 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7013CBF4B9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 16:10:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 517A2BF509
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 16:27:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GUX1+5/rfFaiLCiVly509ZqtMfXnWUkAXUP54D+++mQ=; b=fqQFPgIRpd64NL
-	+Zjo2mgITluBO5WnoYK3waB7FNuZCJdGRCgmnXxlysdPQrMnA7M8f+8KOu9XPEybMlvPKMhkEt5Xy
-	A0pOc/e9Q0XSK5JqEj38NnDxeLiL2egmTdo6gNukRh/CZYrv6Eok7UcsdEIkMlW8G0W1EXVuoxa6Z
-	x7tJuF2g+/TkRqNDs4SjgdarOA/Dl33fr5ZqQfrkn3TvBTYwpkNpQet6XfbI4GWuHOk7O6Wajhx0d
-	msQWQY+gQoI+1kM6cseLZ+zSU3Hqc3NRu29UNU5DgYHXip+w8FULXCM8ehWTCNtNNqMwIC7pf6HJi
-	/yRVa+/1iOBa2ZkEreUw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kAcXHL0XwbKGo0aA65XEf3QK4PWbmtTg0pCHsO18w6Y=; b=qhfZeYOAj5w09B
+	6GIMxhju2QmrI0ER8DdEoIm7q+OClupmpy0RIEf+E09HyWd36ObJaUXT6+qMWCZxdiWZFArV7Tnqp
+	2vQSlV/xptYUk+/XDC4Db4XXkpqiLfK8roXjZHHKlNNPnI7jgnS+oeCBUqpNHDh+2/5pquLbTDO2f
+	6Jc3+Y7Jl6ZT+bl73mQTKLl+SFDX44SPpha5BxqCVuyVgfmP3ubUJH8PdNDn2j4h26As236zECagd
+	OSq5b7mxZIYnN/+08z0C8nA6arV2UJgM80rjyLHzEYsqTOgstwBQGY8eq6pFOM8ww139KR2Y3mxZV
+	/2H/eiXhOc/7p/cfJZvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDUSu-0002rz-OR; Thu, 26 Sep 2019 14:09:52 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDUSK-0002f7-UV
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 14:09:18 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id CE80420554;
- Thu, 26 Sep 2019 16:09:13 +0200 (CEST)
-Received: from [192.168.108.37] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id 2F6002040A;
- Thu, 26 Sep 2019 16:09:13 +0200 (CEST)
-Subject: Re: [PATCH 00/11] PCI dma-ranges parsing consolidation
-To: Andrew Murray <andrew.murray@arm.com>, Rob Herring <robh@kernel.org>
-References: <20190924214630.12817-1-robh@kernel.org>
- <20190926084859.GB9720@e119886-lin.cambridge.arm.com>
- <036f298c-c65c-7da2-92dc-fc80892672c1@free.fr>
- <CAL_JsqLtYYXCgGN6_t8SuPqPmQwhhRJXaf8+kxnKxLHbRQRaDQ@mail.gmail.com>
- <20190926133849.GF9720@e119886-lin.cambridge.arm.com>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <407c0073-3694-6cce-0619-1f0ae3a55ed6@free.fr>
-Date: Thu, 26 Sep 2019 16:09:13 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1iDUjZ-0001U2-02; Thu, 26 Sep 2019 14:27:05 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iDUjK-0001TM-AJ
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 14:26:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 38D4228;
+ Thu, 26 Sep 2019 07:26:46 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 354B03F534; Thu, 26 Sep 2019 07:26:45 -0700 (PDT)
+Date: Thu, 26 Sep 2019 15:26:43 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH v2 2/4] arm64: vdso32: Detect binutils support for dmb
+ ishld
+Message-ID: <20190926142642.GF9689@arrakis.emea.arm.com>
+References: <20190926133805.52348-1-vincenzo.frascino@arm.com>
+ <20190926133805.52348-3-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190926133849.GF9720@e119886-lin.cambridge.arm.com>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Thu Sep 26 16:09:13 2019 +0200 (CEST)
+Content-Disposition: inline
+In-Reply-To: <20190926133805.52348-3-vincenzo.frascino@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_070917_127997_08DB2A51 
-X-CRM114-Status: GOOD (  13.74  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190926_072650_402933_91B232D9 
+X-CRM114-Status: GOOD (  10.13  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -71,54 +62,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mans Rullgard <mans@mansr.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Marc Zyngier <maz@kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Bjorn Helgaas <helgaas@kernel.org>, PCI <linux-pci@vger.kernel.org>,
- Robin Murphy <robin.murphy@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: ard.biesheuvel@linaro.org, ndesaulniers@google.com,
+ linux-kernel@vger.kernel.org, tglx@linutronix.de, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 26/09/2019 15:38, Andrew Murray wrote:
+On Thu, Sep 26, 2019 at 02:38:03PM +0100, Vincenzo Frascino wrote:
+> diff --git a/arch/arm64/Kbuild b/arch/arm64/Kbuild
+> index d6465823b281..75cf8c796d0e 100644
+> --- a/arch/arm64/Kbuild
+> +++ b/arch/arm64/Kbuild
+> @@ -4,3 +4,9 @@ obj-$(CONFIG_NET)	+= net/
+>  obj-$(CONFIG_KVM)	+= kvm/
+>  obj-$(CONFIG_XEN)	+= xen/
+>  obj-$(CONFIG_CRYPTO)	+= crypto/
+> +
+> +# as-instr-compat
+> +# Usage: cflags-y += $(call as-instr-compat,instr,option1,option2)
+> +
+> +as-instr-compat = $(call try-run,\
+> +	printf "%b\n" "$(1)" | $(COMPATCC) $(KBUILD_AFLAGS) -c -x assembler -o "$$TMP" -,$(2),$(3))
 
-> On Thu, Sep 26, 2019 at 08:11:16AM -0500, Rob Herring wrote:
->
->> On Thu, Sep 26, 2019 at 6:20 AM Marc Gonzalez wrote:
->>>
->>> On 26/09/2019 10:49, Andrew Murray wrote:
->>>
->>>> On Tue, Sep 24, 2019 at 04:46:19PM -0500, Rob Herring wrote:
->>>>
->>>>> pci-rcar-gen2 is the only remaining driver doing its own dma-ranges
->>>>> handling as it is still using the old ARM PCI functions. Looks like it
->>>>> is the last one (in drivers/pci/).
->>>>
->>>> It also seems that pcie-tango is using of_pci_dma_range_parser_init
->>>> and so parsing dma-ranges. Though it's using the dma_ranges for a
->>>> slightly different purpose.
->>
->> Seems I missed that as I only grep'ed for for_each_of_pci_range...
->>
->>> The rationale for that code can be found here:
->>>
->>>         https://patchwork.kernel.org/patch/9915469/
->>>
->>> NB: 1) The PCIE_TANGO_SMP8759 Kconfig symbol is marked "depends on BROKEN",
->>> and 2) The driver adds TAINT_CRAP,
->>> and 3) The maker of the tango platform is dead.
-> 
-> Thanks for the context Marc, much appreciated.
-> 
-> Is there a path to make this driver not BROKEN? Or is this likely to bit rot?
+This doesn't seem to be used anywhere. Was it meant to be replaced by
+cc32-as-instr?
 
-It is not the device driver that is BROKEN, it is the device being driven ;-)
-
-I don't know how many smp8759 boards exist in the wild. Mans might have one.
-I didn't keep mine.
-
-Regards.
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
