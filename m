@@ -2,93 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3865ABE940
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 01:53:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58BA2BE953
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 02:05:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dC8ALAbjVsi8ulsBMXC6e4CsVBxU0FNyy0AoisA5RQk=; b=oW0kIb8ZWtOHmt
-	+EhC80+aKYsMyNlLWiKXDiCBTeaiGF0xdf89u62+HsZZA29Y9KrLA7WKN6DyFeardB/0xNApvKgUj
-	ktNP0f6CLKFJOf/+BkbGsprR9Yx+gLF/VtgFLWk7ZTQDpu7QGgsPcSHY3X4bPHLDC234UWaCtHO36
-	3Go0JhL/1iQNhGAIKz7I6XSF9zSSmeWfDUfGWFfeJUrOMpOZFRz+8Q6icg6lS30vJ3/aRJYAZ3YB/
-	HBu0y2fLG4i+mufhTwECr1SaLSkFoQ/a9zMaM0HWZvp7WCw6EM43QBmtEK3H3WWDC50xdoxpxiOsx
-	CVkAdXw4CLeUj3OOnqHQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PnPc8EOTlXKv7e3GUArMz/X5uHq39x1e572EOspfYbI=; b=mKcOB/A4vt+yAG
+	czHIwUc88b2Gsp5XdCSptS9/LHk1qVXBL/qF3zmMMCB2H8THRczzUTpCV154nvNXdfaIvRJcNMHzQ
+	YrkT96d3vYjq4xn45Ts8MoF7f27wYJVQMZe4Dt7G6Ze5GXMNBu4Fr84vcUvfG7VD1TaQ4u+r9VTFQ
+	HdERLIPpeCtFWnVP20gAXuCPoiTHbyFp2hRbHqWhAhOb+etPJFfltu5m4lpZJIhZrvhyN5C6Yq8z/
+	V+eFNo+ppHBxpTKu7PrpFAzriZWHVHyjcs1n+RlThpENBew481phLTkjZ4luqyAVHMvfPVq8X0vLS
+	+r8EFHwuFB/lq8QOmKNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDH67-0004u4-II; Wed, 25 Sep 2019 23:53:27 +0000
-Received: from mail-yb1-xb42.google.com ([2607:f8b0:4864:20::b42])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDH5u-0004ti-S5
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Sep 2019 23:53:16 +0000
-Received: by mail-yb1-xb42.google.com with SMTP id y204so99934yby.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 25 Sep 2019 16:53:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=cyFQHO0gt5mJktt3yKr7R9c1YLgMmxQPz4clIN4BByc=;
- b=NX4N++Ilhb/J+QxCl+m9OQKuUep7vJMws423VnLxrI+JJZb5igg7Ogezjt8G6BXZ37
- eBuYE2PXNvyxQncoy1SlWgggQP4mi/THz6D4OzUqZnWQK1horxAdXZaOv0iqYoJeqhqq
- jxopXY9GPAAub44F6/pzw4LBObdtDZhYX13loPzxMGZ1Qxe22MtqUpkBmCdMgwKIKSxc
- CV9AhCou7Ps3aYHlF4I74Pu/uipvq+O9ZBi7ZXJn/yUlpRhWC4hTw6xpKG1Z/q2pj11M
- ak/wzvln0BXE9SykOMtCUYfrpjvB7tD67nt9VFxZtw+Xv2iz/Kq9JQqBpfXAdUFGGeIv
- LHcw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=cyFQHO0gt5mJktt3yKr7R9c1YLgMmxQPz4clIN4BByc=;
- b=HgZoZLzDfoo6p26Wgn99l2Gxr/XGhZAw+9ptvo2DjdbO+MPgGaG4nfiqjaAg0KtJ0k
- 03RCNT5fWG43Tz19xbznlUZIvIlQLt+iNjr/bILIIwzdI0ZUqr0cr8BEOO0PeYaaFlk1
- j+xuFEOiBxKVaGzPuIb2W/0nnw6uGStcMhejt8mpUL/me2iks9s2jCgc8PuQBwplii3E
- 71jua34YGDmYcLRADxiHu4/K2fRsGwzmGfTxFfrIJZRaxOhW9dJ04aLW6gfnKMYbVjPO
- Pae/lDa7CKEI9OnOwbGaaE4kFHg6Z38xmhjjyqLY7cFtLfmis484NWYYRfAnSZMs/DSw
- b1zg==
-X-Gm-Message-State: APjAAAVdtkYqKfoUR7jLkIIxSFb9EPttZzzqVpmd20RvE+LYC6vqFYr5
- OeWD6QKdhjsCZA4yK8nSO0w=
-X-Google-Smtp-Source: APXvYqyCs6ReFo44FRjG9X8YZDHHS+am/bMANP6oopGV1Zd787odaVvfpd//Pc4OS1/U5biQgJ7CJg==
-X-Received: by 2002:a25:a469:: with SMTP id f96mr185130ybi.23.1569455593438;
- Wed, 25 Sep 2019 16:53:13 -0700 (PDT)
-Received: from icarus (072-189-084-142.res.spectrum.com. [72.189.84.142])
- by smtp.gmail.com with ESMTPSA id x145sm77056ywx.2.2019.09.25.16.53.12
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 25 Sep 2019 16:53:12 -0700 (PDT)
-Date: Wed, 25 Sep 2019 19:53:10 -0400
-From: William Breathitt Gray <vilhelm.gray@gmail.com>
-To: Fabrice Gasnier <fabrice.gasnier@st.com>, jic23@jic23.retrosnub.co.uk
-Subject: Re: [PATCH] counter: stm32-timer-cnt: fix a kernel-doc warning
-Message-ID: <20190925235310.GD14133@icarus>
-References: <1568809323-26079-1-git-send-email-fabrice.gasnier@st.com>
- <20190925234927.GB14133@icarus>
+	id 1iDHHg-0000Yx-1A; Thu, 26 Sep 2019 00:05:24 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iDHHS-0000Yd-N9
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 00:05:12 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5A53E1000;
+ Wed, 25 Sep 2019 17:05:07 -0700 (PDT)
+Received: from [172.23.27.158] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9F2893F67D;
+ Wed, 25 Sep 2019 17:05:05 -0700 (PDT)
+Subject: Re: [PATCH] arm64: Allow disabling of the compat vDSO
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ Nick Desaulniers <ndesaulniers@google.com>
+References: <20190925130926.50674-1-catalin.marinas@arm.com>
+ <CAKwvOdn2Sf7aAt0zqUUqGY6nXg-C3be7An9amy4tfiNr_8ERJw@mail.gmail.com>
+ <20190925170838.GK7042@arrakis.emea.arm.com>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <a7e06b86-facd-21de-c47c-246d0da8d80d@arm.com>
+Date: Thu, 26 Sep 2019 01:06:50 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190925234927.GB14133@icarus>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <20190925170838.GK7042@arrakis.emea.arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_165314_911058_EA1EF65F 
-X-CRM114-Status: GOOD (  15.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190925_170510_845489_2FBDA9C9 
+X-CRM114-Status: GOOD (  27.35  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b42 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vilhelm.gray[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,54 +64,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, linux-iio@vger.kernel.org,
- linux-kernel@vger.kernel.org, jic23@kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 25, 2019 at 07:49:27PM -0400, William Breathitt Gray wrote:
-> On Wed, Sep 18, 2019 at 02:22:03PM +0200, Fabrice Gasnier wrote:
-> > Fix the following warning when documentation is built:
-> > drivers/counter/stm32-timer-cnt.c:37: warning: cannot understand function
-> > prototype: 'enum stm32_count_function'
-> > 
-> > Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
-> > ---
-> >  drivers/counter/stm32-timer-cnt.c | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > 
-> > diff --git a/drivers/counter/stm32-timer-cnt.c b/drivers/counter/stm32-timer-cnt.c
-> > index 644ba18..e425dd1 100644
-> > --- a/drivers/counter/stm32-timer-cnt.c
-> > +++ b/drivers/counter/stm32-timer-cnt.c
-> > @@ -28,7 +28,7 @@ struct stm32_timer_cnt {
-> >  };
-> >  
-> >  /**
-> > - * stm32_count_function - enumerates stm32 timer counter encoder modes
-> > + * enum stm32_count_function - enumerates stm32 timer counter encoder modes
-> >   * @STM32_COUNT_SLAVE_MODE_DISABLED: counts on internal clock when CEN=1
-> >   * @STM32_COUNT_ENCODER_MODE_1: counts TI1FP1 edges, depending on TI2FP2 level
-> >   * @STM32_COUNT_ENCODER_MODE_2: counts TI2FP2 edges, depending on TI1FP1 level
-> > -- 
-> > 2.7.4
+On 9/25/19 6:08 PM, Catalin Marinas wrote:
+> On Wed, Sep 25, 2019 at 09:53:16AM -0700, Nick Desaulniers wrote:
+>> On Wed, Sep 25, 2019 at 6:09 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
+>>>
+>>> The compat vDSO building requires a cross-compiler than produces AArch32
+>>> binaries, defined via CONFIG_CROSS_COMPILE_COMPAT_VDSO or the
+>>> CROSS_COMPILE_COMPAT environment variable. If none of these is defined,
+>>> building the kernel always prints a warning as there is no way to
+>>> deselect the compat vDSO.
+>>>
+>>> Add an arm64 Kconfig entry to allow the deselection of the compat vDSO.
+>>> In addition, make it an EXPERT option, default n, until other issues
+>>> with the compat vDSO are solved (64-bit only kernel headers included in
+>>> user-space vDSO code, CC_IS_CLANG irrelevant to CROSS_COMPILE_COMPAT).
+>>
+>> CC_IS_CLANG might be because then CC can be reused with different
+>> flags, rather than providing a different cross compiler binary via
+>> config option.
+>>
+>>>
+>>> Fixes: bfe801ebe84f ("arm64: vdso: Enable vDSO compat support")
+>>> Cc: Will Deacon <will@kernel.org>
+>>> Cc: Vincenzo Frascino <vincenzo.frascino@arm.com>
+>>> Cc: Thomas Gleixner <tglx@linutronix.de>
+>>> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+>>
+>> Thanks for the patch.
+>> Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
+>> Link: https://github.com/ClangBuiltLinux/linux/issues/595
 > 
-> Fixes: 597f55e3f36c ("counter: stm32-lptimer: add counter device")
+> This is just a temporary hiding of the issue, not a complete fix.
+> Vincenzo will do the fix later on.
 > 
-> Jonathan, please pick this fix up through IIO.
+>> Overall, this work is important to Android; the ARMv8-A series of
+>> mobile SoCs we see today have to support 32b and 64b (A32+A64?) for at
+>> least a few more years; we would like gettimeofday() and friends to be
+>> fast for 32b and 64b applications.
 > 
-> Thanks,
+> I agree, it just needs some tweaking and hopefully we get most of it
+> fixed in 5.4.
 > 
-> William Breathitt Gray
+>>> Suggestions for future improvements of the compat vDSO handling:
+>>>
+>>> - replace the CROSS_COMPILE_COMPAT prefix with a full COMPATCC; maybe
+>>>   check that it indeed produces 32-bit code
+>>>
 
-Sorry, that's the wrong Fixes line. Here's the right one:
+CROSS_COMPILE_COMPAT is called like this for symmetry with CROSS_COMPILE.
 
-Fixes: ad29937e206f ("counter: Add STM32 Timer quadrature encoder")
+>>> - check whether COMPATCC is clang or not rather than CC_IS_CLANG, which
+>>>   only checks the native compiler
+>>
+>> When cross compiling, IIUC CC_IS_CLANG is referring to CC which is the
+>> cross compiler, which is different than HOSTCC which is the host
+>> compiler.  HOSTCC is used mostly for things in scripts/ while CC is
+>> used to compile a majority of the kernel in a cross compile.
+> 
+> We need the third compiler here for the compat vDSO (at least with gcc),
+> COMPATCC. I'm tempted to just drop the CONFIG_CROSS_COMPILE_COMPAT_VDSO
+> altogether and only rely on a COMPATCC. This way we can add
+> COMPATCC_IS_CLANG etc. in the Kconfig checks directly.
+> 
+> If clang can build both 32 and 64-bit with the same binary (just
+> different options), we could maybe have COMPATCC default to CC and add a
+> check on whether COMPATCC generates 32-bit binaries.
+> 
+clang requires the --target option for specifying the 32bit triple.
+Basically $(TRIPLE)-gcc is equivalent to gcc --target $(TRIPLE).
+We need a configuration option to encode this.
 
-William Breathitt Gray
+>>> - clean up the headers includes; vDSO should not include kernel-only
+>>>   headers that may even contain code patched at run-time
+>>
+>> This is a big one; Clang validates the inline asm constraints for
+>> extended inline assembly, GCC does not for dead code.  So Clang chokes
+>> on the inclusion of arm64 headers using extended inline assembly when
+>> being compiled for arm-linux-gnueabi.
+> 
+> Whether clang or gcc, I'd like this fixed anyway. At some point we may
+> inadvertently rely on some code which is patched at boot time for the
+> kernel code but not for the vDSO.
+> 
+
+Do we have any code of this kind in header files?
+
+The vDSO library uses only a subset of the headers (mainly Macros) hence all the
+unused symbols should be compiled out. Is your concern only theoretical or do
+you have an example on where this could be happening?
+
+> Thanks.
+> 
+
+-- 
+Regards,
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
