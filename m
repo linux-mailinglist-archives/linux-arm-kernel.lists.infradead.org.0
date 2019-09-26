@@ -2,94 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0577BF664
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 18:05:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31766BF699
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 18:24:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9cFZzG8oGP//q2rEYO9Bu5pzbZ+ww96i2jdZgexHzJc=; b=lBIQ/Y4iMFoDcN
-	n1EQ1kSslPCL5jpRKomhYH6xn3wI1E7F67CSF9YMKlfsBgTFOs1wJmbOizS8dRMz1nKGSTfk/kEmp
-	RowSKh3xNkvVvNv0QNFnM2bpue+QeSrfMpD02tp3rvJDokvn0bWGdOrwJZoBWs2zlAvJrrWeGfSTB
-	AcNUGmQvz/GMr4hlZiCsuvM/95wnr/pifBYw4LUMtwPS/iFHDsb07fA6tSTciXV2n33gMmgtgPQER
-	UA+xqcs5KQ53VCBGbj5pHCDk97SxUf9PgmI4i8VMFlPTVrWiFIXCs6bLuRgeY+NzQ3Use262HMz22
-	DEDGBQqzTDDxuKF1im6g==;
+	List-Owner; bh=+FTZBgFkakc1UPm4NuX5/KIueHSQ3bSpqd6gROzTbVQ=; b=MOlMH2Y0x5xDUR
+	/wpZ1MX6lodkrapBMn9ugKF8pYAnCrc9HwlSujTUCBBYZoBMu3AhSgE15AbxAdr7eHpTVjMGI5nL4
+	7pS8sbcZBnxI9NTw3RafK/Gaj801ZYwoO1yPVLiHzmyXS3nYbu1v8Zds4TVqkzKvb+gaLUbFExnP5
+	kq+P98tjQi0eA2kj5MJTBItgbpfH0Av5MZCKaRJr5fvzUQLlsKinCJkJ9L2ZLS8XnLO0dE1JERb5B
+	bWnNMSJWS2qDuctWB4xgQruLUod1gmPCEoIgsVeKaV89YHEjw5ahpbuO+ylOkDYwpZ4xxB/bQA1zN
+	IqePMhG2IcK7SWgO5J3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDWGP-0000vD-Vh; Thu, 26 Sep 2019 16:05:06 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1iDWYe-0007Zp-Kn; Thu, 26 Sep 2019 16:23:56 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDWGB-0000uE-4J
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 16:04:53 +0000
-Received: by mail-pf1-x444.google.com with SMTP id q5so2063721pfg.13
+ id 1iDWYS-0007Yp-PO
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 16:23:46 +0000
+Received: by mail-pg1-x542.google.com with SMTP id q7so1807089pgi.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Sep 2019 09:04:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=AmlgghEnTm4dlVlgTgUfs9dm9WGzckYupWFhC473QLY=;
- b=NUd98sVKEBebrSrEUX6zXgBO6NqeAisKf1qd3pvsND7SbWcWaOHSxsDSNnPdHaHjH+
- jz/D1wTcPti3AgAEbzATrC5izl5qOQn7oaaHF8GhMxV3DQoYiiQHlWbQsTKcfxw8PLOE
- q4E6k903iudy6saT/z1afr2/JGIjFxeHmQyWo=
+ Thu, 26 Sep 2019 09:23:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=5KJXkwykZKMxFzMHYA7DO1LT2mHdYgxlgFlqTK43aSg=;
+ b=AN9tMr/xQI6ixjCkoOmGxFdfQQtzy7Olh9LVYyYm42aA6ePb3swjBmTLHJbDhDG9c0
+ m5sPVQYWjy4J96xClewSCc6+peXtW96QKUk3yBLYrK31fpIxgabsfI9rRa5cZzLh4cNr
+ aVBYR8He61kDNtVrQWRiVcdpVmJMik1lgj+t6QFUnD2C7MbYsC3LJpfhOKW0vF7+AWDr
+ ULvseh5sJ3UZ15ccyuqK1N3Vbyz/NxUVWqq8BGpNiRhLS4Ph7LFD26WxlZp2MLcyPk5w
+ n5tdImLhl1Jqs1CiX409ZOVDPm2M7503awCd/tQopa4Bs5821cSrOpImfVJoT6cbGuqI
+ nKHw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=AmlgghEnTm4dlVlgTgUfs9dm9WGzckYupWFhC473QLY=;
- b=rdIG9nhLpts2QKuI63QvTikYpZxRKzTtggWok6O39dxbf5xg96md0+v/Jh3PikOt2I
- q6eCAzShhbe0D5TM+CU42Xe275q+tt8L9w3raXEFbjtVLForDj/v3a5aSofWYXl+ldPq
- JFMtWORurqq95shbP9esiQ9TsyD/FifbSMz+Z1Hy6Vy52x2/bLzItnIKHQXFhgCfwVGV
- mW1oZZaH1U2LvxCh9yLHdqmwHoClPJNm5n+YFoGXiMt4GMN8scNkY8lREU8O/yWWxWcW
- kZmIbr1AKOKw/goGn678053xhbex3guvJt+MNAllNzNZwLBdE/KHjW0zqQaffWPhYrgI
- VExg==
-X-Gm-Message-State: APjAAAXgTGUHbf7IVwhxwF8m79JvfGnWTi+ydP8IFx5O42zMvk/Beqrf
- W3HOU/JJq4j/WwYvdUO0MYo7EA==
-X-Google-Smtp-Source: APXvYqyAZNrFd8SjZlx9W6Dxxyobn/6DZ89tVcEKUx4YfR45nbD0lm89VWtDJBDZOdx/OrTPy3kcCA==
-X-Received: by 2002:a62:8647:: with SMTP id x68mr4630322pfd.44.1569513889264; 
- Thu, 26 Sep 2019 09:04:49 -0700 (PDT)
-Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
- by smtp.gmail.com with ESMTPSA id q13sm2938026pjq.0.2019.09.26.09.04.47
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 26 Sep 2019 09:04:48 -0700 (PDT)
-Date: Thu, 26 Sep 2019 09:04:45 -0700
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Chanwoo Choi <cw00.choi@samsung.com>
-Subject: Re: [PATCH v8 6/6] PM / devfreq: Use PM QoS for sysfs min/max_freq
-Message-ID: <20190926160445.GO133864@google.com>
-References: <cover.1569319738.git.leonard.crestez@nxp.com>
- <CGME20190924101141epcas4p37956967e2f06b8a857cb53ff12ca791b@epcas4p3.samsung.com>
- <3eb8a1d1e7d738f7599d54348d6b474196581693.1569319738.git.leonard.crestez@nxp.com>
- <c521989f-51b6-84eb-b4f1-c4469494345e@samsung.com>
- <20190925164513.GM133864@google.com>
- <81b136fc-0613-08f8-cb26-6243e7be621b@samsung.com>
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=5KJXkwykZKMxFzMHYA7DO1LT2mHdYgxlgFlqTK43aSg=;
+ b=BSOvxQraki7Ml73mTxpI+FlqACwJCmPitfKKJuBJwabg7fkaHdu37aKlUXWVqizDX4
+ CBGe5w2FRP5gGyMLCbjeUoGqpHFAP1/6XkbYgetO4ziRcjlGu0d6gnsP+eYOKngeCttr
+ gnmrtKLF7DMs/r8KOLQMGGUEvEJo2V3LGnukK/tRwK3J1tmzJ3XRXB4EH46Ud0MQme8l
+ 6VVjQRe7q92Qd90LN7vH/F0vRcL/gYGQ/P5f2UR2/wB4g7Pjb1h9WK5jYWcJe3B5swHI
+ uAhAmeNByABRstQpCnWRy3NLyV3ypC62hKRR6QFHOvT8wzHmZFFK8Zb/210sE2cVvmnj
+ GKJg==
+X-Gm-Message-State: APjAAAXR77f+myNM35Vq3xfz9tYsxvpifVYDvtvGAdkTOpCB0nQbN6Ac
+ oNoUGBWSjuRsZ9KmbUpLRulxfg==
+X-Google-Smtp-Source: APXvYqyXRYUH9jhldr03tJ4HTnP6NcLAFrGaRJdGlX81M87HTImuFCaOBIrqy502qWA3AiMe4YNO+g==
+X-Received: by 2002:a17:90a:8c15:: with SMTP id
+ a21mr4308094pjo.99.1569515023652; 
+ Thu, 26 Sep 2019 09:23:43 -0700 (PDT)
+Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
+ [71.197.186.152])
+ by smtp.gmail.com with ESMTPSA id y144sm3041925pfb.188.2019.09.26.09.23.42
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 26 Sep 2019 09:23:42 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Jianxin Pan <jianxin.pan@amlogic.com>, linux-amlogic@lists.infradead.org
+Subject: Re: [PATCH 2/3] soc: amlogic: Add support for Secure power domains
+ controller
+In-Reply-To: <3859c748-01f0-4dbd-05d6-20fff31edf11@amlogic.com>
+References: <1568895064-4116-1-git-send-email-jianxin.pan@amlogic.com>
+ <1568895064-4116-3-git-send-email-jianxin.pan@amlogic.com>
+ <7hh850t2wy.fsf@baylibre.com>
+ <3859c748-01f0-4dbd-05d6-20fff31edf11@amlogic.com>
+Date: Thu, 26 Sep 2019 09:23:42 -0700
+Message-ID: <7ha7arrppt.fsf@baylibre.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <81b136fc-0613-08f8-cb26-6243e7be621b@samsung.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_090451_200790_7CAD9F7D 
-X-CRM114-Status: GOOD (  33.53  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190926_092344_857227_E8C4E281 
+X-CRM114-Status: GOOD (  23.15  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,215 +97,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Artur =?utf-8?B?xZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
- linux-pm@vger.kernel.org, Viresh Kumar <viresh.kumar@linaro.org>,
- NXP Linux Team <linux-imx@nxp.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Lukasz Luba <l.luba@partner.samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Alexandre Bailon <abailon@baylibre.com>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- Georgi Djakov <georgi.djakov@linaro.org>, linux-arm-kernel@lists.infradead.org,
- Jacky Bai <ping.bai@nxp.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
+ Victor Wan <victor.wan@amlogic.com>, linux-pm@vger.kernel.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
+ Zhiqiang Liang <zhiqiang.liang@amlogic.com>, Rob Herring <robh+dt@kernel.org>,
+ Jian Hu <jian.hu@amlogic.com>, Xingyu Chen <xingyu.chen@amlogic.com>,
+ linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCBTZXAgMjYsIDIwMTkgYXQgMTA6MjU6NDFBTSArMDkwMCwgQ2hhbndvbyBDaG9pIHdy
-b3RlOgo+IE9uIDE5LiA5LiAyNi4g7Jik7KCEIDE6NDUsIE1hdHRoaWFzIEthZWhsY2tlIHdyb3Rl
-Ogo+ID4gT24gV2VkLCBTZXAgMjUsIDIwMTkgYXQgMTE6NDE6MDdBTSArMDkwMCwgQ2hhbndvbyBD
-aG9pIHdyb3RlOgo+ID4+IE9uIDE5LiA5LiAyNC4g7Jik7ZuEIDc6MTEsIExlb25hcmQgQ3Jlc3Rl
-eiB3cm90ZToKPiA+Pj4gU3dpdGNoIHRoZSBoYW5kbGluZyBvZiBtaW5fZnJlcSBhbmQgbWF4X2Zy
-ZXEgZnJvbSBzeXNmcyB0byB1c2UgdGhlCj4gPj4+IGRldl9wbV9xb3NfcmVxdWVzdCBpbnRlcmZh
-Y2UuCj4gPj4+Cj4gPj4+IFNpbmNlIFBNIFFvUyBoYW5kbGVzIGZyZXF1ZW5jaWVzIGFzIGtIeiB0
-aGlzIGNoYW5nZSByZWR1Y2VzIHRoZQo+ID4+PiBwcmVjaXNpb24gb2YgbWluX2ZyZXEgYW5kIG1h
-eF9mcmVxLiBUaGlzIHNob3VsZG4ndCBpbnRyb2R1Y2UgcHJvYmxlbXMKPiA+Pj4gYmVjYXVzZSBm
-cmVxdWVuY2llcyB3aGljaCBhcmUgbm90IGFuIGludGVnZXIgbnVtYmVyIG9mIGtIeiBhcmUgbGlr
-ZWx5Cj4gPj4+IG5vdCBhbiBpbnRlZ2VyIG51bWJlciBvZiBIeiBlaXRoZXIuCj4gPj4+Cj4gPj4+
-IFRyeSB0byBlbnN1cmUgY29tcGF0aWJpbGl0eSBieSByb3VuZGluZyBtaW4gdmFsdWVzIGRvd24g
-YW5kIHJvdW5kaW5nCj4gPj4+IG1heCB2YWx1ZXMgdXAuCj4gPj4+Cj4gPj4+IFNpZ25lZC1vZmYt
-Ynk6IExlb25hcmQgQ3Jlc3RleiA8bGVvbmFyZC5jcmVzdGV6QG54cC5jb20+Cj4gPj4+IFJldmll
-d2VkLWJ5OiBNYXR0aGlhcyBLYWVobGNrZSA8bWthQGNocm9taXVtLm9yZz4KPiA+Pj4gLS0tCj4g
-Pj4+ICBkcml2ZXJzL2RldmZyZXEvZGV2ZnJlcS5jIHwgNDYgKysrKysrKysrKysrKysrKysrKysr
-KysrLS0tLS0tLS0tLS0tLS0tCj4gPj4+ICBpbmNsdWRlL2xpbnV4L2RldmZyZXEuaCAgIHwgIDkg
-KysrKy0tLS0KPiA+Pj4gIDIgZmlsZXMgY2hhbmdlZCwgMzMgaW5zZXJ0aW9ucygrKSwgMjIgZGVs
-ZXRpb25zKC0pCj4gPj4+Cj4gPj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2RldmZyZXEvZGV2ZnJl
-cS5jIGIvZHJpdmVycy9kZXZmcmVxL2RldmZyZXEuYwo+ID4+PiBpbmRleCA3ODRmM2U0MDUzNmEu
-LjhiYjdlZmQ4MjFhYiAxMDA2NDQKPiA+Pj4gLS0tIGEvZHJpdmVycy9kZXZmcmVxL2RldmZyZXEu
-Ywo+ID4+PiArKysgYi9kcml2ZXJzL2RldmZyZXEvZGV2ZnJlcS5jCj4gPj4+IEBAIC0xMzcsMTQg
-KzEzNywxMCBAQCBzdGF0aWMgdm9pZCBnZXRfZnJlcV9yYW5nZShzdHJ1Y3QgZGV2ZnJlcSAqZGV2
-ZnJlcSwKPiA+Pj4gIAlxb3NfbWF4X2ZyZXEgPSBkZXZfcG1fcW9zX3JlYWRfdmFsdWUoZGV2ZnJl
-cS0+ZGV2LnBhcmVudCwKPiA+Pj4gIAkJCQkJICAgICBERVZfUE1fUU9TX01JTl9GUkVRVUVOQ1kp
-Owo+ID4+PiAgCSptaW5fZnJlcSA9IG1heCgqbWluX2ZyZXEsIEhaX1BFUl9LSFogKiBxb3NfbWlu
-X2ZyZXEpOwo+ID4+PiAgCSptYXhfZnJlcSA9IG1pbigqbWF4X2ZyZXEsIEhaX1BFUl9LSFogKiBx
-b3NfbWF4X2ZyZXEpOwo+ID4+PiAgCj4gPj4+IC0JLyogY29uc3RyYWludHMgZnJvbSBzeXNmcyAq
-Lwo+ID4+PiAtCSptaW5fZnJlcSA9IG1heCgqbWluX2ZyZXEsIGRldmZyZXEtPm1pbl9mcmVxKTsK
-PiA+Pj4gLQkqbWF4X2ZyZXEgPSBtaW4oKm1heF9mcmVxLCBkZXZmcmVxLT5tYXhfZnJlcSk7Cj4g
-Pj4+IC0KPiA+Pj4gIAkvKiBjb25zdHJhaW50cyBmcm9tIE9QUCBpbnRlcmZhY2UgKi8KPiA+Pj4g
-IAkqbWluX2ZyZXEgPSBtYXgoKm1pbl9mcmVxLCBkZXZmcmVxLT5zY2FsaW5nX21pbl9mcmVxKTsK
-PiA+Pj4gIAkvKiBzY2FsaW5nX21heF9mcmVxIGNhbiBiZSB6ZXJvIG9uIGVycm9yICovCj4gPj4+
-ICAJaWYgKGRldmZyZXEtPnNjYWxpbmdfbWF4X2ZyZXEpCj4gPj4+ICAJCSptYXhfZnJlcSA9IG1p
-bigqbWF4X2ZyZXEsIGRldmZyZXEtPnNjYWxpbmdfbWF4X2ZyZXEpOwo+ID4+PiBAQCAtNjc5LDEw
-ICs2NzUsMTIgQEAgc3RhdGljIHZvaWQgZGV2ZnJlcV9kZXZfcmVsZWFzZShzdHJ1Y3QgZGV2aWNl
-ICpkZXYpCj4gPj4+ICAJCQlERVZfUE1fUU9TX01JTl9GUkVRVUVOQ1kpOwo+ID4+PiAgCj4gPj4+
-ICAJaWYgKGRldmZyZXEtPnByb2ZpbGUtPmV4aXQpCj4gPj4+ICAJCWRldmZyZXEtPnByb2ZpbGUt
-PmV4aXQoZGV2ZnJlcS0+ZGV2LnBhcmVudCk7Cj4gPj4+ICAKPiA+Pj4gKwlkZXZfcG1fcW9zX3Jl
-bW92ZV9yZXF1ZXN0KCZkZXZmcmVxLT51c2VyX21heF9mcmVxX3JlcSk7Cj4gPj4+ICsJZGV2X3Bt
-X3Fvc19yZW1vdmVfcmVxdWVzdCgmZGV2ZnJlcS0+dXNlcl9taW5fZnJlcV9yZXEpOwo+ID4+Cj4g
-Pj4gUGxlYXNlIGNoZWNrIHRoZSByZXR1cm4gdmFsdWUgaWYgZXJyb3IgaGFwcGVuLCBqdXN0IHBy
-aW50IHRoZSBlcnIgd2l0aCBkZXZfZXJyKCkKPiA+PiB3aXRob3V0IHN0b3BwaW5nIHRoZSByZWxl
-YXNlIHN0ZXBzLgo+ID4gCj4gPiBJIHdvbmRlciBpZiBkZXZfd2FybigpIHdvdWxkIGJlIG1vcmUg
-YXBwcm9wcmlhdGUsIHNpbmNlIHRoZSBjdXJyZW50IG9wZXJhdGlvbgo+ID4gaXMgbm90IGFib3J0
-ZWQuCj4gPiAKPiA+Pj4gIAlrZnJlZShkZXZmcmVxLT50aW1lX2luX3N0YXRlKTsKPiA+Pj4gIAlr
-ZnJlZShkZXZmcmVxLT50cmFuc190YWJsZSk7Cj4gPj4+ICAJbXV0ZXhfZGVzdHJveSgmZGV2ZnJl
-cS0+bG9jayk7Cj4gPj4+ICAJa2ZyZWUoZGV2ZnJlcSk7Cj4gPj4+ICB9Cj4gPj4+IEBAIC03NDcs
-MTggKzc0NSwyNSBAQCBzdHJ1Y3QgZGV2ZnJlcSAqZGV2ZnJlcV9hZGRfZGV2aWNlKHN0cnVjdCBk
-ZXZpY2UgKmRldiwKPiA+Pj4gIAlkZXZmcmVxLT5zY2FsaW5nX21pbl9mcmVxID0gZmluZF9hdmFp
-bGFibGVfbWluX2ZyZXEoZGV2ZnJlcSk7Cj4gPj4+ICAJaWYgKCFkZXZmcmVxLT5zY2FsaW5nX21p
-bl9mcmVxKSB7Cj4gPj4+ICAJCWVyciA9IC1FSU5WQUw7Cj4gPj4+ICAJCWdvdG8gZXJyX2RldjsK
-PiA+Pj4gIAl9Cj4gPj4+IC0JZGV2ZnJlcS0+bWluX2ZyZXEgPSBkZXZmcmVxLT5zY2FsaW5nX21p
-bl9mcmVxOwo+ID4+PiAgCj4gPj4+ICAJZGV2ZnJlcS0+c2NhbGluZ19tYXhfZnJlcSA9IGZpbmRf
-YXZhaWxhYmxlX21heF9mcmVxKGRldmZyZXEpOwo+ID4+PiAgCWlmICghZGV2ZnJlcS0+c2NhbGlu
-Z19tYXhfZnJlcSkgewo+ID4+PiAgCQllcnIgPSAtRUlOVkFMOwo+ID4+PiAgCQlnb3RvIGVycl9k
-ZXY7Cj4gPj4+ICAJfQo+ID4+PiAtCWRldmZyZXEtPm1heF9mcmVxID0gZGV2ZnJlcS0+c2NhbGlu
-Z19tYXhfZnJlcTsKPiA+Pj4gKwo+ID4+PiArCWVyciA9IGRldl9wbV9xb3NfYWRkX3JlcXVlc3Qo
-ZGV2LCAmZGV2ZnJlcS0+dXNlcl9taW5fZnJlcV9yZXEsCj4gPj4+ICsJCQkJICAgICBERVZfUE1f
-UU9TX01JTl9GUkVRVUVOQ1ksIDApOwo+ID4+PiArCWlmIChlcnIgPCAwKQo+ID4+PiArCQlnb3Rv
-IGVycl9kZXY7Cj4gPj4+ICsJZXJyID0gZGV2X3BtX3Fvc19hZGRfcmVxdWVzdChkZXYsICZkZXZm
-cmVxLT51c2VyX21heF9mcmVxX3JlcSwKPiA+Pj4gKwkJCQkgICAgIERFVl9QTV9RT1NfTUFYX0ZS
-RVFVRU5DWSwgUzMyX01BWCk7Cj4gPj4+ICsJaWYgKGVyciA8IDApCj4gPj4+ICsJCWdvdG8gZXJy
-X2RldjsKPiA+Pj4gIAo+ID4+PiAgCWRldmZyZXEtPnN1c3BlbmRfZnJlcSA9IGRldl9wbV9vcHBf
-Z2V0X3N1c3BlbmRfb3BwX2ZyZXEoZGV2KTsKPiA+Pj4gIAlhdG9taWNfc2V0KCZkZXZmcmVxLT5z
-dXNwZW5kX2NvdW50LCAwKTsKPiA+Pj4gIAo+ID4+PiAgCWRldmZyZXEtPnRyYW5zX3RhYmxlID0g
-a3phbGxvYygKPiA+Pj4gQEAgLTg0MywxMCArODQ4LDE0IEBAIHN0cnVjdCBkZXZmcmVxICpkZXZm
-cmVxX2FkZF9kZXZpY2Uoc3RydWN0IGRldmljZSAqZGV2LAo+ID4+PiAgZXJyX2RldjoKPiA+Pj4g
-IAkvKgo+ID4+PiAgCSAqIENsZWFudXAgcGF0aCBmb3IgZXJyb3JzIHRoYXQgaGFwcGVuIGJlZm9y
-ZSByZWdpc3RyYXRpb24uCj4gPj4+ICAJICogT3RoZXJ3aXNlIHdlIHJlbHkgb24gZGV2ZnJlcV9k
-ZXZfcmVsZWFzZS4KPiA+Pj4gIAkgKi8KPiA+Pj4gKwlpZiAoZGV2X3BtX3Fvc19yZXF1ZXN0X2Fj
-dGl2ZSgmZGV2ZnJlcS0+dXNlcl9tYXhfZnJlcV9yZXEpKQo+ID4+PiArCQlkZXZfcG1fcW9zX3Jl
-bW92ZV9yZXF1ZXN0KCZkZXZmcmVxLT51c2VyX21heF9mcmVxX3JlcSk7Cj4gPj4KPiA+PiBQbGVh
-c2UgY2hlY2sgdGhlIHJldHVybiB2YWx1ZSBpZiBlcnJvciBoYXBwZW4sIGp1c3QgcHJpbnQgdGhl
-IGVyciB3aXRoIGRldl9lcnIoKQo+ID4+IHdpdGhvdXQgc3RvcHBpbmcgdGhlIHJlbGVhc2Ugc3Rl
-cHMuCj4gPj4KPiA+PiAJZGV2X2VyciguLi4gImZhaWxlZCB0byByZW1vdmUgcmVxdWVzdCBvZiBE
-RVZfUE1fUU9TX01BWF9GUkVRVUVOQ1lcbiIpOwo+ID4gCj4gPiBkZXZfd2FybigpIGZvciB0aGUg
-c2FtZSByZWFzb24gYXMgYWJvdmU/Cj4gCj4gQWN0dWFsbHksIEkgdGhpbmsgdGhhdCBpcyBub3Qg
-Y3JpdGljYWwgZXJyb3IgYnV0IG5lZWQgdG8gcHJpbnQgdGhlIGVycm9yCj4gU28sIEkgdGhpbmsg
-dGhhdCBkZXZfZXJyKCkgaXMgZW5vdWdoLiBJZiB0aGlzIHRoaW5nIGlzIGNyaXRpY2FsLAo+IGJl
-dHRlciB0byB1c2UgZGV2X3dhcm4uCgpXZSBhZ3JlZSB0aGF0IHRoaXMgaXMgbm90IGNyaXRpY2Fs
-LCBidXQgbm90IHdoZW4gdG8gdXNlIGRldl9lcnIoKQphbmQgZGV2X3dhcm4oKS4gWW91IHNlZW0g
-dG8gaW1wbHkgdGhhdCBkZXZfd2FybigpIGlzIG1vcmUgc2V2ZXJlCnRoYW4gZGV2X2VycigpLCBo
-b3dldmVyIGl0J3MgdGhlIG90aGVyIHdheSBhcm91bmQ6CgojZGVmaW5lIEtFUk5fRVJSICAgICAg
-ICBLRVJOX1NPSCAiMyIgICAgLyogZXJyb3IgY29uZGl0aW9ucyAqLwojZGVmaW5lIEtFUk5fV0FS
-TklORyAgICBLRVJOX1NPSCAiNCIgICAgLyogd2FybmluZyBjb25kaXRpb25zICovCiNkZWZpbmUg
-S0VSTl9OT1RJQ0UgICAgIEtFUk5fU09IICI1IiAgICAvKiBub3JtYWwgYnV0IHNpZ25pZmljYW50
-IGNvbmRpdGlvbiAqLwoKSSB0aGluayBpbiB0aGlzIGNhc2UgeW91IGNhbiBnbyBlaXRoZXIgd2F5
-LCBpdCdzIGNlcnRhaW5seSBhbiBlcnJvciwKYnV0IHRoZSBkcml2ZXIgY29udGludWVzIHdpdGgg
-dGhlIG5vcm1hbCBleGVjdXRpb24gcGF0aC4KCj4gPiAKPiA+IEkgdGhpbmsgdGhlIG1lc3NhZ2Ug
-d291bGQgYmUgYmV0dGVyIHdpdGggYSBzbGlnaHQgY2hhbmdlOgo+ID4gCj4gPiAiZmFpbGVkIHRv
-IHJlbW92ZSBERVZfUE1fUU9TX01BWF9GUkVRVUVOQ1kgcmVxdWVzdFxuIgo+IAo+IE9LLgo+IAo+
-ID4gCj4gPj4KPiA+Pj4gKwlpZiAoZGV2X3BtX3Fvc19yZXF1ZXN0X2FjdGl2ZSgmZGV2ZnJlcS0+
-dXNlcl9taW5fZnJlcV9yZXEpKQo+ID4+PiArCQlkZXZfcG1fcW9zX3JlbW92ZV9yZXF1ZXN0KCZk
-ZXZmcmVxLT51c2VyX21pbl9mcmVxX3JlcSk7Cj4gPj4gCQo+ID4+IAlkZXZfZXJyKC4uLiAiZmFp
-bGVkIHRvIHJlbW92ZSByZXF1ZXN0IG9mIERFVl9QTV9RT1NfTUlOX0ZSRVFVRU5DWVxuIik7Cj4g
-PiAKPiA+IGRpdHRvCj4gPiAKPiA+Pj4gIAlrZnJlZShkZXZmcmVxLT50aW1lX2luX3N0YXRlKTsK
-PiA+Pj4gIAlrZnJlZShkZXZmcmVxLT50cmFuc190YWJsZSk7Cj4gPj4+ICAJa2ZyZWUoZGV2ZnJl
-cSk7Cj4gPj4+ICBlcnJfb3V0Ogo+ID4+PiAgCXJldHVybiBFUlJfUFRSKGVycik7Cj4gPj4+IEBA
-IC0xNDA3LDE0ICsxNDE2LDE1IEBAIHN0YXRpYyBzc2l6ZV90IG1pbl9mcmVxX3N0b3JlKHN0cnVj
-dCBkZXZpY2UgKmRldiwgc3RydWN0IGRldmljZV9hdHRyaWJ1dGUgKmF0dHIsCj4gPj4+ICAKPiA+
-Pj4gIAlyZXQgPSBzc2NhbmYoYnVmLCAiJWx1IiwgJnZhbHVlKTsKPiA+Pj4gIAlpZiAocmV0ICE9
-IDEpCj4gPj4+ICAJCXJldHVybiAtRUlOVkFMOwo+ID4+PiAgCj4gPj4+IC0JbXV0ZXhfbG9jaygm
-ZGYtPmxvY2spOwo+ID4+PiAtCWRmLT5taW5fZnJlcSA9IHZhbHVlOwo+ID4+PiAtCXVwZGF0ZV9k
-ZXZmcmVxKGRmKTsKPiA+Pj4gLQltdXRleF91bmxvY2soJmRmLT5sb2NrKTsKPiA+Pj4gKwkvKiBy
-b3VuZCBkb3duIHRvIGtIeiBmb3IgUE0gUW9TICovCj4gPj4KPiA+PiBJIHByZWZlciBtb3JlIGRl
-dGFpbGVkIGRlc2NyaXB0aW9uIGFzIGZvbGxvd2luZzoKPiA+Pgo+ID4+IAkvKgo+ID4+IAkgKiBS
-b3VuZCBkb3duIHRvIEtIeiB0byBkZWNpZGUgdGhlIHByb3BlciBtaW5pbXVtIGZyZXF1ZW5jeQo+
-ID4gCj4gPiBpdCBzaG91bGQgYmUga0h6LCB3aXRoIGEgbG93ZXItY2FzZSAnaycsIGFzIGluIHRo
-ZSBvcmlnaW5hbCBjb21tZW50Lgo+IAo+IEdvb2QuCj4gCj4gPiAKPiA+PiAJICogd2hpY2ggaXMg
-Y2xvc2VkIHRvIHVzZXIgcmVxdWVzdC4KPiA+PiAgCSAqLwo+ID4gCj4gPiBUaGUgY29tbWVudCB5
-b3Ugc3VnZ2VzdCBkb2Vzbid0IHByb3ZpZGUgYW55IGluZm9ybWF0aW9uIGFib3V0IHdoeSB0aGUK
-PiA+IGNvbnZlcnNpb24gdG8ga0h6IGlzIGRvbmUsIGluIHRoaXMgc2Vuc2UgdGhlIG9yaWdpbmFs
-IGNvbW1lbnQgdGhhdAo+ID4gbWVudGlvbnMgUE0gUW9TIHByb3ZpZGVzIG1vcmUgdmFsdWUuCj4g
-PiAKPiA+IFdpdGggd2hhdGV2ZXIgd2UgZW5kIHVwLCBJIHN1Z2dlc3QgdG8gdXNlICdjb252ZXJ0
-JyBpbnN0ZWFkIG9mCj4gPiAncm91bmQgZG93bicuCj4gCj4gSSBhZ3JlZSB0byB1c2UgJ2NvbnZl
-cnQnIGluc3RlYWQgb2YgJ3JvdW5kIGRvd24nCj4gaWYgc29tZSBleHByZXNzaW9uIGluZGljYXRl
-cyB0aGUgY29ycmVjdCBtZWFuaW5nLgo+IAo+ID4gCj4gPj4+ICsJcmV0ID0gZGV2X3BtX3Fvc191
-cGRhdGVfcmVxdWVzdCgmZGYtPnVzZXJfbWluX2ZyZXFfcmVxLAo+ID4+PiArCQkJCQl2YWx1ZSAv
-IEhaX1BFUl9LSFopOwo+ID4+PiArCWlmIChyZXQgPCAwKQo+ID4+PiArCQlyZXR1cm4gcmV0Owo+
-ID4+PiAgCj4gPj4+ICAJcmV0dXJuIGNvdW50Owo+ID4+PiAgfQo+ID4+PiAgCj4gPj4+ICBzdGF0
-aWMgc3NpemVfdCBtaW5fZnJlcV9zaG93KHN0cnVjdCBkZXZpY2UgKmRldiwgc3RydWN0IGRldmlj
-ZV9hdHRyaWJ1dGUgKmF0dHIsCj4gPj4+IEBAIC0xNDM5LDE5ICsxNDQ5LDE5IEBAIHN0YXRpYyBz
-c2l6ZV90IG1heF9mcmVxX3N0b3JlKHN0cnVjdCBkZXZpY2UgKmRldiwgc3RydWN0IGRldmljZV9h
-dHRyaWJ1dGUgKmF0dHIsCj4gPj4+ICAKPiA+Pj4gIAlyZXQgPSBzc2NhbmYoYnVmLCAiJWx1Iiwg
-JnZhbHVlKTsKPiA+Pj4gIAlpZiAocmV0ICE9IDEpCj4gPj4+ICAJCXJldHVybiAtRUlOVkFMOwo+
-ID4+PiAgCj4gPj4+IC0JbXV0ZXhfbG9jaygmZGYtPmxvY2spOwo+ID4+PiAtCj4gPj4+IC0JLyog
-SW50ZXJwcmV0IHplcm8gYXMgImRvbid0IGNhcmUiICovCj4gPj4+IC0JaWYgKCF2YWx1ZSkKPiA+
-Pj4gLQkJdmFsdWUgPSBVTE9OR19NQVg7Cj4gPj4+ICsJLyogcm91bmQgdXAgdG8ga0h6IGZvciBQ
-TSBRb1MgYW5kIGludGVycHJldCB6ZXJvIGFzICJkb24ndCBjYXJlIiAqLwo+ID4+Cj4gPj4gSSB0
-aGluayB0aGF0ICJkb24ndCBjYXJlIiBjb21tZW50IHN0eWxlIGlzIG5vdCBnb29kLgo+ID4+Cj4g
-Pj4gSSByZWZlcnJlZCB0byB0aGUgRG9jdW1lbnRhdGlvbi9BQkkvdGVzdGluZy9zeXNmcy1jbGFz
-cy1kZXZmcmVxIGZpbGUuCj4gPj4gSSBwcmVmZXIgbW9yZSBkZXRhaWxlZCBkZXNjcmlwdGlvbiBh
-cyBmb2xsb3dpbmc6Cj4gPj4gCS8qCj4gPj4gCSAqIFJvdW5kIHVwIHRvIEtIeiB0byBkZWNpZGUg
-dGhlIHByb3BlciBtYXhpbXVtIGZyZXF1ZW5jeQo+ID4gCj4gPiBrSHoKPiA+IAo+ID4+IAkgKiB3
-aGljaCBpcyBjbG9zZWQgdG8gdXNlciByZXF1ZXN0LiBJZiB2YWx1ZSBpcyB6ZXJvLAo+ID4+IAkg
-KiB0aGUgdXNlciBkb2VzIG5vdCBjYXJlLgo+ID4gCj4gPiAidGhlIHVzZXIgZG9lcyBub3QgY2Fy
-ZSIgaXMgc3RpbGwgdmVyeSBjYXN1YWwgeW91IGRpZG4ndCBsaWtlIGluaXRpYWxseS4KPiA+IEhv
-dyBhYm91dCAiQSB2YWx1ZSBvZiB6ZXJvIGlzIGludGVycHJldGVkIGFzICdubyBsaW1pdCcuIj8K
-PiA+IAo+ID4gQXMgZm9yIHRoZSBtaW4gZnJlcSwgSSB0aGluayBQTSBRb1Mgc2hvdWxkIGJlIG1l
-bnRpb25lZCB0byBtYWtlIGNsZWFyIHdoeQo+ID4gdGhlIGNvbnZlcnNpb24gdG8ga0h6IGlzIG5l
-ZWRlZC4KPiAKPiBBZ3JlZS4gSSBleHBlY3QgdGhhdCBMZW9uYXJkIHdpbGwgbWVudGlvbiB0aGF0
-Lgo+IAo+ID4gCj4gPj4gIAkgKi8KPiA+Pgo+ID4+Cj4gPj4+ICsJaWYgKHZhbHVlKQo+ID4+PiAr
-CQl2YWx1ZSA9IERJVl9ST1VORF9VUCh2YWx1ZSwgSFpfUEVSX0tIWik7Cj4gPj4+ICsJZWxzZQo+
-ID4+PiArCQl2YWx1ZSA9IFMzMl9NQVg7Cj4gPj4+ICAKPiA+Pj4gLQlkZi0+bWF4X2ZyZXEgPSB2
-YWx1ZTsKPiA+Pj4gLQl1cGRhdGVfZGV2ZnJlcShkZik7Cj4gPj4+IC0JbXV0ZXhfdW5sb2NrKCZk
-Zi0+bG9jayk7Cj4gPj4+ICsJcmV0ID0gZGV2X3BtX3Fvc191cGRhdGVfcmVxdWVzdCgmZGYtPnVz
-ZXJfbWF4X2ZyZXFfcmVxLCB2YWx1ZSk7Cj4gPj4+ICsJaWYgKHJldCA8IDApCj4gPj4+ICsJCXJl
-dHVybiByZXQ7Cj4gPj4+ICAKPiA+Pj4gIAlyZXR1cm4gY291bnQ7Cj4gPj4+ICB9Cj4gPj4+ICBz
-dGF0aWMgREVWSUNFX0FUVFJfUlcobWluX2ZyZXEpOwo+ID4+PiAgCj4gPj4+IGRpZmYgLS1naXQg
-YS9pbmNsdWRlL2xpbnV4L2RldmZyZXEuaCBiL2luY2x1ZGUvbGludXgvZGV2ZnJlcS5oCj4gPj4+
-IGluZGV4IGRhYzBkZmZlYWJiNC4uNzg0OWZlNGM2NjZkIDEwMDY0NAo+ID4+PiAtLS0gYS9pbmNs
-dWRlL2xpbnV4L2RldmZyZXEuaAo+ID4+PiArKysgYi9pbmNsdWRlL2xpbnV4L2RldmZyZXEuaAo+
-ID4+PiBAQCAtMTEsMTAgKzExLDExIEBACj4gPj4+ICAjZGVmaW5lIF9fTElOVVhfREVWRlJFUV9I
-X18KPiA+Pj4gIAo+ID4+PiAgI2luY2x1ZGUgPGxpbnV4L2RldmljZS5oPgo+ID4+PiAgI2luY2x1
-ZGUgPGxpbnV4L25vdGlmaWVyLmg+Cj4gPj4+ICAjaW5jbHVkZSA8bGludXgvcG1fb3BwLmg+Cj4g
-Pj4+ICsjaW5jbHVkZSA8bGludXgvcG1fcW9zLmg+Cj4gPj4+ICAKPiA+Pj4gICNkZWZpbmUgREVW
-RlJFUV9OQU1FX0xFTiAxNgo+ID4+PiAgCj4gPj4+ICAvKiBERVZGUkVRIGdvdmVybm9yIG5hbWUg
-Ki8KPiA+Pj4gICNkZWZpbmUgREVWRlJFUV9HT1ZfU0lNUExFX09OREVNQU5ECSJzaW1wbGVfb25k
-ZW1hbmQiCj4gPj4+IEBAIC0xMjEsMTIgKzEyMiwxMiBAQCBzdHJ1Y3QgZGV2ZnJlcV9kZXZfcHJv
-ZmlsZSB7Cj4gPj4+ICAgKgkJZGV2ZnJlcS5uYiB0byB0aGUgY29ycmVzcG9uZGluZyByZWdpc3Rl
-ciBub3RpZmllciBjYWxsIGNoYWluLgo+ID4+PiAgICogQHdvcms6CWRlbGF5ZWQgd29yayBmb3Ig
-bG9hZCBtb25pdG9yaW5nLgo+ID4+PiAgICogQHByZXZpb3VzX2ZyZXE6CXByZXZpb3VzbHkgY29u
-ZmlndXJlZCBmcmVxdWVuY3kgdmFsdWUuCj4gPj4+ICAgKiBAZGF0YToJUHJpdmF0ZSBkYXRhIG9m
-IHRoZSBnb3Zlcm5vci4gVGhlIGRldmZyZXEgZnJhbWV3b3JrIGRvZXMgbm90Cj4gPj4+ICAgKgkJ
-dG91Y2ggdGhpcy4KPiA+Pj4gLSAqIEBtaW5fZnJlcToJTGltaXQgbWluaW11bSBmcmVxdWVuY3kg
-cmVxdWVzdGVkIGJ5IHVzZXIgKDA6IG5vbmUpCj4gPj4+IC0gKiBAbWF4X2ZyZXE6CUxpbWl0IG1h
-eGltdW0gZnJlcXVlbmN5IHJlcXVlc3RlZCBieSB1c2VyICgwOiBub25lKQo+ID4+PiArICogQHVz
-ZXJfbWluX2ZyZXFfcmVxOglQTSBRb1MgbWluIGZyZXF1ZW5jeSByZXF1ZXN0IGZyb20gdXNlciAo
-dmlhIHN5c2ZzKQo+ID4+Cj4gPj4gbWluIC0+IG1pbmltdW0gYW5kIHRoZW4gcmVtb3ZlIHBhcmVu
-dGhlc2lzIGFzIGZvbGxvd2luZzoKPiA+PiAJUE0gUW9TIG1pbmltdW0gZnJlcXVlbmN5IHJlcXVl
-c3QgYnkgdXNlciB2aWEgc3lzZnMKPiA+Pgo+ID4+PiArICogQHVzZXJfbWF4X2ZyZXFfcmVxOglQ
-TSBRb1MgbWF4IGZyZXF1ZW5jeSByZXF1ZXN0IGZyb20gdXNlciAodmlhIHN5c2ZzKQo+ID4+Cj4g
-Pj4gZGl0dG8uIG1heCAtPiBtYXhpbXVtCj4gPj4gCVBNIFFvUyBtYXhpbXVtIGZyZXF1ZW5jeSBy
-ZXF1ZXN0IGJ5IHVzZXIgdmlhIHN5c2ZzCj4gPj4KPiA+Pj4gICAqIEBzY2FsaW5nX21pbl9mcmVx
-OglMaW1pdCBtaW5pbXVtIGZyZXF1ZW5jeSByZXF1ZXN0ZWQgYnkgT1BQIGludGVyZmFjZQo+ID4+
-PiAgICogQHNjYWxpbmdfbWF4X2ZyZXE6CUxpbWl0IG1heGltdW0gZnJlcXVlbmN5IHJlcXVlc3Rl
-ZCBieSBPUFAgaW50ZXJmYWNlCj4gPj4+ICAgKiBAc3RvcF9wb2xsaW5nOgkgZGV2ZnJlcSBwb2xs
-aW5nIHN0YXR1cyBvZiBhIGRldmljZS4KPiA+Pj4gICAqIEBzdXNwZW5kX2ZyZXE6CSBmcmVxdWVu
-Y3kgb2YgYSBkZXZpY2Ugc2V0IGR1cmluZyBzdXNwZW5kIHBoYXNlLgo+ID4+PiAgICogQHJlc3Vt
-ZV9mcmVxOgkgZnJlcXVlbmN5IG9mIGEgZGV2aWNlIHNldCBpbiByZXN1bWUgcGhhc2UuCj4gPj4+
-IEBAIC0xNjEsMTIgKzE2MiwxMiBAQCBzdHJ1Y3QgZGV2ZnJlcSB7Cj4gPj4+ICAJdW5zaWduZWQg
-bG9uZyBwcmV2aW91c19mcmVxOwo+ID4+PiAgCXN0cnVjdCBkZXZmcmVxX2Rldl9zdGF0dXMgbGFz
-dF9zdGF0dXM7Cj4gPj4+ICAKPiA+Pj4gIAl2b2lkICpkYXRhOyAvKiBwcml2YXRlIGRhdGEgZm9y
-IGdvdmVybm9ycyAqLwo+ID4+PiAgCj4gPj4+IC0JdW5zaWduZWQgbG9uZyBtaW5fZnJlcTsKPiA+
-Pj4gLQl1bnNpZ25lZCBsb25nIG1heF9mcmVxOwo+ID4+PiArCXN0cnVjdCBkZXZfcG1fcW9zX3Jl
-cXVlc3QgdXNlcl9taW5fZnJlcV9yZXE7Cj4gPj4+ICsJc3RydWN0IGRldl9wbV9xb3NfcmVxdWVz
-dCB1c2VyX21heF9mcmVxX3JlcTsKPiA+Pj4gIAl1bnNpZ25lZCBsb25nIHNjYWxpbmdfbWluX2Zy
-ZXE7Cj4gPj4+ICAJdW5zaWduZWQgbG9uZyBzY2FsaW5nX21heF9mcmVxOwo+ID4+PiAgCWJvb2wg
-c3RvcF9wb2xsaW5nOwo+ID4+PiAgCj4gPj4+ICAJdW5zaWduZWQgbG9uZyBzdXNwZW5kX2ZyZXE7
-Cj4gPj4+Cj4gPj4KPiA+Pgo+ID4+IC0tIAo+ID4+IEJlc3QgUmVnYXJkcywKPiA+PiBDaGFud29v
-IENob2kKPiA+PiBTYW1zdW5nIEVsZWN0cm9uaWNzCj4gPiAKPiA+IAo+IAo+IAo+IC0tIAo+IEJl
-c3QgUmVnYXJkcywKPiBDaGFud29vIENob2kKPiBTYW1zdW5nIEVsZWN0cm9uaWNzCgpfX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
-IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Jianxin Pan <jianxin.pan@amlogic.com> writes:
+
+> Hi Kevin,
+>
+> Thanks for your review. Please see my comments below.
+>
+>
+> On 2019/9/26 6:41, Kevin Hilman wrote:
+>> Hi Jianxin,
+>> 
+>> Jianxin Pan <jianxin.pan@amlogic.com> writes:
+>> 
+>>> Add support for the Amlogic Secure Power controller. In A1/C1 series, power
+>>> control registers are in secure domain, and should be accessed by smc.
+>>>
+>>> Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
+>>> Signed-off-by: Zhiqiang Liang <zhiqiang.liang@amlogic.com>
+>> 
+>> Thanks for the new power domain driver.
+>> 
+>>> ---
+>>>  drivers/soc/amlogic/Kconfig             |  13 +++
+>>>  drivers/soc/amlogic/Makefile            |   1 +
+>>>  drivers/soc/amlogic/meson-secure-pwrc.c | 182 ++++++++++++++++++++++++++++++++
+>>>  3 files changed, 196 insertions(+)
+>>>  create mode 100644 drivers/soc/amlogic/meson-secure-pwrc.c
+>>>
+>>> diff --git a/drivers/soc/amlogic/Kconfig b/drivers/soc/amlogic/Kconfig
+>>> index bc2c912..6cb06e7 100644
+>>> --- a/drivers/soc/amlogic/Kconfig
+>>> +++ b/drivers/soc/amlogic/Kconfig
+>>> @@ -48,6 +48,19 @@ config MESON_EE_PM_DOMAINS
+>>>  	  Say yes to expose Amlogic Meson Everything-Else Power Domains as
+>>>  	  Generic Power Domains.
+>>>  
+>>> +config MESON_SECURE_PM_DOMAINS
+>>> +	bool "Amlogic Meson Secure Power Domains driver"
+>>> +	depends on ARCH_MESON || COMPILE_TEST
+>>> +	depends on PM && OF
+>>> +	depends on HAVE_ARM_SMCCC
+>>> +	default ARCH_MESON
+>>> +	select PM_GENERIC_DOMAINS
+>>> +	select PM_GENERIC_DOMAINS_OF
+>>> +	help
+>>> +	  Support for the power controller on Amlogic A1/C1 series.
+>>> +	  Say yes to expose Amlogic Meson Secure Power Domains as Generic
+>>> +	  Power Domains.
+>>> +
+>>>  config MESON_MX_SOCINFO
+>>>  	bool "Amlogic Meson MX SoC Information driver"
+>>>  	depends on ARCH_MESON || COMPILE_TEST
+>>> diff --git a/drivers/soc/amlogic/Makefile b/drivers/soc/amlogic/Makefile
+>>> index de79d044..7b8c5d3 100644
+>>> --- a/drivers/soc/amlogic/Makefile
+>>> +++ b/drivers/soc/amlogic/Makefile
+>>> @@ -5,3 +5,4 @@ obj-$(CONFIG_MESON_GX_SOCINFO) += meson-gx-socinfo.o
+>>>  obj-$(CONFIG_MESON_GX_PM_DOMAINS) += meson-gx-pwrc-vpu.o
+>>>  obj-$(CONFIG_MESON_MX_SOCINFO) += meson-mx-socinfo.o
+>>>  obj-$(CONFIG_MESON_EE_PM_DOMAINS) += meson-ee-pwrc.o
+>>> +obj-$(CONFIG_MESON_SECURE_PM_DOMAINS) += meson-secure-pwrc.o
+>>> diff --git a/drivers/soc/amlogic/meson-secure-pwrc.c b/drivers/soc/amlogic/meson-secure-pwrc.c
+>>> new file mode 100644
+>>> index 00000000..00c7232
+>>> --- /dev/null
+>>> +++ b/drivers/soc/amlogic/meson-secure-pwrc.c
+>>> @@ -0,0 +1,182 @@
+>>> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> [...]
+>>> +
+>>> +static bool pwrc_secure_get_power(struct meson_secure_pwrc_domain *pwrc_domain)
+>>> +{
+>>> +	struct arm_smccc_res res;
+>>> +
+>>> +	arm_smccc_smc(SMC_PWRC_GET, pwrc_domain->index, 0,
+>>> +		      0, 0, 0, 0, 0, &res);
+>>> +
+>>> +	return res.a0 & 0x1;
+>> 
+>> Please use a #define with a readable name for this mask.
+>> The return type of this smc is bool. I will remove 0x1 mask in next version. 
+>
+> Another question about smc:
+> In this driver, no share memory is needed, and I use arm_smccc_smc() directly.
+> Should I add secure-monitor = <&sm> in dtb and use meson_sm_call() from sm driver instead? 
+
+Yes, that would be preferred.
+
+>>> +}
+>> 
+>> What does the return value for this function mean?  Does true mean
+>> "powered off" or "powered on">
+> The return vaule for SMC_PWRC_GET :
+> 0 -> power on
+> 1 -> power off> See the rename I just did on the ee-pwrc driver:
+>> https://lore.kernel.org/linux-amlogic/20190925213528.21515-2-khilman@kernel.org/
+>> I will follow and rename to _is_off() in the next verson.
+>>> +static int meson_secure_pwrc_off(struct generic_pm_domain *domain)
+>>> +{
+>>> +	struct arm_smccc_res res;
+>>> +	struct meson_secure_pwrc_domain *pwrc_domain =
+> [...]
+>>> +
+>>> +#define SEC_PD(__name, __flag)			\
+>>> +{						\
+>>> +	.name = #__name,			\
+>>> +	.index = PWRC_##__name##_ID,		\
+>>> +	.get_power = pwrc_secure_get_power,	\
+>>> +	.flags = __flag,			\
+>>> +}
+>>> +
+>>> +static struct meson_secure_pwrc_domain_desc a1_pwrc_domains[] = {
+>>> +	SEC_PD(DSPA,	0),
+>>> +	SEC_PD(DSPB,	0),
+>>> +	SEC_PD(UART,	GENPD_FLAG_ALWAYS_ON),
+>> 
+>> This flag should only be used for domains where there are no linux
+>> drivers.
+>> 
+>> Rather than using this flag, you need to add a 'power-domain' property
+>> to the uart driver in DT, and then update the meson_uart driver to use
+>> the runtime PM API so that the domain is enabled whenever the UART is in
+>> use.
+>
+> PM_UART Power domain is shared by uart, msr, jtag and cec.
+> Uart should keep working in BL31, after kernel suspend and before kernel resume.
+
+OK.
+
+>> 
+>>> +	SEC_PD(DMC,	GENPD_FLAG_ALWAYS_ON),
+>> 
+>> Please explain the need for ALWAYS_ON.
+>> 
+> PM_DMC is used for DDR PHY ana/dig and DMC. 
+> There is no linux drver for them, and it should be always on. 
+>
+> I will add comments for all these always on domains.
+
+OK, thank you.
+
+
+Kevin
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
