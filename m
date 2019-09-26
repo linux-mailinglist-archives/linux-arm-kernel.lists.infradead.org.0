@@ -2,56 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64F5EBF4B6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 16:09:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7013CBF4B9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 16:10:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SHximHGgdzAH5R3sJDEXGPwsxn6DC2B/vAJcwUX3gSg=; b=CxlvrqQqhPBlce
-	BhJ9UFfprQ5RdVnz/uGx5QUGkKZUvnfzcGLMHT428eFzQJsvebEhSv+wl8qFIsHdJsK7hsVXL2i3N
-	nf7JCmN8+iD4HxC356QGYCIuuXTacsff4ZpZmWvcR0VRxXylw35jIBcqCyJ9sfjdNUCwpmljYhYkF
-	qMnLOOm4M4YUIIrVuZsdh8C66qB/cDJwRkPzE68nhIk0zxaDbZU2/tNW8TAf/KY9iCUFlFxu8xkma
-	NX5dW7GsdtaQShdwp52uQmmVgyHjWXKF6PHWo5/LpecJPHLYK4xT7s+o1rBKQbMa58Q6ISSqGQhHX
-	X+ZLMgF0UotpysonMW3A==;
+	List-Owner; bh=GUX1+5/rfFaiLCiVly509ZqtMfXnWUkAXUP54D+++mQ=; b=fqQFPgIRpd64NL
+	+Zjo2mgITluBO5WnoYK3waB7FNuZCJdGRCgmnXxlysdPQrMnA7M8f+8KOu9XPEybMlvPKMhkEt5Xy
+	A0pOc/e9Q0XSK5JqEj38NnDxeLiL2egmTdo6gNukRh/CZYrv6Eok7UcsdEIkMlW8G0W1EXVuoxa6Z
+	x7tJuF2g+/TkRqNDs4SjgdarOA/Dl33fr5ZqQfrkn3TvBTYwpkNpQet6XfbI4GWuHOk7O6Wajhx0d
+	msQWQY+gQoI+1kM6cseLZ+zSU3Hqc3NRu29UNU5DgYHXip+w8FULXCM8ehWTCNtNNqMwIC7pf6HJi
+	/yRVa+/1iOBa2ZkEreUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDUSY-0002g7-02; Thu, 26 Sep 2019 14:09:30 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDUSK-0002f9-SE
+	id 1iDUSu-0002rz-OR; Thu, 26 Sep 2019 14:09:52 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iDUSK-0002f7-UV
  for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 14:09:18 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5ED031570;
- Thu, 26 Sep 2019 07:09:14 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- BF2293F534; Thu, 26 Sep 2019 07:09:12 -0700 (PDT)
-Subject: Re: [PATCH 2/2] KVM: arm/arm64: Allow user injection of external data
- aborts
-To: Christoffer Dall <christoffer.dall@arm.com>, kvmarm@lists.cs.columbia.edu
-References: <20190909121337.27287-1-christoffer.dall@arm.com>
- <20190909121337.27287-3-christoffer.dall@arm.com>
-From: Marc Zyngier <maz@kernel.org>
-Organization: Approximate
-Message-ID: <35eae9fa-b9f7-e5ca-b95f-d1d14216d6ee@kernel.org>
-Date: Thu, 26 Sep 2019 15:09:11 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id CE80420554;
+ Thu, 26 Sep 2019 16:09:13 +0200 (CEST)
+Received: from [192.168.108.37] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 2F6002040A;
+ Thu, 26 Sep 2019 16:09:13 +0200 (CEST)
+Subject: Re: [PATCH 00/11] PCI dma-ranges parsing consolidation
+To: Andrew Murray <andrew.murray@arm.com>, Rob Herring <robh@kernel.org>
+References: <20190924214630.12817-1-robh@kernel.org>
+ <20190926084859.GB9720@e119886-lin.cambridge.arm.com>
+ <036f298c-c65c-7da2-92dc-fc80892672c1@free.fr>
+ <CAL_JsqLtYYXCgGN6_t8SuPqPmQwhhRJXaf8+kxnKxLHbRQRaDQ@mail.gmail.com>
+ <20190926133849.GF9720@e119886-lin.cambridge.arm.com>
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Message-ID: <407c0073-3694-6cce-0619-1f0ae3a55ed6@free.fr>
+Date: Thu, 26 Sep 2019 16:09:13 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190909121337.27287-3-christoffer.dall@arm.com>
+In-Reply-To: <20190926133849.GF9720@e119886-lin.cambridge.arm.com>
 Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Thu Sep 26 16:09:13 2019 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_070917_004705_9E3A550E 
-X-CRM114-Status: GOOD (  32.08  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190926_070917_127997_08DB2A51 
+X-CRM114-Status: GOOD (  13.74  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.27.33.1 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -64,218 +71,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Maydell <peter.maydell@linaro.org>,
- =?UTF-8?Q?Daniel_P=2e_Berrang=c3=a9?= <berrange@redhat.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Heinrich Schuchardt <xypron.glpk@gmx.de>, Alexander Graf <graf@amazon.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Stefan Hajnoczi <stefanha@redhat.com>, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mans Rullgard <mans@mansr.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Marc Zyngier <maz@kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Bjorn Helgaas <helgaas@kernel.org>, PCI <linux-pci@vger.kernel.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 09/09/2019 13:13, Christoffer Dall wrote:
-> In some scenarios, such as buggy guest or incorrect configuration of the
-> VMM and firmware description data, userspace will detect a memory access
-> to a portion of the IPA, which is not mapped to any MMIO region.
+On 26/09/2019 15:38, Andrew Murray wrote:
+
+> On Thu, Sep 26, 2019 at 08:11:16AM -0500, Rob Herring wrote:
+>
+>> On Thu, Sep 26, 2019 at 6:20 AM Marc Gonzalez wrote:
+>>>
+>>> On 26/09/2019 10:49, Andrew Murray wrote:
+>>>
+>>>> On Tue, Sep 24, 2019 at 04:46:19PM -0500, Rob Herring wrote:
+>>>>
+>>>>> pci-rcar-gen2 is the only remaining driver doing its own dma-ranges
+>>>>> handling as it is still using the old ARM PCI functions. Looks like it
+>>>>> is the last one (in drivers/pci/).
+>>>>
+>>>> It also seems that pcie-tango is using of_pci_dma_range_parser_init
+>>>> and so parsing dma-ranges. Though it's using the dma_ranges for a
+>>>> slightly different purpose.
+>>
+>> Seems I missed that as I only grep'ed for for_each_of_pci_range...
+>>
+>>> The rationale for that code can be found here:
+>>>
+>>>         https://patchwork.kernel.org/patch/9915469/
+>>>
+>>> NB: 1) The PCIE_TANGO_SMP8759 Kconfig symbol is marked "depends on BROKEN",
+>>> and 2) The driver adds TAINT_CRAP,
+>>> and 3) The maker of the tango platform is dead.
 > 
-> For this purpose, the appropriate action is to inject an external abort
-> to the guest.  The kernel already has functionality to inject an
-> external abort, but we need to wire up a signal from user space that
-> lets user space tell the kernel to do this.
+> Thanks for the context Marc, much appreciated.
 > 
-> It turns out, we already have the set event functionality which we can
-> perfectly reuse for this.
-> 
-> Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
-> ---
->  Documentation/virt/kvm/api.txt    | 15 ++++++++++++++-
->  arch/arm/include/uapi/asm/kvm.h   |  3 ++-
->  arch/arm/kvm/guest.c              |  3 +++
->  arch/arm64/include/uapi/asm/kvm.h |  3 ++-
->  arch/arm64/kvm/guest.c            |  3 +++
->  arch/arm64/kvm/inject_fault.c     |  4 ++--
->  include/uapi/linux/kvm.h          |  1 +
->  virt/kvm/arm/arm.c                |  1 +
->  8 files changed, 28 insertions(+), 5 deletions(-)
-> 
-> diff --git a/Documentation/virt/kvm/api.txt b/Documentation/virt/kvm/api.txt
-> index 02501333f746..edd6cdc470ca 100644
-> --- a/Documentation/virt/kvm/api.txt
-> +++ b/Documentation/virt/kvm/api.txt
-> @@ -955,6 +955,8 @@ The following bits are defined in the flags field:
->  
->  ARM/ARM64:
->  
-> +User space may need to inject several types of events to the guest.
-> +
->  If the guest accesses a device that is being emulated by the host kernel in
->  such a way that a real device would generate a physical SError, KVM may make
->  a virtual SError pending for that VCPU. This system error interrupt remains
-> @@ -989,12 +991,23 @@ Specifying exception.has_esr on a system that does not support it will return
->  -EINVAL. Setting anything other than the lower 24bits of exception.serror_esr
->  will return -EINVAL.
->  
-> +If the guest performed an access to I/O memory which could not be handled by
-> +user space, for example because of missing instruction syndrome decode
-> +information or because there is no device mapped at the accessed IPA, then
-> +user space can ask the kernel to inject an external abort using the address
-> +from the exiting fault on the VCPU. It is a programming error to set
-> +ext_dabt_pending at the same time as any of the serror fields, or to set
-> +ext_dabt_pending on an exit which was not either KVM_EXIT_MMIO or
+> Is there a path to make this driver not BROKEN? Or is this likely to bit rot?
 
-... on *re-entry from* an exit?
+It is not the device driver that is BROKEN, it is the device being driven ;-)
 
-> +KVM_EXIT_ARM_NISV. This feature is only available if the system supports
-> +KVM_CAP_ARM_INJECT_EXT_DABT;
+I don't know how many smp8759 boards exist in the wild. Mans might have one.
+I didn't keep mine.
 
-s/;/./
-
-Can we add some wording to the fact that this is only a helper for the
-most common case? Most of the ARM exceptions can otherwise be
-constructed/injected using the SET_ONE_REG API.
-
-> +
->  struct kvm_vcpu_events {
->  	struct {
->  		__u8 serror_pending;
->  		__u8 serror_has_esr;
-> +		__u8 ext_dabt_pending;
->  		/* Align it to 8 bytes */
-> -		__u8 pad[6];
-> +		__u8 pad[5];
->  		__u64 serror_esr;
->  	} exception;
->  	__u32 reserved[12];
-> diff --git a/arch/arm/include/uapi/asm/kvm.h b/arch/arm/include/uapi/asm/kvm.h
-> index a4217c1a5d01..d2449a5bf8d5 100644
-> --- a/arch/arm/include/uapi/asm/kvm.h
-> +++ b/arch/arm/include/uapi/asm/kvm.h
-> @@ -131,8 +131,9 @@ struct kvm_vcpu_events {
->  	struct {
->  		__u8 serror_pending;
->  		__u8 serror_has_esr;
-> +		__u8 ext_dabt_pending;
->  		/* Align it to 8 bytes */
-> -		__u8 pad[6];
-> +		__u8 pad[5];
->  		__u64 serror_esr;
->  	} exception;
->  	__u32 reserved[12];
-> diff --git a/arch/arm/kvm/guest.c b/arch/arm/kvm/guest.c
-> index 684cf64b4033..4154c5589501 100644
-> --- a/arch/arm/kvm/guest.c
-> +++ b/arch/arm/kvm/guest.c
-> @@ -263,11 +263,14 @@ int __kvm_arm_vcpu_set_events(struct kvm_vcpu *vcpu,
->  {
->  	bool serror_pending = events->exception.serror_pending;
->  	bool has_esr = events->exception.serror_has_esr;
-> +	bool has_ext_dabt_pending = events->exception.ext_dabt_pending;
->  
->  	if (serror_pending && has_esr)
->  		return -EINVAL;
->  	else if (serror_pending)
->  		kvm_inject_vabt(vcpu);
-> +	else if (has_ext_dabt_pending)
-> +		kvm_inject_dabt(vcpu, kvm_vcpu_get_hfar(vcpu));
->  
->  	return 0;
->  }
-> diff --git a/arch/arm64/include/uapi/asm/kvm.h b/arch/arm64/include/uapi/asm/kvm.h
-> index 9a507716ae2f..7729efdb1c0c 100644
-> --- a/arch/arm64/include/uapi/asm/kvm.h
-> +++ b/arch/arm64/include/uapi/asm/kvm.h
-> @@ -164,8 +164,9 @@ struct kvm_vcpu_events {
->  	struct {
->  		__u8 serror_pending;
->  		__u8 serror_has_esr;
-> +		__u8 ext_dabt_pending;
->  		/* Align it to 8 bytes */
-> -		__u8 pad[6];
-> +		__u8 pad[5];
->  		__u64 serror_esr;
->  	} exception;
->  	__u32 reserved[12];
-> diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
-> index dfd626447482..10e6e2144dca 100644
-> --- a/arch/arm64/kvm/guest.c
-> +++ b/arch/arm64/kvm/guest.c
-> @@ -720,6 +720,7 @@ int __kvm_arm_vcpu_set_events(struct kvm_vcpu *vcpu,
->  {
->  	bool serror_pending = events->exception.serror_pending;
->  	bool has_esr = events->exception.serror_has_esr;
-> +	bool has_ext_dabt_pending = events->exception.ext_dabt_pending;
->  
->  	if (serror_pending && has_esr) {
->  		if (!cpus_have_const_cap(ARM64_HAS_RAS_EXTN))
-> @@ -731,6 +732,8 @@ int __kvm_arm_vcpu_set_events(struct kvm_vcpu *vcpu,
->  			return -EINVAL;
->  	} else if (serror_pending) {
->  		kvm_inject_vabt(vcpu);
-> +	} else if (has_ext_dabt_pending) {
-> +		kvm_inject_dabt(vcpu, kvm_vcpu_get_hfar(vcpu));
->  	}
->  
->  	return 0;
-> diff --git a/arch/arm64/kvm/inject_fault.c b/arch/arm64/kvm/inject_fault.c
-> index a9d25a305af5..ccdb6a051ab2 100644
-> --- a/arch/arm64/kvm/inject_fault.c
-> +++ b/arch/arm64/kvm/inject_fault.c
-> @@ -109,7 +109,7 @@ static void inject_undef64(struct kvm_vcpu *vcpu)
->  
->  /**
->   * kvm_inject_dabt - inject a data abort into the guest
-> - * @vcpu: The VCPU to receive the undefined exception
-> + * @vcpu: The VCPU to receive the data abort
->   * @addr: The address to report in the DFAR
->   *
->   * It is assumed that this code is called from the VCPU thread and that the
-> @@ -125,7 +125,7 @@ void kvm_inject_dabt(struct kvm_vcpu *vcpu, unsigned long addr)
->  
->  /**
->   * kvm_inject_pabt - inject a prefetch abort into the guest
-> - * @vcpu: The VCPU to receive the undefined exception
-> + * @vcpu: The VCPU to receive the prefetch abort
->   * @addr: The address to report in the DFAR
->   *
->   * It is assumed that this code is called from the VCPU thread and that the
-> diff --git a/include/uapi/linux/kvm.h b/include/uapi/linux/kvm.h
-> index dd79235b6435..a80ee820e700 100644
-> --- a/include/uapi/linux/kvm.h
-> +++ b/include/uapi/linux/kvm.h
-> @@ -1003,6 +1003,7 @@ struct kvm_ppc_resize_hpt {
->  #define KVM_CAP_ARM_PTRAUTH_GENERIC 172
->  #define KVM_CAP_PMU_EVENT_FILTER 173
->  #define KVM_CAP_ARM_NISV_TO_USER 174
-> +#define KVM_CAP_ARM_INJECT_EXT_DABT 175
->  
->  #ifdef KVM_CAP_IRQ_ROUTING
->  
-> diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
-> index 7153504bb106..56a97dd9b292 100644
-> --- a/virt/kvm/arm/arm.c
-> +++ b/virt/kvm/arm/arm.c
-> @@ -217,6 +217,7 @@ int kvm_vm_ioctl_check_extension(struct kvm *kvm, long ext)
->  	case KVM_CAP_IMMEDIATE_EXIT:
->  	case KVM_CAP_VCPU_EVENTS:
->  	case KVM_CAP_ARM_NISV_TO_USER:
-> +	case KVM_CAP_ARM_INJECT_EXT_DABT:
->  		r = 1;
->  		break;
->  	case KVM_CAP_ARM_SET_DEVICE_ADDR:
-> 
-
-Otherwise looks good to me. If you respin the series, and unless anyone
-shouts, I'll queue it. No hurry though, I'm going to take slow(er) the
-following two weeks.
-
-Thanks,
-
-	M.
--- 
-Jazz is not dead, it just smells funny...
+Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
