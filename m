@@ -2,82 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D73F0BFA42
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 21:44:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86C75BFA6F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 22:09:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zgZiREcytFndGT5zJIngXc89XbKu6g14LQuaRKEl5Vw=; b=Q+y3NB3KexbDf/
-	LR1H9RaObYMPdaj6fl6RhHGnhK98PRFXY1t7peXMYTlJTd5yqyY3Oc54/D9oNDvn3oCJel+iTUMQN
-	DWmkVc9RYOOjxGBZaHw7BGz25stQVzbNMvL+M1zV6L70r35zGyhimghU7QcYbvoHGJG6dedlE3bHi
-	u1mdG0WabP8LZ/R5Sit+GRmYaaer40nJSL7qNkfNMAPX+9fKxuLmIOs+SE5uIzjyoK0ssf4oAgVUN
-	i5ad/2/F2HAeZgDZz6Pci6wmgeUL9hu3hn8Eyr1SY+12V8sX7ygBeC0AlTcnhopRtHjJc428gA8L9
-	X7cA2hvI227xbxkS+PKg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ETmcSxnbLdZeUnWEOq8JKY33MYZ91Gu5ashNy9Fhtcw=; b=A8lAdHYAsh/KWc
+	ttbUtbLx57dBxGCgIfY2HHgBlpXQx89UWyZxBZWQj60aYWV6lceixttbuLC5cF2lSP0ksbMy/3itd
+	uskR40/beKGlryWmAFmXLUc0XnuH0+/bg+reL4Dpor/Ic+5DTp8AONzp+e8YS0qYCS2RTBwuCF2eI
+	v/BZnR3HgFTsyFPMl8DIWqGNCWUimRuzMFOA0p5ygMY7s0qnKb0lfwPaYwRa8a8ufSROiqzvYce53
+	Vrc4YKxzwqm3ABEGQm4DuAwXtCOzAssJs0zeVXxs3hbYojElj2hvy3hawxAwJKzJrOUBdIVgVy6AG
+	PCi8iaRGQ09r3BpsYwVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDZh1-0007yM-W4; Thu, 26 Sep 2019 19:44:48 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1iDa53-0008F5-2F; Thu, 26 Sep 2019 20:09:37 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDZgd-0007xb-1F
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 19:44:26 +0000
-Received: by mail-io1-xd43.google.com with SMTP id v2so9622041iob.10
+ id 1iDa4a-0008Ee-0U
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 20:09:09 +0000
+Received: by mail-wm1-x343.google.com with SMTP id v17so3852745wml.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Sep 2019 12:44:22 -0700 (PDT)
+ Thu, 26 Sep 2019 13:09:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=7YaOJjbeJ4vHzFNCKN4Rfl7SNbQO++40kW4opqhFvjE=;
- b=ptL+t++PhjIDsGKfuLy0BchccV5YdocaOsRsXZ/4JqKqUKoQzhFSC1NY4npM9rE3Yl
- C7Zl9VNtkmAwuniXVUGj4fMyTDLJ9ep+95WejAowbtGq6FHtnA2xpNZVLKkTBrGnzor0
- 0V+gRFuTh35NxWLvtKPNWwtsROhtajgumBlMHA4ZM5svWHQtB83GqJQoIMPvnDLX0Mog
- 7cFhKRgDTuCirRwxX668mKmMZkEuY9LObevYVy1kBjI8F/Gm4TsEt4zLDYd6uSq7cZCt
- gi9GXWN/AxMMuWydGrQclQzQp/+PcBWPKz+vNmn/hh8LJXIC7WXRfqGKq1Ck+jfEHf1j
- qu3w==
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=YTzDAcw9gbPn+mRJBI6qSPJU/C8hb0B7P6TDypbBA4E=;
+ b=CyEMak8EtCE86FpsbhlopviQJNKrauDIJ5jwwsZaxSFuZV38/imJ6QNKg2a3NZg2TO
+ dzYBCRQq2HsYSi2sFChJZ481fe133jhT5w39Yp+rz9C44bxS9UxXgJX3Sy6IdUBRkpJ6
+ 1ucQ3Ga3ht+dFuMpuMXaDHvhervmdpJTga1F69+HD6t0YP2ZwX8klVS1pf41jIvGBy/l
+ VFy7uHQA6cQJW0RCqhMdvGqqhf1ElrbC+qQJG1byyIAcOwwt5qAgJXQ9kn4TLQrwwh/9
+ E55PeSTiiqPOq3a/po4rZhqH2vjgmnT5c2li1aL/SZ+zqTXsWX0qXybtmzopMv1TxXHK
+ M8NQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=7YaOJjbeJ4vHzFNCKN4Rfl7SNbQO++40kW4opqhFvjE=;
- b=rxjuG3Z049RkhB9KRuFC2Mp25CJtdZzVItehlFZS8TR7zYW8xRfFpiqnzxmP3us1yQ
- EYUC2lVEPZe0chGPksy3AeT3UccbM5NSRn26DBhaeHs3DkqVl3fxgoUSxYepALTQS9BK
- QIK73Fy3Q70JXCsf4sN1J+m48Juz5iKK75UTh83Ze93B4aaCBBCVTcJw++Yd41eygYBF
- eWJAqbOqo9CT7KWrfT+PxP72KHOeFXnPYYMbMwdXjX9UWY4PdZGB2APg0EQ2esw/UxFs
- 8l3RQkGyKhk7tPI7psFYmDMxVFqaTI7YaS8sY9GzDQv7d6TP8kvAmcASu218e7Rs1KZK
- Qdvg==
-X-Gm-Message-State: APjAAAWN4egKqG1PxInL33VQaIpU3e8+Na4f6Aphw1Ag0j4mTYHCgH/y
- 2K6wATHU0K/ewquNsszFo/41i1zfDkxSfXCvxCM=
-X-Google-Smtp-Source: APXvYqws94RCz1OEKmJWcCJfFYz8odw3snwroxEbJRlT5VqNIjb8opn290GiegEG8UnQeVF3x/P4koKd12cnxdqwU+Y=
-X-Received: by 2002:a92:3f0a:: with SMTP id m10mr357121ila.158.1569527062022; 
- Thu, 26 Sep 2019 12:44:22 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=YTzDAcw9gbPn+mRJBI6qSPJU/C8hb0B7P6TDypbBA4E=;
+ b=INXyzGu9onT+iOuHEONn+KoDD30Fo58yd7x953af4KdBZjK4CDFZRpfAt5Y8rbNlXq
+ 7QGoL+q+tHJ08JH1eTz+hdF625PkcF/BaDd+vfgAtCD9SSx0g1u4fM9KiGB29aoujyv7
+ a3PJDJ/MW4nVeR4loNmA5e+JvoqjOamDF6xzNtgb2SYTipduJOz0jtI/LqyF9p0eeNyC
+ P38y3HyPFMv9IkK7VabZhGK96QCA8vsmrvFq/DAHwWFUYbHWGTwT/UpyplkqOlq7B0M7
+ CU4kSdUQ/NKDmTTU/HKlgpIwcpREVIoKLRJbg5ACzWMhfNs43ltRed2VlLoHwNDd1mFK
+ b+MA==
+X-Gm-Message-State: APjAAAXRmft/BVbKHKMzPVJzYP9Qoav5BFGY3wRp7hWS1uxT9g8uvqEV
+ Fi9gtoTFd94C/wzAIWuXjyI=
+X-Google-Smtp-Source: APXvYqxapfwxt9WSMkRC1OxiuZDvCN91dpJLvyhRXECYrNlDR2mH607VSDm8HUYeWzuzng1MvTazIA==
+X-Received: by 2002:a1c:7f54:: with SMTP id a81mr4671490wmd.100.1569528545830; 
+ Thu, 26 Sep 2019 13:09:05 -0700 (PDT)
+Received: from [192.168.42.85] (cst-prg-31-94.cust.vodafone.cz. [46.135.31.94])
+ by smtp.gmail.com with ESMTPSA id a192sm3650781wma.1.2019.09.26.13.09.04
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 26 Sep 2019 13:09:04 -0700 (PDT)
+Subject: Re: [PATCH] arm64: dts: renesas: Add /soc dma-ranges
+To: Rob Herring <robh@kernel.org>
+References: <20190907161634.27378-1-marek.vasut@gmail.com>
+ <CAL_JsqL47dQT-P78j4Ph61fsgA45Ha0AJjDajiMk52yFj++s+g@mail.gmail.com>
+ <CAL_JsqK+SwX8Lu+-4UgpLVxL05yTcs8Af9mPVHqzbf6+HF9v3A@mail.gmail.com>
+From: Marek Vasut <marek.vasut@gmail.com>
+Message-ID: <92e78919-741c-f709-c9b6-c5fb833f68b1@gmail.com>
+Date: Thu, 26 Sep 2019 22:02:20 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20190919145114.13006-1-philipp.puschmann@emlix.com>
- <VI1PR0402MB3600CA068AEBAC63D3CE6A4CFF880@VI1PR0402MB3600.eurprd04.prod.outlook.com>
- <ac67f010-1b2c-6996-f542-ab955ca86489@emlix.com>
- <CAHCN7xL0BKmt8xrhuB4rrvOqkCM5AUJ6YAzbcU8eNDXbzj4fZg@mail.gmail.com>
- <15be848facd5e80222e5db30c61fe72f82a85713.camel@analog.com>
-In-Reply-To: <15be848facd5e80222e5db30c61fe72f82a85713.camel@analog.com>
-From: Adam Ford <aford173@gmail.com>
-Date: Thu, 26 Sep 2019 14:44:10 -0500
-Message-ID: <CAHCN7xK=kxEFiuUEX=q4R3XEyeaAp+HGFCUpYkYUESMhqwMA6A@mail.gmail.com>
-Subject: Re: [EXT] [PATCH v3] serial: imx: adapt rx buffer and dma periods
-To: "Ardelean, Alexandru" <alexandru.Ardelean@analog.com>
+In-Reply-To: <CAL_JsqK+SwX8Lu+-4UgpLVxL05yTcs8Af9mPVHqzbf6+HF9v3A@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_124423_134675_2E2B5077 
-X-CRM114-Status: GOOD (  38.46  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190926_130908_056791_59E97E03 
+X-CRM114-Status: GOOD (  14.67  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
+ provider (marek.vasut[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -98,203 +103,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "fugang.duan@nxp.com" <fugang.duan@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "jslaby@suse.com" <jslaby@suse.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-imx@nxp.com" <linux-imx@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
- "philipp.puschmann@emlix.com" <philipp.puschmann@emlix.com>,
- "yibin.gong@nxp.com" <yibin.gong@nxp.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+Cc: devicetree@vger.kernel.org, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Wolfram Sang <wsa@the-dreams.de>,
+ "open list:MEDIA DRIVERS FOR RENESAS - FCP"
+ <linux-renesas-soc@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 26, 2019 at 1:37 AM Ardelean, Alexandru
-<alexandru.Ardelean@analog.com> wrote:
->
-> On Wed, 2019-09-25 at 10:14 -0500, Adam Ford wrote:
-> > [External]
-> >
-> > On Fri, Sep 20, 2019 at 2:06 AM Philipp Puschmann
-> > <philipp.puschmann@emlix.com> wrote:
-> > > Hi Andy,
-> > >
-> > > Am 20.09.19 um 05:42 schrieb Andy Duan:
-> > > > From: Philipp Puschmann <philipp.puschmann@emlix.com> Sent: Thursday,
-> > > > September 19, 2019 10:51 PM
-> > > > > Using only 4 DMA periods for UART RX is very few if we have a high
-> > > > > frequency
-> > > > > of small transfers - like in our case using Bluetooth with many
-> > > > > small packets
-> > > > > via UART - causing many dma transfers but in each only filling a
-> > > > > fraction of a
-> > > > > single buffer. Such a case may lead to the situation that DMA RX
-> > > > > transfer is
-> > > > > triggered but no free buffer is available. When this happens dma
-> > > > > channel ist
-> > > > > stopped - with the patch
-> > > > > "dmaengine: imx-sdma: fix dma freezes" temporarily only - with the
-> > > > > possible
-> > > > > consequences that:
-> >
-> > I have an i.MX6Q with Wl1837MOD on UART 2 with flow control, and I am
-> > getting Bluetooth transfer timeouts.
-> > (see imx6-logicpd-som.dtsi)
-> >
-> > On top of 5.3.1, I have installed:
-> >
-> > dmaengine: imx-sdma: fix buffer ownership
-> > dmaengine: imx-sdma: fix dma freezes
-> > dmaengine: imx-sdma: drop redundant variable
-> > dmaengine: imx-sdma: fix kernel hangs with SLUB slab allocator
-> > serial: imx: adapt rx buffer and dma periods
-> >
-> > and I still get timeouts:
-> >
-> > [   66.632006] Bluetooth: hci0: command 0xff36 tx timeout
-> > [   76.790499] Bluetooth: hci0: command 0x1001 tx timeout
-> > [   87.110488] Bluetooth: hci0: command 0xff36 tx timeout
-> > [   97.270507] Bluetooth: hci0: command 0x1001 tx timeout
-> > [  107.590457] Bluetooth: hci0: command 0xff36 tx timeout
-> > [  117.750477] Bluetooth: hci0: command 0x1001 tx timeout
-> > [  226.390499] Bluetooth: hci0: command 0xfe38 tx timeout
-> > [  231.590735] Bluetooth: hci0: command tx timeout
-> >
-> > I did a bisect and found the start of my problems came from
-> >
-> > 361deb7243d2 ("dmaengine: dmatest: wrap src & dst data into a struct")
->
-> That commit only touches `drivers/dma/dmatest.c`
-> Are you using that module?
->
-> It's a "unit-test" module for testing DMAengine drivers.
-> The only way that can break anything [from what I can tell], is if it is
-> being run. It will probably put the DMA into a weird state (it is a test-
-> module after-all), and it may require some DMAs to be reset.
-> I admit it would be nice that the test-module would put the DMA back into a
-> normal-working state, but that effort could be big for some cases.
+On 9/24/19 12:33 AM, Rob Herring wrote:
+> On Fri, Sep 13, 2019 at 10:14 AM Rob Herring <robh@kernel.org> wrote:
+>>
+>> On Sat, Sep 7, 2019 at 5:16 PM <marek.vasut@gmail.com> wrote:
+>>>
+>>> From: Marek Vasut <marek.vasut+renesas@gmail.com>
+>>>
+>>> Add dma-ranges property into /soc node to describe the DMA capabilities
+>>> of the bus. This is currently needed to translate PCI DMA ranges, which
+>>> are limited to 32bit addresses.
+>>
+>> FYI, I've started working on this problem and issues around
+>> dma-ranges/dma_mask. Hopefully I'll get some patches out next week.
+> 
+> I've pushed out a branch here:
+> 
+> git://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git dma-masks
+> 
+> Can you test it on Renesas. I don't have a real platform having the issue.
 
-I will bisect it again.  I removed the CONFIG_DMATEST from the
-omx_v6_v7_defconfig, and I still got the failure using Kernel 5.3.1,
-so I'll work on this tomorrow and try to narrow it down better with
-and without the test module installed.
+Due to ER/KR, I can only test it Monday-ish. I hope that's OK ?
 
-adam
->
->
-> >
-> > This happened sometime between v5.0 and v5.1
-> >
-> > Is there a patch I missed somewhere?  Do I need to change my device
-> > tree configuration somehow to allocate the proper DMA memory?
-> >
-> >
-> >
-> > > > > with disabled hw flow control:
-> > > > >   If enough data is incoming on UART port the RX FIFO runs over and
-> > > > >   characters will be lost. What then happens depends on upper
-> > > > > layer.
-> > > > >
-> > > > > with enabled hw flow control:
-> > > > >   If enough data is incoming on UART port the RX FIFO reaches a
-> > > > > level
-> > > > >   where CTS is deasserted and remote device sending the data stops.
-> > > > >   If it fails to stop timely the i.MX' RX FIFO may run over and
-> > > > > data
-> > > > >   get lost. Otherwise it's internal TX buffer may getting filled to
-> > > > >   a point where it runs over and data is again lost. It depends on
-> > > > >   the remote device how this case is handled and if it is
-> > > > > recoverable.
-> > > > >
-> > > > > Obviously we want to avoid having no free buffers available. So we
-> > > > > decrease
-> > > > > the size of the buffers and increase their number and the total
-> > > > > buffer size.
-> > > > >
-> > > > > Signed-off-by: Philipp Puschmann <philipp.puschmann@emlix.com>
-> > > > > Reviewed-by: Lucas Stach <l.stach@pengutronix.de>
-> > > > > ---
-> > > > >
-> > > > > Changelog v3:
-> > > > >  - enhance description
-> > > > >
-> > > > > Changelog v2:
-> > > > >  - split this patch from series "Fix UART DMA freezes for iMX6"
-> > > > >  - add Reviewed-by tag
-> > > > >
-> > > > >  drivers/tty/serial/imx.c | 5 ++---
-> > > > >  1 file changed, 2 insertions(+), 3 deletions(-)
-> > > > >
-> > > > > diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx.c
-> > > > > index
-> > > > > 87c58f9f6390..51dc19833eab 100644
-> > > > > --- a/drivers/tty/serial/imx.c
-> > > > > +++ b/drivers/tty/serial/imx.c
-> > > > > @@ -1034,8 +1034,6 @@ static void imx_uart_timeout(struct
-> > > > > timer_list *t)
-> > > > >         }
-> > > > >  }
-> > > > >
-> > > > > -#define RX_BUF_SIZE    (PAGE_SIZE)
-> > > > > -
-> > > > >  /*
-> > > > >   * There are two kinds of RX DMA interrupts(such as in the MX6Q):
-> > > > >   *   [1] the RX DMA buffer is full.
-> > > > > @@ -1118,7 +1116,8 @@ static void imx_uart_dma_rx_callback(void
-> > > > > *data)  }
-> > > > >
-> > > > >  /* RX DMA buffer periods */
-> > > > > -#define RX_DMA_PERIODS 4
-> > > > > +#define RX_DMA_PERIODS 16
-> > > > > +#define RX_BUF_SIZE    (PAGE_SIZE / 4)
-> > > > >
-> > > > Why to decrease the DMA RX buffer size here ?
-> > > >
-> > > > The current DMA implementation support DMA cyclic mode, one SDMA BD
-> > > > receive one Bluetooth frame can
-> > > > bring better performance.
-> > > > As you know, for L2CAP, a maximum transmission unit (MTU) associated
-> > > > with the largest Baseband payload
-> > > > is 341 bytes for DH5 packets.
-> > > >
-> > > > So I suggest to increase RX_BUF_SIZE along with RX_DMA_PERIODS to
-> > > > feasible value.
-> > >
-> > > I debugged and developed this patches on a system with a 4.15 kernel.
-> > > When prepared for upstream i have adapted
-> > > some details and missed a important thing here. It should say:
-> > >
-> > > +#define RX_BUF_SIZE    (RX_DMA_PERIODS * PAGE_SIZE / 4)
-> > >
-> > > Yes, i wanted to increase the total buffer size too, even wrote it in
-> > > the description.
-> > > I will prepare a version 4, thanks for the hint.
-> > >
-> > > Just for info: A single RX DMA period aka buffer can be filled with
-> > > mutliple packets in regard of the upper layer, here BT.
-> > >
-> > >
-> > > Regards,
-> > > Philipp
-> > > > Andy
-> > > >
-> > > > >  static int imx_uart_start_rx_dma(struct imx_port *sport)  {
-> > > > > --
-> > > > > 2.23.0
-> > >
-> > > _______________________________________________
-> > > linux-arm-kernel mailing list
-> > > linux-arm-kernel@lists.infradead.org
-> > > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+-- 
+Best regards,
+Marek Vasut
 
 _______________________________________________
 linux-arm-kernel mailing list
