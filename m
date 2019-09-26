@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFB88BEDA9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 10:44:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3CBFBEDCA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 10:49:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vL0v6tvNMx6ODziXU31ssFIwIs+DHKEVCLAqqnHWEN4=; b=Ox3rXAFLzHxqc1
-	XWVpuub675sSURKxzvuNYsDne/ChP9Meu8qxU+k1HH6De7ykig9SJG5JYHQ0Vc/xM3C1+lppeitvV
-	4zD9jeniGcivEWVqDwoUjduxez17/Km550Jjo6g5vVjMi9daeibr0fTA79QK+yPT9W/Oyyczv3Fuf
-	OkKG6V0o4OaI2x/0WmTVO+qbeRe/I7stg+ETDWd8E/RtO1HLu50bkSy8bLw5CPE1YHFGRh93kNlj7
-	afYHuRsVgoaVbIMFNddOH6x9bb9kxO9BhMQ1MCDSOCdWBBwUpdsF6HZby7ZC1g8KeuTptle1hGrVI
-	Kj3iNkjBqqeY3UZ3fVeA==;
+	List-Owner; bh=ST54gtZHgwwYwgcAJVYMsW7GP5XUkBq8yrGv3NoJMkU=; b=XiypmVwqgvtByT
+	HszDAzvcMoh0FHYaKT5aPPoeBsi4OC/iObpBgMtCsXQkdHeM0fWVPpdDtVmjUGOnFkgSFs59YXARZ
+	nzNuntCNztcdkk9idfYOkRJxaoRNgFuJNI3i43p6CKjalPAcynLgYptdqRDGYxXRlrylOQZqslkSN
+	gSZkxbvvofsARPE8pBmbmhEY0fdnobPuUwwoOo8eGAQPY86j5pr4n/6M8wTMuAxn1nyZR7l5DRrYd
+	kgjTCwKDrsiU8bxOazoBrlFbzTKc4ou3a+njPpCAxmGWixUXVwsPTn1mJXuE1tW+3CEmSbKDKA1AN
+	WldHWGNcqebMxbYL2GGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDPNh-0007kx-Cr; Thu, 26 Sep 2019 08:44:09 +0000
+	id 1iDPSq-0001DD-FK; Thu, 26 Sep 2019 08:49:28 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDPJV-0005eS-RP
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 08:39:52 +0000
+ id 1iDPQp-0001AH-4n
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 08:47:41 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 42ECF1000;
- Thu, 26 Sep 2019 01:39:49 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 54BD91000;
+ Thu, 26 Sep 2019 01:47:21 -0700 (PDT)
 Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B583B3F836;
- Thu, 26 Sep 2019 01:39:48 -0700 (PDT)
-Date: Thu, 26 Sep 2019 09:39:47 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C621C3F67D;
+ Thu, 26 Sep 2019 01:47:20 -0700 (PDT)
+Date: Thu, 26 Sep 2019 09:47:19 +0100
 From: Andrew Murray <andrew.murray@arm.com>
 To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 10/11] PCI: iproc: Use inbound resources for setup
-Message-ID: <20190926083946.GZ9720@e119886-lin.cambridge.arm.com>
+Subject: Re: [PATCH 11/11] PCI: rcar: Use inbound resources for setup
+Message-ID: <20190926084718.GA9720@e119886-lin.cambridge.arm.com>
 References: <20190924214630.12817-1-robh@kernel.org>
- <20190924214630.12817-11-robh@kernel.org>
+ <20190924214630.12817-12-robh@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190924214630.12817-11-robh@kernel.org>
+In-Reply-To: <20190924214630.12817-12-robh@kernel.org>
 User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_013950_213931_305E84A7 
-X-CRM114-Status: GOOD (  18.65  )
+X-CRM114-CacheID: sfid-20190926_014726_985919_ED81D4BD 
+X-CRM114-Status: GOOD (  19.61  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,127 +61,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Scott Branden <sbranden@broadcom.com>, linux-pci@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, Ray Jui <rjui@broadcom.com>,
- Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org
+Cc: Bjorn Helgaas <bhelgaas@google.com>, linux-pci@vger.kernel.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Simon Horman <horms@verge.net.au>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 24, 2019 at 04:46:29PM -0500, Rob Herring wrote:
+On Tue, Sep 24, 2019 at 04:46:30PM -0500, Rob Herring wrote:
 > Now that the helpers provide the inbound resources in the host bridge
-> 'dma_ranges' resource list, convert Broadcom iProc host bridge to use
-> the resource list to setup the inbound addresses.
+> 'dma_ranges' resource list, convert Renesas R-Car PCIe host bridge to
+> use the resource list to setup the inbound addresses.
 > 
+> Cc: Simon Horman <horms@verge.net.au>
 > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 > Cc: Bjorn Helgaas <bhelgaas@google.com>
-> Cc: Ray Jui <rjui@broadcom.com>
-> Cc: Scott Branden <sbranden@broadcom.com>
-> Cc: bcm-kernel-feedback-list@broadcom.com
 > Signed-off-by: Rob Herring <robh@kernel.org>
-
-Reviewed-by: Andrew Murray <andrew.murray@arm.com>
-
 > ---
->  drivers/pci/controller/pcie-iproc.c | 63 ++++-------------------------
->  1 file changed, 8 insertions(+), 55 deletions(-)
+>  drivers/pci/controller/pcie-rcar.c | 45 +++++++++++-------------------
+>  1 file changed, 16 insertions(+), 29 deletions(-)
 > 
-> diff --git a/drivers/pci/controller/pcie-iproc.c b/drivers/pci/controller/pcie-iproc.c
-> index 2d457bfdaf66..9ed181050308 100644
-> --- a/drivers/pci/controller/pcie-iproc.c
-> +++ b/drivers/pci/controller/pcie-iproc.c
-> @@ -1122,15 +1122,15 @@ static int iproc_pcie_ib_write(struct iproc_pcie *pcie, int region_idx,
+> diff --git a/drivers/pci/controller/pcie-rcar.c b/drivers/pci/controller/pcie-rcar.c
+> index b8d6e86a5539..453c931aaf77 100644
+> --- a/drivers/pci/controller/pcie-rcar.c
+> +++ b/drivers/pci/controller/pcie-rcar.c
+> @@ -1014,16 +1014,16 @@ static int rcar_pcie_get_resources(struct rcar_pcie *pcie)
 >  }
 >  
->  static int iproc_pcie_setup_ib(struct iproc_pcie *pcie,
-> -			       struct of_pci_range *range,
-> +			       struct resource_entry *entry,
->  			       enum iproc_pcie_ib_map_type type)
+>  static int rcar_pcie_inbound_ranges(struct rcar_pcie *pcie,
+> -				    struct of_pci_range *range,
+> +				    struct resource_entry *entry,
+>  				    int *index)
 >  {
->  	struct device *dev = pcie->dev;
->  	struct iproc_pcie_ib *ib = &pcie->ib;
->  	int ret;
->  	unsigned int region_idx, size_idx;
-> -	u64 axi_addr = range->cpu_addr, pci_addr = range->pci_addr;
-> -	resource_size_t size = range->size;
-> +	u64 axi_addr = entry->res->start, pci_addr = entry->res->start - entry->offset;
-> +	resource_size_t size = resource_size(entry->res);
+> -	u64 restype = range->flags;
+> -	u64 cpu_addr = range->cpu_addr;
+> -	u64 cpu_end = range->cpu_addr + range->size;
+> -	u64 pci_addr = range->pci_addr;
+> +	u64 restype = entry->res->flags;
+> +	u64 cpu_addr = entry->res->start;
+> +	u64 cpu_end = entry->res->end;
+> +	u64 pci_addr = entry->res->start - entry->offset;
+>  	u32 flags = LAM_64BIT | LAR_ENABLE;
+>  	u64 mask;
+> -	u64 size;
+> +	u64 size = resource_size(entry->res);
+>  	int idx = *index;
 >  
->  	/* iterate through all IARR mapping regions */
->  	for (region_idx = 0; region_idx < ib->nr_regions; region_idx++) {
-> @@ -1182,66 +1182,19 @@ static int iproc_pcie_setup_ib(struct iproc_pcie *pcie,
->  	return ret;
+>  	if (restype & IORESOURCE_PREFETCH)
+> @@ -1037,9 +1037,7 @@ static int rcar_pcie_inbound_ranges(struct rcar_pcie *pcie,
+>  		unsigned long nr_zeros = __ffs64(cpu_addr);
+>  		u64 alignment = 1ULL << nr_zeros;
+>  
+> -		size = min(range->size, alignment);
+> -	} else {
+> -		size = range->size;
+> +		size = min(size, alignment);
+>  	}
+
+AFAICT the (if cpu_addr > 0) is here because the result of __ffs64 is undefined
+if no bits are set (according to the comment). However by removing the else
+statement we no longer guarantee that nr_zeros is defined.
+
+>  	/* Hardware supports max 4GiB inbound region */
+>  	size = min(size, 1ULL << 32);
+> @@ -1078,30 +1076,19 @@ static int rcar_pcie_inbound_ranges(struct rcar_pcie *pcie,
+>  	return 0;
 >  }
 >  
-> -static int iproc_pcie_add_dma_range(struct device *dev,
-> -				    struct list_head *resources,
-> -				    struct of_pci_range *range)
-> -{
-> -	struct resource *res;
-> -	struct resource_entry *entry, *tmp;
-> -	struct list_head *head = resources;
-> -
-> -	res = devm_kzalloc(dev, sizeof(struct resource), GFP_KERNEL);
-> -	if (!res)
-> -		return -ENOMEM;
-> -
-> -	resource_list_for_each_entry(tmp, resources) {
-> -		if (tmp->res->start < range->cpu_addr)
-> -			head = &tmp->node;
-> -	}
-> -
-> -	res->start = range->cpu_addr;
-> -	res->end = res->start + range->size - 1;
-> -
-> -	entry = resource_list_create_entry(res, 0);
-> -	if (!entry)
-> -		return -ENOMEM;
-> -
-> -	entry->offset = res->start - range->cpu_addr;
-> -	resource_list_add(entry, head);
-> -
-> -	return 0;
-> -}
-> -
->  static int iproc_pcie_map_dma_ranges(struct iproc_pcie *pcie)
+> -static int rcar_pcie_parse_map_dma_ranges(struct rcar_pcie *pcie,
+> -					  struct device_node *np)
+> +static int rcar_pcie_parse_map_dma_ranges(struct rcar_pcie *pcie)
 >  {
->  	struct pci_host_bridge *host = pci_host_bridge_from_priv(pcie);
 > -	struct of_pci_range range;
 > -	struct of_pci_range_parser parser;
-> -	int ret;
-> -	LIST_HEAD(resources);
-> +	struct resource_entry *entry;
-> +	int ret = 0;
->  
-> -	/* Get the dma-ranges from DT */
-> -	ret = of_pci_dma_range_parser_init(&parser, pcie->dev->of_node);
-> -	if (ret)
-> -		return ret;
+> -	int index = 0;
+> -	int err;
 > -
+> -	if (of_pci_dma_range_parser_init(&parser, np))
+> -		return -EINVAL;
+> -
+> -	/* Get the dma-ranges from DT */
 > -	for_each_of_pci_range(&parser, &range) {
-> -		ret = iproc_pcie_add_dma_range(pcie->dev,
-> -					       &resources,
-> -					       &range);
-> -		if (ret)
-> -			goto out;
-> +	resource_list_for_each_entry(entry, &host->dma_ranges) {
->  		/* Each range entry corresponds to an inbound mapping region */
-> -		ret = iproc_pcie_setup_ib(pcie, &range, IPROC_PCIE_IB_MAP_MEM);
-> +		ret = iproc_pcie_setup_ib(pcie, entry, IPROC_PCIE_IB_MAP_MEM);
->  		if (ret)
-> -			goto out;
+> -		u64 end = range.cpu_addr + range.size - 1;
+> -
+> -		dev_dbg(pcie->dev, "0x%08x 0x%016llx..0x%016llx -> 0x%016llx\n",
+> -			range.flags, range.cpu_addr, end, range.pci_addr);
+> +	struct pci_host_bridge *bridge = pci_host_bridge_from_priv(pcie);
+> +	struct resource_entry *entry;
+> +	int index = 0, err = 0;
+>  
+> -		err = rcar_pcie_inbound_ranges(pcie, &range, &index);
+> +	resource_list_for_each_entry(entry, &bridge->dma_ranges) {
+> +		err = rcar_pcie_inbound_ranges(pcie, entry, &index);
+>  		if (err)
+> -			return err;
 > +			break;
 >  	}
 >  
-> -	list_splice_init(&resources, &host->dma_ranges);
-> -
 > -	return 0;
-> -out:
-> -	pci_free_resource_list(&resources);
->  	return ret;
+> +	return err;
 >  }
+>  
+>  static const struct of_device_id rcar_pcie_of_match[] = {
+> @@ -1162,7 +1149,7 @@ static int rcar_pcie_probe(struct platform_device *pdev)
+>  		goto err_unmap_msi_irqs;
+>  	}
+>  
+> -	err = rcar_pcie_parse_map_dma_ranges(pcie, dev->of_node);
+> +	err = rcar_pcie_parse_map_dma_ranges(pcie);
+>  	if (err)
+>  		goto err_clk_disable;
 >  
 > -- 
 > 2.20.1
