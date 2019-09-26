@@ -2,71 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46D37BF947
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 20:37:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0AAA7BF9CE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 21:08:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=FJ5rMfgd0sK4XE08U1YPmT5Z2gSIkh+8syxovWXry4Q=; b=jRL
-	4C9gpJvxiA4236s6m4b9GtdIku+/Eu3zXLgDDW52AOg6DIc1k6vj3dg44T0CPzdvlLh8e+gA0WUKK
-	kn+e/Lkrz1udD8q+Q4a91QRxLDTiyNHlqWaffDMIPk40BB7TqsjQbD2d9FeFG4XHJyv2vEHvXPRaY
-	4r5mv4UEJRrEUdWgTQZGl6SA9vuFFZ9TJTcewYwfPkbIUVaLZ2csNx0jyTpEC7a3H59GIY5NPQr/L
-	eBFNeWpJB7ZXFJ8Qq4pOBhidYIZ2CwaT3F7uoMwj4OQVml3g3CNi8Z0bmrE3viDGbIzNF5KKJhHzo
-	IPnmb7U/Gi5ccdOuXmvU/eIyLzE2hCQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fjRt7yfx3tc5mjQE6fJR+k+Q10aqiXKvn/HDvCG+8Bg=; b=Z4H+P/9Nlh7M9O
+	JZUGk1vNPd5PJfC6mUuExof0QWMAJMvOU2KuVf2GvWA2qFld93WxVNFZnAXXh9ZTcLUCjnmMW6cns
+	SDwB6E/Dc9mCqCYg2/1Kw3x+wvgh745nE08JrZPGGoe0gvbCIkw1YSXXoc97jx+h6VQxvc9FyaGQp
+	SdEWt+KXU/VoNvMFglTXWIrfv361WdrvjGN3o4RJJnS6qNA26xEnBO5cfL1r4ePpYW47KlJcveHJ0
+	g+9i3EjambwSsYtCMBxuig7Ebpmb2r1UN2H41edJKoSpC5XXR0c5UxrzsFaVqNaiCSqEM0LODBLf9
+	pFyE9FA5SWFhQZmRgOtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDYdf-0002MF-Lh; Thu, 26 Sep 2019 18:37:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iDZ7m-0003rx-06; Thu, 26 Sep 2019 19:08:22 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDYdU-0002Ln-95
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 18:37:05 +0000
-Received: from localhost.localdomain (unknown [194.230.155.145])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 38AD820872;
- Thu, 26 Sep 2019 18:37:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569523023;
- bh=mp0cAdKqEqH/s9D+3ht8kbYbJ5u3i3m3qD9oNpDN+K4=;
- h=From:To:Cc:Subject:Date:From;
- b=h9Edz85612LyGIUz2DxRyySgApO6Tt3gb7FCJN5UBhbsJSfrIe/yWvrl1nlYoGuEs
- IZ4hJF6ntWeoZ3YD0fSUKRjxj2BWLCLtv2q6qip3DdKlZkwfl//fsqL7Q84QkCePh6
- 9/5293kg2lwsw7idmxCfCLhQb6oG30V/G0lRtxHY=
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Daniel Lezcano <daniel.lezcano@linaro.org>,
- Thomas Gleixner <tglx@linutronix.de>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>, Kukjin Kim <kgene@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org
-Subject: [PATCH] dt-bindings: timer: Use defines instead of numbers in Exynos
- MCT examples
-Date: Thu, 26 Sep 2019 20:36:43 +0200
-Message-Id: <20190926183643.7118-1-krzk@kernel.org>
-X-Mailer: git-send-email 2.17.1
+ id 1iDZ7Z-0003qa-0n
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 19:08:11 +0000
+Received: by mail-pg1-x542.google.com with SMTP id v27so2035777pgk.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 26 Sep 2019 12:08:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=F73+uceeMuwpCeg4MV5QzpHw3q82Pex8Nuzkj5F9opo=;
+ b=jG3mOcORe7V8TStUeyIHOoco3/ZswveSY1cOOp7+I6U41pzEdJnFQwWJ98wBGIA2JH
+ ysiJn7mqk0oWBxQ/cx9Ucobt9do5ZcSNfrPnJ8SxX2FJ3OTLpp65IYyr1yVF5s1zn5g1
+ y47d+NB/p0veHoUaA/rMoR7KUvOVtyee6EJUU0sm3hwXuBRVVFS8Z4QnY9/NNrsw5js9
+ 557vui3D5YVUp+54ISTnwmbrDt4XS18I/v/hSaT1mpHn3Sp2L4ZUhV/29wqn3bwaNI69
+ A9cjhnRNxswTYp8QBLslLYsx6mHdnviP7NKfIu5cZlTlsiTa5yx+dQJ7UHqFj07JaEeO
+ 81MA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=F73+uceeMuwpCeg4MV5QzpHw3q82Pex8Nuzkj5F9opo=;
+ b=U/O7rHvMWfs8YnnMDSJf3MZ43JMyZJEQ6z9Z+iYRnFi/BLkEkooj7kbHGUb8uKLc+B
+ u58JwxfbVNDHPmB+3OS77WVuB0nk8tzjL0mOJjH+OyaNY9SLOoJpNt37GYcHO6NGx7rF
+ mssqwe/Dl9EueaP9Pcy88pZW9Sq36DPTiXSNwz5OGBBIniIPdxo3megwuGTzsiN1xxmf
+ NCJK4EE70hlDxGyE92A9KtYK+p62luhyFLLYt3HF9P4HyE8kyCs/3mgrSoRgRvq7rxlE
+ cYo90dqfT3eLKXjAEYi3qxiRoO7B5dR/zUoFv3fNnnLQeRs0k4nYFZTJODcl6sGP7Cty
+ VXBA==
+X-Gm-Message-State: APjAAAXzdPOX9kyVn1v3IoHOD62S95F4Tfj/BXjFYkl8M+J4KUOrPDon
+ s7LkbnS7vx+Q/wziDfbtATe1LA==
+X-Google-Smtp-Source: APXvYqwcQ3nCA8Z13SSlrZG7RcPrMaxO33BCtRCxeOgnBoi95HRUlE0FcaBHLDCq4saFBcU8qbnZnQ==
+X-Received: by 2002:aa7:8acf:: with SMTP id b15mr5312222pfd.191.1569524885043; 
+ Thu, 26 Sep 2019 12:08:05 -0700 (PDT)
+Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
+ [71.197.186.152])
+ by smtp.gmail.com with ESMTPSA id k3sm3221570pgl.9.2019.09.26.12.08.04
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 26 Sep 2019 12:08:04 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@kernel.org>,
+ linux-amlogic@lists.infradead.org
+Subject: Re: [PATCH v2 2/2] soc: amlogic: ee-pwrc: ensure driver state maches
+ HW state
+In-Reply-To: <8936e777-8996-5c7b-ea9d-8e17c8d6c4b1@baylibre.com>
+References: <20190925213528.21515-1-khilman@kernel.org>
+ <20190925213528.21515-3-khilman@kernel.org>
+ <8936e777-8996-5c7b-ea9d-8e17c8d6c4b1@baylibre.com>
+Date: Thu, 26 Sep 2019 12:08:01 -0700
+Message-ID: <7hwodulvu6.fsf@baylibre.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_113704_375225_45466A67 
-X-CRM114-Status: GOOD (  10.91  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190926_120809_096414_DC273368 
+X-CRM114-Status: GOOD (  27.05  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,113 +96,133 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Szyprowski <m.szyprowski@samsung.com>
-MIME-Version: 1.0
+Cc: linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make the examples in Exynos Multi Core Timer bindings more readable and
-bring them closer to real DTS by using defines for interrupt flags.
+Neil Armstrong <narmstrong@baylibre.com> writes:
 
-Suggested-by: Marek Szyprowski <m.szyprowski@samsung.com>
-Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+> On 25/09/2019 23:35, Kevin Hilman wrote:
+>> From: Kevin Hilman <khilman@baylibre.com>
+>> 
+>> During init, ensure that the driver on/off state as well as clock and
+>> reset state matches the hardware state.  Do this by always calling the
+>> drivers 'on' function, and then callling the 'off' function if the
+>> HW state was initially detected as off.
 
----
+[...]
 
-Rebased on top of:
-https://patchwork.kernel.org/project/linux-samsung-soc/list/?series=177667&state=*
----
- .../timer/samsung,exynos4210-mct.yaml         | 37 ++++++++++++++-----
- 1 file changed, 27 insertions(+), 10 deletions(-)
+> I don't see what you are trying to solve except simplifying the code.
 
-diff --git a/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.yaml b/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.yaml
-index bff3f54a398f..c4d152009f76 100644
---- a/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.yaml
-+++ b/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.yaml
-@@ -75,51 +75,68 @@ examples:
-     // In this example, the IP contains two local timers, using separate
-     // interrupts, so two local timer interrupts have been specified,
-     // in addition to four global timer interrupts.
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
- 
-     timer@10050000 {
-         compatible = "samsung,exynos4210-mct";
-         reg = <0x10050000 0x800>;
--        interrupts = <0 57 0>, <0 69 0>, <0 70 0>, <0 71 0>,
--                     <0 42 0>, <0 48 0>;
-+        interrupts = <GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>,
-+                     <GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>,
-+                     <GIC_SPI 70 IRQ_TYPE_LEVEL_HIGH>,
-+                     <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>,
-+                     <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>,
-+                     <GIC_SPI 48 IRQ_TYPE_LEVEL_HIGH>;
-     };
- 
-   - |
-     // In this example, the timer interrupts are connected to two separate
-     // interrupt controllers. Hence, an interrupts-extended is needed.
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
- 
-     timer@101c0000 {
-         compatible = "samsung,exynos4210-mct";
-         reg = <0x101C0000 0x800>;
--        interrupts-extended = <&gic 0 57 0>,
--                              <&gic 0 69 0>,
-+        interrupts-extended = <&gic GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>,
-+                              <&gic GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>,
-                               <&combiner 12 6>,
-                               <&combiner 12 7>,
--                              <&gic 0 42 0>,
--                              <&gic 0 48 0>;
-+                              <&gic GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>,
-+                              <&gic GIC_SPI 48 IRQ_TYPE_LEVEL_HIGH>;
-     };
- 
-   - |
-     // In this example, the IP contains four local timers, but using
-     // a per-processor interrupt to handle them. Only one first local
-     // interrupt is specified.
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
- 
-     timer@10050000 {
-         compatible = "samsung,exynos4412-mct";
-         reg = <0x10050000 0x800>;
- 
--        interrupts = <0 57 0>, <0 69 0>, <0 70 0>, <0 71 0>,
--                     <0 42 0>;
-+        interrupts = <GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>,
-+                     <GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>,
-+                     <GIC_SPI 70 IRQ_TYPE_LEVEL_HIGH>,
-+                     <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>,
-+                     <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
-     };
- 
-   - |
-     // In this example, the IP contains four local timers, but using
-     // a per-processor interrupt to handle them. All the local timer
-     // interrupts are specified.
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
- 
-     timer@10050000 {
-         compatible = "samsung,exynos4412-mct";
-         reg = <0x10050000 0x800>;
- 
--        interrupts = <0 57 0>, <0 69 0>, <0 70 0>, <0 71 0>,
--                     <0 42 0>, <0 42 0>, <0 42 0>, <0 42 0>;
-+        interrupts = <GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>,
-+                     <GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>,
-+                     <GIC_SPI 70 IRQ_TYPE_LEVEL_HIGH>,
-+                     <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>,
-+                     <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>,
-+                     <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>,
-+                     <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>,
-+                     <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
-     };
--- 
-2.17.1
+Simplifying the code is a worthwhile goal on its own, but that's not the
+only thing I'm tring to accomplish.
 
+Part of the goal is make the init less VPU specific and thus make it
+more understandable/maintainable.  But the more important part is to
+ensure that the driver state and HW state is consistent for all the
+domains (not just VPU.)  I've had to debug lots of power-domain issues,
+and inconsistiences between HW state and driver state tend to be the
+primary cause of problems.
+
+Also I'm generally not a fan of the "don't mess with bootloader state"
+approach as that leads to subtle dependencies on specific bootloader
+versions that are also difficult to debug.
+
+Antother equally important goal is to actually be able to power-down the
+VPU when it's not used.  Right now, we'll never power off the VPU if the
+bootloader enabled it, and that seems a bit extreme so I'm looking to
+improve that and be able to power off the VPU when not used.
+
+> And the case is more that "matching the clock state" here, the
+> pm_domain_always_on_gov was is a real case when booting from the Amlogic
+> U-boot.
+
+I'm not understanding what you mean about vendor uboot.  I've done
+testing with vendor uboot too:
+
+I tried on g12a-u200, g12a-x96-max, and sm1-khadas-vim3l all of which
+have vendor uboot, and I tried before and after $SUBJECT patch.
+
+In all cases, I see the vendor uboot splash screen, and I see the
+framebuffer console from linux after kernel boot.  I see the same
+behavior before and after my patch.
+
+I also tried on g12b-odroid-n2 (vendor uboot), and there is _no_ uboot
+spash screen, but I see the linux framebuffer console come up both
+before and after my patch.
+
+What's the specific case you're worried about with vendor uboot?
+
+Also...  note something interesting I noticed on sm1-khadas-vim3l:
+before my patch, the framebuffer console appears, but the background is
+a bluish/green color.  After my patch, the background is black (as
+expected.)  
+
+> The display power domain is complex and as been half solved by using
+> "simple-framebuffer" on gx and is missing on g12a/g12b/sm1.
+>
+> For example, Debian installer runs without the modules, but will use
+> the EFIfb set by U-Boot, but in this precise case :
+> - the DRM driver isn't loaded
+> - we can't hook this power domain with EFIfb
+
+OK, so I agree that this case where we want the display to continue to
+work but linux DRM drivers never loaded is a special case.
+
+Is there a way to check if efifb is enabled?  Is the the linux driver
+(drivers/video/fbdev/efifb.c) or something else only done by uboot?
+
+If we can detect efifb from the kernel (not just whether the domain is
+already on), then a simple addition to my patch like this:
+
+ 	if (is_off)
+ 		meson_ee_pwrc_off(&dom->base);
++	else if (efifb_is_enabled)
++		dom->base.flags |= GENPD_FLAG_ALWAYS_ON;
+
+would force the domain always-on in the case of efifb.  
+
+In fact, now that I think of it, simply adding:
+
+ 	if (is_off)
+ 		meson_ee_pwrc_off(&dom->base);
++	else
++		dom->base.flags |= GENPD_FLAG_ALWAYS_ON;
+
+to my current patch would get back to the same behavior of the existing
+driver.  But I still don't like the idea that we can *never* power off
+the VPU if the bootloader enables it. :( I'd rather see patches
+conditionally adding that flag with detailed explanations as to why it's
+needed.
+
+> When *not* in EFIfb, we use simple-framebuffer on GX, using this
+> power domain, but it hasn't been copied to G12A.
+
+I don't quite understand what problem simple-framebuffer is
+solving. Could you explain that in more detail.
+
+Assuming it is solving something, why can't it be used on g12[ab]/sm1 ?
+
+> Personally I'll leave this code until we really tested and checked all
+> uses cases, 
+
+Right, I don't want to break anything on purpose, but I think the
+current state of this driver is fragile and difficult to
+understand/maintain, so I would be grateful for any help in
+understanding the corner cases better, as well as testing them (or
+explaining to me how to reproduce them.)
+
+Generally, with long-term maintenance in mind, if I'm forced to choose
+between understandable/maintainable code and "covers 100% of corner
+cases" I will most often chose the former.
+
+> not only on the sei510/sei610 using mainline u-boot.
+
+See above about all the other boards with vendor uboots also tested.
+
+Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
