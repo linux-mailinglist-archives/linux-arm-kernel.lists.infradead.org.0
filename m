@@ -2,81 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 578EFBF0B1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 13:00:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C28ABF0B2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 13:00:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=brG1XW7+dMP2cGkF/YzNFnPz2qoO9GD8vR6d4aei2x0=; b=omwdwl/Yu53vg6
-	y0oVcPKOC5brxz5QTmlFHI9VRSvwgsiKMveiQAbg0ojJhU0TBca2t1YrQiKPiin2gL6s/FzNtzrbD
-	0qnV1vvitFp2Rxw3yluDXtbWTzY8o+oziASYKG4/QOJ4jIrX1NdwgtiI6IWG3x3wkYXucOMFeMQKd
-	cULlbydtuv4XSq+X1IeJmbAgbarzPxH6NJodEQs/h4IXutW3HBngZjlGSTaKTIxlaTXLp84V9WArS
-	0UHv2+iSboyW59mN7zlpp2NqMHCP/xoMC+xEvq1LmW9dxxu+NoQ6065LQMNzODwGtzSsWcg8gQtPf
-	aTrqQh8ToHlFPgcp1Iig==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=612ygNjDUs9tH2kXfEtPfGOUwylSPkpbc/i+lBY9BrA=; b=SbNmzOEJXhMAuH
+	dylCqD12IYW4B/z5ThPoOwW7Wdho0/v+7nOy8gbL+4rum7p/WlWqVx85jAH/gjRfy9Su6POxVpY2p
+	YuYBvHno4jHFiw6o7hQl1gwwpcjzLjCPNk+LmuL/HeI1fZpqaMZSZJe0CzPK83tzrYV3hBhB0VQHj
+	ZlW/Ygq+YYKdhpKLVcuhH+k19a5SI9I0srJl2yiFp892TEgSd7DNeSZjO+WHNa6VP5XQ7xROlzVw9
+	jrgGk9CFEX0DVTB8Pce8V9GCq5UD0zgY3mxAaje/GI5c0/Zqk46ajDKw/mncVtC9yiypY/CXCYVZ9
+	Neb18k4oGKC6yJ0eQqAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDRVQ-0006tP-BS; Thu, 26 Sep 2019 11:00:16 +0000
-Received: from frisell.zx2c4.com ([192.95.5.64])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDRVI-0006aK-FQ
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 11:00:10 +0000
-Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTP id 0ce53a4c
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Sep 2019 10:14:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=zx2c4.com; h=mime-version
- :references:in-reply-to:from:date:message-id:subject:to:cc
- :content-type; s=mail; bh=OMOzv5omucJd4GVIqn0w61KzgP4=; b=w5GqWH
- S/5rIueHmdHNJQ2ozR3M8N4Op4jY1IjXhStqrTHSfZfZ2h/2hH7hpOXFd0O68jxN
- tnOulFFLFa6fgZq2Cq8cRk48Nk/RE9UEH8OBMN1tt6kKh4zk1kXJFPtt0z1efNei
- codu7TURoH7SD+fJmkoBmuVVYGIU+S83mHWod36cA8wI9jubXCEhdkxG9s47DYuh
- uCGVanB+c7tk9NiHo+IxLA5V1VeWJrVKP4v9CEywvqIF5CUTUO1i9aOSwX1tCbq0
- GppXdHrUFCKw3PFVLiyjy4D2xDTRKjOCCZv4F9lTH0G/VFg/uM7kjiF6glgEZ9ej
- gHBwoegJiT377New==
-Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTPSA id b02b4d71
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256:NO)
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Sep 2019 10:14:11 +0000 (UTC)
-Received: by mail-oi1-f169.google.com with SMTP id e18so1715609oii.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Sep 2019 04:00:03 -0700 (PDT)
-X-Gm-Message-State: APjAAAV4g/wupZEbT50HWuDP1C0AvM0FSRZXRzbNgmF1B6ZznhfleYUw
- J2w1h1qn3OKHNVqrVLsylnRcIamnKPFittLSw4E=
-X-Google-Smtp-Source: APXvYqw7XDVbdEQOtu6Uk43Zy457ni1rT1sdFCQhIJbCnoxqGO04mdmpZeChsNbk+yAB1w+VwttiF7uo/vkUohYeCNk=
-X-Received: by 2002:a54:4807:: with SMTP id j7mr1970768oij.122.1569495601762; 
- Thu, 26 Sep 2019 04:00:01 -0700 (PDT)
+	id 1iDRVi-000762-A5; Thu, 26 Sep 2019 11:00:34 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iDRVS-000732-Fp
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 11:00:20 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B267F1000;
+ Thu, 26 Sep 2019 04:00:16 -0700 (PDT)
+Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DE1763F67D;
+ Thu, 26 Sep 2019 04:00:15 -0700 (PDT)
+Subject: Re: [PATCH v6 02/11] kselftest: arm64:
+ mangle_pstate_invalid_compat_toggle and common utils
+To: Dave Martin <Dave.Martin@arm.com>
+References: <20190910123111.33478-1-cristian.marussi@arm.com>
+ <20190910123111.33478-3-cristian.marussi@arm.com>
+ <20190917160545.GL27757@arm.com>
+From: Cristian Marussi <cristian.marussi@arm.com>
+Message-ID: <799f7556-75a8-59bb-ec3d-624d2bc241e6@arm.com>
+Date: Thu, 26 Sep 2019 12:00:13 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20190925161255.1871-1-ard.biesheuvel@linaro.org>
- <CAHmME9oDhnv7aX77oEERof0TGihk4mDe9B_A3AntaTTVsg9aoA@mail.gmail.com>
- <MN2PR20MB29733663686FB38153BAE7EACA860@MN2PR20MB2973.namprd20.prod.outlook.com>
-In-Reply-To: <MN2PR20MB29733663686FB38153BAE7EACA860@MN2PR20MB2973.namprd20.prod.outlook.com>
-From: "Jason A. Donenfeld" <Jason@zx2c4.com>
-Date: Thu, 26 Sep 2019 12:59:50 +0200
-X-Gmail-Original-Message-ID: <CAHmME9rsUoU6N6pQnUmz=NQeaaJzu7_E7R47M095JptPhk7nbQ@mail.gmail.com>
-Message-ID: <CAHmME9rsUoU6N6pQnUmz=NQeaaJzu7_E7R47M095JptPhk7nbQ@mail.gmail.com>
-Subject: Re: [RFC PATCH 00/18] crypto: wireguard using the existing crypto API
-To: Pascal Van Leeuwen <pvanleeuwen@verimatrix.com>
+In-Reply-To: <20190917160545.GL27757@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_040008_804057_F174EE25 
-X-CRM114-Status: GOOD (  10.72  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190926_040018_652357_778246D6 
+X-CRM114-Status: GOOD (  17.25  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [192.95.5.64 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,30 +64,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg KH <gregkh@linuxfoundation.org>, Eric Biggers <ebiggers@google.com>,
- Samuel Neves <sneves@dei.uc.pt>, Will Deacon <will@kernel.org>,
- Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
- Andy Lutomirski <luto@kernel.org>, Marc Zyngier <maz@kernel.org>,
- Dan Carpenter <dan.carpenter@oracle.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- David Miller <davem@davemloft.net>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 26, 2019 at 12:19 PM Pascal Van Leeuwen
-<pvanleeuwen@verimatrix.com> wrote:
-> Actually, that assumption is factually wrong. I don't know if anything
-> is *publicly* available, but I can assure you the silicon is running in
-> labs already.
+On 17/09/2019 17:05, Dave Martin wrote:
+> On Tue, Sep 10, 2019 at 01:31:02pm +0100, Cristian Marussi wrote:
+>> Add some arm64/signal specific boilerplate and utility code to help
+>> further testcases' development.
+>>
+>> Introduce also one simple testcase mangle_pstate_invalid_compat_toggle
+>> and some related helpers: it is a simple mangle testcase which messes
+>> with the ucontext_t from within the signal handler, trying to toggle
+>> PSTATE state bits to switch the system between 32bit/64bit execution
+>> state. Expects SIGSEGV on test PASS.
+>>
+>> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+>> ---
+>> v5 --> v6
+>> - fix commit msg
+>> - feat_names is char const *const
+>> - better supported options check and reporting
+>> - removed critical asserts to avoid issues with NDEBUG
+>> - more robust get_header
+>> - fix validation for ESR_CONTEXT size
+>> - add more explicit comment in GET_RESV_NEXT_HEAD() macro
+>> - refactored default_handler()
+>> - feats_ok() now public
+>> - call always test_results() no matter the outcome of test_run()
+> 
+> [...]
+> 
+>> diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.c b/tools/testing/selftests/arm64/signal/test_signals_utils.c
+> 
+> [...]
+> 
+>> +static int test_init(struct tdescr *td)
+>> +{
+>> +	td->minsigstksz = getauxval(AT_MINSIGSTKSZ);
+>> +	if (!td->minsigstksz)
+>> +		td->minsigstksz = MINSIGSTKSZ;
+>> +	fprintf(stderr, "Detected MINSTKSIGSZ:%d\n", td->minsigstksz);
+>> +
+>> +	if (td->feats_required) {
+>> +		td->feats_supported = 0;
+>> +		/*
+>> +		 * Checking for CPU required features using both the
+>> +		 * auxval and the arm64 MRS Emulation to read sysregs.
+>> +		 */
+>> +		if (getauxval(AT_HWCAP) & HWCAP_SSBS)
+>> +			td->feats_supported |= FEAT_SSBS;
+>> +		if (getauxval(AT_HWCAP) & HWCAP_CPUID) {
+>> +			uint64_t val = 0;
+>> +
+>> +			/* Uses MRS emulation to check capability */
+>> +			get_regval(SYS_ID_AA64MMFR1_EL1, val);
+>> +			if (ID_AA64MMFR1_EL1_PAN_SUPPORTED(val))
+>> +				td->feats_supported |= FEAT_PAN;
+>> +			/* Uses MRS emulation to check capability */
+>> +			get_regval(SYS_ID_AA64MMFR2_EL1, val);
+>> +			if (ID_AA64MMFR2_EL1_UAO_SUPPORTED(val))
+>> +				td->feats_supported |= FEAT_UAO;
+>> +		} else {
+>> +			fprintf(stderr,
+>> +				"HWCAP_CPUID NOT available. Mark ALL feats UNSUPPORTED.\n");
+> 
+> Nit: this message isn't strictly correct now: SSBS may still be detected
+> even if HWCAP_CPUID isn't present.
+> 
+> For simplicity I suggest to drop this fprintf() (and the containing
+> else { }, which is otherwise empty).
+> 
+> The following code reports what features are supported in any case, so
+> the user will be able to see what was detected.
+> 
+> 
+> The rest looks reasonable to me now, so with the above nit fixed:
+> 
+> Reviewed-by: Dave Martin <Dave.Martin@arm.com>
 
-Great to hear, and thanks for the information. I'll follow up with
-some questions on this in another thread.
+Thanks I'll do the above fixes in v7.
+
+Cristian
+> 
+> [...]
+> 
+> Cheers
+> ---Dave
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
