@@ -2,63 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01F7BBF123
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 13:21:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C250BF211
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 13:49:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=GlGeXN8gHfg1Ozk6sjanLga50kqBZIQmO+lPvkiQSaQ=; b=F8GfhZf97RK704NOmIqhMzKjg
-	pGqZjqz7CiVV6gyYYRwhsMs6cu2x87JD1BIxXytCr5KZBHQl8mFkwWhqRZDxnvmFp1zZ+XvYGmiR4
-	F6+0Tv11M0+YHdxKlYtPPch+CZrQpbnFV1BY1hTg4zMODXOouHxz5FLgY9tEHWRT9m2D3Ld1kIy2W
-	7SRh8uDHpW/oz3HSPm3vFACTzqZwEYJueq34FWQ+xm4Iq/Ru1V1Chpa++xqOQjLWNYqcI4LrK+eq0
-	W7aaHwELnjiiYKHrtTgmhHWD3yUvtF1kauMYelXz56KkmACd1ZtUQpjZwv7Ec6VkdBiCKg1543ybE
-	iv7Laxm0A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pd9VskoUjSzPS1ydzslDQmjUyeHh18oZml7uZB2uug0=; b=sF9awVM1yC0Ghr
+	70eyy3asvHzHtHq2xJnjxPNoznzwmyv3QN2Vf+Dvh2TgM2FxaEKY/YJHPT91KNIkmC7ETcofOEnQI
+	IY3WJVscGRDRWDweulcXnFzv6AELN2dKpgkB3JO7fffDv8yIIxWwT9kOSQqiEg8Po1JJMWtt3GRz2
+	5m185YONT4x8q2a4KV3QN09S487MX3YI7nFglEQYD7cKU+JlVHI2Ns3QD3aqP/5HHMCl0xarhgqO2
+	KXvDMiYwjfU4/SArMLBTdYJafA26DEhoCH12C6GCVTBueFuoOJ3wrXjLKTqdqpEJp0OMXg+OENDXt
+	qTu3BTpGq6DPvXcx2TqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDRpb-0006KA-VW; Thu, 26 Sep 2019 11:21:07 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDRpP-0006Il-VX
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 11:20:57 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9053B142F;
- Thu, 26 Sep 2019 04:20:53 -0700 (PDT)
-Received: from [192.168.1.124] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A8D1D3F67D;
- Thu, 26 Sep 2019 04:20:50 -0700 (PDT)
-Subject: Re: [PATCH 00/11] of: Fix DMA configuration for non-DT masters
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Rob Herring <robh+dt@kernel.org>
-References: <20190924181244.7159-1-nsaenzjulienne@suse.de>
- <CAL_Jsq+v+svTyna7UzQdRVqfNc5Z_bgWzxNRXv7-Wqv3NwDu2g@mail.gmail.com>
- <d1a31a2ec8eb2f226b1fb41f6c24ffb47c3bf7c7.camel@suse.de>
- <e404c65b-5a66-6f91-5b38-8bf89a7697b2@arm.com>
- <43fb5fe1de317d65a4edf592f88ea150c6e3b8cc.camel@suse.de>
- <CAL_JsqLhx500cx3YLoC7HL1ux3bBpV+fEA2Qnk7D5RFGgiGzSw@mail.gmail.com>
- <aa4c8d62-7990-e385-2bb1-cec55148f0a8@arm.com>
- <CAL_JsqKKYcHPnA80ZwLY=Sk3e5MqrimedUhWQ5+iuPZXQxYHdA@mail.gmail.com>
- <307b988d0c67fb1c42166eca12742bcfda09d92d.camel@suse.de>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <c27a51e1-1adf-ae6a-dc67-ae76222a1163@arm.com>
-Date: Thu, 26 Sep 2019 12:20:44 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.1.0
+	id 1iDSGS-00086W-Oi; Thu, 26 Sep 2019 11:48:52 +0000
+Received: from mail.toke.dk ([52.28.52.200])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iDSGK-000863-50
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 11:48:46 +0000
+From: Toke =?utf-8?Q?H=C3=B8iland-J=C3=B8rgensen?= <toke@toke.dk>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=toke.dk; s=20161023;
+ t=1569497917; bh=2ozAWmHQqzsPDD0WmdG2auChc9T1w49xSlDI6ZfDT7o=;
+ h=From:To:Cc:Subject:In-Reply-To:References:Date:From;
+ b=E7B4xf/sxTyXBeJoIGW4nq+Nma+qA/w0+mvTe4vhnAMnXOMwoNqN3gDE5hVdmdNzh
+ /cy8vHjKBAT2ogyoiI6miZ76hx67WQMVHN6a2BVqXmNEVEsuXo+5o7swBUAPCBWqHv
+ VMmzaEdMsV2Uv19vqCGkyzwg2EJEb01nOVmOnVhCTdWd4ObjWDaCmz3mtvmwvX1xkx
+ N27rxXs/S8RzJjikh/vluQgPD3Jx6octJQQJEEF38ED/mcB5ByakvsgPj4OAYlok2R
+ So9Nhhgnw01AwyOqMWr8VQnGQ5pUR3ZKQGpfV25KDOG2KIbUNkX5Z+F9X+p9L2Xo7C
+ n9nJBQm/HWwGw==
+To: "Jason A. Donenfeld" <Jason@zx2c4.com>,
+ Pascal Van Leeuwen <pvanleeuwen@verimatrix.com>
+Subject: Re: chapoly acceleration hardware [Was: Re: [RFC PATCH 00/18] crypto:
+ wireguard using the existing crypto API]
+In-Reply-To: <CAHmME9r5m7D-oMU6Lv_ZhEyWmrNscMr5HokzdK0wg2Ayzzbeow@mail.gmail.com>
+References: <20190925161255.1871-1-ard.biesheuvel@linaro.org>
+ <CAHmME9oDhnv7aX77oEERof0TGihk4mDe9B_A3AntaTTVsg9aoA@mail.gmail.com>
+ <MN2PR20MB29733663686FB38153BAE7EACA860@MN2PR20MB2973.namprd20.prod.outlook.com>
+ <CAHmME9r5m7D-oMU6Lv_ZhEyWmrNscMr5HokzdK0wg2Ayzzbeow@mail.gmail.com>
+Date: Thu, 26 Sep 2019 13:38:36 +0200
+X-Clacks-Overhead: GNU Terry Pratchett
+Message-ID: <8736gj2soz.fsf@toke.dk>
 MIME-Version: 1.0
-In-Reply-To: <307b988d0c67fb1c42166eca12742bcfda09d92d.camel@suse.de>
-Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_042056_098779_2044ADF4 
-X-CRM114-Status: GOOD (  20.96  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190926_044844_533842_F80D59FE 
+X-CRM114-Status: GOOD (  15.76  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,78 +74,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Matthias Brugger <mbrugger@suse.com>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- linux-wireless <linux-wireless@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, etnaviv@lists.freedesktop.org,
- linux-tegra@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
- Stefan Wahren <wahrenst@gmx.net>, james.quinlan@broadcom.com,
- linux-pci@vger.kernel.org,
- "open list:DMA GENERIC OFFLOAD ENGINE SUBSYSTEM" <dmaengine@vger.kernel.org>,
- xen-devel@lists.xenproject.org, Dan Williams <dan.j.williams@intel.com>,
- freedreno <freedreno@lists.freedesktop.org>,
- Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg KH <gregkh@linuxfoundation.org>, Eric Biggers <ebiggers@google.com>,
+ Dave Taht <dave.taht@gmail.com>, Willy Tarreau <w@1wt.eu>,
+ Samuel Neves <sneves@dei.uc.pt>, Will Deacon <will@kernel.org>,
+ Netdev <netdev@vger.kernel.org>,
+ Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
+ Andy Lutomirski <luto@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Dan Carpenter <dan.carpenter@oracle.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ David Miller <davem@davemloft.net>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-09-26 11:44 am, Nicolas Saenz Julienne wrote:
->>>>> Robin, have you looked into supporting multiple dma-ranges? It's the
->>>>> next thing
->>>>> we need for BCM STB's PCIe. I'll have a go at it myself if nothing is in
->>>>> the
->>>>> works already.
->>>>
->>>> Multiple dma-ranges as far as configuring inbound windows should work
->>>> already other than the bug when there's any parent translation. But if
->>>> you mean supporting multiple DMA offsets and masks per device in the
->>>> DMA API, there's nothing in the works yet.
-> 
-> Sorry, I meant supporting multiple DMA offsets[1]. I think I could still make
-> it with a single DMA mask though.
+"Jason A. Donenfeld" <Jason@zx2c4.com> writes:
 
-The main problem for supporting that case in general is the disgusting 
-carving up of the physical memory map you may have to do to guarantee 
-that a single buffer allocation cannot ever span two windows with 
-different offsets. I don't think we ever reached a conclusion on whether 
-that was even achievable in practice.
-
->>> There's also the in-between step of making of_dma_get_range() return a
->>> size based on all the dma-ranges entries rather than only the first one
->>> - otherwise, something like [1] can lead to pretty unworkable default
->>> masks. We implemented that when doing acpi_dma_get_range(), it's just
->>> that the OF counterpart never caught up.
+> [CC +willy, toke, dave, netdev]
+>
+> Hi Pascal
+>
+> On Thu, Sep 26, 2019 at 12:19 PM Pascal Van Leeuwen
+> <pvanleeuwen@verimatrix.com> wrote:
+>> Actually, that assumption is factually wrong. I don't know if anything
+>> is *publicly* available, but I can assure you the silicon is running in
+>> labs already. And something will be publicly available early next year
+>> at the latest. Which could nicely coincide with having Wireguard support
+>> in the kernel (which I would also like to see happen BTW) ...
 >>
->> Right. I suppose we assume any holes in the ranges are addressable by
->> the device but won't get used for other reasons (such as no memory
->> there). However, to be correct, the range of the dma offset plus mask
->> would need to be within the min start and max end addresses. IOW,
->> while we need to round up (0xa_8000_0000 - 0x2c1c_0000) to the next
->> power of 2, the 'correct' thing to do is round down.
-> 
-> IIUC I also have this issue on my list. The RPi4 PCIe block has an integration
-> bug that only allows DMA to the lower 3GB. With dma-ranges of size 0xc000_0000
-> you get a 32bit DMA mask wich is not what you need. So far I faked it in the
-> device-tree but I guess it be better to add an extra check in
-> of_dma_configure(), decrease the mask and print some kind of warning stating
-> that DMA addressing is suboptimal.
+>> Not "at some point". It will. Very soon. Maybe not in consumer or server
+>> CPUs, but definitely in the embedded (networking) space.
+>> And it *will* be much faster than the embedded CPU next to it, so it will
+>> be worth using it for something like bulk packet encryption.
+>
+> Super! I was wondering if you could speak a bit more about the
+> interface. My biggest questions surround latency. Will it be
+> synchronous or asynchronous? If the latter, why? What will its
+> latencies be? How deep will its buffers be? The reason I ask is that a
+> lot of crypto acceleration hardware of the past has been fast and
+> having very deep buffers, but at great expense of latency. In the
+> networking context, keeping latency low is pretty important. Already
+> WireGuard is multi-threaded which isn't super great all the time for
+> latency (improvements are a work in progress). If you're involved with
+> the design of the hardware, perhaps this is something you can help
+> ensure winds up working well? For example, AES-NI is straightforward
+> and good, but Intel can do that because they are the CPU. It sounds
+> like your silicon will be adjacent. How do you envision this working
+> in a low latency environment?
 
-Yeah, there's just no way for masks to describe that the device can 
-drive all the individual bits, just not in certain combinations :(
+Being asynchronous doesn't *necessarily* have to hurt latency; you just
+need the right queue back-pressure.
 
-The plan I have sketched out there is to merge dma_pfn_offset and 
-bus_dma_mask into a "DMA range" descriptor, so we can then hang one or 
-more of those off a device to properly cope with all these weird 
-interconnects. Conceptually it feels pretty straightforward; I think 
-most of the challenge is in implementing it efficiently. Plus there's 
-the question of whether it could also subsume the dma_mask as well.
 
-Robin.
+We already have multiple queues in the stack. With an async crypto
+engine we would go from something like:
+
+stack -> [qdisc] -> wg if -> [wireguard buffer] -> netdev driver ->
+device -> [device buffer] -> wire
+
+to
+
+stack -> [qdisc] -> wg if -> [wireguard buffer] -> crypto stack ->
+crypto device -> [crypto device buffer] -> wg post-crypto -> netdev
+driver -> device -> [device buffer] -> wire
+
+(where everything in [] is a packet queue).
+
+The wireguard buffer is the source of the latency you're alluding to
+above (the comment about multi-threaded behaviour), so we probably need
+to fix that anyway. For the device buffer we have BQL to keep it at a
+minimum. So that leaves the buffering in the crypto offload device. If
+we add something like BQL to the crypto offload drivers, we could
+conceivably avoid having that add a significant amount of latency. In
+fact, doing so may benefit other users of crypto offloads as well, no?
+Presumably ipsec has this same issue?
+
+
+Caveat: I am fairly ignorant about the inner workings of the crypto
+subsystem, so please excuse any inaccuracies in the above; the diagrams
+are solely for illustrative purposes... :)
+
+-Toke
 
 _______________________________________________
 linux-arm-kernel mailing list
