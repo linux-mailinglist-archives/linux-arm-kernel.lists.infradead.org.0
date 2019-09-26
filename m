@@ -2,95 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9683BF78B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 19:25:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CAB6BF7F5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 19:53:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=1Huvto4cj7WxRHxLJdduROtFhRgvOy/fPhY+5uBJ1Yg=; b=TGmMyHOO+kOYD7Uxs38L5WdL4b
-	MUxRVdkh7PGs837vpN5Jcn/nE+/a6OGYKnpz+CeIFCzre6Q/E2ljDGEjqZX2g8h8wPEZ7mZHOTpQD
-	D7eP2GHyMwjOjV8ZU8YtY7HY23u/N6LNMwBiP5ChgA7xBPdx//OBbz1xJC4hedkAc85QqPyfo+GDZ
-	7FBY2AV8chqSmLKdFU1SWVTbzzg+dF0XWsQ0fzjAfziROe2M7FxjtzIRoXYUYvXH0ixmPdvKfRtgo
-	CwVRmP+fnioiSziJiTipuitqN2ZW7021EWnCZc0PycoRxCCurhvy4FmKmpXjqNFomjA89TUHzNmpQ
-	PDzlQIAA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=WIo7EsmiSqHQC81zQ98y2MOqijNriGtZJEz84gGjd8U=; b=Qjq
+	Z3K3WOONz1jMxDxhaZCqKK+6/OgsFSzU0P9ZV4tb4VCcocM8LMQe64p67Tzqp5q+P8ArclHCrOOjf
+	IzRchWyTRN/O+258KDkMQXTWZO9vvI6MeT6NKHBP9l9JqpxUgLVOWR1KlBR5bqgEhRgjdxJoPDAb5
+	roB1XG1tv6ofiorzHOdtgF2ALILtUe/+PmNrGpl42jA/hDfOfX8utc5R6MF6Jmg9XpZgF9LXfj0Ee
+	nNCBtOLk7NXq1JkLLFVe+vGyFqOb0EO/nJ8cKa5kWoVt4vKhwZph6YNF9AZ90aPsQZPLpM5YXoigb
+	ZH7QwD+nbKLmzJFNRE+ncrX2PzmmOaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDXVy-0003BT-A0; Thu, 26 Sep 2019 17:25:14 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDXVm-0002Vr-Q3
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 17:25:04 +0000
-Received: by mail-pg1-x544.google.com with SMTP id s1so1911192pgv.8
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Sep 2019 10:25:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=t8KSaOsUA0A5+mnKTZ8gR5rlbkOnzjQQsfjJ840XQJk=;
- b=A4JJp7qYcNE79wFFw4ug9NrWVG1ouENyKepTkUqyu7bQIMdRc6liLU2w3bG5seaQuT
- LSO+YCCywdnVWigb9qRkIMsvB+XTbIlnWTZxGC8LWCbjCLarTkrN6FqCB9fmu7sJgTGr
- m6T8uV0jsUJbohPR8HsMHw/N2P3nCr3TybgZBckxRuJ1k43A79nn1eDFiVlz7aqMTFjy
- QGHIKO6kxObLdhC8hVgxbKPyTPfnq8mdoId5uyeIYf1HFRRLVgaGdeBqc+i/dLyRwwhI
- YT3HU0j9ZQWpJx2wTuqaBS9qh6rMzAFJXjmyo1MFgHeXpm/gY03qVA7AENSwAefDqTUl
- cujg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=t8KSaOsUA0A5+mnKTZ8gR5rlbkOnzjQQsfjJ840XQJk=;
- b=Kw7vsEyc04nCWpsc6W9PNb+wHCY+Z6dDXx3aeuQ+u37ARShMICXzVmWMOcSNxKJoIo
- HvbCtKJqgjqABNUNag/1v+MLpl6EWEzk1YVATIAU7SyzGhsGqVXatvcBLteDAwqFGEjl
- SWaLbxidSY1eUg0binc9Q//P3SLtSyifZcUHxOOBlIrKJvY4FnLFwpUsjss2wj+Rk61Z
- TmydgesE98VoZzFWmwSa+zEcANqTP6/qyQTcG54Fafb4AgpYLU5FbPluNANy2rY0uLJF
- fxGCymJG66iB8GA9WI7vkXU7v0sUQh4sYu8kS85TZGbEDZJS5YxYF70flvoKdFc8QHWX
- nOqg==
-X-Gm-Message-State: APjAAAWFEXvGaHCzd5UDolPZZL5WkP559PykvEV5oZcc5qLzhBb4s6qa
- oRrqZGO6Mr2n3uJ+IVUWHEI=
-X-Google-Smtp-Source: APXvYqx4m+E7/H+s5Lc/cis9LXP8X2+1ZKGkWbYibcJmL4EcS/TtoInNtol0fEES4fLZX1bOcPPTKA==
-X-Received: by 2002:a17:90a:77ca:: with SMTP id
- e10mr4659549pjs.24.1569518701338; 
- Thu, 26 Sep 2019 10:25:01 -0700 (PDT)
-Received: from arch-late ([12.206.46.61])
- by smtp.gmail.com with ESMTPSA id 127sm4941845pfw.6.2019.09.26.10.24.59
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 26 Sep 2019 10:25:00 -0700 (PDT)
-References: <20190926155539.GA20744@sausagefarm>
-User-agent: mu4e 1.2.0; emacs 27.0.50
-From: Rui Miguel Silva <rmfrfs@gmail.com>
-To: Jeeeun Evans <jeeeunevans@gmail.com>
-Subject: Re: [PATCH] staging: media: imx: Use devm_platform_ioremap_resource().
-In-reply-to: <20190926155539.GA20744@sausagefarm>
-Date: Thu, 26 Sep 2019 18:24:59 +0100
-Message-ID: <m3wodvgec4.fsf@gmail.com>
-MIME-Version: 1.0
+	id 1iDXwu-0003wB-9L; Thu, 26 Sep 2019 17:53:04 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iDXwh-0003v8-FX
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 17:52:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A18FA142F;
+ Thu, 26 Sep 2019 10:52:48 -0700 (PDT)
+Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
+ [10.1.197.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D3D183F67D;
+ Thu, 26 Sep 2019 10:52:47 -0700 (PDT)
+From: Cristian Marussi <cristian.marussi@arm.com>
+To: linux-kselftest@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ shuah@kernel.org
+Subject: [PATCH v2 0/2] Fix KSFT toplevel makefile behaviour
+Date: Thu, 26 Sep 2019 18:52:17 +0100
+Message-Id: <20190926175219.29805-1-cristian.marussi@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_102502_854608_DF3D51C6 
-X-CRM114-Status: GOOD (  13.35  )
-X-Spam-Score: 1.4 (+)
+X-CRM114-CacheID: sfid-20190926_105251_561316_1C557207 
+X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 HK_RANDOM_FROM         From username looks random
- 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rmfrfs[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,61 +59,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, festevam@gmail.com, kernel@pengutronix.de,
- gregkh@linuxfoundation.org, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, linux-imx@nxp.com, p.zabel@pengutronix.de,
- slongerbeam@gmail.com, mchehab@kernel.org, shawnguo@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Tim.Bird@sony.com, dave.martin@arm.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jeeeun,
-On Thu 26 Sep 2019 at 16:55, Jeeeun Evans wrote:
-> This patch fixes a warning by coccicheck:
-> drivers/staging/media/imx/imx7-mipi-csis.c:973:1-12: WARNING: Use devm_platform_ioremap_resource for state -> regs
->
-> Use devm_platform_ioremap_resource helper which wraps platform_get_resource()
-> and devm_ioremap_resource() together.
->
-> Signed-off-by: Jeeeun Evans <jeeeunevans@gmail.com>
->
+Hi
 
-Thanks for the patch.
-LGTM.
+so this series carries two small fixes to the toplevel KSelfTest makefile
+which I found useful especially while attempting to run the suite in
+automation.
 
-Reviewed-by: Rui Miguel Silva <rmfrfs@gmail.com>
+[1/2]
+While it is already possible to specify a limited list of TARGETS to run,
+it is not instead easily possible to state a list of targets NOT to run
+(say due to specific instability issues).
+Moreover providing such a skip list through a stripped down list of TARGETS
+it is cumbersome and fragile since this poses the risk to stick to an old
+stale stripped TARGETS list once upstream decides to add more default
+targets.
+A new SKIP_TARGETS Makefile variable is provided by this patch to easily
+specify a skiplist for target subsystems.
 
----
-Cheers,
-	Rui
+[2/2]
+Currently when some target fails to build, KSFT Makefile just carries on
+building as much subsystems as it can: unfortunately this is not properly
+reflected also in the generation of the runlist inside run_kselftest.sh.
+This patch rectifies this behaviour checking for the existence of a target
+directory in the INSTALL_PATH before adding the related snippet to the
+run_kselftest.sh script.
 
 
->  drivers/staging/media/imx/imx7-mipi-csis.c | 4 +---
->  1 file changed, 1 insertion(+), 3 deletions(-)
->
-> diff --git a/drivers/staging/media/imx/imx7-mipi-csis.c b/drivers/staging/media/imx/imx7-mipi-csis.c
-> index 73d8354e618c..bf21db38441f 100644
-> --- a/drivers/staging/media/imx/imx7-mipi-csis.c
-> +++ b/drivers/staging/media/imx/imx7-mipi-csis.c
-> @@ -947,7 +947,6 @@ static void mipi_csis_debugfs_exit(struct csi_state *state)
->  static int mipi_csis_probe(struct platform_device *pdev)
->  {
->  	struct device *dev = &pdev->dev;
-> -	struct resource *mem_res;
->  	struct csi_state *state;
->  	int ret;
->
-> @@ -969,8 +968,7 @@ static int mipi_csis_probe(struct platform_device *pdev)
->  	mipi_csis_phy_init(state);
->  	mipi_csis_phy_reset(state);
->
-> -	mem_res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	state->regs = devm_ioremap_resource(dev, mem_res);
-> +	state->regs = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(state->regs))
->  		return PTR_ERR(state->regs);
+Thanks
+
+Cristian
+
+Changelog
+
+v1 --> v2
+- added Documentation
+- various typos fixed
+- added a proper override when filtering-out SKIP_TARGETS from TARGETS
+  to make it work also when TARGETS is provided too from the cmdline
+
+Cristian Marussi (2):
+  kselftest: add capability to skip chosen TARGETS
+  kselftest: exclude failed TARGETS from runlist
+
+ Documentation/dev-tools/kselftest.rst | 11 +++++++++++
+ tools/testing/selftests/Makefile      | 11 +++++++++++
+ 2 files changed, 22 insertions(+)
+
+-- 
+2.17.1
 
 
 _______________________________________________
