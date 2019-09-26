@@ -2,71 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52791BF606
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 17:36:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A95CBF611
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 17:38:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7AQAaYr8e9dpOQJWbJwS1X0M2LMGIKYic2fs1chZj+k=; b=h0uPwZdnXWnCba
-	E8rdwWy3H/Gl1cU7yhLzyiqIN5MDv8a40l5rJHy68jHfFWgz9Xfjtp18+xieykraYa4JtKj4hudfi
-	tRNfH8RfyHWlWsRfHG5T/TAGdHQXZZwnzkqxuBxJQ8ZQcr8fx7G3ydALOaynqKNSOVXGsprEGv9Qy
-	ld5rw4lSHgo0tagZb8LWLOYh40yDAT5PJaydmu/uPjqWQ1JPcQYQP7hz23GBtQAn62X6upiPa+dxx
-	JeHwBmEIvrsaxdd7SXsuWsHdDBXMcaHC7rwA1xk4gWMEeljx8yvFcjuJ/JppPn+ShkE0TnFFt+JT7
-	YNL8U9XZZ2Tnx2Ne8Wsw==;
+	List-Owner; bh=li8FGDZSNTIUmjcWS3Pw855NGZOQ044S9ZnqGjyx/U0=; b=E+zGSwpzsMKILt
+	nFpzJpPdlM3LJpQWpTiMu7KdCO6xfSh0ei8xN1Sgy9kDg0SHMuDVTB7Lx3CQWML4A15cEMzwFizNh
+	N4W3XGaZqZDOIJlWbCnDuyJnBa+R7uAvnc2QpW/4PxJO06E0CfF0FLWlWIi+K8kAR5L726bvLT/84
+	ho5cOiASAULFqck+HuQtm6pM7eyL93uocd9dmB1zjfFAaf+N7cD0Ci8pq7aW2l1TlfkjaYot9bCRy
+	6WxuGpbHr3B6DNe8wxblDLPq/SuD3agsQO+hog/NAT3bkFjuXKoYVnhfdT3YkMRaAGRWPmhSxIBur
+	v54rsLMSPWgvG96visEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDVog-0000KX-Nn; Thu, 26 Sep 2019 15:36:26 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iDVr5-00012A-1U; Thu, 26 Sep 2019 15:38:55 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDVoQ-0000Ez-8J
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 15:36:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=uAwy68EBZ+WrFk18SUph66dAQKMcbtYPjR8HT7qhx0U=; b=v5EjcodX+DDYtZVC73ZrRDKTv
- Law3lHGDqKvv/DuA/ybW7hpqoyRp8b67l6kGkzqF5w3Cpl6OhMcwQ/d7PNXXOy4QdP19lD1Z/FAHY
- 7k04JuKGO9slt2XSKqRXjO4U2vSVUX5g4Jieq5ALG4E0frC/HksY3OlnURO2rzcmSqc7CJw8bInxf
- t8qt/zPzhj2O6TOUHp0xEnZCSmVUc1kS9HfT8BOYcEYddyZUsPUw/vpO60OM3jFlAM0zU3ZTNebeS
- 2IJTX0Bmi+ZpgOk6/MDTXSGIr5z5k4L2mNfZcgvEbtXleqF5l7BxqwjnXjmfMxZp9cHtwJjFOzfvn
- BP7LnGAqg==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:36844)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1iDVo2-00072Q-Mf; Thu, 26 Sep 2019 16:35:46 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iDVny-0003K7-Va; Thu, 26 Sep 2019 16:35:42 +0100
-Date: Thu, 26 Sep 2019 16:35:42 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Hui Song <hui.song_1@nxp.com>
-Subject: Re: [PATCH v5] gpio/mpc8xxx: change irq handler from chained to normal
-Message-ID: <20190926153542.GE25745@shell.armlinux.org.uk>
-References: <20190916055817.43425-1-hui.song_1@nxp.com>
+ id 1iDVqu-00011K-2N; Thu, 26 Sep 2019 15:38:45 +0000
+Received: by mail-io1-xd44.google.com with SMTP id b136so7762058iof.3;
+ Thu, 26 Sep 2019 08:38:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Li57q73MX1RVx23YfgpvWF5w0x4ow2nEwbE6KvqKXw4=;
+ b=ddZiXkOGcNyt3yIpQx4T3/Gj0lMxo5fD6jC8orTuZHFI28MUf8nRRhWDRT3KHHhPSL
+ 2QkgJq3B3CkBEs2qVqnO2XzZ/b3xh0C5DItoQmeyhM7ZssdZUem0rhRUJRkkwSEPuqhb
+ TsfJnifEzBgUSl6rNTR6Y/I2+QwUfSAfrIXzYsLw6zlKsb4ORWAJKTPEGEaz6/z2Rrjj
+ grlrAU5A1pz8Td00+qZCozRZVZZTVsLUU1RticRT0EcsJ+s0Plpjbpu5nuzCJcIz9FmW
+ isHVVt8SUg33ne8/OYfOzsug+Y6qdnVxsb6lh7qYLCuzfIGgUWWjX5c1x0HLg9PR8gQ9
+ I1MQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Li57q73MX1RVx23YfgpvWF5w0x4ow2nEwbE6KvqKXw4=;
+ b=dzDsidgm+U4jOTHgvHlMmYqNVnkz/2jwZKSmfbN+v5Jgylp/oQ4o9LIjwKJN3HSeM6
+ ecY+3uzR/8dN3AG3hoItsATgQ08wphDm2ydFF2mKp2wlsFHs5KizpCfGvSes35tOiTRb
+ O+B4Fv2GeLSNr6wEMep1/XN+Oh7NcNwt4S1Fro1TrbLTkmF7hvzUYUJb7UXdra+0BL8C
+ A3KCNsL3FOmzCT9T+PpD24H86ff6pCIYrZbg8YcS1ABaXQi6ARCukZMT8sP7Askh2J48
+ 2g6i/vPe1mbt2PFx2fcQBAPUnTAx6I/AXaMglIseklo2KTZrgyQozG59ze3Wr72n8MhV
+ YZJA==
+X-Gm-Message-State: APjAAAWmhGnNRLUnjqMkIqTfcWXXaVCu00OZ8e2JqcyzcqeaI+ws/abA
+ 0lF3fTATkLmIGMOs+KODHzIlrjuXtU0wlqhvNng=
+X-Google-Smtp-Source: APXvYqz8oVdb4PXIBRw7lIbY55HKL5mDby64gFcwc20gU6l9i2bzFhmg5ZIz7Rt3qIXsTSJXHdzLp4EDv7kKxqLjQbg=
+X-Received: by 2002:a02:e47:: with SMTP id 68mr4042317jae.126.1569512323132;
+ Thu, 26 Sep 2019 08:38:43 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190916055817.43425-1-hui.song_1@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190906122044.372-1-linux.amoon@gmail.com>
+In-Reply-To: <20190906122044.372-1-linux.amoon@gmail.com>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Thu, 26 Sep 2019 21:08:31 +0530
+Message-ID: <CANAwSgT-RDicoTxe1574_0KhCJ0=JpRGXydjGPdedJ+sULRfpA@mail.gmail.com>
+Subject: Re: [PATCHv3-next 0/3] Odroid c2 missing regulator linking
+To: Rob Herring <robh+dt@kernel.org>, 
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Jerome Brunet <jbrunet@baylibre.com>, 
+ Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_083610_302985_3273C9D1 
-X-CRM114-Status: GOOD (  22.33  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190926_083844_139721_5C1B5FDC 
+X-CRM114-Status: GOOD (  10.24  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (linux.amoon[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -86,132 +93,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-gpio@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Linux Kernel <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-amlogic@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 16, 2019 at 01:58:17PM +0800, Hui Song wrote:
-> From: Song Hui <hui.song_1@nxp.com>
-> 
-> More than one gpio controllers can share one interrupt, change the
-> driver to request shared irq.
-> 
-> Signed-off-by: Laurentiu Tudor <Laurentiu.Tudor@nxp.com>
-> Signed-off-by: Alex Marginean <alexandru.marginean@nxp.com>
-> Signed-off-by: Song Hui <hui.song_1@nxp.com>
+Hi Kevin,
 
-While this will work, it will mess up userspace accounting of the
-number of interrupts per second in tools such as vmstat.  The reason
-is that for every GPIO interrupt, /proc/interrupts records the count
-against GIC interrupt 68 or 69, as well as the GPIO itself.  So, for
-every GPIO interrupt, the total number of interrupts that the system
-has seen increments by two.
+On Fri, 6 Sep 2019 at 17:50, Anand Moon <linux.amoon@gmail.com> wrote:
+>
+> Below small changes help re-configure or fix missing inter linking
+> of regulator node.
+>
+> Re-based on linux-next-20190904
+> Changes from previous patch's series.
+> Build using Cross Compiler.
+>
+> Added missing Reviewed-by Neil's and Martin.
+> Added few suggestion from martin for rename of node.
+>
+> Dependencies:
+> Changes based top on my previous usb fix series patch's.
+>
+> [0] https://patchwork.kernel.org/patch/11113095/
+> [1] https://patchwork.kernel.org/patch/11113099/
+> [3] https://patchwork.kernel.org/patch/11113103/
+>
+> Hope this series get picked up for 5.4-rc1, finger crossed.
+>
+> Changes for previous changes.
+> Fix some typo.
+> Updated few patches as per Martin's suggestion.
+>
+> I will try to commit less mistake in the future.
+>
+> Best Regards
+> -Anand
+>
 
-If we don't care about accurate interrupt statistics, then this is
-fine, but I think it should be mentioned in the commit message.
+Gentle ping for this series.
 
-> ---
-> Changes in v5:
-> 	- add traverse every bit function.
-> Changes in v4:
-> 	- convert 'pr_err' to 'dev_err'.
-> Changes in v3:
-> 	- update the patch description.
-> Changes in v2:
-> 	- delete the compatible of ls1088a.
->  drivers/gpio/gpio-mpc8xxx.c | 30 +++++++++++++++++++-----------
->  1 file changed, 19 insertions(+), 11 deletions(-)
-> 
-> diff --git a/drivers/gpio/gpio-mpc8xxx.c b/drivers/gpio/gpio-mpc8xxx.c
-> index 16a47de..3a06ca9 100644
-> --- a/drivers/gpio/gpio-mpc8xxx.c
-> +++ b/drivers/gpio/gpio-mpc8xxx.c
-> @@ -22,6 +22,7 @@
->  #include <linux/irq.h>
->  #include <linux/gpio/driver.h>
->  #include <linux/bitops.h>
-> +#include <linux/interrupt.h>
->  
->  #define MPC8XXX_GPIO_PINS	32
->  
-> @@ -127,20 +128,20 @@ static int mpc8xxx_gpio_to_irq(struct gpio_chip *gc, unsigned offset)
->  		return -ENXIO;
->  }
->  
-> -static void mpc8xxx_gpio_irq_cascade(struct irq_desc *desc)
-> +static irqreturn_t mpc8xxx_gpio_irq_cascade(int irq, void *data)
->  {
-> -	struct mpc8xxx_gpio_chip *mpc8xxx_gc = irq_desc_get_handler_data(desc);
-> -	struct irq_chip *chip = irq_desc_get_chip(desc);
-> +	struct mpc8xxx_gpio_chip *mpc8xxx_gc = (struct mpc8xxx_gpio_chip *)data;
->  	struct gpio_chip *gc = &mpc8xxx_gc->gc;
->  	unsigned int mask;
-> +	int i;
->  
->  	mask = gc->read_reg(mpc8xxx_gc->regs + GPIO_IER)
->  		& gc->read_reg(mpc8xxx_gc->regs + GPIO_IMR);
-> -	if (mask)
-> +	for_each_set_bit(i, &mask, 32)
->  		generic_handle_irq(irq_linear_revmap(mpc8xxx_gc->irq,
-> -						     32 - ffs(mask)));
-> -	if (chip->irq_eoi)
-> -		chip->irq_eoi(&desc->irq_data);
-> +						     31 - i));
-> +
-> +	return IRQ_HANDLED;
->  }
->  
->  static void mpc8xxx_irq_unmask(struct irq_data *d)
-> @@ -388,8 +389,8 @@ static int mpc8xxx_probe(struct platform_device *pdev)
->  
->  	ret = gpiochip_add_data(gc, mpc8xxx_gc);
->  	if (ret) {
-> -		pr_err("%pOF: GPIO chip registration failed with status %d\n",
-> -		       np, ret);
-> +		dev_err(&pdev->dev, "%pOF: GPIO chip registration failed with status %d\n",
-> +			np, ret);
->  		goto err;
->  	}
->  
-> @@ -409,8 +410,15 @@ static int mpc8xxx_probe(struct platform_device *pdev)
->  	if (devtype->gpio_dir_in_init)
->  		devtype->gpio_dir_in_init(gc);
->  
-> -	irq_set_chained_handler_and_data(mpc8xxx_gc->irqn,
-> -					 mpc8xxx_gpio_irq_cascade, mpc8xxx_gc);
-> +	ret = request_irq(mpc8xxx_gc->irqn, mpc8xxx_gpio_irq_cascade,
-> +			  IRQF_NO_THREAD | IRQF_SHARED, "gpio-cascade",
-> +			  mpc8xxx_gc);
-> +	if (ret) {
-> +		dev_err(&pdev->dev, "%s: failed to request_irq(%d), ret = %d\n",
-> +			np->full_name, mpc8xxx_gc->irqn, ret);
-> +		goto err;
-> +	}
-> +
->  	return 0;
->  err:
->  	iounmap(mpc8xxx_gc->regs);
-> -- 
-> 2.9.5
-> 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+Best Regards
+-Anand
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+> Anand Moon (3):
+>   arm64: dts: meson: odroid-c2: Add missing regulator linked to P5V0
+>     regulator
+>   arm64: dts: meson: odroid-c2: Add missing regulator linked to
+>     VDDIO_AO3V3 regulator
+>   arm64: dts: meson: odroid-c2: Add missing regulator linked to HDMI
+>     supply
+>
+>  .../boot/dts/amlogic/meson-gxbb-odroidc2.dts  | 53 +++++++++++++++++--
+>  1 file changed, 50 insertions(+), 3 deletions(-)
+>
+> --
+> 2.23.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
