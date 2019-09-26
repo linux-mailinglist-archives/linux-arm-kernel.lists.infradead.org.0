@@ -2,137 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA6CFBF0A1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 12:56:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37AD3BF0A5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Sep 2019 12:57:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w0/KeTdMw7OsJddCySQ/Rx3ra6xfTK59iK+yr0/VJTQ=; b=e4CpEMJ8ZyEZXI
-	MQ7i1KYPXFhXyEP1BbzcO1KqhCgWdB6bDUi0aaX+Sng7m81kzJveWZTiaeDTI/Q8Hd+JLeoUwMvUS
-	NURB1tcGkrffluOKZ4nZx505+vgskOB0d2NrhimL6FNJp8tQY0CXUebSNz0M5slN+ekfgNryEmgsv
-	pHymChHvE10LY7zZcJ4Xr0JR7Mfogwf/ln4teDKcd83BrTFxddPRfugkbmTkvsvryO4rf6vaz5Hto
-	k2T0yd4dXVuk4kYPoGj/5w9v41cGdNwPq/LqILNe/BLl8tCUZxqEVzc7DAgkdCXLOtDBt/Sv1Pl92
-	WAOMaelRJDs+oT8hiaNA==;
+	List-Owner; bh=BLUW2ciTVsoJ1ywRT00je8tHl1qxPbJ2nVx8Ne/0PUM=; b=VIVB+7PAmo3BMK
+	13Og1SpaJfaJ2MAEH5cd5C473hplPhJ4jrCoDOdUodJzvgsXXrLJZVQ9HR94dOEF/wYexjrH3UN8A
+	tZSa73Jlb+ibpw/3U3O0zAM3vGeQyBeyIkszWEO0JanhYgIpuLXHyeUegoS5VnObOkL8gQPoXofNb
+	Z03dCSakiBLyzXrB49ke92LVajrLKhN1wCvbnXh3os6AZ/q8yPy+cFps5juDA09oZhn4iPFrPoaoJ
+	eCNRywSYSXB7lEzi3HVcLNQZb+mgwS2lE7+rg2l/SbAxjmzlxalnDRQpByQJp3lAeXnM8eGdSeigE
+	0Jml5AvMARU0P4So4WpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDRRw-0004Ka-3Z; Thu, 26 Sep 2019 10:56:40 +0000
-Received: from mx0a-00128a01.pphosted.com ([148.163.135.77])
+	id 1iDRS7-0004Wz-BJ; Thu, 26 Sep 2019 10:56:51 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDROU-0007NP-1P
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 10:53:08 +0000
-Received: from pps.filterd (m0167089.ppops.net [127.0.0.1])
- by mx0a-00128a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x8QAqdX9002555; Thu, 26 Sep 2019 06:53:03 -0400
-Received: from nam01-sn1-obe.outbound.protection.outlook.com
- (mail-sn1nam01lp2053.outbound.protection.outlook.com [104.47.32.53])
- by mx0a-00128a01.pphosted.com with ESMTP id 2v6hjwy81m-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Thu, 26 Sep 2019 06:53:02 -0400
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=EKSl4n0YPLkUt72zZb/+mZBRoeCwuRso5EiibWhRe/7s31ePgVUkRyOW+zgwQlV+YorvCHRGHX49xxSUoxs88qDCWeD6lqOid1Ec8MYLMOgWQJ1VLz/z9GR563MFA2feKdY89v8eFpWl1+L91D0vqP6zisyx8EkM7Joo2uwpw/pEp+vejrDDM2sXSluO8r6pUMc8Mj50SQkWZtS+qtpsGdU6HP2KNLkm54UnknMOv1mKxyEHJQLl9DdaX7iv7w6UfhT2bV/n6SUllqzir+rmWIdEbOBuiDZwvAv9LFPwP1XHlMmmnMxmqx0HAbIO8nwuXGWsPRhXBQ7MZdGba/LLLw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=up797fUmJmr8mxk7XBoVCZkF3leVVxVqShL+Y1oR7d8=;
- b=cO/z6CcF22BFEo9LPQ+DXrN9oAidACnEDnUPwf+rRQPZhVf/W95b8Hel04NndNDMj/bwqA1Q45TZBMkr4GwUMUgjMTryplhuSF5YSoSu5bfVTLEj+i6D7l5vZsm1k4Dw+h96/6NZBj7SgkjF60ucVz3vzc/JrjXVkuKZMBJvVTCWV3jofok/Lf8y0mlGPJT67QxQzhpzav3kfmNPYW0x4YMsaZUT8ub6ixBEnoI2UoybgeH53jUy4I7zTUtHS0umeuzTc+ITHmwQ6rvQOR4b0c9LnaHEq9sSNbe61ufNl+A29/y/dnhEfU2KmNwdBNsGrbYTQ3Uy4B6y9lBObHgwpA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 137.71.25.57) smtp.rcpttodomain=lists.infradead.org smtp.mailfrom=analog.com; 
- dmarc=bestguesspass action=none header.from=analog.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=analog.onmicrosoft.com; s=selector2-analog-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=up797fUmJmr8mxk7XBoVCZkF3leVVxVqShL+Y1oR7d8=;
- b=RmPEwbWS37F5ODyf4zyKloCU6nSnJra7vsFe+6b2N8qXOV9Zk3C92z5r7S5aEthPv6xDAUYFdmj0GvvPmsn4MTJZYBpWJKTmFmpTLgqAdVdckdwq3QqX5D+EGE6W4OUBbw4g0Qa3kLjzX5BT/8pN96lBkY/KPrbUBXZ6xcYcoqU=
-Received: from BN6PR03CA0099.namprd03.prod.outlook.com (2603:10b6:404:10::13)
- by BN8PR03MB5041.namprd03.prod.outlook.com (2603:10b6:408:d8::17)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2284.20; Thu, 26 Sep
- 2019 10:53:01 +0000
-Received: from SN1NAM02FT041.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e44::209) by BN6PR03CA0099.outlook.office365.com
- (2603:10b6:404:10::13) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2305.16 via Frontend
- Transport; Thu, 26 Sep 2019 10:53:01 +0000
-Received-SPF: Pass (protection.outlook.com: domain of analog.com designates
- 137.71.25.57 as permitted sender) receiver=protection.outlook.com;
- client-ip=137.71.25.57; helo=nwd2mta2.analog.com;
-Received: from nwd2mta2.analog.com (137.71.25.57) by
- SN1NAM02FT041.mail.protection.outlook.com (10.152.72.217) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2284.25
- via Frontend Transport; Thu, 26 Sep 2019 10:53:00 +0000
-Received: from NWD2HUBCAS7.ad.analog.com (nwd2hubcas7.ad.analog.com
- [10.64.69.107])
- by nwd2mta2.analog.com (8.13.8/8.13.8) with ESMTP id x8QAr0iF015043
- (version=TLSv1/SSLv3 cipher=AES256-SHA bits=256 verify=OK);
- Thu, 26 Sep 2019 03:53:00 -0700
-Received: from saturn.ad.analog.com (10.48.65.123) by
- NWD2HUBCAS7.ad.analog.com (10.64.69.107) with Microsoft SMTP Server id
- 14.3.408.0; Thu, 26 Sep 2019 06:53:00 -0400
-From: Alexandru Ardelean <alexandru.ardelean@analog.com>
-To: <bcm-kernel-feedback-list@broadcom.com>, <linux-iio@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <linux-spi@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-tegra@vger.kernel.org>
-Subject: [PATCH v4 19/19] spi: spi-axi: extend support for the `delay` field
-Date: Thu, 26 Sep 2019 13:51:47 +0300
-Message-ID: <20190926105147.7839-20-alexandru.ardelean@analog.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190926105147.7839-1-alexandru.ardelean@analog.com>
-References: <20190926105147.7839-1-alexandru.ardelean@analog.com>
+ id 1iDROj-0007fB-HJ; Thu, 26 Sep 2019 10:53:23 +0000
+Received: by mail-io1-xd44.google.com with SMTP id c25so5206553iot.12;
+ Thu, 26 Sep 2019 03:53:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=07TZjLhLzFQD/d/peiuV+KiApqHJ0vC82cYd9ZCGW3I=;
+ b=lIBa6S8No25wVSZ5OCudotLs3QnSkUDyAEFTtWdhBSUVnDRrlkXvLDgFtxtXdNmehK
+ dAzU29e+4ePHpmLtLt0IwEaGXkMIyzPU7A698T3pNHzZAWSSYgjwoFL6rsjhY2DJIKDM
+ PRVDHjGrpJNvmdprSqaC12xs6qQvoWFnLKRKXm9vdPWLiS9Q4Cx7yWE5EOpecBzXzi+n
+ CpkVfEMgEu3JFob6ios7fRsgDRzLhMDxBPgs6Vf+/vqD5gh9mmpetrt0ZXZNKv4Mo9b0
+ SvPrUE3Eowl0FKu+rabY1pbjGQ/uGk4fU+zZLVjV4/c+fCaLpzeXzXbliXzUp+7Bh5h3
+ eLzQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=07TZjLhLzFQD/d/peiuV+KiApqHJ0vC82cYd9ZCGW3I=;
+ b=mukhzqdqtik85FpUrKTHcwdJZUMQe2lHVcT0OsNyZ/MmNuoKNVGRnnxfimVfQlQsrc
+ pf5SLzKsvwEFbSmBVgniaJOWvxzEALyqYdU6WmqNwQZyvtV/RKd3RHGsmhGmzUSp6ovp
+ iduN4v17taOa0hwi8RN7oJsG9dHGtbWhku/RXZkv2T2fva5oUsTRR0lR8ede8L8xB9bY
+ KXhfqRTUxGhG9aj+wkTJHI8t5S0HxyiQQ4QHpMMuXpXIGb5obT3riwnZTPI8waS8fNdR
+ 0RVGONvSwE2BPq5feMK1iMezZChYExxGNHzG0kjdQvO5as+H/7bG7R/HAFCf9iozt1ge
+ w2GQ==
+X-Gm-Message-State: APjAAAVGRm7QuXjk/bev9xqMGl6XxxkxOMJ+tcZ8O6uy+dzBoq3Rb0R8
+ g4Zz5Co9mWb781U95XdnG/4/3FlOsqpwki5HXpE=
+X-Google-Smtp-Source: APXvYqxN48IwDqdlkhPJvWfp5fy13UB08I+go8HDZg/Y1UhOHe3uy98kP5lBC01mtdXruP+pH7sTAHjdETKxcLhv7is=
+X-Received: by 2002:a6b:fe11:: with SMTP id x17mr2916340ioh.6.1569495200143;
+ Thu, 26 Sep 2019 03:53:20 -0700 (PDT)
 MIME-Version: 1.0
-X-ADIRoutedOnPrem: True
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:137.71.25.57; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(346002)(136003)(396003)(39860400002)(376002)(189003)(199004)(47776003)(36756003)(1076003)(5660300002)(356004)(6666004)(70586007)(70206006)(2201001)(86362001)(50466002)(107886003)(4326008)(426003)(76176011)(246002)(8936002)(305945005)(51416003)(7696005)(7636002)(8676002)(478600001)(106002)(476003)(11346002)(446003)(336012)(486006)(126002)(2616005)(186003)(2870700001)(26005)(2906002)(54906003)(110136005)(316002)(48376002)(7416002)(50226002)(44832011)(81973001)(2101003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BN8PR03MB5041; H:nwd2mta2.analog.com; FPR:;
- SPF:Pass; LANG:en; PTR:nwd2mail11.analog.com; MX:1; A:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: f4ac0901-315a-4c45-fa61-08d7426fb322
-X-Microsoft-Antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600167)(711020)(4605104)(4709080)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328);
- SRVR:BN8PR03MB5041; 
-X-MS-TrafficTypeDiagnostic: BN8PR03MB5041:
-X-Microsoft-Antispam-PRVS: <BN8PR03MB50419E9860DC759C09D25264F9860@BN8PR03MB5041.namprd03.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:6430;
-X-Forefront-PRVS: 0172F0EF77
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: dNDNWcgcjGpxgeOh6yaA00CMdmbPs2AFT0h4cVxEmSpLDWmSH7JeCX3/aGbe1pZrXD7R8La2OlAamdi9LLXnm+oMGd+fisVlKFftHrhmJn1uBdgGyJHm4ZGMY60wc/WbgGjXxjUJD4IErAuiaL3u+1wUR2wllApBoeFctz40C9kbC3oKuCPDFfpov++c7q/7DDMs+PcVJKjgbHfcZjcTMmE16okXQbVkU4sG59jq5kdwivwhf4krAUQN6a4+k9VjBmdvXzuhahzz4t7XL5MNDig7GvJNywHcC8ySzAusqHljo+9yO0/v6qX9e4NeZTDv3j18AIBJ90LlvGrmpqDsv4ahCecru+6QWypwXWFiUReNN7XZ22k5w1AQvp1WexrPTKkAo2EZhXhWvlesJnoyif+IvyGjnPUxkxxbanvX68E=
-X-OriginatorOrg: analog.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Sep 2019 10:53:00.9130 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: f4ac0901-315a-4c45-fa61-08d7426fb322
-X-MS-Exchange-CrossTenant-Id: eaa689b4-8f87-40e0-9c6f-7228de4d754a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=eaa689b4-8f87-40e0-9c6f-7228de4d754a; Ip=[137.71.25.57];
- Helo=[nwd2mta2.analog.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR03MB5041
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
- definitions=2019-09-26_05:2019-09-25,2019-09-26 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0
- priorityscore=1501 mlxlogscore=999 mlxscore=0 adultscore=0 spamscore=0
- malwarescore=0 phishscore=0 impostorscore=0 lowpriorityscore=0
- suspectscore=0 clxscore=1015 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-1908290000 definitions=main-1909260103
+References: <20190902054935.4899-1-linux.amoon@gmail.com>
+ <7ha7asuj6q.fsf@baylibre.com>
+In-Reply-To: <7ha7asuj6q.fsf@baylibre.com>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Thu, 26 Sep 2019 16:23:08 +0530
+Message-ID: <CANAwSgSvPmtzCzbaLC6LOfov9e32V9koUhF=5VAaKO87EHKw8A@mail.gmail.com>
+Subject: Re: [PATCHv4-next 0/3] Odroid c2 usb fixs rebase on linux-next
+To: Kevin Hilman <khilman@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_035306_132049_B9E51324 
-X-CRM114-Status: GOOD (  12.26  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190926_035321_610537_AA041631 
+X-CRM114-Status: UNSURE (   9.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.135.77 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (linux.amoon[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -144,64 +92,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, baolin.wang@linaro.org, zhang.lyra@gmail.com,
- linus.walleij@linaro.org, broonie@kernel.org, orsonzhai@gmail.com,
- Alexandru Ardelean <alexandru.ardelean@analog.com>, jic23@kernel.org
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Linux Kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-amlogic@lists.infradead.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The AXI SPI engine driver uses the `delay_usecs` field from `spi_transfer`
-to configure delays, which the controller will execute.
-This change extends the logic to also include the `delay` value, in case it
-is used (instead if `delay_usecs`).
+Hi Kevin,
 
-Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
----
- drivers/spi/spi-axi-spi-engine.c | 16 +++++++++++++---
- 1 file changed, 13 insertions(+), 3 deletions(-)
+On Thu, 26 Sep 2019 at 03:34, Kevin Hilman <khilman@baylibre.com> wrote:
+>
+> Anand Moon <linux.amoon@gmail.com> writes:
+>
+> > Some time ago I had tired to enable usb bus 1 for Odroid C2/C1
+> > but it's look like some more work is needed to u-boot and
+> > usb_phy driver to initialize this port.
+> >
+> > Below patches tries to address the issue regarding usb bus 2 (4 port)
+> > while disable the usb bus 1 on this board.
+> >
+> > Previous patch
+> > [0] https://lkml.org/lkml/2019/1/29/325
+> >
+> > Re send below series based re based on linux-next-20190830.
+> > For review and testing.
+> >
+> > [1] https://patchwork.kernel.org/cover/11113091/
+> >
+> > Small changes from previous series.
+> > Fix the commit message for patch 1
+>
+> Queued for v5.5.
+>
+> I fixed up the typo in patch 2/3 when applying as suggested by Martin.
+>
+> Kevin
 
-diff --git a/drivers/spi/spi-axi-spi-engine.c b/drivers/spi/spi-axi-spi-engine.c
-index 3b1833e6c7ad..111d3b83285f 100644
---- a/drivers/spi/spi-axi-spi-engine.c
-+++ b/drivers/spi/spi-axi-spi-engine.c
-@@ -163,10 +163,21 @@ static void spi_engine_gen_xfer(struct spi_engine_program *p, bool dry,
- }
- 
- static void spi_engine_gen_sleep(struct spi_engine_program *p, bool dry,
--	struct spi_engine *spi_engine, unsigned int clk_div, unsigned int delay)
-+	struct spi_engine *spi_engine, unsigned int clk_div,
-+	struct spi_transfer *xfer)
- {
- 	unsigned int spi_clk = clk_get_rate(spi_engine->ref_clk);
- 	unsigned int t;
-+	int delay;
-+
-+	if (xfer->delay_usecs) {
-+		delay = xfer->delay_usecs;
-+	} else {
-+		delay = spi_delay_to_ns(&xfer->delay, xfer);
-+		if (delay < 0)
-+			return;
-+		delay /= 1000;
-+	}
- 
- 	if (delay == 0)
- 		return;
-@@ -218,8 +229,7 @@ static int spi_engine_compile_message(struct spi_engine *spi_engine,
- 			spi_engine_gen_cs(p, dry, spi, true);
- 
- 		spi_engine_gen_xfer(p, dry, xfer);
--		spi_engine_gen_sleep(p, dry, spi_engine, clk_div,
--			xfer->delay_usecs);
-+		spi_engine_gen_sleep(p, dry, spi_engine, clk_div, xfer);
- 
- 		cs_change = xfer->cs_change;
- 		if (list_is_last(&xfer->transfer_list, &msg->transfers))
--- 
-2.20.1
+Thanks,
 
+Best Regards
+-Anand
 
 _______________________________________________
 linux-arm-kernel mailing list
