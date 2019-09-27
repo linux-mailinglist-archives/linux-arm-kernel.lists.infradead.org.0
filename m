@@ -2,91 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9341EC09B1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 18:39:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74BA8C09C6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 18:45:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Y9OfHHxPlDTUFCcMgdveMcjhhOnU29zY9dfd+ecDN9M=; b=Cu6WI00eHRIJYENnkk0nq/zvg4
-	vWJFpZE3PormN3F6LFFsJgShVB+Jo0WRRMd6P0w+QB9sAu9AkqhXNssG5Nu5im5+bTWGipgxlXJZC
-	358DDnN/le6qRRu8gr9cX54yDUuTraXi6eXC24w88BggZjyQ02eD3VWPjYW5ybVlv3FhO2xqNLbjg
-	vKFXiK3cj1huAuG/fbmjRWMTmQdZldiy53aZnIHzLvIrl0YPG4WhjJ7ES0+rcAaeuJWIQOhdhk13m
-	T5MJfBAY4QFwwVt2gt6fQZjolh9b7ydISdTan+sqaVcWfTnCiRv2e2k5sEvMET9YnR+pEiu7Ysa22
-	rAB9zcyw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=s+p3IaK5bQuM0/+8m6ler/bqQBnjSU+pb24CozwyWmc=; b=ltZLRW6AtBT7zX
+	FG98JRbGb1yi6SjelezcTAjtvFIF6XBV0Jnx/CVnzPUKF4mpD7bKLGB80hLijFk6wjsEER6sRnNCN
+	QCQssVDt9Qb+K0cZEtiRyxlXiZraRmwqMJcXewifnj8IFV0sBgoGThHFZPFuLdGepTpq4okQ+TR05
+	eoLwxnJJYG0JwX7YfCM945PA/zNFsaZTajibkfOgs2OOoYjcXbzSdEnd+3X4dmUimQ8PbLdSrudfr
+	In17m7CLU9fKsxMeIF+yRBPVckZ+j092xMFIDQZgWItD2wSZkdJ6uq4oU6N5Vo+uDQC5SHy+O14nk
+	21S8H3sZvYCis+69OMUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDtGo-0002NH-GD; Fri, 27 Sep 2019 16:39:02 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iDtMr-0004dQ-Sc; Fri, 27 Sep 2019 16:45:17 +0000
+Received: from mout.gmx.net ([212.227.15.19])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDtGb-0002M6-FE
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 16:38:51 +0000
-Received: by mail-wr1-x444.google.com with SMTP id b9so3924671wrs.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 27 Sep 2019 09:38:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=H9qpcAXROEOSHATHIODGl5R6XLJmU3Nit6aFPlUl9PY=;
- b=vlJH88ijYnpukf4ZiGFC3tgXvxD1NRCykGaXRu7yCbSTKpcKP3ety0gptHFmz1x+9A
- R/Zij0mk9nhPfjOY+LKUIwqed8VuCJy6QuPiI87ofhmDeo6H6oLRNVsZ5zE71JbcpYs7
- uc7+vzjvAFtQ712pTxhRUUUTQcZwPb4HlY/iTEal88bUJii40H23wDmbW1J9zCSWVHGO
- 4dLbPL+BvvZoXBrCGsugMVLtvI/uFbz+gafElcBGJnTW7LkFpuxjK4NBrzMpXkDvwg/i
- zRdsMSnPa1NibDmYOg/w0WIKy76RjgF1OahTmnNR5MoE/6qCzo8Gl5LJSwGSRso85PN5
- DL2A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=H9qpcAXROEOSHATHIODGl5R6XLJmU3Nit6aFPlUl9PY=;
- b=IaAu4Sr1wXLuBny/m2c5Vyj3FWne+/0vH3f4cRRQENm6ZRM92ZggM+K6tty8YufUpF
- YMOpGyevDRlUUH/36UHQPdwcxvdzdzv+FJnSrL+IcTXldS4Qt6cvAwkDU+o9PTPFLvkR
- lvkq906t621B4u6Smg4jNKUZpXeQhi4jCCvUk7ct9pR39q5r6859yKbM7NjO9dlCAM/l
- ZF574poLDZUc4OXganuodIiE6PgoHN5ZoXtdY8mb13dtA25UQ1EvHKW8Kwi4fuLcXJJ7
- iQ46cYkOwq0qK1YUodCZh3dhAQRrqKaqA5w3XAPL0SrwJm2bIBuFiW3mmw0yDGr05GhD
- kHeA==
-X-Gm-Message-State: APjAAAW4nUwdOd/Ps51aaKUU/eICABgDhrcTrI4swO/bKz18ci3g6BiI
- 3r36TMeUsn2dyNA8g4PjgLXb4Q==
-X-Google-Smtp-Source: APXvYqyOToIhXgMB3p4wq1eYwswK4+ABcMmXeNT+QmoldWbGpxe9NmpO0SA2ZuMkhyc8J4VZ7vGPAw==
-X-Received: by 2002:adf:f547:: with SMTP id j7mr3872939wrp.119.1569602327457; 
- Fri, 27 Sep 2019 09:38:47 -0700 (PDT)
-Received: from localhost (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id j1sm6587771wrg.24.2019.09.27.09.38.46
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 27 Sep 2019 09:38:46 -0700 (PDT)
-References: <20190919102518.25126-1-narmstrong@baylibre.com>
- <20190919102518.25126-2-narmstrong@baylibre.com>
- <20190927001425.DFDC7207FF@mail.kernel.org>
- <8486dec0-8aea-ea39-2a52-7347a01c5c40@baylibre.com>
-User-agent: mu4e 1.3.3; emacs 26.2
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Neil Armstrong <narmstrong@baylibre.com>, Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH RFC 1/2] clk: introduce clk_invalidate_rate()
-In-reply-to: <8486dec0-8aea-ea39-2a52-7347a01c5c40@baylibre.com>
-Date: Fri, 27 Sep 2019 18:38:45 +0200
-Message-ID: <1jef011yp6.fsf@starbuckisacylon.baylibre.com>
+ id 1iDtMV-0004bY-HF; Fri, 27 Sep 2019 16:44:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1569602654;
+ bh=DnxB2XCmGvJObcSaLlopxB4cyyh+MAVL8+GfZb+jQNw=;
+ h=X-UI-Sender-Class:Subject:From:To:Cc:References:Date:In-Reply-To;
+ b=SUVgohEG8JLFdtNXYaIPDgzKzJlLO7xSeWO4tdda4nErIJVkfzVuXo9Bn8jT3THlU
+ QGH60qfzmCPgSQzcnJJVnAJbODakR2q8tmC8jwWxZAQN67uYU2Vi8eMwAX0FEvbSV4
+ aG1xekL/psx7EJFPyCM747e/BZngadqDGpJX/hmI=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.162] ([37.4.249.130]) by mail.gmx.com (mrgmx005
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 1Mt75H-1huZDI3TtR-00tQDk; Fri, 27
+ Sep 2019 18:44:13 +0200
+Subject: Re: [PATCH v5 0/4] Raspberry Pi 4 DMA addressing support
+From: Stefan Wahren <wahrenst@gmx.net>
+To: Matthias Brugger <matthias.bgg@gmail.com>,
+ Matthias Brugger <mbrugger@suse.com>, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+References: <20190909095807.18709-1-nsaenzjulienne@suse.de>
+ <5a8af6e9-6b90-ce26-ebd7-9ee626c9fa0e@gmx.net>
+ <3f9af46e-2e1a-771f-57f2-86a53caaf94a@suse.com>
+ <09f82f88-a13a-b441-b723-7bb061a2f1e3@gmail.com>
+ <2c3e1ef3-0dba-9f79-52e2-314b6b500e14@gmx.net>
+ <4a6f965b-c988-5839-169f-9f24a0e7a567@suse.com>
+ <48a6b72d-d554-b563-5ed6-9a79db5fb4ab@gmx.net>
+ <2fcc5ad6-fa90-6565-e75c-d20b46965733@suse.com>
+ <3163f80b-72e5-5da8-0909-a8950d3669f7@gmx.net>
+ <a5073e16-c017-216c-72b4-0e861102c4e8@gmail.com>
+ <c7e6ab89-aaae-debc-5f63-2e091efcf76f@gmx.net>
+ <197ebc29-2e4d-fa2c-7ad4-1a83ce3f3eb4@gmail.com>
+ <5870dc40-331b-d4f1-3eef-e7c08d5326c5@i2se.com>
+Message-ID: <714dd32c-1478-ccbb-217b-c6928b94f685@gmx.net>
+Date: Fri, 27 Sep 2019 18:44:11 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <5870dc40-331b-d4f1-3eef-e7c08d5326c5@i2se.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:RmdvOSnEvTVNKHrJdG2Y78+fqqnATlPjmRNHT4KrdANZJeyEa+x
+ Awv0OQ+sBgJ8RVjUtemu2zZl/E+lBYF4B8GhETWGCLdt+D7Rzjd+URyTECKkbd7dcOFQFo4
+ /cGL4ZC75knf8TeOK9qpRvXc8FxykUKnZAMzgonV6surMlgXaKI/EkViTvQLp8YnfMhy9FL
+ M9mqSFpLdMHWszWrk8BTQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:W2R8wyBsDYM=:3zmsBCn9kFPX6ny7AHdHYy
+ aXhLcyrnpSCXmXDIFCKxsdX2RcqQ/refDjvzMYyGQBwzWbCioILlPHu6MKFYwUi/QxOpyisOp
+ bv2d5YAyWvDE0zU99oXTwJUSMFCGVWIJqVDNdTq2jMQ0whSeVy2yA06QkTBv1wGcd2CtMC+i3
+ VSvuMvIWRPJvW1ZN7nb6oo6Fg3lU6OuBVKgeQj8wUz8iNcA8j9klftBGjc+4sSdrSDcjIQ/y2
+ teWfwY9T68bq4W+Cn2GX9TaAfo7HPrp/LAK3v0RQjdnQFddbLM0sqbTmd9Ndztpg3CZijn/74
+ NAJtt6V/n+UfydjvZye8r/132UhHmrFl/Xc/+pzVRNIVHCzOdCQ0awzzqT1ehIQmhBzPzPSZX
+ dVP0L91be/2PeTMbHv1505Y22T8VF1g/bMLIWoxbQmbpAxrARyhzurYQz7SXq9gbxsSC7W7lm
+ 0cmQV5M6dY8a4KkPLx64bkhgDuqolgpVxqV4kHGKb0MOP2gyoTbDHkegbSPkYkF1JEeW/cQzu
+ eOJ5ahyinfcGYM0H3y02xRLONIEmO0YZgB18H8RZO4GF5vDl97TeDDsYuES8hD2bfNM6cqknF
+ jVL1lt2lMk6I1QgwnK7+SyHXM9pdLe7+HmOQU08JP+FjiaEHf9Vwb1RIie2bCHnkdfhBIuX8R
+ +ondMH2iTivtUVdEimSBbKtnUST9Sh09i5Xgktli4/jhwcorthmU+MtONLJpyWSLAzhMH3R/+
+ ZVyFBJg9LtbdCTYVy59htxsydpxgbLhLkVDtApkFxY7c/gHOmymN3VW/C87Gixu8OZE023RE3
+ S5R23BNL4cgvUz2rSq4hhGpyk1tO9dVyl2e2OuV1Zyo0gbLgCNE3HyMfOOmllOELfzz04i9U1
+ bmwiprFdDFwjsMkIc+9iYgBOSlhyTMFgqfKHNAZA24ST7T2RDcsxAAR4mk/3JvW7RrhTxdqln
+ 2I5m5lQoRWfteMrQQUAe9QPa1dBQ4l+cXKMiWIbPLoozs81/Ut/GtvzQzg8il0izM6ibz4WEO
+ uvkE9LLtDfp3k0eN+In4DjRnl18KxxsUf9g0cahvQI1PEmDqHYqQFyahRyFrZJgncFotV9Zl8
+ vo2HqrndOlHR85296DIt+opLm/0+URC3UfOjgx/nsqJbr+PgPyfcHxsipBwPkQ3Qp2iVUsyl8
+ q8LoutolkOLWh841jz+TIYA5S7y9yBpNt9ulYlXUlQ9NfJ6haLE2UsJ4y+y9kJAJJenIyXAVO
+ 7EbytgDnKN54eHJ77/fWkAR+3zNt15pviwEvc1Qr/PaYIwuHWbEJ8Ogv/hn8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190927_093849_546986_DE62D2D6 
-X-CRM114-Status: GOOD (  17.79  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190927_094455_905379_564843E3 
+X-CRM114-Status: UNSURE (   9.63  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.15.19 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,81 +116,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, mturquette@baylibre.com,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: f.fainelli@gmail.com, phil@raspberrypi.org,
+ linux-rpi-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Matthias,
 
-On Fri 27 Sep 2019 at 08:40, Neil Armstrong <narmstrong@baylibre.com> wrote:
-
-> On 27/09/2019 02:14, Stephen Boyd wrote:
->> Quoting Neil Armstrong (2019-09-19 03:25:17)
->>> This introduces the clk_invalidate_rate() call used to recalculate the
->>> rate and parent tree of a particular clock if it's known that the
->>> underlying registers set has been altered by the firmware, like from
->>> a suspend/resume handler running in trusted cpu mode.
+Am 17.09.19 um 20:03 schrieb Stefan Wahren:
+> Hi Matthias,
+>
+> Am 17.09.19 um 11:04 schrieb Matthias Brugger:
+>> On 16/09/2019 21:19, Stefan Wahren wrote:
+>>> Hi Matthias,
 >>>
->>> The call refreshes the actual parent and when changed, instructs CCF
->>> the parent has changed. Finally the call will recalculate the rate of
->>> each part of the tree to make sure the CCF cached tree is in sync with
->>> the hardware.
+>>> [drop uninvolved receiver]
 >>>
->>> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
->>> ---
->> 
->> The knee-jerk reaction to these patches is that it shouldn't be a
->> consumer API (i.e. taking a struct clk) but a provider API (i.e. taking
->> a struct clk_hw). I haven't looked in any more detail but just know that
->> it's a non-starter to be a consumer based API because we don't want
->> random consumers out there to be telling the CCF or provider drivers
->> that some clk has lost state and needs to be "refreshed".
->> 
->
-> Totally agree, I hesitated and obviously did the wrong choice, but
-> this is a nit, the main algorithm is not tied to the API level.
->
-> Should I resend it with clk_hw ? the difference will be small and
-> the main subject is the resync algorithm.
+>>> Am 13.09.19 um 12:39 schrieb Matthias Brugger:
+>>>
+>>> So my suggestion is to add bcm2711 compatibles in the downstream tree.
+>>>
+>> Ok, can you take care of it, or shall I send a pull request/open a bug?
+> I'll send a send a pull request and hope the RPi guys are happy with it.
 
-Independent of the point above (partly a least), I wonder what will
-happen in some particular use cases
+the pull request is prepared [1], but didn't had the time to test
+against U-Boot.
 
-* If clock is changed while in suspend. This clock can be a parent of
-  the clock invalidated but currently is not. What happen, if later,
-  it becomes the parent ?
+Stefan
 
-  Since it is not parent on resume it won't be invalidated. CCF might
-  still take a decision based on an invalid cached value.
-
-* If a mux is changed while in suspend, the parent is not correct
-  anymore. The proposed patch recurse through the parents, it might
-  not invalidate what we need/expect ... things are getting a bit
-  unpredictable
-
-IOW, this change take a leaf clock and tries to tell CCF that any parent
-of this clock should not be trusted, but it might get it wrong in some
-cases.
-
-I think we should do it in the opposite way:
- * Mark the "rogue" clock with a flag (CLK_REFRESH ?)
- * Let CCF update the children of these clocks based on the new status
-
-Back to Stephen point, I don't know which API it should be, but I
-think the platform (fw driver or power stuff - not only clock provider)
-should be able somehow to trigger the mechanism to let CCF know
-something sketchy may have happened.
-
-For the parameter, maybe there should not be any (no struct clk or
-clk_hw) ? Maybe it would better if we let CCF refresh all the "rogue"
-clocks ?
+[1] - https://github.com/raspberrypi/linux/pull/3244
 
 >
-> Neil
-
+> Btw the clk changes has been applied.
+>
+> Stefan
+>
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
