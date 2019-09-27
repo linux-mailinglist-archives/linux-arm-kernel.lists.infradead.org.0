@@ -2,95 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0277BC022A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 11:20:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DE92C0239
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 11:24:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3P+BqbXGPwdBD3sIyXtfjSAh+0AG0vPDU9ZgZ0g9mzI=; b=FlaWF0hsRy3pa0jwKZVcE4oWG
-	L7qRgjCom31upI+enTCjbTHoApLWxdB6YPkXEyNDgtgTxAKG+8ENL+VxAKNaoGTyx6donuuzk07JI
-	bi7c5hfKzrQKo07SltRO1eEPinziTv8qyvSCnu2qMyMVlXp95jO9rR94v3h0DiEWGQuW4o7ypwR19
-	/VDlmyxXfG+bo2B7jGdKoXFWQcOzGhP5APlxQzbBVVUHMebCxouR7/L/1yLvwIEigtxYWAS7aMuK6
-	TXZAl1lCKaX9LqNQ1Rth1sW4FxbaD/LbGz8uJ9FYjSYDgr6aZeDrYkZ4b70NydIMcCVui3Hg+T5Rj
-	bhlfRp5CQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Fwfkm/1mxfbA1dbWSk3CB0gNxhfncZXrLkxU8doG2Jo=; b=qy7kjSlDXdOLRn
+	msqaAhjzfRNFK5/tACOX/XwgcVglgpbWmt1O/2q00Ic05k3rAJVmrIWTpHTIrA+xeXVdlUPAzNeZ4
+	BR7Ibi62oTUnO9oqxJzIB1jRKsubdkDzkR1qWboKF/kiaaKnJi2wWqe6qiiTqjN+UXL/25Y1Y5zrY
+	J6ZGFenwHDt1ETzuQ3pAS+Sg3WslHlnhRJ4De5wNIBujyJUdBLczC+9932SX3mQDmFMHjmTRUazRc
+	dRi8x05HFdFgVNx6AnpENtdUXdoltduort/osVEQZBAp67KgY5brcoDpa+jqB0q6EWGNBinMqaQA5
+	xZOLQBfQIIKAB6Tn+Nlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDmQi-0005Dp-SJ; Fri, 27 Sep 2019 09:20:48 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1iDmUS-00066m-I1; Fri, 27 Sep 2019 09:24:40 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDmQY-0005D8-MU
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 09:20:39 +0000
-Received: by mail-lf1-x142.google.com with SMTP id u3so1365014lfl.10
+ id 1iDmUK-00065o-IM
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 09:24:34 +0000
+Received: by mail-oi1-f196.google.com with SMTP id x3so4654700oig.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 27 Sep 2019 02:20:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=cogentembedded-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=ZUJ1/Iwwp/mWKX1v6738rug/Uwulg67MH6fF2LkIHoU=;
- b=fYnQUV9aHYiNDRG0ybNWFU/6abt78WerVfUTzWshQ7e1bblOYhLBDafRZrDnXFV55j
- 5PJQgGUdwzn0Iy4m1el8QIV1iolOzPuYN8+EuXFNmCo4UL24h5Qng08HNEHJpI/E/ZKg
- 07tLg877fK5O/XHo9kLAzHdxN8xnw3Zso3rMnyu0SqQvM8/jFGnGsys3PStlTFcQJTDi
- 71kh9G7Cr3kOlRrNjt010xNmqHm/5tIAwYiiK4Ag/US4I/Xc39F4Kq6S+9Ivhs6ArJho
- FJduxbBX7qveLEe7UlrGWHtaMw5etZ3DtAP4BEoYARJQL843vFrcQi/99OAVbzyZDWkF
- MlyQ==
+ Fri, 27 Sep 2019 02:24:30 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=ZUJ1/Iwwp/mWKX1v6738rug/Uwulg67MH6fF2LkIHoU=;
- b=JF+MZLK7cdIEQi99L7Xp+Kikkgmx9hUGWxG7t9XNC/JmpM+fq1+gwSOxoenucPWwPz
- kxueEYHPRnPEtlFBMwcX/FusZthq1QNeNqK/r0bBVcexuf021NC3dz+OnTMKdr9eejkT
- 2MQi/shuh7J8SVhgQVf6MhGoVcogM61sU+68VBRSr+0hi/2h9cHu76aKPGDc0foWkXx7
- RzqF4B+FjFF4v1ae0KGg7eud5YFPdAbbveAu+FE7WU0zFiU9jhguCYv/TWkUObCLC4Ri
- JTWEFVW2esSc0W/1X8gkKybs/wPp6Lhb1puc9VMmkOSrneQdedIPAZKF3NHvUEvo5H7W
- CemQ==
-X-Gm-Message-State: APjAAAWiXVWD97Xnfm/kkFE6Hgj6QKG22RKMY/vi/PMJQAPiHPd05FRn
- dWFOoV8n+aVepw5OhIl8miXBeQ==
-X-Google-Smtp-Source: APXvYqyaCrwz/qm98j1MtO5pqAPgEl3ED11Gh+OFBBX48Aefnwmp87aL9fjMp6c5WyO4uFR7GlAuDA==
-X-Received: by 2002:a19:f247:: with SMTP id d7mr1946420lfk.191.1569576037260; 
- Fri, 27 Sep 2019 02:20:37 -0700 (PDT)
-Received: from ?IPv6:2a00:1fa0:8df:57d9:c46b:3c97:5028:3a4f?
- ([2a00:1fa0:8df:57d9:c46b:3c97:5028:3a4f])
- by smtp.gmail.com with ESMTPSA id q3sm341838ljq.4.2019.09.27.02.20.35
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 27 Sep 2019 02:20:36 -0700 (PDT)
-Subject: Re: [RFC PATCH v4 3/5] psci: Add hvc call service for ptp_kvm.
-To: Jianyong Wu <jianyong.wu@arm.com>, netdev@vger.kernel.org,
- yangbo.lu@nxp.com, john.stultz@linaro.org, tglx@linutronix.de,
- pbonzini@redhat.com, sean.j.christopherson@intel.com, maz@kernel.org,
- richardcochran@gmail.com, Mark.Rutland@arm.com, Will.Deacon@arm.com,
- suzuki.poulose@arm.com
-References: <20190926114212.5322-1-jianyong.wu@arm.com>
- <20190926114212.5322-4-jianyong.wu@arm.com>
-From: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
-Message-ID: <3586ca5b-7abb-12b2-2368-cbc09fe3777f@cogentembedded.com>
-Date: Fri, 27 Sep 2019 12:20:25 +0300
-User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=PliSA9XuRMkzrOvLsXtt+pM6dMge6sikKc+gba1/4fE=;
+ b=Fb+PpBXDFt+oPv/UkfwH7UUQxjVtMmUTfqDnurF2b3HwCGytovjoaQQcOXlMUsNEdC
+ PqxRvqnCzxzsY7Z6KNdUTWgqCKsmP/561cPEHpCXGAbH8K/GE8SlPYQOxjhdC+6wlYFV
+ W6DwJ9vfARjIajZB1EEaBXq77htU2AvV0nkb9KRHHMDBL/UuYydaRD5VXNZ17zsCd08W
+ /MDs+Fk0kcWkjkjQSuoaOJwIsVcNJ3koKe18MwvYcCe7UU7trFluVOqY9bcHwUXjcaUl
+ tsddBKoNE6WF7czN3PKgd/PAi9AJC9ZvSc8omo2GUe0wN3qy6rJxzBvdm7D82t63BAT9
+ OiQQ==
+X-Gm-Message-State: APjAAAV5SyYLB6j6EeQmZhL2BPhdcGoEaeATGf33wXyvU0f1NKfLIwua
+ yJzM80Gk0ZJLS/Q8yripdL7QRCyhvxgS3SKowTE=
+X-Google-Smtp-Source: APXvYqygMX80pvcFFJI5miUi9Z9iy/nlhZYIiWyd26NXPWeA2/LLNVg0ZajgnmkkOecL3MFc7O0DeaIY3bDnJetu3jM=
+X-Received: by 2002:aca:cdc7:: with SMTP id d190mr6065798oig.148.1569576269452; 
+ Fri, 27 Sep 2019 02:24:29 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190926114212.5322-4-jianyong.wu@arm.com>
-Content-Language: en-US
+References: <20190927002455.13169-1-robh@kernel.org>
+ <20190927002455.13169-7-robh@kernel.org>
+In-Reply-To: <20190927002455.13169-7-robh@kernel.org>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Fri, 27 Sep 2019 11:24:18 +0200
+Message-ID: <CAMuHMdWHGR2odz4nvY_Bjg8H7SKf1eio=tw9yRRO1VYbGCXAbg@mail.gmail.com>
+Subject: Re: [PATCH 06/11] of/address: Introduce of_get_next_dma_parent()
+ helper
+To: Rob Herring <robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190927_022038_736479_38C6E876 
-X-CRM114-Status: GOOD (  13.91  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190927_022432_609030_A3FFF421 
+X-CRM114-Status: GOOD (  11.02  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
+ no trust [209.85.167.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,45 +83,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: justin.he@arm.com, kvm@vger.kernel.org, Steve.Capper@arm.com,
- linux-kernel@vger.kernel.org, Kaly.Xin@arm.com, nd@arm.com,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ Arnd Bergmann <arnd@arndb.de>, Frank Rowand <frowand.list@gmail.com>,
+ linux-pci <linux-pci@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Marek Vasut <marek.vasut@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Simon Horman <horms+renesas@verge.net.au>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Stefan Wahren <wahrenst@gmx.net>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello!
+On Fri, Sep 27, 2019 at 2:25 AM Rob Herring <robh@kernel.org> wrote:
+> From: Robin Murphy <robin.murphy@arm.com>
+>
+> Add of_get_next_dma_parent() helper which is similar to
+> __of_get_dma_parent(), but can be used in iterators and decrements the
+> ref count on the prior parent.
+>
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> Signed-off-by: Rob Herring <robh@kernel.org>
 
-On 26.09.2019 14:42, Jianyong Wu wrote:
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 
-> This patch is the base of ptp_kvm for arm64.
-> ptp_kvm modules will call hvc to get this service.
-> The service offers real time and counter cycle of host for guest.
-> 
-> Signed-off-by: Jianyong Wu <jianyong.wu@arm.com>
-> ---
->   include/linux/arm-smccc.h | 12 ++++++++++++
->   virt/kvm/arm/psci.c       | 18 ++++++++++++++++++
->   2 files changed, 30 insertions(+)
+Gr{oetje,eeting}s,
 
-[...]
-> diff --git a/virt/kvm/arm/psci.c b/virt/kvm/arm/psci.c
-> index 0debf49bf259..3f30fc42a5ca 100644
-> --- a/virt/kvm/arm/psci.c
-> +++ b/virt/kvm/arm/psci.c
-[...]
-> @@ -431,6 +433,22 @@ int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
->   	case ARM_SMCCC_VENDOR_HYP_KVM_FEATURES_FUNC_ID:
->   		val[0] = BIT(ARM_SMCCC_KVM_FUNC_FEATURES);
->   		break;
-> +	/*
-> +	 * This will used for virtual ptp kvm clock. three
-                     ^ be?                            ^ T
+                        Geert
 
-[...]
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-MBR, Sergei
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
