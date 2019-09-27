@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3288DC0066
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 09:50:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B612C0051
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 09:49:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,52 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=4mfRcNAQwzQIiYqm9S5EWeYAtHgZUSziS7CU38NxtSw=; b=JjOxeGIDTqt6YChC4hed8+tYSV
-	yJinrsho0mPAC37wB8SLotfYn5ZVCToUj/Gp5BKckrg6Q/2ISi4N5pC1v0hxHvxbOKgBvxSQzuWQ1
-	dk4uBfHay3W6uxFkGLxHdOrdbDL7Tl5vIReNRQuWQBk7mPandS45xQy5aeYNAXut5orz5leRjGDeV
-	1BbjKimI0W4UMb+yFMn/XvF2qroP3nss38JgOnRuWdRTkXgZSky5+Iuu9gL9psT5/EeqAagB2H/9l
-	Zuu13/XjM9q7tUgOVML1REeEYAgBFOMgVaSv/TpLez5xs10iCRQbZl4EEKrjCJu+75BdL+OqtklWU
-	iquAfO5g==;
+	bh=TLgB9S82RcyPy9rkw/4P3m4HCNtUjmZU+IUaDkGC9so=; b=M2oop/mDHgJUUIA2ReC4TaJVfN
+	DgxOp0ylS5O+yYCSlIdeRuqyDVfVFhIzn61BsrJEX11PeBfBAWVWIzMj70ecWb8Nyd+hSD1Q1t8NR
+	/ukYNzsRAyYLFoAsNLgLR4sultDh85fLTX819BxEGQHkgW+IL+fXSZ/UXytVJq5FLmH5RSX6MMIPr
+	uzxUAAHPyUUF+QS9FyWyZcrVN/xDakniQ8ubdlTL/SivJuKpqirvCTzbPKoXkk/TtbjDWsyVbbOgQ
+	SzKOZ5y+O6IXxGKelNkyAwDkXhfx6O5iYbw14RoSEZHQ7d6ZMa6yvFPpLuPBLtYm/0qIrMijWt34I
+	RQN76z7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDl11-0001XJ-35; Fri, 27 Sep 2019 07:50:11 +0000
-Received: from smtprelay-out1.synopsys.com ([198.182.61.142])
+	id 1iDl0D-0000hR-4Q; Fri, 27 Sep 2019 07:49:21 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDl07-0000fB-BW
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 07:49:16 +0000
+ id 1iDl05-0000fA-75
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 07:49:14 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id E665CC0DD7;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D728AC0DC4;
  Fri, 27 Sep 2019 07:49:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1569570551; bh=MV+Pa6bWic8PJcQ0PmrvM1y6FtITxVDL2Xu5W5HutE4=;
+ t=1569570551; bh=DrIxAcUMdhwcfqhJRFHtOh2PccbH2YMx64iLgCedU0c=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=SY98zuQSRffbIhSYtGFOB1P2E/uD0H5fxHiecGoVR7sioYH+HGj79+gMcZqKYozaa
- yGJ1BmNssJr4KPH0Z2FxzTQwQpWeOT+rPihgNy92fzHlgbr/PZeMpA4csQKlrnojcC
- z9ddfh8TXYcowDKQq25t7yClSVpaAsUOZ2Nv1SSNECCXe6zXgqrdDgV0xILLEDsOob
- yE9rrHtmnPjwLeyKCIrJWDXm5XNKR0bLo0ledZld9VNF8dnIrkgIKFMpYWREixk9fJ
- PtxVHoNKpeYf5LvY0fpChnx6diPxHuOo9m1Cs5FWWJg9IXGIjhxGBf7j80BgmDXEFc
- t0YOaNF2hGoqw==
+ b=DZdO6Dl2CHYoN0aDORDwMnQHxYdBDO0VFMkYAQOJPq8sJXlHDdt1CJwD5iUf44n5p
+ nQS7FQOV4fIQat6l+2EJsqkykWKil8f3/BqQjJHTm4TtjMThrrIxTTKaXxtObsQQ+U
+ d/pbdPdo9BM+XQq+6BK9YL1Xdcg8ijtfNLjFs3SPZec6oPkeRo7ok1D3XVzSIFjLEE
+ lPoGGUIV7CZwWrGfqWnFYDdetdfSxoSU9LI2KdHZmpxAMOTDsg31yGBsiDF7S9Kqz1
+ 8+f77GGu0QdlMw/t1fFq5N+SMS3JEZreJFHyx9YcMMPWdx3Zgj38cUENG029hW3+pT
+ rpUSqi9q3XmIg==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 5E435A007C;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 6522DA0080;
  Fri, 27 Sep 2019 07:49:09 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net 4/8] net: stmmac: dwmac4: Always update the MAC Hash Filter
-Date: Fri, 27 Sep 2019 09:48:52 +0200
-Message-Id: <7a69c00a5dc6d54eabceba806e90151197565d1a.1569569778.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net 5/8] net: stmmac: Correctly take timestamp for PTPv2
+Date: Fri, 27 Sep 2019 09:48:53 +0200
+Message-Id: <649168117d7fcf63704f92cfb687e3493ad46045.1569569778.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1569569778.git.Jose.Abreu@synopsys.com>
 References: <cover.1569569778.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1569569778.git.Jose.Abreu@synopsys.com>
 References: <cover.1569569778.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190927_004915_407353_F9E660C9 
-X-CRM114-Status: GOOD (  12.69  )
+X-CRM114-CacheID: sfid-20190927_004913_260278_054AFB02 
+X-CRM114-Status: GOOD (  11.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -94,12 +95,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We need to always update the MAC Hash Filter so that previous entries
-are invalidated.
+The case for PTPV2_EVENT requires event packets to be captured so add
+this setting to the list of enabled captures.
 
-Found out while running stmmac selftests.
-
-Fixes: b8ef7020d6e5 ("net: stmmac: add support for hash table size 128/256 in dwmac4")
+Fixes: 891434b18ec0 ("stmmac: add IEEE PTPv1 and PTPv2 support.")
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
 ---
@@ -113,57 +112,21 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c | 13 +++++++------
- 1 file changed, 7 insertions(+), 6 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-index 9b4b5f69fc02..2cb9c53f93b8 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-@@ -401,8 +401,11 @@ static void dwmac4_set_filter(struct mac_device_info *hw,
- 	int numhashregs = (hw->multicast_filter_bins >> 5);
- 	int mcbitslog2 = hw->mcast_bits_log2;
- 	unsigned int value;
-+	u32 mc_filter[8];
- 	int i;
- 
-+	memset(mc_filter, 0, sizeof(mc_filter));
-+
- 	value = readl(ioaddr + GMAC_PACKET_FILTER);
- 	value &= ~GMAC_PACKET_FILTER_HMC;
- 	value &= ~GMAC_PACKET_FILTER_HPF;
-@@ -416,16 +419,13 @@ static void dwmac4_set_filter(struct mac_device_info *hw,
- 		/* Pass all multi */
- 		value |= GMAC_PACKET_FILTER_PM;
- 		/* Set all the bits of the HASH tab */
--		for (i = 0; i < numhashregs; i++)
--			writel(0xffffffff, ioaddr + GMAC_HASH_TAB(i));
-+		memset(mc_filter, 0xff, sizeof(mc_filter));
- 	} else if (!netdev_mc_empty(dev)) {
- 		struct netdev_hw_addr *ha;
--		u32 mc_filter[8];
- 
- 		/* Hash filter for multicast */
- 		value |= GMAC_PACKET_FILTER_HMC;
- 
--		memset(mc_filter, 0, sizeof(mc_filter));
- 		netdev_for_each_mc_addr(ha, dev) {
- 			/* The upper n bits of the calculated CRC are used to
- 			 * index the contents of the hash table. The number of
-@@ -440,10 +440,11 @@ static void dwmac4_set_filter(struct mac_device_info *hw,
- 			 */
- 			mc_filter[bit_nr >> 5] |= (1 << (bit_nr & 0x1f));
- 		}
--		for (i = 0; i < numhashregs; i++)
--			writel(mc_filter[i], ioaddr + GMAC_HASH_TAB(i));
- 	}
- 
-+	for (i = 0; i < numhashregs; i++)
-+		writel(mc_filter[i], ioaddr + GMAC_HASH_TAB(i));
-+
- 	value |= GMAC_PACKET_FILTER_HPF;
- 
- 	/* Handle multiple unicast addresses */
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+index d3232738fb25..31a237ec73bc 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+@@ -629,6 +629,7 @@ static int stmmac_hwtstamp_set(struct net_device *dev, struct ifreq *ifr)
+ 			config.rx_filter = HWTSTAMP_FILTER_PTP_V2_EVENT;
+ 			ptp_v2 = PTP_TCR_TSVER2ENA;
+ 			snap_type_sel = PTP_TCR_SNAPTYPSEL_1;
++			ts_event_en = PTP_TCR_TSEVNTENA;
+ 			ptp_over_ipv4_udp = PTP_TCR_TSIPV4ENA;
+ 			ptp_over_ipv6_udp = PTP_TCR_TSIPV6ENA;
+ 			ptp_over_ethernet = PTP_TCR_TSIPENA;
 -- 
 2.7.4
 
