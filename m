@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67F6EC0142
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 10:34:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DBE4C0145
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 10:34:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ze1RB65PE9stbSf4GxK4lJ1NbEMWTYAdIXQy/ucZReM=; b=LEpQ7jznDGCyjK7n44zS7lum7
-	GM5F6YX298Oki2xHHbS6UgsD1N6wNUwhdxxE+47RW7rOPJkTxe34GdtBvV/WFUsxTGfXeVZkNrjJm
-	UV1E+/cpAHW7zZXnQm+/JfUOfgbzxNyDp0+nKoZc4w15hArSM1FVReeYQl3xfQlVg9SPdR53bn1DY
-	uKu/VbOTVE6lnV5EQ+rWrr/dgf/Thxn4kphb03l8WmI9aUFSnfMEobQOpD9BnYAEbT/TllL7/4FuO
-	bLqSVc7W3DT0orXt2Q5PEIEEZESxr0F3A4ZwAUJOzfTMzthW+3N5pIMOS+Zozn8nvm9ON0+/LvOut
-	i4RG46a5g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xBjqkzOt5RReYCxrDY7chv+0S5sruM3BY4Tyf8C9rBs=; b=RCUgK7br+RfAUl
+	8lWL1Jh1t/SpRR19/rTKfhlsn10IMWhWVVdO7pPQ2tNx8zzV+cBFz9xr4pgIBHbBdkn2PyQBttvd7
+	f8PQitKNz4N1xRKHE+7CUgTRBsSCJmCrWUwiLiBDz9pwjUjcO60AYB4eeUMJsWGetn9uSQiPkNirQ
+	6L7tWHb2B6PgX7oSDlxY/RfqfB8l+0tr10xC5bMUvAh1wlLNFDl2qCdyZ56hXzL6Jmgp7wc61rck2
+	j9ktKyCLvt+vftIviB0sAW+plmNzJWCawGkVlmj7LU3nwEjfv78qe7oSHmGqdZTbcQ8dGGUnaMcHW
+	nnkeTLWLzI89KnOiNk7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDlhW-0001uJ-M8; Fri, 27 Sep 2019 08:34:06 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDlhJ-0001tj-Vn
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 08:33:55 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E5F97337;
- Fri, 27 Sep 2019 01:33:51 -0700 (PDT)
-Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C66FD3F739;
- Fri, 27 Sep 2019 01:33:50 -0700 (PDT)
-Subject: Re: [PATCH 1/5] arm64: Add ARM64_WORKAROUND_1319367 for all A57 and
- A72 versions
-To: Marc Zyngier <maz@kernel.org>, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
-References: <20190925111941.88103-1-maz@kernel.org>
- <20190925111941.88103-2-maz@kernel.org>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <403cb5f2-b55a-0e5e-f228-954b3b746334@arm.com>
-Date: Fri, 27 Sep 2019 09:33:49 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.0
+	id 1iDlhx-00029o-NJ; Fri, 27 Sep 2019 08:34:33 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iDlhp-00028U-6p
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 08:34:26 +0000
+X-Originating-IP: 86.250.200.211
+Received: from windsurf (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
+ [86.250.200.211])
+ (Authenticated sender: thomas.petazzoni@bootlin.com)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 9C4DA24000C;
+ Fri, 27 Sep 2019 08:34:21 +0000 (UTC)
+Date: Fri, 27 Sep 2019 10:34:20 +0200
+From: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+To: Remi Pommarel <repk@triplefau.lt>
+Subject: Re: [PATCH v2] PCI: aardvark: Don't rely on jiffies while holding
+ spinlock
+Message-ID: <20190927103420.48bb9335@windsurf>
+In-Reply-To: <20190927083142.8571-1-repk@triplefau.lt>
+References: <20190927083142.8571-1-repk@triplefau.lt>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20190925111941.88103-2-maz@kernel.org>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190927_013354_067791_168D0D35 
-X-CRM114-Status: GOOD (  10.39  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190927_013425_392936_16D72200 
+X-CRM114-Status: GOOD (  11.28  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,23 +63,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Bjorn Helgaas <bhelgaas@google.com>, linux-pci@vger.kernel.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hello Remi,
 
+Thanks for the new iteration!
 
-On 25/09/2019 12:19, Marc Zyngier wrote:
-> Rework the EL2 vector hardening that is only selected for A57 and A72
-> so that the table can also be used for ARM64_WORKAROUND_1319367.
-> 
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+On Fri, 27 Sep 2019 10:31:42 +0200
+Remi Pommarel <repk@triplefau.lt> wrote:
+
+> diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
+> index fc0fe4d4de49..ee05ccb2b686 100644
+> --- a/drivers/pci/controller/pci-aardvark.c
+> +++ b/drivers/pci/controller/pci-aardvark.c
+> @@ -175,7 +175,8 @@
+>  	(PCIE_CONF_BUS(bus) | PCIE_CONF_DEV(PCI_SLOT(devfn))	| \
+>  	 PCIE_CONF_FUNC(PCI_FUNC(devfn)) | PCIE_CONF_REG(where))
+>  
+> -#define PIO_TIMEOUT_MS			1
+> +#define PIO_RETRY_CNT			10
+> +#define PIO_RETRY_DELAY			2 /* 2 us*/
+
+So this changes the timeout from 1ms to just 20us, a division by 50
+from the previous timeout value. From my measurements, it could
+sometime take up to 6us from a single PIO read operation to complete,
+which is getting close to the 20us timeout.
+
+Shouldn't PIO_RETRY_CNT be kept at 500, so that we keep using a 1ms
+timeout ?
+
+Thomas
+-- 
+Thomas Petazzoni, CTO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
