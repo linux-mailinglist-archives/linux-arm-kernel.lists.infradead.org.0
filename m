@@ -2,72 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FEA0BFF33
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 08:37:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EEBEBFF3D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 08:39:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xqiWMcZkQe5l2rP8EOR7BC3cbFpmWxtm7D1/aJgAQ90=; b=K49IR7j1HI3LQ6
-	FIZrI8XKE6RnvWb9wcChJ/ET7i5Beo6TsIwKJwzI+4bJd8FvtUut0/48HZIIokoPJDpwN/ot9GgWe
-	2ijOln8vgSA55pH6QERWil2SkkrD73PiTBQWnfeCYlZVLJNxKEHk5ccVzjLfCdqo3tCxENtTBq7vP
-	acBZFiOsZaNTT64eBBkPQ0d+hhfHKiDZUwaEY0mth4c8wir3B26mIIU35ndAU2cF925n8PTY3PBOY
-	m6luXHOC7U7JXPF+5XyjzJE47u9frg7t6Z57bst7OL7yqfaC3mVGvuqvi1K+fhV/ZQSOuX7LomHzU
-	YnsEuX218wKtagEQHoQg==;
+	List-Owner; bh=73EP7jV1vOqYFOFQrstRaN2AeQmk0pfZeHwMPNWr7cg=; b=OuEzzutMCbdse7
+	mKKgOWXdGSXJLZ7EYNyD4b1kZwQqmEAW+MLuvl78vzSdGqB07L+3g2aXxPAW+X6nmiN2UNN5y6ZO3
+	HVRbvdyR3bSOjT1yGUCYzFhWf35alKhzz92UYKL+jUrtZtgUcYh1IwtSHqzmclZ8Vm0Erc3M/ewsA
+	UrgrXw7wYn4/ylboFAerkWx3DYl6/JH/z9wDPmstCfLMzXXJMydicwAFwEFfkV2YHP/GO/IS6B3sz
+	ziLq8FhLxpM/mzelnRhuPpCGQgdTVS6B0Hz+hYeR7E4b/mRlRyDxsKEZIhFSwfALdgPvbFXBXEfDy
+	AA5mr/1h8yDPrR4X4Iwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDjsp-0000fF-UE; Fri, 27 Sep 2019 06:37:40 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iDjuB-00010l-1C; Fri, 27 Sep 2019 06:39:03 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDjsY-0000eD-5F
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 06:37:24 +0000
-Received: by mail-wr1-x441.google.com with SMTP id i18so1301687wru.11
+ id 1iDjtp-0000yt-MP
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 06:38:43 +0000
+Received: by mail-wr1-x443.google.com with SMTP id v8so1351767wrt.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Sep 2019 23:37:21 -0700 (PDT)
+ Thu, 26 Sep 2019 23:38:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=nWDL5fqaR8obQqMwXte7vHWbAUknsL1rJWwNBs58thQ=;
- b=c2PP/mwXQM7IoE231d/I5ADBcKd53eoRjDnbXU7V4/HXy/CNas3t3vYsjaKljFq/Wl
- e4OuGCckvgLBR8BdPVxEoht8KufRKx3EFc6yJnZdiQQ95kTjkOK4AnoSgEoalnvnqU1E
- NajrZ//jYh1yavwWyOH8wES3H9zHYVQduzJLst0Mhhl4Jw1VM4F5NgS9i6n/3OdXlNcm
- YFT+6NhXr4PUaZmtydLsJP8H5JPEtVetJgMnGmg5JoBVkwVjwwI+r6C1eRfm8jJM0qDH
- GVVxMxzbK6MrIQ+/d8sarwzRpKkJTJ1p7xVZwuO6NFE88D60A4qwUXSok9/PsrhpWw9Z
- u3eQ==
+ bh=N6VkM0z841Krtrga1vgaL7l4TlcDiW87cgB/wBSnoMk=;
+ b=Yz0WTVat1qj/a9+OixcTrwffInyf88Kjh0F1MX2RlJiFUruMsgivM+3vFPwRTbbeIF
+ uYYqolDY8Pmx4rKIRR54uiKKYRoCnVWP1ljsct6nzVs/WSpNHWkydn3/YprqNooFySH8
+ j8lRbWr6HDeJbA4gG/+0OWW/YFkGrYM7QVTich0gVq5yLCBdkdxFYEDXOUJ1sRw85yt9
+ /V/zWLJXY/cLiGEJ6IQJKWo7KIw56eDjls1bt+jHZW8XOVukTo9YeuqgalhPFp69uKyk
+ G5x6WZAHF3IaB/SnwpMjuyyu9L59Fr/HbvX1JvauV8gaPB60vzXOLVgqoxJUcjAMspD2
+ 3adg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=nWDL5fqaR8obQqMwXte7vHWbAUknsL1rJWwNBs58thQ=;
- b=NFSGT54K8PhNJZe57fGQCP6JSgCHPFgqb4r15gsbiSt3sBE1mok0p/2oISbbQyiiX8
- KM0083QK61S8iNMkAiSntrBYzRG65nX3SGO3t4UcBEB9M3h4Kc/+2SEoYRpv/AXwZ3JK
- oKM5qNNy+DYWVm66vYAhUKmSiYtzD9v8aGX54USAvhSOknhYDRgIYYpJtvR7e0s4qIwj
- kUYT01hYPuQ4YUfy/RPsWz6EI7flCrwwojT4DY2L878wqEh7FVUb2xUOvjwOUbS/eVSH
- zhR/OX1lhH5o+6khV6BETuL7ZFK85lvMYnUIYT17QA/CC0NkWvP3fK3bxU4Z6mCXwGAd
- mt2Q==
-X-Gm-Message-State: APjAAAXe+obUVqz3Z2wt8Qv4DNJzwq4VgPnF7QChDcwfekeIPd4P7ZZw
- nN3y2k0Guv9t9+6SoQw0aOwl5A==
-X-Google-Smtp-Source: APXvYqwAzt8FtaeB+KFZzlFTM6WHW+HqcYDFQCMO8rOIyoRVqXniocNzeL8p860gre9ivXi+zZG0KA==
-X-Received: by 2002:adf:ebd0:: with SMTP id v16mr1521702wrn.352.1569566240519; 
- Thu, 26 Sep 2019 23:37:20 -0700 (PDT)
+ bh=N6VkM0z841Krtrga1vgaL7l4TlcDiW87cgB/wBSnoMk=;
+ b=NhRkHUtTed9pV6ioGbLDoHsUDauqkRHqAZs9/Ly2JxjBxotgQO14CqyRTwomarcRSL
+ 1/NMVkuWYa4fHI9bGrlJ3spboedAS5AfOnYwvfihvhOg1juPfxdJ/pFmPWsdZyG0FdCf
+ CDRDTo7qbR2P1S58WeCqpjdIIE1TzhJLdrXzIv3lLKuEHQWPOhGxtnK9NBYPGGIPVAPH
+ GhaleR0Tv+rTi1NCQhS23hOMOAM4y8LCnFtt6uAMKVyBg4xGs1kbn8+jlSBrYYsvcCXg
+ 924Wlhk2yE7StvRUNDxqIHfiyxNaqOEeQJlx/84pw9LFOUxZFeVCf6tmAZz3z9kycQUI
+ cUkw==
+X-Gm-Message-State: APjAAAUEGI8u6EKoZhTIKYc3mmyjxnsx8PsaF5PS0xoasWntej35so3x
+ jE6DkEr/O8OHa7P5D+lcEghij0qUXQ43Lw==
+X-Google-Smtp-Source: APXvYqx0GDUQYgnlvt5Lm1MkwLuh2nfKL2JPfnUqkt12rNqDJAooiNxb+tKqKlGXb/Wa2z9ty/mf+Q==
+X-Received: by 2002:a5d:63c6:: with SMTP id c6mr1575616wrw.117.1569566320128; 
+ Thu, 26 Sep 2019 23:38:40 -0700 (PDT)
 Received: from [192.168.1.62] (176-150-251-154.abo.bbox.fr. [176.150.251.154])
  by smtp.gmail.com with ESMTPSA id
- i8sm1959210wrw.36.2019.09.26.23.37.19
+ z125sm8980853wme.37.2019.09.26.23.38.39
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 26 Sep 2019 23:37:19 -0700 (PDT)
-Subject: Re: [PATCH v2 2/2] soc: amlogic: ee-pwrc: ensure driver state maches
- HW state
-To: Kevin Hilman <khilman@baylibre.com>, Kevin Hilman <khilman@kernel.org>,
- linux-amlogic@lists.infradead.org
-References: <20190925213528.21515-1-khilman@kernel.org>
- <20190925213528.21515-3-khilman@kernel.org>
- <8936e777-8996-5c7b-ea9d-8e17c8d6c4b1@baylibre.com>
- <7hwodulvu6.fsf@baylibre.com>
+ Thu, 26 Sep 2019 23:38:39 -0700 (PDT)
+Subject: Re: [PATCH RFC 0/2] clk: meson: g12a: handle clock hw changes while
+ in suspend
+To: Kevin Hilman <khilman@baylibre.com>, sboyd@kernel.org,
+ jbrunet@baylibre.com, mturquette@baylibre.com
+References: <20190919102518.25126-1-narmstrong@baylibre.com>
+ <7htv8ykcpm.fsf@baylibre.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -120,23 +118,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <21eafa69-fe26-2df1-d187-cddfe5b37951@baylibre.com>
-Date: Fri, 27 Sep 2019 08:37:18 +0200
+Message-ID: <3cf0a406-eb06-fe30-823f-cd2965646e10@baylibre.com>
+Date: Fri, 27 Sep 2019 08:38:38 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <7hwodulvu6.fsf@baylibre.com>
+In-Reply-To: <7htv8ykcpm.fsf@baylibre.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_233722_340088_ABAC7FE4 
-X-CRM114-Status: GOOD (  42.87  )
+X-CRM114-CacheID: sfid-20190926_233841_729430_557984A5 
+X-CRM114-Status: GOOD (  12.93  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -154,178 +152,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 26/09/2019 21:08, Kevin Hilman wrote:
+On 26/09/2019 22:46, Kevin Hilman wrote:
 > Neil Armstrong <narmstrong@baylibre.com> writes:
 > 
->> On 25/09/2019 23:35, Kevin Hilman wrote:
->>> From: Kevin Hilman <khilman@baylibre.com>
->>>
->>> During init, ensure that the driver on/off state as well as clock and
->>> reset state matches the hardware state.  Do this by always calling the
->>> drivers 'on' function, and then callling the 'off' function if the
->>> HW state was initially detected as off.
-> 
-> [...]
-> 
->> I don't see what you are trying to solve except simplifying the code.
-> 
-> Simplifying the code is a worthwhile goal on its own, but that's not the
-> only thing I'm tring to accomplish.
-
-I still find it ugly to power_on a domain to power it off right afterwards.
-The issue is with the CCF enable handling which is not in sync with the
-HW, if you boot with an already enabled clock, it won't be marked enabled
-in CCF, and it's clearly bad when you want to have a fine-tuned gate state
-handling.
-
-> 
-> Part of the goal is make the init less VPU specific and thus make it
-> more understandable/maintainable.  But the more important part is to
-> ensure that the driver state and HW state is consistent for all the
-> domains (not just VPU.)  I've had to debug lots of power-domain issues,
-> and inconsistiences between HW state and driver state tend to be the
-> primary cause of problems.
-> 
-> Also I'm generally not a fan of the "don't mess with bootloader state"
-> approach as that leads to subtle dependencies on specific bootloader
-> versions that are also difficult to debug.
-> 
-> Antother equally important goal is to actually be able to power-down the
-> VPU when it's not used.  Right now, we'll never power off the VPU if the
-> bootloader enabled it, and that seems a bit extreme so I'm looking to
-> improve that and be able to power off the VPU when not used.
-> 
->> And the case is more that "matching the clock state" here, the
->> pm_domain_always_on_gov was is a real case when booting from the Amlogic
->> U-boot.
-> 
-> I'm not understanding what you mean about vendor uboot.  I've done
-> testing with vendor uboot too:
-> 
-> I tried on g12a-u200, g12a-x96-max, and sm1-khadas-vim3l all of which
-> have vendor uboot, and I tried before and after $SUBJECT patch.
-> 
-> In all cases, I see the vendor uboot splash screen, and I see the
-> framebuffer console from linux after kernel boot.  I see the same
-> behavior before and after my patch.
-> 
-> I also tried on g12b-odroid-n2 (vendor uboot), and there is _no_ uboot
-> spash screen, but I see the linux framebuffer console come up both
-> before and after my patch.
-
-Thanks for testing all these cases
-
-> 
-> What's the specific case you're worried about with vendor uboot?
-
-It's an issue I got when bringing up mainline uboot and the vpu power controller
-driver, I had regressions on GXBB and GXL boards.
-But it seems it's no more the case on G12A/G12B, we'll see this when
-GX support will be added in this driver.
-
-> 
-> Also...  note something interesting I noticed on sm1-khadas-vim3l:
-> before my patch, the framebuffer console appears, but the background is
-> a bluish/green color.  After my patch, the background is black (as
-> expected.)  
-
-Yes it's an issue I have on my infinite todo list, it's a different
-init done by the latest vendor uboot. I have a fix but it seems it
-breaks display when booting other boards.
-
-> 
->> The display power domain is complex and as been half solved by using
->> "simple-framebuffer" on gx and is missing on g12a/g12b/sm1.
+>> This serie aime to support when the suspend/resume firmware alters the
+>> clock tree, leading to an incorrect representation of the clock tree
+>> after a resume from suspend-to-mem.
 >>
->> For example, Debian installer runs without the modules, but will use
->> the EFIfb set by U-Boot, but in this precise case :
->> - the DRM driver isn't loaded
->> - we can't hook this power domain with EFIfb
+>> For the Amlogic G12A/G12B/SM1 case, the SCPI firmware handling suspend
+>> alters the CPU clock tree in various ways.
+>>
+>> Since we know which part of the tree is possibly altered, we introduce here
+>> the clk_invalidate_rate() function that will rebuild the tree from the
+>> hardware registers in case parents and dividers have changed.
+>>
+>> Finally we call clk_invalidate_rate() from a new resume callback to refresh
+>> the CPU clock tree after a resume.
+>>
+>> With the clock tree refreshed, CCF can now handle the new clock tree
+>> configuration and avoid crashing the system on further DVFS set_rates.
 > 
-> OK, so I agree that this case where we want the display to continue to
-> work but linux DRM drivers never loaded is a special case.
-> 
-> Is there a way to check if efifb is enabled?  Is the the linux driver
-> (drivers/video/fbdev/efifb.c) or something else only done by uboot?
-> 
-> If we can detect efifb from the kernel (not just whether the domain is
-> already on), then a simple addition to my patch like this:
-> 
->  	if (is_off)
->  		meson_ee_pwrc_off(&dom->base);
-> +	else if (efifb_is_enabled)
-> +		dom->base.flags |= GENPD_FLAG_ALWAYS_ON;
-> 
-> would force the domain always-on in the case of efifb.  
-> 
-> In fact, now that I think of it, simply adding:
-> 
->  	if (is_off)
->  		meson_ee_pwrc_off(&dom->base);
-> +	else
-> +		dom->base.flags |= GENPD_FLAG_ALWAYS_ON;
-> 
-> to my current patch would get back to the same behavior of the existing
-> driver.  But I still don't like the idea that we can *never* power off
-> the VPU if the bootloader enables it. :( I'd rather see patches
-> conditionally adding that flag with detailed explanations as to why it's
-> needed.
-> 
->> When *not* in EFIfb, we use simple-framebuffer on GX, using this
->> power domain, but it hasn't been copied to G12A.
-> 
-> I don't quite understand what problem simple-framebuffer is
-> solving. Could you explain that in more detail.
-
-simple-framebuffer has the power domain hooked in it's node, so
-when u-boot will boot linux with HDMI enabled it will enable
-this node and until the DRM driver loads the simple-framebuffer
-will live and keep the power domain enabled.
-
-> 
-> Assuming it is solving something, why can't it be used on g12[ab]/sm1 ?
-
-It will, but I need to push the patches.
-
-> 
->> Personally I'll leave this code until we really tested and checked all
->> uses cases, 
-> 
-> Right, I don't want to break anything on purpose, but I think the
-> current state of this driver is fragile and difficult to
-> understand/maintain, so I would be grateful for any help in
-> understanding the corner cases better, as well as testing them (or
-> explaining to me how to reproduce them.)
-> 
-> Generally, with long-term maintenance in mind, if I'm forced to choose
-> between understandable/maintainable code and "covers 100% of corner
-> cases" I will most often chose the former.
-> 
->> not only on the sei510/sei610 using mainline u-boot.
-> 
-> See above about all the other boards with vendor uboots also tested.
-
-Let's leave apart the vendor uboot issue for g12.
-
-Since display support for G12A will land soon in mainline U-boot, let me
-push the DT patches for simple-framebuffer to we have a fallback in
-case the DRM driver isn't loaded/built.
-
-We can consider that in case of EFIfb, the simple-framebuffer node would have
-been enabled and the power domain hooked and enabled.
-
-Neil
-
+> For clarification, does this series work without the other proposed
+> fixes[1]?  or is this dependent on that?
 > 
 > Kevin
 > 
+> [1] https://lore.kernel.org/linux-amlogic/20190919093627.21245-1-narmstrong@baylibre.com/
+> 
 
+These are independent, but you'll need both to have suspend/resume fully working.
+
+Neil
 
 _______________________________________________
 linux-arm-kernel mailing list
