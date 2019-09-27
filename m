@@ -2,87 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DAC5AC0BAF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 20:45:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15FF3C0BF1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 21:08:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=7C7Ob1roqolpaLaTytdSIjWsutNUkroHt4JxCa2ayTU=; b=rn154rJgUcoE5IpSw9R1fJiQOs
-	vzdLzdY7i5Yv7U9QQ8JZho85bNllUg3XlcazA8jlJQK8LRlshwYPLsHEA2jr6YR2BOeEpl36PnzuU
-	Ct37GrmW/i5qcMQJ96pEGpecOohrZixngiaC2D95OIuw05r0Pego2Ws4hM62iR2rF9ec+Jn73i8gQ
-	GnO0V6u0MogG2cxLH3VSm62SF3wKZk5Nx0zowiMJjgesIF5Z3Ulyjls+LG5TU1DuCCmN7PD/q0daX
-	7EL3wbDY6z/pMgVElrNK7Gp2BxDhyZj4uyW2F9jIHHGCwymnh53TTigrs5nKclx+A/tu89qONv/Aa
-	SmKRtDlw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=izyHFrru5Vef6l+coDb2uM7Ydovm+QVk5HVZPN8oB+k=; b=E8uldhlpK5Y3Wh
+	/ZN4EjVJdSf4opxED1dNU1ZqbZ0uQ5psN5hhJFcgvahFQ53UhiSYz/xK0KvVjxqN8CbBtkKt6qqRA
+	ichM3y0FSA3TaU/A6Iv70tcSVfaGTdt+7ezrwK/0Fqjm5ND6bJNub/T/Y6xmi4UGhMVfBy8MoPNGf
+	3g6lsWkrqQ7U9OLmILswN2XJnXPKxRH5vssaaXTX7yu7uCv0zd+mAjWhNWmW47ArsEMSArvSdD1lj
+	KE/V9MlVIbUDDz7+kdZnJCrvyK+YmWLRhlMD2hioEcrP0scNKi+6BddnxEvQD3q8Fhz4DM53yZ4F3
+	rmXiVjL2oZc4wUYEdOYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDvFT-0003oD-DL; Fri, 27 Sep 2019 18:45:47 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1iDvbU-0003Cv-P0; Fri, 27 Sep 2019 19:08:32 +0000
+Received: from mail.andi.de1.cc ([2a01:238:4321:8900:456f:ecd6:43e:202c])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDvDq-0000kx-0e
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 18:44:09 +0000
-Received: by mail-wm1-x344.google.com with SMTP id y21so6599702wmi.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 27 Sep 2019 11:44:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=HzQhDkqVyohi8147rI3+BgZwRO47r6m1rOvI8gEcCVQ=;
- b=yCIRZafej34veAsB/dI9AI4AW98eG0+WviNpnhZzTwYErlctHeC4PdUDkvkDbOpjcS
- WY0FhlZfG0FijsdvbAFU7ML9GXDyMOYkrXSt4GBu2IO3bIwCw3V4ZXnZLYoJHFWlTtzY
- Xk5dQrZm+LA4pKZr+XNyfimVY9IVlbAEOw+T+oa8XwEBtFuvBKUvB6cjOEpQ7v57l8Kn
- lQjKqeuWo4sfcLlN824NR249X2A+YmcYnfKRXEjMIz4x/5SP11aCddGd9LKB0axSwqiJ
- oaTAGJ0MUxuIyfBrELTkVTQtMys/AZYWzlrh5jhamcx7k1y0Ujq3PMboLb2ZIOdPZZEm
- RrrA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=HzQhDkqVyohi8147rI3+BgZwRO47r6m1rOvI8gEcCVQ=;
- b=tMYjSekUZ06Vp9l/kahs9+1i2UnAhGvAalwg7q6oH6APcYavTPeRJNF8ZVZrbGlBI5
- Fs5bLKLXvGWVvWHAs4jp2+BQ1WKV1ZFO1QloYR2RC4zKdalSfgnc/YfUdT2pSuozRtHQ
- pgZlp6GrtofI2hKIdwJkTYAQgkRYvJeXevEmUnDO6q75XjoaQBQTzdreRPdBCqNGvkgs
- unEE51Eb/nCCFu866eP3Sk2zW+ecyyjzxJFcgGSHsICLPMYuz7JQ440QZMvEJfQExJUw
- 3BMSAU8iOgeE3wGTCXF5xOY4FUgjeQsSV33O8eG6/r/7k4lgqRiCbT94QyRxplUFU5qU
- eBtw==
-X-Gm-Message-State: APjAAAWjm2X/Wqb2mo3lNFs2iDaEzvDC6FbY6/bnVV1IYOh5gaBvQVvB
- 2/mJpAvCjJJMRSyWWdI1+CObpA==
-X-Google-Smtp-Source: APXvYqxSi62wIlpGsvXmkF2vMjWdJJWKf6euaYF+PUGFCzIsIJHaJ4eRMDJRAoy+1xk8Rbwsy3vwnQ==
-X-Received: by 2002:a1c:d183:: with SMTP id i125mr8708860wmg.1.1569609843906; 
- Fri, 27 Sep 2019 11:44:03 -0700 (PDT)
-Received: from glaroque-ThinkPad-T480.home
- ([2a01:cb1d:6e7:d500:82a9:347a:43f3:d2ca])
- by smtp.gmail.com with ESMTPSA id r13sm6246272wrn.0.2019.09.27.11.44.02
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 27 Sep 2019 11:44:03 -0700 (PDT)
-From: Guillaume La Roque <glaroque@baylibre.com>
-To: amit.kucheria@linaro.org, rui.zhang@intel.com, edubezval@gmail.com,
- daniel.lezcano@linaro.org
-Subject: [PATCH v6 7/7] MAINTAINERS: add entry for Amlogic Thermal driver
-Date: Fri, 27 Sep 2019 20:43:52 +0200
-Message-Id: <20190927184352.28759-8-glaroque@baylibre.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190927184352.28759-1-glaroque@baylibre.com>
-References: <20190927184352.28759-1-glaroque@baylibre.com>
+ id 1iDvbL-0003C6-7t
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 19:08:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=kemnade.info; s=20180802; h=Content-Transfer-Encoding:Content-Type:
+ MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=Z3HupTrxEpV8y2g+PdzUzD5fHaCUrAd0hS4kvWJATxo=; b=Qs+eGqNEPBP4N7bSduqg3bDy4U
+ NAxNVgGqiT5NHEoEYwDech1O2TTjjl6vKUEA6u75AMq3oK7Lp6Zrfcw4xFoqAgW8oXjPW7/wSylOf
+ ztk4uYdXzSNNZ8bKkKzhDLukbwBuanb7fZWvl2+ZnLyoc9f7EkS8m0KGva5yczYPIK6E=;
+Received: from p200300ccff0e5f001a3da2fffebfd33a.dip0.t-ipconnect.de
+ ([2003:cc:ff0e:5f00:1a3d:a2ff:febf:d33a] helo=aktux)
+ by mail.andi.de1.cc with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <andreas@kemnade.info>)
+ id 1iDvb6-0006GS-GH; Fri, 27 Sep 2019 21:08:09 +0200
+Date: Fri, 27 Sep 2019 21:08:07 +0200
+From: Andreas Kemnade <andreas@kemnade.info>
+To: Marco Felsch <m.felsch@pengutronix.de>
+Subject: Re: [PATCH 1/3] ARM: dts: add Netronix E60K02 board common file
+Message-ID: <20190927210807.26439a94@aktux>
+In-Reply-To: <20190927094721.w26ggnli4f5a64uv@pengutronix.de>
+References: <20190927061423.17278-1-andreas@kemnade.info>
+ <20190927061423.17278-2-andreas@kemnade.info>
+ <20190927094721.w26ggnli4f5a64uv@pengutronix.de>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+MIME-Version: 1.0
+X-Spam-Score: -1.0 (-)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190927_114406_129080_FE9D7BEB 
-X-CRM114-Status: UNSURE (   8.15  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190927_120823_431227_E09D96C1 
+X-CRM114-Status: GOOD (  24.86  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -95,46 +77,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, marex@denx.de, devicetree@vger.kernel.org,
+ andrew.smirnov@gmail.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ angus@akkea.ca, linux-kernel@vger.kernel.org, j.neuschaefer@gmx.net,
+ robh+dt@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
+ manivannan.sadhasivam@linaro.org,
+ Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
+ festevam@gmail.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add myself as maintainer for Amlogic Thermal driver.
+Hi Marco,
 
-Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
-Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
----
- MAINTAINERS | 9 +++++++++
- 1 file changed, 9 insertions(+)
+On Fri, 27 Sep 2019 11:47:21 +0200
+Marco Felsch <m.felsch@pengutronix.de> wrote:
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 390c3194ee93..bdc30d740342 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -15932,6 +15932,15 @@ F:	Documentation/driver-api/thermal/cpu-cooling-api.rst
- F:	drivers/thermal/cpu_cooling.c
- F:	include/linux/cpu_cooling.h
- 
-+THERMAL DRIVER FOR AMLOGIC SOCS
-+M:	Guillaume La Roque <glaroque@baylibre.com>
-+L:	linux-pm@vger.kernel.org
-+L:	linux-amlogic@lists.infradead.org
-+W:	http://linux-meson.com/
-+S:	Supported
-+F:	drivers/thermal/amlogic_thermal.c
-+F:	Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
-+
- THINKPAD ACPI EXTRAS DRIVER
- M:	Henrique de Moraes Holschuh <ibm-acpi@hmh.eng.br>
- L:	ibm-acpi-devel@lists.sourceforge.net
--- 
-2.17.1
+> Hi Andreas,
+> 
+> thanks for the patch.
+> 
+thanks for the quick review. Most of your comments are clear.
 
+[...]
+> > +	wifi_pwrseq: wifi_pwrseq {
+> > +		compatible = "mmc-pwrseq-simple";
+> > +		post-power-on-delay-ms = <20>;
+> > +		reset-gpios = <&gpio5 0 GPIO_ACTIVE_LOW>;  
+> 
+> Can you add a pinctrl-entry here please? The general rule is to mux
+> things where you use it.
+> 
+yes, there are many places in my patch where they are added to some
+parent devices.
+I will fix that.
+[...]
+> > +	leds {
+> > +		compatible = "gpio-leds";
+> > +		pinctrl-names = "default";
+> > +		pinctrl-0 = <&pinctrl_led>;  
+> 
+> Please move all muxing you made here into this file or add phandles so
+> the dts file need to add only the muxing stuff. This applies to all
+> pinctrl you made here.
+> 
+so you disagree with this pattern:
+in .dtsi
+ some_device {
+   pinctrl-0 = <&pinctrl_some_device>;
+ };
+
+and in .dts (one I sent with this patch series and the tolino/mx6sl one
+is not ready-cooked yet, will be part of a later series)
+&iomuxc {
+   pinctrl_some_device: some_devicegrp {
+   	fsl,pins = <...>;
+   };
+};
+
+?
+
+> > +
+> > +		GLED {
+> > +			gpios = <&gpio5 7 GPIO_ACTIVE_LOW>;
+> > +			linux,default-trigger = "timer";
+> > +		};
+> > +	};
+> > +
+> > +	gpio-keys {
+> > +		compatible = "gpio-keys";
+> > +		pinctrl-names = "default";
+> > +		pinctrl-0 = <&pinctrl_gpio_keys>;
+> > +		power {
+> > +			label = "Power";
+> > +			gpios = <&gpio5 8 GPIO_ACTIVE_LOW>;
+> > +			linux,code = <KEY_POWER>;  
+> 
+> Add missing header: dt-bindings/input/input.h to use this.
+> 
+I am doing this in the .dts but it is probably better to do it here
+because it is used here.
+
+> > +			gpio-key,wakeup;
+> > +		};
+> > +		cover {
+> > +			label = "Cover";
+> > +			gpios = <&gpio5 12 GPIO_ACTIVE_LOW>;
+> > +			linux,code = <SW_LID>;
+> > +			linux,input-type = <0x05>;    /* EV_SW */  
+> 
+> In the header above EV_SW is also specified so please use it here.
+> 
+This pattern is in many files. I took one as an example. It seems that
+50% of devicetree files have this pattern, the other 50% do have the
+pattern you proposed (which I like more). So probably EV_SW was not
+available in former times?
+
+> > +			gpio-key,wakeup;
+> > +		};
+> > +	};
+> > +
+> > +};
+> > +
+> > +
+> > +  
+> 
+> Whitespaces
+> 
+> > +&audmux {
+> > +	pinctrl-names = "default";
+> > +	status = "disabled";  
+> 
+> Why you mentioned a pinctrl-names here without the mux? Do we need the
+> status line here? The common case is that such devices are off by
+> default/the base dt.
+> 
+yes, that things can be removed.
+> > +};
+> > +
+> > +&snvs_rtc {
+> > +	status = "disabled";  
+> 
+> Same applies here.
+> 
+
+No, seems to be an exception, it does not have a status = "disabled" in
+imx6sll.dtsi.
+
+> > +};
+> > +
+> > +&i2c1 {
+> > +	clock-frequency = <100000>;
+> > +	pinctrl-names = "default","sleep";
+> > +	pinctrl-0 = <&pinctrl_i2c1 &pinctrl_lm3630a_bl_gpio>;  
+> 
+> The &pinctrl_lm3630a_bl_gpio should be moved into the lm3630a node.
+> 
+> > +	pinctrl-1 = <&pinctrl_i2c1_sleep>;
+> > +	status = "okay";
+> > +
+> > +	lm3630a: lm3630a-i2c@36 {  
+> 
+> please name it backlight@36
+> 
+> > +		reg = <0x36>;
+> > +		status = "ok";  
+> 
+> status lines are always be the last and if it is okay you can drop it
+> because the default is okay.
+> 
+well, I added it because the driver was not loaded but later I found out
+that the real reason is that module aliases were broken and forgot to
+remove that "ok".
+
+Regards,
+Andreas
 
 _______________________________________________
 linux-arm-kernel mailing list
