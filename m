@@ -2,73 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAF32BFBF8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 01:29:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0227BBFC32
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 02:14:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3zfNdcUhrBrjZoSm8a0+kFYS1X59fJllQsbOBrmo+ds=; b=KgOJPrDEeXL/0e
-	83ys8UBykSrZmgAzkexpO3zRpMlb+BrLGKMihOkVugMU4omcRns1U1cI5bTAQ+carqmb7ZavP0+AG
-	QEcYInJZne+E8HF55EcvdeSerDL2jy4FGQEe1zjGkKFeQKpXQmsCWEjgXOpr+2Ig0OaKCnXItm9Lh
-	rV/8thMNXl6ChbGUEsyje1RaUWjafMuLZ4a0Led8cvFxg/mj9zpqrOjDtW+H9Y3XkxO0dlm30aKcR
-	Gk/GpC8AxdFT8kMagTyxzQwt56Wqd3O7ubSISmQBe6Q5BdeVmPgOkYwvZAXm8DQRWDA93LObzbmWb
-	S1OTc0wRosnnuFem7b2w==;
+	List-Owner; bh=NO0JPQPSbZ5c5kiA9T+M3n+WDUhCTgnYHXkdNo4qrsQ=; b=gWHkF0XO2auzju
+	rx0OD1z9/QS5ET+0+tl6VW/w4rcrY8FOUWZp14lw5QTmA27w8pQ7Et2Znco6G8/zP687yZ7q9OvBo
+	s1XV+zMBO1K9RS+60UU9jvnxFy79K9JtL+p1wso9+uBxf9OwgzZt7CGgm97m5sCeaNO602QrHAUDt
+	OsaCtdEDxHP0e5jhQriGRp+zvSKgmnAjRHwQqVvQVMy7XftNlcFazxSWGPj0aPBraQcvCskFv8JcA
+	QTo0ryNqSbtTgMIpveUNYLkUZ1XyOlhM51zv3DVwYLWVSWlnPA2ZrPV+ZKAUU48eJMXHEZv8UNn5g
+	S+tzDayifwDy4hQtLE/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDdCO-0001Dt-UN; Thu, 26 Sep 2019 23:29:25 +0000
-Received: from gate2.alliedtelesis.co.nz ([202.36.163.20])
+	id 1iDduH-0008Qm-PZ; Fri, 27 Sep 2019 00:14:45 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDdBf-0000ii-1N
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Sep 2019 23:28:42 +0000
-Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
+ id 1iDdtz-0008P7-1C; Fri, 27 Sep 2019 00:14:28 +0000
+Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id F201E891AA;
- Fri, 27 Sep 2019 11:28:26 +1200 (NZST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
- s=mail181024; t=1569540506;
- bh=4ZTWevuQnd7Huoj4HJWGkNONefcT65iGcIwvwGxT6J0=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=2xf5JX+KItvUrgLEZanjB/QkhF3PI97gop1qwmbDEMCacg4VdFbzzk87lJwvzfP6l
- ZLiZx1lp6PFuQc0omHj9pFcemICnpEY5D53/CAfkijBtIrQ999PDnw+aAZOKnAGKKb
- z7RemHNABn/2pGq+0biHVYA2gPYQQSznz2tMcQH+0pL066nHlT6+QWKX3OnNWXwcpc
- CMr9ougKK1KbbDo5Z2iTmf5MqUJo+Yw7+je4KPZg5xCoV9A3eWKCXgDx/wKOgsceei
- 3oqR3WpnQ0XCGd8myw91A6YyvyJ55WSJFe8D1sLUlBJlBw8ursqrAeqm3LQIgUV30H
- xs/HxdSUzYccA==
-Received: from smtp (Not Verified[10.32.16.33]) by mmarshal3.atlnz.lc with
- Trustwave SEG (v7, 5, 8, 10121)
- id <B5d8d49980003>; Fri, 27 Sep 2019 11:28:26 +1200
-Received: from chrisp-dl.ws.atlnz.lc (chrisp-dl.ws.atlnz.lc [10.33.22.20])
- by smtp (Postfix) with ESMTP id 777DC13EF9B;
- Fri, 27 Sep 2019 11:28:28 +1200 (NZST)
-Received: by chrisp-dl.ws.atlnz.lc (Postfix, from userid 1030)
- id C03DA28003E; Fri, 27 Sep 2019 11:28:24 +1200 (NZST)
-From: Chris Packham <chris.packham@alliedtelesis.co.nz>
-To: jason@lakedaemon.net, andrew@lunn.ch, gregory.clement@bootlin.com,
- sebastian.hesselbarth@gmail.com, robh+dt@kernel.org, mark.rutland@arm.com
-Subject: [PATCH 3/3] ARM: dts: armada-xp: add label to sdram-controller node
-Date: Fri, 27 Sep 2019 11:28:20 +1200
-Message-Id: <20190926232820.27676-4-chris.packham@alliedtelesis.co.nz>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20190926232820.27676-1-chris.packham@alliedtelesis.co.nz>
-References: <20190926232820.27676-1-chris.packham@alliedtelesis.co.nz>
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DFDC7207FF;
+ Fri, 27 Sep 2019 00:14:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1569543266;
+ bh=ouc/ZGlpophw+opTwcJn7DhMFr0Pb1HOOZEWpUUYSk0=;
+ h=In-Reply-To:References:Cc:To:From:Subject:Date:From;
+ b=DRdMZW5AJXatJs4G1JlQTfOfltYGKHwfQVF23ynDzZJFds1pYvAYEyx/JxesVC+dt
+ gxTeolLgLZudoqnLbTi5VsZObkLPTtiZuRqz6glzq0r8YrmSg+SB3xzeUcyj+Io4oN
+ pqH6gowGJ0wJFBxhDSeWYNE4X7xhF2Ev/zt3+X18=
 MIME-Version: 1.0
-x-atlnz-ls: pat
+In-Reply-To: <20190919102518.25126-2-narmstrong@baylibre.com>
+References: <20190919102518.25126-1-narmstrong@baylibre.com>
+ <20190919102518.25126-2-narmstrong@baylibre.com>
+To: Neil Armstrong <narmstrong@baylibre.com>, jbrunet@baylibre.com,
+ mturquette@baylibre.com
+From: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH RFC 1/2] clk: introduce clk_invalidate_rate()
+User-Agent: alot/0.8.1
+Date: Thu, 26 Sep 2019 17:14:25 -0700
+Message-Id: <20190927001425.DFDC7207FF@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_162839_271333_EEEA43A7 
-X-CRM114-Status: GOOD (  10.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190926_171427_096100_5A3050D4 
+X-CRM114-Status: UNSURE (   9.48  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [202.36.163.20 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -76,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,51 +77,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Chris Packham <chris.packham@alliedtelesis.co.nz>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the label "sdramc" to the sdram-controller nodes for the Armada-XP
-and 98dx3236 SoCs.
+Quoting Neil Armstrong (2019-09-19 03:25:17)
+> This introduces the clk_invalidate_rate() call used to recalculate the
+> rate and parent tree of a particular clock if it's known that the
+> underlying registers set has been altered by the firmware, like from
+> a suspend/resume handler running in trusted cpu mode.
+> 
+> The call refreshes the actual parent and when changed, instructs CCF
+> the parent has changed. Finally the call will recalculate the rate of
+> each part of the tree to make sure the CCF cached tree is in sync with
+> the hardware.
+> 
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> ---
 
-Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
----
- arch/arm/boot/dts/armada-xp-98dx3236.dtsi | 2 +-
- arch/arm/boot/dts/armada-xp.dtsi          | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/arch/arm/boot/dts/armada-xp-98dx3236.dtsi b/arch/arm/boot/dts/armada-xp-98dx3236.dtsi
-index 267d0c178e55..654648b05c7c 100644
---- a/arch/arm/boot/dts/armada-xp-98dx3236.dtsi
-+++ b/arch/arm/boot/dts/armada-xp-98dx3236.dtsi
-@@ -90,7 +90,7 @@
- 		};
- 
- 		internal-regs {
--			sdramc@1400 {
-+			sdramc: sdramc@1400 {
- 				compatible = "marvell,armada-xp-sdram-controller";
- 				reg = <0x1400 0x500>;
- 			};
-diff --git a/arch/arm/boot/dts/armada-xp.dtsi b/arch/arm/boot/dts/armada-xp.dtsi
-index ee15c77d3689..6c19984d668e 100644
---- a/arch/arm/boot/dts/armada-xp.dtsi
-+++ b/arch/arm/boot/dts/armada-xp.dtsi
-@@ -36,7 +36,7 @@
- 		};
- 
- 		internal-regs {
--			sdramc@1400 {
-+			sdramc: sdramc@1400 {
- 				compatible = "marvell,armada-xp-sdram-controller";
- 				reg = <0x1400 0x500>;
- 			};
--- 
-2.23.0
+The knee-jerk reaction to these patches is that it shouldn't be a
+consumer API (i.e. taking a struct clk) but a provider API (i.e. taking
+a struct clk_hw). I haven't looked in any more detail but just know that
+it's a non-starter to be a consumer based API because we don't want
+random consumers out there to be telling the CCF or provider drivers
+that some clk has lost state and needs to be "refreshed".
 
 
 _______________________________________________
