@@ -2,70 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6EEBEBFF3D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 08:39:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 022B7BFF4A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 08:41:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=73EP7jV1vOqYFOFQrstRaN2AeQmk0pfZeHwMPNWr7cg=; b=OuEzzutMCbdse7
-	mKKgOWXdGSXJLZ7EYNyD4b1kZwQqmEAW+MLuvl78vzSdGqB07L+3g2aXxPAW+X6nmiN2UNN5y6ZO3
-	HVRbvdyR3bSOjT1yGUCYzFhWf35alKhzz92UYKL+jUrtZtgUcYh1IwtSHqzmclZ8Vm0Erc3M/ewsA
-	UrgrXw7wYn4/ylboFAerkWx3DYl6/JH/z9wDPmstCfLMzXXJMydicwAFwEFfkV2YHP/GO/IS6B3sz
-	ziLq8FhLxpM/mzelnRhuPpCGQgdTVS6B0Hz+hYeR7E4b/mRlRyDxsKEZIhFSwfALdgPvbFXBXEfDy
-	AA5mr/1h8yDPrR4X4Iwg==;
+	List-Owner; bh=eJBavU1qSSWbDgHeWYpJLHCRXkYiESAeUgiiU2Op4U4=; b=QZhvTkOIFysUs0
+	4+/dugXZYlfxuCMI0SrGSFJYp8Pt6Sjd4OY7wKAvq8dosw2dUVZRXz+D/+juD/h988/0md/r6pnfK
+	KZdu9IFTobG5YqMskdrhFlcn7wS+MF4iNS/WbPs1NKTsJsNH9GOd4qnIB+WIOqnnZfTmCZm8HJpav
+	B/1VGyh4w8c8+WDihOj/vKx4GWDoPnp73SMDxvVvbklK6bXY5ZJCycbg6xRe2tJHvSGZpe3dnTiNK
+	HJMDRq88Q9heE0rgEeZywIN/7c76uI+5uiDsKVP1HKKelI9abBTzlgiPmjyCxERvJRHce/IMyUrNd
+	31bqA9TFU5dQNPkAL5MQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDjuB-00010l-1C; Fri, 27 Sep 2019 06:39:03 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1iDjw9-0002iw-Ka; Fri, 27 Sep 2019 06:41:05 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDjtp-0000yt-MP
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 06:38:43 +0000
-Received: by mail-wr1-x443.google.com with SMTP id v8so1351767wrt.2
+ id 1iDjvp-0002h6-Dl
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 06:40:46 +0000
+Received: by mail-wm1-x341.google.com with SMTP id r19so5227527wmh.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Sep 2019 23:38:41 -0700 (PDT)
+ Thu, 26 Sep 2019 23:40:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=N6VkM0z841Krtrga1vgaL7l4TlcDiW87cgB/wBSnoMk=;
- b=Yz0WTVat1qj/a9+OixcTrwffInyf88Kjh0F1MX2RlJiFUruMsgivM+3vFPwRTbbeIF
- uYYqolDY8Pmx4rKIRR54uiKKYRoCnVWP1ljsct6nzVs/WSpNHWkydn3/YprqNooFySH8
- j8lRbWr6HDeJbA4gG/+0OWW/YFkGrYM7QVTich0gVq5yLCBdkdxFYEDXOUJ1sRw85yt9
- /V/zWLJXY/cLiGEJ6IQJKWo7KIw56eDjls1bt+jHZW8XOVukTo9YeuqgalhPFp69uKyk
- G5x6WZAHF3IaB/SnwpMjuyyu9L59Fr/HbvX1JvauV8gaPB60vzXOLVgqoxJUcjAMspD2
- 3adg==
+ bh=PHQhF1Uf8xVr36GTPK8xxc4d83dA9hQ4yXimfprGDGg=;
+ b=2FvSir+M/YgOB6XuiiX0hGFMFd7J0eZGu7Vn8aKrTBZL9HnCouMYPDJ4jixL8qOZK2
+ 2gCkqC9nMOjvuLTY0HiX+bRdo6Ppf/b00kMNZPauq86C3FWMjrdtwIFtC269p323iE+9
+ Kf6KAKpSwzJk6goXM9wiM7lOk1nGjJ1rkaXgza/LITKDdRv3gBSscxHx+ra5+TsykBCj
+ Dx0nTfkDL5KEqTqIhwRXFo3IoEJbUJLjQryiddtDBKaIinWXgegwP5f+lL+EB0+uluuL
+ ZhHS47bNp6A7JTdUhzxTxsAOsJK/rDkdBlzoYgCXg9FLlQzkv7M2ZZfJVJRt/X+MZ66X
+ uZnw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=N6VkM0z841Krtrga1vgaL7l4TlcDiW87cgB/wBSnoMk=;
- b=NhRkHUtTed9pV6ioGbLDoHsUDauqkRHqAZs9/Ly2JxjBxotgQO14CqyRTwomarcRSL
- 1/NMVkuWYa4fHI9bGrlJ3spboedAS5AfOnYwvfihvhOg1juPfxdJ/pFmPWsdZyG0FdCf
- CDRDTo7qbR2P1S58WeCqpjdIIE1TzhJLdrXzIv3lLKuEHQWPOhGxtnK9NBYPGGIPVAPH
- GhaleR0Tv+rTi1NCQhS23hOMOAM4y8LCnFtt6uAMKVyBg4xGs1kbn8+jlSBrYYsvcCXg
- 924Wlhk2yE7StvRUNDxqIHfiyxNaqOEeQJlx/84pw9LFOUxZFeVCf6tmAZz3z9kycQUI
- cUkw==
-X-Gm-Message-State: APjAAAUEGI8u6EKoZhTIKYc3mmyjxnsx8PsaF5PS0xoasWntej35so3x
- jE6DkEr/O8OHa7P5D+lcEghij0qUXQ43Lw==
-X-Google-Smtp-Source: APXvYqx0GDUQYgnlvt5Lm1MkwLuh2nfKL2JPfnUqkt12rNqDJAooiNxb+tKqKlGXb/Wa2z9ty/mf+Q==
-X-Received: by 2002:a5d:63c6:: with SMTP id c6mr1575616wrw.117.1569566320128; 
- Thu, 26 Sep 2019 23:38:40 -0700 (PDT)
+ bh=PHQhF1Uf8xVr36GTPK8xxc4d83dA9hQ4yXimfprGDGg=;
+ b=Ux33sXDKnVEji9CjH+sGrHmmBB7R9nWEtWVgsFng0l70O3rcGmCMDXfytxqvGu5pju
+ myd3qhDB3t85iimCjYW9pGWXrPP+NG7yUbcccP3vR91nNiiy6/SlRQSk9LBsdYjcRd95
+ X0WVP16OtXuT5uWMMf5L06UnHYCNicsFKr7WXSbhHzaxPzpOz/LcwQ8iJMhzeg1/fSqm
+ cz/Pqmo9BN36KEdmC7unC7gfYSnOdGL0oHIjMJrMUrSOgx8nTctxvRmNjEQpU2SE2dZB
+ nUSi6J/GYr8BIKIjfprg4E/z6bjE55Kk/ulZjvd4unWMtNxNcLn7+U+EGPUkAd6mAQfG
+ s4EQ==
+X-Gm-Message-State: APjAAAVjRIt5EFQFy8pWgwIZpaQMIbU9L/LiKzy7mfTsousWyYtEJHcO
+ 13VfxTLJWfrbDNidOm8yxP0WZg==
+X-Google-Smtp-Source: APXvYqzO7faOpfYkbitY0KwoI/cYZPPeFot3uk06M2C/f11Z4QbBMv/OBs42MToBEijbBQTE/4anzQ==
+X-Received: by 2002:a1c:f30d:: with SMTP id q13mr5364119wmq.60.1569566443678; 
+ Thu, 26 Sep 2019 23:40:43 -0700 (PDT)
 Received: from [192.168.1.62] (176-150-251-154.abo.bbox.fr. [176.150.251.154])
  by smtp.gmail.com with ESMTPSA id
- z125sm8980853wme.37.2019.09.26.23.38.39
+ a18sm3299443wrh.25.2019.09.26.23.40.42
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 26 Sep 2019 23:38:39 -0700 (PDT)
-Subject: Re: [PATCH RFC 0/2] clk: meson: g12a: handle clock hw changes while
- in suspend
-To: Kevin Hilman <khilman@baylibre.com>, sboyd@kernel.org,
- jbrunet@baylibre.com, mturquette@baylibre.com
+ Thu, 26 Sep 2019 23:40:43 -0700 (PDT)
+Subject: Re: [PATCH RFC 1/2] clk: introduce clk_invalidate_rate()
+To: Stephen Boyd <sboyd@kernel.org>, jbrunet@baylibre.com,
+ mturquette@baylibre.com
 References: <20190919102518.25126-1-narmstrong@baylibre.com>
- <7htv8ykcpm.fsf@baylibre.com>
+ <20190919102518.25126-2-narmstrong@baylibre.com>
+ <20190927001425.DFDC7207FF@mail.kernel.org>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -118,23 +118,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <3cf0a406-eb06-fe30-823f-cd2965646e10@baylibre.com>
-Date: Fri, 27 Sep 2019 08:38:38 +0200
+Message-ID: <8486dec0-8aea-ea39-2a52-7347a01c5c40@baylibre.com>
+Date: Fri, 27 Sep 2019 08:40:42 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <7htv8ykcpm.fsf@baylibre.com>
+In-Reply-To: <20190927001425.DFDC7207FF@mail.kernel.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_233841_729430_557984A5 
-X-CRM114-Status: GOOD (  12.93  )
+X-CRM114-CacheID: sfid-20190926_234045_460347_8252A74E 
+X-CRM114-Status: GOOD (  16.02  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -152,42 +152,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org
+Cc: linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 26/09/2019 22:46, Kevin Hilman wrote:
-> Neil Armstrong <narmstrong@baylibre.com> writes:
-> 
->> This serie aime to support when the suspend/resume firmware alters the
->> clock tree, leading to an incorrect representation of the clock tree
->> after a resume from suspend-to-mem.
+On 27/09/2019 02:14, Stephen Boyd wrote:
+> Quoting Neil Armstrong (2019-09-19 03:25:17)
+>> This introduces the clk_invalidate_rate() call used to recalculate the
+>> rate and parent tree of a particular clock if it's known that the
+>> underlying registers set has been altered by the firmware, like from
+>> a suspend/resume handler running in trusted cpu mode.
 >>
->> For the Amlogic G12A/G12B/SM1 case, the SCPI firmware handling suspend
->> alters the CPU clock tree in various ways.
+>> The call refreshes the actual parent and when changed, instructs CCF
+>> the parent has changed. Finally the call will recalculate the rate of
+>> each part of the tree to make sure the CCF cached tree is in sync with
+>> the hardware.
 >>
->> Since we know which part of the tree is possibly altered, we introduce here
->> the clk_invalidate_rate() function that will rebuild the tree from the
->> hardware registers in case parents and dividers have changed.
->>
->> Finally we call clk_invalidate_rate() from a new resume callback to refresh
->> the CPU clock tree after a resume.
->>
->> With the clock tree refreshed, CCF can now handle the new clock tree
->> configuration and avoid crashing the system on further DVFS set_rates.
+>> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+>> ---
 > 
-> For clarification, does this series work without the other proposed
-> fixes[1]?  or is this dependent on that?
-> 
-> Kevin
-> 
-> [1] https://lore.kernel.org/linux-amlogic/20190919093627.21245-1-narmstrong@baylibre.com/
+> The knee-jerk reaction to these patches is that it shouldn't be a
+> consumer API (i.e. taking a struct clk) but a provider API (i.e. taking
+> a struct clk_hw). I haven't looked in any more detail but just know that
+> it's a non-starter to be a consumer based API because we don't want
+> random consumers out there to be telling the CCF or provider drivers
+> that some clk has lost state and needs to be "refreshed".
 > 
 
-These are independent, but you'll need both to have suspend/resume fully working.
+Totally agree, I hesitated and obviously did the wrong choice, but
+this is a nit, the main algorithm is not tied to the API level.
+
+Should I resend it with clk_hw ? the difference will be small and
+the main subject is the resync algorithm.
 
 Neil
 
