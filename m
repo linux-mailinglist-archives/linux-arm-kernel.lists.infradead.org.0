@@ -2,94 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29951BFD09
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 04:06:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 283FDBFD28
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 04:24:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IZ1NuSp8oYceMHhruARzMfpux2spZMAvkdJ62zeuaiA=; b=IXCHdjtiT/c0Lf
-	MG0Imq6JztFZvX47pTnC9oQdgPELW0Zg3FZAIt1V94K5DeIwPG/khZ3JPVnWcK8pslNU6/Rr2HBSb
-	gt2JeeoAQfyjrxNyCBzedH1f/X/mKLjRPf6C3y3g6GYrEXIVJQmfe0EDgktMpO98NLc50SmdrRudX
-	OSNy+P0baVTF/ce6Bcn4f+685ujZCzOrlCYzI5wLoUwTyzs3IKYmUPf5EbIspW5XsABlO8QHTm67V
-	dM4yeUmo9UfgulBqXTFDJ1IB917TEYlJvLvZQLHrSfhuuGvmPgYEZFzRmlKaXLQoic8cpXHfNMUVj
-	5xj/FZLOQkoPdygkPelQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lq8SW6yFNpvlf2GWsNFbn7EwgMqGT11RwC4JB3jHM30=; b=ojdvrvTNMgLHrc
+	1Su04kAAzA8Ocq8dPcWr5/Ty6QRa6XjmrsHPuZmeH855ozv/oCaPFYpJEBeVdOacz+tUMXR/kTGx4
+	EKnhNhHC8uhEznzZ2ufQj4eGWkXdNV1QnOAwSNuFGUqKAe6JYBxP9rEf6kyWDPODPl3GGAz25dJm0
+	+Dt3/4p5rN1/L2kYvQfxwoEhnqTl2aPfcoPxUmokCJzTdx8bAiG53r8+EqHIKIFdBhOdvU/lNHQ5j
+	nUyqpNXa/uT0+sn2GB/rOWYDyikh4l2FL+4HGsuF9//sZbl42mGkn/8n1OnMbiI1K3jfjanOr4j25
+	ZIt2cytJ95flxc/q8x8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDfeb-0006qP-E7; Fri, 27 Sep 2019 02:06:41 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1iDfvG-0003Jf-SR; Fri, 27 Sep 2019 02:23:54 +0000
+Received: from mail-eopbgr130088.outbound.protection.outlook.com
+ ([40.107.13.88] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDfeP-0006oD-Cs
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 02:06:32 +0000
-Received: by mail-lj1-x244.google.com with SMTP id q64so846829ljb.12
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Sep 2019 19:06:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=linux-foundation.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=OJh6hczbbMF+hVrPwQo82LrMWLXXhdgwuK2FQy+UbcU=;
- b=dG5VU4yCxZ8kISwmVBqfUikv8VNBMtH2elKShBQTmWjuKMM73DSlWccxnyNeoSUOF/
- lFxW4MbHMqpQ/DSN8ak25pchuhkYPCnX3aOQK6JA8/4ZONpKbxQ5es1cZkl+MFK61p4f
- NrJM8OX4525vvN+QzOSqhkmHv67y/TWGtra18=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=OJh6hczbbMF+hVrPwQo82LrMWLXXhdgwuK2FQy+UbcU=;
- b=XOwH0LFAmxEXrIEa0NrR04CpQ5L0M/nd/Ak5cFsc4f+6HwwxxYRxYa9noO2Xg2thse
- pixXEHTxF+xSi0Zz8w6WwKNofFCALrcUwV1m9RhIF56kmwDI+329JSkgpSRGN4exec3+
- PxTWoa3YktCfFLMJJVfBzA5JNJ4r52fyLF6gUgDqcinMwshvtTC9qEl6JhHsavcr5yb+
- KhQ3DfA+S9d6Xe47eXApn+uwXvIjNuRB5BSukT06RCXDeKJG3uD1z56aPZXgRvAC17Ub
- EJaFE43GunhCv99igVAYPPVvkwihcUuRS0Nh6/LZa+ifOBbbs3ODdT20gI1sX/4/GbA9
- K2Cw==
-X-Gm-Message-State: APjAAAWcy/i6uBPHab1qYrdwiRnMLPy+FFXi3tKxMKah+5ivhe25nN25
- ZZRV1MS+3LYwEv5V82NEB+9FdoLlDLk=
-X-Google-Smtp-Source: APXvYqzu7YpAy2MR/qprLY/NeDcZt6G247P809pXDH7Qvv85myXaq9W7eGnVs3G4DeKtX15P1Hv3Kw==
-X-Received: by 2002:a2e:5b9a:: with SMTP id m26mr999329lje.183.1569549985778; 
- Thu, 26 Sep 2019 19:06:25 -0700 (PDT)
-Received: from mail-lj1-f179.google.com (mail-lj1-f179.google.com.
- [209.85.208.179])
- by smtp.gmail.com with ESMTPSA id i6sm185692lfc.37.2019.09.26.19.06.24
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 26 Sep 2019 19:06:24 -0700 (PDT)
-Received: by mail-lj1-f179.google.com with SMTP id f5so867305ljg.8
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Sep 2019 19:06:24 -0700 (PDT)
-X-Received: by 2002:a2e:9854:: with SMTP id e20mr1057382ljj.72.1569549984094; 
- Thu, 26 Sep 2019 19:06:24 -0700 (PDT)
+ id 1iDfv6-0003J4-6a
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 02:23:45 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=FWTGtQm4fkZ0aCyUoo6YP/kBCU/Bwp0fT0p547oCWJzIaXqiYsenAWXQqX7n1hfFESU198eZGgJ/ZIGs8hCCYA2lySKND2ikM6wSOvn/DMaUISeq9VIGl3a9IIcXC926vVh2pE0VV8E00k1kDpq0KGEZrhAsSOYDixURzF5Bm6yHa9z0e9cMHMmBhQw0qaNMnX7w9Zl9ApHKxFRDXTD8uDmahEbhtZla2RyOZIt4X/+62YUqgg5HNFNTXjnmOE2EduyY3CsOMKCDeWWoMeFA+CNYlS76KOzsv3gqaNceDDhwqYZjOJexvzutz9hwdtFSBg//X7pbxs4ebWIL1Tzoew==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lx05gsKG28o2amlhGhMrgN0keLE9klZMa40p9JDiAXY=;
+ b=nHnNWOF1pCBNJ6QvW6hyP2edYqOm+GqeX4GGkY3aLgBSmi+fFrkZJANQKcRFDATKqGHFyK8OiQvazv58cd/Zm3FemlRPfjKIoUu/m79JU8Hqs8K0yXpeLRzQo5WkpFjUlhc4ceHBL9sUBajKRaGHSerdc5QlWnjHF98kURN4OKe8k0CB1zxOtIKquvHzkw4KgVbz2kroUV3ZuXDKj8gSRnzZ/DXwoY8LC6O2p9oYS78Z/wGZYWRu3Rj/hoZ7/f8Cvt6y6B2jH9lrNX5ewez5ESSJZDShcusqD+0IL+arbC4qJalbX0EjW+QIkeIqNFqMNZLV6GeangJOWL49sqFMRA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lx05gsKG28o2amlhGhMrgN0keLE9klZMa40p9JDiAXY=;
+ b=LN0WFAi7kYlHiGZYfhKpC9V7XJYpno6+VWo7cGW7NeiWUyjBv5kAra/ZrMlsV7VHfgThGgp/EnqnBlDspnoRWn50g8nhdyxxCkX/US7xxIi33JYqrFyqOno5JWFID0WDe1V+s5v8lAMEXeaKWfMxww62dBfgXPhcfCn9wqW3SJk=
+Received: from DB7PR04MB4490.eurprd04.prod.outlook.com (52.135.138.150) by
+ DB7PR04MB5338.eurprd04.prod.outlook.com (52.135.128.33) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2284.20; Fri, 27 Sep 2019 02:23:41 +0000
+Received: from DB7PR04MB4490.eurprd04.prod.outlook.com
+ ([fe80::4427:96f2:f651:6dfa]) by DB7PR04MB4490.eurprd04.prod.outlook.com
+ ([fe80::4427:96f2:f651:6dfa%5]) with mapi id 15.20.2284.023; Fri, 27 Sep 2019
+ 02:23:41 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: "srinivas.kandagatla@linaro.org" <srinivas.kandagatla@linaro.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>
+Subject: [PATCH V2 1/2] nvmem: imx: scu: support hole region check
+Thread-Topic: [PATCH V2 1/2] nvmem: imx: scu: support hole region check
+Thread-Index: AQHVdNqTeL3qiyvuR0mH+QIEq+72lw==
+Date: Fri, 27 Sep 2019 02:23:41 +0000
+Message-ID: <1569550913-10176-1-git-send-email-peng.fan@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK2PR0401CA0021.apcprd04.prod.outlook.com
+ (2603:1096:202:2::31) To DB7PR04MB4490.eurprd04.prod.outlook.com
+ (2603:10a6:5:36::22)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 12b17aef-c8ea-4f89-a52d-08d742f1b65d
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600167)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:DB7PR04MB5338; 
+x-ms-traffictypediagnostic: DB7PR04MB5338:|DB7PR04MB5338:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB7PR04MB5338153CBDA7566958BE1E2288810@DB7PR04MB5338.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:5797;
+x-forefront-prvs: 0173C6D4D5
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(366004)(39860400002)(136003)(396003)(346002)(43544003)(199004)(189003)(54906003)(6436002)(110136005)(6486002)(81166006)(81156014)(50226002)(8676002)(2501003)(64756008)(8936002)(2201001)(66446008)(186003)(66556008)(66476007)(6512007)(6506007)(52116002)(478600001)(386003)(99286004)(4326008)(6116002)(86362001)(26005)(102836004)(256004)(44832011)(7736002)(5660300002)(305945005)(36756003)(66946007)(3846002)(316002)(2616005)(14454004)(486006)(2906002)(66066001)(476003)(71190400001)(71200400001)(25786009);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB5338;
+ H:DB7PR04MB4490.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: i9tWJR9lbvzZ5SjzxhZL2wreggZ6xooxAYQ+mW5cx8YbTjEDe7B4ZkWDL4sfBA/LLSPD/UgPwtlQb6ilKpOe35+FYf74EZs7BwJbzr+xU/j7dkuuu0uJzOVOfFUszRNtTZeWU3hhFwY6b30gfUQQFMuoQVWZgzbVzxHePrU69DL69wmo/xLmmsJ4yTj9Ntu0gHXZE4QZiAd+hNwL5vfqciQRJoUbwN0ftR1Q/j4Bsm5oVf71BZtjb+trOO2jNu7fZtktWn8ZQgkWJigD/PlWv0BGOIo9foPMaPsHleGWWjD5crTWNgBoyBS+DgcXkELoeq4Lm/7YBuWOpTRs7ijFOU5sNoPSPRkWf7AtLo8GONqJCG54lcAztD64uRLTFwRfF14exu8GY15zaOpcCuLVZANcuvqxREb8OxzOb38cuAU=
 MIME-Version: 1.0
-References: <20190925161255.1871-1-ard.biesheuvel@linaro.org>
- <20190925161255.1871-19-ard.biesheuvel@linaro.org>
- <CAHk-=wjYsbxSiV_XKWV3BwGvau_hUvQiQHLOoc7vLUZt0Wqzfw@mail.gmail.com>
- <CH2PR20MB29680F87B32BBF0495720172CA860@CH2PR20MB2968.namprd20.prod.outlook.com>
- <CAHk-=wgR_KsYw2GmZwkG3GmtX6nbyj0LEi7rSqC+uFi3ScTYcw@mail.gmail.com>
- <MN2PR20MB297317D9870A3B93B5E506C9CA810@MN2PR20MB2973.namprd20.prod.outlook.com>
-In-Reply-To: <MN2PR20MB297317D9870A3B93B5E506C9CA810@MN2PR20MB2973.namprd20.prod.outlook.com>
-From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Thu, 26 Sep 2019 19:06:08 -0700
-X-Gmail-Original-Message-ID: <CAHk-=wgu5-Wj=UY+iU+x=RcKN_ceUsKdfhsv2-E5TNocELU8Ag@mail.gmail.com>
-Message-ID: <CAHk-=wgu5-Wj=UY+iU+x=RcKN_ceUsKdfhsv2-E5TNocELU8Ag@mail.gmail.com>
-Subject: Re: [RFC PATCH 18/18] net: wireguard - switch to crypto API for
- packet encryption
-To: Pascal Van Leeuwen <pvanleeuwen@verimatrix.com>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 12b17aef-c8ea-4f89-a52d-08d742f1b65d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Sep 2019 02:23:41.1655 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: XTKDOCU5zzGx2EkQF9dNTx4yB14/V/Yzp2l4Q6eLdCso9G+q8Z7Z6ueodJbX3GciSFudVmuAMlatLBG5nXlQBg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB5338
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_190629_456047_4A4AF98D 
-X-CRM114-Status: GOOD (  13.63  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190926_192344_417702_E6571DD9 
+X-CRM114-Status: GOOD (  14.18  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ no trust [40.107.13.88 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -106,63 +126,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Jason A . Donenfeld" <Jason@zx2c4.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg KH <gregkh@linuxfoundation.org>, Eric Biggers <ebiggers@google.com>,
- Samuel Neves <sneves@dei.uc.pt>,
- Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
- Andy Lutomirski <luto@kernel.org>, Marc Zyngier <maz@kernel.org>,
- Dan Carpenter <dan.carpenter@oracle.com>, Will Deacon <will@kernel.org>,
- David Miller <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 26, 2019 at 5:15 PM Pascal Van Leeuwen
-<pvanleeuwen@verimatrix.com> wrote:
->
-> But even the CPU only thing may have several implementations, of which
-> you want to select the fastest one supported by the _detected_ CPU
-> features (i.e. SSE, AES-NI, AVX, AVX512, NEON, etc. etc.)
-> Do you think this would still be efficient if that would be some
-> large if-else tree? Also, such a fixed implementation wouldn't scale.
+From: Peng Fan <peng.fan@nxp.com>
 
-Just a note on this part.
+Introduce HOLE/ECC_REGION flag and in_hole helper to ease the check
+of hole region. The ECC_REGION is also introduced here which is
+preparing for programming support. ECC_REGION could only be programmed
+once, so need take care.
 
-Yes, with retpoline a large if-else tree is actually *way* better for
-performance these days than even just one single indirect call. I
-think the cross-over point is somewhere around 20 if-statements.
+Signed-off-by: Peng Fan <peng.fan@nxp.com>
+---
 
-But those kinds of things also are things that we already handle well
-with instruction rewriting, so they can actually have even less of an
-overhead than a conditional branch. Using code like
+V2:
+ Rebased on latest linux-next
 
-  if (static_cpu_has(X86_FEATURE_AVX2))
+ drivers/nvmem/imx-ocotp-scu.c | 47 ++++++++++++++++++++++++++++++++++++++-----
+ 1 file changed, 42 insertions(+), 5 deletions(-)
 
-actually ends up patching the code at run-time, so you end up having
-just an unconditional branch. Exactly because CPU feature choices
-often end up being in critical code-paths where you have
-one-or-the-other kind of setup.
+diff --git a/drivers/nvmem/imx-ocotp-scu.c b/drivers/nvmem/imx-ocotp-scu.c
+index 61a17f943f47..030e27ba4dfb 100644
+--- a/drivers/nvmem/imx-ocotp-scu.c
++++ b/drivers/nvmem/imx-ocotp-scu.c
+@@ -19,9 +19,20 @@ enum ocotp_devtype {
+ 	IMX8QM,
+ };
+ 
++#define ECC_REGION	BIT(0)
++#define HOLE_REGION	BIT(1)
++
++struct ocotp_region {
++	u32 start;
++	u32 end;
++	u32 flag;
++};
++
+ struct ocotp_devtype_data {
+ 	int devtype;
+ 	int nregs;
++	u32 num_region;
++	struct ocotp_region region[];
+ };
+ 
+ struct ocotp_priv {
+@@ -38,13 +49,41 @@ struct imx_sc_msg_misc_fuse_read {
+ static struct ocotp_devtype_data imx8qxp_data = {
+ 	.devtype = IMX8QXP,
+ 	.nregs = 800,
++	.num_region = 3,
++	.region = {
++		{0x10, 0x10f, ECC_REGION},
++		{0x110, 0x21F, HOLE_REGION},
++		{0x220, 0x31F, ECC_REGION},
++	},
+ };
+ 
+ static struct ocotp_devtype_data imx8qm_data = {
+ 	.devtype = IMX8QM,
+ 	.nregs = 800,
++	.num_region = 2,
++	.region = {
++		{0x10, 0x10f, ECC_REGION},
++		{0x1a0, 0x1ff, ECC_REGION},
++	},
+ };
+ 
++static bool in_hole(void *context, u32 index)
++{
++	struct ocotp_priv *priv = context;
++	const struct ocotp_devtype_data *data = priv->data;
++	int i;
++
++	for (i = 0; i < data->num_region; i++) {
++		if (data->region[i].flag & HOLE_REGION) {
++			if ((index >= data->region[i].start) &&
++			    (index <= data->region[i].end))
++				return true;
++		}
++	}
++
++	return false;
++}
++
+ static int imx_sc_misc_otp_fuse_read(struct imx_sc_ipc *ipc, u32 word,
+ 				     u32 *val)
+ {
+@@ -91,11 +130,9 @@ static int imx_scu_ocotp_read(void *context, unsigned int offset,
+ 	buf = p;
+ 
+ 	for (i = index; i < (index + count); i++) {
+-		if (priv->data->devtype == IMX8QXP) {
+-			if ((i > 271) && (i < 544)) {
+-				*buf++ = 0;
+-				continue;
+-			}
++		if (in_hole(context, i)) {
++			*buf++ = 0;
++			continue;
+ 		}
+ 
+ 		ret = imx_sc_misc_otp_fuse_read(priv->nvmem_ipc, i, buf);
+-- 
+2.16.4
 
-And yes, one of the big users of this is very much the crypto library code.
-
-The code to do the above is disgusting, and when you look at the
-generated code you see odd unreachable jumps and what looks like a
-slow "bts" instruction that does the testing dynamically.
-
-And then the kernel instruction stream gets rewritten fairly early
-during the boot depending on the actual CPU capabilities, and the
-dynamic tests get overwritten by a direct jump.
-
-Admittedly I don't think the arm64 people go to quite those lengths,
-but it certainly wouldn't be impossible there either.  It just takes a
-bit of architecture knowledge and a strong stomach ;)
-
-                 Linus
 
 _______________________________________________
 linux-arm-kernel mailing list
