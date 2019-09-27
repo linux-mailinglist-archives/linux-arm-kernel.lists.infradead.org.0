@@ -2,71 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB984BFD6C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 05:02:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FC46BFD8B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 05:12:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=SR55/esv4TRDUEBzWUEe4LtvNoxqsojHRPRrVIyMstw=; b=C/EnlW0rLpAMx4A4jkUlkzZDM+
-	Ps1jfc5Tc18dBkoH6itZ6P6ZROkjADE/QZXUYH8VYiItakcRbbNfgZjydp40XR0B8F5hkmtijV3Tw
-	xq4VfAizBl43lXCrZ57NnGbqtdeuB3o7YLC5FG5IEmpnQOJaN+2GpPAFdnTv0aNbKoTTr98bwtstv
-	8nt8TXsff+yo9q7BBwPx20a5bH0HFC/HpW/tI34TdXx1xKTIJCr4PXhQljf7PEVHZyIAXqGtNtwBG
-	IjGfKYm07qD4YCuPuVMgAne7rh9c78mBeh814xS4aQ/ciGk2t6k6QMcXNJS5Ve35kwKV+2RVKGLId
-	JLOIFCJQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=3GT0Q6mORsXLrj9fvYg3vfZ1WRyMddBpmUvG5CM1BaI=; b=SEgdJWumNN4ZxXK53YZ6WXALs
+	AiPMJhGgnEOa68xrtx2iFYFCIxipSWL6jp8jf+cxkSf7tv5sLeb1vl77d+9f6fHgsawNkP/xrbN7J
+	XmDQfAZSe+w2d7JLE3edxWjiS7NuPewPeXjQ8tsKL4eZawmVzZeN7virvEGvpNOLEUcE8qi9Qq7bL
+	vzLjWkFlfAG7A5YFGSgiwGbRWNy2eT+i4pRt8BKOor8rRdChGGREBOcGIydotizeux+GobvEuvMid
+	JKj9Ic+a6qd3vnAXdh6Q9rhWpDJtfA4owuUbf6djQDPe9GBbP2zxnRJZ9/1liSOdO2yUzR39n2Zrg
+	y+cyzCh2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDgWi-0000Zf-0V; Fri, 27 Sep 2019 03:02:36 +0000
-Received: from lucky1.263xmail.com ([211.157.147.132])
+	id 1iDgft-0004Fs-ML; Fri, 27 Sep 2019 03:12:05 +0000
+Received: from mail-sz.amlogic.com ([211.162.65.117])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDgVU-00082g-02; Fri, 27 Sep 2019 03:01:22 +0000
-Received: from localhost (unknown [192.168.167.138])
- by lucky1.263xmail.com (Postfix) with ESMTP id 876FA5CF59;
- Fri, 27 Sep 2019 11:01:17 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-ABS-CHECKED: 0
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P20920T140646948005632S1569553274502940_; 
- Fri, 27 Sep 2019 11:01:16 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <b623b4ff587c8a9c03bc708a4945eab9>
-X-RL-SENDER: zhangqing@rock-chips.com
-X-SENDER: zhangqing@rock-chips.com
-X-LOGIN-NAME: zhangqing@rock-chips.com
-X-FST-TO: heiko@sntech.de
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-From: Elaine Zhang <zhangqing@rock-chips.com>
-To: heiko@sntech.de
-Subject: [PATCH v3 5/5] clk: rockchip: support pll setting by auto
-Date: Fri, 27 Sep 2019 11:01:24 +0800
-Message-Id: <1569553284-3232-1-git-send-email-zhangqing@rock-chips.com>
-X-Mailer: git-send-email 1.9.1
-In-Reply-To: <1569553244-3165-1-git-send-email-zhangqing@rock-chips.com>
-References: <1569553244-3165-1-git-send-email-zhangqing@rock-chips.com>
+ id 1iDgfe-0004Ez-5w; Fri, 27 Sep 2019 03:11:51 +0000
+Received: from [10.28.19.114] (10.28.19.114) by mail-sz.amlogic.com
+ (10.28.11.5) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Fri, 27 Sep
+ 2019 11:11:37 +0800
+Subject: Re: [PATCH 2/2] clk: meson: a1: add support for Amlogic A1 clock
+ driver
+To: Stephen Boyd <sboyd@kernel.org>, Jerome Brunet <jbrunet@baylibre.com>,
+ Neil Armstrong <narmstrong@baylibre.com>
+References: <1569411888-98116-1-git-send-email-jian.hu@amlogic.com>
+ <1569411888-98116-3-git-send-email-jian.hu@amlogic.com>
+ <20190925131232.4751020640@mail.kernel.org>
+From: Jian Hu <jian.hu@amlogic.com>
+Message-ID: <8351489a-f91e-be08-7fcc-e2a90c6e87f0@amlogic.com>
+Date: Fri, 27 Sep 2019 11:11:36 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.3.3
+MIME-Version: 1.0
+In-Reply-To: <20190925131232.4751020640@mail.kernel.org>
+Content-Language: en-US
+X-Originating-IP: [10.28.19.114]
+X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
+ (10.28.11.5)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_200120_390507_37A6BF36 
-X-CRM114-Status: GOOD (  17.79  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190926_201150_229324_E8934AA1 
+X-CRM114-Status: GOOD (  19.85  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.132 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [211.157.147.132 listed in wl.mailspike.net]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -79,289 +65,234 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: huangtao@rock-chips.com, xxx@rock-chips.com, xf@rock-chips.com,
- sboyd@kernel.org, mturquette@baylibre.com,
- Elaine Zhang <zhangqing@rock-chips.com>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: Rob Herring <robh@kernel.org>, Jianxin Pan <jianxin.pan@amlogic.com>,
+ devicetree@vger.kernel.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ Qiufang Dai <qiufang.dai@amlogic.com>, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If setting freq is not support in rockchip_pll_rate_table,
-It can calculate and set pll params by auto.
+Hi, Stephen
 
-Signed-off-by: Elaine Zhang <zhangqing@rock-chips.com>
----
- drivers/clk/rockchip/clk-pll.c | 215 ++++++++++++++++++++++++++++++++++++++---
- 1 file changed, 200 insertions(+), 15 deletions(-)
+Thank you for review
 
-diff --git a/drivers/clk/rockchip/clk-pll.c b/drivers/clk/rockchip/clk-pll.c
-index 390e9473807a..ac8c62c531f0 100644
---- a/drivers/clk/rockchip/clk-pll.c
-+++ b/drivers/clk/rockchip/clk-pll.c
-@@ -14,6 +14,7 @@
- #include <linux/clk-provider.h>
- #include <linux/regmap.h>
- #include <linux/clk.h>
-+#include <linux/gcd.h>
- #include "clk.h"
- 
- #define PLL_MODE_MASK		0x3
-@@ -46,6 +47,198 @@ struct rockchip_clk_pll {
- #define to_rockchip_clk_pll_nb(nb) \
- 			container_of(nb, struct rockchip_clk_pll, clk_nb)
- 
-+#define MHZ			(1000UL * 1000UL)
-+#define KHZ			(1000UL)
-+
-+/* CLK_PLL_TYPE_RK3066_AUTO type ops */
-+#define PLL_FREF_MIN		(269 * KHZ)
-+#define PLL_FREF_MAX		(2200 * MHZ)
-+
-+#define PLL_FVCO_MIN		(440 * MHZ)
-+#define PLL_FVCO_MAX		(2200 * MHZ)
-+
-+#define PLL_FOUT_MIN		(27500 * KHZ)
-+#define PLL_FOUT_MAX		(2200 * MHZ)
-+
-+#define PLL_NF_MAX		(4096)
-+#define PLL_NR_MAX		(64)
-+#define PLL_NO_MAX		(16)
-+
-+/* CLK_PLL_TYPE_RK3036/3366/3399_AUTO type ops */
-+#define MIN_FOUTVCO_FREQ	(800 * MHZ)
-+#define MAX_FOUTVCO_FREQ	(2000 * MHZ)
-+
-+static struct rockchip_pll_rate_table auto_table;
-+
-+static struct rockchip_pll_rate_table *rk_pll_rate_table_get(void)
-+{
-+	return &auto_table;
-+}
-+
-+static int rockchip_pll_clk_set_postdiv(unsigned long fout_hz,
-+					u32 *postdiv1,
-+					u32 *postdiv2,
-+					u32 *foutvco)
-+{
-+	unsigned long freq;
-+
-+	if (fout_hz < MIN_FOUTVCO_FREQ) {
-+		for (*postdiv1 = 1; *postdiv1 <= 7; (*postdiv1)++) {
-+			for (*postdiv2 = 1; *postdiv2 <= 7; (*postdiv2)++) {
-+				freq = fout_hz * (*postdiv1) * (*postdiv2);
-+				if (freq >= MIN_FOUTVCO_FREQ &&
-+				    freq <= MAX_FOUTVCO_FREQ) {
-+					*foutvco = freq;
-+					return 0;
-+				}
-+			}
-+		}
-+		pr_err("CANNOT FIND postdiv1/2 to make fout in range from 800M to 2000M,fout = %lu\n",
-+		       fout_hz);
-+	} else {
-+		*postdiv1 = 1;
-+		*postdiv2 = 1;
-+	}
-+	return 0;
-+}
-+
-+static struct rockchip_pll_rate_table *
-+rockchip_pll_clk_set_by_auto(struct rockchip_clk_pll *pll,
-+			     unsigned long fin_hz,
-+			     unsigned long fout_hz)
-+{
-+	struct rockchip_pll_rate_table *rate_table = rk_pll_rate_table_get();
-+	/* FIXME set postdiv1/2 always 1*/
-+	u32 foutvco = fout_hz;
-+	u64 fin_64, frac_64;
-+	u32 f_frac, postdiv1, postdiv2;
-+	unsigned long clk_gcd = 0;
-+
-+	if (fin_hz == 0 || fout_hz == 0 || fout_hz == fin_hz)
-+		return NULL;
-+
-+	rockchip_pll_clk_set_postdiv(fout_hz, &postdiv1, &postdiv2, &foutvco);
-+	rate_table->postdiv1 = postdiv1;
-+	rate_table->postdiv2 = postdiv2;
-+	rate_table->dsmpd = 1;
-+
-+	if (fin_hz / MHZ * MHZ == fin_hz && fout_hz / MHZ * MHZ == fout_hz) {
-+		fin_hz /= MHZ;
-+		foutvco /= MHZ;
-+		clk_gcd = gcd(fin_hz, foutvco);
-+		rate_table->refdiv = fin_hz / clk_gcd;
-+		rate_table->fbdiv = foutvco / clk_gcd;
-+
-+		rate_table->frac = 0;
-+
-+		pr_debug("fin = %lu, fout = %lu, clk_gcd = %lu, refdiv = %u, fbdiv = %u, postdiv1 = %u, postdiv2 = %u, frac = %u\n",
-+			 fin_hz, fout_hz, clk_gcd, rate_table->refdiv,
-+			 rate_table->fbdiv, rate_table->postdiv1,
-+			 rate_table->postdiv2, rate_table->frac);
-+	} else {
-+		pr_debug("frac div running, fin_hz = %lu, fout_hz = %lu, fin_INT_mhz = %lu, fout_INT_mhz = %lu\n",
-+			 fin_hz, fout_hz,
-+			 fin_hz / MHZ * MHZ,
-+			 fout_hz / MHZ * MHZ);
-+		pr_debug("frac get postdiv1 = %u,  postdiv2 = %u, foutvco = %u\n",
-+			 rate_table->postdiv1, rate_table->postdiv2, foutvco);
-+		clk_gcd = gcd(fin_hz / MHZ, foutvco / MHZ);
-+		rate_table->refdiv = fin_hz / MHZ / clk_gcd;
-+		rate_table->fbdiv = foutvco / MHZ / clk_gcd;
-+		pr_debug("frac get refdiv = %u,  fbdiv = %u\n",
-+			 rate_table->refdiv, rate_table->fbdiv);
-+
-+		rate_table->frac = 0;
-+
-+		f_frac = (foutvco % MHZ);
-+		fin_64 = fin_hz;
-+		do_div(fin_64, (u64)rate_table->refdiv);
-+		frac_64 = (u64)f_frac << 24;
-+		do_div(frac_64, fin_64);
-+		rate_table->frac = (u32)frac_64;
-+		if (rate_table->frac > 0)
-+			rate_table->dsmpd = 0;
-+		pr_debug("frac = %x\n", rate_table->frac);
-+	}
-+	return rate_table;
-+}
-+
-+static struct rockchip_pll_rate_table *
-+rockchip_rk3066_pll_clk_set_by_auto(struct rockchip_clk_pll *pll,
-+				    unsigned long fin_hz,
-+				    unsigned long fout_hz)
-+{
-+	struct rockchip_pll_rate_table *rate_table = rk_pll_rate_table_get();
-+	u32 nr, nf, no, nonr;
-+	u32 nr_out, nf_out, no_out;
-+	u32 n;
-+	u32 numerator, denominator;
-+	u64 fref, fvco, fout;
-+	unsigned long clk_gcd = 0;
-+
-+	nr_out = PLL_NR_MAX + 1;
-+	no_out = 0;
-+	nf_out = 0;
-+
-+	if (fin_hz == 0 || fout_hz == 0 || fout_hz == fin_hz)
-+		return NULL;
-+
-+	clk_gcd = gcd(fin_hz, fout_hz);
-+
-+	numerator = fout_hz / clk_gcd;
-+	denominator = fin_hz / clk_gcd;
-+
-+	for (n = 1;; n++) {
-+		nf = numerator * n;
-+		nonr = denominator * n;
-+		if (nf > PLL_NF_MAX || nonr > (PLL_NO_MAX * PLL_NR_MAX))
-+			break;
-+
-+		for (no = 1; no <= PLL_NO_MAX; no++) {
-+			if (!(no == 1 || !(no % 2)))
-+				continue;
-+
-+			if (nonr % no)
-+				continue;
-+			nr = nonr / no;
-+
-+			if (nr > PLL_NR_MAX)
-+				continue;
-+
-+			fref = fin_hz / nr;
-+			if (fref < PLL_FREF_MIN || fref > PLL_FREF_MAX)
-+				continue;
-+
-+			fvco = fref * nf;
-+			if (fvco < PLL_FVCO_MIN || fvco > PLL_FVCO_MAX)
-+				continue;
-+
-+			fout = fvco / no;
-+			if (fout < PLL_FOUT_MIN || fout > PLL_FOUT_MAX)
-+				continue;
-+
-+			/* select the best from all available PLL settings */
-+			if ((no > no_out) ||
-+			    ((no == no_out) && (nr < nr_out))) {
-+				nr_out = nr;
-+				nf_out = nf;
-+				no_out = no;
-+			}
-+		}
-+	}
-+
-+	/* output the best PLL setting */
-+	if ((nr_out <= PLL_NR_MAX) && (no_out > 0)) {
-+		rate_table->nr = nr_out;
-+		rate_table->nf = nf_out;
-+		rate_table->no = no_out;
-+	} else {
-+		return NULL;
-+	}
-+
-+	return rate_table;
-+}
-+
- static const struct rockchip_pll_rate_table *rockchip_get_pll_settings(
- 			    struct rockchip_clk_pll *pll, unsigned long rate)
- {
-@@ -57,24 +250,16 @@ static const struct rockchip_pll_rate_table *rockchip_get_pll_settings(
- 			return &rate_table[i];
- 	}
- 
--	return NULL;
-+	if (pll->type == pll_rk3066)
-+		return rockchip_rk3066_pll_clk_set_by_auto(pll, 24 * MHZ, rate);
-+	else
-+		return rockchip_pll_clk_set_by_auto(pll, 24 * MHZ, rate);
- }
- 
- static long rockchip_pll_round_rate(struct clk_hw *hw,
- 			    unsigned long drate, unsigned long *prate)
- {
--	struct rockchip_clk_pll *pll = to_rockchip_clk_pll(hw);
--	const struct rockchip_pll_rate_table *rate_table = pll->rate_table;
--	int i;
--
--	/* Assumming rate_table is in descending order */
--	for (i = 0; i < pll->rate_count; i++) {
--		if (drate >= rate_table[i].rate)
--			return rate_table[i].rate;
--	}
--
--	/* return minimum supported value */
--	return rate_table[i - 1].rate;
-+	return drate;
- }
- 
- /*
-@@ -154,7 +339,7 @@ static unsigned long rockchip_rk3036_pll_recalc_rate(struct clk_hw *hw,
- {
- 	struct rockchip_clk_pll *pll = to_rockchip_clk_pll(hw);
- 	struct rockchip_pll_rate_table cur;
--	u64 rate64 = prate;
-+	u64 rate64 = prate, frac_rate64 = prate;
- 
- 	rockchip_rk3036_pll_get_params(pll, &cur);
- 
-@@ -163,7 +348,7 @@ static unsigned long rockchip_rk3036_pll_recalc_rate(struct clk_hw *hw,
- 
- 	if (cur.dsmpd == 0) {
- 		/* fractional mode */
--		u64 frac_rate64 = prate * cur.frac;
-+		frac_rate64 *= cur.frac;
- 
- 		do_div(frac_rate64, cur.refdiv);
- 		rate64 += frac_rate64 >> 24;
--- 
-1.9.1
-
-
-
+On 2019/9/25 21:12, Stephen Boyd wrote:
+> Quoting Jian Hu (2019-09-25 04:44:48)
+>> The Amlogic A1 clock includes three parts:
+>> peripheral clocks, pll clocks, CPU clocks.
+>> sys pll and CPU clocks will be sent in next patch.
+>>
+>> Unlike the previous series, there is no EE/AO domain
+>> in A1 CLK controllers.
+>>
+>> Signed-off-by: Jian Hu <jian.hu@amlogic.com>
+>> Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
+> 
+> This second name didn't send the patch. Please follow the signoff
+> procedures documented in Documentation/process/submitting-patches.rst
+> 
+>> diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
+>> index 16d7614..a48f67d 100644
+>> --- a/arch/arm64/Kconfig.platforms
+>> +++ b/arch/arm64/Kconfig.platforms
+>> @@ -138,6 +138,7 @@ config ARCH_MESON
+>>          select COMMON_CLK_AXG
+>>          select COMMON_CLK_G12A
+>>          select MESON_IRQ_GPIO
+>> +       select COMMON_CLK_A1
+> 
+> Sort?
+ok, I will put it behind COMMON_CLK_AXG
+> 
+>>          help
+>>            This enables support for the arm64 based Amlogic SoCs
+>>            such as the s905, S905X/D, S912, A113X/D or S905X/D2
+>> diff --git a/drivers/clk/meson/Kconfig b/drivers/clk/meson/Kconfig
+>> index dabeb43..e6cb4c3 100644
+>> --- a/drivers/clk/meson/Kconfig
+>> +++ b/drivers/clk/meson/Kconfig
+>> @@ -107,3 +107,13 @@ config COMMON_CLK_G12A
+>>          help
+>>            Support for the clock controller on Amlogic S905D2, S905X2 and S905Y2
+>>            devices, aka g12a. Say Y if you want peripherals to work.
+>> +
+>> +config COMMON_CLK_A1
+> 
+> Probably should be placed somewhere alphabetically in this file?
+ok, I will put it behind COMMON_CLK_AXG_AUDIO
+> 
+>> +       bool
+>> +       depends on ARCH_MESON
+>> +       select COMMON_CLK_MESON_REGMAP
+>> +       select COMMON_CLK_MESON_DUALDIV
+>> +       select COMMON_CLK_MESON_PLL
+>> +       help
+>> +         Support for the clock controller on Amlogic A113L device,
+>> +         aka a1. Say Y if you want peripherals to work.
+>> diff --git a/drivers/clk/meson/Makefile b/drivers/clk/meson/Makefile
+>> index 3939f21..6be3a8f 100644
+>> --- a/drivers/clk/meson/Makefile
+>> +++ b/drivers/clk/meson/Makefile
+>> @@ -19,3 +19,4 @@ obj-$(CONFIG_COMMON_CLK_AXG_AUDIO) += axg-audio.o
+>>   obj-$(CONFIG_COMMON_CLK_GXBB) += gxbb.o gxbb-aoclk.o
+>>   obj-$(CONFIG_COMMON_CLK_G12A) += g12a.o g12a-aoclk.o
+>>   obj-$(CONFIG_COMMON_CLK_MESON8B) += meson8b.o
+>> +obj-$(CONFIG_COMMON_CLK_A1) += a1.o
+> 
+> I would guess this should be sorted on Kconfig name in this file?
+ok, I will put it behind COMMON_CLK_AXG_AUDIO
+> 
+>> diff --git a/drivers/clk/meson/a1.c b/drivers/clk/meson/a1.c
+>> new file mode 100644
+>> index 0000000..26edae0f
+>> --- /dev/null
+>> +++ b/drivers/clk/meson/a1.c
+>> @@ -0,0 +1,2617 @@
+>> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+>> +/*
+>> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
+>> + */
+>> +
+>> +#include <linux/clk-provider.h>
+>> +#include <linux/init.h>
+>> +#include <linux/of_device.h>
+>> +#include <linux/platform_device.h>
+>> +#include <linux/of_address.h>
+>> +#include "clk-mpll.h"
+>> +#include "clk-pll.h"
+>> +#include "clk-regmap.h"
+>> +#include "vid-pll-div.h"
+>> +#include "clk-dualdiv.h"
+>> +#include "meson-eeclk.h"
+>> +#include "a1.h"
+>> +
+> [...]
+>> +
+>> +/*
+>> + * The Meson A1 HIFI PLL is 614.4M, it requires
+>> + * a strict register sequence to enable the PLL.
+>> + * set meson_clk_pcie_pll_ops as its ops
+> 
+> Please remove this last line as it's obvious from the code what ops are
+> used.
+> 
+ok, I will remove it.
+>> + */
+>> +static struct clk_regmap a1_hifi_pll = {
+>> +       .data = &(struct meson_clk_pll_data){
+>> +               .en = {
+>> +                       .reg_off = ANACTRL_HIFIPLL_CTRL0,
+>> +                       .shift   = 28,
+>> +                       .width   = 1,
+>> +               },
+>> +               .m = {
+>> +                       .reg_off = ANACTRL_HIFIPLL_CTRL0,
+>> +                       .shift   = 0,
+>> +                       .width   = 8,
+>> +               },
+>> +               .n = {
+>> +                       .reg_off = ANACTRL_HIFIPLL_CTRL0,
+>> +                       .shift   = 10,
+>> +                       .width   = 5,
+>> +               },
+>> +               .frac = {
+>> +                       .reg_off = ANACTRL_HIFIPLL_CTRL1,
+>> +                       .shift   = 0,
+>> +                       .width   = 19,
+>> +               },
+>> +               .l = {
+>> +                       .reg_off = ANACTRL_HIFIPLL_STS,
+>> +                       .shift   = 31,
+>> +                       .width   = 1,
+>> +               },
+>> +               .table = a1_hifi_pll_params_table,
+>> +               .init_regs = a1_hifi_init_regs,
+>> +               .init_count = ARRAY_SIZE(a1_hifi_init_regs),
+>> +       },
+>> +       .hw.init = &(struct clk_init_data){
+>> +               .name = "hifi_pll",
+>> +               .ops = &meson_clk_pcie_pll_ops,
+>> +               .parent_hws = (const struct clk_hw *[]) {
+>> +                       &a1_xtal_hifipll.hw
+>> +               },
+>> +               .num_parents = 1,
+>> +       },
+>> +};
+>> +
+> [..]
+>> +
+>> +static struct clk_regmap a1_fclk_div2 = {
+>> +       .data = &(struct clk_regmap_gate_data){
+>> +               .offset = ANACTRL_FIXPLL_CTRL0,
+>> +               .bit_idx = 21,
+>> +       },
+>> +       .hw.init = &(struct clk_init_data){
+>> +               .name = "fclk_div2",
+>> +               .ops = &clk_regmap_gate_ops,
+>> +               .parent_hws = (const struct clk_hw *[]) {
+>> +                       &a1_fclk_div2_div.hw
+>> +               },
+>> +               .num_parents = 1,
+>> +               /*
+>> +                * add CLK_IS_CRITICAL flag to avoid being disabled by clk core
+>> +                * or its children clocks.
+> 
+> This comment is useless. Please replace it with an actual reason for
+> keeping the clk on instead of describing what the flag does.
+> 
+ok, The actual reason is it should not change at runtime.
+>> +                */
+>> +               .flags = CLK_IS_CRITICAL,
+>> +       },
+>> +};
+>> +
+> [..]
+>> +static struct clk_regmap a1_dmc = {
+>> +       .data = &(struct clk_regmap_gate_data){
+>> +               .offset = DMC_CLK_CTRL,
+>> +               .bit_idx = 8,
+>> +       },
+>> +       .hw.init = &(struct clk_init_data) {
+>> +               .name = "dmc",
+>> +               .ops = &clk_regmap_gate_ops,
+>> +               .parent_hws = (const struct clk_hw *[]) {
+>> +                       &a1_dmc_sel2.hw
+>> +               },
+>> +               .num_parents = 1,
+>> +               /*
+>> +                * add CLK_IGNORE_UNUSED to avoid hangup
+>> +                * DDR clock should not change at runtime
+>> +                */
+>> +               .flags = CLK_SET_RATE_PARENT | CLK_IGNORE_UNUSED,
+> 
+> So not CLK_IS_CRITICAL?
+Yes, CLK_IS_CRITICAL is better, I will change it.
+> 
+>> +       },
+>> +};
+>> +
+> [...]
+>> +
+>> +/*
+>> + * cpu clock register base address is 0xfd000080
+>> + */
+>> +static struct clk_regmap *const a1_cpu_clk_regmaps[] = {
+>> +       /* TODO */
+> 
+> Can it be done?
+I plan to compelte cpu clock with the DVFS verified. And  Some 
+peripheral devices rely on this patch to send. I prefer to do it in the 
+next patch.
+> 
+>> +};
+> 
+> .
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
