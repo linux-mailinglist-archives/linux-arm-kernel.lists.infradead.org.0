@@ -2,176 +2,121 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA920C0382
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 12:36:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F2CCC03A6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 12:44:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iUgddjEPtU4on04oVRh7CgE/7soiFXVOdOcF/eIHhxc=; b=hLBKh5UZ9gQSWM
-	7e7tHx90RT4cId2uMCMq9AEH6iiA/6Dp06KUDRz7gWh7w2bMyT1p7X/7e0jFLIa9+e7afV/4zNyef
-	QfAB+Q8cc14RIDhRrDqoEO7TVP44OYDXhEXQsPc0pY9y+xDW8QhCVObZPPchr38NZwszpMAg1zLRR
-	jgaoEe+wYGbGQ3mNI8OmWpstg9FT3EnlhNl3qe6lEAskC9evj4ekUcxCXMggmGeVp7T++QffpSWpA
-	hZEOTR1cnpYVF2r/kyc7OtqX+/okSl0Cy+6R5zJae+KsoCeOhMu7lYsIMfNBxTJLxyY0YdXfzLcqO
-	BmL0eUhnNMkCL05DCZYw==;
+	List-Owner; bh=7R/SBj7QC8NilacG6nAyceqfCcTrvFA4KcD3CHC07Vk=; b=QkRSSZOUovbgRU
+	pdDKztjWu6L6gW2oTgmhWUuX4QrvuSqKdzLZl1hd90OvJh29gthhZ9szA1/UpAts/e09roUoByEB5
+	AwOS1Vg0Aay+0kwdlrvMvPiLl94Uxa72zTXUZfqZSF7jtd2yV7GZzilhjBH1KWximQvfV09Ed1gtm
+	fw2iW/eMVhf/JIXw8WzBrf2Qa8vxCbHHGUCi0c0svhXKIw1rcVFwHlBK/Ae+tuu8KyH4uDnnCy9lC
+	++T5jioLUNE7/gnCvmfr04Rm/b/+/+PuEAaGlOLzVKbPf2cd9moNApIV0jZFprWV2/GmEo2iA8sT/
+	IrhANg1kdwV+/iNJBCiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDnbs-0005Zl-SL; Fri, 27 Sep 2019 10:36:24 +0000
-Received: from mail-eopbgr00064.outbound.protection.outlook.com ([40.107.0.64]
- helo=EUR02-AM5-obe.outbound.protection.outlook.com)
+	id 1iDnjd-0007fc-3p; Fri, 27 Sep 2019 10:44:25 +0000
+Received: from mail-eopbgr700086.outbound.protection.outlook.com
+ ([40.107.70.86] helo=NAM04-SN1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDnbj-0005YZ-Jc
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 10:36:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=vHcdoF54D9BiMQlnQNMi1xxISdD/Thbn1ourleAWJew=;
- b=sV0OEhG8vrsjgGsjsJPHnSKXzwa1+crNB49fETcWL++zJcFeCDvbOIy7CVHX7YyKlvhG7HnZt9czAxz0yn1nUqAcLf21SJQkuqtyA+rnLATsnDbJk6jZaL9NDDJWthvV+6lgYYSUK5FsDl7vlKObqNT8Ez0QKQBQHynyaY7eP1U=
-Received: from VI1PR08CA0228.eurprd08.prod.outlook.com (2603:10a6:802:15::37)
- by DB6PR0802MB2471.eurprd08.prod.outlook.com (2603:10a6:4:9f::10)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2305.17; Fri, 27 Sep
- 2019 10:36:10 +0000
-Received: from VE1EUR03FT033.eop-EUR03.prod.protection.outlook.com
- (2a01:111:f400:7e09::205) by VI1PR08CA0228.outlook.office365.com
- (2603:10a6:802:15::37) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2305.15 via Frontend
- Transport; Fri, 27 Sep 2019 10:36:09 +0000
-Authentication-Results: spf=temperror (sender IP is 63.35.35.123)
- smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
- verified) header.d=armh.onmicrosoft.com;lists.infradead.org; dmarc=none
- action=none header.from=arm.com;
-Received-SPF: TempError (protection.outlook.com: error in processing during
- lookup of arm.com: DNS Timeout)
-Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
- VE1EUR03FT033.mail.protection.outlook.com (10.152.18.147) with
- Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.20.2305.15 via Frontend Transport; Fri, 27 Sep 2019 10:36:08 +0000
-Received: ("Tessian outbound 927f2cdd66cc:v33");
- Fri, 27 Sep 2019 10:35:58 +0000
-X-CR-MTA-TID: 64aa7808
-Received: from 5f7cc7921a1a.4 (ip-172-16-0-2.eu-west-1.compute.internal
- [104.47.13.56]) by 64aa7808-outbound-1.mta.getcheckrecipient.com id
- F370A33A-78CE-4A24-959C-49399167C8B1.1; 
- Fri, 27 Sep 2019 10:35:53 +0000
-Received: from EUR04-HE1-obe.outbound.protection.outlook.com
- (mail-he1eur04lp2056.outbound.protection.outlook.com [104.47.13.56])
- by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id 5f7cc7921a1a.4
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384);
- Fri, 27 Sep 2019 10:35:53 +0000
+ id 1iDnjT-0007f5-Qk
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 10:44:17 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=fJzXmHsrAm1axVKLEUhbQkogIGyN+SZk/8RynuaWrw9qqg/Vyxn36cwXpyMXYzejQJK1qyDOZecol6lU6mgvS6qXPfYRb4HqgCm/fbjbGmpbEsyxtP6oUhRXjnGfa4PRzV/A7+GeGvEAUtyZfjDNUt7e2Fc5hylRZnAWYKyJZxquEmTJ11cq2/cXnPrHsC3B3nhrD32WeT0H7tzE82Z0UDGvY+s1rIwhxxNVdtQ9ENBFFd5TC6maF+NyiId1kkMOKmly8zDB+jU7OsP8EM/0kciFQFFopzEZRCC9MMERwn+CMmeVuvYvU7fmtDIrtrM/U6NflzCOaN1bDunrNMPQHQ==
+ b=PvHRCvHOig8aJAldUmCKWlSxTxXf9ErgvXYVfaRhgefQC7Il4zqHQJT/uuQCyC9NvFDgVizT8ws/sw1pOhPDrYrCVfV1pLOogR3p3C4jX+yyYHrqjygnErLnwzaY/+klyvhUWGrgVi2eCkkXkIJh1U1w4X8QR5JDtgyJE27f+e6qrfrq+CK4cJC0uqQqWBT93FtFJ40kRq5TariDZImQeQhamjxuWyRuedqh554k2BY/XyAJg7MwfsJPtruZf+zAkYeP0wdPenIxbsDNi7ynI6vKzFaHbC2WkeUeznk81zm0X3aHIdCHgLpBrAQIdJWD3XtGo+XPZydnrsqK01euig==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=vHcdoF54D9BiMQlnQNMi1xxISdD/Thbn1ourleAWJew=;
- b=msG8Sq0EBVvQN2AbpxWcKGrielObWbzAAiXCAiJzwAIwl2wJ2PmUeoDRZLyRZ8E10coBND+ZB/L4BvYBU6OrJYMjCuBbJXwT9EQ1D6MNlzFW0jVU+ab7tsYjD9vA0oLBNeb3uftFceT3teLghAXArn6RebDEZ1MDX9auzyRL/hLoPRTi3DGvFnupNywalm1sNA33fdDl1tQ+gGqrSmfnfFl8yt/EMXTvxjMkB2rGS/ZaBZutWkp3y5W+wX8V7Mh6qdbK2ZwPVy67dWQMeVx6CG/j19lZzJNpvwmx3zfP1wQ0jPmdBJ1ihVXLaJhy/H3kecMMIOAMvj74fSZMR4Ym7A==
+ bh=s2UTggwzqJB8OvVWogrWiyBJ2MtVNGwY03Eyl4Vvyv0=;
+ b=UoSoEnOPTHM64QToJajq/YgE9HrEg7+/xD+VR2DnNSVyBpECz9U+oyQljcyLugRflPDF7dJR795zxc1xN7B+jOWMMOtJJSGNiv6L+oK062EgeOkIMMckXUPsAsH3+7yfYtFJTLlJMeg2y3YfJjtZLqSsrXnH4NZWxeCKDTEl+Y6s6IM3ex92q0gdZRT4YZYo4/mSR46H//sYVvs8HElNUdEZZj9mEaYbxconxVEMpOYa+BdD7TVAv8Q7/9rb4SCeD5Yokr7c1x7XQxopNznnGqm80pF4xkjALFoBEEhbvFpOALVeLtRjiu4FJf/GH4QxP92zJFqvs7Hvlg6YcUIB4g==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
- header.d=arm.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
+ smtp.mailfrom=verimatrix.com; dmarc=pass action=none
+ header.from=verimatrix.com; dkim=pass header.d=verimatrix.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=verimatrix.com;
+ s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=vHcdoF54D9BiMQlnQNMi1xxISdD/Thbn1ourleAWJew=;
- b=sV0OEhG8vrsjgGsjsJPHnSKXzwa1+crNB49fETcWL++zJcFeCDvbOIy7CVHX7YyKlvhG7HnZt9czAxz0yn1nUqAcLf21SJQkuqtyA+rnLATsnDbJk6jZaL9NDDJWthvV+6lgYYSUK5FsDl7vlKObqNT8Ez0QKQBQHynyaY7eP1U=
-Received: from HE1PR0801MB1676.eurprd08.prod.outlook.com (10.168.146.150) by
- HE1PR0801MB1996.eurprd08.prod.outlook.com (10.168.97.23) with Microsoft SMTP
+ bh=s2UTggwzqJB8OvVWogrWiyBJ2MtVNGwY03Eyl4Vvyv0=;
+ b=GWad5J0zYeyDY/TrDfkei3qfHJDUTQV9xKkG8TILX625Afpyy5E6P3HzuNwcQnK4nYlRApLtR0ymtf59Q7cH23j+jyGV08TRQQp32Ifa/In+DCz7vwGq5BvKDJQ/42nkv1/kPU7AeCpBEwIwfcTlc7sSK6Pa/6CYzVHQXSNp3ds=
+Received: from MN2PR20MB2973.namprd20.prod.outlook.com (52.132.172.146) by
+ MN2PR20MB3085.namprd20.prod.outlook.com (52.132.174.22) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2305.20; Fri, 27 Sep 2019 10:35:50 +0000
-Received: from HE1PR0801MB1676.eurprd08.prod.outlook.com
- ([fe80::4d35:2b8f:1786:84cd]) by HE1PR0801MB1676.eurprd08.prod.outlook.com
- ([fe80::4d35:2b8f:1786:84cd%3]) with mapi id 15.20.2284.028; Fri, 27 Sep 2019
- 10:35:50 +0000
-From: "Jianyong Wu (Arm Technology China)" <Jianyong.Wu@arm.com>
-To: Suzuki Poulose <Suzuki.Poulose@arm.com>, "netdev@vger.kernel.org"
- <netdev@vger.kernel.org>, "yangbo.lu@nxp.com" <yangbo.lu@nxp.com>,
- "john.stultz@linaro.org" <john.stultz@linaro.org>, "tglx@linutronix.de"
- <tglx@linutronix.de>, "pbonzini@redhat.com" <pbonzini@redhat.com>,
- "sean.j.christopherson@intel.com" <sean.j.christopherson@intel.com>,
- "maz@kernel.org" <maz@kernel.org>, "richardcochran@gmail.com"
- <richardcochran@gmail.com>, Mark Rutland <Mark.Rutland@arm.com>, Will Deacon
- <Will.Deacon@arm.com>
-Subject: RE: [RFC PATCH v4 2/5] ptp: Reorganize ptp_kvm modules to make it
- arch-independent.
-Thread-Topic: [RFC PATCH v4 2/5] ptp: Reorganize ptp_kvm modules to make it
- arch-independent.
-Thread-Index: AQHVdF+Ft3UnKFEitUOtlQstSNDglqc/UlgAgAADTsA=
-Date: Fri, 27 Sep 2019 10:35:50 +0000
-Message-ID: <HE1PR0801MB1676C739058C44645D726C72F4810@HE1PR0801MB1676.eurprd08.prod.outlook.com>
-References: <20190926114212.5322-1-jianyong.wu@arm.com>
- <20190926114212.5322-3-jianyong.wu@arm.com>
- <47ceb25c-c9ff-e284-43bf-6cac7e128a98@arm.com>
-In-Reply-To: <47ceb25c-c9ff-e284-43bf-6cac7e128a98@arm.com>
+ 15.20.2305.18; Fri, 27 Sep 2019 10:44:13 +0000
+Received: from MN2PR20MB2973.namprd20.prod.outlook.com
+ ([fe80::6d07:5f09:97bf:c717]) by MN2PR20MB2973.namprd20.prod.outlook.com
+ ([fe80::6d07:5f09:97bf:c717%7]) with mapi id 15.20.2305.017; Fri, 27 Sep 2019
+ 10:44:13 +0000
+From: Pascal Van Leeuwen <pvanleeuwen@verimatrix.com>
+To: Linus Torvalds <torvalds@linux-foundation.org>
+Subject: RE: [RFC PATCH 18/18] net: wireguard - switch to crypto API for
+ packet encryption
+Thread-Topic: [RFC PATCH 18/18] net: wireguard - switch to crypto API for
+ packet encryption
+Thread-Index: AQHVc7xLFDyOijy/PkCX/N7Gn7qoy6c89gcAgACj7jCAAI9SgIAAOyfwgABabYCAABdQgIAAe1XQ
+Date: Fri, 27 Sep 2019 10:44:13 +0000
+Message-ID: <MN2PR20MB297359DCCE92EB1A1F13CE03CA810@MN2PR20MB2973.namprd20.prod.outlook.com>
+References: <20190925161255.1871-1-ard.biesheuvel@linaro.org>
+ <20190925161255.1871-19-ard.biesheuvel@linaro.org>
+ <CAHk-=wjYsbxSiV_XKWV3BwGvau_hUvQiQHLOoc7vLUZt0Wqzfw@mail.gmail.com>
+ <CH2PR20MB29680F87B32BBF0495720172CA860@CH2PR20MB2968.namprd20.prod.outlook.com>
+ <CAHk-=wgR_KsYw2GmZwkG3GmtX6nbyj0LEi7rSqC+uFi3ScTYcw@mail.gmail.com>
+ <MN2PR20MB297317D9870A3B93B5E506C9CA810@MN2PR20MB2973.namprd20.prod.outlook.com>
+ <CAHk-=wjr1w7x9Rjre_ALnDLASYNjsEHxu6VJpk4eUwZXN0ntqw@mail.gmail.com>
+ <CAHk-=whqWh8ebZ7ryEv5tKKtO5VpOj2rWVy7wV+aHWGO7m9gAw@mail.gmail.com>
+In-Reply-To: <CAHk-=whqWh8ebZ7ryEv5tKKtO5VpOj2rWVy7wV+aHWGO7m9gAw@mail.gmail.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-ts-tracking-id: 6d537bca-1c2d-4e6a-bfe5-12f285ab8d8b.1
-x-checkrecipientchecked: true
-Authentication-Results-Original: spf=none (sender IP is )
- smtp.mailfrom=Jianyong.Wu@arm.com; 
-x-originating-ip: [113.29.88.7]
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=pvanleeuwen@verimatrix.com; 
+x-originating-ip: [188.204.2.113]
 x-ms-publictraffictype: Email
-X-MS-Office365-Filtering-Correlation-Id: 0d1526c3-c96f-42a2-73c9-08d7433681ec
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-TrafficTypeDiagnostic: HE1PR0801MB1996:|HE1PR0801MB1996:|DB6PR0802MB2471:
-x-ms-exchange-transport-forked: True
-X-Microsoft-Antispam-PRVS: <DB6PR0802MB2471C5AD18B2C626D775F450F4810@DB6PR0802MB2471.eurprd08.prod.outlook.com>
-x-checkrecipientrouted: true
-x-ms-oob-tlc-oobclassifiers: OLM:4714;OLM:4714;
+x-ms-office365-filtering-correlation-id: 45faf786-20bc-40c9-a3d4-08d74337a331
+x-ms-traffictypediagnostic: MN2PR20MB3085:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-prvs: <MN2PR20MB3085F41CB1B05D7CD0DC50C1CA810@MN2PR20MB3085.namprd20.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
 x-forefront-prvs: 0173C6D4D5
-X-Forefront-Antispam-Report-Untrusted: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(366004)(396003)(136003)(346002)(39860400002)(199004)(189003)(13464003)(5660300002)(52536014)(71190400001)(256004)(71200400001)(478600001)(11346002)(476003)(8676002)(229853002)(81166006)(81156014)(2501003)(305945005)(99286004)(74316002)(7736002)(8936002)(7416002)(446003)(66066001)(76116006)(14454004)(7696005)(26005)(102836004)(6506007)(66446008)(186003)(25786009)(53546011)(486006)(66556008)(64756008)(66946007)(66476007)(76176011)(55236004)(86362001)(2201001)(6246003)(55016002)(6636002)(4326008)(9686003)(54906003)(110136005)(33656002)(316002)(6436002)(2906002)(6116002)(3846002)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:HE1PR0801MB1996;
- H:HE1PR0801MB1676.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(366004)(39850400004)(396003)(376002)(346002)(13464003)(199004)(189003)(71190400001)(71200400001)(6436002)(7416002)(229853002)(76116006)(74316002)(33656002)(305945005)(55016002)(4326008)(66446008)(66556008)(66476007)(26005)(7696005)(64756008)(66946007)(54906003)(9686003)(316002)(11346002)(15974865002)(476003)(99286004)(102836004)(6506007)(6246003)(7736002)(486006)(53546011)(2906002)(76176011)(186003)(3846002)(6116002)(446003)(5660300002)(52536014)(256004)(25786009)(14454004)(8936002)(81156014)(86362001)(8676002)(6916009)(478600001)(81166006)(66066001)(18886075002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR20MB3085;
+ H:MN2PR20MB2973.namprd20.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: arm.com does not designate
+received-spf: None (protection.outlook.com: verimatrix.com does not designate
  permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Untrusted: BCL:0;
-X-Microsoft-Antispam-Message-Info-Original: fUfMtMH09SaJHMMSXV4YPYqgl7wdRx1SbUvLJ9N0u/Oq9j4Ylh4hiZ6+keMyN/Fao4rNMqnrFEq1z00mxliidyc/o3NnCp4xrNPIMYdQfDSUEnq4/9JXTiBD4J5VVnZQCDAC+2kAsDeIBKIJlRjkMLGb4EA0aVjMDDuvdXv7YoCbFBNH2gnXux4pNHVEcWTyZIKPqV59AKWxvGO0XYG0YDVxh7jtIgQqlbolJQ+kNjuO9lDUjogZX1lbrhy2GayZ560h9LfW7MpvB9uA6ZYNLJrjAbTKNIi1WvTqJnjGvJP0CwsLtgeENU6wyrLy/IvxjQO1Pyv0zTmyR8DuAmZLj1freMWJNYb5sJC85zDlhpNOHE2gJO9lgaRBW1erWiJhSGzt0BmVUU2uN/6UM7kYrHTwVPm3ih0vomV80rmCrHU=
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 7X+UHD9Zk7Ef/HcK+4KuYezc/Cin7IE9qJHOXxxTOAXFuOQ5Ib4npe/F7rrlCI5UFTWDiqxA+p8snnguYNiGUB1PCpwjDz1LqpppSpACbp7faveuw3xN18l3TrUnVIk7hKgK0le6Bb2mmXD0XHeiV8F6iKKW+y1O4IkAOpMuJ27CIvcGevOLEdS4BxHfOVVn3i2s5HlAnlbjOAdmZqaBXdVd8yltnQADonS+/q7kHIv80qZErXgNkXjAwoUL6FS9ydsRf8xRJmurjuC5ieyn+3Oe+BGB4OewQqEl1ItcGUJqD86ixA7Zqwuc9crymr+A4PabUW35NtsRTtxMb7dCGS6HBM1uA+IntA5/dqERPnr3b39ivSk4xvEl5iFkl/gB04rKV62xg3gCLC4O3jbbktSf+Lb3STcZyziYFlcP9cs=
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1PR0801MB1996
-Original-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=Jianyong.Wu@arm.com; 
-X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped: VE1EUR03FT033.eop-EUR03.prod.protection.outlook.com
-X-Forefront-Antispam-Report: CIP:63.35.35.123; IPV:CAL; SCL:-1; CTRY:IE;
- EFV:NLI; SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(346002)(136003)(39860400002)(396003)(189003)(199004)(13464003)(7736002)(74316002)(54906003)(2201001)(55016002)(86362001)(14454004)(478600001)(26826003)(476003)(25786009)(6246003)(5660300002)(36906005)(486006)(9686003)(126002)(110136005)(316002)(2906002)(52536014)(6116002)(3846002)(22756006)(8676002)(81166006)(8936002)(66066001)(81156014)(356004)(70586007)(4326008)(229853002)(2501003)(70206006)(23676004)(7696005)(2486003)(53546011)(6506007)(102836004)(76176011)(26005)(99286004)(47776003)(336012)(76130400001)(446003)(186003)(6636002)(436003)(63350400001)(50466002)(33656002)(305945005)(11346002)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB6PR0802MB2471;
- H:64aa7808-outbound-1.mta.getcheckrecipient.com; FPR:; SPF:TempError; LANG:en;
- PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; MX:1; A:1; 
-X-MS-Office365-Filtering-Correlation-Id-Prvs: d3d1f84f-d3d2-4030-2a2c-08d74336773e
-NoDisclaimer: True
-X-Forefront-PRVS: 0173C6D4D5
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: oIIQPk0DUD/Zy74/mBD491nkieLpDYUSDolKsJeFbqQBSDTwv38puJWZkonSyDXPfnbLMpgOQZE++2IRN+X5t6jRrXbvQp16kwy1+ka4eP/FM2fLWwY0P50tDqGl4A4L/oTeaz/S4niIwYnaelX1h+Rbhjb3G7e2JHUtbakuKpVBH7rZJdKXbJbraN4H+HLDog7o5NOr6z5XoTXWf/qp4yzTH0lFaEnjeESUlyifUhGuoSILH7wPT840GHoamMlUq63sHVD8+qH8loNSTkPqmPDygHuVakGu8yYMySi4eAV1QEBcE8UA+leabxe3yHn+b/Fnq/vJOtsms0Y7QztXXOeo6W+X5zLvr+AYEG403oxdigRl39MZK9MV+GGB5QSABupOW/sNhXDRFeiSaUwcPJ8sI0vstTRS1sQiGcg9GRA=
-X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Sep 2019 10:36:08.2275 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0d1526c3-c96f-42a2-73c9-08d7433681ec
-X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
- Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0802MB2471
+X-OriginatorOrg: verimatrix.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 45faf786-20bc-40c9-a3d4-08d74337a331
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Sep 2019 10:44:13.3138 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: dcb260f9-022d-4495-8602-eae51035a0d0
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: uNwBfOTn2uDvCMn0Pu/vQE63rjZOI5MuGrHFiucgxgmFGZIboHN1XA81cZWoAC6dXtR/o9Y4O2/NEklMb7cUPw+ULyT2fwY+3R4JPJ1pkfo=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR20MB3085
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190927_033615_646319_6158C86B 
-X-CRM114-Status: GOOD (  10.90  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190927_034415_873312_81C45368 
+X-CRM114-Status: GOOD (  23.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.0.64 listed in list.dnswl.org]
+ no trust [40.107.70.86 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -184,70 +129,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Justin He \(Arm Technology China\)" <Justin.He@arm.com>,
- "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
- Steve Capper <Steve.Capper@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "Kaly Xin \(Arm Technology China\)" <Kaly.Xin@arm.com>, nd <nd@arm.com>,
- "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: "Jason A . Donenfeld" <Jason@zx2c4.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg KH <gregkh@linuxfoundation.org>, Eric Biggers <ebiggers@google.com>,
+ Samuel Neves <sneves@dei.uc.pt>,
+ Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
+ Andy Lutomirski <luto@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Dan Carpenter <dan.carpenter@oracle.com>, Will Deacon <will@kernel.org>,
+ David Miller <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Suzuki,
-
 > -----Original Message-----
-> From: Suzuki K Poulose <suzuki.poulose@arm.com>
-> Sent: Friday, September 27, 2019 6:23 PM
-> To: Jianyong Wu (Arm Technology China) <Jianyong.Wu@arm.com>;
-> netdev@vger.kernel.org; yangbo.lu@nxp.com; john.stultz@linaro.org;
-> tglx@linutronix.de; pbonzini@redhat.com; sean.j.christopherson@intel.com;
-> maz@kernel.org; richardcochran@gmail.com; Mark Rutland
-> <Mark.Rutland@arm.com>; Will Deacon <Will.Deacon@arm.com>
-> Cc: linux-kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
-> kvmarm@lists.cs.columbia.edu; kvm@vger.kernel.org; Steve Capper
-> <Steve.Capper@arm.com>; Kaly Xin (Arm Technology China)
-> <Kaly.Xin@arm.com>; Justin He (Arm Technology China)
-> <Justin.He@arm.com>; nd <nd@arm.com>
-> Subject: Re: [RFC PATCH v4 2/5] ptp: Reorganize ptp_kvm modules to make it
-> arch-independent.
+> From: Linus Torvalds <torvalds@linux-foundation.org>
+> Sent: Friday, September 27, 2019 4:54 AM
+> To: Pascal Van Leeuwen <pvanleeuwen@verimatrix.com>
+> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>; Linux Crypto Mailing List <linux-
+> crypto@vger.kernel.org>; Linux ARM <linux-arm-kernel@lists.infradead.org>; Herbert Xu
+> <herbert@gondor.apana.org.au>; David Miller <davem@davemloft.net>; Greg KH
+> <gregkh@linuxfoundation.org>; Jason A . Donenfeld <Jason@zx2c4.com>; Samuel Neves
+> <sneves@dei.uc.pt>; Dan Carpenter <dan.carpenter@oracle.com>; Arnd Bergmann
+> <arnd@arndb.de>; Eric Biggers <ebiggers@google.com>; Andy Lutomirski <luto@kernel.org>;
+> Will Deacon <will@kernel.org>; Marc Zyngier <maz@kernel.org>; Catalin Marinas
+> <catalin.marinas@arm.com>
+> Subject: Re: [RFC PATCH 18/18] net: wireguard - switch to crypto API for packet
+> encryption
 > 
-> 
-> 
-> On 26/09/2019 12:42, Jianyong Wu wrote:
-> > Currently, ptp_kvm modules implementation is only for x86 which
-> > includs large part of arch-specific code.  This patch move all of
-> > those code into new arch related file in the same directory.
+> On Thu, Sep 26, 2019 at 6:30 PM Linus Torvalds
+> <torvalds@linux-foundation.org> wrote:
 > >
-> > Signed-off-by: Jianyong Wu <jianyong.wu@arm.com>
+> > And once you have that cookie, and you see "ok, I didn't get the
+> > answer immediately" only THEN do you start filling in things like
+> > callback stuff, or maybe you set up a wait-queue and start waiting for
+> > it, or whatever".
 > 
-> ...
+> Side note: almost nobody does this.
 > 
-> > +int kvm_arch_ptp_get_clock_fn(unsigned long *cycle, struct timespec64
-> *tspec,
-> > +			      struct clocksource **cs)
+> Almost every single async interface I've ever seen ends up being "only
+> designed for async".
 > 
+> And I think the reason is that everybody first does the simply
+> synchronous interfaces, and people start using those, and a lot of
+> people are perfectly happy with them. They are simple, and they work
+> fine for the huge majority of users.
 > 
-> > diff --git a/include/asm-generic/ptp_kvm.h
-> > b/include/asm-generic/ptp_kvm.h new file mode 100644 index
-> > 000000000000..208e842bfa64
-> > --- /dev/null
-> > +++ b/include/asm-generic/ptp_kvm.h
+> And then somebody comes along and says "no, _we_ need to do this
+> asynchronously", and by definition that person does *not* care for the
+> synchronous case, since that interface already existed and was simpler
+> and already was mostly sufficient for the people who used it, and so
+> the async interface ends up being _only_ designed for the new async
+> workflow. Because that whole new world was written with just that case
+> is mind, and the synchronous case clearly didn't matter.
 > 
-> > +int kvm_arch_ptp_get_clock_fn(long *cycle,
-> > +		struct timespec64 *tspec, void *cs);
-> >
+> So then you end up with that kind of dichotomous situation, where you
+> have a strict black-and-white either-synchronous-or-async model.
 > 
-> Conflicting types for kvm_arch_ptp_get_clock_fn() ?
+> And then some people - quite reasonably - just want the simplicity of
+> the synchronous code and it performs better for them because the
+> interfaces are simpler and better suited to their lack of extra work.
 > 
-Yeah, need fix.
+> And other people feel they need the async code, because they can take
+> advantage of it.
+> 
+> And never the twain shall meet, because the async interface is
+> actively _bad_ for the people who have sync workloads and the sync
+> interface doesn't work for the async people.
+> 
+> Non-crypto example: [p]read() vs aio_read(). They do the same thing
+> (on a high level) apart from that sync/async issue. And there's no way
+> to get the best of both worlds.
+> 
+> Doing aio_read() on something that is already cached is actively much
+> worse than just doing a synchronous read() of cached data.
+> 
+> But aio_read() _can_ be much better if you know your workload doesn't
+> cache well and read() blocks too much for you.
+> 
+> There's no "read_potentially_async()" interface that just does the
+> synchronous read for any cached portion of the data, and then delays
+> just the IO parts and returns a "here, I gave you X bytes right now,
+> use this cookie to wait for the rest".
+> 
+> Maybe nobody would use it. But it really should be possibly to have
+> interfaces where a good synchronous implementation is _possible_
+> without the extra overhead, while also allowing async implementations.
+> 
+That's the question. I've never seen such an API yet ...
 
-Thanks
-Jianyong Wu
+You could also just accept that those are two wildly different use 
+cases with wildly different requirements and allow them to coexist,
+while  sharing as much of the low-level SW implementation code as
+possible underneath. With the async API only used for those cases
+where HW acceleration can make the difference.
 
-> Suzuki
+I believe for hashes, the Crypto API still maintains an shash and
+an ahash API. It works the other way around from how you would
+like  to see though, with ahash wrapping the shash in case of SW 
+implementations. Still, if you're sure you can't benefit from HW 
+acceleration you have the option of using the shash directly.
+
+I don't know why the synchronous blkcipher API was deprecated,
+that happened before I joined. IMHO it would make sense to have,
+so users not interested in HW crypto are not burdened by it.
+
+
+>                 Linus
+
+Regards,
+Pascal van Leeuwen
+Silicon IP Architect, Multi-Protocol Engines @ Verimatrix
+www.insidesecure.com
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
