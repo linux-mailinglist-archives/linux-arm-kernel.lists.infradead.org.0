@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7D7DC0BA6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 20:45:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3520C0BBF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 20:46:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,65 +11,65 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=EOcknQwEXBJg7RJuhTHdWxVnVaBCWnXhrIBy9J7AXn4=; b=Mjpwvxskk4zBImZFvpneMTd7/5
-	SFVhQ71je91UAVRcAssQL5S04uy8Fh1IdpY3sPh3gd0Ysv8Q26MOn4GErIUP14yaEcCCRKdD0oW97
-	eRKd6JV7ZQDvnf4DSPixXXSzvjc/pu7ELx1N2c5Qm/n3drlwy2juSFdgcxFKT1iaG/jyvbHyY8WX1
-	+gQpHYAUjemb7Olv6G1EQRtYIQyd677iNmGl3Xi8ZevqRyfEECSBVxrno2Fc+a/7AdMTK7MiqccgO
-	girJhzzkRJj+ObtsL2oh5Ww+LBwQudBoIZIC3q+Z93dOo6tDdhQzyIKh2NSxFJHHk0jbZWNfiVX/f
-	hDKoAbLA==;
+	bh=l+Ho8vrOFTCpP3k3SNZvhB6OyF+2awH+sawSbwS7oow=; b=ObzB/dIYwXFZQfZpXJDedWtVUQ
+	7O4dEbbW7L3bIvYeyCD0zsh2F8JgW5CNvb+wDMxQrCRJ+uEneFOfFMVtR5dpO8BZF7gjax5CKCL3N
+	cwE9LvJifzAWmsPmJWX/9w+1LtcZDo2Sb7uQscRxss5chcTpRUFji1chCN1zaAjC3FufdGIk6sXrc
+	N2zHK9F6evi5Erh8jrW1uW/PDdowMC7mUG3RK+HRMMWxU+xrPl/j9UsRgkmEWLVcwPGLVfmYBt/i1
+	YhDwtI/MAnkSSsb5mljnBqtVBiv9RHJeWtU5HPIod5wedS9rN5mUBmQpYsG1S5Yr6yW6sGjLMp25E
+	uqfAlcxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDvFD-0003Tq-Sq; Fri, 27 Sep 2019 18:45:31 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iDvFs-0004MX-OM; Fri, 27 Sep 2019 18:46:12 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDvDm-0000Yc-KS
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 18:44:06 +0000
-Received: by mail-wr1-x442.google.com with SMTP id r5so4282054wrm.12
+ id 1iDvDo-0000gW-DO
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 18:44:07 +0000
+Received: by mail-wm1-x342.google.com with SMTP id y135so9234520wmc.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 27 Sep 2019 11:44:02 -0700 (PDT)
+ Fri, 27 Sep 2019 11:44:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=bn1Yyb+y0E2XtXZ6uMo4FglNk7nmGiqm3716bVhGUbI=;
- b=takF3d8TQ23XIGxuLOV8EzoCgdq2Cx3gSbMfwoy8dm4JOeV1XPOcGDt36yHf/TI7T+
- FtbvWKEknxgAIutpiIolDXxparFuO4OfaK8AzTK97b0LKYe0SDv37m3nJ8nkhGqKqX+l
- ajQyWxbLHv32CSr7pUKgba6XKx+DcFNKw1+DFc6ufE+etxrYBfXlb+f4nP8LZ1bOapM/
- NC8bBmCjPgyuLG2UVTsEA2vzrupBytvvOiKvTboLnyCM6wxZJX1jMAWJU3qpS097AxuV
- yLpcWtGm7n+t1ZhZedjLWOVxe+aXapZhHwoYnea03QmYlH7hDqjSMG/eA+/c/ixE0Ogp
- 3jvg==
+ bh=9YGH/6YIzv9K3Mh8Ek1+NGOAz5VU0/WuYChxnvTMt8w=;
+ b=WEICmolGZnHioZ2LKuulr44gm97tGO6qyIie0Dkm+XjLmXc0kV7+6t2izQ3Wivgxga
+ fq/QxZp2uEf3U4jM0aAub/ITgU6nLYMXMz2glcf36hmEUiOppQieDaC6c9l/XlSZ9Vyz
+ OUzPyFz/S0j7Zg0DkDBGX4ZzY0/qi9NEl2ZJc4mMozcfg5Mvj0fPAQV4HQXtJLdbRJj9
+ awvOmNRVU3GRzJprxNAGrlEepy7A2OehkmR07xfbONk9bdVB+ED0rB0jnWMWFjSzsTs0
+ 5WgKeK7ttHWswt5rUqy7+fulvI7/4mXHxWKpYBXj84y/wdHbfxTg/2xBBgOr7W667Pj6
+ 2fhg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=bn1Yyb+y0E2XtXZ6uMo4FglNk7nmGiqm3716bVhGUbI=;
- b=Z0DPElDrEwW6uhcqc1J4KMpIx4B+Jiys/I3V8V0Hi3Hu47uOHTe79fCRXNDwmxhe1S
- ce827qrOXBs5ci+/Qo2QAZPxqrLWxLP8KviQgCD+mRuwBGTgpGrCC+mPXnf3E6lWgbS7
- uFne3BE99KnF0j7PuWRu+Lia3ReHhlhQE4w2t1O4H9cwwNQiP7GmGSBHmSANWeYRGnWq
- M6zxn8MfTygAbUWLlB4TRO6BQm9w/Jm43WPZKl7wNaYKSqgpasU5B/8wlJa6XiZ7hHPc
- 69u4M5UxrJFwkZFM3AFkMxq2+Wqurf+OurqBFDEwUlobM6UhOg5h5cfhlfQL2BIwSwr7
- cBbA==
-X-Gm-Message-State: APjAAAXc2S/Qy2zlkJHdR5xW5TjAs1UQuUnrP5JWHVpgbEqnWKnEczbH
- sRpm5NmX9tg3OneRZw8aLcYQ3w==
-X-Google-Smtp-Source: APXvYqwwmzGMJt5+RoC/OswzZ5EMENUYAm3d/ZFwKGTbNtLuc52z5Dcy/qT1fzKqYHzwCMtLhVptNg==
-X-Received: by 2002:adf:fe05:: with SMTP id n5mr4414380wrr.355.1569609841286; 
- Fri, 27 Sep 2019 11:44:01 -0700 (PDT)
+ bh=9YGH/6YIzv9K3Mh8Ek1+NGOAz5VU0/WuYChxnvTMt8w=;
+ b=Pd4694QGXe4YiHV/sHzRYKz2uo6QU96fjShqG5O6WSTX7GWxcRKrGiC58h/UB6sR/h
+ xhliWQxshu9CPA+Kt+inNK9ckEiK6l+EEXVD6hWNehyY9ZzWf4RIYGgsdmbjdQc6RZRh
+ 6ZtwFL5wqyFdW55YwS16fUK59fq9YxwosFXMq/O5XzWOwAMdh2NirEf/J4KdySL9nke8
+ IeBLQDGB3fWkJ+LUlCsnSFR8YANXrnN+1BtFfNV8Bu9+pFgBUc5ifruVDKDcRbRPJx0f
+ yOOJisCI71sTGnqEqsqmi88xXG3aiReRtRA/+1HtWR9Of67nz14bBfQnvuIyLCtYB/Oz
+ hKCg==
+X-Gm-Message-State: APjAAAUpuF34V6Lu+tR8TcCeDvyiy5e19H7c8+lG8TN3FntUBOGYvehU
+ dmTgPVg3rlxDYAIY0gCOYqe17w==
+X-Google-Smtp-Source: APXvYqxqffnDkxG9M65OGWfltXuU1gnJ7LKfol3TlQRN/9OZh/LC3gDhhik8C1KMNChtRxbOE9lVRw==
+X-Received: by 2002:a1c:4384:: with SMTP id q126mr9000036wma.153.1569609842442; 
+ Fri, 27 Sep 2019 11:44:02 -0700 (PDT)
 Received: from glaroque-ThinkPad-T480.home
  ([2a01:cb1d:6e7:d500:82a9:347a:43f3:d2ca])
- by smtp.gmail.com with ESMTPSA id r13sm6246272wrn.0.2019.09.27.11.44.00
+ by smtp.gmail.com with ESMTPSA id r13sm6246272wrn.0.2019.09.27.11.44.01
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 27 Sep 2019 11:44:00 -0700 (PDT)
+ Fri, 27 Sep 2019 11:44:01 -0700 (PDT)
 From: Guillaume La Roque <glaroque@baylibre.com>
 To: amit.kucheria@linaro.org, rui.zhang@intel.com, edubezval@gmail.com,
  daniel.lezcano@linaro.org
-Subject: [PATCH v6 5/7] arm64: dts: amlogic: g12a: add cooling properties
-Date: Fri, 27 Sep 2019 20:43:50 +0200
-Message-Id: <20190927184352.28759-6-glaroque@baylibre.com>
+Subject: [PATCH v6 6/7] arm64: dts: amlogic: g12b: add cooling properties
+Date: Fri, 27 Sep 2019 20:43:51 +0200
+Message-Id: <20190927184352.28759-7-glaroque@baylibre.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190927184352.28759-1-glaroque@baylibre.com>
 References: <20190927184352.28759-1-glaroque@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190927_114402_705559_A1479ABA 
-X-CRM114-Status: UNSURE (   9.33  )
+X-CRM114-CacheID: sfid-20190927_114404_901761_472CAB7F 
+X-CRM114-Status: UNSURE (   9.56  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,7 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -104,21 +104,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add missing #colling-cells field for G12A SoC
+Add missing #colling-cells field for G12B SoC
 Add cooling-map for passive and hot trip point
 
 Tested-by: Christian Hewitt <christianshewitt@gmail.com>
 Tested-by: Kevin Hilman <khilman@baylibre.com>
 Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
 ---
- arch/arm64/boot/dts/amlogic/meson-g12a.dtsi | 24 +++++++++++++++++++++
- 1 file changed, 24 insertions(+)
+ arch/arm64/boot/dts/amlogic/meson-g12b.dtsi | 29 +++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
-index 733a9d46fc4b..3ab6497548ca 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
-@@ -18,6 +18,7 @@
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12b.dtsi
+index 98ae8a7c8b41..4bb89bce758f 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12b.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-g12b.dtsi
+@@ -49,6 +49,7 @@
  			reg = <0x0 0x0>;
  			enable-method = "psci";
  			next-level-cache = <&l2>;
@@ -126,31 +126,47 @@ index 733a9d46fc4b..3ab6497548ca 100644
  		};
  
  		cpu1: cpu@1 {
-@@ -26,6 +27,7 @@
+@@ -57,6 +58,7 @@
  			reg = <0x0 0x1>;
  			enable-method = "psci";
  			next-level-cache = <&l2>;
 +			#cooling-cells = <2>;
  		};
  
- 		cpu2: cpu@2 {
-@@ -34,6 +36,7 @@
- 			reg = <0x0 0x2>;
+ 		cpu100: cpu@100 {
+@@ -65,6 +67,7 @@
+ 			reg = <0x0 0x100>;
  			enable-method = "psci";
  			next-level-cache = <&l2>;
 +			#cooling-cells = <2>;
  		};
  
- 		cpu3: cpu@3 {
-@@ -42,6 +45,7 @@
- 			reg = <0x0 0x3>;
+ 		cpu101: cpu@101 {
+@@ -73,6 +76,7 @@
+ 			reg = <0x0 0x101>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&l2>;
++			#cooling-cells = <2>;
+ 		};
+ 
+ 		cpu102: cpu@102 {
+@@ -81,6 +85,7 @@
+ 			reg = <0x0 0x102>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&l2>;
++			#cooling-cells = <2>;
+ 		};
+ 
+ 		cpu103: cpu@103 {
+@@ -89,6 +94,7 @@
+ 			reg = <0x0 0x103>;
  			enable-method = "psci";
  			next-level-cache = <&l2>;
 +			#cooling-cells = <2>;
  		};
  
  		l2: l2-cache0 {
-@@ -113,3 +117,23 @@
+@@ -219,3 +225,26 @@
  &sd_emmc_a {
  	amlogic,dram-access-quirk;
  };
@@ -160,17 +176,20 @@ index 733a9d46fc4b..3ab6497548ca 100644
 +		map0 {
 +			trip = <&cpu_passive>;
 +			cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+					<&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+					<&cpu2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+					<&cpu3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
++					 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					 <&cpu100 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					 <&cpu101 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					 <&cpu102 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					 <&cpu103 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
 +		};
-+
 +		map1 {
 +			trip = <&cpu_hot>;
 +			cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+					<&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+					<&cpu2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+					<&cpu3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
++					 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					 <&cpu100 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					 <&cpu101 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					 <&cpu102 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					 <&cpu103 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
 +		};
 +	};
 +};
