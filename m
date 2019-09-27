@@ -2,88 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CFCEC05B2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 14:50:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28FF5C05C3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 14:53:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=7C7Ob1roqolpaLaTytdSIjWsutNUkroHt4JxCa2ayTU=; b=oUPIcxF5g/HLyAaRuVm0nfO3wv
-	/C/dhk2vWL7fe2tayf8kfiraNuSSjJ9s8GbCE3mNWNCdzsJYv4dI9xwJxeg1+c5oDrMPNTafdY1Wp
-	eWWijrSxAIEZ1BSRrkFoXih34wCF6uCI1VhdFP9MH7IM1yBp85OAxkZatlHU/MUziTCo3fdMcpar9
-	cCHCzf2DRdIYWL0dlqbZ6jHa6xbggQbQXysGOOdlQ60Gd09nfHEYqnuq1/tD0nxhicvMxtGE7jRgp
-	kWos6+KMQeeaR5EVzTvupS6eAKVsbyELbIpH2YkxBzAUXST77nr6IIQI4M0yl7bFQ1lxhw6E9MKJq
-	9muuCCMg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=u+1HSBqge6iicuuvuo6RQnydSylX7rQlDi6kJOo9o48=; b=By927+WV/C+gnm
+	UScMHykW5ZAkE/lAEElyZZsZVduqvWIsWPRivSWyxsJyzqOZBcdGrmKcWY/9AY7gL7yPHFeedaSHr
+	gi6/HUQPQ9Trj4bcTdoxew5CkZBYIJXvIgpEW6fpp4ivBVPBY4I624xdDgdRuG8fDp9xmBMXv5NfS
+	EMtJo/QqXlxT2OcruWU2U5ycHUDPXSCC66ZWuIprTtIOrmpQdp2jek+y5qHvDnKSwQFW3rHGsElFu
+	wSjgeOVoMXOM7MOGBc8mg80gQNwzwWSK9Jj4IO5R2xHELfMBCcgjmHTLrbFJXeq7YflDptHKExwQj
+	S81j1uH6DyzVL+d9D1kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDphY-0005Db-GO; Fri, 27 Sep 2019 12:50:24 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDpfH-0001pq-7u
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 12:48:08 +0000
-Received: by mail-wm1-x344.google.com with SMTP id 3so6038577wmi.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 27 Sep 2019 05:48:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=HzQhDkqVyohi8147rI3+BgZwRO47r6m1rOvI8gEcCVQ=;
- b=oi7neAwW2LPL3XABbjq079ydlG5AqDgyurTggZMicVjKIV5UMxxiyLM+baxNYU7LMn
- KX0awqzp3ut3v6fG74urUYMNC7Us0TNh9cFPafo8aX6keUN84SNN8/13CiS2mOaNYVXW
- 51GjVuPtTereISnJig7mP/IpoNpIQPIiC9dIHozWqZj8wKaFul+FMr0+2WVtMfP9Pit0
- iwshl1qVi1DzPPokQOFhT608amsRwajCmDibnhxZ2uNGfJGVClCLRHl2oTzSMrGuU6BL
- VMNsZeZHCwXRvn8wMc3M95Xc8gy4zBAopdQdfa29TD3KYqD7aefu+UKji02tx/K8JHiL
- 3p0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=HzQhDkqVyohi8147rI3+BgZwRO47r6m1rOvI8gEcCVQ=;
- b=lP3sxUh0p4DN4pF9yFcsq6qyQPZXKxBUhnK3SGI7k5NsASnnXYUKVcGO+Au8v3/fgV
- 1sbbeC/2etmOsQhfZpVqA0ARBheo4UljAMjWgBMZL0XpqNJM9qdaqy3/eqJOhu6x2C+c
- EfyqhQGM9YDb23ptrnhX5glggLf6358ZmXhEHy2tI2XOkOXIdFlHDUOW+OAl4PuFuwhy
- yqnZxlg5stlPv3kvbAhlYK9A8Hfpnm4ZMCT7vqJhGb90BJUT35IGHq//Qpo64POyDTAJ
- nTJ5mokpZv4dl7n+Yh1zYp/3Od3XbXuZm2/njlG/I3mCWv1TlI/2Qrau9UjLeh+Y1eWQ
- QNhg==
-X-Gm-Message-State: APjAAAWDcqJ9o+QX8kRBYmn5IIYfT+tmEDO2wN+ZwbRV+fawLv5bBRj7
- h5ccJ2tyKAagpjpD80HP2r01ZQ==
-X-Google-Smtp-Source: APXvYqy/1/MJyl2yq0JNJ1lJAbS7sXpETew3r6arHgnR/Bo+YJC+IXAdeOl3m8wFVO8i1kW5vfviIg==
-X-Received: by 2002:a1c:6508:: with SMTP id z8mr7418209wmb.93.1569588481463;
- Fri, 27 Sep 2019 05:48:01 -0700 (PDT)
-Received: from glaroque-ThinkPad-T480.baylibre.local
- (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id h9sm2985564wrv.30.2019.09.27.05.48.00
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 27 Sep 2019 05:48:00 -0700 (PDT)
-From: Guillaume La Roque <glaroque@baylibre.com>
-To: amit.kucheria@linaro.org, rui.zhang@intel.com, edubezval@gmail.com,
- daniel.lezcano@linaro.org
-Subject: [PATCH v5 7/7] MAINTAINERS: add entry for Amlogic Thermal driver
-Date: Fri, 27 Sep 2019 14:47:50 +0200
-Message-Id: <20190927124750.12467-10-glaroque@baylibre.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190927124750.12467-1-glaroque@baylibre.com>
-References: <20190927124750.12467-1-glaroque@baylibre.com>
+	id 1iDpjr-0006CG-Cl; Fri, 27 Sep 2019 12:52:47 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iDpjg-0006B6-Ao
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 12:52:38 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9E7231000;
+ Fri, 27 Sep 2019 05:52:33 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9A8853F67D;
+ Fri, 27 Sep 2019 05:52:32 -0700 (PDT)
+Date: Fri, 27 Sep 2019 13:52:30 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Masayoshi Mizuma <msys.mizuma@gmail.com>
+Subject: Re: [PATCH 1/1] arm64/sve: Fix wrong free for task->thread.sve_state
+Message-ID: <20190927125228.GQ27757@arm.com>
+References: <20190926190846.3072-1-msys.mizuma@gmail.com>
+ <20190926190846.3072-2-msys.mizuma@gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190926190846.3072-2-msys.mizuma@gmail.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190927_054803_407463_63020789 
-X-CRM114-Status: UNSURE (   8.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190927_055236_520254_73842F9E 
+X-CRM114-Status: GOOD (  26.59  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,46 +61,174 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org
-MIME-Version: 1.0
+Cc: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Julien Grall <julien.grall@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add myself as maintainer for Amlogic Thermal driver.
+On Thu, Sep 26, 2019 at 03:08:46PM -0400, Masayoshi Mizuma wrote:
+> From: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
+> 
+> The system which has SVE feature crashed because of
+> the memory pointed by task->thread.sve_state was destroyed
+> by someone.
+> 
+> That is because sve_state is freed while the forking the
+> child process. The child process has the pointer of sve_state
+> which is same as the parent's because the child's task_struct
+> is copied from the parent's one. If the copy_process()
+> fails as an error on somewhere, for example, copy_creds(),
+> then the sve_state is freed even if the parent is alive.
+> The flow is as follows.
+> 
+> copy_process
+>         p = dup_task_struct
+>             => arch_dup_task_struct
+>                 *dst = *src;  // copy the entire region.
+> :
+>         retval = copy_creds
+>         if (retval < 0)
+>                 goto bad_fork_free;
+> :
+> bad_fork_free:
+> ...
+>         delayed_free_task(p);
+>           => free_task
+>              => arch_release_task_struct
+>                 => fpsimd_release_task
+>                    => __sve_free
+>                       => kfree(task->thread.sve_state);
+>                          // free the parent's sve_state
+> 
+> Add a flag in task->thread which shows the fork is in progress.
+> If the fork is in progress, that means the child has the pointer
+> to the parent's sve_state, doesn't free the sve_state.
+> 
+> Signed-off-by: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
+> Reported-by: Hidetoshi Seto <seto.hidetoshi@jp.fujitsu.com>
+> ---
+>  arch/arm64/include/asm/processor.h | 1 +
+>  arch/arm64/kernel/fpsimd.c         | 6 ++++--
+>  arch/arm64/kernel/process.c        | 2 ++
+>  3 files changed, 7 insertions(+), 2 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+> index 5623685c7d13..3ca3e350145a 100644
+> --- a/arch/arm64/include/asm/processor.h
+> +++ b/arch/arm64/include/asm/processor.h
+> @@ -143,6 +143,7 @@ struct thread_struct {
+>  	unsigned long		fault_address;	/* fault info */
+>  	unsigned long		fault_code;	/* ESR_EL1 value */
+>  	struct debug_info	debug;		/* debugging */
+> +	unsigned int		fork_in_progress;
+>  #ifdef CONFIG_ARM64_PTR_AUTH
+>  	struct ptrauth_keys	keys_user;
+>  #endif
+> diff --git a/arch/arm64/kernel/fpsimd.c b/arch/arm64/kernel/fpsimd.c
+> index 37d3912cfe06..8641db4cb062 100644
+> --- a/arch/arm64/kernel/fpsimd.c
+> +++ b/arch/arm64/kernel/fpsimd.c
+> @@ -202,8 +202,10 @@ static bool have_cpu_fpsimd_context(void)
+>   */
+>  static void __sve_free(struct task_struct *task)
+>  {
+> -	kfree(task->thread.sve_state);
+> -	task->thread.sve_state = NULL;
+> +	if (!task->thread.fork_in_progress) {
+> +		kfree(task->thread.sve_state);
+> +		task->thread.sve_state = NULL;
+> +	}
+>  }
+>  
+>  static void sve_free(struct task_struct *task)
+> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+> index a47462def04b..8ac0ee4e5f76 100644
+> --- a/arch/arm64/kernel/process.c
+> +++ b/arch/arm64/kernel/process.c
+> @@ -347,6 +347,7 @@ int arch_dup_task_struct(struct task_struct *dst, struct task_struct *src)
+>  	if (current->mm)
+>  		fpsimd_preserve_current_state();
+>  	*dst = *src;
+> +	dst->thread.fork_in_progress = 1;
+>  
+>  	return 0;
+>  }
+> @@ -365,6 +366,7 @@ int copy_thread(unsigned long clone_flags, unsigned long stack_start,
+>  	 * and disable discard SVE state for p:
+>  	 */
+>  	clear_tsk_thread_flag(p, TIF_SVE);
+> +	p->thread.fork_in_progress = 0;
+>  	p->thread.sve_state = NULL;
 
-Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
-Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
----
- MAINTAINERS | 9 +++++++++
- 1 file changed, 9 insertions(+)
+There's definitely a problem here, but a simpler fix is probably to
+NULL sve_state and clear TIF_SVE for dst at the same time.
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 390c3194ee93..bdc30d740342 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -15932,6 +15932,15 @@ F:	Documentation/driver-api/thermal/cpu-cooling-api.rst
- F:	drivers/thermal/cpu_cooling.c
- F:	include/linux/cpu_cooling.h
+Once upon a time, I had to cope with the thread_flags not being copied
+as part of task_struct here, which is one reason why the code is the
+(broken) way it is, but this is ancient history...
+
+Commit c02433dd6de3 ("arm64: split thread_info from task stack") was
+merged in v4.10 and predates SVE support anyway.
+
+
+So can just do the following (untested) and delete the confusing
+comments?
+
+Cheers
+---Dave
+
+--8<--
+
+
+diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+index f674f28..6937f59 100644
+--- a/arch/arm64/kernel/process.c
++++ b/arch/arm64/kernel/process.c
+@@ -323,22 +323,16 @@ void arch_release_task_struct(struct task_struct *tsk)
+ 	fpsimd_release_task(tsk);
+ }
  
-+THERMAL DRIVER FOR AMLOGIC SOCS
-+M:	Guillaume La Roque <glaroque@baylibre.com>
-+L:	linux-pm@vger.kernel.org
-+L:	linux-amlogic@lists.infradead.org
-+W:	http://linux-meson.com/
-+S:	Supported
-+F:	drivers/thermal/amlogic_thermal.c
-+F:	Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
+-/*
+- * src and dst may temporarily have aliased sve_state after task_struct
+- * is copied.  We cannot fix this properly here, because src may have
+- * live SVE state and dst's thread_info may not exist yet, so tweaking
+- * either src's or dst's TIF_SVE is not safe.
+- *
+- * The unaliasing is done in copy_thread() instead.  This works because
+- * dst is not schedulable or traceable until both of these functions
+- * have been called.
+- */
+ int arch_dup_task_struct(struct task_struct *dst, struct task_struct *src)
+ {
+ 	if (current->mm)
+ 		fpsimd_preserve_current_state();
+ 	*dst = *src;
+ 
++	BUILD_BUG_ON(!IS_ENABLED(CONFIG_THREAD_INFO_IN_TASK));
++	dst->thread.sve_state = NULL;
++	clear_tsk_thread_flag(dst, TIF_SVE);
 +
- THINKPAD ACPI EXTRAS DRIVER
- M:	Henrique de Moraes Holschuh <ibm-acpi@hmh.eng.br>
- L:	ibm-acpi-devel@lists.sourceforge.net
--- 
-2.17.1
-
+ 	return 0;
+ }
+ 
+@@ -352,13 +346,6 @@ int copy_thread(unsigned long clone_flags, unsigned long stack_start,
+ 	memset(&p->thread.cpu_context, 0, sizeof(struct cpu_context));
+ 
+ 	/*
+-	 * Unalias p->thread.sve_state (if any) from the parent task
+-	 * and disable discard SVE state for p:
+-	 */
+-	clear_tsk_thread_flag(p, TIF_SVE);
+-	p->thread.sve_state = NULL;
+-
+-	/*
+ 	 * In case p was allocated the same task_struct pointer as some
+ 	 * other recently-exited task, make sure p is disassociated from
+ 	 * any cpu that may have run that now-exited task recently.
 
 _______________________________________________
 linux-arm-kernel mailing list
