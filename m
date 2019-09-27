@@ -2,106 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38773C0949
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 18:13:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DCC8DC0957
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 18:16:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rqudCP59OzfeuQl1FNhJUUmFyWrZdFKrivhUeCPxdUg=; b=DaKJlYJ00oPBdT
-	B4LGj/knA9Ys2aRQr/wzyQPtpZIPtpKOfe1Y0ij0M8FiA1+5t/QmmkB+m0Nu6cerzZezH28v6/3N9
-	kr30djGTv1ba6Cz7PNLA2gWwiEAsBc4Dpl3rtfTmYVpXiOqfeS5y0R0l7Q0fzl7VJJDDCuEPtxR/L
-	XyRQuvMdkVK/KXaQByFY4h2cuPf7sUnYFF+d97hMLLfP9BmC3M/mzUET4cINj2x3oZe6+9Rj/DFP1
-	PkWU/KtogNEToShzWlShsm4QW8ijeMWzQzZDjs4UclksKSX1iS/qxcFvRuQmnh7WPCFpcK6Qyfpn2
-	0gTOmOqGiK7elgFfie1w==;
+	List-Owner; bh=hjtri5ejWb+3iffkC1Hh53dQS9CBi2bwznPYs636Kmo=; b=H+EtFiO69LiBmG
+	tFM8l4E6pnObdK+rB2bmEQ/Gkk9gpoI6DW+5lwECUC7icTR4VYwrRyzfol1k76oCG6v8gBo8KB8co
+	TzBk6Woi5gw9uzPhiRUzf1eJwarYduLtQcoSHWEykFsfVVztkndZ6LbsL1SwM8GNb0A4LFejx1RlT
+	3z9ADWz+jluOwuqPnof9StuG2PQ0TtlF21xGRiPfnHU3jJoVEXQ7VU8Ko38FIDx/9n94kiMg8ZJT5
+	mZiGTHb0ycc1z2/o0Vri+kOFrU1HABXTNnVlq608+tmcYczwhH10VL06SZ0N+j46PjYbSYFD5EnJy
+	a/l2dMjBRyectgOmC0Yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDsrh-0001Fx-LQ; Fri, 27 Sep 2019 16:13:05 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDsrM-0001AG-Vj; Fri, 27 Sep 2019 16:12:46 +0000
-Received: by mail-pf1-x444.google.com with SMTP id y5so1873132pfo.4;
- Fri, 27 Sep 2019 09:12:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:thread-topic:thread-index:date:message-id
- :references:in-reply-to:accept-language:content-language
- :content-transfer-encoding:mime-version;
- bh=BkVG3iqmCYH0eeVp/xh+5XrL/M0KG001eUUCkmNI95A=;
- b=Mn2aTSFJcLMbdJ0EDU05EbRCklKYGTviE75JGUm7L85MaO4x0BluxsXTdrT7r/1c5g
- ef7FdH+DK4gBrLK9SP6Ssa3T9eS8g0cnggV2vycqPfoRr4TKzvQ40IcQ0AojCMYKfpni
- UbChhtTqXyzLcsFEF3NUmE0OxKsqw7YDx5RW7fFY5g0Dr2MwIxKwQuAPSh90Hco9QIKL
- /DHVEfFAONO+74Yfae6ckNUID+VmFipdI7Ia2jow0nxIQqbAe3zEq7wiZe2woLlHWHrw
- Xv/8S8YMFuP1l+czE/Byy1e/KRZgB9s6bBPYYWDmzIKpheVtFDMSvnOS4XDOSTXWX0WJ
- gPxQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:thread-topic:thread-index
- :date:message-id:references:in-reply-to:accept-language
- :content-language:content-transfer-encoding:mime-version;
- bh=BkVG3iqmCYH0eeVp/xh+5XrL/M0KG001eUUCkmNI95A=;
- b=gzl1uL7KR1GRcUD4d34AR1ZVUno/G+HYYgI9IY4PavsQoLaPcJQVedx7NPDVept4iN
- iR+B/JOq5felQBHcuNgSYbTsinXjBAXQspKov3yRuuKSixR38OPRM6J16U7hbEzE8cCP
- ZnA5BEvtteITq33kK7tLEPxJzhbPY//8Vr/9tx57uNItPPig/rzvGLkhQV6U6Q47Mweo
- IU6zMwDr/qzG6yCPbE7rraIdIfVoi+VDTRGZUPOezacEk8aTu7c6i/EFzHizFfEGdYsd
- Jq33eoUwEUHIyzYw9z7GtKjhPi4faNhf3MH3FlLM0ri+gD6kjFhBSdZOWtbablXnqenZ
- EpAw==
-X-Gm-Message-State: APjAAAWpzJUnvjWw6stMg59q0QPslpAkpMnVU0BoWb8b+xiu79ZrOU0f
- +WkHpCOhMYxEcrtpFm5DY9M=
-X-Google-Smtp-Source: APXvYqxitbAP3PcPa0X7X2zX+V7jMSsAuljIqXk3oFFlbn7LYzvFIn3W4VY61E9Z7VlJ3Yul0lMOQg==
-X-Received: by 2002:a17:90a:e28a:: with SMTP id
- d10mr9357077pjz.102.1569600764256; 
- Fri, 27 Sep 2019 09:12:44 -0700 (PDT)
-Received: from SL2P216MB0105.KORP216.PROD.OUTLOOK.COM ([2603:1046:100:22::5])
- by smtp.gmail.com with ESMTPSA id
- l12sm7805593pgs.44.2019.09.27.09.12.37
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 27 Sep 2019 09:12:43 -0700 (PDT)
-From: Jingoo Han <jingoohan1@gmail.com>
-To: Rob Herring <robh@kernel.org>, "linux-pci@vger.kernel.org"
- <linux-pci@vger.kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, Lorenzo
- Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: Re: [PATCH 06/11] PCI: of: Add inbound resource parsing to helpers
-Thread-Topic: [PATCH 06/11] PCI: of: Add inbound resource parsing to helpers
-Thread-Index: AQHVcyGPS+dm5x72Oke0UZO8SHhXHqc/tnKx
-X-MS-Exchange-MessageSentRepresentingType: 1
-Date: Fri, 27 Sep 2019 16:12:27 +0000
-Message-ID: <SL2P216MB0105EF7D414AE054835D25C9AA810@SL2P216MB0105.KORP216.PROD.OUTLOOK.COM>
-References: <20190924214630.12817-1-robh@kernel.org>
- <20190924214630.12817-7-robh@kernel.org>
-In-Reply-To: <20190924214630.12817-7-robh@kernel.org>
-Accept-Language: ko-KR, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-Exchange-Organization-SCL: -1
-X-MS-TNEF-Correlator: 
-X-MS-Exchange-Organization-RecordReviewCfmType: 0
+	id 1iDsuQ-00031Z-6E; Fri, 27 Sep 2019 16:15:54 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iDsuE-00030a-00
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 16:15:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 32B2A1000;
+ Fri, 27 Sep 2019 09:15:39 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2F5BC3F534;
+ Fri, 27 Sep 2019 09:15:38 -0700 (PDT)
+Date: Fri, 27 Sep 2019 17:15:36 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Masayoshi Mizuma <msys.mizuma@gmail.com>
+Subject: Re: [PATCH v2] arm64/sve: Fix wrong free for task->thread.sve_state
+Message-ID: <20190927161535.GS27757@arm.com>
+References: <20190927153949.29870-1-msys.mizuma@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190927153949.29870-1-msys.mizuma@gmail.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190927_091245_027765_FFB41D9B 
-X-CRM114-Status: GOOD (  15.17  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190927_091542_127132_99D2E9B8 
+X-CRM114-Status: GOOD (  23.57  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jingoohan1[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (jingoohan1[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,70 +60,144 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>,
- Linus Walleij <linus.walleij@linaro.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Toan Le <toan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
- Ryder Lee <ryder.lee@mediatek.com>, Michal Simek <michal.simek@xilinx.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "bcm-kernel-feedback-list@broadcom.com"
- <bcm-kernel-feedback-list@broadcom.com>, Shawn Lin <shawn.lin@rock-chips.com>,
- Ray Jui <rjui@broadcom.com>, Hou Zhiqiang <Zhiqiang.Hou@nxp.com>,
- Simon Horman <horms@verge.net.au>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Scott Branden <sbranden@broadcom.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- "rfi@lists.rocketboards.org" <rfi@lists.rocketboards.org>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- Tom Joseph <tjoseph@cadence.com>, Han Jingoo <jingoohan1@gmail.com>,
- Ley Foon Tan <lftan@altera.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Julien Grall <julien.grall@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DQoNCu+7vz4gT24gOS8yNC8xOSwgNTo0NiBQTSwgUm9iIEhlcnJpbmcgd3JvdGU6DQo+DQo+IEV4
-dGVuZCBkZXZtX29mX3BjaV9nZXRfaG9zdF9icmlkZ2VfcmVzb3VyY2VzKCkgYW5kDQo+IHBjaV9w
-YXJzZV9yZXF1ZXN0X29mX3BjaV9yYW5nZXMoKSBoZWxwZXJzIHRvIGFsc28gcGFyc2UgdGhlIGlu
-Ym91bmQNCj4gYWRkcmVzc2VzIGZyb20gRFQgJ2RtYS1yYW5nZXMnIGFuZCBwb3B1bGF0ZSBhIHJl
-c291cmNlIGxpc3Qgd2l0aCB0aGUNCj4gdHJhbnNsYXRlZCBhZGRyZXNzZXMuIFRoaXMgd2lsbCBo
-ZWxwIGVuc3VyZSAnZG1hLXJhbmdlcycgaXMgYWx3YXlzDQo+IHBhcnNlZCBpbiBhIGNvbnNpc3Rl
-bnQgd2F5Lg0KPg0KPiBDYzogSmluZ29vIEhhbiA8amluZ29vaGFuMUBnbWFpbC5jb20+DQoNCkZv
-ciAvZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2MvcGNpZS1kZXNpZ253YXJlLWhvc3QuYywNCg0K
-QWNrZWQtYnk6IEppbmdvbyBIYW4gPGppbmdvb2hhbjFAZ21haWwuY29tPg0KDQpCZXN0IHJlZ2Fy
-ZHMsDQpKaW5nb28gSGFuDQoNCj4gQ2M6IEd1c3Rhdm8gUGltZW50ZWwgPGd1c3Rhdm8ucGltZW50
-ZWxAc3lub3BzeXMuY29tPg0KPiBDYzogTG9yZW56byBQaWVyYWxpc2kgPGxvcmVuem8ucGllcmFs
-aXNpQGFybS5jb20+DQo+IENjOiBCam9ybiBIZWxnYWFzIDxiaGVsZ2Fhc0Bnb29nbGUuY29tPg0K
-PiBDYzogVGhvbWFzIFBldGF6em9uaSA8dGhvbWFzLnBldGF6em9uaUBib290bGluLmNvbT4NCj4g
-Q2M6IFdpbGwgRGVhY29uIDx3aWxsQGtlcm5lbC5vcmc+DQo+IENjOiBMaW51cyBXYWxsZWlqIDxs
-aW51cy53YWxsZWlqQGxpbmFyby5vcmc+DQo+IENjOiBUb2FuIExlIDx0b2FuQG9zLmFtcGVyZWNv
-bXB1dGluZy5jb20+DQo+IENjOiBMZXkgRm9vbiBUYW4gPGxmdGFuQGFsdGVyYS5jb20+DQo+IENj
-OiBUb20gSm9zZXBoIDx0am9zZXBoQGNhZGVuY2UuY29tPg0KPiBDYzogUmF5IEp1aSA8cmp1aUBi
-cm9hZGNvbS5jb20+DQo+IENjOiBTY290dCBCcmFuZGVuIDxzYnJhbmRlbkBicm9hZGNvbS5jb20+
-DQo+IENjOiBiY20ta2VybmVsLWZlZWRiYWNrLWxpc3RAYnJvYWRjb20uY29tDQo+IENjOiBSeWRl
-ciBMZWUgPHJ5ZGVyLmxlZUBtZWRpYXRlay5jb20+DQo+IENjOiBLYXJ0aGlrZXlhbiBNaXRyYW4g
-PG0ua2FydGhpa2V5YW5AbW9iaXZlaWwuY28uaW4+DQo+IENjOiBIb3UgWmhpcWlhbmcgPFpoaXFp
-YW5nLkhvdUBueHAuY29tPg0KPiBDYzogU2ltb24gSG9ybWFuIDxob3Jtc0B2ZXJnZS5uZXQuYXU+
-DQo+IENjOiBTaGF3biBMaW4gPHNoYXduLmxpbkByb2NrLWNoaXBzLmNvbT4NCj4gQ2M6IEhlaWtv
-IFN0dWVibmVyIDxoZWlrb0BzbnRlY2guZGU+DQo+IENjOiBNaWNoYWwgU2ltZWsgPG1pY2hhbC5z
-aW1la0B4aWxpbnguY29tPg0KPiBDYzogcmZpQGxpc3RzLnJvY2tldGJvYXJkcy5vcmcNCj4gQ2M6
-IGxpbnV4LW1lZGlhdGVrQGxpc3RzLmluZnJhZGVhZC5vcmcNCj4gQ2M6IGxpbnV4LXJlbmVzYXMt
-c29jQHZnZXIua2VybmVsLm9yZw0KPiBDYzogbGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFk
-Lm9yZw0KPiBTaWduZWQtb2ZmLWJ5OiBSb2IgSGVycmluZyA8cm9iaEBrZXJuZWwub3JnPg0KPiAt
-LS0NCj4gIC4uLi9wY2kvY29udHJvbGxlci9kd2MvcGNpZS1kZXNpZ253YXJlLWhvc3QuYyB8ICAz
-ICstDQoNCi4uLi4NCg0KPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2Mv
-cGNpZS1kZXNpZ253YXJlLWhvc3QuYyBiL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvZHdjL3BjaWUt
-ZGVzaWdud2FyZS1ob3N0LmMNCj4gaW5kZXggZjkzMjUyZDBkYTViLi4wNzQzYWU2NGJiMGYgMTAw
-NjQ0DQo+IC0tLSBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvZHdjL3BjaWUtZGVzaWdud2FyZS1o
-b3N0LmMNCj4gKysrIGIvZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2MvcGNpZS1kZXNpZ253YXJl
-LWhvc3QuYw0KPiBAQCAtMzQyLDcgKzM0Miw4IEBAIGludCBkd19wY2llX2hvc3RfaW5pdChzdHJ1
-Y3QgcGNpZV9wb3J0ICpwcCkNCj4gIAkJcmV0dXJuIC1FTk9NRU07DQo+ICANCj4gIAlyZXQgPSBk
-ZXZtX29mX3BjaV9nZXRfaG9zdF9icmlkZ2VfcmVzb3VyY2VzKGRldiwgMCwgMHhmZiwNCj4gLQkJ
-CQkJJmJyaWRnZS0+d2luZG93cywgJnBwLT5pb19iYXNlKTsNCj4gKwkJCQkJJmJyaWRnZS0+d2lu
-ZG93cywgJmJyaWRnZS0+ZG1hX3JhbmdlcywNCj4gKwkJCQkJJnBwLT5pb19iYXNlKTsNCj4gIAlp
-ZiAocmV0KQ0KPiAgCQlyZXR1cm4gcmV0Ow0KIA0KLi4uLg0KX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QK
-bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Fri, Sep 27, 2019 at 11:39:49AM -0400, Masayoshi Mizuma wrote:
+> From: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
+> 
+> The system which has SVE feature crashed because of
+> the memory pointed by task->thread.sve_state was destroyed
+> by someone.
+> 
+> That is because sve_state is freed while the forking the
+> child process. The child process has the pointer of sve_state
+> which is same as the parent's because the child's task_struct
+> is copied from the parent's one. If the copy_process()
+> fails as an error on somewhere, for example, copy_creds(),
+> then the sve_state is freed even if the parent is alive.
+> The flow is as follows.
+> 
+> copy_process
+>         p = dup_task_struct
+>             => arch_dup_task_struct
+>                 *dst = *src;  // copy the entire region.
+> :
+>         retval = copy_creds
+>         if (retval < 0)
+>                 goto bad_fork_free;
+> :
+> bad_fork_free:
+> ...
+>         delayed_free_task(p);
+>           => free_task
+>              => arch_release_task_struct
+>                 => fpsimd_release_task
+>                    => __sve_free
+>                       => kfree(task->thread.sve_state);
+>                          // free the parent's sve_state
+> 
+> Move child's sve_state = NULL and clearing TIF_SVE flag
+> to arch_dup_task_struct() so that the child doesn't free the
+> parent's one.
+
+You could also add:
+
+--8<--
+There is no need to wait until copy_process() to clear TIF_SVE for
+dst, becuase the thread flags for dst are initialized already by
+copying the src task_struct.
+
+This change simplifies the code, so get rid of comments that are no
+longer needed.
+-->8--
+
+> 
+> Cc: stable@vger.kernel.org
+
+Since SVE only exists from v4.15, it may be helpful to specify that,
+i.e., replace that Cc line with:
+
+Cc: <stable@vger.kernel.org> # 4.15.x-
+
+
+Otherwise, I'm happy to see this applied, but I'd like somebody to
+confirm that this change definitely fixes the bug.
+
+Cheers
+---Dave
+
+[...]
+
+> Fixes: bc0ee4760364 ("arm64/sve: Core task context handling")
+> Signed-off-by: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
+> Reported-by: Hidetoshi Seto <seto.hidetoshi@jp.fujitsu.com>
+> Suggested-by: Dave Martin <Dave.Martin@arm.com>
+> ---
+>  arch/arm64/kernel/process.c | 21 ++++-----------------
+>  1 file changed, 4 insertions(+), 17 deletions(-)
+> 
+> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+> index f674f28df..6937f5935 100644
+> --- a/arch/arm64/kernel/process.c
+> +++ b/arch/arm64/kernel/process.c
+> @@ -323,22 +323,16 @@ void arch_release_task_struct(struct task_struct *tsk)
+>  	fpsimd_release_task(tsk);
+>  }
+>  
+> -/*
+> - * src and dst may temporarily have aliased sve_state after task_struct
+> - * is copied.  We cannot fix this properly here, because src may have
+> - * live SVE state and dst's thread_info may not exist yet, so tweaking
+> - * either src's or dst's TIF_SVE is not safe.
+> - *
+> - * The unaliasing is done in copy_thread() instead.  This works because
+> - * dst is not schedulable or traceable until both of these functions
+> - * have been called.
+> - */
+>  int arch_dup_task_struct(struct task_struct *dst, struct task_struct *src)
+>  {
+>  	if (current->mm)
+>  		fpsimd_preserve_current_state();
+>  	*dst = *src;
+>  
+> +	BUILD_BUG_ON(!IS_ENABLED(CONFIG_THREAD_INFO_IN_TASK));
+> +	dst->thread.sve_state = NULL;
+> +	clear_tsk_thread_flag(dst, TIF_SVE);
+> +
+>  	return 0;
+>  }
+>  
+> @@ -351,13 +345,6 @@ int copy_thread(unsigned long clone_flags, unsigned long stack_start,
+>  
+>  	memset(&p->thread.cpu_context, 0, sizeof(struct cpu_context));
+>  
+> -	/*
+> -	 * Unalias p->thread.sve_state (if any) from the parent task
+> -	 * and disable discard SVE state for p:
+> -	 */
+> -	clear_tsk_thread_flag(p, TIF_SVE);
+> -	p->thread.sve_state = NULL;
+> -
+>  	/*
+>  	 * In case p was allocated the same task_struct pointer as some
+>  	 * other recently-exited task, make sure p is disassociated from
+> -- 
+> 2.18.1
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
