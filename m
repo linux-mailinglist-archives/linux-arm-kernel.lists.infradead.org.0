@@ -2,38 +2,38 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6422BBFDD1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 05:54:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD7F1BFDD5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 06:02:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UBqZkFbcZOW5pc8CbLAWCugvk6DX9z2XVumOD3F+n6U=; b=YdowooHzdRs/HT
-	YMtlQsmOmyZuPeDAPYL5HcOIxni2DMyXxmx6i80V/6ZhXNlxQhQIHdTYq1kzlL367RYeZ6V9PpVKY
-	jtlsHn1MhWFGVr8klBomdDdX7Fa66VVmagsxNTzhJJ/jLyK6Y7Sk37Zxq5XRjBRu5a8/FFVkjb5DG
-	AMqfSWNgCSS3oV9eaDJ1RSAfx3I9M6B47h10y22svfO4XIpXXf5B7AMpXXk7HpMTsfkyOBuf90l1i
-	UXPtpiqCfoKbR2rTdwqtKRbZlRf8/B/934kaYdCn9fIVfk6l1l8ZVgExy0ldyRnLBz2RlvAlZAFAg
-	+0FlMFR+INna9WSJlxPA==;
+	List-Owner; bh=rQykPyCOOcxR9BZWjEm5cKdRUKXAUWsFOzBVxXeDhDU=; b=MFI+vzae+0NokO
+	Z+YAE6qduYw1KX5unvF7s8Z5zPKVQ4OwYHeXpToGcqVXAgNXS72X1wHkM7mBH7hzwNLgfRZXJQ0fV
+	dbCrUd6iN6sdETXq8qDGU6fZCAcddBUN5QDtykIGl/qNT5DgmuwACVxFnKagsy+7Z+cF0Dz2TJ3LU
+	EanRN0XufVN8pP63MtQ6UYt6GsAnUKz2XW36P7+sDIrSKdzLJIuRkCwHAiGH1JG0VrIkFtK11ipf9
+	EuVDJaaWVFe65UahDOHoyK6gHN5yXoeyL+knu4Hyo6NH8XaE9KMhPBfeCc2xgr7BOo9JpwCLh+/Q8
+	Rc2fEg0Bl1irXtHTzp2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDhL5-00085y-If; Fri, 27 Sep 2019 03:54:39 +0000
+	id 1iDhSY-0002gj-PB; Fri, 27 Sep 2019 04:02:24 +0000
 Received: from helcar.hmeau.com ([216.24.177.18] helo=fornost.hmeau.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDhKj-00085a-KA
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 03:54:20 +0000
+ id 1iDhSA-0002gN-JL
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 04:02:01 +0000
 Received: from gwarestrin.arnor.me.apana.org.au ([192.168.0.7])
  by fornost.hmeau.com with smtp (Exim 4.89 #2 (Debian))
- id 1iDhKB-0001tc-SV; Fri, 27 Sep 2019 13:53:45 +1000
+ id 1iDhRw-0001yA-0u; Fri, 27 Sep 2019 14:01:45 +1000
 Received: by gwarestrin.arnor.me.apana.org.au (sSMTP sendmail emulation);
- Fri, 27 Sep 2019 13:53:19 +1000
-Date: Fri, 27 Sep 2019 13:53:19 +1000
+ Fri, 27 Sep 2019 14:01:41 +1000
+Date: Fri, 27 Sep 2019 14:01:41 +1000
 From: Herbert Xu <herbert@gondor.apana.org.au>
 To: Linus Torvalds <torvalds@linux-foundation.org>
 Subject: Re: [RFC PATCH 18/18] net: wireguard - switch to crypto API for
  packet encryption
-Message-ID: <20190927035319.GA23566@gondor.apana.org.au>
+Message-ID: <20190927040140.GA24370@gondor.apana.org.au>
 References: <20190925161255.1871-1-ard.biesheuvel@linaro.org>
  <20190925161255.1871-19-ard.biesheuvel@linaro.org>
  <CAHk-=wjYsbxSiV_XKWV3BwGvau_hUvQiQHLOoc7vLUZt0Wqzfw@mail.gmail.com>
@@ -47,8 +47,8 @@ Content-Disposition: inline
 In-Reply-To: <CAHk-=whqWh8ebZ7ryEv5tKKtO5VpOj2rWVy7wV+aHWGO7m9gAw@mail.gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_205418_611180_2D1C6BB4 
-X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-CacheID: sfid-20190926_210159_190961_4D704C85 
+X-CRM114-Status: UNSURE (   9.26  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -86,31 +86,39 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Thu, Sep 26, 2019 at 07:54:03PM -0700, Linus Torvalds wrote:
 >
-> Side note: almost nobody does this.
-> 
-> Almost every single async interface I've ever seen ends up being "only
-> designed for async".
-> 
-> And I think the reason is that everybody first does the simply
-> synchronous interfaces, and people start using those, and a lot of
-> people are perfectly happy with them. They are simple, and they work
-> fine for the huge majority of users.
+> There's no "read_potentially_async()" interface that just does the
+> synchronous read for any cached portion of the data, and then delays
+> just the IO parts and returns a "here, I gave you X bytes right now,
+> use this cookie to wait for the rest".
 
-The crypto API is not the way it is because of async.  In fact, the
-crypto API started out as sync only and async was essentially
-bolted on top with minimial changes.
+Incidentally this is exactly how the crypto async interface works.
+For example, the same call works whether you're sync or async:
 
-The main reason why the crypto API contains indirections is because
-of the algorithmic flexibility which WireGuard does not need.
+	aead_request_set_callback(req, ...);
+	aead_request_set_crypt(req, ...);
+	err = crypto_aead_encrypt(req);
+	if (err == -EINPROGRESS)
+		/*
+		 * Request is processed asynchronously.
+		 * This cannot occur if the algorithm is sync,
+		 * e.g., when you specifically allocated sync
+		 * algorithms.
+		 */
+	else
+		/* Request was processed synchronously */
 
-Now whether algorithmic flexibility is a good thing or not is a
-different discussion.  But the fact of the matter is that the
-majority of heavy crypto users in our kernel do require this
-flexibility (e.g., IPsec, dmcrypt, fscrypt).
+We even allow the request to be on the stack in the sync case, e.g.,
+with SYNC_SKCIPHER_REQUEST_ON_STACK.
 
-I don't have a beef with the fact that WireGuard is tied to a
-single algorithm.  However, that simply does not work for the
-other users that we will have to continue to support.
+> Maybe nobody would use it. But it really should be possibly to have
+> interfaces where a good synchronous implementation is _possible_
+> without the extra overhead, while also allowing async implementations.
+
+So there is really no async overhead in the crypto API AFAICS if
+you're always doing sync.  What you see as overheads are probably
+the result of having to support multiple underlying algorithms
+(not just accelerations which can indeed be handled without
+indirection at least for CPU-based ones).
 
 Cheers,
 -- 
