@@ -2,56 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4204BFFF6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 09:23:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80355BFFF7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 09:23:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VG6+ZR9i09l89gDMGRZp28ckjZncNW/qnOCDCuvkR9k=; b=iS3l36h0c0nMgE
-	tpH8vBOQ9OkWye+iHZhXMqt3hfXWji3uFGju0X1lbw2Ja9wfBCTpbPEmqdOBnwraNEBD8wNwZnqut
-	0bPfJgy+MfLC2FT4za2GpyBSnBTVYZJybVUnXoa0wUoUrtYueQr0xg9SyhGOFoGHwqZ0LiqADVU95
-	nWM72yyfIu76z3Gv4oqFlgTzceJEGb8Q06OQk0yx4qx5RKyVJ9kN04tAEK4zWa+foAxUNczNZjPg4
-	In7if+5sNFllw59vGtv+s9pM7xFNwX8u3//pwkFaT7f9OIwx3Txifo/iAEiun1CQ8kIgbbt/1Gs+Z
-	4F76E5g8mmjs6VPeFpZQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XxTAfv/LWpnfqQ22LDaiodS62j0J7YCX8vAbvOh0ATM=; b=Vp9VG82b0C+Y/s
+	x8toE0c2VkU4fewR1hOaRZXBJP3HeGeMkdEQJSYuuD+n5PjSf/gHHimuVrTra2qlX/FGf2etPg3tu
+	FgbHblbhGkcs5kri+Y91BMj6agKOoS74rBKQsNbcVfk2TzD22dgysoeqjpadaBtV75vc2sBRxNhQv
+	PzP5FW4dQ9bCgvwa8WUu5HHPH9dZFw4tJ5LJuMF7yuyWBE+UjHvTSImz88uX/z+NWS+XbBHvJU3zV
+	nmFDIitrjNlmDJ8QpKaxbLA77WDv2xX2F4xysFXW7LQwSLwZAmZs3KeFsnffsLza+CQnfKpUkYS0J
+	vKoVbWoBnTnURh0gJoiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDkaz-0000jD-FF; Fri, 27 Sep 2019 07:23:17 +0000
+	id 1iDkbS-0000xJ-Cx; Fri, 27 Sep 2019 07:23:46 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDkZq-0000ed-On; Fri, 27 Sep 2019 07:22:17 +0000
-X-UUID: eb5aacae812f4e829a5e5ac830331a9a-20190926
-X-UUID: eb5aacae812f4e829a5e5ac830331a9a-20190926
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ id 1iDkZr-0000ef-Rx; Fri, 27 Sep 2019 07:22:17 +0000
+X-UUID: 97f67f7132904381b62dc44423cddc5d-20190926
+X-UUID: 97f67f7132904381b62dc44423cddc5d-20190926
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <dongchun.zhu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1338738788; Thu, 26 Sep 2019 23:18:29 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 27 Sep 2019 00:18:28 -0700
+ with ESMTP id 229614224; Thu, 26 Sep 2019 23:18:36 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 27 Sep 2019 00:18:35 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 27 Sep 2019 15:18:26 +0800
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 27 Sep 2019 15:18:34 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 27 Sep 2019 15:18:25 +0800
+ Transport; Fri, 27 Sep 2019 15:18:33 +0800
 From: Dongchun Zhu <dongchun.zhu@mediatek.com>
 To: <mchehab@kernel.org>, <andriy.shevchenko@linux.intel.com>,
  <robh+dt@kernel.org>, <mark.rutland@arm.com>, <sakari.ailus@linux.intel.com>, 
  <drinkcat@chromium.org>, <tfiga@chromium.org>, <matthias.bgg@gmail.com>,
  <bingbu.cao@intel.com>
-Subject: [PATCH] media: ov5695: Add suport for registering sensor-related
-Date: Fri, 27 Sep 2019 15:18:23 +0800
-Message-ID: <20190927071824.18675-1-dongchun.zhu@mediatek.com>
+Subject: [PATCH] media: i2c: ov5695: Modify the function of async register
+ subdev related devices
+Date: Fri, 27 Sep 2019 15:18:24 +0800
+Message-ID: <20190927071824.18675-2-dongchun.zhu@mediatek.com>
 X-Mailer: git-send-email 2.9.2
+In-Reply-To: <20190927071824.18675-1-dongchun.zhu@mediatek.com>
+References: <20190927071824.18675-1-dongchun.zhu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190927_002207_381064_2864E565 
-X-CRM114-Status: UNSURE (   8.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190927_002208_134410_17442840 
+X-CRM114-Status: GOOD (  10.42  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -77,30 +79,37 @@ Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
  linux-mediatek@lists.infradead.org, dongchun.zhu@mediatek.com,
  louis.kuo@mediatek.com, linux-arm-kernel@lists.infradead.org,
  linux-media@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGVsbG8sCgpUaGlzIHNlcmllcyBtb2RpZmllcyB0aGUgaW50ZXJmYWNlIG9mIGFzeW5jIHJlZ2lz
-dGVyIFY0TDIgc3ViLWRldmljZSBpbnZva2VkIGluIHByb2JlIGZ1bmN0aW9uIGZvciBPVjU2OTUg
-Q01PUyBzZW5zb3IuClRoZSBPbW5pdmlzaW9uIE9WNTY5NSBpbWFnZSBzZW5zb3Igd291bGQgYmUg
-dXNlZCBpbiBjYW1lcmEgZmVhdHVyZXMgb24gQ3JPUyBhcHBsaWNhdGlvbi4KNS4wIE1lZ2EgUGl4
-ZWwgTUlQSSBDYW1lcmEgTWRvdWxlIGFsc28gc3VwcG9ydHMgYXV0by1mb2N1cyBjb250cm9sIChB
-RkMpIHdpdGggZW1iZWRkZWQgQUYgVkNNIERyaXZlci4KCkhlcmUgd2UgdXNlIHY0bDJfYXN5bmNf
-cmVnaXN0ZXJfc3ViZGV2X3NlbnNvcl9jb21tb24oKSBpbnN0ZWFkIG9mIHY0bDJfYXN5bmNfcmVn
-aXN0ZXJfc3ViZGV2KCkKdG8gcmVnaXN0ZXIgYSBzZW5zb3Igc3ViLWRldmljZSB0byB0aGUgYXN5
-bmNocm9ub3VzIHN1Yi1kZXZpY2UgZnJhbWV3b3JrIGFuZCBwYXJzZSBzZXQgdXAKY29tbW9uIHNl
-bnNvci1yZWxhdGVkIGRldmljZXMsIHN1Y2ggYXMgYWN0dWF0b3IuCgpUaGlzIGZ1bmN0aW9uIGlz
-IGp1c3QgbGlrZcKgdjRsMl9hc3luY19yZWdpc3Rlcl9zdWJkZXYoKcKgd2l0aCB0aGUgZXhjZXB0
-aW9uIHRoYXQgY2FsbGluZyBpdCB3aWxsIGFsc28gcGFyc2UKZmlybXdhcmUgaW50ZXJmYWNlcyBm
-b3IgcmVtb3RlIHJlZmVyZW5jZXMgdXNpbmfCoHY0bDJfYXN5bmNfbm90aWZpZXJfcGFyc2VfZndu
-b2RlX3NlbnNvcl9jb21tb24oKQphbmQgcmVnaXN0ZXJzIHRoZSBhc3luYyBzdWItZGV2aWNlcy4K
-CkFmdGVyIGFwcGx5aW5nIHRoaXMgY2hhbmdlLCB3ZSBjYW4gc2VlIHRoZSBWQ00gbW92ZSB3aGVu
-IGNoYW5naW5nIHRoZSBzY2VuZS4KCkRvbmdjaHVuIFpodSAoMSk6CiAgbWVkaWE6IGkyYzogb3Y1
-Njk1OiBNb2RpZnkgdGhlIGZ1bmN0aW9uIG9mIGFzeW5jIHJlZ2lzdGVyIHN1YmRldgoKIGRyaXZl
-cnMvbWVkaWEvaTJjL292NTY5NS5jIHwgMiArLQogMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9u
-KCspLCAxIGRlbGV0aW9uKC0pCgotLSAKMi45LjIKCgpfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
-eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+This patch adds support for registering a sensor sub-device to the async sub-device framework and parse set up common
+sensor related devices such as actuator/VCM.
+
+Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+---
+ drivers/media/i2c/ov5695.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/media/i2c/ov5695.c b/drivers/media/i2c/ov5695.c
+index e65a943..b6ee62c 100644
+--- a/drivers/media/i2c/ov5695.c
++++ b/drivers/media/i2c/ov5695.c
+@@ -1328,7 +1328,7 @@ static int ov5695_probe(struct i2c_client *client,
+ 		goto err_power_off;
+ #endif
+ 
+-	ret = v4l2_async_register_subdev(sd);
++	ret = v4l2_async_register_subdev_sensor_common(sd);
+ 	if (ret) {
+ 		dev_err(dev, "v4l2 async register subdev failed\n");
+ 		goto err_clean_entity;
+-- 
+2.9.2
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
