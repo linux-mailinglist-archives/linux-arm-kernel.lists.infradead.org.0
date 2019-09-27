@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09DD5C0C7F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 22:15:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 158BDC0D0F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 23:12:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ohctiuFvzKepLl9xD0lM2Vc7cij9j4iwQuCwS4luAIM=; b=gN1S87V9hm00+W
-	19khQN2y37OhXhfPBqzHspYQBXSKLcsgrtVhb1EaKIdNcTlNffKr9w8Ribsb/rocG8qhAT/PF3HMD
-	lnY8eVISECGE/5HfuwPjLQc4s5x+leq2YaWlHJ+slfhG5KA9gUwCK8gqdiFwNbyvtcBljKeEXXGRV
-	BhY2HuVzT7ACP/qCoZknIQlvpdyclMn8JKRC8S1ja/cn/BBwQpS6WSeEUPpcNMfm+ZwPmLYJJWCbj
-	RahEJNjQjn5mWRC1ap5q/hJgllVIZZvlU6ATRq/97L22Bep9u524mhuX2cZNBRCx40xYVyNcCEWDg
-	y/CKpm8kjIdwODwss9rA==;
+	List-Owner; bh=YOyBXaFXNviqJQdrfpJisCzifHj4Caozn4zrILlh9lg=; b=ApMKaIrC1ZILMN
+	w77mk1RHqjar6SUMYzKMP3qrDl7LuiB7eO28xzpRoIvh3YQHsiIFdXfGI2v816utQZe4Q6dhKYPVb
+	mp+lkvE7wSEjM5JjMO6WWV0kDS0Smfeum4qsxb1ZQ5Y6CRdAIZXMlZIr3XhXEZ2os3fX58lYT35az
+	DvbKuVJgJLXU+L0pBPJ4/jWWyyB4E0FQYv0Gh0C80TEsKZUGO5mfPRfFoLwsBEgRAuKBaE8n2enIz
+	ZVB3ZjDcRWEhfux+/rY0jwy8Dm157VmajGCLGQnJHFhkPsfIXYkTiidFG1Mj3W87wDowQf+TJPJE5
+	frcq1QWjWuZAMPUwJ27g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDweL-0005mA-Tw; Fri, 27 Sep 2019 20:15:33 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1iDxXi-0000iu-8l; Fri, 27 Sep 2019 21:12:46 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDwe4-0005in-Pt
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 20:15:18 +0000
-Received: by mail-lj1-x244.google.com with SMTP id m13so3664637ljj.11
+ id 1iDxXa-0000i4-E9
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 21:12:39 +0000
+Received: by mail-pg1-x543.google.com with SMTP id a3so4074290pgm.13
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 27 Sep 2019 13:15:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ Fri, 27 Sep 2019 14:12:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=qXC46ElY52rOcZF+haJMaG9kGcpXjGEmuqnl/s6D7sU=;
- b=iJFiMf8oaWyvJ8t2FRdzBieJmBW5yu3HRnK01HFEMVSw7D+/9QK25m8hgUZhlWOrkd
- GziWqf9HwAaV/7hi26Io+K/S80D/MN/x+ezIQfe7uGfBQiGtpImE2fapnlVBtF1Vb+/3
- yQFsiXQup4fp1DCtB1o8KLpGpzcrECIOGG0AqChAK5VdPoNZvJJkWfrIX+n1PXyv3VmT
- xGys7w1WQGLfw68iLVFJYjP9Y2g0uImlpyLL/hpSnSJNSyZYO9tVpYVdCkiH5gkniz8q
- qLMAKTa17sTc5w77+WioyDKi/0DjMl+dAoWnHWw2RP+jPn1YO6K5X6L28U4WNAe5qVco
- U9RQ==
+ :cc; bh=MT3rEIfaJgpzvHmFM2pWeqN2XOEfjsN3Ht7YF+hthq8=;
+ b=HWrjXwmyGQrWIktNn2lCfS/WWNp3jM0GJkqLaICHIq/FPWxfdSodtSpyQmZZZSqYKl
+ gLWJ5uiWHrbfp7XRrlbm5tcLBi0mF8wxUQGVBvHdC+YrHRlTUWjnN/4obhqljgrPTG3A
+ RZtBAyLun1kMIfwj+XzanCaE7pfz5X+1U1DEEWl4a0HFqU4UC+8fia7u1zVDsy87zqmM
+ aCnZO4WYMlXyBvwTDY5YzycIIMk8vbQav6mKwEUaLZN6qC6Wase6y5kT8waFE/KYHjR2
+ sI+xNuy9ZVIQOG/d3gqTWFx/1AYoGsrnH4KQyKPBRTWgKQPqX7caUSWi/ZiuXFXkwHDR
+ u2xw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=qXC46ElY52rOcZF+haJMaG9kGcpXjGEmuqnl/s6D7sU=;
- b=BJqbJ+WBnqgh0nH87hV8UxfwtP1kCrGHVGyFOObtPPR5fqiA50yIS+j+k/9NOJ+ieB
- HKQiBu9WIVbP+VfrzOE51Hd6/OFvjLVR9KU+eLf7ud6tBMU6v1xyntw3iBy4ED7S1SsH
- gBQCsVcFSuVPzqy8AVAeHqQbEEQN8vUw+9H48RU980FxJVQr48NpWFwGD1mZvxIdzeZa
- dVW5kt6vBh5awZCj2bUrp1FDp9dpOtXWnP6JbI2hkBogLjsA31cAUNLfiqQIueQub6dA
- su3TJj+LhSt2UZQVMCZR2DEre3ZP2152qTUYHX9sB6g7ia8MiKA37Z9LEOY2hrXqYqF4
- +kyQ==
-X-Gm-Message-State: APjAAAUu1415yW8sW3g0OjdIkI4d+2oIWJYhu9lOubzUJuOjLu/fnXca
- cO3M9YZauzEAsQgg9lwUFmxuKyb+GnVs7xoYCx82Qg==
-X-Google-Smtp-Source: APXvYqyc5PxTmVaJ0Ok+2gj+DX5t1h/U/xZZiw2Ey28AqH+xKmSmLTYAFO5aIUid9OVGoQCZP/0p7sxnItq2tt3rgmM=
-X-Received: by 2002:a2e:98ce:: with SMTP id s14mr4228705ljj.108.1569615315050; 
- Fri, 27 Sep 2019 13:15:15 -0700 (PDT)
+ bh=MT3rEIfaJgpzvHmFM2pWeqN2XOEfjsN3Ht7YF+hthq8=;
+ b=OId+X99opxaTy4wnXXX5jvJOQTjMooI1tt6Nok9AwVQQkk4lSseuqyRrUfWYsSEOVD
+ 07n1/QEyv9ebjkjnaoXC7UT2A25GUK21zLmVXpiF/jVdM+hKMlHqfwILEETrFErChPge
+ kr5llmFRAEo84Oer1GiGI6LF6B2C/rBp/Xc2DNNEjwwCbUIjuuZpxGWKShdg/SqjdVyW
+ Fvf+TSAAvE9Hp8lesWLWUnL8bMWKPNyTG+jlxUXviW3h2pzLXTQVk+WQPRq8TRmvOlUz
+ 7nALVvHaHsKi7QAhOvoeqifUy1Olkay9Zg5b2Ar2pMYrbffKkvX7Jyv8aUratC+RXKI8
+ jS7Q==
+X-Gm-Message-State: APjAAAUFFotjCGP9jDthJtGYrlT7rZLvicfENRdYG3f/hdw6h3oVIvyF
+ oahEUZP04tbN3wkqlLGU06E/1hzktPb3YzyrBykbrA==
+X-Google-Smtp-Source: APXvYqy8O3KoXcSTxHqiytQM1iXWb+WWT9oKskcwqzyLQpgWA96K2vO/7MEIdTwZ75zGDyeYqjyajaWRaH5XxPonWcc=
+X-Received: by 2002:a62:798e:: with SMTP id u136mr6912504pfc.3.1569618754157; 
+ Fri, 27 Sep 2019 14:12:34 -0700 (PDT)
 MIME-Version: 1.0
-References: <1563776607-8368-1-git-send-email-wahrenst@gmx.net>
- <1563776607-8368-3-git-send-email-wahrenst@gmx.net>
- <CACRpkdabfiDbGmAQciAUSThY-KfTsVq3tHz0bBszs2j_ej18Nw@mail.gmail.com>
- <63f17284-5551-9492-9eff-f8a4c003196b@gmx.net>
- <66dc2cad-673e-0a0b-0aeb-3d62fa2d4ccf@gmx.net>
-In-Reply-To: <66dc2cad-673e-0a0b-0aeb-3d62fa2d4ccf@gmx.net>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 27 Sep 2019 22:15:01 +0200
-Message-ID: <CACRpkdb9pxCF-WvA0f3rU2cttX1XmQxB=xtOhPAaP+nYoBd_LA@mail.gmail.com>
-Subject: Re: [PATCH 12/18] pinctrl: bcm2835: Add support for BCM2711 pull-up
- functionality
-To: Stefan Wahren <wahrenst@gmx.net>
+References: <cover.1569569778.git.Jose.Abreu@synopsys.com>
+ <80dd26ecf7fc82c88dc378d78210df5dd4138812.1569569778.git.Jose.Abreu@synopsys.com>
+In-Reply-To: <80dd26ecf7fc82c88dc378d78210df5dd4138812.1569569778.git.Jose.Abreu@synopsys.com>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Fri, 27 Sep 2019 14:12:23 -0700
+Message-ID: <CAKwvOdntD5HNb4Gg04YN7iZwvK3CB4enq4ZPhUM-Bd3huvR2pw@mail.gmail.com>
+Subject: Re: [PATCH net 8/8] net: stmmac: xgmac: Fix RSS not writing all Keys
+ to HW
+To: Jose Abreu <Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190927_131516_905644_2377016C 
-X-CRM114-Status: GOOD (  13.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190927_141238_479467_E4434CA1 
+X-CRM114-Status: GOOD (  16.66  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -84,6 +85,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,75 +98,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Matthias Brugger <mbrugger@suse.com>, Scott Branden <sbranden@broadcom.com>,
- Eric Anholt <eric@anholt.net>, Stephen Boyd <sboyd@kernel.org>,
- Ray Jui <rjui@broadcom.com>, Michael Turquette <mturquette@baylibre.com>,
- linux-mmc <linux-mmc@vger.kernel.org>, Adrian Hunter <adrian.hunter@intel.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- linux-rpi-kernel <linux-rpi-kernel@lists.infradead.org>
+Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Network Development <netdev@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>, linux-stm32@st-md-mailman.stormreply.com,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 27, 2019 at 9:29 PM Stefan Wahren <wahrenst@gmx.net> wrote:
-
-> today i had the time to try this out. Instead of the following:
+On Fri, Sep 27, 2019 at 12:49 AM Jose Abreu <Jose.Abreu@synopsys.com> wrote:
 >
->     i2c0_gpio0: i2c0_gpio0 {
->         brcm,pins = <0 1>;
->         brcm,function = <BCM2835_FSEL_ALT0>;
->         brcm,pull = <BCM2835_PUD_UP
->                  BCM2835_PUD_OFF>;
->     }
+> The sizeof(cfg->key) is != ARRAY_SIZE(cfg->key). Fix it.
+
+I think the warning was from -Wsizeof-array-div.
+
 >
-> you want this?
+> Reported-by: kbuild test robot <lkp@intel.com>
+> Reported-by: Nick Desaulniers <ndesaulniers@google.com>
+
+I may have reported the kbuild link, but scanning my email, there's
+also a report from
+Reported-by: Nathan Chancellor <natechancellor@gmail.com>
+
+> Fixes: 76067459c686 ("net: stmmac: Implement RSS and enable it in XGMAC core")
+> Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 >
->     i2c0_gpio0: i2c0_gpio0 {
->         pin-sda {
->             function = "alt0";
->             pins = "gpio0";
->             bias-pull-up;
->         };
->         pin-scl {
->             function = "alt0";
->             pins = "gpio1";
->             bias-disable;
->         };
->     };
+> ---
+> Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
+> Cc: Alexandre Torgue <alexandre.torgue@st.com>
+> Cc: Jose Abreu <joabreu@synopsys.com>
+> Cc: "David S. Miller" <davem@davemloft.net>
+> Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+> Cc: netdev@vger.kernel.org
+> Cc: linux-stm32@st-md-mailman.stormreply.com
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+> Cc: Nick Desaulniers <ndesaulniers@google.com>
+> ---
+>  drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>
+> diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
+> index 6d8ac2ef4fc2..4a1f52474dbc 100644
+> --- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
+> +++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
+> @@ -533,7 +533,7 @@ static int dwxgmac2_rss_configure(struct mac_device_info *hw,
+>                 return 0;
+>         }
+>
+> -       for (i = 0; i < (sizeof(cfg->key) / sizeof(u32)); i++) {
+> +       for (i = 0; i < (ARRAY_SIZE(cfg->key) / sizeof(u32)); i++) {
 
-Yes that looks much better. In my opinion.
+cfg is an instance of struct stmmac_rss, which looks like:
+125 struct stmmac_rss {
+126   int enable;
+127   u8 key[STMMAC_RSS_HASH_KEY_SIZE];
+128   u32 table[STMMAC_RSS_MAX_TABLE_SIZE];
+129 };
 
-I understand that it puts some developers off because of being
-more lines or excessively verbose, so to be on the clear,
-verboseness in itself is not the goal.
+yep, LGTM. Thanks for the patch.
+Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
 
-The goal is universal
-portability: i.e. it should not matter one bit whether I work
-on an 2001 Intel StrongARM SoC, a 2019 Broadcom SoC
-or a 2011 ST-Ericsson SoC: I will understand what bias-disable;
-or bias-pull-up; means, which lowers the threshold to
-maintenance.
 
-Opaque macros, however helpfully named, still creates
-a higher cognitive resistance and stresses developers.
+>                 ret = dwxgmac2_rss_write_reg(ioaddr, true, i, cfg->key[i]);
+>                 if (ret)
+>                         return ret;
+> --
+> 2.7.4
+>
 
-> Unfortunately i don't know U-Boot is handle the BCM2835 specific pinctrl
-> functions.
 
-I think it would be nice if boot loaders avoid to forking the
-standards, but I suppose it will invariably happen.
-Just keep in mind the IETF motto "rough consensus and
-running code".
-
-Yours,
-Linus Walleij
+--
+Thanks,
+~Nick Desaulniers
 
 _______________________________________________
 linux-arm-kernel mailing list
