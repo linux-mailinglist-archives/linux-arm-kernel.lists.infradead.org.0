@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F22A7BFE32
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 06:37:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E071BFE34
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 06:37:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0gG4dC6RQ/3EKJ4o4rqp5TYzJBDuWH0Umm8Apjw3r9o=; b=kwxdPSBbJu11Lz
-	kZ29HHGewCxreYlFlZFIIesc60vcOjbI+AaLbRKB5ZPkMTxtbdOeSxQkPqJNT+TPqggJ97ph/ehS6
-	Br+MTp2PjraB8B6Fdbcll3a1qt+flpHYWusrGaTBuI3ZKufoROUrdip7JDbRw+r8qittcjdM7iEG8
-	HMGAXPeOpX1Doaad3SNSfVEx/Rqj9NsMxkTZXvKxI+zl1hpJ+dheKm3+CtnOwjgc0yLO2S5kZtUWm
-	9lx8CCfKS4aXBCW6elo4PNKEOvCM3PJk9O0wyMYpNnQzKgdKM4vhpODFHaO418bBxCLgqfR8c1fjq
-	y6aVSuAj9NG21L8x4fpg==;
+	List-Owner; bh=YHuQAD30sIXEakynReN0SYdTYA4v1veY0PXSpJ2cftg=; b=tRHJpdng+3RSjR
+	m+Fmmndm0Ph2oA8w9lz0Ce88nM4D3186C+H6m0evg2iM9kpmBZmkPinYiOSLFPJcuqY6VYLOorlIw
+	sTGSKvmUSZ+OrIV1FjSAehseEeQnalxfDZ1A3uzQVI5Tgv9fQ1Zt2Pdp4ZkmJ54J4JwKSfZE9A7W8
+	gOd+jXY9SnTBXS0errTjF2lm3H7JcrFrz0own7pVnvstQJWfKTrd1KRhEhQIH2mtFyEt51adOpxyo
+	LsuY4X81EewmLMMgV8zNClaLG6bjH6hpJDvcnczt2wehsHEL82yn1bQcjmHnvtfv/60Kg5OGleTaK
+	ZOXDbOOoP0X4R8KHulBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDi05-0004w9-F7; Fri, 27 Sep 2019 04:37:01 +0000
+	id 1iDi0n-0005Bh-9z; Fri, 27 Sep 2019 04:37:45 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDhzj-0004vp-J2
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 04:36:40 +0000
-Received: from mail-wm1-f49.google.com (mail-wm1-f49.google.com
- [209.85.128.49])
+ id 1iDi0Y-0005B1-2D
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 04:37:31 +0000
+Received: from mail-wr1-f47.google.com (mail-wr1-f47.google.com
+ [209.85.221.47])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AEC4A207FF
+ by mail.kernel.org (Postfix) with ESMTPSA id 7A7162146E
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 27 Sep 2019 04:36:38 +0000 (UTC)
+ Fri, 27 Sep 2019 04:37:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569558999;
- bh=HWXGSg8v7PMtX2AtP+Cj10Yp3jFpXmeRJ7sWexKkbRA=;
+ s=default; t=1569559049;
+ bh=eokZR0QU/MEdg5xNwIt/H+MlFZDTmtpGw9NN9iq+r7Q=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=BgiVQRF5ok2sLpmM7sYDzoJc4cPQhJZftyNrpCPOx2Gc8HNz0u8iiBrsiuE0G1T7Z
- B61SfNfq3UnTgXqh8Jb2qLFw1j3d8yTz4nzhVUSHIXvXFc94w88V9Qq02tXLx64yFR
- IzQpj50mjsfnVgY1+wvAhT7PmFNs//sZuvqJBDXQ=
-Received: by mail-wm1-f49.google.com with SMTP id a6so4974846wma.5
+ b=a2/hT5LZEzF1NtCWpl4GeZNpM9S/9uQQq2vNlZvQHkKujHjSfIZqzcJIfO45PWYAe
+ PVTG1p8QdY0zW6dry/lwz7g/WE+Y75xGrKgNiZMbA6f7SloblPvryF1G8ntr2pJvHw
+ +M43KpM6meyxkcmaZn7DygcEKB8RN/sjqd/GdvuU=
+Received: by mail-wr1-f47.google.com with SMTP id n14so1067147wrw.9
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Sep 2019 21:36:38 -0700 (PDT)
-X-Gm-Message-State: APjAAAWmlOKXg4zmRcPcuOoGijceZWN8xW9biBEEBp0GxVfBXCTzepEY
- ELsrHRCGlfWtgWHY3t3rCvK5Sg81Xqhw2yVy+Vp/Ng==
-X-Google-Smtp-Source: APXvYqzj1HLQsMd2PmSxW2B6qKm90Gu2HeZkUPjkQm7cbVdmcR6dOh2UevoBS7cKL6nqBIdpydaXzL7jhyzpQEXBD3Y=
-X-Received: by 2002:a1c:608b:: with SMTP id u133mr5519478wmb.27.1569558997223; 
- Thu, 26 Sep 2019 21:36:37 -0700 (PDT)
+ Thu, 26 Sep 2019 21:37:29 -0700 (PDT)
+X-Gm-Message-State: APjAAAWqhgTwfFSnDvCj7LN3IZ1/v7a5AbnF8OvDmgkWj/1eWqwfmLml
+ zgJ3Vmy64VtauxXwCGChwMdIV90kl8nZT5JnZlQdQg==
+X-Google-Smtp-Source: APXvYqwrftlm7qI7fsd0ba+Wsits6X8BpdrHVxzp1NpMrMUyP6+l8wrnnBSOLZK2x/KKKP1mETeG4SdEZLQw91H7YwM=
+X-Received: by 2002:adf:e908:: with SMTP id f8mr1212909wrm.210.1569559048029; 
+ Thu, 26 Sep 2019 21:37:28 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190925161255.1871-1-ard.biesheuvel@linaro.org>
  <20190925161255.1871-19-ard.biesheuvel@linaro.org>
@@ -53,17 +53,19 @@ References: <20190925161255.1871-1-ard.biesheuvel@linaro.org>
  <CAHk-=wgR_KsYw2GmZwkG3GmtX6nbyj0LEi7rSqC+uFi3ScTYcw@mail.gmail.com>
  <MN2PR20MB297317D9870A3B93B5E506C9CA810@MN2PR20MB2973.namprd20.prod.outlook.com>
  <CAHk-=wjr1w7x9Rjre_ALnDLASYNjsEHxu6VJpk4eUwZXN0ntqw@mail.gmail.com>
-In-Reply-To: <CAHk-=wjr1w7x9Rjre_ALnDLASYNjsEHxu6VJpk4eUwZXN0ntqw@mail.gmail.com>
+ <CAHk-=whqWh8ebZ7ryEv5tKKtO5VpOj2rWVy7wV+aHWGO7m9gAw@mail.gmail.com>
+ <20190927035319.GA23566@gondor.apana.org.au>
+In-Reply-To: <20190927035319.GA23566@gondor.apana.org.au>
 From: Andy Lutomirski <luto@kernel.org>
-Date: Thu, 26 Sep 2019 21:36:26 -0700
-X-Gmail-Original-Message-ID: <CALCETrVPr6g=vx2Ero2VDZpYzvTTzfdTWqNjTo1JNYzQBRy37A@mail.gmail.com>
-Message-ID: <CALCETrVPr6g=vx2Ero2VDZpYzvTTzfdTWqNjTo1JNYzQBRy37A@mail.gmail.com>
+Date: Thu, 26 Sep 2019 21:37:16 -0700
+X-Gmail-Original-Message-ID: <CALCETrW28rDxLs+UOO+k5gfHJZHzy_xra-e0f6kBp6YdeWA36A@mail.gmail.com>
+Message-ID: <CALCETrW28rDxLs+UOO+k5gfHJZHzy_xra-e0f6kBp6YdeWA36A@mail.gmail.com>
 Subject: Re: [RFC PATCH 18/18] net: wireguard - switch to crypto API for
  packet encryption
-To: Linus Torvalds <torvalds@linux-foundation.org>
+To: Herbert Xu <herbert@gondor.apana.org.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_213639_670955_F6002E35 
-X-CRM114-Status: GOOD (  18.04  )
+X-CRM114-CacheID: sfid-20190926_213730_124376_3E3D67C7 
+X-CRM114-Status: GOOD (  13.45  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -93,15 +95,15 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: "Jason A . Donenfeld" <Jason@zx2c4.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
+ Catalin Marinas <catalin.marinas@arm.com>, Arnd Bergmann <arnd@arndb.de>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>,
  Greg KH <gregkh@linuxfoundation.org>, Eric Biggers <ebiggers@google.com>,
- Samuel Neves <sneves@dei.uc.pt>,
+ Will Deacon <will@kernel.org>, Samuel Neves <sneves@dei.uc.pt>,
  Pascal Van Leeuwen <pvanleeuwen@verimatrix.com>,
  Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
  Andy Lutomirski <luto@kernel.org>, Marc Zyngier <maz@kernel.org>,
- Dan Carpenter <dan.carpenter@oracle.com>, Will Deacon <will@kernel.org>,
+ Dan Carpenter <dan.carpenter@oracle.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
  David Miller <davem@davemloft.net>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -109,50 +111,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> On Sep 26, 2019, at 6:38 PM, Linus Torvalds <torvalds@linux-foundation.org> wrote:
+On Thu, Sep 26, 2019 at 8:54 PM Herbert Xu <herbert@gondor.apana.org.au> wrote:
 >
-> - let the caller know what the state size is and allocate the
-> synchronous state in its own data structures
+> On Thu, Sep 26, 2019 at 07:54:03PM -0700, Linus Torvalds wrote:
+> >
+> > Side note: almost nobody does this.
+> >
+> > Almost every single async interface I've ever seen ends up being "only
+> > designed for async".
+> >
+> > And I think the reason is that everybody first does the simply
+> > synchronous interfaces, and people start using those, and a lot of
+> > people are perfectly happy with them. They are simple, and they work
+> > fine for the huge majority of users.
 >
-> - let the caller just call a static "decrypt_xyz()" function for xyz
-> decryptrion.
->
-> - if you end up doing it synchronously, that function just returns
-> "done". No overhead. No extra allocations. No unnecessary stuff. Just
-> do it, using the buffers provided. End of story. Efficient and simple.
->
-> - BUT.
->
-> - any hardware could have registered itself for "I can do xyz", and
-> the decrypt_xyz() function would know about those, and *if* it has a
-> list of accelerators (hopefully sorted by preference etc), it would
-> try to use them. And if they take the job (they might not - maybe
-> their queues are full, maybe they don't have room for new keys at the
-> moment, which might be a separate setup from the queues), the
-> "decrypt_xyz()" function returns a _cookie_ for that job. It's
-> probably a pre-allocated one (the hw accelerator might preallocate a
-> fixed number of in-progress data structures).
+> The crypto API is not the way it is because of async.  In fact, the
+> crypto API started out as sync only and async was essentially
+> bolted on top with minimial changes.
 
-To really do this right, I think this doesn't go far enough.  Suppose
-I'm trying to implement send() over a VPN very efficiently.  I want to
-do, roughly, this:
+Then what's up with the insistence on using physical addresses for so
+many of the buffers?
 
-void __user *buf, etc;
-
-if (crypto api thinks async is good) {
-  copy buf to some kernel memory;
-  set up a scatterlist;
-  do it async with this callback;
-} else {
-  do the crypto synchronously, from *user* memory, straight to kernel memory;
-  (or, if that's too complicated, maybe copy in little chunks to a
-little stack buffer.
-   setting up a scatterlist is a waste of time.)
-}
-
-I don't know if the network code is structured in a way to make this
-work easily, and the API would be more complex, but it could be nice
-and fast.
+--Andy
 
 _______________________________________________
 linux-arm-kernel mailing list
