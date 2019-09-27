@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35BFAC015F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 10:41:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48D1DC0168
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 10:47:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kRDioZt0peQMvDJqK/2UwpebSAFBXCKMdVedU+iAZGE=; b=mbIq2ALlMaHtnu
-	bHo3HuBlOnX7tNaU7sUj8MAZew4ZvaamHzGjFMBjWoQEBVSGhtowxBGR0HZX2LSy1Q9YqpZSb67lQ
-	0LA1FjvH+IBYNtMo/Iu0OQyiMxZ3tWICL4N2p4GufIqYpUovEeaxEZmzTVefVlNfJVCUci1FM+vqf
-	nZQNTt37AYmPFTs31tmMFjv60sBixZ0BWJfPLDkkEbex7JDgzP6t/Xl65UyS47n28mKWZKZcs+7ia
-	wW7ZxENq36j0EbZ+Ywo79kyEMkl8/nBa19rKrkDSQCx9Net1ltIIVc86HFmwi1BVoskWCgwhUZBHn
-	i+lYEsQLJEaI/1LcxH3Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=F0BUjgbReRl0uVtuaZLXCvoo7aJVOTymU4rlpHpq42U=; b=bOxJDdK2GTmY9z
+	g+3uLrxrFw6SItn7b339jDhk0bUBdZenk9dCUJTIAd87uRaQ8nOXkstqEPm78axf/L+woza4XoVt3
+	6thR5NvUZNQEF0owoM663JZiw+opIJQ2txiaEahoGlybTBWz0zl33scxOxcSPWdg0ubzwpVHHI+Pg
+	nQCBxcc32o+jrl2ku/hiOxGPM5lMpzODvXV+dxVSEGwDiDgnC5308F/L4IWymm3qnySsAkddphXTb
+	EY/4vF88y6HerKnN7T3R0RQNIia2fD/3MnNjYy/3RHp+ril3tUrlRs5bJs9H2ltvt8E+yHppG/D09
+	LgnVEAuT5MYBtLfKhoMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDlp1-0005mD-Dy; Fri, 27 Sep 2019 08:41:51 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+	id 1iDlu7-0007mT-TB; Fri, 27 Sep 2019 08:47:07 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDlos-0005l9-RN
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 08:41:44 +0000
+ id 1iDltz-0007lm-6K
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 08:47:00 +0000
 X-Originating-IP: 65.39.69.237
 Received: from localhost (unknown [65.39.69.237])
  (Authenticated sender: repk@triplefau.lt)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id B7CF2FF80F;
- Fri, 27 Sep 2019 08:41:34 +0000 (UTC)
-Date: Fri, 27 Sep 2019 10:50:00 +0200
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 0C35C1C000B;
+ Fri, 27 Sep 2019 08:46:44 +0000 (UTC)
 From: Remi Pommarel <repk@triplefau.lt>
-To: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH v2] PCI: aardvark: Don't rely on jiffies while holding
- spinlock
-Message-ID: <20190927084959.GC1208@voidbox.localdomain>
-References: <20190927083142.8571-1-repk@triplefau.lt>
- <20190927103420.48bb9335@windsurf>
+To: Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Bjorn Helgaas <bhelgaas@google.com>
+Subject: [PATCH v3] PCI: aardvark: Don't rely on jiffies while holding spinlock
+Date: Fri, 27 Sep 2019 10:55:02 +0200
+Message-Id: <20190927085502.1758-1-repk@triplefau.lt>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190927103420.48bb9335@windsurf>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190927_014143_033367_EB444091 
-X-CRM114-Status: GOOD (  13.84  )
+X-CRM114-CacheID: sfid-20190927_014659_435347_10474A17 
+X-CRM114-Status: GOOD (  11.84  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
+ low trust [217.70.183.197 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.197 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,50 +62,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bjorn Helgaas <bhelgaas@google.com>, linux-pci@vger.kernel.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-pci@vger.kernel.org, Remi Pommarel <repk@triplefau.lt>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Thomas,
+advk_pcie_wait_pio() can be called while holding a spinlock (from
+pci_bus_read_config_dword()), then depends on jiffies in order to
+timeout while polling on PIO state registers. In the case the PIO
+transaction failed, the timeout will never happen and will also cause
+the cpu to stall.
 
-On Fri, Sep 27, 2019 at 10:34:20AM +0200, Thomas Petazzoni wrote:
-> Hello Remi,
-> 
-> Thanks for the new iteration!
-> 
-> On Fri, 27 Sep 2019 10:31:42 +0200
-> Remi Pommarel <repk@triplefau.lt> wrote:
-> 
-> > diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
-> > index fc0fe4d4de49..ee05ccb2b686 100644
-> > --- a/drivers/pci/controller/pci-aardvark.c
-> > +++ b/drivers/pci/controller/pci-aardvark.c
-> > @@ -175,7 +175,8 @@
-> >  	(PCIE_CONF_BUS(bus) | PCIE_CONF_DEV(PCI_SLOT(devfn))	| \
-> >  	 PCIE_CONF_FUNC(PCI_FUNC(devfn)) | PCIE_CONF_REG(where))
-> >  
-> > -#define PIO_TIMEOUT_MS			1
-> > +#define PIO_RETRY_CNT			10
-> > +#define PIO_RETRY_DELAY			2 /* 2 us*/
-> 
-> So this changes the timeout from 1ms to just 20us, a division by 50
-> from the previous timeout value. From my measurements, it could
-> sometime take up to 6us from a single PIO read operation to complete,
-> which is getting close to the 20us timeout.
-> 
-> Shouldn't PIO_RETRY_CNT be kept at 500, so that we keep using a 1ms
-> timeout ?
+This decrements a variable and wait instead of using jiffies.
 
-Damn. You right of course, sorry about that.
+Signed-off-by: Remi Pommarel <repk@triplefau.lt>
+---
+Changes since v1:
+  - Reduce polling delay
+  - Change size_t into int for loop counter
+Changes since v2:
+  - Keep timeout to 1ms by increasing retry counter
+---
+ drivers/pci/controller/pci-aardvark.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-Thanks
-
+diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
+index fc0fe4d4de49..7b5c9d6c8706 100644
+--- a/drivers/pci/controller/pci-aardvark.c
++++ b/drivers/pci/controller/pci-aardvark.c
+@@ -175,7 +175,8 @@
+ 	(PCIE_CONF_BUS(bus) | PCIE_CONF_DEV(PCI_SLOT(devfn))	| \
+ 	 PCIE_CONF_FUNC(PCI_FUNC(devfn)) | PCIE_CONF_REG(where))
+ 
+-#define PIO_TIMEOUT_MS			1
++#define PIO_RETRY_CNT			500
++#define PIO_RETRY_DELAY			2 /* 2 us*/
+ 
+ #define LINK_WAIT_MAX_RETRIES		10
+ #define LINK_WAIT_USLEEP_MIN		90000
+@@ -383,17 +384,16 @@ static void advk_pcie_check_pio_status(struct advk_pcie *pcie)
+ static int advk_pcie_wait_pio(struct advk_pcie *pcie)
+ {
+ 	struct device *dev = &pcie->pdev->dev;
+-	unsigned long timeout;
++	int i;
+ 
+-	timeout = jiffies + msecs_to_jiffies(PIO_TIMEOUT_MS);
+-
+-	while (time_before(jiffies, timeout)) {
++	for (i = 0; i < PIO_RETRY_CNT; i++) {
+ 		u32 start, isr;
+ 
+ 		start = advk_readl(pcie, PIO_START);
+ 		isr = advk_readl(pcie, PIO_ISR);
+ 		if (!start && isr)
+ 			return 0;
++		udelay(PIO_RETRY_DELAY);
+ 	}
+ 
+ 	dev_err(dev, "config read/write timed out\n");
 -- 
-Remi
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
