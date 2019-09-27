@@ -2,116 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56A9BBFCAE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 03:20:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A4F3BFCB7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 03:31:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7IBfrGmr16e8tZLnRHAlGZEBQMk3jnysigjSYNkJwRE=; b=l7mT6gOpD7V9Ym
-	ZkN8p6hv8CdX3L2F+OjvpfjxBjyqtSPPiRVE4ugv529LIfF9RPVswmF6EUtQ9c1b9FBHmiGW7NOgx
-	rLAC3jM4wBcyshlRsJz/iZNVL1PIakgQ4kEr9uK3HOTcyPn3EUQOMeJlqKgDFYPrXvvmP2OQgVc8T
-	7f2E666liFwkmEfvL4lfo2E2tMOmI925/xlX2uWd2OolxE6w0Pz28/ILyXKPTSRyQ7p6lbPvBwiaE
-	aNw7quHMMdvUJWPFZH6Gy5rExs4KACGQhRRUT/LlTsdFxXgASjT8t6d0meVhNfKJUMkvVCWwpi063
-	WioW3t3nl1shFO45sjgQ==;
+	List-Owner; bh=gol2pF+sDIqYbxZenY5dvhBBWzgc+mSNVHejvKxFT1M=; b=OyX1XDkH3WvKDr
+	xZq+396vVFFQIM/R2E7j0ITAq8+zoNEexOFFBTIb+GiqVuT/WurFJBHFYnyJAsN0P3A9lRXqeB0gd
+	FcR+VHcvJd1QfdfJarZtDZ75OXG6X8M241YS+SQ0O4DsFQDAfkU0bET70ihsbTqCGNop+aN17J9QY
+	scTsryrcNQa7akezAVCYULXcpyAORpbXkBjsJ9lCKlsVC3L8+CzTRkQ3ftcTkeJlWWx42lsV/3f0+
+	vvRDCrGUGuelVYsc4jzC8xmMC+IxEb0ADHgPM10QkKR88CzT6VTRD41FRQLPPZRP4488BnYLdnFl+
+	98a0iJpEysNBNLbwG24w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDevx-0007y7-MJ; Fri, 27 Sep 2019 01:20:33 +0000
-Received: from mail-eopbgr140075.outbound.protection.outlook.com
- ([40.107.14.75] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1iDf6H-00034J-N5; Fri, 27 Sep 2019 01:31:13 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDevn-0007xL-CA
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 01:20:25 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Ql7VdHwyOn3rQse9E8HBpOy7nAH4n4Go2jDSqYuI7qqIMEQFbZL7nbjgjpBiZLwdQiJkt8I+Qe0U41QIXSIxbJ2gkNsaFz4ln9Ze1+X/oYbA++eDpv0xmhNwOszvKB332PFvUyDZ0fL5DMpmsHA3ucHYJAIc5MF2Hv4XHhY3+o7YD5oNaQkZxrr8vIoesSqj9VBzO/mJjZtqyxtrxnMLDjDg20TgmM9MXfNC2P5OTwK8uXLke6i5CAFrzIlCc9oBNbUpqExBK3iRhX8uFjhyJM+JWWPJX/zWJQcNS4NwdEixDHQX+Cy0XFEfYelSn+P2thnUpQdFqXFwwFwiAjA3XA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JXmBSpXUKHDu0Em+Dia+VEzOiwGY0ytRP9L24v+/Z1Q=;
- b=YSKZqKLukNo9+p0L3aLdpYCyibbJjYORZWiGa6hS394lhEQPaMQzF7sGUqZ+9VxEIctVNkgUqnqbJEcYpcFbq0X2GF6jlEqb8sMIOAC5j40VQakOEcNJ0K8QZ7N3Q4mcOYqzZckgaROYxnORrO5G626LP+cUFcPTMawGYzdxzMeOKeFsjkC7XLqX1LM6RxkwefoWXEPXXqxb/LOafnm+wzgdiltFHmK9EDgP812spDofXg3ub50O6bA9gKeUMcfhnHo8f5dctJ+Gso2dbtSeaWou5qeUsk5C+xqB1sHLVEDR7+Vz1ThxR1Jl1tVHcGTIPusSIcj5EoK6r0OLCD8MxA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JXmBSpXUKHDu0Em+Dia+VEzOiwGY0ytRP9L24v+/Z1Q=;
- b=gzWVkz8A6bR5w4xzjSstCntuCMllNGuJiyucWIrtY4/0JAqN5EjqNNwRv4wOYUb6zOBrcmhEhUmnpXCktCQq0xEaj7t9oCqSpPJYi7q7wCQGWQ/8xdyZJGhQw0ymm8gNKrjewLwvmweF/L6WuT+T6k/KMMRJ6UCKTX8CZoo6ayY=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3753.eurprd04.prod.outlook.com (52.134.71.12) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2284.21; Fri, 27 Sep 2019 01:20:17 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::8958:299c:bc54:2a38]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::8958:299c:bc54:2a38%7]) with mapi id 15.20.2284.028; Fri, 27 Sep 2019
- 01:20:17 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Leonard Crestez <leonard.crestez@nxp.com>, Marco Felsch
- <m.felsch@pengutronix.de>, Aisheng Dong <aisheng.dong@nxp.com>
-Subject: RE: [PATCH] firmware: imx: Skip return value check for some special
- SCU firmware APIs
-Thread-Topic: [PATCH] firmware: imx: Skip return value check for some special
- SCU firmware APIs
-Thread-Index: AQHVc4lT/ErvPybCJUCbZ2x7mLGjsqc+tdHg
-Date: Fri, 27 Sep 2019 01:20:17 +0000
-Message-ID: <DB3PR0402MB391675F9BF6FCA315B124BEBF5810@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1569406066-16626-1-git-send-email-Anson.Huang@nxp.com>
- <20190926075914.i7tsd3cbpitrqe4q@pengutronix.de>
- <DB3PR0402MB391683202692BEAE4D2CD9C1F5860@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <20190926100558.egils3ds37m3s5wo@pengutronix.de>
- <VI1PR04MB702336F648EA1BF0E4AC584BEE860@VI1PR04MB7023.eurprd04.prod.outlook.com>
-In-Reply-To: <VI1PR04MB702336F648EA1BF0E4AC584BEE860@VI1PR04MB7023.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: b45de280-eca6-471d-123d-08d742e8db3c
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600167)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3753; 
-x-ms-traffictypediagnostic: DB3PR0402MB3753:|DB3PR0402MB3753:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB3753BB9ABF4240BB0D6C41C0F5810@DB3PR0402MB3753.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0173C6D4D5
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(366004)(39860400002)(396003)(136003)(376002)(199004)(189003)(6636002)(229853002)(476003)(26005)(55016002)(6246003)(71200400001)(74316002)(66556008)(64756008)(102836004)(2906002)(66476007)(71190400001)(316002)(186003)(8676002)(25786009)(9686003)(81156014)(66066001)(81166006)(99286004)(7696005)(76176011)(486006)(66446008)(44832011)(54906003)(446003)(7736002)(110136005)(33656002)(4326008)(8936002)(478600001)(52536014)(6436002)(305945005)(256004)(53546011)(5660300002)(6116002)(66946007)(11346002)(3846002)(6506007)(14454004)(76116006)(86362001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3753;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 0ADiU2w0wLaQhm3rv+zbVR4ah1orAPlFkti3R3m193qHDALvcycWmQNrtpIY47quNYZIsYCOeafhwkKhrclTiN5gx/HXjCjwSCO4sI2FQuTrAv97QL791H3awcmRedwXWjee/23foycfdPgK8bQt/FBjLeWX4wpWPYLa1OB7Oo9+qgpJzdVqB7rKCoo5BuhNhS3Qyxx33duIS01quntpSIjPBEYt/kufUeelpqmuAnXet4HvAtsq+rX2DWDOOdrhFQrjbHR7a4LtfeGv8jLqSMYnX39gKjOL5sI8CYflpaoFCtrsnw8D3oJED2XAS6j5JAghubpZODQK1+B/pUIrIQBac24y4CZCpGMdXwaYlOiVBZhRiZzaxrEM5q0jthrUEa0gbL5LexjXajSd9b+q0+ZyOzBcPGSRuMj5eRmHVXY=
+ id 1iDf65-00033o-Py
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 01:31:03 +0000
+Received: by mail-lf1-x144.google.com with SMTP id c195so607443lfg.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 26 Sep 2019 18:30:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Y/kNRa+FZLOFlIwuCXVz7nJiD6HA2dI+YJ9/E6wCcQ4=;
+ b=TVHyiGBDvae6bZXGebhK/blHgPNDjYfumORGT+FpcUBXfboYigbCjBueMnw3bBb7L6
+ g7hfpEIO29H1AJ3VvzodmMvDz6YoOOInaCxs+zhXJ4G5oUM2MEaoAtVDu2+GYod5vpio
+ EQF9WIp691oAklRXwcgbwGjj9XLQHHXpCTYdw=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Y/kNRa+FZLOFlIwuCXVz7nJiD6HA2dI+YJ9/E6wCcQ4=;
+ b=KL+UmmCS7Hftzjf5qWww+4VKi6n5F3z4OlweemcN8Kw28AhhI2tCZHhglTBQVfdCgK
+ VvL9HdnJY3rX09DACPdYZzMcroI/XiYy1Swp5GXUlh+X3gIBlCu5VB1yIQ8iLB4c2y0f
+ Oqj8ApNpGHru+42c7KdUJqCaGWmoUQkqwFLyWBlnCNOU2ftuodjL0RQNW2q6AsgMkHJw
+ gbGS4bD5uX5RcvxZkQn/oU9N1w+oAMn52smCVOhe/bRleUOJcJOpGufDc1FlwGZt/Xof
+ vR9RBWA6K1GMFzhSaj50NZwmDpp/w+yP74HjaXrqeDdo/xUs6OcZRwwksg1qvDRD+ieh
+ DGXw==
+X-Gm-Message-State: APjAAAXyRm8RleB8VchX3EIbIi+XitweyHYrDqgAwBCaClkBBYTcxnRw
+ 0U6dvFoIitNVEgMt7PLSuUUSLpOfuQ0=
+X-Google-Smtp-Source: APXvYqyfKV1ZV+JGX8FFH0RCipgGZnvMdel8G1teoY3RgsMevbWQLQbqK3pc0Zp0Lt/9i8iE+hFaOw==
+X-Received: by 2002:ac2:44c8:: with SMTP id d8mr870209lfm.101.1569547855727;
+ Thu, 26 Sep 2019 18:30:55 -0700 (PDT)
+Received: from mail-lj1-f178.google.com (mail-lj1-f178.google.com.
+ [209.85.208.178])
+ by smtp.gmail.com with ESMTPSA id m18sm170596lfb.73.2019.09.26.18.30.54
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 26 Sep 2019 18:30:54 -0700 (PDT)
+Received: by mail-lj1-f178.google.com with SMTP id y3so824445ljj.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 26 Sep 2019 18:30:54 -0700 (PDT)
+X-Received: by 2002:a2e:3e07:: with SMTP id l7mr959811lja.180.1569547853755;
+ Thu, 26 Sep 2019 18:30:53 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b45de280-eca6-471d-123d-08d742e8db3c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Sep 2019 01:20:17.3647 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: gyZV4f45O8OHhD5Hv9wCK1JfIKqq/bNH/PHhM57/VEO34WmBkUOC1Cl5xTCdVXHtArGjTlIO47CkBkG9wqaL4A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3753
+References: <20190925161255.1871-1-ard.biesheuvel@linaro.org>
+ <20190925161255.1871-19-ard.biesheuvel@linaro.org>
+ <CAHk-=wjYsbxSiV_XKWV3BwGvau_hUvQiQHLOoc7vLUZt0Wqzfw@mail.gmail.com>
+ <CH2PR20MB29680F87B32BBF0495720172CA860@CH2PR20MB2968.namprd20.prod.outlook.com>
+ <CAHk-=wgR_KsYw2GmZwkG3GmtX6nbyj0LEi7rSqC+uFi3ScTYcw@mail.gmail.com>
+ <MN2PR20MB297317D9870A3B93B5E506C9CA810@MN2PR20MB2973.namprd20.prod.outlook.com>
+In-Reply-To: <MN2PR20MB297317D9870A3B93B5E506C9CA810@MN2PR20MB2973.namprd20.prod.outlook.com>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Thu, 26 Sep 2019 18:30:37 -0700
+X-Gmail-Original-Message-ID: <CAHk-=wjr1w7x9Rjre_ALnDLASYNjsEHxu6VJpk4eUwZXN0ntqw@mail.gmail.com>
+Message-ID: <CAHk-=wjr1w7x9Rjre_ALnDLASYNjsEHxu6VJpk4eUwZXN0ntqw@mail.gmail.com>
+Subject: Re: [RFC PATCH 18/18] net: wireguard - switch to crypto API for
+ packet encryption
+To: Pascal Van Leeuwen <pvanleeuwen@verimatrix.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190926_182023_620330_ABCA0A49 
-X-CRM114-Status: GOOD (  24.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190926_183101_870827_5C927C03 
+X-CRM114-Status: GOOD (  33.85  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.14.75 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -128,88 +106,243 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: "Jason A . Donenfeld" <Jason@zx2c4.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg KH <gregkh@linuxfoundation.org>, Eric Biggers <ebiggers@google.com>,
+ Samuel Neves <sneves@dei.uc.pt>,
+ Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
+ Andy Lutomirski <luto@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Dan Carpenter <dan.carpenter@oracle.com>, Will Deacon <will@kernel.org>,
+ David Miller <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Leonard
+On Thu, Sep 26, 2019 at 5:15 PM Pascal Van Leeuwen
+<pvanleeuwen@verimatrix.com> wrote:
+>
+> That remark is just very stupid. The hardware ALREADY exists, and
+> more hardware is in the pipeline. Once this stuff is designed in, it
+> usually stays in for many years to come. And these are chips sold in
+> _serious_ quantities, to be used in things like wireless routers and
+> DSL, cable and FTTH modems, 5G base stations, etc. etc.
 
-> On 2019-09-26 1:06 PM, Marco Felsch wrote:
-> > On 19-09-26 08:03, Anson Huang wrote:
-> >>> On 19-09-25 18:07, Anson Huang wrote:
-> >>>> The SCU firmware does NOT always have return value stored in
-> >>>> message header's function element even the API has response data,
-> >>>> those special APIs are defined as void function in SCU firmware, so
-> >>>> they should be treated as return success always.
-> >>>>
-> >>>> +static const struct imx_sc_rpc_msg whitelist[] = {
-> >>>> +	{ .svc = IMX_SC_RPC_SVC_MISC, .func =
-> >>> IMX_SC_MISC_FUNC_UNIQUE_ID },
-> >>>> +	{ .svc = IMX_SC_RPC_SVC_MISC, .func =
-> >>>> +IMX_SC_MISC_FUNC_GET_BUTTON_STATUS }, };
-> >>>
-> >>> Is this going to be extended in the near future? I see some upcoming
-> >>> problems here if someone uses a different scu-fw<->kernel
-> >>> combination as nxp would suggest.
-> >>
-> >> Could be, but I checked the current APIs, ONLY these 2 will be used
-> >> in Linux kernel, so I ONLY add these 2 APIs for now.
+Yes, I very much mentioned routers. I believe those can happen much
+more quickly.
+
+But I would very much hope that that is not the only situation where
+you'd see wireguard used.
+
+I'd want to see wireguard in an end-to-end situation from the very
+client hardware. So laptops, phones, desktops. Not the untrusted (to
+me) hw in between.
+
+> No, these are just the routers going into *everyone's* home. And 5G
+> basestations arriving at every other street corner. I wouldn't call
+> that rare, exactly.
+
+That's fine for a corporate tunnel between devices. Which is certainly
+one use case for wireguard.
+
+But if you want VPN for your own needs for security, you want it at
+the _client_. Not at the router box. So that case really does matter.
+
+And I really don't see the hardware happening in that space. So the
+bad crypto interfaces only make the client _worse_.
+
+See?
+
+But on to the arguments that we actually agree on:
+
+> Hey, no argument there. I don't see any good reason why the key can't
+> be on the stack. I doubt any hardware would be able to DMA that as-is
+> directly, and in any case, key changes should be infrequent, so copying
+> it to some DMA buffer should not be a performance problem.
+> So maybe that's an area for improvement: allow that to be on the stack.
+
+It's not even just the stack. It's really that the crypto interfaces
+are *designed* so that you have to allocate things separately, and
+can't embed these things in your own data structures.
+
+And they are that way, because the crypto interfaces aren't actually
+about (just) hiding the hardware interface: they are about hiding
+_all_ the encryption details.
+
+There's no way to say "hey, I know the crypto I use, I know the key
+size I have, I know the state size it needs, I can preallocate those
+AS PART of my own data structures".
+
+Because the interface is designed to be so "generic" that you simply
+can't do those things, they are all external allocations, which is
+inevitably slower when you don't have hardware.
+
+And you've shown that you don't care about that "don't have hardware"
+situation, and seem to think it's the only case that matters. That's
+your job, after all.
+
+But however much you try to claim otherwise, there's all these
+situations where the hardware just isn't there, and the crypto
+interface just forces nasty overhead for absolutely no good reason.
+
+> I already explained the reasons for _not_ doing direct calls above.
+
+And I've tried to explain how direct calls that do the synchronous
+thing efficiently would be possible, but then _if_ there is hardware,
+they can then fall back to an async interface.
+
+> > So there is absolutely NO DOWNSIDE for hw accelerated crypto to just
+> > do it right, and use an interface like this:
 > >
-> > Okay.
+> >        if (!chacha20poly1305_decrypt_sg(sg, sg, skb->len, NULL, 0,
+> >                                         PACKET_CB(skb)->nonce, key->key,
+> >                                         simd_context))
+> >                return false;
 > >
-> >> However, after rethink, maybe we should add another imx_sc_rpc API
-> >> for those special APIs? To avoid checking it for all the APIs called which
-> may impact some performance.
-> >> Still under discussion, if you have better idea, please advise, thanks!
-> 
-> My suggestion is to refactor the code and add a new API for the this "no
-> error value" convention. Internally they can call a common function with
-> flags.
+> Well, for one thing, a HW API should not expect the result to be
+> available when the function call returns. (if that's what you
+> mean here). That would just be WRONG.
 
-If I understand your point correctly, that means the loop check of whether the API
-is with "no error value" for every API still NOT be skipped, it is just refactoring the code,
-right?
+Right. But that also shouldn't mean that when you have synchronous
+hardware (ie CPU) you have to set everything up even though it will
+never be used.
 
-> 
-> > Adding a special api shouldn't be the right fix. Imagine if someone
-> > (not a nxp-developer) wants to add a new driver. How could he be
-> > expected to know which api he should use. The better abbroach would be
-> > to fix the scu-fw instead of adding quirks..
+Put another way: even with hardware acceleration, the queuing
+interface should be a simple "do this" interface.
 
-Yes, fixing SCU FW is the best solution, but we have talked to SCU FW owner, the SCU
-FW released has been finalized, so the API implementation can NOT be changed, but
-they will pay attention to this issue for new added APIs later. That means the number
-of APIs having this issue a very limited. 
+The current crypto interface is basically something that requires all
+the setup up-front, whether it's needed or not. And it forces those
+very inconvenient and slow external allocations.
 
-> 
-> Right now developers who want to make SCFW calls in upstream need to
-> define the message struct in their driver based on protocol documentation.
-> This includes:
-> 
-> * Binary layout of the message (a packed struct)
-> * If the message has a response (already a bool flag)
-> * If an error code is returned (this patch adds support for it)
-> 
-> Since callers are already exposed to the binary protocol exposing them to
-> minor quirks of the calling convention also seems reasonable. Having the
-> low-level IPC code peek at message IDs seems like a hack; this belong at a
-> slightly higher level.
+And I'm saying that causes problems, because it fundamentally means
+that you can't do a good job for the common CPU  case, because you're
+paying all those costs even when you need absolutely none of them.
+Both at setup time, but also at run-time due to the extra indirection
+and cache misses etc.
 
-A little confused, so what you suggested is to add make the imx_scu_call_rpc()
-becomes the "slightly higher level" API, then in this API, check the message IDs
-to decide whether to return error value, then calls a new API which will have
-the low-level IPC code, the this new API will have a flag passed from imx_scu_call_rpc()
-function, am I right?
+> Again, HW acceleration does not depend on the indirection _at all_,
+> that's there for entirely different purposes I explained above.
+> HW acceleration _does_ depend greatly on a truly async ifc though.
 
-Anson
+Can you realize that the world isn't just all hw acceleration?
+
+Can you admit that the current crypto interface is just horrid for the
+non-accelerated case?
+
+Can you perhaps then also think that "maybe there are better models".
+
+> So queue requests on one side, handle results from the other side
+> in some callback func off of an interrupt handler.
+
+Actually, what you can do - and what people *have* done - is to admit
+that the synchronous case is real and important, and then design
+interfaces that work for that one too.
+
+You don't need to allocate resources ahead of time, and you don't have
+to disallow just having the state buffer allocated by the caller.
+
+So here's the *wrong* way to do it (and the way that crypto does it):
+
+ - dynamically allocate buffers at "init time"
+
+ - fill in "callback fields" etc before starting the crypto, whether
+they are needed or not
+
+ - call a "decrypt" function that then uses the indirect functions you
+set up at init time, and possibly waits for it (or calls the callbacks
+you set up)
+
+note how it's all this "state machine" model where you add data to the
+state machine, and at some point you say "execute" and then either you
+wait for things or you get callbacks.
+
+That makes sense for a hw crypto engine. It's how a lot of them work, after all.
+
+But it makes _zero_ sense for the synchronous case. You did a lot of
+extra work for that case, and because it was all a styate machine, you
+did it particularly inefficiently: not only do you have those separate
+allocations with pointer following, the "decrypt()" call ends up doing
+an indirect call to the CPU implementation, which is just quite slow
+to begin with, particularly in this day and age with retpoline etc.
+
+So what's the alternative?
+
+I claim that a good interface would accept that "Oh, a lot of cases
+will be synchronous, and a lot of cases use one fixed
+encryption/decryption model".
+
+And it's quite doable. Instead of having those callback fields and
+indirection etc, you could have something more akin to this:
+
+ - let the caller know what the state size is and allocate the
+synchronous state in its own data structures
+
+ - let the caller just call a static "decrypt_xyz()" function for xyz
+decryptrion.
+
+ - if you end up doing it synchronously, that function just returns
+"done". No overhead. No extra allocations. No unnecessary stuff. Just
+do it, using the buffers provided. End of story. Efficient and simple.
+
+ - BUT.
+
+ - any hardware could have registered itself for "I can do xyz", and
+the decrypt_xyz() function would know about those, and *if* it has a
+list of accelerators (hopefully sorted by preference etc), it would
+try to use them. And if they take the job (they might not - maybe
+their queues are full, maybe they don't have room for new keys at the
+moment, which might be a separate setup from the queues), the
+"decrypt_xyz()" function returns a _cookie_ for that job. It's
+probably a pre-allocated one (the hw accelerator might preallocate a
+fixed number of in-progress data structures).
+
+And once you have that cookie, and you see "ok, I didn't get the
+answer immediately" only THEN do you start filling in things like
+callback stuff, or maybe you set up a wait-queue and start waiting for
+it, or whatever".
+
+See the difference in models? One forces that asynchronous model, and
+actively penalizes the synchronous one.
+
+The other _allows_ an asynchronous model, but is fine with a synchronous one.
+
+> >        aead_request_set_callback(req, 0, NULL, NULL);
+> >
+> This is just inevitable for HW acceration ...
+
+See above. It really isn't. You could do it *after* the fact, when
+you've gotten that ticket from the hardware. Then you say "ok, if the
+ticket is done, use these callbacks". Or "I'll now wait for this
+ticket to be done" (which is what the above does by setting the
+callbacks to zero).
+
+Wouldn't that be lovely for a user?
+
+I suspect it would be a nice model for a hw accelerator too. If you
+have full queues or have problems allocating new memory or whatever,
+you just let the code fall back to the synchronous interface.
+
+> Trust me, I have whole list of things I don't like about the
+> API myself, it's not exacty ideal for HW acceleration  either.
+
+That';s the thing. It's actively detrimental for "I have no HW acceleration".
+
+And apparently it's not optimal for you guys either.
+
+> But the point is - there are those case where you _don't_ know and
+> _that_ is what the Crypto API is for. And just generally, crypto
+> really _should_ be switchable.
+
+It's very much not what wireguard does.
+
+And honestly, most of the switchable ones have caused way more
+security problems than they have "fixed" by being switchable.
+
+                 Linus
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
