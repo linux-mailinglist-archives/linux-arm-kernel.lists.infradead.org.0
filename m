@@ -2,117 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36EB3C03D9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 13:08:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B69E8C03E1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Sep 2019 13:16:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ldACH2hE/LE7IlDjTlhglJcsg2W5cqp0DHKnmoX8rS8=; b=H3Q2UlJPI4PLDv
-	Nvbm9ga/juAEbNAcL4wViy2FwlWyyoinUwugZKARD5yZU1hJdV49YB5HdumBAwCysaUxQ5okyIWkE
-	yzzECtERZubfVQJRpqvDyLKc/vTawaFftgrf3Kg8lerhS3SKrLSojO+hFHYlPJcXzSM0+klxwpu1E
-	FvdxcSLCGP+gceq6xUWWgdYCvUzZIbghiiBedDyDXDawS/VJX3gqEKCMARSm8BZ2lSY0wfA7qZjEK
-	yYCsy01YKaPoG7YrmElKR529fVkKqdgCazJo3esPOrnrDC+009C6W3G9+iYAgp6pv7Mod17qfSyF7
-	zWWLhFvJhiHBlSVbPSXQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=Az3UgsPGQ8kGsSIhpuDjG81ymw8ud/PzsDcC627eX24=; b=mVHofrWoW7Y0J3
+	t0ifgI5SIL0/5+uuKaZnnu5D/0Kejm3Uu47LWrj7Inc7N9E1Daagl1C9W8b4isQPua8xjXz4tLfi/
+	PE6tzfDvIBnscqm8fDETJmPQZC33IiguaiviIGuAuZLlBk9UiNXYepvhZ/dG2F/tG0EnTUoMCdLvY
+	qU1qhLU+u/8D7shNI+jWzkvRCpKHFcm5CP2t+sf54+A8Os4+jA5uAv/WqWoH4+rbHH6Mvs7ayI0fR
+	LZbKg4IZKfULAsy+cfmhh+31mZlq+eC0bozvwOJGSRDtuLgfHXywMNr3cvhTw3405nVTAIdgFPy7j
+	NsXqJoV3AcngG78N/FjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDo6s-0000HV-Pb; Fri, 27 Sep 2019 11:08:26 +0000
-Received: from mail-eopbgr820047.outbound.protection.outlook.com
- ([40.107.82.47] helo=NAM01-SN1-obe.outbound.protection.outlook.com)
+	id 1iDoEp-0003ld-II; Fri, 27 Sep 2019 11:16:39 +0000
+Received: from mail-ve1eur01on0622.outbound.protection.outlook.com
+ ([2a01:111:f400:fe1f::622]
+ helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iDo6g-0000Go-UE
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 11:08:18 +0000
+ id 1iDoEh-0003kV-6g
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Sep 2019 11:16:33 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=TZW75Iw10ybSW70HaqXd5Vt/CCnNifL7HVcjPiuJbYMV3p6jak8ipGR2BN/tiK5GlyaNj7ocFumz6bcAqgLo4wQgvw/L03pXmQ7KZ6Y4wBxzc6vjNgm57ippGBe74/Hsim6WFK2N6TedU74XumY+ePKxCegVhpTV2HZ1Lm6FHrte+mdnLoI/hycfnHhTRe7cczbHWD4R3K1wm9a1qV/c44rl0xBCI7cnNtuhP7nJqWZLZNXu16l+tLySSZtVd8nwIt/o7zBIIJ7CIxk5GldF1H57TpsKjboU9tyzbYFde8Cm25U0FSA6ycJm86AZUwy09BX6gyt7cxcCvGs2TTCf1A==
+ b=iF42uAvftLYOHCAOrVk+WeuxY9IvFvehx7NNZV8EbogNydcXPjdmzPnF4lTE14339l0Q8snbynbIEdvIGZMZqlTQigIQbRZOaW+MEU26l3il4O/C11G118Emt/EJWEaPpCRRX88mxuRx8MYkpuboMor4Az/k6uDF1cH2i1RZ/jvyJUi6OU9SuxyT5+FEcdm0ZBXRSknB3JbRE1DivJw9uGlkSpFfafxd4PprTk9KFRxz3NFqF5F+ZGzPk86aY9irhfRiWG8JiGLgX9ehlqJH+komC6vHkBO9QDisQ9WdOCZc5CrGpQvMWpftSbSuOcJB+KsDtTXN+MuxGsyh66Y5cw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PWybqYW4D7hGUox6qt/uil9HXGGVN/J0t84D1Hbjnfc=;
- b=aIuTn3+S4GMrKu9r0nDneF/vGkSO+bulcHL93ExESDBNFpl0vIVkSfe9MFS1cqQQTJuPLvsI3noAXPz/pnJqSdaehDRKieG576n8DKcmE0rTcXhM+qeEWt9EFCXwQyY56BRmQHdmWzzkWGBb89sthFDBHS/HfzG+4T7RpQnJVwpLU7dmVrZHZNWhgDwjj0bXkv3gsuvVhtAUjXZq6V5QWBEXIVvJnoLy4QbUxYjUqXuEdkNGl/tFeOU0RxmgeLQTRbWvHw6iAPvbIXbXXUKEPs5zndog9SfldXicZj1QdNatwqtv5tUOlLiwW4TV38WEyO1SiXJ0QaaYJB6qeDu1Dg==
+ bh=QCKUUWno90d2RVTD0wJMjtko4AQN5aEb67px0CqKhn4=;
+ b=FXB8pi3DBbzKa6DwAm+oEd+eQ0+ONo2xRdXcx/kFdr3pb+PH11YcgWbMeAPRQ7hTWwBtJCbY8D+6fcYfQiSfvPfC9O8VSfZt4FcuaVw6ZHJj2GCb98dy+TzzyQU9AY0umlNJFhMPDu2/fX/jweVbnOzBlrFHoAt1d6nGUhinGFPACsVRyOajsQ5/P22eUjLV+ZbdfoBnlniKpooQQZpqzWWX0Obvv0iwd+jq0fyjMeS0L0KWrJN9gfYLyuNMWxdG/BzB6gfBhaZUFTbzUl4UeYUp7EShLDWD807pD2yZ1L44dt/oLU5hLE2TjEaan3HW4j31vdCPHdd+wPUvG0PCrg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=verimatrix.com; dmarc=pass action=none
- header.from=verimatrix.com; dkim=pass header.d=verimatrix.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=verimatrix.com;
- s=selector2;
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PWybqYW4D7hGUox6qt/uil9HXGGVN/J0t84D1Hbjnfc=;
- b=mHkbPQvhsgAS1ZZqWNZwQWWgXdKuyzeFGlRSbaNH3vU0/4Lp4nti5LQxoe1cKZCHsX/VgcqcizAxTiqhWn6KEkoe0yLzpbnOzN3i5O52QgVmqTXD+eLhL3LIq6TQUJDyR9EOP5O32nq+6oX9/3eEEN/+UEqK6uMXkLr9MgouDgE=
-Received: from MN2PR20MB2973.namprd20.prod.outlook.com (52.132.172.146) by
- MN2PR20MB2976.namprd20.prod.outlook.com (52.132.172.149) with Microsoft SMTP
+ bh=QCKUUWno90d2RVTD0wJMjtko4AQN5aEb67px0CqKhn4=;
+ b=J4eSe9esYQPsys9LN6S5t/iS3RlnCkENFsYH0EnMlijvRDC4yHKHdfBTchOfgBmbk8PwsdgqaRxEF6WvsX39+wwF9nZSImhnxoEbEW7/AFskpxHr37MHnxucqrH1eBhZxYc3s2zUEvm9Lyesh9BFBwGf++k/gW/CtNnZ1uDz+jw=
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
+ VI1PR04MB5311.eurprd04.prod.outlook.com (20.177.52.12) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2305.17; Fri, 27 Sep 2019 11:08:12 +0000
-Received: from MN2PR20MB2973.namprd20.prod.outlook.com
- ([fe80::6d07:5f09:97bf:c717]) by MN2PR20MB2973.namprd20.prod.outlook.com
- ([fe80::6d07:5f09:97bf:c717%7]) with mapi id 15.20.2305.017; Fri, 27 Sep 2019
- 11:08:12 +0000
-From: Pascal Van Leeuwen <pvanleeuwen@verimatrix.com>
-To: Pascal Van Leeuwen <pvanleeuwen@verimatrix.com>, Linus Torvalds
- <torvalds@linux-foundation.org>
-Subject: RE: [RFC PATCH 18/18] net: wireguard - switch to crypto API for
- packet encryption
-Thread-Topic: [RFC PATCH 18/18] net: wireguard - switch to crypto API for
- packet encryption
-Thread-Index: AQHVc7xLFDyOijy/PkCX/N7Gn7qoy6c89gcAgACj7jCAAI9SgIAAOyfwgABabYCAABdQgIAAe1XQgAANsoA=
-Date: Fri, 27 Sep 2019 11:08:12 +0000
-Message-ID: <MN2PR20MB29734A5CD174DDA696E720F8CA810@MN2PR20MB2973.namprd20.prod.outlook.com>
-References: <20190925161255.1871-1-ard.biesheuvel@linaro.org>
- <20190925161255.1871-19-ard.biesheuvel@linaro.org>
- <CAHk-=wjYsbxSiV_XKWV3BwGvau_hUvQiQHLOoc7vLUZt0Wqzfw@mail.gmail.com>
- <CH2PR20MB29680F87B32BBF0495720172CA860@CH2PR20MB2968.namprd20.prod.outlook.com>
- <CAHk-=wgR_KsYw2GmZwkG3GmtX6nbyj0LEi7rSqC+uFi3ScTYcw@mail.gmail.com>
- <MN2PR20MB297317D9870A3B93B5E506C9CA810@MN2PR20MB2973.namprd20.prod.outlook.com>
- <CAHk-=wjr1w7x9Rjre_ALnDLASYNjsEHxu6VJpk4eUwZXN0ntqw@mail.gmail.com>
- <CAHk-=whqWh8ebZ7ryEv5tKKtO5VpOj2rWVy7wV+aHWGO7m9gAw@mail.gmail.com>
- <MN2PR20MB297359DCCE92EB1A1F13CE03CA810@MN2PR20MB2973.namprd20.prod.outlook.com>
-In-Reply-To: <MN2PR20MB297359DCCE92EB1A1F13CE03CA810@MN2PR20MB2973.namprd20.prod.outlook.com>
+ 15.20.2284.21; Fri, 27 Sep 2019 11:16:24 +0000
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::15cd:b6e7:5016:ae8]) by VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::15cd:b6e7:5016:ae8%2]) with mapi id 15.20.2284.023; Fri, 27 Sep 2019
+ 11:16:24 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>, Marco Felsch <m.felsch@pengutronix.de>, 
+ Aisheng Dong <aisheng.dong@nxp.com>
+Subject: Re: [PATCH] firmware: imx: Skip return value check for some special
+ SCU firmware APIs
+Thread-Topic: [PATCH] firmware: imx: Skip return value check for some special
+ SCU firmware APIs
+Thread-Index: AQHVc4lSn4nBMGf230anvZh0PllY6g==
+Date: Fri, 27 Sep 2019 11:16:24 +0000
+Message-ID: <VI1PR04MB70236265478233D8025706F1EE810@VI1PR04MB7023.eurprd04.prod.outlook.com>
+References: <1569406066-16626-1-git-send-email-Anson.Huang@nxp.com>
+ <20190926075914.i7tsd3cbpitrqe4q@pengutronix.de>
+ <DB3PR0402MB391683202692BEAE4D2CD9C1F5860@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <20190926100558.egils3ds37m3s5wo@pengutronix.de>
+ <VI1PR04MB702336F648EA1BF0E4AC584BEE860@VI1PR04MB7023.eurprd04.prod.outlook.com>
+ <DB3PR0402MB391675F9BF6FCA315B124BEBF5810@DB3PR0402MB3916.eurprd04.prod.outlook.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=pvanleeuwen@verimatrix.com; 
-x-originating-ip: [188.204.2.113]
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [89.37.124.34]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 612d15e5-b999-411c-ace3-08d7433afcf2
-x-ms-traffictypediagnostic: MN2PR20MB2976:
-x-ms-exchange-purlcount: 1
+x-ms-office365-filtering-correlation-id: 076cc439-c9b9-4f06-cacc-08d7433c2246
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600167)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:VI1PR04MB5311; 
+x-ms-traffictypediagnostic: VI1PR04MB5311:|VI1PR04MB5311:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <MN2PR20MB29761914FAD10A6445835E23CA810@MN2PR20MB2976.namprd20.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-microsoft-antispam-prvs: <VI1PR04MB53117895A525E8FB7BB57AFEEE810@VI1PR04MB5311.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
 x-forefront-prvs: 0173C6D4D5
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(376002)(39850400004)(346002)(366004)(136003)(13464003)(189003)(199004)(66066001)(64756008)(3846002)(110136005)(6116002)(54906003)(33656002)(8676002)(6436002)(2906002)(9686003)(55016002)(229853002)(6246003)(2940100002)(81156014)(81166006)(4326008)(316002)(26005)(15974865002)(5660300002)(14454004)(256004)(478600001)(6506007)(99286004)(186003)(71200400001)(486006)(86362001)(7416002)(7696005)(71190400001)(305945005)(66946007)(476003)(76116006)(8936002)(11346002)(74316002)(52536014)(25786009)(76176011)(446003)(7736002)(53546011)(66476007)(66556008)(102836004)(66446008)(18886075002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR20MB2976;
- H:MN2PR20MB2973.namprd20.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: verimatrix.com does not designate
+ SFS:(10009020)(4636009)(346002)(396003)(376002)(39860400002)(136003)(366004)(199004)(189003)(74316002)(7736002)(5660300002)(2906002)(6436002)(229853002)(6506007)(256004)(446003)(99286004)(110136005)(53546011)(186003)(54906003)(102836004)(26005)(86362001)(52536014)(4326008)(6636002)(55016002)(81156014)(66066001)(8676002)(81166006)(14454004)(6116002)(3846002)(33656002)(66946007)(66476007)(76116006)(6246003)(64756008)(7696005)(8936002)(9686003)(66556008)(66446008)(91956017)(76176011)(71190400001)(71200400001)(316002)(25786009)(486006)(476003)(478600001)(44832011)(305945005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5311;
+ H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: keYHGQf1ky1iZOYK7jgUAppK/A2APktw9FHv8aoQ5F0Ir05IPepBZReorIp9gZaALOQCupNqLEx9rAKEtrtIJWQHzbqkYWIpIDDbEoi/tUal527cPl4jc7Tb/kCsNGyNUKhE7a5MgIxGO6TAMpdL2oO/KYyfAeL5WejR66kp5wclByNpiUa9aAOhqmuKyB2c98wb9MAEXoLIvOh7SPsBKf5XC83yuGmwe1xW4b8voSpvfh42f4j1bxsjs5g+1u/ISlPZHLlgdGt7Yi3d8mKWVRfSjRPqAKmszzX0beJAp/uFjvDYqVNaGHJbbo25g0dqqmRL4r/CU+Jyjzp118IU8ekttel9VqZ12FxPHAu/AcpsFa6Qpo+BoQ3rKoe2eUjQprKJbMkobfypql19dmm4pG/BSwIwiIdhBLoTEdrbZuk=
+x-microsoft-antispam-message-info: 7Se0PzbHD0S7GnMiVkMoS55SQ+qMODiFil5D9WABhQYxyz6VSMKYkVJKDEOXoRlnm0wN3Jpz3hxX3Ir4mfjEIsmrjENd0t41WAPdIpgr4LIlf6QKWjVbjaXkacYgZgsD1URQEACHg/p1oi4tkdvhDSqulRmokUvW/HELiBESHZtwwdX0xAo2rRvuEI1u6ez/1c6SOeXdjpYoaDsm2tVTyqwvsc16mK9YDjM1AXlMbNdSONrAyt8pJy54BoJtkA3YIclrkwbN4E5PRV8HFp9ESmbkOPneuEN5U+oIoN81SP5FiaX4dN0r/F+NoGmyXHWo6CwDjAkMd/Aaww9/oY+GjmsMOMV5uSU/nEcOnpvQHEoZCgZ/hIkuMEtb88ixc4ZWIunjGIrJh/JYs2w5AtpJ7Sl6N8G/kIE5xGlVVBPwow4=
 MIME-Version: 1.0
-X-OriginatorOrg: verimatrix.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 612d15e5-b999-411c-ace3-08d7433afcf2
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Sep 2019 11:08:12.5192 (UTC)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 076cc439-c9b9-4f06-cacc-08d7433c2246
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Sep 2019 11:16:24.7027 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: dcb260f9-022d-4495-8602-eae51035a0d0
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: QUhpqScV2vSScxqLJJ4ID25jheugXmtfB0n/u6EdLksyWCqNvhJr4FpSTZ0ih1mWwLMoMxgby5oDxLmKwk+NVfry1Nmf+yz9f5xrZusvXpo=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR20MB2976
+X-MS-Exchange-CrossTenant-userprincipalname: x3u2QcDEU8DV3y9oCj3+7vgizJMVzzLCDbLkCGmx+KR4VKCn2aWhxPWQ12qz229wXggkAQCIGJ6kE9rtwV2yhA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5311
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190927_040815_078525_7E40D8AF 
-X-CRM114-Status: GOOD (  28.30  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190927_041631_445627_51842DAB 
+X-CRM114-Status: GOOD (  14.41  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.82.47 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2a01:111:f400:fe1f:0:0:0:622 listed in]
+ [list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -120,6 +119,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.0 FORGED_SPF_HELO        No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,141 +131,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Jason A . Donenfeld" <Jason@zx2c4.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg KH <gregkh@linuxfoundation.org>, Eric Biggers <ebiggers@google.com>,
- Samuel Neves <sneves@dei.uc.pt>,
- Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
- Andy Lutomirski <luto@kernel.org>, Marc Zyngier <maz@kernel.org>,
- Dan Carpenter <dan.carpenter@oracle.com>, Will Deacon <will@kernel.org>,
- David Miller <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> From: linux-crypto-owner@vger.kernel.org <linux-crypto-owner@vger.kernel.org> On Behalf
-> Of Pascal Van Leeuwen
-> Sent: Friday, September 27, 2019 12:44 PM
-> To: Linus Torvalds <torvalds@linux-foundation.org>
-> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>; Linux Crypto Mailing List <linux-
-> crypto@vger.kernel.org>; Linux ARM <linux-arm-kernel@lists.infradead.org>; Herbert Xu
-> <herbert@gondor.apana.org.au>; David Miller <davem@davemloft.net>; Greg KH
-> <gregkh@linuxfoundation.org>; Jason A . Donenfeld <Jason@zx2c4.com>; Samuel Neves
-> <sneves@dei.uc.pt>; Dan Carpenter <dan.carpenter@oracle.com>; Arnd Bergmann
-> <arnd@arndb.de>; Eric Biggers <ebiggers@google.com>; Andy Lutomirski <luto@kernel.org>;
-> Will Deacon <will@kernel.org>; Marc Zyngier <maz@kernel.org>; Catalin Marinas
-> <catalin.marinas@arm.com>
-> Subject: RE: [RFC PATCH 18/18] net: wireguard - switch to crypto API for packet
-> encryption
+On 27.09.2019 04:20, Anson Huang wrote:
+>> On 2019-09-26 1:06 PM, Marco Felsch wrote:
+>>> On 19-09-26 08:03, Anson Huang wrote:
+>>>>> On 19-09-25 18:07, Anson Huang wrote:
+>>>>>> The SCU firmware does NOT always have return value stored in
+>>>>>> message header's function element even the API has response data,
+>>>>>> those special APIs are defined as void function in SCU firmware, so
+>>>>>> they should be treated as return success always.
+>>>>>>
+>>>>>> +static const struct imx_sc_rpc_msg whitelist[] = {
+>>>>>> +	{ .svc = IMX_SC_RPC_SVC_MISC, .func =
+>>>>> IMX_SC_MISC_FUNC_UNIQUE_ID },
+>>>>>> +	{ .svc = IMX_SC_RPC_SVC_MISC, .func =
+>>>>>> +IMX_SC_MISC_FUNC_GET_BUTTON_STATUS }, };
+>>>>>
+>>>>> Is this going to be extended in the near future? I see some upcoming
+>>>>> problems here if someone uses a different scu-fw<->kernel
+>>>>> combination as nxp would suggest.
+>>>>
+>>>> Could be, but I checked the current APIs, ONLY these 2 will be used
+>>>> in Linux kernel, so I ONLY add these 2 APIs for now.
+>>>
+>>> Okay.
+>>>
+>>>> However, after rethink, maybe we should add another imx_sc_rpc API
+>>>> for those special APIs? To avoid checking it for all the APIs called which
+>> may impact some performance.
+>>>> Still under discussion, if you have better idea, please advise, thanks!
+>>
+>> My suggestion is to refactor the code and add a new API for the this "no
+>> error value" convention. Internally they can call a common function with
+>> flags.
 > 
-> > -----Original Message-----
-> > From: Linus Torvalds <torvalds@linux-foundation.org>
-> > Sent: Friday, September 27, 2019 4:54 AM
-> > To: Pascal Van Leeuwen <pvanleeuwen@verimatrix.com>
-> > Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>; Linux Crypto Mailing List <linux-
-> > crypto@vger.kernel.org>; Linux ARM <linux-arm-kernel@lists.infradead.org>; Herbert Xu
-> > <herbert@gondor.apana.org.au>; David Miller <davem@davemloft.net>; Greg KH
-> > <gregkh@linuxfoundation.org>; Jason A . Donenfeld <Jason@zx2c4.com>; Samuel Neves
-> > <sneves@dei.uc.pt>; Dan Carpenter <dan.carpenter@oracle.com>; Arnd Bergmann
-> > <arnd@arndb.de>; Eric Biggers <ebiggers@google.com>; Andy Lutomirski
-> <luto@kernel.org>;
-> > Will Deacon <will@kernel.org>; Marc Zyngier <maz@kernel.org>; Catalin Marinas
-> > <catalin.marinas@arm.com>
-> > Subject: Re: [RFC PATCH 18/18] net: wireguard - switch to crypto API for packet
-> > encryption
-> >
-> > On Thu, Sep 26, 2019 at 6:30 PM Linus Torvalds
-> > <torvalds@linux-foundation.org> wrote:
-> > >
-> > > And once you have that cookie, and you see "ok, I didn't get the
-> > > answer immediately" only THEN do you start filling in things like
-> > > callback stuff, or maybe you set up a wait-queue and start waiting for
-> > > it, or whatever".
-> >
-> > Side note: almost nobody does this.
-> >
-> > Almost every single async interface I've ever seen ends up being "only
-> > designed for async".
-> >
-> > And I think the reason is that everybody first does the simply
-> > synchronous interfaces, and people start using those, and a lot of
-> > people are perfectly happy with them. They are simple, and they work
-> > fine for the huge majority of users.
-> >
-> > And then somebody comes along and says "no, _we_ need to do this
-> > asynchronously", and by definition that person does *not* care for the
-> > synchronous case, since that interface already existed and was simpler
-> > and already was mostly sufficient for the people who used it, and so
-> > the async interface ends up being _only_ designed for the new async
-> > workflow. Because that whole new world was written with just that case
-> > is mind, and the synchronous case clearly didn't matter.
-> >
-> > So then you end up with that kind of dichotomous situation, where you
-> > have a strict black-and-white either-synchronous-or-async model.
-> >
-> > And then some people - quite reasonably - just want the simplicity of
-> > the synchronous code and it performs better for them because the
-> > interfaces are simpler and better suited to their lack of extra work.
-> >
-> > And other people feel they need the async code, because they can take
-> > advantage of it.
-> >
-> > And never the twain shall meet, because the async interface is
-> > actively _bad_ for the people who have sync workloads and the sync
-> > interface doesn't work for the async people.
-> >
-> > Non-crypto example: [p]read() vs aio_read(). They do the same thing
-> > (on a high level) apart from that sync/async issue. And there's no way
-> > to get the best of both worlds.
-> >
-> > Doing aio_read() on something that is already cached is actively much
-> > worse than just doing a synchronous read() of cached data.
-> >
-> > But aio_read() _can_ be much better if you know your workload doesn't
-> > cache well and read() blocks too much for you.
-> >
-> > There's no "read_potentially_async()" interface that just does the
-> > synchronous read for any cached portion of the data, and then delays
-> > just the IO parts and returns a "here, I gave you X bytes right now,
-> > use this cookie to wait for the rest".
-> >
-> > Maybe nobody would use it. But it really should be possibly to have
-> > interfaces where a good synchronous implementation is _possible_
-> > without the extra overhead, while also allowing async implementations.
-> >
-> That's the question. I've never seen such an API yet ...
-> 
-> You could also just accept that those are two wildly different use
-> cases with wildly different requirements and allow them to coexist,
-> while  sharing as much of the low-level SW implementation code as
-> possible underneath. With the async API only used for those cases
-> where HW acceleration can make the difference.
-> 
-> I believe for hashes, the Crypto API still maintains an shash and
-> an ahash API. It works the other way around from how you would
-> like  to see though, with ahash wrapping the shash in case of SW
-> implementations. Still, if you're sure you can't benefit from HW
-> acceleration you have the option of using the shash directly.
-> 
-> I don't know why the synchronous blkcipher API was deprecated,
-> that happened before I joined. IMHO it would make sense to have,
-> so users not interested in HW crypto are not burdened by it.
-> 
-> 
-Never mind. From what I just learned, you can achieve the same 
-thing with the skcipher API by just requesting a sync implementation.
-Which would allow you to put your structs on the stack and would
-not return from the encrypt()/decrypt() call until actually done.
+> If I understand your point correctly, that means the loop check of whether the API
+> is with "no error value" for every API still NOT be skipped, it is just refactoring the code,
+> right?
 
+>> Right now developers who want to make SCFW calls in upstream need to
+>> define the message struct in their driver based on protocol documentation.
+>> This includes:
+>>
+>> * Binary layout of the message (a packed struct)
+>> * If the message has a response (already a bool flag)
+>> * If an error code is returned (this patch adds support for it)
+>>
+>> Since callers are already exposed to the binary protocol exposing them to
+>> minor quirks of the calling convention also seems reasonable. Having the
+>> low-level IPC code peek at message IDs seems like a hack; this belong at a
+>> slightly higher level.
+> 
+> A little confused, so what you suggested is to add make the imx_scu_call_rpc()
+> becomes the "slightly higher level" API, then in this API, check the message IDs
+> to decide whether to return error value, then calls a new API which will have
+> the low-level IPC code, the this new API will have a flag passed from imx_scu_call_rpc()
+> function, am I right?
+
+No, I mean there should be no loop enumerating svc/func ids: *the caller 
+should know* that it's calling a func which doesn't return an error code 
+and call a different variant of imx_scu_call_rpc
+
+Maybe add an internal __imx_scu_call_rpc_flags and turn the current 
+imx_scu_call_rpc into a wrapper.
+
+--
 Regards,
-Pascal van Leeuwen
-Silicon IP Architect, Multi-Protocol Engines @ Verimatrix
-www.insidesecure.com
+Leonard
 
 _______________________________________________
 linux-arm-kernel mailing list
