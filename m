@@ -2,36 +2,36 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66DEEC0F26
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Sep 2019 03:29:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5837C0F27
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Sep 2019 03:29:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=yi4egOBiPIe5jpC0lfNzrFY9jqHk1saFNpUYWXcag74=; b=GXU
-	G5/P3L76ZGMSictuexDszfQwFwZ9A1davnUL3HljPx7XQ3w21X5zeLDqVoMCmG0lMCy2CJnJlLt6H
-	tfxiuCicLicQGVVaTjqEPtgmPKAXWMCKyV6RH1Cxfo7baQleF++wgYMYJOK6tfHyRbS29mHiGsbnj
-	6p0tdZbdSiffSLIHYA631h5Jp0aLAUgnA1dJCnSeJMCFE8H5y0BpzKGMBeZzHYIMlMGOBFobP8FQP
-	qvY9CK+laBvtq3Zfx19lW+n5cTynZ39bU9Qft7iF3Jqnf4eIbEXlqX3O/bRDek3GQMH304d1W9GuO
-	2gDaY6Wr9VpZE/qZXRPeQqTGG3eVnjQ==;
+	References:List-Owner; bh=yi4egOBiPIe5jpC0lfNzrFY9jqHk1saFNpUYWXcag74=; b=Po8
+	3UBZpsEeyZ2O3TEO5FAunPK4EWeOpQ/QmSrjPktrcidgz3bA/GwHhNqKia+DI1rX6vwHn+PE3f3DR
+	E2MrcyYgoSo+UuGMjDnLl3hVEUKHQKcVyZUX11qHsU5xN6KsLRSwsemd+ESsKz/hgW2rOeEQDajnB
+	vWZ7ZYnjjYcrySsYrRa4bE/FOY8vnf6Pi1hrD9PJgQaYK3poxmkwFh3p/OoDuXAG+qOW32xdO8Dl7
+	kHNW/hW9G5Chl2TBhq/XO5mpqwiSPyV0XbWWTgM7KlBbElRGbiJOXoPW9CvSMx9OxQPsANWwWqfuA
+	b+jhhDkBkv8KUshMOyeM4euJ6VEkrzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iE1Xe-0007Qm-93; Sat, 28 Sep 2019 01:28:58 +0000
+	id 1iE1Xs-0007bg-2C; Sat, 28 Sep 2019 01:29:12 +0000
 Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iE1XU-0007Q3-51
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Sep 2019 01:28:49 +0000
+ id 1iE1Xf-0007Yf-CY
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Sep 2019 01:29:00 +0000
 Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 53134611D1; Sat, 28 Sep 2019 01:28:42 +0000 (UTC)
+ id 1169F611DC; Sat, 28 Sep 2019 01:28:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1569634122;
+ s=default; t=1569634139;
  bh=kbPZarCkYnlJWtdPyEyjjRJbhqhbOcPRYQvgulMnMvY=;
  h=From:To:Cc:Subject:Date:From;
- b=hdjZvkQZo2N+fUk7Sx+pYGkNYjzSyMvZT38pn3PYdm7pQAs0Z3qsvEyV44v7ScS/t
- Sif3OgTgCkQ0naYjj2QCwvY/UxLf4S7oRZzL9XuZxiuHqvAzfJKt3xhC9MaU3pcrjr
- RBtI32eHFqnm68rJEIs9TU9VHQGulDaJXNtUjcQc=
+ b=N32Lfa0Y7LRi1uThRZ/7c7Srgdep5Yoos4XJTzy0HAf6KIJ6e3Z1rvkyBr7Y7eVSP
+ ONpxLfF0k7bgoBP/KYW9kY8Eg98kzae7Fev+Fox6QzpolRzscKxf7a3MbcgTEoMczB
+ mWcqbSwhxAKS6yka4vmpKMXEns8jmOVQYlaMrSgk=
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  pdx-caf-mail.web.codeaurora.org
 X-Spam-Level: 
@@ -43,16 +43,16 @@ Received: from jeykumar-linux.qualcomm.com (i-global254.qualcomm.com
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
  (Authenticated sender: jsanka@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 4D5DA60A60;
- Sat, 28 Sep 2019 01:28:41 +0000 (UTC)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id DECE9611DC;
+ Sat, 28 Sep 2019 01:28:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1569634121;
+ s=default; t=1569634138;
  bh=kbPZarCkYnlJWtdPyEyjjRJbhqhbOcPRYQvgulMnMvY=;
  h=From:To:Cc:Subject:Date:From;
- b=ZXuRnuDCeN548AzE5Wzs5ogkd43oGCUNkvpy/bo8I7X1pOQsCewBHv/NRGmDl/8bg
- 26XNsi/tdBUxPZBoFCPe9MKQAMsozB0+CCjNlGj2SSRpFY697HZEYnRPCEc/xpG+rl
- OWAse0U8VGHT5ZFU044ZavT1lLYK2WoGOgqiQySI=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 4D5DA60A60
+ b=O0L0ahWkKvLy6IZGm3VGL/RvsTxlYN41OBCib2zthF35LJ6AufeCnvVlpxMKsSCVf
+ 9CSQ1/1pRUq23Z+PTxErUhLG/+BKtAZzcyUhPH/aOJv58t5L7uBgPeAIM1wKeMZXVz
+ Tf8JQDuMvPwoa/7EcEPHvZ3E5yKHNcTQbzDtCtO8=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org DECE9611DC
 Authentication-Results: pdx-caf-mail.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: pdx-caf-mail.web.codeaurora.org;
@@ -61,11 +61,11 @@ From: Jeykumar Sankaran <jsanka@codeaurora.org>
 To: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Subject: [PATCH] Add framebuffer max width/height fields to drm_mode_config
-Date: Fri, 27 Sep 2019 18:28:35 -0700
-Message-Id: <1569634116-13819-1-git-send-email-jsanka@codeaurora.org>
+Date: Fri, 27 Sep 2019 18:28:50 -0700
+Message-Id: <1569634131-13875-1-git-send-email-jsanka@codeaurora.org>
 X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190927_182848_211792_B178EAC2 
+X-CRM114-CacheID: sfid-20190927_182859_455032_DD41F9D8 
 X-CRM114-Status: UNSURE (   7.23  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
@@ -73,6 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -82,8 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
