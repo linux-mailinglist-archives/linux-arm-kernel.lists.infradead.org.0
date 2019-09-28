@@ -2,53 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B55D0C0FFC
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Sep 2019 08:48:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD4F3C100C
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Sep 2019 09:19:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oN4duouu+X1eErsKDYIX+CKdBEbL5O5rdjQlsiQR9fs=; b=I27qlifSwcFUxn
-	gybCByAM2W7ppklSqPHI1oWzlRXhbtQfXoFAADVhhvt6atbMom9EtEeMuR1axzIbk09pbvLm0O3CD
-	a2I4lrPJANX7FVg6VLrgmpzMfzYTYRZz4anmbC/jHC/g/ntrZR136nB1d3WMA3V2QtLTL0c7Vfr10
-	xKVh4vB8chjD1buhq3eHS8/V9uDXuVbixTSEp3NV8JTDC+UHSOgxgG8VsaAIkds6zxhmyHiZXfwI9
-	6apgBvjfZH2s0qZm33MYVmLcCp4TpiAR6D2elsKeB8QO3h+VS5fuzPSi1e0EWuBP4rpFGRZn5A2Ui
-	Gkr+7g9UG0oTdjvSeZ0A==;
+	List-Owner; bh=lz840yvy5GrzpKIGUtH8EgXg2NrDpYeaN/M+a7VSUGI=; b=rg4cZfyH+l0QMo
+	j7YTm4tejR98xaWuWR0bhupK72UI/q8L5QaMeMCKfLA5fD1LT0xIbEWyI5aioXEpgPvcHG50hDtJT
+	HKhmRokQcjnFpPlqq5akyihNI+DgGgQSPq+AN6ZIcfNr9cBKstAM4YIpAqExllnzlSHgCLDYzw0nD
+	fx8S1y8DtrG2itz6v7/w01yI66XRdjDAYXtjyd/Gw92bCxIGGqDG8vPUlTrqDh+ieZyAC1l9XBW6r
+	8sMsE7xiiKeKHx0nsh/UopnACt034z1avvMj5DgiquiI/ab4FteL6jo0x6pRZ2hNa49yRWtgMkgdy
+	4+5ki13YeaWJU6eHNkSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iE6WG-0002UA-NP; Sat, 28 Sep 2019 06:47:52 +0000
-Received: from 178.115.242.59.static.drei.at ([178.115.242.59]
- helo=mail.osadl.at)
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iE6W3-0002Rx-06; Sat, 28 Sep 2019 06:47:41 +0000
-Received: by mail.osadl.at (Postfix, from userid 1001)
- id 98F565C0864; Sat, 28 Sep 2019 08:47:20 +0200 (CEST)
-Date: Sat, 28 Sep 2019 08:47:20 +0200
-From: Nicholas Mc Guire <der.herr@hofr.at>
-To: Yizhuo <yzhai003@ucr.edu>
-Subject: Re: [PATCH] iio: adc: meson-saradc: Variables could be uninitalized
- if regmap_read() fails
-Message-ID: <20190928064720.GA24515@osadl.at>
-References: <20190928004642.28932-1-yzhai003@ucr.edu>
+	id 1iE70i-00054g-K5; Sat, 28 Sep 2019 07:19:20 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iE70Z-00053N-Iu
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Sep 2019 07:19:13 +0000
+Received: from rapoport-lnx (unknown [87.70.86.10])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id F3E3F207FA;
+ Sat, 28 Sep 2019 07:19:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1569655149;
+ bh=7Shm2B/zlmlKL3pXHRJPueR0lZN16Qkmk5dclKLpT4Q=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=oBejyXdzz4rgvKVIlusJOqUyYjLlcxGPKWA8NvQRYwv/a6T4RVFhDzz69bRTQQMfm
+ 8ML/TYEpo0GAa8y9Lc06KceJL27dvkuxdjuG+6wXArOPovYJxSwxMM6bswsAOYscC+
+ ZGPaGhcE6hTHkj0IodumScF7u2RD6n5TKFBBmhlo=
+Date: Sat, 28 Sep 2019 10:19:02 +0300
+From: Mike Rapoport <rppt@kernel.org>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH v3] arm64: use generic free_initrd_mem()
+Message-ID: <20190928071901.GA3510@rapoport-lnx>
+References: <1569388180-28274-1-git-send-email-rppt@kernel.org>
+ <76b49810-c59f-8cf1-7401-1f7262873601@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190928004642.28932-1-yzhai003@ucr.edu>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <76b49810-c59f-8cf1-7401-1f7262873601@arm.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190927_234739_403827_9E91FEDA 
-X-CRM114-Status: GOOD (  18.73  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190928_001911_668407_FB7A2935 
+X-CRM114-Status: GOOD (  23.22  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 TVD_RCVD_IP            Message was received from an IP address
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,143 +77,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: csong@cs.ucr.edu, Lars-Peter Clausen <lars@metafoo.de>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>, Nicholas Mc Guire <hofrat@osadl.org>,
- zhiyunq@cs.ucr.edu, linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
- linux-amlogic@lists.infradead.org, Thomas Gleixner <tglx@linutronix.de>,
- Jonathan Cameron <jic23@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Mike Rapoport <rppt@linux.ibm.com>, Laura Abbott <labbott@redhat.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 27, 2019 at 05:46:41PM -0700, Yizhuo wrote:
-> Several functions in this file are trying to use regmap_read() to
-> initialize the specific variable, however, if regmap_read() fails,
-> the variable could be uninitialized but used directly, which is
-> potentially unsafe. The return value of regmap_read() should be
-> checked and handled.
+On Fri, Sep 27, 2019 at 11:50:42AM +0530, Anshuman Khandual wrote:
 > 
-> Signed-off-by: Yizhuo <yzhai003@ucr.edu>
-
-Just a few minor style issues - contentwise it look correct to me.
-Reviewed-by: Nicholas Mc Guire <hofrat@osadl.org>
-
-> ---
->  drivers/iio/adc/meson_saradc.c | 28 +++++++++++++++++++++++-----
->  1 file changed, 23 insertions(+), 5 deletions(-)
+> On 09/25/2019 10:39 AM, Mike Rapoport wrote:
+> > From: Mike Rapoport <rppt@linux.ibm.com>
+> > 
+> > arm64 calls memblock_free() for the initrd area in its implementation of
+> > free_initrd_mem(), but this call has no actual effect that late in the boot
+> > process. By the time initrd is freed, all the reserved memory is managed by
+> > the page allocator and the memblock.reserved is unused, so the only purpose
+> > of the memblock_free() call is to keep track of initrd memory for debugging
+> > and accounting.
+> > 
+> > Without the memblock_free() call the only difference between arm64 and the
+> > generic versions of free_initrd_mem() is the memory poisoning.
+> > 
+> > Move memblock_free() call to the generic code, enable it there
+> > for the architectures that define ARCH_KEEP_MEMBLOCK and use the generic
+> > implementaion of free_initrd_mem() on arm64.
 > 
-> diff --git a/drivers/iio/adc/meson_saradc.c b/drivers/iio/adc/meson_saradc.c
-> index 7b28d045d271..c032a64108b4 100644
-> --- a/drivers/iio/adc/meson_saradc.c
-> +++ b/drivers/iio/adc/meson_saradc.c
-> @@ -323,6 +323,7 @@ static int meson_sar_adc_wait_busy_clear(struct iio_dev *indio_dev)
->  {
->  	struct meson_sar_adc_priv *priv = iio_priv(indio_dev);
->  	int regval, timeout = 10000;
-> +	int ret;
->  
->  	/*
->  	 * NOTE: we need a small delay before reading the status, otherwise
-> @@ -331,7 +332,9 @@ static int meson_sar_adc_wait_busy_clear(struct iio_dev *indio_dev)
->  	 */
->  	do {
->  		udelay(1);
-> -		regmap_read(priv->regmap, MESON_SAR_ADC_REG0, &regval);
-> +		ret = regmap_read(priv->regmap, MESON_SAR_ADC_REG0, &regval);
-> +		if (ret)
-> +			return ret;
->  	} while (FIELD_GET(MESON_SAR_ADC_REG0_BUSY_MASK, regval) && timeout--);
->  
->  	if (timeout < 0)
-> @@ -358,7 +361,11 @@ static int meson_sar_adc_read_raw_sample(struct iio_dev *indio_dev,
-
-any reason not to declear ret in the declaration block ?
-so just for consistency with coding style within meson_saradc.c
-this might be:
-
-	int regval, fifo_chan, fifo_val, count;
-+	int ret;
-
->  		return -EINVAL;
->  	}
->  
-> -	regmap_read(priv->regmap, MESON_SAR_ADC_FIFO_RD, &regval);
-> +	int ret = regmap_read(priv->regmap, MESON_SAR_ADC_FIFO_RD, &regval);
-
-+	ret = regmap_read(priv->regmap, MESON_SAR_ADC_FIFO_RD, &regval);
-
-> +
-> +	if (ret)
-> +		return ret;
-> +
->  	fifo_chan = FIELD_GET(MESON_SAR_ADC_FIFO_RD_CHAN_ID_MASK, regval);
->  	if (fifo_chan != chan->address) {
->  		dev_err(&indio_dev->dev,
-> @@ -491,6 +498,7 @@ static int meson_sar_adc_lock(struct iio_dev *indio_dev)
->  {
->  	struct meson_sar_adc_priv *priv = iio_priv(indio_dev);
->  	int val, timeout = 10000;
-> +	int ret;
->  
->  	mutex_lock(&indio_dev->mlock);
->  
-> @@ -506,7 +514,10 @@ static int meson_sar_adc_lock(struct iio_dev *indio_dev)
->  		 */
->  		do {
->  			udelay(1);
-> -			regmap_read(priv->regmap, MESON_SAR_ADC_DELAY, &val);
-> +			ret = regmap_read(priv->regmap,
-> +					MESON_SAR_ADC_DELAY, &val);
-
-checkpatch does not fuss here but the continuation should be alligned
-witht the ( here
-
-> +			if (ret)
-> +				return ret;
->  		} while (val & MESON_SAR_ADC_DELAY_BL30_BUSY && timeout--);
->  
->  		if (timeout < 0) {
-> @@ -784,7 +795,10 @@ static int meson_sar_adc_init(struct iio_dev *indio_dev)
->  		 * BL30 to make sure BL30 gets the values it expects when
->  		 * reading the temperature sensor.
->  		 */
-> -		regmap_read(priv->regmap, MESON_SAR_ADC_REG3, &regval);
-> +		ret = regmap_read(priv->regmap, MESON_SAR_ADC_REG3, &regval);
-> +		if (ret)
-> +			return ret;
-> +
->  		if (regval & MESON_SAR_ADC_REG3_BL30_INITIALIZED)
->  			return 0;
->  	}
-> @@ -1014,7 +1028,11 @@ static irqreturn_t meson_sar_adc_irq(int irq, void *data)
->  	unsigned int cnt, threshold;
->  	u32 regval;
-
-same as above
-
-+       int ret;
-
->  
-> -	regmap_read(priv->regmap, MESON_SAR_ADC_REG0, &regval);
-> +	int ret = regmap_read(priv->regmap, MESON_SAR_ADC_REG0, &regval);
-
-+	ret = regmap_read(priv->regmap, MESON_SAR_ADC_REG0, &regval);
-
-> +
-> +	if (ret)
-> +		return ret;
-> +
->  	cnt = FIELD_GET(MESON_SAR_ADC_REG0_FIFO_COUNT_MASK, regval);
->  	threshold = FIELD_GET(MESON_SAR_ADC_REG0_FIFO_CNT_IRQ_MASK, regval);
->  
-> -- 
-> 2.17.1
+> Small nit. s/implementaion/implementation.
 > 
+> > 
+> > Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
+> > ---
+> > 
+> > v3:
+> > * fix powerpc build
+> > 
+> > v2: 
+> > * add memblock_free() to the generic free_initrd_mem()
+> > * rebase on the current upstream
+> > 
+> > 
+> >  arch/arm64/mm/init.c | 12 ------------
+> >  init/initramfs.c     |  5 +++++
+> >  2 files changed, 5 insertions(+), 12 deletions(-)
+> > 
+> > diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+> > index 45c00a5..87a0e3b 100644
+> > --- a/arch/arm64/mm/init.c
+> > +++ b/arch/arm64/mm/init.c
+> > @@ -580,18 +580,6 @@ void free_initmem(void)
+> >  	unmap_kernel_range((u64)__init_begin, (u64)(__init_end - __init_begin));
+> >  }
+> >  
+> > -#ifdef CONFIG_BLK_DEV_INITRD
+> > -void __init free_initrd_mem(unsigned long start, unsigned long end)
+> > -{
+> > -	unsigned long aligned_start, aligned_end;
+> > -
+> > -	aligned_start = __virt_to_phys(start) & PAGE_MASK;
+> > -	aligned_end = PAGE_ALIGN(__virt_to_phys(end));
+> > -	memblock_free(aligned_start, aligned_end - aligned_start);
+> > -	free_reserved_area((void *)start, (void *)end, 0, "initrd");
+> > -}
+> > -#endif
+> > -
+> >  /*
+> >   * Dump out memory limit information on panic.
+> >   */
+> > diff --git a/init/initramfs.c b/init/initramfs.c
+> > index c47dad0..3d61e13 100644
+> > --- a/init/initramfs.c
+> > +++ b/init/initramfs.c
+> > @@ -10,6 +10,7 @@
+> >  #include <linux/syscalls.h>
+> >  #include <linux/utime.h>
+> >  #include <linux/file.h>
+> > +#include <linux/memblock.h>
+> >  
+> >  static ssize_t __init xwrite(int fd, const char *p, size_t count)
+> >  {
+> > @@ -531,6 +532,10 @@ void __weak free_initrd_mem(unsigned long start, unsigned long end)
+> >  {
+> >  	free_reserved_area((void *)start, (void *)end, POISON_FREE_INITMEM,
+> >  			"initrd");
+> > +
+> > +#ifdef CONFIG_ARCH_KEEP_MEMBLOCK
+> 
+> Should not the addresses here be aligned first before calling memblock_free() ?
+> Without alignment, it breaks present behavior on arm64 which was explicitly added
+> with 13776f9d40a0 ("arm64: mm: free the initrd reserved memblock in a aligned manner").
+
+Well, the present behaviour as of v5.3[.1] is call memblock_free() for the
+unaligned initrd area. The commit 13776f9d40a0 ("arm64: mm: free the initrd
+reserved memblock in a aligned manner") indeed would fix the reporting in
+/sys/fs/memblock/reserved, but it won't change anything beyond that despite
+its commit log implies otherwise.
+
+> Or does initrd always gets allocated with page alignment on other architectures.
+
+powerpc reserves aligned area and s390 does not. Other architectures do not
+keep memblock  after init.
+
+I'll re-send with the aligned addresses.
+
+
+> > +	memblock_free(__pa(start), end - start);
+> > +#endif
+> >  }
+> >  
+> >  #ifdef CONFIG_KEXEC_CORE
+> > 
+
+-- 
+Sincerely yours,
+Mike.
 
 _______________________________________________
 linux-arm-kernel mailing list
