@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E036CC10BF
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Sep 2019 14:08:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A59CC10C1
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Sep 2019 14:09:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,75 +11,77 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=0fjrs+PIMthtmucBjAhK4MHSy1MBtsaObzsRVLuh/Xw=; b=QWoXxKxwjM+cVjvtRFHW5Ak8Ge
-	RG1PGmKaFGT0d4jeE0qDh/wzZwsHK2uEYza4ElJU5ss+qLkUUXlMfXHPXj0Zn3NPP9S6KtbeHsYLa
-	qnYpDDMgCylAy/9tTz5LqVfjuEMFhONEpkw0sQiIFMjZq1PC6v7IP15fF2130aQJMh24F/tOsB6V0
-	2d8KePlPJiB2KicIYIv9G1HV3Af5me+teZUVsXOyCQSJf5eWYWr4LIwCxknBmBJzl0smFJ/tKVbFI
-	FXZs5/9VMs94dYq/EDLGrHQX5ibhoszchK92JVaDyXOFnJtf56bFNrtBZwWuyfHHrmtbTCMRagzQU
-	2/u5hTKw==;
+	bh=q/cCQ8wQCydvI+uiory0/iMYkQa1MgRKxQkpsy3LLFU=; b=Ve8tpZfNQxLWK+fFwCX6j++NFX
+	1ImLaGf8+cCoTKOBJ0xIw+TTzBvZs7Jp1UaCzb3Bwdg8MOn2Lh5KXh3rZQIUuVkrggiSbd94oeHW6
+	LRN3+2JEk85bYdbViAoObIYveMJAyIeqFvUaN0sy+tKYcK7Q37vFJWdJ8s12sQjPByI06FaiRPONK
+	C/cPLBEsdTgC2Ry7zy3ewU7gzrMAhxaoYTqTdoVVe9ILGPmWCR2lIhJT3Po2O0vouUWG24JVtAtAf
+	DwxmqcyFF6pWh42joyPxZ7FjetcbRe7MNx8co5bkvo8+eSYNODzZqAE0VKoP4Lm+i2kiKpLmemxug
+	VoOBF3+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEBWQ-0006mU-SX; Sat, 28 Sep 2019 12:08:22 +0000
-Received: from mout.gmx.net ([212.227.15.18])
+	id 1iEBWy-0007GM-AY; Sat, 28 Sep 2019 12:08:56 +0000
+Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEBVu-0006Z9-LL
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Sep 2019 12:07:52 +0000
+ id 1iEBVu-0006ZI-OZ
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Sep 2019 12:07:54 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1569672456;
- bh=Uiusfd++iO6W8WtYRF60ANQDODpBG+UQSmFz88xtJgk=;
+ s=badeba3b8450; t=1569672465;
+ bh=/ScWQbBAyXuNKzjoeYet94tK8hr90mgTZg1PlOrDDcw=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=dQQAfY4vF9eIiMhhnPGoT5NglegGATZLY2pWt5aHEKQTfHpbo5mXmBA2lOMMYtol9
- 0RYl9Xdf72oHrJejRZvgtxira0cT89r516zxoKJBQpQogQGbjbFKM/28zYVRed4eaT
- 1rCKc0ib8NpCUf/BH2aTQVuWU7ShKx1WkQMEmd9A=
+ b=E0id8RfsUQo/vu9AkkzEk2O7ctKxrU7xwLUwsgubIoNDr2/cSVPjoLPpMn89hW3Un
+ R5xUlxlv3vPt8PzuFxnZXTkw1dKfu0gaaGLrjtCb+X5NSRDEXwYS5IesloR54zVJw4
+ bcMQZxDyfc7BYuSJy/G10hOkM9rL3VjQFmvvqnas=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.130]) by mail.gmx.com
  (mrgmx005 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 1Mk0Ne-1hlkaO1gXA-00kMD7; Sat, 28 Sep 2019 14:07:36 +0200
+ 1MhD6W-1hizhC3a4Y-00eKbf; Sat, 28 Sep 2019 14:07:36 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>
-Subject: [PATCH V3 1/8] ARM: dts: bcm283x: Remove simple-bus from fixed clocks
-Date: Sat, 28 Sep 2019 14:07:07 +0200
-Message-Id: <1569672435-19823-2-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH V3 2/8] ARM: dts: bcm283x: Remove brcm,
+ bcm2835-pl011 compatible
+Date: Sat, 28 Sep 2019 14:07:08 +0200
+Message-Id: <1569672435-19823-3-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1569672435-19823-1-git-send-email-wahrenst@gmx.net>
 References: <1569672435-19823-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:Qtvp3jbppime3Xe7fPvHlPdRWaE4I5Ik5MHiGVEb5DsNMGaIWjk
- VKQScuoHMcCmlS9y5vS4d3x+5fVvOllNTYU9pqisHOQI03U34MOGTzQCmdjyaBmm+z6pSsq
- PfBJnqBGdYamgCBvo/LP9ZbfAE/lt9bRqM5zLAIkR0UtaSM5+7EdYMYqGgRrxKcx8X7qqZ4
- 8bnsG4ILMaGfP4K0PFrVg==
+X-Provags-ID: V03:K1:dC6viQ2JsjUhpbPXyk7+j5zSW/XlofqFAcv2ZESZEpI51n8HdEp
+ ofgCOSTFiJibFbW0TUKZZClQc9BmePh7phF4RkRRYrpvPT/adkmaMHKTyzybCBHhs78Ig/G
+ /WC5/N88kq497T5Sqm/ZoT2jKztjLhU5r7ng40Zpe20SdoTR3o9eVR4TOsRPEdpKPb/r/Xj
+ ROy3oM/Srz0wY41/mxTSg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:b3YvHamCSD4=:9/VGlDodTXtRD2VUougHaS
- AJd7T1yanl95AH22mpgekYcnltdSxncVFWd7p9D4VjpOA2lWhCjhcd+tCvB7uk3uYo1PI78yl
- dG6zYU+LwEzwtMCUMnF77XL5/kJi4Waya71RhCRo6p0UifZ183Tzn4E9zIdTArV+OrXwGj8un
- 0LjCgyv93C3Zmtn1vBIAGzZHthTFSB3DhrUZfuUOQ3n9ET6DKvcdiw8tAFlx0O28rTf3+iix+
- qyGHa0Tve1JBtuv6lXkJJUEYbM517UzkCU7JHnctOtYHjRMVwYhPCz8yrz4HkIGiALHVX/6dI
- MOAHfCswJEJQkxKXRUWHY5amfYsOCxXdfPt74mjbPoN8G698NiUHjDdhKIwDURiIK1DLNzxQM
- nAJjolUF1t25+Quqtny2SkKvhiIup2xrYZ7kOzEl54FPIRykR3gLtg4lZ+JBXQHmOGEYYtiOC
- 7OKHnCZ3jXQDov6RMeI4xlLBw3TqDU+mUBaE0LfKI45no4XYPnEmxQtkF6qsAGKwex3rz4Dh4
- 9c1E0peVbVSLovs0cMJcs7v9haXtCPVcVR+114tHZ3d3pD+uWxBhTNLxthADxerlZYmm5bDpE
- Hl906ScNr+21ETKFGVQO0SfhdSe78Dfh6xeEwjqAU7PvLC0eQ+swXcwJ7uh8WeYI+UJfiYRTH
- /AqVvfzYLJBZoqOq3p6ydsfwigpT9jzHYStB96jMIyxxw0pGPohr8yH08x/JVuc5aShJalrHv
- nWhhUL8D/bw8nAVUwpXQXV+sWNy39+D5EtsDa+gcI9Gf7AnmdwORvB3BNZ/Udvi6f2ZU/BJYw
- HJ3DRch/R223wqQlzT4qqZoxOeB7Wf2loDkEtJRhX9NTxfnJg0rK0nmrgnQYYHRLC+SlfRPQo
- NwMnH/wYQ43yRvi3mC0khxKDVBoBNnVb10pAyxwPrv6ox3tCHjlfxUWg7n8XF6yx4R0+Sq/Ob
- Bgw26uphkGX00YRMxUWzo5223DJvUiLSnD6J0wyi+sjKCLJV85Mh1aMLzi9Xp7bEq+0Wgf149
- u4e/KRNTdJZnLxa2ayoYIJwS0vXuxydewt3ubMjKm5csistwzcexb2Q6C3aXpPr1Z+BllBrkI
- WK1LU5u28og2R1jqHSqCxF/vcj5yKE3zYN4mjBypAK+gsCZI5wcbyCqdCUH6d8+DY3YaS+lw3
- gTJnN1iXzwsT6Xuf2Bt5Sk9It2/XKhal2IXZ6gzDc0yc7b9qeKDssQgI3K3omc4+M8OFuyvJ7
- gEucJ7VG3anMiF6mkHrsN4bBibSbz9tKwLNFlsg==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:bwrEiyAno3Y=:fYLpdrpFTwBDAp7xSQY3qR
+ Wy0fIXnHzxf0pmrExq9z+Evktvo6QoHV16d77vr2FX5DcNAyyzFzuVa02VF6PrjzTN7da/xHA
+ +ND+HKGFKGi10vWu323HutcLNwHpX2ZT3wiFcQ2X1bx3M+qucfWZLDcCETPtt/WC4CSMtFJuc
+ 0OSMsXJ6RTbRHvIQ+xHTyQNOLCoGDQ4CdIjBsU5jj9AbxMgOwCw1uV45hiiPaUdvZPLATmCMh
+ JMB5yOyU2YE3UzqcyFuArtAvX0278KYzOtOeRmxB22Fq2/gz+nBiBWHFRFVFtRaC43p7P9WlA
+ NCm09+A1h2alBi+c8bCPo6qI6Ke3u/2BaHiVmFjQ9t+TwXRXpLJ3PhyRWkVcjIQTyU6beTbf4
+ LxVnmSCXqzQLHwh6hXeVJfOAlM9v2cPdNcxMn2xffboIFfApvkuycslVyNJBgWgsHtFXP6fcS
+ FoIMKPS+WG563Xh6eExneeGS52p0LNMSTLzY1SjUOT8YNbQdVTzDhon5OnaeWRoX5Z4mUQCN7
+ CwyT5pdvHIcoTaUqTxuO01T6Cg/anM8hODL3Lv7bhw6Pt/x2lgX4u4AwhYwxMD9zlmhG/a7K2
+ lqn3HBrub3uP02hINz7azIMoPlsyuDuMu5gRe8L5+i5w/+oQgLqgiSDdT4G0QUolQWkzm6ucP
+ lSR2Y0c1fJyxUXIivzJbr0o07WtlCMw2Ii5nNUESIke36iYYOi6ojzm6NBEwk2G1fz7qtovz8
+ RIRfiC673NGw4SlhIEgXRLb8WFbcvaGd5YzGccnm0egAXgnxspVKez9+OnfdwB0aKYKni67qB
+ wjXwylt/RF3Y7LF89QsuUvaSU2GbVYW6a+Bh9Kli3N2zXjeVN/v9qbyLOvybN6Jcd6AUgQxL+
+ f+fkkskJSyIBcr4OXG7A2YKQnzPHDLFBV6U2Fby/euXAPExnXa0I1QJdc6qXgA6ILiDOYYemi
+ QCFljRzKo+Ep3m76BYqBUl0MVOawy5yDWnXxy0jY2+eJSsGS+yLbNwRbPF1KcHMgVZFQOZc8Q
+ 6OEoLoEHhYdiWZZtTmGQt0f1ibb3yHrWmEQVbw/IAqkKIQ/oDCPhuO/dbuL/iGURHzS+sl53H
+ vx2hPPBhr90+GoCTNYexEvEKHVlHgJVw2OuVQyabNPV9p+ujC8LDIUtBMflNxx48jDA+GHD3B
+ 0umGiseiHTJjBeJ/ImuXGX1glRMmokWianYxEeR3E7Qq3REuRM90V+YjhpOp8QjRxTe49JouV
+ XJDXp07kDLDbcEFmnrnTMigZhLniYvmERAWTpmc4dYXI4VcDsOhztvVNiFZMJ+AqeDa3ib9YU
+ rvpnVd8Z4zZg6prlXqusn4Y8q29yzXK7cTWIaaFuYMm0tOSGKzhYzdt9ufQ8ZYbkdRCF9nCnr
+ AN+amtVvJ0DKD/+mujHQTpVrSHKsPzl/aCxm/SFH/1r5790SG8ZH+brO4HtWdUWtn98O/c0BG
+ fZWRvy7WV1lou80GQt3mLONj9/B8OchrAaQo7NMOgkjV2wsNaz8Dv5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190928_050751_023033_457C8E5D 
-X-CRM114-Status: GOOD (  11.88  )
+X-CRM114-CacheID: sfid-20190928_050751_121148_09E7BD1A 
+X-CRM114-Status: GOOD (  12.29  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.15.18 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (wahrenst[at]gmx.net)
@@ -110,51 +112,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The fixed clocks doesn't form some kind of bus. So let's remove it.
-This fixes the follow DT schema warnings:
-
-clocks: clock@3:reg:0: [3] is too short
-clocks: clock@4:reg:0: [4] is too short
-clocks: $nodename:0: 'clocks' does not match '^(bus|soc|axi|ahb|apb)(@[0-9a-f]+)?$'
-clocks: #size-cells:0:0: 0 is not one of [1, 2]
-clocks: 'ranges' is a required property
-clock@3: 'reg' does not match any of the regexes: 'pinctrl-[0-9]+'
-clock@4: 'reg' does not match any of the regexes: 'pinctrl-[0-9]+'
+The downstream compatible brcm,bcm2835-pl011 hasn't been upstreamed yet.
+So remove it.
 
 Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 ---
- arch/arm/boot/dts/bcm283x.dtsi | 10 ++--------
- 1 file changed, 2 insertions(+), 8 deletions(-)
+ arch/arm/boot/dts/bcm283x.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm/boot/dts/bcm283x.dtsi b/arch/arm/boot/dts/bcm283x.dtsi
-index 2d191fc..f16899d 100644
+index f16899d..ae8296f 100644
 --- a/arch/arm/boot/dts/bcm283x.dtsi
 +++ b/arch/arm/boot/dts/bcm283x.dtsi
-@@ -650,22 +650,16 @@
- 	};
-
- 	clocks {
--		compatible = "simple-bus";
--		#address-cells = <1>;
--		#size-cells = <0>;
--
- 		/* The oscillator is the root of the clock tree. */
--		clk_osc: clock@3 {
-+		clk_osc: clk-osc {
- 			compatible = "fixed-clock";
--			reg = <3>;
- 			#clock-cells = <0>;
- 			clock-output-names = "osc";
- 			clock-frequency = <19200000>;
+@@ -396,7 +396,7 @@
  		};
 
--		clk_usb: clock@4 {
-+		clk_usb: clk-usb {
- 			compatible = "fixed-clock";
--			reg = <4>;
- 			#clock-cells = <0>;
- 			clock-output-names = "otg";
- 			clock-frequency = <480000000>;
+ 		uart0: serial@7e201000 {
+-			compatible = "brcm,bcm2835-pl011", "arm,pl011", "arm,primecell";
++			compatible = "arm,pl011", "arm,primecell";
+ 			reg = <0x7e201000 0x200>;
+ 			interrupts = <2 25>;
+ 			clocks = <&clocks BCM2835_CLOCK_UART>,
 --
 2.7.4
 
