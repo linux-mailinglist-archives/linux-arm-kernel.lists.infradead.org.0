@@ -2,90 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9345C0F33
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Sep 2019 03:32:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B55D0C0FFC
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Sep 2019 08:48:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=JIVFIygT4Rq7fGx6X7lYkf5F/OAOEWdaw84I7JuGzAE=; b=MsHrPTSEGbDZcNvLOBnY5GWnob
-	0G4QiCAApq7UHrmfjePleH/vCstbGf5GAdPCgL/KLC4lHoaGEo8XkUMgEtD6+rUydtQjpToQCml5h
-	BvR/BfYxMxQWPJdxhsKlSwZ4S2yCegonp9ieHV+jVy/U5ffXqrTxmUz8tr4mPsR5+0rOIr80THNnH
-	xKfVMVBnsv1/9SwDi39M/8/GfaAaemSwFSgcS4o1rKSOPGppkSJq0xJPw24tvMDdpe+YUMONn/QHQ
-	uYRpr24dtD0FGDjGUTHtCTobxFyOYrLtNXvJeaTPiXEyrytRAbaSYlnRL4P3KIfugZcYDWCNtzISe
-	uF6d4/hg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oN4duouu+X1eErsKDYIX+CKdBEbL5O5rdjQlsiQR9fs=; b=I27qlifSwcFUxn
+	gybCByAM2W7ppklSqPHI1oWzlRXhbtQfXoFAADVhhvt6atbMom9EtEeMuR1axzIbk09pbvLm0O3CD
+	a2I4lrPJANX7FVg6VLrgmpzMfzYTYRZz4anmbC/jHC/g/ntrZR136nB1d3WMA3V2QtLTL0c7Vfr10
+	xKVh4vB8chjD1buhq3eHS8/V9uDXuVbixTSEp3NV8JTDC+UHSOgxgG8VsaAIkds6zxhmyHiZXfwI9
+	6apgBvjfZH2s0qZm33MYVmLcCp4TpiAR6D2elsKeB8QO3h+VS5fuzPSi1e0EWuBP4rpFGRZn5A2Ui
+	Gkr+7g9UG0oTdjvSeZ0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iE1ah-0001TU-SE; Sat, 28 Sep 2019 01:32:07 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iE1aJ-0001Ih-AC
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Sep 2019 01:31:45 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id DAD1D61359; Sat, 28 Sep 2019 01:31:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1569634302;
- bh=m/+SNT1ylRadZlQdB8fVjW39Gd/vKBoLUGrjef6eP84=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=RI1nEsTNZgzuuIiAOrGLYL/LSzZo5ZrLPjkbmNFJa19OCzMGHHcOmzNKVY1pMs0nW
- N5AhgFKmeNw82wiejvI7iRs0Dzc8GAocncgMZDH/TeN4th64WONFI6Tgb1u+C02BoQ
- Szz76x0YTEX33TnwFjkO2hzh7zcDdA86cm1/oxw4=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
- version=3.4.0
-Received: from jeykumar-linux.qualcomm.com (i-global254.qualcomm.com
- [199.106.103.254])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- (Authenticated sender: jsanka@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 48A1D61215;
- Sat, 28 Sep 2019 01:31:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1569634300;
- bh=m/+SNT1ylRadZlQdB8fVjW39Gd/vKBoLUGrjef6eP84=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=gWltI+e8ODxHtIEtclTtLsrsvPIs5a9B4Gwew/tlufCZvnw6SppeDSq0nMs/tFlje
- UFqToKo/LIIWRdNbhvAbgn6OzKFayULvC1QxqEbhX9fc0hVTCIAcDr2Zy62tdd6QBB
- FV9gw8s2lve5RsiNGyiCQETZyv7Wr/xhnhdi8GHE=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 48A1D61215
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- spf=none smtp.mailfrom=jsanka@codeaurora.org
-From: Jeykumar Sankaran <jsanka@codeaurora.org>
-To: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] drm: add fb max width/height fields to drm_mode_config
-Date: Fri, 27 Sep 2019 18:31:24 -0700
-Message-Id: <1569634284-14147-2-git-send-email-jsanka@codeaurora.org>
-X-Mailer: git-send-email 1.9.1
-In-Reply-To: <1569634284-14147-1-git-send-email-jsanka@codeaurora.org>
-References: <1569634284-14147-1-git-send-email-jsanka@codeaurora.org>
+	id 1iE6WG-0002UA-NP; Sat, 28 Sep 2019 06:47:52 +0000
+Received: from 178.115.242.59.static.drei.at ([178.115.242.59]
+ helo=mail.osadl.at)
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iE6W3-0002Rx-06; Sat, 28 Sep 2019 06:47:41 +0000
+Received: by mail.osadl.at (Postfix, from userid 1001)
+ id 98F565C0864; Sat, 28 Sep 2019 08:47:20 +0200 (CEST)
+Date: Sat, 28 Sep 2019 08:47:20 +0200
+From: Nicholas Mc Guire <der.herr@hofr.at>
+To: Yizhuo <yzhai003@ucr.edu>
+Subject: Re: [PATCH] iio: adc: meson-saradc: Variables could be uninitalized
+ if regmap_read() fails
+Message-ID: <20190928064720.GA24515@osadl.at>
+References: <20190928004642.28932-1-yzhai003@ucr.edu>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190928004642.28932-1-yzhai003@ucr.edu>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190927_183143_421380_8B3EAA6E 
-X-CRM114-Status: GOOD (  13.54  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190927_234739_403827_9E91FEDA 
+X-CRM114-Status: GOOD (  18.73  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
+ 0.0 TVD_RCVD_IP            Message was received from an IP address
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,91 +60,143 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jeykumar Sankaran <jsanka@codeaurora.org>, jcrouse@codeaurora.org,
- seanpaul@chromium.org, robdclark@gmail.com, narmstrong@baylibre.com
-MIME-Version: 1.0
+Cc: csong@cs.ucr.edu, Lars-Peter Clausen <lars@metafoo.de>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>, Nicholas Mc Guire <hofrat@osadl.org>,
+ zhiyunq@cs.ucr.edu, linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
+ linux-amlogic@lists.infradead.org, Thomas Gleixner <tglx@linutronix.de>,
+ Jonathan Cameron <jic23@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The mode_config max width/height values determine the maximum
-resolution the pixel reader can handle. But the same values are
-used to restrict the size of the framebuffer creation. Hardware's
-with scaling blocks can operate on framebuffers larger/smaller than
-that of the pixel reader resolutions by scaling them down/up before
-rendering.
+On Fri, Sep 27, 2019 at 05:46:41PM -0700, Yizhuo wrote:
+> Several functions in this file are trying to use regmap_read() to
+> initialize the specific variable, however, if regmap_read() fails,
+> the variable could be uninitialized but used directly, which is
+> potentially unsafe. The return value of regmap_read() should be
+> checked and handled.
+> 
+> Signed-off-by: Yizhuo <yzhai003@ucr.edu>
 
-This changes adds a separate framebuffer max width/height fields
-in drm_mode_config to allow vendors to set if they are different
-than that of the default max resolution values.
+Just a few minor style issues - contentwise it look correct to me.
+Reviewed-by: Nicholas Mc Guire <hofrat@osadl.org>
 
-Vendors setting these fields should fix their mode_set paths too
-by filtering and validating the modes against the appropriate max
-fields in their mode_valid() implementations.
+> ---
+>  drivers/iio/adc/meson_saradc.c | 28 +++++++++++++++++++++++-----
+>  1 file changed, 23 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/iio/adc/meson_saradc.c b/drivers/iio/adc/meson_saradc.c
+> index 7b28d045d271..c032a64108b4 100644
+> --- a/drivers/iio/adc/meson_saradc.c
+> +++ b/drivers/iio/adc/meson_saradc.c
+> @@ -323,6 +323,7 @@ static int meson_sar_adc_wait_busy_clear(struct iio_dev *indio_dev)
+>  {
+>  	struct meson_sar_adc_priv *priv = iio_priv(indio_dev);
+>  	int regval, timeout = 10000;
+> +	int ret;
+>  
+>  	/*
+>  	 * NOTE: we need a small delay before reading the status, otherwise
+> @@ -331,7 +332,9 @@ static int meson_sar_adc_wait_busy_clear(struct iio_dev *indio_dev)
+>  	 */
+>  	do {
+>  		udelay(1);
+> -		regmap_read(priv->regmap, MESON_SAR_ADC_REG0, &regval);
+> +		ret = regmap_read(priv->regmap, MESON_SAR_ADC_REG0, &regval);
+> +		if (ret)
+> +			return ret;
+>  	} while (FIELD_GET(MESON_SAR_ADC_REG0_BUSY_MASK, regval) && timeout--);
+>  
+>  	if (timeout < 0)
+> @@ -358,7 +361,11 @@ static int meson_sar_adc_read_raw_sample(struct iio_dev *indio_dev,
 
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-Signed-off-by: Jeykumar Sankaran <jsanka@codeaurora.org>
----
- drivers/gpu/drm/drm_framebuffer.c | 15 +++++++++++----
- include/drm/drm_mode_config.h     |  3 +++
- 2 files changed, 14 insertions(+), 4 deletions(-)
+any reason not to declear ret in the declaration block ?
+so just for consistency with coding style within meson_saradc.c
+this might be:
 
-diff --git a/drivers/gpu/drm/drm_framebuffer.c b/drivers/gpu/drm/drm_framebuffer.c
-index 5756431..2083168 100644
---- a/drivers/gpu/drm/drm_framebuffer.c
-+++ b/drivers/gpu/drm/drm_framebuffer.c
-@@ -300,14 +300,21 @@ struct drm_framebuffer *
- 		return ERR_PTR(-EINVAL);
- 	}
- 
--	if ((config->min_width > r->width) || (r->width > config->max_width)) {
-+	if ((config->min_width > r->width) ||
-+	    (!config->max_fb_width && r->width > config->max_width) ||
-+	    (config->max_fb_width && r->width > config->max_fb_width)) {
- 		DRM_DEBUG_KMS("bad framebuffer width %d, should be >= %d && <= %d\n",
--			  r->width, config->min_width, config->max_width);
-+			r->width, config->min_width, config->max_fb_width ?
-+			config->max_fb_width : config->max_width);
- 		return ERR_PTR(-EINVAL);
- 	}
--	if ((config->min_height > r->height) || (r->height > config->max_height)) {
-+
-+	if ((config->min_height > r->height) ||
-+	    (!config->max_fb_height && r->height > config->max_height) ||
-+	    (config->max_fb_height && r->height > config->max_fb_height)) {
- 		DRM_DEBUG_KMS("bad framebuffer height %d, should be >= %d && <= %d\n",
--			  r->height, config->min_height, config->max_height);
-+			r->height, config->min_height, config->max_fb_width ?
-+			config->max_fb_height : config->max_height);
- 		return ERR_PTR(-EINVAL);
- 	}
- 
-diff --git a/include/drm/drm_mode_config.h b/include/drm/drm_mode_config.h
-index 3bcbe30..c6394ed 100644
---- a/include/drm/drm_mode_config.h
-+++ b/include/drm/drm_mode_config.h
-@@ -339,6 +339,8 @@ struct drm_mode_config_funcs {
-  * @min_height: minimum fb pixel height on this device
-  * @max_width: maximum fb pixel width on this device
-  * @max_height: maximum fb pixel height on this device
-+ * @max_fb_width: maximum fb buffer width if differs from max_width
-+ * @max_fb_height: maximum fb buffer height if differs from  max_height
-  * @funcs: core driver provided mode setting functions
-  * @fb_base: base address of the framebuffer
-  * @poll_enabled: track polling support for this device
-@@ -523,6 +525,7 @@ struct drm_mode_config {
- 
- 	int min_width, min_height;
- 	int max_width, max_height;
-+	int max_fb_width, max_fb_height;
- 	const struct drm_mode_config_funcs *funcs;
- 	resource_size_t fb_base;
- 
--- 
-The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-a Linux Foundation Collaborative Project
+	int regval, fifo_chan, fifo_val, count;
++	int ret;
 
+>  		return -EINVAL;
+>  	}
+>  
+> -	regmap_read(priv->regmap, MESON_SAR_ADC_FIFO_RD, &regval);
+> +	int ret = regmap_read(priv->regmap, MESON_SAR_ADC_FIFO_RD, &regval);
+
++	ret = regmap_read(priv->regmap, MESON_SAR_ADC_FIFO_RD, &regval);
+
+> +
+> +	if (ret)
+> +		return ret;
+> +
+>  	fifo_chan = FIELD_GET(MESON_SAR_ADC_FIFO_RD_CHAN_ID_MASK, regval);
+>  	if (fifo_chan != chan->address) {
+>  		dev_err(&indio_dev->dev,
+> @@ -491,6 +498,7 @@ static int meson_sar_adc_lock(struct iio_dev *indio_dev)
+>  {
+>  	struct meson_sar_adc_priv *priv = iio_priv(indio_dev);
+>  	int val, timeout = 10000;
+> +	int ret;
+>  
+>  	mutex_lock(&indio_dev->mlock);
+>  
+> @@ -506,7 +514,10 @@ static int meson_sar_adc_lock(struct iio_dev *indio_dev)
+>  		 */
+>  		do {
+>  			udelay(1);
+> -			regmap_read(priv->regmap, MESON_SAR_ADC_DELAY, &val);
+> +			ret = regmap_read(priv->regmap,
+> +					MESON_SAR_ADC_DELAY, &val);
+
+checkpatch does not fuss here but the continuation should be alligned
+witht the ( here
+
+> +			if (ret)
+> +				return ret;
+>  		} while (val & MESON_SAR_ADC_DELAY_BL30_BUSY && timeout--);
+>  
+>  		if (timeout < 0) {
+> @@ -784,7 +795,10 @@ static int meson_sar_adc_init(struct iio_dev *indio_dev)
+>  		 * BL30 to make sure BL30 gets the values it expects when
+>  		 * reading the temperature sensor.
+>  		 */
+> -		regmap_read(priv->regmap, MESON_SAR_ADC_REG3, &regval);
+> +		ret = regmap_read(priv->regmap, MESON_SAR_ADC_REG3, &regval);
+> +		if (ret)
+> +			return ret;
+> +
+>  		if (regval & MESON_SAR_ADC_REG3_BL30_INITIALIZED)
+>  			return 0;
+>  	}
+> @@ -1014,7 +1028,11 @@ static irqreturn_t meson_sar_adc_irq(int irq, void *data)
+>  	unsigned int cnt, threshold;
+>  	u32 regval;
+
+same as above
+
++       int ret;
+
+>  
+> -	regmap_read(priv->regmap, MESON_SAR_ADC_REG0, &regval);
+> +	int ret = regmap_read(priv->regmap, MESON_SAR_ADC_REG0, &regval);
+
++	ret = regmap_read(priv->regmap, MESON_SAR_ADC_REG0, &regval);
+
+> +
+> +	if (ret)
+> +		return ret;
+> +
+>  	cnt = FIELD_GET(MESON_SAR_ADC_REG0_FIFO_COUNT_MASK, regval);
+>  	threshold = FIELD_GET(MESON_SAR_ADC_REG0_FIFO_CNT_IRQ_MASK, regval);
+>  
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
