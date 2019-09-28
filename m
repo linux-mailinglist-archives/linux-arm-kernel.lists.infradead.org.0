@@ -2,36 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5837C0F27
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Sep 2019 03:29:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCD35C0F29
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Sep 2019 03:29:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=yi4egOBiPIe5jpC0lfNzrFY9jqHk1saFNpUYWXcag74=; b=Po8
-	3UBZpsEeyZ2O3TEO5FAunPK4EWeOpQ/QmSrjPktrcidgz3bA/GwHhNqKia+DI1rX6vwHn+PE3f3DR
-	E2MrcyYgoSo+UuGMjDnLl3hVEUKHQKcVyZUX11qHsU5xN6KsLRSwsemd+ESsKz/hgW2rOeEQDajnB
-	vWZ7ZYnjjYcrySsYrRa4bE/FOY8vnf6Pi1hrD9PJgQaYK3poxmkwFh3p/OoDuXAG+qOW32xdO8Dl7
-	kHNW/hW9G5Chl2TBhq/XO5mpqwiSPyV0XbWWTgM7KlBbElRGbiJOXoPW9CvSMx9OxQPsANWwWqfuA
-	b+jhhDkBkv8KUshMOyeM4euJ6VEkrzg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=JIVFIygT4Rq7fGx6X7lYkf5F/OAOEWdaw84I7JuGzAE=; b=d/L9Vu5+Oi4xKwZS39M4ZW+4gr
+	jXZiXW7zDNKrEPNsLblDl6uCPELuww2sMrxbdMioVF1jRO80DAs2UZjFExRe+X8k95HZMyhR0N592
+	rUN56QQRKSqaavsOhvXmnGQf0ilRVwFY2kQE1L57h+FZviuruu1JtqhuLMHcHS67V4BpR6yywix/z
+	GxFMy+HAWrFvFMUBHfONGfnJQZ9SR03kdVhIo+Uqs8eK6xoaew+AIT+5JPu0XcT0JTx7BejqU7qfu
+	M+XHq7+5zUJ8fLaPYEqKJ3OOxZTNnxifwenbwMsz8KJGoEgjlhkrQ1TwHA099IRWFcTqEOl4uOlUP
+	bMAnwuKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iE1Xs-0007bg-2C; Sat, 28 Sep 2019 01:29:12 +0000
+	id 1iE1YA-0007uE-7S; Sat, 28 Sep 2019 01:29:30 +0000
 Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iE1Xf-0007Yf-CY
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Sep 2019 01:29:00 +0000
+ id 1iE1Y0-0007tT-MK
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Sep 2019 01:29:22 +0000
 Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 1169F611DC; Sat, 28 Sep 2019 01:28:58 +0000 (UTC)
+ id 5C65F61242; Sat, 28 Sep 2019 01:29:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1569634139;
- bh=kbPZarCkYnlJWtdPyEyjjRJbhqhbOcPRYQvgulMnMvY=;
- h=From:To:Cc:Subject:Date:From;
- b=N32Lfa0Y7LRi1uThRZ/7c7Srgdep5Yoos4XJTzy0HAf6KIJ6e3Z1rvkyBr7Y7eVSP
- ONpxLfF0k7bgoBP/KYW9kY8Eg98kzae7Fev+Fox6QzpolRzscKxf7a3MbcgTEoMczB
- mWcqbSwhxAKS6yka4vmpKMXEns8jmOVQYlaMrSgk=
+ s=default; t=1569634160;
+ bh=m/+SNT1ylRadZlQdB8fVjW39Gd/vKBoLUGrjef6eP84=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=oi+Ph7Vappbne3npRkZ6MeD+lNwg7p5YgfNDSDcbgL+9aPewzYZdGBmHEYFEXcLv8
+ +O7awEY5dbMi1NIdlijWU88Vk9sGvVzL01eiGBzJi5yDad6PZwfLBiaKvBhFBsh4ut
+ /8QwdCjDavmuEgM/22YbkX/FFxhW1eyL42Y4Wz8k=
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  pdx-caf-mail.web.codeaurora.org
 X-Spam-Level: 
@@ -43,16 +44,16 @@ Received: from jeykumar-linux.qualcomm.com (i-global254.qualcomm.com
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
  (Authenticated sender: jsanka@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id DECE9611DC;
- Sat, 28 Sep 2019 01:28:57 +0000 (UTC)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id DE709611D1;
+ Sat, 28 Sep 2019 01:29:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1569634138;
- bh=kbPZarCkYnlJWtdPyEyjjRJbhqhbOcPRYQvgulMnMvY=;
- h=From:To:Cc:Subject:Date:From;
- b=O0L0ahWkKvLy6IZGm3VGL/RvsTxlYN41OBCib2zthF35LJ6AufeCnvVlpxMKsSCVf
- 9CSQ1/1pRUq23Z+PTxErUhLG/+BKtAZzcyUhPH/aOJv58t5L7uBgPeAIM1wKeMZXVz
- Tf8JQDuMvPwoa/7EcEPHvZ3E5yKHNcTQbzDtCtO8=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org DECE9611DC
+ s=default; t=1569634159;
+ bh=m/+SNT1ylRadZlQdB8fVjW39Gd/vKBoLUGrjef6eP84=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=h6pZjOQgOd2DEBcM8QQGQMWPVGaH4T/lHuZNiJrNEC83GtpsvXDS2yt1asqWGg2B1
+ Yt2WCZYZEpHqjxBfjpgQWKStzp5NANfuL+KkOzi+AdaGD36k0V91cmBnssOHdwsyQ9
+ NXWLwfsApOixzdz2aw0fSqfWU24MLfnLv1jrgkGE=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org DE709611D1
 Authentication-Results: pdx-caf-mail.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: pdx-caf-mail.web.codeaurora.org;
@@ -60,14 +61,15 @@ Authentication-Results: pdx-caf-mail.web.codeaurora.org;
 From: Jeykumar Sankaran <jsanka@codeaurora.org>
 To: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] Add framebuffer max width/height fields to drm_mode_config
-Date: Fri, 27 Sep 2019 18:28:50 -0700
-Message-Id: <1569634131-13875-1-git-send-email-jsanka@codeaurora.org>
+Subject: [PATCH] drm: add fb max width/height fields to drm_mode_config
+Date: Fri, 27 Sep 2019 18:28:51 -0700
+Message-Id: <1569634131-13875-2-git-send-email-jsanka@codeaurora.org>
 X-Mailer: git-send-email 1.9.1
+In-Reply-To: <1569634131-13875-1-git-send-email-jsanka@codeaurora.org>
+References: <1569634131-13875-1-git-send-email-jsanka@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190927_182859_455032_DD41F9D8 
-X-CRM114-Status: UNSURE (   7.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190927_182920_776628_AF44A044 
+X-CRM114-Status: GOOD (  13.44  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -103,20 +105,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Below two discussion threads will provide the context behind this patch.
+The mode_config max width/height values determine the maximum
+resolution the pixel reader can handle. But the same values are
+used to restrict the size of the framebuffer creation. Hardware's
+with scaling blocks can operate on framebuffers larger/smaller than
+that of the pixel reader resolutions by scaling them down/up before
+rendering.
 
-https://www.spinics.net/lists/dri-devel/msg229070.html
-https://lore.kernel.org/linux-arm-msm/db26145b-3f64-a334-f698-76f972332881@baylibre.com/T/
+This changes adds a separate framebuffer max width/height fields
+in drm_mode_config to allow vendors to set if they are different
+than that of the default max resolution values.
 
-Seperating out the core framework patch from vendor implementation.
+Vendors setting these fields should fix their mode_set paths too
+by filtering and validating the modes against the appropriate max
+fields in their mode_valid() implementations.
 
-Jeykumar Sankaran (1):
-  drm: add fb max width/height fields to drm_mode_config
-
- drivers/gpu/drm/drm_framebuffer.c | 17 +++++++++++++----
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+Signed-off-by: Jeykumar Sankaran <jsanka@codeaurora.org>
+---
+ drivers/gpu/drm/drm_framebuffer.c | 15 +++++++++++----
  include/drm/drm_mode_config.h     |  3 +++
- 2 files changed, 16 insertions(+), 4 deletions(-)
+ 2 files changed, 14 insertions(+), 4 deletions(-)
 
+diff --git a/drivers/gpu/drm/drm_framebuffer.c b/drivers/gpu/drm/drm_framebuffer.c
+index 5756431..2083168 100644
+--- a/drivers/gpu/drm/drm_framebuffer.c
++++ b/drivers/gpu/drm/drm_framebuffer.c
+@@ -300,14 +300,21 @@ struct drm_framebuffer *
+ 		return ERR_PTR(-EINVAL);
+ 	}
+ 
+-	if ((config->min_width > r->width) || (r->width > config->max_width)) {
++	if ((config->min_width > r->width) ||
++	    (!config->max_fb_width && r->width > config->max_width) ||
++	    (config->max_fb_width && r->width > config->max_fb_width)) {
+ 		DRM_DEBUG_KMS("bad framebuffer width %d, should be >= %d && <= %d\n",
+-			  r->width, config->min_width, config->max_width);
++			r->width, config->min_width, config->max_fb_width ?
++			config->max_fb_width : config->max_width);
+ 		return ERR_PTR(-EINVAL);
+ 	}
+-	if ((config->min_height > r->height) || (r->height > config->max_height)) {
++
++	if ((config->min_height > r->height) ||
++	    (!config->max_fb_height && r->height > config->max_height) ||
++	    (config->max_fb_height && r->height > config->max_fb_height)) {
+ 		DRM_DEBUG_KMS("bad framebuffer height %d, should be >= %d && <= %d\n",
+-			  r->height, config->min_height, config->max_height);
++			r->height, config->min_height, config->max_fb_width ?
++			config->max_fb_height : config->max_height);
+ 		return ERR_PTR(-EINVAL);
+ 	}
+ 
+diff --git a/include/drm/drm_mode_config.h b/include/drm/drm_mode_config.h
+index 3bcbe30..c6394ed 100644
+--- a/include/drm/drm_mode_config.h
++++ b/include/drm/drm_mode_config.h
+@@ -339,6 +339,8 @@ struct drm_mode_config_funcs {
+  * @min_height: minimum fb pixel height on this device
+  * @max_width: maximum fb pixel width on this device
+  * @max_height: maximum fb pixel height on this device
++ * @max_fb_width: maximum fb buffer width if differs from max_width
++ * @max_fb_height: maximum fb buffer height if differs from  max_height
+  * @funcs: core driver provided mode setting functions
+  * @fb_base: base address of the framebuffer
+  * @poll_enabled: track polling support for this device
+@@ -523,6 +525,7 @@ struct drm_mode_config {
+ 
+ 	int min_width, min_height;
+ 	int max_width, max_height;
++	int max_fb_width, max_fb_height;
+ 	const struct drm_mode_config_funcs *funcs;
+ 	resource_size_t fb_base;
+ 
 -- 
 The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
 a Linux Foundation Collaborative Project
