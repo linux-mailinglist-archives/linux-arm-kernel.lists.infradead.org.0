@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1B5EC10C5
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Sep 2019 14:09:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A16F4C10C3
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Sep 2019 14:09:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,68 +11,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=fsUpXqj0gBYadgWYdEsLEKiTZimxsVq/R3+PkEBRwyY=; b=B9t+/8iRtoC2+zHrESqmTI3vfV
-	pN1e8qUoVx99FzFwGCopABIpek3Y24DBUmiFj4LeAhUnuWAu7mMIf9x1vPBdKnUtkDuEXcs2h9ahZ
-	rS47pd3eZoE8etqDhNVKkZveoe+yP+ruOTguULkYJLhEw2jywuHDYULP2ZHQmBMrCUoXCiVFWcMJB
-	jAsn85WMBUVq4yfv72FIFUolM6J9QK3kHW9C80rfLgj1l57crb8tgTzHYuBI16F2fxDFCSFflEZUL
-	PgtRe1edYMm5XUIDdg8BbQQu1b85ICiqVBBotBsQjVIjyX1sByKyptgbesaoK951tlSfKOQ7Oj7bG
-	HzKU4PXg==;
+	bh=bjIUaec9Z2m0xOWVd3Q2r6+IUINQzJ2lG8RXgDpcMNg=; b=EoXjGCWRtgKvFvXYBDNh5FQK1V
+	+LU4b7L6E5qkglmpe57Xa+kbM7yqK+okMfcxbIpVYphaFYJGvOtet1pW0DFxYMCh1M7FCFc1GNPXU
+	+y29WmQHhvLLWh4fjnP9q4DFTcsKGXApnhlUmO4ZB/nV34KfLar0g09XZ57N/rVSZ4EloiKTFxs5V
+	SYS9PGlqxFL2hZ7f1Jk/kQBgGnx8C/BDgDfHJiaXDZDakt1cC8kcLd9WqobHZk2xm9DAg9Y0wyGcT
+	z9AAB7H7hsamFMqbNKODziWtjH250Nu+WAlA5nQEpyBx+cstvx9Uz4aEWfEoQeo+egJ/ucJ5OC8Nd
+	CaVggWOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEBXt-0008CW-Ep; Sat, 28 Sep 2019 12:09:53 +0000
+	id 1iEBXP-0007kZ-I1; Sat, 28 Sep 2019 12:09:23 +0000
 Received: from mout.gmx.net ([212.227.15.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEBVv-0006Ze-Dt
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Sep 2019 12:07:56 +0000
+ id 1iEBVv-0006a1-UY
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Sep 2019 12:07:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1569672461;
- bh=LcMfsnxhO6kOSa0AnNgyK4h2O4iLYDQzsFLyoMwIwo0=;
+ s=badeba3b8450; t=1569672458;
+ bh=hfLTzkanvHdv0805iskYFMrxghx9/3ubOyaD3u2YZUY=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=LJMWIwR6fr4u/J0cYrsdwudckU5DsEl7uoVq3B3GnVHdVv3mPGTamGMc8yJohKfBr
- muhF4QzWMRkD8UqNeXRH+esr9ak1Fu/Z/yRLHRRPkqP+3GyxdvWOCKeEl0oBnEy42o
- 5784rCn/75wCGNXLXMMzWLkrVpu65uSONrlNk3KQ=
+ b=FtEJEaY35SSLY0AJoBw0G9Ie8oJOAWqcnInt5Ic5QKMqyKjRuwA+ONAavEgU1Rgr1
+ zy+99Ag/jSTgjoIWBiKCQQbjBBRxu5hY5KNOM3xilQ5xTWWA3x/sNvGk7rqbGGcDMk
+ CntXxdJ17OKRBtV2xzMucFyrjENsw8g/tpmYEGqQ=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.130]) by mail.gmx.com
  (mrgmx005 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 1MtwZ4-1htLIz3GRQ-00uM7d; Sat, 28 Sep 2019 14:07:37 +0200
+ 1MHGCo-1iRR4E0xoe-00DDJd; Sat, 28 Sep 2019 14:07:38 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>
-Subject: [PATCH V3 4/8] dt-bindings: arm: Convert BCM2835 board/soc bindings
- to json-schema
-Date: Sat, 28 Sep 2019 14:07:10 +0200
-Message-Id: <1569672435-19823-5-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH V3 5/8] dt-bindings: arm: bcm2835: Add Raspberry Pi 4 to DT
+ schema
+Date: Sat, 28 Sep 2019 14:07:11 +0200
+Message-Id: <1569672435-19823-6-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1569672435-19823-1-git-send-email-wahrenst@gmx.net>
 References: <1569672435-19823-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:qCLesiR7aMyeuVf0Jo2XSEWUMK56WxEpBx6SzZOdv1TuiLRnkOp
- FU2nqvIFrW+ITQAWS8kh9iMcwjS6r9cSwLHjuNH7aD4DLf10a++s2QAGvO7i5/1MICdSume
- yEgpUfKnpBvtrociexzhl5NexVys3Q/1jCiIv4A2Eq4dGjBs6Th8iH0F+i33kG8gAMSDmiM
- 5687Z+2Ok/TB6TB67OXkA==
+X-Provags-ID: V03:K1:oQxad6CfBtrzG7FQm3rKGx9Rbi/ZJs5SyFOtihvCF2Dk9OnwMHh
+ tUmrUo8XmcrRCWKTKT62nO+g3zr5MWkifkP643JLzGoeujJq6eGOYKrsR9xcU55sQt+GwGE
+ 8xLbrN1ppl1rpLhRwTWERXm6pXpryf4kLYOFEUQWnWOeFayq6kdAUnpFiitX9MPhZKVLDFr
+ jaN/2aQTjxBXkLwvBl/Ww==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:x7zZ/15bT08=:WUtswYPaaSeE68BNhB9CCP
- L/xSpDqdwE4NSac3JJLPvxKG7Au2zdGeoyaFREbvnTXjHrb+LoV/Svg2YjFmE52EyCHNFiIoI
- 2pZai13x9DeODRPC21U4NENOZGAh9gu/rIU7JpiWkTXMoqGDOXB3q9UrvRAJoTxBPDdW8yaDt
- W/osS1/yO6MgYRuwEQsI+q7w32e12JXRpqIpkfBrid/1ZkQZ0vMho+NLZhYolnY6tEmfPHxTB
- 51lMSJtjNHMHSKKcoB4m2D6Pemv/W1N1SPznFyD+Fn2K8z+VPCmHRcXl2ZTcBprHy+jwHCMgL
- J9vBaVGpDtmr8oPt+qUy0xjQh8HgMBzxJnnAegJL9mvyx/rFKIYvRkykMVIHe7GNgrab4W9mU
- K3c2FF5NUWmcozYmXc17BKcUcy5Hd1itOh8VyXOeW+GksxQLt3bAGdExonjhYUyhEcDWEa+/W
- YEomW0pqpJ1lax2+BEbVaZg9pz9cxs3ETS1eqw7GxJV1p4pUT68hs4FTaFqVMR9NliWAhqn7u
- 6ciS8l1jwDBoE0m4s/46PLSGka1IL7yjUK7hYKvdE28SBDPknZlNQyi0e5mNPGuGBTpI7CvsE
- irOSxEswBEjrAJkI08nwifuBRKCGCaNeKGMtasSWgYjtKel0FOAd0gvJqLTbNqlVLA+X/2Esp
- wCroaMwHI1/+TTuigklJHQxCygkfMC1khNxW3JNGMKJWfLyE/bG1nLlhukwQ0pSLbyn96JDfh
- dKYhCGQ5esvMIDV9SAdpWsOrL0hTFPDPBrNAHvXqxpJRUnD3GOdxXg4MCosB5M4cUqaF6ROX0
- 2DuCwdC63sCHkX0XmsWurr5xiqjNEkC09pAi3J4ANFczaoc60J6BNYGHdwmJONNjPUthrdmWr
- vEZ9dQaQBSJ9qriwtw2t8fpBZe2nf7hqKigAD+CE6kv4yIB+RXNDFpJPWXNsBuhNs5jLOFewC
- 7FPxVguy6x/ior3Ef8QxjLXRjpgA4rxyTrvFr12V9KtXokMzNROH7g5xcOGVvi0NG055bfJ/9
- n8OpmrWfYozG5YYYMigMJ4b4QI8GYJpL5nf6gtCInIMgCZe/90LAgbiX5XbIbIBQDwRehXr5a
- /MYLhPVeLqUGdP8RdYb+ziYArbJ3iDL/hgrqNw2jN72VvWuGgWiRG96/um9ViP86jUZn/mhhj
- pyteNH1nyTGme49r8/J3oKpNN1XzOMXSP8oPU1qM6X6IjNeK8A4I0/OD/TLZe1FD1s25hi8DC
- vwMhHYz2QqDfwx+Dx96lj2SorMZ/OTxv1wgr3bg==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:Fsu58mNrVAg=:9qi++y7V/ZSNUId2RpTSc3
+ +frP7M5zoAMAVppp6iLSmNUSpc3g49oTX2qRpFgc1z220BfEiD9ASea7dxbLhh3RFu5XM8LMs
+ +Abgl6+DJ7MU3sBEAR0cTauk1bnm0nJ+dflAkpr1SEBR6vtxqkAmx8+80GNw8iaDnE/R+a4Xy
+ 09e1BCdk4laVvMnAIlzcQHqCBnx8unLAdjHb9yLyx8ucBNQkdbz7YIwsU6cds2Lie1I+X+Iqp
+ NHqBrqy3RLTJ4mxCt4fwi8ONASZGNnP52OLOUj2UJkkKhPWiYfuPGX74dPyThvEQZM/IPTRq6
+ KrVmOcmca3UT8gQRpmMZCTWHsIs3kNhclIO4S9p7aYwfuy6lXkCJboCY+R2A1f5Spdnr4xgi8
+ rNU5Bb55vCDgg0chmgFn7wlbHE6lTtfQmLAyMmjJ32YUIGPrcNGOcdANepoz3ZolExKF19nkw
+ NfQZcyFvW5GOKWGBHPOWMy1LyWnYuShbGMbXp2VmgSobwLpjnMuGU5fLNmMCPJVTVE9Q41w4x
+ mCVB4/reD81DQswKlNjk1mSxeTf5qzQgfW2qsNGd8NxlkAFg7IjY92TfsiB1x2mvDmBi88EqN
+ 8QHQZnJnst4g3us4+xbv1Ye8hsMxz32zS7kLBUNLRdFm+jBAT7dWrUYi1lQMqNSI30zZpSxIG
+ TNbZ0bTYzpWTBbKlntg60yHp5ACHiSfwtL14nuNgJcduVXPDREk5rWlSno7CB7jWCQ/jnU/SX
+ cq9C2NjDyIwAU6/6H32uAnoMNA2Thx9bh0uhNP1t0XTIsUMVH0iGULDDmQKriheYBLNPT8hM9
+ YBXDbmxCDVl4dvYoB/BiG/OwByS6DbjDRWlRpWFKREE9aYgcb++W4QziJPgXUMdtrNStAq8KT
+ IVfvsvfup9NjObbHrHGmA31ez6BgP3OEd74qZOI1Jb8svUdjWeF4JgFsG0UbYraYmWXgTQBjt
+ CI34cJwp0eV7kkg4iccK5gTUr0Bi3bMNpVKPeVda/wjKeSPCW6QxYx2DbKCt/rx1Rfd/LvPvv
+ 0HAv7iZ+L2rKAm56zjMohOGNa056EMIrQBy892of7oxkC+SSNgqph1tkva5vKWReuq5YzEPE2
+ xx9pcLf8rC9lNmrgHzd410jo3d4QvL68tlmXHMXS1JFV6pL6e+VNK1qOCJUanQ3F9f09tabxg
+ 2+z8AJ+YrtUoOcbDXgK5B/Lsz9aYD01ErkOndStLeJiLeB44myFj9iyxrHVzc+bbSOS8Dor5n
+ JrP5Hfrmh5zT45ufe0eeQxKJpx+9CC3ClRKyZSw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190928_050751_806185_F70847AF 
-X-CRM114-Status: GOOD (  12.56  )
+X-CRM114-CacheID: sfid-20190928_050752_310518_32959526 
+X-CRM114-Status: UNSURE (   9.74  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -111,145 +112,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the BCM2835/6/7 SoC bindings to DT schema format using json-schema.
-All the other Broadcom boards are maintained by Florian Fainelli.
+Add new Raspberry Pi 4 to DT schema.
 
 Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 Acked-by: Eric Anholt <eric@anholt.net>
 ---
- .../devicetree/bindings/arm/bcm/bcm2835.yaml       | 48 ++++++++++++++++
- .../devicetree/bindings/arm/bcm/brcm,bcm2835.txt   | 67 ----------------------
- 2 files changed, 48 insertions(+), 67 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/arm/bcm/bcm2835.yaml
- delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm2835.txt
+ Documentation/devicetree/bindings/arm/bcm/bcm2835.yaml | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/arm/bcm/bcm2835.yaml b/Documentation/devicetree/bindings/arm/bcm/bcm2835.yaml
-new file mode 100644
-index 0000000..67bf9e2
---- /dev/null
+index 67bf9e2..dd52e29 100644
+--- a/Documentation/devicetree/bindings/arm/bcm/bcm2835.yaml
 +++ b/Documentation/devicetree/bindings/arm/bcm/bcm2835.yaml
-@@ -0,0 +1,48 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/arm/bcm/bcm2835.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Broadcom BCM2711/BCM2835 Platforms Device Tree Bindings
-+
-+maintainers:
-+  - Eric Anholt <eric@anholt.net>
-+  - Stefan Wahren <wahrenst@gmx.net>
-+
-+properties:
-+  $nodename:
-+    const: '/'
-+  compatible:
-+    oneOf:
-+      - description: BCM2835 based Boards
+@@ -15,6 +15,12 @@ properties:
+     const: '/'
+   compatible:
+     oneOf:
++      - description: BCM2711 based Boards
 +        items:
 +          - enum:
-+              - raspberrypi,model-a
-+              - raspberrypi,model-a-plus
-+              - raspberrypi,model-b
-+              - raspberrypi,model-b-i2c0  # Raspberry Pi Model B (no P5)
-+              - raspberrypi,model-b-rev2
-+              - raspberrypi,model-b-plus
-+              - raspberrypi,compute-module
-+              - raspberrypi,model-zero
-+              - raspberrypi,model-zero-w
-+          - const: brcm,bcm2835
++              - raspberrypi,4-model-b
++          - const: brcm,bcm2711
 +
-+      - description: BCM2836 based Boards
-+        items:
-+          - enum:
-+              - raspberrypi,2-model-b
-+          - const: brcm,bcm2836
-+
-+      - description: BCM2837 based Boards
-+        items:
-+          - enum:
-+              - raspberrypi,3-model-a-plus
-+              - raspberrypi,3-model-b
-+              - raspberrypi,3-model-b-plus
-+              - raspberrypi,3-compute-module
-+              - raspberrypi,3-compute-module-lite
-+          - const: brcm,bcm2837
-+
-+...
-diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm2835.txt b/Documentation/devicetree/bindings/arm/bcm/brcm,bcm2835.txt
-deleted file mode 100644
-index 245328f..0000000
---- a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm2835.txt
-+++ /dev/null
-@@ -1,67 +0,0 @@
--Broadcom BCM2835 device tree bindings
---------------------------------------------
--
--Raspberry Pi Model A
--Required root node properties:
--compatible = "raspberrypi,model-a", "brcm,bcm2835";
--
--Raspberry Pi Model A+
--Required root node properties:
--compatible = "raspberrypi,model-a-plus", "brcm,bcm2835";
--
--Raspberry Pi Model B
--Required root node properties:
--compatible = "raspberrypi,model-b", "brcm,bcm2835";
--
--Raspberry Pi Model B (no P5)
--early model B with I2C0 rather than I2C1 routed to the expansion header
--Required root node properties:
--compatible = "raspberrypi,model-b-i2c0", "brcm,bcm2835";
--
--Raspberry Pi Model B rev2
--Required root node properties:
--compatible = "raspberrypi,model-b-rev2", "brcm,bcm2835";
--
--Raspberry Pi Model B+
--Required root node properties:
--compatible = "raspberrypi,model-b-plus", "brcm,bcm2835";
--
--Raspberry Pi 2 Model B
--Required root node properties:
--compatible = "raspberrypi,2-model-b", "brcm,bcm2836";
--
--Raspberry Pi 3 Model A+
--Required root node properties:
--compatible = "raspberrypi,3-model-a-plus", "brcm,bcm2837";
--
--Raspberry Pi 3 Model B
--Required root node properties:
--compatible = "raspberrypi,3-model-b", "brcm,bcm2837";
--
--Raspberry Pi 3 Model B+
--Required root node properties:
--compatible = "raspberrypi,3-model-b-plus", "brcm,bcm2837";
--
--Raspberry Pi Compute Module
--Required root node properties:
--compatible = "raspberrypi,compute-module", "brcm,bcm2835";
--
--Raspberry Pi Compute Module 3
--Required root node properties:
--compatible = "raspberrypi,3-compute-module", "brcm,bcm2837";
--
--Raspberry Pi Compute Module 3 Lite
--Required root node properties:
--compatible = "raspberrypi,3-compute-module-lite", "brcm,bcm2837";
--
--Raspberry Pi Zero
--Required root node properties:
--compatible = "raspberrypi,model-zero", "brcm,bcm2835";
--
--Raspberry Pi Zero W
--Required root node properties:
--compatible = "raspberrypi,model-zero-w", "brcm,bcm2835";
--
--Generic BCM2835 board
--Required root node properties:
--compatible = "brcm,bcm2835";
+       - description: BCM2835 based Boards
+         items:
+           - enum:
 --
 2.7.4
 
