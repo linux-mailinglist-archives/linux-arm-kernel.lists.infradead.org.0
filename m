@@ -2,58 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFE6DC1956
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 22:02:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EEB01C195A
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 22:02:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lH4L5GS3GaC7d6CIfD2ZQa2jQEL9qLXdWLvPDPfL4qI=; b=H770U0W6GSYPBR
-	DvDnF0UTw4CPyyB2oepyKDvUwSmEsbKijuere/RDkVtFCPcuBZv2nAfzgrvbH8TjlSymzdD/nEhST
-	xZPvfAMZvtBQjOYaUFeSQ9hjd0JtrIUAN47d+xOkweCot2yiwKy9s3GU3M2vwMfKWnLQOXxOdBhMV
-	zSKgYUGJEBJINHilIHtJyzQeyjewvjXb4Cw23VkMwoRtGZGypXoO8lH1VHDD+uBxd3iDO0HQxfXOL
-	3rvZ1pvJ/CIftIPJW508T6zOXPILg0Y00DX9+pRQyswlKaZRQqccmBz1uA5/Tl0l5n+/DcenHmV9h
-	iVukZCSZNb+Qgo2UCocA==;
+	List-Owner; bh=N+SfyHdmfc4mIg7XUk6ueI1Ir5GQHgYtbSgIIvIRiMg=; b=PD7hCBGM4QXrJn
+	O0ZVM+ftq4OwC9qWa9ptH/djXMkACL1a0a8iBVnS+DLoKv/BEbkTAR+e0HyLTZIJhNBZlLy6cZZxJ
+	rywdkv4PJgiiJlsmsIxaEb2AxEeGzCpk7asDBgwYD3FJYJYUN7EQNRLIofEP+pyJgyy6WW7j10cY6
+	sR3Wwla3x4OBTsdWs9foVUTWNTX9K+v2+DMS3DDe1ja2PqFYJCLuuRG/Hgl23UvW+eAV/JFpPM5rS
+	KIy6NRsRLMF2N2fuo0/G8oJh+DgNYtI2JvrZKariM3y84J7eVCsyxN3CV+4rBHBISAWiVvvr9GR8T
+	IP/VXKh0p4lKrrRko6Vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEfOJ-00028q-E3; Sun, 29 Sep 2019 20:01:59 +0000
-Received: from mailoutvs51.siol.net ([185.57.226.242] helo=mail.siol.net)
+	id 1iEfOX-0002Mo-C4; Sun, 29 Sep 2019 20:02:13 +0000
+Received: from mailoutvs14.siol.net ([185.57.226.205] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEfNO-0001Rp-4Z
- for linux-arm-kernel@lists.infradead.org; Sun, 29 Sep 2019 20:01:03 +0000
+ id 1iEfNS-0001Uh-3I
+ for linux-arm-kernel@lists.infradead.org; Sun, 29 Sep 2019 20:01:07 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 113EC5226F2;
- Sun, 29 Sep 2019 22:01:00 +0200 (CEST)
+ by mail.siol.net (Postfix) with ESMTP id 6DEBB5222FC;
+ Sun, 29 Sep 2019 22:01:02 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at psrvmta10.zcs-production.pri
 Received: from mail.siol.net ([127.0.0.1])
  by localhost (psrvmta10.zcs-production.pri [127.0.0.1]) (amavisd-new,
  port 10032)
- with ESMTP id fCy5jAs5IWsj; Sun, 29 Sep 2019 22:00:59 +0200 (CEST)
+ with ESMTP id ntXmbZGGPwrd; Sun, 29 Sep 2019 22:01:02 +0200 (CEST)
 Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 8A3685226EA;
- Sun, 29 Sep 2019 22:00:59 +0200 (CEST)
+ by mail.siol.net (Postfix) with ESMTPS id 0DC7852233F;
+ Sun, 29 Sep 2019 22:01:02 +0200 (CEST)
 Received: from localhost.localdomain (cpe-86-58-59-25.static.triera.net
  [86.58.59.25]) (Authenticated sender: 031275009)
- by mail.siol.net (Postfix) with ESMTPSA id 27537522639;
- Sun, 29 Sep 2019 22:00:57 +0200 (CEST)
+ by mail.siol.net (Postfix) with ESMTPSA id 9093E5226F6;
+ Sun, 29 Sep 2019 22:00:59 +0200 (CEST)
 From: Jernej Skrabec <jernej.skrabec@siol.net>
 To: mchehab@kernel.org, hverkuil-cisco@xs4all.nl,
  paul.kocialkowski@bootlin.com, mripard@kernel.org, pawel@osciak.com,
  m.szyprowski@samsung.com, kyungmin.park@samsung.com, tfiga@chromium.org,
  wens@csie.org
-Subject: [PATCH v2 3/6] media: v4l2-mem2mem: add stateless_(try_)decoder_cmd
- ioctl helpers
-Date: Sun, 29 Sep 2019 22:00:20 +0200
-Message-Id: <20190929200023.215831-4-jernej.skrabec@siol.net>
+Subject: [PATCH v2 4/6] media: cedrus: Detect first slice of a frame
+Date: Sun, 29 Sep 2019 22:00:21 +0200
+Message-Id: <20190929200023.215831-5-jernej.skrabec@siol.net>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20190929200023.215831-1-jernej.skrabec@siol.net>
 References: <20190929200023.215831-1-jernej.skrabec@siol.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190929_130102_341779_98A1E6D9 
-X-CRM114-Status: UNSURE (   8.78  )
+X-CRM114-CacheID: sfid-20190929_130106_345416_969CFBE1 
+X-CRM114-Status: UNSURE (   8.08  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -61,7 +60,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.242 listed in list.dnswl.org]
+ low trust [185.57.226.205 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -84,77 +83,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These helpers are used by stateless codecs when they support multiple
-slices per frame and hold capture buffer flag is set. It's expected that
-all such codecs will use this code.
+When codec supports multiple slices in one frame, VPU has to know when
+first slice of each frame is being processed, presumably to correctly
+clear/set data in auxiliary buffers.
+
+Add first_slice field to cedrus_run structure and set it according to
+timestamps of capture and output buffers. If timestamps are different,
+it's first slice and viceversa.
 
 Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 ---
- drivers/media/v4l2-core/v4l2-mem2mem.c | 35 ++++++++++++++++++++++++++
- include/media/v4l2-mem2mem.h           |  4 +++
- 2 files changed, 39 insertions(+)
+ drivers/staging/media/sunxi/cedrus/cedrus.h     | 1 +
+ drivers/staging/media/sunxi/cedrus/cedrus_dec.c | 2 ++
+ 2 files changed, 3 insertions(+)
 
-diff --git a/drivers/media/v4l2-core/v4l2-mem2mem.c b/drivers/media/v4l2-core/v4l2-mem2mem.c
-index 19937dd3c6f6..2677a07e4c9b 100644
---- a/drivers/media/v4l2-core/v4l2-mem2mem.c
-+++ b/drivers/media/v4l2-core/v4l2-mem2mem.c
-@@ -1154,6 +1154,41 @@ int v4l2_m2m_ioctl_try_decoder_cmd(struct file *file, void *fh,
- }
- EXPORT_SYMBOL_GPL(v4l2_m2m_ioctl_try_decoder_cmd);
+diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.h b/drivers/staging/media/sunxi/cedrus/cedrus.h
+index 2f017a651848..32cb38e541c6 100644
+--- a/drivers/staging/media/sunxi/cedrus/cedrus.h
++++ b/drivers/staging/media/sunxi/cedrus/cedrus.h
+@@ -70,6 +70,7 @@ struct cedrus_mpeg2_run {
+ struct cedrus_run {
+ 	struct vb2_v4l2_buffer	*src;
+ 	struct vb2_v4l2_buffer	*dst;
++	bool first_slice;
  
-+int v4l2_m2m_ioctl_stateless_try_decoder_cmd(struct file *file, void *fh,
-+					     struct v4l2_decoder_cmd *dc)
-+{
-+	if (dc->cmd != V4L2_DEC_CMD_FLUSH)
-+		return -EINVAL;
-+
-+	dc->flags = 0;
-+
-+	return 0;
-+}
-+EXPORT_SYMBOL_GPL(v4l2_m2m_ioctl_stateless_try_decoder_cmd);
-+
-+int v4l2_m2m_ioctl_stateless_decoder_cmd(struct file *file, void *priv,
-+					 struct v4l2_decoder_cmd *dc)
-+{
-+	struct v4l2_fh *fh = file->private_data;
-+	struct vb2_v4l2_buffer *out_vb, *cap_vb;
-+	int ret;
-+
-+	ret = v4l2_m2m_ioctl_stateless_try_decoder_cmd(file, priv, dc);
-+	if (ret < 0)
-+		return ret;
-+
-+	out_vb = v4l2_m2m_last_src_buf(fh->m2m_ctx);
-+	cap_vb = v4l2_m2m_last_dst_buf(fh->m2m_ctx);
-+
-+	if (out_vb)
-+		out_vb->flags &= ~V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF;
-+	else if (cap_vb && cap_vb->is_held)
-+		v4l2_m2m_buf_done(cap_vb, VB2_BUF_STATE_DONE);
-+
-+	return 0;
-+}
-+EXPORT_SYMBOL_GPL(v4l2_m2m_ioctl_stateless_decoder_cmd);
-+
- /*
-  * v4l2_file_operations helpers. It is assumed here same lock is used
-  * for the output and the capture buffer queue.
-diff --git a/include/media/v4l2-mem2mem.h b/include/media/v4l2-mem2mem.h
-index c9fa96c8eed1..8ae2f56c7fa3 100644
---- a/include/media/v4l2-mem2mem.h
-+++ b/include/media/v4l2-mem2mem.h
-@@ -714,6 +714,10 @@ int v4l2_m2m_ioctl_try_encoder_cmd(struct file *file, void *fh,
- 				   struct v4l2_encoder_cmd *ec);
- int v4l2_m2m_ioctl_try_decoder_cmd(struct file *file, void *fh,
- 				   struct v4l2_decoder_cmd *dc);
-+int v4l2_m2m_ioctl_stateless_try_decoder_cmd(struct file *file, void *fh,
-+					     struct v4l2_decoder_cmd *dc);
-+int v4l2_m2m_ioctl_stateless_decoder_cmd(struct file *file, void *priv,
-+					 struct v4l2_decoder_cmd *dc);
- int v4l2_m2m_fop_mmap(struct file *file, struct vm_area_struct *vma);
- __poll_t v4l2_m2m_fop_poll(struct file *file, poll_table *wait);
+ 	union {
+ 		struct cedrus_h264_run	h264;
+diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
+index 56ca4c9ad01c..e49c3396ca4d 100644
+--- a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
++++ b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
+@@ -31,6 +31,8 @@ void cedrus_device_run(void *priv)
  
+ 	run.src = v4l2_m2m_next_src_buf(ctx->fh.m2m_ctx);
+ 	run.dst = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
++	run.first_slice = !run.dst->vb2_buf.copied_timestamp ||
++		run.src->vb2_buf.timestamp != run.dst->vb2_buf.timestamp;
+ 
+ 	/* Apply request(s) controls if needed. */
+ 	src_req = run.src->vb2_buf.req_obj.req;
 -- 
 2.23.0
 
