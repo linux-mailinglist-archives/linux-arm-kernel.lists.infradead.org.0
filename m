@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EEB01C195A
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 22:02:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92D9AC195B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 22:02:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N+SfyHdmfc4mIg7XUk6ueI1Ir5GQHgYtbSgIIvIRiMg=; b=PD7hCBGM4QXrJn
-	O0ZVM+ftq4OwC9qWa9ptH/djXMkACL1a0a8iBVnS+DLoKv/BEbkTAR+e0HyLTZIJhNBZlLy6cZZxJ
-	rywdkv4PJgiiJlsmsIxaEb2AxEeGzCpk7asDBgwYD3FJYJYUN7EQNRLIofEP+pyJgyy6WW7j10cY6
-	sR3Wwla3x4OBTsdWs9foVUTWNTX9K+v2+DMS3DDe1ja2PqFYJCLuuRG/Hgl23UvW+eAV/JFpPM5rS
-	KIy6NRsRLMF2N2fuo0/G8oJh+DgNYtI2JvrZKariM3y84J7eVCsyxN3CV+4rBHBISAWiVvvr9GR8T
-	IP/VXKh0p4lKrrRko6Vw==;
+	List-Owner; bh=D6m2cMHnRLSkqVpJTlYa+WsYvw2RLHkew5p0tqcV9Qw=; b=oWHbUhmDbcL9QO
+	aEeIMO0tmyWzdtmp2g6PiWrOY1KxIKht8qESWDHqz44uLrPwTGitZDZNZ9lfFU7N0IHxgcSqlfTfq
+	eUjsEHt76OA2a0E5as+IJ3EaRT2s3I0BzQzuMWbEo8CKac8ReCVDVvJ7tfSU6eX5P+rAnTQz10SaO
+	rtNjHvfRz5c4vw59sQgw19EWd3wtSSZMkGamkTTDrSI75TshvEXHdA7pcZwIVXF0itIicNQGhp+uz
+	SIZ7tdOMjKn3hcO4NMr4fAWHZ1ulIbR8irAMfRmhw4Q6zrEYsv4agH5C0Zhmk94d+dkKJN4SMV9/D
+	++eSSI+xo/JVpZLerNbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEfOX-0002Mo-C4; Sun, 29 Sep 2019 20:02:13 +0000
-Received: from mailoutvs14.siol.net ([185.57.226.205] helo=mail.siol.net)
+	id 1iEfOl-0002bD-NW; Sun, 29 Sep 2019 20:02:27 +0000
+Received: from mailoutvs51.siol.net ([185.57.226.242] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEfNS-0001Uh-3I
- for linux-arm-kernel@lists.infradead.org; Sun, 29 Sep 2019 20:01:07 +0000
+ id 1iEfNS-0001WD-PZ
+ for linux-arm-kernel@lists.infradead.org; Sun, 29 Sep 2019 20:01:08 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 6DEBB5222FC;
- Sun, 29 Sep 2019 22:01:02 +0200 (CEST)
+ by mail.siol.net (Postfix) with ESMTP id E67E75224DC;
+ Sun, 29 Sep 2019 22:01:04 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at psrvmta10.zcs-production.pri
 Received: from mail.siol.net ([127.0.0.1])
  by localhost (psrvmta10.zcs-production.pri [127.0.0.1]) (amavisd-new,
  port 10032)
- with ESMTP id ntXmbZGGPwrd; Sun, 29 Sep 2019 22:01:02 +0200 (CEST)
+ with ESMTP id 3p6_Mfi4rNpU; Sun, 29 Sep 2019 22:01:04 +0200 (CEST)
 Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 0DC7852233F;
- Sun, 29 Sep 2019 22:01:02 +0200 (CEST)
+ by mail.siol.net (Postfix) with ESMTPS id 8FBF252233F;
+ Sun, 29 Sep 2019 22:01:04 +0200 (CEST)
 Received: from localhost.localdomain (cpe-86-58-59-25.static.triera.net
  [86.58.59.25]) (Authenticated sender: 031275009)
- by mail.siol.net (Postfix) with ESMTPSA id 9093E5226F6;
- Sun, 29 Sep 2019 22:00:59 +0200 (CEST)
+ by mail.siol.net (Postfix) with ESMTPSA id 136F65224DC;
+ Sun, 29 Sep 2019 22:01:02 +0200 (CEST)
 From: Jernej Skrabec <jernej.skrabec@siol.net>
 To: mchehab@kernel.org, hverkuil-cisco@xs4all.nl,
  paul.kocialkowski@bootlin.com, mripard@kernel.org, pawel@osciak.com,
  m.szyprowski@samsung.com, kyungmin.park@samsung.com, tfiga@chromium.org,
  wens@csie.org
-Subject: [PATCH v2 4/6] media: cedrus: Detect first slice of a frame
-Date: Sun, 29 Sep 2019 22:00:21 +0200
-Message-Id: <20190929200023.215831-5-jernej.skrabec@siol.net>
+Subject: [PATCH v2 5/6] media: cedrus: h264: Support multiple slices per frame
+Date: Sun, 29 Sep 2019 22:00:22 +0200
+Message-Id: <20190929200023.215831-6-jernej.skrabec@siol.net>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20190929200023.215831-1-jernej.skrabec@siol.net>
 References: <20190929200023.215831-1-jernej.skrabec@siol.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190929_130106_345416_969CFBE1 
-X-CRM114-Status: UNSURE (   8.08  )
+X-CRM114-CacheID: sfid-20190929_130107_004913_34F09FD8 
+X-CRM114-Status: UNSURE (   9.73  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -60,7 +60,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.205 listed in list.dnswl.org]
+ low trust [185.57.226.242 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -83,45 +83,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When codec supports multiple slices in one frame, VPU has to know when
-first slice of each frame is being processed, presumably to correctly
-clear/set data in auxiliary buffers.
+With recent changes, support for decoding multi-slice frames can be
+easily added now.
 
-Add first_slice field to cedrus_run structure and set it according to
-timestamps of capture and output buffers. If timestamps are different,
-it's first slice and viceversa.
+Signal VPU if current slice is first in frame or not and add information
+about first macroblock coordinates.
 
 Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 ---
- drivers/staging/media/sunxi/cedrus/cedrus.h     | 1 +
- drivers/staging/media/sunxi/cedrus/cedrus_dec.c | 2 ++
- 2 files changed, 3 insertions(+)
+ drivers/staging/media/sunxi/cedrus/cedrus_h264.c | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.h b/drivers/staging/media/sunxi/cedrus/cedrus.h
-index 2f017a651848..32cb38e541c6 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus.h
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus.h
-@@ -70,6 +70,7 @@ struct cedrus_mpeg2_run {
- struct cedrus_run {
- 	struct vb2_v4l2_buffer	*src;
- 	struct vb2_v4l2_buffer	*dst;
-+	bool first_slice;
+diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
+index d6a782703c9b..b7260cfeb6f4 100644
+--- a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
++++ b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
+@@ -301,6 +301,8 @@ static void cedrus_set_params(struct cedrus_ctx *ctx,
+ 	dma_addr_t src_buf_addr;
+ 	u32 offset = slice->header_bit_size;
+ 	u32 len = (slice->size * 8) - offset;
++	unsigned int pic_width_in_mbs;
++	bool mbaff_pic;
+ 	u32 reg;
  
- 	union {
- 		struct cedrus_h264_run	h264;
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
-index 56ca4c9ad01c..e49c3396ca4d 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
-@@ -31,6 +31,8 @@ void cedrus_device_run(void *priv)
+ 	cedrus_write(dev, VE_H264_VLD_LEN, len);
+@@ -370,12 +372,19 @@ static void cedrus_set_params(struct cedrus_ctx *ctx,
+ 		reg |= VE_H264_SPS_DIRECT_8X8_INFERENCE;
+ 	cedrus_write(dev, VE_H264_SPS, reg);
  
- 	run.src = v4l2_m2m_next_src_buf(ctx->fh.m2m_ctx);
- 	run.dst = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
-+	run.first_slice = !run.dst->vb2_buf.copied_timestamp ||
-+		run.src->vb2_buf.timestamp != run.dst->vb2_buf.timestamp;
- 
- 	/* Apply request(s) controls if needed. */
- 	src_req = run.src->vb2_buf.req_obj.req;
++	mbaff_pic = !(slice->flags & V4L2_H264_SLICE_FLAG_FIELD_PIC) &&
++		    (sps->flags & V4L2_H264_SPS_FLAG_MB_ADAPTIVE_FRAME_FIELD);
++	pic_width_in_mbs = sps->pic_width_in_mbs_minus1 + 1;
++
+ 	// slice parameters
+ 	reg = 0;
++	reg |= ((slice->first_mb_in_slice % pic_width_in_mbs) & 0xff) << 24;
++	reg |= (((slice->first_mb_in_slice / pic_width_in_mbs) * (mbaff_pic + 1)) & 0xff) << 16;
+ 	reg |= decode->nal_ref_idc ? BIT(12) : 0;
+ 	reg |= (slice->slice_type & 0xf) << 8;
+ 	reg |= slice->cabac_init_idc & 0x3;
+-	reg |= VE_H264_SHS_FIRST_SLICE_IN_PIC;
++	if (run->first_slice)
++		reg |= VE_H264_SHS_FIRST_SLICE_IN_PIC;
+ 	if (slice->flags & V4L2_H264_SLICE_FLAG_FIELD_PIC)
+ 		reg |= VE_H264_SHS_FIELD_PIC;
+ 	if (slice->flags & V4L2_H264_SLICE_FLAG_BOTTOM_FIELD)
 -- 
 2.23.0
 
