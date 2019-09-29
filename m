@@ -2,92 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2DB4C1262
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 01:09:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A874C12A6
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 03:13:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YQQLQrOkvUbV7eLWYcO+KwTrY4RdjvShKs0jCMhZ8MI=; b=clXo0fZKMCbCbD
-	hcSYh6CLvLQ4tkDNfSXB+YTQ2blEFOzERhxxVvOjrlB/NZAIWLrTDHC21JraG03G6itvwGtcIwKYb
-	DWYf6nqrwe9Cekbo2D2/fLQc0/CI+St5e5TtDfPuvLjmmFIuNa9jRMp1TY9vwWvZwS7gLWZmv8n5m
-	8AVPXiN0cDbpRcmYz++lhFnsJSIEdrX3pWr2ug0ogPe/iN/HgtwDXA+kPdl7ukNCh9swUjoS8AaZO
-	5UkaCuQqiiYpuIP9rLEkpLT+2uc805FYd8BL6B+vLrXjixufcKdYAkNKyk5yy18ZsX+jPEvhqN0c2
-	Q+zV1wetSdsHOxxY0MFQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=h5SObCuBWB+wAjXUBRTMQ2gdM01w+u4hIAPLvWzJ9dw=; b=Ul82q/57ZdX6zY
+	1OHtBZ6rcR47rQQEyP+bFs9zXVT4xfIDXXUanAT0MBZeqfiVsfdt40hWpYPH6XgTgFdFcKkp6yQTD
+	AQEcLvzU6Iga2/cJcK7BDD0t/CMA9v2bfSJtt+Dgmqd2qtP8HXKZMXWLLrh5Z+MmH5foW18EX00u6
+	ndW3A+aRojrdZ7cVoz8e+gJ/wH9BcD2VGAtywHMWYug8Y88zOlRpcXQiPQ9BDwl1/yA6hTrgQDaHT
+	bSqC7wWhxpqRx4EeCfcSq6fT6LeoBGywbfOMuMhKKNgoVo69NODuL7Uxg8iN6YFdn/okxI1laXqvY
+	K4pPIhsDw8aOLE8EuqJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iELqV-0000ki-UG; Sat, 28 Sep 2019 23:09:47 +0000
-Received: from mout.gmx.net ([212.227.15.18])
+	id 1iENly-0007Ii-9H; Sun, 29 Sep 2019 01:13:14 +0000
+Received: from mail-eopbgr20042.outbound.protection.outlook.com ([40.107.2.42]
+ helo=EUR02-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iELqM-0000kM-Dd
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Sep 2019 23:09:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1569712161;
- bh=8771iJl1nf1lZSh/T9aeSbD8M6At8DM9TBzdCPUEo9g=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=IeB9AbiTjwkjXzQttZZ3hYgZnT4N/g8kbWl/Wagvf/opDT8qbZUCqEYsPFVTIArhr
- sJq9GoRkVOWe5NLbG1Dlpcw8vkY5dMQGsmeIG76xzgd06t+N8tGZN+C1qyo25NYrYr
- PMTPW3v5XfyaZwun2dqh1bux9wBpRCLdRCrZsyFw=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.1.162] ([37.4.249.130]) by mail.gmx.com (mrgmx005
- [212.227.17.190]) with ESMTPSA (Nemesis) id 1MD9T1-1iMqHY1Oqn-009B3O; Sun, 29
- Sep 2019 01:09:21 +0200
-Subject: Re: [PATCH V3 6/8] ARM: bcm: Add support for BCM2711 SoC
-To: Florian Fainelli <f.fainelli@gmail.com>, Rob Herring
- <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Eric Anholt <eric@anholt.net>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>
-References: <1569672435-19823-1-git-send-email-wahrenst@gmx.net>
- <1569672435-19823-7-git-send-email-wahrenst@gmx.net>
- <6b251871-59ae-6040-cbbc-74207b2169f3@gmail.com>
-From: Stefan Wahren <wahrenst@gmx.net>
-Message-ID: <c420bf03-784e-073f-b0d7-471d0fb48d22@gmx.net>
-Date: Sun, 29 Sep 2019 01:09:19 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <6b251871-59ae-6040-cbbc-74207b2169f3@gmail.com>
+ id 1iENlo-0007Hh-27
+ for linux-arm-kernel@lists.infradead.org; Sun, 29 Sep 2019 01:13:06 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=AQhHYk4aRNBdq/YfP+7vQdttwm3ZcEPlS7fks6moIL2n1B1Q3PW36vKmwG02wmoJOzc204O+cauD/M5n0sPHTMkUhXycj1InIUHsbNhD1TpwjlNG06N/H72JcEzlsaBHIP3gEQihApYO7ZvKhxLCNK8QefnJXjxB1ctsywiGQjbmR3WMkcb9r7/tXlC+MZ6oLAy7agNgw3RR4Z9vTCWUBtXzNERFFP2Vk1Q3+hWmOYr4XfmzP7XNxUm8lZL/532b2e892K86ojus+dBkAci/ZY/f6d0Hyqnd7Xjg4ZimMR0zWuUUMkpjCyt+z/FcqJybZz2l1vOJrNXTzfDjBaEe5w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=d0rfWE9NhDLQGy/IThYSNVrqtPYuozVqMZgghShHS0E=;
+ b=YLOOqASOAtO055LetssByThdcxwtbnOvqNi+VjmnrZwxxjkqMXbe12rWn8IucfCjzc7GkpHB4NouPCBj9Wgn9XMwta3qaIWnhyEkbD5DnkcWQwV0VugvUgeNnfYWu2z5pxn8IDveOUO4AekKK/pPuclfIPSBDPL/j9hwNcuaTCYlDdcMAp830JCLIeujICRL6P81pNmdMMvbNg8jFhD+w/2sqnckjdh+lnGSEufuYunB5AU1gOpINzNB3n3Px8fPmmDeb9deWPL34mtUn77fzC3me6wcCVLP33cFOQB/6sGz40suKYAM4lEUHoBx2ccuZG7fBOJTnlrC78f8/VXOlw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=d0rfWE9NhDLQGy/IThYSNVrqtPYuozVqMZgghShHS0E=;
+ b=E4dqtpH7rypy7K+1D4dT8zGwcsfeTMYzB7F+o/XwH2P0ZDWXwiZm8O34zC19U4iry0hmGD5vF/ca+NsfcBcdFlnFyTt/Pyt3m6mdHu7aOBNSv+IVhkpG7QWUrk0wcie5gOsYJMqRiN9txCJkjEp6+8WATf6vKXCDs+UPqCe12BA=
+Received: from AM6PR0402MB3911.eurprd04.prod.outlook.com (52.133.30.10) by
+ AM6PR0402MB3639.eurprd04.prod.outlook.com (52.133.28.142) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2305.20; Sun, 29 Sep 2019 01:12:57 +0000
+Received: from AM6PR0402MB3911.eurprd04.prod.outlook.com
+ ([fe80::b0c2:4fbb:fae7:991]) by AM6PR0402MB3911.eurprd04.prod.outlook.com
+ ([fe80::b0c2:4fbb:fae7:991%5]) with mapi id 15.20.2305.017; Sun, 29 Sep 2019
+ 01:12:57 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Leonard Crestez <leonard.crestez@nxp.com>, Marco Felsch
+ <m.felsch@pengutronix.de>
+Subject: RE: [PATCH] firmware: imx: Skip return value check for some special
+ SCU firmware APIs
+Thread-Topic: [PATCH] firmware: imx: Skip return value check for some special
+ SCU firmware APIs
+Thread-Index: AQHVc4lT/ErvPybCJUCbZ2x7mLGjsqdB1xcg
+Date: Sun, 29 Sep 2019 01:12:57 +0000
+Message-ID: <AM6PR0402MB39115E54D8879FFBFF5CB798F5830@AM6PR0402MB3911.eurprd04.prod.outlook.com>
+References: <1569406066-16626-1-git-send-email-Anson.Huang@nxp.com>
+ <20190926075914.i7tsd3cbpitrqe4q@pengutronix.de>
+ <DB3PR0402MB391683202692BEAE4D2CD9C1F5860@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <20190926100558.egils3ds37m3s5wo@pengutronix.de>
+ <VI1PR04MB702336F648EA1BF0E4AC584BEE860@VI1PR04MB7023.eurprd04.prod.outlook.com>
+ <DB3PR0402MB391675F9BF6FCA315B124BEBF5810@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <20190927090609.fyxdekkzrco7memt@pengutronix.de>
+ <VI1PR04MB702397C54519DC27CFF05A78EE810@VI1PR04MB7023.eurprd04.prod.outlook.com>
+In-Reply-To: <VI1PR04MB702397C54519DC27CFF05A78EE810@VI1PR04MB7023.eurprd04.prod.outlook.com>
+Accept-Language: en-US
 Content-Language: en-US
-X-Provags-ID: V03:K1:eBZgWx7jKID8fzMfH4zW8mxLbUkYw+z83ZZwIhkN+LUm0xDNk9z
- 4BzSk5Ra6J9H2DnlvJkSlDAugpcVL7euD2bL+wZAokQvXUgJyZDvu7Wtto7kvlpYvoe/UuZ
- oDSvZ0s+JXugn3h4Ijnm0qYl8DUuYuIEenLJJyC5+Gb1MIcQAmyGvFcgQVLyGkvUx8cZxzW
- fWrRoGVkLC9mFCCSdCytA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:9Q6v5PlVBLw=:lxiRvwQmOYAyjPxjjKfc8O
- ZWMjUMZls6HYdv5HpjPhHK6uchS4d29qcUqwGmqXMK92XwFiRt5lJ2vvWX2iCwdTfwp1r49Vg
- kUXwM2I4TxF/vHbk3QtVeJ2weON8E1R2/mhGDr2qd7VPJkAHzTalK1iYW4VxK3dxUV/ZXxgtI
- LfwbB8PKVHUHXEPjE+fB98sM/4uZIOJIkRLTIme7+V6E366rJvderMqxCa2hz8u3SH5GBTB9u
- 25ajmZpCmGPzFqF63smlRbruKBMhwx/bsUESbmtv/X6OExxHcf5sdcmMU9mi+1LUZANzYTb94
- RQMPMmGlk7wcDTLsrbU8VAij4zYbUETY3S4LmnH9p0Cf7C0NqH+HcxURm/aoKoPGA28DRAIZG
- i70Rve8+eS7ccglThn3oPD88HR+QYHhlUHeYeG4z8V/seWSIP3vqLWoIpEToE+NJcxtWo1ljO
- NjTmyEyTsVXyN8xEO5AC+LD/OnFtZ9InAVQQb6zJXhfWtCyNzcwHx4wDXkRmso3SuM/kDJY2Y
- M4ONKrTdrMo/89vzJBtMfjcROCFBF6yQgsxDYBs7dSwk8g4a3hRXNJLEPqsVN6+xxTS0fNMqQ
- FRsQ+deGuC7f9jxgkUE0CRhtrQ2gpNESqlNZUn5drm7j6G72DL2mRhP9inEnCeUX8hegaPMTB
- CIfWeTadOyhCdKGHMt8y35eiBhrd0+GshRQT4s5yQ183gBo5nOoOM5XgS1XG3BbFw7SYmmj1k
- 5vjVqFoiC0VFsFbruHG1FXnmqjFRxNjuCpwB4rIQzZtyb//UpjjZLvDjKkk1HM+Y0YT8eRNxF
- iL6F3r+5IKU1yA2dsvimRGkg15sefeOhDEgRag/ewkd8o9VhQVx/XHMBqerxBOF1zqPP9PphX
- NpvObsKzo1TGDmwRgUfIVyvbi8HEVQDhuJe2EIv0/YlFCTcWXyPu7vTlmrhJVs0H+q+K/bD0w
- OD0kxWeQz2k/PdMCNti60Gg2Hxne/2KP3/hPwz6wO2Km/f6YckYIFIiqPRSY6lS+w/1lC0RoM
- pNoLvl3k/4u/+oPGSOZ4FUTSLUpdWDc5HwmT4mvRtZbloo2U/09BkUCNNPJlXRg22a6syhLnG
- jYGxtLxPCifQbpW025hfiCIlq8nq/83lQqXMpt9gP9Hv20zgKJNV/nnnuTzmetTsJgoXoL6uT
- In1vB8jIyymrRhDv0F2kRZlLfs9eVXmGgPhlY5eM+to/IytkdHLTxPp849EubfMABwHaydYYy
- aNe7IUkmzAFMZRVQMYi6uplVPthrxrCycklYy3TFK+ZPcX1WMryvyumbJBr0=
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: ba4101f0-bd5b-4d15-c2e8-08d7447a29e4
+x-ms-office365-filtering-ht: Tenant
+x-ms-traffictypediagnostic: AM6PR0402MB3639:|AM6PR0402MB3639:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM6PR0402MB3639CFEE384C0E2D80C98C8BF5830@AM6PR0402MB3639.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 017589626D
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(366004)(346002)(376002)(396003)(39860400002)(189003)(199004)(8936002)(66476007)(110136005)(54906003)(66946007)(66556008)(71200400001)(71190400001)(486006)(74316002)(7696005)(99286004)(3846002)(6116002)(11346002)(5660300002)(76176011)(446003)(44832011)(186003)(476003)(256004)(66446008)(64756008)(76116006)(25786009)(9686003)(81166006)(81156014)(229853002)(6246003)(66066001)(102836004)(33656002)(26005)(53546011)(86362001)(6506007)(478600001)(316002)(4326008)(55016002)(52536014)(2906002)(6436002)(14454004)(7736002)(305945005)(8676002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR0402MB3639;
+ H:AM6PR0402MB3911.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: R9heKuEaNZwdhHRRa5pi42DGB+ji0IYjCMwJWUF0Zvi9H0NzW1xU/DJx6KxV/xBd3hqf80oWyHp+AiUipQQAhcMrhJ9lRa9Xy6c1fVmX9WxTpSoNX0c0fM6l+AH5nF8j4XWsDKofK+nYmkCRv3gOnxbRKplwT3A1nDd1gXnQNivx18F1bk/u53Lw+jTgb66v0IYSrcAXcRHHSegZOnPW9A8BaRqySFVvJON2NayvDKRIraF8a06hhij2Z9+T1ZZUqWdzlCCXih1cu2ZCHyuzIC0CqSa2bU8WjG25q/N6hYdK74G+q8cLY95pob+0Ha1FF2cEuU4x+GOhXgILEOz/Cnod3oKkiGoQIM8WbzSE/HsBEWsNwitnOAryW/UtYoT9DJFTmpqg4rr9LtJD9U1thB8lH490ccPSSvqj37HR/XY=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ba4101f0-bd5b-4d15-c2e8-08d7447a29e4
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Sep 2019 01:12:57.4122 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 1X8mqCX2xXQaPcFKsc6gZTYbD+U2Rr6Jqx4VCK78EGc+NUUCO/pxIf28mLYzQPQzpVH1OUeB2hE0W/ImL3Ex9A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0402MB3639
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190928_160938_793010_DAFD56EF 
-X-CRM114-Status: GOOD (  19.62  )
+X-CRM114-CacheID: sfid-20190928_181304_212513_91F7706A 
+X-CRM114-Status: GOOD (  28.78  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.2.42 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.15.18 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -106,123 +129,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org,
- Will Deacon <will@kernel.org>, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am 28.09.19 um 21:16 schrieb Florian Fainelli:
->
-> On 9/28/2019 5:07 AM, Stefan Wahren wrote:
->> Add the BCM2711 to ARCH_BCM2835, but use new machine board code
->> because of the differences.
->>
->> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
->> Reviewed-by: Eric Anholt <eric@anholt.net>
->> ---
->>  arch/arm/mach-bcm/Kconfig    |  3 ++-
->>  arch/arm/mach-bcm/Makefile   |  3 ++-
->>  arch/arm/mach-bcm/bcm2711.c  | 24 ++++++++++++++++++++++++
->>  arch/arm64/Kconfig.platforms |  5 +++--
->>  4 files changed, 31 insertions(+), 4 deletions(-)
->>  create mode 100644 arch/arm/mach-bcm/bcm2711.c
->>
->> diff --git a/arch/arm/mach-bcm/Kconfig b/arch/arm/mach-bcm/Kconfig
->> index 5e5f1fa..39bcbea 100644
->> --- a/arch/arm/mach-bcm/Kconfig
->> +++ b/arch/arm/mach-bcm/Kconfig
->> @@ -161,6 +161,7 @@ config ARCH_BCM2835
->>  	select GPIOLIB
->>  	select ARM_AMBA
->>  	select ARM_ERRATA_411920 if ARCH_MULTI_V6
->> +	select ARM_GIC if ARCH_MULTI_V7
->>  	select ARM_TIMER_SP804
->>  	select HAVE_ARM_ARCH_TIMER if ARCH_MULTI_V7
->>  	select TIMER_OF
-> Are not we missing a select ZONE_DMA here?
-Yes. I think for arm and arm64.
->
->> @@ -169,7 +170,7 @@ config ARCH_BCM2835
->>  	select PINCTRL_BCM2835
->>  	select MFD_CORE
->>  	help
->> -	  This enables support for the Broadcom BCM2835 and BCM2836 SoCs.
->> +	  This enables support for the Broadcom BCM2711 and BCM283x SoCs.
->>  	  This SoC is used in the Raspberry Pi and Roku 2 devices.
->>
->>  config ARCH_BCM_53573
->> diff --git a/arch/arm/mach-bcm/Makefile b/arch/arm/mach-bcm/Makefile
->> index b59c813..7baa8c9 100644
->> --- a/arch/arm/mach-bcm/Makefile
->> +++ b/arch/arm/mach-bcm/Makefile
->> @@ -42,8 +42,9 @@ obj-$(CONFIG_ARCH_BCM_MOBILE_L2_CACHE) += kona_l2_cache.o
->>  obj-$(CONFIG_ARCH_BCM_MOBILE_SMC) += bcm_kona_smc.o
->>
->>  # BCM2835
->> -obj-$(CONFIG_ARCH_BCM2835)	+= board_bcm2835.o
->>  ifeq ($(CONFIG_ARCH_BCM2835),y)
->> +obj-y				+= board_bcm2835.o
->> +obj-y				+= bcm2711.o
->>  ifeq ($(CONFIG_ARM),y)
->>  obj-$(CONFIG_SMP)		+= platsmp.o
->>  endif
->> diff --git a/arch/arm/mach-bcm/bcm2711.c b/arch/arm/mach-bcm/bcm2711.c
->> new file mode 100644
->> index 0000000..dbe2967
->> --- /dev/null
->> +++ b/arch/arm/mach-bcm/bcm2711.c
->> @@ -0,0 +1,24 @@
->> +// SPDX-License-Identifier: GPL-2.0+
->> +/*
->> + * Copyright (C) 2019 Stefan Wahren
->> + */
->> +
->> +#include <linux/of_address.h>
->> +
->> +#include <asm/mach/arch.h>
->> +
->> +#include "platsmp.h"
->> +
->> +static const char * const bcm2711_compat[] = {
->> +#ifdef CONFIG_ARCH_MULTI_V7
->> +	"brcm,bcm2711",
->> +#endif
->> +};
->> +
->> +DT_MACHINE_START(BCM2711, "BCM2711")
->> +#ifdef CONFIG_ZONE_DMA
->> +	.dma_zone_size	= SZ_1G,
->> +#endif
->> +	.dt_compat = bcm2711_compat,
->> +	.smp = smp_ops(bcm2836_smp_ops),
->> +MACHINE_END
->> diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
->> index 16d7614..b5d31dc 100644
->> --- a/arch/arm64/Kconfig.platforms
->> +++ b/arch/arm64/Kconfig.platforms
->> @@ -37,11 +37,12 @@ config ARCH_BCM2835
->>  	select PINCTRL
->>  	select PINCTRL_BCM2835
->>  	select ARM_AMBA
->> +	select ARM_GIC
->>  	select ARM_TIMER_SP804
->>  	select HAVE_ARM_ARCH_TIMER
->>  	help
->> -	  This enables support for the Broadcom BCM2837 SoC.
->> -	  This SoC is used in the Raspberry Pi 3 device.
->> +	  This enables support for the Broadcom BCM2837 and BCM2711 SoC.
->> +	  This SoC is used in the Raspberry Pi 3 and 4 device.
-> Nit:
->
-> These SoCs are used in the Raspberry Pi 3 and 4 devices.
->
-> With that:
->
-> Acked-by: Florian Fainelli <f.fainelli@gmail.com>
+Hi, Leonard/Marco
+	I think we should get aligned first, my original thought is to let SCU API caller NOT aware of those special APIs, so have to do the special handling in imx_scu_call_rpc(). And the short loop check has to be used which would impact the performance a little bit I think. But Leonard stated the caller should know the SCU FW API's usage, if so, then I think the special callers can just skip the return value check, adding a comment to describe the reason, would it be much more easier than changing the imx_scu_call_rpc()? Or any other suggestion?
 
+Anson
+
+> On 27.09.2019 12:06, Marco Felsch wrote:
+> > Hi Anson, Leonard,
+> >
+> > On 19-09-27 01:20, Anson Huang wrote:
+> >> Hi, Leonard
+> >>
+> >>> On 2019-09-26 1:06 PM, Marco Felsch wrote:
+> >>>> On 19-09-26 08:03, Anson Huang wrote:
+> >>>>>> On 19-09-25 18:07, Anson Huang wrote:
+> >>>>>>> The SCU firmware does NOT always have return value stored in
+> >>>>>>> message header's function element even the API has response
+> >>>>>>> data, those special APIs are defined as void function in SCU
+> >>>>>>> firmware, so they should be treated as return success always.
+> >>>>>>>
+> >>>>>>> +static const struct imx_sc_rpc_msg whitelist[] = {
+> >>>>>>> +	{ .svc = IMX_SC_RPC_SVC_MISC, .func =
+> >>>>>> IMX_SC_MISC_FUNC_UNIQUE_ID },
+> >>>>>>> +	{ .svc = IMX_SC_RPC_SVC_MISC, .func =
+> >>>>>>> +IMX_SC_MISC_FUNC_GET_BUTTON_STATUS }, };
+> >>>>>>
+> >>>>>> Is this going to be extended in the near future? I see some
+> >>>>>> upcoming problems here if someone uses a different
+> >>>>>> scu-fw<->kernel combination as nxp would suggest.
+> >>>>>
+> >>>>> Could be, but I checked the current APIs, ONLY these 2 will be
+> >>>>> used in Linux kernel, so I ONLY add these 2 APIs for now.
+> >>>>
+> >>>> Okay.
+> >>>>
+> >>>>> However, after rethink, maybe we should add another imx_sc_rpc API
+> >>>>> for those special APIs? To avoid checking it for all the APIs
+> >>>>> called which
+> >>> may impact some performance.
+> >>>>> Still under discussion, if you have better idea, please advise, thanks!
+> >>>
+> >>> My suggestion is to refactor the code and add a new API for the this
+> >>> "no error value" convention. Internally they can call a common
+> >>> function with flags.
+> >>
+> >>>> Adding a special api shouldn't be the right fix. Imagine if someone
+> >>>> (not a nxp-developer) wants to add a new driver. How could he be
+> >>>> expected to know which api he should use. The better abbroach would
+> >>>> be to fix the scu-fw instead of adding quirks..
+> >>
+> >> Yes, fixing SCU FW is the best solution, but we have talked to SCU FW
+> >> owner, the SCU FW released has been finalized, so the API
+> >> implementation can NOT be changed, but they will pay attention to
+> >> this issue for new added APIs later. That means the number of APIs having
+> this issue a very limited.
+> >
+> > This means those APIs which already have this bug will not be fixed?
+> > IMHO this sounds a bit weird since this is a changeable peace of code
+> > ;)
+> 
+> It's not a bug, it's a documented feature ;)
+> 
+> >>> Right now developers who want to make SCFW calls in upstream need to
+> >>> define the message struct in their driver based on protocol
+> documentation.
+> >>> This includes:
+> >>>
+> >>> * Binary layout of the message (a packed struct)
+> >>> * If the message has a response (already a bool flag)
+> >>> * If an error code is returned (this patch adds support for it)
+> >
+> > Why should I specify if a error code is returned?
+> 
+> Because you're already defining the message struct and you're already
+> specifying if a response is required.
+> 
+> The assumption is that anyone adding a SCFW call to a driver is already
+> looking at SCFW documentation which describes the binary message format.
+> 
+> --
+> Regards,
+> Leonard
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
