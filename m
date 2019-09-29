@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3328C17D7
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 19:40:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4DCBC17F6
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 19:41:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=D/js19jsjrBUeKAmBOyCFVMPvCgNKzw0R99pkBI60bs=; b=IW3x4715RTWW92wTJq7w8Ob6uh
-	72XED7DsyHWgZK+eNI6Zy1HN2QJ5jMsNq7twY6GVhTTjHPXonG2Sv6IeGNWbBmIS1NhefLIQ/UCxE
-	njIEfVldYikw02BYpGuxIDI2mk3TY9FFMYuTtBssllgJU+tGuiBCwMpekwZgQ6qgak7qkkQfGu4ww
-	+rtK1QHW5NsRfYXGyW35hbHq0kPAiNfdzHkEond71lF1MHJjrCT0mINqXeY9OFQs+lUwiRHfrltwp
-	ZVfhsZHx4jyfrVZBsJaW6onPwQbz4LEfzQSi+mdeKkD13kloHBvy4bbVF5U+Jz8oaNS5CAU6gNfmC
-	EyHBXLtA==;
+	bh=scrzrfru85JzXKE9c0skNDmzIqvZy0wtMB9is/yBM4g=; b=V1py/OIJuEYlVbgTA7hz8fYN2K
+	OIfYcZjUxqP8ueOG3l7bStvnqvfZV22EiYkQwlCjE5r4SE9l9twK48iTrVnuANz8F3LEBiWPI0kvY
+	kxy8wKqgWzwpfGX/OtSZD0fHvOFJqSz11WsOfKl8ednnz7VLMXGoTyiP48PVUuvAvaobnsh+HC/qP
+	ky+XWNZ4z9hIM2J2WRw8q5r1Suu7E7sbsnHZ0182YrmKSs6FsMl8D9lroGIGGEP56mm1Klov9gJWQ
+	8gJn8rOFub8CV0CgbW4bsnYutwCuGyGZzotU2OJftG0iYnryzxXdK7T5U4cLAFy1/6Uzt7rB2sdFB
+	2i/IigAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEdBZ-000320-Nd; Sun, 29 Sep 2019 17:40:41 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iEdBv-0003Ij-Hs; Sun, 29 Sep 2019 17:41:03 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEd9z-00010R-TA
- for linux-arm-kernel@lists.infradead.org; Sun, 29 Sep 2019 17:39:05 +0000
-Received: by mail-wm1-x342.google.com with SMTP id y135so12369558wmc.1
+ id 1iEdA1-00012K-NN
+ for linux-arm-kernel@lists.infradead.org; Sun, 29 Sep 2019 17:39:07 +0000
+Received: by mail-wr1-x444.google.com with SMTP id y19so8457122wrd.3
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 29 Sep 2019 10:39:03 -0700 (PDT)
+ Sun, 29 Sep 2019 10:39:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=p4KKhW/ILVWczJ+i+Rd5vVeZAxxdEodk6kG2Ndh76c8=;
- b=ZEyCF1H/kwGHAmCX7wDAnQK5bIXTg6qZpWC74qnqY63TcIy3pIPkbxc2sTcCg8luZz
- q6N80FqXhB6heMzg+6M6s1ZbjhQiwAwKiwJl5kzEEEf1cYK4WUbFQw0Y8Uj+g2yzNTFv
- 9fIVOzRuCjBrBFS7wUp7S242oOoi/7zLsDBJXmprJa01APm+Y1j9gH7WuPc3Sv9tpTmn
- gp/wOHtBOLF70hK4Ck/P8+gHxV0M45lPFCwc8RZ69k6RaE5dcvL+kHTgC1pnah7DR9qV
- 1R25ncK0DlZangay+d/xk81n4/XgAm9mJJk2QNmAn+QVgPO/Snle8BXiIFez++yRTcwv
- i5DQ==
+ bh=Db287ko6zQqbNHe2YgcEJlShSLuvRxzkUrp4l5J8zd0=;
+ b=STvI54kFXNvpfueHy5Bm5uWEwsHLIz5Wjpn72Y/5A+xbfVWDP9nbIOg0OUQtIasaOk
+ D/jYnOeT21TgavJGJfWAZRCg994PVeFRtDo8zyg5ExznQLgy4L0uqiIiURKc/H2mXaLL
+ X4sp5Fv3F8dQu5YphyqoWXIhL3oaFX/k8aGswrCaDX0qhxh19BStbK4cgEaaeRPk2lrO
+ ZWevdItbYQ6Rco5eucZR4TdaRWwhIP5y4xEup8nLnmUqX//Aqkng64EuXz+oHXrODeKv
+ YogqQVQ+P2Bpm0csoWPa5FhkXazJJi7ZZ0NYce/vBfdVIC0nMyXY4eYQybHsSXxXxyJR
+ sANw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=p4KKhW/ILVWczJ+i+Rd5vVeZAxxdEodk6kG2Ndh76c8=;
- b=KQyqeS7bwT8KUrzcr960Y9LWkn9tyoNRnTqnql+igDPqhDQlKnPSIe8cXHvA30S7dQ
- epfnZ+mVfjHBG+xQDtp3T2utepMhYLIU1Yp/AnfQVwfRLJth+waslvmjUT0BS2HMzWbE
- 5vB94xYcKLfWfmex3AwCtiqqh65By0QNZ1Imj5ZwmPLlSRsmvAmkY4GyY63lJ/2heR83
- quakkAl5J5mmTNCGL+ipHv5UAKRY1PWeUByn6XtkZlHczqvuO7yIxooEUEqKhPynmCRf
- xA9WuGLBLe9V/QaNdt8+lPsbJzTRnyhY+mx+wi7iBdu6MPXQJEpbczO4+zMIFfG+JwyH
- PVAA==
-X-Gm-Message-State: APjAAAX2EEdsLWLaw4KWUtybl1hNDmu6ZQbVn6J39mGmHcrdX7jWUyMJ
- WejEugY2TlwPM98x+XQ5b/3mMg==
-X-Google-Smtp-Source: APXvYqzVdpPLvIDo6NIyGdTbXVnTjBD0y591JV31mPDmv2K9ZBqqpbGFCqJX0x7FjrJ/UiHpEQSckg==
-X-Received: by 2002:a05:600c:290c:: with SMTP id
- i12mr14943151wmd.77.1569778742225; 
- Sun, 29 Sep 2019 10:39:02 -0700 (PDT)
+ bh=Db287ko6zQqbNHe2YgcEJlShSLuvRxzkUrp4l5J8zd0=;
+ b=Fzrr5q6YxUZuPPM5XI022OjmegDGJGc6LaVewLrwDVR4gaHo7yzqaczxk8qvd8hKAW
+ ATELYeux0mAcZ9GpcVvxOiuMfRMsLpas4TGJ/rEj0OJo0jJLJmfT9Mq+gbpgS8OPARS/
+ XjH/l9WtWx1UqD0hM6NTBsIo0hLkgdJoOoP4XxAiDjuBxvEXwxSjKKiew+lohhMUr02n
+ 7U+M34ZLSUCzNB63i4593n0Oo+GdV/LHdPGBRUxx/cfInDf9W0/FjQFtHe8Bb4pq+gvP
+ jVjNjOhAe+Dg1AQm8cMwfPWKx66lkRNdipHVHbxVSL1WueIRoAUzXIruwypULN2Ehi5u
+ txAA==
+X-Gm-Message-State: APjAAAURfG0reqXBiJchKjjZHRpqbK83JXQdptR5Dg87eWsdRcfjLfR4
+ ujLgHdWfU8cNRUeHhCWGrlZjeA==
+X-Google-Smtp-Source: APXvYqykJ3hVfBYWkhZ9pwlioP+dugWSdXdQ52qcXBMaWaLbW9AGLyWW2Qu/3gtwz1RkBnj9rlcnTg==
+X-Received: by 2002:adf:c7cf:: with SMTP id y15mr10662252wrg.54.1569778744018; 
+ Sun, 29 Sep 2019 10:39:04 -0700 (PDT)
 Received: from e123331-lin.nice.arm.com
  (bar06-5-82-246-156-241.fbx.proxad.net. [82.246.156.241])
- by smtp.gmail.com with ESMTPSA id q192sm17339779wme.23.2019.09.29.10.39.00
+ by smtp.gmail.com with ESMTPSA id q192sm17339779wme.23.2019.09.29.10.39.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 29 Sep 2019 10:39:01 -0700 (PDT)
+ Sun, 29 Sep 2019 10:39:03 -0700 (PDT)
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 To: linux-crypto@vger.kernel.org
-Subject: [RFC PATCH 03/20] crypto: arm64/chacha - expose arm64 ChaCha routine
- as library function
-Date: Sun, 29 Sep 2019 19:38:33 +0200
-Message-Id: <20190929173850.26055-4-ard.biesheuvel@linaro.org>
+Subject: [RFC PATCH 04/20] crypto: arm/chacha - expose ARM ChaCha routine as
+ library function
+Date: Sun, 29 Sep 2019 19:38:34 +0200
+Message-Id: <20190929173850.26055-5-ard.biesheuvel@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190929173850.26055-1-ard.biesheuvel@linaro.org>
 References: <20190929173850.26055-1-ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190929_103903_960517_2F65964E 
-X-CRM114-Status: GOOD (  11.47  )
+X-CRM114-CacheID: sfid-20190929_103905_775011_1BA8D622 
+X-CRM114-Status: GOOD (  14.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -119,34 +118,43 @@ export so that users of the ChaCha library can use it directly.
 
 Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 ---
- arch/arm64/crypto/Kconfig            |  1 +
- arch/arm64/crypto/chacha-neon-glue.c | 12 ++++++++++++
- 2 files changed, 13 insertions(+)
+ arch/arm/crypto/Kconfig            |  1 +
+ arch/arm/crypto/chacha-neon-glue.c | 19 +++++++++++++++++--
+ 2 files changed, 18 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/crypto/Kconfig b/arch/arm64/crypto/Kconfig
-index 4922c4451e7c..09aa69ccc792 100644
---- a/arch/arm64/crypto/Kconfig
-+++ b/arch/arm64/crypto/Kconfig
-@@ -104,6 +104,7 @@ config CRYPTO_CHACHA20_NEON
+diff --git a/arch/arm/crypto/Kconfig b/arch/arm/crypto/Kconfig
+index b24df84a1d7a..70e4d5fe5bdb 100644
+--- a/arch/arm/crypto/Kconfig
++++ b/arch/arm/crypto/Kconfig
+@@ -130,6 +130,7 @@ config CRYPTO_CHACHA20_NEON
  	depends on KERNEL_MODE_NEON
  	select CRYPTO_BLKCIPHER
  	select CRYPTO_CHACHA20
 +	select CRYPTO_ARCH_HAVE_LIB_CHACHA
  
  config CRYPTO_NHPOLY1305_NEON
- 	tristate "NHPoly1305 hash function using NEON instructions (for Adiantum)"
-diff --git a/arch/arm64/crypto/chacha-neon-glue.c b/arch/arm64/crypto/chacha-neon-glue.c
-index d4cc61bfe79d..26c12b19a4ad 100644
---- a/arch/arm64/crypto/chacha-neon-glue.c
-+++ b/arch/arm64/crypto/chacha-neon-glue.c
-@@ -59,6 +59,18 @@ static void chacha_doneon(u32 *state, u8 *dst, const u8 *src,
+ 	tristate "NEON accelerated NHPoly1305 hash function (for Adiantum)"
+diff --git a/arch/arm/crypto/chacha-neon-glue.c b/arch/arm/crypto/chacha-neon-glue.c
+index 26576772f18b..1a32c6e5c885 100644
+--- a/arch/arm/crypto/chacha-neon-glue.c
++++ b/arch/arm/crypto/chacha-neon-glue.c
+@@ -36,6 +36,8 @@ asmlinkage void chacha_4block_xor_neon(const u32 *state, u8 *dst, const u8 *src,
+ 				       int nrounds);
+ asmlinkage void hchacha_block_neon(const u32 *state, u32 *out, int nrounds);
+ 
++static bool have_neon __ro_after_init;
++
+ static void chacha_doneon(u32 *state, u8 *dst, const u8 *src,
+ 			  unsigned int bytes, int nrounds)
+ {
+@@ -62,6 +64,18 @@ static void chacha_doneon(u32 *state, u8 *dst, const u8 *src,
  	}
  }
  
 +void chacha_crypt(u32 *state, u8 *dst, const u8 *src, unsigned int bytes,
 +		  int nrounds)
 +{
-+	if (bytes <= CHACHA_BLOCK_SIZE || !crypto_simd_usable())
++	if (!have_neon || bytes <= CHACHA_BLOCK_SIZE || !crypto_simd_usable())
 +		return chacha_crypt_generic(state, dst, src, bytes, nrounds);
 +
 +	kernel_neon_begin();
@@ -158,6 +166,18 @@ index d4cc61bfe79d..26c12b19a4ad 100644
  static int chacha_neon_stream_xor(struct skcipher_request *req,
  				  const struct chacha_ctx *ctx, const u8 *iv)
  {
+@@ -177,8 +191,9 @@ static struct skcipher_alg algs[] = {
+ 
+ static int __init chacha_simd_mod_init(void)
+ {
+-	if (!(elf_hwcap & HWCAP_NEON))
+-		return -ENODEV;
++	have_neon = (elf_hwcap & HWCAP_NEON);
++	if (!have_neon)
++		return 0;
+ 
+ 	return crypto_register_skciphers(algs, ARRAY_SIZE(algs));
+ }
 -- 
 2.17.1
 
