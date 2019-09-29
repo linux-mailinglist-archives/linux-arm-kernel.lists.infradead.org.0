@@ -2,63 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC366C194E
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 22:01:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77C02C1954
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 22:01:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=p/yrH+EK/p+hWFDpRk8XIH9tWeQ+871KAZHXxjdg2s0=; b=Tr3DaV5ATVbQGH
-	EGguB4Hvwxp89sQUIfCO582BA1nvwwmTCvxQUfO7WCffn6p9Qb17ma7dhK26xxMQXXsAnGZFPF4Gy
-	KeSH0mBAzTf3sUdsu1ikBNUSwdS3U3e5P0w84a9SV6pckfTUnNHlMrv2o/kkhzNkoiKEtFjxwqE6C
-	b5utXDl44Kl6SZBQ0XY8qEH/eKtj1vL1TRgw5kmQT7AvUy/VwWpfB3cfM2HAt7aLlH8mN9G0+jGIf
-	LFHErIovbOvsmzQNT7BB5cl3I+ORpmPQoaJZNWR+mMpjrVDB8LPqNNSaeFwYn/lGWDw+Ohyjvsy5M
-	BKmh833TdxvDwWvJEaww==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pxHTRFXj5Hsiphw4jiAWuzkDAqHW6WFTQWTwmcaQETA=; b=jkbBxx54SEwidG
+	ZEIW6ouBqAPFA/Avc8s5/asih8/8EMkjn27joHiqwGRUui3+5MMppvJvw0l5uTKuazOmHF7fXLFri
+	1oCBNR7f2/cEVESDtVS6Ht8rfxNLIcDHJt8lFv6WvQqWVxqeVtRkWLrhlMiPEHr7SeWjgBGokVsEp
+	DqC0mj7AwveEwET9cv51Yeo8HkgTKqKj9Ve0HUzcvmnCQIDsynLxJkChVUQ5/tu7VbrJHYvjfkohS
+	JaD61WuVWygeBnJiDPkHoXDvlgyYrfHyOZyRPpw5uaKFlAKqdzhHMK6hdcXgPjeekd9GcN0VEFkHC
+	GsghIh3NMUTlt3DaO9BA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEfNZ-0001SJ-U4; Sun, 29 Sep 2019 20:01:13 +0000
-Received: from mailoutvs18.siol.net ([185.57.226.209] helo=mail.siol.net)
+	id 1iEfNr-0001fb-G9; Sun, 29 Sep 2019 20:01:31 +0000
+Received: from mailoutvs8.siol.net ([185.57.226.199] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEfNJ-0001QI-TR
+ id 1iEfNK-0001QL-I6
  for linux-arm-kernel@lists.infradead.org; Sun, 29 Sep 2019 20:01:00 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 866535223B9;
- Sun, 29 Sep 2019 22:00:52 +0200 (CEST)
+ by mail.siol.net (Postfix) with ESMTP id 5E61C5222FC;
+ Sun, 29 Sep 2019 22:00:55 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at psrvmta10.zcs-production.pri
 Received: from mail.siol.net ([127.0.0.1])
  by localhost (psrvmta10.zcs-production.pri [127.0.0.1]) (amavisd-new,
  port 10032)
- with ESMTP id Fd2JwI3Pambk; Sun, 29 Sep 2019 22:00:52 +0200 (CEST)
+ with ESMTP id gZznrNoI1-3g; Sun, 29 Sep 2019 22:00:54 +0200 (CEST)
 Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id F375F522639;
- Sun, 29 Sep 2019 22:00:51 +0200 (CEST)
+ by mail.siol.net (Postfix) with ESMTPS id 6E13A52233F;
+ Sun, 29 Sep 2019 22:00:54 +0200 (CEST)
 Received: from localhost.localdomain (cpe-86-58-59-25.static.triera.net
  [86.58.59.25]) (Authenticated sender: 031275009)
- by mail.siol.net (Postfix) with ESMTPSA id A3F3E5225ED;
- Sun, 29 Sep 2019 22:00:50 +0200 (CEST)
+ by mail.siol.net (Postfix) with ESMTPSA id 043615226EA;
+ Sun, 29 Sep 2019 22:00:51 +0200 (CEST)
 From: Jernej Skrabec <jernej.skrabec@siol.net>
 To: mchehab@kernel.org, hverkuil-cisco@xs4all.nl,
  paul.kocialkowski@bootlin.com, mripard@kernel.org, pawel@osciak.com,
  m.szyprowski@samsung.com, kyungmin.park@samsung.com, tfiga@chromium.org,
  wens@csie.org
-Subject: [PATCH v2 0/6] media: cedrus: h264: Support multi-slice frames
-Date: Sun, 29 Sep 2019 22:00:17 +0200
-Message-Id: <20190929200023.215831-1-jernej.skrabec@siol.net>
+Subject: [PATCH v2 1/6] vb2: add V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF
+Date: Sun, 29 Sep 2019 22:00:18 +0200
+Message-Id: <20190929200023.215831-2-jernej.skrabec@siol.net>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20190929200023.215831-1-jernej.skrabec@siol.net>
+References: <20190929200023.215831-1-jernej.skrabec@siol.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190929_130058_112548_59E7F434 
-X-CRM114-Status: UNSURE (   8.49  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190929_130058_762155_6F081209 
+X-CRM114-Status: GOOD (  23.63  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.209 listed in list.dnswl.org]
+ low trust [185.57.226.199 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -81,68 +82,282 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds support for decoding multi-slice H264 frames along with
-support for V4L2_DEC_CMD_FLUSH and V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF.
+From: Hans Verkuil <hverkuil-cisco@xs4all.nl>
 
-Code was tested by modified ffmpeg, which can be found here:
-https://github.com/jernejsk/FFmpeg, branch mainline-test
-It has to be configured with at least following options:
---enable-v4l2-request --enable-libudev --enable-libdrm
+This patch adds support for the V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF flag.
+It also adds a new V4L2_BUF_CAP_SUPPORTS_M2M_HOLD_CAPTURE_BUF capability and
+a v4l2_m2m_release_capture_buf() helper function.
 
-Samples used for testing:
-http://jernej.libreelec.tv/videos/h264/BA1_FT_C.mp4
-http://jernej.libreelec.tv/videos/h264/h264.mp4
+Drivers should set vb2_queue->subsystem_flags to
+VB2_V4L2_FL_SUPPORTS_M2M_HOLD_CAPTURE_BUF to indicate support for this flag.
 
-Command line used for testing:
-ffmpeg -hwaccel drm -hwaccel_device /dev/dri/card0 -i h264.mp4 -pix_fmt bgra -f fbdev /dev/fb0
+The device_run() function should look like this:
 
-Please note that V4L2_DEC_CMD_FLUSH was not tested because I'm
-not sure how. ffmpeg follows exactly which slice is last in frame
-and sets hold flag accordingly. Improper usage of hold flag would
-corrupt ffmpeg assumptions and it would probably crash. Any ideas
-how to test this are welcome!
+if (v4l2_m2m_release_capture_buf(out_vb, cap_vb)) {
+	v4l2_m2m_dst_buf_remove(m2m_ctx);
+	v4l2_m2m_buf_done(cap_vb, VB2_BUF_STATE_DONE);
+	cap_vb = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
+}
+cap_vb->is_held = out_vb->flags & V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF;
 
-Thanks to Jonas for adjusting ffmpeg.
+...
 
-Please let me know what you think.
+v4l2_m2m_buf_done(out_vb, VB2_BUF_STATE_DONE);
+if (!cap_vb->is_held) {
+	v4l2_m2m_dst_buf_remove(m2m_ctx);
+	v4l2_m2m_buf_done(cap_vb, VB2_BUF_STATE_DONE);
+}
 
-Best regards,
-Jernej
+In order to handle the corner case where V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF
+is always set for the output buffer, and you reached the last frame (so no
+new output buffer will be queued with a new timestamp), the driver must
+implement support for the V4L2_DEC_CMD_FLUSH command, and that should do:
 
-Changes from v1:
-- added Rb tags
-- updated V4L2_DEC_CMD_FLUSH documentation
-- updated first slice detection in Cedrus
-- hold capture buffer flag is set according to source format
-- added v4l m2m stateless_(try_)decoder_cmd ioctl helpers
+struct vb2_v4l2_buffer *out_vb = v4l2_m2m_last_src_buf(m2m_ctx);
+struct vb2_v4l2_buffer *cap_vb = v4l2_m2m_last_dst_buf(m2m_ctx);
 
-Hans Verkuil (2):
-  vb2: add V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF
-  videodev2.h: add V4L2_DEC_CMD_FLUSH
+if (out_vb)
+	out_vb->flags &= ~V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF;
+else if (cap_vb && cap_vb->is_held)
+	v4l2_m2m_buf_done(cap_vb, VB2_BUF_STATE_DONE);
 
-Jernej Skrabec (4):
-  media: v4l2-mem2mem: add stateless_(try_)decoder_cmd ioctl helpers
-  media: cedrus: Detect first slice of a frame
-  media: cedrus: h264: Support multiple slices per frame
-  media: cedrus: Add support for holding capture buffer
+For formats that do not support slicing (e.g. VP8), the FLUSH command
+just does nothing.
 
+Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Tested-by: Boris Brezillon <boris.brezillon@collabora.com>
+Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
+[Adjust example code]
+Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+---
  Documentation/media/uapi/v4l/buffer.rst       | 13 ++++++
- .../media/uapi/v4l/vidioc-decoder-cmd.rst     | 10 +++-
  .../media/uapi/v4l/vidioc-reqbufs.rst         |  6 +++
- .../media/videodev2.h.rst.exceptions          |  1 +
  .../media/common/videobuf2/videobuf2-v4l2.c   |  8 +++-
- drivers/media/v4l2-core/v4l2-mem2mem.c        | 35 ++++++++++++++
- drivers/staging/media/sunxi/cedrus/cedrus.h   |  1 +
- .../staging/media/sunxi/cedrus/cedrus_dec.c   | 11 +++++
- .../staging/media/sunxi/cedrus/cedrus_h264.c  | 11 ++++-
- .../staging/media/sunxi/cedrus/cedrus_hw.c    |  8 ++--
- .../staging/media/sunxi/cedrus/cedrus_video.c | 14 ++++++
- include/media/v4l2-mem2mem.h                  | 46 +++++++++++++++++++
+ include/media/v4l2-mem2mem.h                  | 42 +++++++++++++++++++
  include/media/videobuf2-core.h                |  3 ++
- include/media/videobuf2-v4l2.h                |  5 ++
- include/uapi/linux/videodev2.h                | 14 ++++--
- 15 files changed, 175 insertions(+), 11 deletions(-)
+ include/media/videobuf2-v4l2.h                |  5 +++
+ include/uapi/linux/videodev2.h                | 13 +++---
+ 7 files changed, 84 insertions(+), 6 deletions(-)
 
+diff --git a/Documentation/media/uapi/v4l/buffer.rst b/Documentation/media/uapi/v4l/buffer.rst
+index 1cbd9cde57f3..afb03906ead9 100644
+--- a/Documentation/media/uapi/v4l/buffer.rst
++++ b/Documentation/media/uapi/v4l/buffer.rst
+@@ -607,6 +607,19 @@ Buffer Flags
+ 	applications shall use this flag for output buffers if the data in
+ 	this buffer has not been created by the CPU but by some
+ 	DMA-capable unit, in which case caches have not been used.
++    * .. _`V4L2-BUF-FLAG-M2M-HOLD-CAPTURE-BUF`:
++
++      - ``V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF``
++      - 0x00000200
++      - Only valid if ``V4L2_BUF_CAP_SUPPORTS_M2M_HOLD_CAPTURE_BUF`` is
++        set. It is typically used with stateless decoders where multiple
++	output buffers each decode to a slice of the decoded frame.
++	Applications can set this flag when queueing the output buffer
++	to prevent the driver from dequeueing the capture buffer after
++	the output buffer has been decoded (i.e. the capture buffer is
++	'held'). If the timestamp of this output buffer differs from that
++	of the previous output buffer, then that indicates the start of a
++	new frame and the previously held capture buffer is dequeued.
+     * .. _`V4L2-BUF-FLAG-LAST`:
+ 
+       - ``V4L2_BUF_FLAG_LAST``
+diff --git a/Documentation/media/uapi/v4l/vidioc-reqbufs.rst b/Documentation/media/uapi/v4l/vidioc-reqbufs.rst
+index d7faef10e39b..d0c643db477a 100644
+--- a/Documentation/media/uapi/v4l/vidioc-reqbufs.rst
++++ b/Documentation/media/uapi/v4l/vidioc-reqbufs.rst
+@@ -125,6 +125,7 @@ aborting or finishing any DMA in progress, an implicit
+ .. _V4L2-BUF-CAP-SUPPORTS-DMABUF:
+ .. _V4L2-BUF-CAP-SUPPORTS-REQUESTS:
+ .. _V4L2-BUF-CAP-SUPPORTS-ORPHANED-BUFS:
++.. _V4L2-BUF-CAP-SUPPORTS-M2M-HOLD-CAPTURE-BUF:
+ 
+ .. cssclass:: longtable
+ 
+@@ -150,6 +151,11 @@ aborting or finishing any DMA in progress, an implicit
+       - The kernel allows calling :ref:`VIDIOC_REQBUFS` while buffers are still
+         mapped or exported via DMABUF. These orphaned buffers will be freed
+         when they are unmapped or when the exported DMABUF fds are closed.
++    * - ``V4L2_BUF_CAP_SUPPORTS_M2M_HOLD_CAPTURE_BUF``
++      - 0x00000020
++      - Only valid for stateless decoders. If set, then userspace can set the
++        ``V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF`` flag to hold off on returning the
++	capture buffer until the OUTPUT timestamp changes.
+ 
+ Return Value
+ ============
+diff --git a/drivers/media/common/videobuf2/videobuf2-v4l2.c b/drivers/media/common/videobuf2/videobuf2-v4l2.c
+index 5a9ba3846f0a..699787f48f46 100644
+--- a/drivers/media/common/videobuf2/videobuf2-v4l2.c
++++ b/drivers/media/common/videobuf2/videobuf2-v4l2.c
+@@ -50,7 +50,8 @@ module_param(debug, int, 0644);
+ 				 V4L2_BUF_FLAG_TIMESTAMP_MASK)
+ /* Output buffer flags that should be passed on to the driver */
+ #define V4L2_BUFFER_OUT_FLAGS	(V4L2_BUF_FLAG_PFRAME | V4L2_BUF_FLAG_BFRAME | \
+-				 V4L2_BUF_FLAG_KEYFRAME | V4L2_BUF_FLAG_TIMECODE)
++				 V4L2_BUF_FLAG_KEYFRAME | V4L2_BUF_FLAG_TIMECODE | \
++				 V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF)
+ 
+ /*
+  * __verify_planes_array() - verify that the planes array passed in struct
+@@ -194,6 +195,7 @@ static int vb2_fill_vb2_v4l2_buffer(struct vb2_buffer *vb, struct v4l2_buffer *b
+ 	}
+ 	vbuf->sequence = 0;
+ 	vbuf->request_fd = -1;
++	vbuf->is_held = false;
+ 
+ 	if (V4L2_TYPE_IS_MULTIPLANAR(b->type)) {
+ 		switch (b->memory) {
+@@ -321,6 +323,8 @@ static int vb2_fill_vb2_v4l2_buffer(struct vb2_buffer *vb, struct v4l2_buffer *b
+ 		 */
+ 		vbuf->flags &= ~V4L2_BUF_FLAG_TIMECODE;
+ 		vbuf->field = b->field;
++		if (!(q->subsystem_flags & VB2_V4L2_FL_SUPPORTS_M2M_HOLD_CAPTURE_BUF))
++			vbuf->flags &= ~V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF;
+ 	} else {
+ 		/* Zero any output buffer flags as this is a capture buffer */
+ 		vbuf->flags &= ~V4L2_BUFFER_OUT_FLAGS;
+@@ -654,6 +658,8 @@ static void fill_buf_caps(struct vb2_queue *q, u32 *caps)
+ 		*caps |= V4L2_BUF_CAP_SUPPORTS_USERPTR;
+ 	if (q->io_modes & VB2_DMABUF)
+ 		*caps |= V4L2_BUF_CAP_SUPPORTS_DMABUF;
++	if (q->subsystem_flags & VB2_V4L2_FL_SUPPORTS_M2M_HOLD_CAPTURE_BUF)
++		*caps |= V4L2_BUF_CAP_SUPPORTS_M2M_HOLD_CAPTURE_BUF;
+ #ifdef CONFIG_MEDIA_CONTROLLER_REQUEST_API
+ 	if (q->supports_requests)
+ 		*caps |= V4L2_BUF_CAP_SUPPORTS_REQUESTS;
+diff --git a/include/media/v4l2-mem2mem.h b/include/media/v4l2-mem2mem.h
+index 0b9c3a287061..c9fa96c8eed1 100644
+--- a/include/media/v4l2-mem2mem.h
++++ b/include/media/v4l2-mem2mem.h
+@@ -644,6 +644,48 @@ void v4l2_m2m_buf_copy_metadata(const struct vb2_v4l2_buffer *out_vb,
+ 				struct vb2_v4l2_buffer *cap_vb,
+ 				bool copy_frame_flags);
+ 
++/**
++ * v4l2_m2m_release_capture_buf() - check if the capture buffer should be
++ * released
++ *
++ * @out_vb: the output buffer
++ * @cap_vb: the capture buffer
++ *
++ * This helper function returns true if the current capture buffer should
++ * be released to vb2. This is the case if the output buffer specified that
++ * the capture buffer should be held (i.e. not returned to vb2) AND if the
++ * timestamp of the capture buffer differs from the output buffer timestamp.
++ *
++ * This helper is to be called at the start of the device_run callback:
++ *
++ * .. code-block:: c
++ *
++ *	if (v4l2_m2m_release_capture_buf(out_vb, cap_vb)) {
++ *		v4l2_m2m_dst_buf_remove(m2m_ctx);
++ *		v4l2_m2m_buf_done(cap_vb, VB2_BUF_STATE_DONE);
++ *		cap_vb = v4l2_m2m_next_dst_buf(m2m_ctx);
++ *	}
++ *	cap_vb->is_held = out_vb->flags & V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF;
++ *
++ *	...
++ *
++ *	v4l2_m2m_buf_done(out_vb, VB2_BUF_STATE_DONE);
++ *	if (!cap_vb->is_held) {
++ *		v4l2_m2m_dst_buf_remove(m2m_ctx);
++ *		v4l2_m2m_buf_done(cap_vb, VB2_BUF_STATE_DONE);
++ *	}
++ *
++ * This allows for multiple output buffers to be used to fill in a single
++ * capture buffer. This is typically used by stateless decoders where
++ * multiple e.g. H.264 slices contribute to a single decoded frame.
++ */
++static inline bool v4l2_m2m_release_capture_buf(const struct vb2_v4l2_buffer *out_vb,
++						const struct vb2_v4l2_buffer *cap_vb)
++{
++	return cap_vb->is_held && cap_vb->vb2_buf.copied_timestamp &&
++	       out_vb->vb2_buf.timestamp != cap_vb->vb2_buf.timestamp;
++}
++
+ /* v4l2 request helper */
+ 
+ void v4l2_m2m_request_queue(struct media_request *req);
+diff --git a/include/media/videobuf2-core.h b/include/media/videobuf2-core.h
+index 640aabe69450..a2b2208b02da 100644
+--- a/include/media/videobuf2-core.h
++++ b/include/media/videobuf2-core.h
+@@ -505,6 +505,8 @@ struct vb2_buf_ops {
+  * @buf_ops:	callbacks to deliver buffer information.
+  *		between user-space and kernel-space.
+  * @drv_priv:	driver private data.
++ * @subsystem_flags: Flags specific to the subsystem (V4L2/DVB/etc.). Not used
++ *		by the vb2 core.
+  * @buf_struct_size: size of the driver-specific buffer structure;
+  *		"0" indicates the driver doesn't want to use a custom buffer
+  *		structure type. for example, ``sizeof(struct vb2_v4l2_buffer)``
+@@ -571,6 +573,7 @@ struct vb2_queue {
+ 	const struct vb2_buf_ops	*buf_ops;
+ 
+ 	void				*drv_priv;
++	u32				subsystem_flags;
+ 	unsigned int			buf_struct_size;
+ 	u32				timestamp_flags;
+ 	gfp_t				gfp_flags;
+diff --git a/include/media/videobuf2-v4l2.h b/include/media/videobuf2-v4l2.h
+index 8a10889dc2fd..13ab101864aa 100644
+--- a/include/media/videobuf2-v4l2.h
++++ b/include/media/videobuf2-v4l2.h
+@@ -33,6 +33,7 @@
+  * @timecode:	frame timecode.
+  * @sequence:	sequence count of this frame.
+  * @request_fd:	the request_fd associated with this buffer
++ * @is_held:	if true, then this buffer was held
+  * @planes:	plane information (userptr/fd, length, bytesused, data_offset).
+  *
+  * Should contain enough information to be able to cover all the fields
+@@ -46,9 +47,13 @@ struct vb2_v4l2_buffer {
+ 	struct v4l2_timecode	timecode;
+ 	__u32			sequence;
+ 	__s32			request_fd;
++	bool			is_held;
+ 	struct vb2_plane	planes[VB2_MAX_PLANES];
+ };
+ 
++/* VB2 V4L2 flags as set in vb2_queue.subsystem_flags */
++#define VB2_V4L2_FL_SUPPORTS_M2M_HOLD_CAPTURE_BUF (1 << 0)
++
+ /*
+  * to_vb2_v4l2_buffer() - cast struct vb2_buffer * to struct vb2_v4l2_buffer *
+  */
+diff --git a/include/uapi/linux/videodev2.h b/include/uapi/linux/videodev2.h
+index 530638dffd93..4fa9f543742d 100644
+--- a/include/uapi/linux/videodev2.h
++++ b/include/uapi/linux/videodev2.h
+@@ -915,11 +915,12 @@ struct v4l2_requestbuffers {
+ };
+ 
+ /* capabilities for struct v4l2_requestbuffers and v4l2_create_buffers */
+-#define V4L2_BUF_CAP_SUPPORTS_MMAP	(1 << 0)
+-#define V4L2_BUF_CAP_SUPPORTS_USERPTR	(1 << 1)
+-#define V4L2_BUF_CAP_SUPPORTS_DMABUF	(1 << 2)
+-#define V4L2_BUF_CAP_SUPPORTS_REQUESTS	(1 << 3)
+-#define V4L2_BUF_CAP_SUPPORTS_ORPHANED_BUFS (1 << 4)
++#define V4L2_BUF_CAP_SUPPORTS_MMAP			(1 << 0)
++#define V4L2_BUF_CAP_SUPPORTS_USERPTR			(1 << 1)
++#define V4L2_BUF_CAP_SUPPORTS_DMABUF			(1 << 2)
++#define V4L2_BUF_CAP_SUPPORTS_REQUESTS			(1 << 3)
++#define V4L2_BUF_CAP_SUPPORTS_ORPHANED_BUFS		(1 << 4)
++#define V4L2_BUF_CAP_SUPPORTS_M2M_HOLD_CAPTURE_BUF	(1 << 5)
+ 
+ /**
+  * struct v4l2_plane - plane info for multi-planar buffers
+@@ -1041,6 +1042,8 @@ static inline __u64 v4l2_timeval_to_ns(const struct timeval *tv)
+ #define V4L2_BUF_FLAG_IN_REQUEST		0x00000080
+ /* timecode field is valid */
+ #define V4L2_BUF_FLAG_TIMECODE			0x00000100
++/* Don't return the capture buffer until OUTPUT timestamp changes */
++#define V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF	0x00000200
+ /* Buffer is prepared for queuing */
+ #define V4L2_BUF_FLAG_PREPARED			0x00000400
+ /* Cache handling flags */
 -- 
 2.23.0
 
