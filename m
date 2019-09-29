@@ -2,41 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDD06C139F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 08:24:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21E9EC13A1
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 08:25:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Vc2CCQWbErWiEy4cuSDjbuNyqW5Vb0QK9ebN3wEiHdU=; b=E3zxWkGUBKmOSs
-	OxJ8Yrpt6AS7ssvbOAan4PZZT0eLIBq35Hht0trGxi3moTdA8ouOXs4Ak8X1MJxt0tyI/gDCkHnYl
-	5wGEOE1FMBVMm9ti06Cz6D11LP18RcFdkI8yK00yzRX7foFSZS4zZcmrz/AtKOO4Q+x3NsG2uXkJK
-	DFXgGikLcdMYbZSsstzvozR3PPiKszxQtCz4z5LNa0YIn0t9t309J0ZrhQDqBwBMsTUoju8uADgKu
-	S+J94e6numovA/eY69XrOKeMa1CgVRJhXBt1lVt0xyZ8saUJWCgTbhW7zKLMeiuFu1VMdeAbWc+EX
-	W9peTaGXJucm0+gH+AfQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AEvpVIsHiNKdpvteEtytVbJEufx6rnFg5c95xZHo6ak=; b=b2JIP5A4/N7hFI
+	ZqxnjkkwF7iFRTa8YLv6G7wv0s9X5ejPCy7h60tCaWYENfMLv85WDW50EA9gt46SFO6kQ0/2XFstE
+	MKlrspOxJKUuQqyBaWd1SDh44+aniGZabeWQ/0ipOcMklF34QFXSiJdWp6kDI8be4vyaVwmr2xCRU
+	m7HymbHXFm835j3Dj14DI5alyH/wCT0tNBSDImwRd6hrZb5ox1mRKmzcVkueBfXRsbfQJFXgxTC+N
+	OJEI3t1yg+SpoPhbDOaOVu5BXwxe39nWIB3rL31OGHokeJJ/Rg4V3sIlQsvGOqvWd4U8V2ozT1cXy
+	q3/t1KH6iTYvAMy/zdiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iESdI-0006FB-VT; Sun, 29 Sep 2019 06:24:36 +0000
+	id 1iESde-0006ZC-PF; Sun, 29 Sep 2019 06:24:58 +0000
 Received: from mail-sz.amlogic.com ([211.162.65.117])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iESd2-0006CX-WD; Sun, 29 Sep 2019 06:24:22 +0000
+ id 1iESd5-0006CX-2T; Sun, 29 Sep 2019 06:24:24 +0000
 Received: from droid12-sz.software.amlogic (10.28.8.22) by mail-sz.amlogic.com
  (10.28.11.5) with Microsoft SMTP Server id 15.1.1591.10;
  Sun, 29 Sep 2019 14:24:19 +0800
 From: Xingyu Chen <xingyu.chen@amlogic.com>
 To: Philipp Zabel <p.zabel@pengutronix.de>, Kevin Hilman
  <khilman@baylibre.com>, Neil Armstrong <narmstrong@baylibre.com>
-Subject: [PATCH v3 0/3] reset: meson: add Meson-A1 SoC support
-Date: Sun, 29 Sep 2019 14:24:12 +0800
-Message-ID: <1569738255-3941-1-git-send-email-xingyu.chen@amlogic.com>
+Subject: [PATCH v3 1/3] arm64: dts: meson: add reset controller for Meson-A1
+ SoC
+Date: Sun, 29 Sep 2019 14:24:13 +0800
+Message-ID: <1569738255-3941-2-git-send-email-xingyu.chen@amlogic.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1569738255-3941-1-git-send-email-xingyu.chen@amlogic.com>
+References: <1569738255-3941-1-git-send-email-xingyu.chen@amlogic.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.28.8.22]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190928_232421_033716_2CB696BF 
-X-CRM114-Status: UNSURE (   8.74  )
+X-CRM114-CacheID: sfid-20190928_232423_115792_12747A9E 
+X-CRM114-Status: UNSURE (   7.05  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -66,35 +69,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchset adds support for Meson-A1 SoC Reset Controller. A new struct
-meson_reset_param is introduced to describe the register differences between
-Meson-A1 and previous SoCs.
+Add the reset controller device of Meson-A1 SoC family
 
-Changes since v2 at [1]:
-- add comments in header file to indicate holes
-- reorder the Signed-off-by and Reviewed-by
-- remove Jianxin's Signed-off-by
-- add Kevin's Reviewed-by
+Signed-off-by: Xingyu Chen <xingyu.chen@amlogic.com>
+---
+ arch/arm64/boot/dts/amlogic/meson-a1.dtsi | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-Changes since v1 at [0]:
-- rebase on linux-next
-- add Neil's Reviewed-by
-
-[0] https://lore.kernel.org/linux-amlogic/1568808746-1153-1-git-send-email-xingyu.chen@amlogic.com
-[1] https://lore.kernel.org/linux-amlogic/1569227661-4261-1-git-send-email-xingyu.chen@amlogic.com
-
-Xingyu Chen (3):
-  arm64: dts: meson: add reset controller for Meson-A1 SoC
-  dt-bindings: reset: add bindings for the Meson-A1 SoC Reset Controller
-  reset: add support for the Meson-A1 SoC Reset Controller
-
- .../bindings/reset/amlogic,meson-reset.yaml        |  1 +
- arch/arm64/boot/dts/amlogic/meson-a1.dtsi          |  6 ++
- drivers/reset/reset-meson.c                        | 35 ++++++++--
- include/dt-bindings/reset/amlogic,meson-a1-reset.h | 74 ++++++++++++++++++++++
- 4 files changed, 109 insertions(+), 7 deletions(-)
- create mode 100644 include/dt-bindings/reset/amlogic,meson-a1-reset.h
-
+diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
+index 7210ad0..1c588ab 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
+@@ -74,6 +74,12 @@
+ 			#size-cells = <2>;
+ 			ranges = <0x0 0x0 0x0 0xfe000000 0x0 0x1000000>;
+ 
++			reset: reset-controller@0 {
++				compatible = "amlogic,meson-a1-reset";
++				reg = <0x0 0x0 0x0 0x8c>;
++				#reset-cells = <1>;
++			};
++
+ 			uart_AO: serial@1c00 {
+ 				compatible = "amlogic,meson-gx-uart",
+ 					     "amlogic,meson-ao-uart";
 -- 
 2.7.4
 
