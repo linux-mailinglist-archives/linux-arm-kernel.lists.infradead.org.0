@@ -2,78 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B8B2C17A8
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 19:39:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 390AFC17A9
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 19:39:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Mh9xZCxWPw/L85IlIgrdE1MfmLWPxhwYvkE8yGM0NJM=; b=SzVA5xdwkuJz8x
-	mLkF8KiBVJoruNKsqwlr3dpVOxxrccFdozVdC5pfIgWVC/PIp2hP0bVcRba7v4LizsYCbULjvAZK/
-	V11hl8qrYL5zCN6/aOKeKqCiQBBA/xpiBRkabSKPbm+4ozwh3T0lv+Gy3kIm64Y6VxPLAoYKwsXtB
-	senobTdOvGRmW9ft/LBUOcjOiYOTDP0wQz6OXroyzbk9wGL03yPxeq+UX6sP4s5rWEIL5gXLtTygD
-	fMI5Mn0Xd+s6NE63pPUK1Ts36kcSKMWjxvyww7BR/obpGVMaVWZLF+xxJOEsrxwww7TF+r06YcK9E
-	ArfvjDSqFTqz2aE+Jf6w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=DevrksBywZMDoBrWo787Mp1xxpAMB6D8xJ8eKu+3m+E=; b=LJYkvm6ghMMy1l/rgB3ltQfjIP
+	WuSAjyzkOL1pgMMQGsFkLFpnc9DYpRhJ60MArp8Q7xBssOGgCkFt7EhyjNOCdnQKAlb4utKfteqBr
+	doNhgCmIEvUrQ1hs+Ik1KWEApgzPLaQS4S26b4GfM25IL+JxjpZcA7791sOJY5k6L9+QdiRoQao+b
+	gpk6PTh06XaE1I0jcibgVHfij0B1Q6/ZZXtAaJDxwgwLU3qHeRXjgq2YlG/vBbVWxRzTubHmOxjcP
+	amSbnAOb6uJZ/yknCVhyWqPQrZ8cR9tXXszS23MRqeJIDYO/jmgGX+YjDAJ7jHn0Se5I/lPzlKosQ
+	WFoDtv2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEdA7-00010S-By; Sun, 29 Sep 2019 17:39:11 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1iEdAe-0001AU-0u; Sun, 29 Sep 2019 17:39:44 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEd9u-0000z8-Tk
- for linux-arm-kernel@lists.infradead.org; Sun, 29 Sep 2019 17:39:01 +0000
-Received: by mail-wm1-x343.google.com with SMTP id 5so10780713wmg.0
+ id 1iEd9w-0000zS-FR
+ for linux-arm-kernel@lists.infradead.org; Sun, 29 Sep 2019 17:39:02 +0000
+Received: by mail-wm1-x344.google.com with SMTP id a6so10745371wma.5
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 29 Sep 2019 10:38:58 -0700 (PDT)
+ Sun, 29 Sep 2019 10:39:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=xVmeJVcyAv5FivCJe4Ho+3eNCzy/y0ab/TB7w9rUAN0=;
- b=wq7V+9PUtOB7d/V5MmO+V3l0NMsLZxE6O1DzfPfvq/jYkzo8hRWRYna+xFrt/bMC2U
- X9VBR/cknKMYxzzdh0FsmR0Zdcsci2e1o2xoFmg6hDadLDxf/kXW/SkNumxubq0x2MuI
- ph+hLbFu6iqTzDjIsi/WWpJFidHNJ27Jhh7CVXx2ahg87kEYXiFnFdMknLPagT0m5RUV
- PRmwPy/y9l2u+0EYEJ3MEVSwRXftkTUM5hUUjUWEPjF95AJv1dV431bGGc2O/SoJUKCx
- ttYKUXca3vHq9M9QluAN7rPLJ2s6ZBeXknYzFZIr4jRKVStWL0tQ6T3wnvCnegXo8tJd
- os9w==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=EiwPtV0QFOq6zlLEHTm5HZSlYrdGW9J+wv2xPz8xyFY=;
+ b=C5im0cXQNv3wGsmiCLsIcsFTaYYE97Ji1QEDLT98kH4bBwMlnuT0RmjtWkmdCyTFAi
+ Jk1bPl29M1SEIu4iSZmeZl9Cufa8woVy6eFdZyngAXnJIwG7dlRHWzKOfpBOKQHjid38
+ qT4VdUp3zcBV/GlPcJAx0VgNAiprMHf3JzC1VMjXh+NDpyisW8D+saVmRZoBOGtV7use
+ jlq9DwT1tLbnsPg6Bg4JAbr6pbmZlc+BvH36Mvx2YY+WrViQZqgbrk4y7qkRrOBLOnGz
+ MIjzLs/4A83Jw6lrQVdIhbXaEW4X1TFhxRwqjZv/85fEOBPFa2i7P8tlxpVxQCaQmD9v
+ zFYw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=xVmeJVcyAv5FivCJe4Ho+3eNCzy/y0ab/TB7w9rUAN0=;
- b=t+FiFDOzdyFsJiMRkDfQLPf/Jmi/J6ZGp2eddr6lnLl6i9rDXFb9Mxd1XWzfC5taXi
- oaMf+6Myu033imYN3njbo6/UYdwzzVcRvjB+Bp1LBk/12J5ZCn3yOoox8CJQrMNOYMZl
- w6WFTdQ2qk5jeIfvG2VRw2QTQ8xDE5t6XfjZZavJnKt390yNxWAq/XIw26HmkaoeG8tI
- rIMKaIFJhLDDsdztHNhLffVXWj4pgWNCRpm+wbsIvijG0B627dEjdtujxLO/qySMMQDn
- +QUCjlc7kmG2ilU80oSNq/APlVXXU4VAn2F8yNntOSMoC9v6ubKFF27SrODQPKeEe3CM
- P0sQ==
-X-Gm-Message-State: APjAAAXVp9yNr6kB+g6n1/ZoP8VQoLENDEH07SmCfpIIf18OSJxFA1Rh
- ZNk7JdAPlXz9fij1zy5MYsBiWg==
-X-Google-Smtp-Source: APXvYqzQ7UAyHPKCcemCW5D4+H/064n2+GRcKAP8QB6AA0lA7PEFDoUodArOscNVVmf9GN5csusnQg==
-X-Received: by 2002:a1c:a942:: with SMTP id s63mr14421967wme.152.1569778736774; 
- Sun, 29 Sep 2019 10:38:56 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=EiwPtV0QFOq6zlLEHTm5HZSlYrdGW9J+wv2xPz8xyFY=;
+ b=QPhGvdYM0Grlul/4NY7ZYn1MdbldmpPJY3bHjXBUNo5+zFz2UmQN9i4SdjAusr0Ly7
+ gpD+4IrhoUZgXfzv+iJPTzn0ZhfYX0BDqb4b3JA973Y8K/C7xqY6vRnNMgifkS36OhLn
+ 6QCNCksteuhQqj6AruxI8hCltZu3+vrtlrp0mMB3RybFavqzDAjKcQ8P41flJlmVelim
+ gtorhSnTt2y7PuT1fy6U+4B91nHRMxxud0M6vPr03XZECO5zx7u561BpiObcSq81Eoes
+ 0A1t6zrLRvrZiLwSyqpmixHrAGxBRmATaBa4Q0QEe4FrtL7Wfry4EjE559aaS3ZXjIfW
+ QFlw==
+X-Gm-Message-State: APjAAAV9eqSVDkyv3bSdJO0Vh53X/oJ0gLfhJFEhv5lBUaNHPr/0/pC4
+ JE2ZTbC7Q0wXE+iCMX4abLF3EQ==
+X-Google-Smtp-Source: APXvYqz0/s7ZCwm+bkMhkID88/ReeGlSr4oErsjPCITzoNF0vT6AtWyybZ/mTW8wdn0p6O1ZNn0rLA==
+X-Received: by 2002:a7b:c932:: with SMTP id h18mr11214396wml.86.1569778738649; 
+ Sun, 29 Sep 2019 10:38:58 -0700 (PDT)
 Received: from e123331-lin.nice.arm.com
  (bar06-5-82-246-156-241.fbx.proxad.net. [82.246.156.241])
- by smtp.gmail.com with ESMTPSA id q192sm17339779wme.23.2019.09.29.10.38.54
+ by smtp.gmail.com with ESMTPSA id q192sm17339779wme.23.2019.09.29.10.38.56
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 29 Sep 2019 10:38:55 -0700 (PDT)
+ Sun, 29 Sep 2019 10:38:57 -0700 (PDT)
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 To: linux-crypto@vger.kernel.org
-Subject: [RFC PATCH 00/20] crypto: wireguard with crypto API library interface
-Date: Sun, 29 Sep 2019 19:38:30 +0200
-Message-Id: <20190929173850.26055-1-ard.biesheuvel@linaro.org>
+Subject: [RFC PATCH 01/20] crypto: chacha - move existing library code into
+ lib/crypto
+Date: Sun, 29 Sep 2019 19:38:31 +0200
+Message-Id: <20190929173850.26055-2-ard.biesheuvel@linaro.org>
 X-Mailer: git-send-email 2.17.1
-MIME-Version: 1.0
+In-Reply-To: <20190929173850.26055-1-ard.biesheuvel@linaro.org>
+References: <20190929173850.26055-1-ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190929_103859_158827_56F41DD3 
-X-CRM114-Status: GOOD (  21.06  )
+X-CRM114-CacheID: sfid-20190929_103900_517213_14178AB5 
+X-CRM114-Status: GOOD (  20.00  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,247 +107,404 @@ Cc: "Jason A . Donenfeld" <Jason@zx2c4.com>,
  Andy Lutomirski <luto@kernel.org>, Marc Zyngier <maz@kernel.org>,
  Linus Torvalds <torvalds@linux-foundation.org>,
  David Miller <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is a follow-up to 'crypto: wireguard using the existing crypto API'.
-Linus has made it abundantly clear that using the abstract AEAD interface
-is not acceptable for instantiating a transformation that is known at compile
-time, so I will abandon that approach for the time being. If anyone turns up
-with appropriate h/w to run WireGuard in async mode, we might revisit this,
-but for sync s/w algorithms, a concrete library interface is clearly preferred.
+Move the existing shared ChaCha code into lib/crypto, and at the
+same time, split the support header into a public version, and an
+internal version that is only intended for consumption by crypto
+implementations.
 
-Therefore, I dropped the AEAD changes, and instead, moved to a true library
-interface a la Zinc, but with the warts removed:
-- no extensive #ifdef'ery, no static inline stub functions in .c files, or
-  inclusion of .c files in other .c files - instead, we use Kconfig constraints
-  and Kbuild rules which are much more idiomatic for the kernel
-- no big pile of code for all architectures in lib/zinc, but generic library
-  code in lib/crypto and per-arch code in arch/*/crypto, as we are used to for
-  crypto API drivers
-- reuse existing implementations of ChaCha20 and Poly1305 instead of replacing
-  everything wholesale without proper motivation.
+Also, refactor the generic implementation so it only gets exposed as the
+chacha_crypt() library function if the architecture does not override it
+with its own implementation, potentially falling back to the generic
+routine if needed.
 
-This now includes all the accelerated code contributed by Jason except for
-the MIPS changes, but these should be trivial to port once we agree that this
-approach is acceptable.
+And while at it, tidy up lib/crypto/Makefile a bit so we are ready for
+some new arrivals.
 
-Patches #1 .. #8 refactor the chacha and poly1305 code so we can expose the
-existing accelerated implementations via the library interface, as well as
-two new Poly1305 implementations for ARM and arm64 taken from the OpenSSL/
-Cryptogams project.
+Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+---
+ arch/arm/crypto/chacha-neon-glue.c   |  2 +-
+ arch/arm64/crypto/chacha-neon-glue.c |  2 +-
+ arch/x86/crypto/chacha_glue.c        |  2 +-
+ crypto/Kconfig                       |  8 ++++
+ crypto/chacha_generic.c              | 44 ++----------------
+ include/crypto/chacha.h              | 49 +++++++++++++-------
+ include/crypto/internal/chacha.h     | 25 ++++++++++
+ lib/Makefile                         |  3 +-
+ lib/crypto/Makefile                  | 19 ++++----
+ lib/{ => crypto}/chacha.c            | 37 +++++++++++++--
+ 10 files changed, 118 insertions(+), 73 deletions(-)
 
-Patches #9 .. #16 incorporate the Zinc libraries for blake2s and curve25519,
-as well as the plain VA versions of the ChaCha20Poly1305 construction.
-
-Patch #17 reimplements the scatterlist interface of ChaCha20Poly1305 without
-relying on the crypto API's blkcipher walk API. (The original implementation
-had a rather nasty hack to be able to call into it from non-crypto API code,
-but it was ugly and it doesn't look to me like it is guaranteed to work as
-expected in cases where the scatterlist is fragmented into chunks that are
-not aligned to the chacha block size)
-
-Patch #18 is the same WireGuard patch as in the previous series, with patches
-#19 and #20 being the deltas that need to be applied on top to get the code
-to build.
-
-Patches can be found here:
-https://git.kernel.org/pub/scm/linux/kernel/git/ardb/linux.git/log/?h=wireguard-crypto-library-api
-
-Cc: Herbert Xu <herbert@gondor.apana.org.au> 
-Cc: David Miller <davem@davemloft.net>
-Cc: Greg KH <gregkh@linuxfoundation.org>
-Cc: Linus Torvalds <torvalds@linux-foundation.org>
-Cc: Jason A. Donenfeld <Jason@zx2c4.com>
-Cc: Samuel Neves <sneves@dei.uc.pt>
-Cc: Dan Carpenter <dan.carpenter@oracle.com>
-Cc: Arnd Bergmann <arnd@arndb.de>
-Cc: Eric Biggers <ebiggers@google.com>
-Cc: Andy Lutomirski <luto@kernel.org>
-Cc: Will Deacon <will@kernel.org>
-Cc: Marc Zyngier <maz@kernel.org>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Martin Willi <martin@strongswan.org>
-
-[0] https://lore.kernel.org/linux-crypto/20190925161255.1871-1-ard.biesheuvel@linaro.org/
-
-Ard Biesheuvel (13):
-  crypto: chacha - move existing library code into lib/crypto
-  crypto: x86/chacha - expose SIMD ChaCha routine as library function
-  crypto: arm64/chacha - expose arm64 ChaCha routine as library function
-  crypto: arm/chacha - expose ARM ChaCha routine as library function
-  crypto: poly1305 - move into lib/crypto and refactor into library
-  crypto: x86/poly1305 - expose existing driver as poly1305 library
-  crypto: arm64/poly1305 - incorporate OpenSSL/CRYPTOGAMS NEON
-    implementation
-  crypto: arm/poly1305 - incorporate OpenSSL/CRYPTOGAMS NEON
-    implementation
-  int128: move __uint128_t compiler test to Kconfig
-  crypto: chacha20poly1305 - import construction and selftest from Zinc
-  crypto: lib/chacha20poly1305 - reimplement crypt_from_sg() routine
-  netlink: use new strict length types in policy for 5.2
-  wg switch to lib/crypto algos
-
-Jason A. Donenfeld (7):
-  crypto: BLAKE2s - generic C library implementation and selftest
-  crypto: BLAKE2s - x86_64 implementation
-  crypto: Curve25519 - generic C library implementations and selftest
-  crypto: Curve25519 - x86_64 library implementation
-  crypto: arm - import Bernstein and Schwabe's Curve25519 ARM
-    implementation
-  crypto: arm/Curve25519 - wire up NEON implementation
-  net: WireGuard secure network tunnel
-
- MAINTAINERS                                  |    8 +
- arch/arm/crypto/Kconfig                      |   11 +
- arch/arm/crypto/Makefile                     |    9 +-
- arch/arm/crypto/chacha-neon-glue.c           |   21 +-
- arch/arm/crypto/curve25519-core.S            | 2062 +++++
- arch/arm/crypto/curve25519-glue.c            |   45 +
- arch/arm/crypto/poly1305-armv4.pl            | 1236 +++
- arch/arm/crypto/poly1305-core.S_shipped      | 1158 +++
- arch/arm/crypto/poly1305-glue.c              |  271 +
- arch/arm64/Kconfig                           |    2 +-
- arch/arm64/crypto/Kconfig                    |    6 +
- arch/arm64/crypto/Makefile                   |   10 +-
- arch/arm64/crypto/chacha-neon-glue.c         |   14 +-
- arch/arm64/crypto/poly1305-armv8.pl          |  913 +++
- arch/arm64/crypto/poly1305-core.S_shipped    |  835 ++
- arch/arm64/crypto/poly1305-glue.c            |  227 +
- arch/riscv/Kconfig                           |    2 +-
- arch/x86/Kconfig                             |    2 +-
- arch/x86/crypto/Makefile                     |    3 +
- arch/x86/crypto/blake2s-core.S               |  685 ++
- arch/x86/crypto/blake2s-glue.c               |   73 +
- arch/x86/crypto/chacha_glue.c                |   16 +-
- arch/x86/crypto/curve25519-x86_64.c          | 2379 ++++++
- arch/x86/crypto/poly1305_glue.c              |  148 +-
- crypto/Kconfig                               |   59 +
- crypto/adiantum.c                            |    5 +-
- crypto/chacha_generic.c                      |   44 +-
- crypto/ecc.c                                 |    2 +-
- crypto/nhpoly1305.c                          |    3 +-
- crypto/poly1305_generic.c                    |  196 +-
- drivers/net/Kconfig                          |   30 +
- drivers/net/Makefile                         |    1 +
- drivers/net/wireguard/Makefile               |   18 +
- drivers/net/wireguard/allowedips.c           |  377 +
- drivers/net/wireguard/allowedips.h           |   59 +
- drivers/net/wireguard/cookie.c               |  236 +
- drivers/net/wireguard/cookie.h               |   59 +
- drivers/net/wireguard/device.c               |  460 ++
- drivers/net/wireguard/device.h               |   65 +
- drivers/net/wireguard/main.c                 |   64 +
- drivers/net/wireguard/messages.h             |  128 +
- drivers/net/wireguard/netlink.c              |  621 ++
- drivers/net/wireguard/netlink.h              |   12 +
- drivers/net/wireguard/noise.c                |  807 ++
- drivers/net/wireguard/noise.h                |  131 +
- drivers/net/wireguard/peer.c                 |  239 +
- drivers/net/wireguard/peer.h                 |   83 +
- drivers/net/wireguard/peerlookup.c           |  221 +
- drivers/net/wireguard/peerlookup.h           |   64 +
- drivers/net/wireguard/queueing.c             |   53 +
- drivers/net/wireguard/queueing.h             |  198 +
- drivers/net/wireguard/ratelimiter.c          |  223 +
- drivers/net/wireguard/ratelimiter.h          |   19 +
- drivers/net/wireguard/receive.c              |  595 ++
- drivers/net/wireguard/selftest/allowedips.c  |  682 ++
- drivers/net/wireguard/selftest/counter.c     |  104 +
- drivers/net/wireguard/selftest/ratelimiter.c |  226 +
- drivers/net/wireguard/send.c                 |  424 +
- drivers/net/wireguard/socket.c               |  433 +
- drivers/net/wireguard/socket.h               |   44 +
- drivers/net/wireguard/timers.c               |  241 +
- drivers/net/wireguard/timers.h               |   31 +
- drivers/net/wireguard/version.h              |    1 +
- include/crypto/blake2s.h                     |   56 +
- include/crypto/chacha.h                      |   58 +-
- include/crypto/chacha20poly1305.h            |   48 +
- include/crypto/curve25519.h                  |   28 +
- include/crypto/internal/chacha.h             |   25 +
- include/crypto/internal/poly1305.h           |   45 +
- include/crypto/poly1305.h                    |   43 +-
- include/uapi/linux/wireguard.h               |  190 +
- init/Kconfig                                 |    4 +
- lib/Makefile                                 |    3 +-
- lib/crypto/Makefile                          |   39 +-
- lib/crypto/blake2s-selftest.c                | 2093 +++++
- lib/crypto/blake2s.c                         |  281 +
- lib/{ => crypto}/chacha.c                    |   37 +-
- lib/crypto/chacha20poly1305-selftest.c       | 7394 ++++++++++++++++++
- lib/crypto/chacha20poly1305.c                |  370 +
- lib/crypto/curve25519-fiat32.c               |  864 ++
- lib/crypto/curve25519-hacl64.c               |  788 ++
- lib/crypto/curve25519-selftest.c             | 1321 ++++
- lib/crypto/curve25519.c                      |   86 +
- lib/crypto/poly1305.c                        |  247 +
- lib/ubsan.c                                  |    2 +-
- lib/ubsan.h                                  |    2 +-
- tools/testing/selftests/wireguard/netns.sh   |  503 ++
- 87 files changed, 31549 insertions(+), 372 deletions(-)
- create mode 100644 arch/arm/crypto/curve25519-core.S
- create mode 100644 arch/arm/crypto/curve25519-glue.c
- create mode 100644 arch/arm/crypto/poly1305-armv4.pl
- create mode 100644 arch/arm/crypto/poly1305-core.S_shipped
- create mode 100644 arch/arm/crypto/poly1305-glue.c
- create mode 100644 arch/arm64/crypto/poly1305-armv8.pl
- create mode 100644 arch/arm64/crypto/poly1305-core.S_shipped
- create mode 100644 arch/arm64/crypto/poly1305-glue.c
- create mode 100644 arch/x86/crypto/blake2s-core.S
- create mode 100644 arch/x86/crypto/blake2s-glue.c
- create mode 100644 arch/x86/crypto/curve25519-x86_64.c
- create mode 100644 drivers/net/wireguard/Makefile
- create mode 100644 drivers/net/wireguard/allowedips.c
- create mode 100644 drivers/net/wireguard/allowedips.h
- create mode 100644 drivers/net/wireguard/cookie.c
- create mode 100644 drivers/net/wireguard/cookie.h
- create mode 100644 drivers/net/wireguard/device.c
- create mode 100644 drivers/net/wireguard/device.h
- create mode 100644 drivers/net/wireguard/main.c
- create mode 100644 drivers/net/wireguard/messages.h
- create mode 100644 drivers/net/wireguard/netlink.c
- create mode 100644 drivers/net/wireguard/netlink.h
- create mode 100644 drivers/net/wireguard/noise.c
- create mode 100644 drivers/net/wireguard/noise.h
- create mode 100644 drivers/net/wireguard/peer.c
- create mode 100644 drivers/net/wireguard/peer.h
- create mode 100644 drivers/net/wireguard/peerlookup.c
- create mode 100644 drivers/net/wireguard/peerlookup.h
- create mode 100644 drivers/net/wireguard/queueing.c
- create mode 100644 drivers/net/wireguard/queueing.h
- create mode 100644 drivers/net/wireguard/ratelimiter.c
- create mode 100644 drivers/net/wireguard/ratelimiter.h
- create mode 100644 drivers/net/wireguard/receive.c
- create mode 100644 drivers/net/wireguard/selftest/allowedips.c
- create mode 100644 drivers/net/wireguard/selftest/counter.c
- create mode 100644 drivers/net/wireguard/selftest/ratelimiter.c
- create mode 100644 drivers/net/wireguard/send.c
- create mode 100644 drivers/net/wireguard/socket.c
- create mode 100644 drivers/net/wireguard/socket.h
- create mode 100644 drivers/net/wireguard/timers.c
- create mode 100644 drivers/net/wireguard/timers.h
- create mode 100644 drivers/net/wireguard/version.h
- create mode 100644 include/crypto/blake2s.h
- create mode 100644 include/crypto/chacha20poly1305.h
- create mode 100644 include/crypto/curve25519.h
- create mode 100644 include/crypto/internal/chacha.h
- create mode 100644 include/crypto/internal/poly1305.h
- create mode 100644 include/uapi/linux/wireguard.h
- create mode 100644 lib/crypto/blake2s-selftest.c
- create mode 100644 lib/crypto/blake2s.c
- rename lib/{ => crypto}/chacha.c (76%)
- create mode 100644 lib/crypto/chacha20poly1305-selftest.c
- create mode 100644 lib/crypto/chacha20poly1305.c
- create mode 100644 lib/crypto/curve25519-fiat32.c
- create mode 100644 lib/crypto/curve25519-hacl64.c
- create mode 100644 lib/crypto/curve25519-selftest.c
- create mode 100644 lib/crypto/curve25519.c
- create mode 100644 lib/crypto/poly1305.c
- create mode 100755 tools/testing/selftests/wireguard/netns.sh
-
+diff --git a/arch/arm/crypto/chacha-neon-glue.c b/arch/arm/crypto/chacha-neon-glue.c
+index a8e9b534c8da..26576772f18b 100644
+--- a/arch/arm/crypto/chacha-neon-glue.c
++++ b/arch/arm/crypto/chacha-neon-glue.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #include <crypto/algapi.h>
+-#include <crypto/chacha.h>
++#include <crypto/internal/chacha.h>
+ #include <crypto/internal/simd.h>
+ #include <crypto/internal/skcipher.h>
+ #include <linux/kernel.h>
+diff --git a/arch/arm64/crypto/chacha-neon-glue.c b/arch/arm64/crypto/chacha-neon-glue.c
+index 1495d2b18518..d4cc61bfe79d 100644
+--- a/arch/arm64/crypto/chacha-neon-glue.c
++++ b/arch/arm64/crypto/chacha-neon-glue.c
+@@ -20,7 +20,7 @@
+  */
+ 
+ #include <crypto/algapi.h>
+-#include <crypto/chacha.h>
++#include <crypto/internal/chacha.h>
+ #include <crypto/internal/simd.h>
+ #include <crypto/internal/skcipher.h>
+ #include <linux/kernel.h>
+diff --git a/arch/x86/crypto/chacha_glue.c b/arch/x86/crypto/chacha_glue.c
+index 388f95a4ec24..bc62daa8dafd 100644
+--- a/arch/x86/crypto/chacha_glue.c
++++ b/arch/x86/crypto/chacha_glue.c
+@@ -7,7 +7,7 @@
+  */
+ 
+ #include <crypto/algapi.h>
+-#include <crypto/chacha.h>
++#include <crypto/internal/chacha.h>
+ #include <crypto/internal/simd.h>
+ #include <crypto/internal/skcipher.h>
+ #include <linux/kernel.h>
+diff --git a/crypto/Kconfig b/crypto/Kconfig
+index 9ea2b22aff90..5826381aca3a 100644
+--- a/crypto/Kconfig
++++ b/crypto/Kconfig
+@@ -1374,6 +1374,14 @@ config CRYPTO_SALSA20
+ 	  The Salsa20 stream cipher algorithm is designed by Daniel J.
+ 	  Bernstein <djb@cr.yp.to>. See <http://cr.yp.to/snuffle.html>
+ 
++config CRYPTO_ARCH_HAVE_LIB_CHACHA
++	tristate
++
++config CRYPTO_LIB_CHACHA
++	tristate
++	default y
++	depends on CRYPTO_ARCH_HAVE_LIB_CHACHA || !CRYPTO_ARCH_HAVE_LIB_CHACHA
++
+ config CRYPTO_CHACHA20
+ 	tristate "ChaCha stream cipher algorithms"
+ 	select CRYPTO_BLKCIPHER
+diff --git a/crypto/chacha_generic.c b/crypto/chacha_generic.c
+index 085d8d219987..15a244e2f410 100644
+--- a/crypto/chacha_generic.c
++++ b/crypto/chacha_generic.c
+@@ -8,29 +8,10 @@
+ 
+ #include <asm/unaligned.h>
+ #include <crypto/algapi.h>
+-#include <crypto/chacha.h>
++#include <crypto/internal/chacha.h>
+ #include <crypto/internal/skcipher.h>
+ #include <linux/module.h>
+ 
+-static void chacha_docrypt(u32 *state, u8 *dst, const u8 *src,
+-			   unsigned int bytes, int nrounds)
+-{
+-	/* aligned to potentially speed up crypto_xor() */
+-	u8 stream[CHACHA_BLOCK_SIZE] __aligned(sizeof(long));
+-
+-	while (bytes >= CHACHA_BLOCK_SIZE) {
+-		chacha_block(state, stream, nrounds);
+-		crypto_xor_cpy(dst, src, stream, CHACHA_BLOCK_SIZE);
+-		bytes -= CHACHA_BLOCK_SIZE;
+-		dst += CHACHA_BLOCK_SIZE;
+-		src += CHACHA_BLOCK_SIZE;
+-	}
+-	if (bytes) {
+-		chacha_block(state, stream, nrounds);
+-		crypto_xor_cpy(dst, src, stream, bytes);
+-	}
+-}
+-
+ static int chacha_stream_xor(struct skcipher_request *req,
+ 			     const struct chacha_ctx *ctx, const u8 *iv)
+ {
+@@ -48,8 +29,8 @@ static int chacha_stream_xor(struct skcipher_request *req,
+ 		if (nbytes < walk.total)
+ 			nbytes = round_down(nbytes, CHACHA_BLOCK_SIZE);
+ 
+-		chacha_docrypt(state, walk.dst.virt.addr, walk.src.virt.addr,
+-			       nbytes, ctx->nrounds);
++		chacha_crypt_generic(state, walk.dst.virt.addr,
++				     walk.src.virt.addr, nbytes, ctx->nrounds);
+ 		err = skcipher_walk_done(&walk, walk.nbytes - nbytes);
+ 	}
+ 
+@@ -58,22 +39,7 @@ static int chacha_stream_xor(struct skcipher_request *req,
+ 
+ void crypto_chacha_init(u32 *state, const struct chacha_ctx *ctx, const u8 *iv)
+ {
+-	state[0]  = 0x61707865; /* "expa" */
+-	state[1]  = 0x3320646e; /* "nd 3" */
+-	state[2]  = 0x79622d32; /* "2-by" */
+-	state[3]  = 0x6b206574; /* "te k" */
+-	state[4]  = ctx->key[0];
+-	state[5]  = ctx->key[1];
+-	state[6]  = ctx->key[2];
+-	state[7]  = ctx->key[3];
+-	state[8]  = ctx->key[4];
+-	state[9]  = ctx->key[5];
+-	state[10] = ctx->key[6];
+-	state[11] = ctx->key[7];
+-	state[12] = get_unaligned_le32(iv +  0);
+-	state[13] = get_unaligned_le32(iv +  4);
+-	state[14] = get_unaligned_le32(iv +  8);
+-	state[15] = get_unaligned_le32(iv + 12);
++	chacha_init_generic(state, ctx->key, iv);
+ }
+ EXPORT_SYMBOL_GPL(crypto_chacha_init);
+ 
+@@ -126,7 +92,7 @@ int crypto_xchacha_crypt(struct skcipher_request *req)
+ 
+ 	/* Compute the subkey given the original key and first 128 nonce bits */
+ 	crypto_chacha_init(state, ctx, req->iv);
+-	hchacha_block(state, subctx.key, ctx->nrounds);
++	hchacha_block_generic(state, subctx.key, ctx->nrounds);
+ 	subctx.nrounds = ctx->nrounds;
+ 
+ 	/* Build the real IV */
+diff --git a/include/crypto/chacha.h b/include/crypto/chacha.h
+index d1e723c6a37d..c29d8f7d69ed 100644
+--- a/include/crypto/chacha.h
++++ b/include/crypto/chacha.h
+@@ -15,9 +15,8 @@
+ #ifndef _CRYPTO_CHACHA_H
+ #define _CRYPTO_CHACHA_H
+ 
+-#include <crypto/skcipher.h>
++#include <asm/unaligned.h>
+ #include <linux/types.h>
+-#include <linux/crypto.h>
+ 
+ /* 32-bit stream position, then 96-bit nonce (RFC7539 convention) */
+ #define CHACHA_IV_SIZE		16
+@@ -29,26 +28,42 @@
+ /* 192-bit nonce, then 64-bit stream position */
+ #define XCHACHA_IV_SIZE		32
+ 
+-struct chacha_ctx {
+-	u32 key[8];
+-	int nrounds;
+-};
+-
+-void chacha_block(u32 *state, u8 *stream, int nrounds);
++void chacha_block_generic(u32 *state, u8 *stream, int nrounds);
+ static inline void chacha20_block(u32 *state, u8 *stream)
+ {
+-	chacha_block(state, stream, 20);
++	chacha_block_generic(state, stream, 20);
++}
++void hchacha_block_generic(const u32 *in, u32 *out, int nrounds);
++
++static inline void chacha_init_generic(u32 *state, const u32 *key, const u8 *iv)
++{
++	state[0]  = 0x61707865; /* "expa" */
++	state[1]  = 0x3320646e; /* "nd 3" */
++	state[2]  = 0x79622d32; /* "2-by" */
++	state[3]  = 0x6b206574; /* "te k" */
++	state[4]  = key[0];
++	state[5]  = key[1];
++	state[6]  = key[2];
++	state[7]  = key[3];
++	state[8]  = key[4];
++	state[9]  = key[5];
++	state[10] = key[6];
++	state[11] = key[7];
++	state[12] = get_unaligned_le32(iv +  0);
++	state[13] = get_unaligned_le32(iv +  4);
++	state[14] = get_unaligned_le32(iv +  8);
++	state[15] = get_unaligned_le32(iv + 12);
+ }
+-void hchacha_block(const u32 *in, u32 *out, int nrounds);
+ 
+-void crypto_chacha_init(u32 *state, const struct chacha_ctx *ctx, const u8 *iv);
++static inline void chacha_init(u32 *state, const u32 *key, const u8 *iv)
++{
++	chacha_init_generic(state, key, iv);
++}
+ 
+-int crypto_chacha20_setkey(struct crypto_skcipher *tfm, const u8 *key,
+-			   unsigned int keysize);
+-int crypto_chacha12_setkey(struct crypto_skcipher *tfm, const u8 *key,
+-			   unsigned int keysize);
++void chacha_crypt(u32 *state, u8 *dst, const u8 *src, unsigned int bytes,
++		  int nrounds);
+ 
+-int crypto_chacha_crypt(struct skcipher_request *req);
+-int crypto_xchacha_crypt(struct skcipher_request *req);
++void chacha_crypt_generic(u32 *state, u8 *dst, const u8 *src,
++			  unsigned int bytes, int nrounds);
+ 
+ #endif /* _CRYPTO_CHACHA_H */
+diff --git a/include/crypto/internal/chacha.h b/include/crypto/internal/chacha.h
+new file mode 100644
+index 000000000000..f7ffe0f3fa47
+--- /dev/null
++++ b/include/crypto/internal/chacha.h
+@@ -0,0 +1,25 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++
++#ifndef _CRYPTO_INTERNAL_CHACHA_H
++#define _CRYPTO_INTERNAL_CHACHA_H
++
++#include <crypto/chacha.h>
++#include <crypto/skcipher.h>
++#include <linux/crypto.h>
++
++struct chacha_ctx {
++	u32 key[8];
++	int nrounds;
++};
++
++void crypto_chacha_init(u32 *state, const struct chacha_ctx *ctx, const u8 *iv);
++
++int crypto_chacha20_setkey(struct crypto_skcipher *tfm, const u8 *key,
++			   unsigned int keysize);
++int crypto_chacha12_setkey(struct crypto_skcipher *tfm, const u8 *key,
++			   unsigned int keysize);
++
++int crypto_chacha_crypt(struct skcipher_request *req);
++int crypto_xchacha_crypt(struct skcipher_request *req);
++
++#endif /* _CRYPTO_CHACHA_H */
+diff --git a/lib/Makefile b/lib/Makefile
+index 29c02a924973..1436c9608fdb 100644
+--- a/lib/Makefile
++++ b/lib/Makefile
+@@ -30,8 +30,7 @@ endif
+ 
+ lib-y := ctype.o string.o vsprintf.o cmdline.o \
+ 	 rbtree.o radix-tree.o timerqueue.o xarray.o \
+-	 idr.o extable.o \
+-	 sha1.o chacha.o irq_regs.o argv_split.o \
++	 idr.o extable.o sha1.o irq_regs.o argv_split.o \
+ 	 flex_proportions.o ratelimit.o show_mem.o \
+ 	 is_single_threaded.o plist.o decompress.o kobject_uevent.o \
+ 	 earlycpio.o seq_buf.o siphash.o dec_and_lock.o \
+diff --git a/lib/crypto/Makefile b/lib/crypto/Makefile
+index cbe0b6a6450d..24dad058f2ae 100644
+--- a/lib/crypto/Makefile
++++ b/lib/crypto/Makefile
+@@ -1,13 +1,16 @@
+ # SPDX-License-Identifier: GPL-2.0
+ 
+-obj-$(CONFIG_CRYPTO_LIB_AES) += libaes.o
+-libaes-y := aes.o
++# chacha is used by the /dev/random driver which is always builtin
++obj-y						+= chacha.o
+ 
+-obj-$(CONFIG_CRYPTO_LIB_ARC4) += libarc4.o
+-libarc4-y := arc4.o
++obj-$(CONFIG_CRYPTO_LIB_AES)			+= libaes.o
++libaes-y					:= aes.o
+ 
+-obj-$(CONFIG_CRYPTO_LIB_DES) += libdes.o
+-libdes-y := des.o
++obj-$(CONFIG_CRYPTO_LIB_ARC4)			+= libarc4.o
++libarc4-y					:= arc4.o
+ 
+-obj-$(CONFIG_CRYPTO_LIB_SHA256) += libsha256.o
+-libsha256-y := sha256.o
++obj-$(CONFIG_CRYPTO_LIB_DES)			+= libdes.o
++libdes-y					:= des.o
++
++obj-$(CONFIG_CRYPTO_LIB_SHA256)			+= libsha256.o
++libsha256-y					:= sha256.o
+diff --git a/lib/chacha.c b/lib/crypto/chacha.c
+similarity index 76%
+rename from lib/chacha.c
+rename to lib/crypto/chacha.c
+index c7c9826564d3..d4b7c391d934 100644
+--- a/lib/chacha.c
++++ b/lib/crypto/chacha.c
+@@ -5,11 +5,14 @@
+  * Copyright (C) 2015 Martin Willi
+  */
+ 
++#include <linux/bug.h>
+ #include <linux/kernel.h>
+ #include <linux/export.h>
+ #include <linux/bitops.h>
++#include <linux/string.h>
+ #include <linux/cryptohash.h>
+ #include <asm/unaligned.h>
++#include <crypto/algapi.h> // for crypto_xor_cpy
+ #include <crypto/chacha.h>
+ 
+ static void chacha_permute(u32 *x, int nrounds)
+@@ -72,7 +75,7 @@ static void chacha_permute(u32 *x, int nrounds)
+  * The caller has already converted the endianness of the input.  This function
+  * also handles incrementing the block counter in the input matrix.
+  */
+-void chacha_block(u32 *state, u8 *stream, int nrounds)
++void chacha_block_generic(u32 *state, u8 *stream, int nrounds)
+ {
+ 	u32 x[16];
+ 	int i;
+@@ -86,7 +89,7 @@ void chacha_block(u32 *state, u8 *stream, int nrounds)
+ 
+ 	state[12]++;
+ }
+-EXPORT_SYMBOL(chacha_block);
++EXPORT_SYMBOL(chacha_block_generic);
+ 
+ /**
+  * hchacha_block - abbreviated ChaCha core, for XChaCha
+@@ -99,7 +102,7 @@ EXPORT_SYMBOL(chacha_block);
+  * skips the final addition of the initial state, and outputs only certain words
+  * of the state.  It should not be used for streaming directly.
+  */
+-void hchacha_block(const u32 *in, u32 *out, int nrounds)
++void hchacha_block_generic(const u32 *in, u32 *out, int nrounds)
+ {
+ 	u32 x[16];
+ 
+@@ -110,4 +113,30 @@ void hchacha_block(const u32 *in, u32 *out, int nrounds)
+ 	memcpy(&out[0], &x[0], 16);
+ 	memcpy(&out[4], &x[12], 16);
+ }
+-EXPORT_SYMBOL(hchacha_block);
++EXPORT_SYMBOL(hchacha_block_generic);
++
++void chacha_crypt_generic(u32 *state, u8 *dst, const u8 *src,
++			  unsigned int bytes, int nrounds)
++{
++	/* aligned to potentially speed up crypto_xor() */
++	u8 stream[CHACHA_BLOCK_SIZE] __aligned(sizeof(long));
++
++	while (bytes >= CHACHA_BLOCK_SIZE) {
++		chacha_block_generic(state, stream, nrounds);
++		crypto_xor_cpy(dst, src, stream, CHACHA_BLOCK_SIZE);
++		bytes -= CHACHA_BLOCK_SIZE;
++		dst += CHACHA_BLOCK_SIZE;
++		src += CHACHA_BLOCK_SIZE;
++	}
++	if (bytes) {
++		chacha_block_generic(state, stream, nrounds);
++		crypto_xor_cpy(dst, src, stream, bytes);
++	}
++}
++EXPORT_SYMBOL(chacha_crypt_generic);
++
++#ifndef CONFIG_CRYPTO_ARCH_HAVE_LIB_CHACHA
++extern void chacha_crypt(u32 *, u8 *, const u8 *,  unsigned int, int)
++	__alias(chacha_crypt_generic);
++EXPORT_SYMBOL(chacha_crypt);
++#endif
 -- 
 2.17.1
 
