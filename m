@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C58EC1883
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 19:45:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03FE8C189C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 19:45:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=oCoUcCyvP12BVMcvdHeNGjnr8ebjVJLVVy/aq+2X8sE=; b=KVW0BdLPuVwjR8zGd5+HBLlqCy
-	JU/YQ7yI6qJRt+oFAbq6Z9Q+IDpoNFuuyERDoi1iwss57V8qS3BKPcWdVasL6ezxXGi2NJi8kCbxA
-	l6E7SwMW5lMg+Nv7+Ppw+DkxKyETghcZJHXZlNMpCJ2O39H3KRgn+ZmBwRdrpvXi98+sghnbbRExJ
-	F7UmNNAAWWo9i8mEDy5FZq1vDMwfTf9Up+q0aXp2SW23gFg3ILbzNiswzJlA5OqFUbiFNQFKvNwz4
-	qYwepb9SFXTN/p8Cp1XzDKNQzeBwOIFRu/084lZIbkUgZhso/rLiuNix/OjD93jVXtMt0asMTjUtm
-	VgsbNWXw==;
+	bh=EvERAeEA2CBIyo3Y0iCtvisWB03pl+6V+BOjveEoDX4=; b=sEK2JfYTbUG9Ta1rUhfIucckgy
+	8Kc4rWckXYUqEb+R1/LMU/dYPcfVo50OtWzupChlTBsMOQE7wrD/ta7SuwMPEE/P1DhLZB9uL/xkQ
+	S4RuMsK64uocHZAZNJUguL39japZd4r3r02+ADybmb2+77UWqTKPkEdnmRal9Mfbt4k2l1PZbKImb
+	rXnp1SrUQaVwcXEIaV1c+fx5tcQYbTHsSqrBuBm5Dfg0E215u/WobZwS6CAZ4VbH/CAd93STmtauR
+	24ZbfBOeJMby1EkAq3FyzB427F9Bf4tQ6sWwet5tCVTZloA5GwOXOqfDWJCeGqEGv8uMup5DH6uo9
+	hsZ7TBAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEdFx-0006fy-IO; Sun, 29 Sep 2019 17:45:13 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iEdGH-000884-Af; Sun, 29 Sep 2019 17:45:33 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEdAk-0001Zz-Ca
- for linux-arm-kernel@lists.infradead.org; Sun, 29 Sep 2019 17:40:02 +0000
-Received: by mail-wr1-x441.google.com with SMTP id v8so8466795wrt.2
+ id 1iEdAm-0001bg-9w
+ for linux-arm-kernel@lists.infradead.org; Sun, 29 Sep 2019 17:40:06 +0000
+Received: by mail-wr1-x443.google.com with SMTP id b9so8470072wrs.0
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 29 Sep 2019 10:39:50 -0700 (PDT)
+ Sun, 29 Sep 2019 10:39:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=c7gRGregGvO6OT7bIf1xMnSekX73Q+P1Ihexxh5ywF4=;
- b=P+Wm3k9f1uAZZ/SNB31mpqeYK+eLX9OOI/5HnTmGYLG/xEEAABkB/ZkELx4gYu5Xbm
- xldLa/dGsozZm59dGU6mkT7mvdpDFMBGyt1bbgnMcEqMcS29+mRSylfBG0FjJzwEMUGX
- FMtpZXCK3CBaBp+BQSps4Faghk44UqFofjft3yyoUIbliBjWho4gNp0ojvLTyWC/bA7A
- ra0eCjtILW2dNCvVIg4dk4eIuBhzR8eav+cmNFwC7rjwLalcp7riVGbINgoBXKU33lRZ
- Ac//reNGK2z4JfmWjPs5eZWxnc9dCrFXU4DYb8j1HQZlk4bUUCxfw/6/pVuqeJJ9Rwn8
- VfMQ==
+ bh=SLF/nrrv8lSTZbt9Ku9vqPHHl4LDfRMHhQaxtVyBCHI=;
+ b=x4ZcydWYB3tHAFOZtwnIIM2Qt3b1XqHyOXefAheahMcIaBY8ZSbFAVyugI5TiFi6NI
+ d4XXcEVei8W+aSFKNbrUhDZV3eLOmKwfbCHV/nY4VairfUSErDBExRwZi09npacDar53
+ FvT+QX08irIr5Og0AhBGn6WV4MzyRWYOqbPvDPa+HSRiuazkuJvLMe4loaykV5znhNmT
+ udceqcnXzcWhLDMDykQUgjsmAyRK3+W3AwDM5qBObgUhltvMGO+NTCDIVDM8vm564CDi
+ 0xTqALX5nvruhXcs1xTmlj/b45bU8AmIoOlXOh3vu69Kn2SEVwUDbfbAv8S4zAOR07IN
+ cKew==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=c7gRGregGvO6OT7bIf1xMnSekX73Q+P1Ihexxh5ywF4=;
- b=WJI06FZ3pyq3qm99SR5HWrH09zuR53IDzg247HSdsTq4zD08/kekzatMctiiHYF22B
- CG1+fAtV6SnBMeIGrkAOiVoo2RWu830asgtC6R6ykoH2nF5cv1z/vU+g5RXgd9rplIOs
- Jh0JTxJM/reKh/VoKluFX3oI24MO7gY1Fl4YRMPyzqs0PD7I0rGHjZHunKkLSdqEgHJJ
- S83ZXpd4Y67yJ4WD9dzsZEILHWOorPcahsCiq73IC/QgVrpVvzwN9d7PbIBjRO2G6PA8
- u0tKEyddfOjyXsgx9Hq1vP3fY+2p3Ok8v32iHxu/SubSN90MJraZJlbPv4ZHLyIGHOKI
- F07Q==
-X-Gm-Message-State: APjAAAXvGlFVfn0vgSB75mA7c1agmr78ELvdm6+KkwRs3aWNwW0DQLuZ
- h6N3QNhsVD2oUWGNSgl3gjm7pg==
-X-Google-Smtp-Source: APXvYqy9WWMhyZeEe+zBtNm2oB+VpCOYYMVVcZe2utYKqYu/+9/fbSSAPJvP2S5GFAGrlLBCyjUyjA==
-X-Received: by 2002:a5d:620d:: with SMTP id y13mr9891717wru.86.1569778789010; 
- Sun, 29 Sep 2019 10:39:49 -0700 (PDT)
+ bh=SLF/nrrv8lSTZbt9Ku9vqPHHl4LDfRMHhQaxtVyBCHI=;
+ b=Vn6IzZn/zTWhBZY2eIvyqPNsfq92TsPwnHAbkoZpo1/NfbxTHsCdqZsoZAsd1z4D2z
+ HQIlJ9cFavfJ5fSFbE94knrDN8GvFYbzCkPWf1Dk+/7q4auGWr84KLAUCr/npP0xgSsr
+ lW8GfMpqkOKczEViCCGuAKSlIKPGQLp5eJyfdSlSDtIp9xbdM1s9xrRfMj9RdWkBDODc
+ rPf1FescbMQF+ofjeWgke92puE4pxNsASfn4vFM9sJUGyh9V5lQpvUh2yXACLSRh3+oc
+ MbehZ3oLPgDs+Q3gnCejdPEkOPdMGnO5428y9yHGByt8byyhxRzwZNwhkdzSARYaUSQn
+ Nw3g==
+X-Gm-Message-State: APjAAAVmYEt8ovUMDG5YjZzZ8Mnx5eqTxyIaBZox+7ysNybppXUb1SGC
+ YhsNpo+ktlOLtimOChC358pzfg==
+X-Google-Smtp-Source: APXvYqyPHeSGpgev+1nI40iZ1cjsgkzJ5WKd00li/OskZGl0W3Evd5imyvMPAa563N0GNXVwpbDjbA==
+X-Received: by 2002:adf:bb0a:: with SMTP id r10mr10849753wrg.13.1569778790867; 
+ Sun, 29 Sep 2019 10:39:50 -0700 (PDT)
 Received: from e123331-lin.nice.arm.com
  (bar06-5-82-246-156-241.fbx.proxad.net. [82.246.156.241])
- by smtp.gmail.com with ESMTPSA id q192sm17339779wme.23.2019.09.29.10.39.46
+ by smtp.gmail.com with ESMTPSA id q192sm17339779wme.23.2019.09.29.10.39.49
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 29 Sep 2019 10:39:47 -0700 (PDT)
+ Sun, 29 Sep 2019 10:39:50 -0700 (PDT)
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 To: linux-crypto@vger.kernel.org
-Subject: [RFC PATCH 19/20] netlink: use new strict length types in policy for
- 5.2
-Date: Sun, 29 Sep 2019 19:38:49 +0200
-Message-Id: <20190929173850.26055-20-ard.biesheuvel@linaro.org>
+Subject: [RFC PATCH 20/20] wg switch to lib/crypto algos
+Date: Sun, 29 Sep 2019 19:38:50 +0200
+Message-Id: <20190929173850.26055-21-ard.biesheuvel@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190929173850.26055-1-ard.biesheuvel@linaro.org>
 References: <20190929173850.26055-1-ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190929_103950_569142_D6F104CD 
-X-CRM114-Status: GOOD (  11.16  )
+X-CRM114-CacheID: sfid-20190929_103952_423427_0DBFA9E3 
+X-CRM114-Status: GOOD (  14.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -113,76 +112,190 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Taken from
-https://git.zx2c4.com/WireGuard/commit/src?id=3120425f69003be287cb2d308f89c7a6a0335ff0
+This switches WireGuard to use lib/crypto libraries instead of the
+Zinc ones.
 
-Reported-by: Bruno Wolff III <bruno@wolff.to>
+This patch is intended to be squashed at merge time, or it will break
+bisection.
 ---
- drivers/net/wireguard/netlink.c | 17 ++++++++---------
- 1 file changed, 8 insertions(+), 9 deletions(-)
+ drivers/net/Kconfig              |  6 +++---
+ drivers/net/wireguard/cookie.c   |  4 ++--
+ drivers/net/wireguard/messages.h |  6 +++---
+ drivers/net/wireguard/receive.c  | 17 ++++-------------
+ drivers/net/wireguard/send.c     | 19 ++++++-------------
+ 5 files changed, 18 insertions(+), 34 deletions(-)
 
-diff --git a/drivers/net/wireguard/netlink.c b/drivers/net/wireguard/netlink.c
-index 3763e8c14ea5..676d36725120 100644
---- a/drivers/net/wireguard/netlink.c
-+++ b/drivers/net/wireguard/netlink.c
-@@ -21,8 +21,8 @@ static struct genl_family genl_family;
- static const struct nla_policy device_policy[WGDEVICE_A_MAX + 1] = {
- 	[WGDEVICE_A_IFINDEX]		= { .type = NLA_U32 },
- 	[WGDEVICE_A_IFNAME]		= { .type = NLA_NUL_STRING, .len = IFNAMSIZ - 1 },
--	[WGDEVICE_A_PRIVATE_KEY]	= { .len = NOISE_PUBLIC_KEY_LEN },
--	[WGDEVICE_A_PUBLIC_KEY]		= { .len = NOISE_PUBLIC_KEY_LEN },
-+	[WGDEVICE_A_PRIVATE_KEY]	= { .type = NLA_EXACT_LEN, .len = NOISE_PUBLIC_KEY_LEN },
-+	[WGDEVICE_A_PUBLIC_KEY]		= { .type = NLA_EXACT_LEN, .len = NOISE_PUBLIC_KEY_LEN },
- 	[WGDEVICE_A_FLAGS]		= { .type = NLA_U32 },
- 	[WGDEVICE_A_LISTEN_PORT]	= { .type = NLA_U16 },
- 	[WGDEVICE_A_FWMARK]		= { .type = NLA_U32 },
-@@ -30,12 +30,12 @@ static const struct nla_policy device_policy[WGDEVICE_A_MAX + 1] = {
- };
+diff --git a/drivers/net/Kconfig b/drivers/net/Kconfig
+index c26aef673538..3bd4dc662392 100644
+--- a/drivers/net/Kconfig
++++ b/drivers/net/Kconfig
+@@ -77,9 +77,9 @@ config WIREGUARD
+ 	depends on IPV6 || !IPV6
+ 	select NET_UDP_TUNNEL
+ 	select DST_CACHE
+-	select ZINC_CHACHA20POLY1305
+-	select ZINC_BLAKE2S
+-	select ZINC_CURVE25519
++	select CRYPTO_LIB_CHACHA20POLY1305
++	select CRYPTO_LIB_BLAKE2S
++	select CRYPTO_LIB_CURVE25519
+ 	help
+ 	  WireGuard is a secure, fast, and easy to use replacement for IPSec
+ 	  that uses modern cryptography and clever networking tricks. It's
+diff --git a/drivers/net/wireguard/cookie.c b/drivers/net/wireguard/cookie.c
+index bd23a14ff87f..104b739c327f 100644
+--- a/drivers/net/wireguard/cookie.c
++++ b/drivers/net/wireguard/cookie.c
+@@ -10,8 +10,8 @@
+ #include "ratelimiter.h"
+ #include "timers.h"
  
- static const struct nla_policy peer_policy[WGPEER_A_MAX + 1] = {
--	[WGPEER_A_PUBLIC_KEY]				= { .len = NOISE_PUBLIC_KEY_LEN },
--	[WGPEER_A_PRESHARED_KEY]			= { .len = NOISE_SYMMETRIC_KEY_LEN },
-+	[WGPEER_A_PUBLIC_KEY]				= { .type = NLA_EXACT_LEN, .len = NOISE_PUBLIC_KEY_LEN },
-+	[WGPEER_A_PRESHARED_KEY]			= { .type = NLA_EXACT_LEN, .len = NOISE_SYMMETRIC_KEY_LEN },
- 	[WGPEER_A_FLAGS]				= { .type = NLA_U32 },
--	[WGPEER_A_ENDPOINT]				= { .len = sizeof(struct sockaddr) },
-+	[WGPEER_A_ENDPOINT]				= { .type = NLA_MIN_LEN, .len = sizeof(struct sockaddr) },
- 	[WGPEER_A_PERSISTENT_KEEPALIVE_INTERVAL]	= { .type = NLA_U16 },
--	[WGPEER_A_LAST_HANDSHAKE_TIME]			= { .len = sizeof(struct __kernel_timespec) },
-+	[WGPEER_A_LAST_HANDSHAKE_TIME]			= { .type = NLA_EXACT_LEN, .len = sizeof(struct __kernel_timespec) },
- 	[WGPEER_A_RX_BYTES]				= { .type = NLA_U64 },
- 	[WGPEER_A_TX_BYTES]				= { .type = NLA_U64 },
- 	[WGPEER_A_ALLOWEDIPS]				= { .type = NLA_NESTED },
-@@ -44,7 +44,7 @@ static const struct nla_policy peer_policy[WGPEER_A_MAX + 1] = {
+-#include <zinc/blake2s.h>
+-#include <zinc/chacha20poly1305.h>
++#include <crypto/blake2s.h>
++#include <crypto/chacha20poly1305.h>
  
- static const struct nla_policy allowedip_policy[WGALLOWEDIP_A_MAX + 1] = {
- 	[WGALLOWEDIP_A_FAMILY]		= { .type = NLA_U16 },
--	[WGALLOWEDIP_A_IPADDR]		= { .len = sizeof(struct in_addr) },
-+	[WGALLOWEDIP_A_IPADDR]		= { .type = NLA_MIN_LEN, .len = sizeof(struct in_addr) },
- 	[WGALLOWEDIP_A_CIDR_MASK]	= { .type = NLA_U8 }
- };
+ #include <net/ipv6.h>
+ #include <crypto/algapi.h>
+diff --git a/drivers/net/wireguard/messages.h b/drivers/net/wireguard/messages.h
+index 3cfd1c5e9b02..4bbb1f97af04 100644
+--- a/drivers/net/wireguard/messages.h
++++ b/drivers/net/wireguard/messages.h
+@@ -6,9 +6,9 @@
+ #ifndef _WG_MESSAGES_H
+ #define _WG_MESSAGES_H
  
-@@ -591,12 +591,10 @@ static const struct genl_ops genl_ops[] = {
- 		.start = wg_get_device_start,
- 		.dumpit = wg_get_device_dump,
- 		.done = wg_get_device_done,
--		.policy = device_policy,
- 		.flags = GENL_UNS_ADMIN_PERM
- 	}, {
- 		.cmd = WG_CMD_SET_DEVICE,
- 		.doit = wg_set_device,
--		.policy = device_policy,
- 		.flags = GENL_UNS_ADMIN_PERM
+-#include <zinc/curve25519.h>
+-#include <zinc/chacha20poly1305.h>
+-#include <zinc/blake2s.h>
++#include <crypto/blake2s.h>
++#include <crypto/chacha20poly1305.h>
++#include <crypto/curve25519.h>
+ 
+ #include <linux/kernel.h>
+ #include <linux/param.h>
+diff --git a/drivers/net/wireguard/receive.c b/drivers/net/wireguard/receive.c
+index 900c76edb9d6..ae7ffba5fc48 100644
+--- a/drivers/net/wireguard/receive.c
++++ b/drivers/net/wireguard/receive.c
+@@ -11,7 +11,6 @@
+ #include "cookie.h"
+ #include "socket.h"
+ 
+-#include <linux/simd.h>
+ #include <linux/ip.h>
+ #include <linux/ipv6.h>
+ #include <linux/udp.h>
+@@ -244,8 +243,7 @@ static void keep_key_fresh(struct wg_peer *peer)
  	}
- };
-@@ -608,6 +606,7 @@ static struct genl_family genl_family __ro_after_init = {
- 	.version = WG_GENL_VERSION,
- 	.maxattr = WGDEVICE_A_MAX,
- 	.module = THIS_MODULE,
-+	.policy = device_policy,
- 	.netnsok = true
- };
+ }
  
+-static bool decrypt_packet(struct sk_buff *skb, struct noise_symmetric_key *key,
+-			   simd_context_t *simd_context)
++static bool decrypt_packet(struct sk_buff *skb, struct noise_symmetric_key *key)
+ {
+ 	struct scatterlist sg[MAX_SKB_FRAGS + 8];
+ 	struct sk_buff *trailer;
+@@ -281,9 +279,8 @@ static bool decrypt_packet(struct sk_buff *skb, struct noise_symmetric_key *key,
+ 	if (skb_to_sgvec(skb, sg, 0, skb->len) <= 0)
+ 		return false;
+ 
+-	if (!chacha20poly1305_decrypt_sg(sg, sg, skb->len, NULL, 0,
+-					 PACKET_CB(skb)->nonce, key->key,
+-					 simd_context))
++	if (!chacha20poly1305_decrypt_sg_inplace(sg, skb->len, NULL, 0,
++					 PACKET_CB(skb)->nonce, key->key))
+ 		return false;
+ 
+ 	/* Another ugly situation of pushing and pulling the header so as to
+@@ -510,21 +507,15 @@ void wg_packet_decrypt_worker(struct work_struct *work)
+ {
+ 	struct crypt_queue *queue = container_of(work, struct multicore_worker,
+ 						 work)->ptr;
+-	simd_context_t simd_context;
+ 	struct sk_buff *skb;
+ 
+-	simd_get(&simd_context);
+ 	while ((skb = ptr_ring_consume_bh(&queue->ring)) != NULL) {
+ 		enum packet_state state = likely(decrypt_packet(skb,
+-					   &PACKET_CB(skb)->keypair->receiving,
+-					   &simd_context)) ?
++					   &PACKET_CB(skb)->keypair->receiving)) ?
+ 				PACKET_STATE_CRYPTED : PACKET_STATE_DEAD;
+ 		wg_queue_enqueue_per_peer_napi(&PACKET_PEER(skb)->rx_queue, skb,
+ 					       state);
+-		simd_relax(&simd_context);
+ 	}
+-
+-	simd_put(&simd_context);
+ }
+ 
+ static void wg_packet_consume_data(struct wg_device *wg, struct sk_buff *skb)
+diff --git a/drivers/net/wireguard/send.c b/drivers/net/wireguard/send.c
+index b0df5c717502..37bd2599ae44 100644
+--- a/drivers/net/wireguard/send.c
++++ b/drivers/net/wireguard/send.c
+@@ -11,7 +11,6 @@
+ #include "messages.h"
+ #include "cookie.h"
+ 
+-#include <linux/simd.h>
+ #include <linux/uio.h>
+ #include <linux/inetdevice.h>
+ #include <linux/socket.h>
+@@ -157,8 +156,7 @@ static unsigned int calculate_skb_padding(struct sk_buff *skb)
+ 	return padded_size - last_unit;
+ }
+ 
+-static bool encrypt_packet(struct sk_buff *skb, struct noise_keypair *keypair,
+-			   simd_context_t *simd_context)
++static bool encrypt_packet(struct sk_buff *skb, struct noise_keypair *keypair)
+ {
+ 	unsigned int padding_len, plaintext_len, trailer_len;
+ 	struct scatterlist sg[MAX_SKB_FRAGS + 8];
+@@ -207,9 +205,10 @@ static bool encrypt_packet(struct sk_buff *skb, struct noise_keypair *keypair,
+ 	if (skb_to_sgvec(skb, sg, sizeof(struct message_data),
+ 			 noise_encrypted_len(plaintext_len)) <= 0)
+ 		return false;
+-	return chacha20poly1305_encrypt_sg(sg, sg, plaintext_len, NULL, 0,
+-					   PACKET_CB(skb)->nonce,
+-					   keypair->sending.key, simd_context);
++	chacha20poly1305_encrypt_sg_inplace(sg, plaintext_len, NULL, 0,
++					    PACKET_CB(skb)->nonce,
++					    keypair->sending.key);
++	return true;
+ }
+ 
+ void wg_packet_send_keepalive(struct wg_peer *peer)
+@@ -296,16 +295,13 @@ void wg_packet_encrypt_worker(struct work_struct *work)
+ 	struct crypt_queue *queue = container_of(work, struct multicore_worker,
+ 						 work)->ptr;
+ 	struct sk_buff *first, *skb, *next;
+-	simd_context_t simd_context;
+ 
+-	simd_get(&simd_context);
+ 	while ((first = ptr_ring_consume_bh(&queue->ring)) != NULL) {
+ 		enum packet_state state = PACKET_STATE_CRYPTED;
+ 
+ 		skb_walk_null_queue_safe(first, skb, next) {
+ 			if (likely(encrypt_packet(skb,
+-						  PACKET_CB(first)->keypair,
+-						  &simd_context))) {
++						  PACKET_CB(first)->keypair))) {
+ 				wg_reset_packet(skb);
+ 			} else {
+ 				state = PACKET_STATE_DEAD;
+@@ -314,10 +310,7 @@ void wg_packet_encrypt_worker(struct work_struct *work)
+ 		}
+ 		wg_queue_enqueue_per_peer(&PACKET_PEER(first)->tx_queue, first,
+ 					  state);
+-
+-		simd_relax(&simd_context);
+ 	}
+-	simd_put(&simd_context);
+ }
+ 
+ static void wg_packet_create_data(struct sk_buff *first)
 -- 
 2.17.1
 
