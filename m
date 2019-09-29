@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9137FC18F4
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 20:22:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EAB01C18F5
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 20:23:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EstmjpjmaKKwHmhnVd1igGTJuA7ZeMZVEUF97hhsJHY=; b=QNH3IJrg5umtKR
-	8VEbG9ygHTYCdM+a8+dzzX2jnmCk50Hffhf3MYCFlDFTI1gqXKmuPtLaKuCgBkPl760qhlqkVNZhG
-	khCXjKRAb2UDtIYDQEl12oQ5rWKPuhJAklhQH/ik+i+xSZOH4X6EsZE6UfGE0FHHq50Ab2z/z+bO9
-	fyOo+EOzekNN+L5F9L4a/zzK5xQhsv7pSS3JEKc/iPOvZTiUEFieUzLa+W7BWALn6hdwMZeHz41lg
-	eNZInjs2DZTZnZ6u6aZERUYotfsBS7lfCPrDxbOFvQ47Bzf6YEK18FqcpeodFffvr4w9dzpNdHwFg
-	dRFID8srVcOLky9hI4hQ==;
+	List-Owner; bh=/XWIgfv8OqBgS9TN2dSzHttscOtixcFpQR/DSHtN3aI=; b=TgI1L7gDAMEkkU
+	drh/8g1W32f7LZOLDmBY/QK04qUazt54ckaS4WJKKTKFg9+8biRd07Djym5yK6PacEDe69j2fAKfo
+	96ULsgOn9pOrkkQxV8PZ0CpJ+lsBKpbI5LGmoP1Vi+yssEtQ/S4GFBEvTOgVkqJxRuoKzqt52CPCG
+	skcQiE0IaVR15HIeGhBXqMDg1JzpfCFEZMY5ehGcQIPeELGpeiroUEHwJej/MbQm0qeMbaXzOBAwn
+	UdJCgSWm0/wDSWMRbBjEKBS9xIqkgUfUe8Zh+PlLe7KEtLIfCDFfHQjx+dVqS2EAg/BN705lqFCJe
+	5/LFwpn/Vijm8x+JpgrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEdq7-0002vg-Fp; Sun, 29 Sep 2019 18:22:35 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1iEdqR-00035A-U7; Sun, 29 Sep 2019 18:22:55 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEdpv-0002vC-9k
- for linux-arm-kernel@lists.infradead.org; Sun, 29 Sep 2019 18:22:24 +0000
-Received: by mail-lj1-x242.google.com with SMTP id b20so7131775ljj.5
+ id 1iEdpx-0002vH-Jr
+ for linux-arm-kernel@lists.infradead.org; Sun, 29 Sep 2019 18:22:26 +0000
+Received: by mail-lf1-x141.google.com with SMTP id q11so5326904lfc.11
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 29 Sep 2019 11:22:21 -0700 (PDT)
+ Sun, 29 Sep 2019 11:22:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=KDBZEYOkT3q2n3K7l27r/TBKYHbrsQpcTqoc/ht5OtM=;
- b=cJaNU3CpWEkIvLv8hbqW1IRp2KcEZR9qN2diLIPxcTeHeR7auC1X5Cvf6/uQk48wfZ
- lfNPKyh16eO5ZeCc4fZBcNZ5R2e+r22+4RzejpBtelI+OMc8Ef8+hYobYwKwg3CIFm2U
- oLPsqvJMPeuZVPK1lcqfCVDS7gMK+o4eu0lSrE89azYoLh9updbwRQTIm4tFtcYNmT84
- jMtCRxrxdNW67ZDSLNSf5mXmOouPmm1AGAUE5QHzyMziAIziVi78FMnIj4Js0vm3xdr6
- doBgVEsePaFWE3bNHEAyPEr3Nb5VEScn+WV7vTbYIi4dKcogLy/1BWhg43FrTrXIHGFO
- m80Q==
+ bh=/GO4FoIF23z9uWn00UbU2BdUkZ0+OAL+wp3AO4KDJjQ=;
+ b=YRgAeGNfVjEQCjWkxIGQDXsMLtDwC/xYouvsCdD4Shp7rkL0iLfeOlRtfCDxFomWm0
+ G/xHVT/18rTZsrC7uKp9stYevvZIJTlieKzen/nJ/RnDEV7G22GyoHIjYC4KF6CBb6A/
+ ViHz2F1GMgHK2Tj7cvUgEr4W5E0v7f3itaWiZsJkuJ5Pl+RfBDhvZMpXQ0oqeSF2n8sy
+ bBk3t0FRuCm+eiDTE7HRaGodD4zbLyqqVqHrEwGhxXVkR3ShFA0oRJrCGw8f3N06Xl/D
+ vfDcylgi0Ssp2C4Ayc2OA8W/2ssXeXsEJmDl1eDgCDQ4ixMYfDCaq48jdewFFxdTQoSK
+ mKsw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=KDBZEYOkT3q2n3K7l27r/TBKYHbrsQpcTqoc/ht5OtM=;
- b=Y+0PwxhiV/3d7515IWnx6A5XAZLumGkHuR/lnyKD1MqLDisBfQ3vPjQnPh468fEus2
- Ye7kJC6HKWCevs4msA3R4k9KbJvC/Pg9KnK0+cAtQWJOr+VKZk7oEkKckRVYPZaJau8b
- xrOsL1eyM7QXrNmobKuNCSBHWGKJNYBF9NQjWJ0AwU4Js/z1RosWad03ZGg2YtIXV2og
- tctmK9Ma/vW0paBS43uN8xfeVvj5QicVDfQp4+Xjgo2fmzxKtUdJ8M66T3MGlqMACk8a
- tFc3RhY9XSzPZzNf+uW6+7tgHg0CTHY1sSFGaRJJoGXNg58xOUbSdbGmQkeKUuFZakNi
- X1Eg==
-X-Gm-Message-State: APjAAAW8klWgtFeOQ09fU2jMqBK1v2wUj9uBOWRp2rHt28hUiVJwkGsD
- 84yZevChvwMwPpflgIPtJPDPJQ==
-X-Google-Smtp-Source: APXvYqzV7mG9YgDaLH0UU7gcg9erXMYy9E46ENzdMoFQgXFREqSwa0Sd2KwVo/eY0P5sWO1f4LQXaQ==
-X-Received: by 2002:a2e:412:: with SMTP id 18mr9595880lje.96.1569781339826;
- Sun, 29 Sep 2019 11:22:19 -0700 (PDT)
+ bh=/GO4FoIF23z9uWn00UbU2BdUkZ0+OAL+wp3AO4KDJjQ=;
+ b=gBHJKGCvAmv0QPXW3L3H911Pw/F7J+Q1IARmevuQg6sw/wds/UE2+nOI8PBtLINwIT
+ t8cK2UUNG0ib3P+nXIGyvluRFVSf1If+PZTY9IShahPD7G7eoYSjw7ZlmnsEaTqCcAEn
+ 5QUG4JU0foVvw1ICsXebb+g5S9iPO2cBtf3ZmKYxjmA5k85Vz+PEah56Q8br/s16SIOp
+ hFWyMaBtjUUzBCBVEGbIgZo1XktA1OxpnMzAS29X70ngE7OTxhbhTIwVKup4N7yA2eBm
+ frP0ds+O7YNEJLJ6QCvTEy3tedKaR7Ns7sVLhX6kch3RxrR6fRJUqn30FNMhiURCcJYy
+ nqbQ==
+X-Gm-Message-State: APjAAAUzws6v2ULcO2c/HbgpPtCvEpkwnSrRg+b4lnjqE258qzU2rfRs
+ OCUHyNgDQhht3+1T+nzWqpIAFR9ev572OQ==
+X-Google-Smtp-Source: APXvYqyOYEq9CmvSLcrYKNKKcBaSvai+dng0dea9xtrVsTmpJDzHLhxuZ5e2O9a0tomlN8PvAPkEYg==
+X-Received: by 2002:a19:381a:: with SMTP id f26mr8778800lfa.168.1569781341873; 
+ Sun, 29 Sep 2019 11:22:21 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id 202sm2496137ljf.75.2019.09.29.11.22.18
+ by smtp.gmail.com with ESMTPSA id i17sm2520983ljd.2.2019.09.29.11.22.20
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 29 Sep 2019 11:22:18 -0700 (PDT)
-Date: Sun, 29 Sep 2019 10:49:27 -0700
+ Sun, 29 Sep 2019 11:22:20 -0700 (PDT)
+Date: Sun, 29 Sep 2019 10:49:39 -0700
 From: Olof Johansson <olof@lixom.net>
-To: Sudeep Holla <sudeep.holla@arm.com>
-Subject: Re: [GIT PULL] firmware: arm_scmi: fixes for scmi-updates-5.4
-Message-ID: <20190929174927.zhgfmgnianr6pqko@localhost>
-References: <20190918142139.GA4370@bogus>
+To: Tony Lindgren <tony@atomide.com>
+Subject: Re: [GIT PULL] fixes for omaps for v5.4 merge window
+Message-ID: <20190929174939.5sgz6klvqzfcalkp@localhost>
+References: <pull-1568819401-72461@atomide.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190918142139.GA4370@bogus>
+In-Reply-To: <pull-1568819401-72461@atomide.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190929_112223_400032_F468C4A2 
-X-CRM114-Status: GOOD (  12.33  )
+X-CRM114-CacheID: sfid-20190929_112225_653711_CE7C8EC5 
+X-CRM114-Status: GOOD (  13.24  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -94,36 +94,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: SoC Team <soc@kernel.org>, ARM SoC Team <arm@kernel.org>,
- Arnd Bergmann <arnd@arndb.de>, ALKML <linux-arm-kernel@lists.infradead.org>,
- Kevin Hilman <khilman@kernel.org>
+Cc: soc@kernel.org, arm@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-omap@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 18, 2019 at 03:21:39PM +0100, Sudeep Holla wrote:
-> Hi ARM SoC Team,
+On Wed, Sep 18, 2019 at 08:10:24AM -0700, Tony Lindgren wrote:
+> From: "Tony Lindgren" <tony@atomide.com>
 > 
-> Please pull ! The changes in reset driver has been acked by Philipp Zabel
-> and agreed to be merged via ARM SoC tree.
+> The following changes since commit 4a65bbb9109ed7edd4b6ed7168ced48abb8561a2:
 > 
-> Regards,
-> Sudeep
-> 
-> -->8
-> 
-> The following changes since commit c8ae9c2da1cc5d18b6d51d10160508a3dc3436bf:
-> 
->   reset: Add support for resets provided by SCMI (2019-08-12 12:23:02 +0100)
+>   soc: ti: pm33xx: Make two symbols static (2019-08-13 05:05:38 -0700)
 > 
 > are available in the Git repository at:
 > 
->   git://git.kernel.org/pub/scm/linux/kernel/git/sudeep.holla/linux.git tags/scmi-fixes-5.4
+>   git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/fixes-5.4-merge-window
 > 
-> for you to fetch changes up to 61423712dbb86e02af4aa5de65b9041493c92cac:
+> for you to fetch changes up to a4c8723a162e6244fb01944fbf446750575dba59:
 > 
->   reset: reset-scmi: add missing handle initialisation (2019-09-18 13:42:44 +0100)
+>   bus: ti-sysc: Remove unpaired sysc_clkdm_deny_idle() (2019-09-06 12:57:46 -0700)
+> 
+> ----------------------------------------------------------------
+> Fixes for omap variants
+> 
+> Few fixes for ti-sysc interconnect target module driver for no-idle
+> quirks that caused nfsroot to fail on some dra7 boards.
+> 
+> And let's fixes to get LCD working again for logicpd board that got
+> broken a while back with removal of panel-dpi driver. We need to now
+> use generic CONFIG_DRM_PANEL_SIMPLE instead.
 
 Thanks, merged.
 
