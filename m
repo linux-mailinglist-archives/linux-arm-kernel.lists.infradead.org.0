@@ -2,74 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C866C1454
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 13:17:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F781C1459
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 13:22:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FoqXoyxJ6jAvlLcZjgTPTLQmSHWRIqUW0KpAd1eidQw=; b=qKrvcT6KwzaIHy
-	/he8vJBHPP1ZD9mQyuptcqy2+yMOPrRC+WH96pr4RZ0Wtr5movxToFcpl8Zyqs6dshAaMO8SPBm3A
-	uCMOAN8SkRhxt34gDhl+SBFo+TG1D7uVasE2qlFaFDVSdkVgqNjhSBj+z0n/Kyw+5/HJGIPV/hFHH
-	6bQG61Fupzrl4iSgYUnPZV0uInqzFgxs6K/1zTUdvq1N3tM3IIJ/YF8XRQkhdxKsAH1gds0s1k/Tb
-	c5SuI6Nzq7fO0uUbS9iTmAw5RshW/sudGOYNq0zASSsABU3DmSQULdZxBJsvYCyixCb+IpGNeje+O
-	QrMEXcNI1wDdZvz2kO7A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:References:In-Reply-To:Message-ID:MIME-Version:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=3kI4Ov3pdK2Zg8E2jpqoh6G2XhZf6qaAXAXEYAI4pSY=; b=mQvsJeGL9WFj559KM5HfcbJRQ
+	eUcciJ+tf4u20I9EMiQRQ53Uf1govQ6slXUU2W6av3cX7umfazwMoimhZwSvUoX9FOElD1iDBqzj8
+	NgCDPQ0FCbXrk/j5XKFBkdMVNDCzX3K1eNpOar6p93cw+ntd6/+IDCqfvxsd7wCuk0SEegxyA63mk
+	npvSXWAcRaSuh2A6sWfzfn/7cynSnblm0N0a/Kq27rt1JEXHZ0Wqw3NSf3EA6Cj6BM4jo8XI6ZppK
+	8wTvEw7I4tLEcEIB4z0wCwXlE2zb+aqLKVl8dalMn/7e/s5sygA6Kl/jNgqBvZL43XHBpIuh7EdlH
+	CDo5vsCZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEXC9-00008H-58; Sun, 29 Sep 2019 11:16:53 +0000
-Received: from mail-qt1-f195.google.com ([209.85.160.195])
+	id 1iEXHe-0001op-64; Sun, 29 Sep 2019 11:22:34 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEXBz-00007E-M1
- for linux-arm-kernel@lists.infradead.org; Sun, 29 Sep 2019 11:16:45 +0000
-Received: by mail-qt1-f195.google.com with SMTP id w14so13154104qto.9
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 29 Sep 2019 04:16:39 -0700 (PDT)
+ id 1iEXHT-0001oN-NC; Sun, 29 Sep 2019 11:22:25 +0000
+Received: by mail-wm1-x344.google.com with SMTP id i16so10262928wmd.3;
+ Sun, 29 Sep 2019 04:22:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:mime-version:message-id:in-reply-to
+ :references:user-agent:content-transfer-encoding;
+ bh=+5mJbdKNBA+m8vppAhdI++7fky2Q3/YXSRQyiXoFCLc=;
+ b=TezKHyJE5Sh4r/up5iuLlLvtQlnGcW+cP3IjZjdyn5mNmGmckP4YUZ8u37UQI5CyR1
+ m1FoANAti7h7OpC1dgvPkyokVmeCFCBzhLGkHcypq17mEOUhfDO6m6kiacC4AkHBcS/V
+ pB4fPiz8qqNc6npdgyAYdUAobBrUunE99yOU1yTCva+DlTDmV9EBtEujS5NOcTPlL6/n
+ RXCs/THrVHusCcxQTTp54XhPw+EbTD3N2Cg01ICIIVWHrPwYb5egg6bbzc9eicSROIT5
+ 5Zy74W/86zXdQ4K6YH3DvUskoFg2xs0U3sVBuP7AAUvTyAYYQ/AbzHr4zPoJHpbM2PP5
+ //Cw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=xERB9KeErRz0Xv313u8END71sg7A1PW4f7hRzM9VGG8=;
- b=hLw3/rLV4YbxTU1ObwEms1oXA0qr0nyjLFPpjSSCQO9y087qzoKQkWC8qOBG9S+oi4
- 6S/NodhL1Bc9ELXy9s9T7/AH5uSlL1hQi1LmfqJOVE490Jt6e/BOgaZ7Z+NjUR2Jtiyy
- ipEtpuAtkISeO7DsqxKq4a6loHSg5pGAZaemfIa6PafinMYPuI2SupQi/v9hRib0FmAA
- YTiMEyfCHfEbEx9vq0E9HlLei821xy6LOldgyaL6GltcQ8YhFi4Fhl8DFwgS3or2gvso
- CMiZ+pMsHW7Xixz8L9P8/GCIkr4glNgL7JE3crFey5NV9a3ffHPCoo/C53wasATnL6do
- zlTg==
-X-Gm-Message-State: APjAAAUqHraKnjuiLngO5YFptuCkwQujDOpwh0SqA48hwaPv2DP19hfR
- VOcHlZQNF6h572EUXJSp7JmwDKnYmE6z0Synv08=
-X-Google-Smtp-Source: APXvYqzPuvDp2hl6Q7/PbfUhTPr2qc74nsR1a1YtdOS3T7eZQF8h5rNOXFr8Ij4OMws3CIKCEEvauU6SKD7QNIcvC8A=
-X-Received: by 2002:ac8:32ec:: with SMTP id a41mr19832440qtb.18.1569755798825; 
- Sun, 29 Sep 2019 04:16:38 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:mime-version:message-id
+ :in-reply-to:references:user-agent:content-transfer-encoding;
+ bh=+5mJbdKNBA+m8vppAhdI++7fky2Q3/YXSRQyiXoFCLc=;
+ b=Pj00V4C1mFukbMDreLedfyitdICM5J/yYrigE7vzJUlkieTLU6oDTqmHtU9jEuhu8U
+ et6WGYzV+ouU8/3pvolJNc4mJi0/m+g5tVeLpAeB2RDIHhpgCxD2y2nV3c/G6xVHWhuN
+ dVq8X6KwLwhK6QYD0a0jEWp33M8hkMCy6we5WCSledTSrdTtKAP84bIBgyBohfmSfv/G
+ WJN9ooCnaLfoAKkXgtFZEYKGMEAcISx/d6Kb/IJO2nEV5ck1yaJSN8R+FDcP1A3NZFUM
+ O71ppuBttwivZEedHLXImIjjKz6lKu/k3xhdI0Ei1Gn+xnSM9enrnneUjIMnY/NLHwhU
+ NIMQ==
+X-Gm-Message-State: APjAAAXkfDM7JCk2geVf8+XdMxLG46uzwKLgrHqhIeKl6Gv0OLQYpuhO
+ 2Lym+Gg3jH0QkipXlgYTgEE=
+X-Google-Smtp-Source: APXvYqwYBuT58Y/Ro1CA1xclbEevvBfYgIFxMJg2pEEKp5Se24KdjkrFWsiKF4sAjXe2yJ4wuhzJrw==
+X-Received: by 2002:a7b:c764:: with SMTP id x4mr13222224wmk.62.1569756141017; 
+ Sun, 29 Sep 2019 04:22:21 -0700 (PDT)
+Received: from localhost ([94.73.41.211])
+ by smtp.gmail.com with ESMTPSA id m62sm13230613wmm.35.2019.09.29.04.22.17
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 29 Sep 2019 04:22:18 -0700 (PDT)
+From: Vicente Bergas <vicencb@gmail.com>
+To: Vivek Unune <npcomplete13@gmail.com>
+Subject: Re: [PATCH] arm64: dts: rockchip: Fix usb-c on Hugsun X99 TV Box
+Date: Sun, 29 Sep 2019 13:22:17 +0200
 MIME-Version: 1.0
-References: <20190927002455.13169-1-robh@kernel.org>
-In-Reply-To: <20190927002455.13169-1-robh@kernel.org>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Sun, 29 Sep 2019 13:16:20 +0200
-Message-ID: <CAK8P3a0oct0EOMi5t4BmpgdkiBM+LjC+2pTST4hcvNCa3MGLmw@mail.gmail.com>
-Subject: Re: [PATCH 00/11] of: dma-ranges fixes and improvements
-To: Rob Herring <robh@kernel.org>
+Message-ID: <54c67ca8-8428-48ee-9a96-e1216ba02839@gmail.com>
+In-Reply-To: <20190929032230.24628-1-npcomplete13@gmail.com>
+References: <20190929032230.24628-1-npcomplete13@gmail.com>
+User-Agent: Trojita
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190929_041643_719171_C7E880D9 
-X-CRM114-Status: GOOD (  22.62  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190929_042223_781663_8137CEEC 
+X-CRM114-Status: GOOD (  11.57  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.195 listed in list.dnswl.org]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.160.195 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ provider (vicencb[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,100 +96,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thierry Reding <thierry.reding@gmail.com>,
- DTML <devicetree@vger.kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Frank Rowand <frowand.list@gmail.com>, linux-pci <linux-pci@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Christoph Hellwig <hch@infradead.org>, Marek Vasut <marek.vasut@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Oza Pawandeep <oza.oza@broadcom.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Simon Horman <horms+renesas@verge.net.au>, Robin Murphy <robin.murphy@arm.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Stefan Wahren <wahrenst@gmx.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
+ Felipe Balbi <felipe.balbi@linux.intel.com>, Felipe Balbi <balbi@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, akash@openedev.com, ezequiel@collabora.com,
+ linux-arm-kernel@lists.infradead.org, Roger Quadros <rogerq@ti.com>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 27, 2019 at 2:24 AM Rob Herring <robh@kernel.org> wrote:
->
-> This series fixes several issues related to 'dma-ranges'. Primarily,
-> 'dma-ranges' in a PCI bridge node does correctly set dma masks for PCI
-> devices not described in the DT. A common case needing dma-ranges is a
-> 32-bit PCIe bridge on a 64-bit system. This affects several platforms
-> including Broadcom, NXP, Renesas, and Arm Juno. There's been several
-> attempts to fix these issues, most recently earlier this week[1].
->
-> In the process, I found several bugs in the address translation. It
-> appears that things have happened to work as various DTs happen to use
-> 1:1 addresses.
->
-> First 3 patches are just some clean-up. The 4th patch adds a unittest
-> exhibiting the issues. Patches 5-9 rework how of_dma_configure() works
-> making it work on either a struct device child node or a struct
-> device_node parent node so that it works on bus leaf nodes like PCI
-> bridges. Patches 10 and 11 fix 2 issues with address translation for
-> dma-ranges.
->
-> My testing on this has been with QEMU virt machine hacked up to set PCI
-> dma-ranges and the unittest. Nicolas reports this series resolves the
-> issues on Rpi4 and NXP Layerscape platforms.
-
-I've only looked briefly, but this all seems reasonable. Adding Christoph
-to Cc here to draw his attention to it as he's done a lot of reworks on
-the dma-mapping interfaces recently.
-
-On a semi-related note, Thierry asked about one aspect of the dma-ranges
-property recently, which is the behavior of dma_set_mask() and related
-functions when a driver sets a mask that is larger than the memory
-area in the bus-ranges but smaller than the available physical RAM.
-As I understood Thierry's problem and the current code, the generic
-dma_set_mask() will either reject the new mask entirely or override
-the mask set by of_dma_configure, but it fails to set a correct mask
-within the limitations of the parent bus in this case.
-
-We had discussed and proposed patches for this in the past, but
-it seems that never got anywhere. Maybe now that a number of
-people have looked at this logic, we can figure it out for good.
-
-        Arnd
-
-> [1] https://lore.kernel.org/linux-arm-kernel/20190924181244.7159-1-nsaenzjulienne@suse.de/
->
-> Rob Herring (5):
->   of: Remove unused of_find_matching_node_by_address()
->   of: Make of_dma_get_range() private
->   of/unittest: Add dma-ranges address translation tests
->   of/address: Translate 'dma-ranges' for parent nodes missing
->     'dma-ranges'
->   of/address: Fix of_pci_range_parser_one translation of DMA addresses
->
-> Robin Murphy (6):
->   of: address: Report of_dma_get_range() errors meaningfully
->   of: Ratify of_dma_configure() interface
->   of/address: Introduce of_get_next_dma_parent() helper
->   of: address: Follow DMA parent for "dma-coherent"
->   of: Factor out #{addr,size}-cells parsing
->   of: Make of_dma_get_range() work on bus nodes
->
->  drivers/of/address.c                        | 83 +++++++++----------
->  drivers/of/base.c                           | 32 ++++---
->  drivers/of/device.c                         | 12 ++-
->  drivers/of/of_private.h                     | 14 ++++
->  drivers/of/unittest-data/testcases.dts      |  1 +
->  drivers/of/unittest-data/tests-address.dtsi | 48 +++++++++++
->  drivers/of/unittest.c                       | 92 +++++++++++++++++++++
->  include/linux/of_address.h                  | 21 +----
->  include/linux/of_device.h                   |  4 +-
->  9 files changed, 227 insertions(+), 80 deletions(-)
->  create mode 100644 drivers/of/unittest-data/tests-address.dtsi
->
-> --
-> 2.20.1
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gU3VuZGF5LCBTZXB0ZW1iZXIgMjksIDIwMTkgNToyMjozMCBBTSBDRVNULCBWaXZlayBVbnVu
+ZSB3cm90ZToKPiBGaXggdXNiLWMgb24gWDk5IFRWIEJveC4gVGVzdGVkIHdpdGggYXJtYmlhbiB3
+LyBrZXJuZWwgNS4zCj4KPiBTaWduZWQtb2ZmLWJ5OiBWaXZlayBVbnVuZSA8bnBjb21wbGV0ZTEz
+QGdtYWlsLmNvbT4KPiAtLS0KPiAgYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMzOTkt
+aHVnc3VuLXg5OS5kdHMgfCA0ICsrLS0KPiAgMSBmaWxlIGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygr
+KSwgMiBkZWxldGlvbnMoLSkKPgo+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3Jv
+Y2tjaGlwL3JrMzM5OS1odWdzdW4teDk5LmR0cyAKPiBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9j
+a2NoaXAvcmszMzk5LWh1Z3N1bi14OTkuZHRzCj4gaW5kZXggMGQxZjVmOWEwZGU5Li5jMTMzZThk
+NjRiMmEgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMzOTkt
+aHVnc3VuLXg5OS5kdHMKPiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzM5
+OS1odWdzdW4teDk5LmR0cwo+IEBAIC02NDQsNyArNjQ0LDcgQEAKPiAgCXN0YXR1cyA9ICJva2F5
+IjsKPiAgCj4gIAl1MnBoeTBfaG9zdDogaG9zdC1wb3J0IHsKPiAtCQlwaHktc3VwcGx5ID0gPCZ2
+Y2M1djBfaG9zdD47Cj4gKwkJcGh5LXN1cHBseSA9IDwmdmNjNXYwX3R5cGVjPjsKPiAgCQlzdGF0
+dXMgPSAib2theSI7Cj4gIAl9Owo+ICAKPiBAQCAtNzEyLDcgKzcxMiw3IEBACj4gIAo+ICAmdXNi
+ZHJkX2R3YzNfMCB7Cj4gIAlzdGF0dXMgPSAib2theSI7Cj4gLQlkcl9tb2RlID0gIm90ZyI7Cj4g
+Kwlkcl9tb2RlID0gImhvc3QiOwo+ICB9Owo+ICAKPiAgJnVzYmRyZDNfMSB7CgpIaSBWaXZlaywK
+CndoaWNoIGlzIHRoZSByZWxhdGlvbnNoaXAgb2YgeW91ciBwYXRjaCBhbmQgdGhpcyBjb21taXQ6
+CgplMWQ5MTQ5ZTgzODlmMTY5MGNkZDRlNDA1Njc2NmRkMjY0ODhhMGZlCmFybTY0OiBkdHM6IHJv
+Y2tjaGlwOiBGaXggVVNCMyBUeXBlLUMgb24gcmszMzk5LXNhcHBoaXJlCgp3aXRoIHJlc3BlY3Qg
+dG8gdGhpcyBvdGhlciBjb21taXQ6CgpjMDliNzNjZmFjMmE5MzE3ZjExMDQxNjkwNDVjNTE5YzYw
+MjFhYTFkCnVzYjogZHdjMzogZG9uJ3Qgc2V0IGdhZGdldC0+aXNfb3RnIGZsYWcKCj8KCkkgZGlk
+IG5vdCB0ZXN0IHJldmVydGluZyBlMWQ5MTQ5ZSBzaW5jZSBjMDliNzNjZiB3YXMgYXBwbGllZC4K
+ClJlZ2FyZHMsCiAgVmljZW7Dpy4KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
+bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
