@@ -2,83 +2,124 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3670C1664
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 18:54:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F45BC1668
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 29 Sep 2019 18:55:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=9e+rk3KahMDYWjMSrYYvVRXm1iCw1Bxv8shD69+xcus=; b=WU/szqgp2f/e9qtJmDf4XUVFFq
-	wJUOXBc2odlgij7N/idIb0eA0OOZ4wHCfRbmxgijMJEwIFyXfm/Sy6vL6VYLdkB4+ALStRQx7pRgo
-	AhTnlz6vEFncHXT29VyGRNqFpn4zF4C32JCAiJr3X/EcAjXWkyv4Kf6FDA/PKBJmz4ItgPMAswWiu
-	EKmYCtv38XCjvTzErcPwRjZwHUrC9A/fauKYiu2Lw945+ChkE9iYr8Nvq38nefLPiZtBOW7lDTnOp
-	6NLEJGFBrHdn/6lVijaSsmpVzMTwxaHg/VjBRMP+aJaMTd/bqvWgD+9v8DwtG7GHa0/jcRPP1c1sC
-	OpIgrg7g==;
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7q/IpjO36QxUUcG5Z0BA+0XQGIARhVAtGBRQgyQnsT0=; b=GbkNiaJyJ5GDOj
+	KpFQlqeL3M71MzXO+V6Gh61Pd9rUZCgCUv+jsFxiCVMdhMnvBKJWLL5oY+d9Qupu5n9WfPAh97aVs
+	2JSPXEKAwFXXbXlqMuZbMGX4cjTJfLRxU0oaS6FUUZMviOpU9qGiC54eqLMubbkOsFPjoocXZBw/n
+	+ntYBPvCxHoAt9TRps2+mGzEFxoDqa08Llk4xabzGBgymbgjoRLbrTAZ78ICwK/pgPBus2yLgkdZ7
+	E1okzbdrMBMkAlXa4OGazGCJKoog9kq2ESpgMGKJgQZ+2hznGeF7SFkbIf5juRUYDJb0mhXDXL4Ah
+	CnM8tPeidsC2EnIOEbIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEcT3-0001Jm-1G; Sun, 29 Sep 2019 16:54:41 +0000
-Received: from mail-ua1-x936.google.com ([2607:f8b0:4864:20::936])
+	id 1iEcTi-0002mm-U2; Sun, 29 Sep 2019 16:55:23 +0000
+Received: from mx4.ucr.edu ([138.23.248.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEcSu-0001It-9d
- for linux-arm-kernel@lists.infradead.org; Sun, 29 Sep 2019 16:54:33 +0000
-Received: by mail-ua1-x936.google.com with SMTP id r19so3407166uap.9
+ id 1iEcTY-0002lY-GO
+ for linux-arm-kernel@lists.infradead.org; Sun, 29 Sep 2019 16:55:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=ucr.edu; i=@ucr.edu; q=dns/txt; s=selector3;
+ t=1569776113; x=1601312113;
+ h=mime-version:references:in-reply-to:from:date:message-id:
+ subject:to:cc; bh=x7b6SLeaG9bmKhPMxmT8BEbRRwJk0nI3N/pQdCncVCM=;
+ b=im7vmOenWC8h5UPgD4ejuhL8BtsTPWqDoJHV8F6VjTi9vuAEOVBW8XTp
+ WbIw5dGZMjNEY2+NokwYuoIfD9tMOJCMfeDmROmjq8HHxLCqOcHPDBEbM
+ +ZW5EkNiRjZMspCuPVC0jWHiYz0ga/9bxqvoe+bkhTCYQOcnUs7h/h5GY
+ RqpdJnr8nWM5GhUv1xn7p+UvIJP35gRi55qO9deOGte+g/i1g62UKv9Ck
+ GRqwzbm51mDXOeJjdbPbJVTvYu1wWGZPZxRS/EQwNzEc/CiCclkzS8fsx
+ LAeMS+Fz432ypfiqSOwpv+p2x2pedJBUbOQsTJQu/YPOeBzm+/P66zEgP A==;
+IronPort-SDR: KoNcwXqZpCtGz7+cubJywI2Wxd1lKJqGFm0fuJx0faYw3NzsJlyj0ysr0kUP0ylCfSUhqXld9C
+ w6mOjzsiEKzxdy+j0TljvLM/IS8nqF4kIIRefnRJ2d1IC224axIhvvIhe8/ULw5dQaB5oCRN6/
+ L8pq8DsHjXm8qcerOzJ4RHUN6JkPawtM2Aj+QlKxT1ibV6SVeozog9dbr3OS1gsyVTJSC8RVrA
+ pHXEVK+xpRxmIYIm6P2dMIzQKYs9iyaCL1OZx5/Ts6RbtqYQ82rFkhcTV/nNtg1F4GCqimkrw0
+ ib0=
+IronPort-PHdr: =?us-ascii?q?9a23=3AXcNYGRamfqAqX0yyQ7ZXZTX/LSx+4OfEezUN45?=
+ =?us-ascii?q?9isYplN5qZr8y6bnLW6fgltlLVR4KTs6sC17ON9fy4EjVYvt6oizMrSNR0TR?=
+ =?us-ascii?q?gLiMEbzUQLIfWuLgnFFsPsdDEwB89YVVVorDmROElRH9viNRWJ+iXhpTEdFQ?=
+ =?us-ascii?q?/iOgVrO+/7BpDdj9it1+C15pbffxhEiCCybL9vIhi6twrcutUZjYd/Nqo8yA?=
+ =?us-ascii?q?bCr2dVdehR2W5mP0+YkQzm5se38p5j8iBQtOwk+sVdT6j0fLk2QKJBAjg+PG?=
+ =?us-ascii?q?87+MPktR/YTQuS/XQcSXkZkgBJAwfe8h73WIr6vzbguep83CmaOtD2TawxVD?=
+ =?us-ascii?q?+/4apnVAPkhSEaPDMi7mrZltJ/g75aoBK5phxw3YjUYJ2ONPFjeq/RZM4WSX?=
+ =?us-ascii?q?ZdUspUUSFKH4GyYJYVD+cZMulYoYvyqVsAoxW9GAeiGv/gxyRUhnPqx6A2z/?=
+ =?us-ascii?q?gtHR3E0QEmAtkAsG7UrNLwNKoKU++1zajJzTXeb/NRxDzy64jIfQogofqRWr?=
+ =?us-ascii?q?9xccvQyUk1GAPEklmctYLoMiiI1usRqWiX9fRvWv+yi2M+rQx6vzuhxt80h4?=
+ =?us-ascii?q?XXmo4YzkrI+CZ5zYovO9G0VE12bcS5HJZUtCyXMZZ9TNk4TGFyoik6z6ULuZ?=
+ =?us-ascii?q?u8fCcX1psq3wXfa/mbc4iQ5RLjSfqRLS94hH17fLK/gA6/8U26xe39Usm4yV?=
+ =?us-ascii?q?JKrihYntXVuHAByhje58udRvty+Ueh3jmP1wTN5e1ePU80kq/bJ4Ygwr42iJ?=
+ =?us-ascii?q?UTrVzOEjHqlEjylqObdUUp9vK25+j7YbjqvIKQOot3hw3mN6QhgM2/AeA2Mg?=
+ =?us-ascii?q?gUWGib/Pyx1b3i/E35WrpKj+E6nrXXvZ3BOMQUurS5DxVL3Yk+9hazFy2m38?=
+ =?us-ascii?q?gAnXkbMFJFfwqKj4zoO1HIPfD5Au6zjE62kDdu3vzGPaPuAo/LLnfdlLfsZr?=
+ =?us-ascii?q?J9609HyAov1tBT/ZNUCrcPIPLpQED+qcLXAQUkPACuxObnEtp9hcsiXjepA6?=
+ =?us-ascii?q?SZN6fbqhet7aoAPuiWacdBtDvnbfgo/eTGjXg3gxkUYf/684EQbSWJH+ZmPk?=
+ =?us-ascii?q?LRU3rlg59VAHUKtwtmFLfClVaYFzNfeiDhDOoH+jgnBdf+Xs/4TYe3jenEhX?=
+ =?us-ascii?q?/jEw=3D=3D?=
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: =?us-ascii?q?A2EUAAAc4ZBdgMbQVdFmHAEBAQQBAQw?=
+ =?us-ascii?q?EAQGBUwcBAQsBhA8qhCKIHIZSgg+ZJIF7AQgBAQEOLwEBhEACgzgjNAkOAgM?=
+ =?us-ascii?q?JAQEFAQEBAQEFBAEBAhABAQkNCQgnhUKCOikBgz0BAQQSEQRSEAsLDQICJgI?=
+ =?us-ascii?q?CIhIBBQEcBhMigwCCCwWfPoEDPIsmfzOIZwEJDYFIEnooAYwNgheBEYMSPod?=
+ =?us-ascii?q?PglgEgS8BAQGLP4IxhyuWSQEGAoIQFIxNiD4bmTYtiiidBA8jgS+CETMaJX8?=
+ =?us-ascii?q?GZ4FOUBAUgVoXFY4tJDCRFwEB?=
+X-IPAS-Result: =?us-ascii?q?A2EUAAAc4ZBdgMbQVdFmHAEBAQQBAQwEAQGBUwcBAQsBh?=
+ =?us-ascii?q?A8qhCKIHIZSgg+ZJIF7AQgBAQEOLwEBhEACgzgjNAkOAgMJAQEFAQEBAQEFB?=
+ =?us-ascii?q?AEBAhABAQkNCQgnhUKCOikBgz0BAQQSEQRSEAsLDQICJgICIhIBBQEcBhMig?=
+ =?us-ascii?q?wCCCwWfPoEDPIsmfzOIZwEJDYFIEnooAYwNgheBEYMSPodPglgEgS8BAQGLP?=
+ =?us-ascii?q?4IxhyuWSQEGAoIQFIxNiD4bmTYtiiidBA8jgS+CETMaJX8GZ4FOUBAUgVoXF?=
+ =?us-ascii?q?Y4tJDCRFwEB?=
+X-IronPort-AV: E=Sophos;i="5.64,563,1559545200"; d="scan'208";a="79457926"
+Received: from mail-lj1-f198.google.com ([209.85.208.198])
+ by smtpmx4.ucr.edu with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
+ 29 Sep 2019 09:55:11 -0700
+Received: by mail-lj1-f198.google.com with SMTP id b64so2275295ljb.14
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 29 Sep 2019 09:54:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
- bh=hKXN3UH5ikId6K7/+YiazTXZNhGquUsUZgxZDxQd10Y=;
- b=WPB7OKJ3oTtP+x/hIwIN+DcngOG06NPx4RnjbFvVdD5u4DcrIV3MH8ThyUMtF0kf3N
- 6F9Q1x3IuEEWjxDXJqyI4pwOe/YijKNoeX9GqDmU6sactOcUEQzAsXtBZ3gIcnI2V+d7
- L3kh2zZTFQfzwka3oNMQv1wRsdHVXXc2/Ma4tj0uIoEK1eIb3cc4HHOsYP4vft0UMmu1
- x5BO/okxSAyM2+lYQ3SUsuEBQgNcQ9VPsnnb0kTVhWeSQKemee1QEsDjnhhvooBgyE8t
- i32kEcogqZX+90pYCbjUE1jdamhMT/ntak6Ke7MOWnwhLFPBCnYiPOdHgpn9IiDKQKMW
- gt9w==
+ Sun, 29 Sep 2019 09:55:10 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to;
- bh=hKXN3UH5ikId6K7/+YiazTXZNhGquUsUZgxZDxQd10Y=;
- b=NjOxGWjehhJEBqhtMAz1yhFpHMLszQ3TlgRSPr4WYy2S69dkGpsEF1TZj7YFBKoxvQ
- c43FQFdG9N2PiWsBERAMIp8qbdr0mVTfDkhimm4N6ob2RauQMnQYji2EdOqEhj+/vHw+
- s8DVaWU+NVIlX/c+hq12fW9aLe8WxiDBFZWIhzTRMqt/wNtYzp6JSxohYN6jNH5EhvVb
- B2kSO/x9Y+MTVmZc3pHF4yhnl/kLInA06uVVp7TnqGmiiXUdQ347HN4/1S4+1HHhww79
- PVMK7MuNCPCk4zgX9IV8BKYeLQSmCby3x51XRMjS0UAgwSw8ySeEMtSB61GYgRq3a3ph
- 9ETQ==
-X-Gm-Message-State: APjAAAU39+NbdBrdyioMhbvOAV0jsrLUZJueevxFTXT8x+feuoqcr4qg
- gkRymGEMff5lP8nfW65jJmqt9R0Wx7ynHPB6tNI=
-X-Google-Smtp-Source: APXvYqzgyzbvTiXo3YBeaDoGYv87AhsnV9Wj2PykCpUkpRDq9o4W3/XL83+x1tUr7skuswWAXfuvFe5bAeU+1n3sJns=
-X-Received: by 2002:ab0:3310:: with SMTP id r16mr4589762uao.22.1569776070321; 
- Sun, 29 Sep 2019 09:54:30 -0700 (PDT)
+ :message-id:subject:to:cc;
+ bh=sjNdX3e/FDjYlFzLDAbb3JmD3MBe1ko+MmFn61I90Os=;
+ b=RDL/hqPzqBWZWMosuefQrU6n239LQ7TyeMccsYNRGEC21tJKOAu+WzMClwLK5naQKw
+ iE55oE2ypkXbGTyipIuwmdVtaQpkYMNxg/L4echFJ/uGB/Z6ZHCZB7xodEpdTmgi7Wbq
+ lemlKrdusRoGPBy4tCShlBCMeI+Plvm2R03E+zMmXPHcjL3fQ19e9lXhuVCvajdk6R1U
+ MHCQjE5gsiaWJffLphs3awLAbzn89ZQJ8ECcFBDB6KwA67fZloWRm6vdLsjN575542vJ
+ MrU+4lV0MQxjwqyVZtMryskwvg3NCiROd58z10wbSN1bxC45/ISc7nsZ87PMcpVNnW/Y
+ 8fXg==
+X-Gm-Message-State: APjAAAUspMbH8aD3+L/VeTwYn7cD+OtDYwO+VLIzojo5jMFreXZ8pHB3
+ WBHXYWdByyOLSkIp2OemIVoUl4EK+O0agojQ5Fop3BfrBHz8iH0ZwmlbkhoQLhLHSOjNekoxv3L
+ dLlAkEwsr45fW4ZUBcVdX1P/xl55fgh8dp928EcMuJ387wuew30ZX
+X-Received: by 2002:a19:f512:: with SMTP id j18mr9044161lfb.169.1569776108453; 
+ Sun, 29 Sep 2019 09:55:08 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqwVzY32Bt/A8gXhlgqzeWJpqc+TMw73XWbverehqqSktg26b6k0t4TG24jtNlhtaPJc/gwb9AQK9KEvS4UtPUg=
+X-Received: by 2002:a19:f512:: with SMTP id j18mr9044142lfb.169.1569776108214; 
+ Sun, 29 Sep 2019 09:55:08 -0700 (PDT)
 MIME-Version: 1.0
-References: <CAOuPNLgH=JQeT3=tZ_AdBsV0e-S_JNEe4CtpFW8Wj5NfYW5PsA@mail.gmail.com>
- <CAOuPNLjqm+Dv5RARP6dzZRKSttCvqoLe7MNYOeChAGUWX1krRA@mail.gmail.com>
-In-Reply-To: <CAOuPNLjqm+Dv5RARP6dzZRKSttCvqoLe7MNYOeChAGUWX1krRA@mail.gmail.com>
-From: Pintu Agarwal <pintu.ping@gmail.com>
-Date: Sun, 29 Sep 2019 22:24:19 +0530
-Message-ID: <CAOuPNLgZ3kjBaCmXkXHZrncYqUxsNYKiXQqptoDBT_EWfjpNqg@mail.gmail.com>
-Subject: Re: imx6: hdmi black screen issue after resume
-To: p.zabel@pengutronix.de, bob.beckett@collabora.com, 
- dri-devel@lists.freedesktop.org, open list <linux-kernel@vger.kernel.org>, 
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, linux-pm@vger.kernel.org
+References: <20190928004642.28932-1-yzhai003@ucr.edu>
+ <20190928064720.GA24515@osadl.at>
+In-Reply-To: <20190928064720.GA24515@osadl.at>
+From: Yizhuo Zhai <yzhai003@ucr.edu>
+Date: Sun, 29 Sep 2019 09:54:54 -0700
+Message-ID: <CABvMjLR1sP+-z6-vy3kKmyv-srVHdvT9=Z7g=RSWo3oDuGt8+A@mail.gmail.com>
+Subject: Re: [PATCH] iio: adc: meson-saradc: Variables could be uninitalized
+ if regmap_read() fails
+To: Nicholas Mc Guire <der.herr@hofr.at>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190929_095432_360163_1BCA12EA 
-X-CRM114-Status: GOOD (  18.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190929_095512_584480_C3D8CA6C 
+X-CRM114-Status: GOOD (  24.61  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:936 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [138.23.248.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pintu.ping[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -97,116 +138,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Chengyu Song <csong@cs.ucr.edu>, Lars-Peter Clausen <lars@metafoo.de>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>, Nicholas Mc Guire <hofrat@osadl.org>,
+ Zhiyun Qian <zhiyunq@cs.ucr.edu>, linux-kernel@vger.kernel.org,
+ linux-iio@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
+ linux-amlogic@lists.infradead.org, Thomas Gleixner <tglx@linutronix.de>,
+ Jonathan Cameron <jic23@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Nicholas:
+
+Thanks for your feedback, I made changes and submitted new patches
+already. Check patch script generated a warning if I strictly align
+the parameter with (. I checked other code inside this file and
+modified the continuation accordingly.
+
+On Fri, Sep 27, 2019 at 11:47 PM Nicholas Mc Guire <der.herr@hofr.at> wrote:
 >
-> On Mon, Sep 23, 2019 at 1:28 PM Pintu Agarwal <pintu.ping@gmail.com> wrote:
+> On Fri, Sep 27, 2019 at 05:46:41PM -0700, Yizhuo wrote:
+> > Several functions in this file are trying to use regmap_read() to
+> > initialize the specific variable, however, if regmap_read() fails,
+> > the variable could be uninitialized but used directly, which is
+> > potentially unsafe. The return value of regmap_read() should be
+> > checked and handled.
 > >
-> > Dear Philipp,
+> > Signed-off-by: Yizhuo <yzhai003@ucr.edu>
+>
+> Just a few minor style issues - contentwise it look correct to me.
+> Reviewed-by: Nicholas Mc Guire <hofrat@osadl.org>
+>
+> > ---
+> >  drivers/iio/adc/meson_saradc.c | 28 +++++++++++++++++++++++-----
+> >  1 file changed, 23 insertions(+), 5 deletions(-)
 > >
-> > I have a iMX6dl custom board with custom Linux Kernel 4.8.
-> > I have both LCD and HDMI connected to the board.
-> > And we are using weston/wayland as the display interface.
-> > In normal boot, both LCD and HDMI display is working fine.
+> > diff --git a/drivers/iio/adc/meson_saradc.c b/drivers/iio/adc/meson_saradc.c
+> > index 7b28d045d271..c032a64108b4 100644
+> > --- a/drivers/iio/adc/meson_saradc.c
+> > +++ b/drivers/iio/adc/meson_saradc.c
+> > @@ -323,6 +323,7 @@ static int meson_sar_adc_wait_busy_clear(struct iio_dev *indio_dev)
+> >  {
+> >       struct meson_sar_adc_priv *priv = iio_priv(indio_dev);
+> >       int regval, timeout = 10000;
+> > +     int ret;
 > >
-> > But, currently, for one of the requirement, I am trying to explore and
-> > support hibernation image booting on it.
-> > Currently, we are able to resume the system without display.
-> > Also, if we make the entire imx-drm as modules, and then install the
-> > modules after resume, even LCD is also coming up.
-> > But HDMI display is black out.
+> >       /*
+> >        * NOTE: we need a small delay before reading the status, otherwise
+> > @@ -331,7 +332,9 @@ static int meson_sar_adc_wait_busy_clear(struct iio_dev *indio_dev)
+> >        */
+> >       do {
+> >               udelay(1);
+> > -             regmap_read(priv->regmap, MESON_SAR_ADC_REG0, &regval);
+> > +             ret = regmap_read(priv->regmap, MESON_SAR_ADC_REG0, &regval);
+> > +             if (ret)
+> > +                     return ret;
+> >       } while (FIELD_GET(MESON_SAR_ADC_REG0_BUSY_MASK, regval) && timeout--);
 > >
-> > After, resume, when I try to launch the weston, I noticed the following errors:
-> > enabling vblank on crtc 0, ret: 0
-> > drm_vblank_get: CALLED: vblank->refcount: 1
-> > ------------[ cut here ]------------
-> > WARNING: at drivers/gpu/drm/drm_atomic_helper.c:1121
-> > drm_atomic_helper_wait_for_vblanks+0x228/0x24c [drm_kms_helper]()
-> > [CRTC:24] vblank wait timed out
-> > .....
-> > [drm:drm_atomic_helper_commit_cleanup_done [drm_kms_helper]] *ERROR*
-> > [CRTC:24:crtc-0] flip_done timed out
+> >       if (timeout < 0)
+> > @@ -358,7 +361,11 @@ static int meson_sar_adc_read_raw_sample(struct iio_dev *indio_dev,
+>
+> any reason not to declear ret in the declaration block ?
+> so just for consistency with coding style within meson_saradc.c
+> this might be:
+>
+>         int regval, fifo_chan, fifo_val, count;
+> +       int ret;
+>
+> >               return -EINVAL;
+> >       }
 > >
-> > ....
-> > [00:06:42.600] Warning: computed repaint delay is insane: -5069 msec
-> > [00:06:42.665] unexpectedly large timestamp jump (from 397522 to 402648)
-> > ....
+> > -     regmap_read(priv->regmap, MESON_SAR_ADC_FIFO_RD, &regval);
+> > +     int ret = regmap_read(priv->regmap, MESON_SAR_ADC_FIFO_RD, &regval);
+>
+> +       ret = regmap_read(priv->regmap, MESON_SAR_ADC_FIFO_RD, &regval);
+>
+> > +
+> > +     if (ret)
+> > +             return ret;
+> > +
+> >       fifo_chan = FIELD_GET(MESON_SAR_ADC_FIFO_RD_CHAN_ID_MASK, regval);
+> >       if (fifo_chan != chan->address) {
+> >               dev_err(&indio_dev->dev,
+> > @@ -491,6 +498,7 @@ static int meson_sar_adc_lock(struct iio_dev *indio_dev)
+> >  {
+> >       struct meson_sar_adc_priv *priv = iio_priv(indio_dev);
+> >       int val, timeout = 10000;
+> > +     int ret;
 > >
-> > And, when I try to reboot the system, the system does not reboot.
-> > And I get the following error:
-> > /wayland # reboot
-> > ....
-> > [17:55:01.180] destroy output while page flip pending
-> > ...
-> > imx-ipuv3 2400000.ipu: DC stop timeout after 50 ms
+> >       mutex_lock(&indio_dev->mlock);
 > >
+> > @@ -506,7 +514,10 @@ static int meson_sar_adc_lock(struct iio_dev *indio_dev)
+> >                */
+> >               do {
+> >                       udelay(1);
+> > -                     regmap_read(priv->regmap, MESON_SAR_ADC_DELAY, &val);
+> > +                     ret = regmap_read(priv->regmap,
+> > +                                     MESON_SAR_ADC_DELAY, &val);
+>
+> checkpatch does not fuss here but the continuation should be alligned
+> witht the ( here
+>
+> > +                     if (ret)
+> > +                             return ret;
+> >               } while (val & MESON_SAR_ADC_DELAY_BL30_BUSY && timeout--);
 > >
-> > -------------
-> > If you have any clue about this issue, please let me know.
+> >               if (timeout < 0) {
+> > @@ -784,7 +795,10 @@ static int meson_sar_adc_init(struct iio_dev *indio_dev)
+> >                * BL30 to make sure BL30 gets the values it expects when
+> >                * reading the temperature sensor.
+> >                */
+> > -             regmap_read(priv->regmap, MESON_SAR_ADC_REG3, &regval);
+> > +             ret = regmap_read(priv->regmap, MESON_SAR_ADC_REG3, &regval);
+> > +             if (ret)
+> > +                     return ret;
+> > +
+> >               if (regval & MESON_SAR_ADC_REG3_BL30_INITIALIZED)
+> >                       return 0;
+> >       }
+> > @@ -1014,7 +1028,11 @@ static irqreturn_t meson_sar_adc_irq(int irq, void *data)
+> >       unsigned int cnt, threshold;
+> >       u32 regval;
+>
+> same as above
+>
+> +       int ret;
+>
 > >
-> > Any help will be really appreciated!
+> > -     regmap_read(priv->regmap, MESON_SAR_ADC_REG0, &regval);
+> > +     int ret = regmap_read(priv->regmap, MESON_SAR_ADC_REG0, &regval);
+>
+> +       ret = regmap_read(priv->regmap, MESON_SAR_ADC_REG0, &regval);
+>
+> > +
+> > +     if (ret)
+> > +             return ret;
+> > +
+> >       cnt = FIELD_GET(MESON_SAR_ADC_REG0_FIFO_COUNT_MASK, regval);
+> >       threshold = FIELD_GET(MESON_SAR_ADC_REG0_FIFO_CNT_IRQ_MASK, regval);
 > >
+> > --
+> > 2.17.1
 > >
-> > Thank You!
-> >
-> > Regards,
-> > Pintu
 
 
-Hi All,
 
-I need some help, on the above issue.
-Finally, I could boil down the issue to be vblank refcount issue.
-After system resume, vblank ref count is getting screwed up, because
-of which vblank_enable is not happening.
-As per below code path: drivers/gpu/drm/drm_vblank.c:
-drm_vblank_get()
-{
-[...]
-/* Going from 0->1 means we have to enable interrupts again */
-if (atomic_add_return(1, &vblank->refcount) == 1) {
-    ret = drm_vblank_enable(dev, pipe);
-} else {
-    if (!vblank->enabled) {
-        atomic_dec(&vblank->refcount);
-        ret = -EINVAL;
-    }
-}
-[...]
-First time, everything seems fine.
-drm_vblank_get: CALLED: pipe: 0, vblank->refcount: 0, vblank-enabled: 0
-..
-drm_vblank_enable: calling - enable_vblank
-enabling vblank on crtc 0, ret: 0
-...
+-- 
+Kind Regards,
 
-But, after resume, somewhere during HDMI initialization, the refcount
-is getting incremented.
-drm_vblank_get: CALLED: pipe: 0, vblank->refcount: 1, vblank-enabled: 1
-Thus, due to the above logic, drm_vblank_enable() will not be called,
-if previous refcount is not 0.
+Yizhuo Zhai
 
-What I further noticed is that, after resume, during hdmi_setup the
-refcount is automatically getting updated.
-drm_update_vblank_count - storing vblank count: diff: 1
-
-This does not happen in normal case.
-Now, I am not sure, why the vblank counter is getting incremented
-during hdmi setup.
-Is it like, hdmi setup is taking slightly longer time for
-initialization, after resume??
-Because of which the vblank timestamp counter is getting disturbed.
-
-If anybody observed this issue, or aware about the fixes, please let me know.
-It will be of great help.
-
-Meanwhile, I am further continue to debug this more..
-
-Regards,
-Pintu
+Computer Science, Graduate Student
+University of California, Riverside
 
 _______________________________________________
 linux-arm-kernel mailing list
