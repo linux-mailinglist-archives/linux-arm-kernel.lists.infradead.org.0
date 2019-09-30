@@ -2,63 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F473C24BD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 17:58:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7D62C24C1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 18:00:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bu1Qn9tJBckjFHvG7AoVJnCJc9yE9xeQ71SPWdbKumM=; b=jwAqoSrKHYmxFj
-	B0yEfyiHteZHpg+eWrMoiwBFOT2dJTHbpJj6q55BA9qBKh0JtK807B40vawwUNH2yu7E6hr1vlaTZ
-	bx16I3beOTrEKdy+PmZpIlOUXHfOK66OVYwck0CQOHsgHCNOj3dbMS9hLzVFEqYwgw/CfHxFVnKZN
-	gcDrqpnRr5EDvKYgp2DTZ8VeCUYB+TNJWpS29MAGLRdtsQphZIBR4pD82fZu43g2P3hKbQg0uEqRR
-	1UYI3OHdoOhCbTYYpUro/nyE5kypjQIWCZx+cZHdbbJQgAxYNCn/+Wx+mMqb2kpL9/HM5ieNJwIgl
-	gHSc0Wuk5J/x82BzMqsw==;
+	List-Owner; bh=0GBC5NiN1a144lfzok9L8rHT3OqIkE3IkX8hfKNOaSs=; b=STvMyFiZYWDAuG
+	XYKVtWK0DF2VCkHz5QZkcPTY1reOXWuNyIuC5A6/BNUKs7BEVxAkoIRNlj3BIScAPD+rtb9Za/6Ts
+	7IRPIAgtiJ6LjvV2CZeqQHUZzRmb1oJCmngwPqJbnhZQ8/zGRviMfKYsF1H07vdJdTgAqDS4QT36v
+	+e8Azh0hn34a48yM6qf+xkWoWlnr1wyUaxYBZFbTBD0ZNxWBk7T8FuGlaG+B3GwW/bzntpwhkVvYF
+	nDFMm7i2olIO1By26iihfmFKDcfIMtyZUjYjAA6bwkid7q+mn8dq8XhhXMJaWyL8vXwoxe0ZKX27p
+	aHQiIlw2SsmtBSMHj+Yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEy4P-0000y5-8g; Mon, 30 Sep 2019 15:58:41 +0000
-Received: from rere.qmqm.pl ([91.227.64.183])
+	id 1iEy5f-0001Kx-S4; Mon, 30 Sep 2019 15:59:59 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEy4G-0000wU-9Y
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 15:58:33 +0000
-Received: from remote.user (localhost [127.0.0.1])
- by rere.qmqm.pl (Postfix) with ESMTPSA id 46hn7s5yWPz2J;
- Mon, 30 Sep 2019 17:56:25 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=rere.qmqm.pl; s=1;
- t=1569858988; bh=SM910taOzVBeIz8sDiWoqtsSpZFNnnEfHCLXVlJL+OE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=W5XI/oK4TO+8usSOpDLLwIUD8EOfNsMD0XE8ds9ESj4IQs+D9zTxF9VT7DVuPZHVl
- 9/AEZ4r7OVtdbseLYth+b7RMiIuY4oF0124m2klhObq/VnGS+5a7s4aYffBd2yL0Vb
- kdRZbmtDylWd8qGQpAsWP3LHRweacre6kmH+RX5Pt6+N3noLu+Vxv5Ti+Z0vPoKllq
- SB3g/Dlvj0Hm1X5luO32G8DQcoAGN+pkecnMYSBCY/vEpq+Z/YL7COPcPcBE5+nLW0
- z5Ljz3xu91ZoG3GdWQHa1K5LIdHE9xNwaqmAImLvdCdKAu08yv516uMZdQJxmh2vzb
- sBzrIyWPZ1LmA==
-X-Virus-Status: Clean
-X-Virus-Scanned: clamav-milter 0.101.4 at mail
-Date: Mon, 30 Sep 2019 17:58:19 +0200
-From: =?iso-8859-2?Q?Micha=B3_Miros=B3aw?= <mirq-linux@rere.qmqm.pl>
-To: YueHaibing <yuehaibing@huawei.com>
-Subject: Re: [PATCH -next] ASoC: atmel: Fix build error
-Message-ID: <20190930155818.GA32237@qmqm.qmqm.pl>
-References: <20190928081641.44232-1-yuehaibing@huawei.com>
+ id 1iEy5P-0001K2-SA
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 15:59:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1569859177; bh=D2ejaUWp29uDGi/bAvIoPZtXvcgt2U13kUVwsfjN680=;
+ h=Date:From:To:Subject:References:X-My-GPG-KeyId:From;
+ b=bAy5AL9wyR8lQZ/ooSinafOoLY4OVl0wumhpX+V/u5L/fnoADyJ66LTqYnzt8F6uB
+ vuhZu6xxYFeSRRDMUbG9iJKqZfp1uyDTvPWh+PDrHysZujX5/uIsBhfrcle2A/IukU
+ 9UgPwq3/qVl2BpEByIhmFriFzhbz8suwyIsUNrqw=
+Date: Mon, 30 Sep 2019 17:59:37 +0200
+From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
+To: Maxime Ripard <mripard@kernel.org>, David Airlie <airlied@linux.ie>,
+ Daniel Vetter <daniel@ffwll.ch>, Chen-Yu Tsai <wens@csie.org>,
+ dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] drm: sun8i-ui/vi: Fix layer zpos change/atomic modesetting
+Message-ID: <20190930155937.rtvoxprayrkxodxo@core.my.home>
+Mail-Followup-To: Maxime Ripard <mripard@kernel.org>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Chen-Yu Tsai <wens@csie.org>, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20190914220337.646719-1-megous@megous.com>
+ <20190918141734.kerdbbaynwutrxf6@gilmour>
+ <20190918152309.j2dbu63jaru6jn2t@core.my.home>
+ <20190918201617.5gwzmshoxbcxbmrx@gilmour>
+ <20190919122058.fhpuafogdq7oir2d@core.my.home>
+ <20190919131244.35hmnp7jizegltp7@core.my.home>
+ <20190920151142.ijistzhtcaenehx6@gilmour>
+ <20190924124054.743s3tlw5qirghxo@core.my.home>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190928081641.44232-1-yuehaibing@huawei.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190924124054.743s3tlw5qirghxo@core.my.home>
+X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
+ <https://xff.cz/key.txt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_085832_502010_610E786D 
-X-CRM114-Status: UNSURE (   9.53  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190930_085944_081013_4D5AD86B 
+X-CRM114-Status: GOOD (  18.52  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -74,59 +82,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, alsa-devel@alsa-project.org,
- lgirdwood@gmail.com, linux-kernel@vger.kernel.org, tiwai@suse.com,
- broonie@kernel.org, codrin.ciubotariu@microchip.com, perex@perex.cz,
- linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Sep 28, 2019 at 04:16:41PM +0800, YueHaibing wrote:
-> when do randbuilding, I got this error:
-> 
-> sound/soc/atmel/atmel_ssc_dai.o: In function `atmel_ssc_set_audio':
-> (.text+0x12f6): undefined reference to `atmel_pcm_pdc_platform_register'
-> 
-> This is because SND_ATMEL_SOC_SSC_DMA=y, SND_ATMEL_SOC_SSC=y,
-> but SND_ATMEL_SOC_SSC_PDC=m. Fix it bt reintroducing the default Kconfig.
+Hi,
 
-Defaults won't forbid the invalid configuration. Can you try following:
+On Tue, Sep 24, 2019 at 02:40:54PM +0200, megous hlavni wrote:
+> > >  On first run of the X server, only the black screen and the layer
+> > >  containing the cursor is visible. Switching to console and back
+> > >  corrects the situation.
+> > >
+> > >  I have dumped registers, and found out this:
+> > >
+> > >  (In both cases there are two enabled planes, plane 1 with zpos 0 and
+> > >  plane 3 with zpos 1).
+> > >
+> > >  1) First Xorg run:
+> > >
+> > >    0x01101000 : 00000201
+> > >    0x01101080 : 00000030
+> > >
+> > >    BLD_FILL_COLOR_CTL: (aka SUN8I_MIXER_BLEND_PIPE_CTL)
+> > >      P1_EN
+> > >
+> > >    BLD_CH_RTCTL: (aka SUN8I_MIXER_BLEND_ROUTE)
+> > >      P0_RTCTL channel0
+> > >      P1_RTCTL channel3
+> > >
+> > >  2) After switch to console and back to Xorg:
+> > >
+> > >  0x01101000 : 00000301
+> > >  0x01101080 : 00000031
+> > >
+> > >    BLD_FILL_COLOR_CTL:
+> > >      P1_EN and P0_EN
+> > >
+> > >    BLD_CH_RTCTL:
+> > >      P0_RTCTL channel1
+> > >      P1_RTCTL channel3
+> > >
+> > >  What happens is that sun8i_ui_layer_enable() function may disable
+> > >  blending pipes even if it is no longer assigned to its layer, because
+> > >  of incorrect state/zpos tracking in the driver.
+> > >
+> > >  In particular, layer 1 is configured to zpos 0 and thus uses pipe 0.
+> > >  When layer 3 is enabled by X server, sun8i_ui_layer_enable() will get
+> > >  called with old_zpos=0 zpos=1, which will lead to disabling of pipe 0.
+> > >
+> > >  In general this issue can happen to any layer during enable or zpos
+> > >  changes on multiple layers at once.
+> > >
+> > >  To correct this we now pass previous enabled/disabled state of the
+> > >  layer, and pass real previous zpos of the layer to
+> > >  sun8i_ui_layer_enable() and rework the sun8i_ui_layer_enable() function
+> > >  to react to the state changes correctly. In order to not complicate
+> > >  the atomic_disable callback with all of the above changes, we simply
+> > >  remove it and implement all the chanes as part of atomic_update, which
+> > >  also reduces the code duplication.
+> > 
+> > I'm not even sure why we need that old state. Can't we just reset
+> > completely the whole thing and do the configuration all over again?
+> 
+> That would be nice from a dev standpoint if we can get a complete state for all
+> planes at once from DRM core, but how? DRM helper gives callbacks
+> for updating individual planes with prev and new state. These individual layer
+> change notifications don't map nicely to how pipes are represented in the mixer
+> registers.
 
-diff --git a/sound/soc/atmel/Kconfig b/sound/soc/atmel/Kconfig
-index f118c229ed82..461f023c5635 100644
---- a/sound/soc/atmel/Kconfig
-+++ b/sound/soc/atmel/Kconfig
-@@ -12,10 +12,12 @@ if SND_ATMEL_SOC
- config SND_ATMEL_SOC_PDC
- 	tristate
- 	depends on HAS_DMA
-+	select SND_ATMEL_SOC_SSC
- 
- config SND_ATMEL_SOC_DMA
- 	tristate
- 	select SND_SOC_GENERIC_DMAENGINE_PCM
-+	select SND_ATMEL_SOC_SSC
- 
- config SND_ATMEL_SOC_SSC
- 	tristate
-@@ -24,7 +26,6 @@ config SND_ATMEL_SOC_SSC_PDC
- 	tristate "SoC PCM DAI support for AT91 SSC controller using PDC"
- 	depends on ATMEL_SSC
- 	select SND_ATMEL_SOC_PDC
--	select SND_ATMEL_SOC_SSC
- 	help
- 	  Say Y or M if you want to add support for Atmel SSC interface
- 	  in PDC mode configured using audio-graph-card in device-tree.
-@@ -33,7 +34,6 @@ config SND_ATMEL_SOC_SSC_DMA
- 	tristate "SoC PCM DAI support for AT91 SSC controller using DMA"
- 	depends on ATMEL_SSC
- 	select SND_ATMEL_SOC_DMA
--	select SND_ATMEL_SOC_SSC
- 	help
- 	  Say Y or M if you want to add support for Atmel SSC interface
- 	  in DMA mode configured using audio-graph-card in device-tree.
+If anyone wants to pursue this further, feel free to. I'm not planning to
+pursue this fix further, at the moment.
+
+regards,
+	o.
 
 _______________________________________________
 linux-arm-kernel mailing list
