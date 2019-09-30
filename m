@@ -2,56 +2,133 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AD51C1AF4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 07:24:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE68CC1AF8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 07:25:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oJI/OBTL4MQvP/UUwqNHKnzidp4oV0Bu83TKzy91rBU=; b=oBV06rkzzIj7b7
-	Y10/2dbgvJkeHJJ4Nd7QvMLh7RFyTYxyO0jd/4i16yIzG2aMu+DU1UBRsZdDLuedZ1T4QT0tf6XZE
-	m2yTCQ/G12R8hrZVvSnoy1ae8NFeRwH6O+dFk7Q3pIazKCkA1N5w/d/AGxlXsuanwoaI87Kl6D3DJ
-	SK8Wh6Jtvls79XT4rHYbMJpzSoHvFlRHDEUQrZhPqJe4Hu1iYBxaIzD3i5Svt22ga6F3iTcgUrPFc
-	2jXXKRIVCCrFgu9u2lJM1O2uHKQZEWyvxyhqqZsnmQoPVDJBYJsmFBKsTfolngbQLbUhAm3P63S1W
-	Wwy4TdwDRs1K8aeNmnRg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=EGwLbAMU5mzGJsch65skr1YR2EI0k3QaQbrGEtJDfp0=; b=cH3
+	45JoHa5f13BAElm11cjubep353dUwVqhVh6dlryy3usiyiR1gGjHCHUCXDc7UjA1i04QNEWZJdKi3
+	T59YpqoYqOo1xwbFdkWF6OYUtI328XYmkJ1xAlrqrZZsBxCmr5Wjn5ej7KdPu4XTzL69z4anZe/a8
+	j8ob2lHTmRvV3tjX6+MbfjGIeFuOWtzh+XoPABPdby+g5hArcUyFt3WcAOjI/Ad794I/PyRj0nBGL
+	PXBKCmSs+7zDbT9O9zP5jN9j+QMDP2Y0SzkKcOg2IHfLwDX7NAjtmhHSpCTfdNOpOKQKUaNHy/Jrj
+	MBDGL3jDpO8SBZ5pkPbmVNeiq9dth4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEoAr-0006HG-Mm; Mon, 30 Sep 2019 05:24:41 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEoAj-0006Go-9i
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 05:24:34 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1964228;
- Sun, 29 Sep 2019 22:24:29 -0700 (PDT)
-Received: from [10.162.43.119] (p8cg001049571a15.blr.arm.com [10.162.43.119])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- A3D583F739; Sun, 29 Sep 2019 22:27:03 -0700 (PDT)
-Subject: Re: [PATCH v4] arm64: use generic free_initrd_mem()
-To: Mike Rapoport <rppt@kernel.org>, Catalin Marinas
- <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-References: <1569657746-31672-1-git-send-email-rppt@kernel.org>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <4267bfb4-db55-49a5-634f-7d1b1fce650e@arm.com>
-Date: Mon, 30 Sep 2019 10:54:45 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
-MIME-Version: 1.0
-In-Reply-To: <1569657746-31672-1-git-send-email-rppt@kernel.org>
-Content-Language: en-US
+	id 1iEoBa-0007jN-Do; Mon, 30 Sep 2019 05:25:26 +0000
+Received: from mx3.ucr.edu ([138.23.248.64])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iEoBO-0007j1-4U
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 05:25:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=ucr.edu; i=@ucr.edu; q=dns/txt; s=selector3;
+ t=1569821114; x=1601357114;
+ h=from:to:cc:subject:date:message-id;
+ bh=qzFcBPOoP/Rv8ykLaC0eQHksn1NzctMIHEFRc4wakkk=;
+ b=edHblqdBC8yBI5jhiNpMwG9bANuDr3Tcze9Im8Dq8f9Sw11oeispAyec
+ SYFyWh/kA+QZCkUTAJkOLdfPnGekojhc/zDcpXmWfrPq1fS2NhN19wL45
+ iuLQ+UeHkdJy2my5NX6728wEQgLioiX+We8dYc+vM2MCN71ybcSBAkzfs
+ MLm022CZriLG/O5Ik9aveBmn6ywcDpEq1psB6GvBwPcTzbFrId3s1tNpf
+ q+ZL6OUKzGYVPv3AEX6NlxNEy3V/hPu7RG9tXaOdUIxVY9K4pG5BOgThW
+ SdvUlqWeIsTKPrgLaIFYJPc2EYP191/CBEd0eTJ0dMRG3U3tt/f15bLwV w==;
+IronPort-SDR: KvhHPnWeb1fBSfJvtMH4Nu4bzGBygbGvx8xbCBH9uiuc5Ln91hbxg3CfBDkc5Knf5EVF/QMeDE
+ uoxSOF2DRnowj0ExzX2kCHBh+WYuh3yGTdAIXGuBDMpeXYoQ8vrAXwcTbJOaCP2ELJra0P4Hl+
+ DIax3lEEXFzN8dwTr5YBwX3CqYkh2C+sVcrnDj8n18+osnDT17Pk7VfSS1HiCiojwBUq1W92Mt
+ BFaCT0xGHFsddsFSEAPb0vNSVPfnfYbWFEeEYc0IdoshhuyiyQevyNq/dhX2XESzTXyLO3xIgA
+ KVs=
+IronPort-PHdr: =?us-ascii?q?9a23=3AZKY3whcHib8kz5YFTIpvPvQVlGMj4u6mDksu8p?=
+ =?us-ascii?q?Mizoh2WeGdxcS6Yx7h7PlgxGXEQZ/co6odzbaP6Oa8ACdRut6oizMrSNR0TR?=
+ =?us-ascii?q?gLiMEbzUQLIfWuLgnFFsPsdDEwB89YVVVorDmROElRH9viNRWJ+iXhpTEdFQ?=
+ =?us-ascii?q?/iOgVrO+/7BpDdj9it1+C15pbffxhEiCCybL9vIhi6twrcutQZjYZmJKs61w?=
+ =?us-ascii?q?fErGZPd+lK321jOEidnwz75se+/Z5j9zpftvc8/MNeUqv0Yro1Q6VAADspL2?=
+ =?us-ascii?q?466svrtQLeTQSU/XsTTn8WkhtTDAfb6hzxQ4r8vTH7tup53ymaINH2QLUpUj?=
+ =?us-ascii?q?ms86tnVBnlgzocOjUn7G/YlNB/jKNDoBKguRN/xZLUYJqIP/Z6Z6/RYM8WSX?=
+ =?us-ascii?q?ZEUstXUixBA5i8b5AOD+oHMuZTspfzqUITphuwBAmjGufvxSJVjXPy06A2z+?=
+ =?us-ascii?q?EtHAfb1wIiAt0OqmzZotXrOqkPX+67z67GwC7fY/9Kwzrx9JLFfgw9rfyKQL?=
+ =?us-ascii?q?l+cdDRyU4qFw7djFqQqI3kPzOI1uQKrmOW6OphVOOvi2E9qgF9viSjy8k3h4?=
+ =?us-ascii?q?nUmo0V0ErI+jtkz4YoPNC1TlNwb928EJZIqS2WK497TtkhTmxooio21KAKtJ?=
+ =?us-ascii?q?GhcCQXzJkqxAbTZ+GGfoWM+B7vSuicLDdiiH57eb+znRS//Eemx+bhTMe7yk?=
+ =?us-ascii?q?xKoTBAktTUs3AN0AHc5dafR/tm+0ehxS6P1wfO6uFYOUw0lbTUK5omwrMok5?=
+ =?us-ascii?q?ocq0XDHivvlEXuiK+aa1wo+ua15+njYbjqvJCcN4hzigHxNqQhhNazDvg/Mg?=
+ =?us-ascii?q?gLR2Sb+OK826P//UDhXrlGkvk7nrPavZ3aP8gXuLO1DgBP3oo+7xuyDC+q0N?=
+ =?us-ascii?q?ECknkGKFJFdgiHj4/sO1zWIPH5DPe/jE6tkDt32/zLMKbsAojRIXjZirvuY6?=
+ =?us-ascii?q?ty61NExAop0d9f/45UCq0GIP/rXk/xtdrYDgI2MgCt2ennEtB92podWW2RGK?=
+ =?us-ascii?q?+ZNr3dsVuT6+IrIumMf5MVuC3nJ/gk4f7ug2U5lkUAcqa3x5QYdWq0HvN8I0?=
+ =?us-ascii?q?WWMjLCmNAERFYLrAojS6S+mU+CWD8LPy2aQqkmoDw3FdT1Xs/4WomxjenZj2?=
+ =?us-ascii?q?+AFZpMazUDVQiB?=
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: =?us-ascii?q?A2FJCAB8kZFdh8bWVdFmgh6DXkwQjR6?=
+ =?us-ascii?q?FcVEBAQaLJoEJhXqIMYF7AQgBAQEMAQEtAgEBhECDPSM2Bw4CAwkBAQUBAQE?=
+ =?us-ascii?q?BAQUEAQECEAEBAQgNCQgphUCCOimDNQsWFVKBFQEFATUiOYJHAYF2FJ8EgQM?=
+ =?us-ascii?q?8jCUziFwBCQ2BSAkBCIEihzWEWYEQgQeEYYdjgkQEgS8BAQGLPgGCMYcrlkk?=
+ =?us-ascii?q?BBgKCEBSBeJMHJ4I3ggKJPTmLBgEtiiicawIKBwYPI4E2BYIFTSWBbAqBRFA?=
+ =?us-ascii?q?QFIFaDgmOQiEzgQiQBgE?=
+X-IPAS-Result: =?us-ascii?q?A2FJCAB8kZFdh8bWVdFmgh6DXkwQjR6FcVEBAQaLJoEJh?=
+ =?us-ascii?q?XqIMYF7AQgBAQEMAQEtAgEBhECDPSM2Bw4CAwkBAQUBAQEBAQUEAQECEAEBA?=
+ =?us-ascii?q?QgNCQgphUCCOimDNQsWFVKBFQEFATUiOYJHAYF2FJ8EgQM8jCUziFwBCQ2BS?=
+ =?us-ascii?q?AkBCIEihzWEWYEQgQeEYYdjgkQEgS8BAQGLPgGCMYcrlkkBBgKCEBSBeJMHJ?=
+ =?us-ascii?q?4I3ggKJPTmLBgEtiiicawIKBwYPI4E2BYIFTSWBbAqBRFAQFIFaDgmOQiEzg?=
+ =?us-ascii?q?QiQBgE?=
+X-IronPort-AV: E=Sophos;i="5.64,565,1559545200"; d="scan'208";a="83829713"
+Received: from mail-pl1-f198.google.com ([209.85.214.198])
+ by smtp3.ucr.edu with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
+ 29 Sep 2019 22:25:02 -0700
+Received: by mail-pl1-f198.google.com with SMTP id t12so2807921plo.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 29 Sep 2019 22:25:02 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=fPKABXGUyoM/LSYBewEpMZXiulfn1+x5kwR93rT2pjY=;
+ b=rdTactXzRVSTkjS0A33PIydPrLnkXD7cK+FEe3mXmqHqVornky3drNSQypnZIERpCX
+ 6NA2/Capftl59ExQOBmloFO4pEhEt81QYWru6f9MHuKNk69IbEQ4cpHXNTUxWR7dd/ZO
+ 0f0XWjxO8l1xA79lxaIuvUkiDSZcXi6NCbi39hIacToK3WNPVlnaKUxN7+bbsbTp4Qig
+ O0OcRYoOuUPuyudraT15pLpaMQOscXtitMRT/goBlnIwva/O4Tq9ues2MmPnpAWJ7o1S
+ eBL60eLBaK3grMkuw9mxRlEToliXKo6bMrSEwIzEtBx802yqT7mRv4CjgAZgY2PU9SIa
+ XZ9A==
+X-Gm-Message-State: APjAAAU/lf9f8yL7AbKrBAKGbtOhKk8O5b/RqFvjMiKErVSS+ZYQCc8S
+ 9IVATQEZaLAhszqvpTnrIFIYiCI70bCeu5shzti3DlchNxhaYOxUMD3WJCNQqXA35dVpHq6EF7+
+ zBqtCHwODtacshYWR4DaqaWEBEMUYuXKw6Kcs
+X-Received: by 2002:a63:5652:: with SMTP id g18mr21799329pgm.393.1569821101510; 
+ Sun, 29 Sep 2019 22:25:01 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqyPeVROo1TnM+H1kGzA7cRPqfO3NXggBNlKrrjPDdQwOcK4O2BhRFl7aOQNC2xwRWyuzG9QsA==
+X-Received: by 2002:a63:5652:: with SMTP id g18mr21799307pgm.393.1569821101057; 
+ Sun, 29 Sep 2019 22:25:01 -0700 (PDT)
+Received: from Yizhuo.cs.ucr.edu (yizhuo.cs.ucr.edu. [169.235.26.74])
+ by smtp.googlemail.com with ESMTPSA id a11sm11186636pfg.94.2019.09.29.22.24.59
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 29 Sep 2019 22:25:00 -0700 (PDT)
+From: Yizhuo <yzhai003@ucr.edu>
+To: 
+Subject: [PATCH] iio: adc: Variables could be uninitalized if regmap_read()
+ fails
+Date: Sun, 29 Sep 2019 22:25:39 -0700
+Message-Id: <20190930052540.19168-1-yzhai003@ucr.edu>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190929_222433_426410_2D7D2440 
-X-CRM114-Status: GOOD (  21.79  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190929_222514_208622_892ECC31 
+X-CRM114-Status: GOOD (  16.53  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [138.23.248.64 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [138.23.248.64 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,109 +140,139 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Laura Abbott <labbott@redhat.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Mike Rapoport <rppt@linux.ibm.com>
+Cc: csong@cs.ucr.edu, Lars-Peter Clausen <lars@metafoo.de>,
+ Scott Branden <sbranden@broadcom.com>, linux-iio@vger.kernel.org,
+ Ray Jui <rjui@broadcom.com>, zhiyunq@cs.ucr.edu, linux-kernel@vger.kernel.org,
+ Stephen Boyd <swboyd@chromium.org>, Yizhuo <yzhai003@ucr.edu>,
+ bcm-kernel-feedback-list@broadcom.com, Allison Randal <allison@lohutok.net>,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
+ Thomas Gleixner <tglx@linutronix.de>, Jonathan Cameron <jic23@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Several functions in this file are trying to use regmap_read() to
+initialize the specific variable, however, if regmap_read() fails,
+the variable could be uninitialized but used directly, which is
+potentially unsafe. The return value of regmap_read() should be
+checked and handled.
 
-On 09/28/2019 01:32 PM, Mike Rapoport wrote:
-> From: Mike Rapoport <rppt@linux.ibm.com>
-> 
-> arm64 calls memblock_free() for the initrd area in its implementation of
-> free_initrd_mem(), but this call has no actual effect that late in the boot
-> process. By the time initrd is freed, all the reserved memory is managed by
-> the page allocator and the memblock.reserved is unused, so the only purpose
-> of the memblock_free() call is to keep track of initrd memory for debugging
-> and accounting.
+Signed-off-by: Yizhuo <yzhai003@ucr.edu>
+---
+ drivers/iio/adc/bcm_iproc_adc.c | 45 ++++++++++++++++++++++++++++-----
+ 1 file changed, 39 insertions(+), 6 deletions(-)
 
-Thats correct. memblock_free_all() gets called before free_initrd_mem().
+diff --git a/drivers/iio/adc/bcm_iproc_adc.c b/drivers/iio/adc/bcm_iproc_adc.c
+index 646ebdc0a8b4..6df19ceb5ff2 100644
+--- a/drivers/iio/adc/bcm_iproc_adc.c
++++ b/drivers/iio/adc/bcm_iproc_adc.c
+@@ -137,6 +137,7 @@ static irqreturn_t iproc_adc_interrupt_thread(int irq, void *data)
+ 	u32 channel_intr_status;
+ 	u32 intr_status;
+ 	u32 intr_mask;
++	int ret;
+ 	struct iio_dev *indio_dev = data;
+ 	struct iproc_adc_priv *adc_priv = iio_priv(indio_dev);
+ 
+@@ -145,8 +146,19 @@ static irqreturn_t iproc_adc_interrupt_thread(int irq, void *data)
+ 	 * Make sure this interrupt is intended for us.
+ 	 * Handle only ADC channel specific interrupts.
+ 	 */
+-	regmap_read(adc_priv->regmap, IPROC_INTERRUPT_STATUS, &intr_status);
+-	regmap_read(adc_priv->regmap, IPROC_INTERRUPT_MASK, &intr_mask);
++	ret = regmap_read(adc_priv->regmap,
++					IPROC_INTERRUPT_STATUS, &intr_status);
++	if (ret) {
++		dev_err(&indio_dev->dev, "Fail to read IPROC_INTERRUPT_STATUS.\n");
++		return ret;
++	}
++
++	ret = regmap_read(adc_priv->regmap, IPROC_INTERRUPT_MASK, &intr_mask);
++	if (ret) {
++		dev_err(&indio_dev->dev, "Fail to read IPROC_INTERRUPT_MASK.\n");
++		return ret;
++	}
++
+ 	intr_status = intr_status & intr_mask;
+ 	channel_intr_status = (intr_status & IPROC_ADC_INTR_MASK) >>
+ 				IPROC_ADC_INTR;
+@@ -162,6 +174,7 @@ static irqreturn_t iproc_adc_interrupt_handler(int irq, void *data)
+ 	struct iproc_adc_priv *adc_priv;
+ 	struct iio_dev *indio_dev = data;
+ 	unsigned int valid_entries;
++	int ret;
+ 	u32 intr_status;
+ 	u32 intr_channels;
+ 	u32 channel_status;
+@@ -169,23 +182,37 @@ static irqreturn_t iproc_adc_interrupt_handler(int irq, void *data)
+ 
+ 	adc_priv = iio_priv(indio_dev);
+ 
+-	regmap_read(adc_priv->regmap, IPROC_INTERRUPT_STATUS, &intr_status);
++	ret = regmap_read(adc_priv->regmap,
++					IPROC_INTERRUPT_STATUS, &intr_status);
++	if (ret) {
++		dev_err(&indio_dev->dev, "Fail to read IPROC_INTERRUPT_STATUS.\n");
++		return ret;
++	}
++
+ 	dev_dbg(&indio_dev->dev, "iproc_adc_interrupt_handler(),INTRPT_STS:%x\n",
+ 			intr_status);
+ 
+ 	intr_channels = (intr_status & IPROC_ADC_INTR_MASK) >> IPROC_ADC_INTR;
+ 	if (intr_channels) {
+-		regmap_read(adc_priv->regmap,
++		ret = regmap_read(adc_priv->regmap,
+ 			    IPROC_ADC_CHANNEL_INTERRUPT_STATUS +
+ 			    IPROC_ADC_CHANNEL_OFFSET * adc_priv->chan_id,
+ 			    &ch_intr_status);
++		if (ret) {
++			dev_err(&indio_dev->dev, "Fail to read the register.\n");
++			return ret;
++		}
+ 
+ 		if (ch_intr_status & IPROC_ADC_CHANNEL_WTRMRK_INTR_MASK) {
+-			regmap_read(adc_priv->regmap,
++			ret = regmap_read(adc_priv->regmap,
+ 					IPROC_ADC_CHANNEL_STATUS +
+ 					IPROC_ADC_CHANNEL_OFFSET *
+ 					adc_priv->chan_id,
+ 					&channel_status);
++			if (ret) {
++				dev_err(&indio_dev->dev, "Fail to read the register.\n");
++				return ret;
++			}
+ 
+ 			valid_entries = ((channel_status &
+ 				IPROC_ADC_CHANNEL_VALID_ENTERIES_MASK) >>
+@@ -230,6 +257,7 @@ static int iproc_adc_do_read(struct iio_dev *indio_dev,
+ 	u32 mask;
+ 	u32 val_check;
+ 	int failed_cnt = 0;
++	int ret;
+ 	struct iproc_adc_priv *adc_priv = iio_priv(indio_dev);
+ 
+ 	mutex_lock(&adc_priv->mutex);
+@@ -284,7 +312,12 @@ static int iproc_adc_do_read(struct iio_dev *indio_dev,
+ 	 * Testing has shown that this may loop a few time, but we have never
+ 	 * hit the full count.
+ 	 */
+-	regmap_read(adc_priv->regmap, IPROC_INTERRUPT_MASK, &val_check);
++	ret = regmap_read(adc_priv->regmap, IPROC_INTERRUPT_MASK, &val_check);
++	if (ret) {
++		dev_err(&indio_dev->dev, "Fail to read IPROC_INTERRUPT_MASK.\n");
++		return ret;
++	}
++
+ 	while (val_check != val) {
+ 		failed_cnt++;
+ 
+-- 
+2.17.1
 
-> 
-> Without the memblock_free() call the only difference between arm64 and the
-> generic versions of free_initrd_mem() is the memory poisoning.
-> 
-> Move memblock_free() call to the generic code, enable it there
-> for the architectures that define ARCH_KEEP_MEMBLOCK and use the generic
-> implementation of free_initrd_mem() on arm64.
-
-This improves free_initrd_mem() generic implementation for others to use.
-
-> 
-> Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
-
-Tested-by: Anshuman Khandual <anshuman.khandual@arm.com>	#arm64
-Reviewed-by: Anshuman Khandual <anshuman.khandual@arm.com>
-
-> ---
-> 
-> v4:
-> * memblock_free() aligned area around the initrd
-> 
-> v3:
-> * fix powerpc build
-> 
-> v2:
-> * add memblock_free() to the generic free_initrd_mem()
-> * rebase on the current upstream
-> 
-> 
->  arch/arm64/mm/init.c | 12 ------------
->  init/initramfs.c     |  8 ++++++++
->  2 files changed, 8 insertions(+), 12 deletions(-)
-> 
-> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
-> index 45c00a5..87a0e3b 100644
-> --- a/arch/arm64/mm/init.c
-> +++ b/arch/arm64/mm/init.c
-> @@ -580,18 +580,6 @@ void free_initmem(void)
->  	unmap_kernel_range((u64)__init_begin, (u64)(__init_end - __init_begin));
->  }
->  
-> -#ifdef CONFIG_BLK_DEV_INITRD
-> -void __init free_initrd_mem(unsigned long start, unsigned long end)
-> -{
-> -	unsigned long aligned_start, aligned_end;
-> -
-> -	aligned_start = __virt_to_phys(start) & PAGE_MASK;
-> -	aligned_end = PAGE_ALIGN(__virt_to_phys(end));
-> -	memblock_free(aligned_start, aligned_end - aligned_start);
-> -	free_reserved_area((void *)start, (void *)end, 0, "initrd");
-> -}
-> -#endif
-> -
->  /*
->   * Dump out memory limit information on panic.
->   */
-> diff --git a/init/initramfs.c b/init/initramfs.c
-> index c47dad0..8ec1be4 100644
-> --- a/init/initramfs.c
-> +++ b/init/initramfs.c
-> @@ -10,6 +10,7 @@
->  #include <linux/syscalls.h>
->  #include <linux/utime.h>
->  #include <linux/file.h>
-> +#include <linux/memblock.h>
->  
->  static ssize_t __init xwrite(int fd, const char *p, size_t count)
->  {
-> @@ -529,6 +530,13 @@ extern unsigned long __initramfs_size;
->  
->  void __weak free_initrd_mem(unsigned long start, unsigned long end)
->  {
-> +#ifdef CONFIG_ARCH_KEEP_MEMBLOCK
-> +	unsigned long aligned_start = ALIGN_DOWN(start, PAGE_SIZE);
-> +	unsigned long aligned_end = ALIGN(end, PAGE_SIZE);
-> +
-> +	memblock_free(__pa(aligned_start), aligned_end - aligned_start);
-> +#endif
-> +
->  	free_reserved_area((void *)start, (void *)end, POISON_FREE_INITMEM,
->  			"initrd");
->  }
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
