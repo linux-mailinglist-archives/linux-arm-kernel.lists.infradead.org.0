@@ -2,88 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DD50C1B1E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 07:49:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDDEDC1B2F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 08:01:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pG8lzGr5Hw9e6Sogvdnb0YiCmHcrfJoPpXVoryRcRxE=; b=RpEIN52RmO1dId
-	AweNqW9Ghq9+LlomU8mTljfydbzBRhSF++RPJ0HyzsLX2yuCzDJdjQVyvlHc99RK3w/FFyIDtBynF
-	74l4qhc131m0iUmXLUUqA6p4cXo+xxiGwhDpCd+lwqZaYcnHx02HUrIWzEvf3ShF38vLheOADGWq0
-	ADSav7PWH6buXGkvO+tVaTvb4TdJ9ogVSN3Zdg+rWK4zNsVzRoIWG8R2Suri5Fp1D+7M40nAyynHF
-	obLua+VVF3Vrvoe3bylIDiI0IPgujD+79XzFJ+La8H8vE3RXxaZr3TqpMv9lby8GNGvl5ylcKiyzV
-	/PyrX3lAcm/pHkNUu8aA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=W+mbL7Ex/9cMh711DVZ/0m5MiBlzHgTLcMGUvaMBcWw=; b=a0x
+	JrvLix41qAb+dqNE5Knx5K5CTuCltWtuXQRPW+msa0ogQCubYxDN2mRpdqaWi+X3tzLBc8pgFk+1e
+	DssV+g2HH/dSKtxk8mNZUuT6BzDr3094OdQuYwVtYrZb629pfl+pCXpUDu56qbcpjG1ufJA5+r8iV
+	miyVVIeAxWOjSiZ2GuuQx4vtgsm3jbKdj6hyTfaBiJXO2HmLZTOmlp/51B696oOnpUJsCn67FJSr0
+	algsaLgDuRWHN7Y6IRVEaL9E4q5zh6M8Ns4NZeyIa6cFA+/SNsgHFRrUv0lA0VMVVArKNW8roHKbb
+	TjHWWQPp7n6BYhZ1+fDzo3V/EsM3g/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEoYi-0006rf-Ty; Mon, 30 Sep 2019 05:49:20 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iEokO-0003su-7y; Mon, 30 Sep 2019 06:01:24 +0000
+Received: from conuserg-10.nifty.com ([210.131.2.77])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEoYY-0006qt-UI
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 05:49:12 +0000
-Received: by mail-pg1-x541.google.com with SMTP id c17so6757340pgg.4
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 29 Sep 2019 22:49:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=nTyKTixdmn3fWlZSMKqI+ME67BJO0vwEvb6x4HC5OpA=;
- b=XdzDhpGktBu9KaisAZm5uiKRmQbIqKunbhGVDriAwdnFxah4atpIE4Er5OCMKKjLYg
- cu+dCHuDTPEXhnn8YKSPzHdxUifL9f+2h6ICQ/E+H1r6oc3RlARBPwpIbefwsnnW9IDY
- 2+jlmkxJYZ/ldIktJ/rGsLKM3ooTXzDgNebQYKkEWbDUs63PEXYeYwshiyqYP9el9Oqf
- 06fBkx4fdllMofVZCZjtI+yjsFYV4/opxtSB33YZuLyw6NniR3mgH7I/hkXpzCcmTD2j
- LYXujFZMYgxDITvP93e5gZxBkLp6ks+AnrGUj0zIA33/mT1AAhCj9RcjocfvBGEbaTaS
- r6Tg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=nTyKTixdmn3fWlZSMKqI+ME67BJO0vwEvb6x4HC5OpA=;
- b=AI2oOOmMCLGltklgWRp8OlD3Qa5QRZU61Uica9T1tFi+yuR6m2XvIP5te30zl0sxJO
- U3HUzc/j1hGY7+wJesk1ArDyWZvRBT9atk0FJ7vj0btmdozy5MvLYaFk1CPTkR9pGUNs
- sP9zfOvFtEZeJLhqvjpI069737Sw4XRc+syJyd1WQQ7xwFSUsHCAkDqU0G90MxSff1uN
- dFOYJS/9sp9d6Y213tbDL07sSllx3nAShk7jROF//c1ubqukOMkLdU/1N9DZD5WC8tV5
- luITZbRMW3c4VBgyYbPQbRh81k1hObO4YMdbE8FyKZ3hXFmSPLAh6ll2flm4legJvMTm
- 5H5w==
-X-Gm-Message-State: APjAAAVJf5bUtkKVzjc7KT5WYxM9JQjf2DKHWsLyGCMKoBiuBSLP3coM
- XYb2Vryr4TLBbf44j2Ex+zM=
-X-Google-Smtp-Source: APXvYqx5LE+8Q6tf7q3Pz7Irou50eygzo6Rc00aYxWABwJWTc90BdC2obPSlpUQzJAiDRqn3Vb92bQ==
-X-Received: by 2002:a17:90a:284c:: with SMTP id
- p12mr25077366pjf.87.1569822549796; 
- Sun, 29 Sep 2019 22:49:09 -0700 (PDT)
-Received: from LGEARND20B15 ([27.122.242.75])
- by smtp.gmail.com with ESMTPSA id 8sm12551272pgd.87.2019.09.29.22.49.06
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 29 Sep 2019 22:49:09 -0700 (PDT)
-Date: Mon, 30 Sep 2019 14:49:03 +0900
-From: Austin Kim <austindh.kim@gmail.com>
-To: linux@armlinux.org.uk, info@metux.net, arnd@arndb.de, allison@lohutok.net
-Subject: [PATCH] ARM: module: remove 'always false' statement
-Message-ID: <20190930054903.GA12163@LGEARND20B15>
-MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.5.24 (2015-08-30)
+ id 1iEokE-0003s7-GP
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 06:01:17 +0000
+Received: from localhost.localdomain (p14092-ipngnfx01kyoto.kyoto.ocn.ne.jp
+ [153.142.97.92]) (authenticated)
+ by conuserg-10.nifty.com with ESMTP id x8U60ANM011158;
+ Mon, 30 Sep 2019 15:00:10 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-10.nifty.com x8U60ANM011158
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1569823213;
+ bh=31RHoPop8t0h2pCPRnwABR+VMelvfuLJ6qwFWQxvRAk=;
+ h=From:To:Cc:Subject:Date:From;
+ b=sVJyT1ROU+6mzkZMRTb0M214/0QcKkmxRbNgDwh2q1TPJpEjPLOoE+y1jkVndgyce
+ qBfr7v3nYiN5WSsx5xTwPYvHohsWcSS3AWwyVRw8Kxjd0CGrX8l5WcF76SmCvJPLCB
+ wLRZ7C1/Z/zv9v8AVlB2BGhDmSvNQJ9bvuGi42d+JbBXGDfg0HZGGHEj7yDDLBV9nW
+ EZkTGzP6wtIdqgD6DM5Lj4LA7FnlzH8Ocy6yp5agIZ7tdaiVh4E+Xb97KFsLgRin/o
+ kTPCap5ub1TziurVW+1pbzwH+G3TNVeY+yJdYcAQRFzXXOrTa7s5zIJUtObrYVGCA2
+ ctH5uaN1kjx1g==
+X-Nifty-SrcIP: [153.142.97.92]
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+To: linux-arm-kernel@lists.infradead.org,
+ Russell King <rmk+kernel@armlinux.org.uk>
+Subject: [PATCH] ARM: fix __get_user_check() in case uaccess_* calls are not
+ inlined
+Date: Mon, 30 Sep 2019 14:59:25 +0900
+Message-Id: <20190930055925.25842-1-yamada.masahiro@socionext.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190929_224910_980798_8EA841DD 
-X-CRM114-Status: GOOD (  12.22  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190929_230114_865605_27FC2356 
+X-CRM114-Status: GOOD (  11.46  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ no trust [210.131.2.77 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (austindh.kim[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -97,56 +73,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: austindh.kim@gmail.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Arnd Bergmann <arnd@arndb.de>,
+ Vincent Whitchurch <vincent.whitchurch@axis.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ Russell King <linux@armlinux.org.uk>, Stefan Agner <stefan@agner.ch>,
+ linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Olof Johansson <olof@lixom.net>, Thomas Gleixner <tglx@linutronix.de>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The each field of 'struct elf32_rel' is declared as below.
-typedef struct elf32_rel {
-   Elf32_Addr r_offset;
-   Elf32_Word r_info;
-} Elf32_Rel;
+KernelCI reports that bcm2835_defconfig is no longer booting since
+commit ac7c3e4ff401 ("compiler: enable CONFIG_OPTIMIZE_INLINING
+forcibly"):
 
-typedef __u32 Elf32_Addr;
-typedef __u32 Elf32_Word;
+  https://lkml.org/lkml/2019/9/26/825
 
-This means that 'r_offset' and 'r_info' could contain non-negative value.
-So 'always false' statement can be dropped.
+I also received a regression report from Nicolas Saenz Julienne:
 
-Signed-off-by: Austin Kim <austindh.kim@gmail.com>
+  https://lkml.org/lkml/2019/9/27/263
+
+This problem has cropped up on arch/arm/config/bcm2835_defconfig
+because it enables CONFIG_CC_OPTIMIZE_FOR_SIZE. The compiler tends
+to prefer not inlining functions with -Os. I was able to reproduce
+it with other boards and defconfig files by manually enabling
+CONFIG_CC_OPTIMIZE_FOR_SIZE.
+
+The __get_user_check() specifically uses r0, r1, r2 registers.
+So, uaccess_save_and_enable() and uaccess_restore() must be inlined
+in order to avoid those registers being overwritten in the callees.
+
+Prior to commit 9012d011660e ("compiler: allow all arches to enable
+CONFIG_OPTIMIZE_INLINING"), the 'inline' marker was always enough for
+inlining functions, except on x86.
+
+Since that commit, all architectures can enable CONFIG_OPTIMIZE_INLINING.
+So, __always_inline is now the only guaranteed way of forcible inlining.
+
+I want to keep as much compiler's freedom as possible about the inlining
+decision. So, I changed the function call order instead of adding
+__always_inline around.
+
+Call uaccess_save_and_enable() before assigning the __p ("r0"), and
+uaccess_restore() after evacuating the __e ("r0").
+
+Fixes: 9012d011660e ("compiler: allow all arches to enable CONFIG_OPTIMIZE_INLINING")
+Reported-by: "kernelci.org bot" <bot@kernelci.org>
+Reported-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
 ---
- arch/arm/kernel/module.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm/kernel/module.c b/arch/arm/kernel/module.c
-index deef17f..617de32 100644
---- a/arch/arm/kernel/module.c
-+++ b/arch/arm/kernel/module.c
-@@ -83,7 +83,7 @@ apply_relocate(Elf32_Shdr *sechdrs, const char *strtab, unsigned int symindex,
- #endif
+ arch/arm/include/asm/uaccess.h | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/arch/arm/include/asm/uaccess.h b/arch/arm/include/asm/uaccess.h
+index 303248e5b990..559f252d7e3c 100644
+--- a/arch/arm/include/asm/uaccess.h
++++ b/arch/arm/include/asm/uaccess.h
+@@ -191,11 +191,12 @@ extern int __get_user_64t_4(void *);
+ #define __get_user_check(x, p)						\
+ 	({								\
+ 		unsigned long __limit = current_thread_info()->addr_limit - 1; \
++		unsigned int __ua_flags = uaccess_save_and_enable();	\
+ 		register typeof(*(p)) __user *__p asm("r0") = (p);	\
+ 		register __inttype(x) __r2 asm("r2");			\
+ 		register unsigned long __l asm("r1") = __limit;		\
+ 		register int __e asm("r0");				\
+-		unsigned int __ua_flags = uaccess_save_and_enable();	\
++		unsigned int __err;					\
+ 		switch (sizeof(*(__p))) {				\
+ 		case 1:							\
+ 			if (sizeof((x)) >= 8)				\
+@@ -223,9 +224,10 @@ extern int __get_user_64t_4(void *);
+ 			break;						\
+ 		default: __e = __get_user_bad(); break;			\
+ 		}							\
+-		uaccess_restore(__ua_flags);				\
++		__err = __e;						\
+ 		x = (typeof(*(p))) __r2;				\
+-		__e;							\
++		uaccess_restore(__ua_flags);				\
++		__err;							\
+ 	})
  
- 		offset = ELF32_R_SYM(rel->r_info);
--		if (offset < 0 || offset > (symsec->sh_size / sizeof(Elf32_Sym))) {
-+		if (offset > (symsec->sh_size / sizeof(Elf32_Sym))) {
- 			pr_err("%s: section %u reloc %u: bad relocation sym offset\n",
- 				module->name, relindex, i);
- 			return -ENOEXEC;
-@@ -92,8 +92,8 @@ apply_relocate(Elf32_Shdr *sechdrs, const char *strtab, unsigned int symindex,
- 		sym = ((Elf32_Sym *)symsec->sh_addr) + offset;
- 		symname = strtab + sym->st_name;
- 
--		if (rel->r_offset < 0 || rel->r_offset > dstsec->sh_size - sizeof(u32)) {
--			pr_err("%s: section %u reloc %u sym '%s': out of bounds relocation, offset %d size %u\n",
-+		if (rel->r_offset > dstsec->sh_size - sizeof(u32)) {
-+			pr_err("%s: section %u reloc %u sym '%s': out of bounds relocation, offset %u size %u\n",
- 			       module->name, relindex, i, symname,
- 			       rel->r_offset, dstsec->sh_size);
- 			return -ENOEXEC;
+ #define get_user(x, p)							\
 -- 
-2.6.2
+2.17.1
 
 
 _______________________________________________
