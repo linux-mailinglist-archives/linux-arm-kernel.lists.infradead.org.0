@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC907C21AF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 15:17:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A642C21B5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 15:18:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G9i6HG7p1muChudRX5P8Bl908SM/tppysN4CljdqkH8=; b=qpXvV3jQRQt7xD
-	HaurjCK1QOp9Y/aNTV8QnM+0sOTh45veeW7pBx6VlpD2jinOXuY9dKnUQeNpFPHbDV7DNkSyygf70
-	wkbUB7BPNGkjIMMZQFcN6Fr3VYWuO4mdnJMYuXELCnBB50tb8g6a2N0bVNyLEJeZ64verMigE6oXT
-	+3+n527UDvKBSOW1KadhQXg1HcKYbrbjjpyVoNv/+qTS/ekQ/A7iVBYUDB7Gz2vlHGKPvvR6MDG7f
-	mYBR/69WHrLcth7IpqDUSO1zMPBNWbfN4X/ytSk74wBTgfOOPfpRviTTJfeAti8o1V3brres2CSUQ
-	wqFgxeSoHfFJoXbiJFHQ==;
+	List-Owner; bh=B2m2lQ/N6seqkw3aXAp0VADIj4Ts5zS8CPfRN07vn6k=; b=dc01zNtNSxB8tV
+	d5kTXvETuCNSGIAU5C7sKxAFfKDp5aJxv0Otl0TVKFu4ZSVqO1tSnW6r+OZTjJlFHOGm77EpbRQ3W
+	4/Og65UZs8PbzlqnW7W0hT71UcRfR5noHV5B8YMdpy+cMvBZ6NNi5aF94Oq7EyAJ7tIIwf2ce8cH/
+	lgc9JAgVAYelmNOPl2cA+Ym3q9HbW9voKsP2EcGYo6T2+6+dJkN9hXvprXGi9lmNBx2joRxDn+lhj
+	XeqambtjQDDqJT6JFoCEq/Ii+hv4Etkfr/Wr6hR1aUmBq6PSOjqZWhEmntypLh9sv+HVH7blSt3iS
+	hfCnu5kx0qLeUCyKZNNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEvYi-0001Kq-9e; Mon, 30 Sep 2019 13:17:48 +0000
+	id 1iEvZO-0001co-9j; Mon, 30 Sep 2019 13:18:30 +0000
 Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEvYU-0001JM-5l
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 13:17:36 +0000
-Received: by mail-pf1-x443.google.com with SMTP id q7so5600853pfh.8
+ id 1iEvZE-0001bz-E1
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 13:18:21 +0000
+Received: by mail-pf1-x443.google.com with SMTP id q7so5602166pfh.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Sep 2019 06:17:34 -0700 (PDT)
+ Mon, 30 Sep 2019 06:18:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=lyjxLghcbPT/guXD86JE2tkfP9LwZRh+SOW/3r4IE0k=;
- b=K4Me9AbzWb0e36PT1RsITpHnGoILWsd5427QwnSCROrxI8VBVpspAQ6nRIzi7NA8Yn
- 57ZD4FqtDnmz5HuabUkCGTso9R7y3I8Vm6mJjZjQR4uJkiflPUKE9KV9JDxz4Ibnuj9P
- K6HdrGOHt2e2MLp8rdaATbgAkLHOwXs6LjtqzM6F4yYSzTZBR6cGMda/6TqP3Iwssc4f
- 8EJnd0XT1F73jg0qhZFLTU5EX3Tyrpo//WWQDII+o0x1o+fGsuyi/OrEXu6swwTKEnSn
- w9s15QoapIOOScFiVI+HgZskTz/+kFV72evMnMH6eKX9cE8Q0GF+CsSkTf6OHKz0BcEM
- OTkg==
+ bh=IeNb76xF/iiAkmuGaqc/RgfhSXiK60RFNQ5u5Egtzwc=;
+ b=i1C27JYYTT5LFyoUJ7GsRdGiD9QUCYW3q5siKm/kIrZZHgROUsZDl7rzbVuL/39rXT
+ AajNTy1a7GtjOEjhtjzHUoV262m/SOR4EZyS1eAyxAgEVM0B0AeKTUqyB0OCcGs627EQ
+ sh5NDAg7C4i/+gB80/Yiytp6z6CTz+TeUy7PY+KocGZVSJok3zxN29dHHzP6ysjK+qmo
+ ifB0uGq1HdW1HPcUfrcMcj8zuFq7S491ZuzSlLwZuOXez2kc2ydiicfpH5m1KvpmoOcM
+ Uxsyy8ovr+lMCIDUy6nqNVHzgPslsDsbcxRAdSpHTvuw+fMi8UsMyRaEzbkYeDOpYx1C
+ j53Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
  :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=lyjxLghcbPT/guXD86JE2tkfP9LwZRh+SOW/3r4IE0k=;
- b=LiqrcLSYbAQxNeqCsRKRlCg/7UYacUiaPl4qSNXzh9EctYw2wWBB0xm9/WQaIWlyZS
- 6BmXCEMwPhHq3ZBl/4ZSDZ6BK6af+9jG5QMUmsodXrWbQGxrLu4NnIXTALeR/25EGz6H
- OF4qonPTikomTfOCyxwmEhpHQ28u9S1l0fia76+iNGSlBrwRafDqF9unSH/i26JcjS2B
- rftv6CC5WU7lxfeGTFrHHI3T1L6xSWW2m3cpYbHXS76A+l4oFXSPmGgMdtgHmmfuTWyq
- es0cdFzwhnnc2HIjSsnRQoebbnvp7cu6hv/+oZYPhWn4QeUQllx1LiqLmx6CUqFIPoDG
- kNBw==
-X-Gm-Message-State: APjAAAX0EfuH4vkrLamKJtYiFG8Zv7vIeFhHtC6jr4bJJPleQAdzqOtN
- q++RTz5p7K4Pex9a5NY1CDM=
-X-Google-Smtp-Source: APXvYqw2pu0gcwNDmR9jMGGlX/s5QhDeUO87p2+wVCm/9EfBUDnUV9c1aZTkY/ExoTEP0eKPr2VX5Q==
-X-Received: by 2002:a63:d05:: with SMTP id c5mr23721805pgl.182.1569849453673; 
- Mon, 30 Sep 2019 06:17:33 -0700 (PDT)
+ bh=IeNb76xF/iiAkmuGaqc/RgfhSXiK60RFNQ5u5Egtzwc=;
+ b=FMLlDwSdf9xr4oyQqCB8C3c5b1aX4PKAtA9wu8NsTuZ9VPa7PkDbx/KE+eNRCXzC00
+ iJFZXwI188h+kDy7/l0ZL78VVeJXU6jlWVGYfkvN0x8rrb3R9cH7QhXK70z4fw4L2PSn
+ azgAXL5WE2P4HOhRzbeLvWdH7uacXZNnveyHqAsNGtf7mR0FS2dqdvh7/8kLm/UiUyVx
+ 0CfkgQK7BgzFe9g3epDhruBJc1MZWIPr99Eh9L5cBRHXuby7RXJbuUnsdWw9mXzG7j5w
+ tMacfUOLmua0GiFomfNVGkQq1//Yp5+dd4JnxaMxqutbqwLFBdwwelaua9R6UvpbVhOG
+ h8tg==
+X-Gm-Message-State: APjAAAVpsNiRjVSxt33rfyy7ua8BMDnwPMsIbQg8tk3Q1pysA9GX3Xqc
+ eSnWeQZX6nYsteuQdMT6fgo=
+X-Google-Smtp-Source: APXvYqwGkAF+kWpqAj6UpJAWdIO9jQYwc6SIZA+Pk2aEG3EO6zNRI4aw5xunqrGFbM0FEZY0RNCcdg==
+X-Received: by 2002:a63:d20f:: with SMTP id a15mr24216063pgg.130.1569849499941; 
+ Mon, 30 Sep 2019 06:18:19 -0700 (PDT)
 Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id n3sm10936090pff.102.2019.09.30.06.17.32
+ by smtp.gmail.com with ESMTPSA id i6sm19213778pfq.20.2019.09.30.06.18.19
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 30 Sep 2019 06:17:33 -0700 (PDT)
-Date: Mon, 30 Sep 2019 06:17:32 -0700
+ Mon, 30 Sep 2019 06:18:19 -0700 (PDT)
+Date: Mon, 30 Sep 2019 06:18:18 -0700
 From: Guenter Roeck <linux@roeck-us.net>
 To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH 2/3] watchdog: imx2_wdt: Use __maybe_unused instead of
- #if CONFIG_PM_SLEEP
-Message-ID: <20190930131732.GB29750@roeck-us.net>
+Subject: Re: [PATCH 3/3] watchdog: imx2_wdt: Use 'dev' instead of
+ dereferencing it repeatedly
+Message-ID: <20190930131818.GC29750@roeck-us.net>
 References: <1569308828-8320-1-git-send-email-Anson.Huang@nxp.com>
- <1569308828-8320-2-git-send-email-Anson.Huang@nxp.com>
+ <1569308828-8320-3-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1569308828-8320-2-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1569308828-8320-3-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_061734_216307_8C504A8B 
-X-CRM114-Status: GOOD (  16.17  )
+X-CRM114-CacheID: sfid-20190930_061820_472313_384E8E0F 
+X-CRM114-Status: GOOD (  17.77  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
@@ -114,50 +114,99 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 24, 2019 at 03:07:07PM +0800, Anson Huang wrote:
-> Use __maybe_unused for power management related functions instead
-> of #if CONFIG_PM_SLEEP to simply the code.
+On Tue, Sep 24, 2019 at 03:07:08PM +0800, Anson Huang wrote:
+> Add helper variable dev = &pdev->dev to simply the code.
 > 
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
 Reviewed-by: Guenter Roeck <linux@roeck-us.net>
 
 > ---
->  drivers/watchdog/imx2_wdt.c | 6 ++----
->  1 file changed, 2 insertions(+), 4 deletions(-)
+>  drivers/watchdog/imx2_wdt.c | 23 ++++++++++++-----------
+>  1 file changed, 12 insertions(+), 11 deletions(-)
 > 
 > diff --git a/drivers/watchdog/imx2_wdt.c b/drivers/watchdog/imx2_wdt.c
-> index 6711b4e..034f32c 100644
+> index 034f32c..f8d58bf 100644
 > --- a/drivers/watchdog/imx2_wdt.c
 > +++ b/drivers/watchdog/imx2_wdt.c
-> @@ -358,9 +358,8 @@ static void imx2_wdt_shutdown(struct platform_device *pdev)
+> @@ -246,13 +246,14 @@ static const struct regmap_config imx2_wdt_regmap_config = {
+>  
+>  static int __init imx2_wdt_probe(struct platform_device *pdev)
+>  {
+> +	struct device *dev = &pdev->dev;
+>  	struct imx2_wdt_device *wdev;
+>  	struct watchdog_device *wdog;
+>  	void __iomem *base;
+>  	int ret;
+>  	u32 val;
+>  
+> -	wdev = devm_kzalloc(&pdev->dev, sizeof(*wdev), GFP_KERNEL);
+> +	wdev = devm_kzalloc(dev, sizeof(*wdev), GFP_KERNEL);
+>  	if (!wdev)
+>  		return -ENOMEM;
+>  
+> @@ -260,16 +261,16 @@ static int __init imx2_wdt_probe(struct platform_device *pdev)
+>  	if (IS_ERR(base))
+>  		return PTR_ERR(base);
+>  
+> -	wdev->regmap = devm_regmap_init_mmio_clk(&pdev->dev, NULL, base,
+> +	wdev->regmap = devm_regmap_init_mmio_clk(dev, NULL, base,
+>  						 &imx2_wdt_regmap_config);
+>  	if (IS_ERR(wdev->regmap)) {
+> -		dev_err(&pdev->dev, "regmap init failed\n");
+> +		dev_err(dev, "regmap init failed\n");
+>  		return PTR_ERR(wdev->regmap);
 >  	}
->  }
 >  
-> -#ifdef CONFIG_PM_SLEEP
->  /* Disable watchdog if it is active or non-active but still running */
-> -static int imx2_wdt_suspend(struct device *dev)
-> +static int __maybe_unused imx2_wdt_suspend(struct device *dev)
->  {
->  	struct watchdog_device *wdog = dev_get_drvdata(dev);
->  	struct imx2_wdt_device *wdev = watchdog_get_drvdata(wdog);
-> @@ -381,7 +380,7 @@ static int imx2_wdt_suspend(struct device *dev)
->  }
+> -	wdev->clk = devm_clk_get(&pdev->dev, NULL);
+> +	wdev->clk = devm_clk_get(dev, NULL);
+>  	if (IS_ERR(wdev->clk)) {
+> -		dev_err(&pdev->dev, "can't get Watchdog clock\n");
+> +		dev_err(dev, "can't get Watchdog clock\n");
+>  		return PTR_ERR(wdev->clk);
+>  	}
 >  
->  /* Enable watchdog and configure it if necessary */
-> -static int imx2_wdt_resume(struct device *dev)
-> +static int __maybe_unused imx2_wdt_resume(struct device *dev)
->  {
->  	struct watchdog_device *wdog = dev_get_drvdata(dev);
->  	struct imx2_wdt_device *wdev = watchdog_get_drvdata(wdog);
-> @@ -406,7 +405,6 @@ static int imx2_wdt_resume(struct device *dev)
+> @@ -279,12 +280,12 @@ static int __init imx2_wdt_probe(struct platform_device *pdev)
+>  	wdog->min_timeout	= 1;
+>  	wdog->timeout		= IMX2_WDT_DEFAULT_TIME;
+>  	wdog->max_hw_heartbeat_ms = IMX2_WDT_MAX_TIME * 1000;
+> -	wdog->parent		= &pdev->dev;
+> +	wdog->parent		= dev;
+>  
+>  	ret = platform_get_irq(pdev, 0);
+>  	if (ret > 0)
+> -		if (!devm_request_irq(&pdev->dev, ret, imx2_wdt_isr, 0,
+> -				      dev_name(&pdev->dev), wdog))
+> +		if (!devm_request_irq(dev, ret, imx2_wdt_isr, 0,
+> +				      dev_name(dev), wdog))
+>  			wdog->info = &imx2_wdt_pretimeout_info;
+>  
+>  	ret = clk_prepare_enable(wdev->clk);
+> @@ -294,13 +295,13 @@ static int __init imx2_wdt_probe(struct platform_device *pdev)
+>  	regmap_read(wdev->regmap, IMX2_WDT_WRSR, &val);
+>  	wdog->bootstatus = val & IMX2_WDT_WRSR_TOUT ? WDIOF_CARDRESET : 0;
+>  
+> -	wdev->ext_reset = of_property_read_bool(pdev->dev.of_node,
+> +	wdev->ext_reset = of_property_read_bool(dev->of_node,
+>  						"fsl,ext-reset-output");
+>  	platform_set_drvdata(pdev, wdog);
+>  	watchdog_set_drvdata(wdog, wdev);
+>  	watchdog_set_nowayout(wdog, nowayout);
+>  	watchdog_set_restart_priority(wdog, 128);
+> -	watchdog_init_timeout(wdog, timeout, &pdev->dev);
+> +	watchdog_init_timeout(wdog, timeout, dev);
+>  
+>  	if (imx2_wdt_is_running(wdev)) {
+>  		imx2_wdt_set_timeout(wdog, wdog->timeout);
+> @@ -318,7 +319,7 @@ static int __init imx2_wdt_probe(struct platform_device *pdev)
+>  	if (ret)
+>  		goto disable_clk;
+>  
+> -	dev_info(&pdev->dev, "timeout %d sec (nowayout=%d)\n",
+> +	dev_info(dev, "timeout %d sec (nowayout=%d)\n",
+>  		 wdog->timeout, nowayout);
 >  
 >  	return 0;
->  }
-> -#endif
->  
->  static SIMPLE_DEV_PM_OPS(imx2_wdt_pm_ops, imx2_wdt_suspend,
->  			 imx2_wdt_resume);
 > -- 
 > 2.7.4
 > 
