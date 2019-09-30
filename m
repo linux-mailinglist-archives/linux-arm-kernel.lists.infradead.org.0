@@ -2,77 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3EEBC1D25
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 10:27:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48B23C1D29
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 10:28:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o4ZpL8U21I+Aqj4kb39R0JrvUlLqpQ0NTTZ7h4ApaiM=; b=tCD1nbJzgJLCHf
-	sTWQvDoQS6u8DDq0qOOcVCB/T5wDYoDgxu2y8ZB8HBPUIrKkfpUOKZpt9VAzhkbn0Bi0yVnxhEtVj
-	IORceHbWOx/YFMKIHAsbu82sl5JvbKaJhYyU3JIG7X/2He4HwT4h1R6GI7HNZj0VS7RfFrV+/YVSi
-	Cc2mg5FgXGwobKtWuvjfhVQJQaozWhQLQ5JD3CPJnwFY7DCmra12Gb7Jun2EL1w242kLExCHddqLZ
-	L8qQrIzgg9SWLFYdm1j911PpuixzmfYUlqpYcOC7UGEZpNjRJEFto6cIQeBTiQEEnitivbf4IJ2rF
-	8b8bvDt8j9XafDZeJ8dA==;
+	List-Owner; bh=XpLA1EMOP70Rjxh+pV2KhCJMUnH02EcpPD1/lDC86n4=; b=Nns3cvVKySUm2L
+	a0iLYwBlI/zvBzeh7LErFtrRRtcM16aZ6j6GO2ETHv1Pbmuj+YNgVryBt3dz4ruurnvZ9bOsGpQfi
+	R7eKAVL77ewbfybuvXo9KiU8Af0GWIOmLCiYVZGfEF7zIwCRsdrlfzUvxN0blP7W7nn10ZJRjoHmr
+	EkgPWfJ6TSSDFynDbZvLUA8oQSN3eaFORvha1Le3Wf2Rmi4dajhA0AHJ1mECBv4qi33n2PG9z95Pq
+	7oRWAzmZHnSiz/ybs/ltv5AAmHNEsVORbRIcJMWSjIfmMTpV0uGCokKSS46BHwb3edXpxTwkWzCeU
+	GCl9myav8ZyF/D/vBiQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEr1n-0004GQ-H2; Mon, 30 Sep 2019 08:27:31 +0000
-Received: from conssluserg-01.nifty.com ([210.131.2.80])
+	id 1iEr2F-0004bR-Kk; Mon, 30 Sep 2019 08:27:59 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEr1c-0004Fi-9O
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 08:27:22 +0000
-Received: from mail-vs1-f51.google.com (mail-vs1-f51.google.com
- [209.85.217.51]) (authenticated)
- by conssluserg-01.nifty.com with ESMTP id x8U8R4II012807
- for <linux-arm-kernel@lists.infradead.org>; Mon, 30 Sep 2019 17:27:04 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-01.nifty.com x8U8R4II012807
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1569832025;
- bh=S3XJDoeipww5RQbEvSMupd7ozkKy8JwBydWHSl7iEd8=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=UMLkZkxecf6GdVqFNZtK3I5UzfFgRPItb95ROKa80T/3sa/9Eiehes5+KNghNotEA
- EbgDc04gztLox5jrIiJb0xhh3XcQuNj2v2wueRxKc0vYzuEgwRO1fVwianL73Yc8mG
- mx17qPyFl4wPz8U0ssJUkboAE/+Z000MpXUOwO3yzN48jY3V/1UcmaxUoJZ9GCOSPV
- gocNk+Rs8IU5bi9t0clQ0Ac8DCi0W0UdN6kIaI+nci9GIbK+S2fsYZvaWzwABsnX6F
- fgWOaKo41QeSGMN9AdX2jaGBcZd9QCqmVEQNzDr/x1EJv+j7F4q7jZzN0OMiw5tawy
- wFP1flpOBSYxA==
-X-Nifty-SrcIP: [209.85.217.51]
-Received: by mail-vs1-f51.google.com with SMTP id b123so6178259vsb.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Sep 2019 01:27:04 -0700 (PDT)
-X-Gm-Message-State: APjAAAU2p5hxk5tNlw2VtKpxw0JEKMOErYWwHUetNk5GnYPnKigwVv6x
- 9v8jJJkGsi4p5dot9zDqD14Ra1seKJP3D5o0wa8=
-X-Google-Smtp-Source: APXvYqyu9o2T0h0WNByn2XriMLNL31isIe26D8AZTWUv/uJaOHyQY1+TN/o45LxvFGamYDgXuIeEO1go3fL594zyVNk=
-X-Received: by 2002:a67:1e87:: with SMTP id e129mr9358134vse.179.1569832023746; 
- Mon, 30 Sep 2019 01:27:03 -0700 (PDT)
+ id 1iEr1l-0004On-AN
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 08:27:31 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1iEr1b-0003WF-As; Mon, 30 Sep 2019 10:27:19 +0200
+Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1iEr1X-0002ak-4t; Mon, 30 Sep 2019 10:27:15 +0200
+Date: Mon, 30 Sep 2019 10:27:15 +0200
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Andreas Kemnade <andreas@kemnade.info>
+Subject: Re: [PATCH 1/3] ARM: dts: add Netronix E60K02 board common file
+Message-ID: <20190930082715.mplf5ra35ikqmbyr@pengutronix.de>
+References: <20190927061423.17278-1-andreas@kemnade.info>
+ <20190927061423.17278-2-andreas@kemnade.info>
+ <20190927094721.w26ggnli4f5a64uv@pengutronix.de>
+ <20190927210807.26439a94@aktux>
 MIME-Version: 1.0
-References: <20190930055925.25842-1-yamada.masahiro@socionext.com>
- <CAK8P3a24P7v41TZszjKzoJmhcss5WK-e9fHwUqEqre6FBPJWvw@mail.gmail.com>
-In-Reply-To: <CAK8P3a24P7v41TZszjKzoJmhcss5WK-e9fHwUqEqre6FBPJWvw@mail.gmail.com>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Mon, 30 Sep 2019 17:26:27 +0900
-X-Gmail-Original-Message-ID: <CAK7LNAS_gbz2Qc8MgXiKRRSSgKse3J-dJ98c4qViuvnyxdAD+Q@mail.gmail.com>
-Message-ID: <CAK7LNAS_gbz2Qc8MgXiKRRSSgKse3J-dJ98c4qViuvnyxdAD+Q@mail.gmail.com>
-Subject: Re: [PATCH] ARM: fix __get_user_check() in case uaccess_* calls are
- not inlined
-To: Arnd Bergmann <arnd@arndb.de>
+Content-Disposition: inline
+In-Reply-To: <20190927210807.26439a94@aktux>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 10:22:57 up 135 days, 14:41, 87 users,  load average: 0.02, 0.05,
+ 0.11
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_012720_653786_CFC901C5 
-X-CRM114-Status: GOOD (  22.06  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190930_012729_412500_9830D7CF 
+X-CRM114-Status: GOOD (  33.16  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.80 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,92 +77,186 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vincent Whitchurch <vincent.whitchurch@axis.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- Russell King <linux@armlinux.org.uk>, Stefan Agner <stefan@agner.ch>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Olof Johansson <olof@lixom.net>, Thomas Gleixner <tglx@linutronix.de>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, marex@denx.de, devicetree@vger.kernel.org,
+ andrew.smirnov@gmail.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ angus@akkea.ca, linux-kernel@vger.kernel.org, j.neuschaefer@gmx.net,
+ robh+dt@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
+ manivannan.sadhasivam@linaro.org,
+ Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
+ festevam@gmail.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd,
+Hi Andreas,
 
-On Mon, Sep 30, 2019 at 4:57 PM Arnd Bergmann <arnd@arndb.de> wrote:
->
-> On Mon, Sep 30, 2019 at 8:01 AM Masahiro Yamada
-> <yamada.masahiro@socionext.com> wrote:
-> >
-> > KernelCI reports that bcm2835_defconfig is no longer booting since
-> > commit ac7c3e4ff401 ("compiler: enable CONFIG_OPTIMIZE_INLINING
-> > forcibly"):
-> >
-> >   https://lkml.org/lkml/2019/9/26/825
-> >
-> > I also received a regression report from Nicolas Saenz Julienne:
-> >
-> >   https://lkml.org/lkml/2019/9/27/263
-> >
-> > This problem has cropped up on arch/arm/config/bcm2835_defconfig
-> > because it enables CONFIG_CC_OPTIMIZE_FOR_SIZE. The compiler tends
-> > to prefer not inlining functions with -Os. I was able to reproduce
-> > it with other boards and defconfig files by manually enabling
-> > CONFIG_CC_OPTIMIZE_FOR_SIZE.
-> >
-> > The __get_user_check() specifically uses r0, r1, r2 registers.
-> > So, uaccess_save_and_enable() and uaccess_restore() must be inlined
-> > in order to avoid those registers being overwritten in the callees.
-> >
-> > Prior to commit 9012d011660e ("compiler: allow all arches to enable
-> > CONFIG_OPTIMIZE_INLINING"), the 'inline' marker was always enough for
-> > inlining functions, except on x86.
-> >
-> > Since that commit, all architectures can enable CONFIG_OPTIMIZE_INLINING.
-> > So, __always_inline is now the only guaranteed way of forcible inlining.
-> >
-> > I want to keep as much compiler's freedom as possible about the inlining
-> > decision. So, I changed the function call order instead of adding
-> > __always_inline around.
-> >
-> > Call uaccess_save_and_enable() before assigning the __p ("r0"), and
-> > uaccess_restore() after evacuating the __e ("r0").
-> >
-> > Fixes: 9012d011660e ("compiler: allow all arches to enable CONFIG_OPTIMIZE_INLINING")
-> > Reported-by: "kernelci.org bot" <bot@kernelci.org>
-> > Reported-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> > Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
->
-> Acked-by: Arnd Bergmann <arnd@arndb.de>
->
-> The patch looks reasonable to me, but I think we should also revert
-> commit ac7c3e4ff401 ("compiler: enable CONFIG_OPTIMIZE_INLINING
-> forcibly") in mainline for now, as it caused this to happen all the time rather
-> than only for users that expliticly select CONFIG_OPTIMIZE_INLINING.
->
-> We have had other bug reports starting with that commit that run into
-> similar issues, and I'm sure there are more of them. I don't mind having it
-> in linux-next for a while long, but I think it was premature to have it merged
-> into mainline.
->
->         Arnd
+On 19-09-27 21:08, Andreas Kemnade wrote:
+> Hi Marco,
+> 
+> On Fri, 27 Sep 2019 11:47:21 +0200
+> Marco Felsch <m.felsch@pengutronix.de> wrote:
+> 
+> > Hi Andreas,
+> > 
+> > thanks for the patch.
+> > 
+> thanks for the quick review. Most of your comments are clear.
+> 
+> [...]
+> > > +	wifi_pwrseq: wifi_pwrseq {
+> > > +		compatible = "mmc-pwrseq-simple";
+> > > +		post-power-on-delay-ms = <20>;
+> > > +		reset-gpios = <&gpio5 0 GPIO_ACTIVE_LOW>;  
+> > 
+> > Can you add a pinctrl-entry here please? The general rule is to mux
+> > things where you use it.
+> > 
+> yes, there are many places in my patch where they are added to some
+> parent devices.
+> I will fix that.
+> [...]
+> > > +	leds {
+> > > +		compatible = "gpio-leds";
+> > > +		pinctrl-names = "default";
+> > > +		pinctrl-0 = <&pinctrl_led>;  
+> > 
+> > Please move all muxing you made here into this file or add phandles so
+> > the dts file need to add only the muxing stuff. This applies to all
+> > pinctrl you made here.
+> > 
+> so you disagree with this pattern:
+> in .dtsi
+>  some_device {
+>    pinctrl-0 = <&pinctrl_some_device>;
+>  };
+> 
+> and in .dts (one I sent with this patch series and the tolino/mx6sl one
+> is not ready-cooked yet, will be part of a later series)
+> &iomuxc {
+>    pinctrl_some_device: some_devicegrp {
+>    	fsl,pins = <...>;
+>    };
+> };
+> 
+> ?
 
+Yes, because IMHO a dtsi is self contained as well as a dts. If it is
+common for all boards you can move the muxing into the dtsi else it
+should be done within the dts.
 
-Hmm, I know you are testing randconfig build tests,
-but how many people are testing the kernel boot in linux-next?
+> > > +
+> > > +		GLED {
+> > > +			gpios = <&gpio5 7 GPIO_ACTIVE_LOW>;
+> > > +			linux,default-trigger = "timer";
+> > > +		};
+> > > +	};
+> > > +
+> > > +	gpio-keys {
+> > > +		compatible = "gpio-keys";
+> > > +		pinctrl-names = "default";
+> > > +		pinctrl-0 = <&pinctrl_gpio_keys>;
+> > > +		power {
+> > > +			label = "Power";
+> > > +			gpios = <&gpio5 8 GPIO_ACTIVE_LOW>;
+> > > +			linux,code = <KEY_POWER>;  
+> > 
+> > Add missing header: dt-bindings/input/input.h to use this.
+> > 
+> I am doing this in the .dts but it is probably better to do it here
+> because it is used here.
+> 
+> > > +			gpio-key,wakeup;
+> > > +		};
+> > > +		cover {
+> > > +			label = "Cover";
+> > > +			gpios = <&gpio5 12 GPIO_ACTIVE_LOW>;
+> > > +			linux,code = <SW_LID>;
+> > > +			linux,input-type = <0x05>;    /* EV_SW */  
+> > 
+> > In the header above EV_SW is also specified so please use it here.
+> > 
+> This pattern is in many files. I took one as an example. It seems that
+> 50% of devicetree files have this pattern, the other 50% do have the
+> pattern you proposed (which I like more). So probably EV_SW was not
+> available in former times?
 
-People and kernelci started to report the issue immediately
-after it landed in the mainline...
+I don't know, checking the git history should bring the answer ;)
+Anyway, if it is available we should use it.
 
+> > > +			gpio-key,wakeup;
+> > > +		};
+> > > +	};
+> > > +
+> > > +};
+> > > +
+> > > +
+> > > +  
+> > 
+> > Whitespaces
+> > 
+> > > +&audmux {
+> > > +	pinctrl-names = "default";
+> > > +	status = "disabled";  
+> > 
+> > Why you mentioned a pinctrl-names here without the mux? Do we need the
+> > status line here? The common case is that such devices are off by
+> > default/the base dt.
+> > 
+> yes, that things can be removed.
+> > > +};
+> > > +
+> > > +&snvs_rtc {
+> > > +	status = "disabled";  
+> > 
+> > Same applies here.
+> > 
+> 
+> No, seems to be an exception, it does not have a status = "disabled" in
+> imx6sll.dtsi.
+
+Did you mean 6sll or 6ull?
+
+Okay, is this baseboard only used with a 6ull?
+
+Regards,
+  Marco
+
+> > > +};
+> > > +
+> > > +&i2c1 {
+> > > +	clock-frequency = <100000>;
+> > > +	pinctrl-names = "default","sleep";
+> > > +	pinctrl-0 = <&pinctrl_i2c1 &pinctrl_lm3630a_bl_gpio>;  
+> > 
+> > The &pinctrl_lm3630a_bl_gpio should be moved into the lm3630a node.
+> > 
+> > > +	pinctrl-1 = <&pinctrl_i2c1_sleep>;
+> > > +	status = "okay";
+> > > +
+> > > +	lm3630a: lm3630a-i2c@36 {  
+> > 
+> > please name it backlight@36
+> > 
+> > > +		reg = <0x36>;
+> > > +		status = "ok";  
+> > 
+> > status lines are always be the last and if it is okay you can drop it
+> > because the default is okay.
+> > 
+> well, I added it because the driver was not loaded but later I found out
+> that the real reason is that module aliases were broken and forgot to
+> remove that "ok".
+> 
+> Regards,
+> Andreas
+> 
 
 -- 
-Best Regards
-Masahiro Yamada
+Pengutronix e.K.                           |                             |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
