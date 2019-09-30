@@ -2,64 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C1A9C260A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 20:37:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92C4DC260D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 20:38:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2bXOX6WxZygYaFR4xZw4mSz+9Y9OvOJL1xH5VuOnMMc=; b=K+xS0j67mhhYL8
-	iEHxsPYBHUepmWGQzPg4eWO0NvN/Iq3OmC/GGcCkYUtrJwBaLjjETQUdTqBgnZZuIlRPiyRCoWbEq
-	YwPRf1hplHlTTDAYXoX1hKV/LKiMjaXmsxPij9ZPTUSOT0rYgF7CLYxmg3Zdvs42NUEnMK7b1/sAh
-	tresYHnoUOoyioFBJHDYmATKCAhcmSpfX6vP0Z+ydcGAji/03eNcZAUQ/mMJuvgNDTUS8pk5N7SAJ
-	0ZNeR5eNRQboi3SYng7MEnB2BaOTMdiPgQk5e+S0dQKAlZ4DjwI5VQmC2H/IpBsbAcT5Fv2jhwj13
-	YDKD4dUP16SfojVPDMQQ==;
+	List-Owner; bh=AiA4ZRaJb+8/+T6pFlwGo6jOrs+tCTY1rpZCgFamxpI=; b=cJYYv2RNVBjx5R
+	lNum7fCPO8+FiYALrHk2O+EuApwUQEPCLVu6DhoW3m5ga0weGbDBydqyw6Sb8RBf94WXDaw0O05pw
+	jA68bOvriSe2z/oNRlwvGVFR0TuJ9jV8iaH1xnHaO8UTrBD+EieI7Cw0VCzCJVFSuN88aLIbWyWtB
+	ryR6ZAqPpy99v0QzyGljvk9rmlXIk+uxW8UyNk29F7b0oa6+7bAObvu6wlnXOBWt83cH222NmhJ48
+	0HTG5FQzFEVPRWMTiiW9z9TDYLjjL2z8bbJSV4eHU0pBc4RpW5vKkWRN4RI1zAdD+pMlm1WxYIR9H
+	COGTJZnZBuwjh1TRl+AA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iF0YH-0004TP-Ha; Mon, 30 Sep 2019 18:37:41 +0000
+	id 1iF0Yt-0004vI-8A; Mon, 30 Sep 2019 18:38:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iF0X4-0002vW-AP
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 18:36:32 +0000
-Received: from mail-qk1-f171.google.com (mail-qk1-f171.google.com
- [209.85.222.171])
+ id 1iF0XM-0003Yg-NG
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 18:36:46 +0000
+Received: from mail-qt1-f179.google.com (mail-qt1-f179.google.com
+ [209.85.160.179])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id ED011224F0
+ by mail.kernel.org (Postfix) with ESMTPSA id B700D224D7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Sep 2019 18:36:24 +0000 (UTC)
+ Mon, 30 Sep 2019 18:36:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569868585;
- bh=Ve9EmbsF4R2T7X2AuYWHttWGyO9wXFWxIJj8J5eaoDE=;
+ s=default; t=1569868603;
+ bh=1tL/OZOkCQgzZnBFplZTU+ckRrS4/sDh6E9zhlDzq/c=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=yzJe07xvPb1X/lMsvcEm9s7vhsjgVOtzM9TWeZHjaB6SLT95m7stqvhjKv5aoL7rF
- Au6KFV0YzVNY/d8PPnLGj3ZffNV6bhGsyW4EAI74hjCyGKOggKvZZhxHwI07PtdV04
- xhw2ONm0tks6XUhVlyIWpOQbiYQE0ucMo3m+y1GI=
-Received: by mail-qk1-f171.google.com with SMTP id h126so8702882qke.10
+ b=y9r7bli47fVGj+4fjTYQ6PAXVa0UI+u3pZnzIoPcyL5ummMRbOrFM8Z8ezx0c9O9M
+ OWWNIjwXkelXIdFKvH0eTzLFL3aK4P1ZUn6RPdwLnHsRpcYvtGERwjcypBmW+az2Ot
+ OoolrSVYpG+lt/hn0Iww7kUj5dPAJgA21mXP8u00=
+Received: by mail-qt1-f179.google.com with SMTP id n1so18293618qtp.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Sep 2019 11:36:24 -0700 (PDT)
-X-Gm-Message-State: APjAAAVCnuqJzMpydB5ATyABGeR08Ev8mt4jRi7hsWpIOt3ncFS+/U0B
- ezLoox3dJbaGRj/pQdPhAl2G1lG8/N3fz4lqVA==
-X-Google-Smtp-Source: APXvYqy2xChitegAmEHzNRbHSSH0nQKcTnaviLTzqyZbMb41lnr9tCCoVkEfo/b9C0IczxPJCD2HaN7s56mcLD1ZT6M=
-X-Received: by 2002:a05:620a:12d5:: with SMTP id
- e21mr1643941qkl.152.1569868584102; 
- Mon, 30 Sep 2019 11:36:24 -0700 (PDT)
+ Mon, 30 Sep 2019 11:36:43 -0700 (PDT)
+X-Gm-Message-State: APjAAAWgiNJ1p1bsp4T1QC+wkEV/lUtIbnGYQFsdO3I8t9HfsN++27Bu
+ Pcu4sOuqRm3XNA6r8cRm66jY9URTHglkAvkFfg==
+X-Google-Smtp-Source: APXvYqzrW8P34cQHwAL7kkHCPf/H7Il3VJU7gB5YH+0CDpc3kU87kepa13cpt99giygGkK5bkJVuq6phphJeVpRAcNg=
+X-Received: by 2002:a05:6214:11b4:: with SMTP id
+ u20mr19329160qvv.200.1569868602914; 
+ Mon, 30 Sep 2019 11:36:42 -0700 (PDT)
 MIME-Version: 1.0
 References: <cover.1569851517.git.robin.murphy@arm.com>
- <20e142e236decbed1b890ef455c5a1ddbdb48b9d.1569851517.git.robin.murphy@arm.com>
-In-Reply-To: <20e142e236decbed1b890ef455c5a1ddbdb48b9d.1569851517.git.robin.murphy@arm.com>
+ <fd1f7700165b2e2679fe6d499ec38b91f4a432f4.1569851517.git.robin.murphy@arm.com>
+In-Reply-To: <fd1f7700165b2e2679fe6d499ec38b91f4a432f4.1569851517.git.robin.murphy@arm.com>
 From: Rob Herring <robh@kernel.org>
-Date: Mon, 30 Sep 2019 13:36:13 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqL3P4MrisYO3394ONJrpBXafR1GFhZJJYKJQ6t28AQ4kw@mail.gmail.com>
-Message-ID: <CAL_JsqL3P4MrisYO3394ONJrpBXafR1GFhZJJYKJQ6t28AQ4kw@mail.gmail.com>
-Subject: Re: [PATCH v2 2/3] iommu/io-pgtable-arm: Support all Mali
- configurations
+Date: Mon, 30 Sep 2019 13:36:32 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqJD0DKZkDAOsAcJPM24opvRqKHB3jsHqjeyjQM2WV9BEw@mail.gmail.com>
+Message-ID: <CAL_JsqJD0DKZkDAOsAcJPM24opvRqKHB3jsHqjeyjQM2WV9BEw@mail.gmail.com>
+Subject: Re: [PATCH v2 3/3] iommu/io-pgtable-arm: Allow coherent walks for Mali
 To: Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_113630_402633_FD598684 
-X-CRM114-Status: GOOD (  16.17  )
+X-CRM114-CacheID: sfid-20190930_113644_815601_B0B78D09 
+X-CRM114-Status: GOOD (  15.03  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -101,25 +100,24 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Mon, Sep 30, 2019 at 9:11 AM Robin Murphy <robin.murphy@arm.com> wrote:
 >
-> In principle, Midgard GPUs supporting smaller VA sizes should only
-> require 3-level pagetables, since level 0 only resolves bits 48:40 of
-> the address. However, the kbase driver does not appear to have any
-> notion of a variable start level, and empirically T720 and T820 rapidly
-> blow up with translation faults unless given a full 4-level table,
-> despite only supporting a 33-bit VA size.
+> Midgard GPUs have ACE-Lite master interfaces which allows systems to
+> integrate them in an I/O-coherent manner. It seems that from the GPU's
+> viewpoint, the rest of the system is its outer shareable domain, and so
+> even when snoop signals are wired up, they are only emitted for outer
+> shareable accesses. As such, setting the TTBR_SHARE_OUTER bit does
+> indeed get coherent pagetable walks working nicely for the coherent
+> T620 in the Arm Juno SoC.
 >
-> The 'real' IAS value is still valuable in terms of validating addresses
-> on map/unmap, so tweak the allocator to allow smaller values while still
-> forcing the resultant tables to the full 4 levels. As far as I can test,
-> this should make all known Midgard variants happy.
+> Exploiting coherency for data accesses is more of a challenge, since
+> not only do we need to get the GPU MMU attributes right but we'd also
+> have to avoid pgprot_writecombine creating an attribute mismatch on
+> the CPU side, so we won't try wiring that up just yet.
 >
-> Fixes: d08d42de6432 ("iommu: io-pgtable: Add ARM Mali midgard MMU page table format")
-> Tested-by: Neil Armstrong <narmstrong@baylibre.com>
 > Reviewed-by: Steven Price <steven.price@arm.com>
 > Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 > ---
->  drivers/iommu/io-pgtable-arm.c | 7 ++++++-
->  1 file changed, 6 insertions(+), 1 deletion(-)
+>  drivers/iommu/io-pgtable-arm.c | 3 +++
+>  1 file changed, 3 insertions(+)
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 
