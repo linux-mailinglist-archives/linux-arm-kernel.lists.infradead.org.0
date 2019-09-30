@@ -2,87 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4759FC258D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 18:57:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2CECC259B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 19:01:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+uCjPmUBXKlVvDN17xaDPaJbODnsodU8H4T12TwfIjM=; b=kR+EFSK+kEIgBD
-	IQt/uI+gNusmGZZlKgL0J48req0A/BzGu4R5f/AWNNaQWwPlxtL9U3ZpBiQdw9lvMtEpYmNYPSnDG
-	ZfaY5mlGE4NPYpeYIBbm826tiW5Bjwg706WSw66XCNwPaoSyv3hAKFKofhibnUbvVsE/gLEkfLpr0
-	asQz0EFGD7NWazF6uusRQc0gngVCDYGQfJ58t1fINCW3kWx5Ec/dx7eiC3+Zol7a1tfcYP1kwzvSC
-	ctvm4NEABJpKzEV62Varjg5rABmM2fLwnlfoVHlL+o2cNXIR1n9G1gqKAZQAq4C0CqlWa6UqrffWs
-	OtXFAEeIwxUr+7ghL4hA==;
+	List-Owner; bh=gO4eWApYvCU68XNs8V713OmniBDjK+GAKk47kjAGJDU=; b=mfNFpcbDOufaMv
+	Bob8V4fJB2yJ4ggKqj//YLtTgxepKMb9R8iGtxPCS3vmVliJnjWRMTmh9AQHW+tUxGFXMOKd+l1Hx
+	IKlpvRhGEyonedhkS6wE6F7oIBIzw4n9GOBkLnuswcKSSEvSXnJhQyKFmjaSajj5beNMdzBuqgxga
+	pUDsShtmI8y+fzeNbqasxwkAjB/AdpwBoeBnlfTRoVhQJUNnlg+bED9lYBS1uCpebGvOUtM5Zv/lG
+	3Kx3yJcDZMUH5UG66osIHvMtPdB+mAJ8SbHxC9Umj4rb4dBir1OjPpWQNsNTzZ1FZ1lyQfbMwWvx5
+	Aq3MqhLoeXIaN/17aJkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEyz6-0005HT-27; Mon, 30 Sep 2019 16:57:16 +0000
-Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+	id 1iEz2r-0006uj-4v; Mon, 30 Sep 2019 17:01:09 +0000
+Received: from mail-eopbgr1410100.outbound.protection.outlook.com
+ ([40.107.141.100] helo=JPN01-OS2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEyyt-0005Gm-ST
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 16:57:05 +0000
-Received: by mail-ot1-x342.google.com with SMTP id m19so8987888otp.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Sep 2019 09:57:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=GZJu5nMPyA3CcXPtrWusDX9FpZgNc7KiBqwKc0pCnNk=;
- b=lDMXPyHH0b4q5PAmhy6A3YLJAkPCddp6btlDUZ0fPsYCu5yMeJTt74gZ5ZUXWWwe/w
- QnXSoca9X+Ns+PkoKCftGvH+eaa8NqLQr1kdj58zJ2hiotXy2CBBNxVuUeD0NYk76Beu
- YBIyyDFD6dc6upQ597O4TV60qpD4y3gXNE7Jery+lSUTFIndraj1O/EcZ1NBkAY+sVH2
- v9Ff9yFBknkTGA7ZEnjAI/tM6OntsNWbkiRuV6dtG3p13i1YVPGbTfhVgwtVRieZkRmM
- IFBRMzd0DiKPR74GE5cGaMLRvXbhOal7CevhadIXbfMyF4jjMUB76fGc/0EZmpPBcItS
- cFSw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=GZJu5nMPyA3CcXPtrWusDX9FpZgNc7KiBqwKc0pCnNk=;
- b=XcToqOG2KrTj4hstf+Y89rOHFAk0Yrqb6E4BGrEQu42pLxJnFE8p3a6Snng+H1QBFX
- xz5sJyPtu99hZxQA5HmcFFrtRJhgt/fIsPBocb0aoBNX/OFRfx+bn457oZd8FxwMMuYI
- ZKpp/Puq5s5ot+bSE2SaFL2qYILVwSBHgUgMLn5ywKdqOG4UHgQuYcw+tHB1DngRi/Q9
- fGqUylm1RvnNtZqSEC5+W5GFClgbsesA+ChveXjlhQBvGOqcwRGkZCTPwQMLxurGRksr
- H9HrrqQgbH7h3j7QnDZm50jlB2Ehuf5E/V2TemplFqwKs5P1pAYxYB4dmZbrAgBPmdop
- 53qA==
-X-Gm-Message-State: APjAAAXIC3AOGF8sTfMpwPHjCo0gLgK3Bgwhv+9PT4ohGhXknKoAmPsk
- LB0HTlQosUJAhUYrPgPofFRGUU/S7ffXodeQ141prA==
-X-Google-Smtp-Source: APXvYqzB8H/7R2/+lg1XepUdOoHj928L8GWJV0m55A4x/X1lbYqO0HreOXXiM5k44rOocAfzJA5NKe2lpHDKrO0K8gI=
-X-Received: by 2002:a9d:562:: with SMTP id 89mr1391432otw.232.1569862622367;
- Mon, 30 Sep 2019 09:57:02 -0700 (PDT)
+ id 1iEz2h-0006ta-CI
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 17:01:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=XT7p4V4ViqcR87H9sjrwIl5iR+QE4OhQTbGluMEdccKgOLolAQUYiNh61nOa+X7e9Q35p9pZwYsNUH6Pc9q3D9XvBQaLm028su8Tne6gcGV5rW8jU50JcpLJFLa3Spd5gODM1JwoFcMjI8j9lwBHIQvj2MWTxyTYVFl2lmexi8FW37QK33/000Y0nMsiL4agnFsf1BT50WMO2Ws2WiYbxH56DIHLnCGyib86jEnclWKqBtD9IoVtU3N2aZXeBdz+qh6lM7es0FVmNA5Ec3eW0dMni0AooeI0ngZztL9PDcNi7+ht96X90dOf2NQPxO5g/ZqSB/vPHWYUBrYl20n9Hw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Dbbk1gKuUgnjeB+wZCocJfKsBvxRPmFOtdswhZp83ZE=;
+ b=n4F6hnNdmLgS8e5meOr+Z9XdhRV2xJnBkF8LxRovt8ZWfejoshcwNhLeVCp3P1UgsQe1RBzQVHoJHjYr18xNG6Ccw45ra3AC2wfZ8nIRsIpgiGnITExib5odZxxoOLvMA1NX9PXaFBa+7i7ylY7o/MvRzQlnBOW4OqgSBsIcy4C18/Hih6zAmb8vMKT/DpdwIDNBN6HJtGKcFylXO5Ut9RBaJZ9UrrCP5ro+i/2SfZTi6ypbOtoUylcBuixjz9Hsx0IMgOzWqVowDgeJJc/E5YNrUhke1m5YQFTZsYd/F0ZYnOfVmcbYf4G9Wwkn5qs6bBT9prL3cbypVf4l3dOF3A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
+ header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Dbbk1gKuUgnjeB+wZCocJfKsBvxRPmFOtdswhZp83ZE=;
+ b=ZnQLud/WKfB2Z1lVQ3bf01lD9j9SYRJRTwvLf2vrmxeNqDnFAVU3m05H576ROfCEtttiNtBC8uj/fwpRNg+UiDz2TLzfKoJ1IMhqKO7qnkV4EHbJA9Qd9CiYNBNB9NeDIMocfFf247DuLsMUNeb4yQ/exFIVL5mCBGlpSzKZJvQ=
+Received: from TY1PR01MB1770.jpnprd01.prod.outlook.com (52.133.163.13) by
+ TY1PR01MB1754.jpnprd01.prod.outlook.com (52.133.163.142) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2305.20; Mon, 30 Sep 2019 17:00:52 +0000
+Received: from TY1PR01MB1770.jpnprd01.prod.outlook.com
+ ([fe80::55fe:d020:cc51:95c4]) by TY1PR01MB1770.jpnprd01.prod.outlook.com
+ ([fe80::55fe:d020:cc51:95c4%7]) with mapi id 15.20.2305.017; Mon, 30 Sep 2019
+ 17:00:52 +0000
+From: Fabrizio Castro <fabrizio.castro@bp.renesas.com>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, Russell King
+ <rmk+kernel@armlinux.org.uk>
+Subject: RE: [PATCH] ARM: fix __get_user_check() in case uaccess_* calls are
+ not inlined
+Thread-Topic: [PATCH] ARM: fix __get_user_check() in case uaccess_* calls are
+ not inlined
+Thread-Index: AQHVd1S32ABkM001uEud5so3zUxMOqdEckYg
+Date: Mon, 30 Sep 2019 17:00:52 +0000
+Message-ID: <TY1PR01MB1770D6BDEFAD1A5003C2006DC0820@TY1PR01MB1770.jpnprd01.prod.outlook.com>
+References: <20190930055925.25842-1-yamada.masahiro@socionext.com>
+In-Reply-To: <20190930055925.25842-1-yamada.masahiro@socionext.com>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=fabrizio.castro@bp.renesas.com; 
+x-originating-ip: [193.141.220.21]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: f2c6cb68-7df5-4500-13ab-08d745c7c04b
+x-ms-office365-filtering-ht: Tenant
+x-ms-traffictypediagnostic: TY1PR01MB1754:
+x-ms-exchange-purlcount: 2
+x-microsoft-antispam-prvs: <TY1PR01MB175442DA45332F80D39F001FC0820@TY1PR01MB1754.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2657;
+x-forefront-prvs: 01762B0D64
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(4636009)(136003)(376002)(39860400002)(366004)(346002)(396003)(199004)(189003)(53546011)(6506007)(52536014)(76116006)(66476007)(33656002)(64756008)(14454004)(66446008)(66556008)(66946007)(7696005)(86362001)(102836004)(76176011)(478600001)(3846002)(26005)(66066001)(5660300002)(2906002)(25786009)(186003)(8676002)(6116002)(7416002)(81156014)(316002)(74316002)(81166006)(966005)(8936002)(305945005)(2501003)(44832011)(11346002)(486006)(7736002)(446003)(476003)(99286004)(110136005)(229853002)(54906003)(6436002)(6306002)(9686003)(55016002)(71190400001)(71200400001)(6246003)(4326008)(256004)(14444005);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:TY1PR01MB1754;
+ H:TY1PR01MB1770.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:0; MX:1; 
+received-spf: None (protection.outlook.com: bp.renesas.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: GhK2ukuGgEKquMuujWVlR0Eeig8Mr9TafaiqN0O1jx8IOK4qyLse1/oUOOY4VrpDEfYbXFCsEmpBWQ+CIk0Q+VRTVTmJNdoZz2OZ4ASGqqiSfLj/CcrMxhYGu9x1GRPmJ/1Bj/3l7fJpPhETIfXYrUrI7Q+Nqj6No20vS1oeEEDcLFhXD5I7uqHxvZ+KL/qRKcXkbdIVGy7MX27J5RFgHYSvWm92lDwt3S9Mp9mM9SVcgU+VFkZum5JpyfWrC6bZxAWI0THMaBWFPgjPAY+aRw0QRdk2YcHfmQXgqmYiWzUtYez806j39a2wsmTe0xDmPPANn3IyriJdL+qrmEGf109J2A+CwyNuR8WVksYLh05yKofVZCu8LppnlcTSkpxUXHn4KgJ95YxbejGVqGT8aMobojJyqEsZ2zo0JW1xw7hsHUISYhSjLWHplRywaqdPS8eoV84BKI1cD7/Y9OlPHA==
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-References: <20190924214630.12817-1-robh@kernel.org>
- <20190924214630.12817-6-robh@kernel.org>
- <20190925103752.GS9720@e119886-lin.cambridge.arm.com>
- <CAL_JsqJW2t3F6HdKqcHguYLLiYQ6XWOsQbY-TFsDXhrDjjszew@mail.gmail.com>
-In-Reply-To: <CAL_JsqJW2t3F6HdKqcHguYLLiYQ6XWOsQbY-TFsDXhrDjjszew@mail.gmail.com>
-From: Peter Maydell <peter.maydell@linaro.org>
-Date: Mon, 30 Sep 2019 17:56:51 +0100
-Message-ID: <CAFEAcA_Lu73n9z-fyWNLvnxXyk-JcUbONHE5x06Uh9Upk4MVbw@mail.gmail.com>
-Subject: Re: [PATCH 05/11] PCI: versatile: Use
- pci_parse_request_of_pci_ranges()
-To: Rob Herring <robh@kernel.org>
+X-OriginatorOrg: bp.renesas.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f2c6cb68-7df5-4500-13ab-08d745c7c04b
+X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Sep 2019 17:00:52.1529 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: DERwuL3LMHtJmHm4s9DdTc7sk1c7xgyL5riacHf/ViIEyhiJEmwEUqTORTxcLodtomcUanBrbjhReVKMa2LIH8wCK10aKaBEJEFwdmA2pko=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY1PR01MB1754
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_095703_947713_326339C7 
-X-CRM114-Status: GOOD (  18.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190930_100059_421326_91847E1D 
+X-CRM114-Status: GOOD (  23.38  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.141.100 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,65 +122,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bjorn Helgaas <bhelgaas@google.com>, Andrew Murray <andrew.murray@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, linux-pci@vger.kernel.org
+Cc: Arnd Bergmann <arnd@arndb.de>,
+ Vincent Whitchurch <vincent.whitchurch@axis.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ Russell King <linux@armlinux.org.uk>, Stefan Agner <stefan@agner.ch>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Olof Johansson <olof@lixom.net>, Thomas Gleixner <tglx@linutronix.de>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 26 Sep 2019 at 22:45, Rob Herring <robh@kernel.org> wrote:
->
-> On Wed, Sep 25, 2019 at 5:37 AM Andrew Murray <andrew.murray@arm.com> wrote:
-> >
-> > On Tue, Sep 24, 2019 at 04:46:24PM -0500, Rob Herring wrote:
-> > > Convert ARM Versatile host bridge to use the common
-> > > pci_parse_request_of_pci_ranges().
-> > >
-> > > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> > > Cc: Bjorn Helgaas <bhelgaas@google.com>
-> > > Signed-off-by: Rob Herring <robh@kernel.org>
-> > > ---
+> From: linux-kernel-owner@vger.kernel.org <linux-kernel-owner@vger.kernel.org> On Behalf Of Masahiro Yamada
+> Sent: 30 September 2019 06:59
+> Subject: [PATCH] ARM: fix __get_user_check() in case uaccess_* calls are not inlined
+> 
+> KernelCI reports that bcm2835_defconfig is no longer booting since
+> commit ac7c3e4ff401 ("compiler: enable CONFIG_OPTIMIZE_INLINING
+> forcibly"):
+> 
+>   https://lkml.org/lkml/2019/9/26/825
+> 
+> I also received a regression report from Nicolas Saenz Julienne:
+> 
+>   https://lkml.org/lkml/2019/9/27/263
+> 
+> This problem has cropped up on arch/arm/config/bcm2835_defconfig
+> because it enables CONFIG_CC_OPTIMIZE_FOR_SIZE. The compiler tends
+> to prefer not inlining functions with -Os. I was able to reproduce
+> it with other boards and defconfig files by manually enabling
+> CONFIG_CC_OPTIMIZE_FOR_SIZE.
+> 
+> The __get_user_check() specifically uses r0, r1, r2 registers.
+> So, uaccess_save_and_enable() and uaccess_restore() must be inlined
+> in order to avoid those registers being overwritten in the callees.
+> 
+> Prior to commit 9012d011660e ("compiler: allow all arches to enable
+> CONFIG_OPTIMIZE_INLINING"), the 'inline' marker was always enough for
+> inlining functions, except on x86.
+> 
+> Since that commit, all architectures can enable CONFIG_OPTIMIZE_INLINING.
+> So, __always_inline is now the only guaranteed way of forcible inlining.
+> 
+> I want to keep as much compiler's freedom as possible about the inlining
+> decision. So, I changed the function call order instead of adding
+> __always_inline around.
+> 
+> Call uaccess_save_and_enable() before assigning the __p ("r0"), and
+> uaccess_restore() after evacuating the __e ("r0").
+> 
+> Fixes: 9012d011660e ("compiler: allow all arches to enable CONFIG_OPTIMIZE_INLINING")
+> Reported-by: "kernelci.org bot" <bot@kernelci.org>
+> Reported-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
 
-> > >  static int versatile_pci_probe(struct platform_device *pdev)
-> > >  {
-> > >       struct device *dev = &pdev->dev;
-> > >       struct resource *res;
-> > > -     int ret, i, myslot = -1;
-> > > +     struct resource_entry *entry;
-> > > +     int ret, i, myslot = -1, mem = 0;
-> >
-> > I think 'mem' should be initialised to 1, at least that's what the original
-> > code did. However I'm not sure why it should start from 1.
->
-> The original code I moved from arch/arm had 32MB @ 0x0c000000 called
-> "PCI unused" which was requested with request_resource(), but never
-> provided to the PCI core. Otherwise, I kept the setup the same. No one
-> has complained in 4 years, though I'm not sure anyone would have
-> noticed if I just deleted PCI support...
+Tested-by: Fabrizio Castro <fabrizio.castro@bp.renesas.com>
 
-Yes, QEMU users will notice if you drop or break PCI support :-)
-I don't think anybody is using real hardware PCI though.
+> ---
+> 
+>  arch/arm/include/asm/uaccess.h | 8 +++++---
+>  1 file changed, 5 insertions(+), 3 deletions(-)
+> 
+> diff --git a/arch/arm/include/asm/uaccess.h b/arch/arm/include/asm/uaccess.h
+> index 303248e5b990..559f252d7e3c 100644
+> --- a/arch/arm/include/asm/uaccess.h
+> +++ b/arch/arm/include/asm/uaccess.h
+> @@ -191,11 +191,12 @@ extern int __get_user_64t_4(void *);
+>  #define __get_user_check(x, p)						\
+>  	({								\
+>  		unsigned long __limit = current_thread_info()->addr_limit - 1; \
+> +		unsigned int __ua_flags = uaccess_save_and_enable();	\
+>  		register typeof(*(p)) __user *__p asm("r0") = (p);	\
+>  		register __inttype(x) __r2 asm("r2");			\
+>  		register unsigned long __l asm("r1") = __limit;		\
+>  		register int __e asm("r0");				\
+> -		unsigned int __ua_flags = uaccess_save_and_enable();	\
+> +		unsigned int __err;					\
+>  		switch (sizeof(*(__p))) {				\
+>  		case 1:							\
+>  			if (sizeof((x)) >= 8)				\
+> @@ -223,9 +224,10 @@ extern int __get_user_64t_4(void *);
+>  			break;						\
+>  		default: __e = __get_user_bad(); break;			\
+>  		}							\
+> -		uaccess_restore(__ua_flags);				\
+> +		__err = __e;						\
+>  		x = (typeof(*(p))) __r2;				\
+> -		__e;							\
+> +		uaccess_restore(__ua_flags);				\
+> +		__err;							\
+>  	})
+> 
+>  #define get_user(x, p)							\
+> --
+> 2.17.1
 
-Anyway, the 'mem' indexes here matter because you're passing
-them to PCI_IMAP() and PCI_SMAP(), which are writing to
-hardware registers. If you write to PCI_IMAP0 when we
-were previously writing to PCI_IMAP1 then suddenly you're
-not configuring the behaviour for accesses to the PCI
-window that's at CPU physaddr 0x50000000, you're configuring
-the window that's at CPU physaddr 0x44000000, which is
-entirely different (and notably is smaller, being only
-0x0c000000 in size rather than 0x10000000).
-
-If this is supposed to be a no-behaviour-change refactor
-then it would probably be a good test to check that we're
-writing exactly the same values to the hardware registers
-on the device as we were before the change.
-
-thanks
--- PMM
 
 _______________________________________________
 linux-arm-kernel mailing list
