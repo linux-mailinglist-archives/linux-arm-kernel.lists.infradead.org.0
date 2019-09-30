@@ -2,133 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE68CC1AF8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 07:25:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5F2EC1AFD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 07:28:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=EGwLbAMU5mzGJsch65skr1YR2EI0k3QaQbrGEtJDfp0=; b=cH3
-	45JoHa5f13BAElm11cjubep353dUwVqhVh6dlryy3usiyiR1gGjHCHUCXDc7UjA1i04QNEWZJdKi3
-	T59YpqoYqOo1xwbFdkWF6OYUtI328XYmkJ1xAlrqrZZsBxCmr5Wjn5ej7KdPu4XTzL69z4anZe/a8
-	j8ob2lHTmRvV3tjX6+MbfjGIeFuOWtzh+XoPABPdby+g5hArcUyFt3WcAOjI/Ad794I/PyRj0nBGL
-	PXBKCmSs+7zDbT9O9zP5jN9j+QMDP2Y0SzkKcOg2IHfLwDX7NAjtmhHSpCTfdNOpOKQKUaNHy/Jrj
-	MBDGL3jDpO8SBZ5pkPbmVNeiq9dth4w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4Ee2X31oAaxDV/GZaJI1RBOvvM/v+cibshldhl7lQaQ=; b=b/Jdd4/whu25D2
+	ksLS2NEwOaHDQ4LSX9GqqgKNNEhAkVe0pWHDarTK/hzdfoTJ+jmt3JfvUCZl+PnIk5XDpdtbY4qFs
+	e1MgveNFeegdU9ZMSvOYcir1AJURJrno6CxnJV7XDgxVM2n2g44zT/ghp10QH0bJH4iAK0m71rwbQ
+	WgQPqmt7bt5+OZExok8H/2aVYBt26kpywvovT/K9u4I8H1Q8pRHeUKsUzT2k3cOpAO9RbiP2J+s5s
+	UdvP4OXhk0twpvuSPIdGrcKxQ4xbHVOrp0f7wYRIDd3HUQa2N1qIFQuZi/iayG9cltq7f87UljhCn
+	pZdUHnIZo75iOZ/pasBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEoBa-0007jN-Do; Mon, 30 Sep 2019 05:25:26 +0000
-Received: from mx3.ucr.edu ([138.23.248.64])
+	id 1iEoEx-0008DT-Qp; Mon, 30 Sep 2019 05:28:55 +0000
+Received: from avon.wwwdotorg.org ([104.237.132.123])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEoBO-0007j1-4U
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 05:25:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=ucr.edu; i=@ucr.edu; q=dns/txt; s=selector3;
- t=1569821114; x=1601357114;
- h=from:to:cc:subject:date:message-id;
- bh=qzFcBPOoP/Rv8ykLaC0eQHksn1NzctMIHEFRc4wakkk=;
- b=edHblqdBC8yBI5jhiNpMwG9bANuDr3Tcze9Im8Dq8f9Sw11oeispAyec
- SYFyWh/kA+QZCkUTAJkOLdfPnGekojhc/zDcpXmWfrPq1fS2NhN19wL45
- iuLQ+UeHkdJy2my5NX6728wEQgLioiX+We8dYc+vM2MCN71ybcSBAkzfs
- MLm022CZriLG/O5Ik9aveBmn6ywcDpEq1psB6GvBwPcTzbFrId3s1tNpf
- q+ZL6OUKzGYVPv3AEX6NlxNEy3V/hPu7RG9tXaOdUIxVY9K4pG5BOgThW
- SdvUlqWeIsTKPrgLaIFYJPc2EYP191/CBEd0eTJ0dMRG3U3tt/f15bLwV w==;
-IronPort-SDR: KvhHPnWeb1fBSfJvtMH4Nu4bzGBygbGvx8xbCBH9uiuc5Ln91hbxg3CfBDkc5Knf5EVF/QMeDE
- uoxSOF2DRnowj0ExzX2kCHBh+WYuh3yGTdAIXGuBDMpeXYoQ8vrAXwcTbJOaCP2ELJra0P4Hl+
- DIax3lEEXFzN8dwTr5YBwX3CqYkh2C+sVcrnDj8n18+osnDT17Pk7VfSS1HiCiojwBUq1W92Mt
- BFaCT0xGHFsddsFSEAPb0vNSVPfnfYbWFEeEYc0IdoshhuyiyQevyNq/dhX2XESzTXyLO3xIgA
- KVs=
-IronPort-PHdr: =?us-ascii?q?9a23=3AZKY3whcHib8kz5YFTIpvPvQVlGMj4u6mDksu8p?=
- =?us-ascii?q?Mizoh2WeGdxcS6Yx7h7PlgxGXEQZ/co6odzbaP6Oa8ACdRut6oizMrSNR0TR?=
- =?us-ascii?q?gLiMEbzUQLIfWuLgnFFsPsdDEwB89YVVVorDmROElRH9viNRWJ+iXhpTEdFQ?=
- =?us-ascii?q?/iOgVrO+/7BpDdj9it1+C15pbffxhEiCCybL9vIhi6twrcutQZjYZmJKs61w?=
- =?us-ascii?q?fErGZPd+lK321jOEidnwz75se+/Z5j9zpftvc8/MNeUqv0Yro1Q6VAADspL2?=
- =?us-ascii?q?466svrtQLeTQSU/XsTTn8WkhtTDAfb6hzxQ4r8vTH7tup53ymaINH2QLUpUj?=
- =?us-ascii?q?ms86tnVBnlgzocOjUn7G/YlNB/jKNDoBKguRN/xZLUYJqIP/Z6Z6/RYM8WSX?=
- =?us-ascii?q?ZEUstXUixBA5i8b5AOD+oHMuZTspfzqUITphuwBAmjGufvxSJVjXPy06A2z+?=
- =?us-ascii?q?EtHAfb1wIiAt0OqmzZotXrOqkPX+67z67GwC7fY/9Kwzrx9JLFfgw9rfyKQL?=
- =?us-ascii?q?l+cdDRyU4qFw7djFqQqI3kPzOI1uQKrmOW6OphVOOvi2E9qgF9viSjy8k3h4?=
- =?us-ascii?q?nUmo0V0ErI+jtkz4YoPNC1TlNwb928EJZIqS2WK497TtkhTmxooio21KAKtJ?=
- =?us-ascii?q?GhcCQXzJkqxAbTZ+GGfoWM+B7vSuicLDdiiH57eb+znRS//Eemx+bhTMe7yk?=
- =?us-ascii?q?xKoTBAktTUs3AN0AHc5dafR/tm+0ehxS6P1wfO6uFYOUw0lbTUK5omwrMok5?=
- =?us-ascii?q?ocq0XDHivvlEXuiK+aa1wo+ua15+njYbjqvJCcN4hzigHxNqQhhNazDvg/Mg?=
- =?us-ascii?q?gLR2Sb+OK826P//UDhXrlGkvk7nrPavZ3aP8gXuLO1DgBP3oo+7xuyDC+q0N?=
- =?us-ascii?q?ECknkGKFJFdgiHj4/sO1zWIPH5DPe/jE6tkDt32/zLMKbsAojRIXjZirvuY6?=
- =?us-ascii?q?ty61NExAop0d9f/45UCq0GIP/rXk/xtdrYDgI2MgCt2ennEtB92podWW2RGK?=
- =?us-ascii?q?+ZNr3dsVuT6+IrIumMf5MVuC3nJ/gk4f7ug2U5lkUAcqa3x5QYdWq0HvN8I0?=
- =?us-ascii?q?WWMjLCmNAERFYLrAojS6S+mU+CWD8LPy2aQqkmoDw3FdT1Xs/4WomxjenZj2?=
- =?us-ascii?q?+AFZpMazUDVQiB?=
-X-IronPort-Anti-Spam-Filtered: true
-X-IronPort-Anti-Spam-Result: =?us-ascii?q?A2FJCAB8kZFdh8bWVdFmgh6DXkwQjR6?=
- =?us-ascii?q?FcVEBAQaLJoEJhXqIMYF7AQgBAQEMAQEtAgEBhECDPSM2Bw4CAwkBAQUBAQE?=
- =?us-ascii?q?BAQUEAQECEAEBAQgNCQgphUCCOimDNQsWFVKBFQEFATUiOYJHAYF2FJ8EgQM?=
- =?us-ascii?q?8jCUziFwBCQ2BSAkBCIEihzWEWYEQgQeEYYdjgkQEgS8BAQGLPgGCMYcrlkk?=
- =?us-ascii?q?BBgKCEBSBeJMHJ4I3ggKJPTmLBgEtiiicawIKBwYPI4E2BYIFTSWBbAqBRFA?=
- =?us-ascii?q?QFIFaDgmOQiEzgQiQBgE?=
-X-IPAS-Result: =?us-ascii?q?A2FJCAB8kZFdh8bWVdFmgh6DXkwQjR6FcVEBAQaLJoEJh?=
- =?us-ascii?q?XqIMYF7AQgBAQEMAQEtAgEBhECDPSM2Bw4CAwkBAQUBAQEBAQUEAQECEAEBA?=
- =?us-ascii?q?QgNCQgphUCCOimDNQsWFVKBFQEFATUiOYJHAYF2FJ8EgQM8jCUziFwBCQ2BS?=
- =?us-ascii?q?AkBCIEihzWEWYEQgQeEYYdjgkQEgS8BAQGLPgGCMYcrlkkBBgKCEBSBeJMHJ?=
- =?us-ascii?q?4I3ggKJPTmLBgEtiiicawIKBwYPI4E2BYIFTSWBbAqBRFAQFIFaDgmOQiEzg?=
- =?us-ascii?q?QiQBgE?=
-X-IronPort-AV: E=Sophos;i="5.64,565,1559545200"; d="scan'208";a="83829713"
-Received: from mail-pl1-f198.google.com ([209.85.214.198])
- by smtp3.ucr.edu with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
- 29 Sep 2019 22:25:02 -0700
-Received: by mail-pl1-f198.google.com with SMTP id t12so2807921plo.12
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 29 Sep 2019 22:25:02 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=fPKABXGUyoM/LSYBewEpMZXiulfn1+x5kwR93rT2pjY=;
- b=rdTactXzRVSTkjS0A33PIydPrLnkXD7cK+FEe3mXmqHqVornky3drNSQypnZIERpCX
- 6NA2/Capftl59ExQOBmloFO4pEhEt81QYWru6f9MHuKNk69IbEQ4cpHXNTUxWR7dd/ZO
- 0f0XWjxO8l1xA79lxaIuvUkiDSZcXi6NCbi39hIacToK3WNPVlnaKUxN7+bbsbTp4Qig
- O0OcRYoOuUPuyudraT15pLpaMQOscXtitMRT/goBlnIwva/O4Tq9ues2MmPnpAWJ7o1S
- eBL60eLBaK3grMkuw9mxRlEToliXKo6bMrSEwIzEtBx802yqT7mRv4CjgAZgY2PU9SIa
- XZ9A==
-X-Gm-Message-State: APjAAAU/lf9f8yL7AbKrBAKGbtOhKk8O5b/RqFvjMiKErVSS+ZYQCc8S
- 9IVATQEZaLAhszqvpTnrIFIYiCI70bCeu5shzti3DlchNxhaYOxUMD3WJCNQqXA35dVpHq6EF7+
- zBqtCHwODtacshYWR4DaqaWEBEMUYuXKw6Kcs
-X-Received: by 2002:a63:5652:: with SMTP id g18mr21799329pgm.393.1569821101510; 
- Sun, 29 Sep 2019 22:25:01 -0700 (PDT)
-X-Google-Smtp-Source: APXvYqyPeVROo1TnM+H1kGzA7cRPqfO3NXggBNlKrrjPDdQwOcK4O2BhRFl7aOQNC2xwRWyuzG9QsA==
-X-Received: by 2002:a63:5652:: with SMTP id g18mr21799307pgm.393.1569821101057; 
- Sun, 29 Sep 2019 22:25:01 -0700 (PDT)
-Received: from Yizhuo.cs.ucr.edu (yizhuo.cs.ucr.edu. [169.235.26.74])
- by smtp.googlemail.com with ESMTPSA id a11sm11186636pfg.94.2019.09.29.22.24.59
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 29 Sep 2019 22:25:00 -0700 (PDT)
-From: Yizhuo <yzhai003@ucr.edu>
-To: 
-Subject: [PATCH] iio: adc: Variables could be uninitalized if regmap_read()
- fails
-Date: Sun, 29 Sep 2019 22:25:39 -0700
-Message-Id: <20190930052540.19168-1-yzhai003@ucr.edu>
-X-Mailer: git-send-email 2.17.1
+ id 1iEoEn-0008D3-Q7
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 05:28:48 +0000
+Received: from [192.168.63.111] (c-98-245-153-70.hsd1.co.comcast.net
+ [98.245.153.70])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by avon.wwwdotorg.org (Postfix) with ESMTPSA id 4CFEF1C13B3;
+ Sun, 29 Sep 2019 23:28:44 -0600 (MDT)
+X-Virus-Status: Clean
+X-Virus-Scanned: clamav-milter 0.100.3 at avon.wwwdotorg.org
+Subject: Re: [PATCH] arm64: tegra: only map accessible sysram
+To: Mian Yousaf Kaukab <ykaukab@suse.de>
+References: <20190929200851.14228-1-ykaukab@suse.de>
+From: Stephen Warren <swarren@wwwdotorg.org>
+Openpgp: preference=signencrypt
+Autocrypt: addr=swarren@wwwdotorg.org; prefer-encrypt=mutual; keydata=
+ mQINBE6KoecBEACosznehcVarBMNKGOiQ4MBbDAKQo73RDLP4hKEtaTVoQKg7tAM/tcQgbR6
+ p1NSxVq9tunbEskwHkHc/ES/xT+JBFMmG8mh2SmBocyuNjlN8lsW8r2CuLA8EuDr7Laz5yl0
+ Gf/G3Q+yYH+ytUnUuPmlxTueR7MNxIT0lz0fjil2HJclha/T3o8osagYWsXyN9Iaqy+6YTit
+ fG4hVCr0s+3SYylRp9m2/LaP0CPTQVCJKnv1Oq83PnnV/BA/9sBYxDaVNGfdz2FAWqSH4H7q
+ oyonAMzsF7f/cTYcFGTN3kL3UonG43DHpqCv+gHMKITBCxN+3HjX4wuNC7raoHVRRbx7/JES
+ ZrJ1ymKdMNxl8bquldTk6VyAJlTRjuq7jRY9LIEHcns91MYFgpz7RAhCPmXnsMgpuIvU/yTE
+ aApIAkHSo2Nyk9NeyIsji5voa9VAAoZKLGFTkhyPLEcjU9JmH/x224zGLtK28bL+P61PCk02
+ jG7RTF4665IDbmC8UNvEm9mBgFNlEgOPqbVF9oa5Gd9cnaOTucDLJqjCpM53SM5Jd3eRHk7A
+ zDHSBWsRsmKXU4hhxlu+90tb7I0TcjPfqeCrO46rNELdskcJAlLzx0v07+IhhGAM70oAbP49
+ VBA7hsVCimuITFSUUwAtzFJmFg/mjxNdftTr3yssaK41VmxsIQARAQABtCZTdGVwaGVuIFdh
+ cnJlbiA8c3dhcnJlbkB3d3dkb3Rvcmcub3JnPokCVQQTAQIAPwIbAwYLCQgHAwIGFQgCCQoL
+ BBYCAwECHgECF4AWIQTmd6/Z3M3mpZiMqw6bjacJJlQhnAUCXTfFLwUJEP5mSAAKCRCbjacJ
+ JlQhnNPUD/49TQbs4TbHVBQTzd9NUpOoFeWgMXbPy0yGOvddO5ee7ofw6+US8UxisPad0raz
+ KAI6h62dpnKWYhuGdFWSXqDQIcIvRXmzlKlKsXcGPIzLRi0OOqnZzZIFdbfB2UYxO8neHadn
+ 1aa4T7/2Gj9BIFWdgapfQiLhXiLKSPAiaZHTr9CnDierkFWpQz5lg7SBPvSrRSNKMzijKOwp
+ HVpifpMdNDCJVl6jrD8W+KJE5A0YSfwygFHr0WixSDgl47Ca3BA0gSqA4IXhX0adp+t7bE7C
+ Cju09agz3GhioePRq9vuEjQ+9IT8PX3fXqH1Ygh7G3p/oe5Mk/zp1PjQe5q+HvfZ9CyemC/B
+ VHXlga1U/xHGLW0ZIrWH/BDJ7R72vfyPqVhpM7ng/mXZ43vXTt1uKnFwrWr7+KV4JchEPX32
+ JAqPbNaVgXZ4HAW0MyV04S6rNIn57BZAga2mD7N4PNu6dF0yWg/b1IGrG6Hx1GQbzV2TFMzc
+ G7DZPCfPgKCtLn1/UVrdfoQ6+EtziHFaepCxM5Y1AgdNwav+FI6s5h3o716Fma/XIpaeZTOG
+ 4TAGlfzhTz9YePDmMIZwIrgwXriNJvZVSPNU8BOgLGw9fL/qEwW15g6Tw9g77xDegnUWeVlD
+ I45MZJ/lfuzlHb8mUX//V4Qbbm3e6NcxfFBLl8cXAsUfoLkCDQROiqHnARAAucZ2IUCQrGjg
+ gk686Z4nzAlAtMy74SoHQoXeEACZvGqfqrn5G896BYicdbtfQG1/DzU95nbcLILiYXGpnU+P
+ WHqVRL6Os53OEv6cY21/PNgqLyqDqkj0pxPVSGyxxlZ8cA0BqdnG3amDhe6r6+MBpYkf19R8
+ e9hCt5EqabxhEKf7sltEMx1Aul1/U3SmsFgD6IWqpk16mkEjKerjoTQk5snUwDdleGyaUAVN
+ waTTbQWfppx5bv2Je+MdLYCGAasRFXWM90cp9RU0wjQinBojvKcdnu1QbCgIgvbUTGWI7h+R
+ 2ktEoCNmrGwKl9TnbogtQU7zPT96KqbNFbPM0e58bS6HcLO/VY6HNAG/+QUhDCKKMMNBKP1W
+ MKpzLOgb5OXbb+5AlUTFMldia0w9HAsNBPrq41uQ8JK+IUQ04vF6+OVnnB8VzB2TpZROKvD8
+ Wivq8KF9G6FyEPot2y+jXpo93evhC2HuQ6bMM5p9GUaw3oKu5cvd9N2xL3tPXCFWeD0tq5Me
+ eGxjfUfU4F4VO150R8gkihRPL0l18hvS7tmh6vqHdW1KEzkH6CzgHiTq26PnK2QKt91uvbeq
+ w9ENVh7r83ds6TkHZbK1DhpAyrpNHQcac5X/LrrGg5ROX43eEUF63ilY0inM6zHfboS3tnHb
+ FTRZYx2ZV5xUXIjbFIHugCsAEQEAAYkCPAQYAQIAJgIbDBYhBOZ3r9nczealmIyrDpuNpwkm
+ VCGcBQJdN8U8BQkQ/mZVAAoJEJuNpwkmVCGcD6UP/38NsUjyVRDJvRk4EsdbqJf4+z76ESVg
+ 6aMvhPh/rBoUw2IWTaU+ib/Grw4vkHazBYLvDmj+P4bCtLoxuQv+z3fbNDXn4BUPQd+FMEop
+ ASdBQ9UszZP0BxeljSzwBixZrz1g1Mml1sVzl6n83HpHeti7SLEm2slP6nX2qEhq8xFocxi7
+ EYs7jGzgJQ5naSrr4oo0gCLrcWNgEtg88Z3orJdKPXNZnAATqoss+X8watspKoROPTVns24Z
+ hsk1WLSigipv6IEaw9BHHoWGJVduj16F4En9C6LhBUK6vZYXPHOWGpMOScDR3lvL61C+Dg1S
+ abS7rhgh4ZDlTjAsvrSRyHUKvUxIz14GLV+yrcVEJ3tBCcI7cxon2h0TkFocqkMXN31zGsED
+ 9K2gOSJToKKj0esduVL2A1B6ZlP5ZNID+3t0H3s16yoZsO11bkbTB+WI0Wa9L2oOlR7eFJrp
+ /0+ALP/xDNJpdwGGcjvFGhdnFEqjeac2KEL/mGc3EyxQ/mg12FE9XJOzzCUspcEddSmPo6Cg
+ U7TV7Tk2JqRRHcy5vaFcJRwndS47X6fFjzzH4rzotmcwJr7QDpFN5MkDPppoXYWv+HvGdwuT
+ csbf84NAWNtLVxZiwB6D74g0l98nN6d373WG8anVZwjxMZzoGNic7mYoG5W6Y4peLjBrY4mj 3LeU
+Message-ID: <5d2e47ec-8304-d648-9c4a-80c7c02050a9@wwwdotorg.org>
+Date: Sun, 29 Sep 2019 23:28:43 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <20190929200851.14228-1-ykaukab@suse.de>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190929_222514_208622_892ECC31 
-X-CRM114-Status: GOOD (  16.53  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190929_222847_298742_F5DE3D4F 
+X-CRM114-Status: GOOD (  12.49  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [138.23.248.64 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [138.23.248.64 listed in wl.mailspike.net]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -140,139 +107,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: csong@cs.ucr.edu, Lars-Peter Clausen <lars@metafoo.de>,
- Scott Branden <sbranden@broadcom.com>, linux-iio@vger.kernel.org,
- Ray Jui <rjui@broadcom.com>, zhiyunq@cs.ucr.edu, linux-kernel@vger.kernel.org,
- Stephen Boyd <swboyd@chromium.org>, Yizhuo <yzhai003@ucr.edu>,
- bcm-kernel-feedback-list@broadcom.com, Allison Randal <allison@lohutok.net>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
- Thomas Gleixner <tglx@linutronix.de>, Jonathan Cameron <jic23@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: linux-tegra@vger.kernel.org, treding@nvidia.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ jonathanh@nvidia.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Several functions in this file are trying to use regmap_read() to
-initialize the specific variable, however, if regmap_read() fails,
-the variable could be uninitialized but used directly, which is
-potentially unsafe. The return value of regmap_read() should be
-checked and handled.
+On 9/29/19 2:08 PM, Mian Yousaf Kaukab wrote:
+> Most of the SysRAM is secure and only accessible by TF-A.
+> Don't map this inaccessible memory in kernel. Only map pages
+> used by bpmp driver.
 
-Signed-off-by: Yizhuo <yzhai003@ucr.edu>
----
- drivers/iio/adc/bcm_iproc_adc.c | 45 ++++++++++++++++++++++++++++-----
- 1 file changed, 39 insertions(+), 6 deletions(-)
-
-diff --git a/drivers/iio/adc/bcm_iproc_adc.c b/drivers/iio/adc/bcm_iproc_adc.c
-index 646ebdc0a8b4..6df19ceb5ff2 100644
---- a/drivers/iio/adc/bcm_iproc_adc.c
-+++ b/drivers/iio/adc/bcm_iproc_adc.c
-@@ -137,6 +137,7 @@ static irqreturn_t iproc_adc_interrupt_thread(int irq, void *data)
- 	u32 channel_intr_status;
- 	u32 intr_status;
- 	u32 intr_mask;
-+	int ret;
- 	struct iio_dev *indio_dev = data;
- 	struct iproc_adc_priv *adc_priv = iio_priv(indio_dev);
- 
-@@ -145,8 +146,19 @@ static irqreturn_t iproc_adc_interrupt_thread(int irq, void *data)
- 	 * Make sure this interrupt is intended for us.
- 	 * Handle only ADC channel specific interrupts.
- 	 */
--	regmap_read(adc_priv->regmap, IPROC_INTERRUPT_STATUS, &intr_status);
--	regmap_read(adc_priv->regmap, IPROC_INTERRUPT_MASK, &intr_mask);
-+	ret = regmap_read(adc_priv->regmap,
-+					IPROC_INTERRUPT_STATUS, &intr_status);
-+	if (ret) {
-+		dev_err(&indio_dev->dev, "Fail to read IPROC_INTERRUPT_STATUS.\n");
-+		return ret;
-+	}
-+
-+	ret = regmap_read(adc_priv->regmap, IPROC_INTERRUPT_MASK, &intr_mask);
-+	if (ret) {
-+		dev_err(&indio_dev->dev, "Fail to read IPROC_INTERRUPT_MASK.\n");
-+		return ret;
-+	}
-+
- 	intr_status = intr_status & intr_mask;
- 	channel_intr_status = (intr_status & IPROC_ADC_INTR_MASK) >>
- 				IPROC_ADC_INTR;
-@@ -162,6 +174,7 @@ static irqreturn_t iproc_adc_interrupt_handler(int irq, void *data)
- 	struct iproc_adc_priv *adc_priv;
- 	struct iio_dev *indio_dev = data;
- 	unsigned int valid_entries;
-+	int ret;
- 	u32 intr_status;
- 	u32 intr_channels;
- 	u32 channel_status;
-@@ -169,23 +182,37 @@ static irqreturn_t iproc_adc_interrupt_handler(int irq, void *data)
- 
- 	adc_priv = iio_priv(indio_dev);
- 
--	regmap_read(adc_priv->regmap, IPROC_INTERRUPT_STATUS, &intr_status);
-+	ret = regmap_read(adc_priv->regmap,
-+					IPROC_INTERRUPT_STATUS, &intr_status);
-+	if (ret) {
-+		dev_err(&indio_dev->dev, "Fail to read IPROC_INTERRUPT_STATUS.\n");
-+		return ret;
-+	}
-+
- 	dev_dbg(&indio_dev->dev, "iproc_adc_interrupt_handler(),INTRPT_STS:%x\n",
- 			intr_status);
- 
- 	intr_channels = (intr_status & IPROC_ADC_INTR_MASK) >> IPROC_ADC_INTR;
- 	if (intr_channels) {
--		regmap_read(adc_priv->regmap,
-+		ret = regmap_read(adc_priv->regmap,
- 			    IPROC_ADC_CHANNEL_INTERRUPT_STATUS +
- 			    IPROC_ADC_CHANNEL_OFFSET * adc_priv->chan_id,
- 			    &ch_intr_status);
-+		if (ret) {
-+			dev_err(&indio_dev->dev, "Fail to read the register.\n");
-+			return ret;
-+		}
- 
- 		if (ch_intr_status & IPROC_ADC_CHANNEL_WTRMRK_INTR_MASK) {
--			regmap_read(adc_priv->regmap,
-+			ret = regmap_read(adc_priv->regmap,
- 					IPROC_ADC_CHANNEL_STATUS +
- 					IPROC_ADC_CHANNEL_OFFSET *
- 					adc_priv->chan_id,
- 					&channel_status);
-+			if (ret) {
-+				dev_err(&indio_dev->dev, "Fail to read the register.\n");
-+				return ret;
-+			}
- 
- 			valid_entries = ((channel_status &
- 				IPROC_ADC_CHANNEL_VALID_ENTERIES_MASK) >>
-@@ -230,6 +257,7 @@ static int iproc_adc_do_read(struct iio_dev *indio_dev,
- 	u32 mask;
- 	u32 val_check;
- 	int failed_cnt = 0;
-+	int ret;
- 	struct iproc_adc_priv *adc_priv = iio_priv(indio_dev);
- 
- 	mutex_lock(&adc_priv->mutex);
-@@ -284,7 +312,12 @@ static int iproc_adc_do_read(struct iio_dev *indio_dev,
- 	 * Testing has shown that this may loop a few time, but we have never
- 	 * hit the full count.
- 	 */
--	regmap_read(adc_priv->regmap, IPROC_INTERRUPT_MASK, &val_check);
-+	ret = regmap_read(adc_priv->regmap, IPROC_INTERRUPT_MASK, &val_check);
-+	if (ret) {
-+		dev_err(&indio_dev->dev, "Fail to read IPROC_INTERRUPT_MASK.\n");
-+		return ret;
-+	}
-+
- 	while (val_check != val) {
- 		failed_cnt++;
- 
--- 
-2.17.1
-
+I don't believe this change is correct. The actual patch doesn't
+implement mapping a subset of the RAM (a software issue), but rather it
+changes the DT representation of the SYSRAM hardware. The SYSRAM
+hardware always does start at 0x30000000, even if a subset of the
+address range is dedicated to a specific purpose. If the kernel must map
+only part of the RAM, then some additional property should indicate
+this. Also, I believe it's incorrect to hard-code into the kernel's DT
+the range of addresses used by the secure monitor/OS, since this can
+vary depending on what the user actually chooses to install as the
+secure monitor/OS. Any indication of such regions should be filled in at
+runtime by some boot firmware or the secure monitor/OS itself, or
+retrieved using some runtime API rather than DT.
 
 _______________________________________________
 linux-arm-kernel mailing list
