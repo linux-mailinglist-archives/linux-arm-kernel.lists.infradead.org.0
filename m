@@ -2,88 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E939DC23FE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 17:10:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE488C240A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 17:14:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gU/HZdacvMOJjmg2lyTHL0mRrqRUAtZEQ3ygCup3u1o=; b=AWHNbUEmNkAEHs
-	PREx4HqYdM7pEJJcKDMBiRtDCiZgwVnis4igtKxw6sSBYX2iS4TfRA6d3MasXFVtVfo+7bP+aYaJq
-	ohp1vC+Sb3eU9XrNn0VZayZ1CDPGJAkcTQAuTBVrS2dvzYJSq1V66sacv9oufJE8sjNH9cr31azYn
-	kMgbSqQsOi7+lYMq3iJLZbPtqXRvP5ExPEf/YsRSsZSykGPQwV4slpcVrAqojxmGcTtSHHhGgNiN3
-	0atsNyogMCW6BxKrA3bUMb+4IKM8PFA++4HNcJY5rejdtm8fuXL1w9iqkCPXedrIiGrsVe37DumGl
-	p+U+KQT7JjOw5UCWf3dg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4+ak9gSnIazisBqbhV3tgEt0DH7JQSUISaIXqCyNWuE=; b=JwXZ4PdHY7poj9
+	pYDMSGf0YUTdfhjx+3lS7cpqpGFVH4m9XRA5p/SWT7hpLUCojwVdtEWVCziemTZloboozpChnq/4Z
+	yeHJvXXeFn8kFJzEb5i9Ya3jw0mEeLvpE6QeRLddTGqXuQFecfPbCa+h0nFkS9JacuUr50fr1NK3A
+	hdygICtrQSsuK941zgEgIFOdZUQSc73iRMMy+uBu+ntnldrCaWIg3TgU1ffXsxUp/WqD3zTfOmsId
+	M8Fno9c+22NRxd15kDLbEhoZcwewG/P697wEcaLA6eks2xDNQYObeWE2Vwokxeje6HWSPWw3F8nih
+	WGRSSHqJuBl2yXLrbwvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iExJm-0006hh-8d; Mon, 30 Sep 2019 15:10:30 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iExJY-0006gu-VM
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 15:10:18 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x8UFA4sE077672;
- Mon, 30 Sep 2019 10:10:04 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1569856204;
- bh=IobouB3hSryccexn6r91cxD5nyqRsWZvzcNZNBzoyec=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=nKoKcVPcm2Q8kdM6uUzxj+PkdqX7uI8MEFWjPgOAYTdwzRfKgQ47+b0i8HIxz0NUW
- 7ZSz3XiDsUBI8n/CnilkQtRSgTiul+h5vgzHe/osdaNHDqSDc59jmOD1ho9oWSsB22
- toHoH4x7KqR5sNtW8nRK9Gsr2VWU9Ov6mEaFZATo=
-Received: from DFLE101.ent.ti.com (dfle101.ent.ti.com [10.64.6.22])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x8UFA4hJ033545
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 30 Sep 2019 10:10:04 -0500
-Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE101.ent.ti.com
- (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 30
- Sep 2019 10:10:03 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE110.ent.ti.com
- (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Mon, 30 Sep 2019 10:10:04 -0500
-Received: from [172.24.190.212] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x8UF9xbO027057;
- Mon, 30 Sep 2019 10:10:00 -0500
-Subject: Re: [PATCH v2 linux-next 2/4] arm: configs: davinci_all_defconfig:
- Change CONFIG_REMOTEPROC from m to y
-To: Keerthy <j-keerthy@ti.com>, <arnd@arndb.de>, <olof@lixom.net>,
- <t-kristo@ti.com>, <catalin.marinas@arm.com>, <will@kernel.org>,
- <tony@atomide.com>
-References: <20190920075946.13282-1-j-keerthy@ti.com>
- <20190920075946.13282-3-j-keerthy@ti.com>
-From: Sekhar Nori <nsekhar@ti.com>
-Message-ID: <e48c767f-6153-a8d5-b88d-f74927921ae2@ti.com>
-Date: Mon, 30 Sep 2019 20:39:58 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1iExN9-0007A1-NT; Mon, 30 Sep 2019 15:13:59 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iExN1-00079R-5O
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 15:13:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C996E1000;
+ Mon, 30 Sep 2019 08:13:49 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 40F823F706;
+ Mon, 30 Sep 2019 08:13:49 -0700 (PDT)
+Date: Mon, 30 Sep 2019 16:13:47 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH 02/11] PCI: altera: Use pci_parse_request_of_pci_ranges()
+Message-ID: <20190930151346.GD42880@e119886-lin.cambridge.arm.com>
+References: <20190924214630.12817-1-robh@kernel.org>
+ <20190924214630.12817-3-robh@kernel.org>
+ <20190925102423.GR9720@e119886-lin.cambridge.arm.com>
+ <CAL_JsqKN709cOLtDLdKXmDzeNLYtGekMT2BiZic4x45UopenwA@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190920075946.13282-3-j-keerthy@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <CAL_JsqKN709cOLtDLdKXmDzeNLYtGekMT2BiZic4x45UopenwA@mail.gmail.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_081017_118441_0772958B 
-X-CRM114-Status: GOOD (  14.00  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190930_081351_249454_31B7F205 
+X-CRM114-Status: GOOD (  22.33  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,42 +63,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, bjorn.andersson@linaro.org,
- linux-omap@vger.kernel.org, hch@lst.de, linux-arm-kernel@lists.infradead.org
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
+ rfi@lists.rocketboards.org, Bjorn Helgaas <bhelgaas@google.com>,
+ Ley Foon Tan <lftan@altera.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 20/09/19 1:29 PM, Keerthy wrote:
-> Commit 6334150e9a36 ("remoteproc: don't allow modular build")
-> changes CONFIG_REMOTEPROC to a boolean from a tristate config
-> option which inhibits all defconfigs marking CONFIG_REMOTEPROC as
-> a module in compiling the remoteproc and dependent config options.
+On Wed, Sep 25, 2019 at 07:33:35AM -0500, Rob Herring wrote:
+> On Wed, Sep 25, 2019 at 5:24 AM Andrew Murray <andrew.murray@arm.com> wrote:
+> >
+> > On Tue, Sep 24, 2019 at 04:46:21PM -0500, Rob Herring wrote:
+> > > Convert altera host bridge to use the common
+> > > pci_parse_request_of_pci_ranges().
+> > >
+> > > Cc: Ley Foon Tan <lftan@altera.com>
+> > > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> > > Cc: Bjorn Helgaas <bhelgaas@google.com>
+> > > Cc: rfi@lists.rocketboards.org
+> > > Signed-off-by: Rob Herring <robh@kernel.org>
+> > > ---
 > 
-> So fix the davinci_all_defconfig to have CONFIG_REMOTEPROC built in.
+> > > @@ -833,9 +800,8 @@ static int altera_pcie_probe(struct platform_device *pdev)
+> > >               return ret;
+> > >       }
+> > >
+> > > -     INIT_LIST_HEAD(&pcie->resources);
+> > > -
+> > > -     ret = altera_pcie_parse_request_of_pci_ranges(pcie);
+> > > +     ret = pci_parse_request_of_pci_ranges(dev, &pcie->resources,
+> >
+> > Does it matter that we now map any given IO ranges whereas we didn't
+> > previously?
+> >
+> > As far as I can tell there are no users that pass an IO range, if they
+> > did then with the existing code the probe would fail and they'd get
+> > a "I/O range found for %pOF. Please provide an io_base pointer...".
+> > However with the new code if any IO range was given (which would
+> > probably represent a misconfiguration), then we'd proceed to map the
+> > IO range. When that IO is used, who knows what would happen.
 > 
-> Fixes: 6334150e9a36 ("remoteproc: don't allow modular build")
-> Signed-off-by: Keerthy <j-keerthy@ti.com>
-> ---
->  arch/arm/configs/davinci_all_defconfig | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm/configs/davinci_all_defconfig b/arch/arm/configs/davinci_all_defconfig
-> index b34970ce6b31..01e3c0f4be92 100644
-> --- a/arch/arm/configs/davinci_all_defconfig
-> +++ b/arch/arm/configs/davinci_all_defconfig
-> @@ -228,7 +228,7 @@ CONFIG_RTC_DRV_OMAP=m
->  CONFIG_DMADEVICES=y
->  CONFIG_TI_EDMA=y
->  CONFIG_COMMON_CLK_PWM=m
-> -CONFIG_REMOTEPROC=m
-> +CONFIG_REMOTEPROC=y
+> Yeah, I'm assuming that the DT doesn't have an IO range if IO is not
+> supported. IMO, it is not the kernel's job to validate the DT.
 
-Acked-by: Sekhar Nori <nsekhar@ti.com>
+Sure. Is it worth mentioning in the commit message this subtle change
+in behaviour?
+
+> 
+> > I wonder if there is a better way for a host driver to indicate that
+> > it doesn't support IO?
+> 
+> We can probably test for this in the schema.
+> 
+> ranges:
+>   items:
+>     minItems: 7
+>     items:
+>       - not: { const: 0x01000000 }
+> 
+> Or "- enum: [ 0x42000000, 0x02000000 ]"
+> 
+> Of course, in theory, the bus, dev, fn fields could be non-zero and we
+> could use minium/maximum to handle those, but in practice I think they
+> are rarely used for FDT.
+
+Many controllers also appear to set the top bit (relocatable), e.g.
+0x82000000...
+
+At present there are no PCI bindings that use the YAML schema, if I've
+understood correctly.
 
 Thanks,
-Sekhar
+
+Andrew Murray
+
+> 
+> Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
