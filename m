@@ -2,82 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED617C2229
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 15:36:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5888C2269
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 15:49:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7ivz1eSXVMbVQDEq3ddauDiqsPcPFkzjQ9L6q5iXiP8=; b=CAenTL3Te0RG1d
-	OvnSsA0Xfx2sfOwF75UMhUdJcKBH99IxEYWu9M7yZUU05keHt+hhrJiNCZ+VEY1UxhzFvcFrMfix7
-	JSrNLj7P5qVwYYcIRErfhUic4T55yQIZkdw9hvKKsWsAD1afyiYIToLVaXr8cfGtDmZT+8GR5kzLX
-	esKEqSkMhxWEy8FOFu4YJ30zYXsNPHCWx3O6c6hwBKAKkHKn7iB/BmNdFcygdjcUxMkACdarI5asA
-	/VeDq99n7ZNaDVYjwaShtQwLtLV2JKb+/pjcz6wK0QRJh6e6RYz3Qm8UkPWkSvB6DcfzmlUxNY8If
-	KxvdmGTwMEYukiLWi/JA==;
+	List-Owner; bh=2OVA5CX5Cpn1bFnJSEkuZR0xoLwIZLd7rM3iT56qEdg=; b=ZU9dI6hxTD3IiO
+	a+HU2S/lcpJZbyZPDqtjOaml8HovBcC95y8EZub0fOEmU1MoM3aVME2OLl6V65nYTM38krDGXXprl
+	0zjzRp6XoMOwGcM6NxjKuZjtDGZDS74jD6ecg+i9yPtucdeiGp2j94QlRXWvPvkdjoKd+Eir1k4eU
+	2bIR3TbHWO5bph8LbMgOBhq/BUdmyBMWXjZEUplo6gC6TcesmWUHQEG0oY1G+3q73kMfCEBSIZKwD
+	eKpkjZAJpuaLTm/pPC1JiquWf7xbZWtkSQE5DWwLdkY0rcRxgkoAcId+RCl3bKQ+hGJqyFaYplZFh
+	7qfLY+ZdB+50sckGErrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEvqU-0001rW-Fw; Mon, 30 Sep 2019 13:36:10 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
+	id 1iEw39-0005I9-DA; Mon, 30 Sep 2019 13:49:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEvqB-0001qC-3P; Mon, 30 Sep 2019 13:35:53 +0000
-Received: by mail-oi1-f195.google.com with SMTP id e18so11129389oii.0;
- Mon, 30 Sep 2019 06:35:50 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=a9jR1BNKDDZGZvIL5lhodG0XnQTe5HRm6UzcjXJdIrE=;
- b=Y7Sm+8AKaq4HY6QlPDY/50SetSya214r94T6pWszT+6tKE0/MtKQDYb4oXPK8WNgkG
- JGln8561AXwBVlrJWCqPf6W5n3RcVQf1wj39ZqoGEdI2kCc8hZsIWFfL1D5t1WPcrhaQ
- +Pu9vr1GHlUYn3R/1lFktxLHjM9Jl5APLXB/ZqqrJJ5XQeOB7kA77ZAnef9oI3jB0cpQ
- 9Kejuhd+1J1UD+C3DOOSK7f6qO/zpF0z3Kl9xlcyu71/0wGVy7tID0k5VmPTkF0BXc+Y
- oO+WgkN5YIVBQv7taTzHts263DiWZ2e+ynqsyGftPaJPQ51JQz2WRFZSGrQcwJEYBwH/
- xkJA==
-X-Gm-Message-State: APjAAAXwf9CHP03ccg1HZqvwW+r+/6m1Z8wh+3R9mbqdwGTm3TMkVScK
- 8DgKIioi8cKKzX/EVMvvTA==
-X-Google-Smtp-Source: APXvYqz7v38Yb3gdAuwcC3Pdow5jowdh8vbv74h20x1h3izlQLTP8SfiZeKSqNctH5OMmF/elaB/Rg==
-X-Received: by 2002:aca:cf13:: with SMTP id f19mr17629022oig.154.1569850549773; 
- Mon, 30 Sep 2019 06:35:49 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id 11sm3864751otg.62.2019.09.30.06.35.48
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Sep 2019 06:35:49 -0700 (PDT)
-Date: Mon, 30 Sep 2019 08:35:48 -0500
-From: Rob Herring <robh@kernel.org>
-To: Roger Lu <roger.lu@mediatek.com>
-Subject: Re: [PATCH v5 1/3] dt-bindings: soc: add mtk svs dt-bindings
-Message-ID: <20190930133548.GA24574@bogus>
-References: <20190906100514.30803-1-roger.lu@mediatek.com>
- <20190906100514.30803-2-roger.lu@mediatek.com>
+ id 1iEw2x-0005HQ-0F
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 13:49:04 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 551602086A;
+ Mon, 30 Sep 2019 13:49:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1569851342;
+ bh=FCh5P+PLkf8Fy6u6DVHDWSyXy5Kb48cMb9OwoT818PQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=nw3vrRnoJ/wyKkOghJGAhrfUjB4HUOGPzCULFD4Kr3iQLmw7IAL1yY1IbWzMPK4da
+ eWbi6TE0ysvXKKMXYG8TK4x25jKiw/UAo+8HKTHiQZ8fv8/6pjbdMTDnYfvnQhdogc
+ 3egyNZeMKQN7sD0n38+1a4P88VMa2muNcfOChcBU=
+Date: Mon, 30 Sep 2019 14:48:57 +0100
+From: Will Deacon <will@kernel.org>
+To: Keerthy <j-keerthy@ti.com>
+Subject: Re: [PATCH v2 linux-next 4/4] arm64: configs: defconfig: Change
+ CONFIG_REMOTEPROC from m to y
+Message-ID: <20190930134856.umdoeq7k6ukmajij@willie-the-truck>
+References: <20190920075946.13282-1-j-keerthy@ti.com>
+ <20190920075946.13282-5-j-keerthy@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190906100514.30803-2-roger.lu@mediatek.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190920075946.13282-5-j-keerthy@ti.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_063551_142639_5A70A7AA 
-X-CRM114-Status: GOOD (  17.27  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190930_064903_065736_5D6C0454 
+X-CRM114-Status: GOOD (  14.58  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,125 +78,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Nicolas Boichat <drinkcat@google.com>,
- Angus Lin <Angus.Lin@mediatek.com>, Kevin Hilman <khilman@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, HenryC Chen <HenryC.Chen@mediatek.com>,
- yt.lee@mediatek.com, Fan Chen <fan.chen@mediatek.com>,
- devicetree@vger.kernel.org, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>, Nishanth Menon <nm@ti.com>,
+Cc: linux-omap@vger.kernel.org, arnd@arndb.de, tony@atomide.com,
+ catalin.marinas@arm.com, nsekhar@ti.com, linux-kernel@vger.kernel.org,
+ bjorn.andersson@linaro.org, t-kristo@ti.com, olof@lixom.net, hch@lst.de,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 06, 2019 at 06:05:13PM +0800, Roger Lu wrote:
-> Document the binding for enabling mtk svs on MediaTek SoC.
+On Fri, Sep 20, 2019 at 01:29:46PM +0530, Keerthy wrote:
+> Commit 6334150e9a36 ("remoteproc: don't allow modular build")
+> changes CONFIG_REMOTEPROC to a boolean from a tristate config
+> option which inhibits all defconfigs marking CONFIG_REMOTEPROC as
+> a module in compiling the remoteproc and dependent config options.
 > 
-> Signed-off-by: Roger Lu <roger.lu@mediatek.com>
+> So fix the defconfig to have CONFIG_REMOTEPROC built in.
+> 
+> Fixes: 6334150e9a36 ("remoteproc: don't allow modular build")
+> Signed-off-by: Keerthy <j-keerthy@ti.com>
 > ---
->  .../devicetree/bindings/power/mtk-svs.txt     | 88 +++++++++++++++++++
->  1 file changed, 88 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/power/mtk-svs.txt
+>  arch/arm64/configs/defconfig | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/power/mtk-svs.txt b/Documentation/devicetree/bindings/power/mtk-svs.txt
-> new file mode 100644
-> index 000000000000..6a71992ef162
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/power/mtk-svs.txt
-> @@ -0,0 +1,88 @@
-> +* Mediatek Smart Voltage Scaling (MTK SVS)
-> +
-> +This describes the device tree binding for the MTK SVS controller (bank)
-> +which helps provide the optimized CPU/GPU/CCI voltages. This device also
-> +needs thermal data to calculate thermal slope for accurately compensate
-> +the voltages when temperature change.
-> +
-> +Required properties:
-> +- compatible:
-> +  - "mediatek,mt8183-svs" : For MT8183 family of SoCs
-> +- reg: Address range of the MTK SVS controller.
-> +- interrupts: IRQ for the MTK SVS controller.
-> +- clocks, clock-names: Clocks needed for the svs controller. required
-> +                       clocks are:
-> +		       "main_clk": Main clock needed for register access
+> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> index 8e05c39eab08..c9a867ac32d4 100644
+> --- a/arch/arm64/configs/defconfig
+> +++ b/arch/arm64/configs/defconfig
+> @@ -723,7 +723,7 @@ CONFIG_TEGRA_IOMMU_SMMU=y
+>  CONFIG_ARM_SMMU=y
+>  CONFIG_ARM_SMMU_V3=y
+>  CONFIG_QCOM_IOMMU=y
+> -CONFIG_REMOTEPROC=m
+> +CONFIG_REMOTEPROC=y
+>  CONFIG_QCOM_Q6V5_MSS=m
+>  CONFIG_QCOM_Q6V5_PAS=m
+>  CONFIG_QCOM_SYSMON=m
 
-'_clk' is redundant.
+Acked-by: Will Deacon <will@kernel.org>
 
-> +- nvmem-cells: Phandle to the calibration data provided by a nvmem device.
-> +- nvmem-cell-names: Should be "svs-calibration-data" and "calibration-data"
-> +
-> +Subnodes:
-> +- svs_cpu_little: SVS bank device node of little CPU
-> +  compatible: "mediatek,mt8183-svs-cpu-little"
-> +  operating-points-v2: OPP table hooked by SVS little CPU bank.
-> +		       SVS will optimze this OPP table voltage part.
-> +  vcpu-little-supply: PMIC buck of little CPU
-> +- svs_cpu_big: SVS bank device node of big CPU
-> +  compatible: "mediatek,mt8183-svs-cpu-big"
-> +  operating-points-v2: OPP table hooked by SVS big CPU bank.
-> +		       SVS will optimze this OPP table voltage part.
-> +  vcpu-big-supply: PMIC buck of big CPU
-> +- svs_cci: SVS bank device node of CCI
-> +  compatible: "mediatek,mt8183-svs-cci"
-> +  operating-points-v2: OPP table hooked by SVS CCI bank.
-> +		       SVS will optimze this OPP table voltage part.
-> +  vcci-supply: PMIC buck of CCI
-> +- svs_gpu: SVS bank device node of GPU
-> +  compatible: "mediatek,mt8183-svs-gpu"
-> +  operating-points-v2: OPP table hooked by SVS GPU bank.
-> +		       SVS will optimze this OPP table voltage part.
-> +  vgpu-spply: PMIC buck of GPU
-> +
-> +Example:
-> +
-> +	svs: svs@1100b000 {
-> +		compatible = "mediatek,mt8183-svs";
-> +		reg = <0 0x1100b000 0 0x1000>;
-> +		interrupts = <GIC_SPI 127 IRQ_TYPE_LEVEL_LOW 0>;
+This fixes the following annoying warning from "make defconfig" on arm64:
 
-GIC interrupts are 3 cells, you have 4.
+  arch/arm64/configs/defconfig:726:warning: symbol value 'm' invalid for REMOTEPROC
 
-> +		clocks = <&infracfg CLK_INFRA_THERM>;
-> +		clock-names = "main_clk";
-> +		nvmem-cells = <&svs_calibration>, <&thermal_calibration>;
-> +		nvmem-cell-names = "svs-calibration-data", "calibration-data";
-> +
-> +		svs_cpu_little: svs_cpu_little {
+I'm assuming the fix will go via arm-soc, but I can take it otherwise
+(please just let me know).
 
-Don't use '_' in node names.
-
-> +			compatible = "mediatek,mt8183-svs-cpu-little";
-> +			operating-points-v2 = <&cluster0_opp>;
-> +		};
-> +
-> +		svs_cpu_big: svs_cpu_big {
-> +			compatible = "mediatek,mt8183-svs-cpu-big";
-> +			operating-points-v2 = <&cluster1_opp>;
-> +		};
-> +
-> +		svs_cci: svs_cci {
-> +			compatible = "mediatek,mt8183-svs-cci";
-> +			operating-points-v2 = <&cci_opp>;
-> +		};
-> +
-> +		svs_gpu: svs_gpu {
-> +			compatible = "mediatek,mt8183-svs-gpu";
-> +			power-domains = <&scpsys MT8183_POWER_DOMAIN_MFG_2D>;
-> +			operating-points-v2 = <&gpu_opp_table>;
-> +		};
-> +	};
-> +
-> +	&svs_cpu_little {
-> +		vcpu-little-supply = <&mt6358_vproc12_reg>;
-
-It's already defined to have OPP and supply in the cpu nodes. Parse them
-to get this information rather than duplicating it here.
-
-The same should apply to the CCI and GPU.
-
-Rob
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
