@@ -2,144 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48A82C1CAA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 10:17:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C527C1CB7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 10:18:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HCn/ILp59EvQHGCeHHn+ghnBeqAc6Mp6Z7L5V81SNIA=; b=lSeO/M+b2jX20k
-	8AMG6r3oHmaSh9EMA5u094if254jBco9nNo/uQ7oMXWlur3WcNnRZU6U0VweYLhWRevUJ21L+TAfX
-	QeQq+1H/9O0Jx9HA8Ls65RBWsH46YxPyN0h2oauh2RH/NEJeCmXJWre37F7zw+Zp9SCo8WT9ixNQB
-	KeAYC/27QPBRBVuKq48Nt36/udldFa2lBnRk0hMf0a2ev+4m8srP4tJLNIaeWnerCKXU0RpBsNjS/
-	jv3WM3YXwtCwLdFntQd3JdgT6mRTcQXwkTrDYInPRB+BqYpl/cYC3nOlCl/EjD1ONIdrBPjgbqnm2
-	zbZ22BwAJ7WrzJw7JI8w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ziRWhQfgOXVVgz0HGA5j2UjFwkkB/iMSTg7XJiSJlbs=; b=FPwT87l99RPH2c
+	/SvSetYw5R0ELavhwd5V9WIARJeFM2Fpk3sVgudRo9ZF14BKmsY1dDQVzvFIcOx3OYPfVIqEqzna/
+	qeEFlvpSQrdXYBrTRhHRUrCW03vK1OCMb7vFuOyDEFjVrZhHRkm4G1fjoah1//5mQpyMawH6YY8FE
+	BN42G9zHPuMZqKfkR31dXZC2YXJpJZNMoIxt8MYTTC8NUAcrLKa5ADCdm+64Dh0kAbOf3pYoDejkk
+	b5xOPgB2DnqbN/5Pj1RLI3TXR30zkHZ8p1swESQe/m5mPb6UxzRI2Vogcw1NAKcQFFiLctSsv3zL4
+	/1K3OkW6LTSwpD3+0rRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEqrt-0004IL-Jy; Mon, 30 Sep 2019 08:17:17 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iEqsV-0004kY-Eu; Mon, 30 Sep 2019 08:17:55 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEqrZ-00047a-VR
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 08:17:00 +0000
-Received: by mail-wr1-x441.google.com with SMTP id i1so10130933wro.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Sep 2019 01:16:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:openpgp:autocrypt:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=oGL+KVpjDYu5JQqL9adGqVt6dshMee4Ju5jCrtoVE20=;
- b=PpgsICO8qyiHSSGG9UvsjooaS40NckOJtNzU0O+7IrnF6iGYVMsxbef57nfR8O0rnE
- NGjdQ2/9pO/WhRxqryFEXZzM32e+TxTfVJo6VJnuvvnZG4/AH/7mjQlo4Le79QOyh0HD
- nq3/jVYiXFh6/ExBeKYLbQ0E8DIHyNnQjwUar914EELH8gqOE6VQ0IGzh4uKw2IWzcfC
- QxLQ0PoKTf3IxKUMoaZshsWR3mG4b1QYLXKwwTny5/Z5R6ido9/p10qkugrLb2wCgpJD
- ilJvnfg6A+OmMegUwcGHwrVl+AZkVuvtinnS3HP3AD1tAwrqvujBSmw2jMd9P6ru31P+
- vcAQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=oGL+KVpjDYu5JQqL9adGqVt6dshMee4Ju5jCrtoVE20=;
- b=NXAIVeSz+ZRbQkfxw9If0QoauxO6M8VYoqUMoLaiHwHQiPIvFxPUEMi8oMxPniCUKi
- zTvNAKhMBH5q94j/h5Iheoflgz/ah4NwfEi8oqlaXRRnSiRhNAIXGo/KMZ/bKsFhJtFC
- qW9fK3om5OorilxtThfzEQWGpVScuwZgPmNNdNSI1e9D22Ut3JMByPYI7gIJiS88Ezfp
- Fihz+wq7OQ2flAoE1168ADbrDxmfKHi1wv+JU0qhy0Ww1d/uEtP6hBhsxKSHpCFqKLYK
- yAjFm44GKOKle7n3fxEkhPntC7XrRuybzTzoke6oDho6x8OdqpQ/IqeYbggEOl4on/cW
- YKvg==
-X-Gm-Message-State: APjAAAXfPuA0aovZ/oKV6KSQe5BsGrjhUBuuQyXKWp3ZUxwsVZmY9fq+
- GI7ku0eF0IFxzuwdSbbrFaM46Q==
-X-Google-Smtp-Source: APXvYqyOSFZeRSc0p67LRKfAeql49g9aRTQp+3+UZeHbD7Q8eGLRjsxpOu0v1xS/1qReu0oVY7EY4g==
-X-Received: by 2002:adf:ee10:: with SMTP id y16mr11700508wrn.47.1569831415148; 
- Mon, 30 Sep 2019 01:16:55 -0700 (PDT)
-Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id a10sm11923438wrm.52.2019.09.30.01.16.53
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 30 Sep 2019 01:16:54 -0700 (PDT)
-Subject: Re: [PATCH] watchdog: meson: Fix the wrong value of left time
-To: Xingyu Chen <xingyu.chen@amlogic.com>,
- Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck
- <linux@roeck-us.net>, Kevin Hilman <khilman@baylibre.com>
-References: <1569754429-17287-1-git-send-email-xingyu.chen@amlogic.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- ZaTUOEkgIor5losDrePdPgE=
-Organization: Baylibre
-Message-ID: <06f3e719-a6e1-ef70-0c5c-1a07f809905a@baylibre.com>
-Date: Mon, 30 Sep 2019 10:16:53 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iEqsB-0004iq-Fq; Mon, 30 Sep 2019 08:17:36 +0000
+X-UUID: b354df239b2b4cefa9f17a2dddc65e19-20190930
+X-UUID: b354df239b2b4cefa9f17a2dddc65e19-20190930
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <yingjoe.chen@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 219776015; Mon, 30 Sep 2019 00:17:20 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 30 Sep 2019 01:17:19 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 30 Sep 2019 16:17:18 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 30 Sep 2019 16:17:18 +0800
+Message-ID: <1569831439.15728.9.camel@mtksdaap41>
+Subject: Re: [PATCH v2 2/4] watchdog: mtk_wdt: mt8183: Add reset controller
+From: Yingjoe Chen <yingjoe.chen@mediatek.com>
+To: Guenter Roeck <linux@roeck-us.net>
+Date: Mon, 30 Sep 2019 16:17:19 +0800
+In-Reply-To: <20190928174923.GA25512@roeck-us.net>
+References: <1569580317-21181-1-git-send-email-jiaxin.yu@mediatek.com>
+ <1569580317-21181-3-git-send-email-jiaxin.yu@mediatek.com>
+ <20190928174923.GA25512@roeck-us.net>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <1569754429-17287-1-git-send-email-xingyu.chen@amlogic.com>
-Content-Language: en-US
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_011658_076919_997C02DA 
-X-CRM114-Status: GOOD (  21.26  )
+X-CRM114-CacheID: sfid-20190930_011735_527077_4F915F6A 
+X-CRM114-Status: GOOD (  16.86  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -151,48 +74,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Qianggui Song <qianggui.song@amlogic.com>, linux-watchdog@vger.kernel.org,
- Jianxin Pan <jianxin.pan@amlogic.com>, linux-kernel@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Jerome Brunet <jbrunet@baylibre.com>
+Cc: mark.rutland@arm.com, alsa-devel@alsa-project.org, wim@linux-watchdog.org,
+ broonie@kernel.org, yong.liang@mediatek.com,
+ Jiaxin Yu <jiaxin.yu@mediatek.com>, lgirdwood@gmail.com, tzungbi@google.com,
+ robh+dt@kernel.org, linux-mediatek@lists.infradead.org, Philipp
+ Zabel <p.zabel@pengutronix.de>, eason.yen@mediatek.com, perex@perex.cz,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29/09/2019 12:53, Xingyu Chen wrote:
-> The left time value is wrong when we get it by sysfs. The left time value
-> should be equal to preset timeout value minus elapsed time value. According
-> to the Meson-GXB/GXL datasheets which can be found at [0], the timeout value
-> is saved to BIT[0-15] of the WATCHDOG_TCNT, and elapsed time value is saved
-> to BIT[16-31] of the WATCHDOG_TCNT.
-> 
-> [0]: http://linux-meson.com
-> 
-> Fixes: 683fa50f0e18 ("watchdog: Add Meson GXBB Watchdog Driver")
-> Signed-off-by: Xingyu Chen <xingyu.chen@amlogic.com>
-> ---
->  drivers/watchdog/meson_gxbb_wdt.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/watchdog/meson_gxbb_wdt.c b/drivers/watchdog/meson_gxbb_wdt.c
-> index d17c1a6..5a9ca10 100644
-> --- a/drivers/watchdog/meson_gxbb_wdt.c
-> +++ b/drivers/watchdog/meson_gxbb_wdt.c
-> @@ -89,8 +89,8 @@ static unsigned int meson_gxbb_wdt_get_timeleft(struct watchdog_device *wdt_dev)
->  
->  	reg = readl(data->reg_base + GXBB_WDT_TCNT_REG);
->  
-> -	return ((reg >> GXBB_WDT_TCNT_CNT_SHIFT) -
-> -		(reg & GXBB_WDT_TCNT_SETUP_MASK)) / 1000;
-> +	return ((reg & GXBB_WDT_TCNT_SETUP_MASK) -
-> +		(reg >> GXBB_WDT_TCNT_CNT_SHIFT)) / 1000;
->  }
->  
->  static const struct watchdog_ops meson_gxbb_wdt_ops = {
-> 
+On Sat, 2019-09-28 at 10:49 -0700, Guenter Roeck wrote:
+> On Fri, Sep 27, 2019 at 06:31:55PM +0800, Jiaxin Yu wrote:
+> > From: "yong.liang" <yong.liang@mediatek.com>
+> > 
+> > Provide assert/deassert/reset API in watchdog driver.
+> > Register reset controller for toprgu device in watchdog probe.
+> > 
+> > Signed-off-by: yong.liang <yong.liang@mediatek.com>
+> > ---
+> >  drivers/watchdog/Kconfig   |   1 +
+> >  drivers/watchdog/mtk_wdt.c | 110 ++++++++++++++++++++++++++++++++++++-
+> >  2 files changed, 110 insertions(+), 1 deletion(-)
+> > 
+> > diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
+> > index 2e07caab9db2..629249fe5305 100644
+> > --- a/drivers/watchdog/Kconfig
+> > +++ b/drivers/watchdog/Kconfig
+> > @@ -717,6 +717,7 @@ config MEDIATEK_WATCHDOG
+> >  	tristate "Mediatek SoCs watchdog support"
+> >  	depends on ARCH_MEDIATEK || COMPILE_TEST
+> >  	select WATCHDOG_CORE
+> > +	select RESET_CONTROLLER
+> >  	help
+> >  	  Say Y here to include support for the watchdog timer
+> >  	  in Mediatek SoCs.
 
-Acked-by: Neil Armstrong <narmstrong@baylibre.com>
+<...snip...> 
+
+> > +static void toprgu_register_reset_controller(struct platform_device *pdev,
+> > +					     int regofs)
+> > +{
+> > +	int ret;
+> > +	struct mtk_wdt_dev *mtk_wdt = platform_get_drvdata(pdev);
+> > +
+> > +	spin_lock_init(&mtk_wdt->reset_controller.lock);
+> > +
+> > +	mtk_wdt->dev_comp = of_device_get_match_data(&pdev->dev);
+> > +	mtk_wdt->reset_controller.toprgu_swrst_base = mtk_wdt->wdt_base;
+> > +	mtk_wdt->reset_controller.regofs = regofs;
+> > +	mtk_wdt->reset_controller.rcdev.owner = THIS_MODULE;
+> > +	mtk_wdt->reset_controller.rcdev.nr_resets =
+> > +				mtk_wdt->dev_comp->sw_rst_num;
+> > +	mtk_wdt->reset_controller.rcdev.ops = &toprgu_reset_ops;
+> > +	mtk_wdt->reset_controller.rcdev.of_node = pdev->dev.of_node;
+> > +	ret = reset_controller_register(&mtk_wdt->reset_controller.rcdev);
+> > +	if (ret != 0)
+> > +		dev_err(&pdev->dev,
+> > +			"couldn't register wdt reset controller: %d\n", ret);
+> > +}
+> > +
+> >  static int mtk_wdt_restart(struct watchdog_device *wdt_dev,
+> >  			   unsigned long action, void *data)
+> >  {
+> > @@ -187,9 +287,12 @@ static int mtk_wdt_probe(struct platform_device *pdev)
+> >  	if (unlikely(err))
+> >  		return err;
+> >  
+> > -	dev_info(dev, "Watchdog enabled (timeout=%d sec, nowayout=%d)\n",
+> > +	dev_info(&pdev->dev, "Watchdog enabled (timeout=%d sec, nowayout=%d)\n",
+> >  		 mtk_wdt->wdt_dev.timeout, nowayout);
+> >  
+> > +	mtk_wdt->dev_comp = of_device_get_match_data(&pdev->dev);
+> > +	if (mtk_wdt->dev_comp)
+> > +		toprgu_register_reset_controller(pdev, WDT_SWSYSRST);
+> 
+> Please explain why you can not use the watchdog device built-in support
+> for handling system resets.
+
+Guenter,
+
+This is not about system reset.
+Besides watchdog, MTK toprgu module also provide sub-system (eg, audio,
+camera, codec and connectivity) software reset functionality. Software
+can use this to reset specific sub-system.
+
+This patch add support for this using reset controller framework. We
+follow the case of drivers/clk/mediatek/reset.c to add this
+functionality in watchdog driver.
+
+Joe.C
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
