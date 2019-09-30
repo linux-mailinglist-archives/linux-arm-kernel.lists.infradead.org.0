@@ -2,58 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C681C1D16
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 10:24:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9FDC6C1D19
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 10:24:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=58178w8rtdoHnKBUEIZYZq6ebEVwBnF4JLZ+oxQ2BZ0=; b=NcTGl2ZxKCQMIyqjtWw26d65f
-	pF6Etab1WudMtBdxESjrl01CgZT2f7pDNoY1qz2i+LxjiiG0gnTAcY3lSSyBsOVsqLd0PfiKbEf+I
-	b74upLtVLYRuWfU/MxgZtzGvSKh64kMKHlnXcXImijHWF/ClBR0iOP9DiY8Yt+1xhLfHv6VRmXVu0
-	TE4zid1pCpbV3f4FIgJk/9HLk2ryBVlh82kZJCcJlIX0VaNwFIQcEckb2wokFn3Vbc40Z93wJFnbN
-	jQ3OmzNTM+8sbfmM4R8Q5LJ+leod3YC/IbtwsEZp/mDSW6CWl2Gg5cqDBuolRM5EsdBS5uQG4g9N1
-	f1a7TlfcA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=ri6hyf2l+sGVhvIFLK9KuY8anqb0iKf81irELPduPB0=; b=PmtviYOrOFeM4sU/bN7ADPqthm
+	ZCdDZeiCBQYYciL5rGOE/XmQ+n+a0zMVXww62v/2z1rXj4QiQ9a0cdlmS75sYDAw8ok6rtm97E10W
+	32yKHM1Mnkl+sUxP/fkUT4zf/6k/3xYt6F0Lv9DNeL0Mqy26fUQrKflPrquvi9hDNLbpjLxSWr0FT
+	2ekU7c+wdFG/gSW90BmbbjjFg6AXj6juu/IdgakhGlrFAmhBFpPjtFAlO88Y9kKrUWmPHR00JothF
+	PR7uTBbaX2Pf16cHnvr8EQpW2nVPuBewEDxhRNJFBMTGQE+1i8gimNH8r1McyMgJYyidhrggpZNpo
+	1s8LKztQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEqyG-0002Fz-PY; Mon, 30 Sep 2019 08:23:52 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iEqyX-0002TO-QP; Mon, 30 Sep 2019 08:24:09 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEqw7-0000Oh-5n
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 08:21:41 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 9329CAF7E;
- Mon, 30 Sep 2019 08:21:37 +0000 (UTC)
-Message-ID: <84cee6b1523fc67aeb5a48666229437fa33e07d2.camel@suse.de>
-Subject: Re: [PATCH V3 6/8] ARM: bcm: Add support for BCM2711 SoC
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Stefan Wahren <wahrenst@gmx.net>, Florian Fainelli
- <f.fainelli@gmail.com>,  Rob Herring <robh+dt@kernel.org>, Mark Rutland
- <mark.rutland@arm.com>, Eric Anholt <eric@anholt.net>,  Ray Jui
- <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>
-Date: Mon, 30 Sep 2019 10:21:35 +0200
-In-Reply-To: <c420bf03-784e-073f-b0d7-471d0fb48d22@gmx.net>
-References: <1569672435-19823-1-git-send-email-wahrenst@gmx.net>
- <1569672435-19823-7-git-send-email-wahrenst@gmx.net>
- <6b251871-59ae-6040-cbbc-74207b2169f3@gmail.com>
- <c420bf03-784e-073f-b0d7-471d0fb48d22@gmx.net>
-User-Agent: Evolution 3.32.4 
+ id 1iEqwx-0001EG-No
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 08:22:33 +0000
+Received: by mail-wm1-x341.google.com with SMTP id m18so11661405wmc.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 30 Sep 2019 01:22:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=references:user-agent:from:to:cc:subject:in-reply-to:date
+ :message-id:mime-version;
+ bh=ShSdTe5Qp8z7m+jUtvQKDuCvb0VtDo609FCfYvndEno=;
+ b=exPnKZEYefJsNZMJjFnNmAXEv7dbG77oiHob/ywzmo4aeZfj7pFMylI2JIvFMtFjgz
+ B0Ww5uxtxnbhyX3kcs03yySNcCTd2yQp9hgO5sZPs+M1dBZRpgnUz0HuKuoFHAyzNdAT
+ Ay/W7zajAfCPVhaes66qjL57Qa8KBqYrGfmMm8viotFX+RiSbbh1Wh7h/S635yvrnk1X
+ inAQ83q/tdXfSyKb8MedQCC2lK2kaCriTxVwcMqt/XG0ceO3g6NjOLaKS9Ao1MsGaQhv
+ dwEwQHnevgCD3DOW4dRIx6XbE7NRex1y67oDlTVh4sDKiBaZJ6Mgm/WoPiNbYCId9AQs
+ JXxA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:references:user-agent:from:to:cc:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=ShSdTe5Qp8z7m+jUtvQKDuCvb0VtDo609FCfYvndEno=;
+ b=PrWOdSDbLl3jkkpn68TufdkWHvoi5tdCJZV6rfrFC9cGBlQGJH51U85+u1j8ZSSYdl
+ 4zmXd4UdYwtOq4NsfRBy6FE644nveYNnCGphdMiPZxnHdqzNbnBG/BvEkCA7fLa7baOO
+ 3+TvO5UkQ9wjNQyqUXPRCZWzazv27Yjcs1uRblLJVZcf7IyjEZeagBf9GcYENxOOEE2l
+ 0HMHn8rcRAz4Rux34X9GBI9oWQCuNern9tllOV/DBy3IgbjPAhJ08IZQDLZtVobMut4h
+ 48JCHXYTzoOIk+3HHdJqkPa3fQCHRiqbACctzyHE9PSbgbQviFWB6e3T9jDopc2ozz9D
+ O4kA==
+X-Gm-Message-State: APjAAAU3NfOuh0m+vpbz9nioXNr8RoJNEi7W5Ob6XXDOv3WP9dw3wO7S
+ 06VINXat6oZuTx1xV2AHZAWs2g==
+X-Google-Smtp-Source: APXvYqyIM0BrCVvOADyXCOsoNjMjmm0DeuCYw4kWcFR08dZvDMjsgIDwDmqsdt3YFbfjPrmhjktI9A==
+X-Received: by 2002:a1c:cbcc:: with SMTP id b195mr17236045wmg.80.1569831749974; 
+ Mon, 30 Sep 2019 01:22:29 -0700 (PDT)
+Received: from localhost (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id l11sm14198165wmh.34.2019.09.30.01.22.29
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 30 Sep 2019 01:22:29 -0700 (PDT)
+References: <20190925213528.21515-1-khilman@kernel.org>
+ <20190925213528.21515-3-khilman@kernel.org>
+ <8936e777-8996-5c7b-ea9d-8e17c8d6c4b1@baylibre.com>
+ <7hwodulvu6.fsf@baylibre.com>
+ <21eafa69-fe26-2df1-d187-cddfe5b37951@baylibre.com>
+User-agent: mu4e 1.3.3; emacs 26.2
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: linux-amlogic@lists.infradead.org, Kevin Hilman <khilman@baylibre.com>,
+ Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH v2 2/2] soc: amlogic: ee-pwrc: ensure driver state maches
+ HW state
+In-reply-to: <21eafa69-fe26-2df1-d187-cddfe5b37951@baylibre.com>
+Date: Mon, 30 Sep 2019 10:22:28 +0200
+Message-ID: <1jd0fi19dn.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_012139_522141_BA7680AB 
-X-CRM114-Status: GOOD (  23.34  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190930_012231_806217_9AEC4C1C 
+X-CRM114-Status: GOOD (  13.98  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,170 +101,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, devicetree@vger.kernel.org,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
- bcm-kernel-feedback-list@broadcom.com
-Content-Type: multipart/mixed; boundary="===============2211876158456325123=="
+Cc: linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============2211876158456325123==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-Myrx/pu0R5B67LIndQoy"
+On Fri 27 Sep 2019 at 08:37, Neil Armstrong <narmstrong@baylibre.com> wrote:
 
+> On 26/09/2019 21:08, Kevin Hilman wrote:
+>> Neil Armstrong <narmstrong@baylibre.com> writes:
+>> 
+>>> On 25/09/2019 23:35, Kevin Hilman wrote:
+>>>> From: Kevin Hilman <khilman@baylibre.com>
+>>>>
+>>>> During init, ensure that the driver on/off state as well as clock and
+>>>> reset state matches the hardware state.  Do this by always calling the
+>>>> drivers 'on' function, and then callling the 'off' function if the
+>>>> HW state was initially detected as off.
+>> 
+>> [...]
+>> 
+>>> I don't see what you are trying to solve except simplifying the code.
+>> 
+>> Simplifying the code is a worthwhile goal on its own, but that's not the
+>> only thing I'm tring to accomplish.
+>
+> I still find it ugly to power_on a domain to power it off right afterwards.
+> The issue is with the CCF enable handling which is not in sync with the
+> HW, if you boot with an already enabled clock, it won't be marked enabled
+> in CCF, and it's clearly bad when you want to have a fine-tuned gate state
+> handling.
+>
 
---=-Myrx/pu0R5B67LIndQoy
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+CCF should disable unused clock so, in theory, you should not have to
+call enable() then disable() to get things in sync.
 
-On Sun, 2019-09-29 at 01:09 +0200, Stefan Wahren wrote:
-> Am 28.09.19 um 21:16 schrieb Florian Fainelli:
-> > On 9/28/2019 5:07 AM, Stefan Wahren wrote:
-> > > Add the BCM2711 to ARCH_BCM2835, but use new machine board code
-> > > because of the differences.
-> > >=20
-> > > Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-> > > Reviewed-by: Eric Anholt <eric@anholt.net>
-> > > ---
-> > >  arch/arm/mach-bcm/Kconfig    |  3 ++-
-> > >  arch/arm/mach-bcm/Makefile   |  3 ++-
-> > >  arch/arm/mach-bcm/bcm2711.c  | 24 ++++++++++++++++++++++++
-> > >  arch/arm64/Kconfig.platforms |  5 +++--
-> > >  4 files changed, 31 insertions(+), 4 deletions(-)
-> > >  create mode 100644 arch/arm/mach-bcm/bcm2711.c
-> > >=20
-> > > diff --git a/arch/arm/mach-bcm/Kconfig b/arch/arm/mach-bcm/Kconfig
-> > > index 5e5f1fa..39bcbea 100644
-> > > --- a/arch/arm/mach-bcm/Kconfig
-> > > +++ b/arch/arm/mach-bcm/Kconfig
-> > > @@ -161,6 +161,7 @@ config ARCH_BCM2835
-> > >  	select GPIOLIB
-> > >  	select ARM_AMBA
-> > >  	select ARM_ERRATA_411920 if ARCH_MULTI_V6
-> > > +	select ARM_GIC if ARCH_MULTI_V7
-> > >  	select ARM_TIMER_SP804
-> > >  	select HAVE_ARM_ARCH_TIMER if ARCH_MULTI_V7
-> > >  	select TIMER_OF
-> > Are not we missing a select ZONE_DMA here?
-> Yes. I think for arm and arm64.
+I suppose the clock in question has the flag CLK_IGNORE_UNUSED (one of
+the gates) ?
 
-No need in arm64, see arch/arm64/Kconfig:270.
-
-> > > @@ -169,7 +170,7 @@ config ARCH_BCM2835
-> > >  	select PINCTRL_BCM2835
-> > >  	select MFD_CORE
-> > >  	help
-> > > -	  This enables support for the Broadcom BCM2835 and BCM2836 SoCs.
-> > > +	  This enables support for the Broadcom BCM2711 and BCM283x SoCs.
-> > >  	  This SoC is used in the Raspberry Pi and Roku 2 devices.
-> > >=20
-> > >  config ARCH_BCM_53573
-> > > diff --git a/arch/arm/mach-bcm/Makefile b/arch/arm/mach-bcm/Makefile
-> > > index b59c813..7baa8c9 100644
-> > > --- a/arch/arm/mach-bcm/Makefile
-> > > +++ b/arch/arm/mach-bcm/Makefile
-> > > @@ -42,8 +42,9 @@ obj-$(CONFIG_ARCH_BCM_MOBILE_L2_CACHE) +=3D
-> > > kona_l2_cache.o
-> > >  obj-$(CONFIG_ARCH_BCM_MOBILE_SMC) +=3D bcm_kona_smc.o
-> > >=20
-> > >  # BCM2835
-> > > -obj-$(CONFIG_ARCH_BCM2835)	+=3D board_bcm2835.o
-> > >  ifeq ($(CONFIG_ARCH_BCM2835),y)
-> > > +obj-y				+=3D board_bcm2835.o
-> > > +obj-y				+=3D bcm2711.o
-> > >  ifeq ($(CONFIG_ARM),y)
-> > >  obj-$(CONFIG_SMP)		+=3D platsmp.o
-> > >  endif
-> > > diff --git a/arch/arm/mach-bcm/bcm2711.c b/arch/arm/mach-bcm/bcm2711.=
-c
-> > > new file mode 100644
-> > > index 0000000..dbe2967
-> > > --- /dev/null
-> > > +++ b/arch/arm/mach-bcm/bcm2711.c
-> > > @@ -0,0 +1,24 @@
-> > > +// SPDX-License-Identifier: GPL-2.0+
-> > > +/*
-> > > + * Copyright (C) 2019 Stefan Wahren
-> > > + */
-> > > +
-> > > +#include <linux/of_address.h>
-> > > +
-> > > +#include <asm/mach/arch.h>
-> > > +
-> > > +#include "platsmp.h"
-> > > +
-> > > +static const char * const bcm2711_compat[] =3D {
-> > > +#ifdef CONFIG_ARCH_MULTI_V7
-> > > +	"brcm,bcm2711",
-> > > +#endif
-> > > +};
-> > > +
-> > > +DT_MACHINE_START(BCM2711, "BCM2711")
-> > > +#ifdef CONFIG_ZONE_DMA
-> > > +	.dma_zone_size	=3D SZ_1G,
-> > > +#endif
-> > > +	.dt_compat =3D bcm2711_compat,
-> > > +	.smp =3D smp_ops(bcm2836_smp_ops),
-> > > +MACHINE_END
-> > > diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platfo=
-rms
-> > > index 16d7614..b5d31dc 100644
-> > > --- a/arch/arm64/Kconfig.platforms
-> > > +++ b/arch/arm64/Kconfig.platforms
-> > > @@ -37,11 +37,12 @@ config ARCH_BCM2835
-> > >  	select PINCTRL
-> > >  	select PINCTRL_BCM2835
-> > >  	select ARM_AMBA
-> > > +	select ARM_GIC
-> > >  	select ARM_TIMER_SP804
-> > >  	select HAVE_ARM_ARCH_TIMER
-> > >  	help
-> > > -	  This enables support for the Broadcom BCM2837 SoC.
-> > > -	  This SoC is used in the Raspberry Pi 3 device.
-> > > +	  This enables support for the Broadcom BCM2837 and BCM2711 SoC.
-> > > +	  This SoC is used in the Raspberry Pi 3 and 4 device.
-> > Nit:
-> >=20
-> > These SoCs are used in the Raspberry Pi 3 and 4 devices.
-> >=20
-> > With that:
-> >=20
-> > Acked-by: Florian Fainelli <f.fainelli@gmail.com>
-
-
---=-Myrx/pu0R5B67LIndQoy
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl2Ruw8ACgkQlfZmHno8
-x/607gf/T7F1F9TuUbe8aIGsRlSvNgxZPSTGgLBGeDZRYw6phxrx+UNH8Nb2jsfo
-ab03yUsBptZfAuk4o6HSdQK2EPmUNo4SgKVTONXY0tNli/bQYVBz5/1VYVSQe12e
-jKq+cMrl9XfyaLw+OFEHUHwDeFRrmGBILkXbxA30bmGV3tQY2DMHGjPMeJB8NfhW
-d2W7TotzlPRW6kRpCcqaTY/0rEl8++x1hXd+O9aNK17ARwbpH7WJ1Vrk2gA4bLDD
-3PzHo5PHQfgBrEDwG8lMfT5fLDzMKJN0dBMhq+8ndFKMEA045Xv7HlWr+tRn90A3
-mfl96C1tEBdZqejT5xaSNuBKr7O75Q==
-=XPxo
------END PGP SIGNATURE-----
-
---=-Myrx/pu0R5B67LIndQoy--
-
-
-
---===============2211876158456325123==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+If the CLK_INGORE_UNUSED is becoming a problem, it would be better to
+fix the clock tree rather than adding quirks in consumers.
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2211876158456325123==--
-
-
