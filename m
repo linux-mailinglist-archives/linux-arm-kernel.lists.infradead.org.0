@@ -2,50 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29398C2416
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 17:16:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89677C2437
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 17:25:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v/B7npb/8HJn33aIVzYiTUcj42Fej7yMwF9w89fNP94=; b=IbSdB78m5/r9KQ
-	Pu9t3BW8SRRD4ule8SrSfnNTbniUlcTIkH0m4tvBZx7ahYdVTVDw5M4bjuADfdT62zkd0vCvETIvA
-	+P446GjKws/UQeO8d9/94S/ZOSLQuvQSXodxYZcbn2mIpqhJrecVfsSFJlKrToowmdVgaCPKyZQf5
-	/X3ylborXFnfIrQ7G+12tK1Upp0UlbTnDFWfMW1+HbWIFKLQu7BzelszDfGEoD4SCeHsqIk3hqFn+
-	axxsrgT/wwSN7xVkCR/aq6XgnKk0ytvq0Q9dTrbPgO59x7zTHn8plOfRsun+OJ5OTJI36xbOSSD/U
-	7B1uMJ24HjBzG/Jz7WjQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5V3CQKiQgxNQNuvsqVM1GVl7K3AUiTzRty+Jievd2xQ=; b=Yn+iAwYQGUCe3J
+	4+belglW5Gpq2pZ2NpBH3s4MU352FFCohkVkw43azPgNNYHkpkVqXpDTW9hbbD5vHiUYEv0C03QzR
+	MkPxHDdj8XWVvjaBBXfPnccd9c7D1vYCbs/hzvrFFadtACgJ2obBJjiGFAkvvmVXbEfY//H+Emokq
+	wZ2+37IkIxEhGqaqqAWkU3sgagJLUfyL1Nzt6i02irYGseNEbfW4vu8cJuVuN4mTJtxjnlYRdqTdk
+	UMKllO8y9OjKuQGmZ/vNCC4tVfPUXRT9J20w4I2Rfu8WQw1OJ3zOmlbVoPIiVF9RET7SXo06Sk0D9
+	zNtUoPcc+Hty4tBK/fXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iExPt-0000MY-B2; Mon, 30 Sep 2019 15:16:49 +0000
+	id 1iExYL-00042f-9w; Mon, 30 Sep 2019 15:25:33 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iExPh-0000Lv-8L
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 15:16:38 +0000
+ id 1iExYC-000427-QP
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 15:25:26 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CFC251000;
- Mon, 30 Sep 2019 08:16:35 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 46A1D3F706;
- Mon, 30 Sep 2019 08:16:35 -0700 (PDT)
-Date: Mon, 30 Sep 2019 16:16:33 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 05/11] PCI: versatile: Use
- pci_parse_request_of_pci_ranges()
-Message-ID: <20190930151633.GE42880@e119886-lin.cambridge.arm.com>
-References: <20190924214630.12817-1-robh@kernel.org>
- <20190924214630.12817-6-robh@kernel.org>
- <20190925103752.GS9720@e119886-lin.cambridge.arm.com>
- <CAL_JsqJW2t3F6HdKqcHguYLLiYQ6XWOsQbY-TFsDXhrDjjszew@mail.gmail.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 096E01000;
+ Mon, 30 Sep 2019 08:25:24 -0700 (PDT)
+Received: from e110467-lin.cambridge.arm.com (e110467-lin.cambridge.arm.com
+ [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id C561D3F706;
+ Mon, 30 Sep 2019 08:25:22 -0700 (PDT)
+From: Robin Murphy <robin.murphy@arm.com>
+To: robh@kernel.org,
+	tomeu.vizoso@collabora.com,
+	sudeep.holla@arm.com
+Subject: [PATCH 1/2] arm64: dts: juno: add GPU subsystem
+Date: Mon, 30 Sep 2019 16:24:58 +0100
+Message-Id: <88dc6386929b3dcd7a65ba8063628c62b66b330c.1569856049.git.robin.murphy@arm.com>
+X-Mailer: git-send-email 2.21.0.dirty
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAL_JsqJW2t3F6HdKqcHguYLLiYQ6XWOsQbY-TFsDXhrDjjszew@mail.gmail.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_081637_377792_16A95CB6 
-X-CRM114-Status: GOOD (  21.94  )
+X-CRM114-CacheID: sfid-20190930_082524_900170_CB988B95 
+X-CRM114-Status: GOOD (  14.50  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,113 +60,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bjorn Helgaas <bhelgaas@google.com>, linux-pci@vger.kernel.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com, liviu.dudau@arm.com,
+ dri-devel@lists.freedesktop.org, steven.price@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 26, 2019 at 04:44:31PM -0500, Rob Herring wrote:
-> On Wed, Sep 25, 2019 at 5:37 AM Andrew Murray <andrew.murray@arm.com> wrote:
-> >
-> > On Tue, Sep 24, 2019 at 04:46:24PM -0500, Rob Herring wrote:
-> > > Convert ARM Versatile host bridge to use the common
-> > > pci_parse_request_of_pci_ranges().
-> > >
-> > > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> > > Cc: Bjorn Helgaas <bhelgaas@google.com>
-> > > Signed-off-by: Rob Herring <robh@kernel.org>
-> > > ---
-> > >  drivers/pci/controller/pci-versatile.c | 62 +++++---------------------
-> > >  1 file changed, 11 insertions(+), 51 deletions(-)
-> > >
-> > > diff --git a/drivers/pci/controller/pci-versatile.c b/drivers/pci/controller/pci-versatile.c
-> > > index f59ad2728c0b..237b1abb26f2 100644
-> > > --- a/drivers/pci/controller/pci-versatile.c
-> > > +++ b/drivers/pci/controller/pci-versatile.c
-> > > @@ -62,60 +62,12 @@ static struct pci_ops pci_versatile_ops = {
-> > >       .write  = pci_generic_config_write,
-> > >  };
-> > >
-> > > -static int versatile_pci_parse_request_of_pci_ranges(struct device *dev,
-> > > -                                                  struct list_head *res)
-> > > -{
-> > > -     int err, mem = 1, res_valid = 0;
-> > > -     resource_size_t iobase;
-> > > -     struct resource_entry *win, *tmp;
-> > > -
-> > > -     err = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff, res, &iobase);
-> > > -     if (err)
-> > > -             return err;
-> > > -
-> > > -     err = devm_request_pci_bus_resources(dev, res);
-> > > -     if (err)
-> > > -             goto out_release_res;
-> > > -
-> > > -     resource_list_for_each_entry_safe(win, tmp, res) {
-> > > -             struct resource *res = win->res;
-> > > -
-> > > -             switch (resource_type(res)) {
-> > > -             case IORESOURCE_IO:
-> > > -                     err = devm_pci_remap_iospace(dev, res, iobase);
-> > > -                     if (err) {
-> > > -                             dev_warn(dev, "error %d: failed to map resource %pR\n",
-> > > -                                      err, res);
-> > > -                             resource_list_destroy_entry(win);
-> > > -                     }
-> > > -                     break;
-> > > -             case IORESOURCE_MEM:
-> > > -                     res_valid |= !(res->flags & IORESOURCE_PREFETCH);
-> > > -
-> > > -                     writel(res->start >> 28, PCI_IMAP(mem));
-> > > -                     writel(PHYS_OFFSET >> 28, PCI_SMAP(mem));
-> > > -                     mem++;
-> > > -
-> > > -                     break;
-> > > -             }
-> > > -     }
-> > > -
-> > > -     if (res_valid)
-> > > -             return 0;
-> > > -
-> > > -     dev_err(dev, "non-prefetchable memory resource required\n");
-> > > -     err = -EINVAL;
-> > > -
-> > > -out_release_res:
-> > > -     pci_free_resource_list(res);
-> > > -     return err;
-> > > -}
-> > > -
-> > >  static int versatile_pci_probe(struct platform_device *pdev)
-> > >  {
-> > >       struct device *dev = &pdev->dev;
-> > >       struct resource *res;
-> > > -     int ret, i, myslot = -1;
-> > > +     struct resource_entry *entry;
-> > > +     int ret, i, myslot = -1, mem = 0;
-> >
-> > I think 'mem' should be initialised to 1, at least that's what the original
-> > code did. However I'm not sure why it should start from 1.
-> 
-> The original code I moved from arch/arm had 32MB @ 0x0c000000 called
-> "PCI unused" which was requested with request_resource(), but never
-> provided to the PCI core. Otherwise, I kept the setup the same. No one
-> has complained in 4 years, though I'm not sure anyone would have
-> noticed if I just deleted PCI support...
+Since we now have bindings for Mali Midgard GPUs, let's use them to
+describe Juno's GPU subsystem, if only because we can. Juno sports a
+Mali-T624 integrated behind an MMU-400 (as a gesture towards
+virtualisation), in their own dedicated power domain with DVFS
+controlled by the SCP.
 
-OK, well it would be good to see a tested-by tag from someone for this.
+CC: Liviu Dudau <liviu.dudau@arm.com>
+CC: Sudeep Holla <sudeep.holla@arm.com>
+CC: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+---
+ .../bindings/gpu/arm,mali-midgard.yaml        |  5 +++-
+ arch/arm64/boot/dts/arm/juno-base.dtsi        | 27 +++++++++++++++++++
+ 2 files changed, 31 insertions(+), 1 deletion(-)
 
-Reviewed-by: Andrew Murray <andrew.murray@arm.com>
+diff --git a/Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml b/Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml
+index 47bc1ac36426..018f3ae4b43c 100644
+--- a/Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml
++++ b/Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml
+@@ -22,6 +22,10 @@ properties:
+           - enum:
+              - amlogic,meson-gxm-mali
+           - const: arm,mali-t820
++      - items:
++          - enum:
++             - arm,juno-mali
++          - const: arm,mali-t624
+       - items:
+           - enum:
+              - rockchip,rk3288-mali
+@@ -39,7 +43,6 @@ properties:
+              - samsung,exynos5433-mali
+           - const: arm,mali-t760
+ 
+-          # "arm,mali-t624"
+           # "arm,mali-t628"
+           # "arm,mali-t830"
+           # "arm,mali-t880"
+diff --git a/arch/arm64/boot/dts/arm/juno-base.dtsi b/arch/arm64/boot/dts/arm/juno-base.dtsi
+index 26a039a028b8..9e3e8ce6adfe 100644
+--- a/arch/arm64/boot/dts/arm/juno-base.dtsi
++++ b/arch/arm64/boot/dts/arm/juno-base.dtsi
+@@ -35,6 +35,18 @@
+ 		clock-names = "apb_pclk";
+ 	};
+ 
++	smmu_gpu: iommu@2b400000 {
++		compatible = "arm,mmu-400", "arm,smmu-v1";
++		reg = <0x0 0x2b400000 0x0 0x10000>;
++		interrupts = <GIC_SPI 38 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 38 IRQ_TYPE_LEVEL_HIGH>;
++		#iommu-cells = <1>;
++		#global-interrupts = <1>;
++		power-domains = <&scpi_devpd 1>;
++		dma-coherent;
++		status = "disabled";
++	};
++
+ 	smmu_pcie: iommu@2b500000 {
+ 		compatible = "arm,mmu-401", "arm,smmu-v1";
+ 		reg = <0x0 0x2b500000 0x0 0x10000>;
+@@ -487,6 +499,21 @@
+ 		};
+ 	};
+ 
++	gpu: gpu@2d000000 {
++		compatible = "arm,juno-mali", "arm,mali-t624";
++		reg = <0 0x2d000000 0 0x10000>;
++		interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
++		interrupt-names = "gpu", "job", "mmu";
++		clocks = <&scpi_dvfs 2>;
++		power-domains = <&scpi_devpd 1>;
++		dma-coherent;
++		/* The SMMU is only really of interest to bare-metal hypervisors */
++		/* iommus = <&smmu_gpu 0>; */
++		status = "disabled";
++	};
++
+ 	sram: sram@2e000000 {
+ 		compatible = "arm,juno-sram-ns", "mmio-sram";
+ 		reg = <0x0 0x2e000000 0x0 0x8000>;
+-- 
+2.21.0.dirty
 
-Thanks,
-
-Andrew Murray
-
-> 
-> Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
