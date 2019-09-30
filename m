@@ -2,55 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2993C2015
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 13:45:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AD83C2016
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 13:46:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=f8DaqqE39lfsDUNR8DQFu32Ti5ebU8rS05fRuC4m3zk=; b=nOPeMXcV/PtKb3J2kpYWFwGic
-	NapbRaCtQaXjy5My31w/R0ghpYmPFm5WDXZWDN19d1lh9OMF6hADwhk6T3RHZpuNfa6WPf3wXKOIc
-	o8lzJbtwth/LpPQXouOSN00jqUfkNeoIg4k5+QB5yvN8vCTOwwfGw+c/ZVcTdLe8wl1Nd2LLYgKGB
-	M+4ZeWMKqjUUue1RDGKHa5TBSNyNBkxdoolpuB7uTnek8hI3FV+HqxyUNilrydg0ZVuvFYMHucpuV
-	1ExBXAmtTPp6VwEDHwBxuih/rfZZVXAorNEyDDc0q/giZ4j4ewvier6t6Mje86hV2xDV6QmPTJERl
-	BVz0k9CdA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=56x4/By25DV0K4ei7y9Dr5sPYvmrYtNkuq9bz5vQEIs=; b=LiW
+	fsGiKUBrj84oI6x31xDP8J50tPWL/l7lokpa327RVEIBDgoKi8e4arzrClx9DuQpM6RJDovgfWogc
+	wkENBsoX7QeSEHzO7yjGLac6sQk9qOVjz/s7jcqy/wB+SR1exjK7fWFjWxCt2kBFafhuUj6++SvNI
+	HJHHrkXwx+8PLpnDFnUr5Y1uzNpWrZfMF9Cw0K+HlR1GeMn8kC6jX50QlpUogINXQ0XFGVthaj2qk
+	5YuL3fH7SXTBRANIIEbDikEzqsnoZqUJcg18ez/Q3Fs/GhKXEo6LUeikIenOyYFRwUzn5nW4jsisz
+	FMhQDMCLGITUQmDUNkPdou0jR8rUeRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEu7Z-000229-P9; Mon, 30 Sep 2019 11:45:41 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEu7R-00021p-DJ
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 11:45:34 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 40E241000;
- Mon, 30 Sep 2019 04:45:30 -0700 (PDT)
-Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BF3B13F706;
- Mon, 30 Sep 2019 04:45:29 -0700 (PDT)
-Subject: Re: SMMU performance
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- linux-arm-kernel@lists.infradead.org, Will Deacon <will@kernel.org>
-References: <20190930110047.GF25745@shell.armlinux.org.uk>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <cf3ac700-1954-8800-6ce4-9983ab27707b@arm.com>
-Date: Mon, 30 Sep 2019 12:45:28 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <20190930110047.GF25745@shell.armlinux.org.uk>
-Content-Language: en-GB
+	id 1iEu7q-0002GV-WE; Mon, 30 Sep 2019 11:45:59 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iEu7e-0002DM-P9
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 11:45:48 +0000
+Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
+ [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 97087216F4;
+ Mon, 30 Sep 2019 11:45:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1569843946;
+ bh=iv/Dtkavbg/c29QLGURU+cPsjlv6mILK2Etm2RWqlsg=;
+ h=From:To:Cc:Subject:Date:From;
+ b=0SYpXQ7z0QqoDRun4j/lbd+Nx36/8rnMBqY1n7l6Y4BBOg6z5T4r6JtXfDJGLvQQr
+ dcVxK9jQDZFTsjWZbuJCCNAP+8uqw3xcoyqeX9kSfNfU9Th0kgCph02Y2BHC1OSk3F
+ da3X7DvTVSE0cKe9gbaWg3qLY9bKfNv/RYIiA1FE=
+From: Will Deacon <will@kernel.org>
+To: torvalds@linux-foundation.org,
+	yamada.masahiro@socionext.com
+Subject: [PATCH] Partially revert "compiler: enable CONFIG_OPTIMIZE_INLINING
+ forcibly"
+Date: Mon, 30 Sep 2019 12:45:40 +0100
+Message-Id: <20190930114540.27498-1-will@kernel.org>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_044533_496449_829A5F79 
-X-CRM114-Status: GOOD (  17.26  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190930_044546_847331_6856946A 
+X-CRM114-Status: GOOD (  12.53  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,67 +75,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Will Deacon <will@kernel.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Russell,
+This reverts commit ac7c3e4ff401b304489a031938dbeaab585bfe0a for ARM and
+arm64.
 
-On 30/09/2019 12:00, Russell King - ARM Linux admin wrote:
-> Hi,
-> 
-> While using iperf on a platform using the ARM SMMU (v2), I notice the
-> following behaviour on v5.3 with Will's iommu patch set merged, kernel
-> lock debugging disabled.
-> 
-> With iommu.passthrough=1, three consecutive runs:
-> [  3]  0.0-10.0 sec  4.51 GBytes  3.87 Gbits/sec
-> [  3]  0.0-10.0 sec  4.53 GBytes  3.89 Gbits/sec
-> [  3]  0.0-10.0 sec  4.49 GBytes  3.86 Gbits/sec
-> 
-> With iommu.passthrough=0:
-> [  3]  0.0-10.0 sec  1.77 GBytes  1.52 Gbits/sec
-> [  3]  0.0-10.0 sec  1.82 GBytes  1.56 Gbits/sec
-> [  3]  0.0-10.0 sec  1.69 GBytes  1.45 Gbits/sec
-> 
-> Running perf record -a -g ... followed by perf report --no-children
-> shows:
-> 
-> -   15.72%  iperf            [kernel.vmlinux]    [k] _raw_spin_unlock_irqrestor
->     - _raw_spin_unlock_irqrestore
->        - 8.95% arm_smmu_tlb_sync_context
->             arm_smmu_iotlb_sync
->           - __iommu_dma_unmap
->              + 4.54% iommu_dma_unmap_sg
->              + 4.41% iommu_dma_unmap_page
->        - 2.92% alloc_iova_fast
->           - iommu_dma_alloc_iova.isra.26
->              + 1.54% iommu_dma_map_sg
->              + 1.38% __iommu_dma_map
->        - 2.64% free_iova_fast
->             iommu_dma_free_iova
->           - __iommu_dma_unmap
->              + 1.35% iommu_dma_unmap_sg
->              + 1.29% iommu_dma_unmap_page
-> 
-> which seems to be pointing to the SMMU code as a bottleneck.
-> 
-> Will suggests that his iommu changes (in his for-joerg/arm-smmu/updates
-> branch), allows IOMMU driver modifications that may have a beneficial
-> effect.  Any thoughts?
+Building an arm64 kernel with CONFIG_OPTIMIZE_INLINING=y has been shown
+to violate fixed register allocations of local variables passed to
+inline assembly with GCC prior to version 9 which can lead to subtle
+failures at runtime:
 
-We default to synchronous invalidation on unmaps, since it gives the 
-greatest degree of security against misbehaving devices (and proves 
-quite useful for smoking out dodgy drivers too). If you're happy with 
-deferred invalidation as x86 defaults to, try "iommu.strict=0" - that 
-should avoid the main serialising bottleneck. As for the IOVA allocation 
-overhead, that's probably about as low as it's likely to get now - what 
-remains is the inevitable "doing anything vs. doing nothing" tradeoff.
+  https://gcc.gnu.org/bugzilla/show_bug.cgi?id=91111
 
-The major changes in 5.4 are for SMMUv3, so won't impact your platform.
+A very similar has been reported for 32-bit ARM as well:
 
-Robin.
+  https://lkml.kernel.org/r/f5c221f5749e5768c9f0d909175a14910d349456.camel@suse.de
+
+Although GCC 9.1 appears to work for the specific case in the bugzilla
+above, the exact issue has not been root-caused so play safe and disable
+the option for now on these architectures.
+
+Cc: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: Linus Torvalds <torvalds@linux-foundation.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Russell King <linux@armlinux.org.uk>
+Cc: Masahiro Yamada <yamada.masahiro@socionext.com>,
+Cc: Arnd Bergmann <arnd@arndb.de>
+Signed-off-by: Will Deacon <will@kernel.org>
+---
+ lib/Kconfig.debug | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
+index 93d97f9b0157..c37c72adaeff 100644
+--- a/lib/Kconfig.debug
++++ b/lib/Kconfig.debug
+@@ -312,6 +312,7 @@ config HEADERS_CHECK
+ 
+ config OPTIMIZE_INLINING
+ 	def_bool y
++	depends on !(ARM || ARM64) # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=91111
+ 	help
+ 	  This option determines if the kernel forces gcc to inline the functions
+ 	  developers have marked 'inline'. Doing so takes away freedom from gcc to
+-- 
+2.23.0.444.g18eeb5a265-goog
+
 
 _______________________________________________
 linux-arm-kernel mailing list
