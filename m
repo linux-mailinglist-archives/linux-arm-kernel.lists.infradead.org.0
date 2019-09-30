@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4529C20EB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 14:51:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4997FC20F1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 14:52:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rHAv6gpWZJ0YTsyM/d5gQCKFdo3QCtKwGr/bqQ/9NIo=; b=L6fWs5zzfnxBwH
-	dFRjMrn/TykgOugN+3uhviRIr2Enbh4uZO37jTqj9SvNFHk3souzWr+kaIAcDTwZfzqHskx80xRcO
-	W5XJOfuJDyC29tjVF5VxRp+tngwfsjmT95uZX1w0z4VgrDkQejXyfZBKVSVVD4kAA1g04x68Rmd5a
-	3mP8j+Sm8lAgCH5g1NwBlivZX/1fnFIWzEZzEOCFxBX25GuwUKaN1IcXiXP1fLKO9dql0WHMiYj8f
-	7WqOnRxGK7xFIEFYD17PUQsRvcVqkhIslMb3wc0b5Dg5ejkvRSUImuZajmbxu3lmFs+w9c6f+Wi8P
-	3bmYTdwzv9JrjzWosleQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=LVKoFTDTUAhFOiBULqS/bCU+FYnal2U9wVC/8LpJrKI=; b=gIuFgIjZqdSRcc4+Jm/mRkAqH
+	G4mF9Gsb5hvQx3IWNqtlpswQsyM1bGKFLVrrRMx/FnvY33Wu4b2005lesFRM0I/HYH7gd3uaBcypA
+	Sshdgr+4NNREKgMjrZutQi42H1MGOJBWztq1yiXwXvLgCIwl64AGWwpUJn+WkyMa36rtbivyeVmxI
+	4Es1ao/Nul0NIoky36OrrrkP7nqxin/gIN2Gucxe8I2dP7WhQINhPalqpK3PC/5xU8bJ/o3AJ7oyw
+	KxWLEIJPsQg3Ce1QnaxlYvD09McyZyd5pLoqWmgsqnrdNNW1Us82IcY3DJ5Z6Jk9fKxYr7JlvBabC
+	bJOmuDuuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEv9I-00056r-Np; Mon, 30 Sep 2019 12:51:32 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEv9B-00056a-KC
- for linux-arm-kernel@bombadil.infradead.org; Mon, 30 Sep 2019 12:51:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=IZUTeqVl1Ba37YloeUuJ8+2p36NnetB9mk6B84ZbxMM=; b=ZVHwU4GoVNRmEySR4id0+BYHe
- r/Dlw9yk2q196sSkWUS7sIigMfuHuLtkQ7fn68uEC4gFFfW/knBaJmMDoXXGUG/8HGqzvAg4t9Mca
- M3mUv1xtLEzJ4daudp6QEeleCnymEnw0TUk7ky7ed/OrxmTsFvAf8mXHYpw+ed7vF92SSR9BiFiki
- Pa/48xz44VLyXnEJ5I64OrAuhUjv6plK9i5CwxghhO46WkyuiZIEjAi4u33co3tPZ21TFG3dNFand
- 0JipGQL1j1fAXP0qs+3kza7FLYp6INzAMUtiHF4GqIb8B72xCAyHTwDt5MeZ8dzIwpX9I06VI+NOA
- MRZ2BPXwQ==;
-Received: from [179.97.35.50] (helo=quaco.ghostprotocols.net)
- by merlin.infradead.org with esmtpsa (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEv99-00022u-9b; Mon, 30 Sep 2019 12:51:23 +0000
-Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
- id C969040DA4; Mon, 30 Sep 2019 09:51:21 -0300 (-03)
-Date: Mon, 30 Sep 2019 09:51:21 -0300
-From: Arnaldo Carvalho de Melo <acme@kernel.org>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: perf annotate fails with "Invalid -1 error code"
-Message-ID: <20190930125121.GG9622@kernel.org>
-References: <20190930121537.GG25745@shell.armlinux.org.uk>
+	id 1iEvA8-0005Q3-Bv; Mon, 30 Sep 2019 12:52:24 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iEv9y-0005P5-By
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 12:52:15 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 32B911000;
+ Mon, 30 Sep 2019 05:52:13 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 634143F706;
+ Mon, 30 Sep 2019 05:52:11 -0700 (PDT)
+Subject: Re: [PATCH 00/11] of: dma-ranges fixes and improvements
+To: Marek Vasut <marek.vasut@gmail.com>, Rob Herring <robh@kernel.org>,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+References: <20190927002455.13169-1-robh@kernel.org>
+ <106d5b37-5732-204f-4140-8d528256a59b@gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <40bdf7cf-3bb1-24f8-844d-3eefbc761aba@arm.com>
+Date: Mon, 30 Sep 2019 13:52:10 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190930121537.GG25745@shell.armlinux.org.uk>
-X-Url: http://acmel.wordpress.com
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <106d5b37-5732-204f-4140-8d528256a59b@gmail.com>
+Content-Language: en-GB
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190930_055214_452470_95AD7D2B 
+X-CRM114-Status: GOOD (  17.41  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,119 +63,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>, Jiri Olsa <jolsa@redhat.com>,
- linux-kernel@vger.kernel.org,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Florian Fainelli <f.fainelli@gmail.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, Arnd Bergmann <arnd@arndb.de>,
+ linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Oza Pawandeep <oza.oza@broadcom.com>, Stefan Wahren <wahrenst@gmx.net>,
+ Simon Horman <horms+renesas@verge.net.au>,
+ Frank Rowand <frowand.list@gmail.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Mon, Sep 30, 2019 at 01:15:37PM +0100, Russell King - ARM Linux admin escreveu:
-> Hi,
+On 30/09/2019 13:40, Marek Vasut wrote:
+> On 9/27/19 2:24 AM, Rob Herring wrote:
+>> This series fixes several issues related to 'dma-ranges'. Primarily,
+>> 'dma-ranges' in a PCI bridge node does correctly set dma masks for PCI
+>> devices not described in the DT. A common case needing dma-ranges is a
+>> 32-bit PCIe bridge on a 64-bit system. This affects several platforms
+>> including Broadcom, NXP, Renesas, and Arm Juno. There's been several
+>> attempts to fix these issues, most recently earlier this week[1].
+>>
+>> In the process, I found several bugs in the address translation. It
+>> appears that things have happened to work as various DTs happen to use
+>> 1:1 addresses.
+>>
+>> First 3 patches are just some clean-up. The 4th patch adds a unittest
+>> exhibiting the issues. Patches 5-9 rework how of_dma_configure() works
+>> making it work on either a struct device child node or a struct
+>> device_node parent node so that it works on bus leaf nodes like PCI
+>> bridges. Patches 10 and 11 fix 2 issues with address translation for
+>> dma-ranges.
+>>
+>> My testing on this has been with QEMU virt machine hacked up to set PCI
+>> dma-ranges and the unittest. Nicolas reports this series resolves the
+>> issues on Rpi4 and NXP Layerscape platforms.
 > 
-> While using perf report on aarch64, I try to annotate
-> __arch_copy_to_user, and it fails with:
-> 
-> Error: Couldn't annotate __arch_copy_to_user: Internal error: Invalid -1 error code
-> 
-> which is not very helpful.  Looking at the code, the error message
-> appended to the "Couldn't annotate ...:" comes from
-> symbol__strerror_disassemble(), which expects either an errno or
-> one of the special SYMBOL_ANNOTATE_ERRNO_* constants in its 3rd
-> argument.
-> 
-> symbol__tui_annotate() passes the 3rd argument as the return value
-> from symbol__annotate2().  symbol__annotate2() returns either zero or
-> -1.  This calls symbol__annotate(), which returns -1 (which would
-> generally conflict with -EPERM), -errno, the return value of
-> arch->init, or the return value of symbol__disassemble().
-> 
-> This seems to be something of a mess - different places seem to use
-> different approaches to handling errors, and some don't bother
-> propagating the error code up.
-> 
-> The upshot is, the error message reported when trying to annotate
-> gives the user no clue why perf is unable to annotate, and you have
-> to resort to stracing perf in an attempt to find out - which also
-> isn't useful:
-> 
-> 3431  pselect6(1, [0], NULL, NULL, NULL, NULL) = 1 (in [0])
-> 3431  pselect6(5, [4], NULL, NULL, {tv_sec=10, tv_nsec=0}, NULL) = 1 (in [4], left {tv_sec=9, tv_nsec=999995480})
-> 3431  read(4, "\r", 1)                  = 1
-> 3431  uname({sysname="Linux", nodename="cex7", ...}) = 0
-> 3431  openat(AT_FDCWD, "/usr/lib/aarch64-linux-gnu/gconv/gconv-modules.cache", O_RDONLY) = 26
-> 3431  fstat(26, {st_mode=S_IFREG|0644, st_size=26404, ...}) = 0
-> 3431  mmap(NULL, 26404, PROT_READ, MAP_SHARED, 26, 0) = 0x7fa1fd9000
-> 3431  close(26)                         = 0
-> 3431  futex(0x7fa172b830, FUTEX_WAKE_PRIVATE, 2147483647) = 0
-> 3431  write(1, "\33[10;21H\33[37m\33[40m\342\224\214\342\224\200Error:\342\224"..., 522) = 522
-> 3431  pselect6(1, [0], NULL, NULL, NULL, NULL <detached ...>
-> 
-> Which makes it rather difficult to know what is actually failing...
-> so the only way is to resort to gdb.
-> 
-> It seems that dso__disassemble_filename() is returning -10000, which
-> seems to be SYMBOL_ANNOTATE_ERRNO__NO_VMLINUX and as described above,
-> this is lost due to the lack of error code propagation.
-> 
-> Specifically, the failing statement is:
-> 
->         if (dso->symtab_type == DSO_BINARY_TYPE__KALLSYMS &&
->             !dso__is_kcore(dso))
->                 return SYMBOL_ANNOTATE_ERRNO__NO_VMLINUX;
-> 
-> Looking at "dso" shows:
-> 
-> 	kernel = DSO_TYPE_KERNEL,
-> 	symtab_type = DSO_BINARY_TYPE__KALLSYMS,
-> 	binary_type = DSO_BINARY_TYPE__KALLSYMS,
-> 	load_errno = DSO_LOAD_ERRNO__MISMATCHING_BUILDID,
-> 	name = 0x555588781c "/boot/vmlinux",
-> 
-> and we finally get to the reason - it's using the wrong vmlinux.
-> So, obvious solution (once the failure reason is known), give it
-> the correct vmlinux.
-> 
-> Should it really be necessary to resort to gdb to discover why perf
-> is failing?
-> 
-> It looks like this was introduced by ecda45bd6cfe ("perf annotate:
-> Introduce symbol__annotate2 method") which did this:
-> 
-> -       err = symbol__annotate(sym, map, evsel, 0, &browser.arch);
-> +       err = symbol__annotate2(sym, map, evsel, &annotate_browser__opts, &browser.arch);
-> 
-> +int symbol__annotate2(struct symbol *sym, struct map *map, struct perf_evsel *evsel,
-> +                     struct annotation_options *options, struct arch **parch)
-> +{
-> ...
-> +       err = symbol__annotate(sym, map, evsel, 0, parch);
-> +       if (err)
-> +               goto out_free_offsets;
-> ...
-> +out_free_offsets:
-> +       zfree(&notes->offsets);
-> +       return -1;
-> +}
-> 
-> introducing this problem by the "return -1" disease.
-> 
-> So, given that this function's return value is used as an error code
-> in the way I've described above, should this function also be fixed
-> to return ENOMEM when the zalloc fails, as well as propagating the
-> return value from symbol__annotate() ?
-> 
-> I haven't yet checked to see if there's other places that call this
-> function but now rely on it returning -1... but I'd like to lodge a
-> plea that perf gets some consistency wrt how errors are passed and
-> propagated from one function to another.
+> With the following patches applied:
+>        https://patchwork.ozlabs.org/patch/1144870/
+>        https://patchwork.ozlabs.org/patch/1144871/
 
-Note taken, will address the points raised here.
+Can you try it without those additional patches? This series aims to 
+make the parsing work properly generically, such that we shouldn't need 
+to add an additional PCI-specific version of almost the same code.
 
-- Arnaldo
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
