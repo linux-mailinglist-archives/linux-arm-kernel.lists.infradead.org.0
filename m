@@ -2,63 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0F72C1CA0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 10:14:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 008EFC1CA2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 10:15:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0cOFGAJmqhbSyGxa68GqtU6WVd+Ly/ichr+iHaxoKFw=; b=ZErV4SzFO4CX1a
-	bnZZE4gJPvfTX5LRaM180Y0qOjQ3dKvntwjcM8rUtXVTVBvoMJ7mkTHOvUqxFDNV8JqX+kC62ypTX
-	UV0m9nuCoJb/S1feO94fKzryKfaZUTTa6CwJg5VqCbcoHvL9GK+kCGbeOjArfT5tvRnqGcdjRGvc4
-	7PWTpW2BofUlUcfYaahLi19TNrYo+HlzgZapnnV1YPfhFEDxvkeKAC3s4xRw8IwjH823p26g8Kk3Q
-	K40S+cTYGRicdfozCg5OY291J0lAieBSy7ic0wMzfpm6Fpyq++ilLr6kCJfWu1RwnHh6f8qlw9niw
-	jQxJlqCE14yx0I4vXkxQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XzXealamejJ0DFC2BvvXoeUEbuFesXz55W8edPffOl8=; b=rOx9F/zOPoz1DI
+	lJ6vP63VMeuq17i8XBGWhj2Pan4SMD7OiNDuZvv8wo4iCQK1dQXmU4p+3osQZ0LV9C6fKXSV/4Yzb
+	kStXAI9MNERyl7kJAR6VhHKBcsY4/Td9ldGCbo6T6d123/rofwwaB4PHOKosESKxk+Dm9GdMY+iA0
+	cnBEq0hfr9s12CagTS2utXiaHlGdfoJYJhCuF9p2MU75jSud+mLsfQ0xuFGLcw7xGr5P/WTMHtSz+
+	m0ADy9bkFf3/TR+Hks9SX3LgV9x3BiHo9blPot/IDSrUt49d/w3YOtLkvn0WRAKBGG+yJYLLitqsI
+	wY1kgjrjNYcdGZoJg1vQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEqpU-0001Um-Li; Mon, 30 Sep 2019 08:14:48 +0000
-Received: from lb3-smtp-cloud7.xs4all.net ([194.109.24.31])
+	id 1iEqq5-0003AQ-DS; Mon, 30 Sep 2019 08:15:25 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEqpL-0001Td-5u
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 08:14:40 +0000
-Received: from [192.168.2.10] ([46.9.232.237])
- by smtp-cloud7.xs4all.net with ESMTPA
- id EqpEicbzc9D4hEqpHiKpmC; Mon, 30 Sep 2019 10:14:36 +0200
-Subject: Re: [PATCH v2 6/6] media: cedrus: Add support for holding capture
- buffer
-To: Jernej Skrabec <jernej.skrabec@siol.net>, mchehab@kernel.org,
- paul.kocialkowski@bootlin.com, mripard@kernel.org, pawel@osciak.com,
- m.szyprowski@samsung.com, kyungmin.park@samsung.com, tfiga@chromium.org,
- wens@csie.org
-References: <20190929200023.215831-1-jernej.skrabec@siol.net>
- <20190929200023.215831-7-jernej.skrabec@siol.net>
-From: Hans Verkuil <hverkuil-cisco@xs4all.nl>
-Message-ID: <4fb20c41-7cc1-32c9-b5b9-2e86b5e74201@xs4all.nl>
-Date: Mon, 30 Sep 2019 10:14:32 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iEqpQ-0001Vg-2F
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 08:14:45 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1iEqpI-00012w-AU; Mon, 30 Sep 2019 10:14:36 +0200
+Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1iEqpG-0002Dx-6y; Mon, 30 Sep 2019 10:14:34 +0200
+Date: Mon, 30 Sep 2019 10:14:34 +0200
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Anson Huang <anson.huang@nxp.com>
+Subject: Re: [PATCH] firmware: imx: Skip return value check for some special
+ SCU firmware APIs
+Message-ID: <20190930081434.qrrv3yqczzxihntm@pengutronix.de>
+References: <1569406066-16626-1-git-send-email-Anson.Huang@nxp.com>
+ <20190926075914.i7tsd3cbpitrqe4q@pengutronix.de>
+ <DB3PR0402MB391683202692BEAE4D2CD9C1F5860@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <20190926100558.egils3ds37m3s5wo@pengutronix.de>
+ <VI1PR04MB702336F648EA1BF0E4AC584BEE860@VI1PR04MB7023.eurprd04.prod.outlook.com>
+ <DB3PR0402MB391675F9BF6FCA315B124BEBF5810@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <VI1PR04MB702322F2F020A527AD2F8DDEEE820@VI1PR04MB7023.eurprd04.prod.outlook.com>
+ <DB3PR0402MB39169BC7E8DB3525A309034EF5820@DB3PR0402MB3916.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-In-Reply-To: <20190929200023.215831-7-jernej.skrabec@siol.net>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfKZRIavQldudRvUzTkwCL0qmI37edGTugmtNI4J//GHq4mrRglNz336qixvQ58mB9QbDdVNUIZBGXoUQ5PJDfc9tmZ1LVFugq1cTjyH0IVY2ekOHoDVB
- t03Vu8ASUCUxcaLhQueE1xzx2/Gi8tbBX4TK7vSwe/N8YsKplExQyPj3CuuSVvj/RFjrjAn8gqyjvevYlsRemLmaUUmR6g/z0gXIejIAxdHLmOBowMDtKXr5
- HkGJznwiTCDAasGCS038IcMl0IzT5UwFJBcYedhmneeF/5k3LDHOTij1lXVWyEmzjZcjfhkuOKcIyLNwv/d9fG5RgImzg6sFZNlKE/lcCTrOpBt71iuCRCsS
- 62y2xHIL+0LAXlPghv8VnnLoE3gkWi/qst8egm79A2UisOLZjBWP3UaK12boeUifcvMchHb8kHIQnSoRHFxUnlyDZzA9nsXeenQwi/UZbH9WVRd4+q73O4Dv
- MBql0ekYo7UoI6I2ZLpxgk0SBOCBxcPp4xBKIVMKO/ZUNgzd+0DPXN1P8PqbePi3Xw4xK91N2skpyjR2WRa6j72hAbi7RGkRtFk1T9XYmNpTpygy3QRuXlmR
- J7+WPS5Z0DjPLaWEnR3TztOo63uBGlBR6TH71Xind8qcMrFZLy4UcCEnI5YFU6F5NlCXaPCyRIzG9wjuN4nR/wWiGt8w0OgsuH9l+6t7GsHplZySjfMjnJFO
- wafyG7cYdYCQuqjJ6/Ar3zDgWiv07kWKNhthk0KsU92+vn//6pq8hw==
+Content-Disposition: inline
+In-Reply-To: <DB3PR0402MB39169BC7E8DB3525A309034EF5820@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 09:49:54 up 135 days, 14:08, 87 users,  load average: 0.01, 0.02,
+ 0.07
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_011439_376259_D88F9868 
-X-CRM114-Status: GOOD (  18.32  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190930_011444_148925_66C4CA27 
+X-CRM114-Status: GOOD (  32.30  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.31 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -72,124 +82,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, jonas@kwiboo.se, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, boris.brezillon@collabora.com,
- ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 9/29/19 10:00 PM, Jernej Skrabec wrote:
-> When frame contains multiple slices and driver works in slice mode, it's
-> more efficient to hold capture buffer in queue until all slices of a
-> same frame are decoded.
-> 
-> Add support for that to Cedrus driver by exposing and implementing
-> V4L2_BUF_CAP_SUPPORTS_M2M_HOLD_CAPTURE_BUF capability.
-> 
-> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> ---
->  drivers/staging/media/sunxi/cedrus/cedrus_dec.c   |  9 +++++++++
->  drivers/staging/media/sunxi/cedrus/cedrus_hw.c    |  8 +++++---
->  drivers/staging/media/sunxi/cedrus/cedrus_video.c | 14 ++++++++++++++
->  3 files changed, 28 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
-> index e49c3396ca4d..67f7d4326fc1 100644
-> --- a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
-> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
-> @@ -31,6 +31,14 @@ void cedrus_device_run(void *priv)
->  
->  	run.src = v4l2_m2m_next_src_buf(ctx->fh.m2m_ctx);
->  	run.dst = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
-> +
-> +	if (v4l2_m2m_release_capture_buf(run.src, run.dst)) {
-> +		v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
-> +		v4l2_m2m_buf_done(run.dst, VB2_BUF_STATE_DONE);
-> +		run.dst = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
-> +	}
-> +	run.dst->is_held = run.src->flags & V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF;
-> +
->  	run.first_slice = !run.dst->vb2_buf.copied_timestamp ||
->  		run.src->vb2_buf.timestamp != run.dst->vb2_buf.timestamp;
->  
-> @@ -46,6 +54,7 @@ void cedrus_device_run(void *priv)
->  			V4L2_CID_MPEG_VIDEO_MPEG2_SLICE_PARAMS);
->  		run.mpeg2.quantization = cedrus_find_control_data(ctx,
->  			V4L2_CID_MPEG_VIDEO_MPEG2_QUANTIZATION);
-> +		run.dst->is_held = false;
->  		break;
->  
->  	case V4L2_PIX_FMT_H264_SLICE:
-> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
-> index fc8579b90dab..b466041c25db 100644
-> --- a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
-> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
-> @@ -122,7 +122,7 @@ static irqreturn_t cedrus_irq(int irq, void *data)
->  	dev->dec_ops[ctx->current_codec]->irq_clear(ctx);
->  
->  	src_buf = v4l2_m2m_src_buf_remove(ctx->fh.m2m_ctx);
-> -	dst_buf = v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
-> +	dst_buf = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
->  
->  	if (!src_buf || !dst_buf) {
->  		v4l2_err(&dev->v4l2_dev,
-> @@ -136,8 +136,10 @@ static irqreturn_t cedrus_irq(int irq, void *data)
->  		state = VB2_BUF_STATE_DONE;
->  
->  	v4l2_m2m_buf_done(src_buf, state);
-> -	v4l2_m2m_buf_done(dst_buf, state);
-> -
-> +	if (!dst_buf->is_held) {
-> +		v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
-> +		v4l2_m2m_buf_done(dst_buf, state);
-> +	}
->  	v4l2_m2m_job_finish(ctx->dev->m2m_dev, ctx->fh.m2m_ctx);
->  
->  	return IRQ_HANDLED;
-> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_video.c b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-> index 3ec3a2db790c..82198b2bb081 100644
-> --- a/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-> @@ -303,6 +303,17 @@ static int cedrus_s_fmt_vid_out(struct file *file, void *priv,
->  
->  	ctx->src_fmt = f->fmt.pix;
->  
-> +	switch (ctx->src_fmt.pixelformat) {
-> +	case V4L2_PIX_FMT_H264_SLICE:
-> +		vq->subsystem_flags |=
-> +			VB2_V4L2_FL_SUPPORTS_M2M_HOLD_CAPTURE_BUF;
-> +		break;
-> +	default:
-> +		vq->subsystem_flags &=
-> +			(u32)~VB2_V4L2_FL_SUPPORTS_M2M_HOLD_CAPTURE_BUF;
+Hi Anson, Leonard,
 
-Why the u32 cast?
+On 19-09-30 07:42, Anson Huang wrote:
+> Hi, Leonard
+> 
+> > On 2019-09-27 4:20 AM, Anson Huang wrote:
+> > >> On 2019-09-26 1:06 PM, Marco Felsch wrote:
+> > >>> On 19-09-26 08:03, Anson Huang wrote:
+> > >>>>> On 19-09-25 18:07, Anson Huang wrote:
+> > >>>>>> The SCU firmware does NOT always have return value stored in
+> > >>>>>> message header's function element even the API has response data,
+> > >>>>>> those special APIs are defined as void function in SCU firmware,
+> > >>>>>> so they should be treated as return success always.
+> > >>>>>>
+> > >>>>>> +static const struct imx_sc_rpc_msg whitelist[] = {
+> > >>>>>> +	{ .svc = IMX_SC_RPC_SVC_MISC, .func =
+> > >>>>> IMX_SC_MISC_FUNC_UNIQUE_ID },
+> > >>>>>> +	{ .svc = IMX_SC_RPC_SVC_MISC, .func =
+> > >>>>>> +IMX_SC_MISC_FUNC_GET_BUTTON_STATUS }, };
+> > >>>>>
+> > >>>>> Is this going to be extended in the near future? I see some
+> > >>>>> upcoming problems here if someone uses a different scu-fw<->kernel
+> > >>>>> combination as nxp would suggest.
+> > >>>>
+> > >>>> Could be, but I checked the current APIs, ONLY these 2 will be used
+> > >>>> in Linux kernel, so I ONLY add these 2 APIs for now.
+> > >>>
+> > >>> Okay.
+> > >>>
+> > >>>> However, after rethink, maybe we should add another imx_sc_rpc API
+> > >>>> for those special APIs? To avoid checking it for all the APIs
+> > >>>> called which
+> > >> may impact some performance.
+> > >>>> Still under discussion, if you have better idea, please advise, thanks!
+> > >>
+> > >> My suggestion is to refactor the code and add a new API for the this
+> > >> "no error value" convention. Internally they can call a common
+> > >> function with flags.
+> > >
+> > > If I understand your point correctly, that means the loop check of
+> > > whether the API is with "no error value" for every API still NOT be
+> > > skipped, it is just refactoring the code, right?
+> > 
+> > There would be no "loop" anywhere: the responsibility would fall on the call
+> > to call the right RPC function. In the current layering scheme (drivers -> RPC ->
+> > mailbox) the RPC layer treats all calls the same and it's up the the caller to
+> > provide information about calling convention.
+> > 
+> > An example implementation:
+> > * Rename imx_sc_rpc_call to __imx_sc_rpc_call_flags
+> > * Make a tiny imx_sc_rpc_call wrapper which just converts resp/noresp to a
+> > flag
+> > * Make get button status call __imx_sc_rpc_call_flags with the
+> > _IMX_SC_RPC_NOERROR flag
+> > 
+> > Hope this makes my suggestion clearer? Pushing this to the caller is a bit ugly
+> > but I think it's worth preserving the fact that the imx rpc core treats services
+> > in an uniform way.
+> 
+> It is clear now, so essentially it is same as 2 separate APIs, still need to change the
+> button driver and uid driver to use the special flag, meanwhile, need to change the
+> third parament of imx_sc_rpc_call() from bool to u32.
+> 
+> If no one opposes this approach, I will redo the patch together with the button driver
+> and uid driver after holiday.
+
+As Ansons said that are two approaches and in both ways the caller needs
+to know if the error code is valid. Extending the flags seems better to
+me but it looks still not that good. One question, does the scu-fw set
+the error-msg to something? If not than why should we specify a flag or
+a other api? Nowadays the caller needs to know that the error-msg-field isn't
+set so if the caller sets the msg-packet to zero and fills the rpc-id
+the error-msg-field shouldn't be touched by the firmware. So it should
+be zero.
 
 Regards,
+  Marco
 
-	Hans
-
-> +		break;
-> +	}
-> +
->  	/* Propagate colorspace information to capture. */
->  	ctx->dst_fmt.colorspace = f->fmt.pix.colorspace;
->  	ctx->dst_fmt.xfer_func = f->fmt.pix.xfer_func;
-> @@ -336,6 +347,9 @@ const struct v4l2_ioctl_ops cedrus_ioctl_ops = {
->  	.vidioc_streamon		= v4l2_m2m_ioctl_streamon,
->  	.vidioc_streamoff		= v4l2_m2m_ioctl_streamoff,
->  
-> +	.vidioc_try_decoder_cmd		= v4l2_m2m_ioctl_stateless_try_decoder_cmd,
-> +	.vidioc_decoder_cmd		= v4l2_m2m_ioctl_stateless_decoder_cmd,
-> +
->  	.vidioc_subscribe_event		= v4l2_ctrl_subscribe_event,
->  	.vidioc_unsubscribe_event	= v4l2_event_unsubscribe,
->  };
+> Anson
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 > 
 
+-- 
+Pengutronix e.K.                           |                             |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
