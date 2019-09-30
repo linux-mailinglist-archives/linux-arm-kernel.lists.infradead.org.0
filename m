@@ -2,116 +2,125 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DDB70C26E3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 22:44:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5E02C26E4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 22:44:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HmzzNmX7xIoLB+rHumPzv+0bovrxcI7gSHIy5wMF/5Q=; b=UzEaHd3C6dYd2e
-	mSKhFfExh5eRROTiHOt9jNfOHFfPk9xmn3wKzTKJh1XCbBlJwnjmMS91/a2wCKhcr3/iNyXFK1zuf
-	8/8GcAFbVdnF0qO3zW/POR6Erdk3qNp7VGzG5dhvA+sCuqKtj7I4y+EbwDqjjVZ+6n4REu5KAywSL
-	/CdpWhEGoWa++nPR+eOW2VNex093ELHTrOhto6WXappGK/EXKGBlOZqwrTLl9rV9BfnQ/TTwKtTZq
-	ZuTcMek9lsf+mLEQKj86icHSXTP+SBLMoUH8qoXGInKugartJDWUIJcj2IlUim9nIrBCUsWgwr08P
-	FN+PrIGtsPHMlDCUrhFQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=hUeCcecQVWPknfKqhS7JF9/GnTLkya1EK8mq2fhuvU4=; b=Gpt
+	IaGS0Z/U1DXJIQ7YBOHAFblJiFWulJAe2//BYyoeRrd2prs7CfelKU6TeUrO972dNui+wQjqjjp3F
+	YtxfwJqbqbrBJYEIGEXe+YR33hHEE0IcRBP2Ri1RUxrVlqCqfPSxkWyrW3dwLsbCFpEuhjEAHhO3K
+	yDGxQUeK+PbiM3TU/bpNXEKPvkeiGgAHLztIhMotcjuCgrgweoT5eEOTDTn0ZALgMQW2+eIr7Kbk0
+	EDfB/ucZZ1m0CDR+wV0iaYCaQyKyAgL+oW1Y43epjMy0L8Tl55msUadbAM1e9Qu7vURXCXrx3MUwZ
+	nt2aR0fFxRh1MK0EaHNgSpcghT6WdYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iF2Wu-00027r-Rg; Mon, 30 Sep 2019 20:44:24 +0000
-Received: from mail-eopbgr680086.outbound.protection.outlook.com
- ([40.107.68.86] helo=NAM04-BN3-obe.outbound.protection.outlook.com)
+	id 1iF2XF-0002FT-Js; Mon, 30 Sep 2019 20:44:45 +0000
+Received: from mx3.ucr.edu ([138.23.248.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iF2Wl-000257-KM
+ id 1iF2Wm-000278-RV
  for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 20:44:18 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=VGsmT2BFtRNyI24j5JQcgSZU7P3Ex6PHzZEDDKp9A7jI4wZms78vLik/oPvcNfjE8PHbBFS1jz41aZu2eMqNCl0kcrrzu0RqdQ1aS6bezemhJeIpd52IkPRY/c0UAt8ne65YXEIvkDNIR2ryGm7WL26d/cYgxUkHc8tYe6/MQRcdzHOkuQhvq6XHIifIyUEyR/yLnr53zpgdSQxhpdWGD5miRUANPyFnGlo3FTlYfW4HpBFr7zkn3IQ+70/wz2UfDS5zE1q8HsfWaCUDmLBDlSk76xgNWTjotrblWHTSOHNJJzw96DhTAbPopDq5/at707v/JNHN4QIZnDDgnDPy7A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Tl4EokZiXGkpdlPR23P9rGUvEAJJFbioqy2NrmUjC6M=;
- b=EjaZNUP6JpHkPuoqwayrRm2+QanUJNwS80CbxPD/O/jg8Lr4uxOLdQeJDlfIlyxb88zdZZjX1HHfK1PTAe+RtZFlMufoUK5MlQWfHDh6FTB7UbiksRnHKY+wy4Nr2MnjzLNftcWiqmjVuDdtjQgSItUSK6ouyCJWcKJQR2JRMvskuNa7zTvQsRY2t4LCAG1arOgXshPQvpRsyeCPva2b7RLXEhCeC4QEWpdCUIFu4q7lgAn151aT7C3p+lEXnOuf3aNZHcaj8vZfUR3RVxF9SPVZabU5QA3qwSJSUAWNnXKzQrkWOg2hT3yeYa7sgWHUuHTLTMg5l51cD1jiVEZLEA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=verimatrix.com; dmarc=pass action=none
- header.from=verimatrix.com; dkim=pass header.d=verimatrix.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=verimatrix.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Tl4EokZiXGkpdlPR23P9rGUvEAJJFbioqy2NrmUjC6M=;
- b=AXd8XRJblXPOt2GgdHJDrx6Uea+G+eD86HjG6UqavXJUz5eF9z0laShdcHvySYJQ9LpA/I0o5MDqNHvjr4CCTKWgHFoPAyzO9cNykubUjrz23yMZC26Aa2055/JiQZhBo2yf0WaaK3rHKS3Q/oxAdVKX4QgPPnm4UtQnF3V1bzY=
-Received: from CH2PR20MB2968.namprd20.prod.outlook.com (10.255.156.33) by
- CH2PR20MB3207.namprd20.prod.outlook.com (10.255.155.158) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2305.20; Mon, 30 Sep 2019 20:44:07 +0000
-Received: from CH2PR20MB2968.namprd20.prod.outlook.com
- ([fe80::e8b0:cb5f:268e:e3ae]) by CH2PR20MB2968.namprd20.prod.outlook.com
- ([fe80::e8b0:cb5f:268e:e3ae%5]) with mapi id 15.20.2305.017; Mon, 30 Sep 2019
- 20:44:07 +0000
-From: Pascal Van Leeuwen <pvanleeuwen@verimatrix.com>
-To: Linus Torvalds <torvalds@linux-foundation.org>
-Subject: RE: [RFC PATCH 18/18] net: wireguard - switch to crypto API for
- packet encryption
-Thread-Topic: [RFC PATCH 18/18] net: wireguard - switch to crypto API for
- packet encryption
-Thread-Index: AQHVc7xLFDyOijy/PkCX/N7Gn7qoy6c89gcAgACj7jCAAI9SgIAAOyfwgABabYCAAFofIIAAn3CAgATkO8A=
-Date: Mon, 30 Sep 2019 20:44:06 +0000
-Message-ID: <CH2PR20MB2968692F693A5A8CB71CE301CA820@CH2PR20MB2968.namprd20.prod.outlook.com>
-References: <20190925161255.1871-1-ard.biesheuvel@linaro.org>
- <20190925161255.1871-19-ard.biesheuvel@linaro.org>
- <CAHk-=wjYsbxSiV_XKWV3BwGvau_hUvQiQHLOoc7vLUZt0Wqzfw@mail.gmail.com>
- <CH2PR20MB29680F87B32BBF0495720172CA860@CH2PR20MB2968.namprd20.prod.outlook.com>
- <CAHk-=wgR_KsYw2GmZwkG3GmtX6nbyj0LEi7rSqC+uFi3ScTYcw@mail.gmail.com>
- <MN2PR20MB297317D9870A3B93B5E506C9CA810@MN2PR20MB2973.namprd20.prod.outlook.com>
- <CAHk-=wjr1w7x9Rjre_ALnDLASYNjsEHxu6VJpk4eUwZXN0ntqw@mail.gmail.com>
- <MN2PR20MB2973A696B92A8C5A74A738F1CA810@MN2PR20MB2973.namprd20.prod.outlook.com>
- <CAHk-=wj9BSMzoDD31R-ymjGpkpt0u-ndX6+p0ZWsrJFDTAN+zg@mail.gmail.com>
-In-Reply-To: <CAHk-=wj9BSMzoDD31R-ymjGpkpt0u-ndX6+p0ZWsrJFDTAN+zg@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=pvanleeuwen@verimatrix.com; 
-x-originating-ip: [188.204.2.113]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 3ffa14d0-52d5-4f1e-24bc-08d745e6f034
-x-ms-traffictypediagnostic: CH2PR20MB3207:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <CH2PR20MB3207D387209D1581DD99BDFACA820@CH2PR20MB3207.namprd20.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-forefront-prvs: 01762B0D64
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(136003)(39850400004)(346002)(376002)(366004)(199004)(189003)(13464003)(52314003)(305945005)(14454004)(26005)(52536014)(30864003)(15974865002)(6116002)(3846002)(25786009)(6916009)(4326008)(102836004)(81156014)(2906002)(8676002)(81166006)(6436002)(186003)(66574012)(71200400001)(71190400001)(76176011)(11346002)(6246003)(33656002)(99286004)(478600001)(316002)(53546011)(9686003)(14444005)(66066001)(256004)(66476007)(6506007)(76116006)(8936002)(55016002)(66446008)(486006)(66556008)(66946007)(446003)(86362001)(64756008)(5660300002)(229853002)(7416002)(7736002)(54906003)(74316002)(476003)(7696005)(18886075002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR20MB3207;
- H:CH2PR20MB2968.namprd20.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: verimatrix.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: l5KZkZ02c+3QdiO/CJjwOaXvOunlaCBEdpq8c5GfFXas+Ym7ubVW5JUrM0fko5xCR8px0UWYuG3kWKW7BEQa+IykbaGzqzMQoYOc7rzebkuqDj6NK+zZZA4lWiIqlIu5yqSUJwdaC1LDDMkHa/yIn2AdmvKqB6P8r6mIS+RMB1AB20Hik9f/3xkQZ4WjAHfWVPXJ+iDKafyXTge65LLCcqvAxkFehhG9PYsbrvwHPQ7AWQtgOrszkm8+v5fPN7lkRi9nLOVOaZzOot4OE4aOERRewgk81ueC2kJAsIBg4C6CbmFnC4sZf+XbmUa24uC1x4AQkxrMc4tU5ZCtxw+CLPMOzFzI8/iejGcj6f4KhEBnYHRDxMpTBh8ExVCNiWGTO4oYNaaI7vVkymx1dfWFxaLVZgGibAvQzYGtTIwE58g=
-x-ms-exchange-transport-forked: True
-MIME-Version: 1.0
-X-OriginatorOrg: verimatrix.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3ffa14d0-52d5-4f1e-24bc-08d745e6f034
-X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Sep 2019 20:44:06.9469 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: dcb260f9-022d-4495-8602-eae51035a0d0
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 1zswGAJYBq+tO19o9Jlbvop4dXv2S/vMldiiTsI9VN2epmFpLoRUSpY/FSukNFBYvDBdgk7ZHAIy5JV1Fl8izwD6Z9e10xhLIkMP3hU1+04=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR20MB3207
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=ucr.edu; i=@ucr.edu; q=dns/txt; s=selector3;
+ t=1569876257; x=1601412257;
+ h=from:to:cc:subject:date:message-id;
+ bh=HYGA3/ETQRN0dliOSfTAE61tbuv040Q6WyOvR7/0sbI=;
+ b=VCpKGoylUjUueBAL30Sja4FXj0FpTre/Hd96o4p7safbwCiu11dDL62r
+ fGRj8ABnj7D5uRVEa5y10weRjE84ClmwrKafOzRAB0FRtSp9T6I1SMCD/
+ v84uXg5TLnTJdZOT3DG1hFXvrR35aPvdXmWTjTyAmmGhDytNw/QoXWD2Q
+ OHKaVtT8ghVpFhPE8giiwo/rV5r9xLyO6UCVHE1ik7hOEiBmszDewp0oI
+ /DHKQAzk2JoVKWvATCtj7ChPsag4cbQcysGcNayfeXI+l27Mohr9hm5Dm
+ gTRGYKUF2R6pxZqwdRBKiNeNZy6fX1g53BgkzIkm1fVpYIrU5fkL+rPZ3 A==;
+IronPort-SDR: 3KrzE+JihJtzYYb2QGNiaO/h4zEcTh2zTneTbPVjZ4M0qb+bXKeZwLdMyFe3vdjYOFKECr3DZQ
+ vyM1huRz+IuG+q0jObFVNozciMYS22yDi0/766qDmPt+kmjqFR/ZITrx97zJRUZIr/+5Rw48yJ
+ KrZRlvI/thMD2anxSTUruvjDBrpY/mjMQM3pEbJvP0wvwQsDCixYAqXFRJIsGyJh6V4r0LrW5B
+ F1kjeI1tW4rriE/P0CsO27OtUP2XHXYFKEyYZNvEjp3V0UO909ONl5h21X5VO2+LP796nCPhkd
+ TM4=
+IronPort-PHdr: =?us-ascii?q?9a23=3A08gbzxCOQLfgWRkG61YQUyQJP3N1i/DPJgcQr6?=
+ =?us-ascii?q?AfoPdwSPT6p8bcNUDSrc9gkEXOFd2Cra4d0KyK6eu5BTNIyK3CmUhKSIZLWR?=
+ =?us-ascii?q?4BhJdetC0bK+nBN3fGKuX3ZTcxBsVIWQwt1Xi6NU9IBJS2PAWK8TW94jEIBx?=
+ =?us-ascii?q?rwKxd+KPjrFY7OlcS30P2594HObwlSizexfL1/IA+5oAnPucUanIRvJ6QswR?=
+ =?us-ascii?q?bVv3VEfPhby3l1LlyJhRb84cmw/J9n8ytOvv8q6tBNX6bncakmVLJUFDspPX?=
+ =?us-ascii?q?w7683trhnDUBCA5mAAXWUMkxpHGBbK4RfnVZrsqCT6t+592C6HPc3qSL0/RD?=
+ =?us-ascii?q?qv47t3RBLulSwKLCAy/n3JhcNsjaJbuBOhqAJ5w47Ie4GeKf5ycrrAcd8GWW?=
+ =?us-ascii?q?ZNW8BcVylAAoOndIsPDuwBPelFpIfjvlUFsBW+BQiyC+Pr1zBDm3v60KMm3+?=
+ =?us-ascii?q?gkFwzNwQ4uEM8UsHnMrNv7KrocX+62wqfP1jjPc+9a1C3h5IXSbhwtvfeBVq?=
+ =?us-ascii?q?9wf8rLzkkvEhvIgVeRqY3kPzOVy+MNuHWc4utgVOOvi3QoqwBtrjSzyMohkZ?=
+ =?us-ascii?q?TJiZ4Pylze6yp23Zs1KMS+RUVmYtCkCINduz+GO4ZyWM8vQGFltDwkxrEbpZ?=
+ =?us-ascii?q?K3ZjYGxIg7yxLHdvCKcoyF7gj9WOufITp0nmxpdbOlixuw/kWtzPD3WNOu31?=
+ =?us-ascii?q?ZQtCVFl8HBtnUK1xPO9MeKUuB9/kK92TaX0ADT9/1ELVg0laXFL54hxaY9lp?=
+ =?us-ascii?q?8JvkTCGi/6gV32jKGLekk99Oik9fjrbqn8qp+TMI90jQ7+MqAwlcClHes4NQ?=
+ =?us-ascii?q?0OU3Ca+eS6yrLj4VX0TKtWgvAyiKXUs5DXKd4FqqKkHwNZyJgv5wqjAzu+1d?=
+ =?us-ascii?q?QXh3gHLFZLeBKdiIjpPknDIfD5DPe/mVuskStny+zIM7D6H5XCMmLDnK3/cr?=
+ =?us-ascii?q?lg9k5Q0BAzwsxH55JIFrEBJ+r+WkvwtNzeEx84PBW4zPz9CNV4z48eWnyAAr?=
+ =?us-ascii?q?WfMKzMtV+F/eYvI+iXZI8JozbxMfkl5/jgjX8jg1ASYLem0oEKZ3yiGfRmOU?=
+ =?us-ascii?q?qZMjLCmNAERFYLrAojS6S+mU+CWD8LPy2aQqkmoDw3FdT1Xs/4WomxjenZj2?=
+ =?us-ascii?q?+AFZpMazUDVQiB?=
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: =?us-ascii?q?A2G+BgAYaJJdf8jSVdFmhXxMEI0ehkQ?=
+ =?us-ascii?q?BAQEGiyaBCYV6iiwBCAEBAQwBAS0CAQGEQINGIzgTAgMJAQEFAQEBAQEFBAE?=
+ =?us-ascii?q?BAhABAQkLCwgnhUKCOimDNQsWFVKBFQEFATUiOYJHAYF2FKJGgQM8jCUziGA?=
+ =?us-ascii?q?BCQ2BSAkBCIEihzWEWYEQgQeEYYdlgkQEgTcBAQGLPgGCMYcrlkkBBgKCEBS?=
+ =?us-ascii?q?BeJMHJ4I3ggKJPTmLBgGKVZxrAgoHBg8jgUaBe00lgWwKgURQEBSBWxeOQyE?=
+ =?us-ascii?q?zgQiQGgE?=
+X-IPAS-Result: =?us-ascii?q?A2G+BgAYaJJdf8jSVdFmhXxMEI0ehkQBAQEGiyaBCYV6i?=
+ =?us-ascii?q?iwBCAEBAQwBAS0CAQGEQINGIzgTAgMJAQEFAQEBAQEFBAEBAhABAQkLCwgnh?=
+ =?us-ascii?q?UKCOimDNQsWFVKBFQEFATUiOYJHAYF2FKJGgQM8jCUziGABCQ2BSAkBCIEih?=
+ =?us-ascii?q?zWEWYEQgQeEYYdlgkQEgTcBAQGLPgGCMYcrlkkBBgKCEBSBeJMHJ4I3ggKJP?=
+ =?us-ascii?q?TmLBgGKVZxrAgoHBg8jgUaBe00lgWwKgURQEBSBWxeOQyEzgQiQGgE?=
+X-IronPort-AV: E=Sophos;i="5.64,568,1559545200"; d="scan'208";a="84006195"
+Received: from mail-pf1-f200.google.com ([209.85.210.200])
+ by smtp3.ucr.edu with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
+ 30 Sep 2019 13:44:16 -0700
+Received: by mail-pf1-f200.google.com with SMTP id b13so8662573pfp.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 30 Sep 2019 13:44:15 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=dapQGiPs5+yxjLDl9zMNq1LcsFOAJWQdGyLQ0/gwWhQ=;
+ b=g843b3BbMMtrEn40sMOF0tuirCwL7QSNcflFefTlyOqf2G4b/+Kfv+GVKgQdlkcFoc
+ brNjUhEMYikIGSSiPyeVtE+STycJWbkKCqnc05+KY7fauenOfDEF27PFO9jkgc85xsL1
+ /YTjR9lmZk4RfBDzYo42xPpZNBvGwr80KoABlep/+4AJS0CHrx17/kwv3uT23hgQRBiL
+ Hn+bKhJ0SWi/4yNQzXdcJ8r3T88TMMJyBoKgg0nGcr/LcOfHvgFTiQgD4rWaUuuVA2WH
+ VYe1pfUXA+SAUD4XAEOFfGEVAZp0M6m/KwkHBVb5cijCJaQEVbzvM1LXjyGa/mUpRoor
+ F6Iw==
+X-Gm-Message-State: APjAAAXTe6jues0BbaED3S/6ZNGFDN4HZFGKvN9jIAAeMKtmdTVVWY+w
+ t2cfrCBdp0BWdb8j6mcGF0lb+SFJDlOsWHKUYmZODL7PuYECgaqOkz/gSiLk2sJR5KW0mhts/Sk
+ noubDS4BeBBV4wOZjpRjgekUAnoy2jdCrU/Ca
+X-Received: by 2002:a63:e001:: with SMTP id e1mr11470040pgh.358.1569876251835; 
+ Mon, 30 Sep 2019 13:44:11 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqx9zg1sf8FzV4vsDfqgG05ZRQlpuE7Jqlj1s/A+Zus03/W2Go073rlg0ow44d+y6lPcxf9YEw==
+X-Received: by 2002:a63:e001:: with SMTP id e1mr11469999pgh.358.1569876251280; 
+ Mon, 30 Sep 2019 13:44:11 -0700 (PDT)
+Received: from Yizhuo.cs.ucr.edu (yizhuo.cs.ucr.edu. [169.235.26.74])
+ by smtp.googlemail.com with ESMTPSA id s97sm409068pjc.4.2019.09.30.13.44.09
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 30 Sep 2019 13:44:10 -0700 (PDT)
+From: Yizhuo <yzhai003@ucr.edu>
+To: 
+Subject: [PATCH] iio: trigger: stm32-timer: fix the usage of uninitialized
+ variables
+Date: Mon, 30 Sep 2019 13:44:49 -0700
+Message-Id: <20190930204451.28614-1-yzhai003@ucr.edu>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_134415_742256_7ECB5301 
-X-CRM114-Status: GOOD (  28.34  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190930_134416_923829_F74B6205 
+X-CRM114-Status: GOOD (  16.04  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.68.86 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [138.23.248.64 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [138.23.248.64 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -130,270 +139,247 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Jason A . Donenfeld" <Jason@zx2c4.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg KH <gregkh@linuxfoundation.org>, Eric Biggers <ebiggers@google.com>,
- Samuel Neves <sneves@dei.uc.pt>,
- Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
- Andy Lutomirski <luto@kernel.org>, Marc Zyngier <maz@kernel.org>,
- Dan Carpenter <dan.carpenter@oracle.com>, Will Deacon <will@kernel.org>,
- David Miller <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: csong@cs.ucr.edu, Lars-Peter Clausen <lars@metafoo.de>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, linux-iio@vger.kernel.org,
+ zhiyunq@cs.ucr.edu, linux-kernel@vger.kernel.org, Yizhuo <yzhai003@ucr.edu>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
+ linux-stm32@st-md-mailman.stormreply.com, Jonathan Cameron <jic23@kernel.org>,
+ Alexandre Torgue <alexandre.torgue@st.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> -----Original Message----
-> From: Linus Torvalds <torvalds@linux-foundation.org>
-> Sent: Friday, September 27, 2019 6:24 PM
-> To: Pascal Van Leeuwen <pvanleeuwen@verimatrix.com>
-> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>; Linux Crypto Mailing List <linux-
-> crypto@vger.kernel.org>; Linux ARM <linux-arm-kernel@lists.infradead.org>; Herbert Xu
-> <herbert@gondor.apana.org.au>; David Miller <davem@davemloft.net>; Greg KH
-> <gregkh@linuxfoundation.org>; Jason A . Donenfeld <Jason@zx2c4.com>; Samuel Neves
-> <sneves@dei.uc.pt>; Dan Carpenter <dan.carpenter@oracle.com>; Arnd Bergmann <arnd@arndb.de>;
-> Eric Biggers <ebiggers@google.com>; Andy Lutomirski <luto@kernel.org>; Will Deacon
-> <will@kernel.org>; Marc Zyngier <maz@kernel.org>; Catalin Marinas <catalin.marinas@arm.com>
-> Subject: Re: [RFC PATCH 18/18] net: wireguard - switch to crypto API for packet encryption
-> 
-> On Fri, Sep 27, 2019 at 2:58 AM Pascal Van Leeuwen
-> <pvanleeuwen@verimatrix.com> wrote:
-> >
-> > > I'd want to see wireguard in an end-to-end situation from the very
-> > > client hardware. So laptops, phones, desktops. Not the untrusted (to
-> > > me) hw in between.
-> > >
-> > I don't see why the crypto HW would deserve any less trust than, say,
-> > the CPU itself. I would say CPU's don't deserve that trust at the moment.
-> 
-> It's not the crypto engine that is part of the untrusted hardware.
-> It's the box itself, and the manufacturer, and you having to trust
-> that the manufacturer didn't set up some magic knocking sequence to
-> disable the encryption.
-> 
-> Maybe the company that makes them is trying to do a good job. But
-> maybe they are based in a country that has laws that require
-> backdoors.
-> 
-> Say, France. There's a long long history of that kind of thing.
-> 
-> It's all to "fight terrorism", but hey, a little industrial espionage
-> is good too, isn't it? So let's just disable GSM encryption based on
-> geographic locale and local regulation, shall we.
-> 
-> Yeah, yeah, GSM encryption wasn't all that strong to begin with, but
-> it was apparently strong enough that France didn't want it.
-> 
-> So tell me again why I should trust that box that I have no control over?
-> 
-Same reason you trust your PC hardware you have no control over?
-(That CPU is assembled in Malaysia, your motherboard likely in China.
-And not being a US citizen, *I* wouldn't trust anything out of the US
-anyway, _knowing_ they've been actively spying on us for decades ...)
+Several functions in this file are trying to use regmap_read() to
+initialize the specific variable, however, if regmap_read() fails,
+the variable could be uninitialized but used directly, which is
+potentially unsafe. The return value of regmap_read() should be
+checked and handled. This patch fixes most of the uninitialized
+variables, but those in function stm32_tt_read_frequency() are
+hard to handle and need extra effot.
 
-In case you worry about the software part: of course you'd be running
-something open-source and Linux based like DD-WRT on that router ...
+Signed-off-by: Yizhuo <yzhai003@ucr.edu>
+---
+ drivers/iio/trigger/stm32-timer-trigger.c | 98 ++++++++++++++++++++---
+ 1 file changed, 85 insertions(+), 13 deletions(-)
 
-Personally I'm not that paranoid and I really like to offload all the
-silly  crypto heavy-lifting to my router box, where it belongs.
-
-> > Well, that's the general idea of abstraction. It also allows for
-> > swapping in any other cipher with minimal effort just _because_ the
-> > details were hidden from the application. So it may cost you some
-> > effort initially, but it may save you effort later.
-> 
-> We clearly disagree on the utility of crypto agility. You point to
-> things like ipsec as an argument for it.
-> 
-I don't recall doing specifically that, but anyway.
-
-> And I point to ipsec as an argument *against* that horror. It's a
-> bloated, inefficient, horribly complex mess. And all the "agility" is
-> very much part of it.
-> 
-Oh really? I've been working on implementations thereof for nearly 2
-decades, but I don't recognise this at all, at least not for the datapath.
-IPsec actually made a significant effort to keep the packet format the
-same across all extensions done over its 20+ year history. The cipher
-agility is mostly abstracted away from the base protocol, allowing us to
-add new ciphersuites - to hardware, no less! - with very minimal effort.
-
-In any, case, while I believe in the KISS principle, I also believe that
-things should be as simple as possible, but _no simpler than that_(A.E.)
-Oversimplification is the evil twin of overcomplication.
-
-> I also point to GSM as a reason against "agility". It has caused way
-> more security problems than it has ever solved. The ":agility" is
-> often a way to turn off (or tune down) the encryption, not as a way to
-> say "ok, we can improve it later".
-> 
-> That "we can improve it later" is a bedtime story. It's not how it
-> gets used. Particularly as the weaknesses are often not primarily in
-> the crypto algorithm itself, but in how it gets used or other session
-> details.
-> 
-I don't see what this has to do with cipher agility. Cipher agility has
-nothing to do with "improving things later" and everything with the 
-realisation that, someday, some clever person _will_ find some weakness.
-
-> When you actually want to *improve* security, you throw the old code
-> away, and start a new protocol entirely. Eg SSL -> TLS.
-> 
-Uhm. Now you're starting to show some ignorance ...
-
-TLS was NOT a new protocol. I was a simple rename of a very minor evolution 
-of SSL 3.0. Has been for all versions up to and including TLS 1.2. And YES,
-THAT was a mistake, because SSL was just a very poor  starting point. 
-For TLS 1.3 they finally did a (reasonably) proper redesign.
-(Fun fact: SSL was _not_ designed by a committee, but TLS 1.3 _was_ ...)
-
-> So cryptographic agility is way oversold, and often people are
-> actively lying about why they want it. And the people who aren't lying
-> are ignoring the costs.
-> 
-I wouldn't know what they could be lying about, crypto agility is 
-just common sense risk spreading.
-
-> One of the reasons _I_ like wireguard is that it just went for simple
-> and secure. No BS.
-> 
-You and me both, BTW. I just don't want it to be _too_ simple.
-
-> And you say
-> 
-> > Especially since all crypto it uses comes from a single
-> > source (DJB), which is frowned upon in the industry.
-> 
-> I'm perhaps not a fan of DJB in all respects, but there's no question
-> that he's at least competent.
-> 
-I have nothing against DJB, I've enjoyed many of his presentations.
-I might even be a fan. I certainly don't doubt his competence.
-
-But being as paranoid as you are: can you really TRUST the guy? ;-)
-And as good as he is: there may be some weakness in the algorithm(s)
-discovered _tomorrow_ and in that case _I_ would want to be able to
-switch to an alternative instantly.
-(and I believe for some big international organisation critically 
-depending on such a VPN to connect all their branch offices around
-the world while protecting their trade secrets, this is likely to
-be even more important - they probably wouldn't want to wait until
-Jason pulls Wireguard 2.0 out of his hat and certainly not for that
-to pass certification and finaly hit their devices months later ...)
-
-I'm not talking about some convoluted and fragile negotiation scheme,
-a static parameter in some config file is just fine for that. The 
-textual crypto templates of the Crypto API just fit that use case
-perfectly.
-
-And I have other reasons not to want to use Chacha-Poly, while I would
-like to use the Wireguard _protocol_ itself:
-
-1) Contrary to popular belief, Chacha-Poly is NOT the best choice of
-   algorithms in terms of performance on many modern systems. On the
-   quad core Cortex A72 system I'm working on here, AES-GCM is over 2
-   times faster, even including Ard's Poly1305-Neon patches of last
-   week (current mainline code for PC is even slower than that).
-   Also, on modern Intel systems with AES-NI or VAES, AES-GCM 
-   outperforms Chacha-Poly by a considerable margin. And, to make
-   matters worse, running Chacha-Poly at high throughput is known to
-   result in excessive thermal throttling on some recent Intel CPU's.
-   Even if you don't need that throughput, it's nice to have more CPU
-   power left to do useful work.
-2) Chacha-Poly is inefficient in terms of power. For our hardware,
-   it uses about 2x the power of AES-GCM and I have indications (e.g.
-   the thermal throttling mentioned above) that this is no better for
-   software implementations.
-
-> The "industry practice" of having committees influenced by who knows
-> what isn't all that much better. Do you want to talk about NSA
-> elliptic curve constant choices?
-> 
-Which is actually an argument _in favor_ of crypto agility - you don't
-want to be stuck with just one choice you may not trust ...
-Options are _good_. (but do add some implementation complexity, sure)
-
-> Anyway, on the costs:
-> 
-> > >  - dynamically allocate buffers at "init time"
-> >
-> > Why is that so "wrong"? It sure beats doing allocations on the hot path.
-> 
-> It's wrong not becasue the allocation is costly (you do that only
-> once), but because the dynamic allocation means that you can't embed
-> stuff in your own native data structures as a user.
-> 
-> So now accessing those things is no longer dense in the cache.
-> 
-I don't see how data allocated at _init time_ would be local in the 
-cache at the time it is _finally_ used in some remote location, far
-away in both space and time.
-
-If you init and then immediately use, you may have a point, but
-that should be the exception and not the rule.
-
-> And it's the cache that matters for a synchronous CPU algorithm. You
-> don't want the keys and state to be in some other location when you
-> already have your data structures for the stream that could just have
-> them right there with the other data.
-> 
-Yeah yeah, we all know that. But that only works for stuff that stays
-in scope in the cache, not for stuff that has long since been pushed
-out by other local variables.
-
-And "other" memory that's used frequently (i.e. when it matters!) CAN
-be cached too, you known :-) Modern prefetchers tend to be quite good,
-too, so it shouldn't even matter if it gets flushed out temporarily.
-
-> > And you don't want to have it on the stack initially and then have
-> > to _copy_ it to some DMA-able location that you allocate on the fly
-> > on the hot path if you _do_ want HW acceleration.
-> 
-> Actually, that's *exactly* what you want. You want keys etc to be in
-> regular memory in a location that is convenient to the user, and then
-> only if the hardware has issues do you say "ok, copy the key to the
-> hardware". Because quite often the hardware will have very special key
-> caches that aren't even available to the CPU, because they are on some
-> hw-private buffers.
-> 
-Unfortunately, the only way to get that _into_ the HW is usually DMA
-and that relies on DMA-capable memory. And copying significant data 
-around on the  CPU tends to totally kill performance if you're in the 
-business of HW acceleration, so it's nice if it's already in a DMA
-capable buffer. Assuming the cost of having it there is not excessive.
-
-I don't care so much about the keys BTW, that should not be performance
-critical as you set it only once in a long while.
-But things like IV's etc. _may_ be another matter for _some_ hardware.
-(Actually, for _my_ hardware I _only_ care about not having to copy the
-actual _data_, so for all _I_ care everything else can be on the stack.
-But alas, I'm not alone in the world ...)
-
-> Yes, you want to have a "key identity" model so that the hardware
-> doesn't have to reload it all the time, but that's an invalidation
-> protocol, not a "put the keys or nonces in special places".
-> 
-Actually, that _is_ exactly how (most of) _our_ hardware works :-)
-
-But I _think_ keys and nonces and whatnot are actually not the main
-reason those structs can't be on the stack. Drivers tend to add their
-own local data to those structs, and this may contain buffers that
-are used for DMA. I know for a fact the Inside Secure driver does
-this (_not_ my design, BTW). I would personally have opted for 
-embedding pointers to dynamically allocated blobs elsewhere, such
-that the main struct _can_ be on the stack. Food for discussion :-)
+diff --git a/drivers/iio/trigger/stm32-timer-trigger.c b/drivers/iio/trigger/stm32-timer-trigger.c
+index a5dfe65cd9b9..f8ea7bcbb739 100644
+--- a/drivers/iio/trigger/stm32-timer-trigger.c
++++ b/drivers/iio/trigger/stm32-timer-trigger.c
+@@ -107,6 +107,7 @@ static int stm32_timer_start(struct stm32_timer_trigger *priv,
+ 	unsigned long long prd, div;
+ 	int prescaler = 0;
+ 	u32 ccer, cr1;
++	int ret;
+ 
+ 	/* Period and prescaler values depends of clock rate */
+ 	div = (unsigned long long)clk_get_rate(priv->clk);
+@@ -132,11 +133,21 @@ static int stm32_timer_start(struct stm32_timer_trigger *priv,
+ 	}
+ 
+ 	/* Check if nobody else use the timer */
+-	regmap_read(priv->regmap, TIM_CCER, &ccer);
++	ret = regmap_read(priv->regmap, TIM_CCER, &ccer);
++	if (ret) {
++		dev_err(priv->dev, "fail to read TIM_CCER.\n");
++		return ret;
++	}
++
+ 	if (ccer & TIM_CCER_CCXE)
+ 		return -EBUSY;
+ 
+-	regmap_read(priv->regmap, TIM_CR1, &cr1);
++	ret = regmap_read(priv->regmap, TIM_CR1, &cr1);
++	if (ret) {
++		dev_err(priv->dev, "fail to read TIM_CR1.\n");
++		return ret;
++	}
++
+ 	if (!(cr1 & TIM_CR1_CEN))
+ 		clk_enable(priv->clk);
+ 
+@@ -164,12 +175,23 @@ static int stm32_timer_start(struct stm32_timer_trigger *priv,
+ static void stm32_timer_stop(struct stm32_timer_trigger *priv)
+ {
+ 	u32 ccer, cr1;
++	int ret;
++
++	ret = regmap_read(priv->regmap, TIM_CCER, &ccer);
++	if (ret) {
++		dev_err(priv->dev, "Fail to read TIM_CCER.\n");
++		return;
++	}
+ 
+-	regmap_read(priv->regmap, TIM_CCER, &ccer);
+ 	if (ccer & TIM_CCER_CCXE)
+ 		return;
+ 
+-	regmap_read(priv->regmap, TIM_CR1, &cr1);
++	ret = regmap_read(priv->regmap, TIM_CR1, &cr1);
++	if (ret) {
++		dev_err(priv->dev, "Fail to read TIM_CR1.\n");
++		return;
++	}
++
+ 	if (cr1 & TIM_CR1_CEN)
+ 		clk_disable(priv->clk);
+ 
+@@ -403,20 +425,36 @@ static int stm32_counter_read_raw(struct iio_dev *indio_dev,
+ {
+ 	struct stm32_timer_trigger *priv = iio_priv(indio_dev);
+ 	u32 dat;
++	int ret;
+ 
+ 	switch (mask) {
+ 	case IIO_CHAN_INFO_RAW:
+-		regmap_read(priv->regmap, TIM_CNT, &dat);
++		ret = regmap_read(priv->regmap, TIM_CNT, &dat);
++		if (ret) {
++			dev_err(priv->dev, "fail to read TIM_CNT.\n");
++			return ret;
++		}
++
+ 		*val = dat;
+ 		return IIO_VAL_INT;
+ 
+ 	case IIO_CHAN_INFO_ENABLE:
+-		regmap_read(priv->regmap, TIM_CR1, &dat);
++		ret = regmap_read(priv->regmap, TIM_CR1, &dat);
++		if (ret) {
++			dev_err(priv->dev, "fail to read TIM_CR1.\n");
++			return ret;
++		}
++
+ 		*val = (dat & TIM_CR1_CEN) ? 1 : 0;
+ 		return IIO_VAL_INT;
+ 
+ 	case IIO_CHAN_INFO_SCALE:
+-		regmap_read(priv->regmap, TIM_SMCR, &dat);
++		ret = regmap_read(priv->regmap, TIM_SMCR, &dat);
++		if (ret) {
++			dev_err(priv->dev, "fail to read TIM_SMCR.\n");
++			return ret;
++		}
++
+ 		dat &= TIM_SMCR_SMS;
+ 
+ 		*val = 1;
+@@ -438,6 +476,7 @@ static int stm32_counter_write_raw(struct iio_dev *indio_dev,
+ {
+ 	struct stm32_timer_trigger *priv = iio_priv(indio_dev);
+ 	u32 dat;
++	int ret;
+ 
+ 	switch (mask) {
+ 	case IIO_CHAN_INFO_RAW:
+@@ -449,13 +488,23 @@ static int stm32_counter_write_raw(struct iio_dev *indio_dev,
+ 
+ 	case IIO_CHAN_INFO_ENABLE:
+ 		if (val) {
+-			regmap_read(priv->regmap, TIM_CR1, &dat);
++			ret = regmap_read(priv->regmap, TIM_CR1, &dat);
++			if (ret) {
++				dev_err(priv->dev, "fail to read TIM_CR1.\n");
++				return ret;
++			}
++
+ 			if (!(dat & TIM_CR1_CEN))
+ 				clk_enable(priv->clk);
+ 			regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN,
+ 					   TIM_CR1_CEN);
+ 		} else {
+-			regmap_read(priv->regmap, TIM_CR1, &dat);
++			ret = regmap_read(priv->regmap, TIM_CR1, &dat);
++			if (ret) {
++				dev_err(priv->dev, "fail to read TIM_CR1.\n");
++				return ret;
++			}
++
+ 			regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN,
+ 					   0);
+ 			if (dat & TIM_CR1_CEN)
+@@ -517,8 +566,13 @@ static int stm32_get_trigger_mode(struct iio_dev *indio_dev,
+ {
+ 	struct stm32_timer_trigger *priv = iio_priv(indio_dev);
+ 	u32 smcr;
++	int ret;
+ 
+-	regmap_read(priv->regmap, TIM_SMCR, &smcr);
++	ret = regmap_read(priv->regmap, TIM_SMCR, &smcr);
++	if (ret) {
++		dev_err(priv->dev, "fail to read TIM_SMCR.\n");
++		return ret;
++	}
+ 
+ 	return (smcr & TIM_SMCR_SMS) == TIM_SMCR_SMS ? 0 : -EINVAL;
+ }
+@@ -557,6 +611,7 @@ static int stm32_set_enable_mode(struct iio_dev *indio_dev,
+ 	struct stm32_timer_trigger *priv = iio_priv(indio_dev);
+ 	int sms = stm32_enable_mode2sms(mode);
+ 	u32 val;
++	int ret;
+ 
+ 	if (sms < 0)
+ 		return sms;
+@@ -565,7 +620,12 @@ static int stm32_set_enable_mode(struct iio_dev *indio_dev,
+ 	 * enable counter clock, so it can use it. Keeps it in sync with CEN.
+ 	 */
+ 	if (sms == 6) {
+-		regmap_read(priv->regmap, TIM_CR1, &val);
++		ret = regmap_read(priv->regmap, TIM_CR1, &val);
++		if (ret) {
++			dev_err(priv->dev, "fail to read TIM_CR1.\n");
++			return ret;
++		}
++
+ 		if (!(val & TIM_CR1_CEN))
+ 			clk_enable(priv->clk);
+ 	}
+@@ -594,8 +654,14 @@ static int stm32_get_enable_mode(struct iio_dev *indio_dev,
+ {
+ 	struct stm32_timer_trigger *priv = iio_priv(indio_dev);
+ 	u32 smcr;
++	int ret;
++
++	ret = regmap_read(priv->regmap, TIM_SMCR, &smcr);
++	if (ret) {
++		dev_err(priv->dev, "fail to read TIM_SMCR.\n");
++		return ret;
++	}
+ 
+-	regmap_read(priv->regmap, TIM_SMCR, &smcr);
+ 	smcr &= TIM_SMCR_SMS;
+ 
+ 	return stm32_sms2enable_mode(smcr);
+@@ -706,13 +772,19 @@ EXPORT_SYMBOL(is_stm32_timer_trigger);
+ static void stm32_timer_detect_trgo2(struct stm32_timer_trigger *priv)
+ {
+ 	u32 val;
++	int ret;
+ 
+ 	/*
+ 	 * Master mode selection 2 bits can only be written and read back when
+ 	 * timer supports it.
+ 	 */
+ 	regmap_update_bits(priv->regmap, TIM_CR2, TIM_CR2_MMS2, TIM_CR2_MMS2);
+-	regmap_read(priv->regmap, TIM_CR2, &val);
++	ret = regmap_read(priv->regmap, TIM_CR2, &val);
++	if (ret) {
++		dev_err(priv->dev, "fail to read TIM_CR2.\n");
++		return;
++	}
++
+ 	regmap_update_bits(priv->regmap, TIM_CR2, TIM_CR2_MMS2, 0);
+ 	priv->has_trgo2 = !!val;
+ }
+-- 
+2.17.1
 
 
->                Linus
-
-
-Regards,
-Pascal van Leeuwen
-Silicon IP Architect, Multi-Protocol Engines @ Verimatrix
-www.insidesecure.com
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
