@@ -2,83 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84FC9C1C79
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 10:02:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFFA8C1C97
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 10:11:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KgRfzlkeHrQFOpFgCqkSTmBc9XBkmqMeb6nhnD2Aqh8=; b=gUdY5f1Hm1XiDt
-	9OOfLwa/9pBAKfFd9WPhavcxZI3kvjprtRL+BrjNiS2QuRM/pMUdOgoCcXehlhhWHyy6lKTWEqf5y
-	YK7ly8oNSo5CadujHAM6aox4kKQK9AxjVtVY8WgTPgxuSgrRX3zOKM7qdJovf40f5A9SqMbLUPdNl
-	xjEuBZZDaMLVbHamIhLk+EKIF9c9VUHJuR1X3jUOTtHAh56hXG06eZTuxh7QspNxwMV8xHqBosJU4
-	/owumvtSzS/UzTecjp9xp36hvN7vxWqxxNsbB1G1pcNoSP/E423+he9igyE5TL0zDYkqSSJI+HHrR
-	i9Oi8HU5G+AzSIDDWqlA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8Wwg+qWGk0BMkq/D3/7EAFNpLH8CemaUp/dqdAwRpAk=; b=ohcTLnwFv7Rgi6
+	3hqes0GJlWt+VctyXh5uEP0P4tebQpmAAg3QA3o+mknJtnL/U3YgkrPQko4dV+0C7Hunn1opN0pQ4
+	ZMe1OLlUYvEIu8v6rA+TjvoFesDHFaLvo7qGV5PNJ+vX+gFl53jcVVYH14KJ/OLAZ/JaQdiz9BKeX
+	VjDCodGOl/mUGErBt3B9LWD81eIrTNZukP1Msgiqc17cASiJF/aKDMDgJjMmvSLAxjKZt/gQc1m3N
+	sQwBn7L3gGrdk4/eFVPdJevVifiBvn7dm7bRpVcNLBv2o16f3h73Ysdo31TqvJ0IDGTHkveKKwUgh
+	Mv0l/MDGosIW/xew+GIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEqdh-0005rI-62; Mon, 30 Sep 2019 08:02:37 +0000
-Received: from mail-wm1-f67.google.com ([209.85.128.67])
+	id 1iEqlx-0000qd-7D; Mon, 30 Sep 2019 08:11:09 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEqdV-0005qO-H2
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 08:02:26 +0000
-Received: by mail-wm1-f67.google.com with SMTP id r17so13486819wme.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Sep 2019 01:02:24 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=fizj4yTUNCuGZAq8TVj3hQISg7yH6mFEeG99CtKC4TE=;
- b=gRtcbDRde6lDBgztzKy9rFniTnw6zEwv8w+fj+xcthU9gpri2N8VYhHP5IaRsT7k2Z
- Ei8OIRYlLhfPeR/VZaI53Bx2r6OVwWNxSIU4ebOQzdWcGpgOJFIzBqkLI7nlccBZt6LW
- v8Cf2GKf6TQjV8SBoGuvk8TIWp7pDEskC0ArdvsPIEkr+QPyEDwkM6mKw8ICXP14Kx8Z
- vDU+EP0wRFvhtVl/OGHP4yuOIrrnrQXCUsKlErgXffftBOOaIwn5wGqK4v5Yfd/1GHmm
- ymJdnSarlrQiASLsPgc/8OKTtYcNBS3qWz6XBj3JVA86yYfCgOp04FnrYpUjw34T3lQ+
- jMJA==
-X-Gm-Message-State: APjAAAXtHDbXp3lxLl3l33IBd0c/q+O/9q56XwDiLtvE8JbqLgNkE7kN
- ecSZYxGjM1aDOcD9C3q5B5o=
-X-Google-Smtp-Source: APXvYqxndPqHVxIHe63ZUThkAaMUEXaaoIZyED6YAbYpSbBXh+m6JJ93cT5e3vlVVimUo6YvZaoW2Q==
-X-Received: by 2002:a1c:c1cc:: with SMTP id r195mr16991339wmf.50.1569830543182; 
- Mon, 30 Sep 2019 01:02:23 -0700 (PDT)
-Received: from pi3 ([194.230.155.145])
- by smtp.googlemail.com with ESMTPSA id a3sm19395536wmc.3.2019.09.30.01.02.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Sep 2019 01:02:22 -0700 (PDT)
-Date: Mon, 30 Sep 2019 10:02:17 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Olof Johansson <olof@lixom.net>
-Subject: Re: [GIT PULL 1/2] arm64: dts: exynos: Pull for v5.4
-Message-ID: <20190930080217.GA23709@pi3>
-References: <20190911183632.4317-1-krzk@kernel.org>
- <CAK8P3a2pBV+fh0rHitZ30Zz61QNRLfNSD-nhnzq4ZtxSh66F1Q@mail.gmail.com>
- <CAJKOXPcOSvc2DfoN+7Tca=t5dSm3RcKqmm06AfR0PAVBeY=GvQ@mail.gmail.com>
- <20190929175134.fsieffurfdiqhpj2@localhost>
+ id 1iEqlo-0000pD-3T
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 08:11:02 +0000
+Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
+ Codrin.Ciubotariu@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Codrin.Ciubotariu@microchip.com";
+ x-sender="Codrin.Ciubotariu@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa1.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Codrin.Ciubotariu@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa1.microchip.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=Pass smtp.mailfrom=Codrin.Ciubotariu@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: B6uLi4Qbu9FFLFCGSo0DY8CEcMIpWJyexRQUgfJbohKBqupmT9+BGvpbYOCrgdsWvr46fiHjuz
+ 7peqgYEy57fh316Hk1KTWABe1+wro3xJMFrStFgCrBx2QCbi9f9Z0cdvnS8KIfp74Ch0oU/R6G
+ 899haWDs2PHyFzkce9PlX0yLtuD+Mzdi1Mt0QMNatnOzgGwTWrd4Vp8vHbY3nAm/7a/JEEznb+
+ UC9Pxe04J7MkMuWjq5xzgmGTZ0tCm716uyfblLTN1gQ7VMTP1i2RQOBXfJyfvHZbxo3pl7usMw
+ /EA=
+X-IronPort-AV: E=Sophos;i="5.64,565,1559545200"; d="scan'208";a="52398108"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 30 Sep 2019 01:10:52 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
+ chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 30 Sep 2019 01:10:52 -0700
+Received: from rob-ult-m19940.microchip.com (10.10.85.251) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
+ 15.1.1713.5 via Frontend Transport; Mon, 30 Sep 2019 01:10:48 -0700
+From: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+To: <linux-i2c@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-kernel@vger.kernel.org>
+Subject: [PATCH v3] i2c: at91: Send bus clear command if SCL or SDA is down
+Date: Mon, 30 Sep 2019 11:10:36 +0300
+Message-ID: <20190930081036.17803-1-codrin.ciubotariu@microchip.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190929175134.fsieffurfdiqhpj2@localhost>
-User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_010225_565908_872C66BE 
-X-CRM114-Status: GOOD (  23.28  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190930_011100_154228_D02B1C8D 
+X-CRM114-Status: GOOD (  12.74  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.67 listed in list.dnswl.org]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.67 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,72 +93,185 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>,
- "moderated list:ARM/SAMSUNG EXYNOS ARM ARCHITECTURES"
- <linux-samsung-soc@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- SoC Team <soc@kernel.org>, arm-soc <arm@kernel.org>,
- Kukjin Kim <kgene@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: alexandre.belloni@bootlin.com, wsa@the-dreams.de,
+ ludovic.desroches@microchip.com,
+ Codrin Ciubotariu <codrin.ciubotariu@microchip.com>,
+ Claudiu.Beznea@microchip.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Sep 29, 2019 at 10:51:34AM -0700, Olof Johansson wrote:
-> Hi,
-> 
-> On Thu, Sep 12, 2019 at 08:32:47AM +0200, Krzysztof Kozlowski wrote:
-> > On Wed, 11 Sep 2019 at 23:07, Arnd Bergmann <arnd@arndb.de> wrote:
-> > >
-> > > On Wed, Sep 11, 2019 at 8:36 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> > > >
-> > > > Hi,
-> > > >
-> > > > Unfortunately the patches were applied right after closing the linux-next.
-> > >
-> > > Hi Krzysztof,
-> > >
-> > > I took a look at these and am not convinced this is right:
-> > >
-> > > > 1. Fix boot of Exynos7 due to wrong address/size of memory node,
-> > >
-> > > The current state is clearly broken and a fix is needed, but
-> > > I'm not sure this is the right fix. Why do you have 32-bit physical
-> > > addressing on a 64-bit chip? I looked at commit ef72171b3621
-> > > that introduced it, and it seems it would be better to just
-> > > revert back to 64-bit addresses.
-> > 
-> > We discussed with Marek Szyprowski that either we can go back to
-> > 64-bit addressing or stick to 32. There are not known boards with more
-> > than 4 GB of RAM so from this point of view the choice was irrelevant.
-> > At the end of discussion I mentioned to stick with other arm64 boards
-> > (although not all), so revert to have 64 bit address... but Marek
-> > chosen differently. Since you ask, let's go back with revert.
-> > 
-> > >
-> > > > 2. Move GPU under /soc node,
-> > >
-> > > No problem
-> > >
-> > > > 3. Minor cleanup of #address-cells.
-> > >
-> > > IIRC, an interrupt-controller is required to have a #address-cells
-> > > property, even if that is normally zero. I don't remember the
-> > > details, but the gic binding lists it as mandatory, and I think
-> > > the PCI interrupt-map relies on it. I would just drop this patch.
-> > 
-> > Indeed, binding requires both address and size cells. I'll drop it.
-> 
-> Looking through the history of pending material, I didn't see a new pull for
-> this material. Just checking in to see if there's something we missed?
+After a transfer timeout, some faulty I2C slave devices might hold down
+the SCL or the SDA pins. We can generate a bus clear command, hoping that
+the slave might release the pins.
 
-No, it's me who forgot to resend. I was sure that I rebased the branch
-and created new pull request. However it seems I did not. Let's keep it
-for next merge window... v5.4-rc should be any minute, I guess?
+Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
+---
 
-Best regards,
-Krzysztof
+Changes in v3:
+ - fixed kbuild warning;
+
+Changes in v2:
+ - added '.has_clear_cmd' struct member to specify which IPs support the
+   clear command; for now, only SAMA5D2 supports it;
+ - added Ludovic's V1 ack since there were no major changes;
+
+ drivers/i2c/busses/i2c-at91-core.c   |  8 ++++++++
+ drivers/i2c/busses/i2c-at91-master.c | 22 ++++++++++++++++++++++
+ drivers/i2c/busses/i2c-at91.h        |  7 ++++++-
+ 3 files changed, 36 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/i2c/busses/i2c-at91-core.c b/drivers/i2c/busses/i2c-at91-core.c
+index 435c7d7377a3..cb07489e698f 100644
+--- a/drivers/i2c/busses/i2c-at91-core.c
++++ b/drivers/i2c/busses/i2c-at91-core.c
+@@ -68,6 +68,7 @@ static struct at91_twi_pdata at91rm9200_config = {
+ 	.has_unre_flag = true,
+ 	.has_alt_cmd = false,
+ 	.has_hold_field = false,
++	.has_clear_cmd = false,
+ };
+ 
+ static struct at91_twi_pdata at91sam9261_config = {
+@@ -76,6 +77,7 @@ static struct at91_twi_pdata at91sam9261_config = {
+ 	.has_unre_flag = false,
+ 	.has_alt_cmd = false,
+ 	.has_hold_field = false,
++	.has_clear_cmd = false,
+ };
+ 
+ static struct at91_twi_pdata at91sam9260_config = {
+@@ -84,6 +86,7 @@ static struct at91_twi_pdata at91sam9260_config = {
+ 	.has_unre_flag = false,
+ 	.has_alt_cmd = false,
+ 	.has_hold_field = false,
++	.has_clear_cmd = false,
+ };
+ 
+ static struct at91_twi_pdata at91sam9g20_config = {
+@@ -92,6 +95,7 @@ static struct at91_twi_pdata at91sam9g20_config = {
+ 	.has_unre_flag = false,
+ 	.has_alt_cmd = false,
+ 	.has_hold_field = false,
++	.has_clear_cmd = false,
+ };
+ 
+ static struct at91_twi_pdata at91sam9g10_config = {
+@@ -100,6 +104,7 @@ static struct at91_twi_pdata at91sam9g10_config = {
+ 	.has_unre_flag = false,
+ 	.has_alt_cmd = false,
+ 	.has_hold_field = false,
++	.has_clear_cmd = false,
+ };
+ 
+ static const struct platform_device_id at91_twi_devtypes[] = {
+@@ -130,6 +135,7 @@ static struct at91_twi_pdata at91sam9x5_config = {
+ 	.has_unre_flag = false,
+ 	.has_alt_cmd = false,
+ 	.has_hold_field = false,
++	.has_clear_cmd = false,
+ };
+ 
+ static struct at91_twi_pdata sama5d4_config = {
+@@ -138,6 +144,7 @@ static struct at91_twi_pdata sama5d4_config = {
+ 	.has_unre_flag = false,
+ 	.has_alt_cmd = false,
+ 	.has_hold_field = true,
++	.has_clear_cmd = false,
+ };
+ 
+ static struct at91_twi_pdata sama5d2_config = {
+@@ -146,6 +153,7 @@ static struct at91_twi_pdata sama5d2_config = {
+ 	.has_unre_flag = true,
+ 	.has_alt_cmd = true,
+ 	.has_hold_field = true,
++	.has_clear_cmd = true,
+ };
+ 
+ static const struct of_device_id atmel_twi_dt_ids[] = {
+diff --git a/drivers/i2c/busses/i2c-at91-master.c b/drivers/i2c/busses/i2c-at91-master.c
+index a3fcc35ffd3b..12d4fa946a82 100644
+--- a/drivers/i2c/busses/i2c-at91-master.c
++++ b/drivers/i2c/busses/i2c-at91-master.c
+@@ -440,6 +440,7 @@ static int at91_do_twi_transfer(struct at91_twi_dev *dev)
+ 	unsigned long time_left;
+ 	bool has_unre_flag = dev->pdata->has_unre_flag;
+ 	bool has_alt_cmd = dev->pdata->has_alt_cmd;
++	bool has_clear_cmd = dev->pdata->has_clear_cmd;
+ 
+ 	/*
+ 	 * WARNING: the TXCOMP bit in the Status Register is NOT a clear on
+@@ -599,6 +600,27 @@ static int at91_do_twi_transfer(struct at91_twi_dev *dev)
+ 		at91_twi_write(dev, AT91_TWI_CR,
+ 			       AT91_TWI_THRCLR | AT91_TWI_LOCKCLR);
+ 	}
++
++	/*
++	 * After timeout, some faulty I2C slave devices might hold SCL/SDA down;
++	 * we can send a bus clear command, hoping that the pins will be
++	 * released
++	 */
++	if (has_clear_cmd &&
++	    (!(dev->transfer_status & AT91_TWI_SDA) ||
++	     !(dev->transfer_status & AT91_TWI_SCL))) {
++		dev_dbg(dev->dev,
++			"SDA/SCL are down; sending bus clear command\n");
++		if (dev->use_alt_cmd) {
++			unsigned int acr;
++
++			acr = at91_twi_read(dev, AT91_TWI_ACR);
++			acr &= ~AT91_TWI_ACR_DATAL_MASK;
++			at91_twi_write(dev, AT91_TWI_ACR, acr);
++		}
++		at91_twi_write(dev, AT91_TWI_CR, AT91_TWI_CLEAR);
++	}
++
+ 	return ret;
+ }
+ 
+diff --git a/drivers/i2c/busses/i2c-at91.h b/drivers/i2c/busses/i2c-at91.h
+index 499b506f6128..0827c28a84db 100644
+--- a/drivers/i2c/busses/i2c-at91.h
++++ b/drivers/i2c/busses/i2c-at91.h
+@@ -36,6 +36,7 @@
+ #define	AT91_TWI_SVDIS		BIT(5)	/* Slave Transfer Disable */
+ #define	AT91_TWI_QUICK		BIT(6)	/* SMBus quick command */
+ #define	AT91_TWI_SWRST		BIT(7)	/* Software Reset */
++#define	AT91_TWI_CLEAR		BIT(15) /* Bus clear command */
+ #define	AT91_TWI_ACMEN		BIT(16) /* Alternative Command Mode Enable */
+ #define	AT91_TWI_ACMDIS		BIT(17) /* Alternative Command Mode Disable */
+ #define	AT91_TWI_THRCLR		BIT(24) /* Transmit Holding Register Clear */
+@@ -69,6 +70,8 @@
+ #define	AT91_TWI_NACK		BIT(8)	/* Not Acknowledged */
+ #define	AT91_TWI_EOSACC		BIT(11)	/* End Of Slave Access */
+ #define	AT91_TWI_LOCK		BIT(23) /* TWI Lock due to Frame Errors */
++#define	AT91_TWI_SCL		BIT(24) /* TWI SCL status */
++#define	AT91_TWI_SDA		BIT(25) /* TWI SDA status */
+ 
+ #define	AT91_TWI_INT_MASK \
+ 	(AT91_TWI_TXCOMP | AT91_TWI_RXRDY | AT91_TWI_TXRDY | AT91_TWI_NACK \
+@@ -81,7 +84,8 @@
+ #define	AT91_TWI_THR		0x0034	/* Transmit Holding Register */
+ 
+ #define	AT91_TWI_ACR		0x0040	/* Alternative Command Register */
+-#define	AT91_TWI_ACR_DATAL(len)	((len) & 0xff)
++#define	AT91_TWI_ACR_DATAL_MASK	GENMASK(15, 0)
++#define	AT91_TWI_ACR_DATAL(len)	((len) & AT91_TWI_ACR_DATAL_MASK)
+ #define	AT91_TWI_ACR_DIR	BIT(8)
+ 
+ #define	AT91_TWI_FMR		0x0050	/* FIFO Mode Register */
+@@ -108,6 +112,7 @@ struct at91_twi_pdata {
+ 	bool has_unre_flag;
+ 	bool has_alt_cmd;
+ 	bool has_hold_field;
++	bool has_clear_cmd;
+ 	struct at_dma_slave dma_slave;
+ };
+ 
+-- 
+2.20.1
 
 
 _______________________________________________
