@@ -2,114 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95685C1B63
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 08:21:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7083C1BBD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 08:50:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IJBIgfUmShqAMy+SSnyk+/VT8QELvbYwSPYMZu3QXGs=; b=p7tnBmH752bBJZ
-	t6xtJVJXFg++MqnRK8d1rlgAgOZB1jQKrW3NxT6/ZBvOcCVRUpLbBx+xaH7D5izU/zj8OOWl1mC8H
-	u9SerHL3NrLDnERSfe267hG/HQc7AiRZbEF03yQjIZ39q3WcgvV4prq6uk81x0cY65+w+bB3bkrsP
-	BmVrht7/HoX8XI2H2zHhTU9yjMb1gmq+4MEsI+jVEEpESOGsoCNgMjrLQTRA/jXpc1PFkjFm1T9ec
-	utpOr3ae4xn0yD8AupDFwEeqSoW4M+98ZKdYyXKgxKncIn+YOf1Zpsox8jonivDSKC3xFkZYgnK/i
-	4TPLqW9XqoMa0xUhk5eQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=7XSgnZjDkB6CyFFiI9oTvKzRxdSGk3ky+mcKC+K/2AU=; b=Y9a
+	a0sxO41O310bdEh/iKAV20N6IG2EF7J9RYJBF4zb4gUv4U+dbYJoKecFS0eVwDKAkl7qpvqi/sYxj
+	1Iqz62Zo5YQNr2vlqNshjK3CmsJbwF8LUPXLqyz6WpvLvxZnwp00RYGwAyImBBzS9bj+ResR7ggbN
+	Bj/XdCN0+wKjNvxmnOUBnIDBE7IRIUbvayholFumMZoy/cmTROEXtvVknwg5rWlEeuvjapL/5HWXz
+	wGPjOTs9vaH3uUR++W0+1sFFTQx0JVyU9RnQErg9WL6O4uajDr1W6WeaeR8E/JW69zc3f+BzcWXj8
+	ORXuDow5lmCUaNVoYqTd7pVsWExDd7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEp3L-0002sF-Ph; Mon, 30 Sep 2019 06:20:59 +0000
-Received: from mail-eopbgr40089.outbound.protection.outlook.com ([40.107.4.89]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1iEpVM-0003K2-5K; Mon, 30 Sep 2019 06:49:56 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEp2f-0001vi-Le
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 06:20:19 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=X4yThVsC4vc7MLxRQbRgwBksGbQy+yqEBtIxWCgj//VztCTORYED5ctddrUcpRLWX2QW7GaOkkO++U9qC3xgZiozHbpc+AVRboXIRnKCn0cbv2KNZWasGPaarIbecFk4Zwvb7RYKmhXwH9163BPGvbLRESuFWjHbZHmkBhY3vrXwyW1eR8gOXDUvwdMWuhkcKpZ9CoIHk6S4BzhP7c+iMzqmrI7HyoJhT8De1uXcOf8wby58TSMaq+EGbOLtocLvcQCvrcm/NA3Mgcxbn4DGnhoXbyr7/I+x4TUoOrrSc9SXpbzHHlbjkiXUp9TrjGcrc4nVzJtqxXtYhFzro9dzjw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=59jwsxccYOw9PNoxm/2gsbnDkCrez8hdXM9qvQXDtXw=;
- b=LSoOm3DodtJ8941dW9rLYD0/RPd/3R5FZ/YcWWw13FzTHuZUUT9tNSR7DH9FjbIThwDHr8LTsPHj6G/7dgSUs9x4DJqpWykPKcCf02ES4Q5URiGsl1v5Y/3vHN14SYV/quh0LxXGhu/rYdkqb1mvKYbgPCZolBX/8x44jfuY1CYul4XArffjirCoVsWGl0VzHmWYb/C/O3+coSRs7zSasmHZGIng2nBlNCKbkjSdaEjKoJMoUrDBLb/n7u5eWJjwdBGPo9unkcLHlnlKelONoO1f6zVtz0pfy0wf6bOvXl6REYOZoGSUlIyDlGX7oUNjmGvjuGWK6976KOxrIKVxmA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=59jwsxccYOw9PNoxm/2gsbnDkCrez8hdXM9qvQXDtXw=;
- b=LGTx8bTnT8bZgvQC05AUmnYog3uQrpN/Fhv8/Qd3f3ENIUc8L/9q568zKpeB1FWGw/0Ym3JVCWoLwLUkyd7O4I2JZ0DWkNAC6dUeN4GKITz7n+tK5JUISW9MXL7yz1xaFJvgC+o5Fbes5G4PngTnlI5SgAk7+cn5/EXf4sOFbb0=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB5348.eurprd04.prod.outlook.com (20.178.113.78) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2305.20; Mon, 30 Sep 2019 06:20:14 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::843c:e722:27cb:74e1]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::843c:e722:27cb:74e1%5]) with mapi id 15.20.2305.017; Mon, 30 Sep 2019
- 06:20:14 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
- <mark.rutland@arm.com>, "jassisinghbrar@gmail.com"
- <jassisinghbrar@gmail.com>, "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "andre.przywara@arm.com" <andre.przywara@arm.com>, "f.fainelli@gmail.com"
- <f.fainelli@gmail.com>
-Subject: [PATCH V10 2/2] mailbox: introduce ARM SMC based mailbox
-Thread-Topic: [PATCH V10 2/2] mailbox: introduce ARM SMC based mailbox
-Thread-Index: AQHVd1cfT8QFyxAbm0eWywLWz3Kfzw==
-Date: Mon, 30 Sep 2019 06:20:14 +0000
-Message-ID: <1569824287-4263-3-git-send-email-peng.fan@nxp.com>
-References: <1569824287-4263-1-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1569824287-4263-1-git-send-email-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK0PR03CA0034.apcprd03.prod.outlook.com
- (2603:1096:203:2f::22) To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 7f356f2e-cee7-4009-01a2-08d7456e416b
-x-ms-office365-filtering-ht: Tenant
-x-ms-traffictypediagnostic: AM0PR04MB5348:|AM0PR04MB5348:
-x-ms-exchange-purlcount: 1
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB5348416558B888BBE660317188820@AM0PR04MB5348.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7691;
-x-forefront-prvs: 01762B0D64
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(396003)(346002)(366004)(376002)(136003)(189003)(199004)(54906003)(64756008)(4326008)(66446008)(186003)(110136005)(5660300002)(71190400001)(2201001)(71200400001)(8936002)(26005)(478600001)(316002)(8676002)(386003)(6506007)(36756003)(81166006)(81156014)(52116002)(102836004)(66946007)(66476007)(66556008)(2906002)(305945005)(7736002)(76176011)(14454004)(66066001)(15650500001)(25786009)(2501003)(50226002)(6116002)(966005)(476003)(11346002)(6436002)(256004)(2616005)(99286004)(3846002)(6512007)(6306002)(86362001)(486006)(44832011)(6486002)(446003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5348;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: EW9HsL4i/drX6m8oLbJpMbEm+PbgK+bvY1J+rBAH9FPVhfdzHOc6KWyVfWFnbYmlFwBJcZUp34LAUZKu6kxDblB/1aVl98tD55kzREIbCA2W+qPr5ZBC0xj3H4JQj9ezbCczBBLDigM9kWy5rIXzIjz10vRF0w9Y9N6xcpMs62Td9XpBNz7la+fZa0Yz9MaIkyx1jJxldKttt2tM4g8vo5ybdQLr1UiIJ6PQnmsKII/caInCIGRuF3BT45jtSFPmW5aJ09N3caIzj8pBdC2GCPmGO44sGlBmAC4gFEwhyfiqJINsvctOkcsezXqudTQHOXgndue4cz2wLlsPpC0XXB8zzgFdahiCGNYPvRI6Y7kTYQ4Bn9+NJbFPOyHX42v63xVjALxLm0ZMnobH5iFo/OGntXZERW5HdO3u2tq8sG9+C3EDECtDn3RZQBRxIh0HgfYWDMuKUtAldsyQ3HUowQ==
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7f356f2e-cee7-4009-01a2-08d7456e416b
-X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Sep 2019 06:20:14.5403 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: HD9DdvImHBV+PqA0E7FKhn1q9sS7aee7GtF+1y4/lEIMYi+JXgcoc6SYlLbPlzvdpoYYgrtumAWN8Vkmaa3ecQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5348
+ id 1iEpVC-0003JF-Vv
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 06:49:48 +0000
+Received: by mail-pg1-x543.google.com with SMTP id y35so6856349pgl.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 29 Sep 2019 23:49:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=hbbHzY2mGN6GVRxX5qIoZkQRWZNUdeV1dB8ZZwNAXLY=;
+ b=abvY2T4rdd8Vnv2F3AiA9oFrTeKJQxXAc3uROdDGqfG1CdXfeOnyCz1oQmmAfw1jGa
+ 1oXroO/ZhhuIFL3ACdklnPMAbSUhUC9Y/yRzdkc9qfSIDxOY2Pa4fE2Tlhlh6gm0MTxc
+ xjZL5SS0/yQ/UAAb+LUJpXpyCjmQqv6JJvh8M=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=hbbHzY2mGN6GVRxX5qIoZkQRWZNUdeV1dB8ZZwNAXLY=;
+ b=axsQDZ/v7a9PlzVqIjg9agrQUq1yM3JX6Ld833zzU4Jgj7pT/Z6ujUi86KyqHc7r55
+ N+ePn+krIJ0g3Dz+NlLL5k0vPMNZQ8bY42M+/EfU4fJT7HLGAYkjG/TFvsDQZNERuZYx
+ Sv2uJB23jZzNcf+ncCLkxSbt0fHLOWku+S6NdvOm4m6w898In+/DEUEK9b69+YYj6FcI
+ rxFI82Ecxnu+XLQo0hDHnzMeWMSXSkQJCnp91f+bNkiHiRLPY03kn7OofXONw4EEeyQx
+ oFDQKgQOp50JZfFw0NddIOfpGGjL2sfpSsVv+d8JJir3mIo04xQyWIVpuZPzcZ4cy056
+ rCdg==
+X-Gm-Message-State: APjAAAVogICfHCHVfxZA0zbQDh8ExDEoO9sLpBiEi3b1C1N0A6zSS8qe
+ Gn6ac63IQQeSWD+YeWW7I/e5eQ==
+X-Google-Smtp-Source: APXvYqzp/gOfWnc+S7RU2qyxgw9Yg9ZgO2i+zhY7rs+emkfs10m9oO16DHTchECfvCrzb/LvoO3XdA==
+X-Received: by 2002:a63:dd0a:: with SMTP id t10mr22765858pgg.354.1569826184880; 
+ Sun, 29 Sep 2019 23:49:44 -0700 (PDT)
+Received: from rayagonda.dhcp.broadcom.net ([192.19.234.250])
+ by smtp.gmail.com with ESMTPSA id w6sm13056041pfj.17.2019.09.29.23.49.40
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Sun, 29 Sep 2019 23:49:43 -0700 (PDT)
+From: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
+To: Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com, Wolfram Sang <wsa@the-dreams.de>,
+ Michael Cheng <ccheng@broadcom.com>,
+ Shreesha Rajashekar <shreesha.rajashekar@broadcom.com>,
+ Lori Hikichi <lori.hikichi@broadcom.com>, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH v2 1/1] i2c: iproc: Add i2c repeated start capability
+Date: Mon, 30 Sep 2019 12:14:29 +0530
+Message-Id: <1569825869-30640-1-git-send-email-rayagonda.kokatanur@broadcom.com>
+X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190929_232017_778251_FDD87194 
-X-CRM114-Status: GOOD (  18.21  )
+X-CRM114-CacheID: sfid-20190929_234947_034014_BBA78DF6 
+X-CRM114-Status: GOOD (  22.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.89 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -118,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,274 +94,179 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Peng Fan <peng.fan@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- dl-linux-imx <linux-imx@nxp.com>
+Cc: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>,
+ Icarus Chau <icarus.chau@broadcom.com>, Ray Jui <ray.jui@broadcom.com>,
+ Shivaraj Shetty <sshetty1@broadcom.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
+From: Lori Hikichi <lori.hikichi@broadcom.com>
 
-This mailbox driver implements a mailbox which signals transmitted data
-via an ARM smc (secure monitor call) instruction. The mailbox receiver
-is implemented in firmware and can synchronously return data when it
-returns execution to the non-secure world again.
-An asynchronous receive path is not implemented.
-This allows the usage of a mailbox to trigger firmware actions on SoCs
-which either don't have a separate management processor or on which such
-a core is not available. A user of this mailbox could be the SCP
-interface.
+Enable handling of i2c repeated start. The current code
+handles a multi msg i2c transfer as separate i2c bus
+transactions. This change will now handle this case
+using the i2c repeated start protocol. The number of msgs
+in a transfer is limited to two, and must be a write
+followed by a read.
 
-Modified from Andre Przywara's v2 patch
-https://lore.kernel.org/patchwork/patch/812999/
-
-Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
-Reviewed-by: Andre Przywara <andre.przywara@arm.com>
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
+Signed-off-by: Lori Hikichi <lori.hikichi@broadcom.com>
+Signed-off-by: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
+Signed-off-by: Icarus Chau <icarus.chau@broadcom.com>
+Signed-off-by: Ray Jui <ray.jui@broadcom.com>
+Signed-off-by: Shivaraj Shetty <sshetty1@broadcom.com>
 ---
- drivers/mailbox/Kconfig                |   7 ++
- drivers/mailbox/Makefile               |   2 +
- drivers/mailbox/arm-smc-mailbox.c      | 166 +++++++++++++++++++++++++++++++++
- include/linux/mailbox/arm-smccc-mbox.h |  20 ++++
- 4 files changed, 195 insertions(+)
- create mode 100644 drivers/mailbox/arm-smc-mailbox.c
- create mode 100644 include/linux/mailbox/arm-smccc-mbox.h
+changes from v1:
+ - Address following review comments from Wolfarm Sang,
+   Use i2c_8bit_addr_from_msg() api instead of decoding i2c_msg struct and
+   remove check against number of i2c message as it will be taken care
+   by core using quirks flags. 
 
-diff --git a/drivers/mailbox/Kconfig b/drivers/mailbox/Kconfig
-index ab4eb750bbdd..7707ee26251a 100644
---- a/drivers/mailbox/Kconfig
-+++ b/drivers/mailbox/Kconfig
-@@ -16,6 +16,13 @@ config ARM_MHU
- 	  The controller has 3 mailbox channels, the last of which can be
- 	  used in Secure mode only.
+ drivers/i2c/busses/i2c-bcm-iproc.c | 63 ++++++++++++++++++++++++++++++--------
+ 1 file changed, 50 insertions(+), 13 deletions(-)
+
+diff --git a/drivers/i2c/busses/i2c-bcm-iproc.c b/drivers/i2c/busses/i2c-bcm-iproc.c
+index d7fd76b..e478db7 100644
+--- a/drivers/i2c/busses/i2c-bcm-iproc.c
++++ b/drivers/i2c/busses/i2c-bcm-iproc.c
+@@ -81,6 +81,7 @@
+ #define M_CMD_PROTOCOL_MASK          0xf
+ #define M_CMD_PROTOCOL_BLK_WR        0x7
+ #define M_CMD_PROTOCOL_BLK_RD        0x8
++#define M_CMD_PROTOCOL_PROCESS       0xa
+ #define M_CMD_PEC_SHIFT              8
+ #define M_CMD_RD_CNT_SHIFT           0
+ #define M_CMD_RD_CNT_MASK            0xff
+@@ -675,13 +676,20 @@ static int bcm_iproc_i2c_xfer_wait(struct bcm_iproc_i2c_dev *iproc_i2c,
+ 	return 0;
+ }
  
-+config ARM_SMC_MBOX
-+	tristate "Generic ARM smc mailbox"
-+	depends on OF && HAVE_ARM_SMCCC
-+	help
-+	  Generic mailbox driver which uses ARM smc calls to call into
-+	  firmware for triggering mailboxes.
-+
- config IMX_MBOX
- 	tristate "i.MX Mailbox"
- 	depends on ARCH_MXC || COMPILE_TEST
-diff --git a/drivers/mailbox/Makefile b/drivers/mailbox/Makefile
-index c22fad6f696b..93918a84c91b 100644
---- a/drivers/mailbox/Makefile
-+++ b/drivers/mailbox/Makefile
-@@ -7,6 +7,8 @@ obj-$(CONFIG_MAILBOX_TEST)	+= mailbox-test.o
- 
- obj-$(CONFIG_ARM_MHU)	+= arm_mhu.o
- 
-+obj-$(CONFIG_ARM_SMC_MBOX)	+= arm-smc-mailbox.o
-+
- obj-$(CONFIG_IMX_MBOX)	+= imx-mailbox.o
- 
- obj-$(CONFIG_ARMADA_37XX_RWTM_MBOX)	+= armada-37xx-rwtm-mailbox.o
-diff --git a/drivers/mailbox/arm-smc-mailbox.c b/drivers/mailbox/arm-smc-mailbox.c
-new file mode 100644
-index 000000000000..a6ec56f41f7f
---- /dev/null
-+++ b/drivers/mailbox/arm-smc-mailbox.c
-@@ -0,0 +1,166 @@
-+// SPDX-License-Identifier: GPL-2.0
+-static int bcm_iproc_i2c_xfer_single_msg(struct bcm_iproc_i2c_dev *iproc_i2c,
+-					 struct i2c_msg *msg)
 +/*
-+ * Copyright (C) 2016,2017 ARM Ltd.
-+ * Copyright 2019 NXP
++ * If 'process_call' is true, then this is a multi-msg transfer that requires
++ * a repeated start between the messages.
++ * More specifically, it must be a write (reg) followed by a read (data).
++ * The i2c quirks are set to enforce this rule.
 + */
++static int bcm_iproc_i2c_xfer_internal(struct bcm_iproc_i2c_dev *iproc_i2c,
++					struct i2c_msg *msgs, bool process_call)
+ {
+ 	int i;
+ 	u8 addr;
+ 	u32 val, tmp, val_intr_en;
+ 	unsigned int tx_bytes;
++	struct i2c_msg *msg = &msgs[0];
+ 
+ 	/* check if bus is busy */
+ 	if (!!(iproc_i2c_rd_reg(iproc_i2c,
+@@ -707,14 +715,29 @@ static int bcm_iproc_i2c_xfer_single_msg(struct bcm_iproc_i2c_dev *iproc_i2c,
+ 			val = msg->buf[i];
+ 
+ 			/* mark the last byte */
+-			if (i == msg->len - 1)
+-				val |= BIT(M_TX_WR_STATUS_SHIFT);
++			if (!process_call && (i == msg->len - 1))
++				val |= 1 << M_TX_WR_STATUS_SHIFT;
+ 
+ 			iproc_i2c_wr_reg(iproc_i2c, M_TX_OFFSET, val);
+ 		}
+ 		iproc_i2c->tx_bytes = tx_bytes;
+ 	}
+ 
++	/* Process the read message if this is process call */
++	if (process_call) {
++		msg++;
++		iproc_i2c->msg = msg;  /* point to second msg */
 +
-+#include <linux/arm-smccc.h>
-+#include <linux/device.h>
-+#include <linux/kernel.h>
-+#include <linux/mailbox_controller.h>
-+#include <linux/mailbox/arm-smccc-mbox.h>
-+#include <linux/module.h>
-+#include <linux/platform_device.h>
-+
-+typedef unsigned long (smc_mbox_fn)(unsigned int, unsigned long,
-+				    unsigned long, unsigned long,
-+				    unsigned long, unsigned long,
-+				    unsigned long);
-+
-+struct arm_smc_chan_data {
-+	unsigned int function_id;
-+	smc_mbox_fn *invoke_smc_mbox_fn;
-+};
-+
-+static int arm_smc_send_data(struct mbox_chan *link, void *data)
-+{
-+	struct arm_smc_chan_data *chan_data = link->con_priv;
-+	struct arm_smccc_mbox_cmd *cmd = data;
-+	unsigned long ret;
-+
-+	if (ARM_SMCCC_IS_64(chan_data->function_id)) {
-+		ret = chan_data->invoke_smc_mbox_fn(chan_data->function_id,
-+						    cmd->args_smccc64[0],
-+						    cmd->args_smccc64[1],
-+						    cmd->args_smccc64[2],
-+						    cmd->args_smccc64[3],
-+						    cmd->args_smccc64[4],
-+						    cmd->args_smccc64[5]);
-+	} else {
-+		ret = chan_data->invoke_smc_mbox_fn(chan_data->function_id,
-+						    cmd->args_smccc32[0],
-+						    cmd->args_smccc32[1],
-+						    cmd->args_smccc32[2],
-+						    cmd->args_smccc32[3],
-+						    cmd->args_smccc32[4],
-+						    cmd->args_smccc32[5]);
++		/*
++		 * The last byte to be sent out should be a slave
++		 * address with read operation
++		 */
++		addr = i2c_8bit_addr_from_msg(msg);
++		/* mark it the last byte out */
++		val = addr | (1 << M_TX_WR_STATUS_SHIFT);
++		iproc_i2c_wr_reg(iproc_i2c, M_TX_OFFSET, val);
 +	}
 +
-+	mbox_chan_received_data(link, (void *)ret);
+ 	/* mark as incomplete before starting the transaction */
+ 	if (iproc_i2c->irq)
+ 		reinit_completion(&iproc_i2c->done);
+@@ -733,7 +756,7 @@ static int bcm_iproc_i2c_xfer_single_msg(struct bcm_iproc_i2c_dev *iproc_i2c,
+ 	 * underrun interrupt, which will be triggerred when the TX FIFO is
+ 	 * empty. When that happens we can then pump more data into the FIFO
+ 	 */
+-	if (!(msg->flags & I2C_M_RD) &&
++	if (!process_call && !(msg->flags & I2C_M_RD) &&
+ 	    msg->len > iproc_i2c->tx_bytes)
+ 		val_intr_en |= BIT(IE_M_TX_UNDERRUN_SHIFT);
+ 
+@@ -743,6 +766,8 @@ static int bcm_iproc_i2c_xfer_single_msg(struct bcm_iproc_i2c_dev *iproc_i2c,
+ 	 */
+ 	val = BIT(M_CMD_START_BUSY_SHIFT);
+ 	if (msg->flags & I2C_M_RD) {
++		u32 protocol;
 +
-+	return 0;
-+}
+ 		iproc_i2c->rx_bytes = 0;
+ 		if (msg->len > M_RX_FIFO_MAX_THLD_VALUE)
+ 			iproc_i2c->thld_bytes = M_RX_FIFO_THLD_VALUE;
+@@ -758,7 +783,10 @@ static int bcm_iproc_i2c_xfer_single_msg(struct bcm_iproc_i2c_dev *iproc_i2c,
+ 		/* enable the RX threshold interrupt */
+ 		val_intr_en |= BIT(IE_M_RX_THLD_SHIFT);
+ 
+-		val |= (M_CMD_PROTOCOL_BLK_RD << M_CMD_PROTOCOL_SHIFT) |
++		protocol = process_call ?
++				M_CMD_PROTOCOL_PROCESS : M_CMD_PROTOCOL_BLK_RD;
 +
-+static unsigned long __invoke_fn_hvc(unsigned int function_id,
-+				     unsigned long arg0, unsigned long arg1,
-+				     unsigned long arg2, unsigned long arg3,
-+				     unsigned long arg4, unsigned long arg5)
-+{
-+	struct arm_smccc_res res;
-+
-+	arm_smccc_hvc(function_id, arg0, arg1, arg2, arg3, arg4,
-+		      arg5, 0, &res);
-+	return res.a0;
-+}
-+
-+static unsigned long __invoke_fn_smc(unsigned int function_id,
-+				     unsigned long arg0, unsigned long arg1,
-+				     unsigned long arg2, unsigned long arg3,
-+				     unsigned long arg4, unsigned long arg5)
-+{
-+	struct arm_smccc_res res;
-+
-+	arm_smccc_smc(function_id, arg0, arg1, arg2, arg3, arg4,
-+		      arg5, 0, &res);
-+	return res.a0;
-+}
-+
-+static const struct mbox_chan_ops arm_smc_mbox_chan_ops = {
-+	.send_data	= arm_smc_send_data,
-+};
-+
-+static struct mbox_chan *
-+arm_smc_mbox_of_xlate(struct mbox_controller *mbox,
-+		      const struct of_phandle_args *sp)
-+{
-+	return mbox->chans;
-+}
-+
-+static int arm_smc_mbox_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct mbox_controller *mbox;
-+	struct arm_smc_chan_data *chan_data;
++		val |= (protocol << M_CMD_PROTOCOL_SHIFT) |
+ 		       (msg->len << M_CMD_RD_CNT_SHIFT);
+ 	} else {
+ 		val |= (M_CMD_PROTOCOL_BLK_WR << M_CMD_PROTOCOL_SHIFT);
+@@ -774,17 +802,24 @@ static int bcm_iproc_i2c_xfer(struct i2c_adapter *adapter,
+ 			      struct i2c_msg msgs[], int num)
+ {
+ 	struct bcm_iproc_i2c_dev *iproc_i2c = i2c_get_adapdata(adapter);
+-	int ret, i;
++	bool process_call = false;
 +	int ret;
-+
-+	mbox = devm_kzalloc(dev, sizeof(*mbox), GFP_KERNEL);
-+	if (!mbox)
-+		return -ENOMEM;
-+
-+	mbox->of_xlate = arm_smc_mbox_of_xlate;
-+	mbox->num_chans = 1;
-+	mbox->chans = devm_kzalloc(dev, sizeof(*mbox->chans), GFP_KERNEL);
-+	if (!mbox->chans)
-+		return -ENOMEM;
-+
-+	chan_data = devm_kzalloc(dev, sizeof(*chan_data), GFP_KERNEL);
-+	if (!chan_data)
-+		return -ENOMEM;
-+
-+	ret = of_property_read_u32(dev->of_node, "arm,func-id",
-+				   &chan_data->function_id);
-+	if (ret)
+ 
+-	/* go through all messages */
+-	for (i = 0; i < num; i++) {
+-		ret = bcm_iproc_i2c_xfer_single_msg(iproc_i2c, &msgs[i]);
+-		if (ret) {
+-			dev_dbg(iproc_i2c->device, "xfer failed\n");
+-			return ret;
++	if (num == 2) {
++		/* Repeated start, use process call */
++		process_call = true;
++		if (msgs[1].flags & I2C_M_NOSTART) {
++			dev_err(iproc_i2c->device, "Invalid repeated start\n");
++			return -EOPNOTSUPP;
+ 		}
+ 	}
+ 
++	ret = bcm_iproc_i2c_xfer_internal(iproc_i2c, msgs, process_call);
++	if (ret) {
++		dev_dbg(iproc_i2c->device, "xfer failed\n");
 +		return ret;
++	}
 +
-+	if (of_device_is_compatible(dev->of_node, "arm,smc-mbox"))
-+		chan_data->invoke_smc_mbox_fn = __invoke_fn_smc;
-+	else
-+		chan_data->invoke_smc_mbox_fn = __invoke_fn_hvc;
-+
-+
-+	mbox->chans->con_priv = chan_data;
-+
-+	mbox->txdone_poll = false;
-+	mbox->txdone_irq = false;
-+	mbox->ops = &arm_smc_mbox_chan_ops;
-+	mbox->dev = dev;
-+
-+	platform_set_drvdata(pdev, mbox);
-+
-+	ret = devm_mbox_controller_register(dev, mbox);
-+	if (ret)
-+		return ret;
-+
-+	dev_info(dev, "ARM SMC mailbox enabled.\n");
-+
-+	return ret;
-+}
-+
-+static int arm_smc_mbox_remove(struct platform_device *pdev)
-+{
-+	struct mbox_controller *mbox = platform_get_drvdata(pdev);
-+
-+	mbox_controller_unregister(mbox);
-+	return 0;
-+}
-+
-+static const struct of_device_id arm_smc_mbox_of_match[] = {
-+	{ .compatible = "arm,smc-mbox", },
-+	{ .compatible = "arm,hvc-mbox", },
-+	{},
-+};
-+MODULE_DEVICE_TABLE(of, arm_smc_mbox_of_match);
-+
-+static struct platform_driver arm_smc_mbox_driver = {
-+	.driver = {
-+		.name = "arm-smc-mbox",
-+		.of_match_table = arm_smc_mbox_of_match,
-+	},
-+	.probe		= arm_smc_mbox_probe,
-+	.remove		= arm_smc_mbox_remove,
-+};
-+module_platform_driver(arm_smc_mbox_driver);
-+
-+MODULE_AUTHOR("Peng Fan <peng.fan@nxp.com>");
-+MODULE_DESCRIPTION("Generic ARM smc mailbox driver");
-+MODULE_LICENSE("GPL v2");
-diff --git a/include/linux/mailbox/arm-smccc-mbox.h b/include/linux/mailbox/arm-smccc-mbox.h
-new file mode 100644
-index 000000000000..d35fb89a77f5
---- /dev/null
-+++ b/include/linux/mailbox/arm-smccc-mbox.h
-@@ -0,0 +1,20 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+
-+#ifndef _LINUX_ARM_SMCCC_MBOX_H_
-+#define _LINUX_ARM_SMCCC_MBOX_H_
-+
-+#include <linux/types.h>
-+
-+/**
-+ * struct arm_smccc_mbox_cmd - ARM SMCCC message structure
-+ * @args_smccc32/64:	actual usage of registers is up to the protocol
-+ *			(within the SMCCC limits)
-+ */
-+struct arm_smccc_mbox_cmd {
-+	union {
-+		u32 args_smccc32[6];
-+		u64 args_smccc64[6];
-+	};
-+};
-+
-+#endif /* _LINUX_ARM_SMCCC_MBOX_H_ */
+ 	return num;
+ }
+ 
+@@ -806,6 +841,8 @@ static uint32_t bcm_iproc_i2c_functionality(struct i2c_adapter *adap)
+ };
+ 
+ static struct i2c_adapter_quirks bcm_iproc_i2c_quirks = {
++	.flags = I2C_AQ_COMB_WRITE_THEN_READ,
++	.max_comb_1st_msg_len = M_TX_RX_FIFO_SIZE,
+ 	.max_read_len = M_RX_MAX_READ_LEN,
+ };
+ 
 -- 
-2.16.4
+1.9.1
 
 
 _______________________________________________
