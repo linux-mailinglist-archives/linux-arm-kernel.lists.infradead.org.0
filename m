@@ -2,76 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 525A3C21BB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 15:19:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAFF4C21D1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 15:22:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IOJQSxf2ehDao5ve0T2ihEh0v9VJqfd56YIO0+FEc5E=; b=kZelPj1EHVfpu6
-	ITLmWKqGJiZqp1VI2wIs2+9vEHpvUICT0L/bxm19bslwPQ0xGkGDfpNdcNSoNlijsBzT11TObwvBh
-	36q9QnixKIZTIiuFRP2AUf2bik/n2mQ3VMU5Om8DNk7A1dSL0V1vO+Jfh8AkiTc5YjiHIrUa75Tgi
-	ZuodWa0bfy3NBeeve1JOG0qixZHJhZQ26yPo6tpWyerqvbMdxH+YECWBXZhqyBOPTYQqEt4TzLpHE
-	0nKOh3VzsNJV/uwWta7pvsvWWCJgNGGr6IU66LiMvuxrOdt1oCjGZUYPTM7JDTTdHI2fCb/VYGDJZ
-	0b4PbMPGnNBnI8uQh3Vw==;
+	List-Owner; bh=/+EpKBRl1ulpUeOna8KcBLfdSfktJvz2Ecszw5cuEaM=; b=Hd9rgMyMotpV2m
+	eSOQpd2L5lFWF5mfAiVSSDla053IbJv5wTqF6jesbU5pcQ2NJjY+ZB2UFlYLpap4I7xzeH0/L6Jd4
+	LpnGP7S0ZmIVH2tcV36L5DaP9Ae0+PLhULhz9DcR0PNCfEje+AMTzsYnJp5tgbxeWz9JxrM/Jk3bz
+	C4au5ZxsHaJGuBWFqYaN6UPxZmkYUUQ2sPZ9SbqFYqUDoyagMpjgk9FNZdNSvhpkWy7pAWFZDdAXe
+	JbPnQ3ZHbGbMG/aWl9ZSeFuPfbnnayQk6bpLt7uN5/oZR2cgMkMMi+i/hOWnkZncAmUwCrA8iBAdD
+	I6GxrWGJvdHRHexEUpgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEvaT-0001wu-QV; Mon, 30 Sep 2019 13:19:37 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1iEvdC-0003d3-Nl; Mon, 30 Sep 2019 13:22:26 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEvaJ-0001wP-1V
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 13:19:28 +0000
-Received: by mail-oi1-x243.google.com with SMTP id k20so11075890oih.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Sep 2019 06:19:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=tvF2rhjIU40oHZTkD8AiJlAuhk6N45ACdpW2yo/HLqU=;
- b=PO3eOfC/q3wl/KRr0kWCAelNHERyjJNf3sYliZiXHahyxh4ZRx2ySTuhPxn1dLYQtz
- Ye7DkO0wnQTjwjmUaxO8t8JgHdk/PerRiFSCyrNFh5SbjlOxqUbk17JiIevIdEtWEmqn
- D+03S22BPz+8zeYwZv2Bei/nLUk1RNyudNjaeErSn+O9FIlqczoufsYOsZOoGm5F3MtH
- oAOfw9c/il8g2OxXfN5HbM+5V+PC16ESN+8dUaf3o354nFgG9uXH+SoowTtN6gelXjGF
- 2f7a0ilmT8oGOJV2PKIB+OsJ1h0c3lxdDtGuZ78Fa7qJuhxDICK5hsWj3CFXe07wW8IK
- nuJg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=tvF2rhjIU40oHZTkD8AiJlAuhk6N45ACdpW2yo/HLqU=;
- b=gN6N0qdybzGOg2TyZVoIOzaS0NZFjHpUXvWeRoK7DnumHVEzf2KQxlLQQY1tMn05TC
- RK9pXv+ksz08rBIrRBE6ne10jbOEUyfqOwtEwAZWfw3EPaokVA7OnkMz/A8+nzYinXkV
- 638NzR/4xXBHaNXPUlRTReLQGR3ZqLJ2Xi/dr9fwJQdKUO1tVA1PZ9VOaojD+h/9d505
- 9fPXWFMha3YvNC+Iq92istqfpImCMV9e8L448l2BVMTWowbKjDz4OUyZF1jYMzKLrQhS
- ytUhfRTZicPyPPG1IrmMO4hUoV7QEo9UEh8lEYiNBE0rwokfa72sy35yqxIqvFx9pKMn
- /0tQ==
-X-Gm-Message-State: APjAAAUfEXTLwKZRQlGSuP5RjsTGPeMV5jn/wdoyo/iuMRa6wOZYIacX
- jz2/tSoF12YJZaIQztm8aFP2FvicLrLG9zxb2jr8kA==
-X-Google-Smtp-Source: APXvYqxkDA2j7mElW4UnsVMO8OvEuYOnFf4j7HG8KejxC44MOi2OBa9meGhMJ+mXVoFqHVS5fsi1jnMYUOeVkuK8Ih4=
-X-Received: by 2002:aca:b48a:: with SMTP id d132mr18336111oif.98.1569849565968; 
- Mon, 30 Sep 2019 06:19:25 -0700 (PDT)
+ id 1iEvd2-0003cO-A6
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 13:22:17 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2384120842;
+ Mon, 30 Sep 2019 13:22:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1569849734;
+ bh=5YgzqjSTmNEx7qj7fQeG6vrEjnUn7W/lfum0s/DKHGY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=1d0oL1arMIQkT3rZLOZ6EqO21ByQGs1tnW7R8kZ5o2NUeo28JRXzi9RVhryn48xaa
+ dGD0ACOAKudBKKq9x8/KquD18TBawUJJYQnVvLLd6iZu/DCDnPVUOVwEY/HvV2IMcl
+ BjtBvC8uqVeTuJT5Z+lIt/fWQRlvOiaOrEnFF/Mc=
+Date: Mon, 30 Sep 2019 14:22:10 +0100
+From: Will Deacon <will@kernel.org>
+To: Yunfeng Ye <yeyunfeng@huawei.com>
+Subject: Re: [PATCH] arm64: armv8_deprecated: Checking return value for
+ memory allocation
+Message-ID: <20190930132209.jyyemkck7orji64i@willie-the-truck>
+References: <ea235720-5bbd-27b7-a9b1-34aa8a344e3a@huawei.com>
 MIME-Version: 1.0
-References: <1569338511-3572-1-git-send-email-guoheyi@huawei.com>
- <1569338511-3572-8-git-send-email-guoheyi@huawei.com>
-In-Reply-To: <1569338511-3572-8-git-send-email-guoheyi@huawei.com>
-From: Peter Maydell <peter.maydell@linaro.org>
-Date: Mon, 30 Sep 2019 14:19:15 +0100
-Message-ID: <CAFEAcA9ZHs=GdJ-_Ap1PWdgDjSDBnnRqG1UkMGx_FiqCJ5ZyGw@mail.gmail.com>
-Subject: Re: [RFC PATCH 07/12] arm/sdei: override qemu_irq handler when
- binding interrupt
-To: Heyi Guo <guoheyi@huawei.com>
+Content-Disposition: inline
+In-Reply-To: <ea235720-5bbd-27b7-a9b1-34aa8a344e3a@huawei.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_061927_086788_2B5C5D09 
-X-CRM114-Status: GOOD (  13.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190930_062216_385439_BDEEA8C1 
+X-CRM114-Status: GOOD (  15.23  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -81,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,79 +77,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
- QEMU Developers <qemu-devel@nongnu.org>, kvmarm@lists.cs.columbia.edu,
- qemu-arm <qemu-arm@nongnu.org>, James Morse <james.morse@arm.com>,
- wanghaibin.wang@huawei.com, Dave Martin <Dave.Martin@arm.com>,
- arm-mail-list <linux-arm-kernel@lists.infradead.org>
+Cc: kstewart@linuxfoundation.org, catalin.marinas@arm.com, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, gregkh@linuxfoundation.org, tglx@linutronix.de,
+ info@metux.net, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 24 Sep 2019 at 16:23, Heyi Guo <guoheyi@huawei.com> wrote:
->
-> Override qemu_irq handler to support trigger SDEI event transparently
-> after guest binds interrupt to SDEI event. We don't have good way to
-> get GIC device and to guarantee SDEI device is initialized after GIC,
-> so we search GIC in system bus when the first SDEI request happens or
-> in VMSTATE post_load().
->
-> Signed-off-by: Heyi Guo <guoheyi@huawei.com>
-> Cc: Peter Maydell <peter.maydell@linaro.org>
-> Cc: Dave Martin <Dave.Martin@arm.com>
-> Cc: Marc Zyngier <marc.zyngier@arm.com>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: James Morse <james.morse@arm.com>
-
-
-> +static void override_qemu_irq(QemuSDEState *s, int32_t event, uint32_t intid)
-> +{
-> +    qemu_irq irq;
-> +    QemuSDE *sde;
-> +    CPUState *cs;
-> +    int cpu;
+On Sun, Sep 29, 2019 at 12:44:17PM +0800, Yunfeng Ye wrote:
+> There are no return value checking when using kzalloc() and kcalloc() for
+> memory allocation. so add it.
+> 
+> Signed-off-by: Yunfeng Ye <yeyunfeng@huawei.com>
+> ---
+>  arch/arm64/kernel/armv8_deprecated.c | 5 +++++
+>  1 file changed, 5 insertions(+)
+> 
+> diff --git a/arch/arm64/kernel/armv8_deprecated.c b/arch/arm64/kernel/armv8_deprecated.c
+> index 2ec09de..ca158be 100644
+> --- a/arch/arm64/kernel/armv8_deprecated.c
+> +++ b/arch/arm64/kernel/armv8_deprecated.c
+> @@ -174,6 +174,9 @@ static void __init register_insn_emulation(struct insn_emulation_ops *ops)
+>  	struct insn_emulation *insn;
+> 
+>  	insn = kzalloc(sizeof(*insn), GFP_KERNEL);
+> +	if (!insn)
+> +		return;
 > +
-> +    /* SPI */
-> +    if (intid >= GIC_INTERNAL) {
-> +        cs = arm_get_cpu_by_id(0);
-> +        irq = qdev_get_gpio_in(s->gic_dev,
-> +                               gic_int_to_irq(s->num_irq, intid, 0));
-> +        if (irq) {
-> +            qemu_irq_intercept_in(&irq, qemu_sdei_irq_handler, 1);
-> +        }
+>  	insn->ops = ops;
+>  	insn->min = INSN_UNDEF;
+> 
+> @@ -233,6 +236,8 @@ static void __init register_insn_emulation_sysctl(void)
+> 
+>  	insns_sysctl = kcalloc(nr_insn_emulated + 1, sizeof(*sysctl),
+>  			       GFP_KERNEL);
+> +	if (!insns_sysctl)
+> +		return;
 
-I'm not sure what this code is trying to do, but
-qemu_irq_intercept_in() is a function for internal use
-by the qtest testing infrastructure, so it shouldn't be
-used in 'real' QEMU code.
+Since both of these failure paths are fatal to the instruction emulation,
+can you please return an error code when the allocation fails and use that
+to fail the calling initcall() appropriately?
 
-> +        sde = get_sde_no_check(s, event, cs);
-> +        sde->irq = irq;
-> +        put_sde(sde, cs);
-> +        return;
-> +    }
-
-> @@ -1042,6 +1152,17 @@ void sdei_handle_request(CPUState *cs, struct kvm_run *run)
->          return;
->      }
->
-> +    if (!sde_state->gic_dev) {
-> +        /* Search for ARM GIC device */
-> +        qbus_walk_children(sysbus_get_default(), dev_walkerfn,
-> +                           NULL, NULL, NULL, sde_state);
-> +        if (!sde_state->gic_dev) {
-> +            error_report("Cannot find ARM GIC device!");
-> +            run->hypercall.args[0] = SDEI_NOT_SUPPORTED;
-> +            return;
-> +        }
-> +    }
-
-Walking through the qbus tree looking for particular devices
-isn't really something I'd recommend either.
-
-thanks
--- PMM
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
