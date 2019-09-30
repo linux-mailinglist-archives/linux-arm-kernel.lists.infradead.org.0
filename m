@@ -2,80 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92C4DC260D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 20:38:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C4BEC2618
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 20:47:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AiA4ZRaJb+8/+T6pFlwGo6jOrs+tCTY1rpZCgFamxpI=; b=cJYYv2RNVBjx5R
-	lNum7fCPO8+FiYALrHk2O+EuApwUQEPCLVu6DhoW3m5ga0weGbDBydqyw6Sb8RBf94WXDaw0O05pw
-	jA68bOvriSe2z/oNRlwvGVFR0TuJ9jV8iaH1xnHaO8UTrBD+EieI7Cw0VCzCJVFSuN88aLIbWyWtB
-	ryR6ZAqPpy99v0QzyGljvk9rmlXIk+uxW8UyNk29F7b0oa6+7bAObvu6wlnXOBWt83cH222NmhJ48
-	0HTG5FQzFEVPRWMTiiW9z9TDYLjjL2z8bbJSV4eHU0pBc4RpW5vKkWRN4RI1zAdD+pMlm1WxYIR9H
-	COGTJZnZBuwjh1TRl+AA==;
+	List-Owner; bh=beSKNtNfekHPmDpcd0lRiXb61rg6qQyTUpxmZLmJbXE=; b=GJVbTMaPia9/Hi
+	xW4xJAHPkRIH7Zup+2T3PHlUDfBsHCb3+JnDUN6CaEr7lB8TDyZQdT0Shaz//dsaScvm+k+fywkDJ
+	Rz2uyfJRLFXxn5uwHQVY3l4hzj27dawObQfZJkWXIzlOs7cS2bzf44G91tf/hWbzXvHiexsAcUnu3
+	ZhcGsJ9ltmT/1ME5jx05MPn2Tn5+PqSxW6NOrzv32SU9Ym5NiIU+Jn0m4EMG0kr/+QhQF4lDvBIke
+	kH1MoDjp5yYCGSexf301bWVOpoZlcPSVgOjzOCUqvvhY46KMQ7VYHO3l5Rj5LEQNLmeim+lausTMM
+	Lj+v4QnLkvaZfZuLJ2tw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iF0Yt-0004vI-8A; Mon, 30 Sep 2019 18:38:19 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iF0h9-00018n-1E; Mon, 30 Sep 2019 18:46:51 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iF0XM-0003Yg-NG
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 18:36:46 +0000
-Received: from mail-qt1-f179.google.com (mail-qt1-f179.google.com
- [209.85.160.179])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B700D224D7
+ id 1iF0gu-00018I-EI
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 18:46:38 +0000
+Received: by mail-io1-xd42.google.com with SMTP id v2so40961141iob.10
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Sep 2019 18:36:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569868603;
- bh=1tL/OZOkCQgzZnBFplZTU+ckRrS4/sDh6E9zhlDzq/c=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=y9r7bli47fVGj+4fjTYQ6PAXVa0UI+u3pZnzIoPcyL5ummMRbOrFM8Z8ezx0c9O9M
- OWWNIjwXkelXIdFKvH0eTzLFL3aK4P1ZUn6RPdwLnHsRpcYvtGERwjcypBmW+az2Ot
- OoolrSVYpG+lt/hn0Iww7kUj5dPAJgA21mXP8u00=
-Received: by mail-qt1-f179.google.com with SMTP id n1so18293618qtp.8
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Sep 2019 11:36:43 -0700 (PDT)
-X-Gm-Message-State: APjAAAWgiNJ1p1bsp4T1QC+wkEV/lUtIbnGYQFsdO3I8t9HfsN++27Bu
- Pcu4sOuqRm3XNA6r8cRm66jY9URTHglkAvkFfg==
-X-Google-Smtp-Source: APXvYqzrW8P34cQHwAL7kkHCPf/H7Il3VJU7gB5YH+0CDpc3kU87kepa13cpt99giygGkK5bkJVuq6phphJeVpRAcNg=
-X-Received: by 2002:a05:6214:11b4:: with SMTP id
- u20mr19329160qvv.200.1569868602914; 
- Mon, 30 Sep 2019 11:36:42 -0700 (PDT)
+ Mon, 30 Sep 2019 11:46:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=wUaOjIAAKAGaG+nfGl63t9Ipyj1FhR6XnUA53rZZ53s=;
+ b=zDPsmRIwr8UIFX7VPiwHVeFhbT9W6MjyM0cDosaTz6Rj3zolIxdtsVVOrY9z7FM7XG
+ uAU1mKI9zyzUMMFkGYEdYKvs95ONx+ggQ3z4YWqT57peTmyX6l5T0UAPu64/Ap15zr5L
+ RA79HvMK4wUKRBh7sh0vJFG9xuDD0oBULcut5P/nId/bamWyDBfHP5/BaMkAPmcWsbrK
+ +punAMByTro8mAK6qQVtmf/sNn61rZ89cXtgTkj8atxCDXheMXds+FSHGJQZYl93Tnu5
+ GSMApqoi55lWrKNOCG5yhIXhbnj3Owa/bd5XjwGPVK33WbZP59K1UlWpDncsZUyRoWoB
+ gNaA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=wUaOjIAAKAGaG+nfGl63t9Ipyj1FhR6XnUA53rZZ53s=;
+ b=FH7+sEm33FTDgr+DOUEsTtT5LUhyUyNar5s88z4TleTbGj+7P3SCs4N6v0IS8wZDOI
+ f3b4sZ9/pNKnX46l6yPwo1yTaudrBuRnSQhCq1D3kKgmMQEkoMmAu/sOXzj1PmWruvkk
+ njwGaB+TzBnvbRfIUz63N2QehqdH5AFhEpsUcBYpx4zjEeig+GgX33fxof54kex6uulh
+ DjIU0e21Td61MmehfnXZhZCiysB8OjYalRHR0DYVBLgWoveKRHzFlzBLe9Sr5/U/25LV
+ 4iXICfeQPJtpfaoMoWcT4/D3ePPckED/6VIXR6xkEQ69vTLtha2FvzLS8RtqtmjHq8i4
+ vZfw==
+X-Gm-Message-State: APjAAAWDuXxWsoE3lEvwyFMgoVW00BJVt5d2Gzn4jxNGQ2gMhUmUnpE0
+ 0wD1ztjb5lGfZi/ioJNhwl72izeg8paqkHFOPBegDA==
+X-Google-Smtp-Source: APXvYqx2QQxA7WYK1gg5Log0L74tzLz+6chp+ZbkA5mlSoinDE3QaD6dO1s0HBeusM7BqhVSnDyqgXQvtPF3K4YXyUw=
+X-Received: by 2002:a92:4799:: with SMTP id e25mr22486585ilk.72.1569869194482; 
+ Mon, 30 Sep 2019 11:46:34 -0700 (PDT)
 MIME-Version: 1.0
-References: <cover.1569851517.git.robin.murphy@arm.com>
- <fd1f7700165b2e2679fe6d499ec38b91f4a432f4.1569851517.git.robin.murphy@arm.com>
-In-Reply-To: <fd1f7700165b2e2679fe6d499ec38b91f4a432f4.1569851517.git.robin.murphy@arm.com>
-From: Rob Herring <robh@kernel.org>
-Date: Mon, 30 Sep 2019 13:36:32 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqJD0DKZkDAOsAcJPM24opvRqKHB3jsHqjeyjQM2WV9BEw@mail.gmail.com>
-Message-ID: <CAL_JsqJD0DKZkDAOsAcJPM24opvRqKHB3jsHqjeyjQM2WV9BEw@mail.gmail.com>
-Subject: Re: [PATCH v2 3/3] iommu/io-pgtable-arm: Allow coherent walks for Mali
-To: Robin Murphy <robin.murphy@arm.com>
+References: <20190920075946.13282-1-j-keerthy@ti.com>
+ <20190920075946.13282-5-j-keerthy@ti.com>
+ <20190930134856.umdoeq7k6ukmajij@willie-the-truck>
+In-Reply-To: <20190930134856.umdoeq7k6ukmajij@willie-the-truck>
+From: Olof Johansson <olof@lixom.net>
+Date: Mon, 30 Sep 2019 11:46:23 -0700
+Message-ID: <CAOesGMgs7rKOVnimDwSpeGTAf93Er+Ymzy9-R-mKkQK6MQcF3Q@mail.gmail.com>
+Subject: Re: [PATCH v2 linux-next 4/4] arm64: configs: defconfig: Change
+ CONFIG_REMOTEPROC from m to y
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_113644_815601_B0B78D09 
-X-CRM114-Status: GOOD (  15.03  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190930_114636_530539_53576830 
+X-CRM114-Status: GOOD (  16.96  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,39 +90,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tomeu Vizoso <tomeu.vizoso@collabora.com>,
- Neil Armstrong <narmstrong@baylibre.com>, Joerg Roedel <joro@8bytes.org>,
- Steven Price <steven.price@arm.com>,
- Linux IOMMU <iommu@lists.linux-foundation.org>, Will Deacon <will@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: linux-omap <linux-omap@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Tony Lindgren <tony@atomide.com>, Keerthy <j-keerthy@ti.com>,
+ Sekhar Nori <nsekhar@ti.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Tero Kristo <t-kristo@ti.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, hch@lst.de,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 30, 2019 at 9:11 AM Robin Murphy <robin.murphy@arm.com> wrote:
+On Mon, Sep 30, 2019 at 6:49 AM Will Deacon <will@kernel.org> wrote:
 >
-> Midgard GPUs have ACE-Lite master interfaces which allows systems to
-> integrate them in an I/O-coherent manner. It seems that from the GPU's
-> viewpoint, the rest of the system is its outer shareable domain, and so
-> even when snoop signals are wired up, they are only emitted for outer
-> shareable accesses. As such, setting the TTBR_SHARE_OUTER bit does
-> indeed get coherent pagetable walks working nicely for the coherent
-> T620 in the Arm Juno SoC.
+> On Fri, Sep 20, 2019 at 01:29:46PM +0530, Keerthy wrote:
+> > Commit 6334150e9a36 ("remoteproc: don't allow modular build")
+> > changes CONFIG_REMOTEPROC to a boolean from a tristate config
+> > option which inhibits all defconfigs marking CONFIG_REMOTEPROC as
+> > a module in compiling the remoteproc and dependent config options.
+> >
+> > So fix the defconfig to have CONFIG_REMOTEPROC built in.
+> >
+> > Fixes: 6334150e9a36 ("remoteproc: don't allow modular build")
+> > Signed-off-by: Keerthy <j-keerthy@ti.com>
+> > ---
+> >  arch/arm64/configs/defconfig | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> >
+> > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> > index 8e05c39eab08..c9a867ac32d4 100644
+> > --- a/arch/arm64/configs/defconfig
+> > +++ b/arch/arm64/configs/defconfig
+> > @@ -723,7 +723,7 @@ CONFIG_TEGRA_IOMMU_SMMU=y
+> >  CONFIG_ARM_SMMU=y
+> >  CONFIG_ARM_SMMU_V3=y
+> >  CONFIG_QCOM_IOMMU=y
+> > -CONFIG_REMOTEPROC=m
+> > +CONFIG_REMOTEPROC=y
+> >  CONFIG_QCOM_Q6V5_MSS=m
+> >  CONFIG_QCOM_Q6V5_PAS=m
+> >  CONFIG_QCOM_SYSMON=m
 >
-> Exploiting coherency for data accesses is more of a challenge, since
-> not only do we need to get the GPU MMU attributes right but we'd also
-> have to avoid pgprot_writecombine creating an attribute mismatch on
-> the CPU side, so we won't try wiring that up just yet.
+> Acked-by: Will Deacon <will@kernel.org>
 >
-> Reviewed-by: Steven Price <steven.price@arm.com>
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> ---
->  drivers/iommu/io-pgtable-arm.c | 3 +++
->  1 file changed, 3 insertions(+)
+> This fixes the following annoying warning from "make defconfig" on arm64:
+>
+>   arch/arm64/configs/defconfig:726:warning: symbol value 'm' invalid for REMOTEPROC
+>
+> I'm assuming the fix will go via arm-soc, but I can take it otherwise
+> (please just let me know).
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Thanks, I'll pick this up, but I'll squash the 4 one-line changes into
+one commit instead of separate patches.
+
+
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
