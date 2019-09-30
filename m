@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9195DC1CA3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 10:15:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7C6BC1CA7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 10:17:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7tvAOxUwF0zs/sJgc6b0bdTWGtuoWitvv27ZElU8bMY=; b=Nbh6fCU77KNg3B
-	owheaAizhOibk4gwKzhZsZ4QTZ/61LK7JVYSn2LoCySK9BrNlxwdGS6V0Zt7RUH4GBgePVr93VY6+
-	XWVOl8vW9gNRqZSrXnxxP/sm621HOz6S/fZTHJ6Mi3cjacuFAX7XwroK2QLGsmfaUuZRtEcWrKWc8
-	HQrIWywn8paI3Kq8jvWqi7hy+8fDDERh20XzBy9E5no43eE2M8dtOPu0xA7vACdigjgTRKe+IQbg8
-	9GDrjZtDje0AWWaZD761ouT+lTpFNg6aGgK9d01ZO18ZNMvo2/vO9QLiNftbwfnT9FGiCb8poSNkD
-	RKqkYitVnHXFTDEDgiag==;
+	List-Owner; bh=6fbT0SQS4UYu04gTBY2/FpFb6GcBAlCGxN+YAs1hEyM=; b=fyVAXMsobOwEr0
+	5u9cF7DQWsPXhkVHc5TXs2z6tLtdpR+nhvRGxGcElzLNJYC4UsFQMNqv6XNKQPXGiZz0CDcRZzhuH
+	mbWgt4/07QfKb9QyHBcLtpINa+MoWO3FPmThAqKqmomt7COsRKP1hGrX1pu4T8Z7QMScKIwfDXULb
+	oTtyLzD38+3eN6wse5FI3wxmZHPQivJ5aaF7YnuuMlQw0ReZNH0RfO6tz36GB5zuKkHbde2yHJh6s
+	CTqfvG9FnMonU2dbaodWIw85udMWn5lZApx5cITtT9029f16b8dVHZkaOfj39kBF2vHnYIjPna7Lu
+	pebw8o3apCcTBxiQf+BQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEqqQ-0003S5-Ex; Mon, 30 Sep 2019 08:15:46 +0000
-Received: from mail-wr1-f65.google.com ([209.85.221.65])
+	id 1iEqrd-00043P-6X; Mon, 30 Sep 2019 08:17:01 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEqpd-0001kC-OH
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 08:15:00 +0000
-Received: by mail-wr1-f65.google.com with SMTP id y19so10125023wrd.3
+ id 1iEqrR-00042a-Ed
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 08:16:51 +0000
+Received: by mail-io1-xd41.google.com with SMTP id q10so36029896iop.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Sep 2019 01:14:57 -0700 (PDT)
+ Mon, 30 Sep 2019 01:16:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=semihalf-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=KaBpRATfAtf4rWki+RpmtqBvaUEKw92ROi6AWnbW4po=;
+ b=fS8z/+o9gZKlME62G3wlVM8YKSqCtbi8/0Aau2btXZxoF1ivfmYl8ARUibDLfqv9T9
+ lppjHYQuSo8wZNchmNxwUR9ufOrQlrEIkadOy/M4VmU3Rvag0Q15d+cUFxxAUGMahHPT
+ 0/+6hQvOYh650R0ti62E4zOuKYaIlkA2dBYUICZDdRAdq5RGvLg5+HDcFNdwLJXnjgAk
+ PbJ8XkAEw46E3Cbc66f/nPxJWEcD5iSaumf4rqQTbkfrKJeqvtyo7nH/jT5elUdBglfI
+ L+rhj6Cmx5pH3EiasJUNJIv6prBQEZf3ZUtp/EP2yWxoXxQDcgxwS6IRsMkbyGFR7LA7
+ UY3A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=3CTmC1GsXW7IrK97J31Tmt/kV7wvmrOZDcAwkkYqHXE=;
- b=aQRsx0EcFqwtIOkN01Mfmh9RPUfbc8glxHJ8JDl7OKx9jGaOZteDXyQIm4UxRbCO8Y
- qt+qvjOapsvtswuMKuKDV93luVmAoxNRjulNyvCfd4O25yPMw/rXxdpkNuHBTsRrhiNh
- FOvh8MqLe8xkAMaqwwk/iCf37OxkdmX1nD1AvrpwZrk20ghzoh53qLVYqsnHeNcIbHX9
- OAQn8zw1CMU3kQBDNMlePdp1Uf1hiq39rCH33pzworAl+m0oamSZzKrjCT1Dwrgo00hp
- A6BYE3QS4cl1XU5nUF88RQVN/el8P2cg5u8e02SDCb5FUIG20c/qIIsKRlCxKOFy55Y+
- Bttw==
-X-Gm-Message-State: APjAAAXS7lhw/cmr/TX+ucXp3e5RBCQ1u6c2OCxTcMrHkthPQjMXzXaS
- /OfpNl0c/BKLjWBSAmBX/3I=
-X-Google-Smtp-Source: APXvYqyf7LPtms1O8Jjd41VwHzPvoRICODDhTRieA6rYEiMiQODMkzZphFr+TqX/l6nwc1iXKYA+Wg==
-X-Received: by 2002:adf:ec44:: with SMTP id w4mr11667063wrn.251.1569831295653; 
- Mon, 30 Sep 2019 01:14:55 -0700 (PDT)
-Received: from pi3 ([194.230.155.145])
- by smtp.googlemail.com with ESMTPSA id x2sm15727586wrn.81.2019.09.30.01.14.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Sep 2019 01:14:54 -0700 (PDT)
-Date: Mon, 30 Sep 2019 10:14:52 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v4 1/8] dt-bindings: timer: Convert Exynos MCT bindings
- to json-schema
-Message-ID: <20190930081452.GB23709@pi3>
-References: <20190923161411.9236-1-krzk@kernel.org>
- <20190927170701.GA27397@bogus>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=KaBpRATfAtf4rWki+RpmtqBvaUEKw92ROi6AWnbW4po=;
+ b=a0tbgas0OlXvMuGBvxSTLXgj6oTqgnhkXmXuIU1NjLlJyDY5S9oCIjZAzqzmjp1j6P
+ LC4aom1KcMbALt+mFOJ1sQ/KVaPEwUBXQOVXbewEC9AgPLs5DoojacXAeUS2xG+SGGV/
+ 6dPCS/e0R7iIEEI5VtpNblyrjkrxZ5L0DdhAHGz/82dHqN2NSNWMj1sWOjrV8158jAte
+ 6+hj24nnX47MCYGVQ8e8wMx72dUQjUw+D6Rxq2QVakLKpGIlHyj6WgQHSs3shY2VUg2D
+ j7gjxJc68mk3q59OWZVGsxjqKA7kbolURVHp8IBG1eEAxCyj2VWKwJ1yxUkz9pXGarrx
+ rBMQ==
+X-Gm-Message-State: APjAAAUUEFOR+9BKa+Ehn1lfs/d0gb/Wf1sDCC9SGAxkOlx5AU0IJRrc
+ lpJ6OMKZJ0D1GMxLOPdwuVqAI6QGKTJylT0UGomrjw==
+X-Google-Smtp-Source: APXvYqzVpU47qXAsHPMapDkMIY9pYLHDZ5ygLihtYcuDjBun+ROeUa2rTg/P4070Jv9HNhFiipYv2n8L7Sd/Klcx6p4=
+X-Received: by 2002:a5e:c747:: with SMTP id g7mr3347342iop.70.1569831408182;
+ Mon, 30 Sep 2019 01:16:48 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190927170701.GA27397@bogus>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+References: <1563279226-30804-1-git-send-email-jaz@semihalf.com>
+In-Reply-To: <1563279226-30804-1-git-send-email-jaz@semihalf.com>
+From: Grzegorz Jaszczyk <jaz@semihalf.com>
+Date: Mon, 30 Sep 2019 10:16:37 +0200
+Message-ID: <CAH76GKN9-VHu5yMDxm8jZmhoiZP+6jgMP0bNiSSyq7dOXXODsg@mail.gmail.com>
+Subject: Re: [PATCH v2] PCI: pci-bridge-emul: fix big-endian support
+To: Thomas Petazzoni <thomas.petazzoni@bootlin.com>, lorenzo.pieralisi@arm.com,
+ Bjorn Helgaas <bhelgaas@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_011457_937691_1E3B6399 
-X-CRM114-Status: GOOD (  32.13  )
+X-CRM114-CacheID: sfid-20190930_011649_493150_F36FEEE8 
+X-CRM114-Status: GOOD (  15.89  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.65 listed in list.dnswl.org]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.65 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,237 +89,164 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, Sylwester Nawrocki <snawrocki@kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
- Andrzej Hajda <a.hajda@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pci@vger.kernel.org, Marcin Wojtas <mw@semihalf.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 27, 2019 at 12:07:01PM -0500, Rob Herring wrote:
-> On Mon, Sep 23, 2019 at 06:14:04PM +0200, Krzysztof Kozlowski wrote:
-> > Convert Samsung Exynos Soc Multi Core Timer bindings to DT schema format
-> > using json-schema.
-> > 
-> > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> > 
-> > ---
-> > 
-> > Changes since v3:
-> > 1. Use interrupts-extended instead of interrupts-map.
-> 
-> This is a binding change. You should mention it in the commit.
-
-The interrupts-map was never a part of binding. It was only mentioned in
-the example to show how to route interrupts to different controllers.
-
-The bindings are not changed. Only example.
-
-> 
-> > 
-> > Changes since v1:
-> > 1. Indent example with four spaces (more readable),
-> > 2. Rename nodes in example to timer,
-> > 3. Remove mct-map subnode.
-> > ---
-> >  .../bindings/timer/samsung,exynos4210-mct.txt |  88 ------------
-> >  .../timer/samsung,exynos4210-mct.yaml         | 125 ++++++++++++++++++
-> >  2 files changed, 125 insertions(+), 88 deletions(-)
-> >  delete mode 100644 Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.txt
-> >  create mode 100644 Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.yaml
-> > 
-> > diff --git a/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.txt b/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.txt
-> > deleted file mode 100644
-> > index 8f78640ad64c..000000000000
-> > --- a/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.txt
-> > +++ /dev/null
-> > @@ -1,88 +0,0 @@
-> > -Samsung's Multi Core Timer (MCT)
-> > -
-> > -The Samsung's Multi Core Timer (MCT) module includes two main blocks, the
-> > -global timer and CPU local timers. The global timer is a 64-bit free running
-> > -up-counter and can generate 4 interrupts when the counter reaches one of the
-> > -four preset counter values. The CPU local timers are 32-bit free running
-> > -down-counters and generate an interrupt when the counter expires. There is
-> > -one CPU local timer instantiated in MCT for every CPU in the system.
-> > -
-> > -Required properties:
-> > -
-> > -- compatible: should be "samsung,exynos4210-mct".
-> > -  (a) "samsung,exynos4210-mct", for mct compatible with Exynos4210 mct.
-> > -  (b) "samsung,exynos4412-mct", for mct compatible with Exynos4412 mct.
-> > -
-> > -- reg: base address of the mct controller and length of the address space
-> > -  it occupies.
-> > -
-> > -- interrupts: the list of interrupts generated by the controller. The following
-> > -  should be the order of the interrupts specified. The local timer interrupts
-> > -  should be specified after the four global timer interrupts have been
-> > -  specified.
-> > -
-> > -	0: Global Timer Interrupt 0
-> > -	1: Global Timer Interrupt 1
-> > -	2: Global Timer Interrupt 2
-> > -	3: Global Timer Interrupt 3
-> > -	4: Local Timer Interrupt 0
-> > -	5: Local Timer Interrupt 1
-> > -	6: ..
-> > -	7: ..
-> > -	i: Local Timer Interrupt n
-> > -
-> > -  For MCT block that uses a per-processor interrupt for local timers, such
-> > -  as ones compatible with "samsung,exynos4412-mct", only one local timer
-> > -  interrupt might be specified, meaning that all local timers use the same
-> > -  per processor interrupt.
-> > -
-> > -Example 1: In this example, the IP contains two local timers, using separate
-> > -	   interrupts, so two local timer interrupts have been specified,
-> > -	   in addition to four global timer interrupts.
-> > -
-> > -	mct@10050000 {
-> > -		compatible = "samsung,exynos4210-mct";
-> > -		reg = <0x10050000 0x800>;
-> > -		interrupts = <0 57 0>, <0 69 0>, <0 70 0>, <0 71 0>,
-> > -			     <0 42 0>, <0 48 0>;
-> > -	};
-> > -
-> > -Example 2: In this example, the timer interrupts are connected to two separate
-> > -	   interrupt controllers. Hence, an interrupt-map is created to map
-> > -	   the interrupts to the respective interrupt controllers.
-> > -
-> > -	mct@101c0000 {
-> > -		compatible = "samsung,exynos4210-mct";
-> > -		reg = <0x101C0000 0x800>;
-> > -		interrupt-parent = <&mct_map>;
-> > -		interrupts = <0>, <1>, <2>, <3>, <4>, <5>;
-> > -
-> > -		mct_map: mct-map {
-> > -			#interrupt-cells = <1>;
-> > -			#address-cells = <0>;
-> > -			#size-cells = <0>;
-> > -			interrupt-map = <0 &gic 0 57 0>,
-> > -					<1 &gic 0 69 0>,
-> > -					<2 &combiner 12 6>,
-> > -					<3 &combiner 12 7>,
-> > -					<4 &gic 0 42 0>,
-> > -					<5 &gic 0 48 0>;
-> > -		};
-> > -	};
-> > -
-> > -Example 3: In this example, the IP contains four local timers, but using
-> > -	   a per-processor interrupt to handle them. Either all the local
-> > -	   timer interrupts can be specified, with the same interrupt specifier
-> > -	   value or just the first one.
-> > -
-> > -	mct@10050000 {
-> > -		compatible = "samsung,exynos4412-mct";
-> > -		reg = <0x10050000 0x800>;
-> > -
-> > -		/* Both ways are possible in this case. Either: */
-> > -		interrupts = <0 57 0>, <0 69 0>, <0 70 0>, <0 71 0>,
-> > -			     <0 42 0>;
-> > -		/* or: */
-> > -		interrupts = <0 57 0>, <0 69 0>, <0 70 0>, <0 71 0>,
-> > -			     <0 42 0>, <0 42 0>, <0 42 0>, <0 42 0>;
-> > -	};
-> > diff --git a/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.yaml b/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.yaml
-> > new file mode 100644
-> > index 000000000000..bff3f54a398f
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.yaml
-> > @@ -0,0 +1,125 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/timer/samsung,exynos4210-mct.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Samsung Exynos SoC Multi Core Timer (MCT)
-> > +
-> > +maintainers:
-> > +  - Krzysztof Kozlowski <krzk@kernel.org>
-> > +
-> > +description: |+
-> > +  The Samsung's Multi Core Timer (MCT) module includes two main blocks, the
-> > +  global timer and CPU local timers. The global timer is a 64-bit free running
-> > +  up-counter and can generate 4 interrupts when the counter reaches one of the
-> > +  four preset counter values. The CPU local timers are 32-bit free running
-> > +  down-counters and generate an interrupt when the counter expires. There is
-> > +  one CPU local timer instantiated in MCT for every CPU in the system.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    enum:
-> > +      - samsung,exynos4210-mct
-> > +      - samsung,exynos4412-mct
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  interrupts:
-> > +    description: |
-> > +      Interrupts should be put in specific order. This is, the local timer
-> > +      interrupts should be specified after the four global timer interrupts
-> > +      have been specified:
-> > +      0: Global Timer Interrupt 0
-> > +      1: Global Timer Interrupt 1
-> > +      2: Global Timer Interrupt 2
-> > +      3: Global Timer Interrupt 3
-> > +      4: Local Timer Interrupt 0
-> > +      5: Local Timer Interrupt 1
-> > +      6: ..
-> > +      7: ..
-> > +      i: Local Timer Interrupt n
-> > +      For MCT block that uses a per-processor interrupt for local timers, such
-> > +      as ones compatible with "samsung,exynos4412-mct", only one local timer
-> > +      interrupt might be specified, meaning that all local timers use the same
-> > +      per processor interrupt.
-> > +    minItems: 5               # 4 Global + 1 local
-> > +    maxItems: 20              # 4 Global + 16 local
-> > +
-> > +  interrupts-extended:
-> 
-> No need for this. Just document 'interrupts' and the tooling takes care 
-> of supporting 'interrupts-extended' too.
-
-OK.
-
-> 
-> > +    description: |
-> > +      If interrupts are coming from different controllers, this property
-> > +      can be used instead of regular "interrupts" property.
-> > +      The format is exactly the same as with "interrupts".
-> > +      Interrupts should be put in specific order. This is, the local timer
-> > +    minItems: 5               # 4 Global + 1 local
-> > +    maxItems: 20              # 4 Global + 16 local
-> > +
-> > +required:
-> > +  - compatible
-> > +  - interrupts
-> > +  - reg
-> > +
-> > +allOf:
-> > +  - if:
-> > +      not:
-> > +        required:
-> > +          - interrupts
-> > +    then:
-> > +      required:
-> > +        - interrupts-extended
-> 
-> And this is taken care of too.
-
-Sure, thanks!
-
-Best regards,
-Krzysztof
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGVsbG8sCgpJIHdhbnQgdG8ga2luZGx5IHJlbWluZCBhYm91dCB0aGlzIHBhdGNoLgoKQmVzdCBy
+ZWdhcmRzLApHcnplZ29yegoKCnd0LiwgMTYgbGlwIDIwMTkgbyAxNDoxNCBHcnplZ29yeiBKYXN6
+Y3p5ayA8amF6QHNlbWloYWxmLmNvbT4gbmFwaXNhxYIoYSk6Cj4KPiBQZXJmb3JtIGNvbnZlcnNp
+b24gdG8gbGl0dGxlLWVuZGlhbiBiZWZvcmUgZXZlcnkgd3JpdGUgdG8gY29uZmlndXJhdGlvbgo+
+IHNwYWNlIGFuZCBjb252ZXJzZSBiYWNrIHRvIGNwdSBlbmRpYW5uZXNzIGR1cmluZyByZWFkLiBB
+ZGRpdGlvbmFsbHkKPiBpbml0aWFsaXNlIGV2ZXJ5IG5vdC1ieXRlIHdpZGUgZmllbGRzIG9mIGNv
+bmZpZyBzcGFjZSB3aXRoIHByb3Blcgo+IGNwdV90b19sZSogbWFjcm8uCj4KPiBUaGlzIGlzIHJl
+cXVpcmVkIHNpbmNlIHRoZSBzdHJ1Y3R1cmUgZGVzY3JpYmluZyBjb25maWcgc3BhY2Ugb2YgZW11
+bGF0ZWQKPiBicmlkZ2UgYXNzdW1lcyBsaXR0bGUtZW5kaWFuIGNvbnZlbnRpb24uCj4KPiBTaWdu
+ZWQtb2ZmLWJ5OiBHcnplZ29yeiBKYXN6Y3p5ayA8amF6QHNlbWloYWxmLmNvbT4KPiAtLS0KPiB2
+MS0+djIKPiAtIHVzZSBfX2xlMzIgYW5kIF9fbGUxNiBmb3IgY29uZmlnIGZpZWxkcwo+IC0gYWRk
+IG1pc3NpbmcgY3B1X3RvX2xlMTYgZm9yIHBjaWVfY29uZi5jYXAgYXNzaWdubWVudAo+IC0gdXNl
+IF9fbGUzMiBmb3IgY2Znc3BhY2UgcG9pbnRlcgo+IElzc3VlcyB3aXRoIGVuZGlhbm5lc3Mgd2Vy
+ZSBkZXRlY3RlZCBieSBTcGFyc2UgdG9vbCByZWNvbW1lbmRlZCBieSBSdXNzZWxsIEtpbmcuCj4K
+PiAgZHJpdmVycy9wY2kvcGNpLWJyaWRnZS1lbXVsLmMgfCAyNSArKysrKysrLS0tLS0tLQo+ICBk
+cml2ZXJzL3BjaS9wY2ktYnJpZGdlLWVtdWwuaCB8IDc4ICsrKysrKysrKysrKysrKysrKysrKy0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0KPiAgMiBmaWxlcyBjaGFuZ2VkLCA1MiBpbnNlcnRpb25zKCsp
+LCA1MSBkZWxldGlvbnMoLSkKPgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BjaS9wY2ktYnJpZGdl
+LWVtdWwuYyBiL2RyaXZlcnMvcGNpL3BjaS1icmlkZ2UtZW11bC5jCj4gaW5kZXggODNmYjA3Ny4u
+Y2ZhZTU2NiAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BjaS9wY2ktYnJpZGdlLWVtdWwuYwo+ICsr
+KyBiL2RyaXZlcnMvcGNpL3BjaS1icmlkZ2UtZW11bC5jCj4gQEAgLTI3MCwxMCArMjcwLDEwIEBA
+IGNvbnN0IHN0YXRpYyBzdHJ1Y3QgcGNpX2JyaWRnZV9yZWdfYmVoYXZpb3IgcGNpZV9jYXBfcmVn
+c19iZWhhdmlvcltdID0gewo+ICBpbnQgcGNpX2JyaWRnZV9lbXVsX2luaXQoc3RydWN0IHBjaV9i
+cmlkZ2VfZW11bCAqYnJpZGdlLAo+ICAgICAgICAgICAgICAgICAgICAgICAgICB1bnNpZ25lZCBp
+bnQgZmxhZ3MpCj4gIHsKPiAtICAgICAgIGJyaWRnZS0+Y29uZi5jbGFzc19yZXZpc2lvbiB8PSBQ
+Q0lfQ0xBU1NfQlJJREdFX1BDSSA8PCAxNjsKPiArICAgICAgIGJyaWRnZS0+Y29uZi5jbGFzc19y
+ZXZpc2lvbiB8PSBjcHVfdG9fbGUzMihQQ0lfQ0xBU1NfQlJJREdFX1BDSSA8PCAxNik7Cj4gICAg
+ICAgICBicmlkZ2UtPmNvbmYuaGVhZGVyX3R5cGUgPSBQQ0lfSEVBREVSX1RZUEVfQlJJREdFOwo+
+ICAgICAgICAgYnJpZGdlLT5jb25mLmNhY2hlX2xpbmVfc2l6ZSA9IDB4MTA7Cj4gLSAgICAgICBi
+cmlkZ2UtPmNvbmYuc3RhdHVzID0gUENJX1NUQVRVU19DQVBfTElTVDsKPiArICAgICAgIGJyaWRn
+ZS0+Y29uZi5zdGF0dXMgPSBjcHVfdG9fbGUxNihQQ0lfU1RBVFVTX0NBUF9MSVNUKTsKPiAgICAg
+ICAgIGJyaWRnZS0+cGNpX3JlZ3NfYmVoYXZpb3IgPSBrbWVtZHVwKHBjaV9yZWdzX2JlaGF2aW9y
+LAo+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc2l6ZW9mKHBj
+aV9yZWdzX2JlaGF2aW9yKSwKPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgIEdGUF9LRVJORUwpOwo+IEBAIC0yODQsOCArMjg0LDkgQEAgaW50IHBjaV9icmlkZ2Vf
+ZW11bF9pbml0KHN0cnVjdCBwY2lfYnJpZGdlX2VtdWwgKmJyaWRnZSwKPiAgICAgICAgICAgICAg
+ICAgYnJpZGdlLT5jb25mLmNhcGFiaWxpdGllc19wb2ludGVyID0gUENJX0NBUF9QQ0lFX1NUQVJU
+Owo+ICAgICAgICAgICAgICAgICBicmlkZ2UtPnBjaWVfY29uZi5jYXBfaWQgPSBQQ0lfQ0FQX0lE
+X0VYUDsKPiAgICAgICAgICAgICAgICAgLyogU2V0IFBDSWUgdjIsIHJvb3QgcG9ydCwgc2xvdCBz
+dXBwb3J0ICovCj4gLSAgICAgICAgICAgICAgIGJyaWRnZS0+cGNpZV9jb25mLmNhcCA9IFBDSV9F
+WFBfVFlQRV9ST09UX1BPUlQgPDwgNCB8IDIgfAo+IC0gICAgICAgICAgICAgICAgICAgICAgIFBD
+SV9FWFBfRkxBR1NfU0xPVDsKPiArICAgICAgICAgICAgICAgYnJpZGdlLT5wY2llX2NvbmYuY2Fw
+ID0KPiArICAgICAgICAgICAgICAgICAgICAgICBjcHVfdG9fbGUxNihQQ0lfRVhQX1RZUEVfUk9P
+VF9QT1JUIDw8IDQgfCAyIHwKPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBQ
+Q0lfRVhQX0ZMQUdTX1NMT1QpOwo+ICAgICAgICAgICAgICAgICBicmlkZ2UtPnBjaWVfY2FwX3Jl
+Z3NfYmVoYXZpb3IgPQo+ICAgICAgICAgICAgICAgICAgICAgICAgIGttZW1kdXAocGNpZV9jYXBf
+cmVnc19iZWhhdmlvciwKPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNpemVvZihw
+Y2llX2NhcF9yZWdzX2JlaGF2aW9yKSwKPiBAQCAtMzI3LDcgKzMyOCw3IEBAIGludCBwY2lfYnJp
+ZGdlX2VtdWxfY29uZl9yZWFkKHN0cnVjdCBwY2lfYnJpZGdlX2VtdWwgKmJyaWRnZSwgaW50IHdo
+ZXJlLAo+ICAgICAgICAgaW50IHJlZyA9IHdoZXJlICYgfjM7Cj4gICAgICAgICBwY2lfYnJpZGdl
+X2VtdWxfcmVhZF9zdGF0dXNfdCAoKnJlYWRfb3ApKHN0cnVjdCBwY2lfYnJpZGdlX2VtdWwgKmJy
+aWRnZSwKPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+aW50IHJlZywgdTMyICp2YWx1ZSk7Cj4gLSAgICAgICB1MzIgKmNmZ3NwYWNlOwo+ICsgICAgICAg
+X19sZTMyICpjZmdzcGFjZTsKPiAgICAgICAgIGNvbnN0IHN0cnVjdCBwY2lfYnJpZGdlX3JlZ19i
+ZWhhdmlvciAqYmVoYXZpb3I7Cj4KPiAgICAgICAgIGlmIChicmlkZ2UtPmhhc19wY2llICYmIHJl
+ZyA+PSBQQ0lfQ0FQX1BDSUVfRU5EKSB7Cj4gQEAgLTM0MywxMSArMzQ0LDExIEBAIGludCBwY2lf
+YnJpZGdlX2VtdWxfY29uZl9yZWFkKHN0cnVjdCBwY2lfYnJpZGdlX2VtdWwgKmJyaWRnZSwgaW50
+IHdoZXJlLAo+ICAgICAgICAgaWYgKGJyaWRnZS0+aGFzX3BjaWUgJiYgcmVnID49IFBDSV9DQVBf
+UENJRV9TVEFSVCkgewo+ICAgICAgICAgICAgICAgICByZWcgLT0gUENJX0NBUF9QQ0lFX1NUQVJU
+Owo+ICAgICAgICAgICAgICAgICByZWFkX29wID0gYnJpZGdlLT5vcHMtPnJlYWRfcGNpZTsKPiAt
+ICAgICAgICAgICAgICAgY2Znc3BhY2UgPSAodTMyICopICZicmlkZ2UtPnBjaWVfY29uZjsKPiAr
+ICAgICAgICAgICAgICAgY2Znc3BhY2UgPSAoX19sZTMyICopICZicmlkZ2UtPnBjaWVfY29uZjsK
+PiAgICAgICAgICAgICAgICAgYmVoYXZpb3IgPSBicmlkZ2UtPnBjaWVfY2FwX3JlZ3NfYmVoYXZp
+b3I7Cj4gICAgICAgICB9IGVsc2Ugewo+ICAgICAgICAgICAgICAgICByZWFkX29wID0gYnJpZGdl
+LT5vcHMtPnJlYWRfYmFzZTsKPiAtICAgICAgICAgICAgICAgY2Znc3BhY2UgPSAodTMyICopICZi
+cmlkZ2UtPmNvbmY7Cj4gKyAgICAgICAgICAgICAgIGNmZ3NwYWNlID0gKF9fbGUzMiAqKSAmYnJp
+ZGdlLT5jb25mOwo+ICAgICAgICAgICAgICAgICBiZWhhdmlvciA9IGJyaWRnZS0+cGNpX3JlZ3Nf
+YmVoYXZpb3I7Cj4gICAgICAgICB9Cj4KPiBAQCAtMzU3LDcgKzM1OCw3IEBAIGludCBwY2lfYnJp
+ZGdlX2VtdWxfY29uZl9yZWFkKHN0cnVjdCBwY2lfYnJpZGdlX2VtdWwgKmJyaWRnZSwgaW50IHdo
+ZXJlLAo+ICAgICAgICAgICAgICAgICByZXQgPSBQQ0lfQlJJREdFX0VNVUxfTk9UX0hBTkRMRUQ7
+Cj4KPiAgICAgICAgIGlmIChyZXQgPT0gUENJX0JSSURHRV9FTVVMX05PVF9IQU5ETEVEKQo+IC0g
+ICAgICAgICAgICAgICAqdmFsdWUgPSBjZmdzcGFjZVtyZWcgLyA0XTsKPiArICAgICAgICAgICAg
+ICAgKnZhbHVlID0gbGUzMl90b19jcHUoY2Znc3BhY2VbcmVnIC8gNF0pOwo+Cj4gICAgICAgICAv
+Kgo+ICAgICAgICAgICogTWFrZSBzdXJlIHdlIG5ldmVyIHJldHVybiBhbnkgcmVzZXJ2ZWQgYml0
+IHdpdGggYSB2YWx1ZQo+IEBAIC0zODcsNyArMzg4LDcgQEAgaW50IHBjaV9icmlkZ2VfZW11bF9j
+b25mX3dyaXRlKHN0cnVjdCBwY2lfYnJpZGdlX2VtdWwgKmJyaWRnZSwgaW50IHdoZXJlLAo+ICAg
+ICAgICAgaW50IG1hc2ssIHJldCwgb2xkLCBuZXcsIHNoaWZ0Owo+ICAgICAgICAgdm9pZCAoKndy
+aXRlX29wKShzdHJ1Y3QgcGNpX2JyaWRnZV9lbXVsICpicmlkZ2UsIGludCByZWcsCj4gICAgICAg
+ICAgICAgICAgICAgICAgICAgIHUzMiBvbGQsIHUzMiBuZXcsIHUzMiBtYXNrKTsKPiAtICAgICAg
+IHUzMiAqY2Znc3BhY2U7Cj4gKyAgICAgICBfX2xlMzIgKmNmZ3NwYWNlOwo+ICAgICAgICAgY29u
+c3Qgc3RydWN0IHBjaV9icmlkZ2VfcmVnX2JlaGF2aW9yICpiZWhhdmlvcjsKPgo+ICAgICAgICAg
+aWYgKGJyaWRnZS0+aGFzX3BjaWUgJiYgcmVnID49IFBDSV9DQVBfUENJRV9FTkQpCj4gQEAgLTQx
+NCwxMSArNDE1LDExIEBAIGludCBwY2lfYnJpZGdlX2VtdWxfY29uZl93cml0ZShzdHJ1Y3QgcGNp
+X2JyaWRnZV9lbXVsICpicmlkZ2UsIGludCB3aGVyZSwKPiAgICAgICAgIGlmIChicmlkZ2UtPmhh
+c19wY2llICYmIHJlZyA+PSBQQ0lfQ0FQX1BDSUVfU1RBUlQpIHsKPiAgICAgICAgICAgICAgICAg
+cmVnIC09IFBDSV9DQVBfUENJRV9TVEFSVDsKPiAgICAgICAgICAgICAgICAgd3JpdGVfb3AgPSBi
+cmlkZ2UtPm9wcy0+d3JpdGVfcGNpZTsKPiAtICAgICAgICAgICAgICAgY2Znc3BhY2UgPSAodTMy
+ICopICZicmlkZ2UtPnBjaWVfY29uZjsKPiArICAgICAgICAgICAgICAgY2Znc3BhY2UgPSAoX19s
+ZTMyICopICZicmlkZ2UtPnBjaWVfY29uZjsKPiAgICAgICAgICAgICAgICAgYmVoYXZpb3IgPSBi
+cmlkZ2UtPnBjaWVfY2FwX3JlZ3NfYmVoYXZpb3I7Cj4gICAgICAgICB9IGVsc2Ugewo+ICAgICAg
+ICAgICAgICAgICB3cml0ZV9vcCA9IGJyaWRnZS0+b3BzLT53cml0ZV9iYXNlOwo+IC0gICAgICAg
+ICAgICAgICBjZmdzcGFjZSA9ICh1MzIgKikgJmJyaWRnZS0+Y29uZjsKPiArICAgICAgICAgICAg
+ICAgY2Znc3BhY2UgPSAoX19sZTMyICopICZicmlkZ2UtPmNvbmY7Cj4gICAgICAgICAgICAgICAg
+IGJlaGF2aW9yID0gYnJpZGdlLT5wY2lfcmVnc19iZWhhdmlvcjsKPiAgICAgICAgIH0KPgo+IEBA
+IC00MzEsNyArNDMyLDcgQEAgaW50IHBjaV9icmlkZ2VfZW11bF9jb25mX3dyaXRlKHN0cnVjdCBw
+Y2lfYnJpZGdlX2VtdWwgKmJyaWRnZSwgaW50IHdoZXJlLAo+ICAgICAgICAgLyogQ2xlYXIgdGhl
+IFcxQyBiaXRzICovCj4gICAgICAgICBuZXcgJj0gfigodmFsdWUgPDwgc2hpZnQpICYgKGJlaGF2
+aW9yW3JlZyAvIDRdLncxYyAmIG1hc2spKTsKPgo+IC0gICAgICAgY2Znc3BhY2VbcmVnIC8gNF0g
+PSBuZXc7Cj4gKyAgICAgICBjZmdzcGFjZVtyZWcgLyA0XSA9IGNwdV90b19sZTMyKG5ldyk7Cj4K
+PiAgICAgICAgIGlmICh3cml0ZV9vcCkKPiAgICAgICAgICAgICAgICAgd3JpdGVfb3AoYnJpZGdl
+LCByZWcsIG9sZCwgbmV3LCBtYXNrKTsKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9wY2kvcGNpLWJy
+aWRnZS1lbXVsLmggYi9kcml2ZXJzL3BjaS9wY2ktYnJpZGdlLWVtdWwuaAo+IGluZGV4IGU2NWIx
+YjcuLmIzMTg4MzAgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9wY2kvcGNpLWJyaWRnZS1lbXVsLmgK
+PiArKysgYi9kcml2ZXJzL3BjaS9wY2ktYnJpZGdlLWVtdWwuaAo+IEBAIC02LDY1ICs2LDY1IEBA
+Cj4KPiAgLyogUENJIGNvbmZpZ3VyYXRpb24gc3BhY2Ugb2YgYSBQQ0ktdG8tUENJIGJyaWRnZS4g
+Ki8KPiAgc3RydWN0IHBjaV9icmlkZ2VfZW11bF9jb25mIHsKPiAtICAgICAgIHUxNiB2ZW5kb3I7
+Cj4gLSAgICAgICB1MTYgZGV2aWNlOwo+IC0gICAgICAgdTE2IGNvbW1hbmQ7Cj4gLSAgICAgICB1
+MTYgc3RhdHVzOwo+IC0gICAgICAgdTMyIGNsYXNzX3JldmlzaW9uOwo+ICsgICAgICAgX19sZTE2
+IHZlbmRvcjsKPiArICAgICAgIF9fbGUxNiBkZXZpY2U7Cj4gKyAgICAgICBfX2xlMTYgY29tbWFu
+ZDsKPiArICAgICAgIF9fbGUxNiBzdGF0dXM7Cj4gKyAgICAgICBfX2xlMzIgY2xhc3NfcmV2aXNp
+b247Cj4gICAgICAgICB1OCBjYWNoZV9saW5lX3NpemU7Cj4gICAgICAgICB1OCBsYXRlbmN5X3Rp
+bWVyOwo+ICAgICAgICAgdTggaGVhZGVyX3R5cGU7Cj4gICAgICAgICB1OCBiaXN0Owo+IC0gICAg
+ICAgdTMyIGJhclsyXTsKPiArICAgICAgIF9fbGUzMiBiYXJbMl07Cj4gICAgICAgICB1OCBwcmlt
+YXJ5X2J1czsKPiAgICAgICAgIHU4IHNlY29uZGFyeV9idXM7Cj4gICAgICAgICB1OCBzdWJvcmRp
+bmF0ZV9idXM7Cj4gICAgICAgICB1OCBzZWNvbmRhcnlfbGF0ZW5jeV90aW1lcjsKPiAgICAgICAg
+IHU4IGlvYmFzZTsKPiAgICAgICAgIHU4IGlvbGltaXQ7Cj4gLSAgICAgICB1MTYgc2Vjb25kYXJ5
+X3N0YXR1czsKPiAtICAgICAgIHUxNiBtZW1iYXNlOwo+IC0gICAgICAgdTE2IG1lbWxpbWl0Owo+
+IC0gICAgICAgdTE2IHByZWZfbWVtX2Jhc2U7Cj4gLSAgICAgICB1MTYgcHJlZl9tZW1fbGltaXQ7
+Cj4gLSAgICAgICB1MzIgcHJlZmJhc2V1cHBlcjsKPiAtICAgICAgIHUzMiBwcmVmbGltaXR1cHBl
+cjsKPiAtICAgICAgIHUxNiBpb2Jhc2V1cHBlcjsKPiAtICAgICAgIHUxNiBpb2xpbWl0dXBwZXI7
+Cj4gKyAgICAgICBfX2xlMTYgc2Vjb25kYXJ5X3N0YXR1czsKPiArICAgICAgIF9fbGUxNiBtZW1i
+YXNlOwo+ICsgICAgICAgX19sZTE2IG1lbWxpbWl0Owo+ICsgICAgICAgX19sZTE2IHByZWZfbWVt
+X2Jhc2U7Cj4gKyAgICAgICBfX2xlMTYgcHJlZl9tZW1fbGltaXQ7Cj4gKyAgICAgICBfX2xlMzIg
+cHJlZmJhc2V1cHBlcjsKPiArICAgICAgIF9fbGUzMiBwcmVmbGltaXR1cHBlcjsKPiArICAgICAg
+IF9fbGUxNiBpb2Jhc2V1cHBlcjsKPiArICAgICAgIF9fbGUxNiBpb2xpbWl0dXBwZXI7Cj4gICAg
+ICAgICB1OCBjYXBhYmlsaXRpZXNfcG9pbnRlcjsKPiAgICAgICAgIHU4IHJlc2VydmVbM107Cj4g
+LSAgICAgICB1MzIgcm9tYWRkcjsKPiArICAgICAgIF9fbGUzMiByb21hZGRyOwo+ICAgICAgICAg
+dTggaW50bGluZTsKPiAgICAgICAgIHU4IGludHBpbjsKPiAtICAgICAgIHUxNiBicmlkZ2VjdHJs
+Owo+ICsgICAgICAgX19sZTE2IGJyaWRnZWN0cmw7Cj4gIH07Cj4KPiAgLyogUENJIGNvbmZpZ3Vy
+YXRpb24gc3BhY2Ugb2YgdGhlIFBDSWUgY2FwYWJpbGl0aWVzICovCj4gIHN0cnVjdCBwY2lfYnJp
+ZGdlX2VtdWxfcGNpZV9jb25mIHsKPiAgICAgICAgIHU4IGNhcF9pZDsKPiAgICAgICAgIHU4IG5l
+eHQ7Cj4gLSAgICAgICB1MTYgY2FwOwo+IC0gICAgICAgdTMyIGRldmNhcDsKPiAtICAgICAgIHUx
+NiBkZXZjdGw7Cj4gLSAgICAgICB1MTYgZGV2c3RhOwo+IC0gICAgICAgdTMyIGxua2NhcDsKPiAt
+ICAgICAgIHUxNiBsbmtjdGw7Cj4gLSAgICAgICB1MTYgbG5rc3RhOwo+IC0gICAgICAgdTMyIHNs
+b3RjYXA7Cj4gLSAgICAgICB1MTYgc2xvdGN0bDsKPiAtICAgICAgIHUxNiBzbG90c3RhOwo+IC0g
+ICAgICAgdTE2IHJvb3RjdGw7Cj4gLSAgICAgICB1MTYgcnN2ZDsKPiAtICAgICAgIHUzMiByb290
+c3RhOwo+IC0gICAgICAgdTMyIGRldmNhcDI7Cj4gLSAgICAgICB1MTYgZGV2Y3RsMjsKPiAtICAg
+ICAgIHUxNiBkZXZzdGEyOwo+IC0gICAgICAgdTMyIGxua2NhcDI7Cj4gLSAgICAgICB1MTYgbG5r
+Y3RsMjsKPiAtICAgICAgIHUxNiBsbmtzdGEyOwo+IC0gICAgICAgdTMyIHNsb3RjYXAyOwo+IC0g
+ICAgICAgdTE2IHNsb3RjdGwyOwo+IC0gICAgICAgdTE2IHNsb3RzdGEyOwo+ICsgICAgICAgX19s
+ZTE2IGNhcDsKPiArICAgICAgIF9fbGUzMiBkZXZjYXA7Cj4gKyAgICAgICBfX2xlMTYgZGV2Y3Rs
+Owo+ICsgICAgICAgX19sZTE2IGRldnN0YTsKPiArICAgICAgIF9fbGUzMiBsbmtjYXA7Cj4gKyAg
+ICAgICBfX2xlMTYgbG5rY3RsOwo+ICsgICAgICAgX19sZTE2IGxua3N0YTsKPiArICAgICAgIF9f
+bGUzMiBzbG90Y2FwOwo+ICsgICAgICAgX19sZTE2IHNsb3RjdGw7Cj4gKyAgICAgICBfX2xlMTYg
+c2xvdHN0YTsKPiArICAgICAgIF9fbGUxNiByb290Y3RsOwo+ICsgICAgICAgX19sZTE2IHJzdmQ7
+Cj4gKyAgICAgICBfX2xlMzIgcm9vdHN0YTsKPiArICAgICAgIF9fbGUzMiBkZXZjYXAyOwo+ICsg
+ICAgICAgX19sZTE2IGRldmN0bDI7Cj4gKyAgICAgICBfX2xlMTYgZGV2c3RhMjsKPiArICAgICAg
+IF9fbGUzMiBsbmtjYXAyOwo+ICsgICAgICAgX19sZTE2IGxua2N0bDI7Cj4gKyAgICAgICBfX2xl
+MTYgbG5rc3RhMjsKPiArICAgICAgIF9fbGUzMiBzbG90Y2FwMjsKPiArICAgICAgIF9fbGUxNiBz
+bG90Y3RsMjsKPiArICAgICAgIF9fbGUxNiBzbG90c3RhMjsKPiAgfTsKPgo+ICBzdHJ1Y3QgcGNp
+X2JyaWRnZV9lbXVsOwo+IC0tCj4gMi43LjQKPgoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
+YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
