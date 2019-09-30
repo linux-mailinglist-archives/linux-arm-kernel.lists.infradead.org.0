@@ -2,75 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0597EC2478
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 17:40:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87221C2479
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 17:40:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FfIDqr4lw75g4gcCRY3XuANYe6DP40vd0rzNlp8JVL0=; b=EBX2ioYFVVsuAx
-	z38hedL7pOqSh2ko8NmXnTMhEnrkRg8F5qe5JYaGM9pUivhT22Ju5s1cbNMuXn0MQhkJGbOqMf//Z
-	0P65YdSiakbnSI08B0+K8psNErWprJIYOLoovdKP1MOPsL+g2+QbtZjQOVcjRerBN9pcIfnKmFPnx
-	tzTVjcPUiDXG5D1iBtAVzLAuhMCYbLFR0HPLqhsS5qTQp28lQOs5MvYCDa/fckHINjTkzITQ6bdS4
-	jxqswDy+J7IwfasaAKTm0Ro3t21gurt3boKdnzi0ygKm1tj11x8047YDMWGjwsUMx6ZaYiOSYuKz1
-	DTRKax9+QWxLhIYdgk2g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sj4Z5n+uikoxAQq9dOIEJqPJtBVn4GU2fTf7KHghT/U=; b=RW2F420p52zUig
+	Hna4h5ZLGodm9b1fOaT2DrMOOCzjqXRQRx8dsC3/QHynS6NdhRagKRoEPwV5znYWqMPrTcdn0xcdP
+	fBY8Z/KQZ6Lhx77yzNrm5N3P9ZtKwB7zyzCr0FWQa6Au8H/iL05GVQHXSeEiJziLG3ks6vAKIUQtu
+	/IKaCTCS+Su0bF1xJ8B9JoiF357g1vcjTHAu5o6lNcxbak2BWrtX+e4n2OZ7dorG7OvNuOiS5ansb
+	JfCEXdiJXXepSJY8YjbfHNQPH/8j2Msm5w2uIts9IfXMaYmd1JhHWWrx10zmZ/xbD/2jpTBPPxIJj
+	zUEHbXLRPHrtd0ac3ZUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iExmY-0001Ml-MR; Mon, 30 Sep 2019 15:40:14 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iExmi-0002nK-Sy; Mon, 30 Sep 2019 15:40:24 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iExmB-0001LP-Qv
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 15:39:53 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x8UFUk76017914; Mon, 30 Sep 2019 17:39:43 +0200
+ id 1iExmD-0001LK-7L
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 15:39:54 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x8UFVeN2013300; Mon, 30 Sep 2019 17:39:44 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=oqsc+1QmxySevnQ/cOpQpMNn/oNbv445DQVbjVNoArI=;
- b=f1MgDsNhuFHK8bCjXeH8DmXI/CufFHMbcnW9G7FHHrX2iG4T4YPR608/YWXZzC2AdxTb
- 86URQUZFfI/A8K3AJp/ujzArs4wMkvHp+YSj0Pyy4gaBihMcGmJnVgiN54JH+BUpj5Z5
- 7TLydY58qojHS//sun3gev4W1yP+1MhI81pnPW+BPoHpWWWhJQ7EXbDwkpPjUzf8shZG
- dY12HH3sgENVgTMEx6+OqqMeXS0QnLWg6JTNTQiuBMUTKb+TY0uKpA6ovdr33PeHdzwN
- Gh8bWygbIcsi9PeYvcztSL3OJCpKA0NR+wojkn+WQNWKq/i5az248bO5oJXsfCU/5bf/ BA== 
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=STMicroelectronics;
+ bh=rnzvoLapup62xEU3qg28JHDE/fN/lvzvSo1oUmE5lRo=;
+ b=BT9GNjVTWL9NwDXsc+iHtjteGOu6IJ6hzEpVXmgpB7VGeWFF2ABx48aftHjMvr50l33X
+ jYdUQ+ZixRsAnWCYyaeqZc44Db4zxblWKejI7DvCZv4BmcIkpuWyFf4H2OtVlcKy7wB+
+ ba7YjuFq5VFsOMkYzoYzIreCiZF2W6tnIP/tmlOdwbG8sUilYfIrDxuKAgOhDNv/YpNt
+ qaoqtzFnZY4KWDxtkoNrJdmqmviPg85c1gZOxFxDkUDhOgZiXlEMGG8wV7Gg3/FKf+Dt
+ sFboJc/Pi24f5nhrQR4Jtl1bAOGjoStp+IC0krglyvs5aWbQuAH8xlSkTD13nfBHTQEw sw== 
 Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
- by mx07-00178001.pphosted.com with ESMTP id 2v9w9vm0qc-1
+ by mx08-00178001.pphosted.com with ESMTP id 2v9vna47sj-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Mon, 30 Sep 2019 17:39:43 +0200
+ Mon, 30 Sep 2019 17:39:44 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 57A6F24;
- Mon, 30 Sep 2019 15:39:40 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 77EA12A45FA;
- Mon, 30 Sep 2019 17:39:39 +0200 (CEST)
-Received: from SAFEX1HUBCAS22.st.com (10.75.90.92) by Safex1hubcas24.st.com
- (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 30 Sep
- 2019 17:39:39 +0200
+ by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 3EFF44B;
+ Mon, 30 Sep 2019 15:39:41 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 999282A45FB;
+ Mon, 30 Sep 2019 17:39:40 +0200 (CEST)
+Received: from SAFEX1HUBCAS22.st.com (10.75.90.92) by SAFEX1HUBCAS23.st.com
+ (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 30 Sep
+ 2019 17:39:40 +0200
 Received: from localhost (10.48.0.192) by Webmail-ga.st.com (10.75.90.48) with
  Microsoft SMTP Server (TLS) id 14.3.439.0;
- Mon, 30 Sep 2019 17:39:38 +0200
+ Mon, 30 Sep 2019 17:39:39 +0200
 From: Fabrice Gasnier <fabrice.gasnier@st.com>
 To: <thierry.reding@gmail.com>, <robh+dt@kernel.org>
-Subject: [PATCH 0/2] Add PM support to STM32 Timer PWM
-Date: Mon, 30 Sep 2019 17:39:09 +0200
-Message-ID: <1569857951-20007-1-git-send-email-fabrice.gasnier@st.com>
+Subject: [PATCH 1/2] dt-bindings: pwm-stm32: document pinctrl sleep state
+Date: Mon, 30 Sep 2019 17:39:10 +0200
+Message-ID: <1569857951-20007-2-git-send-email-fabrice.gasnier@st.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1569857951-20007-1-git-send-email-fabrice.gasnier@st.com>
+References: <1569857951-20007-1-git-send-email-fabrice.gasnier@st.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.48.0.192]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
  definitions=2019-09-30_09:2019-09-30,2019-09-30 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_083952_176212_FB888E10 
-X-CRM114-Status: GOOD (  11.34  )
+X-CRM114-CacheID: sfid-20190930_083953_553300_9A082884 
+X-CRM114-Status: GOOD (  14.14  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -101,18 +105,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series adds power management support for STM32 Timer PWM:
-- Document the pinctrl sleep state for STM32 Timer PWM
-- STM32 Timer PWM driver
+Add documentation for pinctrl sleep state that can be used by
+STM32 timers PWM.
 
-Fabrice Gasnier (2):
-  dt-bindings: pwm-stm32: document pinctrl sleep state
-  pwm: stm32: add power management support
+Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+---
+ Documentation/devicetree/bindings/pwm/pwm-stm32.txt | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
- .../devicetree/bindings/pwm/pwm-stm32.txt          |  8 ++-
- drivers/pwm/pwm-stm32.c                            | 82 ++++++++++++++++------
- 2 files changed, 67 insertions(+), 23 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/pwm/pwm-stm32.txt b/Documentation/devicetree/bindings/pwm/pwm-stm32.txt
+index a8690bf..f1620c1 100644
+--- a/Documentation/devicetree/bindings/pwm/pwm-stm32.txt
++++ b/Documentation/devicetree/bindings/pwm/pwm-stm32.txt
+@@ -5,8 +5,9 @@ See ../mfd/stm32-timers.txt for details about the parent node.
+ 
+ Required parameters:
+ - compatible:		Must be "st,stm32-pwm".
+-- pinctrl-names: 	Set to "default".
+-- pinctrl-0: 		List of phandles pointing to pin configuration nodes for PWM module.
++- pinctrl-names: 	Set to "default". An additional "sleep" state can be
++			defined to set pins in sleep state when in low power.
++- pinctrl-n: 		List of phandles pointing to pin configuration nodes for PWM module.
+ 			For Pinctrl properties see ../pinctrl/pinctrl-bindings.txt
+ - #pwm-cells:		Should be set to 3. This PWM chip uses the default 3 cells
+ 			bindings defined in pwm.txt.
+@@ -32,7 +33,8 @@ Example:
+ 			compatible = "st,stm32-pwm";
+ 			#pwm-cells = <3>;
+ 			pinctrl-0	= <&pwm1_pins>;
+-			pinctrl-names	= "default";
++			pinctrl-1	= <&pwm1_sleep_pins>;
++			pinctrl-names	= "default", "sleep";
+ 			st,breakinput = <0 1 5>;
+ 		};
+ 	};
 -- 
 2.7.4
 
