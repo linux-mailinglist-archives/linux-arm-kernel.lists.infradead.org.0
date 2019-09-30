@@ -2,67 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0ABD6C24C7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 18:01:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D5FDC2518
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 18:26:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ug/EqRV4kg3oNWYoa75ujpffhdMdRwAKPiWzm/Su+ws=; b=DCkxn/YijNBdcm
-	719rzSM48ORjXFLvdSw7EqgHlq25Ok86dRfzhVkfv2QvkXz4A9q5wgw6pG2MXa0Zgm/IGgJ9zr6Cr
-	e2PXFdKITwigO5VRidqBeDr1c7Nt0PGf3iuWgGXcN291MQ511mP1wrjN5Uq+Gx/IdHv+NE+UuXla4
-	zf7WmHVLnHRvpQ4KbFOfbynWd3V2r3RmXaT6OkDGUTvfX9esNMk9nFCsukssG5yqQcUKZlLtx6ml2
-	wM38wIAfWwgtrurFjS+Kk1TCe/qfM5StJZLqDwPlTaZiT840yXtYUCXTsViNDuwqgv3InQrchlhED
-	bbQTM8cmVHgjkQDAHYNg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uSLzfmL5ajdAPoNQ2nrmfC3ebTEwYlDgunYP7hEGSH4=; b=OXYvPFRj5gMipA
+	ojoVQ2bQeXBu4t95h5i+Qn+70JV2B6VeS9+ixjxE8y4co1kl/erj95uXz4ZIlGHXNTF+D3xmgYinY
+	ic46i13iENWvIqLfv7Nwqwtq/TduIV0zkZYHGKVVbBiwR6NjtfEiYWN46cSPhW1YrfdVJM3oP4GRf
+	ytaZMst3mQG9HxdHPLkYUrOSiHXwzp3kwkAf1UdUdqtqo5bztaldi9yru+FMsJfozbu/2w81M3XCj
+	4zxzB5FNjtXQKbxc/0zt1tp0/d53Bc2V6BAxe/XBeGGXqbECR5nXcRJB4unrRJAVqoNPqn7unJ1Qz
+	5Ravo/GuFeIsYB7KqO1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEy7E-0002te-Tk; Mon, 30 Sep 2019 16:01:37 +0000
-Received: from rere.qmqm.pl ([91.227.64.183])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEy72-0002sk-J9
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 16:01:26 +0000
-Received: from remote.user (localhost [127.0.0.1])
- by rere.qmqm.pl (Postfix) with ESMTPSA id 46hnCM37HJz2J;
- Mon, 30 Sep 2019 17:59:27 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=rere.qmqm.pl; s=1;
- t=1569859167; bh=UhfU17aR0sNYys0oVRGSuAA/hFA3bzjaPoMdvXhHiSM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Nj72iYc/z5oBFvfSO6J2VcevkkHNftUuYSYYNlPVIFN10KCwA1SZB0EqQB6y2wV24
- ZQE0AuUJ3IRTvd//lcqlav5r0/bt8Oo4inE1oUcLwcVleeYKI5gxmJzxJ/FZFBTikf
- zIf3ellGpjWo/FAO4/ejQHvGJMZs4/vKYZFuibQLdE0Odv23S5Qrd1It0rkozCyhcs
- 4ynhVaSIBYql+ybi81PttthYd2oiZhByYXXVQIojI9OzRFFtu1jz/v3J9SPmYoD3QA
- /GUmo9+K7B4DkDSwiNbw1tGdJcw5nmXgfHhiKBNQ0LdqpbE3jTJx+FMtv3c+KF9tNu
- LS6q0sL72okdQ==
-X-Virus-Status: Clean
-X-Virus-Scanned: clamav-milter 0.101.4 at mail
-Date: Mon, 30 Sep 2019 18:01:21 +0200
-From: =?iso-8859-2?Q?Micha=B3_Miros=B3aw?= <mirq-linux@rere.qmqm.pl>
-To: YueHaibing <yuehaibing@huawei.com>
-Subject: Re: [PATCH -next] ASoC: atmel: Fix build error
-Message-ID: <20190930160120.GB32237@qmqm.qmqm.pl>
-References: <20190928081641.44232-1-yuehaibing@huawei.com>
- <20190930155818.GA32237@qmqm.qmqm.pl>
+	id 1iEyVY-00037E-4A; Mon, 30 Sep 2019 16:26:44 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iEyVO-00036b-Tg
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 16:26:36 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 96E931570;
+ Mon, 30 Sep 2019 09:26:30 -0700 (PDT)
+Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3147C3F534;
+ Mon, 30 Sep 2019 09:26:29 -0700 (PDT)
+Subject: Re: [PATCH 2/2] drm/panfrost: Use coherent pagetable walk on Juno
+To: Robin Murphy <robin.murphy@arm.com>, robh@kernel.org,
+ tomeu.vizoso@collabora.com, sudeep.holla@arm.com
+References: <88dc6386929b3dcd7a65ba8063628c62b66b330c.1569856049.git.robin.murphy@arm.com>
+ <1e499f85220b735849126171e64ebdd1da0302ce.1569856049.git.robin.murphy@arm.com>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <167ec566-1936-8a05-83fc-74d20d9fb8bc@arm.com>
+Date: Mon, 30 Sep 2019 17:26:27 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190930155818.GA32237@qmqm.qmqm.pl>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1e499f85220b735849126171e64ebdd1da0302ce.1569856049.git.robin.murphy@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_090124_808848_B37EBF66 
-X-CRM114-Status: GOOD (  12.59  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190930_092635_003092_A4A03645 
+X-CRM114-Status: GOOD (  16.91  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,69 +63,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, alsa-devel@alsa-project.org,
- lgirdwood@gmail.com, linux-kernel@vger.kernel.org, tiwai@suse.com,
- broonie@kernel.org, codrin.ciubotariu@microchip.com, perex@perex.cz,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-2"
-Content-Transfer-Encoding: quoted-printable
+Cc: devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com, liviu.dudau@arm.com,
+ linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 30, 2019 at 05:58:18PM +0200, Micha=B3 Miros=B3aw wrote:
-> On Sat, Sep 28, 2019 at 04:16:41PM +0800, YueHaibing wrote:
-> > when do randbuilding, I got this error:
-> > =
+On 30/09/2019 16:24, Robin Murphy wrote:
+> Although going full "dma-coherent" ends badly due to GEM objects still
+> being forcibly mapped non-cacheable, we can at least take advantage of
+> Juno's ACE-lite integration to skip cache maintenance for pagetables.
+> 
+> CC: Rob Herring <robh@kernel.org>
+> CC: Tomeu Vizoso <tomeu.vizoso@collabora.com>
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> ---
+> 
+> This isn't really meant as a series, I'm just sending it together
+> with patch #1 for context.
+> 
+>  drivers/gpu/drm/panfrost/panfrost_mmu.c | 3 +++
+>  1 file changed, 3 insertions(+)
+> 
+> diff --git a/drivers/gpu/drm/panfrost/panfrost_mmu.c b/drivers/gpu/drm/panfrost/panfrost_mmu.c
+> index bdd990568476..560439f63277 100644
+> --- a/drivers/gpu/drm/panfrost/panfrost_mmu.c
+> +++ b/drivers/gpu/drm/panfrost/panfrost_mmu.c
+> @@ -365,6 +365,9 @@ int panfrost_mmu_pgtable_alloc(struct panfrost_file_priv *priv)
+>  		.iommu_dev	= pfdev->dev,
+>  	};
+>  
+> +	if (of_device_is_compatible(pfdev->dev->of_node, "arm,juno-mali"))
+> +		pfdev->mmu->pgtbl_cfg.coherent_walk = true;
 
-> > sound/soc/atmel/atmel_ssc_dai.o: In function `atmel_ssc_set_audio':
-> > (.text+0x12f6): undefined reference to `atmel_pcm_pdc_platform_register'
-> > =
+Should be:
+	mmu->pgtbl_cfg.coherent_walk = true;
 
-> > This is because SND_ATMEL_SOC_SSC_DMA=3Dy, SND_ATMEL_SOC_SSC=3Dy,
-> > but SND_ATMEL_SOC_SSC_PDC=3Dm. Fix it bt reintroducing the default Kcon=
-fig.
-> =
+Also I'm not sure whether we should do this based on a compatible
+string. kbase has a "system-coherency" device-tree flag for it. In
+theory we could end up with a long list of compatibles here...
 
-> Defaults won't forbid the invalid configuration. Can you try following:
+Steve
 
-Ah, no. This won't fix it - the dependency is the other way around:
-SOC_SSC should depend on _PDC / _DMA.
+> +
+>  	mmu->pgtbl_ops = alloc_io_pgtable_ops(ARM_MALI_LPAE, &mmu->pgtbl_cfg,
+>  					      priv);
+>  	if (!mmu->pgtbl_ops)
+> 
 
-> diff --git a/sound/soc/atmel/Kconfig b/sound/soc/atmel/Kconfig
-> index f118c229ed82..461f023c5635 100644
-> --- a/sound/soc/atmel/Kconfig
-> +++ b/sound/soc/atmel/Kconfig
-> @@ -12,10 +12,12 @@ if SND_ATMEL_SOC
->  config SND_ATMEL_SOC_PDC
->  	tristate
->  	depends on HAS_DMA
-> +	select SND_ATMEL_SOC_SSC
->  =
-
->  config SND_ATMEL_SOC_DMA
->  	tristate
->  	select SND_SOC_GENERIC_DMAENGINE_PCM
-> +	select SND_ATMEL_SOC_SSC
->  =
-
->  config SND_ATMEL_SOC_SSC
->  	tristate
-> @@ -24,7 +26,6 @@ config SND_ATMEL_SOC_SSC_PDC
->  	tristate "SoC PCM DAI support for AT91 SSC controller using PDC"
->  	depends on ATMEL_SSC
->  	select SND_ATMEL_SOC_PDC
-> -	select SND_ATMEL_SOC_SSC
->  	help
->  	  Say Y or M if you want to add support for Atmel SSC interface
->  	  in PDC mode configured using audio-graph-card in device-tree.
-> @@ -33,7 +34,6 @@ config SND_ATMEL_SOC_SSC_DMA
->  	tristate "SoC PCM DAI support for AT91 SSC controller using DMA"
->  	depends on ATMEL_SSC
->  	select SND_ATMEL_SOC_DMA
-> -	select SND_ATMEL_SOC_SSC
->  	help
->  	  Say Y or M if you want to add support for Atmel SSC interface
->  	  in DMA mode configured using audio-graph-card in device-tree.
 
 _______________________________________________
 linux-arm-kernel mailing list
