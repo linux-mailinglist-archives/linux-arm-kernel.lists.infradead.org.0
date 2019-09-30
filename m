@@ -2,29 +2,29 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A3B5C2378
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 16:38:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23D26C2374
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 16:37:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xQmw07YaxfwgLRoCInK7AE+jSJgM/7AYlc678cj8wLM=; b=OoMKqGMCPR0EzA
-	LAOH4Drvea/eqnmC/JMGALV0hkPYUcMyJ2T5ql7UiAMZjoCxrp+18qxYm5VziLGyGiF1FpbMihvMC
-	72bbLzXcv1nRMUgyFF36e2bl3Rbv+kWXD3PJO6f9KvqlP08DMQtKSIeVDM90JBuTpZck+OX97II30
-	tG8cIbmYC8OhnvZn0jww78AZkea/iB5gOmCKrbkkffpYHbJJSC2jLa559Q9558/lZI7oYXgqfiK8i
-	CdbgCqxjd5Fnr/hJZ6DKeO4JFpPmDGgM8la52iHwYMVmWtWjEvo34p512k+nkPmy3xXuInsaNGrxd
-	o5RKo7Ce38RCIu01en1g==;
+	List-Owner; bh=Zk60kS/PJ8Eu5qIFcjJ5TE7ncqbH3jZK/mO9jFa5920=; b=u5/FWxRjXOSf9J
+	HIOPe6qT7oMXfyfMcWo4h8vppud/5KMbG9qXQtNRQTxKUtyRyAmBcGbJqREsPr2aoV+lZyns6zym1
+	p6tV3AcSJbalvNIBVobYAu8eW7rwpFouT0xXXG0nHeq9HafHJAyP/S49Aij3/pBOU1Fw37XL9fe5v
+	lVbUyizkL9KXkhZEl8mCyK2I5XJ3IJ6cTqRd7Q7YEO7sS+Id83LIii9kP7AUVnPlpLMCuMdhspBW0
+	HnGmR6xftlfVHvk1BypEf/ndgC2+B43sE4Pgz02aPqEJZU+CQd0mNWI3ATrqpOQNx6PoWrwuYGcrl
+	4ZulOSU9A9C3z6gWYJzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEwoL-00086m-Pq; Mon, 30 Sep 2019 14:38:01 +0000
+	id 1iEwnv-0007co-6c; Mon, 30 Sep 2019 14:37:35 +0000
 Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEwnT-0007OE-LT
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 14:37:09 +0000
+ id 1iEwnR-0007OJ-85
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 14:37:06 +0000
 Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 2A2F4719A77CE6655499;
+ by Forcepoint Email with ESMTP id 40F62D0A7B7A024C01A2;
  Mon, 30 Sep 2019 22:36:58 +0800 (CST)
 Received: from localhost.localdomain (10.67.212.75) by
  DGGEMS402-HUB.china.huawei.com (10.3.19.202) with Microsoft SMTP Server id
@@ -33,9 +33,10 @@ From: John Garry <john.garry@huawei.com>
 To: <lorenzo.pieralisi@arm.com>, <guohanjun@huawei.com>,
  <sudeep.holla@arm.com>, <robin.murphy@arm.com>, <mark.rutland@arm.com>,
  <will@kernel.org>
-Subject: [RFC PATCH 1/6] ACPI/IORT: Set PMCG device parent
-Date: Mon, 30 Sep 2019 22:33:46 +0800
-Message-ID: <1569854031-237636-2-git-send-email-john.garry@huawei.com>
+Subject: [RFC PATCH 2/6] iommu/arm-smmu-v3: Record IIDR in arm_smmu_device
+ structure
+Date: Mon, 30 Sep 2019 22:33:47 +0800
+Message-ID: <1569854031-237636-3-git-send-email-john.garry@huawei.com>
 X-Mailer: git-send-email 2.8.1
 In-Reply-To: <1569854031-237636-1-git-send-email-john.garry@huawei.com>
 References: <1569854031-237636-1-git-send-email-john.garry@huawei.com>
@@ -43,8 +44,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.67.212.75]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_073707_891250_0A83DEAD 
-X-CRM114-Status: GOOD (  13.52  )
+X-CRM114-CacheID: sfid-20190930_073705_454614_45A82CFF 
+X-CRM114-Status: GOOD (  10.43  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -75,97 +76,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In the IORT, a PMCG node includes a node reference to its associated
-device.
+To allow other devices know the SMMU HW IIDR, record the IIDR contents as
+the first member of the arm_smmu_device structure.
 
-Set the PMCG platform device parent device for future referencing.
-
-For now, we only consider setting for when the associated component is an
-SMMUv3.
+In storing as the first member, it saves exposing SMMU APIs, which are
+nicely self-contained today.
 
 Signed-off-by: John Garry <john.garry@huawei.com>
 ---
- drivers/acpi/arm64/iort.c | 34 ++++++++++++++++++++++++++++++++--
- 1 file changed, 32 insertions(+), 2 deletions(-)
+ drivers/iommu/arm-smmu-v3.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
-index 8569b79e8b58..0b687520c3e7 100644
---- a/drivers/acpi/arm64/iort.c
-+++ b/drivers/acpi/arm64/iort.c
-@@ -1455,7 +1455,7 @@ static __init const struct iort_dev_config *iort_get_dev_cfg(
-  * Returns: 0 on success, <0 failure
-  */
- static int __init iort_add_platform_device(struct acpi_iort_node *node,
--					   const struct iort_dev_config *ops)
-+					   const struct iort_dev_config *ops, struct device *parent)
- {
- 	struct fwnode_handle *fwnode;
- 	struct platform_device *pdev;
-@@ -1466,6 +1466,8 @@ static int __init iort_add_platform_device(struct acpi_iort_node *node,
- 	if (!pdev)
- 		return -ENOMEM;
+diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+index 40f4757096c3..1ed3ef0f1ec3 100644
+--- a/drivers/iommu/arm-smmu-v3.c
++++ b/drivers/iommu/arm-smmu-v3.c
+@@ -70,6 +70,8 @@
+ #define IDR1_SSIDSIZE			GENMASK(10, 6)
+ #define IDR1_SIDSIZE			GENMASK(5, 0)
  
-+	pdev->dev.parent = parent;
++#define ARM_SMMU_IIDR                  0x18
 +
- 	if (ops->dev_set_proximity) {
- 		ret = ops->dev_set_proximity(&pdev->dev, node);
- 		if (ret)
-@@ -1573,6 +1575,11 @@ static void __init iort_enable_acs(struct acpi_iort_node *iort_node)
- static inline void iort_enable_acs(struct acpi_iort_node *iort_node) { }
- #endif
+ #define ARM_SMMU_IDR5			0x14
+ #define IDR5_STALL_MAX			GENMASK(31, 16)
+ #define IDR5_GRAN64K			(1 << 6)
+@@ -546,6 +548,7 @@ struct arm_smmu_strtab_cfg {
  
-+static int iort_fwnode_match(struct device *dev, const void *fwnode)
-+{
-+	return dev->fwnode == fwnode;
-+}
-+
- static void __init iort_init_platform_devices(void)
- {
- 	struct acpi_iort_node *iort_node, *iort_end;
-@@ -1594,11 +1601,34 @@ static void __init iort_init_platform_devices(void)
- 				iort_table->length);
+ /* An SMMUv3 instance */
+ struct arm_smmu_device {
++	u32						iidr; /* must be first member */
+ 	struct device			*dev;
+ 	void __iomem			*base;
  
- 	for (i = 0; i < iort->node_count; i++) {
-+		struct device *parent = NULL;
-+
- 		if (iort_node >= iort_end) {
- 			pr_err("iort node pointer overflows, bad table\n");
- 			return;
- 		}
+@@ -3153,6 +3156,8 @@ static int arm_smmu_device_probe(struct platform_device *pdev)
+ 	iommu_device_set_ops(&smmu->iommu, &arm_smmu_ops);
+ 	iommu_device_set_fwnode(&smmu->iommu, dev->fwnode);
  
-+		/* Fixme: handle parent declared in IORT after PMCG */
-+		if (iort_node->type == ACPI_IORT_NODE_PMCG) {
-+			struct acpi_iort_node *iort_assoc_node;
-+			struct acpi_iort_pmcg *pmcg;
-+			u32 node_reference;
++	smmu->iidr = readl(smmu->base + ARM_SMMU_IIDR);
 +
-+			pmcg = (struct acpi_iort_pmcg *)iort_node->node_data;
-+
-+			node_reference = pmcg->node_reference;
-+			iort_assoc_node = ACPI_ADD_PTR(struct acpi_iort_node, iort,
-+				 node_reference);
-+
-+			if (iort_assoc_node->type == ACPI_IORT_NODE_SMMU_V3) {
-+				struct fwnode_handle *assoc_fwnode;
-+
-+				assoc_fwnode = iort_get_fwnode(iort_assoc_node);
-+
-+				parent = bus_find_device(&platform_bus_type, NULL,
-+				      assoc_fwnode, iort_fwnode_match);
-+			}
-+		}
- 		iort_enable_acs(iort_node);
- 
- 		ops = iort_get_dev_cfg(iort_node);
-@@ -1609,7 +1639,7 @@ static void __init iort_init_platform_devices(void)
- 
- 			iort_set_fwnode(iort_node, fwnode);
- 
--			ret = iort_add_platform_device(iort_node, ops);
-+			ret = iort_add_platform_device(iort_node, ops, parent);
- 			if (ret) {
- 				iort_delete_fwnode(iort_node);
- 				acpi_free_fwnode_static(fwnode);
+ 	ret = iommu_device_register(&smmu->iommu);
+ 	if (ret) {
+ 		dev_err(dev, "Failed to register iommu\n");
 -- 
 2.17.1
 
