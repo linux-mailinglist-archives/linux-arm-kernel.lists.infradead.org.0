@@ -2,58 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD955C2641
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 21:37:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43801C2653
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 21:47:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ToRQ5awDn5CDwGqBOIEyQj2D9aoacwf3KxT7WlE3ra4=; b=SUQL7O4XCGHskc
-	4ylWup5t5F1k8jq+CBQBU0a1XTC5uRLuj2fSdJ10VrLmgBXdl04nhNSDXvLvhELAqSkQjaHGPjwvv
-	UnhFTEM2KikrLspo+EFExmQG+X5VE/lxh3T5D/Oq9hG4lolnhH5TCDc7VTUCQ+iV/pjq1aFvy0TzG
-	rnBJwxkbEoWDJ3t/SA1TdTWm+OwLpg+TVQYPySHcDFUDlRerzoOsgtEQZEHFXGkbxXwp2x0l4WRNa
-	kra2v/z6cdhcqORL7T2Zo40lICK9VaQiD7AjauR8/GjB/9skfQf4WzDW/zg+M60/M58yzPlqcLUaE
-	pbqnoBQXU+o0Gm+g50FQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Fr6t6x0b6Rw2v1ho/MrLesmE//nXEf1ljmtPVDbBva4=; b=MfK61NnfCRSvpw
+	weS59uUuGmYlMvOfx8QeQBB8Oyn3B+Yi+7dJM3htgqQ2XsAHcwhwo35kQi6H9A8bdEEZNNR0n/J5X
+	pBV2kV/0bHMuJ4aAbPRssf6R3QSak7945qATW+istWV1xb4IC35nkCPZ/B40LgrBKXksbheEb5j1c
+	iWcYRMfgyisOF8JR+TNY9sm1BYE1wuhfUEc7mVY5z6dU0FklWVSZ9V8CSv4SGGHN01GVeu88L4h3C
+	Q/ygKeaHWBdJ10FkldvdelDrxsyNn5AXvm+yO9G2MYl1+pTGPIMQZ+iVi/ZEfjBSnXoX+Wrs3eup+
+	PbZRZNpOHp1M08kJE/+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iF1Tr-0001Ir-DQ; Mon, 30 Sep 2019 19:37:11 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iF1Ti-0001IM-Lc
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 19:37:04 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 68DD828;
- Mon, 30 Sep 2019 12:36:59 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D50BB3F534;
- Mon, 30 Sep 2019 12:36:58 -0700 (PDT)
-Date: Mon, 30 Sep 2019 20:36:57 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Peter Maydell <peter.maydell@linaro.org>
-Subject: Re: [PATCH 05/11] PCI: versatile: Use
- pci_parse_request_of_pci_ranges()
-Message-ID: <20190930193655.GH42880@e119886-lin.cambridge.arm.com>
-References: <20190924214630.12817-1-robh@kernel.org>
- <20190924214630.12817-6-robh@kernel.org>
- <20190925103752.GS9720@e119886-lin.cambridge.arm.com>
- <CAL_JsqJW2t3F6HdKqcHguYLLiYQ6XWOsQbY-TFsDXhrDjjszew@mail.gmail.com>
- <CAFEAcA_Lu73n9z-fyWNLvnxXyk-JcUbONHE5x06Uh9Upk4MVbw@mail.gmail.com>
+	id 1iF1dO-0005Gr-Ox; Mon, 30 Sep 2019 19:47:02 +0000
+Received: from mail.andi.de1.cc ([2a01:238:4321:8900:456f:ecd6:43e:202c])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iF1dC-0005GD-Fs
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 19:46:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=kemnade.info; s=20180802; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=9XMjvLKo8+HU2Nrl8Eexn1ZZ1DxeLgptlWq+Tbdh6wc=; b=Cw3SeTKEws5Nv1WBATpaZOmmoy
+ bfo0NTkJi0BhdkNpioiBhXx3YjkCoqNd31nqw6DX2qXjpTRLqUXbNJitomIxepHgbhYrwqobLeQXn
+ yUS4G9o/vvchsd7YHTGff57Bjah5d7CyodUGMA1KtF5+4Pyg1m4BqaHd3oKjG65OSgWI=;
+Received: from p200300ccff0b4c001a3da2fffebfd33a.dip0.t-ipconnect.de
+ ([2003:cc:ff0b:4c00:1a3d:a2ff:febf:d33a] helo=aktux)
+ by mail.andi.de1.cc with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <andreas@kemnade.info>)
+ id 1iF1cz-0005m4-LU; Mon, 30 Sep 2019 21:46:37 +0200
+Received: from andi by aktux with local (Exim 4.92)
+ (envelope-from <andreas@kemnade.info>)
+ id 1iF1cy-0003EJ-NC; Mon, 30 Sep 2019 21:46:36 +0200
+From: Andreas Kemnade <andreas@kemnade.info>
+To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ linux-imx@nxp.com, manivannan.sadhasivam@linaro.org,
+ andrew.smirnov@gmail.com, marex@denx.de, angus@akkea.ca,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, j.neuschaefer@gmx.net,
+ Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
+ Marco Felsch <m.felsch@pengutronix.de>
+Subject: [PATCH v2 0/3] dts: ARM: add Kobo Clara HD eBook reader
+Date: Mon, 30 Sep 2019 21:43:29 +0200
+Message-Id: <20190930194332.12246-1-andreas@kemnade.info>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAFEAcA_Lu73n9z-fyWNLvnxXyk-JcUbONHE5x06Uh9Upk4MVbw@mail.gmail.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+X-Spam-Score: -1.0 (-)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_123702_795273_1155A64C 
-X-CRM114-Status: GOOD (  26.03  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190930_124650_830813_D0C593B3 
+X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,105 +84,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
- Bjorn Helgaas <bhelgaas@google.com>, Robin.Murphy@arm.com,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Andreas Kemnade <andreas@kemnade.info>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 30, 2019 at 05:56:51PM +0100, Peter Maydell wrote:
-> On Thu, 26 Sep 2019 at 22:45, Rob Herring <robh@kernel.org> wrote:
-> >
-> > On Wed, Sep 25, 2019 at 5:37 AM Andrew Murray <andrew.murray@arm.com> wrote:
-> > >
-> > > On Tue, Sep 24, 2019 at 04:46:24PM -0500, Rob Herring wrote:
-> > > > Convert ARM Versatile host bridge to use the common
-> > > > pci_parse_request_of_pci_ranges().
-> > > >
-> > > > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> > > > Cc: Bjorn Helgaas <bhelgaas@google.com>
-> > > > Signed-off-by: Rob Herring <robh@kernel.org>
-> > > > ---
-> 
-> > > >  static int versatile_pci_probe(struct platform_device *pdev)
-> > > >  {
-> > > >       struct device *dev = &pdev->dev;
-> > > >       struct resource *res;
-> > > > -     int ret, i, myslot = -1;
-> > > > +     struct resource_entry *entry;
-> > > > +     int ret, i, myslot = -1, mem = 0;
-> > >
-> > > I think 'mem' should be initialised to 1, at least that's what the original
-> > > code did. However I'm not sure why it should start from 1.
-> >
-> > The original code I moved from arch/arm had 32MB @ 0x0c000000 called
-> > "PCI unused" which was requested with request_resource(), but never
-> > provided to the PCI core. Otherwise, I kept the setup the same. No one
-> > has complained in 4 years, though I'm not sure anyone would have
-> > noticed if I just deleted PCI support...
-> 
-> Yes, QEMU users will notice if you drop or break PCI support :-)
-> I don't think anybody is using real hardware PCI though.
-> 
-> Anyway, the 'mem' indexes here matter because you're passing
-> them to PCI_IMAP() and PCI_SMAP(), which are writing to
-> hardware registers. If you write to PCI_IMAP0 when we
-> were previously writing to PCI_IMAP1 then suddenly you're
-> not configuring the behaviour for accesses to the PCI
-> window that's at CPU physaddr 0x50000000, you're configuring
-> the window that's at CPU physaddr 0x44000000, which is
-> entirely different (and notably is smaller, being only
-> 0x0c000000 in size rather than 0x10000000).
-> 
-> If this is supposed to be a no-behaviour-change refactor
-> then it would probably be a good test to check that we're
-> writing exactly the same values to the hardware registers
-> on the device as we were before the change.
+This adds a device tree for the Kobo Clara HD eBook reader.
+Name on mainboard is: 37NB-E60K00+4A4
+Serials start with: E60K02 (a number also seen in
+vendor kernel sources)
+These boards are also found in the Tolino Shine 3 reader
+but equipped with a i.MX6SL processor. Support for that
+device is planned to be added in a later patch series.
+To prepare for that the device tree is split up into
+a board file containing SoC-independent stuff and a
+file containing the SoC-dependent stuff.
 
-As far as I understand...
+Work is based on code from the vendor kernel at
+https://github.com/kobolabs/Kobo-Reader/blob/master/hw/imx6sll-clara/kernel.tar.bz2
+but things need to be heavily reworked due to
+incompatible bindings and to prepare for Tolino Shine 3
 
-According to the device tree arch/arm/boot/dts/versatile-pb.dts we describe
-a 1:1 mapping between CPU and PCI addresses for the IORESOURCE_MEM resources:
+Changes in v2:
+- reordered patches
+- various cleanups as suggested by Marco Felsch
 
- ranges = <0x01000000 0 0x00000000 0x43000000 0 0x00010000   /* downstream I/O */
-           0x02000000 0 0x50000000 0x50000000 0 0x10000000   /* non-prefetchable memory */
-           0x42000000 0 0x60000000 0x60000000 0 0x10000000>; /* prefetchable memory */
+Andreas Kemnade (3):
+  dt-bindings: arm: fsl: add compatible string for Kobo Clara HD
+  ARM: dts: add Netronix E60K02 board common file
+  ARM: dts: imx: add devicetree for Kobo Clara HD
 
-The existing code achieves this by shifting the CPU address and writing 0x5 to
-PCI_IMAP(1) and 0x6 >> 28 to PCI_IMAP(2). This value represents the top 4 bits of
-the outgoing PCI address, with the remainder of the bits as written to the AHB
-window. The hardware has three windows at 0x44000000, 0x50000000 and 0x60000000
-which relate to PCI_IMAP0, 1 and 2 respectively.
+ .../devicetree/bindings/arm/fsl.yaml          |   1 +
+ arch/arm/boot/dts/Makefile                    |   3 +-
+ arch/arm/boot/dts/e60k02.dtsi                 | 323 ++++++++++++++++++
+ arch/arm/boot/dts/imx6sll-kobo-clarahd.dts    | 279 +++++++++++++++
+ 4 files changed, 605 insertions(+), 1 deletion(-)
+ create mode 100644 arch/arm/boot/dts/e60k02.dtsi
+ create mode 100644 arch/arm/boot/dts/imx6sll-kobo-clarahd.dts
 
-Therefore the existing code creates an effective 1:1 mapping as follows:
+-- 
+2.20.1
 
-CPU 0x50000000 => PCI 0x50000000
-CPU 0x60000000 => PCI 0x60000000
-
-If we were to instead write 0x5 to PCI_IMAP(0) and 0x6 to PCI_IMAP(1), as per
-this patch - then we end up with an effective broken mapping of:
-
-CPU 0x50000000 => PCI 0x60000000
-CPU 0x60000000 => PCI unset
-
-Therefore I'd suggest we preserve the existing numbering and change mem back to
-1.
-
-More information about the hardware can be foud here:
-
-http://arminfo.emea.arm.com/help/index.jsp?topic=/com.arm.doc.dui0224i/Bbajjbce.html
-
-Thanks,
-
-Andrew Murray
-
-> 
-> thanks
-> -- PMM
 
 _______________________________________________
 linux-arm-kernel mailing list
