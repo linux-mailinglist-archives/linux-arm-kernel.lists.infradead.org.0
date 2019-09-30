@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5E0AC1D0C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 10:22:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 188F0C1D0F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 10:22:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=2ZCMajOv5Or43ps/YNC/qPQVmEOjnEJHo82vrWKFHhc=; b=mLhAv843KZ+pGX4IAQ7JReEjh7
-	qevSobRk+IyR9i5zxw7RW2fxdyW02YfjPmnPZVns7jS04J48dwMJZAl1/mXomm5x+23GtiRLz8lI/
-	pG4Pxjfo8xxStH40l7cRLwspNJCsB1FAj3Ll7cpOzfx/CvwIqSgp6sWmvBSeUbcHb29hUqWyCjCyG
-	vY4mlp+Gz5AvjHRG9hAXIRTo/d0ngY8d0RMf+Eoqy7UzT7V9xRt4NqbrtKiRv2ikNl/O4ug6idQSu
-	SeGvDBwCHW810bY5rGSeddOxYJ5Qr6G90or/E9kq6G4+vZ/4BbSClc/YhOmuS/CcBQmg1Vcsuxles
-	qIlidUlA==;
+	bh=4mfRcNAQwzQIiYqm9S5EWeYAtHgZUSziS7CU38NxtSw=; b=AMyIuP1d5GYkWCohyn3j/1iJFM
+	av7OfWQFtGWXYzyuVqyX8Gx3sw8FjBPQzw4I6ACw8ok2DCi3AfZzElpIIipcHtGg+YNOY664FJ0og
+	fUM7Ok5xCGg+gEKR6tkHfNg0Wro8XN3ZWe7YFzoOyUgPW42nmffPK0eGmnEwyTf8VDwMf+PLahMkK
+	CYAZJAb8WhzTcqCOA5ZsKsju7i1KwwN2Y+ryqJoCH2xEmxBVc3EiL2r1MgpBdQc6ZrR6JoyW7i24I
+	tcZ5XIEBUn+hd9BovJeH5X6qwohbo90nPgN/UMdrdavSBScVcfF9jdTf6Mf+P7tYS+XrO83lzX+lC
+	VSa1T2GQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEqwk-0000oQ-FS; Mon, 30 Sep 2019 08:22:18 +0000
+	id 1iEqx3-00017H-GU; Mon, 30 Sep 2019 08:22:37 +0000
 Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEqu0-0005dX-SX
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 08:19:36 +0000
+ id 1iEqu0-0005df-Si
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 08:19:37 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 4F6A0C039E;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 48058C0388;
  Mon, 30 Sep 2019 08:19:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1569831565; bh=4HYL1pfc0TYPaJ4P5PLnhQ03OR2L/vm8sjEKLBLrB04=;
+ t=1569831566; bh=MV+Pa6bWic8PJcQ0PmrvM1y6FtITxVDL2Xu5W5HutE4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=bNw/FJ/vHkcRwIVtTgEUlkmi0fBavp4BMzbNHh72Z52WCNNvala978hXNqUSS3Qxz
- Rutb+NWjSbG7Gpmg9W8kThueQ2CM/dSYZvtqFJT1uJeDnnT3ewn1ptvhhfWRr658co
- A/eG5RVfO/0hb8DOJrhuMuObiM7tmyvlE0fl0ZjgA96P12iBV/osMJ9mvQXMbusLDo
- yDXcNjXhj7XH1PCF9Ltjugp5zMlBT5qF4A4OUiUCQEPQX/k2+/1NzXzDs3IJUTHjPo
- WvbGinYAvPrPJphhVt3UzSQCCUUY4dK7sRGUzctJH44B6x+TxvJQdmCIzD1ESuj+1+
- Cik5m0WldyTiw==
+ b=aY2ZpTj0gPC5rJyO1lNM0LeulgSCTg92HZmjU9RuBLQewGTFWd6CVm3WvE+nLp3r2
+ Ak/1TcdmSD175F2ZPluaqjH0upQyF2SMC/PZ+AZik5z7LQoZsyZLLD3TDu0CC76viW
+ ps+zeMAO8kBszRxFlQrOesg3xpV1EXXi+tK2AV7n90IdEls+elyeY7WA5dZVuRv+Vw
+ J/wZfc6zDnHyONvCBTUAzvdvgKJ3jyGdYWT2eod/xNkNSaMwDXag3/3Np8JY4cySl1
+ 46CyTzYNe14jPJkjvhHgGy2SZ7IU+zs2u9vSvPdVOM5ZuxFoobWY4SehmF0lVRaRq7
+ MHgyvyRsNag2w==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 642B1A0066;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 6A78FA0079;
  Mon, 30 Sep 2019 08:19:23 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH v2 net 3/9] net: stmmac: selftests: Always use max DMA size in
- Jumbo Test
-Date: Mon, 30 Sep 2019 10:19:07 +0200
-Message-Id: <66876680549fe86f71bc61a1b8961d68f6e54442.1569831229.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH v2 net 4/9] net: stmmac: dwmac4: Always update the MAC Hash
+ Filter
+Date: Mon, 30 Sep 2019 10:19:08 +0200
+Message-Id: <08edfc3e1c95d7ce243bae6879b16d0b103095cf.1569831229.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1569831228.git.Jose.Abreu@synopsys.com>
 References: <cover.1569831228.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1569831228.git.Jose.Abreu@synopsys.com>
 References: <cover.1569831228.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_011929_118521_14D75F64 
-X-CRM114-Status: GOOD (  11.52  )
+X-CRM114-CacheID: sfid-20190930_011929_056872_18F105B3 
+X-CRM114-Status: GOOD (  13.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -95,13 +95,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Although some XGMAC setups support frames larger than DMA size, some of
-them may not. As we can't know before-hand which ones support let's use
-the maximum DMA buffer size in the Jumbo Tests.
+We need to always update the MAC Hash Filter so that previous entries
+are invalidated.
 
-User can always reconfigure the MTU to achieve larger frames.
+Found out while running stmmac selftests.
 
-Fixes: 427849e8c37f ("net: stmmac: selftests: Add Jumbo Frame tests")
+Fixes: b8ef7020d6e5 ("net: stmmac: add support for hash table size 128/256 in dwmac4")
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
 ---
@@ -115,24 +114,57 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c | 4 ----
- 1 file changed, 4 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-index 5f66f6161629..cc76a42c7466 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-@@ -1564,10 +1564,6 @@ static int __stmmac_test_jumbo(struct stmmac_priv *priv, u16 queue)
- 	struct stmmac_packet_attrs attr = { };
- 	int size = priv->dma_buf_sz;
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
+index 9b4b5f69fc02..2cb9c53f93b8 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
+@@ -401,8 +401,11 @@ static void dwmac4_set_filter(struct mac_device_info *hw,
+ 	int numhashregs = (hw->multicast_filter_bins >> 5);
+ 	int mcbitslog2 = hw->mcast_bits_log2;
+ 	unsigned int value;
++	u32 mc_filter[8];
+ 	int i;
  
--	/* Only XGMAC has SW support for multiple RX descs in same packet */
--	if (priv->plat->has_xgmac)
--		size = priv->dev->max_mtu;
--
- 	attr.dst = priv->dev->dev_addr;
- 	attr.max_size = size - ETH_FCS_LEN;
- 	attr.queue_mapping = queue;
++	memset(mc_filter, 0, sizeof(mc_filter));
++
+ 	value = readl(ioaddr + GMAC_PACKET_FILTER);
+ 	value &= ~GMAC_PACKET_FILTER_HMC;
+ 	value &= ~GMAC_PACKET_FILTER_HPF;
+@@ -416,16 +419,13 @@ static void dwmac4_set_filter(struct mac_device_info *hw,
+ 		/* Pass all multi */
+ 		value |= GMAC_PACKET_FILTER_PM;
+ 		/* Set all the bits of the HASH tab */
+-		for (i = 0; i < numhashregs; i++)
+-			writel(0xffffffff, ioaddr + GMAC_HASH_TAB(i));
++		memset(mc_filter, 0xff, sizeof(mc_filter));
+ 	} else if (!netdev_mc_empty(dev)) {
+ 		struct netdev_hw_addr *ha;
+-		u32 mc_filter[8];
+ 
+ 		/* Hash filter for multicast */
+ 		value |= GMAC_PACKET_FILTER_HMC;
+ 
+-		memset(mc_filter, 0, sizeof(mc_filter));
+ 		netdev_for_each_mc_addr(ha, dev) {
+ 			/* The upper n bits of the calculated CRC are used to
+ 			 * index the contents of the hash table. The number of
+@@ -440,10 +440,11 @@ static void dwmac4_set_filter(struct mac_device_info *hw,
+ 			 */
+ 			mc_filter[bit_nr >> 5] |= (1 << (bit_nr & 0x1f));
+ 		}
+-		for (i = 0; i < numhashregs; i++)
+-			writel(mc_filter[i], ioaddr + GMAC_HASH_TAB(i));
+ 	}
+ 
++	for (i = 0; i < numhashregs; i++)
++		writel(mc_filter[i], ioaddr + GMAC_HASH_TAB(i));
++
+ 	value |= GMAC_PACKET_FILTER_HPF;
+ 
+ 	/* Handle multiple unicast addresses */
 -- 
 2.7.4
 
