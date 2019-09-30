@@ -2,66 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13D73C25CC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 19:36:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9722BC25D3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 19:46:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ijz5zM0y1/otGy8OG2IwqbgN7Bde0WMisWkY9Uveie4=; b=Y79T2ryvmCjGGZ
-	1lbtkH1QneGaYHMgVMlkZZQRMDoqHnDbBGS75AMpK+tVSfUz7+XAiN/Ft3L9t4okwAUbaI3L7fer+
-	DedHXzeGpUhvDp9v3Ti9Qlaks5f8fFhne4eJSFJIzTH0Ar1qTPewjEdVoyVKszmNtakvJeYR2XzCO
-	L+UYdufydXQMa2b39Mx6MC/dMkhkTsJttn4eKPUndYkampUnMbJBWHLJSL+g9oLGfbUcokkuH2M9L
-	mKBqT1DLPgq4bxVKnf8vgfezKdpQ76h0+WDm1u2VgJgiQZftlshM2QMrXZwrlqtMxVdM1NIgjCg07
-	rmXX7NxbPHdS8z4cJCtg==;
+	List-Owner; bh=QD+sptUiM8vKPu6MXfJ/DILeDUZwNZri+Tepb+PfgoQ=; b=cgYdyxP1Hcims0
+	sbVUVARyg9eHBQ5ZeRiGZvRGX6/7JFuFao5vLt8Np/137WCtxvzVD7pHdqgmR1SVK+UOLFERRawkI
+	mHdUGaoWyWFzzqrNbdoI+ySh0uwT1MMXikg/7Mx82BLqN6lkM4FfUMHDeHccaMBqp34tM4ZuevqVR
+	LZ5xzXMMk0BkvXxY44GEv7uQeBHgdqu2OTihDNFq9IZFo1arkwdvx3za/WsCpPqcHNZ2/XIhDa1ow
+	tkjv4YIx69Nub97A174XlIwUKfydRpa+/G8zQnCV9uPpr5IN6rYRpLKJ+eIOip86p+FoHzwiod9KL
+	KZ/U1D3YQaZ4cTwM6PVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEzbI-0002Wb-QJ; Mon, 30 Sep 2019 17:36:44 +0000
+	id 1iEzl8-0007Wv-0S; Mon, 30 Sep 2019 17:46:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEzb8-0002W4-T2
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 17:36:36 +0000
-Received: from mail-qk1-f178.google.com (mail-qk1-f178.google.com
- [209.85.222.178])
+ id 1iEzkz-0007WI-Hv
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 17:46:46 +0000
+Received: from mail-qt1-f181.google.com (mail-qt1-f181.google.com
+ [209.85.160.181])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 742B2224D6
+ by mail.kernel.org (Postfix) with ESMTPSA id 0C763224D2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Sep 2019 17:36:34 +0000 (UTC)
+ Mon, 30 Sep 2019 17:46:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569864994;
- bh=zv4Uxz31XKM+MyjvtqcSjJlGgyTtf32vJB/lTpIHbDc=;
+ s=default; t=1569865605;
+ bh=OctSNomG2OJ1c5HBaNhDE3kyW877OO9pLy12klDrXiA=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=cHvJD06PMIzqUbJ1zlwF5MFgINfQZlmbqEnm1VNd3xI6UtbILrXYDEjoSI8dt+1kZ
- w+Bv83P7KaVeJBX2+40Xj6QI0uniL0cbCStECLik8uA4qNOitQ/w73EsvrP8us/hzd
- 7jx82UdGVO80vcwpjzgoi5dUMY34PYIJZwUPV8ss=
-Received: by mail-qk1-f178.google.com with SMTP id u186so8538262qkc.5
+ b=q/0ji3EJU3lYpiVowGHsk4yUieDMJFIUKb5X++v9x7jMo38/M6Pa+6XYZueaEDrnX
+ qJ+xZf2rC7B8J8hIaYIRlMwR4mCDYZPIaM5ltKiBWCVddq9UD/PWq5XSdnR75VR0C+
+ /u5QBQNxvDZVIYsMJm94PIvjHs1BRzy4q/mNspMo=
+Received: by mail-qt1-f181.google.com with SMTP id m15so18160048qtq.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Sep 2019 10:36:34 -0700 (PDT)
-X-Gm-Message-State: APjAAAVEvu3ZN7+Ex5OXkhrqKzzHw0BMOatYvcD5OeqWnWDske/T4l2p
- +idKbNB5mjtyJVkeKjxCRMWDyrQLjPVz6RfL1w==
-X-Google-Smtp-Source: APXvYqxLrOssw9YrboppxecvjeDTysPUyAiqArm1DBIXe/0oTUVaz6AFg2izbbt7oMclPdk29NzrflIdhzCHlxZ4hB8=
-X-Received: by 2002:a05:620a:12d5:: with SMTP id
- e21mr1318692qkl.152.1569864993590; 
- Mon, 30 Sep 2019 10:36:33 -0700 (PDT)
+ Mon, 30 Sep 2019 10:46:45 -0700 (PDT)
+X-Gm-Message-State: APjAAAU0U8r2cLlk/b2OjMyN+W2H+qZxUsDvv/7mxqdvHSSBGoFf6Czx
+ P/ABaPXDgqJvlcB4IohHQHSigqmgyI/o+rvIgw==
+X-Google-Smtp-Source: APXvYqx0ggq9eeAU9wWza/JPeFO8jdb8kehul8w7xQz3yw7kXfvNNCLrdp04iqHcwujnu+1ANt/coLFpFImGnTT+0QU=
+X-Received: by 2002:ac8:6982:: with SMTP id o2mr26027474qtq.143.1569865604167; 
+ Mon, 30 Sep 2019 10:46:44 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190924214630.12817-1-robh@kernel.org>
- <20190924214630.12817-3-robh@kernel.org>
- <20190925102423.GR9720@e119886-lin.cambridge.arm.com>
- <CAL_JsqKN709cOLtDLdKXmDzeNLYtGekMT2BiZic4x45UopenwA@mail.gmail.com>
- <20190930151346.GD42880@e119886-lin.cambridge.arm.com>
-In-Reply-To: <20190930151346.GD42880@e119886-lin.cambridge.arm.com>
+References: <88dc6386929b3dcd7a65ba8063628c62b66b330c.1569856049.git.robin.murphy@arm.com>
+In-Reply-To: <88dc6386929b3dcd7a65ba8063628c62b66b330c.1569856049.git.robin.murphy@arm.com>
 From: Rob Herring <robh@kernel.org>
-Date: Mon, 30 Sep 2019 12:36:22 -0500
-X-Gmail-Original-Message-ID: <CAL_Jsq+3S7+E+a5E122aR7s0a9SxkMyxw2t=OkO4pS5QUR+0CA@mail.gmail.com>
-Message-ID: <CAL_Jsq+3S7+E+a5E122aR7s0a9SxkMyxw2t=OkO4pS5QUR+0CA@mail.gmail.com>
-Subject: Re: [PATCH 02/11] PCI: altera: Use pci_parse_request_of_pci_ranges()
-To: Andrew Murray <andrew.murray@arm.com>
+Date: Mon, 30 Sep 2019 12:46:33 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqKUP6qG6PVL47RQ5A5OcBhpdOA_0VL1YeYDuyVSVcRqCQ@mail.gmail.com>
+Message-ID: <CAL_JsqKUP6qG6PVL47RQ5A5OcBhpdOA_0VL1YeYDuyVSVcRqCQ@mail.gmail.com>
+Subject: Re: [PATCH 1/2] arm64: dts: juno: add GPU subsystem
+To: Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_103635_590095_26B2ADB3 
-X-CRM114-Status: GOOD (  26.22  )
+X-CRM114-CacheID: sfid-20190930_104645_610707_2F2B9CF5 
+X-CRM114-Status: GOOD (  11.99  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,9 +85,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- PCI <linux-pci@vger.kernel.org>, rfi@lists.rocketboards.org,
- Bjorn Helgaas <bhelgaas@google.com>, Ley Foon Tan <lftan@altera.com>,
+Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Tomeu Vizoso <tomeu.vizoso@collabora.com>, Liviu Dudau <liviu.dudau@arm.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Steven Price <steven.price@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -100,81 +96,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 30, 2019 at 10:13 AM Andrew Murray <andrew.murray@arm.com> wrote:
+On Mon, Sep 30, 2019 at 10:25 AM Robin Murphy <robin.murphy@arm.com> wrote:
 >
-> On Wed, Sep 25, 2019 at 07:33:35AM -0500, Rob Herring wrote:
-> > On Wed, Sep 25, 2019 at 5:24 AM Andrew Murray <andrew.murray@arm.com> wrote:
-> > >
-> > > On Tue, Sep 24, 2019 at 04:46:21PM -0500, Rob Herring wrote:
-> > > > Convert altera host bridge to use the common
-> > > > pci_parse_request_of_pci_ranges().
-> > > >
-> > > > Cc: Ley Foon Tan <lftan@altera.com>
-> > > > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> > > > Cc: Bjorn Helgaas <bhelgaas@google.com>
-> > > > Cc: rfi@lists.rocketboards.org
-> > > > Signed-off-by: Rob Herring <robh@kernel.org>
-> > > > ---
-> >
-> > > > @@ -833,9 +800,8 @@ static int altera_pcie_probe(struct platform_device *pdev)
-> > > >               return ret;
-> > > >       }
-> > > >
-> > > > -     INIT_LIST_HEAD(&pcie->resources);
-> > > > -
-> > > > -     ret = altera_pcie_parse_request_of_pci_ranges(pcie);
-> > > > +     ret = pci_parse_request_of_pci_ranges(dev, &pcie->resources,
-> > >
-> > > Does it matter that we now map any given IO ranges whereas we didn't
-> > > previously?
-> > >
-> > > As far as I can tell there are no users that pass an IO range, if they
-> > > did then with the existing code the probe would fail and they'd get
-> > > a "I/O range found for %pOF. Please provide an io_base pointer...".
-> > > However with the new code if any IO range was given (which would
-> > > probably represent a misconfiguration), then we'd proceed to map the
-> > > IO range. When that IO is used, who knows what would happen.
-> >
-> > Yeah, I'm assuming that the DT doesn't have an IO range if IO is not
-> > supported. IMO, it is not the kernel's job to validate the DT.
+> Since we now have bindings for Mali Midgard GPUs, let's use them to
+> describe Juno's GPU subsystem, if only because we can. Juno sports a
+> Mali-T624 integrated behind an MMU-400 (as a gesture towards
+> virtualisation), in their own dedicated power domain with DVFS
+> controlled by the SCP.
 >
-> Sure. Is it worth mentioning in the commit message this subtle change
-> in behaviour?
+> CC: Liviu Dudau <liviu.dudau@arm.com>
+> CC: Sudeep Holla <sudeep.holla@arm.com>
+> CC: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> ---
+>  .../bindings/gpu/arm,mali-midgard.yaml        |  5 +++-
+>  arch/arm64/boot/dts/arm/juno-base.dtsi        | 27 +++++++++++++++++++
+>  2 files changed, 31 insertions(+), 1 deletion(-)
 
-Will do.
-
-> > > I wonder if there is a better way for a host driver to indicate that
-> > > it doesn't support IO?
-> >
-> > We can probably test for this in the schema.
-> >
-> > ranges:
-> >   items:
-> >     minItems: 7
-> >     items:
-> >       - not: { const: 0x01000000 }
-> >
-> > Or "- enum: [ 0x42000000, 0x02000000 ]"
-> >
-> > Of course, in theory, the bus, dev, fn fields could be non-zero and we
-> > could use minium/maximum to handle those, but in practice I think they
-> > are rarely used for FDT.
->
-> Many controllers also appear to set the top bit (relocatable), e.g.
-> 0x82000000...
-
-That begs the question how many should set the relocatable bit and don't...
-
-Anyways, it's still a smallish set of possible values and worthwhile
-to describe which ones a controller supports.
-
-> At present there are no PCI bindings that use the YAML schema, if I've
-> understood correctly.
-
-Probably so, there has been at least one under review. Intel LGM IIRC.
-We do need a common PCI schema too. Hopefully someone beats me to it.
-
-Rob
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
