@@ -2,84 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99B1DC1E5C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 11:44:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C50C1C1E81
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 11:55:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cQSqhs7rfSD/kx1W4DPp36oeIgx9UBR47HnljUmyGYY=; b=sbX3Odvn8qBvYd
-	CiDwY/YPU8ofPcN+gBCIQaJ7XpDWeT5M2J+IvCFPiwP48RQ18I4au/8LvNTpXa8+Mf+bQB0++c8N3
-	gJPJK8ZOWugtNLe8kce1/IURtFydP6fKo24E0DbcLmRGXDRPEd5hDvLTU66nN57zFrGkwbA5679ym
-	8r5e529nf6b1tgcuQbkgYPhOSgY8vEp3l9XO86YBkV10gNCZL87RIDi4GareYVOKCdpOWrfnc92xm
-	NqVUxn6gU/Yoy42SpAw7apUWPuoiSq5TELUOpLegAtH2XGDqBFnkYFDA8zR+4OMhHwJnyhJjjq7i+
-	plrThhZxu0HxhBUj5+ZQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=jT9te5kfd5k+uCVKDkbBA9xBZFQN8PzOr/cjEwhptdE=; b=sBKY48Y9QsyOmO3tsYcHJHGsl
+	JO1LNB51uyU8UA+cM4+rXbzaFrSqWJ7s/2/xJVAXceNJYk776rn6zs90Muk1JCg9dFMEGFt3WS0A/
+	2I2tyeNQiMJ0rV13329QuPvbplLtaMSrQWn5hjxza08UuZFNe61QPo2t2uP0VePu5QEXtS798CJ88
+	t3dATFkU3xulcNsr4fXR1w/yT8uGpfNON5f8r7hMKqQ7GHuHQSOGvUFRes0HOysA+fpHKIzVOkAEg
+	R5mqjLqCoCLSjx5nBQbnAAwfjnIrULwyBhXl9WTsaKpPIhMf7yAeU0KH6Hdp28i2Qc+5uj/2eQPky
+	F45ggNg4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEsEK-0006Ki-1P; Mon, 30 Sep 2019 09:44:32 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEsE7-0006Ik-6U
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 09:44:20 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id y129so5320033vsc.6
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Sep 2019 02:44:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=M8BTozkNMjXYnGvpiivu8GTcdHCRUJPKZ/tjC3wgpT0=;
- b=oTxh4MZgsxptPXRVclv9YCEHC8QBH9203XBeJgUhaxHwA4cDHCMXoCILDON1cads8S
- dvNaAO+5V5Lj16symCM+6YJcYcOBOIUEcugmXfWHDIS2/0md/kR5LbbzvMHWrzHnhUIf
- r6/AGQRoQ5n/LbNZmF2oRsY81tsnpHTCnny8jmVayNMsgdQwtj1u4BslLzLIQpbZZdFd
- O1ZHjCgyrFhdVNFDqQ4Uxxkx0olkLxZ5nG1nHZP3DOE10es5GUKDMDmMxR1waQPduiXr
- cy8bFjXXe9eRKdFCtZkxm9KUNC/I+I5/A/BjPGOye5juhaBgZr3HXLsh3qUCmVshdJYl
- nJxg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=M8BTozkNMjXYnGvpiivu8GTcdHCRUJPKZ/tjC3wgpT0=;
- b=IQM3jgVc482NBPbVNdWp+fIdiisGjjrtyxUUL9jr8f98Gt0f56wFF4TmGFo2Dt0opE
- 83jZlVnvLw+a0IfZA+jeM8JAOLwYPzr+wB63ereLgrO1GH7s0qC5pHg8S/D7VOdSK0Cz
- wHMBjmsBqjuH+MYn4HOpYG37qWl0PorS6velu+T5nD/PGclb1r7H/vv5ZFD8Sov+qzyK
- IxeCymvlVULFDEmymjqIzgQqzlMSyDkcNnhF2BNbsdoFDmfLD0IkeNtiT+eQ3rTnCDSq
- Qr0ewImu+nkratJcyeKhsLbf1DD201lsbmL8g/56KCYjLGyf/heNqc5KwFHHsUoI8NML
- BPYA==
-X-Gm-Message-State: APjAAAX1uXeCo5/StoJdnu6NJdTCFKvT5DFeG3srGuAZuovJzacJLp9h
- gt4hXabwHBM/VxOkjB2R4h1yhf2q2xKXTb6Q4YdWHdpqXoJyrQ==
-X-Google-Smtp-Source: APXvYqwzrnQd5kSt976vsQTkY4fUZ0N6Cbb1QL+RprZHbapHmEx/KojW4obEsKRRN3dduvxef0Xir2Er2izaiA/bEpI=
-X-Received: by 2002:a67:d789:: with SMTP id q9mr8481036vsj.159.1569836658112; 
- Mon, 30 Sep 2019 02:44:18 -0700 (PDT)
+	id 1iEsP2-0002SF-Jj; Mon, 30 Sep 2019 09:55:36 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iEsOt-0002R5-9v
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 09:55:28 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 835C31000;
+ Mon, 30 Sep 2019 02:55:24 -0700 (PDT)
+Received: from [192.168.1.124] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id ABDC83F739;
+ Mon, 30 Sep 2019 02:55:21 -0700 (PDT)
+Subject: Re: [PATCH 00/11] of: dma-ranges fixes and improvements
+To: Thierry Reding <thierry.reding@gmail.com>,
+ Christoph Hellwig <hch@infradead.org>
+References: <20190927002455.13169-1-robh@kernel.org>
+ <CAK8P3a0oct0EOMi5t4BmpgdkiBM+LjC+2pTST4hcvNCa3MGLmw@mail.gmail.com>
+ <20190930082055.GA21971@infradead.org> <20190930085606.GG1518582@ulmo>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <89e33aae-bc96-53c3-2a4e-e879e9a3c73e@arm.com>
+Date: Mon, 30 Sep 2019 10:55:15 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
 MIME-Version: 1.0
-References: <20190927184352.28759-1-glaroque@baylibre.com>
- <20190927184352.28759-5-glaroque@baylibre.com>
-In-Reply-To: <20190927184352.28759-5-glaroque@baylibre.com>
-From: Amit Kucheria <amit.kucheria@linaro.org>
-Date: Mon, 30 Sep 2019 15:14:07 +0530
-Message-ID: <CAHLCerOuY1cLrkN9_f1O+Uqm9fyE18+98yU6xryojcznuPMZow@mail.gmail.com>
-Subject: Re: [PATCH v6 4/7] arm64: dts: meson: g12: Add minimal thermal zone
-To: Guillaume La Roque <glaroque@baylibre.com>
+In-Reply-To: <20190930085606.GG1518582@ulmo>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_024419_249592_070DEADE 
-X-CRM114-Status: GOOD (  14.77  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190930_025527_432066_12FC6550 
+X-CRM114-Status: GOOD (  31.69  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,113 +64,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Linux PM list <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- LKML <linux-kernel@vger.kernel.org>, Eduardo Valentin <edubezval@gmail.com>,
- linux-amlogic@lists.infradead.org, Zhang Rui <rui.zhang@intel.com>,
- lakml <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Rob Herring <robh@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, Arnd Bergmann <arnd@arndb.de>,
+ DTML <devicetree@vger.kernel.org>, linux-pci <linux-pci@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Marek Vasut <marek.vasut@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Oza Pawandeep <oza.oza@broadcom.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-tegra@vger.kernel.org,
+ Simon Horman <horms+renesas@verge.net.au>,
+ Frank Rowand <frowand.list@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Stefan Wahren <wahrenst@gmx.net>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Sep 28, 2019 at 12:14 AM Guillaume La Roque
-<glaroque@baylibre.com> wrote:
->
-> Add minimal thermal zone for two temperature sensor
-> One is located close to the DDR and the other one is
-> located close to the PLLs (between the CPU and GPU)
->
-> Acked-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> Tested-by: Christian Hewitt <christianshewitt@gmail.com>
-> Tested-by: Kevin Hilman <khilman@baylibre.com>
-> Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
-> ---
->  .../boot/dts/amlogic/meson-g12-common.dtsi    | 46 +++++++++++++++++++
->  1 file changed, 46 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-> index 0660d9ef6a86..f98171949fcb 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-> +++ b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-> @@ -12,6 +12,7 @@
->  #include <dt-bindings/interrupt-controller/arm-gic.h>
->  #include <dt-bindings/reset/amlogic,meson-axg-audio-arb.h>
->  #include <dt-bindings/reset/amlogic,meson-g12a-reset.h>
-> +#include <dt-bindings/thermal/thermal.h>
->
->  / {
->         interrupt-parent = <&gic>;
-> @@ -94,6 +95,50 @@
->                 #size-cells = <2>;
->                 ranges;
->
-> +               thermal-zones {
-> +                       cpu_thermal: cpu-thermal {
-> +                               polling-delay = <1000>;
-> +                               polling-delay-passive = <100>;
-> +                               thermal-sensors = <&cpu_temp>;
-> +
-> +                               trips {
-> +                                       cpu_passive: cpu-passive {
-> +                                               temperature = <85000>; /* millicelsius */
-> +                                               hysteresis = <2000>; /* millicelsius */
-> +                                               type = "passive";
-> +                                       };
-> +
-> +                                       cpu_hot: cpu-hot {
-> +                                               temperature = <95000>; /* millicelsius */
-> +                                               hysteresis = <2000>; /* millicelsius */
-> +                                               type = "hot";
+On 2019-09-30 9:56 am, Thierry Reding wrote:
+> On Mon, Sep 30, 2019 at 01:20:55AM -0700, Christoph Hellwig wrote:
+>> On Sun, Sep 29, 2019 at 01:16:20PM +0200, Arnd Bergmann wrote:
+>>> On a semi-related note, Thierry asked about one aspect of the dma-ranges
+>>> property recently, which is the behavior of dma_set_mask() and related
+>>> functions when a driver sets a mask that is larger than the memory
+>>> area in the bus-ranges but smaller than the available physical RAM.
+>>> As I understood Thierry's problem and the current code, the generic
+>>> dma_set_mask() will either reject the new mask entirely or override
+>>> the mask set by of_dma_configure, but it fails to set a correct mask
+>>> within the limitations of the parent bus in this case.
+>>
+>> There days dma_set_mask will only reject a mask if it is too small
+>> to be supported by the hardware.  Larger than required masks are now
+>> always accepted.
+> 
+> Summarizing why this came up: the memory subsystem on Tegra194 has a
+> mechanism controlled by bit 39 of physical addresses. This is used to
+> support two variants of sector ordering for block linear formats. The
+> GPU uses a slightly different ordering than other MSS clients, so the
+> drivers have to set this bit depending on who they interoperate with.
+> 
+> I was running into this as I was adding support for IOMMU support for
+> the Ethernet controller on Tegra194. The controller has a HW feature
+> register that contains how many address bits it supports. This is 40
+> for Tegra194, corresponding to the number of address bits to the MSS.
+> Without IOMMU support that's not a problem because there are no systems
+> with 40 bits of system memory. However, if we enable IOMMU support, the
+> DMA/IOMMU code will allocate from the top of a 48-bit (constrained to
+> 40 bits via the DMA mask) input address space. This causes bit 39 to be
+> set, which in turn will make the MSS reorder sectors and break network
+> communications.
+> 
+> Since this reordering takes place at the MSS level, this applies to all
+> MSS clients. Most of these clients always want bit 39 to be 0, whereas
+> the clients that can and want to make use of the reordering always want
+> bit 39 to be under their control, so they can control in a fine-grained
+> way when to set it.
+> 
+> This means that effectively all MSS clients can only address 39 bits, so
+> instead of hard-coding that for each driver I thought it'd make sense to
+> have a central place to configure this, so that all devices by default
+> are restricted to 39-bit addressing. However, with the current DMA API
+> implementation this causes a problem because the default 39-bit DMA mask
+> would get overwritten by the driver (as in the example of the Ethernet
+> controller setting a 40-bit DMA mask because that's what the hardware
+> supports).
+> 
+> I realize that this is somewhat exotic. On one hand it is correct for a
+> driver to say that the hardware supports 40-bit addressing (i.e. the
+> Ethernet controller can address bit 39), but from a system integration
+> point of view, using bit 39 is wrong, except in a very restricted set of
+> cases.
+> 
+> If I understand correctly, describing this with a dma-ranges property is
+> the right thing to do, but it wouldn't work with the current
+> implementation because drivers can still override a lower DMA mask with
+> a higher one.
 
-critical instead of hot? What is the SoC's critical shutdown temperature?
+But that sounds like exactly the situation for which we introduced 
+bus_dma_mask. If "dma-ranges" is found, then we should initialise that 
+to reflect the limitation. Drivers may subsequently set a larger mask 
+based on what the device is natively capable of, but the DMA API 
+internals should quietly clamp that down to the bus mask wherever it 
+matters.
 
-Typically, you would use 'hot' at the beginning of at up trend e.g. at
-75000, 'passive' to start throttling and 'critical' for shutdown
-temperature.
+Since that change, the initial value of dma_mask and coherent_dma_mask 
+doesn't really matter much, as we expect drivers to reset them anyway 
+(and in general they have to be able to enlarge them from a 32-bit 
+default value).
 
-> +                                       };
-> +
-> +                               };
-> +                       };
-> +
-> +                       ddr_thermal: ddr-thermal {
-> +                               polling-delay = <1000>;
-> +                               polling-delay-passive = <100>;
-> +                               thermal-sensors = <&ddr_temp>;
-> +
-> +                               trips {
-> +                                       ddr_passive: ddr-passive {
-> +                                               temperature = <85000>; /* millicelsius */
-> +                                               hysteresis = <2000>; /* millicelsius */
-> +                                               type = "passive";
-> +                                       };
-> +                               };
-> +
-> +                               cooling-maps {
-> +                                       map {
-> +                                               trip = <&ddr_passive>;
-> +                                               cooling-device = <&mali THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
-> +                                       };
-> +                               };
-> +                       };
-> +               };
-> +
->                 ethmac: ethernet@ff3f0000 {
->                         compatible = "amlogic,meson-axg-dwmac",
->                                      "snps,dwmac-3.70a",
-> @@ -2412,6 +2457,7 @@
->                         assigned-clock-rates = <0>, /* Do Nothing */
->                                                <800000000>,
->                                                <0>; /* Do Nothing */
-> +                       #cooling-cells = <2>;
->                 };
->         };
->
-> --
-> 2.17.1
->
+As far as I'm aware this has been working fine (albeit in equivalent 
+ACPI form) for at least one SoC with 64-bit device masks, a 48-bit 
+IOMMU, and a 44-bit interconnect in between - indeed if I avoid 
+distraction long enough to set up the big new box under my desk, the 
+sending of future emails will depend on it ;)
+
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
