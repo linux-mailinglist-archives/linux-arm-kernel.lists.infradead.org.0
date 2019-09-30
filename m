@@ -2,61 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E172C265D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 21:59:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF2B5C2667
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 22:10:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=ONSXbT35dyeK8FQcezeNRlMfxEJZc+g0seEE/gMf+SQ=; b=csuZa0SN6oj2Kw
-	dbcpbHxgCyFwdEm3auJ6+xw5oaZxaF6sU6EqrHecv5x7Sx3N+iXRZWrG+pzYMYSbGtUa6B+NbZ9jX
-	VZZ0TlUTwKtId8hGtXq5+oUvIAFUvF4Sx+3wst0atmCa7MX6QfYDu9GetsgPdr8R84Oo9qWJ7aKoO
-	QWGKB2T1uP6FBDpbmkNqVtkhXrpfr4EGqFJH8DCxWhauFkm70GC+jhysmZpD5kKuLSQlDNLXlN1V9
-	NAnhY4KoHM+i61hUd/ROzoA8aHbcrH7AWEzLWs2wQ/LG97TUL0oyWy6APw7r+hU/MUkSFyu6Tk4Q/
-	sfkf3lM0iCiBU5Khr2Fw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=i2ElUA0bRcosZejxRKCu89ZNyCSBky9QhNgBxZMyPe0=; b=e2L
+	zBp6Y1apaNdVaDehRgbjBBEdJ7Huu1HezlqpCN5zIrBPIGnxCKSC8pjfA0j85iaxhc0+U01kyWa9F
+	MkRQTSpx30Elp/YNB4VD8D0NaJ0kgn4Jm/cAAV8rlwSfgn0Af3K2SZp5Kl1vAqb6IpqCi/5eXR9z5
+	f3j4FZ2umeV1gXbOWZs5HDeGIqumzKXqTVEg1MIemD+b5ePidi75apUciz9nHn44+9MMc2jSHiP+d
+	21yxV/Xdf5ig8d0zL6iWOWpPdt5ENjllrT6TbLgOOsSfPQKlpZdRu4Z5Ol/KvIWs4sANddoLCijQa
+	Bdr55bOGH/FgTkXhvKtXDD21TyJuetQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iF1p6-0001hG-Lu; Mon, 30 Sep 2019 19:59:08 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iF20G-0007uZ-Jf; Mon, 30 Sep 2019 20:10:40 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iF1ow-0001gY-Pt
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 19:59:00 +0000
-Received: from localhost (unknown [69.71.4.100])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 67EDD224D7;
- Mon, 30 Sep 2019 19:58:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569873536;
- bh=5YkIavbcZo/fLAlcbxRAjN/RrUGTMkGP8SzMSvE3lfY=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=eQ2EwAbhTnIoCao80RsHAjyuX0FiFTAlEN6giJaMJlAygtJFtLFebghluVb1IgARK
- QJIQQXZWBQEH68It6VK2j2PAMzsVDbeK0hNpsI8f9l+BsiWY2zGIHPbIo8lDV07B5v
- nuE1LfjWC+uyDHhdEx/TeJU/HbfFo2GBNRL7OTVo=
-Date: Mon, 30 Sep 2019 14:58:55 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Denis Efremov <efremov@linux.com>
-Subject: Re: [PATCH RESEND v3 00/26] Add definition for the number of
- standard PCI BARs
-Message-ID: <20190930195855.GA191519@google.com>
+ id 1iF207-0007tn-N4
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 20:10:33 +0000
+Received: by mail-io1-xd41.google.com with SMTP id n26so13212038ioj.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 30 Sep 2019 13:10:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=lHN/tDnufQZObPeH7yuPF8yjfolHqJGmsLh3bQf8sJI=;
+ b=dYPTbg0DlUybLnnpGviIbEjsKj/G1+CfDUrB91glQtk/q0CXG94Id/SAfG1ZxoRXdP
+ xiibhKBYUWuxsffCd/ksicV0+KWwT/5VmrgkvmJ6hM3v7sSwQQRCQ4w2Swyp00jFatZD
+ g7hoVZ3q1oSt3Sm1ljliN+wY9tN/Jfnih1n68zd68TYpvcwk0UzoGNzxq8aVIOnDZfdi
+ oGk+0wwgbDkUu6UZUKbf2+fPhliFVuldzjXkIeJKPnohMLjqUGzIRUXmKE7iASa4pU7U
+ 8D0zA7k+TL2Vn9kFs6fXnqX6DAJxkoXwO6DqQkCQB/V2mxA6BzqkFouDd2Ji15ARZZvG
+ eJ+A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=lHN/tDnufQZObPeH7yuPF8yjfolHqJGmsLh3bQf8sJI=;
+ b=HF88UzIRNU+NAa9oOZMntjFubFlLLvVf1rKfZCT5AtlRCcUUZnya4YDZD5Vmovf5uu
+ 0UiFYhx+efQu9lWi9uHUcDDVnhUkoCzGCmnn10GJPqUK+mEnap3S1H2D10Hq5Wu6XMep
+ jNdBo7l4bu8Y87Elt4W8Z0GZ8/IS77EFFReWmzTyqAbKXSVTqSN3H43udgmbj2hbTzvl
+ NhXTyL9bolloTC06CwxgBQPf78FGVsswQBmYkkqEiV4K010/Sofr4n4m0M+wtL/JhsoC
+ tjYptw3mAvet0FjfKfeK1x2xbPCemWnkgbE/NQrk9SfoQfDOXQBWznK3X2tBSh3XkyO0
+ ZfbA==
+X-Gm-Message-State: APjAAAWxTeMgj+IyxoxvemX7TaMomO93bP4f2A8XkFViJvundQhuUN6c
+ MvCGSyoosKJjym2bkjxIuWEXOBmRRsPRxGgNFIM=
+X-Google-Smtp-Source: APXvYqzcRolQWJkvNIFKrMPKkFHxtANjKncJWEV6fkoP4U+5RdLcKAkWwkiTpQPbiRnOrJgqVkX2ECn9UWoY2h7pYQ4=
+X-Received: by 2002:a05:6638:3a5:: with SMTP id
+ z5mr20882591jap.95.1569874230438; 
+ Mon, 30 Sep 2019 13:10:30 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190927234026.23342-1-efremov@linux.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+From: Adam Ford <aford173@gmail.com>
+Date: Mon, 30 Sep 2019 15:10:18 -0500
+Message-ID: <CAHCN7xLOCC00UC4PB3vHa6Q7yyhXVEaWgx2X9D9L2dDubd_5fA@mail.gmail.com>
+Subject: [PATCH] Bluetooth: hci_ll: set operational frequency earlier
+To: Linux-OMAP <linux-omap@vger.kernel.org>, 
+ arm-soc <linux-arm-kernel@lists.infradead.org>, 
+ "open list:BLUETOOTH DRIVERS" <linux-bluetooth@vger.kernel.org>, 
+ Philipp Puschmann <philipp.puschmann@emlix.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_125858_882657_11D35888 
-X-CRM114-Status: GOOD (  14.31  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190930_131031_779595_5695D76C 
+X-CRM114-Status: UNSURE (   6.03  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (aford173[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (aford173[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -64,8 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 FAKE_REPLY_C           No description available.
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,121 +96,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, linux-s390@vger.kernel.org,
- linux-hyperv@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-ia64@vger.kernel.org, linux-scsi@vger.kernel.org, kvm@vger.kernel.org,
- linux-serial@vger.kernel.org, linux-pci@vger.kernel.org, x86@kernel.org,
- linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-ide@vger.kernel.org, netdev@vger.kernel.org, linux-fbdev@vger.kernel.org,
- linux-alpha@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Sep 28, 2019 at 02:40:26AM +0300, Denis Efremov wrote:
-> Code that iterates over all standard PCI BARs typically uses
-> PCI_STD_RESOURCE_END, but this is error-prone because it requires
-> "i <= PCI_STD_RESOURCE_END" rather than something like
-> "i < PCI_STD_NUM_BARS". We could add such a definition and use it the same
-> way PCI_SRIOV_NUM_BARS is used. The patchset also replaces constant (6)
-> with new define PCI_STD_NUM_BARS where appropriate and removes local
-> declarations for the number of PCI BARs.
-> 
-> Changes in v3:
->   - Updated commits description.
->   - Refactored "< PCI_ROM_RESOURCE" with "< PCI_STD_NUM_BARS" in loops.
->   - Refactored "<= BAR_5" with "< PCI_STD_NUM_BARS" in loops.
->   - Removed local define GASKET_NUM_BARS.
->   - Removed local define PCI_NUM_BAR_RESOURCES.
-> 
-> Changes in v2:
->   - Reversed checks in pci_iomap_range,pci_iomap_wc_range.
->   - Refactored loops in vfio_pci to keep PCI_STD_RESOURCES.
->   - Added 2 new patches to replace the magic constant with new define.
->   - Splitted net patch in v1 to separate stmmac and dwc-xlgmac patches.
-> 
-> Denis Efremov (26):
->   PCI: Add define for the number of standard PCI BARs
->   PCI: hv: Use PCI_STD_NUM_BARS
->   PCI: dwc: Use PCI_STD_NUM_BARS
->   PCI: endpoint: Use PCI_STD_NUM_BARS
->   misc: pci_endpoint_test: Use PCI_STD_NUM_BARS
->   s390/pci: Use PCI_STD_NUM_BARS
->   x86/PCI: Loop using PCI_STD_NUM_BARS
->   alpha/PCI: Use PCI_STD_NUM_BARS
->   ia64: Use PCI_STD_NUM_BARS
->   stmmac: pci: Loop using PCI_STD_NUM_BARS
->   net: dwc-xlgmac: Loop using PCI_STD_NUM_BARS
->   ixgb: use PCI_STD_NUM_BARS
->   e1000: Use PCI_STD_NUM_BARS
->   rapidio/tsi721: Loop using PCI_STD_NUM_BARS
->   efifb: Loop using PCI_STD_NUM_BARS
->   fbmem: use PCI_STD_NUM_BARS
->   vfio_pci: Loop using PCI_STD_NUM_BARS
->   scsi: pm80xx: Use PCI_STD_NUM_BARS
->   ata: sata_nv: Use PCI_STD_NUM_BARS
->   staging: gasket: Use PCI_STD_NUM_BARS
->   serial: 8250_pci: Use PCI_STD_NUM_BARS
->   pata_atp867x: Use PCI_STD_NUM_BARS
->   memstick: use PCI_STD_NUM_BARS
->   USB: core: Use PCI_STD_NUM_BARS
->   usb: pci-quirks: Use PCI_STD_NUM_BARS
->   devres: use PCI_STD_NUM_BARS
-> 
->  arch/alpha/kernel/pci-sysfs.c                 |  8 ++---
->  arch/ia64/sn/pci/pcibr/pcibr_dma.c            |  4 +--
->  arch/s390/include/asm/pci.h                   |  5 +--
->  arch/s390/include/asm/pci_clp.h               |  6 ++--
->  arch/s390/pci/pci.c                           | 16 +++++-----
->  arch/s390/pci/pci_clp.c                       |  6 ++--
->  arch/x86/pci/common.c                         |  2 +-
->  arch/x86/pci/intel_mid_pci.c                  |  2 +-
->  drivers/ata/pata_atp867x.c                    |  2 +-
->  drivers/ata/sata_nv.c                         |  2 +-
->  drivers/memstick/host/jmb38x_ms.c             |  2 +-
->  drivers/misc/pci_endpoint_test.c              |  8 ++---
->  drivers/net/ethernet/intel/e1000/e1000.h      |  1 -
->  drivers/net/ethernet/intel/e1000/e1000_main.c |  2 +-
->  drivers/net/ethernet/intel/ixgb/ixgb.h        |  1 -
->  drivers/net/ethernet/intel/ixgb/ixgb_main.c   |  2 +-
->  .../net/ethernet/stmicro/stmmac/stmmac_pci.c  |  4 +--
->  .../net/ethernet/synopsys/dwc-xlgmac-pci.c    |  2 +-
->  drivers/pci/controller/dwc/pci-dra7xx.c       |  2 +-
->  .../pci/controller/dwc/pci-layerscape-ep.c    |  2 +-
->  drivers/pci/controller/dwc/pcie-artpec6.c     |  2 +-
->  .../pci/controller/dwc/pcie-designware-plat.c |  2 +-
->  drivers/pci/controller/dwc/pcie-designware.h  |  2 +-
->  drivers/pci/controller/pci-hyperv.c           | 10 +++---
->  drivers/pci/endpoint/functions/pci-epf-test.c | 10 +++---
->  drivers/pci/pci-sysfs.c                       |  4 +--
->  drivers/pci/pci.c                             | 13 ++++----
->  drivers/pci/proc.c                            |  4 +--
->  drivers/pci/quirks.c                          |  4 +--
->  drivers/rapidio/devices/tsi721.c              |  2 +-
->  drivers/scsi/pm8001/pm8001_hwi.c              |  2 +-
->  drivers/scsi/pm8001/pm8001_init.c             |  2 +-
->  drivers/staging/gasket/gasket_constants.h     |  3 --
->  drivers/staging/gasket/gasket_core.c          | 12 +++----
->  drivers/staging/gasket/gasket_core.h          |  4 +--
->  drivers/tty/serial/8250/8250_pci.c            |  8 ++---
->  drivers/usb/core/hcd-pci.c                    |  2 +-
->  drivers/usb/host/pci-quirks.c                 |  2 +-
->  drivers/vfio/pci/vfio_pci.c                   | 11 ++++---
->  drivers/vfio/pci/vfio_pci_config.c            | 32 ++++++++++---------
->  drivers/vfio/pci/vfio_pci_private.h           |  4 +--
->  drivers/video/fbdev/core/fbmem.c              |  4 +--
->  drivers/video/fbdev/efifb.c                   |  2 +-
->  include/linux/pci-epc.h                       |  2 +-
->  include/linux/pci.h                           |  2 +-
->  include/uapi/linux/pci_regs.h                 |  1 +
->  lib/devres.c                                  |  2 +-
->  47 files changed, 112 insertions(+), 115 deletions(-)
+Is anyone else having issues with the hci_ll after  a2e02f38eff8
+("Bluetooth: hci_ll: set operational frequency earlier") was applied?
 
-Applied to pci/resource for v5.5, thanks!
+I have an i.MX6Q with a WL1837MOD attached to UART2.  After this patch
+I git a bunch of timeouts when initializing the device using the 5.3
+and 5.3.1 kernel.   I know a bunch of omap and imx users have done
+some various tests over the years, so I thought I'd ask.
 
-I ended up squashing these all together because they're all related
-and tiny.
+[  195.911836] Bluetooth: hci0: command 0xff36 tx timeout
+[  206.071837] Bluetooth: hci0: command 0x1001 tx timeout
+[  214.231862] Bluetooth: hci0: Reading TI version information failed (-110)
+[  214.238712] Bluetooth: hci0: download firmware failed, retrying...
+[  216.391834] Bluetooth: hci0: command 0xff36 tx timeout
+[  226.551843] Bluetooth: hci0: command 0x1001 tx timeout
+[  234.711856] Bluetooth: hci0: Reading TI version information failed (-110)
+[  234.718705] Bluetooth: hci0: download firmware failed, retrying...
+[  236.871832] Bluetooth: hci0: command 0xff36 tx timeout
+[  247.031837] Bluetooth: hci0: command 0x1001 tx timeout
+[  255.191852] Bluetooth: hci0: Reading TI version information failed (-110)
+[  255.198706] Bluetooth: hci0: download firmware failed, retrying...
+Can't init device hci0: Connection timed out (110)
+
+Revering this patch fixes the issue, and subsequent patch proposals
+form Philipp haven't seemed to fix the issues for me on 5.3
+
+adam
 
 _______________________________________________
 linux-arm-kernel mailing list
