@@ -2,63 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87461C2561
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 18:44:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EAB5BC255D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 18:43:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LopQOHYCA8bZCUEZMxsiQ8/dcopidwNFdKVSrznCJX8=; b=l+fTn/2X8iVOd3
-	wBxeg3nKFl3v/7I5wW6rB2xp5slT3ro9/y3F9oJAkNSLvgTZEMU0jy7xBJIiyu9LDJSPqFREi/PH8
-	aFkJm3Q1Yh/ofhYoaD+yF1w44dndC72Up/hBaulgl2Dj1cHmQBZ65ybjBjuQjbOQSPq+YSMi/jxUl
-	P7v7a/yfcCRQE6aPd3sb8CTFSvEJuvQl+azD8pwrXfVgw4htDJRIbrAf7T5/DL/HLWbFUX9CZgeG0
-	linIk5nlTRzbywUK90sVtBPiuQT8dY4HxyLnMw/vp9Y6sMaefvmhe0l/ivMVJ87cptE3sX/eHB47R
-	Ye3cTQ+1E5W+Ccf09I8Q==;
+	List-Owner; bh=4owlRSTPa6g9ljgyGooYgow9S5SRgMRhaKrNpNF9PEc=; b=aGjltqfCzQvk97
+	udX8gAdQMKd47tJJBt76O8TG7o+Lr/AVfiQGuMd8Qo29LKwa5A7W4BHY7/tztLbQjBF5CAe8DnVkm
+	odtlbI8C/XzhA7FSvgcndunScOl9pjsR7OD47GatyLu9uvU6qGEFL3vnBprkL0Ztg88kpliPeXKkR
+	Y56k63B+iaswONEE66+s8rttt5KPAVfq9fsfd8mFCn0T29RfCX2w8skXGjGmidjDx1rAwvnHJ8d3c
+	E7/VyLCIa/DVzcTBI5uSOrmO5FpExY1VwrNTAYoVVgtXfXgK7ApO2kLo/ANz4We/YmytExkB8Letg
+	3I8Ko5uV4uUWQlSrsRTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEyme-0000Z7-Oz; Mon, 30 Sep 2019 16:44:24 +0000
-Received: from mailoutvs44.siol.net ([185.57.226.235] helo=mail.siol.net)
+	id 1iEym3-0000I0-IP; Mon, 30 Sep 2019 16:43:47 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEymU-0000Xo-Gh
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 16:44:17 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id B709D522D81;
- Mon, 30 Sep 2019 18:44:06 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at psrvmta10.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta10.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id vqC7iU5JIcxQ; Mon, 30 Sep 2019 18:44:06 +0200 (CEST)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 29769522DC4;
- Mon, 30 Sep 2019 18:44:06 +0200 (CEST)
-Received: from jernej-laptop.localnet (cpe-86-58-59-25.static.triera.net
- [86.58.59.25]) (Authenticated sender: jernej.skrabec@siol.net)
- by mail.siol.net (Postfix) with ESMTPA id 4CE41522DBF;
- Mon, 30 Sep 2019 18:44:03 +0200 (CEST)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
-To: Hans Verkuil <hverkuil-cisco@xs4all.nl>
-Subject: Re: [PATCH v2 6/6] media: cedrus: Add support for holding capture
- buffer
-Date: Mon, 30 Sep 2019 18:44:02 +0200
-Message-ID: <2089312.Gnm7pnLf18@jernej-laptop>
-In-Reply-To: <4fb20c41-7cc1-32c9-b5b9-2e86b5e74201@xs4all.nl>
-References: <20190929200023.215831-1-jernej.skrabec@siol.net>
- <20190929200023.215831-7-jernej.skrabec@siol.net>
- <4fb20c41-7cc1-32c9-b5b9-2e86b5e74201@xs4all.nl>
+ id 1iEyls-0000HX-64
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 16:43:38 +0000
+X-Originating-IP: 88.190.179.123
+Received: from localhost (unknown [88.190.179.123])
+ (Authenticated sender: repk@triplefau.lt)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 7769AFF80C;
+ Mon, 30 Sep 2019 16:43:19 +0000 (UTC)
+Date: Mon, 30 Sep 2019 18:52:30 +0200
+From: Remi Pommarel <repk@triplefau.lt>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH v3] PCI: aardvark: Use LTSSM state to build link training
+ flag
+Message-ID: <20190930165230.GA12568@voidbox>
+References: <20190522213351.21366-3-repk@triplefau.lt>
+ <20190930154017.GF42880@e119886-lin.cambridge.arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190930154017.GF42880@e119886-lin.cambridge.arm.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_094414_875473_18EFF4C0 
-X-CRM114-Status: GOOD (  16.22  )
+X-CRM114-CacheID: sfid-20190930_094336_529664_4BBBF104 
+X-CRM114-Status: GOOD (  28.46  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.199 listed in wl.mailspike.net]
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.235 listed in list.dnswl.org]
+ low trust [217.70.183.199 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -72,171 +65,150 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, linux-media@vger.kernel.org, pawel@osciak.com,
- jonas@kwiboo.se, gregkh@linuxfoundation.org, wens@csie.org, mripard@kernel.org,
- tfiga@chromium.org, paul.kocialkowski@bootlin.com, kyungmin.park@samsung.com,
- boris.brezillon@collabora.com, linux-arm-kernel@lists.infradead.org,
- mchehab@kernel.org, ezequiel@collabora.com, linux-kernel@vger.kernel.org,
- m.szyprowski@samsung.com
+Cc: Ellie Reeves <ellierevves@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Bjorn Helgaas <helgaas@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Dne ponedeljek, 30. september 2019 ob 10:14:32 CEST je Hans Verkuil 
-napisal(a):
-> On 9/29/19 10:00 PM, Jernej Skrabec wrote:
-> > When frame contains multiple slices and driver works in slice mode, it's
-> > more efficient to hold capture buffer in queue until all slices of a
-> > same frame are decoded.
+On Mon, Sep 30, 2019 at 04:40:18PM +0100, Andrew Murray wrote:
+> On Wed, May 22, 2019 at 11:33:51PM +0200, Remi Pommarel wrote:
+> > Aardvark's PCI_EXP_LNKSTA_LT flag in its link status register is not
+> > implemented and does not reflect the actual link training state (the
+> > flag is always set to 0). In order to support link re-training feature
+> > this flag has to be emulated. The Link Training and Status State
+> > Machine (LTSSM) flag in Aardvark LMI config register could be used as
+> > a link training indicator. Indeed if the LTSSM is in L0 or upper state
+> > then link training has completed (see [1]).
 > > 
-> > Add support for that to Cedrus driver by exposing and implementing
-> > V4L2_BUF_CAP_SUPPORTS_M2M_HOLD_CAPTURE_BUF capability.
+> > Unfortunately because after asking a link retraining it takes a while
+> > for the LTSSM state to become less than 0x10 (due to L0s to recovery
+> > state transition delays), LTSSM can still be in L0 while link training
+> > has not finished yet. So this waits for link to be in recovery or lesser
+> > state before returning after asking for a link retrain.
 > > 
-> > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> > [1] "PCI Express Base Specification", REV. 4.0
+> >     PCI Express, February 19 2014, Table 4-14
+> > 
+> > Signed-off-by: Remi Pommarel <repk@triplefau.lt>
 > > ---
+> > Changes since v1:
+> >   - Rename retraining flag field
+> >   - Fix DEVCTL register writing
 > > 
-> >  drivers/staging/media/sunxi/cedrus/cedrus_dec.c   |  9 +++++++++
-> >  drivers/staging/media/sunxi/cedrus/cedrus_hw.c    |  8 +++++---
-> >  drivers/staging/media/sunxi/cedrus/cedrus_video.c | 14 ++++++++++++++
-> >  3 files changed, 28 insertions(+), 3 deletions(-)
+> > Changes since v2:
+> >   - Rewrite patch logic so it is more legible
 > > 
-> > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
-> > b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c index
-> > e49c3396ca4d..67f7d4326fc1 100644
-> > --- a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
-> > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
-> > @@ -31,6 +31,14 @@ void cedrus_device_run(void *priv)
+> > Please note that I will unlikely be able to answer any comments from May
+> > 24th to June 10th.
+> > ---
+> >  drivers/pci/controller/pci-aardvark.c | 29 ++++++++++++++++++++++++++-
+> >  1 file changed, 28 insertions(+), 1 deletion(-)
 > > 
-> >  	run.src = v4l2_m2m_next_src_buf(ctx->fh.m2m_ctx);
-> >  	run.dst = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
-> > 
-> > +
-> > +	if (v4l2_m2m_release_capture_buf(run.src, run.dst)) {
-> > +		v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
-> > +		v4l2_m2m_buf_done(run.dst, VB2_BUF_STATE_DONE);
-> > +		run.dst = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
-> > +	}
-> > +	run.dst->is_held = run.src->flags & 
-V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF;
-> > +
-> > 
-> >  	run.first_slice = !run.dst->vb2_buf.copied_timestamp ||
-> >  	
-> >  		run.src->vb2_buf.timestamp != run.dst-
->vb2_buf.timestamp;
-> > 
-> > @@ -46,6 +54,7 @@ void cedrus_device_run(void *priv)
-> > 
-> >  			V4L2_CID_MPEG_VIDEO_MPEG2_SLICE_PARAMS);
-> >  		
-> >  		run.mpeg2.quantization = cedrus_find_control_data(ctx,
-> >  		
-> >  			V4L2_CID_MPEG_VIDEO_MPEG2_QUANTIZATION);
-> > 
-> > +		run.dst->is_held = false;
-> > 
-> >  		break;
-> >  	
-> >  	case V4L2_PIX_FMT_H264_SLICE:
-> > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
-> > b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c index
-> > fc8579b90dab..b466041c25db 100644
-> > --- a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
-> > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
-> > @@ -122,7 +122,7 @@ static irqreturn_t cedrus_irq(int irq, void *data)
-> > 
-> >  	dev->dec_ops[ctx->current_codec]->irq_clear(ctx);
-> >  	
-> >  	src_buf = v4l2_m2m_src_buf_remove(ctx->fh.m2m_ctx);
-> > 
-> > -	dst_buf = v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
-> > +	dst_buf = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
-> > 
-> >  	if (!src_buf || !dst_buf) {
-> >  	
-> >  		v4l2_err(&dev->v4l2_dev,
-> > 
-> > @@ -136,8 +136,10 @@ static irqreturn_t cedrus_irq(int irq, void *data)
-> > 
-> >  		state = VB2_BUF_STATE_DONE;
-> >  	
-> >  	v4l2_m2m_buf_done(src_buf, state);
-> > 
-> > -	v4l2_m2m_buf_done(dst_buf, state);
-> > -
-> > +	if (!dst_buf->is_held) {
-> > +		v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
-> > +		v4l2_m2m_buf_done(dst_buf, state);
-> > +	}
-> > 
-> >  	v4l2_m2m_job_finish(ctx->dev->m2m_dev, ctx->fh.m2m_ctx);
-> >  	
-> >  	return IRQ_HANDLED;
-> > 
-> > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-> > b/drivers/staging/media/sunxi/cedrus/cedrus_video.c index
-> > 3ec3a2db790c..82198b2bb081 100644
-> > --- a/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-> > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-> > @@ -303,6 +303,17 @@ static int cedrus_s_fmt_vid_out(struct file *file,
-> > void *priv,> 
-> >  	ctx->src_fmt = f->fmt.pix;
-> > 
-> > +	switch (ctx->src_fmt.pixelformat) {
-> > +	case V4L2_PIX_FMT_H264_SLICE:
-> > +		vq->subsystem_flags |=
-> > +			VB2_V4L2_FL_SUPPORTS_M2M_HOLD_CAPTURE_BUF;
-> > +		break;
-> > +	default:
-> > +		vq->subsystem_flags &=
-> > +			
-(u32)~VB2_V4L2_FL_SUPPORTS_M2M_HOLD_CAPTURE_BUF;
-> 
-> Why the u32 cast?
-
-To prevent warnings on arm64 such as reported here:
-https://www.mail-archive.com/linux-kernel@vger.kernel.org/msg1620796.html
-
-But I'm not sure if this aplies for this case. I compiled kernel for arm64 but 
-there is no warning without this cast with my configuration. I guess I can 
-remove it.
-
-Best regards,
-Jernej
-
-> 
-> Regards,
-> 
-> 	Hans
-> 
-> > +		break;
-> > +	}
-> > +
-> > 
-> >  	/* Propagate colorspace information to capture. */
-> >  	ctx->dst_fmt.colorspace = f->fmt.pix.colorspace;
-> >  	ctx->dst_fmt.xfer_func = f->fmt.pix.xfer_func;
-> > 
-> > @@ -336,6 +347,9 @@ const struct v4l2_ioctl_ops cedrus_ioctl_ops = {
-> > 
-> >  	.vidioc_streamon		= v4l2_m2m_ioctl_streamon,
-> >  	.vidioc_streamoff		= v4l2_m2m_ioctl_streamoff,
-> > 
-> > +	.vidioc_try_decoder_cmd		= 
-v4l2_m2m_ioctl_stateless_try_decoder_cmd,
-> > +	.vidioc_decoder_cmd		= 
-v4l2_m2m_ioctl_stateless_decoder_cmd,
-> > +
-> > 
-> >  	.vidioc_subscribe_event		= v4l2_ctrl_subscribe_event,
-> >  	.vidioc_unsubscribe_event	= v4l2_event_unsubscribe,
+> > diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
+> > index 134e0306ff00..8803083b2174 100644
+> > --- a/drivers/pci/controller/pci-aardvark.c
+> > +++ b/drivers/pci/controller/pci-aardvark.c
+> > @@ -180,6 +180,8 @@
+> >  #define LINK_WAIT_MAX_RETRIES		10
+> >  #define LINK_WAIT_USLEEP_MIN		90000
+> >  #define LINK_WAIT_USLEEP_MAX		100000
+> > +#define RETRAIN_WAIT_MAX_RETRIES	10
+> > +#define RETRAIN_WAIT_USLEEP_US		2000
 > >  
-> >  };
+> >  #define MSI_IRQ_NUM			32
+> >  
+> > @@ -239,6 +241,17 @@ static int advk_pcie_wait_for_link(struct advk_pcie *pcie)
+> >  	return -ETIMEDOUT;
+> >  }
+> >  
+> > +static void advk_pcie_wait_for_retrain(struct advk_pcie *pcie)
+> > +{
+> > +	size_t retries;
+> > +
+> > +	for (retries = 0; retries < RETRAIN_WAIT_MAX_RETRIES; ++retries) {
+> > +		if (!advk_pcie_link_up(pcie))
+> > +			break;
+> > +		udelay(RETRAIN_WAIT_USLEEP_US);
+> > +	}
+> > +}
+> > +
+> >  static void advk_pcie_setup_hw(struct advk_pcie *pcie)
+> >  {
+> >  	u32 reg;
+> > @@ -426,11 +439,20 @@ advk_pci_bridge_emul_pcie_conf_read(struct pci_bridge_emul *bridge,
+> >  		return PCI_BRIDGE_EMUL_HANDLED;
+> >  	}
+> >  
+> > +	case PCI_EXP_LNKCTL: {
+> > +		/* u32 contains both PCI_EXP_LNKCTL and PCI_EXP_LNKSTA */
+> > +		u32 val = advk_readl(pcie, PCIE_CORE_PCIEXP_CAP + reg) &
+> > +			~(PCI_EXP_LNKSTA_LT << 16);
+> 
+> The commit message says "the flag is always set to 0" - therefore I guess
+> you don't *need* to mask out the LT bit here? I assume this is just
+> belt-and-braces but thought I'd check incase I've misunderstood or if your
+> commit message is inaccurate.
+> 
+> In any case masking out the bit (or adding a comment) makes this code more
+> readable as the reader doesn't need to know what the hardware does with this
+> bit.
 
+Actually vendor eventually responded that the bit was reserved, but
+during my tests it remains to 0.
 
+So yes I am masking this out mainly for belt-and-braces and legibility.
 
+> > +		if (!advk_pcie_link_up(pcie))
+> > +			val |= (PCI_EXP_LNKSTA_LT << 16);
+> > +		*value = val;
+> > +		return PCI_BRIDGE_EMUL_HANDLED;
+> > +	}
+> > +
+> >  	case PCI_CAP_LIST_ID:
+> >  	case PCI_EXP_DEVCAP:
+> >  	case PCI_EXP_DEVCTL:
+> >  	case PCI_EXP_LNKCAP:
+> > -	case PCI_EXP_LNKCTL:
+> >  		*value = advk_readl(pcie, PCIE_CORE_PCIEXP_CAP + reg);
+> >  		return PCI_BRIDGE_EMUL_HANDLED;
+> >  	default:
+> > @@ -447,8 +469,13 @@ advk_pci_bridge_emul_pcie_conf_write(struct pci_bridge_emul *bridge,
+> >  
+> >  	switch (reg) {
+> >  	case PCI_EXP_DEVCTL:
+> > +		advk_writel(pcie, new, PCIE_CORE_PCIEXP_CAP + reg);
+> > +		break;
+> 
+> Why is this here?
+> 
 
+Before PCI_EXP_DEVCTL and PCI_EXP_LNKCTL were doing the same thing, but
+as now PCI_EXP_LNKCTL does extra things (i.e. wait for link to
+successfully retrain), they do have different behaviours.
+
+So this is here so PCI_EXP_DEVCTL keeps its old behaviour and do not
+wait for link retrain in case an unrelated (PCI_EXP_LNKCTL_RL) bit is
+set.
+
+-- 
+Remi
+
+> > +
+> >  	case PCI_EXP_LNKCTL:
+> >  		advk_writel(pcie, new, PCIE_CORE_PCIEXP_CAP + reg);
+> > +		if (new & PCI_EXP_LNKCTL_RL)
+> > +			advk_pcie_wait_for_retrain(pcie);
+> >  		break;
+> >  
+> >  	case PCI_EXP_RTCTL:
+> > -- 
+> > 2.20.1
+> > 
 
 _______________________________________________
 linux-arm-kernel mailing list
