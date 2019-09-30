@@ -2,55 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73A76C2334
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 16:27:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB50DC234A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 16:30:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+g1NpkYgWu2Bz+Y/N/Nsv/UQy6CRRfQDb4mFhYeVwPM=; b=HwI6XC0oi+zZMf
-	ciKnLFX/ooObcwfNkCG+rvrIIKPmmdDg/RsVIi1evbUZKIOgDa3FNofp1pE6oPoIW2WA38Oxagyrl
-	QYevu1HyE/Ff88iVPUtLp9eCzPc7+Ecyl7ChBwSBcx33vJNsmNRaH/2QZilHndcEL6UBMsL4Ycn+m
-	pSoTiUcIUmA7X5gEqSdXNlysL2z7WaUaXUaUOG1heYq1PWOYyI/6Y+ISfHNshsd7xsZnh4DjS5VTL
-	Mqo2s1FUdqjAk1nWwElOVY7P2/hZmR1traydhX519fq4shn11NCXUTsbHbjr6Zs5asD7vviMedy/b
-	QBChnCbKoqVf3weyW1NA==;
+	List-Owner; bh=opwLOnBKpP2O8W2g6HGoYickSKOVIeHmSXTx5lwQC1M=; b=Y6Xh0rofHFA9H+
+	91YsxUQi9yJYiCM+58xx8Hd1k/x0ciagW7nGcztb8bzSONvpgVq5k3kX+i3Re/hLsSeYpPEGg37jD
+	rQcfJBSWh7YHqUcPHOPG2ZwVfQbXTwVvjDhfg+xSI0ah3jy6oG5YuLb94gVvux0sv565Cc26GlAA2
+	jUiloDqMpQbc8lMGfN95E988UMIP1Qz3eVZGcRQX6VTqqwJ59zcHrMtJVK2Y7bLv+KkkNTbKBEFYn
+	hBcZUCm4WH5OZWOfGI8gr/2al6H2opNrOL0cIzW3XqKKOFwsiC1dCkg+7wVhcZZJADC8s7v3eOjfU
+	w2kVBeIWUSmXOUf/gEfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEwdf-0003Py-Gy; Mon, 30 Sep 2019 14:26:59 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEwdV-0003M7-MA
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 14:26:51 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 18DD228;
- Mon, 30 Sep 2019 07:26:47 -0700 (PDT)
-Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9E2FF3F706;
- Mon, 30 Sep 2019 07:26:45 -0700 (PDT)
-Date: Mon, 30 Sep 2019 15:26:40 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Peng Fan <peng.fan@nxp.com>
-Subject: Re: [PATCH V10 1/2] dt-bindings: mailbox: add binding doc for the
- ARM SMC/HVC mailbox
-Message-ID: <20190930142640.GA24945@bogus>
-References: <1569824287-4263-1-git-send-email-peng.fan@nxp.com>
- <1569824287-4263-2-git-send-email-peng.fan@nxp.com>
+	id 1iEwgp-00044c-5j; Mon, 30 Sep 2019 14:30:15 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iEwga-0003zo-O0
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 14:30:02 +0000
+Received: by mail-qt1-x841.google.com with SMTP id f7so17274814qtq.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 30 Sep 2019 07:30:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=sjn2J1X49Pi46tSFkNPgKivYUAqzgU4dvUWvnLT/A+k=;
+ b=l1I5R6RItUb8JBSLMy2KjEKywL+N5KRy2KecVolnRM5Ue9kSrk+uZPBKH3waMz9HZC
+ FaAcBM16VuGym3aAiw4UIxd6i/mG2L4vbxAekrkhGm4MeFvH/hxGLuCOsFKSE0Uh2Dtn
+ XP+TMDF8+ggFz3idHPkP3Alr5WbqAQCWHQdDhC8m4Mz4bf4wgFu5iGFhbwu+qeLUMCjG
+ i+hi3oZFSLmCZyZYXIxRoLn9eLh0RuZGfeNxxP91Zw69fFfxb2lEc/o7mZ7hBZY/1om8
+ XH7AfkwibVGvu/e943yOQ4XYxgwAmYKGL2aralp9u1cFWhrxoqRTusZUfL2taH6zev1r
+ vxKg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=sjn2J1X49Pi46tSFkNPgKivYUAqzgU4dvUWvnLT/A+k=;
+ b=Ffp+0/W2sMStT4OX4WKI2vf5I1D1CbacJ7x/YyX7PP32HcbIXvv3K/zOdbJS6vbL+d
+ 8FBpRSSjPqSrX9wx8vevlK1ppYhCmtoVRiup3PMfYlbxahFopM1bDGfjKTHQ4TFxFEE5
+ 2pt5hFqkO2ec46duJN13QN3ucClmeXNedmgDMxTXpuAzpQe71XHTPd4orkl4Q+5ZJeUb
+ INS9dUli4+wqCSjiQfVxHC2mPqM3WiKcCgdvlz0jUvwzcx/0Yz2f+lcBQY6G3DJlQBU/
+ pzKcTXfbaHyLPHKjlEQ1ui/IjYYbm+BuToAC8IMDthl17YhwlfqEgTQcWYsl7tb9cj+J
+ 1Oag==
+X-Gm-Message-State: APjAAAWBoiJxlw+kns6DJ8f2NfBQ9N4ta9LDDQ6E4yXzjwAe85Li9sIj
+ PVSXELBjf85dP/8ZeizRVg==
+X-Google-Smtp-Source: APXvYqzOU34ghWr479mTCLLTpxF5tE/I2chBuQeakRJgM9cBvbC2TUcba3xwVWC4DZajZd/OTARrzQ==
+X-Received: by 2002:a0c:b068:: with SMTP id l37mr20801495qvc.36.1569853799300; 
+ Mon, 30 Sep 2019 07:29:59 -0700 (PDT)
+Received: from gabell (nat-pool-bos-t.redhat.com. [66.187.233.206])
+ by smtp.gmail.com with ESMTPSA id g192sm5504351qke.52.2019.09.30.07.29.58
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 30 Sep 2019 07:29:58 -0700 (PDT)
+Date: Mon, 30 Sep 2019 10:29:53 -0400
+From: Masayoshi Mizuma <msys.mizuma@gmail.com>
+To: Dave Martin <Dave.Martin@arm.com>, Julien Grall <julien.grall@arm.com>
+Subject: Re: [PATCH v2] arm64/sve: Fix wrong free for task->thread.sve_state
+Message-ID: <20190930142952.7zwbucjvh2wxbzis@gabell>
+References: <20190927153949.29870-1-msys.mizuma@gmail.com>
+ <b3dba44e-216c-f060-be8e-1c44bdc61576@arm.com>
+ <20190930130244.GT27757@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1569824287-4263-2-git-send-email-peng.fan@nxp.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190930130244.GT27757@arm.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_072649_812592_A507F9F4 
-X-CRM114-Status: GOOD (  24.81  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190930_073000_781429_1EAE6841 
+X-CRM114-Status: GOOD (  36.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (msys.mizuma[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,139 +101,173 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "andre.przywara@arm.com" <andre.przywara@arm.com>,
- "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- Sudeep Holla <sudeep.holla@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 30, 2019 at 06:20:09AM +0000, Peng Fan wrote:
-> From: Peng Fan <peng.fan@nxp.com>
+Hi Julien and Dave,
+
+On Mon, Sep 30, 2019 at 02:02:46PM +0100, Dave Martin wrote:
+> On Mon, Sep 30, 2019 at 01:23:18PM +0100, Julien Grall wrote:
+> > Hi,
+> > 
+> > On 27/09/2019 16:39, Masayoshi Mizuma wrote:
+> > >From: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
+> > >
+> > >The system which has SVE feature crashed because of
+> > >the memory pointed by task->thread.sve_state was destroyed
+> > >by someone.
+> > >
+> > >That is because sve_state is freed while the forking the
+> > >child process. The child process has the pointer of sve_state
+> > >which is same as the parent's because the child's task_struct
+> > >is copied from the parent's one. If the copy_process()
+> > >fails as an error on somewhere, for example, copy_creds(),
+> > >then the sve_state is freed even if the parent is alive.
+> > >The flow is as follows.
+> > >
+> > >copy_process
+> > >         p = dup_task_struct
+> > >             => arch_dup_task_struct
+> > >                 *dst = *src;  // copy the entire region.
+> > >:
+> > >         retval = copy_creds
+> > >         if (retval < 0)
+> > >                 goto bad_fork_free;
+> > >:
+> > >bad_fork_free:
+> > >...
+> > >         delayed_free_task(p);
+> > >           => free_task
+> > >              => arch_release_task_struct
+> > >                 => fpsimd_release_task
+> > >                    => __sve_free
+> > >                       => kfree(task->thread.sve_state);
+> > >                          // free the parent's sve_state
+> > >
+> > >Move child's sve_state = NULL and clearing TIF_SVE flag
+> > >to arch_dup_task_struct() so that the child doesn't free the
+> > >parent's one.
+> > >
+> > >Cc: stable@vger.kernel.org
+> > >Fixes: bc0ee4760364 ("arm64/sve: Core task context handling")
+> > 
+> > Looking at the log, it looks like THREAD_INFO_IN_TASK was selected before
+> > the bc0ee4760364. So it should be fine to backport for all the Linux tree
+> > contain this commit.
+
+I think this patch is needed for the kernel has SVE support.
+I'll add the Cc tag as Dave said:
+
+Cc: stable@vger.kernel.org # 4.15+
+
+So, I suppose this patch will be backported to stables 5.3.X,
+5.2.X and longterm 4.19.X.
+Does this make sense?
+
+> > 
+> > >Signed-off-by: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
+> > >Reported-by: Hidetoshi Seto <seto.hidetoshi@jp.fujitsu.com>
+> > >Suggested-by: Dave Martin <Dave.Martin@arm.com>
+> > 
+> > I have tested the patch and can confirm that double-free disappeared after
+> > the patch is applied:
+> > 
+> > Tested-by: Julien Grall <julien.grall@arm.com>
+
+Thank you so much!
+
 > 
-> The ARM SMC/HVC mailbox binding describes a firmware interface to trigger
-> actions in software layers running in the EL2 or EL3 exception levels.
-> The term "ARM" here relates to the SMC instruction as part of the ARM
-> instruction set, not as a standard endorsed by ARM Ltd.
+> Good to have that confirmed -- thanks for verifying.
 > 
-
-FWIW:
-
-Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
-
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> Reviewed-by: Andre Przywara <andre.przywara@arm.com>
-> Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> ---
->  .../devicetree/bindings/mailbox/arm-smc.yaml       | 96 ++++++++++++++++++++++
->  1 file changed, 96 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/mailbox/arm-smc.yaml
+> [...]
 > 
-> diff --git a/Documentation/devicetree/bindings/mailbox/arm-smc.yaml b/Documentation/devicetree/bindings/mailbox/arm-smc.yaml
-> new file mode 100644
-> index 000000000000..c165946a64e4
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/mailbox/arm-smc.yaml
-> @@ -0,0 +1,96 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/mailbox/arm-smc.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: ARM SMC Mailbox Interface
-> +
-> +maintainers:
-> +  - Peng Fan <peng.fan@nxp.com>
-> +
-> +description: |
-> +  This mailbox uses the ARM smc (secure monitor call) or hvc (hypervisor
-> +  call) instruction to trigger a mailbox-connected activity in firmware,
-> +  executing on the very same core as the caller. The value of r0/w0/x0
-> +  the firmware returns after the smc call is delivered as a received
-> +  message to the mailbox framework, so synchronous communication can be
-> +  established. The exact meaning of the action the mailbox triggers as
-> +  well as the return value is defined by their users and is not subject
-> +  to this binding.
-> +
-> +  One example use case of this mailbox is the SCMI interface, which uses
-> +  shared memory to transfer commands and parameters, and a mailbox to
-> +  trigger a function call. This allows SoCs without a separate management
-> +  processor (or when such a processor is not available or used) to use
-> +  this standardized interface anyway.
-> +
-> +  This binding describes no hardware, but establishes a firmware interface.
-> +  Upon receiving an SMC using the described SMC function identifier, the
-> +  firmware is expected to trigger some mailbox connected functionality.
-> +  The communication follows the ARM SMC calling convention.
-> +  Firmware expects an SMC function identifier in r0 or w0. The supported
-> +  identifier is listed in the the arm,func-id property as described below.
-> +  The firmware can return one value in the first SMC result register,
-> +  it is expected to be an error value, which shall be propagated to the
-> +  mailbox client.
-> +
-> +  Any core which supports the SMC or HVC instruction can be used, as long
-> +  as a firmware component running in EL3 or EL2 is handling these calls.
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - description:
-> +          For implementations using ARM SMC instruction.
-> +        const: arm,smc-mbox
-> +
-> +      - description:
-> +          For implementations using ARM HVC instruction.
-> +        const: arm,hvc-mbox
-> +
-> +  "#mbox-cells":
-> +    const: 0
-> +
-> +  arm,func-id:
-> +    description: |
-> +      An single 32-bit value specifying the function ID used by the mailbox.
-> +      The function ID follows the ARM SMC calling convention standard.
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +
-> +required:
-> +  - compatible
-> +  - "#mbox-cells"
-> +  - arm,func-id
-> +
-> +examples:
-> +  - |
-> +    sram@93f000 {
-> +      compatible = "mmio-sram";
-> +      reg = <0x0 0x93f000 0x0 0x1000>;
-> +      #address-cells = <1>;
-> +      #size-cells = <1>;
-> +      ranges = <0x0 0x93f000 0x1000>;
-> +
-> +      cpu_scp_lpri: scp-shmem@0 {
-> +        compatible = "arm,scmi-shmem";
-> +        reg = <0x0 0x200>;
-> +      };
-> +    };
-> +
-> +    smc_tx_mbox: tx_mbox {
+> > >---
+> > >  arch/arm64/kernel/process.c | 21 ++++-----------------
+> > >  1 file changed, 4 insertions(+), 17 deletions(-)
+> > >
+> > >diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+> > >index f674f28df..6937f5935 100644
+> > >--- a/arch/arm64/kernel/process.c
+> > >+++ b/arch/arm64/kernel/process.c
+> > >@@ -323,22 +323,16 @@ void arch_release_task_struct(struct task_struct *tsk)
+> > >  	fpsimd_release_task(tsk);
+> > >  }
+> > >-/*
+> > >- * src and dst may temporarily have aliased sve_state after task_struct
+> > >- * is copied.  We cannot fix this properly here, because src may have
+> > >- * live SVE state and dst's thread_info may not exist yet, so tweaking
+> > >- * either src's or dst's TIF_SVE is not safe.
+> > >- *
+> > >- * The unaliasing is done in copy_thread() instead.  This works because
+> > >- * dst is not schedulable or traceable until both of these functions
+> > >- * have been called.
+> > >- */
+> > 
+> > It would be good to explain in the commit message why tweaking "dst" in
+> > arch_dup_task_struct() is fine.
+> > 
+> > From my understanding, Arm64 used to have thread_info on the stack. So it
+> > would not be possible to clear TIF_SVE until the stack is initialized.
+> > 
+> > Now that the thread_info is part of the task, it should be valid to modify
+> > the flag from arch_dup_task_struct().
+> > 
+> > Note that technically, TIF_SVE does not need to be cleared from
+> > arch_dup_task_struct(). It could also be done from copy_thread(). But it is
+> > easier to keep the both changes together.
 
-[nit]              ^^^^^^^^^ s/tx_mbox/mailbox/ ?
+Thanks, let me add some comments to the commit log.
 
-mailbox sounds more generic name to use, you can always use what ever
-name in the label. This is not a must change, just thought of mentioning
-as the pattern followed is to use generic names.
+> > 
+> > >  int arch_dup_task_struct(struct task_struct *dst, struct task_struct *src)
+> > >  {
+> > >  	if (current->mm)
+> > >  		fpsimd_preserve_current_state();
+> > >  	*dst = *src;
+> 
+> Ack, some more explanation would be a good idea here.
+> 
+> Maybe the following comments are sufficient?
+> 
+> 	/* We rely on the above assingment to initialise dst's thread_flags: */
 
---
-Regards,
-Sudeep
+Thanks, I'll add this comment.
+
+> 
+> > >+	BUILD_BUG_ON(!IS_ENABLED(CONFIG_THREAD_INFO_IN_TASK));
+> > 
+> 
+> and
+> 
+> 	/*
+> 	 * Detach src's sve_state (if any) from dst so that it does not
+> 	 * get erroneously used or freed prematurely.  dst's sve_state
+> 	 * will be allocated on demand later on if dst uses SVE.
+> 	 * For consistency, also clear TIF_SVE here: this could be done
+> 	 * later in copy_process(), but to avoid tripping up future
+> 	 * maintainers it is best not to leave TIF_SVE and sve_state in
+> 	 * an inconsistent state, even temporarily.
+> 	 */
+
+I'll add this comments.
+
+> 
+> > >+	dst->thread.sve_state = NULL;
+> > >+	clear_tsk_thread_flag(dst, TIF_SVE);
+> 
+> (TIF_SVE should not usually be set in the first place of course, since
+> we are in a fork() or clone() syscall in src.  This may not be true if
+> a task is created using kernel_thread() while running in the context of
+> some user task that entered the kernel due to a trap or syscall --
+> though probably nobody should be doing that.)
+
+Thanks!
+Masa
 
 _______________________________________________
 linux-arm-kernel mailing list
