@@ -2,69 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E6D7C1FD9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 13:14:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AA2BC1FE6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 13:22:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k22DT9kQlAZxL4NmCUa4SOQ1bg0UcfIfOx1e5+A04tI=; b=vA3aG/kol4RfQG
-	Po0enflsDVK2IUtJV+671NcX01h7mNU/S1qHbmr3wMnabdSWzoZlqjfhPD1eeqEmZKuFKC1yx3esa
-	qtjwhwbKFXWmc0QZvK1L0VwuN4bnoT0Ys9Z5NwV8/9KW234YQGMgVhs0xsqpGr0m5uMHlPkg2ie2a
-	WuRvjCW/7TsPmg/65VZ97DUH3INHbXaiUnqMsyKgM7IWZNz0ghqbqLv71JOWq4DcSc2OrB62z0sYS
-	hlhHTTgWOXAfOg3XmHj3oZb6dhIHjyMD8Ifex3w3hCbGbuQyDRSUkSQisXQaJpb4RN4Az+RxfQSdg
-	MGzHCsG1d0Lb+U6pqYSA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=a2Yd3usEjHkm5wlYxh2rr8Ds4Cd1R00dZfzkSu6X6Uo=; b=bMCaoKt8XRyvHx
+	s0R7oZWAceF5lbuAbNXv4rGBOZD82td1PoKX6easSbp0UGj2jqaVf8C7QDJ1eZbJ47IdlENiv92Pf
+	Cq+wcq8OW9Z3PB0AA/mvlJ8woe2jcCiyxi0g52WfxKQGrHIwm/mCB+9FG78uT+iwoq+67rpzhFemL
+	jy1FW9asMroZgFdBoosTT//7ck1VljwvHwasMPz576dcaIGYkPsm4OdEIk+ZYdvjEt0AMz/OtuS1J
+	mOiJCTy2mnWKlwW5wBB6nCShWRRmnO5rtlMWe8/4MNHeYcM3W9ysRC9xT/DDhfqVdDTaf7zTPRsPf
+	VknDSLxQgwP1S97A+yzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEtdY-00052J-Fx; Mon, 30 Sep 2019 11:14:40 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1iEtkk-00083z-OY; Mon, 30 Sep 2019 11:22:06 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEtdN-00051T-CI
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 11:14:31 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id DDB6620274;
- Mon, 30 Sep 2019 13:14:25 +0200 (CEST)
-Received: from [192.168.108.37] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id A199D20187;
- Mon, 30 Sep 2019 13:14:25 +0200 (CEST)
-Subject: Re: France didn't want GSM encryption
-To: Linus Torvalds <torvalds@linux-foundation.org>,
- Pascal Van Leeuwen <pvanleeuwen@verimatrix.com>
-References: <20190925161255.1871-1-ard.biesheuvel@linaro.org>
- <20190925161255.1871-19-ard.biesheuvel@linaro.org>
- <CAHk-=wjYsbxSiV_XKWV3BwGvau_hUvQiQHLOoc7vLUZt0Wqzfw@mail.gmail.com>
- <CH2PR20MB29680F87B32BBF0495720172CA860@CH2PR20MB2968.namprd20.prod.outlook.com>
- <CAHk-=wgR_KsYw2GmZwkG3GmtX6nbyj0LEi7rSqC+uFi3ScTYcw@mail.gmail.com>
- <MN2PR20MB297317D9870A3B93B5E506C9CA810@MN2PR20MB2973.namprd20.prod.outlook.com>
- <CAHk-=wjr1w7x9Rjre_ALnDLASYNjsEHxu6VJpk4eUwZXN0ntqw@mail.gmail.com>
- <MN2PR20MB2973A696B92A8C5A74A738F1CA810@MN2PR20MB2973.namprd20.prod.outlook.com>
- <CAHk-=wj9BSMzoDD31R-ymjGpkpt0u-ndX6+p0ZWsrJFDTAN+zg@mail.gmail.com>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <3e5347a2-9aa7-bffb-2343-42eda87a6c83@free.fr>
-Date: Mon, 30 Sep 2019 13:14:24 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iEtkY-00083g-0O
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 11:21:55 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C846B206BB;
+ Mon, 30 Sep 2019 11:21:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1569842512;
+ bh=XK2t7THQT0Mdaq4LrhC1eZVsJhx+lzPpETJg3foBo1I=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=TEydkTneGLf8RUEFEfjmnOyBlP3MImuHanTAhl+tQwOEn501QUJzvi49Sc0W45HZr
+ 4d4iMCQEalm8gNu+VeNVriBG9rIQD4pgRbHY2hRD4Jyhrw9SCBQ0J4iSU6wJACj5+s
+ CVLbEI8jJQXyB/PuqaaidGhARXSNVVnr72jEzaL8=
+Date: Mon, 30 Sep 2019 12:21:48 +0100
+From: Will Deacon <will@kernel.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH 0/4] iommu/arm-smmu: Remove arm_smmu_flush_ops
+Message-ID: <20190930112148.5ismf35ph22hl75z@willie-the-truck>
+References: <cover.1568820087.git.robin.murphy@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <CAHk-=wj9BSMzoDD31R-ymjGpkpt0u-ndX6+p0ZWsrJFDTAN+zg@mail.gmail.com>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Mon Sep 30 13:14:25 2019 +0200 (CEST)
+Content-Disposition: inline
+In-Reply-To: <cover.1568820087.git.robin.murphy@arm.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_041429_564825_81EED645 
-X-CRM114-Status: GOOD (  10.50  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190930_042154_072571_EDAD75DD 
+X-CRM114-Status: UNSURE (   8.56  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,68 +77,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: iommu@lists.linux-foundation.org, joro@8bytes.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[ Trimming recipients list ]
+On Wed, Sep 18, 2019 at 05:17:47PM +0100, Robin Murphy wrote:
+> Off the back of Will's iommu_flush_ops work, here's an initial followup
+> to replace the temporary solution in arm-smmu with a full conversion.
+> Removing teh extra layer of indirection should generally make things a
+> good bit more efficient, and rather more readable to boot.
 
-On 27/09/2019 18:23, Linus Torvalds wrote:
+Thanks, I'll queue this for 5.5.
 
-> It's not the crypto engine that is part of the untrusted hardware.
-> It's the box itself, and the manufacturer, and you having to trust
-> that the manufacturer didn't set up some magic knocking sequence to
-> disable the encryption.
-> 
-> Maybe the company that makes them is trying to do a good job. But
-> maybe they are based in a country that has laws that require
-> backdoors.
-> 
-> Say, France. There's a long long history of that kind of thing.
-> 
-> It's all to "fight terrorism", but hey, a little industrial espionage
-> is good too, isn't it? So let's just disable GSM encryption based on
-> geographic locale and local regulation, shall we.
-> 
-> Yeah, yeah, GSM encryption wasn't all that strong to begin with, but
-> it was apparently strong enough that France didn't want it.
-
-Two statements above have raised at least one of my eyebrows.
-
-1) France has laws that require backdoors.
-
-2) France did not want GSM encryption.
-
-
-The following article claims that it was the British who demanded that
-A5/1 be weakened (not the algorithm, just the key size; which is what
-the USgov did in the 90s).
-
-https://www.aftenposten.no/verden/i/Olkl/Sources-We-were-pressured-to-weaken-the-mobile-security-in-the-80s
-
-
-Additional references for myself
-
-https://lwn.net/Articles/368861/
-https://en.wikipedia.org/wiki/Export_of_cryptography_from_the_United_States
-https://gsmmap.org/assets/pdfs/gsmmap.org-country_report-France-2017-06.pdf
-https://gsmmap.org/assets/pdfs/gsmmap.org-country_report-France-2018-06.pdf
-https://gsmmap.org/assets/pdfs/gsmmap.org-country_report-France-2019-08.pdf
-
-
-As for your first claim, can you provide more information, so that I could
-locate the law(s) in question? (Year the law was discussed, for example.)
-
-I've seen a few propositions ("projet de loi") but none(?) have made it into
-actual law, as far as I'm aware.
-
-https://www.nextinpact.com/news/98039-loi-numerique-nkm-veut-backdoor-dans-chaque-materiel.htm
-https://www.nextinpact.com/news/107546-lamendement-anti-huawei-porte-pour-backdoors-renseignement-francais.htm
-
-Regards.
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
