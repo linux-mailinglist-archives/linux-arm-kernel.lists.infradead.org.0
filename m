@@ -2,58 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CF72C236F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 16:37:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57CC9C2380
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 16:40:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eWL3N4QmXgZz+XFgqIJss+ra6eFEpQhAi+df7ZsjtM8=; b=sF6aDVljkX2VC8
-	NyTVPzhuoKlh69YhZ2Iekxwwb3Aep/ocxtgZpmvu2tNn2amlPiLlcoMd79yEzw1YBazM+KiSMloeD
-	Ck7NvtZpCO5LrV0E2TtLdCl81P0lXOiI3rivLVt256YsyA3bwhAxtOh3vc7Pk5Fabx9j6RB2Gq2LR
-	v6bCtM8k2ODce23Mlu1maGHTpPgrkm6XUZXJDUq+P7Wb2gBzDCUtB1t9KffJ64wz2vrk3qLFJNmtF
-	NLuSNVK3OSjjKouEkylzvKNq3kgUuRCsOn8qP9AluiZE4ZQDc0uvO3crkHE0FzUFZI/of/fwosm89
-	ITcTzWBxqjRoIl4uYFOQ==;
+	List-Owner; bh=gesRFFxerXozEuiom+BJk/ZRT0lI6uAoFthE9T3bh94=; b=PoXY7xoU4bq8el
+	XbESh6b0pJdrTFwPl2TyN2nNKv7Dr/3b4Jz37UKnduAF3tv7ob6O3/jT/qDV2/AvVvrDBOiTX6Hu6
+	KZ+vlfOOR/7PVyWNOWO0PpTqv5k4Y5s6Wg1XjdxoauIKi3bkTgt0P78xuiZEi90UNOVJc7X5kNpoQ
+	Yb49EfjPyoi5lA9z9wGrs1AIRzgC2LsxvPUtAb9Gt/eMd+Z//B+udzFUVRQz6Fe9gvq2zwyNRJO/J
+	y+4aOY7HMdfecwrs2g+m3HLNB/LJR0OjbsPfO9oLXwjlESg3hY1Y9fQAh9aZUS8oJD+d4aJYEqUuS
+	b8+5tESCSDD/VtWe+Xtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEwne-0007QZ-2K; Mon, 30 Sep 2019 14:37:18 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEwnQ-0007OK-Co
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 14:37:06 +0000
-Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 5BFA948E40CC6B5FE5AE;
- Mon, 30 Sep 2019 22:36:58 +0800 (CST)
-Received: from localhost.localdomain (10.67.212.75) by
- DGGEMS402-HUB.china.huawei.com (10.3.19.202) with Microsoft SMTP Server id
- 14.3.439.0; Mon, 30 Sep 2019 22:36:50 +0800
-From: John Garry <john.garry@huawei.com>
-To: <lorenzo.pieralisi@arm.com>, <guohanjun@huawei.com>,
- <sudeep.holla@arm.com>, <robin.murphy@arm.com>, <mark.rutland@arm.com>,
- <will@kernel.org>
-Subject: [RFC PATCH 6/6] ACPI/IORT: Drop code to set the PMCG software-defined
- model
-Date: Mon, 30 Sep 2019 22:33:51 +0800
-Message-ID: <1569854031-237636-7-git-send-email-john.garry@huawei.com>
-X-Mailer: git-send-email 2.8.1
-In-Reply-To: <1569854031-237636-1-git-send-email-john.garry@huawei.com>
-References: <1569854031-237636-1-git-send-email-john.garry@huawei.com>
+	id 1iEwqJ-0000pH-Nc; Mon, 30 Sep 2019 14:40:03 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iEwq5-0000oJ-NU
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 14:39:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id ACB0428;
+ Mon, 30 Sep 2019 07:39:47 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A963B3F706;
+ Mon, 30 Sep 2019 07:39:46 -0700 (PDT)
+Date: Mon, 30 Sep 2019 15:39:41 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Grzegorz Jaszczyk <jaz@semihalf.com>
+Subject: Re: [PATCH v2] PCI: aardvark: fix big endian support
+Message-ID: <20190930143941.GA3744@e121166-lin.cambridge.arm.com>
+References: <1563279127-30678-1-git-send-email-jaz@semihalf.com>
+ <CAH76GKMZy7z05Gc9HVDUkpM04+tXMa8xEEMBWMQ7Zx1Bt_B0xQ@mail.gmail.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.67.212.75]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <CAH76GKMZy7z05Gc9HVDUkpM04+tXMa8xEEMBWMQ7Zx1Bt_B0xQ@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_073704_604928_216FE01D 
-X-CRM114-Status: GOOD (  14.94  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190930_073949_807883_CD3038DA 
+X-CRM114-Status: GOOD (  17.89  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -66,116 +61,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nleeder@codeaurora.org, John Garry <john.garry@huawei.com>,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
- shameerali.kolothum.thodi@huawei.com, linuxarm@huawei.com,
- iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org,
- lenb@kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pci@vger.kernel.org, Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, Marcin Wojtas <mw@semihalf.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that we can identify a PMCG implementation from the parent SMMUv3
-IIDR, drop all the code to match based on the ACPI OEM ID.
-
-Signed-off-by: John Garry <john.garry@huawei.com>
----
- drivers/acpi/arm64/iort.c | 35 +----------------------------------
- include/linux/acpi_iort.h |  8 --------
- 2 files changed, 1 insertion(+), 42 deletions(-)
-
-diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
-index 0b687520c3e7..d04888cb8cff 100644
---- a/drivers/acpi/arm64/iort.c
-+++ b/drivers/acpi/arm64/iort.c
-@@ -1377,27 +1377,6 @@ static void __init arm_smmu_v3_pmcg_init_resources(struct resource *res,
- 				       ACPI_EDGE_SENSITIVE, &res[2]);
- }
- 
--static struct acpi_platform_list pmcg_plat_info[] __initdata = {
--	/* HiSilicon Hip08 Platform */
--	{"HISI  ", "HIP08   ", 0, ACPI_SIG_IORT, greater_than_or_equal,
--	 "Erratum #162001800", IORT_SMMU_V3_PMCG_HISI_HIP08},
--	{ }
--};
--
--static int __init arm_smmu_v3_pmcg_add_platdata(struct platform_device *pdev)
--{
--	u32 model;
--	int idx;
--
--	idx = acpi_match_platform_list(pmcg_plat_info);
--	if (idx >= 0)
--		model = pmcg_plat_info[idx].data;
--	else
--		model = IORT_SMMU_V3_PMCG_GENERIC;
--
--	return platform_device_add_data(pdev, &model, sizeof(model));
--}
--
- struct iort_dev_config {
- 	const char *name;
- 	int (*dev_init)(struct acpi_iort_node *node);
-@@ -1408,7 +1387,6 @@ struct iort_dev_config {
- 				     struct acpi_iort_node *node);
- 	int (*dev_set_proximity)(struct device *dev,
- 				    struct acpi_iort_node *node);
--	int (*dev_add_platdata)(struct platform_device *pdev);
- };
- 
- static const struct iort_dev_config iort_arm_smmu_v3_cfg __initconst = {
-@@ -1430,7 +1408,6 @@ static const struct iort_dev_config iort_arm_smmu_v3_pmcg_cfg __initconst = {
- 	.name = "arm-smmu-v3-pmcg",
- 	.dev_count_resources = arm_smmu_v3_pmcg_count_resources,
- 	.dev_init_resources = arm_smmu_v3_pmcg_init_resources,
--	.dev_add_platdata = arm_smmu_v3_pmcg_add_platdata,
- };
- 
- static __init const struct iort_dev_config *iort_get_dev_cfg(
-@@ -1494,17 +1471,7 @@ static int __init iort_add_platform_device(struct acpi_iort_node *node,
- 	if (ret)
- 		goto dev_put;
- 
--	/*
--	 * Platform devices based on PMCG nodes uses platform_data to
--	 * pass the hardware model info to the driver. For others, add
--	 * a copy of IORT node pointer to platform_data to be used to
--	 * retrieve IORT data information.
--	 */
--	if (ops->dev_add_platdata)
--		ret = ops->dev_add_platdata(pdev);
--	else
--		ret = platform_device_add_data(pdev, &node, sizeof(node));
--
-+	ret = platform_device_add_data(pdev, &node, sizeof(node));
- 	if (ret)
- 		goto dev_put;
- 
-diff --git a/include/linux/acpi_iort.h b/include/linux/acpi_iort.h
-index 8e7e2ec37f1b..7a8961e6a8bb 100644
---- a/include/linux/acpi_iort.h
-+++ b/include/linux/acpi_iort.h
-@@ -14,14 +14,6 @@
- #define IORT_IRQ_MASK(irq)		(irq & 0xffffffffULL)
- #define IORT_IRQ_TRIGGER_MASK(irq)	((irq >> 32) & 0xffffffffULL)
- 
--/*
-- * PMCG model identifiers for use in smmu pmu driver. Please note
-- * that this is purely for the use of software and has nothing to
-- * do with hardware or with IORT specification.
-- */
--#define IORT_SMMU_V3_PMCG_GENERIC        0x00000000 /* Generic SMMUv3 PMCG */
--#define IORT_SMMU_V3_PMCG_HISI_HIP08     0x00000001 /* HiSilicon HIP08 PMCG */
--
- int iort_register_domain_token(int trans_id, phys_addr_t base,
- 			       struct fwnode_handle *fw_node);
- void iort_deregister_domain_token(int trans_id);
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCBTZXAgMzAsIDIwMTkgYXQgMTA6MTc6MzNBTSArMDIwMCwgR3J6ZWdvcnogSmFzemN6
+eWsgd3JvdGU6Cj4gSGVsbG8sCj4gCj4gSSB3YW50IHRvIGtpbmRseSByZW1pbmQgYWJvdXQgdGhp
+cyBwYXRjaC4KCkkgbmVlZCBUaG9tYXMnIEFDSyBvbiB0aGVzZSBwYXRjaGVzIHRvIG1lcmdlIHRo
+ZW0uCgpUaGFua3MsCkxvcmVuem8KCj4gQmVzdCByZWdhcmRzLAo+IEdyemVnb3J6Cj4gCj4gd3Qu
+LCAxNiBsaXAgMjAxOSBvIDE0OjEyIEdyemVnb3J6IEphc3pjenlrIDxqYXpAc2VtaWhhbGYuY29t
+PiBuYXBpc2HFgihhKToKPiA+Cj4gPiBJbml0aWFsaXNlIGV2ZXJ5IG5vdC1ieXRlIHdpZGUgZmll
+bGRzIG9mIGVtdWxhdGVkIHBjaSBicmlkZ2UgY29uZmlnCj4gPiBzcGFjZSB3aXRoIHByb3BlciBj
+cHVfdG9fbGUqIG1hY3JvLiBUaGlzIGlzIHJlcXVpcmVkIHNpbmNlIHRoZSBzdHJ1Y3R1cmUKPiA+
+IGRlc2NyaWJpbmcgY29uZmlnIHNwYWNlIG9mIGVtdWxhdGVkIGJyaWRnZSBhc3N1bWVzIGxpdHRs
+ZS1lbmRpYW4KPiA+IGNvbnZlbnRpb24uCj4gPgo+ID4gU2lnbmVkLW9mZi1ieTogR3J6ZWdvcnog
+SmFzemN6eWsgPGphekBzZW1paGFsZi5jb20+Cj4gPiAtLS0KPiA+IHYxLT52Mgo+ID4gLSBhZGQg
+bWlzc2luZyBjcHVfdG9fbGUzMiBmb3IgY2xhc3NfcmV2aXNvbiBhc3NpZ25tZW50IChpc3N1ZXMg
+Zm91bmQgYnkKPiA+IFRob21hcyBQZXRhenpvbmkgYW5kIGFsc28gZGV0ZWN0ZWQgYnkgU3BhcnNl
+IHRvb2wpLgo+ID4KPiA+ICBkcml2ZXJzL3BjaS9jb250cm9sbGVyL3BjaS1hYXJkdmFyay5jIHwg
+MTIgKysrKysrKy0tLS0tCj4gPiAgMSBmaWxlIGNoYW5nZWQsIDcgaW5zZXJ0aW9ucygrKSwgNSBk
+ZWxldGlvbnMoLSkKPiA+Cj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9wY2kvY29udHJvbGxlci9w
+Y2ktYWFyZHZhcmsuYyBiL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNpLWFhcmR2YXJrLmMKPiA+
+IGluZGV4IDEzNGUwMzAuLjE3OGU5MmYgMTAwNjQ0Cj4gPiAtLS0gYS9kcml2ZXJzL3BjaS9jb250
+cm9sbGVyL3BjaS1hYXJkdmFyay5jCj4gPiArKysgYi9kcml2ZXJzL3BjaS9jb250cm9sbGVyL3Bj
+aS1hYXJkdmFyay5jCj4gPiBAQCAtNDc5LDE4ICs0NzksMjAgQEAgc3RhdGljIHZvaWQgYWR2a19z
+d19wY2lfYnJpZGdlX2luaXQoc3RydWN0IGFkdmtfcGNpZSAqcGNpZSkKPiA+ICB7Cj4gPiAgICAg
+ICAgIHN0cnVjdCBwY2lfYnJpZGdlX2VtdWwgKmJyaWRnZSA9ICZwY2llLT5icmlkZ2U7Cj4gPgo+
+ID4gLSAgICAgICBicmlkZ2UtPmNvbmYudmVuZG9yID0gYWR2a19yZWFkbChwY2llLCBQQ0lFX0NP
+UkVfREVWX0lEX1JFRykgJiAweGZmZmY7Cj4gPiAtICAgICAgIGJyaWRnZS0+Y29uZi5kZXZpY2Ug
+PSBhZHZrX3JlYWRsKHBjaWUsIFBDSUVfQ09SRV9ERVZfSURfUkVHKSA+PiAxNjsKPiA+ICsgICAg
+ICAgYnJpZGdlLT5jb25mLnZlbmRvciA9Cj4gPiArICAgICAgICAgICAgICAgY3B1X3RvX2xlMTYo
+YWR2a19yZWFkbChwY2llLCBQQ0lFX0NPUkVfREVWX0lEX1JFRykgJiAweGZmZmYpOwo+ID4gKyAg
+ICAgICBicmlkZ2UtPmNvbmYuZGV2aWNlID0KPiA+ICsgICAgICAgICAgICAgICBjcHVfdG9fbGUx
+NihhZHZrX3JlYWRsKHBjaWUsIFBDSUVfQ09SRV9ERVZfSURfUkVHKSA+PiAxNik7Cj4gPiAgICAg
+ICAgIGJyaWRnZS0+Y29uZi5jbGFzc19yZXZpc2lvbiA9Cj4gPiAtICAgICAgICAgICAgICAgYWR2
+a19yZWFkbChwY2llLCBQQ0lFX0NPUkVfREVWX1JFVl9SRUcpICYgMHhmZjsKPiA+ICsgICAgICAg
+ICAgICAgICBjcHVfdG9fbGUzMihhZHZrX3JlYWRsKHBjaWUsIFBDSUVfQ09SRV9ERVZfUkVWX1JF
+RykgJiAweGZmKTsKPiA+Cj4gPiAgICAgICAgIC8qIFN1cHBvcnQgMzIgYml0cyBJL08gYWRkcmVz
+c2luZyAqLwo+ID4gICAgICAgICBicmlkZ2UtPmNvbmYuaW9iYXNlID0gUENJX0lPX1JBTkdFX1RZ
+UEVfMzI7Cj4gPiAgICAgICAgIGJyaWRnZS0+Y29uZi5pb2xpbWl0ID0gUENJX0lPX1JBTkdFX1RZ
+UEVfMzI7Cj4gPgo+ID4gICAgICAgICAvKiBTdXBwb3J0IDY0IGJpdHMgbWVtb3J5IHByZWYgKi8K
+PiA+IC0gICAgICAgYnJpZGdlLT5jb25mLnByZWZfbWVtX2Jhc2UgPSBQQ0lfUFJFRl9SQU5HRV9U
+WVBFXzY0Owo+ID4gLSAgICAgICBicmlkZ2UtPmNvbmYucHJlZl9tZW1fbGltaXQgPSBQQ0lfUFJF
+Rl9SQU5HRV9UWVBFXzY0Owo+ID4gKyAgICAgICBicmlkZ2UtPmNvbmYucHJlZl9tZW1fYmFzZSA9
+IGNwdV90b19sZTE2KFBDSV9QUkVGX1JBTkdFX1RZUEVfNjQpOwo+ID4gKyAgICAgICBicmlkZ2Ut
+PmNvbmYucHJlZl9tZW1fbGltaXQgPSBjcHVfdG9fbGUxNihQQ0lfUFJFRl9SQU5HRV9UWVBFXzY0
+KTsKPiA+Cj4gPiAgICAgICAgIC8qIFN1cHBvcnQgaW50ZXJydXB0IEEgZm9yIE1TSSBmZWF0dXJl
+ICovCj4gPiAgICAgICAgIGJyaWRnZS0+Y29uZi5pbnRwaW4gPSBQQ0lFX0NPUkVfSU5UX0FfQVNT
+RVJUX0VOQUJMRTsKPiA+IC0tCj4gPiAyLjcuNAo+ID4KCl9fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cmxp
+bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
