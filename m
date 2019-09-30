@@ -2,91 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FDC6C1D19
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 10:24:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3EEBC1D25
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 10:27:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ri6hyf2l+sGVhvIFLK9KuY8anqb0iKf81irELPduPB0=; b=PmtviYOrOFeM4sU/bN7ADPqthm
-	ZCdDZeiCBQYYciL5rGOE/XmQ+n+a0zMVXww62v/2z1rXj4QiQ9a0cdlmS75sYDAw8ok6rtm97E10W
-	32yKHM1Mnkl+sUxP/fkUT4zf/6k/3xYt6F0Lv9DNeL0Mqy26fUQrKflPrquvi9hDNLbpjLxSWr0FT
-	2ekU7c+wdFG/gSW90BmbbjjFg6AXj6juu/IdgakhGlrFAmhBFpPjtFAlO88Y9kKrUWmPHR00JothF
-	PR7uTBbaX2Pf16cHnvr8EQpW2nVPuBewEDxhRNJFBMTGQE+1i8gimNH8r1McyMgJYyidhrggpZNpo
-	1s8LKztQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=o4ZpL8U21I+Aqj4kb39R0JrvUlLqpQ0NTTZ7h4ApaiM=; b=tCD1nbJzgJLCHf
+	sTWQvDoQS6u8DDq0qOOcVCB/T5wDYoDgxu2y8ZB8HBPUIrKkfpUOKZpt9VAzhkbn0Bi0yVnxhEtVj
+	IORceHbWOx/YFMKIHAsbu82sl5JvbKaJhYyU3JIG7X/2He4HwT4h1R6GI7HNZj0VS7RfFrV+/YVSi
+	Cc2mg5FgXGwobKtWuvjfhVQJQaozWhQLQ5JD3CPJnwFY7DCmra12Gb7Jun2EL1w242kLExCHddqLZ
+	L8qQrIzgg9SWLFYdm1j911PpuixzmfYUlqpYcOC7UGEZpNjRJEFto6cIQeBTiQEEnitivbf4IJ2rF
+	8b8bvDt8j9XafDZeJ8dA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEqyX-0002TO-QP; Mon, 30 Sep 2019 08:24:09 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1iEr1n-0004GQ-H2; Mon, 30 Sep 2019 08:27:31 +0000
+Received: from conssluserg-01.nifty.com ([210.131.2.80])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEqwx-0001EG-No
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 08:22:33 +0000
-Received: by mail-wm1-x341.google.com with SMTP id m18so11661405wmc.1
+ id 1iEr1c-0004Fi-9O
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 08:27:22 +0000
+Received: from mail-vs1-f51.google.com (mail-vs1-f51.google.com
+ [209.85.217.51]) (authenticated)
+ by conssluserg-01.nifty.com with ESMTP id x8U8R4II012807
+ for <linux-arm-kernel@lists.infradead.org>; Mon, 30 Sep 2019 17:27:04 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-01.nifty.com x8U8R4II012807
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1569832025;
+ bh=S3XJDoeipww5RQbEvSMupd7ozkKy8JwBydWHSl7iEd8=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=UMLkZkxecf6GdVqFNZtK3I5UzfFgRPItb95ROKa80T/3sa/9Eiehes5+KNghNotEA
+ EbgDc04gztLox5jrIiJb0xhh3XcQuNj2v2wueRxKc0vYzuEgwRO1fVwianL73Yc8mG
+ mx17qPyFl4wPz8U0ssJUkboAE/+Z000MpXUOwO3yzN48jY3V/1UcmaxUoJZ9GCOSPV
+ gocNk+Rs8IU5bi9t0clQ0Ac8DCi0W0UdN6kIaI+nci9GIbK+S2fsYZvaWzwABsnX6F
+ fgWOaKo41QeSGMN9AdX2jaGBcZd9QCqmVEQNzDr/x1EJv+j7F4q7jZzN0OMiw5tawy
+ wFP1flpOBSYxA==
+X-Nifty-SrcIP: [209.85.217.51]
+Received: by mail-vs1-f51.google.com with SMTP id b123so6178259vsb.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Sep 2019 01:22:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=ShSdTe5Qp8z7m+jUtvQKDuCvb0VtDo609FCfYvndEno=;
- b=exPnKZEYefJsNZMJjFnNmAXEv7dbG77oiHob/ywzmo4aeZfj7pFMylI2JIvFMtFjgz
- B0Ww5uxtxnbhyX3kcs03yySNcCTd2yQp9hgO5sZPs+M1dBZRpgnUz0HuKuoFHAyzNdAT
- Ay/W7zajAfCPVhaes66qjL57Qa8KBqYrGfmMm8viotFX+RiSbbh1Wh7h/S635yvrnk1X
- inAQ83q/tdXfSyKb8MedQCC2lK2kaCriTxVwcMqt/XG0ceO3g6NjOLaKS9Ao1MsGaQhv
- dwEwQHnevgCD3DOW4dRIx6XbE7NRex1y67oDlTVh4sDKiBaZJ6Mgm/WoPiNbYCId9AQs
- JXxA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=ShSdTe5Qp8z7m+jUtvQKDuCvb0VtDo609FCfYvndEno=;
- b=PrWOdSDbLl3jkkpn68TufdkWHvoi5tdCJZV6rfrFC9cGBlQGJH51U85+u1j8ZSSYdl
- 4zmXd4UdYwtOq4NsfRBy6FE644nveYNnCGphdMiPZxnHdqzNbnBG/BvEkCA7fLa7baOO
- 3+TvO5UkQ9wjNQyqUXPRCZWzazv27Yjcs1uRblLJVZcf7IyjEZeagBf9GcYENxOOEE2l
- 0HMHn8rcRAz4Rux34X9GBI9oWQCuNern9tllOV/DBy3IgbjPAhJ08IZQDLZtVobMut4h
- 48JCHXYTzoOIk+3HHdJqkPa3fQCHRiqbACctzyHE9PSbgbQviFWB6e3T9jDopc2ozz9D
- O4kA==
-X-Gm-Message-State: APjAAAU3NfOuh0m+vpbz9nioXNr8RoJNEi7W5Ob6XXDOv3WP9dw3wO7S
- 06VINXat6oZuTx1xV2AHZAWs2g==
-X-Google-Smtp-Source: APXvYqyIM0BrCVvOADyXCOsoNjMjmm0DeuCYw4kWcFR08dZvDMjsgIDwDmqsdt3YFbfjPrmhjktI9A==
-X-Received: by 2002:a1c:cbcc:: with SMTP id b195mr17236045wmg.80.1569831749974; 
- Mon, 30 Sep 2019 01:22:29 -0700 (PDT)
-Received: from localhost (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id l11sm14198165wmh.34.2019.09.30.01.22.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Sep 2019 01:22:29 -0700 (PDT)
-References: <20190925213528.21515-1-khilman@kernel.org>
- <20190925213528.21515-3-khilman@kernel.org>
- <8936e777-8996-5c7b-ea9d-8e17c8d6c4b1@baylibre.com>
- <7hwodulvu6.fsf@baylibre.com>
- <21eafa69-fe26-2df1-d187-cddfe5b37951@baylibre.com>
-User-agent: mu4e 1.3.3; emacs 26.2
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: linux-amlogic@lists.infradead.org, Kevin Hilman <khilman@baylibre.com>,
- Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH v2 2/2] soc: amlogic: ee-pwrc: ensure driver state maches
- HW state
-In-reply-to: <21eafa69-fe26-2df1-d187-cddfe5b37951@baylibre.com>
-Date: Mon, 30 Sep 2019 10:22:28 +0200
-Message-ID: <1jd0fi19dn.fsf@starbuckisacylon.baylibre.com>
+ Mon, 30 Sep 2019 01:27:04 -0700 (PDT)
+X-Gm-Message-State: APjAAAU2p5hxk5tNlw2VtKpxw0JEKMOErYWwHUetNk5GnYPnKigwVv6x
+ 9v8jJJkGsi4p5dot9zDqD14Ra1seKJP3D5o0wa8=
+X-Google-Smtp-Source: APXvYqyu9o2T0h0WNByn2XriMLNL31isIe26D8AZTWUv/uJaOHyQY1+TN/o45LxvFGamYDgXuIeEO1go3fL594zyVNk=
+X-Received: by 2002:a67:1e87:: with SMTP id e129mr9358134vse.179.1569832023746; 
+ Mon, 30 Sep 2019 01:27:03 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190930055925.25842-1-yamada.masahiro@socionext.com>
+ <CAK8P3a24P7v41TZszjKzoJmhcss5WK-e9fHwUqEqre6FBPJWvw@mail.gmail.com>
+In-Reply-To: <CAK8P3a24P7v41TZszjKzoJmhcss5WK-e9fHwUqEqre6FBPJWvw@mail.gmail.com>
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Date: Mon, 30 Sep 2019 17:26:27 +0900
+X-Gmail-Original-Message-ID: <CAK7LNAS_gbz2Qc8MgXiKRRSSgKse3J-dJ98c4qViuvnyxdAD+Q@mail.gmail.com>
+Message-ID: <CAK7LNAS_gbz2Qc8MgXiKRRSSgKse3J-dJ98c4qViuvnyxdAD+Q@mail.gmail.com>
+Subject: Re: [PATCH] ARM: fix __get_user_check() in case uaccess_* calls are
+ not inlined
+To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_012231_806217_9AEC4C1C 
-X-CRM114-Status: GOOD (  13.98  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190930_012720_653786_CFC901C5 
+X-CRM114-Status: GOOD (  22.06  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ no trust [210.131.2.80 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -101,48 +84,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
+Cc: Vincent Whitchurch <vincent.whitchurch@axis.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ Russell King <linux@armlinux.org.uk>, Stefan Agner <stefan@agner.ch>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Olof Johansson <olof@lixom.net>, Thomas Gleixner <tglx@linutronix.de>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Arnd,
 
-On Fri 27 Sep 2019 at 08:37, Neil Armstrong <narmstrong@baylibre.com> wrote:
-
-> On 26/09/2019 21:08, Kevin Hilman wrote:
->> Neil Armstrong <narmstrong@baylibre.com> writes:
->> 
->>> On 25/09/2019 23:35, Kevin Hilman wrote:
->>>> From: Kevin Hilman <khilman@baylibre.com>
->>>>
->>>> During init, ensure that the driver on/off state as well as clock and
->>>> reset state matches the hardware state.  Do this by always calling the
->>>> drivers 'on' function, and then callling the 'off' function if the
->>>> HW state was initially detected as off.
->> 
->> [...]
->> 
->>> I don't see what you are trying to solve except simplifying the code.
->> 
->> Simplifying the code is a worthwhile goal on its own, but that's not the
->> only thing I'm tring to accomplish.
+On Mon, Sep 30, 2019 at 4:57 PM Arnd Bergmann <arnd@arndb.de> wrote:
 >
-> I still find it ugly to power_on a domain to power it off right afterwards.
-> The issue is with the CCF enable handling which is not in sync with the
-> HW, if you boot with an already enabled clock, it won't be marked enabled
-> in CCF, and it's clearly bad when you want to have a fine-tuned gate state
-> handling.
+> On Mon, Sep 30, 2019 at 8:01 AM Masahiro Yamada
+> <yamada.masahiro@socionext.com> wrote:
+> >
+> > KernelCI reports that bcm2835_defconfig is no longer booting since
+> > commit ac7c3e4ff401 ("compiler: enable CONFIG_OPTIMIZE_INLINING
+> > forcibly"):
+> >
+> >   https://lkml.org/lkml/2019/9/26/825
+> >
+> > I also received a regression report from Nicolas Saenz Julienne:
+> >
+> >   https://lkml.org/lkml/2019/9/27/263
+> >
+> > This problem has cropped up on arch/arm/config/bcm2835_defconfig
+> > because it enables CONFIG_CC_OPTIMIZE_FOR_SIZE. The compiler tends
+> > to prefer not inlining functions with -Os. I was able to reproduce
+> > it with other boards and defconfig files by manually enabling
+> > CONFIG_CC_OPTIMIZE_FOR_SIZE.
+> >
+> > The __get_user_check() specifically uses r0, r1, r2 registers.
+> > So, uaccess_save_and_enable() and uaccess_restore() must be inlined
+> > in order to avoid those registers being overwritten in the callees.
+> >
+> > Prior to commit 9012d011660e ("compiler: allow all arches to enable
+> > CONFIG_OPTIMIZE_INLINING"), the 'inline' marker was always enough for
+> > inlining functions, except on x86.
+> >
+> > Since that commit, all architectures can enable CONFIG_OPTIMIZE_INLINING.
+> > So, __always_inline is now the only guaranteed way of forcible inlining.
+> >
+> > I want to keep as much compiler's freedom as possible about the inlining
+> > decision. So, I changed the function call order instead of adding
+> > __always_inline around.
+> >
+> > Call uaccess_save_and_enable() before assigning the __p ("r0"), and
+> > uaccess_restore() after evacuating the __e ("r0").
+> >
+> > Fixes: 9012d011660e ("compiler: allow all arches to enable CONFIG_OPTIMIZE_INLINING")
+> > Reported-by: "kernelci.org bot" <bot@kernelci.org>
+> > Reported-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> > Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
 >
+> Acked-by: Arnd Bergmann <arnd@arndb.de>
+>
+> The patch looks reasonable to me, but I think we should also revert
+> commit ac7c3e4ff401 ("compiler: enable CONFIG_OPTIMIZE_INLINING
+> forcibly") in mainline for now, as it caused this to happen all the time rather
+> than only for users that expliticly select CONFIG_OPTIMIZE_INLINING.
+>
+> We have had other bug reports starting with that commit that run into
+> similar issues, and I'm sure there are more of them. I don't mind having it
+> in linux-next for a while long, but I think it was premature to have it merged
+> into mainline.
+>
+>         Arnd
 
-CCF should disable unused clock so, in theory, you should not have to
-call enable() then disable() to get things in sync.
 
-I suppose the clock in question has the flag CLK_IGNORE_UNUSED (one of
-the gates) ?
+Hmm, I know you are testing randconfig build tests,
+but how many people are testing the kernel boot in linux-next?
 
-If the CLK_INGORE_UNUSED is becoming a problem, it would be better to
-fix the clock tree rather than adding quirks in consumers.
+People and kernelci started to report the issue immediately
+after it landed in the mainline...
+
+
+-- 
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
