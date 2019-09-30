@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14BACC25CB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 19:35:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13D73C25CC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 19:36:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z97yHBuJKmiB5IOO2Otqdvil8TxWXkaj97W960mtTWs=; b=JVPtRreX4sZK/E
-	RcFfwX7EgwhYpmXhJlkVKXeBL+5a5qnJGIduggBFMsnMTTlOeBwUHjxfLKsVeMQLjt6fhZGi/QNHL
-	Y4YbJD0LVFbKB+JXkPtRUH2V5R63qf+K4ItYpgzq8RKTmHhPNdP4E0eglru2imveXjsWtmeR6QbmW
-	mzIPuoq/1bMA65TbrT4HHI5anqebTxJlnxTCrq9JF0VkzEIb4bx5WnnVtz2/sFUQU5fQJ8PT0K8CL
-	HCil32aHyNKxeCHJBv5IAyMcyYLTO4GToaSS8158ua8qfwk3M/QLYS68y9VrhgB9c4cIM4N5lFb20
-	mqsSeASlOhsnmoQ2XVNQ==;
+	List-Owner; bh=Ijz5zM0y1/otGy8OG2IwqbgN7Bde0WMisWkY9Uveie4=; b=Y79T2ryvmCjGGZ
+	1lbtkH1QneGaYHMgVMlkZZQRMDoqHnDbBGS75AMpK+tVSfUz7+XAiN/Ft3L9t4okwAUbaI3L7fer+
+	DedHXzeGpUhvDp9v3Ti9Qlaks5f8fFhne4eJSFJIzTH0Ar1qTPewjEdVoyVKszmNtakvJeYR2XzCO
+	L+UYdufydXQMa2b39Mx6MC/dMkhkTsJttn4eKPUndYkampUnMbJBWHLJSL+g9oLGfbUcokkuH2M9L
+	mKBqT1DLPgq4bxVKnf8vgfezKdpQ76h0+WDm1u2VgJgiQZftlshM2QMrXZwrlqtMxVdM1NIgjCg07
+	rmXX7NxbPHdS8z4cJCtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEza3-0001x5-JP; Mon, 30 Sep 2019 17:35:27 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1iEzbI-0002Wb-QJ; Mon, 30 Sep 2019 17:36:44 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEzZt-0001wS-Sn
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 17:35:19 +0000
-Received: by mail-io1-xd42.google.com with SMTP id z19so40605678ior.0
+ id 1iEzb8-0002W4-T2
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 17:36:36 +0000
+Received: from mail-qk1-f178.google.com (mail-qk1-f178.google.com
+ [209.85.222.178])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 742B2224D6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Sep 2019 10:35:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=i3dwIE3HGnY2ji6BL2lgrdHCeKt8hwvNYITijQeMpag=;
- b=izfFFobeeAuaCN1MYV2cqTTC9SJ2B7X/u+g6CPl+hSPnOUnRbP1/BCohkPY00SKjOS
- ngbgS5eggV73d5N3fvNsmyx4AdZ9BelpEyLZgIOQWjYZ0H/t1h9hwcopTh8luMLUlkAD
- UvFLMMtPQWZq9ybp6G3XRQa3ba3kFxGlWt+PhVFEisFiy/ivTvQCpq4WDb2zRJWntAjY
- RnpfLShbUA0uQ0c6YpBTgnszBbNpKq4tSWd29vid/pr0QWpkPNtc9dlZZOHIWHtbr1I4
- 64grZ5gAZJhw0mPO812L2fmFF+Kgqu62rcwu8tU01ioPJdvJ0r7FYafvOLbDi1a734kX
- h+0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=i3dwIE3HGnY2ji6BL2lgrdHCeKt8hwvNYITijQeMpag=;
- b=VsZ7dX/kdfl1SRIab7Gc38L84CRzJ71odqtQ0eoF+JLJh9Uy0mVmUGxC0Lqa5MXKvm
- MVN9P0F2QoXchdLQRjrXGkLt+bXAp0E2PQWFdKxXhCa6KsrheuWS+3tuEXotOikf2oat
- e8VcstNH4Ey0j8HwY679dOHCwSruSASJmbgp9dQ8Hh/op69zPlFwmVFX6rgKsdBZ9Yz4
- WaiYwfLUt7YBf6ZZqwpqoAFuhO+ykgxUTYOxk7aTC/Wm08CJbNEKZulkZM9XtgU2NWEW
- stqCHy9/ScNGadbh6gxQkQDcRa/tsh6lb19iMnpyMG+ny/RkATaKlUrGCMTExiy+3wTt
- wf3Q==
-X-Gm-Message-State: APjAAAUHga5wH6LM8JlgZTTRvlzmrgrPB9pckpFVBHBn2jccWwzx0Xk/
- fWXZ0yuB9LxAR7lFUSl46wM6xbDxNG2XrZKaK+c/Yw==
-X-Google-Smtp-Source: APXvYqyXj8WDjHDG8Ly151dv7OzUri8sYlz4HJQ8uFbvR+QF/bAefpHZooDpQz+OMMR2j4tK+jKhsia3WuUY762LNpQ=
-X-Received: by 2002:a92:4799:: with SMTP id e25mr22126652ilk.72.1569864912988; 
- Mon, 30 Sep 2019 10:35:12 -0700 (PDT)
+ Mon, 30 Sep 2019 17:36:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1569864994;
+ bh=zv4Uxz31XKM+MyjvtqcSjJlGgyTtf32vJB/lTpIHbDc=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=cHvJD06PMIzqUbJ1zlwF5MFgINfQZlmbqEnm1VNd3xI6UtbILrXYDEjoSI8dt+1kZ
+ w+Bv83P7KaVeJBX2+40Xj6QI0uniL0cbCStECLik8uA4qNOitQ/w73EsvrP8us/hzd
+ 7jx82UdGVO80vcwpjzgoi5dUMY34PYIJZwUPV8ss=
+Received: by mail-qk1-f178.google.com with SMTP id u186so8538262qkc.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 30 Sep 2019 10:36:34 -0700 (PDT)
+X-Gm-Message-State: APjAAAVEvu3ZN7+Ex5OXkhrqKzzHw0BMOatYvcD5OeqWnWDske/T4l2p
+ +idKbNB5mjtyJVkeKjxCRMWDyrQLjPVz6RfL1w==
+X-Google-Smtp-Source: APXvYqxLrOssw9YrboppxecvjeDTysPUyAiqArm1DBIXe/0oTUVaz6AFg2izbbt7oMclPdk29NzrflIdhzCHlxZ4hB8=
+X-Received: by 2002:a05:620a:12d5:: with SMTP id
+ e21mr1318692qkl.152.1569864993590; 
+ Mon, 30 Sep 2019 10:36:33 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190911183632.4317-1-krzk@kernel.org>
- <CAK8P3a2pBV+fh0rHitZ30Zz61QNRLfNSD-nhnzq4ZtxSh66F1Q@mail.gmail.com>
- <CAJKOXPcOSvc2DfoN+7Tca=t5dSm3RcKqmm06AfR0PAVBeY=GvQ@mail.gmail.com>
- <20190929175134.fsieffurfdiqhpj2@localhost> <20190930080217.GA23709@pi3>
-In-Reply-To: <20190930080217.GA23709@pi3>
-From: Olof Johansson <olof@lixom.net>
-Date: Mon, 30 Sep 2019 10:35:01 -0700
-Message-ID: <CAOesGMi2w9vci+kU=WFHJJBqgz9BM5RJBzqwwrR7k=275w4Tyg@mail.gmail.com>
-Subject: Re: [GIT PULL 1/2] arm64: dts: exynos: Pull for v5.4
-To: Krzysztof Kozlowski <krzk@kernel.org>
+References: <20190924214630.12817-1-robh@kernel.org>
+ <20190924214630.12817-3-robh@kernel.org>
+ <20190925102423.GR9720@e119886-lin.cambridge.arm.com>
+ <CAL_JsqKN709cOLtDLdKXmDzeNLYtGekMT2BiZic4x45UopenwA@mail.gmail.com>
+ <20190930151346.GD42880@e119886-lin.cambridge.arm.com>
+In-Reply-To: <20190930151346.GD42880@e119886-lin.cambridge.arm.com>
+From: Rob Herring <robh@kernel.org>
+Date: Mon, 30 Sep 2019 12:36:22 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+3S7+E+a5E122aR7s0a9SxkMyxw2t=OkO4pS5QUR+0CA@mail.gmail.com>
+Message-ID: <CAL_Jsq+3S7+E+a5E122aR7s0a9SxkMyxw2t=OkO4pS5QUR+0CA@mail.gmail.com>
+Subject: Re: [PATCH 02/11] PCI: altera: Use pci_parse_request_of_pci_ranges()
+To: Andrew Murray <andrew.murray@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_103517_961416_38FFD49E 
-X-CRM114-Status: GOOD (  24.66  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190930_103635_590095_26B2ADB3 
+X-CRM114-Status: GOOD (  26.22  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,77 +90,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>,
- "moderated list:ARM/SAMSUNG EXYNOS ARM ARCHITECTURES"
- <linux-samsung-soc@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- SoC Team <soc@kernel.org>, arm-soc <arm@kernel.org>,
- Kukjin Kim <kgene@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ PCI <linux-pci@vger.kernel.org>, rfi@lists.rocketboards.org,
+ Bjorn Helgaas <bhelgaas@google.com>, Ley Foon Tan <lftan@altera.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 30, 2019 at 1:02 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+On Mon, Sep 30, 2019 at 10:13 AM Andrew Murray <andrew.murray@arm.com> wrote:
 >
-> On Sun, Sep 29, 2019 at 10:51:34AM -0700, Olof Johansson wrote:
-> > Hi,
+> On Wed, Sep 25, 2019 at 07:33:35AM -0500, Rob Herring wrote:
+> > On Wed, Sep 25, 2019 at 5:24 AM Andrew Murray <andrew.murray@arm.com> wrote:
+> > >
+> > > On Tue, Sep 24, 2019 at 04:46:21PM -0500, Rob Herring wrote:
+> > > > Convert altera host bridge to use the common
+> > > > pci_parse_request_of_pci_ranges().
+> > > >
+> > > > Cc: Ley Foon Tan <lftan@altera.com>
+> > > > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> > > > Cc: Bjorn Helgaas <bhelgaas@google.com>
+> > > > Cc: rfi@lists.rocketboards.org
+> > > > Signed-off-by: Rob Herring <robh@kernel.org>
+> > > > ---
 > >
-> > On Thu, Sep 12, 2019 at 08:32:47AM +0200, Krzysztof Kozlowski wrote:
-> > > On Wed, 11 Sep 2019 at 23:07, Arnd Bergmann <arnd@arndb.de> wrote:
+> > > > @@ -833,9 +800,8 @@ static int altera_pcie_probe(struct platform_device *pdev)
+> > > >               return ret;
+> > > >       }
 > > > >
-> > > > On Wed, Sep 11, 2019 at 8:36 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> > > > >
-> > > > > Hi,
-> > > > >
-> > > > > Unfortunately the patches were applied right after closing the linux-next.
-> > > >
-> > > > Hi Krzysztof,
-> > > >
-> > > > I took a look at these and am not convinced this is right:
-> > > >
-> > > > > 1. Fix boot of Exynos7 due to wrong address/size of memory node,
-> > > >
-> > > > The current state is clearly broken and a fix is needed, but
-> > > > I'm not sure this is the right fix. Why do you have 32-bit physical
-> > > > addressing on a 64-bit chip? I looked at commit ef72171b3621
-> > > > that introduced it, and it seems it would be better to just
-> > > > revert back to 64-bit addresses.
+> > > > -     INIT_LIST_HEAD(&pcie->resources);
+> > > > -
+> > > > -     ret = altera_pcie_parse_request_of_pci_ranges(pcie);
+> > > > +     ret = pci_parse_request_of_pci_ranges(dev, &pcie->resources,
 > > >
-> > > We discussed with Marek Szyprowski that either we can go back to
-> > > 64-bit addressing or stick to 32. There are not known boards with more
-> > > than 4 GB of RAM so from this point of view the choice was irrelevant.
-> > > At the end of discussion I mentioned to stick with other arm64 boards
-> > > (although not all), so revert to have 64 bit address... but Marek
-> > > chosen differently. Since you ask, let's go back with revert.
+> > > Does it matter that we now map any given IO ranges whereas we didn't
+> > > previously?
 > > >
-> > > >
-> > > > > 2. Move GPU under /soc node,
-> > > >
-> > > > No problem
-> > > >
-> > > > > 3. Minor cleanup of #address-cells.
-> > > >
-> > > > IIRC, an interrupt-controller is required to have a #address-cells
-> > > > property, even if that is normally zero. I don't remember the
-> > > > details, but the gic binding lists it as mandatory, and I think
-> > > > the PCI interrupt-map relies on it. I would just drop this patch.
-> > >
-> > > Indeed, binding requires both address and size cells. I'll drop it.
+> > > As far as I can tell there are no users that pass an IO range, if they
+> > > did then with the existing code the probe would fail and they'd get
+> > > a "I/O range found for %pOF. Please provide an io_base pointer...".
+> > > However with the new code if any IO range was given (which would
+> > > probably represent a misconfiguration), then we'd proceed to map the
+> > > IO range. When that IO is used, who knows what would happen.
 > >
-> > Looking through the history of pending material, I didn't see a new pull for
-> > this material. Just checking in to see if there's something we missed?
+> > Yeah, I'm assuming that the DT doesn't have an IO range if IO is not
+> > supported. IMO, it is not the kernel's job to validate the DT.
 >
-> No, it's me who forgot to resend. I was sure that I rebased the branch
-> and created new pull request. However it seems I did not. Let's keep it
-> for next merge window... v5.4-rc should be any minute, I guess?
+> Sure. Is it worth mentioning in the commit message this subtle change
+> in behaviour?
 
-Yeah, we're too late for this merge window but feel free to send it
-for next release.
+Will do.
 
+> > > I wonder if there is a better way for a host driver to indicate that
+> > > it doesn't support IO?
+> >
+> > We can probably test for this in the schema.
+> >
+> > ranges:
+> >   items:
+> >     minItems: 7
+> >     items:
+> >       - not: { const: 0x01000000 }
+> >
+> > Or "- enum: [ 0x42000000, 0x02000000 ]"
+> >
+> > Of course, in theory, the bus, dev, fn fields could be non-zero and we
+> > could use minium/maximum to handle those, but in practice I think they
+> > are rarely used for FDT.
+>
+> Many controllers also appear to set the top bit (relocatable), e.g.
+> 0x82000000...
 
--Olof
+That begs the question how many should set the relocatable bit and don't...
+
+Anyways, it's still a smallish set of possible values and worthwhile
+to describe which ones a controller supports.
+
+> At present there are no PCI bindings that use the YAML schema, if I've
+> understood correctly.
+
+Probably so, there has been at least one under review. Intel LGM IIRC.
+We do need a common PCI schema too. Hopefully someone beats me to it.
+
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
