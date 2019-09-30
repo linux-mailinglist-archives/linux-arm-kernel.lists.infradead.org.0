@@ -2,82 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE546C1BC7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 08:53:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F66DC1C08
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 09:25:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=46UqKPARAqaliuRFhxVS7SAM5/y7caXfEB0/8lNU1/g=; b=oWAOPHKjEN5Pgh
-	4vjQP7Pk+e+OS+CmXBXPfUCA0sQ0+8fqZY71JnmWsC1CVRd/E6D6SdcLV/FF0+E0dNtAm0PwOffBa
-	fEHke0zlatb1mVIDArKJy681iBkOLkRrRyrGYZZ430MZKvFjACiWR7H1SdKKOqAxYGZqNTw4kagxX
-	1/qlL6mrzvtj56OMo7O+zkk3UWRm3KyJVROzJFuEdJ9LoSqrhEtCNeWbDKAsLfS6v/RKtAenLVOwb
-	kwmMJcLz9PaqE61AT4eIdQ5ORHepkBDMoTFQDcN+WlDxccO4cQgOLfg1TmRlgmcu7Jl7GvE6amlms
-	iRX+lymFnMYraCmMVHEA==;
+	List-Owner; bh=Qv2sUFMy5aY+dFBYu7G2NierzNoWHXUXAfjULI3xq7M=; b=h1MvjlChktopic
+	NOBoBOiWLI7pLhlSXFq197LTJgxz8HV8thpeSnFlMxutWrlyIg1COvwe/CLzRwgWPFEMMSCEKwjzO
+	MG3omRBvCdoI/CppILzyPGyzPy6pmKpFJAVFzD47/1OrBp3Erx/DGVUuiK59NnNUX0oNGOaKlC8hy
+	/TlpqPIz+cnktzthCU72eVedXYd98eHCpdWbhsEf/fKe1CBKogj162d1Y0eL3Divn/TYfqse7SvUT
+	YgaWS1PH9X895PfnrstlGjXxLLMyWxx8VVBgzc/+TJh/+IX3vAG7YjMCm81lo2kXBfXPwd/hO01st
+	g/aTufG3F8XFBIbsAeWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEpYh-0005EW-En; Mon, 30 Sep 2019 06:53:23 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1iEq3Y-0008Ur-2a; Mon, 30 Sep 2019 07:25:16 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEpYW-00056J-Nu
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 06:53:14 +0000
-Received: by mail-lj1-x244.google.com with SMTP id l21so8201471lje.4
+ id 1iEq3P-0007Ll-Nb
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 07:25:09 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id E8841AE7F
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 29 Sep 2019 23:53:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yATsTcqOqIzZMV98qWIAPWwEMjMrM8gXIgA2HND81Xc=;
- b=FtkhRbMuAFq9oBu9QY8Qq4PUBi7P8wG9pwBBI5gh9ZFAP1uE5Z8owLiNoz//UjqGYQ
- fQhndMyHQ1hPRQnD6ur2p6trxwMyp46wm3Vcw6Fyrpl81AW00cOdQytunyp/2v8lQemU
- SaOycOu6xeFMyUosNLzTevrP3MKyY/e5X/5NM=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=yATsTcqOqIzZMV98qWIAPWwEMjMrM8gXIgA2HND81Xc=;
- b=SQbWrl+ittt9Mr+0MUAH6M2byTeXRLg3M6B+qX+7ohaxgtaTdZAPbIfa5jP3wlVJXI
- +emWXijGFSRoPq2lmW7gXcq99SZINdRHQ4CVsBX5owcZomGo4ImVDHSQr/3ReU8OZE7S
- 9+EoZww8BAWbvOGzFzc34nMn4Vk1eOk6QaDBj8Bb3ykqSky/ZLoSRxhrAS5V3c819mpn
- pcKr6AeXa51m88qzbtcByDwU4rEoT5JYBR0rUkzGqAhoF6J2LJP+RHc/aM3eNSWUgpQc
- wuEzEQfI8aUcy/KCOrwqFYVWrQVQjPMswOska7b3kvOx3HV+A78CpQoVH8pQuAoe1wzF
- SNUw==
-X-Gm-Message-State: APjAAAWCmS7BPLHyiw4MnLiBcwV/+fqWYfKyH4V/hXRJA6yTsrMssEn/
- CJlrqiAt0q5ZmbaRB+koz72+PvMeIAid8J7XbHYRWg==
-X-Google-Smtp-Source: APXvYqziLiuF94ED9ic8k7xqYKDkQNdzt1q3xAbH4DhKGFt+OHhSfqDtzXLbca2sgZAoi7etyCT/7Lt0hhqj6DqlfRM=
-X-Received: by 2002:a2e:1246:: with SMTP id t67mr11165358lje.174.1569826390743; 
- Sun, 29 Sep 2019 23:53:10 -0700 (PDT)
+ Mon, 30 Sep 2019 07:25:01 +0000 (UTC)
+From: Andreas Schwab <schwab@suse.de>
+To: Yury Norov <ynorov@caviumnetworks.com>
+Subject: Re: [PATCH 22/24] arm64:ilp32: add vdso-ilp32 and use for signal
+ return
+References: <20180516081910.10067-1-ynorov@caviumnetworks.com>
+ <20180516081910.10067-23-ynorov@caviumnetworks.com>
+X-Yow: Spreading peanut butter reminds me of opera!!  I wonder why?
+Date: Mon, 30 Sep 2019 09:24:55 +0200
+In-Reply-To: <20180516081910.10067-23-ynorov@caviumnetworks.com> (Yury Norov's
+ message of "Wed, 16 May 2018 11:19:07 +0300")
+Message-ID: <mvma7am2qm0.fsf@suse.de>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.3 (gnu/linux)
 MIME-Version: 1.0
-References: <1569472808-15284-1-git-send-email-rayagonda.kokatanur@broadcom.com>
- <20190928181910.GB12219@kunai>
-In-Reply-To: <20190928181910.GB12219@kunai>
-From: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
-Date: Mon, 30 Sep 2019 12:22:59 +0530
-Message-ID: <CAHO=5PHj1PQUGi3EYBPVNUsRHsEo9WxU6CsvR=9+bP4n6z-cMA@mail.gmail.com>
-Subject: Re: [PATCH v2 1/1] i2c: iproc: Add i2c repeated start capability
-To: Wolfram Sang <wsa@the-dreams.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190929_235312_777995_F55C1A53 
-X-CRM114-Status: GOOD (  15.27  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190930_002507_928687_DF4A4B0C 
+X-CRM114-Status: UNSURE (   7.48  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,51 +65,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lori Hikichi <lori.hikichi@broadcom.com>,
- Shivaraj Shetty <sshetty1@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- Ray Jui <rjui@broadcom.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Shreesha Rajashekar <shreesha.rajashekar@broadcom.com>,
- Icarus Chau <icarus.chau@broadcom.com>,
- BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>,
- linux-i2c@vger.kernel.org, Michael Cheng <ccheng@broadcom.com>,
- Ray Jui <ray.jui@broadcom.com>, linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Sep 28, 2019 at 11:53 PM Wolfram Sang <wsa@the-dreams.de> wrote:
->
-> On Thu, Sep 26, 2019 at 10:10:08AM +0530, Rayagonda Kokatanur wrote:
-> > From: Lori Hikichi <lori.hikichi@broadcom.com>
-> >
-> > Enable handling of i2c repeated start. The current code
-> > handles a multi msg i2c transfer as separate i2c bus
-> > transactions. This change will now handle this case
-> > using the i2c repeated start protocol. The number of msgs
-> > in a transfer is limited to two, and must be a write
-> > followed by a read.
-> >
-> > Signed-off-by: Lori Hikichi <lori.hikichi@broadcom.com>
-> > Signed-off-by: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
-> > Signed-off-by: Icarus Chau <icarus.chau@broadcom.com>
-> > Signed-off-by: Ray Jui <ray.jui@broadcom.com>
-> > Signed-off-by: Shivaraj Shetty <sshetty1@broadcom.com>
-> > ---
-> > changes from v1:
-> >  - Address code review comment from Wolfram Sang
->
-> No, sorry, this is not a proper changelog. I review so many patches, I
-> can't recall what I suggested to do for every patch. Please describe
-> what changes you actually made. It is also better when digging through
-> mail archives.
->
-Sorry for inconvenience, I updated the changelog and resent the patch.
-I have kept the patch version as v2 only. Hope that is fine.
+The VDSO setup changed quite a lot in 5.3.  Do you have an updated
+patch?
 
-Best regards,
-Rayagonda
+Thanks, Andreas.
+
+-- 
+Andreas Schwab, SUSE Labs, schwab@suse.de
+GPG Key fingerprint = 0196 BAD8 1CE9 1970 F4BE  1748 E4D4 88E3 0EEA B9D7
+"And now for something completely different."
 
 _______________________________________________
 linux-arm-kernel mailing list
