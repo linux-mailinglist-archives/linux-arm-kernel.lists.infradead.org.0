@@ -2,70 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6AA2BC1FE6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 13:22:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2993C2015
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 30 Sep 2019 13:45:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a2Yd3usEjHkm5wlYxh2rr8Ds4Cd1R00dZfzkSu6X6Uo=; b=bMCaoKt8XRyvHx
-	s0R7oZWAceF5lbuAbNXv4rGBOZD82td1PoKX6easSbp0UGj2jqaVf8C7QDJ1eZbJ47IdlENiv92Pf
-	Cq+wcq8OW9Z3PB0AA/mvlJ8woe2jcCiyxi0g52WfxKQGrHIwm/mCB+9FG78uT+iwoq+67rpzhFemL
-	jy1FW9asMroZgFdBoosTT//7ck1VljwvHwasMPz576dcaIGYkPsm4OdEIk+ZYdvjEt0AMz/OtuS1J
-	mOiJCTy2mnWKlwW5wBB6nCShWRRmnO5rtlMWe8/4MNHeYcM3W9ysRC9xT/DDhfqVdDTaf7zTPRsPf
-	VknDSLxQgwP1S97A+yzg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=f8DaqqE39lfsDUNR8DQFu32Ti5ebU8rS05fRuC4m3zk=; b=nOPeMXcV/PtKb3J2kpYWFwGic
+	NapbRaCtQaXjy5My31w/R0ghpYmPFm5WDXZWDN19d1lh9OMF6hADwhk6T3RHZpuNfa6WPf3wXKOIc
+	o8lzJbtwth/LpPQXouOSN00jqUfkNeoIg4k5+QB5yvN8vCTOwwfGw+c/ZVcTdLe8wl1Nd2LLYgKGB
+	M+4ZeWMKqjUUue1RDGKHa5TBSNyNBkxdoolpuB7uTnek8hI3FV+HqxyUNilrydg0ZVuvFYMHucpuV
+	1ExBXAmtTPp6VwEDHwBxuih/rfZZVXAorNEyDDc0q/giZ4j4ewvier6t6Mje86hV2xDV6QmPTJERl
+	BVz0k9CdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEtkk-00083z-OY; Mon, 30 Sep 2019 11:22:06 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEtkY-00083g-0O
- for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 11:21:55 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C846B206BB;
- Mon, 30 Sep 2019 11:21:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569842512;
- bh=XK2t7THQT0Mdaq4LrhC1eZVsJhx+lzPpETJg3foBo1I=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=TEydkTneGLf8RUEFEfjmnOyBlP3MImuHanTAhl+tQwOEn501QUJzvi49Sc0W45HZr
- 4d4iMCQEalm8gNu+VeNVriBG9rIQD4pgRbHY2hRD4Jyhrw9SCBQ0J4iSU6wJACj5+s
- CVLbEI8jJQXyB/PuqaaidGhARXSNVVnr72jEzaL8=
-Date: Mon, 30 Sep 2019 12:21:48 +0100
-From: Will Deacon <will@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 0/4] iommu/arm-smmu: Remove arm_smmu_flush_ops
-Message-ID: <20190930112148.5ismf35ph22hl75z@willie-the-truck>
-References: <cover.1568820087.git.robin.murphy@arm.com>
+	id 1iEu7Z-000229-P9; Mon, 30 Sep 2019 11:45:41 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iEu7R-00021p-DJ
+ for linux-arm-kernel@lists.infradead.org; Mon, 30 Sep 2019 11:45:34 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 40E241000;
+ Mon, 30 Sep 2019 04:45:30 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BF3B13F706;
+ Mon, 30 Sep 2019 04:45:29 -0700 (PDT)
+Subject: Re: SMMU performance
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ linux-arm-kernel@lists.infradead.org, Will Deacon <will@kernel.org>
+References: <20190930110047.GF25745@shell.armlinux.org.uk>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <cf3ac700-1954-8800-6ce4-9983ab27707b@arm.com>
+Date: Mon, 30 Sep 2019 12:45:28 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cover.1568820087.git.robin.murphy@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20190930110047.GF25745@shell.armlinux.org.uk>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_042154_072571_EDAD75DD 
-X-CRM114-Status: UNSURE (   8.56  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190930_044533_496449_829A5F79 
+X-CRM114-Status: GOOD (  17.26  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,22 +62,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: iommu@lists.linux-foundation.org, joro@8bytes.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 18, 2019 at 05:17:47PM +0100, Robin Murphy wrote:
-> Off the back of Will's iommu_flush_ops work, here's an initial followup
-> to replace the temporary solution in arm-smmu with a full conversion.
-> Removing teh extra layer of indirection should generally make things a
-> good bit more efficient, and rather more readable to boot.
+Hi Russell,
 
-Thanks, I'll queue this for 5.5.
+On 30/09/2019 12:00, Russell King - ARM Linux admin wrote:
+> Hi,
+> 
+> While using iperf on a platform using the ARM SMMU (v2), I notice the
+> following behaviour on v5.3 with Will's iommu patch set merged, kernel
+> lock debugging disabled.
+> 
+> With iommu.passthrough=1, three consecutive runs:
+> [  3]  0.0-10.0 sec  4.51 GBytes  3.87 Gbits/sec
+> [  3]  0.0-10.0 sec  4.53 GBytes  3.89 Gbits/sec
+> [  3]  0.0-10.0 sec  4.49 GBytes  3.86 Gbits/sec
+> 
+> With iommu.passthrough=0:
+> [  3]  0.0-10.0 sec  1.77 GBytes  1.52 Gbits/sec
+> [  3]  0.0-10.0 sec  1.82 GBytes  1.56 Gbits/sec
+> [  3]  0.0-10.0 sec  1.69 GBytes  1.45 Gbits/sec
+> 
+> Running perf record -a -g ... followed by perf report --no-children
+> shows:
+> 
+> -   15.72%  iperf            [kernel.vmlinux]    [k] _raw_spin_unlock_irqrestor
+>     - _raw_spin_unlock_irqrestore
+>        - 8.95% arm_smmu_tlb_sync_context
+>             arm_smmu_iotlb_sync
+>           - __iommu_dma_unmap
+>              + 4.54% iommu_dma_unmap_sg
+>              + 4.41% iommu_dma_unmap_page
+>        - 2.92% alloc_iova_fast
+>           - iommu_dma_alloc_iova.isra.26
+>              + 1.54% iommu_dma_map_sg
+>              + 1.38% __iommu_dma_map
+>        - 2.64% free_iova_fast
+>             iommu_dma_free_iova
+>           - __iommu_dma_unmap
+>              + 1.35% iommu_dma_unmap_sg
+>              + 1.29% iommu_dma_unmap_page
+> 
+> which seems to be pointing to the SMMU code as a bottleneck.
+> 
+> Will suggests that his iommu changes (in his for-joerg/arm-smmu/updates
+> branch), allows IOMMU driver modifications that may have a beneficial
+> effect.  Any thoughts?
 
-Will
+We default to synchronous invalidation on unmaps, since it gives the 
+greatest degree of security against misbehaving devices (and proves 
+quite useful for smoking out dodgy drivers too). If you're happy with 
+deferred invalidation as x86 defaults to, try "iommu.strict=0" - that 
+should avoid the main serialising bottleneck. As for the IOVA allocation 
+overhead, that's probably about as low as it's likely to get now - what 
+remains is the inevitable "doing anything vs. doing nothing" tradeoff.
+
+The major changes in 5.4 are for SMMUv3, so won't impact your platform.
+
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
