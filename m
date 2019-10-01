@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C57FAC34BD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 14:50:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03B84C34D5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 14:54:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RZ48tagZQJdJz0Sv/wu4VIn0CowGsYbdKaRD7OFTMNI=; b=Qj9iLHBiBJLR+w
-	r06HntJiQbysjdgVAhqY9I40j72deJkLC89cpWOSL34xf83HYtTjUI8QpuXnaBol1nlS9zXqagLlP
-	8Ywk5YsjXUUidyfobUmEkPkloF8vPlkfmEqtZWhUWvrCq/9y9TEaF3+3PJr4E/Z8ApdT+JvkjTNeQ
-	sC1sVzZnRYxxMYuZupKKRh5GlhqFEtf2bIYXfz9/x5umZpa0P+xldZhHUoRKglK7o4cf2iRdF3osY
-	TMpbjJFOWjnX+q+XAR9U7M22SCMLZ4ux50y0D1mmblf5xdFauMLqSI5onOVeUy0KVlzigXXX31lQY
-	uV2hY3AqZspH3jYn0lQw==;
+	List-Owner; bh=bEjsluCoHnDGz2NkP4Frgt/1ixZVoO4bNKqmKjP3tms=; b=N2u/kZacgu9Zli
+	LvegYti6HKSYErWGXqGdJdHOLRxtH8jCnm/IeJlU3zlPdRZB8mMHMJC5KSwMhPBY84V1/tcC4CEB7
+	I4HVD+k1PqoG2pmu5v3EWf8vUpPzbHBsuHMd/8jIoeXIcpCiOok3H3HdDexxERkZS8DDFTz6F8L1H
+	vHLCFsgajzmZd21urMdXmrEfYe+5jrecST7Sv1fApdeQe1S8ykjs/WOmQV4epkTuz/lxdHoiaix7e
+	+zd0AUdFPxh/w1r1YLBqoc/dcl2NZtGtkGWNakcPI0qt0AsDDzqzVG2k4eitV9poIqNMmr/BipwZG
+	/eT5rNb9pyH+dsCxEIKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFHc7-0004uy-Aq; Tue, 01 Oct 2019 12:50:47 +0000
+	id 1iFHfj-0005zx-4k; Tue, 01 Oct 2019 12:54:31 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFHc0-0004tt-FQ
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 12:50:41 +0000
+ id 1iFHfX-0005yt-Ig
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 12:54:24 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5197E21872;
- Tue,  1 Oct 2019 12:50:35 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9F2E321872;
+ Tue,  1 Oct 2019 12:54:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569934237;
- bh=/gPSJI6zO7uojDFJ0+HevJuNlGn4NzxfqGO+ldy/Pn4=;
+ s=default; t=1569934459;
+ bh=qdFT2iQGfLY4YITal90NGC2PaaAOxSUOpd1IJ8jDa4A=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=vFqF2QRXYBnbbTCXivGapO2pDUlAUngoCGoIkS3oh9r2HpKbLT3eU+AP+VjIjEGOP
- e0YoAtuKKCTtzfQqfIIEfGceqRKTf6Shy79nxMHUx3NY9Geoci6VSH2Zt3rzLCmPVM
- 6yvRfrdXfiDaiQgqPTt64jLelAubqy/Uw24e8b/I=
-Date: Tue, 1 Oct 2019 13:50:32 +0100
+ b=KD7GKKfxZ54dCseOBe5DG+Yohm1Gco/g7LjKC3gCbHAP9ww1Hb9AcIC5WGiQnooAO
+ +x0gIphzaT3nFyIhopIKkTQYByBH1dMoWYdlUT9AwlNE1MQujO3FhOhYP2Owa+U82x
+ DR9GDDoMON4RQpr++Mr7UPWmm3BFFpcOkOmqmfNY=
+Date: Tue, 1 Oct 2019 13:54:13 +0100
 From: Will Deacon <will@kernel.org>
 To: Jia He <justin.he@arm.com>
-Subject: Re: [PATCH v10 2/3] arm64: mm: implement arch_faults_on_old_pte() on
- arm64
-Message-ID: <20191001125031.7ddm5dlwss6m3dth@willie-the-truck>
+Subject: Re: [PATCH v10 3/3] mm: fix double page fault on arm64 if PTE_AF is
+ cleared
+Message-ID: <20191001125413.mhxa6qszwnuhglky@willie-the-truck>
 References: <20190930015740.84362-1-justin.he@arm.com>
- <20190930015740.84362-3-justin.he@arm.com>
+ <20190930015740.84362-4-justin.he@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190930015740.84362-3-justin.he@arm.com>
+In-Reply-To: <20190930015740.84362-4-justin.he@arm.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_055040_536026_216871CB 
-X-CRM114-Status: GOOD (  16.90  )
+X-CRM114-CacheID: sfid-20191001_055422_837529_E3EA10C0 
+X-CRM114-Status: GOOD (  19.68  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,44 +91,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 30, 2019 at 09:57:39AM +0800, Jia He wrote:
-> On arm64 without hardware Access Flag, copying fromuser will fail because
-> the pte is old and cannot be marked young. So we always end up with zeroed
-> page after fork() + CoW for pfn mappings. we don't always have a
-> hardware-managed access flag on arm64.
+On Mon, Sep 30, 2019 at 09:57:40AM +0800, Jia He wrote:
+> When we tested pmdk unit test [1] vmmalloc_fork TEST1 in arm64 guest, there
+> will be a double page fault in __copy_from_user_inatomic of cow_user_page.
 > 
-> Hence implement arch_faults_on_old_pte on arm64 to indicate that it might
-> cause page fault when accessing old pte.
+> Below call trace is from arm64 do_page_fault for debugging purpose
+> [  110.016195] Call trace:
+> [  110.016826]  do_page_fault+0x5a4/0x690
+> [  110.017812]  do_mem_abort+0x50/0xb0
+> [  110.018726]  el1_da+0x20/0xc4
+> [  110.019492]  __arch_copy_from_user+0x180/0x280
+> [  110.020646]  do_wp_page+0xb0/0x860
+> [  110.021517]  __handle_mm_fault+0x994/0x1338
+> [  110.022606]  handle_mm_fault+0xe8/0x180
+> [  110.023584]  do_page_fault+0x240/0x690
+> [  110.024535]  do_mem_abort+0x50/0xb0
+> [  110.025423]  el0_da+0x20/0x24
+> 
+> The pte info before __copy_from_user_inatomic is (PTE_AF is cleared):
+> [ffff9b007000] pgd=000000023d4f8003, pud=000000023da9b003, pmd=000000023d4b3003, pte=360000298607bd3
+> 
+> As told by Catalin: "On arm64 without hardware Access Flag, copying from
+> user will fail because the pte is old and cannot be marked young. So we
+> always end up with zeroed page after fork() + CoW for pfn mappings. we
+> don't always have a hardware-managed access flag on arm64."
+> 
+> This patch fix it by calling pte_mkyoung. Also, the parameter is
+> changed because vmf should be passed to cow_user_page()
+> 
+> Add a WARN_ON_ONCE when __copy_from_user_inatomic() returns error
+> in case there can be some obscure use-case.(by Kirill)
+> 
+> [1] https://github.com/pmem/pmdk/tree/master/src/test/vmmalloc_fork
 > 
 > Signed-off-by: Jia He <justin.he@arm.com>
+> Reported-by: Yibo Cai <Yibo.Cai@arm.com>
 > Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+> Acked-by: Kirill A. Shutemov <kirill.shutemov@linux.intel.com>
 > ---
->  arch/arm64/include/asm/pgtable.h | 14 ++++++++++++++
->  1 file changed, 14 insertions(+)
+>  mm/memory.c | 99 +++++++++++++++++++++++++++++++++++++++++++++--------
+>  1 file changed, 84 insertions(+), 15 deletions(-)
 > 
-> diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-> index 7576df00eb50..e96fb82f62de 100644
-> --- a/arch/arm64/include/asm/pgtable.h
-> +++ b/arch/arm64/include/asm/pgtable.h
-> @@ -885,6 +885,20 @@ static inline void update_mmu_cache(struct vm_area_struct *vma,
->  #define phys_to_ttbr(addr)	(addr)
+> diff --git a/mm/memory.c b/mm/memory.c
+> index b1ca51a079f2..1f56b0118ef5 100644
+> --- a/mm/memory.c
+> +++ b/mm/memory.c
+> @@ -118,6 +118,13 @@ int randomize_va_space __read_mostly =
+>  					2;
 >  #endif
 >  
-> +/*
-> + * On arm64 without hardware Access Flag, copying from user will fail because
-> + * the pte is old and cannot be marked young. So we always end up with zeroed
-> + * page after fork() + CoW for pfn mappings. We don't always have a
-> + * hardware-managed access flag on arm64.
-> + */
+> +#ifndef arch_faults_on_old_pte
 > +static inline bool arch_faults_on_old_pte(void)
 > +{
-> +	WARN_ON(preemptible());
-> +
-> +	return !cpu_has_hw_af();
+> +	return false;
 > +}
+> +#endif
 
-Does this work correctly in a KVM guest? (i.e. is the MMFR sanitised in that
-case, despite not being the case on the host?)
+Kirill has acked this, so I'm happy to take the patch as-is, however isn't
+it the case that /most/ architectures will want to return true for
+arch_faults_on_old_pte()? In which case, wouldn't it make more sense for
+that to be the default, and have x86 and arm64 provide an override? For
+example, aren't most architectures still going to hit the double fault
+scenario even with your patch applied?
 
 Will
 
