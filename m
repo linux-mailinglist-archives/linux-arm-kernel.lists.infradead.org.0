@@ -2,114 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D809FC3A00
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 18:09:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2839C3A0B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 18:09:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
 	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zOT7yQldq9I2pqFZBUv+ABqYHZrA17JAm9EboBn25kE=; b=OHGCf34pI+UeMR
-	boYv2MspYybDMoJgVeuOS2UAGtop5eRrUS2lF+J7AnciFSKXIPvOJYBc78+VXMnKVarZRdSaXK2NQ
-	iGBqEDzqer7I+zvB1ABJmSoMSJRyKIaZKizhUqpqxDXZX9KU7EMx+BKfuNx9XJyQIXd9hT0+PtBA4
-	GoWsSKveUfKljqeh6VbzUFJe4GCJ2/5RhUF3NNgRo0k5wNDVCyZmoz3SNW0BJXjcfqE19zEaSg0Lz
-	oCyQQ7bpoEmRw2zIL0+u6O00cd4GwAju6zeV48tRdCLWUfQosHtbjLdPkDt+VN+TS5YOA4fbzGiZq
-	odOsoqoXhyLTKiu7BS1A==;
+	List-Owner; bh=hGAy6jkAcRHE3sThjso62PafMUA/eS7YiFTGv4PbpYg=; b=R+hdznPoHlvghk
+	tm+m5Luldj3SSw+gWY5zyI5BWGriSixvN/ex7nPfZm/aOmQQn9rlV5oHh1+huX39eJoB5TNiLOeP0
+	qQjlYQBk88iWUrswWadPsPDrmmUG/RtcJXD18dm6y4pWtWWtodVORUTCQ9RFsUOV92DWJfYmXP+gx
+	ZtvQ7o6WeREbc0ET06QBbLAZKZYXx6M0vqGk+c1aA51qrGpGfZU/3gUOWfp0aJi3/w7T0tjqIQ6fW
+	AlVDUJIxWC2RrsENqAbplj1lugduVQZyRW6AVERc0NPTN0W81q9ymrYIv8asKURE/jhcXjSFJYJuU
+	qBDPwJoO+fY9nPld5nzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFKhs-00012S-PF; Tue, 01 Oct 2019 16:08:56 +0000
+	id 1iFKiR-0001Ua-9a; Tue, 01 Oct 2019 16:09:31 +0000
 Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFKhl-00011h-Gw
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 16:08:51 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ id 1iFKiC-0001Ot-2V
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 16:09:17 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
  by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20191001160847euoutp02d4d1062c1e935a3059cc426c423d10da~Jka9MabRe0403104031euoutp02V
+ 20191001160914euoutp0211808e2c9d70d32a06a4a2add5999a25~JkbW0qKOq0403104031euoutp02d
  for <linux-arm-kernel@lists.infradead.org>;
- Tue,  1 Oct 2019 16:08:47 +0000 (GMT)
+ Tue,  1 Oct 2019 16:09:14 +0000 (GMT)
 DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20191001160847euoutp02d4d1062c1e935a3059cc426c423d10da~Jka9MabRe0403104031euoutp02V
+ 20191001160914euoutp0211808e2c9d70d32a06a4a2add5999a25~JkbW0qKOq0403104031euoutp02d
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1569946127;
- bh=aeBFIpROmYwqIt3R+Td4SgN1ucgpQ4MSQHRjCu6ZAU0=;
+ s=mail20170921; t=1569946154;
+ bh=0iXMcbO5zbECgDnWNZ06BqtYV9m9VlieFlQ6pOPEbvA=;
  h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=Z2xdSNUcC1MJEBpa6c7Lb25TYdIBgCNZDRtfvuuzf0ROpwBMlmAh4MtyYcpoEjq4i
- LRm/i+Na7IOSFs9qV5WuhgYZkoVs1OWEtUIGPj/dBIGobso7u+efK2doxnHWSgHsWA
- ZXtHLOGNZskuRi6ToDzoVDiOPcAX0JpURA7rclLE=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20191001160846eucas1p18b6de26fbfd58d945485e808123e97d0~Jka8fZbtp0151001510eucas1p1z;
- Tue,  1 Oct 2019 16:08:46 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id 78.D1.04374.E0A739D5; Tue,  1
- Oct 2019 17:08:46 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ b=OzBe6rYt5XCT0stjr5ugyXUZJPiZlu4PWOWyn3H3KQTrSugx2+lS0A+eEYTIg5VnE
+ A7/fVyDJMvGQeWkw/5DDRHEUux+iFx2k9O0o0FBH2tUnosJVSI7E0Tdtl/levzNTT6
+ qFjO5OGQ/OVeV+aNvEHe7nNkBKbjwQpfsCeAyBLw=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20191001160914eucas1p278f9a0f55b635d74feeb1c0e4117d6e1~JkbWrWueW2183421834eucas1p2Z;
+ Tue,  1 Oct 2019 16:09:14 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id 9F.B8.04309.A2A739D5; Tue,  1
+ Oct 2019 17:09:14 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
  eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20191001160846eucas1p1caab8bcc93d4f3e1c2c8d47409811535~Jka8IzuXC2213422134eucas1p1S;
- Tue,  1 Oct 2019 16:08:46 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20191001160846eusmtrp1944436ecc5b274994be8d80538c18968~Jka8H-4ua0290602906eusmtrp1a;
- Tue,  1 Oct 2019 16:08:46 +0000 (GMT)
-X-AuditID: cbfec7f5-4ddff70000001116-ed-5d937a0eee54
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id 22.1F.04117.D0A739D5; Tue,  1
- Oct 2019 17:08:45 +0100 (BST)
+ 20191001160913eucas1p1ce452b9fe9bfa44843438a67a7822a57~JkbV_BVvv2988729887eucas1p1E;
+ Tue,  1 Oct 2019 16:09:13 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20191001160913eusmtrp2acb5fb911c2b830ef6a7bb3f1d64291c~JkbV9V3dx1352113521eusmtrp2s;
+ Tue,  1 Oct 2019 16:09:13 +0000 (GMT)
+X-AuditID: cbfec7f4-ae1ff700000010d5-b1-5d937a2a24e6
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id 27.F6.04166.92A739D5; Tue,  1
+ Oct 2019 17:09:13 +0100 (BST)
 Received: from [106.120.51.75] (unknown [106.120.51.75]) by
- eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20191001160845eusmtip1720184b381ba80719f24142ef4bbbc26~Jka7UMqGT0531405314eusmtip1t;
- Tue,  1 Oct 2019 16:08:45 +0000 (GMT)
-Subject: Re: [PATCH v3 RESEND 2/3] ASoC: samsung: arndale: Add support for
- WM1811 CODEC
+ eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20191001160913eusmtip28cac83a3c5e49e10aa8353c3e73e9d70~JkbVUfWlO1030610306eusmtip2I;
+ Tue,  1 Oct 2019 16:09:13 +0000 (GMT)
+Subject: Re: [PATCH v3 RESEND 3/3] ASoC: samsung: Rename Arndale card driver
 To: broonie@kernel.org
 From: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Message-ID: <6d76dfa4-f75c-70d7-977d-63f3ecb5f485@samsung.com>
-Date: Tue, 1 Oct 2019 18:08:44 +0200
+Message-ID: <4baf2a0d-f0b3-579c-365c-2948e7c841c9@samsung.com>
+Date: Tue, 1 Oct 2019 18:09:12 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20191001123625.19370-2-s.nawrocki@samsung.com>
+In-Reply-To: <20191001123625.19370-3-s.nawrocki@samsung.com>
 Content-Language: en-GB
-X-Brightmail-Tracker: H4sIAAAAAAAAA01SbUhTYRTuvR/bVdt4va52sDCY/dFIM4suJqISNehH/ogoQ3TpZYmf7Kbm
- svKD/FZEK20oagbarKZLXJ9aM7+KnAMrQUarhEiwoK1CEs3tKvnvOec85zzPA4ch2Qk6kEnP
- vsDrsjWZKokvNTi2ZNsr1zcl7TM+UHAzdivB9beYaO7Gp3kJN3PNjDibrU/K/Z6pJDjzl/c0
- 12IbIrj7rxxSzvVjmObsPW4i1k/d5yqVqB8bHFK12VglUT+8c1Xd3LqK1PUDRqR2mYMSpIm+
- 0Wl8Zno+rwuPSfE9P2z0yzXQF539NqoYtVPVyIcBfACctR+IauTLsLgHwczNKYlYuBE0dznW
- Jy4EndNT0o0V69OvyINZ3I2gb0ArkhYRVH+3kJ5BAD4DnYYXhAcr8HaYa60iPSQStxHwzTjs
- JUlwBNSN1nsvyXAMuP489y5QeDcsvl2iPXgbPg0/nSO0yPGHyVvzXuM+OBq6Z8u9d0ishFL3
- XVrEu8Cy2OoVA/xZCnWWt6Ro+wiMuV9IRBwAC+MD63F2wpumWkpcKENQ+3ROKhYNCD6OdyCR
- dRhGxu1rEsyaRAiYnoSL7Th4N9Al9bQBy2F20V80IYfGwWZSbMugspwV2bvhr7GZEHEg1Myv
- Ug1IZdgUzbApjmFTHMN/3Q5EGZGSzxOytLwQmc0XhAmaLCEvWxuWmpNlRmv/9WZl/NcjNLR8
- zoowg1RbZbMnm5JYWpMvFGZZETCkSiGLXm5MYmVpmkI9r8tJ1uVl8oIV7WAolVJ2aYvzLIu1
- mgt8Bs/n8rqNKcH4BBYjPypjdDKkitUfDc+tOFhUEtqenru/5FlhLT4+fSJq8pj85YolQc++
- jsyIv0xO34sNU4T2HkhcZh1xwTFBE705V5Kf2U4ttA6Z/G9r1FyUINfVWK5PmlLbSpfKDgku
- f3nQmbT3loKWjmAtt5wSUT4a/G5hj9tZpKwwKePt1LCKEs5rIkJJnaD5B8g04BJbAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrJIsWRmVeSWpSXmKPExsVy+t/xu7q8VZNjDZZNsbG4cvEQk8XGGetZ
+X-Brightmail-Tracker: H4sIAAAAAAAAA01Sa0hTYRjuO5ftuFp8ztvLkoqxP0U3JehAIkWBEwqkfhSF1ClPGrkpO2rO
+ ytRu3tJKa+s0yUuwGl10VmoXrU03TdgUTBSzC0mhIIYbQRSutlPkv+d53ud93+95+RhS5abV
+ zHFDHm80cNkamYJ66v7hXb+2qC59U+W8mh0ZdhJsm+URzV7/NCVjRy44EOvztcrZ7yPlBOv4
+ PEqzFl83wT7onZSz/rkemh2+GyC2LdW1+stkui5xUq5z2CtkuvY7Z3VmaxDpah7bkc7vWJkm
+ P6BIyuCzjxfwxo3JhxVZlzpjcr1Eoc0yKCtB9UQlimAAbwbxRhVViRSMCt9F0DgukhIJILhf
+ 2y2TiB/B4Plzf2xMuKXegyXdhuChd4AOjVLhWQS3XIqQJwrvgjafKSRH41iYsFaEh5K4gYBp
+ ew8ZKshwAlzuq0EhrMTJ4D3vpkKYwloY/CKGZ8bg/TD/0UVLnkgYuDkV9kTgJGjxPwz3kjgO
+ ygL3aAmvgo5Za3gZ4PdysHZ8kks5d8JM71tawlEw43n8V4+HYNdtQmo4h6D6+YRcIlcQfPA0
+ Ism1FVyeYToUjcRr4NGzjZK8HbpezBHSVZbD2Gyk9IjlcO2pmZRkJZRfVEluLfy0m/+eXQ1V
+ U0HqCtKIi6KJi+KIi+KI//c2IsqO4vh8QZ/JC4kG/uQGgdML+YbMDUdz9A7053cNLngCnejZ
+ ryNOhBmkWaYs2VOXrqK5AsGkdyJgSE20MunXtXSVMoMzFfHGnEPG/GxecKIVDKWJU55a8vGg
+ CmdyefwJns/ljf+qBBOhLkHapgTfrr2NhS9fGXaL0/7U6nXeBkXfvoGhuaPN/c0tZadZ5nXQ
+ Uv/tw8KTjOoIxVetUjg43dlfbAnM82VgMDe3p8X7V7pNtU2aN6ljy4bp3ZytYW+pb8vNsVWu
+ 1LSa4I6lD8aHYgtSrua9e5+Y0hSXmLq62HUs1zZdKjtjHa3VUEIWl7CWNArcb1mudhRZAwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrOIsWRmVeSWpSXmKPExsVy+t/xe7qaVZNjDfbd0ba4cvEQk8XGGetZ
  LaY+fMJmcaV1E6PF+fMb2C2+Xelgstj0+BqrxYzz+5gs1h65y27x+f1+VouLK74wOXB7bPjc
  xOaxc9Zddo9NqzrZPDYvqfeYPuc/o0ffllWMHp83yQWwR+nZFOWXlqQqZOQXl9gqRRtaGOkZ
- WlroGZlY6hkam8daGZkq6dvZpKTmZJalFunbJehl7F/FXTCLteLBxvMsDYzzWboYOTkkBEwk
- Du1+ztjFyMUhJLCUUeLqu/2sXYwcQAkpifktShA1whJ/rnWxgdhCAq8ZJRZf0AWxhQUiJRbO
- OsAEYosIiEncntPJDDKHWWAuk0Tfv80sEEMPMkpMWPSTHaSKTcBQovdoHyOIzStgJ/H5+16w
- bhYBFYm3Z3+ygtiiAhESh3fMgqoRlDg58wnYpZwCNhLLb7Qxg9jMAuoSf+ZdgrLFJZq+rGSF
- sOUltr+dwzyBUWgWkvZZSFpmIWmZhaRlASPLKkaR1NLi3PTcYiO94sTc4tK8dL3k/NxNjMBo
- 3Xbs55YdjF3vgg8xCnAwKvHwNgRNjhViTSwrrsw9xCjBwawkwmvzZ1KsEG9KYmVValF+fFFp
- TmrxIUZToOcmMkuJJucDE0leSbyhqaG5haWhubG5sZmFkjhvh8DBGCGB9MSS1OzU1ILUIpg+
- Jg5OqQZGrblntU9lJS9fk9LuoS+40sdM6hBXttGV4J5aK3aFnkqWYtcnPyd/8ExIE/Vsu+32
- uuCCzIUJKzifiN1heqO7cIs4A9OLkx77/uas/xzqeCLwktrTyfXq1VOVBN5s+3uRx/HS9beP
- 7xfNVrHeaREUujC4/JOpkcQ5VgP1M37sq9pLGmXXsNYpsRRnJBpqMRcVJwIALwb+hOwCAAA=
-X-CMS-MailID: 20191001160846eucas1p1caab8bcc93d4f3e1c2c8d47409811535
+ WlroGZlY6hkam8daGZkq6dvZpKTmZJalFunbJehltO8QLTjHVLF8xmm2BsYpTF2MHBwSAiYS
+ U44LdDFycQgJLGWU2PdpNjNEXEpifotSFyMnkCks8edaFxuILSTwmlHi5Z5QkBJhAR+Jjecr
+ QcIiAmISt+d0MoOMYRaYyyTR928zC8TMg4wSWx7vYAWpYhMwlOg92scIYvMK2EmcaznGAmKz
+ CKhInH42C6xGVCBC4vCOWVA1ghInZz4Bq+EUsJFY/HkdWJxZQF3iz7xLzBC2uETTl5WsELa8
+ xPa3c5gnMArNQtI+C0nLLCQts5C0LGBkWcUoklpanJueW2yoV5yYW1yal66XnJ+7iREYqduO
+ /dy8g/HSxuBDjAIcjEo8vA1Bk2OFWBPLiitzDzFKcDArifDa/JkUK8SbklhZlVqUH19UmpNa
+ fIjRFOi5icxSosn5wCSSVxJvaGpobmFpaG5sbmxmoSTO2yFwMEZIID2xJDU7NbUgtQimj4mD
+ U6qBsW05K8v6qpbKXw7Ps/Nr+Q/pJpv+We0ZYLZWS/3xm8mXFkifyJvZK7/F3nxhnV4Qg/os
+ j+oZ13Jvb7FRPaV/8ebZXyuXaX4QWnXwgN9ilzzLNU/0/qodCz60WtrA7Fe9ntjXz6mLuquP
+ d8R+Fg7M0T26OTyiJFJm1uF8wfdnXDmiLm9bkmfOpMRSnJFoqMVcVJwIANxqanXqAgAA
+X-CMS-MailID: 20191001160913eucas1p1ce452b9fe9bfa44843438a67a7822a57
 X-Msg-Generator: CA
-X-RootMTR: 20191001123639eucas1p2b15309e0b0008b2627b8630082d69f41
+X-RootMTR: 20191001123640eucas1p265d38cc9ad2a3103abd63b5d04d18628
 X-EPHeader: CA
 CMS-TYPE: 201P
-X-CMS-RootMailID: 20191001123639eucas1p2b15309e0b0008b2627b8630082d69f41
+X-CMS-RootMailID: 20191001123640eucas1p265d38cc9ad2a3103abd63b5d04d18628
 References: <20191001123625.19370-1-s.nawrocki@samsung.com>
- <CGME20191001123639eucas1p2b15309e0b0008b2627b8630082d69f41@eucas1p2.samsung.com>
- <20191001123625.19370-2-s.nawrocki@samsung.com>
+ <CGME20191001123640eucas1p265d38cc9ad2a3103abd63b5d04d18628@eucas1p2.samsung.com>
+ <20191001123625.19370-3-s.nawrocki@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_090849_696738_25CAE80A 
-X-CRM114-Status: GOOD (  12.98  )
+X-CRM114-CacheID: sfid-20191001_090916_268429_81983FC5 
+X-CRM114-Status: GOOD (  10.46  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -148,13 +147,8 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 10/1/19 14:36, Sylwester Nawrocki wrote:
-> The Arndale boards come with different types of the audio daughter
-> board.  In order to support the WM1811 one we add new definition of
-> an ASoC card which will be registered when the driver matches on
-> "samsung,arndale-wm1811" compatible.  There is no runtime detection of
-> the audio daughter board type at the moment, compatible string of the
-> audio card needs to be adjusted in DT, e.g. by the bootloader,
-> depending on actual audio board (CODEC) used.
+> Rename arndale_rt5631.c to just arnddale.c as we support other CODECs
+> than RT5631.  While at it replace spaces in Kconfig with tabs.
 > 
 > Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
 
