@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88FF0C318A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 12:34:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02A1DC318D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 12:35:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o/3rOPVc+2Wsqbuxj/ucRJQt2CVVjYQ9e5gb4W/oYxE=; b=nU3VTsuubT5g6Z
-	QRZlLygFWOmtxaI4B0rEhpqlC8GzNqq7/8YhXtoqR40DSHLzaD9p0LYi5BLUCJrnQQ+rx58tRqsRW
-	wfja/BhF3SM2Y4Lp7YmMhneNm77HUlDzMXQMImFWKS80js/HfJqAknBJKo4zufM2zwsFoX4GGyuW2
-	Xo0psHy8DDotySWifpxqDrC9CZPeElp0J6aDbj4S+B/xkK8RsIH5WGJ95CI3ctLqquXtpKtncBixE
-	bQ9xnJohvizq7m8jw+Qx8IDfxpNhr69VMC/Gm/FSrSXgmSzJsENbfjJ2u87+gJTxAP3EKCDbnRhnf
-	2pwJIMwCIxee2UgF88IA==;
+	List-Owner; bh=5trB5s6fE1Eykm7a7SZOo1M2nhQNllx3vrQeoSkLONo=; b=g6dMgR3i7+v5c/
+	igWBR3CqtS0dpEE9qDOGz9lfLZ9TLc7nft42mIaMUs1Jkb9Q9zH/0wU9OOByrJezQad6tdMci8dP9
+	Bo7YIW+aWw/wdoz6PJaw5bC84nu+5CSDvtpeoTc4divfCoKjOhsLwdFckog7T0//1bRUi8ppYXidg
+	btWipPmotAC3/JBZBmJpQbxvfT7Ik0ycjrYnSeCM0WBrx8KIWxdYTCD/M9aXDlgJeKfi3paGRW6VB
+	4rd0NkphPTXrNrKFDlj9OhcWiOStg6NZT53ZYoC1H/o5UGnD4sgByN092WHfL1NQZNuyraNfXgSvO
+	hKAak2l/weZJ5+wB9WvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFFU1-0006fI-2j; Tue, 01 Oct 2019 10:34:17 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1iFFUq-0006xk-KO; Tue, 01 Oct 2019 10:35:08 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFFTq-0006dc-S6
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 10:34:08 +0000
-Received: by mail-io1-xd43.google.com with SMTP id a1so46581686ioc.6
+ id 1iFFUe-0006x3-HW
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 10:34:58 +0000
+Received: by mail-wr1-x444.google.com with SMTP id h7so14848591wrw.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 01 Oct 2019 03:34:06 -0700 (PDT)
+ Tue, 01 Oct 2019 03:34:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6AUoGAsc63xfOju6F5+pghwj/1bxK9PF7awTWjOwEOw=;
- b=XUYmuQi/GnwvsxCVi1F3iJRRhqxT2zq5bjp2Uoi/9d7VjsYEhxlebxKmO7/pd0xa0H
- OlITP0GsH0tmVi8M0vQbKLXpWPrI6YwTCXgJNnvpO0zkclQPnr1DDQ4PgxjuhEdIFZVb
- vXJlKxDJKbr82gIIl2ssLSyg+wte6jcrsEVPM=
+ :cc; bh=2nnlLMd0aBTJcx0TGQUJ/OOnhcmE3H5ErK+mVqFID/o=;
+ b=Z66BKWUBz/7pM2VRxk3KnGYg20Csj7AdSD9P0w9lQJpvKT+CLAzweqGDltfQrgmCx1
+ aXrKqiMH9VmljnfZ2/d7SJRxMtRnMWbIM1AfyT+Ef28nin11VRwfZ5K5DqZmZSp0PI0U
+ U/aWeYK3Yz5Hov7A+DzLuUPuzjc++sXzjDrt0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=6AUoGAsc63xfOju6F5+pghwj/1bxK9PF7awTWjOwEOw=;
- b=QojZhrHHF2MhoCpbQFLnOXh1+oUhj8gu4h/hCLupMtDLnvHGU5noUTcYs0FzhtND9R
- 3O2k4tiqGV4mtiI5jF8COqnKmfnGLVa98TM3jp2zw8NOqrd3x/uA35ylsjlTlcdwBNLm
- Uxrol+l9avKVPar3+ZQ+/tqMsMjJlYuQaZOsqzrLF3ZLEL/4Pz0zlY8pXhixC28934v6
- z7ePBKT5dWY9MVWZzFocI843etQ9F4sQlHD26U0RoAlF9qJKVFjkyMGmncAim7TRiCo6
- /RffsIlFFysDoA4JvsX3UOWLKVo4cBpEv6mqVEOd/hFI47ZNMqMOscYIA1Vt5rI66dQT
- Op7g==
-X-Gm-Message-State: APjAAAX7bMB7iWIIVmQtXo/YHQwzS67BVLedOQYICs/Zl03wRVRRK5NZ
- ehcF0xnID9/kS1dO2M1u01iwlkwQTb7CuPMSQbt00g==
-X-Google-Smtp-Source: APXvYqxHnKG/AQXbNeChYThj5dd5yvNkhFAenW0UYhhzFKDyKT0mVDkf/X7vv/S8KA9rQY7cWNQ/6OoDgDEEox0dNiU=
-X-Received: by 2002:a02:6284:: with SMTP id d126mr23167865jac.51.1569926045668; 
- Tue, 01 Oct 2019 03:34:05 -0700 (PDT)
+ bh=2nnlLMd0aBTJcx0TGQUJ/OOnhcmE3H5ErK+mVqFID/o=;
+ b=Lvr327ughzXsdCe8TvFhczZhblgvUvHaQX8Sssqnm/LbubzIXhDL5Qed8Ga/mbL+oJ
+ vkYXr8wv7ZCcnyxTyoXjt15ecfVhtK9q/3Jx2sA2PKb/SKjrNTiaYMqZjdZ2DoUwpBVQ
+ 8+kPGdA9X7/MZtQsyEMMv8X9SsmjvS+0L+XxUrWcaP8v//U940Yhac+2Jw8UvtbUv4Dq
+ zNQ0piDa5Z/DD1w04fDjqwmca8SoRXYvLaTLxBl3BZuVABXvKXxTvT+9aUnlnlhNGerN
+ 9dH9FE9vWNnQvLORLvDdh98eupBD9yWsC1RFIEqDusiL9+o+EL4ghlC2cJIXnj2Uns93
+ 5jfg==
+X-Gm-Message-State: APjAAAXHC6rLCtmeUFX1LBPmods2La6qRjIJnQeQ7fd01nE4lYxEXfSf
+ DS1Rek20W5bTD6gN6bqf9l69Bmg1eg1cIm9r1zX24A==
+X-Google-Smtp-Source: APXvYqwvIetg8gzOczGiU42fCOntRO/negZdZdjjiCB49L1LeESZTdA7ERnkkCaV/E+aTgltRI3/vSfEgD0PqQEuxIQ=
+X-Received: by 2002:adf:e909:: with SMTP id f9mr1653755wrm.129.1569926094373; 
+ Tue, 01 Oct 2019 03:34:54 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190919052822.10403-1-jagan@amarulasolutions.com>
- <20190919052822.10403-5-jagan@amarulasolutions.com> <4177305.6QI6aNXrAv@phil>
-In-Reply-To: <4177305.6QI6aNXrAv@phil>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Tue, 1 Oct 2019 16:03:54 +0530
-Message-ID: <CAMty3ZBZ0kXsc-4EwUwy9rAHcDvhhYL1JWkyhhdvSvfRdyvvwA@mail.gmail.com>
-Subject: Re: [PATCH 4/6] arm64: dts: rockchip: Rename roc-pc with libretech
- notation
-To: Heiko Stuebner <heiko@sntech.de>
+ <20190919052822.10403-2-jagan@amarulasolutions.com> <6797961.eJj5WIFbM9@phil>
+ <CAMty3ZDKaywoPxCSD-5N2pLjtGmZ-dZ7ZgUOJqiB1V_9rfR26A@mail.gmail.com>
+In-Reply-To: <CAMty3ZDKaywoPxCSD-5N2pLjtGmZ-dZ7ZgUOJqiB1V_9rfR26A@mail.gmail.com>
+From: Michael Nazzareno Trimarchi <michael@amarulasolutions.com>
+Date: Tue, 1 Oct 2019 12:34:42 +0200
+Message-ID: <CAOf5uwkXt7mD_OZFx+bmP6YVHQ6=yU4Lzz+u0hxy+6HUxiR1KQ@mail.gmail.com>
+Subject: Re: [PATCH 1/6] arm64: dts: rockchip: Fix rk3399-roc-pc pwm2 pin
+To: Jagan Teki <jagan@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_033406_911919_BB27A380 
-X-CRM114-Status: GOOD (  19.58  )
+X-CRM114-CacheID: sfid-20191001_033456_576551_850D37DA 
+X-CRM114-Status: GOOD (  23.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -92,7 +92,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
  devicetree <devicetree@vger.kernel.org>, Da Xue <da@lessconfused.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>, linux-kernel <linux-kernel@vger.kernel.org>,
  "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
  Rob Herring <robh+dt@kernel.org>, Akash Gajjar <akash@openedev.com>,
  Levin Du <djw@t-chip.com.cn>,
@@ -103,55 +103,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 30, 2019 at 3:02 AM Heiko Stuebner <heiko@sntech.de> wrote:
+Hi
+
+On Tue, Oct 1, 2019 at 12:26 PM Jagan Teki <jagan@amarulasolutions.com> wrote:
 >
-> Hi Jagan,
+> Hi Heiko,
 >
-> Am Donnerstag, 19. September 2019, 07:28:20 CEST schrieb Jagan Teki:
-> > Though the ROC-PC is manufactured by firefly, it is co-designed
-> > by libretch like other Libretech computer boards from allwinner,
-> > amlogic does.
+> On Mon, Sep 30, 2019 at 2:51 AM Heiko Stuebner <heiko@sntech.de> wrote:
 > >
-> > So, it is always meaningful to keep maintain those vendors who
-> > are part of design participation so-that the linux mainline
-> > code will expose outside world who are the makers of such
-> > hardware prototypes.
+> > Hi Jagan,
 > >
-> > So, rename the existing rk3399-roc-pc.dts with libretch notation,
-> > rk3399-libretech-roc-rk3399-pc.dts
+> > Am Donnerstag, 19. September 2019, 07:28:17 CEST schrieb Jagan Teki:
+> > > ROC-PC is not able to boot linux console if PWM2_d is
+> > > unattached to any pinctrl logic.
+> > >
+> > > To be precise the linux boot hang with last logs as,
+> > > ...
+> > > .....
+> > > [    0.003367] Console: colour dummy device 80x25
+> > > [    0.003788] printk: console [tty0] enabled
+> > > [    0.004178] printk: bootconsole [uart8250] disabled
+> > >
+
+The only sense is that is connected with
+vdd_log: vdd-log {
+compatible = "pwm-regulator";
+pwms = <&pwm2 0 25000 1>;
+regulator-name = "vdd_log";
+regulator-min-microvolt = <800000>;
+regulator-max-microvolt = <1100000>;
+regulator-always-on;
+regulator-boot-on;
+
+/* for rockchip boot on */
+rockchip,pwm_id= <2>;
+rockchip,pwm_voltage = <1000000>;
+};
+
+I don't know how this in mailine is mapped
+
+Michael
+
+> > > In ROC-PC the PWM2_d pin is connected to LOG_DVS_PWM of
+> > > VDD_LOG. So, for normal working operations this needs to
+> > > active and pull-down.
+> > >
+> > > This patch fix, by attaching pinctrl active and pull-down
+> > > the pwm2.
 > >
-> > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> > ---
-> >  arch/arm64/boot/dts/rockchip/Makefile                           | 2 +-
-> >  .../{rk3399-roc-pc.dts => rk3399-libretech-roc-rk3399-pc.dts}   | 0
+> > This looks highly dubious on first glance. The pwm subsystem nor
+> > the Rockchip pwm driver do not do any pinctrl handling.
+> >
+> > So I don't really see where that "active" pinctrl state is supposed
+> > to come from.
+> >
+> > Comparing with the pwm driver in the vendor tree I see that there
+> > is such a state defined there. But that code there also looks strange
+> > as that driver never again leaves this active state after entering it.
+> >
+> > Also for example all the Gru devices run with quite a number of pwm-
+> > regulators without needing additional fiddling with the pwm itself, so
+> > I don't really see why that should be different here.
 >
-> Somewhat "randomly" renaming files for "exposure" of the maker isn't the
-> way to go. Especially as the file name itself is merely a handle and not
-> meant for fame. The board filename should mainly enable developers to
-> hopefully the correct board file to use/change - and "rk3399-roc-pc"
-> is sufficiently unique to do that.
+> I deed, I was supposed to think the same. but the vendor kernel dts
+> from firefly do follow the pwm2 pinctrl [1]. I wouldn't find any
+> information other than this vensor information, ie one of the reason I
+> have marked "Levin Du" who initially supported this board.
 >
-> Similar to how the NanoPi boards do that.
+> One, think I have seen was this pinctrl active fixed the boot hang.
+> any inputs from would be very helpful.
 >
-> And renames not only loose the history of changes but also in this case
-> the file is in the kernel since july 2018 - more than a year, so this might
-> actually affect the workflow of someone.
-
-Yes, I agreed this point.
-
+> Levin Du, any inputs?
 >
-> So I'd really expect an actual technical reason for a rename.
+> [1] https://github.com/FireflyTeam/kernel/blob/stable-4.4-rk3399-linux/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi#L1184
+>
+>
 
-This changes purely based on the recent changes on naming conventions
-that have been followed in amlogic and allwinner with regards to
-libretech [1]. I have seen few Bananapi boards from Allwinner H3 has
-been converted as per Libretech computer recently. I assume these
-changes are because libretech has part of co-designed vendor and also
-open source forum supported for these hardware.
 
-For further information, may be Da Xue can comment on this.
-
-[1] https://libre.computer/products/boards/
+-- 
+| Michael Nazzareno Trimarchi                     Amarula Solutions BV |
+| COO  -  Founder                                      Cruquiuskade 47 |
+| +31(0)851119172                                 Amsterdam 1018 AM NL |
+|                  [`as] http://www.amarulasolutions.com               |
 
 _______________________________________________
 linux-arm-kernel mailing list
