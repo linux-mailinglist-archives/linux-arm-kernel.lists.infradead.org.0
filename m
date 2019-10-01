@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27829C3573
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 15:21:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47F66C3591
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 15:27:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HtWvjF6u1uBa+Cd6F5Ha6KtmFlNCu0Q2aPhJwDJaiU4=; b=pBPzHmaqaSlWJp
-	IRjRr9mD5UftsPq0MEUZOpxFHNeuzVdiv6/C7E0KfbISr08AcvKYwpS1Kin6Kh3w0cEqrZM4dW5XB
-	4LJst6XTbzf1tqA8EeYDG+sYWSrzCKzJCv6XjUnTJi73WkCVOihenvJ3dCxRqRqRIO1K+d+mD2cme
-	MMlzrB4NVaRPEHdYAogiAx6TSZJQuV1/hQOaGyhpj0boZ7fTQzZmbj4N03MA2avn49x7rlmXE/jMF
-	gl8MF9i8w/TJzgmOjDJLt5pH3m95F/8sF4r4c5Jz3BWCb35LURFDkQSC2/2aEajt8pliigKpQj16L
-	ZIXF0pvLUHd+Qen59Xgw==;
+	List-Owner; bh=h02Ntd/s4FkLjLcXXaDVuujiPgorsllBsNTOLsA+T8s=; b=UnKEBF/NG0NfOr
+	2fwQZSlmJx2sdgbVEf+opDIDvq9/64aRn1lQ8uTDDAEZ4dXNWGutq1Ef+NlaAp9FNiLBg5fmaeGgu
+	EDBVtMKyiMdpcZNmVCwEB6OyF7tZezjkWJAgVWd3DzaZ5Tn6tobQMStv7PHPOKfGnsaGDId3cG/w/
+	DLTYrJ09PUTlzD9sG+Qrq2lHStfC00S3JeCme6+h+vM8v2BiquvbxwS/sGi/cwSnih1cBO65TNAaY
+	aMpbMw5i1RqEVWu7Igb2AXRG0K29JOED5dSeAoUWbGoTqecoAy/sN9ZKVtPrqFzZxKgtbEHvPJl8Q
+	LmUsjXkUNBz8FYSgFuxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFI5i-0003Tw-6Y; Tue, 01 Oct 2019 13:21:22 +0000
+	id 1iFIB1-0005qx-7H; Tue, 01 Oct 2019 13:26:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFI5Z-0003Tb-HA
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 13:21:14 +0000
+ id 1iFIAv-0005qK-Dq
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 13:26:46 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E01B6205F4;
- Tue,  1 Oct 2019 13:21:11 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9840D205F4;
+ Tue,  1 Oct 2019 13:26:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569936073;
- bh=QYSllP9/ys/7IY6OqXAXwvvPaklbnIJyDItt8Dcq5lY=;
+ s=default; t=1569936405;
+ bh=8AYODUkLIhWgx1CLwLKwmalHpwZd+Q1qNbypTTN8BA0=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=rzJug3FJYMFIwyKDen3q25TZR5cluR7qieTbzsU3WaMfE18VvgMlfBxWVGfYaGSJ/
- Q63nru9hgzDq8nieQkpJU2IUwDuYrrlifkK0AVXZi349v2SS/FU9FNNaWbTj+WGQ3B
- FHNlA9eeVeIHQ8sNmVuNTMMZHl7Y3VlZlZBd/Qas=
-Date: Tue, 1 Oct 2019 14:21:09 +0100
+ b=UXd0w/I5aELR21rcXWrbb71PaZrP98X1Anl3gA8DKH6zugoz0yNvo54azsQLSY/tg
+ s7tggAZBvV8cfVt1IpjNFUUW3hGD8J4DUZ7gi3ZVQnyYnVx0l32rbxn0XfDYY3LIzZ
+ z/K8THG6o5F+HXl8uDRmBicNsWl2C45WcZstVkig=
+Date: Tue, 1 Oct 2019 14:26:40 +0100
 From: Will Deacon <will@kernel.org>
 To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH v3 3/5] arm64: vdso32: Fix compilation warning
-Message-ID: <20191001132108.jx2x7quyk2p2vyfw@willie-the-truck>
+Subject: Re: [PATCH v3 2/5] arm64: vdso32: Detect binutils support for dmb
+ ishld
+Message-ID: <20191001132640.plowjzi5nmajs72x@willie-the-truck>
 References: <20190920142738.qlsjwguc6bpnez63@willie-the-truck>
  <20190926214342.34608-1-vincenzo.frascino@arm.com>
- <20190926214342.34608-4-vincenzo.frascino@arm.com>
+ <20190926214342.34608-3-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190926214342.34608-4-vincenzo.frascino@arm.com>
+In-Reply-To: <20190926214342.34608-3-vincenzo.frascino@arm.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_062113_618499_257E29E9 
-X-CRM114-Status: GOOD (  19.55  )
+X-CRM114-CacheID: sfid-20191001_062645_485648_F0FD109F 
+X-CRM114-Status: GOOD (  14.93  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,69 +82,58 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: ard.biesheuvel@linaro.org, catalin.marinas@arm.com, ndesaulniers@google.com,
  linux-kernel@vger.kernel.org, tglx@linutronix.de,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCBTZXAgMjYsIDIwMTkgYXQgMTA6NDM6NDBQTSArMDEwMCwgVmluY2Vuem8gRnJhc2Np
-bm8gd3JvdGU6Cj4gQXMgcmVwb3J0ZWQgYnkgV2lsbCBEZWFjb24gdGhlIGZvbGxvd2luZyBjb21w
-aWxhdGlvbiB3YXJuaW5nIGFwcGVhcnMKPiBkdXJpbmcgdGhlIGNvbXBpbGF0aW9uIG9mIHRoZSB2
-ZHNvMzI6Cj4gCj4gSW4gZmlsZSBpbmNsdWRlZCBmcm9tIC4vYXJjaC9hcm02NC9pbmNsdWRlL2Fz
-bS90aHJlYWRfaW5mby5oOjE3OjAsCj4gICAgICAgICAgICAgICAgICBmcm9tIC4vaW5jbHVkZS9s
-aW51eC90aHJlYWRfaW5mby5oOjM4LAo+ICAgICAgICAgICAgICAgICAgZnJvbSAuL2FyY2gvYXJt
-NjQvaW5jbHVkZS9hc20vcHJlZW1wdC5oOjUsCj4gICAgICAgICAgICAgICAgICBmcm9tIC4vaW5j
-bHVkZS9saW51eC9wcmVlbXB0Lmg6NzgsCj4gICAgICAgICAgICAgICAgICBmcm9tIC4vaW5jbHVk
-ZS9saW51eC9zcGlubG9jay5oOjUxLAo+ICAgICAgICAgICAgICAgICAgZnJvbSAuL2luY2x1ZGUv
-bGludXgvc2VxbG9jay5oOjM2LAo+ICAgICAgICAgICAgICAgICAgZnJvbSAuL2luY2x1ZGUvbGlu
-dXgvdGltZS5oOjYsCj4gICAgICAgICAgICAgICAgICBmcm9tIC4uLi93b3JrL2xpbnV4L2xpYi92
-ZHNvL2dldHRpbWVvZmRheS5jOjcsCj4gICAgICAgICAgICAgICAgICBmcm9tIDxjb21tYW5kLWxp
-bmU+OjA6Cj4gLi9hcmNoL2FybTY0L2luY2x1ZGUvYXNtL21lbW9yeS5oOiBJbiBmdW5jdGlvbiDi
-gJhfX3RhZ19zZXTigJk6Cj4gLi9hcmNoL2FybTY0L2luY2x1ZGUvYXNtL21lbW9yeS5oOjIzMzox
-NTogd2FybmluZzogY2FzdCBmcm9tIHBvaW50ZXIgdG8KPiBpbnRlZ2VyIG9mIGRpZmZlcmVudCBz
-aXplIFstV3BvaW50ZXItdG8taW50LWNhc3RdCj4gICB1NjQgX19hZGRyID0gKHU2NClhZGRyICYg
-fl9fdGFnX3NoaWZ0ZWQoMHhmZik7Cj4gICAgICAgICAgICAgICAgXgo+IEluIGZpbGUgaW5jbHVk
-ZWQgZnJvbSAuL2FyY2gvYXJtNjQvaW5jbHVkZS9hc20vcGd0YWJsZS1od2RlZi5oOjg6MCwKPiAg
-ICAgICAgICAgICAgICAgIGZyb20gLi9hcmNoL2FybTY0L2luY2x1ZGUvYXNtL3Byb2Nlc3Nvci5o
-OjM0LAo+ICAgICAgICAgICAgICAgICAgZnJvbSAuL2FyY2gvYXJtNjQvaW5jbHVkZS9hc20vZWxm
-Lmg6MTE4LAo+ICAgICAgICAgICAgICAgICAgZnJvbSAuL2luY2x1ZGUvbGludXgvZWxmLmg6NSwK
-PiAgICAgICAgICAgICAgICAgIGZyb20gLi9pbmNsdWRlL2xpbnV4L2VsZm5vdGUuaDo2MiwKPiAg
-ICAgICAgICAgICAgICAgIGZyb20gYXJjaC9hcm02NC9rZXJuZWwvdmRzbzMyL25vdGUuYzoxMToK
-PiAuL2FyY2gvYXJtNjQvaW5jbHVkZS9hc20vbWVtb3J5Lmg6IEluIGZ1bmN0aW9uIOKAmF9fdGFn
-X3NldOKAmToKPiAuL2FyY2gvYXJtNjQvaW5jbHVkZS9hc20vbWVtb3J5Lmg6MjMzOjE1OiB3YXJu
-aW5nOiBjYXN0IGZyb20gcG9pbnRlciB0bwo+IGludGVnZXIgb2YgZGlmZmVyZW50IHNpemUgWy1X
-cG9pbnRlci10by1pbnQtY2FzdF0KPiAgIHU2NCBfX2FkZHIgPSAodTY0KWFkZHIgJiB+X190YWdf
-c2hpZnRlZCgweGZmKTsKPiAgICAgICAgICAgICAgICBeCj4gCj4gVGhpcyBoYXBwZW5zIGJlY2F1
-c2UgZmV3IDY0IGJpdCBjb21waWxhdGlvbiBoZWFkZXJzIGFyZSBpbmNsdWRlZCBkdXJpbmcKPiB0
-aGUgZ2VuZXJhdGlvbiBvZiB2ZHNvMzIuCj4gCj4gRml4IHRoZSBpc3N1ZSByZWRlZmluaW5nIHRo
-ZSBfX3RhZ19zZXQgZnVuY3Rpb24uCj4gCj4gTm90ZTogVGhpcyBmaXggaXMgbWVhbnQgdG8gYmUg
-dGVtcG9yYXJ5LCBhIG1vcmUgY29tcHJlaGVuc2l2ZSBzb2x1dGlvbgo+IGJhc2VkIG9uIHRoZSBy
-ZWZhY3RvcmluZyBvZiB0aGUgZ2VuZXJpYyBoZWFkZXJzIHdpbGwgYmUgcHJvdmlkZWQgd2l0aCBh
-Cj4gZnV0dXJlIHBhdGNoIHNldC4gQXQgdGhhdCBwb2ludCBpdCB3aWxsIGJlIHBvc3NpYmxlIHRv
-IHJldmVydCB0aGlzIHBhdGNoLgo+IAo+IENjOiBXaWxsIERlYWNvbiA8d2lsbEBrZXJuZWwub3Jn
-Pgo+IENjOiBDYXRhbGluIE1hcmluYXMgPGNhdGFsaW4ubWFyaW5hc0Bhcm0uY29tPgo+IFNpZ25l
-ZC1vZmYtYnk6IFZpbmNlbnpvIEZyYXNjaW5vIDx2aW5jZW56by5mcmFzY2lub0Bhcm0uY29tPgo+
-IC0tLQo+ICBhcmNoL2FybTY0L2luY2x1ZGUvYXNtL21lbW9yeS5oIHwgMyArKysKPiAgMSBmaWxl
-IGNoYW5nZWQsIDMgaW5zZXJ0aW9ucygrKQo+IAo+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2lu
-Y2x1ZGUvYXNtL21lbW9yeS5oIGIvYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9tZW1vcnkuaAo+IGlu
-ZGV4IGI2MWI1MGJmNjhiMS4uYzYxYjJlYjUwYTNiIDEwMDY0NAo+IC0tLSBhL2FyY2gvYXJtNjQv
-aW5jbHVkZS9hc20vbWVtb3J5LmgKPiArKysgYi9hcmNoL2FybTY0L2luY2x1ZGUvYXNtL21lbW9y
-eS5oCj4gQEAgLTIyOCwxMSArMjI4LDE0IEBAIHN0YXRpYyBpbmxpbmUgdW5zaWduZWQgbG9uZyBr
-YXNscl9vZmZzZXQodm9pZCkKPiAgI2RlZmluZSBfX3RhZ19nZXQoYWRkcikJCTAKPiAgI2VuZGlm
-IC8qIENPTkZJR19LQVNBTl9TV19UQUdTICovCj4gIAo+ICsjaWZkZWYgX19hYXJjaDY0X18KPiAr
-LyogRG8gbm90IGF0dGVtcHQgdG8gY29tcGlsZSB0aGlzIGNvZGUgd2l0aCBjb21wYXQgdmRzbyAq
-Lwo+ICBzdGF0aWMgaW5saW5lIGNvbnN0IHZvaWQgKl9fdGFnX3NldChjb25zdCB2b2lkICphZGRy
-LCB1OCB0YWcpCj4gIHsKPiAgCXU2NCBfX2FkZHIgPSAodTY0KWFkZHIgJiB+X190YWdfc2hpZnRl
-ZCgweGZmKTsKPiAgCXJldHVybiAoY29uc3Qgdm9pZCAqKShfX2FkZHIgfCBfX3RhZ19zaGlmdGVk
-KHRhZykpOwo+ICB9Cj4gKyNlbmRpZgoKU29ycnksIGJ1dCBJJ20gbm90IHRha2luZyB0aGlzLgoK
-SSBrbm93IHlvdSdyZSB0cnlpbmcgdG8gZml4IHRoZSBpc3N1ZXMgSSByZXBvcnRlZCBhcyBxdWlj
-a2x5IGFzIHlvdSBjYW4gKGFuZAp0aGFuayB5b3UgZm9yIHRoYXQpLCBidXQgSSdtIHN1cmUgdGhh
-dCB5b3UgYWdyZWUgdGhpcyBuZWVkcyBtb3JlIHRob3VnaHQgdG8KZGV2ZWxvcCBhIHByb3BlciBz
-b2x1dGlvbiB0byB3aGF0IGlzIGEgbXVjaCBiaWdnZXIgaXNzdWUgdGhhbiBjYW4gYmUgc29sdmVk
-CmJ5IHNwcmlua2xpbmcgI2lmZGVmcy4gSSBjYW4gbGl2ZSB3aXRoIHRoZSB3YXJuaW5nIG9uIHRo
-ZSBiYXNpcyB0aGF0IGEKcHJvcGVyIGZpeCBpcyBpbiB0aGUgcGlwZWxpbmUsIGJ1dCBpbiB0aGUg
-bWVhbnRpbWUgaXQgY2FuIHNlcnZlIGFzIGEKcmVtaW5kZXIgdGhhdCB3ZSdyZSBub3QgZG9uZSBo
-ZXJlLgoKV2lsbAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo=
+On Thu, Sep 26, 2019 at 10:43:39PM +0100, Vincenzo Frascino wrote:
+> As reported by Will Deacon, older versions of binutils that do not
+> support certain types of memory barriers can cause build failure of the
+> vdso32 library.
+> 
+> Add a compilation time mechanism that detects if binutils supports those
+> instructions and configure the kernel accordingly.
+> 
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> ---
+>  arch/arm64/include/asm/vdso/compat_barrier.h | 2 +-
+>  arch/arm64/kernel/vdso32/Makefile            | 9 +++++++++
+>  2 files changed, 10 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/include/asm/vdso/compat_barrier.h b/arch/arm64/include/asm/vdso/compat_barrier.h
+> index fb60a88b5ed4..3fd8fd6d8fc2 100644
+> --- a/arch/arm64/include/asm/vdso/compat_barrier.h
+> +++ b/arch/arm64/include/asm/vdso/compat_barrier.h
+> @@ -20,7 +20,7 @@
+>  
+>  #define dmb(option) __asm__ __volatile__ ("dmb " #option : : : "memory")
+>  
+> -#if __LINUX_ARM_ARCH__ >= 8
+> +#if __LINUX_ARM_ARCH__ >= 8 && defined(CONFIG_AS_DMB_ISHLD)
+>  #define aarch32_smp_mb()	dmb(ish)
+>  #define aarch32_smp_rmb()	dmb(ishld)
+>  #define aarch32_smp_wmb()	dmb(ishst)
+> diff --git a/arch/arm64/kernel/vdso32/Makefile b/arch/arm64/kernel/vdso32/Makefile
+> index 19e0d3115ffe..77aa61340374 100644
+> --- a/arch/arm64/kernel/vdso32/Makefile
+> +++ b/arch/arm64/kernel/vdso32/Makefile
+> @@ -15,6 +15,8 @@ cc32-disable-warning = $(call try-run,\
+>  	$(COMPATCC) -W$(strip $(1)) -c -x c /dev/null -o "$$TMP",-Wno-$(strip $(1)))
+>  cc32-ldoption = $(call try-run,\
+>          $(COMPATCC) $(1) -nostdlib -x c /dev/null -o "$$TMP",$(1),$(2))
+> +cc32-as-instr = $(call try-run,\
+> +	printf "%b\n" "$(1)" | $(COMPATCC) $(VDSO_AFLAGS) -c -x assembler -o "$$TMP" -,$(2),$(3))
+
+It's a shame that we have to duplicate the logic from scripts/Kbuild.include
+here. Is there a way to reuse those helpers by temporarily overriding things
+like CC and KBUILD_AFLAGS? If not, no bother, but thought I'd better ask.
+
+Will
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
