@@ -2,85 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CF33C310D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 12:15:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A14E6C314F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 12:26:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=uES+m/usMlCx0sVLumtcZd8QWDjY820nYzDe/MqfvNQ=; b=rcfqyqM9OCO21BAoy/JlsaVJt
-	8eS6B3q0LqrD1LhG0VzGpbDhj2Tdh3r/f6Tbemh9ftH0JuWHsEaLSVTFLis/eHqkY2mL91lZpUmj/
-	iCx2Go1Alogot5wxu2f+yZVuiW1X9Jrvp+3qkSrTVhkKk6g5NBtZYZMuUNMlmhMDQey9ubiKQ/x+S
-	p34oTgTPGai4/hk+kQZNd9g12qz2rZKKQGa25pq58zrxAD8xusIPm/ocgmlZh/b9nsRs/H8pulQYg
-	IxvdbGDccHf36QJj5MOyU6HWFa/Ou/oxgj/sq8fczOByhkGzX2Ge9V4mcOiMQ2WpJJnk9+eNm3zNv
-	DUqmVgwbQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=e2cCHxLdG3RG5DQCmcSHQt5HjooRtvC30OFgDSy/8cQ=; b=eEQrBFQbIfj58H
+	1SrRcOeuoIaSc8ztIn068besv/LWuuO6MRp9y9vkyYT3DmmAX10XN1hZQJBQ3PtdSfsg/VkTLatcc
+	h6eUAkz71EbB8Js9I6NACJaHY87k4E5o4KRMd+lHqvAPU10o7uAuRSgq6uEYOHo+YnldwJlyoW9gQ
+	6vFkg+tCOJMbIgXz0wkw20mAIQE8BUFDvgCMq+nJ/8ktui9zZ+e8CpILT49xiVLo63dRqKFoc9Zqk
+	knrUlNt7uwMSAr4S+T6dJQGPEvYTKDtHO9vqj7ljt5LGYc75F2H+PyE4UOF0gAW+gMGRKfWuD+Z2V
+	+POB2wbf48YE+bCEkd9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFFBN-0007zy-7S; Tue, 01 Oct 2019 10:15:01 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iFFMa-0004Wd-8Y; Tue, 01 Oct 2019 10:26:36 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFFBF-0007zd-Uf
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 10:14:55 +0000
-Received: by mail-wr1-x441.google.com with SMTP id r3so14775876wrj.6
+ id 1iFFMR-0004VD-14
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 10:26:29 +0000
+Received: by mail-io1-xd41.google.com with SMTP id u8so46485597iom.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 01 Oct 2019 03:14:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=TqnRymZHVB3nETq43Yyx3kDj0Su1WqRmQVreGP9eeAM=;
- b=SCWeuwojpC5yiuVk+b45PdbihMNriak/36ZsCE0jmeSduzCjq/s51e80vXGAJkh3DO
- qOHqQtqPLCXcoR4SCjvUPn8599enHuL8DaInPPRnMJAbE2OX+R0at2cRImMnVa8lvkz6
- jJLXpTtZ+/tu1Jrrb9ZyWKHK4a5AWtizXLSU8Lo7W8GJOifGv04j8JitEpzXburg3asJ
- H8BysylFgjcP+/1rpYynNTj+oSnqnD5KCDSpcibbNkz+BvguDi/xyTPScY0gm2itHv4+
- Z/d/4nB2wk4CLERLmyyDDWuXNXMBDhYOSOJug9IVfhrxKJoEn+AqHdio2hy9ClO0BK1b
- p40w==
+ Tue, 01 Oct 2019 03:26:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=7dJvQt2XADSP58gshAp3mouDAHa/fpvN+3lt4rGrgN0=;
+ b=MW/6KBStB07v5dXk4ZigslPFPugYyqpQ/ScdkbBrgCiKH3o4AbFDQ1qwAd32i3L1Ut
+ qcFaTGc/lhLrM65+N2L6mT4GH2quV73dZ3OW0f6J3hfFwX4x/zkGKr+2BK03MWo28DBy
+ KNoWV2aGvRV8NEKSqzFK7sgsmnnNqr38yDafY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=TqnRymZHVB3nETq43Yyx3kDj0Su1WqRmQVreGP9eeAM=;
- b=Ch/ne8d+an7JVWANg9bbn4GYzXBP2bQc03aWrLCG4o/xmOV5Wu38RUn8q98Rq4oAd8
- Cqt/S8A44qD/RW2vAZ0u7bChjTk+kRcN/vglYfylAkCtRlYRkhQWVUFRmKSU4s5asAYm
- pZltj9bbv92SKfkRoaHNxMbc3qSmq+cz7zQ3baHsoza/g/kqI0spaydy6mMqTsLKKQpt
- NOXqMJnygmqDFWqsVoBbXKrfKAzPAuuqrutwTKvuu09iyji5tFrv4LsNXmpXPQmmtl07
- YjWSSE5IyppUnsOLYL6589KNGZnkmInr/OA9Telua59c1272ztQIP02MqiLumGqbH06P
- 4v9A==
-X-Gm-Message-State: APjAAAWHDVsG1/rPPa+822KcWQ+IqRWwFFRHyBFE53AayXJpmtIZ5SDJ
- N7W+2IMlULT/wEbjq0ed2xuUpg==
-X-Google-Smtp-Source: APXvYqzF+PTKz9urDrKppbUD/aENMJ4pxtaMLYaIAnlz/3ezqaTV4JEnelkNmPMCMeGl5wJhux3KWw==
-X-Received: by 2002:a05:6000:162e:: with SMTP id
- v14mr17736905wrb.112.1569924892368; 
- Tue, 01 Oct 2019 03:14:52 -0700 (PDT)
-Received: from [192.168.86.34]
- (cpc89974-aztw32-2-0-cust43.18-1.cable.virginm.net. [86.30.250.44])
- by smtp.googlemail.com with ESMTPSA id t13sm33081133wra.70.2019.10.01.03.14.51
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 01 Oct 2019 03:14:51 -0700 (PDT)
-Subject: Re: [PATCH V2 1/2] nvmem: imx: scu: support hole region check
-To: Peng Fan <peng.fan@nxp.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>
-References: <1569550913-10176-1-git-send-email-peng.fan@nxp.com>
-From: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
-Message-ID: <48bc66d5-684a-cfdb-67dd-722dbf80edbf@linaro.org>
-Date: Tue, 1 Oct 2019 11:14:50 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=7dJvQt2XADSP58gshAp3mouDAHa/fpvN+3lt4rGrgN0=;
+ b=N8/4EeyaDs2o6i7jx7/GVe/mWPuaIIELqBkSu2yzzU5iZ3ombD+6KQY+PA9JAhTagN
+ NDP1pKD/rUxNSqHshfMQnM0BzKKkPK24FwXsbSyFJ9L56zPVHGntUJOAwBuJYQx0g7a6
+ N/ZFp1L1xK/tSVbQFduXdiO5+dMVZphL1hUd9Ly5KzQUW0aq6dsbfScd5ZvKZtcc2M3x
+ mHKKaksX/21WrCugs3oxKO9YOZ7FZ8B0Suyzh8EKLIx/HCIGNjxDEFOIElYrFAr7occG
+ 3OPoZjlUGu1G+TdOprjKPhGdMq6Vay6+o4d/VuVE6TeMlroV/8KYvYt1gG9VCmVF7Sez
+ rlOg==
+X-Gm-Message-State: APjAAAWCo2OYOaxHSKQZlc7imefYMRsexx2AT2918CcuNjdX0dqOW/0w
+ Q/YDtYE9gZskd0o/kUT2YwurrjuGu8Z47uwDO6kpSg==
+X-Google-Smtp-Source: APXvYqyE36IiztYNTVOMhjmeAHCFxs73KTI2V5Ei5/NiBQ6XuIFOw+4jhZSV1acSSHmC1qFffPrmWbSyxu+uPa3yx0A=
+X-Received: by 2002:a5d:89da:: with SMTP id a26mr23534629iot.61.1569925585423; 
+ Tue, 01 Oct 2019 03:26:25 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <1569550913-10176-1-git-send-email-peng.fan@nxp.com>
-Content-Language: en-US
+References: <20190919052822.10403-1-jagan@amarulasolutions.com>
+ <20190919052822.10403-2-jagan@amarulasolutions.com> <6797961.eJj5WIFbM9@phil>
+In-Reply-To: <6797961.eJj5WIFbM9@phil>
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Tue, 1 Oct 2019 15:56:14 +0530
+Message-ID: <CAMty3ZDKaywoPxCSD-5N2pLjtGmZ-dZ7ZgUOJqiB1V_9rfR26A@mail.gmail.com>
+Subject: Re: [PATCH 1/6] arm64: dts: rockchip: Fix rk3399-roc-pc pwm2 pin
+To: Heiko Stuebner <heiko@sntech.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_031454_019824_223DAA43 
-X-CRM114-Status: GOOD (  23.37  )
+X-CRM114-CacheID: sfid-20191001_032627_494595_75A0BDC7 
+X-CRM114-Status: GOOD (  18.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -102,123 +89,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Da Xue <da@lessconfused.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>, Akash Gajjar <akash@openedev.com>,
+ Levin Du <djw@t-chip.com.cn>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Heiko,
 
+On Mon, Sep 30, 2019 at 2:51 AM Heiko Stuebner <heiko@sntech.de> wrote:
+>
+> Hi Jagan,
+>
+> Am Donnerstag, 19. September 2019, 07:28:17 CEST schrieb Jagan Teki:
+> > ROC-PC is not able to boot linux console if PWM2_d is
+> > unattached to any pinctrl logic.
+> >
+> > To be precise the linux boot hang with last logs as,
+> > ...
+> > .....
+> > [    0.003367] Console: colour dummy device 80x25
+> > [    0.003788] printk: console [tty0] enabled
+> > [    0.004178] printk: bootconsole [uart8250] disabled
+> >
+> > In ROC-PC the PWM2_d pin is connected to LOG_DVS_PWM of
+> > VDD_LOG. So, for normal working operations this needs to
+> > active and pull-down.
+> >
+> > This patch fix, by attaching pinctrl active and pull-down
+> > the pwm2.
+>
+> This looks highly dubious on first glance. The pwm subsystem nor
+> the Rockchip pwm driver do not do any pinctrl handling.
+>
+> So I don't really see where that "active" pinctrl state is supposed
+> to come from.
+>
+> Comparing with the pwm driver in the vendor tree I see that there
+> is such a state defined there. But that code there also looks strange
+> as that driver never again leaves this active state after entering it.
+>
+> Also for example all the Gru devices run with quite a number of pwm-
+> regulators without needing additional fiddling with the pwm itself, so
+> I don't really see why that should be different here.
 
-On 27/09/2019 03:23, Peng Fan wrote:
-> From: Peng Fan <peng.fan@nxp.com>
-> 
-> Introduce HOLE/ECC_REGION flag and in_hole helper to ease the check
-> of hole region. The ECC_REGION is also introduced here which is
-> preparing for programming support. ECC_REGION could only be programmed
-> once, so need take care.
-> 
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> ---
-> 
-> V2:
->   Rebased on latest linux-next
-> 
->   drivers/nvmem/imx-ocotp-scu.c | 47 ++++++++++++++++++++++++++++++++++++++-----
->   1 file changed, 42 insertions(+), 5 deletions(-)
+I deed, I was supposed to think the same. but the vendor kernel dts
+from firefly do follow the pwm2 pinctrl [1]. I wouldn't find any
+information other than this vensor information, ie one of the reason I
+have marked "Levin Du" who initially supported this board.
 
-thanks, applied both.
+One, think I have seen was this pinctrl active fixed the boot hang.
+any inputs from would be very helpful.
 
---srini
-> 
-> diff --git a/drivers/nvmem/imx-ocotp-scu.c b/drivers/nvmem/imx-ocotp-scu.c
-> index 61a17f943f47..030e27ba4dfb 100644
-> --- a/drivers/nvmem/imx-ocotp-scu.c
-> +++ b/drivers/nvmem/imx-ocotp-scu.c
-> @@ -19,9 +19,20 @@ enum ocotp_devtype {
->   	IMX8QM,
->   };
->   
-> +#define ECC_REGION	BIT(0)
-> +#define HOLE_REGION	BIT(1)
-> +
-> +struct ocotp_region {
-> +	u32 start;
-> +	u32 end;
-> +	u32 flag;
-> +};
-> +
->   struct ocotp_devtype_data {
->   	int devtype;
->   	int nregs;
-> +	u32 num_region;
-> +	struct ocotp_region region[];
->   };
->   
->   struct ocotp_priv {
-> @@ -38,13 +49,41 @@ struct imx_sc_msg_misc_fuse_read {
->   static struct ocotp_devtype_data imx8qxp_data = {
->   	.devtype = IMX8QXP,
->   	.nregs = 800,
-> +	.num_region = 3,
-> +	.region = {
-> +		{0x10, 0x10f, ECC_REGION},
-> +		{0x110, 0x21F, HOLE_REGION},
-> +		{0x220, 0x31F, ECC_REGION},
-> +	},
->   };
->   
->   static struct ocotp_devtype_data imx8qm_data = {
->   	.devtype = IMX8QM,
->   	.nregs = 800,
-> +	.num_region = 2,
-> +	.region = {
-> +		{0x10, 0x10f, ECC_REGION},
-> +		{0x1a0, 0x1ff, ECC_REGION},
-> +	},
->   };
->   
-> +static bool in_hole(void *context, u32 index)
-> +{
-> +	struct ocotp_priv *priv = context;
-> +	const struct ocotp_devtype_data *data = priv->data;
-> +	int i;
-> +
-> +	for (i = 0; i < data->num_region; i++) {
-> +		if (data->region[i].flag & HOLE_REGION) {
-> +			if ((index >= data->region[i].start) &&
-> +			    (index <= data->region[i].end))
-> +				return true;
-> +		}
-> +	}
-> +
-> +	return false;
-> +}
-> +
->   static int imx_sc_misc_otp_fuse_read(struct imx_sc_ipc *ipc, u32 word,
->   				     u32 *val)
->   {
-> @@ -91,11 +130,9 @@ static int imx_scu_ocotp_read(void *context, unsigned int offset,
->   	buf = p;
->   
->   	for (i = index; i < (index + count); i++) {
-> -		if (priv->data->devtype == IMX8QXP) {
-> -			if ((i > 271) && (i < 544)) {
-> -				*buf++ = 0;
-> -				continue;
-> -			}
-> +		if (in_hole(context, i)) {
-> +			*buf++ = 0;
-> +			continue;
->   		}
->   
->   		ret = imx_sc_misc_otp_fuse_read(priv->nvmem_ipc, i, buf);
-> 
+Levin Du, any inputs?
+
+[1] https://github.com/FireflyTeam/kernel/blob/stable-4.4-rk3399-linux/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi#L1184
 
 _______________________________________________
 linux-arm-kernel mailing list
