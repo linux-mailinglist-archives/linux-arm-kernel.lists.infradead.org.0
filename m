@@ -2,60 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03992C3A20
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 18:15:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0ECBAC3A54
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 18:21:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
+	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GgQegXrQaLUsAEpYfP2tmuXee5bojEquJC8OScylaTc=; b=gAVuaEpCCy98xc
-	cwyXAZI9pIunbSwp+5MdoGuB+DvDGYPbrddj2keXI7q2ej8Xa8RbbLyx9H+XTXT/CKlNu4aPeoVLO
-	l7FIaznrXlfe5yejC35O/UgyUJq2IO5gVskSOacu+4Kau1GttDY6iqUqGhOAt+ldT9nHVyYtNlV2v
-	4Z2X0QCvC4S9d875O8MS3lxH/OIXCiqnXcxkFhz76p0DoFrDhd60Oox1aGnUqpMUDQsWDTw+EKs3Z
-	gKr6sdDd5nUPlPq7DdtdP5iC8ibM6h9Te5m1XqUEfNglLdfgc0IyFM+Pg0M3eSRxm1tk5Bsv17MMw
-	JLjM6Nta/puYq86wHKPw==;
+	List-Owner; bh=K3dCEpwkAktEOw7GsLxPkIqnFu37wVk2ws11uqwmS7w=; b=XKN7lRDYYVM4Qd
+	WtxpyHYlSftkg92HVfpWzn0TN9LmzuCTqFHKC1yYSHMYAsp8KQ4MZXwbYKvHeDjaBQ4atY178QA0h
+	KW6xIpl8HcCh7ChNUPdJnmeIjCIOFYozWeygA3vMEK5pQiOnDmeVy+v+jC5VMNHXxNJ35AXIZKsEo
+	9LYfcLubJNcWAGSUXsJI2MCr17VCRJnEasv3H04tqJ7REF1ODkEAZipVllwyRk4qBCVpEb1uuWFl9
+	ChR5H4wdm3CcIesijUbv2tY9GTyC7fSL/5ehWPKFv9ke6QxnBYcOnHft8QiDuuZ0YOxOigKQ5dEVf
+	dfUQ0ixg8ljqzC7YStQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFKnz-0003od-LM; Tue, 01 Oct 2019 16:15:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFKng-0003oH-Jd
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 16:14:58 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BB1E4337;
- Tue,  1 Oct 2019 09:14:55 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 32F2F3F71A;
- Tue,  1 Oct 2019 09:14:55 -0700 (PDT)
-Date: Tue, 1 Oct 2019 17:14:53 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+	id 1iFKu5-0007L9-2t; Tue, 01 Oct 2019 16:21:33 +0000
+Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iFKty-0007KQ-2t
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 16:21:27 +0000
+Received: by mail-pf1-x449.google.com with SMTP id i187so10636969pfc.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 01 Oct 2019 09:21:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:in-reply-to:message-id:mime-version:references:subject:from:to
+ :cc; bh=zGjQR/sTKc3smldtiGbvkknjnXT+JplA/pSqSqfQKlI=;
+ b=G+DasL0iJZ5kBOTu/zg5lhBzEt6jZOfAi1wnx0r7cOAZ7BldGdYXaJI63ngD6HwE+O
+ td2ExZht8/oykOJ6vj3MIg3yGym9/ezKCc3UmfSjNgdhuBL1BlabvNzMYb2E3ZmK4lmR
+ xKQSP9pNUpOfgoU/c44mv2JlOPpsdNSPsp6QouWh475Br8GI5iE0CIHgwsannd+OKyWt
+ kctUWW68POaqfmJytgwPWY5G+l1LIwfEbaTs2bpLH0Umzhe8ZJmbA42UbPso+f2qtHUY
+ ulHHgYlPaHHs5q5C7uw6TN6jFgZV8vOqg7CfY4xxzi79Ymw1jMuYTQHemWXww+T+xqMs
+ yHPQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version
+ :references:subject:from:to:cc;
+ bh=zGjQR/sTKc3smldtiGbvkknjnXT+JplA/pSqSqfQKlI=;
+ b=R809J9eIeTvTiCRIRb+ouXusxqnhCli3RoGUP6FUiqAIaaslCmgNAnudlnlW9Bn6x4
+ C9qI5OGQrE2l/sJ3nLZGH7KvWcMiEf0ANDMyFt9xs2Copub6paq+vF8e0L+1VWt86xXT
+ DTNIH7U3Gr/FYC/MOTBEjPJXqMW56240oI2foshadG9YZuYj0rqi7ZUtR9TKycnu1Tjy
+ BHDM0VSOGbVg/8OHVb9LP8uJcPqhyNIvXW04fVnc6d7mWmRjgyqwq043ZRdTYxSK+ljV
+ 6J2fIIecHHUdxhIeIC/c0iMRAVR5i8A1RIeBFT/1MOBp6cYdENRuNy4nwxPBblZPqzq/
+ p63g==
+X-Gm-Message-State: APjAAAWRMzgNEDvMJGWrShiema+vhqooaLHRsXSaPvlFCPHiG83TmOLs
+ 5rkdLLA4edhg3+JvInF7OwnELOyQWcRKIzEZ7Nk=
+X-Google-Smtp-Source: APXvYqyhx8xunEJibdqSSZMbfsVIGbOyET72Al96jQRFry9WCb7OIOKmE3DHCN3SHdahPhXrl18UgoKkM5icUQv7144=
+X-Received: by 2002:a63:d846:: with SMTP id k6mr31013518pgj.378.1569946884027; 
+ Tue, 01 Oct 2019 09:21:24 -0700 (PDT)
+Date: Tue,  1 Oct 2019 09:21:21 -0700
+In-Reply-To: <20191001104253.fci7s3sn5ov3h56d@willie-the-truck>
+Message-Id: <20191001162121.67109-1-ndesaulniers@google.com>
+Mime-Version: 1.0
+References: <20191001104253.fci7s3sn5ov3h56d@willie-the-truck>
+X-Mailer: git-send-email 2.23.0.444.g18eeb5a265-goog
 Subject: Re: [PATCH] Partially revert "compiler: enable
  CONFIG_OPTIMIZE_INLINING forcibly"
-Message-ID: <20191001161453.GO42880@e119886-lin.cambridge.arm.com>
-References: <20190930114540.27498-1-will@kernel.org>
- <CAK7LNARWkQ-z02RYv3XQ69KkWdmEVaZge07qiYC8_kyMrFzCTg@mail.gmail.com>
- <20191001104253.fci7s3sn5ov3h56d@willie-the-truck>
- <20191001114129.GL42880@e119886-lin.cambridge.arm.com>
- <20191001143626.GI25745@shell.armlinux.org.uk>
- <20191001152826.GM42880@e119886-lin.cambridge.arm.com>
- <20191001154814.GJ25745@shell.armlinux.org.uk>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191001154814.GJ25745@shell.armlinux.org.uk>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+From: Nick Desaulniers <ndesaulniers@google.com>
+To: will@kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_091456_689227_11501A74 
-X-CRM114-Status: GOOD (  21.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191001_092126_151581_50A88986 
+X-CRM114-Status: UNSURE (   7.08  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:449 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,66 +96,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: arnd@arndb.de, clang-built-linux@googlegroups.com, catalin.marinas@arm.com,
+ linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
+ yamada.masahiro@socionext.com, linux-arm-kernel@lists.infradead.org,
+ torvalds@linux-foundation.org, nsaenzjulienne@suse.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 01, 2019 at 04:48:14PM +0100, Russell King - ARM Linux admin wrote:
-> On Tue, Oct 01, 2019 at 04:28:27PM +0100, Andrew Murray wrote:
-> > I hadn't noticed the use of __OPTIMIZE__ - indeed if __compiletime_assert
-> > is no-op'd and you reach it then you won't have a build error - but you
-> > may get uninitialised values instead.
-> > 
-> > Presumably the purpose of __OPTIMIZE__ in this case is to prevent getting
-> > an undefined function error for the __compiletime_assert line, even though
-> > it doesn't get called (when using a compiler that doesn't optimize out the
-> > call to the unused function).
-> > 
-> > Why is the call to __get_user_bad not guarded in this way for when
-> > __OPTIMIZE__ isn't set, i.e. why doesn't it suffer from the issue
-> > that the following fixes?
-> 
-> Officially, the kernel does not support building with -O0.  To start
-> with, the top level makefile has:
-> 
-> ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
-> KBUILD_CFLAGS   += -Os
-> else
-> KBUILD_CFLAGS   += -O2
-> endif
-> 
-> and we've said for years that the kernel relies upon the compiler
-> optimiser to build correctly.  You may be lucky if you pass it via
-> some method to 'make' but that's going to rely on the argument order
-> to the compiler, and the order in which the compiler processes its
-> arguments, and whether it (for example) correctly disables all
-> optimisations if it encounters -O0 somewhere.
+> So you'd prefer I do something like the diff below?
 
-So in practice, __OPTIMIZE__ will likely always be set, as far as I
-can tell it's supported in GCC, Clang and Intel compilers.  Though
-the exception to this is for crypto/jitterentropy.c where the -O0 flag
-is unconditionally set.
-
-Are there other exceptions to this in terms of compilers?
-
-Perhaps it may be possible to use BUILD_BUG after all.
-
-Thanks,
-
-Andrew Murray
-
-> 
-> -- 
-> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-> FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-> According to speedtest.net: 11.9Mbps down 500kbps up
+Yes, I find that diff preferable.  Use __always_inline only when absolutely
+necessary.  Even then, it sounds like this is a workaround for one compiler,
+so it should probably also have a comment. (I don't mind changing this for
+all compilers).
 
 _______________________________________________
 linux-arm-kernel mailing list
