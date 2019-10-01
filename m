@@ -2,85 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BE6FC33D7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 14:06:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E503C3422
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 14:21:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AFsRDuRennGD+EqRWb4c7XCTNXV/BWPgO3Y9R4WycHc=; b=sX3wBgPthvBJSB
-	s6b7jLTWG8E0vcr91etD2IbO2yerNPJM/725UW9AUWLciEZBhOa54pRrqP4fQjVqBNKusXlJpruPY
-	Xkpv28rhWRkuU5ZmbC0J2nuDQDJqbhw0JL0d8LDTz82oArRWoXA62Dh3uTJG3Ar5PlXjOLneXJDAa
-	xmaff0gypy0v3JYBMEzuxPZbVD9GuXtBnreS1ySUYXQ1+uDB5A20eC37QhSFsY/MiwS3p6tStXey/
-	ppRDLsFqcCg7YhU4glKnhVIyQN74DH6cFGEfzvAx+R0S0OJU+w0oCJ1ATe5i0a2mFx7L3eOQlNtMZ
-	Zs6K+ppIEFiQl0a5nk+w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=z1lK98B9dGqB/aoDDzlE2DvKRpl+wgtO2IUg0xeWGRA=; b=gYMBpYVuDhQLY2
+	gPPJJCV8w1s3CLHx4//e+UM7E2MVkqVaAoRrc7eMQi74HaRBj8tmQ/0v+ZaaDVSsAqd+hBs05zJgF
+	0yIGHoZep+vXrLgi7Dl4F0SaIVxmyKHShNfx7S5RWrX29mtnqJCgYz/oCJLCcpCyB9ECM5cGcn3nS
+	sKK2RjClXKQYIX+bSMRJrrN8oQCQz45sYYW4+W5UB5nBbXwY9VfF5BQKO4RQcDV3K1OrBfo1fPt22
+	F8Ah71Z6lskkcJTumkJ0HDwMTdRz0cuxrhVsaFCOLJ0Q1kCqGedYoM5+xp23AKUuRq3tgfaQ/Wq0I
+	eZSa5XYs0BoFiNVJAO7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFGvP-000355-Eg; Tue, 01 Oct 2019 12:06:39 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1iFH9q-0008HD-N7; Tue, 01 Oct 2019 12:21:34 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFGtK-0007My-0M
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 12:04:31 +0000
-Received: by mail-oi1-f194.google.com with SMTP id m16so14150146oic.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 01 Oct 2019 05:04:29 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=rc80uNQCO5V74UZEUf3E2pBqivh12e4gIj5eJ05GnNc=;
- b=AJcKPMdMcEL/uCWtb/WJ5lvuW1J5czisthpUCIbAdkXIQVX530h6FJ6IdkkEjW/vJf
- 0pOYuBqIT8Mq8o11bNxBgrMTPY5ZFT9Wtp2RnI2oeJPJpY3i4TKsfvsveiZMhRXJt3hd
- OPNTsmx3x8Lab2MFFdUmyAoTMScBlqcx+fcDCH3TfJpoKaHvVy+SaPGreh7C7etodbkW
- lRKDkTzt4lCY2NzVKtv6aMj9EeWGXhYXUzbkG4u+ySwKv0hH4EUtOXWyONZ6CQKNdlcA
- VXTdspj/mh5JQ8KuCW1sTZpip3xaP5j6zE4/I6Kcezk/I+znIAcd5PZPZ+BSlDKIP5Pd
- qk6g==
-X-Gm-Message-State: APjAAAV4Bw3AlpeAD5JtxxU3zz4+RGaU7i/IealUIPWCCzNNd4s/Y3T5
- SrHX6Mx+8OlpL4itynKqhw==
-X-Google-Smtp-Source: APXvYqwuwM7AkJVAtGa8akLZjV3Pru0RHcBtiuxx3c9KMgqDOsfLJ5O5/oMwqjvFDQHezJJYEcZysg==
-X-Received: by 2002:a05:6808:8ee:: with SMTP id
- d14mr3311288oic.31.1569931468906; 
- Tue, 01 Oct 2019 05:04:28 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id 11sm4823374otg.62.2019.10.01.05.04.28
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 01 Oct 2019 05:04:28 -0700 (PDT)
-Date: Tue, 1 Oct 2019 07:04:27 -0500
-From: Rob Herring <robh@kernel.org>
-To: Pragnesh Patel <pragnesh.patel@sifive.com>
-Subject: Re: [PATCH] media: dt-bindings: Fix building error for
- dt_binding_check
-Message-ID: <20191001120427.GA3594@bogus>
-References: <1568808060-17516-1-git-send-email-pragnesh.patel@sifive.com>
+ id 1iFH9h-0008Gm-K1
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 12:21:27 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x91CB7xo015582; Tue, 1 Oct 2019 14:21:22 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=tvexJDp1NN/llsuNXSSQPqtCEvUEQbZ/KwTA58G95MM=;
+ b=v9Fe1geBnD6K0l1sI3luj4DJvxLLqPKPdaFOfsxRZOeeGKJxA0fMMcpK+qH/PmXs84V6
+ gjGDI77UandspB5v5RGn7WqinW8tvrZRIhG3ZcF3rWUk4Bxn4b2S6oDV5fsJjB2hd4Ap
+ KME0saXzMG7Ku9jwo49puaNhXOHqoMnyGiVzqbszIeMB8abAphOLiJ18h7H1el37MGd2
+ 96qsfAG0UB+wvtT1d8LuS9hlMEMKfWau1T45B5eiq9Bsc3wTZlDaviMB8MZ3NG0y1TeO
+ ugXIdo05KCXvOMsqBZHtpoldskyjYfiWrUubRhzeh2xLfNp+zrL5d7HDby6/kRHHD6sI 9Q== 
+Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2v9w010upc-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Tue, 01 Oct 2019 14:21:22 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id B72B54B;
+ Tue,  1 Oct 2019 12:21:18 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag5node2.st.com [10.75.127.14])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1F8D72BEC6E;
+ Tue,  1 Oct 2019 14:21:18 +0200 (CEST)
+Received: from [10.48.1.171] (10.75.127.49) by SFHDAG5NODE2.st.com
+ (10.75.127.14) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 1 Oct
+ 2019 14:21:17 +0200
+Subject: Re: [PATCH] i2c: i2c-stm32f7: fix a race in slave mode with
+ arbitration loss irq
+To: Fabrice Gasnier <fabrice.gasnier@st.com>, <wsa@the-dreams.de>
+References: <1569919869-3218-1-git-send-email-fabrice.gasnier@st.com>
+From: Pierre Yves MORDRET <pierre-yves.mordret@st.com>
+Message-ID: <e30de80a-6ecd-a2a6-8742-8dcdd1c3253c@st.com>
+Date: Tue, 1 Oct 2019 14:21:16 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1568808060-17516-1-git-send-email-pragnesh.patel@sifive.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1569919869-3218-1-git-send-email-fabrice.gasnier@st.com>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.49]
+X-ClientProxiedBy: SFHDAG2NODE1.st.com (10.75.127.4) To SFHDAG5NODE2.st.com
+ (10.75.127.14)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
+ definitions=2019-10-01_06:2019-10-01,2019-10-01 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_050430_052149_09C7FF22 
-X-CRM114-Status: GOOD (  11.55  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191001_052126_108976_64BD9584 
+X-CRM114-Status: GOOD (  23.22  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,26 +96,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, mripard@kernel.org, Chen-Yu Tsai <wens@csie.org>,
- linux-arm-kernel@lists.infradead.org,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Pragnesh Patel <pragnesh.patel@sifive.com>, linux-media@vger.kernel.org
+Cc: alexandre.torgue@st.com, linux-kernel@vger.kernel.org, alain.volmat@st.com,
+ linux-i2c@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 18 Sep 2019 17:31:00 +0530, Pragnesh Patel wrote:
-> $id doesn't match the actual filename, so update the $id
-> 
-> Signed-off-by: Pragnesh Patel <pragnesh.patel@sifive.com>
-> ---
->  Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
+Hi
 
-Acked-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
+
+Thx
+
+On 10/1/19 10:51 AM, Fabrice Gasnier wrote:
+> When in slave mode, an arbitration loss (ARLO) may be detected before the
+> slave had a chance to detect the stop condition (STOPF in ISR).
+> This is seen when two master + slave adapters switch their roles. It
+> provokes the i2c bus to be stuck, busy as SCL line is stretched.
+> - the I2C_SLAVE_STOP event is never generated due to STOPF flag is set but
+>   don't generate an irq (race with ARLO irq, STOPIE is masked). STOPF flag
+>   remains set until next master xfer (e.g. when STOPIE irq get unmasked).
+>   In this case, completion is generated too early: immediately upon new
+>   transfer request (then it doesn't send all data).
+> - Some data get stuck in TXDR register. As a consequence, the controller
+>   stretches the SCL line: the bus gets busy until a future master transfer
+>   triggers the bus busy / recovery mechanism (this can take time... and
+>   may never happen at all)
+> 
+> So choice is to let the STOPF being detected by the slave isr handler,
+> to properly handle this stop condition. E.g. don't mask IRQs in error
+> handler, when the slave is running.
+> 
+> Fixes: 60d609f30de2 ("i2c: i2c-stm32f7: Add slave support")
+> 
+> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+> ---
+>  drivers/i2c/busses/i2c-stm32f7.c | 17 ++++++++++-------
+>  1 file changed, 10 insertions(+), 7 deletions(-)
+> 
+> diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
+> index 266d1c2..3a8ab0c 100644
+> --- a/drivers/i2c/busses/i2c-stm32f7.c
+> +++ b/drivers/i2c/busses/i2c-stm32f7.c
+> @@ -1501,7 +1501,7 @@ static irqreturn_t stm32f7_i2c_isr_error(int irq, void *data)
+>  	void __iomem *base = i2c_dev->base;
+>  	struct device *dev = i2c_dev->dev;
+>  	struct stm32_i2c_dma *dma = i2c_dev->dma;
+> -	u32 mask, status;
+> +	u32 status;
+>  
+>  	status = readl_relaxed(i2c_dev->base + STM32F7_I2C_ISR);
+>  
+> @@ -1526,12 +1526,15 @@ static irqreturn_t stm32f7_i2c_isr_error(int irq, void *data)
+>  		f7_msg->result = -EINVAL;
+>  	}
+>  
+> -	/* Disable interrupts */
+> -	if (stm32f7_i2c_is_slave_registered(i2c_dev))
+> -		mask = STM32F7_I2C_XFER_IRQ_MASK;
+> -	else
+> -		mask = STM32F7_I2C_ALL_IRQ_MASK;
+> -	stm32f7_i2c_disable_irq(i2c_dev, mask);
+> +	if (!i2c_dev->slave_running) {
+> +		u32 mask;
+> +		/* Disable interrupts */
+> +		if (stm32f7_i2c_is_slave_registered(i2c_dev))
+> +			mask = STM32F7_I2C_XFER_IRQ_MASK;
+> +		else
+> +			mask = STM32F7_I2C_ALL_IRQ_MASK;
+> +		stm32f7_i2c_disable_irq(i2c_dev, mask);
+> +	}
+>  
+>  	/* Disable dma */
+>  	if (i2c_dev->use_dma) {
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
