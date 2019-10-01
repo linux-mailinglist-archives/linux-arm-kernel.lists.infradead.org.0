@@ -2,72 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5559BC35ED
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 15:39:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 472C6C35EF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 15:40:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Tuq3nk4y2E2t2U/Hynq/GR8VWvkuzupG+ft3Ft7Bpec=; b=avPy318Oroo756
-	6+oo+FwoXu8zSYOzqPcllmld14Xj9dUUdQPxO0iksWOuDfDcnK0/ZFd1CCNRjpVqwfTxd+U9cWCCh
-	A42BQOkLz6r0xdF+Ybl/D83yxiMDMcEfx/9T9U2FIjDPg03IrPCWImt7C4NZXx8ScxPHBEtT395yH
-	fF+xlhDPeEuDHGTAxJYc0iH7dFOXQaYhAR87f9T6DAf00qvt+Uq/zfvFOQtCdodrM+qqJ4ZKgZfwE
-	BWimgT7ISl4QLn7stDWTV/EmDRaAQz7/NgWCWRMgXNEVgekX91WVYG6bvN6AA97mG7IERmecgzlka
-	FDupt83jXitFHmxC2i2A==;
+	List-Owner; bh=0d78EBoo2R1Pibxidl9LgJCS2RbWm2vv0sPdsKOn6oM=; b=EXk3sXkH5wzJVb
+	k905l9p0vFga/OYEyL1NfkdgZbZnKHI+tGL55ojdyRlogzdgy1KEBYOTY2hj5dFwMyHbuu8/f563K
+	jjyAoYoTL4WNhjmQP2qKcaab2jaWGgZeKguw/dAgVUOEOXqiKYjHZHPeyEB3/zGBaSLa/pWagjPR7
+	miWpNFPa9e3k5a3FR5N53ddxFQYckV6LMcqTXtoB1sgLnZACxHk56o6WdfNEnjeov4Ba+TSkVkPhk
+	sgxqt3n8d8MGe1K6VvGbL0TBqJwU0ygaVIoimUNA9NgQdqzSGgggm+s717WjDgKRCR9EtHwrAav8H
+	p9jVGdgu8cMnU/tESwNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFINM-0003KV-LJ; Tue, 01 Oct 2019 13:39:36 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
+	id 1iFINc-0003Zt-Ej; Tue, 01 Oct 2019 13:39:52 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFING-0003JT-Ja
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 13:39:31 +0000
-Received: by mail-oi1-f195.google.com with SMTP id t84so14392688oih.10
+ id 1iFINS-0003Vp-1w
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 13:39:44 +0000
+Received: by mail-ot1-f68.google.com with SMTP id 60so1611200otu.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 01 Oct 2019 06:39:27 -0700 (PDT)
+ Tue, 01 Oct 2019 06:39:41 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=KLHRZTdgmJ31FLV+CneDtjsb45WoIfxvw7NRmXa0ukk=;
- b=oAlKGeK2DzQctiWtjhfv9cr3HhOabyFyz26RHYxpN2eSMOB+KSi9icnckkACcNRJWO
- YVUB6Cp7qFNECCbiLg1p+bQ5E07pxwzNfTYjDA1RIfAlyIuyxUwWm3wl6Wrl7V+zkXda
- hCg9FUMYIWcl/7dkdQpFMh10ig2Ge7JglsXm7ZTMo7oFh7WZ+mY7fKlFgQMax7Lcnyto
- jAxCBKR9ZD2gmS9OZjReEXIAjc1SNLbnPXVsWl97o7+owz0QowXJoI6XpQ94zZZ08s7N
- GydH445TIAJt1LkhpWhkuvTDxj7iC1Us+LRL3ErXzrcANFemQhKjK7rfVW9T+zKReu/Y
- i+pQ==
-X-Gm-Message-State: APjAAAXu+7SFvvQglMYQtmrzTYlFQKrvqnqNDUhcsuIXVeiABC9TEFRZ
- KccPwokJa9D0Se8HR90TLA==
-X-Google-Smtp-Source: APXvYqzTSJLcgzzb/0m5cCOwspezBpAaf7U3FUZPelAKilntUhGtVSw7W2yg9hXJszyYW5Ya4alysA==
-X-Received: by 2002:aca:df88:: with SMTP id w130mr3890865oig.0.1569937167125; 
- Tue, 01 Oct 2019 06:39:27 -0700 (PDT)
+ bh=VUMlq66dEzuwplXVYJdSygdvuPoZ83mfs0aFAtH/Dos=;
+ b=Rt4vG9Vl/RqCXXhetu3hTPx8t6jtSpp9qffeX2IOyYyctBDOBlxlB4lblMoV9ZCpcr
+ jE6UiD5e49Q23Vwgbc1BwWpJxfv32CYzmBsW1YUZhMm2MnoS6YamlZQXjQoJOWL/mSeG
+ Xqz/urkbfGjKtoQCaPlQg5FR+U7ye6HRmbwAgby3sG2F7ptQ6uRsSd5EL7BmEoCZnNDb
+ dEwntHwJ/0I5hUACPiAYF8v4pdzwSTlMxiTaXuOoQuXEq1e3VF6ECc87yu14Hxt1EH+n
+ 9DpB/5tIFVb+vnMOYi6BFpeyZXvY0zJULfuvY86r3/gf3Q3l8o9AWvY7Um/ESoqJfeJS
+ 6dnA==
+X-Gm-Message-State: APjAAAVXCCXTtzCuAzrP+k6bP9KH9p6AdnYgNvqdr5ZLtfVtz0brIEi7
+ jvg+fC8kLDsCFqaTDSW9oQ==
+X-Google-Smtp-Source: APXvYqwcZLcnAoU3g0ebxrKDG2Zm3JhH90F8tOYDm55u0jQnbo17K7uPCU6e+MSayZYt4F74qyGV+A==
+X-Received: by 2002:a9d:7251:: with SMTP id a17mr1388490otk.110.1569937180254; 
+ Tue, 01 Oct 2019 06:39:40 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id w201sm5101599oie.44.2019.10.01.06.39.26
+ by smtp.gmail.com with ESMTPSA id j11sm4674948otk.80.2019.10.01.06.39.39
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 01 Oct 2019 06:39:26 -0700 (PDT)
-Date: Tue, 1 Oct 2019 08:39:25 -0500
+ Tue, 01 Oct 2019 06:39:39 -0700 (PDT)
+Date: Tue, 1 Oct 2019 08:39:39 -0500
 From: Rob Herring <robh@kernel.org>
 To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH v5 1/2] dt-bindings: timer: Convert Exynos MCT bindings
- to json-schema
-Message-ID: <20191001133925.GA13146@bogus>
+Subject: Re: [PATCH v5 2/2] dt-bindings: timer: Use defines instead of
+ numbers in Exynos MCT examples
+Message-ID: <20191001133939.GA13715@bogus>
 References: <20190930154418.4884-1-krzk@kernel.org>
+ <20190930154418.4884-2-krzk@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190930154418.4884-1-krzk@kernel.org>
+In-Reply-To: <20190930154418.4884-2-krzk@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_063930_644592_7ACC5A0A 
-X-CRM114-Status: GOOD (  11.58  )
+X-CRM114-CacheID: sfid-20191001_063942_104491_57019AA2 
+X-CRM114-Status: GOOD (  11.07  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
+ no trust [209.85.210.68 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -77,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
+ [209.85.210.68 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -100,31 +101,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 30 Sep 2019 17:44:17 +0200, Krzysztof Kozlowski wrote:
-> Convert Samsung Exynos Soc Multi Core Timer bindings to DT schema format
-> using json-schema.
+On Mon, 30 Sep 2019 17:44:18 +0200, Krzysztof Kozlowski wrote:
+> Make the examples in Exynos Multi Core Timer bindings more readable and
+> bring them closer to real DTS by using defines for interrupt flags.
+> Fix also GIC interrupt type in example for Exynos4412 (from SPI to PPI).
 > 
+> Suggested-by: Marek Szyprowski <m.szyprowski@samsung.com>
 > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 > 
 > ---
 > 
-> Changes since v4:
-> 1. Do not mention interrupts-extended in the bindings (old bindings
->    mentioned only interrupts).
-> 
-> Changes since v3:
-> 1. Use interrupts-extended instead of interrupts-map in example.
-> 
 > Changes since v1:
-> 1. Indent example with four spaces (more readable),
-> 2. Rename nodes in example to timer,
-> 3. Remove mct-map subnode.
+> 1. Use GIC_PPI where applicable.
+> 
+> Rebased on top of:
+> https://patchwork.kernel.org/project/linux-samsung-soc/list/?series=177667&state=*
 > ---
->  .../bindings/timer/samsung,exynos4210-mct.txt |  88 --------------
->  .../timer/samsung,exynos4210-mct.yaml         | 107 ++++++++++++++++++
->  2 files changed, 107 insertions(+), 88 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.txt
->  create mode 100644 Documentation/devicetree/bindings/timer/samsung,exynos4210-mct.yaml
+>  .../timer/samsung,exynos4210-mct.yaml         | 37 ++++++++++++++-----
+>  1 file changed, 27 insertions(+), 10 deletions(-)
 > 
 
 Applied, thanks.
