@@ -2,75 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 191D5C39AE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 17:59:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DCC0C39C2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 18:02:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JJmSgnP2scSG340+9TKy4gKq6X0Rwr8IWCpye3D/Ymk=; b=BqRhsFLb3t1/BG
-	dowQn6AGMMRT7joSJUCI8Q2d0cHIkIFHXaTHW4nadcvisD0kvR5gd/hjCdqCEgBCZ0aQGR7mzHtdp
-	J0lwrpG5YuwGPf1T4q6WLZiWG8OXH7EtMH1nJ+20dvMHAo224gRnvXfIXMp0D1tJgyfwTS16WeeL8
-	eF2xeiDBPDmKTtw9vCXRzQ9mIYRncLAjGWK6Pg32SYUcQ/vtz8y6Vb9WnyhjP+F5oXbQWmlulB/ry
-	TxQOt67L5DoiNplDQicX13k0gwkaaSx4WrXpkYV1eV1ckpfr9bOdkDhgmPlz6mGqmVYPw/omsJ0hm
-	GQyY3TFlAap9HGhTFoDg==;
+	List-Owner; bh=PxrwWOfvD7RD1w0PfRTN3/qEDYlLKlN9NdEHSF6ZU60=; b=q58vnVui/6A3dB
+	egSL6n/ztmTUhcHGdUFxa3RwO9H+pUAyyvbokWc7hV2MTNHkO1ymKqMY4CsYnm0hj1OTL9HEhNlQu
+	pSXArxRPOczN7GdxGtapWirxfpQgTmHbH9U4dcL/ZVmbWl29eNZ+lP7pWGr3KaAiu24/UjTiwfrwP
+	RAcbpjt7IMk9l1md67hcUyf96MTQDmiQMmkquYS2QYnULiA7Gil0EtwnM/eoHQUWrT2w53kYPlgXk
+	Heqribx5y+fLnWUjtA4xcy4DuI79pSTTthNsiJhpDFTgWUrykwwfYRHi2PMMMK6vVOorkWAn4qFHn
+	zR0Gzyflm8WWyqrJZICw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFKYt-0004aY-1C; Tue, 01 Oct 2019 15:59:39 +0000
-Received: from mail-qk1-f196.google.com ([209.85.222.196])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFKYk-0004Zn-Q8
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 15:59:32 +0000
-Received: by mail-qk1-f196.google.com with SMTP id f16so11716118qkl.9
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 01 Oct 2019 08:59:30 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=PVA9zycwwTmxrHgzivoqyA4S7B6/Ae12ZgJJqfTA6ZE=;
- b=UwWzjokKbN4Pv0dptkf8rmSWSkYT2oDUAfeXgr+FkA0Y9DuEh1BICNC/zEhOn81E3O
- i0diLlmKnIDTAwctK58p5yf4dvK2glg6twNjYGhI1npI2+kfYqByvUIS8HibAZ6FdkmC
- 7TvRcXp31AA7wzAVvSVXgNRW/jMhTBP2Qy6l70jsccp1fvy13V7KUJ044/H0TMH77RmB
- iuu1ECuoq/YrLxN8H69lqNuu8YDrFei/oOw6pGdjDX9W20iKv2klt504HKlT2lbd/JN5
- aLmXGowLtIGPhHlpmGhioQgvrJtE5YB+41g+iLlgCmSVqpX5qkw/mXha0OuGD8OPKRfM
- lJKA==
-X-Gm-Message-State: APjAAAWlipsSuEnF33es7Lo+M/yb7fsaaqlPcQfzfSHdPCatFkM2I6Hd
- 13glMKIkw3eQO9gJpALJ7JAduWNNfRta28Cxuvc=
-X-Google-Smtp-Source: APXvYqw8OSzTRQKAtzD5yJNb3X/TKsuG58PVn13xDbhiPbbzHk02DUCmHWqaGsNg1xN9FhUJmk9LIa3wCb6Y08Qz7k8=
-X-Received: by 2002:ae9:ef8c:: with SMTP id d134mr1425740qkg.286.1569945569712; 
- Tue, 01 Oct 2019 08:59:29 -0700 (PDT)
+	id 1iFKbx-0006KO-H6; Tue, 01 Oct 2019 16:02:49 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iFKbq-0006K3-Q6
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 16:02:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 020D61000;
+ Tue,  1 Oct 2019 09:02:42 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 6AE5E3F71A; Tue,  1 Oct 2019 09:02:41 -0700 (PDT)
+Date: Tue, 1 Oct 2019 17:02:39 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH] arm64: simplify syscall wrapper ifdeffery
+Message-ID: <20191001160239.GP41399@arrakis.emea.arm.com>
+References: <20190913125550.7053-1-mark.rutland@arm.com>
 MIME-Version: 1.0
-References: <20191001142116.1172290-1-arnd@arndb.de>
- <20191001142734.GD4106@piout.net>
-In-Reply-To: <20191001142734.GD4106@piout.net>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 1 Oct 2019 17:59:13 +0200
-Message-ID: <CAK8P3a3ovgR4THuXb17Fh7DDts188jWRqP3OAZ7cknNUsWQ-dg@mail.gmail.com>
-Subject: Re: [PATCH] ASoC: atmel: fix atmel_ssc_set_audio link failure
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Content-Disposition: inline
+In-Reply-To: <20190913125550.7053-1-mark.rutland@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_085930_848510_620305FF 
-X-CRM114-Status: GOOD (  10.23  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191001_090242_890115_4666EC9B 
+X-CRM114-Status: GOOD (  12.24  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.196 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.196 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,41 +60,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ALSA Development Mailing List <alsa-devel@alsa-project.org>,
- Liam Girdwood <lgirdwood@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Takashi Iwai <tiwai@suse.com>, Jaroslav Kysela <perex@perex.cz>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Mark Brown <broonie@kernel.org>,
- Codrin Ciubotariu <codrin.ciubotariu@microchip.com>,
- =?UTF-8?B?TWljaGHFgiBNaXJvc8WCYXc=?= <mirq-linux@rere.qmqm.pl>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 1, 2019 at 4:27 PM Alexandre Belloni
-<alexandre.belloni@bootlin.com> wrote:
+On Fri, Sep 13, 2019 at 01:55:50PM +0100, Mark Rutland wrote:
+> Back in commit:
+> 
+>   4378a7d4be30ec69 ("arm64: implement syscall wrappers")
+> 
+> ... I implemented the arm64 syscall wrapper glue following the approach
+> taken on x86. While doing so, I also copied across some ifdeffery that
+> isn't necessary on arm64.
+> 
+> On arm64 we don't share any of the native wrappers with compat tasks,
+> and unlike x86 we don't have alternative implementations of
+> SYSCALL_DEFINE0(), COND_SYSCALL(), or SYS_NI() defined when AArch32
+> compat support is enabled.
+> 
+> Thus we don't need to prevent multiple definitions of these macros, and
+> can remove the #ifndef ... #endif guards protecting them. If any of
+> these had been previously defined elsewhere, syscalls are unlikely to
+> work correctly, and we'd want the compiler to warn about the multiple
+> definitions.
+> 
+> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
 
-> > -obj-$(CONFIG_SND_ATMEL_SOC_PDC) += snd-soc-atmel-pcm-pdc.o
-> > -obj-$(CONFIG_SND_ATMEL_SOC_DMA) += snd-soc-atmel-pcm-dma.o
-> > +# pdc and dma need to both be built-in if any user of
-> > +# ssc is built-in.
-> > +ifdef CONFIG_SND_ATMEL_SOC_PDC
-> > +obj-$(CONFIG_SND_ATMEL_SOC_SSC) += snd-soc-atmel-pcm-pdc.o
-> > +endif
-> > +ifdef CONFIG_SND_ATMEL_SOC_DMA
-> > +obj-$(CONFIG_SND_ATMEL_SOC_SSC) += snd-soc-atmel-pcm-dma.o
-> > +endif
->
-> Doesn't that prevent them to be built as a module at all?
-> I'm not sure there is a use case though.
+Queued for 5.5. Thanks.
 
-It should not: the idea was that snd-soc-atmel-pcm-{pdc,dma}.o
-get built as modules if CONFIG_SND_ATMEL_SOC_SSC=m.
-
-      arnd
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
