@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18DE1C2CC7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 07:07:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D6C4C2CF0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 07:33:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j0v+Nw7zg0pY+maFHfh69XFBWTLEzXUpwIR5rS42+ZA=; b=bZf/u3GhUUe9w1
-	ZCrEm5JY4cLjGves0wQcwNXWPbwlp2oOCHwzRiTx/QIDrYQqkfkqQ877HftnNdnZopVPVlEwEqGxF
-	8lepcY9JpfIUQ/PkJdoarGHp63BNeTytQS0STwHZiCYQ2OqkIJJlGrOPaMZYSRNWFDzYB6Uc2P2hF
-	WxHhd8/cFM9GnGvW5ebLSsEfztzzIPc7l0y4A+kgEDnCFpbr16UdSv3hke+wQGQrBggelgGxFGaIt
-	dATlr41Uxxd5gAGG/FLWu1saqlHmTOgqV0VdztkO13iQ/2sumSENVmJHFuGBoDlu/8ysgeSBEKVub
-	8yNl9XJ157l4wVjkjkCw==;
+	List-Owner; bh=U3EGtod9t4H+HsAxUPuRQcAJYBsbqNVum0MEosJXZ34=; b=nqPPCigLnMyomt
+	DaFtuftSo6Hd0SPTxJyvptr1bVo2OL0RyYkp/cg6LtCVBQ8FTqFB2tElCve4+1/xddi/u0vXKYvjU
+	71C/LI6cSw+myME8gbL8TcXZVhpE8Gd7DhMnTmoCk9U5koUbGSeXtRZAPdji1U4mxq59bN3eZYrdj
+	+u5vcjNnaBMMJrpDUcuqYsbkSC/q6r/LsrLF+3Y1ms6i1QYhag8ZZ8WwTybC1VvogAwOB6PqvIRYi
+	oo5z3udkgPuchVkyEMfz9JKGykOh2PWbQ/Az7GoIiL5U1ndT/AbMd3ZbXfKL8K9uCbysManYRJQN0
+	6dEv+Zq8YoS/RjEBwsfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFANY-0002cu-24; Tue, 01 Oct 2019 05:07:16 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1iFAn1-0001b3-SC; Tue, 01 Oct 2019 05:33:35 +0000
+Received: from mailoutvs14.siol.net ([185.57.226.205] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFANO-0002cL-Hw
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 05:07:08 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga008.fm.intel.com ([10.253.24.58])
- by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 30 Sep 2019 22:07:04 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,569,1559545200"; d="scan'208";a="190474561"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga008.fm.intel.com with ESMTP; 30 Sep 2019 22:06:56 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1iFANE-000IpB-8f; Tue, 01 Oct 2019 13:06:56 +0800
-Date: Tue, 1 Oct 2019 13:06:23 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Aleksa Sarai <cyphar@cyphar.com>
-Subject: Re: [PATCH v13 7/9] open: openat2(2) syscall
-Message-ID: <201910011326.iTYOtJYo%lkp@intel.com>
-References: <20190930183316.10190-8-cyphar@cyphar.com>
+ id 1iFAms-0001Zy-2a
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 05:33:28 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id 01FBE5214A7;
+ Tue,  1 Oct 2019 07:33:19 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at psrvmta10.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta10.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id C3Ar8QFXxW9r; Tue,  1 Oct 2019 07:33:19 +0200 (CEST)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id 4E5C25214C3;
+ Tue,  1 Oct 2019 07:33:19 +0200 (CEST)
+Received: from jernej-laptop.localnet (cpe-86-58-59-25.static.triera.net
+ [86.58.59.25]) (Authenticated sender: jernej.skrabec@siol.net)
+ by mail.siol.net (Postfix) with ESMTPA id E624C5214A7;
+ Tue,  1 Oct 2019 07:33:17 +0200 (CEST)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
+To: Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Subject: Re: [PATCH v2 0/6] media: cedrus: h264: Support multi-slice frames
+Date: Tue, 01 Oct 2019 07:33:17 +0200
+Message-ID: <1947541.RCUY4WSgCv@jernej-laptop>
+In-Reply-To: <eb127b9a-e226-d230-67b5-069795bd76fb@xs4all.nl>
+References: <20190929200023.215831-1-jernej.skrabec@siol.net>
+ <4342181.Ehiz7mZe5m@jernej-laptop>
+ <eb127b9a-e226-d230-67b5-069795bd76fb@xs4all.nl>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190930183316.10190-8-cyphar@cyphar.com>
-X-Patchwork-Hint: ignore
-User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_220706_636341_F2FA7FCC 
-X-CRM114-Status: GOOD (  17.75  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190930_223326_273176_9EB935E0 
+X-CRM114-Status: GOOD (  22.13  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.205 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -70,201 +71,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Peter Zijlstra <peterz@infradead.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Alexei Starovoitov <ast@kernel.org>, linux-mips@vger.kernel.org,
- David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
- sparclinux@vger.kernel.org, Jiri Olsa <jolsa@redhat.com>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
- Shuah Khan <shuah@kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Christian Brauner <christian@brauner.io>,
- Eric Biederman <ebiederm@xmission.com>, linux-xtensa@linux-xtensa.org,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Jann Horn <jannh@google.com>, Oleg Nesterov <oleg@redhat.com>,
- Aleksa Sarai <cyphar@cyphar.com>, Al Viro <viro@zeniv.linux.org.uk>,
- Andy Lutomirski <luto@kernel.org>, Shuah Khan <skhan@linuxfoundation.org>,
- Namhyung Kim <namhyung@kernel.org>, David Drysdale <drysdale@google.com>,
- linux-arm-kernel@lists.infradead.org, "J. Bruce Fields" <bfields@fieldses.org>,
- libc-alpha@sourceware.org, linux-parisc@vger.kernel.org,
- linux-m68k@lists.linux-m68k.org, linux-api@vger.kernel.org,
- Chanho Min <chanho.min@lge.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- Jeff Layton <jlayton@kernel.org>, linux-kernel@vger.kernel.org,
- kbuild-all@01.org, linux-alpha@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- containers@lists.linux-foundation.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devel@driverdev.osuosl.org, linux-media@vger.kernel.org, pawel@osciak.com,
+ jonas@kwiboo.se, gregkh@linuxfoundation.org, wens@csie.org, mripard@kernel.org,
+ tfiga@chromium.org, paul.kocialkowski@bootlin.com, kyungmin.park@samsung.com,
+ boris.brezillon@collabora.com, linux-arm-kernel@lists.infradead.org,
+ mchehab@kernel.org, ezequiel@collabora.com, linux-kernel@vger.kernel.org,
+ m.szyprowski@samsung.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Aleksa,
-
-Thank you for the patch! Perhaps something to improve:
-
-[auto build test WARNING on linus/master]
-[cannot apply to v5.4-rc1 next-20191001]
-[if your patch is applied to the wrong git tree, please drop us a note to help
-improve the system. BTW, we also suggest to use '--base' option to specify the
-base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
-
-url:    https://github.com/0day-ci/linux/commits/Aleksa-Sarai/namei-openat2-2-path-resolution-restrictions/20191001-025628
-reproduce:
-        # apt-get install sparse
-        # sparse version: v0.6.1-rc1-37-gd466a02-dirty
-        make ARCH=x86_64 allmodconfig
-        make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
-
-If you fix the issue, kindly add following tag
-Reported-by: kbuild test robot <lkp@intel.com>
-
-
-sparse warnings: (new ones prefixed by >>)
-
-   fs/open.c:757:13: sparse: sparse: restricted fmode_t degrades to integer
-   fs/open.c:983:18: sparse: sparse: restricted fmode_t degrades to integer
->> fs/open.c:1011:36: sparse: sparse: invalid assignment: |=
->> fs/open.c:1011:36: sparse:    left side has type int
->> fs/open.c:1011:36: sparse:    right side has type restricted fmode_t
-   fs/open.c:1013:36: sparse: sparse: invalid assignment: |=
-   fs/open.c:1013:36: sparse:    left side has type int
-   fs/open.c:1013:36: sparse:    right side has type restricted fmode_t
->> fs/open.c:1029:24: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted fmode_t [usertype] opath_mask @@    got pe] opath_mask @@
->> fs/open.c:1029:24: sparse:    expected restricted fmode_t [usertype] opath_mask
->> fs/open.c:1029:24: sparse:    got int opath_mask
->> fs/open.c:1011:36: sparse: sparse: invalid assignment: |=
->> fs/open.c:1011:36: sparse:    left side has type int
->> fs/open.c:1011:36: sparse:    right side has type restricted fmode_t
-   fs/open.c:1013:36: sparse: sparse: invalid assignment: |=
-   fs/open.c:1013:36: sparse:    left side has type int
-   fs/open.c:1013:36: sparse:    right side has type restricted fmode_t
->> fs/open.c:1029:24: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted fmode_t [usertype] opath_mask @@    got pe] opath_mask @@
->> fs/open.c:1029:24: sparse:    expected restricted fmode_t [usertype] opath_mask
->> fs/open.c:1029:24: sparse:    got int opath_mask
->> fs/open.c:1011:36: sparse: sparse: invalid assignment: |=
->> fs/open.c:1011:36: sparse:    left side has type int
->> fs/open.c:1011:36: sparse:    right side has type restricted fmode_t
-   fs/open.c:1013:36: sparse: sparse: invalid assignment: |=
-   fs/open.c:1013:36: sparse:    left side has type int
-   fs/open.c:1013:36: sparse:    right side has type restricted fmode_t
->> fs/open.c:1029:24: sparse: sparse: incorrect type in assignment (different base types) @@    expected restricted fmode_t [usertype] opath_mask @@    got pe] opath_mask @@
->> fs/open.c:1029:24: sparse:    expected restricted fmode_t [usertype] opath_mask
->> fs/open.c:1029:24: sparse:    got int opath_mask
-   fs/open.c:1173:15: sparse: sparse: undefined identifier 'copy_struct_from_user'
-
-vim +1011 fs/open.c
-
-   957	
-   958	static inline int build_open_flags(const struct open_how *how,
-   959					   struct open_flags *op)
-   960	{
-   961		int flags = how->flags;
-   962		int lookup_flags = 0;
-   963		int opath_mask = 0;
-   964		int acc_mode = ACC_MODE(flags);
-   965	
-   966		/*
-   967		 * Older syscalls still clear these bits before calling
-   968		 * build_open_flags(), but openat2(2) checks all its arguments.
-   969		 */
-   970		if (flags & ~VALID_OPEN_FLAGS)
-   971			return -EINVAL;
-   972		if (how->resolve & ~VALID_RESOLVE_FLAGS)
-   973			return -EINVAL;
-   974		if (!(how->flags & (O_PATH | O_CREAT | __O_TMPFILE)) && how->mode != 0)
-   975			return -EINVAL;
-   976	
-   977		if (flags & (O_CREAT | __O_TMPFILE))
-   978			op->mode = (how->mode & S_IALLUGO) | S_IFREG;
-   979		else
-   980			op->mode = 0;
-   981	
-   982		/* Must never be set by userspace */
- > 983		flags &= ~FMODE_NONOTIFY & ~O_CLOEXEC;
-   984	
-   985		/*
-   986		 * O_SYNC is implemented as __O_SYNC|O_DSYNC.  As many places only
-   987		 * check for O_DSYNC if the need any syncing at all we enforce it's
-   988		 * always set instead of having to deal with possibly weird behaviour
-   989		 * for malicious applications setting only __O_SYNC.
-   990		 */
-   991		if (flags & __O_SYNC)
-   992			flags |= O_DSYNC;
-   993	
-   994		if (flags & __O_TMPFILE) {
-   995			if ((flags & O_TMPFILE_MASK) != O_TMPFILE)
-   996				return -EINVAL;
-   997			if (!(acc_mode & MAY_WRITE))
-   998				return -EINVAL;
-   999		} else if (flags & O_PATH) {
-  1000			/*
-  1001			 * If we have O_PATH in the open flag. Then we
-  1002			 * cannot have anything other than the below set of flags
-  1003			 */
-  1004			flags &= O_DIRECTORY | O_NOFOLLOW | O_PATH;
-  1005			acc_mode = 0;
-  1006	
-  1007			/* Allow userspace to restrict the re-opening of O_PATH fds. */
-  1008			if (how->upgrade_mask & ~VALID_UPGRADE_FLAGS)
-  1009				return -EINVAL;
-  1010			if (!(how->upgrade_mask & UPGRADE_NOREAD))
-> 1011				opath_mask |= FMODE_PATH_READ;
-  1012			if (!(how->upgrade_mask & UPGRADE_NOWRITE))
-  1013				opath_mask |= FMODE_PATH_WRITE;
-  1014		}
-  1015	
-  1016		op->open_flag = flags;
-  1017	
-  1018		/* O_TRUNC implies we need access checks for write permissions */
-  1019		if (flags & O_TRUNC)
-  1020			acc_mode |= MAY_WRITE;
-  1021	
-  1022		/* Allow the LSM permission hook to distinguish append
-  1023		   access from general write access. */
-  1024		if (flags & O_APPEND)
-  1025			acc_mode |= MAY_APPEND;
-  1026	
-  1027		op->acc_mode = acc_mode;
-  1028		op->intent = flags & O_PATH ? 0 : LOOKUP_OPEN;
-> 1029		op->opath_mask = opath_mask;
-  1030	
-  1031		if (flags & O_CREAT) {
-  1032			op->intent |= LOOKUP_CREATE;
-  1033			if (flags & O_EXCL)
-  1034				op->intent |= LOOKUP_EXCL;
-  1035		}
-  1036	
-  1037		if (flags & O_DIRECTORY)
-  1038			lookup_flags |= LOOKUP_DIRECTORY;
-  1039		if (!(flags & O_NOFOLLOW))
-  1040			lookup_flags |= LOOKUP_FOLLOW;
-  1041		if (flags & O_EMPTYPATH)
-  1042			lookup_flags |= LOOKUP_EMPTY;
-  1043	
-  1044		if (how->resolve & RESOLVE_NO_XDEV)
-  1045			lookup_flags |= LOOKUP_NO_XDEV;
-  1046		if (how->resolve & RESOLVE_NO_MAGICLINKS)
-  1047			lookup_flags |= LOOKUP_NO_MAGICLINKS;
-  1048		if (how->resolve & RESOLVE_NO_SYMLINKS)
-  1049			lookup_flags |= LOOKUP_NO_SYMLINKS;
-  1050		if (how->resolve & RESOLVE_BENEATH)
-  1051			lookup_flags |= LOOKUP_BENEATH;
-  1052		if (how->resolve & RESOLVE_IN_ROOT)
-  1053			lookup_flags |= LOOKUP_IN_ROOT;
-  1054	
-  1055		op->lookup_flags = lookup_flags;
-  1056		return 0;
-  1057	}
-  1058	
-
----
-0-DAY kernel test infrastructure                Open Source Technology Center
-https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RG5lIHRvcmVrLCAwMS4gb2t0b2JlciAyMDE5IG9iIDAwOjQzOjM0IENFU1QgamUgSGFucyBWZXJr
+dWlsIG5hcGlzYWwoYSk6Cj4gT24gMTAvMS8xOSAxMjoyNyBBTSwgSmVybmVqIMWga3JhYmVjIHdy
+b3RlOgo+ID4gRG5lIHBvbmVkZWxqZWssIDMwLiBzZXB0ZW1iZXIgMjAxOSBvYiAxMDoxMDo0OCBD
+RVNUIGplIEhhbnMgVmVya3VpbAo+ID4gCj4gPiBuYXBpc2FsKGEpOgo+ID4+IE9uIDkvMjkvMTkg
+MTA6MDAgUE0sIEplcm5laiBTa3JhYmVjIHdyb3RlOgo+ID4+PiBUaGlzIHNlcmllcyBhZGRzIHN1
+cHBvcnQgZm9yIGRlY29kaW5nIG11bHRpLXNsaWNlIEgyNjQgZnJhbWVzIGFsb25nIHdpdGgKPiA+
+Pj4gc3VwcG9ydCBmb3IgVjRMMl9ERUNfQ01EX0ZMVVNIIGFuZCBWNEwyX0JVRl9GTEFHX00yTV9I
+T0xEX0NBUFRVUkVfQlVGLgo+ID4+PiAKPiA+Pj4gQ29kZSB3YXMgdGVzdGVkIGJ5IG1vZGlmaWVk
+IGZmbXBlZywgd2hpY2ggY2FuIGJlIGZvdW5kIGhlcmU6Cj4gPj4+IGh0dHBzOi8vZ2l0aHViLmNv
+bS9qZXJuZWpzay9GRm1wZWcsIGJyYW5jaCBtYWlubGluZS10ZXN0Cj4gPj4+IEl0IGhhcyB0byBi
+ZSBjb25maWd1cmVkIHdpdGggYXQgbGVhc3QgZm9sbG93aW5nIG9wdGlvbnM6Cj4gPj4+IC0tZW5h
+YmxlLXY0bDItcmVxdWVzdCAtLWVuYWJsZS1saWJ1ZGV2IC0tZW5hYmxlLWxpYmRybQo+ID4+PiAK
+PiA+Pj4gU2FtcGxlcyB1c2VkIGZvciB0ZXN0aW5nOgo+ID4+PiBodHRwOi8vamVybmVqLmxpYnJl
+ZWxlYy50di92aWRlb3MvaDI2NC9CQTFfRlRfQy5tcDQKPiA+Pj4gaHR0cDovL2plcm5lai5saWJy
+ZWVsZWMudHYvdmlkZW9zL2gyNjQvaDI2NC5tcDQKPiA+Pj4gCj4gPj4+IENvbW1hbmQgbGluZSB1
+c2VkIGZvciB0ZXN0aW5nOgo+ID4+PiBmZm1wZWcgLWh3YWNjZWwgZHJtIC1od2FjY2VsX2Rldmlj
+ZSAvZGV2L2RyaS9jYXJkMCAtaSBoMjY0Lm1wNCAtcGl4X2ZtdAo+ID4+PiBiZ3JhIC1mIGZiZGV2
+IC9kZXYvZmIwCj4gPj4+IAo+ID4+PiBQbGVhc2Ugbm90ZSB0aGF0IFY0TDJfREVDX0NNRF9GTFVT
+SCB3YXMgbm90IHRlc3RlZCBiZWNhdXNlIEknbQo+ID4+PiBub3Qgc3VyZSBob3cuIGZmbXBlZyBm
+b2xsb3dzIGV4YWN0bHkgd2hpY2ggc2xpY2UgaXMgbGFzdCBpbiBmcmFtZQo+ID4+PiBhbmQgc2V0
+cyBob2xkIGZsYWcgYWNjb3JkaW5nbHkuIEltcHJvcGVyIHVzYWdlIG9mIGhvbGQgZmxhZyB3b3Vs
+ZAo+ID4+PiBjb3JydXB0IGZmbXBlZyBhc3N1bXB0aW9ucyBhbmQgaXQgd291bGQgcHJvYmFibHkg
+Y3Jhc2guIEFueSBpZGVhcwo+ID4+PiBob3cgdG8gdGVzdCB0aGlzIGFyZSB3ZWxjb21lIQo+ID4+
+IAo+ID4+IEl0IGNhbiBiZSB0ZXN0ZWQgcGFydGlhbGx5IGF0IGxlYXN0OiBpZiBmZm1wZWcgdGVs
+bHMgeW91IGl0IGlzIHRoZSBsYXN0Cj4gPj4gc2xpY2UsIHRoZW4gcXVldWUgdGhlIHNsaWNlIHdp
+dGggdGhlIEhPTEQgZmxhZyBzZXQsIHRoZW4gY2FsbCBGTFVTSAo+ID4+IGFmdGVyd2FyZHMuIFRo
+aXMgc2hvdWxkIGNsZWFyIHRoZSBIT0xEIGZsYWcgYWdhaW4uIEluIHRoaXMgY2FzZSB0aGUKPiA+
+PiBxdWV1ZWQKPiA+PiBidWZmZXIgaXMgcHJvYmFibHkgbm90IHlldCBwcm9jZXNzZWQsIHNvIHRo
+ZSBmbGFnIGlzIGNsZWFyZWQgYmVmb3JlIHRoZQo+ID4+IGRlY29kZSBqb2Igc3RhcnRzLgo+ID4+
+IAo+ID4+IFlvdSBjYW4gYWxzbyB0cnkgdG8gYWRkIGEgc2xlZXAgYmVmb3JlIGNhbGxpbmcgRkxV
+U0ggdG8gc2VlIHdoYXQgaGFwcGVucwo+ID4+IGlmIHRoZSBsYXN0IHF1ZXVlZCBidWZmZXIgaXMg
+YWxyZWFkeSBkZWNvZGVkLgo+ID4gCj4gPiBPaywgSSB0cmllZCBmb2xsb3dpbmcgY29kZToKPiA+
+IGh0dHBzOi8vZ2l0aHViLmNvbS9qZXJuZWpzay9GRm1wZWcvYmxvYi9mbHVzaF90ZXN0L2xpYmF2
+Y29kZWMvCj4gPiB2NGwyX3JlcXVlc3QuYyNMMjIwLUwyMzMKPiA+IAo+ID4gQnV0IHJlc3VsdHMg
+YXJlIG5vdCBnb29kLiBJdCBzZWVtcyB0aGF0IG91dF92YiBpbiBmbHVzaCBjb21tYW5kIGlzIGFs
+d2F5cwo+ID4gTlVMTCBhbmQgc28gaXQgYWx3YXlzIG1hcmtzIGNhcHR1cmUgYnVmZmVyIGFzIGRv
+bmUsIHdoaWNoIGxlYWRzIHRvIGtlcm5lbAo+ID4gd2FybmluZ3MuCj4gPiAKPiA+IGRtZXNnIG91
+dHB1dCB3aXRoIGRlYnVnZ2luZyBtZXNzYWdlcyBpcyBoZXJlOiBodHRwOi8vaXguaW8vMUtzOAo+
+ID4gCj4gPiBDdXJyZW50bHkgSSdtIG5vdCBzdXJlIHdoYXQgaXMgZ29pbmcgb24uIFNob3VsZG4n
+dCBiZSBvdXRwdXQgYnVmZmVyIHF1ZXVlZAo+ID4gYW5kIHdhaXRpbmcgdG8gTUVESUFfUkVRVUVT
+VF9JT0NfUVVFVUUgd2hpY2ggaXMgZXhlY3V0ZWQgYWZ0ZXIgZmx1c2gKPiA+IGNvbW1hbmQgYXMg
+aXQgY2FuIGJlIHNlZW4gZnJvbSBmZm1wZWcgY29kZSBsaW5rZWQgYWJvdmU/Cj4gCj4gQXJnaCwg
+SSBmb3Jnb3QgYWJvdXQgdGhlIGZhY3QgdGhhdCB0aGlzIHVzZXMgcmVxdWVzdHMuCj4gCj4gVGhl
+IEZMVVNIIHNob3VsZCBoYXBwZW4gKmFmdGVyKiB0aGUgTUVESUFfUkVRVUVTVF9JT0NfUVVFVUUg
+aW9jdGwuIE90aGVyd2lzZQo+IGl0IGhhcyBubyBlZmZlY3QuIEFzIGxvbmcgYXMgdGhlIHJlcXVl
+c3QgaGFzbid0IGJlZW4gcXVldWVkLCB0aGUgYnVmZmVyIGlzCj4gYWxzbyBub3QgcXVldWVkIHRv
+IHRoZSBkcml2ZXIsIHNvIG91dF92YiB3aWxsIGluZGVlZCBiZSBOVUxMLgoKSXQncyBiZXR0ZXIs
+IGJ1dCBzdGlsbCBub3Qgd29ya2luZy4gQ3VycmVudGx5IGZmbXBlZyBzb21ldGltZXMgcmVwb3J0
+cyBzdWNoIAptZXNzYWdlczogaHR0cHM6Ly9wYXN0ZWJpbi5jb20vcmF3Lzl0VlZ0YzIwIFRoaXMg
+aXMgZG1lc2cgb3V0cHV0OiBodHRwOi8vCml4LmlvLzFMMUwKCkl0IHNlZW1zIHRvIG1lIGxpa2Ug
+YSByYWNlIGNvbmRpdGlvbi4gU29tZXRpbWVzIGZsdXNoIHdvcmtzIGFzIGluZGVuZGVudCBhbmQg
+CnNvbWV0aW1lcyBpdCBpbmZsdWVuY2VzIG5leHQgZnJhbWUuCgpCZXN0IHJlZ2FyZHMsCkplcm5q
+ZQoKPiAKPiBTb3JyeSBmb3IgdGhlIGNvbmZ1c2lvbi4KPiAKPiBSZWdhcmRzLAo+IAo+IAlIYW5z
+Cj4gCj4gPiBCZXN0IHJlZ2FyZHMsCj4gPiBKZXJuZWoKPiA+IAo+ID4+IFJlZ2FyZHMsCj4gPj4g
+Cj4gPj4gCUhhbnMKPiA+PiAJCj4gPj4+IFRoYW5rcyB0byBKb25hcyBmb3IgYWRqdXN0aW5nIGZm
+bXBlZy4KPiA+Pj4gCj4gPj4+IFBsZWFzZSBsZXQgbWUga25vdyB3aGF0IHlvdSB0aGluay4KPiA+
+Pj4gCj4gPj4+IEJlc3QgcmVnYXJkcywKPiA+Pj4gSmVybmVqCj4gPj4+IAo+ID4+PiBDaGFuZ2Vz
+IGZyb20gdjE6Cj4gPj4+IC0gYWRkZWQgUmIgdGFncwo+ID4+PiAtIHVwZGF0ZWQgVjRMMl9ERUNf
+Q01EX0ZMVVNIIGRvY3VtZW50YXRpb24KPiA+Pj4gLSB1cGRhdGVkIGZpcnN0IHNsaWNlIGRldGVj
+dGlvbiBpbiBDZWRydXMKPiA+Pj4gLSBob2xkIGNhcHR1cmUgYnVmZmVyIGZsYWcgaXMgc2V0IGFj
+Y29yZGluZyB0byBzb3VyY2UgZm9ybWF0Cj4gPj4+IC0gYWRkZWQgdjRsIG0ybSBzdGF0ZWxlc3Nf
+KHRyeV8pZGVjb2Rlcl9jbWQgaW9jdGwgaGVscGVycwo+ID4+PiAKPiA+Pj4gSGFucyBWZXJrdWls
+ICgyKToKPiA+Pj4gICB2YjI6IGFkZCBWNEwyX0JVRl9GTEFHX00yTV9IT0xEX0NBUFRVUkVfQlVG
+Cj4gPj4+ICAgdmlkZW9kZXYyLmg6IGFkZCBWNEwyX0RFQ19DTURfRkxVU0gKPiA+Pj4gCj4gPj4+
+IEplcm5laiBTa3JhYmVjICg0KToKPiA+Pj4gICBtZWRpYTogdjRsMi1tZW0ybWVtOiBhZGQgc3Rh
+dGVsZXNzXyh0cnlfKWRlY29kZXJfY21kIGlvY3RsIGhlbHBlcnMKPiA+Pj4gICBtZWRpYTogY2Vk
+cnVzOiBEZXRlY3QgZmlyc3Qgc2xpY2Ugb2YgYSBmcmFtZQo+ID4+PiAgIG1lZGlhOiBjZWRydXM6
+IGgyNjQ6IFN1cHBvcnQgbXVsdGlwbGUgc2xpY2VzIHBlciBmcmFtZQo+ID4+PiAgIG1lZGlhOiBj
+ZWRydXM6IEFkZCBzdXBwb3J0IGZvciBob2xkaW5nIGNhcHR1cmUgYnVmZmVyCj4gPj4+ICAKPiA+
+Pj4gIERvY3VtZW50YXRpb24vbWVkaWEvdWFwaS92NGwvYnVmZmVyLnJzdCAgICAgICB8IDEzICsr
+KysrKwo+ID4+PiAgLi4uL21lZGlhL3VhcGkvdjRsL3ZpZGlvYy1kZWNvZGVyLWNtZC5yc3QgICAg
+IHwgMTAgKysrLQo+ID4+PiAgLi4uL21lZGlhL3VhcGkvdjRsL3ZpZGlvYy1yZXFidWZzLnJzdCAg
+ICAgICAgIHwgIDYgKysrCj4gPj4+ICAuLi4vbWVkaWEvdmlkZW9kZXYyLmgucnN0LmV4Y2VwdGlv
+bnMgICAgICAgICAgfCAgMSArCj4gPj4+ICAuLi4vbWVkaWEvY29tbW9uL3ZpZGVvYnVmMi92aWRl
+b2J1ZjItdjRsMi5jICAgfCAgOCArKystCj4gPj4+ICBkcml2ZXJzL21lZGlhL3Y0bDItY29yZS92
+NGwyLW1lbTJtZW0uYyAgICAgICAgfCAzNSArKysrKysrKysrKysrKwo+ID4+PiAgZHJpdmVycy9z
+dGFnaW5nL21lZGlhL3N1bnhpL2NlZHJ1cy9jZWRydXMuaCAgIHwgIDEgKwo+ID4+PiAgLi4uL3N0
+YWdpbmcvbWVkaWEvc3VueGkvY2VkcnVzL2NlZHJ1c19kZWMuYyAgIHwgMTEgKysrKysKPiA+Pj4g
+IC4uLi9zdGFnaW5nL21lZGlhL3N1bnhpL2NlZHJ1cy9jZWRydXNfaDI2NC5jICB8IDExICsrKyst
+Cj4gPj4+ICAuLi4vc3RhZ2luZy9tZWRpYS9zdW54aS9jZWRydXMvY2VkcnVzX2h3LmMgICAgfCAg
+OCArKy0tCj4gPj4+ICAuLi4vc3RhZ2luZy9tZWRpYS9zdW54aS9jZWRydXMvY2VkcnVzX3ZpZGVv
+LmMgfCAxNCArKysrKysKPiA+Pj4gIGluY2x1ZGUvbWVkaWEvdjRsMi1tZW0ybWVtLmggICAgICAg
+ICAgICAgICAgICB8IDQ2ICsrKysrKysrKysrKysrKysrKysKPiA+Pj4gIGluY2x1ZGUvbWVkaWEv
+dmlkZW9idWYyLWNvcmUuaCAgICAgICAgICAgICAgICB8ICAzICsrCj4gPj4+ICBpbmNsdWRlL21l
+ZGlhL3ZpZGVvYnVmMi12NGwyLmggICAgICAgICAgICAgICAgfCAgNSArKwo+ID4+PiAgaW5jbHVk
+ZS91YXBpL2xpbnV4L3ZpZGVvZGV2Mi5oICAgICAgICAgICAgICAgIHwgMTQgKysrKy0tCj4gPj4+
+ICAxNSBmaWxlcyBjaGFuZ2VkLCAxNzUgaW5zZXJ0aW9ucygrKSwgMTEgZGVsZXRpb25zKC0pCgoK
+CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
+YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
+LWtlcm5lbAo=
