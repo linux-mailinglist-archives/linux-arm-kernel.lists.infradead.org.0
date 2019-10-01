@@ -2,63 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44F5FC3920
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 17:32:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DD9EC3951
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 17:41:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=YTZNP5YPIgC5guMSghWPhr5ZWwo0NKSb3Kt8xcyXyWo=; b=QJXbp/M/3vCJB6bbHyCLdi+ch
-	r62NG/PKevTZUaylMULteUEpofWHBhKBHYPn/SsDkPtcO7Tn/AvnzWKZDJrURfdV9y1R19FXLmrxI
-	Ls7OnGzuQVar9OjZ5hPehlgVORV/dd90K+IdRFsNwj9o6NUHbScO1W/dJV7t6GCwjaN+TjYfjPiIN
-	jbbneV1YB+Hqfe6BZK8PkaeOBMH3M6es1WVnG1erjbMhPmsL+eJmeF+8qmECNcpKkYvgg3Vz2J75k
-	fTOezIOQwTUSOD8bjquEO/Sbe34nrXZOhDyBT25rbmRDwVkQMixVLmzmK5josc22vLFBBfMk0BEMo
-	+jtNwFr6Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GWw5DF2sawG3tXKngsEwI14iAyQkReS2Ub/mPdT3eNU=; b=rf0b80BVAW/bPf
+	wLRx8wL/hKtB56wT4woWyOv51bD70xIOZXeN0vdizIbbeGPpaTaNBDYhkbH7umb9tOPZtXb4c1hHw
+	f2bllLzRiiOPLYeFxmVmbYkbzEE6m2JwqzAOYStmohq46mM0JQOtSi5NCcBEzvqPHVzVqpwVDovK2
+	y1wskhg79Sii3DtxTms0n/jH6HhQVvWAGMRg2aJFCgGcaSu2G+4/VSuw41pUVA+eM3CZqOllMr5Oj
+	7vHyLlB4PEwrhjbB90FQDCTWguj3+Z4AySZhPSoTTAQ9ocJzRS6SSiKyGnSnhEl2j8I2AHYlrfNiP
+	9rjNNGhh5iYIPvM5yxDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFK8Q-0001ph-Tl; Tue, 01 Oct 2019 15:32:18 +0000
-Received: from mga17.intel.com ([192.55.52.151])
+	id 1iFKHX-0005lG-PK; Tue, 01 Oct 2019 15:41:43 +0000
+Received: from mail-qk1-f195.google.com ([209.85.222.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFK8J-0001oW-I2
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 15:32:12 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga001.jf.intel.com ([10.7.209.18])
- by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 01 Oct 2019 08:32:00 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,571,1559545200"; d="scan'208";a="275026881"
-Received: from linux.intel.com ([10.54.29.200])
- by orsmga001.jf.intel.com with ESMTP; 01 Oct 2019 08:32:00 -0700
-Received: from abapat-mobl1.amr.corp.intel.com (unknown [10.251.1.101])
- by linux.intel.com (Postfix) with ESMTP id D8A92580696;
- Tue,  1 Oct 2019 08:31:58 -0700 (PDT)
+ id 1iFKHR-0005jm-1O
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 15:41:38 +0000
+Received: by mail-qk1-f195.google.com with SMTP id w2so11681831qkf.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 01 Oct 2019 08:41:36 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=PYNED/gHAQZWO+3A/3UN+zfY12A/7ApPwVWXSrVnRe4=;
+ b=ahW8tJsmpk1QjYwphSoZQLqxwSCJP22sap8rBcrSLJKFGRo0YpXYmZxWUCd/Dc+lny
+ DwBOO+2wcUFLQoXdYJyPVmTysyRwAfA4Dnc5nvalFEHf0Tp9I4SmoFYZwIVyVzeKUffE
+ wMtZRBEv5IJt8ga6Basf/8A8aD5sG1hC9G5beuwX3L1Bwo9x0fairzw6LkRFRoKrRNN5
+ NEF/pU2mOCm+cxlohUu7DtSnVYRsn27B7sVyB/3Dii+c+8UAdNU/Ui4sdVUTxGUEtmYE
+ A+a1BQ2q+i7BMlrkDzCuP3wyNfDgpMet64VwKP/o7n+yZua3r8CWU3Co/kWYCzdimduO
+ l2RQ==
+X-Gm-Message-State: APjAAAUOfig9PYJtvw061gkPlsrolzNFa69C+tBvTwUJlpbWgV0AaP7a
+ onj7PVBMO2MuOA1f4b+hyeNKI5H44CtUBCaU48Y=
+X-Google-Smtp-Source: APXvYqzYVsIwghV1g7M189GjA1p2gl/d+MucD1KvbEioKPUwygJiOOw9tiSuacOJf+g/Fbf9+E9jGyNtKXcZR+sjTxc=
+X-Received: by 2002:a37:a858:: with SMTP id r85mr6681072qke.394.1569944495423; 
+ Tue, 01 Oct 2019 08:41:35 -0700 (PDT)
+MIME-Version: 1.0
+References: <20191001142026.1124917-1-arnd@arndb.de>
+ <bb58c7cc-209d-7a2f-0e5b-95a9605ffe7b@linux.intel.com>
+In-Reply-To: <bb58c7cc-209d-7a2f-0e5b-95a9605ffe7b@linux.intel.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Tue, 1 Oct 2019 17:41:19 +0200
+Message-ID: <CAK8P3a3Js2dNhnRhP7PLadWZ69DZr1mz6DowN9HDJL4CFDAAFw@mail.gmail.com>
 Subject: Re: [alsa-devel] [PATCH] ASoC: SOF: imx: fix reverse
  CONFIG_SND_SOC_SOF_OF dependency
-To: Arnd Bergmann <arnd@arndb.de>, Mark Brown <broonie@kernel.org>
-References: <20191001142026.1124917-1-arnd@arndb.de>
-From: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>
-Message-ID: <bb58c7cc-209d-7a2f-0e5b-95a9605ffe7b@linux.intel.com>
-Date: Tue, 1 Oct 2019 10:31:58 -0500
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:60.0)
- Gecko/20100101 Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <20191001142026.1124917-1-arnd@arndb.de>
-Content-Language: en-US
+To: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_083211_607255_4A5B664D 
-X-CRM114-Status: GOOD (  23.54  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191001_084137_085655_41F0BCFC 
+X-CRM114-Status: GOOD (  18.26  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.151 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.222.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.195 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,90 +83,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, Fabio Estevam <festevam@gmail.com>,
- linux-kernel@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, YueHaibing <yuehaibing@huawei.com>,
- Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
- Hulk Robot <hulkci@huawei.com>, NXP Linux Team <linux-imx@nxp.com>,
+Cc: ALSA Development Mailing List <alsa-devel@alsa-project.org>,
+ Fabio Estevam <festevam@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Takashi Iwai <tiwai@suse.com>, YueHaibing <yuehaibing@huawei.com>,
+ Liam Girdwood <lgirdwood@gmail.com>, Jaroslav Kysela <perex@perex.cz>,
+ Hulk Robot <hulkci@huawei.com>, Mark Brown <broonie@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
- Jaroslav Kysela <perex@perex.cz>, Daniel Baluta <daniel.baluta@nxp.com>,
- linux-arm-kernel@lists.infradead.org
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/1/19 9:20 AM, Arnd Bergmann wrote:
-> CONFIG_SND_SOC_SOF_IMX depends on CONFIG_SND_SOC_SOF, but is in
-> turn referenced by the sof-of-dev driver. This creates a reverse
-> dependency that manifests in a link error when CONFIG_SND_SOC_SOF_OF
-> is built-in but CONFIG_SND_SOC_SOF_IMX=m:
-> 
-> sound/soc/sof/sof-of-dev.o:(.data+0x118): undefined reference to `sof_imx8_ops'
-> 
-> Make the latter a 'bool' symbol and change the Makefile so the imx8
-> driver is compiled the same way as the driver using it.
-> 
-> A nicer way would be to reverse the layering and move all
-> the imx specific bits of sof-of-dev.c into the imx driver
-> itself, which can then call into the common code. Doing this
-> would need more testing and can be done if we add another
-> driver like the first one.
+On Tue, Oct 1, 2019 at 5:32 PM Pierre-Louis Bossart
+<pierre-louis.bossart@linux.intel.com> wrote:
+> On 10/1/19 9:20 AM, Arnd Bergmann wrote:
+> > CONFIG_SND_SOC_SOF_IMX depends on CONFIG_SND_SOC_SOF, but is in
+> > turn referenced by the sof-of-dev driver. This creates a reverse
+> > dependency that manifests in a link error when CONFIG_SND_SOC_SOF_OF
+> > is built-in but CONFIG_SND_SOC_SOF_IMX=m:
+> >
+> > sound/soc/sof/sof-of-dev.o:(.data+0x118): undefined reference to `sof_imx8_ops'
+> >
+> > Make the latter a 'bool' symbol and change the Makefile so the imx8
+> > driver is compiled the same way as the driver using it.
+> >
+> > A nicer way would be to reverse the layering and move all
+> > the imx specific bits of sof-of-dev.c into the imx driver
+> > itself, which can then call into the common code. Doing this
+> > would need more testing and can be done if we add another
+> > driver like the first one.
+>
+> Or use something like
+>
+> config SND_SOC_SOF_IMX8_SUPPORT
+>         bool "SOF support for i.MX8"
+>         depends on IMX_SCU
+>         depends on IMX_DSP
+>
+> config SND_SOC_SOF_IMX8
+>         tristate
+>         <i.mx selects>
+>
+> config SND_SOC_SOF_OF
+>         depends on OF
+>         select SND_SOC_SOF_IMX8 if SND_SOC_SOF_IMX8_SUPPORT
+>
+> That way you propagate the module/built-in information. That's how we
+> fixed those issues for the Intel parts.
 
-Or use something like
+Yes, I think that would work here as well, but it keeps even more
+information about the specific drivers in the generic code. It also
+requires adding more 'select' statements that tend to cause more
+problems.
+
+The same could be done with a Kconfig-only solution avoiding
+'select' such as:
 
 config SND_SOC_SOF_IMX8_SUPPORT
-	bool "SOF support for i.MX8"
-    	depends on IMX_SCU
-    	depends on IMX_DSP
+         bool "SOF support for i.MX8"
+         depends on IMX_SCU
+         depends on IMX_DSP
 
-config SND_SOC_SOF_IMX8
-	tristate
-	<i.mx selects>
+ config SND_SOC_SOF_IMX8
+         def_tristate SND_SOC_SOF_OF
+         depends on SND_SOC_SOF_IMX8_SUPPORT
 
-config SND_SOC_SOF_OF
-	depends on OF
-	select SND_SOC_SOF_IMX8 if SND_SOC_SOF_IMX8_SUPPORT
-
-That way you propagate the module/built-in information. That's how we 
-fixed those issues for the Intel parts.
-
-> 
-> Fixes: f4df4e4042b0 ("ASoC: SOF: imx8: Fix COMPILE_TEST error")
-> Fixes: 202acc565a1f ("ASoC: SOF: imx: Add i.MX8 HW support")
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> ---
->   sound/soc/sof/imx/Kconfig  | 2 +-
->   sound/soc/sof/imx/Makefile | 4 +++-
->   2 files changed, 4 insertions(+), 2 deletions(-)
-> 
-> diff --git a/sound/soc/sof/imx/Kconfig b/sound/soc/sof/imx/Kconfig
-> index 5acae75f5750..a3891654a1fc 100644
-> --- a/sound/soc/sof/imx/Kconfig
-> +++ b/sound/soc/sof/imx/Kconfig
-> @@ -12,7 +12,7 @@ config SND_SOC_SOF_IMX_TOPLEVEL
->   if SND_SOC_SOF_IMX_TOPLEVEL
->   
->   config SND_SOC_SOF_IMX8
-> -	tristate "SOF support for i.MX8"
-> +	bool "SOF support for i.MX8"
->   	depends on IMX_SCU
->   	depends on IMX_DSP
->   	help
-> diff --git a/sound/soc/sof/imx/Makefile b/sound/soc/sof/imx/Makefile
-> index 6ef908e8c807..9e8f35df0ff2 100644
-> --- a/sound/soc/sof/imx/Makefile
-> +++ b/sound/soc/sof/imx/Makefile
-> @@ -1,4 +1,6 @@
->   # SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
->   snd-sof-imx8-objs := imx8.o
->   
-> -obj-$(CONFIG_SND_SOC_SOF_IMX8) += snd-sof-imx8.o
-> +ifdef CONFIG_SND_SOC_SOF_IMX8
-> +obj-$(CONFIG_SND_SOC_SOF_OF) += snd-sof-imx8.o
-> +endif
-> 
-
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
