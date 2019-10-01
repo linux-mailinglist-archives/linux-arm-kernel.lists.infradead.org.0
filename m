@@ -2,90 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1874C320C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 13:12:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 748D0C324C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 13:22:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:To:References:
-	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x8Whjf5QH6SLx7MJOKG65FyOLeT7rAT0LfkTc8DE274=; b=qIaWDFmVuiKVPq
-	pcUg+gA0msqwDqLIEF2Bqko3qpIg8wCj95ZewkuRkt/85JoF6z/rfhpWLl9ruAZ2e2hIrmmdmFIZ5
-	O5NWvI6sEUOEggmX4QtGlGXBILOmHTMUXi18LmV80YIiRI68rPBEykoCYuVaOsmyEP/CY16ljsIpP
-	gvCKQ9I51Rjmla9dDAQsU8lkQsU3Cyl1VhYUf1FyM6Zmieq5jwPh705q9X6JnpG9PJlXveVaht42i
-	kkof8CQtnCTgKFnAvPqYYyI9OfW5Crf3TlbjL/7ixXoui47HFz9IE2Ed2SduTr20QF/xMFzwMCFQi
-	8UqJBE0mry2qKfZpP5VA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=qj6IAPAr1Fxb1UrhMlRVK9zyEb5awO6BxjZ4jb+yNn0=; b=UptZJ2Zi7VtzASo/Y4hpP9ufV
+	gZO6eeJaepSkFjxf3i2uF7AYwmlpS5w79gP+zG7fPGZGkN9p5nkqY13kNPuqAIiFjT3Of9wJFqSTX
+	RelqqrTQM68URxSMpeSmDncwCIeglIwVyc7xguWJiIBe/03KjbKkvIB8eBaNOiJA2/gFoYUBs1Ybs
+	amsgMOYKfcihCiJFxxX8gOUfe0+bvehmty5I/4D8HEfiRxp7EvkH1cGUHqpOY0Ct8qsj6DWq8rnag
+	08LYFOldTuTjDR1nxI4beQ74ISqq7SrdVChly4iIVKqms3G1fnlUOTDtnqceWSTK/Vnmri2dpTW6v
+	vHODE2DiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFG4m-0004Re-Sr; Tue, 01 Oct 2019 11:12:16 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1iFGEG-0008Gu-7W; Tue, 01 Oct 2019 11:22:04 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFG4f-0004RD-NK
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 11:12:11 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 53EE560790; Tue,  1 Oct 2019 11:12:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1569928329;
- bh=9kO3QL+L5rr63Ix2ww95YvRUF57iILCa5Qi4MlOlhxM=;
- h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
- b=dIZIpk9bKmKDhnfIWS9jfSnDm4DVoaXx77uUsEOO9K13B67BQkaKbnNxON+csseoV
- 1JuCuFeooNuzQ/UYwecK8v2PitycNxQosak4+abcMAbpQUBVjMiBcU5V0RmV4QISwe
- hnAA74SgzCPkycDnXeqti/0dRhJdKlyUE+w2TBYk=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-0.8 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,MISSING_DATE,MISSING_MID,SPF_NONE autolearn=no
- autolearn_force=no version=3.4.0
-Received: from potku.adurom.net (88-114-240-156.elisa-laajakaista.fi
- [88.114.240.156])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: kvalo@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 4B91E6014B;
- Tue,  1 Oct 2019 11:12:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1569928328;
- bh=9kO3QL+L5rr63Ix2ww95YvRUF57iILCa5Qi4MlOlhxM=;
- h=Subject:From:In-Reply-To:References:To:Cc:From;
- b=Dff0axe8hdiOON+Jklx4brxGX76YkVHfkiIOQIY82uYhhIpU1BAIJ+ncj8fSYzaqM
- anWwISLIwCbpYPDEmfqvXp8TA6IO32F52uTrw/J8nUbDSQc4+34NZebE2beqryLLdl
- vQVfictCs0UzuZwbaG/naQM63KNlDtd68ZK8cAVY=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 4B91E6014B
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- spf=none smtp.mailfrom=kvalo@codeaurora.org
+ id 1iFGE6-0008F6-VJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 11:21:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=WP08K81EP8nRSl3NecDTAL6O6lhtnramqxO7uUpAriw=; b=tqz2dO5eKDmISNQTeYJ2MH6GC
+ 03ziUcUXkSlarqF15sDoo7Q/ZXlc5BXRQJioCbeaJhkUSTPxhv9s3xKHdKl5e4aoe2/0RwcMrrp72
+ 7VRX1VWWlK+ybEScOSHExQMH8Wy/pH/U9uHa4fkXHJ9peDwhUUi9j2WvkCm92xPCFatbI=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1iFGE0-0004OZ-Ax; Tue, 01 Oct 2019 11:21:48 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 7E257274299F; Tue,  1 Oct 2019 12:21:47 +0100 (BST)
+Date: Tue, 1 Oct 2019 12:21:47 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Subject: Re: [PATCH v2 05/10] ASoC: samsung: arndale: Simplify DAI link
+ initialization
+Message-ID: <20191001112147.GA5618@sirena.co.uk>
+References: <20190920130218.32690-1-s.nawrocki@samsung.com>
+ <CGME20190920130318eucas1p126cc8be60118ffbf1f332626dde1c05a@eucas1p1.samsung.com>
+ <20190920130218.32690-6-s.nawrocki@samsung.com>
 MIME-Version: 1.0
-Subject: Re: [PATCH] ath9k: remove unused including <linux/version.h>
-From: Kalle Valo <kvalo@codeaurora.org>
-In-Reply-To: <20190923135632.145051-1-yuehaibing@huawei.com>
-References: <20190923135632.145051-1-yuehaibing@huawei.com>
-To: YueHaibing <yuehaibing@huawei.com>
-User-Agent: pwcli/0.0.0-git (https://github.com/kvalo/pwcli/) Python/2.7.12
-Message-Id: <20191001111209.53EE560790@smtp.codeaurora.org>
-Date: Tue,  1 Oct 2019 11:12:09 +0000 (UTC)
+In-Reply-To: <20190920130218.32690-6-s.nawrocki@samsung.com>
+X-Cookie: Dyslexics have more fnu.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_041209_781024_C9BB2830 
-X-CRM114-Status: UNSURE (   6.05  )
+X-CRM114-CacheID: sfid-20191001_042155_028967_D19591F6 
+X-CRM114-Status: UNSURE (   7.19  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [172.104.155.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,33 +82,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, YueHaibing <yuehaibing@huawei.com>,
- linux-wireless@vger.kernel.org, ath9k-devel@qca.qualcomm.com,
- netdev@vger.kernel.org, manivannan.sadhasivam@linaro.org, afaerber@suse.de,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
+ linux-samsung-soc@vger.kernel.org, ckeepax@opensource.cirrus.com,
+ b.zolnierkie@samsung.com, sbkim73@samsung.com, patches@opensource.cirrus.com,
+ lgirdwood@gmail.com, krzk@kernel.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+Content-Type: multipart/mixed; boundary="===============0838422296032131018=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-YueHaibing <yuehaibing@huawei.com> wrote:
 
-> Remove including <linux/version.h> that don't need it.
-> 
-> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-> Signed-off-by: Kalle Valo <kvalo@codeaurora.org>
+--===============0838422296032131018==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="TB36FDmn/VVEgNH/"
+Content-Disposition: inline
 
-Patch applied to ath-next branch of ath.git, thanks.
 
-6aff90c5bab7 ath9k: remove unused including <linux/version.h>
+--TB36FDmn/VVEgNH/
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
--- 
-https://patchwork.kernel.org/patch/11156945/
+On Fri, Sep 20, 2019 at 03:02:14PM +0200, Sylwester Nawrocki wrote:
+> There is only one DAI link so we can drop an unnecessary loop statement.
+> Use card->dai_link in place of direct static arndale_rt5631_dai[] array
+> dereference as a prerequisite for adding support for other CODECs.
+> Unnecessary assignment of dai_link->codecs->name to NULL is removed.
 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+This doesn't apply against current code, please check and resend.
 
+--TB36FDmn/VVEgNH/
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl2TNsoACgkQJNaLcl1U
+h9B8Jgf/QOtwWNhy8BAfZQIc2REqWPl8fmuaapDD6MEvJOA3b+piDx2e6Q9YvKjq
+afK2TLU5HN42PJIr5MTFPljexJovF0uhsmzekrLgYPV9UJR6KzsnoMtWq0aIccyu
+KFRsyntw3MK+Ot9TxDVIpK/tGC4s2rAV+hJO7XV/t0V62Z3r91t0Ncp+wVxibwga
+rxG4oFnwQYNp8aIpzKNc4GOqJ0W1A/5JOgUALtMlGtk6W7FJqOg4xmLsQH8TG1ne
+j5YN7VCoJnki8nFk1JjiikxYYcvSLjxuB0nD/GlbBnP5McroJrCrKV/nJSooYkwd
++Sp8RijARqOYXpEbsVnN8K+DflY9pw==
+=RFd7
+-----END PGP SIGNATURE-----
+
+--TB36FDmn/VVEgNH/--
+
+
+--===============0838422296032131018==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0838422296032131018==--
+
