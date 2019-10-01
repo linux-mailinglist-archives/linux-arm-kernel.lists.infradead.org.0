@@ -2,84 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05615C3F08
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 19:52:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B083C3F0F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 19:55:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3J/Vklkz25iFP+S7Eix8KGLll3qeRtgREcnMScaX1nM=; b=ciCxQI0ItJjZs7a/4Ohu/U4Ge
-	qtJBqjLveqWgmZYY0pFsIumB4DNb4Zke0iERcqJqtbBLL7nyJ0j+L+tUdsEaZEF/QJYVKiVTIoxFD
-	CHISqqe1stZxYjOXfEmOHABWinHbWZTL3uZcE8BvEWdILBTlqDPdTuMXpK4D5r46JOugFxe4daX+F
-	UH/Gz6R+EGn1LefxG/ELl8nVC1G+p4k80KT+M2lKbfE1UVDHbIwZH4T51WFJXroFujlSYRWZ+WYsR
-	xuptxmE3RA8DV5/wOc6J2QzsrGwDIHZAfkZgEtUIs+71B15Wr0PKIRY8gkvJFGHXs7KAvIIbuHo7d
-	5USns7dCg==;
+	 bh=iaBXg8oaYriS99c7rtbxcrcb6JMGirY1eX23Ivg4D7E=; b=X2sihGWxACs4JJdhyN9qS5uoc
+	xkCzbUKA+8GzaSsQe7l2VDMH6zeBsj4xzLrPnZaWmiaVNT3vVxu0XAJrQkCaIJuITVg2jZvUkGbrI
+	cIDV3vRyoZpCq1HS3WYMFOhtjKBDglWbcpIH83/qGeTY6dgw5KYa8Eld792iTDMreq8uTkBXEfRkm
+	ZEOUec1/NMcjifUi4eECT8BdQARJ7hNgF4q2TcaznzongHFMfz6l/Wld2Rp2/2Gepps1xJTr+qip4
+	cJ6DeN60tMIs95UTkcXE/egjrciPlB3x1yi1oBgumc4YqUpKJpSWuixU8ULFbWss0WpPKRj/JU7v4
+	daIKPGY3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFMJz-0004ju-5z; Tue, 01 Oct 2019 17:52:23 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1iFMMj-0006ml-UV; Tue, 01 Oct 2019 17:55:13 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFMJs-0004jM-Gn
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 17:52:18 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id F111E6083C; Tue,  1 Oct 2019 17:52:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1569952336;
- bh=EqX6F8UDW8JnIw6Hk7q7L1dvCzSEMNOpUg0sXKY32yA=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=oj2/PZIWdgJsjvx+7sB/HBZhXwlRP+/bp7ky6LvLjqD4g9BiNDvcglCZ62SjD1tBq
- QAgX6+g9hprx8wVBP7v9QVjcT7vKvuZQPgA01lEQC46BDaHrF+QmyochFDLUPJwYM0
- 4m7xO8XStOzyEZlV7qC04Ce1g/yklG9gIRkBlQgg=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED autolearn=no autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- by smtp.codeaurora.org (Postfix) with ESMTP id 104336083C;
- Tue,  1 Oct 2019 17:52:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1569952335;
- bh=EqX6F8UDW8JnIw6Hk7q7L1dvCzSEMNOpUg0sXKY32yA=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=lTkHXHKunAsS8EWDCTk+X0f1W5i2eyWsNoTkfA4JrXjUWLAdpwvRUvZwQy/sqsCha
- kE/4opxhjU4rATlKtRc59y0kRLw3/N3qA8EqPvRggNEEkhrNsP+u2hClns35iEAvhg
- rCNeqT75U1nPhoOrRrPqkFZOS/g7yYIjD6ij5xpI=
+ id 1iFMMd-0006GF-30
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 17:55:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=UdeDTcRqRLmOWNI66TIvhiXBuusNntkv2kJPDqWMITI=; b=cI5pL9xvdMaZoQSXt/BoTvwCf
+ 6MS2X7NqiP8DNfNNUfGVb1cu90q/m0myKcYkXX8xFft8BLi1/eB1uQnWkEvPaSyVqJ7zv254ZjiaL
+ 0xfG4zbL4U3UWysSzRXKZSORC6SNhkkmiB1vOhVgMIPOuM7iGQ26qhGgh++OtljBweJ90=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1iFMMZ-0005rl-6M; Tue, 01 Oct 2019 17:55:03 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 13E7327429C0; Tue,  1 Oct 2019 18:55:02 +0100 (BST)
+Date: Tue, 1 Oct 2019 18:55:01 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH] ASoC: atmel: fix atmel_ssc_set_audio link failure
+Message-ID: <20191001175501.GA14762@sirena.co.uk>
+References: <20191001142116.1172290-1-arnd@arndb.de>
 MIME-Version: 1.0
-Date: Tue, 01 Oct 2019 10:52:15 -0700
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>
-Subject: Re: [PATCHv9 2/3] arm64: dts: qcom: msm8998: Add Coresight support
-In-Reply-To: <CAOCk7NohO67qeYCnrjy4P0KN9nLUiamphHRvj-bFP++K7khPOw@mail.gmail.com>
-References: <cover.1564550873.git.saiprakash.ranjan@codeaurora.org>
- <90114e06825e537c3aafd3de5c78743a9de6fadc.1564550873.git.saiprakash.ranjan@codeaurora.org>
- <CAOCk7NrK+wY8jfHdS8781NOQtyLm2RRe1NW2Rm3_zeaot0Q99Q@mail.gmail.com>
- <16212a577339204e901cf4eefa5e82f1@codeaurora.org>
- <CAOCk7NohO67qeYCnrjy4P0KN9nLUiamphHRvj-bFP++K7khPOw@mail.gmail.com>
-Message-ID: <fa5a35f0e993f2b604b60d5cead3cf28@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.2.5
+In-Reply-To: <20191001142116.1172290-1-arnd@arndb.de>
+X-Cookie: Happiness is twin floppies.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_105216_598119_9977FC7C 
-X-CRM114-Status: GOOD (  16.51  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191001_105507_142403_D29A6254 
+X-CRM114-Status: UNSURE (   8.34  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [172.104.155.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,71 +79,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rajendra Nayak <rnayak@codeaurora.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- MSM <linux-arm-msm@vger.kernel.org>, Marc Gonzalez <marc.w.gonzalez@free.fr>,
- lkml <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- David Brown <david.brown@linaro.org>, Andy Gross <agross@kernel.org>,
- Sibi Sankar <sibis@codeaurora.org>, Leo Yan <leo.yan@linaro.org>,
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
+ Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ Jaroslav Kysela <perex@perex.cz>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Codrin Ciubotariu <codrin.ciubotariu@microchip.com>,
+ =?utf-8?B?TWljaGHFgiBNaXJvc8WCYXc=?= <mirq-linux@rere.qmqm.pl>,
  linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============1918172737366426622=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-10-01 10:14, Jeffrey Hugo wrote:
-> On Tue, Oct 1, 2019 at 11:04 AM Sai Prakash Ranjan
-> <saiprakash.ranjan@codeaurora.org> wrote:
->> 
->> On 2019-10-01 09:13, Jeffrey Hugo wrote:
->> > Sai,
->> >
->> > This patch breaks boot on the 835 laptops.  However, I haven't seen
->> > the same issue on the MTP.  I wonder, is coresight expected to work
->> > with production fused devices?  I wonder if thats the difference
->> > between the laptop and MTP that is causing the issue.
->> >
->> > Let me know what I can do to help debug.
->> >
->> 
->> I did test on MSM8998 MTP and didn't face any issue. I am guessing 
->> this
->> is the same issue which you reported regarding cpuidle? Coresight ETM
-> 
-> Yes, its the same issue.  Right now, I need both patches reverted to 
-> boot.
-> 
->> and cpuidle do not work well together since ETMs share the same power
->> domain as CPU and they might get turned off when CPU enters idle 
->> states.
->> Can you try with cpuidle.off=1 cmdline or just remove idle states from
->> DT to confirm? If this is the issue, then we can try the below patch
->> from Andrew Murray for ETM save and restore:
->> 
->> https://patchwork.kernel.org/patch/11097893/
-> 
-> Is there still value in testing this if the idle states are removed,
-> yet the coresight nodes still cause issues?
-> 
-> Funny enough, I'm using the arm64 defconfig which doesn't seem to
-> select CONFIG_CORESIGHT, so I'm not even sure what would be binding to
-> the DT devices...
-> 
 
-Haan then likely it's the firmware issue.
-We should probably disable coresight in soc dtsi and enable only for 
-MTP. For now you can add a status=disabled for all coresight nodes in 
-msm8998.dtsi and I will send the patch doing the same in a day or 
-two(sorry I am travelling currently).
+--===============1918172737366426622==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="7JfCtLOvnd9MIVvH"
+Content-Disposition: inline
 
-Thanks,
-Sai
 
+--7JfCtLOvnd9MIVvH
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Tue, Oct 01, 2019 at 04:20:55PM +0200, Arnd Bergmann wrote:
+> The ssc audio driver can call into both pdc and dma backends.  With the
+> latest rework, the logic to do this in a safe way avoiding link errors
+> was removed, bringing back link errors that were fixed long ago in commit
+> 061981ff8cc8 ("ASoC: atmel: properly select dma driver state") such as
+
+This doesn't apply against current code, please check and resend.
+
+--7JfCtLOvnd9MIVvH
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl2TkvUACgkQJNaLcl1U
+h9BpXwf/ZbLU57SSOIs72nreZTj7QYl5ewRdha8NvlgMpwL9Tpoann2+x+D1YwW4
+YrgZi10+u/d5JJXj26Le5tfl9/XHOiEtnsmSGeyyZ4HCMkGdsN/pbOteyNVq8OSm
+m0kbUZzyPrs4UShvQmtmf/NVGAEMno5FWExHJMesI+HCkAguc43qkgPrhCK6w6hE
+OTG/+vIokBlBGCwqdM597185U5H/O/zeEtMF//UhLEOyzm7SiowvGAFOukr7PQzK
+UCJeArfyY1ik0gYbptXvjoo3+Y1DKg/sRNdtNoF14WIS2oHOkTKm6dpuqxfN2RIt
+He43J5QRq+JEaBnzvw/+7mvakg5Rjg==
+=mk8+
+-----END PGP SIGNATURE-----
+
+--7JfCtLOvnd9MIVvH--
+
+
+--===============1918172737366426622==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1918172737366426622==--
+
