@@ -2,73 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CB0BC362B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 15:46:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7985C362C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 15:47:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LZ2nQxTorIdBP552xOWbUUmHMGDr5Q1XqpO4gBDX0EI=; b=bgcSkIKD1Tsx3n
-	PozVJR+I1sLtIB5gZnUz3yoLaeSuzqO+GWKR1iED9rTuDNwB6sTRoHpdq6HKygj0fntLtk8CKitKs
-	IW47GB/N8mNqZ5UtwQS7i+pIjxUMQ4nEhffd7hKLl3wPlUiOcTBFMl1VtcIkpYzPG7E3DWPepeuyw
-	HiS8R6MBRgpeUH2bgu3cHpToFxvQfBHfl4ciwvKql9wMTT5ic269XHIK/rq1CJR/388Lg6qkjwvIc
-	77kUjidIVSz5Fj4Sue52pv6YRGPkBRAtjKinMZNjlZzh1LkSaLE7N19ywc4Ps3OrxrLsQGnA77qpI
-	GzX2zzrMQyO0s/mmN0aQ==;
+	List-Owner; bh=Dn8y0gP/CGh8Mniy2UX/AM8T8fQzvFoDNPyixvh43oI=; b=deCyUwicbiMk2x
+	0aZQV3iaU14Q2mNnaUjT8eNFKvQSry8+n82okjP4Lyo2Ea3d/RZMnHQ0JKrX79sLqwM33v9FECtja
+	TnFo/uNWMBePFDJXWF0DH+Z7BZfWz7/ylDJGiK9JlLtHWV+qUe7+gE+Cuyh2iFXUfS7yBlp2Ea8IF
+	huyBvuLm9iWGLKG1U/YZl3PspNvIwGRx6sAJqF5uZIYZ1JHWiQTYjzbFyP+AwcR99ekMptzavd5AT
+	c6ba3V5liAnnTTPDNRrsYOXEsuR52QD63blNpEQ4zyxjPAChyIl8T2GiN1dLL04vajrFoadruf4+l
+	4VEvQir4Yrps52RsbgFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFIUH-0007U2-Up; Tue, 01 Oct 2019 13:46:45 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1iFIUZ-0007so-Ex; Tue, 01 Oct 2019 13:47:03 +0000
+Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFIUC-0007Sf-45
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 13:46:41 +0000
-Received: by mail-oi1-f194.google.com with SMTP id t84so14415527oih.10
+ id 1iFIUP-0007hU-Ig
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 13:46:54 +0000
+Received: by mail-oi1-f193.google.com with SMTP id m16so14448413oic.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 01 Oct 2019 06:46:37 -0700 (PDT)
+ Tue, 01 Oct 2019 06:46:52 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=7Db/D52OR8qvk1x6SmwGs6HmPRhnzJN5DgDvNqwdXBU=;
- b=uJKCEnH6cF459WzEa42DC2wcacN1n2SNhVeCHhqERsiWl78Ad5Rg6FZfdOSur2bhIg
- tD+hT/n1I9CHjcQYH7kaudqMrIdIJzqFiTjGbpG8E+5fb+H9gO8tkbPt0qIDMCkFGC9D
- 4IVPMCJMg1oWQJQk1GpbuqTIUT7UDJ5drEbA251DjjBwTA3X8cFp1fl88tLKTBVwVrh9
- xRC0oKdxeodQH91YndR8h7MEvI+GjMde9h0tOcVvi3BcY+HxdII/xatIm4nQ+GhNofgZ
- XOuD4SAY+wfpPJDz8qzLC6uu3qdIy4XljWKSgzkOFso+j5BL8bhLzmzWpj8inTlNJ1fY
- QnpA==
-X-Gm-Message-State: APjAAAWOcTLzea9Ek0FV/PNzsOhAbtovVFl/AUYiN0gNRXvuk4VCE13G
- GzS+pA9yFsQTgPFDpx2pFQ==
-X-Google-Smtp-Source: APXvYqwhBrdUz7WDdxqtLyElalQ37NxNI4bFYk4pJWgqPgK8hRBtijiM/MXJh1P47UD8Fpz68iGkxw==
-X-Received: by 2002:aca:7291:: with SMTP id p139mr3805492oic.53.1569937597112; 
- Tue, 01 Oct 2019 06:46:37 -0700 (PDT)
+ bh=rM9CoJF9b5xP6Lw/RZ4XVfAgAaexqa9BDS8t6YL3L08=;
+ b=G8QS6XBxxObGJ4bbusPOe4R8s02mD9sy76Hliob2JUozQXGlAj8FLC8sakIGbGzFnK
+ H5wuXsdl7FHWe9pgre+sjS30if9xhHQilQkV2vLcKRtnFyE7IT/WcHQ96SU+U0ECCoeU
+ tjr/lf1+JoRH6YAHl4oG2sVnHwDTORVobJyBNoRtY3ix3DCwOy3K4lTMPpz12JhX35XC
+ smnl9yI0ZSEANV/dnBgd0u4Xof/d15O3nM3cMap4tJE/rsGeVni0BHlebwoZajxDoNyD
+ SGCU8yTEVpFGM0xpGK2cDXoEt6OsuUUdJRBYHQYJsYGXbJea62Mu6L3mYlQCpszi8Eox
+ vxJQ==
+X-Gm-Message-State: APjAAAXyUSnmCD50EYgGNSklh9clfcSmzCfY00ZC7jpGxDcbPTB1Q/Dh
+ FfkwiXiO26BbMZtXW/KWkQ==
+X-Google-Smtp-Source: APXvYqwq5Bm1wdyLEVxUHZ7M6qpGJMgY2kkQew71shfhTe1OFaFYo0bDqnGEJXDqEvQm6oYovanXlg==
+X-Received: by 2002:aca:e085:: with SMTP id x127mr3858766oig.32.1569937611286; 
+ Tue, 01 Oct 2019 06:46:51 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id u14sm4788587otj.61.2019.10.01.06.46.36
+ by smtp.gmail.com with ESMTPSA id v6sm5291661oie.4.2019.10.01.06.46.50
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 01 Oct 2019 06:46:36 -0700 (PDT)
-Date: Tue, 1 Oct 2019 08:46:35 -0500
+ Tue, 01 Oct 2019 06:46:50 -0700 (PDT)
+Date: Tue, 1 Oct 2019 08:46:49 -0500
 From: Rob Herring <robh@kernel.org>
 To: Stefan Wahren <wahrenst@gmx.net>
-Subject: Re: [PATCH V3 4/8] dt-bindings: arm: Convert BCM2835 board/soc
- bindings to json-schema
-Message-ID: <20191001134635.GA26744@bogus>
+Subject: Re: [PATCH V3 5/8] dt-bindings: arm: bcm2835: Add Raspberry Pi 4 to
+ DT schema
+Message-ID: <20191001134649.GA27323@bogus>
 References: <1569672435-19823-1-git-send-email-wahrenst@gmx.net>
- <1569672435-19823-5-git-send-email-wahrenst@gmx.net>
+ <1569672435-19823-6-git-send-email-wahrenst@gmx.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1569672435-19823-5-git-send-email-wahrenst@gmx.net>
+In-Reply-To: <1569672435-19823-6-git-send-email-wahrenst@gmx.net>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_064640_168536_8290DDCD 
-X-CRM114-Status: GOOD (  12.71  )
+X-CRM114-CacheID: sfid-20191001_064653_628689_8B32C447 
+X-CRM114-Status: GOOD (  12.34  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -78,7 +76,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
+ [209.85.167.193 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.193 listed in list.dnswl.org]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -103,18 +103,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 28 Sep 2019 14:07:10 +0200, Stefan Wahren wrote:
-> Convert the BCM2835/6/7 SoC bindings to DT schema format using json-schema.
-> All the other Broadcom boards are maintained by Florian Fainelli.
+On Sat, 28 Sep 2019 14:07:11 +0200, Stefan Wahren wrote:
+> Add new Raspberry Pi 4 to DT schema.
 >
 > Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 > Acked-by: Eric Anholt <eric@anholt.net>
 > ---
->  .../devicetree/bindings/arm/bcm/bcm2835.yaml       | 48 ++++++++++++++++
->  .../devicetree/bindings/arm/bcm/brcm,bcm2835.txt   | 67 ----------------------
->  2 files changed, 48 insertions(+), 67 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/arm/bcm/bcm2835.yaml
->  delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm2835.txt
+>  Documentation/devicetree/bindings/arm/bcm/bcm2835.yaml | 6 ++++++
+>  1 file changed, 6 insertions(+)
 >
 
 Reviewed-by: Rob Herring <robh@kernel.org>
