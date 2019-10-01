@@ -2,80 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50F41C3E58
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 19:14:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60698C3E56
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 19:14:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kxcwCQIj88L4GZ0j37BjEF/IDav+FSYhb8YZZodU7rc=; b=NmQBdau9iZoMi9
-	NoC5xNYKFpLUL6MNUKBhxNGd0PFOARhTVMMONRHtHMvL/TRGp0JJugOJ1v/0JYNZ/XVJrgsbglEM8
-	5tV7bQuib2JX9zgfBL0gc0Wb2d1jZzlyI2TlyZZcwteFin48UTMHut/l2OjZx925VZ0voidrylWyL
-	POxJZABGqmeZEtqoq6d5kZeHGsiqq2CEIoNn2RulqTjgpAYtpde4VAWORXXqcsotieDuSUYRhzdVC
-	t6zRi6lODpwMKJCzchR1iCpq+qpdCrZ73CwbdsBNgB3OKFCWruSQHRQAG6eKgoEU+zr7Y86+m3oJc
-	fjS35sKF0/yFzjsxkFAw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=kZucTN9C4x+EtsjtuOr6UlC73BIHYH/DWorr9iMJpV8=; b=Moi
+	KWO9RStB7Dpz6pMUe5Wc3k3wBAL/oLD4jDjEK71k3dEDfsLqJ7eQhIQgFADrplL7usqFqGls9pIW8
+	BXQnZlPWEu5JfxDlcYaqMn4q6AQUwutdC0YmC/Hnk6WzUS5u3dsKCIk+KXWkz4I5tWLzbTaeoGzlH
+	Qv0bi8iaLsDcZq4oLxovS3eRyLTYgbjAL45I6NFiCqnIAXz0K2T3Yj4XicwtFfmmAQfID7iLDdoxO
+	kXjVRgmqdDehQqZI4RDhPre9KUzAoobLzVse9Jlov2Af7kGYNNNwoKt06m0aoi8KNVFyeiIMjgLBk
+	nn+3UPZ/vr3vQHeUaBlMkrIxm5c/3xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFLjR-0006tn-Fy; Tue, 01 Oct 2019 17:14:37 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1iFLjC-0006fy-0C; Tue, 01 Oct 2019 17:14:22 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFLj7-0006fr-1P
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 17:14:18 +0000
-Received: by mail-io1-xd43.google.com with SMTP id q10so50034787iop.2
+ id 1iFLj4-0006fb-1w
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 17:14:15 +0000
+Received: by mail-pf1-x444.google.com with SMTP id q21so8452001pfn.11
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 01 Oct 2019 10:14:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=XyW5421FuW5ERt/Ce918IFZBepV74zAfugKBY/uP7Sg=;
- b=vK3LWLU7yuz8B7Zud46nqKCjNTu81dzKhZrSHYSXRvB/IgwKwR6w1i5/fCVhXRbbt5
- 4k41JFWg6X8g3p3uDJ07Wq91J7n/TR2bFueBJLFbc/dZY3xpRhkn99yDcuJ1JmDQ8Ou/
- KDvshQLRVZzp4Ldk+vJyVLnaApjyqx+YWWCiz4bwBtLZ1trdoblGfg0JF8rPin+2oqBb
- GgyMRoYqGvOnb30gxZMNrYKyn9xzJJXpuZsf0A4h6vsfKrwh/PCR108f6YmocjA6ftRF
- RvKDbiG3AaYk5Ee+tO+fc4r+Nc6+vhF9gg6z1agcVtrk/oeAna/4XWZfDKy0+JeAT5Xf
- 3Gew==
+ Tue, 01 Oct 2019 10:14:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=NLLDaVYu08NM6x1THeCxxFZ7SbKZd2dVoqgn+GP8d8w=;
+ b=xTxJ1tRCBZW1eKhSkwHjd2DJ/S2KZkBDYpOD9aLvdRaIuP8h3Tm40Th1df2NTkIRqG
+ hq56ZLjKWkfPzD7Yf2KCF7ZhqUGarIhLY677cTpMRS4EGuHfYHxFbIRqsf8MaQ682NtR
+ DDp7RRM0mHDjsEEJyUwvL1B2TwMJeoNJXRd9GyvS/SM9q4bubiQqQgkHCfjEzPIpLWon
+ ewBsgFQBbsgd9Z7Bx2ZuaL2XYDXC0A8CP67N+DdSl1XLCYQ3W+1gc+ph1MsVv8tuq6dO
+ faMs0fpIO1bVKlqojdWGsjFD5841EC+zvtY4Kek5Du6wdAw2Y+Tg5abqdb2/1xz/jx09
+ 2KSg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=XyW5421FuW5ERt/Ce918IFZBepV74zAfugKBY/uP7Sg=;
- b=ZJyUdmR9wYT80Hbyu2k0v1XL9A8HhqmyV4MT6kw7T/wm1czec02NtdD+9FGOccue43
- QkHOsNsUrDusiHamkV7SPJrh3/LGx4GAkqQF2P2uedqcuAkux1ozuQ4DczayfQa7D8A3
- 3q7K+OdMNIb4/qRyG/hvVHDOItjId2GNWiN0goqR/8aGsFnJnNxRMXtlPSuGNjwW5gTM
- xBG/nXCtaTgBOCB4HMMmHIIdNbJQDsmufVruSLNbTo6eWkAbsKcqx/HWPnaFbhxQ4Y8j
- Udfd11kNR7EwVQmWJkoOkWU2tBve5qg+dQ+6qDS9CcMfeMCjDGMfP3GT8Y0uTWKGcRTv
- scqg==
-X-Gm-Message-State: APjAAAUW5fd9iP/asXiyf6J/bCmtmQzZ9PIXA3eSfOYKdY0C2hkyvhS4
- 1sLZmtnwn82DsMc/pzFVWmfcV4OYH0Scaan7GBQ=
-X-Google-Smtp-Source: APXvYqyhUoMGDelw2H4alAIycEnclkAErTmS481biaJKBo0W4fbZxP1K4s6I7iegwA83GAipXqeecDL2qPXmAAwsEPo=
-X-Received: by 2002:a6b:da06:: with SMTP id x6mr3828288iob.42.1569950055032;
- Tue, 01 Oct 2019 10:14:15 -0700 (PDT)
-MIME-Version: 1.0
-References: <cover.1564550873.git.saiprakash.ranjan@codeaurora.org>
- <90114e06825e537c3aafd3de5c78743a9de6fadc.1564550873.git.saiprakash.ranjan@codeaurora.org>
- <CAOCk7NrK+wY8jfHdS8781NOQtyLm2RRe1NW2Rm3_zeaot0Q99Q@mail.gmail.com>
- <16212a577339204e901cf4eefa5e82f1@codeaurora.org>
-In-Reply-To: <16212a577339204e901cf4eefa5e82f1@codeaurora.org>
-From: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>
-Date: Tue, 1 Oct 2019 11:14:03 -0600
-Message-ID: <CAOCk7NohO67qeYCnrjy4P0KN9nLUiamphHRvj-bFP++K7khPOw@mail.gmail.com>
-Subject: Re: [PATCHv9 2/3] arm64: dts: qcom: msm8998: Add Coresight support
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=NLLDaVYu08NM6x1THeCxxFZ7SbKZd2dVoqgn+GP8d8w=;
+ b=Kw1vutTSUo1viSorfM4hLV4peHBFJy7TP2IdLkh1HjhREaytSzYMgqxUSMQP10gCOZ
+ DYvZdrbGV/Kyrlu+3X2ukRu5vgIUvv+Wrz+ZannYQGiiCxnxfTBhXYZXpE5LuTzdjjDI
+ NXyku3elcvqJmdxF92z+X5mOBar+PfD44bZrUC+yzLQZkerGZkFPy7LuKZ/kQ81mYkVT
+ TOPx0hERHq88PzLZbt6QOjzDaG07vB+v4WUqMY4GhQQ8xNSw+4BdrObFX/SB/ZQN5Djw
+ cyqOIowVAZG3PGZDvYkGCmiTv+hP7LBQ/kf4vmjfzcd98vWGquSjqC6pbFCCqmmw/qBq
+ rFkA==
+X-Gm-Message-State: APjAAAVbqPM00SmY0X2u3kxu2PRnJD1cknLtu5q2XwQKiDRJAgjMHx/o
+ UoAsdxQN1/DLKxP+QNtBV9VFQA==
+X-Google-Smtp-Source: APXvYqxktyCHg/rgXNWW7VBNcg3rJplLHywKDLlltnrQauDluKkR0Fp9DsVVRYyyVsKLhgG29+rkWA==
+X-Received: by 2002:a17:90a:bb8e:: with SMTP id
+ v14mr6497030pjr.84.1569950053127; 
+ Tue, 01 Oct 2019 10:14:13 -0700 (PDT)
+Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
+ [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id m2sm20387666pff.154.2019.10.01.10.14.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 01 Oct 2019 10:14:12 -0700 (PDT)
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: stable@vger.kernel.org
+Subject: [PATCH] coresight: etm4x: Use explicit barriers on enable/disable
+Date: Tue,  1 Oct 2019 11:14:11 -0600
+Message-Id: <20191001171411.16602-1-mathieu.poirier@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_101417_099554_976CA75E 
-X-CRM114-Status: GOOD (  16.99  )
+X-CRM114-CacheID: sfid-20191001_101414_104065_0618745C 
+X-CRM114-Status: GOOD (  13.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jeffrey.l.hugo[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -95,60 +93,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rajendra Nayak <rnayak@codeaurora.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- MSM <linux-arm-msm@vger.kernel.org>, Marc Gonzalez <marc.w.gonzalez@free.fr>,
- lkml <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- David Brown <david.brown@linaro.org>, Andy Gross <agross@kernel.org>,
- Sibi Sankar <sibis@codeaurora.org>, Leo Yan <leo.yan@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: andrew.murray@arm.com, linux-arm-kernel@lists.infradead.org,
+ suzuki.poulose@arm.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 1, 2019 at 11:04 AM Sai Prakash Ranjan
-<saiprakash.ranjan@codeaurora.org> wrote:
->
-> On 2019-10-01 09:13, Jeffrey Hugo wrote:
-> > Sai,
-> >
-> > This patch breaks boot on the 835 laptops.  However, I haven't seen
-> > the same issue on the MTP.  I wonder, is coresight expected to work
-> > with production fused devices?  I wonder if thats the difference
-> > between the laptop and MTP that is causing the issue.
-> >
-> > Let me know what I can do to help debug.
-> >
->
-> I did test on MSM8998 MTP and didn't face any issue. I am guessing this
-> is the same issue which you reported regarding cpuidle? Coresight ETM
+From: Andrew Murray <andrew.murray@arm.com>
 
-Yes, its the same issue.  Right now, I need both patches reverted to boot.
+commit 1004ce4c255fc3eb3ad9145ddd53547d1b7ce327 upstream
 
-> and cpuidle do not work well together since ETMs share the same power
-> domain as CPU and they might get turned off when CPU enters idle states.
-> Can you try with cpuidle.off=1 cmdline or just remove idle states from
-> DT to confirm? If this is the issue, then we can try the below patch
-> from Andrew Murray for ETM save and restore:
->
-> https://patchwork.kernel.org/patch/11097893/
+Synchronization is recommended before disabling the trace registers
+to prevent any start or stop points being speculative at the point
+of disabling the unit (section 7.3.77 of ARM IHI 0064D).
 
-Is there still value in testing this if the idle states are removed,
-yet the coresight nodes still cause issues?
+Synchronization is also recommended after programming the trace
+registers to ensure all updates are committed prior to normal code
+resuming (section 4.3.7 of ARM IHI 0064D).
 
-Funny enough, I'm using the arm64 defconfig which doesn't seem to
-select CONFIG_CORESIGHT, so I'm not even sure what would be binding to
-the DT devices...
+Let's ensure these syncronization points are present in the code
+and clearly commented.
 
->
-> It is not merged yet. They would appreciate your tested by ;)
->
-> Thanks,
-> Sai
+Note that we could rely on the barriers in CS_LOCK and
+coresight_disclaim_device_unlocked or the context switch to user
+space - however coresight may be of use in the kernel.
+
+On armv8 the mb macro is defined as dsb(sy) - Given that the etm4x is
+only used on armv8 let's directly use dsb(sy) instead of mb(). This
+removes some ambiguity and makes it easier to correlate the code with
+the TRM.
+
+Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+[Fixed capital letter for "use" in title]
+Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Link: https://lore.kernel.org/r/20190829202842.580-11-mathieu.poirier@linaro.org
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: stable@vger.kernel.org # 4.9+
+Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+---
+ drivers/hwtracing/coresight/coresight-etm4x.c | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+index da27f8edba50..44d6c29e2644 100644
+--- a/drivers/hwtracing/coresight/coresight-etm4x.c
++++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+@@ -181,6 +181,12 @@ static void etm4_enable_hw(void *info)
+ 	if (coresight_timeout(drvdata->base, TRCSTATR, TRCSTATR_IDLE_BIT, 0))
+ 		dev_err(drvdata->dev,
+ 			"timeout while waiting for Idle Trace Status\n");
++	/*
++	 * As recommended by section 4.3.7 ("Synchronization when using the
++	 * memory-mapped interface") of ARM IHI 0064D
++	 */
++	dsb(sy);
++	isb();
+ 
+ 	CS_LOCK(drvdata->base);
+ 
+@@ -323,8 +329,12 @@ static void etm4_disable_hw(void *info)
+ 	/* EN, bit[0] Trace unit enable bit */
+ 	control &= ~0x1;
+ 
+-	/* make sure everything completes before disabling */
+-	mb();
++	/*
++	 * Make sure everything completes before disabling, as recommended
++	 * by section 7.3.77 ("TRCVICTLR, ViewInst Main Control Register,
++	 * SSTATUS") of ARM IHI 0064D
++	 */
++	dsb(sy);
+ 	isb();
+ 	writel_relaxed(control, drvdata->base + TRCPRGCTLR);
+ 
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
