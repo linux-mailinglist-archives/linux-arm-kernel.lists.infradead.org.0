@@ -2,68 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A14FC31EA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 13:01:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1874C320C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 13:12:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l0jjA02Mc7X+cmC8UFqAa38ndw26UuvPiKZRmZrld+s=; b=h9HT4rrVHH7kSu
-	gPP4brhsH/gFKbDhdIC6YI1yM2dfJEvvoQzvlLv9tgpjZuCdUhTP8OXryN36ep/6xHGKFpWB/8hwG
-	WnJDUnuIlwp56SSufkywwY3mTE84z+EPq398ytwFV3QdKqbF0R6612Pyh00qGdilYw5jV/rThIlKq
-	PyXiGuQyaAY/Y3ODTvgBPuqQp5myS3ePOvFqNf16WXyeCpK2zdqjJCwpdiClbeSOXxFkukcyZpMoy
-	Qx4jBzHd68dXNdisDMYLFIqJGA6yeuIwQ2sBp8fPMe3frC3gS/Eg7Rlk8rnQj+RGMrkQ3wW7G6Hun
-	89EFloZd2sdHClM4JudA==;
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:To:References:
+	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=x8Whjf5QH6SLx7MJOKG65FyOLeT7rAT0LfkTc8DE274=; b=qIaWDFmVuiKVPq
+	pcUg+gA0msqwDqLIEF2Bqko3qpIg8wCj95ZewkuRkt/85JoF6z/rfhpWLl9ruAZ2e2hIrmmdmFIZ5
+	O5NWvI6sEUOEggmX4QtGlGXBILOmHTMUXi18LmV80YIiRI68rPBEykoCYuVaOsmyEP/CY16ljsIpP
+	gvCKQ9I51Rjmla9dDAQsU8lkQsU3Cyl1VhYUf1FyM6Zmieq5jwPh705q9X6JnpG9PJlXveVaht42i
+	kkof8CQtnCTgKFnAvPqYYyI9OfW5Crf3TlbjL/7ixXoui47HFz9IE2Ed2SduTr20QF/xMFzwMCFQi
+	8UqJBE0mry2qKfZpP5VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFFuO-0000U9-C1; Tue, 01 Oct 2019 11:01:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iFG4m-0004Re-Sr; Tue, 01 Oct 2019 11:12:16 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFFuH-0000Tj-3i; Tue, 01 Oct 2019 11:01:26 +0000
-Received: from mail-wm1-f42.google.com (mail-wm1-f42.google.com
- [209.85.128.42])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1iFG4f-0004RD-NK
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 11:12:11 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id 53EE560790; Tue,  1 Oct 2019 11:12:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1569928329;
+ bh=9kO3QL+L5rr63Ix2ww95YvRUF57iILCa5Qi4MlOlhxM=;
+ h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+ b=dIZIpk9bKmKDhnfIWS9jfSnDm4DVoaXx77uUsEOO9K13B67BQkaKbnNxON+csseoV
+ 1JuCuFeooNuzQ/UYwecK8v2PitycNxQosak4+abcMAbpQUBVjMiBcU5V0RmV4QISwe
+ hnAA74SgzCPkycDnXeqti/0dRhJdKlyUE+w2TBYk=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.8 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,MISSING_DATE,MISSING_MID,SPF_NONE autolearn=no
+ autolearn_force=no version=3.4.0
+Received: from potku.adurom.net (88-114-240-156.elisa-laajakaista.fi
+ [88.114.240.156])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 23C0021D71;
- Tue,  1 Oct 2019 11:01:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569927684;
- bh=WFo4AOUfzZaJbgEqFa0H+5dWz8gP0vH+XT9yDB8pn74=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=DKAOAjhhZQekV/U0rf1A61tna9L0itLTk3ksZxH/4x8NGaaPEMB6wFbrRuMk0nE04
- pmYtJv/BtN/snI8o56m6K6S3SNSX+TmnxsyTYPmUmLs0860AYsKNWKF8bA4kBcxDS0
- YByxPCIlMdIoRWs6B2VsNN9AfxWvOcIyagdW+dRY=
-Received: by mail-wm1-f42.google.com with SMTP id p7so2839162wmp.4;
- Tue, 01 Oct 2019 04:01:24 -0700 (PDT)
-X-Gm-Message-State: APjAAAV9M13ygKzJhbdX8HHPcqM6AMvh/YVbhJRinOla/2M3bnvX0K2h
- b0WCksrgde/ebwgbboyXez16q/LFGXSZqR7CFq0=
-X-Google-Smtp-Source: APXvYqxTkPFr419qtuPFWbkgNrsF7CMpg7mB9lJniQFsAuSfCSwlMLaZF7coguK/T5VVCPX6kxCP/gJgub/cxMZOwAw=
-X-Received: by 2002:a1c:2b41:: with SMTP id r62mr3025307wmr.47.1569927682563; 
- Tue, 01 Oct 2019 04:01:22 -0700 (PDT)
+ (Authenticated sender: kvalo@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 4B91E6014B;
+ Tue,  1 Oct 2019 11:12:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1569928328;
+ bh=9kO3QL+L5rr63Ix2ww95YvRUF57iILCa5Qi4MlOlhxM=;
+ h=Subject:From:In-Reply-To:References:To:Cc:From;
+ b=Dff0axe8hdiOON+Jklx4brxGX76YkVHfkiIOQIY82uYhhIpU1BAIJ+ncj8fSYzaqM
+ anWwISLIwCbpYPDEmfqvXp8TA6IO32F52uTrw/J8nUbDSQc4+34NZebE2beqryLLdl
+ vQVfictCs0UzuZwbaG/naQM63KNlDtd68ZK8cAVY=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 4B91E6014B
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ spf=none smtp.mailfrom=kvalo@codeaurora.org
 MIME-Version: 1.0
-References: <20190919052822.10403-1-jagan@amarulasolutions.com>
- <20190919052822.10403-5-jagan@amarulasolutions.com> <4177305.6QI6aNXrAv@phil>
- <CAMty3ZBZ0kXsc-4EwUwy9rAHcDvhhYL1JWkyhhdvSvfRdyvvwA@mail.gmail.com>
-In-Reply-To: <CAMty3ZBZ0kXsc-4EwUwy9rAHcDvhhYL1JWkyhhdvSvfRdyvvwA@mail.gmail.com>
-From: Chen-Yu Tsai <wens@kernel.org>
-Date: Tue, 1 Oct 2019 19:01:09 +0800
-X-Gmail-Original-Message-ID: <CAGb2v67J_Dir72==ZxLmW-yeEsryWEJduVnHQiL96nn0vJEMcg@mail.gmail.com>
-Message-ID: <CAGb2v67J_Dir72==ZxLmW-yeEsryWEJduVnHQiL96nn0vJEMcg@mail.gmail.com>
-Subject: Re: [PATCH 4/6] arm64: dts: rockchip: Rename roc-pc with libretech
- notation
-To: Jagan Teki <jagan@amarulasolutions.com>
+Subject: Re: [PATCH] ath9k: remove unused including <linux/version.h>
+From: Kalle Valo <kvalo@codeaurora.org>
+In-Reply-To: <20190923135632.145051-1-yuehaibing@huawei.com>
+References: <20190923135632.145051-1-yuehaibing@huawei.com>
+To: YueHaibing <yuehaibing@huawei.com>
+User-Agent: pwcli/0.0.0-git (https://github.com/kvalo/pwcli/) Python/2.7.12
+Message-Id: <20191001111209.53EE560790@smtp.codeaurora.org>
+Date: Tue,  1 Oct 2019 11:12:09 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_040125_193319_6ED3B196 
-X-CRM114-Status: GOOD (  25.86  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191001_041209_781024_C9BB2830 
+X-CRM114-Status: UNSURE (   6.05  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -73,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,89 +97,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Levin Du <djw@t-chip.com.cn>,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>, Akash Gajjar <akash@openedev.com>,
- Da Xue <da@lessconfused.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: kernel-janitors@vger.kernel.org, YueHaibing <yuehaibing@huawei.com>,
+ linux-wireless@vger.kernel.org, ath9k-devel@qca.qualcomm.com,
+ netdev@vger.kernel.org, manivannan.sadhasivam@linaro.org, afaerber@suse.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 1, 2019 at 6:34 PM Jagan Teki <jagan@amarulasolutions.com> wrote:
->
-> On Mon, Sep 30, 2019 at 3:02 AM Heiko Stuebner <heiko@sntech.de> wrote:
-> >
-> > Hi Jagan,
-> >
-> > Am Donnerstag, 19. September 2019, 07:28:20 CEST schrieb Jagan Teki:
-> > > Though the ROC-PC is manufactured by firefly, it is co-designed
-> > > by libretch like other Libretech computer boards from allwinner,
-> > > amlogic does.
-> > >
-> > > So, it is always meaningful to keep maintain those vendors who
-> > > are part of design participation so-that the linux mainline
-> > > code will expose outside world who are the makers of such
-> > > hardware prototypes.
-> > >
-> > > So, rename the existing rk3399-roc-pc.dts with libretch notation,
-> > > rk3399-libretech-roc-rk3399-pc.dts
-> > >
-> > > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> > > ---
-> > >  arch/arm64/boot/dts/rockchip/Makefile                           | 2 +-
-> > >  .../{rk3399-roc-pc.dts => rk3399-libretech-roc-rk3399-pc.dts}   | 0
-> >
-> > Somewhat "randomly" renaming files for "exposure" of the maker isn't the
-> > way to go. Especially as the file name itself is merely a handle and not
-> > meant for fame. The board filename should mainly enable developers to
-> > hopefully the correct board file to use/change - and "rk3399-roc-pc"
-> > is sufficiently unique to do that.
-> >
-> > Similar to how the NanoPi boards do that.
-> >
-> > And renames not only loose the history of changes but also in this case
-> > the file is in the kernel since july 2018 - more than a year, so this might
-> > actually affect the workflow of someone.
->
-> Yes, I agreed this point.
->
-> >
-> > So I'd really expect an actual technical reason for a rename.
->
-> This changes purely based on the recent changes on naming conventions
-> that have been followed in amlogic and allwinner with regards to
-> libretech [1]. I have seen few Bananapi boards from Allwinner H3 has
-> been converted as per Libretech computer recently. I assume these
+YueHaibing <yuehaibing@huawei.com> wrote:
 
-The DTS file for AML-S905X-CC has never been renamed.
+> Remove including <linux/version.h> that don't need it.
+> 
+> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+> Signed-off-by: Kalle Valo <kvalo@codeaurora.org>
 
-The ALL-H3-CC was only reworked to split out the common bits to accommodate
-the different SoC (H3 vs H5) variants for the same board. Even after the
-rework, the board DTS files retained their original naming scheme. Same
-goes for the Bananapi M2+. However we have never renamed Bananapi files
-to Libretech.
+Patch applied to ath-next branch of ath.git, thanks.
 
-Since Libre Computer and Firefly both have the ROC-RK3399-PC, renaming
-it is likely to cause some confusion.
+6aff90c5bab7 ath9k: remove unused including <linux/version.h>
 
-ChenYu
+-- 
+https://patchwork.kernel.org/patch/11156945/
 
-> changes are because libretech has part of co-designed vendor and also
-> open source forum supported for these hardware.
->
-> For further information, may be Da Xue can comment on this.
->
-> [1] https://libre.computer/products/boards/
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+
 
 _______________________________________________
 linux-arm-kernel mailing list
