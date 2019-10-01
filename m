@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BBE0C32CF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 13:42:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00E59C32CE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 13:42:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=9kVnTfvNDaUDYU+MnxEIjHCyA4Kd8HCWZC00fm6GnA0=; b=suZ
-	eWkwI8ca8PPEj+QfszRmrjTa9jXgN8FghY4SUyK+SKwqFWo5KhrN0Lw/FKZseSlAlP+gUolu8Emct
-	2Ypbs3dN0F6LS+IXKQa0Qo8D3F7PeDBsFS/OKH+Bv4BAZA8U0kVk5ngBe7bfwbgJzxxxFy0uVv3Io
-	nl9hOgu8fRp9am0wCsBvlCWsUKOOq60rwgaQn/npf5K4k9sc8KHsmn5KLVZSIQXW2KU27/5pGa+nH
-	9rAac1aevxO9fTflCtQA8SS8VFPzlx8DJ/qnCVvI5eDmQ/9ISWDkd2Zk87REXQAzD0n0+MtFqZDSL
-	jA4JfYv726K0SEYh45swGbKSIz3B3Nw==;
+	References:List-Owner; bh=VZWMM2EEbKcD2TkbfLayZbxJFSn/2OkaKGs9w9/q5BQ=; b=Df7
+	pSCXzqMoRgSNhJhJaTQa7voow6otDIvh+vVKSW25sKd6rA12ACwAc9bx0t5o7TL4e15ofu/V3Qq+D
+	78QSOgB8DOXQcDJNOxHvhD9RJpI2SVQ111DsvjzQLerLtbWxUWaPICVsgYpV/5RP3C9cBS3UdJS7F
+	2roEPDPqsu5IRfis/arg11AnYy83Vhpysk+UYZVTCCHyVvjf4hufLNk5gSHhOri3gNkhLmaFAZiTD
+	LUnwAz90qxUjTr6SzPZwtTV5HcrKon19Ux4SRbA+rp+zzGhGdZSXz7PMLJmO6hrR+KMxehKgZPau9
+	rVmmsUeEIJ4MxWpzqPLPMVTu5zRjYDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFGY0-00004r-K8; Tue, 01 Oct 2019 11:42:28 +0000
+	id 1iFGXj-0008IV-W5; Tue, 01 Oct 2019 11:42:12 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFGWa-0007GI-5K
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 11:41:01 +0000
+ id 1iFGWY-0007Ds-6P
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 11:41:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=YNsJV+ItOG8ETV3+VvS7k1U3tPURXjwDj/TDkFunmQw=; b=KnH+yQn7YDw6
- bzcw9jmdMxQbfVD0USWM9LZrhR+t7dVf8IaraVA1i5qQER8c5n559CIFq0awmSozQ9pct0LsNwo8/
- osgitovUdZxaFQbc1SbJH4RdQNsmrI3lXgaKqs3KWhBfB9FmqbkiONOxztgeiRIwU1COyvXS1s3t7
- aYccY=;
+ List-Archive; bh=/3kTwXy8T4vM/KtaNYjUXPB97nmHf6ex88dQiDmOQNs=; b=xsXN6lhhmRdZ
+ irRwiwpzbpVVWPh0XN7bKixiWkM6J1PSiWVyEWzOvKZw47GvL2YckER4aU6zWi8VxKhdlLWPOd41m
+ zQJAfoB3ON39ZSQayEuzsec32wEQgyqZVgECz8lid/qLSplx50XedQ2ThdjGh58jOsXh3ea+oa71R
+ TZG+I=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iFGWS-0004VE-4z; Tue, 01 Oct 2019 11:40:52 +0000
+ id 1iFGWS-0004VN-Cv; Tue, 01 Oct 2019 11:40:52 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 9B8C62742A30; Tue,  1 Oct 2019 12:40:51 +0100 (BST)
+ id D8C5E27429C0; Tue,  1 Oct 2019 12:40:51 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
-To: Markus Elfring <elfring@users.sourceforge.net>
-Subject: Applied "ASoC: xlnx: Use devm_platform_ioremap_resource() in
- xlnx_formatter_pcm_probe()" to the asoc tree
-In-Reply-To: <8f7cf483-6ab3-d00f-5606-863e9f5b31fc@web.de>
+To: Maxime Ripard <maxime.ripard@bootlin.com>
+Subject: Applied "ASoC: dt-bindings: Convert Allwinner A23 analog codec to a
+ schema" to the asoc tree
+In-Reply-To: <20190906151221.3148-2-mripard@kernel.org>
 X-Patchwork-Hint: ignore
-Message-Id: <20191001114051.9B8C62742A30@ypsilon.sirena.org.uk>
+Message-Id: <20191001114051.D8C5E27429C0@ypsilon.sirena.org.uk>
 Date: Tue,  1 Oct 2019 12:40:51 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_044100_241856_2F084D75 
-X-CRM114-Status: GOOD (  14.49  )
+X-CRM114-CacheID: sfid-20191001_044058_264686_B058178E 
+X-CRM114-Status: GOOD (  17.50  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -78,14 +78,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Rothwell <sfr@canb.auug.org.au>, alsa-devel@alsa-project.org,
- "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
- LKML <linux-kernel@vger.kernel.org>, Takashi Iwai <tiwai@suse.com>,
- kernel-janitors@vger.kernel.org, Liam Girdwood <lgirdwood@gmail.com>,
- Maruthi Srinivas Bayyavarapu <maruthi.srinivas.bayyavarapu@xilinx.com>,
- Jaroslav Kysela <perex@perex.cz>, Mark Brown <broonie@kernel.org>,
- Stephen Boyd <swboyd@chromium.org>, Michal Simek <michal.simek@xilinx.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ alsa-devel@alsa-project.org, Liam Girdwood <lgirdwood@gmail.com>,
+ Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Mark Brown <broonie@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -94,7 +91,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: xlnx: Use devm_platform_ioremap_resource() in xlnx_formatter_pcm_probe()
+   ASoC: dt-bindings: Convert Allwinner A23 analog codec to a schema
 
 has been applied to the asoc tree at
 
@@ -119,50 +116,97 @@ to this mail.
 Thanks,
 Mark
 
-From 6cfb1cd60394c2d88c6868d147cf6882a9ca3b6c Mon Sep 17 00:00:00 2001
-From: Markus Elfring <elfring@users.sourceforge.net>
-Date: Thu, 19 Sep 2019 17:27:57 +0200
-Subject: [PATCH] ASoC: xlnx: Use devm_platform_ioremap_resource() in
- xlnx_formatter_pcm_probe()
+From 8735141031d7ba96f1c2b3a45ec4efbfd47ad24b Mon Sep 17 00:00:00 2001
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+Date: Fri, 6 Sep 2019 18:12:21 +0300
+Subject: [PATCH] ASoC: dt-bindings: Convert Allwinner A23 analog codec to a
+ schema
 
-Simplify this function implementation by using a known wrapper function.
+The Allwinner A23 SoC and later have an embedded audio codec that uses a
+separate controller to drive its analog part, which is supported in Linux,
+with a matching Device Tree binding.
 
-This issue was detected by using the Coccinelle software.
+Now that we have the DT validation in place, let's convert the device tree
+bindings for that controller over to a YAML schemas.
 
-Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
-Link: https://lore.kernel.org/r/8f7cf483-6ab3-d00f-5606-863e9f5b31fc@web.de
+Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+Link: https://lore.kernel.org/r/20190906151221.3148-2-mripard@kernel.org
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/xilinx/xlnx_formatter_pcm.c | 9 +--------
- 1 file changed, 1 insertion(+), 8 deletions(-)
+ .../allwinner,sun8i-a23-codec-analog.yaml     | 38 +++++++++++++++++++
+ .../bindings/sound/sun8i-codec-analog.txt     | 17 ---------
+ 2 files changed, 38 insertions(+), 17 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun8i-a23-codec-analog.yaml
+ delete mode 100644 Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt
 
-diff --git a/sound/soc/xilinx/xlnx_formatter_pcm.c b/sound/soc/xilinx/xlnx_formatter_pcm.c
-index 48970efe7838..fb652e73abeb 100644
---- a/sound/soc/xilinx/xlnx_formatter_pcm.c
-+++ b/sound/soc/xilinx/xlnx_formatter_pcm.c
-@@ -564,7 +564,6 @@ static int xlnx_formatter_pcm_probe(struct platform_device *pdev)
- 	int ret;
- 	u32 val;
- 	struct xlnx_pcm_drv_data *aud_drv_data;
--	struct resource *res;
- 	struct device *dev = &pdev->dev;
- 
- 	aud_drv_data = devm_kzalloc(dev, sizeof(*aud_drv_data), GFP_KERNEL);
-@@ -584,13 +583,7 @@ static int xlnx_formatter_pcm_probe(struct platform_device *pdev)
- 		return ret;
- 	}
- 
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	if (!res) {
--		dev_err(dev, "audio formatter node:addr to resource failed\n");
--		ret = -ENXIO;
--		goto clk_err;
--	}
--	aud_drv_data->mmio = devm_ioremap_resource(dev, res);
-+	aud_drv_data->mmio = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(aud_drv_data->mmio)) {
- 		dev_err(dev, "audio formatter ioremap failed\n");
- 		ret = PTR_ERR(aud_drv_data->mmio);
+diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun8i-a23-codec-analog.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun8i-a23-codec-analog.yaml
+new file mode 100644
+index 000000000000..85305b4c2729
+--- /dev/null
++++ b/Documentation/devicetree/bindings/sound/allwinner,sun8i-a23-codec-analog.yaml
+@@ -0,0 +1,38 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/sound/allwinner,sun8i-a23-codec-analog.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Allwinner A23 Analog Codec Device Tree Bindings
++
++maintainers:
++  - Chen-Yu Tsai <wens@csie.org>
++  - Maxime Ripard <maxime.ripard@bootlin.com>
++
++properties:
++  compatible:
++    enum:
++      # FIXME: This is documented in the PRCM binding, but needs to be
++      # migrated here at some point
++      # - allwinner,sun8i-a23-codec-analog
++      - allwinner,sun8i-h3-codec-analog
++      - allwinner,sun8i-v3s-codec-analog
++
++  reg:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++
++additionalProperties: false
++
++examples:
++  - |
++    codec_analog: codec-analog@1f015c0 {
++      compatible = "allwinner,sun8i-h3-codec-analog";
++      reg = <0x01f015c0 0x4>;
++    };
++
++...
+diff --git a/Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt b/Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt
+deleted file mode 100644
+index 07356758bd91..000000000000
+--- a/Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt
++++ /dev/null
+@@ -1,17 +0,0 @@
+-* Allwinner Codec Analog Controls
+-
+-Required properties:
+-- compatible: must be one of the following compatibles:
+-		- "allwinner,sun8i-a23-codec-analog"
+-		- "allwinner,sun8i-h3-codec-analog"
+-		- "allwinner,sun8i-v3s-codec-analog"
+-
+-Required properties if not a sub-node of the PRCM node:
+-- reg: must contain the registers location and length
+-
+-Example:
+-prcm: prcm@1f01400 {
+-	codec_analog: codec-analog {
+-		compatible = "allwinner,sun8i-a23-codec-analog";
+-	};
+-};
 -- 
 2.20.1
 
