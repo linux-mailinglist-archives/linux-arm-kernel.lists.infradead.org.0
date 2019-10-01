@@ -2,145 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C1D6C364D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 15:49:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA762C366D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 15:56:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=90wDW2x3k5QKvHVsk9M+mT13BKZmVR/N8QgJKHAuY3A=; b=IjChnjUhMeWFVx
-	2pP8TdRsb58mz79SHLbicVTBnaJcIf1IdpRQM0z0OpHnbLDWvg2eSK1JhKbiGEnu81qbqSkt/vrmI
-	CRsGppAtIWc20liLG9miJGh/BdpnQg/3TRiD89JONZN6pJnU3v8CKe1IXa71TfGmrXZmgfzzqvwMy
-	dS1k/iCeXR1/S4jSr4dg9R6MnpIdwe8Iw2hN/SryyyJw99+ykhQdb+9Fs3snDfAcNoKjiaJezFXqv
-	Emr82vh881KLuKDmo516LY7EzW98ReXqNctW1D16D4kdt9T7Hk8VmOaJxmEdZeWQOotDAX4CKAxEZ
-	i3Z3cYzO2Q9Tkqz6gzCg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:Subject:To:From:
+	Message-ID:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=BWbHJo/hagritgkP+o63gUISgKg78UrTxOdrAnVk+j4=; b=X4wxTXB6uWOUNfJhcN1VMa6yj
+	qoZ/n5g4Rq5stvKmEsBfKJnFff6tnV3LT1N0jRsO12M63+a7WSldzQalnWOT+uqV5gl3J5nOVh90L
+	koGRYA5dShMISB88PCkE8UmspkcKidHqEcYOuKPPXge87Y/Ihk2iGfir0prHFygD/abMCHLdDOOsT
+	ilH6AQh72XSUiKDd2wrZnfZJFhBFiH6ZgFom1FeFmH3EEia3S4zAq9gki3skgzGGV1URVhbbO6PEx
+	9F5WetE3IkwccTtjMx+4XJKxSha2R0P1gVPAwy0+H9o2DXuTtOfRq1N5gNzwHBwuRP6n8mXqe6ksE
+	35O5HNXXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFIX8-0000oJ-42; Tue, 01 Oct 2019 13:49:42 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFIWj-0000X3-JQ
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 13:49:20 +0000
-Received: by mail-wm1-x343.google.com with SMTP id p7so3477377wmp.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 01 Oct 2019 06:49:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:openpgp:autocrypt:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=jy1vnLvV5mym1jOSv1FSiJMNpGbYZh25/gEVXPnizgk=;
- b=q04JNluO2xqCcQS+a++jttyeZQK0M5hsCZ/yuTfLotZ3lfjXkRpZ6SX5MYBBtm6zG9
- kogt1qz+wzVlpd0zoMQBrfxb5GFVTpVoU9+jS5Y2Utjhx++Pmy1kVs97Uxsa9jZXOvUe
- hrhJKY6qhuvN+hfP+UHb3DbBHH4FInHFOBvusPGrNYnotiiMfOoxQUBaL0zSriJGGNbv
- Fo8WaAp6Omt3geJlb+gHHTvB3QVSgBVDE1TgNCItkeyLegkcVR+2E0r9Gk970LzX5yRA
- IZu56sffM0U76CHyFDoAgMruQsgWyXwPkh4q7cKG0/EsIk+JZaJOSpmEeKoi4b/47vti
- pHUw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=jy1vnLvV5mym1jOSv1FSiJMNpGbYZh25/gEVXPnizgk=;
- b=MHvzdX3Ak1F/2FfVWGRFZV6IKjVqKyeP5iIXzHkayhtJU+CruvISMjhVMZ5T/WeQNu
- YTHjvKdSsNTK76Fqt1Py9HNi3baVgBhXonwvIgQ68UQc5gBa5hdZaWaAobpzM1iuL9US
- 2Gr42OUnAJVSjFldCKqmx1l3Ph7tQgxMos4VwFMDxTVEGhm+qAqpk+SnDQmvSz04+IMT
- TC0ey0DfxTw51iYX4GpnVdm8Akbt7mEg1Ty40PoOMuxkxqDIIkriwcilF4KnbBE4lfST
- yt+HS8l/cSeADPDPyZBLEd5aROsLnxn95hPHoEv4ox/GPSzi2lBDhvb32xem/R1rpIKr
- 6xcQ==
-X-Gm-Message-State: APjAAAXprQV41gs3d9mQq0/H3QIiqVd3J8i5Ytj2FivOCtCW612DVq8A
- YbOC66LkJlVxP83rUQrjOIKmkDxhqoQ=
-X-Google-Smtp-Source: APXvYqwzdm2SlUPPzuXHOwPyNLkwoicaMGEI8H+6iL87Qpod1mUR8gWy7TZcD4tZc1xnZmgD8NbEbw==
-X-Received: by 2002:a1c:bcd6:: with SMTP id m205mr3670633wmf.129.1569937756061; 
- Tue, 01 Oct 2019 06:49:16 -0700 (PDT)
-Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id r6sm3235519wmh.38.2019.10.01.06.49.14
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 01 Oct 2019 06:49:15 -0700 (PDT)
-Subject: Re: [PATCH v3 1/3] arm64: dts: meson: add reset controller for
- Meson-A1 SoC
-To: Xingyu Chen <xingyu.chen@amlogic.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, Kevin Hilman <khilman@baylibre.com>
-References: <1569738255-3941-1-git-send-email-xingyu.chen@amlogic.com>
- <1569738255-3941-2-git-send-email-xingyu.chen@amlogic.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- ZaTUOEkgIor5losDrePdPgE=
-Organization: Baylibre
-Message-ID: <491aa5c6-f4e7-8214-c9c4-34894451ba30@baylibre.com>
-Date: Tue, 1 Oct 2019 15:49:14 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1iFIdZ-0004ps-Np; Tue, 01 Oct 2019 13:56:21 +0000
+Received: from mx.0dd.nl ([5.2.79.48])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iFIdR-0004oJ-Bm; Tue, 01 Oct 2019 13:56:16 +0000
+Received: from mail.vdorst.com (mail.vdorst.com [IPv6:fd01::250])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mx.0dd.nl (Postfix) with ESMTPS id 12E3B5FBC5;
+ Tue,  1 Oct 2019 15:56:09 +0200 (CEST)
+Authentication-Results: mx.0dd.nl; dkim=pass (2048-bit key;
+ secure) header.d=vdorst.com header.i=@vdorst.com header.b="MiBJ1OfY"; 
+ dkim-atps=neutral
+Received: from www (www.vdorst.com [192.168.2.222])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.vdorst.com (Postfix) with ESMTPSA id C2B87358FB;
+ Tue,  1 Oct 2019 15:56:08 +0200 (CEST)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail.vdorst.com C2B87358FB
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vdorst.com;
+ s=default; t=1569938168;
+ bh=VuIg/nbWnzaooWQXgf0jLELVIM9W+Vd2ZvGPUadAMPM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=MiBJ1OfYk48VHA6HrblhjA6Hb3aditWR5YfLHeFqJ81AE7DkXN8+UQKKcKcjYHAnm
+ zigKND8kk+B83zm98YLtU5LWqT4toLQK/YrVYyM7o68njxwvBb46NbJMYFOIqHq2+a
+ Id6P3ktrp23DiZwgLPnly/D/Y9Pq3lkXKmZ0Kjt2ayaTiMeFG6Epdi+WPri9j+DM6l
+ cqyuF8nMF2is2g6LcHid4qI6I2nO4LCM90z5YpJKeMVOYsT7dQ/kinbeRU913TllAE
+ TLo82X/M/GHIiwM5mkxMGqC2Aa8nsH0+7scM3UL2CwVYi8VU/O1IzdFqkUia3Oiel0
+ +fn3sWWHhQbUA==
+Received: from localhost.localdomain (localhost.localdomain [127.0.0.1]) by
+ www.vdorst.com (Horde Framework) with HTTPS; Tue, 01 Oct 2019 13:56:08 +0000
+Date: Tue, 01 Oct 2019 13:56:08 +0000
+Message-ID: <20191001135608.Horde.OSYef8s44rR0XHw22Bf55r8@www.vdorst.com>
+From: =?utf-8?b?UmVuw6k=?= van Dorst <opensource@vdorst.com>
+To: MarkLee <Mark-MC.Lee@mediatek.com>
+Subject: Re: [PATCH net 2/2] arm: dts: mediatek: Fix mt7629 dts to reflect
+ the latest dt-binding
+References: <20191001123150.23135-1-Mark-MC.Lee@mediatek.com>
+ <20191001123150.23135-3-Mark-MC.Lee@mediatek.com>
+In-Reply-To: <20191001123150.23135-3-Mark-MC.Lee@mediatek.com>
+User-Agent: Horde Application Framework 5
 MIME-Version: 1.0
-In-Reply-To: <1569738255-3941-2-git-send-email-xingyu.chen@amlogic.com>
-Content-Language: en-US
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_064917_657724_E30186F4 
-X-CRM114-Status: GOOD (  16.55  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191001_065613_687227_BE6EF77E 
+X-CRM114-Status: GOOD (  17.05  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -152,45 +88,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Felix Fietkau <nbd@openwrt.org>, Nelson Chang <nelson.chang@mediatek.com>,
+ netdev@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, John Crispin <john@phrozen.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"; DelSp="Yes"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29/09/2019 08:24, Xingyu Chen wrote:
-> Add the reset controller device of Meson-A1 SoC family
-> 
-> Signed-off-by: Xingyu Chen <xingyu.chen@amlogic.com>
-> ---
->  arch/arm64/boot/dts/amlogic/meson-a1.dtsi | 6 ++++++
->  1 file changed, 6 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-> index 7210ad0..1c588ab 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-> +++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-> @@ -74,6 +74,12 @@
->  			#size-cells = <2>;
->  			ranges = <0x0 0x0 0x0 0xfe000000 0x0 0x1000000>;
->  
-> +			reset: reset-controller@0 {
-> +				compatible = "amlogic,meson-a1-reset";
-> +				reg = <0x0 0x0 0x0 0x8c>;
-> +				#reset-cells = <1>;
-> +			};
-> +
->  			uart_AO: serial@1c00 {
->  				compatible = "amlogic,meson-gx-uart",
->  					     "amlogic,meson-ao-uart";
-> 
-
-Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTWFya0xlZSwKClF1b3RpbmcgTWFya0xlZSA8TWFyay1NQy5MZWVAbWVkaWF0ZWsuY29tPjoK
+Cj4gKiBSZW1vdmVzIG1lZGlhdGVrLHBoeXNwZWVkIHByb3BlcnR5IGZyb20gZHRzaSB0aGF0IGlz
+IHVzZWxlc3MgaW4gUEhZTElOSwo+ICogU2V0IGdtYWMwIHRvIGZpeGVkLWxpbmsgc2dtaWkgMi41
+R2JpdCBtb2RlCj4gKiBTZXQgZ21hYzEgdG8gZ21paSBtb2RlIHRoYXQgY29ubmVjdCB0byBhIGlu
+dGVybmFsIGdwaHkKPgo+IFNpZ25lZC1vZmYtYnk6IE1hcmtMZWUgPE1hcmstTUMuTGVlQG1lZGlh
+dGVrLmNvbT4KPiAtLS0KPiAgYXJjaC9hcm0vYm9vdC9kdHMvbXQ3NjI5LXJmYi5kdHMgfCAxMyAr
+KysrKysrKysrKystCj4gIGFyY2gvYXJtL2Jvb3QvZHRzL210NzYyOS5kdHNpICAgIHwgIDIgLS0K
+PiAgMiBmaWxlcyBjaGFuZ2VkLCAxMiBpbnNlcnRpb25zKCspLCAzIGRlbGV0aW9ucygtKQo+Cj4g
+ZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL210NzYyOS1yZmIuZHRzICAKPiBiL2FyY2gv
+YXJtL2Jvb3QvZHRzL210NzYyOS1yZmIuZHRzCj4gaW5kZXggMzYyMWI3ZDJiMjJhLi42YmYxZjdk
+OGRkYjUgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvbXQ3NjI5LXJmYi5kdHMKPiAr
+KysgYi9hcmNoL2FybS9ib290L2R0cy9tdDc2MjktcmZiLmR0cwo+IEBAIC02Niw5ICs2NiwyMSBA
+QAo+ICAJcGluY3RybC0xID0gPCZlcGh5X2xlZHNfcGlucz47Cj4gIAlzdGF0dXMgPSAib2theSI7
+Cj4KPiArCWdtYWMwOiBtYWNAMCB7Cj4gKwkJY29tcGF0aWJsZSA9ICJtZWRpYXRlayxldGgtbWFj
+IjsKPiArCQlyZWcgPSA8MD47Cj4gKwkJcGh5LW1vZGUgPSAic2dtaWkiOwo+ICsJCWZpeGVkLWxp
+bmsgewo+ICsJCQlzcGVlZCA9IDwyNTAwPjsKPiArCQkJZnVsbC1kdXBsZXg7Cj4gKwkJCXBhdXNl
+Owo+ICsJCX07Cj4gKwl9Owo+ICsKPiAgCWdtYWMxOiBtYWNAMSB7Cj4gIAkJY29tcGF0aWJsZSA9
+ICJtZWRpYXRlayxldGgtbWFjIjsKPiAgCQlyZWcgPSA8MT47Cj4gKwkJcGh5LW1vZGUgPSAiZ21p
+aSI7Cj4gIAkJcGh5LWhhbmRsZSA9IDwmcGh5MD47Cj4gIAl9Owo+Cj4gQEAgLTc4LDcgKzkwLDYg
+QEAKPgo+ICAJCXBoeTA6IGV0aGVybmV0LXBoeUAwIHsKPiAgCQkJcmVnID0gPDA+Owo+IC0JCQlw
+aHktbW9kZSA9ICJnbWlpIjsKPiAgCQl9Owo+ICAJfTsKPiAgfTsKPiBkaWZmIC0tZ2l0IGEvYXJj
+aC9hcm0vYm9vdC9kdHMvbXQ3NjI5LmR0c2kgYi9hcmNoL2FybS9ib290L2R0cy9tdDc2MjkuZHRz
+aQo+IGluZGV4IDk2MDhiYzJjY2IzZi4uODY3Yjg4MTAzYjlkIDEwMDY0NAo+IC0tLSBhL2FyY2gv
+YXJtL2Jvb3QvZHRzL210NzYyOS5kdHNpCj4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvbXQ3NjI5
+LmR0c2kKPiBAQCAtNDY4LDE0ICs0NjgsMTIgQEAKPiAgCQkJY29tcGF0aWJsZSA9ICJtZWRpYXRl
+ayxtdDc2Mjktc2dtaWlzeXMiLCAic3lzY29uIjsKPiAgCQkJcmVnID0gPDB4MWIxMjgwMDAgMHgz
+MDAwPjsKPiAgCQkJI2Nsb2NrLWNlbGxzID0gPDE+Owo+IC0JCQltZWRpYXRlayxwaHlzcGVlZCA9
+ICIyNTAwIjsKPiAgCQl9Owo+Cj4gIAkJc2dtaWlzeXMxOiBzeXNjb25AMWIxMzAwMDAgewo+ICAJ
+CQljb21wYXRpYmxlID0gIm1lZGlhdGVrLG10NzYyOS1zZ21paXN5cyIsICJzeXNjb24iOwo+ICAJ
+CQlyZWcgPSA8MHgxYjEzMDAwMCAweDMwMDA+Owo+ICAJCQkjY2xvY2stY2VsbHMgPSA8MT47Cj4g
+LQkJCW1lZGlhdGVrLHBoeXNwZWVkID0gIjI1MDAiOwo+ICAJCX07Cj4gIAl9Owo+ICB9Owo+IC0t
+Cj4gMi4xNy4xCgpEb2VzIE1UNzYyOSBzb2MgaGFzIHRoZSBzYW1lIFNHTUlJIElQIGJsb2NrIGFz
+IG9uIHRoZSBNVDc2MjI/CklmIHRoYXQgaXMgdGhlIGNhc2UgdGhlbiBwaHktbW9kZSBzaG91bGQg
+c2V0IHRvICIyNTAwYmFzZS14Ii4KU2VlIGRpc2N1c3Npb24gYWJvdXQgdGhlIE1UNzYyMiBbMV0g
+YW5kIGR0cyBvZiAgCm10NzYyMi1iYW5hbmFwaS1icGktcjY0LmR0c1syXVszXQoKTm90ZSB0aGUg
+Y29kZSBvbmx5IHNldCB0aGUgcGh5IGluIG92ZXJjbG9jayBtb2RlIGlmIHBoeW1vZGUgPSAgCjI1
+MDBiYXNlLXggYW5kIHRoZQpsaW5rIGlzIGEgZml4ZWQtbGluaywgc2VlIFs0XS4KQWxzcCB0aGUg
+Y3VycmVudCBjb2RlIGRvZXNuJ3Qgc3VwcG9ydCBzZ21paSBzbyB3ZWxsLiBTZ21paSBhdCAyLjVH
+Yml0IGlzIG5vdApzdXBwb3J0ZWQgYXQgYWxsLgoKR3JlYXRzLAoKUmVuw6kKClsxXTogIApodHRw
+czovL2xvcmUua2VybmVsLm9yZy9uZXRkZXYvMjAxOTA4MjIxNDQ0MzMuR1QxMzI5NEBzaGVsbC5h
+cm1saW51eC5vcmcudWsvClsyXTogIApodHRwczovL2xvcmUua2VybmVsLm9yZy9uZXRkZXYvMjAx
+OTA4MjUxNzQzNDEuMjA3NTAtNC1vcGVuc291cmNlQHZkb3JzdC5jb20vClszXTogIApodHRwczov
+L2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC9kYXZlbS9uZXQuZ2l0L3Ry
+ZWUvYXJjaC9hcm02NC9ib290L2R0cy9tZWRpYXRlay9tdDc2MjItYmFuYW5hcGktYnBpLXI2NC5k
+dHMjbjEyMgpbNF06ICAKaHR0cHM6Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5l
+bC9naXQvZGF2ZW0vbmV0LmdpdC90cmVlL2RyaXZlcnMvbmV0L2V0aGVybmV0L21lZGlhdGVrL210
+a19zZ21paS5jI243MgoKCgoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
