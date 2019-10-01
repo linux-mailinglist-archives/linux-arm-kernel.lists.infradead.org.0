@@ -2,55 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97700C3744
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 16:28:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF091C3777
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 16:32:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GP2SKD3pGGjHD6ITMFd8uTycJ0fwouHE7b5LQOdNnpo=; b=KjAEPOH/J0cE0t
-	Wvbjg0B8XdFc9XsVE2ZChb6lMnbmBa/v0P4Dn8tVFG0+UAQo0LyWjN9F5iJq8g++fE+bj9F1yevxK
-	cwT22+bYX1xPfwQCFpobzg/Txl5mP0RiZOk5TCM35qW6K9u954A5GC1TNLAXhoBEII5ZmiUU2Ekw9
-	KkWDnfmidevV4IX69/uHmI+JEySBdiCX6hfzrVbi8Mo1+jUCXGTes70xAWwNPOWbu3KPRodjX7HOU
-	uzqCgNUpbry44Z9gQsAQbnyCnfBWqEPx2v4mIYBEdycKEtZSguiS42e4tkr2SzCA6xZ37cqJzJBFj
-	WNzNFXsKn14OLg4+3a8Q==;
+	List-Owner; bh=euV4gmw9iq4079jxJqrgOGC09fwqEOJm5Yqed3wd43Y=; b=ZuGMXPDc/7mGXT
+	PDVGCNd/dFcIJdzTnThZPVC4qiy9Osl4qoC6PmYT09F3LB8vz9RAJIOd3Ec5JeiR1U0ozhwAc0ct8
+	ZVW5CJnTNolrt6UxnIbn+LRv+UKUr0Viz8sGsuUyjGz6k3GN9fLRrJxLChMPlp69qFsBrjFh81ysT
+	qJM1nHhZDu4IQFVafCao7iV8a+nOirSPfd5/lNi77ZajlAT6Qu6MUk2D98KNIE4AHpOYFZhKShh4J
+	R+y6lJr8kKZj9aeQefb/Ptqm+wgFIX86h7aElJRwyrOIuWZzjI0vaXvTPRzPjvUy+Fi07GeVaIbTi
+	4e0MtxxJ9L4ZtaG7K/rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFJ87-0002p9-6G; Tue, 01 Oct 2019 14:27:55 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1iFJC0-0004k6-0A; Tue, 01 Oct 2019 14:31:56 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFJ80-0002oU-8t
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 14:27:50 +0000
-X-Originating-IP: 86.207.98.53
-Received: from localhost
- (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 37DFE240008;
- Tue,  1 Oct 2019 14:27:35 +0000 (UTC)
-Date: Tue, 1 Oct 2019 16:27:34 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH] ASoC: atmel: fix atmel_ssc_set_audio link failure
-Message-ID: <20191001142734.GD4106@piout.net>
-References: <20191001142116.1172290-1-arnd@arndb.de>
+ id 1iFJBu-0004j3-D1
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 14:31:51 +0000
+Received: by mail-oi1-f194.google.com with SMTP id k9so14580855oib.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 01 Oct 2019 07:31:50 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=c7cxKPjo/PvG1UNiRWmiEKE/lxVRyaTuSLEWIdqzaCU=;
+ b=GXa0X3+vjIY91AXC5mGJ0qh1NNbhvTY7Hx6UV5l7EGfa/gm4H2Jrfvy6laXm00EE9a
+ +olfqnl/uN/scAWr/CZ0JZeM20XiLKBxvATjasS8Ljn5kDWwjXJfk7RHh8FNM/ERghJl
+ zBrkj5Wi0dW6gD1gBqlRFF9vKHbiMOj6fannJ71xEIU1owGWmjAhJ56NHg7xKzOqgYiC
+ HCetdBGiQpr4YhVV3u/cfsVB+WHXuzloBzIerB/i9SdqE1PZckQKp4y+3T9U5S+HOzEh
+ 59PmuyxEnjaK/l9+csZBVd4G6YXYoSmEbZKuZ64ap6ps//HAoLl8y9GKONPaCtDdVx2R
+ DqTg==
+X-Gm-Message-State: APjAAAWzWs4v2ycbdQN5bshFkIGYuKJjdWaj37fqjbueOr8WUvRFQWUI
+ EEQEW/HeFlrw6kdPwD9hBM3bIxtuunEymOHwnttz8AFO
+X-Google-Smtp-Source: APXvYqwJTdQ3J23yqLD9IsxmZHAe9BY6F/AoiAtNW1vaU3DJz+mxyoEhrOEAhR9EmxA3Gw72+RrX2A1t40L2sMjC9Kw=
+X-Received: by 2002:aca:3908:: with SMTP id g8mr4044723oia.54.1569940309623;
+ Tue, 01 Oct 2019 07:31:49 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191001142116.1172290-1-arnd@arndb.de>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+References: <20190906154706.2449696-1-arnd@arndb.de>
+In-Reply-To: <20190906154706.2449696-1-arnd@arndb.de>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 1 Oct 2019 16:31:37 +0200
+Message-ID: <CAMuHMdUMgDBo1gkvQ_Bd8mjMiPjdWWY=9AU6K1S7NcJy5jhvGQ@mail.gmail.com>
+Subject: Re: [PATCH] ARM: don't export unused return_address()
+To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_072748_461396_457E8322 
-X-CRM114-Status: GOOD (  16.49  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191001_073150_441100_AF254379 
+X-CRM114-Status: GOOD (  13.31  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.194 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.194 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,85 +81,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, Liam Girdwood <lgirdwood@gmail.com>,
- linux-kernel@vger.kernel.org, Takashi Iwai <tiwai@suse.com>,
- Jaroslav Kysela <perex@perex.cz>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Mark Brown <broonie@kernel.org>,
- Codrin Ciubotariu <codrin.ciubotariu@microchip.com>,
- =?utf-8?B?TWljaGHFgiBNaXJvc8WCYXc=?= <mirq-linux@rere.qmqm.pl>,
- linux-arm-kernel@lists.infradead.org
+Cc: Thomas Gleixner <tglx@linutronix.de>, Enrico Weigelt <info@metux.net>,
+ Russell King <linux@armlinux.org.uk>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Arnd,
 
-On 01/10/2019 16:20:55+0200, Arnd Bergmann wrote:
-> The ssc audio driver can call into both pdc and dma backends.  With the
-> latest rework, the logic to do this in a safe way avoiding link errors
-> was removed, bringing back link errors that were fixed long ago in commit
-> 061981ff8cc8 ("ASoC: atmel: properly select dma driver state") such as
-> 
-> sound/soc/atmel/atmel_ssc_dai.o: In function `atmel_ssc_set_audio':
-> atmel_ssc_dai.c:(.text+0xac): undefined reference to `atmel_pcm_pdc_platform_register'
-> 
-> Fix it this time using Makefile hacks and a comment to prevent this
-> from accidentally getting removed again rather than Kconfig hacks.
-> 
-> Fixes: 18291410557f ("ASoC: atmel: enable SOC_SSC_PDC and SOC_SSC_DMA in Kconfig")
+On Fri, Sep 6, 2019 at 5:47 PM Arnd Bergmann <arnd@arndb.de> wrote:
+> Without the frame pointer enabled, return_address() is an inline
+> function and does not need to be exported, as shown by this warning:
+>
+> WARNING: "return_address" [vmlinux] is a static EXPORT_SYMBOL_GPL
+>
+> Move the EXPORT_SYMBOL_GPL() into the #ifdef as well.
+>
 > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> ---
->  sound/soc/atmel/Kconfig  |  4 ++--
->  sound/soc/atmel/Makefile | 10 ++++++++--
->  2 files changed, 10 insertions(+), 4 deletions(-)
-> 
-> diff --git a/sound/soc/atmel/Kconfig b/sound/soc/atmel/Kconfig
-> index f118c229ed82..25c31bf64936 100644
-> --- a/sound/soc/atmel/Kconfig
-> +++ b/sound/soc/atmel/Kconfig
-> @@ -10,11 +10,11 @@ config SND_ATMEL_SOC
->  if SND_ATMEL_SOC
->  
->  config SND_ATMEL_SOC_PDC
-> -	tristate
-> +	bool
->  	depends on HAS_DMA
->  
->  config SND_ATMEL_SOC_DMA
-> -	tristate
-> +	bool
->  	select SND_SOC_GENERIC_DMAENGINE_PCM
->  
->  config SND_ATMEL_SOC_SSC
-> diff --git a/sound/soc/atmel/Makefile b/sound/soc/atmel/Makefile
-> index 1f6890ed3738..c7d2989791be 100644
-> --- a/sound/soc/atmel/Makefile
-> +++ b/sound/soc/atmel/Makefile
-> @@ -6,8 +6,14 @@ snd-soc-atmel_ssc_dai-objs := atmel_ssc_dai.o
->  snd-soc-atmel-i2s-objs := atmel-i2s.o
->  snd-soc-mchp-i2s-mcc-objs := mchp-i2s-mcc.o
->  
-> -obj-$(CONFIG_SND_ATMEL_SOC_PDC) += snd-soc-atmel-pcm-pdc.o
-> -obj-$(CONFIG_SND_ATMEL_SOC_DMA) += snd-soc-atmel-pcm-dma.o
-> +# pdc and dma need to both be built-in if any user of
-> +# ssc is built-in.
-> +ifdef CONFIG_SND_ATMEL_SOC_PDC
-> +obj-$(CONFIG_SND_ATMEL_SOC_SSC) += snd-soc-atmel-pcm-pdc.o
-> +endif
-> +ifdef CONFIG_SND_ATMEL_SOC_DMA
-> +obj-$(CONFIG_SND_ATMEL_SOC_SSC) += snd-soc-atmel-pcm-dma.o
-> +endif
 
-Doesn't that prevent them to be built as a module at all?
-I'm not sure there is a use case though.
+Thanks for your patch!
 
+Tested-by: Geert Uytterhoeven <geert+renesas@glider.be>
+
+> --- a/arch/arm/kernel/return_address.c
+> +++ b/arch/arm/kernel/return_address.c
+> @@ -53,6 +53,7 @@ void *return_address(unsigned int level)
+>                 return NULL;
+>  }
+>
+
+Checkpatch doesn't like the empty line above:
+
+WARNING: EXPORT_SYMBOL(foo); should immediately follow its function/variable
+
+> +EXPORT_SYMBOL_GPL(return_address);
+> +
+>  #endif /* if defined(CONFIG_FRAME_POINTER) && !defined(CONFIG_ARM_UNWIND) */
+>
+> -EXPORT_SYMBOL_GPL(return_address);
+
+Gr{oetje,eeting}s,
+
+                        Geert
 
 -- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
