@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84B6FC2F4D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 10:53:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47A91C2F54
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 10:55:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CHwijQC1+CISNlsPXcGxXEmavbTJixzO6DA+2NeZe6Y=; b=ko5mEilh0ee+/7YxCcQb9/eX0
-	0XLqEkAiw3GFxw9TvI96KZaQDDf8L8HwUn2EhdcBYXLBQBuLANMMjMY1Kfx8oRlNu01OLsm/zD9ML
-	Y3wDwmvDLM//RVBk7HBZlL0zV182juXhO4lwPihnuiaDJYDcReOKGGZwfGuW4YRhRjQMynRzv7lBS
-	8O8rttCrfjvJOgc9Bgx7QQDr1vd66hmJ90/uuZv6bSL99+ZEa2uiZ+PiD006GUnH2Zkr1E8+uuVJy
-	5Wrr46HTiauf5Ww5HmehFNmUVhosNC13YnweiJSjOUeBxsrJVHI9mYcY3ZZVQaYzlMHzaIq3obhcV
-	dV8bJHr6g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xy58vScJSWMhSpWYamuN2NKUYHpu2rdxemaox3gjGew=; b=JN0aWKE7yd1efJ
+	02ieUl1FUBajq3tneBJuF5wNuWaj4JsIWGE4N3B5/Esrye1ctuAMnkqCX2bBIqQTxOjZ1DdCwe8Pr
+	W9WU5mDzIZrd/0GgBamJgyzlS3vwRdkICS0CHT3A+HBDMjRaBB0kagGdjLUDJvJ1IOVmZu7sS4clD
+	UCUTSWAs7H0W+fYpXFkOLYqUMkotMAXWC6jOJclMvWviaaXlwsYCHp4AjpcZjVMYHkzdsODuYAFcb
+	12XBJzHmHsb3qoZ8AgyxbOt2SBM2k4IGSVv2N1qnGuNuM/wa5f7l8MC4myQnOMtNOFK127Ff0ILaR
+	JKWvosX2Dxb6sP+JFIQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFDty-0000hc-Ix; Tue, 01 Oct 2019 08:52:58 +0000
+	id 1iFDvx-00012i-F1; Tue, 01 Oct 2019 08:55:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFDtq-0000gk-ER
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 08:52:52 +0000
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 872D82133F;
- Tue,  1 Oct 2019 08:52:49 +0000 (UTC)
+ id 1iFDvp-00012M-T5
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 08:54:55 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D4E4F2133F;
+ Tue,  1 Oct 2019 08:54:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569919970;
- bh=TYXtlG+fiA+pF3jSsz1tPLK5DQwytXD+ciUdbJAWuhk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Pcq6+VW4s9nKnunOdT0D2PQSwt06qFkxoutKMOh6lfzCjv0B+CUXME6uoPjRpjMRG
- 1KExkyTabs+UJgSqaLRPYZyj4KicHav4PbAdLBmqDsnfYA2BQWDSdDQP66AhfCHpH9
- fl8DS+0XLZDHcBytry97Ks7aXl8rbOpD6/Wa2SQM=
-Date: Tue, 1 Oct 2019 10:52:46 +0200
-From: Maxime Ripard <mripard@kernel.org>
-To: Chen-Yu Tsai <wens@csie.org>
-Subject: Re: [PATCH v6 1/5] dt-bindings: media: Add Allwinner A10 CSI binding
-Message-ID: <20191001085246.55srb62bpfc6jhtu@gilmour>
-References: <cover.34bcd988943a26671681eaf849aacab51fab1cfe.1562847292.git-series.maxime.ripard@bootlin.com>
- <110dd9ff1784c29fa16304825a41d1603a33f166.1562847292.git-series.maxime.ripard@bootlin.com>
- <CAGb2v64nx2AuWZN+RxCneE0pqvXr_d7u6mQ+=nCHv2VJ1MNtrQ@mail.gmail.com>
- <CAGb2v66Sin9HZ+QENegLQ3d7iiy278niwdr9rEZ0HwUfeQNFRQ@mail.gmail.com>
+ s=default; t=1569920093;
+ bh=szecxbNIyt9fQKdI3mGXWWqH6xc6Il8EeHjy2q22MmE=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=Dw4H4ZgGHfx/ZI6u+yBi43GwHZD0pDN+dtBIoa/0toBp0bJaCpdYHjNkGLCFAI9sf
+ p885axzz4B5SVa572ab3PX675xVLqnNifp3CrsKEnCpiFERdRAknYwkpPY5g2i7kq1
+ M36qcriDMmumSxbNIUz0jbiLSTvWluo3nA59W9Xg=
+Date: Tue, 1 Oct 2019 09:54:46 +0100
+From: Jonathan Cameron <jic23@kernel.org>
+To: Marco Felsch <m.felsch@pengutronix.de>
+Subject: Re: [PATCH] iio: adc: imx25-gcq: Variable could be uninitialized if
+ regmap_read() fails
+Message-ID: <20191001095446.17bc9cd8@archlinux>
+In-Reply-To: <20190930074412.up4k6zdus4y7u4xb@pengutronix.de>
+References: <20190928002852.28329-1-yzhai003@ucr.edu>
+ <20190930074412.up4k6zdus4y7u4xb@pengutronix.de>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <CAGb2v66Sin9HZ+QENegLQ3d7iiy278niwdr9rEZ0HwUfeQNFRQ@mail.gmail.com>
-User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_015250_531456_9349A06E 
-X-CRM114-Status: GOOD (  28.74  )
+X-CRM114-CacheID: sfid-20191001_015453_979935_5539701E 
+X-CRM114-Status: GOOD (  24.78  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,171 +78,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Hans Verkuil <hans.verkuil@cisco.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
-Content-Type: multipart/mixed; boundary="===============2666203972379612575=="
+Cc: csong@cs.ucr.edu, Kate Stewart <kstewart@linuxfoundation.org>,
+ Lars-Peter Clausen <lars@metafoo.de>,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>, linux-iio@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, zhiyunq@cs.ucr.edu,
+ linux-kernel@vger.kernel.org, Fabio Estevam <festevam@gmail.com>,
+ Yizhuo <yzhai003@ucr.edu>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Hartmut Knaack <knaack.h@gmx.de>, Shawn Guo <shawnguo@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Enrico Weigelt <info@metux.net>,
+ Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, 30 Sep 2019 09:44:12 +0200
+Marco Felsch <m.felsch@pengutronix.de> wrote:
 
---===============2666203972379612575==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="xnpqoekd4qgpls3t"
-Content-Disposition: inline
+> Hi Yizhuo,
+> 
+> thanks for your patch.
+> 
+> On 19-09-27 17:28, Yizhuo wrote:
+> > In function mx25_gcq_irq(), local variable "stats" could
+> > be uninitialized if function regmap_read() returns -EINVAL.
+> > However, this value is used in if statement, which is
+> > potentially unsafe. The same case applied to the variable
+> > "data" in function mx25_gcq_get_raw_value() in the same file.  
+> 
+> IMHO the commit header should be something like: "iio: adc: imx25-gcq:
+> fix uninitialized variable usage"...
+> 
+> and please add a fixes tag.
+As with the others, before adding a fixes tag, please verify there
+is an actual path to trigger this.
 
+In this case it's an mmio regmap with no clock. For those, I'm not sure
+if there is a failure path.
 
---xnpqoekd4qgpls3t
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Still a worthwhile hardening / cleanup patch, but shouldn't be called
+a fix or marked with a fixes tag because we don't want people to think
+it is necessary to backport it.
 
-Hi,
+Thanks,
 
-Thanks for looking into this.
-
-On Sun, Sep 15, 2019 at 04:54:16PM +0800, Chen-Yu Tsai wrote:
-> On Thu, Aug 15, 2019 at 4:34 PM Chen-Yu Tsai <wens@csie.org> wrote:
-> >
-> > Hi,
-> >
-> > Sorry for chiming in so late.
-> >
-> > On Thu, Jul 11, 2019 at 8:15 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
-> > >
-> > > The Allwinner A10 CMOS Sensor Interface is a camera capture interface also
-> > > used in later (A10s, A13, A20, R8 and GR8) SoCs.
-> > >
-> > > On some SoCs, like the A10, there's multiple instances of that controller,
-> > > with one instance supporting more channels and having an ISP.
-> > >
-> > > Reviewed-by: Rob Herring <robh@kernel.org>
-> > > Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-> > > ---
-> > >  Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml | 94 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
-> > >  1 file changed, 94 insertions(+)
-> > >  create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
-> > > new file mode 100644
-> > > index 000000000000..97c9fc3b5050
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
-> > > @@ -0,0 +1,94 @@
-> > > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/arm/allwinner,sun4i-a10-csi.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: Allwinner A10 CMOS Sensor Interface (CSI) Device Tree Bindings
-> > > +
-> > > +maintainers:
-> > > +  - Chen-Yu Tsai <wens@csie.org>
-> > > +  - Maxime Ripard <maxime.ripard@bootlin.com>
-> > > +
-> > > +description: |-
-> > > +  The Allwinner A10 and later has a CMOS Sensor Interface to retrieve
-> > > +  frames from a parallel or BT656 sensor.
-> > > +
-> > > +
-> > > +properties:
-> > > +  compatible:
-> > > +    oneOf:
-> > > +      - items:
-> > > +          - enum:
-> > > +              - allwinner,sun7i-a20-csi0
-> > > +          - const: allwinner,sun4i-a10-csi0
-> >
-> > CSI0 on the A10 has an ISP. Do we know if the one in the A20 does
-> > as well? It certainly doesn't say so in the user manual. If not,
-> > then we can't claim that A20 CSI0 is compatible with A10 CSI0.
-> >
-> > > +
-> > > +      - items:
-> > > +          - const: allwinner,sun4i-a10-csi0
-> > > +
-> > > +  reg:
-> > > +    maxItems: 1
-> > > +
-> > > +  interrupts:
-> > > +    maxItems: 1
-> > > +
-> > > +  clocks:
-> > > +    items:
-> > > +      - description: The CSI interface clock
-> > > +      - description: The CSI module clock
-> > > +      - description: The CSI ISP clock
-> > > +      - description: The CSI DRAM clock
-> > > +
-> > > +  clock-names:
-> > > +    items:
-> > > +      - const: bus
-> > > +      - const: mod
-> >
-> > I doubt this actually is a module clock. Based on the usage in your
-> > device tree patch, and the csi driver in the old linux-sunxi kernel,
-> > the clock rate is set to 24 MHz, or whatever the sensor requires for
-> > MCLK.
->
-> I'm working on adding support for this on the R40, and it seems with
-> this SoC the picture is much clearer. It has the same CSI interface
-> block, but the CCU has the clocks correctly named. We have:
->
->   - CSI_MCLK0
->   - CSI_MCLK1
->   - CSI_SCLK
->
-> in addition to the bus clocks.
->
-> The CSI section also explains the clock signals:
->
->     6.1.3.2. Clock Sources
->     Two Clocks need to be configured for CSI controller. CSI0/1_MCLK
->     provides the master clock for sensor and other devices. CSI_SCLK
->     is the top clock for the whole CSI module.
->
-> So it would seem the ISP clock we currently have in the DT is simply
-> the module clock shared by all CSI-related hardware blocks, and the
-> module clock is bogus.
-
-I don't think it is. It looks like there's no ISP in the R40 CSI
-controllers, so that would mean that we don't have an ISP clock, and
-the SCLK is the module clock.
-
-Does that make sense?
-
-Maxime
-
---xnpqoekd4qgpls3t
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXZMT3gAKCRDj7w1vZxhR
-xS3GAQChjJb/Uh7KohG6iZVuImDjv2jvfjSVwaddzLEzegEoVwD/RqeeW3t/PRw3
-H9mwot1F7alalXIAAbHRVcaRaKwlXQE=
-=vdGi
------END PGP SIGNATURE-----
-
---xnpqoekd4qgpls3t--
+Jonathan
 
 
---===============2666203972379612575==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> 
+> > 
+> > Signed-off-by: Yizhuo <yzhai003@ucr.edu>
+> > ---
+> >  drivers/iio/adc/fsl-imx25-gcq.c | 10 ++++++++--
+> >  1 file changed, 8 insertions(+), 2 deletions(-)
+> > 
+> > diff --git a/drivers/iio/adc/fsl-imx25-gcq.c b/drivers/iio/adc/fsl-imx25-gcq.c
+> > index df19ecae52f7..dbf3e8e85aba 100644
+> > --- a/drivers/iio/adc/fsl-imx25-gcq.c
+> > +++ b/drivers/iio/adc/fsl-imx25-gcq.c
+> > @@ -74,7 +74,10 @@ static irqreturn_t mx25_gcq_irq(int irq, void *data)
+> >  	struct mx25_gcq_priv *priv = data;
+> >  	u32 stats;
+> >  
+> > -	regmap_read(priv->regs, MX25_ADCQ_SR, &stats);
+> > +	int ret = regmap_read(priv->regs, MX25_ADCQ_SR, &stats);  
+> 
+> Please don't do this. First declare the variable and then use it.
+> 
+> Regards,
+>   Marco
+> 
+> > +
+> > +	if (ret)
+> > +		return ret;
+> >  
+> >  	if (stats & MX25_ADCQ_SR_EOQ) {
+> >  		regmap_update_bits(priv->regs, MX25_ADCQ_MR,
+> > @@ -121,7 +124,10 @@ static int mx25_gcq_get_raw_value(struct device *dev,
+> >  		return -ETIMEDOUT;
+> >  	}
+> >  
+> > -	regmap_read(priv->regs, MX25_ADCQ_FIFO, &data);
+> > +	int ret = regmap_read(priv->regs, MX25_ADCQ_FIFO, &data);
+> > +
+> > +	if (ret)
+> > +		return ret;
+> >  
+> >  	*val = MX25_ADCQ_FIFO_DATA(data);
+> >  
+> > -- 
+> > 2.17.1
+> > 
+> > 
+> >   
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2666203972379612575==--
-
