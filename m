@@ -2,59 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54F60C37E4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 16:43:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D05EC37EA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 16:43:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ILbhSy64f31PcsoWWUfFvgw3kn3hRigvUTFwJm2RIYs=; b=gB5AI4XXtCwjxF
-	urp6EmX0oEgLWqFMiXKs35fmwal54ktQtsj6KGbQGAc5lNLSRQvyrvRdBeSUGYQ2gpuibTFZhs3H5
-	kmnVdAtXQOncQab6cf/qj3DNCmPNAPQEAa2WzES2dr5tIGDyCd4fXUn7LQzGj18LtFvp6SjEiDffa
-	8v2GkHy0NH1HL0LvSLzMAQONdYFQ3LGeQ+WC+QqNNDUqciIK7VwRuJbwce5dwmcjDgRPXEnD7Tl3X
-	MRIVhWsNz1gGZh8t/xu8IBt+OOrGd2k3MLEAH6Q/g44ZnKbwI6vSe1mNHQRPKMoXPCsQoYnmiv9OO
-	Aj+9BNHxbzNO9uW9WliA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1QywV4zT10hfx5nxqsyaD2fGcQmgKL3FdBIFpxKRSUY=; b=pBzvWCdirSMSQt0QYpqZTBLGH
+	eCk5ORXnypAWSyrNu4D81EdZCcpiL0Sp2jKVzF63J9UyBlkQuKwLjFT8mAPQktQR0K04JK0O0X1O9
+	kTSiXvMfVNxl4Roy5PGNcWCKi41MxG34PqcmhFzZdfXDhdWkmiA71vaxNTwJSCEyP+xEo7xIe60gc
+	AVKbb6kyOPUblmaVoDuqwLS+eK+Z3j7ALpd0FaXEUu7Cf8Q8rTmzPqTI681sTpWrPg1jRZlhgCEQ7
+	pUaimJQt1q/koaTyfY+OtdGGl4foBm6gM07WjNriEdmKdIuQoeMLIwA6WDqpnBGhm+t4k7mDSyoCd
+	CfFX5AKyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFJMt-00047Y-5f; Tue, 01 Oct 2019 14:43:11 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1iFJN8-0004Ud-RA; Tue, 01 Oct 2019 14:43:26 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFJLS-0002oe-5n
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 14:41:43 +0000
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 9D28D757C7;
- Tue,  1 Oct 2019 14:41:41 +0000 (UTC)
-Received: from t460s.redhat.com (ovpn-116-54.ams2.redhat.com [10.36.116.54])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 04D405D9C9;
- Tue,  1 Oct 2019 14:41:38 +0000 (UTC)
-From: David Hildenbrand <david@redhat.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v5 10/10] mm/memory_hotplug: Cleanup __remove_pages()
-Date: Tue,  1 Oct 2019 16:40:11 +0200
-Message-Id: <20191001144011.3801-11-david@redhat.com>
-In-Reply-To: <20191001144011.3801-1-david@redhat.com>
-References: <20191001144011.3801-1-david@redhat.com>
+ id 1iFJMh-00048t-MR
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 14:43:04 +0000
+Received: by mail-wm1-x341.google.com with SMTP id y21so3573805wmi.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 01 Oct 2019 07:42:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=xaOfNL1OoZaAEZgoqD2y8IAN6v4PCX0JaZgRKFJO1HQ=;
+ b=E0gNF8L/rF2+/OEqxB7EevvyKkiZVOzrtXCSqlpesiHT48i4OB1hNnkCNBVHpA2r26
+ i9hIu92U2PzHxk7nqyTPetkju8UyyfbJD0ZV1c6ZkYkv1/aDOPdtNHPlN6EmMNUyZ4WW
+ LGpL6LwAzqIMvv9oIr4jaDg9L9383R0bg55LZGmR4uGUBFHaRqefR8udKsWer5mw9mc7
+ yzi+u2xDfi+gBQrSQ7NtcMWBD+JA5YujOY+rcAgp0NGX4jVeWpJGNwMuxKrqPzyGuFyF
+ mnSWKRqeSFh/pNpcmiJDHzCh8dpJf3rmKklSbEd3SRzfUyyPIBFFuAksnP7BRFutw+V2
+ fA+w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=xaOfNL1OoZaAEZgoqD2y8IAN6v4PCX0JaZgRKFJO1HQ=;
+ b=b99HjREmU4YcHIK3xZutyF5NetV8se5FwWB/oC4O3gkC1qTxdHVTRXxnRZNR8fRPzU
+ QNNQZ9V3jr4alzgfSwKCOvw6PD99wvO3YvHMYCvdBR5M6EXv3X3rNJK9QKXgGPEKxRM5
+ VijzJIyOUJnq9fU086rObVTdq7/0QhN9QoAdTgx3brc0DJQbMj2q39kBthF8jbI4usLJ
+ pfGjHRGt93/DG7PXSHH2gHdqG1/WPI53LXBYAWIDr3XejYVBX858KkQknXsz5B6v8ckY
+ dICPsAHZUIGnS1Ib/EO/XPjPas/1v+oX1+DPqyd5yLEXQtczMlAI8hv3KE1lns6N/BvX
+ E32Q==
+X-Gm-Message-State: APjAAAWopcQEXndp+hj03vxGBWnqfNDjdJaQPxUyKY51GLqhTztF0smL
+ dLuiLmOiYwSrqu2ChhRiduv5PEbm
+X-Google-Smtp-Source: APXvYqzqyaxiVFjSZJ6se9jVgJ+Ez033K/VSdXb3iDYvQzAyyD9+O3UxsFJLAzajau0VXwFABU7zmg==
+X-Received: by 2002:a1c:49d4:: with SMTP id w203mr3822100wma.132.1569940978003; 
+ Tue, 01 Oct 2019 07:42:58 -0700 (PDT)
+Received: from localhost (p2E5BE2CE.dip0.t-ipconnect.de. [46.91.226.206])
+ by smtp.gmail.com with ESMTPSA id i8sm17866280wrw.36.2019.10.01.07.42.56
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 01 Oct 2019 07:42:56 -0700 (PDT)
+Date: Tue, 1 Oct 2019 16:42:55 +0200
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Jon Hunter <jonathanh@nvidia.com>, linux-tegra@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH 1/3] arm64: tegra: Add unit-address for CBB on Tegra194
+Message-ID: <20191001144255.GC3566931@ulmo>
+References: <20190726101618.26896-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.26]); Tue, 01 Oct 2019 14:41:41 +0000 (UTC)
+In-Reply-To: <20190726101618.26896-1-thierry.reding@gmail.com>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_074142_342072_AD74D464 
-X-CRM114-Status: GOOD (  14.89  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191001_074259_838837_AB545AC9 
+X-CRM114-Status: GOOD (  11.94  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (thierry.reding[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,75 +99,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, Michal Hocko <mhocko@suse.com>,
- linux-ia64@vger.kernel.org, Pavel Tatashin <pasha.tatashin@soleen.com>,
- linux-sh@vger.kernel.org, David Hildenbrand <david@redhat.com>,
- linux-mm@kvack.org, Wei Yang <richardw.yang@linux.intel.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- Oscar Salvador <osalvador@suse.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============9010272972035134483=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Let's drop the basically unused section stuff and simplify.
 
-Also, let's use a shorter variant to calculate the number of pages to
-the next section boundary.
+--===============9010272972035134483==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="ctP54qlpMx3WjD+/"
+Content-Disposition: inline
 
-Cc: Andrew Morton <akpm@linux-foundation.org>
-Cc: Oscar Salvador <osalvador@suse.de>
-Cc: Michal Hocko <mhocko@suse.com>
-Cc: Pavel Tatashin <pasha.tatashin@soleen.com>
-Cc: Dan Williams <dan.j.williams@intel.com>
-Cc: Wei Yang <richardw.yang@linux.intel.com>
-Signed-off-by: David Hildenbrand <david@redhat.com>
----
- mm/memory_hotplug.c | 17 ++++++-----------
- 1 file changed, 6 insertions(+), 11 deletions(-)
 
-diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
-index ffb514e3b090..0fa99e5a657e 100644
---- a/mm/memory_hotplug.c
-+++ b/mm/memory_hotplug.c
-@@ -488,25 +488,20 @@ static void __remove_section(unsigned long pfn, unsigned long nr_pages,
- void __remove_pages(unsigned long pfn, unsigned long nr_pages,
- 		    struct vmem_altmap *altmap)
- {
-+	const unsigned long end_pfn = pfn + nr_pages;
-+	unsigned long cur_nr_pages;
- 	unsigned long map_offset = 0;
--	unsigned long nr, start_sec, end_sec;
- 
- 	map_offset = vmem_altmap_offset(altmap);
- 
- 	if (check_pfn_span(pfn, nr_pages, "remove"))
- 		return;
- 
--	start_sec = pfn_to_section_nr(pfn);
--	end_sec = pfn_to_section_nr(pfn + nr_pages - 1);
--	for (nr = start_sec; nr <= end_sec; nr++) {
--		unsigned long pfns;
--
-+	for (; pfn < end_pfn; pfn += cur_nr_pages) {
- 		cond_resched();
--		pfns = min(nr_pages, PAGES_PER_SECTION
--				- (pfn & ~PAGE_SECTION_MASK));
--		__remove_section(pfn, pfns, map_offset, altmap);
--		pfn += pfns;
--		nr_pages -= pfns;
-+		/* Select all remaining pages up to the next section boundary */
-+		cur_nr_pages = min(end_pfn - pfn, -(pfn | PAGE_SECTION_MASK));
-+		__remove_section(pfn, cur_nr_pages, map_offset, altmap);
- 		map_offset = 0;
- 	}
- }
--- 
-2.21.0
+--ctP54qlpMx3WjD+/
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
+On Fri, Jul 26, 2019 at 12:16:16PM +0200, Thierry Reding wrote:
+> From: Thierry Reding <treding@nvidia.com>
+>=20
+> The control back-bone (CBB) starts at physical address 0, so give it a
+> unit-address to comply with standard naming practices checked for by the
+> device tree compiler.
+>=20
+> Signed-off-by: Thierry Reding <treding@nvidia.com>
+> ---
+>  .../arm64/boot/dts/nvidia/tegra194-p2888.dtsi | 20 +++++++++----------
+>  .../boot/dts/nvidia/tegra194-p2972-0000.dts   |  2 +-
+>  arch/arm64/boot/dts/nvidia/tegra194.dtsi      |  2 +-
+>  3 files changed, 12 insertions(+), 12 deletions(-)
+
+All three patches applied to for-5.5/arm64/dt.
+
+Thierry
+
+--ctP54qlpMx3WjD+/
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl2TZe8ACgkQ3SOs138+
+s6HDfA/7BP/RRUz2uNcWaO6MfcsRZcw/kM1SqLT2nzI1Afne784R7SeHGLR3U7uh
+hTFwQWaMN7lnpuN8+slIqsZLXdxZpSi2ZixYRpN1v982pqbe3ZbuyfPELvkkLtmf
+fdFF/P+aQZE1mqGywjv/7gaXUZS8mXan0Y5a6No9PIk5/7xqRyRXWdXajiFZuf4N
+w0Yg028XRx82BFIU2izhM3UUqtBIFkaEGnxr/+U4hybquf1nLfO7SdyVD52DTlH6
+Yke1X4/OOqwjvseZZtSe7hU5ViYYKMInhDHkxKw5J/lyXtlhS1mkcpInvk0oSrhn
+x+642n+BCKV8UWY9x25KWPyCjlXr+40itoS7F/3tuihhbQc4wIiejXwnJV2s3sUO
+JuJwOqHFujpEPqwyYCpzjL8hla4Xkf2YaLsyesZ6GIszoWa7I77CEky7L+2uoizZ
+9qIPnZuWooUDHOt06h1o7ONMnI3jXMIrNz234SIrZv7RQd1Kfp55xMENzwIvsUB5
+KjM/sCC2Q/3t8hw5VaF8jv6K6I0hi6If1RD9k1j4kVA33TDgbib1rkB0wcZGaB7F
+rnd63GdZIVhXGDgtjXdd+gsxIwNWN/5PZRA9/3gqWxYF2pAdyAiMZ2c9wdx+EznD
+p7Hhtx90GpA1aVClyQ2+sKf26KmFczNsfV6neMkG01R+M1TABFg=
+=1T99
+-----END PGP SIGNATURE-----
+
+--ctP54qlpMx3WjD+/--
+
+
+--===============9010272972035134483==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============9010272972035134483==--
+
