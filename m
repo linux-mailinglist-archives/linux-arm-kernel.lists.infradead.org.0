@@ -2,80 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB481C440A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 00:50:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46C06C4422
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 01:08:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=6vqVeMGzQdBCSWj/vNaxef8ivqlA4rYRAhxsLe0Mc1o=; b=XBMk1LAEt6a/X8ZBuTvGrV5tA7
-	mrKZYA3I267t93PVaGXKSnRe3pR75o5fSo6Y449zR4wMAv2TnSSTn7woiAJ1SP8q0eV043OblnVgS
-	oUGxlTVr2vkJlgos6n9NVp+jQ4RZ7SMN0oAWc5VauimnGAEeF4VzR9vrdB7mm8EKicAISLI9iif3q
-	qEBFF3/rvbXNS0N7/ZEGpNnxoDkNCkvi/clqyPP+04r2qIqRjJtM7KqyspL7mYcpgyKF5PQk3zuSp
-	3TFnCvQDCfRP1xuHPkJLYmUpHNaLHtMOZNA621vEKTYUnYQkG0qAPfdDZfo6WubSF6z/gZDgfnROP
-	pJQNluiw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qYe8rdOMhn5lUOON9H47NafcZxXsyMWt8+BBmgyUVco=; b=HAJEHZAoQgjZJj
+	boyWkD6iMuGdXnldav5H1PR4LxukKvdMdmT1vvF7sVaNd7k+ACJwguwTdQI9g6o7UY8mlaumpB0ov
+	o7eQFcYTJ64TZIV7reNueVsa1zoiQnP6pa117lMc355mTsHQmEtud4eIqzftwn6Fs+7ac7YZCuVcj
+	RHAjpXAUCBNqhku3L85beHa0DmoKFUroOCXthRG34CxtA9aDTUK2BJKA0r3HutsRtkFldqTLx6hYN
+	03+JU66hVsY+oexk+hveHKp3DiSvqUE7A0p6SWlEDVw1JSNzjbzs+WIGF8g/P9EGqKxjtzIwl8z3o
+	3ZBcbosQMMuFpkr37ggg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFQyv-0008IW-Ua; Tue, 01 Oct 2019 22:50:57 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1iFRFN-0004ja-L7; Tue, 01 Oct 2019 23:07:57 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFQx7-0005Pg-Au; Tue, 01 Oct 2019 22:49:06 +0000
-Received: by mail-pf1-x444.google.com with SMTP id a2so9160565pfo.10;
- Tue, 01 Oct 2019 15:49:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=lByhQoUDqedSEy5jA6OCeRd6BYLoC/Hj4IwADVyV/Nw=;
- b=WJKIPqAEY/H0PHzfcKZu5++4lceWw/qRVIiktl/qkBV5K8aji5rGiLHvtt1Cr8aWCg
- vHOm9JrCRK7xr1153NTkjsc0wU0cAcshM094iSds+eyFSWlYTQoVu7Bh2AbjxGTculz5
- xg5kp0Knv81SN4PRMiBE51WSrSvd9E+V4W2ixzJQL7ZKUqF3vew/gHPNEAz4UVvg7Z5p
- dv9iaFQcPGH/qptes9jzQ2m115mWkiNI0kHmh9t3S5UuzdD1UvLqocJBnnErTS4Q8lMY
- ciyNzzVDOivzD0AkRSstw9gaoFBbOErtTFSEIY999ST6fcqZQeQAPCiu+eD+xkEacaJC
- QBbA==
+ id 1iFRFF-0004hQ-Gx
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 23:07:51 +0000
+Received: by mail-pg1-x542.google.com with SMTP id z12so10753869pgp.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 01 Oct 2019 16:07:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=+Nf7W/69rcbuSCjp3T5cjBQS4Gd3M1DUTau7shEAvBo=;
+ b=TqlVV4aRNdNJI/F4t+UvY1imNZCNpHkFYzdwAZRWjvxazB056mnYe1qHRWC6KUYq+z
+ iSJNy6Os93x9pQOaW/lYUA3GScy2NV3Wlsk6OHQFWvbZS0F1cT0NtKV48S1jve0inqDy
+ 3weCrTIfx4rISC/82sP2LHIKHMYbaJANnsEwQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=lByhQoUDqedSEy5jA6OCeRd6BYLoC/Hj4IwADVyV/Nw=;
- b=rVROjI17lnO1LHgxEkvwCfsqLkOzV2NGyoezOm7OHD1TmPkf5D80FALdA0cMuMCVZY
- MeCF/VNKvo51MvET7I2r3zLOGT1PMWhdU4Gxp/4Q3v3xWcu0vt+Zxa4qwl9JoL1CsVUK
- m2YvvVcWbzalHYSz/N4Xvq0JSkFt+gJ22BiFSl+ElfIbpD72fh4ZqdVeVQW/0Gkh50EN
- 1lUYXush0pMtoCJ/I/n+KmFsiOOa8fR2fQbjtsRqVuYCbTHq7+oYWca3gk1Yo4z5rdlj
- 5SvAgilTSbmO2pt3FcXsohn8tiCUrGaxZo9/fRvWvT2taKmo50EAJZhLCEFpe74N4buX
- 0SLw==
-X-Gm-Message-State: APjAAAWhFg8BsTOT6alY3sF+nUnX82AMfW0KP4jUGrsN6+wUyMmHY47k
- 2u/t6P5JvydXWoGPGXCnG4k=
-X-Google-Smtp-Source: APXvYqw2VJmCyzOsAOxBdOzNbTd0KkoYIRi/7Y88yuuzid05BfYRTc439EhGBxpTHYxv5uBbtXSdPw==
-X-Received: by 2002:a63:4616:: with SMTP id t22mr256877pga.123.1569970144635; 
- Tue, 01 Oct 2019 15:49:04 -0700 (PDT)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id c128sm20913506pfc.166.2019.10.01.15.49.03
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 01 Oct 2019 15:49:04 -0700 (PDT)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 7/7] irqchip/irq-bcm283x: Add registration prints
-Date: Tue,  1 Oct 2019 15:48:42 -0700
-Message-Id: <20191001224842.9382-8-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191001224842.9382-1-f.fainelli@gmail.com>
-References: <20191001224842.9382-1-f.fainelli@gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=+Nf7W/69rcbuSCjp3T5cjBQS4Gd3M1DUTau7shEAvBo=;
+ b=WBQUtVn81NM1mK20RbO/qpD6Bk+HW2a1in38ObRuSBUAhASsxkFzx5lL7woeiNnLHD
+ CtaFABfn+eHZsxclH3Hu8zi8s1CFTBPWayq3OeGdjzj2AugHe3dZrjMAW0abpzSmDll3
+ 3/HZAIAv9LVpXv/cpJH1xAWBRbkXb0qO6zMbH7saO4vmg0ROxtRlTmZnSQ45teZMM9f6
+ JDR9jNc7lzy1xAU4w6LtR0tNEui4EkmspZT1fLenY6ClCVU/G9XbRnq7o1aREf09B3+I
+ 7PFnMP8uMC/d/6mmg6OCw9FXbdX+OnqAVHhRBkG5Zknd1QAqjdZMFfnbNPSS7jY4dhQh
+ u33g==
+X-Gm-Message-State: APjAAAW3BWV6tlCsCAtFmcRAhLeZDXOTqz+w8JjLr26qZ2oLh6CfGKcU
+ TmYJUSmZvlqUqQ8QZKL+aFJEyA==
+X-Google-Smtp-Source: APXvYqwHNpEZQEilkNVmA3O5/XhCn/v8v+BBDw5V7KfhdqV5vHV6BNpopnq9XLH3i0O2OgOBpUpVkw==
+X-Received: by 2002:a17:90a:170e:: with SMTP id
+ z14mr721514pjd.119.1569971268070; 
+ Tue, 01 Oct 2019 16:07:48 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:4fff:7a6b:a335:8fde])
+ by smtp.gmail.com with ESMTPSA id y10sm15879881pfe.148.2019.10.01.16.07.47
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 01 Oct 2019 16:07:47 -0700 (PDT)
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH] ARM: dts: rockchip: Use interpolated brightness tables for
+ veyron
+Date: Tue,  1 Oct 2019 16:07:43 -0700
+Message-Id: <20191001160735.1.Ic9fd698810ea569c465350154da40b85d24f805b@changeid>
+X-Mailer: git-send-email 2.23.0.444.g18eeb5a265-goog
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_154905_406156_17EE4BEE 
-X-CRM114-Status: GOOD (  12.49  )
+X-CRM114-CacheID: sfid-20191001_160749_560444_B1553B72 
+X-CRM114-Status: GOOD (  10.51  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -84,6 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,76 +95,219 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- Jason Cooper <jason@lakedaemon.net>, Scott Branden <sbranden@broadcom.com>,
- Marc Zyngier <maz@kernel.org>, Eric Anholt <eric@anholt.net>,
- Rob Herring <robh+dt@kernel.org>,
- "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
- <bcm-kernel-feedback-list@broadcom.com>, Stefan Wahren <wahrenst@gmx.net>,
- Ray Jui <rjui@broadcom.com>, Thomas Gleixner <tglx@linutronix.de>,
- "moderated list:BROADCOM BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- "moderated list:BROADCOM BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Matthias Kaehlcke <mka@chromium.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With many different kind of interrupt controllers available and used on
-7211, add prints to help determine which ones are registered.
+Use interpolated brightness tables (added by commit 573fe6d1c25
+("backlight: pwm_bl: Linear interpolation between
+brightness-levels") for veyron, instead of specifying every single
+step.
 
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+Another option would be to switch to a perceptual brightness curve
+(CIE 1931), with the caveat that it would change the behavior of
+the backlight. Also the concept of a minimum brightness level is
+currently not supported for CIE 1931 curves.
+
+Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
 ---
- drivers/irqchip/irq-bcm2835.c | 9 +++++++++
- drivers/irqchip/irq-bcm2836.c | 2 ++
- 2 files changed, 11 insertions(+)
 
-diff --git a/drivers/irqchip/irq-bcm2835.c b/drivers/irqchip/irq-bcm2835.c
-index 55afc3487723..ae23e9ec86d0 100644
---- a/drivers/irqchip/irq-bcm2835.c
-+++ b/drivers/irqchip/irq-bcm2835.c
-@@ -76,6 +76,12 @@ enum armctrl_type {
- 	ARMCTRL_BCM7211
+ arch/arm/boot/dts/rk3288-veyron-edp.dtsi   | 35 ++--------------------
+ arch/arm/boot/dts/rk3288-veyron-jaq.dts    | 35 ++--------------------
+ arch/arm/boot/dts/rk3288-veyron-minnie.dts | 35 ++--------------------
+ arch/arm/boot/dts/rk3288-veyron-tiger.dts  | 35 ++--------------------
+ 4 files changed, 8 insertions(+), 132 deletions(-)
+
+diff --git a/arch/arm/boot/dts/rk3288-veyron-edp.dtsi b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
+index 773bedca872f..e95c89fe0545 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
++++ b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
+@@ -41,39 +41,8 @@
+ 
+ 	backlight: backlight {
+ 		compatible = "pwm-backlight";
+-		brightness-levels = <
+-			  0   1   2   3   4   5   6   7
+-			  8   9  10  11  12  13  14  15
+-			 16  17  18  19  20  21  22  23
+-			 24  25  26  27  28  29  30  31
+-			 32  33  34  35  36  37  38  39
+-			 40  41  42  43  44  45  46  47
+-			 48  49  50  51  52  53  54  55
+-			 56  57  58  59  60  61  62  63
+-			 64  65  66  67  68  69  70  71
+-			 72  73  74  75  76  77  78  79
+-			 80  81  82  83  84  85  86  87
+-			 88  89  90  91  92  93  94  95
+-			 96  97  98  99 100 101 102 103
+-			104 105 106 107 108 109 110 111
+-			112 113 114 115 116 117 118 119
+-			120 121 122 123 124 125 126 127
+-			128 129 130 131 132 133 134 135
+-			136 137 138 139 140 141 142 143
+-			144 145 146 147 148 149 150 151
+-			152 153 154 155 156 157 158 159
+-			160 161 162 163 164 165 166 167
+-			168 169 170 171 172 173 174 175
+-			176 177 178 179 180 181 182 183
+-			184 185 186 187 188 189 190 191
+-			192 193 194 195 196 197 198 199
+-			200 201 202 203 204 205 206 207
+-			208 209 210 211 212 213 214 215
+-			216 217 218 219 220 221 222 223
+-			224 225 226 227 228 229 230 231
+-			232 233 234 235 236 237 238 239
+-			240 241 242 243 244 245 246 247
+-			248 249 250 251 252 253 254 255>;
++		brightness-levels = <0 255>;
++		num-interpolated-steps = <254>;
+ 		default-brightness-level = <128>;
+ 		enable-gpios = <&gpio7 RK_PA2 GPIO_ACTIVE_HIGH>;
+ 		pinctrl-names = "default";
+diff --git a/arch/arm/boot/dts/rk3288-veyron-jaq.dts b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
+index 56ad9a43a6c2..5e10cc644875 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-jaq.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
+@@ -21,39 +21,8 @@
+ 
+ &backlight {
+ 	/* Jaq panel PWM must be >= 3%, so start non-zero brightness at 8 */
+-	brightness-levels = <
+-		  0
+-		  8   9  10  11  12  13  14  15
+-		 16  17  18  19  20  21  22  23
+-		 24  25  26  27  28  29  30  31
+-		 32  33  34  35  36  37  38  39
+-		 40  41  42  43  44  45  46  47
+-		 48  49  50  51  52  53  54  55
+-		 56  57  58  59  60  61  62  63
+-		 64  65  66  67  68  69  70  71
+-		 72  73  74  75  76  77  78  79
+-		 80  81  82  83  84  85  86  87
+-		 88  89  90  91  92  93  94  95
+-		 96  97  98  99 100 101 102 103
+-		104 105 106 107 108 109 110 111
+-		112 113 114 115 116 117 118 119
+-		120 121 122 123 124 125 126 127
+-		128 129 130 131 132 133 134 135
+-		136 137 138 139 140 141 142 143
+-		144 145 146 147 148 149 150 151
+-		152 153 154 155 156 157 158 159
+-		160 161 162 163 164 165 166 167
+-		168 169 170 171 172 173 174 175
+-		176 177 178 179 180 181 182 183
+-		184 185 186 187 188 189 190 191
+-		192 193 194 195 196 197 198 199
+-		200 201 202 203 204 205 206 207
+-		208 209 210 211 212 213 214 215
+-		216 217 218 219 220 221 222 223
+-		224 225 226 227 228 229 230 231
+-		232 233 234 235 236 237 238 239
+-		240 241 242 243 244 245 246 247
+-		248 249 250 251 252 253 254 255>;
++	brightness-levels = <8 255>;
++	num-interpolated-steps = <246>;
  };
  
-+static const char *armctrl_type_str[] = {
-+	[ARMCTRL_BCM2835] = "BCM2835",
-+	[ARMCTRL_BCM2836] = "BCM2836",
-+	[ARMCTRL_BCM7211] = "BCM7211",
-+};
-+
- static const int reg_pending[] __initconst = { 0x00, 0x04, 0x08 };
- static const int reg_enable[] __initconst = { 0x18, 0x10, 0x14 };
- static const int reg_disable[] __initconst = { 0x24, 0x1c, 0x20 };
-@@ -205,6 +211,9 @@ static int __init armctrl_of_init(struct device_node *node,
- 		set_handle_irq(bcm2835_handle_irq);
- 	}
+ &rk808 {
+diff --git a/arch/arm/boot/dts/rk3288-veyron-minnie.dts b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
+index 6b0e1cb1f681..503278e60d6b 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-minnie.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
+@@ -39,39 +39,8 @@
  
-+	pr_info("registered %s intc (%pOF)\n", armctrl_type_str[type],
-+		node);
-+
- 	return 0;
- }
+ &backlight {
+ 	/* Minnie panel PWM must be >= 1%, so start non-zero brightness at 3 */
+-	brightness-levels = <
+-			  0   3   4   5   6   7
+-			  8   9  10  11  12  13  14  15
+-			 16  17  18  19  20  21  22  23
+-			 24  25  26  27  28  29  30  31
+-			 32  33  34  35  36  37  38  39
+-			 40  41  42  43  44  45  46  47
+-			 48  49  50  51  52  53  54  55
+-			 56  57  58  59  60  61  62  63
+-			 64  65  66  67  68  69  70  71
+-			 72  73  74  75  76  77  78  79
+-			 80  81  82  83  84  85  86  87
+-			 88  89  90  91  92  93  94  95
+-			 96  97  98  99 100 101 102 103
+-			104 105 106 107 108 109 110 111
+-			112 113 114 115 116 117 118 119
+-			120 121 122 123 124 125 126 127
+-			128 129 130 131 132 133 134 135
+-			136 137 138 139 140 141 142 143
+-			144 145 146 147 148 149 150 151
+-			152 153 154 155 156 157 158 159
+-			160 161 162 163 164 165 166 167
+-			168 169 170 171 172 173 174 175
+-			176 177 178 179 180 181 182 183
+-			184 185 186 187 188 189 190 191
+-			192 193 194 195 196 197 198 199
+-			200 201 202 203 204 205 206 207
+-			208 209 210 211 212 213 214 215
+-			216 217 218 219 220 221 222 223
+-			224 225 226 227 228 229 230 231
+-			232 233 234 235 236 237 238 239
+-			240 241 242 243 244 245 246 247
+-			248 249 250 251 252 253 254 255>;
++	brightness-levels = <3 255>;
++	num-interpolated-steps = <251>;
+ };
  
-diff --git a/drivers/irqchip/irq-bcm2836.c b/drivers/irqchip/irq-bcm2836.c
-index 77fa395c8f6b..b159dc91919d 100644
---- a/drivers/irqchip/irq-bcm2836.c
-+++ b/drivers/irqchip/irq-bcm2836.c
-@@ -240,6 +240,8 @@ static int __init arm_irqchip_l1_intc_of_init_smp(struct device_node *node,
+ &i2c_tunnel {
+diff --git a/arch/arm/boot/dts/rk3288-veyron-tiger.dts b/arch/arm/boot/dts/rk3288-veyron-tiger.dts
+index 27557203ae33..e50367564dc6 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-tiger.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-tiger.dts
+@@ -23,39 +23,8 @@
  
- 	set_handle_irq(bcm2836_arm_irqchip_handle_irq);
+ &backlight {
+ 	/* Tiger panel PWM must be >= 1%, so start non-zero brightness at 3 */
+-	brightness-levels = <
+-		  0   3   4   5   6   7
+-		  8   9  10  11  12  13  14  15
+-		 16  17  18  19  20  21  22  23
+-		 24  25  26  27  28  29  30  31
+-		 32  33  34  35  36  37  38  39
+-		 40  41  42  43  44  45  46  47
+-		 48  49  50  51  52  53  54  55
+-		 56  57  58  59  60  61  62  63
+-		 64  65  66  67  68  69  70  71
+-		 72  73  74  75  76  77  78  79
+-		 80  81  82  83  84  85  86  87
+-		 88  89  90  91  92  93  94  95
+-		 96  97  98  99 100 101 102 103
+-		104 105 106 107 108 109 110 111
+-		112 113 114 115 116 117 118 119
+-		120 121 122 123 124 125 126 127
+-		128 129 130 131 132 133 134 135
+-		136 137 138 139 140 141 142 143
+-		144 145 146 147 148 149 150 151
+-		152 153 154 155 156 157 158 159
+-		160 161 162 163 164 165 166 167
+-		168 169 170 171 172 173 174 175
+-		176 177 178 179 180 181 182 183
+-		184 185 186 187 188 189 190 191
+-		192 193 194 195 196 197 198 199
+-		200 201 202 203 204 205 206 207
+-		208 209 210 211 212 213 214 215
+-		216 217 218 219 220 221 222 223
+-		224 225 226 227 228 229 230 231
+-		232 233 234 235 236 237 238 239
+-		240 241 242 243 244 245 246 247
+-		248 249 250 251 252 253 254 255>;
++	brightness-levels = <3 255>;
++	num-interpolated-steps = <251>;
+ };
  
-+	pr_info("Registered BCM2836 intc (%s)\n", node->full_name);
-+
- 	return 0;
- }
- 
+ &backlight_regulator {
 -- 
-2.17.1
+2.23.0.444.g18eeb5a265-goog
 
 
 _______________________________________________
