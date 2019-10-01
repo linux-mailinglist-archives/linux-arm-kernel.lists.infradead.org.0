@@ -2,81 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA762C366D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 15:56:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5EECC368D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 16:00:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:Subject:To:From:
-	Message-ID:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BWbHJo/hagritgkP+o63gUISgKg78UrTxOdrAnVk+j4=; b=X4wxTXB6uWOUNfJhcN1VMa6yj
-	qoZ/n5g4Rq5stvKmEsBfKJnFff6tnV3LT1N0jRsO12M63+a7WSldzQalnWOT+uqV5gl3J5nOVh90L
-	koGRYA5dShMISB88PCkE8UmspkcKidHqEcYOuKPPXge87Y/Ihk2iGfir0prHFygD/abMCHLdDOOsT
-	ilH6AQh72XSUiKDd2wrZnfZJFhBFiH6ZgFom1FeFmH3EEia3S4zAq9gki3skgzGGV1URVhbbO6PEx
-	9F5WetE3IkwccTtjMx+4XJKxSha2R0P1gVPAwy0+H9o2DXuTtOfRq1N5gNzwHBwuRP6n8mXqe6ksE
-	35O5HNXXg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GTN2onS3sGYtuqnHNaIAfjy9VQY3J+/djGMR4Bqp6A4=; b=YFhmeadpxS/UA8
+	l7ime7BOggV/kneH/4Bgo4Ga0eEQRjFJgJYLP99CaQIZIY0cFCXvSjfgz5BLt6wU45Tm0nOR+nNyb
+	dNVKGqfyGPpswjw2ayhmEJKfhpK+3mz3nW/3y/wB9vCcdfS7gFH9OnU36XHZjp9plv4Nku6wR5ZAu
+	O42kPmtma1QqdDhKMHkWDhDgr2YQwvTq3JH+wv0Cs/9X205eoDKi4w40OJGY5CkfZKtfXCKD9hvQ0
+	SlxrFh3WTHbex7BaDfX00RAkutz3r++aOdBF0pJkgMb6+qhNjKLlvifaAs9GzQQ14F9C+YVxTE7fh
+	I54GFKHlp3ceJS3QGMDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFIdZ-0004ps-Np; Tue, 01 Oct 2019 13:56:21 +0000
-Received: from mx.0dd.nl ([5.2.79.48])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFIdR-0004oJ-Bm; Tue, 01 Oct 2019 13:56:16 +0000
-Received: from mail.vdorst.com (mail.vdorst.com [IPv6:fd01::250])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mx.0dd.nl (Postfix) with ESMTPS id 12E3B5FBC5;
- Tue,  1 Oct 2019 15:56:09 +0200 (CEST)
-Authentication-Results: mx.0dd.nl; dkim=pass (2048-bit key;
- secure) header.d=vdorst.com header.i=@vdorst.com header.b="MiBJ1OfY"; 
- dkim-atps=neutral
-Received: from www (www.vdorst.com [192.168.2.222])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.vdorst.com (Postfix) with ESMTPSA id C2B87358FB;
- Tue,  1 Oct 2019 15:56:08 +0200 (CEST)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mail.vdorst.com C2B87358FB
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vdorst.com;
- s=default; t=1569938168;
- bh=VuIg/nbWnzaooWQXgf0jLELVIM9W+Vd2ZvGPUadAMPM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=MiBJ1OfYk48VHA6HrblhjA6Hb3aditWR5YfLHeFqJ81AE7DkXN8+UQKKcKcjYHAnm
- zigKND8kk+B83zm98YLtU5LWqT4toLQK/YrVYyM7o68njxwvBb46NbJMYFOIqHq2+a
- Id6P3ktrp23DiZwgLPnly/D/Y9Pq3lkXKmZ0Kjt2ayaTiMeFG6Epdi+WPri9j+DM6l
- cqyuF8nMF2is2g6LcHid4qI6I2nO4LCM90z5YpJKeMVOYsT7dQ/kinbeRU913TllAE
- TLo82X/M/GHIiwM5mkxMGqC2Aa8nsH0+7scM3UL2CwVYi8VU/O1IzdFqkUia3Oiel0
- +fn3sWWHhQbUA==
-Received: from localhost.localdomain (localhost.localdomain [127.0.0.1]) by
- www.vdorst.com (Horde Framework) with HTTPS; Tue, 01 Oct 2019 13:56:08 +0000
-Date: Tue, 01 Oct 2019 13:56:08 +0000
-Message-ID: <20191001135608.Horde.OSYef8s44rR0XHw22Bf55r8@www.vdorst.com>
-From: =?utf-8?b?UmVuw6k=?= van Dorst <opensource@vdorst.com>
-To: MarkLee <Mark-MC.Lee@mediatek.com>
-Subject: Re: [PATCH net 2/2] arm: dts: mediatek: Fix mt7629 dts to reflect
- the latest dt-binding
-References: <20191001123150.23135-1-Mark-MC.Lee@mediatek.com>
- <20191001123150.23135-3-Mark-MC.Lee@mediatek.com>
-In-Reply-To: <20191001123150.23135-3-Mark-MC.Lee@mediatek.com>
-User-Agent: Horde Application Framework 5
+	id 1iFIhN-0006cu-Lv; Tue, 01 Oct 2019 14:00:17 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iFIhE-0005hV-NM; Tue, 01 Oct 2019 14:00:10 +0000
+Received: by mail-ot1-f67.google.com with SMTP id 41so11583743oti.12;
+ Tue, 01 Oct 2019 07:00:05 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=JZBM1FPFDAl5uESgEP9tPsFTn7qdNx8IBtQzRJpA2CU=;
+ b=aer6VLjy8+Mr+vQ6cQvBMdfgqgu9nPxjI/HVtzbNs17eS4WQIrx7VhKmV+379e7uGZ
+ upbO7DFwGhnzp85mQGVTVjjCE02L+Pxngrijdyv1OQg87Yz+uz9OKArRCQfhlX+1p5KB
+ 9pwyGIJ1QrJZ0SSQipFejRg7tD5/f/qmr5DQotiMqz2URN9FbcI6bCKZBTcDoxcqxAKj
+ 4yUAeCbwNIcA2mBIygnmdIEslCpAW8Lbsrusy0YtjHMKe9fBre8D6Hmn7EbNqdNqcjPI
+ BjCsoFfxEwvBbOnrTbhQtfId6uZIuA9eA1VrYGKtBKWLXoUEG7DnTDtAj4Zq3KfmdnKq
+ 0xQw==
+X-Gm-Message-State: APjAAAULyc1f2eHQAGxbnrFdYy2+xGHaM1baQH+T9SEqFLftKVST9bpN
+ 6cBZ3DQsnCaTVIzscKUXQQ==
+X-Google-Smtp-Source: APXvYqyny3jSQCJcTq07B8NFgeh+CqrPZ/jllExOJcitfcVJnCPPhlC7KQB0zTngJlFTUtwdcVIBqg==
+X-Received: by 2002:a9d:4041:: with SMTP id o1mr4924805oti.61.1569938405253;
+ Tue, 01 Oct 2019 07:00:05 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id m25sm5045457oie.39.2019.10.01.07.00.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 01 Oct 2019 07:00:04 -0700 (PDT)
+Date: Tue, 1 Oct 2019 09:00:03 -0500
+From: Rob Herring <robh@kernel.org>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v2 2/8] dt-bindings: sram: Convert SRAM bindings to
+ json-schema
+Message-ID: <20191001140003.GA31344@bogus>
+References: <20190918173141.4314-1-krzk@kernel.org>
+ <20190918173141.4314-2-krzk@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
+In-Reply-To: <20190918173141.4314-2-krzk@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_065613_687227_BE6EF77E 
-X-CRM114-Status: GOOD (  17.05  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191001_070008_766327_055E1956 
+X-CRM114-Status: GOOD (  25.22  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.210.67 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,65 +90,215 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Felix Fietkau <nbd@openwrt.org>, Nelson Chang <nelson.chang@mediatek.com>,
- netdev@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, John Crispin <john@phrozen.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"; DelSp="Yes"
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Thierry Reding <thierry.reding@gmail.com>,
+ linux-riscv@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-leds@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ Herbert Xu <herbert@gondor.apana.org.au>, linux-clk@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, bcm-kernel-feedback-list@broadcom.com,
+ Guenter Roeck <linux@roeck-us.net>, devicetree@vger.kernel.org,
+ linux-watchdog@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org, Matt Mackall <mpm@selenic.com>,
+ linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-crypto@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWFya0xlZSwKClF1b3RpbmcgTWFya0xlZSA8TWFyay1NQy5MZWVAbWVkaWF0ZWsuY29tPjoK
-Cj4gKiBSZW1vdmVzIG1lZGlhdGVrLHBoeXNwZWVkIHByb3BlcnR5IGZyb20gZHRzaSB0aGF0IGlz
-IHVzZWxlc3MgaW4gUEhZTElOSwo+ICogU2V0IGdtYWMwIHRvIGZpeGVkLWxpbmsgc2dtaWkgMi41
-R2JpdCBtb2RlCj4gKiBTZXQgZ21hYzEgdG8gZ21paSBtb2RlIHRoYXQgY29ubmVjdCB0byBhIGlu
-dGVybmFsIGdwaHkKPgo+IFNpZ25lZC1vZmYtYnk6IE1hcmtMZWUgPE1hcmstTUMuTGVlQG1lZGlh
-dGVrLmNvbT4KPiAtLS0KPiAgYXJjaC9hcm0vYm9vdC9kdHMvbXQ3NjI5LXJmYi5kdHMgfCAxMyAr
-KysrKysrKysrKystCj4gIGFyY2gvYXJtL2Jvb3QvZHRzL210NzYyOS5kdHNpICAgIHwgIDIgLS0K
-PiAgMiBmaWxlcyBjaGFuZ2VkLCAxMiBpbnNlcnRpb25zKCspLCAzIGRlbGV0aW9ucygtKQo+Cj4g
-ZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL210NzYyOS1yZmIuZHRzICAKPiBiL2FyY2gv
-YXJtL2Jvb3QvZHRzL210NzYyOS1yZmIuZHRzCj4gaW5kZXggMzYyMWI3ZDJiMjJhLi42YmYxZjdk
-OGRkYjUgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvbXQ3NjI5LXJmYi5kdHMKPiAr
-KysgYi9hcmNoL2FybS9ib290L2R0cy9tdDc2MjktcmZiLmR0cwo+IEBAIC02Niw5ICs2NiwyMSBA
-QAo+ICAJcGluY3RybC0xID0gPCZlcGh5X2xlZHNfcGlucz47Cj4gIAlzdGF0dXMgPSAib2theSI7
-Cj4KPiArCWdtYWMwOiBtYWNAMCB7Cj4gKwkJY29tcGF0aWJsZSA9ICJtZWRpYXRlayxldGgtbWFj
-IjsKPiArCQlyZWcgPSA8MD47Cj4gKwkJcGh5LW1vZGUgPSAic2dtaWkiOwo+ICsJCWZpeGVkLWxp
-bmsgewo+ICsJCQlzcGVlZCA9IDwyNTAwPjsKPiArCQkJZnVsbC1kdXBsZXg7Cj4gKwkJCXBhdXNl
-Owo+ICsJCX07Cj4gKwl9Owo+ICsKPiAgCWdtYWMxOiBtYWNAMSB7Cj4gIAkJY29tcGF0aWJsZSA9
-ICJtZWRpYXRlayxldGgtbWFjIjsKPiAgCQlyZWcgPSA8MT47Cj4gKwkJcGh5LW1vZGUgPSAiZ21p
-aSI7Cj4gIAkJcGh5LWhhbmRsZSA9IDwmcGh5MD47Cj4gIAl9Owo+Cj4gQEAgLTc4LDcgKzkwLDYg
-QEAKPgo+ICAJCXBoeTA6IGV0aGVybmV0LXBoeUAwIHsKPiAgCQkJcmVnID0gPDA+Owo+IC0JCQlw
-aHktbW9kZSA9ICJnbWlpIjsKPiAgCQl9Owo+ICAJfTsKPiAgfTsKPiBkaWZmIC0tZ2l0IGEvYXJj
-aC9hcm0vYm9vdC9kdHMvbXQ3NjI5LmR0c2kgYi9hcmNoL2FybS9ib290L2R0cy9tdDc2MjkuZHRz
-aQo+IGluZGV4IDk2MDhiYzJjY2IzZi4uODY3Yjg4MTAzYjlkIDEwMDY0NAo+IC0tLSBhL2FyY2gv
-YXJtL2Jvb3QvZHRzL210NzYyOS5kdHNpCj4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvbXQ3NjI5
-LmR0c2kKPiBAQCAtNDY4LDE0ICs0NjgsMTIgQEAKPiAgCQkJY29tcGF0aWJsZSA9ICJtZWRpYXRl
-ayxtdDc2Mjktc2dtaWlzeXMiLCAic3lzY29uIjsKPiAgCQkJcmVnID0gPDB4MWIxMjgwMDAgMHgz
-MDAwPjsKPiAgCQkJI2Nsb2NrLWNlbGxzID0gPDE+Owo+IC0JCQltZWRpYXRlayxwaHlzcGVlZCA9
-ICIyNTAwIjsKPiAgCQl9Owo+Cj4gIAkJc2dtaWlzeXMxOiBzeXNjb25AMWIxMzAwMDAgewo+ICAJ
-CQljb21wYXRpYmxlID0gIm1lZGlhdGVrLG10NzYyOS1zZ21paXN5cyIsICJzeXNjb24iOwo+ICAJ
-CQlyZWcgPSA8MHgxYjEzMDAwMCAweDMwMDA+Owo+ICAJCQkjY2xvY2stY2VsbHMgPSA8MT47Cj4g
-LQkJCW1lZGlhdGVrLHBoeXNwZWVkID0gIjI1MDAiOwo+ICAJCX07Cj4gIAl9Owo+ICB9Owo+IC0t
-Cj4gMi4xNy4xCgpEb2VzIE1UNzYyOSBzb2MgaGFzIHRoZSBzYW1lIFNHTUlJIElQIGJsb2NrIGFz
-IG9uIHRoZSBNVDc2MjI/CklmIHRoYXQgaXMgdGhlIGNhc2UgdGhlbiBwaHktbW9kZSBzaG91bGQg
-c2V0IHRvICIyNTAwYmFzZS14Ii4KU2VlIGRpc2N1c3Npb24gYWJvdXQgdGhlIE1UNzYyMiBbMV0g
-YW5kIGR0cyBvZiAgCm10NzYyMi1iYW5hbmFwaS1icGktcjY0LmR0c1syXVszXQoKTm90ZSB0aGUg
-Y29kZSBvbmx5IHNldCB0aGUgcGh5IGluIG92ZXJjbG9jayBtb2RlIGlmIHBoeW1vZGUgPSAgCjI1
-MDBiYXNlLXggYW5kIHRoZQpsaW5rIGlzIGEgZml4ZWQtbGluaywgc2VlIFs0XS4KQWxzcCB0aGUg
-Y3VycmVudCBjb2RlIGRvZXNuJ3Qgc3VwcG9ydCBzZ21paSBzbyB3ZWxsLiBTZ21paSBhdCAyLjVH
-Yml0IGlzIG5vdApzdXBwb3J0ZWQgYXQgYWxsLgoKR3JlYXRzLAoKUmVuw6kKClsxXTogIApodHRw
-czovL2xvcmUua2VybmVsLm9yZy9uZXRkZXYvMjAxOTA4MjIxNDQ0MzMuR1QxMzI5NEBzaGVsbC5h
-cm1saW51eC5vcmcudWsvClsyXTogIApodHRwczovL2xvcmUua2VybmVsLm9yZy9uZXRkZXYvMjAx
-OTA4MjUxNzQzNDEuMjA3NTAtNC1vcGVuc291cmNlQHZkb3JzdC5jb20vClszXTogIApodHRwczov
-L2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC9kYXZlbS9uZXQuZ2l0L3Ry
-ZWUvYXJjaC9hcm02NC9ib290L2R0cy9tZWRpYXRlay9tdDc2MjItYmFuYW5hcGktYnBpLXI2NC5k
-dHMjbjEyMgpbNF06ICAKaHR0cHM6Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5l
-bC9naXQvZGF2ZW0vbmV0LmdpdC90cmVlL2RyaXZlcnMvbmV0L2V0aGVybmV0L21lZGlhdGVrL210
-a19zZ21paS5jI243MgoKCgoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Wed, Sep 18, 2019 at 07:31:35PM +0200, Krzysztof Kozlowski wrote:
+> Convert generic mmio-sram bindings to DT schema format using
+> json-schema.
+
+I've been slow getting to this because I started on the same thing...
+
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+> 
+> ---
+> 
+> Changes since v1:
+> 1. Indent example with four spaces (more readable).
+> ---
+>  .../devicetree/bindings/sram/sram.txt         |  80 ----------
+>  .../devicetree/bindings/sram/sram.yaml        | 138 ++++++++++++++++++
+>  2 files changed, 138 insertions(+), 80 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/sram/sram.txt
+>  create mode 100644 Documentation/devicetree/bindings/sram/sram.yaml
+
+> diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Documentation/devicetree/bindings/sram/sram.yaml
+> new file mode 100644
+> index 000000000000..8d9d6ce494b2
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/sram/sram.yaml
+> @@ -0,0 +1,138 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/sram/sram.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Generic on-chip SRAM
+> +
+> +maintainers:
+> +  - FIXME <who@should.it.be>
+
+You can put me.
+
+> +
+> +description: |+
+> +  Simple IO memory regions to be managed by the genalloc API.
+> +
+> +  Each child of the sram node specifies a region of reserved memory. Each
+> +  child node should use a 'reg' property to specify a specific range of
+> +  reserved memory.
+> +
+> +  Following the generic-names recommended practice, node names should
+> +  reflect the purpose of the node. Unit address (@<address>) should be
+> +  appended to the name.
+> +
+> +properties:
+> +  $nodename:
+> +    pattern: "^sram(@.*)?"
+> +
+> +  compatible:
+> +    items:
+> +      - enum:
+> +          - mmio-sram
+> +          - atmel,sama5d2-securam
+
+I was trying to go down the path of putting all the compatibles for 
+various SRAM bindings here, but I ran into some issues. I need to 
+revisit as I've forgotten the exact issue.
+
+This would need to be a 'contains' if this is going to work for others.
+
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  "#address-cells":
+> +    description: Should use the same values as the root node.
+> +
+> +  "#size-cells":
+> +    description: Should use the same values as the root node.
+
+I defined both of these to be 1 as 4GB of SRAM should be enough for a 
+while. We can debate 1 or 2 cells vs. 1, but there's no reason it has to 
+be the same as the root (unless we're failing to do address 
+translation).
+
+> +
+> +  ranges:
+> +    description:
+> +      Should translate from local addresses within the sram to bus addresses.
+> +
+> +  no-memory-wc:
+> +    description:
+> +      The flag indicating, that SRAM memory region has not to be remapped
+> +      as write combining. WC is used by default.
+> +    type: boolean
+> +
+> +  # TODO: additionalProperties: false
+> +
+> +patternProperties:
+> +  "^([a-z]*-)?sram@[a-f0-9]$":
+> +    type: object
+> +    description:
+> +      Each child of the sram node specifies a region of reserved memory.
+> +    properties:
+> +      reg:
+> +        description:
+> +          IO mem address range, relative to the SRAM range.
+
+maxItems: 1
+
+> +
+> +      compatible:
+> +        $ref: /schemas/types.yaml#/definitions/string
+> +        description:
+> +          Should contain a vendor specific string in the form
+> +          <vendor>,[<device>-]<usage>
+> +
+> +      pool:
+> +        description:
+> +          Indicates that the particular reserved SRAM area is addressable
+> +          and in use by another device or devices.
+> +        type: boolean
+> +
+> +      export:
+> +        description:
+> +          Indicates that the reserved SRAM area may be accessed outside
+> +          of the kernel, e.g. by bootloader or userspace.
+> +        type: boolean
+> +
+> +      protect-exec:
+> +        description: |
+> +          Same as 'pool' above but with the additional constraint that code
+> +          will be run from the region and that the memory is maintained as
+> +          read-only, executable during code execution. NOTE: This region must
+> +          be page aligned on start and end in order to properly allow
+> +          manipulation of the page attributes.
+> +        type: boolean
+> +
+> +      label:
+> +        $ref: /schemas/types.yaml#/definitions/string
+
+Already has a type definition.
+
+> +        description:
+> +          The name for the reserved partition, if omitted, the label is taken
+> +          from the node name excluding the unit address.
+> +
+> +      clocks:
+> +        description:
+> +          A list of phandle and clock specifier pair that controls the
+> +          single SRAM clock.
+> +
+> +      # TODO: additionalProperties: false
+> +
+> +    required:
+> +      - reg
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - "#address-cells"
+> +  - "#size-cells"
+> +  - ranges
+> +
+> +examples:
+> +  - |
+> +    sram: sram@5c000000 {
+> +        compatible = "mmio-sram";
+> +        reg = <0x5c000000 0x40000>; /* 256 KiB SRAM at address 0x5c000000 */
+> +
+> +        #address-cells = <1>;
+> +        #size-cells = <1>;
+> +        ranges = <0 0x5c000000 0x40000>;
+> +
+> +        smp-sram@100 {
+> +            compatible = "socvendor,smp-sram";
+> +            reg = <0x100 0x50>;
+> +        };
+> +
+> +        device-sram@1000 {
+> +            reg = <0x1000 0x1000>;
+> +            pool;
+> +        };
+> +
+> +        exported@20000 {
+> +            reg = <0x20000 0x20000>;
+> +            export;
+> +        };
+> +    };
+> -- 
+> 2.17.1
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
