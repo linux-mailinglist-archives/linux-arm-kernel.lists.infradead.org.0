@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1D08C4409
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 00:50:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB481C440A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 00:50:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,67 +11,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=sCtizpaI/q4ZQyvnta/Ssez7sX2ZsoTc0jUx7gzp3j0=; b=VDfNu2xXdvB9NmoTBPQE3PAvKf
-	fd+DP/qpXqCeL5RV/la+lLhyiiGScJgV5+s9z0ypWAUHi26BsD1ETVgWgzD+h5p4ryRz3v4k5nmTA
-	m2o8vWXcqZ6vK/wL2sTFjfGx9V8YBRUVLhCaFGIwOeaDfgO1PCdGG2HjReNMjaKa+DxZqpksv3Hon
-	RJonqQQGDII5ECtRt5LYTB6aO3O78uSCpHcvyxclmRIOYpDcXtQ3j+ZvbtvyHRDVHkPjqekF8e90G
-	tQ4jeG5J6IreGNTvXZZjGamQilNtHdfevxwXAeaVF2ejPpVlsGYTXaLRfWzBWuMxU61FOo4jfLDaz
-	Smo7Q78w==;
+	bh=6vqVeMGzQdBCSWj/vNaxef8ivqlA4rYRAhxsLe0Mc1o=; b=XBMk1LAEt6a/X8ZBuTvGrV5tA7
+	mrKZYA3I267t93PVaGXKSnRe3pR75o5fSo6Y449zR4wMAv2TnSSTn7woiAJ1SP8q0eV043OblnVgS
+	oUGxlTVr2vkJlgos6n9NVp+jQ4RZ7SMN0oAWc5VauimnGAEeF4VzR9vrdB7mm8EKicAISLI9iif3q
+	qEBFF3/rvbXNS0N7/ZEGpNnxoDkNCkvi/clqyPP+04r2qIqRjJtM7KqyspL7mYcpgyKF5PQk3zuSp
+	3TFnCvQDCfRP1xuHPkJLYmUpHNaLHtMOZNA621vEKTYUnYQkG0qAPfdDZfo6WubSF6z/gZDgfnROP
+	pJQNluiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFQyi-000857-7p; Tue, 01 Oct 2019 22:50:44 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1iFQyv-0008IW-Ua; Tue, 01 Oct 2019 22:50:57 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFQx5-0005NE-VY; Tue, 01 Oct 2019 22:49:05 +0000
-Received: by mail-pl1-x643.google.com with SMTP id j11so2951136plk.3;
- Tue, 01 Oct 2019 15:49:03 -0700 (PDT)
+ id 1iFQx7-0005Pg-Au; Tue, 01 Oct 2019 22:49:06 +0000
+Received: by mail-pf1-x444.google.com with SMTP id a2so9160565pfo.10;
+ Tue, 01 Oct 2019 15:49:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=MAMlkRnO5l7BTKTwRIiopLRzEQTrPpsCd+4MsukYmNc=;
- b=HAz4lDL4/HYy4Ox1QSCZ3kvs83mTwGsEqL60MTu/23VTwZHoyErK+WUt5t3kZyKIck
- YrwFzDaJDdqBgFIGjkIjKor6i2iwhTKxEW6l18Lkbai3McS7Fal1Gv9/wyepIKKfq84U
- VFUTkBIjcovYwb8z1TyZMurQOni9Q5Q7nyigZWHapWBYWeggFg2up3dAECedjaSRua+4
- aEwWBFqLGXIC44i31OcMMGuCqBqBjR9IzO/R2n8yX1JcgF8IMibIYMOuARrOba5ELcYV
- xfJqhGzN9tNd9cwWMFA2x2WlztMuRFFb00jO04J5C0r9j0NGHO/pe0YINATrFzePM5W4
- 2W/w==
+ bh=lByhQoUDqedSEy5jA6OCeRd6BYLoC/Hj4IwADVyV/Nw=;
+ b=WJKIPqAEY/H0PHzfcKZu5++4lceWw/qRVIiktl/qkBV5K8aji5rGiLHvtt1Cr8aWCg
+ vHOm9JrCRK7xr1153NTkjsc0wU0cAcshM094iSds+eyFSWlYTQoVu7Bh2AbjxGTculz5
+ xg5kp0Knv81SN4PRMiBE51WSrSvd9E+V4W2ixzJQL7ZKUqF3vew/gHPNEAz4UVvg7Z5p
+ dv9iaFQcPGH/qptes9jzQ2m115mWkiNI0kHmh9t3S5UuzdD1UvLqocJBnnErTS4Q8lMY
+ ciyNzzVDOivzD0AkRSstw9gaoFBbOErtTFSEIY999ST6fcqZQeQAPCiu+eD+xkEacaJC
+ QBbA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=MAMlkRnO5l7BTKTwRIiopLRzEQTrPpsCd+4MsukYmNc=;
- b=UY5BTSC6Mc9A1tILDQnqjd8ikE2o6c+T9Ks8gArR1lwyzC95wXOXHc/SPyrhorrfBh
- BD024CT5Y0fTA47k24XKwkp+RLWyCWS0pjhkqKzsxqnK/1sUHMlnCZQXheZ/rFfJQr06
- 7TuS3gse0e/E8A96PgLCqqnlRAThXPJZsn0uVFuw1VRZzRXLorjMmI2sVzxdnfWUG5jw
- +KOHZDnW4yfBqz7C1h9tF7SAIMNHIVSTZYSt7wTrMr1LnB0iEvseL4vpbCc/ZmRWWhAR
- IFHEyTlh/0mqIqdFnpBztb4CkAWAUstZHsEgWacpi3+c6BmyhzGF/JSKIBH44KvwMvFw
- 2Q+Q==
-X-Gm-Message-State: APjAAAW19QI1nw1SHoVeZW8K8EEiwEV4v+3Umnp2inZg4ORbsIELBsXn
- qAGyor2vN8jHdw5Wx3Xh4SQ=
-X-Google-Smtp-Source: APXvYqxEhwZILl7XTzqS0JmTl5V0s3Q2tsvy5lvU7+vFWHRphKhv2LJaKswN152OGBrBamTuEaAp4w==
-X-Received: by 2002:a17:902:322:: with SMTP id 31mr229858pld.150.1569970143390; 
- Tue, 01 Oct 2019 15:49:03 -0700 (PDT)
+ bh=lByhQoUDqedSEy5jA6OCeRd6BYLoC/Hj4IwADVyV/Nw=;
+ b=rVROjI17lnO1LHgxEkvwCfsqLkOzV2NGyoezOm7OHD1TmPkf5D80FALdA0cMuMCVZY
+ MeCF/VNKvo51MvET7I2r3zLOGT1PMWhdU4Gxp/4Q3v3xWcu0vt+Zxa4qwl9JoL1CsVUK
+ m2YvvVcWbzalHYSz/N4Xvq0JSkFt+gJ22BiFSl+ElfIbpD72fh4ZqdVeVQW/0Gkh50EN
+ 1lUYXush0pMtoCJ/I/n+KmFsiOOa8fR2fQbjtsRqVuYCbTHq7+oYWca3gk1Yo4z5rdlj
+ 5SvAgilTSbmO2pt3FcXsohn8tiCUrGaxZo9/fRvWvT2taKmo50EAJZhLCEFpe74N4buX
+ 0SLw==
+X-Gm-Message-State: APjAAAWhFg8BsTOT6alY3sF+nUnX82AMfW0KP4jUGrsN6+wUyMmHY47k
+ 2u/t6P5JvydXWoGPGXCnG4k=
+X-Google-Smtp-Source: APXvYqw2VJmCyzOsAOxBdOzNbTd0KkoYIRi/7Y88yuuzid05BfYRTc439EhGBxpTHYxv5uBbtXSdPw==
+X-Received: by 2002:a63:4616:: with SMTP id t22mr256877pga.123.1569970144635; 
+ Tue, 01 Oct 2019 15:49:04 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id c128sm20913506pfc.166.2019.10.01.15.49.02
+ by smtp.gmail.com with ESMTPSA id c128sm20913506pfc.166.2019.10.01.15.49.03
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 01 Oct 2019 15:49:02 -0700 (PDT)
+ Tue, 01 Oct 2019 15:49:04 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 6/7] irqchip: Build BCM283X_IRQ for ARCH_BRCMSTB
-Date: Tue,  1 Oct 2019 15:48:41 -0700
-Message-Id: <20191001224842.9382-7-f.fainelli@gmail.com>
+Subject: [PATCH 7/7] irqchip/irq-bcm283x: Add registration prints
+Date: Tue,  1 Oct 2019 15:48:42 -0700
+Message-Id: <20191001224842.9382-8-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191001224842.9382-1-f.fainelli@gmail.com>
 References: <20191001224842.9382-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_154904_037912_CDC0AD77 
-X-CRM114-Status: GOOD (  13.37  )
+X-CRM114-CacheID: sfid-20191001_154905_406156_17EE4BEE 
+X-CRM114-Status: GOOD (  12.49  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -114,28 +114,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that irq-bcm2835.c and irq-bcm2836.c have been updated to support
-BCM7211 which is under ARCH_BRCMSTB, build both drivers for
-ARCH_BRCMSTB.
+With many different kind of interrupt controllers available and used on
+7211, add prints to help determine which ones are registered.
 
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- drivers/irqchip/Kconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/irqchip/irq-bcm2835.c | 9 +++++++++
+ drivers/irqchip/irq-bcm2836.c | 2 ++
+ 2 files changed, 11 insertions(+)
 
-diff --git a/drivers/irqchip/Kconfig b/drivers/irqchip/Kconfig
-index d1bb20d23d27..ffd5f986172a 100644
---- a/drivers/irqchip/Kconfig
-+++ b/drivers/irqchip/Kconfig
-@@ -116,7 +116,7 @@ config I8259
- config BCM283X_IRQ
- 	bool
- 	select IRQ_DOMAIN
--	default ARCH_BCM2835
-+	default ARCH_BCM2835 || ARCH_BRCMSTB
+diff --git a/drivers/irqchip/irq-bcm2835.c b/drivers/irqchip/irq-bcm2835.c
+index 55afc3487723..ae23e9ec86d0 100644
+--- a/drivers/irqchip/irq-bcm2835.c
++++ b/drivers/irqchip/irq-bcm2835.c
+@@ -76,6 +76,12 @@ enum armctrl_type {
+ 	ARMCTRL_BCM7211
+ };
  
- config BCM6345_L1_IRQ
- 	bool
++static const char *armctrl_type_str[] = {
++	[ARMCTRL_BCM2835] = "BCM2835",
++	[ARMCTRL_BCM2836] = "BCM2836",
++	[ARMCTRL_BCM7211] = "BCM7211",
++};
++
+ static const int reg_pending[] __initconst = { 0x00, 0x04, 0x08 };
+ static const int reg_enable[] __initconst = { 0x18, 0x10, 0x14 };
+ static const int reg_disable[] __initconst = { 0x24, 0x1c, 0x20 };
+@@ -205,6 +211,9 @@ static int __init armctrl_of_init(struct device_node *node,
+ 		set_handle_irq(bcm2835_handle_irq);
+ 	}
+ 
++	pr_info("registered %s intc (%pOF)\n", armctrl_type_str[type],
++		node);
++
+ 	return 0;
+ }
+ 
+diff --git a/drivers/irqchip/irq-bcm2836.c b/drivers/irqchip/irq-bcm2836.c
+index 77fa395c8f6b..b159dc91919d 100644
+--- a/drivers/irqchip/irq-bcm2836.c
++++ b/drivers/irqchip/irq-bcm2836.c
+@@ -240,6 +240,8 @@ static int __init arm_irqchip_l1_intc_of_init_smp(struct device_node *node,
+ 
+ 	set_handle_irq(bcm2836_arm_irqchip_handle_irq);
+ 
++	pr_info("Registered BCM2836 intc (%s)\n", node->full_name);
++
+ 	return 0;
+ }
+ 
 -- 
 2.17.1
 
