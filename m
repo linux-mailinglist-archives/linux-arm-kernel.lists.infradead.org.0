@@ -2,59 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C89C3C37AD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 16:40:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9216DC37B5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 16:41:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5fhM+Qewv0y9YXd7W5pfR5OdtqwTabXhXRH8f2JVo5Y=; b=ZTnYdvwmt1lD6f7WiGwhvF5Df
-	CEuaTgKstQPeAmcv8pKo/ThJFfayvqcAW8+KlVRx/KyYqpN9qvK6Ouy/lD7b2np2Z4/tbZybga6Lr
-	IWeSA/EgmnBopOiqcTioACJpAA9SvefKWgV5z7PIjyC8pFzNtNWc09M8i3AharVVYTkyGn7IgDub5
-	ZcIfm5V5yny++Ltr4FSerrLICr7PKcbL83K9N15HVT5iHzV31QOxAj0CQVfAVTFURy6u9Evb/2Suu
-	2uX20Ode3xmbtP0t+WGCYBU6DwkqvbKmpdqHaLUHUZtQ1CCh2SOdBvI1H8tDGQ6PpUUND9db4EG78
-	v3y78j3rw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=arB7Kydq9iOKZuiL90YmhqrHzXc3FMUWYHoz0u/jjXA=; b=s7XDiJ5/F43xXF
+	qMoG75VZb4Lg1i0hPNeCdvYL0X+n5GVtphfkjsqpweGyWM3Dfjo9BnVCMVmkI1nW9PkOfnLjEQDBE
+	oPISwmAIN106hIAl8EXjhfWiJevZlkMxkRmDlcaEgz/t0KaH2fKJ1vwTjNZaklfOkyvEB+O7LY39W
+	Ux++wSisXM7zjcPTu2n3KZOgv+yKpinxcnJO3wHFRyAcf5kOv5qMf9NUMfaHucdjyuNWCrli9iqGV
+	9trreAVaCNfjbUYdYlqifEYTgidEcU39wxQLYDuzSSQX5uFWQKZj3Bo6jw/IRTf8Hm8JCOLkdPWEx
+	lDF8cpvDDHqakTEMVSew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFJK5-0000J4-Ko; Tue, 01 Oct 2019 14:40:17 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFJJa-00008U-9f
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 14:39:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 65EB01570;
- Tue,  1 Oct 2019 07:39:44 -0700 (PDT)
-Received: from [10.1.196.50] (e108454-lin.cambridge.arm.com [10.1.196.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EA9323F71A;
- Tue,  1 Oct 2019 07:39:42 -0700 (PDT)
-Subject: Re: [Xen-devel] [PATCH] ARM: xen: unexport HYPERVISOR_platform_op
- function
-To: Mark Rutland <mark.rutland@arm.com>
-References: <20190906153948.2160342-1-arnd@arndb.de>
- <7abad95e-ea47-c068-d91c-ba503f2530b9@citrix.com>
- <CAK8P3a1qkMLW_Wnn-N0seUw4N5bPwTU7Dy7CwOWxzS6NTnTmiQ@mail.gmail.com>
- <bda2a05b-e2d0-feee-761b-88deeeac2449@citrix.com>
- <95dbd972-fe78-d0ca-f7b4-1a6bdd418eab@arm.com>
- <20191001143334.GA46651@lakrids.cambridge.arm.com>
-From: Julien Grall <julien.grall@arm.com>
-Message-ID: <9e04485f-2d4a-81a2-c7e1-e50dd888930f@arm.com>
-Date: Tue, 1 Oct 2019 15:39:41 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iFJKe-000202-LM; Tue, 01 Oct 2019 14:40:52 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iFJKW-0001yr-6Y
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 14:40:45 +0000
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id A07773082E42;
+ Tue,  1 Oct 2019 14:40:43 +0000 (UTC)
+Received: from t460s.redhat.com (ovpn-116-54.ams2.redhat.com [10.36.116.54])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 782385D9E5;
+ Tue,  1 Oct 2019 14:40:32 +0000 (UTC)
+From: David Hildenbrand <david@redhat.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v5 01/10] mm/memunmap: Use the correct start and end pfn when
+ removing pages from zone
+Date: Tue,  1 Oct 2019 16:40:02 +0200
+Message-Id: <20191001144011.3801-2-david@redhat.com>
+In-Reply-To: <20191001144011.3801-1-david@redhat.com>
+References: <20191001144011.3801-1-david@redhat.com>
 MIME-Version: 1.0
-In-Reply-To: <20191001143334.GA46651@lakrids.cambridge.arm.com>
-Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.46]); Tue, 01 Oct 2019 14:40:44 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_073946_428244_BFA67ABD 
-X-CRM114-Status: GOOD (  22.37  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191001_074044_273882_A2D10106 
+X-CRM114-Status: GOOD (  15.94  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -67,76 +67,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefano Stabellini <sstabellini@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Andrew Cooper <andrew.cooper3@citrix.com>,
- Emil Velikov <emil.l.velikov@gmail.com>, Russell King <linux@armlinux.org.uk>,
- Denis Efremov <efremov@linux.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- xen-devel <xen-devel@lists.xenproject.org>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: linux-s390@vger.kernel.org, linux-ia64@vger.kernel.org,
+ Ira Weiny <ira.weiny@intel.com>, linux-sh@vger.kernel.org,
+ Jason Gunthorpe <jgg@ziepe.ca>,
+ "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>,
+ Pankaj Gupta <pagupta@redhat.com>, David Hildenbrand <david@redhat.com>,
+ linux-mm@kvack.org, Logan Gunthorpe <logang@deltatee.com>,
+ Dan Williams <dan.j.williams@intel.com>, linuxppc-dev@lists.ozlabs.org,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Ck9uIDAxLzEwLzIwMTkgMTU6MzMsIE1hcmsgUnV0bGFuZCB3cm90ZToKPiBIaSBKdWxpZW4sCgpI
-aSBNYXJrLAoKPiAKPiBPbiBTYXQsIFNlcCAwNywgMjAxOSBhdCAxMTowNTo0NUFNICswMTAwLCBK
-dWxpZW4gR3JhbGwgd3JvdGU6Cj4+IE9uIDkvNi8xOSA2OjIwIFBNLCBBbmRyZXcgQ29vcGVyIHdy
-b3RlOgo+Pj4gT24gMDYvMDkvMjAxOSAxNzowMCwgQXJuZCBCZXJnbWFubiB3cm90ZToKPj4+PiBP
-biBGcmksIFNlcCA2LCAyMDE5IGF0IDU6NTUgUE0gQW5kcmV3IENvb3BlciA8YW5kcmV3LmNvb3Bl
-cjNAY2l0cml4LmNvbT4gd3JvdGU6Cj4+Pj4+IE9uIDA2LzA5LzIwMTkgMTY6MzksIEFybmQgQmVy
-Z21hbm4gd3JvdGU6Cj4+Pj4+PiBIWVBFUlZJU09SX3BsYXRmb3JtX29wKCkgaXMgYW4gaW5saW5l
-IGZ1bmN0aW9uIGFuZCBzaG91bGQgbm90Cj4+Pj4+PiBiZSBleHBvcnRlZC4gU2luY2UgY29tbWl0
-IDE1YmZjMjM0OGQ1NCAoIm1vZHBvc3Q6IGNoZWNrIGZvcgo+Pj4+Pj4gc3RhdGljIEVYUE9SVF9T
-WU1CT0wqIGZ1bmN0aW9ucyIpLCB0aGlzIGNhdXNlcyBhIHdhcm5pbmc6Cj4+Pj4+Pgo+Pj4+Pj4g
-V0FSTklORzogIkhZUEVSVklTT1JfcGxhdGZvcm1fb3AiIFt2bWxpbnV4XSBpcyBhIHN0YXRpYyBF
-WFBPUlRfU1lNQk9MX0dQTAo+Pj4+Pj4KPj4+Pj4+IFJlbW92ZSB0aGUgZXh0cmFuZW91cyBleHBv
-cnQuCj4+Pj4+Pgo+Pj4+Pj4gRml4ZXM6IDE1YmZjMjM0OGQ1NCAoIm1vZHBvc3Q6IGNoZWNrIGZv
-ciBzdGF0aWMgRVhQT1JUX1NZTUJPTCogZnVuY3Rpb25zIikKPj4+Pj4+IFNpZ25lZC1vZmYtYnk6
-IEFybmQgQmVyZ21hbm4gPGFybmRAYXJuZGIuZGU+Cj4+Pj4+IFNvbWV0aGluZyBpcyB3b25reS4g
-IFRoYXQgc3ltYm9sIGlzICgvIHJlYWxseSBvdWdodCB0byBiZSkgaW4gdGhlCj4+Pj4+IGh5cGVy
-Y2FsbCBwYWdlIGFuZCBtb3N0IGRlZmluaXRlbHkgbm90IGlubGluZS4KPj4+Pj4KPj4+Pj4gV2hp
-Y2ggdHJlZSBpcyB0aGF0IGNoYW5nZXNldCBmcm9tPyAgSSBjYW4ndCBmaW5kIHRoZSBTSEEuCj4+
-Pj4gVGhpcyBpcyBmcm9tIGxpbnV4LW5leHQsIEkgdGhpbmsgZnJvbSB0aGUga2J1aWxkIHRyZWUu
-Cj4+Pgo+Pj4gVGhhbmtzLgo+Pj4KPj4+IEp1bGllbi9TdGVmYW5vOiBXaHkgYXJlIGFueSBvZiB0
-aGVzZSBoeXBlcmNhbGxzIG91dC1vZi1saW5lP8KgIEFSTQo+Pj4gZG9lc24ndCB1c2UgdGhlIGh5
-cGVyY2FsbCBwYWdlLCBhbmQgdGhlcmUgaXMgbm8gYXJndW1lbnQgdHJhbnNsYXRpb24KPj4+IChu
-b3QgZXZlbiBpbiBhcm0zMiBhcyB0aGVyZSBhcmUgbm8gNS1hcmd1bWVudCBoeXBlcmNhbGxzIGRl
-Y2xhcmVkKS4KPj4KPj4gSSBhbSBub3Qgc3VyZSBob3cgdGhlIGh5cGVyY2FsbCBwYWdlIG1ha2Vz
-IHRoaW5ncyBkaWZmZXJlbnQuIFlvdSBzdGlsbCBoYXZlCj4+IHRvIHN0b3JlIHRoZSBhcmd1bWVu
-dHMgaW4gdGhlIGNvcnJlY3QgcmVnaXN0ZXIgc28uLi4KPj4KPj4+Cj4+PiBUaGV5J2Qgc3VyZWx5
-IGJlIGVhc2llciB0byBpbXBsZW1lbnQgd2l0aCBhIGZldyBzdGF0aWMgaW5saW5lcyBhbmQgc29t
-ZQo+Pj4gY29tbW9uIGNvZGUsIHRoYW4gdG8gdHJ5IGFuZCByZXBsaWNhdGUgdGhlIHg4NiBzaWRl
-IGh5cGVyY2FsbF9wYWdlCj4+PiBpbnRlcmZhY2UgPwo+Pgo+PiAuLi4gSSBkb24ndCB0aGluayB0
-aGV5IHdpbGwgYmUgZWFzaWVyIHRvIGltcGxlbWVudCB3aXRoIGEgZmV3IHN0YXRpYwo+PiBpbmxp
-bmVzLiBUaGUgaW1wbGVtZW50YXRpb24gd2lsbCBsaWtlbHkgZW5kIHVwIHRvIGJlIHNpbWlsYXIg
-dG8KPj4gYXJjaC94ODYvYXNtL3hlbi9oeXBlcmNhbGwuaC4KPj4KPj4gRnVydGhlcm1vcmUsIG9u
-ZSBvZiB0aGUgZG93bnNpZGUgb2YgcGVyLWFyY2ggc3RhdGljIGlubGluZSBpcyBpdCBpcyBtb3Jl
-Cj4+IGRpZmZpY3VsdCB0byBlbnN1cmUgdGhlIHByb3RvdHlwZSBtYXRjaCBmb3IgYWxsIHRoZSBh
-cmNoaXRlY3R1cmVzLiBBbHRob3VnaCwKPj4gaXQgbWlnaHQgYmUgcG9zc2libGUgdG8gbWFrZSB0
-aGVtIGNvbW1vbiBieSBvbmx5IHJlcXVlc3RpbmcgcGVyLWFyY2ggdG8KPj4gaW1wbGVtZW50IEhZ
-UEVSQ0FMTF9OKC4uLikuCj4+Cj4+IFNvIEkgdGhpbmsgdGhlIGNvZGUgaXMgYmV0dGVyIGFzIGl0
-IGlzLgo+Pgo+PiBXaGlsZSBsb29raW5nIGF0IHRoZSBjb2RlLCBJIGFsc28gcmVhbGl6ZWQgdGhh
-dCB0aGUgaW1wbGVtZW50YXRpb24gb2YKPj4gSFlQRVJDQUxMX2RtX29wIG1pZ2h0IGJlIGluY29y
-cmVjdCBmb3IgQXJtMzIuIFNpbWlsYXJseSBkbyBwcml2Y21kIGNhbGwsIEkKPj4gdGhpbmsgZG1f
-b3AgY2FsbCBzaG91bGQgZW5hYmxlIHVzZXIgYWNjZXNzIGFzIHRoZXkgd2lsbCBiZSB1c2VkIGJ5
-Cj4+IHVzZXJzcGFjZS4KPj4KPj4gV2UgZG9uJ3QgdXNlIGRtX29wIG9uIEFybSBzbyBmYXIsIGhl
-bmNlIHdoeSBJIHRoaW5rIHRoaXMgd2FzIHVubm90aWNlZC4gSQo+PiB3aWxsIHNlZSBpZiBJIGNh
-biByZXByb2R1Y2UgaXQgYW5kIHNlbmQgYSBwYXRjaC4KPiAKPiBJJ20gc2VlaW5nIHRoaXMgd2hl
-biBidWlsZGluZyBhcm02NCBkZWZjb25maWcgdjUuNC1yYzE6Cj4gCj4gfCBbbWFya0BsYWtyaWRz
-On4vc3JjL2xpbnV4XSUgdXNla29yZyA4LjEuMCAgbWFrZSBBUkNIPWFybTY0IENST1NTX0NPTVBJ
-TEU9YWFyY2g2NC1saW51eC0gLWo1NiAtcwo+IHwgYXJjaC9hcm02NC9NYWtlZmlsZTo2MjogQ1JP
-U1NfQ09NUElMRV9DT01QQVQgbm90IGRlZmluZWQgb3IgZW1wdHksIHRoZSBjb21wYXQgdkRTTyB3
-aWxsIG5vdCBiZSBidWlsdAo+IHwgV0FSTklORzogIkhZUEVSVklTT1JfcGxhdGZvcm1fb3AiIFt2
-bWxpbnV4XSBpcyBhIHN0YXRpYyBFWFBPUlRfU1lNQk9MX0dQTAo+IHwgV0FSTklORzogIkhZUEVS
-VklTT1JfcGxhdGZvcm1fb3AiIFt2bWxpbnV4XSBpcyBhIHN0YXRpYyBFWFBPUlRfU1lNQk9MX0dQ
-TAo+IAo+IEkgY291bGRuJ3Qgc2VlIGEgZm9sbG93LXVwOyBkbyB5b3UgaGF2ZSBhIHBhdGNoIGZv
-ciB0aGlzPwoKVGhlIGZpcnN0IGUtbWFpbCBvZiB0aGUgdGhyZWFkIHNob3VsZCBjb250YWluIGEg
-cGF0Y2ggdG8gYWRkcmVzcyB0aGUgd2FybmluZyAKKHNlZSBbMV0pLiBCdXQgaXQgaXMgc3RpbGwg
-d2FpdGluZyBvbiBhbiBBY2sgZnJvbSBTdGVmYW5vIHNvIGl0IGNhbiBnZXQgbWVyZ2VkLgoKQ2hl
-ZXJzLAoKWzFdIGh0dHBzOi8vcGF0Y2h3b3JrLmtlcm5lbC5vcmcvcGF0Y2gvMTExMzU2MDEvCgot
-LSAKSnVsaWVuIEdyYWxsCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1hcm0ta2VybmVsCg==
+From: "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>
+
+With altmap, all the resource pfns are not initialized. While initializing
+pfn, altmap reserve space is skipped. Hence when removing pfn from zone
+skip pfns that were never initialized.
+
+Update memunmap_pages to calculate start and end pfn based on altmap
+values. This fixes a kernel crash that is observed when destroying
+a namespace.
+
+[   81.356173] kernel BUG at include/linux/mm.h:1107!
+cpu 0x1: Vector: 700 (Program Check) at [c000000274087890]
+    pc: c0000000004b9728: memunmap_pages+0x238/0x340
+    lr: c0000000004b9724: memunmap_pages+0x234/0x340
+...
+    pid   = 3669, comm = ndctl
+kernel BUG at include/linux/mm.h:1107!
+[c000000274087ba0] c0000000009e3500 devm_action_release+0x30/0x50
+[c000000274087bc0] c0000000009e4758 release_nodes+0x268/0x2d0
+[c000000274087c30] c0000000009dd144 device_release_driver_internal+0x174/0x240
+[c000000274087c70] c0000000009d9dfc unbind_store+0x13c/0x190
+[c000000274087cb0] c0000000009d8a24 drv_attr_store+0x44/0x60
+[c000000274087cd0] c0000000005a7470 sysfs_kf_write+0x70/0xa0
+[c000000274087d10] c0000000005a5cac kernfs_fop_write+0x1ac/0x290
+[c000000274087d60] c0000000004be45c __vfs_write+0x3c/0x70
+[c000000274087d80] c0000000004c26e4 vfs_write+0xe4/0x200
+[c000000274087dd0] c0000000004c2a6c ksys_write+0x7c/0x140
+[c000000274087e20] c00000000000bbd0 system_call+0x5c/0x68
+
+Cc: Dan Williams <dan.j.williams@intel.com>
+Cc: Andrew Morton <akpm@linux-foundation.org>
+Cc: Jason Gunthorpe <jgg@ziepe.ca>
+Cc: Logan Gunthorpe <logang@deltatee.com>
+Cc: Ira Weiny <ira.weiny@intel.com>
+Reviewed-by: Pankaj Gupta <pagupta@redhat.com>
+Signed-off-by: Aneesh Kumar K.V <aneesh.kumar@linux.ibm.com>
+[ move all pfn-realted declarations into a single line ]
+Signed-off-by: David Hildenbrand <david@redhat.com>
+---
+ mm/memremap.c | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
+
+diff --git a/mm/memremap.c b/mm/memremap.c
+index 557e53c6fb46..026788b2ac69 100644
+--- a/mm/memremap.c
++++ b/mm/memremap.c
+@@ -123,7 +123,7 @@ static void dev_pagemap_cleanup(struct dev_pagemap *pgmap)
+ void memunmap_pages(struct dev_pagemap *pgmap)
+ {
+ 	struct resource *res = &pgmap->res;
+-	unsigned long pfn;
++	unsigned long pfn, nr_pages, start_pfn, end_pfn;
+ 	int nid;
+ 
+ 	dev_pagemap_kill(pgmap);
+@@ -131,14 +131,17 @@ void memunmap_pages(struct dev_pagemap *pgmap)
+ 		put_page(pfn_to_page(pfn));
+ 	dev_pagemap_cleanup(pgmap);
+ 
++	start_pfn = pfn_first(pgmap);
++	end_pfn = pfn_end(pgmap);
++	nr_pages = end_pfn - start_pfn;
++
+ 	/* pages are dead and unused, undo the arch mapping */
+-	nid = page_to_nid(pfn_to_page(PHYS_PFN(res->start)));
++	nid = page_to_nid(pfn_to_page(start_pfn));
+ 
+ 	mem_hotplug_begin();
+ 	if (pgmap->type == MEMORY_DEVICE_PRIVATE) {
+-		pfn = PHYS_PFN(res->start);
+-		__remove_pages(page_zone(pfn_to_page(pfn)), pfn,
+-				 PHYS_PFN(resource_size(res)), NULL);
++		__remove_pages(page_zone(pfn_to_page(start_pfn)), start_pfn,
++			       nr_pages, NULL);
+ 	} else {
+ 		arch_remove_memory(nid, res->start, resource_size(res),
+ 				pgmap_altmap(pgmap));
+-- 
+2.21.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
