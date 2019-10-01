@@ -2,83 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECB44C3798
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 16:37:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3283BC3789
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 16:36:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LaSw4B7F1+UxNG0xAFfU/1hTbUCNDWSWLUU6ySDUvx0=; b=ZwZB1H7k3ZCaB9
-	3LSDKX7P6KVm3BuRuZCm03PHZhmwz4xeN+3cLAWS7K6qOH7RSpmVXFMLH1OLN5xKAgx8jATix8PvE
-	nXqN5vh3rqCnfnE9sZ1Hzwh9HcR6/kACmv3PY8y1z2Y2S+EjH+wMNq84XAVM6fjj22fXpIWNvRgRM
-	eDe/4Jtb68HvNKZDPrFSGyrpRJZJndVdjtH2cwMz+af0QkXUnvqIXCLl8na68RAIPvQGkTb6qTqMq
-	EPBoJ+s/r9j/MO32Qmm/Ueg6RuhVbYR1NuPe6iqfDsx5Zl7quO/pwfjkZoslP2TISmCQ4nUKYtIqq
-	otLD3GIPqiYT97eMmBkg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YkvV3WxdSb8vj5eAuskcEm4ZAyMPb81oHzidYoo9QkQ=; b=gybnYUbdWxpcBJ
+	RLHLFU5+6JvARj61lPZr1EhHtekmh5ctVurxbu46gDWYx1xha8THlfuLw7SntB2UXG+0+H/jOnslH
+	B2SQ/tswKTkDNB9Zx7PW/LUs1yAAyojIJKvsDDROC77BfEboTFwdJUbE7SFPrRTj8r8V/EFHPbDw6
+	4/anwuGvyS47CEX99MOE2qaFTm/1QXFRumil+8lqY/8rLOLHRBxiXY92DXzgjottATooCw1GGfLcd
+	Zl33L9ZCYfJ7BxW5tflxQNyN13XrYHmIaEk+jIpdLGnq8YOHKsrSW8TxYJcCuNImCtpV0hM7RszLc
+	SOpjolpaaZMej+pUWdwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFJH0-0007rv-DL; Tue, 01 Oct 2019 14:37:06 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFJGl-0007dT-7d
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 14:36:54 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=6OoTy0F3SSXGBwoElLW9PMZMdCjgfBXldgziSOv2bmg=; b=a4nw/u/GqtyKDYHmb2DclBwi9
- Kb2HZo71CT/yTLAij2S/jgEevWdVKH+B0pe46aOFFKhP3yi0++b4JwR86Wyym79Sykg+ezwW+xbSf
- BJeNqfCrNcSCi7ylrxjHSdgrOnOWrsb+rfFR/E7sap5zT9XZDJdqjBQQfqp1bpOCiIOnNN7Lwx/i4
- i7HnSf9j1OGVBogbTiJ1AhQPDxHjwi5BOieJMKiSROPEk0IyXDe1P+IufUcvPoNxatvEOwfNdAtXW
- zAEeBFHmY9GKQDbUnrNMqt6fvpWNSio95ljE/q4+be0ijbke3WZfsUxd8Zjpk7bJ42L4GlGKYh+Ev
- QdC8fQ1ow==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:50446)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1iFJGO-0002uf-Gs; Tue, 01 Oct 2019 15:36:28 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iFJGM-0008H3-8D; Tue, 01 Oct 2019 15:36:26 +0100
-Date: Tue, 1 Oct 2019 15:36:26 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Andrew Murray <andrew.murray@arm.com>
-Subject: Re: [PATCH] Partially revert "compiler: enable
- CONFIG_OPTIMIZE_INLINING forcibly"
-Message-ID: <20191001143626.GI25745@shell.armlinux.org.uk>
-References: <20190930114540.27498-1-will@kernel.org>
- <CAK7LNARWkQ-z02RYv3XQ69KkWdmEVaZge07qiYC8_kyMrFzCTg@mail.gmail.com>
- <20191001104253.fci7s3sn5ov3h56d@willie-the-truck>
- <20191001114129.GL42880@e119886-lin.cambridge.arm.com>
+	id 1iFJG6-00076j-B8; Tue, 01 Oct 2019 14:36:10 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iFJFx-00076I-ES
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 14:36:02 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8FD471000;
+ Tue,  1 Oct 2019 07:36:00 -0700 (PDT)
+Received: from [10.37.8.149] (unknown [10.37.8.149])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2217B3F71A;
+ Tue,  1 Oct 2019 07:35:58 -0700 (PDT)
+Subject: Re: [PATCH v3 1/5] arm64: vdso32: Introduce COMPAT_CC_IS_GCC
+To: Will Deacon <will@kernel.org>
+References: <20190920142738.qlsjwguc6bpnez63@willie-the-truck>
+ <20190926214342.34608-1-vincenzo.frascino@arm.com>
+ <20190926214342.34608-2-vincenzo.frascino@arm.com>
+ <20191001131420.y3fsydlo7pg6ykfs@willie-the-truck>
+ <20191001132731.GG41399@arrakis.emea.arm.com>
+ <ed7d1465-2d7b-d57c-c1b1-215af1ba7a6f@arm.com>
+ <20191001142038.ptwyfbesfrz3kkoz@willie-the-truck>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <7558914c-fc2d-d05a-ccbe-76ef451670ae@arm.com>
+Date: Tue, 1 Oct 2019 15:37:49 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191001114129.GL42880@e119886-lin.cambridge.arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191001142038.ptwyfbesfrz3kkoz@willie-the-truck>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_073651_718542_7C10C21E 
-X-CRM114-Status: GOOD (  36.35  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191001_073601_574144_1FF023AB 
+X-CRM114-Status: GOOD (  20.37  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,161 +67,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: ard.biesheuvel@linaro.org, Catalin Marinas <catalin.marinas@arm.com>,
+ ndesaulniers@google.com, linux-kernel@vger.kernel.org, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 01, 2019 at 12:41:30PM +0100, Andrew Murray wrote:
-> On Tue, Oct 01, 2019 at 11:42:54AM +0100, Will Deacon wrote:
-> > On Tue, Oct 01, 2019 at 06:40:26PM +0900, Masahiro Yamada wrote:
-> > > On Mon, Sep 30, 2019 at 8:45 PM Will Deacon <will@kernel.org> wrote:
-> > > > diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-> > > > index 93d97f9b0157..c37c72adaeff 100644
-> > > > --- a/lib/Kconfig.debug
-> > > > +++ b/lib/Kconfig.debug
-> > > > @@ -312,6 +312,7 @@ config HEADERS_CHECK
-> > > >
-> > > >  config OPTIMIZE_INLINING
-> > > >         def_bool y
-> > > > +       depends on !(ARM || ARM64) # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=91111
-> > > 
-> > > 
-> > > This is a too big hammer.
-> > 
-> > It matches the previous default behaviour!
-> > 
-> > > For ARM, it is not a compiler bug, so I am trying to fix the kernel code.
-> > > 
-> > > For ARM64, even if it is a compiler bug, you can add __always_inline
-> > > to the functions in question.
-> > > (arch_atomic64_dec_if_positive in this case).
-> > > 
-> > > You do not need to force __always_inline globally.
-> > 
-> > So you'd prefer I do something like the diff below? I mean, it's a start,
-> > but I do worry that we're hanging arch/arm/ out to dry.
-> 
-> If I've understood one part of this issue correctly - and using the
-> c2p_unsupported build failure as an example [1], there are instances in
-> the kernel where it is assumed that the compiler will optimise out a call
-> to an undefined function, and also assumed that the compiler will know
-> at compile time that the function will never get called. It's common to
-> satisfy this assumption when the calling function is inlined.
-> 
-> But I suspect there may be other cases similar to c2p_unsupported which
-> are still lurking.
-> 
-> For example the following functions are called but non-existent, and thus
-> may be an area worth investigating:
-> 
-> __buggy_use_of_MTHCA_PUT, __put_dbe_unknown, __cmpxchg_wrong_size,
-> __bad_percpu_size, __put_user_bad, __get_user_unknown,
-> __bad_unaligned_access_size, __bad_xchg
-> 
-> But more generally, as this is a common pattern - isn't there a benefit
-> here for changing all of these to BUILD_BUG? (So they can be found easily).
-
-Precisely, what is your suggestion?
-
-If you think that replacing the call to __get_user_bad with BUILD_BUG(),
-BUILD_BUG() becomes a no-op when __OPTIMIZE__ is not defined (see the
-definition of __compiletime_assert() in linux/compiler.h); this means
-such places will be reachable, which leads to uninitialised variables.
-
-> Or to avoid this class of issues, change them to BUG or unreachable - but
-> lose the benefit of compile time detection?
-
-I think you ought to read the GCC manual wrt __builtin_unreachable().
-"If control flow reaches the point of the `__builtin_unreachable',
- the program is undefined.  It is useful in situations where the
- compiler cannot deduce the unreachability of the code."
-
-I have seen cases where the instructions following an unreachable
-code section have been the literal pool for the function - which,
-if reached, would be quite confusing to debug.  If you're lucky, you
-might get an undefined instruction exception.  If not, you could
-continue and start executing another part of the function, leading
-to possibly no crash at all - but unexpected results (which may end
-up leaking sensitive data.)
-
-For example, in our BUG() implementation on 32-bit ARM, we use
-unreachable() after the asm() statement creating the bug table
-entry and inserting the undefined instruction into the text.
-Here's the resulting disassembly:
-
-     278:       ebfffffe        bl      0 <page_mapped>
-                        278: R_ARM_CALL page_mapped
-     27c:       e3500000        cmp     r0, #0
-     280:       1a00006c        bne     438 <invalidate_inode_pages2_range+0x3ac>
-...
-     2d4:       ebfffffe        bl      0 <_raw_spin_lock_irqsave>
-                        2d4: R_ARM_CALL _raw_spin_lock_irqsave
-     2d8:       e5943008        ldr     r3, [r4, #8]
-     2dc:       e3130001        tst     r3, #1
-     2e0:       e1a02000        mov     r2, r0
-     2e4:       1a000054        bne     43c <invalidate_inode_pages2_range+0x3b0>
-...
-     438:       e7f001f2        .word   0xe7f001f2
-     43c:       e2433001        sub     r3, r3, #1
-     440:       eaffffa9        b       2ec <invalidate_inode_pages2_range+0x260>
-
-Now, consider what unreachable() actually gets you here - it tells
-the compiler that we do not expect to reach this point (that being
-the point between 438 and 43c.)  If we were to reach that point, we
-would continue executing the code at 43c.
-
-In this case, it would be like...
-
-	if (BUG_ON(page_mapped(page)))
-	    goto random-location-in-xa_lock_irqsave()-inside-invalidate_complete_page2();
-
-So no.  unreachable() is not an option.
-
-We really do want these places to be compile-time detected - relying
-on triggering them at runtime is just not good enough IMHO (think
-about how much testing the kernel would require to discover one of
-these suckers buried in the depths of the code.)
-
-Here's the question to ask: do we want to reliably detect issues
-that we know are bad, which can lead to:
-- unreliable kernel operation,
-- user exploitable crashes,
-or do we want to hide them for the sake of allowing -O0 compilation?
-
-Given that the kernel as a general rule has very poor run-time test
-coverage at the moment, I don't think this is the time to consider
-giving up the protection that we have against this badness.
-
-We've had several instances where these checks have triggered in the
-user access code, and people have noticed when doing build tests.
-They probably don't have the ability to do run-time testing on every
-arch.
-
-So, the existing facility of detecting these at build time is, IMHO,
-an absolute must.
-
-It would be different if the kernel community as a whole had the
-ability to run-test every code path through the kernel source on
-every arch, but I don't see that's a remotely realistic prospect.
-
-If we want -O0 to work, but still want to preserve the ability to
-detect these adequately, I think the easiest solution to that would
-be to provide these dummy functions only when building with -O0,
-making them all BUG().
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAxMC8xLzE5IDM6MjAgUE0sIFdpbGwgRGVhY29uIHdyb3RlOgo+IE9uIFR1ZSwgT2N0IDAx
+LCAyMDE5IGF0IDAzOjIwOjM1UE0gKzAxMDAsIFZpbmNlbnpvIEZyYXNjaW5vIHdyb3RlOgo+PiBP
+biAxMC8xLzE5IDI6MjcgUE0sIENhdGFsaW4gTWFyaW5hcyB3cm90ZToKPj4+IE9uIFR1ZSwgT2N0
+IDAxLCAyMDE5IGF0IDAyOjE0OjIzUE0gKzAxMDAsIFdpbGwgRGVhY29uIHdyb3RlOgo+Pj4+IE9u
+IFRodSwgU2VwIDI2LCAyMDE5IGF0IDEwOjQzOjM4UE0gKzAxMDAsIFZpbmNlbnpvIEZyYXNjaW5v
+IHdyb3RlOgo+Pj4+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9LY29uZmlnIGIvYXJjaC9hcm02
+NC9LY29uZmlnCj4+Pj4+IGluZGV4IDM3YzYxMDk2M2VlZS4uMGU1YmViOTI4YWY1IDEwMDY0NAo+
+Pj4+PiAtLS0gYS9hcmNoL2FybTY0L0tjb25maWcKPj4+Pj4gKysrIGIvYXJjaC9hcm02NC9LY29u
+ZmlnCj4+Pj4+IEBAIC0xMTAsNyArMTEwLDcgQEAgY29uZmlnIEFSTTY0Cj4+Pj4+ICAJc2VsZWN0
+IEdFTkVSSUNfU1RSTkxFTl9VU0VSCj4+Pj4+ICAJc2VsZWN0IEdFTkVSSUNfVElNRV9WU1lTQ0FM
+TAo+Pj4+PiAgCXNlbGVjdCBHRU5FUklDX0dFVFRJTUVPRkRBWQo+Pj4+PiAtCXNlbGVjdCBHRU5F
+UklDX0NPTVBBVF9WRFNPIGlmICghQ1BVX0JJR19FTkRJQU4gJiYgQ09NUEFUKQo+Pj4+PiArCXNl
+bGVjdCBHRU5FUklDX0NPTVBBVF9WRFNPIGlmICghQ1BVX0JJR19FTkRJQU4gJiYgQ09NUEFUICYm
+IENPTVBBVENDX0lTX0FSTV9HQ0MpCj4+Pj4+ICAJc2VsZWN0IEhBTkRMRV9ET01BSU5fSVJRCj4+
+Pj4+ICAJc2VsZWN0IEhBUkRJUlFTX1NXX1JFU0VORAo+Pj4+PiAgCXNlbGVjdCBIQVZFX1BDSQo+
+Pj4+PiBAQCAtMzEzLDYgKzMxMyw5IEBAIGNvbmZpZyBLQVNBTl9TSEFET1dfT0ZGU0VUCj4+Pj4+
+ICAJZGVmYXVsdCAweGVmZmZmZmY5MDAwMDAwMDAgaWYgQVJNNjRfVkFfQklUU18zNiAmJiBLQVNB
+Tl9TV19UQUdTCj4+Pj4+ICAJZGVmYXVsdCAweGZmZmZmZmZmZmZmZmZmZmYKPj4+Pj4gIAo+Pj4+
+PiArY29uZmlnIENPTVBBVENDX0lTX0FSTV9HQ0MKPj4+Pj4gKwlkZWZfYm9vbCAkKHN1Y2Nlc3Ms
+JChDT01QQVRDQykgLS12ZXJzaW9uIHwgaGVhZCAtbiAxIHwgZ3JlcCAtcSAiYXJtLS4qLWdjYyIp
+Cj4+Pj4KPj4+PiBJJ3ZlIHNlZW4gdG9vbGNoYWlucyB3aGVyZSB0aGUgZmlyc3QgcGFydCBvZiB0
+aGUgdHVwbGUgaXMgImFybXY3LSIsIHNvIHRoZXkKPj4+PiB3b24ndCBnZXQgZGV0ZWN0ZWQgaGVy
+ZS4gSG93ZXZlciwgZG8gd2UgcmVhbGx5IG5lZWQgdG8gZGV0ZWN0IHRoaXM/IElmCj4+Pj4gc29t
+ZWJvZHkgcGFzc2VzIGEgZHVmZiBjb21waWxlciwgdGhlbiB0aGUgYnVpbGQgd2lsbCBmYWlsIGlu
+IHRoZSBzYW1lIHdheSBhcwo+Pj4+IGlmIHRoZXkgcGFzc2VkIGl0IHRvIENST1NTX0NPTVBJTEU9
+Lgo+Pj4KPj4+IE5vdCBzdXJlIHdoYXQgaGFwcGVucyBpZiB3ZSBwYXNzIGFuIGFhcmNoNjQgY29t
+cGlsZXIuIENhbiB3ZSBlbmQgdXAgd2l0aAo+Pj4gYSA2NC1iaXQgY29tcGF0IHZEU08/Cj4+Pgo+
+Pgo+PiBJIGFncmVlIHdpdGggQ2F0YWxpbiBoZXJlLiBUaGUgcHJvYmxlbSBpcyBub3Qgb25seSB3
+aGVuIHlvdSBwYXNzIGFuZCBhYXJjaDY0Cj4+IHRvb2xjaGFpbiBidXQgZXZlbiBhbiB4ODYgYW5k
+IHNvIG9uLgo+IAo+IEkgZGlzYWdyZWUuIFdoYXQgaGFwcGVucyBpZiB5b3UgZG86Cj4gCj4gJCBt
+YWtlIEFSQ0g9YXJtNjQgQ1JPU1NfQ09NUElMRT14ODZfNjQtbGludXgtZ251LQo+IAo+IG9uIHlv
+dXIgeDg2IGJveD8KPgoKVGhlIGtlcm5lbCBjb21waWxhdGlvbiBicmVha3MgYXMgZm9sbG93czoK
+Cng4Nl82NC1saW51eC1nbnUtZ2NjOiBlcnJvcjogdW5yZWNvZ25pemVkIGNvbW1hbmQgbGluZSBv
+cHRpb24g4oCYLW1saXR0bGUtZW5kaWFu4oCZOwpkaWQgeW91IG1lYW4g4oCYLWZjb252ZXJ0PWxp
+dHRsZS1lbmRpYW7igJk/Ci9kYXRhMS9Qcm9qZWN0cy9MaW51eEtlcm5lbC9saW51eC9zY3JpcHRz
+L01ha2VmaWxlLmJ1aWxkOjI2NTogcmVjaXBlIGZvciB0YXJnZXQKJ3NjcmlwdHMvbW9kL2VtcHR5
+Lm8nIGZhaWxlZAptYWtlWzJdOiAqKiogW3NjcmlwdHMvbW9kL2VtcHR5Lm9dIEVycm9yIDEKL2Rh
+dGExL1Byb2plY3RzL0xpbnV4S2VybmVsL2xpbnV4L01ha2VmaWxlOjExMjg6IHJlY2lwZSBmb3Ig
+dGFyZ2V0ICdwcmVwYXJlMCcgZmFpbGVkCm1ha2VbMV06ICoqKiBbcHJlcGFyZTBdIEVycm9yIDIK
+bWFrZVsxXTogTGVhdmluZyBkaXJlY3RvcnkgJy9kYXRhMS9Qcm9qZWN0cy9MaW51eEtlcm5lbC9s
+aW51eC1vdXQnCk1ha2VmaWxlOjE3OTogcmVjaXBlIGZvciB0YXJnZXQgJ3N1Yi1tYWtlJyBmYWls
+ZWQKbWFrZTogKioqIFtzdWItbWFrZV0gRXJyb3IgMgoKU2ltaWxhciBpc3N1ZSBpbiB0aGUgY29t
+cGF0IHZkc28gbGlicmFyeSBjb21waWxhdGlvbiBpZiBJIGRvICh3aXRob3V0IHRoZSBjaGVjayk6
+CgokIG1ha2UgQVJDSD1hcm02NCBDUk9TU19DT01QSUxFPWFhcmNoNjQtbGludXgtZ251LQpDUk9T
+U19DT01QSUxFX0NPTVBBVD14ODZfNjQtbGludXgtZ251LQoKV2l0aCB0aGlzIGNoZWNrIHRoZSBj
+b21waWxhdGlvbiBjb21wbGV0ZXMgY29ycmVjdGx5IGJ1dCB0aGUgY29tcGF0IHZkc28gZG9lcyBu
+b3QKZ2V0IGJ1aWx0ICh1bmxlc3MgbXkgZW52aXJvbm1lbnQgaXMgcGxheWluZyBtZSB0cmlja3Mg
+OykgKS4KCj4+IElmIHRoZSBwcm9ibGVtIGlzIHJlbGF0ZWQgdG8gYXJtdjctIHdlIGNhbiBjaGFu
+Z2UgdGhlIHJ1bGUgYXMgImFybS4qLWdjYyIgd2hpY2gKPj4gc2hvdWxkIGRldGVjdCB0aGVtIGFz
+IHdlbGwuIERvIHlvdSBrbm93IHdoYXQgaXMgdGhlIHRyaXBsZSB0aGF0IGFuIGFybXY3LQo+PiB0
+b29sY2hhaW4gcHJpbnRzPwo+IAo+ICdmcmFpZCBub3QsIHNpbmNlIEkgZG9uJ3QgaGF2ZSBvbmUg
+dG8gaGFuZC4gSSB0aGluayB5b3UnZCBlbmQgdXAgbWF0Y2hpbmcKPiBhcm0qLWdjYywgd2hpY2gg
+aXMgcHJldHR5IGJyb2FkLgo+IAoKSWYgd2UgYWxsIGFncmVlIEkgY2FuIGV4dGVuZCB0aGlzIHJ1
+bGUgdGhlbi4KCj4gV2lsbAo+IAoKLS0gClJlZ2FyZHMsClZpbmNlbnpvCgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
+bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
