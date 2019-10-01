@@ -2,59 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDE6BC395C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 17:43:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59948C3980
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 17:50:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1sUI8ZH7wYK309G8+jK6Y6aX5vdn/tHZa0gcTgMwGZY=; b=sl4nZch/B0qk+R2aBQpntWo3o
-	xqRZS4yQ678H+m0ZxRvHp/04GJLxF9J7WX0YsLsccWvbonKdO49ltDwg2a1J4kJ5FrWmSqGj2YbYe
-	AsINm3NGGeJNmzqVrUbiI4Ces5ZH/Ox5AE8WId/Bxz0vqK58AusU6yAvC5padNk/Ha0rbMhMO3Yf+
-	Zs6iEqVJBA/QqdaKqeQ+W3q66J784PCiyiI3dQA51RW+gze11SX6WtQZmhEcFoD580xXtvTYflhcS
-	wcvKva5kgQbLZh2rBlEcSydqxjHJp2x5CbesA3v8xvpcvddbXJxKkUNNkNMBjC/G8LbGaK3r2KoTJ
-	aQ2xE72UQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uU9jZpAzYN6Sz+LoFiamYzl0H07uK7XnBmYkR554AU8=; b=qaIi6/or7QlTYy
+	a0fWS85smcLxN8iXMbilLducqV+XqQxTwfEMueyli4Kng3THXcTH348JMrH4+bPUOsXkgdaTUDM2E
+	STIVll61nVhl1nm47L5+Tvyntls1dfJrydFHLF9CIcrKYEvanDDwxCqQz5SAb+ifr05yEbnH2NZou
+	GEXEnGn97W7XHMmnwlyVdqzGmmhKCRlNDhkV7VtY0TpE5CjavaY4olp0QGOwqk4mt7JeGRwFkPa5X
+	74+zktFaTuv+Eym0iUbE/awSZ4Tq6mLkr9FzGsI5Bvmp4SykM0Tr4q3QbtRsf5W3+63WwWMuVxOBq
+	ay0/FGyNLEnaa5op6ypQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFKJ7-000658-S2; Tue, 01 Oct 2019 15:43:21 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iFKPV-0008PF-PK; Tue, 01 Oct 2019 15:49:57 +0000
+Received: from smtp-fw-33001.amazon.com ([207.171.190.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFKJ0-00064e-JX
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 15:43:16 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 972FDAD2A;
- Tue,  1 Oct 2019 15:43:12 +0000 (UTC)
-Message-ID: <0557c83bcb781724a284811fef7fdb122039f336.camel@suse.de>
-Subject: Re: [PATCH 05/11] of: Ratify of_dma_configure() interface
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Rob Herring <robh@kernel.org>
-Date: Tue, 01 Oct 2019 17:43:09 +0200
-In-Reply-To: <CAL_JsqLnKxuQRR3sGGtXF3nwwDx7DOONPPYz37ROk7u_+cxRug@mail.gmail.com>
-References: <20190927002455.13169-1-robh@kernel.org>
- <20190927002455.13169-6-robh@kernel.org>
- <20190930125752.GD12051@infradead.org>
- <95f8dabea99f104336491281b88c04b58d462258.camel@suse.de>
- <CAL_JsqLnKxuQRR3sGGtXF3nwwDx7DOONPPYz37ROk7u_+cxRug@mail.gmail.com>
-User-Agent: Evolution 3.32.4 
+ id 1iFKPN-0008OQ-1s
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 15:49:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
+ t=1569944988; x=1601480988;
+ h=from:to:cc:subject:date:message-id:in-reply-to:
+ references:mime-version;
+ bh=PgZ9aytk0j+S8TWOd0mGQ2grSS4ZIPx/rutqBSNX9jI=;
+ b=Vl5WOhqBnUarXg7QtiEDzMy7b+wfCE3iVKhM353m6fzubxfbvObwITFd
+ tF7gkSzIXEfzGCtsYalShBQ+tRs7X6YXP+siFgZjn7oe8sqjL8hypdRjz
+ XrQscHSWQMkjvE43AglTAezjFHcDmAuFfetlxEW40YcmdEXS/yljWf9ML A=;
+X-IronPort-AV: E=Sophos;i="5.64,571,1559520000"; d="scan'208";a="838434598"
+Received: from sea3-co-svc-lb6-vlan2.sea.amazon.com (HELO
+ email-inbound-relay-2c-2225282c.us-west-2.amazon.com) ([10.47.22.34])
+ by smtp-border-fw-out-33001.sea14.amazon.com with ESMTP;
+ 01 Oct 2019 15:47:16 +0000
+Received: from EX13MTAUWC001.ant.amazon.com
+ (pdx4-ws-svc-p6-lb7-vlan3.pdx.amazon.com [10.170.41.166])
+ by email-inbound-relay-2c-2225282c.us-west-2.amazon.com (Postfix) with ESMTPS
+ id 4D0D9A1EF5; Tue,  1 Oct 2019 15:46:56 +0000 (UTC)
+Received: from EX13D02UWC004.ant.amazon.com (10.43.162.236) by
+ EX13MTAUWC001.ant.amazon.com (10.43.162.135) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Tue, 1 Oct 2019 15:46:56 +0000
+Received: from EX13MTAUWA001.ant.amazon.com (10.43.160.58) by
+ EX13D02UWC004.ant.amazon.com (10.43.162.236) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Tue, 1 Oct 2019 15:46:56 +0000
+Received: from 8c859006a84e.ant.amazon.com (172.26.203.30) by
+ mail-relay.amazon.com (10.43.160.118) with Microsoft SMTP Server id
+ 15.0.1367.3 via Frontend Transport; Tue, 1 Oct 2019 15:46:55 +0000
+From: Patrick Williams <alpawi@amazon.com>
+To: 
+Subject: [PATCH v2] pinctrl: armada-37xx: fix control of pins 32 and up
+Date: Tue, 1 Oct 2019 10:46:31 -0500
+Message-ID: <20191001154634.96165-1-alpawi@amazon.com>
+X-Mailer: git-send-email 2.17.2 (Apple Git-113)
+In-Reply-To: <20190618160105.26343-3-alpawi@amazon.com>
+References: <20190618160105.26343-3-alpawi@amazon.com>
 MIME-Version: 1.0
+Precedence: Bulk
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_084314_936017_DBCBC92A 
-X-CRM114-Status: GOOD (  26.12  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191001_084949_140858_73BD29E0 
+X-CRM114-Status: GOOD (  11.42  )
+X-Spam-Score: -10.0 (----------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-10.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ medium trust [207.171.190.10 listed in list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
-Precedence: list
 List-Id: <linux-arm-kernel.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=unsubscribe>
@@ -63,179 +92,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>, Arnd Bergmann <arnd@arndb.de>,
- PCI <linux-pci@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Christoph Hellwig <hch@infradead.org>, Marek Vasut <marek.vasut@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Oza Pawandeep <oza.oza@broadcom.com>, Stefan Wahren <wahrenst@gmx.net>,
- Simon Horman <horms+renesas@verge.net.au>,
- Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Robin Murphy <robin.murphy@arm.com>
-Content-Type: multipart/mixed; boundary="===============5840839911272831373=="
+Cc: Andrew Lunn <andrew@lunn.ch>, Jason Cooper <jason@lakedaemon.net>,
+ linux-gpio@vger.kernel.org, Gregory Clement <gregory.clement@bootlin.com>,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ Patrick Williams <patrick@stwcx.xyz>, linux-arm-kernel@lists.infradead.org,
+ Linus Walleij <linus.walleij@linaro.org>, Patrick Williams <alpawi@amazon.com>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The 37xx configuration registers are only 32 bits long, so
+pins 32-35 spill over into the next register.  The calculation
+for the register address was done, but the bitmask was not, so
+any configuration to pin 32 or above resulted in a bitmask that
+overflowed and performed no action.
 
---===============5840839911272831373==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-Cs3oOlvxVqdSsNFddCdM"
+Fix the register / offset calculation to also adjust the offset.
 
+Fixes: 5715092a458c ("pinctrl: armada-37xx: Add gpio support")
+Signed-off-by: Patrick Williams <alpawi@amazon.com>
+Acked-by: Gregory CLEMENT <gregory.clement@bootlin.com>
+Cc: <stable@vger.kernel.org>
+---
+ drivers/pinctrl/mvebu/pinctrl-armada-37xx.c | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
 
---=-Cs3oOlvxVqdSsNFddCdM
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+diff --git a/drivers/pinctrl/mvebu/pinctrl-armada-37xx.c b/drivers/pinctrl/mvebu/pinctrl-armada-37xx.c
+index 6462d3ca7ceb..34c1fee52cbe 100644
+--- a/drivers/pinctrl/mvebu/pinctrl-armada-37xx.c
++++ b/drivers/pinctrl/mvebu/pinctrl-armada-37xx.c
+@@ -221,11 +221,11 @@ static const struct armada_37xx_pin_data armada_37xx_pin_sb = {
+ };
+ 
+ static inline void armada_37xx_update_reg(unsigned int *reg,
+-					  unsigned int offset)
++					  unsigned int *offset)
+ {
+ 	/* We never have more than 2 registers */
+-	if (offset >= GPIO_PER_REG) {
+-		offset -= GPIO_PER_REG;
++	if (*offset >= GPIO_PER_REG) {
++		*offset -= GPIO_PER_REG;
+ 		*reg += sizeof(u32);
+ 	}
+ }
+@@ -376,7 +376,7 @@ static inline void armada_37xx_irq_update_reg(unsigned int *reg,
+ {
+ 	int offset = irqd_to_hwirq(d);
+ 
+-	armada_37xx_update_reg(reg, offset);
++	armada_37xx_update_reg(reg, &offset);
+ }
+ 
+ static int armada_37xx_gpio_direction_input(struct gpio_chip *chip,
+@@ -386,7 +386,7 @@ static int armada_37xx_gpio_direction_input(struct gpio_chip *chip,
+ 	unsigned int reg = OUTPUT_EN;
+ 	unsigned int mask;
+ 
+-	armada_37xx_update_reg(&reg, offset);
++	armada_37xx_update_reg(&reg, &offset);
+ 	mask = BIT(offset);
+ 
+ 	return regmap_update_bits(info->regmap, reg, mask, 0);
+@@ -399,7 +399,7 @@ static int armada_37xx_gpio_get_direction(struct gpio_chip *chip,
+ 	unsigned int reg = OUTPUT_EN;
+ 	unsigned int val, mask;
+ 
+-	armada_37xx_update_reg(&reg, offset);
++	armada_37xx_update_reg(&reg, &offset);
+ 	mask = BIT(offset);
+ 	regmap_read(info->regmap, reg, &val);
+ 
+@@ -413,7 +413,7 @@ static int armada_37xx_gpio_direction_output(struct gpio_chip *chip,
+ 	unsigned int reg = OUTPUT_EN;
+ 	unsigned int mask, val, ret;
+ 
+-	armada_37xx_update_reg(&reg, offset);
++	armada_37xx_update_reg(&reg, &offset);
+ 	mask = BIT(offset);
+ 
+ 	ret = regmap_update_bits(info->regmap, reg, mask, mask);
+@@ -434,7 +434,7 @@ static int armada_37xx_gpio_get(struct gpio_chip *chip, unsigned int offset)
+ 	unsigned int reg = INPUT_VAL;
+ 	unsigned int val, mask;
+ 
+-	armada_37xx_update_reg(&reg, offset);
++	armada_37xx_update_reg(&reg, &offset);
+ 	mask = BIT(offset);
+ 
+ 	regmap_read(info->regmap, reg, &val);
+@@ -449,7 +449,7 @@ static void armada_37xx_gpio_set(struct gpio_chip *chip, unsigned int offset,
+ 	unsigned int reg = OUTPUT_VAL;
+ 	unsigned int mask, val;
+ 
+-	armada_37xx_update_reg(&reg, offset);
++	armada_37xx_update_reg(&reg, &offset);
+ 	mask = BIT(offset);
+ 	val = value ? mask : 0;
+ 
+-- 
+2.17.2 (Apple Git-113)
 
-On Mon, 2019-09-30 at 16:24 -0500, Rob Herring wrote:
-> On Mon, Sep 30, 2019 at 8:32 AM Nicolas Saenz Julienne
-> <nsaenzjulienne@suse.de> wrote:
-> > On Mon, 2019-09-30 at 05:57 -0700, Christoph Hellwig wrote:
-> > > On Thu, Sep 26, 2019 at 07:24:49PM -0500, Rob Herring wrote:
-> > > > -int of_dma_configure(struct device *dev, struct device_node *np, b=
-ool
-> > > > force_dma)
-> > > > +int of_dma_configure(struct device *dev, struct device_node *paren=
-t,
-> > > > bool
-> > > > force_dma)
-> > >=20
-> > > This creates a > 80 char line.
-> > >=20
-> > > >  {
-> > > >     u64 dma_addr, paddr, size =3D 0;
-> > > >     int ret;
-> > > >     bool coherent;
-> > > >     unsigned long offset;
-> > > >     const struct iommu_ops *iommu;
-> > > > +   struct device_node *np;
-> > > >     u64 mask;
-> > > >=20
-> > > > +   np =3D dev->of_node;
-> > > > +   if (!np)
-> > > > +           np =3D parent;
-> > > > +   if (!np)
-> > > > +           return -ENODEV;
-> > >=20
-> > > I have to say I find the older calling convention simpler to understa=
-nd.
-> > > If we want to enforce the invariant I'd rather do that explicitly:
-> > >=20
-> > >       if (dev->of_node && np !=3D dev->of_node)
-> > >               return -EINVAL;
-> >=20
-> > As is, this would break Freescale Layerscape fsl-mc bus' dma_configure(=
-):
->=20
-> This may break PCI too for devices that have a DT node.
->=20
-> > static int fsl_mc_dma_configure(struct device *dev)
-> > {
-> >         struct device *dma_dev =3D dev;
-> >=20
-> >         while (dev_is_fsl_mc(dma_dev))
-> >                 dma_dev =3D dma_dev->parent;
-> >=20
-> >         return of_dma_configure(dev, dma_dev->of_node, 0);
-> > }
-> >=20
-> > But I think that with this series, given the fact that we now treat the=
- lack
-> > of
-> > dma-ranges as a 1:1 mapping instead of an error, we could rewrite the
-> > function
-> > like this:
->=20
-> Now, I'm reconsidering allowing this abuse... It's better if the code
-> which understands the bus structure in DT for a specific bus passes in
-> the right thing. Maybe I should go back to Robin's version (below).
-> OTOH, the existing assumption that 'dma-ranges' was in the immediate
-> parent was an assumption on the bus structure which maybe doesn't
-> always apply.
->=20
-> diff --git a/drivers/of/device.c b/drivers/of/device.c
-> index a45261e21144..6951450bb8f3 100644
-> --- a/drivers/of/device.c
-> +++ b/drivers/of/device.c
-> @@ -98,12 +98,15 @@ int of_dma_configure(struct device *dev, struct
-> device_node *parent, bool force_
->         u64 mask;
->=20
->         np =3D dev->of_node;
-> -       if (!np)
-> -               np =3D parent;
-> +       if (np)
-> +               parent =3D of_get_dma_parent(np);
-> +       else
-> +               np =3D of_node_get(parent);
->         if (!np)
->                 return -ENODEV;
->=20
-> -       ret =3D of_dma_get_range(np, &dma_addr, &paddr, &size);
-> +       ret =3D of_dma_get_range(parent, &dma_addr, &paddr, &size);
-> +       of_node_put(parent);
->         if (ret < 0) {
->                 /*
->                  * For legacy reasons, we have to assume some devices nee=
-d
-
-I spent some time thinking about your comments and researching. I came to t=
-he
-realization that both these solutions break the usage in
-drivers/gpu/drm/sun4i/sun4i_backend.c:805. In that specific case both
-'dev->of_node' and 'parent' exist yet the device receiving the configuratio=
-n
-and 'parent' aren't related in any way.
-
-IOW we can't just use 'dev->of_node' as a starting point to walk upwards th=
-e
-tree. We always have to respect whatever DT node the bus provided, and star=
-t
-there. This clashes with the current solutions, as they are based on the fa=
-ct
-that we can use dev->of_node when present.
-
-My guess at this point, if we're forced to honor that behaviour, is that we
-have to create a new API for the PCI use case. Something the likes of
-of_dma_configure_parent().
-
-Regards,
-Nicolas
-
-
---=-Cs3oOlvxVqdSsNFddCdM
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl2TdA0ACgkQlfZmHno8
-x/6K4AgAjioHwGF/mb4/iuCV18ZNbc5+28Uj8QSuVjilegKoNykY14Tj+cUOZScx
-3EF7lURVACHKIEG1K4mOtTqx/gzU+CkDYq3h6j7WkGGOIVY9Uadlnj/Koe7b3WuN
-CtyjG0ZpwC0Houf+sUzULF/oh70hKCQnGJqaw4zM11eaV3GWVFusupxh6VuZ61Ez
-PFo9kjYEn9DJFCUYzlZBYmqo7KIXm17W2fiY6AqjPvYE7s4HoA3Y1IE3uofxIY0B
-0jyx5feECFqXNM6OXhaOVDV5jiDrM2aFc1/w0IYU3dcaQxjkPFlb4yI7KtzE/HBT
-DJ49VyTT04oQy0DYBsw8BXur1BGXCw==
-=Iift
------END PGP SIGNATURE-----
-
---=-Cs3oOlvxVqdSsNFddCdM--
-
-
-
---===============5840839911272831373==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5840839911272831373==--
-
-
