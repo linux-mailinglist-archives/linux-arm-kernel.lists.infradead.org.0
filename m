@@ -2,82 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A981EC3F3C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 20:01:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFD54C3F55
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 20:05:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gCRYMt5hiPLMR018D5ubUzVDCqlsTz6+QkkTsFjWMds=; b=cdnOjgFekidpVI
-	gVhAmkGX3jU829kUXb9RbIAm2SQzksE23ATiw37aVc+dwk1u8bHtX3vNBbAL8K/54X2EVCSqyRSCR
-	rgKa2JlLMRfY8IvvTaNuXABqUrU1YP/jCcPEq2LL0zIozJB1LHkQWhLYoa15gscivAXhA+wQjo/Uo
-	9We39cHCnhT/l96IS9VKXhTsNlTfPpo1GoB/5iWwSC2bRan2WygHJHJXoCIXpvwqre2ol8/4PuI4s
-	tLGilm6jUpKZMkI4wa1Y4YizbMsHvnP+v1a8x8/RgosKcQHMOC2QrMuFLmfdyFjPG2bGxh+fstgiC
-	uT1x2rWg18/iGyQUogOA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=QihdkzyvK31CrQc8pHcDodFQLMjfIcdK2wNejbJfswg=; b=AkI3T//dK9PovBXab4Tg+Vk2K
+	6X/RVIYz3AjRmwn7Cf1mvwfH2rEu2+sY7OfH8Zw5X8gngglvXoWuNgEMn2K/CyucGu3lXQNZEv5tg
+	4dYaOeX/EywNavthYfQk1/4xfoANDyP38AJuK3NSdLJLzoOM8/hK3xVZWo24FYSgvNYPt6161BNop
+	hm8egK13t+5nPJoHg57+80bSK9DLNf+KFq/h1I3CruHjQaJWFH4kVRGjy+CRm1AC8khW2fLHUyd51
+	/+wGFCVMx26v3A1dYT3sZAKMhre8X8VrblgLWhmPJFteBvEcmTcVBgNnClaagfpO8+C2+iPeGjhc9
+	K36ji3ptQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFMSn-0000Tf-UI; Tue, 01 Oct 2019 18:01:29 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1iFMWp-0002N9-Be; Tue, 01 Oct 2019 18:05:39 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFMSh-0000Sz-DO
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 18:01:24 +0000
-Received: by mail-io1-xd42.google.com with SMTP id h144so50259722iof.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 01 Oct 2019 11:01:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=e3ZpzW2TyFiOL+UNzjwCdjiPvcI1e9f1za2Ko3AAr0s=;
- b=rEjkaQmYsYDQCb6ctDX5gQepVnjXhbo4zSgtC17Bwz2P4Q/3UWeESJs9t+DbKzJRkE
- h2icO+Bym55hSufk12IbuzwRuxR4xcF824kYTgNkdTUMu7rukY0cRYSmcS5ev/sjJKCu
- JI1zgWFNKorMTLZ/lV97yJnIzK6nOEUVzkF5vKeCHEsiOPbEodIM5IFTDcKIa7xYbP9Z
- L0NRlgr6Pnm/4sQrFdn0EUSZRxmN51s6WWAqmyfAdrz+pCxscd6ct7HHWopSfH+rfTz6
- Wj+yPETwqLPP9IqU2DERuq2e/QvlWjFsEOdq/lRm2uFEwZS8ryDRF2Qimn7qTQD8JFsg
- liRg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=e3ZpzW2TyFiOL+UNzjwCdjiPvcI1e9f1za2Ko3AAr0s=;
- b=UC/1/mxiZ5fycEK4LSsJLCznF+1kNYEUayR3kB+mHx2DsJPApnMScJ/nPMFWP5FblY
- zCT0KQ7JI0VMvnBp7Bt33Rk+/6iNIEgOds/t/PQkihgvec+E9wHWM+R9fte71T9gaAtl
- bmzXi6NaOHycQ5PpBp1viN+Fd6+Pxdt2l8g9TZGznmTDEVqi6lY70jKS6RKh11o37UYV
- A+vAw8AyIS4B9TSEvJ8iHi1hambhRTBrtq+2Suv/g+gqKbwcDnEmdqbV5jPdvLzGiBVr
- umYpqIBam5eMF1A8PXCfW3hmW3IGtus7Vlh3KB1hDOKONSURHX5vMvcM0nMGbGFEcYtP
- 6Cug==
-X-Gm-Message-State: APjAAAX+zx3EXnORQigFh6uSKLdMhv94A33stiQU3poTKFR6SfCmeQba
- KmxTzzDBI0gnJ0OV9MKJu16edcArklPNRESAO+s=
-X-Google-Smtp-Source: APXvYqxotoq/8hGS9XgSO6JelXixa5l0w10bNwBRyvjvkP91TkYP1WblQo3zRuYvlhJRnSm4XrDvkt4p1Lkv3X5Q30g=
-X-Received: by 2002:a6b:90c4:: with SMTP id s187mr6632690iod.178.1569952882448; 
- Tue, 01 Oct 2019 11:01:22 -0700 (PDT)
+ id 1iFMWi-0002Mq-Oe
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 18:05:34 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id 1554C6118F; Tue,  1 Oct 2019 18:05:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1569953132;
+ bh=kh+Qvfp+Bv7MXpGjaYCIgO1OxAjGfyr1gezkgUNBZRA=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=TBbLytlCWNIC7AHixNIcvge6LvSQH1v8jJUko2JcnQ5pBGH4OMLFS1yIm+UzbC7Io
+ 8EpPWHBYjMAchb5x4VZ+68+qKgirovCQZ9TVvckBNtqaYYIKNWHLhMffJ67yF2pmkV
+ lkrGy/hsNIUB9G+00gBhJSXVOMD/6u96Avt43nRM=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED autolearn=no autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ by smtp.codeaurora.org (Postfix) with ESMTP id EEBA86076C;
+ Tue,  1 Oct 2019 18:05:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1569953131;
+ bh=kh+Qvfp+Bv7MXpGjaYCIgO1OxAjGfyr1gezkgUNBZRA=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=BIv8NlU83WI675KZxJSjdebxayagKrHZlQvgxIT8ATxuQh3w/zLnh1/wrmbba+LwQ
+ V0+qCkhYEDPSP+phz+JcbvMQInj4gIunYiLXPr63yaLBNKDRja/AQTx9KHhixjer/O
+ +yt8sqgyzteoRnI7ngWXWyE37WTrwu0ZMBa+2X4k=
 MIME-Version: 1.0
+Date: Tue, 01 Oct 2019 11:05:30 -0700
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>
+Subject: Re: [PATCHv9 2/3] arm64: dts: qcom: msm8998: Add Coresight support
+In-Reply-To: <CAOCk7NodWtC__W3=AQfXcjF-W9Az_NNUN0r8w5WmqJMziCcvig@mail.gmail.com>
 References: <cover.1564550873.git.saiprakash.ranjan@codeaurora.org>
  <90114e06825e537c3aafd3de5c78743a9de6fadc.1564550873.git.saiprakash.ranjan@codeaurora.org>
  <CAOCk7NrK+wY8jfHdS8781NOQtyLm2RRe1NW2Rm3_zeaot0Q99Q@mail.gmail.com>
  <16212a577339204e901cf4eefa5e82f1@codeaurora.org>
  <CAOCk7NohO67qeYCnrjy4P0KN9nLUiamphHRvj-bFP++K7khPOw@mail.gmail.com>
  <fa5a35f0e993f2b604b60d5cead3cf28@codeaurora.org>
-In-Reply-To: <fa5a35f0e993f2b604b60d5cead3cf28@codeaurora.org>
-From: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>
-Date: Tue, 1 Oct 2019 12:01:11 -0600
-Message-ID: <CAOCk7NodWtC__W3=AQfXcjF-W9Az_NNUN0r8w5WmqJMziCcvig@mail.gmail.com>
-Subject: Re: [PATCHv9 2/3] arm64: dts: qcom: msm8998: Add Coresight support
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+ <CAOCk7NodWtC__W3=AQfXcjF-W9Az_NNUN0r8w5WmqJMziCcvig@mail.gmail.com>
+Message-ID: <5b8835905a704fb813714694a792df54@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.2.5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_110123_476978_8B907E02 
-X-CRM114-Status: GOOD (  21.38  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191001_110532_827861_3CD09FFF 
+X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jeffrey.l.hugo[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -106,66 +103,35 @@ Cc: Mark Rutland <mark.rutland@arm.com>, Rajendra Nayak <rnayak@codeaurora.org>,
  Bjorn Andersson <bjorn.andersson@linaro.org>,
  David Brown <david.brown@linaro.org>, Andy Gross <agross@kernel.org>,
  Sibi Sankar <sibis@codeaurora.org>, Leo Yan <leo.yan@linaro.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+ linux-arm-msm-owner@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 1, 2019 at 11:52 AM Sai Prakash Ranjan
-<saiprakash.ranjan@codeaurora.org> wrote:
->
-> On 2019-10-01 10:14, Jeffrey Hugo wrote:
-> > On Tue, Oct 1, 2019 at 11:04 AM Sai Prakash Ranjan
-> > <saiprakash.ranjan@codeaurora.org> wrote:
-> >>
-> >> On 2019-10-01 09:13, Jeffrey Hugo wrote:
-> >> > Sai,
-> >> >
-> >> > This patch breaks boot on the 835 laptops.  However, I haven't seen
-> >> > the same issue on the MTP.  I wonder, is coresight expected to work
-> >> > with production fused devices?  I wonder if thats the difference
-> >> > between the laptop and MTP that is causing the issue.
-> >> >
-> >> > Let me know what I can do to help debug.
-> >> >
-> >>
-> >> I did test on MSM8998 MTP and didn't face any issue. I am guessing
-> >> this
-> >> is the same issue which you reported regarding cpuidle? Coresight ETM
-> >
-> > Yes, its the same issue.  Right now, I need both patches reverted to
-> > boot.
-> >
-> >> and cpuidle do not work well together since ETMs share the same power
-> >> domain as CPU and they might get turned off when CPU enters idle
-> >> states.
-> >> Can you try with cpuidle.off=1 cmdline or just remove idle states from
-> >> DT to confirm? If this is the issue, then we can try the below patch
-> >> from Andrew Murray for ETM save and restore:
-> >>
-> >> https://patchwork.kernel.org/patch/11097893/
-> >
-> > Is there still value in testing this if the idle states are removed,
-> > yet the coresight nodes still cause issues?
-> >
-> > Funny enough, I'm using the arm64 defconfig which doesn't seem to
-> > select CONFIG_CORESIGHT, so I'm not even sure what would be binding to
-> > the DT devices...
-> >
->
-> Haan then likely it's the firmware issue.
-> We should probably disable coresight in soc dtsi and enable only for
-> MTP. For now you can add a status=disabled for all coresight nodes in
-> msm8998.dtsi and I will send the patch doing the same in a day or
-> two(sorry I am travelling currently).
+On 2019-10-01 11:01, Jeffrey Hugo wrote:
+> On Tue, Oct 1, 2019 at 11:52 AM Sai Prakash Ranjan
+> <saiprakash.ranjan@codeaurora.org> wrote:
+>> 
+>> 
+>> Haan then likely it's the firmware issue.
+>> We should probably disable coresight in soc dtsi and enable only for
+>> MTP. For now you can add a status=disabled for all coresight nodes in
+>> msm8998.dtsi and I will send the patch doing the same in a day or
+>> two(sorry I am travelling currently).
+> 
+> This sounds sane to me (and is what I did while bisecting the issue).
+> When you do create the patch, feel free to add the following tags as
+> you see fit.
+> 
+> Reported-by: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>
+> Tested-by: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>
 
-This sounds sane to me (and is what I did while bisecting the issue).
-When you do create the patch, feel free to add the following tags as
-you see fit.
+Thanks Jeffrey, I will add them.
+Hope Mathieu and Suzuki are OK with this.
 
-Reported-by: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>
-Tested-by: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>
+Thanks,
+Sai
 
 _______________________________________________
 linux-arm-kernel mailing list
