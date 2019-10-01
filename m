@@ -2,63 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE66DC2EE9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 10:32:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 147F1C2EF0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 10:34:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+EbYtTId5T3Yuy8EJNd2ENZ8vjJubtjL7MPLcC2rRko=; b=kERt4U5YOKKN8u
-	rez2QoCYkFzRJhnzRzHUS1mRXk+8QJnl//bnw2kjpUc+kgFEVqyh/bpWQbG5+Lod00MCx7h7WlJPp
-	3ukBxfNieo/XFC/Pt9ddTFAAQ7GaTloqpQ64LfedXzXWPd1CZgr4krSF/HMuIHoLO3KC6GrJ4IRt2
-	LPn0Uh9g0wv6kes0gPxYeVgmKpiLKd0VT7Qqo1QiowLSaebGHOylXAcpW0hcJ+xzLiUsMgaRMU7Nv
-	koHpjfMpiPdGT1tBG6n1NZoV0aQ2jr6TznBr4Zj01xcdKxOcAp+yk6ums1iNMPyOXLzyjEF/Yr92Q
-	+5G72UhmMX4+kHPadA+Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qD5E50AymI38J5yHMvqDvb2s3vyoZLrHUPO8mkFXEZM=; b=UOEhQDQi3YBl36
+	liftOtukCJVLKb6Pjdjj1dSVHXkf+XuVH0DThjQiN+6/MRE/rfhtV3dmJLLGqF9gFj8R4wHtQJVm/
+	d7SwXjVdJ05O2R+4Z5szPB8I+m3VnXhqG8oSfiAPjK5KXmwUEIT3fNPCKWarRTKB4DawoyrYfaeur
+	0+Gq9CNCWS9WI0lec+ay8IA6ICwQlZqyCe495l4QTLEZXEaK4QjPpRr/+/YDoDkexg8rVfamB87bb
+	qMtUayY2vjgkGFAvsuB8vvse3BTvAKy9Mp8FyQxFU4hD/Picg3ud76yuj2wUAeefGi4WeFhh1W9QC
+	A3M/LS09loY5JmPgmINg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFDaS-0000kh-Ay; Tue, 01 Oct 2019 08:32:48 +0000
-Received: from balrog.mythic-beasts.com ([2a00:1098:0:82:1000:0:2:1])
+	id 1iFDcN-0001FX-TR; Tue, 01 Oct 2019 08:34:47 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFDaA-0000dK-56
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 08:32:31 +0000
-Received: from [199.195.250.187] (port=42658 helo=hermes.aosc.io)
- by balrog.mythic-beasts.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92.3)
- (envelope-from <icenowy@aosc.io>)
- id 1iFDa5-0001IN-29; Tue, 01 Oct 2019 09:32:25 +0100
-Received: from localhost (localhost [127.0.0.1]) (Authenticated sender:
- icenowy@aosc.io)
- by hermes.aosc.io (Postfix) with ESMTPSA id 5F36E82B13;
- Tue,  1 Oct 2019 08:32:20 +0000 (UTC)
-From: Icenowy Zheng <icenowy@aosc.io>
-To: "David S . Miller" <davem@davemloft.net>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Andrew Lunn <andrew@lunn.ch>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Heiner Kallweit <hkallweit1@gmail.com>
-Subject: [PATCH 3/3] arm64: allwinner: a64: dts: apply hack for RTL8211E on
- Pine64+
-Date: Tue,  1 Oct 2019 16:29:12 +0800
-Message-Id: <20191001082912.12905-4-icenowy@aosc.io>
-In-Reply-To: <20191001082912.12905-1-icenowy@aosc.io>
-References: <20191001082912.12905-1-icenowy@aosc.io>
+ id 1iFDcF-0001ES-JV
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 08:34:42 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 6F6FFAF27;
+ Tue,  1 Oct 2019 08:34:36 +0000 (UTC)
+Subject: Re: [Xen-devel] [PATCH] xen/efi: have a common runtime setup function
+To: Juergen Gross <jgross@suse.com>
+References: <20191001082534.12067-1-jgross@suse.com>
+From: Jan Beulich <jbeulich@suse.com>
+Message-ID: <c8ff366c-dd2c-b4b3-1832-8b93d11d1181@suse.com>
+Date: Tue, 1 Oct 2019 10:34:16 +0200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-BlackCat-Spam-Score: 65
-X-Spam-Status: No, score=6.5
+In-Reply-To: <20191001082534.12067-1-jgross@suse.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_013230_342030_92E97DBB 
-X-CRM114-Status: GOOD (  13.35  )
+X-CRM114-CacheID: sfid-20191001_013441_300132_CBD62207 
+X-CRM114-Status: UNSURE (   9.54  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a00:1098:0:82:1000:0:2:1 listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -71,38 +62,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
- linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
+Cc: Stefano Stabellini <sstabellini@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ "H. Peter Anvin" <hpa@zytor.com>, xen-devel@lists.xenproject.org,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ Boris Ostrovsky <boris.ostrovsky@oracle.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some of the Pine64+ boards are known to use a batch of broken RTL8211E
-PHYs. A magic number that is in an undocumented field of a register is
-passed from Realtek via Pine64.
+On 01.10.2019 10:25, Juergen Gross wrote:
+> @@ -281,4 +270,26 @@ void xen_efi_reset_system(int reset_type, efi_status_t status,
+>  		BUG();
+>  	}
+>  }
+> -EXPORT_SYMBOL_GPL(xen_efi_reset_system);
+> +
+> +/*
+> + * Set XEN EFI runtime services function pointers. Other fields of struct efi,
+> + * e.g. efi.systab, will be set like normal EFI.
+> + */
+> +void __init xen_efi_runtime_setup(void)
+> +{
+> +	efi.get_time			= xen_efi_get_time;
+> +	efi.set_time			= xen_efi_set_time;
+> +	efi.get_wakeup_time		= xen_efi_get_wakeup_time;
+> +	efi.set_wakeup_time		= xen_efi_set_wakeup_time;
+> +	efi.get_variable		= xen_efi_get_variable;
+> +	efi.get_next_variable		= xen_efi_get_next_variable;
+> +	efi.set_variable		= xen_efi_set_variable;
+> +	efi.set_variable_nonblocking	= xen_efi_set_variable;
+> +	efi.query_variable_info		= xen_efi_query_variable_info;
+> +	efi.query_variable_info_nonblocking = xen_efi_query_variable_info;
+> +	efi.update_capsule		= xen_efi_update_capsule;
+> +	efi.query_capsule_caps		= xen_efi_query_capsule_caps;
+> +	efi.get_next_high_mono_count	= xen_efi_get_next_high_mono_count;
+> +	efi.reset_system		= xen_efi_reset_system;
+> +}
+> +EXPORT_SYMBOL_GPL(xen_efi_runtime_setup);
 
-Add the property to apply the hack to the Pine64+ device tree.
+I don't think exporting an __init function is a good idea, and I also
+don't see why the function would need exporting had it had the __init
+dropped. With the line dropped
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
 
-Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
----
- arch/arm64/boot/dts/allwinner/sun50i-a64-pine64-plus.dts | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64-plus.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64-plus.dts
-index 24f1aac366d6..4d68f850d03a 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64-plus.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64-plus.dts
-@@ -61,5 +61,6 @@
- 	ext_rgmii_phy: ethernet-phy@1 {
- 		compatible = "ethernet-phy-ieee802.3-c22";
- 		reg = <1>;
-+		realtek,config-magic-for-pine64;
- 	};
- };
--- 
-2.21.0
+Jan
 
 
 _______________________________________________
