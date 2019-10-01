@@ -2,88 +2,132 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9948AC3467
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 14:38:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D658FC3471
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 14:39:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IP1lXWDBkFoTD3GVOGXLGkd+O/LvSeJwQqpyvpuLS+o=; b=jTC0dDWnn1YWi5
-	6pKDvw0CyB69YM8FBzD4c8N5+qTj0Z8ARqXe9nbtZ0QUyLyXLtZhieeGjrR5dwT4cOnRQuiqEoKPL
-	hNZszKTHqOLLA6X686Ti4QVn1Kr1+7/4cHEPQ9ieMyN2L88I4jFl/E7CCpyQO3LBTT4iGWeYCa3T6
-	gdougl9EoQWh7U9rpSdeddVNQnhL2lSlR2C9HIIaSUyycMY1/wIa5Q2e77p609oPxx60pUD/ZVk1p
-	Z6j4uK7Y9/ZmPNBVJjmX6CsLb2kPNamhKU1ddX9wXTwLh47FTqs4QIcpvrBKxp/IphaFkkkA3a8HJ
-	sO9EFB8+DuTeoFODZkmg==;
+	List-Owner; bh=7y468Jfc0QQ4CIuvSwxb9BWMHceWLTHuYDYBeDVjTPI=; b=bs2bcnQuNmTLW+
+	30tT/zqMLrHp6Km/lr9aw6Yf+Nb8Mv1Q8y8uiHXzFaxKyIoWApx/FvNRmEx4DhU+lGVa9lOJvXVOk
+	+JDiCJrDjfR2fY+DRu9DsDVV0Ke6hk+H2HMYuKyT+CGvmsdwmfcnQWUVHiUiYDsKTp1BSb9zCBgY4
+	toEQMrpVxawqx/7N6FQ5az4yOe2RByyRvHQI2ZRb3A1+cbLz/iHw2oF0oQiM2QinsIQI7W0aXAKv0
+	xYEp+oNpFenkoOlwcPOSOWMKy+6125nyu8br5QSNf/8E7j2ZpGjQKf+tS0W7V7lrl57DYEMMPT6Vb
+	E80DpCW1t7qLdEz83XXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFHPk-0006lX-Dm; Tue, 01 Oct 2019 12:38:00 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1iFHQi-00079U-EB; Tue, 01 Oct 2019 12:39:00 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFHPb-0006l3-8M
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 12:37:52 +0000
-Received: by mail-io1-xd41.google.com with SMTP id b19so19356722iob.4
+ id 1iFHQU-00078b-JP
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 12:38:48 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20191001123845euoutp01ee3e55c7f31fc0f0f8279e15a6aadf57~JhjkhToux1219112191euoutp01d
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 01 Oct 2019 05:37:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=FhGjmsDKKPD3QinXgHs/uFmvxQ7KlC4IGlI0yWXxnE0=;
- b=SFJhuHSvvW8Erq96m6ImL3eOj9JoDGgxYXzBmaiAeyLFuGPT/wzkJf1l7w5eQ+jZHs
- pHpSDRUEYeKgubAl6P98cKWJIUh4hgv8fL/P3cU0fVvj8EIMqvSVfmDrOg4lj7cz6E5u
- dj5JAk9Aordu1jw3j09N0Zwwd0+qF5LPwXnOtkuolUx2dcstilmeBCk0C9huvDWh0xDx
- n68JOqjX3hVXcABMXPV71RCw8nnZjeIjHNbXw3PClR2TFED+9Xc6iZZCYguJHFPKKD+M
- SlcSv2SQuJHQbYlKeYpvzX+YWhpUoMQ06i35N9jZ1vH534UVPFd/N6JPO2dDh9WznuHA
- 1D7w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=FhGjmsDKKPD3QinXgHs/uFmvxQ7KlC4IGlI0yWXxnE0=;
- b=YvJPHe61awEb8V/CbJLkG+85yBDnD3bz4fvGmzJKB4cmFW2D0ag6xB9FN3eGX2VhRj
- Xi+1Al6jO8VFssz4a61JEbz7LK7kRpJPECBpJihXN8yyC2g+w/SKG6C/K0NmhtaeoJ7j
- WB7ZMNk3sNgHYfYS474EA6wERZHZM386DbIVeGNMSaHzIwJU+30UXBOFUMPmiW8KULnM
- KwKdMkFG35hVDF2WV6JHNR6+hPjZY1ovBLy/DBqmlklmyMv6L/dZeYKGvLSwnyzymKJt
- 1F/RgwsjKt4N21Al3hm2I9/pxIXdaDJiK0AHAjFHK3wRm8xesX854m4zv9EzqLGzgBZ2
- 6isA==
-X-Gm-Message-State: APjAAAVDLqzSDga/M4F+k22Gd11IO1FIKopriR+AOA4CYZqTJC3fXvpA
- 0UN2wN8pn9NFH7rjQ5urYbvc7++F+av7X/pgvPa4j/4u
-X-Google-Smtp-Source: APXvYqz7VBVXBG+ZMWE3fVk0pO5Y0YXERVtxa+N9juNb16CLwwIaQ6lC3GHyv2uy+2PbeZn7ajoc+Kexz4K/mtji6X8=
-X-Received: by 2002:a92:d84d:: with SMTP id h13mr26003328ilq.205.1569933468111; 
- Tue, 01 Oct 2019 05:37:48 -0700 (PDT)
+ Tue,  1 Oct 2019 12:38:45 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20191001123845euoutp01ee3e55c7f31fc0f0f8279e15a6aadf57~JhjkhToux1219112191euoutp01d
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1569933525;
+ bh=P3LQEMEr2ElljIQFeYWukVZZz3LkJ8Ybhmdpwqsf1A0=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=Kc5elUoefFeEupRb9TuW6SBOmhq0W00Sgqtnjrb8pKXWT+NKi+hoJeb/qvF0gGVVG
+ NoZI8p5nmKYN8hY5xHbJw4rqe5k9m1AVPqtoiECyhShwguXFa9/qdB9UXt6R3BTe+N
+ OdQUq9BQutxwBb67S4dwN3H9dOtXYhYtoVKv6K8s=
+Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20191001123844eucas1p24a109be47dc918a3c988aeeb63b7f6f0~JhjkOeLGg2967929679eucas1p2a;
+ Tue,  1 Oct 2019 12:38:44 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges3new.samsung.com (EUCPMTA) with SMTP id EB.73.04374.4D8439D5; Tue,  1
+ Oct 2019 13:38:44 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20191001123844eucas1p1ab3cf26fa7a5ec8748b67f49df5aaa47~JhjjyhIH60392003920eucas1p1_;
+ Tue,  1 Oct 2019 12:38:44 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20191001123844eusmtrp10339363d1656fab2f497e0178b59ca6e~JhjjxsAZZ0473004730eusmtrp1X;
+ Tue,  1 Oct 2019 12:38:44 +0000 (GMT)
+X-AuditID: cbfec7f5-4f7ff70000001116-24-5d9348d4aacc
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id CA.0B.04166.4D8439D5; Tue,  1
+ Oct 2019 13:38:44 +0100 (BST)
+Received: from [106.120.51.20] (unknown [106.120.51.20]) by
+ eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20191001123843eusmtip237921a023022d439d4283e2bae0b2dd9~JhjjG90Ma1599415994eusmtip2u;
+ Tue,  1 Oct 2019 12:38:43 +0000 (GMT)
+Subject: Re: [PATCH 1/3] ARM: dts: exynos: Add interrupt to DMC controller
+ in Exynos5422
+To: Krzysztof Kozlowski <krzk@kernel.org>
+From: Lukasz Luba <l.luba@partner.samsung.com>
+Message-ID: <16c56e81-d0a7-a405-fa12-83442364c260@partner.samsung.com>
+Date: Tue, 1 Oct 2019 14:38:43 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <CAHCN7xLOCC00UC4PB3vHa6Q7yyhXVEaWgx2X9D9L2dDubd_5fA@mail.gmail.com>
- <9525ffc4-3e1f-9941-8f7b-ba74690add77@emlix.com>
-In-Reply-To: <9525ffc4-3e1f-9941-8f7b-ba74690add77@emlix.com>
-From: Adam Ford <aford173@gmail.com>
-Date: Tue, 1 Oct 2019 07:37:37 -0500
-Message-ID: <CAHCN7xJ7GsnwT3CM7giK1ydGY_9SFNMbhz6U0k2eYvpz_EK9oQ@mail.gmail.com>
-Subject: Re: [PATCH] Bluetooth: hci_ll: set operational frequency earlier
-To: Philipp Puschmann <philipp.puschmann@emlix.com>
+In-Reply-To: <20190927085359.GA19131@pi3>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA01Sa0hTYRju29m5OJodp+WbhcEKUkMzKvgg8QIq+5XRrzBWrXZQyU3bmZYm
+ 5KWLzmtalqs0pZoMY2ViOkpBl1O6mOYtozCVpFKLZg3BLI/HyH/P+7zP+z7P+/ExhGKI9GOS
+ 9EbOoNckKymZtLlr/lXwgKpCHZo/sh0/vG4j8fDcFIlrHK9IXDrxlcC9vQ9o/DJ3msaNE0Mk
+ fmO/SWFXsQPh671tEnzf8Z7Gd4f7JPhdTj2FLzx10Lhz+hKJf3WPo0hW1VDdgFSt5ve0qtFa
+ QKke3TmnKmmyIpWr0f8AFS8L03LJSemcYWf4MVliSf2O1HbZmdqKQjIbdTImxDDA7oEnV3Um
+ 5MEo2HoETlOgCcmW8ByC9hdtlFi4EPTbZ0hBJQzk5UyQYsOCILfsrUQsZhCU5nykBZU3Gw8N
+ rkGpgH3YQBj+7V6eJlgzAYM1QYI1xYZAi/WUQMvZWCirvCcRaCm7DS4WUAK9nj0EP8Y6SVHi
+ BT1Vk8sbPZY2jtxYpMWNvjA6WSMR8RZ4PHOTEOIAm8OA6ZsTiaGjYd49KxGxN3xxNtEi3gzP
+ K4qkIuYhu7h2RZ8FE6W3VjT7oNPZRwrZiCVjm32nSEdBV79FKj6iJ4zMeIkRPKG8+Roh0nLI
+ v6gQ1QHQVPR6JcAGsDRU0mVIaV51mHnVMeZVx5j/+95GUivy5dJ4XQLH79Zzp0N4jY5P0yeE
+ nEjRNaKl3/Z80fmzBbUtHO9ALIOUa+V46rJaQWrS+QxdBwKGUPrIwxbK1Qq5VpORyRlSjhrS
+ kjm+A21ipEpf+dk1Y4cVbILGyJ3kuFTO8K8rYTz8slHcEKxxr1PRza37Y5SLan0wepeSanRE
+ dEcfKd0b62+LURf98aprabI0X+juW7BndXwecGurAii/iO/h97e7t1SFvul5Vh1l4lsTvGxH
+ XMYPYenedYu2SGvhp6nM+BPjwXULvv3G9vNbr+QRksKNEQfDb0BitU+c1t81SrGWWaWUT9Ts
+ CiIMvOYvnYKBEGkDAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrDIsWRmVeSWpSXmKPExsVy+t/xe7pXPCbHGlz7x2WxccZ6VovrX56z
+ Wsw/co7Vov/xa2aL8+c3sFucbXrDbrHp8TVWi8u75rBZfO49wmgx4/w+Jou1R+6yWyy9fpHJ
+ 4nbjCjaL1r1H2C0Ov2lntfh24hGjg4DHmnlrGD12zrrL7rFpVSebx+Yl9R59W1YxenzeJBfA
+ FqVnU5RfWpKqkJFfXGKrFG1oYaRnaGmhZ2RiqWdobB5rZWSqpG9nk5Kak1mWWqRvl6CX0bdC
+ u2A/V8XCyd2sDYyHOboYOTkkBEwkmhsfs4LYQgJLGSWez3aBiItJTNq3nR3CFpb4c62LrYuR
+ C6jmNaNEz7wvjCAJYYEoib3r54MViQhoSlz/+50VpIhZYBazxPorzSwQHS8YJa6caGfuYuTg
+ YBPQk9ixqhCkgVfATWLCtGVMIGEWARWJtk42kLCoQITE4R2zGCFKBCVOznzCAmJzAs2/Mfsf
+ 2C5mATOJeZsfMkPY4hK3nsxngrDlJba/ncM8gVFoFpL2WUhaZiFpmYWkZQEjyypGkdTS4tz0
+ 3GJDveLE3OLSvHS95PzcTYzAmN527OfmHYyXNgYfYhTgYFTi4Z3wcmKsEGtiWXFl7iFGCQ5m
+ JRFemz+TYoV4UxIrq1KL8uOLSnNSiw8xmgL9NpFZSjQ5H5hu8kriDU0NzS0sDc2NzY3NLJTE
+ eTsEDsYICaQnlqRmp6YWpBbB9DFxcEo1MHpxKDecfPNweoayqUnCvMmsm5R5mzvaJ28V+Ga8
+ 5+mzAwuvTFzWlsFswOb8audV/6uc4do3n7olV5Y/67GdWjWR+7uzyxpG89CdLw/tWhYcvvYr
+ Z/h52xtRSTpfV83ICZ9aMEV/2VdR48Pad4SPxPvX+LO8VZjBOWmvbqtguYLziic/prJy6Cqx
+ FGckGmoxFxUnAgDoPfRt/wIAAA==
+X-CMS-MailID: 20191001123844eucas1p1ab3cf26fa7a5ec8748b67f49df5aaa47
+X-Msg-Generator: CA
+X-RootMTR: 20190925161842eucas1p271a9cf4f62b3d7af02c0a5d0d1eb9c4f
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190925161842eucas1p271a9cf4f62b3d7af02c0a5d0d1eb9c4f
+References: <20190925161813.21117-1-l.luba@partner.samsung.com>
+ <CGME20190925161842eucas1p271a9cf4f62b3d7af02c0a5d0d1eb9c4f@eucas1p2.samsung.com>
+ <20190925161813.21117-2-l.luba@partner.samsung.com>
+ <20190927085359.GA19131@pi3>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_053751_323920_41FE0FAA 
-X-CRM114-Status: GOOD (  21.24  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191001_053846_774269_4619187D 
+X-CRM114-Status: GOOD (  17.57  )
+X-Spam-Score: -5.1 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.11 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,83 +139,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:BLUETOOTH DRIVERS" <linux-bluetooth@vger.kernel.org>,
- Linux-OMAP <linux-omap@vger.kernel.org>,
- arm-soc <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ willy.mh.wolff.ml@gmail.com, linux-samsung-soc@vger.kernel.org,
+ b.zolnierkie@samsung.com, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, cw00.choi@samsung.com,
+ kyungmin.park@samsung.com, kgene@kernel.org, myungjoo.ham@samsung.com,
+ s.nawrocki@samsung.com, linux-arm-kernel@lists.infradead.org,
+ m.szyprowski@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 1, 2019 at 2:04 AM Philipp Puschmann
-<philipp.puschmann@emlix.com> wrote:
->
-> A few times i have seen this here too. The wl1837mod should definitely be able to set
-> the operaional frequency before loading the firmware.
-> It takes nearly 5 seconds to upload the firmware with 115kbps while only
-> 0.2s with 3mbps. So i see a high interest to do it the fast way.
-> A problem i have identified may be the power supply. At least on my custom board
-> the power supply is controlled via gpio. But the serial bluetooth device has no
-> support for a regulator. As it is controlled by wifi driver only. I have prepared a patch
-> adding regulator support to hci_ll driver. In a few weeks i may try to get it upstream.
+Hi Krzysztof,
 
-Any change you can share with me what you have?  With 5.4 being the
-next LTS and at least two of us with broken boards, I am concerned
-that a patch in a few weeks may not make the cut for the final release
-of 5.4.
+On 9/27/19 10:53 AM, Krzysztof Kozlowski wrote:
+> On Wed, Sep 25, 2019 at 06:18:11PM +0200, Lukasz Luba wrote:
+>> Add interrupt to Dynamic Memory Controller in Exynos5422 and Odroid
+>> XU3-family boards. It will be used instead of devfreq polling mode
+>> governor. The interrupt is connected to performance counters private
+>> for DMC, which might track utilisation of the memory channels.
+>>
+>> Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
+>> ---
+>>   arch/arm/boot/dts/exynos5420.dtsi | 2 ++
+>>   1 file changed, 2 insertions(+)
+>>
+>> diff --git a/arch/arm/boot/dts/exynos5420.dtsi b/arch/arm/boot/dts/exynos5420.dtsi
+>> index ac49373baae7..72738e620d11 100644
+>> --- a/arch/arm/boot/dts/exynos5420.dtsi
+>> +++ b/arch/arm/boot/dts/exynos5420.dtsi
+>> @@ -240,6 +240,8 @@
+>>   		dmc: memory-controller@10c20000 {
+>>   			compatible = "samsung,exynos5422-dmc";
+>>   			reg = <0x10c20000 0x100>, <0x10c30000 0x100>;
+>> +			interrupt-parent = <&combiner>;
+>> +			interrupts = <16 0>;
+> 
+> You register DMC for DREX0 and DREX1 but take only DREX0 interrupt. Why
+> skipping second?
+> 
 
->
-> Another problem may be the timings. The timings the driver uses are according the wl1837mod
-> datasheets but it may that not all devices of that class or the wiring have the same
-> specifications and this causes the trouble.
->
-> For the above mentioned performance gain i would like to see the problem really solved.
+Right, the second should also be there: <16 1>. The channel 1 has not
+been triggered in CPU test cases but might be used by some other
+NoC clients.
+I will add it in the next version.
 
-I agree it would be nice to have it working fast, but for others of
-us, we just need to work, so unless there is a clear solution to the
-problem, I would advocate reverting the patch until the solution can
-be found that doesn't break other boards.
-
-> It may be enough to add some sleep time or small delay or something of that kind in
-> ll_setup().
->
-
-I am willing to try something if you want.
-
-
-adam
-> Regards,
-> Philipp
->
->
-> Am 30.09.19 um 22:10 schrieb Adam Ford:
-> > Is anyone else having issues with the hci_ll after  a2e02f38eff8
-> > ("Bluetooth: hci_ll: set operational frequency earlier") was applied?
-> >
-> > I have an i.MX6Q with a WL1837MOD attached to UART2.  After this patch
-> > I git a bunch of timeouts when initializing the device using the 5.3
-> > and 5.3.1 kernel.   I know a bunch of omap and imx users have done
-> > some various tests over the years, so I thought I'd ask.
-> >
-> > [  195.911836] Bluetooth: hci0: command 0xff36 tx timeout
-> > [  206.071837] Bluetooth: hci0: command 0x1001 tx timeout
-> > [  214.231862] Bluetooth: hci0: Reading TI version information failed (-110)
-> > [  214.238712] Bluetooth: hci0: download firmware failed, retrying...
-> > [  216.391834] Bluetooth: hci0: command 0xff36 tx timeout
-> > [  226.551843] Bluetooth: hci0: command 0x1001 tx timeout
-> > [  234.711856] Bluetooth: hci0: Reading TI version information failed (-110)
-> > [  234.718705] Bluetooth: hci0: download firmware failed, retrying...
-> > [  236.871832] Bluetooth: hci0: command 0xff36 tx timeout
-> > [  247.031837] Bluetooth: hci0: command 0x1001 tx timeout
-> > [  255.191852] Bluetooth: hci0: Reading TI version information failed (-110)
-> > [  255.198706] Bluetooth: hci0: download firmware failed, retrying...
-> > Can't init device hci0: Connection timed out (110)
-> >
-> > Revering this patch fixes the issue, and subsequent patch proposals
-> > form Philipp haven't seemed to fix the issues for me on 5.3
-> >
-> > adam
-> >
+Regards,
+Lukasz
 
 _______________________________________________
 linux-arm-kernel mailing list
