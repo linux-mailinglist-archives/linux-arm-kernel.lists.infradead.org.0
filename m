@@ -2,38 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56BE3C300A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 11:21:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D62EC300D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 11:21:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v75AMELSR1xaLg75t+PuFHh7BF8ejZQLeVG7zVlKkbA=; b=VAkXQE6w9zb6DX
-	FdTmXA145jVzA69+Kl2v2mj9Q1s763ulG5Ljb+EthfgwqHjfR4/vx7qBHGLJyrpSjIUYWaYa1J0Pt
-	shaoY6hwZJ5GggxOUYEYykt/RAjlKwqVrS0fatYvE+xr9DvIDkvZUribkwsRt13dAOd6K3O9YXvLs
-	Yo1/0BRxx83L903pgYq15vX3zTs/YarIz7/nriLSH+bqncLS2iAb3PSNBsY/xeYv24KsQ+x0m1wX6
-	WJ90zIZL33xSDttFmUybBWD1yGx4dPyhgpv5OrGi+CDrhFBzWFGzowG46umdZnMmKR/BH2OY7iPkS
-	eHilc2MHNNqES/NDUkKg==;
+	List-Owner; bh=wQy3cyJHM+gvXBtQ8QnextpPJH6g3VWk22mMbSzVQ0Y=; b=njsxwhsU2bOWc0
+	jsEERHBZqWtsaYGii2jtSqmNUAoGRrbzFQSfZIvomNiq7L3s0sd91NNG2poii5K/miyNpetYxjwbI
+	hWoi5onlK6kqG1iyH7/cM6K9gMM4/IQ2hxi5bCehx40hgn8vaE9pmc11UNsnndC7YNxo18ZqLDK0M
+	5FZFPE78uGv62VqB5fK6Z5So5Z55f/PYKJDDLYq6PdC0UHHcKMUmv4XI7Gmo3+teRD98KimMEjRnM
+	mu6Ln2D7VHNq0G44/rcRSmYe0tlLDEf/29oNZVcBX6U/HfS2ATWNg2ieHFqIFTWYGcciMii1DbJwx
+	vQDF4ng8g425eOZpsv2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFELQ-0004BY-1L; Tue, 01 Oct 2019 09:21:20 +0000
+	id 1iFELs-0004gZ-W5; Tue, 01 Oct 2019 09:21:49 +0000
 Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFELE-0004A1-TM
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 09:21:10 +0000
+ id 1iFELF-0004A2-1U
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 09:21:11 +0000
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by cheepnis.misterjones.org with esmtpsa
  (TLSv1.2:DHE-RSA-AES128-GCM-SHA256:128) (Exim 4.80)
  (envelope-from <maz@kernel.org>)
- id 1iFEL7-00019A-44; Tue, 01 Oct 2019 11:21:01 +0200
+ id 1iFEL7-00019A-Vi; Tue, 01 Oct 2019 11:21:02 +0200
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 3/4] arm64: KVM: Kill hyp_alternate_select()
-Date: Tue,  1 Oct 2019 10:20:37 +0100
-Message-Id: <20191001092038.17097-4-maz@kernel.org>
+Subject: [PATCH 4/4] KVM: arm/arm64: vgic: Use the appropriate
+ TRACE_INCLUDE_PATH
+Date: Tue,  1 Oct 2019 10:20:38 +0100
+Message-Id: <20191001092038.17097-5-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191001092038.17097-1-maz@kernel.org>
 References: <20191001092038.17097-1-maz@kernel.org>
@@ -48,9 +49,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_022109_101801_50117954 
-X-CRM114-Status: UNSURE (   7.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191001_022109_242838_EA701AAC 
+X-CRM114-Status: GOOD (  10.24  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -81,50 +81,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-hyp_alternate_select() is now completely unused. Goodbye.
+From: Zenghui Yu <yuzenghui@huawei.com>
 
+Commit 49dfe94fe5ad ("KVM: arm/arm64: Fix TRACE_INCLUDE_PATH") fixes
+TRACE_INCLUDE_PATH to the correct relative path to the define_trace.h
+and explains why did the old one work.
+
+The same fix should be applied to virt/kvm/arm/vgic/trace.h.
+
+Reviewed-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
-Reviewed-by: Christoffer Dall <christoffer.dall@arm.com>
-Reviewed-by: Andrew Jones <drjones@redhat.com>
 ---
- arch/arm64/include/asm/kvm_hyp.h | 24 ------------------------
- 1 file changed, 24 deletions(-)
+ virt/kvm/arm/vgic/trace.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/include/asm/kvm_hyp.h b/arch/arm64/include/asm/kvm_hyp.h
-index 86825aa20852..97f21cc66657 100644
---- a/arch/arm64/include/asm/kvm_hyp.h
-+++ b/arch/arm64/include/asm/kvm_hyp.h
-@@ -47,30 +47,6 @@
- #define read_sysreg_el2(r)	read_sysreg_elx(r, _EL2, _EL1)
- #define write_sysreg_el2(v,r)	write_sysreg_elx(v, r, _EL2, _EL1)
+diff --git a/virt/kvm/arm/vgic/trace.h b/virt/kvm/arm/vgic/trace.h
+index 55fed77a9f73..4fd4f6db181b 100644
+--- a/virt/kvm/arm/vgic/trace.h
++++ b/virt/kvm/arm/vgic/trace.h
+@@ -30,7 +30,7 @@ TRACE_EVENT(vgic_update_irq_pending,
+ #endif /* _TRACE_VGIC_H */
  
--/**
-- * hyp_alternate_select - Generates patchable code sequences that are
-- * used to switch between two implementations of a function, depending
-- * on the availability of a feature.
-- *
-- * @fname: a symbol name that will be defined as a function returning a
-- * function pointer whose type will match @orig and @alt
-- * @orig: A pointer to the default function, as returned by @fname when
-- * @cond doesn't hold
-- * @alt: A pointer to the alternate function, as returned by @fname
-- * when @cond holds
-- * @cond: a CPU feature (as described in asm/cpufeature.h)
-- */
--#define hyp_alternate_select(fname, orig, alt, cond)			\
--typeof(orig) * __hyp_text fname(void)					\
--{									\
--	typeof(alt) *val = orig;					\
--	asm volatile(ALTERNATIVE("nop		\n",			\
--				 "mov	%0, %1	\n",			\
--				 cond)					\
--		     : "+r" (val) : "r" (alt));				\
--	return val;							\
--}
--
- int __vgic_v2_perform_cpuif_access(struct kvm_vcpu *vcpu);
+ #undef TRACE_INCLUDE_PATH
+-#define TRACE_INCLUDE_PATH ../../../virt/kvm/arm/vgic
++#define TRACE_INCLUDE_PATH ../../virt/kvm/arm/vgic
+ #undef TRACE_INCLUDE_FILE
+ #define TRACE_INCLUDE_FILE trace
  
- void __vgic_v3_save_state(struct kvm_vcpu *vcpu);
 -- 
 2.20.1
 
