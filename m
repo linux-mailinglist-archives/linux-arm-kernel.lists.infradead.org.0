@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62A31C4408
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 00:50:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1D08C4409
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 00:50:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,68 +11,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=CDnbZh0xTF/AEhZggFk37+4RzZ/uJ6lHZDc6q9dHXvc=; b=FFh0neRMBtvojwo48HV9uZ0mOK
-	mSQYsq1kFEHQvPhe2zv5w7EyG9dpTJ7XoLQEomkQL2uKEcsKGrigPpOGRn2DeEuuJpwJdVYdBoX+3
-	Noi33XM5y6pBWo/j9OD1r1PP36HfmveK3JVU9lfnIl+BN1sBuJ2VtAD7TrFwvxzqc+J24S/EKagcM
-	WovIYWb3g1zlT23+q+TKHE/6qqdF3QbScVVKGxYM3vF33VOL3GaZwAKkBZ5en8wxAyILKVoJgkAnP
-	ZoJkuVK4Pfas1nYcajSrVpHCLqGJ252CL+9AJrU5uwzXbN+Kg8W2GoSSoFPFxAANZlCNyU2Hi3CVc
-	cZG0MWCw==;
+	bh=sCtizpaI/q4ZQyvnta/Ssez7sX2ZsoTc0jUx7gzp3j0=; b=VDfNu2xXdvB9NmoTBPQE3PAvKf
+	fd+DP/qpXqCeL5RV/la+lLhyiiGScJgV5+s9z0ypWAUHi26BsD1ETVgWgzD+h5p4ryRz3v4k5nmTA
+	m2o8vWXcqZ6vK/wL2sTFjfGx9V8YBRUVLhCaFGIwOeaDfgO1PCdGG2HjReNMjaKa+DxZqpksv3Hon
+	RJonqQQGDII5ECtRt5LYTB6aO3O78uSCpHcvyxclmRIOYpDcXtQ3j+ZvbtvyHRDVHkPjqekF8e90G
+	tQ4jeG5J6IreGNTvXZZjGamQilNtHdfevxwXAeaVF2ejPpVlsGYTXaLRfWzBWuMxU61FOo4jfLDaz
+	Smo7Q78w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFQyQ-0007lw-Bt; Tue, 01 Oct 2019 22:50:26 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iFQyi-000857-7p; Tue, 01 Oct 2019 22:50:44 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFQx4-0005Kd-Sy; Tue, 01 Oct 2019 22:49:04 +0000
-Received: by mail-pg1-x542.google.com with SMTP id a24so10760222pgj.2;
- Tue, 01 Oct 2019 15:49:02 -0700 (PDT)
+ id 1iFQx5-0005NE-VY; Tue, 01 Oct 2019 22:49:05 +0000
+Received: by mail-pl1-x643.google.com with SMTP id j11so2951136plk.3;
+ Tue, 01 Oct 2019 15:49:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=xm5+dOflKaTZIVZnokmYc6eT45ykFCPyC442ihyZjok=;
- b=AvfH0JGGeod+exu/4O98hP0w0MWFeU5MDDpIqUf0TxoaWb1lRZPOWwJPHNdzFqp4tw
- MgAlSLOWBgHZ/hmrbWf3PkeKubOGzkKobVGw+AHTePEjd8si0p/WLEM+ULC+KScAR56l
- fM5P1gsFioiPQs63FnNdMbuWrrF8rgX+OuFOszZb7ns/1sPsrtdXwuz7WMAYXGrXr87i
- qqblRzyMKzRu7B3z3rMSboEPo2AKSVNMZNMn39FrjwAtDYdRkkR0YMzQfCk+RyGFYlyL
- uGt/XcWwCNyxv7UCEn5XQQgNgKp7cANUUu8zpMt1SebldmTK4GVIf6/rsiiEDJiQcv0w
- 1nSQ==
+ bh=MAMlkRnO5l7BTKTwRIiopLRzEQTrPpsCd+4MsukYmNc=;
+ b=HAz4lDL4/HYy4Ox1QSCZ3kvs83mTwGsEqL60MTu/23VTwZHoyErK+WUt5t3kZyKIck
+ YrwFzDaJDdqBgFIGjkIjKor6i2iwhTKxEW6l18Lkbai3McS7Fal1Gv9/wyepIKKfq84U
+ VFUTkBIjcovYwb8z1TyZMurQOni9Q5Q7nyigZWHapWBYWeggFg2up3dAECedjaSRua+4
+ aEwWBFqLGXIC44i31OcMMGuCqBqBjR9IzO/R2n8yX1JcgF8IMibIYMOuARrOba5ELcYV
+ xfJqhGzN9tNd9cwWMFA2x2WlztMuRFFb00jO04J5C0r9j0NGHO/pe0YINATrFzePM5W4
+ 2W/w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=xm5+dOflKaTZIVZnokmYc6eT45ykFCPyC442ihyZjok=;
- b=RlBSd+GR+oiGFA3lrFSALUV5jIpVdtuLJ9aEvWHByWPPS7AM39fy3Xk6wyUCaC1etI
- 9Ad8MwS0QX0gngpR0ZwSgZvaXgI4Kzo1D+aR7Q0MYFbL0sGaffbIFZFqFPk+gSq81G2j
- 42uvB2+uEoJd+uTgEeeda+q4ZatF535goWrd2gdvLKDcGpYJYSs6Qy63MwOhgChWQEiA
- /nV96lXm3pzlbBCCl0Spf+kaQXuxbgACb8uachzSgEJjT9S/olrNdtM40uqKjoPxkg5E
- cHtotv7E7OX1lO4BCpYt8XLMxXhfKzh/tR8CXnv2Ep94Dbzj9Q+S1HwjvAah5zcfKMr3
- K+1g==
-X-Gm-Message-State: APjAAAWfhXWS6zreT9v6w+St4pUGa/AYB0VQR2HWWL9gxtppOqlz00NO
- bUUeHdSOaPvbeNLXczoyPBc=
-X-Google-Smtp-Source: APXvYqyELX0xr8bTqUc9jiZz9X1yUX+9gWsgaesoSqUgFW6SMdUD/tGFBJr4cN1mY9BwQJ17kpCwlw==
-X-Received: by 2002:a62:2a04:: with SMTP id q4mr882217pfq.120.1569970141963;
- Tue, 01 Oct 2019 15:49:01 -0700 (PDT)
+ bh=MAMlkRnO5l7BTKTwRIiopLRzEQTrPpsCd+4MsukYmNc=;
+ b=UY5BTSC6Mc9A1tILDQnqjd8ikE2o6c+T9Ks8gArR1lwyzC95wXOXHc/SPyrhorrfBh
+ BD024CT5Y0fTA47k24XKwkp+RLWyCWS0pjhkqKzsxqnK/1sUHMlnCZQXheZ/rFfJQr06
+ 7TuS3gse0e/E8A96PgLCqqnlRAThXPJZsn0uVFuw1VRZzRXLorjMmI2sVzxdnfWUG5jw
+ +KOHZDnW4yfBqz7C1h9tF7SAIMNHIVSTZYSt7wTrMr1LnB0iEvseL4vpbCc/ZmRWWhAR
+ IFHEyTlh/0mqIqdFnpBztb4CkAWAUstZHsEgWacpi3+c6BmyhzGF/JSKIBH44KvwMvFw
+ 2Q+Q==
+X-Gm-Message-State: APjAAAW19QI1nw1SHoVeZW8K8EEiwEV4v+3Umnp2inZg4ORbsIELBsXn
+ qAGyor2vN8jHdw5Wx3Xh4SQ=
+X-Google-Smtp-Source: APXvYqxEhwZILl7XTzqS0JmTl5V0s3Q2tsvy5lvU7+vFWHRphKhv2LJaKswN152OGBrBamTuEaAp4w==
+X-Received: by 2002:a17:902:322:: with SMTP id 31mr229858pld.150.1569970143390; 
+ Tue, 01 Oct 2019 15:49:03 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id c128sm20913506pfc.166.2019.10.01.15.49.00
+ by smtp.gmail.com with ESMTPSA id c128sm20913506pfc.166.2019.10.01.15.49.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 01 Oct 2019 15:49:01 -0700 (PDT)
+ Tue, 01 Oct 2019 15:49:02 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5/7] irqchip/irq-bcm2836: Add support for the 7211 interrupt
- controller
-Date: Tue,  1 Oct 2019 15:48:40 -0700
-Message-Id: <20191001224842.9382-6-f.fainelli@gmail.com>
+Subject: [PATCH 6/7] irqchip: Build BCM283X_IRQ for ARCH_BRCMSTB
+Date: Tue,  1 Oct 2019 15:48:41 -0700
+Message-Id: <20191001224842.9382-7-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191001224842.9382-1-f.fainelli@gmail.com>
 References: <20191001224842.9382-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_154903_026062_8A31D662 
-X-CRM114-Status: GOOD (  14.76  )
+X-CRM114-CacheID: sfid-20191001_154904_037912_CDC0AD77 
+X-CRM114-Status: GOOD (  13.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -115,70 +114,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The root interrupt controller on 7211 is about identical to the one
-existing on BCM2836, except that the SMP cross call are done through the
-standard ARM GIC-400 interrupt controller. This interrupt controller is
-used for side band wake-up signals though.
+Now that irq-bcm2835.c and irq-bcm2836.c have been updated to support
+BCM7211 which is under ARCH_BRCMSTB, build both drivers for
+ARCH_BRCMSTB.
 
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- drivers/irqchip/irq-bcm2836.c | 25 ++++++++++++++++++++++---
- 1 file changed, 22 insertions(+), 3 deletions(-)
+ drivers/irqchip/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/irqchip/irq-bcm2836.c b/drivers/irqchip/irq-bcm2836.c
-index 2038693f074c..77fa395c8f6b 100644
---- a/drivers/irqchip/irq-bcm2836.c
-+++ b/drivers/irqchip/irq-bcm2836.c
-@@ -112,6 +112,8 @@ static int bcm2836_map(struct irq_domain *d, unsigned int irq,
- 		return -EINVAL;
- 	}
+diff --git a/drivers/irqchip/Kconfig b/drivers/irqchip/Kconfig
+index d1bb20d23d27..ffd5f986172a 100644
+--- a/drivers/irqchip/Kconfig
++++ b/drivers/irqchip/Kconfig
+@@ -116,7 +116,7 @@ config I8259
+ config BCM283X_IRQ
+ 	bool
+ 	select IRQ_DOMAIN
+-	default ARCH_BCM2835
++	default ARCH_BCM2835 || ARCH_BRCMSTB
  
-+	chip->flags |= IRQCHIP_MASK_ON_SUSPEND | IRQCHIP_SKIP_SET_WAKE;
-+
- 	irq_set_percpu_devid(irq);
- 	irq_domain_set_info(d, irq, hw, chip, d->host_data,
- 			    handle_percpu_devid_irq, NULL, NULL);
-@@ -216,8 +218,9 @@ static void bcm2835_init_local_timer_frequency(void)
- 	writel(0x80000000, intc.base + LOCAL_PRESCALER);
- }
- 
--static int __init bcm2836_arm_irqchip_l1_intc_of_init(struct device_node *node,
--						      struct device_node *parent)
-+static int __init arm_irqchip_l1_intc_of_init_smp(struct device_node *node,
-+						  struct device_node *parent,
-+						  bool smp_init)
- {
- 	intc.base = of_iomap(node, 0);
- 	if (!intc.base) {
-@@ -232,11 +235,27 @@ static int __init bcm2836_arm_irqchip_l1_intc_of_init(struct device_node *node,
- 	if (!intc.domain)
- 		panic("%pOF: unable to create IRQ domain\n", node);
- 
--	bcm2836_arm_irqchip_smp_init();
-+	if (smp_init)
-+		bcm2836_arm_irqchip_smp_init();
- 
- 	set_handle_irq(bcm2836_arm_irqchip_handle_irq);
-+
- 	return 0;
- }
- 
-+static int __init bcm2836_arm_irqchip_l1_intc_of_init(struct device_node *node,
-+						      struct device_node *parent)
-+{
-+	return arm_irqchip_l1_intc_of_init_smp(node, parent, true);
-+}
-+
-+static int __init bcm7211_arm_irqchip_l1_intc_of_init(struct device_node *node,
-+						      struct device_node *parent)
-+{
-+	return arm_irqchip_l1_intc_of_init_smp(node, parent, false);
-+}
-+
- IRQCHIP_DECLARE(bcm2836_arm_irqchip_l1_intc, "brcm,bcm2836-l1-intc",
- 		bcm2836_arm_irqchip_l1_intc_of_init);
-+IRQCHIP_DECLARE(bcm7211_arm_irqchip_l1_intc, "brcm,bcm7211-l1-intc",
-+		bcm7211_arm_irqchip_l1_intc_of_init);
+ config BCM6345_L1_IRQ
+ 	bool
 -- 
 2.17.1
 
