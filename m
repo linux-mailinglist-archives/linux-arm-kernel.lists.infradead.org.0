@@ -2,78 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59948C3980
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 17:50:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8C45C3975
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 17:48:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uU9jZpAzYN6Sz+LoFiamYzl0H07uK7XnBmYkR554AU8=; b=qaIi6/or7QlTYy
-	a0fWS85smcLxN8iXMbilLducqV+XqQxTwfEMueyli4Kng3THXcTH348JMrH4+bPUOsXkgdaTUDM2E
-	STIVll61nVhl1nm47L5+Tvyntls1dfJrydFHLF9CIcrKYEvanDDwxCqQz5SAb+ifr05yEbnH2NZou
-	GEXEnGn97W7XHMmnwlyVdqzGmmhKCRlNDhkV7VtY0TpE5CjavaY4olp0QGOwqk4mt7JeGRwFkPa5X
-	74+zktFaTuv+Eym0iUbE/awSZ4Tq6mLkr9FzGsI5Bvmp4SykM0Tr4q3QbtRsf5W3+63WwWMuVxOBq
-	ay0/FGyNLEnaa5op6ypQ==;
+	List-Owner; bh=l9ec8sa/1cQgdPKpDsVTmAdTiMbupTH7SnLmTc2m5/g=; b=D1r/Lt+G8JXGU4
+	N4baKdmBTXhgYoZ8xa9NcusF/SVieokCtoPr7kyGCzrh3lYhV+tTUDTn9kSi3Qeds4R9A/eExHHb1
+	lU7cYQVTqbuCSlhht4DrJ2CeAShKVahPPq5WPfSrX0yK+4p7ifFVVKDAGsM+bvVguH/MtnK86zAFu
+	zYBBmrqFSUJOTmvq9xE0ytYfiyuZc+i4Aw2vML52hU66cCwvtSI0TP01ENPYEe0zroD/iwEQQNV2M
+	QUvbkUhgMpecRTdPffOwbeRcWkB8srCfDz8NBOBBv+PrTcZ98o8j6N56E6qhtOxMwQfsjFmt7Wh4/
+	7uGkjlYAxi0X30ikfagQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFKPV-0008PF-PK; Tue, 01 Oct 2019 15:49:57 +0000
-Received: from smtp-fw-33001.amazon.com ([207.171.190.10])
+	id 1iFKOB-000859-KL; Tue, 01 Oct 2019 15:48:35 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFKPN-0008OQ-1s
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 15:49:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
- t=1569944988; x=1601480988;
- h=from:to:cc:subject:date:message-id:in-reply-to:
- references:mime-version;
- bh=PgZ9aytk0j+S8TWOd0mGQ2grSS4ZIPx/rutqBSNX9jI=;
- b=Vl5WOhqBnUarXg7QtiEDzMy7b+wfCE3iVKhM353m6fzubxfbvObwITFd
- tF7gkSzIXEfzGCtsYalShBQ+tRs7X6YXP+siFgZjn7oe8sqjL8hypdRjz
- XrQscHSWQMkjvE43AglTAezjFHcDmAuFfetlxEW40YcmdEXS/yljWf9ML A=;
-X-IronPort-AV: E=Sophos;i="5.64,571,1559520000"; d="scan'208";a="838434598"
-Received: from sea3-co-svc-lb6-vlan2.sea.amazon.com (HELO
- email-inbound-relay-2c-2225282c.us-west-2.amazon.com) ([10.47.22.34])
- by smtp-border-fw-out-33001.sea14.amazon.com with ESMTP;
- 01 Oct 2019 15:47:16 +0000
-Received: from EX13MTAUWC001.ant.amazon.com
- (pdx4-ws-svc-p6-lb7-vlan3.pdx.amazon.com [10.170.41.166])
- by email-inbound-relay-2c-2225282c.us-west-2.amazon.com (Postfix) with ESMTPS
- id 4D0D9A1EF5; Tue,  1 Oct 2019 15:46:56 +0000 (UTC)
-Received: from EX13D02UWC004.ant.amazon.com (10.43.162.236) by
- EX13MTAUWC001.ant.amazon.com (10.43.162.135) with Microsoft SMTP Server (TLS)
- id 15.0.1367.3; Tue, 1 Oct 2019 15:46:56 +0000
-Received: from EX13MTAUWA001.ant.amazon.com (10.43.160.58) by
- EX13D02UWC004.ant.amazon.com (10.43.162.236) with Microsoft SMTP Server (TLS)
- id 15.0.1367.3; Tue, 1 Oct 2019 15:46:56 +0000
-Received: from 8c859006a84e.ant.amazon.com (172.26.203.30) by
- mail-relay.amazon.com (10.43.160.118) with Microsoft SMTP Server id
- 15.0.1367.3 via Frontend Transport; Tue, 1 Oct 2019 15:46:55 +0000
-From: Patrick Williams <alpawi@amazon.com>
-To: 
-Subject: [PATCH v2] pinctrl: armada-37xx: fix control of pins 32 and up
-Date: Tue, 1 Oct 2019 10:46:31 -0500
-Message-ID: <20191001154634.96165-1-alpawi@amazon.com>
-X-Mailer: git-send-email 2.17.2 (Apple Git-113)
-In-Reply-To: <20190618160105.26343-3-alpawi@amazon.com>
-References: <20190618160105.26343-3-alpawi@amazon.com>
+ id 1iFKO4-000844-99
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 15:48:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=mAjemN3zoy4NN/OBz00OSEPUQdbEoX+3LDmfYoCmeRg=; b=Gk/m5lFU3nP7Hb76nAnEXfpG/
+ dxdlqhJPiM95K+QzKvDxeTGznCqoXLGQOgaRflUKryN7ErAQNMNa3j0Vax41fBSawXUHGkAXr+OQE
+ hcQ8mgwp4+zl2JxMgNmsyAiEyHyzEjZyTT4KLL/sFmEr01psCAYCXX0QfTg5r33URgFedNK3QqvL4
+ xTTSLlw2Adqb7JYYIinG34bhO6BFMBiaUyxG4zAY6k8fVsJGMgytobhwpxvl5X5ZuXaAAfy1DK/jf
+ DSiCtENdKYVFx9qm98QjpskmMu5LWhofGMWzGiVw/7y8BRpl6ftbIrWMggt7QnheeZpl+WmzNxhay
+ O8MZt9plQ==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:46324)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iFKNs-0003Iy-Ob; Tue, 01 Oct 2019 16:48:16 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iFKNq-0008KL-A1; Tue, 01 Oct 2019 16:48:14 +0100
+Date: Tue, 1 Oct 2019 16:48:14 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH] Partially revert "compiler: enable
+ CONFIG_OPTIMIZE_INLINING forcibly"
+Message-ID: <20191001154814.GJ25745@shell.armlinux.org.uk>
+References: <20190930114540.27498-1-will@kernel.org>
+ <CAK7LNARWkQ-z02RYv3XQ69KkWdmEVaZge07qiYC8_kyMrFzCTg@mail.gmail.com>
+ <20191001104253.fci7s3sn5ov3h56d@willie-the-truck>
+ <20191001114129.GL42880@e119886-lin.cambridge.arm.com>
+ <20191001143626.GI25745@shell.armlinux.org.uk>
+ <20191001152826.GM42880@e119886-lin.cambridge.arm.com>
 MIME-Version: 1.0
-Precedence: Bulk
+Content-Disposition: inline
+In-Reply-To: <20191001152826.GM42880@e119886-lin.cambridge.arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_084949_140858_73BD29E0 
-X-CRM114-Status: GOOD (  11.42  )
-X-Spam-Score: -10.0 (----------)
+X-CRM114-CacheID: sfid-20191001_084828_320588_E9D5DD7B 
+X-CRM114-Status: GOOD (  15.09  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-10.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [207.171.190.10 listed in list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -81,9 +81,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
+Precedence: list
 List-Id: <linux-arm-kernel.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=unsubscribe>
@@ -92,109 +92,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Jason Cooper <jason@lakedaemon.net>,
- linux-gpio@vger.kernel.org, Gregory Clement <gregory.clement@bootlin.com>,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- Patrick Williams <patrick@stwcx.xyz>, linux-arm-kernel@lists.infradead.org,
- Linus Walleij <linus.walleij@linaro.org>, Patrick Williams <alpawi@amazon.com>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The 37xx configuration registers are only 32 bits long, so
-pins 32-35 spill over into the next register.  The calculation
-for the register address was done, but the bitmask was not, so
-any configuration to pin 32 or above resulted in a bitmask that
-overflowed and performed no action.
+On Tue, Oct 01, 2019 at 04:28:27PM +0100, Andrew Murray wrote:
+> I hadn't noticed the use of __OPTIMIZE__ - indeed if __compiletime_assert
+> is no-op'd and you reach it then you won't have a build error - but you
+> may get uninitialised values instead.
+> 
+> Presumably the purpose of __OPTIMIZE__ in this case is to prevent getting
+> an undefined function error for the __compiletime_assert line, even though
+> it doesn't get called (when using a compiler that doesn't optimize out the
+> call to the unused function).
+> 
+> Why is the call to __get_user_bad not guarded in this way for when
+> __OPTIMIZE__ isn't set, i.e. why doesn't it suffer from the issue
+> that the following fixes?
 
-Fix the register / offset calculation to also adjust the offset.
+Officially, the kernel does not support building with -O0.  To start
+with, the top level makefile has:
 
-Fixes: 5715092a458c ("pinctrl: armada-37xx: Add gpio support")
-Signed-off-by: Patrick Williams <alpawi@amazon.com>
-Acked-by: Gregory CLEMENT <gregory.clement@bootlin.com>
-Cc: <stable@vger.kernel.org>
----
- drivers/pinctrl/mvebu/pinctrl-armada-37xx.c | 18 +++++++++---------
- 1 file changed, 9 insertions(+), 9 deletions(-)
+ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
+KBUILD_CFLAGS   += -Os
+else
+KBUILD_CFLAGS   += -O2
+endif
 
-diff --git a/drivers/pinctrl/mvebu/pinctrl-armada-37xx.c b/drivers/pinctrl/mvebu/pinctrl-armada-37xx.c
-index 6462d3ca7ceb..34c1fee52cbe 100644
---- a/drivers/pinctrl/mvebu/pinctrl-armada-37xx.c
-+++ b/drivers/pinctrl/mvebu/pinctrl-armada-37xx.c
-@@ -221,11 +221,11 @@ static const struct armada_37xx_pin_data armada_37xx_pin_sb = {
- };
- 
- static inline void armada_37xx_update_reg(unsigned int *reg,
--					  unsigned int offset)
-+					  unsigned int *offset)
- {
- 	/* We never have more than 2 registers */
--	if (offset >= GPIO_PER_REG) {
--		offset -= GPIO_PER_REG;
-+	if (*offset >= GPIO_PER_REG) {
-+		*offset -= GPIO_PER_REG;
- 		*reg += sizeof(u32);
- 	}
- }
-@@ -376,7 +376,7 @@ static inline void armada_37xx_irq_update_reg(unsigned int *reg,
- {
- 	int offset = irqd_to_hwirq(d);
- 
--	armada_37xx_update_reg(reg, offset);
-+	armada_37xx_update_reg(reg, &offset);
- }
- 
- static int armada_37xx_gpio_direction_input(struct gpio_chip *chip,
-@@ -386,7 +386,7 @@ static int armada_37xx_gpio_direction_input(struct gpio_chip *chip,
- 	unsigned int reg = OUTPUT_EN;
- 	unsigned int mask;
- 
--	armada_37xx_update_reg(&reg, offset);
-+	armada_37xx_update_reg(&reg, &offset);
- 	mask = BIT(offset);
- 
- 	return regmap_update_bits(info->regmap, reg, mask, 0);
-@@ -399,7 +399,7 @@ static int armada_37xx_gpio_get_direction(struct gpio_chip *chip,
- 	unsigned int reg = OUTPUT_EN;
- 	unsigned int val, mask;
- 
--	armada_37xx_update_reg(&reg, offset);
-+	armada_37xx_update_reg(&reg, &offset);
- 	mask = BIT(offset);
- 	regmap_read(info->regmap, reg, &val);
- 
-@@ -413,7 +413,7 @@ static int armada_37xx_gpio_direction_output(struct gpio_chip *chip,
- 	unsigned int reg = OUTPUT_EN;
- 	unsigned int mask, val, ret;
- 
--	armada_37xx_update_reg(&reg, offset);
-+	armada_37xx_update_reg(&reg, &offset);
- 	mask = BIT(offset);
- 
- 	ret = regmap_update_bits(info->regmap, reg, mask, mask);
-@@ -434,7 +434,7 @@ static int armada_37xx_gpio_get(struct gpio_chip *chip, unsigned int offset)
- 	unsigned int reg = INPUT_VAL;
- 	unsigned int val, mask;
- 
--	armada_37xx_update_reg(&reg, offset);
-+	armada_37xx_update_reg(&reg, &offset);
- 	mask = BIT(offset);
- 
- 	regmap_read(info->regmap, reg, &val);
-@@ -449,7 +449,7 @@ static void armada_37xx_gpio_set(struct gpio_chip *chip, unsigned int offset,
- 	unsigned int reg = OUTPUT_VAL;
- 	unsigned int mask, val;
- 
--	armada_37xx_update_reg(&reg, offset);
-+	armada_37xx_update_reg(&reg, &offset);
- 	mask = BIT(offset);
- 	val = value ? mask : 0;
- 
+and we've said for years that the kernel relies upon the compiler
+optimiser to build correctly.  You may be lucky if you pass it via
+some method to 'make' but that's going to rely on the argument order
+to the compiler, and the order in which the compiler processes its
+arguments, and whether it (for example) correctly disables all
+optimisations if it encounters -O0 somewhere.
+
 -- 
-2.17.2 (Apple Git-113)
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
