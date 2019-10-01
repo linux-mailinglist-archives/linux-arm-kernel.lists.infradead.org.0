@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2ECD1C32D1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 13:42:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E936DC32D7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 13:43:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=JGIP3r/wjdr0HLMsV+0VV5OPBWp1hH2n5mPxAi7PpYE=; b=LKf
-	aty2Zi9AopGF0NHU4x9mZ+wWJgAlSTkaDj+ZQvAfsbktqXzAYKiVSNCGQtyfyLPFhO0A35kofgLu1
-	mE3/tmYlSbFMD1gOCKyHwguCQAXTSqlrGaXW4tSCONWCSI7+bQKjsftK/CFDARVWTOzLxYyrBPyVX
-	u63dAH0PlEPQ0iCRMhQfKHycEZS8W2BD7Z6fsa7CfbqUQys96mo9npWrx3J57JXk+XQgvNo5Y4mvA
-	5Ax3GPrI+beqsrXpBxoOtf+W39Zzbjk2hJuxjKID4LlWL50JGbqVbdRBJWdXBzqdBCLBdALzi1kNy
-	2jx6NVhQhYthwl3sfQaNctYPVF/2gTQ==;
+	References:List-Owner; bh=9Ke0rTwbUfuvpwYhgYGDmmRyTD8um4CBSieLvuYJkDU=; b=g2b
+	IG4RYCbzrq3oBck8W9Lj+3bKQNYx4xa9qq1XnX/a8HLZ0iH7OIeuo4A1T6SVP6ZcspXGZSJz9n1N8
+	I91tQjygAVtWkKaNN24++q4Esb/pj4FoBGaAsc/PW7QzRAevhkb6wxUo9QEtIThmfWcPUvnuQIBh3
+	Ezo+qoGt+/bGIigs55XSU+ycq33jAkwzoHGZTcwA8VP+NDq+YD3csYYK564yD4aQJF+C3kOhHUhoW
+	ys0r7Kgb0TRyN9HOeUbn1bdMO7Ez0WjqcJzOCuLrwcVcstT6VVthxOkMv7gmQtbOh/Z8OqowtJ3LX
+	YvW0vK/Z8cQPJlJUttmnjriPsKbDDpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFGYK-0000T9-7G; Tue, 01 Oct 2019 11:42:48 +0000
+	id 1iFGZ7-0001IC-UT; Tue, 01 Oct 2019 11:43:37 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFGWi-0007Pj-Oj; Tue, 01 Oct 2019 11:41:10 +0000
+ id 1iFGWk-0007RY-I4
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 11:41:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=v0/05wFK2YCFSSHAfKo2XXn6kgAZA94ncAdxzXief3k=; b=izjFGZlkdPFM
- 0pxQZKFqpYpjVlIMBGjenYxcmBF/v1nvKfr9F2EJvIZfVgJNtqLv2HICgutojI9OIaVMX9zktZPBk
- UHGMHIWtT+3HYiNdXzZ5CCUFbcu1dgIHxtLgySi3sdTO/s+qR2HPQq7+32YDSEITwe23g0GssJ8JT
- Gk9/g=;
+ List-Archive; bh=JiGt1yEYk797Tl22LhrJU1LZAH62oQR2ZxhFZ2ZqV0E=; b=hY9FQG+jAY/Y
+ ICgMK59EI959H2L3JegmSaTZIq+jueOkE/8wTjpywqp9DsF72hkrSn/eSIKP50ZwpfLJEGok0y6kA
+ 1erNSm+PjNRZOyLrj8JbI3xisVrGVf5e0Z/6FoZWSOc/0tBhi/5JY9Hzm1MBz83FCyXeCNAQiBAda
+ kjLxI=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iFGWg-0004Yl-Ng; Tue, 01 Oct 2019 11:41:06 +0000
+ id 1iFGWh-0004Yt-B1; Tue, 01 Oct 2019 11:41:07 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 2FA1C2742A10; Tue,  1 Oct 2019 12:41:06 +0100 (BST)
+ id C716F27429C0; Tue,  1 Oct 2019 12:41:06 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
-To: Markus Elfring <elfring@users.sourceforge.net>
-Subject: Applied "spi: mediatek: Use devm_platform_ioremap_resource() in
- mtk_spi_probe()" to the spi tree
-In-Reply-To: <478e0df1-e800-8cf1-f9b3-d72f8e26aa0b@web.de>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Applied "spi: mxic: Ensure width is respected in spi-mem operations"
+ to the spi tree
+In-Reply-To: <20190919202504.9619-2-miquel.raynal@bootlin.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191001114106.2FA1C2742A10@ypsilon.sirena.org.uk>
+Message-Id: <20191001114106.C716F27429C0@ypsilon.sirena.org.uk>
 Date: Tue,  1 Oct 2019 12:41:06 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_044108_963428_D0BFE15B 
-X-CRM114-Status: GOOD (  14.30  )
+X-CRM114-CacheID: sfid-20191001_044110_750140_744BCF80 
+X-CRM114-Status: GOOD (  14.46  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -77,11 +78,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Leilk Liu <leilk.liu@mediatek.com>, kernel-janitors@vger.kernel.org,
- LKML <linux-kernel@vger.kernel.org>, linux-spi@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Boris Brezillon <bbrezillon@kernel.org>, Julien Su <juliensu@mxic.com.tw>,
+ linux-spi@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -90,7 +91,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: mediatek: Use devm_platform_ioremap_resource() in mtk_spi_probe()
+   spi: mxic: Ensure width is respected in spi-mem operations
 
 has been applied to the spi tree at
 
@@ -115,52 +116,35 @@ to this mail.
 Thanks,
 Mark
 
-From 5dd381e71994ab554f711afe89b5a6157bdcd19d Mon Sep 17 00:00:00 2001
-From: Markus Elfring <elfring@users.sourceforge.net>
-Date: Sat, 21 Sep 2019 14:45:40 +0200
-Subject: [PATCH] spi: mediatek: Use devm_platform_ioremap_resource() in
- mtk_spi_probe()
+From 539ff2488af87f25f2c090fd74ced55bd966e5a9 Mon Sep 17 00:00:00 2001
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+Date: Thu, 19 Sep 2019 22:25:02 +0200
+Subject: [PATCH] spi: mxic: Ensure width is respected in spi-mem operations
 
-Simplify this function implementation by using a known wrapper function.
+Make use of a core helper to ensure the desired width is respected
+when calling spi-mem operators.
 
-This issue was detected by using the Coccinelle software.
-
-Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
-Link: https://lore.kernel.org/r/478e0df1-e800-8cf1-f9b3-d72f8e26aa0b@web.de
+Suggested-by: Boris Brezillon <bbrezillon@kernel.org>
+Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+Link: https://lore.kernel.org/r/20190919202504.9619-2-miquel.raynal@bootlin.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-mt65xx.c | 11 +----------
- 1 file changed, 1 insertion(+), 10 deletions(-)
+ drivers/spi/spi-mxic.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/spi/spi-mt65xx.c b/drivers/spi/spi-mt65xx.c
-index 6888a4dcff6d..25fe149a8d9a 100644
---- a/drivers/spi/spi-mt65xx.c
-+++ b/drivers/spi/spi-mt65xx.c
-@@ -619,7 +619,6 @@ static int mtk_spi_probe(struct platform_device *pdev)
- 	struct spi_master *master;
- 	struct mtk_spi *mdata;
- 	const struct of_device_id *of_id;
--	struct resource *res;
- 	int i, irq, ret, addr_bits;
+diff --git a/drivers/spi/spi-mxic.c b/drivers/spi/spi-mxic.c
+index f48563c09b97..409bfa163647 100644
+--- a/drivers/spi/spi-mxic.c
++++ b/drivers/spi/spi-mxic.c
+@@ -346,7 +346,7 @@ static bool mxic_spi_mem_supports_op(struct spi_mem *mem,
+ 	if (op->addr.nbytes > 7)
+ 		return false;
  
- 	master = spi_alloc_master(&pdev->dev, sizeof(*mdata));
-@@ -682,15 +681,7 @@ static int mtk_spi_probe(struct platform_device *pdev)
- 	}
+-	return true;
++	return spi_mem_default_supports_op(mem, op);
+ }
  
- 	platform_set_drvdata(pdev, master);
--
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	if (!res) {
--		ret = -ENODEV;
--		dev_err(&pdev->dev, "failed to determine base address\n");
--		goto err_put_master;
--	}
--
--	mdata->base = devm_ioremap_resource(&pdev->dev, res);
-+	mdata->base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(mdata->base)) {
- 		ret = PTR_ERR(mdata->base);
- 		goto err_put_master;
+ static int mxic_spi_mem_exec_op(struct spi_mem *mem,
 -- 
 2.20.1
 
