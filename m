@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97770C32CD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 13:42:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BBE0C32CF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 13:42:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=/P8rlvuujKDL8yE4jIQ7V0tuW0J31s8ZEsCQfiyHjfQ=; b=Czc
-	yHEaWo+L8hOMxDHGmnPrmuBnvDs2Ccuxu0k3fqpZgpjPIQ3T5zzKRvEhmPTI7thdvXoXqDGt6YX/D
-	00FpTmal1JOs3/KKEw0QTfk1Dmeh/gYZXRN7ox8doS3miJCv2VXQyM9qbrKNUJ1kcgY3OSwA5/zQP
-	DaDeVKfaADisLclHsJ6TgfRqiewgxW41IMgO1xXgirvInPpXsl3STF1slXELIEUD7O6L6RrJd2fS6
-	d55l/OeVAGzyww9ubGaO5inhX+3Oj9nv7ACIIPG4z5GC8ehN12NarCtunqOFmQz4ZjH4Gn/iL36S2
-	0vDbxc7bYOjFiWDeD7JTFzR8CQFA1BQ==;
+	References:List-Owner; bh=9kVnTfvNDaUDYU+MnxEIjHCyA4Kd8HCWZC00fm6GnA0=; b=suZ
+	eWkwI8ca8PPEj+QfszRmrjTa9jXgN8FghY4SUyK+SKwqFWo5KhrN0Lw/FKZseSlAlP+gUolu8Emct
+	2Ypbs3dN0F6LS+IXKQa0Qo8D3F7PeDBsFS/OKH+Bv4BAZA8U0kVk5ngBe7bfwbgJzxxxFy0uVv3Io
+	nl9hOgu8fRp9am0wCsBvlCWsUKOOq60rwgaQn/npf5K4k9sc8KHsmn5KLVZSIQXW2KU27/5pGa+nH
+	9rAac1aevxO9fTflCtQA8SS8VFPzlx8DJ/qnCVvI5eDmQ/9ISWDkd2Zk87REXQAzD0n0+MtFqZDSL
+	jA4JfYv726K0SEYh45swGbKSIz3B3Nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFGXW-000819-Sf; Tue, 01 Oct 2019 11:41:58 +0000
+	id 1iFGY0-00004r-K8; Tue, 01 Oct 2019 11:42:28 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFGWV-0007AG-8j
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 11:40:58 +0000
+ id 1iFGWa-0007GI-5K
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 11:41:01 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=wF9PhMGH+Lj8JE4h4I6EzLCX3sM3u3HxgVYZ38hhRes=; b=uba1xh6IxCh3
- mNCRfDNXG4p3kkva09171A1GXfohYxq+9sSRvGfn+542pH8dR2h9H0hjiJN07JU0+1aK/H5eihoAh
- aFQ7plk/mdhJk498J3sKpffCyYW0lx1XBGMIoyJHDoSSZWj7xhdl5tQuE+Chw1kHVHSnMhh6GO9Yj
- sXO4s=;
+ List-Archive; bh=YNsJV+ItOG8ETV3+VvS7k1U3tPURXjwDj/TDkFunmQw=; b=KnH+yQn7YDw6
+ bzcw9jmdMxQbfVD0USWM9LZrhR+t7dVf8IaraVA1i5qQER8c5n559CIFq0awmSozQ9pct0LsNwo8/
+ osgitovUdZxaFQbc1SbJH4RdQNsmrI3lXgaKqs3KWhBfB9FmqbkiONOxztgeiRIwU1COyvXS1s3t7
+ aYccY=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iFGWR-0004Ur-Ew; Tue, 01 Oct 2019 11:40:51 +0000
+ id 1iFGWS-0004VE-4z; Tue, 01 Oct 2019 11:40:52 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id DE1BD2742A30; Tue,  1 Oct 2019 12:40:50 +0100 (BST)
+ id 9B8C62742A30; Tue,  1 Oct 2019 12:40:51 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
-To: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Subject: Applied "ASoC: wm8994: Add support for setting MCLK clock rate" to
- the asoc tree
-In-Reply-To: <20190920130218.32690-4-s.nawrocki@samsung.com>
+To: Markus Elfring <elfring@users.sourceforge.net>
+Subject: Applied "ASoC: xlnx: Use devm_platform_ioremap_resource() in
+ xlnx_formatter_pcm_probe()" to the asoc tree
+In-Reply-To: <8f7cf483-6ab3-d00f-5606-863e9f5b31fc@web.de>
 X-Patchwork-Hint: ignore
-Message-Id: <20191001114050.DE1BD2742A30@ypsilon.sirena.org.uk>
-Date: Tue,  1 Oct 2019 12:40:50 +0100 (BST)
+Message-Id: <20191001114051.9B8C62742A30@ypsilon.sirena.org.uk>
+Date: Tue,  1 Oct 2019 12:40:51 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_044055_314635_114E22E5 
-X-CRM114-Status: GOOD (  17.64  )
+X-CRM114-CacheID: sfid-20191001_044100_241856_2F084D75 
+X-CRM114-Status: GOOD (  14.49  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -78,12 +78,14 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
- linux-samsung-soc@vger.kernel.org, ckeepax@opensource.cirrus.com,
- b.zolnierkie@samsung.com, sbkim73@samsung.com, patches@opensource.cirrus.com,
- lgirdwood@gmail.com, Krzysztof Kozlowski <krzk@kernel.org>, robh+dt@kernel.org,
- Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org,
- m.szyprowski@samsung.com
+Cc: Stephen Rothwell <sfr@canb.auug.org.au>, alsa-devel@alsa-project.org,
+ "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
+ LKML <linux-kernel@vger.kernel.org>, Takashi Iwai <tiwai@suse.com>,
+ kernel-janitors@vger.kernel.org, Liam Girdwood <lgirdwood@gmail.com>,
+ Maruthi Srinivas Bayyavarapu <maruthi.srinivas.bayyavarapu@xilinx.com>,
+ Jaroslav Kysela <perex@perex.cz>, Mark Brown <broonie@kernel.org>,
+ Stephen Boyd <swboyd@chromium.org>, Michal Simek <michal.simek@xilinx.com>,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -92,7 +94,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: wm8994: Add support for setting MCLK clock rate
+   ASoC: xlnx: Use devm_platform_ioremap_resource() in xlnx_formatter_pcm_probe()
 
 has been applied to the asoc tree at
 
@@ -117,165 +119,50 @@ to this mail.
 Thanks,
 Mark
 
-From 419e2f50833661cec15200d5ee7385daee733667 Mon Sep 17 00:00:00 2001
-From: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Date: Fri, 20 Sep 2019 15:02:12 +0200
-Subject: [PATCH] ASoC: wm8994: Add support for setting MCLK clock rate
+From 6cfb1cd60394c2d88c6868d147cf6882a9ca3b6c Mon Sep 17 00:00:00 2001
+From: Markus Elfring <elfring@users.sourceforge.net>
+Date: Thu, 19 Sep 2019 17:27:57 +0200
+Subject: [PATCH] ASoC: xlnx: Use devm_platform_ioremap_resource() in
+ xlnx_formatter_pcm_probe()
 
-Extend the set_sysclk() handler so we also set frequency of the MCLK1,
-MCLK2 clocks through clk API when those clocks are specified in DT.
+Simplify this function implementation by using a known wrapper function.
 
-Reviewed-by: Charles Keepax <ckeepax@opensource.cirrus.com>
-Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
-Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
-Link: https://lore.kernel.org/r/20190920130218.32690-4-s.nawrocki@samsung.com
+This issue was detected by using the Coccinelle software.
+
+Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
+Link: https://lore.kernel.org/r/8f7cf483-6ab3-d00f-5606-863e9f5b31fc@web.de
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/codecs/wm8994.c | 48 +++++++++++++++++++++++++++++++++++----
- sound/soc/codecs/wm8994.h | 10 +++++++-
- 2 files changed, 52 insertions(+), 6 deletions(-)
+ sound/soc/xilinx/xlnx_formatter_pcm.c | 9 +--------
+ 1 file changed, 1 insertion(+), 8 deletions(-)
 
-diff --git a/sound/soc/codecs/wm8994.c b/sound/soc/codecs/wm8994.c
-index c3d06e8bc54f..35fbaa0138bf 100644
---- a/sound/soc/codecs/wm8994.c
-+++ b/sound/soc/codecs/wm8994.c
-@@ -167,12 +167,12 @@ static int configure_aif_clock(struct snd_soc_component *component, int aif)
+diff --git a/sound/soc/xilinx/xlnx_formatter_pcm.c b/sound/soc/xilinx/xlnx_formatter_pcm.c
+index 48970efe7838..fb652e73abeb 100644
+--- a/sound/soc/xilinx/xlnx_formatter_pcm.c
++++ b/sound/soc/xilinx/xlnx_formatter_pcm.c
+@@ -564,7 +564,6 @@ static int xlnx_formatter_pcm_probe(struct platform_device *pdev)
+ 	int ret;
+ 	u32 val;
+ 	struct xlnx_pcm_drv_data *aud_drv_data;
+-	struct resource *res;
+ 	struct device *dev = &pdev->dev;
  
- 	switch (wm8994->sysclk[aif]) {
- 	case WM8994_SYSCLK_MCLK1:
--		rate = wm8994->mclk[0];
-+		rate = wm8994->mclk_rate[0];
- 		break;
+ 	aud_drv_data = devm_kzalloc(dev, sizeof(*aud_drv_data), GFP_KERNEL);
+@@ -584,13 +583,7 @@ static int xlnx_formatter_pcm_probe(struct platform_device *pdev)
+ 		return ret;
+ 	}
  
- 	case WM8994_SYSCLK_MCLK2:
- 		reg1 |= 0x8;
--		rate = wm8994->mclk[1];
-+		rate = wm8994->mclk_rate[1];
- 		break;
- 
- 	case WM8994_SYSCLK_FLL1:
-@@ -2367,12 +2367,29 @@ static int wm8994_set_fll(struct snd_soc_dai *dai, int id, int src,
- 	return _wm8994_set_fll(dai->component, id, src, freq_in, freq_out);
- }
- 
-+static int wm8994_set_mclk_rate(struct wm8994_priv *wm8994, unsigned int id,
-+				unsigned int *freq)
-+{
-+	int ret;
-+
-+	if (!wm8994->mclk[id].clk || *freq == wm8994->mclk_rate[id])
-+		return 0;
-+
-+	ret = clk_set_rate(wm8994->mclk[id].clk, *freq);
-+	if (ret < 0)
-+		return ret;
-+
-+	*freq = clk_get_rate(wm8994->mclk[id].clk);
-+
-+	return 0;
-+}
-+
- static int wm8994_set_dai_sysclk(struct snd_soc_dai *dai,
- 		int clk_id, unsigned int freq, int dir)
- {
- 	struct snd_soc_component *component = dai->component;
- 	struct wm8994_priv *wm8994 = snd_soc_component_get_drvdata(component);
--	int i;
-+	int ret, i;
- 
- 	switch (dai->id) {
- 	case 1:
-@@ -2387,7 +2404,12 @@ static int wm8994_set_dai_sysclk(struct snd_soc_dai *dai,
- 	switch (clk_id) {
- 	case WM8994_SYSCLK_MCLK1:
- 		wm8994->sysclk[dai->id - 1] = WM8994_SYSCLK_MCLK1;
--		wm8994->mclk[0] = freq;
-+
-+		ret = wm8994_set_mclk_rate(wm8994, dai->id - 1, &freq);
-+		if (ret < 0)
-+			return ret;
-+
-+		wm8994->mclk_rate[0] = freq;
- 		dev_dbg(dai->dev, "AIF%d using MCLK1 at %uHz\n",
- 			dai->id, freq);
- 		break;
-@@ -2395,7 +2417,12 @@ static int wm8994_set_dai_sysclk(struct snd_soc_dai *dai,
- 	case WM8994_SYSCLK_MCLK2:
- 		/* TODO: Set GPIO AF */
- 		wm8994->sysclk[dai->id - 1] = WM8994_SYSCLK_MCLK2;
--		wm8994->mclk[1] = freq;
-+
-+		ret = wm8994_set_mclk_rate(wm8994, dai->id - 1, &freq);
-+		if (ret < 0)
-+			return ret;
-+
-+		wm8994->mclk_rate[1] = freq;
- 		dev_dbg(dai->dev, "AIF%d using MCLK2 at %uHz\n",
- 			dai->id, freq);
- 		break;
-@@ -4447,6 +4474,7 @@ static const struct snd_soc_component_driver soc_component_dev_wm8994 = {
- static int wm8994_probe(struct platform_device *pdev)
- {
- 	struct wm8994_priv *wm8994;
-+	int ret;
- 
- 	wm8994 = devm_kzalloc(&pdev->dev, sizeof(struct wm8994_priv),
- 			      GFP_KERNEL);
-@@ -4458,6 +4486,16 @@ static int wm8994_probe(struct platform_device *pdev)
- 
- 	wm8994->wm8994 = dev_get_drvdata(pdev->dev.parent);
- 
-+	wm8994->mclk[WM8994_MCLK1].id = "MCLK1";
-+	wm8994->mclk[WM8994_MCLK2].id = "MCLK2";
-+
-+	ret = devm_clk_bulk_get_optional(pdev->dev.parent, ARRAY_SIZE(wm8994->mclk),
-+					 wm8994->mclk);
-+	if (ret < 0) {
-+		dev_err(&pdev->dev, "Failed to get clocks: %d\n", ret);
-+		return ret;
-+	}
-+
- 	pm_runtime_enable(&pdev->dev);
- 	pm_runtime_idle(&pdev->dev);
- 
-diff --git a/sound/soc/codecs/wm8994.h b/sound/soc/codecs/wm8994.h
-index 1d6f2abe1c11..41c4b126114d 100644
---- a/sound/soc/codecs/wm8994.h
-+++ b/sound/soc/codecs/wm8994.h
-@@ -6,6 +6,7 @@
- #ifndef _WM8994_H
- #define _WM8994_H
- 
-+#include <linux/clk.h>
- #include <sound/soc.h>
- #include <linux/firmware.h>
- #include <linux/completion.h>
-@@ -14,6 +15,12 @@
- 
- #include "wm_hubs.h"
- 
-+enum {
-+	WM8994_MCLK1,
-+	WM8994_MCLK2,
-+	WM8994_NUM_MCLK
-+};
-+
- /* Sources for AIF1/2 SYSCLK - use with set_dai_sysclk() */
- #define WM8994_SYSCLK_MCLK1 1
- #define WM8994_SYSCLK_MCLK2 2
-@@ -73,9 +80,10 @@ struct wm8994;
- struct wm8994_priv {
- 	struct wm_hubs_data hubs;
- 	struct wm8994 *wm8994;
-+	struct clk_bulk_data mclk[WM8994_NUM_MCLK];
- 	int sysclk[2];
- 	int sysclk_rate[2];
--	int mclk[2];
-+	int mclk_rate[2];
- 	int aifclk[2];
- 	int aifdiv[2];
- 	int channels[2];
+-	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	if (!res) {
+-		dev_err(dev, "audio formatter node:addr to resource failed\n");
+-		ret = -ENXIO;
+-		goto clk_err;
+-	}
+-	aud_drv_data->mmio = devm_ioremap_resource(dev, res);
++	aud_drv_data->mmio = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(aud_drv_data->mmio)) {
+ 		dev_err(dev, "audio formatter ioremap failed\n");
+ 		ret = PTR_ERR(aud_drv_data->mmio);
 -- 
 2.20.1
 
