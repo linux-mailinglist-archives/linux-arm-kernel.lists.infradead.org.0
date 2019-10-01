@@ -2,86 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAC1BC2C27
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 05:02:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E35B8C2C30
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 05:05:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vB4IDnbdKywoWpuudAC6P0qDuu4bhOf2JZeTvUP7y4M=; b=myWz0zi93c/UHP
-	0t3csr13Wmb68M9Y5LPUowUqVRgTrFLtvjrfDToLMgm1K8zjnETuPju38lXa2Ee2KPMnR0AxJTJ3E
-	T8D7BuBfsJq+rV039wZEuiC7xCnY7ol2FaDNmi5et17/rBpcc95AW7NzgAsHQdWL/sKZW5j5f9P+Q
-	WdvWLo2MgX2mRaomI+rOrfVOcypiot6kgGADre+3uvAEKFwVvQYx1rU8ORA+O540V4jvmZE8X/sOm
-	tPh5GOGUTAAVMLN+r6fDIl8zcYHofe3j5JdK/lxRLsYI2k/Ul6g7lba4IkJqnPf2VAsQRWvTbPmTM
-	/xRpiG5vF2WKcU192GJQ==;
+	List-Owner; bh=wFXnqftKUcXKjrKibDYD3TBw5ewbBVIo5uFW15TluWA=; b=IaIAPHsI4px1qC
+	aG0JXdcmYzS1/x3/ceO+fLh3HFHeZMOdXwTIiY/yEsvcalL7IM8lO7VrR3aZYHKAdcJ9yQtF4gzgD
+	mf9ByX3bFQ/VAYMOP8fSyJvbYUZ0c5UtNukOxWEePWxyc2pszg3FLMq/JVyyw56ew6u/wlnwUql1l
+	ktBE3NoMnTMAE4THHxGn7aDUcZHvbNIvdTsg25rEihJZfDNwKw7CnqI6ApOTfHFDdMmkTZkU5BHA2
+	ZHMyRiNeJPO3fhrMUDjqvBoa+Amyv7a62KKFFnKfi5r7SLfTbPEsf7dO4ODxHYETWObgeJUJhZBfW
+	qvNnyYy3ZBBI/OFT5Bww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iF8R1-0005UT-6v; Tue, 01 Oct 2019 03:02:43 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1iF8T7-0005ua-Bo; Tue, 01 Oct 2019 03:04:53 +0000
+Received: from gate2.alliedtelesis.co.nz ([2001:df5:b000:5::4])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iF8QY-00055X-Vc
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 03:02:17 +0000
-Received: by mail-qk1-x742.google.com with SMTP id h126so9790207qke.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 30 Sep 2019 20:02:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=NhU6yRd8rVi5W+b69famc3Wf+MRe5kZVRUYy3CZ04Qw=;
- b=j8TZ3XWt0rI+swgMAWG81IXe5bl3Mhp5Chfya22s00LvC2Qmaf21KWfpEq8VJ/MA8u
- iNhpL1/brVJ+WU5XJYYZLVgDbmD5roZeLEVCh3uhhAIB6Q7ldaHczGUfocR60s6gObys
- m1er4eyRCMglLPOygxeOlI4qFX7IKY66zuJwxiELQ/W3LoyKgzhnVXdJGqoQVZMXVAUC
- 9KZuZ4rvVUmmQRBfr7LB1410few7nJXjYhZZqwfeEapnyqWRbKVK0cWhG6As5U6voF8R
- WYq499oUGxyH2Wy8JFjNthb89vV4tpHC/CAcFD2ijFpq6FcNQRn521nsK+FRvOmPctmD
- uTsA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=NhU6yRd8rVi5W+b69famc3Wf+MRe5kZVRUYy3CZ04Qw=;
- b=knexIGMa/tyl0mEqS5rdRpW0yuzAVCcX3N1TvxBGszzREq44HP4/naBWL2AG0FT/27
- 1KEcFozGmGkK0bFL1YvKgdyoQtp8CUDPhgJwzAtI5eshAnb+49AnodDGhZkS97S+iMzB
- SKCK8EgpgR7EHiE49gzbGradcvxxFKGMXivOQ3S6lLtzxLuywwS4OMTr6fOXNpP9cFWE
- vQBfj9+d8w+an27whRbF5Gtwt4oVSTarheYahqHHJUCmH3Wi98qnipMqyKCTZ155B6LB
- CqTsuRoODwJx/zcEasVVYmQPFkoOI2mEHbj0ePA8ACUlOQbBXs451eiNJQ+MmgxGQiv4
- WaVA==
-X-Gm-Message-State: APjAAAXmaJDmYpC9geOMy0r3CRxM/sKkIa+mqaHPDvwR6Gnwuj9LpJ0E
- 1fMZH6uJLPfxWOTdB6kkz+6RBFezaeAguTkL1tT08A==
-X-Google-Smtp-Source: APXvYqyuGC+X6DqxkXQJnINPoHMvpwc54U1WbIB3aUskUWBOJyL6MJ7/tA34rkq9cIbagHqaomA+H0vqIGNs+aOtpFY=
-X-Received: by 2002:a37:d84:: with SMTP id 126mr3460614qkn.407.1569898930461; 
- Mon, 30 Sep 2019 20:02:10 -0700 (PDT)
+ id 1iF8Sw-0005tj-Cl
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 03:04:44 +0000
+Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id C9A0B891AC;
+ Tue,  1 Oct 2019 16:04:37 +1300 (NZDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
+ s=mail181024; t=1569899077;
+ bh=6Ps8c2mwMYs63gM+juMo2bF9nGCmlv/Bhb3Rap1Be20=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To;
+ b=g7Kb8urqcsSwRVSLn6snIAYWTH9UxmhXtG9vyE3PE6b2bHPqOJeXzBFnWlbuMLm2V
+ HFIPoxUGxDmJI47iL72GqBSaZ6ivw7sTgL24PRAAqpMiqsQ5XCnKQgDXN9GNHnz68v
+ ZcbMKhmDazzfis2jYT2EqPNNyCpQEZb1Itq5ksmwZ5LiTlL9Atnu1z07+BT9Dsahza
+ 9SdXy3WAMVVYoOCBugXsjJ6GTX+thnBjRY637m0iHFBYGNi2BxQAcntO3RAoeOqnv+
+ lg1+xT+xjDEzjyEze7IxJtui+5Fx2KF7Nizz0LsKPll5SUzFGNrB531KpV2PcNPBmC
+ GhO6HgSRLsqUw==
+Received: from svr-chch-ex1.atlnz.lc (Not Verified[10.32.16.77]) by
+ mmarshal3.atlnz.lc with Trustwave SEG (v7, 5, 8, 10121)
+ id <B5d92c2460000>; Tue, 01 Oct 2019 16:04:38 +1300
+Received: from svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8::77) by
+ svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8::77) with Microsoft SMTP Server
+ (TLS) id 15.0.1156.6; Tue, 1 Oct 2019 16:04:37 +1300
+Received: from svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8]) by
+ svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8%12]) with mapi id
+ 15.00.1156.000; Tue, 1 Oct 2019 16:04:37 +1300
+From: Chris Packham <Chris.Packham@alliedtelesis.co.nz>
+To: "rayagonda.kokatanur@broadcom.com" <rayagonda.kokatanur@broadcom.com>,
+ "bcm-kernel-feedback-list@broadcom.com"
+ <bcm-kernel-feedback-list@broadcom.com>, "f.fainelli@gmail.com"
+ <f.fainelli@gmail.com>, "li.jin@broadcom.com" <li.jin@broadcom.com>,
+ "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ "sbranden@broadcom.com" <sbranden@broadcom.com>, "rjui@broadcom.com"
+ <rjui@broadcom.com>
+Subject: Re: Problem sharing interrupts between gpioa and uart0 on Broadcom
+ Hurricane 2 (iProc)
+Thread-Topic: Problem sharing interrupts between gpioa and uart0 on Broadcom
+ Hurricane 2 (iProc)
+Thread-Index: AQHVeAChr1G1lS1DPESIPAb5KujH5KdEPSUAgAAC1QA=
+Date: Tue, 1 Oct 2019 03:04:36 +0000
+Message-ID: <f3a243b1f22cf29075467d236610dbd2e7a20e55.camel@alliedtelesis.co.nz>
+References: <32c3d1dfe61a656e3250438d887e5ba91bd880d0.camel@alliedtelesis.co.nz>
+ <d72a965a-e4e1-ba5d-cd62-b31939e75e44@gmail.com>
+In-Reply-To: <d72a965a-e4e1-ba5d-cd62-b31939e75e44@gmail.com>
+Accept-Language: en-NZ, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [2001:df5:b000:22:11c:6830:fcb5:dc24]
+Content-ID: <9ED249CD8C3C5A4AA80456A8123D76C6@atlnz.lc>
 MIME-Version: 1.0
-References: <20190927034338.15813-1-walter-zh.wu@mediatek.com>
- <CACT4Y+Zxz+R=qQxSMoipXoLjRqyApD3O0eYpK0nyrfGHE4NNPw@mail.gmail.com>
- <1569594142.9045.24.camel@mtksdccf07>
- <CACT4Y+YuAxhKtL7ho7jpVAPkjG-JcGyczMXmw8qae2iaZjTh_w@mail.gmail.com>
- <1569818173.17361.19.camel@mtksdccf07>
- <a3a5e118-e6da-8d6d-5073-931653fa2808@free.fr>
- <1569897400.17361.27.camel@mtksdccf07>
-In-Reply-To: <1569897400.17361.27.camel@mtksdccf07>
-From: Dmitry Vyukov <dvyukov@google.com>
-Date: Tue, 1 Oct 2019 05:01:58 +0200
-Message-ID: <CACT4Y+b3NPemYwJJsD_oC0vde5Ybz1qDNWb=cFu2HpOTMrGSnQ@mail.gmail.com>
-Subject: Re: [PATCH] kasan: fix the missing underflow in memmove and memcpy
- with CONFIG_KASAN_GENERIC=y
-To: Walter Wu <walter-zh.wu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_200215_029897_534FAB03 
-X-CRM114-Status: GOOD (  19.31  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190930_200442_987407_4F46DC4C 
+X-CRM114-Status: GOOD (  25.40  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -90,8 +92,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,104 +103,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Gonzalez <marc.w.gonzalez@free.fr>,
- LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
- Alexander Potapenko <glider@google.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 1, 2019 at 4:36 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
->
-> On Mon, 2019-09-30 at 10:57 +0200, Marc Gonzalez wrote:
-> > On 30/09/2019 06:36, Walter Wu wrote:
-> >
-> > >  bool check_memory_region(unsigned long addr, size_t size, bool write,
-> > >                                 unsigned long ret_ip)
-> > >  {
-> > > +       if (long(size) < 0) {
-> > > +               kasan_report_invalid_size(src, dest, len, _RET_IP_);
-> > > +               return false;
-> > > +       }
-> > > +
-> > >         return check_memory_region_inline(addr, size, write, ret_ip);
-> > >  }
-> >
-> > Is it expected that memcpy/memmove may sometimes (incorrectly) be passed
-> > a negative value? (It would indeed turn up as a "large" size_t)
-> >
-> > IMO, casting to long is suspicious.
-> >
-> > There seem to be some two implicit assumptions.
-> >
-> > 1) size >= ULONG_MAX/2 is invalid input
-> > 2) casting a size >= ULONG_MAX/2 to long yields a negative value
-> >
-> > 1) seems reasonable because we can't copy more than half of memory to
-> > the other half of memory. I suppose the constraint could be even tighter,
-> > but it's not clear where to draw the line, especially when considering
-> > 32b vs 64b arches.
-> >
-> > 2) is implementation-defined, and gcc works "as expected" (clang too
-> > probably) https://gcc.gnu.org/onlinedocs/gcc/Integers-implementation.html
-> >
-> > A comment might be warranted to explain the rationale.
-> > Regards.
->
-> Thanks for your suggestion.
-> Yes, It is passed a negative value issue in memcpy/memmove/memset.
-> Our current idea should be assumption 1 and only consider 64b arch,
-> because KASAN only supports 64b. In fact, we really can't use so much
-> memory in 64b arch. so assumption 1 make sense.
+Hi Florian,
 
-Note there are arm KASAN patches floating around, so we should not
-make assumptions about 64-bit arch.
+On Mon, 2019-09-30 at 19:54 -0700, Florian Fainelli wrote:
+> 
+> On 9/30/2019 7:33 PM, Chris Packham wrote:
+> > Hi,
+> > 
+> > We have a platform using the BCM53344 integrated switch/CPU. This is
+> > part of the Hurricane 2 (technically Wolfhound) family of devices.
+> > 
+> > Currently we're using pieces of Broadcom's "iProc" SDK based on an out
+> > of date kernel and we'd very much like to be running as close to
+> > upstream as possible. The fact that the Ubiquiti UniFi Switch 8 is
+> > upstream gives me some hope.
+> 
+> FYI, I could not get enough information from the iProc SDK to port (or
+> not) the clock driver, so if nothing else, that is an area that may
+> require immediate work (though sometimes fixed-clocks would do just fine).
 
-But there seems to be a number of such casts already:
+Setting a fixed clock seems to work for me. At least for now.
 
-$ find -name "*.c" -exec egrep "\(long\).* < 0" {} \; -print
-    } else if ((long) delta < 0) {
-./kernel/time/timer.c
-    if ((long)state < 0)
-./drivers/thermal/thermal_sysfs.c
-    if ((long)delay < 0)
-./drivers/infiniband/core/addr.c
-    if ((long)tmo < 0)
-./drivers/net/wireless/st/cw1200/pm.c
-    if (pos < 0 || (long) pos != pos || (ssize_t) count < 0)
-./sound/core/info.c
-        if ((long)hwrpb->sys_type < 0) {
-./arch/alpha/kernel/setup.c
-    if ((long)m->driver_data < 0)
-./arch/x86/kernel/apic/apic.c
-            if ((long) size < 0L)
-    if ((long)addr < 0L) {
-./arch/sparc/mm/init_64.c
-    if ((long)lpid < 0)
-./arch/powerpc/kvm/book3s_hv.c
-            if ((long)regs->regs[insn.mm_i_format.rs] < 0)
-            if ((long)regs->regs[insn.i_format.rs] < 0) {
-            if ((long)regs->regs[insn.i_format.rs] < 0) {
-./arch/mips/kernel/branch.c
-            if ((long)arch->gprs[insn.i_format.rs] < 0)
-            if ((long)arch->gprs[insn.i_format.rs] < 0)
-./arch/mips/kvm/emulate.c
-            if ((long)regs->regs[insn.i_format.rs] < 0)
-./arch/mips/math-emu/cp1emu.c
-        if ((int32_t)(long)prom_vec < 0) {
-./arch/mips/sibyte/common/cfe.c
-    if (msgsz > ns->msg_ctlmax || (long) msgsz < 0 || msqid < 0)
-    if (msqid < 0 || (long) bufsz < 0)
-./ipc/msg.c
-    if ((long)x < 0)
-./mm/page-writeback.c
-    if ((long)(next - val) < 0) {
-./mm/memcontrol.c
+> 
+> > 
+> > My current problem is the fact that the uart0 interrupt is shared with
+> > the Chip Common A gpio block. When I have and interrupt node on the
+> > gpio in the device tree I get an init exit at startup. If I remove the
+> > interrupt node the system will boot (except I don't get cascaded
+> > interrupts from the GPIOs).
+> > 
+> > Looking at the pinctrl-nsp-gpio.c it looks as though I might be able to
+> > make this work if I can convince the gpio code to return IRQ_HANDLED or
+> > IRQ_NONE but I'm struggling against the fact that the pinctrl-iproc-
+> > gpio.c defers it's interrupt handing to the gpio core.
+> 
+> Not sure I follow you here, what part is being handed to gpiolib? The
+> top interrupt handler under nsp_gpio_irq_handler() will try to do
+> exactly as you described. In fact, there are other iProc designs where
+> "gpio-a" and another interrupt, arch/arm/boot/dts/bcm-nsp.dtsi is one
+> such example and I never had problems with that part of NSP.
+> 
 
+nsp_gpio_probe() creates the irq domain directly and
+nsp_gpio_irq_handler() directly deals with sharing by returning
+IRQ_HANDLED or IRQ_NONE depending on whether it has a bit set.
+
+iproc_gpio_probe() on the sets iproc_gpio_irq_handler() as the
+parent_handler and defers to gpiolib to deal with the irq domain etc.
+
+I'm currently assuming this is why I can't have uart0 and gpio
+interrupts. But of course I could be completely wrong.
+
+> > 
+> > Is there any way I can get the gpio core to deal with the shared
+> > interrupt?
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
