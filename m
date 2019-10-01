@@ -2,61 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47A91C2F54
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 10:55:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6349C2F62
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 10:56:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xy58vScJSWMhSpWYamuN2NKUYHpu2rdxemaox3gjGew=; b=JN0aWKE7yd1efJ
-	02ieUl1FUBajq3tneBJuF5wNuWaj4JsIWGE4N3B5/Esrye1ctuAMnkqCX2bBIqQTxOjZ1DdCwe8Pr
-	W9WU5mDzIZrd/0GgBamJgyzlS3vwRdkICS0CHT3A+HBDMjRaBB0kagGdjLUDJvJ1IOVmZu7sS4clD
-	UCUTSWAs7H0W+fYpXFkOLYqUMkotMAXWC6jOJclMvWviaaXlwsYCHp4AjpcZjVMYHkzdsODuYAFcb
-	12XBJzHmHsb3qoZ8AgyxbOt2SBM2k4IGSVv2N1qnGuNuM/wa5f7l8MC4myQnOMtNOFK127Ff0ILaR
-	JKWvosX2Dxb6sP+JFIQw==;
+	List-Owner; bh=Hzz3pot/3lv2fruqk5qrCtsBSaJyeXBHQbKcqtW8Lek=; b=VwznUT5Rwnjv+5
+	pK995ZCa+VJtW4/ELt7oED5jMAtA86h7lQVK79Yro9hVei9LAhgoWN5+kv8mYuoCdOxWmwHQibQVL
+	z9XGWKB8aU1KCRBNwOuGdGrYWepRnbM4vn/+T3xB6JknvjtJdqt00YMScE7saGfCBAUOAylbulfcn
+	bSZhG3QKHlAr6Byx6obgWXRbffoWHiWv++lY47CixT8IZ30s5T1TfCjarIdORXMuFCqgtz8nSLOCp
+	UnNpUXHzeZs0ljJG11nOy0Lk8N0jyj0dAhswZ73bKeNBl/gbKLt2/5/f9n0GOf7LrSMaC4T7zLIFl
+	vHDmDoXNUAEcOYECUUNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFDvx-00012i-F1; Tue, 01 Oct 2019 08:55:01 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iFDxf-0002cK-Dh; Tue, 01 Oct 2019 08:56:47 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFDvp-00012M-T5
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 08:54:55 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D4E4F2133F;
- Tue,  1 Oct 2019 08:54:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569920093;
- bh=szecxbNIyt9fQKdI3mGXWWqH6xc6Il8EeHjy2q22MmE=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=Dw4H4ZgGHfx/ZI6u+yBi43GwHZD0pDN+dtBIoa/0toBp0bJaCpdYHjNkGLCFAI9sf
- p885axzz4B5SVa572ab3PX675xVLqnNifp3CrsKEnCpiFERdRAknYwkpPY5g2i7kq1
- M36qcriDMmumSxbNIUz0jbiLSTvWluo3nA59W9Xg=
-Date: Tue, 1 Oct 2019 09:54:46 +0100
-From: Jonathan Cameron <jic23@kernel.org>
-To: Marco Felsch <m.felsch@pengutronix.de>
-Subject: Re: [PATCH] iio: adc: imx25-gcq: Variable could be uninitialized if
- regmap_read() fails
-Message-ID: <20191001095446.17bc9cd8@archlinux>
-In-Reply-To: <20190930074412.up4k6zdus4y7u4xb@pengutronix.de>
-References: <20190928002852.28329-1-yzhai003@ucr.edu>
- <20190930074412.up4k6zdus4y7u4xb@pengutronix.de>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1iFDxV-0002bu-PX
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 08:56:39 +0000
+Received: by mail-wr1-x444.google.com with SMTP id h7so14448733wrw.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 01 Oct 2019 01:56:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=rveAeMH6nUFyX5FAstmiBHjqBY6vb+FrCceaPqrZxk4=;
+ b=y+iE/NUt/TozRmqNM2IRjQjT0A9MNjIyxcU4CVljJRq18FbRdjN6KbsQwjS0n9JXir
+ XYoB9mrKTgiurrdZaubQnqtQmwVpJsDB+YUHfJmH+LmFrZ8QFtifXmroC4+isLCfUQWS
+ 6LPYIl+EOEFSuBE0cYDZkpDOBdZa3L1QtyOLb9/juFyIgwjRZJWKvAhcwSsLwWw8ErLF
+ idbV3P9PujoXG8LnEzDPWPwCjRTAiUXJPNBhzXlCBx1XmBi0t2uV2nSRXRCYsrH1PnSB
+ Cb6dCg/3UoHlwyIKbciCosAVBQemhPQVTmHNbIGOvo6WsH3WY5dRcgtl+btGFHPDjbiS
+ KtzA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=rveAeMH6nUFyX5FAstmiBHjqBY6vb+FrCceaPqrZxk4=;
+ b=NSGRZywCo0DYiuqzxmSBLUtiyb5l+41TxWQOd7Er3Df8g+t4L/Oy3TyHj8A49hooZP
+ qiVlt+GxnvrqmADbFn7TWVn7XRpIXFp4O380gSQuOFzyAjFtKa3xljU6bsGXycVVscVM
+ ze4oW7L6Z6iADdaehWpq9+09m/xcgsfhSnFqr+CWC4Qk835BHXH2w7J+/ExGbl1jYiD7
+ 6uhLUQy19KVD7+P3wxhvMgGUIShLfW4LqmHCBMAUClkCvfYU7AvvzmB/iGm0wY08SPd5
+ m07KQ67Cvqfz97K8scoe3ElvZgyEana1roU0fSS2g0JrPNNUvFZLlX83l1hpl028mI3y
+ 2mjA==
+X-Gm-Message-State: APjAAAWb1REsCyx8587vmSqfFKK9bvXUlcGM1V3K9lE/u5EG+c8Y9EBU
+ k5lNuNLPE6dXRctAU4z7X4whwWcvrcyXPKQR7E8ULw==
+X-Google-Smtp-Source: APXvYqyiIxZQ9hatqsRWZAC4sogQuwH4+ap5++pQOwScsiA/n19BN11oN8HPJfsRAP9IkQMd1fMra26mUgXSffr9SPk=
+X-Received: by 2002:adf:f406:: with SMTP id g6mr16011124wro.325.1569920195413; 
+ Tue, 01 Oct 2019 01:56:35 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190925161255.1871-1-ard.biesheuvel@linaro.org>
+ <CAHmME9oDhnv7aX77oEERof0TGihk4mDe9B_A3AntaTTVsg9aoA@mail.gmail.com>
+ <CAKv+Gu-RLRhwDahgvfvr2J9R+3GPM6vh4mjO73VcekusdzbuMA@mail.gmail.com>
+ <CAHmME9rKFUvsQ6hhsKjxxVSnyNQsTaqBKGABoHibCiCBmfxCOA@mail.gmail.com>
+ <CALCETrUrbSGNfo=g=PS4=t1zzXqGAHSs5oUL46LwMgu+2aVh1Q@mail.gmail.com>
+ <CAHmME9pgrCY4MHcJ0Or+-5h+k3fWCjrbY50sUjNY4TdfeyBFxg@mail.gmail.com>
+In-Reply-To: <CAHmME9pgrCY4MHcJ0Or+-5h+k3fWCjrbY50sUjNY4TdfeyBFxg@mail.gmail.com>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Tue, 1 Oct 2019 10:56:23 +0200
+Message-ID: <CAKv+Gu95AT7HQGYbwzRK307axPO93zYuB7wsZb_-59TbycbPMA@mail.gmail.com>
+Subject: Re: [RFC PATCH 00/18] crypto: wireguard using the existing crypto API
+To: "Jason A. Donenfeld" <Jason@zx2c4.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_015453_979935_5539701E 
-X-CRM114-Status: GOOD (  24.78  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191001_015637_843590_5F5351D3 
+X-CRM114-Status: GOOD (  19.98  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -66,7 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,103 +95,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: csong@cs.ucr.edu, Kate Stewart <kstewart@linuxfoundation.org>,
- Lars-Peter Clausen <lars@metafoo.de>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, linux-iio@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, zhiyunq@cs.ucr.edu,
- linux-kernel@vger.kernel.org, Fabio Estevam <festevam@gmail.com>,
- Yizhuo <yzhai003@ucr.edu>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Hartmut Knaack <knaack.h@gmx.de>, Shawn Guo <shawnguo@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, Enrico Weigelt <info@metux.net>,
- Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
+ Eric Biggers <ebiggers@google.com>, Greg KH <gregkh@linuxfoundation.org>,
+ Samuel Neves <sneves@dei.uc.pt>, Will Deacon <will@kernel.org>,
+ Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
+ Andy Lutomirski <luto@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Dan Carpenter <dan.carpenter@oracle.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ David Miller <davem@davemloft.net>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 30 Sep 2019 09:44:12 +0200
-Marco Felsch <m.felsch@pengutronix.de> wrote:
+On Fri, 27 Sep 2019 at 09:21, Jason A. Donenfeld <Jason@zx2c4.com> wrote:
+>
+> Hey Andy,
+>
+> Thanks for weighing in.
+>
+> > inlining.  I'd be surprised for chacha20.  If you really want inlining
+> > to dictate the overall design, I think you need some real numbers for
+> > why it's necessary.  There also needs to be a clear story for how
+> > exactly making everything inline plays with the actual decision of
+> > which implementation to use.
+>
+> Take a look at my description for the MIPS case: when on MIPS, the
+> arch code is *always* used since it's just straight up scalar
+> assembly. In this case, the chacha20_arch function *never* returns
+> false [1], which means it's always included [2], so the generic
+> implementation gets optimized out, saving disk and memory, which I
+> assume MIPS people care about.
+>
+> [1] https://git.kernel.org/pub/scm/linux/kernel/git/zx2c4/linux.git/tree/lib/zinc/chacha20/chacha20-mips-glue.c?h=jd/wireguard#n13
+> [2] https://git.kernel.org/pub/scm/linux/kernel/git/zx2c4/linux.git/tree/lib/zinc/chacha20/chacha20.c?h=jd/wireguard#n118
+>
+> I'm fine with considering this a form of "premature optimization",
+> though, and ditching the motivation there.
+>
+> On Thu, Sep 26, 2019 at 11:37 PM Andy Lutomirski <luto@kernel.org> wrote:
+> > My suggestion from way back, which is at
+> > least a good deal of the way toward being doable, is to do static
+> > calls.  This means that the common code will call out to the arch code
+> > via a regular CALL instruction and will *not* inline the arch code.
+> > This means that the arch code could live in its own module, it can be
+> > selected at boot time, etc.
+>
+> Alright, let's do static calls, then, to deal with the case of going
+> from the entry point implementation in lib/zinc (or lib/crypto, if you
+> want, Ard) to the arch-specific implementation in arch/${ARCH}/crypto.
+> And then within each arch, we can keep it simple, since everything is
+> already in the same directory.
+>
+> Sound good?
+>
 
-> Hi Yizhuo,
-> 
-> thanks for your patch.
-> 
-> On 19-09-27 17:28, Yizhuo wrote:
-> > In function mx25_gcq_irq(), local variable "stats" could
-> > be uninitialized if function regmap_read() returns -EINVAL.
-> > However, this value is used in if statement, which is
-> > potentially unsafe. The same case applied to the variable
-> > "data" in function mx25_gcq_get_raw_value() in the same file.  
-> 
-> IMHO the commit header should be something like: "iio: adc: imx25-gcq:
-> fix uninitialized variable usage"...
-> 
-> and please add a fixes tag.
-As with the others, before adding a fixes tag, please verify there
-is an actual path to trigger this.
+Yup.
 
-In this case it's an mmio regmap with no clock. For those, I'm not sure
-if there is a failure path.
-
-Still a worthwhile hardening / cleanup patch, but shouldn't be called
-a fix or marked with a fixes tag because we don't want people to think
-it is necessary to backport it.
-
-Thanks,
-
-Jonathan
-
-
-> 
-> > 
-> > Signed-off-by: Yizhuo <yzhai003@ucr.edu>
-> > ---
-> >  drivers/iio/adc/fsl-imx25-gcq.c | 10 ++++++++--
-> >  1 file changed, 8 insertions(+), 2 deletions(-)
-> > 
-> > diff --git a/drivers/iio/adc/fsl-imx25-gcq.c b/drivers/iio/adc/fsl-imx25-gcq.c
-> > index df19ecae52f7..dbf3e8e85aba 100644
-> > --- a/drivers/iio/adc/fsl-imx25-gcq.c
-> > +++ b/drivers/iio/adc/fsl-imx25-gcq.c
-> > @@ -74,7 +74,10 @@ static irqreturn_t mx25_gcq_irq(int irq, void *data)
-> >  	struct mx25_gcq_priv *priv = data;
-> >  	u32 stats;
-> >  
-> > -	regmap_read(priv->regs, MX25_ADCQ_SR, &stats);
-> > +	int ret = regmap_read(priv->regs, MX25_ADCQ_SR, &stats);  
-> 
-> Please don't do this. First declare the variable and then use it.
-> 
-> Regards,
->   Marco
-> 
-> > +
-> > +	if (ret)
-> > +		return ret;
-> >  
-> >  	if (stats & MX25_ADCQ_SR_EOQ) {
-> >  		regmap_update_bits(priv->regs, MX25_ADCQ_MR,
-> > @@ -121,7 +124,10 @@ static int mx25_gcq_get_raw_value(struct device *dev,
-> >  		return -ETIMEDOUT;
-> >  	}
-> >  
-> > -	regmap_read(priv->regs, MX25_ADCQ_FIFO, &data);
-> > +	int ret = regmap_read(priv->regs, MX25_ADCQ_FIFO, &data);
-> > +
-> > +	if (ret)
-> > +		return ret;
-> >  
-> >  	*val = MX25_ADCQ_FIFO_DATA(data);
-> >  
-> > -- 
-> > 2.17.1
-> > 
-> > 
-> >   
-> 
-
+I posted something to this effect - I am ironing out some wrinkles
+doing randconfig builds (with Arnd's help) but the general picture
+shouldn't change.
 
 _______________________________________________
 linux-arm-kernel mailing list
