@@ -2,64 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D6C4C2CF0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 07:33:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E0FAC2D62
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 08:18:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U3EGtod9t4H+HsAxUPuRQcAJYBsbqNVum0MEosJXZ34=; b=nqPPCigLnMyomt
-	DaFtuftSo6Hd0SPTxJyvptr1bVo2OL0RyYkp/cg6LtCVBQ8FTqFB2tElCve4+1/xddi/u0vXKYvjU
-	71C/LI6cSw+myME8gbL8TcXZVhpE8Gd7DhMnTmoCk9U5koUbGSeXtRZAPdji1U4mxq59bN3eZYrdj
-	+u5vcjNnaBMMJrpDUcuqYsbkSC/q6r/LsrLF+3Y1ms6i1QYhag8ZZ8WwTybC1VvogAwOB6PqvIRYi
-	oo5z3udkgPuchVkyEMfz9JKGykOh2PWbQ/Az7GoIiL5U1ndT/AbMd3ZbXfKL8K9uCbysManYRJQN0
-	6dEv+Zq8YoS/RjEBwsfQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PS+XqiVzAsLKPQi7V6YmLhA6qdDdFtpqArxKR7TSCkg=; b=NsQBu/Aw8/g7Zw
+	APf/1+OO47bNqV3U7iiBkxXygBaZfdItKB+oVPSyFTS+1VMOcyYT3pC7DxHOjEDCFfZ0Ks64L+GJO
+	LFSzehz9GvG1/7+Y0BsZOX9vzg7XP682ns+REbtW2go6HSu1ubvzsN2P6JITK4cSs6lqS8x/GdRRz
+	EmSpkEabklimPjP1Zy+hwT5g7esmpG+sIgIU+BwryTp7lZCU8yt1HuxCLb/fZJcMeMoH1HAfrbRhU
+	aiWci+ki9Zb7ao+MQBS9at8W9dJabjCEYwx45YEELbdGZpCvmoF4FbYJskrP6m1AZZcz3hTCtHHJ/
+	7HwSSNro0UrdrD9a64dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFAn1-0001b3-SC; Tue, 01 Oct 2019 05:33:35 +0000
-Received: from mailoutvs14.siol.net ([185.57.226.205] helo=mail.siol.net)
+	id 1iFBUg-0001zF-Fa; Tue, 01 Oct 2019 06:18:42 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFAms-0001Zy-2a
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 05:33:28 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 01FBE5214A7;
- Tue,  1 Oct 2019 07:33:19 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at psrvmta10.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta10.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id C3Ar8QFXxW9r; Tue,  1 Oct 2019 07:33:19 +0200 (CEST)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 4E5C25214C3;
- Tue,  1 Oct 2019 07:33:19 +0200 (CEST)
-Received: from jernej-laptop.localnet (cpe-86-58-59-25.static.triera.net
- [86.58.59.25]) (Authenticated sender: jernej.skrabec@siol.net)
- by mail.siol.net (Postfix) with ESMTPA id E624C5214A7;
- Tue,  1 Oct 2019 07:33:17 +0200 (CEST)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
-To: Hans Verkuil <hverkuil-cisco@xs4all.nl>
-Subject: Re: [PATCH v2 0/6] media: cedrus: h264: Support multi-slice frames
-Date: Tue, 01 Oct 2019 07:33:17 +0200
-Message-ID: <1947541.RCUY4WSgCv@jernej-laptop>
-In-Reply-To: <eb127b9a-e226-d230-67b5-069795bd76fb@xs4all.nl>
-References: <20190929200023.215831-1-jernej.skrabec@siol.net>
- <4342181.Ehiz7mZe5m@jernej-laptop>
- <eb127b9a-e226-d230-67b5-069795bd76fb@xs4all.nl>
+ id 1iFBSk-0008Kz-Qb
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 06:16:49 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x916GKn4055655;
+ Tue, 1 Oct 2019 01:16:20 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1569910580;
+ bh=i+/cBuwEhu+kG72RDawA6zSZdhLrW0nih8sfzn+f6n8=;
+ h=From:To:CC:Subject:Date;
+ b=E5y1WjKsdtzTky4n4XedeGOQjMzWB653ATEultt8/SYRVG/iuI7h16tiW/L3jyaUX
+ oPhlZ+FnpKect5GlO6xeSqxRQKeFxLgY46smEyOlAsbjtKr4PSO14tBTPLl+mxmTwP
+ ZJX8wjI/yCQpt1EwQEIfe1sR4ToYfe24pTfiA/ks=
+Received: from DLEE101.ent.ti.com (dlee101.ent.ti.com [157.170.170.31])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x916GK55017804
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 1 Oct 2019 01:16:20 -0500
+Received: from DLEE108.ent.ti.com (157.170.170.38) by DLEE101.ent.ti.com
+ (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 1 Oct
+ 2019 01:16:10 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE108.ent.ti.com
+ (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Tue, 1 Oct 2019 01:16:10 -0500
+Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x916GGX5090310;
+ Tue, 1 Oct 2019 01:16:16 -0500
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+To: <vkoul@kernel.org>, <robh+dt@kernel.org>, <nm@ti.com>,
+ <ssantosh@kernel.org>
+Subject: [PATCH v3 00/14] dmaengine/soc: Add Texas Instruments UDMA support
+Date: Tue, 1 Oct 2019 09:16:50 +0300
+Message-ID: <20191001061704.2399-1-peter.ujfalusi@ti.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_223326_273176_9EB935E0 
-X-CRM114-Status: GOOD (  22.13  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190930_231642_964631_D274C5BF 
+X-CRM114-Status: GOOD (  25.95  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.205 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,105 +88,235 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, linux-media@vger.kernel.org, pawel@osciak.com,
- jonas@kwiboo.se, gregkh@linuxfoundation.org, wens@csie.org, mripard@kernel.org,
- tfiga@chromium.org, paul.kocialkowski@bootlin.com, kyungmin.park@samsung.com,
- boris.brezillon@collabora.com, linux-arm-kernel@lists.infradead.org,
- mchehab@kernel.org, ezequiel@collabora.com, linux-kernel@vger.kernel.org,
- m.szyprowski@samsung.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, grygorii.strashko@ti.com, lokeshvutla@ti.com,
+ j-keerthy@ti.com, linux-kernel@vger.kernel.org, t-kristo@ti.com,
+ tony@atomide.com, dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RG5lIHRvcmVrLCAwMS4gb2t0b2JlciAyMDE5IG9iIDAwOjQzOjM0IENFU1QgamUgSGFucyBWZXJr
-dWlsIG5hcGlzYWwoYSk6Cj4gT24gMTAvMS8xOSAxMjoyNyBBTSwgSmVybmVqIMWga3JhYmVjIHdy
-b3RlOgo+ID4gRG5lIHBvbmVkZWxqZWssIDMwLiBzZXB0ZW1iZXIgMjAxOSBvYiAxMDoxMDo0OCBD
-RVNUIGplIEhhbnMgVmVya3VpbAo+ID4gCj4gPiBuYXBpc2FsKGEpOgo+ID4+IE9uIDkvMjkvMTkg
-MTA6MDAgUE0sIEplcm5laiBTa3JhYmVjIHdyb3RlOgo+ID4+PiBUaGlzIHNlcmllcyBhZGRzIHN1
-cHBvcnQgZm9yIGRlY29kaW5nIG11bHRpLXNsaWNlIEgyNjQgZnJhbWVzIGFsb25nIHdpdGgKPiA+
-Pj4gc3VwcG9ydCBmb3IgVjRMMl9ERUNfQ01EX0ZMVVNIIGFuZCBWNEwyX0JVRl9GTEFHX00yTV9I
-T0xEX0NBUFRVUkVfQlVGLgo+ID4+PiAKPiA+Pj4gQ29kZSB3YXMgdGVzdGVkIGJ5IG1vZGlmaWVk
-IGZmbXBlZywgd2hpY2ggY2FuIGJlIGZvdW5kIGhlcmU6Cj4gPj4+IGh0dHBzOi8vZ2l0aHViLmNv
-bS9qZXJuZWpzay9GRm1wZWcsIGJyYW5jaCBtYWlubGluZS10ZXN0Cj4gPj4+IEl0IGhhcyB0byBi
-ZSBjb25maWd1cmVkIHdpdGggYXQgbGVhc3QgZm9sbG93aW5nIG9wdGlvbnM6Cj4gPj4+IC0tZW5h
-YmxlLXY0bDItcmVxdWVzdCAtLWVuYWJsZS1saWJ1ZGV2IC0tZW5hYmxlLWxpYmRybQo+ID4+PiAK
-PiA+Pj4gU2FtcGxlcyB1c2VkIGZvciB0ZXN0aW5nOgo+ID4+PiBodHRwOi8vamVybmVqLmxpYnJl
-ZWxlYy50di92aWRlb3MvaDI2NC9CQTFfRlRfQy5tcDQKPiA+Pj4gaHR0cDovL2plcm5lai5saWJy
-ZWVsZWMudHYvdmlkZW9zL2gyNjQvaDI2NC5tcDQKPiA+Pj4gCj4gPj4+IENvbW1hbmQgbGluZSB1
-c2VkIGZvciB0ZXN0aW5nOgo+ID4+PiBmZm1wZWcgLWh3YWNjZWwgZHJtIC1od2FjY2VsX2Rldmlj
-ZSAvZGV2L2RyaS9jYXJkMCAtaSBoMjY0Lm1wNCAtcGl4X2ZtdAo+ID4+PiBiZ3JhIC1mIGZiZGV2
-IC9kZXYvZmIwCj4gPj4+IAo+ID4+PiBQbGVhc2Ugbm90ZSB0aGF0IFY0TDJfREVDX0NNRF9GTFVT
-SCB3YXMgbm90IHRlc3RlZCBiZWNhdXNlIEknbQo+ID4+PiBub3Qgc3VyZSBob3cuIGZmbXBlZyBm
-b2xsb3dzIGV4YWN0bHkgd2hpY2ggc2xpY2UgaXMgbGFzdCBpbiBmcmFtZQo+ID4+PiBhbmQgc2V0
-cyBob2xkIGZsYWcgYWNjb3JkaW5nbHkuIEltcHJvcGVyIHVzYWdlIG9mIGhvbGQgZmxhZyB3b3Vs
-ZAo+ID4+PiBjb3JydXB0IGZmbXBlZyBhc3N1bXB0aW9ucyBhbmQgaXQgd291bGQgcHJvYmFibHkg
-Y3Jhc2guIEFueSBpZGVhcwo+ID4+PiBob3cgdG8gdGVzdCB0aGlzIGFyZSB3ZWxjb21lIQo+ID4+
-IAo+ID4+IEl0IGNhbiBiZSB0ZXN0ZWQgcGFydGlhbGx5IGF0IGxlYXN0OiBpZiBmZm1wZWcgdGVs
-bHMgeW91IGl0IGlzIHRoZSBsYXN0Cj4gPj4gc2xpY2UsIHRoZW4gcXVldWUgdGhlIHNsaWNlIHdp
-dGggdGhlIEhPTEQgZmxhZyBzZXQsIHRoZW4gY2FsbCBGTFVTSAo+ID4+IGFmdGVyd2FyZHMuIFRo
-aXMgc2hvdWxkIGNsZWFyIHRoZSBIT0xEIGZsYWcgYWdhaW4uIEluIHRoaXMgY2FzZSB0aGUKPiA+
-PiBxdWV1ZWQKPiA+PiBidWZmZXIgaXMgcHJvYmFibHkgbm90IHlldCBwcm9jZXNzZWQsIHNvIHRo
-ZSBmbGFnIGlzIGNsZWFyZWQgYmVmb3JlIHRoZQo+ID4+IGRlY29kZSBqb2Igc3RhcnRzLgo+ID4+
-IAo+ID4+IFlvdSBjYW4gYWxzbyB0cnkgdG8gYWRkIGEgc2xlZXAgYmVmb3JlIGNhbGxpbmcgRkxV
-U0ggdG8gc2VlIHdoYXQgaGFwcGVucwo+ID4+IGlmIHRoZSBsYXN0IHF1ZXVlZCBidWZmZXIgaXMg
-YWxyZWFkeSBkZWNvZGVkLgo+ID4gCj4gPiBPaywgSSB0cmllZCBmb2xsb3dpbmcgY29kZToKPiA+
-IGh0dHBzOi8vZ2l0aHViLmNvbS9qZXJuZWpzay9GRm1wZWcvYmxvYi9mbHVzaF90ZXN0L2xpYmF2
-Y29kZWMvCj4gPiB2NGwyX3JlcXVlc3QuYyNMMjIwLUwyMzMKPiA+IAo+ID4gQnV0IHJlc3VsdHMg
-YXJlIG5vdCBnb29kLiBJdCBzZWVtcyB0aGF0IG91dF92YiBpbiBmbHVzaCBjb21tYW5kIGlzIGFs
-d2F5cwo+ID4gTlVMTCBhbmQgc28gaXQgYWx3YXlzIG1hcmtzIGNhcHR1cmUgYnVmZmVyIGFzIGRv
-bmUsIHdoaWNoIGxlYWRzIHRvIGtlcm5lbAo+ID4gd2FybmluZ3MuCj4gPiAKPiA+IGRtZXNnIG91
-dHB1dCB3aXRoIGRlYnVnZ2luZyBtZXNzYWdlcyBpcyBoZXJlOiBodHRwOi8vaXguaW8vMUtzOAo+
-ID4gCj4gPiBDdXJyZW50bHkgSSdtIG5vdCBzdXJlIHdoYXQgaXMgZ29pbmcgb24uIFNob3VsZG4n
-dCBiZSBvdXRwdXQgYnVmZmVyIHF1ZXVlZAo+ID4gYW5kIHdhaXRpbmcgdG8gTUVESUFfUkVRVUVT
-VF9JT0NfUVVFVUUgd2hpY2ggaXMgZXhlY3V0ZWQgYWZ0ZXIgZmx1c2gKPiA+IGNvbW1hbmQgYXMg
-aXQgY2FuIGJlIHNlZW4gZnJvbSBmZm1wZWcgY29kZSBsaW5rZWQgYWJvdmU/Cj4gCj4gQXJnaCwg
-SSBmb3Jnb3QgYWJvdXQgdGhlIGZhY3QgdGhhdCB0aGlzIHVzZXMgcmVxdWVzdHMuCj4gCj4gVGhl
-IEZMVVNIIHNob3VsZCBoYXBwZW4gKmFmdGVyKiB0aGUgTUVESUFfUkVRVUVTVF9JT0NfUVVFVUUg
-aW9jdGwuIE90aGVyd2lzZQo+IGl0IGhhcyBubyBlZmZlY3QuIEFzIGxvbmcgYXMgdGhlIHJlcXVl
-c3QgaGFzbid0IGJlZW4gcXVldWVkLCB0aGUgYnVmZmVyIGlzCj4gYWxzbyBub3QgcXVldWVkIHRv
-IHRoZSBkcml2ZXIsIHNvIG91dF92YiB3aWxsIGluZGVlZCBiZSBOVUxMLgoKSXQncyBiZXR0ZXIs
-IGJ1dCBzdGlsbCBub3Qgd29ya2luZy4gQ3VycmVudGx5IGZmbXBlZyBzb21ldGltZXMgcmVwb3J0
-cyBzdWNoIAptZXNzYWdlczogaHR0cHM6Ly9wYXN0ZWJpbi5jb20vcmF3Lzl0VlZ0YzIwIFRoaXMg
-aXMgZG1lc2cgb3V0cHV0OiBodHRwOi8vCml4LmlvLzFMMUwKCkl0IHNlZW1zIHRvIG1lIGxpa2Ug
-YSByYWNlIGNvbmRpdGlvbi4gU29tZXRpbWVzIGZsdXNoIHdvcmtzIGFzIGluZGVuZGVudCBhbmQg
-CnNvbWV0aW1lcyBpdCBpbmZsdWVuY2VzIG5leHQgZnJhbWUuCgpCZXN0IHJlZ2FyZHMsCkplcm5q
-ZQoKPiAKPiBTb3JyeSBmb3IgdGhlIGNvbmZ1c2lvbi4KPiAKPiBSZWdhcmRzLAo+IAo+IAlIYW5z
-Cj4gCj4gPiBCZXN0IHJlZ2FyZHMsCj4gPiBKZXJuZWoKPiA+IAo+ID4+IFJlZ2FyZHMsCj4gPj4g
-Cj4gPj4gCUhhbnMKPiA+PiAJCj4gPj4+IFRoYW5rcyB0byBKb25hcyBmb3IgYWRqdXN0aW5nIGZm
-bXBlZy4KPiA+Pj4gCj4gPj4+IFBsZWFzZSBsZXQgbWUga25vdyB3aGF0IHlvdSB0aGluay4KPiA+
-Pj4gCj4gPj4+IEJlc3QgcmVnYXJkcywKPiA+Pj4gSmVybmVqCj4gPj4+IAo+ID4+PiBDaGFuZ2Vz
-IGZyb20gdjE6Cj4gPj4+IC0gYWRkZWQgUmIgdGFncwo+ID4+PiAtIHVwZGF0ZWQgVjRMMl9ERUNf
-Q01EX0ZMVVNIIGRvY3VtZW50YXRpb24KPiA+Pj4gLSB1cGRhdGVkIGZpcnN0IHNsaWNlIGRldGVj
-dGlvbiBpbiBDZWRydXMKPiA+Pj4gLSBob2xkIGNhcHR1cmUgYnVmZmVyIGZsYWcgaXMgc2V0IGFj
-Y29yZGluZyB0byBzb3VyY2UgZm9ybWF0Cj4gPj4+IC0gYWRkZWQgdjRsIG0ybSBzdGF0ZWxlc3Nf
-KHRyeV8pZGVjb2Rlcl9jbWQgaW9jdGwgaGVscGVycwo+ID4+PiAKPiA+Pj4gSGFucyBWZXJrdWls
-ICgyKToKPiA+Pj4gICB2YjI6IGFkZCBWNEwyX0JVRl9GTEFHX00yTV9IT0xEX0NBUFRVUkVfQlVG
-Cj4gPj4+ICAgdmlkZW9kZXYyLmg6IGFkZCBWNEwyX0RFQ19DTURfRkxVU0gKPiA+Pj4gCj4gPj4+
-IEplcm5laiBTa3JhYmVjICg0KToKPiA+Pj4gICBtZWRpYTogdjRsMi1tZW0ybWVtOiBhZGQgc3Rh
-dGVsZXNzXyh0cnlfKWRlY29kZXJfY21kIGlvY3RsIGhlbHBlcnMKPiA+Pj4gICBtZWRpYTogY2Vk
-cnVzOiBEZXRlY3QgZmlyc3Qgc2xpY2Ugb2YgYSBmcmFtZQo+ID4+PiAgIG1lZGlhOiBjZWRydXM6
-IGgyNjQ6IFN1cHBvcnQgbXVsdGlwbGUgc2xpY2VzIHBlciBmcmFtZQo+ID4+PiAgIG1lZGlhOiBj
-ZWRydXM6IEFkZCBzdXBwb3J0IGZvciBob2xkaW5nIGNhcHR1cmUgYnVmZmVyCj4gPj4+ICAKPiA+
-Pj4gIERvY3VtZW50YXRpb24vbWVkaWEvdWFwaS92NGwvYnVmZmVyLnJzdCAgICAgICB8IDEzICsr
-KysrKwo+ID4+PiAgLi4uL21lZGlhL3VhcGkvdjRsL3ZpZGlvYy1kZWNvZGVyLWNtZC5yc3QgICAg
-IHwgMTAgKysrLQo+ID4+PiAgLi4uL21lZGlhL3VhcGkvdjRsL3ZpZGlvYy1yZXFidWZzLnJzdCAg
-ICAgICAgIHwgIDYgKysrCj4gPj4+ICAuLi4vbWVkaWEvdmlkZW9kZXYyLmgucnN0LmV4Y2VwdGlv
-bnMgICAgICAgICAgfCAgMSArCj4gPj4+ICAuLi4vbWVkaWEvY29tbW9uL3ZpZGVvYnVmMi92aWRl
-b2J1ZjItdjRsMi5jICAgfCAgOCArKystCj4gPj4+ICBkcml2ZXJzL21lZGlhL3Y0bDItY29yZS92
-NGwyLW1lbTJtZW0uYyAgICAgICAgfCAzNSArKysrKysrKysrKysrKwo+ID4+PiAgZHJpdmVycy9z
-dGFnaW5nL21lZGlhL3N1bnhpL2NlZHJ1cy9jZWRydXMuaCAgIHwgIDEgKwo+ID4+PiAgLi4uL3N0
-YWdpbmcvbWVkaWEvc3VueGkvY2VkcnVzL2NlZHJ1c19kZWMuYyAgIHwgMTEgKysrKysKPiA+Pj4g
-IC4uLi9zdGFnaW5nL21lZGlhL3N1bnhpL2NlZHJ1cy9jZWRydXNfaDI2NC5jICB8IDExICsrKyst
-Cj4gPj4+ICAuLi4vc3RhZ2luZy9tZWRpYS9zdW54aS9jZWRydXMvY2VkcnVzX2h3LmMgICAgfCAg
-OCArKy0tCj4gPj4+ICAuLi4vc3RhZ2luZy9tZWRpYS9zdW54aS9jZWRydXMvY2VkcnVzX3ZpZGVv
-LmMgfCAxNCArKysrKysKPiA+Pj4gIGluY2x1ZGUvbWVkaWEvdjRsMi1tZW0ybWVtLmggICAgICAg
-ICAgICAgICAgICB8IDQ2ICsrKysrKysrKysrKysrKysrKysKPiA+Pj4gIGluY2x1ZGUvbWVkaWEv
-dmlkZW9idWYyLWNvcmUuaCAgICAgICAgICAgICAgICB8ICAzICsrCj4gPj4+ICBpbmNsdWRlL21l
-ZGlhL3ZpZGVvYnVmMi12NGwyLmggICAgICAgICAgICAgICAgfCAgNSArKwo+ID4+PiAgaW5jbHVk
-ZS91YXBpL2xpbnV4L3ZpZGVvZGV2Mi5oICAgICAgICAgICAgICAgIHwgMTQgKysrKy0tCj4gPj4+
-ICAxNSBmaWxlcyBjaGFuZ2VkLCAxNzUgaW5zZXJ0aW9ucygrKSwgMTEgZGVsZXRpb25zKC0pCgoK
-CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
-YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
-LWtlcm5lbAo=
+Hi,
+
+Changes since v2
+)https://patchwork.kernel.org/project/linux-dmaengine/list/?series=152609&state=*)
+- Based on 5.4-rc1
+- Support for Flow only data transfer for the glue layer
+
+- cppi5 header
+ - comments converted to kernel-doc style
+ - Remove the excessive WARN_ONs and rely on the user for sanity
+ - new macro for checking TearDown Completion Message
+
+- ring accelerator driver
+ - fixed up th commit message (SoB, TI-SCI)
+ - fixed ring reset
+ - CONFIG_TI_K3_RINGACC_DEBUG is removed along with the dbg_write/read functions
+   and use dev_dbg()
+ - k3_ringacc_ring_dump() is moved to static
+ - step numbering removed from k3_ringacc_ring_reset_dma()
+ - Add clarification comment for shared ring usage in k3_ringacc_ring_cfg()
+ - Magic shift values in k3_ringacc_ring_cfg_proxy() got defined
+ - K3_RINGACC_RING_MODE_QM is removed as it is not supported
+
+- UDMAP DT bindings
+ - Fix property prefixing: s/pdma,/ti,pdma-
+ - Add ti,notdpkt property to suppress teardown completion message on tchan
+ - example updated accordingly
+
+- UDMAP DMAengine driver
+ - Change __raw_readl/writel to readl/writel
+ - Split up the udma_tisci_channel_config() into m2m, tx and rx tisci
+   configuration functions for clarity
+ - DT bindings change: s/pdma,/ti,pdma-
+ - Cleanup of udma_tx_status():
+  - residue calculation fix for m2m
+  - no need to read packet counter as it is not used
+  - peer byte counter only available in PDMAs
+  - Proper locking to avoid race with interrupt handler (polled m2m fix)
+ - Support for ti,notdpkt
+ - RFLOW management rework to support data movement without channel:
+  - the channel is not controlled by Linux but other core and we only have
+    rflows and rings to do the DMA transfers.
+    This mode is only supported by the Glue layer for now.
+
+- UDMAP glue layer
+ - Debug print improvements
+ - Support for rflow/ring only data movement
+
+Changes since v1
+(https://patchwork.kernel.org/project/linux-dmaengine/list/?series=114105&state=*)
+- Added support for j721e
+- Based on 5.3-rc2
+- dropped ti_sci API patch for RM management as it is already upstream
+- dropped dmadev_get_slave_channel() patch, using __dma_request_channel()
+- Added Rob's Reviewed-by to ringacc DT binding document patch
+- DT bindings changes:
+ - linux,udma-mode is gone, I have a simple lookup table in the driver to flag
+   TR channels.
+ - Support for j721e
+- Fix bug in of_node_put() handling in xlate function
+
+Changes since RFC (https://patchwork.kernel.org/cover/10612465/):
+- Based on linux-next (20190506) which now have the ti_sci interrupt support
+- The series can be applied and the UDMA via DMAengine API will be functional
+- Included in the series: ti_sci Resource management API, cppi5 header and
+  driver for the ring accelerator.
+- The DMAengine core patches have been updated as per the review comments for
+  earlier submittion.
+- The DMAengine driver patch is artificially split up to 6 smaller patches
+
+The k3-udma driver implements the Data Movement Architecture described in
+AM65x TRM (http://www.ti.com/lit/pdf/spruid7) and
+j721e TRM (http://www.ti.com/lit/pdf/spruil1)
+
+This DMA architecture is a big departure from 'traditional' architecture where
+we had either EDMA or sDMA as system DMA.
+
+Packet DMAs were used as dedicated DMAs to service only networking (Kesytone2)
+or USB (am335x) while other peripherals were serviced by EDMA.
+
+In AM65x/j721e the UDMA (Unified DMA) is used for all data movment within the
+SoC, tasked to service all peripherals (UART, McSPI, McASP, networking, etc). 
+
+The NAVSS/UDMA is built around CPPI5 (Communications Port Programming Interface)
+and it supports Packet mode (similar to CPPI4.1 in Keystone2 for networking) and
+TR mode (similar to EDMA descriptor).
+The data movement is done within a PSI-L fabric, peripherals (including the
+UDMA-P) are not addressed by their I/O register as with traditional DMAs but
+with their PSI-L thread ID.
+
+In AM65x/j721e we have two main type of peripherals:
+Legacy: McASP, McSPI, UART, etc.
+ to provide connectivity they are serviced by PDMA (Peripheral DMA)
+ PDMA threads are locked to service a given peripheral, for example PSI-L thread
+ 0x4400/0xc400 is to service McASP0 rx/tx.
+ The PDMa configuration can be done via the UDMA Real Time Peer registers.
+Native: Networking, security accelerator
+ these peripherals have native support for PSI-L.
+
+To be able to use the DMA the following generic steps need to be taken:
+- configure a DMA channel (tchan for TX, rchan for RX)
+ - channel mode: Packet or TR mode
+ - for memcpy a tchan and rchan pair is used.
+ - for packet mode RX we also need to configure a receive flow to configure the
+   packet receiption
+- the source and destination threads must be paired
+- at minimum one pair of rings need to be configured:
+ - tx: transfer ring and transfer completion ring
+ - rx: free descriptor ring and receive ring
+- two interrupts: UDMA-P channel interrupt and ring interrupt for tc_ring/r_ring
+ - If the channel is in packet mode or configured to memcpy then we only need
+   one interrupt from the ring, events from UDMAP is not used.
+
+When the channel setup is completed we only interract with the rings:
+- TX: push a descriptor to t_ring and wait for it to be pushed to the tc_ring by
+  the UDMA-P
+- RX: push a descriptor to the fd_ring and waith for UDMA-P to push it back to
+  the r_ring.
+
+Since we have FIFOs in the DMA fabric (UDMA-P, PSI-L and PDMA) which was not the
+case in previous DMAs we need to report the amount of data held in these FIFOs
+to clients (delay calculation for ALSA, UART FIFO flush support).
+
+Metadata support:
+DMAengine user driver was posted upstream based/tested on the v1 of the UDMA
+series: https://lkml.org/lkml/2019/6/28/20
+SA2UL is using the metadata DMAengine API.
+
+Note on the last patch:
+In Keystone2 the networking had dedicated DMA (packet DMA) which is not the case
+anymore and the DMAengine API currently missing support for the features we
+would need to support networking, things like
+- support for receive descriptor 'classification'
+ - we need to support several receive queues for a channel.
+ - the queues are used for packet priority handling for example, but they can be
+   used to have pools of descriptors for different sizes.
+- out of order completion of descriptors on a channel
+ - when we have several queues to handle different priority packets the
+   descriptors will be completed 'out-of-order'
+- NAPI type of operation (polling instead of interrupt driven transfer)
+ - without this we can not sustain gigabit speeds and we need to support NAPI
+ - not to limit this to networking, but other high performance operations
+
+It is my intention to work on these to be able to remove the 'glue' layer and
+switch to DMAengine API - or have an API aside of DMAengine to have generic way
+to support networking, but given how controversial and not trivial these changes
+are we need something to support networking.
+
+The series (+DT patch to enabled UDMA/PDMA on AM65x) on top of 5.4-rc1 is
+available:
+https://github.com/omap-audio/linux-audio.git peter/udma/series_v3-5.4-rc1
+
+Regards,
+Peter
+---
+
+Grygorii Strashko (3):
+  bindings: soc: ti: add documentation for k3 ringacc
+  soc: ti: k3: add navss ringacc driver
+  dmaengine: ti: k3-udma: Add glue layer for non DMAengine users
+
+Peter Ujfalusi (11):
+  dmaengine: doc: Add sections for per descriptor metadata support
+  dmaengine: Add metadata_ops for dma_async_tx_descriptor
+  dmaengine: Add support for reporting DMA cached data amount
+  dmaengine: ti: Add cppi5 header for UDMA
+  dt-bindings: dma: ti: Add document for K3 UDMA
+  dmaengine: ti: New driver for K3 UDMA - split#1: defines, structs, io
+    func
+  dmaengine: ti: New driver for K3 UDMA - split#2: probe/remove, xlate
+    and filter_fn
+  dmaengine: ti: New driver for K3 UDMA - split#3: alloc/free
+    chan_resources
+  dmaengine: ti: New driver for K3 UDMA - split#4: dma_device callbacks
+    1
+  dmaengine: ti: New driver for K3 UDMA - split#5: dma_device callbacks
+    2
+  dmaengine: ti: New driver for K3 UDMA - split#6: Kconfig and Makefile
+
+ .../devicetree/bindings/dma/ti/k3-udma.txt    |  185 +
+ .../devicetree/bindings/soc/ti/k3-ringacc.txt |   59 +
+ Documentation/driver-api/dmaengine/client.rst |   75 +
+ .../driver-api/dmaengine/provider.rst         |   46 +
+ drivers/dma/dmaengine.c                       |   73 +
+ drivers/dma/dmaengine.h                       |    8 +
+ drivers/dma/ti/Kconfig                        |   22 +
+ drivers/dma/ti/Makefile                       |    2 +
+ drivers/dma/ti/k3-udma-glue.c                 | 1225 ++++++
+ drivers/dma/ti/k3-udma-private.c              |  141 +
+ drivers/dma/ti/k3-udma.c                      | 3525 +++++++++++++++++
+ drivers/dma/ti/k3-udma.h                      |  161 +
+ drivers/soc/ti/Kconfig                        |   12 +
+ drivers/soc/ti/Makefile                       |    1 +
+ drivers/soc/ti/k3-ringacc.c                   | 1165 ++++++
+ include/dt-bindings/dma/k3-udma.h             |   10 +
+ include/linux/dma/k3-udma-glue.h              |  134 +
+ include/linux/dma/ti-cppi5.h                  | 1049 +++++
+ include/linux/dmaengine.h                     |  110 +
+ include/linux/soc/ti/k3-ringacc.h             |  245 ++
+ 20 files changed, 8248 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/dma/ti/k3-udma.txt
+ create mode 100644 Documentation/devicetree/bindings/soc/ti/k3-ringacc.txt
+ create mode 100644 drivers/dma/ti/k3-udma-glue.c
+ create mode 100644 drivers/dma/ti/k3-udma-private.c
+ create mode 100644 drivers/dma/ti/k3-udma.c
+ create mode 100644 drivers/dma/ti/k3-udma.h
+ create mode 100644 drivers/soc/ti/k3-ringacc.c
+ create mode 100644 include/dt-bindings/dma/k3-udma.h
+ create mode 100644 include/linux/dma/k3-udma-glue.h
+ create mode 100644 include/linux/dma/ti-cppi5.h
+ create mode 100644 include/linux/soc/ti/k3-ringacc.h
+
+-- 
+Peter
+
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
+Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
