@@ -2,84 +2,110 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91B39C37F1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 16:44:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAF2FC37F9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 16:45:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=aqqBUZO6CWHmBzNbUvBJvl0SnSOyTCcmgoOuYDPymw8=; b=PwQEKS8msAyevVhDQXsemnS9n
-	HwQoblteheSIdSA/a2dxe33/ilugHZx4UwzfqTUcx8QyDZqWYoEJDLspeZhyqoNIOXNZpnSCeGsgJ
-	P0EA51YMfID0ondXX0GswofZkUtLk6SG9tssrATr8VNNTgP3KCibyacdeOS7XJzFWXvNSymHfBu2c
-	a6VZFt22lE77xIIbmc9yDK8ME1TlpUro1aDCthUfh+xYsDryyv8sb5lHQEDwAkjBmgkJkOfsxa3AC
-	PQsWx0SrI25OB7D9qkY1qXjO6isl7H3htu4WgEi5PuKHvvl37sT//YDv/nxdRyONUnKje4RqQvddF
-	3w2ou0ZDg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=s+lAtraAcRjV7AuHfF4/+6+xntNl+GJufGBNJWCPsW4=; b=TN5p2FLXs8oSXy
+	ttdFq7zi+No6T4o5ccWVEV0PVxJu4C28/n7AL5VfXlk3QSor5n2ayB2FAuGapLpUosFmfLAtC4Zgw
+	rdFzxl9gEc7YyuuMcoBY2Y947q9bgM1ukEh+1iykgBRm1Cdi8+QmPa/TKuCM+RB5eA1qooOcotMWt
+	aHIZ9u2sS7sRh7OIt5K3TDrypLzp3dg595pJNMcT8tsW9CO1zo0lsvvRviXbV1bXw07j+uxmIJQJO
+	5gheyqLS94F/MfDjYkOas+wrbsarV+uXRpJUgdklsD7JsyrAFlA8jEJ4ejf05b6rn7n+qQTjbF8JP
+	iiBXkSLt5NAHKQVonAcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFJOC-00058z-Vy; Tue, 01 Oct 2019 14:44:33 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iFJOx-0006Sf-Th; Tue, 01 Oct 2019 14:45:19 +0000
+Received: from mail-eopbgr70055.outbound.protection.outlook.com ([40.107.7.55]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFJNw-00056T-7Q
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 14:44:17 +0000
-Received: by mail-wr1-x442.google.com with SMTP id b9so15897389wrs.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 01 Oct 2019 07:44:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=OikTbuqK6A2qTYHDLDWJoXT63eutsATdUGWY/2GQzJY=;
- b=abMEp6vzixxcJfYcyYbYKRyEjJJRmRs/RPQS+OBV1oTZg6PVFHWb6N7pL62AIt0M+A
- nenqJUao+vG0+vO25Y9v0OF9a5uPnTLklvc3IuOug/FIavtKD+r7nBKqK2qw4MnD/N/H
- wtjTOw931MuW3F4lbuOblwUN1QHWZwJYReMXzlG7NorNXg9WeqxcF+n9QwUKa/Jll957
- PRRuOwfNrB02p/3sYF3x+p8uJVBv8N6j3A5IRAbNhS9ls2nEL9oEJm6SLGsM6IW42fuM
- Ahvo+mFz9iGCu/z553gi0g0lVWQjnSAie455OTm++K8jHP2Z3tqL6vLTC4OJa9slSRPO
- 8WNg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=OikTbuqK6A2qTYHDLDWJoXT63eutsATdUGWY/2GQzJY=;
- b=cDOsXILczKlYckCkRrRoQC6zk/Pnba97CBicgiR/4Cqwc+ST0jeMOlANzjsZik5cHI
- JQ6Z17l6R5dTfDUDvCAw6qbeyduiBIHqDgAO7+aXPe+QGdD6aWeB/KFrq+v0KV6ws0Fj
- mU3zLQDh0jAXhFC8Y7/lwV0bKoxhVhoxHJqc0VK4Fq3z01ooCgZXYsp7WfbyYGdGioJD
- efDVE+Tp97EcoB9ZEN0OCx/gWrwxHG2bXaK/yjWc9TtKtchu3naf3S2PJTeiJXsT+WcN
- a2FL6PT4YQmElysPnIAiKEIC6WsYxiMby4RUApyoPRIDwo0MbUbLVHjlCeFqxylkIcUa
- CVTQ==
-X-Gm-Message-State: APjAAAWbxzsSLoDiHUmqGZDU0siOfnPRJ12AJhOVTmufqjPcRY+V2Kpl
- NuGvXFSYtLxRAQbMQxjNe1g=
-X-Google-Smtp-Source: APXvYqw2ivYLXplUjnZIZ1ea/NWJkCSYWngeeeWH9PEqywV7J3OBAaBkyMz3gocbVVq0ZoFVVpX3Ng==
-X-Received: by 2002:a5d:4f91:: with SMTP id d17mr1240548wru.329.1569941054301; 
- Tue, 01 Oct 2019 07:44:14 -0700 (PDT)
-Received: from localhost (p2E5BE2CE.dip0.t-ipconnect.de. [46.91.226.206])
- by smtp.gmail.com with ESMTPSA id x5sm15850173wrt.75.2019.10.01.07.44.12
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 01 Oct 2019 07:44:13 -0700 (PDT)
-Date: Tue, 1 Oct 2019 16:44:12 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Jon Hunter <jonathanh@nvidia.com>, linux-tegra@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH] arm64: tegra: Hook up edp interrupt on Tegra210 SOCTHERM
-Message-ID: <20191001144412.GD3566931@ulmo>
-References: <20190829105647.15212-1-thierry.reding@gmail.com>
+ id 1iFJOl-0005W0-1O
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 14:45:08 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=FCKjlRlFk3TA8TCaneS7sIi7VoftPea6mC+tyGxK9xqcAwRdQBsqfvVZ6CzVSnpMJGGv3JpdNRMErO1ZABBpJ+PLK04AxZgOkNnC2a9SWjVbCfofSeT/cjW+xivb8UeWP52aitwq+KiNdmBGVXAPNVEBSe4hqALXJC7jHyWLy+LxdKowN+edsAbf+AFcNrXChcA02ZIRcN/mlAyg8tVCaVZ6pzomXU3pYNUJq46aNDvP1fqKwXj7NCZdgKlvlNeL3lpkXJaunSTxkRQn34GIQNRZFn0pPQ+ZrgV3fbgF3XVPgUOz9wg4LzYxMuuBew05UdNxho7URAKnONTBoHZ7Tw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Fpk5bg8yHFceEbfXDU5pRhdled4cpLLpzt0VL11XZoE=;
+ b=b9+gOeE8VPCNW+sI4HJJLaCdiy7cyX742U+7VWHztaj1+NNEjohgFF4PKYpr9EfI8tbvX+XmbnKciccj8SjO1FtluTdL4GAArU2rrdl+QPs899eYT+FAXYujaNTu09MuQ7aALx8K/xTWyNK9s93SdeVkstSYdHNOlXty+mPwm7hVhWg72DYPAvHJ6YZxXrI4WAnaf7t5Yl5wvwKxCFG8vessPbJENMS1h7bmP86r1epOpaRmZqrl/QCBSop3uXFZE7w/+EGLUemIjjkIwnXYi6xwYiN4qoKLN/wq6zNiUITjxL2UC4KS4diJsj/pTpH9fQdy2tHQtsNVc1SaGLtj6Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Fpk5bg8yHFceEbfXDU5pRhdled4cpLLpzt0VL11XZoE=;
+ b=ICD79ETWMJtWg/DvUB9wkvJ6RQpayoQerHpl3mOKZpxDKfvmX8oDbetkooJyvi1e2dovpq4kep9iRVut7GDTY6tICZbjZqdKlnR6vl9VrqOy/x5rGbM7+X6mASqTkclGzQ+7fzTKiWxnbULY2VX9O4WPa6rT3XgMPHh39De+lgU=
+Received: from VI1PR04MB4094.eurprd04.prod.outlook.com (52.133.13.160) by
+ VI1PR04MB4991.eurprd04.prod.outlook.com (20.177.49.220) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2305.17; Tue, 1 Oct 2019 14:45:01 +0000
+Received: from VI1PR04MB4094.eurprd04.prod.outlook.com
+ ([fe80::6ced:919:ea4f:5000]) by VI1PR04MB4094.eurprd04.prod.outlook.com
+ ([fe80::6ced:919:ea4f:5000%6]) with mapi id 15.20.2305.017; Tue, 1 Oct 2019
+ 14:45:01 +0000
+From: Daniel Baluta <daniel.baluta@nxp.com>
+To: "broonie@kernel.org" <broonie@kernel.org>, "arnd@arndb.de" <arnd@arndb.de>
+Subject: Re: [PATCH] ASoC: SOF: imx: fix reverse CONFIG_SND_SOC_SOF_OF
+ dependency
+Thread-Topic: [PATCH] ASoC: SOF: imx: fix reverse CONFIG_SND_SOC_SOF_OF
+ dependency
+Thread-Index: AQHVeGNxrQzh2sOFKEyKM74n1aPArKdF3NMA
+Date: Tue, 1 Oct 2019 14:45:01 +0000
+Message-ID: <100bf3142f6043e5d1615d2f99677938770e7c4b.camel@nxp.com>
+References: <20191001142026.1124917-1-arnd@arndb.de>
+In-Reply-To: <20191001142026.1124917-1-arnd@arndb.de>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=daniel.baluta@nxp.com; 
+x-originating-ip: [89.37.124.34]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 69a33f01-701e-4a7e-d354-08d7467df078
+x-ms-office365-filtering-ht: Tenant
+x-ms-traffictypediagnostic: VI1PR04MB4991:|VI1PR04MB4991:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR04MB4991E9145DD1DB459AEA751FF99D0@VI1PR04MB4991.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 0177904E6B
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(979002)(4636009)(39860400002)(366004)(376002)(136003)(346002)(396003)(199004)(189003)(5660300002)(36756003)(91956017)(6512007)(256004)(76116006)(4326008)(229853002)(6486002)(81166006)(110136005)(316002)(25786009)(14454004)(8936002)(6116002)(81156014)(54906003)(118296001)(6436002)(3846002)(6246003)(50226002)(478600001)(11346002)(2616005)(66066001)(486006)(476003)(2906002)(446003)(186003)(66556008)(44832011)(2501003)(102836004)(26005)(305945005)(6506007)(7736002)(64756008)(66446008)(99286004)(71200400001)(66476007)(66946007)(86362001)(8676002)(71190400001)(7416002)(76176011)(99106002)(969003)(989001)(999001)(1009001)(1019001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4991;
+ H:VI1PR04MB4094.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: kUCTygm93eDpLDRMO7AXuGrmMIlCa6C86+AMXzWYMTYTvBTJHrnUtsGR/kn9U1CQztXnXTJNLV8BNOeOp/vUABA8FBkGN/Puu3HsAFNb27qdYLOozLrMnuoJgekKqT82cRiro824xGo2WqbBSOT6HrAa2M+OXuIK8fovA0w3lk+5tcR+/6uyYe0Pj6vM2KS+JIa+yaXBycElwlH1NWsY3wMQkH0j9/zQaRJHLrmuawsJkNs0gi4bISFkC5j6sYbFQRCB7mSDnlm+BxSJ0QN0w6bhT9kL5Qv9x2K8YXzZv7atB+zcX3PMG8bfo9HUYX95nhzcYg3VgVDHgoC0NUP0G+3Vqpsm+OJ5LcoaYm7wDuDJWPEbEsZ36w3nOXwaojJrYoZtlNhK5X6YC2XLXJyNpjvwMcvAlXmrNh8Y15UcplM=
+Content-ID: <2201E3394F70494086F1E44768C0FC7B@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-In-Reply-To: <20190829105647.15212-1-thierry.reding@gmail.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 69a33f01-701e-4a7e-d354-08d7467df078
+X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Oct 2019 14:45:01.4451 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: N/wCaJCl/p8Kz0edEcCdjElILRQmMXzVBmhmqK98e8FsF7j2ChE1i1FOJhdDI2+voX27yjK5lIMPRrFpSKshVQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4991
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_074416_265984_F7EC6FA8 
-X-CRM114-Status: GOOD (  11.32  )
+X-CRM114-CacheID: sfid-20191001_074507_197370_D8F89401 
+X-CRM114-Status: GOOD (  19.83  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thierry.reding[at]gmail.com)
+ no trust [40.107.7.55 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.7.55 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -99,70 +125,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4955773607390259841=="
+Cc: "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
+ "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "tiwai@suse.com" <tiwai@suse.com>,
+ "yuehaibing@huawei.com" <yuehaibing@huawei.com>,
+ "pierre-louis.bossart@linux.intel.com" <pierre-louis.bossart@linux.intel.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "hulkci@huawei.com" <hulkci@huawei.com>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "perex@perex.cz" <perex@perex.cz>, "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, 2019-10-01 at 16:20 +0200, Arnd Bergmann wrote:
+> CONFIG_SND_SOC_SOF_IMX depends on CONFIG_SND_SOC_SOF, but is in
+> turn referenced by the sof-of-dev driver. This creates a reverse
+> dependency that manifests in a link error when CONFIG_SND_SOC_SOF_OF
+> is built-in but CONFIG_SND_SOC_SOF_IMX=m:
+> 
+> sound/soc/sof/sof-of-dev.o:(.data+0x118): undefined reference to
+> `sof_imx8_ops'
+> 
+> Make the latter a 'bool' symbol and change the Makefile so the imx8
+> driver is compiled the same way as the driver using it.
+> 
+> A nicer way would be to reverse the layering and move all
+> the imx specific bits of sof-of-dev.c into the imx driver
+> itself, which can then call into the common code. Doing this
+> would need more testing and can be done if we add another
+> driver like the first one.
+> 
+> Fixes: f4df4e4042b0 ("ASoC: SOF: imx8: Fix COMPILE_TEST error")
+> Fixes: 202acc565a1f ("ASoC: SOF: imx: Add i.MX8 HW support")
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 
---===============4955773607390259841==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="8w3uRX/HFJGApMzv"
-Content-Disposition: inline
+Acked-by: Daniel Baluta <daniel.baluta@nxp.com>
 
+Indeed we will need to somehow avoid getting sof_imx8_ops from 
+sof-of-dev.c by directly referencing it. 
 
---8w3uRX/HFJGApMzv
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Will keep this in mind for the next platform.
 
-On Thu, Aug 29, 2019 at 12:56:47PM +0200, Thierry Reding wrote:
-> From: Thierry Reding <treding@nvidia.com>
->=20
-> For some reason this was never hooked up. Do it now so that over-current
-> interrupts can be logged.
->=20
-> Signed-off-by: Thierry Reding <treding@nvidia.com>
+Thanks a lot Arnd!
+
 > ---
->  arch/arm64/boot/dts/nvidia/tegra210.dtsi | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
-
-Applied to for-5.5/arm64/dt.
-
-Thierry
-
---8w3uRX/HFJGApMzv
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl2TZjsACgkQ3SOs138+
-s6GzQhAAp0Igvn8aJSUBOB43OB1hXJ2JhVy10rLBK6HaiyTJhXvIKJ1m3yNjE/e1
-J0ab0gMK7TR9zIwqCLUHFgofCssyMmdMaS4d4/IUzMfRE0B/g35e8ysP8wWDgKRs
-wS5ISsi2sRbAyVeLCL4tQxcreF9kFEcIvQhHGWmOeAfYZ+vljDtawGnKynJ7IChz
-CSkPoSesMQMmp3xcbZY8/F/X928XyluXv4pNuka/os1b2rUeCcjMevOVZxHDLqT7
-UZh5W2HSDmweUHDbupQDmjM8mSwou+2yFVziYz0s2FLu6GNGczER1NbXrL6S6GC6
-ivUl+1Uk9pyP25oZpVVeE1LZZPddDS9qBKY9amJp7+/DILo38KR1JXGwH5e7pG5l
-E8l4vJ+Jwunx4PRHEXABe9MtBCPLUESKEUcBCVwKv2o5HYFYayJXVMVmHskcRosW
-9a7CkGM4djMO5ac0ovjziimiun5WS4LYffOv8xzzLV+jUM5tdbM0F7X/NkQHvOmT
-w4weKWLgJTebHdDi0lq7N1UxGVwZLUS9uh1MXVDPPToMimiwzrZxCMM4XfCOm0df
-sBTJOyeoo/qgOjJNlZmmH+z0oKN7gU1/VyWip9LkxbKzpIyFFkXyg8xDrA9B3SYU
-YMt+CRvU0SPTCr27sc8RccL1ZYjW25hU14fUssRwYjaWP422Ngg=
-=Fg8B
------END PGP SIGNATURE-----
-
---8w3uRX/HFJGApMzv--
-
-
---===============4955773607390259841==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
+>  sound/soc/sof/imx/Kconfig  | 2 +-
+>  sound/soc/sof/imx/Makefile | 4 +++-
+>  2 files changed, 4 insertions(+), 2 deletions(-)
+> 
+> diff --git a/sound/soc/sof/imx/Kconfig b/sound/soc/sof/imx/Kconfig
+> index 5acae75f5750..a3891654a1fc 100644
+> --- a/sound/soc/sof/imx/Kconfig
+> +++ b/sound/soc/sof/imx/Kconfig
+> @@ -12,7 +12,7 @@ config SND_SOC_SOF_IMX_TOPLEVEL
+>  if SND_SOC_SOF_IMX_TOPLEVEL
+>  
+>  config SND_SOC_SOF_IMX8
+> -	tristate "SOF support for i.MX8"
+> +	bool "SOF support for i.MX8"
+>  	depends on IMX_SCU
+>  	depends on IMX_DSP
+>  	help
+> diff --git a/sound/soc/sof/imx/Makefile b/sound/soc/sof/imx/Makefile
+> index 6ef908e8c807..9e8f35df0ff2 100644
+> --- a/sound/soc/sof/imx/Makefile
+> +++ b/sound/soc/sof/imx/Makefile
+> @@ -1,4 +1,6 @@
+>  # SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
+>  snd-sof-imx8-objs := imx8.o
+>  
+> -obj-$(CONFIG_SND_SOC_SOF_IMX8) += snd-sof-imx8.o
+> +ifdef CONFIG_SND_SOC_SOF_IMX8
+> +obj-$(CONFIG_SND_SOC_SOF_OF) += snd-sof-imx8.o
+> +endif
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4955773607390259841==--
-
