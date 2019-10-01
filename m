@@ -2,81 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1887C38E2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 17:24:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F2C8C38FB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 17:29:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kmfK+34DWVqLw0QURftUa4M0HRWkTRKkrnydsWQFJsw=; b=ktOtPf0TGaPaGU
-	iNrw24TQa8plLEi7Vyb4cMeHP0DuFodLxO3Gcv5zUVfO0QFJeDj8klgNt2wxhd1EI/D2WTX2/Q9xQ
-	Ainsxe4LmKAQ3zTU9vrLwAWZGYEi3FjJjevRt37fd1WEMGuLrhz0Tk2Xi6Qi8Q1S0blpz4qvbcI7M
-	3mP922JS+I01oSyKrdISGDwxRj4clGL0byZQl6BpZJ0sUADZ3f6WTQ+3NLmiQozQSjud8WaCfO5fI
-	k8w2q0FKXDFoO6s0YrxXMCtjZz3Aq7MOABAjeaw6TNU2Lk3biYYbUDaUlEfa7eMQsJInJFlUl34Gd
-	WTn9/+VImewhbAZ6Y7KQ==;
+	List-Owner; bh=nLrMaFW2hJHZtRS9pZ+/FomGLwPhm+RanQwdfaGM9Jg=; b=s5oVDcq+gUVTSq
+	OV7eY/1likwn4TiQ/Mo3PVlG9PV1vB4En93w29KUEPQ17hS2A1IYM/xLkD0fOLyZrK4uWaxVhgnXi
+	vccM62OB/9ePRVh0mQniMyjZRmfslLdvCkwQjqZEDhNzw09MvDZvRAlpEZzDmuw2ZKAPIUaXyLuR2
+	lJv7MM/O2dX1EV3XAI7Lddx/i83L2rwXENwe2rwL1tL061cuvLrfSTXmcaRD5nPdvdc40peqYPHPP
+	UbtZkbOVNewWo4jl9nH41qa5d7rCUT1c37hL5Q+suM1uq7783d8hhA7+MPT55sJQh5KUr93v7cABj
+	xHUp/6WzVu8qoAPbK2wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFK13-0006AW-BU; Tue, 01 Oct 2019 15:24:41 +0000
-Received: from mail-wm1-f66.google.com ([209.85.128.66])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFK0w-00069J-BY; Tue, 01 Oct 2019 15:24:36 +0000
-Received: by mail-wm1-f66.google.com with SMTP id v17so3707217wml.4;
- Tue, 01 Oct 2019 08:24:31 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=qIz20MyIeJ4YRS3q69VVUyLU1/qqd5R6Zf74yV/b9ww=;
- b=Jo2Strk3UOyLXIsdvUM36G6pAbxSbf6qgbRgkdC/iWHvWI/Q/8nuVrSVVndYYEgEuz
- UYKO1HvkdAit5nxpX+Ytn3BEvXADSYvvbLIJ58td6BOWq4Acck1EPWp6eAE7JOjrTpy8
- q2JtuPEREVOtHsP+yky3lN64xS0v4w7+ITA9z2xn1uLY+HkZgckzaBwj9aN66/41tYxR
- xQ+wCxCRSU0f6zpoPHoQZYU9YwWRFrcSExqyH565OjPB2eH2TY21AwxLobqIsH5m/+iK
- 6helwP5KFxPGdrD+R7p8PoOEt/iLUmzsL+uUIlLKRP8qKXLwZXyR+5d5L7tB98CpjAeM
- evWw==
-X-Gm-Message-State: APjAAAWGD3Q6Gpp9z9o2Kxc2GQ+FQzUidJW0oEslexKGk/Tw9uzsMys6
- LuuVxqDEkUfkjkBhEq/4vmc=
-X-Google-Smtp-Source: APXvYqzgA01GZd24cae9Ug02bMZVgbmEoHDdIAy+uHttgtTk16j30giNWmxHikB8fPnYof+FbNzouQ==
-X-Received: by 2002:a1c:60c1:: with SMTP id u184mr4104201wmb.32.1569943469278; 
- Tue, 01 Oct 2019 08:24:29 -0700 (PDT)
-Received: from pi3 ([194.230.155.145])
- by smtp.googlemail.com with ESMTPSA id i1sm4699293wmb.19.2019.10.01.08.24.26
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 01 Oct 2019 08:24:28 -0700 (PDT)
-Date: Tue, 1 Oct 2019 17:24:22 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2 2/8] dt-bindings: sram: Convert SRAM bindings to
- json-schema
-Message-ID: <20191001152422.GA31358@pi3>
-References: <20190918173141.4314-1-krzk@kernel.org>
- <20190918173141.4314-2-krzk@kernel.org>
- <20191001140003.GA31344@bogus>
+	id 1iFK4v-000859-I5; Tue, 01 Oct 2019 15:28:41 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iFK4o-00084D-0Z
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 15:28:36 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 677061000;
+ Tue,  1 Oct 2019 08:28:29 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C6A2E3F71A;
+ Tue,  1 Oct 2019 08:28:28 -0700 (PDT)
+Date: Tue, 1 Oct 2019 16:28:27 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: [PATCH] Partially revert "compiler: enable
+ CONFIG_OPTIMIZE_INLINING forcibly"
+Message-ID: <20191001152826.GM42880@e119886-lin.cambridge.arm.com>
+References: <20190930114540.27498-1-will@kernel.org>
+ <CAK7LNARWkQ-z02RYv3XQ69KkWdmEVaZge07qiYC8_kyMrFzCTg@mail.gmail.com>
+ <20191001104253.fci7s3sn5ov3h56d@willie-the-truck>
+ <20191001114129.GL42880@e119886-lin.cambridge.arm.com>
+ <20191001143626.GI25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191001140003.GA31344@bogus>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <20191001143626.GI25745@shell.armlinux.org.uk>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_082434_397814_C59E4372 
-X-CRM114-Status: GOOD (  26.96  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191001_082834_146587_C67AE519 
+X-CRM114-Status: GOOD (  48.14  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.66 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.66 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,183 +65,202 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Thierry Reding <thierry.reding@gmail.com>,
- linux-riscv@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-leds@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- Herbert Xu <herbert@gondor.apana.org.au>, linux-clk@vger.kernel.org,
- linux-rockchip@lists.infradead.org, bcm-kernel-feedback-list@broadcom.com,
- Guenter Roeck <linux@roeck-us.net>, devicetree@vger.kernel.org,
- linux-watchdog@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org, Matt Mackall <mpm@selenic.com>,
- linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-crypto@vger.kernel.org
+Cc: Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 01, 2019 at 09:00:03AM -0500, Rob Herring wrote:
-> On Wed, Sep 18, 2019 at 07:31:35PM +0200, Krzysztof Kozlowski wrote:
-> > Convert generic mmio-sram bindings to DT schema format using
-> > json-schema.
-> 
-> I've been slow getting to this because I started on the same thing...
-> 
+On Tue, Oct 01, 2019 at 03:36:26PM +0100, Russell King - ARM Linux admin wrote:
+> On Tue, Oct 01, 2019 at 12:41:30PM +0100, Andrew Murray wrote:
+> > On Tue, Oct 01, 2019 at 11:42:54AM +0100, Will Deacon wrote:
+> > > On Tue, Oct 01, 2019 at 06:40:26PM +0900, Masahiro Yamada wrote:
+> > > > On Mon, Sep 30, 2019 at 8:45 PM Will Deacon <will@kernel.org> wrote:
+> > > > > diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
+> > > > > index 93d97f9b0157..c37c72adaeff 100644
+> > > > > --- a/lib/Kconfig.debug
+> > > > > +++ b/lib/Kconfig.debug
+> > > > > @@ -312,6 +312,7 @@ config HEADERS_CHECK
+> > > > >
+> > > > >  config OPTIMIZE_INLINING
+> > > > >         def_bool y
+> > > > > +       depends on !(ARM || ARM64) # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=91111
+> > > > 
+> > > > 
+> > > > This is a too big hammer.
+> > > 
+> > > It matches the previous default behaviour!
+> > > 
+> > > > For ARM, it is not a compiler bug, so I am trying to fix the kernel code.
+> > > > 
+> > > > For ARM64, even if it is a compiler bug, you can add __always_inline
+> > > > to the functions in question.
+> > > > (arch_atomic64_dec_if_positive in this case).
+> > > > 
+> > > > You do not need to force __always_inline globally.
+> > > 
+> > > So you'd prefer I do something like the diff below? I mean, it's a start,
+> > > but I do worry that we're hanging arch/arm/ out to dry.
 > > 
-> > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+> > If I've understood one part of this issue correctly - and using the
+> > c2p_unsupported build failure as an example [1], there are instances in
+> > the kernel where it is assumed that the compiler will optimise out a call
+> > to an undefined function, and also assumed that the compiler will know
+> > at compile time that the function will never get called. It's common to
+> > satisfy this assumption when the calling function is inlined.
 > > 
-> > ---
+> > But I suspect there may be other cases similar to c2p_unsupported which
+> > are still lurking.
 > > 
-> > Changes since v1:
-> > 1. Indent example with four spaces (more readable).
-> > ---
-> >  .../devicetree/bindings/sram/sram.txt         |  80 ----------
-> >  .../devicetree/bindings/sram/sram.yaml        | 138 ++++++++++++++++++
-> >  2 files changed, 138 insertions(+), 80 deletions(-)
-> >  delete mode 100644 Documentation/devicetree/bindings/sram/sram.txt
-> >  create mode 100644 Documentation/devicetree/bindings/sram/sram.yaml
+> > For example the following functions are called but non-existent, and thus
+> > may be an area worth investigating:
+> > 
+> > __buggy_use_of_MTHCA_PUT, __put_dbe_unknown, __cmpxchg_wrong_size,
+> > __bad_percpu_size, __put_user_bad, __get_user_unknown,
+> > __bad_unaligned_access_size, __bad_xchg
+> > 
+> > But more generally, as this is a common pattern - isn't there a benefit
+> > here for changing all of these to BUILD_BUG? (So they can be found easily).
 > 
-> > diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Documentation/devicetree/bindings/sram/sram.yaml
-> > new file mode 100644
-> > index 000000000000..8d9d6ce494b2
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/sram/sram.yaml
-> > @@ -0,0 +1,138 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/sram/sram.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Generic on-chip SRAM
-> > +
-> > +maintainers:
-> > +  - FIXME <who@should.it.be>
+> Precisely, what is your suggestion?
 > 
-> You can put me.
+> If you think that replacing the call to __get_user_bad with BUILD_BUG(),
+> BUILD_BUG() becomes a no-op when __OPTIMIZE__ is not defined (see the
+> definition of __compiletime_assert() in linux/compiler.h); this means
+> such places will be reachable, which leads to uninitialised variables.
 
-Sure.
+I hadn't noticed the use of __OPTIMIZE__ - indeed if __compiletime_assert
+is no-op'd and you reach it then you won't have a build error - but you
+may get uninitialised values instead.
 
-> 
-> > +
-> > +description: |+
-> > +  Simple IO memory regions to be managed by the genalloc API.
-> > +
-> > +  Each child of the sram node specifies a region of reserved memory. Each
-> > +  child node should use a 'reg' property to specify a specific range of
-> > +  reserved memory.
-> > +
-> > +  Following the generic-names recommended practice, node names should
-> > +  reflect the purpose of the node. Unit address (@<address>) should be
-> > +  appended to the name.
-> > +
-> > +properties:
-> > +  $nodename:
-> > +    pattern: "^sram(@.*)?"
-> > +
-> > +  compatible:
-> > +    items:
-> > +      - enum:
-> > +          - mmio-sram
-> > +          - atmel,sama5d2-securam
-> 
-> I was trying to go down the path of putting all the compatibles for 
-> various SRAM bindings here, but I ran into some issues. I need to 
-> revisit as I've forgotten the exact issue.
-> 
-> This would need to be a 'contains' if this is going to work for others.
+Presumably the purpose of __OPTIMIZE__ in this case is to prevent getting
+an undefined function error for the __compiletime_assert line, even though
+it doesn't get called (when using a compiler that doesn't optimize out the
+call to the unused function).
 
-OK.
+Why is the call to __get_user_bad not guarded in this way for when
+__OPTIMIZE__ isn't set, i.e. why doesn't it suffer from the issue
+that the following fixes?
+
+c03567a8e8d5 ("include/linux/compiler.h: don't perform compiletime_assert with -O0")
+
 
 > 
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  "#address-cells":
-> > +    description: Should use the same values as the root node.
-> > +
-> > +  "#size-cells":
-> > +    description: Should use the same values as the root node.
+> > Or to avoid this class of issues, change them to BUG or unreachable - but
+> > lose the benefit of compile time detection?
 > 
-> I defined both of these to be 1 as 4GB of SRAM should be enough for a 
-> while. We can debate 1 or 2 cells vs. 1, but there's no reason it has to 
-> be the same as the root (unless we're failing to do address 
-> translation).
+> I think you ought to read the GCC manual wrt __builtin_unreachable().
+> "If control flow reaches the point of the `__builtin_unreachable',
+>  the program is undefined.  It is useful in situations where the
+>  compiler cannot deduce the unreachability of the code."
 
-That was copied from txt version. I can adjust them to 1 although this
-is will more than simple conversion.
+Thanks, I've now read it. My suggestion arose from looking at existing
+uses in the kernel - e.g. drivers/spi/spi-rockchip.c,
+drivers/pinctrl/pinctrl-ingenic.c, etc. I guess these types of uses
+should use BUG or similar instead right?
 
 > 
-> > +
-> > +  ranges:
-> > +    description:
-> > +      Should translate from local addresses within the sram to bus addresses.
-> > +
-> > +  no-memory-wc:
-> > +    description:
-> > +      The flag indicating, that SRAM memory region has not to be remapped
-> > +      as write combining. WC is used by default.
-> > +    type: boolean
-> > +
-> > +  # TODO: additionalProperties: false
-> > +
-> > +patternProperties:
-> > +  "^([a-z]*-)?sram@[a-f0-9]$":
-> > +    type: object
-> > +    description:
-> > +      Each child of the sram node specifies a region of reserved memory.
-> > +    properties:
-> > +      reg:
-> > +        description:
-> > +          IO mem address range, relative to the SRAM range.
+> I have seen cases where the instructions following an unreachable
+> code section have been the literal pool for the function - which,
+> if reached, would be quite confusing to debug.  If you're lucky, you
+> might get an undefined instruction exception.  If not, you could
+> continue and start executing another part of the function, leading
+> to possibly no crash at all - but unexpected results (which may end
+> up leaking sensitive data.)
 > 
-> maxItems: 1
+> For example, in our BUG() implementation on 32-bit ARM, we use
+> unreachable() after the asm() statement creating the bug table
+> entry and inserting the undefined instruction into the text.
+> Here's the resulting disassembly:
+> 
+>      278:       ebfffffe        bl      0 <page_mapped>
+>                         278: R_ARM_CALL page_mapped
+>      27c:       e3500000        cmp     r0, #0
+>      280:       1a00006c        bne     438 <invalidate_inode_pages2_range+0x3ac>
+> ...
+>      2d4:       ebfffffe        bl      0 <_raw_spin_lock_irqsave>
+>                         2d4: R_ARM_CALL _raw_spin_lock_irqsave
+>      2d8:       e5943008        ldr     r3, [r4, #8]
+>      2dc:       e3130001        tst     r3, #1
+>      2e0:       e1a02000        mov     r2, r0
+>      2e4:       1a000054        bne     43c <invalidate_inode_pages2_range+0x3b0>
+> ...
+>      438:       e7f001f2        .word   0xe7f001f2
+>      43c:       e2433001        sub     r3, r3, #1
+>      440:       eaffffa9        b       2ec <invalidate_inode_pages2_range+0x260>
+> 
+> Now, consider what unreachable() actually gets you here - it tells
+> the compiler that we do not expect to reach this point (that being
+> the point between 438 and 43c.)  If we were to reach that point, we
+> would continue executing the code at 43c.
+> 
+> In this case, it would be like...
+> 
+> 	if (BUG_ON(page_mapped(page)))
+> 	    goto random-location-in-xa_lock_irqsave()-inside-invalidate_complete_page2();
+> 
+> So no.  unreachable() is not an option.
 
-OK
+Thanks for the example.
 
 > 
-> > +
-> > +      compatible:
-> > +        $ref: /schemas/types.yaml#/definitions/string
-> > +        description:
-> > +          Should contain a vendor specific string in the form
-> > +          <vendor>,[<device>-]<usage>
-> > +
-> > +      pool:
-> > +        description:
-> > +          Indicates that the particular reserved SRAM area is addressable
-> > +          and in use by another device or devices.
-> > +        type: boolean
-> > +
-> > +      export:
-> > +        description:
-> > +          Indicates that the reserved SRAM area may be accessed outside
-> > +          of the kernel, e.g. by bootloader or userspace.
-> > +        type: boolean
-> > +
-> > +      protect-exec:
-> > +        description: |
-> > +          Same as 'pool' above but with the additional constraint that code
-> > +          will be run from the region and that the memory is maintained as
-> > +          read-only, executable during code execution. NOTE: This region must
-> > +          be page aligned on start and end in order to properly allow
-> > +          manipulation of the page attributes.
-> > +        type: boolean
-> > +
-> > +      label:
-> > +        $ref: /schemas/types.yaml#/definitions/string
+> We really do want these places to be compile-time detected - relying
+> on triggering them at runtime is just not good enough IMHO (think
+> about how much testing the kernel would require to discover one of
+> these suckers buried in the depths of the code.)
 > 
-> Already has a type definition.
+> Here's the question to ask: do we want to reliably detect issues
+> that we know are bad, which can lead to:
+> - unreliable kernel operation,
+> - user exploitable crashes,
+> or do we want to hide them for the sake of allowing -O0 compilation?
+> 
+> Given that the kernel as a general rule has very poor run-time test
+> coverage at the moment, I don't think this is the time to consider
+> giving up the protection that we have against this badness.
+> 
+> We've had several instances where these checks have triggered in the
+> user access code, and people have noticed when doing build tests.
+> They probably don't have the ability to do run-time testing on every
+> arch.
+> 
+> So, the existing facility of detecting these at build time is, IMHO,
+> an absolute must.
+> 
+> It would be different if the kernel community as a whole had the
+> ability to run-test every code path through the kernel source on
+> every arch, but I don't see that's a remotely realistic prospect.
 
-OK
+I completely agree.
 
-Best regards,
-Krzysztof
+> 
+> If we want -O0 to work, but still want to preserve the ability to
+> detect these adequately, I think the easiest solution to that would
+> be to provide these dummy functions only when building with -O0,
+> making them all BUG().
 
+Though please note that this issue isn't limited to -O0, it relates to
+building without CONFIG_OPTIMIZE_INLINING - resulting in functions
+marked as inline not always being inlined.
+
+I'm interested to determine if there is a benefit for all the functions
+I mentioned (there are more) to have the same name which may be something
+other than BUILD_BUG.
+
+Thanks,
+
+Andrew Murray
+
+> 
+> -- 
+> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+> FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+> According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
