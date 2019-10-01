@@ -2,108 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A1FAC3826
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 16:58:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A815C3834
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 16:58:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PUPybqKYr19q9EpEcL+vMacyp6xXb13irthNjkToiF4=; b=ggGWgkTalnePdL
-	x61IKXYRvQf1hZThv/IJe3ZXU5VH5JHpSHDWeNfgO8ltrga9akkF9bTfyTvp/818TqXLUQdohaPbV
-	y78pBxu6TURtl0KrYsi8EOv9Oc54UNfm37EvHSurJ7Ak8RmkZxvsf/tsmCGuTfcqgF79MtAkwNygL
-	bLDGLVuvgX11tJyfuYoMj5U9OLVUPQclY6H9lePOpeuXSaiY732N8DIDd6xTemdWUeGjT7XSsMWa8
-	5OQkoenTCU8SJDzZuiHbQ7EpyylnPP0Sxmj4VJOr5WQUXNd43PsMmHxiW/rM+Eqsaa42n3x+IEzbs
-	kMIgHb6ieWxWVqsaasoQ==;
+	List-Owner; bh=9wBLVYFsH0v3CtR3/nGLymkBYG7azE14DF4O5cThk9Q=; b=sHgyo9phnM4MVc
+	U5eFyYnyIovUB/BBgPWdve6ecOaGIsl+BSHk3vNtYMEghUo31ESbm/vYApay2PkjTVpD8ewmp0icJ
+	FbHcHMGQOTdFQdJ+XNyUKWviOGmKvJsW9W5le01kzCEfTiuTROVKepSGfySmxx0QkzDAPOQyJRxcM
+	mSlGboi6k69wIlNzSbFNywoiLX/1FouP/3Il+6IUFmcLd0xBBshFFMkljVHeSuxIyubS66QbZyNV+
+	sRDUjQP0dVcrKZAiV5k4fIJIltY+8nrPSlPWQKoVsIyNu7HC16HBTIrElmjRV5KFYZ0atbMS2XD33
+	eIY8PG2X4MICQ3ZSFsjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFJbM-0003WX-9t; Tue, 01 Oct 2019 14:58:08 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFJbC-0003VM-5V
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 14:57:59 +0000
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id B3B368A1C8D;
- Tue,  1 Oct 2019 14:57:57 +0000 (UTC)
-Received: from [10.36.116.54] (ovpn-116-54.ams2.redhat.com [10.36.116.54])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 09EA96012C;
- Tue,  1 Oct 2019 14:57:54 +0000 (UTC)
-Subject: Re: [PATCH v5 01/10] mm/memunmap: Use the correct start and end pfn
- when removing pages from zone
-To: linux-kernel@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>
-References: <20191001144011.3801-1-david@redhat.com>
- <20191001144011.3801-2-david@redhat.com>
-From: David Hildenbrand <david@redhat.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
- 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
- SE+xAvmumFBY
-Organization: Red Hat GmbH
-Message-ID: <933f9cd8-9a32-8566-bd97-7e475a009275@redhat.com>
-Date: Tue, 1 Oct 2019 16:57:54 +0200
+	id 1iFJbW-0003hJ-Tb; Tue, 01 Oct 2019 14:58:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iFJbG-0003Xl-Q5
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 14:58:04 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1B41E1000;
+ Tue,  1 Oct 2019 07:58:02 -0700 (PDT)
+Received: from [10.37.8.149] (unknown [10.37.8.149])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BE5A73F71A;
+ Tue,  1 Oct 2019 07:58:00 -0700 (PDT)
+Subject: Re: [PATCH v3 1/5] arm64: vdso32: Introduce COMPAT_CC_IS_GCC
+To: Will Deacon <will@kernel.org>
+References: <20190920142738.qlsjwguc6bpnez63@willie-the-truck>
+ <20190926214342.34608-1-vincenzo.frascino@arm.com>
+ <20190926214342.34608-2-vincenzo.frascino@arm.com>
+ <20191001131420.y3fsydlo7pg6ykfs@willie-the-truck>
+ <20191001132731.GG41399@arrakis.emea.arm.com>
+ <ed7d1465-2d7b-d57c-c1b1-215af1ba7a6f@arm.com>
+ <20191001142038.ptwyfbesfrz3kkoz@willie-the-truck>
+ <7558914c-fc2d-d05a-ccbe-76ef451670ae@arm.com>
+ <20191001144353.5rn3bkcc6eyfclh7@willie-the-truck>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <7306ead0-a9b6-98d0-e775-c677eeeb55a5@arm.com>
+Date: Tue, 1 Oct 2019 15:59:51 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20191001144011.3801-2-david@redhat.com>
+In-Reply-To: <20191001144353.5rn3bkcc6eyfclh7@willie-the-truck>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
- (mx1.redhat.com [10.5.110.69]); Tue, 01 Oct 2019 14:57:57 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_075758_245503_2817EF72 
-X-CRM114-Status: GOOD (  25.79  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191001_075802_941308_E4C16332 
+X-CRM114-Status: GOOD (  17.76  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -116,110 +69,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, linux-ia64@vger.kernel.org,
- Ira Weiny <ira.weiny@intel.com>, linux-sh@vger.kernel.org,
- Jason Gunthorpe <jgg@ziepe.ca>,
- "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>,
- Pankaj Gupta <pagupta@redhat.com>, linux-mm@kvack.org,
- Logan Gunthorpe <logang@deltatee.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+Cc: ard.biesheuvel@linaro.org, Catalin Marinas <catalin.marinas@arm.com>,
+ ndesaulniers@google.com, linux-kernel@vger.kernel.org, tglx@linutronix.de,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 01.10.19 16:40, David Hildenbrand wrote:
-> From: "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>
-> 
-> With altmap, all the resource pfns are not initialized. While initializing
-> pfn, altmap reserve space is skipped. Hence when removing pfn from zone
-> skip pfns that were never initialized.
-> 
-> Update memunmap_pages to calculate start and end pfn based on altmap
-> values. This fixes a kernel crash that is observed when destroying
-> a namespace.
-> 
-> [   81.356173] kernel BUG at include/linux/mm.h:1107!
-> cpu 0x1: Vector: 700 (Program Check) at [c000000274087890]
->     pc: c0000000004b9728: memunmap_pages+0x238/0x340
->     lr: c0000000004b9724: memunmap_pages+0x234/0x340
-> ...
->     pid   = 3669, comm = ndctl
-> kernel BUG at include/linux/mm.h:1107!
-> [c000000274087ba0] c0000000009e3500 devm_action_release+0x30/0x50
-> [c000000274087bc0] c0000000009e4758 release_nodes+0x268/0x2d0
-> [c000000274087c30] c0000000009dd144 device_release_driver_internal+0x174/0x240
-> [c000000274087c70] c0000000009d9dfc unbind_store+0x13c/0x190
-> [c000000274087cb0] c0000000009d8a24 drv_attr_store+0x44/0x60
-> [c000000274087cd0] c0000000005a7470 sysfs_kf_write+0x70/0xa0
-> [c000000274087d10] c0000000005a5cac kernfs_fop_write+0x1ac/0x290
-> [c000000274087d60] c0000000004be45c __vfs_write+0x3c/0x70
-> [c000000274087d80] c0000000004c26e4 vfs_write+0xe4/0x200
-> [c000000274087dd0] c0000000004c2a6c ksys_write+0x7c/0x140
-> [c000000274087e20] c00000000000bbd0 system_call+0x5c/0x68
-> 
-> Cc: Dan Williams <dan.j.williams@intel.com>
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Cc: Jason Gunthorpe <jgg@ziepe.ca>
-> Cc: Logan Gunthorpe <logang@deltatee.com>
-> Cc: Ira Weiny <ira.weiny@intel.com>
-> Reviewed-by: Pankaj Gupta <pagupta@redhat.com>
-> Signed-off-by: Aneesh Kumar K.V <aneesh.kumar@linux.ibm.com>
-> [ move all pfn-realted declarations into a single line ]
-> Signed-off-by: David Hildenbrand <david@redhat.com>
-> ---
->  mm/memremap.c | 13 ++++++++-----
->  1 file changed, 8 insertions(+), 5 deletions(-)
-> 
-> diff --git a/mm/memremap.c b/mm/memremap.c
-> index 557e53c6fb46..026788b2ac69 100644
-> --- a/mm/memremap.c
-> +++ b/mm/memremap.c
-> @@ -123,7 +123,7 @@ static void dev_pagemap_cleanup(struct dev_pagemap *pgmap)
->  void memunmap_pages(struct dev_pagemap *pgmap)
->  {
->  	struct resource *res = &pgmap->res;
-> -	unsigned long pfn;
-> +	unsigned long pfn, nr_pages, start_pfn, end_pfn;
->  	int nid;
->  
->  	dev_pagemap_kill(pgmap);
-> @@ -131,14 +131,17 @@ void memunmap_pages(struct dev_pagemap *pgmap)
->  		put_page(pfn_to_page(pfn));
->  	dev_pagemap_cleanup(pgmap);
->  
-> +	start_pfn = pfn_first(pgmap);
-> +	end_pfn = pfn_end(pgmap);
-> +	nr_pages = end_pfn - start_pfn;
-> +
->  	/* pages are dead and unused, undo the arch mapping */
-> -	nid = page_to_nid(pfn_to_page(PHYS_PFN(res->start)));
-> +	nid = page_to_nid(pfn_to_page(start_pfn));
->  
->  	mem_hotplug_begin();
->  	if (pgmap->type == MEMORY_DEVICE_PRIVATE) {
-> -		pfn = PHYS_PFN(res->start);
-> -		__remove_pages(page_zone(pfn_to_page(pfn)), pfn,
-> -				 PHYS_PFN(resource_size(res)), NULL);
-> +		__remove_pages(page_zone(pfn_to_page(start_pfn)), start_pfn,
-> +			       nr_pages, NULL);
->  	} else {
->  		arch_remove_memory(nid, res->start, resource_size(res),
->  				pgmap_altmap(pgmap));
-> 
-
-Aneesh, I was wondering why the use of "res->start" is correct (and we
-shouldn't also witch to start_pfn/nr_pages here. It would be good if Dan
-could review.
-
--- 
-
-Thanks,
-
-David / dhildenb
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMTAvMS8xOSAzOjQzIFBNLCBXaWxsIERlYWNvbiB3cm90ZToKPiBPbiBUdWUsIE9jdCAwMSwg
+MjAxOSBhdCAwMzozNzo0OVBNICswMTAwLCBWaW5jZW56byBGcmFzY2lubyB3cm90ZToKPj4gT24g
+MTAvMS8xOSAzOjIwIFBNLCBXaWxsIERlYWNvbiB3cm90ZToKPj4+IE9uIFR1ZSwgT2N0IDAxLCAy
+MDE5IGF0IDAzOjIwOjM1UE0gKzAxMDAsIFZpbmNlbnpvIEZyYXNjaW5vIHdyb3RlOgo+Pj4+IE9u
+IDEwLzEvMTkgMjoyNyBQTSwgQ2F0YWxpbiBNYXJpbmFzIHdyb3RlOgo+Pj4+PiBPbiBUdWUsIE9j
+dCAwMSwgMjAxOSBhdCAwMjoxNDoyM1BNICswMTAwLCBXaWxsIERlYWNvbiB3cm90ZToKPj4+Pj4+
+IE9uIFRodSwgU2VwIDI2LCAyMDE5IGF0IDEwOjQzOjM4UE0gKzAxMDAsIFZpbmNlbnpvIEZyYXNj
+aW5vIHdyb3RlOgo+Pj4+Pj4+ICtjb25maWcgQ09NUEFUQ0NfSVNfQVJNX0dDQwo+Pj4+Pj4+ICsJ
+ZGVmX2Jvb2wgJChzdWNjZXNzLCQoQ09NUEFUQ0MpIC0tdmVyc2lvbiB8IGhlYWQgLW4gMSB8IGdy
+ZXAgLXEgImFybS0uKi1nY2MiKQo+Pj4+Pj4KPj4+Pj4+IEkndmUgc2VlbiB0b29sY2hhaW5zIHdo
+ZXJlIHRoZSBmaXJzdCBwYXJ0IG9mIHRoZSB0dXBsZSBpcyAiYXJtdjctIiwgc28gdGhleQo+Pj4+
+Pj4gd29uJ3QgZ2V0IGRldGVjdGVkIGhlcmUuIEhvd2V2ZXIsIGRvIHdlIHJlYWxseSBuZWVkIHRv
+IGRldGVjdCB0aGlzPyBJZgo+Pj4+Pj4gc29tZWJvZHkgcGFzc2VzIGEgZHVmZiBjb21waWxlciwg
+dGhlbiB0aGUgYnVpbGQgd2lsbCBmYWlsIGluIHRoZSBzYW1lIHdheSBhcwo+Pj4+Pj4gaWYgdGhl
+eSBwYXNzZWQgaXQgdG8gQ1JPU1NfQ09NUElMRT0uCj4+Pj4+Cj4+Pj4+IE5vdCBzdXJlIHdoYXQg
+aGFwcGVucyBpZiB3ZSBwYXNzIGFuIGFhcmNoNjQgY29tcGlsZXIuIENhbiB3ZSBlbmQgdXAgd2l0
+aAo+Pj4+PiBhIDY0LWJpdCBjb21wYXQgdkRTTz8KPj4+Pj4KPj4+Pgo+Pj4+IEkgYWdyZWUgd2l0
+aCBDYXRhbGluIGhlcmUuIFRoZSBwcm9ibGVtIGlzIG5vdCBvbmx5IHdoZW4geW91IHBhc3MgYW5k
+IGFhcmNoNjQKPj4+PiB0b29sY2hhaW4gYnV0IGV2ZW4gYW4geDg2IGFuZCBzbyBvbi4KPj4+Cj4+
+PiBJIGRpc2FncmVlLiBXaGF0IGhhcHBlbnMgaWYgeW91IGRvOgo+Pj4KPj4+ICQgbWFrZSBBUkNI
+PWFybTY0IENST1NTX0NPTVBJTEU9eDg2XzY0LWxpbnV4LWdudS0KPj4+Cj4+PiBvbiB5b3VyIHg4
+NiBib3g/Cj4+Pgo+Pgo+PiBUaGUga2VybmVsIGNvbXBpbGF0aW9uIGJyZWFrcyBhcyBmb2xsb3dz
+Ogo+Pgo+PiB4ODZfNjQtbGludXgtZ251LWdjYzogZXJyb3I6IHVucmVjb2duaXplZCBjb21tYW5k
+IGxpbmUgb3B0aW9uIOKAmC1tbGl0dGxlLWVuZGlhbuKAmTsKPj4gZGlkIHlvdSBtZWFuIOKAmC1m
+Y29udmVydD1saXR0bGUtZW5kaWFu4oCZPwo+PiAvZGF0YTEvUHJvamVjdHMvTGludXhLZXJuZWwv
+bGludXgvc2NyaXB0cy9NYWtlZmlsZS5idWlsZDoyNjU6IHJlY2lwZSBmb3IgdGFyZ2V0Cj4+ICdz
+Y3JpcHRzL21vZC9lbXB0eS5vJyBmYWlsZWQKPj4gbWFrZVsyXTogKioqIFtzY3JpcHRzL21vZC9l
+bXB0eS5vXSBFcnJvciAxCj4+IC9kYXRhMS9Qcm9qZWN0cy9MaW51eEtlcm5lbC9saW51eC9NYWtl
+ZmlsZToxMTI4OiByZWNpcGUgZm9yIHRhcmdldCAncHJlcGFyZTAnIGZhaWxlZAo+PiBtYWtlWzFd
+OiAqKiogW3ByZXBhcmUwXSBFcnJvciAyCj4+IG1ha2VbMV06IExlYXZpbmcgZGlyZWN0b3J5ICcv
+ZGF0YTEvUHJvamVjdHMvTGludXhLZXJuZWwvbGludXgtb3V0Jwo+PiBNYWtlZmlsZToxNzk6IHJl
+Y2lwZSBmb3IgdGFyZ2V0ICdzdWItbWFrZScgZmFpbGVkCj4+IG1ha2U6ICoqKiBbc3ViLW1ha2Vd
+IEVycm9yIDIKPj4KPj4gU2ltaWxhciBpc3N1ZSBpbiB0aGUgY29tcGF0IHZkc28gbGlicmFyeSBj
+b21waWxhdGlvbiBpZiBJIGRvICh3aXRob3V0IHRoZSBjaGVjayk6Cj4+Cj4+ICQgbWFrZSBBUkNI
+PWFybTY0IENST1NTX0NPTVBJTEU9YWFyY2g2NC1saW51eC1nbnUtCj4+IENST1NTX0NPTVBJTEVf
+Q09NUEFUPXg4Nl82NC1saW51eC1nbnUtCj4+Cj4+IFdpdGggdGhpcyBjaGVjayB0aGUgY29tcGls
+YXRpb24gY29tcGxldGVzIGNvcnJlY3RseSBidXQgdGhlIGNvbXBhdCB2ZHNvIGRvZXMgbm90Cj4+
+IGdldCBidWlsdCAodW5sZXNzIG15IGVudmlyb25tZW50IGlzIHBsYXlpbmcgbWUgdHJpY2tzIDsp
+ICkuCj4gCj4gTXkgcG9pbnQgd2FzIHRoYXQgd2UgZG9uJ3QgYXR0ZW1wdCB0byBzYW5pdGlzZSB0
+aGUgY29tcGlsZXIgcGFzc2VkIHZpYQo+IENST1NTX0NPTVBJTEUsIHNvIEkgZG9uJ3QgdGhpbmsg
+d2Ugc2hvdWxkIGRvIGFueXRoaW5nIHNwZWNpYWwgZm9yIENPTVBBVENDCj4gZWl0aGVyLgo+CgpJ
+IGFncmVlIG9uIHRoaXMsIGJ1dCB0aGUgcG9pbnQgSSB3YXMgdHJ5aW5nIHRvIG1ha2UgaXMgdGhh
+dCB0aGUga2VybmVsIHNob3VsZApzdGlsbCBiZSBhYmxlIHRvIGJ1aWxkIGV2ZW4gaWYgdGhlIGNv
+bXBpbGVyIGZvciBjb21wYXQgdmRzbyBpcyBub3QgY29ycmVjdC4KCkkgZG8gbm90IGhhdmUgYSBz
+dHJvbmcgb3BpbmlvbiB0aG91Z2guCgo+IFdpbGwKPiAKCi0tIApSZWdhcmRzLApWaW5jZW56bwoK
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
+LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
+Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
+cm5lbAo=
