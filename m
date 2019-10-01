@@ -2,78 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA067C3A86
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 18:30:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41245C3A8B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 18:30:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fgo/uP4jVjHJbDmTMn2AbnutgtfvdOFT5u+BGculAQk=; b=fGBUyvsdYqAOfg
-	PKLCNZnHWxswC3JSDKZB+2ovahLP/L0mVQlWeeUAH/UFhFhKTj4BIw08Ru75lBUOEYatDeDNFwJe6
-	FzzkOGuUJSoPUnYmIQ0SdfK+D+jTNy1BfCyD8r89wjgQDuk3QXBkycrTyFUwajfDELm6DgpNmrW91
-	xA0eOj2BugzmGIhMYHqLSBTLEQfViHajfqfd/+u8ldkuUH2nUwRHqqqyPE2nSzhaUm2WgHyUeQx/s
-	d4ZFeOYiOzvqtuesM92tfg3NwUu37mICY687l+u82r7AeAC1uVX3WdufQXmMY3xYDxYULYauwKujH
-	XYUMEIJVH5ZZRYUv7jpA==;
+	List-Owner; bh=EfsD6RGWSdhWPRt6Bffqm/q77pUwznankT6dcMO2Nj4=; b=gRSY1vZAbr3iVH
+	1WKVXNq3AYNB4lkiDg1jrxkvbGa5wIZwb65tn5aa3U1AtZuY+y+0IkJr1gIK4S1N+RwHajsrjcGDh
+	BjPcYYk53jJBmddX34lLZnyoB6LmhyMjEbQm5fyzZOLrYm3Y2qQBNlWuTYba4oXCJAf76zNu4ZMRt
+	Blsw/dLGbOiJL6tR5HCXJPVd/y6X0aD21Wq+dbk8rdYm+193yxYSdOFSon+NmrMUEzKE1dpHZPvox
+	9Khi7/yxUSbuh6YCuTgDcifVuC/fnpIphuXk6npZCa2MFylyqStdtYfwG2vpabDou6e0/YV3SLCJg
+	PSkJC6R8ZXh0ZXIImu2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFL2C-00015d-Ta; Tue, 01 Oct 2019 16:29:56 +0000
-Received: from mail-qt1-f193.google.com ([209.85.160.193])
+	id 1iFL2X-0002IY-A9; Tue, 01 Oct 2019 16:30:17 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFL26-000150-4j
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 16:29:51 +0000
-Received: by mail-qt1-f193.google.com with SMTP id f7so22374715qtq.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 01 Oct 2019 09:29:47 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=0zO73icoSPJ3pNVWiNNF9L9OEEbriWKwEbaN0EtJRPI=;
- b=kVeii5imEvg8nneQNcTQnzRnmwV0b6p43mVRqnh5M9AspeoYahM5xs8DmbcekrBT6/
- 2YkCRLNvZtzXLm/W8byLPgOudASZdij03bVyxmSwm5pEFN4e1RiH0ME5TgHC4+AfCYze
- GCRtPKEIS5/RtBYP8cliDBtHQkLq1y7gTJrfAJk40ReU4ENvvTjoeFuR460nBQWy3EyW
- mey7yKvVs3dy2R89pfJXrch7B86ytNXJMw+ktc+aBfry8sdrQYDz2edw3WD5yHSe/PW5
- dPVfX5h/0+/HqK0XwjAEH86jQI/ydVP7n9SAYZ0zi+i8iGXLMaOIAybR9KcMXtDPuzV9
- rLLg==
-X-Gm-Message-State: APjAAAUCC7mHRdErm1KgSxl3SUqvPTPpmMCyhp/Uydi+NVEpbUaR0yaU
- s/prwRN0G3GD839kgxzdbrWuS6wc4XmgxUQavC8=
-X-Google-Smtp-Source: APXvYqxkgIX2gcVaLjsRtcgaC+7CiGnoTPy8gmARgU5xbBtCjA5leLB24V7ISErrIwWtMs8YA3rGRE+qoQ6Sf7PgVcI=
-X-Received: by 2002:ac8:1a2e:: with SMTP id v43mr31469917qtj.204.1569947386677; 
- Tue, 01 Oct 2019 09:29:46 -0700 (PDT)
-MIME-Version: 1.0
-References: <20191001142026.1124917-1-arnd@arndb.de>
- <bb58c7cc-209d-7a2f-0e5b-95a9605ffe7b@linux.intel.com>
- <CAK8P3a3Js2dNhnRhP7PLadWZ69DZr1mz6DowN9HDJL4CFDAAFw@mail.gmail.com>
- <e4b90233-846c-bfc1-68a3-a7b7c28b60bd@linux.intel.com>
-In-Reply-To: <e4b90233-846c-bfc1-68a3-a7b7c28b60bd@linux.intel.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 1 Oct 2019 18:29:30 +0200
-Message-ID: <CAK8P3a1vHECVV86JHxEZmo7jQOosHO=H33v784keqLMNiiHSxA@mail.gmail.com>
-Subject: Re: [alsa-devel] [PATCH] ASoC: SOF: imx: fix reverse
- CONFIG_SND_SOC_SOF_OF dependency
-To: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>
+ id 1iFL2J-0001HJ-Ax
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 16:30:05 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f00:1e2::3d5])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id F1319154B74EF;
+ Tue,  1 Oct 2019 09:30:00 -0700 (PDT)
+Date: Tue, 01 Oct 2019 09:30:00 -0700 (PDT)
+Message-Id: <20191001.093000.372726574458067639.davem@davemloft.net>
+To: icenowy@aosc.io
+Subject: Re: [PATCH 0/3] Pine64+ specific hacks for RTL8211E Ethernet PHY
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <2CCD0856-433E-4602-A079-9F7F5F2E00D6@aosc.io>
+References: <20191001082912.12905-1-icenowy@aosc.io>
+ <20191001.090651.796983023328992596.davem@davemloft.net>
+ <2CCD0856-433E-4602-A079-9F7F5F2E00D6@aosc.io>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Tue, 01 Oct 2019 09:30:01 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_092950_186915_704601CB 
-X-CRM114-Status: GOOD (  13.37  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191001_093003_547887_30F5A23A 
+X-CRM114-Status: UNSURE (   5.51  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.193 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.160.193 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,50 +65,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ALSA Development Mailing List <alsa-devel@alsa-project.org>,
- Fabio Estevam <festevam@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Takashi Iwai <tiwai@suse.com>, YueHaibing <yuehaibing@huawei.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Jaroslav Kysela <perex@perex.cz>,
- Hulk Robot <hulkci@huawei.com>, Mark Brown <broonie@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, andrew@lunn.ch, f.fainelli@gmail.com,
+ devicetree@vger.kernel.org, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mripard@kernel.org, linux-sunxi@googlegroups.com,
+ robh+dt@kernel.org, wens@csie.org, linux-arm-kernel@lists.infradead.org,
+ hkallweit1@gmail.com
+Content-Type: text/plain; charset="iso-2022-jp"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 1, 2019 at 6:03 PM Pierre-Louis Bossart
-<pierre-louis.bossart@linux.intel.com> wrote:
-> On 10/1/19 10:41 AM, Arnd Bergmann wrote:
-> > On Tue, Oct 1, 2019 at 5:32 PM Pierre-Louis Bossart
-> > <pierre-louis.bossart@linux.intel.com> wrote:
+From: Icenowy Zheng <icenowy@aosc.io>
+Date: Wed, 02 Oct 2019 00:08:39 +0800
 
-> >
-> > The same could be done with a Kconfig-only solution avoiding
-> > 'select' such as:
-> >
-> > config SND_SOC_SOF_IMX8_SUPPORT
-> >           bool "SOF support for i.MX8"
-> >           depends on IMX_SCU
-> >           depends on IMX_DSP
-> >
-> >   config SND_SOC_SOF_IMX8
-> >           def_tristate SND_SOC_SOF_OF
-> >           depends on SND_SOC_SOF_IMX8_SUPPORT
->
-> Ah, nice, thanks for the suggestion! That would be my preference, we
-> have a similar select for PCI and ACPI parts in sound/soc/sof/Kconfig
-> and I was looking for a means to do this more elegantly.
-> I can submit a new fix or let you sent a v2, whatever is more convenient.
+> 
+> 
+> 于 2019年10月2日 GMT+08:00 上午12:06:51, David Miller <davem@davemloft.net> 写到:
+>>From: Icenowy Zheng <icenowy@aosc.io>
+>>Date: Tue,  1 Oct 2019 16:29:09 +0800
+>>
+>>> There're some Pine64+ boards known to have broken RTL8211E chips, and
+>>> a hack is given by Pine64+, which is said to be from Realtek.
+>>> 
+>>> This patchset adds the hack.
+>>> 
+>>> The hack is taken from U-Boot, and it contains magic numbers without
+>>> any document.
+>>
+>>Please contact Realtek and try to get an explanation about this.
+> 
+> Sorry, but Realtek never shows any idea to add more infomation about this.
+> 
+> These hacks had existed and worked for years.
 
-Ok, please send a patch then, I can add it to my randconfig test tree to
-make sure it covers all corner cases.
+Have you actually tried to communicate with an appropriate contact yourself?
 
-    Arnd
+If not, I am asking you to do so.
 
 _______________________________________________
 linux-arm-kernel mailing list
