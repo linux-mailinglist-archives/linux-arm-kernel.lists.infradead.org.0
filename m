@@ -2,69 +2,124 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B053FC3444
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 14:33:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05FFFC3461
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 14:36:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G7defpsR8aPBO7fzvhbjxC4hYA4tP1oD+b3V8oogaQI=; b=YsgjnPQ49bP2x6
-	loJ33rZpkIkg2l07z7AIsh0ETA9eW0m2VHsHs0uvG6CKpGZAeiyRANOJuyWwU1EfrmtUvzxZiyVHH
-	s22+aSF8FKp8LkhFCxoLlj8YERGFLWbWczrnwkX7ANTmDiTEPg5dwGIqAfJ4GVW0405gpdwZZ37cH
-	u69q5wA9ulw7nYPL5D9irkAQTti5XMIzBAZrAEoKMMW5jxNrPXdp9Nt1OrojdsITpJzqp0EppHgob
-	Z50di+0+H1dRXZRNXfDzEDkksiqX42c4xDUvQZULdHXEmsnyqlPfW81zkn1sasbObBdvae6qLT7oO
-	JtwHRWWaan9gYeDqZ3bQ==;
+	In-Reply-To:List-Owner; bh=3KNgIeFa7FSbRLFE5dBYin4Sd3ovv1GKWrwJtTbQljc=; b=Gp
+	n7/6JwC1FafIZT+g7hFVdg3TXnBIb5R7JD1H5nrP0G4Elhes/0QBwCpgA9tSnZCt8VcXiB1JS6Ct1
+	SBNvY5Lz3rsedpgz9bt+jETJ5zCL67yhaCjEFhAiWTkimeuE6+CMggFWcs/ANCuAMT1wBvPJxUdWo
+	21AQ6f+KO81QcmAL2YzsfaeZAjOxxiqd/6+1+Hka0XhzodhibMJduF7nvMy5enYjiCvplMiyPk3Hl
+	Mn9yVSaXGwPeA51pfcLmwcskJt7hN94Uml1AaadFv23jD3fOtQEPCIr+3mxHkId3BAX8ypQydaykv
+	zvw4w0VlUHyU/dqFn1YWyxxbFfW8/lMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFHKi-00042p-EU; Tue, 01 Oct 2019 12:32:48 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iFHOa-0005xH-2M; Tue, 01 Oct 2019 12:36:48 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFHKa-00040p-HL; Tue, 01 Oct 2019 12:32:41 +0000
-X-UUID: acdfceb8cf8142fa9abaaa87cd529de2-20191001
-X-UUID: acdfceb8cf8142fa9abaaa87cd529de2-20191001
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <mark-mc.lee@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 386999651; Tue, 01 Oct 2019 04:32:30 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 1 Oct 2019 05:32:28 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 1 Oct 2019 20:32:18 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Tue, 1 Oct 2019 20:32:17 +0800
-From: MarkLee <Mark-MC.Lee@mediatek.com>
-To: "David S. Miller" <davem@davemloft.net>, Sean Wang
- <sean.wang@mediatek.com>, John Crispin <john@phrozen.org>, Felix Fietkau
- <nbd@openwrt.org>, Nelson Chang <nelson.chang@mediatek.com>, Matthias Brugger
- <matthias.bgg@gmail.com>
-Subject: [PATCH net 1/2] net: ethernet: mediatek: Fix MT7629 missing GMII mode
- support
-Date: Tue, 1 Oct 2019 20:31:49 +0800
-Message-ID: <20191001123150.23135-2-Mark-MC.Lee@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20191001123150.23135-1-Mark-MC.Lee@mediatek.com>
-References: <20191001123150.23135-1-Mark-MC.Lee@mediatek.com>
-MIME-Version: 1.0
-X-TM-SNTS-SMTP: 69F1E331B29365995878096379C70BE41545FD0A32930813DB7CCFFED2A424322000:8
-X-MTK: N
+ id 1iFHOS-0005vp-HJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 12:36:42 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20191001123637euoutp01d483c3c115f47bc4d8170654f83722ea~JhhuE_IsJ0998109981euoutp01-
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue,  1 Oct 2019 12:36:37 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20191001123637euoutp01d483c3c115f47bc4d8170654f83722ea~JhhuE_IsJ0998109981euoutp01-
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1569933397;
+ bh=2CZIhLH33tEifh3ALDvkkJLDMm/NCNj9OqRYGF4YRHk=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=ckSan4VK7cEsHAvZuvv36CifaRibVleBDm0C3HRMPlZv00wCdmxZNb1E+6ZpolXSv
+ 7nyC2fKOHOwUXN9Ugx+TmwzTmLR3F+skJ0GH214zzNSuGMH5TvsmfALu8ALrOkI96E
+ w6GNEKKd8eLCGr0Js4jo+2TfrYVFgLiRN9mDpmoE=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20191001123637eucas1p1a5a031dcebe72e27a5623cf58ee42ea4~Jhhtzy6gb1358913589eucas1p1C;
+ Tue,  1 Oct 2019 12:36:37 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id 28.19.04309.558439D5; Tue,  1
+ Oct 2019 13:36:37 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20191001123637eucas1p25c7551d4c967e4a2855f6c8d3b096ff5~JhhtfxpQU2028820288eucas1p27;
+ Tue,  1 Oct 2019 12:36:37 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20191001123637eusmtrp144f2a02a099c64eb7f5304a4055ad78f~JhhtfBv3U0398103981eusmtrp1h;
+ Tue,  1 Oct 2019 12:36:37 +0000 (GMT)
+X-AuditID: cbfec7f4-afbff700000010d5-06-5d9348554c06
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id CC.33.04117.558439D5; Tue,  1
+ Oct 2019 13:36:37 +0100 (BST)
+Received: from AMDC3061.DIGITAL.local (unknown [106.120.51.75]) by
+ eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20191001123636eusmtip2b2bcedc6b7a6d9d900c1886ae301bccc~Jhhs5dkDU0870908709eusmtip2d;
+ Tue,  1 Oct 2019 12:36:36 +0000 (GMT)
+From: Sylwester Nawrocki <s.nawrocki@samsung.com>
+To: broonie@kernel.org, krzk@kernel.org
+Subject: [PATCH v3 RESEND 1/3] ASoC: samsung: arndale: Simplify DAI link
+ initialization
+Date: Tue,  1 Oct 2019 14:36:23 +0200
+Message-Id: <20191001123625.19370-1-s.nawrocki@samsung.com>
+X-Mailer: git-send-email 2.17.1
+X-Brightmail-Tracker: H4sIAAAAAAAAA0VSe0hTcRTudx+71+HiOhV/rbIaSQ/IF2UXtNAQvD3+kCDKZOktLyq5abs+
+ siDNWJmPtZSaicEITZmYOkVSydl8LDK5CfOFiJUSJJngRPKR5na1/vvO953vfIfDIVF5Ga4g
+ UzWZnFbDpiklUqytf1k4dokpVwV/+n6AdgzZELq5ohGnn32dkdAOnQXQgtBE0EuOQoS2TI/g
+ dIXQhdANvZME7Zy34nTPz0c4PVS3iER6Mk3OAgnTXjlJMBbzYwnTUp3HGKs2AKNvNQPGafGP
+ Ja5KI5K4tNRsTht0OlGa0qFrITJ0vrcHBwUsH4x4FQEPElLH4ZihBC8CUlJO1QHYZ23dKhYB
+ FOx6VCycAOpWOiXbFuNoMyIKtQDWLy+Bf5aBj+uoq0tChcDSPj1wYR/qEJyqKHDPRal2BH4b
+ nsJcgjcVBy0fTJujSBKjAmD+E7dXRoXDggk7ENP2wfqmbvcakCom4MK7WUIUomGN/hcuYm84
+ a2/d4vfAgfISTDQ8ALCkc4IQCwOAU3bT1thw2GMfwl3JKHUENnYEiXQU7Kl+j7poSO2EY3Pu
+ K6GbsKzNuEXLYOFDudh9EK6ajYiIFbB4ZgMTMQOnC7vc15JTKtg72okYgH/l/ywTAGbgx2Xx
+ 6mSOD9VwOYE8q+azNMmBN9LVFrD5KQPr9sW3oGPtug1QJFB6ygw/nqrkOJvN56ptAJKo0kcW
+ sVamksuS2Nw7nDY9QZuVxvE2sJvElH6yuzu+xMupZDaTu8lxGZx2W0VID0U+2D/PelQ6VgXm
+ d2P8m7AY2wnTRM3zFLz9yquVbgTBNmw56tUz45qSvMtz1wRFWHn+Z8VF75jw3HMJoQHRp4jE
+ w82l49HKqKI5r07rvCPyfN9rhfcf68AF8GLBEB83/vL+yaTgW6aq4fUutnbXvZU2c46vc0f6
+ 3tizDWT/5t7tSoxPYUOOolqe/QvfcePkJQMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrKLMWRmVeSWpSXmKPExsVy+t/xe7qhHpNjDW7O4rC4cvEQk8XGGetZ
+ LaY+fMJmcaV1E6PF+fMb2C2+Xelgstj0+BqrxYzz+5gs1h65y27x+f1+VovDb9pZLS6u+MLk
+ wOOx4XMTm8fOWXfZPTat6mTz2Lyk3mP6nP+MHn1bVjF6fN4kF8AepWdTlF9akqqQkV9cYqsU
+ bWhhpGdoaaFnZGKpZ2hsHmtlZKqkb2eTkpqTWZZapG+XoJexq3Uze0GraMXZs+dZGhivCXYx
+ cnJICJhITL++kQnEFhJYyijx/XBBFyMHUFxKYn6LEkSJsMSfa11sXYxcQCWfGCUWvtjCDJJg
+ EzCU6D3axwhiiwhoSnTMu80KUsQscJhJYnHHQRaQhLBAuMTNhxOZQIayCKhKNPSD9fIKWEs0
+ 3T7OCLFAXmL1hgPMExh5FjAyrGIUSS0tzk3PLTbSK07MLS7NS9dLzs/dxAgM4m3Hfm7Zwdj1
+ LvgQowAHoxIPr8XzibFCrIllxZW5hxglOJiVRHht/kyKFeJNSaysSi3Kjy8qzUktPsRoCrR7
+ IrOUaHI+MMLySuINTQ3NLSwNzY3Njc0slMR5OwQOxggJpCeWpGanphakFsH0MXFwSjUwcr7S
+ DHqiE7VtuWcq25sN79b8yFyXqnh774ZFAs5t6d0detbROaGLFprdkp/jyDRR0FCs65isbmKr
+ ZvqLC/7ssXd0j7kfOl33ZEGB3byCa/Ovmp+qjrXx2S7PdnD1akHGk0GmdzXuec3lYnvm+EF8
+ bV3AlldZB8/f/vfq5lz1FcuVZVndHqi8U2Ipzkg01GIuKk4EANvBA+t4AgAA
+X-CMS-MailID: 20191001123637eucas1p25c7551d4c967e4a2855f6c8d3b096ff5
+X-Msg-Generator: CA
+X-RootMTR: 20191001123637eucas1p25c7551d4c967e4a2855f6c8d3b096ff5
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20191001123637eucas1p25c7551d4c967e4a2855f6c8d3b096ff5
+References: <CGME20191001123637eucas1p25c7551d4c967e4a2855f6c8d3b096ff5@eucas1p2.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_053240_579495_02ED32F9 
-X-CRM114-Status: UNSURE (   9.64  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191001_053640_779321_5F3E9389 
+X-CRM114-Status: GOOD (  14.34  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.11 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,35 +131,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- Rene van Dorst <opensource@vdorst.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, MarkLee <Mark-MC.Lee@mediatek.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: alsa-devel@alsa-project.org, linux-samsung-soc@vger.kernel.org,
+ ckeepax@opensource.cirrus.com, b.zolnierkie@samsung.com, sbkim73@samsung.com,
+ patches@opensource.cirrus.com, lgirdwood@gmail.com,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add missing configuration for mt7629 gmii mode support
+There is only one DAI link so we can drop an unnecessary loop statement.
+Use card->dai_link in place of direct static arndale_rt5631_dai[] array
+dereference as a prerequisite for adding support for other CODECs.
+Unnecessary assignment of dai_link->codecs->name to NULL is removed.
 
-Signed-off-by: MarkLee <Mark-MC.Lee@mediatek.com>
+Reviewed-by: Charles Keepax <ckeepax@opensource.cirrus.com>
+Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
+Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
 ---
- drivers/net/ethernet/mediatek/mtk_eth_soc.c | 1 +
- 1 file changed, 1 insertion(+)
+Changes since v1:
+ - rebased due to reordering patches in the series
+---
+ sound/soc/samsung/arndale_rt5631.c | 42 +++++++++++++-----------------
+ 1 file changed, 18 insertions(+), 24 deletions(-)
 
-diff --git a/drivers/net/ethernet/mediatek/mtk_eth_soc.c b/drivers/net/ethernet/mediatek/mtk_eth_soc.c
-index c61069340f4f..703adb96429e 100644
---- a/drivers/net/ethernet/mediatek/mtk_eth_soc.c
-+++ b/drivers/net/ethernet/mediatek/mtk_eth_soc.c
-@@ -261,6 +261,7 @@ static void mtk_mac_config(struct phylink_config *config, unsigned int mode,
- 		ge_mode = 0;
- 		switch (state->interface) {
- 		case PHY_INTERFACE_MODE_MII:
-+		case PHY_INTERFACE_MODE_GMII:
- 			ge_mode = 1;
- 			break;
- 		case PHY_INTERFACE_MODE_REVMII:
+diff --git a/sound/soc/samsung/arndale_rt5631.c b/sound/soc/samsung/arndale_rt5631.c
+index fd8c6642fb0d..004c84fafad9 100644
+--- a/sound/soc/samsung/arndale_rt5631.c
++++ b/sound/soc/samsung/arndale_rt5631.c
+@@ -88,36 +88,30 @@ static void arndale_put_of_nodes(struct snd_soc_card *card)
+ 
+ static int arndale_audio_probe(struct platform_device *pdev)
+ {
+-	int n, ret;
+ 	struct device_node *np = pdev->dev.of_node;
+ 	struct snd_soc_card *card = &arndale_rt5631;
++	struct snd_soc_dai_link *dai_link;
++	int ret;
+ 
+ 	card->dev = &pdev->dev;
++	dai_link = card->dai_link;
++
++	dai_link->cpus->of_node = of_parse_phandle(np, "samsung,audio-cpu", 0);
++	if (!dai_link->cpus->of_node) {
++		dev_err(&pdev->dev,
++			"Property 'samsung,audio-cpu' missing or invalid\n");
++		return -EINVAL;
++	}
+ 
+-	for (n = 0; np && n < ARRAY_SIZE(arndale_rt5631_dai); n++) {
+-		if (!arndale_rt5631_dai[n].cpus->dai_name) {
+-			arndale_rt5631_dai[n].cpus->of_node = of_parse_phandle(np,
+-					"samsung,audio-cpu", n);
+-
+-			if (!arndale_rt5631_dai[n].cpus->of_node) {
+-				dev_err(&pdev->dev,
+-				"Property 'samsung,audio-cpu' missing or invalid\n");
+-				return -EINVAL;
+-			}
+-		}
+-		if (!arndale_rt5631_dai[n].platforms->name)
+-			arndale_rt5631_dai[n].platforms->of_node =
+-					arndale_rt5631_dai[n].cpus->of_node;
+-
+-		arndale_rt5631_dai[n].codecs->name = NULL;
+-		arndale_rt5631_dai[n].codecs->of_node = of_parse_phandle(np,
+-					"samsung,audio-codec", n);
+-		if (!arndale_rt5631_dai[0].codecs->of_node) {
+-			dev_err(&pdev->dev,
++	if (!dai_link->platforms->name)
++		dai_link->platforms->of_node = dai_link->cpus->of_node;
++
++	dai_link->codecs->of_node = of_parse_phandle(np, "samsung,audio-codec", 0);
++	if (!dai_link->codecs->of_node) {
++		dev_err(&pdev->dev,
+ 			"Property 'samsung,audio-codec' missing or invalid\n");
+-			ret = -EINVAL;
+-			goto err_put_of_nodes;
+-		}
++		ret = -EINVAL;
++		goto err_put_of_nodes;
+ 	}
+ 
+ 	ret = devm_snd_soc_register_card(card->dev, card);
 -- 
 2.17.1
 
