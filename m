@@ -2,39 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1391C3011
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 11:22:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AD75C300B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 11:21:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=plCAv7JG++AhGh+HbsO6ooPcR0At9CsD0l8FjVIG+Ck=; b=uOpUvtkaV5U55T
-	aDkyUodjeWki1IZO5yKaHidZeQGLUfkyN4NJAN2n+qwnXZmhhOmQ7q5Z2O3xSvlKaPcEnd74qe7pO
-	QPb4TV41iEfLCeYVq2KTMsPWm1ae2XIAleHnCvsOs9wGmNHdjrJb0VklpPpxi6/6P5Ggwg5ojYkiy
-	8nj1gLtrhlgAgbh45ybWuxY5DGVUCAiwek/em096mT3CFvnwnwqxuUWQQ2q7uIhmN3azHY9f1pX8t
-	dbYOaZarlxc+oDILkvwQaDHBZCHg/HFv0HMREQuV/u9kCcgnW7zM3oS4rV5lUPwpp54QAwF6Srutr
-	M7iLIQ7sB2foSML+Hx1Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mk0WZNrsRecK3D5p1RO7BaSstsU+pDn4qhBeMM46fOA=; b=KYICJmNh96PNBp
+	jFPMf/WdOyxgNIihNsZsOMtHZgPpBX1HoZtOWEq7nh5pqC0m09znweHvWiO0D7Xbiiom/vEHtuckT
+	n7qjhCaokgOtz3Im3EN771mhHVhVwB1ZOS+e2+lCbQaFOdiYpAX6mU0i/8/QpIZSO/MQZ3p5lFriG
+	8L9u48DPSmL7wy2j/ZudHQnqMRvuVMvypd/zC/n2w30ambqtwt8Fsaj3i2XH/S5qlvf2f07h6/ypw
+	5azRKKXMJrf5fJ2sbyhZQP4qF3jTtrIKKjmb1nvyxTaxIyrRRpkgwiHIJGHyn2Y/dZ8F/VjJl8NXf
+	chHLY4YGvpR+ok1x7LYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFEMG-00058J-GD; Tue, 01 Oct 2019 09:22:12 +0000
+	id 1iFELf-0004Qj-LH; Tue, 01 Oct 2019 09:21:35 +0000
 Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFELE-0004A0-Tf
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 09:21:11 +0000
+ id 1iFELE-00049y-TL
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 09:21:10 +0000
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by cheepnis.misterjones.org with esmtpsa
  (TLSv1.2:DHE-RSA-AES128-GCM-SHA256:128) (Exim 4.80)
  (envelope-from <maz@kernel.org>)
- id 1iFEL5-00019A-0W; Tue, 01 Oct 2019 11:20:59 +0200
+ id 1iFEL5-00019A-Lt; Tue, 01 Oct 2019 11:20:59 +0200
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 0/4] KVM/arm updates for 5.4-rc2
-Date: Tue,  1 Oct 2019 10:20:34 +0100
-Message-Id: <20191001092038.17097-1-maz@kernel.org>
+Subject: [PATCH 1/4] arm64: KVM: Drop hyp_alternate_select for checking for
+ ARM64_WORKAROUND_834220
+Date: Tue,  1 Oct 2019 10:20:35 +0100
+Message-Id: <20191001092038.17097-2-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191001092038.17097-1-maz@kernel.org>
+References: <20191001092038.17097-1-maz@kernel.org>
 MIME-Version: 1.0
 X-SA-Exim-Connect-IP: 62.31.163.78
 X-SA-Exim-Rcpt-To: pbonzini@redhat.com, rkrcmar@redhat.com, drjones@redhat.com,
@@ -46,8 +49,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_022109_113428_3DF16D47 
-X-CRM114-Status: UNSURE (   9.64  )
+X-CRM114-CacheID: sfid-20191001_022109_102698_B0ED4E68 
+X-CRM114-Status: UNSURE (   9.36  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -79,51 +82,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Paolo, Radim,
+There is no reason for using hyp_alternate_select when checking
+for ARM64_WORKAROUND_834220, as each of the capabilities is
+also backed by a static key. Just replace the KVM-specific
+construct with cpus_have_const_cap(ARM64_WORKAROUND_834220).
 
-Here's the first set of KVM/arm fixes for 5.4. The first three patches
-remove a construct which helped us bringing up VHE back in the days,
-but which is now more of a confusing historical artefact, better
-replaced with static keys that we already have. The last patch fixes
-the ftrace include path that so far worked by luck (and has been
-addressed in other places in the tree).
+Signed-off-by: Marc Zyngier <maz@kernel.org>
+Reviewed-by: Christoffer Dall <christoffer.dall@arm.com>
+Reviewed-by: Andrew Jones <drjones@redhat.com>
+---
+ arch/arm64/kvm/hyp/switch.c | 17 ++---------------
+ 1 file changed, 2 insertions(+), 15 deletions(-)
 
-Please pull,
+diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
+index adaf266d8de8..a15baca9aca0 100644
+--- a/arch/arm64/kvm/hyp/switch.c
++++ b/arch/arm64/kvm/hyp/switch.c
+@@ -229,20 +229,6 @@ static void __hyp_text __hyp_vgic_restore_state(struct kvm_vcpu *vcpu)
+ 	}
+ }
+ 
+-static bool __hyp_text __true_value(void)
+-{
+-	return true;
+-}
+-
+-static bool __hyp_text __false_value(void)
+-{
+-	return false;
+-}
+-
+-static hyp_alternate_select(__check_arm_834220,
+-			    __false_value, __true_value,
+-			    ARM64_WORKAROUND_834220);
+-
+ static bool __hyp_text __translate_far_to_hpfar(u64 far, u64 *hpfar)
+ {
+ 	u64 par, tmp;
+@@ -298,7 +284,8 @@ static bool __hyp_text __populate_fault_info(struct kvm_vcpu *vcpu)
+ 	 * resolve the IPA using the AT instruction.
+ 	 */
+ 	if (!(esr & ESR_ELx_S1PTW) &&
+-	    (__check_arm_834220()() || (esr & ESR_ELx_FSC_TYPE) == FSC_PERM)) {
++	    (cpus_have_const_cap(ARM64_WORKAROUND_834220) ||
++	     (esr & ESR_ELx_FSC_TYPE) == FSC_PERM)) {
+ 		if (!__translate_far_to_hpfar(far, &hpfar))
+ 			return false;
+ 	} else {
+-- 
+2.20.1
 
-       M.
-
-The following changes since commit 92f35b751c71d14250a401246f2c792e3aa5b386:
-
-  KVM: arm/arm64: vgic: Allow more than 256 vcpus for KVM_IRQ_LINE (2019-09-09 12:29:09 +0100)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/kvmarm/kvmarm.git tags/kvmarm-fixes-5.4-1
-
-for you to fetch changes up to aac60f1a867773de9eb164013d89c99f3ea1f009:
-
-  KVM: arm/arm64: vgic: Use the appropriate TRACE_INCLUDE_PATH (2019-09-11 16:36:19 +0100)
-
-----------------------------------------------------------------
-KVM/arm fixes for 5.4, take #1
-
-- Remove the now obsolete hyp_alternate_select construct
-- Fix the TRACE_INCLUDE_PATH macro in the vgic code
-
-----------------------------------------------------------------
-Marc Zyngier (3):
-      arm64: KVM: Drop hyp_alternate_select for checking for ARM64_WORKAROUND_834220
-      arm64: KVM: Replace hyp_alternate_select with has_vhe()
-      arm64: KVM: Kill hyp_alternate_select()
-
-Zenghui Yu (1):
-      KVM: arm/arm64: vgic: Use the appropriate TRACE_INCLUDE_PATH
-
- arch/arm64/include/asm/kvm_hyp.h | 24 ------------------------
- arch/arm64/kvm/hyp/switch.c      | 17 ++---------------
- arch/arm64/kvm/hyp/tlb.c         | 36 ++++++++++++++++++++++--------------
- virt/kvm/arm/vgic/trace.h        |  2 +-
- 4 files changed, 25 insertions(+), 54 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
