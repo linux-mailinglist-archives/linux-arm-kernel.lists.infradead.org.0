@@ -2,59 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5476DC3E9F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 19:32:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38899C3EBC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  1 Oct 2019 19:38:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Mr46U5Fhbi6Oe0Y2tr6j8UmPQ7bI6f/UZIfQ9LxsmBo=; b=iiUUUDUGnDlDwTG4q9LYDrF0O
-	CF2YqWE3v70ynw9WK9mHs1I3enuDvQLgNr84K1TWw91q1qqG9UDA2GmhO39RBhz7h+JDqvsHuYlnT
-	3WrcwG+Un9taXSVl6lfnVist2KOr+mXEGM8UafFY8CuwdEeUyvFf/Y4a7pj3OKxFWUd1FmZXrk1mR
-	Qfj+YGZQsyZo/8FAfbdVeQo3UKzr0p91JOqI3KKnclMYf6toSxB/wjLrN50CB7fi39f5csswtr89y
-	Ql/h8ceOC5cPxXiKGi5fcZ72upPyHzmEeJq6tlkRj3jmftSgy8m2kKVNr1h11u65X4HRGQ2REQMRh
-	GoYrUBPaA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VtL/n0ZDx2inCIAUJxd1f65LxdbSL44H6+5JbimQ/eU=; b=buhf7KfR0KsYEg
+	ZJ/pqlFmaMuGmb6BL7pQJI5tQhvP5y7wZ+Rv+aq46pA5icQ/4z1wEcSrmm209Tarjl63Ym9KBAnB7
+	2CYVzrViR5QeqWU10F4SbK2LEX8Ylnc3KsDxHcAqQp+elSoF1hL8M2xxMhupJRbgYglk80+lWN/rG
+	chhgOec95SnxvE4KeFse0WvfIiSf0mlty4IS9YRd22jlCfTAFFU71wHmBA/5jZghHDsuFr37T8YYi
+	uuR9sk+g1BAEQeOXeyCLLmM11l2zW8n2mB0WIU5WRg7R/Bcnzp3efRPm9RQiHWVZoWbDXIdA5tFj8
+	+W6FF7IB8gC1+yyG5OlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFM0B-0005v8-4Q; Tue, 01 Oct 2019 17:31:55 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFM04-0005uI-VN
- for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 17:31:50 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B2069337;
- Tue,  1 Oct 2019 10:31:46 -0700 (PDT)
-Received: from [10.1.197.116] (unknown [10.1.197.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A01A13F706;
- Tue,  1 Oct 2019 10:31:40 -0700 (PDT)
-Subject: Re: [PATCHv9 2/3] arm64: dts: qcom: msm8998: Add Coresight support
-To: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>,
- Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-References: <cover.1564550873.git.saiprakash.ranjan@codeaurora.org>
- <90114e06825e537c3aafd3de5c78743a9de6fadc.1564550873.git.saiprakash.ranjan@codeaurora.org>
- <CAOCk7NrK+wY8jfHdS8781NOQtyLm2RRe1NW2Rm3_zeaot0Q99Q@mail.gmail.com>
- <16212a577339204e901cf4eefa5e82f1@codeaurora.org>
- <CAOCk7NohO67qeYCnrjy4P0KN9nLUiamphHRvj-bFP++K7khPOw@mail.gmail.com>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <450756ff-f897-7825-3424-6d5645fa9db9@arm.com>
-Date: Tue, 1 Oct 2019 18:31:38 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.0
+	id 1iFM6M-0007nw-8P; Tue, 01 Oct 2019 17:38:18 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iFM6E-0007mT-Sr
+ for linux-arm-kernel@lists.infradead.org; Tue, 01 Oct 2019 17:38:12 +0000
+Received: from localhost (c-67-164-102-47.hsd1.ca.comcast.net [67.164.102.47])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B7CEE2053B;
+ Tue,  1 Oct 2019 17:38:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1569951490;
+ bh=MMmGvGL9mMISD7665FS8n/2elHIASz6KuyJpSch+Vzc=;
+ h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+ b=PGyzGHOi8DLY9Ntkwu1xLIIjou96erVvR41GoRYE63/OEUdplRKDX/U+LkKD1XiPD
+ 4RC1VBOtqVJPdE3vzE0V0JTmVjnNOFDFOOfnH/zLIYFmxWmDIhAvlM0PHZnLoSvOgQ
+ 7wnlKe7hxq0JZ33qeMO21zV/luBcFtqS9qbtj/18=
+Date: Tue, 1 Oct 2019 10:38:03 -0700 (PDT)
+From: Stefano Stabellini <sstabellini@kernel.org>
+X-X-Sender: sstabellini@sstabellini-ThinkPad-T480s
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH] ARM: xen: unexport HYPERVISOR_platform_op function
+In-Reply-To: <20190906153948.2160342-1-arnd@arndb.de>
+Message-ID: <alpine.DEB.2.21.1910011032500.20899@sstabellini-ThinkPad-T480s>
+References: <20190906153948.2160342-1-arnd@arndb.de>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
-In-Reply-To: <CAOCk7NohO67qeYCnrjy4P0KN9nLUiamphHRvj-bFP++K7khPOw@mail.gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_103149_053316_1F0D54DF 
-X-CRM114-Status: GOOD (  19.52  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191001_103810_975058_F7D934AB 
+X-CRM114-Status: GOOD (  17.01  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,66 +76,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rajendra Nayak <rnayak@codeaurora.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Marc Gonzalez <marc.w.gonzalez@free.fr>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- MSM <linux-arm-msm@vger.kernel.org>, lkml <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- David Brown <david.brown@linaro.org>, Andy Gross <agross@kernel.org>,
- Sibi Sankar <sibis@codeaurora.org>, Leo Yan <leo.yan@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, Stefano Stabellini <sstabellini@kernel.org>,
+ Emil Velikov <emil.l.velikov@gmail.com>, Russell King <linux@armlinux.org.uk>,
+ Denis Efremov <efremov@linux.com>, linux-kernel@vger.kernel.org,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ xen-devel@lists.xenproject.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 01/10/2019 18:14, Jeffrey Hugo wrote:
-> On Tue, Oct 1, 2019 at 11:04 AM Sai Prakash Ranjan
-> <saiprakash.ranjan@codeaurora.org> wrote:
->>
->> On 2019-10-01 09:13, Jeffrey Hugo wrote:
->>> Sai,
->>>
->>> This patch breaks boot on the 835 laptops.  However, I haven't seen
->>> the same issue on the MTP.  I wonder, is coresight expected to work
->>> with production fused devices?  I wonder if thats the difference
->>> between the laptop and MTP that is causing the issue.
->>>
->>> Let me know what I can do to help debug.
->>>
->>
->> I did test on MSM8998 MTP and didn't face any issue. I am guessing this
->> is the same issue which you reported regarding cpuidle? Coresight ETM
+On Fri, 6 Sep 2019, Arnd Bergmann wrote:
+> HYPERVISOR_platform_op() is an inline function and should not
+> be exported. Since commit 15bfc2348d54 ("modpost: check for
+> static EXPORT_SYMBOL* functions"), this causes a warning:
 > 
-> Yes, its the same issue.  Right now, I need both patches reverted to boot.
+> WARNING: "HYPERVISOR_platform_op" [vmlinux] is a static EXPORT_SYMBOL_GPL
 > 
->> and cpuidle do not work well together since ETMs share the same power
->> domain as CPU and they might get turned off when CPU enters idle states.
->> Can you try with cpuidle.off=1 cmdline or just remove idle states from
->> DT to confirm? If this is the issue, then we can try the below patch
->> from Andrew Murray for ETM save and restore:
->>
->> https://patchwork.kernel.org/patch/11097893/
+> Remove the extraneous export.
 > 
-> Is there still value in testing this if the idle states are removed,
-> yet the coresight nodes still cause issues?
+> Fixes: 15bfc2348d54 ("modpost: check for static EXPORT_SYMBOL* functions")
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> ---
+>  arch/arm/xen/enlighten.c | 1 -
+>  1 file changed, 1 deletion(-)
 > 
-> Funny enough, I'm using the arm64 defconfig which doesn't seem to
-> select CONFIG_CORESIGHT, so I'm not even sure what would be binding to
-> the DT devices...
+> diff --git a/arch/arm/xen/enlighten.c b/arch/arm/xen/enlighten.c
+> index 1e57692552d9..845c528acf24 100644
+> --- a/arch/arm/xen/enlighten.c
+> +++ b/arch/arm/xen/enlighten.c
+> @@ -437,7 +437,6 @@ EXPORT_SYMBOL_GPL(HYPERVISOR_memory_op);
+>  EXPORT_SYMBOL_GPL(HYPERVISOR_physdev_op);
+>  EXPORT_SYMBOL_GPL(HYPERVISOR_vcpu_op);
+>  EXPORT_SYMBOL_GPL(HYPERVISOR_tmem_op);
+> -EXPORT_SYMBOL_GPL(HYPERVISOR_platform_op);
+>  EXPORT_SYMBOL_GPL(HYPERVISOR_multicall);
+>  EXPORT_SYMBOL_GPL(HYPERVISOR_vm_assist);
+>  EXPORT_SYMBOL_GPL(HYPERVISOR_dm_op);
 
-That looks like potentially missing Power domain support, either in the kernel
-or from the firmware.
+Hi Arnd, 
 
-The Coresight components are also AMBA devices (with primecell compatible)
-and thus the AMBA bus layer does some probing to check the PIDRx registers
-to match the driver. The AMBA layer does try to get the power to the
-component, but someone is lying that it is powered.
+Thank you for the patch. HYPERVISOR_platform_op() is an inline function,
+the underlying function that should be exported is
+HYPERVISOR_platform_op_raw. So, instead of removing
+HYPERVISOR_platform_op, we should change it to
+HYPERVISOR_platform_op_raw.
 
-Suzuki
+For convenience, and for testing I cooked up a patch. Arnd, if you are
+happy with it (in the sense that it solves your problem) we'll check it
+in the xentip tree, unless you would like to get it in your tree?
+
+Cheers,
+
+Stefano
+
+---
+
+From: Stefano Stabellini <stefano.stabellini@xilinx.com>
+
+HYPERVISOR_platform_op() is an inline function and should not
+be exported. Since commit 15bfc2348d54 ("modpost: check for
+static EXPORT_SYMBOL* functions"), this causes a warning:
+
+WARNING: "HYPERVISOR_platform_op" [vmlinux] is a static EXPORT_SYMBOL_GPL
+
+Instead, export the underlying function called by the static inline:
+HYPERVISOR_platform_op_raw.
+
+Fixes: 15bfc2348d54 ("modpost: check for static EXPORT_SYMBOL* functions")
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+Signed-off-by: Stefano Stabellini <stefano.stabellini@xilinx.com>
+
+diff --git a/arch/arm/xen/enlighten.c b/arch/arm/xen/enlighten.c
+index 1e57692552d9..522c97d43ef8 100644
+--- a/arch/arm/xen/enlighten.c
++++ b/arch/arm/xen/enlighten.c
+@@ -437,7 +437,7 @@ EXPORT_SYMBOL_GPL(HYPERVISOR_memory_op);
+ EXPORT_SYMBOL_GPL(HYPERVISOR_physdev_op);
+ EXPORT_SYMBOL_GPL(HYPERVISOR_vcpu_op);
+ EXPORT_SYMBOL_GPL(HYPERVISOR_tmem_op);
+-EXPORT_SYMBOL_GPL(HYPERVISOR_platform_op);
++EXPORT_SYMBOL_GPL(HYPERVISOR_platform_op_raw);
+ EXPORT_SYMBOL_GPL(HYPERVISOR_multicall);
+ EXPORT_SYMBOL_GPL(HYPERVISOR_vm_assist);
+ EXPORT_SYMBOL_GPL(HYPERVISOR_dm_op);
 
 _______________________________________________
 linux-arm-kernel mailing list
