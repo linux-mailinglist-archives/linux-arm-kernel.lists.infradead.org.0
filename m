@@ -2,83 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 910E9C8FEC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 19:29:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48695C8FFB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 19:32:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cViFlT6/IQFR3NwCwOSxu8mubfpQlgmNLV1qzDY82AA=; b=U9CcxLHlCw2HNj
-	HJktZA/1mf6xdYwtt73stDaVq+6NnxKeGVOlWm5euH58P5tScHwVhxmJwzBBprlRjqAQqB/1IMGib
-	gD295TJCDb1rErBqdvxzTQolYe+Ar8lU9i09/ioe94Ak2PHxqTmdqYxUe8ZhnRNpIpWriGtIGo8WN
-	C34sQwJ/jsYdtXldgFv71TqlvdpzbUbpXPGA4B5Znh0alMzZiJGtaL3vWfz+n3OhAvwI+WZtdytHa
-	12jQHu7qRR3G73F/ZaYC++oVmNDQF3BQmROefam9HgH2wol7Zi/IKi/xkJEDHt6HFusYrnzTFe+Tn
-	WQ05vHZFTTqXmrtWzzkw==;
+	List-Owner; bh=wF0e+jxptk2gV/pwRFXSwnrpg9KQIdlOHl2K8kAWzH4=; b=eAZUczp02bc0An
+	tihfdKohuYTaXeZ/+BO0pMwpgUIBOV6D8w4RoHvhhjMb1W83fVbPKDHCv8I0ao+CD6hEUClCUyLAP
+	0dnBem+GvJcgEJRdbf75lHAuHS/I03iy/AyzCobtUFxuZh6T5NXqgLeRG5XZtgulaWuhkiBcFankL
+	qBBbRt1Q3I1+AtUf3vEZBXCZEVpV/UKTUWAorHBW0MAiAHT2gGp0vMJslQHkho1fpi6gAwUWmZhxq
+	gUmvq9IAxccR0ft5SVeMa4nvKn23goeL1uy3jg/7O2/1C01AuAwwqWrIEkB7SWJp6A8ok17Avw3xu
+	t16rZlyOeJxSyYP1eKKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFiRa-00060W-Na; Wed, 02 Oct 2019 17:29:42 +0000
-Received: from mail-wm1-f66.google.com ([209.85.128.66])
+	id 1iFiUE-0007bW-EG; Wed, 02 Oct 2019 17:32:26 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFiRU-0005ze-Mj
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 17:29:37 +0000
-Received: by mail-wm1-f66.google.com with SMTP id 5so8106840wmg.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 02 Oct 2019 10:29:36 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=knUYYHU2RbGFZMJdC/t7iP8HF/H6gnHVaApA8Esfhxo=;
- b=hH4PrIq+ZHWcIcvsLSSv9ruIeIz+2nwONdCnCnMkxIH74ymFheLPJe7MWuJls+eaSB
- RDIWh+25Osco+dvqDpWNJBV7qrBYdjfrAd5LdCZ9g5P3u+3Ed7UN6D6XKhKqIdJuQ5bp
- aHSlySLc+23KP39MudfZ4ht1gYG/qWGSSo3mGpZynH510lOAX0EJ35Un5ST5RrsI+ZYb
- W3Oon/XbQlIWt/sRYj6uKV79KL8Qojlo8tggBvCZ7bzav7XpsgpeYmMDzzW9oqytPMUT
- feoMCrlDltPT3yZ/e5lXOXkCyLu0PCOhyoE4D6vRbcOQwMDoVSUsjx1duANZOhvNSwjT
- O3Vw==
-X-Gm-Message-State: APjAAAVannHyMFBLke89zrw+NIc4YnJl7O+zIZFZRrwngOvhAujIv8Ex
- K/iYrTKgYCoouL3ZQN+1/mI=
-X-Google-Smtp-Source: APXvYqyH9fArHRTfXWfzqVQgaYVpo3bxfKpOmbUVndDKpAsFqO6SiYYHhg1MSaFN+BTdgbZp7amG7Q==
-X-Received: by 2002:a1c:f004:: with SMTP id a4mr3750737wmb.42.1570037374987;
- Wed, 02 Oct 2019 10:29:34 -0700 (PDT)
-Received: from kozik-lap ([194.230.155.145])
- by smtp.googlemail.com with ESMTPSA id n8sm11547015wma.7.2019.10.02.10.29.33
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 02 Oct 2019 10:29:34 -0700 (PDT)
-Date: Wed, 2 Oct 2019 19:29:31 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Lukasz Luba <l.luba@partner.samsung.com>
-Subject: Re: [PATCH v3 3/4] ARM: dts: exynos: map 0x10000 SFR instead of
- 0x100 in DMC Exynos5422
-Message-ID: <20191002172931.GE21463@kozik-lap>
-References: <20191002060455.3834-1-l.luba@partner.samsung.com>
- <CGME20191002060506eucas1p28c9670128f5adfb628d7e84ce55c6e60@eucas1p2.samsung.com>
- <20191002060455.3834-4-l.luba@partner.samsung.com>
+ id 1iFiU8-0007aT-Aa
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 17:32:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=mQqIhWQifybwkhXFJbITg6B075lNi1C6ZO3XIQgSSq4=; b=zgTnof+ptMi/+RkZlGYDebb2H
+ 2W5q/lEjU73zjxRbkd282fuRX21gXxqlC7/VZYH4/pH8DSrE8wzw3Vx7Dhpr0/DXBhXDVXRdCvIH7
+ Nc6ZbQo56fAVCWhU0DIXHlbNVuOZBEL1FFx0bvmZTTjUYBS1UbZEPcUBRuXjGKyqPImPVNSkCBLVX
+ f1JbJxlbnx4EQ0yFpUsoK0PbgM65n+XA3s7MTJ+y3NTU3skzF73EaG7R1ErXKgokrj46cnifQVekw
+ M0nGMVHiGNcUpYCCtU3o3o5fuLvgaz25o5ExQJ+dLv61qvsEArDz+N0cR+OkRU58KGHHSwgprXuWW
+ 6gLv3K3QQ==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:39248)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iFiU0-0001XK-QP; Wed, 02 Oct 2019 18:32:12 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iFiTy-0000uk-07; Wed, 02 Oct 2019 18:32:10 +0100
+Date: Wed, 2 Oct 2019 18:32:09 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Dinh Nguyen <dinguyen@kernel.org>
+Subject: Re: [PATCHv3] ARM: drivers/amba: release and cleanup the resource to
+ allow for deferred probe
+Message-ID: <20191002173209.GT25745@shell.armlinux.org.uk>
+References: <20191002143551.32288-1-dinguyen@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191002060455.3834-4-l.luba@partner.samsung.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20191002143551.32288-1-dinguyen@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_102936_745446_0F8F889F 
-X-CRM114-Status: GOOD (  10.99  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191002_103220_364846_2E9DCC3D 
+X-CRM114-Status: GOOD (  26.49  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.66 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.66 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,35 +87,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- willy.mh.wolff.ml@gmail.com, linux-samsung-soc@vger.kernel.org,
- b.zolnierkie@samsung.com, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, cw00.choi@samsung.com,
- kyungmin.park@samsung.com, kgene@kernel.org, myungjoo.ham@samsung.com,
- s.nawrocki@samsung.com, linux-arm-kernel@lists.infradead.org,
- m.szyprowski@samsung.com
+Cc: p.zabel@pengutronix.de, linus.walleij@linaro.org,
+ thor.thayer@linux.intel.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 02, 2019 at 08:04:54AM +0200, Lukasz Luba wrote:
-> There is a need to access registers at address offset near 0x10000.
-> These registers are private DMC performance counters, which might be used
-> as interrupt trigger when overflow. Potential usage is to skip polling
-> in devfreq framework and switch to interrupt managed bandwidth control.
+On Wed, Oct 02, 2019 at 09:35:51AM -0500, Dinh Nguyen wrote:
+> With commit "79bdcb202a35 ARM: 8906/1: drivers/amba: add reset control to
+> amba bus probe", the amba bus driver needs to be deferred probe because the
+> reset driver is probed later. However with a deferred probe, the call to
+> request_resource() in the driver returns -EBUSY. The reason is the driver
+> has not released the resource from the previous probe attempt.
 > 
-> Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
+> This patch fixes how we handle the condition of EPROBE_DEFER that is returned
+> from getting the reset controls. For this condition, the patch will jump
+> to defer_probe, which will iounmap, dev_pm_domain_detach, and release the
+> resource.
+> 
+> Fixes: 79bdcb202a35 ("ARM: 8906/1: drivers/amba: add reset control to
+> amba bus probe")
+> Signed-off-by: Dinh Nguyen <dinguyen@kernel.org>
 > ---
->  arch/arm/boot/dts/exynos5420.dtsi | 2 +-
+> v3: jump to defer_probe where the driver will unmap and pm_detach the
+>     driver resource for the next probe attempt
+> v2: release the resource when of_reset_control_array_get_optional_shared()
+>     returns EPROBE_DEFER
+> ---
+>  drivers/amba/bus.c | 8 ++++++--
+>  1 file changed, 6 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/amba/bus.c b/drivers/amba/bus.c
+> index f39f075abff9..4a021b1dab3d 100644
+> --- a/drivers/amba/bus.c
+> +++ b/drivers/amba/bus.c
+> @@ -409,9 +409,12 @@ static int amba_device_try_add(struct amba_device *dev, struct resource *parent)
+>  		 */
+>  		rstc = of_reset_control_array_get_optional_shared(dev->dev.of_node);
+>  		if (IS_ERR(rstc)) {
+> -			if (PTR_ERR(rstc) != -EPROBE_DEFER)
+> +			ret = PTR_ERR(rstc);
+> +			if (ret == -EPROBE_DEFER)
+> +				goto defer_probe;
+> +			else
+>  				dev_err(&dev->dev, "Can't get amba reset!\n");
+> -			return PTR_ERR(rstc);
+> +			return ret;
 
-Thanks, applied but re-ordered with previous one. Applying first
-interrupts enables the interrupt mode which does not make sense without
-extended mapping
+So, if of_reset_control_array_get_optional_shared() returns an error,
+we end up leaking the ioremap(), the resource claim, the pclk enable
+and pm domain?  If it returns -EPROBE_DEFER, we end up leaking the
+pclk enable?
 
-Best regards,
-Krzysztof
+I think this is going to be quicker if I write the patch - I haven't
+build-tested this yet though.  Please check whether this works for
+you.
 
+Thanks.
+
+8<=====
+From: Russell King <rmk+kernel@armlinux.org.uk>
+Subject: [PATCH] drivers/amba: fix reset control error handling
+
+With commit 79bdcb202a35 ("ARM: 8906/1: drivers/amba: add reset control
+to amba bus probe") it is possible for the the amba bus driver to defer
+probing the device for its IDs because the reset driver may be probed
+later.
+
+However when a subsequent probe occurs, the call to request_resource()
+in the driver returns -EBUSY as the driver has not released the resource
+from the initial probe attempt - or cleaned up any of the preceding
+actions.
+
+Fix this both for the deferred probe case as well as a failure to get
+the reset.
+
+Fixes: 79bdcb202a35 ("ARM: 8906/1: drivers/amba: add reset control to amba bus probe")
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+---
+ drivers/amba/bus.c | 14 +++++++++++---
+ 1 file changed, 11 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/amba/bus.c b/drivers/amba/bus.c
+index f39f075abff9..fe1523664816 100644
+--- a/drivers/amba/bus.c
++++ b/drivers/amba/bus.c
+@@ -409,9 +409,11 @@ static int amba_device_try_add(struct amba_device *dev, struct resource *parent)
+ 		 */
+ 		rstc = of_reset_control_array_get_optional_shared(dev->dev.of_node);
+ 		if (IS_ERR(rstc)) {
+-			if (PTR_ERR(rstc) != -EPROBE_DEFER)
+-				dev_err(&dev->dev, "Can't get amba reset!\n");
+-			return PTR_ERR(rstc);
++			ret = PTR_ERR(rstc);
++			if (ret != -EPROBE_DEFER)
++				dev_err(&dev->dev, "can't get reset: %d\n",
++					ret);
++			goto err_reset;
+ 		}
+ 		reset_control_deassert(rstc);
+ 		reset_control_put(rstc);
+@@ -472,6 +474,12 @@ static int amba_device_try_add(struct amba_device *dev, struct resource *parent)
+ 	release_resource(&dev->res);
+  err_out:
+ 	return ret;
++
++ err_reset:
++	amba_put_disable_pclk(dev);
++	iounmap(tmp);
++	dev_pm_domain_detach(&dev->dev, true);
++	goto err_release;
+ }
+ 
+ /*
+-- 
+2.7.4
+
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
