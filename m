@@ -2,86 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC9E2C8CA1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 17:19:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6BC3CC8CBE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 17:21:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hOtW7s3FYDG959+n0xjEjPTA/prcF7caZaDVn8Pd4QA=; b=OXTgBU6KbYuvf+
-	2ctttccUVVUmtp6w9xd+Yn19SjDXJK+AaHqIpf8ElTNZBOUDFa6jjF/uMcmQPnwiRby7Tkj0ICsbs
-	aPT5zM+qxvnLG0IrjhLHWC6oCGJf1/1/CSKn2CpleMdZ+u0BKcGBCgUeOsKATIMO0O5YrUBWbwfgd
-	2Nu0CFdje+ykhonra1H0EVkTBhxGm2Nmd5/kuCsa4RD06OUjqab1LDvsS2bQvVw+gLs228agShRma
-	6NuWr2053uduqUm05TCablYvMw9fagR4nvOb2h6AgZcNgdR63JAK0cNkMOxK5pyrzqWOKNeyUyfgD
-	JFRVVcPPoQ3tyCMOik6w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uO5i8MxnyolkR1sCEp7sgRaFD1Vy2eMFUMf7ZexOxDU=; b=expl+4p5QXwhX/
+	m4s1joaYr3Cny0bOveV44GCtscpJINrraTJ0abNr2Pwur3M7dEhHAce5Vn3/n/Q6qQE+glBisabhZ
+	soof1q/eHTevReC0+1VDMPX8ZaAAsffXCEM9FXItQMYKxB/XVJ7tlOdIqlCiAo9p2+0oSN29c+UcK
+	Llg0Jx3SA+lvY0nxjHb5uc2rIsmYjstIszylqEu7fnG68TU+p+b/EZOxyBjPHqBh1qaKvWr/Fuo3b
+	xNwdxBKn58cMn2Bo3b6+WgENjrR7NN62TTYNLpFsXm/o4e8jDu2eFU10acLt5IsNfwCCtz41I+YEL
+	yzjuBO8fpFNAAkWQ0zcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFgPX-0006Zj-Ss; Wed, 02 Oct 2019 15:19:27 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iFgRd-00088x-Gn; Wed, 02 Oct 2019 15:21:37 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFgPQ-0006RF-Is
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 15:19:22 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x92F0wdl000647; Wed, 2 Oct 2019 17:19:14 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=iAANRWe20zUBL1QPhZL1l6QikMTbeLPQTx2wvpUq/GI=;
- b=qvqzLCPtQalvAgDJJrPz+6pAOz414QlfZ0H7jcx58JhOHRgte/7qv/rUnksmeGKRB71B
- ZXV+NjKT6y0n+x+6+ezGhdiw/UfMrATh2Ns3CGU5h6GNevtOu6IeUN/U0uqRvpSflQ0a
- yUsKOBEKRegX9LMgxiU7f+4+bWbOMgHdHpxtIU7ll7gSkY/+0C26OR2bZgJejB8vL4XV
- kizOZ5OPSluI5a4aE8Y8sXMZ99wfp7H90nqDX9tfejuxPTYNdeQQ1fc5J68yoFfIZ1p+
- 3ZIVEPDOs9fbgwul4m9ZT9E5xxjvMBqHrhSRYo6KzixIwsC8mOQABs1NNyBKmyJMVZYt Ug== 
-Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
- by mx07-00178001.pphosted.com with ESMTP id 2vcem34dgr-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Wed, 02 Oct 2019 17:19:14 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id DDDC124;
- Wed,  2 Oct 2019 15:19:10 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 43A8D2D3771;
- Wed,  2 Oct 2019 17:19:10 +0200 (CEST)
-Received: from SAFEX1HUBCAS22.st.com (10.75.90.92) by SAFEX1HUBCAS21.st.com
- (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Wed, 2 Oct 2019
- 17:19:10 +0200
-Received: from localhost (10.201.20.122) by Webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Wed, 2 Oct 2019 17:19:09
- +0200
-From: Benjamin Gaignard <benjamin.gaignard@st.com>
-To: <ohad@wizery.com>, <bjorn.andersson@linaro.org>, <robh+dt@kernel.org>,
- <alexandre.torgue@st.com>
-Subject: [PATCH] dt-bindings: hwlock: Convert stm32 hwspinlock bindings to
- json-schema
-Date: Wed, 2 Oct 2019 17:19:07 +0200
-Message-ID: <20191002151907.15986-1-benjamin.gaignard@st.com>
-X-Mailer: git-send-email 2.15.0
+ id 1iFgRW-00088T-6v
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 15:21:31 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id 2D6C120AEE;
+ Wed,  2 Oct 2019 17:21:23 +0200 (CEST)
+Received: from [192.168.108.37] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 16ECB20723;
+ Wed,  2 Oct 2019 17:21:23 +0200 (CEST)
+Subject: Re: [PATCHv9 2/3] arm64: dts: qcom: msm8998: Add Coresight support
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+References: <cover.1564550873.git.saiprakash.ranjan@codeaurora.org>
+ <90114e06825e537c3aafd3de5c78743a9de6fadc.1564550873.git.saiprakash.ranjan@codeaurora.org>
+ <CAOCk7NrK+wY8jfHdS8781NOQtyLm2RRe1NW2Rm3_zeaot0Q99Q@mail.gmail.com>
+ <16212a577339204e901cf4eefa5e82f1@codeaurora.org>
+ <CAOCk7NohO67qeYCnrjy4P0KN9nLUiamphHRvj-bFP++K7khPOw@mail.gmail.com>
+ <fa5a35f0e993f2b604b60d5cead3cf28@codeaurora.org>
+ <CAOCk7NodWtC__W3=AQfXcjF-W9Az_NNUN0r8w5WmqJMziCcvig@mail.gmail.com>
+ <5b8835905a704fb813714694a792df54@codeaurora.org>
+ <CANLsYkxPOOorqcnPrbhZLzGV9Y7EGWUUyxvi-Cm5xxnzhx=Ecg@mail.gmail.com>
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Message-ID: <585ee38c-39d1-47df-78b7-f4b670f17a25@free.fr>
+Date: Wed, 2 Oct 2019 17:21:23 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-Originating-IP: [10.201.20.122]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
- definitions=2019-10-02_07:2019-10-01,2019-10-02 signatures=0
+In-Reply-To: <CANLsYkxPOOorqcnPrbhZLzGV9Y7EGWUUyxvi-Cm5xxnzhx=Ecg@mail.gmail.com>
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Wed Oct  2 17:21:23 2019 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_081920_932640_7F8A2129 
-X-CRM114-Status: GOOD (  14.65  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191002_082130_401670_6DA4DE13 
+X-CRM114-Status: GOOD (  11.66  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.27.33.1 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,110 +75,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Benjamin Gaignard <benjamin.gaignard@st.com>,
- linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: MSM <linux-arm-msm@vger.kernel.org>,
+ Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Jeffrey Hugo <jeffrey.l.hugo@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the STM32 hwspinlock binding to DT schema format using json-schema
+On 02/10/2019 17:03, Mathieu Poirier wrote:
 
-Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
----
- .../bindings/hwlock/st,stm32-hwspinlock.txt        | 23 -----------
- .../bindings/hwlock/st,stm32-hwspinlock.yaml       | 48 ++++++++++++++++++++++
- 2 files changed, 48 insertions(+), 23 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.txt
- create mode 100644 Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.yaml
+> The problem here is that a debug and production device are using the
+> same device tree, i.e msm8998.dtsi.  Disabling coresight devices in
+> the DTS file will allow the laptop to boot but completely disabled
+> coresight blocks on the MTP board.  Leaving things as is breaks the
+> laptop but allows coresight to be used on the MTP board.  One of three
+> things can happen:
+> 
+> 1) Nothing gets done and production board can't boot without DTS modifications.
+> 2) Disable tags are added to the DTS file and the debug board can't
+> use coresight without modifications.
+> 2) The handling of the debug power domain is done properly on the
+> MSM8998 rather than relying on the bootloader to enable it.
+> 3) The DTS file is split or reorganised to account for debug/production devices.
 
-diff --git a/Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.txt b/Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.txt
-deleted file mode 100644
-index adf4f000ea3d..000000000000
---- a/Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.txt
-+++ /dev/null
-@@ -1,23 +0,0 @@
--STM32 Hardware Spinlock Device Binding
---------------------------------------
--
--Required properties :
--- compatible : should be "st,stm32-hwspinlock".
--- reg : the register address of hwspinlock.
--- #hwlock-cells : hwlock users only use the hwlock id to represent a specific
--	hwlock, so the number of cells should be <1> here.
--- clock-names : Must contain "hsem".
--- clocks : Must contain a phandle entry for the clock in clock-names, see the
--	common clock bindings.
--
--Please look at the generic hwlock binding for usage information for consumers,
--"Documentation/devicetree/bindings/hwlock/hwlock.txt"
--
--Example of hwlock provider:
--	hwspinlock@4c000000 {
--		compatible = "st,stm32-hwspinlock";
--		#hwlock-cells = <1>;
--		reg = <0x4c000000 0x400>;
--		clocks = <&rcc HSEM>;
--		clock-names = "hsem";
--	};
-diff --git a/Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.yaml b/Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.yaml
-new file mode 100644
-index 000000000000..64e169702515
---- /dev/null
-+++ b/Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.yaml
-@@ -0,0 +1,48 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/hwlock/st,stm32-hwspinlock.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: STMicroelectronics STM32 Hardware Spinlock bindings
-+
-+maintainers:
-+  - Benjamin Gaignard <benjamin.gaignard@st.com>
-+  - Fabien Dessenne <fabien.dessenne@st.com>
-+
-+properties:
-+  "#hwlock-cells": true
-+
-+  compatible:
-+    const: st,stm32-hwspinlock
-+
-+  reg:
-+    maxItems: 1
-+ 
-+  clocks:
-+    items:
-+      - description: Module Clock
-+
-+  clock-names:
-+    items:
-+      - const: hsem
-+
-+required:
-+  - "#hwlock-cells"
-+  - compatible
-+  - reg
-+  - clocks
-+  - clock-names
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/stm32mp1-clks.h>
-+    hwspinlock@4c000000 {
-+        compatible = "st,stm32-hwspinlock";
-+        #hwlock-cells = <1>;
-+        reg = <0x4c000000 0x400>;
-+        clocks = <&rcc HSEM>;
-+        clock-names = "hsem";
-+    };
-+
-+...
--- 
-2.15.0
+I believe 3) is already the de facto situation.
 
+arch/arm64/boot/dts/qcom/msm8998.dtsi is the "base" config.
+arch/arm64/boot/dts/qcom/msm8998-mtp.dtsi for the MTP board.
+arch/arm64/boot/dts/qcom/msm8998-clamshell.dtsi for the laptops.
+
+> Which of the above ends up being the final solution is entirely up to
+> David and Andy.
+
+2498f8c1c668 ;-)
+
+Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
