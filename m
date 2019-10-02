@@ -2,83 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BB05C900B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 19:38:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 507FEC9021
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 19:44:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VOqloPdSZ4cuBJc1+JbbluTtsPhOCdgviQHzxByAows=; b=lTNdbgMt9SjKfQ
-	ExniZIvSJGx2WnwLVl6Eom6438sbaGkauW6TgHxrRfKLNKVo2unZ9ufJJ/koYx1I8mnZ+1D7Ai9gE
-	rmfcMskU4nQ0vb/jT854lOTrFQL6KDB/g3WZPP2A0BvKZydm0PA3fDZDxJPokOlSt7Yqr/SGGSLBd
-	+9GTdBagBG2d28ZjW/kLJVnww08pVOF4pILYibJzsVd1a5vKaQr06Hqzgqzx7JsJS8eJJk5FQAymL
-	1md9P/ypCzU9K8HsR5jvzB8NZPkm3vXB4ml74+k+27PnVsZcezjx/q1ZiiyM8TfNkGpMLcwnXKEx8
-	nBroi3RN6l8swiATVPfA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=R/8+2wT38DOew54x1K8C38YA+7geQ1QZKnSqj78pJmo=; b=kema9FG53QXxO5
+	9rfuVfYrNXsX6y/ybtvJyep1g28FMgmKqM3edqSYhI5DxiYAo1AXDko1GDe2sLs/pJv3khB3hxNzU
+	ZzZU1lcMwgUv8sUkZOu88jrEJ34+BJCDS9fEx5qJefWdPp0FW/92tikbt0hn2XtwCNk9CbeyarsoX
+	2bmNe0qTD4CMjRUU7jL7qQgSEwDX+0NIFBcUEiLL9HtkOWoig8cb+u+ayVW5ll5mE/aNI9ef2QgZn
+	jS+l7sssmZ0/8Ixpvjhy/MQFNW5H5UrA5GxGqCcbIVwa7gKTDcAGkMeP9BclyngimRRMXQXkIhLj4
+	RTMO0SIrdmdSDUFKi3xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFia2-0000uG-IY; Wed, 02 Oct 2019 17:38:26 +0000
-Received: from mail-wr1-f65.google.com ([209.85.221.65])
+	id 1iFifk-0002uO-Rv; Wed, 02 Oct 2019 17:44:20 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFiZv-0000tk-Uv
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 17:38:21 +0000
-Received: by mail-wr1-f65.google.com with SMTP id y19so6333wrd.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 02 Oct 2019 10:38:19 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=YTmH8EafQxbdYgDMckejIA27/8MmwdAdTeYHGHhQuPA=;
- b=OKlNQ/0GGSHY9PLWNjJ1HuU34ybuG/zYj88dFbQJ57DWDDLXyEivABUIM7BY/e9VLg
- YY5cSLjClvFz44mm4YESz902nHS515ReIDyuutFWuOhynAgV1UZrZwjtfS7Hw/+Puc6s
- +g33zzcPk39wtUMdJN2iNByD75mFj34v8BxYHpRk37ztymTiE62vVB9m9w6nVgH4AxUg
- zCnuNoGa5ezcJA9s2hs3fFEIFGsPE2rkKE6JUHVml2XWNMKdBDs4MSjzfblnlf1DvpT/
- ae12eJvdV9ehnsYBNRs4jGFIb+rodDdx+HZtLjsDWD47PoBP0QjUHvhaJM50rX4vZBA+
- sEsQ==
-X-Gm-Message-State: APjAAAX8/+oRUdCvHc/bFkevhCHkh9/nVLyL1iE6dleN9a0xu8NVbeTo
- 61kz6hCyia589pP9hCVwSeg=
-X-Google-Smtp-Source: APXvYqylJhVMEK3ifyltGwEzTf9OuJVwke1QEVnvk2FVIatTz4vfsE+ISc2rNCBhpXG9RhGqGRoxkQ==
-X-Received: by 2002:adf:fe92:: with SMTP id l18mr3630971wrr.369.1570037898167; 
- Wed, 02 Oct 2019 10:38:18 -0700 (PDT)
-Received: from kozik-lap ([194.230.155.145])
- by smtp.googlemail.com with ESMTPSA id q66sm6742037wme.39.2019.10.02.10.38.16
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 02 Oct 2019 10:38:17 -0700 (PDT)
-Date: Wed, 2 Oct 2019 19:38:14 +0200
+ id 1iFife-0002tr-Jv
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 17:44:15 +0000
+Received: from localhost.localdomain (unknown [194.230.155.145])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DA15221D81;
+ Wed,  2 Oct 2019 17:44:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570038253;
+ bh=MZYQ5QLRxsH5Lm/zp4Xs3ZdRx+OF3lS8A4Qr/ENHFmY=;
+ h=From:To:Subject:Date:From;
+ b=B6EQLsiyV2WDt8tyVi5J3ORL9Qfx9JZa0Vniop0dnsfyqz4zo0SEzy7rAOTqu3E+h
+ vEGELl6rkQy2Vb5oNtHGMWmp213uVAdOmqAed0SL/6IUulw+ufw8irmG3PKg5dq/rw
+ 9ltiv4qOVeqc9733aEdZuhclwmwyTNJNUQwOf3sY=
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Lukasz Luba <l.luba@partner.samsung.com>
-Subject: Re: [PATCH v3 4/4] memory: samsung: exynos5422-dmc: Add support for
- interrupt from performance counters
-Message-ID: <20191002173814.GF21463@kozik-lap>
-References: <20191002060455.3834-1-l.luba@partner.samsung.com>
- <CGME20191002060507eucas1p169394dec59f010e112eb38d83e3fb8ba@eucas1p1.samsung.com>
- <20191002060455.3834-5-l.luba@partner.samsung.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191002060455.3834-5-l.luba@partner.samsung.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Lukasz Luba <l.luba@partner.samsung.com>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] dt-bindings: memory-controllers: exynos5422-dmc: Correct
+ example syntax and memory region
+Date: Wed,  2 Oct 2019 19:44:01 +0200
+Message-Id: <20191002174401.17590-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_103819_994803_FFCAD19A 
-X-CRM114-Status: GOOD (  10.52  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191002_104414_675164_1F95DC4F 
+X-CRM114-Status: UNSURE (   9.84  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.65 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.65 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,34 +78,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- willy.mh.wolff.ml@gmail.com, linux-samsung-soc@vger.kernel.org,
- b.zolnierkie@samsung.com, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, cw00.choi@samsung.com,
- kyungmin.park@samsung.com, kgene@kernel.org, myungjoo.ham@samsung.com,
- s.nawrocki@samsung.com, linux-arm-kernel@lists.infradead.org,
- m.szyprowski@samsung.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 02, 2019 at 08:04:55AM +0200, Lukasz Luba wrote:
-> Introduce a new interrupt driven mechanism for managing speed of the
-> memory controller. The interrupts are generated due to performance
-> counters overflow. The performance counters might track memory reads,
-> writes, transfers, page misses, etc. In the basic algorithm tracking
-> read transfers and calculating memory pressure should be enough to
-> skip polling mode in devfreq.
-> 
-> Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
-> ---
->  drivers/memory/samsung/exynos5422-dmc.c | 345 ++++++++++++++++++++++--
+After adding the interrupt properties to Exynos5422 DMC bindings
+example, the mapped memory region must be big enough to access
+performance counters registers.
 
-Thanks, applied.
+Fix also syntax errors (semicolons) and adjust indentation.
 
-Best regards,
-Krzysztof
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+
+---
+
+Rebased on top of my for-next branch as exynos5422-dmc.txt bindings were
+applied by me.
+---
+ .../bindings/memory-controllers/exynos5422-dmc.txt        | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/memory-controllers/exynos5422-dmc.txt b/Documentation/devicetree/bindings/memory-controllers/exynos5422-dmc.txt
+index e2434cac4858..02e4a1f862f1 100644
+--- a/Documentation/devicetree/bindings/memory-controllers/exynos5422-dmc.txt
++++ b/Documentation/devicetree/bindings/memory-controllers/exynos5422-dmc.txt
+@@ -55,7 +55,7 @@ Example:
+ 
+ 	dmc: memory-controller@10c20000 {
+ 		compatible = "samsung,exynos5422-dmc";
+-		reg = <0x10c20000 0x100>, <0x10c30000 0x100>,
++		reg = <0x10c20000 0x10000>, <0x10c30000 0x10000>;
+ 		clocks = <&clock CLK_FOUT_SPLL>,
+ 			 <&clock CLK_MOUT_SCLK_SPLL>,
+ 			 <&clock CLK_FF_DOUT_SPLL2>,
+@@ -63,7 +63,7 @@ Example:
+ 			 <&clock CLK_MOUT_BPLL>,
+ 			 <&clock CLK_SCLK_BPLL>,
+ 			 <&clock CLK_MOUT_MX_MSPLL_CCORE>,
+-			 <&clock CLK_MOUT_MCLK_CDREX>,
++			 <&clock CLK_MOUT_MCLK_CDREX>;
+ 		clock-names = "fout_spll",
+ 			      "mout_sclk_spll",
+ 			      "ff_dout_spll2",
+@@ -71,10 +71,10 @@ Example:
+ 			      "mout_bpll",
+ 			      "sclk_bpll",
+ 			      "mout_mx_mspll_ccore",
+-			      "mout_mclk_cdrex",
++			      "mout_mclk_cdrex";
+ 		operating-points-v2 = <&dmc_opp_table>;
+ 		devfreq-events = <&ppmu_event3_dmc0_0>,	<&ppmu_event3_dmc0_1>,
+-				<&ppmu_event3_dmc1_0>, <&ppmu_event3_dmc1_1>;
++				 <&ppmu_event3_dmc1_0>, <&ppmu_event3_dmc1_1>;
+ 		device-handle = <&samsung_K3QF2F20DB>;
+ 		vdd-supply = <&buck1_reg>;
+ 		samsung,syscon-clk = <&clock>;
+-- 
+2.17.1
 
 
 _______________________________________________
