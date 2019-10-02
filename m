@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 623E5C8941
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 15:06:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9873EC8942
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 15:06:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AWSvMsmxjOtp5TUQgurvg6FWHi003JXl0/Cbc/m2SnQ=; b=FpUyrZQm0oiCut
-	DBtGlaxJZnHN0yu8sCpL2ZiFmV5YeIKoqOIu1sG/VBbH0LW//CsiFxwcl/sWTXl8yovkbAJok19h2
-	v6B+gMsJhXylzPNZQojXIO3HIjGlRKNkBCX7SkonYt3A8yWje/ZNQExujtKqkH7MaT7PdL0UspFCU
-	/x40qXvrvtOB22NuCr6ivao+Iqz/d+gsjtJwKiASL1UUvmI6VEtAmhNHdeJcBG1FfxIe4UwvoLjzH
-	rTEjeYRIsvo0mL00N8X1GSRPf2f5FED33HO1SXpZ2Z6lqxusbLSrQZ9Bi79pfbCvN1gkc91oYYZa0
-	fHr3iIk8M0ah857GrNPQ==;
+	List-Owner; bh=7z312wXA/ZXfsSEk5yS9PZlW8OEMFqs9Laf0zIfXw04=; b=qqVOou8hWLyErr
+	mpPqD98Xk0uCqoN+9SGZMi5QWBHjSBG8kP6N9sgJ5EEM1lf36nbUXNiEuNMO48PdLi/siGI6o2HPu
+	y8QgcrKhgXcygpUira/rrQyIzoFRdOEI9EPjheziICpBsz11jQB6Nc/Oz18tx1v600ZNBNIS+8Rjq
+	EyRBILo09jMHV2MvW4w77/h8pWfKSqYRD0V37R0IDCnLqdf0RaUsi4/swi2uBzyZtsXvoeuKnrxSO
+	/6JDKndlbXcJUaBr9wG1FcDz06v3h2zJ4W3PG4KSabwjg9g/ufwNYhfY+fmAn9VfK3b5kq/8qq3nm
+	8ZiZwTOjMvrW36gRHeNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFeKL-0007UN-SV; Wed, 02 Oct 2019 13:05:57 +0000
+	id 1iFeKc-0007kb-KO; Wed, 02 Oct 2019 13:06:14 +0000
 Received: from mail-vi1eur04on0602.outbound.protection.outlook.com
  ([2a01:111:f400:fe0e::602]
  helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFeJH-0005KX-EJ
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 13:04:53 +0000
+ id 1iFeJJ-0005KX-PI
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 13:04:55 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=BSf+rW0ax1RemBPnnktLnig3Q1DbAMYNY3aazyHMJ0XWjVjsBmGm/yNDVcJbLj8jwToMwwF/6/RdWqmZH7rzv3bLk4tDC0RLoc3tm4EF9UMmQpsGtXXc7ifRl5dlqitVVYrHf151Pr19UhqfLRXIYb1WsG3SnWBYrUU4hZYcjBzMuWsPGawg8TU3jVl3Rdobz3C0eUveAOKTEhV8FTJPbbSslCovlJjHLdbkIWqZg4iTkYYs0oPZIVAmQgezc+HpB+9f6Or+h7t1YDJ6b1VlVLdAbNnZsWiLZe5ksTxKubNpZrd3iXYaUpJikqYS7Kl5qfK0qxeCeYsb+T91NuE5Tw==
+ b=R0VO+dE5keItSvoYa8jaTAFpT6oy92bKck6GNLU6Mb56vTkE/TPIi8/ozQNrnc9XanByg0p3jy0Pb5prgux9Z2CqwKSddhQbXGxANtZdz1oZfgx7TPtarLIKyJwTOr9m829cxwjovBdzENA3JRvPeBcATNXdxG5hX+b6F2vkxHLNr/oC5N5qpMNC6aoKjgsMPUxd6ndcWg4I97KiXUTUvHtbVRkJkXn0GtTSjst+oni2as3tNYHTyRva345TDsEkO5XDI8pGqyd+HksOTxjcnarXnJsevTWxJ0YbVlurWAYYC4/L1xMh6hOvUGPf3ETX/DcuRET+M7AOFnGvrMEaEA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=r4pXt2e4qv3Gh5kNmg9sjnWtdv4OzTWJZw/BecsqhoY=;
- b=V5//Rdqm9uBJWteyH+xLCYmbh+CYmMvRnb64w/mUxa6sL6RtnGbpIabJlgsRZz1cQC4Xshqa0lHrlOi31a6cdJlHys8Go0/QMbucXTci6JBJCvK/6iXqus4/pfAXhbycvws5KuDklV8+1J9E/WWv/Im0du51ivP3J5OZ/MSoi7IIjmnS9y8tpS14NwGf0L0WbnE/8+ekdNFLWaANKxoHJbz/yL91wva6KpZ6Pknv3upXvGhgCUN+Ejf3bYp0DQpI3APFYgbkqriG+CCijOBz4NSvBfYmtpjXEhh2CWL7fcGakxzxjrCrKzPU34PG1bGgP002PyZJucQdKBf2LLmmsg==
+ bh=ehS3UndgXagzpEGqEcWAELDP6S0hrQKp/xr8x06uuPw=;
+ b=J3Rop2Wh+g8PauF3xtjXaP38m8YojmMzf2GdQlig7hGCux4qvodRit2ZwN7UX43lcgcYaRmEOANU6djAqLWkHHvf1WkH9AMfmW8W+9O7h08FqsOivgG/s+g5uIGUzFZT8iNhf8v65K7+FKDEDbU5M+EkCkMRa7XmQnBeTEhz8xfOeCfglILH4BK+0mIyNuqnCXLfaBGS8OuJaPg0/uRtS+YMTi6jBXajRT0CRyuhOxZ3D4rCBe4TbecpUL7UvqSzwK+BXFKNpvPdyK4MS/MQ9/+yGWbvUULyGSfCMBFCZJyvxKMuU5NNN9IhBH/afzc0Uq21Whzh7XoOGHmHzxo1UQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=r4pXt2e4qv3Gh5kNmg9sjnWtdv4OzTWJZw/BecsqhoY=;
- b=KMDrKRWvWWsWyhjKC0Jt6KotimXj20PumwLMt2Oz0f6epWsotkhFkFlxDg8BA15Saq5BN5hegpmp77zn5xyYLjMkCo8hLk/st0m+rNX8SD6s40GE+717J4R2ab154kdfUyo19dwPTO46tJZkOJhYQhCLxIREr5oBPW9zhFDbaFs=
+ bh=ehS3UndgXagzpEGqEcWAELDP6S0hrQKp/xr8x06uuPw=;
+ b=JdSKrh8278foev69L1XU0WS5eE4xqVk6RYxjP+hS7fQ/2iLTZkZSKyHXbskR71TYWl/qeCtxUULbZu9ukO8Cf89V0TW/W5ZqKDxpeI90GcPd7P8h5i/oBnRC0hmqVkNqXvo1cg2LngbEhhS14dtbXk7IFCedP0CAouaTkQl6CEU=
 Received: from VI1PR0402MB2863.eurprd04.prod.outlook.com (10.175.20.18) by
  VI1PR0402MB3918.eurprd04.prod.outlook.com (52.134.17.31) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2305.15; Wed, 2 Oct 2019 13:04:47 +0000
+ 15.20.2305.15; Wed, 2 Oct 2019 13:04:48 +0000
 Received: from VI1PR0402MB2863.eurprd04.prod.outlook.com
  ([fe80::fd33:c447:3cab:c36]) by VI1PR0402MB2863.eurprd04.prod.outlook.com
  ([fe80::fd33:c447:3cab:c36%7]) with mapi id 15.20.2305.023; Wed, 2 Oct 2019
- 13:04:47 +0000
+ 13:04:48 +0000
 From: Stefan-gabriel Mirea <stefan-gabriel.mirea@nxp.com>
 To: "corbet@lwn.net" <corbet@lwn.net>, "robh+dt@kernel.org"
  <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
  "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
  "catalin.marinas@arm.com" <catalin.marinas@arm.com>, "will@kernel.org"
  <will@kernel.org>
-Subject: [PATCH v5 4/5] arm64: dts: fsl: Add device tree for S32V234-EVB
-Thread-Topic: [PATCH v5 4/5] arm64: dts: fsl: Add device tree for S32V234-EVB
-Thread-Index: AQHVeSH13ei8gudWtU2BYmtDnHFg0w==
-Date: Wed, 2 Oct 2019 13:04:44 +0000
-Message-ID: <20191002130425.28905-5-stefan-gabriel.mirea@nxp.com>
+Subject: [PATCH v5 5/5] arm64: defconfig: Enable configs for S32V234
+Thread-Topic: [PATCH v5 5/5] arm64: defconfig: Enable configs for S32V234
+Thread-Index: AQHVeSH29CXEj60aakehEbe1lYsBFQ==
+Date: Wed, 2 Oct 2019 13:04:46 +0000
+Message-ID: <20191002130425.28905-6-stefan-gabriel.mirea@nxp.com>
 References: <20191002130425.28905-1-stefan-gabriel.mirea@nxp.com>
 In-Reply-To: <20191002130425.28905-1-stefan-gabriel.mirea@nxp.com>
 Accept-Language: en-US
@@ -73,15 +73,15 @@ authentication-results: spf=none (sender IP is )
 x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [86.120.240.156]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: bedcf53a-20d0-4e78-b9b9-08d747391858
+x-ms-office365-filtering-correlation-id: 58e9b192-ccec-46e1-81d3-08d747391934
 x-ms-office365-filtering-ht: Tenant
 x-ms-traffictypediagnostic: VI1PR0402MB3918:|VI1PR0402MB3918:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR0402MB3918E0F18642C08D87D2905BDF9C0@VI1PR0402MB3918.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3826;
+x-microsoft-antispam-prvs: <VI1PR0402MB3918D7C0FEC766F7D3286A62DF9C0@VI1PR0402MB3918.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3044;
 x-forefront-prvs: 0178184651
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(39860400002)(136003)(396003)(376002)(346002)(189003)(199004)(102836004)(2201001)(5660300002)(26005)(478600001)(6666004)(76176011)(486006)(386003)(14454004)(50226002)(8676002)(8936002)(81156014)(305945005)(81166006)(6506007)(7736002)(7416002)(64756008)(6436002)(66556008)(66446008)(476003)(66066001)(2906002)(11346002)(2616005)(66476007)(6486002)(66946007)(25786009)(52116002)(2501003)(186003)(14444005)(256004)(446003)(6512007)(6116002)(3846002)(36756003)(71190400001)(71200400001)(4326008)(1076003)(86362001)(54906003)(99286004)(110136005)(316002);
+ SFS:(10009020)(4636009)(366004)(39860400002)(136003)(396003)(376002)(346002)(189003)(199004)(102836004)(2201001)(5660300002)(26005)(478600001)(76176011)(486006)(386003)(14454004)(50226002)(8676002)(8936002)(81156014)(305945005)(81166006)(6506007)(7736002)(7416002)(64756008)(6436002)(66556008)(66446008)(476003)(66066001)(2906002)(11346002)(2616005)(66476007)(6486002)(66946007)(25786009)(52116002)(2501003)(186003)(256004)(446003)(6512007)(6116002)(3846002)(36756003)(71190400001)(71200400001)(4744005)(4326008)(1076003)(86362001)(54906003)(99286004)(110136005)(316002);
  DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0402MB3918;
  H:VI1PR0402MB2863.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
@@ -89,19 +89,19 @@ received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: +rtNbrk5w92EeaEhzofzc90E2x7mRB6d91OL3WZDOlsjABE2HYeJEI0iywbBAVgCvDAbipXKplpk9gH048PqM3gG1u7KypHQaZO4NCAoNf8R2wLOkUj/mUEtVuhfTPMkPApGpPUjF4yNUUKowN1kemY+8WMcVVoEICtTKz6TzWNd6+vCl6ss6955gC3w8NAIvpNfTvZnwr7ZEiyYL3vgtjfY7A+prrBmt4lUlhtL1aHg7kL64sB30d6EEmGfTE9odRtIEzwdtpK1bdqEJaGx7nimBA+ME18WouGrwYbF0odkXSblZYtqcIwPw0YWh9Ns9hbEIYRMNoZ7Owg3z6zbU10kCK4fjfBKDdSOYv8C5Kp5VZlSeFLouXodiYs0bDpqpzYIrlHcJ35r2UjT8UdbXosMKikTbQPzwA0ePxFzU+k=
+x-microsoft-antispam-message-info: MHSjtRb7FhMw7vTwUbEDpLXXl/NRHtlx60XhVmVRyBLDdWKgfpH0tSrdYvFoa9QNzpCpWWt4qX5/pUAZBr6DwEsG4HaGX/LGo479uxTZzFWMqfSHs80TsraYZGDBrXMTrtRIJdOtG0PyqA6xDPNAHBW79x+JlHe2x38uyMv8yglbbWySa9n3rFg1UhqUjqD+C2piQKdZZgLQ3811vLgiDtQ9RwKHl72F3FTPGlAXiO9AOjYWgYfhBMm6hC7tW7ildZA0upxv3A5XRz7Fce2xQyDMX9sOVszdeFOr69N91jZAGK9wW+xer3/MMeYLFzh3D973fvJLQ129iwnUmywZXyc+R2HJKVvkxhe+7BtkLRiqdGt1WnUblYHDj49h4b+OmxVlnqdpRs+kH5+SnzloX2jSlQ9bSl8d73ruA9DY2Yo=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: bedcf53a-20d0-4e78-b9b9-08d747391858
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Oct 2019 13:04:44.5499 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 58e9b192-ccec-46e1-81d3-08d747391934
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Oct 2019 13:04:46.0122 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 8eP/mt7yI0/B571LsQHMHNgPpIDnfmQ7t/fNDbJcVQ1EzxZdBFYion1Ge2g07ui/M78gre5H3s8j6jWZOO2FvyS/H16yinwhfyRNlKf/K9M=
+X-MS-Exchange-CrossTenant-userprincipalname: yS4gFjWeaAgDuVAHKrmSWZR8GP2UYk+QXFPUn1Cn/X1illIIxH6DtJs+Fut1RBeHld0+bVnQ8bKM1BRxYHpLSiCIoIZGEWsOlM49BSEDUhw=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB3918
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_060451_521958_E842068A 
-X-CRM114-Status: GOOD (  14.46  )
+X-CRM114-CacheID: sfid-20191002_060453_853330_3D86B772 
+X-CRM114-Status: GOOD (  10.03  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
@@ -133,9 +133,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
  "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- Larisa Ileana Grigore <larisa.grigore@nxp.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Dan Nica <dan.nica@nxp.com>,
  "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
  "jslaby@suse.com" <jslaby@suse.com>,
  Cosmin Stefan Stoica <cosmin.stoica@nxp.com>,
@@ -145,216 +143,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Stoica Cosmin-Stefan <cosmin.stoica@nxp.com>
+From: Mihaela Martinas <Mihaela.Martinas@freescale.com>
 
-Add initial version of device tree for S32V234-EVB, including nodes for the
-4 Cortex-A53 cores, AIPS bus with UART modules, ARM architected timer and
-Generic Interrupt Controller (GIC).
+Enable support for the S32V234 SoC, including the previously added UART
+driver.
 
-Keep SoC level separate from board level to let future boards with this SoC
-share common properties, while the dts files will keep board-dependent
-properties.
-
-Signed-off-by: Stoica Cosmin-Stefan <cosmin.stoica@nxp.com>
 Signed-off-by: Mihaela Martinas <Mihaela.Martinas@freescale.com>
-Signed-off-by: Dan Nica <dan.nica@nxp.com>
-Signed-off-by: Larisa Grigore <Larisa.Grigore@nxp.com>
-Signed-off-by: Phu Luu An <phu.luuan@nxp.com>
+Signed-off-by: Adrian.Nitu <adrian.nitu@freescale.com>
+Signed-off-by: Stoica Cosmin-Stefan <cosmin.stoica@nxp.com>
 Signed-off-by: Stefan-Gabriel Mirea <stefan-gabriel.mirea@nxp.com>
 ---
- arch/arm64/boot/dts/freescale/Makefile        |   2 +
- arch/arm64/boot/dts/freescale/s32v234-evb.dts |  25 ++++
- arch/arm64/boot/dts/freescale/s32v234.dtsi    | 139 ++++++++++++++++++
- 3 files changed, 166 insertions(+)
- create mode 100644 arch/arm64/boot/dts/freescale/s32v234-evb.dts
- create mode 100644 arch/arm64/boot/dts/freescale/s32v234.dtsi
+ arch/arm64/configs/defconfig | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/freescale/Makefile b/arch/arm64/boot/dts/freescale/Makefile
-index 93fce8f0c66d..730209adb2bc 100644
---- a/arch/arm64/boot/dts/freescale/Makefile
-+++ b/arch/arm64/boot/dts/freescale/Makefile
-@@ -32,3 +32,5 @@ dtb-$(CONFIG_ARCH_MXC) += imx8mq-zii-ultra-rmb3.dtb
- dtb-$(CONFIG_ARCH_MXC) += imx8mq-zii-ultra-zest.dtb
- dtb-$(CONFIG_ARCH_MXC) += imx8qxp-ai_ml.dtb
- dtb-$(CONFIG_ARCH_MXC) += imx8qxp-mek.dtb
-+
-+dtb-$(CONFIG_ARCH_S32) += s32v234-evb.dtb
-diff --git a/arch/arm64/boot/dts/freescale/s32v234-evb.dts b/arch/arm64/boot/dts/freescale/s32v234-evb.dts
-new file mode 100644
-index 000000000000..4b802518cefc
---- /dev/null
-+++ b/arch/arm64/boot/dts/freescale/s32v234-evb.dts
-@@ -0,0 +1,25 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+/*
-+ * Copyright 2015-2016 Freescale Semiconductor, Inc.
-+ * Copyright 2016-2017 NXP
-+ */
-+
-+/dts-v1/;
-+#include "s32v234.dtsi"
-+
-+/ {
-+	model = "NXP S32V234-EVB2 Board";
-+	compatible = "fsl,s32v234-evb", "fsl,s32v234";
-+
-+	chosen {
-+		stdout-path = "serial0:115200n8";
-+	};
-+};
-+
-+&uart0 {
-+	status = "okay";
-+};
-+
-+&uart1 {
-+	status = "okay";
-+};
-diff --git a/arch/arm64/boot/dts/freescale/s32v234.dtsi b/arch/arm64/boot/dts/freescale/s32v234.dtsi
-new file mode 100644
-index 000000000000..37225191ccbf
---- /dev/null
-+++ b/arch/arm64/boot/dts/freescale/s32v234.dtsi
-@@ -0,0 +1,139 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+/*
-+ * Copyright 2015-2016 Freescale Semiconductor, Inc.
-+ * Copyright 2016-2018 NXP
-+ */
-+
-+#include <dt-bindings/interrupt-controller/arm-gic.h>
-+
-+/memreserve/ 0x80000000 0x00010000;
-+
-+/ {
-+	compatible = "fsl,s32v234";
-+	interrupt-parent = <&gic>;
-+	#address-cells = <2>;
-+	#size-cells = <2>;
-+
-+	aliases {
-+		serial0 = &uart0;
-+		serial1 = &uart1;
-+	};
-+
-+	cpus {
-+		#address-cells = <2>;
-+		#size-cells = <0>;
-+
-+		cpu0: cpu@0 {
-+			device_type = "cpu";
-+			compatible = "arm,cortex-a53";
-+			reg = <0x0 0x0>;
-+			enable-method = "spin-table";
-+			cpu-release-addr = <0x0 0x80000000>;
-+			next-level-cache = <&cluster0_l2_cache>;
-+		};
-+
-+		cpu1: cpu@1 {
-+			device_type = "cpu";
-+			compatible = "arm,cortex-a53";
-+			reg = <0x0 0x1>;
-+			enable-method = "spin-table";
-+			cpu-release-addr = <0x0 0x80000000>;
-+			next-level-cache = <&cluster0_l2_cache>;
-+		};
-+
-+		cpu2: cpu@100 {
-+			device_type = "cpu";
-+			compatible = "arm,cortex-a53";
-+			reg = <0x0 0x100>;
-+			enable-method = "spin-table";
-+			cpu-release-addr = <0x0 0x80000000>;
-+			next-level-cache = <&cluster1_l2_cache>;
-+		};
-+
-+		cpu3: cpu@101 {
-+			device_type = "cpu";
-+			compatible = "arm,cortex-a53";
-+			reg = <0x0 0x101>;
-+			enable-method = "spin-table";
-+			cpu-release-addr = <0x0 0x80000000>;
-+			next-level-cache = <&cluster1_l2_cache>;
-+		};
-+
-+		cluster0_l2_cache: l2-cache0 {
-+			compatible = "cache";
-+		};
-+
-+		cluster1_l2_cache: l2-cache1 {
-+			compatible = "cache";
-+		};
-+	};
-+
-+	timer {
-+		compatible = "arm,armv8-timer";
-+		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(4) |
-+					  IRQ_TYPE_LEVEL_LOW)>,
-+			     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(4) |
-+					  IRQ_TYPE_LEVEL_LOW)>,
-+			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(4) |
-+					  IRQ_TYPE_LEVEL_LOW)>,
-+			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(4) |
-+					  IRQ_TYPE_LEVEL_LOW)>;
-+		/* clock-frequency might be modified by u-boot, depending on the
-+		 * chip version.
-+		 */
-+		clock-frequency = <10000000>;
-+	};
-+
-+	gic: interrupt-controller@7d001000 {
-+		compatible = "arm,cortex-a15-gic", "arm,cortex-a9-gic";
-+		#interrupt-cells = <3>;
-+		#address-cells = <0>;
-+		interrupt-controller;
-+		reg = <0 0x7d001000 0 0x1000>,
-+		      <0 0x7d002000 0 0x2000>,
-+		      <0 0x7d004000 0 0x2000>,
-+		      <0 0x7d006000 0 0x2000>;
-+		interrupts = <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(4) |
-+					 IRQ_TYPE_LEVEL_HIGH)>;
-+	};
-+
-+	soc {
-+		#address-cells = <2>;
-+		#size-cells = <2>;
-+		compatible = "simple-bus";
-+		interrupt-parent = <&gic>;
-+		ranges;
-+
-+		aips0: aips-bus@40000000 {
-+			compatible = "simple-bus";
-+			#address-cells = <2>;
-+			#size-cells = <2>;
-+			interrupt-parent = <&gic>;
-+			reg = <0x0 0x40000000 0x0 0x7D000>;
-+			ranges;
-+
-+			uart0: serial@40053000 {
-+				compatible = "fsl,s32v234-linflexuart";
-+				reg = <0x0 0x40053000 0x0 0x1000>;
-+				interrupts = <GIC_SPI 59 IRQ_TYPE_EDGE_RISING>;
-+				status = "disabled";
-+			};
-+		};
-+
-+		aips1: aips-bus@40080000 {
-+			compatible = "simple-bus";
-+			#address-cells = <2>;
-+			#size-cells = <2>;
-+			interrupt-parent = <&gic>;
-+			reg = <0x0 0x40080000 0x0 0x70000>;
-+			ranges;
-+
-+			uart1: serial@400bc000 {
-+				compatible = "fsl,s32v234-linflexuart";
-+				reg = <0x0 0x400bc000 0x0 0x1000>;
-+				interrupts = <GIC_SPI 60 IRQ_TYPE_EDGE_RISING>;
-+				status = "disabled";
-+			};
-+		};
-+	};
-+};
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 8e05c39eab08..aa59450557b8 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -48,6 +48,7 @@ CONFIG_ARCH_MXC=y
+ CONFIG_ARCH_QCOM=y
+ CONFIG_ARCH_RENESAS=y
+ CONFIG_ARCH_ROCKCHIP=y
++CONFIG_ARCH_S32=y
+ CONFIG_ARCH_SEATTLE=y
+ CONFIG_ARCH_STRATIX10=y
+ CONFIG_ARCH_SYNQUACER=y
+@@ -352,6 +353,8 @@ CONFIG_SERIAL_XILINX_PS_UART=y
+ CONFIG_SERIAL_XILINX_PS_UART_CONSOLE=y
+ CONFIG_SERIAL_FSL_LPUART=y
+ CONFIG_SERIAL_FSL_LPUART_CONSOLE=y
++CONFIG_SERIAL_FSL_LINFLEXUART=y
++CONFIG_SERIAL_FSL_LINFLEXUART_CONSOLE=y
+ CONFIG_SERIAL_MVEBU_UART=y
+ CONFIG_SERIAL_DEV_BUS=y
+ CONFIG_VIRTIO_CONSOLE=y
 -- 
 2.22.0
 
