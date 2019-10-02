@@ -2,51 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18A49C4A9C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 11:25:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49F36C4A9D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 11:26:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aHO5xx9xDIWJCBbVEg8GylL4Iqh1r/J8/Se41q3Bics=; b=O2YhFVXkeY7m32
-	a+FK6pb4ekN5rJj+OVJyuCkJXwsHdtjfC6w+QB/NXraFXOaKqq1TtYUXA4vMuc40CdFDxufvh2VZW
-	lsES3ZyXSz2av29gd0rEQLzopxSyhiEZrVRyJ1DcQ+82uMKrj3vLkyCtBL3Kf+XXzEcTpQCuFUN32
-	uOlKwcdXEanSFl5n5Wf2h5r/U/Ahsp6+o79mxvfbdraxOXdwIZTcClofpPposDsbmSKnjV8SJ6+iH
-	/NzfB8EnR9uuTSEjoelGQgneFBVZKqJQW21ltk62tkMx2YEBdTeZ5DRkDPGuVZN/IdPqmPbs3TyzE
-	k2+inh+HLsmSbggG1tSg==;
+	List-Owner; bh=zQl1RZwKHgGGKJLqOTMITxxj3MMQ1ScUOle10eOocbg=; b=QEYuqjwbB7guy7
+	UdieQ7A3ZQaprlb05gtBgtpNgUrdTUKGNYc5UnrDQeSIJtyKqvloridhS4frWMCqMdHGQCugDJGlr
+	g4vY7zIZ3CSJl/RVR/NJ6ErWhL7KcBJDq9T8uullBQUsQwKdg+wEVxhChf3FUP5TuheFFwWlvVknT
+	AgT9RQh4lwvRqMbZ0puB/kEBKMGurI5+a9qLEkCeh0/+TVmzWMJEMBmvjiBRyx8RvC8+Yhsfb1tDY
+	nD3IHOK0cXRAG2A3x3RGa1um6x9v48Zn2AryvksuSTvBgmVp/9sx4EGFKYJW82C3ZUbFHbbuVmrts
+	QZSmNnrVaOCYMhzS/zHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFat9-0002WJ-52; Wed, 02 Oct 2019 09:25:39 +0000
+	id 1iFatd-0002oj-IB; Wed, 02 Oct 2019 09:26:09 +0000
 Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFaq7-0001TQ-TT; Wed, 02 Oct 2019 09:22:35 +0000
+ id 1iFar8-0001nz-Uq; Wed, 02 Oct 2019 09:23:38 +0000
 Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
  [IPv6:2a01:4f9:c010:4572::80:2])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
  SHA256) (No client certificate requested)
- by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id E2C52634C89;
- Wed,  2 Oct 2019 12:21:44 +0300 (EEST)
+ by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 1CA45634C87;
+ Wed,  2 Oct 2019 12:22:56 +0300 (EEST)
 Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
  (envelope-from <sakari.ailus@retiisi.org.uk>)
- id 1iFapL-00028v-CM; Wed, 02 Oct 2019 12:21:43 +0300
-Date: Wed, 2 Oct 2019 12:21:43 +0300
+ id 1iFaqU-000293-Iq; Wed, 02 Oct 2019 12:22:54 +0300
+Date: Wed, 2 Oct 2019 12:22:54 +0300
 From: Sakari Ailus <sakari.ailus@iki.fi>
 To: frederic.chen@mediatek.com
-Subject: Re: [RFC PATCH V3 5/5] media: platform: mtk-mdp3: Add struct
- tuning_addr and img_sw_buffer
-Message-ID: <20191002092143.GP896@valkosipuli.retiisi.org.uk>
+Subject: Re: [RFC PATCH V3 1/5] dt-bindings: mt8183: Added DIP dt-bindings
+Message-ID: <20191002092254.GQ896@valkosipuli.retiisi.org.uk>
 References: <20190909192244.9367-1-frederic.chen@mediatek.com>
- <20190909192244.9367-6-frederic.chen@mediatek.com>
+ <20190909192244.9367-2-frederic.chen@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190909192244.9367-6-frederic.chen@mediatek.com>
+In-Reply-To: <20190909192244.9367-2-frederic.chen@mediatek.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_022232_128432_DF603521 
-X-CRM114-Status: UNSURE (   9.19  )
+X-CRM114-CacheID: sfid-20191002_022336_422271_F2701133 
+X-CRM114-Status: UNSURE (   9.42  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -82,20 +81,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 10, 2019 at 03:22:44AM +0800, frederic.chen@mediatek.com wrote:
+Hi Frederic,
+
+On Tue, Sep 10, 2019 at 03:22:40AM +0800, frederic.chen@mediatek.com wrote:
 > From: Frederic Chen <frederic.chen@mediatek.com>
 > 
-> We added a struct tuning_addr which contains a field "present"
-> so that the driver can tell the firmware if we have user tuning
-> dataor not.
+> This patch adds DT binding documentation for the Digital Image
+> Processing (DIP) unit of camera ISP system on Mediatek's SoCs.
 > 
-> The strcut img_sw_buffer is also added. This struct has no cpu address
-> field and uses a handle instead so that we don't pass a cpu address
-> to co-processor.
+> It depends on the SCP and MDP 3 patch as following:
+> 
+> 1. dt-bindings: Add a binding for Mediatek SCP
+>    https://patchwork.kernel.org/patch/11027247/
+> 2. dt-binding: mt8183: Add Mediatek MDP3 dt-bindings
+>    https://patchwork.kernel.org/patch/10945603/
 > 
 > Signed-off-by: Frederic Chen <frederic.chen@mediatek.com>
+> ---
+>  .../bindings/media/mediatek,mt8183-dip.txt    | 40 +++++++++++++++++++
 
-If the driver depends on this patch, it needs to come before the driver.
+Could you add a MAINTAINERS entry for this, please? Same for the driver.
 
 -- 
 Sakari Ailus
