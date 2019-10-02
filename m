@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80AC5C4ACC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 11:50:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E0C7C4ACD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 11:50:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OtH91Im9Bscr+Bik4eNbCuuj89v0O93ChR9T81JEt7s=; b=IlnG8sy7vAR3D2
-	I1o34My6XwrLnIoHOP1puuOSNY2TrjGfNr4cgnZzLFiHWk8sEtTl64ZTA8LeQtnDubTsGBUQYcN8A
-	cM88ousuFy9Xn9FGX0YqAcAPxz1vV+SUGUALk7q962sSUYq6gilTAw0H4zDRzJ09lju3XHBgBSUgP
-	J5LIlgrp/zwr500tmUQIyVnLp0XP7LWwU/OQCoiqkDUuVatuqeqnNd9dv01o96lndxwiUvOuWoaSa
-	lO4acVrzq5IfbnKt43GEnVOirsMWsT09ypr25o5c+Ymg3nnjsHQN7Kdd49rXdzzUn6m1yvbl+qHSM
-	Kr3m5PC12F1+IZ/DPRLQ==;
+	List-Owner; bh=zVqAysIe1/GYF8xKgQ56LS8uN7YkTiOsURygBQjqy30=; b=m2fzUJTxO8x5+X
+	v+g7H92g+FpvIhT67qkeE5Hc4s6Dn40VIXu8y/jwSupvxtlpxcvgr7daOJQJ+TqJokaH1lHa2wSk6
+	eYtapSFTGEtujfT9I3dypnBZr5acs6dLrqpadcS20gMqKUjWJT51Z2pHHhi6x5OjgJK1KO2G/Dz6z
+	HO/7R+QdS2lwTYf56iuSLowooPETS8XCd9pJWGkLZj5MPRQv6qlMojJFvx+Q6FENZ97w54oOckrll
+	2Clz13rXGVMimNqlGRdJvODjDWTUs8elSur2lNF/9hL86VqJqHc+MVU81ITM50oU2TXH+bvtTkKa8
+	QWRfLDe6c8Y75CxdlfZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFbHI-0003l3-2B; Wed, 02 Oct 2019 09:50:36 +0000
+	id 1iFbHS-0003zV-H3; Wed, 02 Oct 2019 09:50:46 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFbGb-0003Nl-7W
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 09:49:55 +0000
+ id 1iFbGc-0003O5-P1
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 09:49:56 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B46BD15A1;
- Wed,  2 Oct 2019 02:49:52 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0102E15A2;
+ Wed,  2 Oct 2019 02:49:54 -0700 (PDT)
 Received: from eglon.cambridge.arm.com (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2A1CA3F739;
- Wed,  2 Oct 2019 02:49:52 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6A9F93F739;
+ Wed,  2 Oct 2019 02:49:53 -0700 (PDT)
 From: James Morse <james.morse@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/4] arm64: Fake the IminLine size on systems affected by
- Neoverse-N1 #1542419
-Date: Wed,  2 Oct 2019 10:49:33 +0100
-Message-Id: <20191002094935.48848-3-james.morse@arm.com>
+Subject: [PATCH 3/4] arm64: compat: Workaround Neoverse-N1 #1542419 for compat
+ user-space
+Date: Wed,  2 Oct 2019 10:49:34 +0100
+Message-Id: <20191002094935.48848-4-james.morse@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191002094935.48848-1-james.morse@arm.com>
 References: <20191002094935.48848-1-james.morse@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_024953_309881_ABD36B1B 
-X-CRM114-Status: GOOD (  13.05  )
+X-CRM114-CacheID: sfid-20191002_024954_850655_1520BC6C 
+X-CRM114-Status: GOOD (  11.28  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -66,60 +66,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Systems affected by Neoverse-N1 #1542419 support DIC so do not need to
-perform icache maintenance once new instructions are cleaned to the PoU.
-For the errata workaround, the kernel hides DIC from user-space, so that
-the unnecessary cache maintenance can be trapped by firmware.
-
-To reduce the number of traps, produce a fake IminLine value based on
-PAGE_SIZE.
+Compat user-space is unable to perform ICIMVAU instructions from
+user-space. Instead it uses a compat-syscall. Add the workaround for
+Neoverse-N1 #1542419 to this code path.
 
 Signed-off-by: James Morse <james.morse@arm.com>
 ---
- arch/arm64/include/asm/cache.h | 3 ++-
- arch/arm64/kernel/traps.c      | 6 +++++-
- 2 files changed, 7 insertions(+), 2 deletions(-)
+ arch/arm64/kernel/sys_compat.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
-diff --git a/arch/arm64/include/asm/cache.h b/arch/arm64/include/asm/cache.h
-index 43da6dd29592..806e9dc2a852 100644
---- a/arch/arm64/include/asm/cache.h
-+++ b/arch/arm64/include/asm/cache.h
-@@ -11,6 +11,7 @@
- #define CTR_L1IP_MASK		3
- #define CTR_DMINLINE_SHIFT	16
- #define CTR_IMINLINE_SHIFT	0
-+#define CTR_IMINLINE_MASK	0xf
- #define CTR_ERG_SHIFT		20
- #define CTR_CWG_SHIFT		24
- #define CTR_CWG_MASK		15
-@@ -18,7 +19,7 @@
- #define CTR_DIC_SHIFT		29
+diff --git a/arch/arm64/kernel/sys_compat.c b/arch/arm64/kernel/sys_compat.c
+index f1cb64959427..1d09160fdd25 100644
+--- a/arch/arm64/kernel/sys_compat.c
++++ b/arch/arm64/kernel/sys_compat.c
+@@ -8,6 +8,7 @@
+  */
  
- #define CTR_CACHE_MINLINE_MASK	\
--	(0xf << CTR_DMINLINE_SHIFT | 0xf << CTR_IMINLINE_SHIFT)
-+	(0xf << CTR_DMINLINE_SHIFT | CTR_IMINLINE_MASK << CTR_IMINLINE_SHIFT)
+ #include <linux/compat.h>
++#include <linux/cpufeature.h>
+ #include <linux/personality.h>
+ #include <linux/sched.h>
+ #include <linux/sched/signal.h>
+@@ -17,6 +18,7 @@
  
- #define CTR_L1IP(ctr)		(((ctr) >> CTR_L1IP_SHIFT) & CTR_L1IP_MASK)
+ #include <asm/cacheflush.h>
+ #include <asm/system_misc.h>
++#include <asm/tlbflush.h>
+ #include <asm/unistd.h>
  
-diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-index 465f0a0f8f0a..991647a65fe8 100644
---- a/arch/arm64/kernel/traps.c
-+++ b/arch/arm64/kernel/traps.c
-@@ -470,9 +470,13 @@ static void ctr_read_handler(unsigned int esr, struct pt_regs *regs)
- 	int rt = ESR_ELx_SYS64_ISS_RT(esr);
- 	unsigned long val = arm64_ftr_reg_user_value(&arm64_ftr_reg_ctrel0);
+ static long
+@@ -30,6 +32,15 @@ __do_compat_cache_op(unsigned long start, unsigned long end)
+ 		if (fatal_signal_pending(current))
+ 			return 0;
  
--	if (cpus_have_const_cap(ARM64_WORKAROUND_1542419))
-+	if (cpus_have_const_cap(ARM64_WORKAROUND_1542419)) {
- 		val &= ~BIT(CTR_DIC_SHIFT);
- 
-+		val &= ~CTR_IMINLINE_MASK;
-+		val |= PAGE_SHIFT - 2;
-+	}
++		if (cpus_have_const_cap(ARM64_WORKAROUND_1542419)) {
++			/*
++			 * The workround requires an inner-shareable tlbi.
++			 * We pick the reserved-ASID to minimise the impact.
++			 */
++			__tlbi(aside1is, 0);
++			dsb(ish);
++		}
 +
- 	pt_regs_write_reg(regs, rt, val);
- 
- 	arm64_skip_faulting_instruction(regs, AARCH64_INSN_SIZE);
+ 		ret = __flush_cache_user_range(start, start + chunk);
+ 		if (ret)
+ 			return ret;
 -- 
 2.20.1
 
