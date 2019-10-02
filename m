@@ -2,87 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 639B1C9322
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 22:59:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B40F9C9323
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 22:59:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pA8yxwGT1A0PUkknpqjXmuzF4or5QUdjJNx0iTCED5s=; b=s1+nVgXdM6AbRN
-	6U/WeebItmFQl0DNxV+b282YhMn/JLbKOr3aYKG0QaQFw6xgG/WpPX84pVw24ZCnRuQgMdiFGvhGT
-	4Wvi/bauZB5mWFBPxr2FgVzlnuq1I9bGxrJ2awHWQ5T5R+122db4bfIedyvcv03usY6FcDVuEChvc
-	qMLiBpzqshaw8CgUFK/9X48M7VV7niaIdpyEglpWYWfn1G2eprUIHB/seB9TNGf98hkjzTt7mf++t
-	/Nf2ycJlyt+YDgbSSDEJWs0W04T0YZucmkjTMkNOFXrEkaGMAGat4zmFN4AZdUvwpByTMY/W6Ri4p
-	erup3NPgp6Fg8kAf0Meg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ko3lVV0AKvmNkLrX5ymABwJXZf6aQ3zMheHQzWVVU3M=; b=S3w9fts7RdSeQc7IwaoHILeZj
+	qqJ9atuFiec1XJp0WwGRyx/xgc8PsLA0ezL0grwg1CQ22fEW7xBLqxuo7gmHsaq1kSCCDUJyb2v6n
+	2HwgWpUdRcK8FJQ+inbuM9OEqI3MquK4E+88TWvKTVlq8QYqfmgfFT2eS1P1k3bZMnW/h3W7AhKQB
+	jlMGGka2S0YMZjewiRkuUBJYE28tTENwvqHcLWBnvZwzqo1vJCBx1idmLxmiLSCczaAyLhCkCpKyg
+	lb4MO5+DyRi+znw8A93BnbnMtwzTltDkd7J+hJQPfvXUqsnZqg/d2qOdJ0keZeIlSuxzvtgA+HalA
+	7bCYKN9XA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFli3-00075L-Rc; Wed, 02 Oct 2019 20:58:55 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1iFliM-0007K0-1G; Wed, 02 Oct 2019 20:59:14 +0000
+Received: from avon.wwwdotorg.org ([104.237.132.123])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFlhx-00074S-GA
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 20:58:51 +0000
-Received: by mail-pf1-x442.google.com with SMTP id a2so195010pfo.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 02 Oct 2019 13:58:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=KX5XeevGScIhOFues3GQkV78ozucGw/LYZ1l8L5X6bo=;
- b=YM7PrqwY/F7Vm9PudRT17T2mqcMDRwHbIT7qw3mpkzdEEzHkANg4PLltdxVjuLFB4q
- mOMigow1C99Fxn3258qWATdkH6FCy/iw8I1WAaM+BP4aM7NWNDxHcJANq1Drp3mh+m2H
- /aEO9TVSFVtczdY6PmO9rseb3o8Dna0PVSt1s=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=KX5XeevGScIhOFues3GQkV78ozucGw/LYZ1l8L5X6bo=;
- b=rh50MtZZmtzU/9bJC1Zowvf/DwMlBs+hU0DeqhLERhiERqh1wIlo8ZfMLIPbEO+i4k
- wXoCqlzxMNFVhBeZhkgph2JCaK2Q8BDEyqC0wiSpYSjlbfL/Kca4YkVrIpQ+37bHlXG9
- ID4/FBYJprRImN8SqsGg2ywZttyWQq9S/XBpAI5NGkQqKDjjyyHHMEMoxUX9jlNn6wYl
- RHaJP7jaBPgsWyRbyYhKJw12tuGZ4D1K4LrGWAyi7ggEoKKaKuewXaD39L1R/hdGtq6B
- OAPdmQo2bkAWUS+bfNgSnVjSUDtU3aJL+kOnNof97V8bu9bP7agTZjf2FW+CJ7d1Q5jo
- m4AQ==
-X-Gm-Message-State: APjAAAVBgwAkgeMsRfDTIoFhTRPVG4jAdQb5dIQXgNuk+sNIAdZR182V
- KYfSyB5vP6g7A96+1+Q7DzGJzg==
-X-Google-Smtp-Source: APXvYqyKNOmRPkS1Q8AKw0jUMUMu27C3e3zFkbZCALS8GZ9yijv6oqy5W8ctOfywkUEq/6vs+Euvuw==
-X-Received: by 2002:aa7:97b0:: with SMTP id d16mr7065724pfq.54.1570049927960; 
- Wed, 02 Oct 2019 13:58:47 -0700 (PDT)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id p190sm354504pfb.160.2019.10.02.13.58.46
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 02 Oct 2019 13:58:47 -0700 (PDT)
-Date: Wed, 2 Oct 2019 13:58:46 -0700
-From: Kees Cook <keescook@chromium.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] panic: Ensure preemption is disabled during panic()
-Message-ID: <201910021355.E578D2FFAF@keescook>
-References: <20191002123538.22609-1-will@kernel.org>
+ id 1iFliD-0007IB-8n
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 20:59:06 +0000
+Received: from [10.20.204.51] (unknown [216.228.112.24])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by avon.wwwdotorg.org (Postfix) with ESMTPSA id D9A9C1C00ED;
+ Wed,  2 Oct 2019 14:59:03 -0600 (MDT)
+X-Virus-Status: Clean
+X-Virus-Scanned: clamav-milter 0.100.3 at avon.wwwdotorg.org
+Subject: Re: [PATCH 1/4] clk: tegra: Enable fuse clock on Tegra124
+To: Thierry Reding <thierry.reding@gmail.com>
+References: <20191001211346.104400-1-swarren@wwwdotorg.org>
+ <20191002110454.GJ3716706@ulmo>
+From: Stephen Warren <swarren@wwwdotorg.org>
+Message-ID: <6a48d716-2312-4623-f47a-a53ac2ece83c@wwwdotorg.org>
+Date: Wed, 2 Oct 2019 14:59:03 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191002123538.22609-1-will@kernel.org>
+In-Reply-To: <20191002110454.GJ3716706@ulmo>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_135849_563390_1DA7F712 
-X-CRM114-Status: GOOD (  21.71  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191002_135905_392766_3847D188 
+X-CRM114-Status: GOOD (  21.52  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,103 +63,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Petr Mladek <pmladek@suse.com>, Feng Tang <feng.tang@intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, contact@xogium.me,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- Ingo Molnar <mingo@redhat.com>, Steven Rostedt <rostedt@goodmis.org>,
- Andrew Morton <akpm@linux-foundation.org>,
+Cc: Prashant Gaikwad <pgaikwad@nvidia.com>, Stephen Boyd <sboyd@kernel.org>,
+ Peter De Schrijver <pdeschrijver@nvidia.com>, linux-clk@vger.kernel.org,
+ Jonathan Hunter <jonathanh@nvidia.com>, linux-tegra@vger.kernel.org,
+ Michael Turquette <mturquette@baylibre.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 02, 2019 at 01:35:38PM +0100, Will Deacon wrote:
-> Calling 'panic()' on a kernel with CONFIG_PREEMPT=y can leave the
-> calling CPU in an infinite loop, but with interrupts and preemption
-> enabled. From this state, userspace can continue to be scheduled,
-> despite the system being "dead" as far as the kernel is concerned. This
-> is easily reproducible on arm64 when booting with "nosmp" on the command
-> line; a couple of shell scripts print out a periodic "Ping" message
-> whilst another triggers a crash by writing to /proc/sysrq-trigger:
+On 10/2/19 5:04 AM, Thierry Reding wrote:
+> On Tue, Oct 01, 2019 at 03:13:43PM -0600, Stephen Warren wrote:
+>> From: Stephen Warren <swarren@nvidia.com>
+>>
+>> For a little over a year, U-Boot has configured the flow controller to
+>> perform automatic RAM re-repair on off->on power transitions of the CPU
+>> rail1]. This is mandatory for correct operation of Tegra124. However, RAM
+>> re-repair relies on certain clocks, which the kernel must enable and
+>> leave running. The fuse clock is one of those clocks. Enable this clock
+>> so that LP1 power mode (system suspend) operates correctly.
+>>
+>> [1] 3cc7942a4ae5 ARM: tegra: implement RAM repair
+>>
+>> Reported-by: Jonathan Hunter <jonathanh@nvidia.com>
+>> Cc: stable@vger.kernel.org
+>> Signed-off-by: Stephen Warren <swarren@nvidia.com>
+>> ---
+>>   drivers/clk/tegra/clk-tegra124.c | 1 +
+>>   1 file changed, 1 insertion(+)
+>>
+>> diff --git a/drivers/clk/tegra/clk-tegra124.c b/drivers/clk/tegra/clk-tegra124.c
+>> index 0224fdc4766f..f53f6315c646 100644
+>> --- a/drivers/clk/tegra/clk-tegra124.c
+>> +++ b/drivers/clk/tegra/clk-tegra124.c
+>> @@ -1291,6 +1291,7 @@ static struct tegra_clk_init_table common_init_table[] __initdata = {
+>>   };
+>>   
+>>   static struct tegra_clk_init_table tegra124_init_table[] __initdata = {
+>> +	{ TEGRA124_CLK_FUSE, -1, 0, 1 },
 > 
->   | sysrq: Trigger a crash
->   | Kernel panic - not syncing: sysrq triggered crash
->   | CPU: 0 PID: 1 Comm: init Not tainted 5.2.15 #1
->   | Hardware name: linux,dummy-virt (DT)
->   | Call trace:
->   |  dump_backtrace+0x0/0x148
->   |  show_stack+0x14/0x20
->   |  dump_stack+0xa0/0xc4
->   |  panic+0x140/0x32c
->   |  sysrq_handle_reboot+0x0/0x20
->   |  __handle_sysrq+0x124/0x190
->   |  write_sysrq_trigger+0x64/0x88
->   |  proc_reg_write+0x60/0xa8
->   |  __vfs_write+0x18/0x40
->   |  vfs_write+0xa4/0x1b8
->   |  ksys_write+0x64/0xf0
->   |  __arm64_sys_write+0x14/0x20
->   |  el0_svc_common.constprop.0+0xb0/0x168
->   |  el0_svc_handler+0x28/0x78
->   |  el0_svc+0x8/0xc
->   | Kernel Offset: disabled
->   | CPU features: 0x0002,24002004
->   | Memory Limit: none
->   | ---[ end Kernel panic - not syncing: sysrq triggered crash ]---
->   |  Ping 2!
->   |  Ping 1!
->   |  Ping 1!
->   |  Ping 2!
+> I think the correct way to do this these days is to mark the clock as
+> CRITICAL. Not sure if there's an easy way to do that given that the
+> clock init table doesn't allow storing flags.
 > 
-> The issue can also be triggered on x86 kernels if CONFIG_SMP=n, otherwise
-> local interrupts are disabled in 'smp_send_stop()'.
+> Do you have any good ideas on how to achieve this with the critical flag
+> instead of forcing the refcount to 1?
 > 
-> Disable preemption in 'panic()' before re-enabling interrupts.
+> Perhaps something like the below would work?
+ > ...
 
-Is this perhaps the correct solution for what commit c39ea0b9dd24 ("panic:
-avoid the extra noise dmesg") was trying to fix?
+The following works for me; does this seem like a reasonable approach? 
+It does set the critical flag for all SoCs, including any that don't 
+require RAM re-repair. I'm not sure which do; I know it's more than just 
+Tegra124, but I'm not sure how far back/forward the requirement goes.
 
-Either way:
-
-Reviewed-by: Kees Cook <keescook@chromium.org>
-
--Kees
-
-> 
-> Cc: Russell King <linux@armlinux.org.uk>
-> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> Cc: Ingo Molnar <mingo@redhat.com>
-> Cc: Kees Cook <keescook@chromium.org>
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Cc: <stable@vger.kernel.org>
-> Link: https://lore.kernel.org/r/BX1W47JXPMR8.58IYW53H6M5N@dragonstone
-> Reported-by: Xogium <contact@xogium.me>
-> Signed-off-by: Will Deacon <will@kernel.org>
-> ---
->  kernel/panic.c | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/kernel/panic.c b/kernel/panic.c
-> index 47e8ebccc22b..f470a038b05b 100644
-> --- a/kernel/panic.c
-> +++ b/kernel/panic.c
-> @@ -180,6 +180,7 @@ void panic(const char *fmt, ...)
->  	 * after setting panic_cpu) from invoking panic() again.
->  	 */
->  	local_irq_disable();
-> +	preempt_disable_notrace();
->  
->  	/*
->  	 * It's possible to come here directly from a panic-assertion and
-> -- 
-> 2.23.0.444.g18eeb5a265-goog
-> 
-
--- 
-Kees Cook
+> diff --git a/drivers/clk/tegra/clk-tegra-periph.c b/drivers/clk/tegra/clk-tegra-periph.c
+> index 1ed85f120a1b..76dd91eebd13 100644
+> --- a/drivers/clk/tegra/clk-tegra-periph.c
+> +++ b/drivers/clk/tegra/clk-tegra-periph.c
+> @@ -785,7 +785,7 @@ static struct tegra_periph_init_data gate_clks[] = {
+>         GATE("ahbdma", "hclk", 33, 0, tegra_clk_ahbdma, 0),
+>         GATE("apbdma", "pclk", 34, 0, tegra_clk_apbdma, 0),
+>         GATE("kbc", "clk_32k", 36, TEGRA_PERIPH_ON_APB | TEGRA_PERIPH_NO_RESET, tegra_clk_kbc, 0),
+> -       GATE("fuse", "clk_m", 39, TEGRA_PERIPH_ON_APB, tegra_clk_fuse, 0),
+> +       GATE("fuse", "clk_m", 39, TEGRA_PERIPH_ON_APB, tegra_clk_fuse, CLK_IS_CRITICAL),
+>         GATE("fuse_burn", "clk_m", 39, TEGRA_PERIPH_ON_APB, tegra_clk_fuse_burn, 0),
+>         GATE("kfuse", "clk_m", 40, TEGRA_PERIPH_ON_APB, tegra_clk_kfuse, 0),
+>         GATE("apbif", "clk_m", 107, TEGRA_PERIPH_ON_APB, tegra_clk_apbif, 0),
 
 _______________________________________________
 linux-arm-kernel mailing list
