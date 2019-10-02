@@ -2,48 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B461DC8783
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 13:45:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C50AC879C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 13:56:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GaLYgSg9jj9g4C06zp6linOaz16c5diOPbr+sUjrgfA=; b=qBjGVs3CuO2enS
-	N1EoDK7KIqiuxy7e43VEm1FoO4E8iJyFj2ZtVpE50OavdQWfGggWReBWZ4IoOJJxY1Rt567WaffBa
-	gc6OCK7YHD3GGSuzYtFEkmDAOFssgfq//grzFJf8mWhpgQX7za2BYn1DKerAFd3Mg0epkdsha47WS
-	FLABiOinOdRKKTT+HtCDxlTVQK05gG/fsoWXw+Ps7Pn9IOevUCfnf1sP5plGu7ms7kJuf3Q2Pu2Nq
-	skdCASH5qEk5IkIKRaxcczU2RgzyuuEdYp+SF6byV+b9uL28nepaMwEs09R2NQKJD4xle53C6kaCV
-	yy+LD6QKYJwEDmb3ynaQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tsTpqAXEVpY81N561+vVs6oQiohl25zyC0Syrd1wxck=; b=oAz3SArSqfdbhR
+	ZoiKxl3Saa5dMjG2nUXR9R4UOcf3HStT72B8WPjHTZsbPwtlackRojzDcRgHNG8xVvDv0fghI7kSG
+	SIESJ2+9orc1nyVrm/WFEHBnS9ye+/aoC2Y3NXW6+6YRXfUA/XPTX4ooQkFbhVUQDS3qx7P2ESu5T
+	eBfpiO9Lp9X09V/5sLaAdfxYoF41DtFR2q3XNEXtwu2YfJpkI74C7tHm63K9+fyYqnm5hfd+Rts61
+	aYZifO52Q9v0oFO6meC6GuMRYM3032kJQd98PjZlH2gd4xZxzb5cN8wfwvJN49P2O2RMyyA9FDWYH
+	pjZ0KNPcRLitLPighy8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFd4P-0003Fg-MP; Wed, 02 Oct 2019 11:45:25 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFd4I-0003Eg-FU
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 11:45:20 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 840E4AF37;
- Wed,  2 Oct 2019 11:45:14 +0000 (UTC)
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH] ARM: dt: check MPIDR on MP devices built without SMP
-Date: Wed,  2 Oct 2019 13:45:08 +0200
-Message-Id: <20191002114508.1089-1-nsaenzjulienne@suse.de>
-X-Mailer: git-send-email 2.23.0
+	id 1iFdEt-0006Sx-9r; Wed, 02 Oct 2019 11:56:15 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iFdEl-0006SD-83
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 11:56:08 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9D42528;
+ Wed,  2 Oct 2019 04:55:57 -0700 (PDT)
+Received: from [10.1.26.129] (E110760.Arm.com [10.1.26.129])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E48063F71A;
+ Wed,  2 Oct 2019 04:55:56 -0700 (PDT)
+Subject: Re: Regression: Cortex-M w/ XIP not booting
+To: afzal mohammed <afzal.mohd.ma@gmail.com>,
+ Russell King <linux@armlinux.org.uk>
+References: <20191002061637.GA7743@afzalpc>
+From: Vladimir Murzin <vladimir.murzin@arm.com>
+Message-ID: <c9a8d667-0dfb-2dd7-3537-8683cfc3914d@arm.com>
+Date: Wed, 2 Oct 2019 12:55:55 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <20191002061637.GA7743@afzalpc>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_044518_663258_85FE6467 
-X-CRM114-Status: GOOD (  13.99  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191002_045607_329702_606C153B 
+X-CRM114-Status: GOOD (  15.74  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -57,64 +62,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kernelci.org bot" <bot@kernelci.org>, linux-arm-kernel@lists.infradead.org,
- wahrenst@gmx.net, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Russell King <linux@armlinux.org.uk>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Alexandre Torgue <alexandre.torgue@st.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently, in arm_dt_init_cpu_maps(), the hwid of the boot CPU is read
-from MPIDR on SMP devices and set to 0 for non SMP. This value is then
-matched with the DT cpu nodes' reg property in order to find the boot
-CPU in DT.
+Hi Afzal,
 
-On MP devices build without SMP the cpu DT node contains the expected
-MPIDR yet the hwid is set to 0. With this the function fails to match
-the cpus and uses the default CPU logical map. Making it impossible to
-get the CPU's DT node further down the line. This causes issues with
-cpufreq-dt, as it triggers warnings when not finding a suitable DT node
-on CPU0.
+On 10/2/19 7:16 AM, afzal mohammed wrote:
+> Hi Vladimir,
+> 
+> After,
+> 
+> 72cd4064fcca "NOMMU: Toggle only bits in EXC_RETURN we are really care of",
+> 
+> the no-MMU Vybrid Cortex-M4 is not booting, relevant logs at the end.
+> 
+> Looks like any Cortex-M with XIP enabled Kernel would have this issue,
+> i.e. all STM32 Cortex-M baords (STM32 maintainers CC'ed) as well as.
+> 
+> In the above commit, lr value is saved in data section in __v7m_setup,
+> but the data section is setup only later in __mmap_switched on an XIP
+> kernel, where it will overwrite the saved value of lr. This causes
+> reserved EXC_RETURN value resulting in the below.
+> 
+> Reverting the above change fixes the issue.
 
-Change the way we choose whether to get MPIDR or not. Instead of
-depending on SMP check the number of CPUs defined in DT. Anything > 1
-means MPIDR will be available.
+Thanks for report! It is pity it was not caught while patch submission...
 
-This was seen on a Raspberry Pi 2 build with bcm2835_defconfig.
+Can you try diff bellow? I do not have XIP target, but non-XIP seems to
+stay happy...
 
-Reported-by: "kernelci.org bot" <bot@kernelci.org>
-Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
----
- arch/arm/kernel/devtree.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/kernel/devtree.c b/arch/arm/kernel/devtree.c
-index 39c978698406..a924fda9abc8 100644
---- a/arch/arm/kernel/devtree.c
-+++ b/arch/arm/kernel/devtree.c
-@@ -74,7 +74,7 @@ void __init arm_dt_init_cpu_maps(void)
- 	struct device_node *cpu, *cpus;
- 	int found_method = 0;
- 	u32 i, j, cpuidx = 1;
--	u32 mpidr = is_smp() ? read_cpuid_mpidr() & MPIDR_HWID_BITMASK : 0;
-+	u32 mpidr = 0;
+diff --git a/arch/arm/kernel/head-common.S b/arch/arm/kernel/head-common.S
+index a7810be..4a39828 100644
+--- a/arch/arm/kernel/head-common.S
++++ b/arch/arm/kernel/head-common.S
+@@ -68,7 +68,7 @@ ENDPROC(__vet_atags)
+  * The following fragment of code is executed with the MMU on in MMU mode,
+  * and uses absolute addresses; this is not position independent.
+  *
+- *  r0  = cp#15 control register
++ *  r0  = cp#15 control register (exc_ret for M-class)
+  *  r1  = machine ID
+  *  r2  = atags/dtb pointer
+  *  r9  = processor ID
+@@ -137,7 +137,8 @@ __mmap_switched_data:
+ #ifdef CONFIG_CPU_CP15
+ 	.long	cr_alignment			@ r3
+ #else
+-	.long	0				@ r3
++M_CLASS(.long	exc_ret)			@ r3
++AR_CLASS(.long	0)				@ r3
+ #endif
+ 	.size	__mmap_switched_data, . - __mmap_switched_data
  
- 	u32 tmp_map[NR_CPUS] = { [0 ... NR_CPUS-1] = MPIDR_INVALID };
- 	bool bootcpu_valid = false;
-@@ -83,6 +83,9 @@ void __init arm_dt_init_cpu_maps(void)
- 	if (!cpus)
- 		return;
- 
-+	if (is_smp() || of_get_child_count(cpus) > 1)
-+		mpidr = read_cpuid_mpidr() & MPIDR_HWID_BITMASK;
-+
- 	for_each_of_cpu_node(cpu) {
- 		const __be32 *cell;
- 		int prop_bytes;
--- 
-2.23.0
+diff --git a/arch/arm/kernel/head-nommu.S b/arch/arm/kernel/head-nommu.S
+index afa350f..0fc814b 100644
+--- a/arch/arm/kernel/head-nommu.S
++++ b/arch/arm/kernel/head-nommu.S
+@@ -201,6 +201,8 @@ M_CLASS(streq	r3, [r12, #PMSAv8_MAIR1])
+ 	bic	r0, r0, #V7M_SCB_CCR_IC
+ #endif
+ 	str	r0, [r12, V7M_SCB_CCR]
++	/* Pass exc_ret to __mmap_switched */
++	mov	r0, r10
+ #endif /* CONFIG_CPU_CP15 elif CONFIG_CPU_V7M */
+ 	ret	lr
+ ENDPROC(__after_proc_init)
+diff --git a/arch/arm/mm/proc-v7m.S b/arch/arm/mm/proc-v7m.S
+index 1448f14..efebf41 100644
+--- a/arch/arm/mm/proc-v7m.S
++++ b/arch/arm/mm/proc-v7m.S
+@@ -136,9 +136,8 @@ __v7m_setup_cont:
+ 	cpsie	i
+ 	svc	#0
+ 1:	cpsid	i
+-	ldr	r0, =exc_ret
+-	orr	lr, lr, #EXC_RET_THREADMODE_PROCESSSTACK
+-	str	lr, [r0]
++	/* Calculate exc_ret */
++	orr	r10, lr, #EXC_RET_THREADMODE_PROCESSSTACK
+ 	ldmia	sp, {r0-r3, r12}
+ 	str	r5, [r12, #11 * 4]	@ restore the original SVC vector entry
+ 	mov	lr, r6			@ restore LR
 
+Cheers
+Vladimir
 
 _______________________________________________
 linux-arm-kernel mailing list
