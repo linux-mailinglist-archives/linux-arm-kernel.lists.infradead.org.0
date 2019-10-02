@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 460B9C9251
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 21:26:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC47EC9250
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 21:25:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=JZ0XkDlBGEaWl33ZjDxfvkrKYsQadycClbPhs6lX+Qw=; b=aBLKZMEKXwjL3Mr55jakuRIXWK
-	5dPfzxquqwxDv6nFQWqVif+sPXZVUkWTK5U9tMQp6YYCsJXg87/eIvblKIjkprAahKVviesQr/CLg
-	lPwI/cG1E00VI8IzR7jlYMEqh2aYak4HWiIkkO13S/ZrjuGZwwf6K//SXj0yghHhJiQVwO635uFDN
-	lReZLDXhcj51wiFiUd0rwaH+8jA/DA574Od4TKv4q1O6k/6olNxjDaY8UTqUGnuUbB1Z+KYNLqQMP
-	Ibyjcl9UMB/hYQ8Lt3UCg/yzIMwj6L2x1vD/SC483nqxp6g8UD4w9oKplGT2KF40z/sQWip5tKspQ
-	J859I5cQ==;
+	bh=YWokFVLroGYfxpTC8wSqvYNyXpPA/6sDOxBqYJj1luo=; b=tEdSo6614lQT3lQnO2E03JvPh3
+	P7+1ivs0JjIfWz9nwlyJoxGnXrDF1z98uuXM/8wcgpeYtmwg3zBUsvSlc6PkWcFG5KP+4dCqRFGxZ
+	ZIzgpz0JXIa5088iDshdIRrCfbopSd8K6YJkm/9jiH3LU+qnHouot4POLHayTEYrSgKVYzviwGGT7
+	7/usWY5X+lL1zEW6/VVdbnOVKAr+HVXhdT00K4zreIcFW/J0w7/YBfb9wx8lW3wcQeGBv8S6SEx/Q
+	0S6IyX/LxqAI1Mvd0uHkUEDfNBYlECjGbAQAqrwvwVYF+c2auSwmEoz0LgpVRct6Bn6UFkH6j24wu
+	1mi+icjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFkGA-0000gv-KI; Wed, 02 Oct 2019 19:26:02 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1iFkFv-0000Oo-Tz; Wed, 02 Oct 2019 19:25:47 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFkFW-0000EO-On
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 19:25:25 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 0AC47200809;
+ id 1iFkFW-0000ET-Ls
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 19:25:24 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C92FC1A069D;
  Wed,  2 Oct 2019 21:25:20 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id F01F82006C7;
- Wed,  2 Oct 2019 21:25:19 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id BB3AE1A0698;
+ Wed,  2 Oct 2019 21:25:20 +0200 (CEST)
 Received: from fsr-ub1864-112.ea.freescale.net
  (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 453862060C;
- Wed,  2 Oct 2019 21:25:19 +0200 (CEST)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 0C4572060C;
+ Wed,  2 Oct 2019 21:25:20 +0200 (CEST)
 From: Leonard Crestez <leonard.crestez@nxp.com>
 To: Matthias Kaehlcke <mka@chromium.org>, Chanwoo Choi <cw00.choi@samsung.com>,
  MyungJoo Ham <myungjoo.ham@samsung.com>
-Subject: [PATCH v9 2/8] PM / devfreq: Fix devfreq_notifier_call returning errno
-Date: Wed,  2 Oct 2019 22:25:05 +0300
-Message-Id: <10b1e5f93e7594852aa5cbfe1309bf486f70ecbb.1570044052.git.leonard.crestez@nxp.com>
+Subject: [PATCH v9 3/8] PM / devfreq: Set scaling_max_freq to max on OPP
+ notifier error
+Date: Wed,  2 Oct 2019 22:25:06 +0300
+Message-Id: <bee69d4635f83d8812fedbc108beb6c51ac9d4e7.1570044052.git.leonard.crestez@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1570044052.git.leonard.crestez@nxp.com>
 References: <cover.1570044052.git.leonard.crestez@nxp.com>
@@ -48,15 +49,15 @@ In-Reply-To: <cover.1570044052.git.leonard.crestez@nxp.com>
 References: <cover.1570044052.git.leonard.crestez@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_122522_941157_25151D19 
-X-CRM114-Status: GOOD (  11.00  )
+X-CRM114-CacheID: sfid-20191002_122522_849388_1B95CD8D 
+X-CRM114-Status: GOOD (  10.13  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -85,67 +86,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Notifier callbacks shouldn't return negative errno but one of the
-NOTIFY_OK/DONE/BAD values.
+The devfreq_notifier_call functions will update scaling_min_freq and
+scaling_max_freq when the OPP table is updated.
 
-The OPP core will ignore return values from notifiers but returning a
-value that matches NOTIFY_STOP_MASK will stop the notification chain.
-
-Fix by always returning NOTIFY_OK.
+If fetching the maximum frequency fails then scaling_max_freq remains
+set to zero which is confusing. Set to ULONG_MAX instead so we don't
+need special handling for this case in other places.
 
 Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 ---
- drivers/devfreq/devfreq.c | 24 +++++++++++++-----------
- 1 file changed, 13 insertions(+), 11 deletions(-)
+ drivers/devfreq/devfreq.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
-index 7dc899da1172..32bbf6e80380 100644
+index 32bbf6e80380..3e0e936185a3 100644
 --- a/drivers/devfreq/devfreq.c
 +++ b/drivers/devfreq/devfreq.c
-@@ -548,30 +548,32 @@ EXPORT_SYMBOL(devfreq_interval_update);
-  */
- static int devfreq_notifier_call(struct notifier_block *nb, unsigned long type,
- 				 void *devp)
- {
- 	struct devfreq *devfreq = container_of(nb, struct devfreq, nb);
--	int ret;
-+	int err = -EINVAL;
- 
- 	mutex_lock(&devfreq->lock);
- 
+@@ -557,12 +557,14 @@ static int devfreq_notifier_call(struct notifier_block *nb, unsigned long type,
  	devfreq->scaling_min_freq = find_available_min_freq(devfreq);
--	if (!devfreq->scaling_min_freq) {
--		mutex_unlock(&devfreq->lock);
--		return -EINVAL;
--	}
-+	if (!devfreq->scaling_min_freq)
-+		goto out;
+ 	if (!devfreq->scaling_min_freq)
+ 		goto out;
  
  	devfreq->scaling_max_freq = find_available_max_freq(devfreq);
--	if (!devfreq->scaling_max_freq) {
--		mutex_unlock(&devfreq->lock);
--		return -EINVAL;
--	}
-+	if (!devfreq->scaling_max_freq)
-+		goto out;
-+
-+	err = update_devfreq(devfreq);
+-	if (!devfreq->scaling_max_freq)
++	if (!devfreq->scaling_max_freq) {
++		devfreq->scaling_max_freq = ULONG_MAX;
+ 		goto out;
++	}
  
--	ret = update_devfreq(devfreq);
-+out:
+ 	err = update_devfreq(devfreq);
+ 
+ out:
  	mutex_unlock(&devfreq->lock);
-+	if (err)
-+		dev_err(devfreq->dev.parent,
-+			"failed to update frequency from OPP notifier (%d)\n",
-+			err);
- 
--	return ret;
-+	return NOTIFY_OK;
- }
- 
- /**
-  * devfreq_dev_release() - Callback for struct device to release the device.
-  * @dev:	the devfreq device
 -- 
 2.17.1
 
