@@ -2,72 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2AA7FC4A64
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 11:18:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64027C4A6C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 11:20:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vqeA2koHE+xzkCjHc2xl2GolOYR0VedRgKH9yorRUbQ=; b=bJuY5O3xBl1Yp9
-	KKbG2ULZmW+WkhQeW12ZS5GwUc/IlLxrnlqNHOt0VxTkUBCi7MdJiyGMfpvRBoFTqRgpSKicZphzu
-	0n9I4HB6hIMmoKDCDGC2C92wbK8qODRX6TFTGGyPODA+WNvepjBuMIYmeLACLy0Qcleap2hefjsG1
-	H+L0md5WlpZYd/ZRc9w4leAae8n0LWg78AWvBvdTcEHy+jUyI6m6szkwGCLIC0t3En+1zvia6rDXJ
-	AnQym756ip/E6jHr6DKQBCjuS3p35ChVVz90EuZdOVxT6KjZVd4/8ZZr0xXvg5sVDETZiGmUbO9CP
-	Up4I+WcPJEmzSx2afYfg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ljfYRkmS222tqw/Ye0qu4Ce16l+Glf5s2/w9/Q7/fwc=; b=ZqWIdaKSvAe93r
+	HRZmd5PI7dAB5dMErCZ2Mn/TtjLaa6jAdGOhFDBJZnjeHQFNDFiBtRprcyPa+FARJHmP5JxwA05Zn
+	tIlaRQV4AEj5gh8uTAq5R+49dK2YSzFy8GbQKN1vLhTSnNIxZlM0zoZkGqytjQm9Vibj77T5046r8
+	WCkhjwcDpgPwn03LdgxUDUl05UueXDIFUlCPUjiauZQcyjPu94A76rwNRMWzC691mvLN11U9u+zYS
+	Rd70ZMJO+OEdYxU+DM1W6dpdcZ0joHmV2/M4K0gAq+HoLyiDYX6JUQqHQOlIcPiByxxUORKihPIkR
+	wjcNj2a0Ubx5Ndx81RGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFalJ-0007rn-Fn; Wed, 02 Oct 2019 09:17:33 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iFanm-0000I3-IY; Wed, 02 Oct 2019 09:20:06 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFaWt-0007gs-Ma
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 09:03:43 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B52A721783;
- Wed,  2 Oct 2019 09:02:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570006958;
- bh=Z8QwW8MIjQLIHFlqMh9fMr8GTSPJkKjbRDniUQRKws0=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=eGc4EAGTwyCqTzffhSb3P+qIqZMA02bktti0bUi4jGVffU0UQ3SiN827HC/cs8qjX
- 1la6R+5UvO3l1o43yM3pYHJjbr38p2e5ILMGSfJkasJUwPg8rTwhB47cjl/DiJjxR8
- OclK8rPe8umBsSZQaFIA2Gv+UJ5w+ZwMvgYYwDeE=
-Date: Wed, 2 Oct 2019 10:02:34 +0100
-From: Will Deacon <will@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: SMMU performance
-Message-ID: <20191002090233.rqpmhyax2qztyhsr@willie-the-truck>
-References: <20190930110047.GF25745@shell.armlinux.org.uk>
- <cf3ac700-1954-8800-6ce4-9983ab27707b@arm.com>
- <20190930115405.phkllciuv62cz2fk@willie-the-truck>
- <250d78f8-a4d1-5ff0-e537-e7c2a49c0bf4@arm.com>
+ id 1iFabg-0007mA-Iy
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 09:14:34 +0000
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why.lan) by cheepnis.misterjones.org with esmtpsa
+ (TLSv1.2:DHE-RSA-AES128-GCM-SHA256:128) (Exim 4.80)
+ (envelope-from <maz@kernel.org>)
+ id 1iFaas-00057p-BF; Wed, 02 Oct 2019 11:06:46 +0200
+From: Marc Zyngier <maz@kernel.org>
+To: Will Deacon <will@kernel.org>,
+	Catalin Marinas <catalin.marinas@arm.com>
+Subject: [PATCH v3 0/2] arm64: Relax ICC_PMR_EL1 synchronisation when possible
+Date: Wed,  2 Oct 2019 10:06:11 +0100
+Message-Id: <20191002090613.14236-1-maz@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <250d78f8-a4d1-5ff0-e537-e7c2a49c0bf4@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_020240_441681_466A8E47 
-X-CRM114-Status: GOOD (  15.47  )
-X-Spam-Score: -5.2 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: will@kernel.org, catalin.marinas@arm.com,
+ suzuki.poulose@arm.com, james.morse@arm.com, julien.thierry.kdev@gmail.com,
+ huawei.libin@huawei.com, uohanjun@huawei.com, liwei391@huawei.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Note: SpamAssassin invocation failed
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,34 +57,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, uohanjun@huawei.com,
+ huawei.libin@huawei.com, liwei391@huawei.com,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 30, 2019 at 01:00:00PM +0100, Robin Murphy wrote:
-> On 30/09/2019 12:54, Will Deacon wrote:
-> > On Mon, Sep 30, 2019 at 12:45:28PM +0100, Robin Murphy wrote:
-> > > The major changes in 5.4 are for SMMUv3, so won't impact your platform.
-> > 
-> > I was wondering whether rigging up the gather stuff would help here but,
-> > looking at the backtrace, the time is spent on the sync itself so I suspect
-> > it won't help. Hmm... I wonder if we can do better using a sequence number
-> > so that we can ride off the back of somebody else's sync?
-> 
-> The trouble with v2 is that then we'd have to introduce locking around the
-> invalidates as well, in order to keep track of what the last 'command'
-> issued in each context was - that's almost certainly going to have far more
-> overhead than eliding syncs could possibly save.
+This is a very late update on [1], fixing the 32bit compilation issue that
+was present in v2, and adding an extra message in the kernel log to find out
+what is going on.
 
-I was thinking along the lines of allocating an ID to each flush, and then
-updating a sync ID on sync, so you can elide the sync if the sync ID is
-greater than your flush ID. But it's vague and I didn't try to implement
-anything.
+[1] http://lore.kernel.org/r/20190802125208.73162-1-maz@kernel.org
 
-Will
+Marc Zyngier (2):
+  arm64: Relax ICC_PMR_EL1 accesses when ICC_CTLR_EL1.PMHE is clear
+  arm64: Document ICC_CTLR_EL3.PMHE setting requirements
+
+ Documentation/arm64/booting.rst    |  3 +++
+ arch/arm64/include/asm/barrier.h   | 12 ++++++++++++
+ arch/arm64/include/asm/daifflags.h |  3 ++-
+ arch/arm64/include/asm/irqflags.h  | 19 ++++++++++---------
+ arch/arm64/include/asm/kvm_host.h  |  3 +--
+ arch/arm64/kernel/entry.S          |  6 ++++--
+ arch/arm64/kvm/hyp/switch.c        |  4 ++--
+ drivers/irqchip/irq-gic-v3.c       | 20 ++++++++++++++++++++
+ include/linux/irqchip/arm-gic-v3.h |  2 ++
+ 9 files changed, 56 insertions(+), 16 deletions(-)
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
