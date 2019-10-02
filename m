@@ -2,39 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AEEAEC8EE2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 18:45:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3EB6C8EE6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 18:45:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bKFCRz7sfvFyLa4EmSTaqsl+T8nlhUuFMA2YrOH0ROQ=; b=eDxk+j7wkZUdgT
-	k9BwwlYGJj6dL00z8+yoF75YPCRvOUANsvdERHBoUlDDscKUA8xVFsAA7rXUxITAZhpNA6dXb8IfN
-	UVz9PofOmavGQUBO3eZHaL6d7EFzLrHR1EiPjWyyMMyP/dI0LlASOdg+VzEffnsq/WUaWuSHWe2yL
-	DgQtKUkkPslw2DcS/P3kb7igWNpgssinL5IAXXEoLuTcrSzKxxPcmoizRbAmzPuD/Re8cJd11aL8E
-	yLdTexKNrzhRI35pBdNemgN6NhhJ/rQys5gWZzD017xyzVyMOtJBItahOchLRABXS8a4pi5ehgWts
-	Q8OR2QUmYoqQN8+yCBow==;
+	List-Owner; bh=H14kbD8+inpo86xta/JQGcXvHN1S85efSfm4IdjDjCs=; b=o/J91i3EwpiwD/
+	t1xsPczhegYdHW8DRM0An+4LVOQsZ27xRi9ZvIjVi/I3eI57/lRWoEMxdgjsQ2pdRID4kl+OYITjA
+	+aotMSZprpHKhm9CXwyrhCVx7rIqBC1l+PgEmfx11CSNPov8/xyAzkWmGsUdFpI1kMguZFHC72hI7
+	rN1v1UdxcAFHZuYrFBlqHHQ1MfGb8Lq7P0VH1nk7z9qaUvzhCPQQv6GIZWEtFc772Dz7ITF0tdQqP
+	NXyR22B4k3XmS0fP6wYcgC71SEDLYEDAQlVJ8QCeRmA4EPRJPoCkIJN4KxGJiCsc7l2KBPUJCyZd1
+	vjNUraf0Z+Ih4anfa6Lw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFhkl-00054t-GJ; Wed, 02 Oct 2019 16:45:27 +0000
+	id 1iFhkz-0005L6-0k; Wed, 02 Oct 2019 16:45:41 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFhjn-00038a-Rv
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 16:44:31 +0000
+ id 1iFhju-0003EW-FE
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 16:44:36 +0000
 Received: from localhost.localdomain (unknown [194.230.155.145])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9936421848;
- Wed,  2 Oct 2019 16:44:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3B343222C4;
+ Wed,  2 Oct 2019 16:44:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570034666;
- bh=tLDlCYJhoCJIjUnWmnbaMmlqONN6eRhSs9VM1BeZFZg=;
+ s=default; t=1570034673;
+ bh=lDWykLKv1vsGv4BGTPct5cswSS36/zx9QEpHy9lcc4o=;
  h=From:To:Subject:Date:In-Reply-To:References:From;
- b=baJrh2T2drgVNNXKQkkIu1Qgp0ejmwr0YdpXTTMRn4/yV1Hs+Lf+uOR/BupV69Ujo
- yf+ux+R2gun6spUF9DsRuzlTEOW/DXo+5WOSVsJMeMsmS/bb+YCJJQkz1A9I3OZ3mn
- koQAcklpfuwEExmDJOEF4LDQpvSIt2BtXLXNLivY=
+ b=iY6Yzz3NFnFDzVQ85C+54vhqjDixlR5Qoo25f7esTbaodOoEspth9X2HZ7HE/Wr9U
+ bsmo9nVgupIs16Q9lTqIQtfcG9EULGCyn41MovwPHBSA6YhR4bPH+5hBxUbaRM3EVr
+ qmRxR0d3GrCOtoKoYwOBMWTmsdE4/zKMb/wYUwOo=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
@@ -52,15 +52,15 @@ To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-samsung-soc@vger.kernel.org, linux-omap@vger.kernel.org,
  linux-tegra@vger.kernel.org
-Subject: [PATCH v3 06/10] ARM: dts: imx: Rename "iram" node to "sram"
-Date: Wed,  2 Oct 2019 18:43:12 +0200
-Message-Id: <20191002164316.14905-6-krzk@kernel.org>
+Subject: [PATCH v3 07/10] ARM: dts: keystone: Rename "msmram" node to "sram"
+Date: Wed,  2 Oct 2019 18:43:13 +0200
+Message-Id: <20191002164316.14905-7-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191002164316.14905-1-krzk@kernel.org>
 References: <20191002164316.14905-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_094428_094929_E6C22D79 
-X-CRM114-Status: GOOD (  13.46  )
+X-CRM114-CacheID: sfid-20191002_094434_629397_9D7C21BB 
+X-CRM114-Status: GOOD (  12.39  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -96,55 +96,69 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 The device node name should reflect generic class of a device so rename
-the "iram" node to "sram".  This will be also in sync with upcoming DT
+the "msmram" node to "sram".  This will be also in sync with upcoming DT
 schema.  No functional change.
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 ---
- arch/arm/boot/dts/imx27.dtsi | 2 +-
- arch/arm/boot/dts/imx31.dtsi | 2 +-
- arch/arm/boot/dts/imx51.dtsi | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
+ arch/arm/boot/dts/keystone-k2e.dtsi  | 2 +-
+ arch/arm/boot/dts/keystone-k2g.dtsi  | 2 +-
+ arch/arm/boot/dts/keystone-k2hk.dtsi | 2 +-
+ arch/arm/boot/dts/keystone-k2l.dtsi  | 2 +-
+ 4 files changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm/boot/dts/imx27.dtsi b/arch/arm/boot/dts/imx27.dtsi
-index 3652f5556b29..f3464cf52e49 100644
---- a/arch/arm/boot/dts/imx27.dtsi
-+++ b/arch/arm/boot/dts/imx27.dtsi
-@@ -585,7 +585,7 @@
- 			status = "disabled";
+diff --git a/arch/arm/boot/dts/keystone-k2e.dtsi b/arch/arm/boot/dts/keystone-k2e.dtsi
+index 085e7326ea8e..c84dc49e441e 100644
+--- a/arch/arm/boot/dts/keystone-k2e.dtsi
++++ b/arch/arm/boot/dts/keystone-k2e.dtsi
+@@ -86,7 +86,7 @@
+ 			};
  		};
  
--		iram: iram@ffff4c00 {
-+		iram: sram@ffff4c00 {
+-		msm_ram: msmram@c000000 {
++		msm_ram: sram@c000000 {
  			compatible = "mmio-sram";
- 			reg = <0xffff4c00 0xb400>;
- 		};
-diff --git a/arch/arm/boot/dts/imx31.dtsi b/arch/arm/boot/dts/imx31.dtsi
-index d7f6fb764997..6b62f0745b82 100644
---- a/arch/arm/boot/dts/imx31.dtsi
-+++ b/arch/arm/boot/dts/imx31.dtsi
-@@ -55,7 +55,7 @@
- 		interrupt-parent = <&avic>;
- 		ranges;
+ 			reg = <0x0c000000 0x200000>;
+ 			ranges = <0x0 0x0c000000 0x200000>;
+diff --git a/arch/arm/boot/dts/keystone-k2g.dtsi b/arch/arm/boot/dts/keystone-k2g.dtsi
+index 1c833105d6c5..fa6be1b2cb8a 100644
+--- a/arch/arm/boot/dts/keystone-k2g.dtsi
++++ b/arch/arm/boot/dts/keystone-k2g.dtsi
+@@ -95,7 +95,7 @@
+ 		ranges = <0x0 0x0 0x0 0xc0000000>;
+ 		dma-ranges = <0x80000000 0x8 0x00000000 0x80000000>;
  
--		iram: iram@1fffc000 {
-+		iram: sram@1fffc000 {
+-		msm_ram: msmram@c000000 {
++		msm_ram: sram@c000000 {
  			compatible = "mmio-sram";
- 			reg = <0x1fffc000 0x4000>;
- 			#address-cells = <1>;
-diff --git a/arch/arm/boot/dts/imx51.dtsi b/arch/arm/boot/dts/imx51.dtsi
-index 0a4b9a5d9a9c..dea86b98e9c3 100644
---- a/arch/arm/boot/dts/imx51.dtsi
-+++ b/arch/arm/boot/dts/imx51.dtsi
-@@ -116,7 +116,7 @@
- 		interrupt-parent = <&tzic>;
- 		ranges;
+ 			reg = <0x0c000000 0x100000>;
+ 			ranges = <0x0 0x0c000000 0x100000>;
+diff --git a/arch/arm/boot/dts/keystone-k2hk.dtsi b/arch/arm/boot/dts/keystone-k2hk.dtsi
+index ca0f198ba627..2c00f11cd146 100644
+--- a/arch/arm/boot/dts/keystone-k2hk.dtsi
++++ b/arch/arm/boot/dts/keystone-k2hk.dtsi
+@@ -57,7 +57,7 @@
+ &soc0 {
+ 		/include/ "keystone-k2hk-clocks.dtsi"
  
--		iram: iram@1ffe0000 {
-+		iram: sram@1ffe0000 {
+-		msm_ram: msmram@c000000 {
++		msm_ram: sram@c000000 {
  			compatible = "mmio-sram";
- 			reg = <0x1ffe0000 0x20000>;
+ 			reg = <0x0c000000 0x600000>;
+ 			ranges = <0x0 0x0c000000 0x600000>;
+diff --git a/arch/arm/boot/dts/keystone-k2l.dtsi b/arch/arm/boot/dts/keystone-k2l.dtsi
+index 374c80124c4e..ff086132576b 100644
+--- a/arch/arm/boot/dts/keystone-k2l.dtsi
++++ b/arch/arm/boot/dts/keystone-k2l.dtsi
+@@ -255,7 +255,7 @@
+ 			};
  		};
+ 
+-		msm_ram: msmram@c000000 {
++		msm_ram: sram@c000000 {
+ 			compatible = "mmio-sram";
+ 			reg = <0x0c000000 0x200000>;
+ 			ranges = <0x0 0x0c000000 0x200000>;
 -- 
 2.17.1
 
