@@ -2,89 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CFE6C8BA7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 16:45:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E93CC8BC0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 16:47:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=csIWPoJz7RR9msf1imaCNOLXiDPcaRmxRKjOL8gMaXM=; b=LCP5OdWPpIBxJz
-	tSNffGBZI2pwLSarAvmqKIowLW5LghNe3CVQh7HM3sIR+IqrUtTSXi/0EEQAQORrYHSnR4zrDlubl
-	8IIqIetbgOrEmYRpHQxWZV/Z0p5JTdvNVeOiR63CuFbjz/h9UXPWOiLZijU1eZfSN2UuEJWxzoWMF
-	CsXxW+3rZ3os8AAa9x0lt6gGLwAPEPrxP44q4AJTVp3q+cD7GTXHu0F2ZT2flxES+cFF2/cPg2GiM
-	yR5j7GNMDhdxFKjGp8qcDhfCKx/0jF0DofnC4JsVlN0R25HdwYHzdHhysk8ca7JxLIMJlgXsgM5aY
-	4XUIEB/0CjoPtdbP+8yw==;
+	List-Owner; bh=OREp8WgCiwUnjflyiFHqi85/QH+HFK3MabG/51AkDzo=; b=V947y/kwIqUNaK
+	H2U+4X2P715EAugnSaaYKK294Frs0usMfUvkiYPbS/TB0HJQLJCVNGdAVoM5OxTG+nayJSwURR/hF
+	ph+tK4dVKABDJxHxa3q8mctung42gP84ceLQ77PfJXlLwXe9PuMCd12hXJRXhgKNUOtRrBaaXGg/8
+	HKCALwgOwYA8GQi2hxnxKsEAmg0JF0D/BnmA5u4ZjmXXKw/UPDQ0FgmkHPyh/FH6fyp5hmDEuLmG+
+	+VLA+qt7KR2fCdhSjR2qVUkcK2Bpt0CfSZnZOnmrnq0i/8oXbR2Q5K0Q6QH/TdzUC51j6rerA+VFq
+	DvtMhL00isnJd9R4gUEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFfsb-0006Nf-53; Wed, 02 Oct 2019 14:45:25 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1iFfuW-0007VT-2N; Wed, 02 Oct 2019 14:47:24 +0000
+Received: from relay12.mail.gandi.net ([217.70.178.232])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFfqd-0003rK-EL
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 14:43:47 +0000
-Received: by mail-wr1-x443.google.com with SMTP id w12so19991081wro.5
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 02 Oct 2019 07:43:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=y9l/1MkRoZLCyZNPXaR5fzwvTbuyIzYA20JLtWuhYR4=;
- b=ahoJ80fONPxwQPqvbuQRAba40syj0YJFK3SbqTxd0FOzhs1n3WTvNd/gHQ+2WK5WwB
- 8joqipXveUGBgePR1RwHR0oQyDAumewRmSMStvhyCHPeo154CNqZfGQNlbNlRng2QJqd
- 1/Sq8GNJ1DjcLifpHWbCC9LoK5U3UkvdIWHPFx0cqJ+ENvPHkYPr2FdpaZ8jxuJta3TT
- dplkNk0AsL/tc33KBJbKUSlnYppX878WQXUvnhdB+TRmr5R3dtc5Ewc0TH4h7V1SXTly
- GiNnbbCc+BKzzqk9PTo/Pqf5dzWcpNDBA1GUkzQZDTXOXXUzBjnlrTaQctjSdE6meWfJ
- JbDw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=y9l/1MkRoZLCyZNPXaR5fzwvTbuyIzYA20JLtWuhYR4=;
- b=m4CouDn44ioMScPU+9h/V5vlxCAt0m4CSZKRu3pcsThkHE6u1TeKieaoBr1mh1qnIv
- YS+V9Cd7osJa8R8USg+SJkEaSSarOn4kUq2MPTgMMmvKb63SSCCs0QD44nwEBAjIgMd/
- /akFUOMTGQBnN7P8Iq3KWI00bVJLeoVWmqtQPkLFI1cIRrkCKTF4jh6b+i6xsiT8t2rd
- l6WPsWnKkqUmPAqzpmLJ9bmSsiGBBFUexUJDcQnskkx6tTBzFhyNtpsbq6VdcY2mS3LR
- rgGbisZRFdLvdZfGhmPX1hRgDoiHQLuWNAv49LtJtR7/CjNFmsKr4MBg1ydz0uO01Axr
- zoIQ==
-X-Gm-Message-State: APjAAAXPZ9a+CEGZKeL6T+FXZoBRFrxryg3xujpPFnNpjznB8ehsaTI0
- P6wL6cWqK9IRnS17Y/YRAb4=
-X-Google-Smtp-Source: APXvYqyETp8FIXhzzDrv+mhfzHhU0D9h3bcpLQ9oRbkEYPG7JvxLk5RVWx/ooYmku2+exI6oXsHTnA==
-X-Received: by 2002:a5d:4dd0:: with SMTP id f16mr2905889wru.85.1570027400467; 
- Wed, 02 Oct 2019 07:43:20 -0700 (PDT)
-Received: from localhost (p2E5BE2CE.dip0.t-ipconnect.de. [46.91.226.206])
- by smtp.gmail.com with ESMTPSA id z125sm10251381wme.37.2019.10.02.07.43.19
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 02 Oct 2019 07:43:19 -0700 (PDT)
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Lee Jones <lee.jones@linaro.org>
-Subject: [PATCH] mfd: max77620: Do not allocate IRQs upfront
-Date: Wed,  2 Oct 2019 16:43:18 +0200
-Message-Id: <20191002144318.140365-1-thierry.reding@gmail.com>
+ id 1iFfuK-0007Sn-8k
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 14:47:14 +0000
+Received: from localhost
+ (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
+ (Authenticated sender: kamel.bouhara@bootlin.com)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id 3D8EB200009;
+ Wed,  2 Oct 2019 14:47:02 +0000 (UTC)
+From: Kamel Bouhara <kamel.bouhara@bootlin.com>
+To: Wolfram Sang <wsa@the-dreams.de>, linux-i2c@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 0/4] i2c bus recovery for Microchip SoCs.
+Date: Wed,  2 Oct 2019 16:46:54 +0200
+Message-Id: <20191002144658.7718-1-kamel.bouhara@bootlin.com>
 X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_074330_018855_CC323A91 
-X-CRM114-Status: GOOD (  11.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191002_074712_457975_35EE55E3 
+X-CRM114-Status: UNSURE (   7.18  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.232 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.178.232 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thierry.reding[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,62 +65,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Kamel Bouhara <kamel.bouhara@bootlin.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Thierry Reding <treding@nvidia.com>
+This patch series introduce the kernel i2c-gpio bus recovery mechanism
+for the Microchip SoCs. Updated the corresponding dts to add i2c
+gpio pinctrl. The bus recovery is configured for the sama5d3/4 xplained
+boards in dts.
 
-regmap_add_irq_chip() will try to allocate all of the IRQ descriptors
-upfront if passed a non-zero irq_base parameter. However, the intention
-is to allocate IRQ descriptors on an as-needed basis if possible. Pass 0
-instead of -1 to fix that use-case.
+Kamel Bouhara (4):
+  dt-bindings: i2c: at91: document optional bus recovery properties
+  i2c: at91: implement i2c bus recovery
+  ARM: at91/dt: sama5d3: add i2c gpio pinctrl
+  ARM: at91/dt: sama5d4: add i2c gpio pinctrl
 
-Signed-off-by: Thierry Reding <treding@nvidia.com>
----
- drivers/mfd/max77620.c       | 5 ++---
- include/linux/mfd/max77620.h | 1 -
- 2 files changed, 2 insertions(+), 4 deletions(-)
+ .../devicetree/bindings/i2c/i2c-at91.txt      | 10 +++
+ arch/arm/boot/dts/sama5d3.dtsi                | 33 +++++++++-
+ arch/arm/boot/dts/sama5d4.dtsi                | 33 +++++++++-
+ drivers/i2c/busses/i2c-at91-master.c          | 63 +++++++++++++++++++
+ drivers/i2c/busses/i2c-at91.h                 |  8 +++
+ 5 files changed, 141 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/mfd/max77620.c b/drivers/mfd/max77620.c
-index a851ff473a44..c7ed5c353553 100644
---- a/drivers/mfd/max77620.c
-+++ b/drivers/mfd/max77620.c
-@@ -507,7 +507,6 @@ static int max77620_probe(struct i2c_client *client,
- 
- 	i2c_set_clientdata(client, chip);
- 	chip->dev = &client->dev;
--	chip->irq_base = -1;
- 	chip->chip_irq = client->irq;
- 	chip->chip_id = (enum max77620_chip_id)id->driver_data;
- 
-@@ -545,8 +544,8 @@ static int max77620_probe(struct i2c_client *client,
- 
- 	max77620_top_irq_chip.irq_drv_data = chip;
- 	ret = devm_regmap_add_irq_chip(chip->dev, chip->rmap, client->irq,
--				       IRQF_ONESHOT | IRQF_SHARED,
--				       chip->irq_base, &max77620_top_irq_chip,
-+				       IRQF_ONESHOT | IRQF_SHARED, 0,
-+				       &max77620_top_irq_chip,
- 				       &chip->top_irq_data);
- 	if (ret < 0) {
- 		dev_err(chip->dev, "Failed to add regmap irq: %d\n", ret);
-diff --git a/include/linux/mfd/max77620.h b/include/linux/mfd/max77620.h
-index 12ba157cb83f..f552ef5b1100 100644
---- a/include/linux/mfd/max77620.h
-+++ b/include/linux/mfd/max77620.h
-@@ -329,7 +329,6 @@ struct max77620_chip {
- 	struct regmap *rmap;
- 
- 	int chip_irq;
--	int irq_base;
- 
- 	/* chip id */
- 	enum max77620_chip_id chip_id;
--- 
+--
 2.23.0
 
 
