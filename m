@@ -2,63 +2,132 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB319C86C3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 12:56:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72302C86C5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 12:56:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kK9bzfDsvqQ6NUOj2OXAMuEHjtCqIqr98NMq0bhR1B0=; b=e4zxnDULhZPOpB
-	AQkeBy5946LWrHAWEnZVj+BhwwTZu32zhxESasTux/Y3sDZDX7DH9eWvHnVNFMMRxUHJ9EbQfAovD
-	cqgLmBaKBm5yBFuHRGNGxtHRn0HEkB6VQ5LCAAe2ORI23vVNpeTSV3AwHJzSe+G0awUTMDqONQYcq
-	kz/RkilSLCHoE/undpt6W5OyRuy0hLYQXbx3VwKnok+FNdumKDsSXGN1yl7sWVo2uJF/IxIUC0rrg
-	zFpdWrtVjfe0GhQNQIwTv3G40DLW4+99/RJCL8+cyAfUzNwi3ntVdW5UB+8D+fEbNv+2joaqmmk4D
-	tACEGJQVqmGJT2jTNfJA==;
+	List-Owner; bh=Sp/CEQuvJqWnxI1kl+MozHwdzy2UNG9VBkCQd5c5kf4=; b=o+N1sRA4cwY47p
+	s820BpHIwNATTb3LjIYeijXNn9z3mvYMKJ5x3VAp8MLltXcciSAnuLWRyuNUvNKVEV8unBpL9aEsY
+	Fg8fn6fjBSVmDXzN154KdA1ni3LOp9uY+mR4G8cjGUYno2AzJks4wNGVPwrxAo73rjrDJAL7a+24w
+	1ly6c4Bgb6Sfg0W224tXY2uvI8vmkG1ed0IcMvntIWV01qVm0E8Sg9EQDh16FeOKQtrxg+ljYIbhD
+	V2nZiuH7PG4YlKcrhwlflIvvH1FihDrL0/+xlCn+SIhkHCbT7fejlvmPurjx86F04YU56Kr9jL/6i
+	VTmtZIk6+svIdYfLUbaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFcIr-0001T2-0r; Wed, 02 Oct 2019 10:56:17 +0000
-Received: from mga07.intel.com ([134.134.136.100])
+	id 1iFcJB-0001h8-Pj; Wed, 02 Oct 2019 10:56:37 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFcIj-0001RN-MN; Wed, 02 Oct 2019 10:56:11 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
- by orsmga105.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 02 Oct 2019 03:56:07 -0700
-X-IronPort-AV: E=Sophos;i="5.64,574,1559545200"; d="scan'208";a="216414918"
-Received: from paasikivi.fi.intel.com ([10.237.72.42])
- by fmsmga004-auth.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 02 Oct 2019 03:56:02 -0700
-Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
- id E87CC20976; Wed,  2 Oct 2019 13:55:59 +0300 (EEST)
-Date: Wed, 2 Oct 2019 13:55:59 +0300
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Hans Verkuil <hverkuil@xs4all.nl>
-Subject: Re: [RFC,V2,07/11] media: platform: Add Mediatek ISP P1 private
- control
-Message-ID: <20191002105559.GC972@paasikivi.fi.intel.com>
-References: <jungo.lin@mediatek.com>
- <20190510015755.51495-8-jungo.lin@mediatek.com>
- <49a8ba54-aba4-1915-6732-987a58e8bd3c@xs4all.nl>
+ id 1iFcIt-0001ZB-14
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 10:56:21 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20191002105616euoutp02fb856659b69376c71969213b248060e3~JzzYfVMwR2178521785euoutp02o
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed,  2 Oct 2019 10:56:16 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20191002105616euoutp02fb856659b69376c71969213b248060e3~JzzYfVMwR2178521785euoutp02o
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1570013776;
+ bh=a0IMDPZhOCWOk4Vu3wxuz1nmbnSLf3W3a5GRUP5wqqc=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=P31ypzpVLOOr89SvbXlzOT0MQ3zjzaxCj5JRVtb8FU2x6Ho6tTQU60+JOgto2OSmX
+ 0etqzwd5VmQLTniT/ENL5qMAYz+Rc8c92kEPj1s2zquNJCCDRoY1P72eLesSWx1t7d
+ nnTlpwnGNt/BwA08rhFO7PrX0kFw+zyj/6vQ2DnM=
+Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20191002105616eucas1p28dc2ab30bfff5459c6fa692713e7109a~JzzYIp7NE2135821358eucas1p2u;
+ Wed,  2 Oct 2019 10:56:16 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id E2.2F.04469.F42849D5; Wed,  2
+ Oct 2019 11:56:16 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20191002105615eucas1p2238ff9e54dd3a452d5e65a979a89a3e3~JzzX1_0pR2135821358eucas1p2t;
+ Wed,  2 Oct 2019 10:56:15 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20191002105615eusmtrp1a454ad35e225ea92a8f12fbd712a4c6f~JzzX1Ixrf3228132281eusmtrp1C;
+ Wed,  2 Oct 2019 10:56:15 +0000 (GMT)
+X-AuditID: cbfec7f2-569ff70000001175-0a-5d94824f4fa6
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id 32.05.04117.F42849D5; Wed,  2
+ Oct 2019 11:56:15 +0100 (BST)
+Received: from [106.120.51.75] (unknown [106.120.51.75]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20191002105615eusmtip128d5bcd7a7ad5826a706a709fb85509a~JzzXXy9oE0068900689eusmtip1p;
+ Wed,  2 Oct 2019 10:56:15 +0000 (GMT)
+Subject: Re: [PATCH v3 RESEND 1/3] ASoC: samsung: arndale: Simplify DAI link
+ initialization
+To: Mark Brown <broonie@kernel.org>
+From: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Message-ID: <9ddc271f-e88f-8991-2625-b885f2f2fae7@samsung.com>
+Date: Wed, 2 Oct 2019 12:56:14 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <49a8ba54-aba4-1915-6732-987a58e8bd3c@xs4all.nl>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191001175601.GB14762@sirena.co.uk>
+Content-Language: en-GB
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrDKsWRmVeSWpSXmKPExsWy7djP87oBTVNiDX6dZ7K4cvEQk8XGGetZ
+ LaY+fMJmcaV1E6PF+fMb2C2+Xelgstj0+BqrxYzz+5gs1h65y27x+f1+VouLK74wOXB7bPjc
+ xOaxc9Zddo9NqzrZPDYvqfeYPuc/o0ffllWMHp83yQWwR3HZpKTmZJalFunbJXBlTJ43k6ng
+ IXvFvcYv7A2MG9m6GDk5JARMJFaf+8TSxcjFISSwglHi2dk/rBDOF0aJX/fb2SCcz4wSL1oe
+ s8K0zJvfANWynFFixd73UFVvGSWuLVrHDFIlLBAr8WvjBBYQW0RAWeLq971gHcwCc5kk9v59
+ yQ6SYBMwlOg92scIYvMK2Ek0Xv4FtoJFQEVi6tafYDWiAhESnx4cZoWoEZQ4OfMJ2FBOASOJ
+ BdtmMoHYzAIGEkcWzWGFsMUlmr6shLLlJba/ncMMslhC4BG7xNatlxghfnCR+H/tPtQ/whKv
+ jm9hh7BlJE5P7mGBaGhmlOjZfZsdwpnAKHH/+AKobmuJw8cvQnU7ShxechBoBQeQzSdx460g
+ xGY+iUnbpkOFeSU62oQgqlUkfq+azgRhS0l0P/nPMoFRaRaS32Yh+WcWkn9mIflnASPLKkbx
+ 1NLi3PTUYsO81HK94sTc4tK8dL3k/NxNjMA0dvrf8U87GL9eSjrEKMDBqMTDeyNkcqwQa2JZ
+ cWXuIUYJDmYlEV6bP5NihXhTEiurUovy44tKc1KLDzFKc7AoifNWMzyIFhJITyxJzU5NLUgt
+ gskycXBKNTDG/rbP3a6QopPFFeP3uVBe04SpceYt5WqBjFNJ16y+WJwItl5jM3+ejXCb8IQZ
+ r37+2H9CNalh3+ET/94GflO5q6M/bcJ0c+XkG/u3Bj29fJlDod/XWH2D87l7t7okHrc2CQjF
+ Bz1MdLsdeEs8vfzFuztpkrt+JrpIVn/dY2G3ZlKd65uFlgpKLMUZiYZazEXFiQDsoHNdXwMA
+ AA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrNIsWRmVeSWpSXmKPExsVy+t/xu7r+TVNiDbbd0bW4cvEQk8XGGetZ
+ LaY+fMJmcaV1E6PF+fMb2C2+Xelgstj0+BqrxYzz+5gs1h65y27x+f1+VouLK74wOXB7bPjc
+ xOaxc9Zddo9NqzrZPDYvqfeYPuc/o0ffllWMHp83yQWwR+nZFOWXlqQqZOQXl9gqRRtaGOkZ
+ WlroGZlY6hkam8daGZkq6dvZpKTmZJalFunbJehlTJ43k6ngIXvFvcYv7A2MG9m6GDk5JARM
+ JObNb2DpYuTiEBJYyiixfO80xi5GDqCElMT8FiWIGmGJP9e62CBqXjNKrF7bzAqSEBaIlfi1
+ cQILiC0ioCxx9ftesEHMAnOZJLbdfMEK0bGdUaLz/ytGkCo2AUOJ3qN9YDavgJ1E4+VfYJNY
+ BFQkpm79yQ5iiwpESBzeMQuqRlDi5MwnYBs4BYwkFmybyQRiMwvoSey4DtHLLCAu0fRlJZQt
+ L7H97RzmCYxCs5C0z0LSMgtJyywkLQsYWVYxiqSWFuem5xYb6RUn5haX5qXrJefnbmIERuy2
+ Yz+37GDsehd8iFGAg1GJh7chaHKsEGtiWXFl7iFGCQ5mJRFemz+TYoV4UxIrq1KL8uOLSnNS
+ iw8xmgI9N5FZSjQ5H5hM8kriDU0NzS0sDc2NzY3NLJTEeTsEDsYICaQnlqRmp6YWpBbB9DFx
+ cEo1MPrt+moq8Xb62rnvJNR81h+84vf9r+2+qeJe77xyZbcIFk/Sv3P8ukvQvSt35jl9dFlZ
+ +OKlbo1iCfsTuYk1T7lO/mu7P1Vx0sIpuS/Zj/1nnzOvKOzt5knB9Yu3Z/6s+vP4a9Ybw9eT
+ Z75Rq9uYPvu8SHtsq1jPv6oG+TsWZtP+33n3WJ3TTdtNiaU4I9FQi7moOBEAlNLUqu4CAAA=
+X-CMS-MailID: 20191002105615eucas1p2238ff9e54dd3a452d5e65a979a89a3e3
+X-Msg-Generator: CA
+X-RootMTR: 20191001123637eucas1p25c7551d4c967e4a2855f6c8d3b096ff5
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20191001123637eucas1p25c7551d4c967e4a2855f6c8d3b096ff5
+References: <CGME20191001123637eucas1p25c7551d4c967e4a2855f6c8d3b096ff5@eucas1p2.samsung.com>
+ <20191001123625.19370-1-s.nawrocki@samsung.com>
+ <20191001175601.GB14762@sirena.co.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_035609_771454_C01DF951 
-X-CRM114-Status: GOOD (  25.97  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191002_035619_289969_C8140CFB 
+X-CRM114-Status: GOOD (  14.38  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.100 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,155 +139,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ryan.yu@mediatek.com, frankie.chiu@mediatek.com,
- laurent.pinchart+renesas@ideasonboard.com, Rynn.Wu@mediatek.com,
- suleiman@chromium.org, Jerry-ch.Chen@mediatek.com,
- Jungo Lin <jungo.lin@mediatek.com>, frederic.chen@mediatek.com,
- seraph.huang@mediatek.com, linux-media@vger.kernel.org,
- devicetree@vger.kernel.org, shik@chromium.org, yuzhao@chromium.org,
- linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, Sean.Cheng@mediatek.com,
- srv_heupstream@mediatek.com, sj.huang@mediatek.com, tfiga@chromium.org,
- christie.yu@mediatek.com, zwisler@chromium.org
+Cc: alsa-devel@alsa-project.org, linux-samsung-soc@vger.kernel.org,
+ ckeepax@opensource.cirrus.com, b.zolnierkie@samsung.com, sbkim73@samsung.com,
+ patches@opensource.cirrus.com, lgirdwood@gmail.com, krzk@kernel.org,
+ linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jungo, Hans,
+On 10/1/19 19:56, Mark Brown wrote:
+> On Tue, Oct 01, 2019 at 02:36:23PM +0200, Sylwester Nawrocki wrote:
+> 
+>> Changes since v1:
+>>  - rebased due to reordering patches in the series
+>
+> These still don't apply, please check and resend specifying what you're
+> basing them on - I don't think this is an ordering issue.
 
-On Mon, May 13, 2019 at 10:46:46AM +0200, Hans Verkuil wrote:
-> On 5/10/19 3:58 AM, Jungo Lin wrote:
-...
-> > +struct v4l2_ctrl_config mtk_cam_controls[] = {
-> > +	{
-> > +	.ops = &mtk_cam_dev_ctrl_ops,
-> > +	.id = V4L2_CID_PRIVATE_GET_BIN_INFO,
-> 
-> Don't use "PRIVATE" in the name. I'd replace that with MTK to indicate
-> that this is mediatek-specific. Same for the next control below.
-> 
-> > +	.name = "MTK CAM GET BIN INFO",
-> > +	.type = V4L2_CTRL_TYPE_INTEGER,
-> > +	.min = (IMG_MIN_WIDTH << 16) | IMG_MIN_HEIGHT,
-> > +	.max = (IMG_MAX_WIDTH << 16) | IMG_MAX_HEIGHT,
-> > +	.step = 1,
-> > +	.def = (IMG_MAX_WIDTH << 16) | IMG_MAX_HEIGHT,
-> > +	.flags = V4L2_CTRL_FLAG_READ_ONLY | V4L2_CTRL_FLAG_VOLATILE,
-> 
-> Don't mix width and height. I recommend splitting this into two controls.
-> 
-> Sakari might have an opinion on this as well.
-> 
-> > +	},
-> > +	{
-> > +	.ops = &mtk_cam_dev_ctrl_ops,
-> > +	.id = V4L2_CID_PRIVATE_RAW_PATH,
-> > +	.name = "MTK CAM RAW PATH",
-> > +	.type = V4L2_CTRL_TYPE_BOOLEAN,
-> > +	.min = 0,
-> > +	.max = 1,
-> > +	.step = 1,
-> > +	.def = 1,
-> > +	},
-> 
-> RAW_PATH is a very vague name. If it is 0, then it is pure raw, and if it
-> is 1, then it is 'processing raw'? If so, call it "Processing Raw".
+Sory, the above is an old comment, it just refers to what I did
+between v1 and v2. I'm not sure what happened, the patches were based 
+on for-next branch, git://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound
 
-Jungo: what's the purpose of 
+I will resend shortly with a fix for issue reported by the kbuild test.
 
-> 
-> Although you have to describe in the header or here what that means.
-> 
-> Private controls should be well documented.
-> 
-> > +};
-> > +
-> > +int mtk_cam_ctrl_init(struct mtk_cam_dev *cam_dev,
-> > +		      struct v4l2_ctrl_handler *hdl)
-> > +{
-> > +	unsigned int i;
-> > +
-> > +	/* Initialized HW controls, allow V4L2_CID_MTK_CAM_MAX ctrls */
-> > +	v4l2_ctrl_handler_init(hdl, V4L2_CID_MTK_CAM_MAX);
-> > +	if (hdl->error) {
-> > +		v4l2_ctrl_handler_free(hdl);
-> > +		return hdl->error;
-> > +	}
-> > +
-> > +	for (i = 0; i < ARRAY_SIZE(mtk_cam_controls); i++)
-> > +		v4l2_ctrl_new_custom(hdl, &mtk_cam_controls[i], cam_dev);
-> > +
-> > +	dev_dbg(&cam_dev->pdev->dev, "%s done", __func__);
-> > +	return 0;
-> > +}
-> > diff --git a/drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-ctrl.h b/drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-ctrl.h
-> > new file mode 100644
-> > index 000000000000..74a6538c81ac
-> > --- /dev/null
-> > +++ b/drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-ctrl.h
-> > @@ -0,0 +1,32 @@
-> > +/* SPDX-License-Identifier: GPL-2.0 */
-> > +/*
-> > + * Copyright (c) 2018 MediaTek Inc.
-> > + * Author: Ryan Yu <ryan.yu@mediatek.com>
-> > + *
-> > + * This program is free software; you can redistribute it and/or modify
-> > + * it under the terms of the GNU General Public License version 2 as
-> > + * published by the Free Software Foundation.
-> > + *
-> > + * This program is distributed in the hope that it will be useful,
-> > + * but WITHOUT ANY WARRANTY; without even the implied warranty of
-> > + * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-> > + * GNU General Public License for more details.
-> > + */
-> > +
-> > +#ifndef __MTK_CAM_CTRL_H__
-> > +#define __MTK_CAM_CTRL_H__
-> > +
-> > +#include <media/v4l2-ctrls.h>
-> > +
-> > +#define V4L2_CID_MTK_CAM_PRIVATE_CAM  V4L2_CID_USER_MTK_CAM_BASE
-> > +#define V4L2_CID_PRIVATE_GET_BIN_INFO \
-> > +	(V4L2_CID_MTK_CAM_PRIVATE_CAM + 1)
-> > +#define V4L2_CID_PRIVATE_RAW_PATH \
-> > +	(V4L2_CID_MTK_CAM_PRIVATE_CAM + 2)
-> 
-> These last two defines can be on a single line.
-> 
-> They need to be documented in the header.
-> 
-> > +
-> > +#define V4L2_CID_MTK_CAM_MAX	16
-> > +
-> > +int mtk_cam_ctrl_init(struct mtk_cam_dev *cam_dev,
-> > +		      struct v4l2_ctrl_handler *hdl);
-> > +
-> > +#endif /* __MTK_CAM_CTRL_H__ */
-> > diff --git a/include/uapi/linux/v4l2-controls.h b/include/uapi/linux/v4l2-controls.h
-> > index 06479f2fb3ae..cbe8f5f7782b 100644
-> > --- a/include/uapi/linux/v4l2-controls.h
-> > +++ b/include/uapi/linux/v4l2-controls.h
-> > @@ -192,6 +192,10 @@ enum v4l2_colorfx {
-> >   * We reserve 16 controls for this driver. */
-> >  #define V4L2_CID_USER_IMX_BASE			(V4L2_CID_USER_BASE + 0x10b0)
-> >  
-> > +/* The base for the mediatek ISP Pass 1 driver controls */
-> > +/* We reserve 16 controls for this driver. */
-> > +#define V4L2_CID_USER_MTK_CAM_BASE		(V4L2_CID_USER_BASE + 0x10c0)
-> > +
-> >  /* MPEG-class control IDs */
-> >  /* The MPEG controls are applicable to all codec controls
-> >   * and the 'MPEG' part of the define is historical */
-> > 
-> 
-> Regards,
-> 
-> 	Hans
-
--- 
-Sakari Ailus
-sakari.ailus@linux.intel.com
+ea7bfc805cee ASoC: samsung: Rename Arndale card driver
+2db0e4f97a07 ASoC: samsung: arndale: Add support for WM1811 CODEC
+fb5ca16f40f0 ASoC: samsung: arndale: Simplify DAI link initialization
+82965165b0a9 Merge branch 'asoc-5.5' into asoc-next
+952139a546d0 Merge branch 'asoc-5.4' into asoc-linus
+4bb41984bf2f ASoC: max98373: check for device node before parsing
 
 _______________________________________________
 linux-arm-kernel mailing list
