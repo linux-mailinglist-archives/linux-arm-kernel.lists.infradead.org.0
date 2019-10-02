@@ -2,87 +2,123 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24B1DC8D5F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 17:50:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A131C8D72
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 17:55:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=etM4zXgQMZ9lHRwVY393B5xZUVH3/aUFKNp7ZuC/gXo=; b=Twc9M9Cu/0Y27h
-	/KvGKcGl04vtHW/Hjws/WEeYv1LNqrEIiKjOKiX2p8B+CnRpsmqPNah+RT1rikadAaCSiA+z7u7Tt
-	8I4WkQyW3UmL7TAX/KCzsUlGeTQzpPIq9KnT5LhhBXwSCj1Ro/7E/9vibggKjAfLXHgmiHpXq2tmy
-	8M41l8PiWsjic4ipGCoLYKaPi+lO+C8SWC0Ys9+avtYhmEIAgRTDlGXmJYKeo/SwNQsEWgL8rSYvP
-	7WD7eaGGZeNqAwwsIla3C3pR5R0RjqNf/J2hBeFCOlssaXKk40zciMBeswMTRC7FhCqyXztswBqul
-	2ysDL4B6s5XfxZyzmYLw==;
+	List-Owner; bh=GY8mVJVI6BlBgos5pJ4zjOdQmObbO5xSWRqo6aF0zPY=; b=qaNkh1qTx1T+CP
+	xTAqAPSJZSXASOOpvdax2mEuSFWcmFslwc6i8Feat1pYyBDNMTUgVdQ2g165qe2NPyrznqvD+H8f8
+	p5TSG9/2dtsf1HNlqacLc/G0WCAzV8by2rzg0F2Gy3Rzbg8ZyrDzDunt986vcXjlA11fcfFacPvjS
+	nQtnZcEpB5LboCqgm5lmsgj5ExnpSEWM7Vh5UCmP0AYSvmGEAi1Gm4rnH4rYG09Rm6QiVflzvUvuv
+	IqIdVxprxve2CKsGxhx6rpRZbxU5Jq/Zhn5NEWOvFAIO5y9zy/z+ElQwWOcUBwv6b3M/QslvVNXth
+	XzBRBXTkvjO7MzxlDAmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFgtb-0003Ft-2o; Wed, 02 Oct 2019 15:50:31 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1iFgxv-0003vX-G0; Wed, 02 Oct 2019 15:54:59 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFgtJ-0002pZ-87
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 15:50:14 +0000
-Received: by mail-io1-xd43.google.com with SMTP id n26so29510909ioj.8
+ id 1iFgxm-0003ui-FH
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 15:54:52 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20191002155448euoutp02cd1ce11ad3a74e4c909fd0fa86f7df87~J34Cdp-8T3143331433euoutp023
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 02 Oct 2019 08:50:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=GgrgypA3DxUGV2Hcyn2yPyZpwe6ccGDhojrwZbcYpCc=;
- b=ujTSEqsXf+iupp/ifM3h7w4Ejxx2fmymksEJAm0g8N0Alo7FNBe3Lz7dNvlR1Mt7DL
- 7s/pgBLsUsU+RK3RaP38PbrOC6mkp7+3v3/LCJ1sWWn5xLcyykjatUpJpE6uxsDtDEYa
- KtP5XeVD0rbFpkjv5nKpwLZP4W9TauVZ1/JJP3IME77URgq/n4jKSa7GXJDvhvgkAKBq
- HOZpugbfayXfKMZwY2NRxfDSy28lJGL5iut6ZZ8iFF98J5cX5O9KjK1pSMgBnkWUScI0
- jcH1jQgQVVxXQ+5rGV2lpH3V8edYcYdj+/Te595M9OzSZJKvrJnB5nTgFc//xkXkgNJ7
- RwpA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=GgrgypA3DxUGV2Hcyn2yPyZpwe6ccGDhojrwZbcYpCc=;
- b=lga75o/HRmY220Vu5lfKGecNUHDVGIQOsfSddUN/9Y+7f+4VEquE3KVitZeyhh5/yQ
- MFqrUhR7Xbo/XZfAsEfP7GENSO+mRpYSdEjeAoeeShSfwhrDWdk5A84bAiWQ38WjcMXN
- EOeM7BlOILcTD5f5h5/h4/Quu20tEfEYSJCTmdlnVB9VL0OZ4D9YLxL+3xYjcbbjsSNF
- ccfb/iKztzuiqXaSZguAXNclYrBoZrarDcW79kB5VkCFDI31lbJDXPg7b7avrNL26Yzw
- 02p9dkKYpc1HO2tO3tPQfN+NbAJYrVEGyCNNOY+ztl+5nSlkGwFbuM93P7SijlXBuCv6
- ur8A==
-X-Gm-Message-State: APjAAAVYh3EI/b+piOQTZSj+w8eEOXHBUhHdXWQUoqZOiZrL0hhadqBp
- SJzaIjw6Jea0DbhdtpWrHUuQk/wSKzUcyMZ/toS3pg==
-X-Google-Smtp-Source: APXvYqxWoflWc4huqe4ztcpNHyki7LeviAKmD46t20HNaJsq4ky/7tlOgT/pMGjJCpqYc2vou9S51QJsOpaiPNJb4Dw=
-X-Received: by 2002:a6b:da06:: with SMTP id x6mr3930202iob.42.1570031411001;
- Wed, 02 Oct 2019 08:50:11 -0700 (PDT)
+ Wed,  2 Oct 2019 15:54:48 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20191002155448euoutp02cd1ce11ad3a74e4c909fd0fa86f7df87~J34Cdp-8T3143331433euoutp023
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1570031688;
+ bh=dO98rwiJ4tvmdexXBQqD68SKjJaPBN1+ST7RvpER/yg=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=Rik/3mFaYggaSmisUCEjz6jwDaT5L7pU+idLcipx6RMJhyH/1rTHn+kaev0sFH/6D
+ nNX7o8wl1Jv5dA7PJgQd1ErzWjdTsGpAg5VtNm7pXn1db0n6owuOw7OuCo1QCYTbHP
+ k7kxbqHVv/j3Yd75EAAL730fUxvAYqR1ozQqSt74=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20191002155448eucas1p246e67cfa52a412c3d3e41a8f6bd78b71~J34CDIQjb3055930559eucas1p2X;
+ Wed,  2 Oct 2019 15:54:48 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id 5B.22.04309.848C49D5; Wed,  2
+ Oct 2019 16:54:48 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20191002155447eucas1p27fedafa6277bb3fbff62be76ecec61d3~J34BwhW5d2815328153eucas1p2y;
+ Wed,  2 Oct 2019 15:54:47 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20191002155447eusmtrp1994d135604b7ad804df78150467540fc~J34Bv4hwf1558815588eusmtrp1G;
+ Wed,  2 Oct 2019 15:54:47 +0000 (GMT)
+X-AuditID: cbfec7f4-ae1ff700000010d5-92-5d94c8486127
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id 77.35.04166.748C49D5; Wed,  2
+ Oct 2019 16:54:47 +0100 (BST)
+Received: from [106.120.51.75] (unknown [106.120.51.75]) by
+ eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20191002155447eusmtip2f9fcb187e200c69f7015f72d91c42f9d~J34BOmENe0880708807eusmtip23;
+ Wed,  2 Oct 2019 15:54:47 +0000 (GMT)
+Subject: Re: [PATCH v4 1/6] opp: Handle target/min/max voltage in
+ dev_pm_opp_adjust_voltage()
+To: Krzysztof Kozlowski <krzk@kernel.org>, vireshk@kernel.org
+From: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Message-ID: <ada1bb2f-a824-c34e-6561-04a35782a9b8@samsung.com>
+Date: Wed, 2 Oct 2019 17:54:46 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <cover.1564550873.git.saiprakash.ranjan@codeaurora.org>
- <90114e06825e537c3aafd3de5c78743a9de6fadc.1564550873.git.saiprakash.ranjan@codeaurora.org>
- <CAOCk7NrK+wY8jfHdS8781NOQtyLm2RRe1NW2Rm3_zeaot0Q99Q@mail.gmail.com>
- <16212a577339204e901cf4eefa5e82f1@codeaurora.org>
- <CAOCk7NohO67qeYCnrjy4P0KN9nLUiamphHRvj-bFP++K7khPOw@mail.gmail.com>
- <fa5a35f0e993f2b604b60d5cead3cf28@codeaurora.org>
- <CAOCk7NodWtC__W3=AQfXcjF-W9Az_NNUN0r8w5WmqJMziCcvig@mail.gmail.com>
- <5b8835905a704fb813714694a792df54@codeaurora.org>
- <CANLsYkxPOOorqcnPrbhZLzGV9Y7EGWUUyxvi-Cm5xxnzhx=Ecg@mail.gmail.com>
- <585ee38c-39d1-47df-78b7-f4b670f17a25@free.fr> <20191002153410.GA10598@xps15>
-In-Reply-To: <20191002153410.GA10598@xps15>
-From: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>
-Date: Wed, 2 Oct 2019 09:49:59 -0600
-Message-ID: <CAOCk7NrSufekeFKnEsAQVsvBHzQ0N=mzf5vMta3tKHWuGtF5Ow@mail.gmail.com>
-Subject: Re: [PATCHv9 2/3] arm64: dts: qcom: msm8998: Add Coresight support
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
+In-Reply-To: <20191002143310.GA15898@pi3>
+Content-Language: en-GB
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrJKsWRmVeSWpSXmKPExsWy7djP87oeJ6bEGlz5z26xccZ6Vov5R86x
+ WvQ/fs1scf78BnaLTY+vsVpc3jWHzeJz7xFGixnn9zFZrD1yl92ide8RdovND46xOXB7bFrV
+ yeaxeUm9R9+WVYwenzfJBbBEcdmkpOZklqUW6dslcGUsfn+EseAKW8XCpp3MDYxbWbsYOTgk
+ BEwkFu8P6mLk4hASWMEo8X7XcRYI5wujRN/TN4wQzmdGibttd4E6OME6Vq/9ApVYzijx+Osj
+ RpCEkMBbRonzN71BbGGBeIkdkw6wg9giArYSd75OARvLLPCfUeJQ3082kASbgKFE79E+sGZe
+ ATuJH3vngW1gEVCReNa8mAnEFhWIkPj04DArRI2gxMmZT1hAbE4BTYlPl06D1TALiEs0fVnJ
+ CmHLS2x/O4cZZJmEwCl2ia4Ve5ggznaR+LT6HDOELSzx6vgWdghbRuL05B4WiIZmRome3bfZ
+ IZwJjBL3jy9ghKiyljh8/CI4yJiBVq/fpQ8RdpR483w3GyQk+SRuvBWEOIJPYtK26cwQYV6J
+ jjYhiGoVid+rpkOdIyXR/eQ/ywRGpVlIXpuF5J1ZSN6ZhbB3ASPLKkbx1NLi3PTUYqO81HK9
+ 4sTc4tK8dL3k/NxNjMAEdfrf8S87GHf9STrEKMDBqMTD2xA0OVaINbGsuDL3EKMEB7OSCO+l
+ 9VNihXhTEiurUovy44tKc1KLDzFKc7AoifNWMzyIFhJITyxJzU5NLUgtgskycXBKNTAy7pg2
+ I0eSS11d56nM1L4fBw1m6f78LG6i/SGHdcnN9TWdMmWa6zYVnGEXvGxdXad6lt0o+1m62bvA
+ fTu+cwW92L/2xU5dn+V9U4TXPZSNj/H7pWcQ3XrTPaI0Zf5CpsMruH7clBRu92g6PvcPC8PL
+ 2ccep0VYqMlo9SXIMYWof3Gou30vm0uJpTgj0VCLuag4EQC7epL4TAMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrDIsWRmVeSWpSXmKPExsVy+t/xe7ruJ6bEGvxoMbTYOGM9q8X8I+dY
+ Lfofv2a2OH9+A7vFpsfXWC0u75rDZvG59wijxYzz+5gs1h65y27RuvcIu8XmB8fYHLg9Nq3q
+ ZPPYvKTeo2/LKkaPz5vkAlii9GyK8ktLUhUy8otLbJWiDS2M9AwtLfSMTCz1DI3NY62MTJX0
+ 7WxSUnMyy1KL9O0S9DIWvz/CWHCFrWJh007mBsatrF2MnBwSAiYSq9d+Yexi5OIQEljKKHHw
+ wGumLkYOoISUxPwWJYgaYYk/17rYIGpeM0q0d25mA0kIC8RL7Jh0gB3EFhGwlbjzdQoLSBGz
+ wH9Gia6uw1Ad9xglfvQeZAGpYhMwlOg92scIYvMK2En82DsP7AwWARWJZ82LmUBsUYEIicM7
+ ZkHVCEqcnPkErJdTQFPi06XTYDXMAuoSf+ZdYoawxSWavqxkhbDlJba/ncM8gVFoFpL2WUha
+ ZiFpmYWkZQEjyypGkdTS4tz03GJDveLE3OLSvHS95PzcTYzAmNx27OfmHYyXNgYfYhTgYFTi
+ 4W0ImhwrxJpYVlyZe4hRgoNZSYT30vopsUK8KYmVValF+fFFpTmpxYcYTYGem8gsJZqcD0wX
+ eSXxhqaG5haWhubG5sZmFkrivB0CB2OEBNITS1KzU1MLUotg+pg4OKUaGC1CLSK/lEy4n5hm
+ Z6xU579LtPlJnDULE/uVW8L3/wbvnmmSyXji8XxDjmmKudfyHrR+it7SfW+7u+nBgvqmYouy
+ azPkwl9sS6yfNveGqZxKX1D0sw8mBbIZS1jky/ayz9ZwZDylcnfHq8K4+giJ+8Ga7/ebtl6R
+ ePleubTsUYmDt6Dil22LlFiKMxINtZiLihMB6R928t8CAAA=
+X-CMS-MailID: 20191002155447eucas1p27fedafa6277bb3fbff62be76ecec61d3
+X-Msg-Generator: CA
+X-RootMTR: 20190910123636eucas1p250ec04901f227b947cc38936563f63b2
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190910123636eucas1p250ec04901f227b947cc38936563f63b2
+References: <20190910123618.27985-1-s.nawrocki@samsung.com>
+ <CGME20190910123636eucas1p250ec04901f227b947cc38936563f63b2@eucas1p2.samsung.com>
+ <20190910123618.27985-2-s.nawrocki@samsung.com> <20191002143310.GA15898@pi3>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_085013_394159_5130EB57 
-X-CRM114-Status: GOOD (  19.13  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191002_085450_714091_0BAC897C 
+X-CRM114-Status: GOOD (  14.75  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jeffrey.l.hugo[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -90,6 +126,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,65 +138,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: MSM <linux-arm-msm@vger.kernel.org>,
- Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Marc Gonzalez <marc.w.gonzalez@free.fr>
+Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-pm@vger.kernel.org, b.zolnierkie@samsung.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, kgene@kernel.org,
+ linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 2, 2019 at 9:34 AM Mathieu Poirier
-<mathieu.poirier@linaro.org> wrote:
+On 10/2/19 16:33, Krzysztof Kozlowski wrote:
+> On Tue, Sep 10, 2019 at 02:36:13PM +0200, Sylwester Nawrocki wrote:
+>> To be squashed with patch "PM / OPP: Support adjusting OPP voltages
+>> at runtime".
+>>
+>> Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
+>> ---
+>>
+>>  drivers/opp/core.c     | 10 ++++++++--
+>>  include/linux/pm_opp.h |  3 ++-
+>>  2 files changed, 10 insertions(+), 3 deletions(-)
 >
-> On Wed, Oct 02, 2019 at 05:21:23PM +0200, Marc Gonzalez wrote:
-> > On 02/10/2019 17:03, Mathieu Poirier wrote:
-> >
-> > > The problem here is that a debug and production device are using the
-> > > same device tree, i.e msm8998.dtsi.  Disabling coresight devices in
-> > > the DTS file will allow the laptop to boot but completely disabled
-> > > coresight blocks on the MTP board.  Leaving things as is breaks the
-> > > laptop but allows coresight to be used on the MTP board.  One of three
-> > > things can happen:
-> > >
-> > > 1) Nothing gets done and production board can't boot without DTS modifications.
-> > > 2) Disable tags are added to the DTS file and the debug board can't
-> > > use coresight without modifications.
-> > > 2) The handling of the debug power domain is done properly on the
-> > > MSM8998 rather than relying on the bootloader to enable it.
-> > > 3) The DTS file is split or reorganised to account for debug/production devices.
-> >
-> > I believe 3) is already the de facto situation.
-> >
-> > arch/arm64/boot/dts/qcom/msm8998.dtsi is the "base" config.
-> > arch/arm64/boot/dts/qcom/msm8998-mtp.dtsi for the MTP board.
-> > arch/arm64/boot/dts/qcom/msm8998-clamshell.dtsi for the laptops.
->
-> "DTS file", i.e msm8998.dtsi
+> I'll take the ASV driver via samsung-soc but I see it depends on this
+> one.  Please provide me a stable tag with it or an Ack.
 
-Bjorn (the primary maintainer whom will likely be taking any DT
-patches) and I had a chat.  We concluded on disabling the coresight
-components (by default) in the msm8998.dtsi, and then enabling them in
-the msm8998-mtp.dtsi.  I think Bjorn would like to see some patches,
-which it sounds like Sai will post in a few days.
+There is further dependency on patch 
+"[PATCH v4 6/8] PM / OPP: Support adjusting OPP voltages at runtime"
+https://lore.kernel.org/linux-arm-kernel/1565703113-31479-7-git-send-email-andrew-sh.cheng@mediatek.com
 
-This is probably how things should be moving forward for all qcom SoCs
-since its standard practice to disable the coresight components via
-efuse or other hardware mechanism for production products.
+Viresh, what are your plans WRT to those patches?
 
->
-> >
-> > > Which of the above ends up being the final solution is entirely up to
-> > > David and Andy.
-> >
-> > 2498f8c1c668 ;-)
->
-> Then it is even easier to make a decision.
->
-> >
-> > Regards.
+-- 
+Thanks,
+Sylwester
 
 _______________________________________________
 linux-arm-kernel mailing list
