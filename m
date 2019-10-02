@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2DD8C496F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 10:26:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5724BC49E4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 10:46:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:References:
+	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i3Gxo4k6/G7rRYeIxKnyw+68huI6EV1D3mLFFySNAio=; b=YO+38HdFznCNCK
-	kaPYH88iHRJe7m2KFVL6L6s8nCNoIAj/Oh16B/HNFHTntTMgSmKvb3vOFJMvigOiBGxddHRj7YQ/E
-	kX51I+jZVsijQdAQ5IU8FOBPnyG6yeT/xwgCwNJcm5RLVmDLi/OFNvTr7ziG4/9gvnltEhx4BZqSy
-	Xi45nXZ5yaqkVePcgYKa+l2SdvAf0sKtLcZ+7DPpzfCwsI6Q115cC6ZuaRrIIjhvIodyLKIgN6eBR
-	M5lYP5AplR75pXl+RUhMmgXIVzrambUi4rPlHIopakbqC3TgY1lTCIB+ZU2zG2YTFboasQ/9hCgit
-	eC80YwFPP/0DrdPaxDiQ==;
+	List-Owner; bh=lh+vDRcLW1LaCzWWq65iTLW+D0+VfcvSgMsjs0MUG6A=; b=kQRndRH+2fZpy8
+	IUNi67AhtqhBC977CZObCPdex1ZPCoaHTvPdQs5BMOXyGe3jnBQ0R90iRujhrjb5L0/qBDLexRq3g
+	LMp7TazQuKRdlZyCvPoDxPIb57tlCRjSKJURU1S5rEgEalcpJjxtuNqnxz1aRrVlMBDTAVVnp2peb
+	mSl2+PnubVUXw2DDaV/sMmS+DusXuxR3GAKV64mZr3MgruLB8UNPuzpMdsG99A014A9E/Hb3ABX+6
+	uoCMfAqjLh3P/tIOR/NBfyXmkreDtfhyc2AP8z9kcIxv2g+Vs88GGmO29pCIXaZcUSaaszOXy9kgl
+	cTSHrlgfuPqbzEjMCNqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFZxK-0005wm-2C; Wed, 02 Oct 2019 08:25:54 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iFaH6-0001Py-0m; Wed, 02 Oct 2019 08:46:20 +0000
+Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::3])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFZwh-0005vG-9F
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 08:25:19 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=G6wh5zbXgBDLuP9wlLDjydf/CNQhrMAVw4p6MMswNVU=; b=aAoxC1LvNDpEqScdAPP/zYbKj
- R+Td06DiA/dklhOpga9/ZliqLMzpAkkgxTabdfYkAtod4kJuUrjMA6ZFQ87eLjE3u25Us94rlfihe
- PK0Z0nUWe9w+jIR2wZsbVevE1cF+A82P9tb6+01qyTpTKjX9KZLeX0Lk7JM6vIQ9XV2aSbbrlfwe9
- YByP2DhhQybSeGPQhcwqXF+nnXSBrODhvicV34wQ3BTsuxOmvTz+eqOJ5mG3ooyTdCXzcVntFlhpi
- 0eFkndq7xWxqB29GbAygQ9iPM3yU5ar37noYKFl0UhlG9/A1vMD34wnNJuS1APOCECCQAtmFmLFTc
- joikpkIAg==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:50746)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1iFZwT-0007aT-6L; Wed, 02 Oct 2019 09:25:01 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iFZwM-0000Wl-RU; Wed, 02 Oct 2019 09:24:54 +0100
-Date: Wed, 2 Oct 2019 09:24:54 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Nick Desaulniers <ndesaulniers@google.com>
-Subject: Re: [PATCH v2] ARM: add __always_inline to functions called from
- __get_user_check()
-Message-ID: <20191002082454.GQ25745@shell.armlinux.org.uk>
-References: <20191001083701.27207-1-yamada.masahiro@socionext.com>
- <CAKwvOd=NObDXDL3jz9ZX9wo4tn747peBJPTj0DXyLerixgL+wQ@mail.gmail.com>
+ id 1iFaF4-0001BN-Re; Wed, 02 Oct 2019 08:44:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1570005844;
+ s=strato-dkim-0002; d=fpond.eu;
+ h=Subject:References:In-Reply-To:Message-ID:Cc:To:From:Date:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=iUttmko10pMSiNzf83MKiTk9CuVcL1m274VDNhwoUvo=;
+ b=bUa4nA87Aahl+akDPPApKyEgSRbP7aU9CAw7k+GO8W5jGvwAM4Gm8FJdsE8L9429WY
+ E5CfjegbDj9RiV3bM0sTougIgkBIkgii2rk6OtZPcKXkaiRRbslYBtZad+b5m5IDcC8d
+ 3gWpqxoZsS1Oc14RcjNOpi9KtQdO9iGhdLE8Q+8ibCRKe9i82GSgzVEC6fofW1o0JzM6
+ id9QCkK0iwoJGn8R8UjZhwmfUMVPY+oAiynwv0Er8rU/BL6nyShrmZ0uHNTYOjMt79pb
+ 38IFRFDkf5Lzy824e7gxX3c6PLLFwVjyu1bOzPHejvukU+gFDl9NJ7lSoh/7xSZNDD9u
+ u8dQ==
+X-RZG-AUTH: ":OWANVUa4dPFUgKR/3dpvnYP0Np73amq+g13rqGzmt2bYDnKIKaws6YXTsc4="
+X-RZG-CLASS-ID: mo00
+Received: from oxapp05-03.back.ox.d0m.de by smtp-ox.front (RZmta 44.28.0 AUTH)
+ with ESMTPSA id i07086v928htVNM
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve X9_62_prime256v1
+ with 256 ECDH bits, eq. 3072 bits RSA))
+ (Client did not present a certificate);
+ Wed, 2 Oct 2019 10:43:55 +0200 (CEST)
+Date: Wed, 2 Oct 2019 10:43:55 +0200 (CEST)
+From: Ulrich Hecht <uli@fpond.eu>
+To: Fabien Parent <fparent@baylibre.com>, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org
+Message-ID: <1733244772.936156.1570005835848@webmail.strato.com>
+In-Reply-To: <20190930152846.5062-1-fparent@baylibre.com>
+References: <20190930152846.5062-1-fparent@baylibre.com>
+Subject: Re: [PATCH v2] i2c: i2c-mt65xx: fix NULL ptr dereference
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKwvOd=NObDXDL3jz9ZX9wo4tn747peBJPTj0DXyLerixgL+wQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Priority: 3
+Importance: Normal
+X-Mailer: Open-Xchange Mailer v7.10.1-Rev20
+X-Originating-IP: 85.212.176.126
+X-Originating-Client: open-xchange-appsuite
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_012515_475348_EDACA1CC 
-X-CRM114-Status: GOOD (  25.33  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191002_014415_502589_1BB38DA0 
+X-CRM114-Status: UNSURE (   7.70  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a01:238:20a:202:5301:0:0:3 listed in]
  [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -88,152 +88,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>, Arnd Bergmann <arnd@arndb.de>,
- Enrico Weigelt <info@metux.net>,
- Vincent Whitchurch <vincent.whitchurch@axis.com>,
- Allison Randal <allison@lohutok.net>, LKML <linux-kernel@vger.kernel.org>,
- Stefan Agner <stefan@agner.ch>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Olof Johansson <olof@lixom.net>, Thomas Gleixner <tglx@linutronix.de>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: drinkcat@chromium.org, wsa@the-dreams.de, hsinyi@chromium.org,
+ matthias.bgg@gmail.com, tglx@linutronix.de, qii.wang@mediatek.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 01, 2019 at 10:03:50AM -0700, Nick Desaulniers wrote:
-> On Tue, Oct 1, 2019 at 1:37 AM Masahiro Yamada
-> <yamada.masahiro@socionext.com> wrote:
-> >
-> > KernelCI reports that bcm2835_defconfig is no longer booting since
-> > commit ac7c3e4ff401 ("compiler: enable CONFIG_OPTIMIZE_INLINING
-> > forcibly") (https://lkml.org/lkml/2019/9/26/825).
-> >
-> > I also received a regression report from Nicolas Saenz Julienne
-> > (https://lkml.org/lkml/2019/9/27/263).
-> >
-> > This problem has cropped up on bcm2835_defconfig because it enables
-> > CONFIG_CC_OPTIMIZE_FOR_SIZE. The compiler tends to prefer not inlining
-> > functions with -Os. I was able to reproduce it with other boards and
-> > defconfig files by manually enabling CONFIG_CC_OPTIMIZE_FOR_SIZE.
-> >
-> > The __get_user_check() specifically uses r0, r1, r2 registers.
-> > So, uaccess_save_and_enable() and uaccess_restore() must be inlined.
-> > Otherwise, those register assignments would be entirely dropped,
-> > according to my analysis of the disassembly.
-> >
-> > Prior to commit 9012d011660e ("compiler: allow all arches to enable
-> > CONFIG_OPTIMIZE_INLINING"), the 'inline' marker was always enough for
-> > inlining functions, except on x86.
-> >
-> > Since that commit, all architectures can enable CONFIG_OPTIMIZE_INLINING.
-> > So, __always_inline is now the only guaranteed way of forcible inlining.
-> 
-> No, the C preprocessor is the only guaranteed way of inlining.  I
-> preferred v1; if you're going to <strikethrough>play with
-> fire</strikethrough>write assembly, don't get burned.
 
-It seems we disagree on that.
+> On September 30, 2019 at 5:28 PM Fabien Parent <fparent@baylibre.com> wrote:
+> 
+> 
+> Since commit abf4923e97c3 ("i2c: mediatek: disable zero-length transfers
+> for mt8183"), there is a NULL pointer dereference for all the SoCs
+> that don't have any quirk. mtk_i2c_functionality is not checking that
+> the quirks pointer is not NULL before starting to use it.
+> 
+> This commit add a call to i2c_check_quirks which will check whether
+> the quirks pointer is set, and if so will check if the IP has the
+> NO_ZERO_LEN quirk.
+> 
+> Fixes: abf4923e97c3 ("i2c: mediatek: disable zero-length transfers for mt8183")
+> Signed-off-by: Fabien Parent <fparent@baylibre.com>
 
-Masahiro Yamada, please send this to the patch system, thanks.
+Thank you! Tested successfully on Acer R13 Chromebook (mt8173).
 
-> 
-> >
-> > I also added __always_inline to 4 functions in the call-graph from the
-> > __get_user_check() macro.
-> >
-> > Fixes: 9012d011660e ("compiler: allow all arches to enable CONFIG_OPTIMIZE_INLINING")
-> > Reported-by: "kernelci.org bot" <bot@kernelci.org>
-> > Reported-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> > Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
-> > ---
-> >
-> > Changes in v2:
-> >   - Use __always_inline instead of changing the function call places
-> >      (per Russell King)
-> >   - The previous submission is: https://lore.kernel.org/patchwork/patch/1132459/
-> >
-> >  arch/arm/include/asm/domain.h  | 8 ++++----
-> >  arch/arm/include/asm/uaccess.h | 4 ++--
-> >  2 files changed, 6 insertions(+), 6 deletions(-)
-> >
-> > diff --git a/arch/arm/include/asm/domain.h b/arch/arm/include/asm/domain.h
-> > index 567dbede4785..f1d0a7807cd0 100644
-> > --- a/arch/arm/include/asm/domain.h
-> > +++ b/arch/arm/include/asm/domain.h
-> > @@ -82,7 +82,7 @@
-> >  #ifndef __ASSEMBLY__
-> >
-> >  #ifdef CONFIG_CPU_CP15_MMU
-> > -static inline unsigned int get_domain(void)
-> > +static __always_inline unsigned int get_domain(void)
-> >  {
-> >         unsigned int domain;
-> >
-> > @@ -94,7 +94,7 @@ static inline unsigned int get_domain(void)
-> >         return domain;
-> >  }
-> >
-> > -static inline void set_domain(unsigned val)
-> > +static __always_inline void set_domain(unsigned int val)
-> >  {
-> >         asm volatile(
-> >         "mcr    p15, 0, %0, c3, c0      @ set domain"
-> > @@ -102,12 +102,12 @@ static inline void set_domain(unsigned val)
-> >         isb();
-> >  }
-> >  #else
-> > -static inline unsigned int get_domain(void)
-> > +static __always_inline unsigned int get_domain(void)
-> >  {
-> >         return 0;
-> >  }
-> >
-> > -static inline void set_domain(unsigned val)
-> > +static __always_inline void set_domain(unsigned int val)
-> >  {
-> >  }
-> >  #endif
-> > diff --git a/arch/arm/include/asm/uaccess.h b/arch/arm/include/asm/uaccess.h
-> > index 303248e5b990..98c6b91be4a8 100644
-> > --- a/arch/arm/include/asm/uaccess.h
-> > +++ b/arch/arm/include/asm/uaccess.h
-> > @@ -22,7 +22,7 @@
-> >   * perform such accesses (eg, via list poison values) which could then
-> >   * be exploited for priviledge escalation.
-> >   */
-> > -static inline unsigned int uaccess_save_and_enable(void)
-> > +static __always_inline unsigned int uaccess_save_and_enable(void)
-> >  {
-> >  #ifdef CONFIG_CPU_SW_DOMAIN_PAN
-> >         unsigned int old_domain = get_domain();
-> > @@ -37,7 +37,7 @@ static inline unsigned int uaccess_save_and_enable(void)
-> >  #endif
-> >  }
-> >
-> > -static inline void uaccess_restore(unsigned int flags)
-> > +static __always_inline void uaccess_restore(unsigned int flags)
-> >  {
-> >  #ifdef CONFIG_CPU_SW_DOMAIN_PAN
-> >         /* Restore the user access mask */
-> > --
-> > 2.17.1
-> >
-> 
-> 
-> -- 
-> Thanks,
-> ~Nick Desaulniers
-> 
+Tested-by: Ulrich Hecht <uli@fpond.eu>
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+CU
+Uli
 
 _______________________________________________
 linux-arm-kernel mailing list
