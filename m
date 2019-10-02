@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E93CC8BC0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 16:47:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F582C8BC4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 16:48:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OREp8WgCiwUnjflyiFHqi85/QH+HFK3MabG/51AkDzo=; b=V947y/kwIqUNaK
-	H2U+4X2P715EAugnSaaYKK294Frs0usMfUvkiYPbS/TB0HJQLJCVNGdAVoM5OxTG+nayJSwURR/hF
-	ph+tK4dVKABDJxHxa3q8mctung42gP84ceLQ77PfJXlLwXe9PuMCd12hXJRXhgKNUOtRrBaaXGg/8
-	HKCALwgOwYA8GQi2hxnxKsEAmg0JF0D/BnmA5u4ZjmXXKw/UPDQ0FgmkHPyh/FH6fyp5hmDEuLmG+
-	+VLA+qt7KR2fCdhSjR2qVUkcK2Bpt0CfSZnZOnmrnq0i/8oXbR2Q5K0Q6QH/TdzUC51j6rerA+VFq
-	DvtMhL00isnJd9R4gUEQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Tfry7tPix1ugomLgRg4EhYDq0Wz9sZr8cnMG4UIewCI=; b=fdiJ3tM8r141TE
+	wjlZtZCeELMl2Z6CLfrebRFfvRCuxF2qNwO/gLp2qTDrPuYxyhzAdshhnbGUvLRwyRPZtqrJKQ8F5
+	fF3QXWf/oCpGaiq6e7X8w2Kuf7mQCpZF/liGtBFV2WgbZyj/wvBDN4oYnxsYEaVc7QK6IW8qgv5lI
+	BtgJpA2BPFh/CK43NjsUk72cXDOo+5fNkv5iy5dVBVGhaaRsuKnNxnk8NgZLJIXm37VHOsE4blYeV
+	c0SED/HjgzravMBwrgsYVVDJjLm8wGEJdwrnwbQSxRA1v24xOCxMKg/km7AXuWhW7py/MxmIAkAQT
+	QjaveKCc4Oj7CTA0WUOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFfuW-0007VT-2N; Wed, 02 Oct 2019 14:47:24 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
+	id 1iFfvJ-0008FI-12; Wed, 02 Oct 2019 14:48:13 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFfuK-0007Sn-8k
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 14:47:14 +0000
+ id 1iFfuP-0007VJ-AI
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 14:47:19 +0000
+X-Originating-IP: 86.207.98.53
 Received: from localhost
  (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
  (Authenticated sender: kamel.bouhara@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id 3D8EB200009;
- Wed,  2 Oct 2019 14:47:02 +0000 (UTC)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id A38B624000E;
+ Wed,  2 Oct 2019 14:47:03 +0000 (UTC)
 From: Kamel Bouhara <kamel.bouhara@bootlin.com>
 To: Wolfram Sang <wsa@the-dreams.de>, linux-i2c@vger.kernel.org,
  linux-kernel@vger.kernel.org, Nicolas Ferre <nicolas.ferre@microchip.com>,
  Alexandre Belloni <alexandre.belloni@bootlin.com>,
  Ludovic Desroches <ludovic.desroches@microchip.com>,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/4] i2c bus recovery for Microchip SoCs.
-Date: Wed,  2 Oct 2019 16:46:54 +0200
-Message-Id: <20191002144658.7718-1-kamel.bouhara@bootlin.com>
+Subject: [PATCH 1/4] dt-bindings: i2c: at91: document optional bus recovery
+ properties
+Date: Wed,  2 Oct 2019 16:46:55 +0200
+Message-Id: <20191002144658.7718-2-kamel.bouhara@bootlin.com>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20191002144658.7718-1-kamel.bouhara@bootlin.com>
+References: <20191002144658.7718-1-kamel.bouhara@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_074712_457975_35EE55E3 
-X-CRM114-Status: UNSURE (   7.18  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191002_074717_557322_4B31B88E 
+X-CRM114-Status: GOOD (  10.42  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.178.232 listed in wl.mailspike.net]
+ low trust [217.70.183.193 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -72,25 +73,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series introduce the kernel i2c-gpio bus recovery mechanism
-for the Microchip SoCs. Updated the corresponding dts to add i2c
-gpio pinctrl. The bus recovery is configured for the sama5d3/4 xplained
-boards in dts.
+The at91 I2C controller can support bus recovery by re-assigning SCL
+and SDA to gpios. Add the optional pinctrl and gpio properties to do
+so.
 
-Kamel Bouhara (4):
-  dt-bindings: i2c: at91: document optional bus recovery properties
-  i2c: at91: implement i2c bus recovery
-  ARM: at91/dt: sama5d3: add i2c gpio pinctrl
-  ARM: at91/dt: sama5d4: add i2c gpio pinctrl
+Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
+---
+ Documentation/devicetree/bindings/i2c/i2c-at91.txt | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
- .../devicetree/bindings/i2c/i2c-at91.txt      | 10 +++
- arch/arm/boot/dts/sama5d3.dtsi                | 33 +++++++++-
- arch/arm/boot/dts/sama5d4.dtsi                | 33 +++++++++-
- drivers/i2c/busses/i2c-at91-master.c          | 63 +++++++++++++++++++
- drivers/i2c/busses/i2c-at91.h                 |  8 +++
- 5 files changed, 141 insertions(+), 6 deletions(-)
-
---
+diff --git a/Documentation/devicetree/bindings/i2c/i2c-at91.txt b/Documentation/devicetree/bindings/i2c/i2c-at91.txt
+index b7cec17c3daf..8ea2ce5d8610 100644
+--- a/Documentation/devicetree/bindings/i2c/i2c-at91.txt
++++ b/Documentation/devicetree/bindings/i2c/i2c-at91.txt
+@@ -19,8 +19,13 @@ Optional properties:
+   capable I2C controllers.
+ - i2c-sda-hold-time-ns: TWD hold time, only available for "atmel,sama5d4-i2c"
+   and "atmel,sama5d2-i2c".
++- scl-gpios: specify the gpio related to SCL pin
++- sda-gpios: specify the gpio related to SDA pin
++- pinctrl: add extra pinctrl to configure i2c pins to gpio function for i2c
++  bus recovery, call it "gpio" state
+ - Child nodes conforming to i2c bus binding
+ 
++
+ Examples :
+ 
+ i2c0: i2c@fff84000 {
+@@ -55,6 +60,11 @@ i2c0: i2c@f8034600 {
+ 	clocks = <&flx0>;
+ 	atmel,fifo-size = <16>;
+ 	i2c-sda-hold-time-ns = <336>;
++	pinctrl-names = "default", "gpio";
++	pinctrl-0 = <&pinctrl_i2c0>;
++	pinctrl-1 = <&pinctrl_i2c0_gpio>;
++	sda-gpios = <&pioA 30 GPIO_ACTIVE_HIGH>;
++	scl-gpios = <&pioA 31 GPIO_ACTIVE_HIGH>;
+ 
+ 	wm8731: wm8731@1a {
+ 		compatible = "wm8731";
+-- 
 2.23.0
 
 
