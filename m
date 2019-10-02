@@ -2,130 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8A6BC48DD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 09:53:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF3EDC48EB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 09:57:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ODu2sj/qGdWmFbjZVeEltXvlHnx6lt/lbzRg2pO8NvE=; b=YGgutMb4To+bhm
-	6uMuC1e+658Pcd00qbDCDRcUhStT0GjOYV4i1Lxh9UbKIv8Q6fXsR+APTqoJ/8FIT7TTB8zB7IBD2
-	nGQdSWwn8MakEoZ/6awBaapTYIsWRemuqKWf1vdDbs43JunstjzSj/P4UXuj/U3ZygbLHMieyLg6/
-	fBlIQ9iUFd48q+v09kVLAdXsxv04bi5TDQ+dqLkI0KxXIymDlFrPBrJszfyO3cP5GPR8g48JnV4bh
-	/5qr8gEUnFTRh1f+53wB2D9eF+4DBDTrW8a3Ic3hvJC1fZM1yQIlT2SPvwAla26+LW5oIzxuw3S12
-	2VKWhJpGD8uN3sLit1Gw==;
+	List-Owner; bh=sFKt4MFaF2nQ7gTXVfd9p5tzok4J/hif28LP3sERE3w=; b=GPR9cSORY9ItR9
+	OLdgQpIvZF2hSKTpXDojuSpIOukWaJqCpEv4DaTSZbATbR/CAoDaeOT+HjS0k3DSteid3KFkxUk4f
+	bW3r3or12+GMMlf/a7+ckKtKyTHDpAgCCKNcjDX5mWw5mmvDa5PUEydDVz1azjRVy4lTEMaCQ5ekZ
+	caQppXrsSjaE+ylZjlygIeqB3v+dcs9ZpgCTZmpLhb3IXGa9uRtovvMApIQR5T9B0Jv4/N7YGLzPi
+	7yT4RXOYrgiQ/zhBLEW8e5t09rl6p7bsqxZUpOl0KUHTSbDfjQlKUzgbWDPCel+ArCjc742R7RUFR
+	srHM9tcQPoqH6Yenh2tw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFZS6-0001lI-Nn; Wed, 02 Oct 2019 07:53:38 +0000
-Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
- helo=smtprelay-out1.synopsys.com)
+	id 1iFZVO-0003zM-Kr; Wed, 02 Oct 2019 07:57:02 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFZRz-0001kB-K7
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 07:53:33 +0000
-Received: from mailhost.synopsys.com (badc-mailhost1.synopsys.com
- [10.192.0.17])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id E49C2C0505;
- Wed,  2 Oct 2019 07:53:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1570002809; bh=ZwchJV/hwBcbtxRPC9nW0ViWeKZEfdyL4rfZRkOLwvU=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=cm5wq/VNeiLKa3+zvzp3I4ZaZLkm0GgmNBZpzf2iffrvxfh/Yvr+RTP6VgjNz9bBk
- BJNmIqMaJCLux7ezZCLVQqWX8c8/5J8e4dd6kRhWF3YCgjidgawaLnnfqdThsnR3qi
- 4gOY2SnAOO/+bG5LxFE4o1VFVZjsFSDjp+b5zaEZ/XK0XR9dW4+qZj1G75cYFOwte8
- /4ArvXpvrgQJqziQra6YrpVKuawwrBtMPEcMrUCRZ5bLGOFgWswGEFMYkpmXaipB1z
- yGWYUb5VSanslGe6TWq6NpwgwQD9OolxSC7iea8/KF2kPFIj88Kyv0AplgTN8hKSlB
- pr6bX7GuB2UsA==
-Received: from US01WEHTC3.internal.synopsys.com
- (us01wehtc3.internal.synopsys.com [10.15.84.232])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id 64018A0079;
- Wed,  2 Oct 2019 07:53:13 +0000 (UTC)
-Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Wed, 2 Oct 2019 00:52:15 -0700
-Received: from NAM02-BL2-obe.outbound.protection.outlook.com (10.13.134.195)
- by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Wed, 2 Oct 2019 00:52:15 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=He7nF96q2ceA3bU6DVkhVPdSeN0/auZnRNAMR7TQMd13NX3ePbE2+nPqcQJMuQ668r3FjpObSxHeM9B1H4P5utE5DGjGY+YKeRo2gOhA+2+hZNzZW1GIMEkSAOLMImROIngFp02Fs3K0xCZkv1+MEWCxDTtIJNl/Sw6Q5xFTrs5coySmgNkigkdmdo/mWsa1yQ5kvBLuZSWxu4mwdYfH0N5g5IMdiCpL0UY2FHbx3BmMY3SptZRfEPHAvFNkPkKi65jzlLEmUXVB9Kg1dG4obNXFpKGhH7CWY/6qL+Lvp3S1mRDcpOWmSbPewCsiG6PjOB0p91soVL4s6hHp0eALkA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ZwchJV/hwBcbtxRPC9nW0ViWeKZEfdyL4rfZRkOLwvU=;
- b=fa1JqiEwCO2br70t+DJAejtIOq0qt2+PRs7k8GRiE/bHSH0djLvqKptPg9UqXBW7ci7dW5jV6LobJJYYxKRfo/jtIO9sLmgzAVmA2//prdCKZgpACzObcwFLLSixLQmX6TawaDrCyX+Ia3dh9gXvGbamLUcfisKGycUSQvHNJwO6uFi/4sWQRGvH1b5Z37LBPs5xuewhO6VW5uLPC1+nhhvM4nedT2z2bv+E1c25ePh3WohVe+dxcc/OTkLRUBo9zMpl6CEGOCJQPvI668CaxYPUeqcC3dwKKRNu7YHmXbhTBSClIo4JF5U1UwCgVbgAZsFVQqJrQpEoY+vYEWEgqw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
- dkim=pass header.d=synopsys.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ZwchJV/hwBcbtxRPC9nW0ViWeKZEfdyL4rfZRkOLwvU=;
- b=Aj2N/BXsvkmw9amUQsehbBdvJvX7ns/hDqseLBwbnKV3iXMcUqgR73Jc5/w2k4N3c4CtuugDC0hZwcFHlbkTbaIQwURYcDaFoCfYXKZK3q1ZPHmt6UCanmkiuZA27pjgo65jDX+qCg8b1KyNz58ui1NCMyUUcsObQa26Xa5lfPY=
-Received: from BN8PR12MB3266.namprd12.prod.outlook.com (20.179.67.145) by
- BN8PR12MB3363.namprd12.prod.outlook.com (20.178.212.21) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2305.17; Wed, 2 Oct 2019 07:52:13 +0000
-Received: from BN8PR12MB3266.namprd12.prod.outlook.com
- ([fe80::59fc:d942:487d:15b8]) by BN8PR12MB3266.namprd12.prod.outlook.com
- ([fe80::59fc:d942:487d:15b8%7]) with mapi id 15.20.2305.023; Wed, 2 Oct 2019
- 07:52:13 +0000
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: Hans Andersson <haan@cellavision.se>, "mcoquelin.stm32@gmail.com"
- <mcoquelin.stm32@gmail.com>
-Subject: RE: [PATCH] net: stmmac: Read user ID muliple times if needed.
-Thread-Topic: [PATCH] net: stmmac: Read user ID muliple times if needed.
-Thread-Index: AQHVePAsjhS3U+43VE+DGhKYpgL3F6dG8LMA
-Date: Wed, 2 Oct 2019 07:52:13 +0000
-Message-ID: <BN8PR12MB3266ED591171A79825090BE0D39C0@BN8PR12MB3266.namprd12.prod.outlook.com>
-References: <20191002070721.9916-1-haan@cellavision.se>
-In-Reply-To: <20191002070721.9916-1-haan@cellavision.se>
+ id 1iFZVB-0003yj-6v
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 07:56:51 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x927oscW000750; Wed, 2 Oct 2019 09:56:37 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=EBAixOOqXoAYHZaizljPUim/vdoCPa3lNWiXx9YSRHU=;
+ b=uEYG1a06avl8rJoHM54pb3ZIVAgl/cTVls5w7H/RwX+UKwOHmzwOXjXLLLE2fEoU3CLl
+ AUbO8//6wTUqaRJ3ZUlMgLQyKQ00epnzeYEG/5CbRutUkld/ZyrDfA4ir00ZqgvokDur
+ gyhbdcZ3Or6h7dFZ8pN323FlrsUnuo3Zf3YBmYigEqz6yeSSBb7ofpt0dXiwm8BRF2nY
+ IxKVTasbb+oVn2Y/+p0rwgxhE+7LFYpkdgnYXKjEbICH1JXUXTN1UT1yJqyo0wHqlSc9
+ 8atlLuUUSw5xNPmEBXnflPd8R0K2u148Tw3vEPKel64Ug/ld9c4GwIJkt+y5+xV2FfAK UA== 
+Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2v9vnadmk1-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Wed, 02 Oct 2019 09:56:36 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 25BE34C;
+ Wed,  2 Oct 2019 07:56:30 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1980F2AC6FE;
+ Wed,  2 Oct 2019 09:56:30 +0200 (CEST)
+Received: from SFHDAG3NODE3.st.com (10.75.127.9) by SFHDAG3NODE1.st.com
+ (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 2 Oct
+ 2019 09:56:29 +0200
+Received: from SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476]) by
+ SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476%20]) with mapi id
+ 15.00.1347.000; Wed, 2 Oct 2019 09:56:29 +0200
+From: Benjamin GAIGNARD <benjamin.gaignard@st.com>
+To: Jonathan Cameron <jic23@kernel.org>, Yizhuo <yzhai003@ucr.edu>
+Subject: Re: [PATCH] iio: trigger: stm32-timer: fix the usage of uninitialized
+ variables
+Thread-Topic: [PATCH] iio: trigger: stm32-timer: fix the usage of
+ uninitialized variables
+Thread-Index: AQHVd8/T1FmtbRWUT0qK58d/WXGWcadFV5CAgAGFFIA=
+Date: Wed, 2 Oct 2019 07:56:29 +0000
+Message-ID: <040e8500-0c32-97b1-8325-f299011033be@st.com>
+References: <20190930204451.28614-1-yzhai003@ucr.edu>
+ <20191001094355.65d873a3@archlinux>
+In-Reply-To: <20191001094355.65d873a3@archlinux>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=joabreu@synopsys.com; 
-x-originating-ip: [83.174.63.141]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 53c8e645-0ba6-4d3b-3f69-08d7470d703c
-x-ms-traffictypediagnostic: BN8PR12MB3363:
-x-microsoft-antispam-prvs: <BN8PR12MB3363F6A0E9D29D5551EE3E20D39C0@BN8PR12MB3363.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
-x-forefront-prvs: 0178184651
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(136003)(366004)(346002)(376002)(396003)(39860400002)(199004)(189003)(25786009)(66946007)(256004)(7696005)(86362001)(71200400001)(71190400001)(99286004)(2501003)(7736002)(305945005)(76176011)(478600001)(6246003)(4326008)(33656002)(186003)(26005)(102836004)(476003)(14454004)(446003)(486006)(6506007)(11346002)(558084003)(8676002)(3846002)(6116002)(81156014)(81166006)(8936002)(229853002)(2906002)(52536014)(9686003)(55016002)(54906003)(5660300002)(316002)(6436002)(66066001)(66446008)(66556008)(7416002)(110136005)(64756008)(74316002)(66476007)(76116006);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BN8PR12MB3363;
- H:BN8PR12MB3266.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: synopsys.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 0oGFrpG1H59KoEraUJBtFJt0hGb0eThNrJzBcD1F04XMHg+GSyNgFZM/j4w/7BXjzJYFNL17U6Z9R300x4MFg9dVWiU9No8BgP7WTiLA8KIGxnuYG0B+WaokUeD60g/RkY7cIqNf3++2eSXIBkDvj7mkEcpJs7hUJxnloYvXNX6+0S4U62IO4l7pbilBdvlC6zMme2CQBEX+sbPiRkXV5lZGscnsvlg8hUFkn7WfEOIHPgRaAitWoCQ12Oju5Vkz3hRGB0futoc22Micfh7qITFxIqUHRX7bVuMObHYQhR9uid+RVqfDKIBb46WV97XJe8hTp2PLhVijMoYpuKRRo4kIfgY6yVLGGiX/1LUkglKJNKJnCuH6LT2AYcTzEuyuZCxJXIA8iTos06oxLMLjfBPOE0X7Lwjg0VwnJY5Cfps=
-x-ms-exchange-transport-forked: True
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.49]
+Content-ID: <D0446124834DE342AF683861A83EF3A8@st.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 53c8e645-0ba6-4d3b-3f69-08d7470d703c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Oct 2019 07:52:13.8558 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Zuwc/pVJylVfdRupVgidR9eaK49YIX4lEN6QPZSueniE7w4eOSN8PkfWgjWQH3SJu4eef/OSeX3eSIF+l4uKXQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR12MB3363
-X-OriginatorOrg: synopsys.com
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
+ definitions=2019-10-02_04:2019-10-01,2019-10-02 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_005331_782883_195C526C 
-X-CRM114-Status: UNSURE (   6.93  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191002_005649_608000_3D3B36F3 
+X-CRM114-Status: GOOD (  31.66  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -146,32 +108,289 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "alexandre.torgue@st.com" <alexandre.torgue@st.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "davem@davemloft.net" <davem@davemloft.net>,
- "peppe.cavallaro@st.com" <peppe.cavallaro@st.com>,
- Hans Andersson <hans.andersson@cellavision.se>,
+Cc: "csong@cs.ucr.edu" <csong@cs.ucr.edu>, Lars-Peter Clausen <lars@metafoo.de>,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
+ "linux-iio@vger.kernel.org" <linux-iio@vger.kernel.org>,
+ "zhiyunq@cs.ucr.edu" <zhiyunq@cs.ucr.edu>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Maxime
+ Coquelin <mcoquelin.stm32@gmail.com>, Hartmut Knaack <knaack.h@gmx.de>,
  "linux-stm32@st-md-mailman.stormreply.com"
  <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Alexandre TORGUE <alexandre.torgue@st.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Hans Andersson <haan@cellavision.se>
-Date: Oct/02/2019, 08:07:21 (UTC+00:00)
 
-> When we read user ID / Synopsys ID we might still be in reset,
-> so read muliple times if needed.
+On 10/1/19 10:43 AM, Jonathan Cameron wrote:
+> On Mon, 30 Sep 2019 13:44:49 -0700
+> Yizhuo <yzhai003@ucr.edu> wrote:
+>
+>> Several functions in this file are trying to use regmap_read() to
+>> initialize the specific variable, however, if regmap_read() fails,
+>> the variable could be uninitialized but used directly, which is
+>> potentially unsafe. The return value of regmap_read() should be
+>> checked and handled. This patch fixes most of the uninitialized
+>> variables, but those in function stm32_tt_read_frequency() are
+>> hard to handle and need extra effot.
+>>
+>> Signed-off-by: Yizhuo <yzhai003@ucr.edu>
+> Hi Yizhuo,
+>
+> This is a slightly interesting case.
+>
+>  From an 'obviously' correct point of view, it makes sense to
+> always handle the errors and avoid the potentially uninitialised
+> cases.
+>
+>  From the point of view of a 'fix' we need to show if these can
+> actually happen.  These calls are regmap-mmio so the error
+> path is in clock enable / disable if there is a clock provided.
+> Looking at mfd/stm-timers.c there is a clock called "int" provided.
+> Now it's possible that clock enable can never fail, but that is
+> getting too hard to chase down.
+>
+> As such, I think this fix is worthwhile, but I'm not going to
+> mark it for stable without a report of it actually being
+> possible to trigger it.
+>
+> I'll leave this on the list for a little longer though as I'd definitely
+> like an ack from Benjamin or someone else more familiar with the driver
+> than I am.
+>
+> Thanks,
+>
+> Jonathan
 
-We shouldn't even try to read it if IP is in reset ... 
+Hi Yizhuo,
 
----
-Thanks,
-Jose Miguel Abreu
+The only reason that could lead a regmap_read to failed is an issue on 
+the clock
+but is this case we will be blocked in regmap_read() itself so the error 
+will never
+be displayed.
+For me testing all regmap_read() return values only add code and not 
+bring additional informations
+so I NACK this patch.
 
+Benjamin
+
+>> ---
+>>   drivers/iio/trigger/stm32-timer-trigger.c | 98 ++++++++++++++++++++---
+>>   1 file changed, 85 insertions(+), 13 deletions(-)
+>>
+>> diff --git a/drivers/iio/trigger/stm32-timer-trigger.c b/drivers/iio/trigger/stm32-timer-trigger.c
+>> index a5dfe65cd9b9..f8ea7bcbb739 100644
+>> --- a/drivers/iio/trigger/stm32-timer-trigger.c
+>> +++ b/drivers/iio/trigger/stm32-timer-trigger.c
+>> @@ -107,6 +107,7 @@ static int stm32_timer_start(struct stm32_timer_trigger *priv,
+>>   	unsigned long long prd, div;
+>>   	int prescaler = 0;
+>>   	u32 ccer, cr1;
+>> +	int ret;
+>>   
+>>   	/* Period and prescaler values depends of clock rate */
+>>   	div = (unsigned long long)clk_get_rate(priv->clk);
+>> @@ -132,11 +133,21 @@ static int stm32_timer_start(struct stm32_timer_trigger *priv,
+>>   	}
+>>   
+>>   	/* Check if nobody else use the timer */
+>> -	regmap_read(priv->regmap, TIM_CCER, &ccer);
+>> +	ret = regmap_read(priv->regmap, TIM_CCER, &ccer);
+>> +	if (ret) {
+>> +		dev_err(priv->dev, "fail to read TIM_CCER.\n");
+>> +		return ret;
+>> +	}
+>> +
+>>   	if (ccer & TIM_CCER_CCXE)
+>>   		return -EBUSY;
+>>   
+>> -	regmap_read(priv->regmap, TIM_CR1, &cr1);
+>> +	ret = regmap_read(priv->regmap, TIM_CR1, &cr1);
+>> +	if (ret) {
+>> +		dev_err(priv->dev, "fail to read TIM_CR1.\n");
+>> +		return ret;
+>> +	}
+>> +
+>>   	if (!(cr1 & TIM_CR1_CEN))
+>>   		clk_enable(priv->clk);
+>>   
+>> @@ -164,12 +175,23 @@ static int stm32_timer_start(struct stm32_timer_trigger *priv,
+>>   static void stm32_timer_stop(struct stm32_timer_trigger *priv)
+>>   {
+>>   	u32 ccer, cr1;
+>> +	int ret;
+>> +
+>> +	ret = regmap_read(priv->regmap, TIM_CCER, &ccer);
+>> +	if (ret) {
+>> +		dev_err(priv->dev, "Fail to read TIM_CCER.\n");
+>> +		return;
+>> +	}
+>>   
+>> -	regmap_read(priv->regmap, TIM_CCER, &ccer);
+>>   	if (ccer & TIM_CCER_CCXE)
+>>   		return;
+>>   
+>> -	regmap_read(priv->regmap, TIM_CR1, &cr1);
+>> +	ret = regmap_read(priv->regmap, TIM_CR1, &cr1);
+>> +	if (ret) {
+>> +		dev_err(priv->dev, "Fail to read TIM_CR1.\n");
+>> +		return;
+>> +	}
+>> +
+>>   	if (cr1 & TIM_CR1_CEN)
+>>   		clk_disable(priv->clk);
+>>   
+>> @@ -403,20 +425,36 @@ static int stm32_counter_read_raw(struct iio_dev *indio_dev,
+>>   {
+>>   	struct stm32_timer_trigger *priv = iio_priv(indio_dev);
+>>   	u32 dat;
+>> +	int ret;
+>>   
+>>   	switch (mask) {
+>>   	case IIO_CHAN_INFO_RAW:
+>> -		regmap_read(priv->regmap, TIM_CNT, &dat);
+>> +		ret = regmap_read(priv->regmap, TIM_CNT, &dat);
+>> +		if (ret) {
+>> +			dev_err(priv->dev, "fail to read TIM_CNT.\n");
+>> +			return ret;
+>> +		}
+>> +
+>>   		*val = dat;
+>>   		return IIO_VAL_INT;
+>>   
+>>   	case IIO_CHAN_INFO_ENABLE:
+>> -		regmap_read(priv->regmap, TIM_CR1, &dat);
+>> +		ret = regmap_read(priv->regmap, TIM_CR1, &dat);
+>> +		if (ret) {
+>> +			dev_err(priv->dev, "fail to read TIM_CR1.\n");
+>> +			return ret;
+>> +		}
+>> +
+>>   		*val = (dat & TIM_CR1_CEN) ? 1 : 0;
+>>   		return IIO_VAL_INT;
+>>   
+>>   	case IIO_CHAN_INFO_SCALE:
+>> -		regmap_read(priv->regmap, TIM_SMCR, &dat);
+>> +		ret = regmap_read(priv->regmap, TIM_SMCR, &dat);
+>> +		if (ret) {
+>> +			dev_err(priv->dev, "fail to read TIM_SMCR.\n");
+>> +			return ret;
+>> +		}
+>> +
+>>   		dat &= TIM_SMCR_SMS;
+>>   
+>>   		*val = 1;
+>> @@ -438,6 +476,7 @@ static int stm32_counter_write_raw(struct iio_dev *indio_dev,
+>>   {
+>>   	struct stm32_timer_trigger *priv = iio_priv(indio_dev);
+>>   	u32 dat;
+>> +	int ret;
+>>   
+>>   	switch (mask) {
+>>   	case IIO_CHAN_INFO_RAW:
+>> @@ -449,13 +488,23 @@ static int stm32_counter_write_raw(struct iio_dev *indio_dev,
+>>   
+>>   	case IIO_CHAN_INFO_ENABLE:
+>>   		if (val) {
+>> -			regmap_read(priv->regmap, TIM_CR1, &dat);
+>> +			ret = regmap_read(priv->regmap, TIM_CR1, &dat);
+>> +			if (ret) {
+>> +				dev_err(priv->dev, "fail to read TIM_CR1.\n");
+>> +				return ret;
+>> +			}
+>> +
+>>   			if (!(dat & TIM_CR1_CEN))
+>>   				clk_enable(priv->clk);
+>>   			regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN,
+>>   					   TIM_CR1_CEN);
+>>   		} else {
+>> -			regmap_read(priv->regmap, TIM_CR1, &dat);
+>> +			ret = regmap_read(priv->regmap, TIM_CR1, &dat);
+>> +			if (ret) {
+>> +				dev_err(priv->dev, "fail to read TIM_CR1.\n");
+>> +				return ret;
+>> +			}
+>> +
+>>   			regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN,
+>>   					   0);
+>>   			if (dat & TIM_CR1_CEN)
+>> @@ -517,8 +566,13 @@ static int stm32_get_trigger_mode(struct iio_dev *indio_dev,
+>>   {
+>>   	struct stm32_timer_trigger *priv = iio_priv(indio_dev);
+>>   	u32 smcr;
+>> +	int ret;
+>>   
+>> -	regmap_read(priv->regmap, TIM_SMCR, &smcr);
+>> +	ret = regmap_read(priv->regmap, TIM_SMCR, &smcr);
+>> +	if (ret) {
+>> +		dev_err(priv->dev, "fail to read TIM_SMCR.\n");
+>> +		return ret;
+>> +	}
+>>   
+>>   	return (smcr & TIM_SMCR_SMS) == TIM_SMCR_SMS ? 0 : -EINVAL;
+>>   }
+>> @@ -557,6 +611,7 @@ static int stm32_set_enable_mode(struct iio_dev *indio_dev,
+>>   	struct stm32_timer_trigger *priv = iio_priv(indio_dev);
+>>   	int sms = stm32_enable_mode2sms(mode);
+>>   	u32 val;
+>> +	int ret;
+>>   
+>>   	if (sms < 0)
+>>   		return sms;
+>> @@ -565,7 +620,12 @@ static int stm32_set_enable_mode(struct iio_dev *indio_dev,
+>>   	 * enable counter clock, so it can use it. Keeps it in sync with CEN.
+>>   	 */
+>>   	if (sms == 6) {
+>> -		regmap_read(priv->regmap, TIM_CR1, &val);
+>> +		ret = regmap_read(priv->regmap, TIM_CR1, &val);
+>> +		if (ret) {
+>> +			dev_err(priv->dev, "fail to read TIM_CR1.\n");
+>> +			return ret;
+>> +		}
+>> +
+>>   		if (!(val & TIM_CR1_CEN))
+>>   			clk_enable(priv->clk);
+>>   	}
+>> @@ -594,8 +654,14 @@ static int stm32_get_enable_mode(struct iio_dev *indio_dev,
+>>   {
+>>   	struct stm32_timer_trigger *priv = iio_priv(indio_dev);
+>>   	u32 smcr;
+>> +	int ret;
+>> +
+>> +	ret = regmap_read(priv->regmap, TIM_SMCR, &smcr);
+>> +	if (ret) {
+>> +		dev_err(priv->dev, "fail to read TIM_SMCR.\n");
+>> +		return ret;
+>> +	}
+>>   
+>> -	regmap_read(priv->regmap, TIM_SMCR, &smcr);
+>>   	smcr &= TIM_SMCR_SMS;
+>>   
+>>   	return stm32_sms2enable_mode(smcr);
+>> @@ -706,13 +772,19 @@ EXPORT_SYMBOL(is_stm32_timer_trigger);
+>>   static void stm32_timer_detect_trgo2(struct stm32_timer_trigger *priv)
+>>   {
+>>   	u32 val;
+>> +	int ret;
+>>   
+>>   	/*
+>>   	 * Master mode selection 2 bits can only be written and read back when
+>>   	 * timer supports it.
+>>   	 */
+>>   	regmap_update_bits(priv->regmap, TIM_CR2, TIM_CR2_MMS2, TIM_CR2_MMS2);
+>> -	regmap_read(priv->regmap, TIM_CR2, &val);
+>> +	ret = regmap_read(priv->regmap, TIM_CR2, &val);
+>> +	if (ret) {
+>> +		dev_err(priv->dev, "fail to read TIM_CR2.\n");
+>> +		return;
+>> +	}
+>> +
+>>   	regmap_update_bits(priv->regmap, TIM_CR2, TIM_CR2_MMS2, 0);
+>>   	priv->has_trgo2 = !!val;
+>>   }
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
