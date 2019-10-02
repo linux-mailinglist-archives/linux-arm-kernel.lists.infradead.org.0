@@ -2,61 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A69BC4701
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 07:32:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D3E0C4729
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 07:47:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=QEaYPlsxxizLVnigulIo0M2aJD43IM3dvN+ydpUMsrY=; b=UJ2ZO2hNww6HotPPmUmha1RAL
-	WLHfxT+TWx+JDj0CZ2tQLZRqUFdZypkkJS18c6b9JEntQxULtAfLWaPukm9jRhlrnrTWuV3FbNOCl
-	mImDgXssQ4sSQgwyZHwrAwPyLOkRfKfA0BH4C/ahCs/EKTcKxgjAanMD+s51gH3Itna85uDQmj2rd
-	t1LLiAVGczvpqgQGpGar5/ljxo62acOeunlBB2bf2u4Yc1HVPLGWNVZ7sY7Po/isAGE5uuihrVuIa
-	qbTnXLwcLZLWu9mQubY3vIrrc6xzyp/Grgmri41jtpehWbFx7if1rkfwM4aVzgYyv9lTeOW6QO4Lr
-	KJHhLiYCQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=doorMg3z/BFLmyZHF92qrcaDLSJuY5v3DmWgJNT6VPU=; b=qMy+j+FICq8vQV
+	w0nolEW+Ews4qSBrQlquOFguYeDW/7piYF1rLcX00XbMg5AFw/NLPPHbOVYfKn5pUkxjut+/RvEq6
+	WIO6XJ/EkMMZqjpMiz8i9fVx46L+7tEYeEBDlhIFjhth4+6SDBcWCMpeFM7pI7hi6eE4XINIgiguh
+	OJHW0/S0zA1n0Cqm1GMDewJtBs5C3EiVI6kC7qY1/uB8yytOr3bT+m/02h8ZFg1mCGRXCwmWQaqe7
+	t64hI/hdz6unI8RpvAdDqij8khiHWHRY9esYP7AqSOFAf7tLAdSq9oIS+RpuHaOFiENwi7Npa4F/m
+	fhSDKsCF1Yn9oeczy/FQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFXFw-00026z-Mu; Wed, 02 Oct 2019 05:32:56 +0000
-Received: from uho.ysoft.cz ([81.19.3.130])
+	id 1iFXUD-0006km-QG; Wed, 02 Oct 2019 05:47:41 +0000
+Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::11])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFXFp-00025G-3V
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 05:32:50 +0000
-Received: from [10.1.8.111] (unknown [10.1.8.111])
- by uho.ysoft.cz (Postfix) with ESMTP id 5B75DA211B;
- Wed,  2 Oct 2019 07:32:42 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ysoft.com;
- s=20160406-ysoft-com; t=1569994362;
- bh=5AcZEITR50EqYwQF+Thz3U0N2SH4PgzQ+ow4rmj91Wg=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=lsWbrPuLkR+N3vdIIaYAxfZVN32AeZZgTP8UbRtHXtoBUrJgnFuYMEy2S9OUTso8T
- 1z4bXsDQH6i4vGDDSf7ezji3fpLHRJtCjO4fOXpEYRDdFnBj6poSxwYp8A+Tws6ygP
- hQoYmypLsF0vX47CW19QH+//T2ypw15vsac5cLuo=
-Subject: Re: [PATCH] input: touchscreen: imx6ul_tsc: Use 'dev' instead of
- dereferencing it repeatedly
-To: Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Anson Huang <Anson.Huang@nxp.com>
-References: <1569315731-2387-1-git-send-email-Anson.Huang@nxp.com>
- <20190930230806.GX237523@dtor-ws>
-From: =?UTF-8?B?TWljaGFsIFZva8OhxI0=?= <michal.vokac@ysoft.com>
-Message-ID: <c0773e65-fc14-8cad-06a3-861bd264a44c@ysoft.com>
-Date: Wed, 2 Oct 2019 07:32:42 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20190930230806.GX237523@dtor-ws>
-Content-Language: en-US
+ id 1iFXTw-0006aj-Ro
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 05:47:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1569995229;
+ s=strato-dkim-0002; d=goldelico.com;
+ h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=m4MmnejFIePSpi3WGLlVz9LTEEmUQI0FZsmc67nbE3A=;
+ b=KtjeHjaM1DrucsOp6Cyeyea9t7cYmjpuH6COGh2yYA4fvJymMbGhnIbOFvM5c9bzdf
+ ykVQsWZUMusG6YuP2vOIGhd9Q8WG0IWEg0gmZFJB2YcMm1gXZBYOEawAKkP9rLSPVFuc
+ 5bb2bdYsS7Yypb9lJ/XITKDkkf0/nUOO0TAjv2DVFlyMulpXMd7hLH7M8pdI82yIf9xs
+ FWaha3Jkxi5mHI8Sm23bTt423m5Vjaru/hruSGRmEYLBSqksF7HR+rFDFAt9KFXML8wz
+ ImPE1ngORbE6cNs3wRnYK8bx43eU7kyddpCgfJJjLDgWi77nxrlOq8V15A8b5eGIrNpI
+ bGig==
+X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj4Qpw9iZeHmMgw47pPLg="
+X-RZG-CLASS-ID: mo00
+Received: from imac.fritz.box by smtp.strato.de (RZmta 44.28.0 DYNA|AUTH)
+ with ESMTPSA id v00409v925l7Zg4
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve secp521r1 with 521 ECDH
+ bits, eq. 15360 bits RSA)) (Client did not present a certificate);
+ Wed, 2 Oct 2019 07:47:07 +0200 (CEST)
+Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
+Subject: Re: [PATCH v3 0/8] OMAP3: convert opp-v1 to opp-v2 and read speed
+ binned / 720MHz grade bits
+From: "H. Nikolaus Schaller" <hns@goldelico.com>
+In-Reply-To: <DAF6ACB4-AD7E-4528-9F4B-C54104B5E260@goldelico.com>
+Date: Wed, 2 Oct 2019 07:47:07 +0200
+Message-Id: <8C3DD775-07DF-45E0-8E04-2B050CEB5800@goldelico.com>
+References: <cover.1568224032.git.hns@goldelico.com>
+ <20190916162816.GF52127@atomide.com>
+ <DAF6ACB4-AD7E-4528-9F4B-C54104B5E260@goldelico.com>
+To: Tony Lindgren <tony@atomide.com>
+X-Mailer: Apple Mail (2.3124)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_223249_300216_3A82EB7B 
-X-CRM114-Status: GOOD (  10.72  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191001_224725_488575_AF0AF615 
+X-CRM114-Status: UNSURE (   9.21  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a01:238:20a:202:5301:0:0:11 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -75,32 +85,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: shawnguo@kernel.org, s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
- swboyd@chromium.org, Linux-imx@nxp.com, kernel@pengutronix.de,
- linux-input@vger.kernel.org, festevam@gmail.com, mojha@codeaurora.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ letux-kernel@openphoenux.org, linux-pm@vger.kernel.org,
+ Enric Balletbo i Serra <eballetbo@gmail.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>,
+ =?utf-8?Q?Andr=C3=A9_Roth?= <neolynx@gmail.com>,
+ =?utf-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
+ kernel@pyra-handheld.com, Teresa Remmet <t.remmet@phytec.de>,
+ Javier Martinez Canillas <javier@dowhile0.org>, linux-omap@vger.kernel.org,
+ Adam Ford <aford173@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Roger Quadros <rogerq@ti.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 01. 10. 19 1:08, Dmitry Torokhov wrote:
-> On Tue, Sep 24, 2019 at 05:02:11PM +0800, Anson Huang wrote:
->> Add helper variable dev = &pdev->dev to simply the code.
+Hi Tony,
+
+> Am 17.09.2019 um 16:35 schrieb H. Nikolaus Schaller <hns@goldelico.com>:
 > 
-> Do we get any code savings from this?
+> Hi Tony,
+> 
+>> Am 16.09.2019 um 18:28 schrieb Tony Lindgren <tony@atomide.com>:
+>> 
+>> * H. Nikolaus Schaller <hns@goldelico.com> [190911 17:48]:
+>>> CHANGES V3:
+>>> * make omap36xx control the abb-ldo and properly switch mode
+>>> (suggested by Adam Ford <aford173@gmail.com>)
+>>> * add a note about enabling the turbo-mode OPPs
+>> 
+>> Looks good to me, when applying, please provide a
+>> minimal immutable branch maybe against v5.3 or v5.4-rc1,
+>> that I can also merge in if needed for the dts changes.
+> 
+> Should I resend a v4 with your Acked-By added?
+> 
+> BR and thanks,
+> Nikolaus
+> 
 
-I noticed Anson submitted similar patches into various other subsystems.
-Here [1] is a very detailed response from David Laight shedding some light
-on this topic.
+what is the procedure to get this and Adam's thermal setup into linux-next?
+BR and thanks,
+Nikolaus
 
-[1] https://lkml.org/lkml/2019/9/24/151
-
->>
->> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
->> ---
->>   drivers/input/touchscreen/imx6ul_tsc.c | 37 +++++++++++++++++-----------------
->>   1 file changed, 19 insertions(+), 18 deletions(-)
 
 
 
