@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53066C8B92
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 16:44:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C15C9C8B96
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 16:44:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JU+HAoQ0q4k414lDDm0NDIqbz4hF1ipOsKOceBqMqRQ=; b=YfBI2hRyE51nGe
-	eCHlaGR2H7zPyVuzeXTD9O+O81DJH5LCVMYE6ixa97t1SGwm57txZV976be/GxCSLs4AO9awzZmse
-	VU0q2kJNb9KcnMQpXVLcArpivQ78US74xfvNNAwhOIpIYWWUAxoSPI2AeISyXxPBoJrhD7Kye4G7H
-	udIPLMm8JqhryUix8P2b3Q7DCISdv4Vfx/m2OygfYDTGX4GU1m1/ChiwLQ7nHH8i+yArEqDq7GB5L
-	HMbNW+pofczgqUM0C3+l5JCKJRwOYi4uMdr0CBYcOCt0KS7Cmmj7NiX8WmO+mEuF7kbWp2sOaQTXs
-	F9KQ09ncrIxseljD/XzQ==;
+	List-Owner; bh=r7YxTPm8J5/2SR080Gxj/kc6aeoQ+XhmN8LLCp/S6g8=; b=hGAhXO1lQfwMwS
+	fHkIde1K+57e758IZKPm5/ltvzog2XYHcfiJcm9YIVFYHxusx1lyadSobOVRuZRUk3/O34bEZkfgk
+	f2j24EoyfsIfMt0VMVu2zDeJAehM0I7IlfnhNGRFaBJwu4VTYKp+MH6q/KOd4GB1JXg8XKs3BM5gg
+	XFU3GbRdueFPyCjqCSWtqXmE2h61818yIdNxlpjL2uQDOsXbqX248wcQ4YRa2bzpuKaCXdZwj9qXy
+	G/DRQAkCjySvTZMj4rSSbhIvrcmImRoxcMduG6Kd2wMIuHHowkDT65SSplKeMCgmLYxniUN+CNhxA
+	ob/Hx9HxfmhIZYu7VyQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFfrV-00044R-Fa; Wed, 02 Oct 2019 14:44:17 +0000
+	id 1iFfs1-0004fq-LB; Wed, 02 Oct 2019 14:44:49 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFfpX-00039c-HC
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 14:42:17 +0000
+ id 1iFfpY-00037k-PT
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 14:42:19 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2DA671684;
- Wed,  2 Oct 2019 07:42:15 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9B31C28;
+ Wed,  2 Oct 2019 07:42:16 -0700 (PDT)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E8A5F3F706;
- Wed,  2 Oct 2019 07:42:13 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 629653F706;
+ Wed,  2 Oct 2019 07:42:15 -0700 (PDT)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v4 5/6] arm64: Remove vdso_datapage.h
-Date: Wed,  2 Oct 2019 15:41:55 +0100
-Message-Id: <20191002144156.2174-6-vincenzo.frascino@arm.com>
+Subject: [PATCH v4 6/6] lib: vdso: Remove CROSS_COMPILE_COMPAT_VDSO
+Date: Wed,  2 Oct 2019 15:41:56 +0100
+Message-Id: <20191002144156.2174-7-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191002144156.2174-1-vincenzo.frascino@arm.com>
 References: <20191002144156.2174-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_074215_637591_15BF0E42 
-X-CRM114-Status: UNSURE (   9.94  )
+X-CRM114-CacheID: sfid-20191002_074216_967391_400B5C5C 
+X-CRM114-Status: UNSURE (   9.55  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -70,62 +70,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-vdso_datapage.h  was originally removed with the introduction of the
-support for Unified vDSOs in arm64 and replaced with the C
-implementation.
+arm64 was the last architecture using CROSS_COMPILE_COMPAT_VDSO config
+option. With this patch series the dependency in the architecture has
+been removed.
 
-The file seems again present in the repository due to a side effect of
-rebase.
+Remove CROSS_COMPILE_COMPAT_VDSO from the Unified vDSO library code.
 
-Remove the file again.
-
-Cc: Will Deacon <will@kernel.org>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: Andy Lutomirski <luto@kernel.org>
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- arch/arm64/include/asm/vdso_datapage.h | 33 --------------------------
- 1 file changed, 33 deletions(-)
- delete mode 100644 arch/arm64/include/asm/vdso_datapage.h
+ lib/vdso/Kconfig | 9 ---------
+ 1 file changed, 9 deletions(-)
 
-diff --git a/arch/arm64/include/asm/vdso_datapage.h b/arch/arm64/include/asm/vdso_datapage.h
-deleted file mode 100644
-index 1f38bf330a6e..000000000000
---- a/arch/arm64/include/asm/vdso_datapage.h
-+++ /dev/null
-@@ -1,33 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0-only */
--/*
-- * Copyright (C) 2012 ARM Limited
-- */
--#ifndef __ASM_VDSO_DATAPAGE_H
--#define __ASM_VDSO_DATAPAGE_H
+diff --git a/lib/vdso/Kconfig b/lib/vdso/Kconfig
+index cc00364bd2c2..9fe698ff62ec 100644
+--- a/lib/vdso/Kconfig
++++ b/lib/vdso/Kconfig
+@@ -24,13 +24,4 @@ config GENERIC_COMPAT_VDSO
+ 	help
+ 	  This config option enables the compat VDSO layer.
+ 
+-config CROSS_COMPILE_COMPAT_VDSO
+-	string "32 bit Toolchain prefix for compat vDSO"
+-	default ""
+-	depends on GENERIC_COMPAT_VDSO
+-	help
+-	  Defines the cross-compiler prefix for compiling compat vDSO.
+-	  If a 64 bit compiler (i.e. x86_64) can compile the VDSO for
+-	  32 bit, it does not need to define this parameter.
 -
--#ifndef __ASSEMBLY__
--
--struct vdso_data {
--	__u64 cs_cycle_last;	/* Timebase at clocksource init */
--	__u64 raw_time_sec;	/* Raw time */
--	__u64 raw_time_nsec;
--	__u64 xtime_clock_sec;	/* Kernel time */
--	__u64 xtime_clock_nsec;
--	__u64 xtime_coarse_sec;	/* Coarse time */
--	__u64 xtime_coarse_nsec;
--	__u64 wtm_clock_sec;	/* Wall to monotonic time */
--	__u64 wtm_clock_nsec;
--	__u32 tb_seq_count;	/* Timebase sequence counter */
--	/* cs_* members must be adjacent and in this order (ldp accesses) */
--	__u32 cs_mono_mult;	/* NTP-adjusted clocksource multiplier */
--	__u32 cs_shift;		/* Clocksource shift (mono = raw) */
--	__u32 cs_raw_mult;	/* Raw clocksource multiplier */
--	__u32 tz_minuteswest;	/* Whacky timezone stuff */
--	__u32 tz_dsttime;
--	__u32 use_syscall;
--	__u32 hrtimer_res;
--};
--
--#endif /* !__ASSEMBLY__ */
--
--#endif /* __ASM_VDSO_DATAPAGE_H */
+ endif
 -- 
 2.23.0
 
