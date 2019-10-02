@@ -2,63 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A59F3C88E5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 14:41:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F18B8C88E6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 14:41:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ACNjqbF+ucucJiPP0a8vkrtYntpttmzLRrie5jO+QKY=; b=AmLYKeTX7ajEWC
-	JOQzgOZSlNMiy92EaOjS7roaILa8OY+jNwXCX2X+59QxUhkoEFjCZ1f3lKDfYRF+Wj6pdl+56Nnr6
-	R3zMvzdlk0/zvfIc69BpjDFA65JXVQ7dnVesoFNzvNMXHRd9UTNHJG2qeQ+54QYCegZqkQVKqOZvB
-	lhejwoNUGEcaUz5T1GzG4ovwS6NNvSACo2nXtQhH8ncSoOsMJ1UWZH1wMAPGUTl/Bj0sUxaWYYpEo
-	BqojqYi7y2lVF4j0OxbsV6DExq5OZsxQWvgDfMKsfEjZ+DYlM5znJQUQUnpSPqzXEQedVVzb0+CFU
-	1bAvK1xZpq9RJ27p7UyA==;
+	List-Owner; bh=HykX/Y5QE8ALQtoNBsT9pezuWcdPsWS/IMa6xTwovus=; b=O09fgROplgNnnA
+	PQbQ4VPf3Qrdt8FxfxISpqmBgvdEZUW2FKl6b0rhLzL9rdblZ4BT+fjCGECcbmewZ5Kyl+pAsL5m7
+	CJYajyvYCx0cgAScLXKDBfwhM7+/1ZKkpzVYshw3IMfZgAX8KaG952LhCqie1vGg1XYq05a3cxQHb
+	t0zOiH0qZK5rSU0mOG0M9EpPm378kiqPdYCPAMUXvCqUaYAQ5sOeG5ev1fTbw/mZUq+9Df6VN1/xO
+	pZ1tOOCERqHQzgN3DUke9/XDrf8Xhj/TmaLZ5lMnrQZ7G5WJPfKdKwM536ApmlJqXPXfSBVesa2Qh
+	Zivaj3TynxKAasn/B+6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFdwG-0006kP-Il; Wed, 02 Oct 2019 12:41:04 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iFdwP-0006u5-Gb; Wed, 02 Oct 2019 12:41:13 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFdw5-0006ja-CC; Wed, 02 Oct 2019 12:40:54 +0000
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why)
- by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
- (Exim 4.80) (envelope-from <maz@kernel.org>)
- id 1iFdvv-0007Rb-6t; Wed, 02 Oct 2019 14:40:43 +0200
-Date: Wed, 2 Oct 2019 13:40:41 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [PATCH 5/7] irqchip/irq-bcm2836: Add support for the 7211
- interrupt controller
-Message-ID: <20191002134041.5a181d96@why>
-In-Reply-To: <20191001224842.9382-6-f.fainelli@gmail.com>
-References: <20191001224842.9382-1-f.fainelli@gmail.com>
- <20191001224842.9382-6-f.fainelli@gmail.com>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1iFdw9-0006jZ-4J
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 12:40:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=FqquIHC5oxBy8CfQu3Yph9eJsUVp9ZgWjyWHgpTSvkU=; b=JPJGdfbHXvOiVSxMPvS6nxMLB
+ Wm6y7QlzB1iqVkXS0nqPlswbkaPjuAcZHOVasrZff8Z9COb4i53czP8CqWb/7uzGyt83bDGymojER
+ Dm7l8DOwlJ4Pu8RYOOVMUh4B2zUMAyClkZsJsK4DFUTu9EYgYFOd8VXRo0OF5ChUy4WQTItrnNNfh
+ /GrijJ1hKrd3B+7CJvM67b8JAIFIZkrBT2OOwId8GWq6E3Xf2Rjy5R+2C2hetdWNkoOvM5HIxdrA/
+ CMDKNmG/kWrgBrrnaxl25jGOsISEPhGkrduob+M0pfdDYvPURjy0H0CcGkylR06lXgW7q5tgirT4J
+ r+vQFBsRw==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:46680)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iFdvx-0000FD-EC; Wed, 02 Oct 2019 13:40:45 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iFdvv-0000fy-Hs; Wed, 02 Oct 2019 13:40:43 +0100
+Date: Wed, 2 Oct 2019 13:40:43 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Dinh Nguyen <dinguyen@kernel.org>
+Subject: Re: [PATCHv2] ARM: drivers/amba: release the resource to allow for
+ deferred probe
+Message-ID: <20191002124043.GR25745@shell.armlinux.org.uk>
+References: <20191002123349.23771-1-dinguyen@kernel.org>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: f.fainelli@gmail.com, linux-kernel@vger.kernel.org,
- tglx@linutronix.de, jason@lakedaemon.net, robh+dt@kernel.org,
- mark.rutland@arm.com, rjui@broadcom.com, sbranden@broadcom.com,
- bcm-kernel-feedback-list@broadcom.com, eric@anholt.net, wahrenst@gmx.net,
- devicetree@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <20191002123349.23771-1-dinguyen@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_054053_563859_AD4C88B8 
-X-CRM114-Status: GOOD (  21.69  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191002_054057_412377_FB2DE0C4 
+X-CRM114-Status: GOOD (  18.69  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,114 +87,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE
- TREE BINDINGS" <devicetree@vger.kernel.org>,
- Jason Cooper <jason@lakedaemon.net>, Scott Branden <sbranden@broadcom.com>,
- Ray Jui <rjui@broadcom.com>, linux-kernel@vger.kernel.org,
- Eric Anholt <eric@anholt.net>, Rob Herring <robh+dt@kernel.org>,
- bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
- Thomas Gleixner <tglx@linutronix.de>, "moderated list:BROADCOM BCM2835 ARM
- ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>, "moderated
- list:BROADCOM BCM2835 ARM ARCHITECTURE" <linux-rpi-kernel@lists.infradead.org>
+Cc: p.zabel@pengutronix.de, linus.walleij@linaro.org,
+ thor.thayer@linux.intel.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue,  1 Oct 2019 15:48:40 -0700
-Florian Fainelli <f.fainelli@gmail.com> wrote:
-
-> The root interrupt controller on 7211 is about identical to the one
-> existing on BCM2836, except that the SMP cross call are done through the
-> standard ARM GIC-400 interrupt controller. This interrupt controller is
-> used for side band wake-up signals though.
-
-I don't fully grasp how this thing works.
-
-If the 7211 interrupt controller is root and the GIC is used for SGIs,
-this means that the GIC outputs (IRQ/FIQ/VIRQ/VFIQ, times eight) are
-connected to individual inputs to the 7211 controller. Seems totally
-braindead, and unexpectedly so.
-
-If the GIC is root and the 7211 outputs into the GIC all of its
-interrupts as a secondary irqchip, it would at least match an existing
-(and pretty bad) pattern.
-
-So which one of the two is it?
-
+On Wed, Oct 02, 2019 at 07:33:49AM -0500, Dinh Nguyen wrote:
+> With commit "79bdcb202a35 ARM: 8906/1: drivers/amba: add reset control to
+> amba bus probe", the amba bus driver needs to be deferred probe because the
+> reset driver is probed later. However with a deferred probe, the call to
+> request_resource() in the driver returns -EBUSY. The reason is the driver
+> has not released the resource from the previous probe attempt.
 > 
-> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+> This patch fixes how we handle the condition of EPROBE_DEFER that is returned
+> from getting the reset controls. For this condition, the patch will jump
+> to err_release, which will release the resource.
+> 
+> Fixes: 79bdcb202a35 ("ARM: 8906/1: drivers/amba: add reset control to
+> amba bus probe")
+> Signed-off-by: Dinh Nguyen <dinguyen@kernel.org>
 > ---
->  drivers/irqchip/irq-bcm2836.c | 25 ++++++++++++++++++++++---
->  1 file changed, 22 insertions(+), 3 deletions(-)
+> v2: release the resource when of_reset_control_array_get_optional_shared()
+>     returns EPROBE_DEFER
+> ---
+>  drivers/amba/bus.c | 7 +++++--
+>  1 file changed, 5 insertions(+), 2 deletions(-)
 > 
-> diff --git a/drivers/irqchip/irq-bcm2836.c b/drivers/irqchip/irq-bcm2836.c
-> index 2038693f074c..77fa395c8f6b 100644
-> --- a/drivers/irqchip/irq-bcm2836.c
-> +++ b/drivers/irqchip/irq-bcm2836.c
-> @@ -112,6 +112,8 @@ static int bcm2836_map(struct irq_domain *d, unsigned int irq,
->  		return -EINVAL;
->  	}
->  
-> +	chip->flags |= IRQCHIP_MASK_ON_SUSPEND | IRQCHIP_SKIP_SET_WAKE;
-> +
->  	irq_set_percpu_devid(irq);
->  	irq_domain_set_info(d, irq, hw, chip, d->host_data,
->  			    handle_percpu_devid_irq, NULL, NULL);
-> @@ -216,8 +218,9 @@ static void bcm2835_init_local_timer_frequency(void)
->  	writel(0x80000000, intc.base + LOCAL_PRESCALER);
->  }
->  
-> -static int __init bcm2836_arm_irqchip_l1_intc_of_init(struct device_node *node,
-> -						      struct device_node *parent)
-> +static int __init arm_irqchip_l1_intc_of_init_smp(struct device_node *node,
-> +						  struct device_node *parent,
-> +						  bool smp_init)
->  {
->  	intc.base = of_iomap(node, 0);
->  	if (!intc.base) {
-> @@ -232,11 +235,27 @@ static int __init bcm2836_arm_irqchip_l1_intc_of_init(struct device_node *node,
->  	if (!intc.domain)
->  		panic("%pOF: unable to create IRQ domain\n", node);
->  
-> -	bcm2836_arm_irqchip_smp_init();
-> +	if (smp_init)
-> +		bcm2836_arm_irqchip_smp_init();
+> diff --git a/drivers/amba/bus.c b/drivers/amba/bus.c
+> index f39f075abff9..1109437815eb 100644
+> --- a/drivers/amba/bus.c
+> +++ b/drivers/amba/bus.c
+> @@ -409,9 +409,12 @@ static int amba_device_try_add(struct amba_device *dev, struct resource *parent)
+>  		 */
+>  		rstc = of_reset_control_array_get_optional_shared(dev->dev.of_node);
+>  		if (IS_ERR(rstc)) {
+> -			if (PTR_ERR(rstc) != -EPROBE_DEFER)
+> +			ret = PTR_ERR(rstc);
+> +			if (ret == -EPROBE_DEFER)
+> +				goto err_release;
+> +			else
+>  				dev_err(&dev->dev, "Can't get amba reset!\n");
+> -			return PTR_ERR(rstc);
+> +			return ret;
 
-Instead of the additional parameter and this check, why don't you just
-move the smp_init() call to bcm2836_arm_irqchip_l1_intc_of_init()
-instead?
+Still a negative.
 
->  
->  	set_handle_irq(bcm2836_arm_irqchip_handle_irq);
-> +
->  	return 0;
->  }
->  
-> +static int __init bcm2836_arm_irqchip_l1_intc_of_init(struct device_node *node,
-> +						      struct device_node *parent)
-> +{
-> +	return arm_irqchip_l1_intc_of_init_smp(node, parent, true);
-> +}
-> +
-> +static int __init bcm7211_arm_irqchip_l1_intc_of_init(struct device_node *node,
-> +						      struct device_node *parent)
-> +{
-> +	return arm_irqchip_l1_intc_of_init_smp(node, parent, false);
-> +}
-> +
->  IRQCHIP_DECLARE(bcm2836_arm_irqchip_l1_intc, "brcm,bcm2836-l1-intc",
->  		bcm2836_arm_irqchip_l1_intc_of_init);
-> +IRQCHIP_DECLARE(bcm7211_arm_irqchip_l1_intc, "brcm,bcm7211-l1-intc",
-> +		bcm7211_arm_irqchip_l1_intc_of_init);
+Remember in the comments to the previous patch I talked about ioremap().
 
+Please read the code that you are modifying and carefully consider what
+needs to happen at this site to properly clean up on failure.
 
-Thanks,
-
-	M.
 -- 
-Without deviation from the norm, progress is not possible.
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
