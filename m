@@ -2,82 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7BB95C9521
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 01:45:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 610D5C952C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 01:47:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IZHQZSeCJ0764jVqqspC7DzXk1/OhuEgmeEtq5bhcMU=; b=O+GO5cpxQUU8FU
-	M1XXVdY9PIP+XddEj9i30T6cBfr3PMXA6CMBvNL6PIjQL4DY3LAYJX3/M+wLpVUdnpnhoe1ihuzNH
-	JGr+q/Rd+5T41JCkPsfzVqsKGVt05jgdsF4igXfOO0DhnQKMgcf1gbmSRWDbd7kWJOboLfmwjqRKf
-	xwswFR3tYhmcRv2eSk3PSww3n8D2QcNn8BZwIA8750oPFE6AIAXf71s2i5z4A478XjReyygOwf/Nb
-	7r59l2+HrWy57+lXFjcRm/vwoIGiWs8vm4pjKzUIhgomBYQ9Q9XEY3C4g7rrnj7Hz0fAaYr4xdDwK
-	olChPkkWJL4o1oRAdwXQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=9pz2RhwKCC3VBTithIYCiS4hWzDPFDN7ikc6WHUQjaM=; b=rQOIuDr9YlfqfD
+	U0iowW0BIPFSchBM0MNoLjsxqg55Sixr+HIQ6fuyU6kasUmOws0R9/UlVU1fItyL8sKNY5ZO5qstz
+	/AFbblYHOwyo8DONhG9+Zr9+gj1O2B/2ah/xeTG4Bpgm+e4ZkKY1wjQdXQr2GcDaDjJvfqrRR7hhq
+	cR1MzuOKPwAwMPrerud3GS+WS18dSm3bVVBsoRdBf7AE4rQ3yz/7MBiX+m06bxcRAlFWUF9KAzeoV
+	m1AJYZXTZRKp36A0NNlvsqNlpCrs7/whgON9KondIkDv1qcVL5olLVw5pOfeWFtG04uSJ9tNffIcA
+	sCqq4LdV3oMUF44oxKJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFoIe-0007HV-Qc; Wed, 02 Oct 2019 23:44:52 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iFoLV-0000Pu-Bw; Wed, 02 Oct 2019 23:47:49 +0000
+Received: from mail-eopbgr70075.outbound.protection.outlook.com ([40.107.7.75]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFoIR-0007Fp-GL
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 23:44:41 +0000
-Received: by mail-pg1-x541.google.com with SMTP id d26so567973pgl.7
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 02 Oct 2019 16:44:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=9o+aVMafZNh1ZBc9I6ckxlik1QiG/UvW5Wt+nH2rOMs=;
- b=dAaTHI5NhKSOqh6X6vkUfZ7fxdK8NudPU+TFuLPA2/jL2ZjXBajNS/ZZXlY0LtMGim
- 5jl36gvqdRy5B9s4xlzgNLd4mMLzy6DbGCqCMtrfoByESBlb9hYL3ufD/mroNDBvKsP6
- U54jM3ho8xbwaGpnQ3U7OYJIiZ3ZqPnpCsQQw=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=9o+aVMafZNh1ZBc9I6ckxlik1QiG/UvW5Wt+nH2rOMs=;
- b=YB5RK5HuMi9CUlB/npJQ5ht4h2BAD2zPAK77cQiC0H44dN5V126il2C57S/VOJ6ZSe
- xm3GDORdYGJsmR3hR0V1Ca+BW+6JO17XutiG3BXyXLCw31TYzdkRFQ+h9ha3Kxtvf0fr
- kx5DqMlkm+lJY+9ASvyro1GKmmvO9mGJfPxXMvFMDAGbgvAJUDs0Sorwz7L0k758iEOm
- UsrqS9iH2pUS3hXfJ7bmYWHcEskVtmwjPMWD6JrErV5n38YpKFNtwDOCWz9Ncm8QtSLq
- HTlfuZnE5RViCRHobcGsR0VAsFxkT0LafZKuEt7kTEDfi5mZuDOYm6jCgb3z6yuBa1KR
- X8Gw==
-X-Gm-Message-State: APjAAAVInGLHyA2M8i0g0IS/NtG/r9CsBXLZ2PTBdv7E23iWagWvsRlK
- BptTJbNaK4er+GmDZi3nO63ZcCaByYk=
-X-Google-Smtp-Source: APXvYqx7tAiFYBlhceMShOLU4glxP11l0ZXEXx/4CKfroBA38HHANDXcLnns13A63AD43NhZQaLhQA==
-X-Received: by 2002:a62:b40a:: with SMTP id h10mr7621495pfn.88.1570059878236; 
- Wed, 02 Oct 2019 16:44:38 -0700 (PDT)
-Received: from localhost ([2620:15c:202:1:4fff:7a6b:a335:8fde])
- by smtp.gmail.com with ESMTPSA id b22sm552757pfo.85.2019.10.02.16.44.37
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 02 Oct 2019 16:44:37 -0700 (PDT)
-Date: Wed, 2 Oct 2019 16:44:36 -0700
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Doug Anderson <dianders@chromium.org>
-Subject: Re: [PATCH] ARM: dts: rockchip: Use interpolated brightness tables
- for veyron
-Message-ID: <20191002234436.GI87296@google.com>
-References: <20191001160735.1.Ic9fd698810ea569c465350154da40b85d24f805b@changeid>
- <CAD=FV=UnZtGN142yUu-NzVG00P=1MZ-X3aY+cjrMRCnL2D8xFg@mail.gmail.com>
+ id 1iFoLN-0000PQ-LX
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 23:47:43 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Fs2yIYfyIs+a7pN6kH4zeKNlGogsZlELGb4ID+SL6Zl5prc+Yhfj87T13TuzPF0DCLZFFT+aeuZlnndPq52pqvrfiAkzUZND+Xewb1KadhNhocso3HEFa0bwuNdyQUbrcMrTrmimhGiB9w35L4aIo51+PA5rfSGK4WkN5wLS0wBABk98WB3sZCxeOlYAoRX+JZW+1g76Zp0MnGqD1Xrl0BMUVeRI5oRY4mTPkfDfXKWxGR2wyVWV9s/B7bG8wX1suBqnlhGfn2DHEU+N0ka2bF4jCDoC/IiD0FPuV3FD2sQs3iIEZ6J1mf/fmJ+L2xmEMxMf9aOX4u6W1SFDYc+lyQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Nl8MMl01vTJ8vUhVXOuyXvN5C+WqYBQhPCPEU62qZZQ=;
+ b=mKhzKM7wA8ru1ntWZG/MhmWdmDViY6nQ4GykFubosw6BNsBXLG/baOgbZQ6FZzNiUWS5d3LbwJdGxDiqDvfekR8NxJdYXtCBDWgu+6qx/30q0YJk2PLM2ZuQlaBqoYZkHkqLb+R4fgpHgCQ6HZuvRLBDhsE6RYMruEhn93R0rZ1enWdx+fPlD12k0m5ONKiC7uoITmEEzz8QXq25zZhGr1jajgpRnXs7CHE8q9OV5JipeW73EytxqvP4TPDPYLcf8Wr2RJ4jo//eJkrECgRRX6joPjhEklwFUcxZezs0gkY4xVDkx0E+YgX/cYcAXczyf6ds6/ajlaJjMHZyHO3oog==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Nl8MMl01vTJ8vUhVXOuyXvN5C+WqYBQhPCPEU62qZZQ=;
+ b=FaCWdYlQB9MxCajI6cdWwqLQlZHERxsZvZd/SlDoNl/O4pQ5i2gFRc4DL6Z79aXWMg2d0ThFCq0QeRqWqI5O7Cg1UnuwxILSP9kO7zW19O9s+zVJQqi1b7T7S3jPVXtcPPNa2kOQFlTYpz/8SRTOhyeswXo5ZDkuQIoLSfr//X0=
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
+ VI1PR04MB5247.eurprd04.prod.outlook.com (20.177.51.212) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2305.20; Wed, 2 Oct 2019 23:47:35 +0000
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::2ce6:267:b2a6:9902]) by VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::2ce6:267:b2a6:9902%2]) with mapi id 15.20.2305.023; Wed, 2 Oct 2019
+ 23:47:35 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Matthias Kaehlcke <mka@chromium.org>, Viresh Kumar
+ <viresh.kumar@linaro.org>
+Subject: Re: [PATCH v9 2/8] PM / devfreq: Fix devfreq_notifier_call returning
+ errno
+Thread-Topic: [PATCH v9 2/8] PM / devfreq: Fix devfreq_notifier_call returning
+ errno
+Thread-Index: AQHVeVcive2Iv4wdX0S21lWzbVbDKw==
+Date: Wed, 2 Oct 2019 23:47:35 +0000
+Message-ID: <VI1PR04MB7023EF602656CC360032E720EE9C0@VI1PR04MB7023.eurprd04.prod.outlook.com>
+References: <cover.1570044052.git.leonard.crestez@nxp.com>
+ <10b1e5f93e7594852aa5cbfe1309bf486f70ecbb.1570044052.git.leonard.crestez@nxp.com>
+ <20191002212437.GF87296@google.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [92.121.36.197]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 678f6ee5-eb36-4bdc-8e9f-08d74792e691
+x-ms-office365-filtering-ht: Tenant
+x-ms-traffictypediagnostic: VI1PR04MB5247:|VI1PR04MB5247:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR04MB52474D8DE4F8D6B9B592E8A7EE9C0@VI1PR04MB5247.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4125;
+x-forefront-prvs: 0178184651
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(396003)(346002)(39860400002)(366004)(376002)(52314003)(199004)(189003)(256004)(14444005)(446003)(8936002)(71200400001)(71190400001)(110136005)(81156014)(81166006)(476003)(44832011)(486006)(8676002)(316002)(54906003)(14454004)(33656002)(478600001)(25786009)(2906002)(99286004)(9686003)(6436002)(66066001)(3846002)(229853002)(55016002)(5660300002)(6116002)(74316002)(7416002)(7736002)(305945005)(64756008)(66446008)(4326008)(6246003)(76116006)(66556008)(66476007)(66946007)(91956017)(186003)(26005)(52536014)(53546011)(6506007)(102836004)(7696005)(86362001)(76176011);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5247;
+ H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: i+4bRtJpvx43QPKEqX+2sOQc67+UcaUFX2Xl3yVUWAQbnMYSJpRQZSOx4BS0MvUncSSzLP3p0d7yDoM3e6OO3IehXeZmJ5IE75o9mvm9lGrHpK++f0mVghv2l3kroL6/3315EXI3d0qs5Jy8/pTmw4Y7lX7+88lYHAOUihO2q7wItO3z4amjwzRnq2WgUcNEb/AsIRZdyHvBa3Qp5h7h9worg49gbt5UhPUDDikLFu+JehhXvmwN9y6VQLeEnIW7glqEo1yzwBkxKEUSOhlTXACknX0kYs5fgkafc4NoGYLw94VNKHfrs47KcPoKFBabMkiUVIXNklTB+gHWa14f+op3zQh8/fGsfaX20i5PUtxIdysDuCDfTd9X/yxtpcjEv96r4oIwC9oh4M17yJyBd2TOqzmyK60EwnbE5FXHSgc=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAD=FV=UnZtGN142yUu-NzVG00P=1MZ-X3aY+cjrMRCnL2D8xFg@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 678f6ee5-eb36-4bdc-8e9f-08d74792e691
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Oct 2019 23:47:35.3449 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: qX/ixD997sfRiKarNBU3ijrUY5uO5Rn5BPBQLABtdLRxtBa7Lno4sjTKSQ5J05ChuO5KNz0CZ6+NxfLRcySK2A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5247
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_164439_544522_93E86E09 
-X-CRM114-Status: GOOD (  19.18  )
+X-CRM114-CacheID: sfid-20191002_164741_777313_B7F8D6D1 
+X-CRM114-Status: GOOD (  13.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ no trust [40.107.7.75 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -85,7 +112,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,117 +123,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, LKML <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: =?iso-8859-2?Q?Artur_=A6wigo=F1?= <a.swigon@partner.samsung.com>,
+ Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Lukasz Luba <l.luba@partner.samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Alexandre Bailon <abailon@baylibre.com>,
+ Georgi Djakov <georgi.djakov@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Jacky Bai <ping.bai@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 02, 2019 at 03:23:54PM -0700, Doug Anderson wrote:
-> Hi,
+On 2019-10-03 12:24 AM, Matthias Kaehlcke wrote:
+> On Wed, Oct 02, 2019 at 10:25:05PM +0300, Leonard Crestez wrote:
+>> Notifier callbacks shouldn't return negative errno but one of the
+>> NOTIFY_OK/DONE/BAD values.
+>>
+>> The OPP core will ignore return values from notifiers but returning a
+>> value that matches NOTIFY_STOP_MASK will stop the notification chain.
+>>
+>> Fix by always returning NOTIFY_OK.
+>>
+>> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+>> ---
+>>   drivers/devfreq/devfreq.c | 24 +++++++++++++-----------
+>>   1 file changed, 13 insertions(+), 11 deletions(-)
+>>
+>> diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
+>> index 7dc899da1172..32bbf6e80380 100644
+>> --- a/drivers/devfreq/devfreq.c
+>> +++ b/drivers/devfreq/devfreq.c
+>> @@ -548,30 +548,32 @@ EXPORT_SYMBOL(devfreq_interval_update);
+>>    */
+>>   static int devfreq_notifier_call(struct notifier_block *nb, unsigned long type,
+>>   				 void *devp)
+>>   {
+>>   	struct devfreq *devfreq = container_of(nb, struct devfreq, nb);
+>> -	int ret;
+>> +	int err = -EINVAL;
+>>   
+>>   	mutex_lock(&devfreq->lock);
+>>   
+>>   	devfreq->scaling_min_freq = find_available_min_freq(devfreq);
+>> -	if (!devfreq->scaling_min_freq) {
+>> -		mutex_unlock(&devfreq->lock);
+>> -		return -EINVAL;
+>> -	}
+>> +	if (!devfreq->scaling_min_freq)
+>> +		goto out;
+>>   
+>>   	devfreq->scaling_max_freq = find_available_max_freq(devfreq);
+>> -	if (!devfreq->scaling_max_freq) {
+>> -		mutex_unlock(&devfreq->lock);
+>> -		return -EINVAL;
+>> -	}
+>> +	if (!devfreq->scaling_max_freq)
+>> +		goto out;
+>> +
+>> +	err = update_devfreq(devfreq);
+>>   
+>> -	ret = update_devfreq(devfreq);
+>> +out:
+>>   	mutex_unlock(&devfreq->lock);
+>> +	if (err)
+>> +		dev_err(devfreq->dev.parent,
+>> +			"failed to update frequency from OPP notifier (%d)\n",
+>> +			err);
 > 
-> On Tue, Oct 1, 2019 at 4:07 PM Matthias Kaehlcke <mka@chromium.org> wrote:
-> > --- a/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-> > +++ b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-> > @@ -39,39 +39,8 @@
-> >
-> >  &backlight {
-> >         /* Minnie panel PWM must be >= 1%, so start non-zero brightness at 3 */
-> > -       brightness-levels = <
-> > -                         0   3   4   5   6   7
-> > -                         8   9  10  11  12  13  14  15
-> > -                        16  17  18  19  20  21  22  23
-> > -                        24  25  26  27  28  29  30  31
-> > -                        32  33  34  35  36  37  38  39
-> > -                        40  41  42  43  44  45  46  47
-> > -                        48  49  50  51  52  53  54  55
-> > -                        56  57  58  59  60  61  62  63
-> > -                        64  65  66  67  68  69  70  71
-> > -                        72  73  74  75  76  77  78  79
-> > -                        80  81  82  83  84  85  86  87
-> > -                        88  89  90  91  92  93  94  95
-> > -                        96  97  98  99 100 101 102 103
-> > -                       104 105 106 107 108 109 110 111
-> > -                       112 113 114 115 116 117 118 119
-> > -                       120 121 122 123 124 125 126 127
-> > -                       128 129 130 131 132 133 134 135
-> > -                       136 137 138 139 140 141 142 143
-> > -                       144 145 146 147 148 149 150 151
-> > -                       152 153 154 155 156 157 158 159
-> > -                       160 161 162 163 164 165 166 167
-> > -                       168 169 170 171 172 173 174 175
-> > -                       176 177 178 179 180 181 182 183
-> > -                       184 185 186 187 188 189 190 191
-> > -                       192 193 194 195 196 197 198 199
-> > -                       200 201 202 203 204 205 206 207
-> > -                       208 209 210 211 212 213 214 215
-> > -                       216 217 218 219 220 221 222 223
-> > -                       224 225 226 227 228 229 230 231
-> > -                       232 233 234 235 236 237 238 239
-> > -                       240 241 242 243 244 245 246 247
-> > -                       248 249 250 251 252 253 254 255>;
-> > +       brightness-levels = <3 255>;
-> > +       num-interpolated-steps = <251>;
-> 
-> I _think_ you want:
-> 
-> brightness-levels = <0 3 255>;
-> num-interpolated-steps = <252>;
-> 
-> Specifically:
-> 
-> * It seems like you're intending to keep everything the same and just
-> have a more compact representation, right?
+> In case an OPP freq can't be found the log doesn't provide clues
+> about what the problem could be. I couldn't find a clearly superior
+> errno value though, so I guess this is as good as it gets, unless
+> you want to have a dedicated message for those errors. Should be a
+> rare exception anyway, and previously there was no log at all.
 
-Ideally yes, I thought we were missing 1 level due to the 0 step being
-missing, but it's actually 2, since I interpreted 'num-interpolated-steps'
-as the number between two values in the table, however it is this number +1.
+I guess it could happen if all OPPs are disabled after probe?
 
-> Looking through the values in '/sys/class/backlight/backlight' on
-> minnie shows differences before and after your patch.
-> 
-> * I think you want brightness of 0 to match to PWM level 0.
+The devfreq core will attempt to switch away if the current OPP get 
+disabled but if nothing else is available then printing an error and 
+sticking to the current frequency seems reasonable.
 
-For level 0 that was actually given, due to
+It would indicate a bug somewhere else.
 
-pwm_backlight_update_status()
-{
-  ..
-  if (brightness > 0) {
-    ...
-  } else
-    pwm_backlight_power_off(pb);
-  ...
-}
-
-but we're slightly off for the rest of the levels.
-
-> * If I put in printouts in the code with your table, I see:
-> 
-> pwm-backlight backlight: new number of brightness levels: 252
-> pwm-backlight backlight: i=0, j=0, lc=0, value=3
-> pwm-backlight backlight: i=0, j=1, lc=1, value=4
-> ...
-> pwm-backlight backlight: i=0, j=250, lc=250, value=253
-> pwm-backlight backlight: lc=251, data->levels[i]=255
-> 
-> ...as you can see, you end up missing assigning a value of 254.
-
-Thanks for investigating. With 'num-interpolated-steps' increased
-by one this is fixed, though we are still missing one level at the
-beginning of the table. I didn't expect 'brightness-levels = <0 3 255>'
-to work, since there are less than 252/251 integer numbers between 0
-and 3, but the code actually accounts for that case and just interprets
-it as a single step, which is what we want.
-
-Long story short: you are right, we want
-
-brightness-levels = <0 3 255>;
-num-interpolated-steps = <252>;
+> Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
