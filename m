@@ -2,61 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A10AC8ADF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 16:19:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BCEAC8AFF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 16:19:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Subject:To:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jfAnmyh5dxokRmbmcPyt6y6rx7+/wDmXOU3DJT4EOxo=; b=Ih70Z9ohjeViBh
-	xEgpA6KAiaRvutCHECoVh7UvYWxQPj1Unm1XLRbjkxVqbvD4it6xiOFkmxYGSdLayr8we6nS+l1Vb
-	QRM2Ul0agVObtyC2BJ5BLCxNxtVQf17K/c+1vIzvwIN71UdW7rFKObZdi4pekz9VP0WeO4zJjQ6uS
-	GtN0YeueWjdAfycpkecBUt51NItUX7+j2P8oxhD6l1X3IL/LOzS1NUiQZKb0/CkgNyql4Dao12fzK
-	xUHWPF80y9iDLfEZj2JuOO1OitVI1Nva4zMV2RpcTr03p5aVAXF2kpQSlRJbWN7yIIkNnckEWqSKp
-	Tf9fLv9kzH1R8pTo7YGA==;
+	List-Owner; bh=xKsf2MtNr2I/JAJl42po/fsrbjMJ5G8hqjug2/EBM6s=; b=AhQxNARoYtZlNl
+	SiV02H167SHtvp3uVd1+Gd8kerNT/dKb5fzuPxRY0N2UdCY1mA5pcx1YoZZi82SCS08eXQ0ONtYK0
+	rJXVM1QbN2bgO9Ewa/5YD+tC8J2BNleWvZ+mbRsVMpAwqOSNTG7swjxwlLvhvvacDN7cpH1KIecf3
+	uo+y31nS/OtwePC4sg5Gj9Jl8ql6YcFG3Le/2E+g1DA7kw/mnc+cCoWjKNxlt6xfVCHVYlJ94hArt
+	adv3GQftiIf5QN4t5SwsmrzHP1d3khyVfAvuf41nfGENHnFqMw0LG+YXycPApqeE7C6xzgzAPDnrA
+	hJpJZ0tgBwi1QmSye22w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFfTS-0002H4-HP; Wed, 02 Oct 2019 14:19:26 +0000
+	id 1iFfTi-0002Tx-V2; Wed, 02 Oct 2019 14:19:42 +0000
 Received: from mail-qt1-f195.google.com ([209.85.160.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFfTI-0002Ey-HC; Wed, 02 Oct 2019 14:19:17 +0000
-Received: by mail-qt1-f195.google.com with SMTP id o12so26567281qtf.3;
- Wed, 02 Oct 2019 07:19:14 -0700 (PDT)
+ id 1iFfTI-0002Ez-Fr; Wed, 02 Oct 2019 14:19:18 +0000
+Received: by mail-qt1-f195.google.com with SMTP id m15so26576336qtq.2;
+ Wed, 02 Oct 2019 07:19:15 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:date:from:to:cc:subject:references
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=kP7vzKS5Q2upGPJNgGMib8DMfY3IAcXtVKuvJsiJTIs=;
- b=FQOp+CqAhyGQmKfIUiILrbH8DL4+Kso6E8X3n8GdLk+Ch/+bLby+BH8VnAamZNoDW+
- q98/R13BdgCvdYbo46t69HcU8fl/l/vOfVi0XSiHJl6kREu37r+dH+NhlEJroKIjzU7c
- Vi8VraN0tuh2yPtVZtCrsWuMrR9l4W8sAAT8+zXBQh15FQWENv7ME2ubRX9XX8P93DDm
- rdXNuBLqyyEuUFcMoLVlbfYn97GS9pQ5oXqIXFSO1MeApHTto/La4r1HCFPxseFG9j4i
- gEmEKFi0LenUgaxopvdeaJri7v3+dNzwEXTshlxoD3ODdQ9Ly8qC/5r43KswbhgEdk0Z
- +yXg==
-X-Gm-Message-State: APjAAAU/9xm0pHqAnqpN43vI0vjY6w+W1pM+lIvmd2ybxzlFFHee9Gqv
- ahsvZVGEiPuqM73MOkHHbA==
-X-Google-Smtp-Source: APXvYqzPfzSmp7xskhCIvKOVtYhxyh8HfoSES/y1fgUMOyF0qc0thkfrFz5NQmijtp/ZM7tIotE0PQ==
-X-Received: by 2002:ac8:7b97:: with SMTP id p23mr4209487qtu.292.1570025953392; 
- Wed, 02 Oct 2019 07:19:13 -0700 (PDT)
+ bh=/4BkNlRVIojwkaNlJiwgslAKNSOU+8zzG4UZka4qDBU=;
+ b=tovEdX89D8ysCgpJEzw3NolTfw9FL+KhENmZ43JKQOzhF7jc0H7msV6yRqG0lL34yS
+ TLVBzgjYULDGEwKRJJ9ug94JabTfCLAB03KigvThBlxgwTZPK6opVtwTUG/l/65MsIQF
+ Vc9UNopC3V7B6gl9y1w1ktUMWh9sBmzgs6odWVPVa9oRFdQPCEMptVJDPxoOa0uxWQH4
+ LT9IaOi/l+wrsKH4GTAnvnHtnpf+NavTpErgnxMZzmBb+odd3zePwf3/Q2TaftV5Np8I
+ 8uZGLkfA8/boLlr9jVB0hzKyVTWFxrjTb3sMqHA8MU4QnbTh0OwGWnCtn4Twg1AvejNw
+ bwdw==
+X-Gm-Message-State: APjAAAVl/RZ0km7rFOeUUd2GlIUXIedri04AX1sPhUVmaEj37dD98xXH
+ PK4Fa2OpK9nI8j3fnSy9RA==
+X-Google-Smtp-Source: APXvYqyiCJ1kbtSTzcBUjuOuqu8ar7W4uCqJ/bf5oUMfYFYLi0a4ONnP7ChHGR3HF15IPGyvftP9iw==
+X-Received: by 2002:ac8:2c86:: with SMTP id 6mr4217724qtw.113.1570025954662;
+ Wed, 02 Oct 2019 07:19:14 -0700 (PDT)
 Received: from localhost ([132.205.230.8])
- by smtp.gmail.com with ESMTPSA id h9sm10006638qke.12.2019.10.02.07.19.12
+ by smtp.gmail.com with ESMTPSA id e7sm13698395qtb.94.2019.10.02.07.19.13
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 02 Oct 2019 07:19:12 -0700 (PDT)
-Message-ID: <5d94b1e0.1c69fb81.4e2f9.3e79@mx.google.com>
-Date: Wed, 02 Oct 2019 09:19:09 -0500
+ Wed, 02 Oct 2019 07:19:14 -0700 (PDT)
+Date: Wed, 02 Oct 2019 09:19:11 -0500
 From: Rob Herring <robh@kernel.org>
 To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Subject: Re: [PATCH 1/5] dt-bindings: clock: meson8b: add the clock inputs
-References: <20190921151223.768842-1-martin.blumenstingl@googlemail.com>
- <20190921151223.768842-2-martin.blumenstingl@googlemail.com>
+Subject: Re: [PATCH 1/6] dt-bindings: clock: add the Amlogic Meson8 DDR clock
+ controller binding
+Message-ID: <20191001235650.GA11980@bogus>
+References: <20190921151835.770263-1-martin.blumenstingl@googlemail.com>
+ <20190921151835.770263-2-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190921151223.768842-2-martin.blumenstingl@googlemail.com>
+In-Reply-To: <20190921151835.770263-2-martin.blumenstingl@googlemail.com>
+X-Mutt-References: <20190921151835.770263-2-martin.blumenstingl@googlemail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_071916_562061_18B44351 
-X-CRM114-Status: GOOD (  10.97  )
+X-CRM114-CacheID: sfid-20191002_071916_532769_9B0AE872 
+X-CRM114-Status: GOOD (  16.55  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
@@ -88,8 +90,7 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, narmstrong@baylibre.com,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>, khilman@baylibre.com,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ khilman@baylibre.com, linux-kernel@vger.kernel.org,
  linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, jbrunet@baylibre.com
 Content-Type: text/plain; charset="us-ascii"
@@ -97,25 +98,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 21 Sep 2019 17:12:19 +0200, Martin Blumenstingl wrote:
-> The clock controller on Meson8/Meson8b/Meson8m2 has three (known)
-> inputs:
-> - "xtal": the main 24MHz crystal
-> - "ddr_pll": some of the audio clocks use the output of the DDR PLL as
->   input
-> - "clk_32k": an optional clock signal which can be connected to GPIOAO_6
->   (which then has to be switched to the CLK_32K_IN function)
+On Sat, Sep 21, 2019 at 05:18:30PM +0200, Martin Blumenstingl wrote:
+> Amlogic Meson8, Meson8b and Meson8m2 SoCs have a DDR clock controller in
+> the MMCBUS registers. There is no public documentation on this, but the
+> GPL u-boot sources from the Amlogic BSP show that:
+> - it uses the same XTAL input as the main clock controller
+> - it contains a PLL which seems to be implemented just like the other
+>   PLLs in this SoC
+> - there is a power-of-two PLL post-divider
 > 
-> Add the inputs to the documentation so we can wire up these inputs in a
-> follow-up patch.
+> Add the documentation and header file for this DDR clock controller.
 > 
 > Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 > ---
->  .../devicetree/bindings/clock/amlogic,meson8b-clkc.txt       | 5 +++++
->  1 file changed, 5 insertions(+)
+>  .../clock/amlogic,meson8-ddr-clkc.yaml        | 50 +++++++++++++++++++
+>  include/dt-bindings/clock/meson8-ddr-clkc.h   |  4 ++
+>  2 files changed, 54 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/clock/amlogic,meson8-ddr-clkc.yaml
+>  create mode 100644 include/dt-bindings/clock/meson8-ddr-clkc.h
 > 
+> diff --git a/Documentation/devicetree/bindings/clock/amlogic,meson8-ddr-clkc.yaml b/Documentation/devicetree/bindings/clock/amlogic,meson8-ddr-clkc.yaml
+> new file mode 100644
+> index 000000000000..bf3ca5888485
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/clock/amlogic,meson8-ddr-clkc.yaml
+> @@ -0,0 +1,50 @@
+> +# SPDX-License-Identifier: GPL-2.0
+
+(GPL-2.0-only OR BSD-2-Clause) for new bindings please.
+
+With that,
 
 Reviewed-by: Rob Herring <robh@kernel.org>
+
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/clock/amlogic,meson8-ddr-clkc.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Amlogic DDR Clock Controller Device Tree Bindings
+> +
+> +maintainers:
+> +  - Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - amlogic,meson8-ddr-clkc
+> +      - amlogic,meson8b-ddr-clkc
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 1
+> +
+> +  clock-names:
+> +    items:
+> +      - const: xtal
+> +
+> +  "#clock-cells":
+> +    const: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - clock-names
+> +  - "#clock-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    ddr_clkc: clock-controller@400 {
+> +      compatible = "amlogic,meson8-ddr-clkc";
+> +      reg = <0x400 0x20>;
+> +      clocks = <&xtal>;
+> +      clock-names = "xtal";
+> +      #clock-cells = <1>;
+> +    };
+> +
+> +...
+> diff --git a/include/dt-bindings/clock/meson8-ddr-clkc.h b/include/dt-bindings/clock/meson8-ddr-clkc.h
+> new file mode 100644
+> index 000000000000..a8e0fa2987ab
+> --- /dev/null
+> +++ b/include/dt-bindings/clock/meson8-ddr-clkc.h
+> @@ -0,0 +1,4 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +
+> +#define DDR_CLKID_DDR_PLL_DCO			0
+> +#define DDR_CLKID_DDR_PLL			1
+> -- 
+> 2.23.0
+> 
 
 
 _______________________________________________
