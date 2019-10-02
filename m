@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19BE5C9447
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 00:24:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F4B6C94DA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 01:30:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HEv1RbJfjwNexL8588gwkDLMWmFP6brj7HIzHCBwY48=; b=MVQZzVYfx2pPCe
-	TN4twRRPswVKqyg388FEr+pdo06HGnRebJvFxO3R4yOZqJfTq0yoXSNgK0siQl3PSDqjCn0mZEPNc
-	Ef5zxuOA3lqqBTqLakrkZAiB8kznZiUBxYxhmcs0fLdhCTNISBXOT1YrZqvxFlfirytnZI5o4g2P9
-	kN2dG7KkGHPRetTqmjF1hZnfRLM5mN6PVCmXzPlkpuWKDjv3Ug9QErHAMkZB+mzTNYqvbXcxUNeO8
-	TVNKHn5YDdAIGOh7dTtrmQ4CfDzASAzLyf89dd4F3L7rYxyYFT7cpZl1Vi68umm3gu43M58m+k/bs
-	v0ooN6HgwO7M01k8axxw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=u6vQ1CX+3D2238ToCp8szVZRcmBaVCR7Nz1Q0XBP0GY=; b=h24CDSiVIvpKfWpb2Y/SJTivA
+	9KDGxcyaCoFuHV92xMDne+bi/iqKRPR39xOX1RP1xPQpfGwWEOP/nl5+Rio+pD4kZaZyfUNf+UJjk
+	mfZ16Fn+Tx0NfhrMv8kJEBjlNYJ14p9Mh0Vsj11NOdfiSe+yC+NrfO7m7/ZOMITY324NbL51KtRMK
+	wK8SdzMMML1/m7cHDJtr8SeH3It0YL80BofrRoh6zaySFVjMFhXjm8PArzJqMs0IbyIcMVyoQFphs
+	t2IC2N5jsbyX+hDNHBwid9obdnkFZ2h4saQ53UF1Q5P2/b7aGJhfeCCV5kvB8H78rDHcmb0lO9jcm
+	8KtXnJffg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFn2j-0006qW-LW; Wed, 02 Oct 2019 22:24:21 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1iFo43-0002QD-Cy; Wed, 02 Oct 2019 23:29:47 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFn2X-0006or-0W
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 22:24:11 +0000
-Received: by mail-io1-xd44.google.com with SMTP id h144so991785iof.7
+ id 1iFo3w-0002PL-Fr
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 23:29:42 +0000
+Received: by mail-pf1-x442.google.com with SMTP id v4so483255pff.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 02 Oct 2019 15:24:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=dwiBUbDvj+99or6CWyhr/vlA0vFW+3yf473QWcd1/1k=;
- b=f59VWKPlW77r+626KYZxJnyNLG8BD90K4VFBHcG//pORlzf8wYWqBnBNPHO2ECJzUx
- 59RW7ke/ziFCIczsmf9wvmQmh3OvsYEzpXVjTQsFWWsGwqVLcVtvHi9uNsidKCMpxVyv
- +8+R1w9Ctas0Z9M9OzZEStDYOtX4T9Ohnh9r8=
+ Wed, 02 Oct 2019 16:29:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=mfYTRE2wrHnGHdzN9pNRX0i1wlfEpry7vj/JNYrQ7CY=;
+ b=Mf3QWc+S+bv5pPGAm5l5TcASwdcoob1IpAJzIYmCUhXcHc9GZtCIr3XT5pjbAuSPTS
+ AWmeLFS3b+jY913B1ysUu3DmViojEU2i9R/tFiFtAV+95O7xfx1ymyUlCoel6td6Eh1e
+ Aeti9QCjKm2ld4obHKXX8u4j/MNnSQabQF1YY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=dwiBUbDvj+99or6CWyhr/vlA0vFW+3yf473QWcd1/1k=;
- b=C76yIufkFiwlumNziVFpluR2QA+jJ13uKIrNpfQJcC219b7A7ercToQN6rYNd4E5zS
- lKcKI04oC9192JDGW9ZsDJMVxcBtRPo9rKzUckTY0iZXoyQi8dskq2rovUTA1VWdpgCG
- V83fvP8wy6r0U1sQAUmvACgJQBezvsZ/H4LWSR7ZbLpmIpGCyyzy/ApnBlCYjZYL4E/b
- oqJlRsNtmwmSCfM7cZe5DRJ5dVOoIL4jSCY9oofnpLpSdfGmjMhUfhDBRHvFOSBHGPVN
- DCePcAB3cBgEGpZvjjO58rEjtdAz+fLFGWNNpOSP8uPd0IzGO/Bj6rzv8yCJKvUb5mgB
- ezyQ==
-X-Gm-Message-State: APjAAAVZkSJ57CB+Ulp1XkkRg6ObTGC+JpeD8FdzRQ9nj2JOJ2T+5z7W
- mjcFoGkHz0zLkW5h0ABUiznBNsTQK5w=
-X-Google-Smtp-Source: APXvYqw76VklI5//Pt3WkQ3MoJ5cAqbm2VnnMGbt93UfLuaH0pIFX320tyAQFymMu4ujvDj+V89HCg==
-X-Received: by 2002:a92:d78c:: with SMTP id d12mr6245999iln.96.1570055047601; 
- Wed, 02 Oct 2019 15:24:07 -0700 (PDT)
-Received: from mail-io1-f51.google.com (mail-io1-f51.google.com.
- [209.85.166.51])
- by smtp.gmail.com with ESMTPSA id t8sm398812ild.7.2019.10.02.15.24.06
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 02 Oct 2019 15:24:07 -0700 (PDT)
-Received: by mail-io1-f51.google.com with SMTP id v2so957178iob.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 02 Oct 2019 15:24:06 -0700 (PDT)
-X-Received: by 2002:a92:844f:: with SMTP id l76mr6360533ild.218.1570055045845; 
- Wed, 02 Oct 2019 15:24:05 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=mfYTRE2wrHnGHdzN9pNRX0i1wlfEpry7vj/JNYrQ7CY=;
+ b=sFHGRK4igfQMhsZCP+Q4teqVJiW7YEainxLOG9JS2sOgDZw+LqgD1nRnRe5X6pEN7S
+ sW3Hl/kekKZfbs3gz2ObdQRDGf8yFRmkyQXVoVwWa1EVEhknLbiwaGN9QcBiy+C/PQlw
+ k9O2sj7w18iWC8WAGzuLpQjxgF+3wcZu4YzmsTxECvShGrSzT8nRXtFKjSpLgLwAShas
+ Jvg02SSgK65pb70RN3jtSvMTdpusf6wADpn7pC+RSvRCyvqNiiFO/+1LrT3kTycqibBz
+ x6XBKUjnTw3J5rh3f2biSoiDPX2MI1npXAVa6d3KNlQ7T5PidNk9W6DP9XI8OCxFnhbg
+ lPLQ==
+X-Gm-Message-State: APjAAAUXooc2w4PFrDVBG6lWp6RQ4dd0fc/CE4JjnSaGeX4pa/8s9vFr
+ hUY7yRSpPCPeURDhUit/s3scTA==
+X-Google-Smtp-Source: APXvYqwb1v+OFwGH/X+Zf8U8nxSjb6n41/d9STpAf2augV7Q8TlFtC9GLo/vHrIL44A4Hqi6BErSww==
+X-Received: by 2002:a63:e14:: with SMTP id d20mr6038229pgl.33.1570058977001;
+ Wed, 02 Oct 2019 16:29:37 -0700 (PDT)
+Received: from [10.136.13.65] ([192.19.228.250])
+ by smtp.gmail.com with ESMTPSA id l72sm342214pjb.7.2019.10.02.16.29.32
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 02 Oct 2019 16:29:36 -0700 (PDT)
+Subject: Re: [PATCH] pinctrl: iproc: improve error handling
+To: Chris Packham <chris.packham@alliedtelesis.co.nz>,
+ linus.walleij@linaro.org, rjui@broadcom.com, sbranden@broadcom.com,
+ bcm-kernel-feedback-list@broadcom.com, rayagonda.kokatanur@broadcom.com,
+ li.jin@broadcom.com
+References: <20191002220034.2034-1-chris.packham@alliedtelesis.co.nz>
+From: Scott Branden <scott.branden@broadcom.com>
+Message-ID: <045d67e2-5618-3742-5519-c4fb9518c118@broadcom.com>
+Date: Wed, 2 Oct 2019 16:29:28 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20191001160735.1.Ic9fd698810ea569c465350154da40b85d24f805b@changeid>
-In-Reply-To: <20191001160735.1.Ic9fd698810ea569c465350154da40b85d24f805b@changeid>
-From: Doug Anderson <dianders@chromium.org>
-Date: Wed, 2 Oct 2019 15:23:54 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=UnZtGN142yUu-NzVG00P=1MZ-X3aY+cjrMRCnL2D8xFg@mail.gmail.com>
-Message-ID: <CAD=FV=UnZtGN142yUu-NzVG00P=1MZ-X3aY+cjrMRCnL2D8xFg@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: rockchip: Use interpolated brightness tables
- for veyron
-To: Matthias Kaehlcke <mka@chromium.org>
+In-Reply-To: <20191002220034.2034-1-chris.packham@alliedtelesis.co.nz>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_152409_054023_0C223FF9 
-X-CRM114-Status: GOOD (  11.87  )
+X-CRM114-CacheID: sfid-20191002_162940_534001_025B11E4 
+X-CRM114-Status: GOOD (  18.76  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -101,90 +100,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, LKML <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Tue, Oct 1, 2019 at 4:07 PM Matthias Kaehlcke <mka@chromium.org> wrote:
-> --- a/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-> +++ b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-> @@ -39,39 +39,8 @@
->
->  &backlight {
->         /* Minnie panel PWM must be >= 1%, so start non-zero brightness at 3 */
-> -       brightness-levels = <
-> -                         0   3   4   5   6   7
-> -                         8   9  10  11  12  13  14  15
-> -                        16  17  18  19  20  21  22  23
-> -                        24  25  26  27  28  29  30  31
-> -                        32  33  34  35  36  37  38  39
-> -                        40  41  42  43  44  45  46  47
-> -                        48  49  50  51  52  53  54  55
-> -                        56  57  58  59  60  61  62  63
-> -                        64  65  66  67  68  69  70  71
-> -                        72  73  74  75  76  77  78  79
-> -                        80  81  82  83  84  85  86  87
-> -                        88  89  90  91  92  93  94  95
-> -                        96  97  98  99 100 101 102 103
-> -                       104 105 106 107 108 109 110 111
-> -                       112 113 114 115 116 117 118 119
-> -                       120 121 122 123 124 125 126 127
-> -                       128 129 130 131 132 133 134 135
-> -                       136 137 138 139 140 141 142 143
-> -                       144 145 146 147 148 149 150 151
-> -                       152 153 154 155 156 157 158 159
-> -                       160 161 162 163 164 165 166 167
-> -                       168 169 170 171 172 173 174 175
-> -                       176 177 178 179 180 181 182 183
-> -                       184 185 186 187 188 189 190 191
-> -                       192 193 194 195 196 197 198 199
-> -                       200 201 202 203 204 205 206 207
-> -                       208 209 210 211 212 213 214 215
-> -                       216 217 218 219 220 221 222 223
-> -                       224 225 226 227 228 229 230 231
-> -                       232 233 234 235 236 237 238 239
-> -                       240 241 242 243 244 245 246 247
-> -                       248 249 250 251 252 253 254 255>;
-> +       brightness-levels = <3 255>;
-> +       num-interpolated-steps = <251>;
-
-I _think_ you want:
-
-brightness-levels = <0 3 255>;
-num-interpolated-steps = <252>;
-
-Specifically:
-
-* It seems like you're intending to keep everything the same and just
-have a more compact representation, right?  Looking through the values
-in '/sys/class/backlight/backlight' on minnie shows differences before
-and after your patch.
-
-* I think you want brightness of 0 to match to PWM level 0.
-
-* If I put in printouts in the code with your table, I see:
-
-pwm-backlight backlight: new number of brightness levels: 252
-pwm-backlight backlight: i=0, j=0, lc=0, value=3
-pwm-backlight backlight: i=0, j=1, lc=1, value=4
-...
-pwm-backlight backlight: i=0, j=250, lc=250, value=253
-pwm-backlight backlight: lc=251, data->levels[i]=255
-
-...as you can see, you end up missing assigning a value of 254.
-
-
--Doug
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgQ2hyaXMsCgpPbiAyMDE5LTEwLTAyIDM6MDAgcC5tLiwgQ2hyaXMgUGFja2hhbSB3cm90ZToK
+PiBwbGF0Zm9ybV9nZXRfaXJxKCkgY2FuIHJldHVybiBhbiBlcnJvciBjb2RlLiBBbGxvdyBmb3Ig
+dGhpcyB3aGVuIGdldHRpbmcKPiB0aGUgaXJxLgpBYm92ZSBtYXRjaGVzIGNoYW5nZSBpbiAxc3Qg
+bGluZSBvZiBjb21taXQuwqAgUGxlYXNlIGFkZCBhIEZpeGVzOiB0YWcKZm9yIHN1Y2ggZml4Lgo+
+ICAgIFdoaWxlIHdlJ3JlIGhlcmUgdXNlIHRoZSBkZXZfbmFtZShkZXYpIGZvciB0aGUgaXJxYy0+
+bmFtZSBzbwo+IHRoYXQgd2UgZ2V0IHVuaXF1ZSBuYW1lcyB3aGVuIHdlIGhhdmUgbXVsdGlwbGUg
+aW5zdGFuY2VzIG9mIHRoaXMgZHJpdmVyLgpUaGUgZGV2X25hbWUgY2hhbmdlIHNob3VsZCBiZSBp
+biBhIGRpZmZlcmVudCBjb21taXQgdG8ga2VlcCB0aGluZ3MKYmlzZWN0YWJsZS4KPgo+IFNpZ25l
+ZC1vZmYtYnk6IENocmlzIFBhY2toYW0gPGNocmlzLnBhY2toYW1AYWxsaWVkdGVsZXNpcy5jby5u
+ej4KPiAtLS0KPiBOb3RpY2VkIHRoaXMgd2hpbGUgZGVidWdnaW5nIGFub3RoZXIgcHJvYmxlbS4K
+Pgo+ICAgZHJpdmVycy9waW5jdHJsL2JjbS9waW5jdHJsLWlwcm9jLWdwaW8uYyB8IDQgKystLQo+
+ICAgMSBmaWxlIGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygrKSwgMiBkZWxldGlvbnMoLSkKPgo+IGRp
+ZmYgLS1naXQgYS9kcml2ZXJzL3BpbmN0cmwvYmNtL3BpbmN0cmwtaXByb2MtZ3Bpby5jIGIvZHJp
+dmVycy9waW5jdHJsL2JjbS9waW5jdHJsLWlwcm9jLWdwaW8uYwo+IGluZGV4IDZmN2QzYTJmMmU5
+Ny4uYzI0ZDQ5ZDQzNmNlIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGluY3RybC9iY20vcGluY3Ry
+bC1pcHJvYy1ncGlvLmMKPiArKysgYi9kcml2ZXJzL3BpbmN0cmwvYmNtL3BpbmN0cmwtaXByb2Mt
+Z3Bpby5jCj4gQEAgLTg1MywxMiArODUzLDEyIEBAIHN0YXRpYyBpbnQgaXByb2NfZ3Bpb19wcm9i
+ZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICAgCj4gICAJLyogb3B0aW9uYWwgR1BJ
+TyBpbnRlcnJ1cHQgc3VwcG9ydCAqLwo+ICAgCWlycSA9IHBsYXRmb3JtX2dldF9pcnEocGRldiwg
+MCk7Cj4gLQlpZiAoaXJxKSB7Cj4gKwlpZiAoaXJxID4gMCkgewo+ICAgCQlzdHJ1Y3QgaXJxX2No
+aXAgKmlycWM7Cj4gICAJCXN0cnVjdCBncGlvX2lycV9jaGlwICpnaXJxOwo+ICAgCj4gICAJCWly
+cWMgPSAmY2hpcC0+aXJxY2hpcDsKPiAtCQlpcnFjLT5uYW1lID0gImJjbS1pcHJvYy1ncGlvIjsK
+PiArCQlpcnFjLT5uYW1lID0gZGV2X25hbWUoZGV2KTsKPiAgIAkJaXJxYy0+aXJxX2FjayA9IGlw
+cm9jX2dwaW9faXJxX2FjazsKPiAgIAkJaXJxYy0+aXJxX21hc2sgPSBpcHJvY19ncGlvX2lycV9t
+YXNrOwo+ICAgCQlpcnFjLT5pcnFfdW5tYXNrID0gaXByb2NfZ3Bpb19pcnFfdW5tYXNrOwpUaGFu
+a3MsClNjb3R0CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1hcm0ta2VybmVsCg==
