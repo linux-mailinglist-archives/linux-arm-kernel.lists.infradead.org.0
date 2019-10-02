@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8E85C473F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 07:55:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A4E0C475F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 08:02:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=FrCGRX1ZwggRWh/xIEfWbV9msWmt4ijQS9olYz1RfqA=; b=DHob7qmI2mvV9tWqP5Tn64+H+
-	fL8ckRB6J8Js8JHc0ViSnDIl2+NDJVSTDeDvw78/5kSZF1184IywT3OGMGZ8GWop/PI4nPB6Nfl+z
-	bEuuhmUoj3KA/TWmBUiYEug5MKFnEBf8T9cUL95cIPccSH7jvBftzLFtvlo9gALEJtPVbiqAqnwym
-	xctRduCIqvrVIr14H4bIwhXCQw0UGqOUbaMsSE/kg5SYMbeBF/bfa2NayDnJibC/SFFxLusTGA7xr
-	ggjlc4qLo/kea4pDSwe7y82abStmDjeIUlX//F2uU5t4J3FWiBZ7jA9nrfVSLe2OCjbMSal3qosEb
-	D5+TMOZbg==;
+	 bh=CWSZGLzuQ74n46VckzhWwCRxvShhnaFdoxrZYtUolTM=; b=gtr7ar1SisXV9dmjceaBVyT3M
+	D9XUD4Ca8gRy2l9lIu+PspSsb+90XFP8pPt6gppewV6KXRwqYlOBaw9t4USG4WEHYbc2i5xwg5zPE
+	t8LGk0/1CdbFvTLa7JvIvxeUlrHN4d9X3nf+EEo5OKrdjZGp+5nqJn/PFD/bDMbYMjXGpaf8vLIMD
+	SXsIJgG2guU3U2UjJ8ydTOIjnbuceEm/hvM5eN/tF+9Wf2D48HQekpaa4yxxIqZufWcsRgFuy5bl9
+	AmXlj4S1g92qOrL5yHpy4++5JMC6eC3u0ugpNCKTDfGijjGgQDZo+XF0YE6wZ9QNkRy4riepm7YJy
+	nsVSWCrXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFXbW-00016Q-PZ; Wed, 02 Oct 2019 05:55:14 +0000
+	id 1iFXiT-0003Ea-Vm; Wed, 02 Oct 2019 06:02:25 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFXbL-0000EM-Rm
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 05:55:05 +0000
+ id 1iFXiL-0003EA-7f
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 06:02:18 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 365D72086A;
- Wed,  2 Oct 2019 05:55:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4E3BA215EA;
+ Wed,  2 Oct 2019 06:02:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1569995701;
- bh=wtOtOFphvhIR12Sw79063XbPCHTzfD6ZAz0An0TI4w4=;
+ s=default; t=1569996136;
+ bh=CV+keQnc3oa8IaO1/T0MBCxfFNAt5NtFUuPy7+FcG18=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=H8MbhzvorA/X5IA8IvWZUg8Jo9It3tP9Ey+rxONzf2AMfBEYoE9UM9XWcUGsueedk
- jgNVjcYcMR3b59MBRVqs+vqqIYPsxYXTC9dsWvVM5SwrQiHY6am21me7k4nGzNxytC
- j13KLlST3J5UYFqYRYmY6saU0znZuEOvYeB+qpX0=
-Date: Wed, 2 Oct 2019 07:54:58 +0200
+ b=hM22mscs+qhQMk/S8W5R5oSgacgTbDnofWaJ7YLQekxJSLH6QWK+qdm+Vm9b/JlGM
+ 4yCkFlqv+jnEFzQQRrzWH5IHcQkgylDWQJ28A8ABAsMFMWVjZXmIc0rzgJ8pWc3VZ6
+ lTiKwomFwZqq7ruUfUbgXv7Ddax/LbAqjDaorWgA=
+Date: Wed, 2 Oct 2019 08:02:14 +0200
 From: Maxime Ripard <mripard@kernel.org>
 To: Corentin Labbe <clabbe.montjoie@gmail.com>
-Subject: Re: [PATCH v2 03/11] dt-bindings: crypto: Add DT bindings
- documentation for sun8i-ce Crypto Engine
-Message-ID: <20191002055458.zo2vdbxodj3ch53g@gilmour>
+Subject: Re: [PATCH v2 05/11] ARM: dts: sun8i: H3: Add Crypto Engine node
+Message-ID: <20191002060214.bu67nkd3y6puknrb@gilmour>
 References: <20191001184141.27956-1-clabbe.montjoie@gmail.com>
- <20191001184141.27956-4-clabbe.montjoie@gmail.com>
+ <20191001184141.27956-6-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20191001184141.27956-4-clabbe.montjoie@gmail.com>
+In-Reply-To: <20191001184141.27956-6-clabbe.montjoie@gmail.com>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_225503_965124_EBDC4F57 
-X-CRM114-Status: GOOD (  14.53  )
+X-CRM114-CacheID: sfid-20191001_230217_296299_BEF2A85B 
+X-CRM114-Status: GOOD (  15.37  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -83,132 +82,73 @@ Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, wens@csie.org, robh+dt@kernel.org,
  linux-crypto@vger.kernel.org, will@kernel.org, davem@davemloft.net,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6450946286949244453=="
+Content-Type: multipart/mixed; boundary="===============3967434727732164944=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============6450946286949244453==
+--===============3967434727732164944==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="2fgyg66uvun6eeak"
+	protocol="application/pgp-signature"; boundary="m5s3egvksjuih2k6"
 Content-Disposition: inline
 
 
---2fgyg66uvun6eeak
+--m5s3egvksjuih2k6
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Tue, Oct 01, 2019 at 08:41:33PM +0200, Corentin Labbe wrote:
-> This patch adds documentation for Device-Tree bindings for the
-> Crypto Engine cryptographic accelerator driver.
+On Tue, Oct 01, 2019 at 08:41:35PM +0200, Corentin Labbe wrote:
+> The Crypto Engine is a hardware cryptographic accelerator that supports
+> many algorithms.
+> It could be found on most Allwinner SoCs.
+>
+> This patch enables the Crypto Engine on the Allwinner H3 SoC Device-tree.
 >
 > Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
 > ---
->  .../bindings/crypto/allwinner,sun8i-ce.yaml   | 92 +++++++++++++++++++
->  1 file changed, 92 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml
+>  arch/arm/boot/dts/sun8i-h3.dtsi | 11 +++++++++++
+>  1 file changed, 11 insertions(+)
 >
-> diff --git a/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml b/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml
-> new file mode 100644
-> index 000000000000..9bd26a2eff33
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml
-> @@ -0,0 +1,92 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/crypto/allwinner,sun8i-ce.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Allwinner Crypto Engine driver
-> +
-> +maintainers:
-> +  - Corentin Labbe <clabbe.montjoie@gmail.com>
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - allwinner,sun8i-h3-crypto
-> +      - allwinner,sun8i-r40-crypto
-> +      - allwinner,sun50i-a64-crypto
-> +      - allwinner,sun50i-h5-crypto
-> +      - allwinner,sun50i-h6-crypto
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: Bus clock
-> +      - description: Module clock
-> +      - description: MBus clock
-> +    minItems: 2
-> +    maxItems: 3
-> +
-> +  clock-names:
-> +    items:
-> +      - const: bus
-> +      - const: mod
-> +      - const: ram
-> +    minItems: 2
-> +    maxItems: 3
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +  reset-names:
-> +    const: bus
-> +
-> +if:
-> +  properties:
-> +    compatible:
-> +      items:
-> +        const: allwinner,sun50i-h6-crypto
-> +then:
-> +  properties:
-> +      clocks:
-> +        minItems: 3
-> +      clock-names:
-> +        minItems: 3
-> +else:
-> +  properties:
-> +      clocks:
-> +        maxItems: 2
-> +      clock-names:
-> +        maxItems: 2
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - clocks
-> +  - clock-names
-> +  - resets
-> +
-> +additionalProperties: true
+> diff --git a/arch/arm/boot/dts/sun8i-h3.dtsi b/arch/arm/boot/dts/sun8i-h3.dtsi
+> index e37c30e811d3..778a23a794c9 100644
+> --- a/arch/arm/boot/dts/sun8i-h3.dtsi
+> +++ b/arch/arm/boot/dts/sun8i-h3.dtsi
+> @@ -153,6 +153,17 @@
+>  			allwinner,sram = <&ve_sram 1>;
+>  		};
+>
+> +		crypto: crypto@1c15000 {
+> +			compatible = "allwinner,sun8i-h3-crypto";
+> +			reg = <0x01c15000 0x1000>;
+> +			interrupts = <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>;
+> +			interrupt-names = "ce_ns";
 
-I guess you meant false here?
+That's not documented in the binding (and I guess unnecessary)
+
+> +			resets = <&ccu RST_BUS_CE>;
+> +			reset-names = "bus";
+> +			clocks = <&ccu CLK_BUS_CE>, <&ccu CLK_CE>;
+> +			clock-names = "bus", "mod";
+
+Nit: we put the clocks before the resets usually
 
 Maxime
 
---2fgyg66uvun6eeak
+--m5s3egvksjuih2k6
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXZQ7rQAKCRDj7w1vZxhR
-xdFbAQCEkUlhME2ax9rLhbr3MrlsTcoOQtlq/F3s52pxJLaI3QD+OMbHPPV//HCY
-MPqSdqIOu1r5jzZjtXPgjsZTo4VsqAo=
-=m0Hw
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXZQ9ZQAKCRDj7w1vZxhR
+xQ12AP4v8ngYjx24mlHXpcMOKB1UPEpZ7nVs0R3Z429dTd6YiwD+I2L/8Esrt1co
+O1jvbqC8meSjGLU39z/Mr3MOweUa+Q8=
+=RT92
 -----END PGP SIGNATURE-----
 
---2fgyg66uvun6eeak--
+--m5s3egvksjuih2k6--
 
 
---===============6450946286949244453==
+--===============3967434727732164944==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -219,5 +159,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============6450946286949244453==--
+--===============3967434727732164944==--
 
