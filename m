@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6845BC893C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 15:05:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DEADC893D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 15:05:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y8vxM3HgS860lIRJzGtomNOkQujxDt5wXb5ogdn0m9E=; b=OTkYMNaPLzEUDU
-	58wfWCoUFrkhEONiCb0RXGvIucEywo+5X2747OEgqhb8SdVfKJ0oOpRz9FPqfBuREpiR1YsoJNLFY
-	k1hZueTLm0PhHNJdJ7cy/c/djbwIxYXFly9bVVOMFdW2kIkyrN8VFwJ3Fl8P9jyROtqOM8PfSWDkT
-	ZEUpeTZS9QIzWmZZLFaDGtLWBV1oGjw8aunuZOnd1lCc1iSqVMsXQgRCIQ4VpwLz44IOuP1mogx0l
-	c32hON0T+srUlaIns0j7Z/Vs7lNBHesUhZUWktYN7qGX8W90M2nAdtngiDzb78tkO5bxJp4rebumf
-	uSXkprM9K8wI6nogBDwg==;
+	List-Owner; bh=WwaNAB850jAY/L8fRH7KIB0ER8fxtGNE4SFg+Z3yAu8=; b=Z2OzTzIu5/C/NC
+	invvCsTPk9GB9eejEkGSUeQ4qMWyjL0aVnlo6w8XKoOa6eP2NPwGmNZpFIxuidK488yAp0MR48WCB
+	DeAdYETG7jtC3ImjmyQdpH4t0HwKRjJmnYq2Vf9hYxdZjmZ7SOFbnOteF8lAldvXixkx9Das5bV61
+	EjXEBnkRm5e28b8ti8IxbvUClIGhum3fDsFWi/9i0b5mJSndMS53x5Omz9sW+E99Y+F+MYu9OvMgD
+	hvywJKKMNQS0WW/b9F7s4pWa7K8GIPJMRKAqHvcmWYGIG97JIhcXok8jUY6QuTo4dQVjxnxm22IGH
+	05qQe0Ntk8bP7/YZul0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFeJf-0005X1-Gi; Wed, 02 Oct 2019 13:05:15 +0000
+	id 1iFeJr-0006yR-Nk; Wed, 02 Oct 2019 13:05:27 +0000
 Received: from mail-vi1eur04on0602.outbound.protection.outlook.com
  ([2a01:111:f400:fe0e::602]
  helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFeJB-0005KX-JD
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 13:04:46 +0000
+ id 1iFeJD-0005KX-8w
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 13:04:48 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=HIUmy7ERW+ZZKJufXMUPPD/lQkUlcH9iT8AR/yafpz1iLpCrQNM2NV8azQvIDkpUiUqxtqaCUx8SV6NfNqchIj0zJHWP/M2UGdBwfp+k4SGUl6NiSd82UWtwLfIKrEs/lo7E8sRUmRu77K4gFEPI93mb8rIMr8wpFC3nvrqgJkJrT3lTTxiRRWt5j97CQvDPcL6jyntTJgtbI6DiynuJ37acQwUEbXPSygvj2Fa462SugHKUzLLQMJrzzRKOmmv9t8unwlPbuVI5rNheEA69WHtRaj/9s9FIlVCHuv49NLP/Z88ENkdCwDBIgcnYex9tCyQ1N9DPBC5eH+9MWLGqoQ==
+ b=k5NN9Qu7Ky6ZIPtycoaUdLxTM6yoxVZ+5Y7xnS4iv/bCjHUMxmO6ZZ/gD+weoM6qpGHNGR1r1b3JyYBMqoHZLMO7J97cx9h2Hb+Y6Yh8rszGqVuto/0ZymSMjcEx851jtggiRhT6BrSm3TZcFY5lqwaQa5bvnXrWWhqsvRGM7Pv1cIb5lELhmHCA2UpdAGWwOrI1doCfS7a6VSJrcY5iK6fXDjyd9Dim1FmgFVVv3hB2F+g21QLX7rEVkzyv9a8YCkFFbR1ejSWYtdd8JXsugyM7Xp/Q2HliNihQeVgVa/8JnbKQSycurhkonYcpS/dK2d9apyXRa45QtqKJ+cerYg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jPrfZE2ZzlgXwxvs9WgUYsD0eHrzsLPa8Nba2DpTt4o=;
- b=L+MMrpI3Z513NksZlIYED6VR7Nqg0JNvm77eFQEPMA8vdvEgpNuwytcoDhoLmj3y4Y9wm3O5BCQzX7iP0uiWWCniDTd3tlx7ROOKb8fICi+NhBbH/X/1ZigRlo0VOlztzpRnT2e0aIhlcl06WWBqI+TXCqRD6m8r1cU+kiF1Y2UfJW2aGv+a72Cp4jJGJwKph6bmWc8cfX3ueAdMcjAxGTimaBTiF7kz2GOtwKr+IYiNOsn9pef9L/CZsBSOl66lM/Gh9J1u0LA4tLe4uXuJxivmRCT7Fp9iEpUwqwc/leyPwBX6ubo559FEQd4ztL9aEsQjy3yEiv6nP5pNSKJ1Rw==
+ bh=jDRbKsOFigBmVYBko0W+r9T3uEFtB6nFeU5C/rB+UAY=;
+ b=n+KQodOz8sA2YAALGvWjoMVW6KBLhAyqqnxjuqhCV94SmXInutdNuMmIqoOTwhLMEQ7AjhuW3m/v0hrml5S+Oly4/iZjhEhsQWmym7byDvgO2KG3P0pF4oKMMTRKu9fMysu4zvVQbJPSmmcctlWjiSyVD+B2eUSYENEIle0mwipcSE6pFhIi9JNHrKfg8t/Dlwey5BarBKPVCjN+TS5e7wYZtPXECO0/vF8DRyREJ726Smdh81mX8as8eeifuoDlm731R0AoMdxYVY6AZ0VnPZkSgpU0ycXiTMEp+9k1Yo/flAAWJ3nJXwjNbyCKByRGgunF23gtNDJU8sxiZFbpug==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jPrfZE2ZzlgXwxvs9WgUYsD0eHrzsLPa8Nba2DpTt4o=;
- b=R31Y5mLaFkn0bDIUhz/ak+oezkkqV5xYyrBFVEAEYXrPy1VymzIjiZyfDMor+Q35S/45NzxzUG5wW9Pdoh0vS6TDkXTWKQgJkWigxCEyO6tUBPk0NbQD/JOmoQcjfu4+dnrtCo7SCOHPwXHWC+gteRs7KApEHuGiQZN4Op/YK9Q=
+ bh=jDRbKsOFigBmVYBko0W+r9T3uEFtB6nFeU5C/rB+UAY=;
+ b=XPMlX+9RgFGwUvNoiHWqPyQrOy6Imy6FfZ1NMMirslJ4d8BR27nelC6k+b3fRP5zzr4JFW0KF9uUnmt6RE+TdgJaS2+XxA+ABDopM2J4hx5nq4gUSiHi5CPWjgmDF1IDfEADTdo9T6HgKmDUfzOTmyw9lvmtpZbq0vkql35eRCI=
 Received: from VI1PR0402MB2863.eurprd04.prod.outlook.com (10.175.20.18) by
  VI1PR0402MB3918.eurprd04.prod.outlook.com (52.134.17.31) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2305.15; Wed, 2 Oct 2019 13:04:40 +0000
+ 15.20.2305.15; Wed, 2 Oct 2019 13:04:41 +0000
 Received: from VI1PR0402MB2863.eurprd04.prod.outlook.com
  ([fe80::fd33:c447:3cab:c36]) by VI1PR0402MB2863.eurprd04.prod.outlook.com
  ([fe80::fd33:c447:3cab:c36%7]) with mapi id 15.20.2305.023; Wed, 2 Oct 2019
- 13:04:40 +0000
+ 13:04:41 +0000
 From: Stefan-gabriel Mirea <stefan-gabriel.mirea@nxp.com>
 To: "corbet@lwn.net" <corbet@lwn.net>, "robh+dt@kernel.org"
  <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
  "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
  "catalin.marinas@arm.com" <catalin.marinas@arm.com>, "will@kernel.org"
  <will@kernel.org>
-Subject: [PATCH v5 1/5] dt-bindings: arm: fsl: Add the S32V234-EVB board
-Thread-Topic: [PATCH v5 1/5] dt-bindings: arm: fsl: Add the S32V234-EVB board
-Thread-Index: AQHVeSHzRt15gcIyzkiIQ4Txg/5+kA==
-Date: Wed, 2 Oct 2019 13:04:39 +0000
-Message-ID: <20191002130425.28905-2-stefan-gabriel.mirea@nxp.com>
+Subject: [PATCH v5 2/5] arm64: Introduce config for S32
+Thread-Topic: [PATCH v5 2/5] arm64: Introduce config for S32
+Thread-Index: AQHVeSH0gYgaSbiD5UaSomdVgm1X0w==
+Date: Wed, 2 Oct 2019 13:04:41 +0000
+Message-ID: <20191002130425.28905-3-stefan-gabriel.mirea@nxp.com>
 References: <20191002130425.28905-1-stefan-gabriel.mirea@nxp.com>
 In-Reply-To: <20191002130425.28905-1-stefan-gabriel.mirea@nxp.com>
 Accept-Language: en-US
@@ -73,12 +73,12 @@ authentication-results: spf=none (sender IP is )
 x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [86.120.240.156]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: f627acc0-ee0d-4b92-eab0-08d74739157e
+x-ms-office365-filtering-correlation-id: 6c21a046-5b28-41aa-2275-08d747391678
 x-ms-office365-filtering-ht: Tenant
 x-ms-traffictypediagnostic: VI1PR0402MB3918:|VI1PR0402MB3918:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR0402MB3918BB5E0A2AB0801ECC41C6DF9C0@VI1PR0402MB3918.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3826;
+x-microsoft-antispam-prvs: <VI1PR0402MB3918A4525A7FFEC4E841470ADF9C0@VI1PR0402MB3918.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3968;
 x-forefront-prvs: 0178184651
 x-forefront-antispam-report: SFV:NSPM;
  SFS:(10009020)(4636009)(366004)(39860400002)(136003)(396003)(376002)(346002)(189003)(199004)(102836004)(2201001)(5660300002)(26005)(478600001)(76176011)(486006)(386003)(14454004)(50226002)(8676002)(8936002)(81156014)(305945005)(81166006)(6506007)(7736002)(7416002)(64756008)(6436002)(66556008)(66446008)(476003)(66066001)(2906002)(11346002)(2616005)(66476007)(6486002)(66946007)(25786009)(52116002)(2501003)(186003)(256004)(446003)(6512007)(6116002)(3846002)(36756003)(71190400001)(71200400001)(4744005)(4326008)(1076003)(86362001)(54906003)(99286004)(110136005)(316002);
@@ -89,20 +89,19 @@ received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: ffrcKV9octv4hUr04GUPxqd9ul8qDrUoWIosZTto5xX72hSM7LDFHN5audHzjvcYIq+9oEc0q8OV4LgVu2//G8B2/ZV8hpkG5d69LwKaQfIxUV7ZdW1FwQD8kaHAZUmTQ0nhB88Yn6ktB9eN34vOyA9TgwITyeaJMA5DfEPGuagiA/We4CRzXJ7AXo8JLK31mCkZ/BQNlywKcClVEwg+uETIgg3uOD9T3rLkkbnVj7cHJchSuttvT+ZZbwAC3eHi/CbNMhCMaezVjlzeRyQZafSug7F3h3fE08ikS1ezLqnqdEQK93ME1tcRBR8MUSPJnl3oUIzoB7zWZ7NueowGjFL7I8IxdkMoZg4ISetsCPu/WyKZKNDuDsAzsaPCyLgslSoKA0KBcd2r1aaw4pR+c1zqFMCbQtyIc4rL3HPKnPE=
-Content-ID: <645189E856AA654A9F01C6C622055648@eurprd04.prod.outlook.com>
+x-microsoft-antispam-message-info: KQeSlaIxYa5KHIyyZ4Nm0oT8JotShh3g43P9bjIWQTKD2TgOSOupnvB+JKkaJoPyKwxDNbGibC6mHsoAUJA00qg+Z/DBrkhn1abc4kkJXYX/OLiZHHRPvAF0Hj6pemc+kEstGszZeQzj3F8DvwKtoHwiN35D0B+lr9W3qeuShcNwBVd1xOsE/yYNuXEuyx+NsXc05tNBoEtKajuTfx7Bj/JuDVVNQWmEOLdIBoy27OUfQ3C1l/ZvlkJhZsYMCTVLrfv5tELZb8qYDEYTfr/hz/p0McpajkpUC3rLilSw+cD+Eig1M1hywVwX3czN5cJ7tsSaoQKUQ5KxQace+LAct5M+fqKj+1pjexIZfgmnq0taEHDdpaKdc0+eqwqeaCuf7sIV/21ILcjTZPXSjg1uaNLvbdPn+LbGVJYKYupeRGc=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f627acc0-ee0d-4b92-eab0-08d74739157e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Oct 2019 13:04:39.8940 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6c21a046-5b28-41aa-2275-08d747391678
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Oct 2019 13:04:41.4043 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: EcehjH3yVlK2x7Jza/0NxewzMEUAT07HW3LqwD+koHH6XzCQ/p3n2UPllTX2rh7roXzunSIzkuQfUzxg9f+KqA1xNazm2YlQN7u1r1uijWg=
+X-MS-Exchange-CrossTenant-userprincipalname: UUKCLDeCiPmP6bSQB4G9flHLA2kdIhTEk4GJEt6XOD+VFG2Lfgn31aqm7upSrufkBPTjVKzU69HQ97Ic4pwQ6W6GT2evk/tgfeZTaH24bLk=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB3918
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_060445_632365_0D63C5D2 
-X-CRM114-Status: GOOD (  10.74  )
+X-CRM114-CacheID: sfid-20191002_060447_357903_29A5663E 
+X-CRM114-Status: GOOD (  10.18  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
@@ -133,35 +132,52 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Eddy Petrisor <eddy.petrisor@nxp.com>,
  "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
  "jslaby@suse.com" <jslaby@suse.com>,
+ Cosmin Stefan Stoica <cosmin.stoica@nxp.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogRWRkeSBQZXRyaciZb3IgPGVkZHkucGV0cmlzb3JAbnhwLmNvbT4NCg0KQWRkIGVudHJ5
-IGZvciB0aGUgTlhQIFMzMlYyMzQgQ3VzdG9tZXIgRXZhbHVhdGlvbiBCb2FyZCB0byB0aGUgYm9h
-cmQvU29DDQpiaW5kaW5ncy4NCg0KU2lnbmVkLW9mZi1ieTogRWRkeSBQZXRyaciZb3IgPGVkZHku
-cGV0cmlzb3JAbnhwLmNvbT4NClNpZ25lZC1vZmYtYnk6IFN0ZWZhbi1HYWJyaWVsIE1pcmVhIDxz
-dGVmYW4tZ2FicmllbC5taXJlYUBueHAuY29tPg0KUmV2aWV3ZWQtYnk6IFJvYiBIZXJyaW5nIDxy
-b2JoQGtlcm5lbC5vcmc+DQotLS0NCiBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
-YXJtL2ZzbC55YW1sIHwgNiArKysrKysNCiAxIGZpbGUgY2hhbmdlZCwgNiBpbnNlcnRpb25zKCsp
-DQoNCmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvYXJtL2Zz
-bC55YW1sIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9mc2wueWFtbA0K
-aW5kZXggMWI0YjRlNjU3M2I1Li5jMjExZjRmODJlMjUgMTAwNjQ0DQotLS0gYS9Eb2N1bWVudGF0
-aW9uL2RldmljZXRyZWUvYmluZGluZ3MvYXJtL2ZzbC55YW1sDQorKysgYi9Eb2N1bWVudGF0aW9u
-L2RldmljZXRyZWUvYmluZGluZ3MvYXJtL2ZzbC55YW1sDQpAQCAtMzM1LDQgKzMzNSwxMCBAQCBw
-cm9wZXJ0aWVzOg0KICAgICAgICAgICAgICAgLSBmc2wsbHMyMDg4YS1yZGINCiAgICAgICAgICAg
-LSBjb25zdDogZnNsLGxzMjA4OGENCiANCisgICAgICAtIGRlc2NyaXB0aW9uOiBTMzJWMjM0IGJh
-c2VkIEJvYXJkcw0KKyAgICAgICAgaXRlbXM6DQorICAgICAgICAgIC0gZW51bToNCisgICAgICAg
-ICAgICAgIC0gZnNsLHMzMnYyMzQtZXZiICAgICAgICAgICAjIFMzMlYyMzQtRVZCMiBDdXN0b21l
-ciBFdmFsdWF0aW9uIEJvYXJkDQorICAgICAgICAgIC0gY29uc3Q6IGZzbCxzMzJ2MjM0DQorDQog
-Li4uDQotLSANCjIuMjIuMA0KDQpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+From: Mihaela Martinas <Mihaela.Martinas@freescale.com>
+
+Add configuration option for the NXP S32 platform family in
+Kconfig.platforms. For starters, the only SoC supported will be Treerunner
+(S32V234), with a single execution target: the S32V234-EVB (rev 29288)
+board.
+
+Signed-off-by: Mihaela Martinas <Mihaela.Martinas@freescale.com>
+Signed-off-by: Stoica Cosmin-Stefan <cosmin.stoica@nxp.com>
+Signed-off-by: Stefan-Gabriel Mirea <stefan-gabriel.mirea@nxp.com>
+---
+ arch/arm64/Kconfig.platforms | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
+index 16d761475a86..17f1c34ec750 100644
+--- a/arch/arm64/Kconfig.platforms
++++ b/arch/arm64/Kconfig.platforms
+@@ -212,6 +212,11 @@ config ARCH_ROCKCHIP
+ 	  This enables support for the ARMv8 based Rockchip chipsets,
+ 	  like the RK3368.
+ 
++config ARCH_S32
++	bool "NXP S32 SoC Family"
++	help
++	  This enables support for the NXP S32 family of processors.
++
+ config ARCH_SEATTLE
+ 	bool "AMD Seattle SoC Family"
+ 	help
+-- 
+2.22.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
