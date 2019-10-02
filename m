@@ -2,67 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94CDBC88BB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 14:38:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A59F3C88E5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 14:41:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=tyw1eVe1TMQ1Hu6kfWrbL0/8E5beZV4y1oUL/F0x7gs=; b=tFQ
-	izM1C1+1Di4WEZOAXjhSJhaylcX2yFHad7KOIt7dUZszm5K5cGNb+Mg91Fs7mJOIxisLhz/ofHMWa
-	sskQLVEMZmkNJMvS/d9Xqat2ZjQNKWqbPekCFCuUGYFh59bXQ0SfimedrkRE8LVpErAjO8UlZ6Luz
-	cY4gapMIFuflzVKj12+VysD10lP4JbxoVX4F6sDAZuKk/p5a+s6Iz6y2PIEWRBGEeH8d43G2+aYkO
-	rsPj70akpzq+D9TCx6Zj/vom8WYiut3ilg+80aTR1QIJtNJKM3sGnkpy7kz34GOPczFE3GuZFoYl+
-	yzEO9FXPx+pm+AotjR10a4kFlbh/hAg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ACNjqbF+ucucJiPP0a8vkrtYntpttmzLRrie5jO+QKY=; b=AmLYKeTX7ajEWC
+	JOQzgOZSlNMiy92EaOjS7roaILa8OY+jNwXCX2X+59QxUhkoEFjCZ1f3lKDfYRF+Wj6pdl+56Nnr6
+	R3zMvzdlk0/zvfIc69BpjDFA65JXVQ7dnVesoFNzvNMXHRd9UTNHJG2qeQ+54QYCegZqkQVKqOZvB
+	lhejwoNUGEcaUz5T1GzG4ovwS6NNvSACo2nXtQhH8ncSoOsMJ1UWZH1wMAPGUTl/Bj0sUxaWYYpEo
+	BqojqYi7y2lVF4j0OxbsV6DExq5OZsxQWvgDfMKsfEjZ+DYlM5znJQUQUnpSPqzXEQedVVzb0+CFU
+	1bAvK1xZpq9RJ27p7UyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFdtH-00052F-HJ; Wed, 02 Oct 2019 12:37:59 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iFdwG-0006kP-Il; Wed, 02 Oct 2019 12:41:04 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFdtB-00051p-33
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 12:37:54 +0000
-Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
- [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 449C62133F;
- Wed,  2 Oct 2019 12:37:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570019872;
- bh=ChgbF8+fzmNdqmEfQuAFCyRjTz2T+1noDP824BoUdUA=;
- h=From:To:Cc:Subject:Date:From;
- b=FQ8a5XW46P5kTvQsl4Oh08nxbDx+7S/lIxSjBnAMlgfDhepfa8Snuw90lltokSE1y
- r5FjfeyBlMaXl8v2rG7APdZA7INfhWRnyOsNHWqJG8k+Xq0Dkd01QwlpyoVTInm8Lc
- DgqXXqwIFkB4a85zQXkff0DyjWv8aahFRMq6m9EI=
-From: Will Deacon <will@kernel.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: Mark functions using explicit register variables as
- '__always_inline'
-Date: Wed,  2 Oct 2019 13:37:46 +0100
-Message-Id: <20191002123746.22769-1-will@kernel.org>
-X-Mailer: git-send-email 2.11.0
+ id 1iFdw5-0006ja-CC; Wed, 02 Oct 2019 12:40:54 +0000
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why)
+ by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
+ (Exim 4.80) (envelope-from <maz@kernel.org>)
+ id 1iFdvv-0007Rb-6t; Wed, 02 Oct 2019 14:40:43 +0200
+Date: Wed, 2 Oct 2019 13:40:41 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH 5/7] irqchip/irq-bcm2836: Add support for the 7211
+ interrupt controller
+Message-ID: <20191002134041.5a181d96@why>
+In-Reply-To: <20191001224842.9382-6-f.fainelli@gmail.com>
+References: <20191001224842.9382-1-f.fainelli@gmail.com>
+ <20191001224842.9382-6-f.fainelli@gmail.com>
+Organization: Approximate
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+MIME-Version: 1.0
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: f.fainelli@gmail.com, linux-kernel@vger.kernel.org,
+ tglx@linutronix.de, jason@lakedaemon.net, robh+dt@kernel.org,
+ mark.rutland@arm.com, rjui@broadcom.com, sbranden@broadcom.com,
+ bcm-kernel-feedback-list@broadcom.com, eric@anholt.net, wahrenst@gmx.net,
+ devicetree@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_053753_159024_5D14C527 
-X-CRM114-Status: GOOD (  14.06  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191002_054053_563859_AD4C88B8 
+X-CRM114-Status: GOOD (  21.69  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,75 +70,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- Russell King <linux@armlinux.org.uk>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, Will Deacon <will@kernel.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE
+ TREE BINDINGS" <devicetree@vger.kernel.org>,
+ Jason Cooper <jason@lakedaemon.net>, Scott Branden <sbranden@broadcom.com>,
+ Ray Jui <rjui@broadcom.com>, linux-kernel@vger.kernel.org,
+ Eric Anholt <eric@anholt.net>, Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
+ Thomas Gleixner <tglx@linutronix.de>, "moderated list:BROADCOM BCM2835 ARM
+ ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>, "moderated
+ list:BROADCOM BCM2835 ARM ARCHITECTURE" <linux-rpi-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As of ac7c3e4ff401 ("compiler: enable CONFIG_OPTIMIZE_INLINING forcibly"),
-inline functions are no longer annotated with '__always_inline', which
-allows the compiler to decide whether inlining is really a good idea or
-not. Although this is a great idea on paper, the reality is that AArch64
-GCC prior to 9.1 has been shown to get confused when creating an
-out-of-line copy of a function passing explicit 'register' variables
-into an inline assembly block:
+On Tue,  1 Oct 2019 15:48:40 -0700
+Florian Fainelli <f.fainelli@gmail.com> wrote:
 
-  https://gcc.gnu.org/bugzilla/show_bug.cgi?id=91111
+> The root interrupt controller on 7211 is about identical to the one
+> existing on BCM2836, except that the SMP cross call are done through the
+> standard ARM GIC-400 interrupt controller. This interrupt controller is
+> used for side band wake-up signals though.
 
-It's not clear whether this is specific to arm64 or not but, for now,
-ensure that all of our functions using 'register' variables are marked
-as '__always_inline' so that the old behaviour is effectively preserved.
+I don't fully grasp how this thing works.
 
-Hopefully other architectures are luckier with their compilers.
+If the 7211 interrupt controller is root and the GIC is used for SGIs,
+this means that the GIC outputs (IRQ/FIQ/VIRQ/VFIQ, times eight) are
+connected to individual inputs to the 7211 controller. Seems totally
+braindead, and unexpectedly so.
 
-Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
-Cc: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Cc: Arnd Bergmann <arnd@arndb.de>
-Cc: Russell King <linux@armlinux.org.uk>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Nick Desaulniers <ndesaulniers@google.com>
-Signed-off-by: Will Deacon <will@kernel.org>
----
+If the GIC is root and the 7211 outputs into the GIC all of its
+interrupts as a secondary irqchip, it would at least match an existing
+(and pretty bad) pattern.
 
-I plan to queue this as a fix via the arm64 tree, although I still think
-it's papering over a wider issue for us.
+So which one of the two is it?
 
- arch/arm64/include/asm/atomic_lse.h | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+> 
+> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+> ---
+>  drivers/irqchip/irq-bcm2836.c | 25 ++++++++++++++++++++++---
+>  1 file changed, 22 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/irqchip/irq-bcm2836.c b/drivers/irqchip/irq-bcm2836.c
+> index 2038693f074c..77fa395c8f6b 100644
+> --- a/drivers/irqchip/irq-bcm2836.c
+> +++ b/drivers/irqchip/irq-bcm2836.c
+> @@ -112,6 +112,8 @@ static int bcm2836_map(struct irq_domain *d, unsigned int irq,
+>  		return -EINVAL;
+>  	}
+>  
+> +	chip->flags |= IRQCHIP_MASK_ON_SUSPEND | IRQCHIP_SKIP_SET_WAKE;
+> +
+>  	irq_set_percpu_devid(irq);
+>  	irq_domain_set_info(d, irq, hw, chip, d->host_data,
+>  			    handle_percpu_devid_irq, NULL, NULL);
+> @@ -216,8 +218,9 @@ static void bcm2835_init_local_timer_frequency(void)
+>  	writel(0x80000000, intc.base + LOCAL_PRESCALER);
+>  }
+>  
+> -static int __init bcm2836_arm_irqchip_l1_intc_of_init(struct device_node *node,
+> -						      struct device_node *parent)
+> +static int __init arm_irqchip_l1_intc_of_init_smp(struct device_node *node,
+> +						  struct device_node *parent,
+> +						  bool smp_init)
+>  {
+>  	intc.base = of_iomap(node, 0);
+>  	if (!intc.base) {
+> @@ -232,11 +235,27 @@ static int __init bcm2836_arm_irqchip_l1_intc_of_init(struct device_node *node,
+>  	if (!intc.domain)
+>  		panic("%pOF: unable to create IRQ domain\n", node);
+>  
+> -	bcm2836_arm_irqchip_smp_init();
+> +	if (smp_init)
+> +		bcm2836_arm_irqchip_smp_init();
 
-diff --git a/arch/arm64/include/asm/atomic_lse.h b/arch/arm64/include/asm/atomic_lse.h
-index c6bd87d2915b..574808b9df4c 100644
---- a/arch/arm64/include/asm/atomic_lse.h
-+++ b/arch/arm64/include/asm/atomic_lse.h
-@@ -321,7 +321,8 @@ static inline s64 __lse_atomic64_dec_if_positive(atomic64_t *v)
- }
- 
- #define __CMPXCHG_CASE(w, sfx, name, sz, mb, cl...)			\
--static inline u##sz __lse__cmpxchg_case_##name##sz(volatile void *ptr,	\
-+static __always_inline u##sz						\
-+__lse__cmpxchg_case_##name##sz(volatile void *ptr,			\
- 					      u##sz old,		\
- 					      u##sz new)		\
- {									\
-@@ -362,7 +363,8 @@ __CMPXCHG_CASE(x,  ,  mb_, 64, al, "memory")
- #undef __CMPXCHG_CASE
- 
- #define __CMPXCHG_DBL(name, mb, cl...)					\
--static inline long __lse__cmpxchg_double##name(unsigned long old1,	\
-+static __always_inline long						\
-+__lse__cmpxchg_double##name(unsigned long old1,				\
- 					 unsigned long old2,		\
- 					 unsigned long new1,		\
- 					 unsigned long new2,		\
+Instead of the additional parameter and this check, why don't you just
+move the smp_init() call to bcm2836_arm_irqchip_l1_intc_of_init()
+instead?
+
+>  
+>  	set_handle_irq(bcm2836_arm_irqchip_handle_irq);
+> +
+>  	return 0;
+>  }
+>  
+> +static int __init bcm2836_arm_irqchip_l1_intc_of_init(struct device_node *node,
+> +						      struct device_node *parent)
+> +{
+> +	return arm_irqchip_l1_intc_of_init_smp(node, parent, true);
+> +}
+> +
+> +static int __init bcm7211_arm_irqchip_l1_intc_of_init(struct device_node *node,
+> +						      struct device_node *parent)
+> +{
+> +	return arm_irqchip_l1_intc_of_init_smp(node, parent, false);
+> +}
+> +
+>  IRQCHIP_DECLARE(bcm2836_arm_irqchip_l1_intc, "brcm,bcm2836-l1-intc",
+>  		bcm2836_arm_irqchip_l1_intc_of_init);
+> +IRQCHIP_DECLARE(bcm7211_arm_irqchip_l1_intc, "brcm,bcm7211-l1-intc",
+> +		bcm7211_arm_irqchip_l1_intc_of_init);
+
+
+Thanks,
+
+	M.
 -- 
-2.23.0.444.g18eeb5a265-goog
-
+Without deviation from the norm, progress is not possible.
 
 _______________________________________________
 linux-arm-kernel mailing list
