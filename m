@@ -2,64 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC162C8A13
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 15:45:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1E1BC8A5A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 15:58:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jU7onsjUlDOHqwfOJZ9GQMolvlIdfuC35OLPIwRaJJ4=; b=ZbvB9KW6JtceYN
-	ShCI7hHRwDd1080CKvz38KXfnyU5RPznRnJ5KgvLpiFhH3wLcueanejo3Jr1t2YZo7NOGL7QGG2SX
-	myKV0pdTDt0s3fMoDfpvxSiq12TKhLVAt0JvupDoL32TsSetS6eWZTZHar+yGkSYNsnJd64gaxnZA
-	ykUymr+/fOrXsHUCWPSUGGaaTGsK/Xj3vrf5/VKMcvOABo4nMZ0tOShfFBvWcx7wPp7PWfF1MAUVi
-	1vxqkP9c3rNMJwz5cuyVjZRtvAXaUQU/WXNepE5Y4YevVMy91xWhgkc8Do8K1j6OCp/ckMN37FHdQ
-	Cs+WisZarZYaxcD85bDA==;
+	List-Owner; bh=UIwQVc9IZrnCZyxaK2PaWVhVLvDf0Rz2kgSayX/cfLg=; b=pSaGYgmIZaIWEy
+	VRPzPfY8sYdRPnMDr/7wdiA/UYqoPqxxPNK6NJzNiwlKBoINQs0jjr5yyKsq0N+gX7EI5J8yDnt7O
+	rIUu8PDGSeKrTgemKzQxaa40pjn0zLdZ4Ed6llxixS25v4lUHrxq9Zf1G+sRtlvrkF8+bMUTGAQKH
+	719Wyn3K3yjO3frJXG2hT5yUR5BgXAxZyMAsOnw1SdjdmwmXsf9I5vu79QFfaazg09gLSV/+JY0eZ
+	gLI8fIkWmJFetFceEZc40425t5NRWCDSUCH0Oq/oIUydwdhgB8xZSdYAQzFFodmLiKg+dEF7ANmNr
+	0Zm1mknK0+n+zxP65OxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFews-0006U8-Sa; Wed, 02 Oct 2019 13:45:46 +0000
-Received: from mga03.intel.com ([134.134.136.65])
+	id 1iFf9H-0002Qx-Uz; Wed, 02 Oct 2019 13:58:35 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFewm-0006TA-Cl
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 13:45:42 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
- by orsmga103.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 02 Oct 2019 06:45:39 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,574,1559545200"; d="scan'208";a="198214198"
-Received: from stinkbox.fi.intel.com (HELO stinkbox) ([10.237.72.174])
- by FMSMGA003.fm.intel.com with SMTP; 02 Oct 2019 06:45:36 -0700
-Received: by stinkbox (sSMTP sendmail emulation);
- Wed, 02 Oct 2019 16:45:35 +0300
-Date: Wed, 2 Oct 2019 16:45:35 +0300
-From: Ville =?iso-8859-1?Q?Syrj=E4l=E4?= <ville.syrjala@linux.intel.com>
-To: Jeykumar Sankaran <jsanka@codeaurora.org>
-Subject: Re: [PATCH] drm: add fb max width/height fields to drm_mode_config
-Message-ID: <20191002134535.GU1208@intel.com>
-References: <1569634131-13875-1-git-send-email-jsanka@codeaurora.org>
- <1569634131-13875-2-git-send-email-jsanka@codeaurora.org>
- <20190930103931.GZ1208@intel.com>
- <f6d3c2b6ad897ce8b2fdcaab44993eed@codeaurora.org>
+ id 1iFf9B-0002QT-70; Wed, 02 Oct 2019 13:58:30 +0000
+X-UUID: 70116681251547a69f86a3dff757bf4b-20191002
+X-UUID: 70116681251547a69f86a3dff757bf4b-20191002
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <neal.liu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1951853795; Wed, 02 Oct 2019 05:58:19 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 2 Oct 2019 06:58:17 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 2 Oct 2019 21:47:48 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 2 Oct 2019 21:47:48 +0800
+Message-ID: <1570024070.4002.1.camel@mtkswgap22>
+Subject: Re: [PATCH v4 2/3] dt-bindings: rng: add bindings for MediaTek
+ ARMv8 SoCs
+From: Neal Liu <neal.liu@mediatek.com>
+To: Rob Herring <robh@kernel.org>
+Date: Wed, 2 Oct 2019 21:47:50 +0800
+In-Reply-To: <1568771054.21700.7.camel@mtkswgap22>
+References: <1561361052-13072-1-git-send-email-neal.liu@mediatek.com>
+ <1561361052-13072-3-git-send-email-neal.liu@mediatek.com>
+ <20190722171320.GA9806@bogus> <1563848465.31451.4.camel@mtkswgap22>
+ <CAL_Jsq+SRhd=-5O2G_CMfJX9Z188kvA05MQOXaU1J8iExwUixQ@mail.gmail.com>
+ <1568771054.21700.7.camel@mtkswgap22>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <f6d3c2b6ad897ce8b2fdcaab44993eed@codeaurora.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_064540_473641_19291CA6 
-X-CRM114-Status: GOOD (  21.86  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191002_065829_258551_537BC06F 
+X-CRM114-Status: GOOD (  31.10  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.65 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,123 +75,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, seanpaul@chromium.org,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- narmstrong@baylibre.com
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ wsd_upstream <wsd_upstream@mediatek.com>, Sean Wang <sean.wang@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Neal Liu <neal.liu@mediatek.com>,
+ Crystal Guo =?UTF-8?Q?=28=E9=83=AD=E6=99=B6=29?= <Crystal.Guo@mediatek.com>,
+ "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
+ Matt Mackall <mpm@selenic.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 01, 2019 at 02:20:55PM -0700, Jeykumar Sankaran wrote:
-> On 2019-09-30 03:39, Ville Syrj=E4l=E4 wrote:
-> > On Fri, Sep 27, 2019 at 06:28:51PM -0700, Jeykumar Sankaran wrote:
-> >> The mode_config max width/height values determine the maximum
-> >> resolution the pixel reader can handle.
-> > =
+Dear Rob,
 
-> > Not according to the docs I "fixed" a while ago.
-> > =
+Just a gentle ping.
 
-> >> But the same values are
-> >> used to restrict the size of the framebuffer creation. Hardware's
-> >> with scaling blocks can operate on framebuffers larger/smaller than
-> >> that of the pixel reader resolutions by scaling them down/up before
-> >> rendering.
-> >> =
+Neal
 
-> >> This changes adds a separate framebuffer max width/height fields
-> >> in drm_mode_config to allow vendors to set if they are different
-> >> than that of the default max resolution values.
-> > =
+On Wed, 2019-09-18 at 09:44 +0800, Neal Liu wrote:
+> On Tue, 2019-07-23 at 22:35 +0800, Rob Herring wrote:
+> > On Mon, Jul 22, 2019 at 8:21 PM Neal Liu <neal.liu@mediatek.com> wrote:
+> > >
+> > 
+> > Please don't top post to lists.
+> > 
+> > > Dear Rob,
+> > >         You can check my driver for detail:
+> > >         http://patchwork.kernel.org/patch/11012475/ or patchset 3/3
+> > 
+> > I could, or you could just answer my question.
+> > 
+> > >
+> > >         This driver is registered as hardware random number generator, and
+> > > combines with rng-core.
+> > >         We want to add one rng hw based on the dts. Is this proper or do you
+> > > have other suggestion to meet this requirement?
+> > 
+> > It depends. There doesn't appear to be any resource configuration, so
+> > why does it need to be in DT. DT is not the only way instantiate
+> > drivers.
+> > 
+> > Rob
+> > 
+> 
+> We would like to consult more about this patch.
+> We cannot figure out what method should be used instead of DT.
+> The interface to access firmware is "smc" and firmware function only
+> exists on certain platforms.
+> Some DT has similar way, like:
+> http://github.com/torvalds/linux/blob/master/arch/arm64/boot/dts/hisilicon/hi6220-hikey.dts#L470
+> 
+> 	firmware {
+> 		optee {
+> 			compatible = "linaro,optee-tz";
+> 			method = "smc";
+> 		};
+> 	};
+> 
+> Is there any way to instantiate driver on certain platforms without DT?
+> Could you give us some examples?
+> Thanks
+> 
+> > >
+> > >         Thanks
+> > >
+> > >
+> > > On Tue, 2019-07-23 at 01:13 +0800, Rob Herring wrote:
+> > > > On Mon, Jun 24, 2019 at 03:24:11PM +0800, Neal Liu wrote:
+> > > > > Document the binding used by the MediaTek ARMv8 SoCs random
+> > > > > number generator with TrustZone enabled.
+> > > > >
+> > > > > Signed-off-by: Neal Liu <neal.liu@mediatek.com>
+> > > > > ---
+> > > > >  .../devicetree/bindings/rng/mtk-sec-rng.txt        |   10 ++++++++++
+> > > > >  1 file changed, 10 insertions(+)
+> > > > >  create mode 100644 Documentation/devicetree/bindings/rng/mtk-sec-rng.txt
+> > > > >
+> > > > > diff --git a/Documentation/devicetree/bindings/rng/mtk-sec-rng.txt b/Documentation/devicetree/bindings/rng/mtk-sec-rng.txt
+> > > > > new file mode 100644
+> > > > > index 0000000..c04ce15
+> > > > > --- /dev/null
+> > > > > +++ b/Documentation/devicetree/bindings/rng/mtk-sec-rng.txt
+> > > > > @@ -0,0 +1,10 @@
+> > > > > +MediaTek random number generator with TrustZone enabled
+> > > > > +
+> > > > > +Required properties:
+> > > > > +- compatible : Should be "mediatek,mtk-sec-rng"
+> > > >
+> > > > What's the interface to access this?
+> > > >
+> > > > A node with a 'compatible' and nothing else is a sign of something that
+> > > > a parent device should instantiate and doesn't need to be in DT. IOW,
+> > > > what do complete bindings for firmware functions look like?
+> > > >
+> > > > > +
+> > > > > +Example:
+> > > > > +
+> > > > > +hwrng: hwrng {
+> > > > > +   compatible = "mediatek,mtk-sec-rng";
+> > > > > +}
+> > > > > --
+> > > > > 1.7.9.5
+> > > > >
+> > > >
+> > > > _______________________________________________
+> > > > Linux-mediatek mailing list
+> > > > Linux-mediatek@lists.infradead.org
+> > > > http://lists.infradead.org/mailman/listinfo/linux-mediatek
+> > >
+> > >
+> 
 
-> > If you're going to change the meaning of the old values you need
-> > to fix the drivers too.
-> > =
 
-> > Personally I don't see too much point in this since you most likely
-> > want to validate all the other timings as well, and so likely need
-> > some kind of mode_valid implementation anyway. Hence to validate
-> > modes there's not much benefit of having global min/max values.
-> > =
-
-> https://patchwork.kernel.org/patch/10467155/
-> =
-
-> I believe you are referring to this patch.
-> =
-
-> I am primarily interested in the scaling scenario mentioned here. MSM
-> and a few other hardware have scaling block that are used both ways:
-> =
-
-> 1) Where FB limits are larger than the display limits. Scalar blocks are =
-
-> used to
->     downscale the framebuffers and render within display limits.
-> =
-
-> In this scenario, with your patch, are you suggesting the drivers =
-
-> maintain the
-> display limits locally and use those values in fill_modes() / =
-
-> mode_valid() to filter
-> out invalid modes explicitly instead of mode_config.max_width/height?
-> =
-
-> 2) Where FB limits are smaller than display limits. Enforced for =
-
-> performance reasons on low tier hardware.
-> It reduces the fetch bandwidth and uses post blending scalar block to =
-
-> scale up the pixel stream
-> to match the display resolution.
-
-As Daniel mentioned in that discussion your typical userspace
-assumes that it can use a single unscaled framebuffer with any
-advertised mode. Hence I believe limiting the mode list based
-on the max framebuffer size is pretty much required unless
-you want to break existing userspace.
-
-In i915 I went a bit further than that recently and now we
-filter the mode list based on the maximum plane size [1] =
-
-(which can be less than the max fb size and less than the
-maximum crtc dimensions). And again that's because userspace
-assumes that it can just use a single unscaled fullscreen
-plane to cover the entire crtc.
-
-These assumption are also carved into the legacy setcrtc uapi
-where you can't even specify multiple framebuffers. In theory
-a driver could internally use multiple planes to overcome some
-of the limitations, but in i915 at least we don't.
-
-[1] https://cgit.freedesktop.org/drm/drm-intel/commit/?id=3D2d20411e25a3bf3=
-d2914a2219f47ed48dc57aed5
-
-> =
-
-> Any suggestions on how this topology can be handled with a single set of =
-
-> max/min values?
->
-
-I think a safe way to relax these rules would be to either:
-a) Add a client cap by which userspace can inform the kernel
-   it understands there are more complicated limits at play
-   and thus can't assume that everything will just work
-b) Maybe we could just tie that in with the atomic cap since
-   atomic clients are pretty much required to do the TEST_ONLY
-   dance anyway, so one might hope they have a working fallback
-   strategy. Though I suspect eg. the modesetting ddx wouldn't
-   like this. But we no longer allow atomic with X anyway so
-   that partcular argument may not hold much weight anymore.
-
--- =
-
-Ville Syrj=E4l=E4
-Intel
 
 _______________________________________________
 linux-arm-kernel mailing list
