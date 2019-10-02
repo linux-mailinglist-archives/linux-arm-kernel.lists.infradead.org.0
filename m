@@ -2,83 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0033AC8BA1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 16:45:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CFE6C8BA7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 16:45:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5rNPmD+lXAjzdThS3GYHFakddstOqEBbZeXDZOTVrLc=; b=mLsmZ5r5iw9Raa
-	76Bp92ernNzrY8Af2I/upR2V84cVi29mbraHiyKzmPBbmMPEJjutDLj5jLwdZp5f2SfVGlU+ahEDH
-	1iaVMZWbXuz9o33iLj0GXj3kH6yqly9+DBWnmMXjXDIOrnBdBBRqVlRp9UMLohUR+znxvKSdNngqs
-	883nt9j/R/ne7mAT3l5d8SSJ0XPKNKErocqehivlmIVMyHYAEZf5WVqZYIB1RWNxFirDrnkm/jTtZ
-	URnx8dAmw8AltZK/cGs6IQAu396FCVdkM84c62nZaG9tJwfvHN16Xfty9Y24dhT0emTgVjZQO+FdC
-	OZRcS4lUn7LSu9uu+a9g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=csIWPoJz7RR9msf1imaCNOLXiDPcaRmxRKjOL8gMaXM=; b=LCP5OdWPpIBxJz
+	tSNffGBZI2pwLSarAvmqKIowLW5LghNe3CVQh7HM3sIR+IqrUtTSXi/0EEQAQORrYHSnR4zrDlubl
+	8IIqIetbgOrEmYRpHQxWZV/Z0p5JTdvNVeOiR63CuFbjz/h9UXPWOiLZijU1eZfSN2UuEJWxzoWMF
+	CsXxW+3rZ3os8AAa9x0lt6gGLwAPEPrxP44q4AJTVp3q+cD7GTXHu0F2ZT2flxES+cFF2/cPg2GiM
+	yR5j7GNMDhdxFKjGp8qcDhfCKx/0jF0DofnC4JsVlN0R25HdwYHzdHhysk8ca7JxLIMJlgXsgM5aY
+	4XUIEB/0CjoPtdbP+8yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFfsO-0004rd-29; Wed, 02 Oct 2019 14:45:12 +0000
-Received: from mail-wm1-f66.google.com ([209.85.128.66])
+	id 1iFfsb-0006Nf-53; Wed, 02 Oct 2019 14:45:25 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFfpY-00039j-MB
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 14:42:18 +0000
-Received: by mail-wm1-f66.google.com with SMTP id i16so7513487wmd.3
+ id 1iFfqd-0003rK-EL
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 14:43:47 +0000
+Received: by mail-wr1-x443.google.com with SMTP id w12so19991081wro.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 02 Oct 2019 07:42:16 -0700 (PDT)
+ Wed, 02 Oct 2019 07:43:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=y9l/1MkRoZLCyZNPXaR5fzwvTbuyIzYA20JLtWuhYR4=;
+ b=ahoJ80fONPxwQPqvbuQRAba40syj0YJFK3SbqTxd0FOzhs1n3WTvNd/gHQ+2WK5WwB
+ 8joqipXveUGBgePR1RwHR0oQyDAumewRmSMStvhyCHPeo154CNqZfGQNlbNlRng2QJqd
+ 1/Sq8GNJ1DjcLifpHWbCC9LoK5U3UkvdIWHPFx0cqJ+ENvPHkYPr2FdpaZ8jxuJta3TT
+ dplkNk0AsL/tc33KBJbKUSlnYppX878WQXUvnhdB+TRmr5R3dtc5Ewc0TH4h7V1SXTly
+ GiNnbbCc+BKzzqk9PTo/Pqf5dzWcpNDBA1GUkzQZDTXOXXUzBjnlrTaQctjSdE6meWfJ
+ JbDw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=zjyo+RChyczV0/eg5T2YT/WXOsDMQxkL4AjVjOH/ZWQ=;
- b=HCNocqviiSoPMwz5Abgo+kjITkn5+1UNImoy61icA/+aQdP3m280RrAZ6k4EUXhj1G
- +dl81VmIKUj7xjqVLqRJBghLKHfVIsStzl7qRnDApfOgxzFxMDj9w7bJcR6KRX79sUK3
- PvgOY6T2BlcecNF3F60mLAwjm56+5V1VkjOO403be05LXmNVX6hbFKg07c+pV3xE05i8
- r0pEeouDBcJQPnB08U2rmxgUZnu/vjBqezLS1f3fvudVkMD6XykvyziUXR6Du3w9Vk/Q
- J3ccPXw40zkTFfGNw1hSARXBZSCA3O1o2LbAuOGsf5ui4bsKZVgMeR5u208sSsJTkJjo
- wzDw==
-X-Gm-Message-State: APjAAAUYctBMrd52ZIaLCAOyJ+cs3exZaINUQcRflFi+0XlJZQ4qL1AG
- 9O0P7DPmyLtSpeD+ehhZhHg=
-X-Google-Smtp-Source: APXvYqw/q15Ex1aluyAWrCmSmp8ebyZKx9I38m8wSwWqcDT1DRpshz5FSYSiSjQmwsSdItJLt7i88g==
-X-Received: by 2002:a7b:c152:: with SMTP id z18mr3112710wmi.70.1570027334811; 
- Wed, 02 Oct 2019 07:42:14 -0700 (PDT)
-Received: from pi3 ([194.230.155.145])
- by smtp.googlemail.com with ESMTPSA id c10sm31210030wrf.58.2019.10.02.07.42.13
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=y9l/1MkRoZLCyZNPXaR5fzwvTbuyIzYA20JLtWuhYR4=;
+ b=m4CouDn44ioMScPU+9h/V5vlxCAt0m4CSZKRu3pcsThkHE6u1TeKieaoBr1mh1qnIv
+ YS+V9Cd7osJa8R8USg+SJkEaSSarOn4kUq2MPTgMMmvKb63SSCCs0QD44nwEBAjIgMd/
+ /akFUOMTGQBnN7P8Iq3KWI00bVJLeoVWmqtQPkLFI1cIRrkCKTF4jh6b+i6xsiT8t2rd
+ l6WPsWnKkqUmPAqzpmLJ9bmSsiGBBFUexUJDcQnskkx6tTBzFhyNtpsbq6VdcY2mS3LR
+ rgGbisZRFdLvdZfGhmPX1hRgDoiHQLuWNAv49LtJtR7/CjNFmsKr4MBg1ydz0uO01Axr
+ zoIQ==
+X-Gm-Message-State: APjAAAXPZ9a+CEGZKeL6T+FXZoBRFrxryg3xujpPFnNpjznB8ehsaTI0
+ P6wL6cWqK9IRnS17Y/YRAb4=
+X-Google-Smtp-Source: APXvYqyETp8FIXhzzDrv+mhfzHhU0D9h3bcpLQ9oRbkEYPG7JvxLk5RVWx/ooYmku2+exI6oXsHTnA==
+X-Received: by 2002:a5d:4dd0:: with SMTP id f16mr2905889wru.85.1570027400467; 
+ Wed, 02 Oct 2019 07:43:20 -0700 (PDT)
+Received: from localhost (p2E5BE2CE.dip0.t-ipconnect.de. [46.91.226.206])
+ by smtp.gmail.com with ESMTPSA id z125sm10251381wme.37.2019.10.02.07.43.19
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 02 Oct 2019 07:42:14 -0700 (PDT)
-Date: Wed, 2 Oct 2019 16:42:11 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Subject: Re: [PATCH v2 09/10] ARM: dts: arndale: Add audio support (WM1811
- CODEC boards)
-Message-ID: <20191002144211.GB15898@pi3>
-References: <20190920130218.32690-1-s.nawrocki@samsung.com>
- <CGME20190920130324eucas1p118bfab45306a29752bf4c1cfdd8f61a1@eucas1p1.samsung.com>
- <20190920130218.32690-10-s.nawrocki@samsung.com>
+ Wed, 02 Oct 2019 07:43:19 -0700 (PDT)
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: [PATCH] mfd: max77620: Do not allocate IRQs upfront
+Date: Wed,  2 Oct 2019 16:43:18 +0200
+Message-Id: <20191002144318.140365-1-thierry.reding@gmail.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190920130218.32690-10-s.nawrocki@samsung.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_074216_759851_0A5EE66D 
-X-CRM114-Status: GOOD (  12.28  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191002_074330_018855_CC323A91 
+X-CRM114-Status: GOOD (  11.81  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.66 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.66 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ provider (thierry.reding[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,37 +96,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
- linux-samsung-soc@vger.kernel.org, ckeepax@opensource.cirrus.com,
- b.zolnierkie@samsung.com, sbkim73@samsung.com, patches@opensource.cirrus.com,
- lgirdwood@gmail.com, robh+dt@kernel.org, broonie@kernel.org,
- linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+Cc: linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 20, 2019 at 03:02:18PM +0200, Sylwester Nawrocki wrote:
-> Add sound node and the clock configurations for the I2S controller
-> for audio support on the Exynos5250 SoC Arndale boards with
-> WM1811 based audio daughter board.
-> 
-> We need to increase drive strength of the I2S bus, otherwise
-> the audio CODEC doesn't work. Likely the CODEC's master clock
-> is the main issue here.
-> 
-> Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
-> ---
-> Changes since v1:
->  - moved &clock, &clock_audss parts to preserve alphabetical order
-> ---
->  arch/arm/boot/dts/exynos5250-arndale.dts | 27 +++++++++++++++++++++++-
->  1 file changed, 26 insertions(+), 1 deletion(-)
+From: Thierry Reding <treding@nvidia.com>
 
-This does not apply. Please rebase and resend.
+regmap_add_irq_chip() will try to allocate all of the IRQ descriptors
+upfront if passed a non-zero irq_base parameter. However, the intention
+is to allocate IRQ descriptors on an as-needed basis if possible. Pass 0
+instead of -1 to fix that use-case.
 
-Best regards,
-Krzysztof
+Signed-off-by: Thierry Reding <treding@nvidia.com>
+---
+ drivers/mfd/max77620.c       | 5 ++---
+ include/linux/mfd/max77620.h | 1 -
+ 2 files changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/mfd/max77620.c b/drivers/mfd/max77620.c
+index a851ff473a44..c7ed5c353553 100644
+--- a/drivers/mfd/max77620.c
++++ b/drivers/mfd/max77620.c
+@@ -507,7 +507,6 @@ static int max77620_probe(struct i2c_client *client,
+ 
+ 	i2c_set_clientdata(client, chip);
+ 	chip->dev = &client->dev;
+-	chip->irq_base = -1;
+ 	chip->chip_irq = client->irq;
+ 	chip->chip_id = (enum max77620_chip_id)id->driver_data;
+ 
+@@ -545,8 +544,8 @@ static int max77620_probe(struct i2c_client *client,
+ 
+ 	max77620_top_irq_chip.irq_drv_data = chip;
+ 	ret = devm_regmap_add_irq_chip(chip->dev, chip->rmap, client->irq,
+-				       IRQF_ONESHOT | IRQF_SHARED,
+-				       chip->irq_base, &max77620_top_irq_chip,
++				       IRQF_ONESHOT | IRQF_SHARED, 0,
++				       &max77620_top_irq_chip,
+ 				       &chip->top_irq_data);
+ 	if (ret < 0) {
+ 		dev_err(chip->dev, "Failed to add regmap irq: %d\n", ret);
+diff --git a/include/linux/mfd/max77620.h b/include/linux/mfd/max77620.h
+index 12ba157cb83f..f552ef5b1100 100644
+--- a/include/linux/mfd/max77620.h
++++ b/include/linux/mfd/max77620.h
+@@ -329,7 +329,6 @@ struct max77620_chip {
+ 	struct regmap *rmap;
+ 
+ 	int chip_irq;
+-	int irq_base;
+ 
+ 	/* chip id */
+ 	enum max77620_chip_id chip_id;
+-- 
+2.23.0
 
 
 _______________________________________________
