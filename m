@@ -2,90 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8E51C4BA1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 12:39:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3B8CC869E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 12:47:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=zLNdYwqUO/+lwun//DkIQRZDY3cLAluDfsORlrO1VJg=; b=NXWsTY39pfY0yeB/Mcc01TeuZ
-	m8AHVPMNrIqio5Mm0QdQM+rITFMuhwEQ1+oWgzeHwB0swaM2dlAN3Yl2yztsf0GIhztkd2GCbNmJM
-	O7pOdiD0Ez6pPopyDyRrDNleXd7LU06QJIe5LEODVu+Gt2w2MNnFzMlW9W3gHqXFOyPse0zx9sRlX
-	ncGI8rvtPfJhmp/adgqcHOPsz6Y/sfM6AsgQC6D6A6JlRbQzElB12NKw3kvzHQHbBHY4Ze7cEWtXI
-	RK+AhpmUzyeP/cFKn0s+LH1OSCbtDLpgAaB9RNJyIvLvCZx+P/fKpl8Lf/Q3jHfkms39ohKph3dUK
-	KKWYuAlcw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=H1KV6ethG0ETBu6++biWLizMCDQTPZBuiXZbSGbbaOM=; b=A1VONvCfRxhXM6
+	XPVKpJk+MNQtSAqc6Zblk2YaY0bKCRAHp6VTLfm9PAZlldDXuVd8mv9Awc9PtNUaa+H6BW1cp3cMg
+	//IousNdO6Z5yw7QGV9OF+O6Vn+fYLvXLKIww52/0RNa9zaU3h3x4W7hsVPymSW0Uu8dXnt/I7QLd
+	hxei9EBh9k0j2aJWKg4n9SEJFgl73WcthoVImLuwjWicicJizn9R4tfBb58kmLC/MWy6UbLPfNEef
+	qNgrrqmXiMJ0vHAp1LtazhrY+jPVpO+nWxxODF4VJ0Vn2fxKuXoH1g38xL/2j5hIp4nBB9LIW1r9x
+	2iiFgDpFyd0DOW8UdGtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFc2O-0003Vv-SP; Wed, 02 Oct 2019 10:39:16 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iFc9z-0006om-4q; Wed, 02 Oct 2019 10:47:07 +0000
+Received: from conssluserg-03.nifty.com ([210.131.2.82])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFc2G-0003VC-KI
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 10:39:09 +0000
-Received: by mail-wm1-x342.google.com with SMTP id r19so6627164wmh.2
+ id 1iFc9s-0006oJ-AA
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 10:47:01 +0000
+Received: from mail-vs1-f48.google.com (mail-vs1-f48.google.com
+ [209.85.217.48]) (authenticated)
+ by conssluserg-03.nifty.com with ESMTP id x92AkP3M003097
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 2 Oct 2019 19:46:26 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-03.nifty.com x92AkP3M003097
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1570013186;
+ bh=Bglfj+Tuvo1CYXOErH0eUGGYGUYhZ/vzszNXppdwH4o=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=0y23Igke+GNeXli2RExdapfhItMcwAkqmiCIjt/jM53ItrnsDRZya4g3SPCcjCSUg
+ xbSwlcBHPodVGJTDceVcwJTve+GsfGyuQkgjDH6NnaJ7tAcXDtXKdGOR65CnoRihiq
+ uq3uSEyWUfIdbxZLGSqaA2jjjnADxKijlZvmHsbkFqdJ4DNf/oo3qpmqyRKorTRqvY
+ JIGk0UuWqS7BOZZL+NeHiovoxYX61RKqW4I/TodW49UIuhf2olmLCYtoqnwqUOb3hE
+ j19B9HUJJOBJmyN/DBbouJplz0asQTaRYVeqCxWBESYmoGVBjV5MSVC91KAX3mHpPF
+ GBjv4ETVtXb5A==
+X-Nifty-SrcIP: [209.85.217.48]
+Received: by mail-vs1-f48.google.com with SMTP id z14so11543333vsz.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 02 Oct 2019 03:39:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=34wC0n//44F6y79I2b4AAd2CW4tyXa/jyiOQHai4gS8=;
- b=LCgk8yPhc7jdn3eNstggPqAH1MafZ3eYuEY8P7C5YN5g1R5aludwgXD2nJg95ofiNG
- 4ozU4VPR1n9Yttjm5dPW5nxL8tHIWUZGgorGiy85f8Cz5dRb2G3ozE7PS0MHQWSVZsWH
- lsx2EjLC2+Q+JagvxQ0JSgS0qsjc76n3R0a8lsGwrn9blviD8Ck2aGmrVQedw2iB9auq
- LMNQQ72enoHc2AoOggzyfPeshI1XzYIByHrvwbomiXkJZrEoi4nGU2KaX8TM/9+jDnwm
- 0+KvhTEL63nQ3hgangxKkUGt6+tK84Kq16gL7pzV5fxYgCrx86OmWJYkaLTzfjL/9V4A
- CG7A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=34wC0n//44F6y79I2b4AAd2CW4tyXa/jyiOQHai4gS8=;
- b=dhjOUyOUf2yZC5KsiUAurrHBH+yQm6IrGMO+HO+qthydMetKaRxMhSrwHHmvQcaGIr
- uEpbge3eHktqcTmX8FJpvXxh5XXnyExVzt2yAEsdi0lMYJUVPFH1QuAwyQx0hwIbKipT
- DqREvXknOH4/d9w1Md4ZsiOYgvABDi+7J0j+yuiqiZXvf81r4ijcpd3uRJqfU7/zagxh
- /DRA0Yt38l2hKw2lhZ00KRoFkuPeDkAluZzvxAO6u9R4eCHcqprzCNrGuJQ2IPGZrVCs
- 7DKzRaYyaJNHJqROVK7yg4K7mJoZnJytfgYynRxOP/ifjiUSuPncNH5/JQuOOuOKrY4x
- kjDQ==
-X-Gm-Message-State: APjAAAU9U7B49P4YTxucEHpNou1n/u7Dvc2wuX6etFrRncDHU79sOMSy
- Yul9eYn3NoCZm2PO1ZnaMG7l2oaM
-X-Google-Smtp-Source: APXvYqzKaVdz2ys0q7Ajk0apq2a5ruazTjoX3Ns1yPUR64X5X1zjyBQv/KrerK3HFQV0RaCjeaFObg==
-X-Received: by 2002:a1c:5fd6:: with SMTP id t205mr2286748wmb.124.1570012747064; 
- Wed, 02 Oct 2019 03:39:07 -0700 (PDT)
-Received: from localhost (p2E5BE2CE.dip0.t-ipconnect.de. [46.91.226.206])
- by smtp.gmail.com with ESMTPSA id c18sm19817723wrv.10.2019.10.02.03.39.05
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 02 Oct 2019 03:39:06 -0700 (PDT)
-Date: Wed, 2 Oct 2019 12:39:04 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Colin King <colin.king@canonical.com>
-Subject: Re: [PATCH] pwm: sun4i: redundant assignment to variable pval
-Message-ID: <20191002103904.GI3716706@ulmo>
-References: <20191002100844.10490-1-colin.king@canonical.com>
+ Wed, 02 Oct 2019 03:46:26 -0700 (PDT)
+X-Gm-Message-State: APjAAAVlrQDriFTlvkyvYXXIGKNR2cPLsbBkRagnXJmRLkI75KZ5irnr
+ EonXE3iAfIUzQenPtnXdAzWW3/hWM7DtW1cbO7M=
+X-Google-Smtp-Source: APXvYqwnWcwGj7cbZH6Fuzdub/hV3jKwA9Rxcz5Wb1PJQDEfO9FDFIGjBpO9FnJZ2wl7xvO0Evhm0eiWtzOKFA06RNY=
+X-Received: by 2002:a67:ec09:: with SMTP id d9mr1416180vso.215.1570013185365; 
+ Wed, 02 Oct 2019 03:46:25 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20191002100844.10490-1-colin.king@canonical.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+References: <20191001083701.27207-1-yamada.masahiro@socionext.com>
+ <CAKwvOd=NObDXDL3jz9ZX9wo4tn747peBJPTj0DXyLerixgL+wQ@mail.gmail.com>
+ <20191002082454.GQ25745@shell.armlinux.org.uk>
+In-Reply-To: <20191002082454.GQ25745@shell.armlinux.org.uk>
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Date: Wed, 2 Oct 2019 19:45:49 +0900
+X-Gmail-Original-Message-ID: <CAK7LNAQkPQbYvRoQqwa7gZ7H62m=5br7E=+E5WdmYWakDRafLA@mail.gmail.com>
+Message-ID: <CAK7LNAQkPQbYvRoQqwa7gZ7H62m=5br7E=+E5WdmYWakDRafLA@mail.gmail.com>
+Subject: Re: [PATCH v2] ARM: add __always_inline to functions called from
+ __get_user_check()
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_033908_665388_C95DEB2D 
-X-CRM114-Status: GOOD (  11.31  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191002_034700_583367_B930C81E 
+X-CRM114-Status: UNSURE (   8.48  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [210.131.2.82 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thierry.reding[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -98,76 +86,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, kernel-janitors@vger.kernel.org,
- linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>,
- Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6387424612722588094=="
+Cc: Kate Stewart <kstewart@linuxfoundation.org>, Arnd Bergmann <arnd@arndb.de>,
+ Enrico Weigelt <info@metux.net>,
+ Vincent Whitchurch <vincent.whitchurch@axis.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ LKML <linux-kernel@vger.kernel.org>, Stefan Agner <stefan@agner.ch>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Allison Randal <allison@lohutok.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Olof Johansson <olof@lixom.net>, Thomas Gleixner <tglx@linutronix.de>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Oct 2, 2019 at 5:25 PM Russell King - ARM Linux admin
+<linux@armlinux.org.uk> wrote:
+> Masahiro Yamada, please send this to the patch system, thanks.
 
---===============6387424612722588094==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="RwxaKO075aXzzOz0"
-Content-Disposition: inline
+Done.  (8908/1)
 
+Thanks.
 
---RwxaKO075aXzzOz0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, Oct 02, 2019 at 11:08:44AM +0100, Colin King wrote:
-> From: Colin Ian King <colin.king@canonical.com>
->=20
-> Variable pval is being assigned a value that is never read. The
-> assignment is redundant and hence can be removed.
->=20
-> Addresses-Coverity: ("Unused value")
-> Signed-off-by: Colin Ian King <colin.king@canonical.com>
-> ---
->  drivers/pwm/pwm-sun4i.c | 1 -
->  1 file changed, 1 deletion(-)
-
-Applied, thanks.
-
-Thierry
-
---RwxaKO075aXzzOz0
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl2UfkYACgkQ3SOs138+
-s6EokA//eXZuyZhqQNANMBM0nG+CkHKuKs+iC0DOXQ4NyZMNNoXNy6I2UvGg7Yxr
-hSiF5hYwZqfU12j33qdvne88q+Qh4R6UVyH9+doCh2SYpO928hUyrcBP7cutZ6LQ
-pXxUyssDZCWpzr95yrKXhFdtp1KARRdeIjvnu2qdAUXVbJ9LsYpWVKBZQ+5qzrit
-p0oR4l9K1T8m4wJ+DM9ejM8SPRsT+LMhaqPDWzqSRy6OewNPhcHiQk26XwZ2SWDH
-tUMLk5vuGoHxKHOYorOG3IFjfNjCWqJbsRyYIYdjk0hqBrZ6UWhAI1EKdeb6qK5V
-oPyxLIIhiTMZ6JiSN/RgY3zO+/0Mak0YLrouaVCpt6mI/OcsTh6u6++bDvQchQmB
-vcNFScHVLuwUnNV1Bh4FEjocX3i5ucDQsAhDQfX1HriCX4MTXt3QArdQLx2s1CYS
-AcntnIIYWzT+YIc6FObtL4ml/FPmwBKT6V5F5eA78AwcsRDV6dMcqRO1I8wkkypF
-gAh5KLSjWfibX+nYC2vgMsP8Ab6wD40fu8sa8W8q/Q6A4Yc267hqHgsMKTnVQP4t
-TK/kv4TqVADa7mV6sGsvQUvtKn2+3rBUnv+WU06VXgw4ZhzyjybuZbGi5rkugGm8
-eUDcoodpzE8EJSlgjgpygmouU5EUezWzh/tfCGR3HKeTPQBs47E=
-=VQ2m
------END PGP SIGNATURE-----
-
---RwxaKO075aXzzOz0--
-
-
---===============6387424612722588094==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6387424612722588094==--
-
