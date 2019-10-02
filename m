@@ -2,67 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F03CC93DF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 23:55:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32E26C93EE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 00:00:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hLSuVsnmHBrus+hCP2+YqvAHq/8hojcGVPlPwPLVnOk=; b=tCRO10qR60krHj1c3kuhdgTqJ
-	8pvR2jujBU/o3T0LJA3RBMYaufvSiucHjJ4XSqd9pb9VNziDnA2vWffzz4qGPNAhqcYV2lgAAXJav
-	acHJLLMTLJjc5Autnybe6F9KkK3tLR4PAnlqtGaAe3UkblfTggUp53TnJREDrmlBqLhaCVd9nJqkB
-	taXj+WLaOsfEekIYhHrWGTU531pV2ovRdruHZVTXQhuHLQ1p+PIwOiymxMNWeP/uHi6G86+2vgRLJ
-	/Zm6JKxtw4/6ynyrLFXR4tmmlD8AGk+Z3GXc5hY3mA7i/dHLUx0JRwbAf96A3dcMJl9q2HUZr3jaw
-	1upUOZOeA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kJNBDpe6Jx8fy5ym8vM5xwy1mZ82rp1v7F3oJbZi+8k=; b=oXH3iduJBmjnkC
+	4w1HX1SSTKkN6ND/H4N9g1GLEo7IaqhNGBjSF07899gAanJ6FEIfYmlcwBadjEOICbJqpA3HJRc1H
+	cHKpHoCBPutc2Ce3vsrAaPniwQ7377nGDKMlN24xnZ57nPPvc7ZX4Nlp/1KhhAlQNLIX/cqLNGIBW
+	WEWZhT2j+cBDppXjqeL4bT7kxA/yCPMLvFFlDpvYCsyzAJc2vwOfhw4eAnZPAM0KkQn4dJ64OB3k6
+	um/Ax5GVoIjfSY98TMFJtWEwoPqkfeQOr6lMsNCcxCMS5NktYn7Vm+hcdKLP5GUY17ZcCcP6r7jI8
+	roz+hM85LwnHTpAAHPyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFmat-0004Kt-32; Wed, 02 Oct 2019 21:55:35 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1iFmf8-0004nD-Uv; Wed, 02 Oct 2019 21:59:59 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFman-0004Kk-GG
- for linux-arm-kernel@bombadil.infradead.org; Wed, 02 Oct 2019 21:55:29 +0000
+ id 1iFmez-0004ly-7d
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 21:59:51 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=f3ydCW2xRmXnAQt81w4mrJAcCkS98e/boPtq/3j/L0I=; b=AoNS7mJEfaL1zU/1zye5CGyiJ
- gB+Vke0VD+qiNHmlfcXvH70vzYHkyFvLwZw+9U5fHBvZYimLna4j34Fi3+ZWLkOGXLRZmaIguy8Bn
- wOCdl6/loOV4O7IPIX4Xq4VCv+Uw1zeiHIUEh3wvMqD8LLg90KydPuc18sMbr1DseMgY+C7BDVbv/
- sw18qHURu10/8veEbHhbmvNq5p46NBpn13pjebd+BzzKcEYkNg0fzF0HKOG3/LriiAQG/GhoAh6+A
- fw0Z6qBOi1oVzl0pHWW8w/Op81EfA3SUVY3amfOU4oVEP3N6xD1PeYMuryMHu514ugkgvGAhZcLKz
- qbZm64qDQ==;
-Received: from relay11.mail.gandi.net ([217.70.178.231])
- by merlin.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFmak-00069X-3j
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 21:55:27 +0000
-Received: from aptenodytes (unknown [132.205.230.6])
- (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay11.mail.gandi.net (Postfix) with ESMTPSA id AA261100003;
- Wed,  2 Oct 2019 21:54:44 +0000 (UTC)
-Date: Wed, 2 Oct 2019 17:54:42 -0400
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Jernej Skrabec <jernej.skrabec@siol.net>
-Subject: Re: [PATCH v2 1/3] media: cedrus: Fix decoding for some H264 videos
-Message-ID: <20191002215442.GA24151@aptenodytes>
-References: <20191002193553.1633467-1-jernej.skrabec@siol.net>
- <20191002193553.1633467-2-jernej.skrabec@siol.net>
+ bh=qwaMCw5+GH89GY4D31Ks8Y7B/aUlyWSrhEUdNOLlI+o=; b=I0e08Ri3YtCzhJKOHSGe8WnDm
+ 6p6A5AP8uCicID35A9JaihTSz34ChubKqEJ7tugY1yQ5sUBTHO0JRJDj6gLZjfTE14RR9nUPqXZvs
+ 90/4/yVAlQjHkUhQX+JjPF+8+fKl/jjJe7clxYByP1+Nnr6TCPcjvK/rKTMm99TFrk7XiLlv1nUqF
+ n0O9D7BI0XSz2AyUACe4iSCANRuO1iAOOnacB22Go6UAOmqTLk+tuJ3tPSoeMWRCHu5rPzYCPqK8O
+ BUxz0Kx7R4ksZQyHq1y6evGKqCRnqRASLPtElVrbCCtauh9qmBWgmfSRFupq/T6i3gcDcZJIN9fpJ
+ FWsBpRFrQ==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:50976)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iFmee-0002bh-6m; Wed, 02 Oct 2019 22:59:29 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iFmeW-00014i-96; Wed, 02 Oct 2019 22:59:20 +0100
+Date: Wed, 2 Oct 2019 22:59:20 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Bjorn Helgaas <helgaas@kernel.org>
+Subject: Re: [PATCH 0/6] Add the Mobiveil EP and Layerscape Gen4 EP driver
+ support
+Message-ID: <20191002215920.GU25745@shell.armlinux.org.uk>
+References: <20190924155223.GX25745@shell.armlinux.org.uk>
+ <20191002211421.GA64972@google.com>
 MIME-Version: 1.0
-In-Reply-To: <20191002193553.1633467-2-jernej.skrabec@siol.net>
-User-Agent: Mutt/1.12.2 (2019-09-21)
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+Content-Disposition: inline
+In-Reply-To: <20191002211421.GA64972@google.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191002_145949_731058_65984265 
+X-CRM114-Status: GOOD (  29.00  )
+X-Spam-Score: -2.5 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.231 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,186 +88,213 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, mripard@kernel.org, wens@csie.org,
- hverkuil-cisco@xs4all.nl, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============4852577397053941476=="
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ Xiaowei Bao <xiaowei.bao@nxp.com>, linux-pci@vger.kernel.org,
+ Zhiqiang.Hou@nxp.com, linux-kernel@vger.kernel.org, leoyang.li@nxp.com,
+ Minghuan.Lian@nxp.com, robh+dt@kernel.org, mingkai.hu@nxp.com,
+ andrew.murray@arm.com, kishon@ti.com, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Oct 02, 2019 at 04:14:21PM -0500, Bjorn Helgaas wrote:
+> On Tue, Sep 24, 2019 at 04:52:23PM +0100, Russell King - ARM Linux admin wrote:
+> > On Tue, Sep 24, 2019 at 03:18:47PM +0100, Russell King - ARM Linux admin wrote:
+> > > On Mon, Sep 16, 2019 at 10:17:36AM +0800, Xiaowei Bao wrote:
+> > > > This patch set are for adding Mobiveil EP driver and adding PCIe Gen4
+> > > > EP driver of NXP Layerscape platform.
+> > > > 
+> > > > This patch set depends on:
+> > > > https://patchwork.kernel.org/project/linux-pci/list/?series=159139
+> > > > 
+> > > > Xiaowei Bao (6):
+> > > >   PCI: mobiveil: Add the EP driver support
+> > > >   dt-bindings: Add DT binding for PCIE GEN4 EP of the layerscape
+> > > >   PCI: mobiveil: Add PCIe Gen4 EP driver for NXP Layerscape SoCs
+> > > >   PCI: mobiveil: Add workaround for unsupported request error
+> > > >   arm64: dts: lx2160a: Add PCIe EP node
+> > > >   misc: pci_endpoint_test: Add the layerscape PCIe GEN4 EP device
+> > > >     support
+> > > > 
+> > > >  .../bindings/pci/layerscape-pcie-gen4.txt          |  28 +-
+> > > >  MAINTAINERS                                        |   3 +
+> > > >  arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi     |  56 ++
+> > > >  drivers/misc/pci_endpoint_test.c                   |   2 +
+> > > >  drivers/pci/controller/mobiveil/Kconfig            |  22 +-
+> > > >  drivers/pci/controller/mobiveil/Makefile           |   2 +
+> > > >  .../controller/mobiveil/pcie-layerscape-gen4-ep.c  | 169 ++++++
+> > > >  drivers/pci/controller/mobiveil/pcie-mobiveil-ep.c | 568 +++++++++++++++++++++
+> > > >  drivers/pci/controller/mobiveil/pcie-mobiveil.c    |  99 +++-
+> > > >  drivers/pci/controller/mobiveil/pcie-mobiveil.h    |  72 +++
+> > > >  10 files changed, 1009 insertions(+), 12 deletions(-)
+> > > >  create mode 100644 drivers/pci/controller/mobiveil/pcie-layerscape-gen4-ep.c
+> > > >  create mode 100644 drivers/pci/controller/mobiveil/pcie-mobiveil-ep.c
+> > > 
+> > > Hi,
+> > > 
+> > > I've applied "PCI: mobiveil: Fix the CPU base address setup in inbound
+> > > window" and your patch set to 5.3, which seems to be able to detect the
+> > > PCIe card I have plugged in:
+> > > 
+> > > layerscape-pcie-gen4 3800000.pcie: host bridge /soc/pcie@3800000 ranges:
+> > > layerscape-pcie-gen4 3800000.pcie:   MEM 0xa040000000..0xa07fffffff -> 0x40000000
+> > > layerscape-pcie-gen4 3800000.pcie: PCI host bridge to bus 0000:00
+> > > pci_bus 0000:00: root bus resource [bus 00-ff]
+> > > pci_bus 0000:00: root bus resource [mem 0xa040000000-0xa07fffffff] (bus address
+> > > [0x40000000-0x7fffffff])
+> > > pci 0000:00:00.0: [1957:8d90] type 01 class 0x060400
+> > > pci 0000:00:00.0: enabling Extended Tags
+> > > pci 0000:00:00.0: supports D1 D2
+> > > pci 0000:00:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+> > > pci 0000:01:00.0: [15b3:6750] type 00 class 0x020000
+> > > pci 0000:01:00.0: reg 0x10: [mem 0xa040000000-0xa0400fffff 64bit]
+> > > pci 0000:01:00.0: reg 0x18: [mem 0xa040800000-0xa040ffffff 64bit pref]
+> > > pci 0000:01:00.0: reg 0x30: [mem 0xa041000000-0xa0410fffff pref]
+> > > pci 0000:00:00.0: up support 3 enabled 0
+> > > pci 0000:00:00.0: dn support 1 enabled 0
+> > > pci 0000:00:00.0: BAR 9: assigned [mem 0xa040000000-0xa0407fffff 64bit pref]
+> > > pci 0000:00:00.0: BAR 8: assigned [mem 0xa040800000-0xa0409fffff]
+> > > pci 0000:01:00.0: BAR 2: assigned [mem 0xa040000000-0xa0407fffff 64bit pref]
+> > > pci 0000:01:00.0: BAR 0: assigned [mem 0xa040800000-0xa0408fffff 64bit]
+> > > pci 0000:01:00.0: BAR 6: assigned [mem 0xa040900000-0xa0409fffff pref]
+> > > pci 0000:00:00.0: PCI bridge to [bus 01-ff]
+> > > pci 0000:00:00.0:   bridge window [mem 0xa040800000-0xa0409fffff]
+> > > pci 0000:00:00.0:   bridge window [mem 0xa040000000-0xa0407fffff 64bit pref]
+> > > pci 0000:00:00.0: Max Payload Size set to  256/ 256 (was  128), Max Read Rq  256pci 0000:01:00.0: Max Payload Size set to  256/ 256 (was  128), Max Read Rq  256pcieport 0000:00:00.0: PCIe capabilities: 0x13
+> > > pcieport 0000:00:00.0: init_service_irqs: -19
+> > > 
+> > > However, a bit later in the kernel boot, I get:
+> > > 
+> > > SError Interrupt on CPU1, code 0xbf000002 -- SError
+> > > CPU: 1 PID: 1 Comm: swapper/0 Not tainted 5.3.0+ #392
+> > > Hardware name: SolidRun LX2160A COM express type 7 module (DT)
+> > > pstate: 60400085 (nZCv daIf +PAN -UAO)
+> > > pc : pci_generic_config_read+0xb0/0xc0
+> > > lr : pci_generic_config_read+0x1c/0xc0
+> > > sp : ffffff8010f9baf0
+> > > x29: ffffff8010f9baf0 x28: ffffff8010d620a0
+> > > x27: ffffff8010d79000 x26: ffffff8010d62000
+> > > x25: ffffff8010cb06d4 x24: 0000000000000000
+> > > x23: ffffff8010e499b8 x22: ffffff8010f9bbaf
+> > > x21: 0000000000000000 x20: ffffffe2eda11800
+> > > x19: ffffff8010f62158 x18: ffffff8010bdede0
+> > > x17: ffffff8010bdede8 x16: ffffff8010b96970
+> > > x15: ffffffffffffffff x14: ffffffffff000000
+> > > x13: ffffffffffffffff x12: 0000000000000030
+> > > x11: 0101010101010101 x10: 7f7f7f7f7f7f7f7f
+> > > x9 : 2dff716475687163 x8 : ffffffffffffffff
+> > > x7 : fefefefefefefefe x6 : 0000000000000000
+> > > x5 : 0000000000000000 x4 : ffffff8010f9bb6c
+> > > x3 : 0000000000000001 x2 : 0000000000000003
+> > > x1 : 0000000000000000 x0 : 0000000000000000
+> > > Kernel panic - not syncing: Asynchronous SError Interrupt
+> > > CPU: 1 PID: 1 Comm: swapper/0 Not tainted 5.3.0+ #392
+> > > Hardware name: SolidRun LX2160A COM express type 7 module (DT)
+> > > Call trace:
+> > >  dump_backtrace+0x0/0x120
+> > >  show_stack+0x14/0x1c
+> > >  dump_stack+0x9c/0xc0
+> > >  panic+0x148/0x34c
+> > >  print_tainted+0x0/0xa8
+> > >  arm64_serror_panic+0x74/0x80
+> > >  do_serror+0x8c/0x13c
+> > >  el1_error+0xbc/0x160
+> > >  pci_generic_config_read+0xb0/0xc0
+> > >  pci_bus_read_config_byte+0x64/0x90
+> > >  pci_read_config_byte+0x40/0x48
+> > >  pci_assign_irq+0x34/0xc8
+> > >  pci_device_probe+0x28/0x148
+> > >  really_probe+0x1c4/0x2d0
+> > >  driver_probe_device+0x58/0xfc
+> > >  device_driver_attach+0x68/0x70
+> > >  __driver_attach+0x94/0xdc
+> > >  bus_for_each_dev+0x50/0xa0
+> > >  driver_attach+0x20/0x28
+> > >  bus_add_driver+0x14c/0x200
+> > >  driver_register+0x6c/0x124
+> > >  __pci_register_driver+0x48/0x50
+> > >  mlx4_init+0x154/0x180
+> > >  do_one_initcall+0x30/0x250
+> > >  kernel_init_freeable+0x23c/0x32c
+> > >  kernel_init+0x10/0xfc
+> > >  ret_from_fork+0x10/0x18
+> > > SMP: stopping secondary CPUs
+> > > Kernel Offset: disabled
+> > > CPU features: 0x0002,21006008
+> > > Memory Limit: none
+> > > 
+> > > and there it dies.  Any ideas?
+> > 
+> > The failing access seems to be:
+> > 
+> >         pci_read_config_byte(dev, PCI_INTERRUPT_PIN, &pin);
+> > 
+> > for the Mellanox Ethernet card.  Presumably, being a PCIe ethernet
+> > card, it doesn't implement this register (just a guess), and aborts
+> > the PCI transaction, which is presumably triggering the above SError.
+> 
+> PCIe r5.0, sec 7.5.1.1.13, says Interrupt Pin is a read-only register,
+> so there shouldn't be an issue with reading it.
+> 
+> mobiveil_pcie_ops uses the generic pci_generic_config_read(), which
+> will perform a readb() in this case.  Could mobiveil be a bridge that
+> only supports 32-bit config accesses?
 
---===============4852577397053941476==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="3V7upXqbjpZ4EhLz"
-Content-Disposition: inline
+I have it solved through private discussion.
 
+Essentially, however, the patch set which has been sent for mainline
+seems to fail for (some? all?) PCIe cards in this way.  I'm lead to
+believe that the work-arounds for this for the LX2160A can't be
+mainlined.
 
---3V7upXqbjpZ4EhLz
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+There's two patches published in the publically available QiorQ tree
+that seem to be necessary:
 
-Hi,
+PCI: mobiveil: ls_pcie_g4: add Workaround for A-011577
 
-On Wed 02 Oct 19, 21:35, Jernej Skrabec wrote:
-> It seems that for some H264 videos at least one bitstream parsing
-> trigger must be called in order to be decoded correctly. There is no
-> explanation why this helps, but it was observed that two sample videos
-> with this fix are now decoded correctly and there is no regression with
-> others.
+    PCIe configuration access to non-existent function triggered
+    SERROR interrupt exception.
 
-I understand there might be some magic going on under the hood here, but I =
-would
-be interested in trying to understand what's really going on.
+    Workaround:
+    Disable error reporting on AXI bus during the Vendor ID read
+    transactions in enumeration.
 
-For instance, comparing register dumps of the whole H264 block before/after
-calling the hardware parser could help, and comparing that to using the pre=
-vious
-code (without hardware parsing).
+    This ERRATA is only for LX2160A Rev1.0, and it will be fixed
+    in Rev2.0.
 
-I could try and have a look if you have an available sample for testing the
-erroneous case!
+PCI: mobiveil: ls_pcie_g4: add Workaround for A-011451
 
-Another minor thing: do you have some idea of whether the udelay call adds
-significant delay in the process?
+    When LX2 PCIe controller is sending multiple split completions and
+    ACK latency expires indicating that ACK should be send at priority.
+    But because of large number of split completions and FC update DLLP,
+    the controller does not give priority to ACK transmission. This
+    results into ACK latency timer timeout error at the link partner and
+    the pending TLPs are replayed by the link partner again.
 
-Cheers and thanks for the patch!
+    Workaround:
+    1. Reduce the ACK latency timeout value to a very small value.
+    2. Restrict the number of completions from the LX2 PCIe controller
+       to 1, by changing the Max Read Request Size (MRRS) of link partner
+       to the same value as Max Packet size (MPS).
 
-Paul
+    This patch implemented part 1, the part 2 can be set by kernel parameter
+    'pci=pcie_bus_perf'
 
-> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> ---
->  .../staging/media/sunxi/cedrus/cedrus_h264.c  | 30 +++++++++++++++++--
->  .../staging/media/sunxi/cedrus/cedrus_regs.h  |  3 ++
->  2 files changed, 30 insertions(+), 3 deletions(-)
->=20
-> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c b/drivers/s=
-taging/media/sunxi/cedrus/cedrus_h264.c
-> index d6a782703c9b..bd848146eada 100644
-> --- a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-> @@ -6,6 +6,7 @@
->   * Copyright (c) 2018 Bootlin
->   */
-> =20
-> +#include <linux/delay.h>
->  #include <linux/types.h>
-> =20
->  #include <media/videobuf2-dma-contig.h>
-> @@ -289,6 +290,28 @@ static void cedrus_write_pred_weight_table(struct ce=
-drus_ctx *ctx,
->  	}
->  }
-> =20
-> +/*
-> + * It turns out that using VE_H264_VLD_OFFSET to skip bits is not reliab=
-le. In
-> + * rare cases frame is not decoded correctly. However, setting offset to=
- 0 and
-> + * skipping appropriate amount of bits with flush bits trigger always wo=
-rks.
-> + */
-> +static void cedrus_skip_bits(struct cedrus_dev *dev, int num)
-> +{
-> +	int count =3D 0;
-> +
-> +	while (count < num) {
-> +		int tmp =3D min(num - count, 32);
->
-> +
-> +		cedrus_write(dev, VE_H264_TRIGGER_TYPE,
-> +			     VE_H264_TRIGGER_TYPE_FLUSH_BITS |
-> +			     VE_H264_TRIGGER_TYPE_N_BITS(tmp));
-> +		while (cedrus_read(dev, VE_H264_STATUS) & VE_H264_STATUS_VLD_BUSY)
-> +			udelay(1);
-> +
-> +		count +=3D tmp;
-> +	}
-> +}
-> +
->  static void cedrus_set_params(struct cedrus_ctx *ctx,
->  			      struct cedrus_run *run)
->  {
-> @@ -299,12 +322,11 @@ static void cedrus_set_params(struct cedrus_ctx *ct=
-x,
->  	struct vb2_buffer *src_buf =3D &run->src->vb2_buf;
->  	struct cedrus_dev *dev =3D ctx->dev;
->  	dma_addr_t src_buf_addr;
-> -	u32 offset =3D slice->header_bit_size;
-> -	u32 len =3D (slice->size * 8) - offset;
-> +	u32 len =3D slice->size * 8;
->  	u32 reg;
-> =20
->  	cedrus_write(dev, VE_H264_VLD_LEN, len);
-> -	cedrus_write(dev, VE_H264_VLD_OFFSET, offset);
-> +	cedrus_write(dev, VE_H264_VLD_OFFSET, 0);
-> =20
->  	src_buf_addr =3D vb2_dma_contig_plane_dma_addr(src_buf, 0);
->  	cedrus_write(dev, VE_H264_VLD_END,
-> @@ -323,6 +345,8 @@ static void cedrus_set_params(struct cedrus_ctx *ctx,
->  	cedrus_write(dev, VE_H264_TRIGGER_TYPE,
->  		     VE_H264_TRIGGER_TYPE_INIT_SWDEC);
-> =20
-> +	cedrus_skip_bits(dev, slice->header_bit_size);
-> +
->  	if (((pps->flags & V4L2_H264_PPS_FLAG_WEIGHTED_PRED) &&
->  	     (slice->slice_type =3D=3D V4L2_H264_SLICE_TYPE_P ||
->  	      slice->slice_type =3D=3D V4L2_H264_SLICE_TYPE_SP)) ||
-> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h b/drivers/s=
-taging/media/sunxi/cedrus/cedrus_regs.h
-> index 3329f9aaf975..b52926a54025 100644
-> --- a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-> @@ -538,13 +538,16 @@
->  					 VE_H264_CTRL_SLICE_DECODE_INT)
-> =20
->  #define VE_H264_TRIGGER_TYPE		0x224
-> +#define VE_H264_TRIGGER_TYPE_N_BITS(x)		(((x) & 0x3f) << 8)
->  #define VE_H264_TRIGGER_TYPE_AVC_SLICE_DECODE	(8 << 0)
->  #define VE_H264_TRIGGER_TYPE_INIT_SWDEC		(7 << 0)
-> +#define VE_H264_TRIGGER_TYPE_FLUSH_BITS		(3 << 0)
-> =20
->  #define VE_H264_STATUS			0x228
->  #define VE_H264_STATUS_VLD_DATA_REQ_INT		VE_H264_CTRL_VLD_DATA_REQ_INT
->  #define VE_H264_STATUS_DECODE_ERR_INT		VE_H264_CTRL_DECODE_ERR_INT
->  #define VE_H264_STATUS_SLICE_DECODE_INT		VE_H264_CTRL_SLICE_DECODE_INT
-> +#define VE_H264_STATUS_VLD_BUSY			BIT(8)
-> =20
->  #define VE_H264_STATUS_INT_MASK			VE_H264_CTRL_INT_MASK
-> =20
-> --=20
-> 2.23.0
->=20
+    This ERRATA is only for LX2160A Rev1.0, and it will be fixed
+    in Rev2.0.
 
---3V7upXqbjpZ4EhLz
-Content-Type: application/pgp-signature; name="signature.asc"
+and a third to fix the problem I'm seeing (which modifies the first
+of the above two patches), which afaik has not been published in
+the QiorQ tree.
 
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl2VHKIACgkQ3cLmz3+f
-v9Fh/Af9GyVy5KNZkifK5kCwy7+K0g6QPZG35LlJmVdVto99qVx6UcgP9NZS/uBX
-EebSolJysTj4DgpkXz/vsQy1gdMzMylUQAY0mqb6WCXlyyHkI54vOiXP1TcACSO2
-9z2eK1RuJfOxxTxWqoo7CP46Fl5tAKnEGox60Xt8B+ouPDsE4aFTNYhxz9szJj0O
-E3W5oCWdsoKVnp7zlTwrNTk0rQKJcKxSWVOtE+AvZUYRNqDysIYs1UNje70XLGjM
-fQKjAP29I8XShgJqRtZVHHGyWS2EooK3r7UJw9dhbGQZ+jJGJuGdd3Bj858sRBC2
-5Pxis3T4ttOXAvBWtDX2jBZgqZG78g==
-=R09t
------END PGP SIGNATURE-----
-
---3V7upXqbjpZ4EhLz--
-
-
---===============4852577397053941476==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4852577397053941476==--
-
