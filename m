@@ -2,51 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2282C4ACE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 11:51:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E27D1C4AE6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 11:57:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9k5zZwmby/nk2QRwQF+5BLxcZYd86Kv8DCEmJxsp3lU=; b=t/pwLJS45/QYum
-	grLom81p4JXqoh3VDktB+qIJjkgxV1i9lLiqGcGaIun9G8vEOKj9psBZBnKHGE/CLliIXbRsmMqZw
-	6thOeTDKZdphzhL5NfAZ+o/6/HrkaSFKYkAPBcv8Ewr+hkQ3zb0uMBl2mAV+JT3qHBoKCNJTOjQyr
-	TJG+nXklOkHaVPkOMwnsS6CYo3UVOLRQjeczOfR/2+SwdqaEh4kN53FGliIJ34pbFHNHgVAm9ROpU
-	XdKl876wTTcSlqsAEvzrOScJxH1uSv7NLj7Jmvyu3+Yv4ak4nDx+2a8sCNAmgAfsx68AkgbtQmoXZ
-	4G+bQ5sh16NFFmcuLSwg==;
+	List-Owner; bh=xk0TAQFYzrGvrjKvrKeEU8apBIEL1wINUB/2bbVv0l4=; b=r0v7evK9vs3DiZ
+	NG7aniv3VSZywUOu1p426ZjpCDIBnqYdXqhLNTSqRlV6OIkQ/wff3Jv1KudEHQfs5rARPcB0CN2ru
+	+D5LjNCZ6lkNpSimWna8YKyrBtyWUVXRuAY1Twlx7wzz+HZoHjR/cD//ZNKOSV2tDhJZABSUU3nHa
+	q2pLibaudpPsUswo7YxZe7A0CNcLw1Pezk71YOFFoniIjueGPSI2UEn9wZzuVY4f2RxPGZeFJGbUR
+	uHPH4E1Nk94xdLpnl6/Z4En2n7WqWQ3/LhWCQmHPlFMnqcCH8OympBvw6EacOkOxXzwOvLkgXDgYJ
+	+S4NLISX0Uzv1Oc5Hy+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFbHq-0004DK-RU; Wed, 02 Oct 2019 09:51:10 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFbGd-0003ON-ST
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 09:49:57 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 68E2115AD;
- Wed,  2 Oct 2019 02:49:55 -0700 (PDT)
-Received: from eglon.cambridge.arm.com (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D22CD3F739;
- Wed,  2 Oct 2019 02:49:54 -0700 (PDT)
-From: James Morse <james.morse@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 4/4] arm64: ftrace: Ensure synchronisation in PLT setup for
- Neoverse-N1 #1542419
-Date: Wed,  2 Oct 2019 10:49:35 +0100
-Message-Id: <20191002094935.48848-5-james.morse@arm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191002094935.48848-1-james.morse@arm.com>
-References: <20191002094935.48848-1-james.morse@arm.com>
+	id 1iFbNf-0003XK-C5; Wed, 02 Oct 2019 09:57:11 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iFbNV-0003NW-Uf
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 09:57:04 +0000
+X-Originating-IP: 86.207.98.53
+Received: from localhost
+ (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id ED5F9240015;
+ Wed,  2 Oct 2019 09:56:51 +0000 (UTC)
+Date: Wed, 2 Oct 2019 11:56:51 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Eugen.Hristev@microchip.com
+Subject: Re: [PATCH 1/3] dt-bindings: watchdog: sam9x60_wdt: add bindings
+Message-ID: <20191002095627.GK4106@piout.net>
+References: <1570001371-8174-1-git-send-email-eugen.hristev@microchip.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1570001371-8174-1-git-send-email-eugen.hristev@microchip.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_024955_982429_0E410E43 
-X-CRM114-Status: GOOD (  13.16  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191002_025702_141258_F28FB25B 
+X-CRM114-Status: GOOD (  20.50  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -60,65 +62,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+Cc: devicetree@vger.kernel.org, linux-watchdog@vger.kernel.org,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org, wim@linux-watchdog.org,
+ linux@roeck-us.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CPUs affected by Neoverse-N1 #1542419 may execute a stale instruction if
-it was recently modified. The affected sequence requires freshly written
-instructions to be executable before a branch to them is updated.
+On 02/10/2019 07:35:23+0000, Eugen.Hristev@microchip.com wrote:
+> From: Eugen Hristev <eugen.hristev@microchip.com>
+> 
+> Add bindings for Microchip SAM9X60 Watchdog Timer
+> 
+> It has the same bindings as
+> Documentation/devicetree/bindings/watchdog/atmel-sama5d4-wdt.txt
+> except the compatible.
+> 
 
-There are very few places in the kernel that modify executable text,
-all but one come with sufficient synchronisation:
- * The module loader's flush_module_icache() calls flush_icache_range(),
-   which does a kick_all_cpus_sync()
- * bpf_int_jit_compile() calls flush_icache_range().
- * Kprobes calls aarch64_insn_patch_text(), which does its work in
-   stop_machine().
- * static keys and ftrace both patch between nops and branches to
-   existing kernel code (not generated code).
+Maybe it can then use the same documentation file. However, I think you
+should already use the yaml dt bindings schema instead of a simple text
+file.
 
-The affected sequence is the interaction between ftrace and modules.
-The module PLT is cleaned using __flush_icache_range() as the trampoline
-shouldn't be executable until we update the branch to it.
+> Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
+> ---
+>  .../devicetree/bindings/watchdog/sam9x60-wdt.txt   | 34 ++++++++++++++++++++++
+>  1 file changed, 34 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/watchdog/sam9x60-wdt.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/watchdog/sam9x60-wdt.txt b/Documentation/devicetree/bindings/watchdog/sam9x60-wdt.txt
+> new file mode 100644
+> index 00000000..74b4e2d
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/watchdog/sam9x60-wdt.txt
+> @@ -0,0 +1,34 @@
+> +* Microchip SAM9X60 Watchdog Timer (WDT) Controller
+> +
+> +Required properties:
+> +- compatible: "microchip,sam9x60-wdt"
+> +- reg: base physical address and length of memory mapped region.
+> +
+> +Optional properties:
+> +- timeout-sec: watchdog timeout value (in seconds).
+> +- interrupts: interrupt number to the CPU.
+> +- atmel,watchdog-type: should be "hardware" or "software".
+> +	"hardware": enable watchdog fault reset. A watchdog fault triggers
+> +		    watchdog reset.
+> +	"software": enable watchdog fault interrupt. A watchdog fault asserts
+> +		    watchdog interrupt.
+> +- atmel,idle-halt: present if you want to stop the watchdog when the CPU is
+> +		   in idle state.
+> +	CAUTION: This property should be used with care, it actually makes the
+> +	watchdog not counting when the CPU is in idle state, therefore the
+> +	watchdog reset time depends on mean CPU usage and will not reset at all
+> +	if the CPU stop working while it is in idle state, which is probably
+> +	not what you want.
+> +- atmel,dbg-halt: present if you want to stop the watchdog when the CPU is
+> +		  in debug state.
+> +
+> +Example:
+> +	watchdog@ffffff80 {
+> +		compatible = "microchip,sam9x60-wdt";
+> +		reg = <0xffffff80 0x24>;
+> +		interrupts = <1 IRQ_TYPE_LEVEL_HIGH 5>;
+> +		timeout-sec = <10>;
+> +		atmel,watchdog-type = "hardware";
+> +		atmel,dbg-halt;
+> +		atmel,idle-halt;
+> +	};
+> -- 
+> 2.7.4
+> 
 
-Drop the double-underscore so that this path runs kick_all_cpus_sync()
-too.
-
-Signed-off-by: James Morse <james.morse@arm.com>
----
- arch/arm64/kernel/ftrace.c | 12 +++++++++---
- 1 file changed, 9 insertions(+), 3 deletions(-)
-
-diff --git a/arch/arm64/kernel/ftrace.c b/arch/arm64/kernel/ftrace.c
-index 171773257974..06e56b470315 100644
---- a/arch/arm64/kernel/ftrace.c
-+++ b/arch/arm64/kernel/ftrace.c
-@@ -121,10 +121,16 @@ int ftrace_make_call(struct dyn_ftrace *rec, unsigned long addr)
- 
- 			/*
- 			 * Ensure updated trampoline is visible to instruction
--			 * fetch before we patch in the branch.
-+			 * fetch before we patch in the branch. Although the
-+			 * architecture doesn't require an IPI in this case,
-+			 * Neoverse-N1 erratum #1542419 does require one
-+			 * if the TLB maintenance in module_enable_ro() is
-+			 * skipped due to rodata_enabled. It doesn't seem worth
-+			 * it to make it conditional given that this is
-+			 * certainly not a fast-path.
- 			 */
--			__flush_icache_range((unsigned long)&dst[0],
--					     (unsigned long)&dst[1]);
-+			flush_icache_range((unsigned long)&dst[0],
-+					   (unsigned long)&dst[1]);
- 		}
- 		addr = (unsigned long)dst;
- #else /* CONFIG_ARM64_MODULE_PLTS */
 -- 
-2.20.1
-
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
