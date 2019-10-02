@@ -2,74 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5724BC49E4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 10:46:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF519C49E1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 10:46:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lh+vDRcLW1LaCzWWq65iTLW+D0+VfcvSgMsjs0MUG6A=; b=kQRndRH+2fZpy8
-	IUNi67AhtqhBC977CZObCPdex1ZPCoaHTvPdQs5BMOXyGe3jnBQ0R90iRujhrjb5L0/qBDLexRq3g
-	LMp7TazQuKRdlZyCvPoDxPIb57tlCRjSKJURU1S5rEgEalcpJjxtuNqnxz1aRrVlMBDTAVVnp2peb
-	mSl2+PnubVUXw2DDaV/sMmS+DusXuxR3GAKV64mZr3MgruLB8UNPuzpMdsG99A014A9E/Hb3ABX+6
-	uoCMfAqjLh3P/tIOR/NBfyXmkreDtfhyc2AP8z9kcIxv2g+Vs88GGmO29pCIXaZcUSaaszOXy9kgl
-	cTSHrlgfuPqbzEjMCNqg==;
+	List-Owner; bh=+LR33f9Kq4JmremSjay8Ho9hp/aoLWzvLlBgAmHG2jc=; b=Gin1KIXL3k5oyM
+	e4XYsejppZdAbwq1RLKFd4e9jWUKwe+NQSwp7/Hkk/9Vsp1RbcSq0lmvwC0O/8d3e6byYnitDrxkc
+	7rvKCgbRRLpw4WhCW8m8KNxNCWhB4ikaXdmHztSyEBqGFqiCp8e7b7i4gEqZVYwl/6EQtdJrFtIlS
+	XGyx7arIN0frwvwGILVfFQBhYCghVjWrN3Iv4W4CJbjXf853gKGrfrm16vePUSCWgtS3atz0FlA+H
+	rFWdoeK8ZQJVl6QTSiZ5byK2IINk9wGH9Bb1C30NrlD8qD3U5GaNz0s0MCg+thRH+hjEGeJ4t1ECA
+	3z2sG1SZZWhwSS7TfwkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFaH6-0001Py-0m; Wed, 02 Oct 2019 08:46:20 +0000
-Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::3])
+	id 1iFaGL-0001Ca-Kg; Wed, 02 Oct 2019 08:45:35 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFaF4-0001BN-Re; Wed, 02 Oct 2019 08:44:19 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1570005844;
- s=strato-dkim-0002; d=fpond.eu;
- h=Subject:References:In-Reply-To:Message-ID:Cc:To:From:Date:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=iUttmko10pMSiNzf83MKiTk9CuVcL1m274VDNhwoUvo=;
- b=bUa4nA87Aahl+akDPPApKyEgSRbP7aU9CAw7k+GO8W5jGvwAM4Gm8FJdsE8L9429WY
- E5CfjegbDj9RiV3bM0sTougIgkBIkgii2rk6OtZPcKXkaiRRbslYBtZad+b5m5IDcC8d
- 3gWpqxoZsS1Oc14RcjNOpi9KtQdO9iGhdLE8Q+8ibCRKe9i82GSgzVEC6fofW1o0JzM6
- id9QCkK0iwoJGn8R8UjZhwmfUMVPY+oAiynwv0Er8rU/BL6nyShrmZ0uHNTYOjMt79pb
- 38IFRFDkf5Lzy824e7gxX3c6PLLFwVjyu1bOzPHejvukU+gFDl9NJ7lSoh/7xSZNDD9u
- u8dQ==
-X-RZG-AUTH: ":OWANVUa4dPFUgKR/3dpvnYP0Np73amq+g13rqGzmt2bYDnKIKaws6YXTsc4="
-X-RZG-CLASS-ID: mo00
-Received: from oxapp05-03.back.ox.d0m.de by smtp-ox.front (RZmta 44.28.0 AUTH)
- with ESMTPSA id i07086v928htVNM
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve X9_62_prime256v1
- with 256 ECDH bits, eq. 3072 bits RSA))
- (Client did not present a certificate);
- Wed, 2 Oct 2019 10:43:55 +0200 (CEST)
-Date: Wed, 2 Oct 2019 10:43:55 +0200 (CEST)
-From: Ulrich Hecht <uli@fpond.eu>
-To: Fabien Parent <fparent@baylibre.com>, linux-i2c@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org
-Message-ID: <1733244772.936156.1570005835848@webmail.strato.com>
-In-Reply-To: <20190930152846.5062-1-fparent@baylibre.com>
-References: <20190930152846.5062-1-fparent@baylibre.com>
-Subject: Re: [PATCH v2] i2c: i2c-mt65xx: fix NULL ptr dereference
+ id 1iFaF3-0001BQ-9r
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 08:44:17 +0000
+Received: by mail-wr1-x441.google.com with SMTP id l3so18600117wru.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 02 Oct 2019 01:44:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=QP3i5oRbnEcOsn2Nh4j8y0vWxevdrVw2BJcYZbqFbx4=;
+ b=UsrXNzo8+90vsV5ERk4uasjuBQGbONq6vSFSId/rzHWsOKsIH5vuVz+2kTf4k+kfPJ
+ zlPjLQvVdfMDM+hpYnookmcXVT04tpSTVD3T7epCC4T3jmmCHGpGKflcOJXl7ytEwbrc
+ mIhuIwcridGT5YJgVgDGqhCgUm9st82V0u/43S2eQImyRX7+H3iZsdR0Y3fI1IvI99J+
+ CZ09owxjQzF8wkdiQi5FCTl+dQg1fRdAHHq+xjn2aE5MXMfwaXr+b5QvZSRBjxE1/w4t
+ 2O20e8iVBfJ2doPgA3UMYCC22SiiotLOiGtRopEopwI0vLT9ybSgrmT/cxBo+AShmR8a
+ 7u/A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=QP3i5oRbnEcOsn2Nh4j8y0vWxevdrVw2BJcYZbqFbx4=;
+ b=p6v+mePYfaFfm64AlFS0jhSvE772TAcJu1TT2fcM/m7pbmrIPWWiat1j2UybbP1n2m
+ IhRI6v1Wf3jsvTaffNtiJ1X04o+Q7QeYZGce4MAFcIRBFv/LIPkDP8zEhJ9g4gsqW3v0
+ TTc557eo1z0KJgRqN6AX6Cnq3jf2hXcP8xfzEC5jKcyW0i26/vIT9fe7lQIp1AwtXY0l
+ cBIkxIAwsG9t8dZnWteuK1x5Ipr7Wk8t88C0phOG8T/uInjHIwtAG2sxkFdQVYQrWpua
+ M9B4TfxPzluRsNEIsmvyIUXgFEOtcdRCWuOgTFqnrr83rcEXR/Zrab3/MTz2RKu1Sh2J
+ gBSg==
+X-Gm-Message-State: APjAAAUGgqgYHvC85QWgbskdb7wkhVwwI/STTr43DENJtKrs6WF/1iSV
+ mHIXpwwRVxHY6ylqn1NdBps=
+X-Google-Smtp-Source: APXvYqzIqo97fauDu2NNtpT95i5jes5tUblWKnlFRoxJmsyAkkvAGFGwphEVnugX59rbhtZRvfWFgw==
+X-Received: by 2002:adf:ce83:: with SMTP id r3mr1869573wrn.219.1570005847043; 
+ Wed, 02 Oct 2019 01:44:07 -0700 (PDT)
+Received: from Red ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
+ by smtp.googlemail.com with ESMTPSA id y5sm6524440wma.14.2019.10.02.01.44.05
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 02 Oct 2019 01:44:06 -0700 (PDT)
+Date: Wed, 2 Oct 2019 10:44:04 +0200
+From: Corentin Labbe <clabbe.montjoie@gmail.com>
+To: Maxime Ripard <mripard@kernel.org>
+Subject: Re: [PATCH v2 05/11] ARM: dts: sun8i: H3: Add Crypto Engine node
+Message-ID: <20191002084404.GA3101@Red>
+References: <20191001184141.27956-1-clabbe.montjoie@gmail.com>
+ <20191001184141.27956-6-clabbe.montjoie@gmail.com>
+ <20191002060214.bu67nkd3y6puknrb@gilmour>
 MIME-Version: 1.0
-X-Priority: 3
-Importance: Normal
-X-Mailer: Open-Xchange Mailer v7.10.1-Rev20
-X-Originating-IP: 85.212.176.126
-X-Originating-Client: open-xchange-appsuite
+Content-Disposition: inline
+In-Reply-To: <20191002060214.bu67nkd3y6puknrb@gilmour>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_014415_502589_1BB38DA0 
-X-CRM114-Status: UNSURE (   7.70  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191002_014414_291407_7A1E01B4 
+X-CRM114-Status: GOOD (  18.58  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5301:0:0:3 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (clabbe.montjoie[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -88,35 +101,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, wsa@the-dreams.de, hsinyi@chromium.org,
- matthias.bgg@gmail.com, tglx@linutronix.de, qii.wang@mediatek.com
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ herbert@gondor.apana.org.au, catalin.marinas@arm.com,
+ linux-sunxi@googlegroups.com, linux@armlinux.org.uk,
+ linux-kernel@vger.kernel.org, wens@csie.org, robh+dt@kernel.org,
+ linux-crypto@vger.kernel.org, will@kernel.org, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-> On September 30, 2019 at 5:28 PM Fabien Parent <fparent@baylibre.com> wrote:
+On Wed, Oct 02, 2019 at 08:02:14AM +0200, Maxime Ripard wrote:
+> On Tue, Oct 01, 2019 at 08:41:35PM +0200, Corentin Labbe wrote:
+> > The Crypto Engine is a hardware cryptographic accelerator that supports
+> > many algorithms.
+> > It could be found on most Allwinner SoCs.
+> >
+> > This patch enables the Crypto Engine on the Allwinner H3 SoC Device-tree.
+> >
+> > Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+> > ---
+> >  arch/arm/boot/dts/sun8i-h3.dtsi | 11 +++++++++++
+> >  1 file changed, 11 insertions(+)
+> >
+> > diff --git a/arch/arm/boot/dts/sun8i-h3.dtsi b/arch/arm/boot/dts/sun8i-h3.dtsi
+> > index e37c30e811d3..778a23a794c9 100644
+> > --- a/arch/arm/boot/dts/sun8i-h3.dtsi
+> > +++ b/arch/arm/boot/dts/sun8i-h3.dtsi
+> > @@ -153,6 +153,17 @@
+> >  			allwinner,sram = <&ve_sram 1>;
+> >  		};
+> >
+> > +		crypto: crypto@1c15000 {
+> > +			compatible = "allwinner,sun8i-h3-crypto";
+> > +			reg = <0x01c15000 0x1000>;
+> > +			interrupts = <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>;
+> > +			interrupt-names = "ce_ns";
 > 
+> That's not documented in the binding (and I guess unnecessary)
 > 
-> Since commit abf4923e97c3 ("i2c: mediatek: disable zero-length transfers
-> for mt8183"), there is a NULL pointer dereference for all the SoCs
-> that don't have any quirk. mtk_i2c_functionality is not checking that
-> the quirks pointer is not NULL before starting to use it.
+
+Hello
+
+Yes this should be removed.
+
+> > +			resets = <&ccu RST_BUS_CE>;
+> > +			reset-names = "bus";
+> > +			clocks = <&ccu CLK_BUS_CE>, <&ccu CLK_CE>;
+> > +			clock-names = "bus", "mod";
 > 
-> This commit add a call to i2c_check_quirks which will check whether
-> the quirks pointer is set, and if so will check if the IP has the
-> NO_ZERO_LEN quirk.
+> Nit: we put the clocks before the resets usually
 > 
-> Fixes: abf4923e97c3 ("i2c: mediatek: disable zero-length transfers for mt8183")
-> Signed-off-by: Fabien Parent <fparent@baylibre.com>
 
-Thank you! Tested successfully on Acer R13 Chromebook (mt8173).
+Will do it.
 
-Tested-by: Ulrich Hecht <uli@fpond.eu>
-
-CU
-Uli
+Thanks
+Regards
 
 _______________________________________________
 linux-arm-kernel mailing list
