@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 308D8C477C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 08:05:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D20DBC477D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 08:06:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,105 +11,104 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=pYBeqTwAJ5aWsymuQNi8kkk9jQe0q5DSwHesYt6KQuM=; b=FWRSt5Utrs4wOYhxibQq/m+Eog
-	mnQh76wg4LTDIE1/SwTIuYt2fTM8FBaPZ4APR8Q4ruXJsjl4IVFUcY0dXY9C2+rvSxKSqkXdnI/ml
-	JPfQ2Tbkj5gA5rl4+cYOz9i+ZLseEZ5CzAQg4bwpcx5Zdg/S1/jNms56J7Kowfw326JinQ+eXNIyb
-	4foR/YLZdfPIh3Fn8YF4YpZ/iff3VIF7dcxex1mu8tOxcT4mPQ8GVBl0oUA29UQy1PULZrkeeT5fx
-	erxP/2lGu14PWb7yseMzysqnZxS4W3QCHcn723DAssXxSACtLnpI4tnOlhRZlDPBa8xdjYVJ7iAul
-	/CPgFFJA==;
+	bh=MrxtDKZpO4JFyYzr9np+5txicm3OH0FnaQVyt+CPtPk=; b=V55hbIAiwccq6mOvtYXvPvKMlz
+	/ZTvCjA2w95dfIrXKTG5ITqADmTg+a0+eZTFKXlwQMJEn1ZvSWgCRKrddbhIysyDONIU9/V4J/oyK
+	q6najbDiz9DbrNp5HkLLREqn6+3DL/tN66vAWQp1lnZjQbOfeCsxx1Y1+tk46DP1bIYi3iw16eceN
+	gnNed33rL28ZUzEtuFQXfD0OLTG2RgmzTJtVf4ApCL3lco/yXh0vg6v+P/TBfGWn4x8Z4uaMln6l0
+	xwCWzkW6N55piiC4HJXcG0jOmBD23vBUACtjQebiyXzc51E0Y01mgvshCI5aWa7FTJ1GolgOE9ZZw
+	FU+hJyTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFXlU-00056w-Ch; Wed, 02 Oct 2019 06:05:32 +0000
+	id 1iFXlj-0005MM-K3; Wed, 02 Oct 2019 06:05:47 +0000
 Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFXl5-0004Qm-Pw
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 06:05:09 +0000
+ id 1iFXl6-0004WE-B1
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 06:05:11 +0000
 Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
  by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20191002060506euoutp02ee0a8773793b1846ee88fb6fe7550a7d~Jv1KV6L8b1402114021euoutp02W
+ 20191002060507euoutp024b9278295689bef9123585c6d1b50469~Jv1K17b3_1401814018euoutp02T
  for <linux-arm-kernel@lists.infradead.org>;
- Wed,  2 Oct 2019 06:05:06 +0000 (GMT)
+ Wed,  2 Oct 2019 06:05:07 +0000 (GMT)
 DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20191002060506euoutp02ee0a8773793b1846ee88fb6fe7550a7d~Jv1KV6L8b1402114021euoutp02W
+ 20191002060507euoutp024b9278295689bef9123585c6d1b50469~Jv1K17b3_1401814018euoutp02T
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1569996306;
- bh=vznnw8/ZImwrHPelkoL0LBLjMQ+XqOxLrcrGR3tiPIs=;
+ s=mail20170921; t=1569996307;
+ bh=EWFRg+8V3OIo8aFqoZNFtrRcYuntoN7h44TTPr+nrkw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=pLHUbwM0uLNcb8eksqDDnzQN1W2LJ+771grSSjkQuimvUjlGgY5f5x+BAfZc8Qbkx
- /TQXEyGW+oeTDU5ICipZEo0z++AwQ6LS5W8qhcRpHGDgqrHJwuVp45x8/zB/Nu55cd
- j2zIMnlsLPYPJgIS/ohjykh5CCBl0NBDReU2f/5E=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20191002060506eucas1p1c302ac36b85ec6e83325c0351ac37669~Jv1J6yd9Q0353603536eucas1p1z;
+ b=srGpCNttP6knCQUBgx3jYWeZbfPEaAKrS7qx8qysBSbViBo00ivTjspdRAwDuxPJi
+ +uWHQv3DGoBjnyZ3w28mcMnCXGabocJT2jJa5EYWqUFC46V9J7pW7cYafPWqqDwCKh
+ vukt60F2RZz0ZmWxpAuOE6BPN7KfEiVNrmu+txNc=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20191002060506eucas1p22ee956f1587f12b3d3abd7a8976ff2f5~Jv1KkE9mL1656116561eucas1p2e;
  Wed,  2 Oct 2019 06:05:06 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id 64.62.04374.11E349D5; Wed,  2
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id 20.D9.04309.21E349D5; Wed,  2
  Oct 2019 07:05:06 +0100 (BST)
 Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
  eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20191002060505eucas1p2efd80ccde8c728973df8d932580cd58b~Jv1JUx3S40451004510eucas1p2x;
- Wed,  2 Oct 2019 06:05:05 +0000 (GMT)
+ 20191002060506eucas1p28c9670128f5adfb628d7e84ce55c6e60~Jv1KLbs6B1257012570eucas1p2q;
+ Wed,  2 Oct 2019 06:05:06 +0000 (GMT)
 Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
  eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20191002060505eusmtrp2d6cec5606a70442d5ce7a351c4767788~Jv1JUEe4Z0112001120eusmtrp20;
- Wed,  2 Oct 2019 06:05:05 +0000 (GMT)
-X-AuditID: cbfec7f5-4ddff70000001116-a2-5d943e110fc0
+ 20191002060506eusmtrp2eaee2dd30c61388f9b0a599dc2edd12f~Jv1KKwCew0112001120eusmtrp24;
+ Wed,  2 Oct 2019 06:05:06 +0000 (GMT)
+X-AuditID: cbfec7f4-afbff700000010d5-60-5d943e126bc1
 Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id FE.14.04166.11E349D5; Wed,  2
- Oct 2019 07:05:05 +0100 (BST)
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id 60.24.04166.21E349D5; Wed,  2
+ Oct 2019 07:05:06 +0100 (BST)
 Received: from AMDC3778.digital.local (unknown [106.120.51.20]) by
  eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20191002060504eusmtip22e10129d7ab4a3a21f1dcfc74dff71c9~Jv1If9uHN3226032260eusmtip2f;
- Wed,  2 Oct 2019 06:05:04 +0000 (GMT)
+ 20191002060505eusmtip2fac233f17aa68714e6d59812cf48e561~Jv1JTt1rw0033000330eusmtip2D;
+ Wed,  2 Oct 2019 06:05:05 +0000 (GMT)
 From: Lukasz Luba <l.luba@partner.samsung.com>
 To: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-pm@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 2/4] ARM: dts: exynos: Add interrupt to DMC controller in
- Exynos5422
-Date: Wed,  2 Oct 2019 08:04:53 +0200
-Message-Id: <20191002060455.3834-3-l.luba@partner.samsung.com>
+Subject: [PATCH v3 3/4] ARM: dts: exynos: map 0x10000 SFR instead of 0x100
+ in DMC Exynos5422
+Date: Wed,  2 Oct 2019 08:04:54 +0200
+Message-Id: <20191002060455.3834-4-l.luba@partner.samsung.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191002060455.3834-1-l.luba@partner.samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA0WSfUhTYRTGe3d3d6/m4jojD6UJo8CCNLHiDXUVCY0IKrA/UlbOvE3JTdtV
- 0wqafarlB/Zly7Qw0eZCm8Om+dVcTjFboqQUUWmYlBoxXYitcl6t/57znN95n8PhpQlJPbma
- Ttaks1qNMkUq8hY2ds06NklkNxSb9fvwk9I6Eg9NfyFxhe0ViYtGvxHY4aincN/5CQq/1QVg
- 0+gbEg80l4mws8CGcKmjTYAf295TuGqoX4Df5dSI8KVWG4U7J66Q2NU9gnb6yo3lRiRv0r+n
- 5CZDnkje8PCc/PlUi0BeaDYgudO09gAV6x2ZyKYkZ7LaUFm8d9Ll9glRmovKqq3ooXSoR5SP
- vGhgtkBNlY3KR960hKlB0Np1l+SLaQSzOWVCvnAi6Cl1oKWRIptRxDeqETjqB4X/Rp4a7UQ+
- omkREwIWw0nPwEqmEoGrM9bDEEyjAD4aXKSH8WMOQ3GXzCOFzHoo7KU8UszIwD0YxkcFQW19
- B+HRXswOmPowTHheAcZKgb7tGsFD0eA2Dyzu5gdf7WaK1wHwp6lCwGsOdAUPFpmzMFp0b5GJ
- gE57/8I2BLMB6ppDeXsXjJUPL9jArIDhSV+PTczLksbbBG+LIfeyhKeDwXzt9WLQKqg23qJ4
- RA6TN8P505QgGH/RTRSjIP3/rPsIGZA/m8GpVSwXrmFPhXBKNZehUYUcS1Wb0Pw/6v1tn7Gg
- tl8JVsTQSOojHo65rpCQykwuW21FQBPSleLIXyUKiThRmX2a1aYe1WaksJwVraGFUn/xmWUf
- 4ySMSpnOnmDZNFa71BXQXqt1iP4cY8Fn9B2zCbRTMWcy9oxYrmqOfB/Xpgfun0skfI7T96Xr
- VC+tyO6OeqTdFmF/tn3H3rzczJGauIvxdYa5zGb3aLilZffZnPzAPsXBnyZcEtX4bS5i8E5W
- 0Lr1/YdapyUNJ4J1ipn4jrGtldC9XLGHaA/8cSGaEjgV0Y5PUiGXpAzbSGg55V8/NAtnQwMA
- AA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprKIsWRmVeSWpSXmKPExsVy+t/xe7qCdlNiDSa/E7fYOGM9q8X1L89Z
+X-Brightmail-Tracker: H4sIAAAAAAAAA0VSa0hTYRju29m5aE6OU/RzWeIgqTCtVPpKMwOLBUIRQWBorTyoeN9xliU0
+ Q8tJanhJkUxNTZuGtnTeo+ZISdSGoJKJtx+B99S85LB22rH+Pe9zeZ+Xj4/CxM24hIqKS2IU
+ cfIYKWEt1H3aGjgqDigIPaZa8UBvixtwNLL2HUdlhgEc5c7MYWhwsJFE/Q/nSfRV5YK0M8M4
+ Gmp/TqDVbANAxYPvBeiNYZxE1SNGARpLqyVQRpeBRN3zj3G03jsNAu1k9S/qgaytZJyUaTVq
+ Qvau6oHs42KnQJbTpAGyVe2By2SItX84ExOVzCi8Am5aRy4vpYOEafLuq8KXhAp0EFnAioK0
+ DzROVZixNSWmawHsn1ELLMMagNOZOcAyrJoVU7pgN7Ixm867agDc2NaDf5FldatZoSiC9oSt
+ mkQu4EBXArjeHcJ5MFongJOadZwT7OkwmPGr6+8hQvogzBidEHJYRAfAXpNJaGlzhXWNHzAO
+ W9Fn4eLEKMYtgvRnElY3bwOLKQiub47wAXs429NEWrAL/N1Wxp/NQlV2Be9PhTO5pbzHD3b3
+ GHHuaIw+DBvavSz0OWjoXMY4GtK2cHTBjqMxM8zTFfG0CGY+Elvch2DTky98kSOsqX/GL5fB
+ qpYS/q3yAOwdLwBPgWvJ/7JyADTAiVGysREMeyKOuePJymNZZVyE5+34WC0wf6a+nZ61VtBu
+ uqUHNAWkNiLVlfxQMS5PZlNi9QBSmNRB5G/KCxWLwuUp9xhF/A2FMoZh9WAfJZQ6ie7vmbwu
+ piPkSUw0wyQwil1VQFlJVEAZovFounjB9/VydN+Wd6Bv3cCUW4X+p6MkJssQpM1vWEgpLAr4
+ Id3xVbc0EO6baZSR6Kg0OQ+X0rZGZfeKtzu2oPZ1XOr7VpOTOLd36FLQ+ZMFY7pKKu/qmVSv
+ 0hzJ6fnyoWD9QovfoI9XsMkpNHpKnKQANqfcnPfLr4UZaqVCNlJ+/AimYOV/AER5huVIAwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprOIsWRmVeSWpSXmKPExsVy+t/xe7pCdlNiDVb85rfYOGM9q8X1L89Z
  LeYfOcdq0f/4NbPF+fMb2C3ONr1ht7jVIGOx6fE1VovLu+awWXzuPcJoMeP8PiaLtUfuslss
  vX6RyeJ24wo2i9a9R9gtDr9pZ7X4duIRo4Ogx5p5axg9ds66y+6xaVUnm8fmJfUeB9/tYfLo
  27KK0ePzJrkA9ig9m6L80pJUhYz84hJbpWhDCyM9Q0sLPSMTSz1DY/NYKyNTJX07m5TUnMyy
- 1CJ9uwS9jLb9b9gKvrFXrJ5/kr2B8SRbFyMnh4SAiUT/kTVANheHkMBSRolTJ74yQiTEJCbt
- 284OYQtL/LnWBVX0iVHi788bQAkODjYBPYkdqwpB4iICyxkljq16ywziMAscYZI4uvoa2CRh
- gXCJS3vbmEEaWARUJfpOg/XyCthJ/L1iCDFfXmL1hgPMIDangL3Eu/s3wKqFgEr+n6mcwMi3
- gJFhFaNIamlxbnpusaFecWJucWleul5yfu4mRmCUbDv2c/MOxksbgw8xCnAwKvHwNgRNjhVi
- TSwrrsw9xCjBwawkwmvzZ1KsEG9KYmVValF+fFFpTmrxIUZToIsmMkuJJucDIzivJN7Q1NDc
- wtLQ3Njc2MxCSZy3Q+BgjJBAemJJanZqakFqEUwfEwenVANjp966Ta9DDvvtcmRVsWd9ckVC
- dc1ZUT3Xjz/+yTyUnKG37JJW8+/VXz5EF3AssRY5Ge1oaX70Wfja+b/NTh2PPTwziCXxYvid
- W+YPbm5/xNr+h81nya5ne0zZrwksnXmdzVQ47qhnc0WFihRn0NNTTgwNj7Q0j/ae1yk/mrZY
- I6xqXsXa1qnySizFGYmGWsxFxYkA3EL4bKgCAAA=
-X-CMS-MailID: 20191002060505eucas1p2efd80ccde8c728973df8d932580cd58b
+ 1CJ9uwS9jA/vWxgLHrFXLJu6iK2BcTdbFyMnh4SAicT3Vy1MXYxcHEICSxklJv39zgyREJOY
+ tG87O4QtLPHnWhcbRNEnRomdP1+zdDFycLAJ6EnsWFUIEhcRWM4ocWzVW2YQh1ngCJPE0dXX
+ GEG6hQViJJb8/gm2jkVAVaL1xn0WEJtXwE7ixJ8/LBAb5CVWbzgAtplTwF7i3f0bzCALhIBq
+ /p+pnMDIt4CRYRWjSGppcW56brGhXnFibnFpXrpecn7uJkZgpGw79nPzDsZLG4MPMQpwMCrx
+ 8DYETY4VYk0sK67MPcQowcGsJMJr82dSrBBvSmJlVWpRfnxRaU5q8SFGU6CbJjJLiSbnA6M4
+ ryTe0NTQ3MLS0NzY3NjMQkmct0PgYIyQQHpiSWp2ampBahFMHxMHp1QDo6igfm/kRsUAR9vi
+ /301pryb/t2Jq9j/fdUBgZqpre8ZBJ+2p+7p9ahWDXoySeBv0pNkka1u58MsVrdK9HZ9/P5y
+ q4GhoEQ/Z2yD43+Nfp1FPxnsUj3Wlr99Ov38lYLnkg4PVm3iWl8hu+xOvcSTmLDmLuOeHet+
+ M3o1qLgeFG24NGmb9Ku/SizFGYmGWsxFxYkAP+hTaKoCAAA=
+X-CMS-MailID: 20191002060506eucas1p28c9670128f5adfb628d7e84ce55c6e60
 X-Msg-Generator: CA
-X-RootMTR: 20191002060505eucas1p2efd80ccde8c728973df8d932580cd58b
+X-RootMTR: 20191002060506eucas1p28c9670128f5adfb628d7e84ce55c6e60
 X-EPHeader: CA
 CMS-TYPE: 201P
-X-CMS-RootMailID: 20191002060505eucas1p2efd80ccde8c728973df8d932580cd58b
+X-CMS-RootMailID: 20191002060506eucas1p28c9670128f5adfb628d7e84ce55c6e60
 References: <20191002060455.3834-1-l.luba@partner.samsung.com>
- <CGME20191002060505eucas1p2efd80ccde8c728973df8d932580cd58b@eucas1p2.samsung.com>
+ <CGME20191002060506eucas1p28c9670128f5adfb628d7e84ce55c6e60@eucas1p2.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_230507_980384_BAF200BA 
-X-CRM114-Status: GOOD (  11.90  )
+X-CRM114-CacheID: sfid-20191001_230508_515090_396C55D6 
+X-CRM114-Status: GOOD (  13.10  )
 X-Spam-Score: -5.1 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.1 points)
@@ -147,30 +146,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add interrupt to Dynamic Memory Controller in Exynos5422 and Odroid
-XU3-family boards. It will be used instead of devfreq polling mode
-governor. The interrupt is connected to performance counters private
-for DMC, which might track utilisation of the memory channels.
+There is a need to access registers at address offset near 0x10000.
+These registers are private DMC performance counters, which might be used
+as interrupt trigger when overflow. Potential usage is to skip polling
+in devfreq framework and switch to interrupt managed bandwidth control.
 
 Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
 ---
- arch/arm/boot/dts/exynos5420.dtsi | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/arm/boot/dts/exynos5420.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm/boot/dts/exynos5420.dtsi b/arch/arm/boot/dts/exynos5420.dtsi
-index 92c5e0d8a824..98f6c71f57d8 100644
+index 98f6c71f57d8..c829bbdc5711 100644
 --- a/arch/arm/boot/dts/exynos5420.dtsi
 +++ b/arch/arm/boot/dts/exynos5420.dtsi
-@@ -240,6 +240,9 @@
+@@ -239,7 +239,7 @@
+ 
  		dmc: memory-controller@10c20000 {
  			compatible = "samsung,exynos5422-dmc";
- 			reg = <0x10c20000 0x100>, <0x10c30000 0x100>;
-+			interrupt-parent = <&combiner>;
-+			interrupts = <16 0>, <16 1>;
-+			interrupt-names = "drex_0", "drex_1";
- 			clocks = <&clock CLK_FOUT_SPLL>,
- 				 <&clock CLK_MOUT_SCLK_SPLL>,
- 				 <&clock CLK_FF_DOUT_SPLL2>,
+-			reg = <0x10c20000 0x100>, <0x10c30000 0x100>;
++			reg = <0x10c20000 0x10000>, <0x10c30000 0x10000>;
+ 			interrupt-parent = <&combiner>;
+ 			interrupts = <16 0>, <16 1>;
+ 			interrupt-names = "drex_0", "drex_1";
 -- 
 2.17.1
 
