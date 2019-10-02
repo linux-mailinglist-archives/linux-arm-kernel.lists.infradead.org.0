@@ -2,91 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1788C479C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 08:17:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4302DC4810
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 09:06:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=IKryc/0ZGdUCUKt0fsdyMoNjD3rr4mb5rJ3xhiEWNVQ=; b=txvZS3/96ZntDN
-	RjiknP0VsLbn9/C8etphvFKXZnaXw4888fveKYsh7q5JSEs1WXls1Dk2Bh9bwRG0x6Mji4pZ0zCW7
-	Z2Rz4L6gw9080w6VRI5jTRaEFjrKbD2Gz+crNETtujihZSM/ezjtHqvEvx7TP+Y++anJ7nAxWEWw9
-	/ZereXCk4yBtPsFpALWPpfNr8GtsgZ02RwgLabzq53JJV6lsLCUdC4GHUa5AQYno+u2JSzxTk8KC3
-	c4xKfvyCY4RyJi4/BaKjady052Z3CBPyTL6rAyXb1wUmE3o10OP7G47IpwsOoXRTp+pyhnrgjc5BS
-	cvHaH27GY3GYc4faMJ5w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YseS1Kkn+di9mntkL4TAyB416Hj8psUIIf4FMPNLEe8=; b=offhz1OhYsFuzN
+	EfutEPDeYSPipbKhcVPSVc7JnPWshgdMCqpUXBbPVRNP2Kmj3et63RYaQfcbVD3IffHJFGIKczusF
+	6HzhdDoL6dTunzpvE7ruuR2fy5DNUhz3x2KJZs1y0EG50M+teV4OZqU+qHFonoFSk1VTUr7g9G/u8
+	8oqXeVfvofnm40BcDJwDy/vMtOJaDgOlKWrrmA1Lt/Z8ohldGMgSXlezbSYMuYu9jhT+yAQrnJFYX
+	QpHXivQtdiHdbUh5rsKELG4uu7EO8uweOsCm8gYLj6SfwbCedA+WCFnuk2scKlkCta6sLt8++W3Iy
+	Xdi5Gx0VJ+68vSsdWXrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFXwS-0001xK-0Y; Wed, 02 Oct 2019 06:16:52 +0000
-Received: from mail-pg1-x52c.google.com ([2607:f8b0:4864:20::52c])
+	id 1iFYi2-0001Ir-Nu; Wed, 02 Oct 2019 07:06:02 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFXwI-0001wv-BP
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 06:16:43 +0000
-Received: by mail-pg1-x52c.google.com with SMTP id q7so11273682pgi.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 01 Oct 2019 23:16:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=bXhUcsHWmFqWw6cgxYeO7Dw1J1Faou5guglKJMguGaY=;
- b=P2cmnVG2UXGJAz2/S+aKnDxE5FXZajq1dQQQlVjQge9QyrvCgqz2ueIGHanExkRKLt
- DanUq777waraHE+c6KhFCms3qBOZQ8bUFVEi/Q1t9TGA+6pHcP8uc04ma74SOEM83gXC
- W8gIkKTeSdxiff8aa7z/HcyKHkYFAdO+NJ9eN6G5iyDKuJPcHv/3RUaCwHIB31bGWSCN
- cNfwbf/5Q/NyNGV3SSQ4wppjxSFo2P4VqeVNJcEWi/FVRjlPOQjM8gVInM3JcpJN4d1u
- 2HPJjyv247p2lA3/tbjFWeo429v4gp9J77MtBz+Jq8CGgjA+gn1u7B5lHKFxwoSejwEh
- uOVA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=bXhUcsHWmFqWw6cgxYeO7Dw1J1Faou5guglKJMguGaY=;
- b=RF1q4pAmo1h2dCAc5s4paEk4n6ZAV0Js6DZETLRnm5EX996WA0Jotz7YFxZBDYFQy2
- +kRs9n4rGgd9Hd8o2m0oQkLlFzTEQRXCPhwHLG2J2yzrVRa64nJIiy3Tu0P4O0w/RmfA
- +GEI5mPot7IH1LT3XrVJwIQvb1uLBxUdz/QuoSGneIaNsryH/dk5zU7Z1Bt3I7cCwn3g
- JGztVcgpdPRPsPeiRDtDpyStsBMPBjTH31/VBKR1t1ayXZLSkvRarxDSbSy5W3cWQNqq
- 60gyg8+sfzM8xllTvvDqEQzGrZYsT9GZ3C4NkXmbXjmBBtGOcu1tUeREKzr3kukZxDKG
- U5Og==
-X-Gm-Message-State: APjAAAXOvCJx1cZRqyIG20Zqjv6xwyjf/dGd7FLmxU6nnwqpZcIx5Izx
- IhPR/DepE7s3/fnJRp91WLA=
-X-Google-Smtp-Source: APXvYqwAbbWPXUJHa/ZTseF17NSmssTELswAB4MkCuk0Htvp5O7ssMMs7qSpOYNXGc+gq18/MkklAQ==
-X-Received: by 2002:aa7:9307:: with SMTP id 7mr2758508pfj.224.1569997000796;
- Tue, 01 Oct 2019 23:16:40 -0700 (PDT)
-Received: from localhost ([106.51.242.60])
- by smtp.gmail.com with ESMTPSA id q42sm4799721pja.16.2019.10.01.23.16.39
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 01 Oct 2019 23:16:39 -0700 (PDT)
-Date: Wed, 2 Oct 2019 11:46:37 +0530
-From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: Vladimir Murzin <vladimir.murzin@arm.com>,
- Russell King <linux@armlinux.org.uk>
-Subject: Regression: Cortex-M w/ XIP not booting
-Message-ID: <20191002061637.GA7743@afzalpc>
+ id 1iFYht-0001Hj-29
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 07:05:56 +0000
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 9F4C95AFF8;
+ Wed,  2 Oct 2019 07:05:51 +0000 (UTC)
+Received: from [10.36.117.58] (ovpn-117-58.ams2.redhat.com [10.36.117.58])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 6B0EB6012C;
+ Wed,  2 Oct 2019 07:05:48 +0000 (UTC)
+Subject: Re: [PATCH v5 04/10] mm/memory_hotplug: Don't access uninitialized
+ memmaps in shrink_zone_span()
+To: kbuild test robot <lkp@intel.com>
+References: <20191001144011.3801-5-david@redhat.com>
+ <201910020852.w9neG45x%lkp@intel.com>
+From: David Hildenbrand <david@redhat.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
+ 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
+ SE+xAvmumFBY
+Organization: Red Hat GmbH
+Message-ID: <1b6a5056-7f2a-1e83-fae0-5289435f4270@redhat.com>
+Date: Wed, 2 Oct 2019 09:05:47 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.9.3 (2018-01-21)
+In-Reply-To: <201910020852.w9neG45x%lkp@intel.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.39]); Wed, 02 Oct 2019 07:05:52 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_231642_414290_939BB27F 
-X-CRM114-Status: UNSURE (   7.86  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191002_000553_145321_88DD7577 
+X-CRM114-Status: GOOD (  23.59  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:52c listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (afzal.mohd.ma[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,52 +116,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-arm-kernel@lists.infradead.org,
- Alexandre Torgue <alexandre.torgue@st.com>
+Cc: linux-s390@vger.kernel.org, Michal Hocko <mhocko@suse.com>,
+ linux-ia64@vger.kernel.org, Pavel Tatashin <pasha.tatashin@soleen.com>,
+ linux-sh@vger.kernel.org, "Aneesh Kumar K . V" <aneesh.kumar@linux.ibm.com>,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org, kbuild-all@01.org,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+ Oscar Salvador <osalvador@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Vladimir,
+On 02.10.19 02:06, kbuild test robot wrote:
+> Hi David,
+> 
+> I love your patch! Perhaps something to improve:
+> 
+> [auto build test WARNING on mmotm/master]
+> 
+> url:    https://github.com/0day-ci/linux/commits/David-Hildenbrand/mm-memory_hotplug-Shrink-zones-before-removing-memory/20191002-054310
+> base:   git://git.cmpxchg.org/linux-mmotm.git master
+> config: x86_64-randconfig-b002-201939 (attached as .config)
+> compiler: gcc-7 (Debian 7.4.0-13) 7.4.0
+> reproduce:
+>         # save the attached .config to linux build tree
+>         make ARCH=x86_64 
+> 
+> If you fix the issue, kindly add following tag
+> Reported-by: kbuild test robot <lkp@intel.com>
+> 
+> All warnings (new ones prefixed by >>):
+> 
+>    In file included from include/asm-generic/bug.h:5:0,
+>                     from arch/x86/include/asm/bug.h:83,
+>                     from include/linux/bug.h:5,
+>                     from include/linux/mmdebug.h:5,
+>                     from include/linux/mm.h:9,
+>                     from mm/memory_hotplug.c:9:
+>    mm/memory_hotplug.c: In function '__remove_zone':
+>    mm/memory_hotplug.c:471:24: error: 'ZONE_DEVICE' undeclared (first use in this function); did you mean 'ZONE_MOVABLE'?
+>      if (zone_idx(zone) == ZONE_DEVICE)
+>                            ^
+>    include/linux/compiler.h:58:52: note: in definition of macro '__trace_if_var'
+>     #define __trace_if_var(cond) (__builtin_constant_p(cond) ? (cond) : __trace_if_value(cond))
+>                                                        ^~~~
+>>> mm/memory_hotplug.c:471:2: note: in expansion of macro 'if'
+>      if (zone_idx(zone) == ZONE_DEVICE)
+>      ^~
+>    mm/memory_hotplug.c:471:24: note: each undeclared identifier is reported only once for each function it appears in
+>      if (zone_idx(zone) == ZONE_DEVICE)
+>                            ^
+>    include/linux/compiler.h:58:52: note: in definition of macro '__trace_if_var'
+>     #define __trace_if_var(cond) (__builtin_constant_p(cond) ? (cond) : __trace_if_value(cond))
+>                                                        ^~~~
+>>> mm/memory_hotplug.c:471:2: note: in expansion of macro 'if'
+>      if (zone_idx(zone) == ZONE_DEVICE)
+>      ^~
+> 
+> vim +/if +471 mm/memory_hotplug.c
+> 
+>    459	
+>    460	static void __remove_zone(struct zone *zone, unsigned long start_pfn,
+>    461			unsigned long nr_pages)
+>    462	{
+>    463		struct pglist_data *pgdat = zone->zone_pgdat;
+>    464		unsigned long flags;
+>    465	
+>    466		/*
+>    467		 * Zone shrinking code cannot properly deal with ZONE_DEVICE. So
+>    468		 * we will not try to shrink the zones - which is okay as
+>    469		 * set_zone_contiguous() cannot deal with ZONE_DEVICE either way.
+>    470		 */
+>  > 471		if (zone_idx(zone) == ZONE_DEVICE)
+>    472			return;
+>    473	
+>    474		pgdat_resize_lock(zone->zone_pgdat, &flags);
+>    475		shrink_zone_span(zone, start_pfn, start_pfn + nr_pages);
+>    476		update_pgdat_span(pgdat);
+>    477		pgdat_resize_unlock(zone->zone_pgdat, &flags);
+>    478	}
+>    479	
+> 
+> ---
+> 0-DAY kernel test infrastructure                Open Source Technology Center
+> https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
+> 
 
-After,
+That should be easy to fix with some ifdef-ery :)
 
-72cd4064fcca "NOMMU: Toggle only bits in EXC_RETURN we are really care of",
+-- 
 
-the no-MMU Vybrid Cortex-M4 is not booting, relevant logs at the end.
+Thanks,
 
-Looks like any Cortex-M with XIP enabled Kernel would have this issue,
-i.e. all STM32 Cortex-M baords (STM32 maintainers CC'ed) as well as.
-
-In the above commit, lr value is saved in data section in __v7m_setup,
-but the data section is setup only later in __mmap_switched on an XIP
-kernel, where it will overwrite the saved value of lr. This causes
-reserved EXC_RETURN value resulting in the below.
-
-Reverting the above change fixes the issue.
-
-Regards
-afzal
-
-[    0.801928] Run /init as init process
-[    0.829364]
-[    0.829364] Unhandled exception: IPSR = 00000006 LR = fffffff1
-[    0.836750] CPU: 0 PID: 1 Comm: init Not tainted 5.2.0-00002-gb5fa138a4b0d-dirty #41
-[    0.844523] Hardware name: Freescale Vybrid VF5xx/VF6xx (Device Tree)
-[    0.851001] PC is at 0x0
-[    0.853559] LR is at 0x0
-[    0.856127] pc : [<00000000>]    lr : [<00000000>]    psr: 4000000b
-[    0.862434] sp : 8e82dff8  ip : 8e82dfe0  fp : 00000000
-[    0.867697] r10: 8eb4ae40  r9 : 00000000  r8 : 00000000
-[    0.872958] r7 : 00000000  r6 : 00000000  r5 : 00000000  r4 : 00000000
-[    0.879523] r3 : 00000000  r2 : 00000000  r1 : 00000000  r0 : 00000000
-[    0.886076] xPSR: 4000000b
-[    0.888836] CPU: 0 PID: 1 Comm: init Not tainted 5.2.0-00002-gb5fa138a4b0d-dirty #41
-[    0.896612] Hardware name: Freescale Vybrid VF5xx/VF6xx (Device Tree)
-[    0.903177] [<0f0042d5>] (unwind_backtrace) from [<0f00354f>] (show_stack+0xb/0xc)
-[    0.910851] [<0f00354f>] (show_stack) from [<0f003d0f>] (__invalid_entry+0x4b/0x4c)
+David / dhildenb
 
 _______________________________________________
 linux-arm-kernel mailing list
