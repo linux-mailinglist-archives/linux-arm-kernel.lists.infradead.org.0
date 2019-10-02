@@ -2,85 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E98D1C9404
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 00:06:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E794DC940E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 00:07:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PQRyhBBjBYZ8YgfjH6ax8OgLwtKTLbTBAM6s2PvKs08=; b=gTIoWUDKhu315S
-	l4dhfgvJ8NPprfejr0K0GLkzG0S5SWMx5rJj/5f8V4FYy+7MCv6Y0v2ASaBIypJai3DCF5lhU4ks1
-	wQHmjTqQCZLQ8V+/votMOyxDen5YdariDCUIGZeWUls6HLv1Fkhn8BILOjA2SpWmT6QRy0bnMwgiV
-	AxeL4yBKMrGVgnHk+TkWnMZnMs5I50DQX368flE8GH0vV+UTLpi422s0bPkndlSCBhVreRRfZjb8R
-	Z9aVkWl/3T/4Ww8cOdeTUsBe6mFAjMek0sd1H5ofvEL2UGncgqNkKO1nTeTFOecWRwqrnHYq/2zaD
-	WUCY8DaGYPswKmlIRLAg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=qjBwQs4kLduSYAsxv0doxUGlBLoUWdSdOXs30ITWVPw=; b=C2mNzVsq+VvqkqfAaRYTSeQd0
+	/8VAX+c4T7hMvLPR5Pmg841ZRIieTPDzFJ5voI1sMkeTSjZIA9lfHziPyDHI9ZHeMVh8YUQ2eX+cA
+	nuOjnoOxFhVlNJiu4gEhHM/Tqc+czJgSxAIZqlARgilSv1tJ7xvKBRw/QDS8Bk9TpgMLVYVcuXYey
+	Vnmt5krfRtLdcMlgMKr18+hDbCbQqgK4FJIJE1UsFbUI9Jb01Ec203OiVxdTHluVCGk6/dYTD+cKe
+	kgOI2zp1zsENmNiIL7pVAI6G9RK0O3jY+lozLofjODfnWfbUWQ/Sb6encJSmEhf1qCtEEtozklZkc
+	00c3W7GEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFmkr-0008NF-Hi; Wed, 02 Oct 2019 22:05:53 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1iFmmE-0000G1-7i; Wed, 02 Oct 2019 22:07:18 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFmkk-0008MP-6Z
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 22:05:47 +0000
-Received: by mail-qk1-x743.google.com with SMTP id y189so336510qkc.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 02 Oct 2019 15:05:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=1s738KR7peDPdk0egrEOotdFH/XvdoPuk8qM2dZV4+M=;
- b=RsaX3chVgIapb461BDRuC0sDD0I5xgnK4SHyqIX74Teg/PoXx45jz4Bn1w1j0x915o
- 0cld1gKH27FzDLsKxsCxX2fDACDVYXV2Kl7DbbVqnNr2YV5auxIbgJ3ZClu9UATlO1cd
- phlso1RkSrEk+wzqJ5HPqDerQZGThL/aqS8nI=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=1s738KR7peDPdk0egrEOotdFH/XvdoPuk8qM2dZV4+M=;
- b=ilzeAgS3o/dyt267hAEZgawxFGR9BEZCZC8bdmsEW8vDpklIdSA3a9NFPJIIyR8Z+l
- 866YlfXgm/ik6rVQqVckxnyyxTREH5ODm146ramZR2PbMhwEjSTl3Qm7wQa07P/g0nuz
- hJBedl7H/K+Elqm2Hr2qy6J6ltwQ+6sRCTDaDqRngepxOktYOwPIQHdsW6OVLFTY1jFn
- p/7DG8Tw3x4X1U6YoTYj3sPVaUPfzP50MqqPdLVI97jaFtkkumJmhsoR0RsLoOTzbxBV
- BPQWnPze1agsKFFerBj7Nzv81COds0Mxv+mdRJJu2KyqbzPzrVnsBbVwlkRprsODHkyL
- 65rg==
-X-Gm-Message-State: APjAAAV/EsPcAdaYpsZ9SzK53ZGPOmHtnboGtdEOG94/kbLo8E00cX4R
- Zlqa0/CNsvPgsCCIdgpieAG9PpjdVGq7S2CHlGA=
-X-Google-Smtp-Source: APXvYqzCQ+ctGU7OQGZqx/nxtHTMHw9WlHbGNxcjNnj4Cgg7Cq7pSYMp4k90/LRI+zGC5+lRhoD79BWDyiWYxBW8A0g=
-X-Received: by 2002:a37:4f4c:: with SMTP id d73mr1165671qkb.171.1570053944314; 
- Wed, 02 Oct 2019 15:05:44 -0700 (PDT)
+ id 1iFmm5-0000FL-Ds
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 22:07:11 +0000
+X-Originating-IP: 132.205.230.6
+Received: from aptenodytes (unknown [132.205.230.6])
+ (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id F414BC0004;
+ Wed,  2 Oct 2019 22:06:52 +0000 (UTC)
+Date: Wed, 2 Oct 2019 18:06:50 -0400
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: Jernej Skrabec <jernej.skrabec@siol.net>
+Subject: Re: [PATCH v2 2/3] media: cedrus: Fix H264 default reference index
+ count
+Message-ID: <20191002220650.GB24151@aptenodytes>
+References: <20191002193553.1633467-1-jernej.skrabec@siol.net>
+ <20191002193553.1633467-3-jernej.skrabec@siol.net>
 MIME-Version: 1.0
-References: <20191002061200.29888-1-chiawei_wang@aspeedtech.com>
- <70044749-785b-6ff3-7a28-fb049dcfec54@linux.intel.com>
-In-Reply-To: <70044749-785b-6ff3-7a28-fb049dcfec54@linux.intel.com>
-From: Joel Stanley <joel@jms.id.au>
-Date: Wed, 2 Oct 2019 22:05:32 +0000
-Message-ID: <CACPK8XfBxC+4PHHCkMoXr+twjfWaovcJ5c=hfCmHRJ6LpGNeFg@mail.gmail.com>
-Subject: Re: [PATCH 0/2] peci: aspeed: Add AST2600 compatible
-To: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
+In-Reply-To: <20191002193553.1633467-3-jernej.skrabec@siol.net>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_150546_452554_4017C1A8 
-X-CRM114-Status: GOOD (  13.20  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191002_150709_619786_1909EEE8 
+X-CRM114-Status: GOOD (  15.67  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.198 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.198 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (joel.stan[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,46 +64,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Ryan Chen <ryan_chen@aspeedtech.com>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>, Andrew Jeffery <andrew@aj.id.au>,
- "Chia-Wei, Wang" <chiawei_wang@aspeedtech.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Jason M Biils <jason.m.bills@linux.intel.com>,
- OpenBMC Maillist <openbmc@lists.ozlabs.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, mripard@kernel.org, wens@csie.org,
+ hverkuil-cisco@xs4all.nl, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============4301346268330036042=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2 Oct 2019 at 18:11, Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com> wrote:
->
-> Hi Chia-Wei,
->
-> On 10/1/2019 11:11 PM, Chia-Wei, Wang wrote:
-> > Update the Aspeed PECI driver with the AST2600 compatible string.
-> > A new comptabile string is needed for the extended HW feature of
-> > AST2600.
-> >
-> > Chia-Wei, Wang (2):
-> >    peci: aspeed: Add AST2600 compatible string
-> >    dt-bindings: peci: aspeed: Add AST2600 compatible
-> >
-> >   Documentation/devicetree/bindings/peci/peci-aspeed.txt | 1 +
-> >   drivers/peci/peci-aspeed.c                             | 1 +
-> >   2 files changed, 2 insertions(+)
-> >
->
-> PECI subsystem isn't in linux upstream yet so you should submit it into
-> OpenBMC dev-5.3 tree only.
 
-OpenBMC has been carrying the out of tree patches for some time now. I
-haven't seen a new version posted for a while. Do you have a timeline
-for when you plan to submit it upstream?
+--===============4301346268330036042==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="MW5yreqqjyrRcusr"
+Content-Disposition: inline
+
+
+--MW5yreqqjyrRcusr
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+On Wed 02 Oct 19, 21:35, Jernej Skrabec wrote:
+> Reference index count in VE_H264_PPS should come from PPS control.
+> However, this is not really important, because reference index count is
+> in our case always overridden by that from slice header.
+
+Thanks for the fixup!
+
+Our libva userspace and v4l2-request testing tool currently don't provide t=
+his,
+but I have a pending merge request adding it for the hantro so it's good to=
+ go.
+
+Acked-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+
+Cheers,
+
+Paul
+
+> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> ---
+>  drivers/staging/media/sunxi/cedrus/cedrus_h264.c | 8 ++------
+>  1 file changed, 2 insertions(+), 6 deletions(-)
+>=20
+> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c b/drivers/s=
+taging/media/sunxi/cedrus/cedrus_h264.c
+> index bd848146eada..4a0e69855c7f 100644
+> --- a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
+> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
+> @@ -364,12 +364,8 @@ static void cedrus_set_params(struct cedrus_ctx *ctx,
+> =20
+>  	// picture parameters
+>  	reg =3D 0;
+> -	/*
+> -	 * FIXME: the kernel headers are allowing the default value to
+> -	 * be passed, but the libva doesn't give us that.
+> -	 */
+> -	reg |=3D (slice->num_ref_idx_l0_active_minus1 & 0x1f) << 10;
+> -	reg |=3D (slice->num_ref_idx_l1_active_minus1 & 0x1f) << 5;
+> +	reg |=3D (pps->num_ref_idx_l0_default_active_minus1 & 0x1f) << 10;
+> +	reg |=3D (pps->num_ref_idx_l1_default_active_minus1 & 0x1f) << 5;
+>  	reg |=3D (pps->weighted_bipred_idc & 0x3) << 2;
+>  	if (pps->flags & V4L2_H264_PPS_FLAG_ENTROPY_CODING_MODE)
+>  		reg |=3D VE_H264_PPS_ENTROPY_CODING_MODE;
+> --=20
+> 2.23.0
+>=20
+
+--MW5yreqqjyrRcusr
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl2VH3oACgkQ3cLmz3+f
+v9HfnQf+Piqc+/r5jjib8Rh52MjgYahIkSTSbp4ZIe3lc/Uwyc/W/O5u2tCNC+KV
++VJ+3ws7rbRkWfU1nfV6WKp8jxp+/a73DEsx1AePm4vOrzh9qitnXtwPpjXkXzJB
+qtuDNoaRlvzRI6KN98hICCfiYT6LKKDcIURUx5sGZi5vbSpQvsdIEofwZmxPuZDl
+C0+RXEwUPLIhM6E2FKj+6Tt6DdX+Tc4UtzP4wBLvFfYO2Magxdtp0w/SerqphDhX
+3KtP9S3N+M5vDMD3FzM56DLRqqDpd4e3+5YV0/dmJrKmpBsm885B8bgNUwSsto+D
+e0opfIfHkZ4GSg2vZ1Mp58+lbZ0rag==
+=DONI
+-----END PGP SIGNATURE-----
+
+--MW5yreqqjyrRcusr--
+
+
+--===============4301346268330036042==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4301346268330036042==--
+
