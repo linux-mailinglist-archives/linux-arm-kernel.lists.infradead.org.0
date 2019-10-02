@@ -2,59 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 186CDC8981
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 15:20:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35E8BC898C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  2 Oct 2019 15:25:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h1GWxhxDYEXc9dQTQm92gpCLSNqBwupeKmxOYMdtetM=; b=mKI3akIYDtegid
-	FTERqynpVDtaTMfpmziBuxg76KMFNEq88n6M2Qbswd5XZLrOAPuMrGWtfly9GoJnNBWQEkb5RLLOu
-	0tXiTjOLkuDZIM3W1oCkIx6DXVaKRcK6sqkOnTtpHOlLDBhBm3HyFdRLHNUoimKYMmT1kXP/k8CQ5
-	irXRXe4fTTQdp+iHJV/9aUN5Zf9grP8j7HbOn5j3ZtsFuQoKUfkV4UAonElePUjqclxDf/9lG+Uib
-	2l8iKxaXgb+Clu5Dx52gHIktwCuIZ8lOo3cIpcunoZwD41E2H3W2P+DZGEIyepIeIh/uAxq/aIYiL
-	T3szswUHp4fvqxgHuivA==;
+	List-Owner; bh=/+YPsnPlGk4pSVVB1sqTu+slxXnP+b8aW7N7xN67MLs=; b=Y9AmIW6lcnxBG8
+	bzNBk/zW8gz1zPXwE0n6CTtd2XBRC3FaKeIF2dRm/NWMbDAL8cJZMGd/lKZ4K01+zs94/rZnp2AMz
+	H8494sfyJYB+iSCftJNHEtXUKtFwfwQMMMlyPk7e4G2WWBtdgw22/kW/8ScSBQpia8mdafqhzoT/t
+	qMZs9IvUNplIAbgg9i9vvtGrN7oV7y7qFizwEAMIZL/uvd3Y41m5UFvLnHkOsSL6bd+Y99NooCb6c
+	JOzA4ppdqX1IOrllK/MA0qaKBYhdnUe7OsfyZGdLQajNWZ03eLwIiGdWlfDZ2SEjbyIbOb+ia8iAp
+	ww/z6K32pNr5SI1ks7yA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFeYW-0004we-RO; Wed, 02 Oct 2019 13:20:36 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iFedM-0006sb-TR; Wed, 02 Oct 2019 13:25:36 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFeYP-0004w0-ER
- for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 13:20:31 +0000
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why)
- by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
- (Exim 4.80) (envelope-from <maz@kernel.org>)
- id 1iFeYL-00083Y-Qs; Wed, 02 Oct 2019 15:20:25 +0200
-Date: Wed, 2 Oct 2019 14:20:24 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Thierry Reding <thierry.reding@gmail.com>
-Subject: Re: [PATCH] arm64: errata: Update stale comment
-Message-ID: <20191002142024.60c6bab8@why>
-In-Reply-To: <20190923091229.14675-1-thierry.reding@gmail.com>
-References: <20190923091229.14675-1-thierry.reding@gmail.com>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1iFedD-0006rs-RZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 02 Oct 2019 13:25:29 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x92DJRAr183582;
+ Wed, 2 Oct 2019 13:25:20 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=corp-2019-08-05;
+ bh=fnaqluJS7+jNKo+sOB2hvdoik1MKiOaiznVs/0wd7Co=;
+ b=MXs6npPDLQui/GxD0IyNFtJQw1xdpRdorriOxmnfZPln/9faBkAjU5tSe4XwbkSFDpDm
+ mnZfpnly6zTxdayCH60d/TW9sSAkf1ZZDhtjcmUjh768ocm4Mvk54erB+troAq90TNDL
+ uH6FJI/uiOt4rQ7jMQPErTU12pUwOPAX9vw7umISTSPMOnjiRUXfMLfKMfAiPUcJRtui
+ sh/JxhHT2fnDC+BbFicsthFyqBBP8gbpQw5cpdz30wHHy4Fup3H8gOPzlswKMfHCgn/z
+ nUaHOngUxJxZQPQKaCS+SGLv20voNty3EN06YCEBFO4aavaqHowN+wTdDfMkmFWo4UZT Aw== 
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+ by aserp2120.oracle.com with ESMTP id 2v9yfqcvx8-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 02 Oct 2019 13:25:20 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+ by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x92DMmFk184316;
+ Wed, 2 Oct 2019 13:25:20 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by aserp3030.oracle.com with ESMTP id 2vbsm3utr0-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 02 Oct 2019 13:25:20 +0000
+Received: from abhmp0013.oracle.com (abhmp0013.oracle.com [141.146.116.19])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x92DPIJJ025995;
+ Wed, 2 Oct 2019 13:25:18 GMT
+Received: from kadam (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Wed, 02 Oct 2019 06:25:18 -0700
+Date: Wed, 2 Oct 2019 16:25:06 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Colin King <colin.king@canonical.com>
+Subject: Re: [PATCH] pwm: sun4i: redundant assignment to variable pval
+Message-ID: <20191002132506.GO22609@kadam>
+References: <20191002100844.10490-1-colin.king@canonical.com>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: thierry.reding@gmail.com, catalin.marinas@arm.com,
- will@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <20191002100844.10490-1-colin.king@canonical.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9397
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1908290000 definitions=main-1910020128
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9397
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1908290000
+ definitions=main-1910020128
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_062029_632700_45B667BA 
-X-CRM114-Status: GOOD (  16.28  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191002_062527_988626_D2C78232 
+X-CRM114-Status: GOOD (  18.92  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [141.146.126.78 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [141.146.126.78 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,49 +112,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-pwm@vger.kernel.org, kernel-janitors@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 23 Sep 2019 11:12:29 +0200
-Thierry Reding <thierry.reding@gmail.com> wrote:
-
-> From: Thierry Reding <treding@nvidia.com>
+On Wed, Oct 02, 2019 at 11:08:44AM +0100, Colin King wrote:
+> From: Colin Ian King <colin.king@canonical.com>
 > 
-> Commit 73f381660959 ("arm64: Advertise mitigation of Spectre-v2, or lack
-> thereof") renamed the caller of the install_bp_hardening_cb() function
-> but forgot to update a comment, which can be confusing when trying to
-> follow the code flow.
+> Variable pval is being assigned a value that is never read. The
+> assignment is redundant and hence can be removed.
 > 
-> Fixes: 73f381660959 ("arm64: Advertise mitigation of Spectre-v2, or lack thereof")
-> Signed-off-by: Thierry Reding <treding@nvidia.com>
+> Addresses-Coverity: ("Unused value")
+> Signed-off-by: Colin Ian King <colin.king@canonical.com>
 > ---
->  arch/arm64/kernel/cpu_errata.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
+>  drivers/pwm/pwm-sun4i.c | 1 -
+>  1 file changed, 1 deletion(-)
 > 
-> diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
-> index 1e43ba5c79b7..f593f4cffc0d 100644
-> --- a/arch/arm64/kernel/cpu_errata.c
-> +++ b/arch/arm64/kernel/cpu_errata.c
-> @@ -128,8 +128,8 @@ static void install_bp_hardening_cb(bp_hardening_cb_t fn,
->  	int cpu, slot = -1;
->  
->  	/*
-> -	 * enable_smccc_arch_workaround_1() passes NULL for the hyp_vecs
-> -	 * start/end if we're a guest. Skip the hyp-vectors work.
-> +	 * detect_harden_bp_fw() passes NULL for the hyp_vecs start/end if
-> +	 * we're a guest. Skip the hyp-vectors work.
->  	 */
->  	if (!hyp_vecs_start) {
->  		__this_cpu_write(bp_hardening_data.fn, fn);
+> diff --git a/drivers/pwm/pwm-sun4i.c b/drivers/pwm/pwm-sun4i.c
+> index 6f5840a1a82d..53970d4ba695 100644
+> --- a/drivers/pwm/pwm-sun4i.c
+> +++ b/drivers/pwm/pwm-sun4i.c
+> @@ -156,7 +156,6 @@ static int sun4i_pwm_calculate(struct sun4i_pwm_chip *sun4i_pwm,
+>  	if (sun4i_pwm->data->has_prescaler_bypass) {
+>  		/* First, test without any prescaler when available */
+>  		prescaler = PWM_PRESCAL_MASK;
+> -		pval = 1;
+>  		/*
+>  		 * When not using any prescaler, the clock period in nanoseconds
+>  		 * is not an integer so round it half up instead of
 
-Acked-by: Marc Zyngier <maz@kernel.org>
+Are you sure?  It looks used to me.
 
--- 
-Without deviation from the norm, progress is not possible.
+regards,
+dan carpenter
+
 
 _______________________________________________
 linux-arm-kernel mailing list
