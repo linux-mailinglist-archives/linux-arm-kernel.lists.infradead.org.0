@@ -2,68 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EEC4CADDA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 20:11:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D4BECADDF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 20:13:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zf30AFqdVsLFD+rO2UQg9hAzq920YsnbkGhTxuYDIzA=; b=WTZXL13RdffX+Y
-	f/nVQLKen8ib4tA2OJdq1MwuPyuM8BJAXv2v/8J1IzqhWvDzuG3z5tkJ4Q3NjVWvX7C8EMnmNAnn1
-	Qe5OG6K+rs0umE6lhqb1bz10n9KRxjypQmbajoIO9ZpJelcwHjP5A0rAjpzh3xWvC+JJ2KL8I5/pQ
-	vRdPALlpYGuhqr7bZD5xQkxGlQTNXBTS+l314CS86BWFMCtxMVBdwZ2SRiVEcBQ6Z/TAq49Lq4QY/
-	FweSPGusDXxYXjIfd5exLqNFgIXnmNOirgfSjFeKnbLur3RIsF9xze/ifqbJEZh+Y88oviQ4jm1ur
-	Z6z00Io17oS8ucoeDw9g==;
+	List-Owner; bh=4oGM42rADLdBPscUboy6cyAxC3BU+uo2zPdYyAnjfjA=; b=nbbmT3vVVU/zwf
+	Z9gBTtQR2RriMDCkNUNKJzBa9i4f0SVS/EXvPwUu27K6c9Usdj3oacA35nulnnd0CIW/eolkmHcdV
+	iIS2K7K3lc4H/+ePyc7489KhIpK+Xb8GK4DE4Ce0/4cQ0EBUfTXV/YGDRpdGKodLNSAvtXzSXUkHE
+	VwN26xwQlAGgqtj5gET1yOE2TOJCtPVMHdCD8i8I8m4TyATFvO8+ekfme4q6UtAI5BInnZHfiwlkg
+	iBbPD0kpynS9lFZ+jBbdPfxAJFkbD47A6DkJcr2SlvAkfD5k58f4apPe3Izi8+66FNgiVjAst+Cme
+	XBoqIFZ7rcBR+xFmdKGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG5ZH-0001zx-Om; Thu, 03 Oct 2019 18:11:11 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iG5bI-0002cN-K4; Thu, 03 Oct 2019 18:13:16 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG5Z8-0001ym-TM; Thu, 03 Oct 2019 18:11:04 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 803B120862;
- Thu,  3 Oct 2019 18:11:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570126262;
- bh=aArKOWxO0UzBJPgQiYgtFIO0VS3NLn3FEgzr04GaghE=;
- h=In-Reply-To:References:From:To:Cc:Subject:Date:From;
- b=sTG8BoNGODYMJh9K8VdkTLOSAFtZXJXm0caFHt36ztIL/MBfhYfFtDzI1Oi6LU0sL
- O1j9gxbPlg8iCQnVT8pMZIipOVO2X+bRYi5fdMJLaH1XMsr/Tl3y6rf1l0WaJpLBh+
- p2KCBMaJK91l7C6g24fwfoT8haHVbqLr8Dx8CycM=
+ id 1iG5b8-0002Pq-71
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 18:13:07 +0000
+Received: by mail-pg1-x541.google.com with SMTP id x10so2244338pgi.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 03 Oct 2019 11:13:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=5ijW82wqEyt50B/p7BmRF9XDSziktvxTJK/8Iy++vOE=;
+ b=SS8ITlKQvqVuJU6DaryZFkNa9oHm8I6oJ6WYZI1b3WOVoNUQTwTmly3kah5Jc1VhxV
+ OAfDnS4OADGWY4KamAHVz4GQzMn21dgeeZgwrMKTsBV7Kr0rdPMqIrMn5vYFHBw4Fkof
+ +JHevQa6Hgb59t0XU3WTewtsQyQzZAGdXVhov4VTsFTLOqIUTSFfnWEDH3CSLHX5umJa
+ KHx8pgjifYrbZXYxEAyLOLhl1xKyJV0GKk2h/+Ce30eI926m1R0vUKjikJC0Qr7AGOt1
+ 57/RJFjW5PmDC1nXGHoFjpBO+OLW/sf1JkhMjO9matHvYV4uEuCA0fH2E1EIxv8v5wmW
+ LqMA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=5ijW82wqEyt50B/p7BmRF9XDSziktvxTJK/8Iy++vOE=;
+ b=XshwwrcKKax/E8vNR8rX7yfleQ4W1heHYavRV2N1DiZpj4pPaOxH84EEE/Oot8bxvi
+ eGdLmGLP+yjIABKVM0G3y5xEQzsPBvTgGiFKoKz5kUADj9BI71mZqj8vD8AP0MppGN1A
+ YsrCr6TQv1+upa9iw+G2XPLB0SlFR4RGQkXsZ0lwpWIe77OdQgRdKjVwIZ4X3IOBqveM
+ GsC9rILJAA6MBxep+TQGl9+mSjRvHAsch/NCCQDHx6D+08TktvzOoFvFtc6qUqgXTy04
+ SAkYaVeqg3C2Y43TDwXjWfAnm+mwz3CTVsbv6UyGdgNq27JBJrkoHeXr806NJi02uqU4
+ YjsA==
+X-Gm-Message-State: APjAAAWD/QBApdoefTcr17d7jhh+Rm+4LMxG/w89UfjHyQ7eb1MbU+gx
+ LOiJ24S2brTdqF+IVVgI+R9UAg==
+X-Google-Smtp-Source: APXvYqxvCuQEnHzAam3ZE2fCm+0SADsW+/L6538BpVWWRoA8JBVstrzxK625nTHVnkYYHMxGfyBxbA==
+X-Received: by 2002:aa7:8bc2:: with SMTP id s2mr11957989pfd.13.1570126385442; 
+ Thu, 03 Oct 2019 11:13:05 -0700 (PDT)
+Received: from localhost ([2601:602:9200:a1a5:a084:116f:9da0:2d6c])
+ by smtp.gmail.com with ESMTPSA id b5sm3968458pfp.38.2019.10.03.11.13.04
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 03 Oct 2019 11:13:04 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH] arm64: dts: meson-g12: add support for simplefb
+In-Reply-To: <20191003130841.8412-1-narmstrong@baylibre.com>
+References: <20191003130841.8412-1-narmstrong@baylibre.com>
+Date: Thu, 03 Oct 2019 11:13:04 -0700
+Message-ID: <7hmuehvgsv.fsf@baylibre.com>
 MIME-Version: 1.0
-In-Reply-To: <1569553244-3165-3-git-send-email-zhangqing@rock-chips.com>
-References: <1569553244-3165-1-git-send-email-zhangqing@rock-chips.com>
- <1569553244-3165-3-git-send-email-zhangqing@rock-chips.com>
-From: Stephen Boyd <sboyd@kernel.org>
-To: Elaine Zhang <zhangqing@rock-chips.com>, heiko@sntech.de
-Subject: Re: [PATCH v3 2/5] clk: rockchip: fix up the frac clk get rate error
-User-Agent: alot/0.8.1
-Date: Thu, 03 Oct 2019 11:11:01 -0700
-Message-Id: <20191003181102.803B120862@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_111102_968058_D513AED1 
-X-CRM114-Status: GOOD (  12.55  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191003_111306_260419_827B87B2 
+X-CRM114-Status: GOOD (  11.12  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,68 +91,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: huangtao@rock-chips.com, xf@rock-chips.com, mturquette@baylibre.com,
- Elaine Zhang <zhangqing@rock-chips.com>, linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-rockchip@lists.infradead.org,
- xxx@rock-chips.com, linux-arm-kernel@lists.infradead.org
+Cc: Maxime Jourdan <mjourdan@baylibre.com>, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Elaine Zhang (2019-09-26 20:00:41)
-> support fractional divider with only one level parent clock
+Neil Armstrong <narmstrong@baylibre.com> writes:
 
-Please put a lot more description in here. A single sentence doesn't
-help anyone understand the motivation for the change.
-
-> 
-> Signed-off-by: Elaine Zhang <zhangqing@rock-chips.com>
+> SimpleFB allows transferring a framebuffer from the firmware/bootloader
+> to the kernel, while making sure the related clocks and power supplies
+> stay enabled.
+>
+> Add nodes for CVBS and HDMI Simple Framebuffers, based on the GXBB/GXL/GXM
+> support at [1].
+>
+> [1] 03b370357907 ("arm64: dts: meson-gx: add support for simplef")
+>
+> Cc: Maxime Jourdan <mjourdan@baylibre.com>
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 > ---
->  drivers/clk/rockchip/clk.c | 19 ++++++++++++-------
->  1 file changed, 12 insertions(+), 7 deletions(-)
-> 
-> diff --git a/drivers/clk/rockchip/clk.c b/drivers/clk/rockchip/clk.c
-> index fac5a4a3f5c3..8f77c3f9fab7 100644
-> --- a/drivers/clk/rockchip/clk.c
-> +++ b/drivers/clk/rockchip/clk.c
-> @@ -190,16 +190,21 @@ static void rockchip_fractional_approximation(struct clk_hw *hw,
->         if (((rate * 20 > p_rate) && (p_rate % rate != 0)) ||
->             (fd->max_prate && fd->max_prate < p_rate)) {
->                 p_parent = clk_hw_get_parent(clk_hw_get_parent(hw));
-> -               p_parent_rate = clk_hw_get_rate(p_parent);
-> -               *parent_rate = p_parent_rate;
-> -               if (fd->max_prate && p_parent_rate > fd->max_prate) {
-> -                       div = DIV_ROUND_UP(p_parent_rate, fd->max_prate);
-> -                       *parent_rate = p_parent_rate / div;
-> +               if (!p_parent) {
-> +                       *parent_rate = p_rate;
-> +               } else {
-> +                       p_parent_rate = clk_hw_get_rate(p_parent);
-> +                       *parent_rate = p_parent_rate;
-> +                       if (fd->max_prate && p_parent_rate > fd->max_prate) {
-> +                               div = DIV_ROUND_UP(p_parent_rate,
-> +                                                  fd->max_prate);
-> +                               *parent_rate = p_parent_rate / div;
-> +                       }
->                 }
->  
->                 if (*parent_rate < rate * 20) {
-> -                       pr_err("%s parent_rate(%ld) is low than rate(%ld)*20, fractional div is not allowed\n",
-> -                              clk_hw_get_name(hw), *parent_rate, rate);
-> +                       pr_warn("%s p_rate(%ld) is low than rate(%ld)*20, use integer or half-div\n",
-> +                               clk_hw_get_name(hw), *parent_rate, rate);
+> This will be handled in the in-review U-Boot Video support for G12A at [1]
+> and the simplefb handling code at [2] and simplefb removal in DRM driver at [3].
 
-Hm.. now it's changed to a warning?
+Nice!  This will help for the corner cases of the VPU power domain
+handling.
 
->                         *m = 0;
->                         *n = 1;
->                         return;
-> -- 
-> 1.9.1
-> 
-> 
-> 
+Reviewed-by: Kevin Hilman <khilman@baylibre.com>
+
+Queuing for v5.5,
+
+Thanks,
+
+Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
