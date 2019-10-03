@@ -2,71 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E107CC9A8D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 11:14:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91920C9A96
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 11:17:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ppFO770+KkcMc+B2tLo3m1tHC6V5jgJoANr76RYSkjc=; b=E4IJRr8C33tbxH
-	I6kMUWgu+IV6saYgZwsiRi67kwEgtKOYGw9OHOBwLq09tZLlisbBUArgUTBEvkaWf3Ri3ds9vyQI6
-	pXPNPen523bKPPd6oL6Bv13WOKfFoU6KlTTMJcp3WgVmVMpqEIfmS+xMB3/fw8xfeqOOsFMVyQo1p
-	9z6r4bo0DPsbNXKXxr76mCeCF7kJEmDtrFxpMQzjzet58jVfCYx/CApzN5prnh03uKjgvGysgjEw7
-	pAtR8sBbN/4qxpVBpHkQbvmUHjLVGdyt6+swBRIUatYj+dHPgeHteY5D1u1z8p7z+FPOekGGKoFSv
-	tYJ4mTRUJGyUVKDsYKiw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=13DnbyLmVtEAR8w1kVUKx4ZFA5Dc2Bi8THLJrvvZkPQ=; b=h5HcmHcE3jF4Uc
+	x3A6slPAy+2zJ/+ffmXHNS/CRZSmh3tGAXlgaSQlcQSy/T+9Bs34PRx5HD5rZkh+HFFPpOFELCHjn
+	rlsetkGn3Xh6tlVMxjv0ScaD8Z4eNA2gqDOlxkWPntEgjKFpMj1LMZ/1OPV8hHj5/Sm/V67M51wyz
+	+qp6UKjbOwYoI+wDErOaIiuG8YRwmGu0DZrTVBudzRRKi+lvcxLSU+EEaYJnPTZlg9NI0cUOHjrgR
+	1WjtBRMee1B+BajNKadcmMFTYItEAfR2fbV+g2Ta0jOG0YUI6vm9HNE8PMFIEIMHzJnEeOXBnYbDw
+	Q6SGm94aCwL0u4Niqz6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFxBr-0002XW-W7; Thu, 03 Oct 2019 09:14:27 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iFxEO-0004Mo-N4; Thu, 03 Oct 2019 09:17:04 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFxBk-0002XF-63
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 09:14:21 +0000
-Received: from X250 (li937-157.members.linode.com [45.56.119.157])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D16B4217D7;
- Thu,  3 Oct 2019 09:14:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570094059;
- bh=AjvL547s2R5yIkHNhXlH94XxA05nAjKAg5dQITv7FQE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=BUWGqSGrL6NfqsYQsqvHzb2riBwD1kzyTwoLkAgsQO1jRi/iIZR41+vjc3C7ue4zT
- o+4lokbcwcn6bvuSzCrXXojY24Ecbls74CAN5Nmmqt4hQXwvyyU+yT6t0pexmi48pp
- /HFF8mnqgjkkV9lbfj63tB+6nU9AOyNp7/K2yjVM=
-Date: Thu, 3 Oct 2019 17:13:59 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V5 4/4] ARM: dts: imx7ulp: Add wdog1 node
-Message-ID: <20191003091356.GA24782@X250>
-References: <1566999303-18795-1-git-send-email-Anson.Huang@nxp.com>
- <1566999303-18795-4-git-send-email-Anson.Huang@nxp.com>
+ id 1iFxEB-0004LK-EN
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 09:16:53 +0000
+X-Originating-IP: 86.207.98.53
+Received: from localhost
+ (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
+ (Authenticated sender: kamel.bouhara@bootlin.com)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id EF2CF240005;
+ Thu,  3 Oct 2019 09:16:40 +0000 (UTC)
+From: Kamel Bouhara <kamel.bouhara@bootlin.com>
+To: Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2] soc: at91: Add Atmel SFR SN (Serial Number) support
+Date: Thu,  3 Oct 2019 11:16:36 +0200
+Message-Id: <20191003091636.21060-1-kamel.bouhara@bootlin.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1566999303-18795-4-git-send-email-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_021420_243538_C836F1D3 
-X-CRM114-Status: UNSURE (   7.95  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191003_021651_788512_E0FED1C5 
+X-CRM114-Status: GOOD (  16.04  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,24 +62,185 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, leonard.crestez@nxp.com,
- schnitzeltony@gmail.com, linux-watchdog@vger.kernel.org,
- otavio@ossystems.com.br, s.hauer@pengutronix.de, jan.tuerk@emtrion.com,
- linux@armlinux.org.uk, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org, kernel@pengutronix.de,
- u.kleine-koenig@pengutronix.de, wim@linux-watchdog.org, festevam@gmail.com,
- linux@roeck-us.net, Linux-imx@nxp.com
+Cc: Kamel Bouhara <kamel.bouhara@bootlin.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 28, 2019 at 09:35:03AM -0400, Anson Huang wrote:
-> Add wdog1 node to support watchdog driver.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Add support to read SFR's read-only registers providing the SoC
+Serial Numbers (SN0+SN1) to userspace.
 
-Applied, thanks.
+~ #  hexdump -n 8  -e'"%d\n"' /sys/bus/nvmem/devices/atmel-sfr0/nvmem
+959527243
+371539274
+
+Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
+---
+Changes in v2:
+ - updated atmel-sfr.c to sfr.c in Makefile
+ - fixed missing drvdata struct definition
+ - added missing syscon header
+
+ drivers/soc/atmel/Kconfig  |  11 ++++
+ drivers/soc/atmel/Makefile |   1 +
+ drivers/soc/atmel/sfr.c    | 116 +++++++++++++++++++++++++++++++++++++
+ 3 files changed, 128 insertions(+)
+ create mode 100644 drivers/soc/atmel/sfr.c
+
+diff --git a/drivers/soc/atmel/Kconfig b/drivers/soc/atmel/Kconfig
+index 05528139b023..d61711cb9556 100644
+--- a/drivers/soc/atmel/Kconfig
++++ b/drivers/soc/atmel/Kconfig
+@@ -5,3 +5,14 @@ config AT91_SOC_ID
+ 	default ARCH_AT91
+ 	help
+ 	  Include support for the SoC bus on the Atmel ARM SoCs.
++
++config AT91_SOC_SFR
++	tristate "Special Function Registers support"
++	depends on ARCH_AT91 || COMPILE_TEST
++	help
++	  This is a driver for the Special Function Registers available on
++	  Atmel SAMA5Dx SoCs, providing access to specific aspects of the
++	  integrated memory, bridge implementations, proccessor etc.
++
++	  This driver can also be built as a module. If so, the module
++	  will be called sfr.
+diff --git a/drivers/soc/atmel/Makefile b/drivers/soc/atmel/Makefile
+index 7ca355d10553..d849a897cd77 100644
+--- a/drivers/soc/atmel/Makefile
++++ b/drivers/soc/atmel/Makefile
+@@ -1,2 +1,3 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+ obj-$(CONFIG_AT91_SOC_ID) += soc.o
++obj-$(CONFIG_AT91_SOC_SFR) += sfr.o
+diff --git a/drivers/soc/atmel/sfr.c b/drivers/soc/atmel/sfr.c
+new file mode 100644
+index 000000000000..2be306157283
+--- /dev/null
++++ b/drivers/soc/atmel/sfr.c
+@@ -0,0 +1,116 @@
++// SPDX-License-Identifier: GPL-2.0-only
++/*
++ * sfr.c - driver for special function registers
++ *
++ * Copyright (C) 2019 Bootlin.
++ *
++ */
++#include <linux/device.h>
++#include <linux/mfd/syscon.h>
++#include <linux/module.h>
++#include <linux/nvmem-provider.h>
++#include <linux/of.h>
++#include <linux/of_device.h>
++#include <linux/platform_device.h>
++#include <linux/regmap.h>
++
++#define SFR_SN0		0x4c
++
++struct sfr_priv {
++	struct device			*dev;
++	struct regmap			*regmap;
++	struct nvmem_config		*config;
++	struct atmel_sfr_drvdata	*drvdata;
++};
++
++struct atmel_sfr_drvdata {
++	unsigned int nregs;
++};
++
++static int atmel_sfr_read(void *context, unsigned int offset,
++			  void *buf, size_t bytes)
++{
++	struct sfr_priv *priv = context;
++	struct atmel_sfr_drvdata *drvdata = priv->drvdata;
++
++	return regmap_bulk_read(priv->regmap, SFR_SN0 + offset,
++				buf, bytes / 4);
++}
++
++static struct nvmem_config atmel_sfr_nvmem_config = {
++	.name = "atmel-sfr",
++	.read_only = true,
++	.word_size = 4,
++	.stride = 4,
++	.reg_read = atmel_sfr_read,
++};
++
++static int atmel_sfr_probe(struct platform_device *pdev)
++{
++	struct device *dev = &pdev->dev;
++	struct device_node *np = dev->of_node;
++	struct sfr_priv *priv;
++	struct nvmem_device *nvmem;
++	const struct atmel_sfr_drvdata *drvdata;
++
++	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
++	if (!priv)
++		return -ENOMEM;
++
++	drvdata = of_device_get_match_data(dev);
++	if (!drvdata)
++		return -EINVAL;
++
++	priv->regmap = syscon_node_to_regmap(np);
++	if (IS_ERR(priv->regmap)) {
++		dev_err(dev, "cannot get parent's regmap\n");
++		return PTR_ERR(priv->regmap);
++	}
++
++	priv->drvdata = drvdata;
++
++	atmel_sfr_nvmem_config.size = drvdata->nregs;
++	atmel_sfr_nvmem_config.dev = dev;
++	atmel_sfr_nvmem_config.priv = priv;
++
++	priv->config = &atmel_sfr_nvmem_config;
++
++	nvmem = devm_nvmem_register(dev, &atmel_sfr_nvmem_config);
++	if (IS_ERR(nvmem)) {
++		dev_err(dev, "error registering nvmem config\n");
++		return PTR_ERR(nvmem);
++	}
++
++	return 0;
++}
++
++static struct atmel_sfr_drvdata sama5d2_sama5d4_drvdata = {
++	.nregs = 2 * 4,
++};
++
++static const struct of_device_id atmel_sfr_dt_ids[] = {
++	{
++		.compatible = "atmel,sama5d2-sfr",
++		.data = &sama5d2_sama5d4_drvdata,
++	}, {
++		.compatible = "atmel,sama5d4-sfr",
++		.data = &sama5d2_sama5d4_drvdata,
++	}, {
++		/* sentinel */
++	},
++};
++MODULE_DEVICE_TABLE(of, atmel_sfr_dt_ids);
++
++static struct platform_driver atmel_sfr_driver = {
++	.probe = atmel_sfr_probe,
++	.driver = {
++		.name = "atmel-sfr",
++		.of_match_table = atmel_sfr_dt_ids,
++	},
++};
++module_platform_driver(atmel_sfr_driver);
++
++MODULE_AUTHOR("Kamel Bouhara <kamel.bouhara@bootlin.com>");
++MODULE_DESCRIPTION("Atmel SFR SN driver for SAMA5D2/4 SoC family");
++MODULE_LICENSE("GPL v2");
++
+--
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
