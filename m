@@ -2,66 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7F01C9C25
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 12:27:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B3C7C9C68
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 12:34:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S+BuKsNNemDjcpI03oqAXzbobWqLYBpi8NFfj2iLVcA=; b=nMd00Suuy5X/MT
-	sUrJ4rEysCB2rlW8AhWYMRJzFRMaCX4/arLwAuzfBBwRZCnTbCFgmZ+hpJEGHQlArIt9W66Oe/pfI
-	PojRWsBlak6o5Qc6hntauOLZEQoliPvC7plU0RzCZ4MpZvNyErZli7lhGEND7Yl/zwPvJHBwoJRHQ
-	aNfTTlc6TFy22MwqiwkCWd3jmh2FBYl93qujBx79+6crIQiM96RV3D8tkIRy2lf9JSDF7sRSUQP9c
-	+RprM2dSmOReOgvcmu8X4Sk27SoJ4cRxLKns00dIqB8wIhbXHUDNtzcvfqz7LhAm6nsPkaOdBRNyd
-	6B1ttJBIIcTLBbvNuPiQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1zOvOkvF+JbAOFj3UPnuL64GU8HpQ/KSwhfCEZeRjas=; b=GLMvrd3I0qZyvy5l+f8BaYSo9
+	SS/KEyIyFzO9EzBFKUIaOf7ryXq4da9Nw+BAe7XJMTh2i9tDk4CWtTopaMYTS1bKRIJRYlCVprVfV
+	i+OOeZIgxruGrtHPg1tVUOjUPNwsuOTrgL8TpM7vtJVnHOFbtYB4M3BxoMYRnOpkaCPUrCHHMfsIG
+	/dAupIsKFLwwfXFEqqIFDpgZtV86nEkmxebXzloThIWDV/21aRY2tljYiGM9Q2PJfsa3d5nXa7m8W
+	dx05t+9MxTxpKWfLEeur4xuV3RZItjAj3cy0eAI41GZwivh+SU/dCpi49FIcsPH5WwWWEqA2LLtaF
+	NHYJbF9kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFyKZ-0008DC-Rd; Thu, 03 Oct 2019 10:27:31 +0000
-Received: from mga11.intel.com ([192.55.52.93])
+	id 1iFyRT-0001lN-3g; Thu, 03 Oct 2019 10:34:39 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFyKR-0008CH-IC
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 10:27:25 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
- by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 03 Oct 2019 03:27:21 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.67,251,1566889200"; d="scan'208";a="198491751"
-Received: from stinkbox.fi.intel.com (HELO stinkbox) ([10.237.72.174])
- by FMSMGA003.fm.intel.com with SMTP; 03 Oct 2019 03:27:18 -0700
-Received: by stinkbox (sSMTP sendmail emulation);
- Thu, 03 Oct 2019 13:27:18 +0300
-Date: Thu, 3 Oct 2019 13:27:18 +0300
-From: Ville =?iso-8859-1?Q?Syrj=E4l=E4?= <ville.syrjala@linux.intel.com>
-To: Rob Clark <robdclark@gmail.com>
-Subject: Re: [PATCH] drm: add fb max width/height fields to drm_mode_config
-Message-ID: <20191003102718.GC1208@intel.com>
-References: <1569634131-13875-1-git-send-email-jsanka@codeaurora.org>
- <1569634131-13875-2-git-send-email-jsanka@codeaurora.org>
- <20190930103931.GZ1208@intel.com>
- <f6d3c2b6ad897ce8b2fdcaab44993eed@codeaurora.org>
- <20191002134535.GU1208@intel.com>
- <CAF6AEGtETiKLggNEKm+YyH8PMzpXpp119PjV2f6jdbU4UYxiAQ@mail.gmail.com>
+ id 1iFyRJ-0001kp-6O
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 10:34:30 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x93AVScS009886; Thu, 3 Oct 2019 12:34:23 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : references
+ : from : message-id : date : mime-version : in-reply-to : content-type :
+ content-transfer-encoding; s=STMicroelectronics;
+ bh=lzOYBhAfnBcaEOuQ4FsCPxcaUazDlQqNyGCAqbms35c=;
+ b=UuKcnYOLaOGuL0Jnl42Nuj/vTBvssVeWY0GmhV75H7g3Z264h+YwXcqzvw2iXzK8vJo8
+ XgXG/HO97QayKRMm8RvzDS2M3KSGkpxwU3kJq/sed2nnwa2BV1c+w+IvUtxb7THmrPat
+ /oGOPZibvOgKNii7sPgUnY3tCLsHWvQihDsWF/iD9KOgx1awwEZN8Lj9u/KQsChjcncY
+ g7l3ba3b9jOg57BvDktTDWfHaXlIWa+5I4wWwFqcVylfYo5zmezCc433OG9az9X3q5Tg
+ Dcoa4OPHaWrdMo4XZWCrtqquH367Gu6izJYbARSR9MWtQPgVtUHw5L3uL6I5j8uLwTSq hw== 
+Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2v9vnam43h-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Thu, 03 Oct 2019 12:34:23 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id A1C3B4C;
+ Thu,  3 Oct 2019 10:34:19 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 9DD1F2B9881;
+ Thu,  3 Oct 2019 12:34:18 +0200 (CEST)
+Received: from lmecxl0912.lme.st.com (10.75.127.50) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 3 Oct
+ 2019 12:34:18 +0200
+Subject: Re: [PATCH] ARM: dts: stm32: add focaltech touchscreen on
+ stm32mp157c-dk2 board
+To: =?UTF-8?Q?Yannick_Fertr=c3=a9?= <yannick.fertre@st.com>, Maxime Coquelin
+ <mcoquelin.stm32@gmail.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
+ <mark.rutland@arm.com>, <linux-stm32@st-md-mailman.stormreply.com>,
+ <linux-arm-kernel@lists.infradead.org>, <devicetree@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>,
+ Philippe Cornu <philippe.cornu@st.com>, Fabrice Gasnier
+ <fabrice.gasnier@st.com>
+References: <1569854751-22337-1-git-send-email-yannick.fertre@st.com>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <09ad1310-ebc5-7a41-7af6-cdef79f20802@st.com>
+Date: Thu, 3 Oct 2019 12:34:17 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAF6AEGtETiKLggNEKm+YyH8PMzpXpp119PjV2f6jdbU4UYxiAQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1569854751-22337-1-git-send-email-yannick.fertre@st.com>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.50]
+X-ClientProxiedBy: SFHDAG6NODE1.st.com (10.75.127.16) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
+ definitions=2019-10-03_04:2019-10-03,2019-10-03 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_032723_622718_029EB265 
-X-CRM114-Status: GOOD (  30.19  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191003_033429_588084_9695CB94 
+X-CRM114-Status: GOOD (  19.64  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.93 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,122 +104,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Sean Paul <seanpaul@chromium.org>,
- Jeykumar Sankaran <jsanka@codeaurora.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 02, 2019 at 03:55:10PM -0400, Rob Clark wrote:
-> On Wed, Oct 2, 2019 at 9:45 AM Ville Syrj=E4l=E4
-> <ville.syrjala@linux.intel.com> wrote:
-> >
-> > On Tue, Oct 01, 2019 at 02:20:55PM -0700, Jeykumar Sankaran wrote:
-> > > On 2019-09-30 03:39, Ville Syrj=E4l=E4 wrote:
-> > > > On Fri, Sep 27, 2019 at 06:28:51PM -0700, Jeykumar Sankaran wrote:
-> > > >> The mode_config max width/height values determine the maximum
-> > > >> resolution the pixel reader can handle.
-> > > >
-> > > > Not according to the docs I "fixed" a while ago.
-> > > >
-> > > >> But the same values are
-> > > >> used to restrict the size of the framebuffer creation. Hardware's
-> > > >> with scaling blocks can operate on framebuffers larger/smaller than
-> > > >> that of the pixel reader resolutions by scaling them down/up before
-> > > >> rendering.
-> > > >>
-> > > >> This changes adds a separate framebuffer max width/height fields
-> > > >> in drm_mode_config to allow vendors to set if they are different
-> > > >> than that of the default max resolution values.
-> > > >
-> > > > If you're going to change the meaning of the old values you need
-> > > > to fix the drivers too.
-> > > >
-> > > > Personally I don't see too much point in this since you most likely
-> > > > want to validate all the other timings as well, and so likely need
-> > > > some kind of mode_valid implementation anyway. Hence to validate
-> > > > modes there's not much benefit of having global min/max values.
-> > > >
-> > > https://patchwork.kernel.org/patch/10467155/
-> > >
-> > > I believe you are referring to this patch.
-> > >
-> > > I am primarily interested in the scaling scenario mentioned here. MSM
-> > > and a few other hardware have scaling block that are used both ways:
-> > >
-> > > 1) Where FB limits are larger than the display limits. Scalar blocks =
-are
-> > > used to
-> > >     downscale the framebuffers and render within display limits.
-> > >
-> > > In this scenario, with your patch, are you suggesting the drivers
-> > > maintain the
-> > > display limits locally and use those values in fill_modes() /
-> > > mode_valid() to filter
-> > > out invalid modes explicitly instead of mode_config.max_width/height?
-> > >
-> > > 2) Where FB limits are smaller than display limits. Enforced for
-> > > performance reasons on low tier hardware.
-> > > It reduces the fetch bandwidth and uses post blending scalar block to
-> > > scale up the pixel stream
-> > > to match the display resolution.
-> >
-> > As Daniel mentioned in that discussion your typical userspace
-> > assumes that it can use a single unscaled framebuffer with any
-> > advertised mode. Hence I believe limiting the mode list based
-> > on the max framebuffer size is pretty much required unless
-> > you want to break existing userspace.
-> >
-> > In i915 I went a bit further than that recently and now we
-> > filter the mode list based on the maximum plane size [1]
-> > (which can be less than the max fb size and less than the
-> > maximum crtc dimensions). And again that's because userspace
-> > assumes that it can just use a single unscaled fullscreen
-> > plane to cover the entire crtc.
-> >
-> > These assumption are also carved into the legacy setcrtc uapi
-> > where you can't even specify multiple framebuffers. In theory
-> > a driver could internally use multiple planes to overcome some
-> > of the limitations, but in i915 at least we don't.
-> >
-> > [1] https://cgit.freedesktop.org/drm/drm-intel/commit/?id=3D2d20411e25a=
-3bf3d2914a2219f47ed48dc57aed5
-> >
-> > >
-> > > Any suggestions on how this topology can be handled with a single set=
- of
-> > > max/min values?
-> > >
-> >
-> > I think a safe way to relax these rules would be to either:
-> > a) Add a client cap by which userspace can inform the kernel
-> >    it understands there are more complicated limits at play
-> >    and thus can't assume that everything will just work
-> > b) Maybe we could just tie that in with the atomic cap since
-> >    atomic clients are pretty much required to do the TEST_ONLY
-> >    dance anyway, so one might hope they have a working fallback
-> >    strategy. Though I suspect eg. the modesetting ddx wouldn't
-> >    like this. But we no longer allow atomic with X anyway so
-> >    that partcular argument may not hold much weight anymore.
-> =
-
-> What was the conclusion of the hack to not expose atomic to
-> modesetting ddx, due to the brokenness of it's atomic use?  I guess
-> that could also make the modesetting case go away..
-
-I thought it went in? Maybe I'm mistaken.
-
--- =
-
-Ville Syrj=E4l=E4
-Intel
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgWWFubmljawoKT24gOS8zMC8xOSA0OjQ1IFBNLCBZYW5uaWNrIEZlcnRyw6kgd3JvdGU6Cj4g
+RW5hYmxlIGZvY2FsdGVjaCBmdDYyMzYgdG91Y2hzY3JlZW4gb24gU1RNMzJNUDE1N0MtREsyIGJv
+YXJkLgo+IFRoaXMgZGV2aWNlIHN1cHBvcnRzIDIgZGlmZmVyZW50IGFkZHJlc3NlcyAoMHgyYSBh
+bmQgMHgzOCkKPiBkZXBlbmRpbmcgb24gdGhlIGRpc3BsYXkgIGJvYXJkIHZlcnNpb24gKE1CMTQw
+NykuCj4gCj4gU2lnbmVkLW9mZi1ieTogWWFubmljayBGZXJ0csOpIDx5YW5uaWNrLmZlcnRyZUBz
+dC5jb20+Cj4gLS0tCj4gICBhcmNoL2FybS9ib290L2R0cy9zdG0zMm1wMTU3Yy1kazIuZHRzIHwg
+MjMgKysrKysrKysrKysrKysrKysrKysrKysKPiAgIDEgZmlsZSBjaGFuZ2VkLCAyMyBpbnNlcnRp
+b25zKCspCj4gCj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3N0bTMybXAxNTdjLWRr
+Mi5kdHMgYi9hcmNoL2FybS9ib290L2R0cy9zdG0zMm1wMTU3Yy1kazIuZHRzCj4gaW5kZXggMjBl
+YTYwMS4uNTI3YmI3NSAxMDA2NDQKPiAtLS0gYS9hcmNoL2FybS9ib290L2R0cy9zdG0zMm1wMTU3
+Yy1kazIuZHRzCj4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvc3RtMzJtcDE1N2MtZGsyLmR0cwo+
+IEBAIC02MSw2ICs2MSwyOSBAQAo+ICAgCX07Cj4gICB9Owo+ICAgCj4gKyZpMmMxIHsKPiArCXRv
+dWNoc2NyZWVuQDJhIHsKPiArCQljb21wYXRpYmxlID0gImZvY2FsdGVjaCxmdDYyMzYiOwo+ICsJ
+CXJlZyA9IDwweDJhPjsKPiArCQlpbnRlcnJ1cHRzID0gPDIgMj47Cj4gKwkJaW50ZXJydXB0LXBh
+cmVudCA9IDwmZ3Bpb2Y+Owo+ICsJCWludGVycnVwdC1jb250cm9sbGVyOwo+ICsJCXRvdWNoc2Ny
+ZWVuLXNpemUteCA9IDw0ODA+Owo+ICsJCXRvdWNoc2NyZWVuLXNpemUteSA9IDw4MDA+Owo+ICsJ
+CXN0YXR1cyA9ICJva2F5IjsKPiArCX07Cj4gKwl0b3VjaHNjcmVlbkAzOCB7Cj4gKwkJY29tcGF0
+aWJsZSA9ICJmb2NhbHRlY2gsZnQ2MjM2IjsKPiArCQlyZWcgPSA8MHgzOD47Cj4gKwkJaW50ZXJy
+dXB0cyA9IDwyIDI+Owo+ICsJCWludGVycnVwdC1wYXJlbnQgPSA8JmdwaW9mPjsKPiArCQlpbnRl
+cnJ1cHQtY29udHJvbGxlcjsKPiArCQl0b3VjaHNjcmVlbi1zaXplLXggPSA8NDgwPjsKPiArCQl0
+b3VjaHNjcmVlbi1zaXplLXkgPSA8ODAwPjsKPiArCQlzdGF0dXMgPSAib2theSI7Cj4gKwl9Owo+
+ICt9OwoKSSdtIG5vdCBjb25maWRlbnQgYnkgdGhpcyBkdXBsaWNhdGlvbi4gV2Ugc2hvdWxkIG9u
+bHkgc3VwcG9ydCB0aGUgbGF0ZXN0IApyZXZpc2lvbiBvZiB0aGUgTUIxNDA3LiBJIHVuZGVyc3Rh
+bmQgdGhlIG5lZWQgYnV0IG15IGZlYXIgaXMgdG8gCmR1cGxpY2F0ZSB0aGlzIG5vZGUgZWFjaCB0
+aW1lIHdlIGhhdmUgYSBuZXcgcmV2aXNpb24gKGFuZCBpbWFnaW5lIGlmIHdlIApkbyB0aGF0IGZv
+ciBhbGwgaTJjIGRldmljZXMpLgoKcmVnYXJkcwphbGV4CgoKPiAgICZsdGRjIHsKPiAgIAlzdGF0
+dXMgPSAib2theSI7Cj4gICAKPiAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
+ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
+L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
