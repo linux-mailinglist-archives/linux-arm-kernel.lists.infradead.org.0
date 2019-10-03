@@ -2,90 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54788C9AFB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 11:48:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C220C9B02
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 11:49:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Dohdz4m2BouuHh4U0Y3mzOykYvIdy5+jfQVNeeTM8x0=; b=UsjdyBawaEVdmdDLo956Ujzbh
-	lGQWpm7xb8rMhqKLC2EQ8eSL8XXtnGD7n0LCZ3Ci9aVdKqHjXlVd7rVm9QfAnINIVBwq12M1JSz9C
-	vK232iZ8khF77L6N2c1yCZClOfeXxYJ8CWBs4fDobSDwEQLuDEz7+6hMotlTRrlkHqUaE65CElkKP
-	2BCf8GLxCNuaStTbunbaqm7da/6DSb2YCT5XXpG17jCtml/HnCtN4FyKbxPYctkoQzFDeDV+G/lMa
-	jd/8y4vS9clWIILFXu22B2VvCW/CdRGTIDkv1w5CEBslPJpeA60Puz64Hx6w5EpW6OdQuEjTcKnu1
-	QX3Q4VLhA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=3Kg2gVdhoFIVo3G9PgEi7HN9hQch+W3Z3C4/vOJhi7c=; b=R8t
+	d9jrgOivVkYKRS0usCphZP60eT5AmVpFpofTrEnCqPGl6h0RVlxIlx6t82uiSnDWhu3mrZgUUojAj
+	OZltPoSZRWRe+buGJPodOueTpavNqmtlgwIrV7GlKp1nZeowRZLBeVeKAflN58w7yg/hGQMwPExDk
+	u0JRj24Fu8kcfuDqeECj0D+6mlrw/lpRD+YYJDQ7538n+Ka/ev3mXJ8JCGWIpFVGUhdHFU/4V0luM
+	SobYK3Lj6070qQ/SU/KAK2xuGhWTzQbvP5rg9vXiA2bXZlA8A96kTVdZAc0LINNmX26stsRB2xH4J
+	rGPciJFiGyQBQonbQt1u23qnYydRNSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFxiL-0006Ng-V0; Thu, 03 Oct 2019 09:48:02 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFxiF-0006MF-0E
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 09:47:56 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x939fd1O020324; Thu, 3 Oct 2019 11:47:38 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=kN9FmgYjR/+h00iD+FWqgH8LfZypMJPodsHGme7Pa2U=;
- b=Ueu7492KlMOHrKSycPDSg2LPkrEWdivvPKLY1GOs4xx+yO3t8ExTim5uIUC07QvxoWKG
- 3LT9SsL5b8qjCc49kEbhNfxAemN7lbkU0+pg4pUoFf7nWTFf+GoAnGIau3e1+Ge+26Vk
- hu4UlE5aBurWsPHyTrhGpmbjDgmaswU71tdJYWAUMXsgcSlCJdvbg08xf5gvNL/9qE3l
- BiJjf2O7egamZ3rj080Qm+BuaNoozraPZ1k/ujKLo+pSrybFr2C7QL1kTr+Byd91RW+Z
- VZJnqY6ObQ+ZbHo6SpStvCI9SaDMI4Da12gaEoovClMT/LnwsTUKRNBOBdn71RxBaG7Z fw== 
-Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
- by mx07-00178001.pphosted.com with ESMTP id 2v9w9w3u0a-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Thu, 03 Oct 2019 11:47:38 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 99F6953;
- Thu,  3 Oct 2019 09:47:32 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 6CD812B492E;
- Thu,  3 Oct 2019 11:47:31 +0200 (CEST)
-Received: from lmecxl0912.lme.st.com (10.75.127.51) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 3 Oct
- 2019 11:47:30 +0200
-Subject: Re: [PATCH 0/4] ARM: multi_v7_defconfig: add audio support for
- stm32mp157a-dk1
-To: Olivier Moysan <olivier.moysan@st.com>
-References: <1567440041-19220-1-git-send-email-olivier.moysan@st.com>
- <CAK8P3a3WvXmMys3mamCZef1-ychtdg+XbV=H-WTs2ZN6Jsrcbg@mail.gmail.com>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <c4c9ed0b-210a-43b0-fc7b-d45a24fe682f@st.com>
-Date: Thu, 3 Oct 2019 11:47:30 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <CAK8P3a3WvXmMys3mamCZef1-ychtdg+XbV=H-WTs2ZN6Jsrcbg@mail.gmail.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.51]
-X-ClientProxiedBy: SFHDAG2NODE1.st.com (10.75.127.4) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
- definitions=2019-10-03_04:2019-10-01,2019-10-03 signatures=0
+	id 1iFxk9-0006iU-Gk; Thu, 03 Oct 2019 09:49:53 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iFxk2-0006hk-9Q
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 09:49:47 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 969A61000;
+ Thu,  3 Oct 2019 02:49:39 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id C900A3F739;
+ Thu,  3 Oct 2019 02:49:38 -0700 (PDT)
+From: Mark Rutland <mark.rutland@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: mm: avoid virt_to_phys(init_mm.pgd)
+Date: Thu,  3 Oct 2019 10:49:32 +0100
+Message-Id: <20191003094932.10216-1-mark.rutland@arm.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_024755_514585_62EC46F8 
-X-CRM114-Status: GOOD (  16.38  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191003_024946_373560_1E90C4A2 
+X-CRM114-Status: GOOD (  15.05  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,50 +57,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Tony Lindgren <tony@atomide.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Yannick Fertre <yannick.fertre@st.com>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Olof Johansson <olof@lixom.net>, Simon Horman <horms+renesas@verge.net.au>,
- Fabrice Gasnier <fabrice.gasnier@st.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, James Morse <james.morse@arm.com>,
+ Will Deacon <will@kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Olivier,
+If we take an unhandled fault in the kernel, we call show_pte() to dump
+the {PGDP,PGD,PUD,PMD,PTE} values for the corresponding page table walk,
+where the PGDP value is virt_to_phys(mm->pgd).
 
-On 9/2/19 6:42 PM, Arnd Bergmann wrote:
-> On Mon, Sep 2, 2019 at 6:01 PM Olivier Moysan <olivier.moysan@st.com> wrote:
->>
->> This patchset adds audio support for stm32mp157a-dk1 board.
->>
->> Olivier Moysan (4):
->>    ARM: multi_v7_defconfig: enable stm32 sai support
->>    ARM: multi_v7_defconfig: enable stm32 i2s support
->>    ARM: multi_v7_defconfig: enable cs42l51 codec support
->>    ARM: multi_v7_defconfig: enable audio graph card support
->  > The changes are ok, and I expect Alexandre will pick them up and forward
-> to the soc tree.
->
+The boot-time and runtime kernel page tables, init_pg_dir and
+swapper_pg_dir respectively, are kernel symbols. Thus, it is not valid
+to call virt_to_phys() on either of these, though we'll do so if we take
+a fault on a TTBR1 address.
 
-Those changes have been applied on stm32-next (squashed in only one commit).
+When CONFIG_DEBUG_VIRTUAL is not selected, virt_to_phys() will silently
+fix this up. However, when CONFIG_DEBUG_VIRTUAL is selected, this
+results in splats as below. Depending on when these occur, they can
+happen to suppress information needed to debug the original unhandled
+fault, such as the backtrace:
 
-Thanks
-Alex
+| Unable to handle kernel paging request at virtual address ffff7fffec73cf0f
+| Mem abort info:
+|   ESR = 0x96000004
+|   EC = 0x25: DABT (current EL), IL = 32 bits
+|   SET = 0, FnV = 0
+|   EA = 0, S1PTW = 0
+| Data abort info:
+|   ISV = 0, ISS = 0x00000004
+|   CM = 0, WnR = 0
+| ------------[ cut here ]------------
+| virt_to_phys used for non-linear address: 00000000102c9dbe (swapper_pg_dir+0x0/0x1000)
+| WARNING: CPU: 1 PID: 7558 at arch/arm64/mm/physaddr.c:15 __virt_to_phys+0xe0/0x170 arch/arm64/mm/physaddr.c:12
+| Kernel panic - not syncing: panic_on_warn set ...
+| SMP: stopping secondary CPUs
+| Dumping ftrace buffer:
+|    (ftrace buffer empty)
+| Kernel Offset: disabled
+| CPU features: 0x0002,23000438
+| Memory Limit: none
+| Rebooting in 1 seconds..
 
+We can avoid this by ensuring that we call __pa_symbol() for
+init_mm.pgd, as this will always be a kernel symbol. As the dumped
+{PGD,PUD,PMD,PTE} values are the raw values from the relevant entries we
+don't need to handle these specially.
 
+Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: James Morse <james.morse@arm.com>
+Cc: Will Deacon <will@kernel.org>
+---
+ arch/arm64/mm/fault.c | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
 
-> However, I would prefer these to just be a single patch, as there is little
-> use in splitting the intended change up into one line per patch.
-> 
->         Arnd
-> 
-
-
+diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
+index 115d7a0e4b08..6acd866f31fd 100644
+--- a/arch/arm64/mm/fault.c
++++ b/arch/arm64/mm/fault.c
+@@ -113,6 +113,15 @@ static inline bool is_ttbr1_addr(unsigned long addr)
+ 	return arch_kasan_reset_tag(addr) >= PAGE_OFFSET;
+ }
+ 
++static inline unsigned long mm_to_pgd_phys(struct mm_struct *mm)
++{
++	/* Either init_pg_dir or swapper_pg_dir */
++	if (mm == &init_mm)
++		return __pa_symbol(mm->pgd);
++
++	return (unsigned long)virt_to_phys(mm->pgd);
++}
++
+ /*
+  * Dump out the page tables associated with 'addr' in the currently active mm.
+  */
+@@ -141,7 +150,7 @@ static void show_pte(unsigned long addr)
+ 
+ 	pr_alert("%s pgtable: %luk pages, %llu-bit VAs, pgdp=%016lx\n",
+ 		 mm == &init_mm ? "swapper" : "user", PAGE_SIZE / SZ_1K,
+-		 vabits_actual, (unsigned long)virt_to_phys(mm->pgd));
++		 vabits_actual, mm_to_pgd_phys(mm));
+ 	pgdp = pgd_offset(mm, addr);
+ 	pgd = READ_ONCE(*pgdp);
+ 	pr_alert("[%016lx] pgd=%016llx", addr, pgd_val(pgd));
+-- 
+2.11.0
 
 
 _______________________________________________
