@@ -2,81 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BA09C97D6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 07:14:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29D33C97DB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 07:16:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=73E9G99htu2tPH71SAylDCAI8N+EvKtPYcKEbYeon2c=; b=p2hcQxCqArVfCUKPLkdLHc03D
-	2drmSEG1AtMmwQcM5+eJtsmewt+YfHsyl5W7ezrVJnwH15037P4PsBXcr3B8F6+KJsao84toZwh50
-	3PnKuxGePwVBnHLI1cqGw0rS30B+viWJ0wyQF+CSGH8P7Rush6Dnis7oj1jsUgxIXKUSRAGJyqwO0
-	MqEVAoXUPlsteWlg1DqOrGS0zjbj2iv5GQvQuGmUoTNqFSHJuu2crh/SyaKlwXUxZ2vfYjiSMGx+9
-	jAr1LyNgXtIOcusYIFQlNXhY/LazizkwU0wGfnxLlhWBL9yZtN+mfOcu4xn2H7Xxb32fDKoclk+6c
-	jHjm5feTA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xGTP0CBk5QYWgYXs6dlN2Wu7uZO2/Prf91bU1oTDggk=; b=BphC1Gcd8dDS8l
+	gshpbKRpWW5fJ7cPi89BB1TG+QB19ZARgaiUitT42HCwyDSozHjZm1PwJcDEGUUtJQXCr8tVZlPju
+	6C/S1q30AfNR0MJQrbQxbqbtfmXBwiAufR+6ZSxLfxXq10Am3icI8S3O0wnuwA+gcWYWVsBxijPpj
+	8A7SZT2c3LLSmMQolkP2gkK8GiBAVb8yqzQhZvYRPUNWUj3MAPPGozhiU57CySSPmn3mrG4s7UC8b
+	TRh15J3XeuLTc0p3/ONrJDxQRTAP8eScVjQJnM10ZS/ylYdJ70mPrJprT9d26Veb1YaHzkhbCNSTs
+	PAnEDF36knIWRkglrriw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFtR7-0006O2-Ah; Thu, 03 Oct 2019 05:13:57 +0000
-Received: from mail.kapsi.fi ([2001:67c:1be8::25])
+	id 1iFtTa-0007uW-RM; Thu, 03 Oct 2019 05:16:30 +0000
+Received: from mailoutvs4.siol.net ([185.57.226.195] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFtR0-0006NK-NM
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 05:13:52 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=kapsi.fi;
- s=20161220; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=hP031RxHuMgAPYFFoqnXvAf+Ck07yKWJha6BUPagUqk=; b=WFkabIw3Kd3dagHrC3eSGaQtVO
- /U+hHGuTVJqD7+gMAHwEnVGRX75Y8zGjKCE/uzipE0aP9sncy0wjQvnrVbTPMdtk/aUAawXdDtoW9
- mni87ucSU0kXsCMnGKzOuH0DXtoj6eIHvEsAMIYRKpkwlX7k9kRialA6/JxK0/5EqAKxIseaD2ry7
- 3v3WSD4CWtWryYxsxQ232II0lUOfwovLDBSrxhiVUCnczYTaTmJ/M8iBUmO+xFDXjLWtnORyHLzot
- XbAX6ImgX40ma0SLA3uQC3AiqqqYd4LwmG3g63P13QHaHZgdJ0XAO5/54ajUN7jkMB58RT38CVA1m
- m9G7mbxw==;
-Received: from [39.110.237.146] (helo=[10.23.107.35])
- by mail.kapsi.fi with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.89) (envelope-from <cyndis@kapsi.fi>)
- id 1iFtQl-0002gp-SY; Thu, 03 Oct 2019 08:13:36 +0300
-Subject: Re: [PATCH] arm64: tegra: Set dma-ranges for memory subsystem
-To: Thierry Reding <thierry.reding@gmail.com>, Arnd Bergmann <arnd@arndb.de>, 
- Rob Herring <robh+dt@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
- Jon Hunter <jonathanh@nvidia.com>, linux-tegra@vger.kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Georgi Djakov <georgi.djakov@linaro.org>, Maxime Ripard <mripard@kernel.org>
-References: <20191002154654.225690-1-thierry.reding@gmail.com>
- <20191002154946.GA225802@ulmo>
-From: Mikko Perttunen <cyndis@kapsi.fi>
-Message-ID: <a0a299d2-a08f-1a4d-728e-6d7c54fa0e5a@kapsi.fi>
-Date: Thu, 3 Oct 2019 14:13:21 +0900
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.1
+ id 1iFtTT-0007tH-94
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 05:16:25 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id 2941F520E78;
+ Thu,  3 Oct 2019 07:16:11 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at psrvmta11.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta11.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id uo2TMQr76LRD; Thu,  3 Oct 2019 07:16:10 +0200 (CEST)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id C1F2D521B43;
+ Thu,  3 Oct 2019 07:16:10 +0200 (CEST)
+Received: from jernej-laptop.localnet (cpe-86-58-59-25.static.triera.net
+ [86.58.59.25]) (Authenticated sender: jernej.skrabec@siol.net)
+ by mail.siol.net (Postfix) with ESMTPA id 35AA5521111;
+ Thu,  3 Oct 2019 07:16:10 +0200 (CEST)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Subject: Re: [PATCH v2 2/3] media: cedrus: Fix H264 default reference index
+ count
+Date: Thu, 03 Oct 2019 07:16:09 +0200
+Message-ID: <12199603.8LrTjBMqpV@jernej-laptop>
+In-Reply-To: <20191002220650.GB24151@aptenodytes>
+References: <20191002193553.1633467-1-jernej.skrabec@siol.net>
+ <20191002193553.1633467-3-jernej.skrabec@siol.net>
+ <20191002220650.GB24151@aptenodytes>
 MIME-Version: 1.0
-In-Reply-To: <20191002154946.GA225802@ulmo>
-Content-Language: en-GB
-X-SA-Exim-Connect-IP: 39.110.237.146
-X-SA-Exim-Mail-From: cyndis@kapsi.fi
-X-SA-Exim-Scanned: No (on mail.kapsi.fi); SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_221351_091477_7332BE9B 
-X-CRM114-Status: GOOD (  20.25  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191002_221623_482606_8F8D6250 
+X-CRM114-Status: GOOD (  18.16  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:67c:1be8:0:0:0:0:25 listed in] [list.dnswl.org]
+ low trust [185.57.226.195 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,98 +72,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, mripard@kernel.org, wens@csie.org,
+ hverkuil-cisco@xs4all.nl, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03/10/2019 0.49, Thierry Reding wrote:
-> On Wed, Oct 02, 2019 at 05:46:54PM +0200, Thierry Reding wrote:
->> From: Thierry Reding <treding@nvidia.com>
->>
->> On Tegra194, all clients of the memory subsystem can generally address
->> 40 bits of system memory. However, bit 39 has special meaning and will
->> cause the memory controller to reorder sectors for block-linear buffer
->> formats. This is primarily useful for graphics-related devices.
->>
->> Use of bit 39 must be controlled on a case-by-case basis. Buffers that
->> are used with bit 39 set by one device may be used with bit 39 cleared
->> by other devices.
->>
->> Care must be taken to allocate buffers at addresses that do not require
->> bit 39 to be set. This is normally not an issue for system memory since
->> there are no Tegra-based systems with enough RAM to exhaust the 39-bit
->> physical address space. However, when a device is behind an IOMMU, such
->> as the ARM SMMU on Tegra194, the IOMMUs input address space can cause
->> IOVA allocations to happen in this region. This is for example the case
->> when an operating system implements a top-down allocation policy for IO
->> virtual addresses.
->>
->> To account for this, describe the path that memory accesses take through
->> the system. Memory clients will send requests to the memory controller,
->> which forwards bits [38:0] of the address either to the external memory
->> controller or the SMMU, depending on the stream ID of the access. A good
->> way to describe this is using the interconnects bindings, see:
->>
->> 	Documentation/devicetree/bindings/interconnect/interconnect.txt
->>
->> The standard "dma-mem" path is used to describe the path towards system
->> memory via the memory controller. A dma-ranges property in the memory
->> controller's device tree node limits the range of DMA addresses that the
->> memory clients can use to bits [38:0], ensuring that bit 39 is not used.
->>
->> Signed-off-by: Thierry Reding <treding@nvidia.com>
->> ---
->> Arnd, Rob, Robin,
->>
->> This is what I came up with after our discussion on this thread:
->>
->> 	[PATCH 00/11] of: dma-ranges fixes and improvements
->>
->> Please take a look and see if that sounds reasonable. I'm slightly
->> unsure about the interconnects bindings as I used them here. According
->> to the bindings there's always supposed to be a pair of interconnect
->> paths, so this patch is not exactly compliant. It does work fine with
->> the __of_get_dma_parent() code that Maxime introduced a couple of months
->> ago and really very neatly describes the hardware. Interestingly this
->> will come in handy very soon now since we're starting work on a proper
->> interconnect provider (the memory controller driver is the natural fit
->> for this because it has additional knobs to configure latency and
->> priorities, etc.) to implement external memory frequency scaling based
->> on bandwidth requests from memory clients. So this all fits together
->> very nicely. But as I said, I'm not exactly sure what to add as a second
->> entry in "interconnects" to make this compliant with the bindings.
->>
->> Adding Georgi and Maxime, perhaps they can help clarify.
->>
->> Thierry
-> 
-> Updating Maxime's email address.
-> 
-> Thierry
-> 
->>   arch/arm64/boot/dts/nvidia/tegra194.dtsi | 32 +++++++++++++++++++++++-
->>   1 file changed, 31 insertions(+), 1 deletion(-)
->>
->> diff --git a/arch/arm64/boot/dts/nvidia/tegra194.dtsi b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
->> index 6900e8bdf24d..f50150217806 100644
->> --- a/arch/arm64/boot/dts/nvidia/tegra194.dtsi
->> +++ b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
->> @@ -53,6 +53,8 @@
->>   			clock-names = "master_bus", "slave_bus", "rx", "tx", "ptp_ref";
->>   			resets = <&bpmp TEGRA194_RESET_EQOS>;
->>   			reset-names = "eqos";
->> +			interconnects = <&mc TEGRA194_SID_EQOS>;
-
-It seems to me that the memory client ID may be a more appropriate 
-identifier for the interconnect. Stream IDs can sometimes change at 
-runtime based on software. Devices can also have multiple memory clients 
-using the same stream ID (or not).
-
-Cheers,
-Mikko
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RG5lIMSNZXRydGVrLCAwMy4gb2t0b2JlciAyMDE5IG9iIDAwOjA2OjUwIENFU1QgamUgUGF1bCBL
+b2NpYWxrb3dza2kgCm5hcGlzYWwoYSk6Cj4gSGksCj4gCj4gT24gV2VkIDAyIE9jdCAxOSwgMjE6
+MzUsIEplcm5laiBTa3JhYmVjIHdyb3RlOgo+ID4gUmVmZXJlbmNlIGluZGV4IGNvdW50IGluIFZF
+X0gyNjRfUFBTIHNob3VsZCBjb21lIGZyb20gUFBTIGNvbnRyb2wuCj4gPiBIb3dldmVyLCB0aGlz
+IGlzIG5vdCByZWFsbHkgaW1wb3J0YW50LCBiZWNhdXNlIHJlZmVyZW5jZSBpbmRleCBjb3VudCBp
+cwo+ID4gaW4gb3VyIGNhc2UgYWx3YXlzIG92ZXJyaWRkZW4gYnkgdGhhdCBmcm9tIHNsaWNlIGhl
+YWRlci4KPiAKPiBUaGFua3MgZm9yIHRoZSBmaXh1cCEKPiAKPiBPdXIgbGlidmEgdXNlcnNwYWNl
+IGFuZCB2NGwyLXJlcXVlc3QgdGVzdGluZyB0b29sIGN1cnJlbnRseSBkb24ndCBwcm92aWRlCj4g
+dGhpcywgYnV0IEkgaGF2ZSBhIHBlbmRpbmcgbWVyZ2UgcmVxdWVzdCBhZGRpbmcgaXQgZm9yIHRo
+ZSBoYW50cm8gc28gaXQncwo+IGdvb2QgdG8gZ28uCgpBY3R1YWxseSwgSSB0aGluayB0aGlzIGlz
+IGp1c3QgY29zbWV0aWMgYW5kIGl0IHdvdWxkIHdvcmsgZXZlbiBpZiBpdCB3b3VsZCBiZSAKYWx3
+YXlzIDAuIFdlIGFsd2F5cyBvdmVycmlkZSB0aGlzIG51bWJlciBpbiBTSFMyIHJlZ2lzdGVyIHdp
+dGggClZFX0gyNjRfU0hTMl9OVU1fUkVGX0lEWF9BQ1RJVkVfT1ZSRCBmbGFnIGFuZCByZWNlbnRs
+eSB0aGVyZSB3YXMgYSBwYXRjaCBtZXJnZWQgCnRvIGNsYXJpZnkgdGhhdCB2YWx1ZSBpbiBzbGlj
+ZSBwYXJhbWV0ZXJzIHNob3VsZCBiZSB0aGUgb25lIHRoYXQncyBzZXQgb24gCmRlZmF1bHQgdmFs
+dWUgaWYgb3ZlcnJpZGUgZmxhZyBpcyBub3Qgc2V0IGluIGJpdHN0cmVhbToKaHR0cHM6Ly9naXQu
+bGludXh0di5vcmcvbWVkaWFfdHJlZS5naXQvY29tbWl0Lz8KaWQ9MTg3ZWY3YzVjNzgxNTNhY2Rj
+ZThjODcxNGU1OTE4YjEwMThjNzEwYgoKV2VsbCwgd2UgY291bGQgYWx3YXlzIGNvbXBhcmUgZGVm
+YXVsdCBhbmQgdmFsdWUgaW4gc2xpY2UgcGFyYW1ldGVycywgYnV0IEkgCnJlYWxseSBkb24ndCBz
+ZWUgdGhlIGJlbmVmaXQgb2YgZG9pbmcgdGhhdCBleHRyYSB3b3JrLgoKQmVzdCByZWdhcmRzLApK
+ZXJuZWoKCj4gCj4gQWNrZWQtYnk6IFBhdWwgS29jaWFsa293c2tpIDxwYXVsLmtvY2lhbGtvd3Nr
+aUBib290bGluLmNvbT4KPiAKPiBDaGVlcnMsCj4gCj4gUGF1bAo+IAo+ID4gU2lnbmVkLW9mZi1i
+eTogSmVybmVqIFNrcmFiZWMgPGplcm5lai5za3JhYmVjQHNpb2wubmV0Pgo+ID4gLS0tCj4gPiAK
+PiA+ICBkcml2ZXJzL3N0YWdpbmcvbWVkaWEvc3VueGkvY2VkcnVzL2NlZHJ1c19oMjY0LmMgfCA4
+ICsrLS0tLS0tCj4gPiAgMSBmaWxlIGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygrKSwgNiBkZWxldGlv
+bnMoLSkKPiA+IAo+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvc3RhZ2luZy9tZWRpYS9zdW54aS9j
+ZWRydXMvY2VkcnVzX2gyNjQuYwo+ID4gYi9kcml2ZXJzL3N0YWdpbmcvbWVkaWEvc3VueGkvY2Vk
+cnVzL2NlZHJ1c19oMjY0LmMgaW5kZXgKPiA+IGJkODQ4MTQ2ZWFkYS4uNGEwZTY5ODU1YzdmIDEw
+MDY0NAo+ID4gLS0tIGEvZHJpdmVycy9zdGFnaW5nL21lZGlhL3N1bnhpL2NlZHJ1cy9jZWRydXNf
+aDI2NC5jCj4gPiArKysgYi9kcml2ZXJzL3N0YWdpbmcvbWVkaWEvc3VueGkvY2VkcnVzL2NlZHJ1
+c19oMjY0LmMKPiA+IEBAIC0zNjQsMTIgKzM2NCw4IEBAIHN0YXRpYyB2b2lkIGNlZHJ1c19zZXRf
+cGFyYW1zKHN0cnVjdCBjZWRydXNfY3R4ICpjdHgsCj4gPiAKPiA+ICAJLy8gcGljdHVyZSBwYXJh
+bWV0ZXJzCj4gPiAgCXJlZyA9IDA7Cj4gPiAKPiA+IC0JLyoKPiA+IC0JICogRklYTUU6IHRoZSBr
+ZXJuZWwgaGVhZGVycyBhcmUgYWxsb3dpbmcgdGhlIGRlZmF1bHQgdmFsdWUgdG8KPiA+IC0JICog
+YmUgcGFzc2VkLCBidXQgdGhlIGxpYnZhIGRvZXNuJ3QgZ2l2ZSB1cyB0aGF0Lgo+ID4gLQkgKi8K
+PiA+IC0JcmVnIHw9IChzbGljZS0+bnVtX3JlZl9pZHhfbDBfYWN0aXZlX21pbnVzMSAmIDB4MWYp
+IDw8IDEwOwo+ID4gLQlyZWcgfD0gKHNsaWNlLT5udW1fcmVmX2lkeF9sMV9hY3RpdmVfbWludXMx
+ICYgMHgxZikgPDwgNTsKPiA+ICsJcmVnIHw9IChwcHMtPm51bV9yZWZfaWR4X2wwX2RlZmF1bHRf
+YWN0aXZlX21pbnVzMSAmIDB4MWYpIDw8IDEwOwo+ID4gKwlyZWcgfD0gKHBwcy0+bnVtX3JlZl9p
+ZHhfbDFfZGVmYXVsdF9hY3RpdmVfbWludXMxICYgMHgxZikgPDwgNTsKPiA+IAo+ID4gIAlyZWcg
+fD0gKHBwcy0+d2VpZ2h0ZWRfYmlwcmVkX2lkYyAmIDB4MykgPDwgMjsKPiA+ICAJaWYgKHBwcy0+
+ZmxhZ3MgJiBWNEwyX0gyNjRfUFBTX0ZMQUdfRU5UUk9QWV9DT0RJTkdfTU9ERSkKPiA+ICAJCj4g
+PiAgCQlyZWcgfD0gVkVfSDI2NF9QUFNfRU5UUk9QWV9DT0RJTkdfTU9ERTsKCgoKCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
