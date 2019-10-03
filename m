@@ -2,76 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9460C9874
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 08:46:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B524DC988A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 08:46:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=G8JqT6c0JMWhkAPCaTYnvXvjZWN6NYVT53bWgq0CVMA=; b=eWow/QSrA3JArp
-	0HO8ZMGjhbeYumK40f/2JA2u6fClZy3XXwN8D1h4TRBlVYSy5FrS3qNw2DD7amaoGTy8lZk1smML9
-	MnABUlVQbL367NRvYh+J8tCPG1FGnGfs59j22qGfoaygl28gJSJvTL/L5D7iNB2EA1QQB2JJjWnNP
-	vnDpdyntZKV2fKg01TUDyLRSknPqyf2EooNZUiw05optbDp0jFseKJDGycXllfML56rd0Xa8Fz2IQ
-	JSQtrzjdPm0wLjWJmqC0DFLLolFBnULzBWL3pN+9idizvtS2Mv9Y4eVCBSTlAJxe9bgdzGIQK9nUg
-	SClIEa3pqDnymCgtSVqA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dY3ZKqKQRy/tkQMxICiMHOk1cgv3LiCoG85cqMQhdco=; b=NHVco04TYEXziv
+	lbH5EvqDTG+MkQiutfENmfQ4Fj4dbdYO7Wmzv03KKNq9fG+Syv3eny10Stct81KV996ep+ZBQSzrO
+	0EPbs6Aa5UIBBSyLn4ROFw7AQcpDwIDsg0Yi1bHWy3UIWXjpG9aq85Giq4gt/HTXEkmfWptp/KQbJ
+	D2nSV9NZT3/2WNBoVCRLmr/TUL27ff2cE9d+6QmDWFOBto5GDvw/ooMsVeQ+tkySVEib0tQ+HDlwP
+	IlvAsN2wbakqno9+QrkKqYznBnKFD09kNxPVxaUgPlEw0W5frh4+dcwpPpYNVMnGsRaT2/5DFncN/
+	BpRKcAcBtaykd7yjZfeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFusN-0003jq-Vi; Thu, 03 Oct 2019 06:46:11 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iFusk-00041w-Uc; Thu, 03 Oct 2019 06:46:34 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFusD-0003jN-Ah
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 06:46:03 +0000
-Received: by mail-pg1-x542.google.com with SMTP id y35so1155546pgl.1
+ id 1iFusG-0003jm-Sx
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 06:46:07 +0000
+Received: by mail-pg1-x543.google.com with SMTP id 23so1142776pgk.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 02 Oct 2019 23:46:01 -0700 (PDT)
+ Wed, 02 Oct 2019 23:46:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=tmedhzX9C+cN8nQlDlRuERilhLkK7PZoYSIAR3+m8Og=;
- b=UlIYKajkWrpON8MaHPgN7XHZDHJbOBa85ryXrpg2AQ4pavpCqkCc8RsWPqMMSIBkw/
- sB0z2HVCWKGIHFCBf2SrufCZhwoSyh5DYyjEFygGztaYKCR3A7mgmFjz87dQ1b1IR6AY
- rksgIwmeq/xMyCqS60GUxfNLTEpyrjYwTXmVE=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=FmdvF2g/THNcnQGDKSqudaTl2v+sgGCz1+BMHyLJ0gY=;
+ b=mPszV141qNr70ZXPQNvwOYKLuIaFS7QQawxY1u08dqIbN+Q7YSqBu6lQG7DNB9mAh3
+ iFgHo8sru1tpjR8oKzSHAp/7Z4LxJp8JgpzyfAeNXI1iyddWmoW1a/zUdRE8RJlPovjL
+ UOt1J4UlfcZo2ejyv9s6qL4zAiHN9TOI/KlsQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=tmedhzX9C+cN8nQlDlRuERilhLkK7PZoYSIAR3+m8Og=;
- b=cOFamLvWl4WCsPi/uuIxGavaBnDwSAu02ZzpUOfvAgJvWrZnbmoK7zVM8bgAlJLW45
- F2Udhh0p6SWXTb70Kabj37o8M8oAmTDehaj7zANJchzwJZ9BG5MdI33OPUaN/RJh6vqU
- ZsZWKiTJouvx0V/UKv/iczNeFOsGqMCt3BkVwU51MBeGhDTBG5XFfY3wzU2FGfF0nn71
- aMr7KS9JXxY83A4tZBLtRaIqXwsuDwEQPMy//EXUtIpkyP+IYpZOHb/1axZHOwhTLGxO
- NjTJw6rzXsMRox/m9c/rAbEhgleVtt4JpgnEow1V3GbQKY5ARvYkoKT40O0EIb0CUPWu
- KVEw==
-X-Gm-Message-State: APjAAAVMtmrqtpDVfq2CTLUhE50k+sFVw5lUQPAph+jXXDuQ1DFKscRB
- N89x73BHnKAtOo9T17tArFKokQ==
-X-Google-Smtp-Source: APXvYqxQCK4/7MbbkBagZV2vOcHKusaEK4mXaxvR66zcwNTDIsrsGqkeRKcQ4QxTDvq2Kmwy+8UUQw==
-X-Received: by 2002:a63:4762:: with SMTP id w34mr8014842pgk.202.1570085160475; 
- Wed, 02 Oct 2019 23:46:00 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=FmdvF2g/THNcnQGDKSqudaTl2v+sgGCz1+BMHyLJ0gY=;
+ b=ncwlQrh1Bp+K9d+Rel+97TxWlq45WqqPgCPMHsy48D4XGScysGCYv03TxXBZw5K3E5
+ 7GNt4KaFcSC6ZjpykX/jgV/9vYCIEX+6kFiRpk8hNXxnB4ng9P+YdiYMBzoj60V+3l/V
+ NCe/HzlEkuxrcsw0eyDmmzeFIi3xx4FwJiGC9GW6uudAUN8d56GYj7I12PNxUZR4OBo3
+ /7dDtJpFvVKIVp58pv0CX/TW6sCrZwxYJz6LhqXSCAEubDyYOFUKBx60Ipxb8UeSNBpv
+ zHNeZhBdtCGWx8Bj0H0B/BOfutTnJQVa5m7PwgPdb0ZZmxju0+Nnt59AwcvFCHm45vql
+ jh+A==
+X-Gm-Message-State: APjAAAUHqN7IGDEWG+ZMMJ74s2OL0QAHG58O7Mj/s2j9nKJkfK+Ayk0g
+ KGf1bYlcOLnbYnAkfTU+eQvfig==
+X-Google-Smtp-Source: APXvYqxowwGy2lyGUReMroUTWF8qD6YhNPZGdCxinBp+JhKO+UuM/RDM3wzfwdbokqlD+a/irkQsIA==
+X-Received: by 2002:a17:90a:a2b:: with SMTP id
+ o40mr8964792pjo.107.1570085164194; 
+ Wed, 02 Oct 2019 23:46:04 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.203.121])
- by smtp.gmail.com with ESMTPSA id b18sm1423294pfi.157.2019.10.02.23.45.56
+ by smtp.gmail.com with ESMTPSA id b18sm1423294pfi.157.2019.10.02.23.46.00
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 02 Oct 2019 23:45:59 -0700 (PDT)
+ Wed, 02 Oct 2019 23:46:03 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>
-Subject: [PATCH v11 0/7] drm/sun4i: dsi: Fixes/updates (A33 reworked!)
-Date: Thu,  3 Oct 2019 12:15:20 +0530
-Message-Id: <20191003064527.15128-1-jagan@amarulasolutions.com>
+Subject: [PATCH v11 1/7] drm/sun4i: dsi: Fix TCON DRQ set bits
+Date: Thu,  3 Oct 2019 12:15:21 +0530
+Message-Id: <20191003064527.15128-2-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
+In-Reply-To: <20191003064527.15128-1-jagan@amarulasolutions.com>
+References: <20191003064527.15128-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_234601_508500_AF72E240 
-X-CRM114-Status: GOOD (  14.96  )
+X-CRM114-CacheID: sfid-20191002_234604_985665_39ADF01E 
+X-CRM114-Status: GOOD (  14.10  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -102,92 +105,112 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is v11 version changes for previous series[1].
+The LCD timing definitions between Linux DRM vs Allwinner are different,
+below diagram shows this clear differences.
 
-This series dropped the tcon->dclk_min_div and tcon->dclk_max_div
-patches, since the discussion on the respective threads[2][3] 
-not finalized or not agree on both the ends.
+           Active                 Front           Sync           Back
+           Region                 Porch                          Porch
+<-----------------------><----------------><--------------><-------------->
+  //////////////////////|
+ ////////////////////// |
+//////////////////////  |..................                ................
+                                           ________________
+<----- [hv]display ----->
+<------------- [hv]sync_start ------------>
+<--------------------- [hv]sync_end ---------------------->
+<-------------------------------- [hv]total ------------------------------>
 
-This series mostly the commit messages changes suggested by Chen-Yu.
+<----- lcd_[xy] -------->		  <- lcd_[hv]spw ->
+					  <---------- lcd_[hv]bp --------->
+<-------------------------------- lcd_[hv]t ------------------------------>
 
-Most of these issues are reproduced while supporting Allwinner A64
-MIPI-DSI [4] but to confirm it with other SoC this series is reworked
-on A33 since the controller tested it A33 as of now.
+The DSI driver misinterpreted the hbp term from the BSP code to refer
+only to the backporch, when in fact it was backporch + sync. Thus the
+driver incorrectly used the horizontal front porch plus sync in its
+calculation of the DRQ set bit value, when it should not have included
+the sync timing.
 
-Since we don't have proper evidence and documentation for dsi controller
-in Allwinner, these changes are more likely to rely on new working BSP
-codes (even the initial driver written as per this rule).
+Including additional sync timings leads to flip_done timed out as:
 
-All these fixes/updates are tested in "bananapi,s070wv20-ct16" panel
-on Allwinner A33, the same panel timings are available in panel-simple
-in mainline tree.
+WARNING: CPU: 0 PID: 31 at drivers/gpu/drm/drm_atomic_helper.c:1429 drm_atomic_helper_wait_for_vblanks.part.1+0x298/0x2a0
+[CRTC:46:crtc-0] vblank wait timed out
+Modules linked in:
+CPU: 0 PID: 31 Comm: kworker/0:1 Not tainted 5.1.0-next-20190514-00026-g01f0c75b902d-dirty #13
+Hardware name: Allwinner sun8i Family
+Workqueue: events deferred_probe_work_func
+[<c010ed54>] (unwind_backtrace) from [<c010b76c>] (show_stack+0x10/0x14)
+[<c010b76c>] (show_stack) from [<c0688c70>] (dump_stack+0x84/0x98)
+[<c0688c70>] (dump_stack) from [<c011d9e4>] (__warn+0xfc/0x114)
+[<c011d9e4>] (__warn) from [<c011da40>] (warn_slowpath_fmt+0x44/0x68)
+[<c011da40>] (warn_slowpath_fmt) from [<c040cd50>] (drm_atomic_helper_wait_for_vblanks.part.1+0x298/0x2a0)
+[<c040cd50>] (drm_atomic_helper_wait_for_vblanks.part.1) from [<c040e694>] (drm_atomic_helper_commit_tail_rpm+0x5c/0x6c)
+[<c040e694>] (drm_atomic_helper_commit_tail_rpm) from [<c040e4dc>] (commit_tail+0x40/0x6c)
+[<c040e4dc>] (commit_tail) from [<c040e5cc>] (drm_atomic_helper_commit+0xbc/0x128)
+[<c040e5cc>] (drm_atomic_helper_commit) from [<c0411b64>] (restore_fbdev_mode_atomic+0x1cc/0x1dc)
+[<c0411b64>] (restore_fbdev_mode_atomic) from [<c04156f8>] (drm_fb_helper_restore_fbdev_mode_unlocked+0x54/0xa0)
+[<c04156f8>] (drm_fb_helper_restore_fbdev_mode_unlocked) from [<c0415774>] (drm_fb_helper_set_par+0x30/0x54)
+[<c0415774>] (drm_fb_helper_set_par) from [<c03ad450>] (fbcon_init+0x560/0x5ac)
+[<c03ad450>] (fbcon_init) from [<c03eb8a0>] (visual_init+0xbc/0x104)
+[<c03eb8a0>] (visual_init) from [<c03ed1b8>] (do_bind_con_driver+0x1b0/0x390)
+[<c03ed1b8>] (do_bind_con_driver) from [<c03ed780>] (do_take_over_console+0x13c/0x1c4)
+[<c03ed780>] (do_take_over_console) from [<c03ad800>] (do_fbcon_takeover+0x74/0xcc)
+[<c03ad800>] (do_fbcon_takeover) from [<c013c9c8>] (notifier_call_chain+0x44/0x84)
+[<c013c9c8>] (notifier_call_chain) from [<c013cd20>] (__blocking_notifier_call_chain+0x48/0x60)
+[<c013cd20>] (__blocking_notifier_call_chain) from [<c013cd50>] (blocking_notifier_call_chain+0x18/0x20)
+[<c013cd50>] (blocking_notifier_call_chain) from [<c03a6e44>] (register_framebuffer+0x1e0/0x2f8)
+[<c03a6e44>] (register_framebuffer) from [<c04153c0>] (__drm_fb_helper_initial_config_and_unlock+0x2fc/0x50c)
+[<c04153c0>] (__drm_fb_helper_initial_config_and_unlock) from [<c04158c8>] (drm_fbdev_client_hotplug+0xe8/0x1b8)
+[<c04158c8>] (drm_fbdev_client_hotplug) from [<c0415a20>] (drm_fbdev_generic_setup+0x88/0x118)
+[<c0415a20>] (drm_fbdev_generic_setup) from [<c043f060>] (sun4i_drv_bind+0x128/0x160)
+[<c043f060>] (sun4i_drv_bind) from [<c044b598>] (try_to_bring_up_master+0x164/0x1a0)
+[<c044b598>] (try_to_bring_up_master) from [<c044b668>] (__component_add+0x94/0x140)
+[<c044b668>] (__component_add) from [<c0445e1c>] (sun6i_dsi_probe+0x144/0x234)
+[<c0445e1c>] (sun6i_dsi_probe) from [<c0452ef4>] (platform_drv_probe+0x48/0x9c)
+[<c0452ef4>] (platform_drv_probe) from [<c04512cc>] (really_probe+0x1dc/0x2c8)
+[<c04512cc>] (really_probe) from [<c0451518>] (driver_probe_device+0x60/0x160)
+[<c0451518>] (driver_probe_device) from [<c044f7a4>] (bus_for_each_drv+0x74/0xb8)
+[<c044f7a4>] (bus_for_each_drv) from [<c045107c>] (__device_attach+0xd0/0x13c)
+[<c045107c>] (__device_attach) from [<c0450474>] (bus_probe_device+0x84/0x8c)
+[<c0450474>] (bus_probe_device) from [<c0450900>] (deferred_probe_work_func+0x64/0x90)
+[<c0450900>] (deferred_probe_work_func) from [<c0135970>] (process_one_work+0x204/0x420)
+[<c0135970>] (process_one_work) from [<c013690c>] (worker_thread+0x274/0x5a0)
+[<c013690c>] (worker_thread) from [<c013b3d8>] (kthread+0x11c/0x14c)
+[<c013b3d8>] (kthread) from [<c01010e8>] (ret_from_fork+0x14/0x2c)
+Exception stack(0xde539fb0 to 0xde539ff8)
+9fa0:                                     00000000 00000000 00000000 00000000
+9fc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+9fe0: 00000000 00000000 00000000 00000000 00000013 00000000
+---[ end trace b57eb1e5c64c6b8b ]---
+random: fast init done
+[drm:drm_atomic_helper_wait_for_dependencies] *ERROR* [CRTC:46:crtc-0] flip_done timed out
+[drm:drm_atomic_helper_wait_for_dependencies] *ERROR* [CONNECTOR:48:DSI-1] flip_done timed out
+[drm:drm_atomic_helper_wait_for_dependencies] *ERROR* [PLANE:30:plane-0] flip_done timed out
 
-Changes for v11:
-- Drop DCLK dividers patches
-- Updated the commit message changes suggested by Chen-Yu
-- rebased on linux-next
-Changes for v10:
-- reworked previous "Fixes/updates" patches on A33
-- reworked previous A64 DSI fixes on A33
-- added proper detailed commit messages with logs
-- tested on BPI-M2M board.
-Changes for v9:
-- rebase on drm-misc
-- update commit messages
-- add hsync_porch overflow patch
-Changes for v8:
-- rebase on master
-- rework on commit messages
-- rework video start delay
-- include drq changes from previous version
-Changes for v7:
-- rebase on master
-- collect Merlijn Wajer Tested-by credits.
-Changes for v6:
-- fixed all burst mode patches as per previous version comments
-- rebase on master
-- update proper commit message
-- dropped unneeded comments
-- order the patches that make review easy
-Changes for v5, v4, v3, v2:
-- use existing driver code construct for hblk computation
-- create separate function for vblk computation
-- cleanup commit messages
-- update proper commit messages
-- fixed checkpatch warnings/errors
-- use proper return value for tcon0 probe
-- add logic to get tcon0 divider values
-- simplify timings code to support burst mode
-- fix drq computation return values
-- rebase on master
+With the terms(as described in above diagram) fixed, the panel
+displays correctly without any timeouts.
 
-Any inputs?
-Jagan.
+Tested-by: Merlijn Wajer <merlijn@wizzup.org>
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+ drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-[1] https://patchwork.freedesktop.org/series/60847/
-[2] https://patchwork.freedesktop.org/patch/305923/?series=60847&rev=1
-[3] https://patchwork.kernel.org/patch/10779937/
-[4] https://patchwork.freedesktop.org/series/57834/
-
-Jagan Teki (7):
-  drm/sun4i: dsi: Fix TCON DRQ set bits
-  drm/sun4i: dsi: Update start value in video start delay
-  drm/sun4i: dsi: Fix video start delay computation
-  dt-bindings: sun6i-dsi: Add VCC-DSI supply property
-  drm/sun4i: sun6i_mipi_dsi: Add VCC-DSI regulator support
-  [DO NOT MERGE] drm/panel: Add Bananapi S070WV20-CT16 ICN6211 MIPI-DSI to RGB bridge
-  [DO NOT MERGE] ARM: dts: sun8i: bananapi-m2m: Enable Bananapi S070WV20-CT16 DSI panel
-
- .../display/allwinner,sun6i-a31-mipi-dsi.yaml |   3 +
- arch/arm/boot/dts/sun8i-r16-bananapi-m2m.dts  |  40 +++
- drivers/gpu/drm/panel/Kconfig                 |   9 +
- drivers/gpu/drm/panel/Makefile                |   1 +
- .../panel/panel-bananapi-s070wv20-icn6211.c   | 293 ++++++++++++++++++
- drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c        |  32 +-
- drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h        |   2 +
- 7 files changed, 376 insertions(+), 4 deletions(-)
- create mode 100644 drivers/gpu/drm/panel/panel-bananapi-s070wv20-icn6211.c
-
+diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
+index 1636344ba9ec..f83522717488 100644
+--- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
++++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
+@@ -437,9 +437,9 @@ static void sun6i_dsi_setup_burst(struct sun6i_dsi *dsi,
+ 			     SUN6I_DSI_BURST_LINE_SYNC_POINT(SUN6I_DSI_SYNC_POINT));
+ 
+ 		val = SUN6I_DSI_TCON_DRQ_ENABLE_MODE;
+-	} else if ((mode->hsync_end - mode->hdisplay) > 20) {
++	} else if ((mode->hsync_start - mode->hdisplay) > 20) {
+ 		/* Maaaaaagic */
+-		u16 drq = (mode->hsync_end - mode->hdisplay) - 20;
++		u16 drq = (mode->hsync_start - mode->hdisplay) - 20;
+ 
+ 		drq *= mipi_dsi_pixel_format_to_bpp(device->format);
+ 		drq /= 32;
 -- 
 2.18.0.321.gffc6fa0e3
 
