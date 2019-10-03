@@ -2,88 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1F46CA162
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 17:51:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C0A9CA1BC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 18:00:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GRVvg/q4gIJvlNaeAe8iJkcQhT9q3LGEh1VfrWgaquM=; b=UFB6tXFgIa1rYL
-	pMXWe5FxLJByGjUijqEoRVOLW8XC2w9qMrHmzgVRNghjR72JyXMnWbcqyP651ZfrDpAR9fFW0/dST
-	zHPqfzkNuqbhstBJJBAQqhD0HkXg+MnuqCifg5jueI9g5vTUx2oNAAd0qbU6c5li9W+m+v8AM9kvo
-	giQ0x4TxBNJem2weEeYkQmA1kRGo6LyX243I7B30Ap+1mKGjLvlqcSotkh/hjHVr4/27bBWkd4kCW
-	B7dE8aEczNUJ3FIgHMdj7b92yz10RmIYIPECWn2d+Mp0TGAK8yFAVZipZnZqD8z0CH5z9oBzto5KP
-	U6pxIsFD1DOlllXe5vUg==;
+	List-Owner; bh=OzcrZiOmidPmYAtJFZcnOF5Rrt3AA5rXcuk1KNAG1fA=; b=i6NJwcInJrXNIw
+	8FMNPH96ZNbR5LcW90VVmnVy5l5Gkfh1T6F//5WRBqxagmFoUOdMoMNcizL7MTu4Fyg+mHS7t0MNR
+	S9P1o0UuuDDZNED1aWBQgaaLL+NAFU2tI3dV1Q3akoqct7yJlITsYFe+p4h1f1LZwh7jar3xXDBgQ
+	crAuLikD77Qc4iXIutD6PvFW9cncxlEcnmHEWfJjux5iHDLx4rj2C/I0DMwwBJHoxhM/DlQmPRezG
+	yWUECpKvmWokQK8nxSghVrColIaJsq5IExjZs/+hoKVBvqsyoxVelbu0VRR7abJZ7ePejZtgtCryp
+	hZcrX9bTC4rwSftKa8OA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG3O3-0003wk-5Q; Thu, 03 Oct 2019 15:51:27 +0000
-Received: from mail-io1-f66.google.com ([209.85.166.66])
+	id 1iG3WB-0006kM-7F; Thu, 03 Oct 2019 15:59:51 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG3Nu-0003w3-P4
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 15:51:20 +0000
-Received: by mail-io1-f66.google.com with SMTP id q10so6745555iop.2
+ id 1iG3W2-0006jT-QQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 15:59:44 +0000
+Received: from mail-qt1-f178.google.com (mail-qt1-f178.google.com
+ [209.85.160.178])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id F3BB7222D1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 03 Oct 2019 08:51:17 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=o5FrpAENvkoWB6xTph/hv60pcl+ltBCsmirVDpopVIo=;
- b=mD1KkVFdIUsMgJXfclXYx822LxR3cULVkYqhH9qtRrWftGyuP/YEyzd9H7rewcPjVg
- YvwhLoaOrsrGtcCYjEMkf2BE6p3Rn5h/zSWIZEUTp8Q+6+7I6WhN4Nzn08Wohukpekbm
- 1R+9WEMpWWW1Nn19AcTwx6KtvZWtLj8gEb8ow57ISmAuA42yrb8DimmUSY48a4ptpxvF
- Vnhix2YXoipZ6aMxD/8uNY0S90spxChiz/x0qdQeE0g6QtJAeEq4Ezrz7dO4US4Az4zE
- M4Y8lIkLbvz+dqijZszZUu9YWtITk6bj0RNFSLrkeksU0Ol2kp6hiUwVj8lA7qOp18kQ
- 32VA==
-X-Gm-Message-State: APjAAAU2sKvXDDhJ4HJbAQT/yXON4J+Aci3V1ldTNmoA3qknRbsxat0g
- u9bRGO8H+3iV3a0iOianfwUeyAy3Ny0=
-X-Google-Smtp-Source: APXvYqxTiwO8igL82rZ9T7VZH4nwcmS5LcyzyOrWbX05Gr7ORZ7kB3LIMgbr17WXbz4rkeOStl1QkA==
-X-Received: by 2002:a02:3f5c:: with SMTP id c28mr9636443jaf.103.1570117875560; 
- Thu, 03 Oct 2019 08:51:15 -0700 (PDT)
-Received: from mail-io1-f53.google.com (mail-io1-f53.google.com.
- [209.85.166.53])
- by smtp.gmail.com with ESMTPSA id s78sm2205624ila.40.2019.10.03.08.51.14
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 03 Oct 2019 08:51:15 -0700 (PDT)
-Received: by mail-io1-f53.google.com with SMTP id w12so6604078iol.11
+ Thu,  3 Oct 2019 15:59:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570118382;
+ bh=UYI+i4ZdBUJfq10YbStvW3i66fBJsqe8ARvR8bHxCbY=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=RqbyF7VSy9NGgBFB+HIevDvHLWm+7aEURok3DWHfiN9exDTZhQ0pl2MxYRrX080ic
+ NvimPrOdtKf3nbQIlfd+/crmMgf4KzFT7yuBdmLEm+N4KARx9ff/JsYlUcKUJn+11m
+ v/Eryv8Mp0Q/GqOr9XmwF5yWFxqs8FHEcY16wT1Q=
+Received: by mail-qt1-f178.google.com with SMTP id 3so4342662qta.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 03 Oct 2019 08:51:14 -0700 (PDT)
-X-Received: by 2002:a5d:9349:: with SMTP id i9mr8742455ioo.101.1570117874713; 
- Thu, 03 Oct 2019 08:51:14 -0700 (PDT)
+ Thu, 03 Oct 2019 08:59:41 -0700 (PDT)
+X-Gm-Message-State: APjAAAV8davyP8DbuGTFZpAyFR/6wWm3nQ//2VhyGaIdy/7mV5Gv3GXX
+ dOgNfmsU/mRMIAprJOzTxuCdMl/Zl2XRUP63aw==
+X-Google-Smtp-Source: APXvYqwcwdNJlOIpfQZz2dIR2x5UhCf43ZSWs3Ge+J8BHWO8rEIey1vwAN28tyHAn9j5UNMWeVMspf0z3kY4qPEkVYI=
+X-Received: by 2002:ad4:458d:: with SMTP id x13mr9205417qvu.85.1570118380840; 
+ Thu, 03 Oct 2019 08:59:40 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191003154842.248763-1-mripard@kernel.org>
-In-Reply-To: <20191003154842.248763-1-mripard@kernel.org>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Thu, 3 Oct 2019 23:51:05 +0800
-X-Gmail-Original-Message-ID: <CAGb2v66az3uQnibudKai7ATfXh+w1Y+bJ=o258RVe9SCNRpGNQ@mail.gmail.com>
-Message-ID: <CAGb2v66az3uQnibudKai7ATfXh+w1Y+bJ=o258RVe9SCNRpGNQ@mail.gmail.com>
-Subject: Re: [PATCH 1/2] dt-bindings: media: sun4i-csi: Drop the module clock
-To: Maxime Ripard <mripard@kernel.org>
+References: <20190920075411.15735-1-marcel@ziswiler.com>
+ <20190920075411.15735-2-marcel@ziswiler.com>
+ <20191001220539.GA16232@bogus>
+ <e6fdfd7f46308dbc8fd33d4a2ff0b242ec39a84c.camel@toradex.com>
+In-Reply-To: <e6fdfd7f46308dbc8fd33d4a2ff0b242ec39a84c.camel@toradex.com>
+From: Rob Herring <robh@kernel.org>
+Date: Thu, 3 Oct 2019 10:59:29 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqKmCVP3Fc2sUY=FpM5-HLQ0-=uTf6PEwn0XzyC5BBHBOA@mail.gmail.com>
+Message-ID: <CAL_JsqKmCVP3Fc2sUY=FpM5-HLQ0-=uTf6PEwn0XzyC5BBHBOA@mail.gmail.com>
+Subject: Re: [PATCH v1 2/2] drm/panel: simple: add display timings for logic
+ technologies displays
+To: Philippe Schenker <philippe.schenker@toradex.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_085118_815011_ED6BF355 
-X-CRM114-Status: GOOD (  19.42  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191003_085942_901513_C3B338CE 
+X-CRM114-Status: GOOD (  18.08  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.66 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wens213[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.66 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (wens213[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,74 +89,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>,
+ "j.bauer@endrich.com" <j.bauer@endrich.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "airlied@linux.ie" <airlied@linux.ie>,
+ "info@logictechno.com" <info@logictechno.com>,
+ "thierry.reding@gmail.com" <thierry.reding@gmail.com>,
+ "marcel@ziswiler.com" <marcel@ziswiler.com>,
+ "daniel@ffwll.ch" <daniel@ffwll.ch>, "sam@ravnborg.org" <sam@ravnborg.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Wed, Oct 2, 2019 at 5:27 AM Philippe Schenker
+<philippe.schenker@toradex.com> wrote:
+>
+> On Tue, 2019-10-01 at 17:05 -0500, Rob Herring wrote:
+> > On Fri, Sep 20, 2019 at 09:54:11AM +0200, Marcel Ziswiler wrote:
+> > > From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+> > >
+> > > Add display timings for the following 3 display panels manufactured
+> > > by
+> > > Logic Technologies Limited:
+> > >
+> > > - LT161010-2NHC e.g. as found in the Toradex Capacitive Touch
+> > > Display
+> > >   7" Parallel [1]
+> > > - LT161010-2NHR e.g. as found in the Toradex Resistive Touch Display
+> > > 7"
+> > >   Parallel [2]
+> > > - LT170410-2WHC e.g. as found in the Toradex Capacitive Touch
+> > > Display
+> > >   10.1" LVDS [3]
+> > >
+> > > Those panels may also be distributed by Endrich Bauelemente
+> > > Vertriebs
+> > > GmbH [4].
+> > >
+> > > [1]
+> > > https://docs.toradex.com/104497-7-inch-parallel-capacitive-touch-display-800x480-datasheet.pdf
+> > > [2]
+> > > https://docs.toradex.com/104498-7-inch-parallel-resistive-touch-display-800x480.pdf
+> > > [3]
+> > > https://docs.toradex.com/105952-10-1-inch-lvds-capacitive-touch-display-1280x800-datasheet.pdf
+> > > [4]
+> > > https://www.endrich.com/isi50_isi30_tft-displays/lt170410-1whc_isi30
+> > >
+> > > Signed-off-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+> > >
+> > > ---
+> > >
+> > >  drivers/gpu/drm/panel/panel-simple.c | 65
+> > > ++++++++++++++++++++++++++++
+> > >  1 file changed, 65 insertions(+)
+> > >
+> > > diff --git a/drivers/gpu/drm/panel/panel-simple.c
+> > > b/drivers/gpu/drm/panel/panel-simple.c
+> > > index 28fa6ba7b767..42bd0de25167 100644
+> > > --- a/drivers/gpu/drm/panel/panel-simple.c
+> > > +++ b/drivers/gpu/drm/panel/panel-simple.c
+> > > @@ -2034,6 +2034,62 @@ static const struct panel_desc lg_lp129qe = {
+> > >     },
+> > >  };
+> > >
+> > > +static const struct display_timing logictechno_lt161010_2nh_timing
+> > > = {
+> > > +   .pixelclock = { 26400000, 33300000, 46800000 },
+> > > +   .hactive = { 800, 800, 800 },
+> > > +   .hfront_porch = { 16, 210, 354 },
+> > > +   .hback_porch = { 46, 46, 46 },
+> > > +   .hsync_len = { 1, 20, 40 },
+> > > +   .vactive = { 480, 480, 480 },
+> > > +   .vfront_porch = { 7, 22, 147 },
+> > > +   .vback_porch = { 23, 23, 23 },
+> > > +   .vsync_len = { 1, 10, 20 },
+> > > +   .flags = DISPLAY_FLAGS_HSYNC_LOW | DISPLAY_FLAGS_VSYNC_LOW |
+> > > +            DISPLAY_FLAGS_DE_HIGH | DISPLAY_FLAGS_PIXDATA_POSEDGE |
+> > > +            DISPLAY_FLAGS_SYNC_POSEDGE,
+> > > +};
+> > > +
+> > > +static const struct panel_desc logictechno_lt161010_2nh = {
+> > > +   .timings = &logictechno_lt161010_2nh_timing,
+> > > +   .num_timings = 1,
+> > > +   .size = {
+> > > +           .width = 154,
+> > > +           .height = 86,
+> > > +   },
+> > > +   .bus_format = MEDIA_BUS_FMT_RGB666_1X18,
+> > > +   .bus_flags = DRM_BUS_FLAG_DE_HIGH |
+> > > +                DRM_BUS_FLAG_PIXDATA_SAMPLE_NEGEDGE |
+> > > +                DRM_BUS_FLAG_SYNC_SAMPLE_NEGEDGE,
+> > > +};
+> > > +
+> > > +static const struct display_timing logictechno_lt170410_2whc_timing
+> > > = {
+> > > +   .pixelclock = { 68900000, 71100000, 7340000 },
+> > > +   .hactive = { 1280, 1280, 1280 },
+> > > +   .hfront_porch = { 23, 60, 71 },
+> > > +   .hback_porch = { 23, 60, 71 },
+> > > +   .hsync_len = { 15, 40, 47 },
+> > > +   .vactive = { 800, 800, 800 },
+> > > +   .vfront_porch = { 5, 7, 10 },
+> > > +   .vback_porch = { 5, 7, 10 },
+> > > +   .vsync_len = { 6, 9, 12 },
+> > > +   .flags = DISPLAY_FLAGS_HSYNC_LOW | DISPLAY_FLAGS_VSYNC_LOW |
+> > > +            DISPLAY_FLAGS_DE_HIGH | DISPLAY_FLAGS_PIXDATA_POSEDGE |
+> > > +            DISPLAY_FLAGS_SYNC_POSEDGE,
+> > > +};
+> > > +
+> > > +static const struct panel_desc logictechno_lt170410_2whc = {
+> > > +   .timings = &logictechno_lt170410_2whc_timing,
+> > > +   .num_timings = 1,
+> > > +   .size = {
+> > > +           .width = 217,
+> > > +           .height = 136,
+> > > +   },
+> > > +   .bus_format = MEDIA_BUS_FMT_RGB888_1X7X4_SPWG,
+> > > +   .bus_flags = DRM_BUS_FLAG_DE_HIGH |
+> > > +                DRM_BUS_FLAG_PIXDATA_SAMPLE_NEGEDGE |
+> > > +                DRM_BUS_FLAG_SYNC_SAMPLE_NEGEDGE,
+> > > +};
+> > > +
+> > >  static const struct drm_display_mode mitsubishi_aa070mc01_mode = {
+> > >     .clock = 30400,
+> > >     .hdisplay = 800,
+> > > @@ -3264,6 +3320,15 @@ static const struct of_device_id
+> > > platform_of_match[] = {
+> > >     }, {
+> > >             .compatible = "lg,lp129qe",
+> > >             .data = &lg_lp129qe,
+> > > +   }, {
+> > > +           .compatible = "logictechno,lt161010-2nhc",
+> > > +           .data = &logictechno_lt161010_2nh,
+> > > +   }, {
+> > > +           .compatible = "logictechno,lt161010-2nhr",
+> > > +           .data = &logictechno_lt161010_2nh,
+> > > +   }, {
+> > > +           .compatible = "logictechno,lt170410-2whc",
+> > > +           .data = &logictechno_lt170410_2whc,
+> >
+> > The vendor prefix wasn't documented, but the compatible string and
+> > rest
+> > already are?
+>
+> Marcel added the vendor prefix in the first patch of the series [1]
 
-On Thu, Oct 3, 2019 at 11:48 PM Maxime Ripard <mripard@kernel.org> wrote:
->
-> It turns out that what was thought to be the module clock was actually the
-> clock meant to be used by the sensor, and isn't playing any role with the
-> CSI controller itself. Let's drop that clock from our binding.
->
-> Fixes: c5e8f4ccd775 ("media: dt-bindings: media: Add Allwinner A10 CSI binding")
-> Reported-by: Chen-Yu Tsai <wens@csie.org>
-> Signed-off-by: Maxime Ripard <mripard@kernel.org>
-> ---
->  .../devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml | 7 ++-----
->  1 file changed, 2 insertions(+), 5 deletions(-)
->
-> diff --git a/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
-> index 5dd1cf490cd9..d3e423fcb6c2 100644
-> --- a/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
-> +++ b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
-> @@ -27,14 +27,12 @@ properties:
->    clocks:
->      items:
->        - description: The CSI interface clock
-> -      - description: The CSI module clock
->        - description: The CSI ISP clock
->        - description: The CSI DRAM clock
->
->    clock-names:
->      items:
->        - const: bus
-> -      - const: mod
->        - const: isp
->        - const: ram
->
-> @@ -89,9 +87,8 @@ examples:
->          compatible = "allwinner,sun7i-a20-csi0";
->          reg = <0x01c09000 0x1000>;
->          interrupts = <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
-> -        clocks = <&ccu CLK_AHB_CSI0>, <&ccu CLK_CSI0>,
-> -                 <&ccu CLK_CSI_SCLK>, <&ccu CLK_DRAM_CSI0>;
-> -        clock-names = "bus", "mod", "isp", "ram";
-> +        clocks = <&ccu CLK_AHB_CSI0>, <&ccu CLK_CSI_SCLK>, <&ccu CLK_DRAM_CSI0>;
-> +        clock-names = "bus", "isp", "ram";
+Right, but where's the panel's binding documentation with the above
+compatible strings documented?
 
-I believe what we thought was the ISP clock is actually the module clock
-for the whole CSI subsystem. So we should still use the module clock entry,
-and remove the ISP entry.
-
-ChenYu
-
->          resets = <&ccu RST_CSI0>;
->
->          port {
-> --
-> 2.23.0
->
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
