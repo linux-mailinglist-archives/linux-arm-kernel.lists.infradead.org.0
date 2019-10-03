@@ -2,60 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9246CAE9D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 20:54:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 495AFCAEA7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 20:56:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=loS6LFxFC+SaU4VaWp0E7hzI99JwPv5mTBr7XzNq9Mg=; b=ru2
-	q/gAn4fW405Hs7AXJQZBzIju4LpO+PkmYGg5IkvYgC76JeVpxuQuwyC/i6b9NTFlzHbDeG/vVHXC3
-	FLp5VZ34Y8IRMs0IzMH590s6D+HSyEwcLyl+xo1isn+9zb07UkItMOtSSjuvIycCNRsNxibPgI0xv
-	a6vX6mMJ8BA+VuVglyskwRruuhcTitXvTZvg5fJ6mfPGFRP/itGAZLxsDuWZdpIRhu4Edu0X+cPv+
-	05rcbaRju3I4P54D064t6XQ86uBq95+wFDqm1UQsD1uLmi/Ta5uprHv4+VgTvGI72Qp9axUjQo8AM
-	yWmcJdQvgAPUc2VACHIf9w8u8VVJRqg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Date:Subject:To:From:References:
+	In-Reply-To:MIME-Version:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UzTanH36PuApsQpEGOpV6lCLBWa9UHJNf6WZMpECrmk=; b=pOUgVFlcWx3BlV
+	7mRMfxWNP23kafLg1eInsc6T44cGANIvPjeIPn6ne9/4eaEidAXQhyhj0WXSXT/dVYsTd367IkA56
+	oSjWeYBy8ytH6MrVw09xYKJkrj45VyZlNTaeWINeVUPYFlUD5uwYcq1W88HInQb8KHNLb9esNRtuF
+	LACvoe+ChG826IKv5sKbn0IOiFNJ9BHFTMqVoR5mmkLXc+gmruXUvitbn4xRgPu7zzdoJ6iaUg8uc
+	PpF74GA209v8pg/sZ68HZZEyI5H3oKtR6tt4nLIJUFjBdffLhQrhVwSydQZXFxJqtSUWtuITKtrDF
+	Ze15xCMqhdZBJiKQREBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG6Eq-0003S9-9a; Thu, 03 Oct 2019 18:54:08 +0000
-Received: from mxwww.masterlogin.de ([95.129.51.220])
+	id 1iG6Gq-0005Zj-IU; Thu, 03 Oct 2019 18:56:12 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG6Eh-0003R0-OM; Thu, 03 Oct 2019 18:54:01 +0000
-Received: from mxout2.routing.net (unknown [192.168.10.82])
- by new.mxwww.masterlogin.de (Postfix) with ESMTPS id A5FE596C8B;
- Thu,  3 Oct 2019 18:53:53 +0000 (UTC)
-Received: from mxbox4.masterlogin.de (unknown [192.168.10.79])
- by mxout2.routing.net (Postfix) with ESMTP id 127BF648FA;
- Thu,  3 Oct 2019 18:53:54 +0000 (UTC)
-Received: from localhost.localdomain (fttx-pool-217.61.155.74.bambit.de
- [217.61.155.74])
- by mxbox4.masterlogin.de (Postfix) with ESMTPSA id 71F278089F;
- Thu,  3 Oct 2019 18:53:53 +0000 (UTC)
-From: Frank Wunderlich <frank-w@public-files.de>
-To: Lee Jones <lee.jones@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org,
- Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
-Subject: [PATCH] mfd: mt6397: fix probe after changing mt6397-core
-Date: Thu,  3 Oct 2019 20:53:23 +0200
-Message-Id: <20191003185323.24646-1-frank-w@public-files.de>
-X-Mailer: git-send-email 2.17.1
+ id 1iG6Gk-0005ZH-27
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 18:56:07 +0000
+Received: by mail-pf1-x444.google.com with SMTP id y5so2334482pfo.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 03 Oct 2019 11:56:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=message-id:mime-version:content-transfer-encoding:in-reply-to
+ :references:from:to:cc:subject:user-agent:date;
+ bh=m3hPkICQE69+a0xauYT0Amw2XtL4GDAq+zoSEfirsuU=;
+ b=RTH7eMPNg4REcj7uJxBnWgOGXzLh25RAdH0XvU6vUYGvMXEuc4SQe9Mopl1HUy9qTV
+ NwlkefUwbR5ZusY6euOhVnCNMd9HBRlowLYcDJ+/tismHYMOUtJdHE3jmXC+xB5H1rFG
+ MUmS1wlEq19k/B0rutrOSHgMx0/zeNEFj52Eo=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:mime-version
+ :content-transfer-encoding:in-reply-to:references:from:to:cc:subject
+ :user-agent:date;
+ bh=m3hPkICQE69+a0xauYT0Amw2XtL4GDAq+zoSEfirsuU=;
+ b=Ne600hiU7BlWhDVDlHsCwHwdKeD+BuiE5tSvOJTWrVl7wIJLpaa5go7glC7rQ7iSMX
+ m2J31Y8fI6iCCQJdi1hfKRterp8v0LF2Fm1G6TGfj5fhainIYBBpExk1gFiwF64chiAH
+ OJ+0vaWlroUBLC2CsapHgpYBDLNodtDhWLJiO4tqu7f2RMEflR+Ej1ZRbhslPkk2+dYt
+ cE/hqaJVRnrDL7rxG/BqK5gOawHDaHuLauCuN/Tmfi5wWUOuk7JUVxPqRk3dnpL9pP5j
+ Jyvrx/06Q/NNDEbDf1M2bde0jHOJ0yXLiVp1TKNzWHRtLJAl/ekH7H+FIqQPKgTZWZLC
+ ZmpA==
+X-Gm-Message-State: APjAAAWHaBbKpUnVQc9mpy9URAjApKXfSnYMPRk2tEgMCZaJaYpA2Ggx
+ eyAd5btwBf/gm4YdV8yMsMNBRg==
+X-Google-Smtp-Source: APXvYqwDCBHsPX8dh6oRQ9FHBVLRypmHbpAWhqLjb3zrDPeKQKRHPbU3F7fMBBGRfrbzqBb/RLO09A==
+X-Received: by 2002:a17:90a:fa3:: with SMTP id
+ 32mr12426687pjz.35.1570128965072; 
+ Thu, 03 Oct 2019 11:56:05 -0700 (PDT)
+Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
+ by smtp.gmail.com with ESMTPSA id v68sm4379189pfv.47.2019.10.03.11.56.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 03 Oct 2019 11:56:04 -0700 (PDT)
+Message-ID: <5d964444.1c69fb81.121ce.d43b@mx.google.com>
+MIME-Version: 1.0
+In-Reply-To: <CAE=gft6YdNszcJV67CwcY2gOgPHrJ1+SnKMLr63f2bix2aZXXA@mail.gmail.com>
+References: <20190910160903.65694-1-swboyd@chromium.org>
+ <20190910160903.65694-4-swboyd@chromium.org>
+ <CAE=gft6YdNszcJV67CwcY2gOgPHrJ1+SnKMLr63f2bix2aZXXA@mail.gmail.com>
+From: Stephen Boyd <swboyd@chromium.org>
+To: Evan Green <evgreen@chromium.org>
+Subject: Re: [PATCH v3 3/5] memremap: Add support for read-only memory mappings
+User-Agent: alot/0.8.1
+Date: Thu, 03 Oct 2019 11:56:03 -0700
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_115400_092627_D76E1C52 
-X-CRM114-Status: GOOD (  11.22  )
-X-Spam-Score: -0.4 (/)
+X-CRM114-CacheID: sfid-20191003_115606_128615_DD617F06 
+X-CRM114-Status: GOOD (  15.44  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [95.129.51.220 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,151 +98,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Frank Wunderlich <frank-w@public-files.de>
-MIME-Version: 1.0
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Will Deacon <will.deacon@arm.com>, LKML <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Andy Gross <agross@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ Dan Williams <dan.j.williams@intel.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Part 3 from this series [1] was not merged due to wrong splitting
-and breaks mt6323 pmic on bananapi-r2
+Quoting Evan Green (2019-09-18 12:37:34)
+> On Tue, Sep 10, 2019 at 9:09 AM Stephen Boyd <swboyd@chromium.org> wrote:
+> >
+> > @@ -53,6 +60,9 @@ static void *try_ram_remap(resource_size_t offset, size_t size,
+> >   * mapping types will be attempted in the order listed below until one of
+> >   * them succeeds.
+> >   *
+> > + * MEMREMAP_RO - establish a mapping whereby writes are ignored/rejected.
+> > + * Attempts to map System RAM with this mapping type will fail.
+> 
+> Why should attempts to map RAM with this flag fail? MEMREMAP_WB will
+> allow RAM and quietly give you back the direct mapping, so it seems
+> like at least some values in this function allow RAM.
+> 
+> Oh, I see a comment below about "Enforce that this mapping is not
+> aliasing System RAM". I guess this is worried about cache coloring?
+> But is that a problem with RO mappings? I guess the RO mappings could
+> get partially stale, so if the memory were being updated out from
+> under you, you might see some updates but not others. Was that the
+> rationale?
 
-dmesg prints this line and at least switch is not initialized on bananapi-r2
+Will Deacon, Dan Williams, and I talked about this RO flag at LPC and I
+believe we decided to mostly get rid of the flags argument to this
+function. The vast majority of callers pass MEMREMAP_WB, so I'll just
+make that be the implementation default and support the flags for
+encrpytion (MEMREMAP_ENC and MEMREMAP_DEC). There are a few callers that
+pass MEMREMAP_WC or MEMREMAP_WT (and one that passes all of them), but I
+believe those can be changed to MEMREMAP_WB and not care. There's also
+the efi framebuffer code that matches the memory attributes in the EFI
+memory map. I'm not sure what to do with that one to be quite honest.
+Maybe EFI shouldn't care and just use whatever is already there in the
+mapping?
 
-mt6397 1000d000.pwrap:mt6323: unsupported chip: 0x0
-
-this patch contains only the probe-changes and chip_data structs
-from original part 3 by Hsin-Hsiung Wang
-
-Fixes: a4872e80ce7d2a1844328176dbf279d0a2b89bdb mfd: mt6397: Extract IRQ related code from core driver
-
-[1] https://patchwork.kernel.org/project/linux-mediatek/list/?series=164155
-
-Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
----
- drivers/mfd/mt6397-core.c | 64 ++++++++++++++++++++++++---------------
- 1 file changed, 40 insertions(+), 24 deletions(-)
-
-diff --git a/drivers/mfd/mt6397-core.c b/drivers/mfd/mt6397-core.c
-index 310dae26ddff..b2c325ead1c8 100644
---- a/drivers/mfd/mt6397-core.c
-+++ b/drivers/mfd/mt6397-core.c
-@@ -129,11 +129,27 @@ static int mt6397_irq_resume(struct device *dev)
- static SIMPLE_DEV_PM_OPS(mt6397_pm_ops, mt6397_irq_suspend,
- 			mt6397_irq_resume);
- 
-+struct chip_data {
-+	u32 cid_addr;
-+	u32 cid_shift;
-+};
-+
-+static const struct chip_data mt6323_core = {
-+	.cid_addr = MT6323_CID,
-+	.cid_shift = 0,
-+};
-+
-+static const struct chip_data mt6397_core = {
-+	.cid_addr = MT6397_CID,
-+	.cid_shift = 0,
-+};
-+
- static int mt6397_probe(struct platform_device *pdev)
- {
- 	int ret;
- 	unsigned int id;
- 	struct mt6397_chip *pmic;
-+	const struct chip_data *pmic_core;
- 
- 	pmic = devm_kzalloc(&pdev->dev, sizeof(*pmic), GFP_KERNEL);
- 	if (!pmic)
-@@ -149,28 +165,30 @@ static int mt6397_probe(struct platform_device *pdev)
- 	if (!pmic->regmap)
- 		return -ENODEV;
- 
--	platform_set_drvdata(pdev, pmic);
-+	pmic_core = of_device_get_match_data(&pdev->dev);
-+	if (!pmic_core)
-+		return -ENODEV;
- 
--	ret = regmap_read(pmic->regmap, MT6397_CID, &id);
-+	ret = regmap_read(pmic->regmap, pmic_core->cid_addr, &id);
- 	if (ret) {
--		dev_err(pmic->dev, "Failed to read chip id: %d\n", ret);
-+		dev_err(&pdev->dev, "Failed to read chip id: %d\n", ret);
- 		return ret;
- 	}
- 
-+	pmic->chip_id = (id >> pmic_core->cid_shift) & 0xff;
-+
-+	platform_set_drvdata(pdev, pmic);
-+
- 	pmic->irq = platform_get_irq(pdev, 0);
- 	if (pmic->irq <= 0)
- 		return pmic->irq;
- 
--	switch (id & 0xff) {
--	case MT6323_CHIP_ID:
--		pmic->int_con[0] = MT6323_INT_CON0;
--		pmic->int_con[1] = MT6323_INT_CON1;
--		pmic->int_status[0] = MT6323_INT_STATUS0;
--		pmic->int_status[1] = MT6323_INT_STATUS1;
--		ret = mt6397_irq_init(pmic);
--		if (ret)
--			return ret;
-+	ret = mt6397_irq_init(pmic);
-+	if (ret)
-+		return ret;
- 
-+	switch (pmic->chip_id) {
-+	case MT6323_CHIP_ID:
- 		ret = devm_mfd_add_devices(&pdev->dev, -1, mt6323_devs,
- 					   ARRAY_SIZE(mt6323_devs), NULL,
- 					   0, pmic->irq_domain);
-@@ -178,21 +196,13 @@ static int mt6397_probe(struct platform_device *pdev)
- 
- 	case MT6391_CHIP_ID:
- 	case MT6397_CHIP_ID:
--		pmic->int_con[0] = MT6397_INT_CON0;
--		pmic->int_con[1] = MT6397_INT_CON1;
--		pmic->int_status[0] = MT6397_INT_STATUS0;
--		pmic->int_status[1] = MT6397_INT_STATUS1;
--		ret = mt6397_irq_init(pmic);
--		if (ret)
--			return ret;
--
- 		ret = devm_mfd_add_devices(&pdev->dev, -1, mt6397_devs,
- 					   ARRAY_SIZE(mt6397_devs), NULL,
- 					   0, pmic->irq_domain);
- 		break;
- 
- 	default:
--		dev_err(&pdev->dev, "unsupported chip: %d\n", id);
-+		dev_err(&pdev->dev, "unsupported chip: %d\n", pmic->chip_id);
- 		return -ENODEV;
- 	}
- 
-@@ -205,9 +215,15 @@ static int mt6397_probe(struct platform_device *pdev)
- }
- 
- static const struct of_device_id mt6397_of_match[] = {
--	{ .compatible = "mediatek,mt6397" },
--	{ .compatible = "mediatek,mt6323" },
--	{ }
-+	{
-+		.compatible = "mediatek,mt6323",
-+		.data = &mt6323_core,
-+	}, {
-+		.compatible = "mediatek,mt6397",
-+		.data = &mt6397_core,
-+	}, {
-+		/* sentinel */
-+	}
- };
- MODULE_DEVICE_TABLE(of, mt6397_of_match);
- 
--- 
-2.17.1
+Either way, I'll introduce a memremap_ro() API that maps memory as read
+only if possible and return a const void pointer as well. I'm debating
+making that API fallback to memremap() if RO isn't supported for some
+reason or can't work because we're remapping system memory but that
+seems a little too nice when the caller could just as well decide to
+fail if memory can't be mapped as read only.
 
 
 _______________________________________________
