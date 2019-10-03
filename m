@@ -2,81 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5EC6C9B30
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 11:56:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F829C9B69
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 12:02:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=GJzuHl7Wnv94OfCIeHH+BzN9IRU7THEek1sOxXTC/3k=; b=hkKYzdRcsY0R+C3zpCky6748b6
-	qxDoq3Q7GgItda8QAPOnyN/SMN9TsAab6Xf0ilmNINYTT+iE1byGYAynhvw7WQoDm9zMheDtzJvip
-	L46RHaBFn8VDevxuFC7RH0nkCGJxVCNxqdOphU2xncYdSa4xtYKNFJjQmk93ZsaC+z7la41FZWtxl
-	ckVMGafyLQ6NQ0zZp3sJEaJrFJlosQBxOYXCR/xOiQLk44+p2D2O414Mm3OLaUlfQDjT8t+NYMVuH
-	6Wx34nvigL96R1mqLwgRYHmY3vNFAn1tMT58qHohr7IX53eQ8IuoqG2kPyAcfmiwpoJcnF7U1Cr5E
-	rHXTfxbg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=C+NtnJCyxrh8wRG1hk4vcPa+3EGXUTFU+BWZRd0ayH4=; b=DpdtA/H4rRmVRi
+	atbYNd9V06YxG/ClzUJnmITK92fkzbdMB1je1D2nfkLnm805tv4vECeDOiNNeWsm6hnckljNoboXZ
+	NUK07r/cK2q9yZHHrbZ2o+iwzjMBOEP5zk0k9oKrKrGQokGvQo6j5rR0LTczfrN5r3B20mkoRwjFf
+	ZXdv9mk5cQ/Fsx91cKJzU1oOH0IIbxGKOKCU486LqV1khF88kL/OR2SMJkTVmYYK77uk65TiG5X8Q
+	PKmuo4yLM6gokkMmhmRzh3ho4ZxeBKoaXmhHFrFdmjcFPBeXuBp1gYooIQo8k8GR3nuek7r1a9OPd
+	Fbj7/NdWZ2wQSQo1Wjgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFxqD-0002Yr-2S; Thu, 03 Oct 2019 09:56:09 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iFxvi-0004XY-I3; Thu, 03 Oct 2019 10:01:50 +0000
+Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFxpm-0002Lg-86
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 09:55:45 +0000
-Received: by mail-pf1-x441.google.com with SMTP id y5so1415761pfo.4
+ id 1iFxvZ-0004WN-7H
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 10:01:42 +0000
+Received: by mail-vs1-xe41.google.com with SMTP id p13so1306554vso.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 03 Oct 2019 02:55:42 -0700 (PDT)
+ Thu, 03 Oct 2019 03:01:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=o1XJzdEwu/2eHGFvTsEbWbY8CPzZ87EfR1w5/dQVTA8=;
- b=AwG2Aoh7exzqtJWC0XRshUbEYLw+0+7yYahxa6gL8GGfAvq5FpOPKr56tRlheZGXKr
- WLbWtWjSHmgez3V4zvyoWdKpccYSZOIyV4wc16PWqQdzhfadH04tn5gABH5hzFy5Yja/
- O/SkXiWcRJLaZZkh0eEG1r3kXo/mtPGXscDu6xYQYg5Muml/MtGYwzpUJgvdcYVVup+A
- uBJhCnlrgLjPveBs+F38TVWrYwM0FLmATt6bpz1aaYrr3/MlslvVeIBKODbehq0L7UG/
- pOK97QX/+snUrf7BhDC+kSsanSE3istA+/vyHk0Fbqr8X+or1WTXiuiPHULLdflW3iZ1
- PS2Q==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=6B+E5RivcC5owz7oFA9AYi1iwjoiCE7P7xcMi6UgLa0=;
+ b=hq/EKDlVT66/mmZ8X58aU7DGkBtQoN38XbVyMTmedpHFhNBWSXRua2vJ8cs7mp0mXW
+ TuFkXknq5YLy2qnKHYeEUDrqQg4f9De83VAASuIknveh1oV7kMa+kUGD6Pjh5Mf+l3ai
+ 0yG+gbXTjTu+xTj2AHaNQ54Ga5TBXI9v7l4CGR0xH23+KFgFwUzqN3EopiOH0ws4wrge
+ lfigp/bs/NBuqwTWgcnwhrmB2VydJvzv9MXxC7OzhNL0JEdwf241/HE7pusy+9qgoWQP
+ zOgNV8kWFOmDsqTzeSHfQkTbZ/B0NkUO/ywFMB0Lwoi3daYmW1bZGkXDEMJ3lm7jLZZ0
+ vIpw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=o1XJzdEwu/2eHGFvTsEbWbY8CPzZ87EfR1w5/dQVTA8=;
- b=lKsCer7U8uGv99qM/cu93gKi38iaxOis/kCO+C8ELH0D8CDc/ZvUxlxqvdE+CX/8QX
- XRM/s5VkApuiQw29+G4inp8fUR7FnIjf6yUEkMbPWZ6g1ffBNcLNYR9gI7gIkerQaO4R
- yl0MPSKB0jYz6EFdGi0Sle74NJBwqUyGaz5m326DOn6j7RXXOQIZZF5ERoV/PwmTu+c5
- vr1YpaeZi5WbATwSLFsHDkot1B0KiJjU0ZVRuo9yJXFZmLaFZdrKhjRYihwTK772Cyvq
- MnnWy98C0tI6w1Kn0Q6fuVWN//vDw1BLyuzoz1ONI9Fisfn6xnQgb+0lwoxHG3qy/IND
- tEsQ==
-X-Gm-Message-State: APjAAAVpdzxdp1/x0h7vh2SpdY8Nb/bxQpTB/buaa/7uYIR4lLS5cUhz
- VB5moAFu6CiCdER0XtBGfztU
-X-Google-Smtp-Source: APXvYqxx7AvlkCmfNa+8PBbGtjAKwzakt9sqysoQuxLSYRKYrh+ZjB2/pW33cT/lpRg6dZKa+aSEPA==
-X-Received: by 2002:a17:90a:a2b:: with SMTP id
- o40mr9752997pjo.107.1570096541020; 
- Thu, 03 Oct 2019 02:55:41 -0700 (PDT)
-Received: from localhost.localdomain ([2409:4072:801:ac5d:fca3:6f38:70fb:67fc])
- by smtp.gmail.com with ESMTPSA id v3sm2346171pfn.18.2019.10.03.02.55.34
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 03 Oct 2019 02:55:40 -0700 (PDT)
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: mchehab@kernel.org,
-	robh+dt@kernel.org,
-	sakari.ailus@iki.fi
-Subject: [PATCH v4 2/2] media: i2c: Add IMX290 CMOS image sensor driver
-Date: Thu,  3 Oct 2019 15:25:03 +0530
-Message-Id: <20191003095503.12614-3-manivannan.sadhasivam@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191003095503.12614-1-manivannan.sadhasivam@linaro.org>
-References: <20191003095503.12614-1-manivannan.sadhasivam@linaro.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=6B+E5RivcC5owz7oFA9AYi1iwjoiCE7P7xcMi6UgLa0=;
+ b=j2id8/MjAvLbsuptLCNQzKomCXY1blPqvqStqfAdpkESPfUoaWUxbPbArZJUHmujvp
+ 6OLjqhXmkIqsZ8COgj29PAv+4sl3G8wcNhnfwiAQUYmSaDwYrlIyE2pgn4NWfBEQAnyZ
+ Wxdb/rdunuTcg0FxpLvFMAR0AiIDPobjr4Cg7Hz1yqzF6NyUsKgDNBBGIUf98W/MYanK
+ wWAsEuIWU2toz5a8XZ9n3uZlJ3iqCZfx4GWGfFftFCfAj6Gwez4BxrIa9571KkB7LxH3
+ cNVcDkUO7KpqFJhXLgWJDPUhKvMiU8gVAQomgGciL7WUH3kA3feQ8tPbSLZrLRfF6e/+
+ robg==
+X-Gm-Message-State: APjAAAW6yeJOLg3PyoyYHXU6Yxk7arfIe/wJ/L1QYvi3MGpp1EslLzMl
+ CHr4Nmz0D2k7JT4uxXmsAjuHpUz3w6+mPw4LdAA6dg==
+X-Google-Smtp-Source: APXvYqzlwi4amB7UdX5f2PKpwQatyFRQoBhnTFgxEQxEattFx/iQqKHcqAKAacBmYgLaUplhc/Bvnw0AfD5cC3bxSNI=
+X-Received: by 2002:a67:eb84:: with SMTP id e4mr4472823vso.165.1570096899417; 
+ Thu, 03 Oct 2019 03:01:39 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190916154546.24982-1-manivannan.sadhasivam@linaro.org>
+ <20190916154546.24982-3-manivannan.sadhasivam@linaro.org>
+In-Reply-To: <20190916154546.24982-3-manivannan.sadhasivam@linaro.org>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Thu, 3 Oct 2019 12:01:03 +0200
+Message-ID: <CAPDyKFo3+uAYr-j_qmBMeqO9TsY8PFv2J0kzAi56LYWe+E-o9w@mail.gmail.com>
+Subject: Re: [PATCH v4 2/7] dt-bindings: mmc: Add Actions Semi SD/MMC/SDIO
+ controller binding
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_025542_335037_26585526 
-X-CRM114-Status: GOOD (  20.26  )
+X-CRM114-CacheID: sfid-20191003_030141_266489_EB1FDA7E 
+X-CRM114-Status: GOOD (  13.95  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -98,975 +92,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
- linux-kernel@vger.kernel.org, a.brela@framos.com,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-MIME-Version: 1.0
+Cc: DTML <devicetree@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ linux-actions@lists.infradead.org, Linus Walleij <linus.walleij@linaro.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ thomas.liau@actions-semi.com, linux-clk <linux-clk@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add driver for Sony IMX290 CMOS image sensor driver. The driver only
-supports I2C interface for programming and MIPI CSI-2 for sensor output.
+On Mon, 16 Sep 2019 at 17:46, Manivannan Sadhasivam
+<manivannan.sadhasivam@linaro.org> wrote:
+>
+> Add devicetree YAML binding for Actions Semi Owl SoC's SD/MMC/SDIO
+> controller.
+>
+> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 
-Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
----
- MAINTAINERS                |   8 +
- drivers/media/i2c/Kconfig  |  11 +
- drivers/media/i2c/Makefile |   1 +
- drivers/media/i2c/imx290.c | 885 +++++++++++++++++++++++++++++++++++++
- 4 files changed, 905 insertions(+)
- create mode 100644 drivers/media/i2c/imx290.c
+Applied for next, thanks!
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index f7c84004187d..0ee261fca602 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -14962,6 +14962,14 @@ S:	Maintained
- F:	drivers/media/i2c/imx274.c
- F:	Documentation/devicetree/bindings/media/i2c/imx274.txt
- 
-+SONY IMX290 SENSOR DRIVER
-+M:	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-+L:	linux-media@vger.kernel.org
-+T:	git git://linuxtv.org/media_tree.git
-+S:	Maintained
-+F:	drivers/media/i2c/imx290.c
-+F:	Documentation/devicetree/bindings/media/i2c/imx290.txt
-+
- SONY IMX319 SENSOR DRIVER
- M:	Bingbu Cao <bingbu.cao@intel.com>
- L:	linux-media@vger.kernel.org
-diff --git a/drivers/media/i2c/Kconfig b/drivers/media/i2c/Kconfig
-index 79ce9ec6fc1b..cd02ad227d35 100644
---- a/drivers/media/i2c/Kconfig
-+++ b/drivers/media/i2c/Kconfig
-@@ -595,6 +595,17 @@ config VIDEO_IMX274
- 	  This is a V4L2 sensor driver for the Sony IMX274
- 	  CMOS image sensor.
- 
-+config VIDEO_IMX290
-+	tristate "Sony IMX290 sensor support"
-+	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
-+	select V4L2_FWNODE
-+	help
-+	  This is a Video4Linux2 sensor driver for the Sony
-+	  IMX290 camera sensor.
-+
-+	  To compile this driver as a module, choose M here: the
-+	  module will be called imx290.
-+
- config VIDEO_IMX319
- 	tristate "Sony IMX319 sensor support"
- 	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
-diff --git a/drivers/media/i2c/Makefile b/drivers/media/i2c/Makefile
-index fd4ea86dedd5..04411ddb4922 100644
---- a/drivers/media/i2c/Makefile
-+++ b/drivers/media/i2c/Makefile
-@@ -111,6 +111,7 @@ obj-$(CONFIG_VIDEO_TC358743)	+= tc358743.o
- obj-$(CONFIG_VIDEO_IMX214)	+= imx214.o
- obj-$(CONFIG_VIDEO_IMX258)	+= imx258.o
- obj-$(CONFIG_VIDEO_IMX274)	+= imx274.o
-+obj-$(CONFIG_VIDEO_IMX290)	+= imx290.o
- obj-$(CONFIG_VIDEO_IMX319)	+= imx319.o
- obj-$(CONFIG_VIDEO_IMX355)	+= imx355.o
- obj-$(CONFIG_VIDEO_ST_MIPID02) += st-mipid02.o
-diff --git a/drivers/media/i2c/imx290.c b/drivers/media/i2c/imx290.c
-new file mode 100644
-index 000000000000..2554447eb5dc
---- /dev/null
-+++ b/drivers/media/i2c/imx290.c
-@@ -0,0 +1,885 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Sony IMX290 CMOS Image Sensor Driver
-+ *
-+ * Copyright (C) 2019 FRAMOS GmbH.
-+ *
-+ * Copyright (C) 2019 Linaro Ltd.
-+ * Author: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/delay.h>
-+#include <linux/gpio/consumer.h>
-+#include <linux/i2c.h>
-+#include <linux/module.h>
-+#include <linux/pm_runtime.h>
-+#include <linux/regmap.h>
-+#include <linux/regulator/consumer.h>
-+#include <media/media-entity.h>
-+#include <media/v4l2-ctrls.h>
-+#include <media/v4l2-device.h>
-+#include <media/v4l2-fwnode.h>
-+#include <media/v4l2-subdev.h>
-+
-+#define IMX290_STANDBY 0x3000
-+#define IMX290_REGHOLD 0x3001
-+#define IMX290_XMSTA 0x3002
-+#define IMX290_GAIN 0x3014
-+
-+#define IMX290_DEFAULT_LINK_FREQ 445500000
-+
-+static const char * const imx290_supply_name[] = {
-+	"vdda",
-+	"vddd",
-+	"vdddo",
-+};
-+
-+#define IMX290_NUM_SUPPLIES ARRAY_SIZE(imx290_supply_name)
-+
-+struct imx290_regval {
-+	u16 reg;
-+	u8 val;
-+};
-+
-+struct imx290_mode {
-+	u32 width;
-+	u32 height;
-+	u32 pixel_rate;
-+	u32 link_freq_index;
-+
-+	const struct imx290_regval *data;
-+	u32 data_size;
-+};
-+
-+struct imx290 {
-+	struct device *dev;
-+	struct clk *xclk;
-+	struct regmap *regmap;
-+
-+	struct v4l2_subdev sd;
-+	struct v4l2_fwnode_endpoint ep;
-+	struct media_pad pad;
-+	struct v4l2_mbus_framefmt current_format;
-+	const struct imx290_mode *current_mode;
-+
-+	struct regulator_bulk_data supplies[IMX290_NUM_SUPPLIES];
-+	struct gpio_desc *rst_gpio;
-+
-+	struct v4l2_ctrl_handler ctrls;
-+	struct v4l2_ctrl *link_freq;
-+	struct v4l2_ctrl *pixel_rate;
-+
-+	struct mutex lock;
-+};
-+
-+struct imx290_pixfmt {
-+	u32 code;
-+};
-+
-+static const struct imx290_pixfmt imx290_formats[] = {
-+	{ MEDIA_BUS_FMT_SRGGB10_1X10 },
-+};
-+
-+static const struct regmap_config imx290_regmap_config = {
-+	.reg_bits = 16,
-+	.val_bits = 8,
-+	.cache_type = REGCACHE_RBTREE,
-+};
-+
-+static const struct imx290_regval imx290_global_init_settings[] = {
-+	{ 0x3007, 0x00 },
-+	{ 0x3009, 0x00 },
-+	{ 0x3018, 0x65 },
-+	{ 0x3019, 0x04 },
-+	{ 0x301a, 0x00 },
-+	{ 0x3443, 0x03 },
-+	{ 0x3444, 0x20 },
-+	{ 0x3445, 0x25 },
-+	{ 0x3407, 0x03 },
-+	{ 0x303a, 0x0c },
-+	{ 0x3040, 0x00 },
-+	{ 0x3041, 0x00 },
-+	{ 0x303c, 0x00 },
-+	{ 0x303d, 0x00 },
-+	{ 0x3042, 0x9c },
-+	{ 0x3043, 0x07 },
-+	{ 0x303e, 0x49 },
-+	{ 0x303f, 0x04 },
-+	{ 0x304b, 0x0a },
-+	{ 0x300f, 0x00 },
-+	{ 0x3010, 0x21 },
-+	{ 0x3012, 0x64 },
-+	{ 0x3016, 0x09 },
-+	{ 0x3070, 0x02 },
-+	{ 0x3071, 0x11 },
-+	{ 0x309b, 0x10 },
-+	{ 0x309c, 0x22 },
-+	{ 0x30a2, 0x02 },
-+	{ 0x30a6, 0x20 },
-+	{ 0x30a8, 0x20 },
-+	{ 0x30aa, 0x20 },
-+	{ 0x30ac, 0x20 },
-+	{ 0x30b0, 0x43 },
-+	{ 0x3119, 0x9e },
-+	{ 0x311c, 0x1e },
-+	{ 0x311e, 0x08 },
-+	{ 0x3128, 0x05 },
-+	{ 0x313d, 0x83 },
-+	{ 0x3150, 0x03 },
-+	{ 0x317e, 0x00 },
-+	{ 0x32b8, 0x50 },
-+	{ 0x32b9, 0x10 },
-+	{ 0x32ba, 0x00 },
-+	{ 0x32bb, 0x04 },
-+	{ 0x32c8, 0x50 },
-+	{ 0x32c9, 0x10 },
-+	{ 0x32ca, 0x00 },
-+	{ 0x32cb, 0x04 },
-+	{ 0x332c, 0xd3 },
-+	{ 0x332d, 0x10 },
-+	{ 0x332e, 0x0d },
-+	{ 0x3358, 0x06 },
-+	{ 0x3359, 0xe1 },
-+	{ 0x335a, 0x11 },
-+	{ 0x3360, 0x1e },
-+	{ 0x3361, 0x61 },
-+	{ 0x3362, 0x10 },
-+	{ 0x33b0, 0x50 },
-+	{ 0x33b2, 0x1a },
-+	{ 0x33b3, 0x04 },
-+};
-+
-+static const struct imx290_regval imx290_1080p_settings[] = {
-+	/* mode settings */
-+	{ 0x3007, 0x00 },
-+	{ 0x303a, 0x0c },
-+	{ 0x3414, 0x0a },
-+	{ 0x3472, 0x80 },
-+	{ 0x3473, 0x07 },
-+	{ 0x3418, 0x38 },
-+	{ 0x3419, 0x04 },
-+	{ 0x3012, 0x64 },
-+	{ 0x3013, 0x00 },
-+	{ 0x305c, 0x18 },
-+	{ 0x305d, 0x03 },
-+	{ 0x305e, 0x20 },
-+	{ 0x305f, 0x01 },
-+	{ 0x315e, 0x1a },
-+	{ 0x3164, 0x1a },
-+	{ 0x3480, 0x49 },
-+	/* data rate settings */
-+	{ 0x3009, 0x01 },
-+	{ 0x3405, 0x10 },
-+	{ 0x3446, 0x57 },
-+	{ 0x3447, 0x00 },
-+	{ 0x3448, 0x37 },
-+	{ 0x3449, 0x00 },
-+	{ 0x344a, 0x1f },
-+	{ 0x344b, 0x00 },
-+	{ 0x344c, 0x1f },
-+	{ 0x344d, 0x00 },
-+	{ 0x344e, 0x1f },
-+	{ 0x344f, 0x00 },
-+	{ 0x3450, 0x77 },
-+	{ 0x3451, 0x00 },
-+	{ 0x3452, 0x1f },
-+	{ 0x3453, 0x00 },
-+	{ 0x3454, 0x17 },
-+	{ 0x3455, 0x00 },
-+	{ 0x301c, 0x98 },
-+	{ 0x301d, 0x08 },
-+};
-+
-+static const struct imx290_regval imx290_720p_settings[] = {
-+	/* mode settings */
-+	{ 0x3007, 0x10 },
-+	{ 0x303a, 0x06 },
-+	{ 0x3414, 0x04 },
-+	{ 0x3472, 0x00 },
-+	{ 0x3473, 0x05 },
-+	{ 0x3418, 0xd0 },
-+	{ 0x3419, 0x02 },
-+	{ 0x3012, 0x64 },
-+	{ 0x3013, 0x00 },
-+	{ 0x305c, 0x20 },
-+	{ 0x305d, 0x00 },
-+	{ 0x305e, 0x20 },
-+	{ 0x305f, 0x01 },
-+	{ 0x315e, 0x1a },
-+	{ 0x3164, 0x1a },
-+	{ 0x3480, 0x49 },
-+	/* data rate settings */
-+	{ 0x3009, 0x01 },
-+	{ 0x3405, 0x10 },
-+	{ 0x3446, 0x4f },
-+	{ 0x3447, 0x00 },
-+	{ 0x3448, 0x2f },
-+	{ 0x3449, 0x00 },
-+	{ 0x344a, 0x17 },
-+	{ 0x344b, 0x00 },
-+	{ 0x344c, 0x17 },
-+	{ 0x344d, 0x00 },
-+	{ 0x344e, 0x17 },
-+	{ 0x344f, 0x00 },
-+	{ 0x3450, 0x57 },
-+	{ 0x3451, 0x00 },
-+	{ 0x3452, 0x17 },
-+	{ 0x3453, 0x00 },
-+	{ 0x3454, 0x17 },
-+	{ 0x3455, 0x00 },
-+	{ 0x301c, 0xe4 },
-+	{ 0x301d, 0x0c },
-+};
-+
-+static const struct imx290_regval imx290_10bit_settings[] = {
-+	{ 0x3005, 0x00},
-+	{ 0x3046, 0x00},
-+	{ 0x3129, 0x1d},
-+	{ 0x317c, 0x12},
-+	{ 0x31ec, 0x37},
-+	{ 0x3441, 0x0a},
-+	{ 0x3442, 0x0a},
-+	{ 0x300a, 0x3c},
-+	{ 0x300b, 0x00},
-+};
-+
-+/* supported link frequencies */
-+static const s64 imx290_link_freq[] = {
-+	IMX290_DEFAULT_LINK_FREQ,
-+};
-+
-+/* Mode configs */
-+static const struct imx290_mode imx290_modes[] = {
-+	{
-+		.width = 1920,
-+		.height = 1080,
-+		.data = imx290_1080p_settings,
-+		.data_size = ARRAY_SIZE(imx290_1080p_settings),
-+		.pixel_rate = 178200000,
-+		.link_freq_index = 0,
-+	},
-+	{
-+		.width = 1280,
-+		.height = 720,
-+		.data = imx290_720p_settings,
-+		.data_size = ARRAY_SIZE(imx290_720p_settings),
-+		.pixel_rate = 178200000,
-+		.link_freq_index = 0,
-+	},
-+};
-+
-+static inline struct imx290 *to_imx290(struct v4l2_subdev *_sd)
-+{
-+	return container_of(_sd, struct imx290, sd);
-+}
-+
-+static inline int imx290_read_reg(struct imx290 *imx290, u16 addr, u8 *value)
-+{
-+	unsigned int regval;
-+	int ret;
-+
-+	ret = regmap_read(imx290->regmap, addr, &regval);
-+	if (ret) {
-+		dev_err(imx290->dev, "I2C read failed for addr: %x\n", addr);
-+		return ret;
-+	}
-+
-+	*value = regval & 0xff;
-+
-+	return 0;
-+}
-+
-+static int imx290_write_reg(struct imx290 *imx290, u16 addr, u8 value)
-+{
-+	int ret;
-+
-+	ret = regmap_write(imx290->regmap, addr, value);
-+	if (ret) {
-+		dev_err(imx290->dev, "I2C write failed for addr: %x\n", addr);
-+		return ret;
-+	}
-+
-+	return ret;
-+}
-+
-+static int imx290_set_register_array(struct imx290 *imx290,
-+				     const struct imx290_regval *settings,
-+				     unsigned int num_settings)
-+{
-+	unsigned int i;
-+	int ret;
-+
-+	for (i = 0; i < num_settings; ++i, ++settings) {
-+		ret = imx290_write_reg(imx290, settings->reg, settings->val);
-+		if (ret < 0)
-+			return ret;
-+
-+		/* Settle time is 10ms for all registers */
-+		msleep(10);
-+	}
-+
-+	return 0;
-+}
-+
-+static int imx290_write_buffered_reg(struct imx290 *imx290, u16 address_low,
-+				     u8 nr_regs, u32 value)
-+{
-+	unsigned int i;
-+	int ret;
-+
-+	ret = imx290_write_reg(imx290, IMX290_REGHOLD, 0x01);
-+	if (ret) {
-+		dev_err(imx290->dev, "Error setting hold register\n");
-+		return ret;
-+	}
-+
-+	for (i = 0; i < nr_regs; i++) {
-+		ret = imx290_write_reg(imx290, address_low + i,
-+				       (u8)(value >> (i * 8)));
-+		if (ret) {
-+			dev_err(imx290->dev, "Error writing buffered registers\n");
-+			return ret;
-+		}
-+	}
-+
-+	ret = imx290_write_reg(imx290, IMX290_REGHOLD, 0x00);
-+	if (ret) {
-+		dev_err(imx290->dev, "Error setting hold register\n");
-+		return ret;
-+	}
-+
-+	return ret;
-+}
-+
-+static int imx290_set_gain(struct imx290 *imx290, u32 value)
-+{
-+	int ret;
-+
-+	ret = imx290_write_buffered_reg(imx290, IMX290_GAIN, 1, value);
-+	if (ret)
-+		dev_err(imx290->dev, "Unable to write gain\n");
-+
-+	return ret;
-+}
-+
-+/* Stop streaming */
-+static int imx290_stop_streaming(struct imx290 *imx290)
-+{
-+	int ret;
-+
-+	ret = imx290_write_reg(imx290, IMX290_STANDBY, 0x01);
-+	if (ret < 0)
-+		return ret;
-+
-+	msleep(30);
-+
-+	return imx290_write_reg(imx290, IMX290_XMSTA, 0x01);
-+}
-+
-+static int imx290_set_ctrl(struct v4l2_ctrl *ctrl)
-+{
-+	struct imx290 *imx290 = container_of(ctrl->handler,
-+					     struct imx290, ctrls);
-+	int ret = 0;
-+
-+	/* V4L2 controls values will be applied only when power is already up */
-+	if (!pm_runtime_get_if_in_use(imx290->dev))
-+		return 0;
-+
-+	switch (ctrl->id) {
-+	case V4L2_CID_GAIN:
-+		ret = imx290_set_gain(imx290, ctrl->val);
-+		break;
-+	default:
-+		ret = -EINVAL;
-+		break;
-+	}
-+
-+	pm_runtime_put(imx290->dev);
-+
-+	return ret;
-+}
-+
-+static const struct v4l2_ctrl_ops imx290_ctrl_ops = {
-+	.s_ctrl = imx290_set_ctrl,
-+};
-+
-+static int imx290_enum_mbus_code(struct v4l2_subdev *sd,
-+				 struct v4l2_subdev_pad_config *cfg,
-+				 struct v4l2_subdev_mbus_code_enum *code)
-+{
-+	if (code->index >= ARRAY_SIZE(imx290_formats))
-+		return -EINVAL;
-+
-+	code->code = imx290_formats[code->index].code;
-+
-+	return 0;
-+}
-+
-+static int imx290_get_fmt(struct v4l2_subdev *sd,
-+			  struct v4l2_subdev_pad_config *cfg,
-+			  struct v4l2_subdev_format *fmt)
-+{
-+	struct imx290 *imx290 = to_imx290(sd);
-+	struct v4l2_mbus_framefmt *framefmt;
-+
-+	mutex_lock(&imx290->lock);
-+
-+	if (fmt->which == V4L2_SUBDEV_FORMAT_TRY)
-+		framefmt = v4l2_subdev_get_try_format(&imx290->sd, cfg,
-+						      fmt->pad);
-+	else
-+		framefmt = &imx290->current_format;
-+
-+	fmt->format = *framefmt;
-+
-+	mutex_unlock(&imx290->lock);
-+
-+	return 0;
-+}
-+
-+static int imx290_set_fmt(struct v4l2_subdev *sd,
-+			  struct v4l2_subdev_pad_config *cfg,
-+		      struct v4l2_subdev_format *fmt)
-+{
-+	struct imx290 *imx290 = to_imx290(sd);
-+	const struct imx290_mode *mode;
-+	struct v4l2_mbus_framefmt *format;
-+	unsigned int i;
-+	int ret = 0;
-+
-+	mutex_lock(&imx290->lock);
-+
-+	mode = v4l2_find_nearest_size(imx290_modes,
-+				      ARRAY_SIZE(imx290_modes),
-+				      width, height,
-+				      fmt->format.width, fmt->format.height);
-+
-+	fmt->format.width = mode->width;
-+	fmt->format.height = mode->height;
-+
-+	for (i = 0; i < ARRAY_SIZE(imx290_formats); i++)
-+		if (imx290_formats[i].code == fmt->format.code)
-+			break;
-+
-+	if (i >= ARRAY_SIZE(imx290_formats))
-+		i = 0;
-+
-+	fmt->format.code = imx290_formats[i].code;
-+	fmt->format.field = V4L2_FIELD_NONE;
-+
-+	if (fmt->which == V4L2_SUBDEV_FORMAT_TRY) {
-+		format = v4l2_subdev_get_try_format(sd, cfg, fmt->pad);
-+	} else {
-+		format = &imx290->current_format;
-+		__v4l2_ctrl_s_ctrl(imx290->link_freq, mode->link_freq_index);
-+		__v4l2_ctrl_s_ctrl_int64(imx290->pixel_rate, mode->pixel_rate);
-+
-+		imx290->current_mode = mode;
-+	}
-+
-+	*format = fmt->format;
-+
-+	mutex_unlock(&imx290->lock);
-+
-+	return ret;
-+}
-+
-+static int imx290_entity_init_cfg(struct v4l2_subdev *subdev,
-+				  struct v4l2_subdev_pad_config *cfg)
-+{
-+	struct v4l2_subdev_format fmt = { 0 };
-+
-+	fmt.which = cfg ? V4L2_SUBDEV_FORMAT_TRY : V4L2_SUBDEV_FORMAT_ACTIVE;
-+	fmt.format.width = 1920;
-+	fmt.format.height = 1080;
-+
-+	imx290_set_fmt(subdev, cfg, &fmt);
-+
-+	return 0;
-+}
-+
-+static int imx290_write_current_format(struct imx290 *imx290,
-+				       struct v4l2_mbus_framefmt *format)
-+{
-+	int ret;
-+
-+	switch (format->code) {
-+	case MEDIA_BUS_FMT_SRGGB10_1X10:
-+		ret = imx290_set_register_array(imx290, imx290_10bit_settings,
-+					ARRAY_SIZE(imx290_10bit_settings));
-+		if (ret < 0) {
-+			dev_err(imx290->dev, "Could not set format registers\n");
-+			return ret;
-+		}
-+		break;
-+	default:
-+		dev_err(imx290->dev, "Unknown pixel format\n");
-+		return -EINVAL;
-+	}
-+
-+	return 0;
-+}
-+
-+/* Start streaming */
-+static int imx290_start_streaming(struct imx290 *imx290)
-+{
-+	int ret;
-+
-+	/* Set init register settings */
-+	ret = imx290_set_register_array(imx290, imx290_global_init_settings,
-+				ARRAY_SIZE(imx290_global_init_settings));
-+	if (ret < 0) {
-+		dev_err(imx290->dev, "Could not set init registers\n");
-+		return ret;
-+	}
-+
-+	/* Set current frame format */
-+	ret = imx290_write_current_format(imx290, &imx290->current_format);
-+	if (ret < 0) {
-+		dev_err(imx290->dev, "Could not set frame format\n");
-+		return ret;
-+	}
-+
-+	/* Apply default values of current mode */
-+	ret = imx290_set_register_array(imx290, imx290->current_mode->data,
-+					imx290->current_mode->data_size);
-+	if (ret < 0) {
-+		dev_err(imx290->dev, "Could not set current mode\n");
-+		return ret;
-+	}
-+
-+	/* Apply customized values from user */
-+	ret = v4l2_ctrl_handler_setup(imx290->sd.ctrl_handler);
-+	if (ret) {
-+		dev_err(imx290->dev, "Could not sync v4l2 controls\n");
-+		return ret;
-+	}
-+
-+	ret = imx290_write_reg(imx290, IMX290_STANDBY, 0x00);
-+	if (ret < 0)
-+		return ret;
-+
-+	msleep(30);
-+
-+	/* Start streaming */
-+	return imx290_write_reg(imx290, IMX290_XMSTA, 0x00);
-+}
-+
-+static int imx290_set_stream(struct v4l2_subdev *sd, int enable)
-+{
-+	struct imx290 *imx290 = to_imx290(sd);
-+	int ret = 0;
-+
-+	if (enable) {
-+		ret = pm_runtime_get_sync(imx290->dev);
-+		if (ret < 0) {
-+			pm_runtime_put_noidle(imx290->dev);
-+			goto unlock_and_return;
-+		}
-+
-+		ret = imx290_start_streaming(imx290);
-+		if (ret) {
-+			dev_err(imx290->dev, "Start stream failed\n");
-+			pm_runtime_put(imx290->dev);
-+			goto unlock_and_return;
-+		}
-+	} else {
-+		imx290_stop_streaming(imx290);
-+		pm_runtime_put(imx290->dev);
-+	}
-+
-+unlock_and_return:
-+
-+	return ret;
-+}
-+
-+static int imx290_get_regulators(struct device *dev, struct imx290 *imx290)
-+{
-+	unsigned int i;
-+
-+	for (i = 0; i < IMX290_NUM_SUPPLIES; i++)
-+		imx290->supplies[i].supply = imx290_supply_name[i];
-+
-+	return devm_regulator_bulk_get(dev, IMX290_NUM_SUPPLIES,
-+				       imx290->supplies);
-+}
-+
-+static int imx290_power_on(struct device *dev)
-+{
-+	struct i2c_client *client = to_i2c_client(dev);
-+	struct v4l2_subdev *sd = i2c_get_clientdata(client);
-+	struct imx290 *imx290 = to_imx290(sd);
-+	int ret;
-+
-+	ret = clk_prepare_enable(imx290->xclk);
-+	if (ret) {
-+		dev_err(imx290->dev, "Failed to enable clock\n");
-+		return ret;
-+	}
-+
-+	ret = regulator_bulk_enable(IMX290_NUM_SUPPLIES, imx290->supplies);
-+	if (ret) {
-+		dev_err(imx290->dev, "Failed to enable regulators\n");
-+		goto xclk_off;
-+	}
-+
-+	usleep_range(1, 2);
-+	gpiod_set_value_cansleep(imx290->rst_gpio, 1);
-+	usleep_range(30000, 31000);
-+
-+	return 0;
-+
-+xclk_off:
-+	clk_disable_unprepare(imx290->xclk);
-+	return ret;
-+}
-+
-+static int imx290_power_off(struct device *dev)
-+{
-+	struct i2c_client *client = to_i2c_client(dev);
-+	struct v4l2_subdev *sd = i2c_get_clientdata(client);
-+	struct imx290 *imx290 = to_imx290(sd);
-+
-+	clk_disable_unprepare(imx290->xclk);
-+	gpiod_set_value_cansleep(imx290->rst_gpio, 0);
-+	regulator_bulk_disable(IMX290_NUM_SUPPLIES, imx290->supplies);
-+
-+	return 0;
-+}
-+
-+static const struct dev_pm_ops imx290_pm_ops = {
-+	SET_RUNTIME_PM_OPS(imx290_power_on, imx290_power_off, NULL)
-+};
-+
-+static const struct v4l2_subdev_video_ops imx290_video_ops = {
-+	.s_stream = imx290_set_stream,
-+};
-+
-+static const struct v4l2_subdev_pad_ops imx290_pad_ops = {
-+	.init_cfg = imx290_entity_init_cfg,
-+	.enum_mbus_code = imx290_enum_mbus_code,
-+	.get_fmt = imx290_get_fmt,
-+	.set_fmt = imx290_set_fmt,
-+};
-+
-+static const struct v4l2_subdev_ops imx290_subdev_ops = {
-+	.video = &imx290_video_ops,
-+	.pad = &imx290_pad_ops,
-+};
-+
-+static const struct media_entity_operations imx290_subdev_entity_ops = {
-+	.link_validate = v4l2_subdev_link_validate,
-+};
-+
-+static int imx290_probe(struct i2c_client *client)
-+{
-+	struct device *dev = &client->dev;
-+	struct fwnode_handle *endpoint;
-+	struct imx290 *imx290;
-+	u32 xclk_freq;
-+	int ret;
-+
-+	imx290 = devm_kzalloc(dev, sizeof(*imx290), GFP_KERNEL);
-+	if (!imx290)
-+		return -ENOMEM;
-+
-+	imx290->dev = dev;
-+	imx290->regmap = devm_regmap_init_i2c(client, &imx290_regmap_config);
-+	if (IS_ERR(imx290->regmap)) {
-+		dev_err(dev, "Unable to initialize I2C\n");
-+		return -ENODEV;
-+	}
-+
-+	endpoint = fwnode_graph_get_next_endpoint(dev_fwnode(dev), NULL);
-+	if (!endpoint) {
-+		dev_err(dev, "Endpoint node not found\n");
-+		return -EINVAL;
-+	}
-+
-+	ret = v4l2_fwnode_endpoint_alloc_parse(endpoint, &imx290->ep);
-+	fwnode_handle_put(endpoint);
-+	if (ret) {
-+		dev_err(dev, "Parsing endpoint node failed\n");
-+		goto free_err;
-+	}
-+
-+	if (!imx290->ep.nr_of_link_frequencies) {
-+		dev_err(dev, "link-frequency property not found in DT\n");
-+		ret = -EINVAL;
-+		goto free_err;
-+	}
-+
-+	if (imx290->ep.link_frequencies[0] != IMX290_DEFAULT_LINK_FREQ) {
-+		dev_err(dev, "Unsupported link frequency\n");
-+		ret = -EINVAL;
-+		goto free_err;
-+	}
-+
-+	/* Only CSI2 is supported for now */
-+	if (imx290->ep.bus_type != V4L2_MBUS_CSI2_DPHY) {
-+		dev_err(dev, "Unsupported bus type, should be CSI2\n");
-+		ret = -EINVAL;
-+		goto free_err;
-+	}
-+
-+	/* Set default mode to max resolution */
-+	imx290->current_mode = &imx290_modes[0];
-+
-+	/* get system clock (xclk) */
-+	imx290->xclk = devm_clk_get(dev, "xclk");
-+	if (IS_ERR(imx290->xclk)) {
-+		dev_err(dev, "Could not get xclk");
-+		ret = PTR_ERR(imx290->xclk);
-+		goto free_err;
-+	}
-+
-+	ret = fwnode_property_read_u32(dev_fwnode(dev), "clock-frequency",
-+				       &xclk_freq);
-+	if (ret) {
-+		dev_err(dev, "Could not get xclk frequency\n");
-+		goto free_err;
-+	}
-+
-+	/* external clock must be 37.125 MHz */
-+	if (xclk_freq != 37125000) {
-+		dev_err(dev, "External clock frequency %u is not supported\n",
-+			xclk_freq);
-+		ret = -EINVAL;
-+		goto free_err;
-+	}
-+
-+	ret = clk_set_rate(imx290->xclk, xclk_freq);
-+	if (ret) {
-+		dev_err(dev, "Could not set xclk frequency\n");
-+		goto free_err;
-+	}
-+
-+	ret = imx290_get_regulators(dev, imx290);
-+	if (ret < 0) {
-+		dev_err(dev, "Cannot get regulators\n");
-+		goto free_err;
-+	}
-+
-+	imx290->rst_gpio = devm_gpiod_get_optional(dev, "reset", GPIOD_ASIS);
-+	if (IS_ERR(imx290->rst_gpio)) {
-+		dev_err(dev, "Cannot get reset gpio\n");
-+		ret = PTR_ERR(imx290->rst_gpio);
-+		goto free_err;
-+	}
-+
-+	mutex_init(&imx290->lock);
-+
-+	v4l2_ctrl_handler_init(&imx290->ctrls, 3);
-+
-+	v4l2_ctrl_new_std(&imx290->ctrls, &imx290_ctrl_ops,
-+			  V4L2_CID_GAIN, 0, 72, 1, 0);
-+	imx290->link_freq = v4l2_ctrl_new_int_menu(&imx290->ctrls,
-+					&imx290_ctrl_ops,
-+					V4L2_CID_LINK_FREQ,
-+					ARRAY_SIZE(imx290_link_freq) - 1,
-+					0, imx290_link_freq);
-+	if (imx290->link_freq)
-+		imx290->link_freq->flags |= V4L2_CTRL_FLAG_READ_ONLY;
-+
-+	imx290->pixel_rate = v4l2_ctrl_new_std(&imx290->ctrls, &imx290_ctrl_ops,
-+					       V4L2_CID_PIXEL_RATE, 1,
-+					       INT_MAX, 1,
-+					       imx290_modes[0].pixel_rate);
-+
-+	imx290->sd.ctrl_handler = &imx290->ctrls;
-+
-+	if (imx290->ctrls.error) {
-+		dev_err(dev, "Control initialization error %d\n",
-+			imx290->ctrls.error);
-+		ret = imx290->ctrls.error;
-+		goto free_ctrl;
-+	}
-+
-+	v4l2_i2c_subdev_init(&imx290->sd, client, &imx290_subdev_ops);
-+	imx290->sd.flags |= V4L2_SUBDEV_FL_HAS_DEVNODE;
-+	imx290->sd.dev = &client->dev;
-+	imx290->sd.entity.ops = &imx290_subdev_entity_ops;
-+	imx290->sd.entity.function = MEDIA_ENT_F_CAM_SENSOR;
-+
-+	imx290->pad.flags = MEDIA_PAD_FL_SOURCE;
-+	ret = media_entity_pads_init(&imx290->sd.entity, 1, &imx290->pad);
-+	if (ret < 0) {
-+		dev_err(dev, "Could not register media entity\n");
-+		goto free_ctrl;
-+	}
-+
-+	ret = v4l2_async_register_subdev(&imx290->sd);
-+	if (ret < 0) {
-+		dev_err(dev, "Could not register v4l2 device\n");
-+		goto free_entity;
-+	}
-+
-+	/* Power on the device to match runtime PM state below */
-+	ret = imx290_power_on(dev);
-+	if (ret < 0) {
-+		dev_err(dev, "Could not power on the device\n");
-+		goto free_entity;
-+	}
-+
-+	pm_runtime_set_active(dev);
-+	pm_runtime_enable(dev);
-+	pm_runtime_idle(dev);
-+
-+	v4l2_fwnode_endpoint_free(&imx290->ep);
-+
-+	return 0;
-+
-+free_entity:
-+	media_entity_cleanup(&imx290->sd.entity);
-+free_ctrl:
-+	v4l2_ctrl_handler_free(&imx290->ctrls);
-+	mutex_destroy(&imx290->lock);
-+free_err:
-+	v4l2_fwnode_endpoint_free(&imx290->ep);
-+
-+	return ret;
-+}
-+
-+static int imx290_remove(struct i2c_client *client)
-+{
-+	struct v4l2_subdev *sd = i2c_get_clientdata(client);
-+	struct imx290 *imx290 = to_imx290(sd);
-+
-+	v4l2_async_unregister_subdev(sd);
-+	media_entity_cleanup(&sd->entity);
-+	v4l2_ctrl_handler_free(sd->ctrl_handler);
-+
-+	mutex_destroy(&imx290->lock);
-+
-+	pm_runtime_disable(imx290->dev);
-+	if (!pm_runtime_status_suspended(imx290->dev))
-+		imx290_power_off(imx290->dev);
-+	pm_runtime_set_suspended(imx290->dev);
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id imx290_of_match[] = {
-+	{ .compatible = "sony,imx290" },
-+	{ /* sentinel */ }
-+};
-+MODULE_DEVICE_TABLE(of, imx290_of_match);
-+
-+static struct i2c_driver imx290_i2c_driver = {
-+	.probe_new  = imx290_probe,
-+	.remove = imx290_remove,
-+	.driver = {
-+		.name  = "imx290",
-+		.pm = &imx290_pm_ops,
-+		.of_match_table = of_match_ptr(imx290_of_match),
-+	},
-+};
-+
-+module_i2c_driver(imx290_i2c_driver);
-+
-+MODULE_DESCRIPTION("Sony IMX290 CMOS Image Sensor Driver");
-+MODULE_AUTHOR("FRAMOS GmbH");
-+MODULE_AUTHOR("Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>");
-+MODULE_LICENSE("GPL v2");
--- 
-2.17.1
+Kind regards
+Uffe
 
+
+> ---
+>  .../devicetree/bindings/mmc/owl-mmc.yaml      | 59 +++++++++++++++++++
+>  1 file changed, 59 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/mmc/owl-mmc.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/mmc/owl-mmc.yaml b/Documentation/devicetree/bindings/mmc/owl-mmc.yaml
+> new file mode 100644
+> index 000000000000..12b40213426d
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/mmc/owl-mmc.yaml
+> @@ -0,0 +1,59 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/mmc/owl-mmc.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Actions Semi Owl SoCs SD/MMC/SDIO controller
+> +
+> +allOf:
+> +  - $ref: "mmc-controller.yaml"
+> +
+> +maintainers:
+> +  - Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> +
+> +properties:
+> +  compatible:
+> +    const: actions,owl-mmc
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    minItems: 1
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  dmas:
+> +    maxItems: 1
+> +
+> +  dma-names:
+> +    const: mmc
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - resets
+> +  - dmas
+> +  - dma-names
+> +
+> +examples:
+> +  - |
+> +    mmc0: mmc@e0330000 {
+> +        compatible = "actions,owl-mmc";
+> +        reg = <0x0 0xe0330000 0x0 0x4000>;
+> +        interrupts = <0 42 4>;
+> +        clocks = <&cmu 56>;
+> +        resets = <&cmu 23>;
+> +        dmas = <&dma 2>;
+> +        dma-names = "mmc";
+> +        bus-width = <4>;
+> +    };
+> +
+> +...
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
