@@ -2,60 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B11AAC9D00
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 13:15:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D43E6C9D17
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 13:22:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7q+8kFCTdA/ygMMBjwkyuZTXCp/L/6aWqdZVSgcFNGQ=; b=meshte2AHMxlobQOj0diUMcwx
-	QVww23X4YQgxTH+yBt9b20JBC+DLUk6T0K+LUUE0lHeA99uz9b8Ktm6eXhQ8AMpNsmYkzIGdq62+c
-	Wg+BH6RyBkxox5Z2Wived3xpr3tCo7IEoVQ9k1RvbP0mtgPQsKHup3xqaTDQ9K4aSrw/ZH6bKcvDV
-	k4mVq2aQAT39fdYLTaC5h0nbGm+nG/rgxaHot5A5DBaFo+LEibiFcmuZ3PsYM4eDeCDaxUawML85g
-	s6V4w02Um135hVfvd64FSIwh3TY5sPKPnKeq44+OwmZNGDB23wzXnAFiETKTR6NBlRVu5PStmeo7i
-	KBM1Vesew==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=NNw3Ccpi+FvuXHdOg6CyXZiT9PCd76GGptB8b8VwVd4=; b=YPl
+	ET5xfpVuIJSktxmB68FDW09Pd8CUYSwb7RFxtrMfsJ+Tq5TU13mrO3tUboFVWzlbq2fCIg5SWGo5W
+	YjMBCD2vAWNA9u9X+XXt0ISlJfplmFsXTeIA4NttwyfJ2OPk8CqiEZGI8DWoFVU7WToIpP1JE/8B2
+	zsciH9dCuYc9I7bDMQ6QF4LJKziYTNYsLEu9WylxRnxCRaqoRpIeeXpmtvekxoaultTnhHf+HxRzl
+	qFFmpk7kLX529qoCqUZKXvdCBn4Xg0DqFkmIvI+hIYQss09FdwcyyzxCmJsYAlXI8hNDAxDbGaB00
+	qAO9hHAKgC27LrcnkbR0b5MjgaA4AMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFz5N-0001eu-Cy; Thu, 03 Oct 2019 11:15:53 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1iFzBu-0003fB-Rb; Thu, 03 Oct 2019 11:22:38 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFz5F-0001eB-T6
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 11:15:48 +0000
-Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id B6B522487246D09D5E84;
- Thu,  3 Oct 2019 19:15:38 +0800 (CST)
-Received: from [127.0.0.1] (10.202.227.179) by DGGEMS404-HUB.china.huawei.com
- (10.3.19.204) with Microsoft SMTP Server id 14.3.439.0;
- Thu, 3 Oct 2019 19:15:37 +0800
-Subject: Re: [PATCH 3/3] arm64: configs: unset CPU_BIG_ENDIAN
-To: Anders Roxell <anders.roxell@linaro.org>
-References: <20190926193030.5843-1-anders.roxell@linaro.org>
- <20190926193030.5843-5-anders.roxell@linaro.org>
- <bf5db3a5-96da-752c-49ea-d0de899882d5@huawei.com>
- <CADYN=9LB9RHgRkQj=HcKDz1x9jqmT464Kseh2wZU5VvcLit+bQ@mail.gmail.com>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <d978673e-cbd1-5ab5-b2a4-cdb407d0f98c@huawei.com>
-Date: Thu, 3 Oct 2019 12:15:32 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.3.0
-MIME-Version: 1.0
-In-Reply-To: <CADYN=9LB9RHgRkQj=HcKDz1x9jqmT464Kseh2wZU5VvcLit+bQ@mail.gmail.com>
-X-Originating-IP: [10.202.227.179]
-X-CFilter-Loop: Reflected
+ id 1iFzBm-0003eC-C6
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 11:22:32 +0000
+Received: by mail-pg1-x541.google.com with SMTP id q7so1553112pgi.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 03 Oct 2019 04:22:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=4vvWZOnDaYB306KLyalX1Vu4JeBx1avHtcxqLv3dAQI=;
+ b=XLnU6ZGBqa577KBUFDzfnYkNp6/eIoX6Pq9euUphJF1eaLkGpQyppKve1wUxuESwu5
+ ZJvOyoz7Fjr+XB+RNcksDtCovFTo3ED706fd3n3IH2W4NWqquJz+ijcLNcbGryn4DTjs
+ 55VDB8F/RFZ4jOgbmebt8kgKu+sISxrGzicyARLK1gbwIeKiIDA/YnY2oROdTtgXo9Lp
+ OhgwAiEmccjOVtNmAa25PRDCf+fOl4AqZJwpjOekZT6+jrEjcGb3ZiOpJSLV4Nc0LmGG
+ YHPOh5KemQuBPqNnHLJbuZPqFqbs8hwaM6Sz1REmnrszkUwm6Y6AJ+oQvdDFSQPGqO+A
+ IjMw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=4vvWZOnDaYB306KLyalX1Vu4JeBx1avHtcxqLv3dAQI=;
+ b=V7xkyhj3yut3YJ7I9czMXrTkqx7uUKtbR/hVyZqI7Y55pHIrQvsNImW2YNXE2EgJhe
+ 9q6scDrEccOc3mblAHxHpwBhktYG94hWAc+tmZ0qCXg8jkUH/1eq3RaLGl25HqHswYg5
+ ecExFdQ/f6319o4DGHtMtcLknXWOV+sdWGURzQ35J6NIRuHCnkCeBqE+akmXsn8iF4V0
+ 3Jbp7uDcRhO1Rq2HQ63zEAgPvk1aKO06VvSb7LbLyb8YHUHGXoItV0ESZ5bbtogJa3o0
+ 9X3by9o1h79EI8v7DtK9nJ99X+y/lFJcEVjV5HFbFQhqlaCv0k8xf0iZzTPD2ov0bhuX
+ IhrQ==
+X-Gm-Message-State: APjAAAWnKnpGrRqN6exOlk5G98ld5E6DL3aDrXW64fg1nDLZqUStJ0Rn
+ dd3pAYWepbS7m4IA8DKcSwcmUv6TYLQFsg==
+X-Google-Smtp-Source: APXvYqyo/GBuKYMgok2Qu85GyYWcZ/kBG23UO0oZtmNIMkGIJX0uwqdZO5n/Gy1IyWW72l28hy/lCQ==
+X-Received: by 2002:a65:4543:: with SMTP id x3mr8479928pgr.300.1570101748857; 
+ Thu, 03 Oct 2019 04:22:28 -0700 (PDT)
+Received: from localhost ([49.248.175.14])
+ by smtp.gmail.com with ESMTPSA id k8sm1998881pgm.14.2019.10.03.04.22.27
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 03 Oct 2019 04:22:28 -0700 (PDT)
+From: Amit Kucheria <amit.kucheria@linaro.org>
+To: linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Chen-Yu Tsai <wens@csie.org>
+Subject: [PATCH] media: dt-bindings: media: Fixup Allwinner A10 CSI binding
+Date: Thu,  3 Oct 2019 16:52:24 +0530
+Message-Id: <b47ec7088aa4b07458519ab151de92df552a9302.1570101510.git.amit.kucheria@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_041546_535253_88862D8D 
-X-CRM114-Status: GOOD (  19.57  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191003_042230_440274_F863B6A5 
+X-CRM114-Status: GOOD (  11.78  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,96 +92,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, Olof
- Johansson <olof@lixom.net>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03/10/2019 08:40, Anders Roxell wrote:
-> On Tue, 1 Oct 2019 at 16:04, John Garry <john.garry@huawei.com> wrote:
->>
->> On 26/09/2019 20:30, Anders Roxell wrote:
->>> When building allmodconfig KCONFIG_ALLCONFIG=$(pwd)/arch/arm64/configs/defconfig
->>> CONFIG_CPU_BIG_ENDIAN gets enabled. Which tends not to be what most
->>> people wants.
->>
->> Today allmodconfig does not enable CONFIG_ACPI due to BE config, which
->> is quite unfortunate, I'd say.
->
-> right.
->
->>
->>>
->>> Rework so that we disable CONFIG_CPU_BIG_ENDIAN in the defcinfig file so
->>
->> defconfig
->
-> thanks.
->
->>
->>> it doesn't get enabled when building allmodconfig kernels. When doing a
->>> 'make savedefconfig' CONFIG_CPU_BIG_ENDIAN will be dropped.
->>
->> So without having to pass KCONFIG_ALLCONFIG or do anything else, what
->> about a config for CONFIG_CPU_LITTLE_ENDIAN instead? I'm not sure if
->> that was omitted for a specific reason.
->
-> Oh, I tried to elaborate on the idea in the cover letter, that using
-> the defconfig
-> as base and then configure the rest as modules is to get a bootable kernel
-> that have as many features turned on as possible. That will make it possible
-> to run as wide a range of testsuites as possible on a single kernel.
->
-> Does that make it clearer ?
+This new binding fails dt_binding_check due to a typo. Fix it up.
 
-Hi Anders,
+linux.git/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml: $id: path/filename 'arm/allwinner,sun4i-a10-csi.yaml' doesn't match actual filename
+linux.git/Documentation/devicetree/bindings/Makefile:12: recipe for target 'Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.example.dts' failed
+make[2]: *** [Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.example.dts] Error 1
+make[2]: *** Waiting for unfinished jobs....
+linux.git/Makefile:1284: recipe for target 'dt_binding_check' failed
+make[1]: *** [dt_binding_check] Error 2
 
-Yeah, I got the idea.
+Fixes: c5e8f4ccd7750 ("media: dt-bindings: media: Add Allwinner A10 CSI binding")
+Signed-off-by: Amit Kucheria <amit.kucheria@linaro.org>
+---
+ .../devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml      | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-So when you say "'make savedefconfig' CONFIG_CPU_BIG_ENDIAN will be 
-dropped", I don't know what the rules are in terms of resyncing the 
-common defconfig (I was under the impression that it's done per release 
-cycle by the arm soc maintainers, but can't find evidence as such), but 
-your change may be easily lost in this way.
-
-Thanks,
-John
-
->
-> Cheers,
-> Anders
->
->
->>
->> Thanks,
->> John
->>
->>>
->>> Signed-off-by: Anders Roxell <anders.roxell@linaro.org>
->>> ---
->>>  arch/arm64/configs/defconfig | 1 +
->>>  1 file changed, 1 insertion(+)
->>>
->>> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
->>> index 878f379d8d84..c9aa6b9ee996 100644
->>> --- a/arch/arm64/configs/defconfig
->>> +++ b/arch/arm64/configs/defconfig
->>> @@ -855,3 +855,4 @@ CONFIG_DEBUG_KERNEL=y
->>>  # CONFIG_SCHED_DEBUG is not set
->>>  CONFIG_MEMTEST=y
->>>  # CONFIG_CMDLINE_FORCE is not set
->>> +# CONFIG_CPU_BIG_ENDIAN is not set
->>>
->>
->>
->
-> .
->
-
+diff --git a/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
+index 27f38eed389e4..5dd1cf490cd9d 100644
+--- a/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
++++ b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
+@@ -1,7 +1,7 @@
+ # SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+ %YAML 1.2
+ ---
+-$id: http://devicetree.org/schemas/arm/allwinner,sun4i-a10-csi.yaml#
++$id: http://devicetree.org/schemas/media/allwinner,sun4i-a10-csi.yaml#
+ $schema: http://devicetree.org/meta-schemas/core.yaml#
+ 
+ title: Allwinner A10 CMOS Sensor Interface (CSI) Device Tree Bindings
+-- 
+2.17.1
 
 
 _______________________________________________
