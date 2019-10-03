@@ -2,73 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98D99C973E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 06:24:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CA6BC9782
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 06:37:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HRPMRpEC7HIFe1f8VvLxBhbjB6Up9acCnLQJD3BZFcI=; b=e14EJ47CF25NFv
-	9sFLGWBblCNS3DvlwTLa7oVVT4GPZyiwEzSTI5c7ypL7tUqvfRgp0FZnf5NUuM+qFB6NTBFg8pANM
-	qQAirhFVIgUuhKfGSqfghEaySdvNa+pO4d2+nmiFhpFoAiwu95Jdx8zL/I5EABHF+2jrN+hGkRDwW
-	5e0lBzfkBECgNXD7NL8K2YPJfj2EH1NokSvW0UU4RVbHs3MHPJdcLXRdVGVPBE1n3rIWC5y4uc4wl
-	YL1pffnDZsErAybeNEBa+M4/6/91U3vyfOswAaA0/6doNfB/nE9LPmevmnOuHE122XkqSFqaZMX0V
-	TRiEU/K1MqONL25M92ew==;
+	List-Owner; bh=9rsOq5SXhu1EqzR/ob49u4DYOoJA+MGB2u89pRs3M2c=; b=Fps1n2N8wK79en
+	1PkPP7355qwCIb1sAUBuB+FAzXZorGY6a9738CBWcidFVgl7JFYBx0QVaxFdKmjMWrByhWzf1gN1C
+	Nuc5ZR8wgMXVz0pqXhPpz8YsCBd16p+u9OaRbbql3/nOy8Odw6wBAnObhAg24TGyMALpA7jMC9eN7
+	NBH2EoBqb6eqUIyOmpC7ZuylVAVUFYqVpUas58NnbpayP+zKgYYImsYjibwPTszXXLv+nV/mzgcrI
+	EUj8WEDfLgOsXMTYgSzSyTFmOxBmV9dlODz35ZjeBUEvJwagW99rOz4pwVcCFdCk4ZsSKRZGsxO+t
+	h5ZunPrI5JVhai4qPOIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFsf7-0006in-KM; Thu, 03 Oct 2019 04:24:21 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1iFsru-0002qp-HT; Thu, 03 Oct 2019 04:37:34 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFsf0-0006hs-JC
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 04:24:16 +0000
-Received: by mail-io1-xd43.google.com with SMTP id h144so2412589iof.7
+ id 1iFsro-0002pw-5N
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 04:37:30 +0000
+Received: by mail-io1-xd42.google.com with SMTP id b136so2511012iof.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 02 Oct 2019 21:24:09 -0700 (PDT)
+ Wed, 02 Oct 2019 21:37:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=xXxgss0qRr38ViNhIsY4E48BXxGon0iuPdHcJHwqwhc=;
- b=SjYfr4ci/wu2v5HJdhvG5VWQ0L+nAwZxsH1u0w5kKILfPjaBnSDE0XQZ0s4eJoryIW
- As8fGKd6gSiZcy6eQNhCL56xGXObLVRxQ0ZedLXEOMrpa3zxChhoO6OGH2dnWZOBl6u3
- mQx5xJ9LM+t6NZp1NyL2uHQ16yh56mtV4nZYw=
+ :cc; bh=MlekqaDeWFJgEd5A1fBRjx/7k1tl63XnhZuTSyHIz4o=;
+ b=N2K/o9viZlp1wU82nZeoxpgVml0anhGjTES+V5f7ZmBrN6KXsn0+yIR9qkonlHBcoT
+ QTHH63dWxWdeC69Z26P8Len8fBpb+sf26Th2APGZEmm/zT4fcBOA9pShLkEbLizr1o/a
+ j6JdKtQ/qw8Yu2WVUJFzygEFLvK0EOs3C2ihQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=xXxgss0qRr38ViNhIsY4E48BXxGon0iuPdHcJHwqwhc=;
- b=qDK8TNq/yXa6ObXzJ4vp25gkhOSJxrc7ikGN2Bs/R1dTvE3AHYt8ZvBmUCNb2lJx2Y
- XT3xsJcBdnvPHN20kyXYdQlC9LAecEazZF8aj/YoNwSKzhtfTl43r2IfCx3pg5CCxlLA
- Rlk84E5mJvO6zL9pcS9RQFoe3t+vtlvzGSKf1O4KbinjZ0KdFnT1kmzg7+0dnH1fNiY2
- wmix4nAfUHWzhcrCohr95EmvfPxxOj/6EHFOPznZSHBxZZ+lT8VJHqr/seJN3ETPQqGp
- 8Zi8WNPDLKhLYxSBPE3j3VsfzAcBm0KTR6d6OOECpJrgLLwn/paO9/aCARXLLwu53T20
- mxkg==
-X-Gm-Message-State: APjAAAXyTLMy6fBARZLhwGTLqLHlXhtEsfIAAWhgbcrOn1diZQDtWmUD
- TwjUIqJ3tDqqL21++1Kp73ebE79Y+8ZdqsvEwEWVOw==
-X-Google-Smtp-Source: APXvYqz7lFdMeYaFOqQuDlV2bgB6TK9bjpGTgkqgd8HQd647X9V9/RgwVucyGUxqcrmBjl6fatT+jMGOcVJrQTxylyU=
-X-Received: by 2002:a02:6284:: with SMTP id d126mr7511832jac.51.1570076645543; 
- Wed, 02 Oct 2019 21:24:05 -0700 (PDT)
+ bh=MlekqaDeWFJgEd5A1fBRjx/7k1tl63XnhZuTSyHIz4o=;
+ b=B9Lw9zxar2X7f4YvY3N+13RavoewIyTSQKP4Oc5gIFqImTlTgrHYyilABgozydLNrY
+ +Ija1sYMrFfFNmMVSkNS3NRwiUBMeKbJIMq7zOT1eYn+DTYoCGzmEQGdu0S/mnhymC7z
+ VmMNj5j0p9r6RiaNcRW2X/XLKSXtI5+yelnvYfmBEX6UkQO8J5/hF2TUeQqlXzFwOdCo
+ 5cE7QckiWrkdMHWSBxXYX8UfJq9PXjMKW8tF1Oe1NhIgglBO99GNdMJFBp/+414wwjQE
+ uxzlIAsw/QkaValYUUlRNoL2BkvHLD6svMvs07Kslx3st5uLoniGu3AfqChg2lOHdUXa
+ rQZQ==
+X-Gm-Message-State: APjAAAUn1t1F9q0cMJN5cFxlycOQfWlJF8TbXWsDnJnw5jTWZL0ff7GX
+ /kfT50YDVKyE2d5Ilnf69N95j+vI5nGgLsABHO2kNbLdt38=
+X-Google-Smtp-Source: APXvYqwIWNbnxgMtuGs8BYHnctnPvSODa9WWOtei664E5I8ipwXWBsAKeY9LVmjih5hknlLYsQ8lj89ZirBa1m/Sfzg=
+X-Received: by 2002:a92:c74d:: with SMTP id y13mr8131989ilp.77.1570077444611; 
+ Wed, 02 Oct 2019 21:37:24 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191001080253.6135-1-icenowy@aosc.io>
- <20191001080253.6135-4-icenowy@aosc.io>
-In-Reply-To: <20191001080253.6135-4-icenowy@aosc.io>
+ <20191001080253.6135-3-icenowy@aosc.io>
+In-Reply-To: <20191001080253.6135-3-icenowy@aosc.io>
 From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Thu, 3 Oct 2019 09:53:54 +0530
-Message-ID: <CAMty3ZDW4XHyW+6XL_RSVHqTSk79-r749pa0n5e6VbUzowAsiw@mail.gmail.com>
-Subject: Re: [linux-sunxi] [PATCH 3/3] Revert "drm/sun4i: dsi: Rework a bit
- the hblk calculation"
+Date: Thu, 3 Oct 2019 10:07:13 +0530
+Message-ID: <CAMty3ZC-5czGhOwtk7pE+JGbMRKxo7GrpUgnX3dpY8Jt5j_Afg@mail.gmail.com>
+Subject: Re: [linux-sunxi] [PATCH 2/3] drm/sun4i: dsi: fix DRQ calculation
 To: Icenowy Zheng <icenowy@aosc.io>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_212414_633945_DE8692DF 
-X-CRM114-Status: GOOD (  17.54  )
+X-CRM114-CacheID: sfid-20191002_213728_629550_B3B39287 
+X-CRM114-Status: GOOD (  16.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -100,50 +99,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Wens,
+Hi,
 
 On Tue, Oct 1, 2019 at 1:34 PM Icenowy Zheng <icenowy@aosc.io> wrote:
 >
-> This reverts commit 62e7511a4f4dcf07f753893d3424decd9466c98b.
+> According to the BSP source code, when calculating the magic DRQ value
+> outside burst mode, a formula of "lcd_ht - lcd_x - lcd_hbp", which is
+> interpreted as right margin (HFP value). However, currently the
+> sun6i_mipi_dsi driver code calculates it wrongly as HFP + sync length,
+> which lead to timing error.
 >
-> This commit, although claimed as a refactor, in fact changed the
-> formula.
->
-> By expanding the original formula, we can find that the const 10 is not
-> substracted, instead it's added to the value (because 10 is negative
-> when calculating hsa, and hsa itself is negative when calculating hblk).
-> This breaks the similar pattern to other formulas, so restoring the
-> original formula is more proper.
+> Fix the DRQ calculation by change it to use HFP.
 >
 > Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
 > ---
->  drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c | 9 ++-------
->  1 file changed, 2 insertions(+), 7 deletions(-)
+>  drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
 >
 > diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-> index 2d3e822a7739..cb5fd19c0d0d 100644
+> index c86e11631ebc..2d3e822a7739 100644
 > --- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
 > +++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-> @@ -577,14 +577,9 @@ static void sun6i_dsi_setup_timings(struct sun6i_dsi *dsi,
->                           (mode->hsync_start - mode->hdisplay) * Bpp - HFP_PACKET_OVERHEAD);
+> @@ -436,9 +436,9 @@ static void sun6i_dsi_setup_burst(struct sun6i_dsi *dsi,
+>                              SUN6I_DSI_BURST_LINE_SYNC_POINT(SUN6I_DSI_SYNC_POINT));
 >
->                 /*
-> -                * The blanking is set using a sync event (4 bytes)
-> -                * and a blanking packet (4 bytes + payload + 2
-> -                * bytes). Its minimal size is therefore 10 bytes.
-> +                * hblk seems to be the line + porches length.
->                  */
-> -#define HBLK_PACKET_OVERHEAD   10
-> -               hblk = max((unsigned int)HBLK_PACKET_OVERHEAD,
-> -                          (mode->htotal - (mode->hsync_end - mode->hsync_start)) * Bpp -
-> -                          HBLK_PACKET_OVERHEAD);
-> +               hblk = mode->htotal * Bpp - hsa;
+>                 val = SUN6I_DSI_TCON_DRQ_ENABLE_MODE;
+> -       } else if ((mode->hsync_end - mode->hdisplay) > 20) {
+> +       } else if ((mode->hsync_start - mode->hdisplay) > 20) {
+>                 /* Maaaaaagic */
+> -               u16 drq = (mode->hsync_end - mode->hdisplay) - 20;
+> +               u16 drq = (mode->hsync_start - mode->hdisplay) - 20;
 
-The original formula is correct according to BSP [1] and work with my
-panels which I have tested before. May be the horizontal timings on
-panels you have leads to negative value.
+I have similar patch in the ML, which required commit details
+commented by Chen-Yu [1]. So, I'm trying to send it accordingly, let
+me know if you have issues.
 
-[1] https://github.com/ayufan-pine64/linux-pine64/blob/my-hacks-1.2-with-drm/drivers/video/sunxi/disp2/disp/de/lowlevel_sun50iw1/de_dsi.c#L919
+[1] https://patchwork.freedesktop.org/patch/305920/
 
 _______________________________________________
 linux-arm-kernel mailing list
