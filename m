@@ -2,60 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89B2FCB092
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 22:56:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 261A4CB094
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 22:57:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RoGo0m18nd0p0m5VfdY3cAX8ZljSIhIsaEOW3pXiY20=; b=VGENSSUU7974a/
-	2wi6LZq9zlqv5kRjKmCi51J1cVE9sfQdNTL2x/hnR1MjcWJa3TUqqAQXBxUBh+0Xf2vMwISEUc1Lb
-	fcKnD8uBUu2SK/n0KAPO9wOrAxE7XaqC/WjsjpGjtloyXzaO5Yk+rXCcXtWAXxW2AQSoA2snSfARU
-	urhdVpR3hUF9ptG3v+I0e+NOSgdzsS/Eg8kyamrxqTbKaF2tKAUOZuSqagANUj9amUsm/GMf/NC3w
-	Z3pj0gkZIKwG7kSeCHqjnM/PfWLChe349C1EU6boZDgjA5my3Fm1pZGIk3gtwbWHd1VHaHovKwhKA
-	9qWUECMNlar2taOmc51A==;
+	List-Owner; bh=t80zjVdBtiCgVL0rbdGwSz6uCejmz0TDAaTB5YiL/+0=; b=tzJbdP6S4MzXy6
+	CZn5fTS43gF55iHytzXf/GDCWXAAPgkVkIM1vHjUdWgPxJrdO0Au5/Kb811Giq4oOQ4GcHB9GZeWK
+	IDpDGU0/imWUO3hlFrUpPvrobK6SyACYxmN556vuCBRsED8kI6Atx/NIWj3zQws9hW1uUaiQIHV+L
+	uYrroOV9TRHihDit4t3OpJYpdQd0kdcpHiBr89DIRE9hAkHcL80RHDPKIhzxcWHS+/5KP0hizxBnu
+	9csjJiN8w7HI+ZGlOIBbL1pKSHTnXfZm3k/q/rXoQ/H8IXGczAl3gNxjfpAUecmuFcvW5zWyXKLbY
+	lW/UesJf2lgkhePLIKgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG89X-0000kk-Hq; Thu, 03 Oct 2019 20:56:47 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iG89n-00010C-Ew; Thu, 03 Oct 2019 20:57:03 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG89P-0000k6-Ny
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 20:56:41 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 326B52086A;
- Thu,  3 Oct 2019 20:56:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570136199;
- bh=/p2jgYyOKcT9NYTQ/y2vi1K03zHRZaCjHgBMcuIA54o=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Uh2i/RKe7vbkxGt9MPDSea8a7B4iyrsw++G1FHTY47Wn3h2UBcIoLtTZ3bQJOJ59W
- LzQ4oBh/bNsfGim3b16sm5uDUTwtHowBnabsmhvqqwKi4xZzKgCwJbFWQvpE3prVIs
- JodR3BxpISXiGhTxbVuKjqR7WN9m4S0Nx2poVtAQ=
-Date: Thu, 3 Oct 2019 21:56:34 +0100
-From: Will Deacon <will@kernel.org>
-To: Kees Cook <keescook@chromium.org>
-Subject: Re: [PATCH] panic: Ensure preemption is disabled during panic()
-Message-ID: <20191003205633.w26geqhq67u4ysit@willie-the-truck>
-References: <20191002123538.22609-1-will@kernel.org>
- <201910021355.E578D2FFAF@keescook>
+ id 1iG89d-0000x0-46
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 20:56:55 +0000
+Received: by mail-pg1-x541.google.com with SMTP id v27so2436243pgk.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 03 Oct 2019 13:56:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=xKarWPt6lvQJGvS6YLjAUhktx3P1H06FEKjY24EE5Jw=;
+ b=N2wbjO7zmQMQz/t4ljgc0TF/ObEvPwnzF1g3g8vfnQ4ia+DVPId7P6OeXnGqHRaGOk
+ WHGiv4/ObZ0KYB4bRoFlH6h4ag7QiuhKTD7/ohoXYA4yImmx2bGROflqjWedJ0aWtGDK
+ 4e1nKlvyrHtP5Ru7mlJMS2wdVNPsOMuZzlb0jF20TYd87TYn+/avUlTMbvtF8S+Q49YN
+ gCtSduE8FBNffOmgDvaqEbmvjeWhHGnwrcMv299mr4fkeKAVTHDARAeanLehxeDAUq79
+ RwaBb379XDiSFDprzFg3L9E7ARcDq9CnOWozbZyRht8X0Hs1sco0piN/NfJ8KZZ3preQ
+ mtVg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=xKarWPt6lvQJGvS6YLjAUhktx3P1H06FEKjY24EE5Jw=;
+ b=dZu044+biLxvTtJuAZPyL77DO18J89Cbp68rbV//0LQX2/jtOipNR/j6BLTho+JyvK
+ lYFWDAG2lRvoBvv9w6w5r8YzpBcUszU/5X6YLSn7N2j/55eEjdzfgDO430m141BwHwbi
+ W1vzOelpcoCD0QA7+/0Ued72pmMH6sZuIw2MYt/z2LeuSfbvzHl42ZFETAaq/m0PnyT9
+ p/HPJ1bkkvyFANCx+h38H2WICnIzlDh6NaQHJaoTBs2VEDfSJgBgs2dEDEFLBipJ2Cq6
+ /UXYJGiwfxSHrkXHkeY13qfBMP2JjBADKQleR42CVUw28YU2c2f5TR3I1onfLTK+aeWq
+ 5Adg==
+X-Gm-Message-State: APjAAAUfNCBArQ1caL3MRFdGarz3mHwN1IKcrBrM72tcI0LW1H9IdIQH
+ wEnu0e6G3jsNUNtsFOHISDYOtLzg3b4y3MALHrctMg==
+X-Google-Smtp-Source: APXvYqzepTwSLkK7xurMnEnd3RkNLkJ//qnYMQYypNWa2g9ldvI5+aGCn/jYSbxr/9DZIC/Q3+Dyw1SEpDKUCCqRcOU=
+X-Received: by 2002:a63:d909:: with SMTP id r9mr11434400pgg.381.1570136210748; 
+ Thu, 03 Oct 2019 13:56:50 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <201910021355.E578D2FFAF@keescook>
-User-Agent: NeoMutt/20170113 (1.7.2)
+References: <20191003174838.8872-1-vincenzo.frascino@arm.com>
+ <20191003174838.8872-3-vincenzo.frascino@arm.com>
+ <CAKwvOdmhyVHREHvyB0wL2GfMsE8GcJ1Ouj_8ifrR4hU8kBYukQ@mail.gmail.com>
+ <20191003204944.6wuzflqkjdpawzvp@willie-the-truck>
+In-Reply-To: <20191003204944.6wuzflqkjdpawzvp@willie-the-truck>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Thu, 3 Oct 2019 13:56:39 -0700
+Message-ID: <CAKwvOdm4ccfhXDDSKXgdN4qkn2NHwAHKCwRV7OqLEG_PQj09vQ@mail.gmail.com>
+Subject: Re: [PATCH v5 2/6] arm64: vdso32: Detect binutils support for dmb
+ ishld
+To: Will Deacon <will@kernel.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_135639_801677_48DB2C46 
-X-CRM114-Status: GOOD (  18.20  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191003_135653_197560_D90EDF59 
+X-CRM114-Status: GOOD (  11.64  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -65,7 +88,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,78 +101,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Petr Mladek <pmladek@suse.com>, Feng Tang <feng.tang@intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, contact@xogium.me,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- Ingo Molnar <mingo@redhat.com>, Steven Rostedt <rostedt@goodmis.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, LKML <linux-kernel@vger.kernel.org>,
+ Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Kees,
+On Thu, Oct 3, 2019 at 1:49 PM Will Deacon <will@kernel.org> wrote:
+>
+> On Thu, Oct 03, 2019 at 01:18:16PM -0700, Nick Desaulniers wrote:
+> > On Thu, Oct 3, 2019 at 10:48 AM Vincenzo Frascino
+> > <vincenzo.frascino@arm.com> wrote:
+> > >
+> > > Older versions of binutils that do not support certain types of memory
+> > > barriers can cause build failure of the vdso32 library.
+> >
+> > Do you know specific version numbers of binutils that are affected?
+> > May be helpful to have in the commit message just for future
+> > travelers.
+>
+> A quick bit of archaeology suggests e797f7e0b2be added this back in 2012,
+> which seems to correlate with the 2.24 release.
 
-On Wed, Oct 02, 2019 at 01:58:46PM -0700, Kees Cook wrote:
-> On Wed, Oct 02, 2019 at 01:35:38PM +0100, Will Deacon wrote:
-> > Calling 'panic()' on a kernel with CONFIG_PREEMPT=y can leave the
-> > calling CPU in an infinite loop, but with interrupts and preemption
-> > enabled. From this state, userspace can continue to be scheduled,
-> > despite the system being "dead" as far as the kernel is concerned. This
-> > is easily reproducible on arm64 when booting with "nosmp" on the command
-> > line; a couple of shell scripts print out a periodic "Ping" message
-> > whilst another triggers a crash by writing to /proc/sysrq-trigger:
-> > 
-> >   | sysrq: Trigger a crash
-> >   | Kernel panic - not syncing: sysrq triggered crash
-> >   | CPU: 0 PID: 1 Comm: init Not tainted 5.2.15 #1
-> >   | Hardware name: linux,dummy-virt (DT)
-> >   | Call trace:
-> >   |  dump_backtrace+0x0/0x148
-> >   |  show_stack+0x14/0x20
-> >   |  dump_stack+0xa0/0xc4
-> >   |  panic+0x140/0x32c
-> >   |  sysrq_handle_reboot+0x0/0x20
-> >   |  __handle_sysrq+0x124/0x190
-> >   |  write_sysrq_trigger+0x64/0x88
-> >   |  proc_reg_write+0x60/0xa8
-> >   |  __vfs_write+0x18/0x40
-> >   |  vfs_write+0xa4/0x1b8
-> >   |  ksys_write+0x64/0xf0
-> >   |  __arm64_sys_write+0x14/0x20
-> >   |  el0_svc_common.constprop.0+0xb0/0x168
-> >   |  el0_svc_handler+0x28/0x78
-> >   |  el0_svc+0x8/0xc
-> >   | Kernel Offset: disabled
-> >   | CPU features: 0x0002,24002004
-> >   | Memory Limit: none
-> >   | ---[ end Kernel panic - not syncing: sysrq triggered crash ]---
-> >   |  Ping 2!
-> >   |  Ping 1!
-> >   |  Ping 1!
-> >   |  Ping 2!
-> > 
-> > The issue can also be triggered on x86 kernels if CONFIG_SMP=n, otherwise
-> > local interrupts are disabled in 'smp_send_stop()'.
-> > 
-> > Disable preemption in 'panic()' before re-enabling interrupts.
-> 
-> Is this perhaps the correct solution for what commit c39ea0b9dd24 ("panic:
-> avoid the extra noise dmesg") was trying to fix?
-
-Hmm, maybe, although that looks like it's focussed more on irq handling
-than preemption. I've deliberately left the irq part alone, since I think
-having magic sysrq work via the keyboard interrupt is desirable from the
-panic loop.
-
-> Reviewed-by: Kees Cook <keescook@chromium.org>
-
-Thanks!
-
-Will
+Cool, thanks for digging.  Vincenzo, can we please add that to the
+commit message?
+-- 
+Thanks,
+~Nick Desaulniers
 
 _______________________________________________
 linux-arm-kernel mailing list
