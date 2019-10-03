@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86C2EC9897
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 08:50:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68BA6C989D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 08:50:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8AZIt9afs5xtcHLteItNJvWirGa08IlEpt95h0BPxsM=; b=VQ3SHozHqKCIWB
-	xbCnxuEl6bqCntECw64jpv4SPGAg11q7QVY0/htqxNohbo0zBV9F1p7NIPKX3wciePmp3qCF+dqIL
-	DTL3LG7xdQHf45JYo0+mRo1A6xCo1a/w/eUNfA0p7xkNdA1H70uHYSvZWUvykU5EtkqM/oJks+z35
-	8epdBR/gF23ckGAftH5Oq8MB32rtBbXvT0/KFrxzJIB7oSsb7UOhph3CbycIQHHRMEOCEiJam3kLz
-	jKELKPhrAGSWCgAu5GWTrNXRIm3qwUkexD1wues870RDHYIQdYzaMOwoZbU2x1obOIiO7DO+UK6wt
-	6tNEO5bfsCztJ8cU9Jdw==;
+	List-Owner; bh=Ek/04OMNdQ0wSvWI6xx3d+S3OnH3s1cOgUDrZin3E0w=; b=pTMr3b2LMzxmaH
+	wywldB9/F+UlaAsr8KSrivrDWRHRHO8rocvmw4PUTEm4nA1IF3asPK9CY+gjtio8mXBsMJbJEHu/5
+	KDqbKtYpNqRaNOHGvyoqYX4fOyzds7ODvxeJMw8e4G4gDRmuGKV9o7JcrY4EOTtLoDG7lBM3JlD3B
+	E2jQvlcxCX4FzGLu6IEJ9PvXDdormT+46JBl+vfsVZsbEbB35JumLN/X6DcSZCkPEWemsg0S2byEY
+	SddOKjZusLxx7oAmHrw252O8yi1B5s5Hll3pUhER0H6qIHbalI9QWh25i11mXx6+v9ivXa3ZAajKT
+	Rv0Brwi6jusWRKugp3EQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFuwi-0008RA-IM; Thu, 03 Oct 2019 06:50:40 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1iFuwz-0000FK-0H; Thu, 03 Oct 2019 06:50:57 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFuwZ-0008QV-S4
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 06:50:33 +0000
-Received: by mail-io1-xd43.google.com with SMTP id c25so2953504iot.12
+ id 1iFuwr-0000ET-97
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 06:50:51 +0000
+Received: by mail-io1-xd42.google.com with SMTP id c25so2955170iot.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 02 Oct 2019 23:50:29 -0700 (PDT)
+ Wed, 02 Oct 2019 23:50:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=tt/S1MK2hfNRmcchY+VX0l8ftGF+jAU5aVZJF+oZt2U=;
- b=it//+pUV0o+AfLtqgd58MPT3/eGz5NZ/3fJdCcTXH9p/mKoqt8vNSKVtRXo25SyElS
- ubjXKxRDSeAb4aFRKo/9jZCkbm00Q4lM4bVPvOUs6Y+y+15CztcT7PA8pPFcNzG3tmlC
- Xla/5zwL8a+0Cm7HMHu0mixFm6s4bazOxYl0E=
+ :cc; bh=ZHYvlpN03aN9XlL85X95NOUwb+VywcBIMog6JdvU8/E=;
+ b=TPFD+Yd6CfTdFITa1ngVIu7bhHHpMGlesUhtu9MDTLyuP4HMgvy5WMD6yyY9KoFNW3
+ ULlEEjL/G+DiRVPDmI16XEM5gcI+L9El120dH3U1ZMT0cm1lcBnN6D4y2tXwllLYtcPN
+ nc2TkrkJ2eYpF/SLjZO42qi/FTcx1ZBzS8t0E=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=tt/S1MK2hfNRmcchY+VX0l8ftGF+jAU5aVZJF+oZt2U=;
- b=as9h4QafGCEw3keECJOqlfxNkH17R9buRsrSVlMAe1T7zzIOHUkY5EMpj3CfFxqyxO
- h/UD4Nq8fTpIHAABCvhzgh0GGy2gOuJBjhdbsTNRR+DMFTTV1fHp05kPWrDXiQZyXOnK
- +1+/pExxKROjHuDqQrDh9Nl9jvdXOI3WJ5q6jkfm5APi57f6FfmYb5gd3R/qPUSQxBo5
- y4owHfbY28dXWFN3meGOm09agnHhbVuweRGaJOXQ8oJj7qwbJmBHocLvC6Ej5GY9mGW2
- s8w8ue+zPXfykPykLbfkKSF2YeDcC3+H6z8zT6mOslrxXIMNLLHeMSqPactGTbsGbRkz
- qGQw==
-X-Gm-Message-State: APjAAAUwwIrnKKrCNTeo7anbg7pfpTkbrbsQC63YPcvgr6da6smDqE0T
- L0Ex1c742/ONBa/YT7RIeGLSfnUPKtYRIrWXacM0DQ==
-X-Google-Smtp-Source: APXvYqw9C5okno4/FEmbGgjCtziH8L0ligLd5zphx/vdqtLp/tQvohb/XmjYoGGwm1th0cj3JsX+zL0a2/erxOU/7LI=
-X-Received: by 2002:a92:c74d:: with SMTP id y13mr8565455ilp.77.1570085428660; 
- Wed, 02 Oct 2019 23:50:28 -0700 (PDT)
+ bh=ZHYvlpN03aN9XlL85X95NOUwb+VywcBIMog6JdvU8/E=;
+ b=QWn0+Q6iVwaZ3YKE2B46+bhPWMv2dhGcLAeedluwY+11gv4DPzy3at89AwJJmJyQ6K
+ ZShpH5gVXJUFnaOXjE12vgwh4rW8+ipgiveZH4e+1VxjrBP0SVLJX6ZdBlzUqx+2mA5Z
+ eQZIbIOkK+rpE3f4MgdJx0R+75R+qgR38OhuCPlrsPATretNhe3+KQU9yr0bkEiMwAGU
+ uoVV3F96w/51HIktGGq480ZfcXUK78QubL2JtQG5vQRnO2ZFAyvMRze5CJHv8r2ZqHA+
+ sBWiTSqWuDv5OeLJryIG2Y9+fslt6sgvY6GESd1BGgMVNwCM3sbd8s1VYsC4lC6+LXWQ
+ YRVg==
+X-Gm-Message-State: APjAAAVXz7BjeE3UC7+XgD+CjN4tSgyog1pJ2SJKKFn/s3z4+9zzD2AX
+ y+OAOlRQwHKl2gQY7BXqEQPtkA0oUUY7aNmdjQOC4Q==
+X-Google-Smtp-Source: APXvYqxidNtZbs0x8HYndi+juRNw13gBCSF4Pfuk3ENR73KLAzRF4+IeuTb4FHlPvke2H95mbMi4Mwo+TGNlA/lh/QE=
+X-Received: by 2002:a6b:2b07:: with SMTP id r7mr7235777ior.173.1570085448370; 
+ Wed, 02 Oct 2019 23:50:48 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191003064527.15128-1-jagan@amarulasolutions.com>
- <20191003064527.15128-7-jagan@amarulasolutions.com>
-In-Reply-To: <20191003064527.15128-7-jagan@amarulasolutions.com>
+ <20191003064527.15128-8-jagan@amarulasolutions.com>
+In-Reply-To: <20191003064527.15128-8-jagan@amarulasolutions.com>
 From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Thu, 3 Oct 2019 12:20:17 +0530
-Message-ID: <CAMty3ZD95L83dzsBwNghfahZ2mfmmOn0iA40t534i91UN7P_uQ@mail.gmail.com>
-Subject: Re: [PATCH v11 6/7] drm/panel: Add Bananapi S070WV20-CT16 ICN6211
- MIPI-DSI to RGB bridge
+Date: Thu, 3 Oct 2019 12:20:37 +0530
+Message-ID: <CAMty3ZAHPWOn=h04AjGLf33uGhW4MxqpU4z1izGp0BgUmyOiLQ@mail.gmail.com>
+Subject: Re: [PATCH v11 7/7] ARM: dts: sun8i: bananapi-m2m: Enable Bananapi
+ S070WV20-CT16 DSI panel
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_235031_903546_B25027E9 
-X-CRM114-Status: GOOD (  11.68  )
+X-CRM114-CacheID: sfid-20191002_235049_327455_BD5F328C 
+X-CRM114-Status: GOOD (  10.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,18 +105,18 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Thu, Oct 3, 2019 at 12:16 PM Jagan Teki <jagan@amarulasolutions.com> wrote:
 >
-> Bananapi S070WV20-CT16 ICN6211 is 800x480, 4-lane MIPI-DSI to RGB bridge
-> panel which can be used to connect via DSI port on BPI-M64 board,
-> so add a driver for it.
+> This patch add support for Bananapi S070WV20-CT16 DSI panel to
+> BPI-M2M board.
 >
-> The same panel PCB comes with parallel RBG which is supported via
-> panel-simple driver with "bananapi,s070wv20-ct16" compatible.
+> DSI panel connected via board DSI port with,
+> - DCDC1 as VCC-DSI supply
+> - DLDO1 as VDD supply
+> - PL5 gpio for lcd reset gpio pin
+> - PB7 gpio for lcd enable gpio pin
+> - PL4 gpio for backlight enable pin
 >
 > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 > ---
->  drivers/gpu/drm/panel/Kconfig                 |   9 +
->  drivers/gpu/drm/panel/Makefile                |   1 +
->  .../panel/panel-bananapi-s070wv20-icn6211.c   | 293 ++++++++++++++++++
 
 This would be an overlay patch, which doesn't need to mege. please
 correct the same.
