@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF1F7CADE9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 20:14:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF04BCADEF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 20:16:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZEqyvRp6oiybzI0onogzMeVM2/UbuMLryVzSY27jn9U=; b=CefvVtSFohr6JZ
-	1RieCJ+QLBtgq1movPMZnAankSLyXw5EndqjlhrtZ5c56idKfkV6SsTVNmWSZZ5Aply9KrdflL2VP
-	lvjAIik30U1zO3FZslutFOGac4wZmS7UTcfpIog9KKdchE66Im7Gm26tjfLqw2WOmJNMbUGxbxxVa
-	NzpYl6UjBG+liSXPVB54nTa6ocE+NmCx9SW8z+P/a3qrGMhXho94S+sDFs7/eYLF43F0fBfbV3CeJ
-	jnq81+EVeIAkZuNs5SlSg06tXfroFCHc5qPKVCQDdkn2e6TVjKGxyUOM0ohqUsHda55kZrVkUxBNn
-	hO6L/hFvXn2m24k68BDw==;
+	List-Owner; bh=yYeW7B0OO9n0gIwfHfC/ABgUnF4hHND/ioHYFOy2guM=; b=ZCayLkmc5sCWSi
+	2VyELW2yZOR9cez4O13+rl6CYDkGcdE3VtlujxbAmc7ir9ic6/r+wnu0Mud6xCKKB4ogQLsrV/4FU
+	Sntz7PrTAGi/yzUFCqy6pyUti721L7SFWpkW829HshGvaAsrd0ToMH1sW2fY49v3I9n0Mno+30cig
+	sqprVGdb47BpIPyhM4stZTGKJzq2WZ517h34JD9JFNx2SZXWOSZzpfRqYiWGFPAx//COuDfOxY1Ud
+	+MIvRlHpjqYwbwFwwgxHXirtxNprsG0ASM37OxeEOHH5KIHMe7K7/16u51r7CvoteZiYg/XWnt+7D
+	CCwD3Q8BE+p31Erb8Tiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG5c3-000311-Ju; Thu, 03 Oct 2019 18:14:03 +0000
+	id 1iG5e8-0004ue-E4; Thu, 03 Oct 2019 18:16:12 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG5bu-00030T-J3; Thu, 03 Oct 2019 18:13:55 +0000
+ id 1iG5dw-0004se-U7; Thu, 03 Oct 2019 18:16:02 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 304B520862;
- Thu,  3 Oct 2019 18:13:54 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7D6F22070B;
+ Thu,  3 Oct 2019 18:16:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570126434;
- bh=OEFcG8Srhv/ZYjCll5MhUaVrXvpLIbrBCRSqjpiiIA8=;
+ s=default; t=1570126560;
+ bh=nY0LFXVk/SNSsj/nGuYEk8lLimBHZ/kip/5QktLE30M=;
  h=In-Reply-To:References:From:To:Cc:Subject:Date:From;
- b=sUPn/ARNFZqfClXLICHZK6NPr0REdXEB476kJ0611ANUQHt9gL40z9v8L14djPWn+
- izGkbv1jIE8yRn8xIzhu7FDNm+RXop7VmOFFBOFSZDFQNrj2tNykzR6ZueyWoR3+/O
- 4xS6sxAYfdZJYGfydjpeOhAQcPHkDi9YExTXxzY4=
+ b=2gRfkDNay4GQ8GVL40xt/FVRFNW/T6303w/jbXj7QQJVtdz7LzvfbC54mYR4mS8r6
+ KQrbne3Qg2j5ZURd8qpfR/Rh1gEJ2uKXn/h1RYTKEuhbn9SwE6Q8jFz72JIOLIqf2W
+ RxAgIOfeWXuJqXwwCg4HHAy4gJrGQtAqfIWHrd38=
 MIME-Version: 1.0
-In-Reply-To: <1569553244-3165-5-git-send-email-zhangqing@rock-chips.com>
-References: <1569553244-3165-1-git-send-email-zhangqing@rock-chips.com>
- <1569553244-3165-5-git-send-email-zhangqing@rock-chips.com>
+In-Reply-To: <20191002164047.14499-1-krzk@kernel.org>
+References: <20191002164047.14499-1-krzk@kernel.org>
 From: Stephen Boyd <sboyd@kernel.org>
-To: Elaine Zhang <zhangqing@rock-chips.com>, heiko@sntech.de
-Subject: Re: [PATCH v3 4/5] clk: rockchip: add pll up and down when change pll
- freq
+To: Uwe Kleine-König <u.kleine-koenig@pengutronix.de>, Krzysztof Kozlowski <krzk@kernel.org>, Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>, bcm-kernel-feedback-list@broadcom.com, devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org, linux-leds@vger.kernel.org, linux-mediatek@lists.infradead.org, linux-pwm@vger.kernel.org, linux-riscv@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-rpi-kernel@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com, linux-tegra@vger.kernel.org
+Subject: Re: [PATCH v3 1/2] dt-bindings: pwm: Convert PWM bindings to
+ json-schema
 User-Agent: alot/0.8.1
-Date: Thu, 03 Oct 2019 11:13:53 -0700
-Message-Id: <20191003181354.304B520862@mail.kernel.org>
+Date: Thu, 03 Oct 2019 11:15:59 -0700
+Message-Id: <20191003181600.7D6F22070B@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_111354_647953_C316B4E0 
-X-CRM114-Status: UNSURE (   5.47  )
+X-CRM114-CacheID: sfid-20191003_111600_990143_AEBC3E4C 
+X-CRM114-Status: UNSURE (   7.49  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,34 +76,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: huangtao@rock-chips.com, xf@rock-chips.com, mturquette@baylibre.com,
- Elaine Zhang <zhangqing@rock-chips.com>, linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-rockchip@lists.infradead.org,
- xxx@rock-chips.com, linux-arm-kernel@lists.infradead.org
+Cc: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Elaine Zhang (2019-09-26 20:00:43)
-> set pll sequence:
->         ->set pll to slow mode or other plls
->         ->set pll down
->         ->set pll params
->         ->set pll up
->         ->wait pll lock status
->         ->set pll to normal mode
+Quoting Krzysztof Kozlowski (2019-10-02 09:40:46)
+> Convert generic PWM bindings to DT schema format using json-schema.  The
+> consumer bindings are split to separate file.
 > 
-> To slove the system error:
-
-solve?
-
-> wait_pll_lock: timeout waiting for pll to lock
-> pll_set_params: pll update unsucessful,
->                 trying to restore old params
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 > 
+> ---
+> 
+> Changes since v2:
+> 1. Change also pwm-sprd.txt
+> 
+> Changes since v1:
+> 1. Indent example with four spaces (more readable),
+> 2. Change pattern for pwm nodes,
+> 3. Remove $ref from #cells.
+> ---
+>  .../devicetree/bindings/clock/pwm-clock.txt   |  2 +-
 
-This commit text needs help. It looks like pseudo-code.
+Acked-by: Stephen Boyd <sboyd@kernel.org>
 
 
 _______________________________________________
