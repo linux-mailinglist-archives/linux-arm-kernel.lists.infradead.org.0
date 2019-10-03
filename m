@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BFCF8C9F75
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 15:30:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DDD7C9F89
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 15:34:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kCy5sSad9BDNNUdGDmVg7nye2aMAT2cgKCh91HYdcpA=; b=QpYTgv8VcZRXQJLT53QM9BqUj
-	w0iUkRoMySmY0X2ee3IKWTDlzph55P4jS4/jzAJ3B5L7El1j4sOjg5TmcW2wgBwVvnScw326bX5vK
-	rtURHtEf3aj5vV7Kocg3ookmBoVFjIDBkPO2m1Itbz4zcUNKc4xVNxPHj8jFMoLfQ29EDvAKJcPOa
-	kwybD3/Mc+X8L3DvTgr706ZveaiY3f9Z5OFq6bfHBqJVSxdsaKJAGTVx/m3dt5sAmRQPG0dosiAC0
-	4TXkqsUqFA5vWeKLLhrSfd+PsXxMjqn7aVBYvV16rE1vI4vpxRplWsQzTQg7saMg3qIldJ2HzRWR+
-	ZuNEu3YPQ==;
+	 bh=I+qxxKT7iYWvptMYZn8ci+x9fsBwCMkrLCk0TbJpQKU=; b=Zu5dRW88v/reuIRsG00c4W+dK
+	ILmLryN9unK6YF2oZYEeWehqbtbGuWugqmbgFXCD9cS6Sa402cTFTZYFy3XWvr4M1I+C57SmYDvu1
+	AJtHaSNVJD5r8kyqnaGXUxaYc6At7oilwGZja+8HKtDI2LZVsH390oS0W7azeirYND9OR8+v1D6Lh
+	x5Jeyem59IEQJ+aeESLFvRj3MKoJP/jaytnA66LHsJda/j55vyAA8vZaIY6unp7a8s/IppsoygKzp
+	0GLxYuxQRdwqEaeI2j9h9+flz+eKtYBbcbLB5Z6KOazDtIQ68s7ZFCZr01uH1fmzro9kczDle8HP3
+	JX/GCZuCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG1Bq-0004jq-8i; Thu, 03 Oct 2019 13:30:42 +0000
+	id 1iG1Fx-0005KX-6t; Thu, 03 Oct 2019 13:34:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG1Bi-0004jP-E3
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 13:30:35 +0000
+ id 1iG1Fp-0005K5-VU
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 13:34:51 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 87D85207FF;
- Thu,  3 Oct 2019 13:30:33 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2A28D20700;
+ Thu,  3 Oct 2019 13:34:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570109434;
- bh=/PbXIGt0UaMtnHakh0maKsJfjC9hWocWlO7+FUASxAs=;
+ s=default; t=1570109689;
+ bh=ApHvRgiWA6cRhXYdkclbMkQdh5sxi8kdnz0cqB74Gvg=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=2QzvAZ+ZKgdOJ80qmd9SOJ5LSwKyk4G/pw5n8Gp/a2xELivFH5ULWHtb4eAgV9ans
- E48i9e22CPdnXQuE2n7GWOtdKqOw4VSGKA0OvZ19/QyJ2q0J6pwyokSdaw/GXyAOMy
- RBSZCDf5+Mji9yipjs10suznOE6Etm80OulAKWYY=
-Date: Thu, 3 Oct 2019 15:30:31 +0200
+ b=MZgD+R+QDCfhRydR0uPmxahHwv3pyjs/0u7P5qUaN9ZrKn1EY1NeQb/rH6Qp1HMaA
+ YcYFxynnwZD1MteDBBoz7ouXRHx5raneJ0RAlMFML8nRlR3GaDp4GD6qyiXqRsBbR5
+ GQWIUsIluS0VZfxPzYONnrO86rxq51tNC+Pk2opg=
+Date: Thu, 3 Oct 2019 15:34:47 +0200
 From: Maxime Ripard <mripard@kernel.org>
 To: Icenowy Zheng <icenowy@aosc.io>
-Subject: Re: [PATCH v11 4/7] dt-bindings: sun6i-dsi: Add VCC-DSI supply
- property
-Message-ID: <20191003133031.gowixvfbdaif4sdf@gilmour>
-References: <20191003064527.15128-1-jagan@amarulasolutions.com>
- <20191003064527.15128-5-jagan@amarulasolutions.com>
- <20191003114733.56mlar666l76uoyb@gilmour>
- <0086CD40-F161-4B33-8D76-8DCA20E7DB07@aosc.io>
+Subject: Re: [linux-sunxi] [PATCH 1/3] Revert "drm/sun4i: dsi: Change the
+ start delay calculation"
+Message-ID: <20191003133447.yh2qcaazn2blphoo@gilmour>
+References: <20191001080253.6135-1-icenowy@aosc.io>
+ <20191001080253.6135-2-icenowy@aosc.io>
+ <CAMty3ZCjrM4MajJLyLwt-31mNnfVWghwatogtwVOvCt4gY0LZA@mail.gmail.com>
+ <20191003131916.4bm22krapo5tz6oz@gilmour>
+ <E0DBDA94-FA7C-4ED6-AE84-BE1FC5463C0E@aosc.io>
 MIME-Version: 1.0
-In-Reply-To: <0086CD40-F161-4B33-8D76-8DCA20E7DB07@aosc.io>
+In-Reply-To: <E0DBDA94-FA7C-4ED6-AE84-BE1FC5463C0E@aosc.io>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_063034_512791_C08602C5 
-X-CRM114-Status: GOOD (  15.15  )
+X-CRM114-CacheID: sfid-20191003_063450_034477_FC65EEB8 
+X-CRM114-Status: GOOD (  17.43  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,93 +80,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, michael@amarulasolutions.com,
- David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-sunxi <linux-sunxi@googlegroups.com>,
+Cc: David Airlie <airlied@linux.ie>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
  Jagan Teki <jagan@amarulasolutions.com>, Daniel Vetter <daniel@ffwll.ch>,
  Chen-Yu Tsai <wens@csie.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1967705508600893101=="
+Content-Type: multipart/mixed; boundary="===============9102155375405887212=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============1967705508600893101==
+--===============9102155375405887212==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="xl6ox63chtxqzxbp"
+	protocol="application/pgp-signature"; boundary="ahbpm7frntnvtdny"
 Content-Disposition: inline
 
 
---xl6ox63chtxqzxbp
+--ahbpm7frntnvtdny
 Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Thu, Oct 03, 2019 at 09:04:03PM +0800, Icenowy Zheng wrote:
-> =E4=BA=8E 2019=E5=B9=B410=E6=9C=883=E6=97=A5 GMT+08:00 =E4=B8=8B=E5=8D=88=
-7:47:33, Maxime Ripard <mripard@kernel.org> =E5=86=99=E5=88=B0:
-> >On Thu, Oct 03, 2019 at 12:15:24PM +0530, Jagan Teki wrote:
-> >> Allwinner MIPI DSI controllers are supplied with SoC DSI
-> >> power rails via VCC-DSI pin.
-> >>
-> >> Some board still work without supplying this but give more
-> >> faith on datasheet and hardware schematics and document this
-> >> supply property in required property list.
-> >>
-> >> Reviewed-by: Rob Herring <robh@kernel.org>
-> >> Tested-by: Merlijn Wajer <merlijn@wizzup.org>
-> >> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> >> ---
-> >>  .../bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml         | 3
-> >+++
-> >>  1 file changed, 3 insertions(+)
-> >>
-> >> diff --git
-> >a/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi=
-=2Eyaml
-> >b/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi=
-=2Eyaml
-> >> index 47950fced28d..9d4c25b104f6 100644
-> >> ---
-> >a/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi=
-=2Eyaml
-> >> +++
-> >b/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi=
-=2Eyaml
-> >> @@ -36,6 +36,9 @@ properties:
-> >>    resets:
-> >>      maxItems: 1
-> >>
-> >> +  vcc-dsi-supply:
-> >> +    description: VCC-DSI power supply of the DSI encoder
-> >> +
-> >
-> >The driver treats it as mandatory, so I've added it to the binding, as
-> >suggested by the commit log.
+On Thu, Oct 03, 2019 at 09:21:30PM +0800, Icenowy Zheng wrote:
 >
-> No. The regulator_get function will return dummy regulator, rather than
-> fail, if the regulator is not specified.
+>
+> =E4=BA=8E 2019=E5=B9=B410=E6=9C=883=E6=97=A5 GMT+08:00 =E4=B8=8B=E5=8D=88=
+9:19:16, Maxime Ripard <mripard@kernel.org> =E5=86=99=E5=88=B0:
+> >On Thu, Oct 03, 2019 at 12:38:43PM +0530, Jagan Teki wrote:
+> >> On Tue, Oct 1, 2019 at 1:33 PM Icenowy Zheng <icenowy@aosc.io> wrote:
+> >> >
+> >> > This reverts commit da676c6aa6413d59ab0a80c97bbc273025e640b2.
+> >> >
+> >> > The original commit adds a start parameter to the calculation of
+> >the
+> >> > start delay according to some old BSP versions from Allwinner.
+> >However,
+> >> > there're two ways to add this delay -- add it in DSI controller or
+> >add
+> >> > it in the TCON. Add it in both controllers won't work.
+> >> >
+> >> > The code before this commit is picked from new versions of BSP
+> >kernel,
+> >> > which has a comment for the 1 that says "put start_delay to tcon".
+> >By
+> >> > checking the sun4i_tcon0_mode_set_cpu() in sun4i_tcon driver, it
+> >has
+> >> > already added this delay, so we shouldn't repeat to add the delay
+> >in DSI
+> >> > controller, otherwise the timing won't match.
+> >>
+> >> Thanks for this change. look like this is proper reason for adding +
+> >> 1. also adding bsp code links here might help for future reference.
+> >>
+> >> Otherwise,
+> >>
+> >> Reviewed-by: Jagan Teki <jagan@amarulasolutions.com>
+> >
+> >The commit log was better in this one. I ended up merging this one,
+> >with your R-b.
+>
+> Please note that Jagan's v11 3/7 is still needed.
 
-Yes. And this deals nicely with the backward compatibility case. The
-regulator is there on all the SoCs, so there's no reason to leave it
-out.
+Right, unfortunately, it doesn't apply anymore.
 
+Jagan, can you send that patch rebased?
+
+Thanks!
 Maxime
 
---xl6ox63chtxqzxbp
+--ahbpm7frntnvtdny
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXZX39wAKCRDj7w1vZxhR
-xfdtAP9iY02ClBdX7PytSYTVv7u9rk5qFxNbRhfligYsza6diwEA+bXtRpDjiCDy
-YsfwN2Wm3Vvp2K/WtdvzfKezGk0WpAo=
-=iYP9
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXZX49wAKCRDj7w1vZxhR
+xXlJAP9eYpRWg54xgD3SVv2/I+5gd0AAON4A7dZdtgu+5/pTPQD+PCU1uq8t/VDH
+usW3Bq24a2WrKYQM+3lOWKH7WkUhnA4=
+=hN/o
 -----END PGP SIGNATURE-----
 
---xl6ox63chtxqzxbp--
+--ahbpm7frntnvtdny--
 
 
---===============1967705508600893101==
+--===============9102155375405887212==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -176,5 +174,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============1967705508600893101==--
+--===============9102155375405887212==--
 
