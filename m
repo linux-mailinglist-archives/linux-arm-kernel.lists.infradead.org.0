@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1CDEC9DA0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 13:43:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2ABA2C9DAB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 13:46:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YJEvGyWSkugyBnUIkQVbJP2o+uvfDrIwOmZZmjU9zeU=; b=E/Pf75O1Wp3JTO
-	YrIcA3QAPVgxmf7+Z6gk/dG2NsRZNeg0slHG+LNBJNzDQ2kRnoD6HPf1as3J6qetzwcOqgrbAmnsh
-	8HruyIl/A45lg5fWBGVifVsPvC277NK7nXZnPbhEGkWro/x0PjhNTNDZT1mlStF2lykfp6q/e6prY
-	jA7O9hKz+RT0nT/RpX6FUMklw9htl2ztE78ynSTl22+WCim8ywZoHioj0VCM/zSV45kyNJYBQVvmU
-	vsNDObM6S09cgd3proOQZjw81MPOsWvyNacCG06HwpVtRWBWcKKyudqFFaEUgIZgZzKzRkTcAi2WY
-	qPMDYOKwdirPlXSs5e+w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=92UWqPXbAVYh6M6gP1JT+t8C4jWJ8LUEeJiWXgkInTQ=; b=Vb3/6wyGfPy1OS
+	l7REI9SWJzyynAEsxyImqmYs952LLQ8AZ6p5iZKIr8103VguPdNpm0ZQOuzCOwWbdIj7vmvz1G30Z
+	1BLXMEsmG5AsWqdskg4DU9ste8T1oYyoHKvj4oXxQ42/FS6iF8XK9JM80ZRyJNfa5a6v+PjYHMTDu
+	zZjRItL17KlKdhBEdkWI2M5XVw2bGSUx2JH1wB0bWIgo+bhYYLCItcxntxpxWImvz0LWE2/68jgjW
+	tqZXwu69VK0znHrPf2npB09ZixGwNTnvjFoeoi9bqKj2M/e4Z4++kZU/N7SqoXattl9345PN/Z8D4
+	thLj4AIW3VWlZpNXxnng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFzWI-0003u1-C1; Thu, 03 Oct 2019 11:43:42 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFzWB-0003tX-67
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 11:43:36 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CCBF31570;
- Thu,  3 Oct 2019 04:43:34 -0700 (PDT)
-Received: from [10.1.26.182] (c02wx28rhv2r.cambridge.arm.com [10.1.26.182])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1DFC63F706;
- Thu,  3 Oct 2019 04:43:34 -0700 (PDT)
-Subject: Re: Regression: Cortex-M w/ XIP not booting
-To: afzal mohammed <afzal.mohd.ma@gmail.com>
-References: <20191002061637.GA7743@afzalpc>
- <c9a8d667-0dfb-2dd7-3537-8683cfc3914d@arm.com>
- <20191003000459.GA5467@afzalpc>
-From: Vladimir Murzin <vladimir.murzin@arm.com>
-Message-ID: <60589407-8740-cf96-4dcf-cf5ca57f916c@arm.com>
-Date: Thu, 3 Oct 2019 12:43:32 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1iFzYv-0005Yw-VD; Thu, 03 Oct 2019 11:46:25 +0000
+Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iFzYo-0005YV-QV
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 11:46:21 +0000
+X-Originating-IP: 86.207.98.53
+Received: from localhost
+ (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
+ (Authenticated sender: kamel.bouhara@bootlin.com)
+ by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id B8ACC1BF215;
+ Thu,  3 Oct 2019 11:46:08 +0000 (UTC)
+From: Kamel Bouhara <kamel.bouhara@bootlin.com>
+To: Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v3] soc: at91: Add Atmel SFR SN (Serial Number) support
+Date: Thu,  3 Oct 2019 13:46:06 +0200
+Message-Id: <20191003114606.7846-1-kamel.bouhara@bootlin.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-In-Reply-To: <20191003000459.GA5467@afzalpc>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_044335_270248_F42E20DC 
-X-CRM114-Status: GOOD (  14.98  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191003_044619_155784_9AB49151 
+X-CRM114-Status: GOOD (  16.00  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.201 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.201 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,91 +64,164 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Russell King <linux@armlinux.org.uk>, linux-arm-kernel@lists.infradead.org,
- Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Kamel Bouhara <kamel.bouhara@bootlin.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Afzal,
-On 10/3/19 1:04 AM, afzal mohammed wrote:
-> Hi Vladimir,
-> 
-> On Wed, Oct 02, 2019 at 12:55:55PM +0100, Vladimir Murzin wrote:
-> 
->> Can you try diff bellow? I do not have XIP target, but non-XIP seems to
->> stay happy...
-> 
-> Thanks, it fixes the issue.
+Add support to read SFR's read-only registers providing the SoC
+Serial Numbers (SN0+SN1) to userspace.
 
-Great thanks! I've just sent it as a proper patch.
+~ #  hexdump -n 8  -e'"%d\n"' /sys/bus/nvmem/devices/atmel-sfr0/nvmem
+959527243
+371539274
 
-Vladimir
+Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
+---
+Changes in v3:
+ - Fixed typo: processor in Kconfig
+ - Renamed private struct sfr_priv to atmel_sfr_priv
+ - Dropped the drvdata structure as we have same size for both SN
+   registers in SAMA5D2/4, just hardcoded it for now.
+ - Cleaned up private struct from unused members
+ - Fixed misusage of devm_kzalloc
 
-> 
-> Regards
-> afzal
-> 
->>
->>
->> diff --git a/arch/arm/kernel/head-common.S b/arch/arm/kernel/head-common.S
->> index a7810be..4a39828 100644
->> --- a/arch/arm/kernel/head-common.S
->> +++ b/arch/arm/kernel/head-common.S
->> @@ -68,7 +68,7 @@ ENDPROC(__vet_atags)
->>   * The following fragment of code is executed with the MMU on in MMU mode,
->>   * and uses absolute addresses; this is not position independent.
->>   *
->> - *  r0  = cp#15 control register
->> + *  r0  = cp#15 control register (exc_ret for M-class)
->>   *  r1  = machine ID
->>   *  r2  = atags/dtb pointer
->>   *  r9  = processor ID
->> @@ -137,7 +137,8 @@ __mmap_switched_data:
->>  #ifdef CONFIG_CPU_CP15
->>  	.long	cr_alignment			@ r3
->>  #else
->> -	.long	0				@ r3
->> +M_CLASS(.long	exc_ret)			@ r3
->> +AR_CLASS(.long	0)				@ r3
->>  #endif
->>  	.size	__mmap_switched_data, . - __mmap_switched_data
->>  
->> diff --git a/arch/arm/kernel/head-nommu.S b/arch/arm/kernel/head-nommu.S
->> index afa350f..0fc814b 100644
->> --- a/arch/arm/kernel/head-nommu.S
->> +++ b/arch/arm/kernel/head-nommu.S
->> @@ -201,6 +201,8 @@ M_CLASS(streq	r3, [r12, #PMSAv8_MAIR1])
->>  	bic	r0, r0, #V7M_SCB_CCR_IC
->>  #endif
->>  	str	r0, [r12, V7M_SCB_CCR]
->> +	/* Pass exc_ret to __mmap_switched */
->> +	mov	r0, r10
->>  #endif /* CONFIG_CPU_CP15 elif CONFIG_CPU_V7M */
->>  	ret	lr
->>  ENDPROC(__after_proc_init)
->> diff --git a/arch/arm/mm/proc-v7m.S b/arch/arm/mm/proc-v7m.S
->> index 1448f14..efebf41 100644
->> --- a/arch/arm/mm/proc-v7m.S
->> +++ b/arch/arm/mm/proc-v7m.S
->> @@ -136,9 +136,8 @@ __v7m_setup_cont:
->>  	cpsie	i
->>  	svc	#0
->>  1:	cpsid	i
->> -	ldr	r0, =exc_ret
->> -	orr	lr, lr, #EXC_RET_THREADMODE_PROCESSSTACK
->> -	str	lr, [r0]
->> +	/* Calculate exc_ret */
->> +	orr	r10, lr, #EXC_RET_THREADMODE_PROCESSSTACK
->>  	ldmia	sp, {r0-r3, r12}
->>  	str	r5, [r12, #11 * 4]	@ restore the original SVC vector entry
->>  	mov	lr, r6			@ restore LR
->>
->> Cheers
->> Vladimir
-> 
+ drivers/soc/atmel/Kconfig  | 11 +++++
+ drivers/soc/atmel/Makefile |  1 +
+ drivers/soc/atmel/sfr.c    | 93 ++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 105 insertions(+)
+ create mode 100644 drivers/soc/atmel/sfr.c
+
+diff --git a/drivers/soc/atmel/Kconfig b/drivers/soc/atmel/Kconfig
+index 05528139b023..50caf6db9c0e 100644
+--- a/drivers/soc/atmel/Kconfig
++++ b/drivers/soc/atmel/Kconfig
+@@ -5,3 +5,14 @@ config AT91_SOC_ID
+ 	default ARCH_AT91
+ 	help
+ 	  Include support for the SoC bus on the Atmel ARM SoCs.
++
++config AT91_SOC_SFR
++	tristate "Special Function Registers support"
++	depends on ARCH_AT91 || COMPILE_TEST
++	help
++	  This is a driver for the Special Function Registers available on
++	  Atmel SAMA5Dx SoCs, providing access to specific aspects of the
++	  integrated memory, bridge implementations, processor etc.
++
++	  This driver can also be built as a module. If so, the module
++	  will be called sfr.
+diff --git a/drivers/soc/atmel/Makefile b/drivers/soc/atmel/Makefile
+index 7ca355d10553..d849a897cd77 100644
+--- a/drivers/soc/atmel/Makefile
++++ b/drivers/soc/atmel/Makefile
+@@ -1,2 +1,3 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+ obj-$(CONFIG_AT91_SOC_ID) += soc.o
++obj-$(CONFIG_AT91_SOC_SFR) += sfr.o
+diff --git a/drivers/soc/atmel/sfr.c b/drivers/soc/atmel/sfr.c
+new file mode 100644
+index 000000000000..e92050b4c09e
+--- /dev/null
++++ b/drivers/soc/atmel/sfr.c
+@@ -0,0 +1,93 @@
++// SPDX-License-Identifier: GPL-2.0-only
++/*
++ * sfr.c - driver for special function registers
++ *
++ * Copyright (C) 2019 Bootlin.
++ *
++ */
++#include <linux/mfd/syscon.h>
++#include <linux/module.h>
++#include <linux/nvmem-provider.h>
++#include <linux/of.h>
++#include <linux/of_device.h>
++#include <linux/platform_device.h>
++#include <linux/regmap.h>
++
++#define SFR_SN0		0x4c
++#define SFR_SN_SIZE	8
++
++struct atmel_sfr_priv {
++	struct regmap			*regmap;
++};
++
++static int atmel_sfr_read(void *context, unsigned int offset,
++			  void *buf, size_t bytes)
++{
++	struct atmel_sfr_priv *priv = context;
++
++	return regmap_bulk_read(priv->regmap, SFR_SN0 + offset,
++				buf, bytes / 4);
++}
++
++static struct nvmem_config atmel_sfr_nvmem_config = {
++	.name = "atmel-sfr",
++	.read_only = true,
++	.word_size = 4,
++	.stride = 4,
++	.size = SFR_SN_SIZE,
++	.reg_read = atmel_sfr_read,
++};
++
++static int atmel_sfr_probe(struct platform_device *pdev)
++{
++	struct device *dev = &pdev->dev;
++	struct device_node *np = dev->of_node;
++	struct nvmem_device *nvmem;
++	struct atmel_sfr_priv *priv;
++
++	priv = devm_kmalloc(dev, sizeof(*priv), GFP_KERNEL);
++	if (!priv)
++		return -ENOMEM;
++
++	priv->regmap = syscon_node_to_regmap(np);
++	if (IS_ERR(priv->regmap)) {
++		dev_err(dev, "cannot get parent's regmap\n");
++		return PTR_ERR(priv->regmap);
++	}
++
++	atmel_sfr_nvmem_config.dev = dev;
++	atmel_sfr_nvmem_config.priv = priv;
++
++	nvmem = devm_nvmem_register(dev, &atmel_sfr_nvmem_config);
++	if (IS_ERR(nvmem)) {
++		dev_err(dev, "error registering nvmem config\n");
++		return PTR_ERR(nvmem);
++	}
++
++	return 0;
++}
++
++static const struct of_device_id atmel_sfr_dt_ids[] = {
++	{
++		.compatible = "atmel,sama5d2-sfr",
++	}, {
++		.compatible = "atmel,sama5d4-sfr",
++	}, {
++		/* sentinel */
++	},
++};
++MODULE_DEVICE_TABLE(of, atmel_sfr_dt_ids);
++
++static struct platform_driver atmel_sfr_driver = {
++	.probe = atmel_sfr_probe,
++	.driver = {
++		.name = "atmel-sfr",
++		.of_match_table = atmel_sfr_dt_ids,
++	},
++};
++module_platform_driver(atmel_sfr_driver);
++
++MODULE_AUTHOR("Kamel Bouhara <kamel.bouhara@bootlin.com>");
++MODULE_DESCRIPTION("Atmel SFR SN driver for SAMA5D2/4 SoC family");
++MODULE_LICENSE("GPL v2");
++
+--
+2.23.0
 
 
 _______________________________________________
