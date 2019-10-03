@@ -2,85 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 045A6C9F1A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 15:09:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DDD5C9F2D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 15:16:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=iqHyMZCBBw4EVq9eKZQV6BPLNY333BnDlH3Cz6HOOhg=; b=N556utLUCYWrka
-	i+sfItodw8U56NAdc/R05HEhi7MYB3+BA4BTWlhI7HWwkZBngabhZLyOM4ycf7typmhN9N3WyNgoE
-	r9TkAs8BdpufYtqKjPq+A3kg/M6s17BSIRNvVYxGp7NwQsVXcYz42p0p3qiyI22C+02OH0MmdU04R
-	vr/rSKPOjGkFRVDGwRN/rxN/Msz5St/eagdjt6xmM6/PlDHYC/FfogYi8VGoGRiT9ahcDzZYsTNxq
-	vp1vVWz3Xuqlh1GgILITyPyrjALqwuQ7n5JShI341BvA3x1SStOy17TMb11RKwRbTjcMKc4XVde8u
-	eN+/A5NnmW888aL4s3zg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5S38HU+6dxjH5sTrVQP0dsZF+K2YoETkY2kVTZzjbYc=; b=txmckEKJDFcBWZ
+	vZttIFicVWYZzxV/nz0nL8z1banF23BpWgUpHuG+OKaHzyoYFVyyj43709mtmVzuIbLuLptft3rAe
+	HdidxyWjx7yOzlmL9vCqxouTYI3co0zFn3CtK+La5KWDvhRz3vOH/VnFOwqLbMGNC2jUlc2jguDQ3
+	M5tp73ZiGSZb51ggt9o6Xxp0pUssRcdrPUDvmodhLPsacIv8vq6SVbj+9Yk4JqS7ZHcRBGKBwT7xt
+	EuTY4OIma5Fk8oeozBvE795kEhV3zhgSF1wYy6761ZY9f3QejSX/KNULRJ9+VhUG4uJbR8QdBv1xW
+	6lwmvmhnhZlFxuMJdW2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG0qo-0002F5-GY; Thu, 03 Oct 2019 13:08:58 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iG0xz-0005vM-Vb; Thu, 03 Oct 2019 13:16:23 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG0qb-0002DS-HE
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 13:08:47 +0000
-Received: by mail-wr1-x444.google.com with SMTP id v8so2855727wrt.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 03 Oct 2019 06:08:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Gw44OhLwQH/CUylU7AC4CHwJnvlb/yfwJWpgjG0sVUc=;
- b=X/kzO0Mf8rp6JZbTiG3DaCWVH2uV5D1spjhSzxDM04qlnvV1ZoRN3QOzZ/9nqxa/zp
- tdwHcsd3l+4EYuqpn5cBFbk0o84KyVO9d7lERByJbO2rJAbm0BLvjt1ldyaFFMLdgN1X
- 7UZTdiJbnxHzLwGG6IWoqiwEb98+1sTYoA6VT8l08diTELNCv8xpUGcv6hP8ma1dPbp9
- X31T1cBs89lfR86fvQrZRVc6/q6zxcxMFFlhrZ0yjs75d5fPTvbzdsLnNonrvRSICnv0
- nXhT6m+ns+AObjmTCJL6XiI5tCPE6iFFqow3usBNluC+056y/CLuizemf28eEXii3L7R
- QBGw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Gw44OhLwQH/CUylU7AC4CHwJnvlb/yfwJWpgjG0sVUc=;
- b=c/yn8WjUoMEmjXvTfPSrglFgXns2hp1hue11Wl3LvNfbSDpK51tbJWsQSmcjnk4Ngd
- A7HBGsLUykts9XGyQPhN2C0vAnSPFMm3/jaO4wfaw7W7Z43JyLMt/ZuoePspbkkt/PbT
- uMbMyHPf4pHpT2bvi0DR1chILOLcudYiBDapBkrxwMCPpKiWqfdaYAgZfQ0Yp6g6vwWH
- l8Sy29h22hsxboqU4bGAPpBjV8r527MFyHcZwAehG+TTEALKyvzlZB242aUVlVceV9Ut
- 6Mhu4ZT11yxkxZlMeNKLZ4epDWmWsh1Fj6mRofL9q3UN5CM0nb4BFMn7ma3bBQp8QU4w
- NsIg==
-X-Gm-Message-State: APjAAAWvKg5X+9aQ8VwS5c5e0nXzZg9G+WEYs08ygzuLjlUggwCq1Aey
- A3BZZReW95aVJlPHC5Of+Im76A==
-X-Google-Smtp-Source: APXvYqyeIE9AetKtVnUHsr637KtU42j4dmzDlDnD4GEC3YwDwFMKDCM+icveVvh1Nm7BM1NCsLRREg==
-X-Received: by 2002:a5d:458b:: with SMTP id p11mr7388306wrq.196.1570108123645; 
- Thu, 03 Oct 2019 06:08:43 -0700 (PDT)
-Received: from bender.baylibre.local
- (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id 90sm3868870wrr.1.2019.10.03.06.08.42
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 03 Oct 2019 06:08:43 -0700 (PDT)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: khilman@baylibre.com
-Subject: [PATCH] arm64: dts: meson-g12: add support for simplefb
-Date: Thu,  3 Oct 2019 15:08:41 +0200
-Message-Id: <20191003130841.8412-1-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.22.0
+ id 1iG0xr-0005uV-Uy
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 13:16:18 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x93DGDP2032003;
+ Thu, 3 Oct 2019 08:16:13 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1570108573;
+ bh=0oA9ap2ijxyrFGCN9mLCkx++wX78RYmNmFX7l7IDOjo=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=pllSZPREqbDagqbJOyfDQ0QoQxNv6ViDSntKsfre3KC1skl3yE98c287c2pB5hcXt
+ RHmUrmqgJXIQJ3ycND9GtvgUi+DJrJLmMP+rPM+sy9d56Fru/hQ8cL59RcMmtfllp+
+ mjGyx8Yq8P59F07mUatUa3NQdaDPM9FCnAbwFNFQ=
+Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id x93DGDlX026002;
+ Thu, 3 Oct 2019 08:16:13 -0500
+Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE103.ent.ti.com
+ (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 3 Oct
+ 2019 08:16:01 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE107.ent.ti.com
+ (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Thu, 3 Oct 2019 08:16:12 -0500
+Received: from [172.24.190.117] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x93DGA0V063036;
+ Thu, 3 Oct 2019 08:16:11 -0500
+Subject: Re: [RFC PATCH 1/2] dt-bindings: irqchip: Update bindings to drop the
+ usage of gic as parent
+To: Marc Zyngier <maz@kernel.org>
+References: <20190923042405.26064-1-lokeshvutla@ti.com>
+ <20190923042405.26064-2-lokeshvutla@ti.com> <20191002135757.28901015@why>
+From: Lokesh Vutla <lokeshvutla@ti.com>
+Message-ID: <72a061dc-3573-9e78-42cd-39809f1b9685@ti.com>
+Date: Thu, 3 Oct 2019 18:45:18 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
+In-Reply-To: <20191002135757.28901015@why>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_060845_618908_98AFE2C1 
-X-CRM114-Status: GOOD (  11.39  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191003_061616_561591_780988A5 
+X-CRM114-Status: GOOD (  21.96  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,113 +92,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Jourdan <mjourdan@baylibre.com>, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Neil Armstrong <narmstrong@baylibre.com>
+Cc: Nishanth Menon <nm@ti.com>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SimpleFB allows transferring a framebuffer from the firmware/bootloader
-to the kernel, while making sure the related clocks and power supplies
-stay enabled.
+Hi Marc,
 
-Add nodes for CVBS and HDMI Simple Framebuffers, based on the GXBB/GXL/GXM
-support at [1].
+On 02/10/19 6:27 PM, Marc Zyngier wrote:
+> On Mon, 23 Sep 2019 09:54:04 +0530
+> Lokesh Vutla <lokeshvutla@ti.com> wrote:
+> 
+>> Drop the firmware related dt-bindings and use the hardware specified
+>> interrupt numbers within Interrupt Router. This ensures interrupt router
+>> DT node need not assume any interrupt parent type.
+>>
+>> Signed-off-by: Lokesh Vutla <lokeshvutla@ti.com>
+>> ---
+>>  .../interrupt-controller/ti,sci-intr.txt      | 28 +++++++++----------
+>>  1 file changed, 13 insertions(+), 15 deletions(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.txt b/Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.txt
+>> index 1a8718f8855d..de5de2a4b467 100644
+>> --- a/Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.txt
+>> +++ b/Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.txt
+>> @@ -44,15 +44,14 @@ Required Properties:
+>>  			4: If intr supports level triggered interrupts.
+>>  - interrupt-controller:	Identifies the node as an interrupt controller
+>>  - #interrupt-cells:	Specifies the number of cells needed to encode an
+>> -			interrupt source. The value should be 2.
+>> -			First cell should contain the TISCI device ID of source
+>> -			Second cell should contain the interrupt source offset
+>> -			within the device.
+>> +			interrupt source. The value should be 1.
+>> +			First cell should contain interrupt router input number
+>> +			as specified by hardware.
+> 
+> This is breaking compatibility with existing kernels. Why isn't that a
+> problem?
 
-[1] 03b370357907 ("arm64: dts: meson-gx: add support for simplef")
+Yes, I am not denying that backward compatibility is broken. But I feel this is
+a good cleanup for representing INTR interrupts. With this child nodes will pass
+the INTR specific number rather the device specific offset. Actually I tried
+following as what GIC is representing.
 
-Cc: Maxime Jourdan <mjourdan@baylibre.com>
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
-This will be handled in the in-review U-Boot Video support for G12A at [1]
-and the simplefb handling code at [2] and simplefb removal in DRM driver at [3].
+As there are only two users upstreamed, I though it is better to clean it up
+asap. Do you prefer maintaining the existing usage with a different compatible?
 
-[1] https://patchwork.ozlabs.org/cover/1155898/
-[2] https://gitlab.denx.de/u-boot/u-boot/blob/v2019.07/drivers/video/meson/meson_vpu.c#L145
-[3] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/meson/meson_drv.c?h=v5.3#n158
 
- .../boot/dts/amlogic/meson-g12-common.dtsi    | 26 +++++++++++++++++++
- arch/arm64/boot/dts/amlogic/meson-g12.dtsi    |  8 ++++++
- arch/arm64/boot/dts/amlogic/meson-sm1.dtsi    |  8 ++++++
- 3 files changed, 42 insertions(+)
+> 
+>> +- power-domains:	phandle pointing to the corresponding PM domain node
+>> +			and an ID representing the device.
+> 
+> Why is this power-domain thing part of this patch? Is it related?
+> 
+>>  - ti,sci:		Phandle to TI-SCI compatible System controller node.
+>> -- ti,sci-dst-id:	TISCI device ID of the destination IRQ controller.
+>> -- ti,sci-rm-range-girq:	Array of TISCI subtype ids representing the host irqs
+>> -			assigned to this interrupt router. Each subtype id
+>> -			corresponds to a range of host irqs.
+>> +- interrupt-ranges:	Ranges that convert the INTR output interrupt numbers to
+>> +			parent's interrupt number.
+> 
+> This isn't a standard property, is it? If it isn't, it should be
+> documented a bit more than just that.
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-index f76773cabdb1..21c155f4508c 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-@@ -16,6 +16,32 @@
- 	#address-cells = <2>;
- 	#size-cells = <2>;
- 
-+	chosen {
-+		#address-cells = <2>;
-+		#size-cells = <2>;
-+		ranges;
-+
-+		simplefb_cvbs: framebuffer-cvbs {
-+			compatible = "amlogic,simple-framebuffer",
-+				     "simple-framebuffer";
-+			amlogic,pipeline = "vpu-cvbs";
-+			clocks = <&clkc CLKID_HDMI>,
-+				 <&clkc CLKID_HTX_PCLK>,
-+				 <&clkc CLKID_VPU_INTR>;
-+			status = "disabled";
-+		};
-+
-+		simplefb_hdmi: framebuffer-hdmi {
-+			compatible = "amlogic,simple-framebuffer",
-+				    "simple-framebuffer";
-+			amlogic,pipeline = "vpu-hdmi";
-+			clocks = <&clkc CLKID_HDMI>,
-+				 <&clkc CLKID_HTX_PCLK>,
-+				 <&clkc CLKID_VPU_INTR>;
-+			status = "disabled";
-+		};
-+	};
-+
- 	efuse: efuse {
- 		compatible = "amlogic,meson-gxbb-efuse";
- 		clocks = <&clkc CLKID_EFUSE>;
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12.dtsi
-index 0d9df29994f3..d80d8a982917 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12.dtsi
-@@ -342,3 +342,11 @@
- &sd_emmc_a {
- 	amlogic,dram-access-quirk;
- };
-+
-+&simplefb_cvbs {
-+	power-domains = <&pwrc PWRC_G12A_VPU_ID>;
-+};
-+
-+&simplefb_hdmi {
-+	power-domains = <&pwrc PWRC_G12A_VPU_ID>;
-+};
-diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi b/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi
-index 1fdc5af5ae23..f89d744c9648 100644
---- a/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi
-@@ -147,6 +147,14 @@
- 	compatible = "amlogic,meson-sm1-pwrc";
- };
- 
-+&simplefb_cvbs {
-+	power-domains = <&pwrc PWRC_SM1_VPU_ID>;
-+};
-+
-+&simplefb_hdmi {
-+	power-domains = <&pwrc PWRC_SM1_VPU_ID>;
-+};
-+
- &vpu {
- 	power-domains = <&pwrc PWRC_SM1_VPU_ID>;
- };
--- 
-2.22.0
+Nope. Ill update it. So, the reason this is added is that this ranges converts
+the output of INTR to parent interrupt number. This is to have consistent dt
+convention in the following 2 scenarios:
+- INTR -> GIC (GIC is parent of INTR)
+- INTR -> INTR (INTR is parent of INTR)
 
+Thanks and regards,
+Lokesh
+
+> 
+>>  
+>>  For more details on TISCI IRQ resource management refer:
+>>  http://downloads.ti.com/tisci/esd/latest/2_tisci_msgs/rm/rm_irq.html
+>> @@ -62,21 +61,20 @@ Example:
+>>  The following example demonstrates both interrupt router node and the consumer
+>>  node(main gpio) on the AM654 SoC:
+>>  
+>> -main_intr: interrupt-controller0 {
+>> +main_gpio_intr: interrupt-controller0 {
+>>  	compatible = "ti,sci-intr";
+>>  	ti,intr-trigger-type = <1>;
+>>  	interrupt-controller;
+>>  	interrupt-parent = <&gic500>;
+>> -	#interrupt-cells = <2>;
+>> +	power-domains = <&k3_pds 131 TI_SCI_PD_SHARED>;
+>> +	#interrupt-cells = <1>;
+>>  	ti,sci = <&dmsc>;
+>> -	ti,sci-dst-id = <56>;
+>> -	ti,sci-rm-range-girq = <0x1>;
+>> +	interrupt-ranges = <0 360 32>;
+>>  };
+>>  
+>>  main_gpio0: gpio@600000 {
+>>  	...
+>> -	interrupt-parent = <&main_intr>;
+>> -	interrupts = <57 256>, <57 257>, <57 258>,
+>> -		     <57 259>, <57 260>, <57 261>;
+>> +	interrupt-parent = <&main_gpio_intr>;
+>> +	interrupts = <192>, <193>, <194>, <195>, <196>, <197>;
+>>  	...
+>>  };
+> 
+> Thanks,
+> 
+> 	M.
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
