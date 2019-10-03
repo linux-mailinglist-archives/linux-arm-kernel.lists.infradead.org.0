@@ -2,102 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83896C9F2C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 15:15:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BCC7C9F3E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 15:18:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HzyEFyqbr7yKej/XCKHmPcmnS+1jzFYYSOBZgk3nRVs=; b=sdHdphE1EUVareo97BshoIrI6
-	LSHXe0SfELcYceqQ4aE5rLhjckOHaM6bxH2lAVzCfC4FKkKcSGZ/EHEzLZccPmdvLwyLTwWpYsjGa
-	LQyp7nArC9PZuTG195NypGo5fX1aS7ao6fw5dF8htbZ+9F6YiXnjBKWv1OKPQ/UHYGKb7NxcCTg82
-	qKJmCHcj8iToA/Ax8D31j9exNNytXeA5EWyEU+AW+2sbQ0pw6/tWrCPeP5W1Ndk9fcFZmEcmo/wIa
-	PnZ8FXrOi9nvDbj8LO9xWvrhBftUZ5IPPZUhKmRORgBlW9zxG4kV+tOwQAoPaklkxFapq5259NdAt
-	z1mpgsA6A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uVf579AJgT66dMd1u+An4cftuR22zZsQ+ZPdPTc+hP4=; b=F3UmJX4momkA0Y
+	eOPrhtBzCn4rUC/Oeg3NDf74ai3TpGwu0xcDa91jy33+NFV5XWxelklNEbj3voiudCen/M4moQI2+
+	2yIVfl1PhAp9kj3ql974n/rphFFNFabj0uuW4ihq1I3DiXQFt1UoMifklZh5oHGIt+xD7iZG5okwo
+	YOwh1qyfOYK9hfvIvvX+E1mjNyYYlszLOMNr6Xrsgd1LOT/Z1op++RR/IKVVxILC8Bmu/iD0kctw/
+	1/DAzB9/x6g0tmA+LZ+Cj5VQKY7eCpTuldJyAkETjYoXU4dVontbGfWCU1mX6adw0GrJmiM2Ntjh0
+	pTA3f539vzsd50vSakGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG0xL-0005d1-Hx; Thu, 03 Oct 2019 13:15:43 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1iG0zp-0006tY-VY; Thu, 03 Oct 2019 13:18:17 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG0xE-0005cZ-Hu
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 13:15:38 +0000
-Received: by mail-pf1-x442.google.com with SMTP id y72so1733115pfb.12
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 03 Oct 2019 06:15:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=sPYnUSSQorfda6DEsSWxyECKProtfiGiCAfG7RCG6tA=;
- b=OVLI44PuvB7htJzG6Rk5sp/3oNI9Lab6BrQLJm2VGy8BKiImBLcPAJhwDoEzoVAFWw
- 1KV6lu1dpLyrDf5dvRPsV7ndQdxt/BOrWE06WVDmeVpRlyTZ9zZ8EbzUWtroIxEWIsjo
- HJTuCR60A3RCcqGgWUlTnU6+Uj6bNeDGfqWorPpvfnIJgFDpQC3EdlE/A1Rw9QxZIY8S
- pChb0tWl4S4zChEXHHvNuATyzVFiG1GNbXf5IlFKrZvt4GuVl82uG/dOmkvKr17tbJsQ
- /gLcRzEtpdNkqqVXdFatTFf2snsuDmG5S6RZytIwczrk+NZE+CPg+4WqhsJaPjGAoBo+
- aZCQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=sPYnUSSQorfda6DEsSWxyECKProtfiGiCAfG7RCG6tA=;
- b=RIAz2eKr5GFce35lfbww757php6zyEF17bw0uMSzwJ8WshvlhToYRqltlfnMAUbd+w
- Zh21mMq9FF9XiuugH2O5A/7wX09zTvcM4474ywkpNaQ8f0qQ/eIw8yzElmSn17ZZF9MG
- oGtIK3qs6s4dI2VXIrdsXBjrC20TFxDSygWq4wDEOewdt55uQt5mTvITHxd6M0C9rG/f
- QzhEYK814ji66NhROeQoWUrhK+3C0bR26uvkRwHUlpiB4UyxGXS689tBs8ongsM+7dL+
- D/agnarxLskIECW+jHNXYu7HZoLdH2u0m2Y1sV2pQ+k1ITMzN5cH3+F/+cMBhPTEiTQJ
- evGQ==
-X-Gm-Message-State: APjAAAWj+R0VnCEbsAYehbl6aqFM4pv45sgrMamtp7gCvna75e/pZBv1
- v5+o71dQEKJnCHvczCdYalMXwYe7
-X-Google-Smtp-Source: APXvYqxQEcpK4Q14Fa2EkFBV+mIOlmQ8/QQAaHzZr8hLJHEWwTGWyVu1dotTTqf5UUaGs0eHBVS/dQ==
-X-Received: by 2002:aa7:8d8a:: with SMTP id i10mr10893985pfr.45.1570108535451; 
- Thu, 03 Oct 2019 06:15:35 -0700 (PDT)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id
- o15sm2300731pjs.14.2019.10.03.06.15.34
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 03 Oct 2019 06:15:34 -0700 (PDT)
-Subject: Re: [GIT PULL] ARM/arm64: arm_pm_restart removal
-To: Olof Johansson <olof@lixom.net>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>
-References: <20191002131228.4085560-1-thierry.reding@gmail.com>
- <20191002160151.GS25745@shell.armlinux.org.uk>
- <CAOesGMg6aJ1Y+0fXkXCbOzCzxzZifx2m8YoPN=Y2pD==HPp2=Q@mail.gmail.com>
-From: Guenter Roeck <linux@roeck-us.net>
-Message-ID: <d48d1c03-2740-6ce0-7028-873d3c4ab31b@roeck-us.net>
-Date: Thu, 3 Oct 2019 06:15:33 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iG0ze-0006ro-In
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 13:18:08 +0000
+Received: from gallifrey.ext.pengutronix.de
+ ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=localhost)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <l.stach@pengutronix.de>)
+ id 1iG0zJ-0006F9-Ty; Thu, 03 Oct 2019 15:17:46 +0200
+Message-ID: <662abbc0298ebab59919490ccc3d5c093ae35cf7.camel@pengutronix.de>
+Subject: Re: [PATCH v2 00/21] Refine memblock API
+From: Lucas Stach <l.stach@pengutronix.de>
+To: Mike Rapoport <rppt@linux.ibm.com>, Russell King - ARM Linux admin
+ <linux@armlinux.org.uk>
+Date: Thu, 03 Oct 2019 15:17:36 +0200
+In-Reply-To: <20191003113010.GC23397@linux.ibm.com>
+References: <CAHCN7xJ32BYZu-DVTVLSzv222U50JDb8F0A_tLDERbb8kPdRxg@mail.gmail.com>
+ <20190926160433.GD32311@linux.ibm.com>
+ <CAHCN7xL1sFXDhKUpj04d3eDZNgLA1yGAOqwEeCxedy1Qm-JOfQ@mail.gmail.com>
+ <20190928073331.GA5269@linux.ibm.com>
+ <CAHCN7xJEvS2Si=M+BYtz+kY0M4NxmqDjiX9Nwq6_3GGBh3yg=w@mail.gmail.com>
+ <CAHCN7xKLhWw4P9-sZKXQcfSfh2r3J_+rLxuxACW0UVgimCzyVw@mail.gmail.com>
+ <20191002073605.GA30433@linux.ibm.com>
+ <CAHCN7xL1MkJh44N3W_1+08DHmX__SqnfH6dqUzYzr2Wpg0kQyQ@mail.gmail.com>
+ <20191003053451.GA23397@linux.ibm.com>
+ <20191003084914.GV25745@shell.armlinux.org.uk>
+ <20191003113010.GC23397@linux.ibm.com>
+User-Agent: Evolution 3.32.4 (3.32.4-1.fc30) 
 MIME-Version: 1.0
-In-Reply-To: <CAOesGMg6aJ1Y+0fXkXCbOzCzxzZifx2m8YoPN=Y2pD==HPp2=Q@mail.gmail.com>
-Content-Language: en-US
+X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
+X-SA-Exim-Mail-From: l.stach@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_061536_618061_EA5121C8 
-X-CRM114-Status: GOOD (  23.85  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20191003_061806_619638_4576F465 
+X-CRM114-Status: GOOD (  16.84  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,106 +75,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thierry Reding <thierry.reding@gmail.com>,
- ARM-SoC Maintainers <arm@kernel.org>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Adam Ford <aford173@gmail.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ The etnaviv authors <etnaviv@lists.freedesktop.org>,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Fabio Estevam <festevam@gmail.com>,
+ Christoph Hellwig <hch@lst.de>, arm-soc <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/2/19 11:46 AM, Olof Johansson wrote:
-> It looks like it's an old patchset that you were cc:d on at the time,
-> but I can't blame anyone for missing context here.
+Am Donnerstag, den 03.10.2019, 14:30 +0300 schrieb Mike Rapoport:
+> On Thu, Oct 03, 2019 at 09:49:14AM +0100, Russell King - ARM Linux admin wrote:
+> > On Thu, Oct 03, 2019 at 08:34:52AM +0300, Mike Rapoport wrote:
+> > > (trimmed the CC)
+> > > 
+> > > On Wed, Oct 02, 2019 at 06:14:11AM -0500, Adam Ford wrote:
+> > > > On Wed, Oct 2, 2019 at 2:36 AM Mike Rapoport <rppt@linux.ibm.com> wrote:
+> > > > 
+> > > > Before the patch:
+> > > > 
+> > > > # cat /sys/kernel/debug/memblock/memory
+> > > >    0: 0x10000000..0x8fffffff
+> > > > # cat /sys/kernel/debug/memblock/reserved
+> > > >    0: 0x10004000..0x10007fff
+> > > >   34: 0x2fffff88..0x3fffffff
+> > > > 
+> > > > 
+> > > > After the patch:
+> > > > # cat /sys/kernel/debug/memblock/memory
+> > > >    0: 0x10000000..0x8fffffff
+> > > > # cat /sys/kernel/debug/memblock/reserved
+> > > >    0: 0x10004000..0x10007fff
+> > > >   36: 0x80000000..0x8fffffff
+> > > 
+> > > I'm still not convinced that the memblock refactoring didn't uncovered an
+> > > issue in etnaviv driver.
+> > > 
+> > > Why moving the CMA area from 0x80000000 to 0x30000000 makes it fail?
+> > 
+> > I think you have that the wrong way round.
 > 
-> Thierry, a reference to the thread would have been useful:
-> https://lore.kernel.org/linux-arm-kernel/20170130110512.6943-1-thierry.reding@gmail.com/
+> I'm relying on Adam's reports of working and non-working versions.
+> According to that etnaviv works when CMA area is at 0x80000000 and does not
+> work when it is at 0x30000000.
 > 
-> Given that the code is 2.5 years old, posting it again for awareness
-> seems appropriate, even if it was acked by a few stakeholders
-> originally.
+> He also sent logs a few days ago [1], they also confirm that.
 > 
+> [1] https://lore.kernel.org/linux-mm/CAHCN7xJEvS2Si=M+BYtz+kY0M4NxmqDjiX9Nwq6_3GGBh3yg=w@mail.gmail.com/
 
-Thierry,
+To clarify: Etnaviv needs to know where the CMA area is in order to
+move a aperture window to cover the CMA area so the command buffers
+allocated in contig memory can be mapped through this aperture. Now the
+issue is that there is currently there is no good API for a driver to
+know where the CMA area is located, so we are trying to infer this from
+dma_get_required_mask. Unfortunately this can overshoot the real DRAM
+area by a bit, so combined with the fixed 2GB size of the GPU aperture
+this means we are no longer able to map the command buffers through the
+required aperture if the CMA area moves too far down in the physical
+memory.
 
-would you mind doing that ?
+It's really a bad interaction between etnaviv and CMA area placement,
+due to insufficient APIs to communicate some crucial information. There
+is nothing in the etnaviv driver or the hardware which requires the CMA
+area to be at a certain place, we just need to know where it is located
+exactly. So my try at fixing this [1] was by adding a API to get the
+required information, but the first attempt was shot down and I hadn't
+had time to follow up on this yet.
 
-To give some background: I had completely forgotten about this, until I recently
-hit a problem with restart that was difficult to debug since it was hard to figure
-out which reset sequence was actually executed. I thought about re-posting the
-series, but then we (ie those who cared enough to be involved in above referenced
-exchange) decided to use this approach. Now I still wonder what it will take
-to get the series applied.
+Regards,
+Lucas
 
-At least posting the series as pull request did generate some attention.
-I count that as an improvement.
+[1] https://patchwork.kernel.org/patch/10966767/
 
-Guenter
-
-> 
-> -Olof
-> 
-> On Wed, Oct 2, 2019 at 9:01 AM Russell King - ARM Linux admin
-> <linux@armlinux.org.uk> wrote:
->>
->> Why was I not copied on these changes (which clearly touch core ARM
->> code) both the patch series and this pull request?
->>
->> On Wed, Oct 02, 2019 at 03:12:28PM +0200, Thierry Reding wrote:
->>> Hi ARM SoC maintainers,
->>>
->>> The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
->>>
->>>    Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
->>>
->>> are available in the Git repository at:
->>>
->>>    https://github.com/thierryreding/linux.git tags/for-5.5/arm-pm-restart-removal
->>>
->>> for you to fetch changes up to 81b3f28283e2f0b03cea2127e9ff78e7c505b3d3:
->>>
->>>    ARM: Remove arm_pm_restart() (2019-10-02 14:56:22 +0200)
->>>
->>> This is the set of changes that we recently discussed that remove all
->>> uses of the arm_pm_restart symbol and replaces it by usages of the new
->>> restart handler that Guenter had introduced.
->>>
->>> I've rebased these on top of v5.4-rc1.
->>>
->>> Thierry
->>>
->>> ----------------------------------------------------------------
->>> ARM/arm64: arm_pm_restart removal
->>>
->>> This set of patches converts all remaining users of the arm_pm_restart
->>> mechanism for installing reboot hooks to the restart handler mechanism
->>> and finally removes the arm_pm_restart symbol.
->>>
->>> ----------------------------------------------------------------
->>> Guenter Roeck (6):
->>>        ARM: prima2: Register with kernel restart handler
->>>        ARM: xen: Register with kernel restart handler
->>>        drivers: firmware: psci: Register with kernel restart handler
->>>        ARM: Register with kernel restart handler
->>>        ARM64: Remove arm_pm_restart()
->>>        ARM: Remove arm_pm_restart()
->>>
->>>   arch/arm/include/asm/system_misc.h   |  1 -
->>>   arch/arm/kernel/reboot.c             |  6 +-----
->>>   arch/arm/kernel/setup.c              | 20 ++++++++++++++++++--
->>>   arch/arm/mach-prima2/rstc.c          | 11 +++++++++--
->>>   arch/arm/xen/enlighten.c             | 12 ++++++++++--
->>>   arch/arm64/include/asm/system_misc.h |  2 --
->>>   arch/arm64/kernel/process.c          |  7 +------
->>>   drivers/firmware/psci/psci.c         | 12 ++++++++++--
->>>   8 files changed, 49 insertions(+), 22 deletions(-)
->>>
->>
->> --
->> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
->> FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
->> According to speedtest.net: 11.9Mbps down 500kbps up
-> 
 
 
 _______________________________________________
