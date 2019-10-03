@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84EF3CAD96
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 19:49:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E614CAD97
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 19:49:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bQOiiUOjiUfudsWRv1wfb/1Dos6L/g/nWC5iYzjLRdY=; b=Iy8DRW5cLAEwTY
-	RXFvMgvyg4kGRrmfYhApxHgwVkrJZyJGZpxSCNSWu8Dyafa7Ro9Uzgq8fyasjOztbM2MrCpKvZEmB
-	9u7uSoqMYtBfqISuAMaO0M5/MZZAyeKVz2KP3cm8WBbgWmyVu75RRbjUxaf1O5ZwVMDZFQXf2EjTm
-	X8jBAq0a18OUS/O32T/pj2rp/b2Ag0XadEi9CCIEf1fQTJ/OJ6O2yMelqQvUnmeJn2R/HnVl3d7DF
-	+tYb/8b3On7qRGYqrcEQr8z0KG7Ho5I2T6qBQ2NMrcky+ALQ3YegLSKYToOkmmH49DWlv9p1Wbf8R
-	f7EvON4LIWKxgR92AJyA==;
+	List-Owner; bh=bL9AoGtt//zp1c70R2Er+cbaWbIqU3J7u9ydx45KiBk=; b=lEDsDWPOcVhL5p
+	gV91F9G4TaLXPBXkLTyKe71rS09MiXOfP3Y10UoiG6IfJGovwFvj+76SQlV5MuLXXJOKRX8J/TiPJ
+	5GJZoYpC9osDALn+Ps4SuNODfz98kvsbgeUxwUpe86yvJhCDXukjePJMNwMLRJ3v1SDO9uAUOj7QL
+	mvBf1UNI5xUwBAjAEOZZCB79m/V3uhMz9XOaZFVLqqrQ9kSH9X6b4zwU0Lw0ykhbKS73godNL2qPw
+	54cdww5SSoE3qTPGWopWI0fnzdm+lN3bA6mjrg9RRm9hN2P6MxpyBEwfgAHdn//qQmdxaOGJdi0sa
+	+VPJDkd+Dq1AuRMnfbMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG5EI-0008KJ-63; Thu, 03 Oct 2019 17:49:30 +0000
+	id 1iG5ES-00008j-HP; Thu, 03 Oct 2019 17:49:40 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG5Df-0007ny-VU
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 17:48:53 +0000
+ id 1iG5Dh-0007q3-EF
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 17:48:54 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 99B421597;
- Thu,  3 Oct 2019 10:48:51 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1314E15A1;
+ Thu,  3 Oct 2019 10:48:53 -0700 (PDT)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 612ED3F739;
- Thu,  3 Oct 2019 10:48:50 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CEA1D3F739;
+ Thu,  3 Oct 2019 10:48:51 -0700 (PDT)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v5 2/6] arm64: vdso32: Detect binutils support for dmb ishld
-Date: Thu,  3 Oct 2019 18:48:34 +0100
-Message-Id: <20191003174838.8872-3-vincenzo.frascino@arm.com>
+Subject: [PATCH v5 3/6] arm64: Remove gettimeofday.S
+Date: Thu,  3 Oct 2019 18:48:35 +0100
+Message-Id: <20191003174838.8872-4-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191003174838.8872-1-vincenzo.frascino@arm.com>
 References: <20191003174838.8872-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_104852_075423_FF7ED137 
-X-CRM114-Status: GOOD (  12.30  )
+X-CRM114-CacheID: sfid-20191003_104853_528773_2163C463 
+X-CRM114-Status: UNSURE (   9.19  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,70 +70,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Older versions of binutils that do not support certain types of memory
-barriers can cause build failure of the vdso32 library.
+gettimeofday.S was originally removed with the introduction of the
+support for Unified vDSOs in arm64 and replaced with the C
+implementation.
 
-Add a compilation time mechanism that detects if binutils supports those
-instructions and configure the kernel accordingly.
+The file seems again present in the repository due to a side effect of
+rebase.
+
+Remove the file again.
 
 Cc: Will Deacon <will@kernel.org>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
-Reported-by: Will Deacon <will@kernel.org>
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 Tested-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- arch/arm64/include/asm/vdso/compat_barrier.h | 2 +-
- arch/arm64/kernel/vdso32/Makefile            | 9 +++++++++
- 2 files changed, 10 insertions(+), 1 deletion(-)
+ arch/arm64/kernel/vdso/gettimeofday.S | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 arch/arm64/kernel/vdso/gettimeofday.S
 
-diff --git a/arch/arm64/include/asm/vdso/compat_barrier.h b/arch/arm64/include/asm/vdso/compat_barrier.h
-index fb60a88b5ed4..3fd8fd6d8fc2 100644
---- a/arch/arm64/include/asm/vdso/compat_barrier.h
-+++ b/arch/arm64/include/asm/vdso/compat_barrier.h
-@@ -20,7 +20,7 @@
- 
- #define dmb(option) __asm__ __volatile__ ("dmb " #option : : : "memory")
- 
--#if __LINUX_ARM_ARCH__ >= 8
-+#if __LINUX_ARM_ARCH__ >= 8 && defined(CONFIG_AS_DMB_ISHLD)
- #define aarch32_smp_mb()	dmb(ish)
- #define aarch32_smp_rmb()	dmb(ishld)
- #define aarch32_smp_wmb()	dmb(ishst)
-diff --git a/arch/arm64/kernel/vdso32/Makefile b/arch/arm64/kernel/vdso32/Makefile
-index 19e0d3115ffe..77aa61340374 100644
---- a/arch/arm64/kernel/vdso32/Makefile
-+++ b/arch/arm64/kernel/vdso32/Makefile
-@@ -15,6 +15,8 @@ cc32-disable-warning = $(call try-run,\
- 	$(COMPATCC) -W$(strip $(1)) -c -x c /dev/null -o "$$TMP",-Wno-$(strip $(1)))
- cc32-ldoption = $(call try-run,\
-         $(COMPATCC) $(1) -nostdlib -x c /dev/null -o "$$TMP",$(1),$(2))
-+cc32-as-instr = $(call try-run,\
-+	printf "%b\n" "$(1)" | $(COMPATCC) $(VDSO_AFLAGS) -c -x assembler -o "$$TMP" -,$(2),$(3))
- 
- # We cannot use the global flags to compile the vDSO files, the main reason
- # being that the 32-bit compiler may be older than the main (64-bit) compiler
-@@ -53,6 +55,7 @@ endif
- VDSO_CAFLAGS += -fPIC -fno-builtin -fno-stack-protector
- VDSO_CAFLAGS += -DDISABLE_BRANCH_PROFILING
- 
-+
- # Try to compile for ARMv8. If the compiler is too old and doesn't support it,
- # fall back to v7. There is no easy way to check for what architecture the code
- # is being compiled, so define a macro specifying that (see arch/arm/Makefile).
-@@ -89,6 +92,12 @@ VDSO_CFLAGS += -Wno-int-to-pointer-cast
- VDSO_AFLAGS := $(VDSO_CAFLAGS)
- VDSO_AFLAGS += -D__ASSEMBLY__
- 
-+# Check for binutils support for dmb ishld
-+dmbinstr := $(call cc32-as-instr,dmb ishld,-DCONFIG_AS_DMB_ISHLD=1)
-+
-+VDSO_CFLAGS += $(dmbinstr)
-+VDSO_AFLAGS += $(dmbinstr)
-+
- VDSO_LDFLAGS := $(VDSO_CPPFLAGS)
- # From arm vDSO Makefile
- VDSO_LDFLAGS += -Wl,-Bsymbolic -Wl,--no-undefined -Wl,-soname=linux-vdso.so.1
+diff --git a/arch/arm64/kernel/vdso/gettimeofday.S b/arch/arm64/kernel/vdso/gettimeofday.S
+deleted file mode 100644
+index e69de29bb2d1..000000000000
 -- 
 2.23.0
 
