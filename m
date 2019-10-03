@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0C6CCA693
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 18:56:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A855ACA808
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 19:01:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pVi/4fkdmNuFsvBhblnBqUHMyyULmLk6Qn6yVlgL7qo=; b=pkdtJUms79HsKg
-	jdaL8EB7CHBiMJ3L6uWX/tklpzqa7uMAzZ0kXFW8MO3LV2I6iNtOGtpPQA8PxtTNfM+0n08CItIsR
-	Med95smR+gJlsLJIUeLWq9Wb9AZVfh1YDwck/E6Ghh6PTppIO1hLrtorpjxInELH5UDcG/jIp2ZN3
-	cmeVp7Or61YoGPanu26f8GNvaQpB2uwmFVubgUUJr8Z/3uoVfR8SpRFNACAQZ1p6KaDRDH22vNEAM
-	ZB1y1bgLtXn2dh5v5jnWuE8DCN6Fp75G+FZddDMTOZiLPB4VirjqA2v51j2dSzxxNKzTDZCqrVUD2
-	7CZcBQyiNLYUathPH8NQ==;
+	List-Owner; bh=zLIF70q0QJwlomCozQ+wCf2UwRH+4kWtxojTd9qZIJo=; b=YaaItbeX90qxrp
+	5T7fqqpVi7DyqQWZYc2lNf+VU83Yp76e5TYtZSnLDORy8ZYzFMsgDULQ1eGg/fCAEjb+Ohksf7Czu
+	ng9qnUgLOt6uWAYbDA6roMvWifJIb4MungXniaHrEaDKszUxnSx7IMhEM3fJG55JaUVGEKfdC7LY7
+	p8zZRX8sv9dtJHG87NcY0JgbUaFF3M+T7LKyWoeu8fx0SWrhqwM6RtLjMtl0MrzFsxG0EDRitlMCe
+	vUX2lhuwcTcKB7wc+0o5WqY08lVrAfPoINlXlde7Ym28dpfa3mkNg3nyf2n0MlnSh4Xd5ZuJ0CNg0
+	epa2I6+X8BgBnAIcDBbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG4OQ-00069p-BP; Thu, 03 Oct 2019 16:55:54 +0000
-Received: from muru.com ([72.249.23.125])
+	id 1iG4UA-0000BI-0M; Thu, 03 Oct 2019 17:01:50 +0000
+Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG4OG-00068X-SS
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 16:55:46 +0000
-Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 618E3809B;
- Thu,  3 Oct 2019 16:56:16 +0000 (UTC)
-From: Tony Lindgren <tony@atomide.com>
-To: linux-omap@vger.kernel.org
-Subject: [PATCH] ARM: omap2plus_defconfig: Fix selected panels after generic
- panel changes
-Date: Thu,  3 Oct 2019 09:55:39 -0700
-Message-Id: <20191003165539.50318-1-tony@atomide.com>
-X-Mailer: git-send-email 2.23.0
+ id 1iG4U3-0000An-9c
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 17:01:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 33BDF1000;
+ Thu,  3 Oct 2019 10:01:42 -0700 (PDT)
+Received: from eglon.cambridge.arm.com (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4B2303F739;
+ Thu,  3 Oct 2019 10:01:41 -0700 (PDT)
+From: James Morse <james.morse@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: Fix incorrect irqflag restore for priority masking for
+ compat
+Date: Thu,  3 Oct 2019 18:01:27 +0100
+Message-Id: <20191003170127.127278-1-james.morse@arm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_095544_957693_E1183E98 
-X-CRM114-Status: UNSURE (   5.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191003_100143_376922_A061A8F0 
+X-CRM114-Status: GOOD (  10.73  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,52 +58,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tomi Valkeinen <tomi.valkeinen@ti.com>, Jyri Sarha <jsarha@ti.com>,
- linux-arm-kernel@lists.infradead.org,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, Marc Zyngier <maz@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The old omapdrm panels got removed for v5.4 in favor of generic panels,
-and the Kconfig options changed. Let's update omap2plus_defconfig
-accordingly so the same panels are still enabled.
+Commit bd82d4bd2188 ("arm64: Fix incorrect irqflag restore for priority
+masking") added a macro to the entry.S call paths that leave the
+PSTATE.I bit set. This tells the pPNMI masking logic that interrupts
+are masked by the CPU, not by the PMR. This value is read back by
+local_daif_save().
 
-Cc: Jyri Sarha <jsarha@ti.com>
-Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Cc: Tomi Valkeinen <tomi.valkeinen@ti.com>
-Signed-off-by: Tony Lindgren <tony@atomide.com>
+Commit bd82d4bd2188 added this call to el0_svc, as el0_svc_handler
+is called with interrupts masked. el0_svc_compat was missed, but should
+be covered in the same way as both of these paths end up in
+el0_svc_common(), which expects to unmask interrupts.
+
+Fixes: bd82d4bd2188 ("arm64: Fix incorrect irqflag restore for priority masking")
+Signed-off-by: James Morse <james.morse@arm.com>
+Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
 ---
- arch/arm/configs/omap2plus_defconfig | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+ arch/arm64/kernel/entry.S | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/configs/omap2plus_defconfig b/arch/arm/configs/omap2plus_defconfig
---- a/arch/arm/configs/omap2plus_defconfig
-+++ b/arch/arm/configs/omap2plus_defconfig
-@@ -356,14 +356,14 @@ CONFIG_DRM_OMAP_CONNECTOR_HDMI=m
- CONFIG_DRM_OMAP_CONNECTOR_ANALOG_TV=m
- CONFIG_DRM_OMAP_PANEL_DPI=m
- CONFIG_DRM_OMAP_PANEL_DSI_CM=m
--CONFIG_DRM_OMAP_PANEL_SONY_ACX565AKM=m
--CONFIG_DRM_OMAP_PANEL_LGPHILIPS_LB035Q02=m
--CONFIG_DRM_OMAP_PANEL_SHARP_LS037V7DW01=m
--CONFIG_DRM_OMAP_PANEL_TPO_TD028TTEC1=m
--CONFIG_DRM_OMAP_PANEL_TPO_TD043MTEA1=m
--CONFIG_DRM_OMAP_PANEL_NEC_NL8048HL11=m
- CONFIG_DRM_TILCDC=m
- CONFIG_DRM_PANEL_SIMPLE=m
-+CONFIG_DRM_PANEL_LG_LB035Q02=m
-+CONFIG_DRM_PANEL_NEC_NL8048HL11=m
-+CONFIG_DRM_PANEL_SHARP_LS037V7DW01=m
-+CONFIG_DRM_PANEL_SONY_ACX565AKM=m
-+CONFIG_DRM_PANEL_TPO_TD028TTEC1=m
-+CONFIG_DRM_PANEL_TPO_TD043MTEA1=m
- CONFIG_FB=y
- CONFIG_FIRMWARE_EDID=y
- CONFIG_FB_MODE_HELPERS=y
+diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+index 84a822748c84..e304fe04b098 100644
+--- a/arch/arm64/kernel/entry.S
++++ b/arch/arm64/kernel/entry.S
+@@ -775,6 +775,7 @@ el0_sync_compat:
+ 	b.ge	el0_dbg
+ 	b	el0_inv
+ el0_svc_compat:
++	gic_prio_kentry_setup tmp=x1
+ 	mov	x0, sp
+ 	bl	el0_svc_compat_handler
+ 	b	ret_to_user
 -- 
-2.23.0
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
