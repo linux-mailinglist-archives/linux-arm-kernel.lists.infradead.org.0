@@ -2,67 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E3E7C9925
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 09:47:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F785C992E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 09:48:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=VwF8V+lvvUI3VfoE/by8oPlQwTy108zMVXwLG5XEN0E=; b=NCMAyUzJWMkdxlykeVPy6nK31
-	acKIjQBAj0DYuKZjhQCfZ5f2xdIPPNGmZg97RM42q3OOPeuViSueFY5ZhlXMmX/Y2+Ca+Q37IZ2/U
-	Az9J7cERiEPy5vB0AY/rBDaEL3URPwg837tURyEnoulIW8o7o1vsUpNP08EcnJf+EGNq/T76SH+IB
-	eCWURjpfWzrrD4zWobeR62LPZ0Z6Hx7yJJluRsg+r+JYrBZ3BA2JURnekVWZQqApbWGfI7zlKYlbS
-	Bfh+0S1mLT8svJh/64SJTMXH8EtzlbH/6J6GaCnBSAGI8xF0BAWX5pl3DlI+TTDbq6iEqIdhDg9tT
-	TFzbHX4Uw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=GKheLgYyDD9BmnNsJI/K38ulJW9F+997NrV1X6aLIH8=; b=gp2cBAUazASvf6
+	yXOQxNfFpaszvnG6J39rXyBJcRBm6G2/ngjbaaEZQZ9LU93U5xPy6HeI1ojS0Nh1HhCnQUNuc3Qha
+	GY41i/ljveE8Rx/2lW+snV3jmwmOS79aVN42CfRLW5Eod7nQnZE4qqyROmi0K1zkZp/RWnQXZGSkA
+	8tM5B8ZbDTvJCVWLkd4gYMaEiBkp72fXK6N9Zh2HDzCZ+7V8KEs5wDzbLvA8ohYNRCGqtP9K8++LG
+	sVGOZxz//nNg3kF8sG1ijgzoGTx+dFO/6NQwZRmGy+skaUmJSPHoNwOKL7hTJmlMYdSxoEZ4gJVAX
+	jtHvExIZQhbjuJHlvv3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFvpP-00035o-8N; Thu, 03 Oct 2019 07:47:11 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1iFvqz-0003Ql-U2; Thu, 03 Oct 2019 07:48:49 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFvpH-00034w-40
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 07:47:04 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 03 Oct 2019 00:47:00 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.67,251,1566889200"; d="scan'208";a="205558147"
-Received: from linux.intel.com ([10.54.29.200])
- by fmsmga001.fm.intel.com with ESMTP; 03 Oct 2019 00:47:00 -0700
-Received: from [10.226.38.25] (unknown [10.226.38.25])
- by linux.intel.com (Postfix) with ESMTP id AB2F55803A5;
- Thu,  3 Oct 2019 00:46:57 -0700 (PDT)
-Subject: Re: [PATCH v1 2/2] mmc: sdhci-of-arasan: Add Support for Intel LGM
- SDXC
-To: Adrian Hunter <adrian.hunter@intel.com>, ulf.hansson@linaro.org,
- linux-mmc@vger.kernel.org
-References: <20191003040032.37696-1-vadivel.muruganx.ramuthevar@linux.intel.com>
- <20191003040032.37696-3-vadivel.muruganx.ramuthevar@linux.intel.com>
- <329a38b4-4fba-eb6e-0d40-c241cfa28e25@intel.com>
-From: "Ramuthevar, Vadivel MuruganX"
- <vadivel.muruganx.ramuthevar@linux.intel.com>
-Message-ID: <0c3d406c-dc28-a670-91df-7c7e6f818f87@linux.intel.com>
-Date: Thu, 3 Oct 2019 15:46:56 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iFvqp-0003OE-S8; Thu, 03 Oct 2019 07:48:41 +0000
+X-UUID: 5cd2c83c834a4ccca298875da8e19130-20191002
+X-UUID: 5cd2c83c834a4ccca298875da8e19130-20191002
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <argus.lin@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 661549060; Wed, 02 Oct 2019 23:48:29 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 3 Oct 2019 00:48:29 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 3 Oct 2019 15:48:26 +0800
+Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Thu, 3 Oct 2019 15:48:27 +0800
+From: Argus Lin <argus.lin@mediatek.com>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Catalin Marinas
+ <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>
+Subject: [PATCH 0/3] Pwrap: Mediatek pwrap driver for MT6779
+Date: Thu, 3 Oct 2019 15:48:18 +0800
+Message-ID: <1570088901-23211-1-git-send-email-argus.lin@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
 MIME-Version: 1.0
-In-Reply-To: <329a38b4-4fba-eb6e-0d40-c241cfa28e25@intel.com>
-Content-Language: en-US
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_004703_200723_D37521BB 
-X-CRM114-Status: GOOD (  13.62  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191003_004839_914587_3B163DFB 
+X-CRM114-Status: UNSURE (   8.76  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,30 +71,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- andriy.shevchenko@intel.com, cheol.yong.kim@intel.com,
- linux-kernel@vger.kernel.org, michal.simek@xilinx.com, robh+dt@kernel.org,
- qi-ming.wu@intel.com, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: devicetree@vger.kernel.org, argus.lin@mediatek.com,
+ wsd_upstream@mediatek.com, Chenglin Xu <chenglin.xu@mediatek.com>, Sean
+ Wang <sean.wang@mediatek.com>, linux-kernel@vger.kernel.org,
+ henryc.chen@mediatek.com, flora.fu@mediatek.com,
+ Christophe Jaillet <christophe.jaillet@wanadoo.fr>,
+ linux-mediatek@lists.infradead.org, Chen Zhong <chen.zhong@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgQWRyaWFuLAoKIMKgVGhhbmsgeW91IGZvciB0aGUgY29tbWVudHMuCgpPbiAzLzEwLzIwMTkg
-MzowMiBQTSwgQWRyaWFuIEh1bnRlciB3cm90ZToKPiBPbiAzLzEwLzE5IDc6MDAgQU0sIFJhbXV0
-aGV2YXIsVmFkaXZlbCBNdXJ1Z2FuWCB3cm90ZToKPj4gRnJvbTogUmFtdXRoZXZhciBWYWRpdmVs
-IE11cnVnYW4gPHZhZGl2ZWwubXVydWdhbngucmFtdXRoZXZhckBsaW51eC5pbnRlbC5jb20+Cj4+
-Cj4+IFRoZSBjdXJyZW50IGFyYXNhbiBzZGhjaSBQSFkgY29uZmlndXJhdGlvbiBpc24ndCBjb21w
-YXRpYmxlCj4+IHdpdGggdGhlIFBIWSBvbiBJbnRlbCdzIExHTShMaWdodG5pbmcgTW91bnRhaW4p
-IFNvQyBkZXZpY2VzLgo+Pgo+PiBUaGVyZWZvcmUsIGFkZCBhIG5ldyBjb21wYXRpYmxlLCB0byBh
-ZGFwdCB0aGUgSW50ZWwncyBMR00KPj4gU0RYQyBQSFkgd2l0aCBhcmFzYW4tc2RoYyBjb250cm9s
-bGVyIHRvIGNvbmZpZ3VyZSB0aGUgUEhZLgo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBSYW11dGhldmFy
-IFZhZGl2ZWwgTXVydWdhbiA8dmFkaXZlbC5tdXJ1Z2FueC5yYW11dGhldmFyQGxpbnV4LmludGVs
-LmNvbT4KPiBBcmVuJ3QgdGhlc2UgcGF0Y2hlcyBhbHJlYWR5IGluIHY1LjQtcmMxCgogwqBObywg
-dGhlc2UgcGF0Y2hlcyBhcmUgbm90IHRoZXJlIGluIHY1LjQtcmMxLgoKIMKgVGhlIG9uZSB3aGlj
-aCBpcyBpbiB2NS40LXJjMSBzdXBwb3J0cyBvbmx5IGVNTUMsIGRvZXMgbm90IFNEL1NESU8sIHNv
-IAp0aGVzZSBwYXRjaGVzIGFyZSByZXF1aXJlZC4KCi0tLQpXaXRoIEJlc3QgUmVnYXJkcwpWYWRp
-dmVsIE11cnVnYW4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LWFybS1rZXJuZWwK
+Here's version 1 of the patch series, include 3 patches:
+1. Add compatible for MT6779 pwrap
+2. Add pwrap driver for MT6779 SoCs. Keep PWRAP_HIPRIO_ARB_EN,
+PWRAP_WDT_UNIT, and PWRAP_WDT_SRC_EN value if it has initialized.
+When we enable interrupt flag, read current value then do logical
+OR opersion with wrp->master->int_en_all.
+3. Add MT6359 support for MT6779 SoCs.
+
+Argus Lin (3):
+  dt-bindings: pwrap: mediatek: add pwrap support for MT6779
+  soc: mediatek: pwrap: add pwrap driver for MT6779 SoCs
+  soc: mediatek: pwrap: add support for MT6359 PMIC
+
+ .../devicetree/bindings/soc/mediatek/pwrap.txt     |   1 +
+ drivers/soc/mediatek/mtk-pmic-wrap.c               | 157 +++++++++++++++++++--
+ 2 files changed, 150 insertions(+), 8 deletions(-)
+
+--
+1.8.1.1.dirty
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
