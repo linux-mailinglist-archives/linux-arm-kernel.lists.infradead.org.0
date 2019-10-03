@@ -2,59 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54A25CB12D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 23:32:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C34ECB178
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 23:51:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=gMQeUhJ2ZLZmlXJD7W1Ll41hY1RPOdceT3vwhz3Xv18=; b=nvQr4AIPh4SiUZ9fxyPiC6DXt
-	51cknnhK0gCWoY0ydKJ3vapzWxEgP5HBWdk2gFcGJL1cNQdBk8lXToytiYVKfK1VFdB4hBmZ9F5Dw
-	A45BDdtciMMrpkyB+fBsjlD45HIVD4r8fPLhjNj5037ugG6sAUdvLTPORSZnGJK2dkK8SHfnkg52H
-	7+9PdRXMWSMvLAcLmUxkk9vnlTcLT07EeW+MWZQ54jFP3Q4mDByFfVSlCHp/c1yZLu/9BgfcstrsS
-	JuiOK3fl1xsDJwpIjahPq+6z+svz4cNthTB7y+3qwPFE/dD2x8W5Zc2rpOvToPWXR/NxP2cc9vlQO
-	66fRT7WjA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=lFYiMYcBMxmyphhrNw72C/NN1znHxWUoCJiED50SPC4=; b=urD
+	Y/XN+2WA8vvyESWBs6m/bzLBWZSG2TrdRGIEtY0TIXn9YXWd7vRkAWVm8GrT8FCC0eFXXfrnpBljO
+	x9URr69wRs5c3rgbhPO2Ayx1T0WcHFNAzIW6SffEJKnrsbUPYUE1wQ5BrAaUEVHCv0XWcTeKzg26J
+	mnIJaqoHpew22YkkB/8M4LGCJVaZxeX/gAd7I2FeB6tBzmBgKvKvb3P1010X4zK2POVVxtd8dAlLb
+	lRKl+Vj0dcjGL/WOqrDIy3vABg5Av25akdGM3SrWI0y/YOVGtSi/glUyQ7gI8pDR3uR/456zEGRjy
+	cVc9Y8QganXtR/CoNbBCIpll/ZAGZng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG8iA-0006S5-7B; Thu, 03 Oct 2019 21:32:34 +0000
-Received: from relay3-d.mail.gandi.net ([217.70.183.195])
+	id 1iG903-0004iz-LH; Thu, 03 Oct 2019 21:51:03 +0000
+Received: from mout.web.de ([217.72.192.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG8i0-0006RU-3A
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 21:32:26 +0000
-X-Originating-IP: 132.205.230.8
-Received: from aptenodytes (unknown [132.205.230.8])
- (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 3AAE260004;
- Thu,  3 Oct 2019 21:32:20 +0000 (UTC)
-Date: Thu, 3 Oct 2019 17:32:18 -0400
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@siol.net>
-Subject: Re: [PATCH v2 2/3] media: cedrus: Fix H264 default reference index
- count
-Message-ID: <20191003213218.GE3927@aptenodytes>
-References: <20191002193553.1633467-1-jernej.skrabec@siol.net>
- <3413755.LxPTGpI9pz@jernej-laptop>
- <20191003205857.GA3927@aptenodytes>
- <1700094.IKIOnZr010@jernej-laptop>
-MIME-Version: 1.0
-In-Reply-To: <1700094.IKIOnZr010@jernej-laptop>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+ id 1iG8zt-0004gY-Sh; Thu, 03 Oct 2019 21:50:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
+ s=dbaedf251592; t=1570139445;
+ bh=+slu9oigrifofLBmSnoGBXNUCdUs8UMw+gAQMYZR/OU=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
+ b=mtJWe9BfGLpk166deIOWv6NwNSVtqNu4zEFmltWTZO+Quufhq50MugB4t3PI53Dij
+ P75Ixq7hozzbk0+FHdq9w1smAfhLlT6WCPVlEGLVmzgVIbWf+qdMbLNHxgkPW11OH5
+ mvpxatuhvRgzbIbSTYrf6MF+3Mcs9GpROLzrOyrI=
+X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
+Received: from platinum.fritz.box ([89.14.73.200]) by smtp.web.de (mrweb103
+ [213.165.67.124]) with ESMTPSA (Nemesis) id 0LdVza-1hpIko3M5i-00ikbu; Thu, 03
+ Oct 2019 23:50:44 +0200
+From: Soeren Moch <smoch@web.de>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH 1/3] arm64: dts: rockchip: fix RockPro64 vdd-log regulator
+ settings
+Date: Thu,  3 Oct 2019 23:50:34 +0200
+Message-Id: <20191003215036.15023-1-smoch@web.de>
+X-Mailer: git-send-email 2.17.1
+X-Provags-ID: V03:K1:sVWSznPIdgTeGmxS0/KuK5sR3zlLN0yEjQwtifgjotr6sUlPGeX
+ SCaKNvjkY2xrsa2JwfaH4KWsSiYOkozaZoxo4JmqSc/EwguMpI45EebjNI3cQkwrCfPim6b
+ 02b5Xj+b3kuMwjLS4tqXGFCniDNAIH3qhHOEWovdeCy4yOGDuzQye7qcb011wpp5K3Y+zv3
+ u+KYJmttKbwcJdT8JijcQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:vCe5hpyJPR8=:disR8f0omoqst11p1fIKAh
+ iBAK1nFXc7AmOcAiFW44MeJNXdocthJHRd3VEcy9/B9yqK/hTjhNCgBGLXvhk3UzVzVTDK802
+ kBf9cEBdt34sF6mLB40sUD5CXT7PaMoPa78w45lA9C3+dF/9UxU09+6fr6SVTgU3mu6Hn2JqJ
+ nvfqFZiqINBWoePt9nqRkkTUrqgEyMT6qHHfJUTadp6PJeCXCeirRPUqFqdJ8vx+tsSMrD+G5
+ fmZlzpPnl8Ky3j1gtFkLLcEAOMtAgzPfeEONvZiwK5J6n5MxwprBNRT7E07hW+xDfcQbQE0rD
+ 8RGbx1mkzr2V92lpYcIRTNqde+Oh+/V4C4s6rQGxN+x/xws7iNpUeU9Rpv65WHyiheHZUcHs6
+ 4n7JmhPiZXUCFzWUrmM6oJB7O70rL8WobnNCWQmNtYRuiqGautEew+TItXYvKBCtvFrALXdM+
+ vb1+FrU03VriEuoHeRWwPEsO45SGVwhYIsolu6CRDFU9G4a0WdORqWZVYVP+0JvpMOe/lA2zY
+ 2rl2QFH53x1+BtBVK20hHOh7W3xtLH+WzZFsAzmnNe3+61mRhxIzHfDY3otUHd7hUG+pyyhXw
+ 6RI9YNTvxF2AQ1rzSvvCNNtPkovfmdPvPTfO2Sqig4TRyAE9/Un4zf1wnoho8+Hqw2w2gvh2g
+ lFdajNupo7PiibkssZMeWpi2Yyw+Ql484vPZldLOBFiuDXWRwYHJA7n3CWPRqu4FkvqZI0woF
+ iWwuOPIyYV09g8L2UPq4YiXXvNXKdJWpQh/x59dBhs26HHmbaZxBvFHrUY7FWo9HRjA0t8hvE
+ oDTTozWqTW6xzbFzIwp0E29Vp6mciCpjiqoLv7MMTbg0U9pPnAQecIk11U33l0ZqVQyKSxq8G
+ Fdwl4gLqiQcP6Y/Zm2wBLvnsSffYrkTmqpiQ6RjPOPPy9GxZHTglNZP6Cr4a5N3lHKv4+rvUV
+ pKvy7jWH6ub53Ne6v/8q//sL+wQIbqfuTNNpvc+MI28YX7YthEldq1GRyRKJ5k4z6o2nrqUik
+ oRx5AuvdO3oPcAIsUwKaeuXqRrTtC9M6kdubTFXOZ8EZzZtj1unz7h3zRztMQu37AvKSyHhxt
+ k56zCWlbMOjoKO97tb/lVKVF80M81PnaiIOXQ9I9E3UIF2s95Wg/VbtVzkWi4oF6WwrqqO44y
+ sthchBfNPGC/jUAm3c9UeqBDY4lM5Ilus4dUpjvn4gcHDKMGS6iu/KEEMEuL56mRaMcwg/xXM
+ L5sIsGmzM7HYTjE4fJFm35NicLPlNwOqZLoaMsg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_143224_442212_411FE0E0 
-X-CRM114-Status: GOOD (  40.73  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191003_145054_230248_23AC2987 
+X-CRM114-Status: UNSURE (   9.25  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.195 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.195 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (smoch[at]web.de)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.72.192.78 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,252 +97,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, mripard@kernel.org, wens@csie.org,
- hverkuil-cisco@xs4all.nl, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============5169953925679524661=="
+Cc: linux-rockchip@lists.infradead.org, Soeren Moch <smoch@web.de>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The RockPro64 schematic [1] page 18 states a min voltage of 0.8V and a
+max voltage of 1.4V for the VDD_LOG pwm regulator. However, there is an
+additional note that the pwm parameter needs to be modified.
+From the schematics a voltage range of 0.8V to 1.7V can be calculated.
+Additional voltage measurements on the board show that this fix indeed
+leads to the correct voltage, while without this fix the voltage was set
+too high.
 
---===============5169953925679524661==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="PGNNI9BzQDUtgA2J"
-Content-Disposition: inline
+[1] http://files.pine64.org/doc/rockpro64/rockpro64_v21-SCH.pdf
 
+Fixes: e4f3fb490967 ("arm64: dts: rockchip: add initial dts support for Rockpro64")
+Signed-off-by: Soeren Moch <smoch@web.de>
+---
+Cc: Heiko Stuebner <heiko@sntech.de>
+Cc: linux-rockchip@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+---
+ arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
---PGNNI9BzQDUtgA2J
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+index 0401d4ec1f45..845eb070b5b0 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+@@ -173,7 +173,7 @@
+ 		regulator-always-on;
+ 		regulator-boot-on;
+ 		regulator-min-microvolt = <800000>;
+-		regulator-max-microvolt = <1400000>;
++		regulator-max-microvolt = <1700000>;
+ 		vin-supply = <&vcc5v0_sys>;
+ 	};
+ };
+--
+2.17.1
 
-On Thu 03 Oct 19, 23:19, Jernej =C5=A0krabec wrote:
-> Dne =C4=8Detrtek, 03. oktober 2019 ob 22:58:57 CEST je Paul Kocialkowski=
-=20
-> napisal(a):
-> > Hi,
-> >=20
-> > On Thu 03 Oct 19, 22:44, Jernej =C5=A0krabec wrote:
-> > > Dne =C4=8Detrtek, 03. oktober 2019 ob 22:28:46 CEST je Paul Kocialkow=
-ski
-> > >=20
-> > > napisal(a):
-> > > > Hi,
-> > > >=20
-> > > > On Thu 03 Oct 19, 07:16, Jernej =C5=A0krabec wrote:
-> > > > > Dne =C4=8Detrtek, 03. oktober 2019 ob 00:06:50 CEST je Paul Kocia=
-lkowski
-> > > > >=20
-> > > > > napisal(a):
-> > > > > > Hi,
-> > > > > >=20
-> > > > > > On Wed 02 Oct 19, 21:35, Jernej Skrabec wrote:
-> > > > > > > Reference index count in VE_H264_PPS should come from PPS con=
-trol.
-> > > > > > > However, this is not really important, because reference index
-> > > > > > > count
-> > > > > > > is
-> > > > > > > in our case always overridden by that from slice header.
-> > > > > >=20
-> > > > > > Thanks for the fixup!
-> > > > > >=20
-> > > > > > Our libva userspace and v4l2-request testing tool currently don=
-'t
-> > > > > > provide
-> > > > > > this, but I have a pending merge request adding it for the hant=
-ro so
-> > > > > > it's
-> > > > > > good to go.
-> > > > >=20
-> > > > > Actually, I think this is just cosmetic and it would work even if=
- it
-> > > > > would
-> > > > > be always 0. We always override this number in SHS2 register with
-> > > > > VE_H264_SHS2_NUM_REF_IDX_ACTIVE_OVRD flag and recently there was a
-> > > > > patch
-> > > > > merged to clarify that value in slice parameters should be the one
-> > > > > that's
-> > > > > set on default value if override flag is not set in bitstream:
-> > > > > https://git.linuxtv.org/media_tree.git/commit/?
-> > > > > id=3D187ef7c5c78153acdce8c8714e5918b1018c710b
-> > > > >=20
-> > > > > Well, we could always compare default and value in slice paramete=
-rs,
-> > > > > but I
-> > > > > really don't see the benefit of doing that extra work.
-> > > >=20
-> > > > Thanks for the detailed explanation! So I just realized that for HE=
-VC, I
-> > > > didn't even include the default value in PPS and only went for the
-> > > > per-slice value. The HEVC hardware block apparently only needs the
-> > > > fields
-> > > > once at slice level, and by looking at the spec, only one of the tw=
-o set
-> > > > of
-> > > > fields will be used.
-> > > >=20
-> > > > So perhaps we could do the same for H.264 and only have the set of
-> > > > fields
-> > > > once in the slice params, so that both codecs are consistent. Users=
-pace
-> > > > can
-> > > > just check the flag to know whether it should put the PPS default or
-> > > > slice-specific value in the slice-specific control.
-> > > >=20
-> > > > What do you think?
-> > >=20
-> > > I think that there would be less confusion if only value in slice par=
-ams
-> > > would exists. But since Philipp rather made clarification in
-> > > documentation, maybe he sees benefit having both values?
-> >=20
-> > Actually I just caught up with the discussion from thread:
-> > media: uapi: h264: Add num_ref_idx_active_override_flag
-> >=20
-> > which explains that we need to pass the default fields for hardware that
-> > parses the slice header itself and we need the non-default fields and f=
-lag
-> > for other cases.
-> >=20
-> > To cover the case of hardware that does slice header parsing, I guess it
-> > would also work to use the slice-specific values in place of the pps
-> > default values in the hardware register for that. But it feels quite
-> > confusing and a lot less straightforward than having all the fields and=
- the
-> > override flag exposed.
->=20
-> I wasn't aware of that patch and related discussion. Ok, so it make sense=
- to=20
-> have both values. However, does it make sense to use default values in Ce=
-drus?
-
-Well, since the hardware exposes fields for both and the flag for H264, let=
-'s do
-the straightforward thing and just pass the values through, even though we =
-can
-easily predict which will get used in the end.
-
-For HEVC, we'll just have to check for the flag and put the right set of va=
-lues
-in the slice-specific register.
-
-> > So I think I should fix HEVC support accordingly, just in case the same
-> > situation arises for HEVC.
->=20
-> Seems reasonable. Does that mean there will be another revision of HEVC=
-=20
-> patches?  If so, I think slice_segment_addr should also be included in sl=
-ice=20
-> params, so multi-slice frames can be supported at later time.
-
-I would be in favor of fixing this as a follow-up patch instead, so that we
-don't delay getting the series in. As you said, more work will be needed an=
-yway
-for multi-slice support, so I don't see the point of holding the series for=
- this
-particular improvment.
-
-Cheers,
-
-Paul
-
-> Best regards,
-> Jernej=20
->=20
-> >=20
-> > Cheers,
-> >=20
-> > Paul
-> >=20
-> > > Best regards,
-> > > Jernej
-> > >=20
-> > > > Cheers,
-> > > >=20
-> > > > Paul
-> > > >=20
-> > > > > Best regards,
-> > > > > Jernej
-> > > > >=20
-> > > > > > Acked-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > > > > >=20
-> > > > > > Cheers,
-> > > > > >=20
-> > > > > > Paul
-> > > > > >=20
-> > > > > > > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> > > > > > > ---
-> > > > > > >=20
-> > > > > > >  drivers/staging/media/sunxi/cedrus/cedrus_h264.c | 8 ++------
-> > > > > > >  1 file changed, 2 insertions(+), 6 deletions(-)
-> > > > > > >=20
-> > > > > > > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-> > > > > > > b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c index
-> > > > > > > bd848146eada..4a0e69855c7f 100644
-> > > > > > > --- a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-> > > > > > > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-> > > > > > > @@ -364,12 +364,8 @@ static void cedrus_set_params(struct
-> > > > > > > cedrus_ctx
-> > > > > > > *ctx,
-> > > > > > >=20
-> > > > > > >  	// picture parameters
-> > > > > > >  	reg =3D 0;
-> > > > > > >=20
-> > > > > > > -	/*
-> > > > > > > -	 * FIXME: the kernel headers are allowing the default value=
- to
-> > > > > > > -	 * be passed, but the libva doesn't give us that.
-> > > > > > > -	 */
-> > > > > > > -	reg |=3D (slice->num_ref_idx_l0_active_minus1 & 0x1f) << 10;
-> > > > > > > -	reg |=3D (slice->num_ref_idx_l1_active_minus1 & 0x1f) << 5;
-> > > > > > > +	reg |=3D (pps->num_ref_idx_l0_default_active_minus1 & 0x1f)=
- << 10;
-> > > > > > > +	reg |=3D (pps->num_ref_idx_l1_default_active_minus1 & 0x1f)=
- << 5;
-> > > > > > >=20
-> > > > > > >  	reg |=3D (pps->weighted_bipred_idc & 0x3) << 2;
-> > > > > > >  	if (pps->flags & V4L2_H264_PPS_FLAG_ENTROPY_CODING_MODE)
-> > > > > > >  =09
-> > > > > > >  		reg |=3D VE_H264_PPS_ENTROPY_CODING_MODE;
->=20
->=20
->=20
->=20
-
---=20
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
-
---PGNNI9BzQDUtgA2J
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl2WaOIACgkQ3cLmz3+f
-v9EA+wf/ekHmBtBvJhAORdriiY5xvorCVVe+x97wAdmtuicrv64I/52a//PGeOiX
-DB3hlBjSls/SdNhoIFYMTbBay5hGl8ZFxsdHgyFfZ5QztP14XWJJMzTwIXDbCFCc
-kWpU8tJopeAyrcW/o81oWyXaI+1DcyF/2mXjv7gjSZ4cbe1w+5jnE36/rsG7wr+L
-V0zlBxjFfDnRLIpLH3NqNCJXHyrcsL6wc9coGPdBd5olAzXk0Y9cCW7zoJ+V8aFi
-agpE8vHT4/FPinNdKGQ1vtfHiJ6pR8cHQ+skBoEmjvESCbOaIHGKiHmVnOW5AINR
-Z7R/MDMbE3GjMMiYfltNPKDgU+aOgA==
-=Uw7X
------END PGP SIGNATURE-----
-
---PGNNI9BzQDUtgA2J--
-
-
---===============5169953925679524661==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5169953925679524661==--
-
