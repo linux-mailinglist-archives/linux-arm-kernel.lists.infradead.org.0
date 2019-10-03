@@ -2,72 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 851ADC9551
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 02:03:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9ED20C9559
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 02:05:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oS49h70RG0r8hzYxkhkPJwM9oVHpjSH9StVjC9DPlZ4=; b=uY4bzeP6LfaCfw
-	gHEp4g+Y5PRVjOvGbiosU/VWrvpP9eQ907XeSuMogkOPuU5Kgf9JrMct/v1muqzUz3xKupBoBGyuI
-	mEWYbd7YPXD0rYWnYMqwRQ+RAF1L2br3cE1jzcjvW8uHkjovohajs8EJTTWhgFzarZcn6+1Ji4fQC
-	6rAWPiq/4XVmgWDQiAAreVCmF7ERpg43fL3o3H+so0/pp0b0FsyBiJOyWXlTv8sm8LkIF+H9dY1sg
-	7bnWwExlh8WPhM5nNltIRiYJCvMOQaXkbKD26UHyAVTQB5BEKhCtsNJVYcato2fCfXU8hYOHy3QY4
-	TPWbnNDBks+vfwrGuXwA==;
+	List-Owner; bh=8rsz7vcSyFEu+9/62FKDv4OqmpZLCHVFSkIHCBkjgMU=; b=TIHHOqdKlidv+j
+	SUx+2zRcpi2oT+E1tAXQG0n9CWXCfbVIyatHsLVhQCIfOaabHLUwnlzyYMw8bIGi9QtsvfRoXQrNa
+	ZB11b1y0Ukphd0AvcCrjXLPMPmbDcwjgsxDh/gy4tcO7g5YVfLj1HumVXqj5Gy7kkgpJCwY2T0YrJ
+	aT0oiTWdHxo/LPW33FtzNH03js3XJ3njW6kENVOca7GbUTtI27cJE20cO/+sDOFsBmIK6cPz7aWZw
+	2Ph68QjKatobmuPgOEfSrFv5RZmLieUdQUSDNLyWumzgAKvKQTQ+NtnnIlzpHjlKd/Sa9QhEMREvO
+	VwU/Cxr1kOYLme0nE4Gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFoap-0005n3-IL; Thu, 03 Oct 2019 00:03:39 +0000
-Received: from gate2.alliedtelesis.co.nz ([2001:df5:b000:5::4])
+	id 1iFocN-0007Jo-S5; Thu, 03 Oct 2019 00:05:15 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFoaW-0005dL-3t
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 00:03:22 +0000
-Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 95A36891AC;
- Thu,  3 Oct 2019 13:03:13 +1300 (NZDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
- s=mail181024; t=1570060993;
- bh=iUvA3HctFAZbLaG023LjBql2W+ZBQfiEqjeVbF2OMeI=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=K4uihTorKxE0T+IhKkM9Ri1yc2NhJIFE2zA/QLUImn6J2VPyvKBHT4anq5dgXcP/S
- c6QZry8JLXjQ88O6zL3+SbauIfUyRCq/cFyvGMSedncjAVFvgLuoqRFkbdYjl+1rA/
- u0BTNGyYgQ7KsZY7xiZ3cAv6WcnoHhfSpW6NEj/OxaYi/xanidPEwYwQJ04xHD3thi
- QYZ9LGTrhvJzTXQcXPdQE/oQpUumc2Xnp3eOxooLSYWAKnZxWwX8v1x66V9KWgJwM6
- /j5VGjTOE1ab9QIVBqPve2SbO4ch3e3Nedg15YYHPSlTeeiKod4YdwPzwwS8XPHTiR
- N5BRy3iwm8x+A==
-Received: from smtp (Not Verified[10.32.16.33]) by mmarshal3.atlnz.lc with
- Trustwave SEG (v7, 5, 8, 10121)
- id <B5d953ac20000>; Thu, 03 Oct 2019 13:03:14 +1300
-Received: from chrisp-dl.ws.atlnz.lc (chrisp-dl.ws.atlnz.lc [10.33.22.20])
- by smtp (Postfix) with ESMTP id 4A36C13EEC9;
- Thu,  3 Oct 2019 13:03:17 +1300 (NZDT)
-Received: by chrisp-dl.ws.atlnz.lc (Postfix, from userid 1030)
- id 729E228003E; Thu,  3 Oct 2019 13:03:13 +1300 (NZDT)
-From: Chris Packham <chris.packham@alliedtelesis.co.nz>
-To: linus.walleij@linaro.org, rjui@broadcom.com, sbranden@broadcom.com,
- bcm-kernel-feedback-list@broadcom.com, rayagonda.kokatanur@broadcom.com,
- li.jin@broadcom.com
-Subject: [PATCH v2 2/2] pinctrl: iproc: use unique name for irq chip
-Date: Thu,  3 Oct 2019 13:03:10 +1300
-Message-Id: <20191003000310.17099-3-chris.packham@alliedtelesis.co.nz>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191003000310.17099-1-chris.packham@alliedtelesis.co.nz>
-References: <20191003000310.17099-1-chris.packham@alliedtelesis.co.nz>
+ id 1iFocC-0006WM-ED
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 00:05:06 +0000
+Received: by mail-pf1-x441.google.com with SMTP id x127so524453pfb.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 02 Oct 2019 17:05:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=eSERWv/dAeDYZPDPVmR4SV3khOIaqqcs+Bqlu8Q3nUM=;
+ b=XCxoDAk5bkJ0qaDYm24OZRCwpIXFugB3PiG7CE1ieFg5zkMHAD78Ax/TdgawPzARFU
+ Asstm9Mx73DxEvNLehqMpPFa84Pg/cSg9xJ876NW2VVNHxcPqdT9I2xX6hRovi7Aqsoa
+ dwPLDnYfdPvvAoT/c+wu9A32Hp4nfNnnAqlm5y9N5SMgsY2Zv77cismDg5PdrDV1g06f
+ tPSfQ3kxtjnIXFxumsR/tTkqdxz570jyI6/iDNmUY5IO2D8VFyl7TmnDAK8d4NO0O5kQ
+ SLjk9BC3EwVbkIPhi1b0MnlEMrTzQZm6BnPEFBHfGTnLHWc+eb9FP1P2KG0Ydkxtu5AE
+ UKjQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=eSERWv/dAeDYZPDPVmR4SV3khOIaqqcs+Bqlu8Q3nUM=;
+ b=YQxE50wslqUOZZ8L6NYgjNnCsWztjxANCIiDwRPPLhwps3ij267JQwTkX1zS7C8vA9
+ gu396QXSVZYiwUKZTqqcRQL6grNY1LDBryNXPcLZ/r3OmINqG16HfAFI4Y6MNQo8BXAH
+ Kx2DbugPRT2aCUdXiiC8qcFWRxO/QjXPNWwtVAkjEBjOyogEEcUZPWIsgo06QttRrrBi
+ cOSdNzZ4Aq4P6oIu4UWTFs9M3jXVc9Xzq1PZO7JEK+fFKm7frn3vWbECYCjiakYI2Z+E
+ tCEutpUL1YU3eJeM+gWHlekeT2/JmV3SRbp3jKxqgzm3ezURvztkpR0jNfQchUC9bEH4
+ 1JNg==
+X-Gm-Message-State: APjAAAXR16fWfKDNH5OVoRhIEinmuqVev6DUYH2UTqTqILba5NqSmaLF
+ XlVelvpmcH7MePpE6LviqMA=
+X-Google-Smtp-Source: APXvYqwpVPqlXZYER/PW/zibmkEhfpORcZfQ8gp2Ub7xXCBl9cEqt6R89r7+jxiBp7Ap0cg0aq/Elg==
+X-Received: by 2002:a65:4145:: with SMTP id x5mr6396476pgp.321.1570061102585; 
+ Wed, 02 Oct 2019 17:05:02 -0700 (PDT)
+Received: from localhost ([106.51.243.182])
+ by smtp.gmail.com with ESMTPSA id b185sm589731pfg.14.2019.10.02.17.05.01
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 02 Oct 2019 17:05:01 -0700 (PDT)
+Date: Thu, 3 Oct 2019 05:34:59 +0530
+From: afzal mohammed <afzal.mohd.ma@gmail.com>
+To: Vladimir Murzin <vladimir.murzin@arm.com>
+Subject: Re: Regression: Cortex-M w/ XIP not booting
+Message-ID: <20191003000459.GA5467@afzalpc>
+References: <20191002061637.GA7743@afzalpc>
+ <c9a8d667-0dfb-2dd7-3537-8683cfc3914d@arm.com>
 MIME-Version: 1.0
-x-atlnz-ls: pat
+Content-Disposition: inline
+In-Reply-To: <c9a8d667-0dfb-2dd7-3537-8683cfc3914d@arm.com>
+User-Agent: Mutt/1.9.3 (2018-01-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_170320_526739_ECA530A4 
-X-CRM114-Status: GOOD (  11.63  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191002_170504_549660_DB802ABE 
+X-CRM114-Status: GOOD (  14.09  )
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [106.51.243.182 listed in dnsbl.sorbs.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (afzal.mohd.ma[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -86,38 +102,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org,
- Chris Packham <chris.packham@alliedtelesis.co.nz>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Russell King <linux@armlinux.org.uk>, linux-arm-kernel@lists.infradead.org,
+ Alexandre Torgue <alexandre.torgue@st.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use the dev_name(dev) for the irqc->name so that we get unique names
-when we have multiple instances of this driver.
+Hi Vladimir,
 
-Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
----
- drivers/pinctrl/bcm/pinctrl-iproc-gpio.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+On Wed, Oct 02, 2019 at 12:55:55PM +0100, Vladimir Murzin wrote:
 
-diff --git a/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c b/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
-index 8971fc54e974..c24d49d436ce 100644
---- a/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
-+++ b/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
-@@ -858,7 +858,7 @@ static int iproc_gpio_probe(struct platform_device *pdev)
- 		struct gpio_irq_chip *girq;
- 
- 		irqc = &chip->irqchip;
--		irqc->name = "bcm-iproc-gpio";
-+		irqc->name = dev_name(dev);
- 		irqc->irq_ack = iproc_gpio_irq_ack;
- 		irqc->irq_mask = iproc_gpio_irq_mask;
- 		irqc->irq_unmask = iproc_gpio_irq_unmask;
--- 
-2.23.0
+> Can you try diff bellow? I do not have XIP target, but non-XIP seems to
+> stay happy...
 
+Thanks, it fixes the issue.
+
+Regards
+afzal
+
+> 
+> 
+> diff --git a/arch/arm/kernel/head-common.S b/arch/arm/kernel/head-common.S
+> index a7810be..4a39828 100644
+> --- a/arch/arm/kernel/head-common.S
+> +++ b/arch/arm/kernel/head-common.S
+> @@ -68,7 +68,7 @@ ENDPROC(__vet_atags)
+>   * The following fragment of code is executed with the MMU on in MMU mode,
+>   * and uses absolute addresses; this is not position independent.
+>   *
+> - *  r0  = cp#15 control register
+> + *  r0  = cp#15 control register (exc_ret for M-class)
+>   *  r1  = machine ID
+>   *  r2  = atags/dtb pointer
+>   *  r9  = processor ID
+> @@ -137,7 +137,8 @@ __mmap_switched_data:
+>  #ifdef CONFIG_CPU_CP15
+>  	.long	cr_alignment			@ r3
+>  #else
+> -	.long	0				@ r3
+> +M_CLASS(.long	exc_ret)			@ r3
+> +AR_CLASS(.long	0)				@ r3
+>  #endif
+>  	.size	__mmap_switched_data, . - __mmap_switched_data
+>  
+> diff --git a/arch/arm/kernel/head-nommu.S b/arch/arm/kernel/head-nommu.S
+> index afa350f..0fc814b 100644
+> --- a/arch/arm/kernel/head-nommu.S
+> +++ b/arch/arm/kernel/head-nommu.S
+> @@ -201,6 +201,8 @@ M_CLASS(streq	r3, [r12, #PMSAv8_MAIR1])
+>  	bic	r0, r0, #V7M_SCB_CCR_IC
+>  #endif
+>  	str	r0, [r12, V7M_SCB_CCR]
+> +	/* Pass exc_ret to __mmap_switched */
+> +	mov	r0, r10
+>  #endif /* CONFIG_CPU_CP15 elif CONFIG_CPU_V7M */
+>  	ret	lr
+>  ENDPROC(__after_proc_init)
+> diff --git a/arch/arm/mm/proc-v7m.S b/arch/arm/mm/proc-v7m.S
+> index 1448f14..efebf41 100644
+> --- a/arch/arm/mm/proc-v7m.S
+> +++ b/arch/arm/mm/proc-v7m.S
+> @@ -136,9 +136,8 @@ __v7m_setup_cont:
+>  	cpsie	i
+>  	svc	#0
+>  1:	cpsid	i
+> -	ldr	r0, =exc_ret
+> -	orr	lr, lr, #EXC_RET_THREADMODE_PROCESSSTACK
+> -	str	lr, [r0]
+> +	/* Calculate exc_ret */
+> +	orr	r10, lr, #EXC_RET_THREADMODE_PROCESSSTACK
+>  	ldmia	sp, {r0-r3, r12}
+>  	str	r5, [r12, #11 * 4]	@ restore the original SVC vector entry
+>  	mov	lr, r6			@ restore LR
+> 
+> Cheers
+> Vladimir
 
 _______________________________________________
 linux-arm-kernel mailing list
