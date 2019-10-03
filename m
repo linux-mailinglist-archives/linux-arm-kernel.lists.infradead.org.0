@@ -2,70 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63D82C9DB4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 13:47:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE776C9DD2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 13:53:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=tL+aYEurMgbV9pkemNhpkUHoFOQVH1WKYCM6Wd4YrYY=; b=J12cmAhHmgYIYcmwTPqs17MLH
-	Q75K11CsQg+vLXbXC3poJwGxhgJ++p7THfPcFR5VgVCGJQ00yjrMptzDx42NdDOW4A2MpJMooNrJg
-	hNEHh+4S2vcT/bvC+tYte/EWAxJl/co+jkotECDEyyV/JeQyNPcECZFv6LdpUDksIebn068QE8Ir3
-	rG+fV4Avtq2pbl7D+b8keVjD56MttEb4w062OGqGQxgOoa9I2oaCU0rB5R1voqmdep4vGrYbQ+hEL
-	2/pgM+q95jB4p6sOEtmJWC1JGP/DPbIZOdGUJr45dfgd5oTtyr9S+uK37+HCRCFnuYijP+cf89tsT
-	LRduUZ6fA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eFYbiLxsoD7G7wvE8kZEuDAUotKiucpxRiwqfOiH33w=; b=I8wenRWVHhbP4M
+	HRlbA1+hhHKLTzmu39tosSh3rvMuOEN3Kw2yrqVHb8XC8oEjGzjAF1c11mho6ExfqJbBSoeQz5UiY
+	It0tWAzTNo7ksYqyu01Ka28MHnAIwOvzEg34/Ib+gfFKziRxvcHZa6nGb8NVTUEZXl5jDTv02tCPn
+	icNxuNr9auskDKdtNOSwbl0JVFFI88XOfYxCZcMXBsoOEFq7oI2Ln8J6tx3zaHrR/FaGLX7vJeFLO
+	hK6aHqka/3894eY2vnpE8x/uFxw3/cnIl6bU+sNdBN3C5bXGb+MFP4lb20YAcez3MhoVwlKYmx5R1
+	35Pp5Vf0JiSSqclQw0DA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFzaC-0006BR-Rc; Thu, 03 Oct 2019 11:47:44 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iFzg1-0000B0-88; Thu, 03 Oct 2019 11:53:45 +0000
+Received: from mail2-relais-roc.national.inria.fr ([192.134.164.83])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFza3-0006B6-Sl
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 11:47:37 +0000
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 15A932070B;
- Thu,  3 Oct 2019 11:47:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570103255;
- bh=4nbskvtMte6G8Dn16qGwpWvD7usNNHZVowY6nzQ2Cx8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=O20g3VXN3/cg4aktrTVEe1GoW8i3ThoeeCN1k/JWU6mjTRj16XPoBKKQyzKDaXwN2
- 4lZpEHI+x/6TtmfN5YS8Gy5rtabyI3lmUdMvHUjqCRr2kyrMwRtkphLHWmIzPJAv5u
- qo1v5dHZgQ3uBbnCCPnNR81iVgTFACMX8U0wxo0I=
-Date: Thu, 3 Oct 2019 13:47:33 +0200
-From: Maxime Ripard <mripard@kernel.org>
-To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [PATCH v11 4/7] dt-bindings: sun6i-dsi: Add VCC-DSI supply
- property
-Message-ID: <20191003114733.56mlar666l76uoyb@gilmour>
-References: <20191003064527.15128-1-jagan@amarulasolutions.com>
- <20191003064527.15128-5-jagan@amarulasolutions.com>
+ id 1iFzft-0000AR-NJ
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 11:53:39 +0000
+X-IronPort-AV: E=Sophos;i="5.67,252,1566856800"; d="scan'208";a="404557181"
+Received: from portablejulia.rsr.lip6.fr ([132.227.76.63])
+ by mail2-relais-roc.national.inria.fr with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 03 Oct 2019 13:43:37 +0200
+Date: Thu, 3 Oct 2019 13:43:37 +0200 (CEST)
+From: Julia Lawall <julia.lawall@lip6.fr>
+X-X-Sender: julia@hadrien
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Subject: [PATCH] media: i2c: fix returnvar.cocci warnings
+Message-ID: <alpine.DEB.2.21.1910031342250.2406@hadrien>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
-In-Reply-To: <20191003064527.15128-5-jagan@amarulasolutions.com>
-User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_044735_951680_D1DB5C02 
-X-CRM114-Status: GOOD (  14.02  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191003_045338_032884_1747CB28 
+X-CRM114-Status: GOOD (  10.91  )
+X-Spam-Score: -4.2 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-4.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ high trust [192.134.164.83 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
+ 0.1 HDRS_LCASE             Odd capitalization of message header
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,82 +59,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, David Airlie <airlied@linux.ie>,
- linux-sunxi <linux-sunxi@googlegroups.com>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Daniel Vetter <daniel@ffwll.ch>, michael@amarulasolutions.com,
- linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
-Content-Type: multipart/mixed; boundary="===============6412061817336445194=="
+Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
+ linux-kernel@vger.kernel.org, a.brela@framos.com, robh+dt@kernel.org,
+ sakari.ailus@iki.fi, kbuild-all@01.org,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: kbuild test robot <lkp@intel.com>
 
---===============6412061817336445194==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="abhaj7rlytqkllsn"
-Content-Disposition: inline
+Remove unneeded variable used to store return value.
 
+Generated by: scripts/coccinelle/misc/returnvar.cocci
 
---abhaj7rlytqkllsn
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Fixes: a80daf4057d7 ("media: i2c: Add IMX290 CMOS image sensor driver")
+CC: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Signed-off-by: kbuild test robot <lkp@intel.com>
+Signed-off-by: Julia Lawall <julia.lawall@lip6.fr>
+---
 
-On Thu, Oct 03, 2019 at 12:15:24PM +0530, Jagan Teki wrote:
-> Allwinner MIPI DSI controllers are supplied with SoC DSI
-> power rails via VCC-DSI pin.
->
-> Some board still work without supplying this but give more
-> faith on datasheet and hardware schematics and document this
-> supply property in required property list.
->
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> Tested-by: Merlijn Wajer <merlijn@wizzup.org>
-> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> ---
->  .../bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml         | 3 +++
->  1 file changed, 3 insertions(+)
->
-> diff --git a/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml b/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
-> index 47950fced28d..9d4c25b104f6 100644
-> --- a/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
-> +++ b/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
-> @@ -36,6 +36,9 @@ properties:
->    resets:
->      maxItems: 1
->
-> +  vcc-dsi-supply:
-> +    description: VCC-DSI power supply of the DSI encoder
-> +
+url:    https://github.com/0day-ci/linux/commits/Manivannan-Sadhasivam/dt-bindings-media-i2c-Add-IMX290-CMOS-sensor-binding/20191003-175652
+base:   git://linuxtv.org/media_tree.git master
+:::::: branch date: 2 hours ago
+:::::: commit date: 2 hours ago
 
-The driver treats it as mandatory, so I've added it to the binding, as
-suggested by the commit log.
+Please take the patch only if it's a positive warning. Thanks!
 
-Maxime
+ imx290.c |    3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
---abhaj7rlytqkllsn
-Content-Type: application/pgp-signature; name="signature.asc"
+--- a/drivers/media/i2c/imx290.c
++++ b/drivers/media/i2c/imx290.c
+@@ -447,7 +447,6 @@ static int imx290_set_fmt(struct v4l2_su
+ 	const struct imx290_mode *mode;
+ 	struct v4l2_mbus_framefmt *format;
+ 	unsigned int i;
+-	int ret = 0;
 
------BEGIN PGP SIGNATURE-----
+ 	mutex_lock(&imx290->lock);
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXZXf1QAKCRDj7w1vZxhR
-xQpxAP98mYp2+COHS85N0R4A/9rdJqX3YHaZ0XyYCj2Ihb0iVQD/QWC0ZaUcuku4
-nKva2ZQhgqqxhRK3v8jH9MrfregJmAE=
-=CYoo
------END PGP SIGNATURE-----
+@@ -483,7 +482,7 @@ static int imx290_set_fmt(struct v4l2_su
 
---abhaj7rlytqkllsn--
+ 	mutex_unlock(&imx290->lock);
 
+-	return ret;
++	return 0;
+ }
 
---===============6412061817336445194==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+ static int imx290_entity_init_cfg(struct v4l2_subdev *subdev,
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6412061817336445194==--
-
