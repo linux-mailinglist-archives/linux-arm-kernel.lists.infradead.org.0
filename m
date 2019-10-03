@@ -2,83 +2,122 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 495AFCAEA7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 20:56:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D84DBCAEBF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 21:03:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Subject:To:From:References:
-	In-Reply-To:MIME-Version:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UzTanH36PuApsQpEGOpV6lCLBWa9UHJNf6WZMpECrmk=; b=pOUgVFlcWx3BlV
-	7mRMfxWNP23kafLg1eInsc6T44cGANIvPjeIPn6ne9/4eaEidAXQhyhj0WXSXT/dVYsTd367IkA56
-	oSjWeYBy8ytH6MrVw09xYKJkrj45VyZlNTaeWINeVUPYFlUD5uwYcq1W88HInQb8KHNLb9esNRtuF
-	LACvoe+ChG826IKv5sKbn0IOiFNJ9BHFTMqVoR5mmkLXc+gmruXUvitbn4xRgPu7zzdoJ6iaUg8uc
-	PpF74GA209v8pg/sZ68HZZEyI5H3oKtR6tt4nLIJUFjBdffLhQrhVwSydQZXFxJqtSUWtuITKtrDF
-	Ze15xCMqhdZBJiKQREBQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wQh3W8u4BTcDIWVQCC+dmHrdtE2mojIDgpFdvCxHYJk=; b=eyjqRw5cxrrDhD
+	zpI2iqlbOg0jzKFEf+D1yXvu0F6vMigIHfeaZzLlr8bwRtMsJeb3xZOkhezNjayzPdq/iQvGM5xrZ
+	3ucZ7OYIIa47FdekJLS662Po0m2iz5k3OvYJxM6KIxXQlp9Ctiep0KFQcTifBWL86xwi0QOftQ2DV
+	wgPtGUiiJ2QVH7lqOBGZK0TAvbej7X2z9Y1k9lRvK7eoQppMLnhp0i3I//qHkTjkYAITo0+qocWhS
+	nAbbDdtijh1Iiu73uIsexWefB2K2eQ/5BX6tbAbO2uPBbcAmyNbjfocGvkIDXswXDdDe5oOnw0NWE
+	7epBNdaiVkm6MPrlVdiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG6Gq-0005Zj-IU; Thu, 03 Oct 2019 18:56:12 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1iG6Ns-00085Q-Vg; Thu, 03 Oct 2019 19:03:29 +0000
+Received: from mail-eopbgr690091.outbound.protection.outlook.com
+ ([40.107.69.91] helo=NAM04-CO1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG6Gk-0005ZH-27
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 18:56:07 +0000
-Received: by mail-pf1-x444.google.com with SMTP id y5so2334482pfo.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 03 Oct 2019 11:56:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=message-id:mime-version:content-transfer-encoding:in-reply-to
- :references:from:to:cc:subject:user-agent:date;
- bh=m3hPkICQE69+a0xauYT0Amw2XtL4GDAq+zoSEfirsuU=;
- b=RTH7eMPNg4REcj7uJxBnWgOGXzLh25RAdH0XvU6vUYGvMXEuc4SQe9Mopl1HUy9qTV
- NwlkefUwbR5ZusY6euOhVnCNMd9HBRlowLYcDJ+/tismHYMOUtJdHE3jmXC+xB5H1rFG
- MUmS1wlEq19k/B0rutrOSHgMx0/zeNEFj52Eo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:mime-version
- :content-transfer-encoding:in-reply-to:references:from:to:cc:subject
- :user-agent:date;
- bh=m3hPkICQE69+a0xauYT0Amw2XtL4GDAq+zoSEfirsuU=;
- b=Ne600hiU7BlWhDVDlHsCwHwdKeD+BuiE5tSvOJTWrVl7wIJLpaa5go7glC7rQ7iSMX
- m2J31Y8fI6iCCQJdi1hfKRterp8v0LF2Fm1G6TGfj5fhainIYBBpExk1gFiwF64chiAH
- OJ+0vaWlroUBLC2CsapHgpYBDLNodtDhWLJiO4tqu7f2RMEflR+Ej1ZRbhslPkk2+dYt
- cE/hqaJVRnrDL7rxG/BqK5gOawHDaHuLauCuN/Tmfi5wWUOuk7JUVxPqRk3dnpL9pP5j
- Jyvrx/06Q/NNDEbDf1M2bde0jHOJ0yXLiVp1TKNzWHRtLJAl/ekH7H+FIqQPKgTZWZLC
- ZmpA==
-X-Gm-Message-State: APjAAAWHaBbKpUnVQc9mpy9URAjApKXfSnYMPRk2tEgMCZaJaYpA2Ggx
- eyAd5btwBf/gm4YdV8yMsMNBRg==
-X-Google-Smtp-Source: APXvYqwDCBHsPX8dh6oRQ9FHBVLRypmHbpAWhqLjb3zrDPeKQKRHPbU3F7fMBBGRfrbzqBb/RLO09A==
-X-Received: by 2002:a17:90a:fa3:: with SMTP id
- 32mr12426687pjz.35.1570128965072; 
- Thu, 03 Oct 2019 11:56:05 -0700 (PDT)
-Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
- by smtp.gmail.com with ESMTPSA id v68sm4379189pfv.47.2019.10.03.11.56.04
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 03 Oct 2019 11:56:04 -0700 (PDT)
-Message-ID: <5d964444.1c69fb81.121ce.d43b@mx.google.com>
+ id 1iG6Ng-00084m-Lp
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 19:03:18 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=e0qpsDHPsQNVionp4ZUWJRIZnb1oym8R7miYzQySi8VAl4lQYjiUsfDCQ+33ycFYFeoAFVqBffkMKc/sBx4DaMXUb6102uuCNW5gL/LkzeMI41Sr2a5DtA1PLt5TiFP035yYGJDsMCYuErwYR9G71oBJFqwowGKSF2WZpPPn6OtePgG9I/8KAgMxQKCUYiGrz833DUqlO13HAnE0IEFxgG/L40gdvUehmg0/rgdl4ozP0LCbgS8NcBK3xcgpLDCpDsjax2X+rgigJQuZdZmdid0mB+lnCHSorVxVHDjYGbC6jIB/XUgegvCNVmw9cRwoLo/EQDxjrje+EdoTpIAHKA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=fovXt1QDNlRsK0aZo4Y06n5WhGtx8m0fIh3k1QoPcRg=;
+ b=FXh+uFD6UP1yxvjz6FsQ8wwkgLQiNjX4j/l5gg+fGFpCtl3JKQ53SIBQoK3otoYhW71lew9u0JHdN7qTCziWRqxIXDT0gOOqnnTd42OOT3VzFeBOGBdmWXxmf26v6fr9gz2mOnHlqIGVpqqbwfVTmiEuPM2mfUSHRuhIY6Tbb5etaRbCMpfwSEUOXYLiE7E9UT37Vqrb0IP/1/bnegGEt8sQAl4gp7rVUeY56ktTO7ChaBOKmM6XU6XeqJ8hyfiH6AvvqgLdGUzQ+yAgmFaitwpKko6892S75U56Dy7PCmqQ2l9uJcZDje9uF4CMxIzeqjzJl0GSovOo4+lJ0+LRmg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microsoft.com; dmarc=pass action=none
+ header.from=microsoft.com; dkim=pass header.d=microsoft.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=fovXt1QDNlRsK0aZo4Y06n5WhGtx8m0fIh3k1QoPcRg=;
+ b=P/YzzdSrEJu5caWaxIRC6qkoIoIUsfOSYE0ZBu0JUAhaa0dTXyiraoKndA9BDIm14HYrrd89JQH+4XGjAZ/WH0Rqt1ER+CZ41lzI3PWbS8kWQihD/mgfUe0h7syrw5/F52X4yaZraeBFq1UnzgiDuyRAdum+KNfELXrHUbzEPV0=
+Received: from SN6PR2101MB1135.namprd21.prod.outlook.com (52.132.114.24) by
+ SN6PR2101MB1102.namprd21.prod.outlook.com (52.132.115.27) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2327.7; Thu, 3 Oct 2019 19:03:13 +0000
+Received: from SN6PR2101MB1135.namprd21.prod.outlook.com
+ ([fe80::7d4a:b5b3:1062:e62]) by SN6PR2101MB1135.namprd21.prod.outlook.com
+ ([fe80::7d4a:b5b3:1062:e62%5]) with mapi id 15.20.2327.004; Thu, 3 Oct 2019
+ 19:03:13 +0000
+From: Michael Kelley <mikelley@microsoft.com>
+To: "will@kernel.org" <will@kernel.org>, "catalin.marinas@arm.com"
+ <catalin.marinas@arm.com>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "maz@kernel.org" <maz@kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "gregkh@linuxfoundation.org"
+ <gregkh@linuxfoundation.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "linux-hyperv@vger.kernel.org"
+ <linux-hyperv@vger.kernel.org>, "devel@linuxdriverproject.org"
+ <devel@linuxdriverproject.org>, "olaf@aepfle.de" <olaf@aepfle.de>,
+ "apw@canonical.com" <apw@canonical.com>, vkuznets <vkuznets@redhat.com>,
+ "jasowang@redhat.com" <jasowang@redhat.com>, "marcelo.cerri@canonical.com"
+ <marcelo.cerri@canonical.com>, KY Srinivasan <kys@microsoft.com>
+Subject: [PATCH v5 0/8] Enable Linux guests on Hyper-V on ARM64
+Thread-Topic: [PATCH v5 0/8] Enable Linux guests on Hyper-V on ARM64
+Thread-Index: AQHVeh00xDZvxhcb5kqKmxiC2yP7xQ==
+Date: Thu, 3 Oct 2019 19:03:13 +0000
+Message-ID: <1570129355-16005-1-git-send-email-mikelley@microsoft.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: MWHPR10CA0006.namprd10.prod.outlook.com (2603:10b6:301::16)
+ To SN6PR2101MB1135.namprd21.prod.outlook.com
+ (2603:10b6:805:4::24)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=mikelley@microsoft.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: git-send-email 1.8.3.1
+x-originating-ip: [131.107.159.247]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: ffda2be7-2373-4391-b95b-08d7483456db
+x-ms-office365-filtering-ht: Tenant
+x-ms-traffictypediagnostic: SN6PR2101MB1102:|SN6PR2101MB1102:|SN6PR2101MB1102:
+x-ms-exchange-transport-forked: True
+x-ld-processed: 72f988bf-86f1-41af-91ab-2d7cd011db47,ExtAddr
+x-microsoft-antispam-prvs: <SN6PR2101MB1102D3472F11273F92C7DF4AD79F0@SN6PR2101MB1102.namprd21.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:5236;
+x-forefront-prvs: 01792087B6
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(4636009)(39860400002)(396003)(136003)(366004)(376002)(346002)(199004)(189003)(486006)(102836004)(81156014)(5660300002)(64756008)(6512007)(66476007)(66556008)(4326008)(1511001)(66946007)(256004)(52116002)(6436002)(386003)(6116002)(305945005)(476003)(8676002)(99286004)(7416002)(4720700003)(66446008)(2501003)(22452003)(6636002)(316002)(2616005)(66066001)(26005)(71200400001)(478600001)(86362001)(54906003)(2201001)(36756003)(10090500001)(81166006)(71190400001)(8936002)(6486002)(186003)(10290500003)(14454004)(25786009)(7736002)(6506007)(50226002)(3846002)(14444005)(110136005)(2906002)(921003)(1121003);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:SN6PR2101MB1102;
+ H:SN6PR2101MB1135.namprd21.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microsoft.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: wNdzY0cM0zzpwFKI1lilol+/8e5iZ9BZzMY7CUnYZXvKDkcxssRMjHruxA1Q7Ftte5aDAin8nM601KIAr9k9qFkwOA5I8oFtc1RNBwzM+O7hmfye28SkImp5kpumEE5A8uF5t56ksmOVsEVv2RUGdOEZUzV+/zgTXDxU3PXCKkr4ZrazXJACqKiV79NyDjdTznDOU0RA1xnErm3raV8RuKlvFJDwSp2O9o4CYBhr8ZjD9+8Bv1Tuju7h5MxAfa1bhCMeLQY+ItjPrA75kJ/3gdrdEBTT8PqZoqjaTwTeT4mV8GsEIfLfdSfMJVvtOSh4JdAoxDc9TJXVHcggVl5fMSTVflEdA8kv4mbIaQs3i8kl4V4jEIp5zigGnC0PlL5kPhi9OXkzgFbQ376iNHzFAhNefQ7DwtTfrL8Bsy8AQv8=
 MIME-Version: 1.0
-In-Reply-To: <CAE=gft6YdNszcJV67CwcY2gOgPHrJ1+SnKMLr63f2bix2aZXXA@mail.gmail.com>
-References: <20190910160903.65694-1-swboyd@chromium.org>
- <20190910160903.65694-4-swboyd@chromium.org>
- <CAE=gft6YdNszcJV67CwcY2gOgPHrJ1+SnKMLr63f2bix2aZXXA@mail.gmail.com>
-From: Stephen Boyd <swboyd@chromium.org>
-To: Evan Green <evgreen@chromium.org>
-Subject: Re: [PATCH v3 3/5] memremap: Add support for read-only memory mappings
-User-Agent: alot/0.8.1
-Date: Thu, 03 Oct 2019 11:56:03 -0700
+X-OriginatorOrg: microsoft.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ffda2be7-2373-4391-b95b-08d7483456db
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Oct 2019 19:03:13.0443 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 72f988bf-86f1-41af-91ab-2d7cd011db47
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: zm47svxF59onvlp+Xnzr/BPgmfwY1UjNfFEW4GH6eG+vLjY5Cozc6sEjidsnHAfUSYlDDG2/QCRSg0f5HF/Mkw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR2101MB1102
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_115606_128615_DD617F06 
-X-CRM114-Status: GOOD (  15.44  )
+X-CRM114-CacheID: sfid-20191003_120316_722984_95B6CCE8 
+X-CRM114-Status: GOOD (  19.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ no trust [40.107.69.91 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.69.91 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -98,57 +137,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Will Deacon <will.deacon@arm.com>, LKML <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- Andy Gross <agross@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Dan Williams <dan.j.williams@intel.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Sunil Muthuswamy <sunilmut@microsoft.com>,
+ "boqun.feng" <boqun.feng@gmail.com>, Michael Kelley <mikelley@microsoft.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Evan Green (2019-09-18 12:37:34)
-> On Tue, Sep 10, 2019 at 9:09 AM Stephen Boyd <swboyd@chromium.org> wrote:
-> >
-> > @@ -53,6 +60,9 @@ static void *try_ram_remap(resource_size_t offset, size_t size,
-> >   * mapping types will be attempted in the order listed below until one of
-> >   * them succeeds.
-> >   *
-> > + * MEMREMAP_RO - establish a mapping whereby writes are ignored/rejected.
-> > + * Attempts to map System RAM with this mapping type will fail.
-> 
-> Why should attempts to map RAM with this flag fail? MEMREMAP_WB will
-> allow RAM and quietly give you back the direct mapping, so it seems
-> like at least some values in this function allow RAM.
-> 
-> Oh, I see a comment below about "Enforce that this mapping is not
-> aliasing System RAM". I guess this is worried about cache coloring?
-> But is that a problem with RO mappings? I guess the RO mappings could
-> get partially stale, so if the memory were being updated out from
-> under you, you might see some updates but not others. Was that the
-> rationale?
+This series enables Linux guests running on Hyper-V on ARM64
+hardware. New ARM64-specific code in arch/arm64/hyperv initializes
+Hyper-V, including its interrupts and hypercall mechanism.
+Existing architecture independent drivers for Hyper-V's VMbus and
+synthetic devices just work when built for ARM64. Hyper-V code is
+built and included in the image and modules only if CONFIG_HYPERV
+is enabled.
 
-Will Deacon, Dan Williams, and I talked about this RO flag at LPC and I
-believe we decided to mostly get rid of the flags argument to this
-function. The vast majority of callers pass MEMREMAP_WB, so I'll just
-make that be the implementation default and support the flags for
-encrpytion (MEMREMAP_ENC and MEMREMAP_DEC). There are a few callers that
-pass MEMREMAP_WC or MEMREMAP_WT (and one that passes all of them), but I
-believe those can be changed to MEMREMAP_WB and not care. There's also
-the efi framebuffer code that matches the memory attributes in the EFI
-memory map. I'm not sure what to do with that one to be quite honest.
-Maybe EFI shouldn't care and just use whatever is already there in the
-mapping?
+The eight patches are organized as follows:
+1) Add include files that define the Hyper-V interface as
+   described in the Hyper-V Top Level Functional Spec (TLFS), plus
+   additional definitions specific to Linux running on Hyper-V.
 
-Either way, I'll introduce a memremap_ro() API that maps memory as read
-only if possible and return a const void pointer as well. I'm debating
-making that API fallback to memremap() if RO isn't supported for some
-reason or can't work because we're remapping system memory but that
-seems a little too nice when the caller could just as well decide to
-fail if memory can't be mapped as read only.
+2 thru 6) Add core Hyper-V support on ARM64, including hypercalls,
+   interrupt handlers, kexec & panic handlers, and core hypervisor
+   initialization.
+
+7) Update the existing VMbus driver to generalize interrupt
+   management across x86/x64 and ARM64.
+
+8) Make CONFIG_HYPERV selectable on ARM64 in addition to x86/x64.
+
+Some areas of Linux guests on Hyper-V on ARM64 are a work-
+in-progress:
+
+* Hyper-V on ARM64 currently runs with a 4 Kbyte page size, but
+  allows guests with 16K/64K page size. However, the Linux drivers
+  for Hyper-V synthetic devices assume the guest page size is 4K.
+  This patch set lays the groundwork for larger guest page sizes,
+  but the main page size changes are in a different patch stream
+  that is underway to update these drivers.
+
+* The Hyper-V vPCI driver at drivers/pci/host/pci-hyperv.c has
+  x86/x64-specific code and is not being built for ARM64. Fixing
+  this driver to enable vPCI devices on ARM64 will be done later.
+
+In a few cases, terminology from the x86/x64 world has been carried
+over into the ARM64 code ("MSR", "TSC").  Hyper-V still uses the
+x86/x64 terminology and has not replaced it with something more
+generic, so the code uses the Hyper-V terminology.  This will be
+fixed when Hyper-V updates the usage in the TLFS.
+
+This patch set is based on the 5.4-rc1-next-20191001 tree.
+
+Changes in v5:
+* Minor fixups to rebase to 5.4-rc1 linux-next
+
+Changes in v4:
+* Moved clock-related code into an architecture independent
+  Hyper-V clocksource driver that is already upstream. Clock
+  related code is removed from this patch set except for the
+  ARM64 specific interrupt handler. [Marc Zyngier]
+* Separately upstreamed the split of mshyperv.h into arch independent
+  and arch dependent portions. The arch independent portion has been
+  removed from this patch set.
+* Divided patch #2 of the series into multiple smaller patches
+  [Marc Zyngier]
+* Changed a dozen or so smaller things based on feedback
+  [Marc Zyngier, Will Deacon]
+* Added functions to alloc/free Hyper-V size pages for use by
+  drivers for Hyper-V synthetic devices when updated to not assume
+  guest page size and Hyper-v page size are the same
+
+Changes in v3:
+* Added initialization of hv_vp_index array like was recently
+  added on x86 branch [KY Srinivasan]
+* Changed Hyper-V ARM64 register symbols to be all uppercase
+  instead of mixed case [KY Srinivasan]
+* Separated mshyperv.h into two files, one architecture
+  independent and one architecture dependent. After this code
+  is upstream, will make changes to the x86 code to use the
+  architecture independent file and remove duplication. And
+  once we have a multi-architecture Hyper-V TLFS, will do a
+  separate patch to split hyperv-tlfs.h in the same way.
+  [KY Srinivasan]
+* Minor tweaks to rebase to latest linux-next code
+
+Changes in v2:
+* Removed patch to implement slow_virt_to_phys() on ARM64.
+  Use of slow_virt_to_phys() in arch independent Hyper-V
+  drivers has been eliminated by commit 6ba34171bcbd
+  ("Drivers: hv: vmbus: Remove use of slow_virt_to_phys()")
+* Minor tweaks to rebase to latest linux-next code
+
+Michael Kelley (8):
+  arm64: hyperv: Add core Hyper-V include files
+  arm64: hyperv: Add hypercall and register access functions
+  arm64: hyperv: Add memory alloc/free functions for Hyper-V size pages
+  arm64: hyperv: Add interrupt handlers for VMbus and stimer
+  arm64: hyperv: Add kexec and panic handlers
+  arm64: hyperv: Initialize hypervisor on boot
+  Drivers: hv: vmbus: Add hooks for per-CPU IRQ
+  Drivers: hv: Enable Hyper-V code to be built on ARM64
+
+ MAINTAINERS                          |   3 +
+ arch/arm64/Kbuild                    |   1 +
+ arch/arm64/hyperv/Makefile           |   2 +
+ arch/arm64/hyperv/hv_hvc.S           |  44 ++++
+ arch/arm64/hyperv/hv_init.c          | 415 +++++++++++++++++++++++++++++++++++
+ arch/arm64/hyperv/mshyperv.c         | 165 ++++++++++++++
+ arch/arm64/include/asm/hyperv-tlfs.h | 408 ++++++++++++++++++++++++++++++++++
+ arch/arm64/include/asm/mshyperv.h    | 105 +++++++++
+ arch/x86/include/asm/mshyperv.h      |   4 +
+ drivers/hv/Kconfig                   |   3 +-
+ drivers/hv/hv.c                      |   3 +
+ include/asm-generic/mshyperv.h       |   5 +
+ 12 files changed, 1157 insertions(+), 1 deletion(-)
+ create mode 100644 arch/arm64/hyperv/Makefile
+ create mode 100644 arch/arm64/hyperv/hv_hvc.S
+ create mode 100644 arch/arm64/hyperv/hv_init.c
+ create mode 100644 arch/arm64/hyperv/mshyperv.c
+ create mode 100644 arch/arm64/include/asm/hyperv-tlfs.h
+ create mode 100644 arch/arm64/include/asm/mshyperv.h
+
+-- 
+1.8.3.1
 
 
 _______________________________________________
