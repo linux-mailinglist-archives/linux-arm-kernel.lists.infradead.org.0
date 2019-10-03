@@ -2,81 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A207C9BF3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 12:16:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00539C9C11
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 12:20:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2OXcNKDNlUVEFiWBe7Ij6lydagpyuEb5RD8oyNVXaLo=; b=nko5RKOSA7tXZpYKDWd5z/C7O
-	+TApGDgW2LSoRkT4ze2bp54gg6pLn9LKsZzfNVss8pBoJXtMQDyBdOusvhzFOunjIQxkzb8t9KOA0
-	y/z9mPeOffSZ7MDXTZi8P09CFfppi+RizKnoIqAX/BDUJKXbPnTDjBUhyRXiDrKEN5X/ekzUiyBhf
-	+SDuZq8w4ldv7MyodYMIeEQeCZpDx3+nqWUvkMCwlDVr7C8ASNpWODO81P6aEY/2YdqdvYtW7xo3c
-	wv1v8tzXMB/yRyXcWrj6tSInJbtZmP5A7Cv7uMlZxf+MJ2xpq1YVOCZ5zctWDM6YKCo/4kf4TzoW1
-	5fqAYQD9A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Yj/wJUipQa9wYzajNxxtpJ6xMQ9zrllHUsxdMewBucQ=; b=rbQ/NMNvekjVgA
+	OZurJNFuppvtSzT+W/kDU10yAQCj/rLJ4xslyzrHKXKQzo0YT2//YhHiUdu+IDBnV52cI5298DwS5
+	48Adbpeg5kOZI0WtUCQEZbbi4E4Xw+W8NS6bGL5KfJKd+j+URjIjDTKccZo91DB4954Nd55CPtTGY
+	n8T0UlAvwUwZ4qafKKYA43j9UzNd2WZsTZcHcdkd4ZYimB4f1FjmP9/Tz0lVFrvaf7raT2/C3ZGNh
+	26Y5Vq/5noy7ckAP5NQ5UzDyGsdWN8mQTMsfpfcSvOs9mqr2dbRfcQX/rxQzv83CebgpNpW8iB506
+	IVwk8jXp7vuf/H71q5UA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFyA9-0003px-Kc; Thu, 03 Oct 2019 10:16:45 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iFyDV-0004OO-TE; Thu, 03 Oct 2019 10:20:13 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFyA1-0003pa-As
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 10:16:38 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x93A1YhG005393; Thu, 3 Oct 2019 12:16:30 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=L4LLR9A842To83iMCr2kJJo+nQXIiFznTI7PhQwWL6M=;
- b=PFe9zeM2Zoy1K7RCpNUac4jSDN/qZtCabQVNCg/lYvXkJTRfa2Urog1hqg/aPyduHn8w
- MndtdtMz929onq4Rl3dbaFLli/rBuv/P/EZR6XvsdAJ1rMchgHJg3zvQNrocnJcmYtWN
- LbJEXZvBrQ/TKtzJHzULUkJnDEA/uw3N8AZi3hr6Cje012lbHwT+DAtYV1dfuSUgqMpu
- m1plOZpHDWATmcEigXunX2TEIHNsPIpoBrN2Z2pdeuSj1Dd5gbJZ+IfT2z5QEe5j2low
- 05hPwvGKQpwo5bCPf0PqOQFtFFKWpVkxqwG7oWrsJ+1Pt7i3w11boqtPDguVugdvBkSH qg== 
-Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
- by mx07-00178001.pphosted.com with ESMTP id 2vcem38uxw-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Thu, 03 Oct 2019 12:16:29 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 43A0322;
- Thu,  3 Oct 2019 10:16:26 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 978052B7B2E;
- Thu,  3 Oct 2019 12:16:25 +0200 (CEST)
-Received: from lmecxl0912.lme.st.com (10.75.127.48) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 3 Oct
- 2019 12:16:24 +0200
-Subject: Re: [PATCH 0/5] net: ethernet: stmmac: some fixes and optimization
-To: Christophe Roullier <christophe.roullier@st.com>, <robh@kernel.org>,
- <davem@davemloft.net>, <joabreu@synopsys.com>, <mark.rutland@arm.com>,
- <mcoquelin.stm32@gmail.com>, <peppe.cavallaro@st.com>
-References: <20190920053817.13754-1-christophe.roullier@st.com>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <7575369f-0f42-9afa-4212-bb82100a7a1b@st.com>
-Date: Thu, 3 Oct 2019 12:16:24 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iFyDF-0004No-1U
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 10:19:58 +0000
+Received: by mail-lj1-x241.google.com with SMTP id q64so2030705ljb.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 03 Oct 2019 03:19:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Mx2mVdBYrakYmKxbPV66SmuQcwBPBGOoE53tUIGHR+A=;
+ b=BiohckBckv+eDTVkHIyBC8N7T6XQTXFT0oc1lxYcBVidzoZVAV7lN2qPws75YjQJom
+ 1CmWc86k3OXNMIg+KGYFkKk6WH1jJwJc3SKei1E2Yu4AzBDEcm4ZJXgtKbt6RVaUVznD
+ CdfVW6NE3SjiWU+htl7iwmSSKUfC2xcuX9HoxBnoxGakn5KIslygdNV1woIbSjwhXpmv
+ 91FSZG18vyp7hlyJqI11V2Tq/w5eEMXw+EWwG8DfaGipdHvG4Rwibr4fPOk7D9XW71ox
+ zmuEvTjefK87JRBKNAkHvnOPRBXGTu0uuHxeMbPjuuH67AfuFHpc7T0oayvOk58CB8C0
+ L8IA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Mx2mVdBYrakYmKxbPV66SmuQcwBPBGOoE53tUIGHR+A=;
+ b=TCKw6sU9eoW7dSC3DSKwKEMRwYOD7PxLlK58YZIOBeVEus8Y/E/xwNYEf9Hd9baGsq
+ L6MELvvnL5V/2swLhDEx9zjTTucQktOUJOa8rEtTsQg2ZLsQZXgAmQ9IIYj2IfDokd7w
+ rYY1eJjmCK9fQ44bWMqgFNbhbJOwXCzaen7huAfk4uHbw0GJ7pGKUSIc1By7t/6vK5xg
+ k7LIqpFPNKAsklcrjHodEj+8wmMZ7lO3pN1xpQm/paSLHOo/bP9pcRHVmmnw+9EpSWaL
+ 1Vm1mx+CmO7diSP4FGhd3S5dplpppZKu3v4tevQ/i7dPXhfPk0uBUqNq8p0fEKu8UISA
+ Dvcg==
+X-Gm-Message-State: APjAAAWlzlxyS6DqJCg8jRhEPNvHqe9KM8q3LjbpveuVq0Jz20XQDgQl
+ oBDsPJ+rNLAN1nNuf86go0BOW/UHPuCGrGMBYLlwFg==
+X-Google-Smtp-Source: APXvYqxtEBgA75ZlWizzadlM7ku6Sc5eWq/YvW5BJWg+JWNU8Jj6xHbXWXCZZexLY3SRjk7ikjV1/YWyZXiTaMlU0qU=
+X-Received: by 2002:a2e:63da:: with SMTP id s87mr5494745lje.79.1570097994932; 
+ Thu, 03 Oct 2019 03:19:54 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190920053817.13754-1-christophe.roullier@st.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.48]
-X-ClientProxiedBy: SFHDAG8NODE3.st.com (10.75.127.24) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
- definitions=2019-10-03_04:2019-10-01,2019-10-03 signatures=0
+References: <20190927031551.20074-1-hui.song_1@nxp.com>
+In-Reply-To: <20190927031551.20074-1-hui.song_1@nxp.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 3 Oct 2019 12:19:42 +0200
+Message-ID: <CACRpkdZh80H+G43-y0AGXJo0p=C5YADZBu3h1v2-3LvLj_Z=aQ@mail.gmail.com>
+Subject: Re: [PATCH v6] gpio/mpc8xxx: change irq handler from chained to normal
+To: Hui Song <hui.song_1@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_031637_668501_E5050FC9 
-X-CRM114-Status: GOOD (  14.18  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191003_031957_093088_D124E62A 
+X-CRM114-Status: GOOD (  12.01  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -97,39 +90,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, andrew@lunn.ch, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Li Yang <leoyang.li@nxp.com>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Christophe
+On Fri, Sep 27, 2019 at 5:26 AM Hui Song <hui.song_1@nxp.com> wrote:
 
-On 9/20/19 7:38 AM, Christophe Roullier wrote:
-> Some improvements (manage syscfg as optional clock, update slew rate of
-> ETH_MDIO pin, Enable gating of the MAC TX clock during TX low-power mode)
-> Fix warning build message when W=1
-> 
-> Christophe Roullier (5):
->    net: ethernet: stmmac: Add support for syscfg clock
->    net: ethernet: stmmac: fix warning when w=1 option is used during
->      build
->    ARM: dts: stm32: remove syscfg clock on stm32mp157c ethernet
->    ARM: dts: stm32: adjust slew rate for Ethernet
->    ARM: dts: stm32: Enable gating of the MAC TX clock during TX low-power
->      mode on stm32mp157c
-> 
+> From: Song Hui <hui.song_1@nxp.com>
+>
+> More than one gpio controllers can share one interrupt, change the
+> driver to request shared irq.
+>
+> While this will work, it will mess up userspace accounting of the number
+> of interrupts per second in tools such as vmstat.  The reason is that
+> for every GPIO interrupt, /proc/interrupts records the count against GIC
+> interrupt 68 or 69, as well as the GPIO itself.  So, for every GPIO
+> interrupt, the total number of interrupts that the system has seen
+> increments by two
+>
+> Signed-off-by: Laurentiu Tudor <Laurentiu.Tudor@nxp.com>
+> Signed-off-by: Alex Marginean <alexandru.marginean@nxp.com>
+> Signed-off-by: Song Hui <hui.song_1@nxp.com>
+> ---
+>  Changes in v6:
+>         - change request_irq to devm_request_irq and add commit message
 
-DT patches will be applied on stm32-next after dwmac-stm32 patches merge 
-in net-next.
+There is some build error on the patch, can you look into it?
 
->   arch/arm/boot/dts/stm32mp157-pinctrl.dtsi     |  9 +++-
->   arch/arm/boot/dts/stm32mp157c.dtsi            |  7 ++--
->   .../net/ethernet/stmicro/stmmac/dwmac-stm32.c | 42 ++++++++++++-------
->   3 files changed, 38 insertions(+), 20 deletions(-)
-> 
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
