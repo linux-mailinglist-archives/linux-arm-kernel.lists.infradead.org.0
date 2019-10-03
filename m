@@ -2,57 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12A45CB021
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 22:29:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 433A9CB056
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 22:42:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0JkkRnLog2iWpMi9OJrSGrUihqYsdp4I7UmD9OKJlTk=; b=F+UXH8HjVYYjkQz3r9877cGjY
-	wxB/sZ6u/XIVVURKM+8a7rMNQNho1nUEjiMVA7vRS5omxrX1pE7GPnLRrXc0IzRShlP/66BFRrtcr
-	zLA4c/PHzJwlTUkOIQn+Xffev/hO4LvAlz1Uhf7PGsn5u3LlcFGGl3K8QEcQ87ogiE74lpq5vYIUS
-	8/FtocnYN+ZEbMB+Uqnjk2SSgFoDKs25EPnFryCo+usIPjNjWZIVarjJzBfjPEfca0rqWSm0ph3wn
-	Mie7oNax/SHRcXN2P42EeKD42L2Zcnyneb2QRd7yAeRR/sga74fdjsc/mrpIqtNiuCs6IN8IRsLy8
-	50Bi6uWXw==;
+	 bh=wm10XAvzMr9zECedR8D0jH8v2RLfpqYkfp2Igkk/Nps=; b=aqqtyDoplqnuvbcjKKsBpPIAb
+	f6Lk4NZPKv+9Ox5Myeyu2l+1/njFes0YpdwM6PSO0w1rXnk3tVr5zADkjJLQMJK2/Zrz6o7twLwy2
+	BYkM+yqaprFAZUGcP3SR2npGBZqmNEj1HfQlDjxAJ3728WOeoNabsV6XwmJTswz0GTEH455XPdH0/
+	uvAF/SSO9VSbaNDWAgmOjkTwnibvm6HgOatldlHhggSGUxqrcDb/TpLyB20hXqGtzgs7c+K9twdSO
+	xG4zFL6MTB+xsBzRi5iEcpt4FH/cUCX5gfLY0GSFrrhVCqNTb8NIRbFkHr26MWqhSn+0DSDJAMf9F
+	JBUlm3Vbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG7if-00054w-NL; Thu, 03 Oct 2019 20:29:01 +0000
-Received: from relay3-d.mail.gandi.net ([217.70.183.195])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG7iX-00053q-5f
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 20:28:55 +0000
-X-Originating-IP: 132.205.230.8
-Received: from aptenodytes (unknown [132.205.230.8])
- (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id B27CF60002;
- Thu,  3 Oct 2019 20:28:48 +0000 (UTC)
-Date: Thu, 3 Oct 2019 16:28:46 -0400
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@siol.net>
-Subject: Re: [PATCH v2 2/3] media: cedrus: Fix H264 default reference index
- count
-Message-ID: <20191003202846.GA2800@aptenodytes>
-References: <20191002193553.1633467-1-jernej.skrabec@siol.net>
- <20191002193553.1633467-3-jernej.skrabec@siol.net>
- <20191002220650.GB24151@aptenodytes>
- <12199603.8LrTjBMqpV@jernej-laptop>
+	id 1iG7vo-00020M-4o; Thu, 03 Oct 2019 20:42:36 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iG7vh-0001zP-0p
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 20:42:30 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CF79F337;
+ Thu,  3 Oct 2019 13:42:25 -0700 (PDT)
+Received: from [192.168.1.124] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E00273F739;
+ Thu,  3 Oct 2019 13:42:23 -0700 (PDT)
+Subject: Re: [PATCH v2] iommu/arm-smmu: Break insecure users by disabling
+ bypass by default
+To: Tim Harvey <tharvey@gateworks.com>,
+ Douglas Anderson <dianders@chromium.org>,
+ Tirumalesh Chalamarla <tchalamarla@caviumnetworks.com>
+References: <20190301192017.39770-1-dianders@chromium.org>
+ <CAJ+vNU0Ma5nG9_ThLO4cdO+=ivf7rmXiHZonF0HY0xx6X3R6Hw@mail.gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <5dce2964-8761-e7d0-8963-f0f5cb2feb02@arm.com>
+Date: Thu, 3 Oct 2019 21:42:20 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
 MIME-Version: 1.0
-In-Reply-To: <12199603.8LrTjBMqpV@jernej-laptop>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+In-Reply-To: <CAJ+vNU0Ma5nG9_ThLO4cdO+=ivf7rmXiHZonF0HY0xx6X3R6Hw@mail.gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_132853_512575_4A878393 
-X-CRM114-Status: GOOD (  27.04  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191003_134229_148343_DBF750C6 
+X-CRM114-Status: GOOD (  22.51  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.195 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.195 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -66,161 +65,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, mripard@kernel.org, wens@csie.org,
- hverkuil-cisco@xs4all.nl, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============2274929765757642191=="
+Cc: open list <linux-kernel@vger.kernel.org>, linux-arm-msm@vger.kernel.org,
+ Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
+ iommu@lists.linux-foundation.org, evgreen@chromium.org, tfiga@chromium.org,
+ Rob Clark <robdclark@gmail.com>, Vivek Gautam <vivek.gautam@codeaurora.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Tim,
 
---===============2274929765757642191==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="EVF5PPMfhYS0aIcm"
-Content-Disposition: inline
+On 2019-10-03 7:27 pm, Tim Harvey wrote:
+> On Fri, Mar 1, 2019 at 11:21 AM Douglas Anderson <dianders@chromium.org> wrote:
+>>
+>> If you're bisecting why your peripherals stopped working, it's
+>> probably this CL.  Specifically if you see this in your dmesg:
+>>    Unexpected global fault, this could be serious
+>> ...then it's almost certainly this CL.
+>>
+>> Running your IOMMU-enabled peripherals with the IOMMU in bypass mode
+>> is insecure and effectively disables the protection they provide.
+>> There are few reasons to allow unmatched stream bypass, and even fewer
+>> good ones.
+>>
+>> This patch starts the transition over to make it much harder to run
+>> your system insecurely.  Expected steps:
+>>
+>> 1. By default disable bypass (so anyone insecure will notice) but make
+>>     it easy for someone to re-enable bypass with just a KConfig change.
+>>     That's this patch.
+>>
+>> 2. After people have had a little time to come to grips with the fact
+>>     that they need to set their IOMMUs properly and have had time to
+>>     dig into how to do this, the KConfig will be eliminated and bypass
+>>     will simply be disabled.  Folks who are truly upset and still
+>>     haven't fixed their system can either figure out how to add
+>>     'arm-smmu.disable_bypass=n' to their command line or revert the
+>>     patch in their own private kernel.  Of course these folks will be
+>>     less secure.
+>>
+>> Suggested-by: Robin Murphy <robin.murphy@arm.com>
+>> Signed-off-by: Douglas Anderson <dianders@chromium.org>
+>> ---
+> 
+> Hi Doug / Robin,
+> 
+> I ran into this breaking things on OcteonTx boards based on CN80XX
+> CPU. The IOMMU configuration is a bit beyond me and I'm hoping you can
+> offer some advice. The IOMMU here is cavium,smmu-v2 as defined in
+> https://github.com/Gateworks/dts-newport/blob/master/cn81xx-linux.dtsi
+> 
+> Booting with 'arm-smmu.disable_bypass=n' does indeed work around the
+> breakage as the commit suggests.
+> 
+> Any suggestions for a proper fix?
 
+Ah, you're using the old "mmu-masters" binding (and in a way which isn't 
+well-defined - it's never been specified what the stream ID argument(s) 
+would mean for a PCI host bridge, and Linux just ignores them). The 
+ideal thing would be to update the DT to generic "iommu-map" properties 
+- it's been a long time since I last played with a ThunderX, but I 
+believe the SMMU stream IDs should just be the same as the ITS device 
+IDs (which is how the "mmu-masters" mapping would have played out anyway).
 
---EVF5PPMfhYS0aIcm
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+The arm-smmu driver support for the old binding has always relied on 
+implicit bypass - there are technical reasons why we can't realistically 
+support the full functionality offered to the generic bindings, but it 
+would be possible to add some degree of workaround to prevent it 
+interacting quite so poorly with disable_bypass, if necessary. Do you 
+have deployed systems with DTs that can't be updated, but still might 
+need to run new kernels?
 
-Hi,
-
-On Thu 03 Oct 19, 07:16, Jernej =C5=A0krabec wrote:
-> Dne =C4=8Detrtek, 03. oktober 2019 ob 00:06:50 CEST je Paul Kocialkowski=
-=20
-> napisal(a):
-> > Hi,
-> >=20
-> > On Wed 02 Oct 19, 21:35, Jernej Skrabec wrote:
-> > > Reference index count in VE_H264_PPS should come from PPS control.
-> > > However, this is not really important, because reference index count =
-is
-> > > in our case always overridden by that from slice header.
-> >=20
-> > Thanks for the fixup!
-> >=20
-> > Our libva userspace and v4l2-request testing tool currently don't provi=
-de
-> > this, but I have a pending merge request adding it for the hantro so it=
-'s
-> > good to go.
->=20
-> Actually, I think this is just cosmetic and it would work even if it woul=
-d be=20
-> always 0. We always override this number in SHS2 register with=20
-> VE_H264_SHS2_NUM_REF_IDX_ACTIVE_OVRD flag and recently there was a patch =
-merged=20
-> to clarify that value in slice parameters should be the one that's set on=
-=20
-> default value if override flag is not set in bitstream:
-> https://git.linuxtv.org/media_tree.git/commit/?
-> id=3D187ef7c5c78153acdce8c8714e5918b1018c710b
->=20
-> Well, we could always compare default and value in slice parameters, but =
-I=20
-> really don't see the benefit of doing that extra work.
-
-Thanks for the detailed explanation! So I just realized that for HEVC, I di=
-dn't
-even include the default value in PPS and only went for the per-slice value.
-The HEVC hardware block apparently only needs the fields once at slice leve=
-l,
-and by looking at the spec, only one of the two set of fields will be used.
-
-So perhaps we could do the same for H.264 and only have the set of fields o=
-nce
-in the slice params, so that both codecs are consistent. Userspace can just
-check the flag to know whether it should put the PPS default or slice-speci=
-fic
-value in the slice-specific control.
-
-What do you think?
-
-Cheers,
-
-Paul
-
-> Best regards,
-> Jernej
->=20
-> >=20
-> > Acked-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> >=20
-> > Cheers,
-> >=20
-> > Paul
-> >=20
-> > > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> > > ---
-> > >=20
-> > >  drivers/staging/media/sunxi/cedrus/cedrus_h264.c | 8 ++------
-> > >  1 file changed, 2 insertions(+), 6 deletions(-)
-> > >=20
-> > > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-> > > b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c index
-> > > bd848146eada..4a0e69855c7f 100644
-> > > --- a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-> > > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-> > > @@ -364,12 +364,8 @@ static void cedrus_set_params(struct cedrus_ctx =
-*ctx,
-> > >=20
-> > >  	// picture parameters
-> > >  	reg =3D 0;
-> > >=20
-> > > -	/*
-> > > -	 * FIXME: the kernel headers are allowing the default value to
-> > > -	 * be passed, but the libva doesn't give us that.
-> > > -	 */
-> > > -	reg |=3D (slice->num_ref_idx_l0_active_minus1 & 0x1f) << 10;
-> > > -	reg |=3D (slice->num_ref_idx_l1_active_minus1 & 0x1f) << 5;
-> > > +	reg |=3D (pps->num_ref_idx_l0_default_active_minus1 & 0x1f) << 10;
-> > > +	reg |=3D (pps->num_ref_idx_l1_default_active_minus1 & 0x1f) << 5;
-> > >=20
-> > >  	reg |=3D (pps->weighted_bipred_idc & 0x3) << 2;
-> > >  	if (pps->flags & V4L2_H264_PPS_FLAG_ENTROPY_CODING_MODE)
-> > >  =09
-> > >  		reg |=3D VE_H264_PPS_ENTROPY_CODING_MODE;
->=20
->=20
->=20
->=20
-
---=20
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
-
---EVF5PPMfhYS0aIcm
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl2WWf4ACgkQ3cLmz3+f
-v9EdGgf/VT34xqO0LDSfphL2ahWHU5kdeZkiDQm/3RCpNqS5SDxfraVvKapbgMgs
-FvuwJe6N9EYE4nK8NoWN2BPRbqeCyn+BqoZtQ/XT6AsicMNDXhi02ZB6Rtl9/CrN
-HeCSfdkzTgy2FsCPnLsrVdySepIEAjDDrPfOF+OJevR9WmqAomZlKEwi31Rh6u3e
-eY38DD/htHJoD9ScCPJgink7ZeWkonAAgV0lNPYoiIEe0QbRdWeR3bEfYcPVnRPJ
-w2a3+oQAn1hGxh/r2af2GK9aV3paiCdE7cd9EgDfzVwjsBBihBBGzvYvvTmRNBCx
-3wASp3KYFcy4pWqlv6LrWyauwYzzbw==
-=Z5eN
------END PGP SIGNATURE-----
-
---EVF5PPMfhYS0aIcm--
-
-
---===============2274929765757642191==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2274929765757642191==--
-
