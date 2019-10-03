@@ -2,72 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48886C9557
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 02:04:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 851ADC9551
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 02:03:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hZBwgK1Eygsr5idSG7nWD05RvN5fc8bWov7qckdu5P4=; b=ZjxgzqqnG4m/7i
-	coVPZ3RNxt53VzRX/4j7pmNLTH2Mppl2gAkQe+tH7Equ+Cuzoa9/rwGu9vit2p5zCI8haPn4CbXow
-	R5e9IvyBTyD+YJeH1ou0XNVmNSqzdmjZcpEYPkg8AV23UPHopfhhVclzvbAnr2J/YG6x7EMn9AD23
-	sLQW4gAr0Nb+KN1Pk4UzCg+fVm02mcSBMrqAJOHDwZ3regaxSDoaa4GV6zoMQkL9UW3D6brjHaw32
-	YgnS0QCJFaGKBItAMXBEn7N4SGh+ZnBjlgspfG5JswHxwm88frWxZzNp8QS78en+3KDcT7rj4Qdwm
-	nLhFORuFI0Z9EiWghmDA==;
+	List-Owner; bh=oS49h70RG0r8hzYxkhkPJwM9oVHpjSH9StVjC9DPlZ4=; b=uY4bzeP6LfaCfw
+	gHEp4g+Y5PRVjOvGbiosU/VWrvpP9eQ907XeSuMogkOPuU5Kgf9JrMct/v1muqzUz3xKupBoBGyuI
+	mEWYbd7YPXD0rYWnYMqwRQ+RAF1L2br3cE1jzcjvW8uHkjovohajs8EJTTWhgFzarZcn6+1Ji4fQC
+	6rAWPiq/4XVmgWDQiAAreVCmF7ERpg43fL3o3H+so0/pp0b0FsyBiJOyWXlTv8sm8LkIF+H9dY1sg
+	7bnWwExlh8WPhM5nNltIRiYJCvMOQaXkbKD26UHyAVTQB5BEKhCtsNJVYcato2fCfXU8hYOHy3QY4
+	TPWbnNDBks+vfwrGuXwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFob1-00062m-RV; Thu, 03 Oct 2019 00:03:51 +0000
-Received: from gate2.alliedtelesis.co.nz ([202.36.163.20])
+	id 1iFoap-0005n3-IL; Thu, 03 Oct 2019 00:03:39 +0000
+Received: from gate2.alliedtelesis.co.nz ([2001:df5:b000:5::4])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFoaW-0005dN-3l
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 00:03:23 +0000
+ id 1iFoaW-0005dL-3t
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 00:03:22 +0000
 Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (Client did not present a certificate)
- by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 7EFED891AB;
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 95A36891AC;
  Thu,  3 Oct 2019 13:03:13 +1300 (NZDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
  s=mail181024; t=1570060993;
- bh=3VnnKl2LrhqjyKH1KQiZB7hJ16Qi3F1l1RHfX6a0Es4=;
+ bh=iUvA3HctFAZbLaG023LjBql2W+ZBQfiEqjeVbF2OMeI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=mjFuhjmSnsBfvlPu9H0nE3Tp+dSwoMoz2TEuBngeGK0Ef5ShLyNn+qHJ/OVwxP8OX
- lpT/9MdSmB7RCGZXZqhD/w5RHQwFV1UWaOfznTaaCChlWeK0rWbDXVq283RENMsDsU
- ds0no38E4UR5cDV1e8Jwzkh8VmEsPYdE9gcbSNYQOsNLCN/sevbTEQ4TAMURXcXTSl
- WEJIf/99w1nY2GSjVL/gNUQSDAU9f/HkhHCCLYgmf9GbuWOWQaMu3YSJdwYB84QAyX
- EMxW3fqvQAQgnBd58Pa+iDn7AAerdNGjtjhIKKWtjnVLeaOb48QHGQzFYExaFdXKIV
- Lsm1b/T45rssw==
+ b=K4uihTorKxE0T+IhKkM9Ri1yc2NhJIFE2zA/QLUImn6J2VPyvKBHT4anq5dgXcP/S
+ c6QZry8JLXjQ88O6zL3+SbauIfUyRCq/cFyvGMSedncjAVFvgLuoqRFkbdYjl+1rA/
+ u0BTNGyYgQ7KsZY7xiZ3cAv6WcnoHhfSpW6NEj/OxaYi/xanidPEwYwQJ04xHD3thi
+ QYZ9LGTrhvJzTXQcXPdQE/oQpUumc2Xnp3eOxooLSYWAKnZxWwX8v1x66V9KWgJwM6
+ /j5VGjTOE1ab9QIVBqPve2SbO4ch3e3Nedg15YYHPSlTeeiKod4YdwPzwwS8XPHTiR
+ N5BRy3iwm8x+A==
 Received: from smtp (Not Verified[10.32.16.33]) by mmarshal3.atlnz.lc with
  Trustwave SEG (v7, 5, 8, 10121)
- id <B5d953ac10002>; Thu, 03 Oct 2019 13:03:13 +1300
+ id <B5d953ac20000>; Thu, 03 Oct 2019 13:03:14 +1300
 Received: from chrisp-dl.ws.atlnz.lc (chrisp-dl.ws.atlnz.lc [10.33.22.20])
- by smtp (Postfix) with ESMTP id 299E013EEC9;
+ by smtp (Postfix) with ESMTP id 4A36C13EEC9;
  Thu,  3 Oct 2019 13:03:17 +1300 (NZDT)
 Received: by chrisp-dl.ws.atlnz.lc (Postfix, from userid 1030)
- id 51FA928003E; Thu,  3 Oct 2019 13:03:13 +1300 (NZDT)
+ id 729E228003E; Thu,  3 Oct 2019 13:03:13 +1300 (NZDT)
 From: Chris Packham <chris.packham@alliedtelesis.co.nz>
 To: linus.walleij@linaro.org, rjui@broadcom.com, sbranden@broadcom.com,
  bcm-kernel-feedback-list@broadcom.com, rayagonda.kokatanur@broadcom.com,
  li.jin@broadcom.com
-Subject: [PATCH v2 1/2] pinctrl: iproc: allow for error from platform_get_irq()
-Date: Thu,  3 Oct 2019 13:03:09 +1300
-Message-Id: <20191003000310.17099-2-chris.packham@alliedtelesis.co.nz>
+Subject: [PATCH v2 2/2] pinctrl: iproc: use unique name for irq chip
+Date: Thu,  3 Oct 2019 13:03:10 +1300
+Message-Id: <20191003000310.17099-3-chris.packham@alliedtelesis.co.nz>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191003000310.17099-1-chris.packham@alliedtelesis.co.nz>
 References: <20191003000310.17099-1-chris.packham@alliedtelesis.co.nz>
 MIME-Version: 1.0
 x-atlnz-ls: pat
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_170320_528709_EA82F183 
-X-CRM114-Status: GOOD (  12.58  )
+X-CRM114-CacheID: sfid-20191002_170320_526739_ECA530A4 
+X-CRM114-Status: GOOD (  11.63  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [202.36.163.20 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -96,28 +94,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-platform_get_irq() can return an error code. Allow for this when getting
-the irq.
+Use the dev_name(dev) for the irqc->name so that we get unique names
+when we have multiple instances of this driver.
 
-Fixes: 6f265e5d4da7 ("pinctrl: bcm-iproc: Pass irqchip when adding gpiochip")
 Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
 ---
  drivers/pinctrl/bcm/pinctrl-iproc-gpio.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c b/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
-index 6f7d3a2f2e97..8971fc54e974 100644
+index 8971fc54e974..c24d49d436ce 100644
 --- a/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
 +++ b/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
-@@ -853,7 +853,7 @@ static int iproc_gpio_probe(struct platform_device *pdev)
- 
- 	/* optional GPIO interrupt support */
- 	irq = platform_get_irq(pdev, 0);
--	if (irq) {
-+	if (irq > 0) {
- 		struct irq_chip *irqc;
+@@ -858,7 +858,7 @@ static int iproc_gpio_probe(struct platform_device *pdev)
  		struct gpio_irq_chip *girq;
  
+ 		irqc = &chip->irqchip;
+-		irqc->name = "bcm-iproc-gpio";
++		irqc->name = dev_name(dev);
+ 		irqc->irq_ack = iproc_gpio_irq_ack;
+ 		irqc->irq_mask = iproc_gpio_irq_mask;
+ 		irqc->irq_unmask = iproc_gpio_irq_unmask;
 -- 
 2.23.0
 
