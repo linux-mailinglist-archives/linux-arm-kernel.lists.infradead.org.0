@@ -2,84 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5ADE1CAE55
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 20:37:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1648BCAE5A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 20:37:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SIYGmVmck1xtpmhnlKAdWO+aLl5gLoAPsjSmosSGxiU=; b=fsUhbMj6gdEBrCt2rXaBLbYro
-	B+z6ZwMJuWpfrBvEXYF6BEdbO0vV+ciJ9KB8PYHMXsJcuoE1lCJ8WI6whavcqb7bJBxbdQEop27tU
-	u8epd46QTZlzGDGf/8a1FVEMrbUsQp3nXl6217I5fXKIFfvh/n2IR/bcMJ1OZK6JmSsozDn2kDgu5
-	eSFQ8JoL7lXY4mLGvoPeG4Wlunv9UdmJCBamvZ71CMFsMqZe7JJwBgOoo/Iaq3IwEiSgFN6UZOxPI
-	H0x9pKDfAEg4i3GZ6iPLwS6fPyga1hudqAwBTTrznCLHCEVJ468Yhw5LkSufOq7QvtFagfOM/dhbV
-	a0lWtD8Og==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=W9YKTPfsFWRGGVkiMYdkzf2OSxn70ODW274XkZHCxLQ=; b=o4kbvjlmpdlJLk
+	Fx6GVJNoGbHqPLbr3w+fvR3MKjO5RAfBiZ3EuEeiU0uoioKkws4mRYkW/798SLtdrQVE/4RpN9z5I
+	IByincuSF3ekV+3sJMEIDL1Va8fmfnFNZzugORXy/Gd+qM9qdLilZ38/g8tVWTrBrepVcMiNcJPgC
+	/vzUsC7+7JPKVtXAm0coKvD/4Nu4RD0T08jo7kDYoKP+c59Kc4jrP8pFnf5Lhcrm1tyxRQSUzZC86
+	6yzOg2e76XLkxwzOvF9pq2yZsQ2zWfHL2G4CMH6BCTN4vZvnc78cg2GBMFSX3pbXzVZjXrzEOs/Hy
+	f5kNGGjZxGjVNLFDarug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG5yH-0005WX-AK; Thu, 03 Oct 2019 18:37:01 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iG5z1-000653-HU; Thu, 03 Oct 2019 18:37:47 +0000
+Received: from mail-yb1-xb42.google.com ([2607:f8b0:4864:20::b42])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG5y8-0005WA-KM
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 18:36:53 +0000
-Received: by mail-pg1-x543.google.com with SMTP id 23so2286221pgk.3
+ id 1iG5yr-00063S-EW
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 18:37:39 +0000
+Received: by mail-yb1-xb42.google.com with SMTP id x4so1262550ybr.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 03 Oct 2019 11:36:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding:content-language;
- bh=Re8qV2QdvbkLCeb2K8HW6hCEuJ7wbKTMp5YuNreyJxY=;
- b=DhN5LdLlc5xvMIxx+vE4iDLvGqtc3RN6Ll9kD5TCP0XPOUl9jAD6ivWCq31Q9jG1Dc
- xwLcQ3N40GFgAGHTDlvYM4TP9qXfOOW/CwEIZhxaAUqbwkhN16Ut+NgbbutBz9dX269C
- 7BIlIfjg+RsItpnL7PVKdDy/aM6ypmt2kbppw=
+ Thu, 03 Oct 2019 11:37:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=XRve0gQAap+NyS4R5cGqN5gZf1m0JfC50dL6OWcjlS8=;
+ b=VFo/UhVWMJ46I+cw8Cqf4FdNEV4cUHIYDpmGpjsQ26GGF2iKhzVRWx3+nkaiBylKwM
+ /5BiWDSWgpJcU4GvVXK9NdlhlVJEMUOb9A0RWAy6F8hbpo+eArV78k4Z1Ounrc7vXUGk
+ mckllj7uM9HsQdbUyP3dd6MTIs7PcCQHm3NVn3Odlrnxsk/n2Dan3pNWRFbJHT7CP0D9
+ bX8s+n4Nsh8bNCNJ9zmOAd5MweqxxTLYguBsfaSxInIYkBu4AyjcAhxNEj2aMkVDI/4B
+ lJkWAqrdqUWWItoCpFD6FwiGtxlW90tlSGeRHNBTrzbN5Mcoik8k3sdlkoYXgw5i0IW6
+ 8iPA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=Re8qV2QdvbkLCeb2K8HW6hCEuJ7wbKTMp5YuNreyJxY=;
- b=pLJNsSMut5wFGhcHrvvv0fNhnWmGMOEqIjW1BkCF5ybr6sl8/7JVRSFUQvs7CGTQGs
- +LEKVKIbSPFI5YnURNpt5ZFaFL4qRGdzWogflD9bBRz/JXXg9clWtoBugU4iWn0WvcO0
- 16Z63EuEW4RD/Xld55zHiTsJNa1ggPLim4MaUiZg66aB0MCN+kEMnHPp+HvOlobyXD3C
- SGdwJw0CvEFxC3ljR4XX2NPfubXYKgP95CjWDpucMh7C4VSiu6+lMr9XKU0uZ5ONLitZ
- 62syb1AMea78VZlAaUgGb2Ii9o6m/hyhJn1/1KAUNpZ4+PkIPFdewgu5Ptf6fbVA6kBF
- yTmg==
-X-Gm-Message-State: APjAAAXhtJMk+3wx0Dx97TTq85VHWVvLHLMCf+vwnEsgzy8r88nh+nMF
- nFOkkHhrLHIIm5iwUgrdf3+nCg==
-X-Google-Smtp-Source: APXvYqwQam6eWnyNaRnvLC8IN79OfdtNQK6s5BG7GaJaxRKfpvaD0CESp4p/ah8VMpLvWn6AtodhCA==
-X-Received: by 2002:a17:90b:8d1:: with SMTP id
- ds17mr12110001pjb.47.1570127811972; 
- Thu, 03 Oct 2019 11:36:51 -0700 (PDT)
-Received: from [10.136.13.65] ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id k8sm2795137pgm.14.2019.10.03.11.36.49
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 03 Oct 2019 11:36:51 -0700 (PDT)
-Subject: Re: [PATCH v2 2/2] pinctrl: iproc: use unique name for irq chip
-To: Chris Packham <chris.packham@alliedtelesis.co.nz>,
- linus.walleij@linaro.org, rjui@broadcom.com, sbranden@broadcom.com,
- bcm-kernel-feedback-list@broadcom.com, rayagonda.kokatanur@broadcom.com,
- li.jin@broadcom.com
-References: <20191003000310.17099-1-chris.packham@alliedtelesis.co.nz>
- <20191003000310.17099-3-chris.packham@alliedtelesis.co.nz>
-From: Scott Branden <scott.branden@broadcom.com>
-Message-ID: <3c03506b-8ac3-4f17-3784-fd0292e3d3ee@broadcom.com>
-Date: Thu, 3 Oct 2019 11:36:48 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=XRve0gQAap+NyS4R5cGqN5gZf1m0JfC50dL6OWcjlS8=;
+ b=sRdcPgxAmWP+m4+9pkzL/3IEv/Cwf6G54Kdd4owny8dVUqEmb0nr+qcmf1xhy9m7Eb
+ Q81Ra5ICwm3MNul1uw+pR+eyRKV6ZiE1eTaA3fj60HtTMq14svU/96Epvb6b4cgwEJOh
+ 4iA9E8TjTh+vVyF4hkyTTsilVoC7oiAc8IRie0hoH8ccq2uDfCzcqYEEi5t+jaMCQL/u
+ mVpCZ2cgrqmGF6IR2bwKddB+FmQ2c/FNzsXjsAv4usCQGHtTNlxfwEldWYtN61DudNoL
+ beb+bRg+krd3Dx6m82HGmA0VsYPV60P+d07+FA32bbjU2COYVrDQMhrJE3jH7xBBikFT
+ lroA==
+X-Gm-Message-State: APjAAAUwPieXuDpwPyTeUzn3WF5OyUutP9D11qoFG+EfNdExFpstuQE5
+ iW1F5MkXHTW/mGpMjEoJRKjpH4oun7Dp/mvDvzvrPQ==
+X-Google-Smtp-Source: APXvYqwarBwi4Z2CGTBW+OLutBFjri+qnC5uPYU8hnI80vZSHK7FDugxSGkwK64f3/0mTlnN+9FiUKkb+Jlw2NrF/ME=
+X-Received: by 2002:a25:2548:: with SMTP id l69mr6812439ybl.159.1570127855623; 
+ Thu, 03 Oct 2019 11:37:35 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20191003000310.17099-3-chris.packham@alliedtelesis.co.nz>
-Content-Language: en-US
+References: <20191003102003.1.Ib233b3e706cf6317858384264d5b0ed35657456e@changeid>
+In-Reply-To: <20191003102003.1.Ib233b3e706cf6317858384264d5b0ed35657456e@changeid>
+From: Sean Paul <sean@poorly.run>
+Date: Thu, 3 Oct 2019 14:36:58 -0400
+Message-ID: <CAMavQKKTdsJmVy1wz8K66qyZ_iONqStM8JXJwX=9XspVAKT28A@mail.gmail.com>
+Subject: Re: [PATCH] drm/rockchip: Round up _before_ giving to the clock
+ framework
+To: Douglas Anderson <dianders@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_113652_672782_F6342966 
-X-CRM114-Status: GOOD (  16.19  )
+X-CRM114-CacheID: sfid-20191003_113737_520691_F244EF90 
+X-CRM114-Status: GOOD (  32.45  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:b42 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -90,7 +80,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,39 +91,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
+ LKML <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Tomasz Figa <tfiga@chromium.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Matthias Kaehlcke <mka@chromium.org>, Sean Paul <seanpaul@chromium.org>,
+ ryandcase@chromium.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-looks fine
-
-On 2019-10-02 5:03 p.m., Chris Packham wrote:
-> Use the dev_name(dev) for the irqc->name so that we get unique names
-> when we have multiple instances of this driver.
+On Thu, Oct 3, 2019 at 1:20 PM Douglas Anderson <dianders@chromium.org> wrote:
 >
-> Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
-Acked-by: Scott Branden <scott.branden@broadcom.com>
+> I'm embarassed to say that even though I've touched
+> vop_crtc_mode_fixup() twice and I swear I tested it, there's still a
+> stupid glaring bug in it.  Specifically, on veyron_minnie (with all
+> the latest display timings) we want to be setting our pixel clock to
+> 66,666,666.67 Hz and we tell userspace that's what we set, but we're
+> actually choosing 66,000,000 Hz.  This is confirmed by looking at the
+> clock tree.
+>
+> The problem is that in drm_display_mode_from_videomode() we convert
+> from Hz to kHz with:
+>
+>   dmode->clock = vm->pixelclock / 1000;
+>
+> ...so when the device tree specifies a clock of 66666667 for the panel
+> then DRM translates that to 66666000.  The clock framework will always
+> pick a clock that is _lower_ than the one requested, so it will refuse
+> to pick 66666667 and we'll end up at 66000000.
+>
+> While we could try to fix drm_display_mode_from_videomode() to round
+> to the nearest kHz and it would fix our problem,
+
+I got a bit confused reading this and Doug straightened me out in a
+sideband conversation.
+
+To summarize, the drm_display_mode_from_videomode() call referenced
+above is from panel-simple, and this downslotting is specific to
+rockchip's clock driver. So I've asked to clarify these 2 points so
+it's clear from the commit message that this patch is the best
+solution. With that addressed,
+
+Reviewed-by: Sean Paul <seanpaul@chromium.org>
+
+
+> it wouldn't help if
+> the clock we actually needed was 60,000,001 Hz.  We could
+> alternatively have DRM always round up, but maybe this would break
+> someone else who already baked in the assumption that DRM rounds down.
+>
+> Let's solve this by just adding 999 Hz before calling
+> clk_round_rate().  This should be safe and work everywhere.
+>
+> NOTE: if this is picked to stable, it's probably easiest to first pick
+> commit 527e4ca3b6d1 ("drm/rockchip: Base adjustments of the mode based
+> on prev adjustments") which shouldn't hurt in stable.
+>
+> Fixes: b59b8de31497 ("drm/rockchip: return a true clock rate to adjusted_mode")
+> Signed-off-by: Douglas Anderson <dianders@chromium.org>
 > ---
->   drivers/pinctrl/bcm/pinctrl-iproc-gpio.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
 >
-> diff --git a/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c b/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
-> index 8971fc54e974..c24d49d436ce 100644
-> --- a/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
-> +++ b/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
-> @@ -858,7 +858,7 @@ static int iproc_gpio_probe(struct platform_device *pdev)
->   		struct gpio_irq_chip *girq;
->   
->   		irqc = &chip->irqchip;
-> -		irqc->name = "bcm-iproc-gpio";
-> +		irqc->name = dev_name(dev);
->   		irqc->irq_ack = iproc_gpio_irq_ack;
->   		irqc->irq_mask = iproc_gpio_irq_mask;
->   		irqc->irq_unmask = iproc_gpio_irq_unmask;
-
+>  drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 37 +++++++++++++++++++--
+>  1 file changed, 34 insertions(+), 3 deletions(-)
+>
+> diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+> index 613404f86668..84e3decb17b1 100644
+> --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+> +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+> @@ -1040,10 +1040,41 @@ static bool vop_crtc_mode_fixup(struct drm_crtc *crtc,
+>                                 struct drm_display_mode *adjusted_mode)
+>  {
+>         struct vop *vop = to_vop(crtc);
+> +       unsigned long rate;
+>
+> -       adjusted_mode->clock =
+> -               DIV_ROUND_UP(clk_round_rate(vop->dclk,
+> -                                           adjusted_mode->clock * 1000), 1000);
+> +       /*
+> +        * Clock craziness.
+> +        *
+> +        * Key points:
+> +        *
+> +        * - DRM works in in kHz.
+> +        * - Clock framework works in Hz.
+> +        * - Rockchip's clock driver picks the clock rate that is the
+> +        *   same _OR LOWER_ than the one requested.
+> +        *
+> +        * Action plan:
+> +        *
+> +        * 1. When DRM gives us a mode, we should add 999 Hz to it.  That way
+> +        *    if the clock we need is 60000001 Hz (~60 MHz) and DRM tells us to
+> +        *    make 60000 kHz then the clock framework will actually give us
+> +        *    the right clock.
+> +        *
+> +        *    NOTE: if the PLL (maybe through a divider) could actually make
+> +        *    a clock rate 999 Hz higher instead of the one we want then this
+> +        *    could be a problem.  Unfortunately there's not much we can do
+> +        *    since it's baked into DRM to use kHz.  It shouldn't matter in
+> +        *    practice since Rockchip PLLs are controlled by tables and
+> +        *    even if there is a divider in the middle I wouldn't expect PLL
+> +        *    rates in the table that are just a few kHz different.
+> +        *
+> +        * 2. Get the clock framework to round the rate for us to tell us
+> +        *    what it will actually make.
+> +        *
+> +        * 3. Store the rounded up rate so that we don't need to worry about
+> +        *    this in the actual clk_set_rate().
+> +        */
+> +       rate = clk_round_rate(vop->dclk, adjusted_mode->clock * 1000 + 999);
+> +       adjusted_mode->clock = DIV_ROUND_UP(rate, 1000);
+>
+>         return true;
+>  }
+> --
+> 2.23.0.444.g18eeb5a265-goog
+>
+> _______________________________________________
+> dri-devel mailing list
+> dri-devel@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/dri-devel
 
 _______________________________________________
 linux-arm-kernel mailing list
