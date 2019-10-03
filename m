@@ -2,76 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D43E6C9D17
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 13:22:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0646C9D1C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 13:23:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=NNw3Ccpi+FvuXHdOg6CyXZiT9PCd76GGptB8b8VwVd4=; b=YPl
-	ET5xfpVuIJSktxmB68FDW09Pd8CUYSwb7RFxtrMfsJ+Tq5TU13mrO3tUboFVWzlbq2fCIg5SWGo5W
-	YjMBCD2vAWNA9u9X+XXt0ISlJfplmFsXTeIA4NttwyfJ2OPk8CqiEZGI8DWoFVU7WToIpP1JE/8B2
-	zsciH9dCuYc9I7bDMQ6QF4LJKziYTNYsLEu9WylxRnxCRaqoRpIeeXpmtvekxoaultTnhHf+HxRzl
-	qFFmpk7kLX529qoCqUZKXvdCBn4Xg0DqFkmIvI+hIYQss09FdwcyyzxCmJsYAlXI8hNDAxDbGaB00
-	qAO9hHAKgC27LrcnkbR0b5MjgaA4AMw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8AL6/g3fbaT+yPTn3P2a/jgMTVIcNZUEmrhrMBmMkIU=; b=mLd1kimy+2nbAH
+	BZNk71BldxMmwobBv5CfRAGzs6oYOxLPEZCILss4SdVSdImCmK5zwql2L0Mm9bzSRWiFyPFtGA8Cu
+	eJDjPXWUpLZwCridmPu/VuQU7RcSzkHm37C+Coz3MYXvsq5m2G3t3+w4yJhTmRLQRkOZiMptenRJN
+	ca9WtMoIqgq6QATQ8vRDzCHPAI9qr9uxtVuvbZM9ryLr5TelbzqyRGL+WB6ZkQfKcsQjrkRPSuhSK
+	7f9iFPc0BZGF+9OuwIb583+Vy9z+1pjI4EYQiI9uc0JHg4PX/g+44JJ61O8cZCPUKknGQK21fmmxz
+	is9r9qWAjA6OttYifYDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFzBu-0003fB-Rb; Thu, 03 Oct 2019 11:22:38 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iFzCo-0003wY-Ft; Thu, 03 Oct 2019 11:23:34 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFzBm-0003eC-C6
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 11:22:32 +0000
-Received: by mail-pg1-x541.google.com with SMTP id q7so1553112pgi.12
+ id 1iFzCd-0003w1-Tq
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 11:23:25 +0000
+Received: by mail-lf1-x144.google.com with SMTP id r2so1520495lfn.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 03 Oct 2019 04:22:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=4vvWZOnDaYB306KLyalX1Vu4JeBx1avHtcxqLv3dAQI=;
- b=XLnU6ZGBqa577KBUFDzfnYkNp6/eIoX6Pq9euUphJF1eaLkGpQyppKve1wUxuESwu5
- ZJvOyoz7Fjr+XB+RNcksDtCovFTo3ED706fd3n3IH2W4NWqquJz+ijcLNcbGryn4DTjs
- 55VDB8F/RFZ4jOgbmebt8kgKu+sISxrGzicyARLK1gbwIeKiIDA/YnY2oROdTtgXo9Lp
- OhgwAiEmccjOVtNmAa25PRDCf+fOl4AqZJwpjOekZT6+jrEjcGb3ZiOpJSLV4Nc0LmGG
- YHPOh5KemQuBPqNnHLJbuZPqFqbs8hwaM6Sz1REmnrszkUwm6Y6AJ+oQvdDFSQPGqO+A
- IjMw==
+ Thu, 03 Oct 2019 04:23:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=YxgRbJvKRqdXZCKgx4otJFPYIVJvaWckk0e2/WgsOjc=;
+ b=CqfXBRSaXxDre5rZG+6MS/6NUrFKX9khISEfHKxI88YJTBTJ/TvtsaqiLoMZgumVAz
+ OxQlmshzwIaKNwT8+5FbKkC5gIu7SsHVKRfq6/dkfekwJQBh8El1hoNHBAJCSJBeIh4Y
+ xv9hKgT6iV26BXMXtB75+y5ajZWur6BVq5fPhRXINVmubHjAgEO7IYCJfJdTqmKybwP0
+ INTyYsBxGvJmNSWsfleI75jgX7XThcHfI97oDgA2XxemthrvvsVHpf0TJRhERkKX97ia
+ AbR5iGbrvfwlI7quiE64pMUQkMBlCjov3ka/UNwh5yX9krYouzbE2sXni8horOEQtdoM
+ uhUw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=4vvWZOnDaYB306KLyalX1Vu4JeBx1avHtcxqLv3dAQI=;
- b=V7xkyhj3yut3YJ7I9czMXrTkqx7uUKtbR/hVyZqI7Y55pHIrQvsNImW2YNXE2EgJhe
- 9q6scDrEccOc3mblAHxHpwBhktYG94hWAc+tmZ0qCXg8jkUH/1eq3RaLGl25HqHswYg5
- ecExFdQ/f6319o4DGHtMtcLknXWOV+sdWGURzQ35J6NIRuHCnkCeBqE+akmXsn8iF4V0
- 3Jbp7uDcRhO1Rq2HQ63zEAgPvk1aKO06VvSb7LbLyb8YHUHGXoItV0ESZ5bbtogJa3o0
- 9X3by9o1h79EI8v7DtK9nJ99X+y/lFJcEVjV5HFbFQhqlaCv0k8xf0iZzTPD2ov0bhuX
- IhrQ==
-X-Gm-Message-State: APjAAAWnKnpGrRqN6exOlk5G98ld5E6DL3aDrXW64fg1nDLZqUStJ0Rn
- dd3pAYWepbS7m4IA8DKcSwcmUv6TYLQFsg==
-X-Google-Smtp-Source: APXvYqyo/GBuKYMgok2Qu85GyYWcZ/kBG23UO0oZtmNIMkGIJX0uwqdZO5n/Gy1IyWW72l28hy/lCQ==
-X-Received: by 2002:a65:4543:: with SMTP id x3mr8479928pgr.300.1570101748857; 
- Thu, 03 Oct 2019 04:22:28 -0700 (PDT)
-Received: from localhost ([49.248.175.14])
- by smtp.gmail.com with ESMTPSA id k8sm1998881pgm.14.2019.10.03.04.22.27
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 03 Oct 2019 04:22:28 -0700 (PDT)
-From: Amit Kucheria <amit.kucheria@linaro.org>
-To: linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Chen-Yu Tsai <wens@csie.org>
-Subject: [PATCH] media: dt-bindings: media: Fixup Allwinner A10 CSI binding
-Date: Thu,  3 Oct 2019 16:52:24 +0530
-Message-Id: <b47ec7088aa4b07458519ab151de92df552a9302.1570101510.git.amit.kucheria@linaro.org>
-X-Mailer: git-send-email 2.17.1
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=YxgRbJvKRqdXZCKgx4otJFPYIVJvaWckk0e2/WgsOjc=;
+ b=SKd/LIKazsOS4RyD3fduNsXYafBjJApKmygSIHJYjHPpYZjmuOxsD2Mg3f3n6B6kGr
+ DB1m3n/QZ5Ack6x6NduGNCfOr35hrSjXdJkqFpK0PIW6IR3PLhMDoDBmstPptS7Z/TI1
+ e3yWM8c4eaYsj+u/QzYmMeQba8i8h6LGG82/gsojOcXJaxKfaEN5LqNPM0oigFB+pyuV
+ vu4pV8jEYm3m4rKE+OstQnvyc4ildZ6aE8KMppVWOQ4MkE7fp2ixC+hpUNrXln2/740R
+ hblVtWNEldYQgdRzE999UkLr39N9KK1woPk0uCO2iei5w9XYuuZJ13qnviHdR2z/ycYj
+ 3cfQ==
+X-Gm-Message-State: APjAAAWtm/mvlhASObpxUV0OAzpBhiMw0SD4/dCi1GiKsrqf7GNUFt+z
+ QvdWHXh3jxBc7lDozgJ0oGFTyS/W
+X-Google-Smtp-Source: APXvYqxw9T8acyhKN7toM+boOABCJRsj3U33cLAZP8AUTXsQQBL5YfgkbLNN1I8BxY63Q0K8D8uz9w==
+X-Received: by 2002:ac2:51ce:: with SMTP id u14mr5022429lfm.72.1570101799169; 
+ Thu, 03 Oct 2019 04:23:19 -0700 (PDT)
+Received: from [192.168.2.145] ([94.29.34.231])
+ by smtp.googlemail.com with ESMTPSA id h3sm484353ljf.12.2019.10.03.04.23.17
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 03 Oct 2019 04:23:18 -0700 (PDT)
+Subject: Re: [PATCH 1/4] clk: tegra: Enable fuse clock on Tegra124
+To: Stephen Warren <swarren@wwwdotorg.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>,
+ Peter De Schrijver <pdeschrijver@nvidia.com>,
+ Prashant Gaikwad <pgaikwad@nvidia.com>
+References: <20191001211346.104400-1-swarren@wwwdotorg.org>
+From: Dmitry Osipenko <digetx@gmail.com>
+Message-ID: <7f8934d9-8192-f88e-a329-630209d42a85@gmail.com>
+Date: Thu, 3 Oct 2019 14:23:17 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
+MIME-Version: 1.0
+In-Reply-To: <20191001211346.104400-1-swarren@wwwdotorg.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_042230_440274_F863B6A5 
-X-CRM114-Status: GOOD (  11.78  )
+X-CRM114-CacheID: sfid-20191003_042323_992172_87BE8A30 
+X-CRM114-Status: GOOD (  20.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (digetx[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -92,47 +105,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Stephen Boyd <sboyd@kernel.org>, linux-tegra@vger.kernel.org,
+ Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This new binding fails dt_binding_check due to a typo. Fix it up.
-
-linux.git/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml: $id: path/filename 'arm/allwinner,sun4i-a10-csi.yaml' doesn't match actual filename
-linux.git/Documentation/devicetree/bindings/Makefile:12: recipe for target 'Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.example.dts' failed
-make[2]: *** [Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.example.dts] Error 1
-make[2]: *** Waiting for unfinished jobs....
-linux.git/Makefile:1284: recipe for target 'dt_binding_check' failed
-make[1]: *** [dt_binding_check] Error 2
-
-Fixes: c5e8f4ccd7750 ("media: dt-bindings: media: Add Allwinner A10 CSI binding")
-Signed-off-by: Amit Kucheria <amit.kucheria@linaro.org>
----
- .../devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml      | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
-index 27f38eed389e4..5dd1cf490cd9d 100644
---- a/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
-+++ b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
-@@ -1,7 +1,7 @@
- # SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
- %YAML 1.2
- ---
--$id: http://devicetree.org/schemas/arm/allwinner,sun4i-a10-csi.yaml#
-+$id: http://devicetree.org/schemas/media/allwinner,sun4i-a10-csi.yaml#
- $schema: http://devicetree.org/meta-schemas/core.yaml#
- 
- title: Allwinner A10 CMOS Sensor Interface (CSI) Device Tree Bindings
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+MDIuMTAuMjAxOSAwMDoxMywgU3RlcGhlbiBXYXJyZW4g0L/QuNGI0LXRgjoKPiBGcm9tOiBTdGVw
+aGVuIFdhcnJlbiA8c3dhcnJlbkBudmlkaWEuY29tPgo+IAo+IEZvciBhIGxpdHRsZSBvdmVyIGEg
+eWVhciwgVS1Cb290IGhhcyBjb25maWd1cmVkIHRoZSBmbG93IGNvbnRyb2xsZXIgdG8KPiBwZXJm
+b3JtIGF1dG9tYXRpYyBSQU0gcmUtcmVwYWlyIG9uIG9mZi0+b24gcG93ZXIgdHJhbnNpdGlvbnMg
+b2YgdGhlIENQVQo+IHJhaWwxXS4gVGhpcyBpcyBtYW5kYXRvcnkgZm9yIGNvcnJlY3Qgb3BlcmF0
+aW9uIG9mIFRlZ3JhMTI0LiBIb3dldmVyLCBSQU0KPiByZS1yZXBhaXIgcmVsaWVzIG9uIGNlcnRh
+aW4gY2xvY2tzLCB3aGljaCB0aGUga2VybmVsIG11c3QgZW5hYmxlIGFuZAo+IGxlYXZlIHJ1bm5p
+bmcuIFRoZSBmdXNlIGNsb2NrIGlzIG9uZSBvZiB0aG9zZSBjbG9ja3MuIEVuYWJsZSB0aGlzIGNs
+b2NrCj4gc28gdGhhdCBMUDEgcG93ZXIgbW9kZSAoc3lzdGVtIHN1c3BlbmQpIG9wZXJhdGVzIGNv
+cnJlY3RseS4KPiAKPiBbMV0gM2NjNzk0MmE0YWU1IEFSTTogdGVncmE6IGltcGxlbWVudCBSQU0g
+cmVwYWlyCj4gCj4gUmVwb3J0ZWQtYnk6IEpvbmF0aGFuIEh1bnRlciA8am9uYXRoYW5oQG52aWRp
+YS5jb20+Cj4gQ2M6IHN0YWJsZUB2Z2VyLmtlcm5lbC5vcmcKPiBTaWduZWQtb2ZmLWJ5OiBTdGVw
+aGVuIFdhcnJlbiA8c3dhcnJlbkBudmlkaWEuY29tPgo+IC0tLQo+ICBkcml2ZXJzL2Nsay90ZWdy
+YS9jbGstdGVncmExMjQuYyB8IDEgKwo+ICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKykK
+PiAKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9jbGsvdGVncmEvY2xrLXRlZ3JhMTI0LmMgYi9kcml2
+ZXJzL2Nsay90ZWdyYS9jbGstdGVncmExMjQuYwo+IGluZGV4IDAyMjRmZGM0NzY2Zi4uZjUzZjYz
+MTVjNjQ2IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvY2xrL3RlZ3JhL2Nsay10ZWdyYTEyNC5jCj4g
+KysrIGIvZHJpdmVycy9jbGsvdGVncmEvY2xrLXRlZ3JhMTI0LmMKPiBAQCAtMTI5MSw2ICsxMjkx
+LDcgQEAgc3RhdGljIHN0cnVjdCB0ZWdyYV9jbGtfaW5pdF90YWJsZSBjb21tb25faW5pdF90YWJs
+ZVtdIF9faW5pdGRhdGEgPSB7Cj4gIH07Cj4gIAo+ICBzdGF0aWMgc3RydWN0IHRlZ3JhX2Nsa19p
+bml0X3RhYmxlIHRlZ3JhMTI0X2luaXRfdGFibGVbXSBfX2luaXRkYXRhID0gewo+ICsJeyBURUdS
+QTEyNF9DTEtfRlVTRSwgLTEsIDAsIDEgfSwKPiAgCXsgVEVHUkExMjRfQ0xLX1NPQ19USEVSTSwg
+VEVHUkExMjRfQ0xLX1BMTF9QLCA1MTAwMDAwMCwgMCB9LAo+ICAJeyBURUdSQTEyNF9DTEtfQ0NM
+S19HLCBURUdSQTEyNF9DTEtfQ0xLX01BWCwgMCwgMSB9LAo+ICAJeyBURUdSQTEyNF9DTEtfSERB
+LCBURUdSQTEyNF9DTEtfUExMX1AsIDEwMjAwMDAwMCwgMCB9LAo+IAoKSGVsbG8gU3RlcGhlbiwK
+CkRvZXMgdGhpcyBtZWFuIHRoYXQgZGV2aWNlcyB3aGljaCBhcmUgdXNpbmcgb2xkZXIgVS1Cb290
+IHZlcnNpb24gd2VyZSBhbHdheXMgaW4gYSB0cm91YmxlPwpJdCBzb3VuZHMgdG8gbWUgdGhhdCB0
+aGUgUkFNIHJlLXJlcGFpciBzaG91bGQgYmUgYWxzbyBlbmFibGVkIGJ5IHRoZSBrZXJuZWwncyBm
+bG93CmNvbnRyb2xsZXIgZHJpdmVyIGluIGEgY2FzZSBpZiBib290bG9hZGVyIGRpZCBub3QgZW5h
+YmxlIGl0LgpJZiBlbmFibGluZyBSQU0gcmUtcmVwYWlyIGlzIGEgY2hhbmdlIHRoYXQgd29uJ3Qg
+YmUgZWFzaWx5IGJhY2twb3J0YWJsZSB0byBzdGFibGUga2VybmVscywKdGhlbiBtYXkgYmUgaXQn
+cyB3b3J0aCB0byBzaW1wbHkgZm9yY2UtZGlzYWJsZSBMUDEgb24gVDEyNCBmb3IgdGhlIG9sZGVy
+IGtlcm5lbHMuCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1hcm0ta2VybmVsCg==
