@@ -2,124 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3374CAED4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 21:06:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A5CFCAF08
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 21:16:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gf9eYWGxlfkcxV2cPqmb19pJcPtS+Z688333+FNRHZE=; b=gRvpms9poEmDVN
-	+LbQL1naeKalxfmEIG7FPrq4wu/R9mfS1/44dQU2eWZpVxzSavu5akjhlqXaw/6PZ3ULAqvt+FuCc
-	A6D+h1yi8PsIdjLzkZjOnNg7vwxq1JqdMr2H1h7TOi7Zej8RjiIGyZ/wmoqYqf5nVumhDTgo27SWj
-	30pgqra8mN/RzTAqAEbAJCSL1Sx4tMGz0PwAHuEFsa/thH7BNln6XsJfHdQ/RQ7aDiGZkYScVh9/c
-	FrhOAKu6hFCn1bxJ1XyWHXqratlFBUcWlL/2uOnnqCyuSkUHGVk2YwdDmqxM/xkDgrBGYxkLPs5st
-	jQjjGvQCqqedK2eOb86A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=1OxU1ruiQA2rjUWmi9tXN1dzu/piauN/xz0sgWnwW5k=; b=bS+8KC4IGK4e+K
+	ZsNG1fyehzjnt1m5Moy5A4mwJk6qhRnhGKmJnI9svX4xOTg1Fol2RObu98H6vYyw5VI/9kni/I10O
+	vRWlLEkjeqLJX9rgUdnsHA3NyYog0xTTqOb89wY+amuMyWKQooPF14O114+w/mDEIo9LKhpoG1Y9r
+	4MzGH5TNSDIGtUmAmtUS001sDX/3MD7Z1fMSCwzm9zt810+8Obs0Cs7jg13va1/7ZMogGOleXitRi
+	LmNBtm0P9OmDUDd7fU9NFnzhx+KkmDcNzA6oPxgOoiuIowaP9Z931WXo+ylKOVbDR9+bHqRI6pGt3
+	DMU+zh7EbC3voOo57YbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG6R3-0003g8-4x; Thu, 03 Oct 2019 19:06:45 +0000
-Received: from mail-bl2nam02on071a.outbound.protection.outlook.com
- ([2a01:111:f400:fe46::71a]
- helo=NAM02-BL2-obe.outbound.protection.outlook.com)
+	id 1iG6aH-0008Ei-Ix; Thu, 03 Oct 2019 19:16:17 +0000
+Received: from mail-eopbgr80052.outbound.protection.outlook.com ([40.107.8.52]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG6O7-0008S3-LM
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 19:03:47 +0000
+ id 1iG6a6-0008Ds-Jk
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 19:16:08 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=j81Ldsdnms+WvFzN0qRIV1pG1IbGzT32eHy6P7tTaK7bcKtNaMEHObLXwfoUoqB54y9Y6S0GE/DfwpyoLFQpEhMpjFhbDSBSd27K9DYd+pJoS7TSe+RL37ghRjOSYHio8eBBS22rXOBXX0pQZn77zj4vNBqB6IvEbAtk5eJOke286JI1Tz1/XkLP7ojAUmydE2R1UPF6IZbRDILAtQ5H9l4OCmtaL+MTN167nb3KGRllYbBwBhK2YtuWXfoi36kzdjQVUgF8ImPfpCAOXdZQkecw3PpOVnKvGV2s6QEfPGTYl3tBnOon7Ep4shn34fWB7Z4i8C/8RjHTTre3m1v4Iw==
+ b=N4rq2puuBCE70phnSNAi2GJ3kcSZCUIM8XtfsVSUle2Ty04FvaNFO6CvPw/V7d38VOlZHUP0lWdSDhEbsBk262Ty/De9+ZKjwcfgNPqXbzDJMBl5bkxN2F10hp/R6dJUyZ1VN+/RnF52xkYAHqn0wERl/2iCm2cHYd9+iE/YmpKv8Z5/Kb7nKWCcSyknm1rjSEb/85PGhaqGwXoE2LedSKrcFnW0XHsCSzF6kSfYI/QV+b7kG9V/0V0iQx7L9ZXs+6ZidkukGPZr2pEu1VCCIAL3CGAN1t7DMVusyU8jBwjQnYE5MWpn+8OZVQVFRLCb5LSuWSeR+MBFCnkf5NYisA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=tQZowe6V/h3z1DqYtMVcUESXf2m7PuJSRNu9hK6woIs=;
- b=BO4M4v2UjJK+B4CeTDGWyNbEs+NB0DDAdNiPQ2qRyTr2a2zT8UJPkoMAiI8INHnPxJyVsYOUEvXayWi4FnTA4tPgeCZeaWBt15AhMWysPiZ8uQIeeIp/CXSc95VHXprjIjLljxY0nIMln+RPf6WyFGCJtpOPCP0AuIrilGZcC/1aOLsBpUoxYl7JzSS/gkGdbYx+FcTOyrgCJHcV2HdoctZKRmkKJenhZ5WjLgOfjALHhBRZ96v7I62ZeXCSNzFpP47aRmDBwpU4bPJxZunynqRgtidxVN4Q73dAzRm9/LpuonEglXeHHKI+fFQNfNeBI57NzpjgqLYFHrEV+9SCig==
+ bh=7Mk3oCoJwAwCNTrVSrKy4rpMD5e/bvEKzbz5afmQpgc=;
+ b=liNIXhVOC8ZVR0fycG9s49Qqr0Da01zc+Bs7ZGoYWVrHDzFL8gFdVzZQBSWz1vC/JJ+XKz62T+DajyWOkq1QMqNLdQHIil4TfaryklhFjds/pj3gY+pIdn1ww3JLSb/s42MPpoc8Nho7FAs1zVJwK1UMjAoC3OFGDimOxH0xVVPeuUz3cBeszOA+rVLmNuVvyv6KNXUlQxmAxgVRTYgDDxDonM5YI9eN/bVv5yXZ39SIQL+O9sS6iWGQ9rDlqXrhpL/MmVsBOkYUf4GVO+cYaJfHULjDnkZufDoOcrIrfzq73+dTlYVm4EyN3oUuyH4XlrDSqMjTfLOJzsrah++vZg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microsoft.com; dmarc=pass action=none
- header.from=microsoft.com; dkim=pass header.d=microsoft.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=selector2;
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=tQZowe6V/h3z1DqYtMVcUESXf2m7PuJSRNu9hK6woIs=;
- b=j4W+IQGFAOTNOFxXpITkIz+30ASaR7jcQwjRQJa5ETgM1GcvtqVCRMjGNjVg/VNgMeMtpMmnccJ2Po6i1B48PEaqY3hNAB+Rkqlww1+/VJyuNKX2PCnCXUymBXV+6fiIzc9DIkBO63zJXwdGF6GzbS3YulrR7290Ip8X0Q8x40k=
-Received: from SN6PR2101MB1135.namprd21.prod.outlook.com (52.132.114.24) by
- SN6PR2101MB1102.namprd21.prod.outlook.com (52.132.115.27) with Microsoft SMTP
+ bh=7Mk3oCoJwAwCNTrVSrKy4rpMD5e/bvEKzbz5afmQpgc=;
+ b=CxYDteC0pZ98wb2pNgbJXQtP8LjWupQ0fjH3thfoVylLZngbiWD/v3T4quNdS21HkxDUbOEHKxiOO9hfaG2fZml939n+gavgZdFuITsTOAhh8ecjj0fX60il8eyFIJhOYLnJx2ro+GAnIZKhFw2MsJ3al/x70SjIv8hGpPcqeJw=
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
+ VI1PR04MB7040.eurprd04.prod.outlook.com (10.186.156.19) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2327.7; Thu, 3 Oct 2019 19:03:27 +0000
-Received: from SN6PR2101MB1135.namprd21.prod.outlook.com
- ([fe80::7d4a:b5b3:1062:e62]) by SN6PR2101MB1135.namprd21.prod.outlook.com
- ([fe80::7d4a:b5b3:1062:e62%5]) with mapi id 15.20.2327.004; Thu, 3 Oct 2019
- 19:03:27 +0000
-From: Michael Kelley <mikelley@microsoft.com>
-To: "will@kernel.org" <will@kernel.org>, "catalin.marinas@arm.com"
- <catalin.marinas@arm.com>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "maz@kernel.org" <maz@kernel.org>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "gregkh@linuxfoundation.org"
- <gregkh@linuxfoundation.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>, "linux-hyperv@vger.kernel.org"
- <linux-hyperv@vger.kernel.org>, "devel@linuxdriverproject.org"
- <devel@linuxdriverproject.org>, "olaf@aepfle.de" <olaf@aepfle.de>,
- "apw@canonical.com" <apw@canonical.com>, vkuznets <vkuznets@redhat.com>,
- "jasowang@redhat.com" <jasowang@redhat.com>, "marcelo.cerri@canonical.com"
- <marcelo.cerri@canonical.com>, KY Srinivasan <kys@microsoft.com>
-Subject: [PATCH v5 8/8] Drivers: hv: Enable Hyper-V code to be built on ARM64
-Thread-Topic: [PATCH v5 8/8] Drivers: hv: Enable Hyper-V code to be built on
- ARM64
-Thread-Index: AQHVeh08eOd/te/qYEO1LtepLr1Yuw==
-Date: Thu, 3 Oct 2019 19:03:27 +0000
-Message-ID: <1570129355-16005-9-git-send-email-mikelley@microsoft.com>
-References: <1570129355-16005-1-git-send-email-mikelley@microsoft.com>
-In-Reply-To: <1570129355-16005-1-git-send-email-mikelley@microsoft.com>
+ 15.20.2305.20; Thu, 3 Oct 2019 19:16:03 +0000
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::2ce6:267:b2a6:9902]) by VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::2ce6:267:b2a6:9902%2]) with mapi id 15.20.2305.023; Thu, 3 Oct 2019
+ 19:16:03 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Matthias Kaehlcke <mka@chromium.org>, Viresh Kumar
+ <viresh.kumar@linaro.org>, Saravana Kannan <saravanak@google.com>
+Subject: Re: [PATCH v9 6/8] PM / devfreq: Introduce get_freq_range helper
+Thread-Topic: [PATCH v9 6/8] PM / devfreq: Introduce get_freq_range helper
+Thread-Index: AQHVeVcjG1LoKlXGikmvzB33amMNOQ==
+Date: Thu, 3 Oct 2019 19:16:03 +0000
+Message-ID: <VI1PR04MB7023F76F9C7BA20CE54058BEEE9F0@VI1PR04MB7023.eurprd04.prod.outlook.com>
+References: <cover.1570044052.git.leonard.crestez@nxp.com>
+ <c453bb60a74b41a5192e270f286dfc81c1088449.1570044052.git.leonard.crestez@nxp.com>
+ <20191003181938.GJ87296@google.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-clientproxiedby: MWHPR10CA0006.namprd10.prod.outlook.com (2603:10b6:301::16)
- To SN6PR2101MB1135.namprd21.prod.outlook.com
- (2603:10b6:805:4::24)
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=mikelley@microsoft.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 1.8.3.1
-x-originating-ip: [131.107.159.247]
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [89.37.124.34]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: db6e86fd-823b-4cdd-954c-08d748345f39
+x-ms-office365-filtering-correlation-id: fe206d1e-5bd1-4e87-e03c-08d748362248
 x-ms-office365-filtering-ht: Tenant
-x-ms-traffictypediagnostic: SN6PR2101MB1102:|SN6PR2101MB1102:|SN6PR2101MB1102:
+x-ms-traffictypediagnostic: VI1PR04MB7040:|VI1PR04MB7040:
 x-ms-exchange-transport-forked: True
-x-ld-processed: 72f988bf-86f1-41af-91ab-2d7cd011db47,ExtAddr
-x-microsoft-antispam-prvs: <SN6PR2101MB110278253EC8805B982A95A6D79F0@SN6PR2101MB1102.namprd21.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1332;
+x-microsoft-antispam-prvs: <VI1PR04MB704040284D82B002F7441D40EE9F0@VI1PR04MB7040.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
 x-forefront-prvs: 01792087B6
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(1496009)(39860400002)(396003)(136003)(366004)(376002)(346002)(199004)(189003)(486006)(102836004)(446003)(81156014)(5660300002)(64756008)(6512007)(66476007)(66556008)(4326008)(1511001)(66946007)(256004)(52116002)(6436002)(386003)(6116002)(305945005)(476003)(8676002)(99286004)(7416002)(11346002)(4720700003)(66446008)(2501003)(22452003)(6636002)(316002)(2616005)(66066001)(26005)(71200400001)(478600001)(76176011)(86362001)(54906003)(2201001)(36756003)(10090500001)(81166006)(71190400001)(8936002)(6486002)(186003)(4744005)(10290500003)(14454004)(25786009)(7736002)(6506007)(50226002)(3846002)(14444005)(110136005)(2906002)(921003)(1121003);
- DIR:OUT; SFP:1102; SCL:1; SRVR:SN6PR2101MB1102;
- H:SN6PR2101MB1135.namprd21.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: microsoft.com does not designate
+ SFS:(10009020)(4636009)(39860400002)(136003)(346002)(396003)(376002)(366004)(189003)(199004)(74316002)(4326008)(316002)(6246003)(9686003)(305945005)(102836004)(26005)(7736002)(55016002)(110136005)(54906003)(64756008)(91956017)(66476007)(66556008)(76116006)(6506007)(6436002)(66946007)(53546011)(7416002)(52536014)(5660300002)(76176011)(446003)(229853002)(44832011)(99286004)(186003)(476003)(7696005)(66446008)(486006)(71200400001)(71190400001)(66066001)(6116002)(25786009)(33656002)(3846002)(478600001)(14454004)(14444005)(8936002)(86362001)(2906002)(256004)(8676002)(81156014)(81166006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB7040;
+ H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: NfKfGkCBGxqI/2uUqE69WcPNRkatTjOWKHx90QAT+cB0Q/1T5eLE51SWA3uW3mGZ8S7VIoUkD5bn0RHttcnOFkWUDI3H1FWVdL1jJ9IlhLo709XVFph4WdKzn3BH6buXp7kKOLS9kkba0sRoisxBdmuppXYDConjJWvdIYdfzDgTLJflN3U+n5aF4Xg8rf4BAAcAYCgJiQakLL2u/km4K4f4pzgcndyxR/nEVGr1E/nRSqjkoIJ/9YjxZqGH8XEUvgnoSTia3V6uOttsIrFagCTPMa7ywJDUKfj7DhYXLNa1B6eWC8zZzm5XRSysFrlaVpwERmPATqX3HlBpRjKqP1cErOD0vYmmNcjQQaxGHw0UkPacYGnTqKkzcEMqBm/Kzjs7h5tdqafVQbdJonGCvBx2N3roFIp5k8XNV5wHMus=
+x-microsoft-antispam-message-info: E/pgVl0ZAJWlvJn2ZIo7idQJlFuqU6TnyrxA9mbRTEBn1PK1jKc2KrFJ8wsyK985izbCgR3/Jc5uly6kXMVd54K9VSLlJhMgDvtDx51XmRyY8glTX7lAZwBCoO3I9zrEF9fmA7OfU+V60YcSeN8vmaiKOtps2urwEXDCDpaK0TevJ5QUo7AjdIZV+VlWKAt7vKbl1uI/8S57QKkQ5LflV5Z+JFA7uiGCBWVYlpMXcoJkGQ62W9b5xQElVw38Js8ITIoMpnp/eFiYH6c+NpuJNhxGN17bNYLy/Mo3XBGpxZOoZ9v+B6Vq++Dvm5dvN1nWDy3z6HV0oKCuLDFib3VLwOYGqq2sZQfykrdy6VwcVsBrP0GS6GsJ3wwPWCJfld8P3Lg9+yvAwNIZCCxZpvQ/kiPrNVPM8RX8eSvOwa0iG0g=
 MIME-Version: 1.0
-X-OriginatorOrg: microsoft.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: db6e86fd-823b-4cdd-954c-08d748345f39
-X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Oct 2019 19:03:27.1251 (UTC)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: fe206d1e-5bd1-4e87-e03c-08d748362248
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Oct 2019 19:16:03.4958 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 72f988bf-86f1-41af-91ab-2d7cd011db47
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: qKoKZHkh/hO1Z+Vw4/rGFcjJBr7eJSuFdjGc27rB93TpA+UVLfwMRndo368lODoQhAHV7o3F1P118icsuamDCg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR2101MB1102
+X-MS-Exchange-CrossTenant-userprincipalname: 85ew5d0vuXUPsBAlCNNSV8tXUjjdjVK7/prTdL/EbvG38XUXklx0vBRHgVv5sapxt7Dv/9fQzOESOAYt6QJ1fA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB7040
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_120343_751352_BF65E397 
-X-CRM114-Status: UNSURE (   9.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191003_121606_779521_AB822C8D 
+X-CRM114-Status: GOOD (  15.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe46:0:0:0:71a listed in]
- [list.dnswl.org]
+ no trust [40.107.8.52 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -129,7 +110,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,38 +121,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sunil Muthuswamy <sunilmut@microsoft.com>,
- "boqun.feng" <boqun.feng@gmail.com>, Michael Kelley <mikelley@microsoft.com>
+Cc: =?iso-8859-2?Q?Artur_=A6wigo=F1?= <a.swigon@partner.samsung.com>,
+ Abel Vesa <abel.vesa@nxp.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Lukasz Luba <l.luba@partner.samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Alexandre Bailon <abailon@baylibre.com>,
+ Georgi Djakov <georgi.djakov@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Jacky Bai <ping.bai@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update drivers/hv/Kconfig so CONFIG_HYPERV can be selected on
-ARM64, causing the Hyper-V specific code to be built.
+On 03.10.2019 21:19, Matthias Kaehlcke wrote:
+> On Wed, Oct 02, 2019 at 10:25:09PM +0300, Leonard Crestez wrote:
+>> Moving handling of min/max freq to a single function and call it from
+>> update_devfreq and for printing min/max freq values in sysfs.
+>>
+>> This changes the behavior of out-of-range min_freq/max_freq: clamping
+>> is now done at evaluation time. This means that if an out-of-range
+>> constraint is imposed by sysfs and it later becomes valid then it will
+>> be enforced.
+>>
+>> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+>> Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
+>> ---
+>>   drivers/devfreq/devfreq.c | 110 +++++++++++++++++++++-----------------
+>>   1 file changed, 62 insertions(+), 48 deletions(-)
+>>
+>> diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
+>> index 87eff789ce24..2d63692903ff 100644
+>> --- a/drivers/devfreq/devfreq.c
+>> +++ b/drivers/devfreq/devfreq.c
+>>
+>> ...
+>>
+>>   static ssize_t min_freq_show(struct device *dev, struct device_attribute *attr,
+>>   			     char *buf)
+>>   {
+>>   	struct devfreq *df = to_devfreq(dev);
+>> +	unsigned long min_freq, max_freq;
+>>   
+>> -	return sprintf(buf, "%lu\n", max(df->scaling_min_freq, df->min_freq));
+>> +	mutex_lock(&df->lock);
+>> +	get_freq_range(df, &min_freq, &max_freq);
+> 
+> With this min/max_freq shown aren't necessarily those set through sysfs,
+> but the aggregated PM QoS values (plus OPP constraints).
+> 
+> I did some testing with a WIP patch that converts devfreq_cooling.c to
+> PM QoS. When reading sysfs min/max values to double check the limits
+> set earlier I found it utterly confusing to see the sysfs min/max values
+> fluctuating due to thermal throttling, and not being able to see the
+> configured values.
 
-Signed-off-by: Michael Kelley <mikelley@microsoft.com>
----
- drivers/hv/Kconfig | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+Isn't current devfreq_cooling based on OPP disabling which modifies 
+scaling_max_freq? This is not a behavior change: reading back always 
+showed the "effective maximum" rather than the value explicitly written 
+to max_freq.
 
-diff --git a/drivers/hv/Kconfig b/drivers/hv/Kconfig
-index 79e5356..1113e49 100644
---- a/drivers/hv/Kconfig
-+++ b/drivers/hv/Kconfig
-@@ -4,7 +4,8 @@ menu "Microsoft Hyper-V guest support"
- 
- config HYPERV
- 	tristate "Microsoft Hyper-V client drivers"
--	depends on X86 && ACPI && X86_LOCAL_APIC && HYPERVISOR_GUEST
-+	depends on ACPI && \
-+			((X86 && X86_LOCAL_APIC && HYPERVISOR_GUEST) || ARM64)
- 	select PARAVIRT
- 	select X86_HV_CALLBACK_VECTOR
- 	help
--- 
-1.8.3.1
+This behavior is indeed confusing but can be fixed by adding two new 
+files: user_min/max_freq and user_max_freq. These would act like current 
+min/max_freq on write but on read would only show the value explicitly 
+configured by the user.
 
+> Looks like cpufreq does the same, but I'm not convinced this is a good
+> idea. I think we want to display the values set by userspace, as done
+> before managing the limits through PM QoS. Viresh, was this change of
+> userspace visible behavior done intentionally for cpufreq?
 
 _______________________________________________
 linux-arm-kernel mailing list
