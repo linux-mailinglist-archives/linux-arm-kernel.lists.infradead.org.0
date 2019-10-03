@@ -2,153 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F501C9B14
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 11:51:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0F96C9B2E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 11:55:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RdfmM2s7HDurP9AgojFg+WTkr8E9WXapkTTwQQ628pc=; b=Vo9fYJbDP/EC9J
-	qACC2r334HjKRRvOFNtFHUaBiq2Og9s9kHczsEk093QEcUmDkm5XrRQ3sw9WpuNlokwzgSxwtm2nC
-	dsxErLDDV66JHlU8vF0oaKnsnL7sj9XcoXvDOdhGtOMI7JOQTJxDC9ZCTvQYe6ckVeckUhelBSnyi
-	xlbcGXtEaUbEnA9TPf2vgMbMIr/NGH+Sgqqa/SfrSlkNfGIG8qrTO82W4kRfcDspB1YZbdCGaIyaf
-	i6w4dxFnjr/7ych1/5eF631l03sf0T3Fvsb1hsULf8e6sE1I2OyWj7o4HfiLcNaJtYWz1JwIc7poD
-	Dx3PZAK9Uut+npDfNAsQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=hSl0exH9Cl6GW7Ad3W562KB2OVKt9AOINB69/Stj9AQ=; b=N4A
+	yDp+/uBj3YggjKYn43Cpo+BJ260vZ+3Ojjumts1jNPykWyJ3deioFDwZEQbYAshx9kixwK1ypFQdm
+	8IiFSk/c+9GEW4UavDrXTJ9uf8pJaEbT6QnpACxCWw/OW/tNuGeY4SQEO+hlKk7prOOyavzBf1w1e
+	povioHIGH7f+wivwpRFSOZAZyEKfdD9q2wDsc/JYljx8BxUe1tcOg1UmnZBLm7eD6BvazNMGoN/fo
+	s22wKjJ9wPlBEayazKJQ6tMH8Z9SMUNCur/WHF0mXllAFMlX/TpAymQDaHfE1jpuh3jH9S1ourjYb
+	38rVbSOH3vP0hMuHDwBqU/OE82J67Dw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFxlH-0008Ca-79; Thu, 03 Oct 2019 09:51:03 +0000
-Received: from esa6.microchip.iphmx.com ([216.71.154.253])
+	id 1iFxpf-00027e-4l; Thu, 03 Oct 2019 09:55:35 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFxl8-0008Bz-8i
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 09:50:55 +0000
-Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
- Tudor.Ambarus@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
- envelope-from="Tudor.Ambarus@microchip.com";
- x-sender="Tudor.Ambarus@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa6.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
- envelope-from="Tudor.Ambarus@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa6.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Tudor.Ambarus@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: MkluPPFsg5Ib2cg8FswmPIjMYo1s77gH9S57yof9Q1VH0aY2TjN4w+0u96YGs9tjgrD9ED4RU7
- tEbeveT0JclPUu8odNKBaLLypEhirs2vZaDPJJ9oZKEOhKccCC3BpPe50Y5H3jdJggfrdOSJC9
- XczHyVyvvWRgeZP9d54kuhYufX6TqLS2OXNHsUeR0kYG3FHbQCASCbOg24O3EW8bB0uh4b1ZEd
- Ag1QoS/ZdfMUYIPMtBukch/ois9e6BMZQibzgMAQ3VWowrAvyPqg1fP5Jv/N5EOUT2E54/3zxg
- WQM=
-X-IronPort-AV: E=Sophos;i="5.67,251,1566889200"; d="scan'208";a="48621408"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 03 Oct 2019 02:50:50 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
- chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Thu, 3 Oct 2019 02:50:50 -0700
-Received: from NAM01-BN3-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, 
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
- Transport; Thu, 3 Oct 2019 02:50:50 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=aiRf6PrOTKb2EsEEWXNujneoMmzkK8FV68skvpW4vdCSkusg/lOHQjbjc0ZiB8aj/9VtkS5qJD5f7BeUcsmiNQ8KWJweViY5vGOWc9kSy3ttHXKNRSfDzhC19qBkecXgTW6RiWr7tcntP+HBcvRuL7GlZFPXThDYO+QXoq0SjZsxDhvaV642SzDW1/lgEdkYxE6TAACxa+IttUIWnqW2NmtECewAoLt1hTWMB/LTts1g67tTEh/e4Lqe2JdCeQLM99GRvAJPChH3sanfgSt8yx5A+dKCjodUs2tuK1dq0sRNLS8Rhk65HbW5CujxlPIvG2pItNQpm/62UsbIqw7kWA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=uzmTikPZANCszziYTF6k3AdeqnVMdcLl32IXCuTT+jc=;
- b=YuPET3L5KNAAJmnVn4Q29b0tPpW4HDqyrAutPdrEqCdkPN7OsNRLGWgFS5DpNL0A8j5LMgKDM0br0KbgvF5fAQlChBrhtE7hYt/1Y+rc4Uw+u/21ppfoLLP9CfNX9RIqaBH8RwlVlLKfyPC4eeLmqM/CTlQ+KNPMO58xgcmhTNQWxFWg8y2QYUyQ4qfLzzpHcF3I2qL15FsCb4mXYvAFf5S4vjk55aWK3CyK6Sfs21PKqOiqkyRv2bxhx1fzoDDT7yUMzXcSCLgnbj1fiNtfdnJ5gOBWqSW35ad8ZpZo/t3AZk7l76zw6/DF8A9QNr+1q0chNqyJgYcdGjidefoWXg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=uzmTikPZANCszziYTF6k3AdeqnVMdcLl32IXCuTT+jc=;
- b=tyPN+mVZbh3dlKlnIkRXA3er0/eBhpb70qiXiIGBC8Do7fwu724kb61dcwjEOhj4ouUzGXWwmCCpHvyrBujoyGt2d02PnYK1h7asRht2cf2LRSvEFNhpU+FMrtkh2wwhJy+wp9/VyaLwlFAnAAP6HPjjsqdQHNR1hN/ihUrYlEQ=
-Received: from BY5PR11MB4435.namprd11.prod.outlook.com (10.255.89.94) by
- BY5PR11MB4195.namprd11.prod.outlook.com (52.132.253.90) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2305.16; Thu, 3 Oct 2019 09:50:45 +0000
-Received: from BY5PR11MB4435.namprd11.prod.outlook.com
- ([fe80::e824:da88:261f:dee]) by BY5PR11MB4435.namprd11.prod.outlook.com
- ([fe80::e824:da88:261f:dee%2]) with mapi id 15.20.2305.023; Thu, 3 Oct 2019
- 09:50:44 +0000
-From: <Tudor.Ambarus@microchip.com>
-To: <kamel.bouhara@bootlin.com>, <Nicolas.Ferre@microchip.com>,
- <alexandre.belloni@bootlin.com>, <Ludovic.Desroches@microchip.com>,
- <linux-arm-kernel@lists.infradead.org>
-Subject: Re: [PATCH v2] soc: at91: Add Atmel SFR SN (Serial Number) support
-Thread-Topic: [PATCH v2] soc: at91: Add Atmel SFR SN (Serial Number) support
-Thread-Index: AQHVectWTpmuxb05HkGRE83g0lM8EKdIqYCAgAAC7AA=
-Date: Thu, 3 Oct 2019 09:50:44 +0000
-Message-ID: <b3e10d4c-4cdc-4401-a488-0b3d101d9ad0@microchip.com>
-References: <20191003091636.21060-1-kamel.bouhara@bootlin.com>
- <8b8649d8-351b-8903-cb54-a56d7b6191df@microchip.com>
-In-Reply-To: <8b8649d8-351b-8903-cb54-a56d7b6191df@microchip.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: VE1PR08CA0008.eurprd08.prod.outlook.com
- (2603:10a6:803:104::21) To BY5PR11MB4435.namprd11.prod.outlook.com
- (2603:10b6:a03:1ce::30)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [94.177.32.156]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: a3e5b62e-b901-43d3-8fdc-08d747e728c8
-x-ms-traffictypediagnostic: BY5PR11MB4195:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BY5PR11MB419523F711836C46F3E8B48EF09F0@BY5PR11MB4195.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
-x-forefront-prvs: 01792087B6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(346002)(366004)(39860400002)(396003)(376002)(189003)(199004)(110136005)(81166006)(81156014)(102836004)(446003)(53546011)(2501003)(476003)(3846002)(6116002)(256004)(14454004)(86362001)(31696002)(478600001)(2616005)(66946007)(2906002)(66446008)(6512007)(66476007)(66556008)(64756008)(4744005)(26005)(6246003)(66066001)(6506007)(386003)(6486002)(31686004)(25786009)(7736002)(229853002)(52116002)(76176011)(36756003)(486006)(305945005)(4326008)(99286004)(186003)(8936002)(8676002)(71190400001)(11346002)(316002)(5660300002)(6436002)(71200400001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BY5PR11MB4195;
- H:BY5PR11MB4435.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 6hzV2TJK0Y5k6nuxpS+I1UFsUacBuu0+fkFQRV1StIx/hWCDB7gpgAQgwvxNsP3SDtBYcmElaTijgdH+4YY6FOYRBDIW0drF/zf9f7T1GVQvJ7h4alOBzKFOAHHSdCWCvDY+mpisuEU68XhENPxrSBxoW2M+AvshoyyEGHqdQununr/xDTnmnqpObmdYMi3JlwzKyRBgFvkwaUFBwo1HbvRjX1bzh5y2JKHKtQyPCK6o1syqKygIUpicB9F3ZdPG87UMyAC354EExGE8cysJ7P6jHqgtY11tcd5XfmSjkMIYKQk2gGLqxZyhl+slfMO0ur4MgQigjXXGs0ooqnPN/kj4CCbvMKvDHIiayHqO3xvNU8Aco3Jxy04mNTlpddgVH2kMNHJjt2Ix6+BJo+hXOA0J4Llrm9gcqW6/61rdWHg=
-Content-ID: <BF49930FFC6273458F83E1C9494107A7@namprd11.prod.outlook.com>
-MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: a3e5b62e-b901-43d3-8fdc-08d747e728c8
-X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Oct 2019 09:50:44.7672 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: +5BfH+JhnGw9wbBrwrCNtWF/9RW6Fi8utz3lMnY0VFaWHLil8uAGiIMFE13oBMNwgV2sysHHjsUHiYw7Be9wUbO9P97bZxyTr3GFI2VsmSs=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR11MB4195
+ id 1iFxpX-000270-Fl
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 09:55:28 +0000
+Received: by mail-pg1-x543.google.com with SMTP id v27so1418050pgk.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 03 Oct 2019 02:55:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=e6qE7XB76qy7vrZGoWaWqzg5fBcTX3zqPmnTO48m2kI=;
+ b=QQmX9/5Phtejcr1s1+XLaQd2GNoMEJRCgCi+qbyPv4OAQyhGeTxqwHOsoWcrQ3h4ls
+ 0PBrbMSml429sVGl9iiksabhKvcCNZRCsALpvqhhRxjstI3KJQrwjDS6cZZtK/8uOz4l
+ sw1hkkpnKXuY6qZB/VyLeoze3Qm71B2UWxRvYm9T6dwL3Uo4zzJ4X0sxX7d+fbUbFohi
+ MQHReNnKsu1eC2tK3k5llT2QaaFN0arIMNg3rOYbjbm3HBdJEdaLjyRn62TdLk6zDz+b
+ h4HwvSOHP0ntz9Xs2AyqQLL/P+58M1xgZ+JylLH7VXlj/IqJAX0lv7FPnnILMKpKufPl
+ Zu0g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=e6qE7XB76qy7vrZGoWaWqzg5fBcTX3zqPmnTO48m2kI=;
+ b=AAzqQ5LxcLCYJlUirQ9aOY7lBCMqy3QOEL+Ga2LZ70NU7RkCAk/pzPb6p/SyE58YCT
+ tgHDYINx09sGCOusDZvmI7gUmMDjPn3/URP9df4a2jugbuJW9QqSiY0CYdHRA6b29MO6
+ 7DwCqhaWS+jNJ6sma5LmceMLDKG6jFUdVzMNI3i0qbu1KJWwGr5GMigUb+tYlf5/V/Iu
+ pv1ozLTKl8777wGX8de9DAsfn3rhPTe8ccAyJljR5UjdNFkS8NRhIFow/migs6lzJtXB
+ Zoo5WP8q5reaeNzSgI7spGIfq0LbnJiCEqYOU7vhXnQd2y2mkAkApboW8GdE7Sy5XyX3
+ j5tg==
+X-Gm-Message-State: APjAAAW8SiDDMexKp7xz5Bj9+EXZvsPRpb7MvcEFnJBMgDeurOLsJJmm
+ D+bV2iBRbvpbPBEHYz4BT+4s
+X-Google-Smtp-Source: APXvYqzydIQYXMnyCqqO3yg3J8kBycFk+XR5FrVUknBJE3cp5jNvElNBPUavGxIrF2g9kfibWX3bzw==
+X-Received: by 2002:a63:ed10:: with SMTP id d16mr8924685pgi.307.1570096526650; 
+ Thu, 03 Oct 2019 02:55:26 -0700 (PDT)
+Received: from localhost.localdomain ([2409:4072:801:ac5d:fca3:6f38:70fb:67fc])
+ by smtp.gmail.com with ESMTPSA id v3sm2346171pfn.18.2019.10.03.02.55.19
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 03 Oct 2019 02:55:25 -0700 (PDT)
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: mchehab@kernel.org,
+	robh+dt@kernel.org,
+	sakari.ailus@iki.fi
+Subject: [PATCH v4 0/2] Add IMX290 CMOS image sensor support
+Date: Thu,  3 Oct 2019 15:25:01 +0530
+Message-Id: <20191003095503.12614-1-manivannan.sadhasivam@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_025054_342948_7EFD8E5F 
-X-CRM114-Status: UNSURE (   9.49  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191003_025527_529234_ED04E8C6 
+X-CRM114-Status: GOOD (  10.82  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.253 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -162,47 +93,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: thomas.petazzoni@bootlin.com
+Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
+ linux-kernel@vger.kernel.org, a.brela@framos.com,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hello,
 
+This patchset adds support for IMX290 CMOS image sensor from Sony.
+Sensor can be programmed through I2C and 4-wire interface but the
+current driver only supports I2C interface. Also, the sensor is
+capable of outputting frames in following 3 interfaces:
 
-On 10/03/2019 12:40 PM, Tudor.Ambarus@microchip.com wrote:
-cut
+* CMOS logic parallel SDR output
+* Low voltage LVDS serial DDR output
+* CSI-2 serial data output
 
-> 
-> how about renaming this to struct atmel_sfr_priv?
-> 
->> +	struct device			*dev;
-> 
-> this is not used, maybe you can drop it?
-> 
->> +	struct regmap			*regmap;
->> +	struct nvmem_config		*config;
+But the current driver only supports CSI-2 output available from 4 lanes.
+In the case of sensor resolution, driver only supports 1920x1080 and
+1280x720 at mid data rate of 445.5 Mpbs.
 
-where is priv->config used?
-
->> +	struct atmel_sfr_drvdata	*drvdata;
-> 
-> this is not used, maybe you can drop it?
-> 
->> +};
-
-cut
-
->> +static struct atmel_sfr_drvdata sama5d2_sama5d4_drvdata = {
-
-struct should be const. And I'm not sure about the sama5d2_sama5d4 naming. Maybe
-choose "5d4_drvdata" and use it for 5d2 too? Maybe Nicolas has a preference here.
+The driver has been validated using Framos IMX290 module interfaced to
+96Boards Dragonboard410c.
 
 Thanks,
-ta
+Mani
 
->> +	.nregs = 2 * 4,
->> +};
+Changes in v4:
+
+As per the review by Sakari:
+
+* Squashed the MAINTAINERS changes with driver patch
+* Some misc changes to the driver
+
+Changes in v3:
+
+As per the review by Sakari:
+
+* Switched to pm runtime
+* Used link-frequency property
+* Removed useless read calls from buffered read function
+* Some other misc changes to the driver and binding
+
+Changes in v2:
+
+* Added Reviewed-by tag from Rob for bindings patch
+
+Manivannan Sadhasivam (2):
+  dt-bindings: media: i2c: Add IMX290 CMOS sensor binding
+  media: i2c: Add IMX290 CMOS image sensor driver
+
+ .../devicetree/bindings/media/i2c/imx290.txt  |  57 ++
+ MAINTAINERS                                   |   8 +
+ drivers/media/i2c/Kconfig                     |  11 +
+ drivers/media/i2c/Makefile                    |   1 +
+ drivers/media/i2c/imx290.c                    | 885 ++++++++++++++++++
+ 5 files changed, 962 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/i2c/imx290.txt
+ create mode 100644 drivers/media/i2c/imx290.c
+
+-- 
+2.17.1
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
