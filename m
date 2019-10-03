@@ -2,77 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1C08C9D7A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 13:38:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00959C9D8F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 13:42:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8vms7liI8R9lHiPRRw6ep71S6cMIAb4rEz2YkL7GdJc=; b=QJ1WyWwBwioI6Ksh1tEwOvsCI
-	HLM06RYJCQE06860tzvBZOtS/HDprnfHbpR0czX1xKVWtKW8yPCWBj2PkvLjXDspUwesecuV1Cq/q
-	8bpR5XUaFR5ndkE5cEsxeq52WjQ3v+CuGh2envadDpVR4o8xlTatNQ0ZuTCpXiwCbzyZ9zYkEqH5x
-	AvWFXNnRpxT+8APg/NNquhRt18vv4fzeTTkNlM9Z3wVkOGOzwjDru7Z1b5HTP2kfgcolld5nIOreq
-	3HFeY2p0ZiP5Gdb5o7HJnrmZYtXmmSTsp+cLu7u2Ebxa3jMSAgOeCavvEoHrhiDald+OoyVycKyAY
-	/4JbVDmfw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=1Um6l2+BEvLJlSTAP/eDRxr+BawRCo9u+i4Svps21/I=; b=T7y
+	JW2q/hm1GCUdBicAY/iAy1Wh6brt4+MXf+dLXglxjnZJSnpZTZiH0oRsZewi2RCwsbRrNinqJ2a76
+	ippdFNw79TX4C0aE36ud8OH5Hj1gD3jbk+ESj7eZXIl4ZSA1wiKQIcHV8XfHeKy2bxw99ZynvNYzJ
+	S3ef/WSrDDvYgf1RJ3P0WmGx+/GG6hIzjLlx+9UvDjsDSbI5pUiZ6jDrj5GAumyQPvTnZVS9YRrAz
+	ysYJZ65IfLT22eZ0BLUSaRkpxGyN/VpDVwlLuS4rnxgiD2GSck/iYFThr+4beKmszo85Vyq4dAt0V
+	z2sqYLRgGjJ+5kv74j1f8s2xa6piTAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFzR2-00016K-Jc; Thu, 03 Oct 2019 11:38:16 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFzQu-00015M-QR
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 11:38:10 +0000
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8E93F20830;
- Thu,  3 Oct 2019 11:38:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570102687;
- bh=4BaUv651uQ8A7KlN2UxSjzCEumhRHP+vUl19072tLI8=;
- h=Date:From:To:Subject:References:In-Reply-To:From;
- b=nTaLbUPMGOxcWPoKWtstPj+OruWKIfX93yH6RGADcTxhI5wQ85xfK/fVRrj8m6y7q
- hXFjL7W1SMVlG0jC5ejWaO0yRl1inFT8RYTkii0f2OUOOUr4DS5ez+YtvbWSUrTJtg
- Ao0jTFijs0cQpJVFHqTco2iFODavLl5PspmMpfYg=
-Date: Thu, 3 Oct 2019 13:38:02 +0200
-From: Maxime Ripard <mripard@kernel.org>
-To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Chen-Yu Tsai <wens@csie.org>, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] drm: sun8i-ui/vi: Fix layer zpos change/atomic modesetting
-Message-ID: <20191003113802.tyecgkb6r3piin35@gilmour>
-References: <20190914220337.646719-1-megous@megous.com>
- <20190918141734.kerdbbaynwutrxf6@gilmour>
- <20190918152309.j2dbu63jaru6jn2t@core.my.home>
- <20190918201617.5gwzmshoxbcxbmrx@gilmour>
- <20190919122058.fhpuafogdq7oir2d@core.my.home>
- <20190919131244.35hmnp7jizegltp7@core.my.home>
- <20190920151142.ijistzhtcaenehx6@gilmour>
- <20190924124054.743s3tlw5qirghxo@core.my.home>
-MIME-Version: 1.0
-In-Reply-To: <20190924124054.743s3tlw5qirghxo@core.my.home>
-User-Agent: NeoMutt/20180716
+	id 1iFzUw-0003Kd-0h; Thu, 03 Oct 2019 11:42:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iFzUp-0003KB-4B
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 11:42:12 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 927D2337;
+ Thu,  3 Oct 2019 04:42:10 -0700 (PDT)
+Received: from login2.euhpc.arm.com (login2.euhpc.arm.com [10.6.27.34])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id C55F53F706;
+ Thu,  3 Oct 2019 04:42:09 -0700 (PDT)
+From: Vladimir Murzin <vladimir.murzin@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] ARM: NOMMU: Fix exc_ret for XIP
+Date: Thu,  3 Oct 2019 12:41:28 +0100
+Message-Id: <1570102888-13426-1-git-send-email-vladimir.murzin@arm.com>
+X-Mailer: git-send-email 2.0.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_043808_933428_829E4D37 
-X-CRM114-Status: GOOD (  24.20  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191003_044211_212109_D24E33EF 
+X-CRM114-Status: GOOD (  10.55  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,144 +56,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2065415016346456880=="
+Cc: alexandre.torgue@st.com, afzal.mohd.ma@gmail.com, linux@armlinux.org.uk,
+ sza@esh.hu
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+It was reported that 72cd4064fcca "NOMMU: Toggle only bits in
+EXC_RETURN we are really care of" breaks NOMMU+XIP combination.
+It happens because saved EXC_RETURN gets overwritten when data
+section is relocated.
 
---===============2065415016346456880==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="qi2vxuuefrx4z36d"
-Content-Disposition: inline
+The fix is to propagate EXC_RETURN via register and let relocation
+code to commit that value into memory.
 
+Fixes: 72cd4064fcca ("ARM: 8830/1: NOMMU: Toggle only bits in EXC_RETURN we are really care of")
 
---qi2vxuuefrx4z36d
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Reported-by: afzal mohammed <afzal.mohd.ma@gmail.com>
+Tested-by: afzal mohammed <afzal.mohd.ma@gmail.com>
+Signed-off-by: Vladimir Murzin <vladimir.murzin@arm.com>
+---
+ arch/arm/kernel/head-common.S | 5 +++--
+ arch/arm/kernel/head-nommu.S  | 2 ++
+ arch/arm/mm/proc-v7m.S        | 5 ++---
+ 3 files changed, 7 insertions(+), 5 deletions(-)
 
-On Tue, Sep 24, 2019 at 02:40:54PM +0200, Ond=C5=99ej Jirman wrote:
-> > >  On first run of the X server, only the black screen and the layer
-> > >  containing the cursor is visible. Switching to console and back
-> > >  corrects the situation.
-> > >
-> > >  I have dumped registers, and found out this:
-> > >
-> > >  (In both cases there are two enabled planes, plane 1 with zpos 0 and
-> > >  plane 3 with zpos 1).
-> > >
-> > >  1) First Xorg run:
-> > >
-> > >    0x01101000 : 00000201
-> > >    0x01101080 : 00000030
-> > >
-> > >    BLD_FILL_COLOR_CTL: (aka SUN8I_MIXER_BLEND_PIPE_CTL)
-> > >      P1_EN
-> > >
-> > >    BLD_CH_RTCTL: (aka SUN8I_MIXER_BLEND_ROUTE)
-> > >      P0_RTCTL channel0
-> > >      P1_RTCTL channel3
-> > >
-> > >  2) After switch to console and back to Xorg:
-> > >
-> > >  0x01101000 : 00000301
-> > >  0x01101080 : 00000031
-> > >
-> > >    BLD_FILL_COLOR_CTL:
-> > >      P1_EN and P0_EN
-> > >
-> > >    BLD_CH_RTCTL:
-> > >      P0_RTCTL channel1
-> > >      P1_RTCTL channel3
-> > >
-> > >  What happens is that sun8i_ui_layer_enable() function may disable
-> > >  blending pipes even if it is no longer assigned to its layer, because
-> > >  of incorrect state/zpos tracking in the driver.
-> > >
-> > >  In particular, layer 1 is configured to zpos 0 and thus uses pipe 0.
-> > >  When layer 3 is enabled by X server, sun8i_ui_layer_enable() will get
-> > >  called with old_zpos=3D0 zpos=3D1, which will lead to disabling of p=
-ipe 0.
-> > >
-> > >  In general this issue can happen to any layer during enable or zpos
-> > >  changes on multiple layers at once.
-> > >
-> > >  To correct this we now pass previous enabled/disabled state of the
-> > >  layer, and pass real previous zpos of the layer to
-> > >  sun8i_ui_layer_enable() and rework the sun8i_ui_layer_enable() funct=
-ion
-> > >  to react to the state changes correctly. In order to not complicate
-> > >  the atomic_disable callback with all of the above changes, we simply
-> > >  remove it and implement all the chanes as part of atomic_update, whi=
-ch
-> > >  also reduces the code duplication.
-> >
-> > I'm not even sure why we need that old state. Can't we just reset
-> > completely the whole thing and do the configuration all over again?
->
-> That would be nice from a dev standpoint if we can get a complete state f=
-or all
-> planes at once from DRM core, but how? DRM helper gives callbacks
-> for updating individual planes with prev and new state. These individual =
-layer
-> change notifications don't map nicely to how pipes are represented in the=
- mixer
-> registers.
+diff --git a/arch/arm/kernel/head-common.S b/arch/arm/kernel/head-common.S
+index a7810be..4a39828 100644
+--- a/arch/arm/kernel/head-common.S
++++ b/arch/arm/kernel/head-common.S
+@@ -68,7 +68,7 @@ ENDPROC(__vet_atags)
+  * The following fragment of code is executed with the MMU on in MMU mode,
+  * and uses absolute addresses; this is not position independent.
+  *
+- *  r0  = cp#15 control register
++ *  r0  = cp#15 control register (exc_ret for M-class)
+  *  r1  = machine ID
+  *  r2  = atags/dtb pointer
+  *  r9  = processor ID
+@@ -137,7 +137,8 @@ __mmap_switched_data:
+ #ifdef CONFIG_CPU_CP15
+ 	.long	cr_alignment			@ r3
+ #else
+-	.long	0				@ r3
++M_CLASS(.long	exc_ret)			@ r3
++AR_CLASS(.long	0)				@ r3
+ #endif
+ 	.size	__mmap_switched_data, . - __mmap_switched_data
+ 
+diff --git a/arch/arm/kernel/head-nommu.S b/arch/arm/kernel/head-nommu.S
+index afa350f..0fc814b 100644
+--- a/arch/arm/kernel/head-nommu.S
++++ b/arch/arm/kernel/head-nommu.S
+@@ -201,6 +201,8 @@ M_CLASS(streq	r3, [r12, #PMSAv8_MAIR1])
+ 	bic	r0, r0, #V7M_SCB_CCR_IC
+ #endif
+ 	str	r0, [r12, V7M_SCB_CCR]
++	/* Pass exc_ret to __mmap_switched */
++	mov	r0, r10
+ #endif /* CONFIG_CPU_CP15 elif CONFIG_CPU_V7M */
+ 	ret	lr
+ ENDPROC(__after_proc_init)
+diff --git a/arch/arm/mm/proc-v7m.S b/arch/arm/mm/proc-v7m.S
+index 1448f14..efebf41 100644
+--- a/arch/arm/mm/proc-v7m.S
++++ b/arch/arm/mm/proc-v7m.S
+@@ -136,9 +136,8 @@ __v7m_setup_cont:
+ 	cpsie	i
+ 	svc	#0
+ 1:	cpsid	i
+-	ldr	r0, =exc_ret
+-	orr	lr, lr, #EXC_RET_THREADMODE_PROCESSSTACK
+-	str	lr, [r0]
++	/* Calculate exc_ret */
++	orr	r10, lr, #EXC_RET_THREADMODE_PROCESSSTACK
+ 	ldmia	sp, {r0-r3, r12}
+ 	str	r5, [r12, #11 * 4]	@ restore the original SVC vector entry
+ 	mov	lr, r6			@ restore LR
+-- 
+2.7.4
 
-You have a pointer to the full DRM state in the state field, so you
-have that option.
-
-The other option is just to clear everything in atomic_begin, update
-each plane in atomic_update, and then trigger the readout of the new
-register values in atomic_commit.
-
-> > That description just looks to me like the reset is not done properly,
-> > and now we have to deal with the fallouts later on.
->
-> What in particular?
-
-Having to care about the old state? If the reset was done properly, we
-wouldn't have to care.
-
-> > >  To make this all work, initial zpos positions of all layers need to =
-be
-> > >  restored to initial values on reset.
-> >
-> > And this also fixes a whole other bunch of issues, and can be made
-> > very trivially in a separate patch.
->
-> Maybe reset should also reset registers?
-
-The reset callback actually does the opposite, it resets a DRM
-state. If anything, we want to initialize the state in reset by
-reading the registers, not the opposite.
-
-Maxime
-
---qi2vxuuefrx4z36d
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXZXdmgAKCRDj7w1vZxhR
-xZ0SAP9NyoDFPOTub71RtJfUPVLhTn7deMGFbh2/a7biQpr1RAD6AhwUbhme1G5A
-xfIQ66SC7OUFD/mJXwo8tYUSbsuHAQs=
-=2+bD
------END PGP SIGNATURE-----
-
---qi2vxuuefrx4z36d--
-
-
---===============2065415016346456880==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2065415016346456880==--
-
