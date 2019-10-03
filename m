@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F33B0CAFEA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 22:19:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9708BCAFEC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 22:19:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Oj7W7kmkIBYlYB8FampK95W63UZ36s4eDmdvE5rMEwQ=; b=HCAI/pMyYncQH6
-	g05RJnxO7L6ERk3/hxB/TJggdPsyaQKGU0ApjQyrqxN75oVtke8Z+P0rUMRSYVUNr0CLYlL416E1q
-	S6qeXt337wNqjMprtlnRtbBNdcvByIew5qlqfC6JCNxHmxXLxSfWVbFj9VfNxgkiiWH/wQOFRZKWY
-	YUveGFqMcCZPDR1B4y+WdqNkRzzeIUp1P3t+/ZOPmxqUWJ0Rkh8jKQnFec5DK4XxrbaAX8UIkrIKh
-	1b9lRHVCBfix4XyeKmLHdIf0yLpe8dnqvt4xZ7KNErKDTZVraBpj8r1ycaa2jpj5y7lTskSJVGX5O
-	bwzp2l53RbTYG2S2jlbw==;
+	List-Owner; bh=93fL/C+JQpQwpoMNyfnY+uTZ5o1MkBVJIrOZUTFvt2A=; b=rMq7PKFOuYJqdI
+	pjJg2dQK2OsSiHB2zhRYDDhypNJr3TUjhuVVsO+z4zj5y1Yw3sZnvT5LEO30wRz75CFDE73/gyPai
+	qei7rMetYpzWSil6pbfIhgylJjaV3uepzYaTSsbSXzTowzONw0OyNkCjV2e6vOeWzJS1IQpByssSW
+	mYQhFKSGntpqWSnr0muA2GIu2RxstzeC7EQVeA3l6viDAbMG7BGuEMHU0jtdn1fh0FW809ojQ8hM3
+	yBq4ua7fAiB7XhSDXvIWZNHjPNtWAoy3TsKHh6iEaNB1ct+FEQRuPJ1+6LpRozT4eKoe659w7myM4
+	JR2VePLHJGnuAoM4kcOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG7ZB-0000Rb-D6; Thu, 03 Oct 2019 20:19:13 +0000
+	id 1iG7Zd-0000vZ-0e; Thu, 03 Oct 2019 20:19:41 +0000
 Received: from avon.wwwdotorg.org ([104.237.132.123])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG7Yl-0000CB-RK
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 20:18:50 +0000
+ id 1iG7Ym-0000DG-Sg
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 20:18:52 +0000
 Received: from swarren-lx1.nvidia.com (unknown [216.228.112.24])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by avon.wwwdotorg.org (Postfix) with ESMTPSA id F37A91C0CB9;
- Thu,  3 Oct 2019 14:18:45 -0600 (MDT)
+ by avon.wwwdotorg.org (Postfix) with ESMTPSA id 571981C0728;
+ Thu,  3 Oct 2019 14:18:47 -0600 (MDT)
 X-Virus-Status: Clean
 X-Virus-Scanned: clamav-milter 0.100.3 at avon.wwwdotorg.org
 From: Stephen Warren <swarren@wwwdotorg.org>
@@ -35,18 +35,17 @@ To: Thierry Reding <thierry.reding@gmail.com>,
  Jonathan Hunter <jonathanh@nvidia.com>,
  Peter De Schrijver <pdeschrijver@nvidia.com>,
  Prashant Gaikwad <pgaikwad@nvidia.com>
-Subject: [PATCH V2 3/4] ARM: tegra: modify reshift divider during LP1
-Date: Thu,  3 Oct 2019 14:18:36 -0600
-Message-Id: <20191003201837.86824-3-swarren@wwwdotorg.org>
+Subject: [PATCH V2 4/4] ARM: tegra: use clk_m CPU on Tegra124 LP1 resume
+Date: Thu,  3 Oct 2019 14:18:37 -0600
+Message-Id: <20191003201837.86824-4-swarren@wwwdotorg.org>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191003201837.86824-1-swarren@wwwdotorg.org>
 References: <20191003201837.86824-1-swarren@wwwdotorg.org>
 MIME-Version: 1.0
 X-NVConfidentiality: public
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_131847_977150_5F6275AB 
-X-CRM114-Status: UNSURE (   9.37  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191003_131848_988372_C172C1C4 
+X-CRM114-Status: GOOD (  11.94  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -75,62 +74,40 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Stephen Warren <swarren@nvidia.com>
 
-The reshift hardware module implements the RAM re-repair process. This
-module uses PLLP as an input clock during LP1 resume. The input divider
-for this clock is typically set for PLLP's normal rate. During LP1
-resume, PLLP is bypassed and so runs at the crystal rate, which is much
-slower. Consequently, decrease the divider so that the reshift module
-runs at a reasonable rate during LP1 resume.
+Configure the clock controller to set an alternate clock for the CPU when
+it receives an IRQ during LP1 (system suspend). Specifically, use clk_m
+(the crystal) rather than clk_s (a 32KHz clock). Such an IRQ will be the
+LP1 wake event. This reduces the amount of time taken to resume from LP1.
 
-NVIDIA's downstream kernel code only does this if not compiled for
-Tegra30, so the added code is made conditional upon the chip ID.
+NVIDIA's downstream kernel executes this code on both Tegra30 and
+Tegra124, so it appears OK to make this change unconditionally.
 
 Signed-off-by: Stephen Warren <swarren@nvidia.com>
 ---
 v2: No change.
 ---
- arch/arm/mach-tegra/sleep-tegra30.S | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ arch/arm/mach-tegra/sleep-tegra30.S | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm/mach-tegra/sleep-tegra30.S b/arch/arm/mach-tegra/sleep-tegra30.S
-index 6922dd8d3e2d..6191f9456288 100644
+index 6191f9456288..ba5e9c07d1b6 100644
 --- a/arch/arm/mach-tegra/sleep-tegra30.S
 +++ b/arch/arm/mach-tegra/sleep-tegra30.S
-@@ -59,6 +59,9 @@
- #define CLK_RESET_PLLX_MISC3_IDDQ	3
- #define CLK_RESET_PLLM_MISC_IDDQ	5
- #define CLK_RESET_PLLC_MISC_IDDQ	26
-+#define CLK_RESET_PLLP_RESHIFT		0x528
-+#define CLK_RESET_PLLP_RESHIFT_DEFAULT	0x3b
-+#define CLK_RESET_PLLP_RESHIFT_ENABLE	0x3
+@@ -670,8 +670,12 @@ tegra30_switch_cpu_to_clk32k:
+ 	pll_iddq_entry r1, r5, CLK_RESET_PLLX_MISC3, CLK_RESET_PLLX_MISC3_IDDQ
+ _no_pll_in_iddq:
  
- #define CLK_RESET_CLK_SOURCE_MSELECT	0x3b4
+-	/* switch to CLKS */
+-	mov	r0, #0	/* brust policy = 32KHz */
++	/*
++	 * Switch to clk_s (32KHz); bits 28:31=0
++	 * Enable burst on CPU IRQ; bit 24=1
++	 * Set IRQ burst clock source to clk_m; bits 10:8=0
++	 */
++	mov	r0, #(1 << 24)
+ 	str	r0, [r5, #CLK_RESET_SCLK_BURST]
  
-@@ -373,9 +376,13 @@ _pll_m_c_x_done:
- 	tegra_get_soc_id TEGRA_APB_MISC_BASE, r1
- 	cmp	r1, #TEGRA30
- 	beq	1f
-+
- 	ldr	r1, [r0, #CLK_RESET_PLLP_BASE]
- 	bic	r1, r1, #(1<<31)	@ disable PllP bypass
- 	str	r1, [r0, #CLK_RESET_PLLP_BASE]
-+
-+	mov	r1, #CLK_RESET_PLLP_RESHIFT_DEFAULT
-+	str	r1, [r0, #CLK_RESET_PLLP_RESHIFT]
- 1:
- 
- 	mov32	r7, TEGRA_TMRUS_BASE
-@@ -644,6 +651,10 @@ tegra30_switch_cpu_to_clk32k:
- 	orrne	r0, r0, #(1 << 31)	@ enable PllP bypass on fast cluster
- 	bic	r0, r0, #(1 << 30)
- 	str	r0, [r5, #CLK_RESET_PLLP_BASE]
-+	beq	1f
-+	mov	r0, #CLK_RESET_PLLP_RESHIFT_ENABLE
-+	str	r0, [r5, #CLK_RESET_PLLP_RESHIFT]
-+1:
- 	ldr	r0, [r5, #CLK_RESET_PLLA_BASE]
- 	bic	r0, r0, #(1 << 30)
- 	str	r0, [r5, #CLK_RESET_PLLA_BASE]
+ 	ret	lr
 -- 
 2.23.0
 
