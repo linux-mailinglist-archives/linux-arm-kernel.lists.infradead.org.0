@@ -2,51 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A540CAF65
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 21:40:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1B22CAF76
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 21:42:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=e08micogu1NDGgQPF9M0yad1O8Hm6N1IEFkogh6BIBU=; b=h5VeQcttO3Mr+voYuDZZI6Uof
-	aHQoUAqsRWt64hExJMLsApPQDeVRKqyyFnx7NCmqWjccpbYHU5+zMs2FUjtu5Xc0SRO8e4mWGB/4T
-	LlN5CXJSFrWR2SM80UHWb5iF3U9740GbGopTwqOAcPbxqevkHj7+nu2NbdcjRdcNNb+52LoTtdUpS
-	mwDOdWf0XpO0PNz2ekuWEvppmQ6o99RIEIBs7QbqDFmNGrgPNm41K8GXriOm13vs5/N1VauekjaJg
-	vqvpURJTW0Mo9D6JAMhDxF2NPHlc2q/kFFIeQVzRJKPu+mONlCyv73JFWT1YdnmcL/eHMhGjVaxvX
-	/eq2J/aIQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Umef+bGG71lXfbl92rph8tYuf9HVpH48Tfz3wVIw4Q8=; b=EXiLaohvI5sU5+
+	+bz1gL+dK6VyA1N7Q82tC0Lm5WdUdZE3WI9mRnoeBsj7LUsKrq78Jy46yvd7/39NYefW8SVpQ1Bz4
+	ge/Q9H6gdNfCuAUTfhTb8pVyuD8OH8aAjHr8zrwTMcADLWnBcFZnbEw/+l0yEoGGkfXhv2dO7eRcm
+	hBzSXqaRlVZ9B94xJjcNBbayEKDkjMKkxxDMXcmoSZb/sb9qzTJZ32STMjoTHWhRyR0J/bUpWnLg9
+	O+qC9E78OwnL2DqFXQ3VB7nR0hvnPesaEQVtOwLaoCKJ6WAvETHGzgyBo8dfC7HuFJe+ja2d/ZOPR
+	2OCfVEH3HCTa1W57l4fA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG6x4-0001jn-QP; Thu, 03 Oct 2019 19:39:50 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iG6zZ-0003Px-1z; Thu, 03 Oct 2019 19:42:25 +0000
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG6wy-0001im-1i
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 19:39:45 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 2C164AFA9;
- Thu,  3 Oct 2019 19:39:40 +0000 (UTC)
-Message-ID: <2af0a5ad604064d8fcf9febce72f0c23f1a1a1db.camel@suse.de>
-Subject: Re: [PATCH] ARM: dt: check MPIDR on MP devices built without SMP
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Florian Fainelli <f.fainelli@gmail.com>, linux-kernel@vger.kernel.org
-Date: Thu, 03 Oct 2019 21:39:38 +0200
-In-Reply-To: <17976e82-04da-d22d-5779-f50db63f98a2@gmail.com>
-References: <20191002114508.1089-1-nsaenzjulienne@suse.de>
- <17976e82-04da-d22d-5779-f50db63f98a2@gmail.com>
-User-Agent: Evolution 3.32.4 
+ id 1iG6zR-0003Oq-If
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 19:42:19 +0000
+X-Originating-IP: 86.202.229.42
+Received: from localhost (lfbn-lyo-1-146-42.w86-202.abo.wanadoo.fr
+ [86.202.229.42])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id B8B852010D;
+ Thu,  3 Oct 2019 19:42:03 +0000 (UTC)
+Date: Thu, 3 Oct 2019 21:42:03 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Eugen.Hristev@microchip.com
+Subject: Re: [PATCH 2/2] ARM: dts: at91: sama5d27_som1_ek: add mmc
+ capabilities for SDMMC0
+Message-ID: <20191003194203.GI575@piout.net>
+References: <1565252928-28994-1-git-send-email-eugen.hristev@microchip.com>
+ <1565252928-28994-2-git-send-email-eugen.hristev@microchip.com>
+ <20190808124217.wrmcxohw5i6ju2qe@M43218.corp.atmel.com>
+ <04fd74c3-a828-1064-b77b-f3de07a26190@intel.com>
+ <20190809062322.syuieymdqjs4e7lh@M43218.corp.atmel.com>
+ <fa0debbb-b84c-1f74-f8b8-8fdd7812aaee@microchip.com>
+ <20190813065306.tqz57hqeiofofbnz@M43218.corp.atmel.com>
+ <c2c355cd-b798-02de-0606-0f6442f6fdca@microchip.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <c2c355cd-b798-02de-0606-0f6442f6fdca@microchip.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_123944_237388_1C89E660 
-X-CRM114-Status: GOOD (  17.82  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191003_124217_916486_A9D1870C 
+X-CRM114-Status: GOOD (  20.79  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.200 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -60,100 +70,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kernelci.org bot" <bot@kernelci.org>, Russell King <linux@armlinux.org.uk>,
- linux-arm-kernel@lists.infradead.org, wahrenst@gmx.net
-Content-Type: multipart/mixed; boundary="===============1060089182193224932=="
+Cc: devicetree@vger.kernel.org, ulf.hansson@linaro.org,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ adrian.hunter@intel.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 03/10/2019 10:24:52+0000, Eugen.Hristev@microchip.com wrote:
+> 
+> 
+> On 13.08.2019 09:53, Ludovic Desroches wrote:
+> > On Mon, Aug 12, 2019 at 03:38:34PM +0000, Eugen.Hristev@microchip.com wrote:
+> >> On 09.08.2019 09:23, Ludovic Desroches wrote:
+> >>> On Thu, Aug 08, 2019 at 03:57:30PM +0300, Adrian Hunter wrote:
+> >>>> On 8/08/19 3:42 PM, Ludovic Desroches wrote:
+> >>>>> On Thu, Aug 08, 2019 at 10:35:43AM +0200, Eugen Hristev - M18282 wrote:
+> >>>>>> From: Eugen Hristev <eugen.hristev@microchip.com>
+> >>>>>>
+> >>>>>> Add mmc capabilities for SDMMC0 for this board.
+> >>>>>> With this enabled, eMMC connected card is detected as:
+> >>>>>>
+> >>>>>> mmc0: new DDR MMC card at address 0001
+> >>>>>>
+> >>>>>> Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
+> >>>>> Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
+> >>>>>
+> >>>>> I am interested to have the some insights about the use of sd-uhs-*
+> >>>>> properties.
+> >>>>>
+> >>>>> Our IP can't deal with 1V8 by itself. It has a 1V8SEL signal which can
+> >>>>> be used as the logic control input of a mux. So even if the IP claims
+> >>>>> to support UHS modes, it depends on the board.
+> >>>>>
+> >>>>> Are the sd-uhs-* properties a way to deal with this? I tend to think no
+> >>>>> as sdhci_setup_host() will set the caps depending on the content of the
+> >>>>> capabilities register. Do we have to use the SDHCI_QUIRK_MISSING_CAPS
+> >>>>> quirk or sdhci-caps/sdhci-caps-mask?
+> >>>>
+> >>>> There is "no-1-8-v" which it looks like sdhci-of-at91.c already supports:
+> >>>>
+> >>>>     sdhci_at91_probe() -> sdhci_get_of_property() -> sdhci_get_property()
+> >>>>
+> >>>>       	if (device_property_present(dev, "no-1-8-v"))
+> >>>> 		host->quirks2 |= SDHCI_QUIRK2_NO_1_8_V;
+> >>>>
+> >>>
+> >>> Right, I forgot this property. Thanks.
+> >>>
+> >>> Eugen, do you see cases we can't cover with this property?
+> >>
+> >> Hi,
+> >>
+> >> For current requirements and driver support, this should be enough.
+> >>
+> >> I noticed one thing regarding SD-Cards, if I add property sd-uhs-sdr104
+> >> the class 10 uhs1 cards are detected as SDR104 . Without this property
+> >> they are detected as DDR50. Any idea why the difference ? The controller
+> >> does not claim to have SDR104 support ?  We should add it ?
+> > 
+> > With the mainline, our tree or both? In our tree, SDR104 is removed from
+> > the capabilities.
+> > 
+> > Ludovic
+> > 
+> 
+> 
+> Hello Alexandre,
+> 
+> Anything more needed regarding this patch ?
+> 
 
---===============1060089182193224932==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-wn5QOuBuM4PXmz8oEO2H"
-
-
---=-wn5QOuBuM4PXmz8oEO2H
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, 2019-10-03 at 11:08 -0700, Florian Fainelli wrote:
-> On 10/2/19 4:45 AM, Nicolas Saenz Julienne wrote:
-> > Currently, in arm_dt_init_cpu_maps(), the hwid of the boot CPU is read
-> > from MPIDR on SMP devices and set to 0 for non SMP. This value is then
-> > matched with the DT cpu nodes' reg property in order to find the boot
-> > CPU in DT.
->=20
-> The code you change is about the "mpidr" variable, yet in your commit
-> message you refer to "hwid", that is a tad confusing for the reader.
-
-Sorry, it's indeed pretty confusing. I'll send a new version with a fixed
-description if there is no major push back.
-
-> > On MP devices build without SMP the cpu DT node contains the expected
-> > MPIDR yet the hwid is set to 0. With this the function fails to match
-> > the cpus and uses the default CPU logical map. Making it impossible to
-> > get the CPU's DT node further down the line. This causes issues with
-> > cpufreq-dt, as it triggers warnings when not finding a suitable DT node
-> > on CPU0.
-> >=20
-> > Change the way we choose whether to get MPIDR or not. Instead of
-> > depending on SMP check the number of CPUs defined in DT. Anything > 1
-> > means MPIDR will be available.
->=20
-> Except if someone accidentally wrote their Device Tree such as to have >
-> 1 CPU nodes, yet the CPU is not MP capable and reading the MPIDR
-> register does return the expected value, but that is wrong anyway.
-
-An UP device will most likely not have a MPIDR. That said I'm not sure this=
- is
-always true. As per ARM1176JZ's TRM[1], the RPi1 CPU, if one was to get the
-MPIDR it would raise an undefined exception.
-
-The way I see it's an acceptable outcome as the DT is clearly wrong.
-
-Regarda,
-Nicolas
-
-[1] See 3.1.10 Use of the system control coprocessor in
-http://infocenter.arm.com/help/topic/com.arm.doc.ddi0333h/DDI0333H_arm1176j=
-zs_r0p7_trm.pdf:
-
-	"Attempting to read from a nonreadable register, or to write to a
-	nonwriteable register causes Undefined exceptions."
-
-
---=-wn5QOuBuM4PXmz8oEO2H
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl2WTnoACgkQlfZmHno8
-x/4bvAgAtyk/Bgiw8yUW6YI6IH0WAjg+Xb0H7sklA8m+ex4biH6o0mDe3SCvFsVn
-uN0bSzNeoJxGsAdv5SM9bRMv0nlQSmwEWNTEgsiXKihrhrLOY/makXv9youT7egg
-nwaEQ+3W7T9xPjKXyYj/2GjdLVIrmno0eRdSJMht6vFBTZcrWDJQLbu5UwWwDfYP
-oYSQjPnMYwB5h1jlS7OYvggAoatV+6eMK7fseHVPf1GGWtk4TKus2JSudUlzMDN4
-xsa3PiRyZCudDgmEO7ZIwbRRj0sZPoePrTrVVRFuSbY2HnMCnZgN4LLs5egCt0lJ
-YD/FPhJPvHjSGKhBg7veHxguuSRpfQ==
-=sLCN
------END PGP SIGNATURE-----
-
---=-wn5QOuBuM4PXmz8oEO2H--
+I was not sure it was applicable, seeing the discussion. I'll apply it
+now.
 
 
-
---===============1060089182193224932==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1060089182193224932==--
-
-
