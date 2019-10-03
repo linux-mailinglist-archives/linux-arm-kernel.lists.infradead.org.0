@@ -2,92 +2,142 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69882CADAF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 20:00:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C77D8CADB2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 20:09:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bfbnk1illPzs3DlBYUxM2ucSApLTpFz7xDm/UfjtsSo=; b=D/nWMSOY38vzq9
-	5LC9m3RV3c+ugVFZvSrWt68Zv35TOEdJlalJA7sjPz3wer029rWjtLpIl996jgR89QZ+910bm7tSl
-	iuYrYkZ2c1VM8J5aN7gV3wRs0pwUCbQJ3bzWNURjJCGD6tKu9dT9AAbrhHjgwQD6ma3YAiEL0COEk
-	zU/W1TWBFSdxuv2OxQg256F0vRI7dpuwKsLaNPBm0XODHBjdu4FEeI2Rw5yRdKFguStrdtYESiS/6
-	3VR0asxXNbufKEn1hVwPZmtTWJpu8aHoheRdkdFpYhAvF/cP+WQcxPY9GiKovsTMkIUtzjvR+iH1i
-	oij5rWyKWFfrga9MLJrQ==;
+	List-Owner; bh=r+zYRdDraDfgGrpQTAz6kF4WYguIXrz2gfaqzRCXLS4=; b=ENz6R1vAeRaqwv
+	XJxaXUUSf5JCHDlFyXw2P7EkGfrzpjYoqvtNh3twTpu5eqkp5ekFurbP5LE6gcdRnUre6B7vYjiS/
+	Het/VC4L+A1HBEJ0WOzG05XUQwxdTtTfbTYTGOCWqasj3KHXE95oXDVE7LzrRcayrxiTc8X+I5Ob9
+	NVBvHRtICsQfZw773TRLS4i1XG+9FgcaHCU1mCKublU7csS2F0ApMRmWKfkTIqbxmhVVre4ipuLGD
+	dsxCqqcE5/h47D1O5pQWkAAD7JJyyDSBMPQmAnHeZMNr+4Ndtb0IFZx/FtyrLFIlimB7Su71xCFyC
+	SmRmcOoxIjkVhNOr+oIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG5Of-0005Zz-GP; Thu, 03 Oct 2019 18:00:13 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1iG5X9-0008UK-SZ; Thu, 03 Oct 2019 18:08:59 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG5OX-0004uk-Fw
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 18:00:07 +0000
-Received: by mail-lj1-x242.google.com with SMTP id j19so3801646lja.1
+ id 1iG5X2-0008Ta-Fl
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 18:08:53 +0000
+Received: by mail-pg1-x542.google.com with SMTP id i14so2205701pgt.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 03 Oct 2019 11:00:04 -0700 (PDT)
+ Thu, 03 Oct 2019 11:08:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=foBAlSvpvTkpQ7VEhjeGmdMB+F2z1Pq+N5FSEjakBEQ=;
- b=BjGNAQ1EvFbyh/Jpc8YYg2RIPXqZ4R9I8ANorOgy/RUlzr/T5SxOOyoXXLNem1wBig
- fqHvzGvwp26dRnxaSN5veub68aRdR46XhNn9lRdL7Ji0VLsUqKO86lLrF2JURYOI7cag
- UqF1lU6KVSt/GJN4HGlCRXmpLKttX9XKNc0h38yFpDQvPlmTmKe5l8ur6A9aMvGFr3kz
- 9BlK+sVtaNimjLLJyR6cW+3zmiZuU5KQMP19mSACqTBAK+mqz/GSX2pgb2QpXhgmOLFU
- 6oJ7RMHXIVfnnz6jSlQP6ZRKyZHOuQ0/Afdh8O0lwMsOh3yRQnVP0Kv5bzRFZOVhRTs9
- gDKA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=foBAlSvpvTkpQ7VEhjeGmdMB+F2z1Pq+N5FSEjakBEQ=;
- b=dQ+NeHyeGtqKcVLredKUlU468Yw3KxMA7q82VLoVsITK7kDPP9zflQi5QRQhLHpcn8
- G+L+72d1g3wfnk28c5Kx084+ET01f/4q43ZI/ExNWQNMFanGCpt+0J87Cwv6m7FB3iJz
- iJcFbuf16ytcVRcaaI68KF6k5dlhFpjO5AqDZbG++O7BMxAWqOPqPChT7VOnFnsZLhLr
- DmhIQ5nYN3zr8EDbz/8lNurlETbOfr1XLXghOIx5XghgYc0KuM0JW3DvRjTT6hJ8vLpm
- L0lW5TpFwa9WjlGs9wcbkh0M8k/v9hk8ZuO2lyT+SgoNtO1wjfC9Hi27mPSXAiTwpJHS
- +7AA==
-X-Gm-Message-State: APjAAAVSLejarziiUvhy1eAmeuzVgKdq9bcsF3PFD58XaKIAWsFOk8bQ
- JI8PDBkgN/1/zpjwv6g3/ReyZJnk
-X-Google-Smtp-Source: APXvYqzB/243LptNJmm7Ip7/LjxJnXggnO3AD2EBIARhaJ4sHQq87w/zqJnJG8wSIFdxHAk8F2VcqQ==
-X-Received: by 2002:a2e:8603:: with SMTP id a3mr6867293lji.98.1570125602905;
- Thu, 03 Oct 2019 11:00:02 -0700 (PDT)
-Received: from [192.168.2.145] ([94.29.34.231])
- by smtp.googlemail.com with ESMTPSA id k7sm660392lja.19.2019.10.03.11.00.01
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 03 Oct 2019 11:00:01 -0700 (PDT)
-Subject: Re: [PATCH 2/4] ARM: tegra: Enable PLLP bypass during Tegra124 LP1
-To: Stephen Warren <swarren@wwwdotorg.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Jonathan Hunter <jonathanh@nvidia.com>,
- Peter De Schrijver <pdeschrijver@nvidia.com>,
- Prashant Gaikwad <pgaikwad@nvidia.com>
-References: <20191001211346.104400-1-swarren@wwwdotorg.org>
- <20191001211346.104400-2-swarren@wwwdotorg.org>
- <437f030b-9e20-43e5-42ce-f98430d2149b@gmail.com>
- <485c9828-120a-8e62-bf85-c5d8407d3513@wwwdotorg.org>
-From: Dmitry Osipenko <digetx@gmail.com>
-Message-ID: <89e0a7bd-e8e4-5c64-b9d0-a30794ed657e@gmail.com>
-Date: Thu, 3 Oct 2019 21:00:00 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.1
+ bh=GuIjFVnstRywBL8Gyi4CDSaXWWKUxOeS5oqihjYg5Tc=;
+ b=V4d6Nxh1Ug2hw9/YMPEgUlF0wfzsKGUoO9wGWvJbmlcb3jK9jGKbw/fgUzlXs83bdS
+ xznqR9N8xoEDhYuD6Vo3ACaKFcNAIpR+zm4VE1WhRN+CtoLd7T7kkKrhg5XjmYwSOP8M
+ 2pRJdR+CbXqDB3wuA0yPTt3Lr45kG4AWwav1alQkD1XS4HXFXG6vbuoapt/0/fPS5Qyo
+ 9yMyxsbPL3EgA2TF4r06vxVJdQQGUj+ZWn0OAxWH3T/rmGBS6HdwWqUocN1TAjGY/CPh
+ IrWbmfjy2FOIOhx4sX/+G2fjoe1sWVkokBv2+gyCP7RwBmbq3d0IH44QYAou2temxAH0
+ 6KUA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=GuIjFVnstRywBL8Gyi4CDSaXWWKUxOeS5oqihjYg5Tc=;
+ b=PHrRlMbk+kAovdY7Z5brr0jt3p3i5bYEJI4iie1OaXc49kFk55oia+TLmdQzCBoged
+ vM6NW9HF0o3nKwaMFgKmaa2E6sPsjAnLpe3SPKWO0rGlfwzzTiUHvVZT2sih6svfmmoW
+ vAVpPkzLdzEVeERfUtl83SWxA8eOTQtYEDKIwJHci6Disj5bdlpRjYC+L6XZ4Jx08yt8
+ Age+zRYKHJIz9nLgX2QZDCXC4GATTJaSN/SSzxJWloJjAEBH/wnTeKuG5zbyU/92jKdC
+ N8y4FQFDEU/bdL3ejlsk139qgH9bjkM78soO+Kga7mFBM6Ia4wKGV5OI5YY3D8M7fbx7
+ tCdQ==
+X-Gm-Message-State: APjAAAUUh4F1KuhTs5W/lctBK4yIdJS2E7s6mwyJJ3UQZt2f5288zWnt
+ ZHQwR+yMPYz5amxDvhOFwOYBMOCT
+X-Google-Smtp-Source: APXvYqxsZtWFc3C27TObF1Bf8YDcgjKQBSLOP1raeFKi2QXrViEBBv4akG/N65q/0B3ifb8vY6WomA==
+X-Received: by 2002:a63:747:: with SMTP id 68mr10449181pgh.377.1570126131161; 
+ Thu, 03 Oct 2019 11:08:51 -0700 (PDT)
+Received: from [10.67.50.53] ([192.19.223.252])
+ by smtp.googlemail.com with ESMTPSA id z13sm3711782pfq.121.2019.10.03.11.08.47
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 03 Oct 2019 11:08:48 -0700 (PDT)
+Subject: Re: [PATCH] ARM: dt: check MPIDR on MP devices built without SMP
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-kernel@vger.kernel.org
+References: <20191002114508.1089-1-nsaenzjulienne@suse.de>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
+Message-ID: <17976e82-04da-d22d-5779-f50db63f98a2@gmail.com>
+Date: Thu, 3 Oct 2019 11:08:35 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <485c9828-120a-8e62-bf85-c5d8407d3513@wwwdotorg.org>
+In-Reply-To: <20191002114508.1089-1-nsaenzjulienne@suse.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_110005_541821_3FEC0BBC 
-X-CRM114-Status: GOOD (  19.94  )
+X-CRM114-CacheID: sfid-20191003_110852_552591_A598942B 
+X-CRM114-Status: GOOD (  25.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (digetx[at]gmail.com)
+ provider (f.fainelli[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -108,71 +158,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Boyd <sboyd@kernel.org>, linux-tegra@vger.kernel.org,
- Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Russell King <linux@armlinux.org.uk>, linux-arm-kernel@lists.infradead.org,
+ "kernelci.org bot" <bot@kernelci.org>, wahrenst@gmx.net
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MDMuMTAuMjAxOSAxOTozNCwgU3RlcGhlbiBXYXJyZW4g0L/QuNGI0LXRgjoKPiBPbiAxMC8zLzE5
-IDU6MjcgQU0sIERtaXRyeSBPc2lwZW5rbyB3cm90ZToKPj4gMDIuMTAuMjAxOSAwMDoxMywgU3Rl
-cGhlbiBXYXJyZW4g0L/QuNGI0LXRgjoKPj4+IEZyb206IFN0ZXBoZW4gV2FycmVuIDxzd2FycmVu
-QG52aWRpYS5jb20+Cj4+Pgo+Pj4gRm9yIGEgbGl0dGxlIG92ZXIgYSB5ZWFyLCBVLUJvb3QgaGFz
-IGNvbmZpZ3VyZWQgdGhlIGZsb3cgY29udHJvbGxlciB0bwo+Pj4gcGVyZm9ybSBhdXRvbWF0aWMg
-UkFNIHJlLXJlcGFpciBvbiBvZmYtPm9uIHBvd2VyIHRyYW5zaXRpb25zIG9mIHRoZSBDUFUKPj4+
-IHJhaWwxXS4gVGhpcyBpcyBtYW5kYXRvcnkgZm9yIGNvcnJlY3Qgb3BlcmF0aW9uIG9mIFRlZ3Jh
-MTI0LiBIb3dldmVyLCBSQU0KPj4+IHJlLXJlcGFpciByZWxpZXMgb24gY2VydGFpbiBjbG9ja3Ms
-IHdoaWNoIHRoZSBrZXJuZWwgbXVzdCBlbmFibGUgYW5kCj4+PiBsZWF2ZSBydW5uaW5nLiBQTExQ
-IGlzIG9uZSBvZiB0aG9zZSBjbG9ja3MuIFRoaXMgY2xvY2sgaXMgc2h1dCBkb3duCj4+PiBkdXJp
-bmcgTFAxIGluIG9yZGVyIHRvIHNhdmUgcG93ZXIuIEVuYWJsZSBieXBhc3MgKHdoaWNoIEkgYmVs
-aWV2ZSByb3V0ZXMKPj4+IG9zY19kaXZfY2xrLCBlc3NlbnRpYWxseSB0aGUgY3J5c3RhbCBjbG9j
-aywgdG8gdGhlIFBMTCBvdXRwdXQpIHNvIHRoYXQKPj4+IHRoaXMgY2xvY2sgc2lnbmFsIHRvZ2ds
-ZXMgZXZlbiB0aG91Z2ggdGhlIFBMTCBpcyBub3QgYWN0aXZlLiBUaGlzIGlzCj4+PiByZXF1aXJl
-ZCBzbyB0aGF0IExQMSBwb3dlciBtb2RlIChzeXN0ZW0gc3VzcGVuZCkgb3BlcmF0ZXMgY29ycmVj
-dGx5Lgo+Pj4KPj4+IFRoZSBieXBhc3MgY29uZmlndXJhdGlvbiBtdXN0IHRoZW4gYmUgdW5kb25l
-IHdoZW4gcmVzdW1pbmcgZnJvbSBMUDEsIHNvCj4+PiB0aGF0IGFsbCBwZXJpcGhlcmFsIGNsb2Nr
-cyBydW4gYXQgdGhlIGV4cGVjdGVkIHJhdGUuIFdpdGhvdXQgdGhpcywgbWFueQo+Pj4gcGVyaXBo
-ZXJhbHMgd29uJ3Qgd29yayBjb3JyZWN0bHk7IGZvciBleGFtcGxlLCB0aGUgVUFSVCBiYXVkIHJh
-dGUgd291bGQKPj4+IGJlIGluY29ycmVjdC4KPj4+Cj4+PiBOVklESUEncyBkb3duc3RyZWFtIGtl
-cm5lbCBjb2RlIG9ubHkgZG9lcyB0aGlzIGlmIG5vdCBjb21waWxlZCBmb3IKPj4+IFRlZ3JhMzAs
-IHNvIHRoZSBhZGRlZCBjb2RlIGlzIG1hZGUgY29uZGl0aW9uYWwgdXBvbiB0aGUgY2hpcCBJRC4g
-TlZJRElBJ3MKPj4+IGRvd25zdHJlYW0gY29kZSBtYWtlcyB0aGlzIGNoYW5nZSBjb25kaXRpb25h
-bCB1cG9uIHRoZSBhY3RpdmUgQ1BVCj4+PiBjbHVzdGVyLiBUaGUgdXBzdHJlYW0ga2VybmVsIGN1
-cnJlbnRseSBkb2Vzbid0IHN1cHBvcnQgY2x1c3RlciBzd2l0Y2hpbmcsCj4+PiBzbyB0aGlzIHBh
-dGNoIGRvZXNuJ3QgdGVzdCB0aGUgYWN0aXZlIENQVSBjbHVzdGVyIElELgo+Pj4KPj4+IFsxXSAz
-Y2M3OTQyYTRhZTUgQVJNOiB0ZWdyYTogaW1wbGVtZW50IFJBTSByZXBhaXIKPj4+Cj4+PiBSZXBv
-cnRlZC1ieTogSm9uYXRoYW4gSHVudGVyIDxqb25hdGhhbmhAbnZpZGlhLmNvbT4KPj4+IENjOiBz
-dGFibGVAdmdlci5rZXJuZWwub3JnCj4+PiBTaWduZWQtb2ZmLWJ5OiBTdGVwaGVuIFdhcnJlbiA8
-c3dhcnJlbkBudmlkaWEuY29tPgo+Pj4gLS0tCj4+PiDCoCBhcmNoL2FybS9tYWNoLXRlZ3JhL3Ns
-ZWVwLXRlZ3JhMzAuUyB8IDExICsrKysrKysrKysrCj4+PiDCoCAxIGZpbGUgY2hhbmdlZCwgMTEg
-aW5zZXJ0aW9ucygrKQo+Pj4KPj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9tYWNoLXRlZ3JhL3Ns
-ZWVwLXRlZ3JhMzAuUyBiL2FyY2gvYXJtL21hY2gtdGVncmEvc2xlZXAtdGVncmEzMC5TCj4+PiBp
-bmRleCBiNDA4ZmE1NmViODkuLjY5MjJkZDhkM2UyZCAxMDA2NDQKPj4+IC0tLSBhL2FyY2gvYXJt
-L21hY2gtdGVncmEvc2xlZXAtdGVncmEzMC5TCj4+PiArKysgYi9hcmNoL2FybS9tYWNoLXRlZ3Jh
-L3NsZWVwLXRlZ3JhMzAuUwo+Pj4gQEAgLTM3MCw2ICszNzAsMTQgQEAgX3BsbF9tX2NfeF9kb25l
-Ogo+Pj4gwqDCoMKgwqDCoCBwbGxfbG9ja2VkIHIxLCByMCwgQ0xLX1JFU0VUX1BMTENfQkFTRQo+
-Pj4gwqDCoMKgwqDCoCBwbGxfbG9ja2VkIHIxLCByMCwgQ0xLX1JFU0VUX1BMTFhfQkFTRQo+Pj4g
-wqAgK8KgwqDCoCB0ZWdyYV9nZXRfc29jX2lkIFRFR1JBX0FQQl9NSVNDX0JBU0UsIHIxCj4+PiAr
-wqDCoMKgIGNtcMKgwqDCoCByMSwgI1RFR1JBMzAKPj4+ICvCoMKgwqAgYmVxwqDCoMKgIDFmCj4+
-Cj4+IFdoYXQgYWJvdXQgVDExNCwgb3IgZG9lcyBpdCBuZWVkIGVuYWJsZWQgUExMUCBhcyB3ZWxs
-Pwo+IAo+IEknbSBub3doZXJlIG5lYXIgYXMgZmFtaWxpYXIgd2l0aCBUMTE0IGFzIFQxMjQsIHNv
-IEkgY2FuJ3QgYmUgMTAwJSBzdXJlLiBIb3dldmVyLCBhIHZlcnkKPiBxdWljayBsb29rIGF0IHRo
-ZSBDQVIgc2VjdGlvbiBpbiB0aGUgVDExNCBUUk0gZG9lcyBzaG93IHRoZSBzYW1lIGdhdGUvbXV4
-IHN0cnVjdHVyZSBhcm91bmQKPiBhIHJlc2hpZnQgYW5kIGZ1c2UgY2xvY2ssIHNvIEkgYXNzdW1l
-IHRoZSByZXF1aXJlbWVudCBpcyBpZGVudGljYWwgdGhlcmUuCgpJbmRlZWQsIFQxMTQgVFJNIHN1
-Z2dlc3RzIHRoYXQgaXQgaGFzIHRoZSBzYW1lIHJlcXVpcmVtZW50LgoKPiBBbHNvLCBOVklESUEn
-cyBkb3duc3RyZWFtIGtlcm5lbCBoYXMgYSBjb21waWxlLXRpbWUgaWZkZWYgYXJvdW5kIHRoZSBj
-b2RlIEkndmUgYWRkZWQgaGVyZS4KPiBJdCdzIG5vdCBjb21waWxlZCBmb3IgVDMwIHNwZWNpZmlj
-YWxseSwgYW5kIGlzIGNvbXBpbGVkIGZvciBhbnl0aGluZyBlbHNlLCB3aGljaCBJIGJlbGlldmUK
-PiBtZWFucyBib3RoIFQxMTQgYW5kIFQxMjQuCj4gCj4gSW4gcGF0Y2ggMSBpbiB0aGlzIHNlcmll
-cywgSSBvbmx5IGVuYWJsZWQgdGhlIGZ1c2UgY2xvY2sgZm9yIFQxMjQsIHNpbmNlIEkgZG9uJ3Qg
-aGF2ZSBhCj4gVDExNCBzeXN0ZW0gdG8gdGVzdCBhbnkgbW9yZS4gSG93ZXZlciwgdGhlIHJldmlz
-ZWQgcGF0Y2ggMSB0aGF0IFRoaWVycnkgYW5kIEkgYXJlCj4gZGlzY3Vzc2luZyB3b3VsZCBlbmFi
-bGUgdGhlIGZ1c2UgY2xvY2sgb24gYWxsIFNvQ3MsIGFuZCBoZW5jZSBtYWtlIHRoZSBjb2RlIHdv
-cmsKPiBpZGVudGljYWxseSBvbiBUMTE0IGFzIGl0IGRvZXMgb24gVDEyNC4KClRoYW5rcyBmb3Ig
-dGhlIGNsYXJpZmljYXRpb24uCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On 10/2/19 4:45 AM, Nicolas Saenz Julienne wrote:
+> Currently, in arm_dt_init_cpu_maps(), the hwid of the boot CPU is read
+> from MPIDR on SMP devices and set to 0 for non SMP. This value is then
+> matched with the DT cpu nodes' reg property in order to find the boot
+> CPU in DT.
+
+The code you change is about the "mpidr" variable, yet in your commit
+message you refer to "hwid", that is a tad confusing for the reader.
+
+> 
+> On MP devices build without SMP the cpu DT node contains the expected
+> MPIDR yet the hwid is set to 0. With this the function fails to match
+> the cpus and uses the default CPU logical map. Making it impossible to
+> get the CPU's DT node further down the line. This causes issues with
+> cpufreq-dt, as it triggers warnings when not finding a suitable DT node
+> on CPU0.
+> 
+> Change the way we choose whether to get MPIDR or not. Instead of
+> depending on SMP check the number of CPUs defined in DT. Anything > 1
+> means MPIDR will be available.
+
+Except if someone accidentally wrote their Device Tree such as to have >
+1 CPU nodes, yet the CPU is not MP capable and reading the MPIDR
+register does return the expected value, but that is wrong anyway.
+
+> 
+> This was seen on a Raspberry Pi 2 build with bcm2835_defconfig.
+> 
+> Reported-by: "kernelci.org bot" <bot@kernelci.org>
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> ---
+>  arch/arm/kernel/devtree.c | 5 ++++-
+>  1 file changed, 4 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm/kernel/devtree.c b/arch/arm/kernel/devtree.c
+> index 39c978698406..a924fda9abc8 100644
+> --- a/arch/arm/kernel/devtree.c
+> +++ b/arch/arm/kernel/devtree.c
+> @@ -74,7 +74,7 @@ void __init arm_dt_init_cpu_maps(void)
+>  	struct device_node *cpu, *cpus;
+>  	int found_method = 0;
+>  	u32 i, j, cpuidx = 1;
+> -	u32 mpidr = is_smp() ? read_cpuid_mpidr() & MPIDR_HWID_BITMASK : 0;
+> +	u32 mpidr = 0;
+>  
+>  	u32 tmp_map[NR_CPUS] = { [0 ... NR_CPUS-1] = MPIDR_INVALID };
+>  	bool bootcpu_valid = false;
+> @@ -83,6 +83,9 @@ void __init arm_dt_init_cpu_maps(void)
+>  	if (!cpus)
+>  		return;
+>  
+> +	if (is_smp() || of_get_child_count(cpus) > 1)
+> +		mpidr = read_cpuid_mpidr() & MPIDR_HWID_BITMASK;
+> +
+>  	for_each_of_cpu_node(cpu) {
+>  		const __be32 *cell;
+>  		int prop_bytes;
+> 
+
+
+-- 
+Florian
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
