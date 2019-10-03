@@ -2,54 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B47BCB0A9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 22:59:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 985C2CB0AD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 22:59:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XoW1JXxZP4oCFB92llFqrMTOdaeSy9JZRFGGHJl93sg=; b=V7/sU3Kanbqv88
-	UUYcRubBI2iGp40nplg8u3m36qwXuzGbkpIfY1Qoc6NOoTPHcskCgEu05/TPuQa8xmhIvsSscPbhF
-	Fii8CH9rrZMOMnLGrujbX2Gk3cPuDodrrG31wBt8riEQ77ULJN1Je+uNGQQyylNM33+5MR3k69EfZ
-	4qaeuaKNk3k6v+9QU5W6157t5PtFbICxo2JZ+Krrzc9UsZdOI/I/Kcq1+sK0OTpienf7vm7fQfNZg
-	MVN0CtQVrGTxOBCYFdWkph5/6TkO7E38Yd6qctZEWgZBYZ9rFEkUGbt/2mHwLj+RyqVEjSHD9ddXE
-	ijfdgqIDpAiklqnVssNw==;
+	List-Owner; bh=lC2VC54t2hK7o9yZOoQtoV27uwaiQ7GnfLD7NjFB7+c=; b=DmUDlK5wdYS9Xr
+	6vLYpPrVdXv4PJPbhpJQowdshONHVA8+J7Nu+ErzxYWJKdsNpQc7FSsXbGQgj9jSx71awUcaWRYvS
+	qdB4tZSNa2NeDM6aqQMOe2P5THxvmubKwJBlon1omueNRQidyJeq0vTPV3b0HNz5dBheI9BEiLVCz
+	jAocfpn9Gr+9IziBNbLD9aj5wGhmGOrTEKHLiRrhaznD/hj3wI8c3/wx+ACsgmsFFSQR0juXD2MjO
+	8vAnC9CXH/xaJeXqvPtI89TH/ZCpRFX5Q1UIqhrl1/gjLhrBAgaMS73BSS/leegchuHZha9u/dfMj
+	PbpOsW+yHSQhd8U8f+rA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG8CH-0001hV-PC; Thu, 03 Oct 2019 20:59:37 +0000
+	id 1iG8Ca-0001su-Sz; Thu, 03 Oct 2019 20:59:56 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG8C9-0001gO-O8
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 20:59:30 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5943A2086A;
- Thu,  3 Oct 2019 20:59:29 +0000 (UTC)
+ id 1iG8CG-0001mU-QH
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 20:59:38 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DEB3421783;
+ Thu,  3 Oct 2019 20:59:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570136369;
- bh=+pRfoOO7vbNetx3C0ZzaCJWPfudCEYI1WCY6NU95QVs=;
- h=In-Reply-To:References:From:To:Cc:Subject:Date:From;
- b=dXsQ6d8BdsympZ1beP5XI8Unh+SRTzRgqXebdbS3KC+XkzCq7X3GXjMXtuLGLRo8J
- uu7CRHVGYOMZEMRBoy9UOE7dTSrJ6dqFTB6Clt/SQ3fCNiW/Hp1ZNLV8DqBUu2yUZa
- CPaur9pfgJXCSK8+Hdkv8bfv5UBD+bbLVJJwFGZU=
+ s=default; t=1570136376;
+ bh=4rPkhVv3VltCH7eEROzE+860uR+lmofxgyA52H8gw0c=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=dna1aFCt6gVcTc+4fmPTB4uadmfs7yI9pJ0SDKtN2T5SNiJWktxV+beMyzLsAgwWY
+ OLy8QfHDcMBZEFiDU3TNXETv2BIjWhBSq46X/S6uZuBXEwP96RfLefXj4cxnO96bVB
+ 0RNdfSZz84UdxnExPCPXodKVZ6+yl7SNIkregb0o=
+Date: Thu, 3 Oct 2019 21:59:32 +0100
+From: Will Deacon <will@kernel.org>
+To: Nick Desaulniers <ndesaulniers@google.com>
+Subject: Re: [PATCH v5 2/6] arm64: vdso32: Detect binutils support for dmb
+ ishld
+Message-ID: <20191003205931.d3vp4bh7wdu4oe7u@willie-the-truck>
+References: <20191003174838.8872-1-vincenzo.frascino@arm.com>
+ <20191003174838.8872-3-vincenzo.frascino@arm.com>
+ <CAKwvOdmhyVHREHvyB0wL2GfMsE8GcJ1Ouj_8ifrR4hU8kBYukQ@mail.gmail.com>
+ <20191003204944.6wuzflqkjdpawzvp@willie-the-truck>
+ <CAKwvOdm4ccfhXDDSKXgdN4qkn2NHwAHKCwRV7OqLEG_PQj09vQ@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <1569321191-27606-1-git-send-email-eugen.hristev@microchip.com>
-References: <1569321191-27606-1-git-send-email-eugen.hristev@microchip.com>
-From: Stephen Boyd <sboyd@kernel.org>
-To: Eugen.Hristev@microchip.com, alexandre.belloni@bootlin.com,
- linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, mturquette@baylibre.com
-Subject: Re: [PATCH] clk: at91: sam9x60: fix programmable clock
-User-Agent: alot/0.8.1
-Date: Thu, 03 Oct 2019 13:59:28 -0700
-Message-Id: <20191003205929.5943A2086A@mail.kernel.org>
+Content-Disposition: inline
+In-Reply-To: <CAKwvOdm4ccfhXDDSKXgdN4qkn2NHwAHKCwRV7OqLEG_PQj09vQ@mail.gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_135929_804809_C4260F54 
-X-CRM114-Status: UNSURE (   6.59  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191003_135936_885387_8DD81307 
+X-CRM114-Status: GOOD (  13.57  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,26 +81,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Eugen.Hristev@microchip.com
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, LKML <linux-kernel@vger.kernel.org>,
+ Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Eugen.Hristev@microchip.com (2019-09-24 03:39:09)
-> From: Eugen Hristev <eugen.hristev@microchip.com>
+On Thu, Oct 03, 2019 at 01:56:39PM -0700, Nick Desaulniers wrote:
+> On Thu, Oct 3, 2019 at 1:49 PM Will Deacon <will@kernel.org> wrote:
+> >
+> > On Thu, Oct 03, 2019 at 01:18:16PM -0700, Nick Desaulniers wrote:
+> > > On Thu, Oct 3, 2019 at 10:48 AM Vincenzo Frascino
+> > > <vincenzo.frascino@arm.com> wrote:
+> > > >
+> > > > Older versions of binutils that do not support certain types of memory
+> > > > barriers can cause build failure of the vdso32 library.
+> > >
+> > > Do you know specific version numbers of binutils that are affected?
+> > > May be helpful to have in the commit message just for future
+> > > travelers.
+> >
+> > A quick bit of archaeology suggests e797f7e0b2be added this back in 2012,
+> > which seems to correlate with the 2.24 release.
 > 
-> The prescaler mask for sam9x60 must be 0xff (8 bits).
-> Being set to 0, means that we cannot set any prescaler, thus the
-> programmable clocks do not work (except the case with prescaler 0)
-> Set the mask accordingly in layout struct.
-> 
-> Fixes: 01e2113de9a5 ("clk: at91: add sam9x60 pmc driver")
-> Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
-> ---
+> Cool, thanks for digging.  Vincenzo, can we please add that to the
+> commit message?
 
-Applied to clk-fixes
+If this is the only change, then I can add it when I apply -- no need to
+respin just for this! (although I'm also writing this to remind myself :)
 
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
