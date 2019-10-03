@@ -2,53 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 135F5CA141
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 17:40:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 094A8CA154
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 17:49:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xqJSr1iV2VNRLbJxh43pJHWt8VUBhdm+A3BZ6iqTfkA=; b=cV+1SG+s1d6e3a
-	1+PGzYfEBAvrblClbfXq0lFD4/tRl78AifVRkc+ZljgAI97MjbSl9Nx9QKJBd6Gxug5U2Jgx4IW2H
-	u7DLaEq7EjRQHchTASXzfJ+QsZH60UDBCDA/hGugyO2Uf83xAi7Yg4JGFiBg5gHadHd9jaWNGtOY7
-	5fvUaB+AmLi2oPLW7NynMttYSC0Gzz992Zg2CID14HRtPLOudz+yBa/udYSf+v2arClx78YekZPJK
-	Bbpw5tMQY/I0CkYEAJl76D0yQp7NEfwh9Aas6CQHuOVfGRfRsU2D6HxeU7jDIjq1vZVDMkBK/bym5
-	7bwdZeAU1mJs1wfNB4kQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+5SE4AGehUmfDJ/22lqv5WCkHwxN+lzT/r36e64qASs=; b=EWEMf9ekm3owjd
+	7ed0vk7MnQ1HSo+r11aEwvuTaE2b3q1OW8gh+GiLpqoMHxFdblJ376rqQvaeXwj7eT8Y6qCnyeE4u
+	ZBIG6E0UyoZ8SIg8T7ZIql3KuulH9bqrmTt1tsSfht99cALPh2B4D3O2J40et3mOTRxCA0iEpp2Q5
+	5rgjqspaNBrSz1CTv5tc+8BYpQQJQZfip91FjE6yxdy/bxTnDLoYWWZwUKCyuHVcq8YGMXOnuoDFQ
+	XFbGvJ4R0vtVDHwh8Oa6l+YMezG2mnVq8MDSKB8jfoAx8MNDrRaIsxqUCbEQ47bCzQLcwYVs9Nm5q
+	NoylT/5VirnwNOgUzbHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG3DD-0008SU-S2; Thu, 03 Oct 2019 15:40:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG3D6-0007y1-CX
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 15:40:09 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2D525337;
- Thu,  3 Oct 2019 08:40:05 -0700 (PDT)
-Received: from arrakis.emea.arm.com (unknown [10.1.196.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 758053F534;
- Thu,  3 Oct 2019 08:40:04 -0700 (PDT)
-Date: Thu, 3 Oct 2019 16:40:02 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH] arm64: mm: avoid virt_to_phys(init_mm.pgd)
-Message-ID: <20191003154002.GH21629@arrakis.emea.arm.com>
-References: <20191003094932.10216-1-mark.rutland@arm.com>
+	id 1iG3Le-00025L-Jg; Thu, 03 Oct 2019 15:48:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iG3LU-00024l-MV
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 15:48:49 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3254F20700;
+ Thu,  3 Oct 2019 15:48:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570117727;
+ bh=EE5Bkv2KoKRIFlmamCmZbMdsVL5JyAd3sPSGmn2juVw=;
+ h=From:To:Cc:Subject:Date:From;
+ b=2D6q22KuDwlYJSH/zY34xSvhG1V8aH5Pp5Vv15e0d4oVlTmox4zctkuwpyOIJ2gmp
+ Ds65RRu4HgPfQgYb37LQYbBOdkDyIP9lbkH6DB94aYna5/+J+q9K9UTM6jm3Ir5xdu
+ leTV3pra1o7uzm6dOrYhYnZ4CPEI0yExBAyx8XZ4=
+From: Maxime Ripard <mripard@kernel.org>
+To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>, sakari.ailus@linux.intel.com,
+ mchehab@kernel.org
+Subject: [PATCH 1/2] dt-bindings: media: sun4i-csi: Drop the module clock
+Date: Thu,  3 Oct 2019 17:48:41 +0200
+Message-Id: <20191003154842.248763-1-mripard@kernel.org>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191003094932.10216-1-mark.rutland@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_084008_477025_8A517E3F 
-X-CRM114-Status: GOOD (  17.39  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191003_084848_762475_82181C7C 
+X-CRM114-Status: GOOD (  10.51  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,61 +75,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Ripard <mripard@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 03, 2019 at 10:49:32AM +0100, Mark Rutland wrote:
-> If we take an unhandled fault in the kernel, we call show_pte() to dump
-> the {PGDP,PGD,PUD,PMD,PTE} values for the corresponding page table walk,
-> where the PGDP value is virt_to_phys(mm->pgd).
-> 
-> The boot-time and runtime kernel page tables, init_pg_dir and
-> swapper_pg_dir respectively, are kernel symbols. Thus, it is not valid
-> to call virt_to_phys() on either of these, though we'll do so if we take
-> a fault on a TTBR1 address.
-> 
-> When CONFIG_DEBUG_VIRTUAL is not selected, virt_to_phys() will silently
-> fix this up. However, when CONFIG_DEBUG_VIRTUAL is selected, this
-> results in splats as below. Depending on when these occur, they can
-> happen to suppress information needed to debug the original unhandled
-> fault, such as the backtrace:
-> 
-> | Unable to handle kernel paging request at virtual address ffff7fffec73cf0f
-> | Mem abort info:
-> |   ESR = 0x96000004
-> |   EC = 0x25: DABT (current EL), IL = 32 bits
-> |   SET = 0, FnV = 0
-> |   EA = 0, S1PTW = 0
-> | Data abort info:
-> |   ISV = 0, ISS = 0x00000004
-> |   CM = 0, WnR = 0
-> | ------------[ cut here ]------------
-> | virt_to_phys used for non-linear address: 00000000102c9dbe (swapper_pg_dir+0x0/0x1000)
-> | WARNING: CPU: 1 PID: 7558 at arch/arm64/mm/physaddr.c:15 __virt_to_phys+0xe0/0x170 arch/arm64/mm/physaddr.c:12
-> | Kernel panic - not syncing: panic_on_warn set ...
-> | SMP: stopping secondary CPUs
-> | Dumping ftrace buffer:
-> |    (ftrace buffer empty)
-> | Kernel Offset: disabled
-> | CPU features: 0x0002,23000438
-> | Memory Limit: none
-> | Rebooting in 1 seconds..
-> 
-> We can avoid this by ensuring that we call __pa_symbol() for
-> init_mm.pgd, as this will always be a kernel symbol. As the dumped
-> {PGD,PUD,PMD,PTE} values are the raw values from the relevant entries we
-> don't need to handle these specially.
-> 
-> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: James Morse <james.morse@arm.com>
-> Cc: Will Deacon <will@kernel.org>
+It turns out that what was thought to be the module clock was actually the
+clock meant to be used by the sensor, and isn't playing any role with the
+CSI controller itself. Let's drop that clock from our binding.
 
-Acked-by: Catalin Marinas <catalin.marinas@arm.com>
+Fixes: c5e8f4ccd775 ("media: dt-bindings: media: Add Allwinner A10 CSI binding")
+Reported-by: Chen-Yu Tsai <wens@csie.org>
+Signed-off-by: Maxime Ripard <mripard@kernel.org>
+---
+ .../devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
+index 5dd1cf490cd9..d3e423fcb6c2 100644
+--- a/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
++++ b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
+@@ -27,14 +27,12 @@ properties:
+   clocks:
+     items:
+       - description: The CSI interface clock
+-      - description: The CSI module clock
+       - description: The CSI ISP clock
+       - description: The CSI DRAM clock
+ 
+   clock-names:
+     items:
+       - const: bus
+-      - const: mod
+       - const: isp
+       - const: ram
+ 
+@@ -89,9 +87,8 @@ examples:
+         compatible = "allwinner,sun7i-a20-csi0";
+         reg = <0x01c09000 0x1000>;
+         interrupts = <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
+-        clocks = <&ccu CLK_AHB_CSI0>, <&ccu CLK_CSI0>,
+-                 <&ccu CLK_CSI_SCLK>, <&ccu CLK_DRAM_CSI0>;
+-        clock-names = "bus", "mod", "isp", "ram";
++        clocks = <&ccu CLK_AHB_CSI0>, <&ccu CLK_CSI_SCLK>, <&ccu CLK_DRAM_CSI0>;
++        clock-names = "bus", "isp", "ram";
+         resets = <&ccu RST_CSI0>;
+ 
+         port {
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
