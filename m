@@ -2,99 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D140FC9D3D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 13:28:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C2CFC9D45
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 13:30:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YnlCwm1gxjlfne00hthK7FMVVtTNvU05tRtlTzkkRaw=; b=q8yjU1Ema61Cx3
-	lCivnTnp7JFGAiIqTRhK05OmSBKduZZVoAmwQuS1zRZkgAi5bu6AA9u0XxCCjfPW+zys3e+QKDM4/
-	Gym9GJhPPAiIMByQD716xnWoJ0TssVgXpZkF9j/qpzrAngHi9uRrg6PnTF3BNX9Cles7UeDcQedDr
-	2+++UGsjZkq4B2SwhsC6MggLLzDfawdjwvA5JkEWDMUKqK+77jhxrBSvBuM3flwrA6LUsVtuY3Rzv
-	8qAWTu08YHOCqpPqOKnkDvI2141JNbJhm5VLHXvy0hIbfndfrHij9ksJS/FEJgc4RvyrJQoWHJy7T
-	1c2iND9yqCHaDr4+JYfQ==;
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
+	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Z0tSvorHCFRkSynwyDmJliBgCS4JxgGiKQ8xPN7iJlM=; b=Ljag6Bg4xMJvMS
+	/qBVpR+PR8R7xP5QqzzUATYSAN+xSEbte/ik9ZSPAlE6fz379yv6izhRKxJNG0sNr/OAb4cpuVjmQ
+	8Rjix05oo6oorLYyMcOzZAtJhZcAfUXMoRtcqgjPbQcWXQac4bXhUS0fzeaIUbN8mEXmDB5RBJxx8
+	TXOQIQNUiLQj1YEUDXvd3t2aL5oTfEe3wR7X4AIiy597Twtnxl8XjFvaDQwSMQZItOIq+dPL9ze7g
+	Qpqp/mpZ7cmpm1YbypoZg04Mt5xuPy8tW2iHggc2O9m/IrYWWlTK26n6H7naW8G3KnoSESRQNXM7q
+	hZdtEX3+868KtB/7TaTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFzHF-0005nc-MX; Thu, 03 Oct 2019 11:28:09 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1iFzJX-0007Rv-TV; Thu, 03 Oct 2019 11:30:31 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFzH6-0005mx-Oi
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 11:28:02 +0000
-Received: by mail-lf1-x144.google.com with SMTP id c195so1526823lfg.9
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 03 Oct 2019 04:28:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=DX8a7Wlt/Jyh2iSwaP1Iud+IQGHxDyI7SdlcgZ9JV7Y=;
- b=pfqPTuJmFynvCqEI3kn+T5pWyCZffPTOYirFNHFp0FbLKRR+DK3QmmtLKlMpDrUPPd
- xDHTetajrPgm4b4CMV68RYsM8qSAC49VSKGhj1fydy3VhTMYDaVVOBfLgAg3wuEA6gfZ
- K0UD09GaX5UFcOr2cWAmRqirvAgq2N2mVTtby678jD4Hp9E8bSshqX2zEnBoIfL/bdPg
- xPV2gDDNbCOE8FVjwq/1rhKsa5fsGsbL/Vb9JQ0H4xtvy3oEX1d/cKvHUv0NF2SAUZiZ
- j4SvyvLd/8+fve1rVEtIW5nvsZesjmZi9KeYZdSRLx3nn6z0tnm1O7H+ElwoA+C/se4l
- 4cUA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=DX8a7Wlt/Jyh2iSwaP1Iud+IQGHxDyI7SdlcgZ9JV7Y=;
- b=hEEzXl4yOAt+AFgeVlWy8tRx5+eDaIZV+fXBb5OvkZ4ZUIATq2DS14IWhxQaO7MMNk
- /R0xn1sT7I+ZS3Po3MDNS/nyUrMkUXOTGElaQpmOkN42cXkkDFX+4Jf15+vm2tf+WN/2
- mWUil4RUwCEbdxy5sNS1JQBGwtJc0Z6r508wW/zdV+n8Z5kgTE/9ZIBKyNfSITOnnCSy
- j9V6Fb2ndl/lZuwLBQW1VnbpUfYtZwyO5nlvTfeD+1jjt+BhDXbKrcFrtCXl2/8RKYzN
- Ax4XIkHIw4gPaNUgOmqAsp7wviWf9Y3eSAepELW5BA00yO2XkX2WAUWkaQq0Lolqibap
- 5C0A==
-X-Gm-Message-State: APjAAAUZRuJ1cRIBgZo07z4ZVAzlaJiE2BkbiYWeoj24M04yvRL0iiop
- VPJOfILpk0saHngFVLM/TZIlHBnQ
-X-Google-Smtp-Source: APXvYqxCzTx3UVy7LuF2MGP2yfgdzHfJL60X+llcTt9cRqi0W6LnmbkFaXU0eI545HYjmvDNlGYALQ==
-X-Received: by 2002:ac2:43b8:: with SMTP id t24mr3801098lfl.24.1570102079035; 
- Thu, 03 Oct 2019 04:27:59 -0700 (PDT)
-Received: from [192.168.2.145] ([94.29.34.231])
- by smtp.googlemail.com with ESMTPSA id q19sm466598ljj.73.2019.10.03.04.27.57
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 03 Oct 2019 04:27:58 -0700 (PDT)
-Subject: Re: [PATCH 2/4] ARM: tegra: Enable PLLP bypass during Tegra124 LP1
-To: Stephen Warren <swarren@wwwdotorg.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Jonathan Hunter <jonathanh@nvidia.com>,
- Peter De Schrijver <pdeschrijver@nvidia.com>,
- Prashant Gaikwad <pgaikwad@nvidia.com>
-References: <20191001211346.104400-1-swarren@wwwdotorg.org>
- <20191001211346.104400-2-swarren@wwwdotorg.org>
-From: Dmitry Osipenko <digetx@gmail.com>
-Message-ID: <437f030b-9e20-43e5-42ce-f98430d2149b@gmail.com>
-Date: Thu, 3 Oct 2019 14:27:57 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.1
+ id 1iFzJO-0007RD-Dx
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 11:30:24 +0000
+Received: from pps.filterd (m0098416.ppops.net [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x93BRcpH092576
+ for <linux-arm-kernel@lists.infradead.org>; Thu, 3 Oct 2019 07:30:20 -0400
+Received: from e06smtp03.uk.ibm.com (e06smtp03.uk.ibm.com [195.75.94.99])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2vdcsvxaja-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Thu, 03 Oct 2019 07:30:20 -0400
+Received: from localhost
+ by e06smtp03.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
+ Thu, 3 Oct 2019 12:30:18 +0100
+Received: from b06cxnps4075.portsmouth.uk.ibm.com (9.149.109.197)
+ by e06smtp03.uk.ibm.com (192.168.101.133) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Thu, 3 Oct 2019 12:30:14 +0100
+Received: from d06av25.portsmouth.uk.ibm.com (d06av25.portsmouth.uk.ibm.com
+ [9.149.105.61])
+ by b06cxnps4075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x93BUDku57016436
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 3 Oct 2019 11:30:13 GMT
+Received: from d06av25.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 7F81A11C058;
+ Thu,  3 Oct 2019 11:30:13 +0000 (GMT)
+Received: from d06av25.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 9FA8511C052;
+ Thu,  3 Oct 2019 11:30:12 +0000 (GMT)
+Received: from linux.ibm.com (unknown [9.148.8.153])
+ by d06av25.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
+ Thu,  3 Oct 2019 11:30:12 +0000 (GMT)
+Date: Thu, 3 Oct 2019 14:30:10 +0300
+From: Mike Rapoport <rppt@linux.ibm.com>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: [PATCH v2 00/21] Refine memblock API
+References: <CAHCN7xJ32BYZu-DVTVLSzv222U50JDb8F0A_tLDERbb8kPdRxg@mail.gmail.com>
+ <20190926160433.GD32311@linux.ibm.com>
+ <CAHCN7xL1sFXDhKUpj04d3eDZNgLA1yGAOqwEeCxedy1Qm-JOfQ@mail.gmail.com>
+ <20190928073331.GA5269@linux.ibm.com>
+ <CAHCN7xJEvS2Si=M+BYtz+kY0M4NxmqDjiX9Nwq6_3GGBh3yg=w@mail.gmail.com>
+ <CAHCN7xKLhWw4P9-sZKXQcfSfh2r3J_+rLxuxACW0UVgimCzyVw@mail.gmail.com>
+ <20191002073605.GA30433@linux.ibm.com>
+ <CAHCN7xL1MkJh44N3W_1+08DHmX__SqnfH6dqUzYzr2Wpg0kQyQ@mail.gmail.com>
+ <20191003053451.GA23397@linux.ibm.com>
+ <20191003084914.GV25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <20191001211346.104400-2-swarren@wwwdotorg.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191003084914.GV25745@shell.armlinux.org.uk>
+User-Agent: Mutt/1.5.24 (2015-08-30)
+X-TM-AS-GCONF: 00
+x-cbid: 19100311-0012-0000-0000-00000353A8D8
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19100311-0013-0000-0000-0000218EAF93
+Message-Id: <20191003113010.GC23397@linux.ibm.com>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-10-03_05:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1908290000 definitions=main-1910030107
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_042800_805682_74B7ECCF 
-X-CRM114-Status: GOOD (  21.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191003_043022_597286_C65B6F74 
+X-CRM114-Status: GOOD (  31.51  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (digetx[at]gmail.com)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.158.5 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,63 +111,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Boyd <sboyd@kernel.org>, linux-tegra@vger.kernel.org,
- Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Adam Ford <aford173@gmail.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ The etnaviv authors <etnaviv@lists.freedesktop.org>,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Fabio Estevam <festevam@gmail.com>,
+ Christoph Hellwig <hch@lst.de>, arm-soc <linux-arm-kernel@lists.infradead.org>,
+ Lucas Stach <l.stach@pengutronix.de>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MDIuMTAuMjAxOSAwMDoxMywgU3RlcGhlbiBXYXJyZW4g0L/QuNGI0LXRgjoKPiBGcm9tOiBTdGVw
-aGVuIFdhcnJlbiA8c3dhcnJlbkBudmlkaWEuY29tPgo+IAo+IEZvciBhIGxpdHRsZSBvdmVyIGEg
-eWVhciwgVS1Cb290IGhhcyBjb25maWd1cmVkIHRoZSBmbG93IGNvbnRyb2xsZXIgdG8KPiBwZXJm
-b3JtIGF1dG9tYXRpYyBSQU0gcmUtcmVwYWlyIG9uIG9mZi0+b24gcG93ZXIgdHJhbnNpdGlvbnMg
-b2YgdGhlIENQVQo+IHJhaWwxXS4gVGhpcyBpcyBtYW5kYXRvcnkgZm9yIGNvcnJlY3Qgb3BlcmF0
-aW9uIG9mIFRlZ3JhMTI0LiBIb3dldmVyLCBSQU0KPiByZS1yZXBhaXIgcmVsaWVzIG9uIGNlcnRh
-aW4gY2xvY2tzLCB3aGljaCB0aGUga2VybmVsIG11c3QgZW5hYmxlIGFuZAo+IGxlYXZlIHJ1bm5p
-bmcuIFBMTFAgaXMgb25lIG9mIHRob3NlIGNsb2Nrcy4gVGhpcyBjbG9jayBpcyBzaHV0IGRvd24K
-PiBkdXJpbmcgTFAxIGluIG9yZGVyIHRvIHNhdmUgcG93ZXIuIEVuYWJsZSBieXBhc3MgKHdoaWNo
-IEkgYmVsaWV2ZSByb3V0ZXMKPiBvc2NfZGl2X2NsaywgZXNzZW50aWFsbHkgdGhlIGNyeXN0YWwg
-Y2xvY2ssIHRvIHRoZSBQTEwgb3V0cHV0KSBzbyB0aGF0Cj4gdGhpcyBjbG9jayBzaWduYWwgdG9n
-Z2xlcyBldmVuIHRob3VnaCB0aGUgUExMIGlzIG5vdCBhY3RpdmUuIFRoaXMgaXMKPiByZXF1aXJl
-ZCBzbyB0aGF0IExQMSBwb3dlciBtb2RlIChzeXN0ZW0gc3VzcGVuZCkgb3BlcmF0ZXMgY29ycmVj
-dGx5Lgo+IAo+IFRoZSBieXBhc3MgY29uZmlndXJhdGlvbiBtdXN0IHRoZW4gYmUgdW5kb25lIHdo
-ZW4gcmVzdW1pbmcgZnJvbSBMUDEsIHNvCj4gdGhhdCBhbGwgcGVyaXBoZXJhbCBjbG9ja3MgcnVu
-IGF0IHRoZSBleHBlY3RlZCByYXRlLiBXaXRob3V0IHRoaXMsIG1hbnkKPiBwZXJpcGhlcmFscyB3
-b24ndCB3b3JrIGNvcnJlY3RseTsgZm9yIGV4YW1wbGUsIHRoZSBVQVJUIGJhdWQgcmF0ZSB3b3Vs
-ZAo+IGJlIGluY29ycmVjdC4KPiAKPiBOVklESUEncyBkb3duc3RyZWFtIGtlcm5lbCBjb2RlIG9u
-bHkgZG9lcyB0aGlzIGlmIG5vdCBjb21waWxlZCBmb3IKPiBUZWdyYTMwLCBzbyB0aGUgYWRkZWQg
-Y29kZSBpcyBtYWRlIGNvbmRpdGlvbmFsIHVwb24gdGhlIGNoaXAgSUQuIE5WSURJQSdzCj4gZG93
-bnN0cmVhbSBjb2RlIG1ha2VzIHRoaXMgY2hhbmdlIGNvbmRpdGlvbmFsIHVwb24gdGhlIGFjdGl2
-ZSBDUFUKPiBjbHVzdGVyLiBUaGUgdXBzdHJlYW0ga2VybmVsIGN1cnJlbnRseSBkb2Vzbid0IHN1
-cHBvcnQgY2x1c3RlciBzd2l0Y2hpbmcsCj4gc28gdGhpcyBwYXRjaCBkb2Vzbid0IHRlc3QgdGhl
-IGFjdGl2ZSBDUFUgY2x1c3RlciBJRC4KPiAKPiBbMV0gM2NjNzk0MmE0YWU1IEFSTTogdGVncmE6
-IGltcGxlbWVudCBSQU0gcmVwYWlyCj4gCj4gUmVwb3J0ZWQtYnk6IEpvbmF0aGFuIEh1bnRlciA8
-am9uYXRoYW5oQG52aWRpYS5jb20+Cj4gQ2M6IHN0YWJsZUB2Z2VyLmtlcm5lbC5vcmcKPiBTaWdu
-ZWQtb2ZmLWJ5OiBTdGVwaGVuIFdhcnJlbiA8c3dhcnJlbkBudmlkaWEuY29tPgo+IC0tLQo+ICBh
-cmNoL2FybS9tYWNoLXRlZ3JhL3NsZWVwLXRlZ3JhMzAuUyB8IDExICsrKysrKysrKysrCj4gIDEg
-ZmlsZSBjaGFuZ2VkLCAxMSBpbnNlcnRpb25zKCspCj4gCj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJt
-L21hY2gtdGVncmEvc2xlZXAtdGVncmEzMC5TIGIvYXJjaC9hcm0vbWFjaC10ZWdyYS9zbGVlcC10
-ZWdyYTMwLlMKPiBpbmRleCBiNDA4ZmE1NmViODkuLjY5MjJkZDhkM2UyZCAxMDA2NDQKPiAtLS0g
-YS9hcmNoL2FybS9tYWNoLXRlZ3JhL3NsZWVwLXRlZ3JhMzAuUwo+ICsrKyBiL2FyY2gvYXJtL21h
-Y2gtdGVncmEvc2xlZXAtdGVncmEzMC5TCj4gQEAgLTM3MCw2ICszNzAsMTQgQEAgX3BsbF9tX2Nf
-eF9kb25lOgo+ICAJcGxsX2xvY2tlZCByMSwgcjAsIENMS19SRVNFVF9QTExDX0JBU0UKPiAgCXBs
-bF9sb2NrZWQgcjEsIHIwLCBDTEtfUkVTRVRfUExMWF9CQVNFCj4gIAo+ICsJdGVncmFfZ2V0X3Nv
-Y19pZCBURUdSQV9BUEJfTUlTQ19CQVNFLCByMQo+ICsJY21wCXIxLCAjVEVHUkEzMAo+ICsJYmVx
-CTFmCgpXaGF0IGFib3V0IFQxMTQsIG9yIGRvZXMgaXQgbmVlZCBlbmFibGVkIFBMTFAgYXMgd2Vs
-bD8KCj4gKwlsZHIJcjEsIFtyMCwgI0NMS19SRVNFVF9QTExQX0JBU0VdCj4gKwliaWMJcjEsIHIx
-LCAjKDE8PDMxKQlAIGRpc2FibGUgUGxsUCBieXBhc3MKPiArCXN0cglyMSwgW3IwLCAjQ0xLX1JF
-U0VUX1BMTFBfQkFTRV0KPiArMToKPiArCj4gIAltb3YzMglyNywgVEVHUkFfVE1SVVNfQkFTRQo+
-ICAJbGRyCXIxLCBbcjddCj4gIAlhZGQJcjEsIHIxLCAjTE9DS19ERUxBWQo+IEBAIC02MzAsNyAr
-NjM4LDEwIEBAIHRlZ3JhMzBfc3dpdGNoX2NwdV90b19jbGszMms6Cj4gIAlzdHIJcjAsIFtyNCwg
-I1BNQ19QTExQX1dCMF9PVkVSUklERV0KPiAgCj4gIAkvKiBkaXNhYmxlIFBMTFAsIFBMTEEsIFBM
-TEMgYW5kIFBMTFggKi8KPiArCXRlZ3JhX2dldF9zb2NfaWQgVEVHUkFfQVBCX01JU0NfQkFTRSwg
-cjEKPiArCWNtcAlyMSwgI1RFR1JBMzAKPiAgCWxkcglyMCwgW3I1LCAjQ0xLX1JFU0VUX1BMTFBf
-QkFTRV0KPiArCW9ycm5lCXIwLCByMCwgIygxIDw8IDMxKQlAIGVuYWJsZSBQbGxQIGJ5cGFzcyBv
-biBmYXN0IGNsdXN0ZXIKPiAgCWJpYwlyMCwgcjAsICMoMSA8PCAzMCkKPiAgCXN0cglyMCwgW3I1
-LCAjQ0xLX1JFU0VUX1BMTFBfQkFTRV0KPiAgCWxkcglyMCwgW3I1LCAjQ0xLX1JFU0VUX1BMTEFf
-QkFTRV0KPiAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1hcm0ta2VybmVsCg==
+On Thu, Oct 03, 2019 at 09:49:14AM +0100, Russell King - ARM Linux admin wrote:
+> On Thu, Oct 03, 2019 at 08:34:52AM +0300, Mike Rapoport wrote:
+> > (trimmed the CC)
+> > 
+> > On Wed, Oct 02, 2019 at 06:14:11AM -0500, Adam Ford wrote:
+> > > On Wed, Oct 2, 2019 at 2:36 AM Mike Rapoport <rppt@linux.ibm.com> wrote:
+> > > >
+> > > 
+> > > Before the patch:
+> > > 
+> > > # cat /sys/kernel/debug/memblock/memory
+> > >    0: 0x10000000..0x8fffffff
+> > > # cat /sys/kernel/debug/memblock/reserved
+> > >    0: 0x10004000..0x10007fff
+> > >   34: 0x2fffff88..0x3fffffff
+> > > 
+> > > 
+> > > After the patch:
+> > > # cat /sys/kernel/debug/memblock/memory
+> > >    0: 0x10000000..0x8fffffff
+> > > # cat /sys/kernel/debug/memblock/reserved
+> > >    0: 0x10004000..0x10007fff
+> > >   36: 0x80000000..0x8fffffff
+> > 
+> > I'm still not convinced that the memblock refactoring didn't uncovered an
+> > issue in etnaviv driver.
+> > 
+> > Why moving the CMA area from 0x80000000 to 0x30000000 makes it fail?
+> 
+> I think you have that the wrong way round.
+
+I'm relying on Adam's reports of working and non-working versions.
+According to that etnaviv works when CMA area is at 0x80000000 and does not
+work when it is at 0x30000000.
+
+He also sent logs a few days ago [1], they also confirm that.
+
+[1] https://lore.kernel.org/linux-mm/CAHCN7xJEvS2Si=M+BYtz+kY0M4NxmqDjiX9Nwq6_3GGBh3yg=w@mail.gmail.com/
+ 
+> > BTW, the code that complained about "command buffer outside valid memory
+> > window" has been removed by the commit 17e4660ae3d7 ("drm/etnaviv:
+> > implement per-process address spaces on MMUv2"). 
+> > 
+> > Could be that recent changes to MMU management of etnaviv resolve the
+> > issue?
+> 
+> The iMX6 does not have MMUv2 hardware, it has MMUv1.  With MMUv1
+> hardware requires command buffers within the first 2GiB of physical
+> RAM.
+
+I've mentioned that patch because it removed the check for cmdbuf address
+for MMUv1:
+
+@@ -785,15 +768,7 @@ int etnaviv_gpu_init(struct etnaviv_gpu *gpu)
+                                  PAGE_SIZE);
+        if (ret) {
+                dev_err(gpu->dev, "could not create command buffer\n");
+-               goto unmap_suballoc;
+-       }
+-
+-       if (!(gpu->identity.minor_features1 & chipMinorFeatures1_MMU_VERSION) &&
+-           etnaviv_cmdbuf_get_va(&gpu->buffer, &gpu->cmdbuf_mapping) > 0x80000000) {
+-               ret = -EINVAL;
+-               dev_err(gpu->dev,
+-                       "command buffer outside valid memory window\n");
+-               goto free_buffer;
++               goto fail;
+        }
+ 
+        /* Setup event management */
+
+
+I really don't know how etnaviv works, so I hoped that people who
+understand it would help.
+ 
+> I've reported the problem previously but there was no resolution,
+> other than pointing the blame at CMA.
+> 
+> https://lists.freedesktop.org/archives/dri-devel/2019-June/thread.html#223516
+> 
+> -- 
+> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+> FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+> According to speedtest.net: 11.9Mbps down 500kbps up
+
+-- 
+Sincerely yours,
+Mike.
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
