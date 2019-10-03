@@ -2,90 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71E5CCAE09
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 20:19:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28050CAE25
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 20:28:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=imSAJgKU2WHLpD/AUPKD8AhngwwZ5WbPoMxp5tBMytE=; b=ZXYCv5I92Olzcw
-	ldJW/fdkz9/lF2hjMvHDkJ7g2nh66tDDUEiiWUwkO8Mvn9Oi2ncOu4bHW5/gWUOlWeuLmPBGut+sS
-	pz4L8oha3CCt9InC6wO/9ZUbUVeh8omnK5h1imniIkVbzcOdRdsH7ILM/fdE9ulHllYtSIddX8Lht
-	Z4n+BsgTX/mWFtBT3GYg73irCUgFVTZQCzenPFN4sw94nTLQeX51VUd6R3su5yfLjyWtzkSC3EAIs
-	1mKs6RZUtf434kbDYqgDQi2czNlLHRTvNXNXGMEFtCgl7mhSOM+/dDPqXdoOJPerLx7OisLlupyNR
-	3i+h6K8KHARXnAKRNcBw==;
+	List-Owner; bh=Yfew0LoI3zBGzH5sQpz+IeXyik3+uDWm4BgK85kO0gg=; b=tP18Ezlceqd5sO
+	tBw9VuLaewNP7K+Bgx8ankbxOLQPnYRQ+VEplnUscp7RnncAQsIb/rkaeRrSdV2qS1bsIAGKh2iTg
+	o6xCl7+9RLNBHHsio8Mkr8Qa+9KhJGbdQ2ORE0n3wWYUv2PQbnT/0FhBVKOizOBTDvHhlofPrawlT
+	7+1RBV1bClBsARBnVv7kbaZETyaHUlCMKz5ETNwY0Ulk9F6EjhQU7v205kH+aqAH+d/Z4ut7O6U7h
+	7BMoMtKcH4fVA5UePzNct17rZCRmf2dkpVkQcnti17Icrey4h4ihqqhDpZFxxSeaWFyVvyyyxMy4D
+	UWstqNu95bEqkC9i80DA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG5hc-0005cr-E5; Thu, 03 Oct 2019 18:19:48 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iG5pb-0000zg-8W; Thu, 03 Oct 2019 18:28:03 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG5hV-0005cM-Ni
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 18:19:43 +0000
-Received: by mail-pg1-x541.google.com with SMTP id p1so473401pgi.4
+ id 1iG5pO-0000z1-Lq
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 18:27:52 +0000
+Received: by mail-wr1-x442.google.com with SMTP id j18so3002206wrq.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 03 Oct 2019 11:19:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=V3zfpA6pohOCQvyvizEapVU0+r/7JkIaALQBuXL6dpc=;
- b=RYYfr/9/HTri5GnuFK4sU0LwnzxScseFLrCQRKdo8R8x6zLw+7WbCPHGjzFa3JdRYl
- icU7yPc1Jhv7lKLLzrclUV0/jLKR4YF4nfpJ8RwAjFenmzu2M5fXNAmjFIAjaZawuBUc
- z3CkbEhB2CJkLZXBXbQ0MjGvQ21yczR1w6aRk=
+ Thu, 03 Oct 2019 11:27:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gateworks-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Fi4XGjAW8IL22UQ2E3MLgTRkUEhWQPz4pB1hOvF/+fA=;
+ b=Hi1MkI/qpCxDbo6JZhKQmKaxIfwr4T4/k99ZbBFtrHb3q4zw4ByDCYUdD64t29C+gj
+ jVQ2d7m6uw7VArrSuymO7GOFOw0xAjsY1rOrejvNUM/CWj5UQkatSjG1q/5u8wGFu44X
+ adzpD3zXTL4dmCzurjzLoCdmCYYyAlYC9Nnh28F6IWKNhnFhLA/FeCYphMw3rixYFew0
+ Zd+7JUBPLll2xu2/2sVF2JxGdc3dQdcK5N+5sIFIFY29oE9lBrj8yuNFrneVgttifo9J
+ rD/bOUSj1RMwnG0WRsbbYtMqFD8WoJ5ODZLwcMNPWz9rAl1uw5hW7ef8uqkisLu7P5pb
+ O9SQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=V3zfpA6pohOCQvyvizEapVU0+r/7JkIaALQBuXL6dpc=;
- b=qdeWQ8VkB7f5u3hVIQ++jPz2oKT6VMk2fzRKYetNnNiA2nKniIbQHezSwHPftcEiUI
- 8gqwmmRKaqHiBrYu7vB4KQexzUvw6JNME+5gORAVxQsxQD66lFc3XplnIY5yfoPdj2RM
- exjcx2fBBodScLEQiBCBMMyziEJ5HJGt+AeRZq8Kdg6qkTiwJ3ZIJ9upkAIPoLeykA5z
- udwiNET9dL2+GXJY7HUy2x8ZkbpyOzDSavEktbhiWNS2WUGva9b+4XVclKeLbTch1Iby
- S3/40hMFddHF7uAfnGWT2++x9LPtI9j53mK7iUmheIoozAm+6LIhB2s2sJuZYCOmGy7z
- 8wtg==
-X-Gm-Message-State: APjAAAVAZIuUongJVa6fJlVpWVUIhiybefA9biiwYz1tbLqJofAsSwiB
- q35B/WwXeKyl3jB+/pbZbpMc2A==
-X-Google-Smtp-Source: APXvYqxAEXRIRhtV+Dp3adyBB3Odhiyb27dhM9grTiYboHDrD+loFme6hzU61w45+soIrPB+w9SPcw==
-X-Received: by 2002:a62:5e42:: with SMTP id s63mr12421616pfb.96.1570126781009; 
- Thu, 03 Oct 2019 11:19:41 -0700 (PDT)
-Received: from localhost ([2620:15c:202:1:4fff:7a6b:a335:8fde])
- by smtp.gmail.com with ESMTPSA id p189sm2794942pga.2.2019.10.03.11.19.39
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 03 Oct 2019 11:19:40 -0700 (PDT)
-Date: Thu, 3 Oct 2019 11:19:38 -0700
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>,
- Viresh Kumar <viresh.kumar@linaro.org>
-Subject: Re: [PATCH v9 6/8] PM / devfreq: Introduce get_freq_range helper
-Message-ID: <20191003181938.GJ87296@google.com>
-References: <cover.1570044052.git.leonard.crestez@nxp.com>
- <c453bb60a74b41a5192e270f286dfc81c1088449.1570044052.git.leonard.crestez@nxp.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Fi4XGjAW8IL22UQ2E3MLgTRkUEhWQPz4pB1hOvF/+fA=;
+ b=WExwSdcMYX0i2i+qAtclwDlqT/EH25ag9/Y7RUftZfhWQJzdBZy34vP20reLQDVl5j
+ 474fJmRKj45Lu+0wCfzVP8BJDmvQ9E/NWdht6dDdhiY+Sat9hApUa0zwdRUIAeGJ0hxB
+ /XUNE2QBNgdd9ww8WwR46OiBDvmqEW3nljk4bO79oGn/RsP02IWhmKbtkASfc4Ts/VaW
+ 7sBO0iQZFw49X2tZF4Drp84b47l8I43XjQ9CfoFNlRR2ZXAcbak1EBgah5biKrwqVEaF
+ Z8w+3xhGUH/xAslM02sk3u9AP2au/nBeQy+WazcAP999wMLpGvT8WdhNQ9HESN0ttRR8
+ jJYQ==
+X-Gm-Message-State: APjAAAVKPKcNmX1RQkK19FlZWd22Ra4+OF1PdngixTVQtaHq+5doL/W1
+ msHGBLLk4K86V4V/plBacyZ8x5IpW9/gmLbVKz/LBw==
+X-Google-Smtp-Source: APXvYqxbFaYgQESHFT0ejIDrfC9cSb6nt3hGDE7e+F1jf57qtk9/E/O4Le3nxo8YcgqHg6K6YkTwO5gXuwhpzDsp1ZQ=
+X-Received: by 2002:adf:fe8b:: with SMTP id l11mr4115663wrr.23.1570127268783; 
+ Thu, 03 Oct 2019 11:27:48 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <c453bb60a74b41a5192e270f286dfc81c1088449.1570044052.git.leonard.crestez@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190301192017.39770-1-dianders@chromium.org>
+In-Reply-To: <20190301192017.39770-1-dianders@chromium.org>
+From: Tim Harvey <tharvey@gateworks.com>
+Date: Thu, 3 Oct 2019 11:27:37 -0700
+Message-ID: <CAJ+vNU0Ma5nG9_ThLO4cdO+=ivf7rmXiHZonF0HY0xx6X3R6Hw@mail.gmail.com>
+Subject: Re: [PATCH v2] iommu/arm-smmu: Break insecure users by disabling
+ bypass by default
+To: Douglas Anderson <dianders@chromium.org>,
+ Robin Murphy <robin.murphy@arm.com>, 
+ Tirumalesh Chalamarla <tchalamarla@caviumnetworks.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_111941_799088_D660210F 
-X-CRM114-Status: GOOD (  17.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191003_112750_765306_D87B595C 
+X-CRM114-Status: GOOD (  15.77  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,66 +90,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Artur =?utf-8?B?xZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
- linux-pm@vger.kernel.org, Viresh Kumar <viresh.kumar@linaro.org>,
- NXP Linux Team <linux-imx@nxp.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Lukasz Luba <l.luba@partner.samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Alexandre Bailon <abailon@baylibre.com>,
- Georgi Djakov <georgi.djakov@linaro.org>, linux-arm-kernel@lists.infradead.org,
- Jacky Bai <ping.bai@nxp.com>
+Cc: open list <linux-kernel@vger.kernel.org>, linux-arm-msm@vger.kernel.org,
+ Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
+ iommu@lists.linux-foundation.org, evgreen@chromium.org, tfiga@chromium.org,
+ Rob Clark <robdclark@gmail.com>, Vivek Gautam <vivek.gautam@codeaurora.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 02, 2019 at 10:25:09PM +0300, Leonard Crestez wrote:
-> Moving handling of min/max freq to a single function and call it from
-> update_devfreq and for printing min/max freq values in sysfs.
-> 
-> This changes the behavior of out-of-range min_freq/max_freq: clamping
-> is now done at evaluation time. This means that if an out-of-range
-> constraint is imposed by sysfs and it later becomes valid then it will
-> be enforced.
-> 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
+On Fri, Mar 1, 2019 at 11:21 AM Douglas Anderson <dianders@chromium.org> wrote:
+>
+> If you're bisecting why your peripherals stopped working, it's
+> probably this CL.  Specifically if you see this in your dmesg:
+>   Unexpected global fault, this could be serious
+> ...then it's almost certainly this CL.
+>
+> Running your IOMMU-enabled peripherals with the IOMMU in bypass mode
+> is insecure and effectively disables the protection they provide.
+> There are few reasons to allow unmatched stream bypass, and even fewer
+> good ones.
+>
+> This patch starts the transition over to make it much harder to run
+> your system insecurely.  Expected steps:
+>
+> 1. By default disable bypass (so anyone insecure will notice) but make
+>    it easy for someone to re-enable bypass with just a KConfig change.
+>    That's this patch.
+>
+> 2. After people have had a little time to come to grips with the fact
+>    that they need to set their IOMMUs properly and have had time to
+>    dig into how to do this, the KConfig will be eliminated and bypass
+>    will simply be disabled.  Folks who are truly upset and still
+>    haven't fixed their system can either figure out how to add
+>    'arm-smmu.disable_bypass=n' to their command line or revert the
+>    patch in their own private kernel.  Of course these folks will be
+>    less secure.
+>
+> Suggested-by: Robin Murphy <robin.murphy@arm.com>
+> Signed-off-by: Douglas Anderson <dianders@chromium.org>
 > ---
->  drivers/devfreq/devfreq.c | 110 +++++++++++++++++++++-----------------
->  1 file changed, 62 insertions(+), 48 deletions(-)
-> 
-> diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
-> index 87eff789ce24..2d63692903ff 100644
-> --- a/drivers/devfreq/devfreq.c
-> +++ b/drivers/devfreq/devfreq.c
->
-> ...
->
->  static ssize_t min_freq_show(struct device *dev, struct device_attribute *attr,
->  			     char *buf)
->  {
->  	struct devfreq *df = to_devfreq(dev);
-> +	unsigned long min_freq, max_freq;
->  
-> -	return sprintf(buf, "%lu\n", max(df->scaling_min_freq, df->min_freq));
-> +	mutex_lock(&df->lock);
-> +	get_freq_range(df, &min_freq, &max_freq);
 
-With this min/max_freq shown aren't necessarily those set through sysfs,
-but the aggregated PM QoS values (plus OPP constraints).
+Hi Doug / Robin,
 
-I did some testing with a WIP patch that converts devfreq_cooling.c to
-PM QoS. When reading sysfs min/max values to double check the limits
-set earlier I found it utterly confusing to see the sysfs min/max values
-fluctuating due to thermal throttling, and not being able to see the
-configured values.
+I ran into this breaking things on OcteonTx boards based on CN80XX
+CPU. The IOMMU configuration is a bit beyond me and I'm hoping you can
+offer some advice. The IOMMU here is cavium,smmu-v2 as defined in
+https://github.com/Gateworks/dts-newport/blob/master/cn81xx-linux.dtsi
 
-Looks like cpufreq does the same, but I'm not convinced this is a good
-idea. I think we want to display the values set by userspace, as done
-before managing the limits through PM QoS. Viresh, was this change of
-userspace visible behavior done intentionally for cpufreq?
+Booting with 'arm-smmu.disable_bypass=n' does indeed work around the
+breakage as the commit suggests.
+
+Any suggestions for a proper fix?
+
+Best Regards,
+
+Tim
 
 _______________________________________________
 linux-arm-kernel mailing list
