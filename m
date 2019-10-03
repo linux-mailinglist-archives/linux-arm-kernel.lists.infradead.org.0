@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25F13C9A82
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 11:12:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E107CC9A8D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 11:14:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pE1hUOpCh3NgqGx35MhaedjNffLj6RlNfs17sO1z/Rc=; b=fiXVjVdfPoLeiY
-	ILxmMRrf8sokwpscQNUemxV2Z7suO1gg819k4W0plEClRCZgS3uC9F1zZtewy2hjQzpGDSSem1T2S
-	GUf26q41RveFRSa/ntre7ckey0M5e2U17E3A3kERC4WLkL/zBlkLJzykdVNEd7StALHNOr9ytcECr
-	YzGnCB48i76zAZyTLFpwKKeeDpVEvUdpsfYHR0a/1wNTJO8Slv1f3bTEuq98ztYOHANuhpNtTfwdd
-	JRKrRGlibkBQ+I0uC3eRD1gfVeDaRK6vrb4GLHrpd8cWtNpA+fzVzOpWKOUzcrJUNetqtMwFt3Fho
-	gNMeEYWXl7zYHyYCnVAw==;
+	List-Owner; bh=ppFO770+KkcMc+B2tLo3m1tHC6V5jgJoANr76RYSkjc=; b=E4IJRr8C33tbxH
+	I6kMUWgu+IV6saYgZwsiRi67kwEgtKOYGw9OHOBwLq09tZLlisbBUArgUTBEvkaWf3Ri3ds9vyQI6
+	pXPNPen523bKPPd6oL6Bv13WOKfFoU6KlTTMJcp3WgVmVMpqEIfmS+xMB3/fw8xfeqOOsFMVyQo1p
+	9z6r4bo0DPsbNXKXxr76mCeCF7kJEmDtrFxpMQzjzet58jVfCYx/CApzN5prnh03uKjgvGysgjEw7
+	pAtR8sBbN/4qxpVBpHkQbvmUHjLVGdyt6+swBRIUatYj+dHPgeHteY5D1u1z8p7z+FPOekGGKoFSv
+	tYJ4mTRUJGyUVKDsYKiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFxAD-0002E6-Hw; Thu, 03 Oct 2019 09:12:45 +0000
+	id 1iFxBr-0002XW-W7; Thu, 03 Oct 2019 09:14:27 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFxA6-0002Cm-Ro
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 09:12:40 +0000
+ id 1iFxBk-0002XF-63
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 09:14:21 +0000
 Received: from X250 (li937-157.members.linode.com [45.56.119.157])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6F016217D7;
- Thu,  3 Oct 2019 09:12:26 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D16B4217D7;
+ Thu,  3 Oct 2019 09:14:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570093958;
- bh=hC5RRC0CVdI9lSSoHciGX50R/JTCn6x4GLQJVZUPWw8=;
+ s=default; t=1570094059;
+ bh=AjvL547s2R5yIkHNhXlH94XxA05nAjKAg5dQITv7FQE=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=TnJo2+0appSGZK4WOcQv7yGfWNzmU178Q94zKkpuaGpCJQJj5YwQfcuuhiLtGwY1l
- hUPjuURF33zxUkoE9s2anHyO5DmyE7UZm/knv4PrLGLPA4CndBoYNLd2Bs3PMdqwXa
- yOnxBixgpJYVknTrNzgrz+kXGTjUv1/l3eKrJIAU=
-Date: Thu, 3 Oct 2019 17:12:19 +0800
+ b=BUWGqSGrL6NfqsYQsqvHzb2riBwD1kzyTwoLkAgsQO1jRi/iIZR41+vjc3C7ue4zT
+ o+4lokbcwcn6bvuSzCrXXojY24Ecbls74CAN5Nmmqt4hQXwvyyU+yT6t0pexmi48pp
+ /HFF8mnqgjkkV9lbfj63tB+6nU9AOyNp7/K2yjVM=
+Date: Thu, 3 Oct 2019 17:13:59 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V5 3/4] ARM: imx_v6_v7_defconfig: Enable
- CONFIG_IMX7ULP_WDT by default
-Message-ID: <20191003091217.GC22491@X250>
+Subject: Re: [PATCH V5 4/4] ARM: dts: imx7ulp: Add wdog1 node
+Message-ID: <20191003091356.GA24782@X250>
 References: <1566999303-18795-1-git-send-email-Anson.Huang@nxp.com>
- <1566999303-18795-3-git-send-email-Anson.Huang@nxp.com>
+ <1566999303-18795-4-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1566999303-18795-3-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1566999303-18795-4-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_021238_920865_F68B4554 
-X-CRM114-Status: UNSURE (   7.55  )
+X-CRM114-CacheID: sfid-20191003_021420_243538_C836F1D3 
+X-CRM114-Status: UNSURE (   7.95  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -91,8 +90,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 28, 2019 at 09:35:02AM -0400, Anson Huang wrote:
-> Select CONFIG_IMX7ULP_WDT by default to support i.MX7ULP watchdog.
+On Wed, Aug 28, 2019 at 09:35:03AM -0400, Anson Huang wrote:
+> Add wdog1 node to support watchdog driver.
 > 
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
