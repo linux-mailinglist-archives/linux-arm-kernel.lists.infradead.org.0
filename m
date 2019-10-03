@@ -2,67 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE358CA43F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 18:29:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BA77CA36F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 18:20:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bhPu8x9jtQUZUOIQtKNpdkyxwqfvLZb4Ra6nHzdsxlk=; b=fGAro5WvH8wuF4
-	hI0ervieplkoFM1gcROKqivI/pUMMDdUcnopLLLqYFcaFWsiWLDqNsCo4D94WygNwWuwifFNT6yZp
-	SNyGHp7D9vSW+ZZzGi0gzRKbgwmFHZQsvIe+sZ92mD0tauLRWbA5aysp6yJgULSlSDjxdZwnurYyj
-	gsa6qCRxnH4fKPNGWoDRHB+z3HdlHFwMyO8RiFpqXI9TSqs884TzxqYcEpR/hg1nCksM6ogz48lNL
-	mmbn0vN8w5khKKJSoHNjd/TFN5vhj6EsmJLVzg8stb7ekrAlQNgBYc+k3jJumB00lKBI8QbXrdU+D
-	Q3TKMGB3V8NiJe+Gc6eA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=m3DylBgm3HtWQfG3dgMLt5B7DRT+5kMOYEX8CYWigUQ=; b=LorSt+nLCfn76RjAqUUPhvMlZ
+	PoQ6EX1AZSHmazY4rvFrUW+YZl5ksgFcfX5FeYDe4C8NkOGkKX46nyStQ1yXRtDLmBnugruChRfRc
+	u401v83OTXUPskccWCcm+HtOs9di+IdkIqgvBlte2/QdN/LkuTfSnUJfOmL30T8zRY+tZUehJceCL
+	1ngIB0HfxwleYADM26SaqWbE0Tck9fEkKov1lXdbYzoEsBqqpyO5xwhOzPT4cJokbWLgVrB5skAu+
+	w2c7A6b4odUCFraAcUKVOwAKE5Wn6ioXlf8nsh+GvcHDrUr4Ab8HTSRxUFH6Ho+TjKNAFcEzJXoHy
+	7ReATZUZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG3yg-0008Ei-3e; Thu, 03 Oct 2019 16:29:18 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iG3q0-0003Dl-Bn; Thu, 03 Oct 2019 16:20:20 +0000
+Received: from mga01.intel.com ([192.55.52.88])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG3yN-00088R-Eu
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 16:29:01 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2E89621783;
- Thu,  3 Oct 2019 16:28:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570120138;
- bh=Obtjp4ZwBmT/y2TVxxCzMnVGIK54jgwwUKhCZT0umyM=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=SlTq8/8Tkb4uXMQMqs0LuhZc/GbaBcY64rA+8U7p+hotMlDBfEG0SCfDgDZVJIQt4
- 8+hYYy8MhVCVp806bqRzzOLnpZ0kR+d+j7MfxnUeZelZVa3UYM2lm4UCgAPwXoPxGr
- a3j3wF88smBNfu3Ozi7H4giIPr3XP9IkYzWkA7ds=
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5.2 110/313] ARM: dts: imx7d: cl-som-imx7: make ethernet work
- again
-Date: Thu,  3 Oct 2019 17:51:28 +0200
-Message-Id: <20191003154543.679087746@linuxfoundation.org>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191003154533.590915454@linuxfoundation.org>
-References: <20191003154533.590915454@linuxfoundation.org>
-User-Agent: quilt/0.66
+ id 1iG3pr-0003Ck-Dl
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 16:20:12 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga008.jf.intel.com ([10.7.209.65])
+ by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 03 Oct 2019 09:20:10 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.67,253,1566889200"; d="scan'208";a="185962567"
+Received: from unknown (HELO [10.7.153.143]) ([10.7.153.143])
+ by orsmga008.jf.intel.com with ESMTP; 03 Oct 2019 09:20:10 -0700
+Subject: Re: [PATCH 0/2] peci: aspeed: Add AST2600 compatible
+To: ChiaWei Wang <chiawei_wang@aspeedtech.com>, Joel Stanley <joel@jms.id.au>
+References: <20191002061200.29888-1-chiawei_wang@aspeedtech.com>
+ <70044749-785b-6ff3-7a28-fb049dcfec54@linux.intel.com>
+ <CACPK8XfBxC+4PHHCkMoXr+twjfWaovcJ5c=hfCmHRJ6LpGNeFg@mail.gmail.com>
+ <03d21443-aa9a-a126-dc77-a21f14f708c9@linux.intel.com>
+ <4af9eb8fa6fd41fc87708fc8afdcc83e@TWMBX02.aspeed.com>
+From: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
+Message-ID: <b219c8e9-4f72-f91c-ba57-96ffab82ff2e@linux.intel.com>
+Date: Thu, 3 Oct 2019 09:20:10 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <4af9eb8fa6fd41fc87708fc8afdcc83e@TWMBX02.aspeed.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_092859_560805_6BAF8467 
-X-CRM114-Status: GOOD (  15.09  )
+X-CRM114-CacheID: sfid-20191003_092011_475056_A761454D 
+X-CRM114-Status: GOOD (  12.20  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ high trust [192.55.52.88 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,65 +70,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Sasha Levin <sashal@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, stable@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Igor Grinberg <grinberg@compulab.co.il>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- =?UTF-8?q?Andr=C3=A9=20Draszik?= <git@andred.net>,
- Shawn Guo <shawnguo@kernel.org>, Ilya Ledvich <ilya@compulab.co.il>,
- NXP Linux Team <linux-imx@nxp.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Ryan Chen <ryan_chen@aspeedtech.com>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>, Andrew Jeffery <andrew@aj.id.au>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Jason M Biils <jason.m.bills@linux.intel.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogQW5kcsOpIERyYXN6aWsgPGdpdEBhbmRyZWQubmV0PgoKWyBVcHN0cmVhbSBjb21taXQg
-OTg0NmE0NTI0YWM5MGI2MzQ5NjU4MGI3YWQ1MDY3NGI0MGQ5MmE4ZiBdCgpSZWNlbnQgY2hhbmdl
-cyB0byB0aGUgYXRoZXJvcyBhdDgwM3ggZHJpdmVyIGNhdXNlZApldGhlcm5ldCB0byBzdG9wIHdv
-cmtpbmcgb24gdGhpcyBib2FyZC4KSW4gcGFydGljdWxhciBjb21taXQgNmQ0Y2QwNDFmMGFmCigi
-bmV0OiBwaHk6IGF0ODAzeDogZGlzYWJsZSBkZWxheSBvbmx5IGZvciBSR01JSSBtb2RlIikKYW5k
-IGNvbW1pdCBjZDI4ZDFkNmU1MmUKKCJuZXQ6IHBoeTogYXQ4MDN4OiBEaXNhYmxlIHBoeSBkZWxh
-eSBmb3IgUkdNSUkgbW9kZSIpCmZpeCB0aGUgQVI4MDMxIGRyaXZlciB0byBjb25maWd1cmUgdGhl
-IHBoeSdzIChSWC9UWCkKZGVsYXlzIGFzIHBlciB0aGUgJ3BoeS1tb2RlJyBpbiB0aGUgZGV2aWNl
-IHRyZWUuCgpUaGlzIG5vdyBwcmV2ZW50cyBldGhlcm5ldCBmcm9tIHdvcmtpbmcgb24gdGhpcyBi
-b2FyZC4KCkl0IHVzZWQgdG8gd29yayBiZWZvcmUgdGhvc2UgY29tbWl0cywgYmVjYXVzZSB0aGUK
-QVI4MDMxIGNvbWVzIG91dCBvZiByZXNldCB3aXRoIFJYIGRlbGF5IGVuYWJsZWQsIGFuZAp0aGUg
-YXQ4MDN4IGRyaXZlciBkaWRuJ3QgdG91Y2ggdGhlIGRlbGF5IGNvbmZpZ3VyYXRpb24KYXQgYWxs
-IHdoZW4gInJnbWlpIiBtb2RlIHdhcyBzZWxlY3RlZCwgYW5kIGJlY2F1c2UKYXJjaC9hcm0vbWFj
-aC1pbXgvbWFjaC1pbXg3ZC5jOmFyODAzMV9waHlfZml4dXAoKQp1bmNvbmRpdGlvbmFsbHkgZW5h
-YmxlcyBUWCBkZWxheS4KClNpbmNlIGFib3ZlIGNvbW1pdHMgYXI4MDMxX3BoeV9maXh1cCgpIGFs
-c28gaGFzIG5vCmVmZmVjdCBhbnltb3JlLCBhbmQgdGhlIGVuZC1yZXN1bHQgaXMgdGhhdCBhbGwg
-ZGVsYXlzCmFyZSBkaXNhYmxlZCBpbiB0aGUgcGh5LCBubyBldGhlcm5ldC4KClVwZGF0ZSB0aGUg
-ZGV2aWNlIHRyZWUgdG8gcmVzdG9yZSBmdW5jdGlvbmFsaXR5LgoKU2lnbmVkLW9mZi1ieTogQW5k
-csOpIERyYXN6aWsgPGdpdEBhbmRyZWQubmV0PgpDQzogSWx5YSBMZWR2aWNoIDxpbHlhQGNvbXB1
-bGFiLmNvLmlsPgpDQzogSWdvciBHcmluYmVyZyA8Z3JpbmJlcmdAY29tcHVsYWIuY28uaWw+CkND
-OiBSb2IgSGVycmluZyA8cm9iaCtkdEBrZXJuZWwub3JnPgpDQzogTWFyayBSdXRsYW5kIDxtYXJr
-LnJ1dGxhbmRAYXJtLmNvbT4KQ0M6IFNoYXduIEd1byA8c2hhd25ndW9Aa2VybmVsLm9yZz4KQ0M6
-IFNhc2NoYSBIYXVlciA8cy5oYXVlckBwZW5ndXRyb25peC5kZT4KQ0M6IFBlbmd1dHJvbml4IEtl
-cm5lbCBUZWFtIDxrZXJuZWxAcGVuZ3V0cm9uaXguZGU+CkNDOiBGYWJpbyBFc3RldmFtIDxmZXN0
-ZXZhbUBnbWFpbC5jb20+CkNDOiBOWFAgTGludXggVGVhbSA8bGludXgtaW14QG54cC5jb20+CkND
-OiBkZXZpY2V0cmVlQHZnZXIua2VybmVsLm9yZwpDQzogbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnClNpZ25lZC1vZmYtYnk6IFNoYXduIEd1byA8c2hhd25ndW9Aa2VybmVsLm9y
-Zz4KU2lnbmVkLW9mZi1ieTogU2FzaGEgTGV2aW4gPHNhc2hhbEBrZXJuZWwub3JnPgotLS0KIGFy
-Y2gvYXJtL2Jvb3QvZHRzL2lteDdkLWNsLXNvbS1pbXg3LmR0cyB8IDQgKystLQogMSBmaWxlIGNo
-YW5nZWQsIDIgaW5zZXJ0aW9ucygrKSwgMiBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9hcmNo
-L2FybS9ib290L2R0cy9pbXg3ZC1jbC1zb20taW14Ny5kdHMgYi9hcmNoL2FybS9ib290L2R0cy9p
-bXg3ZC1jbC1zb20taW14Ny5kdHMKaW5kZXggZTYxNTY3NDM3ZDczYy4uNjJkNWU5YTRhNzgxOCAx
-MDA2NDQKLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvaW14N2QtY2wtc29tLWlteDcuZHRzCisrKyBi
-L2FyY2gvYXJtL2Jvb3QvZHRzL2lteDdkLWNsLXNvbS1pbXg3LmR0cwpAQCAtNDQsNyArNDQsNyBA
-QAogCQkJICA8JmNsa3MgSU1YN0RfRU5FVDFfVElNRV9ST09UX0NMSz47CiAJYXNzaWduZWQtY2xv
-Y2stcGFyZW50cyA9IDwmY2xrcyBJTVg3RF9QTExfRU5FVF9NQUlOXzEwME1fQ0xLPjsKIAlhc3Np
-Z25lZC1jbG9jay1yYXRlcyA9IDwwPiwgPDEwMDAwMDAwMD47Ci0JcGh5LW1vZGUgPSAicmdtaWki
-OworCXBoeS1tb2RlID0gInJnbWlpLWlkIjsKIAlwaHktaGFuZGxlID0gPCZldGhwaHkwPjsKIAlm
-c2wsbWFnaWMtcGFja2V0OwogCXN0YXR1cyA9ICJva2F5IjsKQEAgLTcwLDcgKzcwLDcgQEAKIAkJ
-CSAgPCZjbGtzIElNWDdEX0VORVQyX1RJTUVfUk9PVF9DTEs+OwogCWFzc2lnbmVkLWNsb2NrLXBh
-cmVudHMgPSA8JmNsa3MgSU1YN0RfUExMX0VORVRfTUFJTl8xMDBNX0NMSz47CiAJYXNzaWduZWQt
-Y2xvY2stcmF0ZXMgPSA8MD4sIDwxMDAwMDAwMDA+OwotCXBoeS1tb2RlID0gInJnbWlpIjsKKwlw
-aHktbW9kZSA9ICJyZ21paS1pZCI7CiAJcGh5LWhhbmRsZSA9IDwmZXRocGh5MT47CiAJZnNsLG1h
-Z2ljLXBhY2tldDsKIAlzdGF0dXMgPSAib2theSI7Ci0tIAoyLjIwLjEKCgoKCl9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
-bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On 10/2/2019 7:35 PM, ChiaWei Wang wrote:
+> Hi Jae Hyun,
+> 
+> Thanks for the feedback.
+> For now should I use GitHub pull-request to submit the patches of PECI-related change to OpenBMC dev-5.3 tree only?
+
+You could submit this patch series to OpenBMC mailing list with
+[PATCH linux dev-5.3] prefix.
+
+Thanks,
+
+Jae
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
