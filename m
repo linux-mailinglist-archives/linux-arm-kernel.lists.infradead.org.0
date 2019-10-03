@@ -2,88 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19104CA59D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 18:42:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 284BDCA5A7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 18:48:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Y5qh5vxjHwFEzetVfGeQVBNWGp8+vELhGyY9bqtjmW4=; b=TS7lfKPjSDwSTl
-	n2zqiHFD3h2qz8ShsYs9f56boLc87cYP0IVkF152aNajuPvdxhcLm2uvlINcZdyckJf71DGOTg3oy
-	7AvT+maNPeMjES2QVD8A+kdf0hQgAzZCjmqHDeUk39//u+0KNIZMagyxnb6xeHPU/aOE89sRH9Wwo
-	aSejTU3YvLAWZLdIYOpwvuYmzJuKvF1359WYaYYqk5oTqNjohKsiYDvO1W2eaCXIlKTemvU7ouLCq
-	v6VD65hQmudQf8It+qcC+omqq1FxGM9vSAVpj00VJQiETA2bnsZPbEUVFOgCYY+g7gWeov5OB5sHr
-	aRKxR9i4vodrrq5ELX6w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Eaw0I02GJ8PtqMpHR+758GD+ptHpgeMQbmc7P9XUpkA=; b=VRMikm/PWZ8FjkB2eO/BhCcgR
+	SNvdjQOyB20iqxuFjppgE8M5+/UsHyHojik0Ffmm5ls11XRXnx8+ii+BF9ozfa90g0meJ3rVNX568
+	e4K86Hk8Grh0kJJ6MmdFiyhtmQikgu4wZWUtypEpBgEwRbZZqcJxicFbDI56/4QuAyafP4mCJv5GJ
+	iY0KAcM2N81UvgUKSwONl4L6UEKLIPkzJgqQq0zHcRLvYZ8W+eqfNdePVooN4FkWB4NCbA5fdnu4u
+	Y6B9ZoG4f4r/H6jkc+VYlPto3yS+2zqt/sI4hi0S+ITZtZJHmysSaAIGonELmPOb3JDsNhlR662Ku
+	s0NAhwdew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG4B7-0007A7-IT; Thu, 03 Oct 2019 16:42:09 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1iG4HQ-0001kx-5j; Thu, 03 Oct 2019 16:48:40 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG4Av-00078g-Lb
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 16:41:59 +0000
-Received: by mail-pf1-x443.google.com with SMTP id x127so2113228pfb.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 03 Oct 2019 09:41:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=MISJlJaBtFFImzW51FlZ2qBGeso4c1E39oXCASoBNDs=;
- b=lr6AYQJIgnwyB7CwEqqjWDeQ9SsqVwsCdDapXVnps1l33RshyzxmKLbE797W6iLl0z
- c88v9cK8+7ZGOqqXXM4++rUrt3XwsJJDtfu3IIe5aZHXMk3TH1y4EqZQvoiSnHfdB9Cf
- wMzHvqN6FwpbJ+hPU/4yhFzPlPyXM3/WtDMU4=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=MISJlJaBtFFImzW51FlZ2qBGeso4c1E39oXCASoBNDs=;
- b=nEC4iv4kvgkDtKimluiSEVFYcUQi1jIRg5eWVfiREKi20WjSn4XFYm1bakuKx/Ra2/
- nlTRVhwzhZrymBQmr4Gibg64CR+1q9mv1O1VvyIpepHvp1TEM+5dlO5bluVMT3kXXhsI
- spdkIqTv0/8V2+2I4hjadJxDWZ+S74JOcWv50beMbbRvhzM9zp02kXF0mUd6fonNChYt
- wW+sAwXZ/W0dCsYHwo3g/5v2ZspTNrC/cpuzjXnhebw4D844jWWePlG7KjZvI5ZUOPcU
- ME7Uinr2e3kLo1OhE3txvSe8h11iSiyKLKuEU2uvIE8U+JZA4/H61IxErtdkJFK4t5zL
- tkuQ==
-X-Gm-Message-State: APjAAAV1M/IyC7qV/X1YAyI6clPs9AuO5xc2Y3gKLal2jFXazdi/KZkP
- oCfwWD+Rd7DNbJocMPsm/1y1jJ0jid8=
-X-Google-Smtp-Source: APXvYqxmFA99XijlyILdYbdhLdTgH03fa06ehVPjZcS3nkRSbv5LJHGq4R3QE4o0s14IFNIpKdzkwg==
-X-Received: by 2002:a17:90b:f11:: with SMTP id
- br17mr11589381pjb.80.1570120916856; 
- Thu, 03 Oct 2019 09:41:56 -0700 (PDT)
-Received: from localhost ([2620:15c:202:1:4fff:7a6b:a335:8fde])
- by smtp.gmail.com with ESMTPSA id x18sm3280507pge.76.2019.10.03.09.41.55
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 03 Oct 2019 09:41:56 -0700 (PDT)
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2] ARM: dts: rockchip: Use interpolated brightness tables for
- veyron
-Date: Thu,  3 Oct 2019 09:41:52 -0700
-Message-Id: <20191003094137.v2.1.Ic9fd698810ea569c465350154da40b85d24f805b@changeid>
-X-Mailer: git-send-email 2.23.0.444.g18eeb5a265-goog
+ id 1iG4HH-0001jP-VU
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 16:48:33 +0000
+Received: from pps.filterd (m0098394.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x93GkLBj076306; Thu, 3 Oct 2019 12:48:20 -0400
+Received: from pps.reinject (localhost [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2vdm7ksfkn-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 03 Oct 2019 12:48:19 -0400
+Received: from m0098394.ppops.net (m0098394.ppops.net [127.0.0.1])
+ by pps.reinject (8.16.0.27/8.16.0.27) with SMTP id x93GkUCH077867;
+ Thu, 3 Oct 2019 12:48:19 -0400
+Received: from ppma02dal.us.ibm.com (a.bd.3ea9.ip4.static.sl-reverse.com
+ [169.62.189.10])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2vdm7ksfjy-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 03 Oct 2019 12:48:19 -0400
+Received: from pps.filterd (ppma02dal.us.ibm.com [127.0.0.1])
+ by ppma02dal.us.ibm.com (8.16.0.27/8.16.0.27) with SMTP id x93GlTUY018767;
+ Thu, 3 Oct 2019 16:48:18 GMT
+Received: from b03cxnp07029.gho.boulder.ibm.com
+ (b03cxnp07029.gho.boulder.ibm.com [9.17.130.16])
+ by ppma02dal.us.ibm.com with ESMTP id 2v9y589719-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 03 Oct 2019 16:48:17 +0000
+Received: from b03ledav003.gho.boulder.ibm.com
+ (b03ledav003.gho.boulder.ibm.com [9.17.130.234])
+ by b03cxnp07029.gho.boulder.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x93GmGHr44695846
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 3 Oct 2019 16:48:16 GMT
+Received: from b03ledav003.gho.boulder.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 999B06A05D;
+ Thu,  3 Oct 2019 16:48:16 +0000 (GMT)
+Received: from b03ledav003.gho.boulder.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 011646A047;
+ Thu,  3 Oct 2019 16:48:11 +0000 (GMT)
+Received: from [9.199.43.217] (unknown [9.199.43.217])
+ by b03ledav003.gho.boulder.ibm.com (Postfix) with ESMTP;
+ Thu,  3 Oct 2019 16:48:11 +0000 (GMT)
+Subject: Re: [PATCH v5 01/10] mm/memunmap: Use the correct start and end pfn
+ when removing pages from zone
+To: David Hildenbrand <david@redhat.com>, linux-kernel@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>
+References: <20191001144011.3801-1-david@redhat.com>
+ <20191001144011.3801-2-david@redhat.com>
+ <933f9cd8-9a32-8566-bd97-7e475a009275@redhat.com>
+ <09b61ab1-6099-d825-8e04-fbfb43abe4d2@redhat.com>
+From: "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>
+Message-ID: <cb6807a4-93c8-3964-bd65-e7087a0c7bf1@linux.ibm.com>
+Date: Thu, 3 Oct 2019 22:18:10 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.0
 MIME-Version: 1.0
+In-Reply-To: <09b61ab1-6099-d825-8e04-fbfb43abe4d2@redhat.com>
+Content-Language: en-US
+X-TM-AS-GCONF: 00
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-10-03_07:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1011 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1908290000 definitions=main-1910030146
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_094157_705360_9F95E7D7 
-X-CRM114-Status: GOOD (  11.54  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191003_094832_022720_36ADD206 
+X-CRM114-Status: GOOD (  24.29  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.156.1 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,228 +109,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Matthias Kaehlcke <mka@chromium.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-s390@vger.kernel.org, linux-ia64@vger.kernel.org,
+ Ira Weiny <ira.weiny@intel.com>, linux-sh@vger.kernel.org,
+ Jason Gunthorpe <jgg@ziepe.ca>, Logan Gunthorpe <logang@deltatee.com>,
+ Pankaj Gupta <pagupta@redhat.com>, linux-mm@kvack.org,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use interpolated brightness tables (added by commit 573fe6d1c25
-("backlight: pwm_bl: Linear interpolation between
-brightness-levels") for veyron, instead of specifying every single
-step. Some devices/panels have intervals that are smaller than
-the specified 'num-interpolated-steps', the driver interprets
-these intervals as a single step.
+On 10/1/19 8:33 PM, David Hildenbrand wrote:
+> On 01.10.19 16:57, David Hildenbrand wrote:
+>> On 01.10.19 16:40, David Hildenbrand wrote:
+>>> From: "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>
+>>>
+>>> With altmap, all the resource pfns are not initialized. While initializing
+>>> pfn, altmap reserve space is skipped. Hence when removing pfn from zone
+>>> skip pfns that were never initialized.
+>>>
+>>> Update memunmap_pages to calculate start and end pfn based on altmap
+>>> values. This fixes a kernel crash that is observed when destroying
+>>> a namespace.
+>>>
+>>> [   81.356173] kernel BUG at include/linux/mm.h:1107!
+>>> cpu 0x1: Vector: 700 (Program Check) at [c000000274087890]
+>>>      pc: c0000000004b9728: memunmap_pages+0x238/0x340
+>>>      lr: c0000000004b9724: memunmap_pages+0x234/0x340
+>>> ...
+>>>      pid   = 3669, comm = ndctl
+>>> kernel BUG at include/linux/mm.h:1107!
+>>> [c000000274087ba0] c0000000009e3500 devm_action_release+0x30/0x50
+>>> [c000000274087bc0] c0000000009e4758 release_nodes+0x268/0x2d0
+>>> [c000000274087c30] c0000000009dd144 device_release_driver_internal+0x174/0x240
+>>> [c000000274087c70] c0000000009d9dfc unbind_store+0x13c/0x190
+>>> [c000000274087cb0] c0000000009d8a24 drv_attr_store+0x44/0x60
+>>> [c000000274087cd0] c0000000005a7470 sysfs_kf_write+0x70/0xa0
+>>> [c000000274087d10] c0000000005a5cac kernfs_fop_write+0x1ac/0x290
+>>> [c000000274087d60] c0000000004be45c __vfs_write+0x3c/0x70
+>>> [c000000274087d80] c0000000004c26e4 vfs_write+0xe4/0x200
+>>> [c000000274087dd0] c0000000004c2a6c ksys_write+0x7c/0x140
+>>> [c000000274087e20] c00000000000bbd0 system_call+0x5c/0x68
+>>>
+>>> Cc: Dan Williams <dan.j.williams@intel.com>
+>>> Cc: Andrew Morton <akpm@linux-foundation.org>
+>>> Cc: Jason Gunthorpe <jgg@ziepe.ca>
+>>> Cc: Logan Gunthorpe <logang@deltatee.com>
+>>> Cc: Ira Weiny <ira.weiny@intel.com>
+>>> Reviewed-by: Pankaj Gupta <pagupta@redhat.com>
+>>> Signed-off-by: Aneesh Kumar K.V <aneesh.kumar@linux.ibm.com>
+>>> [ move all pfn-realted declarations into a single line ]
+>>> Signed-off-by: David Hildenbrand <david@redhat.com>
+>>> ---
+>>>   mm/memremap.c | 13 ++++++++-----
+>>>   1 file changed, 8 insertions(+), 5 deletions(-)
+>>>
+>>> diff --git a/mm/memremap.c b/mm/memremap.c
+>>> index 557e53c6fb46..026788b2ac69 100644
+>>> --- a/mm/memremap.c
+>>> +++ b/mm/memremap.c
+>>> @@ -123,7 +123,7 @@ static void dev_pagemap_cleanup(struct dev_pagemap *pgmap)
+>>>   void memunmap_pages(struct dev_pagemap *pgmap)
+>>>   {
+>>>   	struct resource *res = &pgmap->res;
+>>> -	unsigned long pfn;
+>>> +	unsigned long pfn, nr_pages, start_pfn, end_pfn;
+>>>   	int nid;
+>>>   
+>>>   	dev_pagemap_kill(pgmap);
+>>> @@ -131,14 +131,17 @@ void memunmap_pages(struct dev_pagemap *pgmap)
+>>>   		put_page(pfn_to_page(pfn));
+>>>   	dev_pagemap_cleanup(pgmap);
+>>>   
+>>> +	start_pfn = pfn_first(pgmap);
+>>> +	end_pfn = pfn_end(pgmap);
+>>> +	nr_pages = end_pfn - start_pfn;
+>>> +
+>>>   	/* pages are dead and unused, undo the arch mapping */
+>>> -	nid = page_to_nid(pfn_to_page(PHYS_PFN(res->start)));
+>>> +	nid = page_to_nid(pfn_to_page(start_pfn));
+>>>   
+>>>   	mem_hotplug_begin();
+>>>   	if (pgmap->type == MEMORY_DEVICE_PRIVATE) {
+>>> -		pfn = PHYS_PFN(res->start);
+>>> -		__remove_pages(page_zone(pfn_to_page(pfn)), pfn,
+>>> -				 PHYS_PFN(resource_size(res)), NULL);
+>>> +		__remove_pages(page_zone(pfn_to_page(start_pfn)), start_pfn,
+>>> +			       nr_pages, NULL);
+>>>   	} else {
+>>>   		arch_remove_memory(nid, res->start, resource_size(res),
+>>>   				pgmap_altmap(pgmap));
+>>>
+>>
+>> Aneesh, I was wondering why the use of "res->start" is correct (and we
+>> shouldn't also witch to start_pfn/nr_pages here. It would be good if Dan
+>> could review.
+>>
+> 
+> To be more precise, I wonder if it should actually be
+> 
+> __remove_pages(page_zone(pfn_to_page(start_pfn)), res->start,
+>                 resource_size(res))
+> 
 
-Another option would be to switch to a perceptual brightness curve
-(CIE 1931), with the caveat that it would change the behavior of
-the backlight. Also the concept of a minimum brightness level is
-currently not supported for CIE 1931 curves.
+yes, that would be make it much clear.
 
-Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
----
+But for MEMORY_DEVICE_PRIVATE start_pfn and pfn should be same?
 
-Changes in v2:
-- added 0 as first step for devices/panels that require a minimum
-  PWM duty cycle
-- increased 'num-interpolated-steps' values by one, it's not the
-  number of steps between levels, but that number +1
 
- arch/arm/boot/dts/rk3288-veyron-edp.dtsi   | 35 ++--------------------
- arch/arm/boot/dts/rk3288-veyron-jaq.dts    | 35 ++--------------------
- arch/arm/boot/dts/rk3288-veyron-minnie.dts | 35 ++--------------------
- arch/arm/boot/dts/rk3288-veyron-tiger.dts  | 35 ++--------------------
- 4 files changed, 8 insertions(+), 132 deletions(-)
+> IOW, keep calling __remove_pages() with the same parameters but read
+> nid/zone from the offset one.
+> 
+> Hope some memunmap_pages() expert can clarify.
+> 
 
-diff --git a/arch/arm/boot/dts/rk3288-veyron-edp.dtsi b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
-index b12e061c5f7f..300a7e32c978 100644
---- a/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
-+++ b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
-@@ -41,39 +41,8 @@
- 
- 	backlight: backlight {
- 		compatible = "pwm-backlight";
--		brightness-levels = <
--			  0   1   2   3   4   5   6   7
--			  8   9  10  11  12  13  14  15
--			 16  17  18  19  20  21  22  23
--			 24  25  26  27  28  29  30  31
--			 32  33  34  35  36  37  38  39
--			 40  41  42  43  44  45  46  47
--			 48  49  50  51  52  53  54  55
--			 56  57  58  59  60  61  62  63
--			 64  65  66  67  68  69  70  71
--			 72  73  74  75  76  77  78  79
--			 80  81  82  83  84  85  86  87
--			 88  89  90  91  92  93  94  95
--			 96  97  98  99 100 101 102 103
--			104 105 106 107 108 109 110 111
--			112 113 114 115 116 117 118 119
--			120 121 122 123 124 125 126 127
--			128 129 130 131 132 133 134 135
--			136 137 138 139 140 141 142 143
--			144 145 146 147 148 149 150 151
--			152 153 154 155 156 157 158 159
--			160 161 162 163 164 165 166 167
--			168 169 170 171 172 173 174 175
--			176 177 178 179 180 181 182 183
--			184 185 186 187 188 189 190 191
--			192 193 194 195 196 197 198 199
--			200 201 202 203 204 205 206 207
--			208 209 210 211 212 213 214 215
--			216 217 218 219 220 221 222 223
--			224 225 226 227 228 229 230 231
--			232 233 234 235 236 237 238 239
--			240 241 242 243 244 245 246 247
--			248 249 250 251 252 253 254 255>;
-+		brightness-levels = <0 255>;
-+		num-interpolated-steps = <255>;
- 		default-brightness-level = <128>;
- 		enable-gpios = <&gpio7 RK_PA2 GPIO_ACTIVE_HIGH>;
- 		pinctrl-names = "default";
-diff --git a/arch/arm/boot/dts/rk3288-veyron-jaq.dts b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
-index 80386203e85b..a4966e505a2f 100644
---- a/arch/arm/boot/dts/rk3288-veyron-jaq.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
-@@ -20,39 +20,8 @@
- 
- &backlight {
- 	/* Jaq panel PWM must be >= 3%, so start non-zero brightness at 8 */
--	brightness-levels = <
--		  0
--		  8   9  10  11  12  13  14  15
--		 16  17  18  19  20  21  22  23
--		 24  25  26  27  28  29  30  31
--		 32  33  34  35  36  37  38  39
--		 40  41  42  43  44  45  46  47
--		 48  49  50  51  52  53  54  55
--		 56  57  58  59  60  61  62  63
--		 64  65  66  67  68  69  70  71
--		 72  73  74  75  76  77  78  79
--		 80  81  82  83  84  85  86  87
--		 88  89  90  91  92  93  94  95
--		 96  97  98  99 100 101 102 103
--		104 105 106 107 108 109 110 111
--		112 113 114 115 116 117 118 119
--		120 121 122 123 124 125 126 127
--		128 129 130 131 132 133 134 135
--		136 137 138 139 140 141 142 143
--		144 145 146 147 148 149 150 151
--		152 153 154 155 156 157 158 159
--		160 161 162 163 164 165 166 167
--		168 169 170 171 172 173 174 175
--		176 177 178 179 180 181 182 183
--		184 185 186 187 188 189 190 191
--		192 193 194 195 196 197 198 199
--		200 201 202 203 204 205 206 207
--		208 209 210 211 212 213 214 215
--		216 217 218 219 220 221 222 223
--		224 225 226 227 228 229 230 231
--		232 233 234 235 236 237 238 239
--		240 241 242 243 244 245 246 247
--		248 249 250 251 252 253 254 255>;
-+	brightness-levels = <0 8 255>;
-+	num-interpolated-steps = <247>;
- };
- 
- &rk808 {
-diff --git a/arch/arm/boot/dts/rk3288-veyron-minnie.dts b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-index 55955b082501..c833716dbe48 100644
---- a/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-@@ -38,39 +38,8 @@
- 
- &backlight {
- 	/* Minnie panel PWM must be >= 1%, so start non-zero brightness at 3 */
--	brightness-levels = <
--			  0   3   4   5   6   7
--			  8   9  10  11  12  13  14  15
--			 16  17  18  19  20  21  22  23
--			 24  25  26  27  28  29  30  31
--			 32  33  34  35  36  37  38  39
--			 40  41  42  43  44  45  46  47
--			 48  49  50  51  52  53  54  55
--			 56  57  58  59  60  61  62  63
--			 64  65  66  67  68  69  70  71
--			 72  73  74  75  76  77  78  79
--			 80  81  82  83  84  85  86  87
--			 88  89  90  91  92  93  94  95
--			 96  97  98  99 100 101 102 103
--			104 105 106 107 108 109 110 111
--			112 113 114 115 116 117 118 119
--			120 121 122 123 124 125 126 127
--			128 129 130 131 132 133 134 135
--			136 137 138 139 140 141 142 143
--			144 145 146 147 148 149 150 151
--			152 153 154 155 156 157 158 159
--			160 161 162 163 164 165 166 167
--			168 169 170 171 172 173 174 175
--			176 177 178 179 180 181 182 183
--			184 185 186 187 188 189 190 191
--			192 193 194 195 196 197 198 199
--			200 201 202 203 204 205 206 207
--			208 209 210 211 212 213 214 215
--			216 217 218 219 220 221 222 223
--			224 225 226 227 228 229 230 231
--			232 233 234 235 236 237 238 239
--			240 241 242 243 244 245 246 247
--			248 249 250 251 252 253 254 255>;
-+	brightness-levels = <0 3 255>;
-+	num-interpolated-steps = <252>;
- };
- 
- &i2c_tunnel {
-diff --git a/arch/arm/boot/dts/rk3288-veyron-tiger.dts b/arch/arm/boot/dts/rk3288-veyron-tiger.dts
-index 27557203ae33..bebb230e592f 100644
---- a/arch/arm/boot/dts/rk3288-veyron-tiger.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-tiger.dts
-@@ -23,39 +23,8 @@
- 
- &backlight {
- 	/* Tiger panel PWM must be >= 1%, so start non-zero brightness at 3 */
--	brightness-levels = <
--		  0   3   4   5   6   7
--		  8   9  10  11  12  13  14  15
--		 16  17  18  19  20  21  22  23
--		 24  25  26  27  28  29  30  31
--		 32  33  34  35  36  37  38  39
--		 40  41  42  43  44  45  46  47
--		 48  49  50  51  52  53  54  55
--		 56  57  58  59  60  61  62  63
--		 64  65  66  67  68  69  70  71
--		 72  73  74  75  76  77  78  79
--		 80  81  82  83  84  85  86  87
--		 88  89  90  91  92  93  94  95
--		 96  97  98  99 100 101 102 103
--		104 105 106 107 108 109 110 111
--		112 113 114 115 116 117 118 119
--		120 121 122 123 124 125 126 127
--		128 129 130 131 132 133 134 135
--		136 137 138 139 140 141 142 143
--		144 145 146 147 148 149 150 151
--		152 153 154 155 156 157 158 159
--		160 161 162 163 164 165 166 167
--		168 169 170 171 172 173 174 175
--		176 177 178 179 180 181 182 183
--		184 185 186 187 188 189 190 191
--		192 193 194 195 196 197 198 199
--		200 201 202 203 204 205 206 207
--		208 209 210 211 212 213 214 215
--		216 217 218 219 220 221 222 223
--		224 225 226 227 228 229 230 231
--		232 233 234 235 236 237 238 239
--		240 241 242 243 244 245 246 247
--		248 249 250 251 252 253 254 255>;
-+	brightness-levels = <0 3 255>;
-+	num-interpolated-steps = <252>;
- };
- 
- &backlight_regulator {
--- 
-2.23.0.444.g18eeb5a265-goog
-
+-aneesh
 
 _______________________________________________
 linux-arm-kernel mailing list
