@@ -2,72 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEF49CB06B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 22:49:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75BE8CB077
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 22:50:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pacmU5sCEk1/8BVuQ/aCmbPZr+a5sIQyogaUZQGPBX0=; b=l9jkngAbfgr/Ev
-	5fKyMy49lc9pNr5VK2J1GlnZan1ai/AT+xu0fd+uKsDrCW3qPj1y0ULUU9/DZ5DlT5Lk9jDLjXNZ3
-	fAA8qKh5Q8dbAD6+MZBxTAU6efCNcHBd0yWDypfpwOGKhu5vXg8UrQUz7GyxIRB59lL35ofSJ4ING
-	MAZtCtStuVNNNG1Cf6BOwXy0/MPt/zhQgZ9Vw1I8oOWkg6CpVFN3xfNzUKmwQq9ZBkvKQXq7TxAj8
-	OkVfJd3XUs5fCJql0nzFanTAJKLgjV6Tp+0MG9tdLv1Z5MtT7Qq7fov7XiCt/PxwNb1UW0TXJa2pY
-	dd0v2jaUNGBdr4rJQBow==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Pbdwb8MBwm+tkPkwcUHVq0W7TAgCjN8cX7nqIPxmLjQ=; b=KzMFhigyYx0uav
+	H5kTvuhp77XS4U77KlZ3Y3+aSN6Vdai0XzgHJ4oQwuwm4sjxggsB6c6opW0LJ/pm+qkO1a1hyl03H
+	zCUMUleTLwwA65gI+MkQiaP/NhQplPJChFAY1e1lWwPHJ3nX3CwZisI5tSnqxhgGQjZY0lKhw8CCD
+	iXpbJr2DFV8GuAJ+C8L7VJn1hrTZ67EMZ3sGcsvd4w3GZmnEYL0WN7HaR6EmRywbOIWsvMM122ND3
+	lxTEFBJ96YR8fkigq5eK2wI+sYfDj+8xpw6SWabQql8OiWmd6rkUmxHwfHAviOSbmKCHSPgh/fZQb
+	u+7gfllaUY5LmFE0t73A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG82v-0004Ru-Mp; Thu, 03 Oct 2019 20:49:57 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iG83i-0005x4-2O; Thu, 03 Oct 2019 20:50:46 +0000
+Received: from avon.wwwdotorg.org ([104.237.132.123])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG82o-0004RG-Rr
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 20:49:52 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 836AC2086A;
- Thu,  3 Oct 2019 20:49:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570135790;
- bh=T7GyCKf+5lR0UHhpOwx4h8MhXmzyZ24igcrrwR+1Grc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=YlsegnXXNUnybEBXEiNuPIaAn6MGu0PBLmoyYyZOGQMBQhz2leOs4foXuyQddIs05
- FmGYYmMaGqfBjbUqRHuh53SzDP0dq/PhR7W6DOYBcJsEShxWm/6npfRvJdkMBuYZ/I
- D1T6Z3ytd0PlY3qs1BaBqxjwb0QWj1dLUCwZfts4=
-Date: Thu, 3 Oct 2019 21:49:45 +0100
-From: Will Deacon <will@kernel.org>
-To: Nick Desaulniers <ndesaulniers@google.com>
-Subject: Re: [PATCH v5 2/6] arm64: vdso32: Detect binutils support for dmb
- ishld
-Message-ID: <20191003204944.6wuzflqkjdpawzvp@willie-the-truck>
-References: <20191003174838.8872-1-vincenzo.frascino@arm.com>
- <20191003174838.8872-3-vincenzo.frascino@arm.com>
- <CAKwvOdmhyVHREHvyB0wL2GfMsE8GcJ1Ouj_8ifrR4hU8kBYukQ@mail.gmail.com>
+ id 1iG83Z-0005vw-Fd
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 20:50:38 +0000
+Received: from swarren-lx1.nvidia.com (unknown [216.228.112.24])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by avon.wwwdotorg.org (Postfix) with ESMTPSA id 232B21C0728;
+ Thu,  3 Oct 2019 14:50:36 -0600 (MDT)
+X-Virus-Status: Clean
+X-Virus-Scanned: clamav-milter 0.100.3 at avon.wwwdotorg.org
+From: Stephen Warren <swarren@wwwdotorg.org>
+To: Thierry Reding <thierry.reding@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>,
+ Peter De Schrijver <pdeschrijver@nvidia.com>,
+ Prashant Gaikwad <pgaikwad@nvidia.com>
+Subject: [PATCH V3 1/4] clk: tegra: mark fuse clock as critical
+Date: Thu,  3 Oct 2019 14:50:30 -0600
+Message-Id: <20191003205033.98381-1-swarren@wwwdotorg.org>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKwvOdmhyVHREHvyB0wL2GfMsE8GcJ1Ouj_8ifrR4hU8kBYukQ@mail.gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+X-NVConfidentiality: public
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_134950_923778_492454B1 
-X-CRM114-Status: GOOD (  10.11  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191003_135037_564314_87762A3C 
+X-CRM114-Status: GOOD (  10.39  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,31 +62,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, LKML <linux-kernel@vger.kernel.org>,
- Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Stephen Boyd <sboyd@kernel.org>, linux-tegra@vger.kernel.org,
+ Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 03, 2019 at 01:18:16PM -0700, Nick Desaulniers wrote:
-> On Thu, Oct 3, 2019 at 10:48 AM Vincenzo Frascino
-> <vincenzo.frascino@arm.com> wrote:
-> >
-> > Older versions of binutils that do not support certain types of memory
-> > barriers can cause build failure of the vdso32 library.
-> 
-> Do you know specific version numbers of binutils that are affected?
-> May be helpful to have in the commit message just for future
-> travelers.
+From: Stephen Warren <swarren@nvidia.com>
 
-A quick bit of archaeology suggests e797f7e0b2be added this back in 2012,
-which seems to correlate with the 2.24 release.
+For a little over a year, U-Boot on Tegra124 has configured the flow
+controller to perform automatic RAM re-repair on off->on power transitions
+of the CPU rail1]. This is mandatory for correct operation of Tegra124.
+However, RAM re-repair relies on certain clocks, which the kernel must
+enable and leave running. The fuse clock is one of those clocks. Mark this
+clock as critical so that LP1 power mode (system suspend) operates
+correctly.
 
-Will
+[1] 3cc7942a4ae5 ARM: tegra: implement RAM repair
+
+Reported-by: Jonathan Hunter <jonathanh@nvidia.com>
+Cc: stable@vger.kernel.org
+Signed-off-by: Stephen Warren <swarren@nvidia.com>
+---
+v3: Added comment to the clock table entry indicating why the clock is
+    critical.
+v2: Set CRITICAL flag on the clock, rather than enabling it in
+    tegra124_init_table[].
+---
+ drivers/clk/tegra/clk-tegra-periph.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/clk/tegra/clk-tegra-periph.c b/drivers/clk/tegra/clk-tegra-periph.c
+index 1ed85f120a1b..49b9f2f85bad 100644
+--- a/drivers/clk/tegra/clk-tegra-periph.c
++++ b/drivers/clk/tegra/clk-tegra-periph.c
+@@ -785,7 +785,11 @@ static struct tegra_periph_init_data gate_clks[] = {
+ 	GATE("ahbdma", "hclk", 33, 0, tegra_clk_ahbdma, 0),
+ 	GATE("apbdma", "pclk", 34, 0, tegra_clk_apbdma, 0),
+ 	GATE("kbc", "clk_32k", 36, TEGRA_PERIPH_ON_APB | TEGRA_PERIPH_NO_RESET, tegra_clk_kbc, 0),
+-	GATE("fuse", "clk_m", 39, TEGRA_PERIPH_ON_APB, tegra_clk_fuse, 0),
++	/*
++	 * Critical for RAM re-repair operation, which must occur on resume
++	 * from LP1 system suspend and as part of CCPLEX cluster switching.
++	 */
++	GATE("fuse", "clk_m", 39, TEGRA_PERIPH_ON_APB, tegra_clk_fuse, CLK_IS_CRITICAL),
+ 	GATE("fuse_burn", "clk_m", 39, TEGRA_PERIPH_ON_APB, tegra_clk_fuse_burn, 0),
+ 	GATE("kfuse", "clk_m", 40, TEGRA_PERIPH_ON_APB, tegra_clk_kfuse, 0),
+ 	GATE("apbif", "clk_m", 107, TEGRA_PERIPH_ON_APB, tegra_clk_apbif, 0),
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
