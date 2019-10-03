@@ -2,84 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA1B4CAB74
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 19:28:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 288F1CAB7F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 19:34:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5pHxXOsIOpt2r2vN3IGB4JTsuewVuAi4t1+sXZ6oSq4=; b=DU5bCkMjOXkeZc
-	ViULUmcBlAFCE/d/qH+hiMcQuI5ToApZMY0Jgu96H3lD5LvvfL/JbpqnkC3+vOoiIVyewMP0vuoKe
-	sw8qIpu2m6w6JJxhyV9cTkDTuMPVGCEVx1UvXFs9lYag6832a0tCubKK9SmPc/vTSbLOql92DbbsT
-	ilDQZDiFgkYWYIMyz6KcolrB1Lp6FwHhUwbcfZQ5PvVR5WmEChAekKTlWU5csHRMu4vabL97sO69V
-	yAuBoeyLi1VsLudm7W3V2hwBUqCRbj0fphdJzg5lKXgywB0Vqwq+1sF8ogwsZIJPjtkBXNXyp9bWq
-	edJWeC6/hVIPD1bj70Hw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0f3xFCnQD1uo0If5G73ng8+J7BzkjHdV/V02bohEdBg=; b=vDGGKmfDYbJLz5
+	NmTU4NBHoJkHBBr8/7peSV3IM5/ic6MATzZ2X/BqLhWWmi+8EKJAS+ACXoXy2O+Nyo1phF42HOU1h
+	Tg1afFnLg8LbNXR8h36aFx9H19ERs3r8YgkMWgFKJKQVMXMQQibLIKiZRuGkqdR+mmWcI+o6DS+pI
+	GwvCL+TkHZJW92tWC+CiOVFiZm+J9LXQr/611Ni/T2agk+8V7HwAMNAIPbxP8K5U89JHTiJLsBRwv
+	agn2yDQ1ay+XDoMl/Dzuf212tbqfo3a85qfE1rVMOD8imWKJeuxQJ6C++Espt2LkPNEmpt+gufv3A
+	d27bW5X6P/5aViwToIzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG4uI-0006to-87; Thu, 03 Oct 2019 17:28:50 +0000
-Received: from mout.gmx.net ([212.227.15.15])
+	id 1iG4zQ-0000pJ-Vm; Thu, 03 Oct 2019 17:34:08 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG4uB-0006sz-5O
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 17:28:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1570123715;
- bh=1/9ytc+GiSYLmzLUQTHXod+HPAelk3SiwurUk+Qr1yw=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=CJYOeogBGQo0GZboKNzoPTNFGJP7gyTe8ysUI62iHOFyQnMY/RnxxLPJXFY3m6aVU
- LoTHWUKCu1EBTOKHcImQvCF7pGjJ1bhUlh7jiJmQe4t+EjMIAidDjTbuVrYLfx7vYC
- w/NihBJnoa8wfRFhVXlCTAk5cLTu2mniycEzcyRo=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.1.162] ([37.4.249.116]) by mail.gmx.com (mrgmx005
- [212.227.17.190]) with ESMTPSA (Nemesis) id 1Mt75H-1i19Lu1F6X-00tPuP; Thu, 03
- Oct 2019 19:28:35 +0200
-Subject: Re: [PATCH] ARM: dt: check MPIDR on MP devices built without SMP
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-kernel@vger.kernel.org
-References: <20191002114508.1089-1-nsaenzjulienne@suse.de>
-From: Stefan Wahren <wahrenst@gmx.net>
-Message-ID: <e2487ea8-67d0-b850-af63-683dff498275@gmx.net>
-Date: Thu, 3 Oct 2019 19:28:33 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iG4zJ-0000ns-G7
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 17:34:03 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id 0F48661AFD; Thu,  3 Oct 2019 17:33:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1570124040;
+ bh=AYmi/neband1M0/iZPZrayWLoJ7jz85EmogdgImxAa0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=LO1PvsE0DFvQK1/s1WxHMB19/5D/wsjhA42kRIoDAUDDa7PdEutuZQNjKeehDt0YB
+ ctmZSVF7rSZHERTvvjxF5N9bTbeGUrntGCfySeaqysp5a5R9bkufuvG2vWV8Czcf1z
+ KkwooBc6hu+oTxd/ZaMurXcMOm4KK3fdN3HSP3xo=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from jcrouse1-lnx.qualcomm.com (i-global254.qualcomm.com
+ [199.106.103.254])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: jcrouse@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id AD3736192E;
+ Thu,  3 Oct 2019 17:33:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1570124035;
+ bh=AYmi/neband1M0/iZPZrayWLoJ7jz85EmogdgImxAa0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=R87vj5qKCQ8JWx9FOUsu32uvZ+fhtw4BenQk7pstf47aX4pHC0G6hnhxMZddXwVp2
+ QNVEa9j9eHbrWo30aNbcHAX4Eomt3kGQBjStgfxJjwawjVQN8XNxVzmdJxHhAEBlvR
+ ZO7uyuDDZc+/luet8gTEWRQk+uRsbjH5ts07t7ik=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org AD3736192E
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ spf=none smtp.mailfrom=jcrouse@codeaurora.org
+Date: Thu, 3 Oct 2019 11:33:52 -0600
+From: Jordan Crouse <jcrouse@codeaurora.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH 3/4] iommu/io-pgtable-arm: Rationalise TCR handling
+Message-ID: <20191003173352.GA13386@jcrouse1-lnx.qualcomm.com>
+Mail-Followup-To: Robin Murphy <robin.murphy@arm.com>,
+ Will Deacon <will@kernel.org>, joro@8bytes.org,
+ iommu@lists.linux-foundation.org,
+ linux-arm-kernel@lists.infradead.org, robdclark@gmail.com
+References: <cover.1566238530.git.robin.murphy@arm.com>
+ <78df4f8e2510e88f3ded59eb385f79b4442ed4f2.1566238530.git.robin.murphy@arm.com>
+ <20190820103115.o7neehdethf7sbqi@willie-the-truck>
+ <48ca6945-de73-116a-3230-84862ca9e60b@arm.com>
+ <20190820160700.6ircxomwuo5bksqz@willie-the-truck>
+ <8cc47f43-ad74-b4e2-e977-6c78780abc91@arm.com>
+ <20190821121120.34wqo7vj56pqk57c@willie-the-truck>
+ <cdceec32-8dae-2c9e-8f66-0cd86288529f@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20191002114508.1089-1-nsaenzjulienne@suse.de>
-Content-Language: en-US
-X-Provags-ID: V03:K1:sY96XPCdbmODy3ENQlqjYJoCke2gtAyeaRHQ/ewzjOXNOxvx0/A
- qbuh9Z8YocIKS/wvcaobPGkEZeoW4UtoD0zFjrSOTvzB2S3MjUxsBhQ0ELhAx8mZNPUS83w
- sJU+6SLWL1qvXoaSnaGzdmjFYgEz2yAcUD6v3dnb7VNTV1KVvYl8aChNgpanuSYxw6Ooejb
- lzhdZTT81abj3HPqjb7Ig==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:F8KbZNVHwWY=:JS9pNupe6kR583TYXbT6TH
- UaYtQkAAEYgrXx7mWwajxIETZwCTKTyfva4pSeSaX7cazQDSxqwSsPJhjS7cdcmmy9sQaI/Kl
- ZPUIbAvFllW1gJeQclovYN+ID6gkzaMlTkpntqQdFOiqMwdB9kWBRlwLWd/Os2Lt/HtjqTsH7
- clN650pzstI/5hsZgQv0a3EQ/DxCvRpY/8uGnREMtW9ZPBI/0OIMfqsbPugdM7C64PqPlmL4U
- Be7tTEsnYYjwkbnyujZv9BQzfhgJlk8P0pvNoPca8hexkDfh+wJktFtScnPyBk8jQpKNNqJ1U
- qEWDDfTPEKAGox6UXUphWMe4YYSZAnQ279D2rkSiX7r6tRGUjVaXnBoQ5DyK/zdz7U5hwKrdx
- H9pJq1WTRnxyWfLEd2SjStCS21pTbrVjmUkhfSH2t3XlTUX7Pogzel3vB4Oi9m1CEcRzqc0+J
- PD1410f+rGm3bogyd74o8CoeLRjexA1BH3Jkh8mK2HnNMq2RxvV27KZuAyU3wXPxSuNTG6tYQ
- G74aUtPwn99fsFNLvFfSDjnlJLePz0oOWkHkkFe3xckF09Y/CXopTtHqVC/mQa2GnxfTF71qK
- WWMtgGBAEjPsVZBr/T6V0GVhdRt9+36/OGfBX+d9NVoZIK0om+hY6X17Ia8eH6syUhSH1xtn3
- +HuqlQRJhrAaz8/6JqAtJIlG6VLlVj1gaYk+CHTIF3EheK4TtFZN0lGe+i7zEKvHbplLAqFca
- NwZEgiXI+KrRZMEtRTUcET8luQRjYcvMMDySRsAgs8oF4vHpgh1APRkDI5MDHZ1ElOHVH+y4d
- a7krHpVFk1jDG4Ys5MIz9qqNQBmrI7BQP2dXnTKRqzqUQ4hU4SAqe5KOOEVF/t3A+xu8G2Rhh
- MNenCWNqmHz2whisbbp691OBNxgoyfmkjuN6HNUrDuYIJduP470F2eEl+FMt6/YYR81rao86a
- llJwZcWjVcfqdRXISg1Zts5SYFaX1p9dR2/QP0oQIx6cuME3WurlroEaZbCDvxRFRceKYYHLv
- d0qxN6w6yhr40yA/z6uYWDXed1uC7op1mBAAcdY2VmScyOTYhrcAh1905754n7hkHSui+54WF
- kFgiSrnuft9aeSd957wKJM77N8Sy9yK9folc2RmpjN1vWWGyIbiUGmfJPLyw/kpv/JMCPLuNM
- 8WG0zHrZlsx+0mC7feEPs/WQizIYfHZ2EpuImNcxT5R9IiSVGlEH4BXuHzAvyY88i65WfOyEy
- rJH4oBbAkzVsVbea10jG63+VJPQC75sq9fo33wFraGHKOPztjKmjBqLRpleQ=
+Content-Disposition: inline
+In-Reply-To: <cdceec32-8dae-2c9e-8f66-0cd86288529f@arm.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_102843_499932_A5EDCA12 
-X-CRM114-Status: GOOD (  14.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191003_103401_586668_190F832B 
+X-CRM114-Status: GOOD (  25.85  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -100,40 +108,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Russell King <linux@armlinux.org.uk>,
- "kernelci.org bot" <bot@kernelci.org>
+Cc: robdclark@gmail.com, joro@8bytes.org, Will Deacon <will@kernel.org>,
+ iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am 02.10.19 um 13:45 schrieb Nicolas Saenz Julienne:
-> Currently, in arm_dt_init_cpu_maps(), the hwid of the boot CPU is read
-> from MPIDR on SMP devices and set to 0 for non SMP. This value is then
-> matched with the DT cpu nodes' reg property in order to find the boot
-> CPU in DT.
->
-> On MP devices build without SMP the cpu DT node contains the expected
-> MPIDR yet the hwid is set to 0. With this the function fails to match
-> the cpus and uses the default CPU logical map. Making it impossible to
-> get the CPU's DT node further down the line. This causes issues with
-> cpufreq-dt, as it triggers warnings when not finding a suitable DT node
-> on CPU0.
->
-> Change the way we choose whether to get MPIDR or not. Instead of
-> depending on SMP check the number of CPUs defined in DT. Anything > 1
-> means MPIDR will be available.
->
-> This was seen on a Raspberry Pi 2 build with bcm2835_defconfig.
->
-> Reported-by: "kernelci.org bot" <bot@kernelci.org>
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> ---
+On Wed, Aug 21, 2019 at 01:56:20PM +0100, Robin Murphy wrote:
+> On 21/08/2019 13:11, Will Deacon wrote:
+> >On Tue, Aug 20, 2019 at 07:41:52PM +0100, Robin Murphy wrote:
+> >>On 20/08/2019 17:07, Will Deacon wrote:
+> >>>On Tue, Aug 20, 2019 at 04:25:56PM +0100, Robin Murphy wrote:
+> >>>>On 20/08/2019 11:31, Will Deacon wrote:
+> >>>>>On Mon, Aug 19, 2019 at 07:19:30PM +0100, Robin Murphy wrote:
+> >>>>>>Although it's conceptually nice for the io_pgtable_cfg to provide a
+> >>>>>>standard VMSA TCR value, the reality is that no VMSA-compliant IOMMU
+> >>>>>>looks exactly like an Arm CPU, and they all have various other TCR
+> >>>>>>controls which io-pgtable can't be expected to understand. Thus since
+> >>>>>>there is an expectation that drivers will have to add to the given TCR
+> >>>>>>value anyway, let's strip it down to just the essentials that are
+> >>>>>>directly relevant to io-pgatble's inner workings - namely the address
+> >>>>>>sizes, walk attributes, and where appropriate, format selection.
+> >>>>>>
+> >>>>>>Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> >>>>>>---
+> >>>>>>    drivers/iommu/arm-smmu-v3.c        | 7 +------
+> >>>>>>    drivers/iommu/arm-smmu.c           | 1 +
+> >>>>>>    drivers/iommu/arm-smmu.h           | 2 ++
+> >>>>>>    drivers/iommu/io-pgtable-arm-v7s.c | 6 ++----
+> >>>>>>    drivers/iommu/io-pgtable-arm.c     | 4 ----
+> >>>>>>    drivers/iommu/qcom_iommu.c         | 2 +-
+> >>>>>>    6 files changed, 7 insertions(+), 15 deletions(-)
+> >>>>>
+> >>>>>Hmm, so I'm a bit nervous about this one since I think we really should
+> >>>>>be providing a TCR with EPD1 set if we're only giving you TTBR0. Relying
+> >>>>>on the driver to do this worries me. See my comments on the next patch.
+> >>>>
+> >>>>The whole idea is that we already know we can't provide a *complete* TCR
+> >>>>value (not least because anything above bit 31 is the wild west), thus
+> >>>>there's really no point in io-pgtable trying to provide anything other than
+> >>>>the parts it definitely controls. It makes sense to provide this partial TCR
+> >>>>value "as if" for TTBR0, since that's the most common case, but ultimately
+> >>>>io-pgatble doesn't know (or need to) which TTBR the caller intends to
+> >>>>actually use for this table. Even if the caller *is* allocating it for
+> >>>>TTBR0, io-pgtable doesn't know that they haven't got something live in TTBR1
+> >>>>already, so it still wouldn't be in a position to make the EPD1 call either
+> >>>>way.
+> >>>
+> >>>Ok, but the driver can happily rewrite/ignore what it gets back. I suppose
+> >>>an alternative would be scrapped the 'u64 tcr' and instead having a bunch
+> >>>of named bitfields for the stuff we're actually providing, although I'd
+> >>>still like EPDx to be in there.
+> >>
+> >>I like the bitfield idea; it would certainly emphasise the "you have to do
+> >>something more with this" angle that I'm pushing towards here, but still
+> >>leave things framed in TCR terms without having to go to some more general
+> >>abstraction. It really doesn't play into your EPD argument though - such a
+> >>config would be providing TxSZ/TGx/IRGNx/ORGNx/SHx, but EPDy, for y = !x.
+> >>For a driver to understand that and do the right thing with it is even more
+> >>involved than for the driver to just set EPD1 by itself anyway.
+> >
+> >Having considered the bitfield idea some more, I'm less attached to EPDx
+> >because we simply wouldn't be making a statement about them, rather than a
+> >(dangerous) zero value and expecting it to be ignored. So I think we're in
+> >agreement on that.
+> 
+> Cool, I'll give bitfields a go for v2.
+> 
+> >The only part I'm still stuck to is that I think io-pgtable should know
+> >whether it's targetting TTBR0 or TTBR1 so that it can sanitise input
+> >addresses correctly. Doing this in the driver code is possible, but I'd
+> >rather not start from that position, particularly as it would require things
+> >like sign-extension in the TLBI callbacks.
 
-Tested-by: Stefan Wahren <wahrenst@gmx.net>
+Bumping this as is our tradition in the -rc1 time frame before we get all
+distracted with other stuff. It sounds like the last agreement was for a
+TTBR1 hint for the EDP and the sign extension in the functions.
 
-Thanks
+Let me know if you need any help. I've got a little time and more than a little
+motivation to keep slogging ahead toward a glorious arm-smmu-v2
+per-context pagetable future.
 
+Jordan
+
+-- 
+The Qualcomm Innovation Center, Inc. is a member of Code Aurora Forum,
+a Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
