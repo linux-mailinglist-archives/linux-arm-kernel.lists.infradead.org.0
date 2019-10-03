@@ -2,83 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C3F8C9D90
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 13:42:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1CDEC9DA0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 13:43:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4KV4a7q35quLWFbNlEkYyJr8umD+lqtz3y5crrCESm0=; b=du+44pjUGHqtnU
-	zybSy5W2GW03Uedba461f8ZJOojNRieu3KXldxz3O522jLoYlySwmXe2qw9HgirDz4u+5qYQK+VMR
-	ishz6NAjRq1ZiztsQUIJzENqIF1KqG2ZSkBiAfvAAx9Ol9LYfASGvVCmbWrIXoS3CIb4BWHNIc6v5
-	1uZv9hUY0Gwk/UKpkBUzv1AhEoM2goCyGgEkuq1kARhzhMweVyrEzfI2hrJwwatrmeJOeBIbGSaTQ
-	xGDX8yBqFQCOja0sCBy++7+LRFUiQoi6cbVzlEetay84IqgR6q0vAUxj7pvMH2WsoVnTHOnjTzTAL
-	1ywTguF1LnIQPJ/1YIvA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YJEvGyWSkugyBnUIkQVbJP2o+uvfDrIwOmZZmjU9zeU=; b=E/Pf75O1Wp3JTO
+	YrIcA3QAPVgxmf7+Z6gk/dG2NsRZNeg0slHG+LNBJNzDQ2kRnoD6HPf1as3J6qetzwcOqgrbAmnsh
+	8HruyIl/A45lg5fWBGVifVsPvC277NK7nXZnPbhEGkWro/x0PjhNTNDZT1mlStF2lykfp6q/e6prY
+	jA7O9hKz+RT0nT/RpX6FUMklw9htl2ztE78ynSTl22+WCim8ywZoHioj0VCM/zSV45kyNJYBQVvmU
+	vsNDObM6S09cgd3proOQZjw81MPOsWvyNacCG06HwpVtRWBWcKKyudqFFaEUgIZgZzKzRkTcAi2WY
+	qPMDYOKwdirPlXSs5e+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFzVA-0003SC-7O; Thu, 03 Oct 2019 11:42:32 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFzUq-0003K3-UN
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 11:42:14 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x93Bg5o1078189;
- Thu, 3 Oct 2019 06:42:05 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1570102925;
- bh=oz/bIvQ4rqWyufq6vJCniBBXFBd9FPenYQM05c8kSkc=;
- h=From:To:CC:Subject:Date;
- b=uVfssUzlirsigRojwClcbNOiE9BqrhxcG9kE+myhSDPnPIxTdGD0faqq9z6fIpsOb
- Iqx9J4XdEeyJ1C2OpWIUPU37ftkiNRvzBYgKN34wKOshh2l5VkmzU/Em8TgkYhlzMO
- 0GRhAmmcCfis8iC6bN9meplhWkBvu1bUZrB014Mk=
-Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x93Bg5x8108385
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 3 Oct 2019 06:42:05 -0500
-Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 3 Oct
- 2019 06:42:04 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 3 Oct 2019 06:42:04 -0500
-Received: from a0230074-OptiPlex-7010.india.ti.com (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x93Bg1G9053789;
- Thu, 3 Oct 2019 06:42:02 -0500
-From: Faiz Abbas <faiz_abbas@ti.com>
-To: <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH] arm64: dts: ti: k3-am654-base-board: Add disable-wp for mmc0
-Date: Thu, 3 Oct 2019 17:12:51 +0530
-Message-ID: <20191003114251.20533-1-faiz_abbas@ti.com>
-X-Mailer: git-send-email 2.19.2
+	id 1iFzWI-0003u1-C1; Thu, 03 Oct 2019 11:43:42 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iFzWB-0003tX-67
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 11:43:36 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CCBF31570;
+ Thu,  3 Oct 2019 04:43:34 -0700 (PDT)
+Received: from [10.1.26.182] (c02wx28rhv2r.cambridge.arm.com [10.1.26.182])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1DFC63F706;
+ Thu,  3 Oct 2019 04:43:34 -0700 (PDT)
+Subject: Re: Regression: Cortex-M w/ XIP not booting
+To: afzal mohammed <afzal.mohd.ma@gmail.com>
+References: <20191002061637.GA7743@afzalpc>
+ <c9a8d667-0dfb-2dd7-3537-8683cfc3914d@arm.com>
+ <20191003000459.GA5467@afzalpc>
+From: Vladimir Murzin <vladimir.murzin@arm.com>
+Message-ID: <60589407-8740-cf96-4dcf-cf5ca57f916c@arm.com>
+Date: Thu, 3 Oct 2019 12:43:32 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <20191003000459.GA5467@afzalpc>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_044213_085762_B96101F7 
-X-CRM114-Status: UNSURE (   9.79  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191003_044335_270248_F42E20DC 
+X-CRM114-Status: GOOD (  14.98  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,35 +63,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, nm@ti.com, robh+dt@kernel.org, t-kristo@ti.com,
- faiz_abbas@ti.com
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Russell King <linux@armlinux.org.uk>, linux-arm-kernel@lists.infradead.org,
+ Alexandre Torgue <alexandre.torgue@st.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MMC0_SDWP is not connected to the card. Indicate this by adding a
-disable-wp flag.
+Hi Afzal,
+On 10/3/19 1:04 AM, afzal mohammed wrote:
+> Hi Vladimir,
+> 
+> On Wed, Oct 02, 2019 at 12:55:55PM +0100, Vladimir Murzin wrote:
+> 
+>> Can you try diff bellow? I do not have XIP target, but non-XIP seems to
+>> stay happy...
+> 
+> Thanks, it fixes the issue.
 
-Signed-off-by: Faiz Abbas <faiz_abbas@ti.com>
----
- arch/arm64/boot/dts/ti/k3-am654-base-board.dts | 1 +
- 1 file changed, 1 insertion(+)
+Great thanks! I've just sent it as a proper patch.
 
-diff --git a/arch/arm64/boot/dts/ti/k3-am654-base-board.dts b/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
-index 1102b84f853d..143474119328 100644
---- a/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
-+++ b/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
-@@ -221,6 +221,7 @@
- 	bus-width = <8>;
- 	non-removable;
- 	ti,driver-strength-ohm = <50>;
-+	disable-wp;
- };
- 
- &dwc3_1 {
--- 
-2.19.2
+Vladimir
+
+> 
+> Regards
+> afzal
+> 
+>>
+>>
+>> diff --git a/arch/arm/kernel/head-common.S b/arch/arm/kernel/head-common.S
+>> index a7810be..4a39828 100644
+>> --- a/arch/arm/kernel/head-common.S
+>> +++ b/arch/arm/kernel/head-common.S
+>> @@ -68,7 +68,7 @@ ENDPROC(__vet_atags)
+>>   * The following fragment of code is executed with the MMU on in MMU mode,
+>>   * and uses absolute addresses; this is not position independent.
+>>   *
+>> - *  r0  = cp#15 control register
+>> + *  r0  = cp#15 control register (exc_ret for M-class)
+>>   *  r1  = machine ID
+>>   *  r2  = atags/dtb pointer
+>>   *  r9  = processor ID
+>> @@ -137,7 +137,8 @@ __mmap_switched_data:
+>>  #ifdef CONFIG_CPU_CP15
+>>  	.long	cr_alignment			@ r3
+>>  #else
+>> -	.long	0				@ r3
+>> +M_CLASS(.long	exc_ret)			@ r3
+>> +AR_CLASS(.long	0)				@ r3
+>>  #endif
+>>  	.size	__mmap_switched_data, . - __mmap_switched_data
+>>  
+>> diff --git a/arch/arm/kernel/head-nommu.S b/arch/arm/kernel/head-nommu.S
+>> index afa350f..0fc814b 100644
+>> --- a/arch/arm/kernel/head-nommu.S
+>> +++ b/arch/arm/kernel/head-nommu.S
+>> @@ -201,6 +201,8 @@ M_CLASS(streq	r3, [r12, #PMSAv8_MAIR1])
+>>  	bic	r0, r0, #V7M_SCB_CCR_IC
+>>  #endif
+>>  	str	r0, [r12, V7M_SCB_CCR]
+>> +	/* Pass exc_ret to __mmap_switched */
+>> +	mov	r0, r10
+>>  #endif /* CONFIG_CPU_CP15 elif CONFIG_CPU_V7M */
+>>  	ret	lr
+>>  ENDPROC(__after_proc_init)
+>> diff --git a/arch/arm/mm/proc-v7m.S b/arch/arm/mm/proc-v7m.S
+>> index 1448f14..efebf41 100644
+>> --- a/arch/arm/mm/proc-v7m.S
+>> +++ b/arch/arm/mm/proc-v7m.S
+>> @@ -136,9 +136,8 @@ __v7m_setup_cont:
+>>  	cpsie	i
+>>  	svc	#0
+>>  1:	cpsid	i
+>> -	ldr	r0, =exc_ret
+>> -	orr	lr, lr, #EXC_RET_THREADMODE_PROCESSSTACK
+>> -	str	lr, [r0]
+>> +	/* Calculate exc_ret */
+>> +	orr	r10, lr, #EXC_RET_THREADMODE_PROCESSSTACK
+>>  	ldmia	sp, {r0-r3, r12}
+>>  	str	r5, [r12, #11 * 4]	@ restore the original SVC vector entry
+>>  	mov	lr, r6			@ restore LR
+>>
+>> Cheers
+>> Vladimir
+> 
 
 
 _______________________________________________
