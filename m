@@ -2,83 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 310A2C98D4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 09:09:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDBCFC98E4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  3 Oct 2019 09:17:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CIaumGQyGkEZkZzRP2+DtpfUw0mLiYIy0jtNP2BMAXo=; b=rrreN5PfvSukVK
-	WLlrxLjzh/ua2yDI2TXrZtMwEeyvNBNJLf2uhlWEtPSvzKTvAJs2laImTg3uyfpl+WdOWiHWHpDM6
-	UefONDPjyMyqLSQjDYGQjWqDqpXjuEj26FvkIBDNyxmLF46DNfUTpet10zg6iDZReHBf6IdjYVLNZ
-	TVj5OX8Z0hAtma5l6DPc95npD2T+/y9qE9lzOlX7AxPPv0cX33CBI0MZhTmHhl7VBRRdI1OH6HuCO
-	jNVFMkrt99KPt3vWCh5LN7WNCucffqyv/1YBQwuhvfHM3OHCAhA7cM1hOyKFrNLUR7okoeA1WCeMK
-	BIoo+Srlgqcmi1TfNmOg==;
+	List-Owner; bh=NHW4MW2rVqOR/89UQeP2YyC//vByJXp0en5GLHsTUh8=; b=bpNOxHU8ydJK3X
+	4zOQZaY68phV2nPsmKujvfnFpgicB6m0JzEn0xo0vwiVRpc9D6ihTco/xG8Z7WAYh+hJx3V+zZZEl
+	9gNzh6hDLkBXWv+3o4CTfNDIXW8QS5RU3vHUfWhSkxj8jwkLdYZIu3U9aF9Rc2zRldEzEyIM8wfYF
+	X9YToco1StnKKJOmHY6UNbU03xvdvFsHa21wfTrlvDGCA+CNw/ZpTD1n4M4PAM97jEk6St9QZWmhq
+	OCf6S1y6xFhBVLpf+4q4A1F7GLWCmKzKaRMGujC1dUpvdRVv5LTnxX8VSU7gcYpaAb3HTkCYFGrmz
+	jiWWy6LBMeCnBCG9BBHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFvEV-0006qg-9j; Thu, 03 Oct 2019 07:09:03 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1iFvMp-0001Qn-2W; Thu, 03 Oct 2019 07:17:39 +0000
+Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFvEN-0006q2-Tp
- for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 07:08:57 +0000
-Received: by mail-io1-xd41.google.com with SMTP id z19so3216850ior.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 03 Oct 2019 00:08:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=MJcg8zs78d3rXBpOETE+0j+ZuAl6FfPdDEzxoa0/CIM=;
- b=nACueev+gvO9mg6+kv1iNYsTn/JE4CpNo2ZDPqlFFMewbPYZuyhqh+JsqDzfu+L5Q0
- G+AcFl0zPkVgkkKTRCM+7KwBBBHh02sUORkOzzEY79ofQJI2HdySEGQOecxJIFanfVRk
- L6f6wnSuchiE7pN6azWsIbtOZgr+hYD6XZ1jg=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=MJcg8zs78d3rXBpOETE+0j+ZuAl6FfPdDEzxoa0/CIM=;
- b=gKdsdpuhpkAFSoaOTKAnx4r/QttOSGLr3itiitOALqqhaPc3WQDGXz/ANZoFSLiNnq
- SDs2DrgcajIxjMXKgu26V9ONFMEe4BeUZKgxwtCEOyLNM5qFF1v2kplF0mUcfMDXS6vP
- mHvI/ahquJehlXpbZKroPLw+/DFK6AWyVhGN5b5Ea/DxKbpMI9jW9AbB7Q8XCJUTGRnw
- Ay51lVYUoYC+Nqs6peuIuDYNEV+LhuBWSv71EkGyjKAAO4Ing31ajVWHDlSwwRkUYWAV
- hgfwHPb1EIjs23vMF1xZ1d1TPHHMN7+TCgjWxAEJvElYyO+y06NvZ2JNF9XHLWbwfKcm
- nHSA==
-X-Gm-Message-State: APjAAAXbHnmrQpqc3QLCKetBQzqpecYhIyTFrnlPPd8oYFPFRvSzW9RA
- eSqO2TvEFpXl2v4NE0C/3vf7owvKQqbNgyZbFAQqrA==
-X-Google-Smtp-Source: APXvYqyiHoQKtNpYFtcrgyC7ulZRFo5mIyezyvwwYkMn+/z8HGvh/7OVxThakVCi9reOehN1EsA8FIXbO7De8LVxF2E=
-X-Received: by 2002:a02:ce5c:: with SMTP id y28mr8189675jar.79.1570086534678; 
- Thu, 03 Oct 2019 00:08:54 -0700 (PDT)
+ id 1iFvMg-0001Q5-SR
+ for linux-arm-kernel@lists.infradead.org; Thu, 03 Oct 2019 07:17:32 +0000
+Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
+ [IPv6:2a01:4f9:c010:4572::80:2])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 9D432634C87;
+ Thu,  3 Oct 2019 10:16:47 +0300 (EEST)
+Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
+ (envelope-from <sakari.ailus@retiisi.org.uk>)
+ id 1iFvLy-0002Ge-4R; Thu, 03 Oct 2019 10:16:46 +0300
+Date: Thu, 3 Oct 2019 10:16:46 +0300
+From: Sakari Ailus <sakari.ailus@iki.fi>
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Subject: Re: [PATCH v3 2/3] media: i2c: Add IMX290 CMOS image sensor driver
+Message-ID: <20191003071646.GZ896@valkosipuli.retiisi.org.uk>
+References: <20190830091943.22646-1-manivannan.sadhasivam@linaro.org>
+ <20190830091943.22646-3-manivannan.sadhasivam@linaro.org>
+ <20190923092209.GL5525@valkosipuli.retiisi.org.uk>
+ <20191001184200.GA7739@Mani-XPS-13-9360>
+ <20191002103715.GR896@valkosipuli.retiisi.org.uk>
+ <20191003053338.GA7868@Mani-XPS-13-9360>
 MIME-Version: 1.0
-References: <20191001080253.6135-1-icenowy@aosc.io>
- <20191001080253.6135-2-icenowy@aosc.io>
-In-Reply-To: <20191001080253.6135-2-icenowy@aosc.io>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Thu, 3 Oct 2019 12:38:43 +0530
-Message-ID: <CAMty3ZCjrM4MajJLyLwt-31mNnfVWghwatogtwVOvCt4gY0LZA@mail.gmail.com>
-Subject: Re: [linux-sunxi] [PATCH 1/3] Revert "drm/sun4i: dsi: Change the
- start delay calculation"
-To: Icenowy Zheng <icenowy@aosc.io>
+Content-Disposition: inline
+In-Reply-To: <20191003053338.GA7868@Mani-XPS-13-9360>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_000855_962762_E610FD55 
-X-CRM114-Status: GOOD (  11.69  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191003_001731_095986_B18DEAD8 
+X-CRM114-Status: GOOD (  21.42  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,37 +71,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>, linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Chen-Yu Tsai <wens@csie.org>,
- Maxime Ripard <mripard@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
+ linux-kernel@vger.kernel.org, a.brela@framos.com, robh+dt@kernel.org,
+ mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 1, 2019 at 1:33 PM Icenowy Zheng <icenowy@aosc.io> wrote:
->
-> This reverts commit da676c6aa6413d59ab0a80c97bbc273025e640b2.
->
-> The original commit adds a start parameter to the calculation of the
-> start delay according to some old BSP versions from Allwinner. However,
-> there're two ways to add this delay -- add it in DSI controller or add
-> it in the TCON. Add it in both controllers won't work.
->
-> The code before this commit is picked from new versions of BSP kernel,
-> which has a comment for the 1 that says "put start_delay to tcon". By
-> checking the sun4i_tcon0_mode_set_cpu() in sun4i_tcon driver, it has
-> already added this delay, so we shouldn't repeat to add the delay in DSI
-> controller, otherwise the timing won't match.
+Hi Manivannan,
 
-Thanks for this change. look like this is proper reason for adding +
-1. also adding bsp code links here might help for future reference.
+On Thu, Oct 03, 2019 at 11:03:38AM +0530, Manivannan Sadhasivam wrote:
+....
+> > > > > +static int imx290_set_gain(struct imx290 *imx290, u32 value)
+> > > > > +{
+> > > > > +	int ret;
+> > > > > +
+> > > > > +	u32 adjusted_value = (value * 10) / 3;
+> > > > 
+> > > > What's the purpose of this? Why not to use the value directly?
+> > > > 
+> > > 
+> > > The gain register accepts the value 10/3 of the actual gain required. Hence,
+> > > we need to manually do the calculation before updating the value. I can
+> > > add a comment here to clarify.
+> > 
+> > It's better to use the register value directly. Otherwise the granularity
+> > won't be available to the user space.
+> > 
+> 
+> The sensor datasheet clearly defines that the 10/3'rd of the expected gain
+> should be set to this register. So, IMO we should be setting the value as
 
-Otherwise,
+The unit of that gain is decibels, but the controls do not have a unit.
+Register value is really preferred here.
 
-Reviewed-by: Jagan Teki <jagan@amarulasolutions.com>
+> mentioned in the datasheet. I agree that we are missing the userspace
+> granularity here but sticking to the device limitation shouldn't be a problem.
+> As I said, I'll add a comment here to clarify.
+
+The comment isn't visible in the uAPI.
+
+> 
+> > > 
+> > > > > +
+> > > > > +	ret = imx290_write_buffered_reg(imx290, IMX290_GAIN, 1, adjusted_value);
+> > > > > +	if (ret)
+> > > > > +		dev_err(imx290->dev, "Unable to write gain\n");
+> > > > > +
+> > > > > +	return ret;
+> > > > > +}
+> > > > > +
+> > > > > +static int imx290_set_power_on(struct imx290 *imx290)
+> > > > > +{
+> > > > > +	int ret;
+> > > > > +
+> > > > > +	ret = clk_prepare_enable(imx290->xclk);
+> > > > 
+> > > > Please move the code from this function to the runtime PM runtime suspend
+> > > > callback. The same for imx290_set_power_off().
+> > > > 
+> > > 
+> > > May I know why? I think since this is being used only once, you're suggesting
+> > > to move to the callback function itself but please see the comment below. I
+> > > will reuse this function to power on the device during probe.
+> > 
+> > Yes, you can call the same function from probe, even if it's used as a
+> > runtime PM callback.
+> > 
+> > There's no need to have a function that acts as a wrapper for calling it
+> > with a different type of an argument.
+> > 
+> 
+> You mean directly calling imx290_runtime_resume() from probe is fine?
+
+Yes. Feel free to call it e.g. imx290_power_on or something.
+
+-- 
+Regards,
+
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
