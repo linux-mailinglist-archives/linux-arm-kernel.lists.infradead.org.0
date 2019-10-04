@@ -2,49 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB5EACB816
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 12:19:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87602CB822
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 12:23:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HjMjQcTlIBhgVdDFM//f4S/WpUOsvG/EKFc3UHQJCEQ=; b=RAJZOeNyuaq+PS
-	oaJgEr96PZQLgD3Ma2m15E4iUG5JoHOE55ei9yubJlrtEzV5/z+tiPDqZuwIgVHBJbnuFckLv9dDX
-	nBFLhXA5UgcF9heInjdox60rK18JLD1hWR7WIdlKRTO832AyPq4tFHdGudQ19QQbmPSaMhNXBJs2L
-	sUgJJXFCT1jEmS6J+IqI25/LK4ARlEibQmZV5vkWpye6v4yDNZpSsqW3DtlCFnH0uJiSTl/sxb0Fo
-	xR0DGtEBeJfoQJc8M+7Zh/bqDcBA8Tctdhn0tPTgoSCw74zhrMs3M7gxZea11C8QRlEsgCzA9OAlX
-	qtKxpEwyywg1wDovM2nQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nxZYrohONh7wY15a839ziWhidwZgFwcaNASKsScv0Bk=; b=LaJ0/w46Z5URH9
+	yDohVoKDWlI6L7ctGsVVyzx+oUUyn50cj8K45JQbjPA76mpiVNxH1QMuxlOWkkMbcc+nGbGVbsmeB
+	RWqXbzwBFsRtmn2b2RNbChGZqdhyHZ1LLjfLkkrtbOXdlBCLEJp1in/1erIzffNC38cno2AIXcQM3
+	squv4PbBJ9MmdL2JwceQjtD8GeOIPPe0biL1NF25TDz8BrlTx6LQKR1f//XM/Ltbd2PJ3iyUsuye4
+	ATloD8b2oW7HfObXLuyQxiaainKFlmhnFGF+ACu9v2ND4P+NNbO/JkkyDr/St7wnOFnSsFkaA3VO5
+	wXJa5owl/wDwgRbNxzAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGKg4-000058-Oj; Fri, 04 Oct 2019 10:19:12 +0000
+	id 1iGKjs-00026Y-9P; Fri, 04 Oct 2019 10:23:08 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGKfy-0008Vl-KP
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 10:19:07 +0000
+ id 1iGKjk-00025z-0t
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 10:23:01 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3771D15A1;
- Fri,  4 Oct 2019 03:19:05 -0700 (PDT)
-Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 604683F706;
- Fri,  4 Oct 2019 03:19:04 -0700 (PDT)
-Subject: Re: [PATCH] arm64/mm: Poison initmem while freeing with
- free_reserved_area()
-To: Anshuman Khandual <anshuman.khandual@arm.com>,
- linux-arm-kernel@lists.infradead.org
-References: <1570163038-32067-1-git-send-email-anshuman.khandual@arm.com>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <600676fd-1b39-74f4-49a7-3c807ee24cff@arm.com>
-Date: Fri, 4 Oct 2019 11:19:03 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CB82D15A1;
+ Fri,  4 Oct 2019 03:22:58 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DF9BE3F706;
+ Fri,  4 Oct 2019 03:22:57 -0700 (PDT)
+Date: Fri, 4 Oct 2019 11:22:55 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: James Morse <james.morse@arm.com>
+Subject: Re: [PATCH 3/8] arm64: Add prototypes for functions called by entry.S
+Message-ID: <20191004102255.GC34756@lakrids.cambridge.arm.com>
+References: <20191003171642.135652-1-james.morse@arm.com>
+ <20191003171642.135652-4-james.morse@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <1570163038-32067-1-git-send-email-anshuman.khandual@arm.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20191003171642.135652-4-james.morse@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_031906_714913_3BF3F079 
-X-CRM114-Status: GOOD (  18.70  )
+X-CRM114-CacheID: sfid-20191004_032300_109786_7BAFC428 
+X-CRM114-Status: GOOD (  13.91  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,51 +62,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-kernel@vger.kernel.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Masami Hiramatsu <mhiramat@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04/10/2019 05:23, Anshuman Khandual wrote:
-> Platform implementation for free_initmem() should poison the memory while
-> freeing it up. Hence pass across POISON_FREE_INITMEM while calling into
-> free_reserved_area(). The same is being followed in the generic fallback
-> for free_initmem() and some other platforms overriding it.
+On Thu, Oct 03, 2019 at 06:16:37PM +0100, James Morse wrote:
+> Functions that are only called by assembly don't always have a
+> C header file prototype.
 > 
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: linux-kernel@vger.kernel.org
-> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
-
-Is there a good reason you haven't made a similar change to
-free_initrd_mem() - the same logic seems to apply. However this change
-looks fine to me.
-
-Reviewed-by: Steven Price <steven.price@arm.com>
-
+> Add the prototypes before moving the assembly callers to C.
+> 
+> Signed-off-by: James Morse <james.morse@arm.com>
 > ---
->  arch/arm64/mm/init.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  arch/arm64/include/asm/exception.h | 21 +++++++++++++++++++++
+>  1 file changed, 21 insertions(+)
 > 
-> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
-> index 45c00a54909c..ea7d38011e83 100644
-> --- a/arch/arm64/mm/init.c
-> +++ b/arch/arm64/mm/init.c
-> @@ -571,7 +571,7 @@ void free_initmem(void)
->  {
->  	free_reserved_area(lm_alias(__init_begin),
->  			   lm_alias(__init_end),
-> -			   0, "unused kernel");
-> +			   POISON_FREE_INITMEM, "unused kernel");
->  	/*
->  	 * Unmap the __init region but leave the VM area in place. This
->  	 * prevents the region from being reused for kernel modules, which
-> 
+> diff --git a/arch/arm64/include/asm/exception.h b/arch/arm64/include/asm/exception.h
+> index b0b3ba56e919..8bb3fe2d71a8 100644
+> --- a/arch/arm64/include/asm/exception.h
+> +++ b/arch/arm64/include/asm/exception.h
+> @@ -31,5 +31,26 @@ static inline u32 disr_to_esr(u64 disr)
+>  }
+>  
+>  asmlinkage void enter_from_user_mode(void);
+> +asmlinkage void do_mem_abort(unsigned long addr, unsigned int esr,
+> +			     struct pt_regs *regs);
+> +asmlinkage void do_sp_pc_abort(unsigned long addr, unsigned int esr,
+> +			       struct pt_regs *regs);
+> +asmlinkage void do_undefinstr(struct pt_regs *regs);
+> +asmlinkage void bad_mode(struct pt_regs *regs, int reason, unsigned int esr);
+> +asmlinkage void do_debug_exception(unsigned long addr, unsigned int esr,
+> +				   struct pt_regs *regs);
 
+Trivial: potentially s/addr/addr_if_watchpoint/, since that got renamed
+recently.
+
+> +asmlinkage void do_fpsimd_acc(unsigned int esr, struct pt_regs *regs);
+> +asmlinkage void do_sve_acc(unsigned int esr, struct pt_regs *regs);
+> +asmlinkage void do_fpsimd_exc(unsigned int esr, struct pt_regs *regs);
+> +asmlinkage void do_sysinstr(unsigned int esr, struct pt_regs *regs);
+> +asmlinkage void do_sp_pc_abort(unsigned long addr, unsigned int esr,
+> +			       struct pt_regs *regs);
+> +asmlinkage void bad_el0_sync(struct pt_regs *regs, int reason,
+> +			     unsigned int esr);
+> +asmlinkage void do_cp15instr(unsigned int esr, struct pt_regs *regs);
+> +asmlinkage void el0_svc_handler(struct pt_regs *regs);
+> +asmlinkage void el0_svc_compat_handler(struct pt_regs *regs);
+> +asmlinkage void do_el0_ia_bp_hardening(unsigned long addr,  unsigned int esr,
+> +				       struct pt_regs *regs);
+
+Otherwise those all look right, so either way:
+
+Acked-by: Mark Rutland <mark.rutland@arm.com>
+
+Mark.
+
+>  
+>  #endif	/* __ASM_EXCEPTION_H */
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
