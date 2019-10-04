@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17FFDCBD35
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 16:29:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C427CBD2D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 16:28:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nYTxJ5KyPw5iRskWj7BErT3djso6v62jIy7IenzTYbk=; b=VpXFFGnVORPIi5
-	rpcXmMqzZgACJ1Xpyyx1RI9hAcIbEyLPSHByAMCRcSfaJXMxJdr57OWDvFvlOGC4AswLsGQP3ZX1h
-	ijq3GKp8oP2eo+pbWSPuXsSkuzxWl/ruaKw+vzNfG7YtSk+VkLmZ3r6goP/+s/cAGmhR6qquYeQV3
-	1G0sw7j1e2vnjmzqFje0q6cYNRMG6Mo1gOO1ZC2QO5wJxog7GCwRDQKUIDeDCXMG9QT5w/Gf0f1hv
-	y5OIvZ/AaRTMvZpvUOB7bofhIV9vBz2cVo7o0IGvibFz7yGz9jecL2xanOg+wrqxVxObzIhlTSK+i
-	ToIESbtNXdxA16JGBCWA==;
+	List-Owner; bh=Zlhq+IWqWGWxQYjmIqyJ48dqkmMKi8C1PNGNxjbH+9w=; b=KzJHh6e7v1Va8b
+	U/bUpJE8m2DEBZwE+aZIKr10k0UP3sRXKEUkDbTbfcGmPG3RsGwbhUaKLLa3LuTljgVYT1Vanw7es
+	9kPkYuUkSfUp5HpKvYbQ1jrsjAXXmuARINuSnWbBKnqFaaSuTaGGmypqa1JxzHJkJoVNQQ9zWTbDo
+	bXjLixWeNVXtojFgWiOG2JKuFCY1SoHKrFxS3e+YdkWXYB3Zyvws6y0js2TFWS4pgZw0KWSDGNvFf
+	gruZjKj5QnCCN5NpNdbM8pYozpK9BQ4QJiLgYj5EvolL051sBWw2uPWzs2EYzfJahNVsRZIUWSzoT
+	xJfHJFE89LfnFTFnWSUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGOaB-00068Q-RD; Fri, 04 Oct 2019 14:29:23 +0000
+	id 1iGOZ7-0004wo-O7; Fri, 04 Oct 2019 14:28:17 +0000
 Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGOYk-0004ta-6t
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 14:27:57 +0000
+ id 1iGOYk-0004tZ-6v
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 14:27:55 +0000
 X-Originating-IP: 86.250.200.211
 Received: from localhost.localdomain (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
  [86.250.200.211]) (Authenticated sender: miquel.raynal@bootlin.com)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 9E997C000E;
- Fri,  4 Oct 2019 14:27:44 +0000 (UTC)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 1164BC0007;
+ Fri,  4 Oct 2019 14:27:45 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Rob Herring <robh+dt@kernel.org>,
 	Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 03/21] dt-bindings: ap80x: replace AP806 with AP80x
-Date: Fri,  4 Oct 2019 16:27:20 +0200
-Message-Id: <20191004142738.7370-4-miquel.raynal@bootlin.com>
+Subject: [PATCH v2 04/21] MAINTAINERS: Add new Marvell CN9130-based files to
+ track
+Date: Fri,  4 Oct 2019 16:27:21 +0200
+Message-Id: <20191004142738.7370-5-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191004142738.7370-1-miquel.raynal@bootlin.com>
 References: <20191004142738.7370-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_072754_423037_E7061A5E 
-X-CRM114-Status: UNSURE (   8.54  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191004_072754_408554_4385F343 
+X-CRM114-Status: GOOD (  10.64  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.198 listed in wl.mailspike.net]
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
  low trust [217.70.183.198 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.198 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,7 +65,7 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, Yan Markman <ymarkman@marvell.com>,
- Rob Herring <robh@kernel.org>, Antoine Tenart <antoine.tenart@bootlin.com>,
+ Antoine Tenart <antoine.tenart@bootlin.com>,
  Grzegorz Jaszczyk <jaz@semihalf.com>,
  Gregory Clement <gregory.clement@bootlin.com>,
  Maxime Chevallier <maxime.chevallier@bootlin.com>,
@@ -73,55 +73,43 @@ Cc: devicetree@vger.kernel.org, Yan Markman <ymarkman@marvell.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
  Miquel Raynal <miquel.raynal@bootlin.com>,
  Stefan Chulski <stefanc@marvell.com>, Marcin Wojtas <mw@semihalf.com>,
- Ben Peled <bpeled@marvell.com>, linux-arm-kernel@lists.infradead.org
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ben Peled <bpeled@marvell.com>
+Marvell has a new branch of products called CN9130 based on AP807 and
+CP115 which are derivatives of the currently supported AP806 and
+CP110. Update the MAINTAINERS entry to reflect this change in the
+naming.
 
-Rename the text file and update "AP806" into "AP806/AP807" where
-relevant.
-
-Signed-off-by: Ben Peled <bpeled@marvell.com>
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
 ---
- ...-controller.txt => ap80x-system-controller.txt} | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
- rename Documentation/devicetree/bindings/arm/marvell/{ap806-system-controller.txt => ap80x-system-controller.txt} (91%)
+ MAINTAINERS | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/arm/marvell/ap806-system-controller.txt b/Documentation/devicetree/bindings/arm/marvell/ap80x-system-controller.txt
-similarity index 91%
-rename from Documentation/devicetree/bindings/arm/marvell/ap806-system-controller.txt
-rename to Documentation/devicetree/bindings/arm/marvell/ap80x-system-controller.txt
-index 26410fbb85be..098d932fc963 100644
---- a/Documentation/devicetree/bindings/arm/marvell/ap806-system-controller.txt
-+++ b/Documentation/devicetree/bindings/arm/marvell/ap80x-system-controller.txt
-@@ -1,15 +1,15 @@
--Marvell Armada AP806 System Controller
-+Marvell Armada AP80x System Controller
- ======================================
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 296de2b51c83..6b53cd42ae48 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -1897,7 +1897,7 @@ F:	arch/arm/boot/dts/dove*
+ F:	arch/arm/boot/dts/orion5x*
+ T:	git git://git.infradead.org/linux-mvebu.git
  
--The AP806 is one of the two core HW blocks of the Marvell Armada 7K/8K
--SoCs. It contains system controllers, which provide several registers
--giving access to numerous features: clocks, pin-muxing and many other
--SoC configuration items. This DT binding allows to describe these
--system controllers.
-+The AP806/AP807 is one of the two core HW blocks of the Marvell Armada
-+7K/8K/931x SoCs. It contains system controllers, which provide several
-+registers giving access to numerous features: clocks, pin-muxing and
-+many other SoC configuration items. This DT binding allows to describe
-+these system controllers.
- 
- For the top level node:
-  - compatible: must be: "syscon", "simple-mfd";
-- - reg: register area of the AP806 system controller
-+ - reg: register area of the AP80x system controller
- 
- SYSTEM CONTROLLER 0
- ===================
+-ARM/Marvell Kirkwood and Armada 370, 375, 38x, 39x, XP, 3700, 7K/8K SOC support
++ARM/Marvell Kirkwood and Armada 370, 375, 38x, 39x, XP, 3700, 7K/8K, CN9130 SOC support
+ M:	Jason Cooper <jason@lakedaemon.net>
+ M:	Andrew Lunn <andrew@lunn.ch>
+ M:	Gregory Clement <gregory.clement@bootlin.com>
+@@ -1909,6 +1909,7 @@ F:	arch/arm/boot/dts/kirkwood*
+ F:	arch/arm/configs/mvebu_*_defconfig
+ F:	arch/arm/mach-mvebu/
+ F:	arch/arm64/boot/dts/marvell/armada*
++F:	arch/arm64/boot/dts/marvell/cn913*
+ F:	drivers/cpufreq/armada-37xx-cpufreq.c
+ F:	drivers/cpufreq/armada-8k-cpufreq.c
+ F:	drivers/cpufreq/mvebu-cpufreq.c
 -- 
 2.20.1
 
