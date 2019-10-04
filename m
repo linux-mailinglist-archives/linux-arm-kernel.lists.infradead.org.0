@@ -2,89 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E211CC43E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 22:32:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6388CCC446
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 22:38:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=dHmD7+pyTraHtU6tNX3vZnXR737wGLCZLdWRfkYFpi0=; b=Kyz
-	udsgxHfoJqpjf89AdGuslY1w4pUpYO7aJ6+VJuDnsGLufBp9F4+yxX7UHhyIbWqlaegelJ+Z3a0CN
-	vdb7065nXi+ggnq64pCIXY8ZyS13Nc+lpmpFoEMEyvxgrNdu38SJaLj5s8LUMJdZENP1j8kLESEa4
-	8VbV9r7X+GwBf2aBERsF9+vxV3D+49ULxCaDv5mLVRX+5nM8d/AEPJqyBnLYh/i7j/31rk6aH26dY
-	4TdVsdvTnm2Ck6zIcHEDX22Eq2vlcw1U8WdctFzzfHSDsWFGAvVvWPwnSe0h7niizqbqLO3cC2WOT
-	2ttragRnBvdMCd1TD/sRdBnoOj946RQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AfIRK5jA/qavHi7a2iXsChMOmbC+nUToGDDyyN0WjO4=; b=qVyfHMdB7t7rVV
+	9LWwfhMJPGY8Wj9pj5EG5Bp/Y9IOZQ0mjNhnc/WNEcInoyokSrQPCnSaIOsLWefQfH5LE9Jw0NAxL
+	ZyZCzNFa+iXg58zqFsutfaEoBYN2/jTxwdj6tjwfOh7ejzU8OpSLtJ+43hqsmdNrRFZCe9n0qqVbn
+	r+HEc+pE05q4M9sG7nur9sRj7haJhNV4FypEjPv37R3PPWXvjnlLnyZHBWGfF2NAVG42lloNgwY/C
+	xrMBJ5/fAdeU4/1V+qb23wTZSSlRhrsubIRJLnoLRNn3QSbEaxhVHt3wTlZcr87x9DHu7LJVNnlwP
+	vSryhXSZ5UCRWU71gn0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGUFl-0002b8-Jp; Fri, 04 Oct 2019 20:32:41 +0000
-Received: from mout.web.de ([217.72.192.78])
+	id 1iGUL5-0004Jw-3U; Fri, 04 Oct 2019 20:38:11 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGUFc-0002ac-RO; Fri, 04 Oct 2019 20:32:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1570221145;
- bh=x/DBaa+r9mxjwAjUssLHup4baAiO0UG/yVrLOutxWsg=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
- b=LF1if5y/7T4QYPyiawCf94aYJcnXUc1aL405rucwF10cabjCghlaJXN/uO8vszdOl
- pJS9oYcF8l9BmR4yT8PVrUWeMZYyAGpt9jc7syVqksEP91IhyUph/X/QnrJzecxDXx
- 1vehZNdcbWFN/q59sUmwmzsDfjka3LhL7znEDfv0=
-X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from platinum.fritz.box ([77.191.3.29]) by smtp.web.de (mrweb103
- [213.165.67.124]) with ESMTPSA (Nemesis) id 0LetQh-1hlnfS19m3-00qhBK; Fri, 04
- Oct 2019 22:32:25 +0200
-From: Soeren Moch <smoch@web.de>
-To: Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH v2] arm64: dts: rockchip: fix RockPro64 sdmmc settings
-Date: Fri,  4 Oct 2019 22:32:13 +0200
-Message-Id: <20191004203213.4995-1-smoch@web.de>
-X-Mailer: git-send-email 2.17.1
-X-Provags-ID: V03:K1:1I5fDQkIZVn2LdNRnwDfp8md+rO+2Vp/TSL6bgE19S+U7e8RlmF
- EhFJGxdLBOeBh6Du3qsKPexxIxstJER4ErQMtp1m6HJoiQsEne8w+BrsSwO0Wh30laTuPec
- sK6/onl3zLo9YFphxcEW9zEFFPKS60lWUADP6OIr07s0FyO6OanEsEx+RHULWedKrDDKbbW
- 4W1V/uNb/1JyOY4IW4Qow==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:ICsnY7aMJQ4=:5/WFKM85bWZHZp/krlqXXa
- JGKxGv3pOO7ubUb+8TvRSP6RJu3y4QxXOJWL/6bmP5fpRZvWD3UZl7gdjPlA+nLBC8i2W/+dO
- zdVsBndquXxgZt1sQulCc5ZMhkMIh6ThPnQnHBB+oy1YPivo6dPcxncbjvbgb0+O0i7ydHoXj
- 9ZiON6aJCfh7U6zRf7GSQSUu25BEz2Oyo8z8ITYVI+YANji74gj8tiobps8fVES9iDrL6irbj
- dhL1JHZOJxr/fK6Z51SzaBX3usndL2ldDDzJI/TWTeKygsqRVom91DOy93TS2/y3+qdVSvYHG
- Ohp2hB9xJxVXu2IJoD0BlEEMMMLGLXsi9R8z0GYiCaG43z0zSRDzc0SdumQ7fznh8D2k2mmMR
- FPMSML/uY/JqWBSj1nTV4nmpdVeLGEuANsCwJoXq+NOlXAaU2K5vXwSSoNPY9+ned+268R90G
- 28MCRcCSpFU0YrPun9sMM9fy/3pD3PKjGmTMDoOQHOlF7mYi796LT/8J7kAw2TK7XILqRP0/V
- 2RJz031b8L1r3Hptl0OD20z+eYtpFmPPsa7q2+CmsKLprUxrdBx+xgC4poof91mOYwsQAqLBc
- X6ljlMxZ+BwxkNf4QTipd4dhMcUuTrIO5BxXx02nG9XMwrHIx5zHBaMz9KAnyxHt7Q1BVocqi
- Wv4JyFhARvR526ogFn1aXu7KJxyBeM87BW5J2a4fsaeGrQlrMViuc6VzaSV/jHDJ8Hu1i+i6O
- Mfgqc4+EEuoFxKT4vfCmaYNX+2Jn2t1jXf1Km1+AE05VCFEkhmo4ogflTJ1fsf5NrX4fyoZcU
- vFlEQyR6Msy3TXJGZfVmHSdTV1BnTSIMMDUfgJHO+Gwuw3t0J0xITHeF/6VebU/APujrOpRqS
- bvEoHl729Odz0/0o7HK+5fctl7UktilntlJkCQnUzVl12NrTOrdFeZNU8jvm/PyK7U6UlWVva
- iIjHQxfZqOOCb7no9+gZ0+OXFguVTBdHUsDbdI8rMTY3l1xXsLKc0wZoBvGtJkydtkZxQ7K8r
- yvGgesqk8DaEJSzOL1rSStkQBqE7gHuApTovSRLe9nn2uA0UNabEYbwP3mmZ2A8X02EZ3m7Yu
- SjpYxwom+3lHLwSTaYCSoGEe/zKKwZBQ/I3sRnuKEGJwMT2Ph7UWe/OohBaLf5VDopnWXL3iP
- D5waU3h0q0iVYGMjc75FAtIpG/uPJAVIAouxPQa4k0aoqU7IzGd2dCky/LxxSob/H7k4Bu4Vq
- sjEKSF7D5Grbp7B0vKAQvqgdUg6ohIjG5LGVLRQ==
+ id 1iGUKw-0004JS-SO
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 20:38:04 +0000
+Received: by mail-wm1-x344.google.com with SMTP id y21so7087507wmi.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 04 Oct 2019 13:38:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gateworks-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=skAE0yv65FpnWYSKjnu1eueJHObmclgqdYS8Pf8+I/s=;
+ b=gfxGPVaWQe4goiBs+/E81XZaApl2EOVwJZVFW021/Z0udRY8gYnAiMT47APmQ+ypoZ
+ IaHDVawvA33wl/OE7Oyyuv3bieyok7kGpMfrsNyR58ZOHm9UvTxf8gsh81crMR/mwsE+
+ DKnX0OtqPf21vwGbMLrCsCUZHFqgbP+g5IeOXBU2G/Z2opKGc6zOfvSke1ox688ZE6cA
+ 6o0HWgxJD9NLUOaS0B6BbgTEgCjLl6V+D89tvk9OXeJQI3nJq/81A1bEVP3zzUgONVqd
+ WMcnHkQ3GwVm4H5Ot5sm2V7AhTxH1Pffg9lMGoHWKnoYu4f8JbcqfO+RAu142sdDIlj7
+ JQlQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=skAE0yv65FpnWYSKjnu1eueJHObmclgqdYS8Pf8+I/s=;
+ b=ouh2V2Yasmpg5fKwIRN5+v5Pq+Fu2SGVJFgZLpi5Ie6gK8Y65w1cjw8vjJWGNUwMdF
+ F2xYw0a83O0ahi7eNCfxhV2jGcMrfkUTcS/dFazCe6P7pXcsPMZP7PZNZliU1gjjAHVN
+ 3QFsY0cuLs3QiDE0sqf275yWDomU3v75kQPw2iTFD5G3GpBH4BcpESdt49rvKyJkF4h/
+ 7owTfKKNWlUtAlXMkyUISytPmYDa5Na/N/mhsjjCAJcjoX9gdIuOc+jXyNm3uyjl3C2n
+ b5grIohPfoDeg9JafpicVXtAB0jHANfrp6V+6UNrvwePdzyjCel3qBTk3XZiIAXoHcGZ
+ vAZQ==
+X-Gm-Message-State: APjAAAVA3Eamxn8bwVKyHKaVME4gQjtF5VYsVUX3bNQhCnr0x9mm0Dz3
+ Ek0V+rUXIov/XLvwZLHfxMdxnOvKlBpAA5HkqCFEbw==
+X-Google-Smtp-Source: APXvYqzyMV9MupndO2O27UkHRxd6bN6vFHp8NNFlCcPiqfGOEpWYt1tSEzWQHCwIs1Xos3TV8BZ1f4zz8N/5gxBVL1U=
+X-Received: by 2002:a1c:2bc7:: with SMTP id
+ r190mr12951679wmr.143.1570221481014; 
+ Fri, 04 Oct 2019 13:38:01 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190301192017.39770-1-dianders@chromium.org>
+ <CAJ+vNU0Ma5nG9_ThLO4cdO+=ivf7rmXiHZonF0HY0xx6X3R6Hw@mail.gmail.com>
+ <5dce2964-8761-e7d0-8963-f0f5cb2feb02@arm.com>
+ <CAJ+vNU0Q1-d7YDbAAEMqEcWnniqo6jLdKBbcUTar5=hJ+AC8vQ@mail.gmail.com>
+ <1f6f7eb0-e1dc-d5a8-fb38-44c5bd839894@arm.com>
+ <CAJ+vNU1Nd2p-ot2Qkj6vD9yD6gcYM-vm+snNWyt0ChgSqe4tBg@mail.gmail.com>
+ <5cf9ec03-f6fb-8227-4ec5-62445038f283@arm.com>
+ <CAJ+vNU28LrroW-XC4X2g3bdN171j0ieZenhYE1TrEM8yvKi=cQ@mail.gmail.com>
+ <cb6392ff-fac6-300b-2e04-b34df8c42f28@arm.com>
+In-Reply-To: <cb6392ff-fac6-300b-2e04-b34df8c42f28@arm.com>
+From: Tim Harvey <tharvey@gateworks.com>
+Date: Fri, 4 Oct 2019 13:37:49 -0700
+Message-ID: <CAJ+vNU0kDseyqAMKAv+9+aw6wVKjBQcHcGD_8XgCy_KzZTM4Gg@mail.gmail.com>
+Subject: Re: [PATCH v2] iommu/arm-smmu: Break insecure users by disabling
+ bypass by default
+To: Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_133233_182966_B73EA9A6 
-X-CRM114-Status: UNSURE (   6.77  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191004_133802_978792_F7A56E81 
+X-CRM114-Status: GOOD (  27.05  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (smoch[at]web.de)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.72.192.78 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,46 +97,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Soeren Moch <smoch@web.de>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: open list <linux-kernel@vger.kernel.org>, linux-arm-msm@vger.kernel.org,
+ Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
+ Douglas Anderson <dianders@chromium.org>, evgreen@chromium.org,
+ tfiga@chromium.org, Rob Clark <robdclark@gmail.com>,
+ iommu@lists.linux-foundation.org,
+ Tirumalesh Chalamarla <tchalamarla@caviumnetworks.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-According to the RockPro64 schematic [1] the rk3399 sdmmc controller is
-connected to a microSD (TF card) slot. Remove the cap-mmc-highspeed
-property of the sdmmc controller, since no mmc card can be connected here.
+On Fri, Oct 4, 2019 at 11:34 AM Robin Murphy <robin.murphy@arm.com> wrote:
+>
+> On 04/10/2019 18:13, Tim Harvey wrote:
+> [...]
+> >>> No difference... still need 'arm-smmu.disable_bypass=n' to boot. Are
+> >>> all four iommu-map props above supposed to be the same? Seems to me
+> >>> they all point to the same thing which looks wrong.
+> >>
+> >> Hmm... :/
+> >>
+> >> Those mappings just set Stream ID == PCI RID (strictly each one should
+> >> only need to cover the bus range assigned to that bridge, but it's not
+> >> crucial) which is the same thing the driver assumes for the mmu-masters
+> >> property, so either that's wrong and never could have worked anyway -
+> >> have you tried VFIO on this platform? - or there are other devices also
+> >> mastering through the SMMU that aren't described at all. Are you able to
+> >> capture a boot log? The SMMU faults do encode information about the
+> >> offending ID, and you can typically correlate their appearance
+> >> reasonably well with endpoint drivers probing.
+> >>
+> >
+> > Robin,
+> >
+> > VFIO is enabled in the kernel but I don't know anything about how to
+> > test/use it:
+> > $ grep VFIO .config
+> > CONFIG_KVM_VFIO=y
+> > CONFIG_VFIO_IOMMU_TYPE1=y
+> > CONFIG_VFIO_VIRQFD=y
+> > CONFIG_VFIO=y
+> > # CONFIG_VFIO_NOIOMMU is not set
+> > CONFIG_VFIO_PCI=y
+> > CONFIG_VFIO_PCI_MMAP=y
+> > CONFIG_VFIO_PCI_INTX=y
+> > # CONFIG_VFIO_PLATFORM is not set
+> > # CONFIG_VFIO_MDEV is not set
+>
+> No worries - since it's a networking-focused SoC I figured there was a
+> chance you might be using DPDK or similar userspace drivers with the NIC
+> VFs, but I was just casting around for a quick and easy baseline of
+> whether the SMMU works at all (another way would be using Qemu to run a
+> VM with one or more PCI devices assigned).
+>
+> > I do have a boot console yet I'm not seeing any smmu faults at all.
+> > Perhaps I've mis-diagnosed the issue completely. To be clear when I
+> > boot with arm-smmu.disable_bypass=y the serial console appears to not
+> > accept input in userspace and with arm-smmu.disable_bypass=n I'm fine.
+> > I'm using a buildroot initramfs rootfs for simplicity. The system
+> > isn't hung as I originally expected as the LED heartbeat trigger
+> > continues blinking... I just can't get console to accept input.
+>
+> Curiouser and curiouser... I'm inclined to suspect that the interrupt
+> configuration might also be messed up, such that the SMMU is blocking
+> traffic and jammed up due to pending faults, but you're not getting the
+> IRQ delivered to find out. Does this patch help reveal anything?
+>
+> http://linux-arm.org/git?p=linux-rm.git;a=commitdiff;h=29ac3648b580920692c9b417b2fc606995826517
+>
+> (untested, but it's a direct port of the one I've used for SMMUv3 to
+> diagnose something similar)
 
-[1] http://files.pine64.org/doc/rockpro64/rockpro64_v21-SCH.pdf
+This shows:
+arm-smmu 830000000000.smmu0: Unexpected global fault, this could be serious
+arm-smmu 830000000000.smmu0:     GFSR 0x80000002, GFSYNR0 0x00000002,
+GFSYNR1 0x00000140, GFSYNR2 0x00000000
+arm-smmu 830000000000.smmu0: Unexpected global fault, this could be serious
+arm-smmu 830000000000.smmu0:     GFSR 0x80000002, GFSYNR0 0x00000002,
+GFSYNR1 0x00000010, GFSYNR2 0x00000000
+arm-smmu 830000000000.smmu0: Unexpected global fault, this could be serious
+arm-smmu 830000000000.smmu0:     GFSR 0x80000002, GFSYNR0 0x00000002,
+GFSYNR1 0x00000010, GFSYNR2 0x00000000
+arm-smmu 830000000000.smmu0: Unexpected global fault, this could be serious
+arm-smmu 830000000000.smmu0:     GFSR 0x80000002, GFSYNR0 0x00000002,
+GFSYNR1 0x00000010, GFSYNR2 0x00000000
+arm-smmu 830000000000.smmu0: Unexpected global fault, this could be serious
+arm-smmu 830000000000.smmu0:     GFSR 0x80000002, GFSYNR0 0x00000002,
+GFSYNR1 0x00000010, GFSYNR2 0x00000000
+arm-smmu 830000000000.smmu0: Unexpected global fault, this could be serious
+arm-smmu 830000000000.smmu0:     GFSR 0x80000002, GFSYNR0 0x00000002,
+GFSYNR1 0x00000010, GFSYNR2 0x00000000
+arm-smmu 830000000000.smmu0: Unexpected global fault, this could be serious
+arm-smmu 830000000000.smmu0:     GFSR 0x80000002, GFSYNR0 0x00000002,
+GFSYNR1 0x00000010, GFSYNR2 0x00000000
+arm-smmu 830000000000.smmu0: Unexpected global fault, this could be serious
+arm-smmu 830000000000.smmu0:     GFSR 0x80000002, GFSYNR0 0x00000002,
+GFSYNR1 0x00000010, GFSYNR2 0x00000000
+arm-smmu 830000000000.smmu0: Unexpected global fault, this could be serious
+arm-smmu 830000000000.smmu0:     GFSR 0x80000002, GFSYNR0 0x00000002,
+GFSYNR1 0x00000010, GFSYNR2 0x00000000
+arm-smmu 830000000000.smmu0: Unexpected global fault, this could be serious
+arm-smmu 830000000000.smmu0:     GFSR 0x80000002, GFSYNR0 0x00000002,
+GFSYNR1 0x00000010, GFSYNR2 0x00000000
+...
+arm-smmu 830000000000.smmu0: Unexpected global fault, this could be serious
+arm-smmu 830000000000.smmu0:     GFSR 0x80000002, GFSYNR0 0x00000002,
+GFSYNR1 0x00000010, GFSYNR2 0x00000000
+^^^ these two repeat over and over
 
-Fixes: e4f3fb490967 ("arm64: dts: rockchip: add initial dts support for Rockpro64")
-Signed-off-by: Soeren Moch <smoch@web.de>
----
-Cc: Heiko Stuebner <heiko@sntech.de>
-Cc: linux-rockchip@lists.infradead.org
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
----
- arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts | 1 -
- 1 file changed, 1 deletion(-)
+>
+> That said, it's also puzzling that no other drivers are reporting DMA
+> errors or timeouts either - is there any chance that some device is set
+> running by the firmware/bootloader and not taken over by a kernel driver?
+>
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-index 2e44dae4865a..6ec4d273a39b 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-@@ -624,7 +624,6 @@
+anything is possible - I'm using the Cavium 'BDK' as boot firmware to
+configure the board which sits in from of arm trusted firmare and
+bootloader.
 
- &sdmmc {
- 	bus-width = <4>;
--	cap-mmc-highspeed;
- 	cap-sd-highspeed;
- 	cd-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;
- 	disable-wp;
---
-2.17.1
-
+Tim
 
 _______________________________________________
 linux-arm-kernel mailing list
