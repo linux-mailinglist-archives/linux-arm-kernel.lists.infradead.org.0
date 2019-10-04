@@ -2,96 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EE46CC0EF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 18:39:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9616CC0FA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 18:40:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2xjri4MEHZkE4ivyjsmVB5+YsRTas385uWVmJiaOJwk=; b=KIOUJ0gTPsXeox
-	P3XMsV6i+w9qZaA0ctMi6lkQ0fkGJRnsbWMTOI0tcv24i3Q+IOE/Prd5GKem4IOkkgfUyHMR+09eT
-	ZEqlFVgxK5B45rmGp4y9GnnMK3wQcKZZA1zGlzcIlmcippFqqhlgpSu1L/nC8OZuQxxfWGxSLsd7B
-	PdgeT717+l1I/Sz2NLLyQDgm2oP3ddrGyhWdAUMjCwvFJlInB0UUyFRIr/osr5osxr9RD/K7t4Aem
-	IO7yDjhQGAH6T6A1OmRvdQFJxBGGhH0dMaxdlV8/eLEvDzDeufqr/ayBj8+lRUyuodKeLjkVHnAGB
-	46jTUcP14njFpyZvi5qg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=a3chcLOlRD48mLOBkiTMew1JX/LDeLjd+C1ZbpaMsgc=; b=ENljK0Jkxz3c6k16Uzj6vlTeb
+	a+WQVKJwuQX21IwZPoQ5xDIB4RtoULYdEGpcb1RbQ/U2W4UE8tC0oRDTuDcNt7JQ7FKAYMwBYCr0G
+	hcn7VoCdiRgYAgReP9pverW/jHascXdqGrakqYoRr17QkEFN0NAAKAtbyViSqU6PqMdoxaeVA+LTa
+	7LdimyTy1fxnlFllB9f1cyos3I0fqlnO/wJhIJEQ7k5BzgW4PdKkesVoJDgOSaLXrH+9ooxr5q1fA
+	6PTebuQ3ZlrsN0eOB3vjLvaaKYmJPMYRy6Xv40sjrMpN1JPJm+kATKDcxbiTKLqRcD4Xm6r/ecdPe
+	/xArzh09w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGQcD-0003Jn-AG; Fri, 04 Oct 2019 16:39:37 +0000
-Received: from mout.web.de ([217.72.192.78])
+	id 1iGQcp-0004D8-EI; Fri, 04 Oct 2019 16:40:15 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGQc0-0003Id-98; Fri, 04 Oct 2019 16:39:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1570207152;
- bh=3qY51AIDbh0D6yCJlWeGuCtssREDMvHYUAYtv8hxk2Q=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=d1ZQzp8oEHb5qeQGtCB0Nnx7YTR9xtE9kwzR3Rs5jkxGGF/Q16WaibQGHl0k9+wO5
- zPrL5BRFKhUKvjKa6dMrydOeWNn0a//4jWe1So2yFVnQJpOO++Us++3cQoe3lxDsB4
- siPsGX/IvPzGsGPbmJkmq7grRm0/eZXGnsf5Y9bw=
-X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from [192.168.1.27] ([77.191.3.29]) by smtp.web.de (mrweb103
- [213.165.67.124]) with ESMTPSA (Nemesis) id 0MYvxn-1ibTzH00pP-00Vk1a; Fri, 04
- Oct 2019 18:39:12 +0200
-Subject: =?UTF-8?Q?Re=3a_=5bPATCH_3/3=5d_arm64=3a_dts=3a_rockchip=3a_fix_Roc?=
- =?UTF-8?B?a1BybzY0IHNkbW1jIHNldHRpbmdz44CQ6K+35rOo5oSP77yM6YKu5Lu255SxbGlu?=
- =?UTF-8?Q?ux-rockchip-bounces+shawn=2elin=3drock-chips=2ecom=40lists=2einfr?=
- =?UTF-8?B?YWRlYWQub3Jn5Luj5Y+R44CR?=
-To: Robin Murphy <robin.murphy@arm.com>, Shawn Lin
- <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>
-References: <20191003215036.15023-1-smoch@web.de>
- <20191003215036.15023-3-smoch@web.de>
- <31181f3c-20ec-e717-1f7e-8b35cd54d96d@arm.com>
- <a8b20c45-0426-ee42-4efc-52e56ea6bb20@web.de>
- <120e2dbc-55eb-2205-b00f-7e50928ec706@rock-chips.com>
- <1c452b8b-853f-8f58-5f3a-0bbecbe20557@web.de>
- <fc7dce53-ad39-26e3-7c19-ab60ff4cc332@arm.com>
-From: Soeren Moch <smoch@web.de>
-Message-ID: <a5b7caab-ffde-30e0-88bc-53a53748701a@web.de>
-Date: Fri, 4 Oct 2019 18:39:09 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iGQcd-00038s-3q
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 16:40:04 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x94GOKIT145942;
+ Fri, 4 Oct 2019 16:37:34 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2019-08-05;
+ bh=51ThAHTVRLLrLX7DDUUketK1Xn5udBHC8gklOuQw7w4=;
+ b=poGgqbX6JCl/NL0NREIW4P9+l8QLaal32Xkto+/gKm9KzGXG36J3t9Y97IxbfC79abuc
+ HIhJcvwgU73VKa+HhUYWIpCN14vCfAWcuykFg8ecFCTacZSd9CNbsvDrj5/EnIrO7zZd
+ SnwCs6AysNBsPxEQu+OM86HU/KXoTrvfvgl0uFeMuiL/Urusogu37yaibi7r7bw1mRXl
+ P+U7Do6b28k22LsC3kulgYBA2XxWdLTCodBCIzLu9N6fRpGQGYkQF1JQyrUaoEKGwtaN
+ b6g/DpZETiiQ7cEIsMCUf+7h0vD9o3h4LFWUFwJWWR3f41akUitzgfesOp1b6XbHzdK6 ew== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2120.oracle.com with ESMTP id 2va05sckk2-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 04 Oct 2019 16:37:34 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x94GNGmV029717;
+ Fri, 4 Oct 2019 16:35:33 GMT
+Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
+ by userp3020.oracle.com with ESMTP id 2vdk0uxdww-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 04 Oct 2019 16:35:33 +0000
+Received: from abhmp0005.oracle.com (abhmp0005.oracle.com [141.146.116.11])
+ by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x94GZUL7027727;
+ Fri, 4 Oct 2019 16:35:31 GMT
+Received: from [10.209.227.25] (/10.209.227.25)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Fri, 04 Oct 2019 09:35:30 -0700
+Subject: Re: [PATCH v3 00/14] dmaengine/soc: Add Texas Instruments UDMA support
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>, vkoul@kernel.org,
+ robh+dt@kernel.org, nm@ti.com, ssantosh@kernel.org
+References: <20191001061704.2399-1-peter.ujfalusi@ti.com>
+From: santosh.shilimkar@oracle.com
+Organization: Oracle Corporation
+Message-ID: <c567c1a2-2e74-3809-8e0f-4c2049ba4747@oracle.com>
+Date: Fri, 4 Oct 2019 09:35:29 -0700
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
+ Gecko/20100101 Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <fc7dce53-ad39-26e3-7c19-ab60ff4cc332@arm.com>
-Content-Language: en-GB
-X-Provags-ID: V03:K1:WDXMF7fUaHGooh/FbZ81ORhv2SFSl3PKXdEyI/BLdwRZsAjbggD
- 8VTFxf353pFadfg+sHKcWdv5+RETJjI5q9jF4pdx5lcrnQv0QtpjAps5dFHtwBP9Ih05Znn
- sVL+FE/0rFaGbOU972rfTgvTZXw8xKiajaoscxXpD4vO9YYHhFdaRGdWkg+eGO47DIhf+9b
- BGRCq9LyxG+eF9Nhf0HzQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:j89oGVrDlDU=:ezMJXZgomRb8VO2z1FXus6
- lUrP5ck2RvSf/mJ+sYU21+PJdqM+tz+81kdT7Um8IpY1Nt5pYRwMfIgDltZf1vFX0cKJIpOos
- 8nnLknq1eAbKfEg+48nonn/JBg3l9G0Dpkzt40CHJq94sf3EnvXHf4lma6EBcXwETYY2kziF/
- bYOIwIqC+wZCmUmG6X0wamlnUWKfqgPNi7uq8WHTLhOpEpqX/FHiyYQz39G7INrcgS+bt+T68
- H7oB2A0gwSSzCtgCkbk0jWSC2RYS5Hh8Zhr3Em6IKxZGHWVrqOwwLRHj8I/JSc12oERWj8NQB
- jCNwCrNTqLlbZKS8xMIDsUZGpxm0quyOY9YmteQRzZtpPqaEzZdavTw6ps8NpqsqsIU5FAlpw
- XaUPbwqrwcMjtgt0+dQyubG5dtmy/o2Wxf7/gKV0777H9w7P+n6hxxUBIc5ovqxQ+1i5uqvF7
- gDEdQ1SeCtHJHP00WRdYTzhs3ANXbvKRuiZ2gSRsWGQCKro9zYT20JPF6J9jT43coluS6dqI6
- EKGiRw/VeDUDRVfUjRsDybBGkg27P4HqAhOS+wY+pev5HRR3MHcn+bLImcRCfKpLmHs8P4ztc
- Nr8yA7/+IzcU0q1J/SNoux4N1tQMe2S2uXC+SJ4KBvo9W45bpJTZELIQoWACfBoHq1xIMV568
- bL6X//YpsT3wM0zJ9ChZrGJXhw/ZROB8QMKCddBiOSGRd7bDnIAsmuaIXpu4koMsGkAzcNiGr
- l07/7pLEM9MKfw6ZxJcV6K13sLb5n5W5cOoc5T51OXUHvxxDLYXnnxdyrizXm11WzgCn9QMAW
- A3eBmIJiHruGSCbEqnzmrTX4kkj1yVUiKu7dYWO5DE+8BdXTjHbtIGPf+fF3Tnsap7tBbiVSW
- JoijeUwuBoBstF/ARU7uYPTBBaynqo+HVKI7KY9RV/+g8LKMtpM6KMzhEgRnnktcJQbP7r4Rf
- voAHisdL43f6JdIsfaw40/4ZUJrJehD2nhugslrFwtq/nPBf/KLpp8s6M6k9Q70qhMdYbH5Ad
- yY4g1DJd8uGO1DpRjDmsT561bX9Bj/seIlNB7wIFlfnc8Gyb0bcmL7l5MJGXVoGLSnAqvi0rH
- QQO7xbTyOaBhsWZuXtBHu6Yn1ZU6QGcqghVXwg7fcmc6v8FzpZuC83JvPYca+iViKYXT68aTR
- W0tW58w5zw6pRz8TeTJqVqw4rlSzYS7dqctEJbTL/PaE51jmqYDdNlQAO4E8iLLOMqXhjWkWs
- b6+2LO3ldd7VTiG9kG++o4qkBkLwnGr6IpYP7tw==
+In-Reply-To: <20191001061704.2399-1-peter.ujfalusi@ti.com>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9399
+ signatures=668684
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1908290000 definitions=main-1910040145
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9399
+ signatures=668684
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1908290000
+ definitions=main-1910040145
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_093924_659867_10FF430E 
-X-CRM114-Status: GOOD (  16.86  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191004_094003_310681_C609B580 
+X-CRM114-Status: GOOD (  20.82  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.72.192.78 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (smoch[at]web.de)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [156.151.31.85 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -99,6 +102,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,71 +114,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+Cc: devicetree@vger.kernel.org, grygorii.strashko@ti.com, lokeshvutla@ti.com,
+ j-keerthy@ti.com, linux-kernel@vger.kernel.org, t-kristo@ti.com,
+ tony@atomide.com, dmaengine@vger.kernel.org, dan.j.williams@intel.com,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAwNC4xMC4xOSAxNjoyMCwgUm9iaW4gTXVycGh5IHdyb3RlOgo+IE9uIDA0LzEwLzIwMTkg
-MDQ6MzksIFNvZXJlbiBNb2NoIHdyb3RlOgo+Pgo+Pgo+PiBPbiAwNC4xMC4xOSAwNDoxMywgU2hh
-d24gTGluIHdyb3RlOgo+Pj4gT24gMjAxOS8xMC80IDg6NTMsIFNvZXJlbiBNb2NoIHdyb3RlOgo+
-Pj4+Cj4+Pj4KPj4+PiBPbiAwNC4xMC4xOSAwMjowMSwgUm9iaW4gTXVycGh5IHdyb3RlOgo+Pj4+
-PiBPbiAyMDE5LTEwLTAzIDEwOjUwIHBtLCBTb2VyZW4gTW9jaCB3cm90ZToKPj4+Pj4+IEFjY29y
-ZGluZyB0byB0aGUgUm9ja1BybzY0IHNjaGVtYXRpYyBbMV0gdGhlIHJrMzM5OSBzZG1tYwo+Pj4+
-Pj4gY29udHJvbGxlciBpcwo+Pj4+Pj4gY29ubmVjdGVkIHRvIGEgbWljcm9TRCAoVEYgY2FyZCkg
-c2xvdCwgd2hpY2ggY2Fubm90IGJlIHN3aXRjaGVkIHRvCj4+Pj4+PiAxLjhWLgo+Pj4+Pgo+Pj4+
-PiBSZWFsbHk/IEFGQUlDUyB0aGUgU0RNTUMwIHdpcmluZyBsb29rcyBwcmV0dHkgbXVjaCBpZGVu
-dGljYWwgdG8gdGhlCj4+Pj4+IE5hbm9QQy1UNCBzY2hlbWF0aWMgKGl0J3MgdGhlIHNhbWUgcmVm
-ZXJlbmNlIGRlc2lnbiwgYWZ0ZXIgYWxsKSwKPj4+Pj4gYW5kIEkKPj4+Pj4ga25vdyB0aGF0IGJv
-YXJkIGNhbiBoYXBwaWx5IGRyaXZlIGEgVUhTLUkgbWljcm9TRCBjYXJkIHdpdGggMS44dgo+Pj4+
-PiBJL09zLAo+Pj4+PiBiZWNhdXNlIG1pbmUncyBkb2luZyBzbyByaWdodCBub3cuCj4+Pj4+Cj4+
-Pj4+IFJvYmluLgo+Pj4+IE9LLCB0aGUgUm9ja1BybzY0IGRvZXMgbm90IGFsbG93IGEgY2FyZCBy
-ZXNldCAocG93ZXIgY3ljbGUpIHNpbmNlCj4+Pj4gVkNDM1YwX1NEIGlzIGRpcmVjdGx5IGNvbm5l
-Y3RlZCB0byBWQ0MzVjNfU1lTICh2aWEgUjg5NTU1KSwgdGhlCj4+Pj4gU0RNTUMwX1BXSF9IIHNp
-Z25hbCBpcyBub3QgY29ubmVjdGVkLiBTbyB0aGUgY2FyZCBmYWlscyB0byBpZGVudGlmeQo+Pj4+
-IGl0c2VsZiBhZnRlciBzdXNwZW5kIG9yIHJlYm9vdCB3aGVuIHN3aXRjaGVkIHRvIDEuOFYgb3Bl
-cmF0aW9uLgo+Cj4gQWgsIHRoYW5rcyBmb3IgY2xhcmlmeWluZyAtIEkgZGlkIG92ZXJsb29rIHRo
-ZSBzdWJ0bGV0eSB0aGF0IFUxMiBhbmQKPiBmcmllbmRzIGhhdmUgIk5DIiBhcyBhbHRlcm5hdGl2
-ZSBwYXJ0IG51bWJlcnMsIGV2ZW4gdGhvdWdoIHRoZXkgYXJlbid0Cj4gYWN0dWFsbHkgbWFya2Vk
-IGFzIEROUC4gU28gaXQncyBzdGlsbCBub3Qgc28gbXVjaCAiY2Fubm90IGJlIHN3aXRjaGVkIgo+
-IGFzICJzd2l0Y2hpbmcgY2FuIGxlYWQgdG8gb3RoZXIgcHJvYmxlbXMiLgpBZ3JlZWQuIEkgc2hv
-dWxkIGhhdmUgYmVlbiBtb3JlIHByZWNpc2UgYWJvdXQgdGhpcyBpbiB0aGUgY29tbWl0IG1lc3Nh
-Z2UuCgpTb2VyZW4KPgo+Pj4KPj4+IEkgYmVsaWV2ZSB3ZSBhZGRyZXNzZWQgdGhpcyBpc3N1ZSBs
-b25nIHRpbWUgYWdvLCBwbGVhc2UgY2hlY2s6Cj4+Pgo+Pj4gaHR0cHM6Ly9naXQua2VybmVsLm9y
-Zy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvdG9ydmFsZHMvbGludXguZ2l0L2NvbW1pdC8/aWQ9
-NmExMWZjNDdmMTc1YzhkODcwMThlODljYjU4ZTJkMzZjNjY1MzRjYgo+Pj4KPj4+Cj4+IFRoYW5r
-cyBmb3IgdGhlIHBvaW50ZXIuCj4+IEluIHRoaXMgY2FzZSBJIGd1ZXNzIEkgc2hvdWxkIHVzZSBm
-b2xsb3dpbmcgcGF0Y2ggaW5zdGVhZDoKPj4KPj4gLS0tIHJrMzM5OS1yb2NrcHJvNjQuZHRzLmJh
-ayDCoMKgIDIwMTktMTAtMDMgMjI6MTQ6MDAuMDY3NzQ1Nzk5ICswMjAwCj4+ICsrKyByazMzOTkt
-cm9ja3BybzY0LmR0c8KgwqDCoCAyMDE5LTEwLTA0IDAwOjAyOjUwLjA0Nzg5MjM2NiArMDIwMAo+
-PiBAQCAtNjE5LDYgKzYxOSw4IEBACj4+IMKgwqDCoMKgwqAgbWF4LWZyZXF1ZW5jeSA9IDwxNTAw
-MDAwMDA+Owo+PiDCoMKgwqDCoMKgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+IMKgwqDC
-oMKgwqAgcGluY3RybC0wID0gPCZzZG1tY19jbGsgJnNkbW1jX2NtZCAmc2RtbWNfYnVzND47Cj4+
-ICvCoMKgwqAgc2QtdWhzLXNkcjEwNDsKPj4gK8KgwqDCoCB2cW1tYy1zdXBwbHkgPSA8JnZjY19z
-ZGlvPjsKPj4gwqDCoMKgwqDCoCBzdGF0dXMgPSAib2theSI7Cj4+IMKgwqB9Owo+PiDCoCBXaGVu
-IEkgZG8gc28sIHRoZSBzZCBjYXJkIGlzIGRldGVjdGVkIGFzIFNEUjEwNCwgYnV0IGEgcmVib290
-IGhhbmdzOgo+Pgo+PiBCb290MTogMjAxOC0wNi0yNiwgdmVyc2lvbjogMS4xNAo+PiBDUFVJZCA9
-IDB4MAo+PiBDaGlwVHlwZSA9IDB4MTAsIDI4Ngo+PiBTcGlfQ2hpcElkID0gYzg0MDE4Cj4+IG5v
-IGZpbmQgcmtwYXJ0aXRpb24KPj4gU3BpQm9vdEluaXQ6ZmZmZmZmZmYKPj4gbW1jOiBFUlJPUjog
-U0RIQ0kgRVJSOmNtZDoweDEwMixzdGF0OjB4MTgwMDAKPj4gbW1jOiBFUlJPUjogQ2FyZCBkaWQg
-bm90IHJlc3BvbmQgdG8gdm9sdGFnZSBzZWxlY3QhCj4+IGVtbWMgcmVpbml0Cj4+IG1tYzogRVJS
-T1I6IFNESENJIEVSUjpjbWQ6MHgxMDIsc3RhdDoweDE4MDAwCj4+IG1tYzogRVJST1I6IENhcmQg
-ZGlkIG5vdCByZXNwb25kIHRvIHZvbHRhZ2Ugc2VsZWN0IQo+PiBlbW1jIHJlaW5pdAo+PiBtbWM6
-IEVSUk9SOiBTREhDSSBFUlI6Y21kOjB4MTAyLHN0YXQ6MHgxODAwMAo+PiBtbWM6IEVSUk9SOiBD
-YXJkIGRpZCBub3QgcmVzcG9uZCB0byB2b2x0YWdlIHNlbGVjdCEKPj4gU2RtbWNJbml0PTIgMQo+
-PiBtbWMwOmNtZDUsMzIKPj4gbW1jMDpjbWQ3LDMyCj4+IG1tYzA6Y21kNSwzMgo+PiBtbWMwOmNt
-ZDcsMzIKPj4gbW1jMDpjbWQ1LDMyCj4+IG1tYzA6Y21kNywzMgo+PiBTZG1tY0luaXQ9MCAxCj4+
-Cj4+IFNvIEkgZ3Vlc3MgSSBzaG91bGQgdXNlIGEgZGlmZmVyZW50IG1pbmlsb2FkZXIgZm9yIHRo
-aXMgcmVib290IHRvIHdvcmshPwo+PiBPciB3aGF0IGVsc2UgY291bGQgYmUgd3JvbmcgaGVyZT8K
-Pgo+IEhtbSwgSSBndWVzcyB0aGlzIGlzICJ0aGUgVGlua2VyYm9hcmQgcHJvYmxlbSIgYWdhaW4g
-LSB0aGUgcGF0Y2ggYWJvdmUKPiB3b3VsZCBiZSBPSyBpZiB3ZSBjb3VsZCBnZXQgYXMgZmFyIGFz
-IHRoZSBrZXJuZWwsIGJ1dCBjYW4ndCBoZWxwIGlmCj4gdGhlIG9mZmVuZGluZyBjYXJkIGlzIGl0
-c2VsZiB0aGUgYm9vdCBtZWRpdW0uIFRoZXJlIHdhcyBhIHByb3Bvc2FsIGhlcmU6Cj4KPiBodHRw
-czovL3BhdGNod29yay5rZXJuZWwub3JnL3BhdGNoLzEwODE3MjE3Lwo+Cj4gYWx0aG91Z2ggSSdt
-IG5vdCBzdXJlIHdoYXQgaWYgYW55IHByb2dyZXNzIGhhcyBiZWVuIG1hZGUgc2luY2UgdGhlbi4K
-Pgo+IFJvYmluLgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LWFybS1rZXJuZWwK
+On 9/30/19 11:16 PM, Peter Ujfalusi wrote:
+> Hi,
+> 
+> Changes since v2
+> )https://patchwork.kernel.org/project/linux-dmaengine/list/?series=152609&state=*)
+> - Based on 5.4-rc1
+> - Support for Flow only data transfer for the glue layer
+> 
+
+> 
+> Grygorii Strashko (3):
+>    bindings: soc: ti: add documentation for k3 ringacc
+>    soc: ti: k3: add navss ringacc driver
+>    dmaengine: ti: k3-udma: Add glue layer for non DMAengine users
+> 
+> Peter Ujfalusi (11):
+>    dmaengine: doc: Add sections for per descriptor metadata support
+>    dmaengine: Add metadata_ops for dma_async_tx_descriptor
+>    dmaengine: Add support for reporting DMA cached data amount
+>    dmaengine: ti: Add cppi5 header for UDMA
+>    dt-bindings: dma: ti: Add document for K3 UDMA
+>    dmaengine: ti: New driver for K3 UDMA - split#1: defines, structs, io
+>      func
+>    dmaengine: ti: New driver for K3 UDMA - split#2: probe/remove, xlate
+>      and filter_fn
+>    dmaengine: ti: New driver for K3 UDMA - split#3: alloc/free
+>      chan_resources
+>    dmaengine: ti: New driver for K3 UDMA - split#4: dma_device callbacks
+>      1
+>    dmaengine: ti: New driver for K3 UDMA - split#5: dma_device callbacks
+>      2
+>    dmaengine: ti: New driver for K3 UDMA - split#6: Kconfig and Makefile
+> 
+>   .../devicetree/bindings/dma/ti/k3-udma.txt    |  185 +
+>   .../devicetree/bindings/soc/ti/k3-ringacc.txt |   59 +
+>   Documentation/driver-api/dmaengine/client.rst |   75 +
+>   .../driver-api/dmaengine/provider.rst         |   46 +
+>   drivers/dma/dmaengine.c                       |   73 +
+>   drivers/dma/dmaengine.h                       |    8 +
+>   drivers/dma/ti/Kconfig                        |   22 +
+>   drivers/dma/ti/Makefile                       |    2 +
+>   drivers/dma/ti/k3-udma-glue.c                 | 1225 ++++++
+>   drivers/dma/ti/k3-udma-private.c              |  141 +
+>   drivers/dma/ti/k3-udma.c                      | 3525 +++++++++++++++++
+>   drivers/dma/ti/k3-udma.h                      |  161 +
+>   drivers/soc/ti/Kconfig                        |   12 +
+>   drivers/soc/ti/Makefile                       |    1 +
+>   drivers/soc/ti/k3-ringacc.c                   | 1165 ++++++
+>   include/dt-bindings/dma/k3-udma.h             |   10 +
+>   include/linux/dma/k3-udma-glue.h              |  134 +
+>   include/linux/dma/ti-cppi5.h                  | 1049 +++++
+>   include/linux/dmaengine.h                     |  110 +
+>   include/linux/soc/ti/k3-ringacc.h             |  245 ++
+>   20 files changed, 8248 insertions(+)
+>   create mode 100644 Documentation/devicetree/bindings/dma/ti/k3-udma.txt
+>   create mode 100644 Documentation/devicetree/bindings/soc/ti/k3-ringacc.txt
+>   create mode 100644 drivers/dma/ti/k3-udma-glue.c
+>   create mode 100644 drivers/dma/ti/k3-udma-private.c
+>   create mode 100644 drivers/dma/ti/k3-udma.c
+>   create mode 100644 drivers/dma/ti/k3-udma.h
+>   create mode 100644 drivers/soc/ti/k3-ringacc.c
+>   create mode 100644 include/dt-bindings/dma/k3-udma.h
+>   create mode 100644 include/linux/dma/k3-udma-glue.h
+>   create mode 100644 include/linux/dma/ti-cppi5.h
+>   create mode 100644 include/linux/soc/ti/k3-ringacc.h
+> 
+Can you please split this series and post drivers/soc/* bits
+separately ?  If its ready, I can apply k3-ringacc.c changes.
+
+Regards,
+Santosh
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
