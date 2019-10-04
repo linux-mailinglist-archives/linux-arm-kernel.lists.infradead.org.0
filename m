@@ -2,55 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA51DCB679
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 10:36:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6912CB68F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 10:38:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KJzd/rwio2xMGxLJ2WCAgLwjHbkLIJ4x7AwMqXyrY4A=; b=bE3HOvv14Leebn/yVd569/YL/
-	Vrh/5DMm1fVW04DzvT83axfv4IKm0HoCdvEdg8Sb6T8xMFSoTv4QxvVBqf+L5q8EAyoDqJ/P3n+p0
-	d5qhvjPdNacSFzJcj5U9nKY5DJkBGB3IQ+s67H1gSY0Hz7J4DYHNaVxuoFLNc3bgkzHkiRt9BP5sM
-	tLN57uBpwgdagurnsyRqjW43Gw3B4+5MtxgjtQAp10BMdWWCXXrhBP4GwZ8nJU84bnBrsCMPO11wg
-	pGLmpgXeCDa8BTK9WFOe/EUWeBsRQOp2t7IGDy1v7pd04Y0mxkBxxRcj/XaCE1SDNXHj7Gs7k96vR
-	YnkARUkYw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wHS5I2PTph9Gk8Gl+nzZ9PN2/1DlacAFxw5TfuPk6LQ=; b=WxnhNE3iwrqfO5
+	J2Z25DZ8b/owJzSRRHjtSvfVTccVf2e0zawfphLs0YuZdJ6Flvxc44la2KRNvZ19KUb5kvYpEki5q
+	Vyeoq/lx5NqOBpuVbU3g3t27M6xkz3MPwSlH1WmxO15eCx8JHJKHzAENexfcU78Qz5dt0InP5ReGb
+	X79wWb17WnJsNKVSS4lpR4ifiqrHlfJ6aQBtu+uUcHsoEjpEWP3YR8ifW/GSAdiVgEsQ3aNxMRaUQ
+	krjTXk6TszQ4/aqH3H8yNxYZ845Xv6Q4AoP3JzUZZBqRDTTY7/LAv2uGtjbmMkrfD3Z4/HQuAVHG7
+	sC0Ss9jk3aknN/qlcN+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGJ4U-0008Io-KP; Fri, 04 Oct 2019 08:36:18 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iGJ6q-0000EJ-QY; Fri, 04 Oct 2019 08:38:44 +0000
+Received: from mail-io1-xd2d.google.com ([2607:f8b0:4864:20::d2d])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGJ4N-0008I3-EU
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 08:36:13 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id AFBEAAC0C;
- Fri,  4 Oct 2019 08:36:09 +0000 (UTC)
-Message-ID: <2303772588b9f98f186abf967efb2af58bcb8349.camel@suse.de>
-Subject: Re: [PATCH] ARM: dt: check MPIDR on MP devices built without SMP
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Florian Fainelli <f.fainelli@gmail.com>, linux-kernel@vger.kernel.org
-Date: Fri, 04 Oct 2019 10:36:08 +0200
-In-Reply-To: <0be9b704-4cc6-7b23-4435-256372e90ffd@gmail.com>
-References: <20191002114508.1089-1-nsaenzjulienne@suse.de>
- <17976e82-04da-d22d-5779-f50db63f98a2@gmail.com>
- <2af0a5ad604064d8fcf9febce72f0c23f1a1a1db.camel@suse.de>
- <0be9b704-4cc6-7b23-4435-256372e90ffd@gmail.com>
-User-Agent: Evolution 3.32.4 
+ id 1iGJ6j-0000DU-Ro
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 08:38:39 +0000
+Received: by mail-io1-xd2d.google.com with SMTP id n26so11751201ioj.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 04 Oct 2019 01:38:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=semihalf-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=YTeq3ZZo9UHM7xgnfv3IH0gfS45HOT33NlfI6uSAmO8=;
+ b=0aFXMbuywcxOGi8k8wHUe1APcLePR/Owq48WIJRvCvzmpr++fy1QuNElW6vVNTefa3
+ dl320enzxU2GGR3K+8RWoMu0HccTfdDmfKCPQtsNquFz1SXPjeVNEj03bJPPluxJ+AMq
+ /2gemQUq+hAMQ+RuuQoMrkWaI2L00oAMBunK2uCh1/QDgYA9mgxO8edgpeyY5pN7s010
+ bUZh5Vx/LKRfU3/B7Dgeunl6GWohikcMJEP9zYdr0TaSW/V1ZRkdjd7NhJ+3Jj2Q0/j2
+ 4xYR8cJG3e0OeWtaGQnNJo0EcCTx8jnAYCKosaW+0QmEUx6k5VXiYE5NLjzRSNxr7dvc
+ FrpA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=YTeq3ZZo9UHM7xgnfv3IH0gfS45HOT33NlfI6uSAmO8=;
+ b=MbimggtfhDeiGuxc1NLWO1eCCXCfcxsD9fDO6nj5MleNgAjdJFoNmGzZNJuuBGmQeI
+ WrOPJOwz+6fZBQxNQmCY0BXw2cYOOY5s5iHOBPhLbledtTLFKkKUbVsb0ZnBSR7007rZ
+ ymp0Vup8C9n5keZv95uXiA2K+26BsIa3hwBwgMekTRDEfsHL6Mj0Mavqgmd37UtrLxQS
+ E9jKsuV/nTZzw1IHNDZ7NCaZyYLLxjRonVf1eigpvKsK7EWWGxL7nWNuENCBhdG1arQe
+ ErEZLi+ruNqT0+OEhiV6M0DdrxgdqBPvRMLsG/j/YAcqzr//vVUYjb1wwQQC4te1+xbY
+ Puww==
+X-Gm-Message-State: APjAAAUayXeT6HZxwRTH9tRvx2t7F/5mb0BvWvoeYbFXhlCRCT/+soUp
+ T9mN0Uu8ekXA+I4DkjhPu+RNsghQ1pUfy0l65wSMuQ==
+X-Google-Smtp-Source: APXvYqx4hyVjevixleIUIGxf2n0ExFJtHZ1tQicZ4HBqJdjrYVyEHWhy3rexaiapla0SjUlTqthkNfMCNeiF3bZI8/g=
+X-Received: by 2002:a02:c65a:: with SMTP id k26mr13513357jan.56.1570178316858; 
+ Fri, 04 Oct 2019 01:38:36 -0700 (PDT)
 MIME-Version: 1.0
+References: <1563279127-30678-1-git-send-email-jaz@semihalf.com>
+ <CAH76GKMZy7z05Gc9HVDUkpM04+tXMa8xEEMBWMQ7Zx1Bt_B0xQ@mail.gmail.com>
+ <20190930143941.GA3744@e121166-lin.cambridge.arm.com>
+In-Reply-To: <20190930143941.GA3744@e121166-lin.cambridge.arm.com>
+From: Grzegorz Jaszczyk <jaz@semihalf.com>
+Date: Fri, 4 Oct 2019 10:38:26 +0200
+Message-ID: <CAH76GKMTgv9R61+f5O1g6xXaaUfuV8e3i88jLp-z17miMQ8eWw@mail.gmail.com>
+Subject: Re: [PATCH v2] PCI: aardvark: fix big endian support
+To: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_013611_775642_4773CA63 
-X-CRM114-Status: GOOD (  25.11  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191004_013837_903349_131FA858 
+X-CRM114-Status: UNSURE (   8.27  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d2d listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,113 +91,20 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kernelci.org bot" <bot@kernelci.org>, Russell King <linux@armlinux.org.uk>,
- linux-arm-kernel@lists.infradead.org, wahrenst@gmx.net
-Content-Type: multipart/mixed; boundary="===============0863821712089411549=="
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Bjorn Helgaas <bhelgaas@google.com>, Marcin Wojtas <mw@semihalf.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============0863821712089411549==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-Ur3xg1tVzwpJPXsH9G28"
-
-
---=-Ur3xg1tVzwpJPXsH9G28
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, 2019-10-03 at 16:47 -0700, Florian Fainelli wrote:
-> On 10/3/19 12:39 PM, Nicolas Saenz Julienne wrote:
-> > On Thu, 2019-10-03 at 11:08 -0700, Florian Fainelli wrote:
-> > > On 10/2/19 4:45 AM, Nicolas Saenz Julienne wrote:
-> > > > Currently, in arm_dt_init_cpu_maps(), the hwid of the boot CPU is r=
-ead
-> > > > from MPIDR on SMP devices and set to 0 for non SMP. This value is t=
-hen
-> > > > matched with the DT cpu nodes' reg property in order to find the bo=
-ot
-> > > > CPU in DT.
-> > >=20
-> > > The code you change is about the "mpidr" variable, yet in your commit
-> > > message you refer to "hwid", that is a tad confusing for the reader.
-> >=20
-> > Sorry, it's indeed pretty confusing. I'll send a new version with a fix=
-ed
-> > description if there is no major push back.
-> >=20
-> > > > On MP devices build without SMP the cpu DT node contains the expect=
-ed
-> > > > MPIDR yet the hwid is set to 0. With this the function fails to mat=
-ch
-> > > > the cpus and uses the default CPU logical map. Making it impossible=
- to
-> > > > get the CPU's DT node further down the line. This causes issues wit=
-h
-> > > > cpufreq-dt, as it triggers warnings when not finding a suitable DT =
-node
-> > > > on CPU0.
-> > > >=20
-> > > > Change the way we choose whether to get MPIDR or not. Instead of
-> > > > depending on SMP check the number of CPUs defined in DT. Anything >=
- 1
-> > > > means MPIDR will be available.
-> > >=20
-> > > Except if someone accidentally wrote their Device Tree such as to hav=
-e >
-> > > 1 CPU nodes, yet the CPU is not MP capable and reading the MPIDR
-> > > register does return the expected value, but that is wrong anyway.
-> >=20
-> > An UP device will most likely not have a MPIDR. That said I'm not sure =
-this
-> > is
-> > always true. As per ARM1176JZ's TRM[1], the RPi1 CPU, if one was to get=
- the
-> > MPIDR it would raise an undefined exception.
-> >=20
-> > The way I see it's an acceptable outcome as the DT is clearly wrong.
->=20
-> It is, although you probably want to use of_get_available_child_count()
-> instead of of_get_child_count() since we could imagine that a boot
-> loader or some other boot program mangling the DT could intentionally
-> put a 'status =3D "disabled"' property on the non-boot CPU node for
-> whatever reason.
-
-Good point, I'll fix it on v2.
-
-
---=-Ur3xg1tVzwpJPXsH9G28
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl2XBHgACgkQlfZmHno8
-x/5YdQf9GN1rZ3KZuHx01XDB6XKFKmAytIseTr2ogtxDi05xhH5AnkT84tZ62fZb
-yonXNXZPLUgCzaDuSQBorWu6gl7SnkLyAhNX9bF3kG9b0uQUOXAyBxt8ETXqQIq5
-33l7g0QrY/BoR7sKP/ivdaRNmEtM6QpbCNubhlmB4We+06G1vzYZOGwE7kcLCGZp
-HQokAmOqZ1J91s1y2AXVtTRgClhrqBa08SD0PqgNo0B9FW2m8c26gT8WI5K1+BuV
-TFelueBrbPKz9RTUZw+VITZGqGAoG3iilnztkOwoXbpb/No123kGEbli50ajcEUQ
-AoBRLomyXsPbW0AeVIzbl5ri+BLvqA==
-=q3CM
------END PGP SIGNATURE-----
-
---=-Ur3xg1tVzwpJPXsH9G28--
-
-
-
---===============0863821712089411549==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0863821712089411549==--
-
-
+cG9uLiwgMzAgd3J6IDIwMTkgbyAxNjozOSBMb3JlbnpvIFBpZXJhbGlzaQo8bG9yZW56by5waWVy
+YWxpc2lAYXJtLmNvbT4gbmFwaXNhxYIoYSk6Cj4KPiA+IEkgd2FudCB0byBraW5kbHkgcmVtaW5k
+IGFib3V0IHRoaXMgcGF0Y2guCj4KPiBJIG5lZWQgVGhvbWFzJyBBQ0sgb24gdGhlc2UgcGF0Y2hl
+cyB0byBtZXJnZSB0aGVtLgoKVGhvbWFzLCBjb3VsZCB5b3UgcGxlYXNlIHRha2UgYSBsb29rPwoK
+VGhhbmsgeW91IGluIGFkdmFuY2UsCkdyemVnb3J6CgpfX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
+eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
