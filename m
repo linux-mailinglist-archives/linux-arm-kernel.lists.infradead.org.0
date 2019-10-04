@@ -2,44 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A7ECCC3CE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 21:55:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15448CC3E1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 22:04:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qSXO5h3neU76Dgvd5UY5RVQtU0EXmPGqqvKvqtO8QMI=; b=SoVpn/GoEKN+eT
-	2NXA9/R5wpOy/QIdxN4dggNIn5beSMj5K0M1B9YkO8lGsNC/oYN465Hv6s8IswygZ2kTVtiOskQyz
-	BkmDoNJ/pcTKZPg6Fws3tWEAYYk1F8MZAFAFYen0bIZ9ol4NKXQKeiIJQ6cSpRvwyC6SmtdjzaamW
-	zqikSS7aj1HodfP4rBy4po3UZGa98vaNDPSWe2ZP+MFg92KVUI9S4stnse+6zBptrL2QPCL8/EPPT
-	rUKpoJe6EUv4sTsTNCIyXxRKTHkcPL+nV7HVQI4qHIKFh65cS6zkYihS38HpuOlZX/4EjCmvMyznb
-	CBF79rOO42jUiGvte6eg==;
+	List-Owner; bh=k09NPi5UON180pstXBxSq5YxuybsIwjc1Vp8bzZ7I+Y=; b=SbtnTuQL/Mtu3P
+	LmgMalpTyM5jJG75z3cpZ1V7g3wT/m0wLMTGSndPSyPIUFL++Eduq9xwnI3TFGP0Ys+guBqtl3C4E
+	i1hmLon0/CKctQMNIN5IFQlmWcbzIkCrWnWgujkUXCq3chE67+fkDB58pRNlfMQLLIDwaZi1xgxuA
+	Akkf7H9Q6PkhG5SJQsbh4jVa8g4iwzFTeQwdISICOizpQLV7P38b8T0Vk0Ucb6irXC42lShaEtkHI
+	g7Pl6RmywtY+PUz1FJvOoTyYM+ceOBWpKOc/pO1TnM5sM5ePzosz5W9WhrnBWVY9//G3NuOmLDGhT
+	eDyYwXs5kjEn7DAMLoKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGTfY-000501-9Y; Fri, 04 Oct 2019 19:55:16 +0000
+	id 1iGToP-0007Hj-Dm; Fri, 04 Oct 2019 20:04:25 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGTfL-0004D5-BR; Fri, 04 Oct 2019 19:55:04 +0000
+ id 1iGToE-0007Gh-1R; Fri, 04 Oct 2019 20:04:15 +0000
 Received: from 94.112.246.102.static.b2b.upcbusiness.cz ([94.112.246.102]
  helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iGTfI-0006St-CU; Fri, 04 Oct 2019 21:55:00 +0200
+ id 1iGToC-0006Up-Gs; Fri, 04 Oct 2019 22:04:12 +0200
 From: Heiko Stuebner <heiko@sntech.de>
-To: Katsuhiro Suzuki <katsuhiro@katsuster.net>
-Subject: Re: [PATCH] arm64: dts: rockchip: add analog audio nodes on
- rk3399-rockpro64
-Date: Fri, 04 Oct 2019 21:54:59 +0200
-Message-ID: <3908342.LUz8zmGQAZ@phil>
-In-Reply-To: <74097d16-ec3e-70e9-f835-25ae265b0ad9@katsuster.net>
-References: <20190907174833.19957-1-katsuhiro@katsuster.net>
- <74097d16-ec3e-70e9-f835-25ae265b0ad9@katsuster.net>
+To: Soeren Moch <smoch@web.de>
+Subject: Re: [PATCH 1/3] arm64: dts: rockchip: fix RockPro64 vdd-log regulator
+ settings
+Date: Fri, 04 Oct 2019 22:04:11 +0200
+Message-ID: <3200327.mLoWUYiBOS@phil>
+In-Reply-To: <20191003215036.15023-1-smoch@web.de>
+References: <20191003215036.15023-1-smoch@web.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_125503_543892_46D9EDB5 
-X-CRM114-Status: GOOD (  10.35  )
+X-CRM114-CacheID: sfid-20191004_130414_229802_F9828D48 
+X-CRM114-Status: GOOD (  11.28  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,19 +64,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Katsuhiro,
-
-Am Freitag, 4. Oktober 2019, 19:26:00 CEST schrieb Katsuhiro Suzuki:
-> Past about 1 month, so I send a ping...
+Am Donnerstag, 3. Oktober 2019, 23:50:34 CEST schrieb Soeren Moch:
+> The RockPro64 schematic [1] page 18 states a min voltage of 0.8V and a
+> max voltage of 1.4V for the VDD_LOG pwm regulator. However, there is an
+> additional note that the pwm parameter needs to be modified.
+> From the schematics a voltage range of 0.8V to 1.7V can be calculated.
+> Additional voltage measurements on the board show that this fix indeed
+> leads to the correct voltage, while without this fix the voltage was set
+> too high.
 > 
-> On 2019/09/08 2:48, Katsuhiro Suzuki wrote:
-> > This patch adds audio codec (Everest ES8316) and I2S audio nodes for
-> > RK3399 RockPro64.
-> > 
-> > Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+> [1] http://files.pine64.org/doc/rockpro64/rockpro64_v21-SCH.pdf
+> 
+> Fixes: e4f3fb490967 ("arm64: dts: rockchip: add initial dts support for Rockpro64")
+> Signed-off-by: Soeren Moch <smoch@web.de>
 
-thanks for the reminder, applied for 5.5
+applied as fix  for 5.4
 
+Thanks for going that extra mile with all the calculations and measurements
 Heiko
 
 
