@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBE22CBD46
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 16:32:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC896CBD47
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 16:32:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6+yi/vi4AOO1NglCCNKF5mEFAEOAQH+677IY1cYyq+A=; b=ZQKmxGikuNayzn
-	tB//6Yj9ITkWOnFfwj+zYIdycVvTG+t29lXJEZGjNDUPsOlJqYu53kZyXmjgRE0qGV2hHnKB5uAkM
-	dHElkzqZrtnI6DAZivyQ9tfYtdlAlhM7Da8Uh0xhkSEr7FnvquOA/Y+oeQ5mEnk00RgaFucPBzoHp
-	HjsvlmLceffGR/7qj0OTTvUrfWBawYsMhWt4pprl8oUJfMDLcCvFOR7BS5fe/SfGn6TeDobhrkh2D
-	9e3dBYoGN3OJDS9a5QM5Z4ESvJs8D/ZrvWmSH812T3bRQveqnHKE4TsrZ2Uhpf6hngVQJGfBTyS0v
-	bjequD35BReUKbGyKzgQ==;
+	List-Owner; bh=8c4dMe4HTok4L6B3rKt5N7ldDuout5eG9WYF2gYmiPA=; b=XRaWeVO9smMQO7
+	k4+D9onkMO/oVjeB9vgDZgwi0m7UQgIkfqUBytNCaR55EbkaftfrVJ+vI0e1y1+hKdwTPWlYPCiTx
+	mq/0sLPq4KRXyse6bV568xXYKo1T+hKu2mQNc4BY6oWWWYkbmbzAFzCZzUKE9++bDV2azi5/Cyxh8
+	w9Zvm6CyGJjDlQy8JC3CcivFg5L0FoZrYXznVsm8qMNfxaczjOwercCd4xutResrXwb52T3xf32UN
+	PTo82BA4E3k6t8oouRfk0iZYRbP1ODlZmponp94848HwrJTLgBepSt7t6Q8fHqd9Xt8xPUgF38k83
+	PcpcTD17xcW91OsX+ANw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGOdG-00025X-1U; Fri, 04 Oct 2019 14:32:34 +0000
+	id 1iGOdQ-0002Ns-TU; Fri, 04 Oct 2019 14:32:44 +0000
 Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGOYv-000528-2Z
+ id 1iGOYw-00053G-6E
  for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 14:28:07 +0000
 X-Originating-IP: 86.250.200.211
 Received: from localhost.localdomain (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
  [86.250.200.211]) (Authenticated sender: miquel.raynal@bootlin.com)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 438F4C0022;
- Fri,  4 Oct 2019 14:28:02 +0000 (UTC)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 90228C0008;
+ Fri,  4 Oct 2019 14:28:03 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Rob Herring <robh+dt@kernel.org>,
 	Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 16/21] dt-bindings: marvell: Convert the SoC compatibles
- description to YAML
-Date: Fri,  4 Oct 2019 16:27:33 +0200
-Message-Id: <20191004142738.7370-17-miquel.raynal@bootlin.com>
+Subject: [PATCH v2 17/21] dt-bindings: marvell: Declare the CN913x SoC
+ compatibles
+Date: Fri,  4 Oct 2019 16:27:34 +0200
+Message-Id: <20191004142738.7370-18-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191004142738.7370-1-miquel.raynal@bootlin.com>
 References: <20191004142738.7370-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_072805_459437_26604369 
-X-CRM114-Status: GOOD (  11.61  )
+X-CRM114-CacheID: sfid-20191004_072806_374962_C99F734D 
+X-CRM114-Status: UNSURE (   8.84  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -79,92 +80,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the file detailing Marvell EBU compatibles to json-schema.
+From: Grzegorz Jaszczyk <jaz@semihalf.com>
 
+Describe the compatible properties for the new Marvell SoCs:
+* CN9130: 1x AP807-quad + 1x CP115 (1x embedded)
+* CN9131: 1x AP807-quad + 2x CP115 (1x embedded + 1x modular)
+* CN9132: 1x AP807-quad + 3x CP115 (1x embedded + 2x modular)
+
+CP115 are similar to CP110 in terms of features.
+
+There are three development boards based on these SoCs:
+* CN9130-DB: comes as a single mother board (with the CP115 bundled)
+* CN9131-DB: same as CN9130-DB with one additional modular CP115
+* CN9132-DB: same as CN9130-DB with two additional modular CP115
+
+Signed-off-by: Grzegorz Jaszczyk <jaz@semihalf.com>
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- .../bindings/arm/marvell/armada-7k-8k.txt     | 24 -----------
- .../bindings/arm/marvell/armada-7k-8k.yaml    | 40 +++++++++++++++++++
- 2 files changed, 40 insertions(+), 24 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.txt
- create mode 100644 Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.yaml
+ .../bindings/arm/marvell/armada-7k-8k.yaml    | 21 +++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.txt b/Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.txt
-deleted file mode 100644
-index df98a9c82a8c..000000000000
---- a/Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.txt
-+++ /dev/null
-@@ -1,24 +0,0 @@
--Marvell Armada 7K/8K Platforms Device Tree Bindings
-----------------------------------------------------
--
--Boards using a SoC of the Marvell Armada 7K or 8K families must carry
--the following root node property:
--
-- - compatible, with one of the following values:
--
--   - "marvell,armada7020", "marvell,armada-ap806-dual", "marvell,armada-ap806"
--      when the SoC being used is the Armada 7020
--
--   - "marvell,armada7040", "marvell,armada-ap806-quad", "marvell,armada-ap806"
--      when the SoC being used is the Armada 7040
--
--   - "marvell,armada8020", "marvell,armada-ap806-dual", "marvell,armada-ap806"
--      when the SoC being used is the Armada 8020
--
--   - "marvell,armada8040", "marvell,armada-ap806-quad", "marvell,armada-ap806"
--      when the SoC being used is the Armada 8040
--
--Example:
--
--compatible = "marvell,armada7040-db", "marvell,armada7040",
--             "marvell,armada-ap806-quad", "marvell,armada-ap806";
 diff --git a/Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.yaml b/Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.yaml
-new file mode 100644
-index 000000000000..294595e00028
---- /dev/null
+index 294595e00028..a9828c50c0fb 100644
+--- a/Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.yaml
 +++ b/Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.yaml
-@@ -0,0 +1,40 @@
-+# SPDX-License-Identifier: (GPL-2.0+ OR X11)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/arm/marvell/armada-7k-8k.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+@@ -38,3 +38,24 @@ properties:
+           - const: marvell,armada8040
+           - const: marvell,armada-ap806-quad
+           - const: marvell,armada-ap806
 +
-+title: Marvell Armada 7K/8K Platforms Device Tree Bindings
-+
-+maintainers:
-+  - Gregory CLEMENT <gregory.clement@bootlin.com>
-+
-+properties:
-+  $nodename:
-+    const: '/'
-+  compatible:
-+    oneOf:
-+
-+      - description: Armada 7020 SoC
++      - description: Armada CN9130 SoC with no external CP
 +        items:
-+          - const: marvell,armada7020
-+          - const: marvell,armada-ap806-dual
-+          - const: marvell,armada-ap806
++          - const: marvell,cn9130
++          - const: marvell,armada-ap807-quad
++          - const: marvell,armada-ap807
 +
-+      - description: Armada 7040 SoC
++      - description: Armada CN9131 SoC with one external CP
 +        items:
-+          - const: marvell,armada7040
-+          - const: marvell,armada-ap806-quad
-+          - const: marvell,armada-ap806
++          - const: marvell,cn9131
++          - const: marvell,cn9130
++          - const: marvell,armada-ap807-quad
++          - const: marvell,armada-ap807
 +
-+      - description: Armada 8020 SoC
++      - description: Armada CN9132 SoC with two external CPs
 +        items:
-+          - const: marvell,armada8020
-+          - const: marvell,armada-ap806-dual
-+          - const: marvell,armada-ap806
-+
-+      - description: Armada 8040 SoC
-+        items:
-+          - const: marvell,armada8040
-+          - const: marvell,armada-ap806-quad
-+          - const: marvell,armada-ap806
++          - const: marvell,cn9132
++          - const: marvell,cn9131
++          - const: marvell,cn9130
++          - const: marvell,armada-ap807-quad
++          - const: marvell,armada-ap807
 -- 
 2.20.1
 
