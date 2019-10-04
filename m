@@ -2,83 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3EFACB43C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 07:41:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE0EBCB45D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 08:13:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zUTUmfoLTXXMk1smNmZm7lLbgm0mLUKCQo/fUIgMfkg=; b=tYFBNz5fixpHMi
-	YkNbBtPW8vXrMj8+YAl6ink8sqnG01HJ45nh4DFO7oDgm3mBOVf1nAOV7gjgzhE4zCGjExcl15rip
-	2TwzpX5PHNXjzTcghKoUimbOuk5JufI3KynGnSgBH5bdTJmlUnBCjotZo2J6P3j48POUuF9kg5kOE
-	AaSCHYK3GvONms+5HlzlmlecPnOuDZopTXGwAQhrXR4AoNd/Mt4N440EGmYbMmTN/+JdYnQEGxCgi
-	FDC1e0cF/OQjfRGybXBcKV3RipMqTDNcKtXdewCIgMPJJ5DKRRV0cQYl5yUJX2cyDyepIfJi4UWhR
-	UlSDInZBOALWul1nUtxg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cdR1TT2cNvlT/A4rb6wN0FLcn1oip//bUgUFdD9XMxU=; b=GmYQTPSZ240H+b
+	hiWDF09aFThPuH7TQMHKecwOAU0IMDfGvjWHF4KARUxNy2zx5PnQwUnMZjJP68ndB8Xukl8mqOM82
+	iUYhW747uuBy4UgLcFfnYjRuU3hlfbGYAKFmMFiR8uajr/8Y2GhcuKrbxDDcfVTZNQSoVhNM3lwcy
+	xEvxm0izHEabzIIemqFLEem3G8DwFSbUOEssUfugPm7jYrrxQfLLkE2M9wEF6olVYPAmfOX/f4e9R
+	ZHG5WEeSAKOu/5AvCGCjH0WIrou7JSKhJ4wvOVrIfN6oI2slQj0Lk1JkULajiz6c3tsYvFqzy7PkA
+	T236/gak2OASAbGnCHNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGGLW-0000Fs-Cu; Fri, 04 Oct 2019 05:41:42 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1iGGqP-00029t-E7; Fri, 04 Oct 2019 06:13:37 +0000
+Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGGLO-0000FT-L1
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 05:41:36 +0000
-Received: by mail-pl1-x644.google.com with SMTP id q15so2592556pll.11
+ id 1iGGqI-00028q-2S
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 06:13:31 +0000
+Received: by mail-vs1-xe41.google.com with SMTP id z14so3359948vsz.13
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 03 Oct 2019 22:41:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=GKVLI9LUqHPEjp3RS7mC+DCEnq9WI1TJleS4Dvszv8U=;
- b=iSiBR/IZvtIKmtKsBEg1fXjUd7BM/mtimLVfxJcmzcJZHuweE259D07Hmy+3/MWnQY
- Z8RAYJDJepnKC13JaqVKO6RfkeuFBbR28+lOoc7cnadTlpS1XI2DTtgZTEVPPd3bhcD4
- C9ud0mFDJHUXpXGFYStQm8qqh5djbXa/nrYYRMTUmB/+ZNGJTw2zwYaPkQcdDDhgRx7C
- 9c2AZCjEaD8lI9wXWwqDF2jVYflssod3yWyFW9OpmFD+fEED/wZfNbjrALLGNxw09Uxg
- 9g5RD7Jmz54At0evGtvhSxKGa8G8Bl2y1ALwgOOQthJOEA4PsTFVi0FH3CqURhb9Znlb
- VPBw==
+ Thu, 03 Oct 2019 23:13:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=PlYxemLyGEw2z7tzBw1cpulBtK9wmECqFWdHMP2WOUo=;
+ b=jpFnppB/F4Z075p99ZTBhY5zAVoG46Q7/SnMiOdezjKLrflNe6s8JRs6xRJvgERdrw
+ aEPfEcfKl4SQwW7u6Sd4l/dI06qV4pDy0Eex8B0tXg5Wj+vZZRMG5TSX2TPXodlbxwvg
+ FHYKaA+FLGIT3mYgPi8RK+U5O4Nfh0stmkbM2GE2BBYqkwNEtdbFy6JziNs14DBCeO+O
+ CNaIPw72WB8BNEp/Ri6OcQxZ2zqEQv8r9mTDJXvg7wDrFOkY9JPrCe0AekBpyIOiap3+
+ NZM03X0fyhLA3OrMANTCBZWOxOgEOadAl9Yy0ffZ+rThltRJtUIisJpKxoreADXRfq18
+ qffQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=GKVLI9LUqHPEjp3RS7mC+DCEnq9WI1TJleS4Dvszv8U=;
- b=BRW5K85oFNKJwoj9cmc0Jm2ndecIGtlYqrV+DOmccyhYB1QiJnJYhOS90b4yT8xHc2
- MG7Vo4LGWZWfzKo20k/7dZARju9K9JtyB0plyHnC9jzdPpLpfROcNTjNVkbQSpVrLeBE
- iHoCyf24YKjIDXaNnZiwGoDOMjjk8OJeto67Wt9kHCxSUH0bFq2yXxr7bRp7Qg69uQ3/
- WSWWqcYZi1Sjfn2c8DHOxxYR4f/stl3yNorTXHPGLLplE8im68+et1P+MhUjvfg2/Ggk
- jBO1F/dyGlG2BYxMr99SUKlHO0ic9yeXhCDv5UdvuiVq7v/XRyrWb3Hu06Yl4igDyojp
- 5PdQ==
-X-Gm-Message-State: APjAAAV1iVcYJ0eMhVhazoStKi833eEudGsVeaw7i9JmpK5cgNH28IfK
- M9VPVXbuK/TlfJoI2ZemRxE=
-X-Google-Smtp-Source: APXvYqxq2ZMNDYaJCoOc9QDAeCL1dkqqeXLO4Zk30uye0zXZCYarwbW9lkud/Ozlu47vWdC7smk5jQ==
-X-Received: by 2002:a17:902:a418:: with SMTP id
- p24mr13411978plq.312.1570167692424; 
- Thu, 03 Oct 2019 22:41:32 -0700 (PDT)
-Received: from localhost.lan (c-67-185-54-80.hsd1.wa.comcast.net.
- [67.185.54.80])
- by smtp.gmail.com with ESMTPSA id o67sm5651892pje.17.2019.10.03.22.41.31
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 03 Oct 2019 22:41:31 -0700 (PDT)
-From: Andrey Smirnov <andrew.smirnov@gmail.com>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH] ARM: dts: vf610-zii-scu4-aib: Specify
- 'i2c-mux-idle-disconnect'
-Date: Thu,  3 Oct 2019 22:41:15 -0700
-Message-Id: <20191004054115.26082-1-andrew.smirnov@gmail.com>
-X-Mailer: git-send-email 2.21.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=PlYxemLyGEw2z7tzBw1cpulBtK9wmECqFWdHMP2WOUo=;
+ b=qqdBWy0huUaooYUwdu+V0HMtCcHGqzsjyNiWQDpOysOOK4jQ+CACp8Xe7LV0M/6KUS
+ 6pZvMQFHIV1fp/xZKMYqi1A8MnQhudyFmvMJw5QfzZ9jEX8Kh01IlbplHLAtRZN9UPMA
+ 9QXoGLZQ8i3pxGuLSLtWFitl3djeSAR/DhA0QvtyuY8Rhxfxjltm+T2JNfQDQebhxbhD
+ KEhklPy1Yuj0Bkd92IOJFLbwDAB/NcmzCTaY6sPRcTJYOfZtrT2QBM74jIZorwGiHegq
+ anTUyVEpM87Fq69zJbzRV43OJ0ALnbYfJdLOIGXIPqKhFsX3nP0gzuJDavkbf3zFbbTR
+ KV5g==
+X-Gm-Message-State: APjAAAXC0VXBH+J52aG28AGCn1IJRSj2H4FULJ3g/6hogXehFMJLCfQZ
+ JvhvCmSSm/5jfpEsB95GeTY/KQdEDw0IARzUpmICmg==
+X-Google-Smtp-Source: APXvYqwe4FiRLNALsADBsQ1M2wb6h4k6tCXwHwPsKcPofn8xLo+JhI+CH7xO3En2d3+P52nm5VQNA4f1xN+2Jgppu2Q=
+X-Received: by 2002:a67:e414:: with SMTP id d20mr7072671vsf.191.1570169608232; 
+ Thu, 03 Oct 2019 23:13:28 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190905122112.29672-1-ludovic.Barre@st.com>
+ <20190905122112.29672-2-ludovic.Barre@st.com>
+In-Reply-To: <20190905122112.29672-2-ludovic.Barre@st.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Fri, 4 Oct 2019 08:12:51 +0200
+Message-ID: <CAPDyKFpcb=dT0XBAGVL68t--xi5853Dzsgak-vbx5VcvxLZ4zA@mail.gmail.com>
+Subject: Re: [PATCH V6 1/3] mmc: mmci: add hardware busy timeout feature
+To: Ludovic Barre <ludovic.Barre@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_224134_714124_2D7D8F88 
-X-CRM114-Status: GOOD (  10.17  )
+X-CRM114-CacheID: sfid-20191003_231330_144736_B6F4A75B 
+X-CRM114-Status: GOOD (  28.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (andrew.smirnov[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -99,66 +91,217 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Cory Tusar <cory.tusar@zii.aero>, Rick Ramstetter <rick@anteaterllc.com>,
- devicetree@vger.kernel.org, Andrey Smirnov <andrew.smirnov@gmail.com>,
- Jeff White <jeff.white@zii.aero>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Fabio Estevam <festevam@gmail.com>,
- Chris Healy <cphealy@gmail.com>, Lucas Stach <l.stach@pengutronix.de>
+Cc: DTML <devicetree@vger.kernel.org>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Specify 'i2c-mux-idle-disconnect' for both I2C switches present on the
-board, since both are connected to the same parent bus and all of
-their children have the same I2C address.
+On Thu, 5 Sep 2019 at 14:21, Ludovic Barre <ludovic.Barre@st.com> wrote:
+>
+> From: Ludovic Barre <ludovic.barre@st.com>
+>
+> In some variants, the data timer starts and decrements
+> when the DPSM enters in Wait_R or Busy state
+> (while data transfer or MMC_RSP_BUSY), and generates a
+> data timeout error if the counter reach 0.
 
-Fixes: ca4b4d373fcc ("ARM: dts: vf610: Add ZII SCU4 AIB board")
-Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
-Cc: Shawn Guo <shawnguo@kernel.org>
-Cc: Chris Healy <cphealy@gmail.com>
-Cc: Cory Tusar <cory.tusar@zii.aero>
-Cc: Jeff White <jeff.white@zii.aero>
-Cc: Rick Ramstetter <rick@anteaterllc.com>
-Cc: Lucas Stach <l.stach@pengutronix.de>
-Cc: Fabio Estevam <festevam@gmail.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: devicetree@vger.kernel.org
-Cc: linux-kernel@vger.kernel.org
----
-Shawn:
 
-If this is possible, I'd like this one to go into 5.4.
+>
+> -Define max_busy_timeout (in ms) according to clock.
+> -Set data timer register if the command has rsp_busy flag.
+>  If busy_timeout is not defined by framework, the busy
+>  length after Data Burst is defined as 1 second
+>  (refer: 4.6.2.2 Write of sd specification part1 v6-0).
 
-Thanks,
-Andrey Smirnov
+How about re-phrasing this as below:
 
- arch/arm/boot/dts/vf610-zii-scu4-aib.dts | 2 ++
- 1 file changed, 2 insertions(+)
+-----
+In the stm32_sdmmc variant, the datatimer is active not only during
+data transfers with the DPSM, but also while waiting for the busyend
+IRQs from commands having the MMC_RSP_BUSY flag set. This leads to an
+incorrect IRQ being raised to signal MCI_DATATIMEOUT error, which
+simply breaks the behaviour.
 
-diff --git a/arch/arm/boot/dts/vf610-zii-scu4-aib.dts b/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
-index dc8a5f37a1ef..c8ebb23c4e02 100644
---- a/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
-+++ b/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
-@@ -602,6 +602,7 @@
- 		#address-cells = <1>;
- 		#size-cells = <0>;
- 		reg = <0x70>;
-+		i2c-mux-idle-disconnect;
- 
- 		sff0_i2c: i2c@1 {
- 			#address-cells = <1>;
-@@ -640,6 +641,7 @@
- 		reg = <0x71>;
- 		#address-cells = <1>;
- 		#size-cells = <0>;
-+		i2c-mux-idle-disconnect;
- 
- 		sff5_i2c: i2c@1 {
- 			#address-cells = <1>;
--- 
-2.21.0
+Address this by updating the datatimer value before sending a command
+having the MMC_RSP_BUSY flag set. To inform the mmc core about the
+maximum supported busy timeout, which also depends on the current
+clock rate, set ->max_busy_timeout (in ms).
+-----
 
+Regarding the busy_timeout, the core should really assign it a value
+for all commands having the RSP_BUSY flag set. However, I realize the
+core needs to be improved to cover all these cases - and I am looking
+at that, but not there yet.
+
+I would also suggest to use a greater value than 1s, as that seems a
+bit low for the "undefined" case. Perhaps use the max_busy_timeout,
+which would be nice a simple or 10s, which I think is used by some
+other drivers.
+
+> -Add MCI_DATATIMEOUT error management in mmci_cmd_irq.
+>
+> Signed-off-by: Ludovic Barre <ludovic.barre@st.com>
+> ---
+>  drivers/mmc/host/mmci.c | 42 ++++++++++++++++++++++++++++++++++++-----
+>  drivers/mmc/host/mmci.h |  3 +++
+>  2 files changed, 40 insertions(+), 5 deletions(-)
+>
+> diff --git a/drivers/mmc/host/mmci.c b/drivers/mmc/host/mmci.c
+> index c37e70dbe250..c30319255dc2 100644
+> --- a/drivers/mmc/host/mmci.c
+> +++ b/drivers/mmc/host/mmci.c
+> @@ -1075,6 +1075,7 @@ static void
+>  mmci_start_command(struct mmci_host *host, struct mmc_command *cmd, u32 c)
+>  {
+>         void __iomem *base = host->base;
+> +       unsigned long long clks;
+>
+>         dev_dbg(mmc_dev(host->mmc), "op %02x arg %08x flags %08x\n",
+>             cmd->opcode, cmd->arg, cmd->flags);
+> @@ -1097,6 +1098,16 @@ mmci_start_command(struct mmci_host *host, struct mmc_command *cmd, u32 c)
+>                 else
+>                         c |= host->variant->cmdreg_srsp;
+>         }
+> +
+> +       if (host->variant->busy_timeout && cmd->flags & MMC_RSP_BUSY) {
+> +               if (!cmd->busy_timeout)
+> +                       cmd->busy_timeout = 1000;
+> +
+> +               clks = (unsigned long long)cmd->busy_timeout * host->cclk;
+> +               do_div(clks, MSEC_PER_SEC);
+> +               writel_relaxed(clks, host->base + MMCIDATATIMER);
+> +       }
+> +
+>         if (/*interrupt*/0)
+>                 c |= MCI_CPSM_INTERRUPT;
+>
+> @@ -1201,6 +1212,7 @@ static void
+>  mmci_cmd_irq(struct mmci_host *host, struct mmc_command *cmd,
+>              unsigned int status)
+>  {
+> +       u32 err_msk = MCI_CMDCRCFAIL | MCI_CMDTIMEOUT;
+>         void __iomem *base = host->base;
+>         bool sbc, busy_resp;
+>
+> @@ -1215,8 +1227,11 @@ mmci_cmd_irq(struct mmci_host *host, struct mmc_command *cmd,
+>          * handling. Note that we tag on any latent IRQs postponed
+>          * due to waiting for busy status.
+>          */
+> -       if (!((status|host->busy_status) &
+> -             (MCI_CMDCRCFAIL|MCI_CMDTIMEOUT|MCI_CMDSENT|MCI_CMDRESPEND)))
+> +       if (host->variant->busy_timeout && busy_resp)
+> +               err_msk |= MCI_DATATIMEOUT;
+> +
+> +       if (!((status | host->busy_status) &
+> +             (err_msk | MCI_CMDSENT | MCI_CMDRESPEND)))
+>                 return;
+>
+>         /* Handle busy detection on DAT0 if the variant supports it. */
+> @@ -1235,8 +1250,7 @@ mmci_cmd_irq(struct mmci_host *host, struct mmc_command *cmd,
+>                  * while, to allow it to be set, but tests indicates that it
+>                  * isn't needed.
+>                  */
+> -               if (!host->busy_status &&
+> -                   !(status & (MCI_CMDCRCFAIL|MCI_CMDTIMEOUT)) &&
+> +               if (!host->busy_status && !(status & err_msk) &&
+>                     (readl(base + MMCISTATUS) & host->variant->busy_detect_flag)) {
+>
+>                         writel(readl(base + MMCIMASK0) |
+> @@ -1290,6 +1304,9 @@ mmci_cmd_irq(struct mmci_host *host, struct mmc_command *cmd,
+>                 cmd->error = -ETIMEDOUT;
+>         } else if (status & MCI_CMDCRCFAIL && cmd->flags & MMC_RSP_CRC) {
+>                 cmd->error = -EILSEQ;
+> +       } else if (host->variant->busy_timeout && busy_resp &&
+> +                  status & MCI_DATATIMEOUT) {
+> +               cmd->error = -ETIMEDOUT;
+
+It's not really clear to me what happens with the busy detection
+status bit (variant->busy_detect_flag), in case a MCI_DATATIMEOUT IRQ
+is raised, while also having host->busy_status set (waiting for
+busyend).
+
+By looking at the code a few lines above this, we may do a "return;"
+while waiting for the busyend IRQ even if MCI_DATATIMEOUT also is
+raised, potentially losing that from being caught. Is that really
+correct?
+
+>         } else {
+>                 cmd->resp[0] = readl(base + MMCIRESPONSE0);
+>                 cmd->resp[1] = readl(base + MMCIRESPONSE1);
+> @@ -1583,6 +1600,20 @@ static void mmci_request(struct mmc_host *mmc, struct mmc_request *mrq)
+>         spin_unlock_irqrestore(&host->lock, flags);
+>  }
+>
+> +static void mmci_set_max_busy_timeout(struct mmc_host *mmc)
+> +{
+> +       struct mmci_host *host = mmc_priv(mmc);
+> +       u32 max_busy_timeout = 0;
+> +
+> +       if (!host->variant->busy_detect)
+> +               return;
+> +
+> +       if (host->variant->busy_timeout && mmc->actual_clock)
+> +               max_busy_timeout = ~0UL / (mmc->actual_clock / MSEC_PER_SEC);
+> +
+> +       mmc->max_busy_timeout = max_busy_timeout;
+> +}
+> +
+>  static void mmci_set_ios(struct mmc_host *mmc, struct mmc_ios *ios)
+>  {
+>         struct mmci_host *host = mmc_priv(mmc);
+> @@ -1687,6 +1718,8 @@ static void mmci_set_ios(struct mmc_host *mmc, struct mmc_ios *ios)
+>         else
+>                 mmci_set_clkreg(host, ios->clock);
+>
+> +       mmci_set_max_busy_timeout(mmc);
+> +
+>         if (host->ops && host->ops->set_pwrreg)
+>                 host->ops->set_pwrreg(host, pwr);
+>         else
+> @@ -1957,7 +1990,6 @@ static int mmci_probe(struct amba_device *dev,
+>                         mmci_write_datactrlreg(host,
+>                                                host->variant->busy_dpsm_flag);
+>                 mmc->caps |= MMC_CAP_WAIT_WHILE_BUSY;
+> -               mmc->max_busy_timeout = 0;
+>         }
+>
+>         /* Prepare a CMD12 - needed to clear the DPSM on some variants. */
+> diff --git a/drivers/mmc/host/mmci.h b/drivers/mmc/host/mmci.h
+> index 833236ecb31e..d8b7f6774e8f 100644
+> --- a/drivers/mmc/host/mmci.h
+> +++ b/drivers/mmc/host/mmci.h
+> @@ -287,6 +287,8 @@ struct mmci_host;
+>   * @signal_direction: input/out direction of bus signals can be indicated
+>   * @pwrreg_clkgate: MMCIPOWER register must be used to gate the clock
+>   * @busy_detect: true if the variant supports busy detection on DAT0.
+> + * @busy_timeout: true if the variant starts data timer when the DPSM
+> + *               enter in Wait_R or Busy state.
+>   * @busy_dpsm_flag: bitmask enabling busy detection in the DPSM
+>   * @busy_detect_flag: bitmask identifying the bit in the MMCISTATUS register
+>   *                   indicating that the card is busy
+> @@ -333,6 +335,7 @@ struct variant_data {
+>         u8                      signal_direction:1;
+>         u8                      pwrreg_clkgate:1;
+>         u8                      busy_detect:1;
+> +       u8                      busy_timeout:1;
+>         u32                     busy_dpsm_flag;
+>         u32                     busy_detect_flag;
+>         u32                     busy_detect_mask;
+> --
+> 2.17.1
+>
+
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
