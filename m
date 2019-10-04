@@ -2,87 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91ADCCC22B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 19:54:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C8B5CC260
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 20:14:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Date:Subject:To:From:References:
+	In-Reply-To:MIME-Version:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9Knt5fqkMq6lWztvTXLOZm5Lyq2N7rBzURk+ArU0YTo=; b=O5cLTN1ZWZQ9Sr
-	r6K9gNYsrOBxIvxIfAkwFtxXC2+C/cC3Wr3OeCz19SmvQw9xU3Ciu9ZPjJGk8m3qJ+ebN1wDHyrwB
-	rPRyk2NUZQ14GeDZ6W3yyUN20IiOOzyTjAxBfas8ThsMy0Ak+CGB7m4CK0wJdpJ+ILv64TyelElD4
-	ATZTbb3BrBQZ3q+daxpiFmlUndo2rbla3/Lpm6+U75HBI+z/yBZkkrAk6OR8R6YjWGvi1TxRi6X/H
-	AuRkhDTsB3STnD7QqGusNy6XvzZ635uAmtKvIdpGSivp0p24GVO6TPi0tAWnoJxwyVOAYm0uezRb0
-	D5zM63IvgLiBeex07Skw==;
+	List-Owner; bh=fIT2yz51abiE0sqQRP0kCZJvoj8aMOzu8tHLP5jRUeg=; b=s/RSA9T2jQ5BXJ
+	T9mGRzwpKd3+GsuKRqYKrvhSrf0Ig34rkboDhAwkJYncAYyfhRWwRlPvxmeJPy6StVdKEyn1N5KsL
+	A/Bwr81nQsSUo7m4wxTCh2crDTbpqPkcgWFIqahqFqRseofqpKEcsxlzqyx9araB5vuS3SXkkvCEi
+	W1+Xx1BWAYF0WKSWcfb+LIkmSMUUeU116f4Xoc9T7aZXczrALxyjXaxQnVYhcFQzcKQ7R48wdf5bw
+	vPsByYHsLgowIvpF0z3/rKbUms+Y1jZ9RO9K8pJuJmTRshyLp6xtzhC0oojF5g2dtqJu9qbtXe0cF
+	z7oLXkniYuGtsx/Zdlmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGRmU-0006VH-Sg; Fri, 04 Oct 2019 17:54:18 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iGS60-0004l4-7g; Fri, 04 Oct 2019 18:14:28 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGRlQ-0005aj-A6
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 17:53:14 +0000
-Received: by mail-wm1-x342.google.com with SMTP id v17so6731730wml.4
+ id 1iGS5r-0004kZ-IC
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 18:14:21 +0000
+Received: by mail-pg1-x543.google.com with SMTP id 23so4203810pgk.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 04 Oct 2019 10:53:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=SiYnbzF7WkjqWKJjUmGyqc1k8qogotE1jvdb1MCejmk=;
- b=rqFfmPBjt5rNehUrfCoog3sBIjQKw8DOTHfqANDdbh6jLSdp3Jt4BHH2BqNPxDJkPf
- X9GmB0XLf5OILRwmuglpo4UHl9sJPPoTlrXu6ADQEiAZEetGw2XgIlzniuQdX8DCAHje
- 4USGkdxGIrdT0zkJ87uc27k538trG28T3Jo3c7cZE6FYXI40/vp3QY58vrjZGd7tCFBJ
- 16gdzjIHv+UtYdOz1n2+9TbrnQfQYNT/a8cPNeyboqCehSOnkRQGg67jSRVJ3pIhxflF
- IY8/P91g35XLJfSnbnjHsfQW0c/ML1NcmgXpv6KFcWdfqjbcKsZ5yTQioEB+YWCTH+gM
- oWUw==
+ Fri, 04 Oct 2019 11:14:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=message-id:mime-version:content-transfer-encoding:in-reply-to
+ :references:from:to:cc:subject:user-agent:date;
+ bh=0IDOtQgHmElD8p5B2w+YjcptWdtlf5vVNP5fCQ18Cjw=;
+ b=jSQrChLhcmVVMxN2vgpR1Q4UdZbgBNU+3E5G58XTneDBys4wlfUOE/GPLXVR6uhnZL
+ C1ui8JAyehI+IdvfyllS9IV1T4aFagv+PAyy04d/FQwIS16exf2GNN1UZFS5Jb3XLE6c
+ mrYnztcJZlAuKjskuh33FNmaFjfevzrjGaS1s=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=SiYnbzF7WkjqWKJjUmGyqc1k8qogotE1jvdb1MCejmk=;
- b=EZyCWNpVrJftT6EBCRNQdcmSI0Vl1xK+hPa7T+EihpVkT0wnDyBewwKk8PHrQtPkeO
- VuyIycnJugazbRynuuUKu1EXmflltLC9tnAIfpKtuNTYXfvNk7HjN5l+cGt3kvzZtrcm
- j5uV6HDctmFt8fj52PfZiRO7c1pS8mIlqb977Jie9wmXrbevRgBHsVE4rvqEzDmplA8S
- IoXHO9RZ5v7txXPohJY1vKAzLUKQaWoaMUsua7aMHnBXogcn6yQuAouTX7dukUXK3ww8
- C/6mvbZo7/+tsMdw9Lzydr8wqmPkkG7MoJtzDaH5caQ0IAS+oY6Ke6qOaqUY9/8IqNN+
- dgCQ==
-X-Gm-Message-State: APjAAAWQf9d/J454hfz4MsT2V400ftYjr+SKIzOeHLNkUjTqkIJZSUrr
- mqszdlvDCD4BUXHePDOAYFwBkGss
-X-Google-Smtp-Source: APXvYqyyUV/AKwxAyN9TZuMCT9wd+X8T76PBdPNUsiucJS6dHYCgcxvSYkeRlQ7nwRaHVXmuaanUnw==
-X-Received: by 2002:a05:600c:2252:: with SMTP id
- a18mr5967972wmm.141.1570211590660; 
- Fri, 04 Oct 2019 10:53:10 -0700 (PDT)
-Received: from Red ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id e9sm17598865wme.3.2019.10.04.10.53.09
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 04 Oct 2019 10:53:09 -0700 (PDT)
-Date: Fri, 4 Oct 2019 19:53:07 +0200
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: Maxime Ripard <mripard@kernel.org>
-Subject: Re: [PATCH v2 03/11] dt-bindings: crypto: Add DT bindings
- documentation for sun8i-ce Crypto Engine
-Message-ID: <20191004175307.GB11208@Red>
-References: <20191001184141.27956-1-clabbe.montjoie@gmail.com>
- <20191001184141.27956-4-clabbe.montjoie@gmail.com>
- <20191002055458.zo2vdbxodj3ch53g@gilmour>
+ h=x-gm-message-state:message-id:mime-version
+ :content-transfer-encoding:in-reply-to:references:from:to:cc:subject
+ :user-agent:date;
+ bh=0IDOtQgHmElD8p5B2w+YjcptWdtlf5vVNP5fCQ18Cjw=;
+ b=K2LFkoudHTl99RFto34fbyCne9kWw386JrF3BUArLwLmbOCoNXvK//9Lr0FtOHAY2u
+ DZA3bdHEukTHRUzMTj18m6P+LlqHyNNWc009xpsi6ijLYPhKnoE/Q51rruuNR3Wj4QnT
+ sp/w0pz7BKRxRxF1ZFEXC04g6ngxkGzJX9JnG5KtZ7iKH+7ZB0bvDiDFjzeUvaJM73o+
+ ycCmGYcOXjPEhQ9hBE5Zkk5hY7wnRCn/DLZ4wJBgpDXqU6rEOZ+ahwCJ2ZfGTc14UL1R
+ 0PyylBibZ0nDy8INaDpQY4OSB28XZWvb+O2so3kCAn4eonMMNrdRWKGpikaopnzmAG8D
+ XRnQ==
+X-Gm-Message-State: APjAAAX+CIJ+KIfC3vbdnt4LS+1cZH24ac3qAHE+OITFGODV5/rgnqO0
+ cULf3/+yHpR0j2RM3bc6CGs7+w==
+X-Google-Smtp-Source: APXvYqzXmG1bMyrx+EgqINn91jy469r0K12/xfrx1x9Ey0oZZUEtP/hNvIYFYGlkN+MklxIFvSurxQ==
+X-Received: by 2002:a62:62c6:: with SMTP id
+ w189mr18679300pfb.235.1570212858215; 
+ Fri, 04 Oct 2019 11:14:18 -0700 (PDT)
+Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
+ by smtp.gmail.com with ESMTPSA id i6sm10089700pfq.20.2019.10.04.11.14.17
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 04 Oct 2019 11:14:17 -0700 (PDT)
+Message-ID: <5d978bf9.1c69fb81.7b927.b6ac@mx.google.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191002055458.zo2vdbxodj3ch53g@gilmour>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <91d09847-31ad-e238-d84d-f7e0e21c6ef1@codeaurora.org>
+References: <20190925054133.206992-1-swboyd@chromium.org>
+ <20190925055933.GA2810@tuxbook-pro>
+ <5d8b6b8b.1c69fb81.14b36.c053@mx.google.com>
+ <91d09847-31ad-e238-d84d-f7e0e21c6ef1@codeaurora.org>
+From: Stephen Boyd <swboyd@chromium.org>
+To: Bjorn Andersson <bjorn.andersson@linaro.org>,
+ David Dai <daidavid1@codeaurora.org>
+Subject: Re: [RFC PATCH] interconnect: Replace of_icc_get() with icc_get() and
+ reduce DT binding
+User-Agent: alot/0.8.1
+Date: Fri, 04 Oct 2019 11:14:16 -0700
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_105312_383518_04DE9A2D 
-X-CRM114-Status: GOOD (  16.61  )
+X-CRM114-CacheID: sfid-20191004_111419_628555_B8E67D54 
+X-CRM114-Status: GOOD (  32.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (clabbe.montjoie[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -92,6 +89,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,116 +101,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- herbert@gondor.apana.org.au, catalin.marinas@arm.com,
- linux-sunxi@googlegroups.com, linux@armlinux.org.uk,
- linux-kernel@vger.kernel.org, wens@csie.org, robh+dt@kernel.org,
- linux-crypto@vger.kernel.org, will@kernel.org, davem@davemloft.net,
+Cc: devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Evan Green <evgreen@chromium.org>, Georgi Djakov <georgi.djakov@linaro.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 02, 2019 at 07:54:58AM +0200, Maxime Ripard wrote:
-> On Tue, Oct 01, 2019 at 08:41:33PM +0200, Corentin Labbe wrote:
-> > This patch adds documentation for Device-Tree bindings for the
-> > Crypto Engine cryptographic accelerator driver.
-> >
-> > Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
-> > ---
-> >  .../bindings/crypto/allwinner,sun8i-ce.yaml   | 92 +++++++++++++++++++
-> >  1 file changed, 92 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml b/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml
-> > new file mode 100644
-> > index 000000000000..9bd26a2eff33
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml
-> > @@ -0,0 +1,92 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/crypto/allwinner,sun8i-ce.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Allwinner Crypto Engine driver
-> > +
-> > +maintainers:
-> > +  - Corentin Labbe <clabbe.montjoie@gmail.com>
-> > +
-> > +properties:
-> > +  compatible:
-> > +    enum:
-> > +      - allwinner,sun8i-h3-crypto
-> > +      - allwinner,sun8i-r40-crypto
-> > +      - allwinner,sun50i-a64-crypto
-> > +      - allwinner,sun50i-h5-crypto
-> > +      - allwinner,sun50i-h6-crypto
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  interrupts:
-> > +    maxItems: 1
-> > +
-> > +  clocks:
-> > +    items:
-> > +      - description: Bus clock
-> > +      - description: Module clock
-> > +      - description: MBus clock
-> > +    minItems: 2
-> > +    maxItems: 3
-> > +
-> > +  clock-names:
-> > +    items:
-> > +      - const: bus
-> > +      - const: mod
-> > +      - const: ram
-> > +    minItems: 2
-> > +    maxItems: 3
-> > +
-> > +  resets:
-> > +    maxItems: 1
-> > +
-> > +  reset-names:
-> > +    const: bus
-> > +
-> > +if:
-> > +  properties:
-> > +    compatible:
-> > +      items:
-> > +        const: allwinner,sun50i-h6-crypto
-> > +then:
-> > +  properties:
-> > +      clocks:
-> > +        minItems: 3
-> > +      clock-names:
-> > +        minItems: 3
-> > +else:
-> > +  properties:
-> > +      clocks:
-> > +        maxItems: 2
-> > +      clock-names:
-> > +        maxItems: 2
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - interrupts
-> > +  - clocks
-> > +  - clock-names
-> > +  - resets
-> > +
-> > +additionalProperties: true
+Quoting David Dai (2019-09-27 10:16:07)
 > 
-> I guess you meant false here?
+> On 9/25/2019 6:28 AM, Stephen Boyd wrote:
+> > Quoting Bjorn Andersson (2019-09-24 22:59:33)
+> >> On Tue 24 Sep 22:41 PDT 2019, Stephen Boyd wrote:
+> >>
+> >>> The DT binding could also be simplified somewhat. Currently a path needs
+> >>> to be specified in DT for each and every use case that is possible for a
+> >>> device to want. Typically the path is to memory, which looks to be
+> >>> reserved for in the binding with the "dma-mem" named path, but sometimes
+> >>> the path is from a device to the CPU or more generically from a device
+> >>> to another device which could be a CPU, cache, DMA master, or another
+> >>> device if some sort of DMA to DMA scenario is happening. Let's remove
+> >>> the pair part of the binding so that we just list out a device's
+> >>> possible endpoints on the bus or busses that it's connected to.
+> >>>
+> >>> If the kernel wants to figure out what the path is to memory or the CPU
+> >>> or a cache or something else it should be able to do that by finding the
+> >>> node for the "destination" endpoint, extracting that node's
+> >>> "interconnects" property, and deriving the path in software. For
+> >>> example, we shouldn't need to write out each use case path by path in DT
+> >>> for each endpoint node that wants to set a bandwidth to memory. We
+> >>> should just be able to indicate what endpoint(s) a device sits on based
+> >>> on the interconnect provider in the system and then walk the various
+> >>> interconnects to find the path from that source endpoint to the
+> >>> destination endpoint.
+> >>>
+> >> But doesn't this implies that the other end of the path is always some
+> >> specific node, e.g. DDR? With a single node how would you describe
+> >> CPU->LLCC or GPU->OCIMEM?
+> > By only specifying the endpoint the device uses it describes what the
+> > hardware block interfaces with. It doesn't imply that there's only one
+> > other end of the path. It implies that the paths should be discoverable
+> > by walking the interconnect graph given some source device node and
+> > target device node. In most cases the target device node will be a DDR
+> > controller node, but sometimes it could be LLCC or OCIMEM. We may need
+> > to add some sort of "get the DDR controller device" API or work it into
+> > the interconnect API somehow to indicate what target endpoint is
+> > desired. By not listing all those paths in DT we gain flexibility to add
+> > more paths later on without having to update or tweak DT to describe
+> > more paths/routes through the interconnect.
+> 
+> 
+> I'm unsure that using the target device node or target source device is 
+> the correct way to represent the constraints that the consumers apply on 
+> the interconnects. While it's true the traffic is intended for the 
+> targeted devices, the constraints(QoS or BW) are for the interconnect or 
+> specifically the paths that span across the ports of various 
+> interconnects(NoC devices in this case). I think having both src and dst 
+> properties is still the simplest way to achieve the flexibility that we 
+> require to set the constraints for ports(that may not have a target 
+> device defined in DT or exists as some intermediate port across multiple 
+> interconnects).
 > 
 
-Yes. i wil fix that.
+The need for paths described in DT may make sense for certain cases but
+that seems to be the minority. My guess is that maybe an OPP binding
+would need to describe the path to apply the bandwidth to. Otherwise I
+don't see what the need is for. Maybe you can list out more scenarios?
 
-Regards
+Either way, the binding has been designed to cover all the possibilities
+by just saying that we have to describe at least two points for an
+'interconnect'. It is a path based binding. I'd rather see us have an
+endpoint based binding with the option to fallback to paths if we need
+to constrain something. Maybe this can be a new property that is used
+the majority of the time?
+
+ gpu@f00 {
+   interconnect-endpoints = <&icc GPU_SLAVE_PORT>, <&icc GPU_MASTER_PORT0>, <&icc GPU_MASTER_PORT1>;
+   interconnect-endpoint-names = "slave", "master0", "master1";
+ };
+
+(Or we can invert it and make interconnect-paths be non-standard)
+
+The property would describe what's going to this device and how it's
+integrated into the SoC. This is similar to how we describe what port is
+connected to a device with the of graph binding or how we only list the
+clk or regulator that goes to a device and not the whole path to the
+root of the respective tree.
+
+There can be a driver API that gets these port numbers out and
+constructs a path to another struct device or struct device_node. I
+imagine that 90% of the time a driver is going to request some bandwidth
+from their master port (or ports) to the DDR controller. We could either
+make the DDR controller a device that can be globally acquired or
+integrate it deeply into the API to the point that it looks for a DDR
+controller somewhere or relies on interconnect providers to tell the
+framework about the controller.
+
+TL;DR is that I don't want to have to specify paths in each and every
+node to say that some port on this device here is connected to some port
+on the DDR controller and that we want to adjust the bandwidth or QoS
+across this path. I'd like to describe a device "hermetically" by
+listing out the ports the device has. Then we can rely on the OS to
+figure out what paths to construct and change. If we need to constrain
+or tweak those paths then we can do that with the existing interconnects
+binding, but let's worry about that when we get there.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
