@@ -2,65 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FC70CB741
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 11:21:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D83E8CB74C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 11:24:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fVev1l1H7F54l5oOcQSZehZtVRpbuHHuvKxtbQdAed0=; b=uJoA5uDc4Up6bK
-	al8jYhQR2vZ57QUgj5gsC2ZssUIAEzaMzNyIXw+IQCdQBFfR7lfVLnK4dfdlxEp4NRjk1zUyqOY3c
-	15AOYGpS9ZGYwIHY2koaNjerbIzX/V57MqeJr8xYmNCsBm2gyfKrpdXIEjq/fhu7M/zOFlPzQ7A0v
-	X5AoBKSE04QFPtyvy35uCC6zNsY1+Q2ybpJZF++p5nUZVB3DfehTWU2iwYSlTcxP5NAx7TAPNBAmR
-	OaBWD8w2fqseDBDxXGTxir9UMCYJOgFQSSjBWqSWwwFBGjj+r4Ivlg6xV4u4RuPzX6Vrn9mNDivwD
-	/e5g1ZF6iBtq65xnn6+Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OvvrVVZiv/Mi1h7gnaaoJ/Vn9EItlN7kJ0e7BwXL6WA=; b=QBCd9U0RO1Jbo+
+	AbO+G6fm/MEJNi/4u8AiqqOEevjk7x4RIXWWYuf1t/cTKMgMaoZryouOYI1OM3pU9dGQv/HjoklE+
+	x9rkLp95rFHFuIxBXmleCyf31J9DBJKxCr8AaZfRSdpQXbXy1+MD/YBcMw7vvVPx6Ck8RoN0wbtmw
+	vo0lBrcROJ2DCP1PiDDsBG+LUqEmxGPVt8riKnnS3WHL2WoZ7ojGklvRUyPaBuLca7KPb2jrypVAp
+	HzfTNgpuBXNXKgMycxSsBdvzETWjO1t2MGyppAeRs+R8kTMYzKlDAXYjQFQtXYYC/3MyIk0TqoP71
+	RvKwCkHJZwbBXkN/5mFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGJmQ-0002Ts-KK; Fri, 04 Oct 2019 09:21:42 +0000
-Received: from lb2-smtp-cloud7.xs4all.net ([194.109.24.28])
+	id 1iGJp4-0002uj-JY; Fri, 04 Oct 2019 09:24:26 +0000
+Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGJmI-0002Rw-RN
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 09:21:37 +0000
-Received: from [192.168.2.10] ([46.9.232.237])
- by smtp-cloud7.xs4all.net with ESMTPA
- id GJlwivf8kjZ8vGJlziswOs; Fri, 04 Oct 2019 11:21:22 +0200
-Subject: Re: [PATCH v2 3/6] media: v4l2-mem2mem: add
- stateless_(try_)decoder_cmd ioctl helpers
-To: Jernej Skrabec <jernej.skrabec@siol.net>, mchehab@kernel.org,
- paul.kocialkowski@bootlin.com, mripard@kernel.org, pawel@osciak.com,
- m.szyprowski@samsung.com, kyungmin.park@samsung.com, tfiga@chromium.org,
- wens@csie.org
-References: <20190929200023.215831-1-jernej.skrabec@siol.net>
- <20190929200023.215831-4-jernej.skrabec@siol.net>
-From: Hans Verkuil <hverkuil-cisco@xs4all.nl>
-Message-ID: <6c7eeaf1-18bb-1c7e-7938-a3eb5af100b6@xs4all.nl>
-Date: Fri, 4 Oct 2019 11:21:12 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iGJox-0002td-A4
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 09:24:21 +0000
+Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
+ [IPv6:2a01:4f9:c010:4572::80:2])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 01408634C87;
+ Fri,  4 Oct 2019 12:23:37 +0300 (EEST)
+Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
+ (envelope-from <sakari.ailus@retiisi.org.uk>)
+ id 1iGJoG-0002PC-AP; Fri, 04 Oct 2019 12:23:36 +0300
+Date: Fri, 4 Oct 2019 12:23:36 +0300
+From: Sakari Ailus <sakari.ailus@iki.fi>
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Subject: Re: [PATCH v4 2/2] media: i2c: Add IMX290 CMOS image sensor driver
+Message-ID: <20191004092336.GL896@valkosipuli.retiisi.org.uk>
+References: <20191003095503.12614-1-manivannan.sadhasivam@linaro.org>
+ <20191003095503.12614-3-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20190929200023.215831-4-jernej.skrabec@siol.net>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfNHxv0MOKVAOjLAe6G4CBfcHcYTNr7KvCzEK5brMzn3ZewBV+0xbPvwcwJDQcp8ul8eIBmxzXkX1txxx+hZvvzm38lHBPu5jyPYMWkFgiWLkB5pqH676
- fboONHHLgY1hhv50icOJjIk7Mx0A8PhLej+PEhTPbLbCerxtslbf7QKukn3nwby2XhwQqccJeVBfW/24bEc/L4Jk8gnW30K+2XeCJOoysZB8IkE5pqsnzvg0
- NMuG7lI2b1+8HCRWmjj+SQ5qSiGLYSujq6J6CKoJT2gDTeW4Z6b+V1DT03vIwaJWaEh1fVScwiIzLlQFWeWQ6w5jvIDBtgDzvy+oNohMnw6jNOUn5hkOozI6
- Yk9gyKkeDLqbOEU96E2JaHy/4wbPhd+Ml9aXEXhNE/ssKVtKCVuK3NoRtDhEC8+4zpnMblzKXcVmusxK2Xex7TGU8j+vmNdjnuqMEzgoIF1z/UD/zLNy7WNs
- M6kV1B+XGnxac6NCTLZjlVmiPqIjyzfPkunDdXpQhHB3MPM2coK2MEN5k7iqA2IzMQivBgTxEjLTKkxq2vCMVBOwZ2jTukJhtTDY9mLdI3osLmhLUEmPJbTB
- RVJO80w3CvGvfkkD6URjuL6h5NoKFfQERYxIHZnp+wKdvUSsNtUNII5dOKu8fYO88hrhMxu3Qs/p01EsWK+QsnjoGa4F4Uy6H+VCAemmNbWYbrfuO+feoItY
- Ezt4XtEQc1vLwi9nANW0Gvlzguxtz/ZBx7ORXGURUqGy8BaZ81/gVg==
+Content-Disposition: inline
+In-Reply-To: <20191003095503.12614-3-manivannan.sadhasivam@linaro.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_022135_040653_90520150 
-X-CRM114-Status: GOOD (  17.93  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191004_022419_535215_78AED536 
+X-CRM114-Status: UNSURE (   7.16  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,99 +68,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, jonas@kwiboo.se, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, boris.brezillon@collabora.com,
- ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
+Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
+ linux-kernel@vger.kernel.org, a.brela@framos.com, robh+dt@kernel.org,
+ mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 9/29/19 10:00 PM, Jernej Skrabec wrote:
-> These helpers are used by stateless codecs when they support multiple
-> slices per frame and hold capture buffer flag is set. It's expected that
-> all such codecs will use this code.
+Hi Manivannan,
+
+On Thu, Oct 03, 2019 at 03:25:03PM +0530, Manivannan Sadhasivam wrote:
+> Add driver for Sony IMX290 CMOS image sensor driver. The driver only
+> supports I2C interface for programming and MIPI CSI-2 for sensor output.
 > 
-> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> ---
->  drivers/media/v4l2-core/v4l2-mem2mem.c | 35 ++++++++++++++++++++++++++
->  include/media/v4l2-mem2mem.h           |  4 +++
->  2 files changed, 39 insertions(+)
-> 
-> diff --git a/drivers/media/v4l2-core/v4l2-mem2mem.c b/drivers/media/v4l2-core/v4l2-mem2mem.c
-> index 19937dd3c6f6..2677a07e4c9b 100644
-> --- a/drivers/media/v4l2-core/v4l2-mem2mem.c
-> +++ b/drivers/media/v4l2-core/v4l2-mem2mem.c
-> @@ -1154,6 +1154,41 @@ int v4l2_m2m_ioctl_try_decoder_cmd(struct file *file, void *fh,
->  }
->  EXPORT_SYMBOL_GPL(v4l2_m2m_ioctl_try_decoder_cmd);
->  
-> +int v4l2_m2m_ioctl_stateless_try_decoder_cmd(struct file *file, void *fh,
-> +					     struct v4l2_decoder_cmd *dc)
-> +{
-> +	if (dc->cmd != V4L2_DEC_CMD_FLUSH)
-> +		return -EINVAL;
-> +
-> +	dc->flags = 0;
-> +
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL_GPL(v4l2_m2m_ioctl_stateless_try_decoder_cmd);
-> +
-> +int v4l2_m2m_ioctl_stateless_decoder_cmd(struct file *file, void *priv,
-> +					 struct v4l2_decoder_cmd *dc)
-> +{
-> +	struct v4l2_fh *fh = file->private_data;
-> +	struct vb2_v4l2_buffer *out_vb, *cap_vb;
-> +	int ret;
-> +
-> +	ret = v4l2_m2m_ioctl_stateless_try_decoder_cmd(file, priv, dc);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	out_vb = v4l2_m2m_last_src_buf(fh->m2m_ctx);
-> +	cap_vb = v4l2_m2m_last_dst_buf(fh->m2m_ctx);
+> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 
-I think this should be v4l2_m2m_next_dst_buf. If multiple capture buffers were
-queued up, then it can only be the first capture buffer that can be 'HELD'.
+Could you remove the unneeded ret variable from imx290_power_on() and
+unneeded goto in the same function?
 
-This might solve the race condition you saw with ffmpeg.
+The MAINTAINERS entry belongs to the first patch adding new files.
 
+Then I think this is good.
+
+-- 
 Regards,
 
-	Hans
-
-> +
-> +	if (out_vb)
-> +		out_vb->flags &= ~V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF;
-> +	else if (cap_vb && cap_vb->is_held)
-> +		v4l2_m2m_buf_done(cap_vb, VB2_BUF_STATE_DONE);
-> +
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL_GPL(v4l2_m2m_ioctl_stateless_decoder_cmd);
-> +
->  /*
->   * v4l2_file_operations helpers. It is assumed here same lock is used
->   * for the output and the capture buffer queue.
-> diff --git a/include/media/v4l2-mem2mem.h b/include/media/v4l2-mem2mem.h
-> index c9fa96c8eed1..8ae2f56c7fa3 100644
-> --- a/include/media/v4l2-mem2mem.h
-> +++ b/include/media/v4l2-mem2mem.h
-> @@ -714,6 +714,10 @@ int v4l2_m2m_ioctl_try_encoder_cmd(struct file *file, void *fh,
->  				   struct v4l2_encoder_cmd *ec);
->  int v4l2_m2m_ioctl_try_decoder_cmd(struct file *file, void *fh,
->  				   struct v4l2_decoder_cmd *dc);
-> +int v4l2_m2m_ioctl_stateless_try_decoder_cmd(struct file *file, void *fh,
-> +					     struct v4l2_decoder_cmd *dc);
-> +int v4l2_m2m_ioctl_stateless_decoder_cmd(struct file *file, void *priv,
-> +					 struct v4l2_decoder_cmd *dc);
->  int v4l2_m2m_fop_mmap(struct file *file, struct vm_area_struct *vma);
->  __poll_t v4l2_m2m_fop_poll(struct file *file, poll_table *wait);
->  
-> 
-
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
