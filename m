@@ -2,45 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9ED80CBD33
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 16:29:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B77F6CBD2F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 16:28:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xh0gVSEMpQvqIs13F1TFzX/ZN8sf7NNFcFnWy64sSD4=; b=Zdcijnp4p6w1tF
-	aaGasmceYahYAzyX7iQVDD1lQH34saEc853DRNgew3iaANiM4zJmJugeVADsdvzqcAgqtbw5DEJVL
-	OO5o09uoerKxgQ5jK3BejX68GYlSg3JL1owNeV9yflXAmyzzBkMIWtm55Hd2p9+vfrJtsqSGB+2jl
-	qrrP9BScS7iVNve4bNpMe2ciHzDroqU6oC37I81ZfZRb1mbAAin/LYyr+ZTmBavPShSgZqRs0m+lo
-	Eqa9OwFTs1q9dn9AKrXkY/fPlrbj94PqWEs1BlFyifnKf+jsN71MFY0Hoxnh9UnphitR5YVRLvImj
-	UOWH4/nGJV3lWm5QY2Rg==;
+	List-Owner; bh=eWf/iA9J934AOIZnMsdFOSGDOEzwDVKFDGHdE8Iwkrw=; b=EnDzDEABV9iFj7
+	cbY1i55onIViNbDgjGigVRr5htHPt/4+9M5NHJjLCMoeO6reIdSAVatfjDFfYBgO175OstVidH9ZN
+	G3U+e5AtNqbBo+qPpKKupocSq2YQMYQzb1t2MUKx58sEgrdYO7uzRs33iHoJTlxvfvzkaeaKlPKsx
+	SpU6QN2l4Yl1iiYx7Kd+EmwuSJuu91tzdJvpwdxxfljag6hhhVEqah+e8fmgKZEUXD5QWtS0tDONM
+	qg7UUW7BYFb/vQlM0mGqIRnh1JgrEzVQP0U8duLzKRsvCcNuafbpnlijevYRbpU//SUg2synQj5aC
+	JUYGOMOLhqtldjisdF/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGOa1-0005uG-2q; Fri, 04 Oct 2019 14:29:13 +0000
+	id 1iGOZZ-0005RG-TK; Fri, 04 Oct 2019 14:28:45 +0000
 Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGOYk-0004tY-6s
+ id 1iGOYk-0004tX-6w
  for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 14:27:57 +0000
 X-Originating-IP: 86.250.200.211
 Received: from localhost.localdomain (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
  [86.250.200.211]) (Authenticated sender: miquel.raynal@bootlin.com)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id A8111C001B;
- Fri,  4 Oct 2019 14:27:41 +0000 (UTC)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 52DA6C0004;
+ Fri,  4 Oct 2019 14:27:43 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Rob Herring <robh+dt@kernel.org>,
 	Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 01/21] arm64: dts: marvell: Enumerate the first AP806 syscon
-Date: Fri,  4 Oct 2019 16:27:18 +0200
-Message-Id: <20191004142738.7370-2-miquel.raynal@bootlin.com>
+Subject: [PATCH v2 02/21] arm64: dts: marvell: Add AP806-dual missing CPU
+ clocks
+Date: Fri,  4 Oct 2019 16:27:19 +0200
+Message-Id: <20191004142738.7370-3-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191004142738.7370-1-miquel.raynal@bootlin.com>
 References: <20191004142738.7370-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_072754_425619_48D1EE84 
-X-CRM114-Status: GOOD (  11.78  )
+X-CRM114-CacheID: sfid-20191004_072754_413226_B77B4A8D 
+X-CRM114-Status: UNSURE (   9.96  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -78,27 +80,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are two system controllers in the AP80x, like for ap_syscon1,
-enumerate the first one by renaming it s/ap_syscon/ap_syscon0/.
+CPU clocks have been added to AP806-quad but not to the -dual
+variant.
 
+Fixes: e043bbd61e01 ("arm64: dts: marvell: Add cpu clock node on Armada 7K/8K")
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- arch/arm64/boot/dts/marvell/armada-ap806.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/boot/dts/marvell/armada-ap806-dual.dtsi | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/marvell/armada-ap806.dtsi b/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
-index d06dd198f2c7..a23ddd46efc5 100644
---- a/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
-+++ b/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
-@@ -246,7 +246,7 @@
- 				status = "disabled";
- 			};
- 
--			ap_syscon: system-controller@6f4000 {
-+			ap_syscon0: system-controller@6f4000 {
- 				compatible = "syscon", "simple-mfd";
- 				reg = <0x6f4000 0x2000>;
- 
+diff --git a/arch/arm64/boot/dts/marvell/armada-ap806-dual.dtsi b/arch/arm64/boot/dts/marvell/armada-ap806-dual.dtsi
+index 9024a2d9db07..62ae016ee6aa 100644
+--- a/arch/arm64/boot/dts/marvell/armada-ap806-dual.dtsi
++++ b/arch/arm64/boot/dts/marvell/armada-ap806-dual.dtsi
+@@ -21,6 +21,7 @@
+ 			reg = <0x000>;
+ 			enable-method = "psci";
+ 			#cooling-cells = <2>;
++			clocks = <&cpu_clk 0>;
+ 		};
+ 		cpu1: cpu@1 {
+ 			device_type = "cpu";
+@@ -28,6 +29,7 @@
+ 			reg = <0x001>;
+ 			enable-method = "psci";
+ 			#cooling-cells = <2>;
++			clocks = <&cpu_clk 0>;
+ 		};
+ 	};
+ };
 -- 
 2.20.1
 
