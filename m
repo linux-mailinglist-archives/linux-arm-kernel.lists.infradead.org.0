@@ -2,56 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D3CCCBBB0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 15:32:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 175F5CBBC8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 15:33:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pNGPmhju3t9MoPkcdw0GO2/lymIUJJgrlvigxOYCSFo=; b=K8ndnNeCrYaKJC
-	uAg3pRvUhpQVr01+SWJaFInAQ1Aeir2Lqf9XVVhq0E/aqjF5P61nrbVbaPTWXMVmfNiUKj54EW2/5
-	+FGgE/BloSdi43q6snw1vQBbHms72HW8bcLKStJAQn2khb1bra5kxqujJlDNpkmZS11K7jxMIB7KU
-	9+ZIuYD2iowc31tJ4iMSK0TWBQ2jc5uvUBKedJsDNDMT6Xj+qUOEjkeFQr3MfCrcZK47tM7Dq97Gj
-	jbATk6lEYh7uQWP5hTmvnp8Mw634MgZ5SeIoLkvkQ16BZ29BsgfCET5arwWZw3gV7g4zENJUMW7Qg
-	q2oDyEh5FRdjWwJbd34g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dNt9z+2RDjLp3HpS5U9chCtnw+DdK65j4bj4aRBPwNY=; b=M4Vp4USKEfuzcp
+	eVUN/TtZI/z4cYyQOD9B+uQfzZT/OXVg9XyL7YOu3rpxnRg0PwLske6gA/lr9jlBzuOdgjP+Lr5g3
+	An5mY1D1AlWdJfAr/fEWEcjszANTyh4UqxFlYLW4eAgazXddh/iALpPlbA/e/1NCrXjkUYFBabWcz
+	aZfVUvoz2BJ2Av8b5xoCrk+zpKwz2VzNOXbHKp2F7UdVkKYbmABf2GSZ+qXuIlPHNgj9FycDqmb3W
+	q5gq40shJ7/kjB2RTkPNZBJdTg/RwwJwECl7k98PeuxoT0wCA6axqVrezseU+8VqdyVolJ9vfTL6Y
+	3q/0cPmAYpF1GD4tYGMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGNgc-0004yN-5D; Fri, 04 Oct 2019 13:31:58 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGNgU-0004xq-Mi
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 13:31:52 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AA8CF15A1;
- Fri,  4 Oct 2019 06:31:49 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C25243F534;
- Fri,  4 Oct 2019 06:31:48 -0700 (PDT)
-Date: Fri, 4 Oct 2019 14:31:46 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH 8/8] arm64: entry-common: don't touch daif before
- bp-hardening
-Message-ID: <20191004133146.GG34756@lakrids.cambridge.arm.com>
-References: <20191003171642.135652-1-james.morse@arm.com>
- <20191003171642.135652-9-james.morse@arm.com>
+	id 1iGNhs-0005Fv-1l; Fri, 04 Oct 2019 13:33:16 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iGNhb-0005FI-NI
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 13:33:01 +0000
+Received: by mail-lj1-x241.google.com with SMTP id a22so6566715ljd.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 04 Oct 2019 06:32:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=rasmusvillemoes.dk; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=6e6kNUFkOwggtKh2FtgQ72TKMBXQJNnsWv0kpOgx0sI=;
+ b=XZkKHdG2crSiyzrMy2VYonGv0szQi+UnZmCse5Bf56kipSTq4oGJhOVzSkBSoZFHR1
+ +ZF/LdhdrF5138bRvPtoMvzxccaUeOYRvhGHeLff0IJzgfXgOwBh7uHZdnco99ie3Xd7
+ t0vZOi9c0XtZONz49s5W+o1BWQlyXdSavQ1zA=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=6e6kNUFkOwggtKh2FtgQ72TKMBXQJNnsWv0kpOgx0sI=;
+ b=sHbD1mh8xOaNYID0Dwj+PlQCz9bYRTLiWN5S14P4XPKg0xZRvLUxwKrdLBIbmd9BMZ
+ n951EPXZp+pcCYDkhoFvpxxBdCqcHpE8wqVnbV0llQMBSSbDQYsx3iZ4ist7cNM4MNfQ
+ BERX4vFsYgojmmPsCVzp90JtuOac0h9vjUqokmjnbIYAUtBPNsm4EOI+B6wtOx+R2/ty
+ tKqFjZrR9w/jX+DdboGMhd51MN/LfqbSzk8pWHJsugWyFeC8FSj37PkpThCj+64RD840
+ RlxPilYT+LILhwP7obnw2HNbLhnFpR9tNf6Mclt8Q0vU+vVr2flHMBDq5bBC4AN9Aru+
+ e2oQ==
+X-Gm-Message-State: APjAAAWNzPOXNTRgoGCt/sEVMMOims1dNFNqu2ShwtTKcFo+/gd3nMh+
+ GsMpJbAMGAU9PKhmb3jRXOTC0g==
+X-Google-Smtp-Source: APXvYqxG/5L0LFLLyQDBwiDl6JJamRel6vq19pDlrjEK0hxD7neje+Af0NtighCjwoCkw70qCO0Dag==
+X-Received: by 2002:a2e:9692:: with SMTP id q18mr9757018lji.73.1570195977546; 
+ Fri, 04 Oct 2019 06:32:57 -0700 (PDT)
+Received: from prevas-ravi.prevas.se ([81.216.59.226])
+ by smtp.gmail.com with ESMTPSA id y26sm1534991ljj.90.2019.10.04.06.32.55
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 04 Oct 2019 06:32:56 -0700 (PDT)
+From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+To: Thierry Reding <thierry.reding@gmail.com>,
+ =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ linux-pwm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH v2 0/6] pwm: mxs: add support for setting polarity via DT
+Date: Fri,  4 Oct 2019 15:32:01 +0200
+Message-Id: <20191004133207.6663-1-linux@rasmusvillemoes.dk>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191003171642.135652-9-james.morse@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_063150_829622_47697936 
-X-CRM114-Status: GOOD (  25.81  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191004_063259_760961_379B15E3 
+X-CRM114-Status: GOOD (  11.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,186 +99,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- linux-arm-kernel@lists.infradead.org, Masami Hiramatsu <mhiramat@kernel.org>
+Cc: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 03, 2019 at 06:16:42PM +0100, James Morse wrote:
-> The previous patches mechanically transformed the assembly version of
-> entry.S to entry-common.c for synchronous exceptions.
-> 
-> The C version of local_daif_restore() doesn't quite do the same thing
-> as the assembly versions if pseudo-NMI is in use. In particular,
-> | local_daif_restore(DAIF_PROCCTX_NOIRQ)
-> will still allow pNMI to be delivered. This is not the behaviour
-> do_el0_ia_bp_hardening() and do_sp_pc_abort() want as it should not
-> be possible for the PMU handler to run as an NMI until the bp-hardening
-> sequence has run.
-> 
-> The bp-hardening calls were placed where they are because this was the
-> first C code to run after the relevant exceptions. As we've now moved
-> that point earlier, move the checks and calls earlier too.
-> 
-> This makes it clearer that this stuff runs before any kind of exception,
-> and saves modifying PSTATE twice.
-> 
-> Signed-off-by: James Morse <james.morse@arm.com>
-> Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
-> ---
->  arch/arm64/include/asm/processor.h |  7 +++++++
->  arch/arm64/kernel/entry-common.c   | 18 +++++++++++++++---
->  arch/arm64/mm/fault.c              | 29 +----------------------------
->  3 files changed, 23 insertions(+), 31 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
-> index 5623685c7d13..c0c28c4589a8 100644
-> --- a/arch/arm64/include/asm/processor.h
-> +++ b/arch/arm64/include/asm/processor.h
-> @@ -24,6 +24,7 @@
->  #include <linux/build_bug.h>
->  #include <linux/cache.h>
->  #include <linux/init.h>
-> +#include <linux/thread_info.h>
->  #include <linux/stddef.h>
->  #include <linux/string.h>
+This series adds support for setting the polarity via DT to the
+pwm-mxs driver.
 
-Nit: alphabetical order please!
+The DT binding is updated, but I'm not touching the existing .dts or
+.dtsi files - it seems that the same was done for bcm2835 in commits
+46421d9d8e802e570dfa4d793a4938d2642ec7a7 and
+8a88b2a2017d1e7e80db53080baff591fd454722, while
+arch/arm/boot/dts/bcm283x.dtsi still has #pwm-cells = <2>.
 
->  
-> @@ -214,6 +215,12 @@ static inline void start_thread(struct pt_regs *regs, unsigned long pc,
->  	regs->sp = sp;
->  }
->  
-> +static inline bool is_ttbr0_addr(unsigned long addr)
-> +{
-> +	/* entry assembly clears tags for TTBR0 addrs */
-> +	return addr < TASK_SIZE;
-> +}
+v2:
+- Rebase to v5.4-rc1
+- Address comments from Uwe.
+- Add Rob's ack to patch 4.
+- New patches 5 and 6. The last one is independent of the others, but
+  I stumbled on this when rebasing and found the signature had
+  changed.
 
-Could we move is_ttbr1_addr() here too?
+Rasmus Villemoes (6):
+  pwm: mxs: implement ->apply
+  pwm: mxs: remove legacy methods
+  pwm: mxs: add support for inverse polarity
+  dt-bindings: pwm: mxs-pwm: Increase #pwm-cells
+  pwm: mxs: avoid a division in mxs_pwm_apply()
+  pwm: update comment on struct pwm_ops::apply
 
-I guess there might be include ordering issues, but if not it would be
-nice if they lived in the same place.
+ .../devicetree/bindings/pwm/mxs-pwm.txt       |   4 +-
+ drivers/pwm/pwm-mxs.c                         | 101 +++++++++---------
+ include/linux/pwm.h                           |   5 +-
+ 3 files changed, 53 insertions(+), 57 deletions(-)
 
-> +
->  #ifdef CONFIG_COMPAT
->  static inline void compat_start_thread(struct pt_regs *regs, unsigned long pc,
->  				       unsigned long sp)
-> diff --git a/arch/arm64/kernel/entry-common.c b/arch/arm64/kernel/entry-common.c
-> index 176969e55677..eb73d250a081 100644
-> --- a/arch/arm64/kernel/entry-common.c
-> +++ b/arch/arm64/kernel/entry-common.c
-> @@ -14,6 +14,7 @@
->  #include <asm/esr.h>
->  #include <asm/exception.h>
->  #include <asm/kprobes.h>
-> +#include <asm/mmu.h>
->  #include <asm/sysreg.h>
->  
->  static void notrace el1_abort(struct pt_regs *regs, unsigned long esr)
-> @@ -112,9 +113,17 @@ static void notrace el0_ia(struct pt_regs *regs, unsigned long esr)
->  {
->  	unsigned long far = read_sysreg(far_el1);
->  
-> +	/*
-> +	 * We've taken an instruction abort from userspace and not yet
-> +	 * re-enabled IRQs. If the address is a kernel address, apply
-> +	 * BP hardening prior to enabling IRQs and pre-emption.
-> +	 */
-> +	if (!is_ttbr0_addr(far))
-> +		arm64_apply_bp_hardening();
-> +
->  	user_exit_irqoff();
-> -	local_daif_restore(DAIF_PROCCTX_NOIRQ);
-> -	do_el0_ia_bp_hardening(far, esr, regs);
-> +	local_daif_restore(DAIF_PROCCTX);
-> +	do_mem_abort(far, esr, regs);
->  }
->  NOKPROBE_SYMBOL(el0_ia);
->  
-> @@ -154,8 +163,11 @@ static void notrace el0_pc(struct pt_regs *regs, unsigned long esr)
->  {
->  	unsigned long far = read_sysreg(far_el1);
->  
-> +	if (!is_ttbr0_addr(instruction_pointer(regs)))
-> +		arm64_apply_bp_hardening();
-> +
->  	user_exit_irqoff();
-> -	local_daif_restore(DAIF_PROCCTX_NOIRQ);
-> +	local_daif_restore(DAIF_PROCCTX);
->  	do_sp_pc_abort(far, esr, regs);
->  }
->  NOKPROBE_SYMBOL(el0_pc);
+-- 
+2.20.1
 
-This is much nicer, and AFAICT is correct, so:
-
-Reviewed-by: Mark Rutland <mark.rutland@arm.com>
-
-Mark.
-
-> diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-> index 0857c2fc38b9..88e4bd4bc103 100644
-> --- a/arch/arm64/mm/fault.c
-> +++ b/arch/arm64/mm/fault.c
-> @@ -34,6 +34,7 @@
->  #include <asm/esr.h>
->  #include <asm/kasan.h>
->  #include <asm/kprobes.h>
-> +#include <asm/processor.h>
->  #include <asm/sysreg.h>
->  #include <asm/system_misc.h>
->  #include <asm/pgtable.h>
-> @@ -102,12 +103,6 @@ static void mem_abort_decode(unsigned int esr)
->  		data_abort_decode(esr);
->  }
->  
-> -static inline bool is_ttbr0_addr(unsigned long addr)
-> -{
-> -	/* entry assembly clears tags for TTBR0 addrs */
-> -	return addr < TASK_SIZE;
-> -}
-> -
->  static inline bool is_ttbr1_addr(unsigned long addr)
->  {
->  	/* TTBR1 addresses may have a tag if KASAN_SW_TAGS is in use */
-> @@ -749,30 +744,8 @@ void do_el0_irq_bp_hardening(void)
->  }
->  NOKPROBE_SYMBOL(do_el0_irq_bp_hardening);
->  
-> -void do_el0_ia_bp_hardening(unsigned long addr,  unsigned int esr,
-> -			    struct pt_regs *regs)
-> -{
-> -	/*
-> -	 * We've taken an instruction abort from userspace and not yet
-> -	 * re-enabled IRQs. If the address is a kernel address, apply
-> -	 * BP hardening prior to enabling IRQs and pre-emption.
-> -	 */
-> -	if (!is_ttbr0_addr(addr))
-> -		arm64_apply_bp_hardening();
-> -
-> -	local_daif_restore(DAIF_PROCCTX);
-> -	do_mem_abort(addr, esr, regs);
-> -}
-> -NOKPROBE_SYMBOL(do_el0_ia_bp_hardening);
-> -
->  void do_sp_pc_abort(unsigned long addr, unsigned int esr, struct pt_regs *regs)
->  {
-> -	if (user_mode(regs)) {
-> -		if (!is_ttbr0_addr(instruction_pointer(regs)))
-> -			arm64_apply_bp_hardening();
-> -		local_daif_restore(DAIF_PROCCTX);
-> -	}
-> -
->  	arm64_notify_die("SP/PC alignment exception", regs,
->  			 SIGBUS, BUS_ADRALN, (void __user *)addr, esr);
->  }
-> -- 
-> 2.20.1
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
