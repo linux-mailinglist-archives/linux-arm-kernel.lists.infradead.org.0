@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C427CBD2D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 16:28:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C49F5CBD2E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 16:28:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zlhq+IWqWGWxQYjmIqyJ48dqkmMKi8C1PNGNxjbH+9w=; b=KzJHh6e7v1Va8b
-	U/bUpJE8m2DEBZwE+aZIKr10k0UP3sRXKEUkDbTbfcGmPG3RsGwbhUaKLLa3LuTljgVYT1Vanw7es
-	9kPkYuUkSfUp5HpKvYbQ1jrsjAXXmuARINuSnWbBKnqFaaSuTaGGmypqa1JxzHJkJoVNQQ9zWTbDo
-	bXjLixWeNVXtojFgWiOG2JKuFCY1SoHKrFxS3e+YdkWXYB3Zyvws6y0js2TFWS4pgZw0KWSDGNvFf
-	gruZjKj5QnCCN5NpNdbM8pYozpK9BQ4QJiLgYj5EvolL051sBWw2uPWzs2EYzfJahNVsRZIUWSzoT
-	xJfHJFE89LfnFTFnWSUA==;
+	List-Owner; bh=xWAzRJ8PagMhX+iCHhmYHwftq+c3IIXyidMay/vvvuM=; b=fLpukbwthgexSs
+	/+w4RFiADMmmfQuStNUl9z4Zl1o/ay179C40oW0gfcOzutIF92W6JvKVEZOwv2uBiCG9boH9DQAOc
+	A7VwKgMAuESK9YAEey1P/owaVZylRXVquxCqo/CmgBG2/wqyR3tkWo9y1DecGANplYgD3b2oxoR2v
+	SkkD/0pEzAYNpWwhPKtLUs1j46p5nv+F6dwY1bBQtZFyzeatuAVQwaWclXPr3IAFYlqCdPCP3guwb
+	EWX9BQkSupf0CidgmDbTzV11LKC3/5Xk/pUIJoPDV7J5sZs6NCmk7lAlLtgUCDV78ydZBa1KqtroG
+	/kSpT5Do6YDVqDsgC6EQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGOZ7-0004wo-O7; Fri, 04 Oct 2019 14:28:17 +0000
+	id 1iGOZN-0005Dt-Tm; Fri, 04 Oct 2019 14:28:33 +0000
 Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGOYk-0004tZ-6v
+ id 1iGOYk-0004tb-6r
  for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 14:27:55 +0000
 X-Originating-IP: 86.250.200.211
 Received: from localhost.localdomain (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
  [86.250.200.211]) (Authenticated sender: miquel.raynal@bootlin.com)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 1164BC0007;
- Fri,  4 Oct 2019 14:27:45 +0000 (UTC)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id BD288C0022;
+ Fri,  4 Oct 2019 14:27:48 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Rob Herring <robh+dt@kernel.org>,
 	Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 04/21] MAINTAINERS: Add new Marvell CN9130-based files to
- track
-Date: Fri,  4 Oct 2019 16:27:21 +0200
-Message-Id: <20191004142738.7370-5-miquel.raynal@bootlin.com>
+Subject: [PATCH v2 06/21] arm64: dts: marvell: Move clocks to AP806 specific
+ file
+Date: Fri,  4 Oct 2019 16:27:23 +0200
+Message-Id: <20191004142738.7370-7-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191004142738.7370-1-miquel.raynal@bootlin.com>
 References: <20191004142738.7370-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_072754_408554_4385F343 
-X-CRM114-Status: GOOD (  10.64  )
+X-CRM114-CacheID: sfid-20191004_072754_408226_F12F9B0C 
+X-CRM114-Status: GOOD (  11.08  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -79,37 +79,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Marvell has a new branch of products called CN9130 based on AP807 and
-CP115 which are derivatives of the currently supported AP806 and
-CP110. Update the MAINTAINERS entry to reflect this change in the
-naming.
+Regular clocks and CPU clocks are specific to AP806, move them out of
+the generic AP80x file so that AP807 can use its own clocks.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- MAINTAINERS | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/marvell/armada-ap806.dtsi | 16 ++++++++++++++++
+ arch/arm64/boot/dts/marvell/armada-ap80x.dtsi | 12 ------------
+ 2 files changed, 16 insertions(+), 12 deletions(-)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 296de2b51c83..6b53cd42ae48 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -1897,7 +1897,7 @@ F:	arch/arm/boot/dts/dove*
- F:	arch/arm/boot/dts/orion5x*
- T:	git git://git.infradead.org/linux-mvebu.git
+diff --git a/arch/arm64/boot/dts/marvell/armada-ap806.dtsi b/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
+index cdadb28f287e..866628679ac7 100644
+--- a/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
++++ b/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
+@@ -12,3 +12,19 @@
+ 	model = "Marvell Armada AP806";
+ 	compatible = "marvell,armada-ap806";
+ };
++
++&ap_syscon0 {
++	ap_clk: clock {
++		compatible = "marvell,ap806-clock";
++		#clock-cells = <1>;
++	};
++};
++
++&ap_syscon1 {
++	cpu_clk: clock-cpu@278 {
++		compatible = "marvell,ap806-cpu-clock";
++		clocks = <&ap_clk 0>, <&ap_clk 1>;
++		#clock-cells = <1>;
++		reg = <0x278 0xa30>;
++	};
++};
+diff --git a/arch/arm64/boot/dts/marvell/armada-ap80x.dtsi b/arch/arm64/boot/dts/marvell/armada-ap80x.dtsi
+index 0dc1365e5758..e7438c21ccee 100644
+--- a/arch/arm64/boot/dts/marvell/armada-ap80x.dtsi
++++ b/arch/arm64/boot/dts/marvell/armada-ap80x.dtsi
+@@ -248,11 +248,6 @@
+ 				compatible = "syscon", "simple-mfd";
+ 				reg = <0x6f4000 0x2000>;
  
--ARM/Marvell Kirkwood and Armada 370, 375, 38x, 39x, XP, 3700, 7K/8K SOC support
-+ARM/Marvell Kirkwood and Armada 370, 375, 38x, 39x, XP, 3700, 7K/8K, CN9130 SOC support
- M:	Jason Cooper <jason@lakedaemon.net>
- M:	Andrew Lunn <andrew@lunn.ch>
- M:	Gregory Clement <gregory.clement@bootlin.com>
-@@ -1909,6 +1909,7 @@ F:	arch/arm/boot/dts/kirkwood*
- F:	arch/arm/configs/mvebu_*_defconfig
- F:	arch/arm/mach-mvebu/
- F:	arch/arm64/boot/dts/marvell/armada*
-+F:	arch/arm64/boot/dts/marvell/cn913*
- F:	drivers/cpufreq/armada-37xx-cpufreq.c
- F:	drivers/cpufreq/armada-8k-cpufreq.c
- F:	drivers/cpufreq/mvebu-cpufreq.c
+-				ap_clk: clock {
+-					compatible = "marvell,ap806-clock";
+-					#clock-cells = <1>;
+-				};
+-
+ 				ap_pinctrl: pinctrl {
+ 					compatible = "marvell,ap806-pinctrl";
+ 
+@@ -278,13 +273,6 @@
+ 				#address-cells = <1>;
+ 				#size-cells = <1>;
+ 
+-				cpu_clk: clock-cpu@278 {
+-					compatible = "marvell,ap806-cpu-clock";
+-					clocks = <&ap_clk 0>, <&ap_clk 1>;
+-					#clock-cells = <1>;
+-					reg = <0x278 0xa30>;
+-				};
+-
+ 				ap_thermal: thermal-sensor@80 {
+ 					compatible = "marvell,armada-ap806-thermal";
+ 					reg = <0x80 0x10>;
 -- 
 2.20.1
 
