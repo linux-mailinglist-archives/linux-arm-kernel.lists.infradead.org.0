@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C5F8CC055
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 18:13:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24E2ACC057
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 18:15:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F2Jx9e40eO9aYTpdfjwDdf1FI1z7MGNeO3wufNS1Fic=; b=J5pPJWVV4IHJdj
-	0f1yo6W3K99pNYyU7VLra/ZEwlvJo7eOCE7EKfOwEEQyx6EVcnB0IYKv7p/U4045Pka+gLl2Ysp3r
-	wr4BrKkE9avSQ+eyfgyWnUvwIfEmMfDxIuVe8mQ9KFXVDlfDVhI7mjP3KOEw7MxKnUVsB2YFR3+j2
-	7r3pADqNEGk8n8qsctzhF5KylpaJ27TvjYqESxB9zgb4Nc8HYRGL44/DMGVQjRcvc39pEMnddZ+tD
-	LA5N8ebyHghOA1GL3YD1bZL69uzzUZ/AsKueCEv3yxmUAEP3QiYfHxCd1u54UAHDd3umi+F2asV1A
-	Fwh/ShJWjEhnF/1zEGcw==;
+	List-Owner; bh=OAb9dGe+sHD4OENDg48AKu+/tPUOzQW8s59wpoOhQ+o=; b=ft3viVkEdYI6JN
+	TempKQs3djY5AcNQagHTFIXURcFT3FTZ5uEaTGNjIDy13+IGzE8i+lNt8AK2CQAoa0QBxni4I7h2H
+	cVG+Cf26En++RhRfpXGg+suht/Q0QoVZfuCiFofar2ImVIpj0WK+e39dS0zLrFI0xC+Hwiqx+5t2E
+	EivRfOTzUEhX3QcIR8yYb7CnVgaxedUzlBMjf1npztxa9t4UhecLVkh1w8mI4VnnLEG+uPOenstBn
+	a0kYT5t7ii+3ApEvCVcYg0kuFFv8PoPZdDA9Cewrn7NrYXIIOMT8KftYlZdxWjI5z05ixZII+MReU
+	ScQXBYg3mpxn3Ia+SIXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGQDK-0001Qb-2f; Fri, 04 Oct 2019 16:13:54 +0000
+	id 1iGQEc-0001jT-I8; Fri, 04 Oct 2019 16:15:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGQDB-0001Q3-RR
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 16:13:48 +0000
-Received: from mail-qk1-f179.google.com (mail-qk1-f179.google.com
- [209.85.222.179])
+ id 1iGQEJ-0001i5-Cf
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 16:15:00 +0000
+Received: from mail-qk1-f173.google.com (mail-qk1-f173.google.com
+ [209.85.222.173])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 46916215EA
+ by mail.kernel.org (Postfix) with ESMTPSA id 6894F215EA
  for <linux-arm-kernel@lists.infradead.org>;
- Fri,  4 Oct 2019 16:13:44 +0000 (UTC)
+ Fri,  4 Oct 2019 16:14:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570205624;
- bh=RcUOAl/0bmKCUXPftGv1Cq5XeNJkArov671bGsF0D4Q=;
+ s=default; t=1570205694;
+ bh=R5sSirwUbEkqcu4d1r6lkTNzDq1obCEV8XM1j86dPs4=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=TkIER9/mq7QtDrLA9SVkm9Qg2CxdZl1v+WKEBDLwccGyyuOUSuuREjTQlxmroLSWm
- jRFkkTWi+2a87F5v6IgeprVzFyHa4s/uiXLxUF/uWsRIbw3HNgTmMSd1e8bwbos3V/
- La6s4tk94D2cCEn7S4P/ByPazvltJr+prGFifUnM=
-Received: by mail-qk1-f179.google.com with SMTP id p10so6282412qkg.8
+ b=mWLE5C6mhG6IzW9QjIbm92y0poURo1jhbA2Lw5QuTrbTZbTKnH01WvE3aGhA/f7tF
+ RXMUNDRsfXW8aSHRHFS/F3jN1yxyrVBWFiM0iyrPTG0HIjHZMBUjDl5KP6YtMlCz2/
+ kMaaMTGnY4lnCKdbjKeOtAnOyE8wWa4VXouzXxcY=
+Received: by mail-qk1-f173.google.com with SMTP id y144so6286333qkb.7
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 04 Oct 2019 09:13:44 -0700 (PDT)
-X-Gm-Message-State: APjAAAXhNAcve4b7sqsReP5i+M0rtDspBKDIXUvjjq2fUpmK45q1ShFS
- 3GQjeGaYgd3MWLI845Eu5LJztqv8fcu+H7GNvw==
-X-Google-Smtp-Source: APXvYqziBbzyphZ1ke4M8acNOI/Px+d5v/VwBWzkL8PUPgDob5UN4SJAXMiBPIMUZIJikf/IUTuIwa+FGrVKl9gAX+8=
-X-Received: by 2002:a05:620a:12d5:: with SMTP id
- e21mr10962435qkl.152.1570205623412; 
- Fri, 04 Oct 2019 09:13:43 -0700 (PDT)
+ Fri, 04 Oct 2019 09:14:54 -0700 (PDT)
+X-Gm-Message-State: APjAAAW3nxRdhEr9uBd3KTNyq6dr7RTWTnIpiEfUBsAd8TN0LIIGe7tp
+ hdfepYCSCyAQMt+Acfkarr7CLFiV/4IKbZ3b5w==
+X-Google-Smtp-Source: APXvYqz/kmnAhT2fOXDnY0OfmKw4xGmJxsKKNwku/uLv+v2VfNMmt/d91t0lQQbb2yu77oqQYoqTZiAxYEctjkRy6aE=
+X-Received: by 2002:a05:620a:549:: with SMTP id
+ o9mr10924164qko.223.1570205693580; 
+ Fri, 04 Oct 2019 09:14:53 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191004142738.7370-1-miquel.raynal@bootlin.com>
- <20191004142738.7370-17-miquel.raynal@bootlin.com>
-In-Reply-To: <20191004142738.7370-17-miquel.raynal@bootlin.com>
+ <20191004142738.7370-18-miquel.raynal@bootlin.com>
+In-Reply-To: <20191004142738.7370-18-miquel.raynal@bootlin.com>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 4 Oct 2019 11:13:32 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqK4cbzOfaw5XCOdmP38w2n_djnJ6PaUTR=2Hi-rfOF=sg@mail.gmail.com>
-Message-ID: <CAL_JsqK4cbzOfaw5XCOdmP38w2n_djnJ6PaUTR=2Hi-rfOF=sg@mail.gmail.com>
-Subject: Re: [PATCH v2 16/21] dt-bindings: marvell: Convert the SoC
- compatibles description to YAML
+Date: Fri, 4 Oct 2019 11:14:42 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqLQ+mfdDoTMiN8T3-0+LAv+rU=G6qVOvEcKb4beWGTWmw@mail.gmail.com>
+Message-ID: <CAL_JsqLQ+mfdDoTMiN8T3-0+LAv+rU=G6qVOvEcKb4beWGTWmw@mail.gmail.com>
+Subject: Re: [PATCH v2 17/21] dt-bindings: marvell: Declare the CN913x SoC
+ compatibles
 To: Miquel Raynal <miquel.raynal@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_091345_907242_28BADFEF 
-X-CRM114-Status: GOOD (  12.02  )
+X-CRM114-CacheID: sfid-20191004_091455_453715_00A130CE 
+X-CRM114-Status: GOOD (  13.14  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -106,15 +106,25 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Fri, Oct 4, 2019 at 9:28 AM Miquel Raynal <miquel.raynal@bootlin.com> wrote:
 >
-> Convert the file detailing Marvell EBU compatibles to json-schema.
+> From: Grzegorz Jaszczyk <jaz@semihalf.com>
 >
+> Describe the compatible properties for the new Marvell SoCs:
+> * CN9130: 1x AP807-quad + 1x CP115 (1x embedded)
+> * CN9131: 1x AP807-quad + 2x CP115 (1x embedded + 1x modular)
+> * CN9132: 1x AP807-quad + 3x CP115 (1x embedded + 2x modular)
+>
+> CP115 are similar to CP110 in terms of features.
+>
+> There are three development boards based on these SoCs:
+> * CN9130-DB: comes as a single mother board (with the CP115 bundled)
+> * CN9131-DB: same as CN9130-DB with one additional modular CP115
+> * CN9132-DB: same as CN9130-DB with two additional modular CP115
+>
+> Signed-off-by: Grzegorz Jaszczyk <jaz@semihalf.com>
 > Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 > ---
->  .../bindings/arm/marvell/armada-7k-8k.txt     | 24 -----------
->  .../bindings/arm/marvell/armada-7k-8k.yaml    | 40 +++++++++++++++++++
->  2 files changed, 40 insertions(+), 24 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.txt
->  create mode 100644 Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.yaml
+>  .../bindings/arm/marvell/armada-7k-8k.yaml    | 21 +++++++++++++++++++
+>  1 file changed, 21 insertions(+)
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 
