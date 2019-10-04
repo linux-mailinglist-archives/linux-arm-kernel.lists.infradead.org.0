@@ -2,102 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BE99CBA18
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 14:13:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BF14CBA20
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 14:15:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:References:
+	In-Reply-To:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tWAdpVnNmVZXq++8Bx/6LdNfvJPGJwnWH3EWkWVsl3k=; b=JKAwi5XkiDXROC
-	6tGsEaLsJnqwccM+3ZSBY90/kDejVfH2x9CFbpKwk6KJty3RnVMrclspkwx+ZAsla4VIIl+91UH2L
-	KR2/B0PYnW2ZggfmZBJcGcPblN2Tm2PUbK7UFoEqEWfU94CoaMy/zfWJNppqm+f86vlcCBA849xkk
-	CcbC7IED8PzpkHDdOjCDt/4sEt0ckX2NFbE9bDgEyooQF92WViywdGZnEM0yBmpv0RAqfFXtQ2Ipe
-	KZ8h1ZtKTZ1ndVQwaobT9URYnCeTY7bEP8lX3nhUwPyOjHwOsIDGL9exlNz+V+K8FSG5DqaZ5/zCL
-	XOrybGbvQz4Tepxtm3Kg==;
+	List-Owner; bh=WTWpHlTudAdn8pdvU9QIfjCG+cIFnFfrIWnObHD7HWo=; b=l8QyM/76OaMnWW
+	K2aqksW0AvYl/1eTJ2UJ5/nlklLfefF26uEtv9KzEjhwTJYH8FN0fAnC4+4a0soiZjw0Etmk0KRTT
+	VRI7MCCA5k3v4cg7my6j8ft9gbn0gLErrmG8MclWcCLkw7yypRmE9Aa4yrSPTRxxwe+Kk4Ic1fmcE
+	8FvGVAMuXeNoHPzalgYpkLx+0GmXdbP2fwXkMU5aWbspHDIOrpo9rdtj2UnP44BbKL+R5pw5/U4LN
+	mFVVY0Rb1wJNscaMBxCUOuWujYcsRKyLE3zx6YLISA/W/VAW4jNtlkFiMga/Ym71gTmBTtFw0s/f6
+	xKEes6pRyPHJnSjmu68g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGMSx-0003bM-O6; Fri, 04 Oct 2019 12:13:47 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iGMUh-0006IP-DO; Fri, 04 Oct 2019 12:15:35 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGMMj-0005BU-Vd
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 12:07:24 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x94C6bWt002807; Fri, 4 Oct 2019 14:07:15 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=9m5QvHje7gSHUoKFWE+CtI72E0kPziiwi8tkIKmKGKQ=;
- b=dW0P/B3penQ+z5oVNoqmsOKp2Wxu6VlxtknN6/ZmuvxadCL69o84FhvPyynWiDrxRVYq
- boFpiWHq8RvkVwcJgmmG3fMIZDnZDF2tETu+GCwsNpH2TiVVRFbzA9ebbHaIBabp9N1l
- mHpW0jV2v8g03YMHmIXguGWFHgTZnKGcp46EcsqXPnCQCMKZWhN4RDlfLgvmKSYZ+D9X
- fblMHZAwjE+a2dhhGVQOmojEStyHFecI0nPkTXtx/QuOQ+RT5ny+kBkdVhUzzn69NvVU
- dzwcAOesEVA/z5XUAAG4+/gvZ1QOlbGsJjIf+Y28JrJ9plVYx9nPOf+YVxWdrPVhwP6A iQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2v9w9watb7-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 04 Oct 2019 14:07:15 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 5BFD7100038;
- Fri,  4 Oct 2019 14:07:15 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 45CBA2BDA6E;
- Fri,  4 Oct 2019 14:07:15 +0200 (CEST)
-Received: from SFHDAG3NODE3.st.com (10.75.127.9) by SFHDAG3NODE3.st.com
- (10.75.127.9) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 4 Oct
- 2019 14:07:14 +0200
-Received: from SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476]) by
- SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476%20]) with mapi id
- 15.00.1347.000; Fri, 4 Oct 2019 14:07:14 +0200
-From: Benjamin GAIGNARD <benjamin.gaignard@st.com>
-To: "mchehab@kernel.org" <mchehab@kernel.org>, "robh+dt@kernel.org"
- <robh+dt@kernel.org>, Alexandre TORGUE <alexandre.torgue@st.com>, "Yannick
- FERTRE" <yannick.fertre@st.com>, "hverkuil-cisco@xs4all.nl"
- <hverkuil-cisco@xs4all.nl>
-Subject: Re: [PATCH] dt-bindings: media: Convert stm32 cec bindings to
- json-schema
-Thread-Topic: [PATCH] dt-bindings: media: Convert stm32 cec bindings to
- json-schema
-Thread-Index: AQHVeTQQzAxXsEKUOU6CWUsiOtV7DKdKRJUA
-Date: Fri, 4 Oct 2019 12:07:14 +0000
-Message-ID: <c74bae8a-e043-1484-2cd1-a644ad9b164d@st.com>
-References: <20191002151410.15306-1-benjamin.gaignard@st.com>
-In-Reply-To: <20191002151410.15306-1-benjamin.gaignard@st.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.44]
-Content-ID: <16574661833B034C85DD4354A28F4483@st.com>
+ id 1iGMPP-0007s6-MR
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 12:10:19 +0000
+Received: from pps.filterd (m0098416.ppops.net [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x94C7QHb005944
+ for <linux-arm-kernel@lists.infradead.org>; Fri, 4 Oct 2019 08:09:58 -0400
+Received: from e06smtp05.uk.ibm.com (e06smtp05.uk.ibm.com [195.75.94.101])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2ve46y49me-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Fri, 04 Oct 2019 08:09:51 -0400
+Received: from localhost
+ by e06smtp05.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <clg@kaod.org>;
+ Fri, 4 Oct 2019 13:09:44 +0100
+Received: from b06cxnps4074.portsmouth.uk.ibm.com (9.149.109.196)
+ by e06smtp05.uk.ibm.com (192.168.101.135) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Fri, 4 Oct 2019 13:09:39 +0100
+Received: from d06av25.portsmouth.uk.ibm.com (d06av25.portsmouth.uk.ibm.com
+ [9.149.105.61])
+ by b06cxnps4074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x94C9cbv50528396
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 4 Oct 2019 12:09:38 GMT
+Received: from d06av25.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 11B7911C04C;
+ Fri,  4 Oct 2019 12:09:38 +0000 (GMT)
+Received: from d06av25.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id E7C0611C04A;
+ Fri,  4 Oct 2019 12:09:37 +0000 (GMT)
+Received: from smtp.tls.ibm.com (unknown [9.101.4.1])
+ by d06av25.portsmouth.uk.ibm.com (Postfix) with ESMTP;
+ Fri,  4 Oct 2019 12:09:37 +0000 (GMT)
+Received: from yukon.kaod.org.com (sig-9-145-169-184.de.ibm.com
+ [9.145.169.184])
+ by smtp.tls.ibm.com (Postfix) with ESMTP id D21952201B7;
+ Fri,  4 Oct 2019 14:09:36 +0200 (CEST)
+From: =?UTF-8?q?C=C3=A9dric=20Le=20Goater?= <clg@kaod.org>
+To: linux-mtd@lists.infradead.org, Tudor Ambarus <tudor.ambarus@microchip.com>
+Subject: [PATCH 14/16] mtd: spi-nor: aspeed: Introduce training operations per
+ platform
+Date: Fri,  4 Oct 2019 14:09:32 +0200
+X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20191004115919.20788-1-clg@kaod.org>
+References: <20191004115919.20788-1-clg@kaod.org>
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
- definitions=2019-10-04_06:2019-10-03,2019-10-04 signatures=0
+X-TM-AS-GCONF: 00
+x-cbid: 19100412-0020-0000-0000-00000374FF71
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19100412-0021-0000-0000-000021CB0E95
+Message-Id: <20191004120934.21662-1-clg@kaod.org>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-10-04_06:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=2 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1034 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=634 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1908290000 definitions=main-1910040113
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_050722_360534_36A1E563 
-X-CRM114-Status: GOOD (  20.56  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191004_051010_170670_6059840A 
+X-CRM114-Status: GOOD (  24.27  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ low trust [148.163.158.5 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,119 +106,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, Vignesh Raghavendra <vigneshr@ti.com>,
+ linux-aspeed@lists.ozlabs.org, Andrew Jeffery <andrew@aj.id.au>,
+ Richard Weinberger <richard@nod.at>, Marek Vasut <marek.vasut@gmail.com>,
+ Joel Stanley <joel@jms.id.au>, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Brian Norris <computersforpeace@gmail.com>,
+ David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org,
+ =?UTF-8?q?C=C3=A9dric=20Le=20Goater?= <clg@kaod.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-+ Hans
-
-On 10/2/19 5:14 PM, Benjamin Gaignard wrote:
-> Convert the STM32 cec binding to DT schema format using json-schema
->
-> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
-> ---
->   .../devicetree/bindings/media/st,stm32-cec.txt     | 19 --------
->   .../devicetree/bindings/media/st,stm32-cec.yaml    | 57 ++++++++++++++++++++++
->   2 files changed, 57 insertions(+), 19 deletions(-)
->   delete mode 100644 Documentation/devicetree/bindings/media/st,stm32-cec.txt
->   create mode 100644 Documentation/devicetree/bindings/media/st,stm32-cec.yaml
->
-> diff --git a/Documentation/devicetree/bindings/media/st,stm32-cec.txt b/Documentation/devicetree/bindings/media/st,stm32-cec.txt
-> deleted file mode 100644
-> index 6be2381c180d..000000000000
-> --- a/Documentation/devicetree/bindings/media/st,stm32-cec.txt
-> +++ /dev/null
-> @@ -1,19 +0,0 @@
-> -STMicroelectronics STM32 CEC driver
-> -
-> -Required properties:
-> - - compatible : value should be "st,stm32-cec"
-> - - reg : Physical base address of the IP registers and length of memory
-> -	 mapped region.
-> - - clocks : from common clock binding: handle to CEC clocks
-> - - clock-names : from common clock binding: must be "cec" and "hdmi-cec".
-> - - interrupts : CEC interrupt number to the CPU.
-> -
-> -Example for stm32f746:
-> -
-> -cec: cec@40006c00 {
-> -	compatible = "st,stm32-cec";
-> -	reg = <0x40006C00 0x400>;
-> -	interrupts = <94>;
-> -	clocks = <&rcc 0 STM32F7_APB1_CLOCK(CEC)>, <&rcc 1 CLK_HDMI_CEC>;
-> -	clock-names = "cec", "hdmi-cec";
-> -};
-> diff --git a/Documentation/devicetree/bindings/media/st,stm32-cec.yaml b/Documentation/devicetree/bindings/media/st,stm32-cec.yaml
-> new file mode 100644
-> index 000000000000..c99144107185
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/st,stm32-cec.yaml
-> @@ -0,0 +1,57 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/media/st,stm32-cec.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: STMicroelectronics STM32 CEC bindings
-> +
-> +maintainers:
-> +  - Benjamin Gaignard <benjamin.gaignard@st.com>
-> +  - Yannick Fertre <yannick.fertre@st.com>
-> +
-> +properties:
-> +  compatible:
-> +    const: st,stm32-cec
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: Module Clock
-> +      - description: Bus Clock
-> +
-> +  clock-names:
-> +    items:
-> +      - const: cec
-> +      - const: hdmi-cec
-> +
-> +  pinctrl-names: true
-> +
-> +patternProperties:
-> +  "^pinctrl-[0-9]+$": true
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - clocks
-> +  - clock-names
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/clock/stm32mp1-clks.h>
-> +    cec: cec@40006c00 {
-> +        compatible = "st,stm32-cec";
-> +        reg = <0x40006c00 0x400>;
-> +        interrupts = <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>;
-> +        clocks = <&rcc CEC_K>, <&clk_lse>;
-> +        clock-names = "cec", "hdmi-cec";
-> +    };
-> +
-> +...
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIHJlYWQgdGltaW5nIGNvbXBlbnNhdGlvbiByZWdpc3RlciByZWNvcmRzIHRoZSByZWFkIGRl
+bGF5IHNldHRpbmdzCmZvciBhIHJhbmdlIG9mIEhDTEsuIEl0cyBlbmNvZGluZyBpcyBkaWZmZXJl
+bnQgb24gdGhlIEFTVDI2MDAgYW5kIHRoZQpyZWFkIHRyYWluaW5nIHdpbGwgYmUgc2xpZ2h0bHkg
+bW9yZSBjb21wbGV4LgoKU2lnbmVkLW9mZi1ieTogQ8OpZHJpYyBMZSBHb2F0ZXIgPGNsZ0BrYW9k
+Lm9yZz4KUmV2aWV3ZWQtYnk6IEFuZHJldyBKZWZmZXJ5IDxhbmRyZXdAYWouaWQuYXU+Ci0tLQog
+ZHJpdmVycy9tdGQvc3BpLW5vci9hc3BlZWQtc21jLmMgfCAyMyArKysrKysrKysrKysrKysrKysr
+Ky0tLQogMSBmaWxlIGNoYW5nZWQsIDIwIGluc2VydGlvbnMoKyksIDMgZGVsZXRpb25zKC0pCgpk
+aWZmIC0tZ2l0IGEvZHJpdmVycy9tdGQvc3BpLW5vci9hc3BlZWQtc21jLmMgYi9kcml2ZXJzL210
+ZC9zcGktbm9yL2FzcGVlZC1zbWMuYwppbmRleCBmYWQwODczOGU1MzQuLjg1YjdmZjNiY2M5MSAx
+MDA2NDQKLS0tIGEvZHJpdmVycy9tdGQvc3BpLW5vci9hc3BlZWQtc21jLmMKKysrIGIvZHJpdmVy
+cy9tdGQvc3BpLW5vci9hc3BlZWQtc21jLmMKQEAgLTQxLDkgKzQxLDEzIEBAIHN0cnVjdCBhc3Bl
+ZWRfc21jX2luZm8gewogCXU4IHdlMDsJCQkvKiBzaGlmdCBmb3Igd3JpdGUgZW5hYmxlIGJpdCBm
+b3IgQ0UwICovCiAJdTggY3RsMDsJCS8qIG9mZnNldCBpbiByZWdzIG9mIGN0bCBmb3IgQ0UwICov
+CiAJdTggdGltaW5nOwkJLyogb2Zmc2V0IGluIHJlZ3Mgb2YgdGltaW5nICovCisJdTMyIGhkaXZf
+bWF4OyAgICAgICAgICAgLyogTWF4IEhDTEsgZGl2aXNvciBvbiByZWFkIHRpbWluZyByZWcgKi8K
+IAogCXZvaWQgKCpzZXRfNGIpKHN0cnVjdCBhc3BlZWRfc21jX2NoaXAgKmNoaXApOwogCWludCAo
+Km9wdGltaXplX3JlYWQpKHN0cnVjdCBhc3BlZWRfc21jX2NoaXAgKmNoaXAsIHUzMiBtYXhfZnJl
+cSk7CisJaW50ICgqY2FsaWJyYXRlKShzdHJ1Y3QgYXNwZWVkX3NtY19jaGlwICpjaGlwLCB1MzIg
+aGRpdiwKKwkJCSBjb25zdCB1OCAqZ29sZGVuX2J1ZiwgdTggKnRlc3RfYnVmKTsKKwogCXUzMiAo
+KnNlZ21lbnRfc3RhcnQpKHN0cnVjdCBhc3BlZWRfc21jX2NvbnRyb2xsZXIgKmNvbnRyb2xsZXIs
+IHUzMiByZWcpOwogCXUzMiAoKnNlZ21lbnRfZW5kKShzdHJ1Y3QgYXNwZWVkX3NtY19jb250cm9s
+bGVyICpjb250cm9sbGVyLCB1MzIgcmVnKTsKIAl1MzIgKCpzZWdtZW50X3JlZykoc3RydWN0IGFz
+cGVlZF9zbWNfY29udHJvbGxlciAqY29udHJvbGxlciwKQEAgLTU0LDYgKzU4LDggQEAgc3RhdGlj
+IHZvaWQgYXNwZWVkX3NtY19jaGlwX3NldF80Yl9zcGlfMjQwMChzdHJ1Y3QgYXNwZWVkX3NtY19j
+aGlwICpjaGlwKTsKIHN0YXRpYyB2b2lkIGFzcGVlZF9zbWNfY2hpcF9zZXRfNGIoc3RydWN0IGFz
+cGVlZF9zbWNfY2hpcCAqY2hpcCk7CiBzdGF0aWMgaW50IGFzcGVlZF9zbWNfb3B0aW1pemVfcmVh
+ZChzdHJ1Y3QgYXNwZWVkX3NtY19jaGlwICpjaGlwLAogCQkJCSAgICB1MzIgbWF4X2ZyZXEpOwor
+c3RhdGljIGludCBhc3BlZWRfc21jX2NhbGlicmF0ZV9yZWFkcyhzdHJ1Y3QgYXNwZWVkX3NtY19j
+aGlwICpjaGlwLCB1MzIgaGRpdiwKKwkJCQkgICAgICBjb25zdCB1OCAqZ29sZGVuX2J1ZiwgdTgg
+KnRlc3RfYnVmKTsKIAogc3RhdGljIHUzMiBhc3BlZWRfc21jX3NlZ21lbnRfc3RhcnQoc3RydWN0
+IGFzcGVlZF9zbWNfY29udHJvbGxlciAqY29udHJvbGxlciwKIAkJCQkgICAgdTMyIHJlZyk7CkBA
+IC02OSw4ICs3NSwxMCBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IGFzcGVlZF9zbWNfaW5mbyBmbWNf
+MjQwMF9pbmZvID0gewogCS53ZTAgPSAxNiwKIAkuY3RsMCA9IDB4MTAsCiAJLnRpbWluZyA9IDB4
+OTQsCisJLmhkaXZfbWF4ID0gMSwKIAkuc2V0XzRiID0gYXNwZWVkX3NtY19jaGlwX3NldF80YiwK
+IAkub3B0aW1pemVfcmVhZCA9IGFzcGVlZF9zbWNfb3B0aW1pemVfcmVhZCwKKwkuY2FsaWJyYXRl
+ID0gYXNwZWVkX3NtY19jYWxpYnJhdGVfcmVhZHMsCiAJLnNlZ21lbnRfc3RhcnQgPSBhc3BlZWRf
+c21jX3NlZ21lbnRfc3RhcnQsCiAJLnNlZ21lbnRfZW5kID0gYXNwZWVkX3NtY19zZWdtZW50X2Vu
+ZCwKIAkuc2VnbWVudF9yZWcgPSBhc3BlZWRfc21jX3NlZ21lbnRfcmVnLApAQCAtODMsOCArOTEs
+MTAgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBhc3BlZWRfc21jX2luZm8gc3BpXzI0MDBfaW5mbyA9
+IHsKIAkud2UwID0gMCwKIAkuY3RsMCA9IDB4MDQsCiAJLnRpbWluZyA9IDB4MTQsCisJLmhkaXZf
+bWF4ID0gMSwKIAkuc2V0XzRiID0gYXNwZWVkX3NtY19jaGlwX3NldF80Yl9zcGlfMjQwMCwKIAku
+b3B0aW1pemVfcmVhZCA9IGFzcGVlZF9zbWNfb3B0aW1pemVfcmVhZCwKKwkuY2FsaWJyYXRlID0g
+YXNwZWVkX3NtY19jYWxpYnJhdGVfcmVhZHMsCiAJLyogTm8gc2VnbWVudCByZWdpc3RlcnMgKi8K
+IH07CiAKQEAgLTk1LDggKzEwNSwxMCBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IGFzcGVlZF9zbWNf
+aW5mbyBmbWNfMjUwMF9pbmZvID0gewogCS53ZTAgPSAxNiwKIAkuY3RsMCA9IDB4MTAsCiAJLnRp
+bWluZyA9IDB4OTQsCisJLmhkaXZfbWF4ID0gMSwKIAkuc2V0XzRiID0gYXNwZWVkX3NtY19jaGlw
+X3NldF80YiwKIAkub3B0aW1pemVfcmVhZCA9IGFzcGVlZF9zbWNfb3B0aW1pemVfcmVhZCwKKwku
+Y2FsaWJyYXRlID0gYXNwZWVkX3NtY19jYWxpYnJhdGVfcmVhZHMsCiAJLnNlZ21lbnRfc3RhcnQg
+PSBhc3BlZWRfc21jX3NlZ21lbnRfc3RhcnQsCiAJLnNlZ21lbnRfZW5kID0gYXNwZWVkX3NtY19z
+ZWdtZW50X2VuZCwKIAkuc2VnbWVudF9yZWcgPSBhc3BlZWRfc21jX3NlZ21lbnRfcmVnLApAQCAt
+MTA5LDggKzEyMSwxMCBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IGFzcGVlZF9zbWNfaW5mbyBzcGlf
+MjUwMF9pbmZvID0gewogCS53ZTAgPSAxNiwKIAkuY3RsMCA9IDB4MTAsCiAJLnRpbWluZyA9IDB4
+OTQsCisJLmhkaXZfbWF4ID0gMSwKIAkuc2V0XzRiID0gYXNwZWVkX3NtY19jaGlwX3NldF80YiwK
+IAkub3B0aW1pemVfcmVhZCA9IGFzcGVlZF9zbWNfb3B0aW1pemVfcmVhZCwKKwkuY2FsaWJyYXRl
+ID0gYXNwZWVkX3NtY19jYWxpYnJhdGVfcmVhZHMsCiAJLnNlZ21lbnRfc3RhcnQgPSBhc3BlZWRf
+c21jX3NlZ21lbnRfc3RhcnQsCiAJLnNlZ21lbnRfZW5kID0gYXNwZWVkX3NtY19zZWdtZW50X2Vu
+ZCwKIAkuc2VnbWVudF9yZWcgPSBhc3BlZWRfc21jX3NlZ21lbnRfcmVnLApAQCAtMTAyMiw2ICsx
+MDM2LDggQEAgc3RhdGljIHUzMiBhc3BlZWRfc21jX2RlZmF1bHRfcmVhZChzdHJ1Y3QgYXNwZWVk
+X3NtY19jaGlwICpjaGlwKQogc3RhdGljIGludCBhc3BlZWRfc21jX29wdGltaXplX3JlYWQoc3Ry
+dWN0IGFzcGVlZF9zbWNfY2hpcCAqY2hpcCwKIAkJCQkgICAgdTMyIG1heF9mcmVxKQogeworCXN0
+cnVjdCBhc3BlZWRfc21jX2NvbnRyb2xsZXIgKmNvbnRyb2xsZXIgPSBjaGlwLT5jb250cm9sbGVy
+OworCWNvbnN0IHN0cnVjdCBhc3BlZWRfc21jX2luZm8gKmluZm8gPSBjb250cm9sbGVyLT5pbmZv
+OwogCXU4ICpnb2xkZW5fYnVmLCAqdGVzdF9idWY7CiAJaW50IGksIHJjLCBiZXN0X2RpdiA9IC0x
+OwogCXUzMiBzYXZlX3JlYWRfdmFsID0gY2hpcC0+Y3RsX3ZhbFtzbWNfcmVhZF07CkBAIC0xMDU0
+LDcgKzEwNzAsOCBAQCBzdGF0aWMgaW50IGFzcGVlZF9zbWNfb3B0aW1pemVfcmVhZChzdHJ1Y3Qg
+YXNwZWVkX3NtY19jaGlwICpjaGlwLAogCX0KIAogCS8qIE5vdyB3ZSBpdGVyYXRlIHRoZSBIQ0xL
+IGRpdmlkZXJzIHVudGlsIHdlIGZpbmQgb3VyIGJyZWFraW5nIHBvaW50ICovCi0JZm9yIChpID0g
+QVJSQVlfU0laRShhc3BlZWRfc21jX2hjbGtfZGl2cyk7IGkgPiAwOyBpLS0pIHsKKwlmb3IgKGkg
+PSBBUlJBWV9TSVpFKGFzcGVlZF9zbWNfaGNsa19kaXZzKTsKKwkgICAgIGkgPiBpbmZvLT5oZGl2
+X21heCAtIDE7IGktLSkgewogCQl1MzIgdHYsIGZyZXE7CiAKIAkJLyogQ29tcGFyZSB0aW1pbmcg
+dG8gbWF4ICovCkBAIC0xMDY1LDggKzEwODIsOCBAQCBzdGF0aWMgaW50IGFzcGVlZF9zbWNfb3B0
+aW1pemVfcmVhZChzdHJ1Y3QgYXNwZWVkX3NtY19jaGlwICpjaGlwLAogCQkvKiBTZXQgdGhlIHRp
+bWluZyAqLwogCQl0diA9IGNoaXAtPmN0bF92YWxbc21jX3JlYWRdIHwgQVNQRUVEX1NNQ19IQ0xL
+X0RJVihpKTsKIAkJd3JpdGVsKHR2LCBjaGlwLT5jdGwpOwotCQlkZXZfZGJnKGNoaXAtPm5vci5k
+ZXYsICJUcnlpbmcgSENMSy8lZC4uLiIsIGkpOwotCQlyYyA9IGFzcGVlZF9zbWNfY2FsaWJyYXRl
+X3JlYWRzKGNoaXAsIGksIGdvbGRlbl9idWYsIHRlc3RfYnVmKTsKKwkJZGV2X2RiZyhjaGlwLT5u
+b3IuZGV2LCAiVHJ5aW5nIEhDTEsvJWQgWyUwOHhdIC4uLiIsIGksIHR2KTsKKwkJcmMgPSBpbmZv
+LT5jYWxpYnJhdGUoY2hpcCwgaSwgZ29sZGVuX2J1ZiwgdGVzdF9idWYpOwogCQlpZiAocmMgPT0g
+MCkKIAkJCWJlc3RfZGl2ID0gaTsKIAl9Ci0tIAoyLjIxLjAKCgpfX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
+dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
+ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
