@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4D03CC21B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 19:53:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 641F1CC21C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 19:53:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=1rTOTQ25TvjsKp8fc/byUN+midoBgG/0FwA2G0I86Ko=; b=D1R
-	BcwoPRILP3E1bG+doO7CAokZVhw0t4QirzA9aX1OgXUHi9dAoEL6/6F5AgeBKCNu6sWTEh9HHWos+
-	b67bsK9XfuvBjCw7txmURntI9wsAjmDPZJtDCAmDr97Mnqhb7tS3eO40TE4udOUnUWxi21M536Pmr
-	MBakIAVN4wcWKLp8IbFw+GBV9pB5M7rPT7ggWAOuPL4ZxBzjzMdaxnD+8y+g6N1MC3Unh+j0zpX+E
-	rds3BtRNjxJ/EY6+BlRpvfakZZLdomDajMIu6QH2O4xTkDaenSUueIqBaCOn+41JKLjL3D4zxrI4v
-	56PRaCyzD164rhTl1rreLPVj6XroUaQ==;
+	References:List-Owner; bh=P6ETCZNJWYkyHeGRC9EZwo5Kz8lY3b/IwL0FrB3NkM4=; b=OCo
+	HJ0D1/0BTED3jlf6q0FNDxdIfBYWhPRBUdXc4GfwxV38odI2G7CEbEjM/sjVj6fEOXKwT9IJZDgk2
+	kjMkPyIfgE8ByMUqtI+mDmgbPjxQQehtSkd+V9bcC8Q4W4YPcSxgpHR/m0SzNItzvSMj2lVOyjxIU
+	ESBEMJo9LJbiwl7sZQvgbqqNKEtsgs3idZsqWkU0eWkCSUBKFoAznhIb8FqzGaaPtiBX2PLPDpvTj
+	+1X/g6p+jfPMNx6dM9yoamaiVaPgNRMeWPl7UdZP3bPxVvOScBzriDt3gY2faa2On/ttZFwFX5eEQ
+	+Jd0X42B+1UsVxeW9DujfepmEd0A34A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGRli-0005hI-GA; Fri, 04 Oct 2019 17:53:30 +0000
+	id 1iGRlx-0005vs-4u; Fri, 04 Oct 2019 17:53:45 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGRkw-00058R-6I
+ id 1iGRkw-00058d-Fj
  for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 17:52:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
@@ -29,29 +29,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=NMQ9EKl/aE19qdLslMinPSPdykNnDFUnJGRa6I4VkTc=; b=bVWjgNoolg9l
- iSD4YvCgwb6RO0jRLuCDn/chbxxMVvUgDwuh3iGssFqgxr8UeMrTwSquQnIvHcOJiAzD8QiDMp6Pu
- fhgMK172gRiZYWoALJBTucRhT2Rc1SpxS8FEkxKsaSdq80Jt6SugbUFugsUW0f5dqlcmJwExkMC1j
- pL81Y=;
+ List-Archive; bh=PqH+pmNSKzAVLMsLDYh0kPyzUfOiTsqiMOyiGdp8fzc=; b=JKiyudwiEdoK
+ S2pAXnBTzBYyw+jDX0e+hIq0ps7AH5aR7bpYsz/71RBT8+pJ2MzwK5cYOKgP8vk04+TcWL+uWKQtc
+ 0pINQAfUnxfV1+FSYsHCl6Mc0uewBdH/uBUVlUcZ1uIrPxBEO3JmMA9Q3UnXmgaZGsiSe+FN2cSZy
+ cuOD8=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iGRkr-0003vP-09; Fri, 04 Oct 2019 17:52:37 +0000
+ id 1iGRkr-0003vZ-HS; Fri, 04 Oct 2019 17:52:37 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 828432741F98; Fri,  4 Oct 2019 18:52:36 +0100 (BST)
+ id 0F09C2741EF2; Fri,  4 Oct 2019 18:52:37 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Subject: Applied "ASoC: samsung: Rename Arndale card driver" to the asoc tree
-In-Reply-To: <20191002105652.24821-3-s.nawrocki@samsung.com>
+Subject: Applied "ASoC: samsung: arndale: Simplify DAI link initialization" to
+ the asoc tree
+In-Reply-To: <20191002105652.24821-1-s.nawrocki@samsung.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191004175236.828432741F98@ypsilon.sirena.org.uk>
-Date: Fri,  4 Oct 2019 18:52:36 +0100 (BST)
+Message-Id: <20191004175237.0F09C2741EF2@ypsilon.sirena.org.uk>
+Date: Fri,  4 Oct 2019 18:52:37 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_105242_249967_0438CF7D 
-X-CRM114-Status: GOOD (  13.30  )
+X-CRM114-CacheID: sfid-20191004_105242_528105_C1844E9D 
+X-CRM114-Status: GOOD (  16.06  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -90,7 +91,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: samsung: Rename Arndale card driver
+   ASoC: samsung: arndale: Simplify DAI link initialization
 
 has been applied to the asoc tree at
 
@@ -115,71 +116,84 @@ to this mail.
 Thanks,
 Mark
 
-From dca6408d6f7e76045b5aaec44825cb87d9d1d6ce Mon Sep 17 00:00:00 2001
+From aaa68472ed1fa763336335f1278d65fcddd0056e Mon Sep 17 00:00:00 2001
 From: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Date: Wed, 2 Oct 2019 12:56:52 +0200
-Subject: [PATCH] ASoC: samsung: Rename Arndale card driver
+Date: Wed, 2 Oct 2019 12:56:50 +0200
+Subject: [PATCH] ASoC: samsung: arndale: Simplify DAI link initialization
 
-Rename arndale_rt5631.c to just arnddale.c as we support other CODECs
-than RT5631.  While at it replace spaces in Kconfig with tabs.
+There is only one DAI link so we can drop an unnecessary loop statement.
+Use card->dai_link in place of direct static arndale_rt5631_dai[] array
+dereference as a prerequisite for adding support for other CODECs.
+Unnecessary assignment of dai_link->codecs->name to NULL is removed.
 
 Reviewed-by: Charles Keepax <ckeepax@opensource.cirrus.com>
 Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
 Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Link: https://lore.kernel.org/r/20191002105652.24821-3-s.nawrocki@samsung.com
+Link: https://lore.kernel.org/r/20191002105652.24821-1-s.nawrocki@samsung.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/samsung/Kconfig                         | 10 +++++-----
- sound/soc/samsung/Makefile                        |  4 ++--
- sound/soc/samsung/{arndale_rt5631.c => arndale.c} |  0
- 3 files changed, 7 insertions(+), 7 deletions(-)
- rename sound/soc/samsung/{arndale_rt5631.c => arndale.c} (100%)
+ sound/soc/samsung/arndale_rt5631.c | 42 +++++++++++++-----------------
+ 1 file changed, 18 insertions(+), 24 deletions(-)
 
-diff --git a/sound/soc/samsung/Kconfig b/sound/soc/samsung/Kconfig
-index 6803cbfa9e46..1a0b163ca47b 100644
---- a/sound/soc/samsung/Kconfig
-+++ b/sound/soc/samsung/Kconfig
-@@ -194,11 +194,11 @@ config SND_SOC_ODROID
- 	help
- 	  Say Y here to enable audio support for the Odroid XU3/XU4.
+diff --git a/sound/soc/samsung/arndale_rt5631.c b/sound/soc/samsung/arndale_rt5631.c
+index fd8c6642fb0d..004c84fafad9 100644
+--- a/sound/soc/samsung/arndale_rt5631.c
++++ b/sound/soc/samsung/arndale_rt5631.c
+@@ -88,36 +88,30 @@ static void arndale_put_of_nodes(struct snd_soc_card *card)
  
--config SND_SOC_ARNDALE_RT5631_ALC5631
--        tristate "Audio support for RT5631(ALC5631) on Arndale Board"
--        depends on I2C
--        select SND_SAMSUNG_I2S
--        select SND_SOC_RT5631
-+config SND_SOC_ARNDALE
-+	tristate "Audio support for Arndale Board"
-+	depends on I2C
-+	select SND_SAMSUNG_I2S
-+	select SND_SOC_RT5631
- 	select MFD_WM8994
- 	select SND_SOC_WM8994
+ static int arndale_audio_probe(struct platform_device *pdev)
+ {
+-	int n, ret;
+ 	struct device_node *np = pdev->dev.of_node;
+ 	struct snd_soc_card *card = &arndale_rt5631;
++	struct snd_soc_dai_link *dai_link;
++	int ret;
  
-diff --git a/sound/soc/samsung/Makefile b/sound/soc/samsung/Makefile
-index c3b76035f69c..8f5dfe20b9f1 100644
---- a/sound/soc/samsung/Makefile
-+++ b/sound/soc/samsung/Makefile
-@@ -39,7 +39,7 @@ snd-soc-lowland-objs := lowland.o
- snd-soc-littlemill-objs := littlemill.o
- snd-soc-bells-objs := bells.o
- snd-soc-odroid-objs := odroid.o
--snd-soc-arndale-rt5631-objs := arndale_rt5631.o
-+snd-soc-arndale-objs := arndale.o
- snd-soc-tm2-wm5110-objs := tm2_wm5110.o
+ 	card->dev = &pdev->dev;
++	dai_link = card->dai_link;
++
++	dai_link->cpus->of_node = of_parse_phandle(np, "samsung,audio-cpu", 0);
++	if (!dai_link->cpus->of_node) {
++		dev_err(&pdev->dev,
++			"Property 'samsung,audio-cpu' missing or invalid\n");
++		return -EINVAL;
++	}
  
- obj-$(CONFIG_SND_SOC_SAMSUNG_JIVE_WM8750) += snd-soc-jive-wm8750.o
-@@ -62,5 +62,5 @@ obj-$(CONFIG_SND_SOC_LOWLAND) += snd-soc-lowland.o
- obj-$(CONFIG_SND_SOC_LITTLEMILL) += snd-soc-littlemill.o
- obj-$(CONFIG_SND_SOC_BELLS) += snd-soc-bells.o
- obj-$(CONFIG_SND_SOC_ODROID) += snd-soc-odroid.o
--obj-$(CONFIG_SND_SOC_ARNDALE_RT5631_ALC5631) += snd-soc-arndale-rt5631.o
-+obj-$(CONFIG_SND_SOC_ARNDALE) += snd-soc-arndale.o
- obj-$(CONFIG_SND_SOC_SAMSUNG_TM2_WM5110) += snd-soc-tm2-wm5110.o
-diff --git a/sound/soc/samsung/arndale_rt5631.c b/sound/soc/samsung/arndale.c
-similarity index 100%
-rename from sound/soc/samsung/arndale_rt5631.c
-rename to sound/soc/samsung/arndale.c
+-	for (n = 0; np && n < ARRAY_SIZE(arndale_rt5631_dai); n++) {
+-		if (!arndale_rt5631_dai[n].cpus->dai_name) {
+-			arndale_rt5631_dai[n].cpus->of_node = of_parse_phandle(np,
+-					"samsung,audio-cpu", n);
+-
+-			if (!arndale_rt5631_dai[n].cpus->of_node) {
+-				dev_err(&pdev->dev,
+-				"Property 'samsung,audio-cpu' missing or invalid\n");
+-				return -EINVAL;
+-			}
+-		}
+-		if (!arndale_rt5631_dai[n].platforms->name)
+-			arndale_rt5631_dai[n].platforms->of_node =
+-					arndale_rt5631_dai[n].cpus->of_node;
+-
+-		arndale_rt5631_dai[n].codecs->name = NULL;
+-		arndale_rt5631_dai[n].codecs->of_node = of_parse_phandle(np,
+-					"samsung,audio-codec", n);
+-		if (!arndale_rt5631_dai[0].codecs->of_node) {
+-			dev_err(&pdev->dev,
++	if (!dai_link->platforms->name)
++		dai_link->platforms->of_node = dai_link->cpus->of_node;
++
++	dai_link->codecs->of_node = of_parse_phandle(np, "samsung,audio-codec", 0);
++	if (!dai_link->codecs->of_node) {
++		dev_err(&pdev->dev,
+ 			"Property 'samsung,audio-codec' missing or invalid\n");
+-			ret = -EINVAL;
+-			goto err_put_of_nodes;
+-		}
++		ret = -EINVAL;
++		goto err_put_of_nodes;
+ 	}
+ 
+ 	ret = devm_snd_soc_register_card(card->dev, card);
 -- 
 2.20.1
 
