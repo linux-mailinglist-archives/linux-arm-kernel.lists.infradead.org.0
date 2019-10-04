@@ -2,64 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62E1BCBD54
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 16:34:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A4F8CBD66
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 16:36:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8sjJRNXP4u3oF0i+0ev9xN2y+XdeoZFLrbjDXHGb4t0=; b=VoALmtUOfFLnYJ
-	HEu4AL/lIRW+WTI14gq9++rO9DUp3r7MoEbVWTB1hDJxRozFDz4FLWScO3ZsQvOnV//2/tVnkAWe8
-	6ETiSr23p2ixdcqMJ5mRu0+irlHPplJ8h+lh1w7r3HTe5kg0EXJpR9jS4AAu3R4iBYqRk7IQYifdd
-	C3l9ZBAvTbyWbLEPyCMmOq2XBcHw/EU4xn27QxXeMjmRKCtmklCHpUFlXDYrkRaB5sAamEQtKGcyE
-	3cFZ0m74Ni/u5M14oiwaEQyprk59G/fEMBz155+8vWrEfHWThFUbMbPcKs3PCeAFSF54O8JaKLSN2
-	24BhM1EbaqKLGMOs5zmw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ErhLlO7Mv4r2YjLuZoRkxuMxQnjTyK+yyMtB7cerGy0=; b=skR/zZsGD4EnMl
+	Vf0bDvyLc40MZHkpp84xvjDsEf2lLzWvkkP6TDmhxQEdcBNyBdkvp1ah1mPAArLq5nXLtj4qtMyjo
+	6l9m20e7aBz+euCkWAF0CHMBBLrzJl2exgFC7ikkQIXsKhxuH7/1nRaIw2K9WFpKw8a7U4HFC/zIf
+	8AfonmXstgwat6g6Dpz68+ikom0CsU+GxJpMq/QGLIbLvel9SK5OBEOVMduxCpVsKOP94tqd0YZj5
+	xW+q4h4W/mvfKRxjgRmKpWSyk/wZUf6YzIWIQTpXGRMbUpXrlwgChjjTXDXYNgPhh9myqTOrQVq4r
+	ae0K9JQ8mxKNv3f7agoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGOeo-0003t4-Gv; Fri, 04 Oct 2019 14:34:10 +0000
-Received: from mail.bitwise.fi ([109.204.228.163])
+	id 1iGOgw-0005tN-5b; Fri, 04 Oct 2019 14:36:22 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGOdg-0002l0-6D
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 14:33:02 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.bitwise.fi (Postfix) with ESMTP id A3E8260027;
- Fri,  4 Oct 2019 17:32:55 +0300 (EEST)
-X-Virus-Scanned: Debian amavisd-new at mail.bitwise.fi
-Received: from mail.bitwise.fi ([127.0.0.1])
- by localhost (mail.bitwise.fi [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 1_nSWJbb_H5q; Fri,  4 Oct 2019 17:32:52 +0300 (EEST)
-Received: from [192.168.5.238] (fw1.dmz.bitwise.fi [192.168.69.1])
- (using TLSv1 with cipher ECDHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested) (Authenticated sender: anssiha)
- by mail.bitwise.fi (Postfix) with ESMTPSA id C99FB60064;
- Fri,  4 Oct 2019 17:32:52 +0300 (EEST)
-Subject: Re: [PATCH 2/6] net: can: xilinx_can: Fix flags field initialization
- for axi can and canps
-To: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>
-References: <1552908766-26753-1-git-send-email-appana.durga.rao@xilinx.com>
- <1552908766-26753-3-git-send-email-appana.durga.rao@xilinx.com>
-From: Anssi Hannula <anssi.hannula@bitwise.fi>
-Message-ID: <d1bedb13-f66f-b0fd-bd6d-9f95b64fc405@bitwise.fi>
-Date: Fri, 4 Oct 2019 17:32:52 +0300
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iGOgk-0005rL-S8
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 14:36:13 +0000
+Received: by mail-wr1-x441.google.com with SMTP id z9so7471208wrl.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 04 Oct 2019 07:36:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=H+yr5kS5iH2wmnNe9kPeQU/T3tzbAN3a+t+sjJ+iY7U=;
+ b=yTGJqZkm09u05ribXQL0uDJJ9aCSfe45YY5Zmi6pWlVEFuFQctsjKj7yLyufgnswfX
+ rJd0cAagn5RI67Kf3o9tdxqzvBMT9p9kPSfzME32i5S+eQVWvryxrBzdPlMsUgXwIgHr
+ Ds/Ynp/Yf60O8c7I9AKA45KqfdWShNERMT6WfOpXwXHch1+57zBQymt2GLpYU7WVhQ99
+ gP+pXFbzcFLFKP0GndNbZIJWmH0G5DyjS1yzgO7s0kQ8YtfMhKZFjKu4/Iv55C2oSVNA
+ cCklWMufOaHW4ABU667u118NIZF3O6jrehnSoF/J219zt3lVEZtSgXWz+5WuYfHQwo87
+ ETlA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=H+yr5kS5iH2wmnNe9kPeQU/T3tzbAN3a+t+sjJ+iY7U=;
+ b=OespyZeiUDrIwb6yIwn4tnvdGW9LaOXivuPIaABUuLG9mje1mgZw62hJygElvwefOr
+ 3XazHa+MTQ/0oj1YMqmUgpXksLmGuF4Iu4c0HhuYApLNb9hFDR9fr6lMIQBsUfP9B2pm
+ C5MfNUZOyuQGselJuGgp7SD7rgB2SZK5HQ5/rjsVtYrzQw3H4m7dUP70fKejfXqTGT8/
+ CFnQjCTJ/mGa3ut2Azopf/VKDiUIoUo8WBPUiTFzDadGN6Yz/g2U5U1bMaRFK4NM+Ml9
+ 4YXrTosMOIuZkgoNgDSy158qReIDUhHSyfd/wWzq4aK2yCEWfDW0KCG2fKUg4fFUdwnK
+ fcBg==
+X-Gm-Message-State: APjAAAX5n6dkeB/S0/7L5GOBCpy6Y7DRdhXt2W5fVN1UfcqhFTfP73L/
+ thOmnM3zGziMU8D4ovX44i0Fgw==
+X-Google-Smtp-Source: APXvYqz2i9TJzrN0Lsg67JBKMSZYobGbOf6d9N2rrnf6nMWRkWoUODo9EYYr7bSLftlbdYhSpmZ0vQ==
+X-Received: by 2002:adf:cc8a:: with SMTP id p10mr11756685wrj.321.1570199769269; 
+ Fri, 04 Oct 2019 07:36:09 -0700 (PDT)
+Received: from dell ([2.27.167.122])
+ by smtp.gmail.com with ESMTPSA id z189sm6971821wmc.25.2019.10.04.07.36.08
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 04 Oct 2019 07:36:08 -0700 (PDT)
+Date: Fri, 4 Oct 2019 15:36:07 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Thierry Reding <thierry.reding@gmail.com>
+Subject: Re: [PATCH] mfd: max77620: Do not allocate IRQs upfront
+Message-ID: <20191004143607.GL18429@dell>
+References: <20191002144318.140365-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <1552908766-26753-3-git-send-email-appana.durga.rao@xilinx.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20191002144318.140365-1-thierry.reding@gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_073300_418078_2B2D637A 
-X-CRM114-Status: GOOD (  14.80  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191004_073610_941063_5EB9BA2C 
+X-CRM114-Status: GOOD (  11.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.204.228.163 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,68 +98,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- michal.simek@xilinx.com, mkl@pengutronix.de,
- linux-arm-kernel@lists.infradead.org, linux-can@vger.kernel.org,
- davem@davemloft.net, wg@grandegger.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 18.3.2019 13.32, Appana Durga Kedareswara rao wrote:
-> AXI CAN IP and CANPS IP supports tx fifo empty feature, this patch updates
-> the flags field for the same.
->
-> Signed-off-by: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>
-> ---
->  drivers/net/can/xilinx_can.c | 2 ++
->  1 file changed, 2 insertions(+)
->
-> diff --git a/drivers/net/can/xilinx_can.c b/drivers/net/can/xilinx_can.c
-> index 2de51ac..22569ef 100644
-> --- a/drivers/net/can/xilinx_can.c
-> +++ b/drivers/net/can/xilinx_can.c
-> @@ -1428,6 +1428,7 @@ static const struct dev_pm_ops xcan_dev_pm_ops = {
->  };
->  
->  static const struct xcan_devtype_data xcan_zynq_data = {
-> +	.flags = XCAN_FLAG_TXFEMP,
->  	.bittiming_const = &xcan_bittiming_const,
->  	.btr_ts2_shift = XCAN_BTR_TS2_SHIFT,
->  	.btr_sjw_shift = XCAN_BTR_SJW_SHIFT,
-
-Thanks for catching this, this line seemed to have been incorrectly
-removed by my 9e5f1b273e ("can: xilinx_can: add support for Xilinx CAN
-FD core").
-
-But:
-
-> @@ -1435,6 +1436,7 @@ static const struct xcan_devtype_data xcan_zynq_data = {
->  };
->  
->  static const struct xcan_devtype_data xcan_axi_data = {
-> +	.flags = XCAN_FLAG_TXFEMP,
->  	.bittiming_const = &xcan_bittiming_const,
->  	.btr_ts2_shift = XCAN_BTR_TS2_SHIFT,
->  	.btr_sjw_shift = XCAN_BTR_SJW_SHIFT,
-
-
-Are you sure this is right?
-In the documentation [1] there does not seem to be any TXFEMP interrupt,
-it would be interrupt bit 14 but AXI CAN 5.0 seems to only go up to 11.
-
-Or maybe it is undocumented or there is a newer version somewhere?
-
-[1]
-https://www.xilinx.com/support/documentation/ip_documentation/can/v5_0/pg096-can.pdf
-
--- 
-Anssi Hannula / Bitwise Oy
-+358 503803997
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCAwMiBPY3QgMjAxOSwgVGhpZXJyeSBSZWRpbmcgd3JvdGU6Cgo+IEZyb206IFRoaWVy
+cnkgUmVkaW5nIDx0cmVkaW5nQG52aWRpYS5jb20+Cj4gCj4gcmVnbWFwX2FkZF9pcnFfY2hpcCgp
+IHdpbGwgdHJ5IHRvIGFsbG9jYXRlIGFsbCBvZiB0aGUgSVJRIGRlc2NyaXB0b3JzCj4gdXBmcm9u
+dCBpZiBwYXNzZWQgYSBub24temVybyBpcnFfYmFzZSBwYXJhbWV0ZXIuIEhvd2V2ZXIsIHRoZSBp
+bnRlbnRpb24KPiBpcyB0byBhbGxvY2F0ZSBJUlEgZGVzY3JpcHRvcnMgb24gYW4gYXMtbmVlZGVk
+IGJhc2lzIGlmIHBvc3NpYmxlLiBQYXNzIDAKPiBpbnN0ZWFkIG9mIC0xIHRvIGZpeCB0aGF0IHVz
+ZS1jYXNlLgo+IAo+IFNpZ25lZC1vZmYtYnk6IFRoaWVycnkgUmVkaW5nIDx0cmVkaW5nQG52aWRp
+YS5jb20+Cj4gLS0tCj4gIGRyaXZlcnMvbWZkL21heDc3NjIwLmMgICAgICAgfCA1ICsrLS0tCj4g
+IGluY2x1ZGUvbGludXgvbWZkL21heDc3NjIwLmggfCAxIC0KPiAgMiBmaWxlcyBjaGFuZ2VkLCAy
+IGluc2VydGlvbnMoKyksIDQgZGVsZXRpb25zKC0pCgpBcHBsaWVkLCB0aGFua3MuCgotLSAKTGVl
+IEpvbmVzIFvmnY7nkLzmlq9dCkxpbmFybyBTZXJ2aWNlcyBUZWNobmljYWwgTGVhZApMaW5hcm8u
+b3JnIOKUgiBPcGVuIHNvdXJjZSBzb2Z0d2FyZSBmb3IgQVJNIFNvQ3MKRm9sbG93IExpbmFybzog
+RmFjZWJvb2sgfCBUd2l0dGVyIHwgQmxvZwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJt
+LWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
+aWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
