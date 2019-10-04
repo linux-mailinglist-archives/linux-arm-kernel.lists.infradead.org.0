@@ -2,46 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A47ECBF88
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 17:43:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41E17CBFA8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 17:46:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n8yOiHWSHGUv+SybIS+QvEb/YI6bkbXFf9Lnva9JKms=; b=soGgTSj0FiAcoP
-	8BHShIjbUy0k4FaNnclLdCL0nAqsuEH7/LxsjueptYOHtMIbWVfvMIv3kZNkO4g26ebJrDjvoS0HU
-	B7MBUKJ6/6JNxt5rmFFZk4Kp+RBTYqkoV+zqeFY5mL10V4edDb2OKWGM3X3nL5zXCYBmlx3X4Tdsv
-	WqWPB6JZIbVWi2ZaI3uVJXs37utnMBaW3rhnhDGWGdFah7U+ZOmBB5MEPOAMPUNJVd4KPH2bBwRRu
-	qTkfwMk5EhOBrRTW7wx0iUYpGk/LcT0/3Crm8mNCyvvqOt0P6IeyHBX+sIgHl60BiTU/IAzDaWMNd
-	O35tw9F6Km4Nui/jRnJw==;
+	List-Owner; bh=HX/TdCOo6aSXfxj4rlGu6KG3wWtfeYkNcB9ynbTewjQ=; b=cGuv1j3v6o+BUU
+	vNZ+Zo2DsVdAHJIFlGWogVgIm3wUEZrbqHcr0+SXyRkVGMT1Z9E1wMfAGZhMhA5g8kSf3kpAQ/vY3
+	KGUf4FkgWsT/ZjEPGFY0MSAfQ3nn5LFnvIfU8Cg8ROjPRLtv+DtauEkNKy394fRixqa7s/pX8Of8j
+	9nhVSdLyXCmTXqlTVa+HdIQweGD7eul4LTtzu1Y+UGjghOeGy2XAZBFUduyykR5+5pi8ws96xIKL5
+	sqAknbWBcyPSwpxnpoUVM28/gmImKctC329Zx7MgiVEwsE1tdxWBCZWWnmhw9HdtoeVV7/Y2kWHt+
+	EXKcX+KhXG+UA5pt8+Gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGPjq-00039d-Qp; Fri, 04 Oct 2019 15:43:26 +0000
+	id 1iGPmM-00050D-1F; Fri, 04 Oct 2019 15:46:02 +0000
 Received: from helcar.hmeau.com ([216.24.177.18] helo=fornost.hmeau.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGPjk-00038p-55; Fri, 04 Oct 2019 15:43:21 +0000
+ id 1iGPmE-0004zf-G7
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 15:45:56 +0000
 Received: from gwarestrin.arnor.me.apana.org.au ([192.168.0.7])
  by fornost.hmeau.com with smtp (Exim 4.89 #2 (Debian))
- id 1iGPjG-0001Md-5y; Sat, 05 Oct 2019 01:42:51 +1000
+ id 1iGPlz-0001XF-61; Sat, 05 Oct 2019 01:45:40 +1000
 Received: by gwarestrin.arnor.me.apana.org.au (sSMTP sendmail emulation);
- Sat, 05 Oct 2019 01:42:49 +1000
-Date: Sat, 5 Oct 2019 01:42:49 +1000
+ Sat, 05 Oct 2019 01:45:38 +1000
+Date: Sat, 5 Oct 2019 01:45:38 +1000
 From: Herbert Xu <herbert@gondor.apana.org.au>
-To: Markus Elfring <Markus.Elfring@web.de>
-Subject: Re: [PATCH] hwrng: mediatek: Use devm_platform_ioremap_resource() in
- mtk_rng_probe()
-Message-ID: <20191004154249.GS5148@gondor.apana.org.au>
-References: <e6e03822-c68f-55ea-3a65-ee2a44f50e8c@web.de>
+To: Corentin Labbe <clabbe.montjoie@gmail.com>
+Subject: Re: [PATCH v3 0/2] crypto: sun4i-ss: Enable power management
+Message-ID: <20191004154538.GB5148@gondor.apana.org.au>
+References: <20190924080832.18694-1-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <e6e03822-c68f-55ea-3a65-ee2a44f50e8c@web.de>
+In-Reply-To: <20190924080832.18694-1-clabbe.montjoie@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_084320_457749_9108610C 
-X-CRM114-Status: UNSURE (   9.90  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191004_084554_784899_379BA250 
+X-CRM114-Status: GOOD (  12.33  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -60,34 +59,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sean Wang <sean.wang@mediatek.com>, kernel-janitors@vger.kernel.org,
- LKML <linux-kernel@vger.kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- linux-mediatek@lists.infradead.org, linux-crypto@vger.kernel.org,
- Matt Mackall <mpm@selenic.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org,
- Himanshu Jha <himanshujha199640@gmail.com>
+Cc: linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
+ mripard@kernel.org, wens@csie.org, linux-crypto@vger.kernel.org,
+ davem@davemloft.net, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 18, 2019 at 09:44:06AM +0200, Markus Elfring wrote:
-> From: Markus Elfring <elfring@users.sourceforge.net>
-> Date: Wed, 18 Sep 2019 09:34:11 +0200
+On Tue, Sep 24, 2019 at 10:08:30AM +0200, Corentin Labbe wrote:
+> Hello
 > 
-> Simplify this function implementation by using a known wrapper function.
+> This serie enables power management in the sun4i-ss driver.
 > 
-> This issue was detected by using the Coccinelle software.
+> Regards
 > 
-> Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
-> ---
->  drivers/char/hw_random/mtk-rng.c | 9 +--------
->  1 file changed, 1 insertion(+), 8 deletions(-)
+> Changes since v2 ( https://lore.kernel.org/linux-arm-kernel/20190919051035.4111-2-clabbe.montjoie@gmail.com/T/ ):
+> - depends on PM
+> - fusioned suspend/resume functions with sun4i_ssenable/disable
+> - fixed style problem
+> 
+> Changes since v1:
+> - Fixed style in patch #1
+> - Check more return code of PM functions
+> - Add PM support in hash/prng
+> - reworked the probe order of PM functions and the PM strategy
+> 
+> Corentin Labbe (2):
+>   crypto: sun4i-ss: simplify enable/disable of the device
+>   crypto: sun4i-ss: enable pm_runtime
+> 
+>  drivers/crypto/Kconfig                    |   1 +
+>  drivers/crypto/sunxi-ss/sun4i-ss-cipher.c |  10 ++
+>  drivers/crypto/sunxi-ss/sun4i-ss-core.c   | 139 ++++++++++++++++------
+>  drivers/crypto/sunxi-ss/sun4i-ss-hash.c   |  12 ++
+>  drivers/crypto/sunxi-ss/sun4i-ss-prng.c   |   9 +-
+>  drivers/crypto/sunxi-ss/sun4i-ss.h        |   2 +
+>  6 files changed, 133 insertions(+), 40 deletions(-)
 
-Patch applied.  Thanks.
+All applied.  Thanks.
 -- 
 Email: Herbert Xu <herbert@gondor.apana.org.au>
 Home Page: http://gondor.apana.org.au/~herbert/
