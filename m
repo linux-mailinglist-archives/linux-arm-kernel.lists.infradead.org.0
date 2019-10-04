@@ -2,56 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0B2BCBCBC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 16:10:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6214CBCBD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 16:10:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J2M1HYNOKYPZHWCoXvoeh2WU2mTf/hPo3GQvKLO7rqE=; b=O0+x/yj6LRUH6h
-	GCjjJCDqe806UFWClTyGCW3v2c4caE33Pw+/dlehg2X4MbteteGnVpxQoG+z4kXDSL+J4wb+14JEk
-	44TsPCj1x2/2cZ7Up2GKvES/EwYg/7irBgzZeuXUS/z7wu6xRZsYWNoWZUhNYEZldjBEAQXWRXPPb
-	LECU7JdakYWE87X5uFVraZ7/V4CRDsnqrvVmtf1caqUm/oCpPnAu2QpUu8dYrDpv9mwX4XPuva80z
-	2Z3utpdA/nhT8AhA0XeYKlN7U47xKy3vz5oCYlZuxBvPqbZpVAOeL6CGUxoLD1Pulq4wXeACOYcjC
-	qusj91EjK6ghRIrOgRaA==;
+	List-Owner; bh=USPH/USS2OgMmwJ0LNoaN9JsJ+nTHTpwXSJ7IWtGFNw=; b=JkQEfP/MacdNPy
+	QNEzF2+IZh+jAswiYoyoSQuk6ggdmT3p//MTTc9QwJsKO/sdavYFSNMVj2W1AM38jw7dy2uLaL0fM
+	Lm2ANzyq/uzJ01uOCQRWbi+rD2kc8OC+SSOlUTIQrb4/lb+vDj2+ehG9ukBJ8JEiCX3XZxzyLUEDx
+	Jn/ZQxkYkMwbQa0WtOsrVbmATsOvOqOfmFn82phH/VgBNX5Gvmjel4hvS5CSDMsHDrAS2DIRnjIzt
+	UphhloTyCleR09T/t523wLh4tgkKVxPzIZf3yKYnDEj/gNRQD61PYYYJp42hY/pWbRZmnQhgXBv7z
+	1j9Ue8Nk4XqAyLpno93g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGOHh-0005d8-A2; Fri, 04 Oct 2019 14:10:17 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGOHa-0005cM-3e
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 14:10:11 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9B93815A1;
- Fri,  4 Oct 2019 07:10:08 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1ED393F68E;
- Fri,  4 Oct 2019 07:10:07 -0700 (PDT)
-Date: Fri, 4 Oct 2019 15:10:06 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH] KVM: arm64: pmu: Fix cycle counter truncation on counter
- stop
-Message-ID: <20191004141005.GT42880@e119886-lin.cambridge.arm.com>
-References: <20191003172400.21157-1-maz@kernel.org>
- <20191004085554.GQ42880@e119886-lin.cambridge.arm.com>
- <20191004110829.63f397de@why>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191004110829.63f397de@why>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+	id 1iGOIB-0005vQ-0F; Fri, 04 Oct 2019 14:10:47 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iGOI2-0005ur-IB
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 14:10:39 +0000
+Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp [210.141.244.193])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1DE0E20873;
+ Fri,  4 Oct 2019 14:10:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570198237;
+ bh=hAaNJ5z75b1rpOrr+vUkhUPB9bpYDS+s+qpVlnfDz5I=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=j9oO/LiFkLw0DlZNm5hN5vTIgsIGGCVfmQt6+ayYciKrAtEL4JGDbRyAQJv5qL/mp
+ Lsfd73c0hVS0QA6sKaNP60zUcJs5mSErrhPPLYUKVf9AexY6jwOd6I1N+cRfwSO05s
+ bRHJu3y1v/ewq/tRMrUzdnkrpPhA0BF+9qFicIKo=
+Date: Fri, 4 Oct 2019 23:10:33 +0900
+From: Masami Hiramatsu <mhiramat@kernel.org>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH 2/8] arm64: remove __exception annotations
+Message-Id: <20191004231033.537af57806db6316b18cb0b5@kernel.org>
+In-Reply-To: <20191004101717.GB34756@lakrids.cambridge.arm.com>
+References: <20191003171642.135652-1-james.morse@arm.com>
+ <20191003171642.135652-3-james.morse@arm.com>
+ <20191004101717.GB34756@lakrids.cambridge.arm.com>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_071010_240132_D6E01833 
-X-CRM114-Status: GOOD (  37.30  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191004_071038_638291_80865E02 
+X-CRM114-Status: GOOD (  20.95  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,193 +77,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
  James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu,
- Julien Thierry Julien Thierry <julien.thierry.kdev@gmail.com>
+ Will Deacon <will@kernel.org>, Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 04, 2019 at 11:08:29AM +0100, Marc Zyngier wrote:
-> On Fri, 4 Oct 2019 09:55:55 +0100
-> Andrew Murray <andrew.murray@arm.com> wrote:
-> 
-> > On Thu, Oct 03, 2019 at 06:24:00PM +0100, Marc Zyngier wrote:
-> > > When a counter is disabled, its value is sampled before the event
-> > > is being disabled, and the value written back in the shadow register.
-> > > 
-> > > In that process, the value gets truncated to 32bit, which is adequate  
+On Fri, 4 Oct 2019 11:17:17 +0100
+Mark Rutland <mark.rutland@arm.com> wrote:
+
+> On Thu, Oct 03, 2019 at 06:16:36PM +0100, James Morse wrote:
+> > Since commit 732674980139 ("arm64: unwind: reference pt_regs via embedded
+> > stack frame") arm64 has has not used the __exception annotation to dump
+> > the pt_regs during stack tracing. in_exception_text() has no callers.
 > > 
-> > Doh, that shouldn't have happened.
+> > This annotation is only used to blacklist kprobes, it means the same as
+> > __kprobes.
 > > 
-> > > for any counter but the cycle counter, which can be configured to
-> > > hold a 64bit value. This obviously results in a corrupted counter,
-> > > and things like "perf record -e cycles" not working at all when
-> > > run in a guest...
-> > > 
-> > > Make the truncation conditional on the counter not being 64bit.
-> > > 
-> > > Fixes: 80f393a23be6 ("KVM: arm/arm64: Support chained PMU counters")
-> > > Cc: Andrew Murray <andrew.murray@arm.com>
-> > > Reported-by: Julien Thierry Julien Thierry <julien.thierry.kdev@gmail.com>
-> > > Signed-off-by: Marc Zyngier <maz@kernel.org>
-> > > ---
-> > >  virt/kvm/arm/pmu.c | 4 +++-
-> > >  1 file changed, 3 insertions(+), 1 deletion(-)
-> > > 
-> > > diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
-> > > index 362a01886bab..d716aef2bae9 100644
-> > > --- a/virt/kvm/arm/pmu.c
-> > > +++ b/virt/kvm/arm/pmu.c
-> > > @@ -206,9 +206,11 @@ static void kvm_pmu_stop_counter(struct kvm_vcpu *vcpu, struct kvm_pmc *pmc)
-> > >  		__vcpu_sys_reg(vcpu, reg) = lower_32_bits(counter);
-> > >  		__vcpu_sys_reg(vcpu, reg + 1) = upper_32_bits(counter);
-> > >  	} else {
-> > > +		if (!kvm_pmu_idx_is_64bit(vcpu, pmc->idx))
-> > > +			counter = lower_32_bits(counter);
-> > >  		reg = (pmc->idx == ARMV8_PMU_CYCLE_IDX)
-> > >  		       ? PMCCNTR_EL0 : PMEVCNTR0_EL0 + pmc->idx;
-> > > -		__vcpu_sys_reg(vcpu, reg) = lower_32_bits(counter);
-> > > +		__vcpu_sys_reg(vcpu, reg) = counter;  
+> > Section annotations like this require the functions to be grouped
+> > together between the start/end markers, and placed according to
+> > the linker script. For kprobes we also have NOKPROBE_SYMBOL() which
+> > logs the symbol address in a section that kprobes parses and
+> > blacklists at boot.
 > > 
-> > The other uses of lower_32_bits look OK to me.
+> > Using NOKPROBE_SYMBOL() instead lets kprobes publish the list of
+> > blacklisted symbols, and saves us from having an arm64 specific
+> > spelling of __kprobes.
 > > 
-> > Reviewed-by: Andrew Murray <andrew.murray@arm.com>
+> > Signed-off-by: James Morse <james.morse@arm.com>
+> > Cc: Masami Hiramatsu <mhiramat@kernel.org>
 > > 
-> > As a side note, I'm not convinced that the implementation (or perhaps the
-> > use of) kvm_pmu_idx_is_64bit is correct:
+> > ---
+> > (__exception_irq_entry means no-kprobes and optionally in a section
+> >  ftrace can use to pretty-print interrupt handler boundaries.)
+> > ---
+> >  arch/arm64/include/asm/exception.h |  4 ++--
+> >  arch/arm64/include/asm/traps.h     | 10 ---------
+> >  arch/arm64/kernel/probes/kprobes.c |  4 ----
+> >  arch/arm64/kernel/traps.c          | 10 ++++++---
+> >  arch/arm64/kernel/vmlinux.lds.S    |  3 ---
+> >  arch/arm64/mm/fault.c              | 34 +++++++++++++++---------------
+> >  6 files changed, 26 insertions(+), 39 deletions(-)
 > > 
-> > static bool kvm_pmu_idx_is_64bit(struct kvm_vcpu *vcpu, u64 select_idx)
-> > {
-> >         return (select_idx == ARMV8_PMU_CYCLE_IDX &&
-> >                 __vcpu_sys_reg(vcpu, PMCR_EL0) & ARMV8_PMU_PMCR_LC);
-> > }
-> > 
-> > We shouldn't truncate the value of a cycle counter to 32 bits just because
-> > _PMCR_LC is unset. We should only be interested in _PMCR_LC when setting
-> > the sample_period.
+> > diff --git a/arch/arm64/include/asm/exception.h b/arch/arm64/include/asm/exception.h
+> > index a17393ff6677..b0b3ba56e919 100644
+> > --- a/arch/arm64/include/asm/exception.h
+> > +++ b/arch/arm64/include/asm/exception.h
 > 
-> That's a good point. The ARMv8 ARM says:
+> [...]
 > 
-> "Long cycle counter enable. Determines when unsigned overflow is
-> recorded by the cycle counter overflow bit."
+> > -asmlinkage void __exception do_debug_exception(unsigned long addr_if_watchpoint,
+> > -					       unsigned int esr,
+> > -					       struct pt_regs *regs)
+> > +asmlinkage void do_debug_exception(unsigned long addr_if_watchpoint,
+> > +				   unsigned int esr, struct pt_regs *regs)
+> >  {
+> >  	const struct fault_info *inf = esr_to_debug_fault_info(esr);
+> >  	unsigned long pc = instruction_pointer(regs);
 > 
-> which doesn't say anything about the counter being truncated one way or
-> another.
+> I assume you meant to add NOKPROBE_SYMBOL(do_debug_exception) here.
 > 
-> > If you agree this is wrong, I'll spin a change.
+> Assuming so, and with that fixed up:
 > 
-> I still think kvm_pmu_idx_is_64bit() correct, and would be easily
-> extended to supporting the ARMv8.5-PMU extension. However, it'd be
-> better to just detect the cycle counter in the current patch rather
-> than relying on the above helper:
+> Acked-by: Mark Rutland <mark.rutland@arm.com>
 
-I guess at present kvm_pmu_idx_is_64bit has the meaning "does the counter
-have a 64 bit overflow". (And we check for the CYCLE_IDX because at
-present thats the only thing that *can* have a 64bit overflow.)
+Good catch, if so, this looks good to me too.
+with that fixed up:
 
-> 
-> diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
-> index d716aef2bae9..90a90d8f7280 100644
-> --- a/virt/kvm/arm/pmu.c
-> +++ b/virt/kvm/arm/pmu.c
-> @@ -206,7 +206,7 @@ static void kvm_pmu_stop_counter(struct kvm_vcpu *vcpu, struct kvm_pmc *pmc)
->  		__vcpu_sys_reg(vcpu, reg) = lower_32_bits(counter);
->  		__vcpu_sys_reg(vcpu, reg + 1) = upper_32_bits(counter);
->  	} else {
-> -		if (!kvm_pmu_idx_is_64bit(vcpu, pmc->idx))
-> +		if (pmc->idx != ARMV8_PMU_CYCLE_IDX)
->  			counter = lower_32_bits(counter);
->  		reg = (pmc->idx == ARMV8_PMU_CYCLE_IDX)
->  		       ? PMCCNTR_EL0 : PMEVCNTR0_EL0 + pmc->idx;
-> 
+Acked-by: Masami Hiramatsu <mhiramat@kernel.org>
 
-That looks fine to me.
+Thanks!
 
-> 
-> As for revamping the rest of the code, that's 5.5 material.
-
-The only other change required would be as follows:
-
-diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
-index 362a01886bab..2435119b8524 100644
---- a/virt/kvm/arm/pmu.c
-+++ b/virt/kvm/arm/pmu.c
-@@ -147,7 +147,7 @@ u64 kvm_pmu_get_counter_value(struct kvm_vcpu *vcpu, u64 select_idx)
-            kvm_pmu_idx_is_high_counter(select_idx))
-                counter = upper_32_bits(counter);
- 
--       else if (!kvm_pmu_idx_is_64bit(vcpu, select_idx))
-+       else if (select_idx != ARMV8_PMU_CYCLE_IDX)
-                counter = lower_32_bits(counter);
- 
-        return counter;
-
-
-> 
-> > Though unsetting _PMCR_LC is deprecated so I can't imagine this causes any
-> > issue.
-> 
-> Deprecated, yes. Disallowed, no. We'll have to support this as long as
-> we have 32bit capable stuff in the wild. But we could at least start
-> with correctly emulating the setting of the LC bit, see below.
-> 
-> Thanks,
-> 
-> 	M.
-> 
-> From c421c17ae1e9c90db4b73bd25485580833321f4b Mon Sep 17 00:00:00 2001
-> From: Marc Zyngier <maz@kernel.org>
-> Date: Fri, 4 Oct 2019 11:03:09 +0100
-> Subject: [PATCH] arm64: KVM: Handle PMCR_EL0.LC as RES1 on pure AArch64
->  systems
-> 
-> Of PMCR_EL0.LC, the ARMv8 ARM says:
-> 
-> 	"In an AArch64 only implementation, this field is RES 1."
-> 
-> So be it.
-> 
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-> ---
->  arch/arm64/kvm/sys_regs.c | 4 ++++
->  1 file changed, 4 insertions(+)
-> 
-> diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-> index 2071260a275b..46822afc57e0 100644
-> --- a/arch/arm64/kvm/sys_regs.c
-> +++ b/arch/arm64/kvm/sys_regs.c
-> @@ -632,6 +632,8 @@ static void reset_pmcr(struct kvm_vcpu *vcpu, const struct sys_reg_desc *r)
->  	 */
->  	val = ((pmcr & ~ARMV8_PMU_PMCR_MASK)
->  	       | (ARMV8_PMU_PMCR_MASK & 0xdecafbad)) & (~ARMV8_PMU_PMCR_E);
-> +	if (!system_supports_32bit_el0())
-> +		val |= ARMV8_PMU_PMCR_LC;
->  	__vcpu_sys_reg(vcpu, r->reg) = val;
->  }
->  
-> @@ -682,6 +684,8 @@ static bool access_pmcr(struct kvm_vcpu *vcpu, struct sys_reg_params *p,
->  		val = __vcpu_sys_reg(vcpu, PMCR_EL0);
->  		val &= ~ARMV8_PMU_PMCR_MASK;
->  		val |= p->regval & ARMV8_PMU_PMCR_MASK;
-> +		if (!system_supports_32bit_el0())
-> +			val |= ARMV8_PMU_PMCR_LC;
->  		__vcpu_sys_reg(vcpu, PMCR_EL0) = val;
->  		kvm_pmu_handle_pmcr(vcpu, val);
->  		kvm_vcpu_pmu_restore_guest(vcpu);
-
-This looks good to me.
-
-Reviewed-by: Andrew Murray <andrew.murray@arm.com>
-
-> -- 
-> 2.20.1
-> 
-> 
-> -- 
-> Jazz is not dead. It just smells funny...
+-- 
+Masami Hiramatsu <mhiramat@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
