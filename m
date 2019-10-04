@@ -2,71 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E1C6CB85C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 12:34:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D578CB865
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 12:35:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lnCS5EYALaYVh8yUQmOjVV3XTvQ+fqiHTdMzdTOTybk=; b=XZLMPdaxiTSTzo
-	2amlawhtTE86KYOZxGmvur65uThWirRvW//bl6W5i+44L+pufIi0Zrif+vuRygUszjDulb+yMvy7H
-	cdeohsMcl1PvnyqN2sQIyFGwd9cH2ko20ixuYAvnpIVZCL8hhQ581NPBHrxdRUweKJy/kt+nIAIMk
-	/jYeVl2dgOvyj9CbMe7rnk+f+nINAV1cSS2Lw9k+ard2lxqZHS9nndrm3t2DXuHKtDvkH2L/g+a5r
-	lP4otGv/mtYNXtHTVSGatq+n51p0SIgeYbmKtmntvMsNFuXa0R5/yae21oP3cYqxVqVQC2S4PmIDw
-	MIRuoPCGCMTwn3K+GDug==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Q+xHAwjaii4DvSVIlm0uYfo2keSr/WOWNZffnEbueUY=; b=RNteWHyB1ZGfSX
+	PHD54TpW85D0fx0knvh6wthPj1z5dLKBd9d0MZTwVvgaPGY7UF5gVbWKb40X/ZhrldnXXw7Rg0l2E
+	JmWt5pecbEW1Jq8fe9LwjbFNpmevAAVbutxqP2PxHlCcFHcJzpdEFdd8Cd56HOOrPIGi87/ZI3PVG
+	h7f427KNXnXRm3nWrDbtIFFMaumhO2xMvsHOdx4AqXODXtq+yUVn4IYXMMUtd9C6zkNeCoJmiyTvY
+	B5kWJAtWewKxxGKADABXAr/VDtYEMJiQj3GxJQUkr+z1Yj50OZ3od/Nr+bmHYB/W6GtwA4POILb8J
+	frfrQw5EkrUpxB+kWIBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGKuS-0006jA-1j; Fri, 04 Oct 2019 10:34:04 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGKuH-0006ij-RQ
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 10:33:55 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CADE0207FF;
- Fri,  4 Oct 2019 10:33:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570185233;
- bh=jgt/r+sRNwXtAKe39bVuRcd1vyFJqdUHlYQDN+QWJ64=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=swpoBU9iyGUa+yCdYAjHOITl9V35cphlIiR+L6WB6xqTrFBgfpXO0U3u3va5NFsVZ
- VKi6I8XrfWm1rDUijDYWSpsPfTV25fF8ji6Or0BtCi5d25WRfe8w/btbR6BCLC5yb1
- WNmLUtv0ASw4BnuG/sJHJiQV8CubQ1hkCDb/mp7E=
-Date: Fri, 4 Oct 2019 11:33:50 +0100
-From: Will Deacon <will@kernel.org>
-To: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH 4/4] arm64: ftrace: Ensure synchronisation in PLT setup
- for Neoverse-N1 #1542419
-Message-ID: <20191004103349.ohrhmiweda7m5gr3@willie-the-truck>
-References: <20191002094935.48848-1-james.morse@arm.com>
- <20191002094935.48848-5-james.morse@arm.com>
+	id 1iGKvg-0008Lw-GQ; Fri, 04 Oct 2019 10:35:20 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iGKvX-00085z-BM
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 10:35:12 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5697515BE;
+ Fri,  4 Oct 2019 03:35:07 -0700 (PDT)
+Received: from [10.1.34.132] (unknown [10.1.34.132])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1850B3F706;
+ Fri,  4 Oct 2019 03:35:05 -0700 (PDT)
+Subject: Re: [PATCH] ARM: NOMMU: Fix exc_ret for XIP
+To: afzal mohammed <afzal.mohd.ma@gmail.com>, linux@armlinux.org.uk
+References: <1570102888-13426-1-git-send-email-vladimir.murzin@arm.com>
+ <20191004005616.GA7046@afzalpc>
+From: Vladimir Murzin <vladimir.murzin@arm.com>
+Message-ID: <8b9cdb77-9215-a494-e1d7-46fba75c069d@arm.com>
+Date: Fri, 4 Oct 2019 11:35:04 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191002094935.48848-5-james.morse@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20191004005616.GA7046@afzalpc>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_033353_907449_94A58C6A 
-X-CRM114-Status: GOOD (  14.78  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191004_033511_431529_7165885F 
+X-CRM114-Status: GOOD (  11.68  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,45 +62,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: sza@esh.hu, linux-arm-kernel@lists.infradead.org, alexandre.torgue@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 02, 2019 at 10:49:35AM +0100, James Morse wrote:
-> CPUs affected by Neoverse-N1 #1542419 may execute a stale instruction if
-> it was recently modified. The affected sequence requires freshly written
-> instructions to be executable before a branch to them is updated.
+On 10/4/19 1:56 AM, afzal mohammed wrote:
+> On Thu, Oct 03, 2019 at 12:41:28PM +0100, Vladimir Murzin wrote:
 > 
-> There are very few places in the kernel that modify executable text,
-> all but one come with sufficient synchronisation:
->  * The module loader's flush_module_icache() calls flush_icache_range(),
->    which does a kick_all_cpus_sync()
->  * bpf_int_jit_compile() calls flush_icache_range().
->  * Kprobes calls aarch64_insn_patch_text(), which does its work in
->    stop_machine().
->  * static keys and ftrace both patch between nops and branches to
->    existing kernel code (not generated code).
+>> It was reported that 72cd4064fcca "NOMMU: Toggle only bits in
+>> EXC_RETURN we are really care of" breaks NOMMU+XIP combination.
+>> It happens because saved EXC_RETURN gets overwritten when data
+>> section is relocated.
+>>
+>> The fix is to propagate EXC_RETURN via register and let relocation
+>> code to commit that value into memory.
+>>
+>> Fixes: 72cd4064fcca ("ARM: 8830/1: NOMMU: Toggle only bits in EXC_RETURN we are really care of")
 > 
-> The affected sequence is the interaction between ftrace and modules.
-> The module PLT is cleaned using __flush_icache_range() as the trampoline
-> shouldn't be executable until we update the branch to it.
-> 
-> Drop the double-underscore so that this path runs kick_all_cpus_sync()
-> too.
-> 
-> Signed-off-by: James Morse <james.morse@arm.com>
-> ---
->  arch/arm64/kernel/ftrace.c | 12 +++++++++---
->  1 file changed, 9 insertions(+), 3 deletions(-)
+> Thanks Vladimir, cc stable as well ?
 
-I'll take this one as a fix, since it's not reliant on a firmware update.
-One other thing -- please can you update silicon-errata.rst as part of the
-other patches?
+I believe they they watch "Fixes" tag ;)
 
-Will
+Cheers
+Vladimir
+
+> 
+> Regards
+> afzal
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
