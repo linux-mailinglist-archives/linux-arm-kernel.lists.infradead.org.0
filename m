@@ -2,73 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7BC5CBE6E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 17:02:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 553EACBE72
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 17:02:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cggpRnh//C4Bhno1BRXP/1km1ALglrLjMhuxz0LKpnQ=; b=r2Kr8Tb82pNGqD
-	zapQzAMb/ESyInVL7fsCrsJPYUe2G8COhoYkoUq7qpSrLu8TkGoI2gENeDXnWhe59ZtlDwfWYMTZh
-	Jrou/PIkwlPZEK8ungVgbJHRYxlrw7Zxt6Zw510dH39MoqhJDpTtthDg+RUrPkc0yKFoTzVMsohE1
-	7lF9Of45ZlJVMVD0U2QRcqR5OpZt4165HdmdsCVrV76RdJI6MgDW10qVPf/vMeHJcKgiDMjYGYq+U
-	o+BivdGtzyiFQiQlNmjMabm+VWySHwjwRzV8U9PvfVcMBGCeskg0MfRTQ1Sigq9qQdWbVQdaYvM3j
-	ezFti9jRhIFkFH6AwTqg==;
+	List-Owner; bh=0aOPRtXZFKxHduKDU9/6CA4BAMblhPEtdPCddHSKKRE=; b=WciEC3F5E4r/nD
+	g48BJnxMJwAimjVlZ4PF9QlrA5ja2jAprVRgVDAR+mWD+uI15VSyspxIzGyjDzp0ajjxeOGdcGq2N
+	rqVnC8Bb5HhPOzmDA6oUE1QX/RNfV+4r6A6MWSBLkX5oNOrmsgIMl77EsJKE8CMSLsAsn1T10TmfQ
+	cNCK6ekzxCf5OcuPbMtthAd9sdKfNVjHZtOBPN2SoLBBuOw3TUjfWr56H6VjOvibtAAcYi32SoGNd
+	pOJogr8iu0mKtuT7Atv2l8UQP5xtDUV38QXcdCsqSoxzv+7tA1UsijqLyNJ6V+l04HuTL8MMPVHBp
+	XVAfEuCLddioq3V8ZnZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGP5e-0001jI-SC; Fri, 04 Oct 2019 15:01:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iGP5x-000283-Ft; Fri, 04 Oct 2019 15:02:13 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGP4j-0001WA-7U
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 15:00:58 +0000
-Received: from localhost.localdomain (unknown [194.230.155.145])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 99E922133F;
- Fri,  4 Oct 2019 15:00:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570201256;
- bh=oHpPukB6B9nYWBy+UwEt06VVM0sOiP39yRkduK0FfyA=;
- h=From:To:Subject:Date:In-Reply-To:References:From;
- b=naYVCKVE90MUi+D8gWav2uNsSkNjDc0xvWVMLN7bjXO+gK8ChM6YuTL+HGl5EVEH0
- QoVuGX2eldJVcAoBIHR0FVq6zoEFeFy4draMwTSwOO7226+ecAVEmhII3Q1JUu6nm7
- E4Hc2XpBajKHsK+ihIQxxY4vbt30kI2Ln0BlspP4=
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Sylwester Nawrocki <s.nawrocki@samsung.com>,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
- Olof Johansson <olof@lixom.net>, Krzysztof Kozlowski <krzk@kernel.org>,
- Arnd Bergmann <arnd@arndb.de>, Marek Szyprowski <m.szyprowski@samsung.com>
-Subject: [PATCH 2/2] ARM: multi_v7_defconfig: Enable Exynos bus and memory
- frequency scaling (devfreq)
-Date: Fri,  4 Oct 2019 17:00:40 +0200
-Message-Id: <20191004150040.5833-2-krzk@kernel.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191004150040.5833-1-krzk@kernel.org>
-References: <20191004150040.5833-1-krzk@kernel.org>
+ id 1iGP5L-0001cr-Gd
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 04 Oct 2019 15:01:35 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=cUrqHuVE1rLspR5r6YO6NSOkzvmwyWI2H9TB6wyBdfU=; b=WubSi7+6soMzPyRmHo19HHJ/k
+ Mctn9HydxG6cEcnmRFmBjo3ueKGuTWOX8bOg3GDIsWM/YbQL6T8Wzc+p/ii9ijCTghbXY0Om21yay
+ 3sxgraMbaONJ15blAcTXd4UXw9+dNIiqj3qTNTTLWk/opiiPTWwzWu36L3d5R+A95iVj/BOgi9fa+
+ I3Cw2P7+pOaqwxpKajT5tnhkbPe3NVp9PCuiXOFVxxHQhWTP6gff2LmYPwoRCyr6Mhv1WDiwWWIZ7
+ YvDR3ByN9oAMqc1fp8xlkZ8odNWFCttr39E3pv+p+/BUC/qdQ0MsBKF9tqgyw2DQ5ib6et+A/wuqV
+ u/HnFy7XA==;
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+ by casper.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iGP5g-0004wq-Qv
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 15:01:59 +0000
+X-Originating-IP: 86.207.98.53
+Received: from localhost
+ (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 3D2292000D;
+ Fri,  4 Oct 2019 15:00:57 +0000 (UTC)
+Date: Fri, 4 Oct 2019 17:00:57 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Tudor.Ambarus@microchip.com
+Subject: Re: [PATCH v5] soc: at91: Add Atmel SFR SN (Serial Number) support
+Message-ID: <20191004150057.GZ4106@piout.net>
+References: <20191004141256.14491-1-kamel.bouhara@bootlin.com>
+ <a8c16919-9842-8a2a-81b0-16551c6a7944@microchip.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <a8c16919-9842-8a2a-81b0-16551c6a7944@microchip.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_080057_288499_A500ECAE 
-X-CRM114-Status: UNSURE (   9.60  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+X-CRM114-CacheID: sfid-20191004_160156_922819_23A3622C 
+X-CRM114-Status: GOOD (  36.84  )
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.200 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,50 +79,168 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
+Cc: thomas.petazzoni@bootlin.com, kamel.bouhara@bootlin.com,
+ Ludovic.Desroches@microchip.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable devfreq events along with drivers for scaling frequency and
-voltages of Exynos buses and Dynamic Memory Controller (DMC).  This
-usually brings energy saving benefits.
+On 04/10/2019 14:54:37+0000, Tudor.Ambarus@microchip.com wrote:
+> 
+> 
+> On 10/04/2019 05:12 PM, Kamel Bouhara wrote:
+> > External E-Mail
+> > 
+> > 
+> > Add support to read SFR's read-only registers providing the SoC
+> > Serial Numbers (SN0+SN1) to userspace.
+> > 
+> > ~ #  hexdump -n 8  -e'"%d\n"' /sys/bus/nvmem/devices/atmel-sfr0/nvmem
+> > 959527243
+> > 371539274
+> > 
+> > Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
+> > ---
+> >  Changes in v5:
+> >  - Removed the blankline at EOF
+> >  - Feeded the entropy pool with the SoC SN using add_device_randomness()
+> >    and do it only once at probe().
+> > 
+> >  drivers/soc/atmel/Kconfig  | 11 +++++
+> >  drivers/soc/atmel/Makefile |  1 +
+> >  drivers/soc/atmel/sfr.c    | 99 ++++++++++++++++++++++++++++++++++++++
+> >  3 files changed, 111 insertions(+)
+> >  create mode 100644 drivers/soc/atmel/sfr.c
+> > 
+> > diff --git a/drivers/soc/atmel/Kconfig b/drivers/soc/atmel/Kconfig
+> > index 05528139b023..50caf6db9c0e 100644
+> > --- a/drivers/soc/atmel/Kconfig
+> > +++ b/drivers/soc/atmel/Kconfig
+> > @@ -5,3 +5,14 @@ config AT91_SOC_ID
+> >  	default ARCH_AT91
+> >  	help
+> >  	  Include support for the SoC bus on the Atmel ARM SoCs.
+> > +
+> > +config AT91_SOC_SFR
+> > +	tristate "Special Function Registers support"
+> > +	depends on ARCH_AT91 || COMPILE_TEST
+> > +	help
+> > +	  This is a driver for the Special Function Registers available on
+> > +	  Atmel SAMA5Dx SoCs, providing access to specific aspects of the
+> > +	  integrated memory, bridge implementations, processor etc.
+> > +
+> > +	  This driver can also be built as a module. If so, the module
+> > +	  will be called sfr.
+> > diff --git a/drivers/soc/atmel/Makefile b/drivers/soc/atmel/Makefile
+> > index 7ca355d10553..d849a897cd77 100644
+> > --- a/drivers/soc/atmel/Makefile
+> > +++ b/drivers/soc/atmel/Makefile
+> > @@ -1,2 +1,3 @@
+> >  # SPDX-License-Identifier: GPL-2.0-only
+> >  obj-$(CONFIG_AT91_SOC_ID) += soc.o
+> > +obj-$(CONFIG_AT91_SOC_SFR) += sfr.o
+> > diff --git a/drivers/soc/atmel/sfr.c b/drivers/soc/atmel/sfr.c
+> > new file mode 100644
+> > index 000000000000..145e9af63b4c
+> > --- /dev/null
+> > +++ b/drivers/soc/atmel/sfr.c
+> > @@ -0,0 +1,99 @@
+> > +// SPDX-License-Identifier: GPL-2.0-only
+> > +/*
+> > + * sfr.c - driver for special function registers
+> > + *
+> > + * Copyright (C) 2019 Bootlin.
+> > + *
+> > + */
+> > +#include <linux/mfd/syscon.h>
+> > +#include <linux/module.h>
+> > +#include <linux/nvmem-provider.h>
+> > +#include <linux/random.h>
+> > +#include <linux/of.h>
+> > +#include <linux/of_device.h>
+> > +#include <linux/platform_device.h>
+> > +#include <linux/regmap.h>
+> > +
+> > +#define SFR_SN0		0x4c
+> > +#define SFR_SN_SIZE	8
+> > +
+> > +struct atmel_sfr_priv {
+> > +	struct regmap			*regmap;
+> > +};
+> > +
+> > +static int atmel_sfr_read(void *context, unsigned int offset,
+> > +			  void *buf, size_t bytes)
+> > +{
+> > +	struct atmel_sfr_priv *priv = context;
+> > +
+> > +	return regmap_bulk_read(priv->regmap, SFR_SN0 + offset,
+> > +				buf, bytes / 4);
+> > +}
+> > +
+> > +static struct nvmem_config atmel_sfr_nvmem_config = {
+> > +	.name = "atmel-sfr",
+> > +	.read_only = true,
+> > +	.word_size = 4,
+> > +	.stride = 4,
+> > +	.size = SFR_SN_SIZE,
+> > +	.reg_read = atmel_sfr_read,
+> > +};
+> > +
+> > +static int atmel_sfr_probe(struct platform_device *pdev)
+> > +{
+> > +	struct device *dev = &pdev->dev;
+> > +	struct device_node *np = dev->of_node;
+> > +	struct nvmem_device *nvmem;
+> > +	struct atmel_sfr_priv *priv;
+> > +	u8 sn[SFR_SN_SIZE];
+> > +	int ret;
+> > +
+> > +	priv = devm_kmalloc(dev, sizeof(*priv), GFP_KERNEL);
+> > +	if (!priv)
+> > +		return -ENOMEM;
+> > +
+> > +	priv->regmap = syscon_node_to_regmap(np);
+> > +	if (IS_ERR(priv->regmap)) {
+> > +		dev_err(dev, "cannot get parent's regmap\n");
+> > +		return PTR_ERR(priv->regmap);
+> > +	}
+> > +
+> > +	atmel_sfr_nvmem_config.dev = dev;
+> > +	atmel_sfr_nvmem_config.priv = priv;
+> > +
+> > +	nvmem = devm_nvmem_register(dev, &atmel_sfr_nvmem_config);
+> > +	if (IS_ERR(nvmem)) {
+> > +		dev_err(dev, "error registering nvmem config\n");
+> > +		return PTR_ERR(nvmem);
+> > +	}
+> > +
+> > +	ret = atmel_sfr_read(priv, 0, sn, SFR_SN_SIZE);
+> > +	if (ret == 0)
+> > +		add_device_randomness(sn, SFR_SN_SIZE);
+> > +
+> > +	return 0;
+> 
+> 	return ret;
+> 
+> to not miss a possible error from atmel_sfr_read().
+> 
+> The code looks good, with this fixed one can add:
+> Tested-by: Tudor Ambarus <tudor.ambarus@microchip.com>
+> Reviewed-by: Tudor Ambarus <tudor.ambarus@microchip.com>
+> 
+> As I told in v3, I have some doubts on the use cases for this driver, but let's
+> see what the at91 folks think.
+> 
 
-So far devfreq was disabled because it was causing hangs during system
-reboot (voltage not matching reset frequency). This was already fixed.
+There is already at least one microchip customer using it so I'm going
+to apply it.
 
-Occasionally, devfreq might negatively impact performance of certain SoC
-blocks, e.g. when a bus is scaled down but some block (like Mixer with
-two Full HD windows) wants to perform high-throughput DMA operations.
 
-Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
----
- arch/arm/configs/multi_v7_defconfig | 3 +++
- 1 file changed, 3 insertions(+)
-
-diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
-index 7f7978dba8ab..1296e7aaa801 100644
---- a/arch/arm/configs/multi_v7_defconfig
-+++ b/arch/arm/configs/multi_v7_defconfig
-@@ -977,11 +977,14 @@ CONFIG_ARCH_TEGRA_2x_SOC=y
- CONFIG_ARCH_TEGRA_3x_SOC=y
- CONFIG_ARCH_TEGRA_114_SOC=y
- CONFIG_ARCH_TEGRA_124_SOC=y
-+CONFIG_ARM_EXYNOS_BUS_DEVFREQ=m
- CONFIG_ARM_TEGRA_DEVFREQ=m
-+CONFIG_DEVFREQ_EVENT_EXYNOS_NOCP=m
- CONFIG_EXTCON_MAX14577=m
- CONFIG_EXTCON_MAX77693=m
- CONFIG_EXTCON_MAX8997=m
- CONFIG_TI_AEMIF=y
-+CONFIG_EXYNOS5422_DMC=m
- CONFIG_IIO=y
- CONFIG_IIO_SW_TRIGGER=y
- CONFIG_ASPEED_ADC=m
 -- 
-2.17.1
-
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
