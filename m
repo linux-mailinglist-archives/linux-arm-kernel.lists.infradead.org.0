@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82502CB9FF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 14:10:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77208CBA04
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 14:10:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XJLJ/yOFydpXfH/bCQ4mdhjdR6xMQdpVuwR8jpOC70k=; b=TBf7jkpQQc15HV
-	b1fQkp0aNwFxrugcn+Q07c70wZ+lUZyNkgNFMr86ltFlIIe/QHnq3Qi8qLJMQviQRnlOqmEw2bJBC
-	7tIzAr43EeQtVcLloqnT/QCEymF6tZ/jPqdhm4BBtNJfw2ESNn5e5RYBOgAXoi82ti1XSpmKY3QnX
-	WRbsSt+ahdK7LL938wCu7FOC8nu+bQ3o86cTjRFUU+SNhAAjCs++NEwaYrHgR8+wyKCjNTNYBIIw9
-	qfRYxpZhbHPeKd47pIZnK39m2SKTnIEhDSqlgRURm2lj1VPANrokuAUahm3MzGby5ytwZpxU/mCQ7
-	Nv240JwDBE29dTgiNU2A==;
+	List-Owner; bh=36LqoD/l2/laGs9b9umoA8YT2SDv0bWZ29o6OBQdbsg=; b=Ltz9mkPdocAa1Z
+	zieXPaQrpFqW2mfqEhsTAjcg95ln51apMI/dq8mwL8cGitDc/FLaGfMbj+9logGFQ9LR08uElSZ4A
+	QucmRKFdcNahQJsFRwW4ITY55cxkY4sRmzIHcv1slmTZqtZObj1YpMkwrtASkeD2OGXoIr01qXgM2
+	atoeRWHoDZL6DEwaGR/CAg+axDiH1O8IWW8VFvErvuSoJupjtR9rI1FXDBwnpNXm8LJG8VUCkzLUE
+	NuuEqGkjQJ4mnfhaxmIrwPFxTp2jvRShMK8KH6sWkuYhAK6WMejAggU9O4W6YwRmodkA2FUJk/ktn
+	OF7F8yjive9K+7fypLCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGMPQ-0007fS-1M; Fri, 04 Oct 2019 12:10:10 +0000
+	id 1iGMPj-0000W6-DI; Fri, 04 Oct 2019 12:10:27 +0000
 Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGMKE-0001pj-7D
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 12:04:48 +0000
-Received: by mail-wr1-x442.google.com with SMTP id v8so6894678wrt.2
+ id 1iGMKB-0001l8-8i
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 12:04:46 +0000
+Received: by mail-wr1-x442.google.com with SMTP id j18so6054202wrq.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 04 Oct 2019 05:04:46 -0700 (PDT)
+ Fri, 04 Oct 2019 05:04:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=tFoAdqBLSyk0vZf6DS/EoHCTPxZncgXa+o7HCkM11aA=;
- b=FuzKo3BpnIg/0swZYbfGIFA4PGyd2EHKLKAI8rLcm6NT6sa0/QWTzFQEtQJTEQoMn2
- 1Z8P/BT2kJTpL25lfJAK7xlYakdueOiMheXxevmb8d4pK6JWH0g3osVsKxbU4WwPgWa9
- ukwzxksSebYMZ/uepoG7rgSc04lx17/7OiEU8rtoSbAokUhMVvYVFeUdb6jVhK6Y/SNv
- aChqcMrpCEadqBhzgEKck7nszBYjTx9hnT6A8Txc9++51TVY+co9ZM4tBwtkz0OVXCmG
- 2/ZtaX2mXqixZb7EHLg26aBNqr3bL/cycBSaCavuhPvD2TVlSSDBD5rnBadQO55Z1vCw
- D44g==
+ bh=TWQSpGfEQaZEDJmKuJhffA9rJ/sPngSGcPa+bzYw/v0=;
+ b=CK6qZipIDATO6K7IolEca2mCxEmRJrBu6B68PL9CtB976w3GH/1bR9ljLrEssR5rd8
+ gcilzm+mQDNPfKJJIgSecWp78SaL+brVhIKz1kluThlsQFpSmj6YcG4tYAcN0LCdT7qj
+ PDh68SGMMkqR5CW3LZybRe7qnwCTe0KJqPmKoMtnkSF+wHFkkDPSmqL5PPK791D4Ym6x
+ soGkNkwyHwuGA/OnDx6LVVCXL/BShD3c+U0f4viSTEFgaGVHJZ4wnqujcsFXmV9abbn4
+ KyHA0puIpIQtUpZ4HjwmcnxVIDd6aeurRAQFVd2Ki1mbmcd+yaS3D4rNRDtAfBdt+5Ja
+ xa7A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=tFoAdqBLSyk0vZf6DS/EoHCTPxZncgXa+o7HCkM11aA=;
- b=rmmDRY2JNQJoQUF7TzLGKaZwWn127iDWxgX3eVxHZ8nzWvhaSedId0OMIeoCXZqIgR
- N4qdcGcIbE7eI3UWQuL+EXWaz+8AtTcw56Nuxl4pwUZEVGPRgyHwXSPSVABT5eTzsOA3
- Jz/sLEuZBbjR9FzeTcbtvFK4uJ0x2LIliQ5qNwteQ67szhgZDNYkoNafBZiJRq9whyz2
- 6NQHJwgJyLC4RJx1Idro463qjH4wYzhNhfvsQ1l+6otit7PJs6DYnSL7Q6EozgJVvNOX
- g2rPNbUqPAwXyS8s28yeoUadQ1E1+XVKRChzcYSuEIjPYVO96mhPsh82FbvqwTevaI0L
- +gYA==
-X-Gm-Message-State: APjAAAXVv3zSWfv4IrxaCfls4OZ3ldC/tZ4ncoIZvwWNZ/Dk1aAXDt98
- IkXhurZ4ZMdxGTA03htohQyImjuq09m9eRxb
-X-Google-Smtp-Source: APXvYqyWO4f+J8l9DLWRg98/8IopX9xSrB3tv+oCli1PaCRSBUAzuBYk0ryqZQPWW4C+tiCuZeNzSw==
-X-Received: by 2002:adf:ec86:: with SMTP id z6mr178703wrn.231.1570190684222;
- Fri, 04 Oct 2019 05:04:44 -0700 (PDT)
+ bh=TWQSpGfEQaZEDJmKuJhffA9rJ/sPngSGcPa+bzYw/v0=;
+ b=rtmk6JcgCOSHicFEtPJH/aukyagE4gSJSdWBjrKpeUJKOo/mCzDLmWY2gShJ93247X
+ Is6ChhJsSFFwydHJXuqDQQEumrkfmqC99Eo+enRLyteTRuyPAfZs/XpjbDFJwugGTXnF
+ m1kBClzPYQHL3cKGcRo8TUtcqjImWMDjUuQXipikSgxxVKkMI1e8VR5ar1j8U9OJ5dnf
+ VDeMryZWDFrl+vKG8hJozFiSVFupZs7GPHuDOdZKhw0QNJ8M2KFgHnEz7W4TJge7eRH+
+ 8oe/rDoAb33Ra88G2VR/xuiubXSLR+7VElFfAFvxbF3QYm9BsKprIDNWw9brbldx4Bkg
+ x4nw==
+X-Gm-Message-State: APjAAAU6cfoMzBylWZ6Q+syaXjCmCxhIASfT89swAzKsUAElccr9IvyJ
+ nKZ8UhkKtpx4z7AWIQRDhNUTwHGFYKwKdYFK
+X-Google-Smtp-Source: APXvYqw0Rty4YcmmIVPc/oOzSyfhwOXpYNKn7oCDNDiMVtZPknlkqKG7QB2rj9+7H9l8ZSVPP7BciQ==
+X-Received: by 2002:a05:6000:105:: with SMTP id
+ o5mr10946803wrx.51.1570190680252; 
+ Fri, 04 Oct 2019 05:04:40 -0700 (PDT)
 Received: from sudo.home ([2a01:cb1d:112:6f00:b51e:3d9d:ec16:def5])
- by smtp.gmail.com with ESMTPSA id f8sm5019628wmb.37.2019.10.04.05.04.42
+ by smtp.gmail.com with ESMTPSA id f8sm5019628wmb.37.2019.10.04.05.04.38
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 04 Oct 2019 05:04:43 -0700 (PDT)
+ Fri, 04 Oct 2019 05:04:39 -0700 (PDT)
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [RFC/RFT PATCH 06/16] arm64: Add sysfs vulnerability show for
- spectre-v1
-Date: Fri,  4 Oct 2019 14:04:20 +0200
-Message-Id: <20191004120430.11929-7-ard.biesheuvel@linaro.org>
+Subject: [RFC/RFT PATCH 03/16] KVM: arm64: Set SCTLR_EL2.DSSBS if SSBD is
+ forcefully disabled and !vhe
+Date: Fri,  4 Oct 2019 14:04:17 +0200
+Message-Id: <20191004120430.11929-4-ard.biesheuvel@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191004120430.11929-1-ard.biesheuvel@linaro.org>
 References: <20191004120430.11929-1-ard.biesheuvel@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_050446_307054_840DD06F 
-X-CRM114-Status: GOOD (  10.29  )
+X-CRM114-CacheID: sfid-20191004_050443_346874_2B084720 
+X-CRM114-Status: GOOD (  11.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,49 +98,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Stefan Wahren <stefan.wahren@i2se.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
  Suzuki K Poulose <suzuki.poulose@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Mian Yousaf Kaukab <ykaukab@suse.de>, Jeremy Linton <jeremy.linton@arm.com>,
- Andre Przywara <andre.przywara@arm.com>, Marc Zyngier <maz@kernel.org>,
- Will Deacon <will.deacon@arm.com>, Will Deacon <will@kernel.org>
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>,
+ Jeremy Linton <jeremy.linton@arm.com>, Andre Przywara <andre.przywara@arm.com>,
+ Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Mian Yousaf Kaukab <ykaukab@suse.de>
+From: Will Deacon <will.deacon@arm.com>
 
-spectre-v1 has been mitigated and the mitigation is always active.
-Report this to userspace via sysfs
+When running without VHE, it is necessary to set SCTLR_EL2.DSSBS if SSBD
+has been forcefully disabled on the kernel command-line.
 
-Signed-off-by: Mian Yousaf Kaukab <ykaukab@suse.de>
-Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
-Reviewed-by: Andre Przywara <andre.przywara@arm.com>
-Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
-Tested-by: Stefan Wahren <stefan.wahren@i2se.com>
-Acked-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Acked-by: Christoffer Dall <christoffer.dall@arm.com>
 Signed-off-by: Will Deacon <will.deacon@arm.com>
-(cherry picked from commit 3891ebccace188af075ce143d8b072b65e90f695)
+Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+(cherry picked from commit 7c36447ae5a090729e7b129f24705bb231a07e0b)
 Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 ---
- arch/arm64/kernel/cpu_errata.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+ arch/arm64/include/asm/kvm_host.h | 11 +++++++++++
+ arch/arm64/kvm/hyp/sysreg-sr.c    | 11 +++++++++++
+ 2 files changed, 22 insertions(+)
 
-diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
-index 7fe3a60d1086..3758ba538a43 100644
---- a/arch/arm64/kernel/cpu_errata.c
-+++ b/arch/arm64/kernel/cpu_errata.c
-@@ -729,3 +729,9 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
- 	{
- 	}
- };
+diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+index 6abe4002945f..367b2e0b6d76 100644
+--- a/arch/arm64/include/asm/kvm_host.h
++++ b/arch/arm64/include/asm/kvm_host.h
+@@ -398,6 +398,8 @@ struct kvm_vcpu *kvm_mpidr_to_vcpu(struct kvm *kvm, unsigned long mpidr);
+ 
+ DECLARE_PER_CPU(kvm_cpu_context_t, kvm_host_cpu_state);
+ 
++void __kvm_enable_ssbs(void);
 +
-+ssize_t cpu_show_spectre_v1(struct device *dev, struct device_attribute *attr,
-+			    char *buf)
+ static inline void __cpu_init_hyp_mode(phys_addr_t pgd_ptr,
+ 				       unsigned long hyp_stack_ptr,
+ 				       unsigned long vector_ptr)
+@@ -418,6 +420,15 @@ static inline void __cpu_init_hyp_mode(phys_addr_t pgd_ptr,
+ 	 */
+ 	BUG_ON(!static_branch_likely(&arm64_const_caps_ready));
+ 	__kvm_call_hyp((void *)pgd_ptr, hyp_stack_ptr, vector_ptr, tpidr_el2);
++
++	/*
++	 * Disabling SSBD on a non-VHE system requires us to enable SSBS
++	 * at EL2.
++	 */
++	if (!has_vhe() && this_cpu_has_cap(ARM64_SSBS) &&
++	    arm64_get_ssbd_state() == ARM64_SSBD_FORCE_DISABLE) {
++		kvm_call_hyp(__kvm_enable_ssbs);
++	}
+ }
+ 
+ static inline bool kvm_arch_check_sve_has_vhe(void)
+diff --git a/arch/arm64/kvm/hyp/sysreg-sr.c b/arch/arm64/kvm/hyp/sysreg-sr.c
+index 963d669ae3a2..7414b76191c2 100644
+--- a/arch/arm64/kvm/hyp/sysreg-sr.c
++++ b/arch/arm64/kvm/hyp/sysreg-sr.c
+@@ -293,3 +293,14 @@ void kvm_vcpu_put_sysregs(struct kvm_vcpu *vcpu)
+ 
+ 	vcpu->arch.sysregs_loaded_on_cpu = false;
+ }
++
++void __hyp_text __kvm_enable_ssbs(void)
 +{
-+	return sprintf(buf, "Mitigation: __user pointer sanitization\n");
++	u64 tmp;
++
++	asm volatile(
++	"mrs	%0, sctlr_el2\n"
++	"orr	%0, %0, %1\n"
++	"msr	sctlr_el2, %0"
++	: "=&r" (tmp) : "L" (SCTLR_ELx_DSSBS));
 +}
 -- 
 2.20.1
