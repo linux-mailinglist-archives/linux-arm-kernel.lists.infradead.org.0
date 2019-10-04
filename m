@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A84ACBCF6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 16:20:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9247ACBCFC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 16:21:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=OCTK/Cor9J5JIyC4vhyA0nYS8U/SzXPMIYPOp98PGnA=; b=FJV+YVMZc0+jyyJkyLDkr8ukR
-	3EIlSivvCSqBySVBY0Wu8IXk3kVvJDAYhkAb+qvPQ2/lfRZP2ugd1S9FnvD7HEufhN14FRHK5YQXu
-	XO1QuCbq79Budx6VIM+p9t2efNTkC7Id8BCYlJgIQg1EQmeyN3EvPkE9MNbga0yQyv5yQ1XhENiIX
-	IuHvqzdWXFjmM8YAJdFnzcg0vYrv2o/TNHusR9EK/aRse2bgVmq8ODgLgGur9iX3K6hZ+qYMTUR5f
-	aAdEtIXVxhCQNlZ59oNwJI/rLU8IC/emcpXyiTkN9J+5T5RyQNuCQszGXG2CyeX+ZrXJq2iUHedU7
-	ossMHaKqQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LFyEB7p2n4tvNsNZSjMgtiN7GJTM7m5dfcqKd9Nm2TM=; b=brUTNGCylk3Oi7
+	xwa7ymn0eZhOT8NvijS+2FhfpkpQ7WNihGrusBpv4K4yywhe0LCPLnGaljrFBYT3Uo1A9NKm8xOQj
+	+oRau6P9RseWAgsXIH2qGI4mLn/pvVIZsMXnew7PXSn/MyFp1dQs7QIpJz9zw7eBLTeK1reHCQN4Q
+	kkysk6ethGcdNrrdZ+0zyyW/jIugMyh1HBsiZiA8tTIAIHElikmA41Lu3iiHh5TJjRECs4zbrJCZu
+	YwAqcucOzUSVVhH5ra0CHRNY7NG3DwFTfWAMFwA7sa87h++4ekPAXC11H5z/qOjhBRe1UAG40Ketq
+	v+SJ1OKowDa9n4aeD+bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGORK-0001pw-Ay; Fri, 04 Oct 2019 14:20:14 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGORA-0001KA-TF; Fri, 04 Oct 2019 14:20:06 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0216B1597;
- Fri,  4 Oct 2019 07:20:04 -0700 (PDT)
-Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 303E33F68E;
- Fri,  4 Oct 2019 07:20:03 -0700 (PDT)
-Subject: =?UTF-8?Q?Re=3a_=5bPATCH_3/3=5d_arm64=3a_dts=3a_rockchip=3a_fix_Roc?=
- =?UTF-8?B?a1BybzY0IHNkbW1jIHNldHRpbmdz44CQ6K+35rOo5oSP77yM6YKu5Lu255SxbGlu?=
- =?UTF-8?Q?ux-rockchip-bounces+shawn=2elin=3drock-chips=2ecom=40lists=2einfr?=
- =?UTF-8?B?YWRlYWQub3Jn5Luj5Y+R44CR?=
-To: Soeren Moch <smoch@web.de>, Shawn Lin <shawn.lin@rock-chips.com>,
- Heiko Stuebner <heiko@sntech.de>
-References: <20191003215036.15023-1-smoch@web.de>
- <20191003215036.15023-3-smoch@web.de>
- <31181f3c-20ec-e717-1f7e-8b35cd54d96d@arm.com>
- <a8b20c45-0426-ee42-4efc-52e56ea6bb20@web.de>
- <120e2dbc-55eb-2205-b00f-7e50928ec706@rock-chips.com>
- <1c452b8b-853f-8f58-5f3a-0bbecbe20557@web.de>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <fc7dce53-ad39-26e3-7c19-ab60ff4cc332@arm.com>
-Date: Fri, 4 Oct 2019 15:20:01 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1iGOS8-0002iV-97; Fri, 04 Oct 2019 14:21:04 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iGORl-0002XS-Cl
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 14:20:43 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iGORh-0008UR-Aw; Fri, 04 Oct 2019 16:20:37 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iGORg-0004n2-VN; Fri, 04 Oct 2019 16:20:36 +0200
+Date: Fri, 4 Oct 2019 16:20:36 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Subject: Re: [PATCH v2 3/6] pwm: mxs: add support for inverse polarity
+Message-ID: <20191004142036.apzjf54dlzfah5xl@pengutronix.de>
+References: <20191004133207.6663-1-linux@rasmusvillemoes.dk>
+ <20191004133207.6663-4-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
-In-Reply-To: <1c452b8b-853f-8f58-5f3a-0bbecbe20557@web.de>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20191004133207.6663-4-linux@rasmusvillemoes.dk>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_072005_040834_8606ECC3 
-X-CRM114-Status: GOOD (  22.93  )
+X-CRM114-CacheID: sfid-20191004_072041_464345_18138667 
+X-CRM114-Status: GOOD (  18.23  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,67 +68,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: devicetree@vger.kernel.org, linux-pwm@vger.kernel.org,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMDQvMTAvMjAxOSAwNDozOSwgU29lcmVuIE1vY2ggd3JvdGU6Cj4gCj4gCj4gT24gMDQuMTAu
-MTkgMDQ6MTMsIFNoYXduIExpbiB3cm90ZToKPj4gT24gMjAxOS8xMC80IDg6NTMsIFNvZXJlbiBN
-b2NoIHdyb3RlOgo+Pj4KPj4+Cj4+PiBPbiAwNC4xMC4xOSAwMjowMSwgUm9iaW4gTXVycGh5IHdy
-b3RlOgo+Pj4+IE9uIDIwMTktMTAtMDMgMTA6NTAgcG0sIFNvZXJlbiBNb2NoIHdyb3RlOgo+Pj4+
-PiBBY2NvcmRpbmcgdG8gdGhlIFJvY2tQcm82NCBzY2hlbWF0aWMgWzFdIHRoZSByazMzOTkgc2Rt
-bWMKPj4+Pj4gY29udHJvbGxlciBpcwo+Pj4+PiBjb25uZWN0ZWQgdG8gYSBtaWNyb1NEIChURiBj
-YXJkKSBzbG90LCB3aGljaCBjYW5ub3QgYmUgc3dpdGNoZWQgdG8KPj4+Pj4gMS44Vi4KPj4+Pgo+
-Pj4+IFJlYWxseT8gQUZBSUNTIHRoZSBTRE1NQzAgd2lyaW5nIGxvb2tzIHByZXR0eSBtdWNoIGlk
-ZW50aWNhbCB0byB0aGUKPj4+PiBOYW5vUEMtVDQgc2NoZW1hdGljIChpdCdzIHRoZSBzYW1lIHJl
-ZmVyZW5jZSBkZXNpZ24sIGFmdGVyIGFsbCksIGFuZCBJCj4+Pj4ga25vdyB0aGF0IGJvYXJkIGNh
-biBoYXBwaWx5IGRyaXZlIGEgVUhTLUkgbWljcm9TRCBjYXJkIHdpdGggMS44diBJL09zLAo+Pj4+
-IGJlY2F1c2UgbWluZSdzIGRvaW5nIHNvIHJpZ2h0IG5vdy4KPj4+Pgo+Pj4+IFJvYmluLgo+Pj4g
-T0ssIHRoZSBSb2NrUHJvNjQgZG9lcyBub3QgYWxsb3cgYSBjYXJkIHJlc2V0IChwb3dlciBjeWNs
-ZSkgc2luY2UKPj4+IFZDQzNWMF9TRCBpcyBkaXJlY3RseSBjb25uZWN0ZWQgdG8gVkNDM1YzX1NZ
-UyAodmlhIFI4OTU1NSksIHRoZQo+Pj4gU0RNTUMwX1BXSF9IIHNpZ25hbCBpcyBub3QgY29ubmVj
-dGVkLiBTbyB0aGUgY2FyZCBmYWlscyB0byBpZGVudGlmeQo+Pj4gaXRzZWxmIGFmdGVyIHN1c3Bl
-bmQgb3IgcmVib290IHdoZW4gc3dpdGNoZWQgdG8gMS44ViBvcGVyYXRpb24uCgpBaCwgdGhhbmtz
-IGZvciBjbGFyaWZ5aW5nIC0gSSBkaWQgb3Zlcmxvb2sgdGhlIHN1YnRsZXR5IHRoYXQgVTEyIGFu
-ZCAKZnJpZW5kcyBoYXZlICJOQyIgYXMgYWx0ZXJuYXRpdmUgcGFydCBudW1iZXJzLCBldmVuIHRo
-b3VnaCB0aGV5IGFyZW4ndCAKYWN0dWFsbHkgbWFya2VkIGFzIEROUC4gU28gaXQncyBzdGlsbCBu
-b3Qgc28gbXVjaCAiY2Fubm90IGJlIHN3aXRjaGVkIiAKYXMgInN3aXRjaGluZyBjYW4gbGVhZCB0
-byBvdGhlciBwcm9ibGVtcyIuCgo+Pgo+PiBJIGJlbGlldmUgd2UgYWRkcmVzc2VkIHRoaXMgaXNz
-dWUgbG9uZyB0aW1lIGFnbywgcGxlYXNlIGNoZWNrOgo+Pgo+PiBodHRwczovL2dpdC5rZXJuZWwu
-b3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC90b3J2YWxkcy9saW51eC5naXQvY29tbWl0Lz9p
-ZD02YTExZmM0N2YxNzVjOGQ4NzAxOGU4OWNiNThlMmQzNmM2NjUzNGNiCj4+Cj4gVGhhbmtzIGZv
-ciB0aGUgcG9pbnRlci4KPiBJbiB0aGlzIGNhc2UgSSBndWVzcyBJIHNob3VsZCB1c2UgZm9sbG93
-aW5nIHBhdGNoIGluc3RlYWQ6Cj4gCj4gLS0tIHJrMzM5OS1yb2NrcHJvNjQuZHRzLmJhayDCoMKg
-IDIwMTktMTAtMDMgMjI6MTQ6MDAuMDY3NzQ1Nzk5ICswMjAwCj4gKysrIHJrMzM5OS1yb2NrcHJv
-NjQuZHRzwqDCoMKgIDIwMTktMTAtMDQgMDA6MDI6NTAuMDQ3ODkyMzY2ICswMjAwCj4gQEAgLTYx
-OSw2ICs2MTksOCBAQAo+ICDCoMKgwqDCoCBtYXgtZnJlcXVlbmN5ID0gPDE1MDAwMDAwMD47Cj4g
-IMKgwqDCoMKgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4gIMKgwqDCoMKgIHBpbmN0cmwt
-MCA9IDwmc2RtbWNfY2xrICZzZG1tY19jbWQgJnNkbW1jX2J1czQ+Owo+ICvCoMKgwqAgc2QtdWhz
-LXNkcjEwNDsKPiArwqDCoMKgIHZxbW1jLXN1cHBseSA9IDwmdmNjX3NkaW8+Owo+ICDCoMKgwqDC
-oCBzdGF0dXMgPSAib2theSI7Cj4gIMKgfTsKPiAgIAo+IFdoZW4gSSBkbyBzbywgdGhlIHNkIGNh
-cmQgaXMgZGV0ZWN0ZWQgYXMgU0RSMTA0LCBidXQgYSByZWJvb3QgaGFuZ3M6Cj4gCj4gQm9vdDE6
-IDIwMTgtMDYtMjYsIHZlcnNpb246IDEuMTQKPiBDUFVJZCA9IDB4MAo+IENoaXBUeXBlID0gMHgx
-MCwgMjg2Cj4gU3BpX0NoaXBJZCA9IGM4NDAxOAo+IG5vIGZpbmQgcmtwYXJ0aXRpb24KPiBTcGlC
-b290SW5pdDpmZmZmZmZmZgo+IG1tYzogRVJST1I6IFNESENJIEVSUjpjbWQ6MHgxMDIsc3RhdDow
-eDE4MDAwCj4gbW1jOiBFUlJPUjogQ2FyZCBkaWQgbm90IHJlc3BvbmQgdG8gdm9sdGFnZSBzZWxl
-Y3QhCj4gZW1tYyByZWluaXQKPiBtbWM6IEVSUk9SOiBTREhDSSBFUlI6Y21kOjB4MTAyLHN0YXQ6
-MHgxODAwMAo+IG1tYzogRVJST1I6IENhcmQgZGlkIG5vdCByZXNwb25kIHRvIHZvbHRhZ2Ugc2Vs
-ZWN0IQo+IGVtbWMgcmVpbml0Cj4gbW1jOiBFUlJPUjogU0RIQ0kgRVJSOmNtZDoweDEwMixzdGF0
-OjB4MTgwMDAKPiBtbWM6IEVSUk9SOiBDYXJkIGRpZCBub3QgcmVzcG9uZCB0byB2b2x0YWdlIHNl
-bGVjdCEKPiBTZG1tY0luaXQ9MiAxCj4gbW1jMDpjbWQ1LDMyCj4gbW1jMDpjbWQ3LDMyCj4gbW1j
-MDpjbWQ1LDMyCj4gbW1jMDpjbWQ3LDMyCj4gbW1jMDpjbWQ1LDMyCj4gbW1jMDpjbWQ3LDMyCj4g
-U2RtbWNJbml0PTAgMQo+IAo+IFNvIEkgZ3Vlc3MgSSBzaG91bGQgdXNlIGEgZGlmZmVyZW50IG1p
-bmlsb2FkZXIgZm9yIHRoaXMgcmVib290IHRvIHdvcmshPwo+IE9yIHdoYXQgZWxzZSBjb3VsZCBi
-ZSB3cm9uZyBoZXJlPwoKSG1tLCBJIGd1ZXNzIHRoaXMgaXMgInRoZSBUaW5rZXJib2FyZCBwcm9i
-bGVtIiBhZ2FpbiAtIHRoZSBwYXRjaCBhYm92ZSAKd291bGQgYmUgT0sgaWYgd2UgY291bGQgZ2V0
-IGFzIGZhciBhcyB0aGUga2VybmVsLCBidXQgY2FuJ3QgaGVscCBpZiB0aGUgCm9mZmVuZGluZyBj
-YXJkIGlzIGl0c2VsZiB0aGUgYm9vdCBtZWRpdW0uIFRoZXJlIHdhcyBhIHByb3Bvc2FsIGhlcmU6
-CgpodHRwczovL3BhdGNod29yay5rZXJuZWwub3JnL3BhdGNoLzEwODE3MjE3LwoKYWx0aG91Z2gg
-SSdtIG5vdCBzdXJlIHdoYXQgaWYgYW55IHByb2dyZXNzIGhhcyBiZWVuIG1hZGUgc2luY2UgdGhl
-bi4KClJvYmluLgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo=
+On Fri, Oct 04, 2019 at 03:32:04PM +0200, Rasmus Villemoes wrote:
+> If I'm reading of_pwm_xlate_with_flags() right, existing device trees
+> that set #pwm-cells =3D 2 will continue to work.
+
+Yes, that's what I expect, too.
+
+> Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+> ---
+>  drivers/pwm/pwm-mxs.c | 14 ++++++++++----
+>  1 file changed, 10 insertions(+), 4 deletions(-)
+> =
+
+> diff --git a/drivers/pwm/pwm-mxs.c b/drivers/pwm/pwm-mxs.c
+> index 5a6835e18fc6..57562221c439 100644
+> --- a/drivers/pwm/pwm-mxs.c
+> +++ b/drivers/pwm/pwm-mxs.c
+> @@ -25,8 +25,11 @@
+>  #define  PERIOD_PERIOD(p)	((p) & 0xffff)
+>  #define  PERIOD_PERIOD_MAX	0x10000
+>  #define  PERIOD_ACTIVE_HIGH	(3 << 16)
+> +#define  PERIOD_ACTIVE_LOW	(2 << 16)
+> +#define  PERIOD_INACTIVE_HIGH	(3 << 18)
+>  #define  PERIOD_INACTIVE_LOW	(2 << 18)
+>  #define  PERIOD_POLARITY_NORMAL	(PERIOD_ACTIVE_HIGH | PERIOD_INACTIVE_LO=
+W)
+> +#define  PERIOD_POLARITY_INVERSE	(PERIOD_ACTIVE_LOW | PERIOD_INACTIVE_HI=
+GH)
+>  #define  PERIOD_CDIV(div)	(((div) & 0x7) << 20)
+>  #define  PERIOD_CDIV_MAX	8
+>  =
+
+> @@ -50,9 +53,7 @@ static int mxs_pwm_apply(struct pwm_chip *chip, struct =
+pwm_device *pwm,
+>  	unsigned int period_cycles, duty_cycles;
+>  	unsigned long rate;
+>  	unsigned long long c;
+> -
+> -	if (state->polarity !=3D PWM_POLARITY_NORMAL)
+> -		return -ENOTSUPP;
+> +	unsigned int pol_bits;
+>  =
+
+>  	/*
+>  	 * If the PWM channel is disabled, make sure to turn on the
+> @@ -91,9 +92,12 @@ static int mxs_pwm_apply(struct pwm_chip *chip, struct=
+ pwm_device *pwm,
+>  	 * only take effect at the beginning of a new period, avoiding
+>  	 * glitches.
+>  	 */
+> +
+> +	pol_bits =3D state->polarity =3D=3D PWM_POLARITY_NORMAL ?
+> +		PERIOD_POLARITY_NORMAL : PERIOD_POLARITY_INVERSE;
+>  	writel(duty_cycles << 16,
+>  	       mxs->base + PWM_ACTIVE0 + pwm->hwpwm * 0x20);
+> -	writel(PERIOD_PERIOD(period_cycles) | PERIOD_POLARITY_NORMAL | PERIOD_C=
+DIV(div),
+> +	writel(PERIOD_PERIOD(period_cycles) | pol_bits | PERIOD_CDIV(div),
+>  	       mxs->base + PWM_PERIOD0 + pwm->hwpwm * 0x20);
+
+Is the avoidance of glitches still true when period changes? I assume
+that yes, but I wonder if you tested that.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
