@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1D94CB86D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 12:37:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0D4CCB874
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 12:37:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2T4Nd8IZS2FaxilTcu5idzi+w5qb1t416UhqaFghe9U=; b=A40wSaSRauCt3Q
-	hUR3V0mmMptxq0i/WWKn2EKkA5rrITNIu71st99V4O0N8fmI9y/k8VMNgixyz2Q8f4jMmEWD2su7Z
-	UvKe6FmBQHElybXlEt295wrjq1qXttY+r57o9tFR5AFP1MjjcC4q7cXeIAwXqvm5EmtMxwhrw/oFx
-	mblyb949DMF8RIFzGCUulBTW0UOwtm31StsF15+ynt/fvs/HD5srBRtGe7SZn70IBKyT+zBfup3IZ
-	7D+3DG+Zb4HFGenm6rCvbcvlBDFhPxVcA3sklV/x1ZeTZPzUvQW7QFQIv70Dvp/itIuNMxHzKpAXz
-	RGWj5ETTvRmfc/UpY3/w==;
+	List-Owner; bh=SzAnrCmaBwWCYP7QIDZdeAYLyWS2BGUA7TEmyEj2Y0k=; b=cxfGzP+kFDyfFF
+	CYH8yU2PaBtj7q5+NQvvzqf46NGJZDjSrIAE9Mm5Q4sWZvdvDXgHWKoAHppPvzLtjLvCNqorMfhM0
+	x31kF+6yFzrMdGEqOK+YUdkURNHiMil0pnltI/qQryhxbZB4t5ZdZ478vnz2Vbrb9G7ZdEADNoqCf
+	RBZTd0je+OzN3SzoST963U9PEMhNXdPvPjMm7mnaHRQ5kcLw7TIsuOhENLW4DvhKypJN5LUUIX+Lo
+	kkJdNgFGYiSZ/KKn405GnlthpDxrtu17cvuzDWjVJDYrj76ca0hCHpyphh6vlREOJgGNpt5TvPfli
+	kuWATF1ZeTrhnSLOnSqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGKxI-0000RV-Sj; Fri, 04 Oct 2019 10:37:00 +0000
+	id 1iGKxq-0000mz-Nt; Fri, 04 Oct 2019 10:37:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGKwv-0000HJ-IA
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 10:36:46 +0000
+ id 1iGKxi-0000m1-G7
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 10:37:27 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E54D7215EA;
- Fri,  4 Oct 2019 10:36:35 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D9D6B215EA;
+ Fri,  4 Oct 2019 10:37:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570185397;
- bh=rIudrNGjah/L0Jg56io6hWVEojz5fibU2TXQSNQLG4o=;
+ s=default; t=1570185446;
+ bh=iBQF2+NS3IUMK5BhUwN9rX2yg8DwSDs2+jK+wIGNkkE=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=deaqYMTwHkkS2pcpxPp6MFDeoZRdg1jAMQ9Ks/PvvG1SgrOnSpZXaPIZ/Mqz4/4sR
- 53IbgRYk+B2YUlGXEhB6eQ6ogJKcC1flrwRXbnWHkxfnkQJtnHFRTCVURWPxdpbOZx
- O75aUjUg8u3hpJbhbvfoNQ2ML68N6uqDP4I7T99A=
-Date: Fri, 4 Oct 2019 11:36:33 +0100
+ b=Ign7A6WyVcqgWtlm8J4o3Lamf2+hcDBoVklGntADdUH0ePlfnG02YAsHEfXfTsOwz
+ Wo8n+BSt9/5agQ6bgT/JE2am3QYMnfMsmztBqBCxOWFiohmgPvIDtBcX/2D3jAfiX2
+ nnQATchgEYXKtKxYaP1aztOMER2qfHnYKK9OFAoY=
+Date: Fri, 4 Oct 2019 11:37:22 +0100
 From: Will Deacon <will@kernel.org>
 To: Julien Grall <julien.grall@arm.com>
-Subject: Re: [PATCH 1/4] arm64: cpufeature: Effectively expose FRINT
- capability to userspace
-Message-ID: <20191004103632.lnkyxq2h2owdf7c4@willie-the-truck>
+Subject: Re: [PATCH 0/4] arm64/cpufeature: Fix + doc update
+Message-ID: <20191004103721.tnjii772ts72pnm5@willie-the-truck>
 References: <20191003111211.483-1-julien.grall@arm.com>
- <20191003111211.483-2-julien.grall@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191003111211.483-2-julien.grall@arm.com>
+In-Reply-To: <20191003111211.483-1-julien.grall@arm.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_033637_748480_03F91D42 
-X-CRM114-Status: GOOD (  15.55  )
+X-CRM114-CacheID: sfid-20191004_033726_566442_95A0134B 
+X-CRM114-Status: UNSURE (   8.20  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,35 +77,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, mark.brown@arm.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, suzuki.poulose@arm.com
+Cc: Jonathan Corbet <corbet@lwn.net>, catalin.marinas@arm.com,
+ linux-doc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ suzuki.poulose@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 03, 2019 at 12:12:08PM +0100, Julien Grall wrote:
-> The HWCAP framework will detect a new capability based on the sanitized
-> version of the ID registers.
-> 
-> Sanitization is based on a whitelist, so any field not described will end
-> up to be zeroed.
-> 
-> At the moment, ID_AA64ISAR1_EL1.FRINTTS is not described in
-> ftr_id_aa64isar1. This means the field will be zeroed and therefore the
-> userspace will not be able to see the HWCAP even if the hardware
-> supports the feature.
-> 
-> This can be fixed by describing the field in ftr_id_aa64isar1.
-> 
-> Fixes: ca9503fc9e98 ("arm64: Expose FRINT capabilities to userspace")
-> Signed-off-by: Julien Grall <julien.grall@arm.com>
-> Cc: mark.brown@arm.com
-> ---
->  arch/arm64/kernel/cpufeature.c | 1 +
->  1 file changed, 1 insertion(+)
+On Thu, Oct 03, 2019 at 12:12:07PM +0100, Julien Grall wrote:
+> This patch fix an issue related to exposing the FRINT capability to
+> userspace (see patch #1). The rest is documentation update.
+>
+For patches 2-4:
 
-D'oh, we should've caught this in testing. Queued as a fix.
+Acked-by: Will Deacon <will@kernel.org>
+
+Catalin can take them for 5.5, since I don't think they're urgent.
 
 Will
 
