@@ -2,62 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 943F6CB8CD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 13:00:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E6A7CB8F4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 13:15:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mo8T0pXmnQHUr1OxI4Ay7hhw5H3QAlMv6dwMKN6uTic=; b=W4KZ6EkD4bxNxH
-	yGpNwdxg1njHHHfXe0gYVN/vuy8vjfRQ09icjmP0MTjIA2i3IzvFeK4iEE9U7xbjYo9lPlb7qisC5
-	2e7B26ICyl+iO0psHsPWNvdrj2agUPm+bLUYY3NAu+Ew8HwZBsr7VjjzNsShq1tN/DlDzDPKa9bXG
-	BRuz+uHq1P0ogOIeR0xH1YNhDxdwBqOubL1bgvCYcnHGL7HDneipNC0XbMHn0o/ceggZc1hou5kXo
-	805mEZpffY5LKMPpjJzSs44bcr+Oe6Dw/bmzg+S5Yc+Fsvr2tMk3jl1OcEMaNUuQbViesq2JrwgZ/
-	2uzXYExkggzlP0d9kCCQ==;
+	List-Owner; bh=bdka0FYykM0+9PTzpBBnKldDroHodiO9N6V6Yogyq0U=; b=HOy+6BVV3v9bTB
+	GRMKlCWuPFKP2jiSPa+HvDRuJwdNkdmX6oai77zfF3VW8bMn74hjoZRSLk3oPhJXSkLiH1sg9yD68
+	TNRZ4jRRcPIH5f+NNjeslZEjnBRgoRuAHT61S5GgbbGzQcuKqxi38dIeWeZjiFWv9K/+YyCf/O+Nd
+	BEEAEoO+DRHeclFe0o9nCst8BROKvcMLKRe8ekq4U56wc1DZcZXG3nBhNCDvmz9f6Jgy4PXMur4cj
+	2yXd7Yto854VX82AACvqgpyqIuADgtkrG2dldWU4WFoe5DjkavPcCgwIJlBmgGmGbz3T99CUcI+Fd
+	GEqqqpdQXPOU0sD7Z5wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGLJX-0000UC-3Y; Fri, 04 Oct 2019 10:59:59 +0000
-Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
+	id 1iGLYd-0006f7-0w; Fri, 04 Oct 2019 11:15:35 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGLJN-0000Th-J6
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 10:59:51 +0000
-Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
- [IPv6:2a01:4f9:c010:4572::80:2])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 59937634C87;
- Fri,  4 Oct 2019 13:59:04 +0300 (EEST)
-Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
- (envelope-from <sakari.ailus@retiisi.org.uk>)
- id 1iGLIc-0002PR-Nb; Fri, 04 Oct 2019 13:59:02 +0300
-Date: Fri, 4 Oct 2019 13:59:02 +0300
-From: Sakari Ailus <sakari.ailus@iki.fi>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: Re: [PATCH v4 2/2] media: i2c: Add IMX290 CMOS image sensor driver
-Message-ID: <20191004105902.GM896@valkosipuli.retiisi.org.uk>
-References: <20191003095503.12614-1-manivannan.sadhasivam@linaro.org>
- <20191003095503.12614-3-manivannan.sadhasivam@linaro.org>
- <20191004092336.GL896@valkosipuli.retiisi.org.uk>
- <20191004101902.GA19685@mani>
+ id 1iGLYW-0006em-Qk
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 11:15:30 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id AF9F0ACEC;
+ Fri,  4 Oct 2019 11:15:24 +0000 (UTC)
+Date: Fri, 4 Oct 2019 13:15:21 +0200
+From: Petr Mladek <pmladek@suse.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] panic: Ensure preemption is disabled during panic()
+Message-ID: <20191004111521.y6iera4eico6ezfq@pathway.suse.cz>
+References: <20191002123538.22609-1-will@kernel.org>
+ <201910021355.E578D2FFAF@keescook>
+ <20191003205633.w26geqhq67u4ysit@willie-the-truck>
+ <20191004091142.57iylai22aqpu6lu@pathway.suse.cz>
+ <20191004092917.GY25745@shell.armlinux.org.uk>
+ <20191004104947.vbxe5kv3nbjxqs55@willie-the-truck>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191004101902.GA19685@mani>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191004104947.vbxe5kv3nbjxqs55@willie-the-truck>
+User-Agent: NeoMutt/20170912 (1.9.0)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_035949_813593_004DDCD6 
-X-CRM114-Status: GOOD (  14.51  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191004_041529_013675_BF1D6AC5 
+X-CRM114-Status: GOOD (  21.81  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,55 +65,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
- linux-kernel@vger.kernel.org, a.brela@framos.com, robh+dt@kernel.org,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Feng Tang <feng.tang@intel.com>, Kees Cook <keescook@chromium.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, contact@xogium.me,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Steven Rostedt <rostedt@goodmis.org>, linux-kernel@vger.kernel.org,
+ Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
+ Ingo Molnar <mingo@redhat.com>, stable@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Manivannan,
-
-On Fri, Oct 04, 2019 at 03:49:02PM +0530, Manivannan Sadhasivam wrote:
-> Hi Sakari,
-> 
-> On Fri, Oct 04, 2019 at 12:23:36PM +0300, Sakari Ailus wrote:
-> > Hi Manivannan,
-> > 
-> > On Thu, Oct 03, 2019 at 03:25:03PM +0530, Manivannan Sadhasivam wrote:
-> > > Add driver for Sony IMX290 CMOS image sensor driver. The driver only
-> > > supports I2C interface for programming and MIPI CSI-2 for sensor output.
+On Fri 2019-10-04 11:49:48, Will Deacon wrote:
+> On Fri, Oct 04, 2019 at 10:29:17AM +0100, Russell King - ARM Linux admin wrote:
+> > On Fri, Oct 04, 2019 at 11:11:42AM +0200, Petr Mladek wrote:
+> > > On Thu 2019-10-03 21:56:34, Will Deacon wrote:
+> > > > I've deliberately left the irq part alone, since I think
+> > > > having magic sysrq work via the keyboard interrupt is desirable from the
+> > > > panic loop.
 > > > 
-> > > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> > > I agree that we should keep sysrq working.
+> > > 
+> > > One pity thing is that led_panic_blink() in
+> > > leds/drivers/trigger/ledtrig-panic.c uses workqueues:
+> > > 
+> > >   + led_panic_blink()
+> > >     + led_trigger_event()
+> > >       + led_set_brightness()
+> > > 	+ schedule_work()
+> > > 
+> > > It means that it depends on the scheduler. I guess that it
+> > > does not work in many panic situations. But this patch
+> > > will always block it.
+> > > 
+> > > I agree that it is strange that userspace still works at
+> > > this stage. But does it cause any real problems?
 > > 
-> > Could you remove the unneeded ret variable from imx290_power_on() and
-> > unneeded goto in the same function?
-> >
+> > Yes, there are watchdog drivers that continue to pat their watchdog
+> > after the kernel has panic'd.  It makes watchdogs useless (which is
+> > exactly how this problem was discovered.)
 > 
-> yep, sure.
->  
-> > The MAINTAINERS entry belongs to the first patch adding new files.
-> > 
-> 
-> You mean the bindings patch? If then, sorry no. Usually the devicetree bindings
-> belongs to a separate patch and that is what perferred by Rob. I prefer the
-> MAINTAINERS entry in a separate patch but I've seen subsystems maintainers
-> asking to squash it with the driver patch. But squashing it with bindings
-> patch seems weird to me.
+> Indeed, and I think the LED blinking is already unreliable if the
+> brightness operation needs to sleep. For example, if the kernel isn't
+> preemptible or the work gets queued up on a different CPU which is
+> sitting in panic_smp_self_stop().
 
-This has been an established practice at least in the media tree. The
-MAINTAINERS change is small, and bindings come before the driver. And the
-MAINTAINERS change needs to come no later than files are being added, or a
-checkpatch.pl warning follows --- which is entirely reasonable. You could
-put the MAINTAINERS change to a separate patch, yes, but I personally think
-it fits fine with the DT binding patch.
+To make it clear. I do not want to block this patch. I just wanted
+to point out the problem. I am not sure how the blinking is important
+these days. Well, I could imagine that it might be useful on some
+embedded devices.
 
--- 
-Regards,
+Another question is how many people want to end up with dead system
+these days. The watchdogs are likely used in data centers. I guess
+that automatic reboot in panic() is a better choice there.
 
-Sakari Ailus
+Anyway, it might make sense to remove the panic blinking code when
+it will not have a chance to work.
+
+Best Regards,
+Petr
 
 _______________________________________________
 linux-arm-kernel mailing list
