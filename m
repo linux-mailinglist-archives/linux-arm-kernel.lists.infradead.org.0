@@ -2,99 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9616CC0FA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 18:40:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 843CFCC158
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 19:05:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=a3chcLOlRD48mLOBkiTMew1JX/LDeLjd+C1ZbpaMsgc=; b=ENljK0Jkxz3c6k16Uzj6vlTeb
-	a+WQVKJwuQX21IwZPoQ5xDIB4RtoULYdEGpcb1RbQ/U2W4UE8tC0oRDTuDcNt7JQ7FKAYMwBYCr0G
-	hcn7VoCdiRgYAgReP9pverW/jHascXdqGrakqYoRr17QkEFN0NAAKAtbyViSqU6PqMdoxaeVA+LTa
-	7LdimyTy1fxnlFllB9f1cyos3I0fqlnO/wJhIJEQ7k5BzgW4PdKkesVoJDgOSaLXrH+9ooxr5q1fA
-	6PTebuQ3ZlrsN0eOB3vjLvaaKYmJPMYRy6Xv40sjrMpN1JPJm+kATKDcxbiTKLqRcD4Xm6r/ecdPe
-	/xArzh09w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2oHqwkTblG5nU5R67d30morR53WP2OodvNlTbVDYy7g=; b=L54IrRU+5fmhu4
+	m00aUdjKDKIqOO1bN085JHzLUCTdW3hCKzDnZ2fGadCIqCizeXALn8Opor+sp1ZKKlq653FfDpWZd
+	GepAYjSPrjJzPoEc8byJxguKBug0lO3V7PHCaydfWXlP4ybzQHX5j4EpYMRkslBP/UwTTZtWM83uH
+	hnPzdZoutm7KbXoYHibrVsUyYHxKf7Mb1OsGQK1RV656oiY9eVONPyvDfk6qValpe/q7M7TF4UZUQ
+	esRqm1chULNzdxVQpEvyKv9DxAP/wdQ6ehor18Nw57NU1Ypidv2ZjbBK0w5HQpkB5MC3p2lipQP/u
+	GDHW79fkSM0eZDPLqKjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGQcp-0004D8-EI; Fri, 04 Oct 2019 16:40:15 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1iGR10-0002mg-Su; Fri, 04 Oct 2019 17:05:14 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGQcd-00038s-3q
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 16:40:04 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x94GOKIT145942;
- Fri, 4 Oct 2019 16:37:34 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2019-08-05;
- bh=51ThAHTVRLLrLX7DDUUketK1Xn5udBHC8gklOuQw7w4=;
- b=poGgqbX6JCl/NL0NREIW4P9+l8QLaal32Xkto+/gKm9KzGXG36J3t9Y97IxbfC79abuc
- HIhJcvwgU73VKa+HhUYWIpCN14vCfAWcuykFg8ecFCTacZSd9CNbsvDrj5/EnIrO7zZd
- SnwCs6AysNBsPxEQu+OM86HU/KXoTrvfvgl0uFeMuiL/Urusogu37yaibi7r7bw1mRXl
- P+U7Do6b28k22LsC3kulgYBA2XxWdLTCodBCIzLu9N6fRpGQGYkQF1JQyrUaoEKGwtaN
- b6g/DpZETiiQ7cEIsMCUf+7h0vD9o3h4LFWUFwJWWR3f41akUitzgfesOp1b6XbHzdK6 ew== 
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by userp2120.oracle.com with ESMTP id 2va05sckk2-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 04 Oct 2019 16:37:34 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x94GNGmV029717;
- Fri, 4 Oct 2019 16:35:33 GMT
-Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
- by userp3020.oracle.com with ESMTP id 2vdk0uxdww-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 04 Oct 2019 16:35:33 +0000
-Received: from abhmp0005.oracle.com (abhmp0005.oracle.com [141.146.116.11])
- by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x94GZUL7027727;
- Fri, 4 Oct 2019 16:35:31 GMT
-Received: from [10.209.227.25] (/10.209.227.25)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Fri, 04 Oct 2019 09:35:30 -0700
-Subject: Re: [PATCH v3 00/14] dmaengine/soc: Add Texas Instruments UDMA support
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>, vkoul@kernel.org,
- robh+dt@kernel.org, nm@ti.com, ssantosh@kernel.org
-References: <20191001061704.2399-1-peter.ujfalusi@ti.com>
-From: santosh.shilimkar@oracle.com
-Organization: Oracle Corporation
-Message-ID: <c567c1a2-2e74-3809-8e0f-4c2049ba4747@oracle.com>
-Date: Fri, 4 Oct 2019 09:35:29 -0700
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
- Gecko/20100101 Thunderbird/60.7.2
+ id 1iGR0h-0002m8-Bj
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 17:04:57 +0000
+Received: by mail-pg1-x544.google.com with SMTP id 23so4099514pgk.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 04 Oct 2019 10:04:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=KhkqAIY0k94dgHo1jB/Vv2pJIDzyfrngfxICnM3UhIk=;
+ b=oKDL7vXewTCQ6flY9+GhG6ANFwAYC5RUKT0iI62i33VnnHbij+UaW7lDV/TUjHWVTC
+ 19kG6Xk2LgbBP6cwlfRiOVa3CUxh+EbCsZnzqaPNAbSpu4A7PlSAppWqne8EtOt8sa4J
+ W/d/70+j/heKSxOi2CqsWs6j6c+p/3r6Tstc8=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=KhkqAIY0k94dgHo1jB/Vv2pJIDzyfrngfxICnM3UhIk=;
+ b=OQisL7jG7O+GGfhY0Um1WvxvUW4M7jYyQwLz8ii6JS0gGsoZO9Qe3ODPQu4eLZXMUd
+ HITHLqBH4cHGiFVnPYOTqGwYsBKZFzljOAwBVzqLkQcdECg/ZVfm68WANr/QeFBAj/hx
+ ScIep179vMuI15HfbAzSTk6pvVwmhpCJ9nNIOfdKESWu8CNjM1J9ZnRm02dhw2nFYtzG
+ 5X1CYwQQ+f60vrq/5xwAi1rx8t4hsY68VJ+4CHNh5eQ1uDbg+iqQLi63X/oAn3vFwJ+X
+ IznUMwg54WGO70cN1T2WF8bEgpHCqGj1vRW6G9jAdulJUg+yIX/bUzYb4ZTHt8NEm7Sa
+ ig5Q==
+X-Gm-Message-State: APjAAAUADJYWfI9O7nTY0G/F99mGyt6FeZ7nEENd6upZvfQQrh9nu67d
+ jX38Gbt8O08aLAYICrzMSeeSBw==
+X-Google-Smtp-Source: APXvYqwuIe0ULUTkIv0WHmr2b0f1ybCo+KvmxqbU1VCA3X3UU+MplnLxh6ZQ29vyCrbjgx1EQjNUMw==
+X-Received: by 2002:a17:90a:25a9:: with SMTP id
+ k38mr18712120pje.12.1570208692216; 
+ Fri, 04 Oct 2019 10:04:52 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:4fff:7a6b:a335:8fde])
+ by smtp.gmail.com with ESMTPSA id b4sm5066197pju.16.2019.10.04.10.04.50
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 04 Oct 2019 10:04:51 -0700 (PDT)
+Date: Fri, 4 Oct 2019 10:04:49 -0700
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH v9 7/8] PM / devfreq: Add PM QoS support
+Message-ID: <20191004170449.GL87296@google.com>
+References: <cover.1570044052.git.leonard.crestez@nxp.com>
+ <f538324afaeaef3256b3ea997e67562e940c2e3c.1570044052.git.leonard.crestez@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <20191001061704.2399-1-peter.ujfalusi@ti.com>
-Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9399
- signatures=668684
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1908290000 definitions=main-1910040145
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9399
- signatures=668684
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1908290000
- definitions=main-1910040145
+Content-Disposition: inline
+In-Reply-To: <f538324afaeaef3256b3ea997e67562e940c2e3c.1570044052.git.leonard.crestez@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_094003_310681_C609B580 
-X-CRM114-Status: GOOD (  20.82  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191004_100455_430945_E1AF58BB 
+X-CRM114-Status: GOOD (  23.13  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [156.151.31.85 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -114,86 +97,237 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, grygorii.strashko@ti.com, lokeshvutla@ti.com,
- j-keerthy@ti.com, linux-kernel@vger.kernel.org, t-kristo@ti.com,
- tony@atomide.com, dmaengine@vger.kernel.org, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Artur =?utf-8?B?xZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
+ Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
+ linux-pm@vger.kernel.org, Viresh Kumar <viresh.kumar@linaro.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Lukasz Luba <l.luba@partner.samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Alexandre Bailon <abailon@baylibre.com>,
+ Georgi Djakov <georgi.djakov@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ Jacky Bai <ping.bai@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 9/30/19 11:16 PM, Peter Ujfalusi wrote:
-> Hi,
+On Wed, Oct 02, 2019 at 10:25:10PM +0300, Leonard Crestez wrote:
+> Register notifiers with the PM QoS framework in order to respond to
+> requests for DEV_PM_QOS_MIN_FREQUENCY and DEV_PM_QOS_MAX_FREQUENCY.
 > 
-> Changes since v2
-> )https://patchwork.kernel.org/project/linux-dmaengine/list/?series=152609&state=*)
-> - Based on 5.4-rc1
-> - Support for Flow only data transfer for the glue layer
+> No notifiers are added by this patch but PM QoS constraints can be
+> imposed externally (for example from other devices).
+> 
+> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> ---
+>  drivers/devfreq/devfreq.c | 78 +++++++++++++++++++++++++++++++++++++++
+>  include/linux/devfreq.h   |  5 +++
+>  2 files changed, 83 insertions(+)
+> 
+> diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
+> index 2d63692903ff..46f699b84a22 100644
+> --- a/drivers/devfreq/devfreq.c
+> +++ b/drivers/devfreq/devfreq.c
+> @@ -22,15 +22,18 @@
+>  #include <linux/platform_device.h>
+>  #include <linux/list.h>
+>  #include <linux/printk.h>
+>  #include <linux/hrtimer.h>
+>  #include <linux/of.h>
+> +#include <linux/pm_qos.h>
+>  #include "governor.h"
+>  
+>  #define CREATE_TRACE_POINTS
+>  #include <trace/events/devfreq.h>
+>  
+> +#define HZ_PER_KHZ	1000
+> +
+>  static struct class *devfreq_class;
+>  
+>  /*
+>   * devfreq core provides delayed work based load monitoring helper
+>   * functions. Governors can use these or can implement their own
+> @@ -109,10 +112,11 @@ static unsigned long find_available_max_freq(struct devfreq *devfreq)
+>  static void get_freq_range(struct devfreq *devfreq,
+>  			   unsigned long *min_freq,
+>  			   unsigned long *max_freq)
+>  {
+>  	unsigned long *freq_table = devfreq->profile->freq_table;
+> +	s32 qos_min_freq, qos_max_freq;
+>  
+>  	lockdep_assert_held(&devfreq->lock);
+>  
+>  	/*
+>  	 * Initialize minimum/maximum frequency from freq table.
+> @@ -125,10 +129,20 @@ static void get_freq_range(struct devfreq *devfreq,
+>  	} else {
+>  		*min_freq = freq_table[devfreq->profile->max_state - 1];
+>  		*max_freq = freq_table[0];
+>  	}
+>  
+> +	/* Apply constraints from PM QoS */
+> +	qos_min_freq = dev_pm_qos_read_value(devfreq->dev.parent,
+> +					     DEV_PM_QOS_MIN_FREQUENCY);
+> +	qos_max_freq = dev_pm_qos_read_value(devfreq->dev.parent,
+> +					     DEV_PM_QOS_MAX_FREQUENCY);
+> +	*min_freq = max(*min_freq, (unsigned long)HZ_PER_KHZ * qos_min_freq);
+> +	if (qos_max_freq != PM_QOS_MAX_FREQUENCY_DEFAULT_VALUE)
+> +		*max_freq = min(*max_freq,
+> +				(unsigned long)HZ_PER_KHZ * qos_max_freq);
+> +
+>  	/* Apply constraints from sysfs */
+>  	*min_freq = max(*min_freq, devfreq->min_freq);
+>  	*max_freq = min(*max_freq, devfreq->max_freq);
+>  
+>  	/* Apply constraints from OPP interface */
+> @@ -608,24 +622,75 @@ static int devfreq_notifier_call(struct notifier_block *nb, unsigned long type,
+>  			err);
+>  
+>  	return NOTIFY_OK;
+>  }
+>  
+> +/**
+> + * qos_notifier_call() - Common handler for QoS constraints.
+> + * @devfreq:    the devfreq instance.
+> + */
+> +static int qos_notifier_call(struct devfreq *devfreq)
+> +{
+> +	int err;
+> +
+> +	mutex_lock(&devfreq->lock);
+> +	err = update_devfreq(devfreq);
+> +	mutex_unlock(&devfreq->lock);
+> +	if (err)
+> +		dev_err(devfreq->dev.parent,
+> +			"failed to update frequency from PM QoS (%d)\n",
+> +			err);
+> +
+> +	return NOTIFY_OK;
+> +}
+> +
+> +/**
+> + * qos_min_notifier_call() - Callback for QoS min_freq changes.
+> + * @nb:		Should be devfreq->nb_min
+> + */
+> +static int qos_min_notifier_call(struct notifier_block *nb,
+> +					 unsigned long val, void *ptr)
+> +{
+> +	return qos_notifier_call(container_of(nb, struct devfreq, nb_min));
+> +}
+> +
+> +/**
+> + * qos_max_notifier_call() - Callback for QoS max_freq changes.
+> + * @nb:		Should be devfreq->nb_max
+> + */
+> +static int qos_max_notifier_call(struct notifier_block *nb,
+> +					 unsigned long val, void *ptr)
+> +{
+> +	return qos_notifier_call(container_of(nb, struct devfreq, nb_max));
+> +}
+> +
+>  /**
+>   * devfreq_dev_release() - Callback for struct device to release the device.
+>   * @dev:	the devfreq device
+>   *
+>   * Remove devfreq from the list and release its resources.
+>   */
+>  static void devfreq_dev_release(struct device *dev)
+>  {
+>  	struct devfreq *devfreq = to_devfreq(dev);
+> +	int err;
+>  
+>  	mutex_lock(&devfreq_list_lock);
+>  	list_del(&devfreq->node);
+>  	mutex_unlock(&devfreq_list_lock);
+>  
+> +	err = dev_pm_qos_remove_notifier(devfreq->dev.parent, &devfreq->nb_max,
+> +					 DEV_PM_QOS_MAX_FREQUENCY);
+> +	if (err)
+> +		dev_warn(dev->parent, "Failed to remove DEV_PM_QOS_MAX_FREQUENCY notifier: %d\n",
+> +			 err);
+> +	err = dev_pm_qos_remove_notifier(devfreq->dev.parent, &devfreq->nb_min,
+> +			DEV_PM_QOS_MIN_FREQUENCY);
+> +	if (err)
+> +		dev_warn(dev->parent, "Failed to remove DEV_PM_QOS_MIN_FREQUENCY notifier: %d\n",
+> +			 err);
+> +
+>  	if (devfreq->profile->exit)
+>  		devfreq->profile->exit(devfreq->dev.parent);
+>  
+>  	kfree(devfreq->time_in_state);
+>  	kfree(devfreq->trans_table);
+> @@ -735,10 +800,22 @@ struct devfreq *devfreq_add_device(struct device *dev,
+>  	if (err) {
+>  		put_device(&devfreq->dev);
+>  		goto err_out;
+>  	}
+>  
+> +	devfreq->nb_min.notifier_call = qos_min_notifier_call;
+> +	err = dev_pm_qos_add_notifier(devfreq->dev.parent, &devfreq->nb_min,
+> +				      DEV_PM_QOS_MIN_FREQUENCY);
+> +	if (err)
+> +		goto err_devfreq;
+> +
+> +	devfreq->nb_max.notifier_call = qos_max_notifier_call;
+> +	err = dev_pm_qos_add_notifier(devfreq->dev.parent, &devfreq->nb_max,
+> +				      DEV_PM_QOS_MAX_FREQUENCY);
+> +	if (err)
+> +		goto err_devfreq;
+> +
+>  	mutex_lock(&devfreq_list_lock);
+>  
+>  	governor = try_then_request_governor(devfreq->governor_name);
+>  	if (IS_ERR(governor)) {
+>  		dev_err(dev, "%s: Unable to find governor for the device\n",
+> @@ -762,10 +839,11 @@ struct devfreq *devfreq_add_device(struct device *dev,
+>  
+>  	return devfreq;
+>  
+>  err_init:
+>  	mutex_unlock(&devfreq_list_lock);
+> +err_devfreq:
+>  	devfreq_remove_device(devfreq);
+>  	return ERR_PTR(err);
+>  
+>  err_dev:
+>  	/*
+> diff --git a/include/linux/devfreq.h b/include/linux/devfreq.h
+> index 2bae9ed3c783..8b92ccbd1962 100644
+> --- a/include/linux/devfreq.h
+> +++ b/include/linux/devfreq.h
+> @@ -134,10 +134,12 @@ struct devfreq_dev_profile {
+>   * @total_trans:	Number of devfreq transitions
+>   * @trans_table:	Statistics of devfreq transitions
+>   * @time_in_state:	Statistics of devfreq states
+>   * @last_stat_updated:	The last time stat updated
+>   * @transition_notifier_list: list head of DEVFREQ_TRANSITION_NOTIFIER notifier
+> + * @nb_min:		Notifier block for DEV_PM_QOS_MIN_FREQUENCY
+> + * @nb_max:		Notifier block for DEV_PM_QOS_MAX_FREQUENCY
+>   *
+>   * This structure stores the devfreq information for a give device.
+>   *
+>   * Note that when a governor accesses entries in struct devfreq in its
+>   * functions except for the context of callbacks defined in struct
+> @@ -176,10 +178,13 @@ struct devfreq {
+>  	unsigned int *trans_table;
+>  	unsigned long *time_in_state;
+>  	unsigned long last_stat_updated;
+>  
+>  	struct srcu_notifier_head transition_notifier_list;
+> +
+> +	struct notifier_block nb_min;
+> +	struct notifier_block nb_max;
+>  };
+>  
+>  struct devfreq_freqs {
+>  	unsigned long old;
+>  	unsigned long new;
+> -- 
+> 2.17.1
 > 
 
-> 
-> Grygorii Strashko (3):
->    bindings: soc: ti: add documentation for k3 ringacc
->    soc: ti: k3: add navss ringacc driver
->    dmaengine: ti: k3-udma: Add glue layer for non DMAengine users
-> 
-> Peter Ujfalusi (11):
->    dmaengine: doc: Add sections for per descriptor metadata support
->    dmaengine: Add metadata_ops for dma_async_tx_descriptor
->    dmaengine: Add support for reporting DMA cached data amount
->    dmaengine: ti: Add cppi5 header for UDMA
->    dt-bindings: dma: ti: Add document for K3 UDMA
->    dmaengine: ti: New driver for K3 UDMA - split#1: defines, structs, io
->      func
->    dmaengine: ti: New driver for K3 UDMA - split#2: probe/remove, xlate
->      and filter_fn
->    dmaengine: ti: New driver for K3 UDMA - split#3: alloc/free
->      chan_resources
->    dmaengine: ti: New driver for K3 UDMA - split#4: dma_device callbacks
->      1
->    dmaengine: ti: New driver for K3 UDMA - split#5: dma_device callbacks
->      2
->    dmaengine: ti: New driver for K3 UDMA - split#6: Kconfig and Makefile
-> 
->   .../devicetree/bindings/dma/ti/k3-udma.txt    |  185 +
->   .../devicetree/bindings/soc/ti/k3-ringacc.txt |   59 +
->   Documentation/driver-api/dmaengine/client.rst |   75 +
->   .../driver-api/dmaengine/provider.rst         |   46 +
->   drivers/dma/dmaengine.c                       |   73 +
->   drivers/dma/dmaengine.h                       |    8 +
->   drivers/dma/ti/Kconfig                        |   22 +
->   drivers/dma/ti/Makefile                       |    2 +
->   drivers/dma/ti/k3-udma-glue.c                 | 1225 ++++++
->   drivers/dma/ti/k3-udma-private.c              |  141 +
->   drivers/dma/ti/k3-udma.c                      | 3525 +++++++++++++++++
->   drivers/dma/ti/k3-udma.h                      |  161 +
->   drivers/soc/ti/Kconfig                        |   12 +
->   drivers/soc/ti/Makefile                       |    1 +
->   drivers/soc/ti/k3-ringacc.c                   | 1165 ++++++
->   include/dt-bindings/dma/k3-udma.h             |   10 +
->   include/linux/dma/k3-udma-glue.h              |  134 +
->   include/linux/dma/ti-cppi5.h                  | 1049 +++++
->   include/linux/dmaengine.h                     |  110 +
->   include/linux/soc/ti/k3-ringacc.h             |  245 ++
->   20 files changed, 8248 insertions(+)
->   create mode 100644 Documentation/devicetree/bindings/dma/ti/k3-udma.txt
->   create mode 100644 Documentation/devicetree/bindings/soc/ti/k3-ringacc.txt
->   create mode 100644 drivers/dma/ti/k3-udma-glue.c
->   create mode 100644 drivers/dma/ti/k3-udma-private.c
->   create mode 100644 drivers/dma/ti/k3-udma.c
->   create mode 100644 drivers/dma/ti/k3-udma.h
->   create mode 100644 drivers/soc/ti/k3-ringacc.c
->   create mode 100644 include/dt-bindings/dma/k3-udma.h
->   create mode 100644 include/linux/dma/k3-udma-glue.h
->   create mode 100644 include/linux/dma/ti-cppi5.h
->   create mode 100644 include/linux/soc/ti/k3-ringacc.h
-> 
-Can you please split this series and post drivers/soc/* bits
-separately ?  If its ready, I can apply k3-ringacc.c changes.
-
-Regards,
-Santosh
+Tested-by: Matthias Kaehlcke <mka@chromium.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
