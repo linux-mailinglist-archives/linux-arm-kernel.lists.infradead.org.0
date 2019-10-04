@@ -2,78 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 078CCCB6D7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 11:01:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 971D3CB6EA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 11:02:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=l19BlgpFW2BTeC53/MMOZLZigqjURzPDg02ELUinp4w=; b=bAZ
-	zPX8KL7JXOUZwQLpecgXt8hT09j3KUqLgltEfGR04jVBxpTlqBwcztEa1u5bVCmwjJSH0WLHHe1ly
-	OCWHd9nzHtMC7XPch9NR53OUlFaa6Zd4JsQwnaM0u4Bkb06yYka5VSECSxnSjDBtvJkz3Cf9x0r4P
-	areKZgwUiSowm+WdohcCnrJawX92rEWrK21c5eio9NTnSUC2+wuH81I6RrXmI60a2P6mOdYkS91dc
-	XsJLjKwtTD/72nA9iz4Zhlo3LJd+BFYWDRu8la7OfUk8RY58+JV+b20YV5WoylvtQbqW/bKeHgCaO
-	7PHZVNaYalqwUMfiUUUm1DVkL+kdFOg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Ls4z5jYg9z2h5G09ICxe89y2Ebmad5HkcaMoUc5zfns=; b=JttYUtb6gDKxDN7EQS9tc3KxkG
+	DaXPZLA6wP4DvR847iDRjWr/ugH278jzeerps/OR0NpeR+/pzIIGyRwtQcwHAYnsBmjwkQgtVxD4S
+	qhEvP9i1yldUKNHrcS0IhwvR0T40UiWP6Cpvs8ju1LkxGIzrRf3nzjMogCPa6hpvo51nmrfnmFfYf
+	B6UfVL7CJcBJyq+1/GJxHCjiRVnA4BPtnfXRTjllKuad1Ou10XHourqcjNacgiMoSuKbFNKXMdc63
+	DzaAV1+fLpKcwsWZ0fnmp8eumHKgZk75FvpXOoCss14T53wWgOuLTbO0Jf4d+LBLT+nz3q+G5asmv
+	Mm3NkndA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGJSu-0000hv-Hn; Fri, 04 Oct 2019 09:01:32 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iGJTM-00017R-Ig; Fri, 04 Oct 2019 09:02:00 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGJSg-0000f5-3R
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 09:01:20 +0000
-Received: by mail-wr1-x441.google.com with SMTP id j11so358297wrp.1
+ id 1iGJSg-0000f8-Kn
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 09:01:22 +0000
+Received: by mail-wm1-x341.google.com with SMTP id y21so5018310wmi.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 04 Oct 2019 02:01:17 -0700 (PDT)
+ Fri, 04 Oct 2019 02:01:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id;
- bh=EFydY0lgIP899wnAH99dy6et3EG1uYQ9KTgGCBLycYs=;
- b=qF0GVukplt92gp1dIgMULefb5vjDSNNhk+Ho8zlhKs5lWbidTiPF3rXtAV/OMf/cWA
- YLkSKjy8nyUM1mp1oJRyBI52MX4/1ErOfaNIxvRvwAubX3kc3rBJH3v3qLHXKvMs3UbI
- YcI/Ok0ScCFkD8rDOZoGkYDiJwXlmBWCFD3XB2uGQSV9jjBXM70JO/9HSPqcK/BGDIEC
- xWpCVkzTSpsysEwc2JVgLgsC4zIZNcdtrpK7cDk+k73kpVSC7zypLxAG7HiTT1tBNPJo
- 6wpcKeA3yYNu+7hfFihagaIfl0fv0Ennk/vsC72bxoG/8zycuhVhESXsBE60rKCZT7qp
- u7MA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=Qa7DsO3ACeYY6r1oXxNziZNrJiVR8gru+lXValqW5yo=;
+ b=iqiZDv6x4j5j7J4/i345eIHtj37AQf+5xW7hlIXOH4S/3064hPddqNd3O0p0FSN39v
+ E1IZ/wcxnjvKYl7egSdMnEFegm+tshD7vZf7BF5bG+9WJ8M/HsreAdGCcbwUo6mWQaWD
+ j19+wOFVmiEs0E2TDwQ9QjTgiILjeJD4wm/eqRKj4FxR6i4Sd+Rwz+WT516McZn+5Aak
+ NpobKJQQLQXgF2w8nPfrsCPUSsbWsAfPthBU4T9rPLART/mjxAeMQnvmaddg7dzzW8Yo
+ KhYbY0cHJN/86MEVbIn6VBySuFt8UGK7uo2BYdfd4KFufko+dcMMmUrXCX52Eq+Z/u9U
+ f3Jg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=EFydY0lgIP899wnAH99dy6et3EG1uYQ9KTgGCBLycYs=;
- b=hAsr13uluVfvZHZxkRfvCuBu63ULSrmgiUOKSXH0rmRhQKQoI5RirS7j3qSo67MWlB
- MEYOVLJWFH2VCPgpwQjddJKR7iS6R1IO1xvBVKjdV8VjyKL7f3O1vr1AZekiTOmzj4nK
- KbMCQiO9PEqMZkL3qdw62raA3LVKhol9k37/A5O/QPQgmC4VubGbqk/KoDL9zxqqR38J
- Bg+1/+g5CDXxbNpnaj2hReqE/ux7L6pYmVAE34yJ2huzFHFloFlxslI1HSdVd+DQFN2r
- dxo6rrBspzQo33bz3fITFEFwlg9bqcyzxMe+Q7eBzcF8rTKTQnV4I/uWqhogvLj4IEZ1
- tgjA==
-X-Gm-Message-State: APjAAAUuxaIAPiEHl2pv6T3wHxnxymoIt3/TkLY+LrKp+ucQjDiLjPew
- XY5fmlT/XCTFAX0/PDnZMm5fMg==
-X-Google-Smtp-Source: APXvYqyRiGMXW/wfqsay/UYMA7JeRdE57EW6un20v5k0NxiOZ3sdeT1X4JHfTYukfhmSHqxi20GgMQ==
-X-Received: by 2002:a5d:630d:: with SMTP id i13mr10380588wru.230.1570179676023; 
- Fri, 04 Oct 2019 02:01:16 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=Qa7DsO3ACeYY6r1oXxNziZNrJiVR8gru+lXValqW5yo=;
+ b=pWMc8PLN8lUXVbli7hLfkbLl+tWK2rJ8qcksAQZVc7WGPuc/61lEckvvwwVkgaWgzY
+ dNgkcdtf1KsNNbn0raqUprxOHJoTci+74D6VYkVIrxOlPynXpP9ljKYKFOzVqCqyVWyT
+ 2shR0EQOwjRsPpEYdrTqwifsPKA2XbhD/a2zHNEO7C68OEn4amCvE3z8rPHqJ/7r4ILB
+ 7kBTQt5VROSf6o2/iNdD/ZiOa2QCcOdeDR2azLCOovFkSxQC3QP7MEl40ZB4luYs2vdp
+ mVpPo4RD/a50FHOsSd490M7bHIL9TmhJXNxdS/6nFqipzwheHudK4OipiJHcO1RYJuNS
+ E8Qg==
+X-Gm-Message-State: APjAAAXTyt2li4e5bmoDjrcM8j1UmTwCXLAHN/yLrshGmNJ95ciHBpI5
+ FuAsn7kkzC806Q73MmQHJV2XJA==
+X-Google-Smtp-Source: APXvYqz6Wrjp0Gh/DAqC/UBRAVNNd14/cnfE4WZ/qx3dCtQWucaJsnEwIFqwRzAEV2sRVie5vL2wCw==
+X-Received: by 2002:a1c:a6ca:: with SMTP id p193mr9887223wme.103.1570179677139; 
+ Fri, 04 Oct 2019 02:01:17 -0700 (PDT)
 Received: from glaroque-ThinkPad-T480.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id v8sm7765170wra.79.2019.10.04.02.01.14
+ by smtp.gmail.com with ESMTPSA id v8sm7765170wra.79.2019.10.04.02.01.16
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 04 Oct 2019 02:01:15 -0700 (PDT)
+ Fri, 04 Oct 2019 02:01:16 -0700 (PDT)
 From: Guillaume La Roque <glaroque@baylibre.com>
 To: amit.kucheria@linaro.org, rui.zhang@intel.com, edubezval@gmail.com,
  daniel.lezcano@linaro.org
-Subject: [PATCH v7 0/7] Add support of New Amlogic temperature sensor for G12
- SoCs
-Date: Fri,  4 Oct 2019 11:01:07 +0200
-Message-Id: <20191004090114.30694-1-glaroque@baylibre.com>
+Subject: [PATCH v7 1/7] dt-bindings: thermal: Add DT bindings documentation
+ for Amlogic Thermal
+Date: Fri,  4 Oct 2019 11:01:08 +0200
+Message-Id: <20191004090114.30694-2-glaroque@baylibre.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191004090114.30694-1-glaroque@baylibre.com>
+References: <20191004090114.30694-1-glaroque@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_020118_194818_6E576598 
-X-CRM114-Status: GOOD (  12.77  )
+X-CRM114-CacheID: sfid-20191004_020118_696876_589CBF6F 
+X-CRM114-Status: GOOD (  11.34  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -100,73 +104,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchs series add support of New Amlogic temperature sensor and minimal
-thermal zone for SEI510 and ODROID-N2 boards.
+Adding the devicetree binding documentation for the Amlogic temperature
+sensor found in the Amlogic Meson G12A and G12B SoCs.
 
-First implementation was doing on IIO[1] but after comments i move on thermal framework.
-Formulas and calibration values come from amlogic.
-
-Changes since v6:
- - add missing critical trip point.
-
-Changes since v5:
-  - fix patch 5 and 6 send twice
-
-Changes since v4:
-  - Move thermal-zone in soc dtsi file
-  - Remove critical trip point and add passive one
-  - fix commit message
-  - use devm_platform_ioremap_resource instead of platform_get_resource
-
-Changes since v3:
-  - Add cooling map and trip point for hot type
-  - move compatible on g12a instead of g12 to be aligned with others
-  - add all reviewer, sorry for this mistake
-
-Changes since v2:
-  - fix yaml documention
-  - remove unneeded status variable for temperature-sensor node
-  - rework driver after Martin review
-  - add some information in commit message
-
-Changes since v1:
-  - fix enum vs const in documentation
-  - fix error with thermal-sensor-cells value set to 1 instead of 0
-  - add some dependencies needed to add cooling-maps
-
-Dependencies :
-- patch 3,4 & 5: depends on Neil's patch and series :
-              - missing dwc2 phy-names[2]
-              - patchsets to add DVFS on G12a[3] which have deps on [4] and [5]
-
-[1] https://lore.kernel.org/linux-amlogic/20190604144714.2009-1-glaroque@baylibre.com/
-[2] https://lore.kernel.org/linux-amlogic/20190625123647.26117-1-narmstrong@baylibre.com/
-[3] https://lore.kernel.org/linux-amlogic/20190729132622.7566-1-narmstrong@baylibre.com/
-[4] https://lore.kernel.org/linux-amlogic/20190731084019.8451-5-narmstrong@baylibre.com/
-[5] https://lore.kernel.org/linux-amlogic/20190729132622.7566-3-narmstrong@baylibre.com/
-
-Guillaume La Roque (7):
-  dt-bindings: thermal: Add DT bindings documentation for Amlogic
-    Thermal
-  thermal: amlogic: Add thermal driver to support G12 SoCs
-  arm64: dts: amlogic: g12: add temperature sensor
-  arm64: dts: meson: g12: Add minimal thermal zone
-  arm64: dts: amlogic: g12a: add cooling properties
-  arm64: dts: amlogic: g12b: add cooling properties
-  MAINTAINERS: add entry for Amlogic Thermal driver
-
- .../bindings/thermal/amlogic,thermal.yaml     |  54 +++
- MAINTAINERS                                   |   9 +
- .../boot/dts/amlogic/meson-g12-common.dtsi    |  77 ++++
- arch/arm64/boot/dts/amlogic/meson-g12a.dtsi   |  24 ++
- arch/arm64/boot/dts/amlogic/meson-g12b.dtsi   |  29 ++
- drivers/thermal/Kconfig                       |  11 +
- drivers/thermal/Makefile                      |   1 +
- drivers/thermal/amlogic_thermal.c             | 333 ++++++++++++++++++
- 8 files changed, 538 insertions(+)
+Reviewed-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Amit Kucheria <amit.kucheria@linaro.org>
+Tested-by: Christian Hewitt <christianshewitt@gmail.com>
+Tested-by: Kevin Hilman <khilman@baylibre.com>
+Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
+---
+ .../bindings/thermal/amlogic,thermal.yaml     | 54 +++++++++++++++++++
+ 1 file changed, 54 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
- create mode 100644 drivers/thermal/amlogic_thermal.c
 
+diff --git a/Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml b/Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
+new file mode 100644
+index 000000000000..f761681e4c0d
+--- /dev/null
++++ b/Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
+@@ -0,0 +1,54 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/thermal/amlogic,thermal.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Amlogic Thermal
++
++maintainers:
++  - Guillaume La Roque <glaroque@baylibre.com>
++
++description: Binding for Amlogic Thermal
++
++properties:
++  compatible:
++      items:
++        - enum:
++            - amlogic,g12a-cpu-thermal
++            - amlogic,g12a-ddr-thermal
++        - const: amlogic,g12a-thermal
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  amlogic,ao-secure:
++    description: phandle to the ao-secure syscon
++    $ref: '/schemas/types.yaml#/definitions/phandle'
++
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - amlogic,ao-secure
++
++examples:
++  - |
++        cpu_temp: temperature-sensor@ff634800 {
++                compatible = "amlogic,g12a-cpu-thermal",
++                             "amlogic,g12a-thermal";
++                reg = <0xff634800 0x50>;
++                interrupts = <0x0 0x24 0x0>;
++                clocks = <&clk 164>;
++                #thermal-sensor-cells = <0>;
++                amlogic,ao-secure = <&sec_AO>;
++        };
++...
 -- 
 2.17.1
 
