@@ -2,39 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CB2DCBEC5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 17:14:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65A45CBED1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 17:14:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Jh18AJn3IinbCyG53XBj9DEro7Hi6O3O2jgENHxY6H0=; b=W1vgQ5R2ZrVvzC
-	9ka/6JgENbxzVMCwrVVpsLtNmrl3C5NaBBxWXRmkPSzihGJOVOS8ddJ2ktAk+Jso1IgELbeOEQPcy
-	o/q/mDnYyibeoheW0QMAU5oqk6goAjdoNkpXzgRYbs9yPmsW9VF7qSPZbTFZgQDLECl4WkMIiJZj5
-	YHpjATbpE651MUiJRfwnlBTpHgSh4qj8SwphKDpEdpvH6lXj2miidk1e3AwfgWW9++BPuDEecYmhk
-	Keotq9RIcN39+0wTSngl26DfRMBUEmMnGrMV8QE8rrKGyKYdOL0mcV4/SEVQOTxNTjK4JUclFpTqp
-	XLQ/JhAi1THs7sAHxRUg==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pvd9JqlJfcH+U8CLrD9oeWCWKd91SLVrjDHOzJYGdKc=; b=mHcCQLIgAqr4X2
+	o6sZ6DTelKTss0rRksHmQU2P71oUuetFXeNL/9Ix93xYWmUioGReBzlcdtr6qJwY12uod4ew0lgtf
+	XowJdVfFJs0/y5kzrEuMNYjMItW9PrEt1NuXg1ssZ0LG9DGFeCry1x/dXDXmdVFf/kXxUwKWz7UJs
+	1FO9SIIJahb+qjxK79MsAhwOy2Mlaty3pLGKmvvARP7sf8rlyoNcuMnpZcEKrVLAPIGsbspqBTwCs
+	1NzxCAUB0KqQ/AFUVqOA39j0phUS9TbbCwy7zgXZhEZ1aaQRYl/utQlegWQu7OtPtfZiAiRsR/k7I
+	lflQh/neeLoQ20rhJjRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGPHt-0006kG-OW; Fri, 04 Oct 2019 15:14:33 +0000
+	id 1iGPI9-0006rk-9I; Fri, 04 Oct 2019 15:14:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGPHn-0006jA-0e
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 15:14:28 +0000
+ id 1iGPHq-0006l5-BK
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 15:14:31 +0000
 Received: from localhost.localdomain (unknown [194.230.155.145])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4017F207FF;
- Fri,  4 Oct 2019 15:14:21 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BA3AC222C2;
+ Fri,  4 Oct 2019 15:14:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570202065;
- bh=At7Vw3YFrrg3TOqKMg8f1TsgKNBKoiEKL7wq9XiiUKk=;
- h=From:To:Subject:Date:From;
- b=BeGHmF7Rbd6pkfOjo2uCfn8OcrdTdcDJynBCXDiHZNqmgwIE1+aRy4wZQW23eUGGP
- U+RHRG2J0ZC+B7hAvb/Ik0Nsr00FdebTvb84NysQA4HHgL8yfGWaQ2VW+9bCdu7zMd
- kUWdVsOOM75RFDTU0Ja0JGS5R4l69pzZnlhyyzYs=
+ s=default; t=1570202070;
+ bh=T+96WbhywkN9TZ3RgQsCxJM8eZpY0gKukrAqlx2v0jM=;
+ h=From:To:Subject:Date:In-Reply-To:References:From;
+ b=XbNy0vjvtdDr7yclvUmZXuFX91a7a2NmRHOkhWFrYJdsLiTWwiw/PY+VE2zOSgaJc
+ JFCE8U5N2omSGBkLx5Jk0Qwqr+2WfhjbCDPbIZ3uKUHxw7weadLSquNzRFbcUSBly3
+ QGtdp9XUgZgmaydqz8uauSYOun9jHAwHXMzTCQrE=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
@@ -46,14 +46,15 @@ To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  dri-devel@lists.freedesktop.org, linux-serial@vger.kernel.org
-Subject: [PATCH 1/3] dt-bindings: arm: samsung: Force clkoutN names to be
- unique in PMU
-Date: Fri,  4 Oct 2019 17:14:12 +0200
-Message-Id: <20191004151414.8458-1-krzk@kernel.org>
+Subject: [PATCH 2/3] dt-bindings: gpu: samsung-rotator: Fix indentation
+Date: Fri,  4 Oct 2019 17:14:13 +0200
+Message-Id: <20191004151414.8458-2-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191004151414.8458-1-krzk@kernel.org>
+References: <20191004151414.8458-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_081427_078130_5C4790FD 
-X-CRM114-Status: GOOD (  11.01  )
+X-CRM114-CacheID: sfid-20191004_081430_440170_A2356DB4 
+X-CRM114-Status: GOOD (  12.33  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,31 +89,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The clkoutN names of clocks must be unique because they represent
-unique inputs of clock multiplexer.
+Array elements under 'items' should be indented.
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 ---
- Documentation/devicetree/bindings/arm/samsung/pmu.yaml | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ Documentation/devicetree/bindings/gpu/samsung-rotator.yaml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/arm/samsung/pmu.yaml b/Documentation/devicetree/bindings/arm/samsung/pmu.yaml
-index 73b56fc5bf58..d8e03716f5d2 100644
---- a/Documentation/devicetree/bindings/arm/samsung/pmu.yaml
-+++ b/Documentation/devicetree/bindings/arm/samsung/pmu.yaml
-@@ -53,8 +53,10 @@ properties:
-       List of clock names for particular CLKOUT mux inputs
-     minItems: 1
-     maxItems: 32
--    items:
--      pattern: '^clkout([0-9]|[12][0-9]|3[0-1])$'
-+    allOf:
-+      - items:
-+          pattern: '^clkout([0-9]|[12][0-9]|3[0-1])$'
-+      - uniqueItems: true
+diff --git a/Documentation/devicetree/bindings/gpu/samsung-rotator.yaml b/Documentation/devicetree/bindings/gpu/samsung-rotator.yaml
+index 45ce562435fa..f4dfa6fc724c 100644
+--- a/Documentation/devicetree/bindings/gpu/samsung-rotator.yaml
++++ b/Documentation/devicetree/bindings/gpu/samsung-rotator.yaml
+@@ -27,7 +27,7 @@ properties:
  
-   clocks:
-     minItems: 1
+   clock-names:
+     items:
+-    - const: rotator
++      - const: rotator
+ 
+ required:
+   - compatible
 -- 
 2.17.1
 
