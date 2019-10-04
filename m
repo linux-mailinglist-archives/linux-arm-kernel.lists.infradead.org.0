@@ -2,104 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 890BFCC1BF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 19:29:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49840CC208
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 19:52:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
-	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4swDgnqm653F0JsNmA3FJdTZizoHBYVteJIgZbRmImc=; b=QFb05om3I40XOZ
-	9qqMV5fmcF2oxpyeItDdCjmKJfY1A8t20V9H8Oy4B7a9LXb3dc/1pC02Uk9duYR7iIYsDdUEG9xgI
-	ZoQ/tJrLEUF5uBjBWBr5nT260yufHP4wXm+xfzydBY47PtASKKK3j8mJ4COsag9TZPJYynXKkTRjr
-	X3lZxVweb0EyNeQoubcJg25V6+kFj5/BZljsZyGDEljpRwqyOwLOLwzaCg3tgcQPsIPB9Gt+qi3oK
-	e2y+8RNI7tk/ek4xWIBTr4UImfHBOeBHsFrWIKjYHLFUFk+HdO5Sw1eFlqI6OuhX0+78FYJKGklE1
-	oCxNZCdXj6fkY/+IkdKQ==;
+	List-Owner; bh=m+M+oaHTb8ToelFyz+hvjdeEgUKMaXt2qe2WA4/w18g=; b=VZ6w8dg7QcsZ1Z
+	3xAMMq4U/zOytzcnu5iCrxdpm8KS9x3kIQQ3uH0UHTvWmzBBUBs0qUK9KBoG0NTSowaAAoY/c09uT
+	p2KsVWteFAjYXXMcL/rJkud5+0Q1+Fl1+MGbcRJCsWd56m73d6Kapq1LpLJivgIjEikb1Zqeb1J+K
+	ey2bNU34Od0WgDn9RoocPFKUpWY03bDa/CzxDlh4lKW0w/jqIOX3PwZc6IBYMGArrGI6CGelnGjWu
+	ZjicR7bdcoodTSD4rRyWXIwJPC5TcdWO95JKopaY+eQtL9AGBgMe8e2bK6KGwL+FE4pWOIQcqL+1K
+	o9Bgfg5W2yY4D1gqhNKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGROO-0004tJ-Vo; Fri, 04 Oct 2019 17:29:24 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1iGRko-0004wI-KC; Fri, 04 Oct 2019 17:52:34 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGROG-0004sL-E2
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 17:29:18 +0000
-Received: from pps.filterd (m0098413.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x94HDer8013534
- for <linux-arm-kernel@lists.infradead.org>; Fri, 4 Oct 2019 13:29:13 -0400
-Received: from e06smtp02.uk.ibm.com (e06smtp02.uk.ibm.com [195.75.94.98])
- by mx0b-001b2d01.pphosted.com with ESMTP id 2ve88bwmyd-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Fri, 04 Oct 2019 13:29:13 -0400
-Received: from localhost
- by e06smtp02.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
- Fri, 4 Oct 2019 18:29:11 +0100
-Received: from b06cxnps3075.portsmouth.uk.ibm.com (9.149.109.195)
- by e06smtp02.uk.ibm.com (192.168.101.132) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Fri, 4 Oct 2019 18:29:08 +0100
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com
- (b06wcsmtp001.portsmouth.uk.ibm.com [9.149.105.160])
- by b06cxnps3075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x94HT7Vk58065062
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 4 Oct 2019 17:29:07 GMT
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 0DEFBA405B;
- Fri,  4 Oct 2019 17:29:07 +0000 (GMT)
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id C9015A405C;
- Fri,  4 Oct 2019 17:29:05 +0000 (GMT)
-Received: from linux.ibm.com (unknown [9.148.204.245])
- by b06wcsmtp001.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Fri,  4 Oct 2019 17:29:05 +0000 (GMT)
-Date: Fri, 4 Oct 2019 20:29:03 +0300
-From: Mike Rapoport <rppt@linux.ibm.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH v2 00/21] Refine memblock API
-References: <CAHCN7xL1sFXDhKUpj04d3eDZNgLA1yGAOqwEeCxedy1Qm-JOfQ@mail.gmail.com>
- <20190928073331.GA5269@linux.ibm.com>
- <CAHCN7xJEvS2Si=M+BYtz+kY0M4NxmqDjiX9Nwq6_3GGBh3yg=w@mail.gmail.com>
- <CAHCN7xKLhWw4P9-sZKXQcfSfh2r3J_+rLxuxACW0UVgimCzyVw@mail.gmail.com>
- <20191002073605.GA30433@linux.ibm.com>
- <CAHCN7xL1MkJh44N3W_1+08DHmX__SqnfH6dqUzYzr2Wpg0kQyQ@mail.gmail.com>
- <20191003053451.GA23397@linux.ibm.com>
- <20191003084914.GV25745@shell.armlinux.org.uk>
- <20191003113010.GC23397@linux.ibm.com>
- <20191004092727.GX25745@shell.armlinux.org.uk>
+ id 1iGRkg-0004vb-2N
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 17:52:27 +0000
+Received: by mail-wr1-x443.google.com with SMTP id v8so8262773wrt.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 04 Oct 2019 10:52:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=sFYbP+lwubqARXBpAaF4zcAm2S+7R8TyH0tAYLHpuSw=;
+ b=SmxHhPtiS4HE+frxFMiA5OGhOlwdwsxbR3iaBCD2kV6eT9DtYjlFHI8Fi5D6clbRwh
+ Nxh1rKkKxEruG3/W0r0y879a64kVB8lNpcfdt8BI6FT26/dmmvz4ufqdpX6vAqNtGGu7
+ LrOVIYHjz/dUiik26uG1DX1uvj4RtRSO0G7DljiKkIO9FmGSxNg7GjhRpWixtgVPvEB8
+ Z4gy9XNWnT83rVMNFxFplTis5Roe/e+4hn+nkfeie/7AY6W/7zlPuqRMjiVJ1/j4JHgW
+ woYqWZk+VtzsVXuB8m82bKW7R2n8T1A0dGRkIR1p13bYn7Prt5sis7E4sfx/QQdSTbHY
+ AUNQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=sFYbP+lwubqARXBpAaF4zcAm2S+7R8TyH0tAYLHpuSw=;
+ b=LoPBFE3egW/CyUFl9qtUd8pcZ8LHwo+1E+h5XU1sNVzCAQSgWDgJyLAb2odyi/G1Jh
+ y9Mhy86wGG+TBit1xnSmnfQVfnFvWsdfJZj4KTODyr68GHLdaWu3OlASvWAk1V6N+2yU
+ gMVNozDGNBO2ESx0H9zud8Ox14Q7hU0CF8QOA93vfWNScNA4rqH5ENAfWncaO2mCFiKX
+ Yb2OKmLEFBvxCTYZTpUSYxHIndEFNDcKcRj1BF0YpSz9CwYjDYysd40HGR4G8j5MDd2G
+ LTeJtt+gyoQgm90g8UzeEO5EEYavS6WQEeKaJNuiJLNBvA8lojlRjXINidKCXDAp2Ojb
+ Mt3Q==
+X-Gm-Message-State: APjAAAXr5LK9KP95FKLQjR+VmkGKeNVF0c3UgVdIH1teOLGeCX226tWG
+ +Re9Dfkbm3ntoGqABP3sh4LOkwxL
+X-Google-Smtp-Source: APXvYqxKktEBgCwY1UMUOGZ6XIxTAYM3I6bm5m3tonPbhiuAyeIqRpA6wiGOA/Vmhw7etSBN48lcaA==
+X-Received: by 2002:adf:c7cf:: with SMTP id y15mr12982295wrg.54.1570211543488; 
+ Fri, 04 Oct 2019 10:52:23 -0700 (PDT)
+Received: from Red ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
+ by smtp.googlemail.com with ESMTPSA id 59sm9181066wrc.23.2019.10.04.10.52.21
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 04 Oct 2019 10:52:22 -0700 (PDT)
+Date: Fri, 4 Oct 2019 19:52:18 +0200
+From: Corentin Labbe <clabbe.montjoie@gmail.com>
+To: Maxime Ripard <mripard@kernel.org>
+Subject: Re: [PATCH v2 02/11] crypto: Add Allwinner sun8i-ce Crypto Engine
+Message-ID: <20191004175218.GA11208@Red>
+References: <20191001184141.27956-1-clabbe.montjoie@gmail.com>
+ <20191001184141.27956-3-clabbe.montjoie@gmail.com>
+ <20191002103506.zdoyhhzmroa6smwl@gilmour>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191004092727.GX25745@shell.armlinux.org.uk>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-TM-AS-GCONF: 00
-x-cbid: 19100417-0008-0000-0000-0000031E134C
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19100417-0009-0000-0000-00004A3D1F6E
-Message-Id: <20191004172902.GB17825@linux.ibm.com>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-10-04_10:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1908290000 definitions=main-1910040147
+In-Reply-To: <20191002103506.zdoyhhzmroa6smwl@gilmour>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_102916_614233_607C9E6C 
-X-CRM114-Status: GOOD (  37.95  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191004_105226_137593_2E0D3384 
+X-CRM114-Status: GOOD (  17.16  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (clabbe.montjoie[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,136 +101,199 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Adam Ford <aford173@gmail.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- The etnaviv authors <etnaviv@lists.freedesktop.org>,
- Linux Memory Management List <linux-mm@kvack.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Fabio Estevam <festevam@gmail.com>,
- Christoph Hellwig <hch@lst.de>, arm-soc <linux-arm-kernel@lists.infradead.org>,
- Lucas Stach <l.stach@pengutronix.de>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ herbert@gondor.apana.org.au, catalin.marinas@arm.com,
+ linux-sunxi@googlegroups.com, linux@armlinux.org.uk,
+ linux-kernel@vger.kernel.org, wens@csie.org, robh+dt@kernel.org,
+ linux-crypto@vger.kernel.org, will@kernel.org, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 04, 2019 at 10:27:27AM +0100, Russell King - ARM Linux admin wrote:
-> On Thu, Oct 03, 2019 at 02:30:10PM +0300, Mike Rapoport wrote:
-> > On Thu, Oct 03, 2019 at 09:49:14AM +0100, Russell King - ARM Linux admin wrote:
-> > > On Thu, Oct 03, 2019 at 08:34:52AM +0300, Mike Rapoport wrote:
-> > > > (trimmed the CC)
-> > > > 
-> > > > On Wed, Oct 02, 2019 at 06:14:11AM -0500, Adam Ford wrote:
-> > > > > On Wed, Oct 2, 2019 at 2:36 AM Mike Rapoport <rppt@linux.ibm.com> wrote:
-> > > > > >
-> > > > > 
-> > > > > Before the patch:
-> > > > > 
-> > > > > # cat /sys/kernel/debug/memblock/memory
-> > > > >    0: 0x10000000..0x8fffffff
-> > > > > # cat /sys/kernel/debug/memblock/reserved
-> > > > >    0: 0x10004000..0x10007fff
-> > > > >   34: 0x2fffff88..0x3fffffff
-> > > > > 
-> > > > > 
-> > > > > After the patch:
-> > > > > # cat /sys/kernel/debug/memblock/memory
-> > > > >    0: 0x10000000..0x8fffffff
-> > > > > # cat /sys/kernel/debug/memblock/reserved
-> > > > >    0: 0x10004000..0x10007fff
-> > > > >   36: 0x80000000..0x8fffffff
-> > > > 
-> > > > I'm still not convinced that the memblock refactoring didn't uncovered an
-> > > > issue in etnaviv driver.
-> > > > 
-> > > > Why moving the CMA area from 0x80000000 to 0x30000000 makes it fail?
-> > > 
-> > > I think you have that the wrong way round.
-> > 
-> > I'm relying on Adam's reports of working and non-working versions.
-> > According to that etnaviv works when CMA area is at 0x80000000 and does not
-> > work when it is at 0x30000000.
-> > 
-> > He also sent logs a few days ago [1], they also confirm that.
-> > 
-> > [1] https://lore.kernel.org/linux-mm/CAHCN7xJEvS2Si=M+BYtz+kY0M4NxmqDjiX9Nwq6_3GGBh3yg=w@mail.gmail.com/
+On Wed, Oct 02, 2019 at 12:35:06PM +0200, Maxime Ripard wrote:
+> Hi,
 > 
-> Sorry, yes, you're right.  Still, I've reported this same regression
-> a while back, and it's never gone away.
+> On Tue, Oct 01, 2019 at 08:41:32PM +0200, Corentin Labbe wrote:
+> > +	/* CTS and recent CE (H6) need length in bytes, in word otherwise */
+> > +	if (ce->variant->model == CE_v2)
+> > +		cet->t_dlen = areq->cryptlen;
 > 
-> > > > BTW, the code that complained about "command buffer outside valid memory
-> > > > window" has been removed by the commit 17e4660ae3d7 ("drm/etnaviv:
-> > > > implement per-process address spaces on MMUv2"). 
-> > > > 
-> > > > Could be that recent changes to MMU management of etnaviv resolve the
-> > > > issue?
-> > > 
-> > > The iMX6 does not have MMUv2 hardware, it has MMUv1.  With MMUv1
-> > > hardware requires command buffers within the first 2GiB of physical
-> > > RAM.
-> > 
-> > I've mentioned that patch because it removed the check for cmdbuf address
-> > for MMUv1:
-> > 
-> > @@ -785,15 +768,7 @@ int etnaviv_gpu_init(struct etnaviv_gpu *gpu)
-> >                                   PAGE_SIZE);
-> >         if (ret) {
-> >                 dev_err(gpu->dev, "could not create command buffer\n");
-> > -               goto unmap_suballoc;
-> > -       }
-> > -
-> > -       if (!(gpu->identity.minor_features1 & chipMinorFeatures1_MMU_VERSION) &&
-> > -           etnaviv_cmdbuf_get_va(&gpu->buffer, &gpu->cmdbuf_mapping) > 0x80000000) {
-> > -               ret = -EINVAL;
-> > -               dev_err(gpu->dev,
-> > -                       "command buffer outside valid memory window\n");
-> > -               goto free_buffer;
-> > +               goto fail;
-> >         }
-> >  
-> >         /* Setup event management */
-> > 
-> > 
-> > I really don't know how etnaviv works, so I hoped that people who
-> > understand it would help.
+> It's entirely redundant withe the compatible.
 > 
-> From what I can see, removing that check is a completely insane thing
-> to do, and I note that these changes are _not_ described in the commit
-> message.  The problem was known about _before_ (June 22) the patch was
-> created (July 5).
-
-The memblock refactoring went in in 5.1 which was May 5, and likely it
-caused the regression.
-
-Unless I'm missing something, before the memblock refactoring the CMA
-reservation could use the entire physical memory because
-memblock_phys_alloc() didn't enforce memblock.current_limit.
-
-Since memblock default is to allocate from top, cma_declare_contiguous()
-could grab the memory close to the end of DRAM and thus have physical
-address close enough to the virtual address to fit in the 2G limit.
-
-When I've made memblock_phys* limit the memblock allocations to
-memblock.current_limit the CMA area moved too far away down and the gap
-became larger than 2G.
-
-It does not seem like dealing with this in etnaviv driver and DMA and CMA
-APIs would happen fast and the "revert" of the memblock changes I've sent
-earlier in this thread does fix the problem.
-
-Andrew, would you like me to resend the patch in a separate e-mail?
- 
-> Lucas, please can you explain why removing the above check, which is
-> well known to correctly trigger on various platforms to prevent
-> incorrect GPU behaviour, is safe?
-> 
-> Thanks.
+> How about using something like has_t_dlen or whatever name you find
+> best in the variant structure?
 > 
 
--- 
-Sincerely yours,
-Mike.
+Hello
 
+I will fix that, I started with has_t_dlen_in_bytes
+
+> > +static int sun8i_ce_probe(struct platform_device *pdev)
+> > +{
+> > +	struct resource *res;
+> > +	u32 v;
+> > +	int err, i, ce_method, id, irq;
+> > +	unsigned long cr;
+> > +	struct sun8i_ce_dev *ce;
+> > +
+> > +	ce = devm_kzalloc(&pdev->dev, sizeof(*ce), GFP_KERNEL);
+> > +	if (!ce)
+> > +		return -ENOMEM;
+> > +
+> > +	ce->dev = &pdev->dev;
+> > +	platform_set_drvdata(pdev, ce);
+> > +
+> > +	ce->variant = of_device_get_match_data(&pdev->dev);
+> > +	if (!ce->variant) {
+> > +		dev_err(&pdev->dev, "Missing Crypto Engine variant\n");
+> > +		return -EINVAL;
+> > +	}
+> > +
+> > +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> > +	ce->base = devm_ioremap_resource(&pdev->dev, res);
+> > +	if (IS_ERR(ce->base))
+> > +		return PTR_ERR(ce->base);
+> > +
+> > +	for (i = 0; i < CE_MAX_CLOCKS; i++) {
+> > +		if (!ce->variant->ce_clks[i].name)
+> > +			continue;
+> > +		ce->ceclks[i] = devm_clk_get(&pdev->dev, ce->variant->ce_clks[i].name);
+> > +		if (IS_ERR(ce->ceclks[i])) {
+> > +			err = PTR_ERR(ce->ceclks[i]);
+> > +			dev_err(&pdev->dev, "Cannot get %s CE clock err=%d\n",
+> > +				ce->variant->ce_clks[i].name, err);
+> > +			return err;
+> > +		}
+> > +		cr = clk_get_rate(ce->ceclks[i]);
+> > +		if (!cr)
+> > +			return -EINVAL;
+> > +		if (ce->variant->ce_clks[i].freq > 0 &&
+> > +		    cr != ce->variant->ce_clks[i].freq) {
+> > +			dev_info(&pdev->dev, "Set %s clock to %lu (%lu Mhz) from %lu (%lu Mhz)\n",
+> > +				 ce->variant->ce_clks[i].name,
+> > +				 ce->variant->ce_clks[i].freq,
+> > +				 ce->variant->ce_clks[i].freq / 1000000,
+> > +				 cr, cr / 1000000);
+> > +			err = clk_set_rate(ce->ceclks[i], ce->variant->ce_clks[i].freq);
+> > +			if (err)
+> > +				dev_err(&pdev->dev, "Fail to set %s clk speed to %lu hz\n",
+> > +					ce->variant->ce_clks[i].name,
+> > +					ce->variant->ce_clks[i].freq);
+> > +		}
+> > +		if (ce->variant->ce_clks[i].max_freq > 0 &&
+> > +		    cr > ce->variant->ce_clks[i].max_freq)
+> > +			dev_warn(&pdev->dev, "Frequency for %s (%lu hz) is higher than datasheet's recommandation (%lu hz)",
+> > +				 ce->variant->ce_clks[i].name, cr,
+> > +				 ce->variant->ce_clks[i].max_freq);
+> > +	}
+> > +
+> > +	/* Get Non Secure IRQ */
+> > +	irq = platform_get_irq(pdev, 0);
+> > +	if (irq < 0) {
+> > +		dev_err(ce->dev, "Cannot get CryptoEngine Non-secure IRQ\n");
+> > +		return irq;
+> > +	}
+> > +
+> > +	ce->reset = devm_reset_control_get_optional(&pdev->dev, "bus");
+> > +	if (IS_ERR(ce->reset)) {
+> > +		if (PTR_ERR(ce->reset) == -EPROBE_DEFER)
+> > +			return PTR_ERR(ce->reset);
+> > +		dev_err(&pdev->dev, "No reset control found\n");
+> > +		return PTR_ERR(ce->reset);
+> > +	}
+> > +
+> > +	mutex_init(&ce->mlock);
+> > +
+> > +	err = allocate_chanlist(ce);
+> > +	if (err)
+> > +		return err;
+> > +
+> > +	err = sun8i_ce_pm_init(ce);
+> > +	if (err)
+> > +		goto error_pm;
+> > +
+> > +	err = devm_request_irq(&pdev->dev, irq, ce_irq_handler, 0,
+> > +			       "sun8i-ce-ns", ce);
+> > +	if (err) {
+> > +		dev_err(ce->dev, "Cannot request CryptoEngine Non-secure IRQ (err=%d)\n", err);
+> > +		goto error_irq;
+> > +	}
+> > +
+> > +	for (i = 0; i < ARRAY_SIZE(ce_algs); i++) {
+> > +		ce_algs[i].ce = ce;
+> > +		switch (ce_algs[i].type) {
+> > +		case CRYPTO_ALG_TYPE_SKCIPHER:
+> > +			id = ce_algs[i].ce_algo_id;
+> > +			ce_method = ce->variant->alg_cipher[id];
+> > +			if (ce_method == CE_ID_NOTSUPP) {
+> > +				dev_info(ce->dev,
+> > +					 "DEBUG: Algo of %s not supported\n",
+> > +					 ce_algs[i].alg.skcipher.base.cra_name);
+> > +				ce_algs[i].ce = NULL;
+> > +				break;
+> > +			}
+> > +			id = ce_algs[i].ce_blockmode;
+> > +			ce_method = ce->variant->op_mode[id];
+> > +			if (ce_method == CE_ID_NOTSUPP) {
+> > +				dev_info(ce->dev, "DEBUG: Blockmode of %s not supported\n",
+> > +					 ce_algs[i].alg.skcipher.base.cra_name);
+> > +				ce_algs[i].ce = NULL;
+> > +				break;
+> > +			}
+> > +			dev_info(ce->dev, "DEBUG: Register %s\n",
+> > +				 ce_algs[i].alg.skcipher.base.cra_name);
+> > +			err = crypto_register_skcipher(&ce_algs[i].alg.skcipher);
+> > +			if (err) {
+> > +				dev_err(ce->dev, "Fail to register %s\n",
+> > +					ce_algs[i].alg.skcipher.base.cra_name);
+> > +				ce_algs[i].ce = NULL;
+> > +				goto error_alg;
+> > +			}
+> > +			break;
+> > +		default:
+> > +			ce_algs[i].ce = NULL;
+> > +			dev_err(ce->dev, "ERROR: tryed to register an unknown algo\n");
+> > +		}
+> > +	}
+> > +
+> > +	err = pm_runtime_get_sync(ce->dev);
+> > +	if (err < 0)
+> > +		goto error_alg;
+> > +
+> > +	v = readl(ce->base + CE_CTR);
+> > +	v >>= CE_DIE_ID_SHIFT;
+> > +	v &= CE_DIE_ID_MASK;
+> > +	dev_info(&pdev->dev, "CryptoEngine Die ID %x\n", v);
+> > +
+> > +	pm_runtime_put_sync(ce->dev);
+> > +
+> > +#ifdef CONFIG_CRYPTO_DEV_SUN8I_CE_DEBUG
+> > +	/* Ignore error of debugfs */
+> > +	ce->dbgfs_dir = debugfs_create_dir("sun8i-ce", NULL);
+> > +	ce->dbgfs_stats = debugfs_create_file("stats", 0444,
+> > +					      ce->dbgfs_dir, ce,
+> > +					      &sun8i_ce_debugfs_fops);
+> > +#endif
+> > +	return 0;
+> > +error_alg:
+> > +	unregister_algs(ce);
+> > +	i = MAXFLOW;
+> > +error_irq:
+> > +	sun8i_ce_pm_exit(ce);
+> > +error_pm:
+> > +	free_chanlist(ce, i);
+> > +	return err;
+> > +}
+> 
+> It's still pretty long. Can you move the clocks, algo initialisation
+> (and debugfs maybe?) to a function of their own?
+> 
+
+It is much cleaner with clock and algo init in functions, thanks!
+
+Regards
 
 _______________________________________________
 linux-arm-kernel mailing list
