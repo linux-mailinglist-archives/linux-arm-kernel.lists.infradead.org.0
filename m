@@ -2,86 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 626C7CBFC5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 17:52:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 343A1CBFC8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 17:53:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:To:
-	From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=njyiYV8WLLILEtitplvzKx1mgDvdZi2BTwk/38G7rUE=; b=Pz0YPj2x+EqUk0
-	18FTGwfm5hsKJBgk64hQEY55BUGGlHuRxkwcPitLzHE0n2wyqJowMGILa0N041nchkRMCrzXWqU/L
-	L/gYFZ2h4BVMIOgbWTsLa/ymj9OyJmIQwCMy4i26L33boFj0hKKK9PK+k0u5Nq6QOZjBBDShbuj7n
-	w1vsAt9AdfRZhGw7rBr31RPp+tlta3BDQ/7xERmfAR+Ayh57V03Kz1WIRXRJC8+GBNyJCYCKfJ7HR
-	rHf4HvXI2vZwjSdKmbqKzMoIXuAam6qHm9ulo0FOz1ERbYKhoxa2dC5Lz+DsBZz6P2x6gPDGMBzR5
-	TIUOi9Qeq+WysPPM9i4Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FuuS/u0otMCptchOvp8ZZ7GLpAr8D3fcJiJz3WBiFWM=; b=r814m0ZgXdo+AF
+	bxSNN+5u2Bxa2LNwQA4Kim2aiHOm51I7xdd55I+nxH2GSCuBanC9wKM4Vaw6BRXyd+H5SDpj+cY9p
+	sBcXrvHH69cOLIVfoHIN8EjP122eHW7XldXvK6ZtGqzKvw2Fih4rkDDpt2KB+TC96r+fCF94lwx2H
+	bg1Q2JkyioHKdvvk0Q24v+oj8eaXlnodfkmXgSewYzVywcGX+/1b9VrVS9panX3o04llAsqIOkInL
+	LHg4S9CBNSuyJr00zFbU5JpuCNLovTcli6i02/rLu7s8KZj9AilAPnM7ACwFzpwrC37ohz1XWi1C4
+	kcxGWczszAbDRQQrvX7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGPsY-00072q-Lb; Fri, 04 Oct 2019 15:52:26 +0000
-Received: from mout.gmx.net ([212.227.17.22])
+	id 1iGPt3-0007MF-C6; Fri, 04 Oct 2019 15:52:57 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGPsP-00072C-6N; Fri, 04 Oct 2019 15:52:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1570204319;
- bh=tlXNezk2klm36a8BgtQ7aWv6+faM2dhbJvCXCdCOFZA=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=fZyGQE2WrjZW8em4J6qE/CMX+qaoDkrb4cfayYSFuSsC6XNDBbfJABOmngKV3z7bM
- Rjhi3KD+3Xk3kjAeigEITXt/JHUykRRXfsNPBQfG3CWFZxUNiKjhniJULcmVBJeold
- YWu7xOUqeX3JdNjf2KwccTcd5yZ4d/k8In2n3Xq8=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [80.208.214.220] ([80.208.214.220]) by web-mail.gmx.net
- (3c-app-gmx-bap10.server.lan [172.19.172.80]) (via HTTP); Fri, 4 Oct 2019
- 17:51:59 +0200
+ id 1iGPsq-0007LJ-ND
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 15:52:46 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id DA9D7B1AE;
+ Fri,  4 Oct 2019 15:52:42 +0000 (UTC)
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v2] ARM: dt: check MPIDR on MP devices built without SMP
+Date: Fri,  4 Oct 2019 17:52:33 +0200
+Message-Id: <20191004155232.17209-1-nsaenzjulienne@suse.de>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Message-ID: <trinity-c33ab112-57a5-47d6-80e5-13c96442e302-1570204319219@3c-app-gmx-bap10>
-From: "Frank Wunderlich" <frank-w@public-files.de>
-To: "Lee Jones" <lee.jones@linaro.org>, "Hsin-Hsiung Wang"
- <hsin-hsiung.wang@mediatek.com>
-Subject: Aw: Re: [PATCH] mfd: mt6397: fix probe after changing mt6397-core
-Date: Fri, 4 Oct 2019 17:51:59 +0200
-Importance: normal
-Sensitivity: Normal
-In-Reply-To: <20191004152001.GS18429@dell>
-References: <20191003185323.24646-1-frank-w@public-files.de>
- <20191004152001.GS18429@dell>
-X-UI-Message-Type: mail
-X-Priority: 3
-X-Provags-ID: V03:K1:SA0Gglr+Lfvr4Iz1kF2/P2ycdFCnYWrl8HCghLFJOGQq5gM3NRxGEevpstbEN1hpyf6vT
- gz5mldmbYfbpYp5LpYr9QI3wk1cMPPitFC1DNLKkBoO8tQtsFYq9xE/KlcvGlxJl7oEL4Q7JWYfW
- 4CvIDXImNJfBcEtvO797AERoqtx98dg7+AG5jVr+T+bPFeeNZ5aRXEpypWUszXHF/Nq4JeQY+RqP
- qKkOZsZiI6DZrbfXZXQuTqV4WjRs03JliKYKhehpbkhSpfdyjpbz2/KnPCjTUOEHb8fhE9qLUKdH
- sQ=
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:DUEgJZ4YN2A=:bc/n0OX5WsUSC0c2k100q8
- RE27yEX1VHwQKm6UTogrAHMF/rdsYW9bauE+46Z52liDodog/Rl/VO/+35Nh7DIXaRMy0KWJ7
- 6eK1Mu1KpuKcCCN0tozF7AOJbzd6OHbwR8iHXs9KeuiBLW6+E83+AFY9pyyt4hIK70cU6r/m8
- /4Satde9MAiA03ExOtsqjd9lvrvWDYVKmtbqAAPFp+BO7+Ax/mTav0h5kfpxajq4nCIXSMPB7
- hEyAnXHdKv1b7hOOpBQm55zzaH0xwEk/vkjLfo4U3hiLXu9TceAOIHOxnLzLGym6jLedKTqAB
- ljkXEnCBsGUMEJgv1m/yCrFNC1OIKjZzcrXY672EthDNOGtwabqYIy3Jfcq+60Z/Qbra/tHrF
- fEA4XmuA/2o6Wx2FauqPRoO4KeWOMmYU738wsN6xLD1uD1TQIgVwN1lsfQYkp+IE0Pj2eUol3
- oK2K2qBcVWUhvs+lJuL6PudkSeCSXNvL1IeB/i0emE52jHNkVCbA1+44bqa/CVy++iDroL/NU
- Y9K3IiIuh3+/cbGMTaqiQA/Zmo9ThE0O2bcSAzz+NuVWY0Xofz3QNGogkCESzkRxmXRGPFMCI
- 8o+YZ9xrnFevRPf3Hvzt3JXLuQXZzWxuYuZfzyZKNQzJJVZ72TV55+TYHtM+Rj9YUv6SUMpv0
- D25m6Yp9BMqijAMuruku/k4oEnWSc6OpAGwhhxhwxM7Al+xYHdK3+D+Xt5dQb5l5u7Ec=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_085217_570346_DB5694DB 
-X-CRM114-Status: UNSURE (   5.89  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191004_085244_900961_3A55E62E 
+X-CRM114-Status: GOOD (  13.93  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.22 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.22 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,25 +57,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Matthias Brugger <matthias.bgg@gmail.com>,
- linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org,
+Cc: f.fainelli@gmail.com, "kernelci.org bot" <bot@kernelci.org>,
+ Russell King <linux@armlinux.org.uk>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, wahrenst@gmx.net,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This Question goes to Hsin-Hsiung Wang ;)
+On SMP builds, in order to properly link CPU devices with their
+respective DT nodes we start by matching the boot CPU. This is achieved
+by comparing the 'reg' property on each of the CPU DT nodes with the
+MPIDR. The association is necessary as to validate the whole CPU logical
+map, which ultimately links CPU devices and their DT nodes.
 
-i only took his code (and splitted the 3rd part) to get mt6323 working again without reverting the other 2 Patches
+On setups built without SMP, no MPIDR read is performed. The only thing
+expected is for the 'reg' property in the CPU DT node to contain the
+value 0x0.
 
-regards Frank
+This causes problems on MP setups built without SMP. As their boot CPU
+DT node contains the relevant MPIDR as opposed to 0x0. No match is then
+possible. This causes troubles further down the line as drivers are
+unable to get the CPU's DT node.
 
+Change the way we choose whether to get the MPIDR or not. On builds
+without SMP check the number of CPUs defined in DT. Anything > 1 means
+the MPIDR should be available and matched accordingly.
 
-> Gesendet: Freitag, 04. Oktober 2019 um 17:20 Uhr
-> Von: "Lee Jones" <lee.jones@linaro.org>
+Note that if there was a rogue UP device exposing multiple active CPUs
+in its DT the possible outcomes depend on the ARM series. For example
+Cortex-A9 specifies that the MPIDR is returns 0x0 on UP devices. On the
+other hand ARM1176JZ's TRM doesn't define a MPIDR register and specifies
+that any unwarranted register access will raise an undefined exception.
+Overall, given the bogus DT, a reasonable outcome.
 
-> Will there be other devices which have a !0 CID shift?
+This was originally seen on a Raspberry Pi 2 built with bcm2835_defconfig.
+
+Reported-by: "kernelci.org bot" <bot@kernelci.org>
+Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Tested-by: Stefan Wahren <wahrenst@gmx.net>
+
+---
+
+Changes since v1:
+  - Rewrite patch description
+  - Use of_get_available_child_count()
+
+Note: kept Setfan's Tested-by as the changes only affect a corner case.
+
+ arch/arm/kernel/devtree.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm/kernel/devtree.c b/arch/arm/kernel/devtree.c
+index 39c978698406..cd11742d9bc2 100644
+--- a/arch/arm/kernel/devtree.c
++++ b/arch/arm/kernel/devtree.c
+@@ -74,7 +74,7 @@ void __init arm_dt_init_cpu_maps(void)
+ 	struct device_node *cpu, *cpus;
+ 	int found_method = 0;
+ 	u32 i, j, cpuidx = 1;
+-	u32 mpidr = is_smp() ? read_cpuid_mpidr() & MPIDR_HWID_BITMASK : 0;
++	u32 mpidr = 0;
+ 
+ 	u32 tmp_map[NR_CPUS] = { [0 ... NR_CPUS-1] = MPIDR_INVALID };
+ 	bool bootcpu_valid = false;
+@@ -83,6 +83,9 @@ void __init arm_dt_init_cpu_maps(void)
+ 	if (!cpus)
+ 		return;
+ 
++	if (is_smp() || of_get_available_child_count(cpus) > 1)
++		mpidr = read_cpuid_mpidr() & MPIDR_HWID_BITMASK;
++
+ 	for_each_of_cpu_node(cpu) {
+ 		const __be32 *cell;
+ 		int prop_bytes;
+-- 
+2.23.0
 
 
 _______________________________________________
