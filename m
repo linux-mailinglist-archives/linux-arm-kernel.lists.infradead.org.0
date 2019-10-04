@@ -2,81 +2,149 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29039CBF13
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 17:23:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E05DCBF19
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 17:25:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SBZ6Le7iZxu0dRKY27SggLlips3QCbycNykIy2Y2P8w=; b=Bf3TiouzzfstE5
-	ldlP9SGHI6ySm0Yap0p0Cb20NScaEABCMLrQau3UwUPeFG2NPtT6FcacWMHsDfh5C+muSDuy5VYxz
-	sDb12x8FTcb85nDG27pvi++Sg1bJzA0ls9v1JutLtzXo17s7I+sT5579aLdvbuZfgpiscELIpZpkB
-	9zm+l9MbERgxG3FX0ilAswTPluZdnQniXjouHSjuPawHegiB/uAja38MtrCs6tbqBFDn7IIh794SK
-	kOxx6Kz76vvmQF4tHWk+DWEkRCws/jCfD9uCf3guzCOu6ncCx/AFUqZQPJ2O0+JL4JS9SDtEW7ZOo
-	nHJi8d0Xbct4Kp9eS9YQ==;
+	List-Owner; bh=W0oYfd+pyud2U3X2oELfB/CeA9lxrPjyybiwc6IStKU=; b=Tp0PEN+2DHdn43
+	PXlRL/jYlEBfOCOHUCll4yeAXiCFJFnr9iAuYBcSmHUIfQhVc5YK4VotkpW7uFrpTx+2OcUZGdqa/
+	mot+wVlGf7fmnBl+8AhymKYBDyBc/i3KZs37HU5VsbPNB2lYImTmnsujfj6J2pVmf/C242b8Wv0zZ
+	5PBcG6jKRyHDKPZAjkPFICWJEuPtqcvMHeRCb6wDRieJ3Oy0IgbaNNwLyVBRkEtCg0oHMmGQl5ZTL
+	eJMzD5dezq5hmfoW8zEgp7VC6kPeKNk68JZeDfCKsSJuEIbE4enIbyACGySzBhxtCTy4I1aTli7zr
+	bRA9x6QhfwEzb0ELqEtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGPQV-0003WQ-Os; Fri, 04 Oct 2019 15:23:27 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iGPSl-0005Dk-1k; Fri, 04 Oct 2019 15:25:47 +0000
+Received: from esa2.microchip.iphmx.com ([68.232.149.84])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGPQI-0003VO-KL
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 15:23:16 +0000
-Received: by mail-wr1-x444.google.com with SMTP id w12so7738695wro.5
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 04 Oct 2019 08:23:13 -0700 (PDT)
+ id 1iGPSd-0005Cf-1C
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 15:25:40 +0000
+Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
+ Nicolas.Ferre@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Nicolas.Ferre@microchip.com";
+ x-sender="Nicolas.Ferre@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa2.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Nicolas.Ferre@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa2.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Nicolas.Ferre@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: 5frJ9UwRzP7348kfzWvAtx58d+wVjQ9TTzCGCZu3haZm+8MDQquslR2D2umRb1cIP/lwzLBEf3
+ li2gRZdgixZ/Zq8aMB+gJInsI1YhPwtvjSNfhFlpZ03o+j4/BO3BOTC0QGipVazzSyDkUz2rpr
+ w1A/wZnzBf6AGgqCjZb8rsvKGXEHJ/PWgnHQ8+RrYIRWlK9kEHTlsEzrsQEQ614b/vpRIf1DR2
+ aw2R/1waXvuJHqd5DDtzHLEw0MGry2OayyBFWMfWE1tI/gzC87G002TRV2bqjRmMLd6mTOimCX
+ ccY=
+X-IronPort-AV: E=Sophos;i="5.67,256,1566889200"; d="scan'208";a="51539823"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 04 Oct 2019 08:25:31 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Fri, 4 Oct 2019 08:25:30 -0700
+Received: from NAM05-BY2-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Fri, 4 Oct 2019 08:25:30 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=oScLRrG4YOcOqw/sWimg2xlirBGeYhecCyvef84NQ6+88dcDO9o5tqaRN6Xs+1nl2ucBZkwNSVcOEQpPehcV8n4l1N/Rha2nc+ST1aZKWSZ6iejXSQ9/4jffCBHrARx4BKmvKjIhB0CmAFOwaURpVV5tca9LKBXjL8U/0e1DlwjfI6haLOCy5VzNZg2yMVnzXlVM+9gPYfdI43E8O5JyGFaM+G2GzE6jRHuygbRZDqInni6qr5DIvaRfeL4LjY2ff1q/DLFTVlNkMas5wDq067CqKIz9GUJUdrmRNofDwu5SxUPtPCtzc4VtH0HnHhiAQuXtENNI7H/CLvdte6223Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4P0VWht6bGDWatGqup7wrP3H9ZXqsLWLAT9wCLETBps=;
+ b=lBtA1DFb2ppUrldcopToldJD7IfiMmYLU37uhIC5Gtr8mIZgxQsuxHouQCuo7MW4Uh0J3S5s1rIM5JhJqo2t7G+iYc48L/RW+yRwozhOoUa8zF6PEjD7FDTpHzQ6mxgCxi5QCk1B7zdMUc8L6MEmx/AdZRlaW0oaG4Ak7EJyzVOBYF87pkUJBeVEPVVrw903FRKnTxvdagH8zPXa7VYyjFXh6wOb/GyKRXBg33tYbFaAbYM5+z0kLMRhR4B8R83+hvUOacCHhEjgZ6ZqBwtBoRTPUrHUwbNgCUqwuyaDXqHANmXlaayye2gL+t/l6ZGYpHLPBknJ5kw+sFpBGRyygw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gateworks-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6VbBxJXaVWnZlAADrl1WxG30jUtJzv378C6PGxLc+AY=;
- b=aaa3/q/a5tR1PDWZ8bj5BaM3zUVRiDQB4aXt7LaL/buzlSan8z0CB0n/sg6ovJ5zUa
- YP7iZ7kpt73cR6r9njXdlT2x2MBKsK3hGke9IUzvFiRDiJTajjLh5il5O3+TyxF/lIGk
- P+k1wmxzdoxqWZlQB5OMkp0ytrfwyPtL2VMsUlAIKnZGYpqAj9CjOzvpLr2kOJrnynLx
- M60zVkJidfBI0cb6u0ns7Ywzrv87tQkdqZBmZhzE5kCXRWhs2llV67cXPh62Jb2SEUYC
- CoxjyX8Vtb+eRnrdiTgenB/r8IlbteZpVrFx95o8nQWZsHUumA0RiTlxZdN/NbYPMg38
- t7wA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=6VbBxJXaVWnZlAADrl1WxG30jUtJzv378C6PGxLc+AY=;
- b=akHSMH0DcWSjEtyb+O4OaB1fM22OS/ONJXaxZyUuh2NQLj9aTpaU0ZOw9M414ievqc
- YZOtlq2gfjhI5K/PIN8YydTvBoiRb101ccJm6ZuFYV8ixT+1igMo6qMX+agQD0VBpRHn
- shedRg2MHCMK9uxcy52XyBmgvaVNNyXVhhFPQzAfdwGlCwnjDnWDyhYeIuDnfN0yZhLZ
- +FtfzNPXKOyCa1GUJP9gcRB7pZeRa6tXlyHDLYkJe3EkkAtSHHg2ONRs+SECZLqUrPYW
- AExqCuLxcyJBr9ow14a9zQ4+FO/H3CystG5FtkNsVT+I390ZudG1/sSfgXI7Eay7owMb
- +dbA==
-X-Gm-Message-State: APjAAAUXu5cm6kQRLs7q+hCqRrwobyuioYA/n1g1JmUcPqWR+uepETCC
- JUeVccBuIs2QSVuE06Zc+QmgHSSdcKCtF1zvMoRwGg==
-X-Google-Smtp-Source: APXvYqxXCw83yPFVlvvGHkJz3490AdAmYodXCS3fD7fYOO6wXPsyCN2EyfZEPC/Vp6+Yki2f6bhsZmh46pqCJIQKr28=
-X-Received: by 2002:a05:6000:45:: with SMTP id
- k5mr10966563wrx.259.1570202591937; 
- Fri, 04 Oct 2019 08:23:11 -0700 (PDT)
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4P0VWht6bGDWatGqup7wrP3H9ZXqsLWLAT9wCLETBps=;
+ b=ka5g6sERIapF+h+ZniY2SUFixKL8O2gsv7N5GcKsxnBw59LBUbMRmOMgzJNBC9X1NR6bW9evDwkRJfcnJ6e4CPiCPMq9GFQEnxXc48YPJ8fyFyOr4ngQeFcKAKxucc8p9L0v18PoyZE+tcX65stmxYaFpwsF3tzNiYHkv7t7kas=
+Received: from MWHPR11MB1662.namprd11.prod.outlook.com (10.172.55.15) by
+ MWHPR11MB1679.namprd11.prod.outlook.com (10.172.55.140) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2327.23; Fri, 4 Oct 2019 15:25:27 +0000
+Received: from MWHPR11MB1662.namprd11.prod.outlook.com
+ ([fe80::5d81:aef1:f63:3735]) by MWHPR11MB1662.namprd11.prod.outlook.com
+ ([fe80::5d81:aef1:f63:3735%3]) with mapi id 15.20.2305.023; Fri, 4 Oct 2019
+ 15:25:27 +0000
+From: <Nicolas.Ferre@microchip.com>
+To: <Tudor.Ambarus@microchip.com>, <kamel.bouhara@bootlin.com>,
+ <alexandre.belloni@bootlin.com>, <Ludovic.Desroches@microchip.com>,
+ <linux-arm-kernel@lists.infradead.org>
+Subject: Re: [PATCH v5] soc: at91: Add Atmel SFR SN (Serial Number) support
+Thread-Topic: [PATCH v5] soc: at91: Add Atmel SFR SN (Serial Number) support
+Thread-Index: AQHVer3h3w7XtCBnIUqO0cxT2FepoadKkcyAgAAIloA=
+Date: Fri, 4 Oct 2019 15:25:27 +0000
+Message-ID: <c4af6562-16e4-026a-3c54-bde1d4f1b5c3@microchip.com>
+References: <20191004141256.14491-1-kamel.bouhara@bootlin.com>
+ <a8c16919-9842-8a2a-81b0-16551c6a7944@microchip.com>
+In-Reply-To: <a8c16919-9842-8a2a-81b0-16551c6a7944@microchip.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: PR0P264CA0174.FRAP264.PROD.OUTLOOK.COM
+ (2603:10a6:100:1c::18) To MWHPR11MB1662.namprd11.prod.outlook.com
+ (2603:10b6:301:e::15)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [213.41.198.74]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 15159f3e-0026-443a-735f-08d748df1578
+x-ms-traffictypediagnostic: MWHPR11MB1679:
+x-ms-exchange-purlcount: 1
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <MWHPR11MB167922EA218622C83B7D2EC2E09E0@MWHPR11MB1679.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 018093A9B5
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(376002)(136003)(346002)(396003)(366004)(39860400002)(189003)(199004)(40224003)(81166006)(81156014)(8936002)(2501003)(305945005)(66066001)(8676002)(3846002)(6116002)(256004)(14444005)(486006)(229853002)(2616005)(476003)(11346002)(6246003)(386003)(6506007)(6512007)(186003)(6436002)(86362001)(53546011)(71190400001)(71200400001)(7736002)(5660300002)(102836004)(6306002)(4326008)(446003)(26005)(6486002)(52116002)(14454004)(76176011)(110136005)(31696002)(36756003)(99286004)(25786009)(66556008)(66476007)(66446008)(64756008)(66946007)(31686004)(2906002)(316002)(966005)(478600001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR11MB1679;
+ H:MWHPR11MB1662.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: g5KmD3cJKGBT/l9xw0ncueAth/XMc4I0CZD6NKscbkwbjXLy6uP36+ENorxijJzcrKFO/762CiucpY1vvoqebWj9q6X8+VUtruPs1UKyGfWbkzV4VOihA63rrXv1KafhB1Y6X1RRETlhLB1auZYfTRSu7GAutUzdnb43ZnDevt9kSWYTiTXMBm5FPw8eRZF88HaRredL8ylucc1u5L2oiT+QRNOrm9rrX1Huypq2636hU5uXea3Da6E2FovKF0nSVmzUqApjYZYCvAL/zldp7RqFXf8mEoCLC2dmltkeJczC7zQKW15cRORjqODh2ZJEi6Qq8HETlbFBg6Gykq2lQF/A6UfseKsAO2kDFXXIbQDfgvIeJjrAEPChdvy+7ckQjvKOgq9rBiSWD7pGoiys9AUZQqnpFm38H00joeBNe6ACcFvK7lEcmtFl3UD7qDbhetKIYj06jXeSMy6ddEGp/g==
+Content-ID: <B3FDD106DD5E614E819976F113A21472@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-References: <20190301192017.39770-1-dianders@chromium.org>
- <CAJ+vNU0Ma5nG9_ThLO4cdO+=ivf7rmXiHZonF0HY0xx6X3R6Hw@mail.gmail.com>
- <5dce2964-8761-e7d0-8963-f0f5cb2feb02@arm.com>
- <CAJ+vNU0Q1-d7YDbAAEMqEcWnniqo6jLdKBbcUTar5=hJ+AC8vQ@mail.gmail.com>
- <1f6f7eb0-e1dc-d5a8-fb38-44c5bd839894@arm.com>
-In-Reply-To: <1f6f7eb0-e1dc-d5a8-fb38-44c5bd839894@arm.com>
-From: Tim Harvey <tharvey@gateworks.com>
-Date: Fri, 4 Oct 2019 08:23:00 -0700
-Message-ID: <CAJ+vNU1Nd2p-ot2Qkj6vD9yD6gcYM-vm+snNWyt0ChgSqe4tBg@mail.gmail.com>
-Subject: Re: [PATCH v2] iommu/arm-smmu: Break insecure users by disabling
- bypass by default
-To: Robin Murphy <robin.murphy@arm.com>
+X-MS-Exchange-CrossTenant-Network-Message-Id: 15159f3e-0026-443a-735f-08d748df1578
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Oct 2019 15:25:27.3975 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: O60JafAckKT1PR5VmAvb4J6sYhinkIFG2c2awPKzSEZEnIxeFsdRmzjhJ34Cnojv7v7ET/1nakMBwPWkEVHf9A9m4L8iSaMEMN29vm3zziw=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR11MB1679
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_082314_730677_BBBB3129 
-X-CRM114-Status: GOOD (  30.33  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191004_082539_125055_0494BD00 
+X-CRM114-Status: GOOD (  22.59  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.149.84 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,193 +161,207 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: open list <linux-kernel@vger.kernel.org>, linux-arm-msm@vger.kernel.org,
- Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
- Douglas Anderson <dianders@chromium.org>, evgreen@chromium.org,
- tfiga@chromium.org, Rob Clark <robdclark@gmail.com>,
- iommu@lists.linux-foundation.org, Vivek Gautam <vivek.gautam@codeaurora.org>,
- Tirumalesh Chalamarla <tchalamarla@caviumnetworks.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: thomas.petazzoni@bootlin.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 3, 2019 at 3:24 PM Robin Murphy <robin.murphy@arm.com> wrote:
->
-> On 2019-10-03 9:51 pm, Tim Harvey wrote:
-> > On Thu, Oct 3, 2019 at 1:42 PM Robin Murphy <robin.murphy@arm.com> wrote:
-> >>
-> >> Hi Tim,
-> >>
-> >> On 2019-10-03 7:27 pm, Tim Harvey wrote:
-> >>> On Fri, Mar 1, 2019 at 11:21 AM Douglas Anderson <dianders@chromium.org> wrote:
-> >>>>
-> >>>> If you're bisecting why your peripherals stopped working, it's
-> >>>> probably this CL.  Specifically if you see this in your dmesg:
-> >>>>     Unexpected global fault, this could be serious
-> >>>> ...then it's almost certainly this CL.
-> >>>>
-> >>>> Running your IOMMU-enabled peripherals with the IOMMU in bypass mode
-> >>>> is insecure and effectively disables the protection they provide.
-> >>>> There are few reasons to allow unmatched stream bypass, and even fewer
-> >>>> good ones.
-> >>>>
-> >>>> This patch starts the transition over to make it much harder to run
-> >>>> your system insecurely.  Expected steps:
-> >>>>
-> >>>> 1. By default disable bypass (so anyone insecure will notice) but make
-> >>>>      it easy for someone to re-enable bypass with just a KConfig change.
-> >>>>      That's this patch.
-> >>>>
-> >>>> 2. After people have had a little time to come to grips with the fact
-> >>>>      that they need to set their IOMMUs properly and have had time to
-> >>>>      dig into how to do this, the KConfig will be eliminated and bypass
-> >>>>      will simply be disabled.  Folks who are truly upset and still
-> >>>>      haven't fixed their system can either figure out how to add
-> >>>>      'arm-smmu.disable_bypass=n' to their command line or revert the
-> >>>>      patch in their own private kernel.  Of course these folks will be
-> >>>>      less secure.
-> >>>>
-> >>>> Suggested-by: Robin Murphy <robin.murphy@arm.com>
-> >>>> Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> >>>> ---
-> >>>
-> >>> Hi Doug / Robin,
-> >>>
-> >>> I ran into this breaking things on OcteonTx boards based on CN80XX
-> >>> CPU. The IOMMU configuration is a bit beyond me and I'm hoping you can
-> >>> offer some advice. The IOMMU here is cavium,smmu-v2 as defined in
-> >>> https://github.com/Gateworks/dts-newport/blob/master/cn81xx-linux.dtsi
-> >>>
-> >>> Booting with 'arm-smmu.disable_bypass=n' does indeed work around the
-> >>> breakage as the commit suggests.
-> >>>
-> >>> Any suggestions for a proper fix?
-> >>
-> >> Ah, you're using the old "mmu-masters" binding (and in a way which isn't
-> >> well-defined - it's never been specified what the stream ID argument(s)
-> >> would mean for a PCI host bridge, and Linux just ignores them). The
-> >> ideal thing would be to update the DT to generic "iommu-map" properties
-> >> - it's been a long time since I last played with a ThunderX, but I
-> >> believe the SMMU stream IDs should just be the same as the ITS device
-> >> IDs (which is how the "mmu-masters" mapping would have played out anyway).
-> >>
-> >> The arm-smmu driver support for the old binding has always relied on
-> >> implicit bypass - there are technical reasons why we can't realistically
-> >> support the full functionality offered to the generic bindings, but it
-> >> would be possible to add some degree of workaround to prevent it
-> >> interacting quite so poorly with disable_bypass, if necessary. Do you
-> >> have deployed systems with DTs that can't be updated, but still might
-> >> need to run new kernels?
-> >>
-> >
-> > Robin,
-> >
-> > Thanks for the response. I don't care too much about supporting new
-> > kernels with the current DT - I'm good with fixing this with a DT
-> > change. Would you be able to give me an example? I would love to see
-> > Cavium mainline an cn81xx dts/dtsi in arch/arm64/boot/dts to be used
-> > as a base as the only thing we have to go off of currently is the
-> > Cavium SDK which has fairly old kernel support.
->
-> No promises (it's a late-night hack from my sofa), but try giving this a
-> go...
->
-> Robin.
->
-> ----->8-----
-> diff --git a/cn81xx-linux.dtsi b/cn81xx-linux.dtsi
-> index 3b759d9575fe..dabc9047c674 100644
-> --- a/cn81xx-linux.dtsi
-> +++ b/cn81xx-linux.dtsi
-> @@ -234,7 +234,7 @@
->                         clocks = <&sclk>;
->                 };
->
-> -               smmu0@830000000000 {
-> +               smmu: smmu0@830000000000 {
->                         compatible = "cavium,smmu-v2";
->                         reg = <0x8300 0x0 0x0 0x2000000>;
->                         #global-interrupts = <1>;
-> @@ -249,23 +249,18 @@
->                                      <0 69 4>, <0 69 4>, <0 69 4>, <0 69 4>, <0 69 4>, <0 69 4>,
->                                      <0 69 4>, <0 69 4>, <0 69 4>, <0 69 4>, <0 69 4>, <0 69 4>,
->                                      <0 69 4>, <0 69 4>, <0 69 4>, <0 69 4>, <0 69 4>;
-> -
-> -                       mmu-masters = <&ecam0 0x100>,
-> -                                     <&pem0  0x200>,
-> -                                     <&pem1  0x300>,
-> -                                     <&pem2  0x400>;
-> -
-> +                       #iommu-cells = <1>;
-> +                       dma-coherent;
->                 };
->
->                 ecam0: pci@848000000000 {
->                         compatible = "pci-host-ecam-generic";
->                         device_type = "pci";
-> -                       msi-parent = <&its>;
->                         msi-map = <0 &its 0 0x10000>;
-> +                       iommu-map = <0 &smmu 0 0x10000>;
->                         bus-range = <0 31>;
->                         #size-cells = <2>;
->                         #address-cells = <3>;
-> -                       #stream-id-cells = <1>;
->                         u-boot,dm-pre-reloc;
->                         dma-coherent;
->                         reg = <0x8480 0x00000000 0 0x02000000>;  /* Configuration space */
-> @@ -399,12 +394,11 @@
->
->                         compatible = "cavium,pci-host-thunder-pem";
->                         device_type = "pci";
-> -                       msi-parent = <&its>;
->                         msi-map = <0 &its 0 0x10000>;
-> +                       iommu-map = <0 &smmu 0 0x10000>;
->                         bus-range = <0x1f 0x57>;
->                         #size-cells = <2>;
->                         #address-cells = <3>;
-> -                       #stream-id-cells = <1>;
->                         dma-coherent;
->                         reg = <0x8800 0x1f000000 0x0 0x39000000>,  /* Configuration space */
->                                 <0x87e0 0xc0000000 0x0 0x01000000>; /* PEM space */
-> @@ -424,12 +418,11 @@
->                 pem1: pci@87e0c1000000 {
->                         compatible = "cavium,pci-host-thunder-pem";
->                         device_type = "pci";
-> -                       msi-parent = <&its>;
->                         msi-map = <0 &its 0 0x10000>;
-> +                       iommu-map = <0 &smmu 0 0x10000>;
->                         bus-range = <0x57 0x8f>;
->                         #size-cells = <2>;
->                         #address-cells = <3>;
-> -                       #stream-id-cells = <1>;
->                         dma-coherent;
->                         reg = <0x8840 0x57000000 0x0 0x39000000>,  /* Configuration space */
->                                 <0x87e0 0xc1000000 0x0 0x01000000>; /* PEM space */
-> @@ -449,12 +442,11 @@
->                 pem2: pci@87e0c2000000 {
->                         compatible = "cavium,pci-host-thunder-pem";
->                         device_type = "pci";
-> -                       msi-parent = <&its>;
->                         msi-map = <0 &its 0 0x10000>;
-> +                       iommu-map = <0 &smmu 0 0x10000>;
->                         bus-range = <0x8f 0xc7>;
->                         #size-cells = <2>;
->                         #address-cells = <3>;
-> -                       #stream-id-cells = <1>;
->                         dma-coherent;
->                         reg = <0x8880 0x8f000000 0x0 0x39000000>,  /* Configuration space */
->                                 <0x87e0 0xc2000000 0x0 0x01000000>; /* PEM space */
+On 04/10/2019 at 16:54, Tudor Ambarus - M18064 wrote:
+> 
+> 
+> On 10/04/2019 05:12 PM, Kamel Bouhara wrote:
+>> External E-Mail
+>>
+>>
+>> Add support to read SFR's read-only registers providing the SoC
+>> Serial Numbers (SN0+SN1) to userspace.
+>>
+>> ~ #  hexdump -n 8  -e'"%d\n"' /sys/bus/nvmem/devices/atmel-sfr0/nvmem
+>> 959527243
+>> 371539274
+>>
+>> Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
+>> ---
+>>   Changes in v5:
+>>   - Removed the blankline at EOF
+>>   - Feeded the entropy pool with the SoC SN using add_device_randomness()
+>>     and do it only once at probe().
+>>
+>>   drivers/soc/atmel/Kconfig  | 11 +++++
+>>   drivers/soc/atmel/Makefile |  1 +
+>>   drivers/soc/atmel/sfr.c    | 99 ++++++++++++++++++++++++++++++++++++++
+>>   3 files changed, 111 insertions(+)
+>>   create mode 100644 drivers/soc/atmel/sfr.c
+>>
+>> diff --git a/drivers/soc/atmel/Kconfig b/drivers/soc/atmel/Kconfig
+>> index 05528139b023..50caf6db9c0e 100644
+>> --- a/drivers/soc/atmel/Kconfig
+>> +++ b/drivers/soc/atmel/Kconfig
+>> @@ -5,3 +5,14 @@ config AT91_SOC_ID
+>>   	default ARCH_AT91
+>>   	help
+>>   	  Include support for the SoC bus on the Atmel ARM SoCs.
+>> +
+>> +config AT91_SOC_SFR
+>> +	tristate "Special Function Registers support"
+>> +	depends on ARCH_AT91 || COMPILE_TEST
+>> +	help
+>> +	  This is a driver for the Special Function Registers available on
+>> +	  Atmel SAMA5Dx SoCs, providing access to specific aspects of the
+>> +	  integrated memory, bridge implementations, processor etc.
+>> +
+>> +	  This driver can also be built as a module. If so, the module
+>> +	  will be called sfr.
+>> diff --git a/drivers/soc/atmel/Makefile b/drivers/soc/atmel/Makefile
+>> index 7ca355d10553..d849a897cd77 100644
+>> --- a/drivers/soc/atmel/Makefile
+>> +++ b/drivers/soc/atmel/Makefile
+>> @@ -1,2 +1,3 @@
+>>   # SPDX-License-Identifier: GPL-2.0-only
+>>   obj-$(CONFIG_AT91_SOC_ID) += soc.o
+>> +obj-$(CONFIG_AT91_SOC_SFR) += sfr.o
+>> diff --git a/drivers/soc/atmel/sfr.c b/drivers/soc/atmel/sfr.c
+>> new file mode 100644
+>> index 000000000000..145e9af63b4c
+>> --- /dev/null
+>> +++ b/drivers/soc/atmel/sfr.c
+>> @@ -0,0 +1,99 @@
+>> +// SPDX-License-Identifier: GPL-2.0-only
+>> +/*
+>> + * sfr.c - driver for special function registers
+>> + *
+>> + * Copyright (C) 2019 Bootlin.
+>> + *
+>> + */
+>> +#include <linux/mfd/syscon.h>
+>> +#include <linux/module.h>
+>> +#include <linux/nvmem-provider.h>
+>> +#include <linux/random.h>
+>> +#include <linux/of.h>
+>> +#include <linux/of_device.h>
+>> +#include <linux/platform_device.h>
+>> +#include <linux/regmap.h>
+>> +
+>> +#define SFR_SN0		0x4c
+>> +#define SFR_SN_SIZE	8
+>> +
+>> +struct atmel_sfr_priv {
+>> +	struct regmap			*regmap;
+>> +};
+>> +
+>> +static int atmel_sfr_read(void *context, unsigned int offset,
+>> +			  void *buf, size_t bytes)
+>> +{
+>> +	struct atmel_sfr_priv *priv = context;
+>> +
+>> +	return regmap_bulk_read(priv->regmap, SFR_SN0 + offset,
+>> +				buf, bytes / 4);
+>> +}
+>> +
+>> +static struct nvmem_config atmel_sfr_nvmem_config = {
+>> +	.name = "atmel-sfr",
+>> +	.read_only = true,
+>> +	.word_size = 4,
+>> +	.stride = 4,
+>> +	.size = SFR_SN_SIZE,
+>> +	.reg_read = atmel_sfr_read,
+>> +};
+>> +
+>> +static int atmel_sfr_probe(struct platform_device *pdev)
+>> +{
+>> +	struct device *dev = &pdev->dev;
+>> +	struct device_node *np = dev->of_node;
+>> +	struct nvmem_device *nvmem;
+>> +	struct atmel_sfr_priv *priv;
+>> +	u8 sn[SFR_SN_SIZE];
+>> +	int ret;
+>> +
+>> +	priv = devm_kmalloc(dev, sizeof(*priv), GFP_KERNEL);
+>> +	if (!priv)
+>> +		return -ENOMEM;
+>> +
+>> +	priv->regmap = syscon_node_to_regmap(np);
+>> +	if (IS_ERR(priv->regmap)) {
+>> +		dev_err(dev, "cannot get parent's regmap\n");
+>> +		return PTR_ERR(priv->regmap);
+>> +	}
+>> +
+>> +	atmel_sfr_nvmem_config.dev = dev;
+>> +	atmel_sfr_nvmem_config.priv = priv;
+>> +
+>> +	nvmem = devm_nvmem_register(dev, &atmel_sfr_nvmem_config);
+>> +	if (IS_ERR(nvmem)) {
+>> +		dev_err(dev, "error registering nvmem config\n");
+>> +		return PTR_ERR(nvmem);
+>> +	}
+>> +
+>> +	ret = atmel_sfr_read(priv, 0, sn, SFR_SN_SIZE);
+>> +	if (ret == 0)
+>> +		add_device_randomness(sn, SFR_SN_SIZE);
+>> +
+>> +	return 0;
+> 
+> 	return ret;
+> 
+> to not miss a possible error from atmel_sfr_read().
+> 
+> The code looks good, with this fixed one can add:
+> Tested-by: Tudor Ambarus <tudor.ambarus@microchip.com>
+> Reviewed-by: Tudor Ambarus <tudor.ambarus@microchip.com>
+> 
+> As I told in v3, I have some doubts on the use cases for this driver, but let's
+> see what the at91 folks think.
 
-Robin,
+Well, I'm sure to not know all the applications of this feature but 
+surely unique serial number (per single chip) is very useful while 
+wanting to identify your system precisely: attributing a MAC address, 
+pairing with one service or user software, generating unique keys, etc.
 
-No difference... still need 'arm-smmu.disable_bypass=n' to boot. Are
-all four iommu-map props above supposed to be the same? Seems to me
-they all point to the same thing which looks wrong.
+What I don't know is if there is special API in the kernel to use it as 
+several vendors seem to expose it differently (/proc/cpuinfo being one 
+other option). This one in nvmem /sys file is surely a valid one.
 
-Tim
+Best regards,
+   Nicolas
 
+>> +static const struct of_device_id atmel_sfr_dt_ids[] = {
+>> +	{
+>> +		.compatible = "atmel,sama5d2-sfr",
+>> +	}, {
+>> +		.compatible = "atmel,sama5d4-sfr",
+>> +	}, {
+>> +		/* sentinel */
+>> +	},
+>> +};
+>> +MODULE_DEVICE_TABLE(of, atmel_sfr_dt_ids);
+>> +
+>> +static struct platform_driver atmel_sfr_driver = {
+>> +	.probe = atmel_sfr_probe,
+>> +	.driver = {
+>> +		.name = "atmel-sfr",
+>> +		.of_match_table = atmel_sfr_dt_ids,
+>> +	},
+>> +};
+>> +module_platform_driver(atmel_sfr_driver);
+>> +
+>> +MODULE_AUTHOR("Kamel Bouhara <kamel.bouhara@bootlin.com>");
+>> +MODULE_DESCRIPTION("Atmel SFR SN driver for SAMA5D2/4 SoC family");
+>> +MODULE_LICENSE("GPL v2");
+>> --
+>> 2.23.0
+>>
+>>
+>> _______________________________________________
+>> linux-arm-kernel mailing list
+>> linux-arm-kernel@lists.infradead.org
+>> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+>>
+>>
+
+
+-- 
+Nicolas Ferre
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
