@@ -2,70 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F4EACB308
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 03:26:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2B5DCB30A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 03:26:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XWLqgIjXEMlAxVwqGGG4ROrmSrncj24MuPck4rPut40=; b=h7aJr1ZMAaahrO
-	+JMqfk1yFs0bBQPFiuZrhFjLxHvmIAFDUs8yH9KJOp25qo1LQKr/2ZuJVxp9VnaFG9gaft/HY+9Ma
-	AwRrv/C3BeVQIvuR9vOIdlz5dElsgI4N7oqduYV7Cpe7oBCOnYbkVHbWUXXS6E9mG/0yqhON3xgVr
-	H10zJzvoKdnODo+tKB31grgoV/Xvxgryr0R19ABK667COg5wVxEgfgw2ZyBcrRp8Px0QXZRBTeRcR
-	Z8O3zDq/BBidlhPg/6ruamZ46yNpktTrQDysA1Gs44xjK2DOfCmK//fGOno7HWbMdeF1aXZPLPsCh
-	Kp/HnSK1sKZ6QL3SvhUQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fyVVWbZYXmOp75w3Ia4I2LiK5SdOvJu4r0haC503Lqs=; b=lQSzj6AaeplcGn
+	yM2du+ScTohB30Bd5S/ThRiWnGiinCziic64nMvn9Syrp7IbtohNWtcZcCHM4GFR9TA1C90tbVnTT
+	m05sVpnBuF9nFh25MHFGBEBeI1FNN56i6I0bSv570P8wDO/Zs5RkYxAPmR/FSTPHEINIOFBC6Ld4k
+	hmmrp9OMjJAUbVoLCi7uPUS9rhhPloVGxowPaxgAVmEr312GbBLOPvRpyUz7DE7l/7sUotRnXdxsU
+	4VH0EY7Xb1W+K5sSiqPkWNbZuKXHBrQrO1lqYIV6bOUbrHjGwT/wLeBbNYgTecxnY0VGdcYtlXl9x
+	GG0Q7aw3fSYNvlnYBr8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGCLu-0003l4-UE; Fri, 04 Oct 2019 01:25:50 +0000
-Received: from gate2.alliedtelesis.co.nz ([2001:df5:b000:5::4])
+	id 1iGCMT-0004EP-Qq; Fri, 04 Oct 2019 01:26:25 +0000
+Received: from gate2.alliedtelesis.co.nz ([202.36.163.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGCLl-0003jW-V6
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 01:25:43 +0000
+ id 1iGCLl-0003jX-VJ
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 01:25:44 +0000
 Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (Client did not present a certificate)
- by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 9B922806B7;
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id AED28886BF;
  Fri,  4 Oct 2019 14:25:35 +1300 (NZDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
  s=mail181024; t=1570152335;
- bh=zCae1sRbj0T6w6Pf0TMZ7dOtwYoAvCI5r5bzgSVd7is=;
- h=From:To:Cc:Subject:Date;
- b=gE3CLqDQfQxwk3emWTRF6EnaYpDOPuk/7z4VpP+D4O3gA9TzX+NhT8WoSrXnswZrE
- khQ/rp0CWO5mvbc0ENMqwcqujeVsVW9l++0Q+q9V5h14uGGKl1vsTZY0PFzkMiFeJd
- R/KrqKmBvmEKLL/g2e4mIdGyu3F2WL+gVMUG92wCB9vjHlqTmi7tzcefZSGtzUQbHS
- OlM0VJWZyH880KdwwmJDhpesQrSS148TEH823+LLI4PkcvdCYmjyII0AZY9NKbwHcy
- dhrG5ZO4nktkNi4nGH1zIwHlFrXhvotcCbs949HIvxkzLuYFVWutHHybkzluGYHBBm
- FuGkbzPbzgQUA==
+ bh=DcGlMPetDsQUVAT/6MwUM8wLFetKjGpiYszyiFj30tw=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=k4yEUwI28XQKYH0bmvRPuUnvMJ2uwC1OblIShpqMy/HQmXIBJRLzb6fK5NK8DuiKJ
+ IfMW8nBjdDO7l3PAlpcpO3sTCDYrYsKN0+aqwYXdaz9oHTlWQam2KKV85ZzA5yCz5x
+ MhPB8SYzqQEhiNWwKQ4mfx8h49QA4u2v17EeHrgV0vQCn68ev9LHqfzm1Ujx13xlFs
+ 7LaRk9W4ANUli9BJdOnFrwckSOxwhMY6VBDTA1JDFNHWmu4Z+yUzDH5/dqWbj5Ab1m
+ 7n0kEVc5xLZTbrLUQv2502fffqhgk9sQ2pPNFxp8kn42FZAOVwCNVVER9oiJlTDuwM
+ hY1JPVts9WH0Q==
 Received: from smtp (Not Verified[10.32.16.33]) by mmarshal3.atlnz.lc with
  Trustwave SEG (v7, 5, 8, 10121)
- id <B5d969f8b0000>; Fri, 04 Oct 2019 14:25:36 +1300
+ id <B5d969f8b0001>; Fri, 04 Oct 2019 14:25:36 +1300
 Received: from chrisp-dl.ws.atlnz.lc (chrisp-dl.ws.atlnz.lc [10.33.22.20])
- by smtp (Postfix) with ESMTP id 3C7D413EC71;
+ by smtp (Postfix) with ESMTP id 615E813EEF0;
  Fri,  4 Oct 2019 14:25:34 +1300 (NZDT)
 Received: by chrisp-dl.ws.atlnz.lc (Postfix, from userid 1030)
- id 5A32B28003E; Fri,  4 Oct 2019 14:25:30 +1300 (NZDT)
+ id 81B3828003E; Fri,  4 Oct 2019 14:25:30 +1300 (NZDT)
 From: Chris Packham <chris.packham@alliedtelesis.co.nz>
 To: linus.walleij@linaro.org, bgolaszewski@baylibre.com, robh+dt@kernel.org,
  mark.rutland@arm.com, rjui@broadcom.com, sbranden@broadcom.com,
  bcm-kernel-feedback-list@broadcom.com, f.fainelli@gmail.com,
  richard.laing@alliedtelesis.co.nz
-Subject: [PATCH 0/2] gpio: brcm: XGS iProc GPIO driver
-Date: Fri,  4 Oct 2019 14:25:23 +1300
-Message-Id: <20191004012525.26647-1-chris.packham@alliedtelesis.co.nz>
+Subject: [PATCH 1/2] dt-bindings: gpio: brcm: Add bindings for xgs-iproc
+Date: Fri,  4 Oct 2019 14:25:24 +1300
+Message-Id: <20191004012525.26647-2-chris.packham@alliedtelesis.co.nz>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20191004012525.26647-1-chris.packham@alliedtelesis.co.nz>
+References: <20191004012525.26647-1-chris.packham@alliedtelesis.co.nz>
 MIME-Version: 1.0
 x-atlnz-ls: pat
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_182542_168799_ECB21A0E 
-X-CRM114-Status: UNSURE (   9.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191003_182542_388591_2389816D 
+X-CRM114-Status: GOOD (  11.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [202.36.163.20 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -95,26 +98,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is ported this from Broadcom's XLDK. There seem to be 3 different
-IP blocks for 3 separate banks of GPIOs in the iProc chips.
+This GPIO controller is present on a number of Broadcom switch ASICs
+with integrated SoCs. It is similar to the nsp-gpio and iproc-gpio
+blocks but different enough to require a separate driver.
 
-I've dropped everything except support for the Chip Common A GPIO
-controller because the other blocks actually seem to be supportable with
-other drivers. The driver itself is halfway between pinctrl-nsp-gpio.c
-and pinctrl-iproc-gpio.c.
-
-Chris Packham (2):
-  dt-bindings: gpio: brcm: Add bindings for xgs-iproc
-  gpio: Add xgs-iproc driver
-
- .../bindings/gpio/brcm,xgs-iproc.txt          |  41 ++
- drivers/gpio/Kconfig                          |   9 +
- drivers/gpio/Makefile                         |   1 +
- drivers/gpio/gpio-xgs-iproc.c                 | 422 ++++++++++++++++++
- 4 files changed, 473 insertions(+)
+Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+---
+ .../bindings/gpio/brcm,xgs-iproc.txt          | 41 +++++++++++++++++++
+ 1 file changed, 41 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/gpio/brcm,xgs-iproc.txt
- create mode 100644 drivers/gpio/gpio-xgs-iproc.c
 
+diff --git a/Documentation/devicetree/bindings/gpio/brcm,xgs-iproc.txt b/Documentation/devicetree/bindings/gpio/brcm,xgs-iproc.txt
+new file mode 100644
+index 000000000000..328b844c82dc
+--- /dev/null
++++ b/Documentation/devicetree/bindings/gpio/brcm,xgs-iproc.txt
+@@ -0,0 +1,41 @@
++Broadcom XGS iProc GPIO controller
++
++This controller is the Chip Common A GPIO present on a number of Broadcom
++switch ASICs with integrated SoCs.
++
++Required properties:
++- compatible:
++    Must be "brcm,iproc-gpio-cca"
++
++- reg:
++    The first region defines the base I/O address containing
++    the GPIO controller registers. The second region defines
++    the I/O address containing the Chip Common A interrupt
++    registers.
++
++Optional properties:
++
++- interrupts:
++    The interrupt shared by all GPIO lines for this controller.
++
++- #interrupt-cells:
++    Should be <2>.  The first cell is the GPIO number, the second should specify
++    flags.
++
++    See also Documentation/devicetree/bindings/interrupt-controller/interrupts.txt
++
++- interrupt-controller:
++    Marks the device node as an interrupt controller
++
++Example:
++	gpioa: gpio@18000060 {
++		compatible = "brcm,iproc-gpio-cca";
++		#gpio-cells = <2>;
++		reg = <0x18000060 0x50>,
++		      <0x18000000 0x50>;
++		ngpios = <12>;
++		gpio-controller;
++		interrupt-controller;
++		#interrupt-cells = <2>;
++		interrupts = <GIC_SPI 91 IRQ_TYPE_LEVEL_HIGH>;
++	};
 -- 
 2.23.0
 
