@@ -2,140 +2,157 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 432EDCB407
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 06:53:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 024F2CB41A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 07:11:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=4GO/1ESUfxiCSy53w6o/czvMEjwMXAJdPY9Zt1+mXX8=; b=gqc
-	h6zY0U+RwvnJFZxQqKfMxJtjKn/utby9tyfrogqXk7kWdiLvzYxXbhB4YjyDBRm3HKdxhD2vwociz
-	8KClPRdQX8OWLejmEaaxrk7yIT8XPJEpDkntCjx7rUrv9GEAFkitKM3Ia1Ggi5ARN0RBakF00ye2B
-	cv1TUV4/yT1x1Mof90ZV5Ffx5t4AEEyrluCm14cmi7jkhUTPeIHNSOnWg6/v2iAr/dpfzA4FRqPVZ
-	0vKCQtNqIHHXB0cq90DxMgstzEDkbptlzMxmhRtb8Ovihc4WrAsf1D/Cs/oRSmMXdwN/Z20W2PG9n
-	C6bw/q5mN0DPdTpollRH9BQsHQsrvrg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rPlVrnIsb96inojBo2E0hEHPxwuXle1KcK0S5YSJrHM=; b=KVbQoUM0x8WDH+
+	qECny+QrB8Y3Gy6CKls3VSpIrv2RXmJVR04e3oqcE/hIvvDZEDzBR514Qn+YI6wjmXdtXC6pTCSlI
+	0OCSs5/bSKMu6ltPlEDM3hfHzBRzOWLyQNWuuIhXryfi9QtJ6KrOm+7tUrfLM4HhUPzXJh0tZTZ0l
+	J8g35O1F2vJPu29Rv46KH9Jh5Jde5sEJEJ0poBden6VUcNsm0GqWnfoL+Dj7zZkgo3LQD43QboeBl
+	ZWrUeXjftctXZxlvxIxB57ORz9KvKrgZZni0Yww2ave8tSZFluiU/7ZKQ81hE4ixSbYGbaG8Q88qa
+	L2AX3FYuBJPfN8zopSfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGFaY-0001gw-Mo; Fri, 04 Oct 2019 04:53:10 +0000
-Received: from mx6.ucr.edu ([138.23.62.71])
+	id 1iGFs5-0007vT-N2; Fri, 04 Oct 2019 05:11:17 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGFaS-0001g2-Ry
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 04:53:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=ucr.edu; i=@ucr.edu; q=dns/txt; s=selector3;
- t=1570164785; x=1601700785;
- h=mime-version:from:date:message-id:subject:to;
- bh=ql44aBwf8muduY7E8woRGM6sMLEeHBMPetACIWQG9tI=;
- b=Q4VLp/feDXPrh4QHucs/c3N57Xy27bNDSLdcPe47EVeA+ySGB0Z0m242
- aJve9fGSXqWsvLbau5mFmJ/CVYna/HCeYONFf1HGf7oShxBEBqq1z1tea
- HnxV/BFOrak5yML4faJRbytMGfqkS4Lz8HTCFgTcz0dwjfvaJXw+k1hAk
- aIIXpX2380QI0NxMbm/ZUh8gdB1vwMfUUDNuuWVZfGvhuQwRF6PCuxHwf
- HQsAlNExvXdHG8+1YHne2gsyku3RXd6B0oIXFVtZwt/7r2LJlyQB76MBC
- BU7kLTPbZ4Zthahk9bzP4SDKB1wpAt0kkmBr+L/ijE3TUyVyVfkU4iZzF Q==;
-IronPort-SDR: BbGNdHGyh8lsB/xKHvfyrFLA58k4rpVRdjD8grWgjwrWcjdw4OwJB9AEz72+57650X1sHQvzQS
- NiyBwZlKjv8sYWsiMTCeCYtvwZXC3nknGTiA80MSB/wyd4DO3qVGqxy2mtVWaxEFN5YE3Fu31f
- gzXyF+7J9vOGsRol2ORC44xTFhCBrG2RGXwGyg86kivGj6hXuMz1q/3H33snv3QDb0e4gdIl0F
- GblXQW7J1h/FcG8D3RtISiw2C82FAWfMJSJBVsdoidIaPlHM5whkHmGKWpYLt3vHVX/4DNpQ6E
- cTM=
-IronPort-PHdr: =?us-ascii?q?9a23=3AZQGg3xY9DINfb7+3iHoZJQz/LSx+4OfEezUN45?=
- =?us-ascii?q?9isYplN5qZps29bB7h7PlgxGXEQZ/co6odzbaP6Oa9ASdaut6oizMrSNR0TR?=
- =?us-ascii?q?gLiMEbzUQLIfWuLgnFFsPsdDEwB89YVVVorDmROElRH9viNRWJ+iXhpTEdFQ?=
- =?us-ascii?q?/iOgVrO+/7BpDdj9it1+C15pbffxhEiCCybL9vIhi6twXcutUZjYd8JKs61w?=
- =?us-ascii?q?fErGZPd+lK321jOEidnwz75se+/Z5j9zpftvc8/MNeUqv0Yro1Q6VAADspL2?=
- =?us-ascii?q?466svrtQLeTQSU/XsTTn8WkhtTDAfb6hzxQ4r8vTH7tup53ymaINH2QLUpUj?=
- =?us-ascii?q?ms86tnVBnlgzocOjUn7G/YlNB/jKNDoBKguRN/xZLUYJqIP/Z6Z6/RYM8WSX?=
- =?us-ascii?q?ZEUstXSidPAJ6zb5EXAuUOPehWoYrzqUYQoxSiHgSsGP/jxyVUinPqwaE30e?=
- =?us-ascii?q?IsGhzG0gw6GNIOtWzZo9f0NKYTUeC10a7IxijAYPNWwzj96ZXDfxchoPCNXb?=
- =?us-ascii?q?J/a8vRxVUzGw7LlViQtJDqPymP2usTrmeb8vNtWOSygGAkswF8uiajytsoh4?=
- =?us-ascii?q?XThY8YykrI+Th4zYs3P9G1SlJ3bNi5G5VKrS6aLZF5QsY6TmFtvyY116MJtI?=
- =?us-ascii?q?agfCgP1JQn3xnfa+Gbc4SQ4hLsSuKRITBgiXJgYr2/hhKy/VGkyu3yS8W4yV?=
- =?us-ascii?q?hKoyhZntXWuXAN0BvT6seDSvRj5EuuxTGP1wXL5uFFJ0A7i7bbJoY/zrIskp?=
- =?us-ascii?q?cfq0fOEy/slEnrjaKbdF8o9+q05+j/Z7XpvJ6cN4t6igHkNaQun9SyAOQ5Mw?=
- =?us-ascii?q?gORWeb+Piw2KHt8EDiXbVFkuc2nrPHv5/HOMQXvrS5DBNN0oY/9xa/CC+r0N?=
- =?us-ascii?q?AZnXkBMVJEdwuLgJLzO1HLOfz4Dumwg06qkDh1w/DLJbnhApTWLnjfi7ftZ7?=
- =?us-ascii?q?d960hSyAop199Q+oxbBascL/7pXU/xrtPYXVcFNFmayuz9Cd5wnqwXQmSOD7?=
- =?us-ascii?q?XRZK3bu0WJ7e9pLOCXYo4Yoh7mN74u4Pu4yTcFmV4QZ7O4laEaZHG+EbwyP0?=
- =?us-ascii?q?WYbGD2k5EbHGsLuAUWQ+njiVnEWjlWMTL6Yr0x0RI/BYOgAMLg2Iasj/TVwW?=
- =?us-ascii?q?G4GpBXYG0DCVeBF3bnX52JXfgRdDiVJM5x1DAJA/zpboYx1BSj/CT90qdqKu?=
- =?us-ascii?q?vSsnkdvpX6ydVx5uuVjg03rmZcAMGU0mXLRGZxyCdAbjs7zKl5rVZwgmuEy6?=
- =?us-ascii?q?dljrQMHNhe9/pPXh03c4Lb1eNnBvjpRkTKedLfDB6iQ9O7EXQpUdcZ3dADeQ?=
- =?us-ascii?q?B+Fs+kgxSF2DClR/cRlrqWFNkv7qeHhVDqO4N4xzPD3aglilAgBNBTMnejnK?=
- =?us-ascii?q?Nn8xmVDInM1w2dlqC3ZeEVxiuI92qZy2eKlEVZSxJrF6TDU2oWakbfoZL+/E?=
- =?us-ascii?q?yGB7uvD6k3dwhM08iPLoNUZdDzy1ZLXvHuPJLZeW3101WwBAeVwPu1bYPsMz?=
- =?us-ascii?q?EP3CTMFU4duwsIu2uNL04zCjr35yr1DDFoGkPyK3jr9+Y2/HigSUk75wqRKV?=
- =?us-ascii?q?Bqzfy49gND1tKGTPZG77MWuDom4wd0FVf1i8PEC9OB/1I6VLhXe5Uw7EoRhj?=
- =?us-ascii?q?GRjBB0IpH1d/MqvVUZaQki+hq2jxg=3D?=
-X-IronPort-Anti-Spam-Filtered: true
-X-IronPort-Anti-Spam-Result: =?us-ascii?q?A2HgAgDhz5Zdh0anVdFlDhABBhKFRDO?=
- =?us-ascii?q?ETI5ehRcBmBgBCAEBAQ4vAQGEOwOCSiM4EwIDCQEBBQEBAQEBBQQBAQIQAQE?=
- =?us-ascii?q?BCA0JCCmFQII6KQGDVRF8DwImAiQSAQUBIgE0gwCCCwWhWIEDPIsmgTKEDAG?=
- =?us-ascii?q?EWAEJDYFIEnoojA6CF4Nuc4dRglgEgTcBAQGVK5ZSAQYCghEUA4xRiEQbgiq?=
- =?us-ascii?q?XFo4rmUoPI4FGgXszGiV/BmeBT08QFIFbDgmNaAQBViSRewEB?=
-X-IPAS-Result: =?us-ascii?q?A2HgAgDhz5Zdh0anVdFlDhABBhKFRDOETI5ehRcBmBgBC?=
- =?us-ascii?q?AEBAQ4vAQGEOwOCSiM4EwIDCQEBBQEBAQEBBQQBAQIQAQEBCA0JCCmFQII6K?=
- =?us-ascii?q?QGDVRF8DwImAiQSAQUBIgE0gwCCCwWhWIEDPIsmgTKEDAGEWAEJDYFIEnooj?=
- =?us-ascii?q?A6CF4Nuc4dRglgEgTcBAQGVK5ZSAQYCghEUA4xRiEQbgiqXFo4rmUoPI4FGg?=
- =?us-ascii?q?XszGiV/BmeBT08QFIFbDgmNaAQBViSRewEB?=
-X-IronPort-AV: E=Sophos;i="5.67,254,1566889200"; d="scan'208";a="80145119"
-Received: from mail-lf1-f70.google.com ([209.85.167.70])
- by smtpmx6.ucr.edu with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
- 03 Oct 2019 21:52:50 -0700
-Received: by mail-lf1-f70.google.com with SMTP id z7so587970lfj.19
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 03 Oct 2019 21:52:49 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
- bh=UonwauBUbF5jJCMbv+kEyggRBo1MYeaIpr/rVjEka4g=;
- b=lCnJ4WPKV9ZEfVR+RbL4JCfvoU7FRO3Qfo0PKPar1fosNtEfAuoaSnGSHsxcHTuE0l
- LZrvDVpIo8HogyK4s6flTb5kqRppSJOhcw56xzwRb5R5hRCBDP/JMmR/rjTdO5avSEKe
- Rk5Lp8tFCIkhyNFTtCHE0cm6BwKV5QEgVwfb9I+r+kZAMFjFxqVJ2QNoXLWM6TpiXLw2
- wrrCt5cz/8H3UUT2/qr7B5w5xSMHs1KgE0iCMdOdz+dxYkKdIHyAVsVy4tN5v1h9cdhh
- MEaVHWc8/GlJJ9QHJDyJO/1GmUwN31WxLgZoAoQKj0zhBak7Xe6G4XfPOiXwEzXpo0Cy
- uQGg==
-X-Gm-Message-State: APjAAAVLOKDGWxefKqNkd6qHv72c64j97cBIBG4is4CzAFSPP6dPjxgN
- Ih2ComE1iCJ73qgpHZU4qfEGog9IvCak1dIow4FWJV8fini2w8u7iaGtv6QlsOl/AUlgcC8no30
- YF6Jsavb0Gv1dVxPNoDtD5zy9Aju3924qrJW8oNI0BtobqizKPYsz
-X-Received: by 2002:a19:4347:: with SMTP id m7mr7417795lfj.146.1570164764936; 
- Thu, 03 Oct 2019 21:52:44 -0700 (PDT)
-X-Google-Smtp-Source: APXvYqxQwQ4yv8ZIWgEbfBVR+NQnXGTuto6AhZqOSD61PfrwsPbsqTELSWEjRUHKiie8C8KsIwGEinKXPs2u+mEFOfQ=
-X-Received: by 2002:a19:4347:: with SMTP id m7mr7417782lfj.146.1570164764695; 
- Thu, 03 Oct 2019 21:52:44 -0700 (PDT)
+ id 1iGFrv-0007uz-UM
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 05:11:09 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 8AAA6B0DA;
+ Fri,  4 Oct 2019 05:11:05 +0000 (UTC)
+Subject: Re: [PATCH V3 0/8] ARM: Add minimal Raspberry Pi 4 support
+To: Stefan Wahren <wahrenst@gmx.net>, Eric Anholt <eric@anholt.net>,
+ Guillaume Gardet <Guillaume.Gardet@arm.com>,
+ Mark Rutland <mark.rutland@arm.com>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Adrian Hunter <adrian.hunter@intel.com>, Rob Herring <robh+dt@kernel.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+References: <1569672435-19823-1-git-send-email-wahrenst@gmx.net>
+ <3853cd8425743b4991f5d599ec1c0fbbf4232f95.camel@suse.de>
+ <d4774e5a-abc2-4c43-c97d-76600f74132d@gmx.net>
+ <420c18a3-d458-8115-ef00-f1cb4febe3b0@suse.com>
+ <a49902c4-e66f-34d4-efad-a6b0b11fab58@gmx.net>
+From: Matthias Brugger <mbrugger@suse.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=mbrugger@suse.com; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <8762a85d-0b50-8ea2-46f8-62c30d80bd99@suse.com>
+Date: Fri, 4 Oct 2019 07:11:03 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-From: Yizhuo Zhai <yzhai003@ucr.edu>
-Date: Thu, 3 Oct 2019 21:52:31 -0700
-Message-ID: <CABvMjLSR9kFJpU19OX8Us4jPQ9vuTtNR571Njn_gqqpb-=hdCQ@mail.gmail.com>
-Subject: Potential uninitialized variables in pwm: stm32-lp
-To: Fabrice Gasnier <fabrice.gasnier@st.com>,
- Thierry Reding <thierry.reding@gmail.com>, 
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>, 
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, 
- linux-pwm@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Zhiyun Qian <zhiyunq@cs.ucr.edu>, Chengyu Song <csong@cs.ucr.edu>
+In-Reply-To: <a49902c4-e66f-34d4-efad-a6b0b11fab58@gmx.net>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_215304_932041_9D8BF1F6 
-X-CRM114-Status: UNSURE (   6.05  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191003_221108_272797_5EE429AE 
+X-CRM114-Status: GOOD (  24.92  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [138.23.62.71 listed in list.dnswl.org]
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -147,32 +164,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org,
+ Will Deacon <will@kernel.org>, devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi All:
+Hi Stefan,
 
-drivers/pwm/pwm-stm32-lp.c:
+On 04/10/2019 03:03, Stefan Wahren wrote:
+> Hi,
+> 
+> Am 04.10.19 um 00:42 schrieb Matthias Brugger:
+>>
+>> On 03/10/2019 19:24, Stefan Wahren wrote:
+>>> Hi Nicolas,
+>>>
+>>> Am 03.10.19 um 19:09 schrieb Nicolas Saenz Julienne:
+>>>> On Sat, 2019-09-28 at 14:07 +0200, Stefan Wahren wrote:
+>>>>> This series adds minimal support for the new Raspberry Pi 4, so we are able
+>>>>> to login via debug UART.
+>>>>>
+>>>>> Patch 1-2:   Fix some DT schema warnings
+>>>>> Patch 3-4:   Prepare DTS for the new SoC BMC2711
+>>>>> Patch 5-7:   Add Raspberry Pi 4 DTS support
+>>>>> Patch 8:     Update MAINTAINERS
+>>>>>
+>>>>> Unfortunately the Raspberry Pi Foundation didn't released a
+>>>>> peripheral documentation for the new SoC yet. So we only have a preliminary
+>>>>> datasheet [1] and reduced schematics [2].
+>>>>>
+>>>>> Known issues:
+>>>>> Since Linux 5.3-rc1 DMA doesn't work properly on that platform.
+>>>>> Nicolas Saenz Julienne investigates on that issue. As a temporary workaround
+>>>>> i reverted the following patch to test this series:
+>>>>>
+>>>>> 79a98672 "dma-mapping: remove dma_max_pfn"
+>>>>> 7559d612 "mmc: core: let the dma map ops handle bouncing"
+>>>> [ adding Matthias and Guillaume who first saw this ]
+>>>> [ also adding Adrian Hunter just in case ]
+>>>>
+>>>> Hi,
+>>>> we stubled upon a bug in RPi's sdhci-iproc while testing this series.
+>>>>
+>>>> It only shows-up on slow SD cards, the class 4 ones. On each SD operation we
+>>>> get the following warning:
+>>>>
+>>>> [    2.093328] mmc1: Got data interrupt 0x00000002 even though no data operation was in progress.
+>>>> [    2.102072] mmc1: sdhci: ============ SDHCI REGISTER DUMP ===========
+>>>> [    2.108603] mmc1: sdhci: Sys addr:  0x00000000 | Version:  0x00001002
+>>>> [    2.115134] mmc1: sdhci: Blk size:  0x00007200 | Blk cnt:  0x00000000
+>>>> [    2.121664] mmc1: sdhci: Argument:  0x00000000 | Trn mode: 0x00000033
+>>>> [    2.128195] mmc1: sdhci: Present:   0x1fff0000 | Host ctl: 0x00000017
+>>>> [    2.134725] mmc1: sdhci: Power:     0x0000000f | Blk gap:  0x00000080
+>>>> [    2.141255] mmc1: sdhci: Wake-up:   0x00000000 | Clock:    0x00000107
+>>>> [    2.147785] mmc1: sdhci: Timeout:   0x00000000 | Int stat: 0x00000000
+>>>> [    2.154314] mmc1: sdhci: Int enab:  0x03ff100b | Sig enab: 0x03ff100b
+>>>> [    2.160843] mmc1: sdhci: ACmd stat: 0x00000000 | Slot int: 0x00000000
+>>>> [    2.167373] mmc1: sdhci: Caps:      0x45ee6432 | Caps_1:   0x0000a525
+>>>> [    2.173902] mmc1: sdhci: Cmd:       0x00000c1a | Max curr: 0x00080008
+>>>> [    2.180432] mmc1: sdhci: Resp[0]:   0x00000b00 | Resp[1]:  0x00edc87f
+>>>> [    2.186961] mmc1: sdhci: Resp[2]:   0x325b5900 | Resp[3]:  0x00400e00
+>>>> [    2.193490] mmc1: sdhci: Host ctl2: 0x00000001
+>>>> [    2.197992] mmc1: sdhci: ADMA Err:  0x00000000 | ADMA Ptr: 0xec040208
+>>>> [    2.204521] mmc1: sdhci: ============================================
+>>>>
+>>>> Aside from the serial console noise the RPi still boots alright. But as it's
+>>>> printing one of these per SD operation which is a lot...
+>>>>
+>>>> I've been able to reproduce this both with arm and arn64 on multiple SD cards.
+>>>> Just copying the contents of a class 4 card into a class 10 one fixes the
+>>>> issue.
+>>>>
+>>>> Any ideas?
+>>> i saw this once during testing. AFAIR there has been some changes to
+>>> sdhci in the downstream tree, maybe they was related to this issue.
+>> I did a diff against drivers/mmc/host/sdhci-iproc.c of v5.4-rc1 and haven't
+>> found any significant changes:
+>> - compatible in the upstream driver is only bcm2711-emmc2 and not bcm2838-sdhci,
+>> but DTS uses the former one.
+>> - Upstream driver support probing via ACPI.
+>> - pltfm_host->clk gets only set if we probe via DTS
+>> - get_max_clock() is set to sdhci_iproc_get_max_clock() but this checks if
+>> pltfm_host->clk is set and in that case invokes sdhci_pltfm_clk_get_max_clock()
+>> (same function as the downstream driver).
+>>
+>> So AFAIKS nothing relevant here.
+> 
+> as i wrote about sdhci, i literally meant this driver [1]. But this
+> looks like a workaround only.
+> 
+> [1] -
+> https://github.com/raspberrypi/linux/commit/88b35d4338e238519bf4e6f73837b4ce44bfe4d6
+> 
 
-Variable "val" and "prd" in function stm32_pwm_lp_get_state() could be
-uninitialized
-if regmap_read() returns -EINVAL. But it's directly used later without
-the return check,
-which is potentially unsafe.
+Yes I realized yesterday night already lying in bed, that I only inspected half
+of the code. I just found this as well, which seems to fit exactly the behaviour
+we are seeing. I'll have a look today.
 
-Also, we cannot simply return -EINVAL in stm32_pwm_lp_get_state() because the
-return type is void.
+Regards,
+Matthias
 
-Thanks for your time to check this case.
--- 
-Kind Regards,
-
-Yizhuo Zhai
-
-Computer Science, Graduate Student
-University of California, Riverside
+>>
+>> Regards,
+>> Matthias
+>>
+>> _______________________________________________
+>> linux-arm-kernel mailing list
+>> linux-arm-kernel@lists.infradead.org
+>> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
