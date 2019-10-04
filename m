@@ -2,75 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2032CB318
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 03:36:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7994BCB32A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 03:53:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4ua6Qe67ZgoOscg3Rjo+nKlZbRfAYlolbTS6cFp+vcg=; b=TzsO39GQo0NfAy
-	EkQ50XVW9QLQckIRJ2nH9sdKtysfUR52VxF/cXah05Znu5YxIXQFf14f5Lxs0baKIlHKrpQZDxyPO
-	D69LZeoR1D3scBSfBmIpRSzqrldLUv2kxyG01LTwcemDQ2e+EXX3EkRQJPsVjMyDW3n8AB6jP5h3z
-	o5P9h2bhmlGdEETduwDDAO/VD7ZpM1X+c3rVKRtwcODIjFbLjlx8izqCTaV+z1HXiCUg3WUX7AkZ4
-	K10+NnhPTS+7gufmzq/xGauLwCzD+MLeWPAd7LaTFlQ+0zdP60nJMYZH0w6u0heinJKIKgUK9FGrc
-	xFmsX6DRdcOD1Gvwd3LA==;
+	List-Owner; bh=v2u/5BusBqK8ALFSwoJAOHI9n2GS/cmg1vSbC+bcy0k=; b=UOJXjzXz6WJRJH
+	nzNjgTHJshheCWoCJXwBxiCw147VX1qFhtK/hgMhzGtH8IbAJIJKaY+aVp3Mzzo+2Q37Hl9FoSoaQ
+	pfW1g0hPGByafsVKy9GmZ/4/80mxg/Ow/wdrKlbbOtkpSuscOI0PMxEQeXru0Rlh0N2lDhrwxT/sw
+	407wfTXlBjRaqY1uP+VG1M5mtmhdgS6a5kDazxdQw+CvEtbStLRSCPKHMXrwHr98A+HiLvkJIe3Hw
+	CBhwQgYRgz7e6vff+DvYzrzBX5BF2gzyWrBvvpZYfT2sn5tDbDtM5MpUi9nQm+BouMOoNRoty+rU0
+	WXNCTutLlKjwp6lFAEnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGCWd-0002M2-8w; Fri, 04 Oct 2019 01:36:55 +0000
-Received: from twspam01.aspeedtech.com ([211.20.114.71])
+	id 1iGCmg-0002fK-3U; Fri, 04 Oct 2019 01:53:30 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGCWQ-0001s5-HP
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 01:36:47 +0000
-Received: from mail.aspeedtech.com (twmbx02.aspeed.com [192.168.0.24])
- by twspam01.aspeedtech.com with ESMTP id x941Ijae097543;
- Fri, 4 Oct 2019 09:18:45 +0800 (GMT-8)
- (envelope-from chiawei_wang@aspeedtech.com)
-Received: from TWMBX01.aspeed.com (192.168.0.23) by TWMBX02.aspeed.com
- (192.168.0.24) with Microsoft SMTP Server (TLS) id 15.0.620.29; Fri, 4 Oct
- 2019 09:34:45 +0800
-Received: from TWMBX02.aspeed.com (192.168.0.24) by TWMBX01.aspeed.com
- (192.168.0.23) with Microsoft SMTP Server (TLS) id 15.0.620.29; Fri, 4 Oct
- 2019 09:34:56 +0800
-Received: from TWMBX02.aspeed.com ([fe80::997d:c0a7:f01f:e1a7]) by
- TWMBX02.aspeed.com ([fe80::997d:c0a7:f01f:e1a7%12]) with mapi id
- 15.00.0620.020; Fri, 4 Oct 2019 09:34:43 +0800
-From: ChiaWei Wang <chiawei_wang@aspeedtech.com>
-To: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>, Joel Stanley <joel@jms.id.au>
-Subject: RE: [PATCH 0/2] peci: aspeed: Add AST2600 compatible
-Thread-Topic: [PATCH 0/2] peci: aspeed: Add AST2600 compatible
-Thread-Index: AQHVeOhVfyr8hf/PLEOlKG455HFAV6dHIbEAgABBZgCAABszgIAAsqtwgABj+ACAASCW0A==
-Date: Fri, 4 Oct 2019 01:34:43 +0000
-Message-ID: <ad79c20427ea4aa28c826d32e96b82e8@TWMBX02.aspeed.com>
-References: <20191002061200.29888-1-chiawei_wang@aspeedtech.com>
- <70044749-785b-6ff3-7a28-fb049dcfec54@linux.intel.com>
- <CACPK8XfBxC+4PHHCkMoXr+twjfWaovcJ5c=hfCmHRJ6LpGNeFg@mail.gmail.com>
- <03d21443-aa9a-a126-dc77-a21f14f708c9@linux.intel.com>
- <4af9eb8fa6fd41fc87708fc8afdcc83e@TWMBX02.aspeed.com>
- <b219c8e9-4f72-f91c-ba57-96ffab82ff2e@linux.intel.com>
-In-Reply-To: <b219c8e9-4f72-f91c-ba57-96ffab82ff2e@linux.intel.com>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [192.168.0.133]
+ id 1iGCmY-0002es-F5
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 01:53:23 +0000
+Received: from mail-qk1-f180.google.com (mail-qk1-f180.google.com
+ [209.85.222.180])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 67F7821D71
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri,  4 Oct 2019 01:53:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570154001;
+ bh=6odMtoguJBjNIxmq0WvWcpWk1CrE1EvPomXzTsSYIrs=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=AwYuS5MYR5UrpmjoK052xwB8qTp8H9UDlMezDdYyl1pA840CiRONdKV/9uIsNNUqR
+ 8lS/Fn/bEO6ooPXWi0TrohOTpOF3Ns2e31Xa3u0mQ1E/6uy2d7lmgYF3+oI2NEfjpu
+ hqjRtZ6gUBLiJNLCfnIPomVdwPxetJaQRrPlwlY8=
+Received: by mail-qk1-f180.google.com with SMTP id w2so4408409qkf.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 03 Oct 2019 18:53:21 -0700 (PDT)
+X-Gm-Message-State: APjAAAXcOpy4JXZvevny1ox+OysZU7Wb22UK6ifOkYTKJ5EpUK6sJKra
+ M1myjpcxipW43ZChc+CCEfpdDN46nAm2r43Czw==
+X-Google-Smtp-Source: APXvYqy3/i1ov1ukyfSyJerD8h8tAJrCXAUbX0bSNjR5ZiZsqQGKwdIgHZwn3X3XEQRrLm3086Gb58Gtpxhh9D2C0Ws=
+X-Received: by 2002:a05:620a:12d5:: with SMTP id
+ e21mr7829021qkl.152.1570154000420; 
+ Thu, 03 Oct 2019 18:53:20 -0700 (PDT)
 MIME-Version: 1.0
-X-DNSRBL: 
-X-MAIL: twspam01.aspeedtech.com x941Ijae097543
+References: <20190927002455.13169-1-robh@kernel.org>
+ <20190927002455.13169-6-robh@kernel.org>
+ <20190930125752.GD12051@infradead.org>
+ <95f8dabea99f104336491281b88c04b58d462258.camel@suse.de>
+ <CAL_JsqLnKxuQRR3sGGtXF3nwwDx7DOONPPYz37ROk7u_+cxRug@mail.gmail.com>
+ <0557c83bcb781724a284811fef7fdb122039f336.camel@suse.de>
+In-Reply-To: <0557c83bcb781724a284811fef7fdb122039f336.camel@suse.de>
+From: Rob Herring <robh@kernel.org>
+Date: Thu, 3 Oct 2019 20:53:09 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqLo0jtDcCDf5VTc+_grO3fJ1MsDTE8Bj=B0J+eLk3hpZg@mail.gmail.com>
+Message-ID: <CAL_JsqLo0jtDcCDf5VTc+_grO3fJ1MsDTE8Bj=B0J+eLk3hpZg@mail.gmail.com>
+Subject: Re: [PATCH 05/11] of: Ratify of_dma_configure() interface
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_183642_835980_8D280B80 
-X-CRM114-Status: UNSURE (   7.95  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191003_185322_554083_61669BA1 
+X-CRM114-Status: GOOD (  32.82  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.20.114.71 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,48 +91,141 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Ryan Chen <ryan_chen@aspeedtech.com>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>, Andrew Jeffery <andrew@aj.id.au>,
- OpenBMC Maillist <openbmc@lists.ozlabs.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Jason M Biils <jason.m.bills@linux.intel.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, Arnd Bergmann <arnd@arndb.de>,
+ PCI <linux-pci@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Christoph Hellwig <hch@infradead.org>, Marek Vasut <marek.vasut@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Oza Pawandeep <oza.oza@broadcom.com>, Stefan Wahren <wahrenst@gmx.net>,
+ Simon Horman <horms+renesas@verge.net.au>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Robin Murphy <robin.murphy@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Sure. We will re-submit the patches with the revision suggested.
-Thanks.
+On Tue, Oct 1, 2019 at 10:43 AM Nicolas Saenz Julienne
+<nsaenzjulienne@suse.de> wrote:
+>
+> On Mon, 2019-09-30 at 16:24 -0500, Rob Herring wrote:
+> > On Mon, Sep 30, 2019 at 8:32 AM Nicolas Saenz Julienne
+> > <nsaenzjulienne@suse.de> wrote:
+> > > On Mon, 2019-09-30 at 05:57 -0700, Christoph Hellwig wrote:
+> > > > On Thu, Sep 26, 2019 at 07:24:49PM -0500, Rob Herring wrote:
+> > > > > -int of_dma_configure(struct device *dev, struct device_node *np, bool
+> > > > > force_dma)
+> > > > > +int of_dma_configure(struct device *dev, struct device_node *parent,
+> > > > > bool
+> > > > > force_dma)
+> > > >
+> > > > This creates a > 80 char line.
+> > > >
+> > > > >  {
+> > > > >     u64 dma_addr, paddr, size = 0;
+> > > > >     int ret;
+> > > > >     bool coherent;
+> > > > >     unsigned long offset;
+> > > > >     const struct iommu_ops *iommu;
+> > > > > +   struct device_node *np;
+> > > > >     u64 mask;
+> > > > >
+> > > > > +   np = dev->of_node;
+> > > > > +   if (!np)
+> > > > > +           np = parent;
+> > > > > +   if (!np)
+> > > > > +           return -ENODEV;
+> > > >
+> > > > I have to say I find the older calling convention simpler to understand.
+> > > > If we want to enforce the invariant I'd rather do that explicitly:
+> > > >
+> > > >       if (dev->of_node && np != dev->of_node)
+> > > >               return -EINVAL;
+> > >
+> > > As is, this would break Freescale Layerscape fsl-mc bus' dma_configure():
+> >
+> > This may break PCI too for devices that have a DT node.
+> >
+> > > static int fsl_mc_dma_configure(struct device *dev)
+> > > {
+> > >         struct device *dma_dev = dev;
+> > >
+> > >         while (dev_is_fsl_mc(dma_dev))
+> > >                 dma_dev = dma_dev->parent;
+> > >
+> > >         return of_dma_configure(dev, dma_dev->of_node, 0);
+> > > }
+> > >
+> > > But I think that with this series, given the fact that we now treat the lack
+> > > of
+> > > dma-ranges as a 1:1 mapping instead of an error, we could rewrite the
+> > > function
+> > > like this:
+> >
+> > Now, I'm reconsidering allowing this abuse... It's better if the code
+> > which understands the bus structure in DT for a specific bus passes in
+> > the right thing. Maybe I should go back to Robin's version (below).
+> > OTOH, the existing assumption that 'dma-ranges' was in the immediate
+> > parent was an assumption on the bus structure which maybe doesn't
+> > always apply.
+> >
+> > diff --git a/drivers/of/device.c b/drivers/of/device.c
+> > index a45261e21144..6951450bb8f3 100644
+> > --- a/drivers/of/device.c
+> > +++ b/drivers/of/device.c
+> > @@ -98,12 +98,15 @@ int of_dma_configure(struct device *dev, struct
+> > device_node *parent, bool force_
+> >         u64 mask;
+> >
+> >         np = dev->of_node;
+> > -       if (!np)
+> > -               np = parent;
+> > +       if (np)
+> > +               parent = of_get_dma_parent(np);
+> > +       else
+> > +               np = of_node_get(parent);
+> >         if (!np)
+> >                 return -ENODEV;
+> >
+> > -       ret = of_dma_get_range(np, &dma_addr, &paddr, &size);
+> > +       ret = of_dma_get_range(parent, &dma_addr, &paddr, &size);
+> > +       of_node_put(parent);
+> >         if (ret < 0) {
+> >                 /*
+> >                  * For legacy reasons, we have to assume some devices need
+>
+> I spent some time thinking about your comments and researching. I came to the
+> realization that both these solutions break the usage in
+> drivers/gpu/drm/sun4i/sun4i_backend.c:805. In that specific case both
+> 'dev->of_node' and 'parent' exist yet the device receiving the configuration
+> and 'parent' aren't related in any way.
 
-Regards,
-Chiawei
+I knew there was some reason I didn't like those virtual DT nodes...
 
-************* Email Confidentiality Notice ********************
-DISCLAIMER:
-This message (and any attachments) may contain legally privileged and/or other confidential information. If you have received it in error, please notify the sender by reply e-mail and immediately delete the e-mail and any attachments without copying or disclosing the contents. Thank you.
+That does seem to be the oddest case. Several of the others are just
+non-DT child platform devices. Perhaps we need a "copy the DMA config
+from another struct device (or parent struct device)" function to
+avoid using a DT function on a non-DT device.
 
+> IOW we can't just use 'dev->of_node' as a starting point to walk upwards the
+> tree. We always have to respect whatever DT node the bus provided, and start
+> there. This clashes with the current solutions, as they are based on the fact
+> that we can use dev->of_node when present.
 
------Original Message-----
-From: Jae Hyun Yoo [mailto:jae.hyun.yoo@linux.intel.com] 
-Sent: Friday, October 4, 2019 12:20 AM
-To: ChiaWei Wang <chiawei_wang@aspeedtech.com>; Joel Stanley <joel@jms.id.au>
-Cc: Jason M Biils <jason.m.bills@linux.intel.com>; Rob Herring <robh+dt@kernel.org>; Mark Rutland <mark.rutland@arm.com>; Andrew Jeffery <andrew@aj.id.au>; linux-aspeed <linux-aspeed@lists.ozlabs.org>; OpenBMC Maillist <openbmc@lists.ozlabs.org>; devicetree <devicetree@vger.kernel.org>; Linux ARM <linux-arm-kernel@lists.infradead.org>; Linux Kernel Mailing List <linux-kernel@vger.kernel.org>; Ryan Chen <ryan_chen@aspeedtech.com>
-Subject: Re: [PATCH 0/2] peci: aspeed: Add AST2600 compatible
+Yes, you are right.
 
-On 10/2/2019 7:35 PM, ChiaWei Wang wrote:
-> Hi Jae Hyun,
-> 
-> Thanks for the feedback.
-> For now should I use GitHub pull-request to submit the patches of PECI-related change to OpenBMC dev-5.3 tree only?
+> My guess at this point, if we're forced to honor that behaviour, is that we
+> have to create a new API for the PCI use case. Something the likes of
+> of_dma_configure_parent().
 
-You could submit this patch series to OpenBMC mailing list with [PATCH linux dev-5.3] prefix.
+I think of_dma_configure just has to work with the device_node of
+either the device or the device parent and dev->of_node is never used
+unless the caller sets it.
 
-Thanks,
+Rob
 
-Jae
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
