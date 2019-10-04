@@ -2,71 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4CEDCBDC0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 16:46:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17607CBDCC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 16:47:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=BrdWtQVlTYbZp1NXq4ReVNqjPeWRxaPvLYMNzSdvHFk=; b=CDm
-	XzMhdRKBO/wYyzD7RBFZfuC3ygDOumRWg1ctE1yp3LJk55xtLjMNYuTddmKZNVQ1kaDx/D/Qe+YYp
-	9CmQletuYT/je4lBspdXUtlVLHJS4btE7V57lMin5hd737Ng7Ax0y8L6/FOlKFawhCdF8OfY4djRC
-	sGrQy5D8w6lKFMZhq3bl8YayWVo5Pj2HmKVB/i/ZswOJOplvF0GEMMjdT66qiwmqHLWZZ4qkWi+8j
-	GUhc/5rqbXyRHbsWwsOTGeFx9N58/c24kAIRH/y21TGJYU29/Y+P5UP2kgiKQKhjAcmbTa6PqtT+R
-	G0zJygmLficWWB9r3OfmumaRJ2e0mBQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Wlpg7AaUIgc1q89tlI1iyOSkO+c7RdjAA/rOPfwaR+g=; b=o4qmWKxoIVxHER
+	BCDIEx0RU1Sr7nbJfmNrf4BeMsjBXjJpxSEVwBzrzVdKpYwTRZMySVJSUPpjtixoLO6YT6Ch7lox0
+	/NpC2Ki7nidLDlWOktC495m4niKxlWg3kz2PKM8n+QtOqoFJHElFViB0EYVvDa/AS7XRx3AzRX+e6
+	e1Kq/OjL+vDa10/MvKsHWmm5JNK9eUT5LRZ1Fv6gig+10g2DQKEcn8K8aBkeWxUBhEQeMAQltkTEl
+	wCdbDD75tb7uHI1IyhKYBsHlkLQ6hmgzsAJkxTAv497mUJOcf+JKD43gnrT/F1nSVyZXPBqoRQjUu
+	+Nfo+Qfk+Dg2XCuXsmfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGOqc-0002DG-D3; Fri, 04 Oct 2019 14:46:22 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iGOrk-0002gk-DQ; Fri, 04 Oct 2019 14:47:32 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGOqU-0002Cq-3f; Fri, 04 Oct 2019 14:46:16 +0000
-Received: from localhost.localdomain (unknown [194.230.155.145])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7332920659;
- Fri,  4 Oct 2019 14:46:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570200373;
- bh=dQL2fC9VvCzTjScxkV1h3zjnJh/luUky5kOf4oisgNs=;
- h=From:To:Cc:Subject:Date:From;
- b=unXuT7183LQK6F8lpqOxb2CO6Q/bKxgDzb/JR4b6n0dVKs3Z1aaFDO2MNWU/u6Pk9
- R1sRf+8bs0uOkNhxGr+4+3x1sUk92cil8eNe/chJGRw+S2Qc/jkiDSQQvfNRkaRjyt
- 84FhGdEwjfviPWWVQl0cINivsFrXCsnA+Vro5pFQ=
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Sean Paul <sean@poorly.run>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Jiri Kosina <trivial@kernel.org>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- intel-gfx@lists.freedesktop.org, lima@lists.freedesktop.org,
- nouveau@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-Subject: [PATCH TRIVIAL v2] gpu: Fix Kconfig indentation
-Date: Fri,  4 Oct 2019 16:45:49 +0200
-Message-Id: <20191004144549.3567-1-krzk@kernel.org>
-X-Mailer: git-send-email 2.17.1
+ id 1iGOrb-0002eo-GY
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 14:47:25 +0000
+Received: by mail-wm1-x343.google.com with SMTP id a6so6112889wma.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 04 Oct 2019 07:47:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=9118eAxchplUEC3wD7+/3Rk7lFGR/BWjlZfUOnVUzi4=;
+ b=aOqqM0bS+MNrX5woXn55Y6mMlkKHv2N9o9db3txnnVtJ/nke80mmIWIvF4LFxgztWp
+ aCHW21RbuNKSOtkC2usNceZWmNQbVMu3vio8AU9aQ9vtSghL/TKWzE+AUkrXsLt+MjoO
+ FOJUV+BMsGCYjhIVsUXKaYWhHd2pBoKNWaZS9gRabsmXtcLEUIdClfZjBFskufa6VUoB
+ 55W9zLTKDh3op8RIV4/ZkippwzLFEH+aOL/1E8TeiDqnhD71GN2semNSMNCdy36DLtzW
+ OhM0GoKQXTnGj/o24dpb6aA8ODMjONBmawqhnT/jjTkfqXF5vDCYf9/TsV0/7Ub0KjXM
+ 212w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=9118eAxchplUEC3wD7+/3Rk7lFGR/BWjlZfUOnVUzi4=;
+ b=dKbjkbQR8ZtXQP22Lj8amoNthKLVPYbezaJGkoyvcYYHa/JapDHsuq92tz6mfRYNQV
+ DMJSFteBD5XVvzUzlvBTIPMFTuHlXbi9tS2P+OFIlb51F15rtSROkZEz+ON8YChPT+q+
+ meMw6YQVMqiPqgFQ7+dnd/Whjx0m2mOpdfG7Nzq2h85SAX2mQnjFuttQ7SJKoW/JGCcV
+ BOB05yk9Bkrnd+wCI06XXCkQMIkIWtA2tmR5EEglym+RrbT5I1hUQ4gmjGGb9lsKdv/s
+ 811TyfL70bncI1s9tP0xM6Qk58tnVxbxzLQpU9HAXuGpCRFmU3bXkxELEbwSwP1kxlRn
+ QUvg==
+X-Gm-Message-State: APjAAAWVRfYz5R7Jg3Mg9Djhs3ZW9Yutzugnl0TY7bUKTbQyrBiqJmVX
+ 8aOXxVsZFd2Jhf/tg6RVWzutsQ==
+X-Google-Smtp-Source: APXvYqzxGEB/Jmd5uNbft2qfT6qV6TItO3w9WvQSn/rY8jn52H+gVkuWobFmoGKb7/SQ8cXphGH4lA==
+X-Received: by 2002:a7b:cd08:: with SMTP id f8mr10287319wmj.87.1570200441202; 
+ Fri, 04 Oct 2019 07:47:21 -0700 (PDT)
+Received: from bender.baylibre.local
+ (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id y5sm7994776wma.14.2019.10.04.07.47.20
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 04 Oct 2019 07:47:20 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: Hans Verkuil <hverkuil@xs4all.nl>
+Subject: [PATCH] media: meson/ao-cec: move cec_notifier_cec_adap_register
+ after hw setup
+Date: Fri,  4 Oct 2019 16:47:19 +0200
+Message-Id: <20191004144719.11006-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.22.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_074614_199493_EE705DAE 
-X-CRM114-Status: GOOD (  21.37  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191004_074723_550260_63EE5651 
+X-CRM114-Status: GOOD (  11.93  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,550 +93,239 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>
-MIME-Version: 1.0
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Christian Hewitt <christianshewitt@gmail.com>, linux-kernel@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Adjust indentation from spaces to tab (+optional two spaces) as in
-coding style with command like:
-    $ sed -e 's/^        /\t/' -i */Kconfig
+When probed after the HDMI notifier, calling cec_notifier_cec_adap_register()
+calls the enable() adapter callback, but the HW is not yet set up.
 
-Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+Moving cec_notifier_cec_adap_register() right before cec_register_adapter()
+fixes the following crash:
+Ignoring spurious kernel translation fault at virtual address 0000000000000008
+[...]
+Hardware name: Khadas VIM (DT)
+[...]
+pc : __do_kernel_fault+0xdc/0x120
+lr : __do_kernel_fault+0xdc/0x120
+[...]
+Call trace:
+ __do_kernel_fault+0xdc/0x120
+ do_page_fault+0x180/0x458
+ do_translation_fault+0x64/0x70
+ do_mem_abort+0x3c/0x98
+ el1_da+0x20/0x94
+ meson_ao_cec_adap_enable+0x30/0x218 [ao_cec]
+ __cec_s_phys_addr+0x184/0x270
+ cec_s_phys_addr+0x44/0x60
+ cec_notifier_cec_adap_register+0x68/0x90
+ meson_ao_cec_probe+0xb0/0x288 [ao_cec]
+[...]
+ el0_svc_compat+0x8/0x10
 
+Reported-by: Christian Hewitt <christianshewitt@gmail.com>
+Suggested-by: Hans Verkuil <hverkuil@xs4all.nl>
+Fixes: 20958f9d5c48 ("media: meson/ao-cec: use cec_notifier_cec_adap_(un)register")
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
+ drivers/media/platform/meson/ao-cec-g12a.c | 36 +++++++++++-----------
+ drivers/media/platform/meson/ao-cec.c      | 30 +++++++++---------
+ 2 files changed, 33 insertions(+), 33 deletions(-)
 
-Changes since v1:
-1. Fix also DRM_AMD_DC_HDCP (new arrival since v1).
----
- drivers/gpu/drm/Kconfig                  |  10 +-
- drivers/gpu/drm/amd/display/Kconfig      |  32 ++---
- drivers/gpu/drm/bridge/Kconfig           |   8 +-
- drivers/gpu/drm/i915/Kconfig             |  12 +-
- drivers/gpu/drm/i915/Kconfig.debug       | 144 +++++++++++------------
- drivers/gpu/drm/lima/Kconfig             |   2 +-
- drivers/gpu/drm/mgag200/Kconfig          |   8 +-
- drivers/gpu/drm/nouveau/Kconfig          |   2 +-
- drivers/gpu/drm/omapdrm/displays/Kconfig |   6 +-
- drivers/gpu/drm/omapdrm/dss/Kconfig      |  12 +-
- drivers/gpu/drm/rockchip/Kconfig         |   8 +-
- drivers/gpu/drm/udl/Kconfig              |   2 +-
- drivers/gpu/vga/Kconfig                  |   2 +-
- 13 files changed, 124 insertions(+), 124 deletions(-)
-
-diff --git a/drivers/gpu/drm/Kconfig b/drivers/gpu/drm/Kconfig
-index e67c194c2aca..7cb6e4eb99e8 100644
---- a/drivers/gpu/drm/Kconfig
-+++ b/drivers/gpu/drm/Kconfig
-@@ -207,8 +207,8 @@ config DRM_RADEON
- 	tristate "ATI Radeon"
- 	depends on DRM && PCI && MMU
- 	select FW_LOADER
--        select DRM_KMS_HELPER
--        select DRM_TTM
-+	select DRM_KMS_HELPER
-+	select DRM_TTM
- 	select POWER_SUPPLY
- 	select HWMON
- 	select BACKLIGHT_CLASS_DEVICE
-@@ -226,9 +226,9 @@ config DRM_AMDGPU
- 	tristate "AMD GPU"
- 	depends on DRM && PCI && MMU
- 	select FW_LOADER
--        select DRM_KMS_HELPER
-+	select DRM_KMS_HELPER
- 	select DRM_SCHED
--        select DRM_TTM
-+	select DRM_TTM
- 	select POWER_SUPPLY
- 	select HWMON
- 	select BACKLIGHT_CLASS_DEVICE
-@@ -266,7 +266,7 @@ config DRM_VKMS
- 	  If M is selected the module will be called vkms.
+diff --git a/drivers/media/platform/meson/ao-cec-g12a.c b/drivers/media/platform/meson/ao-cec-g12a.c
+index 3b39e875292e..3d8fe854feb0 100644
+--- a/drivers/media/platform/meson/ao-cec-g12a.c
++++ b/drivers/media/platform/meson/ao-cec-g12a.c
+@@ -662,34 +662,27 @@ static int meson_ao_cec_g12a_probe(struct platform_device *pdev)
+ 	if (IS_ERR(ao_cec->adap))
+ 		return PTR_ERR(ao_cec->adap);
  
- config DRM_ATI_PCIGART
--        bool
-+	bool
- 
- source "drivers/gpu/drm/exynos/Kconfig"
- 
-diff --git a/drivers/gpu/drm/amd/display/Kconfig b/drivers/gpu/drm/amd/display/Kconfig
-index 1bbe762ee6ba..313183b80032 100644
---- a/drivers/gpu/drm/amd/display/Kconfig
-+++ b/drivers/gpu/drm/amd/display/Kconfig
-@@ -23,16 +23,16 @@ config DRM_AMD_DC_DCN2_0
- 	depends on DRM_AMD_DC && X86
- 	depends on DRM_AMD_DC_DCN1_0
- 	help
--	    Choose this option if you want to have
--	    Navi support for display engine
-+	  Choose this option if you want to have
-+	  Navi support for display engine
- 
- config DRM_AMD_DC_DCN2_1
--        bool "DCN 2.1 family"
--        depends on DRM_AMD_DC && X86
--        depends on DRM_AMD_DC_DCN2_0
--        help
--            Choose this option if you want to have
--            Renoir support for display engine
-+	bool "DCN 2.1 family"
-+	depends on DRM_AMD_DC && X86
-+	depends on DRM_AMD_DC_DCN2_0
-+	help
-+	  Choose this option if you want to have
-+	  Renoir support for display engine
- 
- config DRM_AMD_DC_DSC_SUPPORT
- 	bool "DSC support"
-@@ -41,16 +41,16 @@ config DRM_AMD_DC_DSC_SUPPORT
- 	depends on DRM_AMD_DC_DCN1_0
- 	depends on DRM_AMD_DC_DCN2_0
- 	help
--	    Choose this option if you want to have
--	    Dynamic Stream Compression support
-+	  Choose this option if you want to have
-+	  Dynamic Stream Compression support
- 
- config DRM_AMD_DC_HDCP
--        bool "Enable HDCP support in DC"
--        depends on DRM_AMD_DC
--        help
--         Choose this option
--         if you want to support
--         HDCP authentication
-+	bool "Enable HDCP support in DC"
-+	depends on DRM_AMD_DC
-+	help
-+	 Choose this option
-+	 if you want to support
-+	 HDCP authentication
- 
- config DEBUG_KERNEL_DC
- 	bool "Enable kgdb break in DC"
-diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
-index 1cc9f502c1f2..a5aa7ec16000 100644
---- a/drivers/gpu/drm/bridge/Kconfig
-+++ b/drivers/gpu/drm/bridge/Kconfig
-@@ -60,10 +60,10 @@ config DRM_MEGACHIPS_STDPXXXX_GE_B850V3_FW
- 	select DRM_KMS_HELPER
- 	select DRM_PANEL
- 	---help---
--          This is a driver for the display bridges of
--          GE B850v3 that convert dual channel LVDS
--          to DP++. This is used with the i.MX6 imx-ldb
--          driver. You are likely to say N here.
-+	  This is a driver for the display bridges of
-+	  GE B850v3 that convert dual channel LVDS
-+	  to DP++. This is used with the i.MX6 imx-ldb
-+	  driver. You are likely to say N here.
- 
- config DRM_NXP_PTN3460
- 	tristate "NXP PTN3460 DP/LVDS bridge"
-diff --git a/drivers/gpu/drm/i915/Kconfig b/drivers/gpu/drm/i915/Kconfig
-index 0d21402945ab..3c6d57df262d 100644
---- a/drivers/gpu/drm/i915/Kconfig
-+++ b/drivers/gpu/drm/i915/Kconfig
-@@ -76,7 +76,7 @@ config DRM_I915_CAPTURE_ERROR
- 	  This option enables capturing the GPU state when a hang is detected.
- 	  This information is vital for triaging hangs and assists in debugging.
- 	  Please report any hang to
--            https://bugs.freedesktop.org/enter_bug.cgi?product=DRI
-+	    https://bugs.freedesktop.org/enter_bug.cgi?product=DRI
- 	  for triaging.
- 
- 	  If in doubt, say "Y".
-@@ -105,11 +105,11 @@ config DRM_I915_USERPTR
- 	  If in doubt, say "Y".
- 
- config DRM_I915_GVT
--        bool "Enable Intel GVT-g graphics virtualization host support"
--        depends on DRM_I915
--        depends on 64BIT
--        default n
--        help
-+	bool "Enable Intel GVT-g graphics virtualization host support"
-+	depends on DRM_I915
-+	depends on 64BIT
-+	default n
-+	help
- 	  Choose this option if you want to enable Intel GVT-g graphics
- 	  virtualization technology host support with integrated graphics.
- 	  With GVT-g, it's possible to have one integrated graphics
-diff --git a/drivers/gpu/drm/i915/Kconfig.debug b/drivers/gpu/drm/i915/Kconfig.debug
-index 00786a142ff0..eea79125b3ea 100644
---- a/drivers/gpu/drm/i915/Kconfig.debug
-+++ b/drivers/gpu/drm/i915/Kconfig.debug
-@@ -1,34 +1,34 @@
- # SPDX-License-Identifier: GPL-2.0-only
- config DRM_I915_WERROR
--        bool "Force GCC to throw an error instead of a warning when compiling"
--        # As this may inadvertently break the build, only allow the user
--        # to shoot oneself in the foot iff they aim really hard
--        depends on EXPERT
--        # We use the dependency on !COMPILE_TEST to not be enabled in
--        # allmodconfig or allyesconfig configurations
--        depends on !COMPILE_TEST
-+	bool "Force GCC to throw an error instead of a warning when compiling"
-+	# As this may inadvertently break the build, only allow the user
-+	# to shoot oneself in the foot iff they aim really hard
-+	depends on EXPERT
-+	# We use the dependency on !COMPILE_TEST to not be enabled in
-+	# allmodconfig or allyesconfig configurations
-+	depends on !COMPILE_TEST
- 	select HEADER_TEST
--        default n
--        help
--          Add -Werror to the build flags for (and only for) i915.ko.
--          Do not enable this unless you are writing code for the i915.ko module.
-+	default n
-+	help
-+	  Add -Werror to the build flags for (and only for) i915.ko.
-+	  Do not enable this unless you are writing code for the i915.ko module.
- 
--          Recommended for driver developers only.
-+	  Recommended for driver developers only.
- 
--          If in doubt, say "N".
-+	  If in doubt, say "N".
- 
- config DRM_I915_DEBUG
--        bool "Enable additional driver debugging"
--        depends on DRM_I915
--        select DEBUG_FS
--        select PREEMPT_COUNT
--        select REFCOUNT_FULL
--        select I2C_CHARDEV
--        select STACKDEPOT
--        select DRM_DP_AUX_CHARDEV
--        select X86_MSR # used by igt/pm_rpm
--        select DRM_VGEM # used by igt/prime_vgem (dmabuf interop checks)
--        select DRM_DEBUG_MM if DRM=y
-+	bool "Enable additional driver debugging"
-+	depends on DRM_I915
-+	select DEBUG_FS
-+	select PREEMPT_COUNT
-+	select REFCOUNT_FULL
-+	select I2C_CHARDEV
-+	select STACKDEPOT
-+	select DRM_DP_AUX_CHARDEV
-+	select X86_MSR # used by igt/pm_rpm
-+	select DRM_VGEM # used by igt/prime_vgem (dmabuf interop checks)
-+	select DRM_DEBUG_MM if DRM=y
- 	select DRM_DEBUG_SELFTEST
- 	select DMABUF_SELFTESTS
- 	select SW_SYNC # signaling validation framework (igt/syncobj*)
-@@ -36,14 +36,14 @@ config DRM_I915_DEBUG
- 	select DRM_I915_SELFTEST
- 	select DRM_I915_DEBUG_RUNTIME_PM
- 	select DRM_I915_DEBUG_MMIO
--        default n
--        help
--          Choose this option to turn on extra driver debugging that may affect
--          performance but will catch some internal issues.
-+	default n
-+	help
-+	  Choose this option to turn on extra driver debugging that may affect
-+	  performance but will catch some internal issues.
- 
--          Recommended for driver developers only.
-+	  Recommended for driver developers only.
- 
--          If in doubt, say "N".
-+	  If in doubt, say "N".
- 
- config DRM_I915_DEBUG_MMIO
- 	bool "Always insert extra checks around mmio access by default"
-@@ -59,16 +59,16 @@ config DRM_I915_DEBUG_MMIO
- 	  If in doubt, say "N".
- 
- config DRM_I915_DEBUG_GEM
--        bool "Insert extra checks into the GEM internals"
--        default n
--        depends on DRM_I915_WERROR
--        help
--          Enable extra sanity checks (including BUGs) along the GEM driver
--          paths that may slow the system down and if hit hang the machine.
-+	bool "Insert extra checks into the GEM internals"
-+	default n
-+	depends on DRM_I915_WERROR
-+	help
-+	  Enable extra sanity checks (including BUGs) along the GEM driver
-+	  paths that may slow the system down and if hit hang the machine.
- 
--          Recommended for driver developers only.
-+	  Recommended for driver developers only.
- 
--          If in doubt, say "N".
-+	  If in doubt, say "N".
- 
- config DRM_I915_ERRLOG_GEM
- 	bool "Insert extra logging (very verbose) for common GEM errors"
-@@ -111,41 +111,41 @@ config DRM_I915_TRACE_GTT
- 	  If in doubt, say "N".
- 
- config DRM_I915_SW_FENCE_DEBUG_OBJECTS
--        bool "Enable additional driver debugging for fence objects"
--        depends on DRM_I915
--        select DEBUG_OBJECTS
--        default n
--        help
--          Choose this option to turn on extra driver debugging that may affect
--          performance but will catch some internal issues.
-+	bool "Enable additional driver debugging for fence objects"
-+	depends on DRM_I915
-+	select DEBUG_OBJECTS
-+	default n
-+	help
-+	  Choose this option to turn on extra driver debugging that may affect
-+	  performance but will catch some internal issues.
- 
--          Recommended for driver developers only.
-+	  Recommended for driver developers only.
- 
--          If in doubt, say "N".
-+	  If in doubt, say "N".
- 
- config DRM_I915_SW_FENCE_CHECK_DAG
--        bool "Enable additional driver debugging for detecting dependency cycles"
--        depends on DRM_I915
--        default n
--        help
--          Choose this option to turn on extra driver debugging that may affect
--          performance but will catch some internal issues.
-+	bool "Enable additional driver debugging for detecting dependency cycles"
-+	depends on DRM_I915
-+	default n
-+	help
-+	  Choose this option to turn on extra driver debugging that may affect
-+	  performance but will catch some internal issues.
- 
--          Recommended for driver developers only.
-+	  Recommended for driver developers only.
- 
--          If in doubt, say "N".
-+	  If in doubt, say "N".
- 
- config DRM_I915_DEBUG_GUC
--        bool "Enable additional driver debugging for GuC"
--        depends on DRM_I915
--        default n
--        help
--          Choose this option to turn on extra driver debugging that may affect
--          performance but will help resolve GuC related issues.
-+	bool "Enable additional driver debugging for GuC"
-+	depends on DRM_I915
-+	default n
-+	help
-+	  Choose this option to turn on extra driver debugging that may affect
-+	  performance but will help resolve GuC related issues.
- 
--          Recommended for driver developers only.
-+	  Recommended for driver developers only.
- 
--          If in doubt, say "N".
-+	  If in doubt, say "N".
- 
- config DRM_I915_SELFTEST
- 	bool "Enable selftests upon driver load"
-@@ -178,15 +178,15 @@ config DRM_I915_SELFTEST_BROKEN
- 	  If in doubt, say "N".
- 
- config DRM_I915_LOW_LEVEL_TRACEPOINTS
--        bool "Enable low level request tracing events"
--        depends on DRM_I915
--        default n
--        help
--          Choose this option to turn on low level request tracing events.
--          This provides the ability to precisely monitor engine utilisation
--          and also analyze the request dependency resolving timeline.
+-	ao_cec->notify = cec_notifier_cec_adap_register(hdmi_dev, NULL,
+-							ao_cec->adap);
+-	if (!ao_cec->notify) {
+-		ret = -ENOMEM;
+-		goto out_probe_adapter;
+-	}
 -
--          If in doubt, say "N".
-+	bool "Enable low level request tracing events"
-+	depends on DRM_I915
-+	default n
-+	help
-+	  Choose this option to turn on low level request tracing events.
-+	  This provides the ability to precisely monitor engine utilisation
-+	  and also analyze the request dependency resolving timeline.
+ 	ao_cec->adap->owner = THIS_MODULE;
+ 
+ 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 	base = devm_ioremap_resource(&pdev->dev, res);
+ 	if (IS_ERR(base)) {
+ 		ret = PTR_ERR(base);
+-		goto out_probe_notify;
++		goto out_probe_adapter;
+ 	}
+ 
+ 	ao_cec->regmap = devm_regmap_init_mmio(&pdev->dev, base,
+ 					       &meson_ao_cec_g12a_regmap_conf);
+ 	if (IS_ERR(ao_cec->regmap)) {
+ 		ret = PTR_ERR(ao_cec->regmap);
+-		goto out_probe_notify;
++		goto out_probe_adapter;
+ 	}
+ 
+ 	ao_cec->regmap_cec = devm_regmap_init(&pdev->dev, NULL, ao_cec,
+ 					   &meson_ao_cec_g12a_cec_regmap_conf);
+ 	if (IS_ERR(ao_cec->regmap_cec)) {
+ 		ret = PTR_ERR(ao_cec->regmap_cec);
+-		goto out_probe_notify;
++		goto out_probe_adapter;
+ 	}
+ 
+ 	irq = platform_get_irq(pdev, 0);
+@@ -699,45 +692,52 @@ static int meson_ao_cec_g12a_probe(struct platform_device *pdev)
+ 					0, NULL, ao_cec);
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "irq request failed\n");
+-		goto out_probe_notify;
++		goto out_probe_adapter;
+ 	}
+ 
+ 	ao_cec->oscin = devm_clk_get(&pdev->dev, "oscin");
+ 	if (IS_ERR(ao_cec->oscin)) {
+ 		dev_err(&pdev->dev, "oscin clock request failed\n");
+ 		ret = PTR_ERR(ao_cec->oscin);
+-		goto out_probe_notify;
++		goto out_probe_adapter;
+ 	}
+ 
+ 	ret = meson_ao_cec_g12a_setup_clk(ao_cec);
+ 	if (ret)
+-		goto out_probe_notify;
++		goto out_probe_adapter;
+ 
+ 	ret = clk_prepare_enable(ao_cec->core);
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "core clock enable failed\n");
+-		goto out_probe_notify;
++		goto out_probe_adapter;
+ 	}
+ 
+ 	device_reset_optional(&pdev->dev);
+ 
+ 	platform_set_drvdata(pdev, ao_cec);
+ 
++	ao_cec->notify = cec_notifier_cec_adap_register(hdmi_dev, NULL,
++							ao_cec->adap);
++	if (!ao_cec->notify) {
++		ret = -ENOMEM;
++		goto out_probe_core_clk;
++	}
 +
-+	  If in doubt, say "N".
+ 	ret = cec_register_adapter(ao_cec->adap, &pdev->dev);
+ 	if (ret < 0)
+-		goto out_probe_core_clk;
++		goto out_probe_notify;
  
- config DRM_I915_DEBUG_VBLANK_EVADE
- 	bool "Enable extra debug warnings for vblank evasion"
-diff --git a/drivers/gpu/drm/lima/Kconfig b/drivers/gpu/drm/lima/Kconfig
-index bb4ddc6bb0a6..652af7f50ea9 100644
---- a/drivers/gpu/drm/lima/Kconfig
-+++ b/drivers/gpu/drm/lima/Kconfig
-@@ -10,4 +10,4 @@ config DRM_LIMA
-        depends on OF
-        select DRM_SCHED
-        help
--         DRM driver for ARM Mali 400/450 GPUs.
-+	 DRM driver for ARM Mali 400/450 GPUs.
-diff --git a/drivers/gpu/drm/mgag200/Kconfig b/drivers/gpu/drm/mgag200/Kconfig
-index 76fee0fbdcae..4b31ef376abc 100644
---- a/drivers/gpu/drm/mgag200/Kconfig
-+++ b/drivers/gpu/drm/mgag200/Kconfig
-@@ -6,8 +6,8 @@ config DRM_MGAG200
- 	select DRM_VRAM_HELPER
- 	help
- 	 This is a KMS driver for the MGA G200 server chips, it
--         does not support the original MGA G200 or any of the desktop
--         chips. It requires 0.3.0 of the modesetting userspace driver,
--         and a version of mga driver that will fail on KMS enabled
--         devices.
-+	 does not support the original MGA G200 or any of the desktop
-+	 chips. It requires 0.3.0 of the modesetting userspace driver,
-+	 and a version of mga driver that will fail on KMS enabled
-+	 devices.
+ 	/* Setup Hardware */
+ 	regmap_write(ao_cec->regmap, CECB_GEN_CNTL_REG, CECB_GEN_CNTL_RESET);
  
-diff --git a/drivers/gpu/drm/nouveau/Kconfig b/drivers/gpu/drm/nouveau/Kconfig
-index 3558df043592..9c990266e876 100644
---- a/drivers/gpu/drm/nouveau/Kconfig
-+++ b/drivers/gpu/drm/nouveau/Kconfig
-@@ -2,7 +2,7 @@
- config DRM_NOUVEAU
- 	tristate "Nouveau (NVIDIA) cards"
- 	depends on DRM && PCI && MMU
--        select FW_LOADER
-+	select FW_LOADER
- 	select DRM_KMS_HELPER
- 	select DRM_TTM
- 	select BACKLIGHT_CLASS_DEVICE if DRM_NOUVEAU_BACKLIGHT
-diff --git a/drivers/gpu/drm/omapdrm/displays/Kconfig b/drivers/gpu/drm/omapdrm/displays/Kconfig
-index 240dda102845..b562a8cd61bf 100644
---- a/drivers/gpu/drm/omapdrm/displays/Kconfig
-+++ b/drivers/gpu/drm/omapdrm/displays/Kconfig
-@@ -8,18 +8,18 @@ config DRM_OMAP_ENCODER_OPA362
- 	  through a GPIO.
+ 	return 0;
  
- config DRM_OMAP_ENCODER_TPD12S015
--        tristate "TPD12S015 HDMI ESD protection and level shifter"
-+	tristate "TPD12S015 HDMI ESD protection and level shifter"
- 	help
- 	  Driver for TPD12S015, which offers HDMI ESD protection and level
- 	  shifting.
+-out_probe_core_clk:
+-	clk_disable_unprepare(ao_cec->core);
+-
+ out_probe_notify:
+ 	cec_notifier_cec_adap_unregister(ao_cec->notify);
  
- config DRM_OMAP_CONNECTOR_HDMI
--        tristate "HDMI Connector"
-+	tristate "HDMI Connector"
- 	help
- 	  Driver for a generic HDMI connector.
++out_probe_core_clk:
++	clk_disable_unprepare(ao_cec->core);
++
+ out_probe_adapter:
+ 	cec_delete_adapter(ao_cec->adap);
  
- config DRM_OMAP_CONNECTOR_ANALOG_TV
--        tristate "Analog TV Connector"
-+	tristate "Analog TV Connector"
- 	help
- 	  Driver for a generic analog TV connector.
+diff --git a/drivers/media/platform/meson/ao-cec.c b/drivers/media/platform/meson/ao-cec.c
+index 64ed549bf012..03600e8b3ef0 100644
+--- a/drivers/media/platform/meson/ao-cec.c
++++ b/drivers/media/platform/meson/ao-cec.c
+@@ -624,20 +624,13 @@ static int meson_ao_cec_probe(struct platform_device *pdev)
+ 	if (IS_ERR(ao_cec->adap))
+ 		return PTR_ERR(ao_cec->adap);
  
-diff --git a/drivers/gpu/drm/omapdrm/dss/Kconfig b/drivers/gpu/drm/omapdrm/dss/Kconfig
-index 956f23e1452d..72ae79c0c9b4 100644
---- a/drivers/gpu/drm/omapdrm/dss/Kconfig
-+++ b/drivers/gpu/drm/omapdrm/dss/Kconfig
-@@ -6,12 +6,12 @@ config OMAP_DSS_BASE
- 	tristate
+-	ao_cec->notify = cec_notifier_cec_adap_register(hdmi_dev, NULL,
+-							ao_cec->adap);
+-	if (!ao_cec->notify) {
+-		ret = -ENOMEM;
+-		goto out_probe_adapter;
+-	}
+-
+ 	ao_cec->adap->owner = THIS_MODULE;
  
- menuconfig OMAP2_DSS
--        tristate "OMAP2+ Display Subsystem support"
-+	tristate "OMAP2+ Display Subsystem support"
- 	select OMAP_DSS_BASE
- 	select VIDEOMODE_HELPERS
- 	select OMAP2_DSS_INIT
- 	select HDMI
--        help
-+	help
- 	  OMAP2+ Display Subsystem support.
+ 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 	ao_cec->base = devm_ioremap_resource(&pdev->dev, res);
+ 	if (IS_ERR(ao_cec->base)) {
+ 		ret = PTR_ERR(ao_cec->base);
+-		goto out_probe_notify;
++		goto out_probe_adapter;
+ 	}
  
- if OMAP2_DSS
-@@ -52,7 +52,7 @@ config OMAP2_DSS_DPI
+ 	irq = platform_get_irq(pdev, 0);
+@@ -647,20 +640,20 @@ static int meson_ao_cec_probe(struct platform_device *pdev)
+ 					0, NULL, ao_cec);
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "irq request failed\n");
+-		goto out_probe_notify;
++		goto out_probe_adapter;
+ 	}
  
- config OMAP2_DSS_VENC
- 	bool "VENC support"
--        default y
-+	default y
- 	help
- 	  OMAP Video Encoder support for S-Video and composite TV-out.
+ 	ao_cec->core = devm_clk_get(&pdev->dev, "core");
+ 	if (IS_ERR(ao_cec->core)) {
+ 		dev_err(&pdev->dev, "core clock request failed\n");
+ 		ret = PTR_ERR(ao_cec->core);
+-		goto out_probe_notify;
++		goto out_probe_adapter;
+ 	}
  
-@@ -61,7 +61,7 @@ config OMAP2_DSS_HDMI_COMMON
+ 	ret = clk_prepare_enable(ao_cec->core);
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "core clock enable failed\n");
+-		goto out_probe_notify;
++		goto out_probe_adapter;
+ 	}
  
- config OMAP4_DSS_HDMI
- 	bool "HDMI support for OMAP4"
--        default y
-+	default y
- 	select OMAP2_DSS_HDMI_COMMON
- 	help
- 	  HDMI support for OMAP4 based SoCs.
-@@ -85,7 +85,7 @@ config OMAP5_DSS_HDMI
+ 	ret = clk_set_rate(ao_cec->core, CEC_CLK_RATE);
+@@ -674,9 +667,16 @@ static int meson_ao_cec_probe(struct platform_device *pdev)
+ 	ao_cec->pdev = pdev;
+ 	platform_set_drvdata(pdev, ao_cec);
  
- config OMAP2_DSS_SDI
- 	bool "SDI support"
--        default n
-+	default n
- 	help
- 	  SDI (Serial Display Interface) support.
++	ao_cec->notify = cec_notifier_cec_adap_register(hdmi_dev, NULL,
++							ao_cec->adap);
++	if (!ao_cec->notify) {
++		ret = -ENOMEM;
++		goto out_probe_clk;
++	}
++
+ 	ret = cec_register_adapter(ao_cec->adap, &pdev->dev);
+ 	if (ret < 0)
+-		goto out_probe_clk;
++		goto out_probe_notify;
  
-@@ -94,7 +94,7 @@ config OMAP2_DSS_SDI
+ 	/* Setup Hardware */
+ 	writel_relaxed(CEC_GEN_CNTL_RESET,
+@@ -684,12 +684,12 @@ static int meson_ao_cec_probe(struct platform_device *pdev)
  
- config OMAP2_DSS_DSI
- 	bool "DSI support"
--        default n
-+	default n
- 	help
- 	  MIPI DSI (Display Serial Interface) support.
+ 	return 0;
  
-diff --git a/drivers/gpu/drm/rockchip/Kconfig b/drivers/gpu/drm/rockchip/Kconfig
-index 6f4222f8beeb..1670a5cae3c7 100644
---- a/drivers/gpu/drm/rockchip/Kconfig
-+++ b/drivers/gpu/drm/rockchip/Kconfig
-@@ -28,17 +28,17 @@ config ROCKCHIP_ANALOGIX_DP
- 	  on RK3288 or RK3399 based SoC, you should select this option.
+-out_probe_clk:
+-	clk_disable_unprepare(ao_cec->core);
+-
+ out_probe_notify:
+ 	cec_notifier_cec_adap_unregister(ao_cec->notify);
  
- config ROCKCHIP_CDN_DP
--        bool "Rockchip cdn DP"
-+	bool "Rockchip cdn DP"
- 	depends on EXTCON=y || (EXTCON=m && DRM_ROCKCHIP=m)
--        help
-+	help
- 	  This selects support for Rockchip SoC specific extensions
- 	  for the cdn DP driver. If you want to enable Dp on
- 	  RK3399 based SoC, you should select this
- 	  option.
++out_probe_clk:
++	clk_disable_unprepare(ao_cec->core);
++
+ out_probe_adapter:
+ 	cec_delete_adapter(ao_cec->adap);
  
- config ROCKCHIP_DW_HDMI
--        bool "Rockchip specific extensions for Synopsys DW HDMI"
--        help
-+	bool "Rockchip specific extensions for Synopsys DW HDMI"
-+	help
- 	  This selects support for Rockchip SoC specific extensions
- 	  for the Synopsys DesignWare HDMI driver. If you want to
- 	  enable HDMI on RK3288 or RK3399 based SoC, you should select
-diff --git a/drivers/gpu/drm/udl/Kconfig b/drivers/gpu/drm/udl/Kconfig
-index b4d179b87f01..b13aa33990f3 100644
---- a/drivers/gpu/drm/udl/Kconfig
-+++ b/drivers/gpu/drm/udl/Kconfig
-@@ -8,4 +8,4 @@ config DRM_UDL
- 	select DRM_KMS_HELPER
- 	help
- 	  This is a KMS driver for the USB displaylink video adapters.
--          Say M/Y to add support for these devices via drm/kms interfaces.
-+	  Say M/Y to add support for these devices via drm/kms interfaces.
-diff --git a/drivers/gpu/vga/Kconfig b/drivers/gpu/vga/Kconfig
-index c8c770b05ed9..1ad4c4ef0b5e 100644
---- a/drivers/gpu/vga/Kconfig
-+++ b/drivers/gpu/vga/Kconfig
-@@ -28,6 +28,6 @@ config VGA_SWITCHEROO
- 	help
- 	  Many laptops released in 2008/9/10 have two GPUs with a multiplexer
- 	  to switch between them. This adds support for dynamic switching when
--          X isn't running and delayed switching until the next logoff. This
-+	  X isn't running and delayed switching until the next logoff. This
- 	  feature is called hybrid graphics, ATI PowerXpress, and Nvidia
- 	  HybridPower.
 -- 
-2.17.1
+2.22.0
 
 
 _______________________________________________
