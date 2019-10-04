@@ -2,53 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6FE7CC0E5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 18:36:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D2ACBCC0E7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 18:37:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=J26ZbQA8chCEXW0P4zw1mdt/X/fASU1rgEAuwY/bA3I=; b=GfcHRoQAoppg5pkCO9EwDm3vT
-	JmDIV4La6T9fawpHnGJihSg0hyPEQQcID79QL6hDzlnmbiUcXV59uJ9Y3yro5sOZoePyKpRTEM+GA
-	XsM8z6llCQpsQpU5I85wLnFCpCvUhtcgQasLwC/RaqEhaL1TXOrLlTd42CbnSrmMhWbE/aJpScQnV
-	xomRnzI+If/5+M7TJ5kGaJ79V5jcXU42WYgfX5l0KY6wECDVmH8g7eoHWt+j3ykEVjH7ZoIBQtfjg
-	3wKtrp+i9njWeVWli/zgIWiFh0eBYHJAJLGl03yxYGKpBYNH1DaB+XDVYICAIOKbczSNsyEUpcGYu
-	jggs4Rzvw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IQa6mG8k0cdSi8PUJDCMDWFL6Ti0EWtcVJY4ZcB7tjk=; b=MqrVl0lac1VAaV
+	SteNwXo8g6wI+GvIuPYgPU1s4vJLPzx0rlZyIR4aoiKKMV24fuhwltUjMDjeoOUbMiTZo5dylgZ1L
+	f6C4Z3wcx5hZEHBUkFz9EBzXQbYALD7Wf1BxSmyM2Wo4CQXNOUUsyQMQYGVD5ZNvt8/45ixQLzZRZ
+	yI32YIgSxS1GsSfcFtdrwHGFGevoimXyug8mLl05f3t3v2xrRktsCkhb40Q1oJ7qGWvNtNSgE0tuL
+	PRnZQ+Sp3XkgccOIfRLYs5AxjN+q/QRcyeRGRlCtkiGIhrVdn78HsJDWRZKt8/LdrXNZHis+Mom5D
+	yqxc/jUMjLG7NDIZr23w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGQZB-0002ZC-4a; Fri, 04 Oct 2019 16:36:29 +0000
+	id 1iGQa5-0002tb-Aa; Fri, 04 Oct 2019 16:37:25 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGQZ0-0002YU-2K
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 16:36:20 +0000
+ id 1iGQZx-0002t6-DV
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 16:37:18 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 64F271597;
- Fri,  4 Oct 2019 09:36:17 -0700 (PDT)
-Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C70EC3F68E;
- Fri,  4 Oct 2019 09:36:15 -0700 (PDT)
-Subject: Re: [PATCH v2] iommu/arm-smmu: Break insecure users by disabling
- bypass by default
-To: Tim Harvey <tharvey@gateworks.com>
-References: <20190301192017.39770-1-dianders@chromium.org>
- <CAJ+vNU0Ma5nG9_ThLO4cdO+=ivf7rmXiHZonF0HY0xx6X3R6Hw@mail.gmail.com>
- <5dce2964-8761-e7d0-8963-f0f5cb2feb02@arm.com>
- <CAJ+vNU0Q1-d7YDbAAEMqEcWnniqo6jLdKBbcUTar5=hJ+AC8vQ@mail.gmail.com>
- <1f6f7eb0-e1dc-d5a8-fb38-44c5bd839894@arm.com>
- <CAJ+vNU1Nd2p-ot2Qkj6vD9yD6gcYM-vm+snNWyt0ChgSqe4tBg@mail.gmail.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <5cf9ec03-f6fb-8227-4ec5-62445038f283@arm.com>
-Date: Fri, 4 Oct 2019 17:36:14 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5CFCB15AB;
+ Fri,  4 Oct 2019 09:37:16 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 756AB3F68E;
+ Fri,  4 Oct 2019 09:37:15 -0700 (PDT)
+Date: Fri, 4 Oct 2019 17:37:13 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: James Morse <james.morse@arm.com>
+Subject: Re: [PATCH 6/8] arm64: entry: convert el0_sync to C
+Message-ID: <20191004163712.GM34756@lakrids.cambridge.arm.com>
+References: <20191003171642.135652-1-james.morse@arm.com>
+ <20191003171642.135652-7-james.morse@arm.com>
+ <20191004125746.GE34756@lakrids.cambridge.arm.com>
+ <b2a62a69-a82a-90ba-9546-1392ca37a3c2@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <CAJ+vNU1Nd2p-ot2Qkj6vD9yD6gcYM-vm+snNWyt0ChgSqe4tBg@mail.gmail.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <b2a62a69-a82a-90ba-9546-1392ca37a3c2@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_093618_200790_848EC7AC 
-X-CRM114-Status: GOOD (  28.36  )
+X-CRM114-CacheID: sfid-20191004_093717_498008_A8EBDC29 
+X-CRM114-Status: GOOD (  19.99  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,205 +64,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: open list <linux-kernel@vger.kernel.org>, linux-arm-msm@vger.kernel.org,
- Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
- Douglas Anderson <dianders@chromium.org>, evgreen@chromium.org,
- tfiga@chromium.org, Rob Clark <robdclark@gmail.com>,
- iommu@lists.linux-foundation.org, Vivek Gautam <vivek.gautam@codeaurora.org>,
- Tirumalesh Chalamarla <tchalamarla@caviumnetworks.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04/10/2019 16:23, Tim Harvey wrote:
-> On Thu, Oct 3, 2019 at 3:24 PM Robin Murphy <robin.murphy@arm.com> wrote:
->>
->> On 2019-10-03 9:51 pm, Tim Harvey wrote:
->>> On Thu, Oct 3, 2019 at 1:42 PM Robin Murphy <robin.murphy@arm.com> wrote:
->>>>
->>>> Hi Tim,
->>>>
->>>> On 2019-10-03 7:27 pm, Tim Harvey wrote:
->>>>> On Fri, Mar 1, 2019 at 11:21 AM Douglas Anderson <dianders@chromium.org> wrote:
->>>>>>
->>>>>> If you're bisecting why your peripherals stopped working, it's
->>>>>> probably this CL.  Specifically if you see this in your dmesg:
->>>>>>      Unexpected global fault, this could be serious
->>>>>> ...then it's almost certainly this CL.
->>>>>>
->>>>>> Running your IOMMU-enabled peripherals with the IOMMU in bypass mode
->>>>>> is insecure and effectively disables the protection they provide.
->>>>>> There are few reasons to allow unmatched stream bypass, and even fewer
->>>>>> good ones.
->>>>>>
->>>>>> This patch starts the transition over to make it much harder to run
->>>>>> your system insecurely.  Expected steps:
->>>>>>
->>>>>> 1. By default disable bypass (so anyone insecure will notice) but make
->>>>>>       it easy for someone to re-enable bypass with just a KConfig change.
->>>>>>       That's this patch.
->>>>>>
->>>>>> 2. After people have had a little time to come to grips with the fact
->>>>>>       that they need to set their IOMMUs properly and have had time to
->>>>>>       dig into how to do this, the KConfig will be eliminated and bypass
->>>>>>       will simply be disabled.  Folks who are truly upset and still
->>>>>>       haven't fixed their system can either figure out how to add
->>>>>>       'arm-smmu.disable_bypass=n' to their command line or revert the
->>>>>>       patch in their own private kernel.  Of course these folks will be
->>>>>>       less secure.
->>>>>>
->>>>>> Suggested-by: Robin Murphy <robin.murphy@arm.com>
->>>>>> Signed-off-by: Douglas Anderson <dianders@chromium.org>
->>>>>> ---
->>>>>
->>>>> Hi Doug / Robin,
->>>>>
->>>>> I ran into this breaking things on OcteonTx boards based on CN80XX
->>>>> CPU. The IOMMU configuration is a bit beyond me and I'm hoping you can
->>>>> offer some advice. The IOMMU here is cavium,smmu-v2 as defined in
->>>>> https://github.com/Gateworks/dts-newport/blob/master/cn81xx-linux.dtsi
->>>>>
->>>>> Booting with 'arm-smmu.disable_bypass=n' does indeed work around the
->>>>> breakage as the commit suggests.
->>>>>
->>>>> Any suggestions for a proper fix?
->>>>
->>>> Ah, you're using the old "mmu-masters" binding (and in a way which isn't
->>>> well-defined - it's never been specified what the stream ID argument(s)
->>>> would mean for a PCI host bridge, and Linux just ignores them). The
->>>> ideal thing would be to update the DT to generic "iommu-map" properties
->>>> - it's been a long time since I last played with a ThunderX, but I
->>>> believe the SMMU stream IDs should just be the same as the ITS device
->>>> IDs (which is how the "mmu-masters" mapping would have played out anyway).
->>>>
->>>> The arm-smmu driver support for the old binding has always relied on
->>>> implicit bypass - there are technical reasons why we can't realistically
->>>> support the full functionality offered to the generic bindings, but it
->>>> would be possible to add some degree of workaround to prevent it
->>>> interacting quite so poorly with disable_bypass, if necessary. Do you
->>>> have deployed systems with DTs that can't be updated, but still might
->>>> need to run new kernels?
->>>>
->>>
->>> Robin,
->>>
->>> Thanks for the response. I don't care too much about supporting new
->>> kernels with the current DT - I'm good with fixing this with a DT
->>> change. Would you be able to give me an example? I would love to see
->>> Cavium mainline an cn81xx dts/dtsi in arch/arm64/boot/dts to be used
->>> as a base as the only thing we have to go off of currently is the
->>> Cavium SDK which has fairly old kernel support.
->>
->> No promises (it's a late-night hack from my sofa), but try giving this a
->> go...
->>
->> Robin.
->>
->> ----->8-----
->> diff --git a/cn81xx-linux.dtsi b/cn81xx-linux.dtsi
->> index 3b759d9575fe..dabc9047c674 100644
->> --- a/cn81xx-linux.dtsi
->> +++ b/cn81xx-linux.dtsi
->> @@ -234,7 +234,7 @@
->>                          clocks = <&sclk>;
->>                  };
->>
->> -               smmu0@830000000000 {
->> +               smmu: smmu0@830000000000 {
->>                          compatible = "cavium,smmu-v2";
->>                          reg = <0x8300 0x0 0x0 0x2000000>;
->>                          #global-interrupts = <1>;
->> @@ -249,23 +249,18 @@
->>                                       <0 69 4>, <0 69 4>, <0 69 4>, <0 69 4>, <0 69 4>, <0 69 4>,
->>                                       <0 69 4>, <0 69 4>, <0 69 4>, <0 69 4>, <0 69 4>, <0 69 4>,
->>                                       <0 69 4>, <0 69 4>, <0 69 4>, <0 69 4>, <0 69 4>;
->> -
->> -                       mmu-masters = <&ecam0 0x100>,
->> -                                     <&pem0  0x200>,
->> -                                     <&pem1  0x300>,
->> -                                     <&pem2  0x400>;
->> -
->> +                       #iommu-cells = <1>;
->> +                       dma-coherent;
->>                  };
->>
->>                  ecam0: pci@848000000000 {
->>                          compatible = "pci-host-ecam-generic";
->>                          device_type = "pci";
->> -                       msi-parent = <&its>;
->>                          msi-map = <0 &its 0 0x10000>;
->> +                       iommu-map = <0 &smmu 0 0x10000>;
->>                          bus-range = <0 31>;
->>                          #size-cells = <2>;
->>                          #address-cells = <3>;
->> -                       #stream-id-cells = <1>;
->>                          u-boot,dm-pre-reloc;
->>                          dma-coherent;
->>                          reg = <0x8480 0x00000000 0 0x02000000>;  /* Configuration space */
->> @@ -399,12 +394,11 @@
->>
->>                          compatible = "cavium,pci-host-thunder-pem";
->>                          device_type = "pci";
->> -                       msi-parent = <&its>;
->>                          msi-map = <0 &its 0 0x10000>;
->> +                       iommu-map = <0 &smmu 0 0x10000>;
->>                          bus-range = <0x1f 0x57>;
->>                          #size-cells = <2>;
->>                          #address-cells = <3>;
->> -                       #stream-id-cells = <1>;
->>                          dma-coherent;
->>                          reg = <0x8800 0x1f000000 0x0 0x39000000>,  /* Configuration space */
->>                                  <0x87e0 0xc0000000 0x0 0x01000000>; /* PEM space */
->> @@ -424,12 +418,11 @@
->>                  pem1: pci@87e0c1000000 {
->>                          compatible = "cavium,pci-host-thunder-pem";
->>                          device_type = "pci";
->> -                       msi-parent = <&its>;
->>                          msi-map = <0 &its 0 0x10000>;
->> +                       iommu-map = <0 &smmu 0 0x10000>;
->>                          bus-range = <0x57 0x8f>;
->>                          #size-cells = <2>;
->>                          #address-cells = <3>;
->> -                       #stream-id-cells = <1>;
->>                          dma-coherent;
->>                          reg = <0x8840 0x57000000 0x0 0x39000000>,  /* Configuration space */
->>                                  <0x87e0 0xc1000000 0x0 0x01000000>; /* PEM space */
->> @@ -449,12 +442,11 @@
->>                  pem2: pci@87e0c2000000 {
->>                          compatible = "cavium,pci-host-thunder-pem";
->>                          device_type = "pci";
->> -                       msi-parent = <&its>;
->>                          msi-map = <0 &its 0 0x10000>;
->> +                       iommu-map = <0 &smmu 0 0x10000>;
->>                          bus-range = <0x8f 0xc7>;
->>                          #size-cells = <2>;
->>                          #address-cells = <3>;
->> -                       #stream-id-cells = <1>;
->>                          dma-coherent;
->>                          reg = <0x8880 0x8f000000 0x0 0x39000000>,  /* Configuration space */
->>                                  <0x87e0 0xc2000000 0x0 0x01000000>; /* PEM space */
+On Fri, Oct 04, 2019 at 05:09:31PM +0100, James Morse wrote:
+> Hi Mark,
 > 
-> Robin,
+> On 04/10/2019 13:57, Mark Rutland wrote:
+> > On Thu, Oct 03, 2019 at 06:16:40PM +0100, James Morse wrote:
+> >> From: Mark Rutland <mark.rutland@arm.com>
+> >>
+> >> This is largely a 1-1 conversion of asm to C, with a couple of caveats.
+> >>
+> >> The el0_sync{_compat} switches explicitly handle all the EL0 debug
+> >> cases, so el0_dbg doesn't have to try to bail out for unexpected EL1
+> >> debug ESR values. This also means that an unexpected vector catch from
+> >> AArch32 is routed to el0_inv.
+> >>
+> >> We *could* merge the native and compat switches, which would make the
+> >> diffstat negative, but I've tried to stay as close to the existing
+> >> assembly as possible for the moment.
 > 
-> No difference... still need 'arm-smmu.disable_bypass=n' to boot. Are
-> all four iommu-map props above supposed to be the same? Seems to me
-> they all point to the same thing which looks wrong.
+> >> +static void notrace el0_dbg(struct pt_regs *regs, unsigned long esr)
+> >> +{
+> >> +	unsigned long addr_if_watchpoint = read_sysreg(far_el1);
+> >> +
+> >> +	if (system_uses_irq_prio_masking())
+> >> +		gic_write_pmr(GIC_PRIO_IRQON | GIC_PRIO_PSR_I_SET);
+> >> +
+> >> +	user_exit_irqoff();
+> >> +	do_debug_exception(addr_if_watchpoint, esr, regs);
+> >> +	local_daif_restore(DAIF_PROCCTX_NOIRQ);
+> >> +}
+> >> +NOKPROBE_SYMBOL(el0_dbg);
+> > 
+> > I think that it'd be best to stick with 'far' here, and only have the
+> > 'addr_if_watchpoint' name within do_debug_exception(), where it used to
+> > be 'addr'. That way all of this code consistently uses 'far'.
+> 
+> I'm nervous reading junk into a variable called 'far'... someone might assume its an address.
+> 
+> Of the exceptions that come through here, FAR_EL1 is only written by the CPU for a
+> watchpoint, for all the others its UNKNOWN.
 
-Hmm... :/
+My argument is that "far" just means "the contents of FAR_EL1", and
+whether the value has any meaning for the current exception is
+context-dependent (i.e. within do_debug_exception()).
 
-Those mappings just set Stream ID == PCI RID (strictly each one should 
-only need to cover the bus range assigned to that bridge, but it's not 
-crucial) which is the same thing the driver assumes for the mmu-masters 
-property, so either that's wrong and never could have worked anyway - 
-have you tried VFIO on this platform? - or there are other devices also 
-mastering through the SMMU that aren't described at all. Are you able to 
-capture a boot log? The SMMU faults do encode information about the 
-offending ID, and you can typically correlate their appearance 
-reasonably well with endpoint drivers probing.
+> > Otherwise this all looks good to me:
+> > 
+> > Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+> 
+> I'll leave this for now, let me know if my paranoia needs re-tuning!
 
-Robin.
+Sure; my R-B holds either way. I just think it'd be nicer to use 'far'
+here for consistency.
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
