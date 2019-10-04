@@ -2,102 +2,154 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B60CCB7B5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 11:54:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64A43CB7D5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 12:04:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KiknaXv4/TExw5EuonGxRGqDfY1BBDeqI5JGwSrUZGA=; b=O34UozlLaepjLH
-	ovyXzZXQTG79PktKOz9/AhcYLJ9b5pb7htIpz9EVIg6JyNHSqBE3TJod7VhCAGKpInrfA/fjGwUoJ
-	5xuf7mHHaoCCm7iLlLIHpit5KPGMUaUM7mnkvpXEzv+B/W4P+ecz8XT3yJeudEF624QxpKdYwPam9
-	BxTEND6b2jEr1JMXQMMmQ16hfM3l2KrxdPiO3Awwl9QzJIlL6mBNwcItD7WBcyvGFz0L711NI0S3a
-	veE3C4I4EHnDAF1cySFreYX+JGuf0YN/qyN6Bba4Nz2bnfi57uBO1e4ilQ7gG1Q9XWrgFHlQmZBY5
-	+Kl6jfythjRRN11KfMJA==;
+	List-Owner; bh=d3o+XdSS3FxbURIu5Ec5WQe39xZ7nCdeWp636Qtxk9Y=; b=Pp7/BG03ku4t7S
+	EadiqSD2dRr0W1O46hy6lijX2y+hIfw6zoEokBztyh8t4pSl2DUMlCCrF9+mBV/1s7OzfmTKLRY6W
+	LXxLSGcGBw5cggRvu7Zo9/wQc/fG/m7VSPEsJtdv9bZN3YJTmfc0n5jJDm7ZNRASRYTg7I94DNGTD
+	7SJKI0q3ZK/3Ss6TpjdrEFM5jDRMKGgYtSx1kMhZjBHVnNAPalJYibb4NuV+XJ2qjgFoG6ed/aFdG
+	kctPn1CXurqKCL06i39aDD/LnS0wT09AIEbrm3ZzUa+btm42iHzFEqQvPHQyQgmLs/n+W8sfQf0if
+	nf2oYUWF8bSYGZOU5f6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGKI9-00072v-Ba; Fri, 04 Oct 2019 09:54:29 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1iGKRM-0002O2-2M; Fri, 04 Oct 2019 10:04:00 +0000
+Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGKHz-00071h-KB
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 09:54:21 +0000
-Received: by mail-qt1-x843.google.com with SMTP id c3so7679236qtv.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 04 Oct 2019 02:54:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=lYr8ibckse0BmUaAjEkti+4k6yIQOCn91r/LNpsvMM0=;
- b=m1g0d+trfTdQ+ECUs0dLmouJWy/sQUda0BcPSAoUH+uG/QUwZXL1daxAdV6i1F5yxG
- qOd6Ud4kS1pfJvJeoZyYt8cmLUe7/HdEIxIwxA6h0r+KyO2oZE1CJTC5kej+WAmDGvhs
- g1q8Kkh1QysPK7nYlXgGO7K9MWJMpJeN+e4wpXF0kFv8xW4SCpVUMgljBivP86cPFceq
- tOOnxKMU64CeKbO5cJXoehMdcqq14zIMx2l3tVumblXB8VU6U63dZLLpfqQJTrt3FZnE
- pSUY7GqQees/Ikygqqy/PogJWe5MVlogZAiHYdjBtGqG6XrU346eySqNqR8gldgwuJVz
- t3rg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=lYr8ibckse0BmUaAjEkti+4k6yIQOCn91r/LNpsvMM0=;
- b=SCKIVb4+MOYE/Z5i9upkG/3dslrhPDhEBsN7AFNxJsypqqtJKqIs9YblcO3awWkzYN
- 8DGaGrWskIhyQcpJi5ciNK3ljA0sdPCJnXREL+IrXtyb8DTyeJtqXelZwWEiebWAq0Wx
- ygh7tGf/ul/Sq+UulCrjzMD6fK0ArZp+2a2cCMqEVuI9MZS4/DAbEyMjANkHpaRtBurA
- RO8mBsMjPKK8s7YX5Hven2tzY84JE4apAdsaM8NZQHfnbszgNWuo3vPWg1q3ZfpdCh8C
- brpmJs8mBtyEBV2AwUof+njXTdiVoLF1fyPMhzVfwKsQsPRrEbEQhX0xxy8OonrWgEtE
- biKg==
-X-Gm-Message-State: APjAAAUxykodVcdrBLkYakHiwZzV6Wy5hnreCftBgQcVMbcfesx7hZ6B
- zMPFLqXnktThf/yjzSdB9wp+ZyhhJSfgln1OUprcpQ==
-X-Google-Smtp-Source: APXvYqyQh94BA/sDrKViTeebUTvhPkcWicnQF5CkwHSOnMgOpordwR/IaYjOdGiOye/nWgL+V6Iz0kMetMZftZ0V+yI=
-X-Received: by 2002:ac8:108b:: with SMTP id a11mr14866143qtj.380.1570182856217; 
- Fri, 04 Oct 2019 02:54:16 -0700 (PDT)
+ id 1iGKRD-0002Mw-5t; Fri, 04 Oct 2019 10:03:54 +0000
+Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
+ Tudor.Ambarus@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ envelope-from="Tudor.Ambarus@microchip.com";
+ x-sender="Tudor.Ambarus@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa5.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ envelope-from="Tudor.Ambarus@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa5.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Tudor.Ambarus@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: R9j6Uu7mv3bwJvkTmp3Mlw7Vv5lzQg1MOS1yhd6Dk7hMWjWOZm2UWT/hqPTjGyrXcDKifIsJSl
+ 15qNntoAKJmsX8q6FkciXez3ilE2oSyGrwhhz+pccyZ69eq5XEokuyoYKkx6JIYFW7YMSrCw5K
+ PFv2yvyD5CgQgYrUlQHUUC5JP2JcP0Ww6W7DIXXgsN0+IwuZOZQC2BnRDZ7bBVTNpMUyNTjpZ/
+ dyR2FOzpTbdPM/vDMGrFDZi2SZ/R2k8W230Hj1j2K/vvmHhNvade3sAJ/rsqes2XOKORJabSFP
+ f2Q=
+X-IronPort-AV: E=Sophos;i="5.67,256,1566889200"; d="scan'208";a="50170110"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 04 Oct 2019 03:03:44 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Fri, 4 Oct 2019 03:03:42 -0700
+Received: from NAM04-SN1-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Fri, 4 Oct 2019 03:03:41 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=RA3hBSDyFOq8CKm/VVVd+Ywn6GJ62rRbOYVWNeY04C08URavg04+TYfRfir2R42KOTbaoTO7B4tSc2OjrMYNVTsHNJq0Y/V4yxTqsVuWu7PczHVw5yZz5ZIeRABeYFtvhcKHPKGdRq+0JyjW31C/VZoV4BTP1jWTvyiV9JLo7pYiX3ZCjnITKKWxbs0ACBdiAof3n/B8I0e8gELgxbewUv9YTtDIoUzFhataWkYiPQOxx+uWn5CA1zXlVKS//uAWbr3TuWeXPZz2UHg6poYWrjFaMlkqllYZyONlECoMFgLCL0a3xBppNpL3ywlBqGi6lSL+9d3K2UZ+k5eCZceIOA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=/gaJ8odicUfqa/dz+sNHjmZDTMLu4YKgx4yuA2jMemM=;
+ b=O/PtKovO0tSmWCuypTv+L2J/gtGzFGoP4nI94dAACzSUkWy7klm4KUUcRcPpURpXujJP3Ui3xj+N4VFuo/S5BAZ54xSDipADO8vwnQq+PC7QXJEmbhY+VMjU1FBkXUihkknt70gtQWApPjuM7ydt05mMWtXLimZxwuMYLYF5PmkaMO0rmubJSkMondJpGq/8nHqkCyhYBrARmWY/Q1yPKaFpG6lfMHC+bQLErmk6vWR0E9YUZZQO+lKhIsTwkMZnEXj0Ct5sw+sROeBNgLRVWw1olb/bkzoEzk44K88sEnyI/wVAB6WLjfsQJNujywHIFA3sUcPwOJjisZ5BlEgGGw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=/gaJ8odicUfqa/dz+sNHjmZDTMLu4YKgx4yuA2jMemM=;
+ b=jXLWkZ45fXXYqlQGMrLrt0/RRdWPFEFe1Oh3b8LQK0xadgjL3kPcTxoId/NxnuX994J7qWFSEw3lV3qcECZJs5OTsRr6H0RO8jwFLWvdzJASVpelK4/VpWlb8OKs3IeZSO2ezBvDWXeWfA376Rq5zRll66LVcRcXTCp8cT5yHHk=
+Received: from MN2PR11MB4448.namprd11.prod.outlook.com (52.135.39.157) by
+ MN2PR11MB3806.namprd11.prod.outlook.com (20.178.254.82) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2305.20; Fri, 4 Oct 2019 10:03:41 +0000
+Received: from MN2PR11MB4448.namprd11.prod.outlook.com
+ ([fe80::340d:5a33:dc79:1184]) by MN2PR11MB4448.namprd11.prod.outlook.com
+ ([fe80::340d:5a33:dc79:1184%5]) with mapi id 15.20.2305.023; Fri, 4 Oct 2019
+ 10:03:41 +0000
+From: <Tudor.Ambarus@microchip.com>
+To: <john.garry@huawei.com>, <vigneshr@ti.com>,
+ <boris.brezillon@collabora.com>, <marek.vasut@gmail.com>,
+ <linux-mtd@lists.infradead.org>, <geert+renesas@glider.be>,
+ <jonas@norrbonn.se>
+Subject: Re: [PATCH v2 10/22] mtd: spi-nor: Rework write_sr()
+Thread-Topic: [PATCH v2 10/22] mtd: spi-nor: Rework write_sr()
+Thread-Index: AQHVcqwqkYJhMgq/4EeXQwoXNBbOlKdKSf6AgAAGmwA=
+Date: Fri, 4 Oct 2019 10:03:40 +0000
+Message-ID: <e5d9b91f-cb86-0b82-5631-af0868ba4796@microchip.com>
+References: <20190924074533.6618-1-tudor.ambarus@microchip.com>
+ <20190924074533.6618-11-tudor.ambarus@microchip.com>
+ <83d62334-bd1c-20b7-3c58-225392c819f8@huawei.com>
+In-Reply-To: <83d62334-bd1c-20b7-3c58-225392c819f8@huawei.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: VI1PR10CA0100.EURPRD10.PROD.OUTLOOK.COM
+ (2603:10a6:803:28::29) To MN2PR11MB4448.namprd11.prod.outlook.com
+ (2603:10b6:208:193::29)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 921cd32e-2201-4542-3e5b-08d748b221e5
+x-ms-traffictypediagnostic: MN2PR11MB3806:
+x-microsoft-antispam-prvs: <MN2PR11MB380636FD88794155F9D96780F09E0@MN2PR11MB3806.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 018093A9B5
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(346002)(366004)(136003)(396003)(39860400002)(376002)(199004)(189003)(8936002)(53546011)(26005)(71200400001)(71190400001)(86362001)(110136005)(2201001)(6506007)(76176011)(386003)(316002)(229853002)(4326008)(256004)(14444005)(446003)(11346002)(476003)(7416002)(5660300002)(2616005)(2906002)(99286004)(486006)(54906003)(102836004)(186003)(31686004)(305945005)(66476007)(6116002)(81156014)(81166006)(6486002)(6436002)(66446008)(36756003)(8676002)(64756008)(3846002)(66556008)(7736002)(66946007)(25786009)(6512007)(31696002)(52116002)(6246003)(14454004)(66066001)(2501003)(478600001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR11MB3806;
+ H:MN2PR11MB4448.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: YBrOp+C1V/aJhxyasW3i1fHiPbPK8x5bcVsVrVlrGhAMTod4FMYfBVJX/PraYPSpBAiCab359g57YttwOCKlXx1XBLofpjupCEIhto7x9iAB8xCsQWxScVV7QEkZo9vkeALUSlMO+MmbIn40KeNS5AMIFrKz3UQzQxVS18ABnzH2k1K1r/ad7RsW4/5dpREvnARMlfXPOUGt15Gnz9b9tYiWWjzldDtT2stztaU/yGleaPzQwO4S7/bZWkEvmn97Vk4KPhgIaTpnHlmy+UsgVw/5v5ZrwMosNT6m/vNLEIf7uD7ki7X9qe0TYOjC77W54k9Dhy4MLXMAKriYu1QRzDIR2hUpT4RIfO26ZgSZZIbc/5P2j72kfaEz3kqpDXYgkIeVPSTLyKhb5au7N7L2WFFxmTiJ1gHuZduxDBTc4EY=
+x-ms-exchange-transport-forked: True
+Content-ID: <05DA6A7F3CDA484CB53787B24189CD8A@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-References: <20190927034338.15813-1-walter-zh.wu@mediatek.com>
- <CACT4Y+Zxz+R=qQxSMoipXoLjRqyApD3O0eYpK0nyrfGHE4NNPw@mail.gmail.com>
- <1569594142.9045.24.camel@mtksdccf07>
- <CACT4Y+YuAxhKtL7ho7jpVAPkjG-JcGyczMXmw8qae2iaZjTh_w@mail.gmail.com>
- <1569818173.17361.19.camel@mtksdccf07> <1570018513.19702.36.camel@mtksdccf07>
- <CACT4Y+bbZhvz9ZpHtgL8rCCsV=ybU5jA6zFnJBL7gY2cNXDLyQ@mail.gmail.com>
- <1570069078.19702.57.camel@mtksdccf07>
- <CACT4Y+ZwNv2-QBrvuR2JvemovmKPQ9Ggrr=ZkdTg6xy_Ki6UAg@mail.gmail.com>
- <1570095525.19702.59.camel@mtksdccf07> <1570110681.19702.64.camel@mtksdccf07>
- <CACT4Y+aKrC8mtcDTVhM-So-TTLjOyFCD7r6jryWFH6i2he1WJA@mail.gmail.com>
- <1570164140.19702.97.camel@mtksdccf07> <1570176131.19702.105.camel@mtksdccf07>
- <CACT4Y+ZvhomaeXFKr4za6MJi=fW2SpPaCFP=fk06CMRhNcmFvQ@mail.gmail.com>
- <1570182257.19702.109.camel@mtksdccf07>
-In-Reply-To: <1570182257.19702.109.camel@mtksdccf07>
-From: Dmitry Vyukov <dvyukov@google.com>
-Date: Fri, 4 Oct 2019 11:54:04 +0200
-Message-ID: <CACT4Y+ZnWPEO-9DkE6C3MX-Wo+8pdS6Gr6-2a8LzqBS=2fe84w@mail.gmail.com>
-Subject: Re: [PATCH] kasan: fix the missing underflow in memmove and memcpy
- with CONFIG_KASAN_GENERIC=y
-To: Walter Wu <walter-zh.wu@mediatek.com>
+X-MS-Exchange-CrossTenant-Network-Message-Id: 921cd32e-2201-4542-3e5b-08d748b221e5
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Oct 2019 10:03:40.8383 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: +qw0O/ZziQfxQPNLXFtCRMEIPyuivh93a9vT+GhPNAvRZudcov4PRa0k6MN4oj/52n80hShfOCYUfB2VJPRt4Br3fwulTqNws4l1k+XfqNY=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR11MB3806
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_025419_688753_F89416F4 
-X-CRM114-Status: GOOD (  33.21  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191004_030351_230690_A2FC4292 
+X-CRM114-Status: GOOD (  12.50  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.150.166 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,289 +161,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream <wsd_upstream@mediatek.com>,
- linux-mediatek@lists.infradead.org, LKML <linux-kernel@vger.kernel.org>,
- kasan-dev <kasan-dev@googlegroups.com>, Linux-MM <linux-mm@kvack.org>,
- Alexander Potapenko <glider@google.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-aspeed@lists.ozlabs.org, andrew@aj.id.au, richard@nod.at,
+ linux-kernel@vger.kernel.org, vz@mleia.com, linux-mediatek@lists.infradead.org,
+ joel@jms.id.au, miquel.raynal@bootlin.com, matthias.bgg@gmail.com,
+ computersforpeace@gmail.com, dwmw2@infradead.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 4, 2019 at 11:44 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
->
-> On Fri, 2019-10-04 at 11:18 +0200, Dmitry Vyukov wrote:
-> > On Fri, Oct 4, 2019 at 10:02 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
-> > >
-> > > On Fri, 2019-10-04 at 12:42 +0800, Walter Wu wrote:
-> > > > On Thu, 2019-10-03 at 16:53 +0200, Dmitry Vyukov wrote:
-> > > > > On Thu, Oct 3, 2019 at 3:51 PM Walter Wu <walter-zh.wu@mediatek.com> wrote:>
-> > > > > >
-> > > > > >  static void print_error_description(struct kasan_access_info *info)
-> > > > > >  {
-> > > > > > -       pr_err("BUG: KASAN: %s in %pS\n",
-> > > > > > -               get_bug_type(info), (void *)info->ip);
-> > > > > > -       pr_err("%s of size %zu at addr %px by task %s/%d\n",
-> > > > > > -               info->is_write ? "Write" : "Read", info->access_size,
-> > > > > > -               info->access_addr, current->comm, task_pid_nr(current));
-> > > > > > +       if ((long)info->access_size < 0) {
-> > > > > > +               pr_err("BUG: KASAN: invalid size %zu in %pS\n",
-> > > > > > +                       info->access_size, (void *)info->ip);
-> > > > >
-> > > > > I would not introduce a new bug type.
-> > > > > These are parsed and used by some systems, e.g. syzbot. If size is
-> > > > > user-controllable, then a new bug type for this will mean 2 bug
-> > > > > reports.
-> > > > > It also won't harm to print Read/Write, definitely the address, so no
-> > > > > reason to special case this out of a dozen of report formats.
-> > > > > This can qualify as out-of-bounds (definitely will cross some
-> > > > > bounds!), so I would change get_bug_type() to return
-> > > > > "slab-out-of-bounds" (as the most common OOB) in such case (with a
-> > > > > comment).
-> > > > >
-> > > > Print Read/Write and address information, it is ok.
-> > > > But if we can directly point to the root cause of this problem, why we
-> > > > not do it?  see 1) and 2) to get a point, if we print OOB, then user
-> > > > needs one minute to think what is root case of this problem, but if we
-> > > > print invalid size, then user can directly get root case. this is my
-> > > > original thinking.
-> > > > 1)Invalid size is true then OOB is true.
-> > > > 2)OOB is true then invalid size may be true or false.
-> > > >
-> > > > But I see you say some systems have used bug report so that avoid this
-> > > > trouble, i will print the wrong type is "out-of-bound" in a unified way
-> > > > when size<0.
-> > > >
-> > >
-> > > Updated my patch, please help to review it.
-> > > thanks.
-> > >
-> > > commit 13e10a7e4264eb25c5a14193068027afc9c261f6
-> > > Author: Walter-zh Wu <walter-zh.wu@mediatek.com>
-> > > Date:   Fri Oct 4 15:27:17 2019 +0800
-> > >
-> > >     kasan: detect negative size in memory operation function
-> > >
-> > >     It is an undefined behavior to pass a negative value to
-> > > memset()/memcpy()/memmove()
-> > >     , so need to be detected by KASAN.
-> > >
-> > >     If size is negative value, then it will be larger than ULONG_MAX/2,
-> > >     so that we will qualify as out-of-bounds issue.
-> > >
-> > >     KASAN report:
-> > >
-> > >      BUG: KASAN: out-of-bounds in kmalloc_memmove_invalid_size+0x70/0xa0
-> > >      Read of size 18446744073709551608 at addr ffffff8069660904 by task
-> > > cat/72
-> > >
-> > >      CPU: 2 PID: 72 Comm: cat Not tainted
-> > > 5.4.0-rc1-next-20191004ajb-00001-gdb8af2f372b2-dirty #1
-> > >      Hardware name: linux,dummy-virt (DT)
-> > >      Call trace:
-> > >       dump_backtrace+0x0/0x288
-> > >       show_stack+0x14/0x20
-> > >       dump_stack+0x10c/0x164
-> > >       print_address_description.isra.9+0x68/0x378
-> > >       __kasan_report+0x164/0x1a0
-> > >       kasan_report+0xc/0x18
-> > >       check_memory_region+0x174/0x1d0
-> > >       memmove+0x34/0x88
-> > >       kmalloc_memmove_invalid_size+0x70/0xa0
-> > >
-> > >     [1] https://bugzilla.kernel.org/show_bug.cgi?id=199341
-> > >
-> > >     Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
-> > >     Reported -by: Dmitry Vyukov <dvyukov@google.com>
-> > >     Suggested-by: Dmitry Vyukov <dvyukov@google.com>
-> > >
-> > > diff --git a/lib/test_kasan.c b/lib/test_kasan.c
-> > > index 49cc4d570a40..06942cf585cc 100644
-> > > --- a/lib/test_kasan.c
-> > > +++ b/lib/test_kasan.c
-> > > @@ -283,6 +283,23 @@ static noinline void __init
-> > > kmalloc_oob_in_memset(void)
-> > >         kfree(ptr);
-> > >  }
-> > >
-> > > +static noinline void __init kmalloc_memmove_invalid_size(void)
-> > > +{
-> > > +       char *ptr;
-> > > +       size_t size = 64;
-> > > +
-> > > +       pr_info("invalid size in memmove\n");
-> > > +       ptr = kmalloc(size, GFP_KERNEL);
-> > > +       if (!ptr) {
-> > > +               pr_err("Allocation failed\n");
-> > > +               return;
-> > > +       }
-> > > +
-> > > +       memset((char *)ptr, 0, 64);
-> > > +       memmove((char *)ptr, (char *)ptr + 4, -2);
-> > > +       kfree(ptr);
-> > > +}
-> > > +
-> > >  static noinline void __init kmalloc_uaf(void)
-> > >  {
-> > >         char *ptr;
-> > > @@ -773,6 +790,7 @@ static int __init kmalloc_tests_init(void)
-> > >         kmalloc_oob_memset_4();
-> > >         kmalloc_oob_memset_8();
-> > >         kmalloc_oob_memset_16();
-> > > +       kmalloc_memmove_invalid_size();
-> > >         kmalloc_uaf();
-> > >         kmalloc_uaf_memset();
-> > >         kmalloc_uaf2();
-> > > diff --git a/mm/kasan/common.c b/mm/kasan/common.c
-> > > index 6814d6d6a023..97dd6eecc3e7 100644
-> > > --- a/mm/kasan/common.c
-> > > +++ b/mm/kasan/common.c
-> > > @@ -102,7 +102,8 @@ EXPORT_SYMBOL(__kasan_check_write);
-> > >  #undef memset
-> > >  void *memset(void *addr, int c, size_t len)
-> > >  {
-> > > -       check_memory_region((unsigned long)addr, len, true, _RET_IP_);
-> > > +       if (!check_memory_region((unsigned long)addr, len, true, _RET_IP_))
-> > > +               return NULL;
-> > >
-> > >         return __memset(addr, c, len);
-> > >  }
-> > > @@ -110,7 +111,8 @@ void *memset(void *addr, int c, size_t len)
-> > >  #undef memmove
-> > >  void *memmove(void *dest, const void *src, size_t len)
-> > >  {
-> > > -       check_memory_region((unsigned long)src, len, false, _RET_IP_);
-> > > +       if (!check_memory_region((unsigned long)src, len, false, _RET_IP_))
-> > > +               return NULL;
-> > >         check_memory_region((unsigned long)dest, len, true, _RET_IP_);
-> >
-> > I would check both calls.
-> > The current code seems to be over-specialized for handling of invalid
-> > size (you assume that if it's invalid size, then the first
-> > check_memory_region will detect it and checking the second one is
-> > pointless, right?).
-> > But check_memory_region can return false in other cases too.
-> > Also seeing first call checked, but the second not checked just hurts
-> > my eyes when reading code (whenever I will read such code my first
-> > reaction will be "why?").
-> >
-> I can't agree with you any more about second point.
->
-> #undef memmove
-> void *memmove(void *dest, const void *src, size_t len)
-> {
->     if (!check_memory_region((unsigned long)src, len, false, _RET_IP_)
-> ||)
->         !check_memory_region((unsigned long)dest, len, true, _RET_IP_);
->         return NULL;
->
->     return __memmove(dest, src, len);
-> }
->
-> >
-> > >
-> > >         return __memmove(dest, src, len);
-> > > @@ -119,7 +121,8 @@ void *memmove(void *dest, const void *src, size_t
-> > > len)
-> > >  #undef memcpy
-> > >  void *memcpy(void *dest, const void *src, size_t len)
-> > >  {
-> > > -       check_memory_region((unsigned long)src, len, false, _RET_IP_);
-> > > +       if (!check_memory_region((unsigned long)src, len, false, _RET_IP_))
-> > > +               return NULL;
-> > >         check_memory_region((unsigned long)dest, len, true, _RET_IP_);
-> > >
-> > >         return __memcpy(dest, src, len);
-> > > diff --git a/mm/kasan/generic.c b/mm/kasan/generic.c
-> > > index 616f9dd82d12..02148a317d27 100644
-> > > --- a/mm/kasan/generic.c
-> > > +++ b/mm/kasan/generic.c
-> > > @@ -173,6 +173,11 @@ static __always_inline bool
-> > > check_memory_region_inline(unsigned long addr,
-> > >         if (unlikely(size == 0))
-> > >                 return true;
-> > >
-> > > +       if (unlikely((long)size < 0)) {
-> > > +               kasan_report(addr, size, write, ret_ip);
-> > > +               return false;
-> > > +       }
-> > > +
-> > >         if (unlikely((void *)addr <
-> > >                 kasan_shadow_to_mem((void *)KASAN_SHADOW_START))) {
-> > >                 kasan_report(addr, size, write, ret_ip);
-> > > diff --git a/mm/kasan/generic_report.c b/mm/kasan/generic_report.c
-> > > index 36c645939bc9..ae9596210394 100644
-> > > --- a/mm/kasan/generic_report.c
-> > > +++ b/mm/kasan/generic_report.c
-> > > @@ -107,6 +107,13 @@ static const char *get_wild_bug_type(struct
-> > > kasan_access_info *info)
-> > >
-> > >  const char *get_bug_type(struct kasan_access_info *info)
-> > >  {
-> > > +       /*
-> > > +        * if access_size < 0, then it will be larger than ULONG_MAX/2,
-> > > +        * so that this can qualify as out-of-bounds.
-> > > +        */
-> > > +       if ((long)info->access_size < 0)
-> > > +               return "out-of-bounds";
-> >
-> > "out-of-bounds" is the _least_ frequent KASAN bug type. So saying
-> > "out-of-bounds" has downsides of both approaches and won't prevent
-> > duplicate reports by syzbot...
-> >
-> maybe i should add your comment into the comment in get_bug_type?
-
-Yes, that's exactly what I meant above:
-
-"I would change get_bug_type() to return "slab-out-of-bounds" (as the
-most common OOB) in such case (with a comment)."
-
- ;)
-
-> > > +
-> > >         if (addr_has_shadow(info->access_addr))
-> > >                 return get_shadow_bug_type(info);
-> > >         return get_wild_bug_type(info);
-> > > diff --git a/mm/kasan/tags.c b/mm/kasan/tags.c
-> > > index 0e987c9ca052..b829535a3ad7 100644
-> > > --- a/mm/kasan/tags.c
-> > > +++ b/mm/kasan/tags.c
-> > > @@ -86,6 +86,11 @@ bool check_memory_region(unsigned long addr, size_t
-> > > size, bool write,
-> > >         if (unlikely(size == 0))
-> > >                 return true;
-> > >
-> > > +       if (unlikely((long)size < 0)) {
-> > > +               kasan_report(addr, size, write, ret_ip);
-> > > +               return false;
-> > > +       }
-> > > +
-> > >         tag = get_tag((const void *)addr);
-> > >
-> > >         /*
-> > > diff --git a/mm/kasan/tags_report.c b/mm/kasan/tags_report.c
-> > > index 969ae08f59d7..1e1ca81214b5 100644
-> > > --- a/mm/kasan/tags_report.c
-> > > +++ b/mm/kasan/tags_report.c
-> > > @@ -36,6 +36,13 @@
-> > >
-> > >  const char *get_bug_type(struct kasan_access_info *info)
-> > >  {
-> > > +       /*
-> > > +        * if access_size < 0, then it will be larger than ULONG_MAX/2,
-> > > +        * so that this can qualify as out-of-bounds.
-> > > +        */
-> > > +       if ((long)info->access_size < 0)
-> > > +               return "out-of-bounds";
-> > > +
-> > >  #ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
-> > >         struct kasan_alloc_meta *alloc_meta;
-> > >         struct kmem_cache *cache;
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksIEpvaG4sDQoNCk9uIDEwLzA0LzIwMTkgMTI6MzkgUE0sIEpvaG4gR2Fycnkgd3JvdGU6DQo+
+IEV4dGVybmFsIEUtTWFpbA0KPiANCj4gDQo+IE9uIDI0LzA5LzIwMTkgMDg6NDYsIFR1ZG9yLkFt
+YmFydXNAbWljcm9jaGlwLmNvbSB3cm90ZToNCj4+ICt9DQo+PiArDQo+PiArLyoqDQo+PiArICog
+c3BpX25vcl93cml0ZV9zcigpIC0gV3JpdGUgdGhlIFN0YXR1cyBSZWdpc3Rlci4NCj4+ICsgKiBA
+bm9yOsKgwqDCoCBwb2ludGVyIHRvICdzdHJ1Y3Qgc3BpX25vcicuDQo+PiArICogQHNyOsKgwqDC
+oMKgwqDCoMKgIGJ1ZmZlciB0byB3cml0ZSB0byB0aGUgU3RhdHVzIFJlZ2lzdGVyLg0KPj4gKyAq
+IEBsZW46wqDCoMKgIG51bWJlciBvZiBieXRlcyB0byB3cml0ZSB0byB0aGUgU3RhdHVzIFJlZ2lz
+dGVyLg0KPj4gKyAqDQo+PiArICogUmV0dXJuOiAwIG9uIHN1Y2Nlc3MsIC1lcnJubyBvdGhlcndp
+c2UuDQo+PiDCoCAqLw0KPj4gLXN0YXRpYyBpbnQgd3JpdGVfc3Ioc3RydWN0IHNwaV9ub3IgKm5v
+ciwgdTggdmFsKQ0KPj4gK3N0YXRpYyBpbnQgc3BpX25vcl93cml0ZV9zcihzdHJ1Y3Qgc3BpX25v
+ciAqbm9yLCBjb25zdCB1OCAqc3IsIHNpemVfdCBsZW4pDQo+PiDCoHsNCj4+IC3CoMKgwqAgbm9y
+LT5ib3VuY2VidWZbMF0gPSB2YWw7DQo+PiArwqDCoMKgIGludCByZXQ7DQo+PiArDQo+PiArwqDC
+oMKgIHJldCA9IHNwaV9ub3Jfd3JpdGVfZW5hYmxlKG5vcik7DQo+PiArwqDCoMKgIGlmIChyZXQp
+DQo+PiArwqDCoMKgwqDCoMKgwqAgcmV0dXJuIHJldDsNCj4+ICsNCj4gDQo+IEhpIFR1ZG9yLA0K
+PiANCj4+IMKgwqDCoMKgIGlmIChub3ItPnNwaW1lbSkgew0KPj4gwqDCoMKgwqDCoMKgwqDCoCBz
+dHJ1Y3Qgc3BpX21lbV9vcCBvcCA9DQo+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgU1BJX01F
+TV9PUChTUElfTUVNX09QX0NNRChTUElOT1JfT1BfV1JTUiwgMSksDQo+PiDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBTUElfTUVNX09QX05PX0FERFIsDQo+PiDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBTUElfTUVNX09QX05PX0RVTU1ZLA0KPj4g
+LcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBTUElfTUVNX09QX0RBVEFfSU4o
+MSwgbm9yLT5ib3VuY2VidWYsIDEpKTsNCj4gDQo+IFRoaXMgYmUgU1BJX01FTV9PUF9EQVRBX09V
+VCgpIGluIHRoZSBjdXJyZW50IG1haW5saW5lIGNvZGUgYWxzbywgcmlnaHQ/DQoNCkluIHY1LjQt
+cmMxIHRoaXMgaXMgZGVmaW5lZCBhcyBTUElfTUVNX09QX0RBVEFfSU4sIHNvIHRoZSBNYWlubGlu
+ZSBjb2RlIHNob3VsZA0KZmFpbC4gVGhpcyBsb29rcyBsaWtlIGEgYnVnLiBJIGRpZG4ndCBub3Rp
+Y2VkIGl0IHdoZW4gZG9pbmcgdGhlIHBhdGNoLg0KDQo+IA0KPiBJJ20gdGVzdGluZyBteSB1bmRl
+ciBkZXZlbG9wbWVudCBkcml2ZXIgb24gdG9wIG9mIHY1LjQtcmMxLCBhbmQgZmxhc2hfbG9jayAt
+dSBpcyBicm9rZW4uDQoNCkl0J3Mgbm90IGNsZWFyIHRvIG1lLCBkb2VzIGZsYXNoX2xvY2sgZmFp
+bCB3aXRoIG15IHBhdGNoZXMgb24gdG9wIG9mIHY1LjQtcmMxPw0KT3IgaXQgZmFpbHMgd2hlbiB0
+ZXN0aW5nIHY1LjQtcmMxPw0KDQpDYW4geW91IHRlc3QgdjUuNC1yYzEgYW5kIHNlZSBpZiBmbGFz
+aF9sb2NrIHdvcmtzIG9uIHlvdSBmbGFzaCBvciBub3Q/DQoNClBsZWFzZSBzcGVjaWZ5IHdoaWNo
+IGZsYXNoIGRvIHlvdSB1c2UsIGFuZCB3aGljaCBjb250cm9sbGVyLg0KDQpUaGFua3MgZm9yIHRl
+c3RpbmcgdGhpcyENCnRhDQpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1hcm0ta2VybmVsCg==
