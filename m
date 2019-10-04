@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1199BCC032
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 18:08:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1681ECC038
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 18:08:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6bNVLti/xGrzNVu9qOc04uJqKa9+gxkEZehXQWj9Fp4=; b=BT3vvTyvfz0Uc+
-	VHc2EIIqklnq9JaUtYlAZoAkJPRxWrq5XUIhj+gfHwMAlOK/LjwzeDmV1haB9eQoykn5ny2to0rL6
-	ojMjOiP9n5fu/HFRDQ+IuU7EQDwk7z3ZoIp4w4eavzXOTjcsjeIoKH2PTbrnExoYu+YkIeOIew5+4
-	9pNjuvNgG/dkRzOyV6sPnebAITOEqUmvL4jZ7Q3Wpz3be+thYfojRsdq0/kgi2uuNg7BdYQNL04At
-	XlivHrgAbjWTgwtvgHUewpzj85GcdUCsSLHJFSDpuSua5XZZcvAx9HNtU4+YtA1DLLNHaJWtJtH4J
-	cPHuS0Jn0K6v4KHARhqQ==;
+	List-Owner; bh=BokPqka002sH1wg/zzNzvacdW20vBZcBnGzVdYSxppE=; b=DzyowPHCX5VtCJ
+	WUHJY+nu38RzS8ahZfVifrIJeL7HiCLnjkhArxgYmIVXJgOKaTRGW70RWzNG9QxpnDcfwPuqjMocN
+	CwLWdOP+pXqRk+eAfKuWTQ9PtDKZqqq8lnW8/HtgcIk4kt1LjuyRBrgfqzbxzDlwzYphqiEw0N6Ne
+	Kq3VrY1CBSInKawQMSEe7NLJJeUYI76DFhHhwDLoPUSG0GEBSbd9qRjSVg+Khn4bYPB/3sEnjaLu5
+	82iUqzdm/NuocdvERZ0U+W/3clEc4qJRCAuF69K01Ed8VXP1+uk87FGIH0XBDQqJkl+a2W7eoOb+2
+	KpoLPhVGJdLGTsFTysDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGQ7z-0006gQ-4I; Fri, 04 Oct 2019 16:08:23 +0000
+	id 1iGQ8G-0006pr-TB; Fri, 04 Oct 2019 16:08:40 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGQ7p-0006g2-Rj
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 16:08:15 +0000
+ id 1iGQ7v-0006jb-Ip
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 16:08:20 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 22C931597;
- Fri,  4 Oct 2019 09:08:13 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 28E891597;
+ Fri,  4 Oct 2019 09:08:19 -0700 (PDT)
 Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 53D153F68E;
- Fri,  4 Oct 2019 09:08:12 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B8D2E3F68E;
+ Fri,  4 Oct 2019 09:08:18 -0700 (PDT)
 Subject: Re: [PATCH 2/8] arm64: remove __exception annotations
-To: Masami Hiramatsu <mhiramat@kernel.org>, Mark Rutland <mark.rutland@arm.com>
+To: Marc Gonzalez <marc.w.gonzalez@free.fr>
 References: <20191003171642.135652-1-james.morse@arm.com>
  <20191003171642.135652-3-james.morse@arm.com>
- <20191004101717.GB34756@lakrids.cambridge.arm.com>
- <20191004231033.537af57806db6316b18cb0b5@kernel.org>
+ <c8518ce0-e1dd-f485-c05b-1ab0216639aa@free.fr>
 From: James Morse <james.morse@arm.com>
-Message-ID: <c2332ce4-6b0f-ee1a-ff48-59bba6afdd22@arm.com>
-Date: Fri, 4 Oct 2019 17:08:11 +0100
+Message-ID: <7dd64b86-e2bd-1c6e-ea77-fc8590e67366@arm.com>
+Date: Fri, 4 Oct 2019 17:08:17 +0100
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191004231033.537af57806db6316b18cb0b5@kernel.org>
+In-Reply-To: <c8518ce0-e1dd-f485-c05b-1ab0216639aa@free.fr>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_090813_939280_BA7F2274 
-X-CRM114-Status: GOOD (  15.63  )
+X-CRM114-CacheID: sfid-20191004_090819_678733_065DA473 
+X-CRM114-Status: UNSURE (   8.95  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,75 +64,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi guys,
-
-On 04/10/2019 15:10, Masami Hiramatsu wrote:
-> On Fri, 4 Oct 2019 11:17:17 +0100
-> Mark Rutland <mark.rutland@arm.com> wrote:
->> On Thu, Oct 03, 2019 at 06:16:36PM +0100, James Morse wrote:
->>> Since commit 732674980139 ("arm64: unwind: reference pt_regs via embedded
->>> stack frame") arm64 has has not used the __exception annotation to dump
->>> the pt_regs during stack tracing. in_exception_text() has no callers.
->>>
->>> This annotation is only used to blacklist kprobes, it means the same as
->>> __kprobes.
->>>
->>> Section annotations like this require the functions to be grouped
->>> together between the start/end markers, and placed according to
->>> the linker script. For kprobes we also have NOKPROBE_SYMBOL() which
->>> logs the symbol address in a section that kprobes parses and
->>> blacklists at boot.
->>>
->>> Using NOKPROBE_SYMBOL() instead lets kprobes publish the list of
->>> blacklisted symbols, and saves us from having an arm64 specific
->>> spelling of __kprobes.
-
->>> diff --git a/arch/arm64/include/asm/exception.h b/arch/arm64/include/asm/exception.h
->>> index a17393ff6677..b0b3ba56e919 100644
->>> --- a/arch/arm64/include/asm/exception.h
->>> +++ b/arch/arm64/include/asm/exception.h
->>
->> [...]
->>
->>> -asmlinkage void __exception do_debug_exception(unsigned long addr_if_watchpoint,
->>> -					       unsigned int esr,
->>> -					       struct pt_regs *regs)
->>> +asmlinkage void do_debug_exception(unsigned long addr_if_watchpoint,
->>> +				   unsigned int esr, struct pt_regs *regs)
->>>  {
->>>  	const struct fault_info *inf = esr_to_debug_fault_info(esr);
->>>  	unsigned long pc = instruction_pointer(regs);
->>
->> I assume you meant to add NOKPROBE_SYMBOL(do_debug_exception) here.
->>
->> Assuming so, and with that fixed up:
->>
->> Acked-by: Mark Rutland <mark.rutland@arm.com>
+On 04/10/2019 14:03, Marc Gonzalez wrote:
+> On 03/10/2019 19:16, James Morse wrote:
 > 
-> Good catch, if so, this looks good to me too.
-
-I should have noted it in the commit message, but the NOKPROBE_SYMBOL(do_debug_exception)
-is already there! Added by commit 2dd0e8d2d2a15 ("arm64: Kprobes with single stepping
-support").
-
-(kprobing the debug handler is so bad, we blacklist it twice!)
-
-I'll fix the commit message.
-
-
-> with that fixed up:
+>> Since commit 732674980139 ("arm64: unwind: reference pt_regs via embedded
+>> stack frame") arm64 has has not used the __exception annotation to dump
 > 
-> Acked-by: Masami Hiramatsu <mhiramat@kernel.org>
+> s/has has not/has not/  ?
 
-I assume you're both happy for me to apply these tags.
+oops!
 
 
 Thanks,
