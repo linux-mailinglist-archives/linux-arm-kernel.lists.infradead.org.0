@@ -2,51 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D1DECC031
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 18:08:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1199BCC032
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 18:08:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rCFn9QHk/q5Ft7rgerIJ8r70ODzXFZxTzjQObAFjAFM=; b=dOg3lQtwzrrIJamGHdeQApirg
-	XxysEh08RFkZGDfP/d8FA+mN+QfBI4MJHHOYf1R8dfRg8y8DqD2UYjdzBnpt96JPKqGB//FUeEnaz
-	IHPe0znXN1GwE3xKMGTuCveP23Q8tYBWikWgbsEXPO8w2SH+Pbt+Yz8Y4SaS2qxtsPuBdlwiGRCBW
-	xxeIgEZJfsaDuN8QC3MdShn2WdeWotNJiUvr6nVw/6h+OL8Z5x5ZnKO2VZ29lN8MmNlr2OMY0CqPV
-	rKtEYjDdGFpwLeawAScyjPFF6siDNQbzyrByobbfjHZr9ll986oEWNoauAokRl0jm4OTwcO9Cpy+G
-	oQIGwMiSg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6bNVLti/xGrzNVu9qOc04uJqKa9+gxkEZehXQWj9Fp4=; b=BT3vvTyvfz0Uc+
+	VHc2EIIqklnq9JaUtYlAZoAkJPRxWrq5XUIhj+gfHwMAlOK/LjwzeDmV1haB9eQoykn5ny2to0rL6
+	ojMjOiP9n5fu/HFRDQ+IuU7EQDwk7z3ZoIp4w4eavzXOTjcsjeIoKH2PTbrnExoYu+YkIeOIew5+4
+	9pNjuvNgG/dkRzOyV6sPnebAITOEqUmvL4jZ7Q3Wpz3be+thYfojRsdq0/kgi2uuNg7BdYQNL04At
+	XlivHrgAbjWTgwtvgHUewpzj85GcdUCsSLHJFSDpuSua5XZZcvAx9HNtU4+YtA1DLLNHaJWtJtH4J
+	cPHuS0Jn0K6v4KHARhqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGQ7X-0006QB-Q0; Fri, 04 Oct 2019 16:07:56 +0000
-Received: from avon.wwwdotorg.org ([104.237.132.123])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGQ7L-0006PW-8v
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 16:07:44 +0000
-Received: from [10.20.204.51] (unknown [216.228.112.24])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by avon.wwwdotorg.org (Postfix) with ESMTPSA id 79E431C0728;
- Fri,  4 Oct 2019 10:07:41 -0600 (MDT)
-X-Virus-Status: Clean
-X-Virus-Scanned: clamav-milter 0.100.3 at avon.wwwdotorg.org
-Subject: Re: [PATCH 1/4] clk: tegra: Enable fuse clock on Tegra124
-To: Thierry Reding <thierry.reding@gmail.com>
-References: <20191001211346.104400-1-swarren@wwwdotorg.org>
- <20191002110454.GJ3716706@ulmo>
- <6a48d716-2312-4623-f47a-a53ac2ece83c@wwwdotorg.org>
- <20191004121812.GB227112@ulmo>
-From: Stephen Warren <swarren@wwwdotorg.org>
-Message-ID: <0fa7829b-ec05-8b57-138e-694155385d26@wwwdotorg.org>
-Date: Fri, 4 Oct 2019 10:07:39 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1iGQ7z-0006gQ-4I; Fri, 04 Oct 2019 16:08:23 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iGQ7p-0006g2-Rj
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 16:08:15 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 22C931597;
+ Fri,  4 Oct 2019 09:08:13 -0700 (PDT)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 53D153F68E;
+ Fri,  4 Oct 2019 09:08:12 -0700 (PDT)
+Subject: Re: [PATCH 2/8] arm64: remove __exception annotations
+To: Masami Hiramatsu <mhiramat@kernel.org>, Mark Rutland <mark.rutland@arm.com>
+References: <20191003171642.135652-1-james.morse@arm.com>
+ <20191003171642.135652-3-james.morse@arm.com>
+ <20191004101717.GB34756@lakrids.cambridge.arm.com>
+ <20191004231033.537af57806db6316b18cb0b5@kernel.org>
+From: James Morse <james.morse@arm.com>
+Message-ID: <c2332ce4-6b0f-ee1a-ff48-59bba6afdd22@arm.com>
+Date: Fri, 4 Oct 2019 17:08:11 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191004121812.GB227112@ulmo>
-Content-Language: en-US
+In-Reply-To: <20191004231033.537af57806db6316b18cb0b5@kernel.org>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_090743_387303_738466E5 
-X-CRM114-Status: GOOD (  22.18  )
+X-CRM114-CacheID: sfid-20191004_090813_939280_BA7F2274 
+X-CRM114-Status: GOOD (  15.63  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,88 +64,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Prashant Gaikwad <pgaikwad@nvidia.com>, Stephen Boyd <sboyd@kernel.org>,
- Peter De Schrijver <pdeschrijver@nvidia.com>, linux-clk@vger.kernel.org,
- Jonathan Hunter <jonathanh@nvidia.com>, linux-tegra@vger.kernel.org,
- Michael Turquette <mturquette@baylibre.com>,
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
  linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/4/19 6:18 AM, Thierry Reding wrote:
-> On Wed, Oct 02, 2019 at 02:59:03PM -0600, Stephen Warren wrote:
->> On 10/2/19 5:04 AM, Thierry Reding wrote:
->>> On Tue, Oct 01, 2019 at 03:13:43PM -0600, Stephen Warren wrote:
->>>> From: Stephen Warren <swarren@nvidia.com>
->>>>
->>>> For a little over a year, U-Boot has configured the flow controller to
->>>> perform automatic RAM re-repair on off->on power transitions of the CPU
->>>> rail1]. This is mandatory for correct operation of Tegra124. However, RAM
->>>> re-repair relies on certain clocks, which the kernel must enable and
->>>> leave running. The fuse clock is one of those clocks. Enable this clock
->>>> so that LP1 power mode (system suspend) operates correctly.
->>>>
->>>> [1] 3cc7942a4ae5 ARM: tegra: implement RAM repair
->>>>
->>>> Reported-by: Jonathan Hunter <jonathanh@nvidia.com>
->>>> Cc: stable@vger.kernel.org
->>>> Signed-off-by: Stephen Warren <swarren@nvidia.com>
->>>> ---
->>>>    drivers/clk/tegra/clk-tegra124.c | 1 +
->>>>    1 file changed, 1 insertion(+)
->>>>
->>>> diff --git a/drivers/clk/tegra/clk-tegra124.c b/drivers/clk/tegra/clk-tegra124.c
->>>> index 0224fdc4766f..f53f6315c646 100644
->>>> --- a/drivers/clk/tegra/clk-tegra124.c
->>>> +++ b/drivers/clk/tegra/clk-tegra124.c
->>>> @@ -1291,6 +1291,7 @@ static struct tegra_clk_init_table common_init_table[] __initdata = {
->>>>    };
->>>>    static struct tegra_clk_init_table tegra124_init_table[] __initdata = {
->>>> +	{ TEGRA124_CLK_FUSE, -1, 0, 1 },
->>>
->>> I think the correct way to do this these days is to mark the clock as
->>> CRITICAL. Not sure if there's an easy way to do that given that the
->>> clock init table doesn't allow storing flags.
->>>
->>> Do you have any good ideas on how to achieve this with the critical flag
->>> instead of forcing the refcount to 1?
->>>
->>> Perhaps something like the below would work?
->>> ...
->>
->> The following works for me; does this seem like a reasonable approach? It
->> does set the critical flag for all SoCs, including any that don't require
->> RAM re-repair. I'm not sure which do; I know it's more than just Tegra124,
->> but I'm not sure how far back/forward the requirement goes.
->>
->>> diff --git a/drivers/clk/tegra/clk-tegra-periph.c b/drivers/clk/tegra/clk-tegra-periph.c
->>> index 1ed85f120a1b..76dd91eebd13 100644
->>> --- a/drivers/clk/tegra/clk-tegra-periph.c
->>> +++ b/drivers/clk/tegra/clk-tegra-periph.c
->>> @@ -785,7 +785,7 @@ static struct tegra_periph_init_data gate_clks[] = {
->>>          GATE("ahbdma", "hclk", 33, 0, tegra_clk_ahbdma, 0),
->>>          GATE("apbdma", "pclk", 34, 0, tegra_clk_apbdma, 0),
->>>          GATE("kbc", "clk_32k", 36, TEGRA_PERIPH_ON_APB | TEGRA_PERIPH_NO_RESET, tegra_clk_kbc, 0),
->>> -       GATE("fuse", "clk_m", 39, TEGRA_PERIPH_ON_APB, tegra_clk_fuse, 0),
->>> +       GATE("fuse", "clk_m", 39, TEGRA_PERIPH_ON_APB, tegra_clk_fuse, CLK_IS_CRITICAL),
->>>          GATE("fuse_burn", "clk_m", 39, TEGRA_PERIPH_ON_APB, tegra_clk_fuse_burn, 0),
->>>          GATE("kfuse", "clk_m", 40, TEGRA_PERIPH_ON_APB, tegra_clk_kfuse, 0),
->>>          GATE("apbif", "clk_m", 107, TEGRA_PERIPH_ON_APB, tegra_clk_apbif, 0),
-> 
-> It's probably fine to do this. The patch I proposed would've restricted
-> the change to just Tegra124. But if we need this on other generations, I
-> don't think the extra complexity is justified, especially since I can't
-> imagine that the FUSE clock remaining always on would consume a lot of
-> extra power.
+Hi guys,
 
-T114/T124/T132/T210 all require it. T20/T30 I'm not sure since the TRM 
-doesn't mention RAM repair, but that could just be missing 
-documentation. I think it was introduced in T114 though. The T186 and 
-T194s TRM mention RAM repair, but so much changed in those SoCs I'm not 
-certain if it works in the same way and hence relies on fuse clock; 
-probably though.
+On 04/10/2019 15:10, Masami Hiramatsu wrote:
+> On Fri, 4 Oct 2019 11:17:17 +0100
+> Mark Rutland <mark.rutland@arm.com> wrote:
+>> On Thu, Oct 03, 2019 at 06:16:36PM +0100, James Morse wrote:
+>>> Since commit 732674980139 ("arm64: unwind: reference pt_regs via embedded
+>>> stack frame") arm64 has has not used the __exception annotation to dump
+>>> the pt_regs during stack tracing. in_exception_text() has no callers.
+>>>
+>>> This annotation is only used to blacklist kprobes, it means the same as
+>>> __kprobes.
+>>>
+>>> Section annotations like this require the functions to be grouped
+>>> together between the start/end markers, and placed according to
+>>> the linker script. For kprobes we also have NOKPROBE_SYMBOL() which
+>>> logs the symbol address in a section that kprobes parses and
+>>> blacklists at boot.
+>>>
+>>> Using NOKPROBE_SYMBOL() instead lets kprobes publish the list of
+>>> blacklisted symbols, and saves us from having an arm64 specific
+>>> spelling of __kprobes.
+
+>>> diff --git a/arch/arm64/include/asm/exception.h b/arch/arm64/include/asm/exception.h
+>>> index a17393ff6677..b0b3ba56e919 100644
+>>> --- a/arch/arm64/include/asm/exception.h
+>>> +++ b/arch/arm64/include/asm/exception.h
+>>
+>> [...]
+>>
+>>> -asmlinkage void __exception do_debug_exception(unsigned long addr_if_watchpoint,
+>>> -					       unsigned int esr,
+>>> -					       struct pt_regs *regs)
+>>> +asmlinkage void do_debug_exception(unsigned long addr_if_watchpoint,
+>>> +				   unsigned int esr, struct pt_regs *regs)
+>>>  {
+>>>  	const struct fault_info *inf = esr_to_debug_fault_info(esr);
+>>>  	unsigned long pc = instruction_pointer(regs);
+>>
+>> I assume you meant to add NOKPROBE_SYMBOL(do_debug_exception) here.
+>>
+>> Assuming so, and with that fixed up:
+>>
+>> Acked-by: Mark Rutland <mark.rutland@arm.com>
+> 
+> Good catch, if so, this looks good to me too.
+
+I should have noted it in the commit message, but the NOKPROBE_SYMBOL(do_debug_exception)
+is already there! Added by commit 2dd0e8d2d2a15 ("arm64: Kprobes with single stepping
+support").
+
+(kprobing the debug handler is so bad, we blacklist it twice!)
+
+I'll fix the commit message.
+
+
+> with that fixed up:
+> 
+> Acked-by: Masami Hiramatsu <mhiramat@kernel.org>
+
+I assume you're both happy for me to apply these tags.
+
+
+Thanks,
+
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
