@@ -2,84 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87964CB847
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 12:31:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82A51CB849
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 12:31:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=w11bRA4yvpWWNBTI/8h5tbV7h8v/ZZI9ZcnqToNLrCU=; b=d2uqbwfoEKNZFw
-	b3Q8imKBkN/wF3qdLZseXRXk8wm5HD3kmVpB3Z4GufdtdZSrhsSIUp4Gtxa7UjInWvFAZHBnvwgeo
-	UfDkYOul0EAvDbI7+H437eZGk7UPvv/qiKskvXlTs1gRuvnGcmDbdlWt4T9xvFTtuxorkyEBzV/on
-	RXpyfIxkD8XO4ETYZTbiaPZ+q+y/tKJoD/BnrRL3X6i1XLLR3sQDhNfFw5z+PeWP41qSDAIETYhzP
-	fXYCRV9vxG+FciVpNsRfRyoOdTJQcoO1okiLkcpl0D8wFrC1DFHNyzQ2rPe8g66zQhmhP7viIFJWR
-	cbrjzL65mycq1GF2Mo7Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=f+FpOgr+TrU6QJguZqNDjs+NpDbZD4SHMfBIBopeEA4=; b=dIzsNpFrNrba8R
+	gEEjh+BtQBb3y5irTLEU+9K5afN6YlArSAd0NgXsNSlM70lLSNzTF7hhvX7EI7+xkf2bGTr2QYgPb
+	bl9OhFD6vMkmsZhk1mx4GdyJpz0E3fR8xilflKSFHqKJd44t/kYikQIZTClr0XYmIsbReUamELUi+
+	luqDNtgpUl24wgIbhMNZWw3Eic6LkJVmePKdMT24sk/BYc791Ed/hU8Va7RYRyT4EW6ODvZ1WkUo5
+	PnNF83lG2wUFON4qXzHU7jnV7tAME8OP5zOZolfs/hcMHKaTgHLs2SP+HEKen/Mc/e3DjJ0oPeXnV
+	NOXMXEPQgsA1wnhY52hA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGKrk-00063M-CS; Fri, 04 Oct 2019 10:31:16 +0000
-Received: from mail-wr1-f53.google.com ([209.85.221.53])
+	id 1iGKs0-0006Mc-Oa; Fri, 04 Oct 2019 10:31:32 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGKrb-0005x2-IV
- for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 10:31:08 +0000
-Received: by mail-wr1-f53.google.com with SMTP id j11so729292wrp.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 04 Oct 2019 03:31:06 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=0sO0rv2WFDM2B56JzJt62DBkoicLCV6GGFXAS4MJE9Q=;
- b=WLWAqOmu30ztDl1xnjNiHFw9Ub3okVbUIDoHy31aYHgQ/M9el2ZN60ZSUqxpqD2RZJ
- ccBWrUCR1LTlIU+2dogAM7K98pTnqiB9Zr6RROqhL2/KALvYeALEmpaTt0/kqO91Hn4t
- /XqiLEbSiBLOs7GzgkoYSPBgOdooT/kQvW6VEcMf2crLuGWd4Dd0ol1+Bq4piUUWScSE
- t9EIy2VVFXQdaYti/j7muTF1vjcDsiUBdg7BlOK71B+Hvy36hJUr7CIMPgwFROCKH2v+
- l9uM2ShG+rn4CrRZaxqG2PeosMmftCrzGjQ7Q4UG1FuZab3frhjIOoCxLgsc79n+qdYg
- L2bA==
-X-Gm-Message-State: APjAAAVpE6OY80EWheFzC/Dv5/EbljjqauKn9fgKPW93oRAGNonQkGb1
- qKoR1b3pIoG6Fs5RbJOs04TnKLfD
-X-Google-Smtp-Source: APXvYqwRzwsUGvltETEBhrXSxWhDZg0vSWGhh6uMJ37eqdE3Dm/SZGQk+dOyT+pLpEySMZOIaLqOfw==
-X-Received: by 2002:a5d:4491:: with SMTP id j17mr10537639wrq.257.1570185064934; 
- Fri, 04 Oct 2019 03:31:04 -0700 (PDT)
-Received: from pi3 ([194.230.155.145])
- by smtp.googlemail.com with ESMTPSA id a13sm13449859wrf.73.2019.10.04.03.31.03
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 04 Oct 2019 03:31:04 -0700 (PDT)
-Date: Fri, 4 Oct 2019 12:31:01 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Chanwoo Choi <cw00.choi@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Kamil Konieczny <k.konieczny@partner.samsung.com>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- linux-pm@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Devfreq looks for unsupported frequencies on Exynos
-Message-ID: <20191004103101.GA9176@pi3>
+ id 1iGKrp-0006KP-Qs
+ for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 10:31:23 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4CE56215EA;
+ Fri,  4 Oct 2019 10:31:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570185081;
+ bh=VRYbJsVYJThOrqcpNwtURgK3EOchoy5a2PZ5K9I9TFY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=VjxeSHmp/jSIjsl8FZpJUlArIjWn2KahG+J/Mor7wd1FeiJvmq39Z6U62d9zNKbYq
+ Ggh8nUBxAviWyPCiTJJf8YlSLXTYEZGBA+QRonLj3tGyWmF8v9Y0EyX3abjxgDDnM+
+ 33A0jbcyQwjXHovZG7nNb9ky8e1Zz5Lvj0JiXZrs=
+Date: Fri, 4 Oct 2019 11:31:17 +0100
+From: Will Deacon <will@kernel.org>
+To: James Morse <james.morse@arm.com>
+Subject: Re: [PATCH 0/4] arm64: errata: Workaround Neoverse-N1 #1542419
+Message-ID: <20191004103116.eneiskohqxd3pq3s@willie-the-truck>
+References: <20191002094935.48848-1-james.morse@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <20191002094935.48848-1-james.morse@arm.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_033107_610771_647B261D 
-X-CRM114-Status: UNSURE (   7.74  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20191004_033121_893888_85F5E2F8 
+X-CRM114-Status: GOOD (  10.41  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.53 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.53 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,45 +76,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Oct 02, 2019 at 10:49:31AM +0100, James Morse wrote:
+> We can't yet detect whether EL3 has the workaround for any particular
+> erratum. We lamely print '(kernel portion)' as part of the CPU-feature
+> text.
+> If we get a mechanism to discover this stuff we can use SCTLR_EL1.UCI
+> on systems that have the interface, and don't workaround the issue.
 
-Hi All,
+Is the firmware portion available in ATF and is there a plan to add the
+discoverability mechanism, or is it just wishful thinking?
 
-I noticed recently error logs when booting Odroid HC1 (Exynos5422) on
-exynos_defconfig, 5.4.0-rc1-next-20191004:
-
-[    5.168786] exynos-bus: new bus device registered: soc:bus_wcore ( 84000 KHz ~ 400000 KHz)
-[    5.177022] exynos-bus: new bus device registered: soc:bus_noc ( 67000 KHz ~ 100000 KHz)
-[    5.184705] exynos-bus: new bus device registered: soc:bus_fsys_apb (100000 KHz ~ 200000 KHz)
-[    5.192903] exynos-bus: new bus device registered: soc:bus_fsys (100000 KHz ~ 200000 KHz)
-[    5.201414] exynos-bus: new bus device registered: soc:bus_fsys2 ( 75000 KHz ~ 150000 KHz)
-[    5.209986] exynos-bus: new bus device registered: soc:bus_mfc ( 96000 KHz ~ 333000 KHz)
-[    5.217931] exynos-bus: new bus device registered: soc:bus_gen ( 89000 KHz ~ 267000 KHz)
-[    5.225222] exynos-bus soc:bus_wcore: dev_pm_opp_set_rate: failed to find current OPP for freq 532000000 (-34)
-[    5.225975] exynos-bus: new bus device registered: soc:bus_peri ( 67000 KHz ~  67000 KHz)
-[    5.238824] exynos-bus soc:bus_noc: dev_pm_opp_set_rate: failed to find current OPP for freq 111000000 (-34)
-[    5.245719] exynos-bus: new bus device registered: soc:bus_g2d ( 84000 KHz ~ 333000 KHz)
-[    5.252653] exynos-bus soc:bus_fsys_apb: dev_pm_opp_set_rate: failed to find current OPP for freq 222000000 (-34)
-[    5.263518] exynos-bus: new bus device registered: soc:bus_g2d_acp ( 67000 KHz ~ 267000 KHz)
-[    5.280650] exynos-bus: new bus device registered: soc:bus_jpeg ( 75000 KHz ~ 300000 KHz)
-[    5.288827] exynos-bus: new bus device registered: soc:bus_jpeg_apb ( 84000 KHz ~ 167000 KHz)
-[    5.296957] exynos-bus: new bus device registered: soc:bus_disp1_fimd (120000 KHz ~ 200000 KHz)
-[    5.305939] exynos-bus: new bus device registered: soc:bus_disp1 (120000 KHz ~ 300000 KHz)
-[    5.314036] exynos-bus: new bus device registered: soc:bus_gscl_scaler (150000 KHz ~ 300000 KHz)
-[    5.323090] exynos-bus: new bus device registered: soc:bus_mscl ( 84000 KHz ~ 400000 KHz)
-
-You can see that Exynos devfreq was trying to set 532000000 Hz for
-wcore, 111000000 for noc and 222000000 for fsys_apb. These are higher
-frequencies than we have in DTSI.
-
-Any ideas why? It does not look normal...
-
-Best regards,
-Krzysztof
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
