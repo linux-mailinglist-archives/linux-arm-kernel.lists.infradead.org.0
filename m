@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0CCACC21A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 19:53:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4D03CC21B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  4 Oct 2019 19:53:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=p1abtO0PmcVmC39z0JfmJt8nRJThquh61sRP88fTv0Q=; b=cob
-	f9MrTj0rpL5ddnL2PNZeR/8VgOj/MxkyogThpAHv7WkJZ8caxM8KtD3a1e+pChMjA9Xvb7gADra+U
-	NLTNrSWhKEcw6pA0Httkx/7W1jdpLXXtJhc3h1wEWWTkIpd1Egfc5+BHz9/AHeq87RT/twnkxIq+U
-	pEn2LQOxMrqicBLzUoRjy/bBxMTORJMlC5/DHvkW91eEgk+Ofwbt4URaLx7d1qT8sV7m/f/YI6jM3
-	6REJwPavv7iB58f0bAlRv4rMgfL16KvIelmIeakpUDuD7AyQ0f0xhDHTlhTZe8IP39JDwC/AWLhv1
-	AKdCmBn5DS7VWUY6OfQBjK3d/XPSykg==;
+	References:List-Owner; bh=1rTOTQ25TvjsKp8fc/byUN+midoBgG/0FwA2G0I86Ko=; b=D1R
+	BcwoPRILP3E1bG+doO7CAokZVhw0t4QirzA9aX1OgXUHi9dAoEL6/6F5AgeBKCNu6sWTEh9HHWos+
+	b67bsK9XfuvBjCw7txmURntI9wsAjmDPZJtDCAmDr97Mnqhb7tS3eO40TE4udOUnUWxi21M536Pmr
+	MBakIAVN4wcWKLp8IbFw+GBV9pB5M7rPT7ggWAOuPL4ZxBzjzMdaxnD+8y+g6N1MC3Unh+j0zpX+E
+	rds3BtRNjxJ/EY6+BlRpvfakZZLdomDajMIu6QH2O4xTkDaenSUueIqBaCOn+41JKLjL3D4zxrI4v
+	56PRaCyzD164rhTl1rreLPVj6XroUaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGRlV-0005RC-8I; Fri, 04 Oct 2019 17:53:17 +0000
+	id 1iGRli-0005hI-GA; Fri, 04 Oct 2019 17:53:30 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGRkw-00058m-MA
+ id 1iGRkw-00058R-6I
  for linux-arm-kernel@lists.infradead.org; Fri, 04 Oct 2019 17:52:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
@@ -29,30 +29,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=+u2AFREiqiW+Htf3GfzOpHr321hwPO9MAJ3AyNjFHeI=; b=m+yVZ05mW1lJ
- m1dyMdZVMWUpeslk4XAYOB9JrP/0r6vgP8v2aM3lbq+NCFt3HJOVdbQEcoLDX+KfewGtqR21isEKO
- rwtId7qhDNsEcopczXmEcaRl/5E7nIU002xtJcYMn2DD3/VIaFeG/YYf4ncliewlAKvswmbI6vhPm
- rS+7g=;
+ List-Archive; bh=NMQ9EKl/aE19qdLslMinPSPdykNnDFUnJGRa6I4VkTc=; b=bVWjgNoolg9l
+ iSD4YvCgwb6RO0jRLuCDn/chbxxMVvUgDwuh3iGssFqgxr8UeMrTwSquQnIvHcOJiAzD8QiDMp6Pu
+ fhgMK172gRiZYWoALJBTucRhT2Rc1SpxS8FEkxKsaSdq80Jt6SugbUFugsUW0f5dqlcmJwExkMC1j
+ pL81Y=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iGRkr-0003vS-8O; Fri, 04 Oct 2019 17:52:37 +0000
+ id 1iGRkr-0003vP-09; Fri, 04 Oct 2019 17:52:37 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id C3EC72741EF0; Fri,  4 Oct 2019 18:52:36 +0100 (BST)
+ id 828432741F98; Fri,  4 Oct 2019 18:52:36 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Subject: Applied "ASoC: samsung: arndale: Add support for WM1811 CODEC" to the
- asoc tree
-In-Reply-To: <20191002105652.24821-2-s.nawrocki@samsung.com>
+Subject: Applied "ASoC: samsung: Rename Arndale card driver" to the asoc tree
+In-Reply-To: <20191002105652.24821-3-s.nawrocki@samsung.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191004175236.C3EC72741EF0@ypsilon.sirena.org.uk>
+Message-Id: <20191004175236.828432741F98@ypsilon.sirena.org.uk>
 Date: Fri,  4 Oct 2019 18:52:36 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_105242_891422_34BC1DBB 
-X-CRM114-Status: GOOD (  19.93  )
+X-CRM114-CacheID: sfid-20191004_105242_249967_0438CF7D 
+X-CRM114-Status: GOOD (  13.30  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -91,7 +90,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: samsung: arndale: Add support for WM1811 CODEC
+   ASoC: samsung: Rename Arndale card driver
 
 has been applied to the asoc tree at
 
@@ -116,192 +115,71 @@ to this mail.
 Thanks,
 Mark
 
-From 03081cc370b9d0d91addbb163e2f5347a7f51571 Mon Sep 17 00:00:00 2001
+From dca6408d6f7e76045b5aaec44825cb87d9d1d6ce Mon Sep 17 00:00:00 2001
 From: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Date: Wed, 2 Oct 2019 12:56:51 +0200
-Subject: [PATCH] ASoC: samsung: arndale: Add support for WM1811 CODEC
+Date: Wed, 2 Oct 2019 12:56:52 +0200
+Subject: [PATCH] ASoC: samsung: Rename Arndale card driver
 
-The Arndale boards come with different types of the audio daughter
-board.  In order to support the WM1811 one we add new definition of
-an ASoC card which will be registered when the driver matches on
-"samsung,arndale-wm1811" compatible.  There is no runtime detection of
-the audio daughter board type at the moment, compatible string of the
-audio card needs to be adjusted in DT, e.g. by the bootloader,
-depending on actual audio board (CODEC) used.
+Rename arndale_rt5631.c to just arnddale.c as we support other CODECs
+than RT5631.  While at it replace spaces in Kconfig with tabs.
 
 Reviewed-by: Charles Keepax <ckeepax@opensource.cirrus.com>
 Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
 Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Link: https://lore.kernel.org/r/20191002105652.24821-2-s.nawrocki@samsung.com
+Link: https://lore.kernel.org/r/20191002105652.24821-3-s.nawrocki@samsung.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/samsung/Kconfig          |  2 +
- sound/soc/samsung/arndale_rt5631.c | 85 +++++++++++++++++++++++++-----
- 2 files changed, 74 insertions(+), 13 deletions(-)
+ sound/soc/samsung/Kconfig                         | 10 +++++-----
+ sound/soc/samsung/Makefile                        |  4 ++--
+ sound/soc/samsung/{arndale_rt5631.c => arndale.c} |  0
+ 3 files changed, 7 insertions(+), 7 deletions(-)
+ rename sound/soc/samsung/{arndale_rt5631.c => arndale.c} (100%)
 
 diff --git a/sound/soc/samsung/Kconfig b/sound/soc/samsung/Kconfig
-index 638983123d8f..6803cbfa9e46 100644
+index 6803cbfa9e46..1a0b163ca47b 100644
 --- a/sound/soc/samsung/Kconfig
 +++ b/sound/soc/samsung/Kconfig
-@@ -199,6 +199,8 @@ config SND_SOC_ARNDALE_RT5631_ALC5631
-         depends on I2C
-         select SND_SAMSUNG_I2S
-         select SND_SOC_RT5631
-+	select MFD_WM8994
-+	select SND_SOC_WM8994
+@@ -194,11 +194,11 @@ config SND_SOC_ODROID
+ 	help
+ 	  Say Y here to enable audio support for the Odroid XU3/XU4.
  
- config SND_SOC_SAMSUNG_TM2_WM5110
- 	tristate "SoC I2S Audio support for WM5110 on TM2 board"
-diff --git a/sound/soc/samsung/arndale_rt5631.c b/sound/soc/samsung/arndale_rt5631.c
-index 004c84fafad9..d64602950cbd 100644
---- a/sound/soc/samsung/arndale_rt5631.c
-+++ b/sound/soc/samsung/arndale_rt5631.c
-@@ -14,10 +14,11 @@
- #include <sound/pcm.h>
- #include <sound/pcm_params.h>
+-config SND_SOC_ARNDALE_RT5631_ALC5631
+-        tristate "Audio support for RT5631(ALC5631) on Arndale Board"
+-        depends on I2C
+-        select SND_SAMSUNG_I2S
+-        select SND_SOC_RT5631
++config SND_SOC_ARNDALE
++	tristate "Audio support for Arndale Board"
++	depends on I2C
++	select SND_SAMSUNG_I2S
++	select SND_SOC_RT5631
+ 	select MFD_WM8994
+ 	select SND_SOC_WM8994
  
-+#include "../codecs/wm8994.h"
- #include "i2s.h"
+diff --git a/sound/soc/samsung/Makefile b/sound/soc/samsung/Makefile
+index c3b76035f69c..8f5dfe20b9f1 100644
+--- a/sound/soc/samsung/Makefile
++++ b/sound/soc/samsung/Makefile
+@@ -39,7 +39,7 @@ snd-soc-lowland-objs := lowland.o
+ snd-soc-littlemill-objs := littlemill.o
+ snd-soc-bells-objs := bells.o
+ snd-soc-odroid-objs := odroid.o
+-snd-soc-arndale-rt5631-objs := arndale_rt5631.o
++snd-soc-arndale-objs := arndale.o
+ snd-soc-tm2-wm5110-objs := tm2_wm5110.o
  
--static int arndale_hw_params(struct snd_pcm_substream *substream,
--	struct snd_pcm_hw_params *params)
-+static int arndale_rt5631_hw_params(struct snd_pcm_substream *substream,
-+				    struct snd_pcm_hw_params *params)
- {
- 	struct snd_soc_pcm_runtime *rtd = substream->private_data;
- 	struct snd_soc_dai *cpu_dai = rtd->cpu_dai;
-@@ -47,13 +48,45 @@ static int arndale_hw_params(struct snd_pcm_substream *substream,
- 	return 0;
- }
- 
--static struct snd_soc_ops arndale_ops = {
--	.hw_params = arndale_hw_params,
-+static struct snd_soc_ops arndale_rt5631_ops = {
-+	.hw_params = arndale_rt5631_hw_params,
-+};
-+
-+static int arndale_wm1811_hw_params(struct snd_pcm_substream *substream,
-+				    struct snd_pcm_hw_params *params)
-+{
-+	struct snd_soc_pcm_runtime *rtd = substream->private_data;
-+	struct snd_soc_dai *codec_dai = rtd->codec_dai;
-+	unsigned int rfs, rclk;
-+
-+	/* Ensure AIF1CLK is >= 3 MHz for optimal performance */
-+	if (params_width(params) == 24)
-+		rfs = 384;
-+	else if (params_rate(params) == 8000 || params_rate(params) == 11025)
-+		rfs = 512;
-+	else
-+		rfs = 256;
-+
-+	rclk = params_rate(params) * rfs;
-+
-+	/*
-+	 * We add 1 to the frequency value to ensure proper EPLL setting
-+	 * for each audio sampling rate (see epll_24mhz_tbl in drivers/clk/
-+	 * samsung/clk-exynos5250.c for list of available EPLL rates).
-+	 * The CODEC uses clk API and the value will be rounded hence the MCLK1
-+	 * clock's frequency will still be exact multiple of the sample rate.
-+	 */
-+	return snd_soc_dai_set_sysclk(codec_dai, WM8994_SYSCLK_MCLK1,
-+					rclk + 1, SND_SOC_CLOCK_IN);
-+}
-+
-+static struct snd_soc_ops arndale_wm1811_ops = {
-+	.hw_params = arndale_wm1811_hw_params,
- };
- 
- SND_SOC_DAILINK_DEFS(rt5631_hifi,
- 	DAILINK_COMP_ARRAY(COMP_EMPTY()),
--	DAILINK_COMP_ARRAY(COMP_CODEC(NULL, "rt5631-hifi")),
-+	DAILINK_COMP_ARRAY(COMP_CODEC(NULL, "rt5631-aif1")),
- 	DAILINK_COMP_ARRAY(COMP_EMPTY()));
- 
- static struct snd_soc_dai_link arndale_rt5631_dai[] = {
-@@ -63,11 +96,28 @@ static struct snd_soc_dai_link arndale_rt5631_dai[] = {
- 		.dai_fmt = SND_SOC_DAIFMT_I2S
- 			| SND_SOC_DAIFMT_NB_NF
- 			| SND_SOC_DAIFMT_CBS_CFS,
--		.ops = &arndale_ops,
-+		.ops = &arndale_rt5631_ops,
- 		SND_SOC_DAILINK_REG(rt5631_hifi),
- 	},
- };
- 
-+SND_SOC_DAILINK_DEFS(wm1811_hifi,
-+	DAILINK_COMP_ARRAY(COMP_EMPTY()),
-+	DAILINK_COMP_ARRAY(COMP_CODEC(NULL, "wm8994-aif1")),
-+	DAILINK_COMP_ARRAY(COMP_EMPTY()));
-+
-+static struct snd_soc_dai_link arndale_wm1811_dai[] = {
-+	{
-+		.name = "WM1811 HiFi",
-+		.stream_name = "Primary",
-+		.dai_fmt = SND_SOC_DAIFMT_I2S
-+			| SND_SOC_DAIFMT_NB_NF
-+			| SND_SOC_DAIFMT_CBM_CFM,
-+		.ops = &arndale_wm1811_ops,
-+		SND_SOC_DAILINK_REG(wm1811_hifi),
-+	},
-+};
-+
- static struct snd_soc_card arndale_rt5631 = {
- 	.name = "Arndale RT5631",
- 	.owner = THIS_MODULE,
-@@ -75,6 +125,13 @@ static struct snd_soc_card arndale_rt5631 = {
- 	.num_links = ARRAY_SIZE(arndale_rt5631_dai),
- };
- 
-+static struct snd_soc_card arndale_wm1811 = {
-+	.name = "Arndale WM1811",
-+	.owner = THIS_MODULE,
-+	.dai_link = arndale_wm1811_dai,
-+	.num_links = ARRAY_SIZE(arndale_wm1811_dai),
-+};
-+
- static void arndale_put_of_nodes(struct snd_soc_card *card)
- {
- 	struct snd_soc_dai_link *dai_link;
-@@ -89,10 +146,11 @@ static void arndale_put_of_nodes(struct snd_soc_card *card)
- static int arndale_audio_probe(struct platform_device *pdev)
- {
- 	struct device_node *np = pdev->dev.of_node;
--	struct snd_soc_card *card = &arndale_rt5631;
-+	struct snd_soc_card *card;
- 	struct snd_soc_dai_link *dai_link;
- 	int ret;
- 
-+	card = (struct snd_soc_card *)of_device_get_match_data(&pdev->dev);
- 	card->dev = &pdev->dev;
- 	dai_link = card->dai_link;
- 
-@@ -134,18 +192,19 @@ static int arndale_audio_remove(struct platform_device *pdev)
- 	return 0;
- }
- 
--static const struct of_device_id samsung_arndale_rt5631_of_match[] __maybe_unused = {
--	{ .compatible = "samsung,arndale-rt5631", },
--	{ .compatible = "samsung,arndale-alc5631", },
-+static const struct of_device_id arndale_audio_of_match[] = {
-+	{ .compatible = "samsung,arndale-rt5631",  .data = &arndale_rt5631 },
-+	{ .compatible = "samsung,arndale-alc5631", .data = &arndale_rt5631 },
-+	{ .compatible = "samsung,arndale-wm1811",  .data = &arndale_wm1811 },
- 	{},
- };
--MODULE_DEVICE_TABLE(of, samsung_arndale_rt5631_of_match);
-+MODULE_DEVICE_TABLE(of, arndale_audio_of_match);
- 
- static struct platform_driver arndale_audio_driver = {
- 	.driver = {
--		.name   = "arndale-audio",
-+		.name = "arndale-audio",
- 		.pm = &snd_soc_pm_ops,
--		.of_match_table = of_match_ptr(samsung_arndale_rt5631_of_match),
-+		.of_match_table = arndale_audio_of_match,
- 	},
- 	.probe = arndale_audio_probe,
- 	.remove = arndale_audio_remove,
+ obj-$(CONFIG_SND_SOC_SAMSUNG_JIVE_WM8750) += snd-soc-jive-wm8750.o
+@@ -62,5 +62,5 @@ obj-$(CONFIG_SND_SOC_LOWLAND) += snd-soc-lowland.o
+ obj-$(CONFIG_SND_SOC_LITTLEMILL) += snd-soc-littlemill.o
+ obj-$(CONFIG_SND_SOC_BELLS) += snd-soc-bells.o
+ obj-$(CONFIG_SND_SOC_ODROID) += snd-soc-odroid.o
+-obj-$(CONFIG_SND_SOC_ARNDALE_RT5631_ALC5631) += snd-soc-arndale-rt5631.o
++obj-$(CONFIG_SND_SOC_ARNDALE) += snd-soc-arndale.o
+ obj-$(CONFIG_SND_SOC_SAMSUNG_TM2_WM5110) += snd-soc-tm2-wm5110.o
+diff --git a/sound/soc/samsung/arndale_rt5631.c b/sound/soc/samsung/arndale.c
+similarity index 100%
+rename from sound/soc/samsung/arndale_rt5631.c
+rename to sound/soc/samsung/arndale.c
 -- 
 2.20.1
 
