@@ -2,74 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F276CCBAE
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  5 Oct 2019 19:30:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAF25CCC16
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  5 Oct 2019 20:37:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JdJoVIpvZE+tc2lphtDdLm4mwmGqkIKJXefrLe5Pu7k=; b=jBGrZqJcef5s0K
-	EY/oRReVwUiJaJ1/mqAYRLYgjNlZ928oj1qcjzXqVH6cdbak0wWFtR8nyVK0687BOX/ZQ3Luu2JtD
-	Feu8XpPsdhX+8lh0EhJ9eV0puLA6fLqHNnLChHJWanG16qk07JteMXkqUZB35f3oj6oOYP57t7B9i
-	9IxlEZqTrkosmbzMFFp71WQbkqareFqLEGH3JXN16MIpi9nXhVASBqpjfn8QgC/h1xFkErVfJIFjZ
-	34CDt4t6rtlJkWB8LLlz+A2HxoUQFK/2OSj3i+mh1y61qwX8WwT6+qA/1fU+NjjZzsXmrMmeawzvX
-	G2vj0zbJZZ9D5RVt13fA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AkkqafoQfn9c4TcTfo4GGWOjvKOoLXfyxcWq79X8L38=; b=FDygTg6duM8KWK
+	nvr4Rt814AWDpHSK47Gv7+HictLEWPLJmSC7sPoOULE3UinWa3isA9fFdC7JaQ2pxgJb4n5qzs1Fw
+	Qj9cEoJlaPYxwTqTpONewwiZbrPRU/DX/L7yBIwX2EQDwB4v3VapU0+D8kwg4omnHrzu3hurbuVZ1
+	IZTquh2Ei7U6pcTyi0BQjIIUegmJUWg3lQzvd4+WEZCOIu96ZIFST2JvnxW4IAqPb6k8iKRP+tLiD
+	Dk+yvfYW+orMqFU2/xTDe1H+DV9S+1kgqe/9Y6Icll8UwWaxeKxQAHv3o4vqSjmgNWI4DfHyV4hpJ
+	gqyE/I75xW7idOlB2PXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGnt6-0008Ec-7U; Sat, 05 Oct 2019 17:30:36 +0000
-Received: from mail-yb1-xb44.google.com ([2607:f8b0:4864:20::b44])
+	id 1iGovw-0002Qa-AM; Sat, 05 Oct 2019 18:37:36 +0000
+Received: from mail-yb1-xb29.google.com ([2607:f8b0:4864:20::b29])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGnsx-0008Dx-S4
- for linux-arm-kernel@lists.infradead.org; Sat, 05 Oct 2019 17:30:30 +0000
-Received: by mail-yb1-xb44.google.com with SMTP id v37so3226479ybi.6
+ id 1iGovp-0002PC-6d
+ for linux-arm-kernel@lists.infradead.org; Sat, 05 Oct 2019 18:37:30 +0000
+Received: by mail-yb1-xb29.google.com with SMTP id r2so3273287ybg.3
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 05 Oct 2019 10:30:26 -0700 (PDT)
+ Sat, 05 Oct 2019 11:37:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=SFxd5AapzSICM/6Xgqhe/u9Vw5QC679Bx+c0QdN9hnI=;
- b=C4StFwvN+lCG1jC5GtRTymuZCkTXZueajmp5oKh8q2nS/QR4Y2Oo9mBbom6a6lMX/v
- f60G7QcnH8JR/KGokgFN2ry3x3ceJqyt0nyeTAkLqQ7SsSWqzosmkiLWW2dB85RQWaUZ
- 84ubNkcrNehQ4E0ryRIKFRdhvYl+I1a/sJrA/gvfYI/XHD28QUBdpd3oOhyXrN43bQK5
- q5eNY46ePlOob7dDWUIctgZzkEKPabn+3FopVzptgyXTYfM8jYbTjnBHttfjXTT6iDQk
- zucn3Ajq0P4wByuR6wWzOPHXuIzhE1ag6cVKPVQBA1dLhD2+UnXqTF4K7mG2A79O+zOM
- ziPA==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=2AJoVgoOlJtCM32LZiMknyZBvbEzY9NtgFLlTHYweRU=;
+ b=PPLqQZGh3VQez+XWSDmGc6lG8dqyfSbgXIRoEBr2NGjzMqAne7AmQ88vPf5DLHjpKJ
+ E/sUeKEJcKebNY7IinPGij6k3zD7bn9OvWM18EE3LS9VLHlmdwBdyuSqe9VqX22+9BU3
+ SdBnpkiV2s9ycDBlTtmHSDRZjh5jlUnbUHhI1Dj4pIw4yhMArxSdZVcnWv2dwngmURXt
+ VPjrwwJQq+Z6cEXTz8YNOOwPlGjwB7onMuVa3afaTr1xsXshL6ELUIS9DbnQY35w/iFV
+ XT02R3W7H2GtkMMrIrxswWk+3R6fIu3Blo0P1++CqXe5uSgOpvjiXInKo3f4jy6aZH8g
+ q6Hw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=SFxd5AapzSICM/6Xgqhe/u9Vw5QC679Bx+c0QdN9hnI=;
- b=OT1g1JfUsXd7tnoM64nMgPkxS9ZTrc5bSV50TjA2mjdhhihYaLKqrTjHbTtenjnO+J
- UP32xQaVOeWy+H7VWQua0WmZPOhw2+hgcAUBxmk6sP6c60lJviEfN1dxJIgLQ+mER/m9
- 2fch3pvmfb6s9L9VQX8yaeJWRL15jTDmOZLk+kNCZTTBAf2JjvmMu1Az1Cqz3gWhK+XJ
- CXFAskzTTPnFOsb2Q4cIdmURa9YlVZOTkue6xbCGG979seDY1XLV1TX/pHQAIxe/PXdN
- SAd4zi0Szn+PR/z1lu76Ftr/3AsEm8FG0vxetV10omdNfcuEXAxeTe3KIsQfvntyiSlO
- 0isw==
-X-Gm-Message-State: APjAAAVO4EJPHKKTajggxjc38V8ffISJ114fUtjMmgTn+dooL3nY2o+a
- bqBFpdjHXdabZ3T+kHqVosE=
-X-Google-Smtp-Source: APXvYqzmQLtqtYywZioGiUcaIwSMLMNOrMMcyq48VNb2gTooHR+RghLWiW32nmaFQGBN3NvDc+DJ6Q==
-X-Received: by 2002:a25:7701:: with SMTP id s1mr6210156ybc.286.1570296625972; 
- Sat, 05 Oct 2019 10:30:25 -0700 (PDT)
-Received: from icarus (072-189-084-142.res.spectrum.com. [72.189.84.142])
- by smtp.gmail.com with ESMTPSA id 12sm2546780ywu.59.2019.10.05.10.30.24
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=2AJoVgoOlJtCM32LZiMknyZBvbEzY9NtgFLlTHYweRU=;
+ b=XeFTAxltB/PFeqlTSdAYu/BgIMc86UF8EEGnk3oi2Gjxlvjg5lS4iMdTtuwjMSCBGn
+ 4LTEMb+t2eF0dQv+SYVl6pSHp8fqkr4qeQzUBO2szD1ALjEyTNHeWqzg//8V924Bqo7y
+ bhM4Z86d1gq4DtgZzd0N+0Wb+PuUJJgn9Vu9XdG+WMSkXuSR2cqNpMY/93QVLv45ki4Z
+ 3u4hoD15gr5uoGEi33XH8rS8k9QuQQaLhvDmehbLNzYeNbQydSbVHm8wZXvsFbTMlnGf
+ wg/YKa5ywG52jSy3DbYq4Rw4CSSYm5B0qXuLdow0DreRaqGcBI56Kxo9YH0OACsYiPO1
+ D2Hg==
+X-Gm-Message-State: APjAAAUHP3SKK9Pz219MF1ocpWcRGYNO2TCGP3GNaWs5ZCuIbnA8eWBx
+ OWh1nVBM8uzlEOuRU2Kr2H08aqD0
+X-Google-Smtp-Source: APXvYqxh+/cWSsKTt6blKzy8HJ0ri4mJ030rKx7xhz++ocPtaTAWBxxq8fumwGmBPXZb0sGsej3elA==
+X-Received: by 2002:a25:2548:: with SMTP id l69mr5910083ybl.159.1570300646571; 
+ Sat, 05 Oct 2019 11:37:26 -0700 (PDT)
+Received: from localhost.localdomain (072-189-084-142.res.spectrum.com.
+ [72.189.84.142])
+ by smtp.gmail.com with ESMTPSA id g128sm2376654ywb.13.2019.10.05.11.37.25
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 05 Oct 2019 10:30:25 -0700 (PDT)
-Date: Sat, 5 Oct 2019 13:30:04 -0400
+ Sat, 05 Oct 2019 11:37:25 -0700 (PDT)
 From: William Breathitt Gray <vilhelm.gray@gmail.com>
-To: Colin King <colin.king@canonical.com>, Jonathan Cameron <jic23@kernel.org>,
- Fabrice Gasnier <fabrice.gasnier@st.com>
-Subject: Re: [PATCH] counter: stm32: clean up indentation issue
-Message-ID: <20191005173004.GA7431@icarus>
-References: <20190925095126.20219-1-colin.king@canonical.com>
+To: linus.walleij@linaro.org,
+	bgolaszewski@baylibre.com
+Subject: [PATCH v15 00/14] Introduce the for_each_set_clump8 macro
+Date: Sat,  5 Oct 2019 14:36:54 -0400
+Message-Id: <cover.1570299719.git.vilhelm.gray@gmail.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190925095126.20219-1-colin.king@canonical.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191005_103027_932000_F54F09C6 
-X-CRM114-Status: GOOD (  14.67  )
+X-CRM114-CacheID: sfid-20191005_113729_247399_AFDE9E8E 
+X-CRM114-Status: GOOD (  12.45  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -79,6 +77,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (vilhelm.gray[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:b29 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,9 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b44 listed in]
- [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,53 +98,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>, linux-iio@vger.kernel.org,
- kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, preid@electromag.com.au,
+ William Breathitt Gray <vilhelm.gray@gmail.com>, yamada.masahiro@socionext.com,
+ linux-pm@vger.kernel.org, linux@rasmusvillemoes.dk,
+ linux-kernel@vger.kernel.org, morten.tiljeset@prevas.dk,
+ sean.nyekjaer@prevas.dk, linux-gpio@vger.kernel.org, lukas@wunner.de,
+ geert@linux-m68k.org, akpm@linux-foundation.org,
+ andriy.shevchenko@linux.intel.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 25, 2019 at 10:51:26AM +0100, Colin King wrote:
-> From: Colin Ian King <colin.king@canonical.com>
-> 
-> There is an if statement that is indented one level too deeply,
-> remove the extraneous tabs.
-> 
-> Signed-off-by: Colin Ian King <colin.king@canonical.com>
-> ---
->  drivers/counter/stm32-timer-cnt.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/counter/stm32-timer-cnt.c b/drivers/counter/stm32-timer-cnt.c
-> index 644ba18a72ad..613dcccf79e1 100644
-> --- a/drivers/counter/stm32-timer-cnt.c
-> +++ b/drivers/counter/stm32-timer-cnt.c
-> @@ -219,8 +219,8 @@ static ssize_t stm32_count_enable_write(struct counter_device *counter,
->  
->  	if (enable) {
->  		regmap_read(priv->regmap, TIM_CR1, &cr1);
-> -			if (!(cr1 & TIM_CR1_CEN))
-> -				clk_enable(priv->clk);
-> +		if (!(cr1 & TIM_CR1_CEN))
-> +			clk_enable(priv->clk);
->  
->  		regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN,
->  				   TIM_CR1_CEN);
-> -- 
-> 2.20.1
+Changes in v15:
+  - Move find_next_clump8 to lib/find_bit.c since it requires round_down
+    (I want this to be static inline like the others, but I need help)
+  - Utilize for_each_set_clump8 in pisosr, max3191x, and pca953x
 
-Acked-by: William Breathitt Gray <vilhelm.gray@gmail.com>
+While adding GPIO get_multiple/set_multiple callback support for various
+drivers, I noticed a pattern of looping manifesting that would be useful
+standardized as a macro.
 
-Fabrice,
+This patchset introduces the for_each_set_clump8 macro and utilizes it
+in several GPIO drivers. The for_each_set_clump macro8 facilitates a
+for-loop syntax that iterates over a memory region entire groups of set
+bits at a time.
 
-I noticed the TIM_CR1_CEN check is happening before the
-regmap_update_bits call for the enable path, while the disable path does
-the check after. Is this logic is correct.
+For example, suppose you would like to iterate over a 32-bit integer 8
+bits at a time, skipping over 8-bit groups with no set bit, where
+XXXXXXXX represents the current 8-bit group:
 
-William Breathitt Gray
+    Example:        10111110 00000000 11111111 00110011
+    First loop:     10111110 00000000 11111111 XXXXXXXX
+    Second loop:    10111110 00000000 XXXXXXXX 00110011
+    Third loop:     XXXXXXXX 00000000 11111111 00110011
+
+Each iteration of the loop returns the next 8-bit group that has at
+least one set bit.
+
+The for_each_set_clump8 macro has four parameters:
+
+    * start: set to the bit offset of the current clump
+    * clump: set to the current clump value
+    * bits: bitmap to search within
+    * size: bitmap size in number of bits
+
+In this version of the patchset, the for_each_set_clump macro has been
+reimplemented and simplified based on the suggestions provided by Rasmus
+Villemoes and Andy Shevchenko in the version 4 submission.
+
+In particular, the function of the for_each_set_clump macro has been
+restricted to handle only 8-bit clumps; the drivers that use the
+for_each_set_clump macro only handle 8-bit ports so a generic
+for_each_set_clump implementation is not necessary. Thus, a solution for
+large clumps (i.e. those larger than the width of a bitmap word) can be
+postponed until a driver appears that actually requires such a generic
+for_each_set_clump implementation.
+
+For what it's worth, a semi-generic for_each_set_clump (i.e. for clumps
+smaller than the width of a bitmap word) can be implemented by simply
+replacing the hardcoded '8' and '0xFF' instances with respective
+variables. I have not yet had a need for such an implementation, and
+since it falls short of a true generic for_each_set_clump function, I
+have decided to forgo such an implementation for now.
+
+In addition, the bitmap_get_value8 and bitmap_set_value8 functions are
+introduced to get and set 8-bit values respectively. Their use is based
+on the behavior suggested in the patchset version 4 review.
+
+William Breathitt Gray (14):
+  bitops: Introduce the for_each_set_clump8 macro
+  lib/test_bitmap.c: Add for_each_set_clump8 test cases
+  gpio: 104-dio-48e: Utilize for_each_set_clump8 macro
+  gpio: 104-idi-48: Utilize for_each_set_clump8 macro
+  gpio: gpio-mm: Utilize for_each_set_clump8 macro
+  gpio: ws16c48: Utilize for_each_set_clump8 macro
+  gpio: pci-idio-16: Utilize for_each_set_clump8 macro
+  gpio: pcie-idio-24: Utilize for_each_set_clump8 macro
+  gpio: uniphier: Utilize for_each_set_clump8 macro
+  gpio: 74x164: Utilize the for_each_set_clump8 macro
+  thermal: intel: intel_soc_dts_iosf: Utilize for_each_set_clump8 macro
+  gpio: pisosr: Utilize the for_each_set_clump8 macro
+  gpio: max3191x: Utilize the for_each_set_clump8 macro
+  gpio: pca953x: Utilize the for_each_set_clump8 macro
+
+ drivers/gpio/gpio-104-dio-48e.c            |  73 ++++----------
+ drivers/gpio/gpio-104-idi-48.c             |  36 ++-----
+ drivers/gpio/gpio-74x164.c                 |  19 ++--
+ drivers/gpio/gpio-gpio-mm.c                |  73 ++++----------
+ drivers/gpio/gpio-max3191x.c               |  19 ++--
+ drivers/gpio/gpio-pca953x.c                |  17 ++--
+ drivers/gpio/gpio-pci-idio-16.c            |  75 +++++---------
+ drivers/gpio/gpio-pcie-idio-24.c           | 109 ++++++++-------------
+ drivers/gpio/gpio-pisosr.c                 |  12 +--
+ drivers/gpio/gpio-uniphier.c               |  16 ++-
+ drivers/gpio/gpio-ws16c48.c                |  73 ++++----------
+ drivers/thermal/intel/intel_soc_dts_iosf.c |  29 +++---
+ drivers/thermal/intel/intel_soc_dts_iosf.h |   2 -
+ include/asm-generic/bitops/find.h          |  50 ++++++++++
+ include/linux/bitops.h                     |   5 +
+ lib/find_bit.c                             |  14 +++
+ lib/test_bitmap.c                          |  65 ++++++++++++
+ 17 files changed, 325 insertions(+), 362 deletions(-)
+
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
