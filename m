@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57412CCA66
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  5 Oct 2019 16:20:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0337CCA68
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  5 Oct 2019 16:20:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aeoasc3vzjveF16fkQU0xk62EG4joJSjtSgNnFgHc+A=; b=mReoiHZKU04fHe
-	tVNPeicp0pnPx3DVirp2iOvejgor++MutUvt8msV4y7fYQiFLd1M7TQsiYBHXVkDaCwrEjF4bOh9z
-	4mKi4sXy/XHWbhQH78kggYsBHI0dbpxw2wkPOl1HELp6uMOrKuDFCDscRqkQ2YaEe2uE+7HCQFigO
-	F6VnQXrq0Z7tjov33wRhqnPuHO0LoljaM53MoKph1VXse8+sx4UFmjDwLMvWwwavXhQy7r8w4XaSr
-	pfRqZQtIcu3vwC6uQhQEb2KvUgwzuP+gwlclrLdjRAED3bCJON8ibE49P3+piiJM7ge40d/CDMYRl
-	Y+0jjGU7aX3ZeTO0EGpQ==;
+	List-Owner; bh=LyzjCQk5wMCYhsDNbU9KGennr00JfzRtlWON+eNZk44=; b=l9qDQAix6o9rCr
+	2Y5ueYn2VyLHt8io9yno3SpxLzKmfyNgZcAbZhvekmBvcC4qF/OZy/uSE1c9cCtC++miWacdWvkfC
+	vj82sI4BWzsLtD7mtulh+fUKPFR3Q4HAXvVxfh1MYYb3U2B0BvrpXiPBnjTGYDMDK/5ZOnorrNfJz
+	ARE/DrF3398tSAUyZPeHfyps0o+G3iC2IpK6NZF8XbQytl5LVcxh4xTPwtu6qyjLClHA2TJy3BIHM
+	RGYodRnIEUXCJfxcEjndXH0UzupBJkZ3HkuCQPHQP2iml0cSN/S7QK8CYmQe6bLTw1VqYbJux8gZ0
+	gEBFQfFlRD2eE4vMMHWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGkuc-0003kN-1K; Sat, 05 Oct 2019 14:19:58 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1iGkvA-0005V1-Df; Sat, 05 Oct 2019 14:20:32 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGku9-0003dF-Cr
- for linux-arm-kernel@lists.infradead.org; Sat, 05 Oct 2019 14:19:30 +0000
-Received: by mail-pl1-x644.google.com with SMTP id w8so4532239plq.5
+ id 1iGkuH-0003fm-Rb
+ for linux-arm-kernel@lists.infradead.org; Sat, 05 Oct 2019 14:19:39 +0000
+Received: by mail-pl1-x641.google.com with SMTP id q24so4513052plr.13
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 05 Oct 2019 07:19:28 -0700 (PDT)
+ Sat, 05 Oct 2019 07:19:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=j71JSmqo2p/lC+pVotGwXL+zyAoHaLpisutyi3M3xfk=;
- b=c+bNHX150ih1LLE2k5LrQDgeo2hmhkZLqKyEExZX/B9Swz4KTLiOD9Tf1g9nTLGKsa
- YqPTXWFZnLndq79saXmDqpW7gRgHF3ZqVz6kDb/BW0O0RXfwr0kO947ZodH7f5X2p4c5
- fgCyZ0HJsarIkoZGz+CU1cmFxaXs0+2q01eB0=
+ bh=lLu60EjnRBnW4wz32/fkJTOsgD5cNWvT5qBN+RYNBTg=;
+ b=pqNAHW+FwCPLtmMCrEkOjKWwvUGOVLbSDKFc786vnhYyrwlP6swsENzUfsK51+kxu6
+ cA0MvHQrlrJpu2rAbw5We0cRNiGT6OWwq+E4UdP0X+x8tJ33JVZQj3upf7PeS8f9W/2t
+ FPdU2xvzZ/L6YVpMLVCBITsyrAOB7exwrsfv4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=j71JSmqo2p/lC+pVotGwXL+zyAoHaLpisutyi3M3xfk=;
- b=S/SKBjYlrbXjjnkU/yXdG34jPyYIssY4gkuarwG63GmlBESrmDEx8fcKpZQLRsa1IK
- Bg3dXnBgYSQRE8xyJGQOz0dN5mdM3ENwOltBv8auBWuYGLJBaUQfm7ICTv/5M8y9vnV4
- b44pVCa7ZKHTWcMOgG/WMq81HnOnTTPGxtLEBVIOdc/mbF2gtwPPV2I06a04uT7YYL29
- g6ki/kSoXsr9Pd58bVYV/DRYvp34waioKX2ensG0RwABNuQdNK4Z2IA4Fq9i6g0/1mWk
- 01vqBIQPLeRp47ocU6GBvGuENA8xCKI5tFlQvopqn+B6V6PHqkkqnLs4psJ+/GGCrwsJ
- SDWA==
-X-Gm-Message-State: APjAAAWWIRUd7lWIeC3H1JT5Sldr93MVXsMIY+eKmK4LxGQOVvkUbKw3
- YTZD0NDl/A7qhhx8ycpuy0ssFA==
-X-Google-Smtp-Source: APXvYqyUl411uM87vrRwvlJ+wF+fjjwaiPL9XpGjvqCaxZBcb4sTtYi07sCxLpjnKzSjOFwvn84EDg==
-X-Received: by 2002:a17:902:b182:: with SMTP id
- s2mr20310966plr.219.1570285168104; 
- Sat, 05 Oct 2019 07:19:28 -0700 (PDT)
+ bh=lLu60EjnRBnW4wz32/fkJTOsgD5cNWvT5qBN+RYNBTg=;
+ b=n61yvNCNIG35cJsjtJVZ1zbryOjLAhEqCI+i4yFqV68HWw8ckyPiCx833t/pSh5R7d
+ NCiON4QtH0EJOT0LnMXRvz4SIBI1652gJFdwj1bnvy2zXqjH3UShIqkaObctKFBl2Y1H
+ zQr4jt9i4pm6jS6cCaa61TyQxNOdQzyvD1i5AOZVwCHeJUR21yIhz993KrQvu2e0jNq2
+ 62PktxGmm+dRfo+6NDH4zpXDtmHBZRew0ngXPWruqZ1ptkxd3RwYMh4vgZYFMiB1fhs5
+ rIS3/L+IzRh42brrxbhQt9B2n9zREi+VeHFvnbGDP1nEucZMyByn/CRXL1QNcYmF9fLK
+ A0vQ==
+X-Gm-Message-State: APjAAAV27mS59NcJa5E7ap9LX1TaW7yEC4SzaMb9HwdTKPBa6c5iFk6C
+ meqahP1mXpKpMxlyFoSB2inF7A==
+X-Google-Smtp-Source: APXvYqzyfbYoP0nigJLm601pen/N5iojsrxWH3PJfSr9afbuIRmYCd4P+TgvvrASJEz29Up2FoLOMw==
+X-Received: by 2002:a17:902:9a41:: with SMTP id
+ x1mr14550279plv.269.1570285172204; 
+ Sat, 05 Oct 2019 07:19:32 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.180.31])
- by smtp.gmail.com with ESMTPSA id y138sm8977604pfb.174.2019.10.05.07.19.24
+ by smtp.gmail.com with ESMTPSA id y138sm8977604pfb.174.2019.10.05.07.19.28
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 05 Oct 2019 07:19:27 -0700 (PDT)
+ Sat, 05 Oct 2019 07:19:31 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v10 1/6] dt-bindings: sun6i-dsi: Add A64 MIPI-DSI compatible
-Date: Sat,  5 Oct 2019 19:49:08 +0530
-Message-Id: <20191005141913.22020-2-jagan@amarulasolutions.com>
+Subject: [PATCH v10 2/6] dt-bindings: sun6i-dsi: Add A64 DPHY compatible (w/
+ A31 fallback)
+Date: Sat,  5 Oct 2019 19:49:09 +0530
+Message-Id: <20191005141913.22020-3-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20191005141913.22020-1-jagan@amarulasolutions.com>
 References: <20191005141913.22020-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191005_071929_432005_A78407E4 
-X-CRM114-Status: GOOD (  11.22  )
+X-CRM114-CacheID: sfid-20191005_071938_005468_B7545F02 
+X-CRM114-Status: GOOD (  11.33  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,28 +107,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The MIPI DSI controller in Allwinner A64 is similar to A33.
+The MIPI DSI PHY controller on Allwinner A64 is similar
+on the one on A31.
 
-But unlike A33, A64 doesn't have DSI_SCLK gating so it is valid
-to with separate compatible for A64 on the same driver.
+Add A64 compatible and append A31 compatible as fallback.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- .../bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml        | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ .../bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml         | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml b/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
-index dafc0980c4fa..cfcc84d38084 100644
---- a/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
-+++ b/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
-@@ -15,7 +15,9 @@ properties:
-   "#size-cells": true
+diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml
+index fa46670de299..8841938050b2 100644
+--- a/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml
++++ b/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml
+@@ -15,7 +15,11 @@ properties:
+     const: 0
  
    compatible:
--    const: allwinner,sun6i-a31-mipi-dsi
-+    enum:
-+      - const: allwinner,sun6i-a31-mipi-dsi
-+      - const: allwinner,sun50i-a64-mipi-dsi
+-    const: allwinner,sun6i-a31-mipi-dphy
++    oneOf:
++      - const: allwinner,sun6i-a31-mipi-dphy
++      - items:
++          - const: allwinner,sun50i-a64-mipi-dphy
++          - const: allwinner,sun6i-a31-mipi-dphy
  
    reg:
      maxItems: 1
