@@ -2,78 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B749CCB61
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  5 Oct 2019 18:42:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41E85CCB7A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  5 Oct 2019 18:50:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kwdy+rBzsu0H+/bdGP3xqSYwTFaMLTlxogOWv7bvf5Y=; b=dk5hRy3yCjM5YX
-	N0Yo7AjvyGZQwHfZMGxlasOPAnF5Lcu6r56lrH8FHR34rHwJRdmSb5i6UvUzYtD3bRjeM0kjZ/Ygq
-	NN7HE5YADpfncvEUbKsCpf7UGZLmwnU5USJBs+SzRNFyJPboOO2Cw+bCA4kB6yScXDs6qrRk5TbYE
-	SD80TNENj5bIGb5Kf7P3up49BLzbEWqFnlrkJpEIx5MlyB8juHi4yJQ5GAWGVIruY/j7j6z4AJ9Ph
-	rwYii/a0shPkxrCXzLSkWiTXBofh2ibi9KVZaDaGcmWc9ETq26CIGO6iDjrRhqGKi+OcSTpMtRkmU
-	Heckzy7dLXdka2TQgc0g==;
+	List-Owner; bh=lEjb2eA8HIXaoDj3YAIfpYEjuTIDM7MLVdG3CKINndA=; b=q8RSgFmlLgUlCR
+	JB9e5EA70Y+XDnobnI5YPX73eUid5TTCTe/zJgog3TM+FiBYguCuCuwryW4r4yzUtZu3QFxYIGP5T
+	mNP5RuI8BQD38PQ1Zlx32Rk5Aulrw89KmTtvEdpqRwVxE5av5r0K3AQZbiyg/k4uXAqnMYUqoK8gz
+	TFf1ScD2TZUt4usvlFFWCZgA4FiDEX3aPhSHUWttKM2oGN8r8ls9I5i6KJp5mh9b1Em8SBAqHUELD
+	KrMrA4m2ZsrItC4gLDXeWWkV+xf84goVeajOE5l7vaeBPkKiQ54UYSIilQGGg7PlicZnNHIZImqAY
+	J5X4/k9pHL3kqMUbYDRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGn8q-0000j5-Ud; Sat, 05 Oct 2019 16:42:48 +0000
-Received: from hqemgate15.nvidia.com ([216.228.121.64])
+	id 1iGnG1-0002Wt-10; Sat, 05 Oct 2019 16:50:13 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGn8T-0000ab-4g
- for linux-arm-kernel@lists.infradead.org; Sat, 05 Oct 2019 16:42:27 +0000
-Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate15.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5d98c7f90000>; Sat, 05 Oct 2019 09:42:33 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate102.nvidia.com (PGP Universal service);
- Sat, 05 Oct 2019 09:42:24 -0700
-X-PGP-Universal: processed;
- by hqpgpgate102.nvidia.com on Sat, 05 Oct 2019 09:42:24 -0700
-Received: from HQMAIL107.nvidia.com (172.20.187.13) by HQMAIL105.nvidia.com
- (172.20.187.12) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Sat, 5 Oct
- 2019 16:42:24 +0000
-Received: from hqnvemgw01.nvidia.com (172.20.150.20) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
- Transport; Sat, 5 Oct 2019 16:42:24 +0000
-Received: from vidyas-desktop.nvidia.com (Not Verified[10.24.37.38]) by
- hqnvemgw01.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
- id <B5d98c7ed0000>; Sat, 05 Oct 2019 09:42:24 -0700
-From: Vidya Sagar <vidyas@nvidia.com>
-To: <lorenzo.pieralisi@arm.com>, <bhelgaas@google.com>, <robh+dt@kernel.org>, 
- <thierry.reding@gmail.com>, <jonathanh@nvidia.com>, <andrew.murray@arm.com>
-Subject: [PATCH 2/2] arm64: tegra: Assume no CLKREQ presence by default
-Date: Sat, 5 Oct 2019 22:12:12 +0530
-Message-ID: <20191005164212.3646-2-vidyas@nvidia.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191005164212.3646-1-vidyas@nvidia.com>
-References: <20191005164212.3646-1-vidyas@nvidia.com>
-X-NVConfidentiality: public
+ id 1iGnFi-0002W6-DV
+ for linux-arm-kernel@lists.infradead.org; Sat, 05 Oct 2019 16:49:55 +0000
+Received: by mail-lf1-x142.google.com with SMTP id q12so1592222lfc.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 05 Oct 2019 09:49:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=bFYXbByYhGEXfOvEgQ/Yv7O8maPlLwNPKG6/+oAaKb0=;
+ b=F5Qjpvpi6G+ab+VeuCiBsb6tm18qqaMtmFRT4reLGjpmUHLQIKEy38RCdhiSjtQoYr
+ gxUT6twp6LaP1bTlGnWGv4bQySjuigIwrgHhmPKCbxPGBjd7/LYxeuA+gBsCmRkysK3O
+ pH/XMlhMcKe8iXOk/2VDpQk54SIR+ndpxUrBJzAe/NI5B0WdIBaj5ogYjdYehYK3cQ35
+ Uz82JVR+RRWh/cH1+2hUTPNVyI31grf74MbU6CHnN01sEYQskDQY5F905me9Q1O4MIuO
+ 66UKqnl76X1MvlQ2KDltSwqSE5p2wZNmWRtT45rianVJwNaprLpXKDq9dfy+9WkxiBB0
+ rISQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=bFYXbByYhGEXfOvEgQ/Yv7O8maPlLwNPKG6/+oAaKb0=;
+ b=MewPJGL3LTBgQpQNt5JUOrOd02/k84ECqPe0LmPlc6WzYs4WcUucaiw3wC4wK8dYgx
+ uhgoxd68Fk83vLW7kzQ0bNqRMciPIpk740BgwDl9ojoY5GMLHHkhz1FOudJpo80FZeOX
+ l3iBdIhe69nsc5tYnaNmsO9e8ZUk/7TL6xHw0tccZ6WbXLJ1DOpahRtej0gs3Ko5qtWz
+ 404Owf2J5p4CjV0s3ef6NhoACsKC94SaGL2eBz/rwVCQV2Yl3MlS1FM+C2MzH2k28CLZ
+ sHZjKvMYGfxu6ITIV0h6PrQ5xOzUX6sAegJcH58OrAHafKaO3kpyi7jZvE2fPNMiU0ci
+ JczA==
+X-Gm-Message-State: APjAAAV/Fc/HlIm3yCbCecavXTOTnCq/7y5F1whmmFD7xya9uqUTSFox
+ Ok6hBSCAMGFVaqfuKrYBVRoYXa9o1muFdXirJzSojw==
+X-Google-Smtp-Source: APXvYqzWLIXea2bSktYcXAMWUxPBnRthWgHgKi9V9cmgUV7xXLZpltHmYaRhUSOORfu5uwvTkgz2I3T7Lp7NJCXeluc=
+X-Received: by 2002:ac2:5c11:: with SMTP id r17mr12207816lfp.61.1570294190713; 
+ Sat, 05 Oct 2019 09:49:50 -0700 (PDT)
 MIME-Version: 1.0
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1570293753; bh=MZYyKVmEQSs/fOW9jXMmxgmCMVq3eo89Qu0p+NPSTVs=;
- h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
- In-Reply-To:References:X-NVConfidentiality:MIME-Version:
- Content-Type;
- b=j35q6JEW7K9nAmcdjpdn34hh+aHHtBRTtQKQR6I9CWmFoch/UAIotH6IvOwFMQC5Z
- 29j07RDPa6pCovA8XMXNILtunib6GzSgzceovbUasU65YmgrUCVe5IWlWt/6kLIvVp
- JLx/CM30Wcft5Cq4ya56SRKkZa+Jh6daRz5FPeuaMQ0bfJi1AC00IdAffaF7w4gsM7
- Hb5JR96QyYdCFnBhFFfG5m/JXL1zm9uMpdeOz9JaY/bFs0Z2ydXNsR6HhHY39/TRyb
- usRnBUYolrfqpFcz9LVJgOuWwpJ+goDpl1c5TuiuXFRnFohFW3ldCi+zQFJtTw//sU
- b3607CK08OAXQ==
+References: <20191004122923.22674-1-amelie.delaunay@st.com>
+In-Reply-To: <20191004122923.22674-1-amelie.delaunay@st.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Sat, 5 Oct 2019 18:49:37 +0200
+Message-ID: <CACRpkda6CyYCt-s-VkaK856Jt3TxQg+HVDz-5Ww9T9KNHHAjaQ@mail.gmail.com>
+Subject: Re: [PATCH 1/1] pinctrl: stmfx: add irq_request/release_resources
+ callbacks
+To: Amelie Delaunay <amelie.delaunay@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191005_094225_190109_252E20A5 
-X-CRM114-Status: UNSURE (   7.66  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191005_094954_466994_24BE2814 
+X-CRM114-Status: GOOD (  12.92  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.64 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -82,7 +80,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,81 +91,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, mmaddireddy@nvidia.com, kthota@nvidia.com,
- linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org, vidyas@nvidia.com,
- linux-tegra@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- sagar.tv@gmail.com
+Cc: Alexandre Torgue <alexandre.torgue@st.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Although Tegra194 has support for CLKREQ sideband signal and P2972
-has routing of the same till the slot, it is the case most of the time
-that the connected device doesn't have CLKREQ support. Hence, it makes
-sense to assume that there is no CLKREQ support by default and it can
-be enabled on need basis when a card with CLKREQ support is connected.
+On Fri, Oct 4, 2019 at 2:29 PM Amelie Delaunay <amelie.delaunay@st.com> wrote:
 
-Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
----
- arch/arm64/boot/dts/nvidia/tegra194.dtsi | 6 ------
- 1 file changed, 6 deletions(-)
+> When an STMFX IO is used as interrupt through the interrupt-controller
+> binding, the STMFX driver should configure this IO as input. Default
+> value of STMFX IO direction is input, but if the IO is used as output
+> before the interrupt use, it will not work without these callbacks.
+>
+> Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
 
-diff --git a/arch/arm64/boot/dts/nvidia/tegra194.dtsi b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-index a312c051448b..11220d97adb8 100644
---- a/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-+++ b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-@@ -1186,7 +1186,6 @@
- 
- 		nvidia,bpmp = <&bpmp 1>;
- 
--		supports-clkreq;
- 		nvidia,aspm-cmrt-us = <60>;
- 		nvidia,aspm-pwr-on-t-us = <20>;
- 		nvidia,aspm-l0s-entrance-latency-us = <3>;
-@@ -1232,7 +1231,6 @@
- 
- 		nvidia,bpmp = <&bpmp 2>;
- 
--		supports-clkreq;
- 		nvidia,aspm-cmrt-us = <60>;
- 		nvidia,aspm-pwr-on-t-us = <20>;
- 		nvidia,aspm-l0s-entrance-latency-us = <3>;
-@@ -1278,7 +1276,6 @@
- 
- 		nvidia,bpmp = <&bpmp 3>;
- 
--		supports-clkreq;
- 		nvidia,aspm-cmrt-us = <60>;
- 		nvidia,aspm-pwr-on-t-us = <20>;
- 		nvidia,aspm-l0s-entrance-latency-us = <3>;
-@@ -1324,7 +1321,6 @@
- 
- 		nvidia,bpmp = <&bpmp 4>;
- 
--		supports-clkreq;
- 		nvidia,aspm-cmrt-us = <60>;
- 		nvidia,aspm-pwr-on-t-us = <20>;
- 		nvidia,aspm-l0s-entrance-latency-us = <3>;
-@@ -1370,7 +1366,6 @@
- 
- 		nvidia,bpmp = <&bpmp 0>;
- 
--		supports-clkreq;
- 		nvidia,aspm-cmrt-us = <60>;
- 		nvidia,aspm-pwr-on-t-us = <20>;
- 		nvidia,aspm-l0s-entrance-latency-us = <3>;
-@@ -1420,7 +1415,6 @@
- 		interrupt-map-mask = <0 0 0 0>;
- 		interrupt-map = <0 0 0 0 &gic GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>;
- 
--		supports-clkreq;
- 		nvidia,aspm-cmrt-us = <60>;
- 		nvidia,aspm-pwr-on-t-us = <20>;
- 		nvidia,aspm-l0s-entrance-latency-us = <3>;
--- 
-2.17.1
+OK I see what you want to achieve.
 
+> +static int stmfx_gpio_irq_request_resources(struct irq_data *data)
+> +{
+> +       struct gpio_chip *gpio_chip = irq_data_get_irq_chip_data(data);
+> +       struct stmfx_pinctrl *pctl = gpiochip_get_data(gpio_chip);
+> +       int ret;
+> +
+> +       ret = stmfx_gpio_direction_input(&pctl->gpio_chip, data->hwirq);
+> +       if (ret)
+> +               return ret;
+> +
+> +       ret = gpiochip_lock_as_irq(&pctl->gpio_chip, data->hwirq);
+> +       if (ret) {
+> +               dev_err(pctl->dev, "Unable to lock gpio %lu as IRQ: %d\n",
+> +                       data->hwirq, ret);
+> +               return ret;
+> +       }
+> +
+> +       return 0;
+> +}
+
+Just call gpiochip_reqres_irq() instead of calling the lock etc
+explicitly.
+
+> +static void stmfx_gpio_irq_release_resources(struct irq_data *data)
+> +{
+> +       struct gpio_chip *gpio_chip = irq_data_get_irq_chip_data(data);
+> +       struct stmfx_pinctrl *pctl = gpiochip_get_data(gpio_chip);
+> +
+> +       gpiochip_unlock_as_irq(&pctl->gpio_chip, data->hwirq);
+> +}
+
+Just call gpiochip_relres_irq()
+
+But all this duplicated a lot of code from the core which is not so nice.
+
+> @@ -678,6 +706,8 @@ static int stmfx_pinctrl_probe(struct platform_device *pdev)
+>         pctl->irq_chip.irq_set_type = stmfx_pinctrl_irq_set_type;
+>         pctl->irq_chip.irq_bus_lock = stmfx_pinctrl_irq_bus_lock;
+>         pctl->irq_chip.irq_bus_sync_unlock = stmfx_pinctrl_irq_bus_sync_unlock;
+> +       pctl->irq_chip.irq_request_resources = stmfx_gpio_irq_request_resources;
+> +       pctl->irq_chip.irq_release_resources = stmfx_gpio_irq_release_resources;
+
+What about just adding
+
+pctl->irq_chip.irq_enable and do stmfx_gpio_direction_input()
+in that callback instead? gpiolib will helpfully wrap it.
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
