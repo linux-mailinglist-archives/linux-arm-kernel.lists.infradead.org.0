@@ -2,65 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E12CCC869
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  5 Oct 2019 08:23:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F2E8CC8A5
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  5 Oct 2019 09:51:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kNJoOtu7ebwkBIiBXeTArjDSxUJ9vBtBVGsNZiuLnP8=; b=VsFj7poDzQbRlW
-	YUBVyChe7ts0tqh/RBFn7C2HRbcyvi/LSuk1A5II0x7UO03krfT42lesqXbpJH2A0APatwKjfD1wR
-	tgRSr+k293pzBK9ZibuiE7+OiVgB6OaCrSBe50pU9hHyhjwZbdce3W02kqfhtTO611Ui8CFB7C3vl
-	SXuX9L3pjZw2aUf9VWWU5AzjiWdT7xjn9z+XuoH512HAp+D4vvuvRZvkJ//8EyFYWSYg7WR1mq1IF
-	C7olfUCHUfahz8UW63JHaV+5e8Pn7+PZ3f3ni23c7Z/7njQApNBwPpsQv96S+K3mpMEMHTtGvyOAr
-	mImevKBPmrhm0wUV4RYQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FCDOo/W4KUfi/ZYHGnDbnDAL424ACjk6vFQ5V32D1dI=; b=njhITY0JXGYN00
+	ZAqNRBIQhZ04uJN9Fc2qGXZD66VlaYLBxIi27oUbXyemqSatz7VY3ABSrJu6WAuhOAyU4LnETUTxk
+	xtl7ZUTW5IBvfp89uBnU+SvG8e6vMSlL/ReXKeScnBymJV0zSH9B6JEWz4YnXrYxatPqzDRSivOKL
+	4M4xcbX6Uy0qiEjfz1Rqnx4LFZOsfG27FT5g1vDyHsExIrGF61UFh1vGgF0ztQAY85O2ke/0k86FW
+	vWgEmOObTMJKdbSiHSXZVoPVrrsQ0JUjqALd/I9Qw98xtbnI2IwtCUK9dcj7BS5WTuA+ODtbKFs2q
+	JWJkBVxlWKZyNBXa09eQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGdSz-0000Rp-0P; Sat, 05 Oct 2019 06:22:57 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iGeqH-0002WM-JI; Sat, 05 Oct 2019 07:51:05 +0000
+Received: from mail-yb1-xb42.google.com ([2607:f8b0:4864:20::b42])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGdSp-0000RC-29; Sat, 05 Oct 2019 06:22:49 +0000
-X-UUID: f7b7183d7b864a75ab0ccf99c704294d-20191004
-X-UUID: f7b7183d7b864a75ab0ccf99c704294d-20191004
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <yingjoe.chen@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1527906058; Fri, 04 Oct 2019 22:22:43 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 4 Oct 2019 23:22:40 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 5 Oct 2019 14:07:29 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Sat, 5 Oct 2019 14:07:29 +0800
-Message-ID: <1570255651.29077.26.camel@mtksdaap41>
-Subject: Re: [PATCH v2 4/4] ASoC: mt8183: fix audio playback slowly after
- playback during bootup
-From: Yingjoe Chen <yingjoe.chen@mediatek.com>
-To: Jiaxin Yu <jiaxin.yu@mediatek.com>
-Date: Sat, 5 Oct 2019 14:07:31 +0800
-In-Reply-To: <1569580317-21181-5-git-send-email-jiaxin.yu@mediatek.com>
-References: <1569580317-21181-1-git-send-email-jiaxin.yu@mediatek.com>
- <1569580317-21181-5-git-send-email-jiaxin.yu@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1iGeqA-0002UN-B6
+ for linux-arm-kernel@lists.infradead.org; Sat, 05 Oct 2019 07:50:59 +0000
+Received: by mail-yb1-xb42.google.com with SMTP id h202so2891447ybg.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 05 Oct 2019 00:50:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=helmpcb-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=CjoSwE787/jK5Jj7I+WK9vvEWgxrGvAZOtqdwG0M/F4=;
+ b=t+D28p0G3mdc25o4Sv8h77ivbb4FavgOUZPIOJQB2Y44c7uKqcwROVGfKLKLKF22oO
+ +PxfBfiU/1dk+VNsKR/nzBiHW9lqWaoO3TlzC9/fqgwWRBpS5vo+Jd+q0FwSShPNvy1i
+ yYQHmow8FWXyt0rnUJD2gDUCmN7U4/evPLR9OjDeGvzv52RWIt6dJ/oF1SUpI8GnT7Xu
+ 7jtPj2nHpQJAu+X041qhdDVYRhyodCvE8qQ0DFTkJuVKq3ihozbbdePnczv5EjeMNGDc
+ 1aM37/l6jHD6e5ciNPaK21lLpGtDX0MW9YA9lGr6BpdzruqfCfXIFHta9P+WnJDQsPBy
+ I4aA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=CjoSwE787/jK5Jj7I+WK9vvEWgxrGvAZOtqdwG0M/F4=;
+ b=AtdHs+4rW5dA/Vk7PVf9XhL78YGRHm150BQ7jFs3TWj4djXOi4pfj6KH7NrBJuIjlQ
+ GpXDC6zwwJhjATblXbPGnb1bnZWv4yvWvDvwIKdfmTOW83eR0cujjbwLrjAnodKwb3DC
+ K6pjV3IxsJ+uztfHf91XUGdVOp+/A8YBSIBK5e8/fVkEj1mJzRIgidyE7dyIbaxHdAWo
+ MBG0sAKLra/a0B6i9vp6Osi+8nXOtmL8nzMpQd6ZfvUIpVmpyvt0EU+T86atKLmBsVz7
+ 0G0e4IqrsnPX7Uy85NT0oB/osDpb2x00GOgwlby+BP56eZxf9VMZB4pjIZgxSvJb5GaX
+ FIOw==
+X-Gm-Message-State: APjAAAUUFnVFMq616EFj/MNKdmBI5WKN3UO0hr5VYyuFY1GAbrd8k903
+ xTyQumhWcHyKAkz5QqVxvOSt0XE495ktIh669TYOAA==
+X-Google-Smtp-Source: APXvYqw7kaBXzmp443sTZgcpOhgrEC5fnp13JCtJUBHj026FlK+8hkBAwZHMSCtdnw+v8aSjN4d1mJ0/baQ3tEmc7L8=
+X-Received: by 2002:a25:df97:: with SMTP id w145mr4441396ybg.424.1570261855353; 
+ Sat, 05 Oct 2019 00:50:55 -0700 (PDT)
 MIME-Version: 1.0
-X-MTK: N
+From: Amr Bekhit <amr@helmpcb.com>
+Date: Sat, 5 Oct 2019 10:50:44 +0300
+Message-ID: <CAHmAUHKD90eibgj3JmHaJNduhrOQZUZBZixtZE+dWxR2L6Bq1Q@mail.gmail.com>
+Subject: [PATCH] rockchip_rk3288_efuse_read: Fix segfault in
+ rockchip_rk3288_efuse_read by using readl instead of readb when reading
+ REG_EFUSE_DOUT.
+To: heiko@sntech.de, wxt@rock-chips.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_232247_110231_644618DA 
-X-CRM114-Status: GOOD (  12.99  )
+X-CRM114-CacheID: sfid-20191005_005058_537501_8BEC09D3 
+X-CRM114-Status: GOOD (  12.15  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:b42 listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,77 +86,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, alsa-devel@alsa-project.org, yong.liang@mediatek.com,
- robh+dt@kernel.org, lgirdwood@gmail.com, tzungbi@google.com,
- broonie@kernel.org, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, eason.yen@mediatek.com, perex@perex.cz,
- wim@linux-watchdog.org, linux@roeck-us.net
+Cc: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-09-27 at 18:31 +0800, Jiaxin Yu wrote:
-> Before regmap_reinit_cache we must reset audio regs as default values.
-> So we use reset controller unit(toprgu) to reset audio hw.
-> 
-> Signed-off-by: Jiaxin Yu <jiaxin.yu@mediatek.com>
+When trying to read the efuse of the RK3188 a segfault is raised when
+the following line is called in rockchip_rk3288_efuse_read:
 
+*buf++ = readb(efuse->base + REG_EFUSE_DOUT);
 
-This one looks good to me. You could add this if you want
+It appears that the problem here might be the use of readb, which I
+suspect is triggering an unaligned access. Changing this to readl
+resolves the issue (as is done in rockchip_rk3399_efuse_read).
 
+From 9923a6889aa325faf842a6757c9f9bd0f0195acb Mon Sep 17 00:00:00 2001
+From: Amr Bekhit <amr@helmpcb.com>
+Date: Sat, 5 Oct 2019 10:45:17 +0300
+Subject: [PATCH] Fix segfault in rockchip_rk3288_efuse_read by using readl
+ instead of readb when reading REG_EFUSE_DOUT.
 
-Reviewed-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
+Signed-off-by: Amr Bekhit <amr@helmpcb.com>
+---
+ drivers/nvmem/rockchip-efuse.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-
-Joe.C
-
-> ---
->  sound/soc/mediatek/mt8183/mt8183-afe-pcm.c | 15 +++++++++++++++
->  1 file changed, 15 insertions(+)
-> 
-> diff --git a/sound/soc/mediatek/mt8183/mt8183-afe-pcm.c b/sound/soc/mediatek/mt8183/mt8183-afe-pcm.c
-> index 4a31106d3471..721632386a50 100644
-> --- a/sound/soc/mediatek/mt8183/mt8183-afe-pcm.c
-> +++ b/sound/soc/mediatek/mt8183/mt8183-afe-pcm.c
-> @@ -11,6 +11,7 @@
->  #include <linux/of.h>
->  #include <linux/of_address.h>
->  #include <linux/pm_runtime.h>
-> +#include <linux/reset.h>
->  
->  #include "mt8183-afe-common.h"
->  #include "mt8183-afe-clk.h"
-> @@ -1089,6 +1090,7 @@ static int mt8183_afe_pcm_dev_probe(struct platform_device *pdev)
->  	struct mtk_base_afe *afe;
->  	struct mt8183_afe_private *afe_priv;
->  	struct device *dev;
-> +	struct reset_control *rstc;
->  	int i, irq_id, ret;
->  
->  	afe = devm_kzalloc(&pdev->dev, sizeof(*afe), GFP_KERNEL);
-> @@ -1126,6 +1128,19 @@ static int mt8183_afe_pcm_dev_probe(struct platform_device *pdev)
->  		return ret;
->  	}
->  
-> +	rstc = devm_reset_control_get(dev, "audiosys");
-> +	if (IS_ERR(rstc)) {
-> +		ret = PTR_ERR(rstc);
-> +		dev_err(dev, "could not get audiosys reset:%d\n", ret);
-> +		return ret;
-> +	}
-> +
-> +	ret = reset_control_reset(rstc);
-> +	if (ret) {
-> +		dev_err(dev, "failed to trigger audio reset:%d\n", ret);
-> +		return ret;
-> +	}
-> +
->  	/* enable clock for regcache get default value from hw */
->  	afe_priv->pm_runtime_bypass_reg_ctl = true;
->  	pm_runtime_get_sync(&pdev->dev);
-
-
+diff --git a/drivers/nvmem/rockchip-efuse.c b/drivers/nvmem/rockchip-efuse.c
+index e4579de5d014..f680a80d81cf 100644
+--- a/drivers/nvmem/rockchip-efuse.c
++++ b/drivers/nvmem/rockchip-efuse.c
+@@ -78,7 +78,7 @@ static int rockchip_rk3288_efuse_read(void *context,
+unsigned int offset,
+  writel(readl(efuse->base + REG_EFUSE_CTRL) |
+       RK3288_STROBE, efuse->base + REG_EFUSE_CTRL);
+  udelay(1);
+- *buf++ = readb(efuse->base + REG_EFUSE_DOUT);
++ *buf++ = readl(efuse->base + REG_EFUSE_DOUT);
+  writel(readl(efuse->base + REG_EFUSE_CTRL) &
+         (~RK3288_STROBE), efuse->base + REG_EFUSE_CTRL);
+  udelay(1);
+-- 
+2.20.1
 
 _______________________________________________
 linux-arm-kernel mailing list
