@@ -2,69 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE88CCCB2A
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  5 Oct 2019 18:36:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4028DCCB3D
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  5 Oct 2019 18:38:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QhaALonBm88JIWsQAP7+8LCwdQitEQKoTzMhQUXv1tw=; b=d0OhTRZT+sliNV
-	9AuzZ7RtGqts9J0pANYNv0BythIg4pEvf9xbypHwJfV8rzdLf/rufhHX7Jt3B475osSGO+2E6VlI9
-	sLptTit1PBkaVvw/32CrjvkHbHaS9lSObkHyoH7LvceccQsoDmEgcrzPxRqJ/e2tuntJ+N/q7LX71
-	ILAQzB2v3yTgWIy7EshbEuxCgnUMFOrPpl2uRQGOgjK7H2lwMPZ63giZetbcp6GjBmsYmU4NyIjlz
-	ATcp7ZOMQ/VTEeEGHQUAj3tO2tW3KpFB606ipYX8XUaYfl1+DLxtofAqw5riXlHuPV5eUJ2ZO5vwt
-	AtCewiZoDqc630OzZybw==;
+	List-Owner; bh=N5oX//kyFGAoUnz0jKBNF6aASUFOSteInMlMiU4gYRA=; b=Luibd4Uq6UR7A5
+	8w/TKB71/EI0vWkGDJ+rv7x9NOL41TlGgqP55nYINCdyQCRK06S43kWNqKRzPfsa84keT0qdguXGO
+	3iQmBB7l/iqFGKMP6m4YBX4TiwW3WV5uJcVGgT7LnlLye9nTGFZYkyI8XKwDWyBrZObdSG9pSc2UP
+	FZ6OWh4sPptBt+nZOwvCQTGJnI4ctiTWAblpTHqGc4DG6xtuZHdu3NIz+YBfZyTS2MVWUEe1ICYPa
+	rwR1iVz5rW0Wfmy3YRI2/EoCFNLvDJYdtp8dgdNic/asPmA+Y9Ty/vwUS7gusFd0+DJN3G3jBol/b
+	PHycIekGFKeI0BxlCQ7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGn2N-0006in-2j; Sat, 05 Oct 2019 16:36:07 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1iGn44-000712-G1; Sat, 05 Oct 2019 16:37:52 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGn2E-0006e9-Ja
- for linux-arm-kernel@lists.infradead.org; Sat, 05 Oct 2019 16:36:00 +0000
-Received: by mail-lf1-x143.google.com with SMTP id 72so6527925lfh.6
+ id 1iGn3v-00070b-R3
+ for linux-arm-kernel@lists.infradead.org; Sat, 05 Oct 2019 16:37:45 +0000
+Received: by mail-lj1-x241.google.com with SMTP id j19so9545047lja.1
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 05 Oct 2019 09:35:55 -0700 (PDT)
+ Sat, 05 Oct 2019 09:37:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Pn6mxtcEEEc3owMIwbkt2TQL3Wmbd6NRz2v8eZ+RVTk=;
- b=rpEtxSVEvEX2HhDQUFGyl3RdGfgjIagn3D9aobXi/wZtjscUnA1mkJD0kM3fiNupTG
- AfnKtyqJeYJ2uOTaQs6ySZeaNTCqFfo0/LKAfsZG6XIHVgRQWHGjbI4X+8tR86xbgh58
- UxZZo2Z8FOTYmp7b39uIYNs66Brkx9UEIKIyeGX7lge6cL6kKDMj9FaHEFKuhUJoIrou
- aEWJ35sYx+gYXF4Ss9Yohhnn31dOWy2cV94C52WosfyCgY4tR3/6M6q+HpHrqtJkL9IN
- V7orx4r/DU5hbKtRoeY/W3lxfG/Iy2raEXipla9KnUlwGY2BgV32P1ctLRpxvIGgWLm1
- qLAg==
+ :cc; bh=prTkz2BDct+kznOCTl84BP6+isxcds/VL5wpAYcwHBY=;
+ b=m2jT+U/AjYzHW1iLL25RrSATBB+XM5O+wb9pHkyxDDzOz+5wGDsqcWYu+xHIj20FMA
+ Xwu2HpckrIcTSmbFz4sWXa/wECnqJsrKouRHo8gp5QslS74mYPCyeObXJ6VxItdD/YOC
+ ce/yz+2TEzQmEUTxeWuakUD29l/+b5pbv0n+t/YNdn7lWrpgzfmUjaLRamPvaA81a1Zs
+ bTJLBgiswBGT+nqqJsALx6ClmKePzLHjFXqbmXRXKl4a6OgkzLIBLODmJg58g4XgC6Sg
+ 0fJZ8c+uj0/bGFwpeORcThh4OgIe4OKl4jO0bbkLdQx7LlUw15JmDX9Am5AL/OoEzK8b
+ kTsw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Pn6mxtcEEEc3owMIwbkt2TQL3Wmbd6NRz2v8eZ+RVTk=;
- b=uJ/LpID2A3nNqfqWBJO9VKgXJhqXcwVSxudIdnNoMBuwuBnIrn88cFygsK5KWa13Cw
- Ngwpe9ugpnZAtGtRUT48+XDglQJOajQxNUjWZ5NyGrKFuO/J1AKOih9K9f0yOdsE/it4
- lzKtUwOYd3gsUTmhR/ZD9BwS6N1jZPWVnenKqkL5lntIhd/AMG2mZLOaUvOPLHWJpfkc
- yVEXKy8L9A/Vjli4X4G4E83jeF9xKicQjl+qDQ1+ViHONPjUGnASNLXQHB3wdMkCyryu
- jb4EydJLqYDPcg05dpvYSHQHLO12k3FoMXFumRArjoXlx44M+GwW6EuzI8xWcORf2CRi
- J8Ww==
-X-Gm-Message-State: APjAAAUiX9cwrHYhvY9V+8O+v7lT/SToC9BY+J3vhmpFp9fWvAkXEPhJ
- /6MjtLwiUmKYayVUJOCFV57fI3xUzwKsfcvrO+Vssg==
-X-Google-Smtp-Source: APXvYqy99lBsuY63SZm1Hovkzqrn5mNe5uNYRXbJEe6kopZaSTzsWTlUs5zAiyKhJwvIMM8Ytt5JplveuThrYIBo6hg=
-X-Received: by 2002:a05:6512:25b:: with SMTP id
- b27mr12485234lfo.60.1570293354605; 
- Sat, 05 Oct 2019 09:35:54 -0700 (PDT)
+ bh=prTkz2BDct+kznOCTl84BP6+isxcds/VL5wpAYcwHBY=;
+ b=d6tZUpLsytyaWWOLFrlxWoWKbrFa5KFkTD5i6/xXKnP3zDcHg7A84NCSvY6ng8a2D2
+ rNPgww08mmcH4al6JOUWkND4d7BOqjpuhNDsvwuWSrufntEVs58dcda8NApGRQeDeAry
+ NzyNVCyHOyI/Ii1SrR8iw06au0OtZYH7WnwpmkDm6qsJfCHgBsQABIT4ZS6tGeB8Gem9
+ Ap00V7/ufYWPjzPfys89Jk4L4+DSKfjzYllwpDqYTHSQbS61bYGwkhapp6mQpb/iEBEf
+ 4/2qmjJFRBEfAa0r5zHWjsvG/PNubX6QTFHQsORwFM4s0r2aPE//a25Y3lzohlOuyhUM
+ v4gw==
+X-Gm-Message-State: APjAAAVBAqm0y9JO/YCUisWvwAitP1a5/IX6FsLJNQpZUqhD3Nwz1hFI
+ hars1HlLFclV5avjIkR9a+q3rh7hq/MhL1t2pcf/Ug==
+X-Google-Smtp-Source: APXvYqxZDMfqx8V17O+f48DGUFf1jTMmQs1PnbGuYwpAD58xGCuDybqkY6PymiQ5pg31cLHibQqXMFRqO2iNX6kIrBM=
+X-Received: by 2002:a2e:6344:: with SMTP id x65mr12909835ljb.59.1570293461231; 
+ Sat, 05 Oct 2019 09:37:41 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191003000310.17099-1-chris.packham@alliedtelesis.co.nz>
- <20191003000310.17099-2-chris.packham@alliedtelesis.co.nz>
-In-Reply-To: <20191003000310.17099-2-chris.packham@alliedtelesis.co.nz>
+ <20191003000310.17099-3-chris.packham@alliedtelesis.co.nz>
+In-Reply-To: <20191003000310.17099-3-chris.packham@alliedtelesis.co.nz>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Sat, 5 Oct 2019 18:35:43 +0200
-Message-ID: <CACRpkdbQapKs5f7=7U-=jRYN_CYQ4Rtrwrk_1nLwZJHD26bw2A@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] pinctrl: iproc: allow for error from
- platform_get_irq()
+Date: Sat, 5 Oct 2019 18:37:29 +0200
+Message-ID: <CACRpkdYuJgjLEbYVA-cVxyy6v-L8Hnf2kmZt3S72nFQnrrzMmA@mail.gmail.com>
+Subject: Re: [PATCH v2 2/2] pinctrl: iproc: use unique name for irq chip
 To: Chris Packham <chris.packham@alliedtelesis.co.nz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191005_093558_707156_17D82D25 
-X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-CacheID: sfid-20191005_093743_884336_10239DBC 
+X-CRM114-Status: UNSURE (   8.90  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -72,7 +70,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,13 +107,12 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Thu, Oct 3, 2019 at 2:03 AM Chris Packham
 <chris.packham@alliedtelesis.co.nz> wrote:
 
-> platform_get_irq() can return an error code. Allow for this when getting
-> the irq.
+> Use the dev_name(dev) for the irqc->name so that we get unique names
+> when we have multiple instances of this driver.
 >
-> Fixes: 6f265e5d4da7 ("pinctrl: bcm-iproc: Pass irqchip when adding gpiochip")
 > Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
 
-Patch applied for fixes.
+Patch applied.
 
 Yours,
 Linus Walleij
