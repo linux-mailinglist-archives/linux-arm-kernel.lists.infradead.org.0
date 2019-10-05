@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 834E3CCA74
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  5 Oct 2019 16:28:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE633CCA79
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  5 Oct 2019 16:30:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IGkjiqZq7bUZiN5n8icUL32GwfU19z56njwpYDWy14Q=; b=eEXk00wZiJsVFr
-	H/rHSmt1Xs/A4k8qW8aGffGHqfRz/woHLElvD1AzLa26xGZln7Zn0z/z66rmNpoDDjkSTIRhN8cRZ
-	FxaYph5F4Tljc3y1YCx89HDeE0MsAEtWh4hq9GfjFViP/iHTBFkTydI1LuL2Bhk3Cz1Q2UlcNqkry
-	KtEuHP7GgD8RZh5OL6KvETlTPHWL15SI6rkx/LlqXNuoA70jKXRe6LbyvOSqQt/kZJEZJNyCyMlQb
-	Cn+Ht2/xb1j+nXlLvvVFeL0zYJyJqA1aXsBhxOGvNjWmUIUsS4eDrtJJb6MjEkB8F9+SRIG7sGMS2
-	7r0WU5H9oQKRfnpD2Y9g==;
+	List-Owner; bh=PBly4hJgSjrLQDnPzQyiasoT0hMHCs3+aPneNZ0PD2A=; b=aJYwruI/fGz/4C
+	apamHCtcFPouPT/aqIBM5NO52/xnQdWRF3j/kNy8ObeGK8wmMTnZJrAn3FT5eGRe6srd22mykqQvi
+	5Ag36CSgEm8WHoIqUWvcJhgkLQT9ineoZVphqKrFxO6nKrBkyqT+Y2EcYUjJMbjaVk8TjJ2YcxAyK
+	DI6mfWOUISnWV9yFhprIEkMEh0a282fWrZ+KPcqhbKYPjkm2frkO/Oh1oD1Z7LhtfvZgdgpK5srFw
+	EEqGcbpcW9xG/1KlIczWylPnuoAXcC2YR9+kvsRiOwokp+9+wsn6OkbX6nXr8xrqzFXI8bLALw2A5
+	HhdFzpb54G3GgmZ3cilA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGl2q-0008O9-Pi; Sat, 05 Oct 2019 14:28:28 +0000
+	id 1iGl4I-0000E2-7f; Sat, 05 Oct 2019 14:29:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGl2i-0008Nk-Ip
- for linux-arm-kernel@lists.infradead.org; Sat, 05 Oct 2019 14:28:21 +0000
+ id 1iGl4A-0000DM-IC
+ for linux-arm-kernel@lists.infradead.org; Sat, 05 Oct 2019 14:29:51 +0000
 Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
  [82.4.196.95])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4759520867;
- Sat,  5 Oct 2019 14:28:18 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8756720867;
+ Sat,  5 Oct 2019 14:29:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570285700;
- bh=0HytaZ1Qi8pY6GlOq+DBjycReyqLhaTKhTi+ABILHH0=;
+ s=default; t=1570285790;
+ bh=gTTOXZzJ7SZUwzYSIK7oby/7p3yeI1CkELSTEhee4cM=;
  h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=1vFSC5X6EvPe318HJvAuNvuIcag3zPq2fH5UP82biM+c8M0DRehQvabjwK/gJLTgm
- mup0Lv5VnlXBVgRXlu87Wd+s148f4hdWuwLVz/o51x5Ebrs1yZeZrigSynKzes/znX
- JmEwbrVbV2XQE3Q1NaxciA/Wk4W/Y72XY4mDzkQk=
-Date: Sat, 5 Oct 2019 15:28:14 +0100
+ b=BHmXTlF4+DYLAxXhoKZ7K2WthP1055bfqWZcafwpN51LftwPicjUHlqNNzdaDN//X
+ ljeL9lw44bRUEhLyXVzfedzS8VlqAE7gy0nqSi0XYefaTl354dJomJzl5yHzv4SeH6
+ 9c3V/trApYfmXIyH5lycz+DMl1Q70bP9sTbpSK4M=
+Date: Sat, 5 Oct 2019 15:29:45 +0100
 From: Jonathan Cameron <jic23@kernel.org>
 To: William Breathitt Gray <vilhelm.gray@gmail.com>
-Subject: Re: [PATCH] counter: stm32-timer-cnt: fix a kernel-doc warning
-Message-ID: <20191005152805.49eec3b8@archlinux>
-In-Reply-To: <20190925235310.GD14133@icarus>
-References: <1568809323-26079-1-git-send-email-fabrice.gasnier@st.com>
- <20190925234927.GB14133@icarus> <20190925235310.GD14133@icarus>
+Subject: Re: [PATCH] counter: stm32-lptimer-cnt: fix a kernel-doc warning
+Message-ID: <20191005152933.7920455d@archlinux>
+In-Reply-To: <20190925235112.GC14133@icarus>
+References: <1568809361-26157-1-git-send-email-fabrice.gasnier@st.com>
+ <20190925235112.GC14133@icarus>
 X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191005_072820_638425_DC68B560 
-X-CRM114-Status: GOOD (  17.07  )
+X-CRM114-CacheID: sfid-20191005_072950_622736_DA79772E 
+X-CRM114-Status: GOOD (  15.82  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,56 +86,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 25 Sep 2019 19:53:10 -0400
+On Wed, 25 Sep 2019 19:51:12 -0400
 William Breathitt Gray <vilhelm.gray@gmail.com> wrote:
 
-> On Wed, Sep 25, 2019 at 07:49:27PM -0400, William Breathitt Gray wrote:
-> > On Wed, Sep 18, 2019 at 02:22:03PM +0200, Fabrice Gasnier wrote:  
-> > > Fix the following warning when documentation is built:
-> > > drivers/counter/stm32-timer-cnt.c:37: warning: cannot understand function
-> > > prototype: 'enum stm32_count_function'
-> > > 
-> > > Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
-> > > ---
-> > >  drivers/counter/stm32-timer-cnt.c | 2 +-
-> > >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > > 
-> > > diff --git a/drivers/counter/stm32-timer-cnt.c b/drivers/counter/stm32-timer-cnt.c
-> > > index 644ba18..e425dd1 100644
-> > > --- a/drivers/counter/stm32-timer-cnt.c
-> > > +++ b/drivers/counter/stm32-timer-cnt.c
-> > > @@ -28,7 +28,7 @@ struct stm32_timer_cnt {
-> > >  };
-> > >  
-> > >  /**
-> > > - * stm32_count_function - enumerates stm32 timer counter encoder modes
-> > > + * enum stm32_count_function - enumerates stm32 timer counter encoder modes
-> > >   * @STM32_COUNT_SLAVE_MODE_DISABLED: counts on internal clock when CEN=1
-> > >   * @STM32_COUNT_ENCODER_MODE_1: counts TI1FP1 edges, depending on TI2FP2 level
-> > >   * @STM32_COUNT_ENCODER_MODE_2: counts TI2FP2 edges, depending on TI1FP1 level
-> > > -- 
-> > > 2.7.4  
+> On Wed, Sep 18, 2019 at 02:22:41PM +0200, Fabrice Gasnier wrote:
+> > Fix the following warnings when documentation is built:
+> > drivers/counter/stm32-lptimer-cnt.c:354: warning: cannot understand
+> > function prototype: 'enum stm32_lptim_cnt_function'
 > > 
-> > Fixes: 597f55e3f36c ("counter: stm32-lptimer: add counter device")
+> > Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+> > ---
+> >  drivers/counter/stm32-lptimer-cnt.c | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
 > > 
-> > Jonathan, please pick this fix up through IIO.
-> > 
-> > Thanks,
-> > 
-> > William Breathitt Gray  
+> > diff --git a/drivers/counter/stm32-lptimer-cnt.c b/drivers/counter/stm32-lptimer-cnt.c
+> > index bbc930a..28b6364 100644
+> > --- a/drivers/counter/stm32-lptimer-cnt.c
+> > +++ b/drivers/counter/stm32-lptimer-cnt.c
+> > @@ -347,7 +347,7 @@ static const struct iio_chan_spec stm32_lptim_cnt_channels = {
+> >  };
+> >  
+> >  /**
+> > - * stm32_lptim_cnt_function - enumerates stm32 LPTimer counter & encoder modes
+> > + * enum stm32_lptim_cnt_function - enumerates LPTimer counter & encoder modes
+> >   * @STM32_LPTIM_COUNTER_INCREASE: up count on IN1 rising, falling or both edges
+> >   * @STM32_LPTIM_ENCODER_BOTH_EDGE: count on both edges (IN1 & IN2 quadrature)
+> >   */
+> > -- 
+> > 2.7.4  
 > 
-> Sorry, that's the wrong Fixes line. Here's the right one:
+> Fixes: 597f55e3f36c ("counter: stm32-lptimer: add counter device")
 > 
-> Fixes: ad29937e206f ("counter: Add STM32 Timer quadrature encoder")
+> Jonathan, please pick this fix up through IIO.
+> 
+> Thanks,
 > 
 > William Breathitt Gray
-I've picked it up, but please be more formal and also give an
-Acked-by: in future.
+Applied to the togreg branch of iio.git and pushed out as testing.
 
-Applied to the togreg branch of iio.git and pushed out as testing though
-I doubt automatic testing of kernel-doc is occurring.
-
-Thanks,
+thanks,
 
 Jonathan
 
