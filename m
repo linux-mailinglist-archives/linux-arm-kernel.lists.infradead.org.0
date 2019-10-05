@@ -2,126 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 491D6CC75A
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  5 Oct 2019 04:13:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC779CC798
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  5 Oct 2019 06:02:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vU2fM3NDN/DGjIk+zObR5SJuK9PDJuIcNptlin9Khao=; b=TZUla/ejP3nZQ0
-	AMUjp1d1ho/E0K26WZB9szMVVpigZ8Z67msOSCLks34xzHygWGzZaKrIvf7kTwK42XzcmkFg+XZwL
-	LkYi10ahMKkWdSLx4+ur/TZRGDbbLTLuuoRzMaAIX0Ye25Jz5Cx09RO2JpTV3qwxAqIIGSn2KdPgs
-	DThp5WdFuJ9Dg/kEMDSTg6VJFGXmhMaFOjxu6grQlMMWod4QoKEEDQjQNOedmAIrWYn6hiN2HBX6Y
-	x7RgsZRvzCL7MniH9bEX1gDqfpzksQWAZdOt5bVxWu7K/49Pmf4yLhsh0j7xBwJjMif26epcoTaAD
-	n20Y0RqxiD3AxV9IBoAw==;
+	List-Owner; bh=Fu0uJzJaHL76JEOUvR8wNEcdIYeUxhnCPKXait/CL/8=; b=r96DVbhuEFiLPd
+	obSGRJlwoeE5bEsfdktbh3z3vB56upYc9Wm/YAJFpOZSXjlfaaISD1jdIGcJBf809fhTgVi6QMQmv
+	sYPQJSok4yvR1XJkRZ+98MZLW3YwLB+TpaA668lkOkFqzgMpdU5ifffUbPD0JP6qleNUIo+097Pai
+	8IegrYZrgTOYDDBhaURA5VmviLx7oolX25yPKWhl0g+I/VPCCFDQjQscLyhe/zr1Vm2+id/+KLxZm
+	oAuPdaJcBGcscoaNeKeEG4kJ4y7U+vcC+HegufvjGIHU53Mdk+6iJPSC2wERy3aGhIAlAOBxs2QMi
+	FiKioXnAafI+qHX3Nteg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGZYo-0001jq-CX; Sat, 05 Oct 2019 02:12:42 +0000
-Received: from esa2.hgst.iphmx.com ([68.232.143.124])
+	id 1iGbGV-0000Ka-76; Sat, 05 Oct 2019 04:01:55 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGZYf-0001jM-It; Sat, 05 Oct 2019 02:12:35 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1570241571; x=1601777571;
- h=from:to:cc:subject:date:message-id:references:
- in-reply-to:content-id:content-transfer-encoding: mime-version;
- bh=5eMWim/lCqIjWUj+ATIls1k4bz5YIwKirCHBB2mppjU=;
- b=EsQx4S3W4th0PU81HOoXl0owVL1bVN2XCvYIzRIRSx15wdKhtqU2w4fM
- hJNx3wkvoorYRLwRTPXnDL3m93QuM6Zz1OlLEA+O7y4q1lw1HpO9Lxxe2
- 2WSMZukPFYbgU4E4E/ob+CVHcyzeRXAhq62siKgf4LmA2xDmxq2du0Tzt
- EsHriF4dx069uoWVCp2brdjlN3R8G6FXMICfI0HQghPKb5sciOVm7JQyI
- BSwQwQfoLp1Cb6S8nJRkj4keC4vH6WcgtJFV8quZto6zDiXsRH2youndT
- V/0ReKfkumoeZEnNJvmqqyaetLaL71E5JasrH+QMrQ6rkbQV5+aNfo6nh w==;
-IronPort-SDR: Ekkj5TfcM5Ty/BG2XWlw1MdkfkanhEtXdfJw/Ie78KVOoPi22/PvuhoktGwVN+eOWpt3liK0WO
- 1Oa/y8fkEcozEvMscQnRDL5ISxDbWv7w/2j489+WPoOYrJcmlB9gC8tbJm2mPJayoaZKYShiv3
- dLBYJgsEjea1AW0RXX37lDn3Cm/QKS5kyaK/9Crv/W0x50zArn/pIOVJmy/drbBRjS3zvrkYfO
- uThME6t27t4MPJr/JSv/Rs02HyEfucnQa0XaGqT9IB+UhKeCbyzF+ID1YgE+XzA3L+/u1NeINs
- 8Hs=
-X-IronPort-AV: E=Sophos;i="5.67,258,1566835200"; d="scan'208";a="220792529"
-Received: from mail-dm3nam05lp2057.outbound.protection.outlook.com (HELO
- NAM05-DM3-obe.outbound.protection.outlook.com) ([104.47.49.57])
- by ob1.hgst.iphmx.com with ESMTP; 05 Oct 2019 10:12:39 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=WVlIzbKMRYU+2xpl9KJIQ52ZdgR61AE7GuvcesVPGsD96wUfEas2nw7pe+Ym+NxcQY8wN0hWLIKP+aJ7wWktV8s59Mg0T3GXO1JVucffw9kkHO/QxendfX2G0FWVshGFRauS3gIt5sVXYCtVf9hQjDnGOCsBt6mLFVNsBgyGfIU4aZvLPvtfJs0U/q2uQS8P8kYNwdMXC466CuVb32PyyYR5sNYo/VS8Mdw8iUJbwT66zOs26LJZDpyPMBwNCKI/4CqLcy2d5P+J4uc24l2d3GLaypIJQxo4zHg7CIqxz2cscTCq6ke8K7n5XC/uuw9d5xLKBOx2QXiZ5rX5Y6f7gg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5eMWim/lCqIjWUj+ATIls1k4bz5YIwKirCHBB2mppjU=;
- b=mY1842c1sIKgSfb3nYExWVVZZ9xCyk3f67685d47N2xz8+uCfoIxxc7Yc7jrV+E3TEuFXISUjOmtTHK99RIMUsAuZT8tnddpZKvQUzLTDePXKA9MT0Ua1W963cKLYXr10ULE+92ljLbNYY8vXyPUdQT39+aho/tPRn4Rh710Z/wvXpuJwGFF9ahN3IPkZA2Vw6/nD9/SerQ/VUUoDdLlQC3SAO+S9ifALt/cCOLCLr/+3/pi2TcgHO4FXSStFY6OoL5ChKlAlO2LgVd4vEiEPPGlM2D9ps+5p1m3RxhDeJcxirWZTZ3dAJr266FGLfsINGE/ruo/9hwdowI46aOCOQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
- header.d=wdc.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5eMWim/lCqIjWUj+ATIls1k4bz5YIwKirCHBB2mppjU=;
- b=Z/0Mrs8X7F/pLGaMR2nPNZKO3Lukl1GyaaEs8tKzznTUXm+zc6YyO+FT0x7hwjFj8Wm4mLBcsY357uztpHmS3Ajrjz4gfyDsS76m/EHFQPhR1wmvqSVzUmK0OK0wnq6A9VgUOCJ14ghVs6WSsEykxlOvsSl0OXGk2jq9YRJtHwY=
-Received: from BYAPR04MB3990.namprd04.prod.outlook.com (52.135.215.29) by
- BYAPR04MB4600.namprd04.prod.outlook.com (52.135.238.77) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2305.20; Sat, 5 Oct 2019 02:12:24 +0000
-Received: from BYAPR04MB3990.namprd04.prod.outlook.com
- ([fe80::a50d:40a0:cd7b:acbc]) by BYAPR04MB3990.namprd04.prod.outlook.com
- ([fe80::a50d:40a0:cd7b:acbc%5]) with mapi id 15.20.2305.023; Sat, 5 Oct 2019
- 02:12:24 +0000
-From: Atish Patra <Atish.Patra@wdc.com>
-To: "alex@ghiti.fr" <alex@ghiti.fr>, "akpm@linux-foundation.org"
- <akpm@linux-foundation.org>
-Subject: Re: [PATCH v6 14/14] riscv: Make mmap allocation top-down by default
-Thread-Topic: [PATCH v6 14/14] riscv: Make mmap allocation top-down by default
-Thread-Index: AQHVTbNRR2y1x3jR5Uinm4nvlyFP7KdLqT4A
-Date: Sat, 5 Oct 2019 02:12:24 +0000
-Message-ID: <208433f810b5b07b1e679d7eedb028697dff851b.camel@wdc.com>
-References: <20190808061756.19712-1-alex@ghiti.fr>
- <20190808061756.19712-15-alex@ghiti.fr>
-In-Reply-To: <20190808061756.19712-15-alex@ghiti.fr>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Atish.Patra@wdc.com; 
-x-originating-ip: [199.255.44.250]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 452ee4fd-91ab-4284-87e7-08d749397659
-x-ms-office365-filtering-ht: Tenant
-x-ms-traffictypediagnostic: BYAPR04MB4600:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <BYAPR04MB46000C96EABBBD47E1E2527AFA990@BYAPR04MB4600.namprd04.prod.outlook.com>
-wdcipoutbound: EOP-TRUE
-x-ms-oob-tlc-oobclassifiers: OLM:6108;
-x-forefront-prvs: 0181F4652A
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(136003)(376002)(346002)(396003)(39860400002)(366004)(189003)(199004)(99286004)(76116006)(76176011)(6436002)(6116002)(7736002)(3846002)(36756003)(25786009)(4326008)(6512007)(66476007)(186003)(66446008)(66946007)(64756008)(66556008)(7416002)(118296001)(6246003)(6506007)(2501003)(26005)(6306002)(6486002)(8936002)(256004)(14444005)(305945005)(81156014)(81166006)(8676002)(54906003)(446003)(71190400001)(478600001)(316002)(966005)(102836004)(86362001)(14454004)(2906002)(110136005)(2616005)(486006)(476003)(66066001)(11346002)(71200400001)(229853002)(5660300002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BYAPR04MB4600;
- H:BYAPR04MB3990.namprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: b20dsy7pZLswF8sxjSfhd9+Nsm+2XoSY2c33jt69e8VfuV5uIF542XW6osKCyWxpeUiDf7Bx9GRYBzHRbZaYruZF8IWGBdtF1sfIH2vE+W+N/U0Ex993Yiaze7xD60iHKmqgrudqWKC2vBiOHnFmNqReswfTEKM4MTlgJ3LXBlzkZo6MF/WfqV9lJq1fIXZa+MRYi/43ZQW4OuQFsmzWIc9OHImqoomVsWrK7+ZsR0xMXPyjwSuhJbqsPM2n3E/XiCsdW1Of9PT2LIDst4PuSbbz3d6cPRzp+EQAJmHpBMTiyJ/MKHwTF6C2PL1TZkNEPBdsgDJDBlOsYYIPEt5FJf+zyYS6pw13IsEiiAn6s2wvV8Dv1paba0ELdPfYd4Y5bwzFGhQErd+3SkzC32Qn7mPXYdZPDpCtjcNy3J9i3CIyn55ycEaQGitG9QeAOTDW9GCDeYITMmTsBrBQh4xQiA==
-x-ms-exchange-transport-forked: True
-Content-ID: <FFED4E82ECE00245AE9518517225E0A1@namprd04.prod.outlook.com>
+ id 1iGbGO-0000K2-PE
+ for linux-arm-kernel@lists.infradead.org; Sat, 05 Oct 2019 04:01:50 +0000
+Received: by mail-pl1-x641.google.com with SMTP id c3so2579099plo.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 04 Oct 2019 21:01:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=x5hylgRMeRU8L9fHC/1Fb4E//rkwEdbksV9F9/mIRbA=;
+ b=ZL7XnJSQG3L3uQDFU4czS6QDWOm9UGODjWe8twIXjS5XOj1lqsERlLXOaoDIskWGHy
+ 6z/Yzl09u40RoGg6/DCOkTTjF7lInbF2TxUcC+T5yOmiAEj5FKYFD/o/Qv9gQwrXS58k
+ JQgHmXH4W8zDjaGy8RSBw6Qc3w/bz/QINI7yzHkQJQ9loIb6Bhq7nWT77w/93ft2RKAf
+ 2XeffjCIgE4yaQLDp3/l/RR/3gpii0MEEisdFjwkwaxU3g1fVr82cbaA+jZan2I57qNm
+ sMjR/wxk592/TM9Gkp4YJbWYbTizqQBa0gkDJKniwRn+wal86zZFwUemuzGKQ88QRnPC
+ dXSw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=x5hylgRMeRU8L9fHC/1Fb4E//rkwEdbksV9F9/mIRbA=;
+ b=ZRsJT3nuGitAHdjAhZOL1uN5lTBvRBsAJQXe4hBs7te/XLajzOMIXTh1wZJCz822LX
+ En5+cHnDWlwtv1s7x51OLyPjw66QigEhrywI6R0swiNCAtylFq1vKckQ4faTY5RTcSfY
+ ueu//3i4hGXIfcHJlR/GpQ2zWhBYocB28IJYdDL+gGxGPYw5nMnJWr8PTj/2uzEr/Fmo
+ Etk+swV37NokPebytLZ8D5tjAKdO4kCPsk4VRzB6/oVNlyfN0tT4UL4jyBJt5TzqYE/G
+ Z5J+7bqahkDmBaXgar6SGsMUdOPB9/GbHSS6wxTXy0myb5dP1zDoVvH4Qsa28IEq1ws4
+ geJQ==
+X-Gm-Message-State: APjAAAWPSuDM+UUeKJZXrs8UIYB7YjBB2MFhlflm51bihEbGm8OXheHq
+ tNeliTHD+kuXqV0mPOIzItRoUg==
+X-Google-Smtp-Source: APXvYqwtVfC9awsCX31ooNBVQ9ZPETZdMu5K40YYblKAeEdWHBXOtuqnI4Fa/lwyS5uv0R5M4KJ3+A==
+X-Received: by 2002:a17:902:bb89:: with SMTP id
+ m9mr18180654pls.315.1570248102165; 
+ Fri, 04 Oct 2019 21:01:42 -0700 (PDT)
+Received: from tuxbook-pro (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id f12sm6064016pgo.85.2019.10.04.21.01.40
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 04 Oct 2019 21:01:41 -0700 (PDT)
+Date: Fri, 4 Oct 2019 21:01:39 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Baolin Wang <baolin.wang@linaro.org>
+Subject: Re: [PATCH 0/3] Optimize the u8500_hsem hwlock driver
+Message-ID: <20191005040139.GA5189@tuxbook-pro>
+References: <cover.1569572448.git.baolin.wang@linaro.org>
 MIME-Version: 1.0
-X-OriginatorOrg: wdc.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 452ee4fd-91ab-4284-87e7-08d749397659
-X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Oct 2019 02:12:24.1448 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: vGRC7dpToUL2Ds0rQys+afnvRPFjCqe6YceNUn8YChJOgXhaoEaLaT6+xzxMTpnkUGJT6IfEnE5ybfY+wB0ACw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR04MB4600
+Content-Disposition: inline
+In-Reply-To: <cover.1569572448.git.baolin.wang@linaro.org>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_191233_692310_E6B2C875 
-X-CRM114-Status: GOOD (  16.87  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191004_210148_882596_E5FC6C8A 
+X-CRM114-Status: GOOD (  10.92  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.143.124 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -142,115 +99,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "aou@eecs.berkeley.edu" <aou@eecs.berkeley.edu>,
- "keescook@chromium.org" <keescook@chromium.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "palmer@sifive.com" <palmer@sifive.com>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "ralf@linux-mips.org" <ralf@linux-mips.org>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>,
- "paul.burton@mips.com" <paul.burton@mips.com>,
- "viro@zeniv.linux.org.uk" <viro@zeniv.linux.org.uk>,
- "paul.walmsley@sifive.com" <paul.walmsley@sifive.com>,
- "jhogan@kernel.org" <jhogan@kernel.org>,
- "linux-fsdevel@vger.kernel.org" <linux-fsdevel@vger.kernel.org>,
- "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
- "hch@lst.de" <hch@lst.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "mcgrof@kernel.org" <mcgrof@kernel.org>
+Cc: ohad@wizery.com, linus.walleij@linaro.org, linux-remoteproc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2019-08-08 at 02:17 -0400, Alexandre Ghiti wrote:
-> In order to avoid wasting user address space by using bottom-up mmap
-> allocation scheme, prefer top-down scheme when possible.
-> 
-> Before:
-> root@qemuriscv64:~# cat /proc/self/maps
-> 00010000-00016000 r-xp 00000000 fe:00 6389       /bin/cat.coreutils
-> 00016000-00017000 r--p 00005000 fe:00 6389       /bin/cat.coreutils
-> 00017000-00018000 rw-p 00006000 fe:00 6389       /bin/cat.coreutils
-> 00018000-00039000 rw-p 00000000 00:00 0          [heap]
-> 1555556000-155556d000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
-> 155556d000-155556e000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
-> 155556e000-155556f000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
-> 155556f000-1555570000 rw-p 00000000 00:00 0
-> 1555570000-1555572000 r-xp 00000000 00:00 0      [vdso]
-> 1555574000-1555576000 rw-p 00000000 00:00 0
-> 1555576000-1555674000 r-xp 00000000 fe:00 7187   /lib/libc-2.28.so
-> 1555674000-1555678000 r--p 000fd000 fe:00 7187   /lib/libc-2.28.so
-> 1555678000-155567a000 rw-p 00101000 fe:00 7187   /lib/libc-2.28.so
-> 155567a000-15556a0000 rw-p 00000000 00:00 0
-> 3fffb90000-3fffbb1000 rw-p 00000000 00:00 0      [stack]
-> 
-> After:
-> root@qemuriscv64:~# cat /proc/self/maps
-> 00010000-00016000 r-xp 00000000 fe:00 6389       /bin/cat.coreutils
-> 00016000-00017000 r--p 00005000 fe:00 6389       /bin/cat.coreutils
-> 00017000-00018000 rw-p 00006000 fe:00 6389       /bin/cat.coreutils
-> 2de81000-2dea2000 rw-p 00000000 00:00 0          [heap]
-> 3ff7eb6000-3ff7ed8000 rw-p 00000000 00:00 0
-> 3ff7ed8000-3ff7fd6000 r-xp 00000000 fe:00 7187   /lib/libc-2.28.so
-> 3ff7fd6000-3ff7fda000 r--p 000fd000 fe:00 7187   /lib/libc-2.28.so
-> 3ff7fda000-3ff7fdc000 rw-p 00101000 fe:00 7187   /lib/libc-2.28.so
-> 3ff7fdc000-3ff7fe2000 rw-p 00000000 00:00 0
-> 3ff7fe4000-3ff7fe6000 r-xp 00000000 00:00 0      [vdso]
-> 3ff7fe6000-3ff7ffd000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
-> 3ff7ffd000-3ff7ffe000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
-> 3ff7ffe000-3ff7fff000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
-> 3ff7fff000-3ff8000000 rw-p 00000000 00:00 0
-> 3fff888000-3fff8a9000 rw-p 00000000 00:00 0      [stack]
-> 
-> Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
-> Acked-by: Paul Walmsley <paul.walmsley@sifive.com>
-> Reviewed-by: Christoph Hellwig <hch@lst.de>
-> Reviewed-by: Kees Cook <keescook@chromium.org>
-> Reviewed-by: Luis Chamberlain <mcgrof@kernel.org>
-> ---
->  arch/riscv/Kconfig | 12 ++++++++++++
->  1 file changed, 12 insertions(+)
-> 
-> diff --git a/arch/riscv/Kconfig b/arch/riscv/Kconfig
-> index 59a4727ecd6c..87dc5370becb 100644
-> --- a/arch/riscv/Kconfig
-> +++ b/arch/riscv/Kconfig
-> @@ -54,6 +54,18 @@ config RISCV
->  	select EDAC_SUPPORT
->  	select ARCH_HAS_GIGANTIC_PAGE
->  	select ARCH_WANT_HUGE_PMD_SHARE if 64BIT
-> +	select ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT if MMU
-> +	select HAVE_ARCH_MMAP_RND_BITS
-> +
-> +config ARCH_MMAP_RND_BITS_MIN
-> +	default 18 if 64BIT
-> +	default 8
-> +
-> +# max bits determined by the following formula:
-> +#  VA_BITS - PAGE_SHIFT - 3
-> +config ARCH_MMAP_RND_BITS_MAX
-> +	default 24 if 64BIT # SV39 based
-> +	default 17
->  
->  config MMU
->  	def_bool y
+On Fri 27 Sep 01:27 PDT 2019, Baolin Wang wrote:
 
-With this patch, I am not able to boot a Fedora Linux(a Gnome desktop
-image) on RISC-V hardware (Unleashed + Microsemi Expansion board). The
-booting gets stuck right after systemd starts.
+> This patch set did some Optimization with changing to use devm_xxx()
+> APIs to simplify the code and make code more readable.
+> 
 
-https://paste.fedoraproject.org/paste/TOrUMqqKH-pGFX7CnfajDg
+Applied, with Linus' r-b
 
-Reverting just this patch allow to boot Fedora successfully on specific
-RISC-V hardware. I have not root caused the issue but it looks like it
-might have messed userpsace mapping.
+Thanks,
+Bjorn
 
--- 
-Regards,
-Atish
+> Baolin Wang (3):
+>   hwspinlock: u8500_hsem: Change to use
+>     devm_platform_ioremap_resource()
+>   hwspinlock: u8500_hsem: Use devm_kzalloc() to allocate memory
+>   hwspinlock: u8500_hsem: Use devm_hwspin_lock_register() to register
+>     hwlock controller
+> 
+>  drivers/hwspinlock/u8500_hsem.c |   46 +++++++++++----------------------------
+>  1 file changed, 13 insertions(+), 33 deletions(-)
+> 
+> -- 
+> 1.7.9.5
+> 
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
