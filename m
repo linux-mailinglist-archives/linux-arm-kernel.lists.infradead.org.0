@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F448CC907
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  5 Oct 2019 11:18:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2689CC90A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  5 Oct 2019 11:19:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,52 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=xpI4AmKEPTaBf+ubyMFKDTCSIz01Y6YF8SiFng7Y+hw=; b=MyheofEgaxBWWZy1XXaijg6z0e
-	0hQjUP128vlKuZa4fCpcc3yaYExHq9ZkdrVPqfCwrHGQZS/QZnNtBpmtbTsZezesVgXWyCdPYH/Wj
-	gStWjf2xXv1+qaXnV/68G3sUx3goEzHbSMEMJwVYkbIv04EqxaEPIOkS/aePlc9vBTdObXiOi03Pq
-	fHlmtYSW97Lh6A3GNIXGipd0ntepb9kVLY3FR+ts7vH2Ongfin89AyTt2+9X6xVq87i/H7fDR4WrC
-	kp+POkRAyKEdZOQH0C1zlF3pjQew42TkWorsk2f6L+2u5SDcb0qEVlHfmVPAUmecN0f75sxhvfLf5
-	xpRjwAJQ==;
+	bh=trwjymbHDFm1gJ9dyW//i7A+Zce4rQKsii2Fn+kNKoU=; b=jbV82jkQ3Agy1wQIp+SZAi6oFx
+	+UnDNrF4NHWgtpHMno6FtarXkVGh6qn/+n/QUdQ3BAf3N8zm4sQj9JcqLQe/D/JRda1L0jVMRbdy4
+	SqtdFcTzZkee0b9JdrDZuSKql7SqzKp6QfH/QDDnswHJSC2t9amwAXEYVDXnu4CkoJEj6sjEwYrRI
+	RQBsLKzpNAVcV4qJ8E4Sr8eKmb4RhSNP1nYg9B6P+zbjICaxRAyzWLYgPSNNZqAC3mcIO+avvuSyI
+	Hiy2E5tMH+5fd8Sbk+Z80UhhT1evdYdcFdJetxUpWq+kbRM3EznI8leFnBneyIjhbZ/eCZ9817kBJ
+	cYZKayDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGgDI-0004tO-4K; Sat, 05 Oct 2019 09:18:56 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1iGgDY-00058X-4m; Sat, 05 Oct 2019 09:19:12 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGgBU-0003ma-O8
- for linux-arm-kernel@lists.infradead.org; Sat, 05 Oct 2019 09:17:06 +0000
-Received: by mail-qt1-x843.google.com with SMTP id r5so12215569qtd.0
+ id 1iGgBb-0003qW-Sz
+ for linux-arm-kernel@lists.infradead.org; Sat, 05 Oct 2019 09:17:16 +0000
+Received: by mail-qk1-x743.google.com with SMTP id u22so8138058qkk.11
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 05 Oct 2019 02:17:04 -0700 (PDT)
+ Sat, 05 Oct 2019 02:17:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=vKe+RbONBbtsSEscZalEdBXt7OSCg1h7S1CJqx/C4I8=;
- b=Lm4kUtl9jA8j3ivLXcwP7K8BKLshypBI7RUHI3Xnzp7uCFEVJ3bgfDM7PRxQ2xRR1A
- V7kogDQ8J4+eAxu7HQnZr/qR/ksOvQx1SbfHz/seX56uN8psAmwiUNzX1L37RZEcECWP
- f+Xgbx030dGDRJIlBHVcsUUOCQFp3wp7uL1JG4hvgHgCp/CcQ1O7DjLD6YjjYwsz52CM
- sl3ILW23Qzqv/9LygkMFvn2N98i7cfWmhCY9qfgA56jTK6qdReAn7tZai08jasMpKUqh
- zHYeB9WQJlMFiz7EGV8RybsYir+NRZlUH25ythvFOq5FltlsayVh7HetjDT4momcDcKI
- BTpQ==
+ bh=MASENXtjvjrGt9RAiM0XMBiZxBBH7YBJCk7GCr7TS68=;
+ b=BOZAQaCtY3VPwH+2WpEjt6kSfv/nQ8w6QKgJreO5w8ha6Xch0n3Gz1CSS4U+u65pnF
+ qjwyPDVvQd5HttZYsi6omNZiaPcmbInsUs9rDSDwQeDwKbbBAM547VNDrnk+HRFifbRI
+ k2idWM85mMwtcLNM/GiWrYbEstXYFyFTGBIp7IPWVnyz2ItuUZdsWfftzgAolt81wQiV
+ /zJq4O79Y7ezXfnqwNAG0SHpsI3FvqEh65vnZkG9GRW3B+o2zgFyNJRMKZo7k3Oz1YmV
+ KwCc55v63Likpj+nSVG2NPQJmbDLO1HRr1afjRQnfKieML/oAJXkHTjNZOgwuM+5snrV
+ UYSg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=vKe+RbONBbtsSEscZalEdBXt7OSCg1h7S1CJqx/C4I8=;
- b=snnK3ff03g6NzbyFti+bz27ONOT9KTvSoS9ht9jyMAnPiswQjiO+41YU2zxX3BfIno
- IO0th8eCYq2+OJxbt9KU/Enp/CdbGK0nhIXZrrU1Who+zDw6F114yoqb6eyL/Wa5WW31
- plJKZafUaEjzS/WZTkYSLlQssGBHvzL8Eqk307lBwczWneAbQBf8j62f7r8k+V7hbyMw
- yNWea1wp+vWtj1u2vW4axuKL+1xDwTCstNrtoDP+lxg+z8b2XcfBAYVkh6imhS6dYs+S
- uWeSA+PeH4TuCgeFIvOWPUAFEmVNjnTZ0Ozua5Jm8KRZ+Gwm9W7wpU4z+gDOi8XxS92f
- zpbQ==
-X-Gm-Message-State: APjAAAXgM7WO4jDkU5C/+V3xe+z0cCuWRQmuDmxc8o/ZfsHiPQsHgvE9
- fp1hkqG762SHeydwj/St6HIfAA==
-X-Google-Smtp-Source: APXvYqyghCbl+VoAKS9IVvXDx7Qo2EfpbHroZiX/FM55XG4RbaMy0lHp6ghG3/CwfDEB9F4V2RIV0A==
-X-Received: by 2002:aed:22cc:: with SMTP id q12mr20936122qtc.232.1570267023107; 
- Sat, 05 Oct 2019 02:17:03 -0700 (PDT)
+ bh=MASENXtjvjrGt9RAiM0XMBiZxBBH7YBJCk7GCr7TS68=;
+ b=DpV3GBiS8XgvqRo2c0rklyMmtBs//KsHmtmZixho3e/q2JP6CNQnrW246fi8m5U941
+ 0lRXiWaD7wikMdrX6wXBBnsEfo6g5wSVe/WVYa6sGRocdlmei6QBTPec2lbZWmxnS7qg
+ 3qE4JJ6VdbyRKKEH8NzeqFRzHPUEQD4zlonoexbyx2WPT57l626X6GzFFN9NrTQMSzwo
+ 49DbO0/u4v2elusUnh76H1a9sezuEIz1bAJ7AAr2g6hZmPOVFWa4Fm1rIBIxuszh9JOR
+ jhQ5PTAzl0Mw7ZKTsMdb1qpE4DBhrrKlPUjh2i+xYIbRYhtq+ZXMypEbXRxbYSNsZ0cb
+ VQOw==
+X-Gm-Message-State: APjAAAWbnzik9RCMBnG29DF3fpZIfpz8vG2QR9QhBzbrWy5ymA99IMw0
+ qO0cIUBND7SIf5yhjQ9v6LnoUg==
+X-Google-Smtp-Source: APXvYqxaCS/RWXRAQ/pUsBVqO66Nz19/Jb4pys6tEihT2HU84dD8DBm86OXU3GYgMtiY+FG+zbI12Q==
+X-Received: by 2002:a37:4e48:: with SMTP id c69mr14232654qkb.182.1570267028692; 
+ Sat, 05 Oct 2019 02:17:08 -0700 (PDT)
 Received: from localhost.localdomain (li937-157.members.linode.com.
  [45.56.119.157])
- by smtp.gmail.com with ESMTPSA id u132sm4384621qka.50.2019.10.05.02.16.57
+ by smtp.gmail.com with ESMTPSA id u132sm4384621qka.50.2019.10.05.02.17.03
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 05 Oct 2019 02:17:02 -0700 (PDT)
+ Sat, 05 Oct 2019 02:17:08 -0700 (PDT)
 From: Leo Yan <leo.yan@linaro.org>
 To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Mathieu Poirier <mathieu.poirier@linaro.org>,
@@ -68,22 +68,23 @@ To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Mike Leach <mike.leach@linaro.org>,
  Coresight ML <coresight@lists.linaro.org>,
  Peter Zijlstra <peterz@infradead.org>, Ingo Molnar <mingo@redhat.com>
-Subject: [PATCH v3 5/6] perf cs-etm: Support callchain for instruction sample
-Date: Sat,  5 Oct 2019 17:16:13 +0800
-Message-Id: <20191005091614.11635-6-leo.yan@linaro.org>
+Subject: [PATCH v3 6/6] perf cs-etm: Synchronize instruction sample with the
+ thread stack
+Date: Sat,  5 Oct 2019 17:16:14 +0800
+Message-Id: <20191005091614.11635-7-leo.yan@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191005091614.11635-1-leo.yan@linaro.org>
 References: <20191005091614.11635-1-leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191005_021704_968290_1103C530 
-X-CRM114-Status: GOOD (  15.65  )
+X-CRM114-CacheID: sfid-20191005_021712_010551_92581190 
+X-CRM114-Status: GOOD (  14.24  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -112,156 +113,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now CoreSight has supported the thread stack; based on the thread stack
-we can synthesize call chain for the instruction sample; the call chain
-can be injected by option '--itrace=g'.
+The synthesized flow use 'tidq->packet' for instruction samples; on the
+other hand, 'tidp->prev_packet' is used to generate the thread stack and
+the branch samples, this results in the instruction samples using one
+packet ahead than thread stack and branch samples ('tidp->prev_packet'
+vs 'tidq->packet').
 
-Before:
-
-  # perf script --itrace=g16l64i100
-            main  1579        100      instructions:  ffff0000102137f0 group_sched_in+0xb0 ([kernel.kallsyms])
-            main  1579        100      instructions:  ffff000010213b78 flexible_sched_in+0xf0 ([kernel.kallsyms])
-            main  1579        100      instructions:  ffff0000102135ac event_sched_in.isra.57+0x74 ([kernel.kallsyms])
-            main  1579        100      instructions:  ffff000010219344 perf_swevent_add+0x6c ([kernel.kallsyms])
-            main  1579        100      instructions:  ffff000010214854 perf_event_update_userpage+0x4c ([kernel.kallsyms])
-  [...]
-
-After:
-
-  # perf script --itrace=g16l64i100
+This leads to an instruction's callchain error as shows in below
+example:
 
   main  1579        100      instructions:
-          ffff000010213b78 flexible_sched_in+0xf0 ([kernel.kallsyms])
-          ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
+  	ffff000010214854 perf_event_update_userpage+0x4c ([kernel.kallsyms])
+  	ffff000010214850 perf_event_update_userpage+0x48 ([kernel.kallsyms])
+  	ffff000010219360 perf_swevent_add+0x88 ([kernel.kallsyms])
+  	ffff0000102135f4 event_sched_in.isra.57+0xbc ([kernel.kallsyms])
+  	ffff0000102137a0 group_sched_in+0x60 ([kernel.kallsyms])
+  	ffff000010213b84 flexible_sched_in+0xfc ([kernel.kallsyms])
+  	ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
+
+In the callchain log, for the two continuous lines the up line contains
+one child function info and the followed line contains the caller
+function info, and so forth.  So the first two lines are:
+
+  perf_event_update_userpage+0x4c  => the sampled instruction
+  perf_event_update_userpage+0x48  => the parent function's calling
+
+The child function and parent function both are the same function
+perf_event_update_userpage(), but this isn't a recursive function, thus
+the sequence for perf_event_update_userpage() calling itself shouldn't
+never happen.  This callchain error is caused by the instruction sample
+using an ahead packet than the thread stack, the thread stack is deferred
+to process the new packet and misses to pop stack if it is just a return
+packet.
+
+To fix this issue, we can simply change to use 'tidq->prev_packet' to
+generate the instruction samples, this allows the thread stack to push
+and pop synchronously with instruction sample.  Finally, the callchain
+can be displayed correctly as below:
 
   main  1579        100      instructions:
-          ffff0000102135ac event_sched_in.isra.57+0x74 ([kernel.kallsyms])
-          ffff0000102137a0 group_sched_in+0x60 ([kernel.kallsyms])
-          ffff000010213b84 flexible_sched_in+0xfc ([kernel.kallsyms])
-          ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
-
-  main  1579        100      instructions:
-          ffff000010219344 perf_swevent_add+0x6c ([kernel.kallsyms])
-          ffff0000102135f4 event_sched_in.isra.57+0xbc ([kernel.kallsyms])
-          ffff0000102137a0 group_sched_in+0x60 ([kernel.kallsyms])
-          ffff000010213b84 flexible_sched_in+0xfc ([kernel.kallsyms])
-          ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
-  [...]
+	ffff000010214854 perf_event_update_userpage+0x4c ([kernel.kallsyms])
+	ffff000010219360 perf_swevent_add+0x88 ([kernel.kallsyms])
+	ffff0000102135f4 event_sched_in.isra.57+0xbc ([kernel.kallsyms])
+	ffff0000102137a0 group_sched_in+0x60 ([kernel.kallsyms])
+	ffff000010213b84 flexible_sched_in+0xfc ([kernel.kallsyms])
+	ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 ---
- tools/perf/util/cs-etm.c | 35 +++++++++++++++++++++++++++++++++--
- 1 file changed, 33 insertions(+), 2 deletions(-)
+ tools/perf/util/cs-etm.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index 4b42f9c9bd34..56e501cd2f5f 100644
+index 56e501cd2f5f..fa969dcb45d2 100644
 --- a/tools/perf/util/cs-etm.c
 +++ b/tools/perf/util/cs-etm.c
-@@ -17,6 +17,7 @@
- #include <stdlib.h>
+@@ -1419,7 +1419,7 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
+ 	struct cs_etm_packet *tmp;
+ 	int ret;
+ 	u8 trace_chan_id = tidq->trace_chan_id;
+-	u64 instrs_executed = tidq->packet->instr_count;
++	u64 instrs_executed = tidq->prev_packet->instr_count;
  
- #include "auxtrace.h"
-+#include "callchain.h"
- #include "color.h"
- #include "cs-etm.h"
- #include "cs-etm-decoder/cs-etm-decoder.h"
-@@ -74,6 +75,7 @@ struct cs_etm_traceid_queue {
- 	size_t last_branch_pos;
- 	union perf_event *event_buf;
- 	struct thread *thread;
-+	struct ip_callchain *chain;
- 	struct branch_stack *last_branch;
- 	struct branch_stack *last_branch_rb;
- 	struct cs_etm_packet *prev_packet;
-@@ -251,6 +253,16 @@ static int cs_etm__init_traceid_queue(struct cs_etm_queue *etmq,
- 	if (!tidq->prev_packet)
- 		goto out_free;
+ 	tidq->period_instructions += instrs_executed;
  
-+	if (etm->synth_opts.callchain) {
-+		size_t sz = sizeof(struct ip_callchain);
-+
-+		/* Add 1 to callchain_sz for callchain context */
-+		sz += (etm->synth_opts.callchain_sz + 1) * sizeof(u64);
-+		tidq->chain = zalloc(sz);
-+		if (!tidq->chain)
-+			goto out_free;
-+	}
-+
- 	if (etm->synth_opts.last_branch) {
- 		size_t sz = sizeof(struct branch_stack);
+@@ -1450,7 +1450,7 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
+ 		 */
+ 		s64 offset = (instrs_executed - instrs_over - 1);
+ 		u64 addr = cs_etm__instr_addr(etmq, trace_chan_id,
+-					      tidq->packet, offset);
++					      tidq->prev_packet, offset);
  
-@@ -275,6 +287,7 @@ static int cs_etm__init_traceid_queue(struct cs_etm_queue *etmq,
- 	zfree(&tidq->last_branch);
- 	zfree(&tidq->prev_packet);
- 	zfree(&tidq->packet);
-+	zfree(&tidq->chain);
- out:
- 	return rc;
- }
-@@ -546,6 +559,7 @@ static void cs_etm__free_traceid_queues(struct cs_etm_queue *etmq)
- 		zfree(&tidq->last_branch_rb);
- 		zfree(&tidq->prev_packet);
- 		zfree(&tidq->packet);
-+		zfree(&tidq->chain);
- 		zfree(&tidq);
- 
- 		/*
-@@ -1126,7 +1140,7 @@ static void cs_etm__add_stack_event(struct cs_etm_queue *etmq,
- 	int insn_len;
- 	u64 from_ip, to_ip;
- 
--	if (etm->synth_opts.thread_stack) {
-+	if (etm->synth_opts.callchain || etm->synth_opts.thread_stack) {
- 		from_ip = cs_etm__last_executed_instr(tidq->prev_packet);
- 		to_ip = cs_etm__first_executed_instr(tidq->packet);
- 
-@@ -1182,6 +1196,14 @@ static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
- 
- 	cs_etm__copy_insn(etmq, tidq->trace_chan_id, tidq->packet, &sample);
- 
-+	if (etm->synth_opts.callchain) {
-+		thread_stack__sample(tidq->thread, tidq->packet->cpu,
-+				     tidq->chain,
-+				     etm->synth_opts.callchain_sz + 1,
-+				     sample.ip, etm->kernel_start);
-+		sample.callchain = tidq->chain;
-+	}
-+
- 	if (etm->synth_opts.last_branch) {
- 		cs_etm__copy_last_branch_rb(etmq, tidq);
- 		sample.branch_stack = tidq->last_branch;
-@@ -1369,6 +1391,8 @@ static int cs_etm__synth_events(struct cs_etm_auxtrace *etm,
- 		attr.sample_type &= ~(u64)PERF_SAMPLE_ADDR;
- 	}
- 
-+	if (etm->synth_opts.callchain)
-+		attr.sample_type |= PERF_SAMPLE_CALLCHAIN;
- 	if (etm->synth_opts.last_branch)
- 		attr.sample_type |= PERF_SAMPLE_BRANCH_STACK;
- 
-@@ -2639,7 +2663,6 @@ int cs_etm__process_auxtrace_info(union perf_event *event,
- 	} else {
- 		itrace_synth_opts__set_default(&etm->synth_opts,
- 				session->itrace_synth_opts->default_no_sample);
--		etm->synth_opts.callchain = false;
- 		etm->synth_opts.thread_stack =
- 				session->itrace_synth_opts->thread_stack;
- 	}
-@@ -2651,6 +2674,14 @@ int cs_etm__process_auxtrace_info(union perf_event *event,
- 		etm->branches_filter |= PERF_IP_FLAG_RETURN |
- 					PERF_IP_FLAG_TRACE_BEGIN;
- 
-+	if (etm->synth_opts.callchain && !symbol_conf.use_callchain) {
-+		symbol_conf.use_callchain = true;
-+		if (callchain_register_param(&callchain_param) < 0) {
-+			symbol_conf.use_callchain = false;
-+			etm->synth_opts.callchain = false;
-+		}
-+	}
-+
- 	err = cs_etm__synth_events(etm, session);
- 	if (err)
- 		goto err_delete_thread;
+ 		ret = cs_etm__synth_instruction_sample(
+ 			etmq, tidq, addr, etm->instructions_sample_period);
 -- 
 2.17.1
 
