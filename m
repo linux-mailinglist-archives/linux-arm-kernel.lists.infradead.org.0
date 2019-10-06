@@ -2,86 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA87DCD8AA
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 20:42:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3B73CD8BB
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 20:46:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5zFekjghV9zw99OTEXKXawCbKHst/K9NtpF9M7Nqj3k=; b=Oezq9um797hRUtr17NfH57YQ8
-	RHVJGQvjncU9MwemQOE83VPgivaZpeUJFBFmefaZFCbTaBTKy3+M/2lcKBWJtDUofcXcT6KIOLu/p
-	FjLJ7JmDxodEMFkMNrEeSC+2JSUFi6Pqh+4mU7rZAnmVNjdmRIb8pb/svrsSB47z4yZtc6BGB15UR
-	KUfNsi4g+I5poRLCtCXyylUWj7juqjtAHYQc8CuK8C5PO8PdSB3LFs3qAWf6BZVqHMP4HKwL271wm
-	eoF3kb27ZMv++TsKaDtzDge7JfJy+uVyKhXRjHpgqhzRymViErM7IIvHOo2MJh1duoDv97ZDXyA9f
-	GhvusBZKA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BwoQMqgkRNyP6q4duE6QtUMdQ3ktzUKP5f6a/JgMtAo=; b=eOIQ0ctUVuZF8X
+	fwLHsj2+KQA/fCKjen2g8o68Pm7F/LJ5fbGG2cp8LcKrt4cnYSrVocQRa5aKkX6LkYGsWOzg2Conc
+	+z1TTSg5uYWZOF9mb8dPOYb/Z9ZUcsmqEq5KEF/WD+/jVmMke5SHEhnUK+y2tAYsnUGS7RA6hzU+7
+	22YIMvmKesz0F/IIdvPNBweRya6TLu6l+yv8xxr3bgVaG/L6fTzvZqvi2VJwaZZ/VJFUhhSpRBTYl
+	Z4/dlBN1evaFzcmV6+IRNw9+z7DELZ3DSDA919Mvo9KapIhNt4tUOG2T5/mnj1oDYn0Ae4MMoVATb
+	kFL7gT4+ewjnbfgZDtKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHBTg-0003iC-I9; Sun, 06 Oct 2019 18:41:56 +0000
-Received: from vern.gendns.com ([98.142.107.122])
+	id 1iHBXc-0005QC-LC; Sun, 06 Oct 2019 18:46:00 +0000
+Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHBTW-0003hj-5Q
- for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 18:41:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lechnology.com; s=default; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=8lAJFEkwl2Q1Fvmq3UOLVFJ2OXdPmm/TVkvNTIF5e4w=; b=WVWZ2K6mbb454aWFA0kF4Y10pG
- aLeY5X8WJQxJCsJC/9FFiDqtcHJ4LkNq5KpTo/PdReBUis0fO1xAnkayWrmyW6vOqLTvcryjo9acg
- r+6yIB7v/uo3ynAJ+4gax3yoSysPuZET2PBL//gYy7oppDZiiuTrLxIAqrvcBZtXqPSiRRbFrK5Ue
- BNGlzk1TFhqPmgwEFRKPvCpCTekpG7DwK9NrvWN2eOxDq4BiEuWfqfRsYnWfVRqv5sZ9w+JR2GEyU
- lLd/PcUC+cHc1Z3k3v8ep12hFXdcPuyO5nBA+ez923v4+9EtPutpL/wWcWiv+NGZOktRCzOkA3Reg
- ryRP6+AQ==;
-Received: from 108-198-5-147.lightspeed.okcbok.sbcglobal.net
- ([108.198.5.147]:54564 helo=[192.168.0.134])
- by vern.gendns.com with esmtpsa (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128)
- (Exim 4.92) (envelope-from <david@lechnology.com>)
- id 1iHBTT-00024a-L0; Sun, 06 Oct 2019 14:41:43 -0400
-Subject: Re: [PATCH v4 2/2] docs: driver-api: generic-counter: Update Count
- and Signal data types
-To: William Breathitt Gray <vilhelm.gray@gmail.com>, jic23@kernel.org
-References: <cover.1570377521.git.vilhelm.gray@gmail.com>
- <75a9ca9837f4d66cb4912cfa535176e27f7c219a.1570377521.git.vilhelm.gray@gmail.com>
-From: David Lechner <david@lechnology.com>
-Message-ID: <9850a671-2822-24b7-3c22-b4abbd6a6b37@lechnology.com>
-Date: Sun, 6 Oct 2019 13:41:42 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iHBXQ-0005Pc-Vh
+ for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 18:45:50 +0000
+Received: by verein.lst.de (Postfix, from userid 2407)
+ id 11C41227A8B; Sun,  6 Oct 2019 20:45:42 +0200 (CEST)
+Date: Sun, 6 Oct 2019 20:45:41 +0200
+From: Christoph Hellwig <hch@lst.de>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Subject: Re: [PATCH 3/4] dma-mapping: introduce a dma_common_find_pages helper
+Message-ID: <20191006184541.GA4110@lst.de>
+References: <20190830062924.21714-1-hch@lst.de>
+ <20190830062924.21714-4-hch@lst.de>
+ <CAMuHMdXxWp2=9n2LQA9KVH_ArOUnY78ZoiQ7ZsDMbTOGsEz4hw@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <75a9ca9837f4d66cb4912cfa535176e27f7c219a.1570377521.git.vilhelm.gray@gmail.com>
-Content-Language: en-US
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - vern.gendns.com
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - lechnology.com
-X-Get-Message-Sender-Via: vern.gendns.com: authenticated_id:
- davidmain+lechnology.com/only user confirmed/virtual account not confirmed
-X-Authenticated-Sender: vern.gendns.com: davidmain@lechnology.com
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
+Content-Disposition: inline
+In-Reply-To: <CAMuHMdXxWp2=9n2LQA9KVH_ArOUnY78ZoiQ7ZsDMbTOGsEz4hw@mail.gmail.com>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191006_114146_287290_AC1BEAF6 
-X-CRM114-Status: GOOD (  10.18  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191006_114549_377942_B0EE5401 
+X-CRM114-Status: UNSURE (   6.61  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.95.11.211 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,43 +61,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: benjamin.gaignard@linaro.org, alexandre.torgue@st.com,
- linux-iio@vger.kernel.org, patrick.havelange@essensium.com,
- linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-xtensa@linux-xtensa.org, Russell King <linux@armlinux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Linux MM <linux-mm@kvack.org>, Linux IOMMU <iommu@lists.linux-foundation.org>,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/6/19 11:03 AM, William Breathitt Gray wrote:
-> Count data is now always represented as an unsigned integer, while
-> Signal data is either SIGNAL_LOW or SIGNAL_HIGH.
-> 
-> Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
-> ---
->   Documentation/driver-api/generic-counter.rst | 22 +++++++-------------
->   1 file changed, 8 insertions(+), 14 deletions(-)
-> 
-> diff --git a/Documentation/driver-api/generic-counter.rst b/Documentation/driver-api/generic-counter.rst
-> index 8382f01a53e3..161652fc1025 100644
-> --- a/Documentation/driver-api/generic-counter.rst
-> +++ b/Documentation/driver-api/generic-counter.rst
-> @@ -39,10 +39,7 @@ There are three core components to a counter:
->   COUNT
->   -----
->   A Count represents the count data for a set of Signals. The Generic
-> -Counter interface provides the following available count data types:
-> -
-> -* COUNT_POSITION:
-> -  Unsigned integer value representing position.
-> +Counter interface represents the count data as an unsigned integer.
+Hi Geert,
 
-The previous patch looks like it is using unsigned long instead of
-unsigned integer.
-
-
+please try Linus' current tree.  It has a fix from Andrey Smirnov
+for what looks the same problem that you reported.
 
 _______________________________________________
 linux-arm-kernel mailing list
