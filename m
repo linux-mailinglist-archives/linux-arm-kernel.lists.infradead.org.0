@@ -2,118 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 062D6CD922
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 22:14:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94922CD931
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 22:40:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=98n5RjBjCorCL35KfwJPO9Yhaw9bETNV8f9fR0/lRpo=; b=Ic7M1XfNqMsDR7969DyM8D/cN4
-	N8bKhpdocPDr6itH/xeQ3XZHG9mgqYAVwe9j6+Spg7AG4O5f7C9mTJxG5ELW/dR6zTvO1Z37uyyOu
-	C1PSoWmjphc7AWhKwyCtIq4gePxrkaPIEg5+dKbp7amqrZNqBYqcsJRcVc89CH3ZAbj8ghJkDPLJ/
-	88KnomRsvW6DNYdyv9ZRf6tsbg7IpxP7L/8Dj5kenBiCm2MmBvuHKAK2pl9eGblzIZGE0QpmQiRDC
-	ZG4vkdbCwvr1ZL42wg8LRefLN3XyI/nQrUUFBn+OLSCZvulgTU7dHvJELjNUwglTtbqb1NmkKJRxX
-	lGPUolvA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZW9aHXDAzBJ/jGv7NHhmq6/gVbj5RC7rATcpQIHVFgA=; b=ao+sgui6WaHlnR
+	u7uOuoUo1kRnWg8btPsUl8HMTWbt4DBcsJqc2HFoOCk9H+JwVKAck0VQ64FpOe/f1zWmCLBUp0Fir
+	kH0QLAsXYY9sRyXXHY3nm5zHv389BU6s0vP2JJvpRFchrNu3WD4wCAHgp/ir/VqY988cA2gNG0xm8
+	gRgO6mFmpkO31zQLuSDoVu8s80IO5E9OPkT3PRs/plFuavZTeKqd30IUZJzX1lFuxrZVWEe/6oDkU
+	6Swpk689B35585JXd0XUuwey0O5YY+Bqo9/lfl2otnMsrYFgtD6IkvKvKAwqQqAi8p/jA3i+y+ARt
+	7suE847l070cqs6mzE2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHCui-0000WM-1z; Sun, 06 Oct 2019 20:13:56 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1iHDKH-00018e-Lq; Sun, 06 Oct 2019 20:40:21 +0000
+Received: from mail.andi.de1.cc ([2a01:238:4321:8900:456f:ecd6:43e:202c])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHCuY-0000Up-LV
- for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 20:13:49 +0000
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 0A6A718CB8E9;
- Sun,  6 Oct 2019 20:13:43 +0000 (UTC)
-Received: from [10.36.116.33] (ovpn-116-33.ams2.redhat.com [10.36.116.33])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 12BB35D9CC;
- Sun,  6 Oct 2019 20:13:39 +0000 (UTC)
-Subject: Re: [PATCH v6 01/10] mm/memunmap: Don't access uninitialized memmap
- in memunmap_pages()
-To: linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- linux-arm-kernel@lists.infradead.org, linux-ia64@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org, linux-s390@vger.kernel.org,
- linux-sh@vger.kernel.org, x86@kernel.org,
- "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>,
- Dan Williams <dan.j.williams@intel.com>,
- Andrew Morton <akpm@linux-foundation.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Logan Gunthorpe <logang@deltatee.com>, Ira Weiny <ira.weiny@intel.com>
-References: <20191006085646.5768-1-david@redhat.com>
- <20191006085646.5768-2-david@redhat.com>
- <20191006195838.GA27160@freebsd.route53-aws-cloud.de>
-From: David Hildenbrand <david@redhat.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
- 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
- SE+xAvmumFBY
-Organization: Red Hat GmbH
-Message-ID: <fefcb660-d8e2-57fd-a348-a6e5269587fd@redhat.com>
-Date: Sun, 6 Oct 2019 22:13:39 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iHDK8-0000pX-N1
+ for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 20:40:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=kemnade.info; s=20180802; h=Content-Transfer-Encoding:Content-Type:
+ MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=Kmqc1gyCOEXWax+OJQe95Wf8OIFkVcvFuA5NIENmB9w=; b=C2tfPJjco/lCDXtVDnJqv5CNPp
+ y3ofFkc6hWwUiM71+f2x15QeBAlGPR+kCjIh+lD1Z/qiyf9v0ZKbA7xhbyqP6aCkzlzIBcjnwrA5q
+ 3z0KpLnuxDPYFyQ9OYopTEMkG9JkVjGOqw9y4sjoLW1NaO8Fxe+upi5ghrrMR4SJjZSE=;
+Received: from p200300ccff4b78001a3da2fffebfd33a.dip0.t-ipconnect.de
+ ([2003:cc:ff4b:7800:1a3d:a2ff:febf:d33a] helo=aktux)
+ by mail.andi.de1.cc with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <andreas@kemnade.info>)
+ id 1iHDJw-0002Xm-3t; Sun, 06 Oct 2019 22:40:00 +0200
+Date: Sun, 6 Oct 2019 22:39:58 +0200
+From: Andreas Kemnade <andreas@kemnade.info>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Subject: Re: [Letux-kernel] [PATCH] ARM: omap2plus_defconfig: Fix selected
+ panels after generic panel changes
+Message-ID: <20191006223958.67725fdf@aktux>
+In-Reply-To: <20191006145348.GD4740@pendragon.ideasonboard.com>
+References: <20191003165539.50318-1-tony@atomide.com>
+ <03ca02c1-2816-17cd-03fd-5b72e5d0ec96@ti.com>
+ <39E48EC6-65FE-419B-BBE8-E72CB44B517D@goldelico.com>
+ <20191006145348.GD4740@pendragon.ideasonboard.com>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20191006195838.GA27160@freebsd.route53-aws-cloud.de>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
- (mx1.redhat.com [10.5.110.63]); Sun, 06 Oct 2019 20:13:43 +0000 (UTC)
+X-Spam-Score: -1.0 (-)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191006_131346_751066_383B6B16 
-X-CRM114-Status: GOOD (  21.82  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191006_134013_309244_FA6E2FA4 
+X-CRM114-Status: GOOD (  17.81  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,121 +79,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
+ Tony Lindgren <tony@atomide.com>, "H.
+ Nikolaus Schaller" <hns@goldelico.com>, Jyri Sarha <jsarha@ti.com>,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ Linux-OMAP <linux-omap@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06.10.19 21:58, Damian Tometzki wrote:
-> Hello David,
+On Sun, 6 Oct 2019 17:53:48 +0300
+Laurent Pinchart <laurent.pinchart@ideasonboard.com> wrote:
+
+> Hi Nikolaus,
 > 
-> patch 05/10 is missing in the patch series. 
+> On Sat, Oct 05, 2019 at 12:50:37PM +0200, H. Nikolaus Schaller wrote:
+> > > Am 04.10.2019 um 10:41 schrieb Tomi Valkeinen <tomi.valkeinen@ti.com>:
+> > > 
+> > > On 03/10/2019 19:55, Tony Lindgren wrote:  
+> > >> The old omapdrm panels got removed for v5.4 in favor of generic panels,
+> > >> and the Kconfig options changed. Let's update omap2plus_defconfig
+> > >> accordingly so the same panels are still enabled.
+> > >> Cc: Jyri Sarha <jsarha@ti.com>
+> > >> Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> > >> Cc: Tomi Valkeinen <tomi.valkeinen@ti.com>
+> > >> Signed-off-by: Tony Lindgren <tony@atomide.com>
+> > >> ---
+> > >>  arch/arm/configs/omap2plus_defconfig | 12 ++++++------
+> > >>  1 file changed, 6 insertions(+), 6 deletions(-)
+> > >> diff --git a/arch/arm/configs/omap2plus_defconfig b/arch/arm/configs/omap2plus_defconfig
+> > >> --- a/arch/arm/configs/omap2plus_defconfig
+> > >> +++ b/arch/arm/configs/omap2plus_defconfig
+> > >> @@ -356,14 +356,14 @@ CONFIG_DRM_OMAP_CONNECTOR_HDMI=m
+> > >>  CONFIG_DRM_OMAP_CONNECTOR_ANALOG_TV=m
+> > >>  CONFIG_DRM_OMAP_PANEL_DPI=m
+> > >>  CONFIG_DRM_OMAP_PANEL_DSI_CM=m
+> > >> -CONFIG_DRM_OMAP_PANEL_SONY_ACX565AKM=m
+> > >> -CONFIG_DRM_OMAP_PANEL_LGPHILIPS_LB035Q02=m
+> > >> -CONFIG_DRM_OMAP_PANEL_SHARP_LS037V7DW01=m
+> > >> -CONFIG_DRM_OMAP_PANEL_TPO_TD028TTEC1=m
+> > >> -CONFIG_DRM_OMAP_PANEL_TPO_TD043MTEA1=m
+> > >> -CONFIG_DRM_OMAP_PANEL_NEC_NL8048HL11=m
+> > >>  CONFIG_DRM_TILCDC=m
+> > >>  CONFIG_DRM_PANEL_SIMPLE=m
+> > >> +CONFIG_DRM_PANEL_LG_LB035Q02=m
+> > >> +CONFIG_DRM_PANEL_NEC_NL8048HL11=m
+> > >> +CONFIG_DRM_PANEL_SHARP_LS037V7DW01=m
+> > >> +CONFIG_DRM_PANEL_SONY_ACX565AKM=m
+> > >> +CONFIG_DRM_PANEL_TPO_TD028TTEC1=m
+> > >> +CONFIG_DRM_PANEL_TPO_TD043MTEA1=m
+> > >>  CONFIG_FB=y
+> > >>  CONFIG_FIRMWARE_EDID=y
+> > >>  CONFIG_FB_MODE_HELPERS=y  
+> > > 
+> > > Sorry, I didn't remember to update these. Some additions:
+> > > 
+> > > These can be dropped, they no longer exist:
+> > > 
+> > > CONFIG_DRM_OMAP_ENCODER_TFP410=m
+> > > CONFIG_DRM_OMAP_CONNECTOR_DVI=m
+> > > CONFIG_DRM_OMAP_PANEL_DPI=m  
+> > 
+> > After being hit by the __always_inline issue [1] I am now
+> > back with being able to test v5.4-rc1.
+> > 
+> > Now this patch fixes the build problem, but we still have
+> > one: panel drivers are no longer automatically loaded at
+> > boot. We now need to manually modprobe them.
+> > 
+> > This has been observed with GTA04 (TD028TTEC1) and OpenPandora
+> > (TD043MTEA1). So moving the drivers seems to have changed/broken
+> > something with DT based driver matching.  
 > 
-
-Hi Damian,
-
-not really. Could be that lkml is slow today. E.g., check
-
-https://marc.info/?l=linux-mm&m=157035222620403&w=2
-
-and especially
-
-https://marc.info/?l=linux-mm&m=157035225120440&w=2
-
-All mails popped up on the mm list.
-
+> That's really weird, the driver name, the SPI device table and the OF
+> device table are the same (except for the "omapdss," prefix that we
+> don't add anymore in omapdss-boot-init.c). Would you be able to
+> investigate what broke ?
 > 
-> On Sun, 06. Oct 10:56, David Hildenbrand wrote:
->> From: "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>
->>
->> With an altmap, the memmap falling into the reserved altmap space are
->> not initialized and, therefore, contain a garbage NID and a garbage
->> zone. Make sure to read the NID/zone from a memmap that was initialzed.
->>
->> This fixes a kernel crash that is observed when destroying a namespace:
->>
->> [   81.356173] kernel BUG at include/linux/mm.h:1107!
->> cpu 0x1: Vector: 700 (Program Check) at [c000000274087890]
->>     pc: c0000000004b9728: memunmap_pages+0x238/0x340
->>     lr: c0000000004b9724: memunmap_pages+0x234/0x340
->> ...
->>     pid   = 3669, comm = ndctl
->> kernel BUG at include/linux/mm.h:1107!
->> [c000000274087ba0] c0000000009e3500 devm_action_release+0x30/0x50
->> [c000000274087bc0] c0000000009e4758 release_nodes+0x268/0x2d0
->> [c000000274087c30] c0000000009dd144 device_release_driver_internal+0x174/0x240
->> [c000000274087c70] c0000000009d9dfc unbind_store+0x13c/0x190
->> [c000000274087cb0] c0000000009d8a24 drv_attr_store+0x44/0x60
->> [c000000274087cd0] c0000000005a7470 sysfs_kf_write+0x70/0xa0
->> [c000000274087d10] c0000000005a5cac kernfs_fop_write+0x1ac/0x290
->> [c000000274087d60] c0000000004be45c __vfs_write+0x3c/0x70
->> [c000000274087d80] c0000000004c26e4 vfs_write+0xe4/0x200
->> [c000000274087dd0] c0000000004c2a6c ksys_write+0x7c/0x140
->> [c000000274087e20] c00000000000bbd0 system_call+0x5c/0x68
->>
->> Cc: Dan Williams <dan.j.williams@intel.com>
->> Cc: Andrew Morton <akpm@linux-foundation.org>
->> Cc: Jason Gunthorpe <jgg@ziepe.ca>
->> Cc: Logan Gunthorpe <logang@deltatee.com>
->> Cc: Ira Weiny <ira.weiny@intel.com>
->> Signed-off-by: Aneesh Kumar K.V <aneesh.kumar@linux.ibm.com>
->> [ minimze code changes, rephrase description ]
->> Signed-off-by: David Hildenbrand <david@redhat.com>
->> ---
->>  mm/memremap.c | 11 +++++++----
->>  1 file changed, 7 insertions(+), 4 deletions(-)
->>
->> diff --git a/mm/memremap.c b/mm/memremap.c
->> index 557e53c6fb46..8c2fb44c3b4d 100644
->> --- a/mm/memremap.c
->> +++ b/mm/memremap.c
->> @@ -123,6 +123,7 @@ static void dev_pagemap_cleanup(struct dev_pagemap *pgmap)
->>  void memunmap_pages(struct dev_pagemap *pgmap)
->>  {
->>  	struct resource *res = &pgmap->res;
->> +	struct page *first_page;
->>  	unsigned long pfn;
->>  	int nid;
->>  
->> @@ -131,14 +132,16 @@ void memunmap_pages(struct dev_pagemap *pgmap)
->>  		put_page(pfn_to_page(pfn));
->>  	dev_pagemap_cleanup(pgmap);
->>  
->> +	/* make sure to access a memmap that was actually initialized */
->> +	first_page = pfn_to_page(pfn_first(pgmap));
->> +
->>  	/* pages are dead and unused, undo the arch mapping */
->> -	nid = page_to_nid(pfn_to_page(PHYS_PFN(res->start)));
->> +	nid = page_to_nid(first_page);
-> 
-> Why we need 'nid = page_to_nid(first_page)' we didnt use it anymore in this function ?
+in earlier times:
 
-Please see ...
+root@gta04:/sys/bus/spi/devices/spi4.0# cat modalias 
+spi:tpo,td028ttec1
 
-> 
->>  
->>  	mem_hotplug_begin();
->>  	if (pgmap->type == MEMORY_DEVICE_PRIVATE) {
->> -		pfn = PHYS_PFN(res->start);
->> -		__remove_pages(page_zone(pfn_to_page(pfn)), pfn,
->> -				 PHYS_PFN(resource_size(res)), NULL);
->> +		__remove_pages(page_zone(first_page), PHYS_PFN(res->start),
->> +			       PHYS_PFN(resource_size(res)), NULL);
->>  	} else {
->>  		arch_remove_memory(nid, res->start, resource_size(res),
-                                   ^ here
+now in 5.4-rc1:
+root@gta04:/sys/bus/spi/devices/spi4.0# cat modalias 
+spi:td028ttec1
 
-:)
+root@gta04:~# modinfo /lib/modules/5.4.0-rc1-letux+/kernel/drivers/gpu/drm/panel/panel-tpo-td028ttec1.ko 
+filename:       /lib/modules/5.4.0-rc1-letux+/kernel/drivers/gpu/drm/panel/panel-tpo-td028ttec1.ko
+license:        GPL
+description:    Toppoly TD028TTEC1 panel driver
+author:         H. Nikolaus Schaller <hns@goldelico.com>
+srcversion:     6B3E224BCD3D76253CF361C
+alias:          of:N*T*Ctoppoly,td028ttec1C*
+alias:          of:N*T*Ctoppoly,td028ttec1
+alias:          of:N*T*Ctpo,td028ttec1C*
+alias:          of:N*T*Ctpo,td028ttec1
+alias:          spi:toppoly,td028ttec1
+alias:          spi:tpo,td028ttec1
+depends:        drm
+intree:         Y
+name:           panel_tpo_td028ttec1
+vermagic:       5.4.0-rc1-letux+ SMP preempt mod_unload ARMv7 p2v8 
 
->>  				pgmap_altmap(pgmap));
+That alias is not in the list.
 
-
-
--- 
-
-Thanks,
-
-David / dhildenb
+Regards,
+Andreas
 
 _______________________________________________
 linux-arm-kernel mailing list
