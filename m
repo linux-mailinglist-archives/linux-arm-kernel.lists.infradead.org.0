@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED58DCD193
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 13:09:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33F7ACD196
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 13:10:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,54 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=gp87DtPMXxOge8XGqWGlfyv0A8EVuCsj1PdG+0pjN2Y=; b=Ccya5CivmA/I3I1M1t151L1YcT
-	2t0V8aSFrWk9Kb7bnJFmMFKxS2BybTpipKBBRz3qP21GQEp/1FwmWxJU20DYWXCUxhoc+eu+2uk6J
-	EgUsHGpXFPXInH9qI5F3x2uCgeKu+I/UvqLbrMEUUdOGhaHVsruiSAZ7dCNLFJxuQCp9nPOT7Em6r
-	fWjbMwUqh+oTjRcjkNA/nmf2KC5LwVil7lvey3V+FluI6c/129vNmoVPO5BvgQU2pLG9YJVs1czMs
-	0+ykK7DqixePajFp64dhNesK+rqkEaRvu0sDz5+wsavP5xX3OR6eWJssUPLBRm9PYA+G58veEY8/I
-	+dY+XODQ==;
+	bh=qCsDNxTRE8gVNrdFAyOdBqI3LS6jaCT65SCxGannWkQ=; b=D0c/aRpC/Dz2q5gHBtqapL12ww
+	nmqQjR5xOlSoWRmjAwQGWfMpxSS7qykhI+g3LfIUCMv8Q+ZM8XZfViUQCJgQDyiOfMHpBeg/gzy3q
+	rW0OKtKp+Ew9dMkLvwZ96vLtUZ9dq7J/8bODg2a/S75FNHTQA7syS7eo+9Sn8YqMMhXYKCdfq2ttp
+	TPNqSI5RxQeHNwyCdks1JdvLrjiZLNRWBazdnO56KfE3LFl6zuTVMK4iqS8sX9tkuPmXbgatFQu3o
+	MM1LoFX3K8PsXG7nEz2qAC91VWiiWK2dPU+Fh3GVlmqrJsd6BOY9/XXhJB77XgOAff9CxK/enJJmv
+	XZP5NF0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iH4Pu-00048g-TG; Sun, 06 Oct 2019 11:09:34 +0000
+	id 1iH4QH-0004VA-9P; Sun, 06 Oct 2019 11:09:57 +0000
 Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iH4PV-0003zC-FB
- for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 11:09:11 +0000
+ id 1iH4PV-0003zA-Rj
+ for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 11:09:12 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 00C65C04C3;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id F27D2C04C2;
  Sun,  6 Oct 2019 11:09:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1570360147; bh=kfGEEkk2OCVMoCzX6mcsv6RlPMI0cS4QjjbKAyWAMp4=;
+ t=1570360147; bh=LFaf3+7wRgrSGyyxrsz2u9BWasMzLRw65zAzqni4KP0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=BRC5UUjXxRIUwGZLhsCCeX9Ohbm00V6xEF5gOSXSUQUz8lXS4AjTQAmApPN3sN4rB
- c5YiAUNX2ZAbjbT3L5MH+F+1iKxx25cW6PC3qwk3aZjLSnq0tdd8r3nwzs+MdeJeC4
- gXbYTpyp/aY/q0FtCrO+VhRdDL0BZEseFF2157elRKoZEIah+/exgtSOuax0pmgQiV
- iGcggrthRoxD7LaA/ytmL2UohnqT7uXZKa61u2T5T5OHF8uig3Xh3NTQRih3ycbmze
- 8EGGAIEr8/icGEDzYtmN44JzrIls8VuJLuMGWYVdQVRjV5L+vGLJA+Os+s9e2rLhcj
- S+S7z5TMF7dyw==
+ b=LwVvaryBQmGsGWI1yASqXJOnp6B6WcMX2ECJagkeBEtaMISMNaj952xosP+Fdumky
+ /ZH4+uALVgk6eoYlpdzzhblyFkL9QNj0YQ6BQZfIwgo94JoeczN3UynFrMpY2gna2m
+ y7edTDXI2Sgc0CxfowepcKLrh1kstlhRJsbMLvSkBTKEG3YRaLJb1HBgJE8rNM3nop
+ FeNCZ60U5RR8aaHMDn6MKIM913xs1WJdUfXE6l0Jvy1Lx+MaKeZDnFyVv3TFj0OKKP
+ 8Mc4C5DJyJJjBXCrMKJEzJZhd219nd0UK0h51yPhQzFVGQTUb18x//eEjsWC1+8iZs
+ Rg+huqBfsacDA==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 95DCCA0065;
+ by mailhost.synopsys.com (Postfix) with ESMTP id A877FA0069;
  Sun,  6 Oct 2019 11:09:04 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net 2/3] net: stmmac: gmac4+: Not all Unicast addresses may be
- available
-Date: Sun,  6 Oct 2019 13:08:56 +0200
-Message-Id: <33ca4465dd54692013bf9b2da99c4ff751874fa4.1570359800.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net 3/3] net: stmmac: selftests: Fix L2 Hash Filter test
+Date: Sun,  6 Oct 2019 13:08:57 +0200
+Message-Id: <9ee5ff5b606fb7aceaa2e31a56737378653345ab.1570359800.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1570359800.git.Jose.Abreu@synopsys.com>
 References: <cover.1570359800.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1570359800.git.Jose.Abreu@synopsys.com>
 References: <cover.1570359800.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191006_040909_541003_DEF7707F 
-X-CRM114-Status: GOOD (  13.43  )
+X-CRM114-CacheID: sfid-20191006_040909_923464_5F55538F 
+X-CRM114-Status: GOOD (  12.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,10 +95,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some setups may not have all Unicast addresses filters available. Check
-the number of available filters before trying to setup it.
+With the current MAC addresses hard-coded in the test we can get some
+false positives as we use the Hash Filtering method. Let's change the
+MAC addresses in the tests to be unique when hashed.
 
-Fixes: 477286b53f55 ("stmmac: add GMAC4 core support")
+Fixes: 091810dbded9 ("net: stmmac: Introduce selftests support")
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
 ---
@@ -113,22 +113,24 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-index 2cb9c53f93b8..5a7b0aca1d31 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-@@ -448,7 +448,7 @@ static void dwmac4_set_filter(struct mac_device_info *hw,
- 	value |= GMAC_PACKET_FILTER_HPF;
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
+index ed3926d4471d..e4ac3c401432 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
+@@ -487,8 +487,8 @@ static int stmmac_filter_check(struct stmmac_priv *priv)
  
- 	/* Handle multiple unicast addresses */
--	if (netdev_uc_count(dev) > GMAC_MAX_PERFECT_ADDRESSES) {
-+	if (netdev_uc_count(dev) > hw->unicast_filter_entries) {
- 		/* Switch to promiscuous mode if more than 128 addrs
- 		 * are required
- 		 */
+ static int stmmac_test_hfilt(struct stmmac_priv *priv)
+ {
+-	unsigned char gd_addr[ETH_ALEN] = {0x01, 0x00, 0xcc, 0xcc, 0xdd, 0xdd};
+-	unsigned char bd_addr[ETH_ALEN] = {0x09, 0x00, 0xaa, 0xaa, 0xbb, 0xbb};
++	unsigned char gd_addr[ETH_ALEN] = {0x01, 0xee, 0xdd, 0xcc, 0xbb, 0xaa};
++	unsigned char bd_addr[ETH_ALEN] = {0x01, 0x01, 0x02, 0x03, 0x04, 0x05};
+ 	struct stmmac_packet_attrs attr = { };
+ 	int ret;
+ 
 -- 
 2.7.4
 
