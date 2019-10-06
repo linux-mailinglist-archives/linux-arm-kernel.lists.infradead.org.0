@@ -2,87 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEED1CD2DD
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 17:29:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B959DCD2E0
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 17:30:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=PEPZOa4ALIhQ08VimZXZQaeD8ohhMyqZZw00btdYqCY=; b=ZS1G3nXYCp24ET4ZJHBWl3PlmE
-	1Vd4F0aF/FwBKyMBrN+99zWCiQUXILOfK/fd5aj8AmYQadbW6i+BpjNKX+9KVKVLlzoxEfCsBpo8Q
-	N/JfnyExOp/R4akTJF6jZbm8gyOkGnPU93v5bxsDAu5km0zhDtSvzy2TZtiYgUbW0cG20tUJyto/M
-	kYiFh3S4szmgdbwn91AT95TVAYiK+ZwZv/B86tst7/GmJQK7Cffg6nJ27D+pbSgZXTUY53GCJpOmo
-	OWE+KzLpvjB9z0YPpGRdreYSjTjRsAzq4qdRyhQEyhD2gIfb6bygr2ceKWQQbM3oj0rcQQ7cYzDqb
-	WyHkkFZw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=+LJFZBLT8mlVbm/XOihWYP97m88IvGTHjRqgl/MGBHs=; b=cHe
+	+s5WsDVHuMNdV+O5npRIoIL3nL6xdczIZn/HKNjFkaSbQZuidoYiqtsc0+/7DGXpSmSjUZHG0V/qB
+	kDpAYgi4JYG33v0GWCPuS4AgUl9zNyRbHhVG+oQqsnrKUh6BZZmMP3UULJQ3yFt6OYyhbWiM1Ezhg
+	lQUbHHk2woic2BB3OSjY0iVavUhl+ZobFj8na6cNWjTgILy+xKNVktugQHNYHYsldEmLqDhj+iK0w
+	OmLpBlqwTMo3uo+iaj9OepdujcHAjZK0FLsicwdaKFsH1FBA8RWKzj15cvmjipce4JnpNTthf9JAR
+	55Sy/0Rd+3Rv/npASaFl+JhzIigGPxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iH8TY-00082F-Aq; Sun, 06 Oct 2019 15:29:36 +0000
-Received: from mout.gmx.net ([212.227.17.22])
+	id 1iH8UC-0008WP-UU; Sun, 06 Oct 2019 15:30:16 +0000
+Received: from mout.gmx.net ([212.227.17.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iH8T6-0007r2-F2
+ id 1iH8T6-0007qy-0r
  for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 15:29:11 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1570375740;
- bh=UyrGE1hEHxmvjVmu+rXNNtvc/iHVMSlZ1dPfkiyXlWQ=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=eY9NwglWtAYr9lHdDp8njHDVJici7pUeMzmegaPe5W0YujtPVjEaLGDDGTt9tqRMU
- 0EudVGxdbG+bFFPxL7qd2ey1cF5jtrur4Pa3x6hcQtpILlc2tRx0wahIfeRkBc1xBt
- YlFX/dLRDr/s4bAUFhFuERSAmvscEZiV3c3rb1jg=
+ s=badeba3b8450; t=1570375736;
+ bh=D9EXbZWdNzUEMKJgC9st3p2SqLaVHrzEQ2VeUp/pJgc=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
+ b=Dy2wdAZcfCOjc9DKMO4G6S4p4rKkFX/zkBUy45mXLjW6ZS0yLM5X/YdGuXVaMclyW
+ RBmCk53r7AE6AVKEk600rS7Uf60NUZUixgWcopLQZpPcBIa+8I567INoZIWo1TqJXK
+ LPa+A12hI/SJmYfNI/K0ijcetmTn0no0OLFj9EFA=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.116]) by mail.gmx.com
  (mrgmx104 [212.227.17.168]) with ESMTPSA (Nemesis) id
- 1MKsnF-1iXyWf0F0H-00LCrz; Sun, 06 Oct 2019 17:29:00 +0200
+ 1M72sJ-1iBNQt0eQp-008bhB; Sun, 06 Oct 2019 17:28:56 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Marcel Holtmann <marcel@holtmann.org>,
  Johan Hedberg <johan.hedberg@gmail.com>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>, Eric Anholt <eric@anholt.net>,
  Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
  Scott Branden <sbranden@broadcom.com>
-Subject: [PATCH V4 07/10] ARM: bcm: Add support for BCM2711 SoC
-Date: Sun,  6 Oct 2019 17:28:25 +0200
-Message-Id: <1570375708-26965-8-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH V4 00/10] ARM: Add minimal Raspberry Pi 4 support
+Date: Sun,  6 Oct 2019 17:28:18 +0200
+Message-Id: <1570375708-26965-1-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1570375708-26965-1-git-send-email-wahrenst@gmx.net>
-References: <1570375708-26965-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:2qyaG+54OdyPZ+qcVX9vMoaDfHU63alzpLvTBRaQorhtkLjwbL/
- 6wRfS40TsUi5QHLfxCG58B3+CmCvjST8/4KsH08WqWK4NTr9xopfO0buFC1BF8PpmvZ3SDI
- QyGdY/4jfs0fo8iOSc+CBS0riI60MuUIRIGPh1xzTqs/6eYiYka6ISjBDpYzbneCqu5qJYU
- 2/uX4NnCll8YcYIcg3fdA==
+X-Provags-ID: V03:K1:oaevrIPGssMFFjgefH6bCBqGETYjbu6kvokh66JCjc8pzkbzgCn
+ DduSlK/gv0//R/+upcRK6CZgVQqBmFkw9pmMBi2uIyuJ4imOQqV2WvfkVH173bLaQJbG8No
+ 9K0JvL5w4KwixDtDju0KS4b5plDqf2Z+lRf0xCOueFWmpmDxAQvUfUxr8GKIORHmaNH9JMO
+ Fc2JPAe8NHraHgjucEynQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Q6+QKOcsmtA=:J+d7W1sRcDk4XLyAoAjG1C
- M/bUCBr+8wfhhVR/OXNueelGx7x1p9uVDPnTUe2DPRhHnyQodtWeXmpgH4soEgpsv4sFZ92vt
- qZ4tMKXnFlg9LU4lzQsYN11T96j2lnmRbOlyzkqk65NiTpNXJLIJ2ulzXQXAJ8udmEkRjcfFI
- VG9SWZGmmjTCElM/MvqiHJBfbJ7G1U3zy+ctT68IAb+qgwRnoQexB/l1R2c/UqmUvo1uIAdTs
- mVwuAAT9LeU7SQDOp1m16iEIXqLvc2SzB8r4M3BHl1lQej+VqTQBcu0B+mZoiuZjv6UZJsKWs
- Zw0NUiSv7o4KUWqTNNCzCAlCAXNXDhuGphAFm4ZOgSGx4w+ngcwU5/5dekT0/Ly/CZTJSjmKU
- px558yw2RrkfEdpIrkpakR07DYQB8Cvq34jggWlcTFwQxzfOITU+lOtamtHTRze/oQewhyqIW
- lcxAA1i0nScBorRIQR3mO+4wx9IY5zXim3PWxouc4cg0HhrFYTEC28KaJq76vRHxkz3xV8lAg
- hU0xnqJ2T5qFSqJv5wtTuwCBXbJKcP7u5PDvrwyBr4TabFijPkAeTlUiWTw4EuLNTPvHhJ94x
- ZDsLkO18EhJWTVvAm1g+mnfpAVIqhTEoxHr5drPhJATCNAF+d5S3CMwb5kUHj1595xkwjVceX
- kszj4+Hounp1rt/Hvkh2e457Pe625rj5WPi7Wn2QuP/nINZxPxev6CJYJKodrgWmbO/uUEQZ7
- BZnAkNSIwyKvK4/cYnOuCmQ/1CX90eS53X03Mgqygwbrqxx1IhURdUScaRe51z9umikp3cBQY
- EDD/4y+kDmPfzO8OmSgsozKlLIXX5HBV9CnBtKqKTN97Yba83PGeZOuKiW8qYAsj96hYZAs8K
- 8s9CbVe3skddwnI+3RoOOY50iKe3ER22MRMyzO3DxpfTGMZRDYCKajt3ukF6pYO8Mf4JnhftM
- IWnweH08ZcJdS1Hd8d7y65bwLzmrj2a+IIHTfiT+mdxSyYWmUqkCezkTZs9CiiscT2X85kVp0
- iYUaQaDoNSbawIxHrgwZRrxlIDdVQ8Y2+pva+cwhh6V7hF2j8EnL6qN+Lz9LfuwWrlfVAdUcG
- 4uckbe8x6v8xrUMwInvrPwZg5DBFnNvCvgzCa5kz9/VHNEFCyn/kfi+6Kf+fG//J/0D0HXzX7
- uyhP4M1rGcZrRjFSHkOCmxXQk1DhWQ+l82K38orqNVgkHlYh48ya4qYrtfX7QwNbIHY1KjhDH
- gMbJU/CHiFq87yeRyUuorMbzFFk3Og03HZeZWRw==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:3lhL9fo9LXc=:aAW2l6Zdjh2q+QoFDgPCVI
+ zqnMD5T8oL0CRty6U22ldNDK993Z2iM/oHnP8AThn3AiAwJU1V11o3gEBl1gN8bomN8p+sSY8
+ XZVc2qM7DiYJaniqQOun6C4daDlszk6g3+HrKdgOG2ftzhBA1s5cXUw0dTUVZjGkSnjawtA/C
+ rGFIy1OdxwfvcvcH6+wQGd4Xw+Gt+FKI9UVYpgD231O3C59GsMUbuXH8/nORZy7jmCkcvSc5l
+ s08VbWPfxkPVBwOMyhaN+z+Jzp0J+YVDdnNlkAYl/ARV5XOzYQcbZuOzAUqxw77ChRI91geEQ
+ aOtP9RtvDSTPybo450zyhOohsggqlTS1qYd4c+NS61yWuRAzNwzIXZRsc/I9Telt8YLp0j4RB
+ a77vq7i7QMszjEZXQ3HoEjO+4LzQ7/0v4leFWZ15GZU5Rytm+v1NxHKOwKVZjvNGRfRIvj7qU
+ rSY2qcKex2ZdTjNJd9nqPfbpsdUpnTx0L5O6C1EWeVVpeho/U2ialyswX/yMjHO9iCSP5esYh
+ t+IyXIDTb7ykz6ILDdOBijMf76zaUPFgWKRGlemwRm/1zLKkPA5fAs9HjmrhVIwvsuxdnf9ct
+ 0rWVwnLNzMJzsBIpTIixd0u1R/HQBxzqci8eetzd7uFPIk9LCoPOUtAwpKvTBjye3UNpdGqr2
+ SZNwwozAl5yaXkh35242bTY0My86jN4zK4M0loLDjujLNhnqHqWyamkg54GLNYMKSNkhuPYWK
+ JdqNNbuBBAX1uvzQcS4QOMgHJhL+XInCCPcOKBu4NVspmxADm/A8RhfHfhnZiXZLsv96FgEmQ
+ Y+wYWtg75d3mzLrKqjFb3Jh81pgugFwsG9lCWqRTqe5ea9NQJ6kav6rEyztWfScmW8d4bRCBM
+ m6Ae39MtREFhm/mk4RkpXBIzfXEonkriPRVg6CL5W9DbnEbUUWr1ne70oq0MiYdxo2s6HeX4p
+ hDyIaawD7sMGwS2DW1Nc6b/Fx+AlYQTg6TfRKhN9d1S0TncS08kivghH1rdQDX+EmOJvFjN63
+ Sj3fynHJ2HGa53yT6TB13nORnxk10maexznek/NykFclnHZAhMgZwtwtj9aNyW8ibp3aWPU04
+ 1/tDWZHmlU34sK15s7yJgLuvXofOMW+UMXVEuDXktTC/8OEPtTNj8I1jBI5gbzqegz/0pqs2b
+ QP7xJnpCgCRD5jjzi9qktVGN2rzQCoTkS0tEN7SmbnwzTvNJLJ4WEz1FvoykQlMmGoxeh4DGK
+ YQGt7Douc7BJjTJm9WFO5LPiPo3UGvYbx3ccp4Q==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191006_082908_801115_D3532589 
-X-CRM114-Status: GOOD (  17.11  )
+X-CRM114-CacheID: sfid-20191006_082908_394676_EE61F4ED 
+X-CRM114-Status: GOOD (  19.74  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.22 listed in list.dnswl.org]
+ low trust [212.227.17.21 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.22 listed in wl.mailspike.net]
+ [212.227.17.21 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -115,106 +112,120 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the BCM2711 to ARCH_BCM2835, but use new machine board code
-because of the differences.
+This series adds minimal support for the new Raspberry Pi 4, so we are able
+to login via debug UART.
 
-Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-Reviewed-by: Eric Anholt <eric@anholt.net>
-Acked-by: Florian Fanelli <f.fainelli@gmail.com>
----
- arch/arm/mach-bcm/Kconfig    |  4 +++-
- arch/arm/mach-bcm/Makefile   |  3 ++-
- arch/arm/mach-bcm/bcm2711.c  | 24 ++++++++++++++++++++++++
- arch/arm64/Kconfig.platforms |  5 +++--
- 4 files changed, 32 insertions(+), 4 deletions(-)
+Patch 1:     Bluetooth driver fix
+Patch 2-3:   Fix some DT schema warnings
+Patch 4-5:   Prepare DTS for the new SoC BMC2711
+Patch 6-9:   Add Raspberry Pi 4 DTS support
+Patch 10:    Update MAINTAINERS
+
+Unfortunately the Raspberry Pi Foundation didn't released a
+peripheral documentation for the new SoC yet. So we only have a preliminary
+datasheet [1] and reduced schematics [2].
+
+Known issues:
+Since Linux 5.3-rc1 DMA doesn't work properly on that platform.
+Nicolas Saenz Julienne investigates on that issue. As a temporary workaround
+i reverted the following patch to test this series:
+
+79a98672 "dma-mapping: remove dma_max_pfn"
+7559d612 "mmc: core: let the dma map ops handle bouncing"
+
+Changes in V4:
+- add Rob's Reviewed-by
+- enable ZONE_DMA for ARCH_BCM2835
+- fix spi reference in bcm2711.dtsi
+- fix bluetooth section in RPi 4 dts
+- drop "always-on" for armv8-timer
+- add necessary Bluetooth driver fix
+- add arm64 dts link
+- additional comments to the dts files as requested by Florian
+
+Changes in V3:
+- rebased series
+- add Reviewed-by
+- enable ARM_GIC for ARCH_BCM2835 on arm64 too
+- configure i2c pull-up in bcm2711.dtsi
+- move i2c2 to bcm2835-common.dtsi
+- add missing compatibles to DT schema as suggested by Rob
+- fix DT schema warnings in dtsi files
+- replace brcm pintrl with generic pinctrl as suggested by Linus
+- make dma_zone_size depend on CONFIG_ZONE_DMA as suggested by Matthias
+
+Changes in V2:
+- use separate board file for BCM2711
+- enable ARM_GIC for ARCH_BCM2835
+- add Acked-by and Reviewed-by
+- fix arm-pmu and timer nodes for BCM2711 reported by Marc Zyngier
+- enable HDMI at board level
+- move HDMI and pixelvalve into bcm2835-common.dtsi as suggested by Eric Anholt
+- fix DWC2 probing warning by setting USB role to peripheral
+- fix order of node references in bcm2711.dtsi
+- disable I2C clock stretching quirk for BCM2711
+- mark PLLD_PER as critical clock
+- make PLLH clock unavailable on BCM2711
+- fix compile warning in clk-bcm2835 for arm64
+
+Changes since RFC:
+- change BCM2838 -> BCM2711 as discussed in RFC
+- update MAINTAINERS accordingly
+- drop "spi: bcm2835: enable shared interrupt support" from series
+- squash all pinctrl-bcm2835 changes into one patch
+- introduce SoC specific clock registration as suggested by Florian
+- fix watchdog probing for Raspberry Pi 4
+- convert brcm,bcm2835.txt to json-schema
+- move VC4 node to bcm2835-common.dtsi
+- fallback to legacy pull config for Raspberry Pi 4
+- revert unintended change of mailbox in bcm283x.dtsi
+- add reference for arm64
+
+[1] - https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711/rpi_DATA_2711_1p0_preliminary.pdf
+[2] - https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/rpi_SCH_4b_4p0_reduced.pdf
+
+Stefan Wahren (10):
+  bluetooth: hci_bcm: Fix RTS handling during startup
+  ARM: dts: bcm283x: Remove simple-bus from fixed clocks
+  ARM: dts: bcm283x: Remove brcm,bcm2835-pl011 compatible
+  ARM: dts: bcm283x: Move BCM2835/6/7 specific to bcm2835-common.dtsi
+  dt-bindings: arm: Convert BCM2835 board/soc bindings to json-schema
+  dt-bindings: arm: bcm2835: Add Raspberry Pi 4 to DT schema
+  ARM: bcm: Add support for BCM2711 SoC
+  ARM: dts: Add minimal Raspberry Pi 4 support
+  arm64: dts: broadcom: Add reference to RPi 4 B
+  MAINTAINERS: Add BCM2711 to BCM2835 ARCH
+
+ .../devicetree/bindings/arm/bcm/bcm2835.yaml       |  54 ++
+ .../devicetree/bindings/arm/bcm/brcm,bcm2835.txt   |  67 --
+ MAINTAINERS                                        |   3 +-
+ arch/arm/boot/dts/Makefile                         |   1 +
+ arch/arm/boot/dts/bcm2711-rpi-4-b.dts              | 123 +++
+ arch/arm/boot/dts/bcm2711.dtsi                     | 844 +++++++++++++++++++++
+ arch/arm/boot/dts/bcm2835-common.dtsi              | 194 +++++
+ arch/arm/boot/dts/bcm2835-rpi.dtsi                 |   4 -
+ arch/arm/boot/dts/bcm2835.dtsi                     |   1 +
+ arch/arm/boot/dts/bcm2836.dtsi                     |   1 +
+ arch/arm/boot/dts/bcm2837.dtsi                     |   1 +
+ arch/arm/boot/dts/bcm283x-rpi-usb-peripheral.dtsi  |   7 +
+ arch/arm/boot/dts/bcm283x.dtsi                     | 190 +----
+ arch/arm/mach-bcm/Kconfig                          |   4 +-
+ arch/arm/mach-bcm/Makefile                         |   3 +-
+ arch/arm/mach-bcm/bcm2711.c                        |  24 +
+ arch/arm64/Kconfig.platforms                       |   5 +-
+ arch/arm64/boot/dts/broadcom/Makefile              |   3 +-
+ arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dts   |   2 +
+ drivers/bluetooth/hci_bcm.c                        |   2 +
+ 20 files changed, 1272 insertions(+), 261 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/arm/bcm/bcm2835.yaml
+ delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm2835.txt
+ create mode 100644 arch/arm/boot/dts/bcm2711-rpi-4-b.dts
+ create mode 100644 arch/arm/boot/dts/bcm2711.dtsi
+ create mode 100644 arch/arm/boot/dts/bcm2835-common.dtsi
+ create mode 100644 arch/arm/boot/dts/bcm283x-rpi-usb-peripheral.dtsi
  create mode 100644 arch/arm/mach-bcm/bcm2711.c
+ create mode 100644 arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dts
 
-diff --git a/arch/arm/mach-bcm/Kconfig b/arch/arm/mach-bcm/Kconfig
-index 5e5f1fa..e4e25f2 100644
---- a/arch/arm/mach-bcm/Kconfig
-+++ b/arch/arm/mach-bcm/Kconfig
-@@ -161,6 +161,8 @@ config ARCH_BCM2835
- 	select GPIOLIB
- 	select ARM_AMBA
- 	select ARM_ERRATA_411920 if ARCH_MULTI_V6
-+	select ARM_GIC if ARCH_MULTI_V7
-+	select ZONE_DMA if ARCH_MULTI_V7
- 	select ARM_TIMER_SP804
- 	select HAVE_ARM_ARCH_TIMER if ARCH_MULTI_V7
- 	select TIMER_OF
-@@ -169,7 +171,7 @@ config ARCH_BCM2835
- 	select PINCTRL_BCM2835
- 	select MFD_CORE
- 	help
--	  This enables support for the Broadcom BCM2835 and BCM2836 SoCs.
-+	  This enables support for the Broadcom BCM2711 and BCM283x SoCs.
- 	  This SoC is used in the Raspberry Pi and Roku 2 devices.
-
- config ARCH_BCM_53573
-diff --git a/arch/arm/mach-bcm/Makefile b/arch/arm/mach-bcm/Makefile
-index b59c813..7baa8c9 100644
---- a/arch/arm/mach-bcm/Makefile
-+++ b/arch/arm/mach-bcm/Makefile
-@@ -42,8 +42,9 @@ obj-$(CONFIG_ARCH_BCM_MOBILE_L2_CACHE) += kona_l2_cache.o
- obj-$(CONFIG_ARCH_BCM_MOBILE_SMC) += bcm_kona_smc.o
-
- # BCM2835
--obj-$(CONFIG_ARCH_BCM2835)	+= board_bcm2835.o
- ifeq ($(CONFIG_ARCH_BCM2835),y)
-+obj-y				+= board_bcm2835.o
-+obj-y				+= bcm2711.o
- ifeq ($(CONFIG_ARM),y)
- obj-$(CONFIG_SMP)		+= platsmp.o
- endif
-diff --git a/arch/arm/mach-bcm/bcm2711.c b/arch/arm/mach-bcm/bcm2711.c
-new file mode 100644
-index 0000000..dbe2967
---- /dev/null
-+++ b/arch/arm/mach-bcm/bcm2711.c
-@@ -0,0 +1,24 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright (C) 2019 Stefan Wahren
-+ */
-+
-+#include <linux/of_address.h>
-+
-+#include <asm/mach/arch.h>
-+
-+#include "platsmp.h"
-+
-+static const char * const bcm2711_compat[] = {
-+#ifdef CONFIG_ARCH_MULTI_V7
-+	"brcm,bcm2711",
-+#endif
-+};
-+
-+DT_MACHINE_START(BCM2711, "BCM2711")
-+#ifdef CONFIG_ZONE_DMA
-+	.dma_zone_size	= SZ_1G,
-+#endif
-+	.dt_compat = bcm2711_compat,
-+	.smp = smp_ops(bcm2836_smp_ops),
-+MACHINE_END
-diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
-index 16d7614..63b463b 100644
---- a/arch/arm64/Kconfig.platforms
-+++ b/arch/arm64/Kconfig.platforms
-@@ -37,11 +37,12 @@ config ARCH_BCM2835
- 	select PINCTRL
- 	select PINCTRL_BCM2835
- 	select ARM_AMBA
-+	select ARM_GIC
- 	select ARM_TIMER_SP804
- 	select HAVE_ARM_ARCH_TIMER
- 	help
--	  This enables support for the Broadcom BCM2837 SoC.
--	  This SoC is used in the Raspberry Pi 3 device.
-+	  This enables support for the Broadcom BCM2837 and BCM2711 SoC.
-+	  These SoCs are used in the Raspberry Pi 3 and 4 devices.
-
- config ARCH_BCM_IPROC
- 	bool "Broadcom iProc SoC Family"
 --
 2.7.4
 
