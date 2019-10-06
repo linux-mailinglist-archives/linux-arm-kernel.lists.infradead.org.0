@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F975CD2E6
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 17:32:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C5C8CD2E3
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 17:31:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,69 +11,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=i/9ZlcSWHQReHwWyvRWI6cVyrHRhHrrZzQXc2Y7V/FQ=; b=Fn7KqdjOy4DjhtyCIeSBCQYZAa
-	ZyFGDUB2veHZPgh6hsSr++zAGhsPrbzz2gkX72l6iOc4pbZOq4+XDXj+6mtDJxBb+MjHNEh46r6RU
-	uhrhr88+RtJZ2I6eia0ovAe3MUPEA+ly7KUPAOEJislSTkJDLBDIoXYhYMjsMYFBKOkhtGm+g6h13
-	MtSH//6L5pszsPC7SCGmN/0cFtPt8JZJc7ovs+DXBSOqo9zQfoUjKoFAH8uc/RD3KAB0cNfMhsTt2
-	hpA7ZJ705kUG3xyw7jEjU38OwkcCkakgaePSxPoxys3wd47FwNmapsjJdCYHNPUMWDNqy6knKLzhf
-	6VzJ+tvw==;
+	bh=j05kzJR6x27dk0gXh59qnzdYXG0yBJSoZjo1MU3nEOE=; b=piQ7aNXHPfM0F2WU4Vf7pgeAb9
+	tXfR2/P1R7H7VXKLbJzJEi23QlOmcjENSZaW9QtEGyvDtFzF7dwWMBW8dfvFcBYzwwWD+skfBbJ2i
+	5vC9OEruKMwIc/7I8lIz9HQSXXhnBufsU6xSDv++POOlbtLNpn+TcSGN3TCHfPNwlb/uWMsORMFlB
+	Yg2j6N4PmL/fh9QjFASwMPDo2KtxE5SRWVs5vQDvBjwTW4cSQp6y7ESsg6pVbZ1aVS4Zf6nlQyWXn
+	5jL9UDnJLdhMCD1mfaSeLAeo4szEzOJORmVsGj1pp6S5r7vhAMALgi/qAfn+ndZPZJoEGn03eYh4u
+	NJggCeTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iH8Vy-0002pL-T8; Sun, 06 Oct 2019 15:32:06 +0000
+	id 1iH8V4-0001yq-Da; Sun, 06 Oct 2019 15:31:10 +0000
 Received: from mout.gmx.net ([212.227.17.22])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iH8T8-0007sR-4j
- for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 15:29:13 +0000
+ id 1iH8T6-0007r7-Pn
+ for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 15:29:12 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1570375741;
- bh=zsRxR3IHUAe+a4FnhRTcZN5Fxop1p9dlP5W0ADx11B8=;
+ s=badeba3b8450; t=1570375742;
+ bh=8nLmfY08cK6Zl55bjH7dTnmxZSguSgPLd5QV3TA7wYk=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=WLLtdTvTJVSL+C7Sg3DLZogPXOLnF+MYv7CISZw0w9AhGBQQkXBEHh3CiAi/fMM9i
- fQ4PYFejYVG2Qv18ROp4i/CZqOE87lJcyPttX35Zk09NI+rYu3ce8G8nYJwsqsl7+c
- OiC6nrqCpggfnUg/Yn5y7zVnS8J5EydkiV4RFMS0=
+ b=hxvNdN3cgWjB8KXsNL3AJA/h0HrMQsxNVgxkn67YX9P3O85yaK66Xg4GDkyujhquG
+ r+Q5rtxnyyE5AzoMXDqR1zuRAp4gTh8HzyZsyPf8wWlnF1IZM9umWu+2phyoyFDGkI
+ oScytdho8IAXwbtOZfkH8Yafsu9kQjvKjwJqiM4M=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.116]) by mail.gmx.com
  (mrgmx104 [212.227.17.168]) with ESMTPSA (Nemesis) id
- 1MVNB1-1iiTAw0xd9-00SNc1; Sun, 06 Oct 2019 17:29:01 +0200
+ 1MuUjC-1hzCD13IIs-00rV5A; Sun, 06 Oct 2019 17:29:01 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Marcel Holtmann <marcel@holtmann.org>,
  Johan Hedberg <johan.hedberg@gmail.com>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>, Eric Anholt <eric@anholt.net>,
  Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
  Scott Branden <sbranden@broadcom.com>
-Subject: [PATCH V4 09/10] arm64: dts: broadcom: Add reference to RPi 4 B
-Date: Sun,  6 Oct 2019 17:28:27 +0200
-Message-Id: <1570375708-26965-10-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH V4 10/10] MAINTAINERS: Add BCM2711 to BCM2835 ARCH
+Date: Sun,  6 Oct 2019 17:28:28 +0200
+Message-Id: <1570375708-26965-11-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1570375708-26965-1-git-send-email-wahrenst@gmx.net>
 References: <1570375708-26965-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:ON0gA9PtGkXWmbxKZqc2fzs/pNiWrzcX2ZwiwfEr8L7aCP6Vraf
- MZkposixV9lKWtxDmtArGEtW3UEjm7a8PIm8k4CLfsKgVT+mjgccEVQ0l/8UphnwlQYaYu/
- loBqdLssKqpRC0NqlIUk6UXRRQfiPkZeuQVO6nmbPo0fA0VhzjCCGDhwDaK8tpt0qNHboMa
- g+0SJXehK1sEL8xls3SOw==
+X-Provags-ID: V03:K1:ho7aodY28Mw+u3YaTMCbHrrwJViCpFvXzIPn5PuSWIG7Bbv2UTu
+ OR1+pZrBOm6bV5ikYjEeedAIsyfTNMfwEoqprQ+l3qbioT6oLRKnF4fEVMGIj9izfLmYXaf
+ WX9PqoYLlF4TjOHooNRW1R27Xp1IDE4QoX9UooVWKGccxHn5AjpoSgfOuaALqItuyuNa4zi
+ Cb/cOv6M7GGQ3c2ANavew==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:cyR+OKiBsl4=:94ywcr6Zbb8TdryMYPN/f0
- yy4QaSlJETqCMaX6TaQ8d9Dih02qRCgksOtGfF4/qoZ+EW4DVb19ot/LGeMW+3jsux/MNWGFB
- zfmzKz75jlY0K62Inhkv+iY5hdEjjuhpUdMYL4LfRYJX5Mg2rraV/tytrNu4T7Suqis9S74d1
- IVAMCmUDLbtZm/Av5Y5rWweGVEXhZESl+fNM5nLo6JnBayStg6xaabRu34lHgBRh3z2tAG4wd
- Oe6ESFIk+hRhh6X8zspv3Dj68JAK5wFNgaeJukx73zJVMZsQuo/5egXmqYqnNY1Xmz8mczISA
- FVXkosdmgvWEik8z+fjDTlkNRpgy9PzTgMqc2PAI+A1zC0KUACa7mZyiT7XUTSJJNu4oFMByf
- ImkBWcg8ME49HY2sCj+Jp68XpRfiuw5Ep99D/w1hfMzelQeKjl5J7GmWorZj4XyhxVq7jvfDs
- dZXO3Qo4FBYcjQcUF3yEGQT64Ey+WjUDSfU+tBrq1tXYIx4mMnUpLPMfofL8t0HxTlOgkFa8t
- AN9G6uO7i7P1pQ12DwQNXu0vuOxGLOrpaJw/K3sQxt69uj/YohXf1n7XRtqFAqqpmD6Ki97aH
- 27ZA/zFhNlFh+nx70AasuLf/p0Iy9UQmVCvad6DE8sgZDp3Vb19/ueORYarffg4mKRhJEqNEZ
- 1EAHZCObu1HLcsMp04ABq6zv/Y27QRKEi+2KWgfiIoRIAR9wMNUhTwFGXBq/WonutKnMhFlg3
- db+1WjtuE516p884U/M8dpUapJksckKa9/FQquW9K4AcFKNChJRbdL1WW83hyFSjOM6ADshKf
- OXpqKppGs7OLMxIk97/FdH/nXSP1L4bjtO+tZMpVgY85fuo/6M7jUX4h6v1Z/W/6F+ve9UJRz
- 0YaQ+L23rP2vc4vXla5Zg5t6qLMV3nW0OHj3WHwYa8OhZF8NCeoXiGg8sg9AaCPgFvKjx/1JR
- eIUQGRGMxGK4Ql7VcDiaghHIIXIIxzJVZPprT1xKamKSp25dY863zQRGq4k+Mve5WI5ZcxF4r
- rVx65Mu6kauX5atmAvT5EAWl2pUriASTagEMXG11bq39CKcvl5jV9bwIexWozV7rKNjnSbCum
- fsR6t5hzUhQaGHgwYwMoche8O2rzMYj0OKdAp7+hoVPFU3lUhCctdqF1r5kHr9VvhUbS8eIjQ
- O6nqbtZJLfMsubFb5nB607FhdX5F8ZlSY8u8k6U8+55oy4mNWgJJ7EJte3h8fdTmO5SppiIf1
- 7o08mAP7lD3Q8ykESB2WfYD8vKrFBHOpxxtmRjw==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:tkgwn1bGI14=:Z/hUYUhFbB+/CWHlJtJhjy
+ 64j4o8dKT8/CpDRcbmWeUJeSORRlq5SUdvNpgM0XkF9RY2t3m/NyQmoLgKfR3NwSaktxB2yFN
+ 1+/Kw+S2NFHQU1t6w2VDYeu1HHuREdL8/mLOZgoLaUT/NvAZkKx8+FM0WwtC7mKxN9xUpcAmH
+ 0tJBUfY/zvyN0j1m1yNY3tqNqSQuNssUtNoTdyeFTI+t2toibKcVToo/xUat8X6J1PAP+MGiv
+ ap7mPq987SFy03eVoEY3KRLlkMBn6ybJi7YqEA+JqojUPC5tqbjnlJcA6sX4m3cZsbu1p3Vs3
+ Tq/XMkTbMhMRvejd+vmIRH7Am85+zGBQdPSv1Wk6XVPyX6LxnnZdy/tz53CHfbdYxB3qtGJyB
+ ZstGSRKXh5rlNC3t0A38SYDaxLD00Eu16VahKZYncxeO8JzTD8Cnqp5KJsGYzh1cJAxjshB0P
+ 0/UtDt2Tz7zenal/IZFCbLLKCJwpE3u3w//rh6eCliMH9EhcqZwvqVTGMP1Azx1zJSy+9Lmys
+ hho/syv7XoGoYzVFFP2lvE1ffF7mbxkFxOWsTJrx3Adjnh0zo6l/Dw9BSBDbYbxNao/8jehZK
+ XTD2vxf3f/md7Kb+ZU+kkWM5dXMZZZPC2+OLkPPLDcdfF9OH5NLkwOiseyH4NyOJFID4oTer3
+ hl/WF4Dpn63BJrCtwuOI9FF8Wz4UFNXJ18cY9TDAJrW7b21d1qQkRdXtHw5DLjrYTrxKsWM8d
+ lx4wS+Uo7ZPSYqpVi60pcIynaGyOJlFmmISd3ggqtv+S/ez/zBQ09QZDgsX11blkFyMTIfM89
+ X7ptvFmOYSD/4LsmvLpfGipY/uL5J1FxfkmgRNWTKrbbpqkU2FTvo6pRoSwWt5l167o9sVnAv
+ 3PVZGUA8pq79Cr+ywDGV9t5n4u2UGXG01+/YXfmrITq166pWaY/CJ+FeUS3USh/FsWfOzpbup
+ x//TWUiq44S6qdt1IdnmBp5fHyN930wYa+qwVfzDPqmrG5EsH19qu0PonzgJC8o/w9yZBVJKd
+ XoZLfzajSojeDLI5OcSgQuCvggp8Q/TvIQppRi78sLqmFb5iPOr3BrB7i8rH26JKwYqW4vM2w
+ oXypXu7CXaJgvW+1773xMm+WaDoQYraMEGKsA+bdwCdW3dSHz/XSo9F63SqPAk56XGC6OVuPu
+ OSNp3MycHkjJk+TiypOg/AVuEhj/YzzFmV4uitB9okYN4uasf1i9Mzk+7lDhe9cpyZikSiTF7
+ RCVmcqpazxXs1bSyl4xe1Ocot5jmkHwyNUN/oTA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191006_082910_474832_45FD173E 
-X-CRM114-Status: GOOD (  13.41  )
+X-CRM114-CacheID: sfid-20191006_082909_125735_E436FC2D 
+X-CRM114-Status: GOOD (  12.60  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -115,36 +115,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds a reference to the dts of the Raspberry Pi 4 B,
-so we don't need to maintain the content in arm64.
+Clarify that BCM2711 belongs to the BCM2835 ARCH.
 
 Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+Acked-by: Eric Anholt <eric@anholt.net>
 ---
- arch/arm64/boot/dts/broadcom/Makefile            | 3 ++-
- arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dts | 2 ++
- 2 files changed, 4 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dts
+ MAINTAINERS | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/broadcom/Makefile b/arch/arm64/boot/dts/broadcom/Makefile
-index d1d31cc..cb7de8d 100644
---- a/arch/arm64/boot/dts/broadcom/Makefile
-+++ b/arch/arm64/boot/dts/broadcom/Makefile
-@@ -1,5 +1,6 @@
- # SPDX-License-Identifier: GPL-2.0
--dtb-$(CONFIG_ARCH_BCM2835) += bcm2837-rpi-3-a-plus.dtb \
-+dtb-$(CONFIG_ARCH_BCM2835) += bcm2711-rpi-4-b.dtb \
-+			      bcm2837-rpi-3-a-plus.dtb \
- 			      bcm2837-rpi-3-b.dtb \
- 			      bcm2837-rpi-3-b-plus.dtb \
- 			      bcm2837-rpi-cm3-io3.dtb
-diff --git a/arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dts b/arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dts
-new file mode 100644
-index 0000000..d24c536
---- /dev/null
-+++ b/arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dts
-@@ -0,0 +1,2 @@
-+// SPDX-License-Identifier: GPL-2.0
-+#include "arm/bcm2711-rpi-4-b.dts"
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 296de2b..14a939a 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -3187,7 +3187,7 @@ N:	bcm216*
+ N:	kona
+ F:	arch/arm/mach-bcm/
+
+-BROADCOM BCM2835 ARM ARCHITECTURE
++BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE
+ M:	Eric Anholt <eric@anholt.net>
+ M:	Stefan Wahren <wahrenst@gmx.net>
+ L:	bcm-kernel-feedback-list@broadcom.com
+@@ -3195,6 +3195,7 @@ L:	linux-rpi-kernel@lists.infradead.org (moderated for non-subscribers)
+ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ T:	git git://github.com/anholt/linux
+ S:	Maintained
++N:	bcm2711
+ N:	bcm2835
+ F:	drivers/staging/vc04_services
+
 --
 2.7.4
 
