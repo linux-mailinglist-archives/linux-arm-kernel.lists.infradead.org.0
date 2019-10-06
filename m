@@ -2,92 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58534CD918
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 22:04:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 062D6CD922
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 22:14:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1/+KCz+VxrGSVMZdlHteFXce92zDlH/HgYl49LCejik=; b=tpssbe4YSylnJZ
-	oY1CcQo68Tq/fdaEjJ85F/VLuVMyiXh01Gu4nh2yYHJEHNCXKk3k1NKtH/L9rLN70jft2gD0NRtC8
-	nEvG60G9WleYMpIMRy8a5y+KNSASj0qwLxHL8CcfvkoAJWkYXdlaCEcoqxgMZ86LnComt68PsfhYk
-	2NXkz2iI6It590FRUTvJdZuTPsw6QK/kIGuOEpIY6E0rz3N5YrtPPFC01/WCB0G8qHy0ObaxDDyM+
-	xS64e44pgS6hQSBhPvH9oJfRLwJ9Dz9tHKhb0AYFViEOt4xuqRJJPSrPGyShtF7WiwYq2BMTgkV+y
-	HtQz/Gmx5V7dS3H25osQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=98n5RjBjCorCL35KfwJPO9Yhaw9bETNV8f9fR0/lRpo=; b=Ic7M1XfNqMsDR7969DyM8D/cN4
+	N8bKhpdocPDr6itH/xeQ3XZHG9mgqYAVwe9j6+Spg7AG4O5f7C9mTJxG5ELW/dR6zTvO1Z37uyyOu
+	C1PSoWmjphc7AWhKwyCtIq4gePxrkaPIEg5+dKbp7amqrZNqBYqcsJRcVc89CH3ZAbj8ghJkDPLJ/
+	88KnomRsvW6DNYdyv9ZRf6tsbg7IpxP7L/8Dj5kenBiCm2MmBvuHKAK2pl9eGblzIZGE0QpmQiRDC
+	ZG4vkdbCwvr1ZL42wg8LRefLN3XyI/nQrUUFBn+OLSCZvulgTU7dHvJELjNUwglTtbqb1NmkKJRxX
+	lGPUolvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHClW-0005be-Ck; Sun, 06 Oct 2019 20:04:26 +0000
-Received: from mail-yb1-xb43.google.com ([2607:f8b0:4864:20::b43])
+	id 1iHCui-0000WM-1z; Sun, 06 Oct 2019 20:13:56 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHCkg-0004sr-MX
- for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 20:03:36 +0000
-Received: by mail-yb1-xb43.google.com with SMTP id f4so3974497ybm.2
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 06 Oct 2019 13:03:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=PIaX21W8I9U+EF8hoBafqL2VfdvHvRxIA6u3x9/TwM0=;
- b=blJ+tDl8nG+FSdKewzSogp8WX4feg6K4mc5o3Fp+NyudNHmPlRGHJKHYyi3Dj0xOkv
- Us73dYpeeXifqLcgdM7PX4S/pUTCneN+KVMetVEJaDNO7VZyM9xbHbUSQy7NGRtXOrhh
- h8StpYzvNVVKJofD45zTFy+8iSfQKp+UUWfuGkUt9Z30wAatg9QkDUCc68Dl92za0EMf
- WimwZNQ+QHrNuB8VCVgxJNs0PnHKUX6oveNe14tkFHHhvrAwHA5rGSCXF+7LylvHdl9k
- GEQYNkWZE7HlncbmWwGSiiCFJv0aOQilT1YY2FBk+wTx64Q3I5oMqK0HdJuIw+1Dh+te
- 8KeQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=PIaX21W8I9U+EF8hoBafqL2VfdvHvRxIA6u3x9/TwM0=;
- b=evZg4IrkPcM1WY5JEZYjxpJ11S5/F9k8ttHSwsEOFgdVJfmWZ7EaBmh9kkCR37N9LH
- d5iS9V5Kz0X0UQSs/g3ydEcDOA4ogI5+kXUVokrVMJmNVqY7Rz/lrsMAcrg/KM5yJW8U
- fJGm4mFCMlTP1WOliHjVPX/pkvBi/4ggFzIfciIRRmZiW5vZJL4J7mQt0O9DQe/NFI2y
- gL/lzmfs5AmG0M6izhC/53DFl4A+e7QW1l+jvKJmB5fZgOeAI3sgG/A270/K+pAmlKG4
- pDNeBxnDQIVg90ecyff/Asfk979LClWjzWKfuzbTzzloslGVzkLFSrh5CTxIthXFnq4P
- JfFA==
-X-Gm-Message-State: APjAAAXFOQAtRDe81OCj4h5pj3weoSJdQ8CBdRxbEvZnj36fKsJNg2N2
- x5wUgufdhekLbv6YeYAzVnaNRsjQ
-X-Google-Smtp-Source: APXvYqz4mvN9s0757t230hmoQhGHOxs+DNUn1yMwWNnvg3C98M+iXwK0v5AeIOh5LLFcDlzwU/Briw==
-X-Received: by 2002:a5b:b05:: with SMTP id z5mr9181818ybp.7.1570392213485;
- Sun, 06 Oct 2019 13:03:33 -0700 (PDT)
-Received: from localhost.localdomain (072-189-084-142.res.spectrum.com.
- [72.189.84.142])
- by smtp.gmail.com with ESMTPSA id x16sm3765266ywx.103.2019.10.06.13.03.32
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 06 Oct 2019 13:03:32 -0700 (PDT)
-From: William Breathitt Gray <vilhelm.gray@gmail.com>
-To: jic23@kernel.org
-Subject: [PATCH v5 3/3] counter: Fix typo in action_get description
-Date: Sun,  6 Oct 2019 16:03:11 -0400
-Message-Id: <4d8dc1e31aaa02e2d0a1ea580f1923075967db5b.1570391994.git.vilhelm.gray@gmail.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <cover.1570391994.git.vilhelm.gray@gmail.com>
-References: <cover.1570391994.git.vilhelm.gray@gmail.com>
+ id 1iHCuY-0000Up-LV
+ for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 20:13:49 +0000
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 0A6A718CB8E9;
+ Sun,  6 Oct 2019 20:13:43 +0000 (UTC)
+Received: from [10.36.116.33] (ovpn-116-33.ams2.redhat.com [10.36.116.33])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 12BB35D9CC;
+ Sun,  6 Oct 2019 20:13:39 +0000 (UTC)
+Subject: Re: [PATCH v6 01/10] mm/memunmap: Don't access uninitialized memmap
+ in memunmap_pages()
+To: linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ linux-arm-kernel@lists.infradead.org, linux-ia64@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org, linux-s390@vger.kernel.org,
+ linux-sh@vger.kernel.org, x86@kernel.org,
+ "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>,
+ Dan Williams <dan.j.williams@intel.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Logan Gunthorpe <logang@deltatee.com>, Ira Weiny <ira.weiny@intel.com>
+References: <20191006085646.5768-1-david@redhat.com>
+ <20191006085646.5768-2-david@redhat.com>
+ <20191006195838.GA27160@freebsd.route53-aws-cloud.de>
+From: David Hildenbrand <david@redhat.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
+ 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
+ SE+xAvmumFBY
+Organization: Red Hat GmbH
+Message-ID: <fefcb660-d8e2-57fd-a348-a6e5269587fd@redhat.com>
+Date: Sun, 6 Oct 2019 22:13:39 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <20191006195838.GA27160@freebsd.route53-aws-cloud.de>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
+ (mx1.redhat.com [10.5.110.63]); Sun, 06 Oct 2019 20:13:43 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191006_130334_751298_75FDF6C8 
-X-CRM114-Status: GOOD (  10.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191006_131346_751066_383B6B16 
+X-CRM114-Status: GOOD (  21.82  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b43 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vilhelm.gray[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,40 +125,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: benjamin.gaignard@linaro.org, alexandre.torgue@st.com,
- linux-iio@vger.kernel.org, patrick.havelange@essensium.com,
- linux-kernel@vger.kernel.org, William Breathitt Gray <vilhelm.gray@gmail.com>,
- mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- david@lechnology.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The action_get callback returns a Synapse's action mode.
+On 06.10.19 21:58, Damian Tometzki wrote:
+> Hello David,
+> 
+> patch 05/10 is missing in the patch series. 
+> 
 
-Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
----
- include/linux/counter.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Hi Damian,
 
-diff --git a/include/linux/counter.h b/include/linux/counter.h
-index 32fb4d8cc3fd..9dbd5df4cd34 100644
---- a/include/linux/counter.h
-+++ b/include/linux/counter.h
-@@ -315,7 +315,7 @@ enum counter_signal_value {
-  *			Count's functions_list array.
-  * @action_get:		function to get the current action mode. Returns 0 on
-  *			success and negative error code on error. The index of
-- *			the respective Signal's returned action mode should be
-+ *			the respective Synapse's returned action mode should be
-  *			passed back via the action parameter.
-  * @action_set:		function to set the action mode. action is the index of
-  *			the requested action mode from the respective Synapse's
+not really. Could be that lkml is slow today. E.g., check
+
+https://marc.info/?l=linux-mm&m=157035222620403&w=2
+
+and especially
+
+https://marc.info/?l=linux-mm&m=157035225120440&w=2
+
+All mails popped up on the mm list.
+
+> 
+> On Sun, 06. Oct 10:56, David Hildenbrand wrote:
+>> From: "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>
+>>
+>> With an altmap, the memmap falling into the reserved altmap space are
+>> not initialized and, therefore, contain a garbage NID and a garbage
+>> zone. Make sure to read the NID/zone from a memmap that was initialzed.
+>>
+>> This fixes a kernel crash that is observed when destroying a namespace:
+>>
+>> [   81.356173] kernel BUG at include/linux/mm.h:1107!
+>> cpu 0x1: Vector: 700 (Program Check) at [c000000274087890]
+>>     pc: c0000000004b9728: memunmap_pages+0x238/0x340
+>>     lr: c0000000004b9724: memunmap_pages+0x234/0x340
+>> ...
+>>     pid   = 3669, comm = ndctl
+>> kernel BUG at include/linux/mm.h:1107!
+>> [c000000274087ba0] c0000000009e3500 devm_action_release+0x30/0x50
+>> [c000000274087bc0] c0000000009e4758 release_nodes+0x268/0x2d0
+>> [c000000274087c30] c0000000009dd144 device_release_driver_internal+0x174/0x240
+>> [c000000274087c70] c0000000009d9dfc unbind_store+0x13c/0x190
+>> [c000000274087cb0] c0000000009d8a24 drv_attr_store+0x44/0x60
+>> [c000000274087cd0] c0000000005a7470 sysfs_kf_write+0x70/0xa0
+>> [c000000274087d10] c0000000005a5cac kernfs_fop_write+0x1ac/0x290
+>> [c000000274087d60] c0000000004be45c __vfs_write+0x3c/0x70
+>> [c000000274087d80] c0000000004c26e4 vfs_write+0xe4/0x200
+>> [c000000274087dd0] c0000000004c2a6c ksys_write+0x7c/0x140
+>> [c000000274087e20] c00000000000bbd0 system_call+0x5c/0x68
+>>
+>> Cc: Dan Williams <dan.j.williams@intel.com>
+>> Cc: Andrew Morton <akpm@linux-foundation.org>
+>> Cc: Jason Gunthorpe <jgg@ziepe.ca>
+>> Cc: Logan Gunthorpe <logang@deltatee.com>
+>> Cc: Ira Weiny <ira.weiny@intel.com>
+>> Signed-off-by: Aneesh Kumar K.V <aneesh.kumar@linux.ibm.com>
+>> [ minimze code changes, rephrase description ]
+>> Signed-off-by: David Hildenbrand <david@redhat.com>
+>> ---
+>>  mm/memremap.c | 11 +++++++----
+>>  1 file changed, 7 insertions(+), 4 deletions(-)
+>>
+>> diff --git a/mm/memremap.c b/mm/memremap.c
+>> index 557e53c6fb46..8c2fb44c3b4d 100644
+>> --- a/mm/memremap.c
+>> +++ b/mm/memremap.c
+>> @@ -123,6 +123,7 @@ static void dev_pagemap_cleanup(struct dev_pagemap *pgmap)
+>>  void memunmap_pages(struct dev_pagemap *pgmap)
+>>  {
+>>  	struct resource *res = &pgmap->res;
+>> +	struct page *first_page;
+>>  	unsigned long pfn;
+>>  	int nid;
+>>  
+>> @@ -131,14 +132,16 @@ void memunmap_pages(struct dev_pagemap *pgmap)
+>>  		put_page(pfn_to_page(pfn));
+>>  	dev_pagemap_cleanup(pgmap);
+>>  
+>> +	/* make sure to access a memmap that was actually initialized */
+>> +	first_page = pfn_to_page(pfn_first(pgmap));
+>> +
+>>  	/* pages are dead and unused, undo the arch mapping */
+>> -	nid = page_to_nid(pfn_to_page(PHYS_PFN(res->start)));
+>> +	nid = page_to_nid(first_page);
+> 
+> Why we need 'nid = page_to_nid(first_page)' we didnt use it anymore in this function ?
+
+Please see ...
+
+> 
+>>  
+>>  	mem_hotplug_begin();
+>>  	if (pgmap->type == MEMORY_DEVICE_PRIVATE) {
+>> -		pfn = PHYS_PFN(res->start);
+>> -		__remove_pages(page_zone(pfn_to_page(pfn)), pfn,
+>> -				 PHYS_PFN(resource_size(res)), NULL);
+>> +		__remove_pages(page_zone(first_page), PHYS_PFN(res->start),
+>> +			       PHYS_PFN(resource_size(res)), NULL);
+>>  	} else {
+>>  		arch_remove_memory(nid, res->start, resource_size(res),
+                                   ^ here
+
+:)
+
+>>  				pgmap_altmap(pgmap));
+
+
+
 -- 
-2.23.0
 
+Thanks,
+
+David / dhildenb
 
 _______________________________________________
 linux-arm-kernel mailing list
