@@ -2,85 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41A25CD8FD
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 21:50:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 325BACD905
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 21:59:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:References:In-Reply-To:Message-ID:MIME-Version:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=YCyzoF/wGdrxPlpns+rBfOBicwDuSwiVv8dXyEdly8U=; b=dPJZW2B4eeRcpIlp6HMnW9hfg
-	3EUCy8pRBZJlMpS8UHq86QWg3h1Vl090/eIdxTHGc4eESs8bHJuFM0aIygUnbWoe5GVdtKX6J/guO
-	c0qnyicUgb6fqUTmqwR+/fdmn267gMvnYeDCPII7Fx4NzWVVNougmzDnuG9NpffhDgXW57ah+BTV6
-	eUfeORoufjliX88yJlVg3n8g1MgushQdNG82i4ja78nvsRZISe6I9Y3cqlnHy5iNGgtG5BOhkgPzP
-	0LZpwLswKtCtNxgUi0Mlq3MMScXMs7zkc+PgNGtbXOTmaubMkQOUs8Tnbyn1PFu/McfWgC4Wbc00l
-	yedTxXgVA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3VuPNMi0jwTUJWd13W3FN4HIatbBPNOyfI37Qdbnsgg=; b=Gw3cr28+mKr089
+	288GNmZLLAwcd66XwkYnhdab6ZMzrnnCSVbEvUDddU44qDX4gHHq9Mj1HcCibTVYc2Z3SwLe1fsMX
+	TXPVRupBfxFwBKYUzAkAS7eHWFFfFvTj8LmwTas6syKiUKYrsVL9XindzSuP3h6rxbViXw+Mzo3Y1
+	OPrf8R60ie3tLIpFgbEZKDMy72FbwaCWVblegZBVxskYOkQc0SKwrIegXqQzwLffEdz1fqI8Sw1/V
+	1ZmSNUblkChasy1LRaHp5Jqb1dC6yrgPsH+CjRljghRc/rd+meWMSJxUkcNEUZB7a5zg0Sx6F7NkG
+	Audu4aopKfIuAolYGLZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHCY5-0001F4-VT; Sun, 06 Oct 2019 19:50:33 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iHCg7-00036Q-IY; Sun, 06 Oct 2019 19:58:51 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHCXu-0001E8-4d; Sun, 06 Oct 2019 19:50:24 +0000
-Received: by mail-wr1-x441.google.com with SMTP id o18so12702792wrv.13;
- Sun, 06 Oct 2019 12:50:20 -0700 (PDT)
+ id 1iHCg0-00035y-B9
+ for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 19:58:45 +0000
+Received: by mail-qk1-x743.google.com with SMTP id x134so10740837qkb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 06 Oct 2019 12:58:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:mime-version:message-id:in-reply-to
- :references:user-agent:content-transfer-encoding;
- bh=SF3ve2/BTUkIULmgsBwIXtaoivMNXD9/DFfQmDFlSVM=;
- b=WCb+t9jwEYGZQSJkSVHLE8EFck+4SgZCH15o1AjWwGVAVttdTdlgxF+XKZYy991Efi
- 2l62TnJxPwv5rVodwo1DxxTQq8u4Ha/igbJxxJkqp/FTvZSJIzJa15SlpF0jtT+ihlrI
- uxlujJ28cUf4Yk33siXsvvLBdSWz3kB2EVfeqyio4GxAVNllD38S2PSKwBNWfRzU82yP
- nEJSKnl2roA1Kf5gYoLkvzIDo09z2ufMc6CUCUfYaXoiYDqJXAuXAc8+S9EMfDx++xLi
- BYPNjy80Igjw7V2WjmPeRSxmGb7CeaTe25IXDwaC5kvEqCqMdNT7h5ywWBUw05jZtWHH
- WF6Q==
+ h=date:from:to:cc:subject:message-id:mail-followup-to:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=APg736jg0ah1Nn8uMNYIJkW2DcUQUmQs6qDMcBNTRSY=;
+ b=FoOm9beXdYeuD1c+g8rePWP5H+HcWgPE076sSAqfiTel4Q0Td54IlBGRZMjKxlUk8L
+ HVRy25IZMnNbc8SWFbKQpgGlvGFGDOWhUN+AgLYL92MXWhih+qj8A2fL3VALNocwTpqP
+ FQgKEQ9d+gNs/CWsBfMg2M9N1HgEO7l4VgKTRdNRP7srbptNIvK1yLiq9PQFzN97hwJD
+ PQqjTJBI9iBcbCgHfkAQivSS8ZhZGWhp7euCX2oVGNcFVVabiEBZ2YQtPZM3E2PwhQNC
+ l3CHuJVy6xsLzc6ZK3Xl6/ZmPZbZyzn+7BrsOpcQQthNYmztIX5TH3rU39i5J11LksM6
+ OUWw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:mime-version:message-id
- :in-reply-to:references:user-agent:content-transfer-encoding;
- bh=SF3ve2/BTUkIULmgsBwIXtaoivMNXD9/DFfQmDFlSVM=;
- b=JuaPycVLHUjiHls1UDWD5MOKqJZkexsyv5K3xR3BV+jNP9pPRcRuQbHQEFMNXoX499
- zHb4wqjo8zR5lJZGmkixIbz5Xe9HFw3G/SVqyDtU0QeWCLgC57EUAe8YSb2cWKk3YeCK
- 7DYCEuTh0j/fDMTwST4eaT3ntXd0ie3TpTc+NWqpEbLkaRNmbg2l+7QbaKC+N41Hpun7
- F6v1cshk5TfhtOVSRp2JMrkTFZhb5REsnuYWgnu8zlbb3WvzeBM5BMjC9q++nOBUjYk6
- FJj5TsfDUB7mm3M35uGUNakpMpV9N4Aro1tibcA3OubihDDuBJy228tyR3jNExnEmUjI
- UdLA==
-X-Gm-Message-State: APjAAAVzJVUhLPtSlFeRRXO/0Err5h8EFlRj8vFx59RtndqWd1qk2sxG
- qkbLZbOfiHbq+YUuyq28U68=
-X-Google-Smtp-Source: APXvYqxATYtyWsBwj3st87+ddDby4qJ5JPK9YSeU7U9c5UyOyXXi8fOFenqo8kZijK2LBkrzcVLj0A==
-X-Received: by 2002:a5d:63cb:: with SMTP id c11mr17998797wrw.281.1570391419078; 
- Sun, 06 Oct 2019 12:50:19 -0700 (PDT)
-Received: from localhost ([94.73.41.211])
- by smtp.gmail.com with ESMTPSA id u10sm13213035wmm.0.2019.10.06.12.50.17
+ h=x-gm-message-state:date:from:to:cc:subject:message-id
+ :mail-followup-to:references:mime-version:content-disposition
+ :in-reply-to:user-agent;
+ bh=APg736jg0ah1Nn8uMNYIJkW2DcUQUmQs6qDMcBNTRSY=;
+ b=o0f5oD1Qfo+ja900I15ZsoeY9ci9+gh4dfFSg53N8rauu0fypfwcldzZ8TMzNzj0E+
+ dleBsRh+VdY290jpDHwQxLe+hfyLLQ50Kpp+A7BDn+BzdMWF/eQg2akEqH1YlAfYhsyE
+ vTFh43mvl/ONU8lf3HjyZn7xy33Xurxzzp6EGxzvSEu+T0d4GYtxr80y3CUq6xGibuh7
+ iydD/Pg+hGGPxX2EvH+cn20lEEKYlPKH6KyVW35BXRKy7KXPvBZbLCOUDZZ8OxoJlHMP
+ /M7CdLFXfeXIhutcyqRx6V97R1sbCvIQsU4B5kupjrXmzyL0ICFeqHvdlEuPs1q8qp2F
+ hiWA==
+X-Gm-Message-State: APjAAAVvZehA0tZ2yhJ1FqjP0EIyumqws8TQdHHd3gmahnITGMWMb4+i
+ nD90NsxkIVKpUN7ogWpIIKc=
+X-Google-Smtp-Source: APXvYqwd63qnLz5/ty0+jRrhUrnVAvecut6TehXBQWTOiWh9hSCC+3s41ChbAphbo9+h6ZSP8hjXUA==
+X-Received: by 2002:a37:4e84:: with SMTP id
+ c126mr19418006qkb.334.1570391921654; 
+ Sun, 06 Oct 2019 12:58:41 -0700 (PDT)
+Received: from freebsd.route53-aws-cloud.de
+ (ec2-3-95-91-234.compute-1.amazonaws.com. [3.95.91.234])
+ by smtp.gmail.com with ESMTPSA id k2sm6645230qti.24.2019.10.06.12.58.41
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 06 Oct 2019 12:50:18 -0700 (PDT)
-From: Vicente Bergas <vicencb@gmail.com>
-To: Vivek Unune <npcomplete13@gmail.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: Fix usb-c on Hugsun X99 TV Box
-Date: Sun, 06 Oct 2019 21:50:16 +0200
+ Sun, 06 Oct 2019 12:58:41 -0700 (PDT)
+Date: Sun, 6 Oct 2019 21:58:39 +0200
+From: Damian Tometzki <damian.tometzki@gmail.com>
+To: David Hildenbrand <david@redhat.com>
+Subject: Re: [PATCH v6 01/10] mm/memunmap: Don't access uninitialized memmap
+ in memunmap_pages()
+Message-ID: <20191006195838.GA27160@freebsd.route53-aws-cloud.de>
+Mail-Followup-To: David Hildenbrand <david@redhat.com>,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ linux-arm-kernel@lists.infradead.org, linux-ia64@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org, linux-s390@vger.kernel.org,
+ linux-sh@vger.kernel.org, x86@kernel.org,
+ "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>,
+ Dan Williams <dan.j.williams@intel.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Jason Gunthorpe <jgg@ziepe.ca>,
+ Logan Gunthorpe <logang@deltatee.com>,
+ Ira Weiny <ira.weiny@intel.com>
+References: <20191006085646.5768-1-david@redhat.com>
+ <20191006085646.5768-2-david@redhat.com>
 MIME-Version: 1.0
-Message-ID: <4cb2b781-e177-4008-86ae-a9108bd303e4@gmail.com>
-In-Reply-To: <20191005005200.GA11418@vivek-desktop>
-References: <20190929032230.24628-1-npcomplete13@gmail.com>
- <54c67ca8-8428-48ee-9a96-e1216ba02839@gmail.com>
- <20190929234615.GA5355@vivek-desktop> <2223294.9I8gkMH88G@phil>
- <20191005005200.GA11418@vivek-desktop>
-User-Agent: Trojita
+Content-Disposition: inline
+In-Reply-To: <20191006085646.5768-2-david@redhat.com>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191006_125022_310692_317BD4B4 
-X-CRM114-Status: GOOD (  10.27  )
+X-CRM114-CacheID: sfid-20191006_125844_408654_D1FD24C4 
+X-CRM114-Status: GOOD (  19.96  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vicencb[at]gmail.com)
+ provider (damian.tometzki[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -99,32 +115,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, Felipe Balbi <felipe.balbi@linux.intel.com>,
- Felipe Balbi <balbi@kernel.org>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org, akash@openedev.com,
- ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
- Roger Quadros <rogerq@ti.com>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: linux-s390@vger.kernel.org, linux-ia64@vger.kernel.org,
+ Ira Weiny <ira.weiny@intel.com>, linux-sh@vger.kernel.org,
+ Jason Gunthorpe <jgg@ziepe.ca>,
+ "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ Logan Gunthorpe <logang@deltatee.com>, Dan Williams <dan.j.williams@intel.com>,
+ linuxppc-dev@lists.ozlabs.org, Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gU2F0dXJkYXksIE9jdG9iZXIgNSwgMjAxOSAyOjUyOjAwIEFNIENFU1QsIFZpdmVrIFVudW5l
-IHdyb3RlOgo+IE9uIEZyaSwgT2N0IDA0LCAyMDE5IGF0IDExOjQ1OjA4UE0gKzAyMDAsIEhlaWtv
-IFN0dWVibmVyIHdyb3RlOgo+PiBIaSBWaXZlaywKPj4gCj4+IEFtIE1vbnRhZywgMzAuIFNlcHRl
-bWJlciAyMDE5LCAwMTo0NjoxNSBDRVNUIHNjaHJpZWIgVml2ZWsgVW51bmU6IC4uLgo+Cj4gSGkg
-SGVpa28sCj4KPiBJIHRlc3RlZCB0aGUgYzA5YjczY2YgcGF0Y2ggd2l0aG91dCBtb2RpZnlpbmcg
-ZXhzaXN0aW5nIGR0cy4gSSBjYW4gY29uZmlybQo+IHRoYXQgdGhhdCBwYXRjaCBkb2Vzbid0IHdv
-cmsgZm9yIG1lLiBObyB1c2ItYyBkZXZpY2VzIHdlcmUgcmVjb2duaXplZC4KPgo+IFZpY2Vuw6cg
-LSB3ZXJlIHlvdSBhYmxlIHRvIHRlc3QgaXQ/CgpJIGNhbiBhbHNvIGNvbmZpcm0gdGhhdAoKYzA5
-YjczY2ZhYzJhOTMxN2YxMTA0MTY5MDQ1YzUxOWM2MDIxYWExZAp1c2I6IGR3YzM6IGRvbid0IHNl
-dCBnYWRnZXQtPmlzX290ZyBmbGFnCgphbG9uZSBkb2VzIG5vdCBmaXggdGhlIGlzc3VlLgoKZTFk
-OTE0OWU4Mzg5ZjE2OTBjZGQ0ZTQwNTY3NjZkZDI2NDg4YTBmZQphcm02NDogZHRzOiByb2NrY2hp
-cDogRml4IFVTQjMgVHlwZS1DIG9uIHJrMzM5OS1zYXBwaGlyZQoKaXMgc3RpbGwgcmVxdWlyZWQg
-Zm9yIHRoZSBVU0ItQyB0byB3b3JrIG9uIHRoZSBTYXBwaGlyZSBib2FyZC4KClJlZ2FyZHMsCiAg
-VmljZW7Dpy4KCj4gQXMgc29vbiBhcyBJIGFwcGx5IGR0cyBwYXRjaCwgdXNiLWMgZGV2aWNlcyBh
-cmUgcmVjb2duaXplZC4KPgo+IFRoYW5rcywKPgo+IFZpdmVrCgoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
-c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hello David,
+
+patch 05/10 is missing in the patch series. 
+
+
+On Sun, 06. Oct 10:56, David Hildenbrand wrote:
+> From: "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>
+> 
+> With an altmap, the memmap falling into the reserved altmap space are
+> not initialized and, therefore, contain a garbage NID and a garbage
+> zone. Make sure to read the NID/zone from a memmap that was initialzed.
+> 
+> This fixes a kernel crash that is observed when destroying a namespace:
+> 
+> [   81.356173] kernel BUG at include/linux/mm.h:1107!
+> cpu 0x1: Vector: 700 (Program Check) at [c000000274087890]
+>     pc: c0000000004b9728: memunmap_pages+0x238/0x340
+>     lr: c0000000004b9724: memunmap_pages+0x234/0x340
+> ...
+>     pid   = 3669, comm = ndctl
+> kernel BUG at include/linux/mm.h:1107!
+> [c000000274087ba0] c0000000009e3500 devm_action_release+0x30/0x50
+> [c000000274087bc0] c0000000009e4758 release_nodes+0x268/0x2d0
+> [c000000274087c30] c0000000009dd144 device_release_driver_internal+0x174/0x240
+> [c000000274087c70] c0000000009d9dfc unbind_store+0x13c/0x190
+> [c000000274087cb0] c0000000009d8a24 drv_attr_store+0x44/0x60
+> [c000000274087cd0] c0000000005a7470 sysfs_kf_write+0x70/0xa0
+> [c000000274087d10] c0000000005a5cac kernfs_fop_write+0x1ac/0x290
+> [c000000274087d60] c0000000004be45c __vfs_write+0x3c/0x70
+> [c000000274087d80] c0000000004c26e4 vfs_write+0xe4/0x200
+> [c000000274087dd0] c0000000004c2a6c ksys_write+0x7c/0x140
+> [c000000274087e20] c00000000000bbd0 system_call+0x5c/0x68
+> 
+> Cc: Dan Williams <dan.j.williams@intel.com>
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: Jason Gunthorpe <jgg@ziepe.ca>
+> Cc: Logan Gunthorpe <logang@deltatee.com>
+> Cc: Ira Weiny <ira.weiny@intel.com>
+> Signed-off-by: Aneesh Kumar K.V <aneesh.kumar@linux.ibm.com>
+> [ minimze code changes, rephrase description ]
+> Signed-off-by: David Hildenbrand <david@redhat.com>
+> ---
+>  mm/memremap.c | 11 +++++++----
+>  1 file changed, 7 insertions(+), 4 deletions(-)
+> 
+> diff --git a/mm/memremap.c b/mm/memremap.c
+> index 557e53c6fb46..8c2fb44c3b4d 100644
+> --- a/mm/memremap.c
+> +++ b/mm/memremap.c
+> @@ -123,6 +123,7 @@ static void dev_pagemap_cleanup(struct dev_pagemap *pgmap)
+>  void memunmap_pages(struct dev_pagemap *pgmap)
+>  {
+>  	struct resource *res = &pgmap->res;
+> +	struct page *first_page;
+>  	unsigned long pfn;
+>  	int nid;
+>  
+> @@ -131,14 +132,16 @@ void memunmap_pages(struct dev_pagemap *pgmap)
+>  		put_page(pfn_to_page(pfn));
+>  	dev_pagemap_cleanup(pgmap);
+>  
+> +	/* make sure to access a memmap that was actually initialized */
+> +	first_page = pfn_to_page(pfn_first(pgmap));
+> +
+>  	/* pages are dead and unused, undo the arch mapping */
+> -	nid = page_to_nid(pfn_to_page(PHYS_PFN(res->start)));
+> +	nid = page_to_nid(first_page);
+
+Why we need 'nid = page_to_nid(first_page)' we didnt use it anymore in this function ?
+
+>  
+>  	mem_hotplug_begin();
+>  	if (pgmap->type == MEMORY_DEVICE_PRIVATE) {
+> -		pfn = PHYS_PFN(res->start);
+> -		__remove_pages(page_zone(pfn_to_page(pfn)), pfn,
+> -				 PHYS_PFN(resource_size(res)), NULL);
+> +		__remove_pages(page_zone(first_page), PHYS_PFN(res->start),
+> +			       PHYS_PFN(resource_size(res)), NULL);
+>  	} else {
+>  		arch_remove_memory(nid, res->start, resource_size(res),
+>  				pgmap_altmap(pgmap));
+> -- 
+> 2.21.0
+>
+Best regards
+Damian
+ 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
