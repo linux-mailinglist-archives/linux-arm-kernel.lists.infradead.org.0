@@ -2,63 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC087CD250
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 16:46:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E019CD258
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 16:54:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GxMnv/FxIddLk2vw3UgrEFmJr3vz1IHmbnBFHK1b6HQ=; b=SnZMcr6US/y0tX
-	2lpsJEku0IBVMCTtS6kEcwKJDV2+PLyMnoBR+WyJrLPoNOjbyYiq2M1cZnUpJ9Gk1a4R5Mn/QSQwP
-	7LgdmoLspqsJ0qP2/Oed4VUHYXcwE2A91+zONNUkjfQru7JliCmgPJ2QtneE5QQJOXPT3JlhbvSkO
-	xlWOtgh0NIQgNX3iBWp2VUewYJVxVfmLBZP/wDaDkwhG8gytNiOk9KCNOysSxssxbKrqVBnObh82k
-	+pEY0cUGhyrXs0z0ItGLqr9he8l9dxJ4hZCGXYqK/hgcIi3Gu1bSsp+9lGavvWv2V+kD8tH/dKfxR
-	WKW263EzuCI4r3BTON6A==;
+	List-Owner; bh=Vlc28wR2eDOjLuB0Aqy2M20My0R0gKviKJPi3Xq/t2o=; b=Ih8IS5/pMBHDpf
+	uDqnjVQTcISTOBwUJiwhxVmo8ykChWjOODE5b3pDB3u0gbfIfps2ntmgsxqed+eiE702FQeeBcPkz
+	krvDdbM1lJ8LTyO+ER5eXn0jR2hw+ROUJwaWHCRYMbJO6u0h8Ef7r8Yvtv3TQzdZs1o+dh2BayVrv
+	s1GRWNQp+LNjo1xie8x2Puw4LWwfO5QP4Skh/hlG0oSFrCxQNyOBu69Z/rfFuzzXXmy4PmcL/HWwr
+	uYDHQGT2WneTrp9ZmmBW5qaFx/6lmHOd1UkBm8/Ke2kRu9TYKqOVici7ZqrUWNhwyE006WIqT8tjA
+	NApHp6KFLXgT3X7+SU3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iH7nH-0008GX-BM; Sun, 06 Oct 2019 14:45:55 +0000
-Received: from haggis.mythic-beasts.com ([2a00:1098:0:86:1000:0:2:1])
+	id 1iH7vL-0001ar-Ic; Sun, 06 Oct 2019 14:54:15 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iH7n7-0008GD-J1
- for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 14:45:47 +0000
-Received: from [199.195.250.187] (port=51143 helo=hermes.aosc.io)
- by haggis.mythic-beasts.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92.3)
- (envelope-from <icenowy@aosc.io>)
- id 1iH7n1-0002QY-T7; Sun, 06 Oct 2019 15:45:40 +0100
-Received: from localhost (localhost [127.0.0.1]) (Authenticated sender:
- icenowy@aosc.io)
- by hermes.aosc.io (Postfix) with ESMTPSA id 26B0482916;
- Sun,  6 Oct 2019 14:45:19 +0000 (UTC)
-Message-ID: <58dc94b6371ab2f5b11b13ab707d73ab3fc4cc64.camel@aosc.io>
-Subject: Re: [linux-sunxi] [PATCH 3/3] Revert "drm/sun4i: dsi: Rework a bit
- the hblk calculation"
-From: Icenowy Zheng <icenowy@aosc.io>
-To: Jagan Teki <jagan@amarulasolutions.com>
-Date: Sun, 06 Oct 2019 22:44:25 +0800
-In-Reply-To: <CAMty3ZDW4XHyW+6XL_RSVHqTSk79-r749pa0n5e6VbUzowAsiw@mail.gmail.com>
-References: <20191001080253.6135-1-icenowy@aosc.io>
- <20191001080253.6135-4-icenowy@aosc.io>
- <CAMty3ZDW4XHyW+6XL_RSVHqTSk79-r749pa0n5e6VbUzowAsiw@mail.gmail.com>
-Organization: Anthon Open-Source Community
+ id 1iH7vE-0001aD-Cp
+ for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 14:54:10 +0000
+Received: from pendragon.ideasonboard.com
+ (modemcable151.96-160-184.mc.videotron.ca [184.160.96.151])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 0E517DD;
+ Sun,  6 Oct 2019 16:53:55 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1570373636;
+ bh=QDEA/8/x+1vTbsqf8DyjUh6f+BfP1E7QR04AKqspjjc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=HZTmMLta2NyaurObBzy9hmysL2BaGuBN8DapUYbSEdZA8RRd7t3WhX/ivMtzWNRKs
+ v+c38ZqqQwh7zfhsvqx+Lj1wY5aAzUWh/HAFjquKyg4y7T2XTDf7r/tMoLOkNHJ+VW
+ cRQ46tPkZDH6CqKBPrrVWUXBNV6y1igkUnm+yGpU=
+Date: Sun, 6 Oct 2019 17:53:48 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: "H. Nikolaus Schaller" <hns@goldelico.com>
+Subject: Re: [PATCH] ARM: omap2plus_defconfig: Fix selected panels after
+ generic panel changes
+Message-ID: <20191006145348.GD4740@pendragon.ideasonboard.com>
+References: <20191003165539.50318-1-tony@atomide.com>
+ <03ca02c1-2816-17cd-03fd-5b72e5d0ec96@ti.com>
+ <39E48EC6-65FE-419B-BBE8-E72CB44B517D@goldelico.com>
 MIME-Version: 1.0
-X-BlackCat-Spam-Score: 0
-X-Spam-Status: No, score=-0.1
+Content-Disposition: inline
+In-Reply-To: <39E48EC6-65FE-419B-BBE8-E72CB44B517D@goldelico.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191006_074545_628607_EEF1D8CA 
-X-CRM114-Status: GOOD (  22.75  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191006_075408_797806_EC926E95 
+X-CRM114-Status: GOOD (  14.16  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a00:1098:0:86:1000:0:2:1 listed in]
- [list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,64 +75,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>, linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Chen-Yu Tsai <wens@csie.org>,
- Maxime Ripard <mripard@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+Cc: Linux-OMAP <linux-omap@vger.kernel.org>, Tony Lindgren <tony@atomide.com>,
+ Jyri Sarha <jsarha@ti.com>, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-5ZyoIDIwMTktMTAtMDPlm5vnmoQgMDk6NTMgKzA1MzDvvIxKYWdhbiBUZWtp5YaZ6YGT77yaCj4g
-SGkgV2VucywKPiAKPiBPbiBUdWUsIE9jdCAxLCAyMDE5IGF0IDE6MzQgUE0gSWNlbm93eSBaaGVu
-ZyA8aWNlbm93eUBhb3NjLmlvPiB3cm90ZToKPiA+IFRoaXMgcmV2ZXJ0cyBjb21taXQgNjJlNzUx
-MWE0ZjRkY2YwN2Y3NTM4OTNkMzQyNGRlY2Q5NDY2Yzk4Yi4KPiA+IAo+ID4gVGhpcyBjb21taXQs
-IGFsdGhvdWdoIGNsYWltZWQgYXMgYSByZWZhY3RvciwgaW4gZmFjdCBjaGFuZ2VkIHRoZQo+ID4g
-Zm9ybXVsYS4KPiA+IAo+ID4gQnkgZXhwYW5kaW5nIHRoZSBvcmlnaW5hbCBmb3JtdWxhLCB3ZSBj
-YW4gZmluZCB0aGF0IHRoZSBjb25zdCAxMCBpcwo+ID4gbm90Cj4gPiBzdWJzdHJhY3RlZCwgaW5z
-dGVhZCBpdCdzIGFkZGVkIHRvIHRoZSB2YWx1ZSAoYmVjYXVzZSAxMCBpcwo+ID4gbmVnYXRpdmUK
-PiA+IHdoZW4gY2FsY3VsYXRpbmcgaHNhLCBhbmQgaHNhIGl0c2VsZiBpcyBuZWdhdGl2ZSB3aGVu
-IGNhbGN1bGF0aW5nCj4gPiBoYmxrKS4KPiA+IFRoaXMgYnJlYWtzIHRoZSBzaW1pbGFyIHBhdHRl
-cm4gdG8gb3RoZXIgZm9ybXVsYXMsIHNvIHJlc3RvcmluZyB0aGUKPiA+IG9yaWdpbmFsIGZvcm11
-bGEgaXMgbW9yZSBwcm9wZXIuCj4gPiAKPiA+IFNpZ25lZC1vZmYtYnk6IEljZW5vd3kgWmhlbmcg
-PGljZW5vd3lAYW9zYy5pbz4KPiA+IC0tLQo+ID4gIGRyaXZlcnMvZ3B1L2RybS9zdW40aS9zdW42
-aV9taXBpX2RzaS5jIHwgOSArKy0tLS0tLS0KPiA+ICAxIGZpbGUgY2hhbmdlZCwgMiBpbnNlcnRp
-b25zKCspLCA3IGRlbGV0aW9ucygtKQo+ID4gCj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUv
-ZHJtL3N1bjRpL3N1bjZpX21pcGlfZHNpLmMKPiA+IGIvZHJpdmVycy9ncHUvZHJtL3N1bjRpL3N1
-bjZpX21pcGlfZHNpLmMKPiA+IGluZGV4IDJkM2U4MjJhNzczOS4uY2I1ZmQxOWMwZDBkIDEwMDY0
-NAo+ID4gLS0tIGEvZHJpdmVycy9ncHUvZHJtL3N1bjRpL3N1bjZpX21pcGlfZHNpLmMKPiA+ICsr
-KyBiL2RyaXZlcnMvZ3B1L2RybS9zdW40aS9zdW42aV9taXBpX2RzaS5jCj4gPiBAQCAtNTc3LDE0
-ICs1NzcsOSBAQCBzdGF0aWMgdm9pZCBzdW42aV9kc2lfc2V0dXBfdGltaW5ncyhzdHJ1Y3QKPiA+
-IHN1bjZpX2RzaSAqZHNpLAo+ID4gICAgICAgICAgICAgICAgICAgICAgICAgICAobW9kZS0+aHN5
-bmNfc3RhcnQgLSBtb2RlLT5oZGlzcGxheSkgKgo+ID4gQnBwIC0gSEZQX1BBQ0tFVF9PVkVSSEVB
-RCk7Cj4gPiAKPiA+ICAgICAgICAgICAgICAgICAvKgo+ID4gLSAgICAgICAgICAgICAgICAqIFRo
-ZSBibGFua2luZyBpcyBzZXQgdXNpbmcgYSBzeW5jIGV2ZW50ICg0IGJ5dGVzKQo+ID4gLSAgICAg
-ICAgICAgICAgICAqIGFuZCBhIGJsYW5raW5nIHBhY2tldCAoNCBieXRlcyArIHBheWxvYWQgKyAy
-Cj4gPiAtICAgICAgICAgICAgICAgICogYnl0ZXMpLiBJdHMgbWluaW1hbCBzaXplIGlzIHRoZXJl
-Zm9yZSAxMCBieXRlcy4KPiA+ICsgICAgICAgICAgICAgICAgKiBoYmxrIHNlZW1zIHRvIGJlIHRo
-ZSBsaW5lICsgcG9yY2hlcyBsZW5ndGguCj4gPiAgICAgICAgICAgICAgICAgICovCj4gPiAtI2Rl
-ZmluZSBIQkxLX1BBQ0tFVF9PVkVSSEVBRCAgIDEwCj4gPiAtICAgICAgICAgICAgICAgaGJsayA9
-IG1heCgodW5zaWduZWQgaW50KUhCTEtfUEFDS0VUX09WRVJIRUFELAo+ID4gLSAgICAgICAgICAg
-ICAgICAgICAgICAgICAgKG1vZGUtPmh0b3RhbCAtIChtb2RlLT5oc3luY19lbmQgLSBtb2RlLQo+
-ID4gPmhzeW5jX3N0YXJ0KSkgKiBCcHAgLQo+ID4gLSAgICAgICAgICAgICAgICAgICAgICAgICAg
-SEJMS19QQUNLRVRfT1ZFUkhFQUQpOwo+ID4gKyAgICAgICAgICAgICAgIGhibGsgPSBtb2RlLT5o
-dG90YWwgKiBCcHAgLSBoc2E7Cj4gCj4gVGhlIG9yaWdpbmFsIGZvcm11bGEgaXMgY29ycmVjdCBh
-Y2NvcmRpbmcgdG8gQlNQIFsxXSBhbmQgd29yayB3aXRoIG15Cj4gcGFuZWxzIHdoaWNoIEkgaGF2
-ZSB0ZXN0ZWQgYmVmb3JlLiBNYXkgYmUgdGhlIGhvcml6b250YWwgdGltaW5ncyBvbgo+IHBhbmVs
-cyB5b3UgaGF2ZSBsZWFkcyB0byBuZWdhdGl2ZSB2YWx1ZS4KCkRvIHlvdSB0ZXN0ZWQgdGhlIHNh
-bWUgdGltaW5nIHdpdGggQlNQIGtlcm5lbD8KCkl0J3MgcXVpdGUgZGlmZmljdWx0IHRvIGdldCBh
-IG5lZ2F0aXZlIHZhbHVlIGhlcmUsIGJlY2F1c2UgdGhlIHZhbHVlIGlzCnF1aXRlIGJpZyAoaW5j
-bHVkZXMgbW9kZS0+aGRpc3BsYXkgKiBCcHApLgoKU3RyYW5nZWx5LCBvbmx5IGNoYW5nZSB0aGUg
-Zm9ybXVsYSBoZXJlIGJhY2sgbWFrZXMgdGhlIHRpbWluZwp0cmFuc2xhdGVkIGZyb20gRkVYIGZp
-bGUgd29ya3MgKHRlc3RlZCBvbiBQaW5lVGFiIGFuZCBQaW5lUGhvbmUKcHJvZHVjdGlvbiB2ZXIp
-LiBUaGUgdHJhbnNsYXRpb24gcnVsZSBpcyBmcm9tIFsxXS4KClNvIEkgc3RpbGwgaW5zaXN0IG9u
-IHRoZSBwYXRjaCBiZWNhdXNlIGl0J3MgbmVlZGVkIGJ5IGV4cGVyaW1lbnQuCgpbMV0gaHR0cDov
-L2xpbnV4LXN1bnhpLm9yZy9MQ0QKCj4gCj4gWzFdIAo+IGh0dHBzOi8vZ2l0aHViLmNvbS9heXVm
-YW4tcGluZTY0L2xpbnV4LXBpbmU2NC9ibG9iL215LWhhY2tzLTEuMi13aXRoLWRybS9kcml2ZXJz
-L3ZpZGVvL3N1bnhpL2Rpc3AyL2Rpc3AvZGUvbG93bGV2ZWxfc3VuNTBpdzEvZGVfZHNpLmMjTDkx
-OQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
-LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
-bS1rZXJuZWwK
+Hi Nikolaus,
+
+On Sat, Oct 05, 2019 at 12:50:37PM +0200, H. Nikolaus Schaller wrote:
+> > Am 04.10.2019 um 10:41 schrieb Tomi Valkeinen <tomi.valkeinen@ti.com>:
+> > 
+> > On 03/10/2019 19:55, Tony Lindgren wrote:
+> >> The old omapdrm panels got removed for v5.4 in favor of generic panels,
+> >> and the Kconfig options changed. Let's update omap2plus_defconfig
+> >> accordingly so the same panels are still enabled.
+> >> Cc: Jyri Sarha <jsarha@ti.com>
+> >> Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> >> Cc: Tomi Valkeinen <tomi.valkeinen@ti.com>
+> >> Signed-off-by: Tony Lindgren <tony@atomide.com>
+> >> ---
+> >>  arch/arm/configs/omap2plus_defconfig | 12 ++++++------
+> >>  1 file changed, 6 insertions(+), 6 deletions(-)
+> >> diff --git a/arch/arm/configs/omap2plus_defconfig b/arch/arm/configs/omap2plus_defconfig
+> >> --- a/arch/arm/configs/omap2plus_defconfig
+> >> +++ b/arch/arm/configs/omap2plus_defconfig
+> >> @@ -356,14 +356,14 @@ CONFIG_DRM_OMAP_CONNECTOR_HDMI=m
+> >>  CONFIG_DRM_OMAP_CONNECTOR_ANALOG_TV=m
+> >>  CONFIG_DRM_OMAP_PANEL_DPI=m
+> >>  CONFIG_DRM_OMAP_PANEL_DSI_CM=m
+> >> -CONFIG_DRM_OMAP_PANEL_SONY_ACX565AKM=m
+> >> -CONFIG_DRM_OMAP_PANEL_LGPHILIPS_LB035Q02=m
+> >> -CONFIG_DRM_OMAP_PANEL_SHARP_LS037V7DW01=m
+> >> -CONFIG_DRM_OMAP_PANEL_TPO_TD028TTEC1=m
+> >> -CONFIG_DRM_OMAP_PANEL_TPO_TD043MTEA1=m
+> >> -CONFIG_DRM_OMAP_PANEL_NEC_NL8048HL11=m
+> >>  CONFIG_DRM_TILCDC=m
+> >>  CONFIG_DRM_PANEL_SIMPLE=m
+> >> +CONFIG_DRM_PANEL_LG_LB035Q02=m
+> >> +CONFIG_DRM_PANEL_NEC_NL8048HL11=m
+> >> +CONFIG_DRM_PANEL_SHARP_LS037V7DW01=m
+> >> +CONFIG_DRM_PANEL_SONY_ACX565AKM=m
+> >> +CONFIG_DRM_PANEL_TPO_TD028TTEC1=m
+> >> +CONFIG_DRM_PANEL_TPO_TD043MTEA1=m
+> >>  CONFIG_FB=y
+> >>  CONFIG_FIRMWARE_EDID=y
+> >>  CONFIG_FB_MODE_HELPERS=y
+> > 
+> > Sorry, I didn't remember to update these. Some additions:
+> > 
+> > These can be dropped, they no longer exist:
+> > 
+> > CONFIG_DRM_OMAP_ENCODER_TFP410=m
+> > CONFIG_DRM_OMAP_CONNECTOR_DVI=m
+> > CONFIG_DRM_OMAP_PANEL_DPI=m
+> 
+> After being hit by the __always_inline issue [1] I am now
+> back with being able to test v5.4-rc1.
+> 
+> Now this patch fixes the build problem, but we still have
+> one: panel drivers are no longer automatically loaded at
+> boot. We now need to manually modprobe them.
+> 
+> This has been observed with GTA04 (TD028TTEC1) and OpenPandora
+> (TD043MTEA1). So moving the drivers seems to have changed/broken
+> something with DT based driver matching.
+
+That's really weird, the driver name, the SPI device table and the OF
+device table are the same (except for the "omapdss," prefix that we
+don't add anymore in omapdss-boot-init.c). Would you be able to
+investigate what broke ?
+
+> [1]: https://lkml.org/lkml/2019/10/2/201
+
+-- 
+Regards,
+
+Laurent Pinchart
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
