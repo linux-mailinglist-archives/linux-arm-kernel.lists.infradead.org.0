@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E2C2CD108
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 12:36:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C586CD106
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 12:35:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZTFc+9RBLNnDshJtfyfswzFcsFSS9yanr234Zddh8RI=; b=Mi0fxwtrDVMy+Y
-	/CK1GYFuxWZsRzMRMia30V32lueLQsYMa4k4h2IjZOE20XcDcTVO/yCaxOcLCO+kO/TvehFun3Uox
-	Ry9I6bPZWfvWyJebBpq12O/xp89SztEeL7wpP+rtkneqWrIumHiWr01zDG8cPYEoQY1LWSKZodPcn
-	yfdYpR63VNbMaYg3kJj18KQTC/92/gLLJFPx3j02Hx9cDJ2ZRM2l3TZisw3lsx0ZXaym7axPFlQTj
-	eYJmxPrAQ6pYHOeqLZQ51I60T//GtiUaVQdY8yAY/8n9gWc6NSGSnNKuHGyjJDLWWp0H97Z5//ar7
-	ExZesIxnZDMintx02s6g==;
+	List-Owner; bh=IdKG/Aay4LQ6mpnCH215AA3yU3Zo/Rum/V/urVFoSTE=; b=KDI60uZoybzmqQ
+	uNzKIr0Og9146BvO8Hni9dpMImlJWBOaEtqbQQhuEOPQuyKPIJdObF5EwfFDJUm/CNkIPHorF+ovi
+	7QGqTnXIYqRle+kNMZfWWy+ccQ2ZSgBJQqKwcWlndE9RucMp6sR9WgWpY92UABOnzf2ntxVQoR4Dn
+	qxpe7NS9uidSea3EpnKK3Q+sgsT9WgRxPS3hKDQ24u2SzHUYzv+IC5Z2Qwz/KezuCvBCy5bivBN2E
+	7HTeecS6Vy5ykvzu/0DXdzn0Ehkws0MMQKNtRKjOdA7BwXOasziV94JBUk7a3Q4mN2xXF6BE/2m4b
+	FuZhnS83ksG5fvLnJInA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iH3tO-0001dE-M9; Sun, 06 Oct 2019 10:35:58 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1iH3t9-0001Qj-Hl; Sun, 06 Oct 2019 10:35:43 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iH3q7-00069C-Ci; Sun, 06 Oct 2019 10:32:37 +0000
-Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 025DD93548BA88E5F915;
- Sun,  6 Oct 2019 18:32:32 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS411-HUB.china.huawei.com
- (10.3.19.211) with Microsoft SMTP Server id 14.3.439.0; Sun, 6 Oct 2019
- 18:32:22 +0800
+ id 1iH3q8-00069x-Tz; Sun, 06 Oct 2019 10:32:38 +0000
+Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 05F8174B22714585E7A4;
+ Sun,  6 Oct 2019 18:32:34 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS414-HUB.china.huawei.com
+ (10.3.19.214) with Microsoft SMTP Server id 14.3.439.0; Sun, 6 Oct 2019
+ 18:32:26 +0800
 From: YueHaibing <yuehaibing@huawei.com>
 To: <a.zummo@towertech.it>, <alexandre.belloni@bootlin.com>, <joel@jms.id.au>, 
  <andrew@aj.id.au>, <nicolas.ferre@microchip.com>,
@@ -41,10 +41,10 @@ To: <a.zummo@towertech.it>, <alexandre.belloni@bootlin.com>, <joel@jms.id.au>,
  <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>, <mripard@kernel.org>, 
  <wens@csie.org>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
  <linux@prisktech.co.nz>, <michal.simek@xilinx.com>
-Subject: [PATCH -next 07/34] rtc: davinci: use
+Subject: [PATCH -next 08/34] rtc: digicolor: use
  devm_platform_ioremap_resource() to simplify code
-Date: Sun, 6 Oct 2019 18:29:26 +0800
-Message-ID: <20191006102953.57536-8-yuehaibing@huawei.com>
+Date: Sun, 6 Oct 2019 18:29:27 +0800
+Message-ID: <20191006102953.57536-9-yuehaibing@huawei.com>
 X-Mailer: git-send-email 2.10.2.windows.1
 In-Reply-To: <20191006102953.57536-1-yuehaibing@huawei.com>
 References: <20191006102953.57536-1-yuehaibing@huawei.com>
@@ -52,8 +52,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.133.213.239]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191006_033235_606923_A9DBB02F 
-X-CRM114-Status: UNSURE (   8.51  )
+X-CRM114-CacheID: sfid-20191006_033237_172626_E74FA4DB 
+X-CRM114-Status: UNSURE (   8.01  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -61,7 +61,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -90,30 +90,30 @@ This is detected by coccinelle.
 
 Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 ---
- drivers/rtc/rtc-davinci.c | 4 +---
+ drivers/rtc/rtc-digicolor.c | 4 +---
  1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/rtc/rtc-davinci.c b/drivers/rtc/rtc-davinci.c
-index d8e0db2..390b735 100644
---- a/drivers/rtc/rtc-davinci.c
-+++ b/drivers/rtc/rtc-davinci.c
-@@ -469,7 +469,6 @@ static int __init davinci_rtc_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
- 	struct davinci_rtc *davinci_rtc;
--	struct resource *res;
- 	int ret = 0;
+diff --git a/drivers/rtc/rtc-digicolor.c b/drivers/rtc/rtc-digicolor.c
+index 0aecc3f..200d85b 100644
+--- a/drivers/rtc/rtc-digicolor.c
++++ b/drivers/rtc/rtc-digicolor.c
+@@ -175,7 +175,6 @@ static irqreturn_t dc_rtc_irq(int irq, void *dev_id)
  
- 	davinci_rtc = devm_kzalloc(&pdev->dev, sizeof(struct davinci_rtc), GFP_KERNEL);
-@@ -480,8 +479,7 @@ static int __init davinci_rtc_probe(struct platform_device *pdev)
- 	if (davinci_rtc->irq < 0)
- 		return davinci_rtc->irq;
+ static int __init dc_rtc_probe(struct platform_device *pdev)
+ {
+-	struct resource *res;
+ 	struct dc_rtc *rtc;
+ 	int irq, ret;
+ 
+@@ -183,8 +182,7 @@ static int __init dc_rtc_probe(struct platform_device *pdev)
+ 	if (!rtc)
+ 		return -ENOMEM;
  
 -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	davinci_rtc->base = devm_ioremap_resource(dev, res);
-+	davinci_rtc->base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(davinci_rtc->base))
- 		return PTR_ERR(davinci_rtc->base);
+-	rtc->regs = devm_ioremap_resource(&pdev->dev, res);
++	rtc->regs = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(rtc->regs))
+ 		return PTR_ERR(rtc->regs);
  
 -- 
 2.7.4
