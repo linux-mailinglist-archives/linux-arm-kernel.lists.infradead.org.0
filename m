@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6719CCE1B
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 05:55:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E419FCCF20
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 09:18:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w0aPLHJbnH+tzoLOWhZMU2ud8P6MOjZRsusT+z4Yh1U=; b=ONcb3mTDPeiuHb
-	BTH2DOwXvk+sKqW7infkJszzgkWFSZqUyfpJREzxq7aRK+2hyTx7Z8vpdqFqoJuilJnIIyz+NqTrR
-	eXKPSFuLbHMBexFpK69a/3NOaIOgTVQveObX3ZbPo4hCgg6sbiT1efDS/GRdlmaOzv/QqAmCYJDyz
-	UM8sYkv9aYOTEGuYMMSRj1+C1sSct6cEolU17GT3s8g0wYVMFKeLZXJw1ePfoeDhgAGlZ4OBU1Vwa
-	3w/xzcVrs5LkrEZMzKdcGOR95b4qzz6UVNEY9iFOKeP6GXtGbHD4N6SlGEilPsEtlgRlCeVwb4Egb
-	JxU1NA8mjLQmnPDVb/CQ==;
+	List-Owner; bh=lK4OTxDjvJ2eXdEtEKlxUTcTPRi8w3jCD0H6zhwTKbg=; b=Q3uPUwoyDcF7zQ
+	KwNCfJHgWmOHinXumAP83El6NV1h0KASvQZamdtx1XEo31zajKPvv1wZCBogCvePWR8ZvQF9HOVaE
+	YI3M3W/2Aken3CSrTs5n08bt9EyCASwK8e+IiHGDSH6HUUVUfgCf/EElC/DX0U/hc4i4eESeuveeO
+	pJ4gJkf4W4aWQx/EYJNuD/h6sdMyyy+XD2+tfiEQS1iWkx0/E1wxE6ji9AVVvLMVnChuFpOujavCR
+	jdm7iaEY/6rSve0I1o2/EP8GMpq3iKjSLFbvDyKw4C93w0GC3qUdbW5cRfId3d61fWh6b0kk7C9jm
+	WQBOOjAsJamtJI6g2jGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGxdl-0005pm-FU; Sun, 06 Oct 2019 03:55:25 +0000
+	id 1iH0oM-0000AZ-Bo; Sun, 06 Oct 2019 07:18:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGxde-0005pI-Pu
- for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 03:55:19 +0000
+ id 1iH0oC-0000A6-Ap
+ for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 07:18:25 +0000
 Received: from dragon (li937-157.members.linode.com [45.56.119.157])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 99E4C2166E;
- Sun,  6 Oct 2019 03:55:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5E6D520835;
+ Sun,  6 Oct 2019 07:18:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570334117;
- bh=0jSvV7nxVs9zvgYK7gtXs4KinaxY+FIlbXfuFyO6Gq8=;
+ s=default; t=1570346303;
+ bh=Dx2ngyCt4BCp8rcZLEP0l/DTMAqBneUTAAXlZNm0TwU=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=w4Sq3muDAK60snX8++MvYdjyBtvre05wdeWM7kTXBzG1ZOanzkXr3vk19lKxO/4aI
- Lhsz9mD3+aTHwySKvquUtQhfzojHQqwxjBCEvbbCJK6W1pE/YuefsLMNB4J1+UmqhM
- llMwryoRpwMLMMhg7WmNk8WF+s/q8AUdy2U6EQU4=
-Date: Sun, 6 Oct 2019 11:54:50 +0800
+ b=RSgvJNTzYFqurlcEcPNpcX2m/FODAiB2HL+3jqObfh94KqVd5bFa3Je2nZshTRB1n
+ 9HSzOSQ65Np+nhNLI9xORa7PNZcoPhsbGExbj0ycJOjDAEdv0keyVOO/CsWSPsN5Pu
+ cWU/zlYUJfBqAd840NnmedHqJ8upLnh/6MyHIo48=
+Date: Sun, 6 Oct 2019 15:17:47 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH] arm64: dts: imx8mn: Add "fsl,imx8mq-src" as src's
- fallback compatible
-Message-ID: <20191006035449.GQ7150@dragon>
-References: <1568126359-2887-1-git-send-email-Anson.Huang@nxp.com>
+Subject: Re: [PATCH 1/2] arm64: dts: imx8mn: Add system counter node
+Message-ID: <20191006071743.GR7150@dragon>
+References: <1568129118-31114-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1568126359-2887-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1568129118-31114-1-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191005_205518_865452_B86C4F16 
-X-CRM114-Status: UNSURE (   7.23  )
+X-CRM114-CacheID: sfid-20191006_001824_403394_BAF37B19 
+X-CRM114-Status: UNSURE (   7.13  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -87,13 +86,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 10, 2019 at 10:39:19AM -0400, Anson Huang wrote:
-> i.MX8MN can reuse i.MX8MQ's src driver, add "fsl,imx8mq-src" as
-> src's fallback compatible to enable it.
+On Tue, Sep 10, 2019 at 11:25:17AM -0400, Anson Huang wrote:
+> Add i.MX8MN system counter node to enable timer-imx-sysctr
+> broadcast timer driver.
 > 
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-Applied, thanks.
+Applied both, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
