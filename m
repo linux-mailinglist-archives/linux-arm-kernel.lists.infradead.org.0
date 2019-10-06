@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50886CD8A6
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 20:39:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA87DCD8AA
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 20:42:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9r25fcryl6ZrQOBSd3qGUJW1X8Dnco/VoLcO2JvR4xM=; b=lEnfkucD+40MTIeaeFxP5kzji
-	Mrm+D7+vvrp1kXdAhu30tJBY9dYjYpNcQ1Sq4aDLpdepT/P04Tur34b/Yy2Iv8HzPQQ7fMtDu3xoC
-	9M7Tug3vgr4g7fxJEqBeWY1fVGKXr7MDjZkwJBpgndhD5s0YlajVNZZ7CFksfmPq8G3CGcvXU2EhS
-	H72bJuDQjh+sdOyz2oSzeMg9dj1YbA1aKBFqb2la49ybTdJutrnbbKs+kDqVgxL2+NogJWMg5ddgN
-	LTh2o77p/33WzqsVlk8KwXYcEKXgp8sSzI+x5bCupTi5Wt7sfXRuWXdC3BhSLaAK2S2cDzoUPh1kX
-	M7pqjac/g==;
+	 bh=5zFekjghV9zw99OTEXKXawCbKHst/K9NtpF9M7Nqj3k=; b=Oezq9um797hRUtr17NfH57YQ8
+	RHVJGQvjncU9MwemQOE83VPgivaZpeUJFBFmefaZFCbTaBTKy3+M/2lcKBWJtDUofcXcT6KIOLu/p
+	FjLJ7JmDxodEMFkMNrEeSC+2JSUFi6Pqh+4mU7rZAnmVNjdmRIb8pb/svrsSB47z4yZtc6BGB15UR
+	KUfNsi4g+I5poRLCtCXyylUWj7juqjtAHYQc8CuK8C5PO8PdSB3LFs3qAWf6BZVqHMP4HKwL271wm
+	eoF3kb27ZMv++TsKaDtzDge7JfJy+uVyKhXRjHpgqhzRymViErM7IIvHOo2MJh1duoDv97ZDXyA9f
+	GhvusBZKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHBRJ-00027L-6M; Sun, 06 Oct 2019 18:39:29 +0000
+	id 1iHBTg-0003iC-I9; Sun, 06 Oct 2019 18:41:56 +0000
 Received: from vern.gendns.com ([98.142.107.122])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHBRA-0001ue-R2
- for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 18:39:22 +0000
+ id 1iHBTW-0003hj-5Q
+ for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 18:41:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lechnology.com; s=default; h=Content-Transfer-Encoding:Content-Type:
  In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
  :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=EB7HgQCd6wfHbcV/vGVRoCbCpG0HC8nsMy/oBEd1URQ=; b=0vzoW+jm1B3XKAvl9MDT9KBTt1
- owxlfy79uyVQco2v1xHDwo2GTYPtMx6pjhSOHOZ2DTJKlPLjeENuHuf4YdspzMtk+2fa9NHlMTAnW
- 9Vmmjy8osDo/GebfC0UPRe0Ng4+khLlB+0LMOIepWaX9ERQ7dYoDtZ1Wc6FMHlpj4dTVpL6cx417R
- 8NbK693FPbVQQ3YpUElxr5utVk26R+TDXWO5BY7rbXHmpfYMpJlZkL/DwBdZdbroAemDDl+MxAdMJ
- sn5KtiK8VZ2P+HBOLT4q2Sc37Lo5+WJBCJohH88UBclmAYSQQnPfPhQUzmNhxeeSAfVGIB8IyNUIo
- tw4Kut6A==;
+ bh=8lAJFEkwl2Q1Fvmq3UOLVFJ2OXdPmm/TVkvNTIF5e4w=; b=WVWZ2K6mbb454aWFA0kF4Y10pG
+ aLeY5X8WJQxJCsJC/9FFiDqtcHJ4LkNq5KpTo/PdReBUis0fO1xAnkayWrmyW6vOqLTvcryjo9acg
+ r+6yIB7v/uo3ynAJ+4gax3yoSysPuZET2PBL//gYy7oppDZiiuTrLxIAqrvcBZtXqPSiRRbFrK5Ue
+ BNGlzk1TFhqPmgwEFRKPvCpCTekpG7DwK9NrvWN2eOxDq4BiEuWfqfRsYnWfVRqv5sZ9w+JR2GEyU
+ lLd/PcUC+cHc1Z3k3v8ep12hFXdcPuyO5nBA+ez923v4+9EtPutpL/wWcWiv+NGZOktRCzOkA3Reg
+ ryRP6+AQ==;
 Received: from 108-198-5-147.lightspeed.okcbok.sbcglobal.net
- ([108.198.5.147]:54518 helo=[192.168.0.134])
+ ([108.198.5.147]:54564 helo=[192.168.0.134])
  by vern.gendns.com with esmtpsa (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128)
  (Exim 4.92) (envelope-from <david@lechnology.com>)
- id 1iHBQR-0001Yn-Dn; Sun, 06 Oct 2019 14:38:35 -0400
-Subject: Re: [PATCH v4 1/2] counter: Simplify the count_read and count_write
- callbacks
+ id 1iHBTT-00024a-L0; Sun, 06 Oct 2019 14:41:43 -0400
+Subject: Re: [PATCH v4 2/2] docs: driver-api: generic-counter: Update Count
+ and Signal data types
 To: William Breathitt Gray <vilhelm.gray@gmail.com>, jic23@kernel.org
 References: <cover.1570377521.git.vilhelm.gray@gmail.com>
- <7c129bd95675412e21c7a54e366e21723cac94ea.1570377521.git.vilhelm.gray@gmail.com>
+ <75a9ca9837f4d66cb4912cfa535176e27f7c219a.1570377521.git.vilhelm.gray@gmail.com>
 From: David Lechner <david@lechnology.com>
-Message-ID: <110c2460-f440-e36d-7975-61c53a94208d@lechnology.com>
-Date: Sun, 6 Oct 2019 13:38:34 -0500
+Message-ID: <9850a671-2822-24b7-3c22-b4abbd6a6b37@lechnology.com>
+Date: Sun, 6 Oct 2019 13:41:42 -0500
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <7c129bd95675412e21c7a54e366e21723cac94ea.1570377521.git.vilhelm.gray@gmail.com>
+In-Reply-To: <75a9ca9837f4d66cb4912cfa535176e27f7c219a.1570377521.git.vilhelm.gray@gmail.com>
 Content-Language: en-US
 X-AntiAbuse: This header was added to track abuse,
  please include it with any abuse report
@@ -66,9 +66,8 @@ X-Source:
 X-Source-Args: 
 X-Source-Dir: 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191006_113921_035179_C0D9118F 
-X-CRM114-Status: UNSURE (   6.84  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191006_114146_287290_AC1BEAF6 
+X-CRM114-Status: GOOD (  10.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -105,20 +104,31 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 10/6/19 11:03 AM, William Breathitt Gray wrote:
-> The count_read and count_write callbacks are simplified to pass val as
-> unsigned long rather than as an opaque data structure. The opaque
-> counter_count_read_value and counter_count_write_value structures,
-> counter_count_value_type enum, and relevant counter_count_read_value_set
-> and counter_count_write_value_get functions, are removed as they are no
-> longer used.
+> Count data is now always represented as an unsigned integer, while
+> Signal data is either SIGNAL_LOW or SIGNAL_HIGH.
 > 
-> Cc: David Lechner <david@lechnology.com>
-> Cc: Patrick Havelange <patrick.havelange@essensium.com>
-> Acked-by: Fabrice Gasnier <fabrice.gasnier@st.com>
 > Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
 > ---
+>   Documentation/driver-api/generic-counter.rst | 22 +++++++-------------
+>   1 file changed, 8 insertions(+), 14 deletions(-)
+> 
+> diff --git a/Documentation/driver-api/generic-counter.rst b/Documentation/driver-api/generic-counter.rst
+> index 8382f01a53e3..161652fc1025 100644
+> --- a/Documentation/driver-api/generic-counter.rst
+> +++ b/Documentation/driver-api/generic-counter.rst
+> @@ -39,10 +39,7 @@ There are three core components to a counter:
+>   COUNT
+>   -----
+>   A Count represents the count data for a set of Signals. The Generic
+> -Counter interface provides the following available count data types:
+> -
+> -* COUNT_POSITION:
+> -  Unsigned integer value representing position.
+> +Counter interface represents the count data as an unsigned integer.
 
-Acked-by: David Lechner <david@lechnology.com>
+The previous patch looks like it is using unsigned long instead of
+unsigned integer.
+
 
 
 _______________________________________________
