@@ -2,116 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6873BCCF5F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 10:14:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4241CCF60
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 10:14:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k7dEbTQeYK357NUC/bfsvZo0A4hPUISqU8HXp01rDB0=; b=SqP9mEOD5Hk+GD
-	zyrWuxLdIGfPvZ0+V3uZ+mGhi+fi6dTNQ9ztTCKX83238r3WudBKP8BN17ztU17SG2g81MuiEkBx+
-	qb4615b1ades9023Ug1mvlwWmQmWsrwzymKh22Ece/jwRBlXfsIrzGO9j0wQuWrFN8/j/1Xepd1aY
-	UCAeOJkcTVyQkxNiD0Jns5l3aBuSvcYh4vnrhL7oMAXGO6aR3Q98+RolXGet9jozev+SF0zgKGOuF
-	SfRpkHP5KOp+sGgp26JUMisZLQ8x0hj/PcLkWWKiGpc9ZrdhHycWuhI/5DMgBvIBTtSrqAd4L7cIs
-	cqlX/eptWgyRaGDvDf3g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vVUUTLU/bQtrY44AXzJA4Zd0yAFS+8ye2cRhpKxX2h4=; b=jhglqKyN9wq643
+	JnW/eiPa8bX8o3VvmJZ6+3omHhmXu58GogbucDOot0nWVsrbhPfd7/9ovT4452UYvU7F0+X235Yz7
+	ybHAyHoHMeCL1hXqNWBK6MHcdh7dqmc4vGPtPr6kWHq3qzTeb5fNP10Y6QUW6yL5YesFFAu/dIlPI
+	MSgsVFKuavbXQUrHgPH32DEswb19q4T9jCr4xY2KsCUtvJRptqLWzuUCn0gVlvZn5B2nFOGYF7enx
+	QAbhAZAfETiV8NKqxsfudzBnEWp1fWXLmTn5aYA+jdQVss2BoYQG+2Fq0k/f79GvHwS4x5r6rha9s
+	FjiDdOMdrNVfLo2znx/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iH1g2-0001Ni-2w; Sun, 06 Oct 2019 08:14:02 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1iH1gb-0001h4-7P; Sun, 06 Oct 2019 08:14:37 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iH1fq-0001NN-KM
- for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 08:13:52 +0000
-Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
- [10.5.11.15])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ id 1iH1gT-0001gk-U1
+ for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 08:14:31 +0000
+Received: from dragon (li937-157.members.linode.com [45.56.119.157])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 16233307D848;
- Sun,  6 Oct 2019 08:13:49 +0000 (UTC)
-Received: from [10.36.116.58] (ovpn-116-58.ams2.redhat.com [10.36.116.58])
- by smtp.corp.redhat.com (Postfix) with ESMTP id DABF25EE1D;
- Sun,  6 Oct 2019 08:13:45 +0000 (UTC)
-Subject: Re: [PATCH v5 01/10] mm/memunmap: Use the correct start and end pfn
- when removing pages from zone
-To: "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>,
- linux-kernel@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>
-References: <20191001144011.3801-1-david@redhat.com>
- <20191001144011.3801-2-david@redhat.com>
- <933f9cd8-9a32-8566-bd97-7e475a009275@redhat.com>
- <09b61ab1-6099-d825-8e04-fbfb43abe4d2@redhat.com>
- <cb6807a4-93c8-3964-bd65-e7087a0c7bf1@linux.ibm.com>
- <6e71cd24-7696-e7ca-15a1-8f126b0860ee@redhat.com>
- <25a72fa3-9859-3fdb-ffd3-deb7bf154fe0@redhat.com>
- <cbb82f0a-a578-5fb0-6b62-00bcd0a09b2e@linux.ibm.com>
-From: David Hildenbrand <david@redhat.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
- 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
- SE+xAvmumFBY
-Organization: Red Hat GmbH
-Message-ID: <96d3cab9-965d-f363-f3ea-e31e89e2fc01@redhat.com>
-Date: Sun, 6 Oct 2019 10:13:45 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ by mail.kernel.org (Postfix) with ESMTPSA id 318A32133F;
+ Sun,  6 Oct 2019 08:14:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570349669;
+ bh=wLFIswgun0P1s4n7yOGXtZqeAdGWjgCn4WGDCzbNC9Q=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=1b2LJYirZSUaREtzlOrzRTLT1gmSETrt7ry+ItMjKfiWuPJCso+VN133fKS+FREhP
+ KNZfK9CDg6dbyKR36ttT44SziwVBwaNnZTIctjDRRNoZRCG9fKs0emI5W5b/sJphC7
+ 9ohUfpMaVeqXaM5jdzol+qCiE5Uvoa1zFWMPThtQ=
+Date: Sun, 6 Oct 2019 16:14:15 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH] imx_v6_v7_defconfig: Build USB_CONFIGFS into kernel
+Message-ID: <20191006081413.GZ7150@dragon>
+References: <e4cc32cf4814aa0d63e72a824fb09f6b637b792c.1568290456.git.leonard.crestez@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <cbb82f0a-a578-5fb0-6b62-00bcd0a09b2e@linux.ibm.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.48]); Sun, 06 Oct 2019 08:13:49 +0000 (UTC)
+Content-Disposition: inline
+In-Reply-To: <e4cc32cf4814aa0d63e72a824fb09f6b637b792c.1568290456.git.leonard.crestez@nxp.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191006_011350_719110_23788A6C 
-X-CRM114-Status: GOOD (  23.84  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191006_011429_983803_37A3B6B8 
+X-CRM114-Status: GOOD (  13.54  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,299 +76,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, linux-ia64@vger.kernel.org,
- Ira Weiny <ira.weiny@intel.com>, linux-sh@vger.kernel.org,
- Jason Gunthorpe <jgg@ziepe.ca>, Logan Gunthorpe <logang@deltatee.com>,
- Pankaj Gupta <pagupta@redhat.com>, linux-mm@kvack.org,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Peter Chen <peter.chen@nxp.com>,
+ linux-imx@nxp.com, kernel@pengutronix.de,
+ Fabio Estevam <fabio.estevam@nxp.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05.10.19 08:13, Aneesh Kumar K.V wrote:
-> On 10/4/19 2:33 PM, David Hildenbrand wrote:
->> On 04.10.19 11:00, David Hildenbrand wrote:
->>> On 03.10.19 18:48, Aneesh Kumar K.V wrote:
->>>> On 10/1/19 8:33 PM, David Hildenbrand wrote:
->>>>> On 01.10.19 16:57, David Hildenbrand wrote:
->>>>>> On 01.10.19 16:40, David Hildenbrand wrote:
->>>>>>> From: "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>
->>>>>>>
->>>>>>> With altmap, all the resource pfns are not initialized. While initializing
->>>>>>> pfn, altmap reserve space is skipped. Hence when removing pfn from zone
->>>>>>> skip pfns that were never initialized.
->>>>>>>
->>>>>>> Update memunmap_pages to calculate start and end pfn based on altmap
->>>>>>> values. This fixes a kernel crash that is observed when destroying
->>>>>>> a namespace.
->>>>>>>
->>>>>>> [   81.356173] kernel BUG at include/linux/mm.h:1107!
->>>>>>> cpu 0x1: Vector: 700 (Program Check) at [c000000274087890]
->>>>>>>       pc: c0000000004b9728: memunmap_pages+0x238/0x340
->>>>>>>       lr: c0000000004b9724: memunmap_pages+0x234/0x340
->>>>>>> ...
->>>>>>>       pid   = 3669, comm = ndctl
->>>>>>> kernel BUG at include/linux/mm.h:1107!
->>>>>>> [c000000274087ba0] c0000000009e3500 devm_action_release+0x30/0x50
->>>>>>> [c000000274087bc0] c0000000009e4758 release_nodes+0x268/0x2d0
->>>>>>> [c000000274087c30] c0000000009dd144 device_release_driver_internal+0x174/0x240
->>>>>>> [c000000274087c70] c0000000009d9dfc unbind_store+0x13c/0x190
->>>>>>> [c000000274087cb0] c0000000009d8a24 drv_attr_store+0x44/0x60
->>>>>>> [c000000274087cd0] c0000000005a7470 sysfs_kf_write+0x70/0xa0
->>>>>>> [c000000274087d10] c0000000005a5cac kernfs_fop_write+0x1ac/0x290
->>>>>>> [c000000274087d60] c0000000004be45c __vfs_write+0x3c/0x70
->>>>>>> [c000000274087d80] c0000000004c26e4 vfs_write+0xe4/0x200
->>>>>>> [c000000274087dd0] c0000000004c2a6c ksys_write+0x7c/0x140
->>>>>>> [c000000274087e20] c00000000000bbd0 system_call+0x5c/0x68
->>>>>>>
->>>>>>> Cc: Dan Williams <dan.j.williams@intel.com>
->>>>>>> Cc: Andrew Morton <akpm@linux-foundation.org>
->>>>>>> Cc: Jason Gunthorpe <jgg@ziepe.ca>
->>>>>>> Cc: Logan Gunthorpe <logang@deltatee.com>
->>>>>>> Cc: Ira Weiny <ira.weiny@intel.com>
->>>>>>> Reviewed-by: Pankaj Gupta <pagupta@redhat.com>
->>>>>>> Signed-off-by: Aneesh Kumar K.V <aneesh.kumar@linux.ibm.com>
->>>>>>> [ move all pfn-realted declarations into a single line ]
->>>>>>> Signed-off-by: David Hildenbrand <david@redhat.com>
->>>>>>> ---
->>>>>>>    mm/memremap.c | 13 ++++++++-----
->>>>>>>    1 file changed, 8 insertions(+), 5 deletions(-)
->>>>>>>
->>>>>>> diff --git a/mm/memremap.c b/mm/memremap.c
->>>>>>> index 557e53c6fb46..026788b2ac69 100644
->>>>>>> --- a/mm/memremap.c
->>>>>>> +++ b/mm/memremap.c
->>>>>>> @@ -123,7 +123,7 @@ static void dev_pagemap_cleanup(struct dev_pagemap *pgmap)
->>>>>>>    void memunmap_pages(struct dev_pagemap *pgmap)
->>>>>>>    {
->>>>>>>    	struct resource *res = &pgmap->res;
->>>>>>> -	unsigned long pfn;
->>>>>>> +	unsigned long pfn, nr_pages, start_pfn, end_pfn;
->>>>>>>    	int nid;
->>>>>>>    
->>>>>>>    	dev_pagemap_kill(pgmap);
->>>>>>> @@ -131,14 +131,17 @@ void memunmap_pages(struct dev_pagemap *pgmap)
->>>>>>>    		put_page(pfn_to_page(pfn));
->>>>>>>    	dev_pagemap_cleanup(pgmap);
->>>>>>>    
->>>>>>> +	start_pfn = pfn_first(pgmap);
->>>>>>> +	end_pfn = pfn_end(pgmap);
->>>>>>> +	nr_pages = end_pfn - start_pfn;
->>>>>>> +
->>>>>>>    	/* pages are dead and unused, undo the arch mapping */
->>>>>>> -	nid = page_to_nid(pfn_to_page(PHYS_PFN(res->start)));
->>>>>>> +	nid = page_to_nid(pfn_to_page(start_pfn));
->>>>>>>    
->>>>>>>    	mem_hotplug_begin();
->>>>>>>    	if (pgmap->type == MEMORY_DEVICE_PRIVATE) {
->>>>>>> -		pfn = PHYS_PFN(res->start);
->>>>>>> -		__remove_pages(page_zone(pfn_to_page(pfn)), pfn,
->>>>>>> -				 PHYS_PFN(resource_size(res)), NULL);
->>>>>>> +		__remove_pages(page_zone(pfn_to_page(start_pfn)), start_pfn,
->>>>>>> +			       nr_pages, NULL);
->>>>>>>    	} else {
->>>>>>>    		arch_remove_memory(nid, res->start, resource_size(res),
->>>>>>>    				pgmap_altmap(pgmap));
->>>>>>>
->>>>>>
->>>>>> Aneesh, I was wondering why the use of "res->start" is correct (and we
->>>>>> shouldn't also witch to start_pfn/nr_pages here. It would be good if Dan
->>>>>> could review.
->>>>>>
->>>>>
->>>>> To be more precise, I wonder if it should actually be
->>>>>
->>>>> __remove_pages(page_zone(pfn_to_page(start_pfn)), res->start,
->>>>>                  resource_size(res))
->>>>>
->>>>
->>>> yes, that would be make it much clear.
->>>>
->>>> But for MEMORY_DEVICE_PRIVATE start_pfn and pfn should be same?
->>>
->>> Okay, let's recap. We should call add_pages()/__remove_pages()
->>> and arch_add_memory()/arch_remove_memory() with the exact same ranges.
->>>
->>> So with PHYS_PFN(res->start) and PHYS_PFN(resource_size(res)
->>>
->>> Now, only a subset of the pages gets actually initialized,
->>> meaning the NID and the ZONE we read could be stale.
->>> That, we have to fix.
->>>
->>> What about something like this (am I missing something?):
->>>
->>>  From d77b5c50f86570819a437517a897cc40ed29eefb Mon Sep 17 00:00:00 2001
->>> From: "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>
->>> Date: Fri, 27 Sep 2019 16:02:24 +0530
->>> Subject: [PATCH] mm/memunmap: Don't access uninitialized memmap in
->>>   memunmap_pages()
->>>
->>> With an altmap, the memmap falling into the reserved altmap space are
->>> not initialized and, therefore, contain a garbage NID and a garbage
->>> zone. Make sure to read the NID/zone from a memmap that was initialzed.
->>>
->>> This fixes a kernel crash that is observed when destroying a namespace:
->>>
->>> [   81.356173] kernel BUG at include/linux/mm.h:1107!
->>> cpu 0x1: Vector: 700 (Program Check) at [c000000274087890]
->>>      pc: c0000000004b9728: memunmap_pages+0x238/0x340
->>>      lr: c0000000004b9724: memunmap_pages+0x234/0x340
->>> ...
->>>      pid   = 3669, comm = ndctl
->>> kernel BUG at include/linux/mm.h:1107!
->>> [c000000274087ba0] c0000000009e3500 devm_action_release+0x30/0x50
->>> [c000000274087bc0] c0000000009e4758 release_nodes+0x268/0x2d0
->>> [c000000274087c30] c0000000009dd144 device_release_driver_internal+0x174/0x240
->>> [c000000274087c70] c0000000009d9dfc unbind_store+0x13c/0x190
->>> [c000000274087cb0] c0000000009d8a24 drv_attr_store+0x44/0x60
->>> [c000000274087cd0] c0000000005a7470 sysfs_kf_write+0x70/0xa0
->>> [c000000274087d10] c0000000005a5cac kernfs_fop_write+0x1ac/0x290
->>> [c000000274087d60] c0000000004be45c __vfs_write+0x3c/0x70
->>> [c000000274087d80] c0000000004c26e4 vfs_write+0xe4/0x200
->>> [c000000274087dd0] c0000000004c2a6c ksys_write+0x7c/0x140
->>> [c000000274087e20] c00000000000bbd0 system_call+0x5c/0x68
->>>
->>> Cc: Dan Williams <dan.j.williams@intel.com>
->>> Cc: Andrew Morton <akpm@linux-foundation.org>
->>> Cc: Jason Gunthorpe <jgg@ziepe.ca>
->>> Cc: Logan Gunthorpe <logang@deltatee.com>
->>> Cc: Ira Weiny <ira.weiny@intel.com>
->>> Signed-off-by: Aneesh Kumar K.V <aneesh.kumar@linux.ibm.com>
->>> [ minimze code changes, rephrase description ]
->>> Signed-off-by: David Hildenbrand <david@redhat.com>
->>> ---
->>>   mm/memremap.c | 11 +++++++----
->>>   1 file changed, 7 insertions(+), 4 deletions(-)
->>>
->>> diff --git a/mm/memremap.c b/mm/memremap.c
->>> index 557e53c6fb46..8b11c0da345c 100644
->>> --- a/mm/memremap.c
->>> +++ b/mm/memremap.c
->>> @@ -123,6 +123,7 @@ static void dev_pagemap_cleanup(struct dev_pagemap *pgmap)
->>>   void memunmap_pages(struct dev_pagemap *pgmap)
->>>   {
->>>   	struct resource *res = &pgmap->res;
->>> +	struct page *first_page;
->>>   	unsigned long pfn;
->>>   	int nid;
->>>   
->>> @@ -131,14 +132,16 @@ void memunmap_pages(struct dev_pagemap *pgmap)
->>>   		put_page(pfn_to_page(pfn));
->>>   	dev_pagemap_cleanup(pgmap);
->>>   
->>> +	/* make sure to access a memmap that was actually initialized */
->>> +	first_page = pfn_to_page(pfn_first(pgmap));
->>> +
->>>   	/* pages are dead and unused, undo the arch mapping */
->>> -	nid = page_to_nid(pfn_to_page(PHYS_PFN(res->start)));
->>> +	nid = page_to_nid(first_page);
->>>   
->>>   	mem_hotplug_begin();
->>>   	if (pgmap->type == MEMORY_DEVICE_PRIVATE) {
->>> -		pfn = PHYS_PFN(res->start);
->>> -		__remove_pages(page_zone(pfn_to_page(pfn)), pfn,
->>> -				 PHYS_PFN(resource_size(res)), NULL);
->>> +		__remove_pages(page_zone(first_page), res->start,
->>> +			       resource_size(res), NULL);
->>
->> Keeping the PHYS_PFN() calls of course ...
->>
+On Thu, Sep 12, 2019 at 03:16:39PM +0300, Leonard Crestez wrote:
+> Some imx chips don't have chips 
+
+I cannot parse this.  Do you mean 'don't have Ethernet controller'?
+
+Shawn
+
+> and a limited number of USB controllers.
+> For such cases NXP suggests configuring the USB controller as an
+> ethernet gadget for network boot testing.
 > 
+> Switch USB_CONFIGFS to be built into the kernel so that we can configure
+> the ethernet gadget without also deploying modules.
 > 
-> That is not different from what I posted right?  For MEMORY_DEVICE_PRIVATE
-
-I'll go with this modified patch for now, which does not change the ranges
-passed to  __remove_pages(), because that looked like a unrelated change to me.
-__remove_ages() has to be called with the same range as add_pages().
-
-
-commit f66c2fa09293ae0f99afc4363146941579152409 (HEAD)
-Author: Aneesh Kumar K.V <aneesh.kumar@linux.ibm.com>
-Date:   Fri Sep 27 16:02:24 2019 +0530
-
-    mm/memunmap: Don't access uninitialized memmap in memunmap_pages()
-    
-    With an altmap, the memmap falling into the reserved altmap space are
-    not initialized and, therefore, contain a garbage NID and a garbage
-    zone. Make sure to read the NID/zone from a memmap that was initialzed.
-    
-    This fixes a kernel crash that is observed when destroying a namespace:
-    
-    [   81.356173] kernel BUG at include/linux/mm.h:1107!
-    cpu 0x1: Vector: 700 (Program Check) at [c000000274087890]
-        pc: c0000000004b9728: memunmap_pages+0x238/0x340
-        lr: c0000000004b9724: memunmap_pages+0x234/0x340
-    ...
-        pid   = 3669, comm = ndctl
-    kernel BUG at include/linux/mm.h:1107!
-    [c000000274087ba0] c0000000009e3500 devm_action_release+0x30/0x50
-    [c000000274087bc0] c0000000009e4758 release_nodes+0x268/0x2d0
-    [c000000274087c30] c0000000009dd144 device_release_driver_internal+0x174/0x240
-    [c000000274087c70] c0000000009d9dfc unbind_store+0x13c/0x190
-    [c000000274087cb0] c0000000009d8a24 drv_attr_store+0x44/0x60
-    [c000000274087cd0] c0000000005a7470 sysfs_kf_write+0x70/0xa0
-    [c000000274087d10] c0000000005a5cac kernfs_fop_write+0x1ac/0x290
-    [c000000274087d60] c0000000004be45c __vfs_write+0x3c/0x70
-    [c000000274087d80] c0000000004c26e4 vfs_write+0xe4/0x200
-    [c000000274087dd0] c0000000004c2a6c ksys_write+0x7c/0x140
-    [c000000274087e20] c00000000000bbd0 system_call+0x5c/0x68
-    
-    Cc: Dan Williams <dan.j.williams@intel.com>
-    Cc: Andrew Morton <akpm@linux-foundation.org>
-    Cc: Jason Gunthorpe <jgg@ziepe.ca>
-    Cc: Logan Gunthorpe <logang@deltatee.com>
-    Cc: Ira Weiny <ira.weiny@intel.com>
-    Signed-off-by: Aneesh Kumar K.V <aneesh.kumar@linux.ibm.com>
-    [ minimze code changes, rephrase description ]
-    Signed-off-by: David Hildenbrand <david@redhat.com>
-
-diff --git a/mm/memremap.c b/mm/memremap.c
-index 557e53c6fb46..8c2fb44c3b4d 100644
---- a/mm/memremap.c
-+++ b/mm/memremap.c
-@@ -123,6 +123,7 @@ static void dev_pagemap_cleanup(struct dev_pagemap *pgmap)
- void memunmap_pages(struct dev_pagemap *pgmap)
- {
-        struct resource *res = &pgmap->res;
-+       struct page *first_page;
-        unsigned long pfn;
-        int nid;
- 
-@@ -131,14 +132,16 @@ void memunmap_pages(struct dev_pagemap *pgmap)
-                put_page(pfn_to_page(pfn));
-        dev_pagemap_cleanup(pgmap);
- 
-+       /* make sure to access a memmap that was actually initialized */
-+       first_page = pfn_to_page(pfn_first(pgmap));
-+
-        /* pages are dead and unused, undo the arch mapping */
--       nid = page_to_nid(pfn_to_page(PHYS_PFN(res->start)));
-+       nid = page_to_nid(first_page);
- 
-        mem_hotplug_begin();
-        if (pgmap->type == MEMORY_DEVICE_PRIVATE) {
--               pfn = PHYS_PFN(res->start);
--               __remove_pages(page_zone(pfn_to_page(pfn)), pfn,
--                                PHYS_PFN(resource_size(res)), NULL);
-+               __remove_pages(page_zone(first_page), PHYS_PFN(res->start),
-+                              PHYS_PFN(resource_size(res)), NULL);
-        } else {
-                arch_remove_memory(nid, res->start, resource_size(res),
-                                pgmap_altmap(pgmap));
-
-
-
-As Andrew wants to give this some testing, I'll send out a new version
-shortly, then we can discuss there.
-
-
--- 
-
-Thanks,
-
-David / dhildenb
+> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> ---
+>  arch/arm/configs/imx_v6_v7_defconfig | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm/configs/imx_v6_v7_defconfig b/arch/arm/configs/imx_v6_v7_defconfig
+> index ade4a2dd1a18..5debac5b038e 100644
+> --- a/arch/arm/configs/imx_v6_v7_defconfig
+> +++ b/arch/arm/configs/imx_v6_v7_defconfig
+> @@ -325,11 +325,11 @@ CONFIG_USB_TEST=m
+>  CONFIG_USB_EHSET_TEST_FIXTURE=m
+>  CONFIG_NOP_USB_XCEIV=y
+>  CONFIG_USB_MXS_PHY=y
+>  CONFIG_USB_GADGET=y
+>  CONFIG_USB_FSL_USB2=y
+> -CONFIG_USB_CONFIGFS=m
+> +CONFIG_USB_CONFIGFS=y
+>  CONFIG_USB_CONFIGFS_SERIAL=y
+>  CONFIG_USB_CONFIGFS_ACM=y
+>  CONFIG_USB_CONFIGFS_OBEX=y
+>  CONFIG_USB_CONFIGFS_NCM=y
+>  CONFIG_USB_CONFIGFS_ECM=y
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
