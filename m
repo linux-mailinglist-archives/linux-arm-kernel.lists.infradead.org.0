@@ -2,93 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2C48CD984
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 00:39:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35781CD999
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 01:21:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=GKCzHvQuPr8Vf+X1eCVXDlxbfZ9HMUmOGbvx03bP9i8=; b=HbD7U3q6VS/khkSa/mClXQVoc
-	v0LqX56OYbQ+Lci8urga2y6rM6xa7CcQXsqD7H5qXNa4sJQaa++HF5uJ9yj+R9RO+APdN0tpQ1ym9
-	b07RAo18tC3YEHIA8svcSqypa49kyhI8X11uqpg62PDXSGpCVFI5ihIK1alFGrC6UbVY9S469DfgK
-	l5X06xwM8gh/PDpvkoKUBEL6mSZ97UktiD/F1hpZiQk7lHMx0XnJJfIAHg1HN7DROxwxMZ2bPAMZh
-	RB0KCysXzB0pcT9SVHq7d4rBgWbcPfiao0ILz3yKwXe8RwDO/FL1BNFOA/Xa5xtkW7deHxtfwfZqm
-	MRdLG7qhQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:In-Reply-To:
+	Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=oHDAKOFIDXwB8vLUrT3jHlnSxYCB/f2PUl5xdHrtLPg=; b=MWmQ5VvWP3LP55
+	MyjcjGsEXdxSm/h5fqaDZ2cdY4pwcWgsjOPgFFKJ7hMYRuaCeKcFkotYdIcfw8+/JVRcmi0sfI4ln
+	jHze+jqTiH3qEK/hijpqonypJSOjuCC2jm3vhJV6I1L5fxS1uF4w274MUoN1DQSqhzSlPtKlHNCVU
+	tPw0mCU/0rXInU5lWlO+tzORvQUeUeDuLjhQilnbm7kW0TwbGTgII+1oCOHLIshU7hnBlw+A3C6V6
+	+Ph8i/797HqamqabXSLm8sXaQxqagnIYJHa+i4O6dBFq11Z3+Q96lPBZwcwYpIEHL+krs0gNXkCgA
+	6uCkVXruHGKWBLx/dpJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHFBo-0005HA-FH; Sun, 06 Oct 2019 22:39:44 +0000
-Received: from mout.gmx.net ([212.227.17.20])
+	id 1iHFpm-0002tV-Sp; Sun, 06 Oct 2019 23:21:02 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHFBi-0005Ge-1X
- for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 22:39:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1570401534;
- bh=HQioVg0fLiB703pC94Q5CJrHeDjz8YSULyFi62pu9m0=;
- h=X-UI-Sender-Class:Date:From:To:Cc:Subject:References:In-Reply-To;
- b=Duz0PvB2qX4L8giiwuDvx5SsbWVQkb8MNecGicQqT5uyuTsSprcb4szvkk+FyF308
- T8DlnhoKCH/OKa212mngd7IOBBUBNriW+dQD/sJLRXWBvhuZc1HMtk5iSxIdv46jut
- AsHL66iTBj3HOm50gcjLz6rKv8wQRSbpJ9aIRN2E=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from longitude ([109.90.233.87]) by mail.gmx.com (mrgmx104
- [212.227.17.168]) with ESMTPSA (Nemesis) id 1MTAFb-1ig9bd1brD-00Uabf; Mon, 07
- Oct 2019 00:38:54 +0200
-Date: Mon, 7 Oct 2019 00:38:48 +0200
-From: Jonathan =?utf-8?Q?Neusch=C3=A4fer?= <j.neuschaefer@gmx.net>
-To: Andreas Kemnade <andreas@kemnade.info>
-Subject: Re: [PATCH v2 2/3] ARM: dts: add Netronix E60K02 board common file
-Message-ID: <20191006223848.GE19803@latitude>
-References: <20190930194332.12246-1-andreas@kemnade.info>
- <20190930194332.12246-3-andreas@kemnade.info>
+ id 1iHFpf-0002qZ-Fb
+ for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 23:20:57 +0000
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 2115E308421A;
+ Sun,  6 Oct 2019 23:20:51 +0000 (UTC)
+Received: from colo-mx.corp.redhat.com
+ (colo-mx02.intmail.prod.int.phx2.redhat.com [10.5.11.21])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id E371E5D9CC;
+ Sun,  6 Oct 2019 23:20:50 +0000 (UTC)
+Received: from zmail17.collab.prod.int.phx2.redhat.com
+ (zmail17.collab.prod.int.phx2.redhat.com [10.5.83.19])
+ by colo-mx.corp.redhat.com (Postfix) with ESMTP id A3FB74E589;
+ Sun,  6 Oct 2019 23:20:50 +0000 (UTC)
+Date: Sun, 6 Oct 2019 19:20:50 -0400 (EDT)
+From: Jan Stancek <jstancek@redhat.com>
+To: linux-arm-kernel@lists.infradead.org, khuong@os.amperecomputing.com
+Message-ID: <1507592549.3785589.1570404050459.JavaMail.zimbra@redhat.com>
+In-Reply-To: <2122098936.3785405.1570402459950.JavaMail.zimbra@redhat.com>
+Subject: [bug] hard lockup on read of
+ /sys/kernel/debug/regmap/dummy-csw@7e200000/registers
 MIME-Version: 1.0
-In-Reply-To: <20190930194332.12246-3-andreas@kemnade.info>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Provags-ID: V03:K1:J4irto3tAosr7xHmcWxuJ3ndP76ZbpNdsbSVgPvdRBbyvC87GJw
- aihi+iczLukRIoJQMVNUx900ERyIMFo4pEOlHqGD9/GlFKFWHdmSMQMKFuEFr7ab1pSvKaB
- PCTNYdwLfqAYjoUal33EWnA8HpQaRIF9NQk/HqOjZ9Bg8I6iw5rRkIGWpJ0NN0XKfsgS5bT
- jH6ius3PpesaQmI65q7yQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:pNfCcJIi9Yg=:jVzGatRezPDUqXoRMuTiCK
- WikGS7YNtIWvBa/qyr/BVMfmnZjb9pRnm60iEVgst2Q0b5BzmrnXuyUb1FvlAF/uWqZYmg1+q
- CFSzTGbf2pYkYlT1qlrqNx7DD9mouXUZ8pzket/2gn2UDWtBNqBvOi7kVvhxFeJRhjGCZzahu
- M5qs7+I2OBeCuhhzkNNVLlJ5TNzhgmGjylo6WKoNC1UaRUTOOxm/+o6lkw5GoaYP6/irlMnqe
- bQK4OzU56aIAiSsIhkQPYSbJEjIupxPhldWu0LS8OKw2TfrXfzJsh6tL2+Tp/gKEfgk+KBvdr
- AsvXWv2AvUioCIfVMqjIzTUJpVoOf47CbJzwomtd6uieXgJIzPM2QXNaSb9vAh/UYpPvX+iHU
- ZBVIE6t1LFOpY/10M8Rl5ImuKyacdAAiXXbArWFyTxkRxndcoXo80p2tCai3HhXcPnIozoTSC
- UzRfgdcAPlVB9B+V4OQFRcXk4/2VVNifgvfYAaq+8u7+C71lxEUnODJ65Bu1p1ZXMdf5/beA3
- iY+MYzm9yM4xBlVpPdpz4Vp3q0ZPfk2ju73GIoKyewH0lH2W60sfAokDffg/UkSabsSnOq64j
- Kg8NLayxxqQAYNMOcyye0jaXw+GoeDkU7lxxxm7TDkKToZviztmG2gDbiL5iLreSroXfH0cZZ
- 4vZrHoJZJ8Sj61SpRYdDZJ4MknKH28XRQW5ISijP5O9ZeiOspgabrgEqkML1E9ARcZXo159JY
- G5TlSvYgb33saya+tVqZ9UoRiwsAaIy9q+sZMpGNPLXfgkKYbApfDsGSCO6tz8n72KyXdr+ed
- ozjFUkYXZL6Bk6v03PFNVpYsxf4d5ZBiujCtJJ2MGqibQB3u5s624pxfQQNA1fiA5NKHBUswC
- 0JwbFANOUgZhYZdg1w4hKdKtjN1A6KSEiFXKotRwJddHOiiiR/rm4wHqy9Xv8CoRyv7IQWOzw
- LD62IibRULWlTF2hOIjgHabvUAeaCbMAd3d08Fq0q/5fKkP0idx9oEflKmK6QMybjh7k0tF4E
- NNS4FpuHZBTPeZu6amVeiEOxnR5Ww3gsFKkllSVxRMRLTD2MaBHoBH7JIvT/QMKw+1JZAQ73O
- Z7nj7OK8dRans0lONpWYYru7/zGHG58Ws8NFy81e0OAzIOnpI8/izMHzjilLtlB5erIv/W07e
- rvSp08//+XL4Qq8XtRAtSipEneG03z4fF3cMc0DoT+x0Jrq/rwUb45LPXRoWTJXaaWeW0+CgV
- g54ivdND9+lGWgCLeBLfsp/MlwQFrI5mn+yICXlXuWqfDdUlpr3jkeJH/EnI=
+X-Originating-IP: [10.40.204.34, 10.4.195.22]
+Thread-Topic: hard lockup on read of
+ /sys/kernel/debug/regmap/dummy-csw@7e200000/registers
+Thread-Index: 4zqvsCdIMf0+/TsUmZ7/GrtQZXc86g==
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.40]); Sun, 06 Oct 2019 23:20:51 +0000 (UTC)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191006_153938_420055_8EC67A76 
-X-CRM114-Status: GOOD (  11.34  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191006_162055_563966_7D9DDC1E 
+X-CRM114-Status: GOOD (  11.37  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (j.neuschaefer[at]gmx.net)
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.20 listed in list.dnswl.org]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,116 +76,161 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, marex@denx.de, Marco Felsch <m.felsch@pengutronix.de>,
- devicetree@vger.kernel.org, andrew.smirnov@gmail.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de, angus@akkea.ca, linux-kernel@vger.kernel.org,
- j.neuschaefer@gmx.net, robh+dt@kernel.org, linux-imx@nxp.com,
- kernel@pengutronix.de, manivannan.sadhasivam@linaro.org,
- Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
- festevam@gmail.com, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2603098935364844973=="
+Cc: LTP List <ltp@lists.linux.it>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi,
 
---===============2603098935364844973==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="BZaMRJmqxGScZ8Mx"
-Content-Disposition: inline
+This started with recent CKI reports of LTP read_all_sys sometimes running into
+hard lockups [1] on arm64 system [2].
 
+It comes down to reading /sys/kernel/debug/regmap/dummy-csw@7e200000/registers,
+which completely locks up the system. Can be reproduced with 5.3.0, 5.3.4
+upstream kernels and also Fedora's 5.0.9-301.fc30.aarch64.
 
---BZaMRJmqxGScZ8Mx
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+# cat /sys/kernel/debug/regmap/dummy-csw@7e200000/name                                                                              
+nodev
+# cat /sys/kernel/debug/regmap/dummy-csw@7e200000/range
+0-ffc
+# cat /sys/kernel/debug/regmap/dummy-csw@7e200000/registers
+<hangs>
 
-Thanks for CCing me on this patchset. Nice to see more e-book reader
-related work!
+Adding extra output to regmap_read_debugfs [3] shows [4]: first 3 iterations
+of for loop complete OK, but 4th one never returns from regmap_read(),
+and system becomes unresponsive (ssh, serial console, ping).
 
-A few comments and questions below.
+Regards,
+Jan
 
-On Mon, Sep 30, 2019 at 09:43:31PM +0200, Andreas Kemnade wrote:
-> The Netronix board E60K02 can be found some several Ebook-Readers,
-> at least the Kobo Clara HD and the Tolino Shine 3. The board
-> is equipped with different SoCs requiring different pinmuxes.
+[1]
+[17552.810666] LTP: starting read_all_sys (read_all -d /sys -q -r 10 -e /sys/power/wakeup_count) 
+[17626.529140] rcu: INFO: rcu_sched detected stalls on CPUs/tasks: 
+[17626.535046] rcu: 	1-...0: (0 ticks this GP) idle=05a/1/0x4000000000000000 softirq=746561/746561 fqs=2042  
+[17626.544568] 	(detected by 7, t=6003 jiffies, g=1380217, q=747) 
+[17626.550372] Task dump for CPU 1: 
+[17626.553582] read_all        R  running task        0 12363  12356 0x00000202 
+[17626.560598] Call trace: 
+[17626.563037]  __switch_to+0x104/0x1f8 
+[17626.566596]  kmem_cache_alloc_trace+0x1f0/0x278 
+[17626.571104]  debugfs_file_get+0x64/0x108 
+[17626.575007]  0x0 
 
-Do I understand it correctly that i.MX6SL and i.MX6SLL are pin-
-compatible so we can use the same pin numbers and GPIO handles in the
-DT?
+[2]
+apm-mustang-b0-03
+    description: System
+    product: APM X-Gene Mustang board
+    vendor: AmpereComputing(R)
+    version: 1.0
+    serial: 3PCC-A00000
+    width: 64 bits
+    capabilities: smbios-3.1.1 dmi-3.1.1 smp
+    configuration: boot=normal chassis=server family=eMAG sku=EV-883208-X1-MB2-2 uuid=00020003-0004-0005-0006-0001730237A0
+  *-core
+       description: Motherboard
+       product: Mustang
+       vendor: AmpereComputing(R)
+       physical id: 0
+       version: 1.0
+       serial: 3PCC-A00000
+       slot: Part Component
+     *-firmware
+          description: BIOS
+          vendor: American Megatrends Inc.
+          physical id: 0
+          version: 0ACDY027
+          date: 12/12/2018
+          size: 64KiB
+          capacity: 13MiB
+          capabilities: pci upgrade cdboot bootselect acpi uefi
+    *-cpu:0
+          description: CPU
+          product: ARM (883208X1-SA24T)
+          vendor: AmpereComputing(R)
+          physical id: 4
+          bus info: cpu@0
+          version: B0
+          serial: 883208X1-SA24T
+          slot: eMAG
+          size: 2400MHz
+          capacity: 2400MHz
+          clock: 2400MHz
+          capabilities: lm
+          configuration: cores=8 enabledcores=8
+     *-memory
+          description: System Memory
+          physical id: 1c
+          slot: System board or motherboard
+          size: 13GiB
+          capabilities: ecc
+          configuration: errordetection=multi-bit-ecc
 
-> +	leds {
-> +		compatible =3D "gpio-leds";
-> +		pinctrl-names =3D "default";
-> +		pinctrl-0 =3D <&pinctrl_led>;
-> +
-> +		GLED {
+[3]
+diff --git a/drivers/base/regmap/regmap-debugfs.c b/drivers/base/regmap/regmap-debugfs.c
+index e5e1b3a01b1a..a6e144015406 100644
+--- a/drivers/base/regmap/regmap-debugfs.c
++++ b/drivers/base/regmap/regmap-debugfs.c
 
-What does "GLED" mean? It's not obvious to me.
-What user-visible purpose does this LED have, or where is it on the
-board?
++       printk("regmap_read_debugfs2\n");
+        buf = kmalloc(count, GFP_KERNEL);
+        if (!buf)
+                return -ENOMEM;
+ 
+        regmap_calc_tot_len(map, buf, count);
+ 
++       printk("regmap_read_debugfs3\n");
+        /* Work out which register we're starting at */
+        start_reg = regmap_debugfs_get_dump_start(map, from, *ppos, &p);
+ 
+        for (i = start_reg; i >= 0 && i <= to;
+             i = regmap_next_readable_reg(map, i)) {
+ 
++               printk("regmap_read_debugfs4 %d\n", i);
+                /* If we're in the region the user is trying to read */
+                if (p >= *ppos) {
+                        /* ...but not beyond it */
+                        if (buf_pos + map->debugfs_tot_len > count)
+                                break;
+ 
++                       printk("regmap_read_debugfs5 %llu\n", p);
+                        /* Format the register */
+                        snprintf(buf + buf_pos, count - buf_pos, "%.*x: ",
+                                 map->debugfs_reg_len, i - from);
+                        buf_pos += map->debugfs_reg_len + 2;
+ 
+                        /* Format the value, write all X if we can't read */
++                       printk("regmap_read_debugfs6 map: %px, i: %d, val: %u\n", map, i, val);
+                        ret = regmap_read(map, i, &val);
++                       printk("regmap_read_debugfs6b\n");
+                        if (ret == 0)
+                                snprintf(buf + buf_pos, count - buf_pos,
+                                         "%.*x", map->debugfs_val_len, val);
 
-> +			gpios =3D <&gpio5 7 GPIO_ACTIVE_LOW>;
-> +			linux,default-trigger =3D "timer";
-> +		};
-> +	};
-> +
-> +	memory {
-> +		reg =3D <0x80000000 0x80000000>;
-
-2 GiB of memory?
-
-> +			/* Core3_3V3 */
-
-What are these labels (Core3_3V3, Core4_1V2, etc.)?
-
-> +			dcdc2_reg: DCDC2 {
-> +				regulator-name =3D "DCDC2";
-> +				regulator-always-on;
-> +				regulator-boot-on;
-> +				regulator-state-mem {
-> +					regulator-on-in-suspend;
-> +					regulator-suspend-max-microvolt =3D <3300000>;
-> +					regulator-suspend-min-microvolt =3D <3300000>;
-> +				};
-> +			};
-
-
-Thanks,
-Jonathan Neusch=C3=A4fer
-
---BZaMRJmqxGScZ8Mx
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEvHAHGBBjQPVy+qvDCDBEmo7zX9sFAl2abPEACgkQCDBEmo7z
-X9uKtxAAzzgCu+n9jH9hNCttJ3lG5alFog0lO+dd69DN/EG3wH4NCQNnkfL0eTUQ
-ePZWqAlCuXMrFgJUrL0RDEw926fYD558I9RBtJGI1yPlKq4Qhs0ENpkNI9bOSZyG
-s4UI1iLsalte+sGFZwPcTfWv5mgD5FSoLPIQleDaaHvCoRh9+PP7Nn3svxyToGcY
-OE7WtpBAwA+gawwKGWZJUxXLMGQKwyg3f8TcFkugLh5VefyiNgTpRcWnilUbZ3mI
-uU1hZc4cC/dcoCs0blZZwO24MAIDN/686fwViySRjzKE411dp1XZDz9LqQdr9OLW
-NKMyFCSsjhn5TFMPoo6rux88KLBujHPRiu7e+EXSVgYZH4nRsxUqPTxnGzimotrx
-1IoN+Dkg+hx5hxVntHrKktH5kvwuN7mKcgGqHNtkQgyhS4dWa+83R0C0E+uEi/ZM
-mH+ht5CK/J6BbCXyUans1T+tIs1xL5xYHsw/ZKZtiYIwGrVVMiIbLf/OW+9llrc4
-wt0KQkqUudaQj8i6PCihRudCi371QWQbcGholaDqkn4HFEGYRC8pzsCHr7sU6Gdf
-J/5fw3n4lQv5H2RBLgzQBqNWB9CkRdJOTTR3Zj95Gaz1HizSWwyk22aoVKdD/f9R
-jQ8CI9hIEMXx1iGEmBAltMHzwtfAzlwp9esITOahR7Sd3ZK0Hyc=
-=YsCq
------END PGP SIGNATURE-----
-
---BZaMRJmqxGScZ8Mx--
-
-
---===============2603098935364844973==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+[4]
+[ 1150.122251] regmap_read_debugfs2
+[ 1150.125547] regmap_read_debugfs3
+[ 1150.128798] regmap_read_debugfs4 0
+[ 1150.132291] regmap_read_debugfs5 0
+[ 1150.135718] regmap_read_debugfs6 map: ffff80035ad63600, i: 0, val: 1461156912
+[ 1150.142951] (NULL device *): map: ffff80035ad63600, map->dev: 0000000000000000, ret: 0, 0 => 7
+[ 1150.151647] regmap_read_debugfs6b
+[ 1150.161527] regmap_read_debugfs4 4
+[ 1150.164947] regmap_read_debugfs5 14
+[ 1150.168452] regmap_read_debugfs6 map: ffff80035ad63600, i: 4, val: 7
+[ 1150.174886] (NULL device *): map: ffff80035ad63600, map->dev: 0000000000000000, ret: 0, 4 => 50001
+[ 1150.183937] regmap_read_debugfs6b
+[ 1150.193967] regmap_read_debugfs4 8
+[ 1150.197383] regmap_read_debugfs5 28
+[ 1150.200944] regmap_read_debugfs6 map: ffff80035ad63600, i: 8, val: 327681
+[ 1150.207759] (NULL device *): map: ffff80035ad63600, map->dev: 0000000000000000, ret: 0, 8 => 85000f
+[ 1150.216889] regmap_read_debugfs6b
+[ 1150.226771] regmap_read_debugfs4 12
+[ 1150.230336] regmap_read_debugfs5 42
+[ 1150.233846] regmap_read_debugfs6 map: ffff80035ad63600, i: 12, val: 8716303
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2603098935364844973==--
-
