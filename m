@@ -2,101 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 325BACD905
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 21:59:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4EDFACD915
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  6 Oct 2019 22:03:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3VuPNMi0jwTUJWd13W3FN4HIatbBPNOyfI37Qdbnsgg=; b=Gw3cr28+mKr089
-	288GNmZLLAwcd66XwkYnhdab6ZMzrnnCSVbEvUDddU44qDX4gHHq9Mj1HcCibTVYc2Z3SwLe1fsMX
-	TXPVRupBfxFwBKYUzAkAS7eHWFFfFvTj8LmwTas6syKiUKYrsVL9XindzSuP3h6rxbViXw+Mzo3Y1
-	OPrf8R60ie3tLIpFgbEZKDMy72FbwaCWVblegZBVxskYOkQc0SKwrIegXqQzwLffEdz1fqI8Sw1/V
-	1ZmSNUblkChasy1LRaHp5Jqb1dC6yrgPsH+CjRljghRc/rd+meWMSJxUkcNEUZB7a5zg0Sx6F7NkG
-	Audu4aopKfIuAolYGLZw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CGqwIZQKeLxpMGEpgPRjWYiaDMru5k9e5J1iPD3XKGw=; b=Lkn0OlBzvGEnH/
+	hoztZGJk7W3bMEN69z8UvZiOjkCDu/htmgMcGYrlgW0s8mkAIvHV0KSgcDrRFEqAM7QGVTwo/WV6+
+	QbO7OklpHtjTLESeG1rKf7stIFccItRUng1EiIrg8iMWoNjmOK/dzVCHFDcD893cos/padyosynkA
+	rdZhkBKX3GDpVQi0br9E5EcoEG3oVd4Fj8bFyWycUGZXV3Qpws9sQWTm+1KkX4eESCd0c0DnwBgrw
+	kugTtQWNV+uwxsdBR53FmhGnMHgj5rfmuBh/BdNAQE5Wo7A1aEdPtMLG2W+SCnIuuCkI3rCSUQs6k
+	P1zP+aIG+cV3ZZ/NyrOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHCg7-00036Q-IY; Sun, 06 Oct 2019 19:58:51 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1iHCkl-0004sB-TB; Sun, 06 Oct 2019 20:03:39 +0000
+Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHCg0-00035y-B9
- for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 19:58:45 +0000
-Received: by mail-qk1-x743.google.com with SMTP id x134so10740837qkb.0
+ id 1iHCkc-0004rM-KD
+ for linux-arm-kernel@lists.infradead.org; Sun, 06 Oct 2019 20:03:32 +0000
+Received: by mail-yw1-xc41.google.com with SMTP id s6so4349552ywe.5
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 06 Oct 2019 12:58:42 -0700 (PDT)
+ Sun, 06 Oct 2019 13:03:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:mail-followup-to:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=APg736jg0ah1Nn8uMNYIJkW2DcUQUmQs6qDMcBNTRSY=;
- b=FoOm9beXdYeuD1c+g8rePWP5H+HcWgPE076sSAqfiTel4Q0Td54IlBGRZMjKxlUk8L
- HVRy25IZMnNbc8SWFbKQpgGlvGFGDOWhUN+AgLYL92MXWhih+qj8A2fL3VALNocwTpqP
- FQgKEQ9d+gNs/CWsBfMg2M9N1HgEO7l4VgKTRdNRP7srbptNIvK1yLiq9PQFzN97hwJD
- PQqjTJBI9iBcbCgHfkAQivSS8ZhZGWhp7euCX2oVGNcFVVabiEBZ2YQtPZM3E2PwhQNC
- l3CHuJVy6xsLzc6ZK3Xl6/ZmPZbZyzn+7BrsOpcQQthNYmztIX5TH3rU39i5J11LksM6
- OUWw==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=SAD87elW3s517JLI2iTshbAxE2vtTeLTbEEr73+JTTo=;
+ b=b8u9n4PhEviR3wP/yj+0PudSJxU/RYT93LpSALa8ko5AoW/fdnOhLH4/2mPEAfDvAT
+ LHvEgW6OrV4EhOgcB/pPShK15w3OhQrky7AEqW3EY+LTTmGJopYUVXngibHNt2zzZfht
+ XXSkY+gnBjhk0cmctHEciW2t9Ql/5hJW2IAbruDjuPHgTMpmxW4zVImSfzH7Lp4qDu8a
+ 5WkgNMbHjtPP1dCrLdtfA44CJV9v+AQi1gV1AJrHa04fuFkzj7x4eYmwcwocemaIAcnV
+ uCshn4YyfgwT1DkAPBy1hYWXAg5KPYFjYoUGQT/X9AVU4QOhvb4JzjS2me3V3wb9H6xr
+ BTEQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to:user-agent;
- bh=APg736jg0ah1Nn8uMNYIJkW2DcUQUmQs6qDMcBNTRSY=;
- b=o0f5oD1Qfo+ja900I15ZsoeY9ci9+gh4dfFSg53N8rauu0fypfwcldzZ8TMzNzj0E+
- dleBsRh+VdY290jpDHwQxLe+hfyLLQ50Kpp+A7BDn+BzdMWF/eQg2akEqH1YlAfYhsyE
- vTFh43mvl/ONU8lf3HjyZn7xy33Xurxzzp6EGxzvSEu+T0d4GYtxr80y3CUq6xGibuh7
- iydD/Pg+hGGPxX2EvH+cn20lEEKYlPKH6KyVW35BXRKy7KXPvBZbLCOUDZZ8OxoJlHMP
- /M7CdLFXfeXIhutcyqRx6V97R1sbCvIQsU4B5kupjrXmzyL0ICFeqHvdlEuPs1q8qp2F
- hiWA==
-X-Gm-Message-State: APjAAAVvZehA0tZ2yhJ1FqjP0EIyumqws8TQdHHd3gmahnITGMWMb4+i
- nD90NsxkIVKpUN7ogWpIIKc=
-X-Google-Smtp-Source: APXvYqwd63qnLz5/ty0+jRrhUrnVAvecut6TehXBQWTOiWh9hSCC+3s41ChbAphbo9+h6ZSP8hjXUA==
-X-Received: by 2002:a37:4e84:: with SMTP id
- c126mr19418006qkb.334.1570391921654; 
- Sun, 06 Oct 2019 12:58:41 -0700 (PDT)
-Received: from freebsd.route53-aws-cloud.de
- (ec2-3-95-91-234.compute-1.amazonaws.com. [3.95.91.234])
- by smtp.gmail.com with ESMTPSA id k2sm6645230qti.24.2019.10.06.12.58.41
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=SAD87elW3s517JLI2iTshbAxE2vtTeLTbEEr73+JTTo=;
+ b=aMwGMfjQUFmFyBHzXL1WRhLzYItpbHNJb9boSH8NglbocSUlyLuek0/HFMiGjoEdh6
+ dknrmedEKHADDLFVWMg/X4UG3lkNXZcmC7XjbYA6v9bGc/lOsPgMiTArMdDUFU1bMzWT
+ tC5peTRwM86X5aXq8azinDGxJwYJGPP/+f7GHhw4pg0j8UTnsmsz80ecROuumhs1G4Xx
+ zDK1WvgucMYwhJHnJWe9IGPu/f0GEl/yFFZuivqaDBZLEom41l+An/d4zYprsuS33y7M
+ rwAawjaAjFPlV0hGK35AcT+cztspf5/x1riM75FPdh0JHp0/rmHR9tVtc7YPbt7Mf7vX
+ l6YA==
+X-Gm-Message-State: APjAAAVxHIWZgZskDh1JFpnr2wtFPDFvtoScMjzh0/XYzLdqWyvgy66z
+ SyLOKWjjXvj9xC2ZNxi3LWQ=
+X-Google-Smtp-Source: APXvYqyQPcYRjH/0i8mxOghstPu0yUg69Or8AFQkg1v3xcY/ad8RpW1sQgbaxICtMnMxyHWdaKP62w==
+X-Received: by 2002:a81:ee06:: with SMTP id l6mr13525880ywm.357.1570392209362; 
+ Sun, 06 Oct 2019 13:03:29 -0700 (PDT)
+Received: from localhost.localdomain (072-189-084-142.res.spectrum.com.
+ [72.189.84.142])
+ by smtp.gmail.com with ESMTPSA id x16sm3765266ywx.103.2019.10.06.13.03.27
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 06 Oct 2019 12:58:41 -0700 (PDT)
-Date: Sun, 6 Oct 2019 21:58:39 +0200
-From: Damian Tometzki <damian.tometzki@gmail.com>
-To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH v6 01/10] mm/memunmap: Don't access uninitialized memmap
- in memunmap_pages()
-Message-ID: <20191006195838.GA27160@freebsd.route53-aws-cloud.de>
-Mail-Followup-To: David Hildenbrand <david@redhat.com>,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- linux-arm-kernel@lists.infradead.org, linux-ia64@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org, linux-s390@vger.kernel.org,
- linux-sh@vger.kernel.org, x86@kernel.org,
- "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>,
- Dan Williams <dan.j.williams@intel.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Jason Gunthorpe <jgg@ziepe.ca>,
- Logan Gunthorpe <logang@deltatee.com>,
- Ira Weiny <ira.weiny@intel.com>
-References: <20191006085646.5768-1-david@redhat.com>
- <20191006085646.5768-2-david@redhat.com>
+ Sun, 06 Oct 2019 13:03:28 -0700 (PDT)
+From: William Breathitt Gray <vilhelm.gray@gmail.com>
+To: jic23@kernel.org
+Subject: [PATCH v5 0/3] Simplify count_read/count_write/signal_read
+Date: Sun,  6 Oct 2019 16:03:08 -0400
+Message-Id: <cover.1570391994.git.vilhelm.gray@gmail.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191006085646.5768-2-david@redhat.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191006_125844_408654_D1FD24C4 
-X-CRM114-Status: GOOD (  19.96  )
+X-CRM114-CacheID: sfid-20191006_130330_669179_36C10E36 
+X-CRM114-Status: GOOD (  13.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (damian.tometzki[at]gmail.com)
+ provider (vilhelm.gray[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -115,106 +97,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, linux-ia64@vger.kernel.org,
- Ira Weiny <ira.weiny@intel.com>, linux-sh@vger.kernel.org,
- Jason Gunthorpe <jgg@ziepe.ca>,
- "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>, x86@kernel.org,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- Logan Gunthorpe <logang@deltatee.com>, Dan Williams <dan.j.williams@intel.com>,
- linuxppc-dev@lists.ozlabs.org, Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: benjamin.gaignard@linaro.org, alexandre.torgue@st.com,
+ linux-iio@vger.kernel.org, patrick.havelange@essensium.com,
+ linux-kernel@vger.kernel.org, William Breathitt Gray <vilhelm.gray@gmail.com>,
+ mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ david@lechnology.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello David,
+Changes in v5:
+ - Add changes and additions to generic-counter.rst to clarify theory
+   and use of the Generic Counter interface
+ - Fix typo in counter.h action_get description comment
 
-patch 05/10 is missing in the patch series. 
+The changes in this patchset will not affect the userspace interface.
+Rather, these changes are intended to simplify the kernelspace Counter
+callbacks for counter device driver authors.
+
+The following main changes are proposed:
+
+* Retire the opaque counter_count_read_value/counter_count_write_value
+  structures and simply represent count data as an unsigned integer.
+
+* Retire the opaque counter_signal_read_value structure and represent
+  Signal data as a counter_signal_value enum.
+
+These changes should reduce some complexity and code in the use and
+implementation of the count_read, count_write, and signal_read
+callbacks.
+
+The opaque structures for Count data and Signal data were introduced
+originally in anticipation of supporting various representations of
+counter data (e.g. arbitrary-precision tallies, floating-point spherical
+coordinate positions, etc). However, with the counter device drivers
+that have appeared, it's become apparent that utilizing opaque
+structures in kernelspace is not the best approach to take.
+
+I believe it is best to let userspace applications decide how to
+interpret the count data they receive. There are a couple of reasons why
+it would be good to do so:
+
+* Users use their devices in unexpected ways.
+
+  For example, a quadrature encoder counter device is typically used to
+  keep track of the position of a motor, but a user could set the device
+  in a pulse-direction mode and instead use it to count sporadic rising
+  edges from an arbitrary signal line unrelated to positioning. Users
+  should have the freedom to decide what their data represents.
+
+* Most counter devices represent data as unsigned integers anyway.
+
+  For example, whether the device is a tally counter or position
+  counter, the count data is represented to the user as an unsigned
+  integer value. So specifying that one device is representing tallies
+  while the other specifies positions does not provide much utility from
+  an interface perspective.
+
+For these reasons, the count_read and count_write callbacks have been
+redefined to pass count data directly as unsigned long instead of passed
+via opaque structures:
+
+        count_read(struct counter_device *counter,
+                   struct counter_count *count, unsigned long *val);
+        count_write(struct counter_device *counter,
+                    struct counter_count *count, unsigned long val);
+
+Similarly, the signal_read is redefined to pass Signal data directly as
+a counter_signal_value enum instead of via an opaque structure:
+
+        signal_read(struct counter_device *counter,
+                    struct counter_signal *signal,
+                    enum counter_signal_value *val);
+
+The counter_signal_value enum is simply the counter_signal_level enum
+redefined to remove the references to the Signal data "level" data type.
+
+William Breathitt Gray (3):
+  counter: Simplify the count_read and count_write callbacks
+  docs: driver-api: generic-counter: Update Count and Signal data types
+  counter: Fix typo in action_get description
+
+ Documentation/driver-api/generic-counter.rst | 162 +++++++++++--------
+ drivers/counter/104-quad-8.c                 |  33 ++--
+ drivers/counter/counter.c                    | 101 ++----------
+ drivers/counter/ftm-quaddec.c                |  14 +-
+ drivers/counter/stm32-lptimer-cnt.c          |   5 +-
+ drivers/counter/stm32-timer-cnt.c            |  17 +-
+ drivers/counter/ti-eqep.c                    |  19 +--
+ include/linux/counter.h                      |  76 ++-------
+ 8 files changed, 144 insertions(+), 283 deletions(-)
 
 
-On Sun, 06. Oct 10:56, David Hildenbrand wrote:
-> From: "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>
-> 
-> With an altmap, the memmap falling into the reserved altmap space are
-> not initialized and, therefore, contain a garbage NID and a garbage
-> zone. Make sure to read the NID/zone from a memmap that was initialzed.
-> 
-> This fixes a kernel crash that is observed when destroying a namespace:
-> 
-> [   81.356173] kernel BUG at include/linux/mm.h:1107!
-> cpu 0x1: Vector: 700 (Program Check) at [c000000274087890]
->     pc: c0000000004b9728: memunmap_pages+0x238/0x340
->     lr: c0000000004b9724: memunmap_pages+0x234/0x340
-> ...
->     pid   = 3669, comm = ndctl
-> kernel BUG at include/linux/mm.h:1107!
-> [c000000274087ba0] c0000000009e3500 devm_action_release+0x30/0x50
-> [c000000274087bc0] c0000000009e4758 release_nodes+0x268/0x2d0
-> [c000000274087c30] c0000000009dd144 device_release_driver_internal+0x174/0x240
-> [c000000274087c70] c0000000009d9dfc unbind_store+0x13c/0x190
-> [c000000274087cb0] c0000000009d8a24 drv_attr_store+0x44/0x60
-> [c000000274087cd0] c0000000005a7470 sysfs_kf_write+0x70/0xa0
-> [c000000274087d10] c0000000005a5cac kernfs_fop_write+0x1ac/0x290
-> [c000000274087d60] c0000000004be45c __vfs_write+0x3c/0x70
-> [c000000274087d80] c0000000004c26e4 vfs_write+0xe4/0x200
-> [c000000274087dd0] c0000000004c2a6c ksys_write+0x7c/0x140
-> [c000000274087e20] c00000000000bbd0 system_call+0x5c/0x68
-> 
-> Cc: Dan Williams <dan.j.williams@intel.com>
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Cc: Jason Gunthorpe <jgg@ziepe.ca>
-> Cc: Logan Gunthorpe <logang@deltatee.com>
-> Cc: Ira Weiny <ira.weiny@intel.com>
-> Signed-off-by: Aneesh Kumar K.V <aneesh.kumar@linux.ibm.com>
-> [ minimze code changes, rephrase description ]
-> Signed-off-by: David Hildenbrand <david@redhat.com>
-> ---
->  mm/memremap.c | 11 +++++++----
->  1 file changed, 7 insertions(+), 4 deletions(-)
-> 
-> diff --git a/mm/memremap.c b/mm/memremap.c
-> index 557e53c6fb46..8c2fb44c3b4d 100644
-> --- a/mm/memremap.c
-> +++ b/mm/memremap.c
-> @@ -123,6 +123,7 @@ static void dev_pagemap_cleanup(struct dev_pagemap *pgmap)
->  void memunmap_pages(struct dev_pagemap *pgmap)
->  {
->  	struct resource *res = &pgmap->res;
-> +	struct page *first_page;
->  	unsigned long pfn;
->  	int nid;
->  
-> @@ -131,14 +132,16 @@ void memunmap_pages(struct dev_pagemap *pgmap)
->  		put_page(pfn_to_page(pfn));
->  	dev_pagemap_cleanup(pgmap);
->  
-> +	/* make sure to access a memmap that was actually initialized */
-> +	first_page = pfn_to_page(pfn_first(pgmap));
-> +
->  	/* pages are dead and unused, undo the arch mapping */
-> -	nid = page_to_nid(pfn_to_page(PHYS_PFN(res->start)));
-> +	nid = page_to_nid(first_page);
+base-commit: 0c3aa63a842d84990bd02622f2fa50d2bd33c652
+prerequisite-patch-id: ebe284609b3db8d4130ea2915f7f7b185c743a70
+prerequisite-patch-id: cbe857759f10d875690df125d18bc04f585ac7c9
+prerequisite-patch-id: 21f2660dc88627387ee4666d08044c63dd961dae
+-- 
+2.23.0
 
-Why we need 'nid = page_to_nid(first_page)' we didnt use it anymore in this function ?
-
->  
->  	mem_hotplug_begin();
->  	if (pgmap->type == MEMORY_DEVICE_PRIVATE) {
-> -		pfn = PHYS_PFN(res->start);
-> -		__remove_pages(page_zone(pfn_to_page(pfn)), pfn,
-> -				 PHYS_PFN(resource_size(res)), NULL);
-> +		__remove_pages(page_zone(first_page), PHYS_PFN(res->start),
-> +			       PHYS_PFN(resource_size(res)), NULL);
->  	} else {
->  		arch_remove_memory(nid, res->start, resource_size(res),
->  				pgmap_altmap(pgmap));
-> -- 
-> 2.21.0
->
-Best regards
-Damian
- 
 
 _______________________________________________
 linux-arm-kernel mailing list
