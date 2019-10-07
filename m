@@ -2,80 +2,146 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81A0FCEE71
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 23:35:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7EA92CEE76
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 23:35:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=02QJg0k3XrqoIxMgps/UFY0zTYwx+9JWGDJdmyrs84A=; b=JwW5CdBxLZ9wd0
-	FQsJh+Q0ipZeMccMPo7hDn/CiB3Q8xW9UyFrnIq78YusN3GCuddZC34k2QBLhjvG6XQIkz7Ecsurg
-	d31NCi4ikiAJ3XP/BY655kYj0B3wrs1Eo+3IANL2gxKuws2egcHar8iNVTE4MoNGZ/i8iIy152LQD
-	iibtd5ol7lXAmiCM96qw7BDNAQxThOkq8CieXwn3iDEKDz+QQF3CWYPz8A52M223RXolkwDet1dpv
-	lCyKiVb7uKse2bt9Wx38vET0ct0rZUo3v1jZONR9A+TY7a9emFjYLx+s+OPc1FmSx7XLKsdMdwSyx
-	/yXXK3IBAlTNYUEdxbHw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oQM1mNHfxCnlTu0GUcckp89KifmwxZnzpMTBLBqXHLg=; b=rhQG6Taj5JX2mr
+	jdwHF+NgjNMjz4J8C/r8Dh+Pc3JN4ouZAZp5JIShvu/T89+T6gEb/o7217BRLuve7Tb/+w4PqyfZh
+	gP8w3eWhOHOj45nfPvEMzm11bKzDdpmj+Ix0CZ9VK8MYOGKzD3DsMDs65invmOVTI3mNUl3V3v21G
+	CuFJqrm8ukW5FexVhrHunU4QU5ncmal32AhbqB7HZwx0Kw212+dwlDCygFfvS8zmtktcSGYsz4joe
+	kiXGjYLXTon69tr6eaWZhXtGwBZIVIQ3qPVXfdXv9n9jGOlXrOl+Lal9CudbZ8dGvo/KTakqEzBsp
+	CnxmNyKcEWoRHd3ENy/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHaeZ-0002tU-IT; Mon, 07 Oct 2019 21:34:51 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iHaey-0004Q8-FU; Mon, 07 Oct 2019 21:35:16 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHaeQ-0002st-BA
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 21:34:44 +0000
-Received: by mail-pg1-x543.google.com with SMTP id i32so1689371pgl.10
+ id 1iHaeq-0003j9-LO
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 21:35:10 +0000
+Received: by mail-wr1-x441.google.com with SMTP id y19so17000745wrd.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 07 Oct 2019 14:34:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=BSjkDRau+gNdox3X7pHNAbU0K+agxk4/tBMFb1iKCao=;
- b=ab23GOHoPcRYJ3HnTEWquyTi7459NzB39trOtCcHOHakfrohJkbUChsngGiYM4KDyK
- vxfmdUYHLdqsNshjcH+q8e98hXss8l7HdvNfXmcZfmq6F+BkqApDKKc6PS5DwcOby/6V
- TFS0ykh514AcdP4JUMOoLl1pUci1xEoG1RUi2Jy3q8ZjvGrps5wyBZ4khqJ8pBz0SUk4
- cuVywcZEKWSp5nuTVo33oVhYH27LbkUvHuURsjZmdTiY4AepM3o4aC0FoJs9uYaVwjR7
- QDxDrx+IHpicC12wtnjUVCjjzfmGL4redMR+Bq8sY/Z99hhCkTSfVcfj4T3zuS10LJep
- jLKQ==
+ Mon, 07 Oct 2019 14:35:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=OyhiovIjMKJKHgMLTz6N4LKz78G59FFqcnuV5MZGZ7g=;
+ b=Fk6hrgHG5+4gYmqh2EQwYt6qgt8bw2Hb/iXh84INWDNGXyRGp6r+hmbZI7yLL6nW1v
+ NFGOB9pmhu+EPNoUtgYDplbnfh4CpO8YmsvdBacR/leipEW0hBizAKlxuTSSNJKUHF9q
+ wu7gEkXi5G/SHSeURMidHt3XIUnW3e25+P2g6lbrQcmOkNaPHy7vOVFG/5+znHXUsfB5
+ EcFI1ZYnSypBy2aMBQ5hpN6QOQG2gPB7UvgoX2mxV9EzT6G2vDXWbpAPUb51zkZElRxY
+ i4hzpkD16MLuFqs99TuYmW6Xs0fW9oT4pAwAulULffpgcQ0rNXkiK3ztsqw4jB9NpxN5
+ kmEA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=BSjkDRau+gNdox3X7pHNAbU0K+agxk4/tBMFb1iKCao=;
- b=PCt2nrAuO1naD09yeOxdCaumv0fBGJzwr8BVliIELmPt4CHlFffJLoE3Lzt1NBmVC5
- R+LhnA9hWWSBB1jfpCg9Ugd/K7uAwwgPcGFQzUvcO+xk026Y9xSeeSGP++Hj5evTATD3
- 6UirnbiShsWfWh1Dgdieg4SWGBj1GZgzKPAZKo0zOnH1fYDO8K0DQzaES/nSGEPS74JA
- XonaNX5ndm6B6c4DPYEx+HW8pAVlQvIFIYlMvs+09s42DrV71xZuxI/wYrdhq02pO+9z
- WsvrfAfq7Hng75WWjxGyvv7C/C2b+4eZ3Us8I0dbO3ajss50q/Z9IkPqnetUqIfd93FI
- ZFrw==
-X-Gm-Message-State: APjAAAXauZo36kALaGW77lv+oOn2umxh6uBwWG/hfXYprNKjEZhH4j/m
- rjZcvU9k9LMMy4QZDgxENpl2ijyDYd9Yp3IS3nmyYQ==
-X-Google-Smtp-Source: APXvYqyJ1eEkkfxEKHwxJsrKlG+h+OSiueWjtAo7aaPSl6xLlErSUZNoBFBuC9yRkYNHSyHthB/WDDPCAb+QHmGUuDY=
-X-Received: by 2002:a63:2f45:: with SMTP id v66mr33356685pgv.263.1570484077649; 
- Mon, 07 Oct 2019 14:34:37 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=OyhiovIjMKJKHgMLTz6N4LKz78G59FFqcnuV5MZGZ7g=;
+ b=lurXeGi5gKQU89HeHoXYnOIc9aOuYTWhHE+w3oJyhkaXj5sjAejR7DTa10brE7X7kJ
+ 5Xhl8Bza95T17zunP17us1qZERcdyw8+V+VhyCRj0HZCrO4G7c2R0BFpg48GDRI/bNSp
+ mUtfuNowwP7DpfYWWn6FugVb46xPyAH7SZkOY+rZ6fsjyfpJ8jzwadXslp7hJoTChlgC
+ JpsJ4kLmwlQI/IAucMc+lsz42yvx+k8Ruu+IkEUVbwBtlONg11gS/8B9q8zX22mKUV+K
+ VOHnmJ/N4oh6BH5lfKCTKzj5YPa2Cdz2/xESu05agY1a+ryoUQG5Nu0NmcHYBLl+J6gj
+ k3Og==
+X-Gm-Message-State: APjAAAWKdDi9Q5QKmVgCbRVMwQE3hj1ZIg1o7rVxII/G3G2A+3WPC+/z
+ vUHsB7qvCpoom+SuXZP3a5w=
+X-Google-Smtp-Source: APXvYqxixmzgMnwhcFlpG5MIPu2a/Xxj3oqukzbAtE+PBBuzn+jVii6DIxIkfpt8Rab8+J68yofhww==
+X-Received: by 2002:adf:df0d:: with SMTP id y13mr26056785wrl.342.1570484106216; 
+ Mon, 07 Oct 2019 14:35:06 -0700 (PDT)
+Received: from [10.67.50.53] ([192.19.223.252])
+ by smtp.googlemail.com with ESMTPSA id o4sm33715301wre.91.2019.10.07.14.34.54
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 07 Oct 2019 14:35:05 -0700 (PDT)
+Subject: Re: [PATCH v6 0/6] KASan for arm
+To: Arnd Bergmann <arnd@arndb.de>
+References: <20190617221134.9930-1-f.fainelli@gmail.com>
+ <CACRpkdbqW2kJNdPi6JPupaHA_qRTWG-MsUxeCz0c38MRujOSSA@mail.gmail.com>
+ <0ba50ae2-be09-f633-ab1f-860e8b053882@broadcom.com>
+ <CAK8P3a2QBQrBU+bBBL20kR+qJfmspCNjiw05jHTa-q6EDfodMg@mail.gmail.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
+Message-ID: <fbdc3788-3a24-2885-b61b-8480e8464a51@gmail.com>
+Date: Mon, 7 Oct 2019 14:34:45 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20191007211418.30321-1-samitolvanen@google.com>
-In-Reply-To: <20191007211418.30321-1-samitolvanen@google.com>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Mon, 7 Oct 2019 14:34:26 -0700
-Message-ID: <CAKwvOdnX6O0Grth11R8JLoD9bp-BECheucZKHbiHt4=XpQferA@mail.gmail.com>
-Subject: Re: [PATCH] arm64: fix alternatives with LLVM's integrated assembler
-To: Sami Tolvanen <samitolvanen@google.com>
+In-Reply-To: <CAK8P3a2QBQrBU+bBBL20kR+qJfmspCNjiw05jHTa-q6EDfodMg@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_143442_412400_23403265 
-X-CRM114-Status: GOOD (  19.62  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191007_143508_730280_4533A113 
+X-CRM114-Status: GOOD (  21.12  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -83,8 +149,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,144 +160,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, LKML <linux-kernel@vger.kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Michal Hocko <mhocko@suse.com>, Julien Thierry <julien.thierry@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Christoffer Dall <christoffer.dall@arm.com>,
+ David Howells <dhowells@redhat.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Andrey Ryabinin <ryabinin.a.a@gmail.com>,
+ Alexander Potapenko <glider@google.com>, kvmarm@lists.cs.columbia.edu,
+ Florian Fainelli <f.fainelli@gmail.com>, Jonathan Corbet <corbet@lwn.net>,
+ Abbott Liu <liuwenliang@huawei.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Russell King <linux@armlinux.org.uk>, kasan-dev <kasan-dev@googlegroups.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
+ drjones@redhat.com, Vladimir Murzin <vladimir.murzin@arm.com>,
+ Kees Cook <keescook@chromium.org>, Marc Zyngier <marc.zyngier@arm.com>,
+ Andre Przywara <andre.przywara@arm.com>,
+ Philippe Ombredanne <pombredanne@nexb.com>, Jinbum Park <jinb.park7@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Dmitry Vyukov <dvyukov@google.com>,
+ Nicolas Pitre <nico@fluxnic.net>, Greg KH <gregkh@linuxfoundation.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Rob Landley <rob@landley.net>, philip@cog.systems,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Thomas Garnier <thgarnie@google.com>,
+ "Kirill A . Shutemov" <kirill.shutemov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 7, 2019 at 2:14 PM 'Sami Tolvanen' via Clang Built Linux
-<clang-built-linux@googlegroups.com> wrote:
->
-> LLVM's integrated assembler fails with the following error when
-> building KVM:
->
->   <inline asm>:12:6: error: expected absolute expression
->    .if kvm_update_va_mask == 0
->        ^
->   <inline asm>:21:6: error: expected absolute expression
->    .if kvm_update_va_mask == 0
->        ^
->   <inline asm>:24:2: error: unrecognized instruction mnemonic
->           NOT_AN_INSTRUCTION
->           ^
->   LLVM ERROR: Error parsing inline asm
->
-> These errors come from ALTERNATIVE_CB and __ALTERNATIVE_CFG,
-> which test for the existence of the callback parameter in inline
-> assembly using the following expression:
->
->   " .if " __stringify(cb) " == 0\n"
->
-> This works with GNU as, but isn't supported by LLVM. This change
-> splits __ALTERNATIVE_CFG and ALTINSTR_ENTRY into separate macros
-> to fix the LLVM build.
->
-> Link: https://github.com/ClangBuiltLinux/linux/issues/472
-> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-> ---
->  arch/arm64/include/asm/alternative.h | 32 ++++++++++++++++++----------
->  1 file changed, 21 insertions(+), 11 deletions(-)
->
-> diff --git a/arch/arm64/include/asm/alternative.h b/arch/arm64/include/asm/alternative.h
-> index b9f8d787eea9..324e7d5ab37e 100644
-> --- a/arch/arm64/include/asm/alternative.h
-> +++ b/arch/arm64/include/asm/alternative.h
-> @@ -35,13 +35,16 @@ void apply_alternatives_module(void *start, size_t length);
->  static inline void apply_alternatives_module(void *start, size_t length) { }
->  #endif
->
-> -#define ALTINSTR_ENTRY(feature,cb)                                           \
-> +#define ALTINSTR_ENTRY(feature)                                                      \
->         " .word 661b - .\n"                             /* label           */ \
-> -       " .if " __stringify(cb) " == 0\n"                                     \
->         " .word 663f - .\n"                             /* new instruction */ \
-> -       " .else\n"                                                            \
-> +       " .hword " __stringify(feature) "\n"            /* feature bit     */ \
-> +       " .byte 662b-661b\n"                            /* source len      */ \
-> +       " .byte 664f-663f\n"                            /* replacement len */
-> +
-> +#define ALTINSTR_ENTRY_CB(feature, cb)                                       \
-> +       " .word 661b - .\n"                             /* label           */ \
->         " .word " __stringify(cb) "- .\n"               /* callback */        \
-> -       " .endif\n"                                                           \
->         " .hword " __stringify(feature) "\n"            /* feature bit     */ \
->         " .byte 662b-661b\n"                            /* source len      */ \
->         " .byte 664f-663f\n"                            /* replacement len */
-> @@ -62,15 +65,14 @@ static inline void apply_alternatives_module(void *start, size_t length) { }
->   *
->   * Alternatives with callbacks do not generate replacement instructions.
->   */
-> -#define __ALTERNATIVE_CFG(oldinstr, newinstr, feature, cfg_enabled, cb)        \
-> +#define __ALTERNATIVE_CFG(oldinstr, newinstr, feature, cfg_enabled)    \
->         ".if "__stringify(cfg_enabled)" == 1\n"                         \
->         "661:\n\t"                                                      \
->         oldinstr "\n"                                                   \
->         "662:\n"                                                        \
->         ".pushsection .altinstructions,\"a\"\n"                         \
-> -       ALTINSTR_ENTRY(feature,cb)                                      \
-> +       ALTINSTR_ENTRY(feature)                                         \
->         ".popsection\n"                                                 \
-> -       " .if " __stringify(cb) " == 0\n"                               \
->         ".pushsection .altinstr_replacement, \"a\"\n"                   \
->         "663:\n\t"                                                      \
->         newinstr "\n"                                                   \
-> @@ -78,17 +80,25 @@ static inline void apply_alternatives_module(void *start, size_t length) { }
->         ".popsection\n\t"                                               \
->         ".org   . - (664b-663b) + (662b-661b)\n\t"                      \
->         ".org   . - (662b-661b) + (664b-663b)\n"                        \
-> -       ".else\n\t"                                                     \
-> +       ".endif\n"
-> +
-> +#define __ALTERNATIVE_CFG_CB(oldinstr, feature, cfg_enabled, cb)       \
-> +       ".if "__stringify(cfg_enabled)" == 1\n"                         \
-> +       "661:\n\t"                                                      \
-> +       oldinstr "\n"                                                   \
-> +       "662:\n"                                                        \
-> +       ".pushsection .altinstructions,\"a\"\n"                         \
-> +       ALTINSTR_ENTRY_CB(feature, cb)                                  \
-> +       ".popsection\n"                                                 \
->         "663:\n\t"                                                      \
->         "664:\n\t"                                                      \
-> -       ".endif\n"                                                      \
->         ".endif\n"
->
->  #define _ALTERNATIVE_CFG(oldinstr, newinstr, feature, cfg, ...)        \
-> -       __ALTERNATIVE_CFG(oldinstr, newinstr, feature, IS_ENABLED(cfg), 0)
-> +       __ALTERNATIVE_CFG(oldinstr, newinstr, feature, IS_ENABLED(cfg))
->
->  #define ALTERNATIVE_CB(oldinstr, cb) \
-> -       __ALTERNATIVE_CFG(oldinstr, "NOT_AN_INSTRUCTION", ARM64_CB_PATCH, 1, cb)
-> +       __ALTERNATIVE_CFG_CB(oldinstr, ARM64_CB_PATCH, 1, cb)
->  #else
->
->  #include <asm/assembler.h>
+On 7/18/19 12:51 AM, Arnd Bergmann wrote:
+> On Thu, Jul 11, 2019 at 7:00 PM Florian Fainelli
+> <florian.fainelli@broadcom.com> wrote:
+>> On 7/2/19 2:06 PM, Linus Walleij wrote:
+> 
+>>
+>> Great, thanks a lot for taking a look. FYI, I will be on holiday from
+>> July 19th till August 12th, if you think you have more feedback between
+>> now and then, I can try to pick it up and submit a v7 with that feedback
+>> addressed, or it will happen when I return, or you can pick it up if you
+>> refer, all options are possible!
+>>
+>> @Arnd, should we squash your patches in as well?
+> 
+> Yes, please do. I don't remember if I sent you all of them already,
+> here is the list of patches that I have applied locally on top of your
+> series to get a clean randconfig build:
+> 
+> 123c3262f872 KASAN: push back KASAN_STACK to clang-10
 
+This one seems to have received some feedback, not sure if it was
+addressed or not in a subsequent patch?
 
-Should the definition of the ALTERNATIVE macro
-(arch/arm64/include/asm/alternative.h#L295) also be updated in this
-patch to not pass `1` as the final parameter? Otherwise with this
-patch and your LSE one
-(https://lore.kernel.org/lkml/20191007201452.208067-1-samitolvanen@google.com/T/#u)
-I get one error on linux-next that looks related:
-$ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make CC=clang AS=clang
--j71 arch/arm64/kvm/
-...
-arch/arm64/kvm/hyp/entry.S:109:87: error: too many positional arguments
- alternative_insn nop, .inst (0xd500401f | ((0) << 16 | (4) << 5) |
-((!!1) << 8)), 4, 1
+> d63dd9e2afd9 [HACK] ARM: disable KASAN+XIP_KERNEL
 
-               ^
+That one has been squashed, we could always lift the XIP_KERNEL
+restriction later once someone with suitable hardware confirms it works.
 
-Since __ALTERNATIVE_CFG now takes one less arg, with your patch?
+> 879eb3c22240 kasan: increase 32-bit stack frame warning limit
 
+That one should be pushed separately.
+
+> 053555034bdf kasan: disable CONFIG_KASAN_STACK with clang on arm32
+
+This one I did not take based on Linus' feedback that is breaks booting
+on his RealView board.
+
+> 6c1a78a448c2 ARM: fix kasan link failures
+
+This one was squashed relevant and will be sent out as v7.
 -- 
-Thanks,
-~Nick Desaulniers
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
