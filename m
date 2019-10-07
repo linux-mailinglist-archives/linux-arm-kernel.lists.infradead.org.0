@@ -2,82 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5069FCE821
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 17:45:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DA8FCE856
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 17:53:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tUpzv/DdypzEzllIDK0muUN3OeCxDKzXUPY4F80JdZ8=; b=GE9JDACZAJVmfZ
-	ky0psLCWEF1d3s26Pi8JdbPPxbKfQACT48uUvrPZL1gqPgU4Kfma5JlPE6XY8Gb7jqL6riCr8UUSD
-	Bjz0qtLwt8CFDcbK4LYPVsbHh/xhFait8RI9WKmzRa6542/OhCT6cDJsSBIVPmJVgq3EZown6SijL
-	zy8ysHCgd165ZF7DwcJO/uAB+9u0X1TuVG6r4v0UGKIZmVUDZN4/xd7gUg3hx7LAI7flZ4w7n4uar
-	sn71/xxV0Gnb1wSVGq4162L5YeG2+8pWCm+/EVzNZUyaTxcvUOKQwyz/EfF+gyqCRHw4pXiQZEcz1
-	a636r2sQEoCluWXdsOoA==;
+	List-Owner; bh=gQ7KF1dScPKtqls3FJtsP7AsqBCYCIkTehCZrKRuRe8=; b=cr0mui/fW+ADPW
+	KVGDfmaOF7+cKeW6hKiM4PZAgGGYCvLmWl+3J+fflGNQWOkg2uy2V7wle9eVQV3MB1AumIbG04f3x
+	h/a+Cn0COtrw/1a7y5iofH25mwBw2cSVfDXl+xiXuj3uIL0Eq7ODgR0NHPzmcN598IM6cICGrdOa2
+	ICt0ZKl48u99SVZwRYbYtsqv1wL4+4Q/jzRmCYvKgLT0AzjEqkTNLhloT8D8ovUvLhZ/3hZZSf2Iv
+	gRuRyYWPYpywfs+NY8LdAoZmXup/yohremd5ckJELIpOZhe22WnzDXLYkEM591+f0BnDzKR/YJ0M8
+	8IX1LiEudESNrTMpYenA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHVBx-00022D-9D; Mon, 07 Oct 2019 15:44:57 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iHVK2-0007hh-J9; Mon, 07 Oct 2019 15:53:18 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHVAU-0000pR-H7
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 15:43:28 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x97FQnAL023875; Mon, 7 Oct 2019 17:43:20 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-transfer-encoding : content-type; s=STMicroelectronics;
- bh=dx4m9pApr2tlzKt5E0h63MKuCI2b9bdNv+pZppWwc+c=;
- b=DFqnea6zj0SrZ5n9o6PQhAtim6BW7v5b1Qo+3BzqcM4Yng0rz0rSF9vE8rZJukBffAMj
- Y4HoUKRPttodoAbmO1VhDDx0hyJS5EtUgY6SAmFTswQj70XR3ZJavcLYC+EYd//kq7ed
- /2kfjUtLJwjaJsw52YkpLV+tVaoSDk/YrC1VVxB236/l5EwC1aN7PqgWkYgX4BlltVN5
- vx/+WdkVM5B890JJHVhWNimjlbZZNR0NwVgNAlxuUv+Qd31Mlx6025ECBsTbAq8A97qp
- mCh/Bsf27e+tirAQnxyHu+iitCvFefZJMsIgNOeNxuwsS7JRpx27PqklG4yJajTZJ8KN LA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2vegaguhpm-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 07 Oct 2019 17:43:20 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1D688100039;
- Mon,  7 Oct 2019 17:43:20 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 135262B1E43;
- Mon,  7 Oct 2019 17:43:20 +0200 (CEST)
-Received: from localhost (10.75.127.50) by SFHDAG5NODE3.st.com (10.75.127.15)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Mon, 7 Oct 2019 17:43:19 +0200
-From: Antonio Borneo <antonio.borneo@st.com>
-To: Giuseppe Cavallaro <peppe.cavallaro@st.com>, Alexandre Torgue
- <alexandre.torgue@st.com>, Jose Abreu <joabreu@synopsys.com>, "David S.
- Miller" <davem@davemloft.net>, <netdev@vger.kernel.org>
-Subject: [PATCH] net: stmmac: add flexible PPS to dwmac 4.10a
-Date: Mon, 7 Oct 2019 17:43:06 +0200
-Message-ID: <20191007154306.95827-5-antonio.borneo@st.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191007154306.95827-1-antonio.borneo@st.com>
-References: <20191007154306.95827-1-antonio.borneo@st.com>
+ id 1iHVJu-0007hF-BC; Mon, 07 Oct 2019 15:53:12 +0000
+Received: by mail-io1-xd44.google.com with SMTP id w12so29580268iol.11;
+ Mon, 07 Oct 2019 08:53:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Y0+KKOJG+TisZYwANPRDxoGgI9F6Pi0RrxyV+mcRIhQ=;
+ b=jFJtBjNcMzZT/dfV5DNd+SYdyhKORKldayK714j3ON/TvF4lEz54VZg0ohvI4G5pqF
+ lAWdRi7RPMXntGegumJYq6RIQrmDTg4porBhN27Lbv7Sk/7cJgqCZaCS2KEFkh/DrEaU
+ LG9AUPnMp1r3a8dLLYjdd+V1jld8BVZ4BY6JSnKVz+X5a0nXZfoiM5bwiQsJKqde/8BI
+ c6rJAW38SVFX+bvt4NqsXXg8Ra1WppUYCjZnx8ruBLTXBoEM9uhU1ezFtSRJV7TsPrkG
+ f5rSu/ObEDrsieCcbZrOtmnVt1Yi4ZHZt2KRd5ih6mqMcCroRAGJqtnXERea7kprkZ4t
+ JJeg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Y0+KKOJG+TisZYwANPRDxoGgI9F6Pi0RrxyV+mcRIhQ=;
+ b=mz9e15DH9sDS0N+TwTaHC2/WID4sDj5OXrqCcb9Tz6zVd9CKqr4UBMpsUu9/rpOztE
+ Q2jllxr4LxqC4uzOwJzb9dDzqmGLCOakvbQijzVM7Vg4tV6zTQ2wbX+hSmDRl3sjSbKc
+ zA9WlJS97CeyHu3XnqeAefoDkoEN0rL+wob3+ifRjD7j3dt2f7t4I0whfzcEqtshXOUz
+ ljz5tBEaFq9MIFWAILE5eEB8w4NQMF52y2uTjqKsEPjMxA0/ElSQUxPSsysbQUCZhfRA
+ /j18ko0tfqQRR+O/FoBKpv6uMAMpaqnljhSk0ODZty/dptcyEWvbfN9TjhQiV0VTFXWv
+ OLqQ==
+X-Gm-Message-State: APjAAAX/FRUmTQWIXd96ENwsYomHYJKnwJ7lgLSqr1yqma5rsBSn1Jwt
+ CQpP5dBy7Zj6duK/JS/hZW4wGREkJ7p0fuEQBbk=
+X-Google-Smtp-Source: APXvYqwUmomEUUz3nspO76GFofpEr9Y5lkrzEIBCKloUqkS8g5O/eiwEu29XJ6ktN11Av8YdVnKFAgPHLckXUaGYYDE=
+X-Received: by 2002:a02:245:: with SMTP id 66mr2498022jau.30.1570463588898;
+ Mon, 07 Oct 2019 08:53:08 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.50]
-X-ClientProxiedBy: SFHDAG7NODE2.st.com (10.75.127.20) To SFHDAG5NODE3.st.com
- (10.75.127.15)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
- definitions=2019-10-07_03:2019-10-07,2019-10-07 signatures=0
+References: <20191007131649.1768-1-linux.amoon@gmail.com>
+ <20191007131649.1768-6-linux.amoon@gmail.com>
+ <74ab98c7-0071-60e9-7613-56d15ad8c0ab@baylibre.com>
+In-Reply-To: <74ab98c7-0071-60e9-7613-56d15ad8c0ab@baylibre.com>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Mon, 7 Oct 2019 21:22:56 +0530
+Message-ID: <CANAwSgRStPUi=naKOw+E=X-b699DnZ0Q0hYAGrUB8VKtN-fFqQ@mail.gmail.com>
+Subject: Re: [RFCv1 5/5] arm64/ARM: configs: Change CONFIG_PWM_MESON from m to
+ y
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_084326_882784_04B21B1C 
-X-CRM114-Status: GOOD (  13.08  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191007_085310_410592_0D44F6DD 
+X-CRM114-Status: GOOD (  19.10  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (linux.amoon[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -96,46 +93,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Antonio Borneo <antonio.borneo@st.com>, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Linux Kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-amlogic@lists.infradead.org,
+ Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-All the registers and the functionalities used in the callback
-dwmac5_flex_pps_config() are common between dwmac 4.10a [1] and
-5.00a [2].
+Hi Neil,
 
-Reuse the same callback for dwmac 4.10a too.
+On Mon, 7 Oct 2019 at 19:55, Neil Armstrong <narmstrong@baylibre.com> wrote:
+>
+> On 07/10/2019 15:16, Anand Moon wrote:
+> > Using microSD card we cannot get the mainline kernel to boot
+>
+> What's the link with microSD card here ?
 
-Tested on STM32MP15x, based on dwmac 4.10a.
+Well I thought that the PWM failed stop's booting further on linux kernel.
+But looking into kernelcli.org it seem to be working fine, but not at my end.
+[0] https://storage.kernelci.org/media/master/v5.4-rc1-82-gc0e284ccfeda/arm64/defconfig/gcc-8/lab-baylibre/boot-meson-g12b-odroid-n2.txt
 
-[1] DWC Ethernet QoS Databook 4.10a October 2014
-[2] DWC Ethernet QoS Databook 5.00a September 2017
+>
+> > using mainline u-boot it fails with below logs.
+> > Build PWM_MESSON as build-in solve the issue.
+> >
+> > [    1.569240] meson-gx-mmc ffe05000.sd: Got CD GPIO
+> > [    1.599227] pwm-regulator regulator-vddcpu-a: Failed to get PWM: -517
+> > [    1.600605] pwm-regulator regulator-vddcpu-b: Failed to get PWM: -517
+> > [    1.607166] pwm-regulator regulator-vddcpu-a: Failed to get PWM: -517
+> > [    1.613273] pwm-regulator regulator-vddcpu-b: Failed to get PWM: -517
+> > [    1.619931] hctosys: unable to open rtc device (rtc0)
+> >
+> > Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> > Cc: Jerome Brunet <jbrunet@baylibre.com>
+> > Cc: Neil Armstrong <narmstrong@baylibre.com>
+> > Signed-off-by: Anand Moon <linux.amoon@gmail.com>
+> > ---
+> > Odroid N2 Schematics says "GPIOC_6 should not pulled low if GPIOC is not
+> > work as SDCARD"
+>
+> Sorry, what's the link with the PWM build-in, and your case ?
+>
 
-Signed-off-by: Antonio Borneo <antonio.borneo@st.com>
----
- drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c | 1 +
- 1 file changed, 1 insertion(+)
+Sorry I linked two issues with this commit message.
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-index 2cb9c53f93b8..3006047213ea 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-@@ -864,6 +864,7 @@ const struct stmmac_ops dwmac410_ops = {
- 	.pcs_get_adv_lp = dwmac4_get_adv_lp,
- 	.debug = dwmac4_debug,
- 	.set_filter = dwmac4_set_filter,
-+	.flex_pps_config = dwmac5_flex_pps_config,
- 	.set_mac_loopback = dwmac4_set_mac_loopback,
- 	.update_vlan_hash = dwmac4_update_vlan_hash,
- 	.sarc_configure = dwmac4_sarc_configure,
--- 
-2.23.0
+> This comment is linked to the comment in the datasheet:
+> ""
+> If GPIOC is not work as SDIO port, please do not pull CARD_DET(GPIOC_6) low when system booting
+> up, to avoid romcode trying to boot from SD CARD.
+> ""
+> Seems pretty explicit for me.
+>
 
+Ok I will recheck this at my end.
+
+> > Is their any other approch to help resolve this issue.
+> >
+> > Boot log failed with cold boot:
+> > [0] https://pastebin.com/cEtWq2iX
+> > ---
+> >  arch/arm64/configs/defconfig | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> >
+> > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> > index c9a867ac32d4..72f6a7dca0d6 100644
+> > --- a/arch/arm64/configs/defconfig
+> > +++ b/arch/arm64/configs/defconfig
+> > @@ -774,7 +774,7 @@ CONFIG_MPL3115=m
+> >  CONFIG_PWM=y
+> >  CONFIG_PWM_BCM2835=m
+> >  CONFIG_PWM_CROS_EC=m
+> > -CONFIG_PWM_MESON=m
+> > +CONFIG_PWM_MESON=y
+> >  CONFIG_PWM_RCAR=m
+> >  CONFIG_PWM_ROCKCHIP=y
+> >  CONFIG_PWM_SAMSUNG=y
+> >
+>
+> For these changes without the microSD fail description in the commit log :
+> Acked-by: Neil Armstrong <narmstrong@baylibre.com>
+
+Thanks. I will rephrase this without linking the microSD card, with
+better commit message.
+
+Best Regards
+-Anand
 
 _______________________________________________
 linux-arm-kernel mailing list
