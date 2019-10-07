@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C0FECE50A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 16:19:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93FD1CE514
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 16:20:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UEqJpQm6mPmD7sYlfGMjonFFzOEaO6V3lCFsOEZSY68=; b=eHx++U//oV44an
-	Co7Twrok3IAb91164nqV4xwxAtqJyGLgO8QJPA+IHrHSMunCzW58zVBS6PfHfmPAvYPqT1RNnBPzQ
-	iptt71hJypGmjFVq8rNN3Yn+oLlavgt4n1TPaWP/iEKQuvuBvqJRVOdCSynt8PEORmQC9fDP74Qcb
-	ooOdWRfyIpyqScjkWI/5QJx5NUCNwDdMYG5iGz6z1orhKr+cZ2GlVN3rZ9TdlCD5vqqputMfz9z0V
-	aC5PNCYi3azCngGgLJctplgBqWmAjiw1UEGqWQw6DvvNy2egN3MHhV5B8ZiTrfbnVCcDlNCpapvpZ
-	ZuICUWTEfXVU2nMGxsKw==;
+	List-Owner; bh=O0jCoNq7vXrKiADm0+AjkfxA1wtujDOuL24/RGLWKfk=; b=gMsGDfSs78kikj
+	DLIhVzv1L4buQHX4YhkMAoS6pdpAX+xVO9qm/b84oZHoITBZcZTod799hQS6Se8eafMZkqgB8XtbH
+	mVFWlOark/fmvi8afWOXPWUxCRAoDxVRftcnZlVmzcXI+b9kN/vdFpTM7+t0FXPgTX9iULjQ4838i
+	14DsARIKZyhTun2Wd1hMmgwxrMlQ2xxcokfpIwEsOXLqoP7DFi84ikKTTDrMH7Hxw4A6IHNy42g8g
+	w1hePo18UQ1acMJozZVuaKI93eKqE60ipMmk1ytGvyCFlo0x6IkZxLc9M4xVDYq4osUpoei9cOkMe
+	OldT6I4LpvvqONv1e4tg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHTrZ-00080q-6g; Mon, 07 Oct 2019 14:19:49 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1iHTsM-00017J-Tp; Mon, 07 Oct 2019 14:20:38 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHTrL-0007zM-6R
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 14:19:37 +0000
-Received: by mail-wr1-x443.google.com with SMTP id r5so15480444wrm.12
+ id 1iHTsD-00016d-Uq
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 14:20:31 +0000
+Received: by mail-wr1-x444.google.com with SMTP id z9so15500046wrl.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 07 Oct 2019 07:19:34 -0700 (PDT)
+ Mon, 07 Oct 2019 07:20:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=0i3jhpHh4ub3oIHu6X3wrigGH0j1ZIOt2cA9ogRBEXA=;
- b=ZuOeJqvVikHzr0ygmoqd1UJcPYYIsWJCL/CVHbiiR5DZgIPZgP/AewZuidzv89ahez
- V0hctYc4GsJ9dqW/NiP9jgUHyRDZ92km1eDBNoDXSMr559cJn8A+eri4hSYvmCHl4mZr
- soP18VvvPoViHnxWh4+VM7k/5XcmtEZ5NHHrkM3eJttxnZNc+KUsBRYoYl49EAp/ZDbI
- P3vSV/ir6aBdEhAlE/0N8KB2s7ncx7VuvrPkZ8V/r+DkJdXQEKmGGYLSjceNvGyoqQq+
- WjcWWSaeB1Xzd6iUKXFn15TgxyfrmDd1U4yYaB1DxyW0nb3H3qTd6xF5yTysdlQVmAmS
- smjA==
+ bh=SnNApNI2Th8BmNSSBmx3A8j3h+xtt+6KF7oasPsCk6U=;
+ b=xFMLP3KnKfj+ITqG0jtkks5Gz68h5cFKi+FipLS8713Y6xMFLbjk6n0aMzJ4KFHutL
+ j5ouNTRzSuVU6Cl4TONf55t5/9h27G1evP0DPx3necKQ1brlzSkC6zLSAv9K2WiJMH7w
+ i7LNksozy3OVyZ+Ai+wUWcy9zR4gBwcGta0w70anGxUooUqseUlzywO1BJYya27GDUMn
+ 5JlSJm0RpDqhGnniPTOfp4oW9K+UrPO3FkBpS/A/Pv6LeG1XSpM7a8KCKRpF97YOfPm6
+ nlCheYpcjSaN/hjdEVPvxAzjUU0PEbjGcmWOp+hSEOKwxcEcW++exEiIgiBOvqTFMpoi
+ MQDw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=0i3jhpHh4ub3oIHu6X3wrigGH0j1ZIOt2cA9ogRBEXA=;
- b=RfpAwMwFJuR5ZImKqF91yyj3+Bd3eOsmVYrBZnVhTfRQBb4LyavX1uk3fvKSRpItZT
- 8zPnFETFNr5aYNXhbqdnSy20f2eE9EJrQXqwIysTeECLApngevFpmvrngwWUP2smK/XE
- 9op3yKrxqCOTkdC2NxOvOCRrd/QYNcqYiqVMHGGGVpvbRMQT3rBMCcUJ1vzsI8fpsoN0
- Q3NvGZvU+O5CSsWdQRQRiy6L3hqOlcxbkIYl0a2KxDE9adkDyRzbeM8BoaCzQ1M20uWL
- vxnJYmW2Aea2KeECgqD8E8amFctH+giUvuh2i6Pt0lVoGRJv2enbAQIt4K0wgZgKgaHB
- 0QLg==
-X-Gm-Message-State: APjAAAUZyebvdHsfpenVAz6s0rgbkrqeGry6QS/UOYiheAL7gMNgkx4U
- hxZSeLXSM7+T0IlzmMZwPAUFbA==
-X-Google-Smtp-Source: APXvYqzW1ltms7IyyXCquFmmEmlWMVvwYMA3WlYcSN9peoI1YS5SP8VSJ2lqjTHJ/xtSsVkpwGgMYg==
-X-Received: by 2002:adf:9b81:: with SMTP id d1mr21198287wrc.157.1570457973383; 
- Mon, 07 Oct 2019 07:19:33 -0700 (PDT)
+ bh=SnNApNI2Th8BmNSSBmx3A8j3h+xtt+6KF7oasPsCk6U=;
+ b=QMwUE/hhw2Tu4s0GnlUR3tHsuqpui/e9MgKpqytBR8T+W97FSSD7dTUrFO8j+GhfvS
+ aRVKbjmY+5zdwBs8Uq69nqIe1AJMpqGcw9OuDBwxR4lWVoG5tYjBfaXyrUd88NtULT9E
+ rMc7pqWEogAY5i30qYOYcVX+dz+4qDS0QJgaL8+vBmg0sfxCHD+h94mESZd8Uh1knhZX
+ j8vlwXh6XMxDvrx1TU9SqDQwJ8ylQgCxryuRLfW4rrcO/IUeHjpgJRvu9Mb6gu5pdjFz
+ EfKXsH8mj+pKPtxL75n7v9e6eJFGpjWPXSNAc/XUf+VtYN4taon4u8wv+rLHmCyERDUg
+ JfWQ==
+X-Gm-Message-State: APjAAAXq6TjyhqzK1ZSeOAu4IY8FxNnUnAPB7G0X3LDYFKhhFYSN2w+Q
+ /bpyfvDugIoEVX/2LG/1AukFeQ==
+X-Google-Smtp-Source: APXvYqxOlDUINVRLqPA0TekXTu0ZMnv4MKp1/grvwkTk19BD4nnSOn5X0LHdAR5c4Sju4Pva87gL1A==
+X-Received: by 2002:adf:ea0d:: with SMTP id q13mr11965473wrm.111.1570458028573; 
+ Mon, 07 Oct 2019 07:20:28 -0700 (PDT)
 Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id c9sm15188270wrt.7.2019.10.07.07.19.32
+ by smtp.gmail.com with ESMTPSA id a10sm16489334wrm.52.2019.10.07.07.20.27
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 07 Oct 2019 07:19:32 -0700 (PDT)
-Subject: Re: [RFCv1 1/5] arm64: dts: meson: Add missing 5V_EN gpio signal for
- VCC5V regulator
+ Mon, 07 Oct 2019 07:20:28 -0700 (PDT)
+Subject: Re: [RFCv1 2/5] arm64: dts: meson: Add missing pwm control gpio
+ signal for pwm-regulator
 To: Anand Moon <linux.amoon@gmail.com>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>, Kevin Hilman <khilman@baylibre.com>,
  Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
  Jerome Brunet <jbrunet@baylibre.com>,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
 References: <20191007131649.1768-1-linux.amoon@gmail.com>
- <20191007131649.1768-2-linux.amoon@gmail.com>
+ <20191007131649.1768-3-linux.amoon@gmail.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -121,23 +121,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <c99adf31-42df-c88e-40d4-1dc383c990b1@baylibre.com>
-Date: Mon, 7 Oct 2019 16:19:31 +0200
+Message-ID: <8a74834e-5cfa-3f3b-9ba6-e88e265b67a0@baylibre.com>
+Date: Mon, 7 Oct 2019 16:20:27 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20191007131649.1768-2-linux.amoon@gmail.com>
+In-Reply-To: <20191007131649.1768-3-linux.amoon@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_071935_280070_444B1F13 
-X-CRM114-Status: GOOD (  19.07  )
+X-CRM114-CacheID: sfid-20191007_072030_006882_08A0AD0B 
+X-CRM114-Status: GOOD (  18.93  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -162,43 +162,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Anand,
-
 On 07/10/2019 15:16, Anand Moon wrote:
-> As per schematics add missing 5V_EN gpio signal to enable
-> VCC5V regulator node.
+> As per schematics add missing VDDCPUA_PWM and VDDCPUB_PWM
+> gpio signal use to enable/disable the pwm regulator for DVFS.
 > 
-> Fixes: c35f6dc5c377 (arm64: dts: meson: Add minimal support for Odroid-N2)
+> Fixes: d14734a04a8a (arm64: dts: meson-g12b-odroid-n2: enable DVFS)
 > Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 > Cc: Jerome Brunet <jbrunet@baylibre.com>
 > Cc: Neil Armstrong <narmstrong@baylibre.com>
 > Signed-off-by: Anand Moon <linux.amoon@gmail.com>
 > ---
->  arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts | 3 +++
->  1 file changed, 3 insertions(+)
+>  arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts | 4 ++++
+>  1 file changed, 4 insertions(+)
 > 
 > diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
-> index 42f15405750c..a9a661258886 100644
+> index a9a661258886..66262a6ab3fe 100644
 > --- a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
 > +++ b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
-> @@ -94,6 +94,9 @@
->  		regulator-max-microvolt = <5000000>;
+> @@ -135,6 +135,8 @@
+>  
+>  		regulator-boot-on;
 >  		regulator-always-on;
->  		vin-supply = <&main_12v>;
-> +		/* U12 NB679GD 5V_EN */
-> +		gpio = <&gpio GPIOH_8 GPIO_OPEN_DRAIN>;
-> +		enable-active-high;
-
-This GPIO is handled by the BL301 SCP firmware, I'm personally against
-adding this to the DT since it's out of control of Linux or any OS.
-
-Neil
-
+> +		/* VDDCPUA_PWM */
+> +		enable-gpios = <&gpio GPIOE_1 GPIO_ACTIVE_HIGH>;
 >  	};
 >  
->  	vcc_1v8: regulator-vcc_1v8 {
+>  	vddcpu_b: regulator-vddcpu-b {
+> @@ -154,6 +156,8 @@
+>  
+>  		regulator-boot-on;
+>  		regulator-always-on;
+> +		/* VDDCPUB_PWM */
+> +		enable-gpios = <&gpio GPIOE_2 GPIO_ACTIVE_HIGH>;
+>  	};
+>  
+>  	hub_5v: regulator-hub_5v {
 > 
 
+Same as 5V_EN, This GPIO is handled by the BL301 SCP firmware, I'm personally against
+adding this to the DT since it's out of control of Linux or any OS.
+
+This GPIO id controlles by the PSCI call to SCP to enable/disable
+the CPU clusters.
+
+Neil
 
 _______________________________________________
 linux-arm-kernel mailing list
