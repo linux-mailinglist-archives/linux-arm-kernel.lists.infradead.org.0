@@ -2,102 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3286CCE494
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 16:03:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2423CCE4A7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 16:07:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tnOeZaN2tSM1D/2A3JuvRLqCxrAHxdZcSuIOF0B6h8c=; b=AYLuXDqgucbM5M
-	qX0gyUsxLmcYkcIS0NbwGMHqMYEHTbO0TRHvA8hMxeoh8J9ixk4/jTpdQu9HiZ4t5tPRjLaRFF151
-	skQZlodZbRfZbOls/LH7nV4gD7uuu8OVUcKpciidwpzeti7mh3vd6xTzRdvWNYPVh0H0XPlgksZiu
-	wtzUkVqGPTyhWJ1qdhZ3S8df1KpIJaarrK08kOHqY226XYBRQWWfEg32J+c5tizsVbs91jSBFyCGu
-	/pLcvDzrcxCyM8xIAktBNCNczpFfIOgLXfTYfybpuHrtxvEg1OI+IITm346Wv6P4IGtpja5C3MYZ7
-	4XQNPB/8tAC2hwaAqe0Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/UjXCv/ourSyolgznXftLHBLAK9CCj0tnf4vFmxScBo=; b=I5vROf0mBEXUGa
+	ChSkWAHze/LTXlbR1Zua7vTihCwR22MKgNz2ZWLZj6283tSIxEMF8nUxS7/rtWmPGPvsgRmiHMkHI
+	DFXn5t3MVDB71+ThuEyguw0S0dE06UfC4cNm2fpBxrP7Yynu3sMeMHDU7XAY/nry3Kuz4gpfXhD1W
+	4fo2RUOrVkFkPxMftAVYwK60Dgwas9/hwb2APnDDRZofH4C7uINQV6AdqmI7atZ6THk0V5cuKhJ6d
+	0Lv1MY1uJZMkB2lbgBg1Kn2OMWa6/t6+fTb1IgmfNK5ZqX2I04FdlQqE1DjKMdUuXvilfaRs0Bpck
+	VBs2ght3mMztqR2RA4GQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHTb9-0000BU-Gk; Mon, 07 Oct 2019 14:02:51 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHTb2-0000Ap-PY; Mon, 07 Oct 2019 14:02:46 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B7C0B142F;
- Mon,  7 Oct 2019 07:02:41 -0700 (PDT)
-Received: from [192.168.3.111] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A23983F703;
- Mon,  7 Oct 2019 07:02:40 -0700 (PDT)
+	id 1iHTf8-00024V-M8; Mon, 07 Oct 2019 14:06:58 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHTez-00023Y-4K; Mon, 07 Oct 2019 14:06:51 +0000
+Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1iHTev-0003RJ-5Q; Mon, 07 Oct 2019 16:06:45 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: =?ISO-8859-1?Q?Andr=E9?= Przywara <andre.przywara@arm.com>
 Subject: Re: aarch64 Kernel Panic Asynchronous SError Interrupt on large file
  IO
-To: =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>,
- Robin Murphy <robin.murphy@arm.com>
+Date: Mon, 07 Oct 2019 16:06:44 +0200
+Message-ID: <39265746.Q1QFhyvV51@diego>
+In-Reply-To: <0d1c5c50-6fb0-0154-26cc-c7823dd7ea26@arm.com>
 References: <CA+Vb7hpe_USzdCuTBHd8V-t6YeQ0oApiBrvM-D43JuhJda6eyQ@mail.gmail.com>
- <1596764.niU1GBd6P2@phil> <7f659a93-81e1-65f3-8239-537307f34f42@arm.com>
- <2769202.trDOcCdrXg@diego>
-From: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=andre.przywara@arm.com; prefer-encrypt=mutual; keydata=
- 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
- i4aIXCH3Wv6K
-Organization: ARM Ltd.
-Message-ID: <0d1c5c50-6fb0-0154-26cc-c7823dd7ea26@arm.com>
-Date: Mon, 7 Oct 2019 15:01:05 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ <2769202.trDOcCdrXg@diego> <0d1c5c50-6fb0-0154-26cc-c7823dd7ea26@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <2769202.trDOcCdrXg@diego>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_070244_919464_2B0CFE91 
-X-CRM114-Status: GOOD (  25.60  )
+X-CRM114-CacheID: sfid-20191007_070649_323104_0BBEBFC0 
+X-CRM114-Status: GOOD (  32.58  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,125 +58,214 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, vicencb@gmail.com,
- linux-rockchip@lists.infradead.org,
+Cc: Robin Murphy <robin.murphy@arm.com>, vicencb@gmail.com,
+ linux-rockchip@lists.infradead.org, Catalin Marinas <catalin.marinas@arm.com>,
  Philipp Richter <richterphilipp.pops@gmail.com>, Will Deacon <will@kernel.org>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMDcvMTAvMjAxOSAxNDozOCwgSGVpa28gU3TDvGJuZXIgd3JvdGU6Cj4gQW0gTW9udGFnLCA3
-LiBPa3RvYmVyIDIwMTksIDEzOjUxOjM3IENFU1Qgc2NocmllYiBSb2JpbiBNdXJwaHk6Cj4+IE9u
-IDA2LzEwLzIwMTkgMTQ6MTMsIEhlaWtvIFN0dWVibmVyIHdyb3RlOgo+Pj4gQW0gU29ubnRhZywg
-Ni4gT2t0b2JlciAyMDE5LCAwMTo0NToyMyBDRVNUIHNjaHJpZWIgUm9iaW4gTXVycGh5Ogo+Pj4+
-IE9uIDIwMTktMDgtMTkgMTE6NDMgYW0sIFdpbGwgRGVhY29uIHdyb3RlOgo+Pj4+PiBPbiBNb24s
-IEF1ZyAxOSwgMjAxOSBhdCAxMTowNzoxNEFNICswMTAwLCBDYXRhbGluIE1hcmluYXMgd3JvdGU6
-Cj4+Pj4+PiBPbiBTYXQsIEF1ZyAxNywgMjAxOSBhdCAwMzoxMjo0MVBNICswMjAwLCBQaGlsaXBw
-IFJpY2h0ZXIgd3JvdGU6Cj4+Pj4+Pj4gSSBhZGRlZCAibWVtdGVzdD00IiB0byB0aGUga2VybmVs
-IGNtZGxpbmUgYW5kIEknbSBnZXR0aW5nIHZlcnkgcXVpY2t5Cj4+Pj4+Pj4gYSAiSW50ZXJuYWwg
-ZXJyb3I6IHN5bmNocm9ub3VzIGV4dGVybmFsIGFib3J0IiBwYW5pYy4KPj4+Pj4+IFsuLi5dCj4+
-Pj4+Pj4gWyAgICAwLjAwMDAwMF0gZWFybHlfbWVtdGVzdDogIyBvZiB0ZXN0czogNAo+Pj4+Pj4+
-IFsgICAgMC4wMDAwMDBdICAgMHgwMDAwMDAwMDAwMjAwMDAwIC0gMHgwMDAwMDAwMDAyMDgwMDAw
-IHBhdHRlcm4gYWFhYWFhYWFhYWFhYWFhYQo+Pj4+Pj4+IFsgICAgMC4wMDAwMDBdICAgMHgwMDAw
-MDAwMDAzYTk1MDAwIC0gMHgwMDAwMDAwMGY4NDAwMDAwIHBhdHRlcm4gYWFhYWFhYWFhYWFhYWFh
-YQo+Pj4+Pj4+IFsgICAgMC4wMDAwMDBdIEludGVybmFsIGVycm9yOiBzeW5jaHJvbm91cyBleHRl
-cm5hbCBhYm9ydDogOTYwMDAyMTAgWyMxXSBTTVAKPj4+Pj4+Cj4+Pj4+PiBBdCBsZWFzdCBpdCdz
-IGEgc3luY2hyb25vdXMgZXJyb3IgOykuCj4+Pj4+Pgo+Pj4+Pj4+IFsgICAgMC4wMDAwMDBdIHBj
-IDogZWFybHlfbWVtdGVzdCsweDE2Yy8weDIzYwo+Pj4+Pj4gWy4uLl0KPj4+Pj4+PiBbICAgIDAu
-MDAwMDAwXSBDb2RlOiBkMjgwMDAwMiBkMjgwMDAwMSBlYjA0MDBiZiA1NDAwMDMwOSAoZjk0MDAw
-ODApCj4+Pj4+Pgo+Pj4+Pj4gZGVjb2RlY29kZSBzYXlzOgo+Pj4+Pj4KPj4+Pj4+ICAgICAgMDog
-ICBkMjgwMDAwMiAgICAgICAgbW92ICAgICB4MiwgIzB4MCAgICAgICAgICAgICAgICAgICAgICAg
-IC8vICMwCj4+Pj4+PiAgICAgIDQ6ICAgZDI4MDAwMDEgICAgICAgIG1vdiAgICAgeDEsICMweDAg
-ICAgICAgICAgICAgICAgICAgICAgICAvLyAjMAo+Pj4+Pj4gICAgICA4OiAgIGViMDQwMGJmICAg
-ICAgICBjbXAgICAgIHg1LCB4NAo+Pj4+Pj4gICAgICBjOiAgIDU0MDAwMzA5ICAgICAgICBiLmxz
-ICAgIDB4NmMgIC8vIGIucGxhc3QKPj4+Pj4+ICAgICAxMDoqICBmOTQwMDA4MCAgICAgICAgbGRy
-ICAgICB4MCwgW3g0XSAgICAgICAgICAgICAgICA8LS0gdHJhcHBpbmcgaW5zdHJ1Y3Rpb24KPj4+
-Pj4+Cj4+Pj4+PiBJIGd1ZXNzIHRoYXQncyB0aGUgcmVhZCBvZiAqcCBpbiBtZW10ZXN0KCkuIFdy
-aXRpbmcgKnAgcHJvYmFibHkKPj4+Pj4+IGdlbmVyYXRlcyBhc3luY2hyb25vdXMgZXJyb3JzIGl0
-IHlvdSBoYXZlbid0IHNlZW4gaXQgeWV0Lgo+Pj4+Pj4KPj4+Pj4+PiBJcyBteSBib2FyZCBjb21w
-bGV0ZWx5IGJyb2tlbiA/IDooCj4+Pj4+Pgo+Pj4+Pj4gT25lIHBvc3NpYmlsaXR5IGlzIHRoYXQg
-eW91IGRvbid0IGhhdmUgYW55IG1lbW9yeSB3aGVyZSB5b3UgdGhpbmsgdGhlcmUKPj4+Pj4+IGlz
-LCBzbyB0aGUgbWFwcGluZyBqdXN0IGRvZXNuJ3QgdHJhbnNsYXRlIHRvIGFueSB2YWxpZCBwaHlz
-aWNhbAo+Pj4+Pj4gbG9jYXRpb24uCj4+Pj4+Pgo+Pj4+Pj4gQ2FuIHlvdSBhZGQgc29tZSBwcmlu
-dGsoYWRkcikgaW4gZG9fc2VhKCkgdG8gc2VlIGlmIGl0IGFsd2F5cyBmYXVsdHMgb24KPj4+Pj4+
-IHRoZSBzYW1lIGFkZHJlc3M/Cj4+Pj4+Cj4+Pj4+IEFsdGVybmF0aXZlbHksIGp1c3QgcnVuIGl0
-IGEgZmV3IG1vcmUgdGltZXMgYW5kIHNlZSBpZiB0aGUgcmVnaXN0ZXIgZHVtcAo+Pj4+PiBjaGFu
-Z2VzLiBDdXJyZW50bHkgd2UndmUgZ290Ogo+Pj4+Pgo+Pj4+PiBbICAgIDAuMDAwMDAwXSB4NSA6
-IGZmZmY4MDAwZjg0MDAwMDAgeDQgOiBmZmZmODAwMDA4NDAwMDAwCj4+Pj4+IFsgICAgMC4wMDAw
-MDBdIHgzIDogMDAwMDAwMDAwODQwMDAwMCB4MiA6IDAwMDAwMDAwMDAwMDAwMDAKPj4+Pj4gWyAg
-ICAwLjAwMDAwMF0geDEgOiAwMDAwMDAwMDAwMDAwMDAwIHgwIDogYWFhYWFhYWFhYWFhYWFhYQo+
-Pj4+Pgo+Pj4+PiBzbyBJJ2QgZ3Vlc3MgdGhhdCB4MyBpcyB0aGUgZmF1bHRpbmcgcGEuIFRoZSBm
-YXVsdGluZyAobGluZWFyKSBWQXMgaW4gdGhlCj4+Pj4+IG9yaWdpbmwgcmVwb3J0IHdlcmUgMHhm
-ZmZmODAwMDA5Yzc0YWE4IGFuZCAweGZmZmY4MDAwMDljMDgzOTAsIHdoaWNoIGlzCj4+Pj4+IHN0
-aWxsIGEgd2F5IHdheSBvZmYgZnJvbSB0aGlzIG9uZSA6Lwo+Pj4+Pgo+Pj4+PiBMb29raW5nIGF0
-IHRoZSBUUk0gZm9yIHRoZSByazMzMjgsIHRoZXJlJ3MgNGdiIG9mIHJhbSBzdGFydGluZyBhdCBw
-YSAweDAsCj4+Pj4+IHNvIG1heWJlIHNvbWUgb2YgaXQgaGFzIGJlZW4gY29uZmlndXJlZCBhcyBz
-ZWN1cmUgb3IgdGhlIG1lbW9yeSBjb250cm9sbGVyCj4+Pj4+IGhhc24ndCBiZWVuIHByb3Blcmx5
-IGluaXRpYWxpc2VkPwo+Pj4+Cj4+Pj4gRldJVyBJJ3ZlIG5vdGljZWQgbXkgUkszMzk5IGJvYXJk
-IGRvaW5nIHRoaXMgdG9vLCBub3cgdGhhdCBJJ3ZlIHN0YXJ0ZWQKPj4+PiB1c2luZyBpdCBpbiBh
-bmdlci4gSSdtIHVzaW5nIGEgaGFja3kgZmlybXdhcmUgY29tcHJpc2luZyB1cHN0cmVhbSBVLUJv
-b3QKPj4+PiBtdW5nZWQgd2l0aCB0aGUgUm9ja2NoaXAgbWluaWxvYWRlciBhbmQgZG93bnN0cmVh
-bSBUcnVzdGVkIEZpcm13YXJlCj4+Pj4gYmluYXJpZXMsCj4+Pgo+Pj4gYW55IHJlYXNvbiBmb3Ig
-dGhhdCBjb21iaW5hdGlvbj8gRm9yIGV4YW1wbGUgdGhlIHJvY2twcm82NCBnb3QgZGRyNCBzdXBw
-b3J0Cj4+PiBpbiB1cHN0cmVhbSB1Ym9vdCByZWNlbnRseS4KPj4KPj4gTm90IHJlYWxseTsgaXQn
-cyBqdXN0IHRoZSAid29ya3Mgd2VsbCBlbm91Z2giIHNldHVwIHRoYXQgbWFkZSBkaXN0cm8gCj4+
-IGJvb3QgdXNhYmxlIGJlZm9yZSB0aGUgU1BMIHN1cHBvcnQgd2VudCB1cHN0cmVhbSwgYW5kIChv
-dGhlciB0aGFuIAo+PiBoYWNraW5nIGluIHRoZSBDUFUgUExMIGluaXRpYWxpc2F0aW9uIHdoaWNo
-IG90aGVyd2lzZSBnZXRzIGxvc3QgaW4gdGhhdCAKPj4gY29tYmluYXRpb24pIEkgaGF2ZW4ndCB0
-b3VjaGVkIGl0IHNpbmNlLgo+Pgo+PiBbIGZvciBub3cgSSd2ZSBqdXN0IGhhY2tlZCBhIHJlc2Vy
-dmVkLW1lbW9yeSBub2RlIGludG8gbXkgRFQuLi4gb25lIGRheSAKPj4gSSdsbCBnZXQgcm91bmQg
-dG8gZmlybXdhcmUgdGlua2VyaW5nIDspIF0KPj4KPj4KPj4+PiBhbmQgaXQgbG9va3MgbGlrZSB0
-aGF0IG1pc21hdGNoIGlzIHRoZSByb290IG9mIHRoaXMgcHJvYmxlbS4KPj4+PiBCb290aW5nIGEg
-ZGlmZmVyZW50IGltYWdlIGJhc2VkIG9uIHRoZSBCU1AgVS1ib290IHNob3dzIHRoYXQgdGhhdCdz
-Cj4+Pj4gcGFzc2luZyBhIG1lbW9yeSBub2RlIHdpdGggdGhlIHJhbmdlIDB4ODQwMDAwMC0weDk2
-MDAwMDAgZW50aXJlbHkgY2FydmVkCj4+Pj4gb3V0LCBzbyB0aGlzIGlzIHByZXN1bWFibHkgY2xh
-aW1lZCBieSB0aGUgc2VjdXJlIGZpcm13YXJlL1RFRSBhbmQgc2V0IHRvCj4+Pj4gYWJvcnQgTm9u
-LVNlY3VyZSBhY2Nlc3Nlcy4KPj4+Cj4+PiBBcyBURUUgb24gUFgzMCBpcyBhbHNvIG9uZSBvZiBt
-eSBjdXJyZW50IHByb2plY3RzLCBJJ3ZlIHN0dW1ibGVkIG92ZXIgdGhhdAo+Pj4gbWVtb3J5IGlz
-c3VlLiBBdCBsZWFzdCBPUC1URUUgY2FuIGdldCBwYXNzZWQgYSBsb2NhdGlvbiBmb3IgYSBkdGIg
-ZHVyaW5nCj4+PiBzdGFydHVwIHdoaWNoIGl0IHRoZW4gd291bGQgbW9kaWZ5IHRvIGFkZCBhIHJl
-c2VydmVkIHNlY3Rpb24gZm9yIGl0cyBtZW1vcnkuCj4+Pgo+Pj4gQnV0IHRoYXQgZHRiIGdlbmVy
-YWxseSBpcyBub3QgdGhlIG9uZSwgdGhlIGtlcm5lbCB3aWxsIGFjdHVhbGx5IHVzZSwgYnV0Cj4+
-PiBpbnN0ZWFkIG9ubHkgdGhlIG9uZSB1c2VkIGJ5IHVib290LiBleHRsaW51eCwgdGZ0cCBvciB3
-aGF0ZXZlciB3aWxsIG5vcm1hbGx5Cj4+PiBsb2FkIGFuZCB1c2UgYSBuZXcgZHRiIGZvciB0aGUg
-a2VybmVsIHdoaWNoIHdpbGwgbGlrZWx5IG5vdCBnZXQgdGhhdCBtZW1vcnkKPj4+IHJlc2VydmF0
-aW9uIGF1dG9tYXRpY2FsbHk/Cj4+Pgo+Pj4gSSdtIG5vdCB5ZXQgc3VyZSBob3cgdGhpcyBpcyBz
-dXBwb3NlZCB0byB3b3JrIGluIGFuIGFsbC11cHN0cmVhbQo+Pj4gY29uZmlndXJhdGlvbiAtIEkn
-bSBydW5uaW5nIHVwc3RyZWFtIHUtYm9vdCArIHVwc3RyZWFtIFRGLUEgKyB1cHN0cmVhbQo+Pj4g
-T1AtVGVlIGluIG15IHByb2plY3QgZW52aXJvbm1lbnQgcmlnaHQgbm93Lgo+Pgo+PiBBcyBmYXIg
-YXMgSSB1bmRlcnN0YW5kLCBVLUJvb3QgaXMgc3RpbGwgcmVzcG9uc2libGUgZm9yIGdlbmVyYXRp
-bmcgdGhlIAo+PiBtZW1vcnkgbm9kZSBpbiB3aGF0ZXZlciBEVEIgaXQgbG9hZHMgYW5kIHBhc3Nl
-cyB0byB0aGUga2VybmVsLCBzbyBpdCAKPj4gc2hvdWxkIHN0aWxsIGJlIGFibGUgdG8gYWRqdXN0
-IHRoYXQgYWNjb3JkaW5nbHkuIFByZXN1bWFibHkgVS1Cb290IG5lZWRzIAo+PiB0byBkaXNjb3Zl
-ciBhbnkgZmlybXdhcmUvVEVFIHJlc2VydmF0aW9ucyBlYXJseSBvbiB0byBhdm9pZCB0b3VjaGlu
-ZyBhbnkgCj4+IFNlY3VyZSBtZW1vcnkgaXRzZWxmLCBzbyBpdCBzaG91bGQganVzdCBuZWVkIHRv
-IGtlZXAgdHJhY2sgb2YgdGhlbSB1bnRpbCAKPj4gZmluYWxpc2luZyB0aGUga2VybmVsIERUQi4K
-PiAKPiBZZWFoLCB0aGF0J3Mgc2ltaWxhciB0byB3aGF0IEkgZGlzY292ZXJlZCBzbyBmYXIgOi1E
-IC4KPiAKPiBTUEwgbG9hZHMgdS1ib290Lml0YiB3aGljaCBzaG91bGQgY29udGFpbiwgdS1ib290
-LCB0Zi1hLCB0ZWUgYW5kIGR0Lgo+IFt2ZW5kb3IgdGYtYSBtaWdodCBkbyB0aGF0IGRpZmZlcmVu
-dGx5IHRob3VnaF0KPiAKPiBJdCBwYXNzZXMgdGhlIGR0LWFkZHJlc3MgYXMgcGFyYW0gdG8gYm90
-aCB0Zi1hIGFuZCBvcHRlZSwgd2hpY2ggdGhlbgo+IG1heSBhZGQgc3R1ZmYsIGxpa2Ugb3B0ZWUg
-YWRkaW5nIHRoZSBmaXJtd2FyZS1ub2RlICsgcmVzZXJ2ZWQtbWVtb3J5Cj4gc2VjdGlvbnMuCj4g
-Cj4gVGhpcyBkdCBpcyB0aGVuIHRoZSBiYXNpcyBmb3IgdGhlIG1haW4gdS1ib290LCB0byBiZSBm
-b3VuZCBhdCBnZC0+ZmR0X2Jsb2IuCj4gU28gdS1ib290IHdpbGwgbmVlZCB0byBkaXNjb3ZlciBh
-bmQgdHJhbnNwbGFudCBvcHRlZS1maXJtd2FyZSArIG9wdGVlCj4gcmVzZXJ2ZWQtbWVtb3J5IHNl
-Y3Rpb25zIHRvIGFueSBsYXRlciBkdCB0aGF0IGdldHMgbG9hZGVkLgoKSW5kZWVkIFUtQm9vdCBp
-cyBtb3N0bHkgaWdub3JpbmcgYm90aCAvbWVtcmVzZXJ2ZS8gYW5kIC9yZXNlcnZlZC1tZW1vcnkK
-Zm9yIGl0cyBvd24gcHVycG9zZXMgc28gZmFyLiBUaGVyZSBpcyBjb2RlCihib290X2ZkdF9hZGRf
-bWVtX3Jzdl9yZWdpb25zKCkpIHRvIHBhcnNlIHRob3NlIG5vZGVzIGFuZCB0cmFuc2xhdGUgdGhl
-bQppbnRvIGFuIGxtYiBibG9jaywgYnV0IHRoaXMgaXMgdGhlbiBvbmx5IHVzZWQgZm9yIHJlbG9j
-YXRpbmcgRkRUIGFuZAppbml0cmQgd2hlbiBsb2FkaW5nIGtlcm5lbHMsIEFGQUlDUy4gSSB0aGlu
-ayB0aGUgaWRlYSBpcyB0aGF0IHRoZSBtb3N0Cm9mIHRoZSBtZW1vcnkgc2V0dXAgKGhlYXApIGlz
-IHN0YXRpYyBhbnl3YXkgYW5kIHlvdSB3b3VsZCB0YWtlIGNhcmUgb2YKbm90IHBsYWNpbmcgYW55
-IFUtQm9vdCBjb21wb25lbnRzIGluIHJlc2VydmVkIG1lbW9yeSByZWdpb25zIGluIHRoZQpmaXJz
-dCBwbGFjZS4KSXMgVS1Cb290IGFjdHVhbGx5IHRyaXBwaW5nIG92ZXIgc29tZXRoaW5nPyBPciBp
-cyB0aGlzIGp1c3QgdG8gYmUgc2FmZQpmb3IgdGhlIGZ1dHVyZT8KCkFuZCBJIGhhdmUgYSBndXQg
-ZmVlbGluZyB0aGUgaW1wbGVtZW50aW5nIG5vLW1hcCB3aWxsIGJlIHRyaWNreSwgQUZBSUsKdGhl
-IHBhZ2UgdGFibGUgc2V0dXAgaXMgbW9zdGx5IHN0YXRpYyBhbmQgd29uJ3QgY2hhbmdlIGFmdGVy
-IHRoZSBNTVUgaXMKZW5hYmxlZC4gV2hpY2ggbWVhbnMgd2Ugd291bGQgbmVlZCB0byBkbyBpdCBi
-ZWZvcmUgdGhlIE1NVSBpcyBlbmFibGVkPwoKQ2hlZXJzLApBbmRyZQoKX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
-IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Am Montag, 7. Oktober 2019, 16:01:05 CEST schrieb Andr=E9 Przywara:
+> On 07/10/2019 14:38, Heiko St=FCbner wrote:
+> > Am Montag, 7. Oktober 2019, 13:51:37 CEST schrieb Robin Murphy:
+> >> On 06/10/2019 14:13, Heiko Stuebner wrote:
+> >>> Am Sonntag, 6. Oktober 2019, 01:45:23 CEST schrieb Robin Murphy:
+> >>>> On 2019-08-19 11:43 am, Will Deacon wrote:
+> >>>>> On Mon, Aug 19, 2019 at 11:07:14AM +0100, Catalin Marinas wrote:
+> >>>>>> On Sat, Aug 17, 2019 at 03:12:41PM +0200, Philipp Richter wrote:
+> >>>>>>> I added "memtest=3D4" to the kernel cmdline and I'm getting very =
+quicky
+> >>>>>>> a "Internal error: synchronous external abort" panic.
+> >>>>>> [...]
+> >>>>>>> [    0.000000] early_memtest: # of tests: 4
+> >>>>>>> [    0.000000]   0x0000000000200000 - 0x0000000002080000 pattern =
+aaaaaaaaaaaaaaaa
+> >>>>>>> [    0.000000]   0x0000000003a95000 - 0x00000000f8400000 pattern =
+aaaaaaaaaaaaaaaa
+> >>>>>>> [    0.000000] Internal error: synchronous external abort: 960002=
+10 [#1] SMP
+> >>>>>>
+> >>>>>> At least it's a synchronous error ;).
+> >>>>>>
+> >>>>>>> [    0.000000] pc : early_memtest+0x16c/0x23c
+> >>>>>> [...]
+> >>>>>>> [    0.000000] Code: d2800002 d2800001 eb0400bf 54000309 (f940008=
+0)
+> >>>>>>
+> >>>>>> decodecode says:
+> >>>>>>
+> >>>>>>      0:   d2800002        mov     x2, #0x0                        =
+// #0
+> >>>>>>      4:   d2800001        mov     x1, #0x0                        =
+// #0
+> >>>>>>      8:   eb0400bf        cmp     x5, x4
+> >>>>>>      c:   54000309        b.ls    0x6c  // b.plast
+> >>>>>>     10:*  f9400080        ldr     x0, [x4]                <-- trap=
+ping instruction
+> >>>>>>
+> >>>>>> I guess that's the read of *p in memtest(). Writing *p probably
+> >>>>>> generates asynchronous errors it you haven't seen it yet.
+> >>>>>>
+> >>>>>>> Is my board completely broken ? :(
+> >>>>>>
+> >>>>>> One possibility is that you don't have any memory where you think =
+there
+> >>>>>> is, so the mapping just doesn't translate to any valid physical
+> >>>>>> location.
+> >>>>>>
+> >>>>>> Can you add some printk(addr) in do_sea() to see if it always faul=
+ts on
+> >>>>>> the same address?
+> >>>>>
+> >>>>> Alternatively, just run it a few more times and see if the register=
+ dump
+> >>>>> changes. Currently we've got:
+> >>>>>
+> >>>>> [    0.000000] x5 : ffff8000f8400000 x4 : ffff800008400000
+> >>>>> [    0.000000] x3 : 0000000008400000 x2 : 0000000000000000
+> >>>>> [    0.000000] x1 : 0000000000000000 x0 : aaaaaaaaaaaaaaaa
+> >>>>>
+> >>>>> so I'd guess that x3 is the faulting pa. The faulting (linear) VAs =
+in the
+> >>>>> originl report were 0xffff800009c74aa8 and 0xffff800009c08390, whic=
+h is
+> >>>>> still a way way off from this one :/
+> >>>>>
+> >>>>> Looking at the TRM for the rk3328, there's 4gb of ram starting at p=
+a 0x0,
+> >>>>> so maybe some of it has been configured as secure or the memory con=
+troller
+> >>>>> hasn't been properly initialised?
+> >>>>
+> >>>> FWIW I've noticed my RK3399 board doing this too, now that I've star=
+ted
+> >>>> using it in anger. I'm using a hacky firmware comprising upstream U-=
+Boot
+> >>>> munged with the Rockchip miniloader and downstream Trusted Firmware
+> >>>> binaries,
+> >>>
+> >>> any reason for that combination? For example the rockpro64 got ddr4 s=
+upport
+> >>> in upstream uboot recently.
+> >>
+> >> Not really; it's just the "works well enough" setup that made distro =
+
+> >> boot usable before the SPL support went upstream, and (other than =
+
+> >> hacking in the CPU PLL initialisation which otherwise gets lost in tha=
+t =
+
+> >> combination) I haven't touched it since.
+> >>
+> >> [ for now I've just hacked a reserved-memory node into my DT... one da=
+y =
+
+> >> I'll get round to firmware tinkering ;) ]
+> >>
+> >>
+> >>>> and it looks like that mismatch is the root of this problem.
+> >>>> Booting a different image based on the BSP U-boot shows that that's
+> >>>> passing a memory node with the range 0x8400000-0x9600000 entirely ca=
+rved
+> >>>> out, so this is presumably claimed by the secure firmware/TEE and se=
+t to
+> >>>> abort Non-Secure accesses.
+> >>>
+> >>> As TEE on PX30 is also one of my current projects, I've stumbled over=
+ that
+> >>> memory issue. At least OP-TEE can get passed a location for a dtb dur=
+ing
+> >>> startup which it then would modify to add a reserved section for its =
+memory.
+> >>>
+> >>> But that dtb generally is not the one, the kernel will actually use, =
+but
+> >>> instead only the one used by uboot. extlinux, tftp or whatever will n=
+ormally
+> >>> load and use a new dtb for the kernel which will likely not get that =
+memory
+> >>> reservation automatically?
+> >>>
+> >>> I'm not yet sure how this is supposed to work in an all-upstream
+> >>> configuration - I'm running upstream u-boot + upstream TF-A + upstream
+> >>> OP-Tee in my project environment right now.
+> >>
+> >> As far as I understand, U-Boot is still responsible for generating the =
+
+> >> memory node in whatever DTB it loads and passes to the kernel, so it =
+
+> >> should still be able to adjust that accordingly. Presumably U-Boot nee=
+ds =
+
+> >> to discover any firmware/TEE reservations early on to avoid touching a=
+ny =
+
+> >> Secure memory itself, so it should just need to keep track of them unt=
+il =
+
+> >> finalising the kernel DTB.
+> > =
+
+> > Yeah, that's similar to what I discovered so far :-D .
+> > =
+
+> > SPL loads u-boot.itb which should contain, u-boot, tf-a, tee and dt.
+> > [vendor tf-a might do that differently though]
+> > =
+
+> > It passes the dt-address as param to both tf-a and optee, which then
+> > may add stuff, like optee adding the firmware-node + reserved-memory
+> > sections.
+> > =
+
+> > This dt is then the basis for the main u-boot, to be found at gd->fdt_b=
+lob.
+> > So u-boot will need to discover and transplant optee-firmware + optee
+> > reserved-memory sections to any later dt that gets loaded.
+> =
+
+> Indeed U-Boot is mostly ignoring both /memreserve/ and /reserved-memory
+> for its own purposes so far. There is code
+> (boot_fdt_add_mem_rsv_regions()) to parse those nodes and translate them
+> into an lmb block, but this is then only used for relocating FDT and
+> initrd when loading kernels, AFAICS. I think the idea is that the most
+> of the memory setup (heap) is static anyway and you would take care of
+> not placing any U-Boot components in reserved memory regions in the
+> first place.
+> Is U-Boot actually tripping over something? Or is this just to be safe
+> for the future?
+
+It's not u-boot that is tripping but a later loaded kernel. As I've written
+op-tee adds its nodes to the dt loaded by the SPL from a FIT image.
+
+Which may not necessarily be the same dt that gets used by the later
+kernel. PXE-boot for example may very well just load a different dt
+from emmc / network than the one stored in the firmware image.
+
+So the reserved memory sections will need to move over to that dt
+as well if we're starting a kernel with a different dt, similar to how
+u-boot will add the core memory there as well.
+
+
+Heiko
+
+> And I have a gut feeling the implementing no-map will be tricky, AFAIK
+> the page table setup is mostly static and won't change after the MMU is
+> enabled. Which means we would need to do it before the MMU is enabled?
+> =
+
+> Cheers,
+> Andre
+> =
+
+
+
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
