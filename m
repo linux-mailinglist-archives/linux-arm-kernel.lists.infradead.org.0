@@ -2,60 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F5A8CE111
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 13:59:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 640D8CE119
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 14:01:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0Gq6b9b9Zz1aPI3C916RTstWqjKGpt+EweVJOdBwVZ0=; b=ZoxdpVfLSRAab+42Qll0dHWY6
-	zl6jhRuyjGhaPfFFBgB4uhKYvqs6z3nE37qMdnszn20xRam3/gex/HY9TOL2mN/454sfU6e4z5NGs
-	VMOuTBDJXcnDhbWGU00/ZORdrtt3RN4wKXEQFnj4j15kk5GD2YOu7lFEhz1XiYyJQ4zOqKZx0IKES
-	knoGKcAw6ckXz1uaZroY5t8FhJ+TidFOIgkg/fTIoxuVQQZc3ouaw66ylKPckrltn3xh4bACB3FI0
-	4/nVXrRmrhngfHEsi5l7LAzBO3xSyrnAP9vZBLVRkdmBRjttU+mkPZzssGBAyab+p1heQWjjNWpQ6
-	ieKNvh9iQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6UqbbA38FvX6ft5zL9HCXu5d+5fkyO8xin5zsV4vM+I=; b=sv5HZg/5DSljKD
+	HYikD0whKc2Jinc9KwoemKe+aCXC8TcRLS5jFHxOEEzDOwiBeJ5qRvsaBOxEIOsxG2xbdB3ZBD+fr
+	Nrk4iPts6ugMN9O2H3ijk88mZfeccYlqpfc5Y96Ny/QBKSoPWllNowKIt+1hKDwzgnC/xtECvcapb
+	YWjyPaLwLGdi+9p60hlvSfdMjpaSj3UHVYaHlGvMo5dDwSci2i4AtGrfDI7vYbPn8n10Pq51TyD3v
+	h/TcqWqcgNjQxk+ug1MemXxVurc+3rGFLqhMKqK2TibIvdhxF+soUmxD0Q70GOl+H+YtSFIBE+pdI
+	7PtwZWxu8vysA+19uLIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHRgA-000132-8f; Mon, 07 Oct 2019 11:59:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iHRhr-0002Z9-Dr; Mon, 07 Oct 2019 12:01:39 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHRg0-00012h-It
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 11:59:45 +0000
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B148D206C0;
- Mon,  7 Oct 2019 11:59:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570449584;
- bh=5jiwPkl3ecC5PC4thXvIU8gFWAfwR8hG/EemIoCj5g4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=00DN5m1u+OpR2j7HvOfVHqIseRTMp9+SH7IzGzNwUnxPEVT1j+E0xUjCc5l7eTm7x
- Gx7frdd95PSPb2j45D5gFNFQqa77rhHn7lLb+ZDGyQExfG7w0YS/+y41odBO4dEx2l
- GW59SWBe2FL9LX3l+322/QB8nvCEiuq5VgO6q9bM=
-Date: Mon, 7 Oct 2019 13:59:41 +0200
-From: Maxime Ripard <mripard@kernel.org>
-To: Icenowy Zheng <icenowy@aosc.io>
-Subject: Re: [PATCH v2 2/3] drm/sun4i: dsi: fix the overhead of the
- horizontal front porch
-Message-ID: <20191007115941.psgcn4dl5r5wz7eb@gilmour>
-References: <20191006160303.24413-1-icenowy@aosc.io>
- <20191006160303.24413-3-icenowy@aosc.io>
+ id 1iHRhk-0002Ym-AR
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 12:01:34 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x97C1ReM019171; Mon, 7 Oct 2019 14:01:27 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=date : from : to : cc :
+ subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=STMicroelectronics;
+ bh=OEpRCuiUUpuXpVGGrL2q81jRJQBKQeGZCtDBBTVYUIA=;
+ b=0Xz1510Od/ISk/HqXDwSoQLNJrii7ylF8vSUb+L1F/bnrtuOiapxTCZJonOoNzkhMrQS
+ SWXIjF8oD/O7iPRykelg7o2WoF/2iNoyVNgEKOiKFQvDCf13a5XW374mwV1jE4IJ4FTH
+ +tuR7pKpO7b6KSHfhzV/fqE4+5oH1HB/P41nrTT/vOn0OEnlFXUGe1U/bQrpx+VfzJhN
+ tAZ39rJnaGcQvbOYjNc0zQRInkLOJktL8j9gOyf3mRM8aop/DWfzBo/p/H3sxhVvJsUD
+ DVOPW/BJ4pAdAanLezCd0MZteix0MDAWIqStC+dKCPnoj0/yVmkPgGLlXWnNFFzD+Boa pw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2vej2p258j-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 07 Oct 2019 14:01:27 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 11CBF100038;
+ Mon,  7 Oct 2019 14:01:22 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 06AC32CE74D;
+ Mon,  7 Oct 2019 14:01:22 +0200 (CEST)
+Received: from gnbcxd0016.gnb.st.com (10.75.127.49) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 7 Oct
+ 2019 14:01:21 +0200
+Date: Mon, 7 Oct 2019 14:01:20 +0200
+From: Alain Volmat <alain.volmat@st.com>
+To: Pierre Yves MORDRET <pierre-yves.mordret@st.com>
+Subject: Re: [PATCH] i2c: i2c-stm32f7: remove warning when compiling with W=1
+Message-ID: <20191007120120.GB12773@gnbcxd0016.gnb.st.com>
+Mail-Followup-To: Pierre Yves MORDRET <pierre-yves.mordret@st.com>,
+ wsa@the-dreams.de, alexandre.torgue@st.com,
+ linux-i2c@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ fabrice.gasnier@st.com
+References: <1570200954-17919-1-git-send-email-alain.volmat@st.com>
+ <a5093a73-ba62-ae37-10dc-3434c9da40f7@st.com>
 MIME-Version: 1.0
-In-Reply-To: <20191006160303.24413-3-icenowy@aosc.io>
-User-Agent: NeoMutt/20180716
+Content-Disposition: inline
+In-Reply-To: <a5093a73-ba62-ae37-10dc-3434c9da40f7@st.com>
+X-Disclaimer: ce message est personnel / this message is private
+X-Originating-IP: [10.75.127.49]
+X-ClientProxiedBy: SFHDAG4NODE1.st.com (10.75.127.10) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
+ definitions=2019-10-07_02:2019-10-07,2019-10-07 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_045944_639497_CDCDE0CA 
-X-CRM114-Status: GOOD (  11.22  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191007_050132_726802_6952DA59 
+X-CRM114-Status: GOOD (  17.86  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -65,7 +90,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,62 +101,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Chen-Yu Tsai <wens@csie.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4443430611719547731=="
+Cc: alexandre.torgue@st.com, wsa@the-dreams.de, linux-kernel@vger.kernel.org,
+ linux-i2c@vger.kernel.org, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Pierre-Yves,
 
---===============4443430611719547731==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="5vfde45ofwoem3io"
-Content-Disposition: inline
+thanks for the comments.
 
+On Mon, Oct 07, 2019 at 09:59:22AM +0200, Pierre Yves MORDRET wrote:
+> Hi Alain
+> 
+> Fixes tag is missing in your patch.
+> [ i.e ==> Fixes: aeb068c57214 ("i2c: i2c-stm32f7: add driver") ]
 
---5vfde45ofwoem3io
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Okay, will push a v2 for that.
 
-On Mon, Oct 07, 2019 at 12:03:01AM +0800, Icenowy Zheng wrote:
-> The formula in the BSP kernel indicates that a 16-byte overhead is used
-> when sending the HFP. However, this value is currently set to 6 in the
-> sun6i_mipi_dsi driver, which makes some panels flashing.
->
-> Fix this overhead value.
->
-> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+> 
+> Nonetheless patch only consists in removing a comment character ?
 
-Applied, thanks
+Yes, the comment currently starts in a way of a kernel-doc description
+(https://www.kernel.org/doc/html/latest/doc-guide/kernel-doc.html#function-documentation) leading the compiler to produce the warning since there is no
+function prototype after the comment.
 
-Maxime
+Regards,
+Alain
 
---5vfde45ofwoem3io
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXZsorQAKCRDj7w1vZxhR
-xcP8AP47n6BFMYH1VcgTqWrgGo5/vrIabj3UlEvNbcGcQXgpgQD9GkwZ/EbXI2Dp
-TngzLKib/Ovm7hiqxQLsL6DKkKWGGw0=
-=25Nh
------END PGP SIGNATURE-----
-
---5vfde45ofwoem3io--
-
-
---===============4443430611719547731==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> 
+> Thanks
+> 
+> On 10/4/19 4:55 PM, Alain Volmat wrote:
+> > Remove the following warning:
+> > 
+> > drivers/i2c/busses/i2c-stm32f7.c:315:
+> > warning: cannot understand function prototype:
+> > 'struct stm32f7_i2c_spec i2c_specs[] =
+> > 
+> > Signed-off-by: Alain Volmat <alain.volmat@st.com>
+> > ---
+> >  drivers/i2c/busses/i2c-stm32f7.c | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > 
+> > diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
+> > index d36cf08..7aa4a47 100644
+> > --- a/drivers/i2c/busses/i2c-stm32f7.c
+> > +++ b/drivers/i2c/busses/i2c-stm32f7.c
+> > @@ -305,7 +305,7 @@ struct stm32f7_i2c_dev {
+> >  	struct regmap *regmap;
+> >  };
+> >  
+> > -/**
+> > +/*
+> >   * All these values are coming from I2C Specification, Version 6.0, 4th of
+> >   * April 2014.
+> >   *
+> > 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4443430611719547731==--
-
