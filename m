@@ -2,108 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B797CCDD36
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 10:25:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0548DCDD6B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 10:33:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tP2wHPto6CW2yFb1uxoiB9A7q14vEydA+TmncGbhoOE=; b=s5qKq1Vq+ieiaz
-	zQFhmfmwYdhRliPmjoK+RpeEJu9+2QeFNeeFSxy9Qo5qZyjqontloteekvjcpy/2gylGsaypFAeyj
-	gHGdVfEODuG9cbci+H6jQFQrUkc204IE+fL/97dmmBi1twa1jAw0ZBcxBJgK98/h6KtoOYz9MwBqI
-	OZ/rLCiUSHSdg4oWfw4effZD6lwSmG5c14LW/UuqDzYBcHBe5bhqF7UA1mER4+XC0MeHBXy7+2jTV
-	IwF1oP3M/Cz9G06bacE4MShJngs1V42LFg5BbCLa1rnRaKt+vbjJgJ2JjYsfTrth9GAZJFezbP/Ro
-	cciL78LLt1i1nfbw3EpA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kp5S5FgxTGVDkSGYbtQ31IJ6mgnHlC7mi8hAUeqiiMw=; b=aPlthFw1FDszz/
+	+VgFATXMEJ/HSZeTNn+YZRPz+Bv2weVOg47gTJJubJFTh4M4bVb6bK5SAjdWP1ZYJ1x970geLIoBs
+	ywF8ZfT9rqCxCEgonYFXSazdE5uN7UmpWj3GZ0za2ZLghaSpCGZqbiYo+KLJEsiUxA4zE/+eXRwCI
+	cUoizYLNs4zI+JlDY/ARv9+RHO7QOFVNGhIYAgDKbXeGE9YTEHgKfvFrAbvplLZFK90N3ujqdPVms
+	37M0EWuUJr90E+Kk9Sxvl/QrOPQLl8gccEVLkun6Trwe+IS8WRfc03qNijX/HeHkC+1QSxlcRveE3
+	f8PulWHHWedAB2a9P5Ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHOKB-0007MV-Kd; Mon, 07 Oct 2019 08:24:59 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1iHOSM-0002eO-8P; Mon, 07 Oct 2019 08:33:26 +0000
+Received: from lb1-smtp-cloud7.xs4all.net ([194.109.24.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHOK0-0007J8-AX
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 08:24:50 +0000
-Received: by mail-qk1-x741.google.com with SMTP id u22so11748807qkk.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 07 Oct 2019 01:24:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=8DB4/MTLlkvkxLbC1PzaZFDFcZ5ssBbsLI3qX2hSeG0=;
- b=Hen5dp5h8SBYdEMLISgXPihUYgokVwBNI2nfrS5UE/PuahpZnIo/GaBs/H+rl8a9/B
- IKI0KLFJ90oyZ34higgAwRx/vM5C5obJ0pspvzj72ITS80JeOd9NUOdXbnPadlknjC/o
- gkkgrLdHBrcQiMEcgg4gPF0yGC/oWP0RPC4qRqYjVgHyg3yDcIedZ2sXEixKnDKv1Nfm
- UjjPqKDKi7RDBSX0c4XkBAVfT8kgis2bJgiozRB6dHiMMdDH1uEzA3MIEY6UTj0eCMaD
- UkAlNt3ljrpL6ABVGiNGQ1mTMtH3R1o1c2s83BV2xjOzJWG3DVgQoMGINDNgXuf5QziF
- A2qQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=8DB4/MTLlkvkxLbC1PzaZFDFcZ5ssBbsLI3qX2hSeG0=;
- b=sCpov3szeH7iXralVGJrB4mC14mi/Jw9o2tZyQ9wOK3jSSl2nK7HFx8dk2sFWYbOiD
- xqg5mCmyFO1GBdrOgKt18cb7oWA90swieZHMPQ1J3+DkSrT8fZliKAKHgv8/pdZOBkEh
- xrkVy8PhLUl4dOTNot3mtoJdO3yx6YYtiBzFNHfOqkqpL1XrkkdeEioMyZoex5Wt1IoH
- CCY/SxsO0hP4++3tvPxhK9WxHI3qKXoUG8l2bl/Ru9vdf1ciABm9+pT8KIYzu2l+82n9
- dbY4i2HcU0Ek6lvWdWDi6JBDpW19Ip6yXLPe/g4NOaR4CTVEju8fsiDplGkd2jSSnVw+
- /ZRg==
-X-Gm-Message-State: APjAAAVck3NVJD6FoXOaXXq2Kq0NKmmMcGMhviYYk9NYG4PRt0BW92P2
- xUTD4dpZqt5u48WlS02zM7Hj0FTC1NxlkBJHiZq4SA==
-X-Google-Smtp-Source: APXvYqzz4ii+OrEu6KGUNvfPlgJSsI2BKGbSar3y5vV9Au822a779j1FpAnKLBl63vqrl5AdGcmXG1+UuI05sPQA7zI=
-X-Received: by 2002:a37:9202:: with SMTP id u2mr22501265qkd.8.1570436685395;
- Mon, 07 Oct 2019 01:24:45 -0700 (PDT)
+ id 1iHOSD-0002cp-4U
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 08:33:19 +0000
+Received: from [IPv6:2001:983:e9a7:1:3d61:cdd2:8085:cc8]
+ ([IPv6:2001:983:e9a7:1:3d61:cdd2:8085:cc8])
+ by smtp-cloud7.xs4all.net with ESMTPA
+ id HORviKciZjZ8vHORwi5MFm; Mon, 07 Oct 2019 10:33:07 +0200
+Subject: Re: [PATCH v2 3/6] media: v4l2-mem2mem: add
+ stateless_(try_)decoder_cmd ioctl helpers
+To: =?UTF-8?Q?Jernej_=c5=a0krabec?= <jernej.skrabec@siol.net>
+References: <20190929200023.215831-1-jernej.skrabec@siol.net>
+ <20190929200023.215831-4-jernej.skrabec@siol.net>
+ <6c7eeaf1-18bb-1c7e-7938-a3eb5af100b6@xs4all.nl>
+ <2840939.OS9t7MgvnY@jernej-laptop>
+From: Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Message-ID: <cce04c8e-8211-0fdc-bd62-650aceeb3af1@xs4all.nl>
+Date: Mon, 7 Oct 2019 10:32:59 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20190927034338.15813-1-walter-zh.wu@mediatek.com>
- <CACT4Y+Zxz+R=qQxSMoipXoLjRqyApD3O0eYpK0nyrfGHE4NNPw@mail.gmail.com>
- <1569594142.9045.24.camel@mtksdccf07>
- <CACT4Y+YuAxhKtL7ho7jpVAPkjG-JcGyczMXmw8qae2iaZjTh_w@mail.gmail.com>
- <1569818173.17361.19.camel@mtksdccf07> <1570018513.19702.36.camel@mtksdccf07>
- <CACT4Y+bbZhvz9ZpHtgL8rCCsV=ybU5jA6zFnJBL7gY2cNXDLyQ@mail.gmail.com>
- <1570069078.19702.57.camel@mtksdccf07>
- <CACT4Y+ZwNv2-QBrvuR2JvemovmKPQ9Ggrr=ZkdTg6xy_Ki6UAg@mail.gmail.com>
- <1570095525.19702.59.camel@mtksdccf07> <1570110681.19702.64.camel@mtksdccf07>
- <CACT4Y+aKrC8mtcDTVhM-So-TTLjOyFCD7r6jryWFH6i2he1WJA@mail.gmail.com>
- <1570164140.19702.97.camel@mtksdccf07> <1570176131.19702.105.camel@mtksdccf07>
- <CACT4Y+ZvhomaeXFKr4za6MJi=fW2SpPaCFP=fk06CMRhNcmFvQ@mail.gmail.com>
- <1570182257.19702.109.camel@mtksdccf07>
- <CACT4Y+ZnWPEO-9DkE6C3MX-Wo+8pdS6Gr6-2a8LzqBS=2fe84w@mail.gmail.com>
- <1570190718.19702.125.camel@mtksdccf07>
- <CACT4Y+YbkjuW3_WQJ4BB8YHWvxgHJyZYxFbDJpnPzfTMxYs60g@mail.gmail.com>
- <1570418576.4686.30.camel@mtksdccf07>
- <CACT4Y+aho7BEvQstd2+a2be-jJ0dEsjGebH7bcUFhYp-PoRDxQ@mail.gmail.com>
- <1570436289.4686.40.camel@mtksdccf07>
-In-Reply-To: <1570436289.4686.40.camel@mtksdccf07>
-From: Dmitry Vyukov <dvyukov@google.com>
-Date: Mon, 7 Oct 2019 10:24:33 +0200
-Message-ID: <CACT4Y+Z6QObZ2fvVxSmvv16YQAu4GswOqfOVQK_1_Ncz0eir_g@mail.gmail.com>
-Subject: Re: [PATCH] kasan: fix the missing underflow in memmove and memcpy
- with CONFIG_KASAN_GENERIC=y
-To: Walter Wu <walter-zh.wu@mediatek.com>
+In-Reply-To: <2840939.OS9t7MgvnY@jernej-laptop>
+Content-Language: en-US
+X-CMAE-Envelope: MS4wfGHd6OSD1FLSR8tNZsbhbHQNPfX75M0V7RaZdh19iAF3oqzeutMCalTO38S5dEhgGLX4RNVSgPgzT3/UuWcy7gPiwkkXJDytiGnBYCQOsv9aYCkRfAj2
+ MnYF7yhdMrsRfwMYHBnn7TT/zRAtesy3YXAS248gZ38hAQybYnicKDyYEslBpaTrafJDsw7kwYi3dDSqZgVsPR3r5NKOG+bhH4pAPq2wfjxLDhcnSQUefHpl
+ jHy7W1K6AhV1be+LnTLlP+yPDB6sMQxo3zpMvyqoNWFrO7FT4Dkzfgq4lpRWeLxSHccktEbx1Jdh70nkHglrJGvjHUaZTWjLmH3z/I6bsGQMidN4NLUX6pcm
+ wf8Q3QejyUWYH1TsrAQ5dqw8D5ZMY2ryWhjTjrQgBynEaA7D2b7Ke9xqIZ3P8nJDLUhnV0h4XudXF3q8VCUu+wEKR4AhhpkmGvB/IlgSpGE8g5KD/qeBW/Gg
+ tcJi6TZnMAthHh0RLe0YljVcVsszECBZhT3kJE+vFyYIButqKejfe/bTuibWqAtsUbAK8lfgxSV+/kmGGicRsX3F1TIjseu1TDf94nGT0sljSmVZRmm8oL7a
+ gcnIlLSGO81YeTMEY93XIXNZhEEvMoafg2K8ogCL1I20mcPT8Qqf+hA3niWEV+vYC1vkI4cz9G3aaEDERofNo2CWMNgmPboc6s8im/JwDnd5J/rOPJxnRdvS
+ RWXEKvLCLpc3Wl2wATEXIhb1K2JJBB0NIpmzQd828jZhc4AS61C4NW0/zr265E02pNE2p2TyK3UK344I3/RrFiV8HRwGjqFyXb/3IjK2c6/YUYTUb48XbSUR
+ kijzBakVGAIeQv672mc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_012448_361414_903E35A0 
-X-CRM114-Status: GOOD (  33.18  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191007_013317_337323_578D0B00 
+X-CRM114-Status: GOOD (  16.81  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [194.109.24.24 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,280 +73,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream <wsd_upstream@mediatek.com>,
- linux-mediatek@lists.infradead.org, LKML <linux-kernel@vger.kernel.org>,
- kasan-dev <kasan-dev@googlegroups.com>, Linux-MM <linux-mm@kvack.org>,
- Alexander Potapenko <glider@google.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devel@driverdev.osuosl.org, linux-media@vger.kernel.org, pawel@osciak.com,
+ jonas@kwiboo.se, gregkh@linuxfoundation.org, wens@csie.org, mripard@kernel.org,
+ tfiga@chromium.org, paul.kocialkowski@bootlin.com, kyungmin.park@samsung.com,
+ boris.brezillon@collabora.com, linux-arm-kernel@lists.infradead.org,
+ mchehab@kernel.org, ezequiel@collabora.com, linux-kernel@vger.kernel.org,
+ m.szyprowski@samsung.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 7, 2019 at 10:18 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
-> The patchsets help to produce KASAN report when size is negative numbers
-> in memory operation function. It is helpful for programmer to solve the
-> undefined behavior issue. Patch 1 based on Dmitry's review and
-> suggestion, patch 2 is a test in order to verify the patch 1.
->
-> [1]https://bugzilla.kernel.org/show_bug.cgi?id=199341
-> [2]https://lore.kernel.org/linux-arm-kernel/20190927034338.15813-1-walter-zh.wu@mediatek.com/
->
-> Walter Wu (2):
-> kasan: detect invalid size in memory operation function
-> kasan: add test for invalid size in memmove
->
->  lib/test_kasan.c          | 18 ++++++++++++++++++
->  mm/kasan/common.c         | 13 ++++++++-----
->  mm/kasan/generic.c        |  5 +++++
->  mm/kasan/generic_report.c | 12 ++++++++++++
->  mm/kasan/tags.c           |  5 +++++
->  mm/kasan/tags_report.c    | 12 ++++++++++++
->  6 files changed, 60 insertions(+), 5 deletions(-)
->
->
->
->
-> commit 5b3b68660b3d420fd2bd792f2d9fd3ccb8877ef7
-> Author: Walter-zh Wu <walter-zh.wu@mediatek.com>
-> Date:   Fri Oct 4 18:38:31 2019 +0800
->
->     kasan: detect invalid size in memory operation function
->
->     It is an undefined behavior to pass a negative numbers to
-> memset()/memcpy()/memmove()
->     , so need to be detected by KASAN.
->
->     If size is negative numbers, then it has two reasons to be defined
-> as out-of-bounds bug type.
->     1) Casting negative numbers to size_t would indeed turn up as a
-> large
->     size_t and its value will be larger than ULONG_MAX/2, so that this
-> can
->     qualify as out-of-bounds.
->     2) Don't generate new bug type in order to prevent duplicate reports
-> by
->     some systems, e.g. syzbot.
->
->     KASAN report:
->
->      BUG: KASAN: out-of-bounds in kmalloc_memmove_invalid_size+0x70/0xa0
->      Read of size 18446744073709551608 at addr ffffff8069660904 by task
-> cat/72
->
->      CPU: 2 PID: 72 Comm: cat Not tainted
-> 5.4.0-rc1-next-20191004ajb-00001-gdb8af2f372b2-dirty #1
->      Hardware name: linux,dummy-virt (DT)
->      Call trace:
->       dump_backtrace+0x0/0x288
->       show_stack+0x14/0x20
->       dump_stack+0x10c/0x164
->       print_address_description.isra.9+0x68/0x378
->       __kasan_report+0x164/0x1a0
->       kasan_report+0xc/0x18
->       check_memory_region+0x174/0x1d0
->       memmove+0x34/0x88
->       kmalloc_memmove_invalid_size+0x70/0xa0
->
->     [1] https://bugzilla.kernel.org/show_bug.cgi?id=199341
->
->     Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
->     Reported -by: Dmitry Vyukov <dvyukov@google.com>
->     Suggested-by: Dmitry Vyukov <dvyukov@google.com>
->
-> diff --git a/mm/kasan/common.c b/mm/kasan/common.c
-> index 6814d6d6a023..6ef0abd27f06 100644
-> --- a/mm/kasan/common.c
-> +++ b/mm/kasan/common.c
-> @@ -102,7 +102,8 @@ EXPORT_SYMBOL(__kasan_check_write);
->  #undef memset
->  void *memset(void *addr, int c, size_t len)
->  {
-> -       check_memory_region((unsigned long)addr, len, true, _RET_IP_);
-> +       if (!check_memory_region((unsigned long)addr, len, true, _RET_IP_))
-> +               return NULL;
->
->         return __memset(addr, c, len);
->  }
-> @@ -110,8 +111,9 @@ void *memset(void *addr, int c, size_t len)
->  #undef memmove
->  void *memmove(void *dest, const void *src, size_t len)
->  {
-> -       check_memory_region((unsigned long)src, len, false, _RET_IP_);
-> -       check_memory_region((unsigned long)dest, len, true, _RET_IP_);
-> +       if (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
-> +       !check_memory_region((unsigned long)dest, len, true, _RET_IP_))
-> +               return NULL;
->
->         return __memmove(dest, src, len);
->  }
-> @@ -119,8 +121,9 @@ void *memmove(void *dest, const void *src, size_t
-> len)
->  #undef memcpy
->  void *memcpy(void *dest, const void *src, size_t len)
->  {
-> -       check_memory_region((unsigned long)src, len, false, _RET_IP_);
-> -       check_memory_region((unsigned long)dest, len, true, _RET_IP_);
-> +       if (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
-> +       !check_memory_region((unsigned long)dest, len, true, _RET_IP_))
-> +               return NULL;
->
->         return __memcpy(dest, src, len);
->  }
-> diff --git a/mm/kasan/generic.c b/mm/kasan/generic.c
-> index 616f9dd82d12..02148a317d27 100644
-> --- a/mm/kasan/generic.c
-> +++ b/mm/kasan/generic.c
-> @@ -173,6 +173,11 @@ static __always_inline bool
-> check_memory_region_inline(unsigned long addr,
->         if (unlikely(size == 0))
->                 return true;
->
-> +       if (unlikely((long)size < 0)) {
-> +               kasan_report(addr, size, write, ret_ip);
-> +               return false;
-> +       }
-> +
->         if (unlikely((void *)addr <
->                 kasan_shadow_to_mem((void *)KASAN_SHADOW_START))) {
->                 kasan_report(addr, size, write, ret_ip);
-> diff --git a/mm/kasan/generic_report.c b/mm/kasan/generic_report.c
-> index 36c645939bc9..ed0eb94cb811 100644
-> --- a/mm/kasan/generic_report.c
-> +++ b/mm/kasan/generic_report.c
-> @@ -107,6 +107,18 @@ static const char *get_wild_bug_type(struct
-> kasan_access_info *info)
->
->  const char *get_bug_type(struct kasan_access_info *info)
->  {
-> +       /*
-> +        * If access_size is negative numbers, then it has two reasons
-> +        * to be defined as out-of-bounds bug type.
-> +        * 1) Casting negative numbers to size_t would indeed turn up as
-> +        * a 'large' size_t and its value will be larger than ULONG_MAX/2,
-> +        * so that this can qualify as out-of-bounds.
-> +        * 2) Don't generate new bug type in order to prevent duplicate
-> reports
-> +        * by some systems, e.g. syzbot.
-> +        */
-> +       if ((long)info->access_size < 0)
-> +               return "out-of-bounds";
-
-"out-of-bounds" is the _least_ frequent KASAN bug type. It won't
-prevent duplicates. "heap-out-of-bounds" is the frequent one.
-
->         if (addr_has_shadow(info->access_addr))
->                 return get_shadow_bug_type(info);
->         return get_wild_bug_type(info);
-> diff --git a/mm/kasan/tags.c b/mm/kasan/tags.c
-> index 0e987c9ca052..b829535a3ad7 100644
-> --- a/mm/kasan/tags.c
-> +++ b/mm/kasan/tags.c
-> @@ -86,6 +86,11 @@ bool check_memory_region(unsigned long addr, size_t
-> size, bool write,
->         if (unlikely(size == 0))
->                 return true;
->
-> +       if (unlikely((long)size < 0)) {
-> +               kasan_report(addr, size, write, ret_ip);
-> +               return false;
-> +       }
-> +
->         tag = get_tag((const void *)addr);
->
->         /*
-> diff --git a/mm/kasan/tags_report.c b/mm/kasan/tags_report.c
-> index 969ae08f59d7..012fbe3a793f 100644
-> --- a/mm/kasan/tags_report.c
-> +++ b/mm/kasan/tags_report.c
-> @@ -36,6 +36,18 @@
->
->  const char *get_bug_type(struct kasan_access_info *info)
->  {
-> +       /*
-> +        * If access_size is negative numbers, then it has two reasons
-> +        * to be defined as out-of-bounds bug type.
-> +        * 1) Casting negative numbers to size_t would indeed turn up as
-> +        * a 'large' size_t and its value will be larger than ULONG_MAX/2,
-> +        * so that this can qualify as out-of-bounds.
-> +        * 2) Don't generate new bug type in order to prevent duplicate
-> reports
-> +        * by some systems, e.g. syzbot.
-> +        */
-> +       if ((long)info->access_size < 0)
-> +               return "out-of-bounds";
-> +
->  #ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
->         struct kasan_alloc_meta *alloc_meta;
->         struct kmem_cache *cache;
->
->
->
->
->
->
->
->
-> commit fb5cf7bd16e939d1feef229af0211a8616c9ea03
-> Author: Walter-zh Wu <walter-zh.wu@mediatek.com>
-> Date:   Fri Oct 4 18:32:03 2019 +0800
->
->     kasan: add test for invalid size in memmove
->
->     Test size is negative vaule in memmove in order to verify
->     if it correctly get KASAN report.
->
->     Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
->
-> diff --git a/lib/test_kasan.c b/lib/test_kasan.c
-> index 49cc4d570a40..06942cf585cc 100644
-> --- a/lib/test_kasan.c
-> +++ b/lib/test_kasan.c
-> @@ -283,6 +283,23 @@ static noinline void __init
-> kmalloc_oob_in_memset(void)
->         kfree(ptr);
->  }
->
-> +static noinline void __init kmalloc_memmove_invalid_size(void)
-> +{
-> +       char *ptr;
-> +       size_t size = 64;
-> +
-> +       pr_info("invalid size in memmove\n");
-> +       ptr = kmalloc(size, GFP_KERNEL);
-> +       if (!ptr) {
-> +               pr_err("Allocation failed\n");
-> +               return;
-> +       }
-> +
-> +       memset((char *)ptr, 0, 64);
-> +       memmove((char *)ptr, (char *)ptr + 4, -2);
-> +       kfree(ptr);
-> +}
-> +
->  static noinline void __init kmalloc_uaf(void)
->  {
->         char *ptr;
-> @@ -773,6 +790,7 @@ static int __init kmalloc_tests_init(void)
->         kmalloc_oob_memset_4();
->         kmalloc_oob_memset_8();
->         kmalloc_oob_memset_16();
-> +       kmalloc_memmove_invalid_size();
->         kmalloc_uaf();
->         kmalloc_uaf_memset();
->         kmalloc_uaf2();
->
->
->
->
-> --
-> You received this message because you are subscribed to the Google Groups "kasan-dev" group.
-> To unsubscribe from this group and stop receiving emails from it, send an email to kasan-dev+unsubscribe@googlegroups.com.
-> To view this discussion on the web visit https://groups.google.com/d/msgid/kasan-dev/1570436289.4686.40.camel%40mtksdccf07.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMTAvNy8xOSA4OjAyIEFNLCBKZXJuZWogxaBrcmFiZWMgd3JvdGU6Cj4gRG5lIHBldGVrLCAw
+NC4gb2t0b2JlciAyMDE5IG9iIDExOjIxOjEyIENFU1QgamUgSGFucyBWZXJrdWlsIG5hcGlzYWwo
+YSk6Cj4+IE9uIDkvMjkvMTkgMTA6MDAgUE0sIEplcm5laiBTa3JhYmVjIHdyb3RlOgo+Pj4gVGhl
+c2UgaGVscGVycyBhcmUgdXNlZCBieSBzdGF0ZWxlc3MgY29kZWNzIHdoZW4gdGhleSBzdXBwb3J0
+IG11bHRpcGxlCj4+PiBzbGljZXMgcGVyIGZyYW1lIGFuZCBob2xkIGNhcHR1cmUgYnVmZmVyIGZs
+YWcgaXMgc2V0LiBJdCdzIGV4cGVjdGVkIHRoYXQKPj4+IGFsbCBzdWNoIGNvZGVjcyB3aWxsIHVz
+ZSB0aGlzIGNvZGUuCj4+Pgo+Pj4gU2lnbmVkLW9mZi1ieTogSmVybmVqIFNrcmFiZWMgPGplcm5l
+ai5za3JhYmVjQHNpb2wubmV0Pgo+Pj4gLS0tCj4+Pgo+Pj4gIGRyaXZlcnMvbWVkaWEvdjRsMi1j
+b3JlL3Y0bDItbWVtMm1lbS5jIHwgMzUgKysrKysrKysrKysrKysrKysrKysrKysrKysKPj4+ICBp
+bmNsdWRlL21lZGlhL3Y0bDItbWVtMm1lbS5oICAgICAgICAgICB8ICA0ICsrKwo+Pj4gIDIgZmls
+ZXMgY2hhbmdlZCwgMzkgaW5zZXJ0aW9ucygrKQo+Pj4KPj4+IGRpZmYgLS1naXQgYS9kcml2ZXJz
+L21lZGlhL3Y0bDItY29yZS92NGwyLW1lbTJtZW0uYwo+Pj4gYi9kcml2ZXJzL21lZGlhL3Y0bDIt
+Y29yZS92NGwyLW1lbTJtZW0uYyBpbmRleCAxOTkzN2RkM2M2ZjYuLjI2NzdhMDdlNGM5Ygo+Pj4g
+MTAwNjQ0Cj4+PiAtLS0gYS9kcml2ZXJzL21lZGlhL3Y0bDItY29yZS92NGwyLW1lbTJtZW0uYwo+
+Pj4gKysrIGIvZHJpdmVycy9tZWRpYS92NGwyLWNvcmUvdjRsMi1tZW0ybWVtLmMKPj4+IEBAIC0x
+MTU0LDYgKzExNTQsNDEgQEAgaW50IHY0bDJfbTJtX2lvY3RsX3RyeV9kZWNvZGVyX2NtZChzdHJ1
+Y3QgZmlsZQo+Pj4gKmZpbGUsIHZvaWQgKmZoLD4gCj4+PiAgfQo+Pj4gIEVYUE9SVF9TWU1CT0xf
+R1BMKHY0bDJfbTJtX2lvY3RsX3RyeV9kZWNvZGVyX2NtZCk7Cj4+Pgo+Pj4gK2ludCB2NGwyX20y
+bV9pb2N0bF9zdGF0ZWxlc3NfdHJ5X2RlY29kZXJfY21kKHN0cnVjdCBmaWxlICpmaWxlLCB2b2lk
+ICpmaCwKPj4+ICsJCQkJCSAgICAgc3RydWN0IAo+IHY0bDJfZGVjb2Rlcl9jbWQgKmRjKQo+Pj4g
+K3sKPj4+ICsJaWYgKGRjLT5jbWQgIT0gVjRMMl9ERUNfQ01EX0ZMVVNIKQo+Pj4gKwkJcmV0dXJu
+IC1FSU5WQUw7Cj4+PiArCj4+PiArCWRjLT5mbGFncyA9IDA7Cj4+PiArCj4+PiArCXJldHVybiAw
+Owo+Pj4gK30KPj4+ICtFWFBPUlRfU1lNQk9MX0dQTCh2NGwyX20ybV9pb2N0bF9zdGF0ZWxlc3Nf
+dHJ5X2RlY29kZXJfY21kKTsKPj4+ICsKPj4+ICtpbnQgdjRsMl9tMm1faW9jdGxfc3RhdGVsZXNz
+X2RlY29kZXJfY21kKHN0cnVjdCBmaWxlICpmaWxlLCB2b2lkICpwcml2LAo+Pj4gKwkJCQkJIHN0
+cnVjdCAKPiB2NGwyX2RlY29kZXJfY21kICpkYykKPj4+ICt7Cj4+PiArCXN0cnVjdCB2NGwyX2Zo
+ICpmaCA9IGZpbGUtPnByaXZhdGVfZGF0YTsKPj4+ICsJc3RydWN0IHZiMl92NGwyX2J1ZmZlciAq
+b3V0X3ZiLCAqY2FwX3ZiOwo+Pj4gKwlpbnQgcmV0Owo+Pj4gKwo+Pj4gKwlyZXQgPSB2NGwyX20y
+bV9pb2N0bF9zdGF0ZWxlc3NfdHJ5X2RlY29kZXJfY21kKGZpbGUsIHByaXYsIGRjKTsKPj4+ICsJ
+aWYgKHJldCA8IDApCj4+PiArCQlyZXR1cm4gcmV0Owo+Pj4gKwo+Pj4gKwlvdXRfdmIgPSB2NGwy
+X20ybV9sYXN0X3NyY19idWYoZmgtPm0ybV9jdHgpOwo+Pj4gKwljYXBfdmIgPSB2NGwyX20ybV9s
+YXN0X2RzdF9idWYoZmgtPm0ybV9jdHgpOwo+Pgo+PiBJIHRoaW5rIHRoaXMgc2hvdWxkIGJlIHY0
+bDJfbTJtX25leHRfZHN0X2J1Zi4gSWYgbXVsdGlwbGUgY2FwdHVyZSBidWZmZXJzCj4+IHdlcmUg
+cXVldWVkIHVwLCB0aGVuIGl0IGNhbiBvbmx5IGJlIHRoZSBmaXJzdCBjYXB0dXJlIGJ1ZmZlciB0
+aGF0IGNhbiBiZQo+PiAnSEVMRCcuCj4gCj4gSSdtIHByZXR0eSBzdXJlIHY0bDJfbTJtX2xhc3Rf
+ZHN0X2J1ZigpIGlzIGNvcnJlY3QuIFdlIHdhbnQgdG8gYWZmZWN0IGxhc3Qgam9iIAo+IGluIHRo
+ZSBxdWV1ZSwgYWxsIGpvYnMgYmVmb3JlIGFyZSBhbHJlYWR5IHByb3Blcmx5IGhhbmRsZWQgYnkg
+Y29tcGFyaW5nIAo+IHRpbWVzdGFtcHMuCgpZb3UncmUgYWJzb2x1dGVseSByaWdodC4KCj4gCj4+
+Cj4+IFRoaXMgbWlnaHQgc29sdmUgdGhlIHJhY2UgY29uZGl0aW9uIHlvdSBzYXcgd2l0aCBmZm1w
+ZWcuCj4gCj4gVGhpcyBhY3R1YWxseSBkb2Vzbid0IGNoYW5nZSBhbnl0aGluZy4gZmZtcGVnIGN1
+cnJlbnRseSBxdWV1ZXMgb25seSBvbmUgam9iIGFuZCAKPiB0aGVuIHdhaXRzIHVudGlsIGl0J3Mg
+ZXhlY3V0ZWQuIEluIHRoaXMgY2FzZSBpdCBhY3R1YWxseSBkb2Vzbid0IG1hdHRlciBpZiAKPiAi
+bGFzdCIgb3IgIm5leHQiIHZhcmlhbnQgaXMgdXNlZC4KCkNhbiB5b3UgZGVidWcgdGhpcyBhIGJp
+dCBmdXJ0aGVyPyBJIGRvbid0IHdhbnQgdG8gbWVyZ2UgdGhpcyB1bmxlc3Mgd2Uga25vdyB3aGF0
+J3MKZ29pbmcgd3Jvbmcgd2l0aCBmZm1wZWcuCgpJIHN1c3BlY3QgaXQgaXMgYSByYWNlIGNvbmRp
+dGlvbi4gSSdsbCByZXBseSB0byBwYXRjaCA2LzYgd2l0aCBtb3JlIGluZm8uCgpSZWdhcmRzLAoK
+CUhhbnMKCj4gCj4gQmVzdCByZWdhcmRzLAo+IEplcm5lago+IAo+Pgo+PiBSZWdhcmRzLAo+Pgo+
+PiAJSGFucwo+Pgo+Pj4gKwo+Pj4gKwlpZiAob3V0X3ZiKQo+Pj4gKwkJb3V0X3ZiLT5mbGFncyAm
+PSB+VjRMMl9CVUZfRkxBR19NMk1fSE9MRF9DQVBUVVJFX0JVRjsKPj4+ICsJZWxzZSBpZiAoY2Fw
+X3ZiICYmIGNhcF92Yi0+aXNfaGVsZCkKPj4+ICsJCXY0bDJfbTJtX2J1Zl9kb25lKGNhcF92Yiwg
+VkIyX0JVRl9TVEFURV9ET05FKTsKPj4+ICsKPj4+ICsJcmV0dXJuIDA7Cj4+PiArfQo+Pj4gK0VY
+UE9SVF9TWU1CT0xfR1BMKHY0bDJfbTJtX2lvY3RsX3N0YXRlbGVzc19kZWNvZGVyX2NtZCk7Cj4+
+PiArCj4+Pgo+Pj4gIC8qCj4+PiAgCj4+PiAgICogdjRsMl9maWxlX29wZXJhdGlvbnMgaGVscGVy
+cy4gSXQgaXMgYXNzdW1lZCBoZXJlIHNhbWUgbG9jayBpcyB1c2VkCj4+PiAgICogZm9yIHRoZSBv
+dXRwdXQgYW5kIHRoZSBjYXB0dXJlIGJ1ZmZlciBxdWV1ZS4KPj4+Cj4+PiBkaWZmIC0tZ2l0IGEv
+aW5jbHVkZS9tZWRpYS92NGwyLW1lbTJtZW0uaCBiL2luY2x1ZGUvbWVkaWEvdjRsMi1tZW0ybWVt
+LmgKPj4+IGluZGV4IGM5ZmE5NmM4ZWVkMS4uOGFlMmY1NmM3ZmEzIDEwMDY0NAo+Pj4gLS0tIGEv
+aW5jbHVkZS9tZWRpYS92NGwyLW1lbTJtZW0uaAo+Pj4gKysrIGIvaW5jbHVkZS9tZWRpYS92NGwy
+LW1lbTJtZW0uaAo+Pj4gQEAgLTcxNCw2ICs3MTQsMTAgQEAgaW50IHY0bDJfbTJtX2lvY3RsX3Ry
+eV9lbmNvZGVyX2NtZChzdHJ1Y3QgZmlsZSAqZmlsZSwKPj4+IHZvaWQgKmZoLD4gCj4+PiAgCQkJ
+CSAgIHN0cnVjdCB2NGwyX2VuY29kZXJfY21kICplYyk7Cj4+PiAgCj4+PiAgaW50IHY0bDJfbTJt
+X2lvY3RsX3RyeV9kZWNvZGVyX2NtZChzdHJ1Y3QgZmlsZSAqZmlsZSwgdm9pZCAqZmgsCj4+PiAg
+Cj4+PiAgCQkJCSAgIHN0cnVjdCB2NGwyX2RlY29kZXJfY21kICpkYyk7Cj4+Pgo+Pj4gK2ludCB2
+NGwyX20ybV9pb2N0bF9zdGF0ZWxlc3NfdHJ5X2RlY29kZXJfY21kKHN0cnVjdCBmaWxlICpmaWxl
+LCB2b2lkICpmaCwKPj4+ICsJCQkJCSAgICAgc3RydWN0IAo+IHY0bDJfZGVjb2Rlcl9jbWQgKmRj
+KTsKPj4+ICtpbnQgdjRsMl9tMm1faW9jdGxfc3RhdGVsZXNzX2RlY29kZXJfY21kKHN0cnVjdCBm
+aWxlICpmaWxlLCB2b2lkICpwcml2LAo+Pj4gKwkJCQkJIHN0cnVjdCAKPiB2NGwyX2RlY29kZXJf
+Y21kICpkYyk7Cj4+Pgo+Pj4gIGludCB2NGwyX20ybV9mb3BfbW1hcChzdHJ1Y3QgZmlsZSAqZmls
+ZSwgc3RydWN0IHZtX2FyZWFfc3RydWN0ICp2bWEpOwo+Pj4gIF9fcG9sbF90IHY0bDJfbTJtX2Zv
+cF9wb2xsKHN0cnVjdCBmaWxlICpmaWxlLCBwb2xsX3RhYmxlICp3YWl0KTsKPiAKPiAKPiAKPiAK
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
