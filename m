@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22959CDFBF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 12:57:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0A35CDFC6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 13:01:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qIh9YxzsiaoJmJHxSU0Sfc3mk5BnQ+ZedYqH1NAfyA4=; b=gzWSgwEWLSzv2vhKMz03ZZKuO
-	8vx1/QeN/K9TqwB52Avm7R4LmbVON1ouyjbEIaHyT4r8q5NCC1F3bge/wdbKdGjzy1SPR+pDagA7K
-	kmq5wt9j/1XZKQPC7/Q4yO15VE49MzvTre15ognWhTIt8AgW1IXAe2g8uF53qfZi9Ykn0BKekIM2I
-	FN+odIoY6hdorql4wYEGtvcj6j9dSTMT2uI0y+wQ7AAUm4XRlgpTwm1DhpR93cmZREq54JxqSKWy/
-	nlSmdYO+T9rMhVz83vdpxQDpACBeNtT5NW1SKOMV2ey1dZzpF/VSrCDcoV8AzjeLfdW6UcW5JETpm
-	ZRaxt1ZJA==;
+	 bh=oLWL2mtVcvqfoo+F6mRo9N7edw+Q4RMLb3rguDAEDLc=; b=Vx9+4cNw+MpylW66F5VqBPlkY
+	bYc45SDHCp+1/y6qxxo4eWJopGqVn9b6wKNTP3AuQp4vC1nQxtjC1zNzTcE897YglSahb4i7UrVjr
+	sDsd1RGB5Pv/Dnj4unDkwvk7GWS08eCd4Kl7FRUo2JBAvvgQWw+3FR5jbaY5F64S5ZAoAcrCMvt1r
+	jKfHREG4zEu4/EA2PfLEX4Q60FFFZR8GwXexzh/lNeV7LkHl5Gf9jqy1XGg3aXfDvcJbq8V23Ci9C
+	oomsB7AxKObkk4KaPGS3XFhD+biL8R7AYk6I+7fpNPBkB3+w7oKyKf9ut1fscua22y2mjgmhESWgd
+	wITfNbdEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHQhZ-0002Ct-TP; Mon, 07 Oct 2019 10:57:17 +0000
+	id 1iHQl0-0003v9-Bq; Mon, 07 Oct 2019 11:00:50 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHQhT-0002CS-8d
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 10:57:12 +0000
+ id 1iHQku-0003uj-8A
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 11:00:45 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6FDA920867;
- Mon,  7 Oct 2019 10:57:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3E1D920867;
+ Mon,  7 Oct 2019 11:00:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570445831;
- bh=AALnra5vbHx8f6yVsAevgDkTKmsX71cNwxA0cJMD1fQ=;
+ s=default; t=1570446043;
+ bh=2hAjkYW/sfqFwCOnRXqcJFaaj969edeRaZ+eZJxXYHI=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=siVCpq8WhOMrMwv7Gq+RexhGWPE/5wuuGZWmusjEN1rInKUhFBqtR2ooxS0Y0Nlb6
- OsD+i0bGLfartsntJWJCcZ38q986Pk+QWMc06kAoZIZt3vSU27Q+gw45clMkjUYML7
- bWZC55o4/yOiqE8DRn51u/ZfkN2rM+zA/Idc2DfE=
-Date: Mon, 7 Oct 2019 12:57:08 +0200
+ b=CqacMOAjiY9jXabDsPJfVFjUbmireDFbYDBflbIRNIeoFdqfxFDFMVmxqSxYVuqJM
+ MhlOiwI3o9iS1qxGhlo03ndHoIsQKVSvoayywiTF3JDXgyNm5d8cALyRFsiODGQwXv
+ c57dKe6UpQn8FQ0u1XvCUKzjj4EW+K0ogPe6qYR4=
+Date: Mon, 7 Oct 2019 13:00:40 +0200
 From: Maxime Ripard <mripard@kernel.org>
-To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [PATCH v10 5/6] arm64: dts: allwinner: a64: Add MIPI DSI pipeline
-Message-ID: <20191007105708.raxavxk4n7bvxh7x@gilmour>
-References: <20191005141913.22020-1-jagan@amarulasolutions.com>
- <20191005141913.22020-6-jagan@amarulasolutions.com>
+To: Alexandre Torgue <alexandre.torgue@st.com>
+Subject: Re: [PATCH 1/3] dt-bindings: media: Fix id path for sun4i-a10-csi
+Message-ID: <20191007110040.2mt5uxroos3hz6ic@gilmour>
+References: <20191007102552.19808-1-alexandre.torgue@st.com>
+ <20191007102552.19808-2-alexandre.torgue@st.com>
 MIME-Version: 1.0
-In-Reply-To: <20191005141913.22020-6-jagan@amarulasolutions.com>
+In-Reply-To: <20191007102552.19808-2-alexandre.torgue@st.com>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_035711_325957_7005D7E0 
-X-CRM114-Status: GOOD (  17.58  )
+X-CRM114-CacheID: sfid-20191007_040044_309255_2CD053B4 
+X-CRM114-Status: GOOD (  10.42  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,92 +77,54 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>, linux-sunxi <linux-sunxi@googlegroups.com>,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Daniel Vetter <daniel@ffwll.ch>, michael@amarulasolutions.com,
- linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
-Content-Type: multipart/mixed; boundary="===============7007235537250047114=="
+ Alexandru Ardelean <alexaundru.ardelean@analog.com>, netdev@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============3880490267575008863=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============7007235537250047114==
+--===============3880490267575008863==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="msd5tjzsj4hwrcaz"
+	protocol="application/pgp-signature"; boundary="wtovumvb4os5l27j"
 Content-Disposition: inline
 
 
---msd5tjzsj4hwrcaz
+--wtovumvb4os5l27j
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Sat, Oct 05, 2019 at 07:49:12PM +0530, Jagan Teki wrote:
-> Add MIPI DSI pipeline for Allwinner A64.
->
-> - dsi node, with A64 compatible since it doesn't support
->   DSI_SCLK gating unlike A33
-> - dphy node, with A64 compatible with A33 fallback since
->   DPHY on A64 and A33 is similar
-> - finally, attach the dsi_in to tcon0 for complete MIPI DSI
->
-> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> Tested-by: Merlijn Wajer <merlijn@wizzup.org>
-> ---
->  arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 38 +++++++++++++++++++
->  1 file changed, 38 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-> index 69128a6dfc46..ad4170b8aee0 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-> +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-> @@ -382,6 +382,12 @@
->  					#address-cells = <1>;
->  					#size-cells = <0>;
->  					reg = <1>;
-> +
-> +					tcon0_out_dsi: endpoint@1 {
-> +						reg = <1>;
-> +						remote-endpoint = <&dsi_in_tcon0>;
-> +						allwinner,tcon-channel = <1>;
-> +					};
->  				};
->  			};
->  		};
-> @@ -1003,6 +1009,38 @@
->  			status = "disabled";
->  		};
->
-> +		dsi: dsi@1ca0000 {
-> +			compatible = "allwinner,sun50i-a64-mipi-dsi";
-> +			reg = <0x01ca0000 0x1000>;
-> +			interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
-> +			clocks = <&ccu CLK_BUS_MIPI_DSI>;
-> +			clock-names = "bus";
+Hi Alexandre,
 
-This won't validate with the bindings you have either here, since it
-still expects bus and mod.
+On Mon, Oct 07, 2019 at 12:25:50PM +0200, Alexandre Torgue wrote:
+> This commit fixes id path of allwinner,sun4i-a10-csi.yaml location.
+>
+> Fixes: c5e8f4ccd775 ("media: dt-bindings: media: Add Allwinner A10 CSI binding")
+> Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
 
-I guess in that cas, we can just drop clock-names, which will require
-a bit of work on the driver side as well.
+I just merged a patch addressing the same issue earlier today.
 
+Thanks!
 Maxime
 
---msd5tjzsj4hwrcaz
+--wtovumvb4os5l27j
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXZsaBAAKCRDj7w1vZxhR
-xXn6AQCt+htvtym5wdP+F2AnazteXITvMk5Rfl6c9YFMfW0GswD+MILpcTLFvoCd
-opCA2BNbbbbCbvP1aXhnkHjZupGsbg4=
-=Qm2A
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXZsa2AAKCRDj7w1vZxhR
+xR8JAQCMAvM7SXG96je2bRTkUdjCkS6bG6EOoW4hgbX9bxr8cwEAmc4iiWubk//+
+S/jhKMDsvRBYt8C8CRty0bIvFTuRdQg=
+=+t0N
 -----END PGP SIGNATURE-----
 
---msd5tjzsj4hwrcaz--
+--wtovumvb4os5l27j--
 
 
---===============7007235537250047114==
+--===============3880490267575008863==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -173,5 +135,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============7007235537250047114==--
+--===============3880490267575008863==--
 
