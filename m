@@ -2,45 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F9E7CE7CF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 17:39:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 696BCCE7D4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 17:39:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ew+yt1ZMlkdtKpfqmqxBq4FH6HODTTGIm2AoRaqwmIo=; b=UeNPp5dpRJRAVM
-	WLPouB2+biCLLzmSPEUNCpK1dNW7bW+VLKG0EfdD7jHOHEmghs7j5tk1I8fTt+OvN7DzIdbvz2fey
-	ep06jzz0xVhgY8PlJ3SWSR+n2RHuRXu5fwZZWk1pduEnIBe5D7DTbXFm+vo5tRmH6tybkeB29l00B
-	SjxXZu8CNebngMzKkTOyi8MOY9P37pEdp9isWbEabl3L99/R5EW3778G3LjpVvbPE34Ncwu5nVpXc
-	YiaikYGEXg3BGdqF6rN5BbmLDED0DXJy2GeKO1CF3xC5J/cy8zwKDP2ZGT6fkPnE8Ga3+INhmcVu+
-	QyXcmqj5K9DPjl3yyowA==;
+	List-Owner; bh=71v86DKeIasGU4qMteJ24a/RmmlhgLh+Zi0yMatLwBs=; b=sE8Drkkhhl9v6e
+	fzE5e7OEHxx93pR4tNnvN6FwXQUnGHNs2QcUmH1sXQGumHyNyjf6k/IGCmVF3QFnee/c4mmvYt16y
+	fKAqsAofPb7oR+36cx/I85mWP9FfEREGFc0lLEJOA6VEFa1H4Xq/XNnyHxG7sdR1+Pv4ooBN1AMQC
+	qAXQW0SM/lwKcQVh1D60wNkK8+DlxmDnf5ZLK6gMeK+p2jniRWF69LdPaXHjZRwEEOHqXWyAeigJH
+	IkqiuJwdxNfsCgVw/EJ/apiQckuUkrbP2f37hPQLc+XP4Xa4F281SuAYyUjNUNJy0fL8VLYIq8Tl+
+	QnYewjoX35L4JZiDZb9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHV6K-0003EV-Id; Mon, 07 Oct 2019 15:39:08 +0000
+	id 1iHV6b-0003XD-70; Mon, 07 Oct 2019 15:39:25 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHV5w-00033Y-Pf
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 15:38:46 +0000
+ id 1iHV60-00037K-3P; Mon, 07 Oct 2019 15:38:49 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3B16F1576;
- Mon,  7 Oct 2019 08:38:44 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3DF3515AB;
+ Mon,  7 Oct 2019 08:38:47 -0700 (PDT)
 Received: from e112269-lin.arm.com (unknown [10.1.197.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 899273F6C4;
- Mon,  7 Oct 2019 08:38:41 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 71D2F3F6C4;
+ Mon,  7 Oct 2019 08:38:44 -0700 (PDT)
 From: Steven Price <steven.price@arm.com>
 To: linux-mm@kvack.org
-Subject: [PATCH v11 01/22] mm: Add generic p?d_leaf() macros
-Date: Mon,  7 Oct 2019 16:38:01 +0100
-Message-Id: <20191007153822.16518-2-steven.price@arm.com>
+Subject: [PATCH v11 02/22] arc: mm: Add p?d_leaf() definitions
+Date: Mon,  7 Oct 2019 16:38:02 +0100
+Message-Id: <20191007153822.16518-3-steven.price@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191007153822.16518-1-steven.price@arm.com>
 References: <20191007153822.16518-1-steven.price@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_083844_870587_7908E45F 
-X-CRM114-Status: GOOD (  13.88  )
+X-CRM114-CacheID: sfid-20191007_083848_198249_F0E247BA 
+X-CRM114-Status: GOOD (  11.09  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -59,74 +58,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, x86@kernel.org,
- Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Peter Zijlstra <peterz@infradead.org>,
+Cc: Mark Rutland <Mark.Rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
- Steven Price <steven.price@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, "H. Peter Anvin" <hpa@zytor.com>,
+ Will Deacon <will@kernel.org>, "Liang, Kan" <kan.liang@linux.intel.com>,
+ x86@kernel.org, Steven Price <steven.price@arm.com>,
+ Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
+ Arnd Bergmann <arnd@arndb.de>,
  =?UTF-8?q?J=C3=A9r=C3=B4me=20Glisse?= <jglisse@redhat.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
- James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
+ Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, Vineet Gupta <vgupta@synopsys.com>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Exposing the pud/pgd levels of the page tables to walk_page_range() means
-we may come across the exotic large mappings that come with large areas
-of contiguous memory (such as the kernel's linear map).
+walk_page_range() is going to be allowed to walk page tables other than
+those of user space. For this it needs to know when it has reached a
+'leaf' entry in the page tables. This information will be provided by the
+p?d_leaf() functions/macros.
 
-For architectures that don't provide all p?d_leaf() macros, provide
-generic do nothing default that are suitable where there cannot be leaf
-pages at that level. Futher patches will add implementations for
-individual architectures.
+For arc, we only have two levels, so only pmd_leaf() is needed.
 
-The name p?d_leaf() is chosen to minimize the confusion with existing
-uses of "large" pages and "huge" pages which do not necessary mean that
-the entry is a leaf (for example it may be a set of contiguous entries
-that only take 1 TLB slot). For the purpose of walking the page tables
-we don't need to know how it will be represented in the TLB, but we do
-need to know for sure if it is a leaf of the tree.
-
+CC: Vineet Gupta <vgupta@synopsys.com>
+CC: linux-snps-arc@lists.infradead.org
 Signed-off-by: Steven Price <steven.price@arm.com>
-Acked-by: Mark Rutland <mark.rutland@arm.com>
 ---
- include/asm-generic/pgtable.h | 20 ++++++++++++++++++++
- 1 file changed, 20 insertions(+)
+ arch/arc/include/asm/pgtable.h | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/include/asm-generic/pgtable.h b/include/asm-generic/pgtable.h
-index 818691846c90..7f9eced287b7 100644
---- a/include/asm-generic/pgtable.h
-+++ b/include/asm-generic/pgtable.h
-@@ -1187,4 +1187,24 @@ static inline bool arch_has_pfn_modify_check(void)
- #define mm_pmd_folded(mm)	__is_defined(__PAGETABLE_PMD_FOLDED)
- #endif
+diff --git a/arch/arc/include/asm/pgtable.h b/arch/arc/include/asm/pgtable.h
+index 7addd0301c51..5ec798e50836 100644
+--- a/arch/arc/include/asm/pgtable.h
++++ b/arch/arc/include/asm/pgtable.h
+@@ -274,6 +274,7 @@ static inline void pmd_set(pmd_t *pmdp, pte_t *ptep)
+ #define pmd_none(x)			(!pmd_val(x))
+ #define	pmd_bad(x)			((pmd_val(x) & ~PAGE_MASK))
+ #define pmd_present(x)			(pmd_val(x))
++#define pmd_leaf(x)			(pmd_val(pmd) & _PAGE_HW_SZ)
+ #define pmd_clear(xp)			do { pmd_val(*(xp)) = 0; } while (0)
  
-+/*
-+ * p?d_leaf() - true if this entry is a final mapping to a physical address.
-+ * This differs from p?d_huge() by the fact that they are always available (if
-+ * the architecture supports large pages at the appropriate level) even
-+ * if CONFIG_HUGETLB_PAGE is not defined.
-+ * Only meaningful when called on a valid entry.
-+ */
-+#ifndef pgd_leaf
-+#define pgd_leaf(x)	0
-+#endif
-+#ifndef p4d_leaf
-+#define p4d_leaf(x)	0
-+#endif
-+#ifndef pud_leaf
-+#define pud_leaf(x)	0
-+#endif
-+#ifndef pmd_leaf
-+#define pmd_leaf(x)	0
-+#endif
-+
- #endif /* _ASM_GENERIC_PGTABLE_H */
+ #define pte_page(pte)		pfn_to_page(pte_pfn(pte))
 -- 
 2.20.1
 
