@@ -2,50 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D981CDD16
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 10:20:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0691FCDD2D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 10:24:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=kdJ1eV6m/cCI1a3pNJOGt8qKQj02CK5JYd3Ev8wfCkw=; b=o01uYugol63qSp
-	P6brzQlq18bg5MGWFiHOG79T1TeuzOdqxD9qKu9QYxuZ9VCZb+N9ncXA+2dWZ3X+wPu+IsUNr2kYK
-	zWiK1vkapIasvXOI9QZq+6ckP726kcqVJB99XdZgeGj3/wdocYmfa8j3eBFyYs9SLbwBqShdSr5Ga
-	tEM10EMa7LmWOqVmHqkUZuX1AqWQMNmCjeIQXe0y8yLusJY6/v0Z8rB1AEeJJkiylQJo5LU8AhFuJ
-	IXEDH6X8d6xrya0h9xfQZw+7kyirz6zaiXxmJaustwAm20fLpRg78lJyozaZghKHMgtN7mvQSKJMa
-	QDEOiARNQFPxMxQMl+gQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YwaNibK3xAFrbnXpzwPVVq0pkCEPuLaDqhWmAZtomsA=; b=KWRmjMBHlupUzb
+	PyJcG2Wqr8wIdCnpWkbrmbRB29yKucjvdfuwOus0qy4aE/R1bd9di6cRFQowma7H5AP4CydlW+S2m
+	UcnIdoo5Nf2/qNkCrkv3A88hl3GkR6QLc+Xaf1Vb76aemZR/+chd1S8YdQpTZpg9LAVqfFWp5JIsU
+	Nuf3WnHfYRNVgc49Ci/kpeJ3+rMdgJpM3jMn+PKCiZZeHM/ulv5TMXaI3SkjZOZjieNHgwF1Xsoh5
+	vypNFMIC3Fa53CWU7JT/YGgUOLeufBI8oye50juz8rEhkTGbPK/5ShA3ubzTTY2EzLPgHF7Wi3z9m
+	i2iYZI3Z83NcKGy7h3Ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHOFG-0004UU-8M; Mon, 07 Oct 2019 08:19:54 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHOF9-0004Tp-8n
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 08:19:48 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 74FFC1570;
- Mon,  7 Oct 2019 01:19:43 -0700 (PDT)
-Received: from e120937-lin.cambridge.arm.com (unknown [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DD17F3F68E;
- Mon,  7 Oct 2019 01:19:42 -0700 (PDT)
-From: Cristian Marussi <cristian.marussi@arm.com>
-To: linux-kselftest@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- shuah@kernel.org
-Subject: [RFC PATCH] selftests: fix build targets behaviour on failures
-Date: Mon,  7 Oct 2019 09:19:17 +0100
-Message-Id: <20191007081917.13242-1-cristian.marussi@arm.com>
-X-Mailer: git-send-email 2.17.1
+	id 1iHOJO-0006pz-4d; Mon, 07 Oct 2019 08:24:10 +0000
+Received: from mga12.intel.com ([192.55.52.136])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHOJG-00067N-FU
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 08:24:04 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga006.fm.intel.com ([10.253.24.20])
+ by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 07 Oct 2019 01:22:01 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.67,267,1566889200"; d="scan'208";a="394267379"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by fmsmga006.fm.intel.com with ESMTP; 07 Oct 2019 01:21:58 -0700
+Received: from andy by smile with local (Exim 4.92.2)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1iHOHE-00057o-FW; Mon, 07 Oct 2019 11:21:56 +0300
+Date: Mon, 7 Oct 2019 11:21:56 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: William Breathitt Gray <vilhelm.gray@gmail.com>
+Subject: Re: [PATCH v16 01/14] bitops: Introduce the for_each_set_clump8 macro
+Message-ID: <20191007082156.GL32742@smile.fi.intel.com>
+References: <cover.1570374078.git.vilhelm.gray@gmail.com>
+ <c0830858f19c852f6d124395a32410bc645ecd15.1570374078.git.vilhelm.gray@gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <c0830858f19c852f6d124395a32410bc645ecd15.1570374078.git.vilhelm.gray@gmail.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_011947_356584_0BF20271 
-X-CRM114-Status: GOOD (  12.36  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191007_012402_782792_71FEAA25 
+X-CRM114-Status: GOOD (  12.78  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.136 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,84 +71,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
+Cc: linux-arch@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
+ linux-gpio@vger.kernel.org, yamada.masahiro@socionext.com,
+ linus.walleij@linaro.org, linux-pm@vger.kernel.org, linux@rasmusvillemoes.dk,
+ linux-kernel@vger.kernel.org, morten.tiljeset@prevas.dk,
+ sean.nyekjaer@prevas.dk, bgolaszewski@baylibre.com, lukas@wunner.de,
+ geert@linux-m68k.org, akpm@linux-foundation.org, preid@electromag.com.au,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently, when some of the KSFT subsystems specified in TARGETS fails to
-build, the toplevel Makefile just keeps carrying on with the build process.
+On Sun, Oct 06, 2019 at 11:10:58AM -0400, William Breathitt Gray wrote:
+> This macro iterates for each 8-bit group of bits (clump) with set bits,
+> within a bitmap memory region. For each iteration, "start" is set to the
+> bit offset of the found clump, while the respective clump value is
+> stored to the location pointed by "clump". Additionally, the
+> bitmap_get_value8 and bitmap_set_value8 functions are introduced to
+> respectively get and set an 8-bit value in a bitmap memory region.
 
-This behaviour is expected and desirable especially in the context of a CI
-system running KSelfTest where is not always easy to guarantee that the
-most recent and esoteric toolchain's dependencies are respected across all
-KSFT TARGETS in a timely manner.
+Very much thank you for an update!
+I have comments below.
 
-Unfortunately, as of now, this holds true only if the very last of the
-subsystems listed in TARGETS happened to be one that could be successfully
-built: if the last listed TARGETS fails, it is taken as the whole outcome
-of the Makefile target and the complete build/install halts even though
-many other preceding subsytems were in fact already successfully built.
+> +/**
+> + * bitmap_get_value8 - get an 8-bit value within a memory region
 
-Fix the KSFT Makefile behaviour related to all/install targets in order
-to fail as a whole only when the all/install targets have failed for all
-of the requested TARGETS, while succeeding when at least one of TARGETS
-has been successfully built.
+Since it's in find.h I would not collide with bitmap namespace.
+How about
 
-Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
----
-This patch is based on ksft/fixes branch from:
+	find_and_get_value8()
 
-git://git.kernel.org/pub/scm/linux/kernel/git/shuah/linux-kselftest.git
+> + * @addr: address to the bitmap memory region
+> + * @start: bit offset of the 8-bit value; must be a multiple of 8
+> + *
+> + * Returns the 8-bit value located at the @start bit offset within the @addr
+> + * memory region.
+> + */
+> +static inline unsigned long bitmap_get_value8(const unsigned long *addr,
+> +					      unsigned long start)
+> +{
+> +	const size_t index = BIT_WORD(start);
+> +	const unsigned long offset = start % BITS_PER_LONG;
+> +
+> +	return (addr[index] >> offset) & 0xFF;
+> +}
+> +
+> +/**
+> + * bitmap_set_value8 - set an 8-bit value within a memory region
 
-on top of commit:
+	find_and_set_value8()
 
-ce3a67780212 selftests: watchdog: Add command line option to show watchdog_info
----
- tools/testing/selftests/Makefile | 18 +++++++++++-------
- 1 file changed, 11 insertions(+), 7 deletions(-)
+?
 
-diff --git a/tools/testing/selftests/Makefile b/tools/testing/selftests/Makefile
-index 4cdbae6f4e61..d907b050e929 100644
---- a/tools/testing/selftests/Makefile
-+++ b/tools/testing/selftests/Makefile
-@@ -140,11 +140,13 @@ else
- endif
- 
- all: khdr
--	@for TARGET in $(TARGETS); do		\
--		BUILD_TARGET=$$BUILD/$$TARGET;	\
--		mkdir $$BUILD_TARGET  -p;	\
--		$(MAKE) OUTPUT=$$BUILD_TARGET -C $$TARGET;\
--	done;
-+	@ret=1;							\
-+	for TARGET in $(TARGETS); do				\
-+		BUILD_TARGET=$$BUILD/$$TARGET;			\
-+		mkdir $$BUILD_TARGET  -p;			\
-+		$(MAKE) OUTPUT=$$BUILD_TARGET -C $$TARGET;	\
-+		ret=$$((ret * $$?));				\
-+	done; exit $$ret;
- 
- run_tests: all
- 	@for TARGET in $(TARGETS); do \
-@@ -192,10 +194,12 @@ ifdef INSTALL_PATH
- 	mkdir -p $(INSTALL_PATH)/kselftest
- 	install -m 744 kselftest/runner.sh $(INSTALL_PATH)/kselftest/
- 	install -m 744 kselftest/prefix.pl $(INSTALL_PATH)/kselftest/
--	@for TARGET in $(TARGETS); do \
-+	@ret=1;	\
-+	for TARGET in $(TARGETS); do \
- 		BUILD_TARGET=$$BUILD/$$TARGET;	\
- 		$(MAKE) OUTPUT=$$BUILD_TARGET -C $$TARGET INSTALL_PATH=$(INSTALL_PATH)/$$TARGET install; \
--	done;
-+		ret=$$((ret * $$?));		\
-+	done; exit $$ret
- 
- 	@# Ask all targets to emit their test scripts
- 	echo "#!/bin/sh" > $(ALL_SCRIPT)
+> + * @addr: address to the bitmap memory region
+> + * @value: the 8-bit value; values wider than 8 bits may clobber bitmap
+> + * @start: bit offset of the 8-bit value; must be a multiple of 8
+> + */
+> +static inline void bitmap_set_value8(unsigned long *addr, unsigned long value,
+> +				     unsigned long start)
+> +{
+> +	const size_t index = BIT_WORD(start);
+> +	const unsigned long offset = start % BITS_PER_LONG;
+> +
+> +	addr[index] &= ~(0xFF << offset);
+> +	addr[index] |= value << offset;
+> +}
+
 -- 
-2.17.1
+With Best Regards,
+Andy Shevchenko
+
 
 
 _______________________________________________
