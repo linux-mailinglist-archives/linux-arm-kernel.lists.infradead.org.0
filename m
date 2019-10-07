@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71ECFCE806
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 17:42:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B02F5CE80A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 17:42:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hguikkJeQn6b50pgzxRfqlisoyxyeBAO8bvnm5bKnkw=; b=RyHnDIxID9Bq7e
-	Af0ytk+igF0lRuXtGhsuANGol7tgpTp3QjoCO+WAAxnBsw/5tdE9Ms5PTTwtYkwRJZ4SjqB1uR1Yh
-	u5oArzq3zLtpLeE5gBiG//NYszdutYGlZi19wx74h+PRaEo/Rc0BgzGlVFaX4HnsSvDgxCI97GIj1
-	UcKgqA0/VfKlt2xwMbQ77z7kxGZHDpx0JK3Du827F+xFTAsb0HXjNvsche/hsDLVb/BdtezegxBaA
-	b6vaZb2zI9YPy3KCCIDXOf9orRtuZPUBxKQTPGoQYLKy888FX807jQy2xCH56xkrTsjpSXTjk+bIs
-	Q6ktW98wubHDXn3vcJqg==;
+	List-Owner; bh=o0o/q+4VYFuJ4m2Od9pb+6W9nSRtx4Ov1uffzJ4A/Xc=; b=Y34Z2IyKMIewUD
+	USJfWgkr5tqanIFSmQmEhwTql9lcV/lTrQrUmi9scRt5GLHNbaXnGwAUJYG6Pps1qbnU81mxpfQ7+
+	WksHrP7UIU+uSS1hAKg5QifHqsh42MZ+nuV4ZmXZMOGjLYfFehBx42KHA4g3RIkX1C62Qlr01XG1a
+	/19wk4dcuexIoaSz8r4WL6TenlsHsPfNLMI07aEAFpbfzHeqZ4AVr5HLXio3CLwn9ugEfn35j3XtA
+	Rj7K1UQLbnnLQCi+ejLsZmdS41IMSMUMjvlkmj2SzfZAI4Rox00O0Kxp8I3Aym3+PlY83Mgs7wQQF
+	hn5yb06F9hP9pi0H6wNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHV98-0007c3-IC; Mon, 07 Oct 2019 15:42:02 +0000
+	id 1iHV9O-0007zX-7y; Mon, 07 Oct 2019 15:42:18 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHV6U-0003m8-6P
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 15:39:20 +0000
+ id 1iHV6W-0003oV-PF
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 15:39:22 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 52FE216A3;
- Mon,  7 Oct 2019 08:39:17 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 20FFF15AB;
+ Mon,  7 Oct 2019 08:39:20 -0700 (PDT)
 Received: from e112269-lin.arm.com (unknown [10.1.197.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BC6A43F6C4;
- Mon,  7 Oct 2019 08:39:14 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 89C2E3F6C4;
+ Mon,  7 Oct 2019 08:39:17 -0700 (PDT)
 From: Steven Price <steven.price@arm.com>
 To: linux-mm@kvack.org
-Subject: [PATCH v11 12/22] mm: pagewalk: Allow walking without vma
-Date: Mon,  7 Oct 2019 16:38:12 +0100
-Message-Id: <20191007153822.16518-13-steven.price@arm.com>
+Subject: [PATCH v11 13/22] mm: pagewalk: Add test_p?d callbacks
+Date: Mon,  7 Oct 2019 16:38:13 +0100
+Message-Id: <20191007153822.16518-14-steven.price@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191007153822.16518-1-steven.price@arm.com>
 References: <20191007153822.16518-1-steven.price@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_083918_297376_F9178451 
-X-CRM114-Status: GOOD (  13.94  )
+X-CRM114-CacheID: sfid-20191007_083920_935968_5521F5C8 
+X-CRM114-Status: GOOD (  15.53  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -76,78 +76,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since 48684a65b4e3: "mm: pagewalk: fix misbehavior of walk_page_range
-for vma(VM_PFNMAP)", page_table_walk() will report any kernel area as
-a hole, because it lacks a vma.
-
-This means each arch has re-implemented page table walking when needed,
-for example in the per-arch ptdump walker.
-
-Remove the requirement to have a vma except when trying to split huge
-pages.
+It is useful to be able to skip parts of the page table tree even when
+walking without VMAs. Add test_p?d callbacks similar to test_walk but
+which are called just before a table at that level is walked. If the
+callback returns non-zero then the entire table is skipped.
 
 Signed-off-by: Steven Price <steven.price@arm.com>
 ---
- mm/pagewalk.c | 25 +++++++++++++++++--------
- 1 file changed, 17 insertions(+), 8 deletions(-)
+ include/linux/pagewalk.h | 11 +++++++++++
+ mm/pagewalk.c            | 24 ++++++++++++++++++++++++
+ 2 files changed, 35 insertions(+)
 
+diff --git a/include/linux/pagewalk.h b/include/linux/pagewalk.h
+index 12004b097eae..df424197a25a 100644
+--- a/include/linux/pagewalk.h
++++ b/include/linux/pagewalk.h
+@@ -24,6 +24,11 @@ struct mm_walk;
+  *			"do page table walk over the current vma", returning
+  *			a negative value means "abort current page table walk
+  *			right now" and returning 1 means "skip the current vma"
++ * @test_pmd:		similar to test_walk(), but called for every pmd.
++ * @test_pud:		similar to test_walk(), but called for every pud.
++ * @test_p4d:		similar to test_walk(), but called for every p4d.
++ *			Returning 0 means walk this part of the page tables,
++ *			returning 1 means to skip this range.
+  *
+  * p?d_entry callbacks are called even if those levels are folded on a
+  * particular architecture/configuration.
+@@ -46,6 +51,12 @@ struct mm_walk_ops {
+ 			     struct mm_walk *walk);
+ 	int (*test_walk)(unsigned long addr, unsigned long next,
+ 			struct mm_walk *walk);
++	int (*test_pmd)(unsigned long addr, unsigned long next,
++			pmd_t *pmd_start, struct mm_walk *walk);
++	int (*test_pud)(unsigned long addr, unsigned long next,
++			pud_t *pud_start, struct mm_walk *walk);
++	int (*test_p4d)(unsigned long addr, unsigned long next,
++			p4d_t *p4d_start, struct mm_walk *walk);
+ };
+ 
+ /**
 diff --git a/mm/pagewalk.c b/mm/pagewalk.c
-index fc4d98a3a5a0..4139e9163aee 100644
+index 4139e9163aee..43acffefd43f 100644
 --- a/mm/pagewalk.c
 +++ b/mm/pagewalk.c
-@@ -38,7 +38,7 @@ static int walk_pmd_range(pud_t *pud, unsigned long addr, unsigned long end,
+@@ -34,6 +34,14 @@ static int walk_pmd_range(pud_t *pud, unsigned long addr, unsigned long end,
+ 	const struct mm_walk_ops *ops = walk->ops;
+ 	int err = 0;
+ 
++	if (ops->test_pmd) {
++		err = ops->test_pmd(addr, end, pmd_offset(pud, 0UL), walk);
++		if (err < 0)
++			return err;
++		if (err > 0)
++			return 0;
++	}
++
+ 	pmd = pmd_offset(pud, addr);
  	do {
  again:
- 		next = pmd_addr_end(addr, end);
--		if (pmd_none(*pmd) || !walk->vma) {
-+		if (pmd_none(*pmd)) {
- 			if (ops->pte_hole)
- 				err = ops->pte_hole(addr, next, walk);
- 			if (err)
-@@ -61,9 +61,14 @@ static int walk_pmd_range(pud_t *pud, unsigned long addr, unsigned long end,
- 		if (!ops->pte_entry)
- 			continue;
+@@ -85,6 +93,14 @@ static int walk_pud_range(p4d_t *p4d, unsigned long addr, unsigned long end,
+ 	const struct mm_walk_ops *ops = walk->ops;
+ 	int err = 0;
  
--		split_huge_pmd(walk->vma, pmd, addr);
--		if (pmd_trans_unstable(pmd))
--			goto again;
-+		if (walk->vma) {
-+			split_huge_pmd(walk->vma, pmd, addr);
-+			if (pmd_trans_unstable(pmd))
-+				goto again;
-+		} else if (pmd_leaf(*pmd)) {
-+			continue;
-+		}
++	if (ops->test_pud) {
++		err = ops->test_pud(addr, end, pud_offset(p4d, 0UL), walk);
++		if (err < 0)
++			return err;
++		if (err > 0)
++			return 0;
++	}
 +
- 		err = walk_pte_range(pmd, addr, next, walk);
- 		if (err)
- 			break;
-@@ -84,7 +89,7 @@ static int walk_pud_range(p4d_t *p4d, unsigned long addr, unsigned long end,
+ 	pud = pud_offset(p4d, addr);
  	do {
   again:
- 		next = pud_addr_end(addr, end);
--		if (pud_none(*pud) || !walk->vma) {
-+		if (pud_none(*pud)) {
- 			if (ops->pte_hole)
- 				err = ops->pte_hole(addr, next, walk);
- 			if (err)
-@@ -98,9 +103,13 @@ static int walk_pud_range(p4d_t *p4d, unsigned long addr, unsigned long end,
- 				break;
- 		}
+@@ -128,6 +144,14 @@ static int walk_p4d_range(pgd_t *pgd, unsigned long addr, unsigned long end,
+ 	const struct mm_walk_ops *ops = walk->ops;
+ 	int err = 0;
  
--		split_huge_pud(walk->vma, pud, addr);
--		if (pud_none(*pud))
--			goto again;
-+		if (walk->vma) {
-+			split_huge_pud(walk->vma, pud, addr);
-+			if (pud_none(*pud))
-+				goto again;
-+		} else if (pud_leaf(*pud)) {
-+			continue;
-+		}
- 
- 		if (ops->pmd_entry || ops->pte_entry)
- 			err = walk_pmd_range(pud, addr, next, walk);
++	if (ops->test_p4d) {
++		err = ops->test_p4d(addr, end, p4d_offset(pgd, 0UL), walk);
++		if (err < 0)
++			return err;
++		if (err > 0)
++			return 0;
++	}
++
+ 	p4d = p4d_offset(pgd, addr);
+ 	do {
+ 		next = p4d_addr_end(addr, end);
 -- 
 2.20.1
 
