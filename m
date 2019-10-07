@@ -2,78 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEF18CDC76
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 09:35:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17061CDC7E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 09:40:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=46ie6i0JF6lZYYhYnBmHQ4JcEl38+wsQGlbnRufWt6Y=; b=c8HeZTIYQJm9cY
-	5h4nBPgk8qejIJ4OsQjbNn+3E50mb7KIomwYATeVhG/7Ojyj9SrzbelEUpI+OPyGGa7VSlncx2ye6
-	iPfCdJxu/r9648ASVoR+uFSts6IpaVM8Lnxe7dWDt6fNUlrnSrMAE50gXIVXG7FYyXchsdiXQ56sO
-	VH80ziWQsfzeeJ/Px7QLT1ATGWSGW8xbRmi2JWH1j2EkSI8Jo7Ly7ZA6lMjz9RLhapmXPgO3iVcAH
-	7akS6stsGhLnQ/w0N4Pu3jmYEym1ZnS5TOJyvVDXptgMbCUzdNLL/vSwpeIM0L/cmG41oCEwGNIPW
-	inZXF5FjOVTfdSZnny2Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Px3EbkD1gnIIsjOkKOWyoDckIgyrPPIfaiQml8VsHUE=; b=FuZFVU1V9nPBqj
+	vWq+bBAREDyzFZmWNzavd0UsX0Pex5rh/p9CTv9rxksrIEiCyzEfzIUNkDzoQIDd99hSLsIZ3oj6J
+	YiQKmrdfIpocThZpSAVLmNMPTKsRox8diaokQqsarY503cfHsEoTupkzK4tvM7ZwTc7CcbRijFhBk
+	IswQSetWZ/l8nVC9Cx/Q4F4vddJIz0fXOSdvk8bjKXm2LlGO9lszTXkfIqAlq0GX9LCEWesoqalkj
+	fVdx81KTgE0G1lyKQI5opaivKDHpnRbi+UXo00oJfsElNLENVHlCAvE1+2U0B/zkqsI0j+HocCOdV
+	eNjdfYTkB+JyqfzT74Ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHNYW-0004i4-DN; Mon, 07 Oct 2019 07:35:44 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1iHNcs-0005bJ-GC; Mon, 07 Oct 2019 07:40:14 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHNYO-0004hO-Ps
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 07:35:38 +0000
-Received: by mail-oi1-f194.google.com with SMTP id k25so10772266oiw.13
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 07 Oct 2019 00:35:36 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=vC7dAYfXwJKhiTI/wvNma7+9JHZprD9j7d4aco906Rg=;
- b=n1DlGl4RGUrWvVY3KyXJ9JEvMjrhnoTGsCxgpvApEgsGPfpMwaTG7sXpdEFaXj2eB5
- 1trJnwm2Z95S4+/PL810z6Qo+zuz2q82XX7lVh2FZi/vstFlRCbp4XVHc7ybqF2h6AHb
- iozmzHUeQa9XSZ66P1PYUMnWUxPKBpbWNty1Ig1Zb+Wm/tgJfZ+SFmK+u0Ipvdzip64O
- hCpRjxPKbb4Ej60remBzSBgzC7zid0oZSKZC6RjGP5Xgyi3q7mNiNz90zd/ujz9lz1CY
- qf0eIF5zStd/+g1CEi3pgKdNO+cJSqkxw0V5bYJjilsz871cZusaBUYJjTs6MpWGkB1q
- LZ/Q==
-X-Gm-Message-State: APjAAAV+lY8qI8v844k8qFqlyfO7Zeqa+wHeRwBpMQzi99ibUvztMf7Q
- gE29Tp/U88xEKBbkzSxqNFx9jmgNxC3e2dXh454=
-X-Google-Smtp-Source: APXvYqz2xsowCyv7BriFiCE5eWCSUyFySeTWPsmMojbahQ43q5zsM0Wz1Yn++ZwgA8+zcnB3RXHRWT0R0cHyrvakUFU=
-X-Received: by 2002:aca:b654:: with SMTP id g81mr16278742oif.153.1570433735656; 
- Mon, 07 Oct 2019 00:35:35 -0700 (PDT)
+ id 1iHNcf-00059M-4D
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 07:40:02 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x977aF2Y014406; Mon, 7 Oct 2019 09:39:57 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=m3OyRh20IsuSdC821f/Laf3LJyFMmb9KB8SD6mKa7/I=;
+ b=u21KJqeQcMYLKZwGdKH1kTAjSD+wNxaCYw4DpIe0p15aUURCwUtaaDLsUB1jxz7HJ8da
+ XSc+TEKh6yPtZ120PI7zVpvnPww5Xy7ihjyyB1KgK0XRTCsTziuaUSyIh0kz0Oq9oC1p
+ unReVzEqGNoxED5BBmQB5ynF4YKYpVrG1IRYRBCZ6fcEEmFYFFYFabwuKyPwoGgEXQek
+ jmubxA7IcAmESJWc3PwMZPnkZ+LJcbHn0m7ex3m5modRhlmD1DlybuEuej2hI59Vlo65
+ 6KFHUZ++s/oZCBfR6H2mki2XI2boJYez94Jorqg9gbzdzaRxfMtucoMxaGSiDnvirl0J Ew== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2vegags6y9-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 07 Oct 2019 09:39:57 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 882F510002A;
+ Mon,  7 Oct 2019 09:39:56 +0200 (CEST)
+Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 773FA2AECC6;
+ Mon,  7 Oct 2019 09:39:56 +0200 (CEST)
+Received: from SAFEX1HUBCAS23.st.com (10.75.90.46) by Safex1hubcas22.st.com
+ (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 7 Oct 2019
+ 09:39:56 +0200
+Received: from localhost (10.201.23.25) by webmail-ga.st.com (10.75.90.48)
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 7 Oct 2019 09:39:55
+ +0200
+From: Fabien Dessenne <fabien.dessenne@st.com>
+To: Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
+ <alexandre.torgue@st.com>, Ohad Ben-Cohen <ohad@wizery.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <linux-remoteproc@vger.kernel.org>
+Subject: [PATCH v2] remoteproc: stm32: fix probe error case
+Date: Mon, 7 Oct 2019 09:39:51 +0200
+Message-ID: <1570433991-16353-1-git-send-email-fabien.dessenne@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-References: <20190830062924.21714-1-hch@lst.de>
- <20190830062924.21714-4-hch@lst.de>
- <CAMuHMdXxWp2=9n2LQA9KVH_ArOUnY78ZoiQ7ZsDMbTOGsEz4hw@mail.gmail.com>
- <20191006184541.GA4110@lst.de>
-In-Reply-To: <20191006184541.GA4110@lst.de>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 7 Oct 2019 09:35:24 +0200
-Message-ID: <CAMuHMdVdw8QGet8JxVPM9JOiQ1OG3rhbB7ha=mEQ7BdYGs4+gw@mail.gmail.com>
-Subject: Re: [PATCH 3/4] dma-mapping: introduce a dma_common_find_pages helper
-To: Christoph Hellwig <hch@lst.de>
+X-Originating-IP: [10.201.23.25]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
+ definitions=2019-10-07_01:2019-10-03,2019-10-07 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_003536_837640_162B70FB 
-X-CRM114-Status: UNSURE (   9.63  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191007_004001_462315_CE264773 
+X-CRM114-Status: GOOD (  16.53  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,37 +97,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-xtensa@linux-xtensa.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Russell King <linux@armlinux.org.uk>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Linux MM <linux-mm@kvack.org>, Linux IOMMU <iommu@lists.linux-foundation.org>,
- Robin Murphy <robin.murphy@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Arnaud Pouliquen <arnaud.pouliquen@st.com>,
+ Loic Pallardy <loic.pallardy@st.com>, Fabien Dessenne <fabien.dessenne@st.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Christoph,
+If the rproc driver is probed before the mailbox driver and if the rproc
+Device Tree node has some mailbox properties, the rproc driver probe
+shall be deferred instead of being probed without mailbox support.
 
-On Sun, Oct 6, 2019 at 8:45 PM Christoph Hellwig <hch@lst.de> wrote:
-> please try Linus' current tree.  It has a fix from Andrey Smirnov
-> for what looks the same problem that you reported.
+Signed-off-by: Fabien Dessenne <fabien.dessenne@st.com>
+---
+Changes since v1: test IS_ERR() before checking PTR_ERR()
+---
+ drivers/remoteproc/stm32_rproc.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
-Thanks, confirmed fixed by commit 2cf2aa6a69db0b17 ("dma-mapping: fix
-false positivse warnings in dma_common_free_remap()").
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
+diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
+index 2cf4b29..a507332 100644
+--- a/drivers/remoteproc/stm32_rproc.c
++++ b/drivers/remoteproc/stm32_rproc.c
+@@ -310,7 +310,7 @@ static const struct stm32_mbox stm32_rproc_mbox[MBOX_NB_MBX] = {
+ 	}
+ };
+ 
+-static void stm32_rproc_request_mbox(struct rproc *rproc)
++static int stm32_rproc_request_mbox(struct rproc *rproc)
+ {
+ 	struct stm32_rproc *ddata = rproc->priv;
+ 	struct device *dev = &rproc->dev;
+@@ -329,10 +329,14 @@ static void stm32_rproc_request_mbox(struct rproc *rproc)
+ 
+ 		ddata->mb[i].chan = mbox_request_channel_byname(cl, name);
+ 		if (IS_ERR(ddata->mb[i].chan)) {
++			if (PTR_ERR(ddata->mb[i].chan) == -EPROBE_DEFER)
++				return -EPROBE_DEFER;
+ 			dev_warn(dev, "cannot get %s mbox\n", name);
+ 			ddata->mb[i].chan = NULL;
+ 		}
+ 	}
++
++	return 0;
+ }
+ 
+ static int stm32_rproc_set_hold_boot(struct rproc *rproc, bool hold)
+@@ -596,7 +600,9 @@ static int stm32_rproc_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		goto free_rproc;
+ 
+-	stm32_rproc_request_mbox(rproc);
++	ret = stm32_rproc_request_mbox(rproc);
++	if (ret)
++		goto free_rproc;
+ 
+ 	ret = rproc_add(rproc);
+ 	if (ret)
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+2.7.4
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
