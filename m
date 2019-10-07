@@ -2,68 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E756CDCC0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 10:01:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CB32CDCC7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 10:02:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LgON0vm7zvMvdrGJ/HvZpeDOw6lcqptjaurSQDgvJZ0=; b=f69HOacWteryW8
-	/2I4Wb6zswNo76bqj64FHE42pb32wB5ryEmd39anflJcUSCMGPf0113Sg3kV9lnEpLcmqtasmoMOq
-	tfq6JzHzT7uwXqmo/euxWKuqbH9Gc+iNGT1mkCmhzLB9oZZsqYn5OQ+1GM/AUSAO2fY3iAOP+W7Zu
-	fowda/vdGQRqgxBVgrxAvKzSazpzSyTV8dXvMRsujRcaX5vajd+UyxCSiUvVVZXmCDibXAMDJ7PtG
-	ElivJWFEVg5rR69uVKV6LHRPtXPkqktN5a3r/YvA1e0IMqr7AUKq3TXUFIgJ3tDcCHJaQgtmkR6gx
-	f6I2kyVzIP2gdj77vljw==;
+	List-Owner; bh=eLNV3Ctgbu9Q1tgB8q+k0mizpRK2vN6f8EGW5u6fJO0=; b=eccl2KEUT7rIXI
+	KlAWGMD+i4N79A9bHvopp6HFGL7YnvlUbZaw2ZvQXh2JrR5k24iPMrg8zHYEyh72mRIbzzG8OfIBy
+	7+YuHGXy4RbJ5ps45y10r+JsIHg4HNvowkfzGCDQJdEMgAbbBGkkLnzUCsik3pjzzKn/4/AJ7jciW
+	hM1q6Jvp8eUZeSRfllXwPv68VLbxAwpOpiY8TWybJwzC1IuiwRkj0Z+Jn02Njb5RXnNVpcreGC+D5
+	6Y7fIfvt9RjpMLWszQqG1fsYxxom2rm29XVQ5WwCQyAhLYK9iKRQMHJ3dFTOdQiKRzOdeUyod3/O6
+	RAs3oBkSmdxHmbQfDvBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHNxk-0005QZ-KK; Mon, 07 Oct 2019 08:01:48 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iHNyX-0005sg-5f; Mon, 07 Oct 2019 08:02:37 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHNxc-0005Q1-N6
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 08:01:43 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1iHNxY-0001wb-US; Mon, 07 Oct 2019 10:01:36 +0200
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1iHNxX-0003ly-Hb; Mon, 07 Oct 2019 10:01:35 +0200
-Date: Mon, 7 Oct 2019 10:01:35 +0200
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V2] firmware: imx: Skip return value check for some
- special SCU firmware APIs
-Message-ID: <20191007080135.4e5ljhh6z2rbx5bw@pengutronix.de>
-References: <1570410959-32563-1-git-send-email-Anson.Huang@nxp.com>
+ id 1iHNyP-0005sK-BX
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 08:02:30 +0000
+Received: from [10.33.87.18] (twin.jikos.cz [91.219.245.39])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8CECD20867;
+ Mon,  7 Oct 2019 08:02:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570435348;
+ bh=DbrpAfomurrCCdFD0IJeUwRw1yWRYID3uypVq0D8MQw=;
+ h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+ b=ILBNzhemPwPmbQnaC2LVrUnAx54C/R93wfWv1G86UaG8h1UKlITDQ2NQj8Y09JZjM
+ B6xS9BAgcVSnQ/aOy+/+snNJS3s0TNmJiUt4QkMuI+50OcVJ03oqyCnztKugeo0x4g
+ R+lPPA2M1btyA+m1tgijqbN/px5ni5HfUoG7g40Q=
+Date: Mon, 7 Oct 2019 10:02:11 +0200 (CEST)
+From: Jiri Kosina <jikos@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] panic: Ensure preemption is disabled during panic()
+In-Reply-To: <20191004104947.vbxe5kv3nbjxqs55@willie-the-truck>
+Message-ID: <nycvar.YEU.7.76.1910071000170.15186@gjva.wvxbf.pm>
+References: <20191002123538.22609-1-will@kernel.org>
+ <201910021355.E578D2FFAF@keescook>
+ <20191003205633.w26geqhq67u4ysit@willie-the-truck>
+ <20191004091142.57iylai22aqpu6lu@pathway.suse.cz>
+ <20191004092917.GY25745@shell.armlinux.org.uk>
+ <20191004104947.vbxe5kv3nbjxqs55@willie-the-truck>
+User-Agent: Alpine 2.21 (LRH 202 2017-01-01)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1570410959-32563-1-git-send-email-Anson.Huang@nxp.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 09:59:23 up 142 days, 14:17, 94 users,  load average: 0.03, 0.07,
- 0.11
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_010140_751830_D56DAF74 
-X-CRM114-Status: GOOD (  19.55  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191007_010229_411128_715F2836 
+X-CRM114-Status: UNSURE (   8.41  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,92 +81,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: aisheng.dong@nxp.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
- leonard.crestez@nxp.com, festevam@gmail.com,
+Cc: Petr Mladek <pmladek@suse.com>, Feng Tang <feng.tang@intel.com>,
+ Kees Cook <keescook@chromium.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, contact@xogium.me,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Steven Rostedt <rostedt@goodmis.org>, linux-kernel@vger.kernel.org,
+ Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
+ Ingo Molnar <mingo@redhat.com>, stable@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Anson,
+On Fri, 4 Oct 2019, Will Deacon wrote:
 
-On 19-10-07 09:15, Anson Huang wrote:
-> The SCU firmware does NOT always have return value stored in message
-> header's function element even the API has response data, those special
-> APIs are defined as void function in SCU firmware, so they should be
-> treated as return success always.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
-> Changes since V1:
-> 	- Use direct API check instead of calling another function to check.
-> 	- This patch is based on https://patchwork.kernel.org/patch/11129553/
+> Indeed, and I think the LED blinking is already unreliable if the
+> brightness operation needs to sleep. 
 
-Thanks for this v2. It would be good to change the callers within this
-series.
+One thing is that led_set_brightness() can probably be forced to avoid the 
+workqueue scheduling, by setting LED_BLINK_SW on the device (e.g. by 
+issuing led_set_software_blink() during panic).
 
-Regards,
-  Marco
-
-> ---
->  drivers/firmware/imx/imx-scu.c | 16 +++++++++++++++-
->  1 file changed, 15 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/firmware/imx/imx-scu.c b/drivers/firmware/imx/imx-scu.c
-> index 869be7a..03b43b7 100644
-> --- a/drivers/firmware/imx/imx-scu.c
-> +++ b/drivers/firmware/imx/imx-scu.c
-> @@ -162,6 +162,7 @@ static int imx_scu_ipc_write(struct imx_sc_ipc *sc_ipc, void *msg)
->   */
->  int imx_scu_call_rpc(struct imx_sc_ipc *sc_ipc, void *msg, bool have_resp)
->  {
-> +	uint8_t saved_svc, saved_func;
->  	struct imx_sc_rpc_msg *hdr;
->  	int ret;
->  
-> @@ -171,8 +172,11 @@ int imx_scu_call_rpc(struct imx_sc_ipc *sc_ipc, void *msg, bool have_resp)
->  	mutex_lock(&sc_ipc->lock);
->  	reinit_completion(&sc_ipc->done);
->  
-> -	if (have_resp)
-> +	if (have_resp) {
->  		sc_ipc->msg = msg;
-> +		saved_svc = ((struct imx_sc_rpc_msg *)msg)->svc;
-> +		saved_func = ((struct imx_sc_rpc_msg *)msg)->func;
-> +	}
->  	sc_ipc->count = 0;
->  	ret = imx_scu_ipc_write(sc_ipc, msg);
->  	if (ret < 0) {
-> @@ -191,6 +195,16 @@ int imx_scu_call_rpc(struct imx_sc_ipc *sc_ipc, void *msg, bool have_resp)
->  		/* response status is stored in hdr->func field */
->  		hdr = msg;
->  		ret = hdr->func;
-> +		/*
-> +		 * Some special SCU firmware APIs do NOT have return value
-> +		 * in hdr->func, but they do have response data, those special
-> +		 * APIs are defined as void function in SCU firmware, so they
-> +		 * should be treated as return success always.
-> +		 */
-> +		if ((saved_svc == IMX_SC_RPC_SVC_MISC) &&
-> +			(saved_func == IMX_SC_MISC_FUNC_UNIQUE_ID ||
-> +			 saved_func == IMX_SC_MISC_FUNC_GET_BUTTON_STATUS))
-> +			ret = 0;
->  	}
->  
->  out:
-> -- 
-> 2.7.4
-> 
-> 
-> 
+But I am afraid this still won't solve the issue completely, as USB 
+keyboards need workqueues for blinking the LEDs in for URB management.
 
 -- 
-Pengutronix e.K.                           |                             |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+Jiri Kosina
+SUSE Labs
 
 _______________________________________________
 linux-arm-kernel mailing list
