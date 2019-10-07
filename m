@@ -2,146 +2,108 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7EA92CEE76
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 23:35:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16827CEE7A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 23:36:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oQM1mNHfxCnlTu0GUcckp89KifmwxZnzpMTBLBqXHLg=; b=rhQG6Taj5JX2mr
-	jdwHF+NgjNMjz4J8C/r8Dh+Pc3JN4ouZAZp5JIShvu/T89+T6gEb/o7217BRLuve7Tb/+w4PqyfZh
-	gP8w3eWhOHOj45nfPvEMzm11bKzDdpmj+Ix0CZ9VK8MYOGKzD3DsMDs65invmOVTI3mNUl3V3v21G
-	CuFJqrm8ukW5FexVhrHunU4QU5ncmal32AhbqB7HZwx0Kw212+dwlDCygFfvS8zmtktcSGYsz4joe
-	kiXGjYLXTon69tr6eaWZhXtGwBZIVIQ3qPVXfdXv9n9jGOlXrOl+Lal9CudbZ8dGvo/KTakqEzBsp
-	CnxmNyKcEWoRHd3ENy/w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XSynpD8QtZBdfDV1Dt2S50/LI6gl/NE0+j5g3/zJF3Y=; b=pnng9I73Q3pcjy
+	Qc+rdYc2zyRiXDp1Fi+eSOko1Vv66MUAsWeSS296ZyV8ssydvhvD6xSBmvu3cQGf1FUM/PifTfrxt
+	Pi4NsnMnpNFNwGgcPlpX20jGnGo9iCOZA4Nhn6tts3Y4gnNBf1DoPs6qZSWkYPi0dJZKarKA8Hri+
+	YhY3YWRQMWtPtJj9vYjqh+JgSe5B0B5cbmisEhAGzdreFsb9EO/XiF+ug2EpwfhzXaeYWjwM0HHwN
+	UW/1DSBHoJm3vIL6T/nMtkgoACQ2d6vQBZSp+TmYDD/m57HrDJq1UUn1Lopt3rVbBhhkkc0ThN0fI
+	sMexXDeAAzvlfMCzXmfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHaey-0004Q8-FU; Mon, 07 Oct 2019 21:35:16 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iHagF-0004jh-QA; Mon, 07 Oct 2019 21:36:35 +0000
+Received: from mail-eopbgr150085.outbound.protection.outlook.com
+ ([40.107.15.85] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHaeq-0003j9-LO
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 21:35:10 +0000
-Received: by mail-wr1-x441.google.com with SMTP id y19so17000745wrd.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 07 Oct 2019 14:35:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=OyhiovIjMKJKHgMLTz6N4LKz78G59FFqcnuV5MZGZ7g=;
- b=Fk6hrgHG5+4gYmqh2EQwYt6qgt8bw2Hb/iXh84INWDNGXyRGp6r+hmbZI7yLL6nW1v
- NFGOB9pmhu+EPNoUtgYDplbnfh4CpO8YmsvdBacR/leipEW0hBizAKlxuTSSNJKUHF9q
- wu7gEkXi5G/SHSeURMidHt3XIUnW3e25+P2g6lbrQcmOkNaPHy7vOVFG/5+znHXUsfB5
- EcFI1ZYnSypBy2aMBQ5hpN6QOQG2gPB7UvgoX2mxV9EzT6G2vDXWbpAPUb51zkZElRxY
- i4hzpkD16MLuFqs99TuYmW6Xs0fW9oT4pAwAulULffpgcQ0rNXkiK3ztsqw4jB9NpxN5
- kmEA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=OyhiovIjMKJKHgMLTz6N4LKz78G59FFqcnuV5MZGZ7g=;
- b=lurXeGi5gKQU89HeHoXYnOIc9aOuYTWhHE+w3oJyhkaXj5sjAejR7DTa10brE7X7kJ
- 5Xhl8Bza95T17zunP17us1qZERcdyw8+V+VhyCRj0HZCrO4G7c2R0BFpg48GDRI/bNSp
- mUtfuNowwP7DpfYWWn6FugVb46xPyAH7SZkOY+rZ6fsjyfpJ8jzwadXslp7hJoTChlgC
- JpsJ4kLmwlQI/IAucMc+lsz42yvx+k8Ruu+IkEUVbwBtlONg11gS/8B9q8zX22mKUV+K
- VOHnmJ/N4oh6BH5lfKCTKzj5YPa2Cdz2/xESu05agY1a+ryoUQG5Nu0NmcHYBLl+J6gj
- k3Og==
-X-Gm-Message-State: APjAAAWKdDi9Q5QKmVgCbRVMwQE3hj1ZIg1o7rVxII/G3G2A+3WPC+/z
- vUHsB7qvCpoom+SuXZP3a5w=
-X-Google-Smtp-Source: APXvYqxixmzgMnwhcFlpG5MIPu2a/Xxj3oqukzbAtE+PBBuzn+jVii6DIxIkfpt8Rab8+J68yofhww==
-X-Received: by 2002:adf:df0d:: with SMTP id y13mr26056785wrl.342.1570484106216; 
- Mon, 07 Oct 2019 14:35:06 -0700 (PDT)
-Received: from [10.67.50.53] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id o4sm33715301wre.91.2019.10.07.14.34.54
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 07 Oct 2019 14:35:05 -0700 (PDT)
-Subject: Re: [PATCH v6 0/6] KASan for arm
-To: Arnd Bergmann <arnd@arndb.de>
-References: <20190617221134.9930-1-f.fainelli@gmail.com>
- <CACRpkdbqW2kJNdPi6JPupaHA_qRTWG-MsUxeCz0c38MRujOSSA@mail.gmail.com>
- <0ba50ae2-be09-f633-ab1f-860e8b053882@broadcom.com>
- <CAK8P3a2QBQrBU+bBBL20kR+qJfmspCNjiw05jHTa-q6EDfodMg@mail.gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <fbdc3788-3a24-2885-b61b-8480e8464a51@gmail.com>
-Date: Mon, 7 Oct 2019 14:34:45 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <CAK8P3a2QBQrBU+bBBL20kR+qJfmspCNjiw05jHTa-q6EDfodMg@mail.gmail.com>
+ id 1iHag6-0004j5-VE
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 21:36:28 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=nKR/PS2geALwHm/hD3c4gqKaZWTcmrnCCYx9nallOPhwWMFvRqIEVwixumTsKuvN/3/NmxV5kBpM92InTzLp9ml3+B8RrSKeLRiANbO5Hd4Rkbin+KwIOIDMu4io8SUgZCBZlQwYhyae124EvdOGVgVDRoqEgxcFWkM6KmicW/hQNJMpfJFP94VX4Zt+UuRlhPPlvrU+4Akl7sxDQRRv7Hd1NIczK8sJZC4cswK8A48OaN9iNyhaHc+/IxI3kQvqPHWFemEU0PKgdCE4etArq2vCBeu+HWJ/jAEqybSebtoyW3mQWLx+4NvmfmV9/uZ7eCSi9LVkgmgazwvp/c5IRw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ei25beopCtm1f87mBuCBJIwvy5p0S1xRGw56QyoxYRI=;
+ b=D0r8FgC2cTeNZBB7SqANVIFUgX6Ckjqx/IEMErzt83Ryz4JDZLn3Xf8agIqxl6NU7PQKX2k+1vhk2YAk3m+3nwL4JqVpqB929yoojwiKRwdm+SdCr74cMMvWrJQB01qqub58ZDMFU4QWM7IK99qRQVRYubEbl0DitdPkdt1Nr5xYNRCC1jx0nTJM4qvtlo5kaeOlNDiHtPPBfg+36R4BxrP3BCspkuH2G59FCcpYgrxrVOTuhf1BgJDtE1dVMVR2zWhgGJX8zcB1shAKx41nYqIRw77LNEQdG1Be5DJGgIaxAuuLIOO+dUrSmYCczwH+p9uiE+WitaXexh4PVxpU0Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ei25beopCtm1f87mBuCBJIwvy5p0S1xRGw56QyoxYRI=;
+ b=aLdYhfC9mozXwUWUi5QKcJVD0aZYjNt9ao4+IqqKrwWdFhSjmKeO1PSZLe6f+3aZlFEvyf8DwEkflSfch1juvRZnrWqOOBfVW8I4iOxbdliwBNne/XYTY01WTpzUN2dp2W3eplaUZwrI3QxvSqWrrngYAgkfvoDdoVJtTDWv1jo=
+Received: from VE1PR04MB6687.eurprd04.prod.outlook.com (20.179.234.30) by
+ VE1PR04MB6749.eurprd04.prod.outlook.com (10.255.118.22) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2327.24; Mon, 7 Oct 2019 21:36:24 +0000
+Received: from VE1PR04MB6687.eurprd04.prod.outlook.com
+ ([fe80::c93:c279:545b:b6b6]) by VE1PR04MB6687.eurprd04.prod.outlook.com
+ ([fe80::c93:c279:545b:b6b6%3]) with mapi id 15.20.2327.025; Mon, 7 Oct 2019
+ 21:36:24 +0000
+From: Leo Li <leoyang.li@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>, Ran Wang <ran.wang_1@nxp.com>
+Subject: RE: [PATCH] arm64: dts: lx2160a: Correct CPU core idle state name
+Thread-Topic: [PATCH] arm64: dts: lx2160a: Correct CPU core idle state name
+Thread-Index: AQHVbSoQgKuB1YvE4E++c/2kBBS2fqdPMKwAgACjaGA=
+Date: Mon, 7 Oct 2019 21:36:24 +0000
+Message-ID: <VE1PR04MB66874D4C179BA0AD091AC3DB8F9B0@VE1PR04MB6687.eurprd04.prod.outlook.com>
+References: <20190917073357.5895-1-ran.wang_1@nxp.com>
+ <20191007115104.GF7150@dragon>
+In-Reply-To: <20191007115104.GF7150@dragon>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leoyang.li@nxp.com; 
+x-originating-ip: [64.157.242.222]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 2696280a-3eed-48a3-a3f3-08d74b6e670c
+x-ms-office365-filtering-ht: Tenant
+x-ms-traffictypediagnostic: VE1PR04MB6749:|VE1PR04MB6749:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VE1PR04MB6749E86F6E03C13BB4279AEA8F9B0@VE1PR04MB6749.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:462;
+x-forefront-prvs: 01834E39B7
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(396003)(376002)(136003)(39860400002)(346002)(13464003)(199004)(189003)(186003)(4326008)(2906002)(6116002)(26005)(55016002)(6436002)(33656002)(64756008)(66946007)(102836004)(66556008)(66476007)(6636002)(76116006)(25786009)(6246003)(66446008)(71200400001)(9686003)(229853002)(7696005)(71190400001)(99286004)(76176011)(305945005)(3846002)(74316002)(53546011)(66066001)(7736002)(256004)(14444005)(6506007)(110136005)(11346002)(446003)(54906003)(476003)(14454004)(486006)(316002)(5660300002)(8936002)(8676002)(81156014)(81166006)(478600001)(52536014)(86362001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6749;
+ H:VE1PR04MB6687.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: vfToijxhyQ7YVdx+vuxNSbRq5mLgIbI7WlUPrSNFiCvTe8lC7gnCi00Gy0XgvdlQqQoyIy/1gnyDiOnx1kPcn38JpqVmjUmw9YnkIrQe9QPH6+At+1F6qIfLrwEys/4I+Imj9y46qGveRRSkSOwVAK3m9NeSVwTku2qbcDL9tRYd1ZVleEkjAJ89MGHHXMeqY3ZgW6kV3T0iO8tuKPrlkhWoh9Xe7W2P3vAXNAhJfAgH7V+1oLDCtcP9gkq6r4UwWMsb8B3+Qt1+qx0HPPdS5VUhlmt42fhut93qfrKiZPT2nq/EULS3pR12vTPEuzgOizOGowBKW3y2yBh3ycrxWUNJs3eRNknUSUHxgaEcj4G6mBA1qUZsGuEEpJOCQqcxAfEN5JE0jB2PdJlx2BTaX2XmICv/QSl68hme329+1Oc=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2696280a-3eed-48a3-a3f3-08d74b6e670c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Oct 2019 21:36:24.2332 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: cKe6iu2w3Vt4s2rekkmEKMey0TeksJLfy1WtXEEYWZCJ2QsKbHqo/o9xTLhGQN+VSpklnZWnhq4XUu4FndeS2Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6749
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_143508_730280_4533A113 
-X-CRM114-Status: GOOD (  21.12  )
+X-CRM114-CacheID: sfid-20191007_143627_006411_EFC1CF29 
+X-CRM114-Status: GOOD (  14.56  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ no trust [40.107.15.85 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.15.85 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -161,82 +123,209 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Michal Hocko <mhocko@suse.com>, Julien Thierry <julien.thierry@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Christoffer Dall <christoffer.dall@arm.com>,
- David Howells <dhowells@redhat.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Andrey Ryabinin <ryabinin.a.a@gmail.com>,
- Alexander Potapenko <glider@google.com>, kvmarm@lists.cs.columbia.edu,
- Florian Fainelli <f.fainelli@gmail.com>, Jonathan Corbet <corbet@lwn.net>,
- Abbott Liu <liuwenliang@huawei.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Russell King <linux@armlinux.org.uk>, kasan-dev <kasan-dev@googlegroups.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- drjones@redhat.com, Vladimir Murzin <vladimir.murzin@arm.com>,
- Kees Cook <keescook@chromium.org>, Marc Zyngier <marc.zyngier@arm.com>,
- Andre Przywara <andre.przywara@arm.com>,
- Philippe Ombredanne <pombredanne@nexb.com>, Jinbum Park <jinb.park7@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Dmitry Vyukov <dvyukov@google.com>,
- Nicolas Pitre <nico@fluxnic.net>, Greg KH <gregkh@linuxfoundation.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Landley <rob@landley.net>, philip@cog.systems,
- Andrew Morton <akpm@linux-foundation.org>,
- Thomas Garnier <thgarnie@google.com>,
- "Kirill A . Shutemov" <kirill.shutemov@linux.intel.com>
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/18/19 12:51 AM, Arnd Bergmann wrote:
-> On Thu, Jul 11, 2019 at 7:00 PM Florian Fainelli
-> <florian.fainelli@broadcom.com> wrote:
->> On 7/2/19 2:06 PM, Linus Walleij wrote:
+
+
+> -----Original Message-----
+> From: Shawn Guo <shawnguo@kernel.org>
+> Sent: Monday, October 7, 2019 6:51 AM
+> To: Ran Wang <ran.wang_1@nxp.com>; Leo Li <leoyang.li@nxp.com>
+> Cc: Rob Herring <robh+dt@kernel.org>; Mark Rutland
+> <mark.rutland@arm.com>; linux-arm-kernel@lists.infradead.org;
+> devicetree@vger.kernel.org; linux-kernel@vger.kernel.org
+> Subject: Re: [PATCH] arm64: dts: lx2160a: Correct CPU core idle state name
 > 
->>
->> Great, thanks a lot for taking a look. FYI, I will be on holiday from
->> July 19th till August 12th, if you think you have more feedback between
->> now and then, I can try to pick it up and submit a v7 with that feedback
->> addressed, or it will happen when I return, or you can pick it up if you
->> refer, all options are possible!
->>
->> @Arnd, should we squash your patches in as well?
+> On Tue, Sep 17, 2019 at 03:33:56PM +0800, Ran Wang wrote:
+> > lx2160a support PW15 but not PW20, correct name to avoid confusing.
+> >
+> > Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
 > 
-> Yes, please do. I don't remember if I sent you all of them already,
-> here is the list of patches that I have applied locally on top of your
-> series to get a clean randconfig build:
+> Leo, agree?
+
+Ya.  The statement is correct.
+
+Acked-by: Li Yang <leoyang.li@nxp.com>
+
 > 
-> 123c3262f872 KASAN: push back KASAN_STACK to clang-10
-
-This one seems to have received some feedback, not sure if it was
-addressed or not in a subsequent patch?
-
-> d63dd9e2afd9 [HACK] ARM: disable KASAN+XIP_KERNEL
-
-That one has been squashed, we could always lift the XIP_KERNEL
-restriction later once someone with suitable hardware confirms it works.
-
-> 879eb3c22240 kasan: increase 32-bit stack frame warning limit
-
-That one should be pushed separately.
-
-> 053555034bdf kasan: disable CONFIG_KASAN_STACK with clang on arm32
-
-This one I did not take based on Linus' feedback that is breaks booting
-on his RealView board.
-
-> 6c1a78a448c2 ARM: fix kasan link failures
-
-This one was squashed relevant and will be sent out as v7.
--- 
-Florian
+> Shawn
+> 
+> > ---
+> >  arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi | 36 +++++++++++++------
+> -------
+> >  1 file changed, 18 insertions(+), 18 deletions(-)
+> >
+> > diff --git a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
+> b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
+> > index 408e0ec..b032f38 100644
+> > --- a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
+> > +++ b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
+> > @@ -33,7 +33,7 @@
+> >  			i-cache-line-size = <64>;
+> >  			i-cache-sets = <192>;
+> >  			next-level-cache = <&cluster0_l2>;
+> > -			cpu-idle-states = <&cpu_pw20>;
+> > +			cpu-idle-states = <&cpu_pw15>;
+> >  		};
+> >
+> >  		cpu@1 {
+> > @@ -49,7 +49,7 @@
+> >  			i-cache-line-size = <64>;
+> >  			i-cache-sets = <192>;
+> >  			next-level-cache = <&cluster0_l2>;
+> > -			cpu-idle-states = <&cpu_pw20>;
+> > +			cpu-idle-states = <&cpu_pw15>;
+> >  		};
+> >
+> >  		cpu@100 {
+> > @@ -65,7 +65,7 @@
+> >  			i-cache-line-size = <64>;
+> >  			i-cache-sets = <192>;
+> >  			next-level-cache = <&cluster1_l2>;
+> > -			cpu-idle-states = <&cpu_pw20>;
+> > +			cpu-idle-states = <&cpu_pw15>;
+> >  		};
+> >
+> >  		cpu@101 {
+> > @@ -81,7 +81,7 @@
+> >  			i-cache-line-size = <64>;
+> >  			i-cache-sets = <192>;
+> >  			next-level-cache = <&cluster1_l2>;
+> > -			cpu-idle-states = <&cpu_pw20>;
+> > +			cpu-idle-states = <&cpu_pw15>;
+> >  		};
+> >
+> >  		cpu@200 {
+> > @@ -97,7 +97,7 @@
+> >  			i-cache-line-size = <64>;
+> >  			i-cache-sets = <192>;
+> >  			next-level-cache = <&cluster2_l2>;
+> > -			cpu-idle-states = <&cpu_pw20>;
+> > +			cpu-idle-states = <&cpu_pw15>;
+> >  		};
+> >
+> >  		cpu@201 {
+> > @@ -113,7 +113,7 @@
+> >  			i-cache-line-size = <64>;
+> >  			i-cache-sets = <192>;
+> >  			next-level-cache = <&cluster2_l2>;
+> > -			cpu-idle-states = <&cpu_pw20>;
+> > +			cpu-idle-states = <&cpu_pw15>;
+> >  		};
+> >
+> >  		cpu@300 {
+> > @@ -129,7 +129,7 @@
+> >  			i-cache-line-size = <64>;
+> >  			i-cache-sets = <192>;
+> >  			next-level-cache = <&cluster3_l2>;
+> > -			cpu-idle-states = <&cpu_pw20>;
+> > +			cpu-idle-states = <&cpu_pw15>;
+> >  		};
+> >
+> >  		cpu@301 {
+> > @@ -145,7 +145,7 @@
+> >  			i-cache-line-size = <64>;
+> >  			i-cache-sets = <192>;
+> >  			next-level-cache = <&cluster3_l2>;
+> > -			cpu-idle-states = <&cpu_pw20>;
+> > +			cpu-idle-states = <&cpu_pw15>;
+> >  		};
+> >
+> >  		cpu@400 {
+> > @@ -161,7 +161,7 @@
+> >  			i-cache-line-size = <64>;
+> >  			i-cache-sets = <192>;
+> >  			next-level-cache = <&cluster4_l2>;
+> > -			cpu-idle-states = <&cpu_pw20>;
+> > +			cpu-idle-states = <&cpu_pw15>;
+> >  		};
+> >
+> >  		cpu@401 {
+> > @@ -177,7 +177,7 @@
+> >  			i-cache-line-size = <64>;
+> >  			i-cache-sets = <192>;
+> >  			next-level-cache = <&cluster4_l2>;
+> > -			cpu-idle-states = <&cpu_pw20>;
+> > +			cpu-idle-states = <&cpu_pw15>;
+> >  		};
+> >
+> >  		cpu@500 {
+> > @@ -193,7 +193,7 @@
+> >  			i-cache-line-size = <64>;
+> >  			i-cache-sets = <192>;
+> >  			next-level-cache = <&cluster5_l2>;
+> > -			cpu-idle-states = <&cpu_pw20>;
+> > +			cpu-idle-states = <&cpu_pw15>;
+> >  		};
+> >
+> >  		cpu@501 {
+> > @@ -209,7 +209,7 @@
+> >  			i-cache-line-size = <64>;
+> >  			i-cache-sets = <192>;
+> >  			next-level-cache = <&cluster5_l2>;
+> > -			cpu-idle-states = <&cpu_pw20>;
+> > +			cpu-idle-states = <&cpu_pw15>;
+> >  		};
+> >
+> >  		cpu@600 {
+> > @@ -225,7 +225,7 @@
+> >  			i-cache-line-size = <64>;
+> >  			i-cache-sets = <192>;
+> >  			next-level-cache = <&cluster6_l2>;
+> > -			cpu-idle-states = <&cpu_pw20>;
+> > +			cpu-idle-states = <&cpu_pw15>;
+> >  		};
+> >
+> >  		cpu@601 {
+> > @@ -241,7 +241,7 @@
+> >  			i-cache-line-size = <64>;
+> >  			i-cache-sets = <192>;
+> >  			next-level-cache = <&cluster6_l2>;
+> > -			cpu-idle-states = <&cpu_pw20>;
+> > +			cpu-idle-states = <&cpu_pw15>;
+> >  		};
+> >
+> >  		cpu@700 {
+> > @@ -257,7 +257,7 @@
+> >  			i-cache-line-size = <64>;
+> >  			i-cache-sets = <192>;
+> >  			next-level-cache = <&cluster7_l2>;
+> > -			cpu-idle-states = <&cpu_pw20>;
+> > +			cpu-idle-states = <&cpu_pw15>;
+> >  		};
+> >
+> >  		cpu@701 {
+> > @@ -273,7 +273,7 @@
+> >  			i-cache-line-size = <64>;
+> >  			i-cache-sets = <192>;
+> >  			next-level-cache = <&cluster7_l2>;
+> > -			cpu-idle-states = <&cpu_pw20>;
+> > +			cpu-idle-states = <&cpu_pw15>;
+> >  		};
+> >
+> >  		cluster0_l2: l2-cache0 {
+> > @@ -340,9 +340,9 @@
+> >  			cache-level = <2>;
+> >  		};
+> >
+> > -		cpu_pw20: cpu-pw20 {
+> > +		cpu_pw15: cpu-pw15 {
+> >  			compatible = "arm,idle-state";
+> > -			idle-state-name = "PW20";
+> > +			idle-state-name = "PW15";
+> >  			arm,psci-suspend-param = <0x0>;
+> >  			entry-latency-us = <2000>;
+> >  			exit-latency-us = <2000>;
+> > --
+> > 2.7.4
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
