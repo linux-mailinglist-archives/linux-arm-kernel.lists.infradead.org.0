@@ -2,59 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27A40CEE86
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 23:45:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4A40CEE8E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 23:46:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZrfoZIucq4MbokbcBYevhHL9+S6O0uGW/rEj8FLhaEM=; b=H5eEOJhMwVZFoe
-	P/rAVoSfQsusz/n3lCRlrCzwicmBWlKvNlzShfuqUKmhQggU+Q3MnlSLt1FUQYoOXFTpOqsTJD9+l
-	QW6TjxEX0qnI+l50xppFbUfzI/wQ3kEXeewsBzCDbHhFVZwDq6IntZ4rVweG4hrzaJ+3kmBV0Z/zO
-	yIL5ughADTTJdCbh3Ldy2TaMh7IHhhVw9zwF9KdHszjs0dhvSFv+DWjGnr2AXYsETHSSHZziuR5uA
-	MrVY5zzCR8rNYX9plU30k6DASjhS12u8hKEAs/4pwHlKU7RTtPyqFyreWKljJ8KFpeROUzdvZsWgH
-	Byrvh74Ne1EisSWRv4+g==;
+	List-Owner; bh=PyZX5bD89uiDFPzB5+19itGBcNLd5SfI7O/NClmTcRM=; b=gt/NdPbS2Vrw+1
+	tL6/6rnB8O9t1Y86PvgoxzyR0cDLIXsEE4z7sNV/iOQgLzwY2w2agzF3EjwvStQ7Xvo4iSeFO1dZJ
+	em9bxBfODizYlmgWHFZtpPVKBhtZ3U5hd8ZtZT8ui2ULxLgFhcUGxon46lTIq1BL1zp8+nGQdejiZ
+	O1gI/aIqzfJMDK9VWlhE+2NY9vh5CWOyE/MzvptYwYW9STqBh4UC0tYrmh8+GnbNubynnZx74cMdN
+	O4Uwo/P8b7G2ICZfPiZRDGst7REaZ0f0ik2IS4hlz4+btYY9AS6cqng7wbUFQ04Eyhv33edj+BmeU
+	sxpiiB0wBwvwnoctwE3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHaob-00078Y-SK; Mon, 07 Oct 2019 21:45:13 +0000
-Received: from chamillionaire.breakpoint.cc ([2a0a:51c0:0:12e:520::1])
+	id 1iHaqF-0000pv-Fe; Mon, 07 Oct 2019 21:46:55 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHaoK-000778-Ux
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 21:44:58 +0000
-Received: from localhost ([127.0.0.1] helo=flow.W.breakpoint.cc)
- by Chamillionaire.breakpoint.cc with esmtp (Exim 4.92)
- (envelope-from <sebastian@breakpoint.cc>)
- id 1iHaoE-0006R1-VV; Mon, 07 Oct 2019 23:44:51 +0200
-From: Sebastian Andrzej Siewior <sebastian@breakpoint.cc>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 3/3] ARM: Inline locking functions for !PREEMPTION
-Date: Mon,  7 Oct 2019 23:44:39 +0200
-Message-Id: <20191007214439.27891-4-sebastian@breakpoint.cc>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191007214439.27891-1-sebastian@breakpoint.cc>
-References: <20191007214439.27891-1-sebastian@breakpoint.cc>
+ id 1iHaq9-0000pV-74
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 21:46:50 +0000
+Received: by mail-pg1-x544.google.com with SMTP id p1so7233452pgi.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 07 Oct 2019 14:46:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=QXb17KO+aaTb9iSIuGo/6wibZdR0MZ0rDkPqukvilAM=;
+ b=Uu+pR4K3lVtvbqUe+qBy2kwwSW987fMlpT86iMKCGuTNzumfkGvgSvaLPbgBoURd+z
+ eo/xS9U8Vkqx9YrbIGg7WvZoz5oVBhp/PyaAD3k/883nlYImUXWcnznvUgR61KS1qQMS
+ Uf1P6HBgtlmlEUf5fuNWT6GnbzUwQqyKNruL/lpESCRcwmD4NKfjTCWqiNO71ZJTklvr
+ HbDvsa0R7yzCPAPsJkE5n0HTFCZCA2KTbnnEmZqzy7hvxhQbNSRSDwxi9f+dtZbBrOAZ
+ IWS02u65LnOicJtK2m73IiGbl1vIahncmXXHtLAMp38/Fk9dypnSq6N9qR0LHloHOjcH
+ 7KBQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=QXb17KO+aaTb9iSIuGo/6wibZdR0MZ0rDkPqukvilAM=;
+ b=hKvLs+uf6wZzWfymWPSukAJLRDNSEm7Tv/2bX5OPNUGCNmb9nL6xT4v0PeuSlZUG4+
+ kvVEYg0XFt423pBy/u4IdcjQ+3UafzPQgLHfpr0yanUJqUn2h7yCdRQGSIGfypRMw639
+ wVq0kaO664Z9iQrWaPInYH0+aWHw35beYcP86bmUUvtNiHi34+1xOdlHl1JTHnmBJAvo
+ ZrDssCt8Fn72qs+c42rGn+KCZbUcdTp9DW+4cueBs+2UXbuDGe3ZcDx5MIyFxpvTfyzo
+ LSsc49vfEOSeY2Y+C3MB9kK7J1O8FkCZ/ZHOxUNUsQvFWUfG1HvQ+CX0HC0973yo7n9w
+ c+4Q==
+X-Gm-Message-State: APjAAAWPJ0vYLunwXVLatJ2pSSH9N5znWlbF2rtzAhafllpz5aolkoNL
+ MpkpGddjXnMDG5PKZsRwnpiXqXJVW9lbnFXj8qr1Tg==
+X-Google-Smtp-Source: APXvYqw+0il7qlP4A2/lUfKoYuXJsc5yiAMjSSfJLRuXEdwLXtGPjG1nzT2ac7ISvwG4aa3gbooME1RCU4UO8GVgTYY=
+X-Received: by 2002:a62:798e:: with SMTP id u136mr35718450pfc.3.1570484808071; 
+ Mon, 07 Oct 2019 14:46:48 -0700 (PDT)
 MIME-Version: 1.0
-X-Breakpoint-Spam-Score: -0.2
-X-Breakpoint-Spam-Level: /
-X-Breakpoint-Spam-Status: No , -0.2 points, 5.0 required, ALL_TRUSTED=-1,
- UPPERCASE_50_75=0.791
+References: <20191007201452.208067-1-samitolvanen@google.com>
+ <CAKwvOdmaMaO-Gpv2x0CWG+CRUCNKbNWJij97Jr0LaRaZXjAiTA@mail.gmail.com>
+ <CABCJKufxncBPOx6==57asbMF_On=g1sZAv+w6RnqHJFSwOSeTw@mail.gmail.com>
+In-Reply-To: <CABCJKufxncBPOx6==57asbMF_On=g1sZAv+w6RnqHJFSwOSeTw@mail.gmail.com>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Mon, 7 Oct 2019 14:46:36 -0700
+Message-ID: <CAKwvOd=k5iE8L5xbxwYDF=hSftqUXDdpgKYBDBa35XOkAx3d0w@mail.gmail.com>
+Subject: Re: [PATCH] arm64: lse: fix LSE atomics with LLVM's integrated
+ assembler
+To: Sami Tolvanen <samitolvanen@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_144457_000254_C780BE9F 
-X-CRM114-Status: UNSURE (   9.85  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.5 (-)
+X-CRM114-CacheID: sfid-20191007_144649_279745_798C9620 
+X-CRM114-Status: GOOD (  15.10  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.5 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a0a:51c0:0:12e:520:0:0:1 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,65 +99,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Peter Zijlstra <peterz@infradead.org>,
- Russell King <linux@armlinux.org.uk>,
- Sebastian Andrzej Siewior <sebastian@breakpoint.cc>,
- Ingo Molnar <mingo@redhat.com>, Waiman Long <longman@redhat.com>,
- Will Deacon <will@kernel.org>
+Cc: Kees Cook <keescook@chromium.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, LKML <linux-kernel@vger.kernel.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Andrew Murray <andrew.murray@arm.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On non-preemptive kernels, the locking instruction is less than 64 bytes
-and it makes sense to inline it. With PREEMPTION the kernel becomes very
-big if the locks are inlined.
+On Mon, Oct 7, 2019 at 2:24 PM Sami Tolvanen <samitolvanen@google.com> wrote:
+>
+> On Mon, Oct 7, 2019 at 1:28 PM 'Nick Desaulniers' via Clang Built
+> Linux <clang-built-linux@googlegroups.com> wrote:
+> > I tried adding `.arch armv8-a+lse` directives to all of the inline asm:
+> > https://github.com/ClangBuiltLinux/linux/issues/573#issuecomment-535098996
+>
+> Yes, I had a similar patch earlier. I feel like using a command line
+> parameter here is cleaner, but I'm fine with either solution.
+>
+> > One thing to be careful about is that blankets the entire kernel in
+> > `+lse`, allowing LSE atomics to be selected at any point.
+>
+> Is that a problem? The current code allows LSE instructions with gcc
+> in any file that includes <asm/lse.h>, which turns out to be quite a
+> few places.
 
-Signed-off-by: Sebastian Andrzej Siewior <sebastian@breakpoint.cc>
----
- arch/arm/Kconfig | 26 ++++++++++++++++++++++++++
- 1 file changed, 26 insertions(+)
+I may be mistaken, but I don't think inline asm directives allow the C
+compiler to change what instructions it selects for C code, but
+command line arguments to the C compiler do.
 
-diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-index 7eba89bb45755..c1ee04c209e6e 100644
---- a/arch/arm/Kconfig
-+++ b/arch/arm/Kconfig
-@@ -26,6 +26,32 @@ config ARM
- 	select ARCH_HAS_TICK_BROADCAST if GENERIC_CLOCKEVENTS_BROADCAST
- 	select ARCH_HAVE_CUSTOM_GPIO_H
- 	select ARCH_HAS_GCOV_PROFILE_ALL
-+	select ARCH_INLINE_READ_LOCK if !PREEMPTION
-+	select ARCH_INLINE_READ_LOCK_BH if !PREEMPTION
-+	select ARCH_INLINE_READ_LOCK_IRQ if !PREEMPTION
-+	select ARCH_INLINE_READ_LOCK_IRQSAVE if !PREEMPTION
-+	select ARCH_INLINE_READ_UNLOCK if !PREEMPTION
-+	select ARCH_INLINE_READ_UNLOCK_BH if !PREEMPTION
-+	select ARCH_INLINE_READ_UNLOCK_IRQ if !PREEMPTION
-+	select ARCH_INLINE_READ_UNLOCK_IRQRESTORE if !PREEMPTION
-+	select ARCH_INLINE_WRITE_LOCK if !PREEMPTION
-+	select ARCH_INLINE_WRITE_LOCK_BH if !PREEMPTION
-+	select ARCH_INLINE_WRITE_LOCK_IRQ if !PREEMPTION
-+	select ARCH_INLINE_WRITE_LOCK_IRQSAVE if !PREEMPTION
-+	select ARCH_INLINE_WRITE_UNLOCK if !PREEMPTION
-+	select ARCH_INLINE_WRITE_UNLOCK_BH if !PREEMPTION
-+	select ARCH_INLINE_WRITE_UNLOCK_IRQ if !PREEMPTION
-+	select ARCH_INLINE_WRITE_UNLOCK_IRQRESTORE if !PREEMPTION
-+	select ARCH_INLINE_SPIN_TRYLOCK if !PREEMPTION
-+	select ARCH_INLINE_SPIN_TRYLOCK_BH if !PREEMPTION
-+	select ARCH_INLINE_SPIN_LOCK if !PREEMPTION
-+	select ARCH_INLINE_SPIN_LOCK_BH if !PREEMPTION
-+	select ARCH_INLINE_SPIN_LOCK_IRQ if !PREEMPTION
-+	select ARCH_INLINE_SPIN_LOCK_IRQSAVE if !PREEMPTION
-+	select ARCH_INLINE_SPIN_UNLOCK if !PREEMPTION
-+	select ARCH_INLINE_SPIN_UNLOCK_BH if !PREEMPTION
-+	select ARCH_INLINE_SPIN_UNLOCK_IRQ if !PREEMPTION
-+	select ARCH_INLINE_SPIN_UNLOCK_IRQRESTORE if !PREEMPTION
- 	select ARCH_KEEP_MEMBLOCK if HAVE_ARCH_PFN_VALID || KEXEC
- 	select ARCH_MIGHT_HAVE_PC_PARPORT
- 	select ARCH_NO_SG_CHAIN if !ARM_HAS_SG_CHAIN
+Grepping the kernel for some of the functions and memory orderings
+turns up a few hits:
+https://gcc.gnu.org/onlinedocs/gcc/_005f_005fatomic-Builtins.html
+
+I'm worried that one of these might lower to LSE atomics without
+ALTERNATIVE guards by blanketing all C code with `-march=armv8-a+lse`.
+But I did just boot test this patch but using GAS in QEMU (on a -cpu
+cortex-a72 which I suspect should not have lse instructions by default
+IIUC), FWIW.
+Tested-by: Nick Desaulniers <ndesaulniers@google.com>
+Maybe the maintainers have more thoughts?
 -- 
-2.23.0
-
+Thanks,
+~Nick Desaulniers
 
 _______________________________________________
 linux-arm-kernel mailing list
