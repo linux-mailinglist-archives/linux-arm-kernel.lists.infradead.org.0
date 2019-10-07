@@ -2,66 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E202CDB28
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 06:41:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94A13CDB4A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 07:16:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5hkLhuojgRE7B9MMByHmgj8es8E4/+2OrgznBRW6G7c=; b=h1rwdQs4VQt9S8
-	hlwukiAwUkx8MGymp1BRT8OFF2WxI4XadGJ3SlYbqoUMzUCumJy7Ivs+8oKRumhufWvbsJBHqqdRR
-	klKD9MdQ5AWLXLexH6oqv72DyD7lAEa+29JT4DQwC0MQeiQRpA3Fwdw91dIji5/HKDBbkIqnfAWcR
-	yyhlZ/7QQJBkEXlaPnU6yJqE3Ap87sSLP6jIHaQPonR0fld+iZmos2WzjhswFTkPlQiw2Nbd4373H
-	zJN1OsDAc8e85VqnTFmUdTfbI2k3vmLwBmbOGhmNSViGnXj7sGisIjNW81Rl+0IJkDxh7GSYzaPWZ
-	Qfj85CJJokwjbFC528+Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=CISxgQ9y1OhPPKg2INACUoFLohi2h1uR1VnTrAEtSP8=; b=V/d
+	BUSryCrMWibW6e9i32xETW6vvoShQY7xBYIO6a46Vu6vFmxyLzuvylAtGWJk6HPZRSlSgUxvf25Oq
+	6HfSPpHcOuh+hhS4Gs7l7FrdnybRZXXIwJZGzphTWKJwXH9rB5Xy5ThQZEhGd50Rfmo6lo7n1yLII
+	am7jP2ssOA1QzV/wiJN9RjMpEQ92WLiaMshZb2DHEVDv51gv7N/aMrwR3XXG8qzGDSZAwTdGm6326
+	abV6UgEJ16tUpeQp7YEC9sV4fZPThNxqjitR/S6pD+ZHzYiXJ/TqNMD1GvIdEwcqZlgFPZG4rTyru
+	KI+BTvABXNl5QQKq9sGGnS3/KLAs8fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHKpS-0002RS-Dw; Mon, 07 Oct 2019 04:41:02 +0000
-Received: from mail.andi.de1.cc ([2a01:238:4321:8900:456f:ecd6:43e:202c])
+	id 1iHLNR-00054n-RF; Mon, 07 Oct 2019 05:16:09 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHKpJ-0002R0-Rk
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 04:40:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=kemnade.info; s=20180802; h=Content-Transfer-Encoding:Content-Type:
- MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=XIkkXOn84faRoqcKhr8x/joSlFB/KtZXrqxZQ1zMgLc=; b=ddc/42LjsSZUwkJQodE8URGFnh
- xtrta8+baKq6fdcZXgVkQLdRu6kh+0R7VuC8KOfskrqQnIJEkNMWcV6MTeBpwEbRrPRXAUoBlgHVm
- K9iIozKZEdbbQ3/2Y33fNI/s6P0rf7yRztaae3dMdyRi9U24/VwxYbFgGV7+ZTwnJ05g=;
-Received: from p200300ccff0a88001a3da2fffebfd33a.dip0.t-ipconnect.de
- ([2003:cc:ff0a:8800:1a3d:a2ff:febf:d33a] helo=aktux)
- by mail.andi.de1.cc with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <andreas@kemnade.info>)
- id 1iHKp3-0006vp-II; Mon, 07 Oct 2019 06:40:42 +0200
-Date: Mon, 7 Oct 2019 06:40:35 +0200
-From: Andreas Kemnade <andreas@kemnade.info>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Subject: Re: [Letux-kernel] [PATCH] ARM: omap2plus_defconfig: Fix selected
- panels after generic panel changes
-Message-ID: <20191007064035.72016c78@aktux>
-In-Reply-To: <20191006223958.67725fdf@aktux>
-References: <20191003165539.50318-1-tony@atomide.com>
- <03ca02c1-2816-17cd-03fd-5b72e5d0ec96@ti.com>
- <39E48EC6-65FE-419B-BBE8-E72CB44B517D@goldelico.com>
- <20191006145348.GD4740@pendragon.ideasonboard.com>
- <20191006223958.67725fdf@aktux>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-MIME-Version: 1.0
-X-Spam-Score: -0.6 (/)
+ id 1iHLNK-00053l-JX; Mon, 07 Oct 2019 05:16:04 +0000
+Received: by mail-wr1-x444.google.com with SMTP id r3so13529936wrj.6;
+ Sun, 06 Oct 2019 22:15:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=wc8zArjUNgVy/s50wiyO1NvyueOi4Jj56svA15IfJrM=;
+ b=JShsrn52XpdHu4hzqho33vlm/BLTIB0ivbt2uiZYxukY3K1yVykXHD0hQV2AtMlVrx
+ x4/ZJz+IX+gDOClpbBgREe5FW11lbD2bbYNh08gfeCdYssDP7b9P+VomVnt0sOQoXXSK
+ 4lYhsb8kc/DrS2+j92/giE0aFuTkP79hFCrIoVk/sSpv5+YpsLmiunm6L3SEae8+y+aR
+ UPLxTLhFfhF67xPlW+kFrYaX6HzPyl9zWAKc1ogJtTZ1JRm+qOGaEs1TKP01dTZHdgpg
+ WOLyWa23VwUJZZisFOoh0eQ13smEMog1px57lMXij29uhjpxAjj/R+d2ipurGHDpXcoE
+ jPMA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=wc8zArjUNgVy/s50wiyO1NvyueOi4Jj56svA15IfJrM=;
+ b=LvC7AfD6Tw8f6Jn51vZemkHVKoA4aukbCThOA0JSTIPurdxZP8f0jb2plCz/P6tGPG
+ d5EjCoqR2ORzTiuhKgvRauq+DVZoxBtvrK8bHBQhI4Avnx0zVgLC/nxkTjVBJDUQ68Sr
+ n5dKoM1oz0fp8hgh+yjPkuC8ia7VRd3o+8FZUJyWNEtkVH6DdPFB98vmnbiPUE7djaQ5
+ HTMiSjlin5+s77iUcPW4dJ4JDLxL7SxSjlAUywf1vx/qXOcUykUBTfK3rDESAWSC1J+j
+ rwL958qSbjxlsnZ7kQULDN0Vs+zwo+G1QAovD0FPfJ2J9pbQ6cYQe8YdSgYPJT/7Hp02
+ 5+JA==
+X-Gm-Message-State: APjAAAWp07aXaCnB/K32JLiHgrUZ/s10JHO7yEGCI5CeMhbJoZYuUqtC
+ 6hGb/AFYBGRcbG5ZlxKgXH4=
+X-Google-Smtp-Source: APXvYqwzo0yTz3gSyrODu8GSaSVC/7ZRDoAU4U46fMeNIkG2Z/7Iqe/R78CRVGTLZSok+sa49AnwLQ==
+X-Received: by 2002:a5d:6a09:: with SMTP id m9mr19624526wru.12.1570425358185; 
+ Sun, 06 Oct 2019 22:15:58 -0700 (PDT)
+Received: from localhost.localdomain ([94.204.252.234])
+ by smtp.gmail.com with ESMTPSA id s12sm26655859wra.82.2019.10.06.22.15.55
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Sun, 06 Oct 2019 22:15:57 -0700 (PDT)
+From: Christian Hewitt <christianshewitt@gmail.com>
+To: Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] soc: amlogic: meson-gx-socinfo: Add S905X3 ID for VIM3L
+Date: Mon,  7 Oct 2019 09:15:07 +0400
+Message-Id: <1570425307-3231-1-git-send-email-christianshewitt@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191006_214054_195597_F858EEA9 
-X-CRM114-Status: GOOD (  21.30  )
+X-CRM114-CacheID: sfid-20191006_221602_642286_B763196B 
+X-CRM114-Status: UNSURE (   8.11  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (christianshewitt[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -80,122 +94,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
- Tony Lindgren <tony@atomide.com>, Jyri Sarha <jsarha@ti.com>,
- Tomi Valkeinen <tomi.valkeinen@ti.com>,
- Linux-OMAP <linux-omap@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Christian Hewitt <christianshewitt@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 6 Oct 2019 22:39:58 +0200
-Andreas Kemnade <andreas@kemnade.info> wrote:
+[    0.086470] soc soc0: Amlogic Meson SM1 (S905X3) Revision 2b:c (b0:2) Detected
 
-> On Sun, 6 Oct 2019 17:53:48 +0300
-> Laurent Pinchart <laurent.pinchart@ideasonboard.com> wrote:
-> 
-> > Hi Nikolaus,
-> > 
-> > On Sat, Oct 05, 2019 at 12:50:37PM +0200, H. Nikolaus Schaller wrote:  
-> > > > Am 04.10.2019 um 10:41 schrieb Tomi Valkeinen <tomi.valkeinen@ti.com>:
-> > > > 
-> > > > On 03/10/2019 19:55, Tony Lindgren wrote:    
-> > > >> The old omapdrm panels got removed for v5.4 in favor of generic panels,
-> > > >> and the Kconfig options changed. Let's update omap2plus_defconfig
-> > > >> accordingly so the same panels are still enabled.
-> > > >> Cc: Jyri Sarha <jsarha@ti.com>
-> > > >> Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-> > > >> Cc: Tomi Valkeinen <tomi.valkeinen@ti.com>
-> > > >> Signed-off-by: Tony Lindgren <tony@atomide.com>
-> > > >> ---
-> > > >>  arch/arm/configs/omap2plus_defconfig | 12 ++++++------
-> > > >>  1 file changed, 6 insertions(+), 6 deletions(-)
-> > > >> diff --git a/arch/arm/configs/omap2plus_defconfig b/arch/arm/configs/omap2plus_defconfig
-> > > >> --- a/arch/arm/configs/omap2plus_defconfig
-> > > >> +++ b/arch/arm/configs/omap2plus_defconfig
-> > > >> @@ -356,14 +356,14 @@ CONFIG_DRM_OMAP_CONNECTOR_HDMI=m
-> > > >>  CONFIG_DRM_OMAP_CONNECTOR_ANALOG_TV=m
-> > > >>  CONFIG_DRM_OMAP_PANEL_DPI=m
-> > > >>  CONFIG_DRM_OMAP_PANEL_DSI_CM=m
-> > > >> -CONFIG_DRM_OMAP_PANEL_SONY_ACX565AKM=m
-> > > >> -CONFIG_DRM_OMAP_PANEL_LGPHILIPS_LB035Q02=m
-> > > >> -CONFIG_DRM_OMAP_PANEL_SHARP_LS037V7DW01=m
-> > > >> -CONFIG_DRM_OMAP_PANEL_TPO_TD028TTEC1=m
-> > > >> -CONFIG_DRM_OMAP_PANEL_TPO_TD043MTEA1=m
-> > > >> -CONFIG_DRM_OMAP_PANEL_NEC_NL8048HL11=m
-> > > >>  CONFIG_DRM_TILCDC=m
-> > > >>  CONFIG_DRM_PANEL_SIMPLE=m
-> > > >> +CONFIG_DRM_PANEL_LG_LB035Q02=m
-> > > >> +CONFIG_DRM_PANEL_NEC_NL8048HL11=m
-> > > >> +CONFIG_DRM_PANEL_SHARP_LS037V7DW01=m
-> > > >> +CONFIG_DRM_PANEL_SONY_ACX565AKM=m
-> > > >> +CONFIG_DRM_PANEL_TPO_TD028TTEC1=m
-> > > >> +CONFIG_DRM_PANEL_TPO_TD043MTEA1=m
-> > > >>  CONFIG_FB=y
-> > > >>  CONFIG_FIRMWARE_EDID=y
-> > > >>  CONFIG_FB_MODE_HELPERS=y    
-> > > > 
-> > > > Sorry, I didn't remember to update these. Some additions:
-> > > > 
-> > > > These can be dropped, they no longer exist:
-> > > > 
-> > > > CONFIG_DRM_OMAP_ENCODER_TFP410=m
-> > > > CONFIG_DRM_OMAP_CONNECTOR_DVI=m
-> > > > CONFIG_DRM_OMAP_PANEL_DPI=m    
-> > > 
-> > > After being hit by the __always_inline issue [1] I am now
-> > > back with being able to test v5.4-rc1.
-> > > 
-> > > Now this patch fixes the build problem, but we still have
-> > > one: panel drivers are no longer automatically loaded at
-> > > boot. We now need to manually modprobe them.
-> > > 
-> > > This has been observed with GTA04 (TD028TTEC1) and OpenPandora
-> > > (TD043MTEA1). So moving the drivers seems to have changed/broken
-> > > something with DT based driver matching.    
-> > 
-> > That's really weird, the driver name, the SPI device table and the OF
-> > device table are the same (except for the "omapdss," prefix that we
-> > don't add anymore in omapdss-boot-init.c). Would you be able to
-> > investigate what broke ?
-> >   
-> in earlier times:
-> 
-> root@gta04:/sys/bus/spi/devices/spi4.0# cat modalias 
-> spi:tpo,td028ttec1
-> 
-> now in 5.4-rc1:
-> root@gta04:/sys/bus/spi/devices/spi4.0# cat modalias 
-> spi:td028ttec1
-> 
-> root@gta04:~# modinfo /lib/modules/5.4.0-rc1-letux+/kernel/drivers/gpu/drm/panel/panel-tpo-td028ttec1.ko 
-> filename:       /lib/modules/5.4.0-rc1-letux+/kernel/drivers/gpu/drm/panel/panel-tpo-td028ttec1.ko
-> license:        GPL
-> description:    Toppoly TD028TTEC1 panel driver
-> author:         H. Nikolaus Schaller <hns@goldelico.com>
-> srcversion:     6B3E224BCD3D76253CF361C
-> alias:          of:N*T*Ctoppoly,td028ttec1C*
-> alias:          of:N*T*Ctoppoly,td028ttec1
-> alias:          of:N*T*Ctpo,td028ttec1C*
-> alias:          of:N*T*Ctpo,td028ttec1
-> alias:          spi:toppoly,td028ttec1
-> alias:          spi:tpo,td028ttec1
-> depends:        drm
-> intree:         Y
-> name:           panel_tpo_td028ttec1
-> vermagic:       5.4.0-rc1-letux+ SMP preempt mod_unload ARMv7 p2v8 
-> 
-> That alias is not in the list.
-> 
-some more research:
-in former times
-of_modalias_node() has stripped the omapdss prefix, result: modalias=spi:tpo,td028ttec1
-now it strips the tpo prefix because there is no omapdss prefix anymore.
+Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
+---
+ drivers/soc/amlogic/meson-gx-socinfo.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-Regards,
-Andreas
+diff --git a/drivers/soc/amlogic/meson-gx-socinfo.c b/drivers/soc/amlogic/meson-gx-socinfo.c
+index 6d0d04f..dc744f1 100644
+--- a/drivers/soc/amlogic/meson-gx-socinfo.c
++++ b/drivers/soc/amlogic/meson-gx-socinfo.c
+@@ -68,6 +68,8 @@ static const struct meson_gx_package_id {
+ 	{ "S922X", 0x29, 0x40, 0xf0 },
+ 	{ "A311D", 0x29, 0x10, 0xf0 },
+ 	{ "S905X3", 0x2b, 0x5, 0xf },
++	{ "S905X3", 0x2b, 0xb0, 0xf2 },
++	{ "A113L", 0x2c, 0x0, 0xf8 },
+ };
+ 
+ static inline unsigned int socinfo_to_major(u32 socinfo)
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
