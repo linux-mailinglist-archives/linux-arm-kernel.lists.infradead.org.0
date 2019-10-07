@@ -2,76 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7C16CE334
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 15:22:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33651CE336
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 15:22:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=DvTxo5dE5kJ9DCkomdqxjqagcbQ/C/VU48uJDiEm7MU=; b=OFv
-	HKHi2I1wsC5O9rlFNx9ny0NdmofxwcDctcCInS8+kDqFmUxzVuZgCPRxTXmvKPPi3Zbx5nyx08/IC
-	xFwfsgVGb7R2Wbkqx2zmpem1EOxvZ5Swegw3jLbMUQZvUEv3UczC6JzyxaGufgEhGnHRmQxxkFPUW
-	vs4PMfVq8o0sQTex8YQjREOyOll4Jc702tGvp7SyvPHye4Jkn3S4brqKv3ndADH+j6ATke3B2mUkX
-	NwBnPBQN4kbIN8tNaAcO3J6zcnhhQmKabx9H5mFxQo/8/CDcFTZIT0ehUcwkGkoOjQENZKhyykKWm
-	5BfmQocN65GqnVYRWcwbC1+tTQjKCbg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=A+hh0V4aype7k1VYyh0ZZ4juR/QkfFOGJ8zlMh5CKUU=; b=ZSxP0r804CUxdeSk/byl01KBM9
+	Xc9e55MIaIrdYdKU839TXqhD1y0HrBefR4PPklCx2KmQDBfWlPXKn3MDimvjBGzBPlJfWqS4m3tv4
+	F+Xo+1+OFJwOB+1+ErcyHggx6bMEB3k4ftgGidKcScdBcV7YsahvGA/UpAcOIHzBLz+tqvhbElh7N
+	XZUKiwbTstdASDMFd9MOpqq8DMn45BYQVrIrmmjxrHI3OuTaoDKlofE7X4G7Rg9NBZ8NbVpvK6WjN
+	kp1NU59rKzdkj/5CDHMWE0ui0Lv0BvkXBZZXVXzJaVRamj+HozlfO28HaGEVhL4r94n3a/5uI15xW
+	9FCEHtAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHSxR-0005lL-T6; Mon, 07 Oct 2019 13:21:49 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1iHSxq-0005yk-7R; Mon, 07 Oct 2019 13:22:14 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHSxI-0005kF-JY
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 13:21:41 +0000
-Received: by mail-lf1-x142.google.com with SMTP id u28so9252696lfc.5
+ id 1iHSxN-0005lQ-82
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 13:21:46 +0000
+Received: by mail-lj1-x241.google.com with SMTP id n14so13592499ljj.10
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 07 Oct 2019 06:21:39 -0700 (PDT)
+ Mon, 07 Oct 2019 06:21:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=8lFKpywdPpAsicgn0/2wcRw41YVk58KkpKaw3FhsBFg=;
- b=kzlZ1z4pnQ9ElMcAAvOAiALRNqpqyMMoDDh6kl2IFt1Qp45uDKh6abSvD0oEiGal+H
- MBnfKpBtjz50DsDYc3uh3L02w5MD77BD5eFT4gdVpfd+EZxBXRrsu1S1LvzkXl81Kr2y
- KukRAsEvizvL8jjIz9pWP5hthlbKDXXKauZE8JBU1Haz9GXujFr+Ngc1jXoHW42W8B0U
- szNRAvXXQ5BDUZpOIJBcvCdwyWIdAE4Ykfye3tfRzVbkk29N0OAqnXNWgI7XJsCxLwN4
- UOfRTbN2IZAuq7VWS5/64GvKfCfdvQC3cNTBDixQgKGMGjK0hOMxCRkD0PIRfMJ92Fcu
- 2EXw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=9VnY7oyb1nvuj9ddTAC30yl2C1zPK5euQfGRtoYt3AE=;
+ b=JEpHRdd9Da/yv0DPUmIpUR6s4h3YbVzoztyMA8CL9/TgFewoVAN1/NrpFqEhKRTGtg
+ d3v8veDnDcbrO0guEDNFs+k6OotYXawrL8YKNYjZicss1Vt6XOSh0Ci9F9loZcUryIkP
+ JEJmeFFuqWznQnA3QFcS9tW5mLDE3gW1UK8iw14sDQm3+sCeAxxU5+U4XhgYFbXiSgmA
+ MK8EgUFiRtcEwRvS9YvQUmUfbTSfbD0PGblyjjuPIDNwucClrw1LgIChyaUM1EuyDIJ1
+ 9o6G5ykv2yBEh99KpEr7oCPdf+tes5QvRYMaPgjEdjKObIFVJyKnKFX6mUFwiMmlWjo7
+ H1hw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=8lFKpywdPpAsicgn0/2wcRw41YVk58KkpKaw3FhsBFg=;
- b=DEe65JM1XRXES41rCSFKjd6ga/Nr6+NOEQ9xoZGZcihhlJxT87Gki6Jj3Ax+v8+9ka
- 4VEHW1ne1Lm+P4H5Wq70Ehz/koGgig222y2DRahXAav/O6uL0PhlVDNcBFsuXdNj6xW7
- DpNWKvwjMObLNnJn3OrF33MM4e/dLgpOYYdhDBCTErjm4n36qjNj/9TxZ5k0J0QJfJxW
- 9UkQUVKhCuyW+9m/bu+o+YO1ngjY4b6ocHnozeZ2sQHQ//36p6lp4PYC6oL1l8RY64od
- FP2wPNaSJSebVYSda/V7AfGzmq/9PZJHpwgkWMd1qSfou5Xz3KhmT+GgQrXPD+6KocwI
- YANQ==
-X-Gm-Message-State: APjAAAWJijSHtyvWZk3gMxY7M38Yo29T3P8XCCA93o2MP1abMGeSeO87
- KpLss60uOpyVjLyFbF33fCk=
-X-Google-Smtp-Source: APXvYqzkmVDDzi+6y2wMEn6caUhn1m4J52DjMbKL7et0q2OMyTb5IcTV1Br0sOtRl74VRsS0ZZqJaA==
-X-Received: by 2002:a19:f512:: with SMTP id j18mr17055451lfb.169.1570454498586; 
- Mon, 07 Oct 2019 06:21:38 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=9VnY7oyb1nvuj9ddTAC30yl2C1zPK5euQfGRtoYt3AE=;
+ b=CVnHiTK8NM9ujTDi9LZchubZXftpH3SkuT3hlEtlu2lAcUaHO4+/EE9yi0htLYF3Qu
+ Dcw48JNMw6sLAn8ZkkhXxWwC8rqqbN3RvUDbFbhWD64+wQHr++/k/Wt50pRvk+0M254a
+ pc+JOEhqMKOJswWH3UnaL2OJnogPkm2EEcLu0amvBHUqE26mTXSulnqH2Y/oRbeCHOwV
+ fN/4t3wT4PdOSAy/Z0GsU+HUVbG37ujRtunj8rpvN94DCtCkryV/NKJcRzr/cI216jax
+ EnBDbldFi3inFUwzsEMbXX6FjKLOUTd8SJ1LdrK2mReIVgzlZRr9szWEysARKvHeHmX+
+ oSUw==
+X-Gm-Message-State: APjAAAVAxBtAA9FjB5Rg9K/jw7jQeLhYPALpk6om3Gic9vdkVoUI/1Fd
+ Op+asdeC9MYLodROEfp2UIw=
+X-Google-Smtp-Source: APXvYqxIKidLkPUfNYBYNvrGjL6HgleWWzc8zpaiOSk+3sO6eInotFeBX5WEtWwVRWuMt+rfY2Fv3A==
+X-Received: by 2002:a2e:6a0f:: with SMTP id f15mr8017513ljc.17.1570454503343; 
+ Mon, 07 Oct 2019 06:21:43 -0700 (PDT)
 Received: from marek-VirtualBox.ccr.corp.intel.com ([78.133.233.210])
- by smtp.gmail.com with ESMTPSA id y3sm2894932lfh.97.2019.10.07.06.21.37
+ by smtp.gmail.com with ESMTPSA id y3sm2894932lfh.97.2019.10.07.06.21.42
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 07 Oct 2019 06:21:38 -0700 (PDT)
+ Mon, 07 Oct 2019 06:21:42 -0700 (PDT)
 From: marek.bykowski@gmail.com
 To: robh+dt@kernel.org, mark.rutland@arm.com, will@kernel.org,
  pawel.moll@arm.com, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/2] bus: arm-ccn: Enable stats for CCN-512 interconnect
-Date: Mon,  7 Oct 2019 15:21:14 +0200
-Message-Id: <1570454475-2848-1-git-send-email-marek.bykowski@gmail.com>
+Subject: [PATCH 2/2] Documentation: Add documentation for CCN-512 DTS binding
+Date: Mon,  7 Oct 2019 15:21:15 +0200
+Message-Id: <1570454475-2848-2-git-send-email-marek.bykowski@gmail.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1570454475-2848-1-git-send-email-marek.bykowski@gmail.com>
+References: <1570454475-2848-1-git-send-email-marek.bykowski@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_062140_644132_8651F0BF 
-X-CRM114-Status: GOOD (  10.94  )
+X-CRM114-CacheID: sfid-20191007_062145_318132_52D8C736 
+X-CRM114-Status: GOOD (  11.32  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
  [78.133.233.210 listed in dnsbl.sorbs.net]
@@ -106,25 +110,25 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Marek Bykowski <marek.bykowski@gmail.com>
 
-Add compatible string for the ARM CCN-512 interconnect
+Indicate the arm-ccn perf back-end supports now ccn-512.
 
 Signed-off-by: Marek Bykowski <marek.bykowski@gmail.com>
 ---
- drivers/perf/arm-ccn.c | 1 +
+ Documentation/devicetree/bindings/perf/arm-ccn.txt | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/drivers/perf/arm-ccn.c b/drivers/perf/arm-ccn.c
-index 7dd850e02f19..b6e00f35a448 100644
---- a/drivers/perf/arm-ccn.c
-+++ b/drivers/perf/arm-ccn.c
-@@ -1545,6 +1545,7 @@ static int arm_ccn_remove(struct platform_device *pdev)
- static const struct of_device_id arm_ccn_match[] = {
- 	{ .compatible = "arm,ccn-502", },
- 	{ .compatible = "arm,ccn-504", },
-+	{ .compatible = "arm,ccn-512", },
- 	{},
- };
- MODULE_DEVICE_TABLE(of, arm_ccn_match);
+diff --git a/Documentation/devicetree/bindings/perf/arm-ccn.txt b/Documentation/devicetree/bindings/perf/arm-ccn.txt
+index 43b5a71a5a9d..1c53b5aa3317 100644
+--- a/Documentation/devicetree/bindings/perf/arm-ccn.txt
++++ b/Documentation/devicetree/bindings/perf/arm-ccn.txt
+@@ -6,6 +6,7 @@ Required properties:
+ 	"arm,ccn-502"
+ 	"arm,ccn-504"
+ 	"arm,ccn-508"
++	"arm,ccn-512"
+ 
+ - reg: (standard registers property) physical address and size
+ 	(16MB) of the configuration registers block
 -- 
 2.21.0.896.g6a6c0f1
 
