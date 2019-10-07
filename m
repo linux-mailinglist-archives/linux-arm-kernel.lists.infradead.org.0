@@ -2,154 +2,134 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60ADCCEB9A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 20:16:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 900D3CEBA5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 20:21:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2yiX6vym5pbkzcemYquBQrOKMZrqJxDA1Gd0/6I2C6Y=; b=de9RetI2URyypd
-	xXR9ROOHYabX4Baihoh3gzUXaNfdhe8pkIkp19jzHkbGG5dzrbIhlX9IPeNj2zFXD4L91Yj2lIXGo
-	IhKuQk8aIPAmKKrISDZUh4vG6Ps7tvuHEP79dqK4RzQX9c80sxszhbYPuToGtSXb7rqTXk9dC+ORV
-	bNv0i54lJGP7MBl/mFkfDpAiGHLXGaVE5tJTXFrwjhR3xPLxzwH7r3ZanJjZso/lknRBN1i239mx6
-	uZflub42LgtMfFEvgH7qF6DIfzfBe0IE0r0MJvl8Qt5sYwSt11IoeV3JX/1HedAV9a6O7SoL+I9DV
-	tw0guQzZkbK2XR6ORtTQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iynFgJjDJ7uJMyKFsoZd7mT2+p8NwnZ+iEi0DImJl4s=; b=uoWsP0RkxAU53i
+	gFron/xGr14fe2n65e76b1G/s9BOLgySpVji1VO6Mq5bURS8e5jgeJ5rhag93x+i+CnirUHuAeIVq
+	3ZDodDDlPkhw8A7T77CKL+RIVZ9HA49M2Fq61GUDNqaY49GdnGbqAxB1ogsBUpn+t+h4HwYcSePwy
+	SjfOh3986hGc7V5Ls8lmp3I7y7Ba/3r5+XdjagIUbZEJXkhBPIYxLrQeGU9ziX6yp5IL+Cip4V9hp
+	qpNoDANcx1r8QtTZ6wuQO5mr50fi3oJgNJGX0/jFD1ZXkhdeu5luvus1DRY4zPTgUQivg4eZWhBsE
+	H0YuN9VfuHx80mjUlJHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHXYG-0007mQ-5L; Mon, 07 Oct 2019 18:16:08 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1iHXcs-0001AM-RG; Mon, 07 Oct 2019 18:20:54 +0000
+Received: from mx0b-0016f401.pphosted.com ([67.231.156.173])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHXY0-0007k6-KB; Mon, 07 Oct 2019 18:15:54 +0000
-Received: by mail-wm1-x343.google.com with SMTP id 7so492741wme.1;
- Mon, 07 Oct 2019 11:15:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=2tQokqxndPWM5nJG6nkcZjTlDb8S8kOTjBse5NzW2GQ=;
- b=lriWK7NwmwXJnMli1sSb5qgNOWeiMNd6OJ3JLBfYCPvIY57AxgD+Elvuh4LMxcxiuD
- ZWGfneQUwhNPwnzZVvLOENE87ytsB4Ibf0lUAXkokpqEOZxodJHNExfqiwBpvlS6OEaV
- avHUCJA0///VYjA34h9sc3VzcZk1t4HSsQqdLIFS9umDcSaVJ/kOcCRt+9RCkF6N+Q0W
- 1ddUrB/FmZ8H8rrfIKalvy7hDOlg1YeKB+kukNpOaJqztMDn/nvQ7klwTgdu8l4Yo5fb
- cbqv/KYCxR8zbWUEwtTEZJvV4meOq6yG0K5jlHU+vUJ2SHPB6ea4m4dyGPy+ppSYSD/x
- lqtA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=2tQokqxndPWM5nJG6nkcZjTlDb8S8kOTjBse5NzW2GQ=;
- b=m2xWUjIm1My+QILyvqMeeaZj3qV+5Z8nsuImnKllzHV/RwQpoaFifURu0T/swUeG+U
- 6jvG61rEcAJOCmWg+pfDNou+eLzoNUpYgAcz0li9QKTxIPaM9vdgGt4SeayINpeJRV9Z
- 5f7PPw58Im61okVxUNhVJaoOmsDQvZ7v7wePYtyEDG4cF6zKodMSr9288ZBqpR/iSAHG
- KovITIWd89lB19XGNxBKwuOZypLGhB5UMV52lRsqsd4nCXqtEG5Fo34jynNqFUnjFErp
- 79zCrwkzTlgECxcwsJ+Kv8EN4tGLoIpT0PCf51a6bFABknKRpFR44K9p+AWx/aohVuAK
- Ey3Q==
-X-Gm-Message-State: APjAAAVHLinAI9vUKWc9gp2OJtOUuFoaK2rN0RuPU9VCcltFrtzd4WUm
- k9MsdTz4U/pWjX7RYT9Z1Ig=
-X-Google-Smtp-Source: APXvYqzWPu3ramTe1QnetsyNsmFD9MzlGE4xe8IYCHPZba4sSCUgQQtumOSxNEv5UhDtmqnrxANG/g==
-X-Received: by 2002:a1c:5f82:: with SMTP id t124mr478715wmb.114.1570472150379; 
- Mon, 07 Oct 2019 11:15:50 -0700 (PDT)
-Received: from [10.67.50.53] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id d10sm514302wma.42.2019.10.07.11.15.40
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 07 Oct 2019 11:15:49 -0700 (PDT)
-Subject: Re: [PATCH -next 03/34] rtc: brcmstb-waketimer: use
- devm_platform_ioremap_resource() to simplify code
-To: YueHaibing <yuehaibing@huawei.com>, a.zummo@towertech.it,
- alexandre.belloni@bootlin.com, joel@jms.id.au, andrew@aj.id.au,
- nicolas.ferre@microchip.com, ludovic.desroches@microchip.com,
- computersforpeace@gmail.com, gregory.0xf0@gmail.com,
- bcm-kernel-feedback-list@broadcom.com, linus.walleij@linaro.org,
- baruch@tkos.co.il, paul@crapouillou.net, vz@mleia.com,
- slemieux.tyco@gmail.com, khilman@baylibre.com, eddie.huang@mediatek.com,
- sean.wang@mediatek.com, matthias.bgg@gmail.com, patrice.chotard@st.com,
- mcoquelin.stm32@gmail.com, alexandre.torgue@st.com, mripard@kernel.org,
- wens@csie.org, thierry.reding@gmail.com, jonathanh@nvidia.com,
- linux@prisktech.co.nz, michal.simek@xilinx.com
-References: <20191006102953.57536-1-yuehaibing@huawei.com>
- <20191006102953.57536-4-yuehaibing@huawei.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <dd5ef249-820c-9a5c-9fdf-50c7af9b0f61@gmail.com>
-Date: Mon, 7 Oct 2019 11:15:33 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20191006102953.57536-4-yuehaibing@huawei.com>
+ id 1iHXcl-0001A3-Ev
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 18:20:49 +0000
+Received: from pps.filterd (m0045851.ppops.net [127.0.0.1])
+ by mx0b-0016f401.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x97I6IC1023358; Mon, 7 Oct 2019 11:20:44 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
+ h=from : to : cc :
+ subject : date : message-id : references : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=pfpt0818;
+ bh=FMRuwt61Yb7GTe/jlxeZHQq+inFdfXY2+o9zEk5kcOA=;
+ b=V6Bxxcf4TbP4GQIcb2hhTGRwRFhtsrIj0MEtPl2WlbDG5pLMFoyYGpLJi7z0Kv5QnlMp
+ ZXzFG1Xe31DjPMeFJNisSX/FC1Pbi1NG/FH5mTqRVhDrM5ounzRKyuy6J4g69hHe7K/K
+ qg9r09WpzWP60FzwPeTJ4fp5yc+1fLCUpnR3xjl26y0zeaylBgePBmh9wPViBb/fYPCh
+ glqvlONQQHFH/S8lVHUXP3DCSR4wuz8W3Q4Osvt3q8Enm7rS14X6aIJUBe8Z6EtS5V30
+ whUdlhAll+mUVMjY+WaiW8l4Mzjl3gdNcX+9LBwPqCmsSMUQptnLQUfuLoH+cLUc8MLF Bg== 
+Received: from sc-exch03.marvell.com ([199.233.58.183])
+ by mx0b-0016f401.pphosted.com with ESMTP id 2vetpmxy4w-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
+ Mon, 07 Oct 2019 11:20:44 -0700
+Received: from SC-EXCH02.marvell.com (10.93.176.82) by SC-EXCH03.marvell.com
+ (10.93.176.83) with Microsoft SMTP Server (TLS) id 15.0.1367.3; Mon, 7 Oct
+ 2019 11:20:42 -0700
+Received: from NAM02-SN1-obe.outbound.protection.outlook.com (104.47.36.50) by
+ SC-EXCH02.marvell.com (10.93.176.82) with Microsoft SMTP Server
+ (TLS) id
+ 15.0.1367.3 via Frontend Transport; Mon, 7 Oct 2019 11:20:42 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=AZbiCaQsN56Um2CqRf1PD9V9Jkp8oG/z9vNIt39EAQ9RvfRL1W4r8OLeuZVRmql8ub4ZoAaL8tOCJy2fQmddEHe521f55DodGm37mcVuv+rZQM/KgJBjXG26YmBKka3fTUDGcGVOrdVVk8OQn2IuwsI1A6hLs1sBzcl2nOks+30R6y19FJfmBnpHNA/PVinILO7IYM7HNz9OPFBbQIQi0zaFjn0Pz1GdVH46lL5cdJ6/hhMs+UxZXvVckvd8Wuy0hPyAVF+uMlhiCdwjtvT3zOJGwwA91C7uIQjbepkWWes53hvIY0e8RStjG4fMYqfRwQwKkLT+9aatrXLpWIewkg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FMRuwt61Yb7GTe/jlxeZHQq+inFdfXY2+o9zEk5kcOA=;
+ b=e8rFqZZmNnqSt5eqQWbXlvpdB9EPqmwjZWde4WrXtGKbvMDdjPR1Wf0wrVjj3Dd16A1fy9OLtZh4gCCgjt8hXPbSeEn5AxU+dRwD1eCUffOMM6v0W6dr2k0iVmX2SFcdBW5jil+FiCbhIs43BlD/4FgNvKh7RpcYXrnTHCuVQaCnmSIYFlJdn9Pu2etuZzgZ7SYM8DUeWAEvTrXEle0D0dhUILC7ZUh9hjh8y3izR7Id10cnXQ7JLE5l7SmX1SuMmCaCRxsCY4zR6h5T+GIlANQe+butnkp2tKy1T8UzFjWVu1lYRWQM7NSyt+Ve36ZZxVwE656HQHMcsPwVd+uy2Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=marvell.com; dmarc=pass action=none header.from=marvell.com;
+ dkim=pass header.d=marvell.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=marvell.onmicrosoft.com; s=selector2-marvell-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FMRuwt61Yb7GTe/jlxeZHQq+inFdfXY2+o9zEk5kcOA=;
+ b=Ss6La/UKfuJbQsaIMzdTgL7XVHuLVLQZZA4CdG3KXZvuA70V6ZAdfBE6lOtnCMfh+LEDXLDnmUqRGogLaNczie6fZ5GnnUSW5uwiUQxsh7X460C4v5efd/5IDd0XrxluQB9UGDI+tSX53Vd8i3CEgeYMpQCm9hMbAMlooWkt/R4=
+Received: from BYAPR18MB2438.namprd18.prod.outlook.com (20.179.91.207) by
+ BYAPR18MB2504.namprd18.prod.outlook.com (20.179.92.208) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2327.24; Mon, 7 Oct 2019 18:20:41 +0000
+Received: from BYAPR18MB2438.namprd18.prod.outlook.com
+ ([fe80::fc70:ffee:bbab:36aa]) by BYAPR18MB2438.namprd18.prod.outlook.com
+ ([fe80::fc70:ffee:bbab:36aa%3]) with mapi id 15.20.2327.025; Mon, 7 Oct 2019
+ 18:20:41 +0000
+From: Sujeet Kumar Baranwal <sbaranwal@marvell.com>
+To: Sudeep Holla <sudeep.holla@arm.com>
+Subject: RE: [EXT] Re: SCMI & Devfreq
+Thread-Topic: [EXT] Re: SCMI & Devfreq
+Thread-Index: AdVpmcIOOnWimjPqQIW4YU3Z3/EySQAg3ggAAIw5QkAACl8sgAAPZ0vwAG91siAAIsPQAAEzMlhw
+Date: Mon, 7 Oct 2019 18:20:40 +0000
+Message-ID: <BYAPR18MB2438ADA20039CFF8F62DFF11AF9B0@BYAPR18MB2438.namprd18.prod.outlook.com>
+References: <BYAPR18MB24387C9DDE32067F1763B6DEAFB00@BYAPR18MB2438.namprd18.prod.outlook.com>
+ <20190913102304.GC2559@bogus>
+ <BYAPR18MB2438723658EF1F0586170CDDAF8C0@BYAPR18MB2438.namprd18.prod.outlook.com>
+ <20190916101505.GB6109@bogus>
+ <BYAPR18MB2438DC4E8CA4E90455F0345BAF8C0@BYAPR18MB2438.namprd18.prod.outlook.com>
+ <BYAPR18MB2438047B622951C6EFE92FABAF8E0@BYAPR18MB2438.namprd18.prod.outlook.com>
+ <20190919152300.GA11801@bogus>
+In-Reply-To: <20190919152300.GA11801@bogus>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [199.233.58.37]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 60553c2d-32c8-4a48-11a4-08d74b530f8f
+x-ms-traffictypediagnostic: BYAPR18MB2504:
+x-microsoft-antispam-prvs: <BYAPR18MB2504947718EE1EFD50698321AF9B0@BYAPR18MB2504.namprd18.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 01834E39B7
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(39860400002)(136003)(366004)(376002)(396003)(13464003)(189003)(199004)(53546011)(446003)(11346002)(64756008)(66556008)(6246003)(66946007)(66476007)(54906003)(316002)(6916009)(66446008)(76116006)(81166006)(102836004)(8676002)(81156014)(6506007)(9686003)(76176011)(25786009)(4326008)(8936002)(7696005)(5660300002)(55016002)(99286004)(52536014)(33656002)(14454004)(71190400001)(71200400001)(256004)(229853002)(6436002)(26005)(86362001)(186003)(478600001)(3846002)(6116002)(2906002)(66066001)(7736002)(305945005)(486006)(74316002)(476003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR18MB2504;
+ H:BYAPR18MB2438.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: marvell.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: sFCY2CxBo5OQTH3K8dj33u8Nl6NwyWNxuR/Q670KeykI5B7Ij3HVLTDdG4Huj/NhyIZfRXUj+406+ibIDY30EqgxbB138zCpyDl9lTPEIM+hcOuiMPhh7PU2Gu1jS8Xr9cjf0L/YoshfsqtwJAlTBJE5GL15zwFk+3qCrV2pYEIF7AkDQzFfKv3aeEA9Ol96iNikvopeqYrF0A3HreMPTF29gHyIMm8LJzzNJB82BjSHwaQ6Atu4UV0l/cmwJJKh9LRjhtUZ1Ath6sN4vc4OQrkARaWcPq5CQf3L9wmHd2gtUqbIwb4ke2Pl/2BwBWEcIT68m/dVpTSkKOSQV4xr2I+9yiyIAz4EcChiCI4JmN8UL1R2CRWh8L0uGLyQjc1A1LqTjhjPsW2LBAqiYnNe2gW2PN1J/3lGH2agXbEwr7g=
+x-ms-exchange-transport-forked: True
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 60553c2d-32c8-4a48-11a4-08d74b530f8f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Oct 2019 18:20:40.9908 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: S0iop/xtQnfdkYY/r4mqk4khkiaeOU/8qphGwBF6pjYC+x+wiJzpWWDzmAsMc7AF7HYnOFO8/y1jZDQrRUQLKA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR18MB2504
+X-OriginatorOrg: marvell.com
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
+ definitions=2019-10-07_03:2019-10-07,2019-10-07 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_111552_666976_71A3FE05 
-X-CRM114-Status: UNSURE (   9.97  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191007_112047_624231_CDFC4814 
+X-CRM114-Status: GOOD (  19.97  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [67.231.156.173 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -168,24 +148,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/6/19 3:29 AM, YueHaibing wrote:
-> Use devm_platform_ioremap_resource() to simplify the code a bit.
-> This is detected by coccinelle.
-> 
-> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+Hi Sudeep,
 
-Acked-by: Florian Fainelli <f.fainelli@gmail.com>
--- 
-Florian
+Per SCMI perf protocol, the MAX_OPPS macro which is 16, means that at max there could be only 16 OPPs.
+In my platform implementation, I tried with 16 OPPs but  when OPPs info came linux perf.c file from SCP, it only showed 12 OPPs only.
+
+Suspecting the rx buffer size, I increased the size to 256 and now the message for all 16 OPPs were reliably received. 
+
+*****************
+diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
+index 449f713..737d675 100644 (file)
+--- a/drivers/firmware/arm_scmi/driver.c
++++ b/drivers/firmware/arm_scmi/driver.c
+@@ -612,7 +612,7 @@ int scmi_handle_put(const struct scmi_handle *handle)
+ static const struct scmi_desc scmi_generic_desc = {
+        .max_rx_timeout_ms = 30,        /* We may increase this if required */
+        .max_msg = 20,          /* Limited by MBOX_TX_QUEUE_LEN */
+-       .max_msg_size = 128,
++       .max_msg_size = 256,
+ };
+ 
+ /* Each compatible listed below must have descriptor associated with it */
+*****************
+Since this is a legit case of having 16 or more OPPs, we need to have a bugger buffer for rx. Let me know what you think.
+
+Regards
+Sujeet
+-----Original Message-----
+From: Sudeep Holla <sudeep.holla@arm.com> 
+Sent: Thursday, September 19, 2019 8:23 AM
+To: Sujeet Kumar Baranwal <sbaranwal@marvell.com>
+Cc: linux-arm-kernel@lists.infradead.org; Sudeep Holla <sudeep.holla@arm.com>; linux-pm@vger.kernel.org
+Subject: Re: [EXT] Re: SCMI & Devfreq
+
+(Adding linux-pm list)
+
+On Wed, Sep 18, 2019 at 10:53:07PM +0000, Sujeet Kumar Baranwal wrote:
+> Sudeep, One trivial question wrt SCMI-CPUFREQ framework.
+> 
+> The SCMI perf protocol would tell what are different frequencies the 
+> platform support in the beginning.
+>
+> For example, the command :
+> cat  
+> /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
+> shows:
+> 280000 560000 840000 1120000 1400000 1820000 1960000 2240000 2520000 
+> 2800000
+>
+> /* Attempt to change the frequency */
+> ~ # echo 2240000 > 
+> /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed
+> It works.
+>
+> But in a scenario, where user tries a number which is not listed, SCP 
+> applies its own logic to get a nearby value frequency for CPU and returns.
+>
+> My question is that could we add some print message in kernel that 
+> user wish is not exactly fulfilled, an approximation has been done so 
+> the user explicitly knows his command has been partially met.  If this 
+> to happen, a patch might be needed in kernel. What is your opinion?
+>
+
+May be, you need to check with the maintainers ? :)
+
+The path of execution is:
+cpufreq_set(policy, freq) [cpufreq_userspace.c] __cpufreq_driver_target(policy, freq, CPUFREQ_RELATION_L) [cpufreq_userspace.c] index = cpufreq_frequency_table_target(policy, target_freq, relation) [cpufreq.c] __target_index(policy, index) [cpufreq.c]
+
+So if you need logs, it needs to be in core file rather than individual drivers.
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
