@@ -2,69 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8117CEA37
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 19:10:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9791FCEA43
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 19:11:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wc2bXw9KIwJqUWA0otfTeR/QMB4U5griwADtwbd4Fpc=; b=p5iQfEbnN4nweR
-	ldt0hv9XIBueZgAYViDNB2qe+utkMq7mXIsakKcUZ11SnUux0rWBzKa0r+z+nlPLdFnzMEFJ1hqAM
-	M8u5PhMXnIbZ+Fa9JNVSu3oxZaymD9mgx3JslcZGE9lOjonFrDoI+pTfMQO5kfAYJ0Uv4x/+R5Nx9
-	2WOdg15vgs80neBerENtcwU14laJIoHwZClnGkI+umIYB2CF2NvjR3N5MmginJGvit4vU1EKd1nKL
-	bK9EVTeU4p3P30KDoaj3KZ6WkUz88SYOAkIx/w/QG5ddFjewMvQxCvTuZ9lOZDypz2tBh0IRsWiDb
-	PkS9xKZUFol0swGA2EMg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=6qeQ3swoClbEarAv0DV9iPDYZMm4DhVA65MwcpA+/FM=; b=MxVx3T8yPTs0cZpV+OXy1zlcF
+	qdXqn+4UCY2keaHgjjkdh8iIU/hOJIlq9JF517555gGrNUxlb3r58Vdb2QAF823Mvsy33uPrUnBdi
+	EEZY5sQUtcZPprZV7mraXqVgQ0EiqH+49CodzcWQ2njq0NIkYKmgXu3eRT+LOjwaYUKykbxGf9zt9
+	Trs5b87w8N9QRytE4KugSkHmV3cSeigq2hp5wo/4kT5ebM7gZhin7KOVfRnjlzYunxeIl6vCAvUoh
+	oNFltulDSMPCoHh6i8LsaKt6pEH9U0hg3pyXUPhiAApP1iJ8DnVCUEIB4tE5jxHsQgniBRDmvck90
+	UpUkoC9xQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHWW7-0005Ls-8g; Mon, 07 Oct 2019 17:09:51 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iHWXO-0006tA-61; Mon, 07 Oct 2019 17:11:10 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHWVy-0005Ke-9j
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 17:09:44 +0000
-Received: from mail-lj1-f175.google.com (mail-lj1-f175.google.com
- [209.85.208.175])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 67FA121479
+ id 1iHWXC-0006sK-5I
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 17:11:00 +0000
+Received: by mail-pf1-x444.google.com with SMTP id y22so9075380pfr.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon,  7 Oct 2019 17:09:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570468181;
- bh=sEUyCrkWSJhUAah+kIOaxdt7uVOhlnp+VLGnLHpIjVQ=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=ATaDT6kBWMNjukC/v/xuTue6EoXEpuIRJV2osq04lQ9SO6aes/2hdxPxkHoQlSfE/
- Vi3r8BZKZQCx521H+zrpoi4RXtkHoKWQJRsC9wM1m5XRl7DARdZYaGUSXuMZqMhUtR
- XsKHHvf3LrQpfIG4qAaaeZmaxPTWHFVzEptLQdHM=
-Received: by mail-lj1-f175.google.com with SMTP id m7so14521029lji.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 07 Oct 2019 10:09:41 -0700 (PDT)
-X-Gm-Message-State: APjAAAU7XKwdd7gUbbP59Lyn2Kr8Fj1ibFy7oYCLD8NE2sMw2ximCzjS
- Cbv9IdtOmt+01V6XkSFO1df2XpiFXqv/nHr+d6s=
-X-Google-Smtp-Source: APXvYqxsj2x2Dds3Uzee66b/2onTiWHkAnOmZ53UVQGb37tOsYvxS4qruO2qWrwZKDnFs80J+RochL5wu/NKYF+dsQE=
-X-Received: by 2002:a2e:a0cd:: with SMTP id f13mr19200320ljm.93.1570468179431; 
- Mon, 07 Oct 2019 10:09:39 -0700 (PDT)
+ Mon, 07 Oct 2019 10:10:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=nIO6O9ahSz9V8fOp+W/95V7uzxghRqzih625nuEdwR0=;
+ b=hZW2x0sX8IHEsBdGXbQ7dhAyaFiXvbS0sfin1r0QdfUN0ohP/3mUrNCKIFJgBPRG48
+ ezy9APJy0R1jKr69irFMCUBON0svtdadAaeXk0fE48899dvlcrRE4mnke7FpcnZlAVW+
+ gKD78Sdfwo3tX/dmlwT8JVIOas4+wU9P/Ys80=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=nIO6O9ahSz9V8fOp+W/95V7uzxghRqzih625nuEdwR0=;
+ b=cc1jc+tK2U68U5+hXTXSwbF9qRaX6AyUjVMkaLKKCueQJfcSki+gSbqPjU/ZknDogI
+ b+Rr2VTnvb03A4CHu4/ZgwMMxLElb57ph5RZUMDUToy0XKR+BZrVL7LOuOQ2AOujsMrI
+ NaRZxkvIxOlPaxUUKe89ScfrpCOdZbl8dj8k7M+UYFBcZ48dTbQ/YcBoBfDm2rwBjPDH
+ ao91jaQSBHUsnS++MV653soenEGLdUsQplUFLf0pEJkGz9IqJBr/GRRH2Xuxkb3YMOD9
+ RqPkmQ9RGB/Ouoj9t/F2SDoe/vpYmj9ql+YthWgvJV3RwzdzAS/0jYNB3OY4VA/fl/YR
+ nhjA==
+X-Gm-Message-State: APjAAAV3qtFU3CDCZ+t3JO4AZ4EOa/aZVia+1AVjwLmTSbumKpAWW3CA
+ DqE/BI67W4fMKTjl5SFfDpxBINxDD1vlVJLy2aniN+Q2HTBpvh/13mHwREs63J88P2KWnVyvnXH
+ QYTE9DYmV/Wcp+LzSiquXrYTrjFrgv9qMYEXAoVg8xjrOOMX2wDkU6z9WOHIT2l7uTbh8FsqgSg
+ x58zv9qVUINWrMoyF53Sw=
+X-Google-Smtp-Source: APXvYqyHrGt6RhHocknkFK2phK2rTRMyH7SfeP1YDq+8SfupmWTWQyHmhMhYdbC1a+Oq5/qjUN4W9Q==
+X-Received: by 2002:a63:68e:: with SMTP id 136mr11613874pgg.18.1570468256741; 
+ Mon, 07 Oct 2019 10:10:56 -0700 (PDT)
+Received: from [10.136.13.65] ([192.19.228.250])
+ by smtp.gmail.com with ESMTPSA id e6sm16243153pfl.146.2019.10.07.10.10.54
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 07 Oct 2019 10:10:55 -0700 (PDT)
+Subject: Re: [PATCH v2 2/2] pinctrl: iproc: use unique name for irq chip
+To: Marc Zyngier <maz@kernel.org>, Geert Uytterhoeven <geert@linux-m68k.org>
+References: <20191003000310.17099-1-chris.packham@alliedtelesis.co.nz>
+ <20191003000310.17099-3-chris.packham@alliedtelesis.co.nz>
+ <CAMuHMdV7syxxtnHEcgFBrf5DLo-M_71tZFWHHQ6kTO=2A1eVhg@mail.gmail.com>
+ <86blutdlap.wl-maz@kernel.org>
+From: Scott Branden <scott.branden@broadcom.com>
+Message-ID: <44510e8c-4e9b-603f-2c26-19db9121d68c@broadcom.com>
+Date: Mon, 7 Oct 2019 10:10:52 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <5d9a8a3c.1c69fb81.14b6f.10d1@mx.google.com>
-In-Reply-To: <5d9a8a3c.1c69fb81.14b6f.10d1@mx.google.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Mon, 7 Oct 2019 19:09:27 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPeZQ_hZqUdtFrr-wGiwdM4KVjD_7CArEWhZgo+1EJPqew@mail.gmail.com>
-Message-ID: <CAJKOXPeZQ_hZqUdtFrr-wGiwdM4KVjD_7CArEWhZgo+1EJPqew@mail.gmail.com>
-Subject: Re: krzysztof/for-next boot bisection: v5.4-rc1-48-g0bc9c79979ea on
- peach-pi
-To: "kernelci.org bot" <bot@kernelci.org>
+In-Reply-To: <86blutdlap.wl-maz@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_100942_386384_836BDBD0 
-X-CRM114-Status: GOOD (  19.00  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191007_101058_203208_72D5A6AE 
+X-CRM114-Status: GOOD (  22.52  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -86,340 +102,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- Kukjin Kim <kgene@kernel.org>, tomeu.vizoso@collabora.com,
- guillaume.tucker@collabora.com,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
- broonie@kernel.org, matthew.hart@linaro.org, mgalka@collabora.com,
- enric.balletbo@collabora.com,
- Kamil Konieczny <k.konieczny@partner.samsung.com>, khilman@baylibre.com,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Scott Branden <sbranden@broadcom.com>, rayagonda.kokatanur@broadcom.com,
+ Ray Jui <rjui@broadcom.com>, Linus Walleij <linus.walleij@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Chris Packham <chris.packham@alliedtelesis.co.nz>,
+ bcm-kernel-feedback-list@broadcom.com, li.jin@broadcom.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 7 Oct 2019 at 02:43, kernelci.org bot <bot@kernelci.org> wrote:
->
-> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-> * This automated bisection report was sent to you on the basis  *
-> * that you may be involved with the breaking commit it has      *
-> * found.  No manual investigation has been done to verify it,   *
-> * and the root cause of the problem may be somewhere else.      *
-> *                                                               *
-> * If you do send a fix, please include this trailer:            *
-> *   Reported-by: "kernelci.org bot" <bot@kernelci.org>          *
-> *                                                               *
-> * Hope this helps!                                              *
-> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
->
-> krzysztof/for-next boot bisection: v5.4-rc1-48-g0bc9c79979ea on peach-pi
->
-> Summary:
->   Start:      0bc9c79979ea Merge branch 'for-v5.5/memory-samsung-dmc-dt' into for-next
->   Details:    https://kernelci.org/boot/id/5d9a50af59b5141ce5857c07
->   Plain log:  https://storage.kernelci.org//krzysztof/for-next/v5.4-rc1-48-g0bc9c79979ea/arm/multi_v7_defconfig/gcc-8/lab-collabora/boot-exynos5800-peach-pi.txt
->   HTML log:   https://storage.kernelci.org//krzysztof/for-next/v5.4-rc1-48-g0bc9c79979ea/arm/multi_v7_defconfig/gcc-8/lab-collabora/boot-exynos5800-peach-pi.html
->   Result:     0899a480ac65 ARM: dts: exynos: Add initial data for coupled regulators for Exynos5422/5800
-
-Thanks for the report. Marek Szyprowski reported it on last Friday. I
-dropped the patch as of now as it exposes some deadlock in regulator
-code.
-
-Best regards,
-Krzysztof
-
->
-> Checks:
->   revert:     PASS
->   verify:     PASS
->
-> Parameters:
->   Tree:       krzysztof
->   URL:        https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git
->   Branch:     for-next
->   Target:     peach-pi
->   CPU arch:   arm
->   Lab:        lab-collabora
->   Compiler:   gcc-8
->   Config:     multi_v7_defconfig
->   Test suite: boot
->
-> Breaking commit found:
->
-> -------------------------------------------------------------------------------
-> commit 0899a480ac658144b1fa351bb880c2858d43f824
-> Author: Marek Szyprowski <m.szyprowski@samsung.com>
-> Date:   Thu Oct 3 12:08:14 2019 +0200
->
->     ARM: dts: exynos: Add initial data for coupled regulators for Exynos5422/5800
->
->     Declare Exynos5422/5800 voltage ranges for opp points for big cpu core and
->     bus wcore and couple their voltage supllies as vdd_arm and vdd_int should
->     be in 300mV range.
->
->     Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
->     [k.konieczny: add missing patch description]
->     Signed-off-by: Kamil Konieczny <k.konieczny@partner.samsung.com>
->     Reviewed-by: Chanwoo Choi <cw00.choi@samsung.com>
->     Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
->
-> diff --git a/arch/arm/boot/dts/exynos5420.dtsi b/arch/arm/boot/dts/exynos5420.dtsi
-> index 2c131ad78c09..d08101b1018c 100644
-> --- a/arch/arm/boot/dts/exynos5420.dtsi
-> +++ b/arch/arm/boot/dts/exynos5420.dtsi
-> @@ -48,62 +48,62 @@
->
->                 opp-1800000000 {
->                         opp-hz = /bits/ 64 <1800000000>;
-> -                       opp-microvolt = <1250000>;
-> +                       opp-microvolt = <1250000 1250000 1500000>;
->                         clock-latency-ns = <140000>;
->                 };
->                 opp-1700000000 {
->                         opp-hz = /bits/ 64 <1700000000>;
-> -                       opp-microvolt = <1212500>;
-> +                       opp-microvolt = <1212500 1212500 1500000>;
->                         clock-latency-ns = <140000>;
->                 };
->                 opp-1600000000 {
->                         opp-hz = /bits/ 64 <1600000000>;
-> -                       opp-microvolt = <1175000>;
-> +                       opp-microvolt = <1175000 1175000 1500000>;
->                         clock-latency-ns = <140000>;
->                 };
->                 opp-1500000000 {
->                         opp-hz = /bits/ 64 <1500000000>;
-> -                       opp-microvolt = <1137500>;
-> +                       opp-microvolt = <1137500 1137500 1500000>;
->                         clock-latency-ns = <140000>;
->                 };
->                 opp-1400000000 {
->                         opp-hz = /bits/ 64 <1400000000>;
-> -                       opp-microvolt = <1112500>;
-> +                       opp-microvolt = <1112500 1112500 1500000>;
->                         clock-latency-ns = <140000>;
->                 };
->                 opp-1300000000 {
->                         opp-hz = /bits/ 64 <1300000000>;
-> -                       opp-microvolt = <1062500>;
-> +                       opp-microvolt = <1062500 1062500 1500000>;
->                         clock-latency-ns = <140000>;
->                 };
->                 opp-1200000000 {
->                         opp-hz = /bits/ 64 <1200000000>;
-> -                       opp-microvolt = <1037500>;
-> +                       opp-microvolt = <1037500 1037500 1500000>;
->                         clock-latency-ns = <140000>;
->                 };
->                 opp-1100000000 {
->                         opp-hz = /bits/ 64 <1100000000>;
-> -                       opp-microvolt = <1012500>;
-> +                       opp-microvolt = <1012500 1012500 1500000>;
->                         clock-latency-ns = <140000>;
->                 };
->                 opp-1000000000 {
->                         opp-hz = /bits/ 64 <1000000000>;
-> -                       opp-microvolt = < 987500>;
-> +                       opp-microvolt = < 987500 987500 1500000>;
->                         clock-latency-ns = <140000>;
->                 };
->                 opp-900000000 {
->                         opp-hz = /bits/ 64 <900000000>;
-> -                       opp-microvolt = < 962500>;
-> +                       opp-microvolt = < 962500 962500 1500000>;
->                         clock-latency-ns = <140000>;
->                 };
->                 opp-800000000 {
->                         opp-hz = /bits/ 64 <800000000>;
-> -                       opp-microvolt = < 937500>;
-> +                       opp-microvolt = < 937500 937500 1500000>;
->                         clock-latency-ns = <140000>;
->                 };
->                 opp-700000000 {
->                         opp-hz = /bits/ 64 <700000000>;
-> -                       opp-microvolt = < 912500>;
-> +                       opp-microvolt = < 912500 912500 1500000>;
->                         clock-latency-ns = <140000>;
->                 };
->         };
-> @@ -1097,23 +1097,23 @@
->
->                         opp00 {
->                                 opp-hz = /bits/ 64 <84000000>;
-> -                               opp-microvolt = <925000>;
-> +                               opp-microvolt = <925000 925000 1400000>;
->                         };
->                         opp01 {
->                                 opp-hz = /bits/ 64 <111000000>;
-> -                               opp-microvolt = <950000>;
-> +                               opp-microvolt = <950000 950000 1400000>;
->                         };
->                         opp02 {
->                                 opp-hz = /bits/ 64 <222000000>;
-> -                               opp-microvolt = <950000>;
-> +                               opp-microvolt = <950000 950000 1400000>;
->                         };
->                         opp03 {
->                                 opp-hz = /bits/ 64 <333000000>;
-> -                               opp-microvolt = <950000>;
-> +                               opp-microvolt = <950000 950000 1400000>;
->                         };
->                         opp04 {
->                                 opp-hz = /bits/ 64 <400000000>;
-> -                               opp-microvolt = <987500>;
-> +                               opp-microvolt = <987500 987500 1400000>;
->                         };
->                 };
->
-> diff --git a/arch/arm/boot/dts/exynos5422-odroid-core.dtsi b/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
-> index 829147e320e0..9b8de61b0385 100644
-> --- a/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
-> +++ b/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
-> @@ -524,6 +524,8 @@
->                                 regulator-max-microvolt = <1400000>;
->                                 regulator-always-on;
->                                 regulator-boot-on;
-> +                               regulator-coupled-with = <&buck2_reg>;
-> +                               regulator-coupled-max-spread = <300000>;
->
->                                 regulator-state-mem {
->                                         regulator-off-in-suspend;
-> @@ -544,6 +546,8 @@
->                                 regulator-max-microvolt = <1500000>;
->                                 regulator-always-on;
->                                 regulator-boot-on;
-> +                               regulator-coupled-with = <&buck3_reg>;
-> +                               regulator-coupled-max-spread = <300000>;
->
->                                 regulator-state-mem {
->                                         regulator-off-in-suspend;
-> diff --git a/arch/arm/boot/dts/exynos5800-peach-pi.dts b/arch/arm/boot/dts/exynos5800-peach-pi.dts
-> index 60ca3d685247..c1e38139ce4f 100644
-> --- a/arch/arm/boot/dts/exynos5800-peach-pi.dts
-> +++ b/arch/arm/boot/dts/exynos5800-peach-pi.dts
-> @@ -257,6 +257,8 @@
->                                 regulator-always-on;
->                                 regulator-boot-on;
->                                 regulator-ramp-delay = <12500>;
-> +                               regulator-coupled-with = <&buck3_reg>;
-> +                               regulator-coupled-max-spread = <300000>;
->                                 regulator-state-mem {
->                                         regulator-off-in-suspend;
->                                 };
-> @@ -269,6 +271,8 @@
->                                 regulator-always-on;
->                                 regulator-boot-on;
->                                 regulator-ramp-delay = <12500>;
-> +                               regulator-coupled-with = <&buck2_reg>;
-> +                               regulator-coupled-max-spread = <300000>;
->                                 regulator-state-mem {
->                                         regulator-off-in-suspend;
->                                 };
-> diff --git a/arch/arm/boot/dts/exynos5800.dtsi b/arch/arm/boot/dts/exynos5800.dtsi
-> index de639eecc5c9..27789f5f9798 100644
-> --- a/arch/arm/boot/dts/exynos5800.dtsi
-> +++ b/arch/arm/boot/dts/exynos5800.dtsi
-> @@ -22,61 +22,61 @@
->
->  &cluster_a15_opp_table {
->         opp-1700000000 {
-> -               opp-microvolt = <1250000>;
-> +               opp-microvolt = <1250000 1250000 1500000>;
->         };
->         opp-1600000000 {
-> -               opp-microvolt = <1250000>;
-> +               opp-microvolt = <1250000 1250000 1500000>;
->         };
->         opp-1500000000 {
-> -               opp-microvolt = <1100000>;
-> +               opp-microvolt = <1100000 1100000 1500000>;
->         };
->         opp-1400000000 {
-> -               opp-microvolt = <1100000>;
-> +               opp-microvolt = <1100000 1100000 1500000>;
->         };
->         opp-1300000000 {
-> -               opp-microvolt = <1100000>;
-> +               opp-microvolt = <1100000 1100000 1500000>;
->         };
->         opp-1200000000 {
-> -               opp-microvolt = <1000000>;
-> +               opp-microvolt = <1000000 1000000 1500000>;
->         };
->         opp-1100000000 {
-> -               opp-microvolt = <1000000>;
-> +               opp-microvolt = <1000000 1000000 1500000>;
->         };
->         opp-1000000000 {
-> -               opp-microvolt = <1000000>;
-> +               opp-microvolt = <1000000 1000000 1500000>;
->         };
->         opp-900000000 {
-> -               opp-microvolt = <1000000>;
-> +               opp-microvolt = <1000000 1000000 1500000>;
->         };
->         opp-800000000 {
-> -               opp-microvolt = <900000>;
-> +               opp-microvolt = <900000 900000 1500000>;
->         };
->         opp-700000000 {
-> -               opp-microvolt = <900000>;
-> +               opp-microvolt = <900000 900000 1500000>;
->         };
->         opp-600000000 {
->                 opp-hz = /bits/ 64 <600000000>;
-> -               opp-microvolt = <900000>;
-> +               opp-microvolt = <900000 900000 1500000>;
->                 clock-latency-ns = <140000>;
->         };
->         opp-500000000 {
->                 opp-hz = /bits/ 64 <500000000>;
-> -               opp-microvolt = <900000>;
-> +               opp-microvolt = <900000 900000 1500000>;
->                 clock-latency-ns = <140000>;
->         };
->         opp-400000000 {
->                 opp-hz = /bits/ 64 <400000000>;
-> -               opp-microvolt = <900000>;
-> +               opp-microvolt = <900000 900000 1500000>;
->                 clock-latency-ns = <140000>;
->         };
->         opp-300000000 {
->                 opp-hz = /bits/ 64 <300000000>;
-> -               opp-microvolt = <900000>;
-> +               opp-microvolt = <900000 900000 1500000>;
->                 clock-latency-ns = <140000>;
->         };
->         opp-200000000 {
->                 opp-hz = /bits/ 64 <200000000>;
-> -               opp-microvolt = <900000>;
-> +               opp-microvolt = <900000 900000 1500000>;
->                 clock-latency-ns = <140000>;
->         };
->  };
-> -------------------------------------------------------------------------------
->
->
-> Git bisection log:
->
-> -------------------------------------------------------------------------------
-> git bisect start
-> # good: [2924a93b4c2b1934c0ec59d28f46814a83259f11] Merge branch 'for-v5.5/memory-samsung-dmc-dt' into for-next
-> git bisect good 2924a93b4c2b1934c0ec59d28f46814a83259f11
-> # bad: [0bc9c79979ea0b607a0751968840483fd296f6ef] Merge branch 'for-v5.5/memory-samsung-dmc-dt' into for-next
-> git bisect bad 0bc9c79979ea0b607a0751968840483fd296f6ef
-> # bad: [0899a480ac658144b1fa351bb880c2858d43f824] ARM: dts: exynos: Add initial data for coupled regulators for Exynos5422/5800
-> git bisect bad 0899a480ac658144b1fa351bb880c2858d43f824
-> # good: [56c126e87e2980d5e2ca5d77b28899f8521af9d7] ARM: dts: exynos: Rename SysRAM node to "sram"
-> git bisect good 56c126e87e2980d5e2ca5d77b28899f8521af9d7
-> # first bad commit: [0899a480ac658144b1fa351bb880c2858d43f824] ARM: dts: exynos: Add initial data for coupled regulators for Exynos5422/5800
-> -------------------------------------------------------------------------------
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAyMDE5LTEwLTA3IDE6MTQgYS5tLiwgTWFyYyBaeW5naWVyIHdyb3RlOgo+IE9uIE1vbiwg
+MDcgT2N0IDIwMTkgMDg6MzA6NTAgKzAxMDAsCj4gR2VlcnQgVXl0dGVyaG9ldmVuIDxnZWVydEBs
+aW51eC1tNjhrLm9yZz4gd3JvdGU6Cj4+IEhpIENocmlzLAo+Pgo+PiBDQyBNYXJjWgo+Pgo+PiBP
+biBUaHUsIE9jdCAzLCAyMDE5IGF0IDI6MDMgQU0gQ2hyaXMgUGFja2hhbQo+PiA8Y2hyaXMucGFj
+a2hhbUBhbGxpZWR0ZWxlc2lzLmNvLm56PiB3cm90ZToKPj4+IFVzZSB0aGUgZGV2X25hbWUoZGV2
+KSBmb3IgdGhlIGlycWMtPm5hbWUgc28gdGhhdCB3ZSBnZXQgdW5pcXVlIG5hbWVzCj4+PiB3aGVu
+IHdlIGhhdmUgbXVsdGlwbGUgaW5zdGFuY2VzIG9mIHRoaXMgZHJpdmVyLgo+Pj4KPj4+IFNpZ25l
+ZC1vZmYtYnk6IENocmlzIFBhY2toYW0gPGNocmlzLnBhY2toYW1AYWxsaWVkdGVsZXNpcy5jby5u
+ej4KPj4gQSB3aGlsZSBhZ28sIE1hcmMgWnluZ2llciBwb2ludGVkIG91dCB0aGF0IHRoZSBpcnFf
+Y2hpcCAubmFtZSBmaWVsZAo+PiBzaG91bGQgY29udGFpbiB0aGUgZGV2aWNlJ3MgY2xhc3MgbmFt
+ZSwgbm90IHRoZSBpbnN0YW5jZSdzIG5hbWUuCj4+IEhlbmNlIHRoZSBjdXJyZW50IGNvZGUgaXMg
+Y29ycmVjdD8KPiBUaGFua3MgR2VlcnQgZm9yIGxvb3BpbmcgbWUgaW4uIFRoZSBtYWluIHJlYXNv
+bnMgd2h5IEkgb3Bwb3NlIHRoaXMKPiBraW5kIG9mICJsZXQncyBzaG93IGFzIG11Y2ggaW5mb3Jt
+YXRpb24gYXMgd2UgY2FuIGluIC9wcm9jL2ludGVycnVwdHMiCj4gYXJlOgo+Cj4gLSBJdCBjbHV0
+dGVycyB0aGUgb3V0cHV0IGJhZGx5OiB0aGUgZm9ybWF0dGluZyBvZiB0aGlzIGZpbGUsIHdoaWNo
+IGlzCj4gICAgYmFkIGVub3VnaCB3aGVuIHlvdSBoYXZlIGEgc21hbGwgbnVtYmVyIG9mIENQVXMs
+IGJlY29tZXMgdW5yZWFkYWJsZQo+ICAgIHdoZW4geW91IGhhdmUgYSBsYXJnZSBudW1iZXIgb2Yg
+dGhlbSAqYW5kKiBzdHVwaWRseSBsb25nIHN0cmluZ3MKPiAgICB0aGF0IG9ubHkgbWFrZSBzZW5z
+ZSBvbiBhIGdpdmVuIHBsYXRmb3JtLgo+Cj4gLSBMaWtlIGl0IG9yIG5vdCwgL3Byb2MgaXMgQUJJ
+LiBXZSBkb24ndCBjaGFuZ2UgdGhpbmdzIHJhbmRvbWx5IHRoZXJlCj4gICAgd2l0aG91dCBhIGdv
+b2QgcmVhc29uLCBhbmQgZGVidWdnaW5nIGlzbid0IG9uZSBvZiB0aGVtLgo+Cj4gLSBEZWJ1ZyBp
+bmZvcm1hdGlvbiBiZWxvbmdzIHRvIGRlYnVnZnMsIHdoZXJlIHdlIGFscmVhZHkgaGF2ZSBwbGVu
+dHkKPiAgICBvZiBzdHVmZiAoc2VlIENPTkZJR19HRU5FUklDX0lSUV9ERUJVR0ZTKS4gSSdkIHJh
+dGhlciB3ZSBpbXByb3ZlCj4gICAgdGhpcyBpbmZyYXN0cnVjdHVyZSBpZiBuZWVkZWQsIHJhdGhl
+ciB0aGFuIGFkZCBwbGF0Zm9ybSBzcGVjaWZpYwo+ICAgIGhhY2tzLgo+Cj4gPC9yYW50Pgo+Cj4g
+VGhhbmtzLAo+Cj4gCU0uClRoYW5rcyBNYXJjL0dlZXJ0LsKgIFNvdW5kcyBsaWtlIHdlIHNob3Vs
+ZCBkcm9wIHBhdGNoIDIgZnJvbSBzZXJpZXMuCj4KPj4gU2VlIGFsc28gIltQQVRDSCAwLzRdIGly
+cWNoaXA6IHJlbmVzYXM6IFVzZSBwcm9wZXIgaXJxX2NoaXAgbmFtZSBhbmQgcGFyZW50Igo+PiAo
+aHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGttbC8yMDE5MDYwNzA5NTg1OC4xMDAyOC0xLWdlZXJ0
+K3JlbmVzYXNAZ2xpZGVyLmJlLykKPj4gTm90ZSB0aGF0IHRoZSBpcnFjaGlwIHBhdGNoZXMgaW4g
+dGhhdCBzZXJpZXMgaGF2ZSBiZWVuIGFwcGxpZWQ7IHRoZSBncGlvCj4+IHBhdGNoZXMgaGF2ZW4n
+dCBiZWVuIGFwcGxpZWQgeWV0Lgo+Pgo+Pj4gLS0tIGEvZHJpdmVycy9waW5jdHJsL2JjbS9waW5j
+dHJsLWlwcm9jLWdwaW8uYwo+Pj4gKysrIGIvZHJpdmVycy9waW5jdHJsL2JjbS9waW5jdHJsLWlw
+cm9jLWdwaW8uYwo+Pj4gQEAgLTg1OCw3ICs4NTgsNyBAQCBzdGF0aWMgaW50IGlwcm9jX2dwaW9f
+cHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPj4+ICAgICAgICAgICAgICAgICAg
+c3RydWN0IGdwaW9faXJxX2NoaXAgKmdpcnE7Cj4+Pgo+Pj4gICAgICAgICAgICAgICAgICBpcnFj
+ID0gJmNoaXAtPmlycWNoaXA7Cj4+PiAtICAgICAgICAgICAgICAgaXJxYy0+bmFtZSA9ICJiY20t
+aXByb2MtZ3BpbyI7Cj4+PiArICAgICAgICAgICAgICAgaXJxYy0+bmFtZSA9IGRldl9uYW1lKGRl
+dik7Cj4+PiAgICAgICAgICAgICAgICAgIGlycWMtPmlycV9hY2sgPSBpcHJvY19ncGlvX2lycV9h
+Y2s7Cj4+PiAgICAgICAgICAgICAgICAgIGlycWMtPmlycV9tYXNrID0gaXByb2NfZ3Bpb19pcnFf
+bWFzazsKPj4+ICAgICAgICAgICAgICAgICAgaXJxYy0+aXJxX3VubWFzayA9IGlwcm9jX2dwaW9f
+aXJxX3VubWFzazsKPj4gR3J7b2V0amUsZWV0aW5nfXMsCj4+Cj4+ICAgICAgICAgICAgICAgICAg
+ICAgICAgICBHZWVydAo+Pgo+PiAtLSAKPj4gR2VlcnQgVXl0dGVyaG9ldmVuIC0tIFRoZXJlJ3Mg
+bG90cyBvZiBMaW51eCBiZXlvbmQgaWEzMiAtLSBnZWVydEBsaW51eC1tNjhrLm9yZwo+Pgo+PiBJ
+biBwZXJzb25hbCBjb252ZXJzYXRpb25zIHdpdGggdGVjaG5pY2FsIHBlb3BsZSwgSSBjYWxsIG15
+c2VsZiBhIGhhY2tlci4gQnV0Cj4+IHdoZW4gSSdtIHRhbGtpbmcgdG8gam91cm5hbGlzdHMgSSBq
+dXN0IHNheSAicHJvZ3JhbW1lciIgb3Igc29tZXRoaW5nIGxpa2UgdGhhdC4KPj4gICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgLS0gTGludXMgVG9ydmFsZHMKPj4KCgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
