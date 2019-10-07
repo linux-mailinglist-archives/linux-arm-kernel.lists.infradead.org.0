@@ -2,91 +2,154 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 689CACEB84
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 20:11:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60ADCCEB9A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 20:16:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SAxYRatQvOV7pVReze8e3fqLimUAA55ykTTcy8hOPt8=; b=ZO+UeGmsBVrsZE
-	JNhF60e44pk1rGO9wjxFQu5KwNth7nb16ZukuDeW0N8tts7sNAIcyYslLx68TUlEpuUfsqHCzYJ4Y
-	eKzonaDZ+nj2NMJjt91wYz28v4XHxL0Xf8OV090yT3ASTlpe6zw7CNjlUNRCatFJdiw3bBsWEk7Bp
-	rcdICdz0AsGdefcHp/54FLooH6D/Tvj/WC8KL5iPC3D9wZcIb+5axrzmGnfBbJyyWflYD+yIV5aq2
-	GjkRspK0PACjzW/htGZdPRCDPWS3WWSOVRRmaAHFmJxSOvUSLBUqhTfTOLh3mOvJFryxuWPxKGOEB
-	UcZGuWrF9rIsj6fcffnw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2yiX6vym5pbkzcemYquBQrOKMZrqJxDA1Gd0/6I2C6Y=; b=de9RetI2URyypd
+	xXR9ROOHYabX4Baihoh3gzUXaNfdhe8pkIkp19jzHkbGG5dzrbIhlX9IPeNj2zFXD4L91Yj2lIXGo
+	IhKuQk8aIPAmKKrISDZUh4vG6Ps7tvuHEP79dqK4RzQX9c80sxszhbYPuToGtSXb7rqTXk9dC+ORV
+	bNv0i54lJGP7MBl/mFkfDpAiGHLXGaVE5tJTXFrwjhR3xPLxzwH7r3ZanJjZso/lknRBN1i239mx6
+	uZflub42LgtMfFEvgH7qF6DIfzfBe0IE0r0MJvl8Qt5sYwSt11IoeV3JX/1HedAV9a6O7SoL+I9DV
+	tw0guQzZkbK2XR6ORtTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHXTi-0005t9-67; Mon, 07 Oct 2019 18:11:26 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+	id 1iHXYG-0007mQ-5L; Mon, 07 Oct 2019 18:16:08 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHXTZ-0005sC-5z
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 18:11:19 +0000
-Received: by mail-qt1-x842.google.com with SMTP id m61so9474870qte.7
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 07 Oct 2019 11:11:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ziepe.ca; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=C57iBY/lvItZ8Dqp104KcV48DHmLXeJ/LePjUooFql4=;
- b=odoQ7M8lZTXPwtj2RJPv2C8GWiSQ45ucrBmbyh0P2/mlbgsNcJUIwzaa7xEwsEmuWe
- VoAXrW5x9cKaMLoIIkJilzd90Mk1JXXHSbPj7ov9vndjFMp8ADFphm+nCyh+SUsCm6WC
- Y40nYduS+oPDc+jPEf1lzHng3lYe55Cx0SNWM0Xf5ctYIJioYMkKCRdq8eWqAwt8XMZY
- NBdrzvC1OYY1866f4zNS4PgTcy/My02fgMqlKqCjvMbd6+jFPph8UmPP99sJoRWqhnH1
- BCIokZu+eebMIm5PhJcv7SGkEHQbOPaGItz1ogvWFvGa9EB7UuVFfDG9lQhQuDam/P1Z
- mk8g==
+ id 1iHXY0-0007k6-KB; Mon, 07 Oct 2019 18:15:54 +0000
+Received: by mail-wm1-x343.google.com with SMTP id 7so492741wme.1;
+ Mon, 07 Oct 2019 11:15:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=2tQokqxndPWM5nJG6nkcZjTlDb8S8kOTjBse5NzW2GQ=;
+ b=lriWK7NwmwXJnMli1sSb5qgNOWeiMNd6OJ3JLBfYCPvIY57AxgD+Elvuh4LMxcxiuD
+ ZWGfneQUwhNPwnzZVvLOENE87ytsB4Ibf0lUAXkokpqEOZxodJHNExfqiwBpvlS6OEaV
+ avHUCJA0///VYjA34h9sc3VzcZk1t4HSsQqdLIFS9umDcSaVJ/kOcCRt+9RCkF6N+Q0W
+ 1ddUrB/FmZ8H8rrfIKalvy7hDOlg1YeKB+kukNpOaJqztMDn/nvQ7klwTgdu8l4Yo5fb
+ cbqv/KYCxR8zbWUEwtTEZJvV4meOq6yG0K5jlHU+vUJ2SHPB6ea4m4dyGPy+ppSYSD/x
+ lqtA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=C57iBY/lvItZ8Dqp104KcV48DHmLXeJ/LePjUooFql4=;
- b=GaZWndsxcmZjNeSKh/jEEqZy0rVJNJXkWw7WNGsWAgVp96Z9WTyB+TJtg7B8YNeUrp
- 6g7jaq9CyApkg6hybaLvEiC/f/KQ0z5bBStbUaPg6KEM6BcEIQq+WLIqKC4nLY1nS7YA
- sITotbu+fV/WBbtmigHjcvcVcGXfd2rDHvkdFsaZVM1bcBpmLCxTkmYS1lt2ehrXn8T7
- h/HbfmAzrcsom4R0VJv0jIDoAlj0hzmG6PeRn38TPoSoboAoiqdwxvHfGY6CU2voPUlM
- O5Uv7dSN4eW4egbjq7/LmZSlwP8hSclOBcz9YugLOcXiz3IByUV106m4qNGKpbW9ifa8
- 5wQQ==
-X-Gm-Message-State: APjAAAV8psMHOiNKthRbQbBAj3F4s2WMeo/uqayGEjRgY/pL4XXczz2u
- elsisN+0dZVXQVgFBuGTMicUPQ==
-X-Google-Smtp-Source: APXvYqzfloaIHtCD4grmgryCyyJiy1Vl45sjxwGuBPDO16urH8mhT+QtavoYJkIRRAEqLiwuwRR7Cg==
-X-Received: by 2002:ac8:2d2c:: with SMTP id n41mr31355650qta.335.1570471875205; 
- Mon, 07 Oct 2019 11:11:15 -0700 (PDT)
-Received: from ziepe.ca
- (hlfxns017vw-142-162-113-180.dhcp-dynamic.fibreop.ns.bellaliant.net.
- [142.162.113.180])
- by smtp.gmail.com with ESMTPSA id s17sm7755821qkg.79.2019.10.07.11.11.14
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 07 Oct 2019 11:11:14 -0700 (PDT)
-Received: from jgg by mlx.ziepe.ca with local (Exim 4.90_1)
- (envelope-from <jgg@ziepe.ca>)
- id 1iHXTV-0007lh-Lt; Mon, 07 Oct 2019 15:11:13 -0300
-Date: Mon, 7 Oct 2019 15:11:13 -0300
-From: Jason Gunthorpe <jgg@ziepe.ca>
-To: Steven Price <steven.price@arm.com>
-Subject: Re: [PATCH v11 14/22] mm: pagewalk: Add 'depth' parameter to pte_hole
-Message-ID: <20191007181113.GC13229@ziepe.ca>
-References: <20191007153822.16518-1-steven.price@arm.com>
- <20191007153822.16518-15-steven.price@arm.com>
- <20191007161049.GA13229@ziepe.ca>
- <6e570d6d-b29f-f4cb-1eb9-6ff6cab15a2e@arm.com>
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=2tQokqxndPWM5nJG6nkcZjTlDb8S8kOTjBse5NzW2GQ=;
+ b=m2xWUjIm1My+QILyvqMeeaZj3qV+5Z8nsuImnKllzHV/RwQpoaFifURu0T/swUeG+U
+ 6jvG61rEcAJOCmWg+pfDNou+eLzoNUpYgAcz0li9QKTxIPaM9vdgGt4SeayINpeJRV9Z
+ 5f7PPw58Im61okVxUNhVJaoOmsDQvZ7v7wePYtyEDG4cF6zKodMSr9288ZBqpR/iSAHG
+ KovITIWd89lB19XGNxBKwuOZypLGhB5UMV52lRsqsd4nCXqtEG5Fo34jynNqFUnjFErp
+ 79zCrwkzTlgECxcwsJ+Kv8EN4tGLoIpT0PCf51a6bFABknKRpFR44K9p+AWx/aohVuAK
+ Ey3Q==
+X-Gm-Message-State: APjAAAVHLinAI9vUKWc9gp2OJtOUuFoaK2rN0RuPU9VCcltFrtzd4WUm
+ k9MsdTz4U/pWjX7RYT9Z1Ig=
+X-Google-Smtp-Source: APXvYqzWPu3ramTe1QnetsyNsmFD9MzlGE4xe8IYCHPZba4sSCUgQQtumOSxNEv5UhDtmqnrxANG/g==
+X-Received: by 2002:a1c:5f82:: with SMTP id t124mr478715wmb.114.1570472150379; 
+ Mon, 07 Oct 2019 11:15:50 -0700 (PDT)
+Received: from [10.67.50.53] ([192.19.223.252])
+ by smtp.googlemail.com with ESMTPSA id d10sm514302wma.42.2019.10.07.11.15.40
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 07 Oct 2019 11:15:49 -0700 (PDT)
+Subject: Re: [PATCH -next 03/34] rtc: brcmstb-waketimer: use
+ devm_platform_ioremap_resource() to simplify code
+To: YueHaibing <yuehaibing@huawei.com>, a.zummo@towertech.it,
+ alexandre.belloni@bootlin.com, joel@jms.id.au, andrew@aj.id.au,
+ nicolas.ferre@microchip.com, ludovic.desroches@microchip.com,
+ computersforpeace@gmail.com, gregory.0xf0@gmail.com,
+ bcm-kernel-feedback-list@broadcom.com, linus.walleij@linaro.org,
+ baruch@tkos.co.il, paul@crapouillou.net, vz@mleia.com,
+ slemieux.tyco@gmail.com, khilman@baylibre.com, eddie.huang@mediatek.com,
+ sean.wang@mediatek.com, matthias.bgg@gmail.com, patrice.chotard@st.com,
+ mcoquelin.stm32@gmail.com, alexandre.torgue@st.com, mripard@kernel.org,
+ wens@csie.org, thierry.reding@gmail.com, jonathanh@nvidia.com,
+ linux@prisktech.co.nz, michal.simek@xilinx.com
+References: <20191006102953.57536-1-yuehaibing@huawei.com>
+ <20191006102953.57536-4-yuehaibing@huawei.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
+Message-ID: <dd5ef249-820c-9a5c-9fdf-50c7af9b0f61@gmail.com>
+Date: Mon, 7 Oct 2019 11:15:33 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <6e570d6d-b29f-f4cb-1eb9-6ff6cab15a2e@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20191006102953.57536-4-yuehaibing@huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_111117_632770_8CEBBF02 
-X-CRM114-Status: GOOD (  21.89  )
+X-CRM114-CacheID: sfid-20191007_111552_666976_71A3FE05 
+X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -105,98 +168,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, Arnd Bergmann <arnd@arndb.de>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- =?utf-8?B?SsOpcsO0bWU=?= Glisse <jglisse@redhat.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
- James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
+Cc: linux-rtc@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 07, 2019 at 05:20:30PM +0100, Steven Price wrote:
-> On 07/10/2019 17:10, Jason Gunthorpe wrote:
-> > On Mon, Oct 07, 2019 at 04:38:14PM +0100, Steven Price wrote:
-> >> diff --git a/mm/hmm.c b/mm/hmm.c
-> >> index 902f5fa6bf93..34fe904dd417 100644
-> >> +++ b/mm/hmm.c
-> >> @@ -376,7 +376,7 @@ static void hmm_range_need_fault(const struct hmm_vma_walk *hmm_vma_walk,
-> >>  }
-> >>  
-> >>  static int hmm_vma_walk_hole(unsigned long addr, unsigned long end,
-> >> -			     struct mm_walk *walk)
-> >> +			     __always_unused int depth, struct mm_walk *walk)
-> > 
-> > It this __always_unused on function arguments something we are doing
-> > now?
+On 10/6/19 3:29 AM, YueHaibing wrote:
+> Use devm_platform_ioremap_resource() to simplify the code a bit.
+> This is detected by coccinelle.
 > 
-> $ git grep __always_unused | wc -l
-> 191
-> 
-> It's elsewhere in the kernel tree. It seems like a good way of both
-> documenting and silencing compiler warnings. But I'm open to other
-> suggestions.
+> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 
-The normal kernel build doesn't generate warnings for unused function
-parameters because there are alot of false positives, IIRC. So, seems
-weird to see things like this.
-
-> > Can we have negative depth? Should it be unsigned?
-> 
-> As per the documentation added in this patch:
-> 
->  * @pte_hole:	if set, called for each hole at all levels,
->  *		depth is -1 if not known, 0:PGD, 1:P4D, 2:PUD, 3:PMD
->  *		4:PTE. Any folded depths (where PTRS_PER_P?D is equal
->  *		to 1) are skipped.
-> 
-> So it's signed to allow "-1" in the cases where pte_hole is called
-> without knowing the actual depth. This is used in the function
-> walk_page_test() because it don't walk the actual page tables, but is
-> called on a VMA instead. This means that there may not be a single depth
-> for the range provided.
-
-So are the depth values below OK? I would have expected -1 by this
-definition
-
-> >>  {
-> >>  	struct hmm_vma_walk *hmm_vma_walk = walk->private;
-> >>  	struct hmm_range *range = hmm_vma_walk->range;
-> >> @@ -564,7 +564,7 @@ static int hmm_vma_walk_pmd(pmd_t *pmdp,
-> >>  again:
-> >>  	pmd = READ_ONCE(*pmdp);
-> >>  	if (pmd_none(pmd))
-> >> -		return hmm_vma_walk_hole(start, end, walk);
-> >> +		return hmm_vma_walk_hole(start, end, 0, walk);
-> >>  
-> >>  	if (thp_migration_supported() && is_pmd_migration_entry(pmd)) {
-> >>  		bool fault, write_fault;
-> >> @@ -666,7 +666,7 @@ static int hmm_vma_walk_pud(pud_t *pudp, unsigned long start, unsigned long end,
-> >>  again:
-> >>  	pud = READ_ONCE(*pudp);
-> >>  	if (pud_none(pud))
-> >> -		return hmm_vma_walk_hole(start, end, walk);
-> >> +		return hmm_vma_walk_hole(start, end, 0, walk);
-> >>  
-> >>  	if (pud_huge(pud) && pud_devmap(pud)) {
-> >>  		unsigned long i, npages, pfn;
-> >> @@ -674,7 +674,7 @@ static int hmm_vma_walk_pud(pud_t *pudp, unsigned long start, unsigned long end,
-> >>  		bool fault, write_fault;
-> >>  
-> >>  		if (!pud_present(pud))
-> >> -			return hmm_vma_walk_hole(start, end, walk);
-> >> +			return hmm_vma_walk_hole(start, end, 0, walk);
-> >>  
-> >>  		i = (addr - range->start) >> PAGE_SHIFT;
-> >>  		npages = (end - addr) >> PAGE_SHIFT;
+Acked-by: Florian Fainelli <f.fainelli@gmail.com>
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
