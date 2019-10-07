@@ -2,43 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36DB3CED81
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 22:32:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0184CED80
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 22:32:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bgLntdl7i+stnk6gwDu9/Yl2zF6x8/IxK/AyudNXhe4=; b=hCVfgccnujEsVc
-	wfEDnFYSbWDNiLbV9HB6+w4jCetC1JtcEFkmLqaNGN9bDJxCZZRyF2V8qN0M0CgvAVkZ8oxomC/l2
-	EmGR4dq6RKRQwUMqlNC74QSz2frSbBCF9x5aoDZqTIxZF+TdN/yZNj6DppxWPN6IWEiCslB34N1BO
-	UUg3sd/zMgA/P0ctOLtLl4N4peSoVrSPrdb4at/hWnDl3hVuhtPFhZZ3rMbQdS+WxK7nxPBfsnVaP
-	QGiPf6h0AVXUIauhhZOjLwZgVxb4kCZyta3oBNsGksSLNZcf845vb7644l8fXgU3LfEBLAYj/sD5L
-	zYS9oZELPzOJVus2E7Pw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kx8547yPMJGlc5RCaodt7rV5A4yLMXxrpxXoT3mKUcw=; b=tq67b9GhZKqfm0
+	RVNftmYqnUNEiN9QQ3ByQLfo6wzbKD2swq+ysytSbVxNB31QCrMWYjwqf4tm9CWLbGLveN9JllxL6
+	QIST6tbhv66We+OsgHXsofjzwJXFUyQ2GSTUZu4DkLzqF7B6iI7C6Iw2LXDoiCuUxloBJd+zCljJr
+	CWoQMc3ub4Y55c1kmYuQsqN34ZgeEk4ykdfwQ24I++3KTW3o85CrS0hbtB5H9vl+7PT/TmvEeHIiP
+	dc80zufLhwB0t0wtEeUZqrPE4QyfDcrtd73smEXHG44i2rIEj2dJ7WwHdfBGXvOjSPtFYZ+DJPYjw
+	T5CbCSNmH4VyVKtkRtLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHZgL-00062w-Ag; Mon, 07 Oct 2019 20:32:37 +0000
+	id 1iHZg8-0005s3-QP; Mon, 07 Oct 2019 20:32:24 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHZft-0005pL-TP
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 20:32:13 +0000
+ id 1iHZft-0005pP-TP
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 20:32:12 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1570480327; bh=bc7QpEyDlGvpiVxiz/5velrN3mxOhwlvsZHJx3BTmiA=;
- h=From:To:Cc:Subject:Date:From;
- b=Qa/eySJqBG5qucKIh31HlYSo2vDu+NzWyou2O+no6F39oMNlAk9UDSeFd3m8f32c6
- /GYFk0dOTFXv0d3knAXMyUFWPOGQLbI5/CEJGuTlWCR2QitCbru+BXb1RF6EKokYzt
- grQoCFJ1mKdR0hJAd676Z4ZMLUuxF0hpsPy7WjCM=
+ t=1570480327; bh=y/VyM0hZNMJuHkjWlJoe2Ll8Mns+SaZDNjGgFDEV18I=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=U7mWq69C5aY5UbL5IUH5mlWMNXL0uskF1Tstjk+xrzodsueFjYSuV5veHA2a3rISH
+ xhxnrdtLhDqetLQLJrG7g6uHG7nQmidwsuRUl9/BLEt233uhubXarE03aKX1REfddb
+ nl67Dl0TEbmuBlCMDrgE/0gQ8+yeCNpseyVi4jzw=
 From: megous@megous.com
 To: Maxime Ripard <mripard@kernel.org>,
 	Chen-Yu Tsai <wens@csie.org>
-Subject: [RESEND PATCH 0/2] Add bluetooth support for Orange Pi 3
-Date: Mon,  7 Oct 2019 22:31:50 +0200
-Message-Id: <20191007203152.3889947-1-megous@megous.com>
+Subject: [RESEND PATCH 1/2] arm64: dts: allwinner: h6: Add pin configs for
+ uart1
+Date: Mon,  7 Oct 2019 22:31:51 +0200
+Message-Id: <20191007203152.3889947-2-megous@megous.com>
+In-Reply-To: <20191007203152.3889947-1-megous@megous.com>
+References: <20191007203152.3889947-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_133210_300898_413461A7 
-X-CRM114-Status: UNSURE (   5.45  )
+X-CRM114-CacheID: sfid-20191007_133210_276170_94D737F3 
+X-CRM114-Status: UNSURE (   8.21  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,31 +78,35 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Ondrej Jirman <megous@megous.com>
 
-(Re-send for Maxime, with already applied patches dropped. Nothing new.)
+Orange Pi 3 uses UART1 for bluetooth. Add pinconfigs so that we can use
+them.
 
-This series implements bluetooth support for Xunlong Orange Pi 3 board.
+Signed-off-by: Ondrej Jirman <megous@megous.com>
+---
+ arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-The board uses AP6256 WiFi/BT 5.0 chip.
-
-Summary of changes:
-
-- add more delay to let initialize the chip
-- let the kernel detect firmware file path
-- add new compatible and update dt-bindings
-- update Orange Pi 3 / H6 DTS
-
-Please take a look.
-
-thank you and regards,
-  Ondrej Jirman
-
-Ondrej Jirman (2):
-  arm64: dts: allwinner: h6: Add pin configs for uart1
-  arm64: dts: allwinner: orange-pi-3: Enable UART1 / Bluetooth
-
- .../dts/allwinner/sun50i-h6-orangepi-3.dts    | 19 +++++++++++++++++++
- arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi  | 10 ++++++++++
-
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
+index 67f920e0fc33..7657e816096b 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
+@@ -298,6 +298,16 @@
+ 				pins = "PH0", "PH1";
+ 				function = "uart0";
+ 			};
++
++			uart1_pins: uart1-pins {
++				pins = "PG6", "PG7";
++				function = "uart1";
++			};
++
++			uart1_rts_cts_pins: uart1-rts-cts-pins {
++				pins = "PG8", "PG9";
++				function = "uart1";
++			};
+ 		};
+ 
+ 		gic: interrupt-controller@3021000 {
 -- 
 2.23.0
 
