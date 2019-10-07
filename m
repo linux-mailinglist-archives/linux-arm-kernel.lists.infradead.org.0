@@ -2,98 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9B35CDA7D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 05:01:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CC14CDAC9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 05:38:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4AWqnL/tMQEgZxZaRBENAW/QUFxmCr41Qi5k5x/m+iE=; b=ooFI+8tH2vUhlP
-	0CdbaNKzTC2TkelUExcoPbOzBRd88TUB0IEC9yTtZqYY+gJhnFemjW5QXZBHrK4IHjEC07LgDRNfG
-	+bPMA5aDYfU7m30T3uChVua81cB0GRYUilz8Ut4TAeEi1neFym2FHHO6StcVYbMNRwCfjqHzgwKe7
-	JMgZMgrM3xZVQtNZzLnBUrAdHk5kHLsshveImCyOr/bYp3UwLpfjVdDcXnxuORnUI+UvzGq9stE8y
-	3YFaFULFQ4Iy6aQ5L2gFZFprcl3u0aYX6sFQkbZl8q3p9atoxjAep/Y/qCUlFlqaxQ1oyaeBIPBIJ
-	135RIFr7lKnv3gItJ9mQ==;
+	List-Owner; bh=4xcTvSGl+HZfE0BMsb6lh5OwM+13xF9uOFBV9RFtdrg=; b=gRjDKUZi9E2Lpi
+	T53t5jOwCd7t7v7RNrHntwOkoo3Stgebhq3PFIPRpQ1sJyM2xj8N74gxE6pKfziRU7rjxkKpgcNUu
+	FS0lWctVzpOrEbSRaW841jxlrytMEPFKCUUDggXhYZ9Scx4h0kmsrz9y9Gp9udC1ui1k0sCoShee8
+	9wTwsdCWcGq4w5alLaZJiTIfknoDzxWTUAN62Uo4zvttz/hirbf//avl8bu0z2k0TW3zoiuvqxPpR
+	2AG5b8NkpHW8TzgMJhdWVm1tlbFWdAN+icYsC2jBuMBvxP0wPODOHKF2tkZJOq3LKVHUOGpGLv1SW
+	wWOQzVJ7XG1MjrfuOZNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHJGT-0004t3-2J; Mon, 07 Oct 2019 03:00:49 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1iHJqf-0007xK-Gj; Mon, 07 Oct 2019 03:38:13 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHJGM-0004sJ-Vl
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 03:00:44 +0000
-Received: by mail-pf1-x444.google.com with SMTP id y5so7698555pfo.4
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 06 Oct 2019 20:00:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:mail-followup-to:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=vTvh0FQZ/KhCJ68up9YEl9SX+BeG73ASVfHO5zvMDJM=;
- b=pnBW4+yNeJiOvFev/FBahaxuA/+IKA/Rf8nRcxzB4pKZONAC2XLm/hnyyDBsGjehcg
- wm8TGc/FQXnVFemowR75iS6+8TAVudcc/tBCLYGtCXx0I1phqvpnwlxx9bhiQ/VBNyDZ
- 6MWPBECh8S8kw6mPxsNixJ8AblZckIusrtc3cmIfxg98IubDa+fy0ldWi3aulLmVn7eF
- GJ82B37gvl+J/1leoRKWvb0nnUSMCyyYRD9H1bCgrmtNCKMKyTljCRAoia6v2BdX0ReQ
- vO6yfijhIUUPCY2Dk/tRMTrIVZBp5+LUv+qtEd07neyox/ANflXgDb7m9wQf1nKId045
- OKsA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to:user-agent;
- bh=vTvh0FQZ/KhCJ68up9YEl9SX+BeG73ASVfHO5zvMDJM=;
- b=Gom/H4GHXXew6SOVn5XgYbE0nAcS5POI02RFkE2HZqV3if0a8NaD8PAE2H3oPoQk0E
- JZurA4AgRk+kQ5zVmP0So/31YlGQVYt+QnI/ARvf9tb2rwzm2yG9GEr0LprE+0ZfF5Te
- 0E9QphP3zSUmm56aSFN1eZg9xOA+HXZZn4cKCzq4OmE7mcwUCU9UMyGR55v0FR4zeRkz
- 3OcBha5E8MIlqgIL4s/mvk/OQKIt6M8B+PV679dzvtWliCywM96NmKr/dz8Rd2T4wBBb
- 9nWr0CfmEz274Np5rI45y3nOPOGpdoz3dsWqQfyEQ4tucvsE3mpDoK6vMwQrKx7odG+H
- 5MWQ==
-X-Gm-Message-State: APjAAAUG/MkFsr9blLd3fm/6rl/4BGnbcmJv/HXWqXor+ga1TTeGbBtT
- uaXoav1AXMFtEuzWKOK0vMtkpQ==
-X-Google-Smtp-Source: APXvYqw1T1sFm6H6Vjb3uGu/gG/MP1nBY1c5P92A6GhL0ICys7/bELhWv37NMbR6VjUTvd442kiViQ==
-X-Received: by 2002:a17:90a:17cb:: with SMTP id
- q69mr30314340pja.135.1570417241029; 
- Sun, 06 Oct 2019 20:00:41 -0700 (PDT)
-Received: from linaro.org ([121.95.100.191])
- by smtp.googlemail.com with ESMTPSA id u9sm11554379pjb.4.2019.10.06.20.00.38
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 06 Oct 2019 20:00:40 -0700 (PDT)
-Date: Mon, 7 Oct 2019 12:04:38 +0900
-From: AKASHI Takahiro <takahiro.akashi@linaro.org>
-To: catalin.marinas@arm.com, will.deacon@arm.com, robh+dt@kernel.org,
- frowand.list@gmail.com
-Subject: Re: [PATCH 0/3] arm64: kexec_file: add kdump
-Message-ID: <20191007030436.GW18778@linaro.org>
-Mail-Followup-To: AKASHI Takahiro <takahiro.akashi@linaro.org>,
- catalin.marinas@arm.com, will.deacon@arm.com, robh+dt@kernel.org,
- frowand.list@gmail.com, james.morse@arm.com,
- kexec@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20190912060150.10818-1-takahiro.akashi@linaro.org>
+ id 1iHJqV-0007wj-Q3; Mon, 07 Oct 2019 03:38:05 +0000
+X-UUID: dcc2c698dfa74a78adda0dfbec347759-20191006
+X-UUID: dcc2c698dfa74a78adda0dfbec347759-20191006
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1521589224; Sun, 06 Oct 2019 19:38:00 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 6 Oct 2019 20:37:58 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 7 Oct 2019 11:22:49 +0800
+Received: from [172.21.84.99] (172.21.84.99) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 7 Oct 2019 11:22:55 +0800
+Message-ID: <1570418576.4686.30.camel@mtksdccf07>
+Subject: Re: [PATCH] kasan: fix the missing underflow in memmove and memcpy
+ with CONFIG_KASAN_GENERIC=y
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Dmitry Vyukov <dvyukov@google.com>
+Date: Mon, 7 Oct 2019 11:22:56 +0800
+In-Reply-To: <CACT4Y+YbkjuW3_WQJ4BB8YHWvxgHJyZYxFbDJpnPzfTMxYs60g@mail.gmail.com>
+References: <20190927034338.15813-1-walter-zh.wu@mediatek.com>
+ <CACT4Y+Zxz+R=qQxSMoipXoLjRqyApD3O0eYpK0nyrfGHE4NNPw@mail.gmail.com>
+ <1569594142.9045.24.camel@mtksdccf07>
+ <CACT4Y+YuAxhKtL7ho7jpVAPkjG-JcGyczMXmw8qae2iaZjTh_w@mail.gmail.com>
+ <1569818173.17361.19.camel@mtksdccf07>
+ <1570018513.19702.36.camel@mtksdccf07>
+ <CACT4Y+bbZhvz9ZpHtgL8rCCsV=ybU5jA6zFnJBL7gY2cNXDLyQ@mail.gmail.com>
+ <1570069078.19702.57.camel@mtksdccf07>
+ <CACT4Y+ZwNv2-QBrvuR2JvemovmKPQ9Ggrr=ZkdTg6xy_Ki6UAg@mail.gmail.com>
+ <1570095525.19702.59.camel@mtksdccf07>
+ <1570110681.19702.64.camel@mtksdccf07>
+ <CACT4Y+aKrC8mtcDTVhM-So-TTLjOyFCD7r6jryWFH6i2he1WJA@mail.gmail.com>
+ <1570164140.19702.97.camel@mtksdccf07>
+ <1570176131.19702.105.camel@mtksdccf07>
+ <CACT4Y+ZvhomaeXFKr4za6MJi=fW2SpPaCFP=fk06CMRhNcmFvQ@mail.gmail.com>
+ <1570182257.19702.109.camel@mtksdccf07>
+ <CACT4Y+ZnWPEO-9DkE6C3MX-Wo+8pdS6Gr6-2a8LzqBS=2fe84w@mail.gmail.com>
+ <1570190718.19702.125.camel@mtksdccf07>
+ <CACT4Y+YbkjuW3_WQJ4BB8YHWvxgHJyZYxFbDJpnPzfTMxYs60g@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190912060150.10818-1-takahiro.akashi@linaro.org>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191006_200043_016027_22884114 
-X-CRM114-Status: GOOD (  17.16  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191006_203803_853448_D57329F7 
+X-CRM114-Status: GOOD (  29.67  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,62 +91,290 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kexec@lists.infradead.org, james.morse@arm.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: wsd_upstream <wsd_upstream@mediatek.com>,
+ linux-mediatek@lists.infradead.org, LKML <linux-kernel@vger.kernel.org>,
+ kasan-dev <kasan-dev@googlegroups.com>, Linux-MM <linux-mm@kvack.org>,
+ Alexander Potapenko <glider@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Reminder.
-This patch set is still applicable to v5.4-rc although there is one minor
-conflict in a comment; It is trivial and can easily be fixed.
+On Fri, 2019-10-04 at 15:52 +0200, Dmitry Vyukov wrote:
+> On Fri, Oct 4, 2019 at 2:05 PM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> >
+> > On Fri, 2019-10-04 at 11:54 +0200, Dmitry Vyukov wrote:
+> > > > > "out-of-bounds" is the _least_ frequent KASAN bug type. So saying
+> > > > > "out-of-bounds" has downsides of both approaches and won't prevent
+> > > > > duplicate reports by syzbot...
+> > > > >
+> > > > maybe i should add your comment into the comment in get_bug_type?
+> > >
+> > > Yes, that's exactly what I meant above:
+> > >
+> > > "I would change get_bug_type() to return "slab-out-of-bounds" (as the
+> > > most common OOB) in such case (with a comment)."
+> > >
+> > >  ;)
+> >
+> >
+> > The patchset help to produce KASAN report when size is negative size in
+> > memory operation function. It is helpful for programmer to solve the
+> > undefined behavior issue. Patch 1 based on Dmitry's suggestion and
+> > review, patch 2 is a test in order to verify the patch 1.
+> >
+> > [1]https://bugzilla.kernel.org/show_bug.cgi?id=199341
+> > [2]https://lore.kernel.org/linux-arm-kernel/20190927034338.15813-1-walter-zh.wu@mediatek.com/
+> >
+> > Walter Wu (2):
+> > kasan: detect invalid size in memory operation function
+> > kasan: add test for invalid size in memmove
+> >
+> > lib/test_kasan.c          | 18 ++++++++++++++++++
+> > mm/kasan/common.c         | 13 ++++++++-----
+> > mm/kasan/generic.c        |  5 +++++
+> > mm/kasan/generic_report.c | 10 ++++++++++
+> > mm/kasan/tags.c           |  5 +++++
+> > mm/kasan/tags_report.c    | 10 ++++++++++
+> > 6 files changed, 56 insertions(+), 5 deletions(-)
+> >
+> >
+> >
+> >
+> > commit 0bc50c759a425fa0aafb7ef623aa1598b3542c67
+> > Author: Walter Wu <walter-zh.wu@mediatek.com>
+> > Date:   Fri Oct 4 18:38:31 2019 +0800
+> >
+> >     kasan: detect invalid size in memory operation function
+> >
+> >     It is an undefined behavior to pass a negative value to
+> > memset()/memcpy()/memmove()
+> >     , so need to be detected by KASAN.
+> >
+> >     If size is negative value, then it will be larger than ULONG_MAX/2,
+> >     so that we will qualify as out-of-bounds issue.
+> >
+> >     KASAN report:
+> >
+> >      BUG: KASAN: out-of-bounds in kmalloc_memmove_invalid_size+0x70/0xa0
+> >      Read of size 18446744073709551608 at addr ffffff8069660904 by task
+> > cat/72
+> >
+> >      CPU: 2 PID: 72 Comm: cat Not tainted
+> > 5.4.0-rc1-next-20191004ajb-00001-gdb8af2f372b2-dirty #1
+> >      Hardware name: linux,dummy-virt (DT)
+> >      Call trace:
+> >       dump_backtrace+0x0/0x288
+> >       show_stack+0x14/0x20
+> >       dump_stack+0x10c/0x164
+> >       print_address_description.isra.9+0x68/0x378
+> >       __kasan_report+0x164/0x1a0
+> >       kasan_report+0xc/0x18
+> >       check_memory_region+0x174/0x1d0
+> >       memmove+0x34/0x88
+> >       kmalloc_memmove_invalid_size+0x70/0xa0
+> >
+> >     [1] https://bugzilla.kernel.org/show_bug.cgi?id=199341
+> >
+> >     Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+> >     Reported -by: Dmitry Vyukov <dvyukov@google.com>
+> >     Suggested-by: Dmitry Vyukov <dvyukov@google.com>
+> >
+> > diff --git a/mm/kasan/common.c b/mm/kasan/common.c
+> > index 6814d6d6a023..6ef0abd27f06 100644
+> > --- a/mm/kasan/common.c
+> > +++ b/mm/kasan/common.c
+> > @@ -102,7 +102,8 @@ EXPORT_SYMBOL(__kasan_check_write);
+> >  #undef memset
+> >  void *memset(void *addr, int c, size_t len)
+> >  {
+> > -       check_memory_region((unsigned long)addr, len, true, _RET_IP_);
+> > +       if (!check_memory_region((unsigned long)addr, len, true, _RET_IP_))
+> > +               return NULL;
+> >
+> >         return __memset(addr, c, len);
+> >  }
+> > @@ -110,8 +111,9 @@ void *memset(void *addr, int c, size_t len)
+> >  #undef memmove
+> >  void *memmove(void *dest, const void *src, size_t len)
+> >  {
+> > -       check_memory_region((unsigned long)src, len, false, _RET_IP_);
+> > -       check_memory_region((unsigned long)dest, len, true, _RET_IP_);
+> > +       if (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
+> > +       !check_memory_region((unsigned long)dest, len, true, _RET_IP_))
+> > +               return NULL;
+> >
+> >         return __memmove(dest, src, len);
+> >  }
+> > @@ -119,8 +121,9 @@ void *memmove(void *dest, const void *src, size_t
+> > len)
+> >  #undef memcpy
+> >  void *memcpy(void *dest, const void *src, size_t len)
+> >  {
+> > -       check_memory_region((unsigned long)src, len, false, _RET_IP_);
+> > -       check_memory_region((unsigned long)dest, len, true, _RET_IP_);
+> > +       if (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
+> > +       !check_memory_region((unsigned long)dest, len, true, _RET_IP_))
+> > +               return NULL;
+> >
+> >         return __memcpy(dest, src, len);
+> >  }
+> > diff --git a/mm/kasan/generic.c b/mm/kasan/generic.c
+> > index 616f9dd82d12..02148a317d27 100644
+> > --- a/mm/kasan/generic.c
+> > +++ b/mm/kasan/generic.c
+> > @@ -173,6 +173,11 @@ static __always_inline bool
+> > check_memory_region_inline(unsigned long addr,
+> >         if (unlikely(size == 0))
+> >                 return true;
+> >
+> > +       if (unlikely((long)size < 0)) {
+> > +               kasan_report(addr, size, write, ret_ip);
+> > +               return false;
+> > +       }
+> > +
+> >         if (unlikely((void *)addr <
+> >                 kasan_shadow_to_mem((void *)KASAN_SHADOW_START))) {
+> >                 kasan_report(addr, size, write, ret_ip);
+> > diff --git a/mm/kasan/generic_report.c b/mm/kasan/generic_report.c
+> > index 36c645939bc9..23951a453681 100644
+> > --- a/mm/kasan/generic_report.c
+> > +++ b/mm/kasan/generic_report.c
+> > @@ -107,6 +107,16 @@ static const char *get_wild_bug_type(struct
+> > kasan_access_info *info)
+> >
+> >  const char *get_bug_type(struct kasan_access_info *info)
+> >  {
+> > +       /*
+> > +        * if access_size < 0, then it will be larger than ULONG_MAX/2,
+> > +        * so that this can qualify as out-of-bounds.
+> > +        * out-of-bounds is the _least_ frequent KASAN bug type. So saying
+> > +        * out-of-bounds has downsides of both approaches and won't prevent
+> > +        * duplicate reports by syzbot.
+> > +        */
+> > +       if ((long)info->access_size < 0)
+> > +               return "out-of-bounds";
+> > +
+> >         if (addr_has_shadow(info->access_addr))
+> >                 return get_shadow_bug_type(info);
+> >         return get_wild_bug_type(info);
+> > diff --git a/mm/kasan/tags.c b/mm/kasan/tags.c
+> > index 0e987c9ca052..b829535a3ad7 100644
+> > --- a/mm/kasan/tags.c
+> > +++ b/mm/kasan/tags.c
+> > @@ -86,6 +86,11 @@ bool check_memory_region(unsigned long addr, size_t
+> > size, bool write,
+> >         if (unlikely(size == 0))
+> >                 return true;
+> >
+> > +       if (unlikely((long)size < 0)) {
+> > +               kasan_report(addr, size, write, ret_ip);
+> > +               return false;
+> > +       }
+> > +
+> >         tag = get_tag((const void *)addr);
+> >
+> >         /*
+> > diff --git a/mm/kasan/tags_report.c b/mm/kasan/tags_report.c
+> > index 969ae08f59d7..19b9e364b397 100644
+> > --- a/mm/kasan/tags_report.c
+> > +++ b/mm/kasan/tags_report.c
+> > @@ -36,6 +36,16 @@
+> >
+> >  const char *get_bug_type(struct kasan_access_info *info)
+> >  {
+> > +       /*
+> > +        * if access_size < 0, then it will be larger than ULONG_MAX/2,
+> > +        * so that this can qualify as out-of-bounds.
+> > +        * out-of-bounds is the _least_ frequent KASAN bug type. So saying
+> > +        * out-of-bounds has downsides of both approaches and won't prevent
+> > +        * duplicate reports by syzbot.
+> > +        */
+> > +       if ((long)info->access_size < 0)
+> > +               return "out-of-bounds";
+> 
+> 
+> wait, no :)
+> I meant we change it to heap-out-of-bounds and explain why we are
+> saying this is a heap-out-of-bounds.
+> The current comment effectively says we are doing non useful thing for
+> no reason, it does not eliminate any of my questions as a reader of
+> this code :)
+> 
+Ok, the current comment may not enough to be understood why we use OOB
+to represent size<0 bug. We can modify it as below :)
 
-While this patch works on v5.4, we cannot read a generated core dump
-file with crash command, even, of the latest v7.2.7. This is due to
-a newly added 52-bit address support (and related changes in mm).
-The issue, as a nature of kdump, does exist with *legacy*
-(non-kexec_file_load-based) kdump, too.
-(We will need a kernel patch as well as patches on crash to fix the issue
-and some guys have already been working.)
+If access_size < 0, then it has two reasons to be defined as
+out-of-bounds.
+1) Casting negative numbers to size_t would indeed turn up as a "large"
+size_t and its value will be larger than ULONG_MAX/2, so that this can
+qualify as out-of-bounds.
+2) Don't generate new bug type in order to prevent duplicate reports by
+some systems, e.g. syzbot."
 
-So I'd like to request you to keep reviewing my patch.
+> 
+> 
+> 
+> > +
+> >  #ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
+> >         struct kasan_alloc_meta *alloc_meta;
+> >         struct kmem_cache *cache;
+> >
+> >
+> >
+> > commit fb5cf7bd16e939d1feef229af0211a8616c9ea03
+> > Author: Walter Wu <walter-zh.wu@mediatek.com>
+> > Date:   Fri Oct 4 18:32:03 2019 +0800
+> >
+> >     kasan: add test for invalid size in memmove
+> >
+> >     Test size is negative vaule in memmove in order to verify
+> >     if it correctly produce KASAN report.
+> >
+> >     Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+> >
+> > diff --git a/lib/test_kasan.c b/lib/test_kasan.c
+> > index 49cc4d570a40..06942cf585cc 100644
+> > --- a/lib/test_kasan.c
+> > +++ b/lib/test_kasan.c
+> > @@ -283,6 +283,23 @@ static noinline void __init
+> > kmalloc_oob_in_memset(void)
+> >         kfree(ptr);
+> >  }
+> >
+> > +static noinline void __init kmalloc_memmove_invalid_size(void)
+> > +{
+> > +       char *ptr;
+> > +       size_t size = 64;
+> > +
+> > +       pr_info("invalid size in memmove\n");
+> > +       ptr = kmalloc(size, GFP_KERNEL);
+> > +       if (!ptr) {
+> > +               pr_err("Allocation failed\n");
+> > +               return;
+> > +       }
+> > +
+> > +       memset((char *)ptr, 0, 64);
+> > +       memmove((char *)ptr, (char *)ptr + 4, -2);
+> > +       kfree(ptr);
+> > +}
+> > +
+> >  static noinline void __init kmalloc_uaf(void)
+> >  {
+> >         char *ptr;
+> > @@ -773,6 +790,7 @@ static int __init kmalloc_tests_init(void)
+> >         kmalloc_oob_memset_4();
+> >         kmalloc_oob_memset_8();
+> >         kmalloc_oob_memset_16();
+> > +       kmalloc_memmove_invalid_size();
+> >         kmalloc_uaf();
+> >         kmalloc_uaf_memset();
+> >         kmalloc_uaf2();
 
-Thanks,
--Takahiro Akashi
 
-
-On Thu, Sep 12, 2019 at 03:01:47PM +0900, AKASHI Takahiro wrote:
-> This is the last piece of my kexec_file_load implementation for arm64.
-> It is now ready for being merged as some relevant patch to dtc/libfdt[1]
-> has finally been integrated in v5.3-rc1.
-> (Nothing changed since kexec_file v16[2] except adding Patch#1 and #2.)
-> 
-> Patch#1 and #2 are preliminary patches for libfdt component.
-> Patch#3 is to add kdump support.
-> 
-> [1] commit 9bb9c6a110ea ("scripts/dtc: Update to upstream version
->     v1.5.0-23-g87963ee20693"), in particular
-> 	7fcf8208b8a9 libfdt: add fdt_append_addrrange()
-> [2] http://lists.infradead.org/pipermail/linux-arm-kernel/2018-November/612641.html
-> 
-> AKASHI Takahiro (3):
->   libfdt: define UINT32_MAX in libfdt_env.h
->   libfdt: include fdt_addresses.c
->   arm64: kexec_file: add crash dump support
-> 
->  arch/arm64/include/asm/kexec.h         |   4 +
->  arch/arm64/kernel/kexec_image.c        |   4 -
->  arch/arm64/kernel/machine_kexec_file.c | 105 ++++++++++++++++++++++++-
->  include/linux/libfdt_env.h             |   3 +
->  lib/Makefile                           |   2 +-
->  lib/fdt_addresses.c                    |   2 +
->  6 files changed, 112 insertions(+), 8 deletions(-)
->  create mode 100644 lib/fdt_addresses.c
-> 
-> -- 
-> 2.21.0
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
