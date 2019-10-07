@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCB78CE569
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 16:35:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D6DCCE56A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 16:35:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fzf0ue2Rll5sWkzZ6CebZJkl9VXdlMGWvWCKXJPKfQI=; b=u3irm6wduGMKjI
-	0PdlrxBLV0oePiPhAKnP8xI11GsyBiwRzpkrfmFVtZts5VeU75PpA2v2d28KL8wjqiXUjvwfE5wXQ
-	bjVd7b5WsgpKKIK9Rtx2xz6+G/NjtrcnqR5Lp3vUDYQJeDYZQhHj23TAYj3UC23MywaI71OLua3wX
-	g1QkAsBISbLRKMSbsLwfS1GHz4Kcku9MrnJQyYClke0BgDvplLxQow62uXW7+CCyr1qXkAZfIdVIM
-	JBdTgXFqWwyRWR8X5iaeaox8l6Gvk/5sjLSDBoJL9btjKGmYfGdI+scyMCf5dyG4C4TrCLIwXQYNs
-	sikVau+qSf6tD/i0lXgA==;
+	List-Owner; bh=13sOjGk7qg6/igCQ+2IXGiTj9ncCZY4s1L/AuXkwKYs=; b=L2oyZPAD4t0dFV
+	pEvi7CmlEXZ9Jhlk0SsTd30S3kPuYW6Nh9aDy/V/FfzhuuvzyoMktK2q684R0aBCExvaG/psokAcK
+	1yqPSKRCZUZfYykk/kEF3cqOpESs+p68ky+LWwe+3dUtx1uIvKfnQy4nTgpxF0EkHkoXbb6Z+N3hZ
+	U2gP5sypiLWR1t2KDi4c9Qbwp5oaGT4/7IIlBEsxKzM1uS+b4n9cruQ94IwC/lgzIDTQ5NSBEnrNM
+	CbyMVaFIF0doghilsjXCuQbWkwEbc4HeQEdPsMkPYpKlPQ7SCUrM5RfaOVEWb3VvBXI9Wsj1Qa0h8
+	dM9JTO4NQ7X+WfN8T0LQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHU6Y-0007qh-VG; Mon, 07 Oct 2019 14:35:18 +0000
+	id 1iHU6p-0000tq-Kz; Mon, 07 Oct 2019 14:35:35 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHU5Y-0006Vp-Dy
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 14:34:18 +0000
+ id 1iHU5b-0006Y6-5Q
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 14:34:20 +0000
 Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x97EVf8O022005; Mon, 7 Oct 2019 16:34:07 +0200
+ x97EVZUT021985; Mon, 7 Oct 2019 16:34:08 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=Zh2dMsrr5p5iHfSIvb+HPhylnIwxzh9ThANxonYp9Ew=;
- b=bVMn4hxERWmfUuOCQk9yZOGkCTZKyyVT1Cbmkdih64yxAa1+Z163zBdSQyMwZywQ4VHU
- 4ddvXeMOSZ70t3DDw/Jjkydae+DBlZH6gTZ84I7LKtvMva7muRIHOj0XcsKUUok+3CCB
- LCBb/jgGr2w4SeTiqX4PRbzBLEq7L8Jzg1XO2N7U8aPXaSR1zY834mXMoeQZ3ra07E6W
- Nmma2rMtJCvTqCEmGkFe5tm7W3Cp7yDMbiaCg1Cui/6ZvAzytzeT3NDTm4lz5w+QcjXv
- xEJthJDl5FyWAaMWwpWsX4fjCZebcGRUh7+SsgDvBwxJ4sQ1NTmgz+Sa1ScQi5wjlbNU bw== 
+ bh=s8U3If4pz6kSoHoO7elZBldrDddqWyD7m4mUvvsfdn0=;
+ b=RKSb5FRIEhidJ5Ig9iqL2aAb+78dyQfKZ9LWDNuQ1HHi59CLTMHHAd878PewimsLUOXN
+ akFqi6WxYNuNSnuJYnUgTz/h/r5o15J3vHhMLQvQeDnWU7YJlmQ/Kj6hpqYUU8YBZHtw
+ +a1vwmiTblwP+qm7ux6fZeT+Rqa/1rmG00GLnQ1aZIHjYqMpruvBPfw7S0tE0WLJBZLn
+ M2497QF0Y5vrCvEyX+2dLtOTIi0yLk6hbpA0KgKfXfVG9f6ICEBJURsZUyCrV4ETNGXr
+ qHo5u8GdVbmv2ehnJ8J71pPkuMP64KlHj641fGNROz9GvvnQNY95vxAl9vDMfp88GX00 8w== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2vegxvjtj7-1
+ by mx07-00178001.pphosted.com with ESMTP id 2vegxvjtj9-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 07 Oct 2019 16:34:07 +0200
+ Mon, 07 Oct 2019 16:34:08 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id ECB4E10002A;
- Mon,  7 Oct 2019 16:34:06 +0200 (CEST)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A4A5710002A;
+ Mon,  7 Oct 2019 16:34:07 +0200 (CEST)
 Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E03B92AC883;
- Mon,  7 Oct 2019 16:34:06 +0200 (CEST)
-Received: from localhost (10.75.127.47) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 7 Oct 2019 16:34:06
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 995242AC883;
+ Mon,  7 Oct 2019 16:34:07 +0200 (CEST)
+Received: from localhost (10.75.127.45) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 7 Oct 2019 16:34:07
  +0200
 From: Alexandre Torgue <alexandre.torgue@st.com>
 To: Maxime Coquelin <mcoquelin.stm32@gmail.com>, <arnd@arndb.de>,
  <robh+dt@kernel.org>, <mark.rutland@arm.com>
-Subject: [PATCH 3/4] ARM: dts: stm32: remove usb phy-names entries on
- stm32mp157c-ev1
-Date: Mon, 7 Oct 2019 16:34:01 +0200
-Message-ID: <20191007143402.13266-4-alexandre.torgue@st.com>
+Subject: [PATCH 4/4] ARM: dts: stm32: fix regulator-sd_switch node on
+ stm32mp157c-ed1 board
+Date: Mon, 7 Oct 2019 16:34:02 +0200
+Message-ID: <20191007143402.13266-5-alexandre.torgue@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191007143402.13266-1-alexandre.torgue@st.com>
 References: <20191007143402.13266-1-alexandre.torgue@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG4NODE2.st.com (10.75.127.11) To SFHDAG3NODE2.st.com
+X-Originating-IP: [10.75.127.45]
+X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG3NODE2.st.com
  (10.75.127.8)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
  definitions=2019-10-07_02:2019-10-07,2019-10-07 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_073416_763771_54145B04 
-X-CRM114-Status: GOOD (  10.38  )
+X-CRM114-CacheID: sfid-20191007_073419_533089_3B2CF2A7 
+X-CRM114-Status: GOOD (  10.25  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -103,28 +103,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-"phy-names" entries are not used. To be compliant with DT validation
-tool, those entries have to be remove.
+This commit fixes regulator-sd_switch node in order to be compliant to
+DT validation schema.
 
 Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
 
-diff --git a/arch/arm/boot/dts/stm32mp157c-ev1.dts b/arch/arm/boot/dts/stm32mp157c-ev1.dts
-index 6287db532e7d..2baae5f25e2c 100644
---- a/arch/arm/boot/dts/stm32mp157c-ev1.dts
-+++ b/arch/arm/boot/dts/stm32mp157c-ev1.dts
-@@ -343,14 +343,12 @@
+diff --git a/arch/arm/boot/dts/stm32mp157c-ed1.dts b/arch/arm/boot/dts/stm32mp157c-ed1.dts
+index 1d426ea8bdaf..329853d9b1de 100644
+--- a/arch/arm/boot/dts/stm32mp157c-ed1.dts
++++ b/arch/arm/boot/dts/stm32mp157c-ed1.dts
+@@ -100,7 +100,8 @@
  
- &usbh_ehci {
- 	phys = <&usbphyc_port0>;
--	phy-names = "usb";
- 	status = "okay";
- };
- 
- &usbotg_hs {
- 	dr_mode = "peripheral";
- 	phys = <&usbphyc_port1 0>;
--	phy-names = "usb2-phy";
- 	status = "okay";
+ 		gpios = <&gpiof 14 GPIO_ACTIVE_HIGH>;
+ 		gpios-states = <0>;
+-		states = <1800000 0x1 2900000 0x0>;
++		states = <1800000 0x1>,
++			 <2900000 0x0>;
+ 	};
  };
  
 -- 
