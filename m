@@ -2,115 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16827CEE7A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 23:36:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79CD1CEE87
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 23:45:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XSynpD8QtZBdfDV1Dt2S50/LI6gl/NE0+j5g3/zJF3Y=; b=pnng9I73Q3pcjy
-	Qc+rdYc2zyRiXDp1Fi+eSOko1Vv66MUAsWeSS296ZyV8ssydvhvD6xSBmvu3cQGf1FUM/PifTfrxt
-	Pi4NsnMnpNFNwGgcPlpX20jGnGo9iCOZA4Nhn6tts3Y4gnNBf1DoPs6qZSWkYPi0dJZKarKA8Hri+
-	YhY3YWRQMWtPtJj9vYjqh+JgSe5B0B5cbmisEhAGzdreFsb9EO/XiF+ug2EpwfhzXaeYWjwM0HHwN
-	UW/1DSBHoJm3vIL6T/nMtkgoACQ2d6vQBZSp+TmYDD/m57HrDJq1UUn1Lopt3rVbBhhkkc0ThN0fI
-	sMexXDeAAzvlfMCzXmfg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=X6WCiSS0Mz8VONlW8tOIy37uJJ9xg28Un6eIHdj87Ok=; b=sStDD9NTdrU3vT
+	nReongPFOjfAh+6zz8LOiRWp4wqCIBrrmY8WtXvUuq2SDR/5iROG8cBb/BnwOHRy2ByF8vfxodY7v
+	xAAUzggtAx7LOjrTdAYEXSKF3uu+eHiTd4YTQpELBdYGyoSPgwDHNzjZWba+rvyFIY1591jJS1VqE
+	QY+Z2dFsfJZUFg4NG/R+AXUPfOIK4cJkrVCOn4qs3GGo176kr3DcQMoa6Dvr3lvz/o15dHjNaKK0C
+	c2F+fzjvAphRgKT2cDlatWXVd5r/1A6Y9hjDNQ0ijl4Acx9/4kcrsMch1IIdurjzQJBPRwGJtKo+P
+	u1kLK/2nLMSFW0ZLv+Ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHagF-0004jh-QA; Mon, 07 Oct 2019 21:36:35 +0000
-Received: from mail-eopbgr150085.outbound.protection.outlook.com
- ([40.107.15.85] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1iHaoo-0008Tn-9L; Mon, 07 Oct 2019 21:45:26 +0000
+Received: from chamillionaire.breakpoint.cc ([2a0a:51c0:0:12e:520::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHag6-0004j5-VE
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 21:36:28 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=nKR/PS2geALwHm/hD3c4gqKaZWTcmrnCCYx9nallOPhwWMFvRqIEVwixumTsKuvN/3/NmxV5kBpM92InTzLp9ml3+B8RrSKeLRiANbO5Hd4Rkbin+KwIOIDMu4io8SUgZCBZlQwYhyae124EvdOGVgVDRoqEgxcFWkM6KmicW/hQNJMpfJFP94VX4Zt+UuRlhPPlvrU+4Akl7sxDQRRv7Hd1NIczK8sJZC4cswK8A48OaN9iNyhaHc+/IxI3kQvqPHWFemEU0PKgdCE4etArq2vCBeu+HWJ/jAEqybSebtoyW3mQWLx+4NvmfmV9/uZ7eCSi9LVkgmgazwvp/c5IRw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ei25beopCtm1f87mBuCBJIwvy5p0S1xRGw56QyoxYRI=;
- b=D0r8FgC2cTeNZBB7SqANVIFUgX6Ckjqx/IEMErzt83Ryz4JDZLn3Xf8agIqxl6NU7PQKX2k+1vhk2YAk3m+3nwL4JqVpqB929yoojwiKRwdm+SdCr74cMMvWrJQB01qqub58ZDMFU4QWM7IK99qRQVRYubEbl0DitdPkdt1Nr5xYNRCC1jx0nTJM4qvtlo5kaeOlNDiHtPPBfg+36R4BxrP3BCspkuH2G59FCcpYgrxrVOTuhf1BgJDtE1dVMVR2zWhgGJX8zcB1shAKx41nYqIRw77LNEQdG1Be5DJGgIaxAuuLIOO+dUrSmYCczwH+p9uiE+WitaXexh4PVxpU0Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ei25beopCtm1f87mBuCBJIwvy5p0S1xRGw56QyoxYRI=;
- b=aLdYhfC9mozXwUWUi5QKcJVD0aZYjNt9ao4+IqqKrwWdFhSjmKeO1PSZLe6f+3aZlFEvyf8DwEkflSfch1juvRZnrWqOOBfVW8I4iOxbdliwBNne/XYTY01WTpzUN2dp2W3eplaUZwrI3QxvSqWrrngYAgkfvoDdoVJtTDWv1jo=
-Received: from VE1PR04MB6687.eurprd04.prod.outlook.com (20.179.234.30) by
- VE1PR04MB6749.eurprd04.prod.outlook.com (10.255.118.22) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2327.24; Mon, 7 Oct 2019 21:36:24 +0000
-Received: from VE1PR04MB6687.eurprd04.prod.outlook.com
- ([fe80::c93:c279:545b:b6b6]) by VE1PR04MB6687.eurprd04.prod.outlook.com
- ([fe80::c93:c279:545b:b6b6%3]) with mapi id 15.20.2327.025; Mon, 7 Oct 2019
- 21:36:24 +0000
-From: Leo Li <leoyang.li@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>, Ran Wang <ran.wang_1@nxp.com>
-Subject: RE: [PATCH] arm64: dts: lx2160a: Correct CPU core idle state name
-Thread-Topic: [PATCH] arm64: dts: lx2160a: Correct CPU core idle state name
-Thread-Index: AQHVbSoQgKuB1YvE4E++c/2kBBS2fqdPMKwAgACjaGA=
-Date: Mon, 7 Oct 2019 21:36:24 +0000
-Message-ID: <VE1PR04MB66874D4C179BA0AD091AC3DB8F9B0@VE1PR04MB6687.eurprd04.prod.outlook.com>
-References: <20190917073357.5895-1-ran.wang_1@nxp.com>
- <20191007115104.GF7150@dragon>
-In-Reply-To: <20191007115104.GF7150@dragon>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leoyang.li@nxp.com; 
-x-originating-ip: [64.157.242.222]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 2696280a-3eed-48a3-a3f3-08d74b6e670c
-x-ms-office365-filtering-ht: Tenant
-x-ms-traffictypediagnostic: VE1PR04MB6749:|VE1PR04MB6749:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VE1PR04MB6749E86F6E03C13BB4279AEA8F9B0@VE1PR04MB6749.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:462;
-x-forefront-prvs: 01834E39B7
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(396003)(376002)(136003)(39860400002)(346002)(13464003)(199004)(189003)(186003)(4326008)(2906002)(6116002)(26005)(55016002)(6436002)(33656002)(64756008)(66946007)(102836004)(66556008)(66476007)(6636002)(76116006)(25786009)(6246003)(66446008)(71200400001)(9686003)(229853002)(7696005)(71190400001)(99286004)(76176011)(305945005)(3846002)(74316002)(53546011)(66066001)(7736002)(256004)(14444005)(6506007)(110136005)(11346002)(446003)(54906003)(476003)(14454004)(486006)(316002)(5660300002)(8936002)(8676002)(81156014)(81166006)(478600001)(52536014)(86362001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6749;
- H:VE1PR04MB6687.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: vfToijxhyQ7YVdx+vuxNSbRq5mLgIbI7WlUPrSNFiCvTe8lC7gnCi00Gy0XgvdlQqQoyIy/1gnyDiOnx1kPcn38JpqVmjUmw9YnkIrQe9QPH6+At+1F6qIfLrwEys/4I+Imj9y46qGveRRSkSOwVAK3m9NeSVwTku2qbcDL9tRYd1ZVleEkjAJ89MGHHXMeqY3ZgW6kV3T0iO8tuKPrlkhWoh9Xe7W2P3vAXNAhJfAgH7V+1oLDCtcP9gkq6r4UwWMsb8B3+Qt1+qx0HPPdS5VUhlmt42fhut93qfrKiZPT2nq/EULS3pR12vTPEuzgOizOGowBKW3y2yBh3ycrxWUNJs3eRNknUSUHxgaEcj4G6mBA1qUZsGuEEpJOCQqcxAfEN5JE0jB2PdJlx2BTaX2XmICv/QSl68hme329+1Oc=
+ id 1iHaoK-000775-UW
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 21:44:58 +0000
+Received: from localhost ([127.0.0.1] helo=flow.W.breakpoint.cc)
+ by Chamillionaire.breakpoint.cc with esmtp (Exim 4.92)
+ (envelope-from <sebastian@breakpoint.cc>)
+ id 1iHaoD-0006R1-9c; Mon, 07 Oct 2019 23:44:49 +0200
+From: Sebastian Andrzej Siewior <sebastian@breakpoint.cc>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [RFC PATCH 0/3] Queued spinlocks/RW-locks for ARM
+Date: Mon,  7 Oct 2019 23:44:36 +0200
+Message-Id: <20191007214439.27891-1-sebastian@breakpoint.cc>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2696280a-3eed-48a3-a3f3-08d74b6e670c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Oct 2019 21:36:24.2332 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: cKe6iu2w3Vt4s2rekkmEKMey0TeksJLfy1WtXEEYWZCJ2QsKbHqo/o9xTLhGQN+VSpklnZWnhq4XUu4FndeS2Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6749
+X-Breakpoint-Spam-Score: -1.0
+X-Breakpoint-Spam-Level: -
+X-Breakpoint-Spam-Status: No , -1.0 points, 5.0 required,  ALL_TRUSTED=-1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_143627_006411_EFC1CF29 
-X-CRM114-Status: GOOD (  14.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191007_144456_987662_85B504F2 
+X-CRM114-Status: GOOD (  10.85  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.15.85 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.15.85 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a0a:51c0:0:12e:520:0:0:1 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -122,210 +61,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Arnd Bergmann <arnd@arndb.de>, Peter Zijlstra <peterz@infradead.org>,
+ Russell King <linux@armlinux.org.uk>, Ingo Molnar <mingo@redhat.com>,
+ Waiman Long <longman@redhat.com>, Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
+I added support for queued-RW and -spinlocks for ARM. I wanted to
+remove the current implementation but this does not work. The CPU_V6
+kernel config does not have support for xchg() on 2 byte memory address.
+This is required by q-lock' slowpath. It is possible to create a
+multi-kernel (with v6+v7+SMP) which then lack the function.
 
-> -----Original Message-----
-> From: Shawn Guo <shawnguo@kernel.org>
-> Sent: Monday, October 7, 2019 6:51 AM
-> To: Ran Wang <ran.wang_1@nxp.com>; Leo Li <leoyang.li@nxp.com>
-> Cc: Rob Herring <robh+dt@kernel.org>; Mark Rutland
-> <mark.rutland@arm.com>; linux-arm-kernel@lists.infradead.org;
-> devicetree@vger.kernel.org; linux-kernel@vger.kernel.org
-> Subject: Re: [PATCH] arm64: dts: lx2160a: Correct CPU core idle state name
-> 
-> On Tue, Sep 17, 2019 at 03:33:56PM +0800, Ran Wang wrote:
-> > lx2160a support PW15 but not PW20, correct name to avoid confusing.
-> >
-> > Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
-> 
-> Leo, agree?
+I tested the q-lock implementation with
+	hackbench -g40 -s 500 -l 500
 
-Ya.  The statement is correct.
+The numbers in the table below represent the average runtime of 10
+invocations. I tested with HZ_100,HZ_250 and the different preemption
+levels on a IMX6q-board (quad Cortex-A9) and an AM572x board (dual
+Cortex-A15).
+"Ticket" means the current implementation on v5.4-rc1, Q-Locks is the
+switch to queued RW and spinlocks and in Q-locksI the locking
+instruction is additionally inlined.
 
-Acked-by: Li Yang <leoyang.li@nxp.com>
+IMX6q
+~~~~~
+HZ_100  | PREEMPT_NONE  | PREEMPT_VOLUNTARY 	| PREEMPT
+Ticket  | 52.103        | 52.284		| 60.5681
+Q-locks | 54.1804	| 53.267		| 56.1914
+Q-locksI| 52.2985       | 49.398		| 56.7441
 
-> 
-> Shawn
-> 
-> > ---
-> >  arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi | 36 +++++++++++++------
-> -------
-> >  1 file changed, 18 insertions(+), 18 deletions(-)
-> >
-> > diff --git a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-> b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-> > index 408e0ec..b032f38 100644
-> > --- a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-> > +++ b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-> > @@ -33,7 +33,7 @@
-> >  			i-cache-line-size = <64>;
-> >  			i-cache-sets = <192>;
-> >  			next-level-cache = <&cluster0_l2>;
-> > -			cpu-idle-states = <&cpu_pw20>;
-> > +			cpu-idle-states = <&cpu_pw15>;
-> >  		};
-> >
-> >  		cpu@1 {
-> > @@ -49,7 +49,7 @@
-> >  			i-cache-line-size = <64>;
-> >  			i-cache-sets = <192>;
-> >  			next-level-cache = <&cluster0_l2>;
-> > -			cpu-idle-states = <&cpu_pw20>;
-> > +			cpu-idle-states = <&cpu_pw15>;
-> >  		};
-> >
-> >  		cpu@100 {
-> > @@ -65,7 +65,7 @@
-> >  			i-cache-line-size = <64>;
-> >  			i-cache-sets = <192>;
-> >  			next-level-cache = <&cluster1_l2>;
-> > -			cpu-idle-states = <&cpu_pw20>;
-> > +			cpu-idle-states = <&cpu_pw15>;
-> >  		};
-> >
-> >  		cpu@101 {
-> > @@ -81,7 +81,7 @@
-> >  			i-cache-line-size = <64>;
-> >  			i-cache-sets = <192>;
-> >  			next-level-cache = <&cluster1_l2>;
-> > -			cpu-idle-states = <&cpu_pw20>;
-> > +			cpu-idle-states = <&cpu_pw15>;
-> >  		};
-> >
-> >  		cpu@200 {
-> > @@ -97,7 +97,7 @@
-> >  			i-cache-line-size = <64>;
-> >  			i-cache-sets = <192>;
-> >  			next-level-cache = <&cluster2_l2>;
-> > -			cpu-idle-states = <&cpu_pw20>;
-> > +			cpu-idle-states = <&cpu_pw15>;
-> >  		};
-> >
-> >  		cpu@201 {
-> > @@ -113,7 +113,7 @@
-> >  			i-cache-line-size = <64>;
-> >  			i-cache-sets = <192>;
-> >  			next-level-cache = <&cluster2_l2>;
-> > -			cpu-idle-states = <&cpu_pw20>;
-> > +			cpu-idle-states = <&cpu_pw15>;
-> >  		};
-> >
-> >  		cpu@300 {
-> > @@ -129,7 +129,7 @@
-> >  			i-cache-line-size = <64>;
-> >  			i-cache-sets = <192>;
-> >  			next-level-cache = <&cluster3_l2>;
-> > -			cpu-idle-states = <&cpu_pw20>;
-> > +			cpu-idle-states = <&cpu_pw15>;
-> >  		};
-> >
-> >  		cpu@301 {
-> > @@ -145,7 +145,7 @@
-> >  			i-cache-line-size = <64>;
-> >  			i-cache-sets = <192>;
-> >  			next-level-cache = <&cluster3_l2>;
-> > -			cpu-idle-states = <&cpu_pw20>;
-> > +			cpu-idle-states = <&cpu_pw15>;
-> >  		};
-> >
-> >  		cpu@400 {
-> > @@ -161,7 +161,7 @@
-> >  			i-cache-line-size = <64>;
-> >  			i-cache-sets = <192>;
-> >  			next-level-cache = <&cluster4_l2>;
-> > -			cpu-idle-states = <&cpu_pw20>;
-> > +			cpu-idle-states = <&cpu_pw15>;
-> >  		};
-> >
-> >  		cpu@401 {
-> > @@ -177,7 +177,7 @@
-> >  			i-cache-line-size = <64>;
-> >  			i-cache-sets = <192>;
-> >  			next-level-cache = <&cluster4_l2>;
-> > -			cpu-idle-states = <&cpu_pw20>;
-> > +			cpu-idle-states = <&cpu_pw15>;
-> >  		};
-> >
-> >  		cpu@500 {
-> > @@ -193,7 +193,7 @@
-> >  			i-cache-line-size = <64>;
-> >  			i-cache-sets = <192>;
-> >  			next-level-cache = <&cluster5_l2>;
-> > -			cpu-idle-states = <&cpu_pw20>;
-> > +			cpu-idle-states = <&cpu_pw15>;
-> >  		};
-> >
-> >  		cpu@501 {
-> > @@ -209,7 +209,7 @@
-> >  			i-cache-line-size = <64>;
-> >  			i-cache-sets = <192>;
-> >  			next-level-cache = <&cluster5_l2>;
-> > -			cpu-idle-states = <&cpu_pw20>;
-> > +			cpu-idle-states = <&cpu_pw15>;
-> >  		};
-> >
-> >  		cpu@600 {
-> > @@ -225,7 +225,7 @@
-> >  			i-cache-line-size = <64>;
-> >  			i-cache-sets = <192>;
-> >  			next-level-cache = <&cluster6_l2>;
-> > -			cpu-idle-states = <&cpu_pw20>;
-> > +			cpu-idle-states = <&cpu_pw15>;
-> >  		};
-> >
-> >  		cpu@601 {
-> > @@ -241,7 +241,7 @@
-> >  			i-cache-line-size = <64>;
-> >  			i-cache-sets = <192>;
-> >  			next-level-cache = <&cluster6_l2>;
-> > -			cpu-idle-states = <&cpu_pw20>;
-> > +			cpu-idle-states = <&cpu_pw15>;
-> >  		};
-> >
-> >  		cpu@700 {
-> > @@ -257,7 +257,7 @@
-> >  			i-cache-line-size = <64>;
-> >  			i-cache-sets = <192>;
-> >  			next-level-cache = <&cluster7_l2>;
-> > -			cpu-idle-states = <&cpu_pw20>;
-> > +			cpu-idle-states = <&cpu_pw15>;
-> >  		};
-> >
-> >  		cpu@701 {
-> > @@ -273,7 +273,7 @@
-> >  			i-cache-line-size = <64>;
-> >  			i-cache-sets = <192>;
-> >  			next-level-cache = <&cluster7_l2>;
-> > -			cpu-idle-states = <&cpu_pw20>;
-> > +			cpu-idle-states = <&cpu_pw15>;
-> >  		};
-> >
-> >  		cluster0_l2: l2-cache0 {
-> > @@ -340,9 +340,9 @@
-> >  			cache-level = <2>;
-> >  		};
-> >
-> > -		cpu_pw20: cpu-pw20 {
-> > +		cpu_pw15: cpu-pw15 {
-> >  			compatible = "arm,idle-state";
-> > -			idle-state-name = "PW20";
-> > +			idle-state-name = "PW15";
-> >  			arm,psci-suspend-param = <0x0>;
-> >  			entry-latency-us = <2000>;
-> >  			exit-latency-us = <2000>;
-> > --
-> > 2.7.4
-> >
+HZ_250  | PREEMPT_NONE  | PREEMPT_VOLUNTARY 	| PREEMPT
+Ticket  | 54.3888       | 52.7896      		| 58.4837
+Q-locks | 52.1027	| 52.2302               | 57.26
+Q-locksI| 51.6185       | 51.5856		| 55.327
+
+AM572x
+~~~~~~
+HZ_100  | PREEMPT_NONE  | PREEMPT_VOLUNTARY 	| PREEMPT
+Ticket  | 42.3819       | 42.4821      		| 43.2671
+Q-locks | 40.9141	| 40.0269	        | 42.65  
+Q-locksI| 40.0763       | 39.9101      		| 40.7811
+
+HZ_250  | PREEMPT_NONE  | PREEMPT_VOLUNTARY 	| PREEMPT
+Ticket  | 41.6399       | 42.9386      		| 44.5865
+Q-locks | 41.4476	| 43.0836               | 43.1937
+Q-locksI| 39.6897       | 41.1746		| 43.1962
+
+Based on these numbers, the Q-lock based implementation performs a
+little better that the current ticket spinlock implementation. On IMX6q
+it requires additionally to inline the locks while it makes hardly a
+difference on AM572x.
+
+Here are `size' numbers for the different vmlinux binary:
+
+   text	   data	    bss	    dec	 dec KiB  variant
+8096124	2604932	 198648	10899704 10644.24 5.4-rc1 CONFIG_HZ_100 CONFIG_PREEMPT_NONE
+8031639	2605060	 198656	10835355 10581.40 qlocks  CONFIG_HZ_100 CONFIG_PREEMPT_NONE
+8319233	2605072	 198656	11122961 10862.27 qlocksI CONFIG_HZ_100 CONFIG_PREEMPT_NONE
+
+8098548	2604932	 198648	10902128 10646.61 5.4-rc1 CONFIG_HZ_100 CONFIG_PREEMPT_VOLUNTARY
+8034103	2605060	 198656	10837819 10583.81 qlocks  CONFIG_HZ_100 CONFIG_PREEMPT_VOLUNTARY
+8321769	2605072	 198656	11125497 10864.74 qlocksI CONFIG_HZ_100 CONFIG_PREEMPT_VOLUNTARY
+
+8082969	2605468	 198712	10887149 10631.98 5.4-rc1 CONFIG_HZ_100 CONFIG_PREEMPT
+8083732	2609692	 198720	10892144 10636.86 qlocks  CONFIG_HZ_100 CONFIG_PREEMPT
+8725070	2609704	 198720	11533494 11263.18 qlocksI CONFIG_HZ_100 CONFIG_PREEMPT
+
+8096784	2605188	 198648	10900620 10645.14 5.4-rc1 CONFIG_HZ_250 CONFIG_PREEMPT_NONE
+8032307	2605316	 198656	10836279 10582.30 qlocks  CONFIG_HZ_250 CONFIG_PREEMPT_NONE
+8319901	2605328	 198656	11123885 10863.17 qlocksI CONFIG_HZ_250 CONFIG_PREEMPT_NONE
+
+8099208	2605188	 198648	10903044 10647.50 5.4-rc1 CONFIG_HZ_250 CONFIG_PREEMPT_VOLUNTARY
+8034739	2605316	 198656	10838711 10584.68 qlocks  CONFIG_HZ_250 CONFIG_PREEMPT_VOLUNTARY
+8322405	2605328	 198656	11126389 10865.61 qlocksI CONFIG_HZ_250 CONFIG_PREEMPT_VOLUNTARY
+
+8083645	2605724	 198712	10888081 10632.89 5.4-rc1 CONFIG_HZ_250 CONFIG_PREEMPT
+8084376	2609948	 198720	10893044 10637.74 qlocks  CONFIG_HZ_250 CONFIG_PREEMPT
+8725762	2609960	 198720	11534442 11264.10 qlocksI CONFIG_HZ_250 CONFIG_PREEMPT
+
+On average the q-locksI variant is approx. 200KiB larger compared to the
+current implementation. On the preempt configuration the size increases
+by approx. 600KiB which is probably not worth it.
+
+Sebastian
+
 
 _______________________________________________
 linux-arm-kernel mailing list
