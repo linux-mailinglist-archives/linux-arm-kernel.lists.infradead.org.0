@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34485CE80C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 17:42:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34DF2CE80D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 17:43:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QZp77xwGPlSmmwV6E+ZhqXmaSKsSs2RU7jcwvT0bqQY=; b=jGRYex6Y4kvb+g
-	4yIWuttMyDXWNmvL1T0bmJwxMQiTjvfyehgLH0gD0xurWR6Do3j2seL/UgmsFYtiv9+ivhwi9lwHj
-	3qzTNP4EmBz4kCdvR4qIHJ3vUQ7Enu2ko2bebdBw0/RPJ5+nr0E17SP2ARhdmXqBhaY7RgryRhP1j
-	mB71/475weTPh2CeEcSclziDEg/Ao7XhQEoD9G0J7qCPUUlESKz5XWMMLqyuoVDuEcyBRIPukfahy
-	vL7Xwf4J7njZl2rDPiB5lnwoZklMCjYjGyIa/f4x9V46B0Kbc5x8dXTu2lsf/o74bFfs5p046aJlX
-	dq5nI+z24V7Sevi6pAZA==;
+	List-Owner; bh=Uo04vtZmzRaOdZ3t4zfJBPXICGBO2Nk/6DelwY/JbBI=; b=tuXKsLnMm3KtAD
+	0EwSP0+Etu/TXbYKXwXl0d/ziaDxDHg9pmxtjXnRUjvkGz6kmm7GSHylC9CuRkTXmkE90SoRybzpV
+	PVO21MHS3CO4OTZZ5kIfQy0pfmhvGXcbIZuPeGKjfmvI5wtu87BrhgUI6778ksAUteYcuzLmelhj8
+	qUEOpXPLMWytsHF5/bLlzF4pTGtwzXw5rRH/jNbn8Kokme+ZoPqznxOK44RQbUCSUUcd9kfRSIIEi
+	ry6AzpqY+phLQNj1o1//sOZmh6JpmeNZ7GasnV0VnExRdk6rINreSXK3pij1WZ5yUoRVPuZNldnOd
+	gO9IeaOyS/u3Rur/WyKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHV9n-0008RN-1y; Mon, 07 Oct 2019 15:42:43 +0000
+	id 1iHVA7-0000Jg-5r; Mon, 07 Oct 2019 15:43:03 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHV6c-0003vJ-7Y
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 15:39:28 +0000
+ id 1iHV6f-0003yw-6m
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 15:39:31 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C9C6E142F;
- Mon,  7 Oct 2019 08:39:25 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 959B71576;
+ Mon,  7 Oct 2019 08:39:28 -0700 (PDT)
 Received: from e112269-lin.arm.com (unknown [10.1.197.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4032A3F6C4;
- Mon,  7 Oct 2019 08:39:23 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0C8633F6C4;
+ Mon,  7 Oct 2019 08:39:25 -0700 (PDT)
 From: Steven Price <steven.price@arm.com>
 To: linux-mm@kvack.org
-Subject: [PATCH v11 15/22] x86: mm: Point to struct seq_file from struct
- pg_state
-Date: Mon,  7 Oct 2019 16:38:15 +0100
-Message-Id: <20191007153822.16518-16-steven.price@arm.com>
+Subject: [PATCH v11 16/22] x86: mm+efi: Convert ptdump_walk_pgd_level() to
+ take a mm_struct
+Date: Mon,  7 Oct 2019 16:38:16 +0100
+Message-Id: <20191007153822.16518-17-steven.price@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191007153822.16518-1-steven.price@arm.com>
 References: <20191007153822.16518-1-steven.price@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_083926_391329_5A0A35DA 
-X-CRM114-Status: GOOD (  15.19  )
+X-CRM114-CacheID: sfid-20191007_083929_502356_8A8D884D 
+X-CRM114-Status: GOOD (  13.06  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -77,227 +77,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-mm/dump_pagetables.c passes both struct seq_file and struct pg_state
-down the chain of walk_*_level() functions to be passed to note_page().
-Instead place the struct seq_file in struct pg_state and access it from
-struct pg_state (which is private to this file) in note_page().
+To enable x86 to use the generic walk_page_range() function, the
+callers of ptdump_walk_pgd_level() need to pass an mm_struct rather
+than the raw pgd_t pointer. Luckily since commit 7e904a91bf60
+("efi: Use efi_mm in x86 as well as ARM") we now have an mm_struct
+for EFI on x86.
 
 Signed-off-by: Steven Price <steven.price@arm.com>
 ---
- arch/x86/mm/dump_pagetables.c | 69 ++++++++++++++++++-----------------
- 1 file changed, 35 insertions(+), 34 deletions(-)
+ arch/x86/include/asm/pgtable.h | 2 +-
+ arch/x86/mm/dump_pagetables.c  | 4 ++--
+ arch/x86/platform/efi/efi_32.c | 2 +-
+ arch/x86/platform/efi/efi_64.c | 4 ++--
+ 4 files changed, 6 insertions(+), 6 deletions(-)
 
+diff --git a/arch/x86/include/asm/pgtable.h b/arch/x86/include/asm/pgtable.h
+index 6986a451619e..1a2b469f6e75 100644
+--- a/arch/x86/include/asm/pgtable.h
++++ b/arch/x86/include/asm/pgtable.h
+@@ -29,7 +29,7 @@
+ extern pgd_t early_top_pgt[PTRS_PER_PGD];
+ int __init __early_make_pgtable(unsigned long address, pmdval_t pmd);
+ 
+-void ptdump_walk_pgd_level(struct seq_file *m, pgd_t *pgd);
++void ptdump_walk_pgd_level(struct seq_file *m, struct mm_struct *mm);
+ void ptdump_walk_pgd_level_debugfs(struct seq_file *m, pgd_t *pgd, bool user);
+ void ptdump_walk_pgd_level_checkwx(void);
+ void ptdump_walk_user_pgd_level_checkwx(void);
 diff --git a/arch/x86/mm/dump_pagetables.c b/arch/x86/mm/dump_pagetables.c
-index ab67822fd2f4..4dc6f4df40af 100644
+index 4dc6f4df40af..24fe76325b31 100644
 --- a/arch/x86/mm/dump_pagetables.c
 +++ b/arch/x86/mm/dump_pagetables.c
-@@ -36,6 +36,7 @@ struct pg_state {
- 	bool to_dmesg;
- 	bool check_wx;
- 	unsigned long wx_pages;
-+	struct seq_file *seq;
- };
- 
- struct addr_marker {
-@@ -265,11 +266,12 @@ static void note_wx(struct pg_state *st)
-  * of PTE entries; the next one is different so we need to
-  * print what we collected so far.
-  */
--static void note_page(struct seq_file *m, struct pg_state *st,
--		      pgprot_t new_prot, pgprotval_t new_eff, int level)
-+static void note_page(struct pg_state *st, pgprot_t new_prot,
-+		      pgprotval_t new_eff, int level)
- {
- 	pgprotval_t prot, cur, eff;
- 	static const char units[] = "BKMGTPE";
-+	struct seq_file *m = st->seq;
- 
- 	/*
- 	 * If we have a "break" in the series, we need to flush the state that
-@@ -354,8 +356,8 @@ static inline pgprotval_t effective_prot(pgprotval_t prot1, pgprotval_t prot2)
- 	       ((prot1 | prot2) & _PAGE_NX);
+@@ -567,9 +567,9 @@ static void ptdump_walk_pgd_level_core(struct seq_file *m, pgd_t *pgd,
+ 		pr_info("x86/mm: Checked W+X mappings: passed, no W+X pages found.\n");
  }
  
--static void walk_pte_level(struct seq_file *m, struct pg_state *st, pmd_t addr,
--			   pgprotval_t eff_in, unsigned long P)
-+static void walk_pte_level(struct pg_state *st, pmd_t addr, pgprotval_t eff_in,
-+			   unsigned long P)
+-void ptdump_walk_pgd_level(struct seq_file *m, pgd_t *pgd)
++void ptdump_walk_pgd_level(struct seq_file *m, struct mm_struct *mm)
  {
- 	int i;
- 	pte_t *pte;
-@@ -366,7 +368,7 @@ static void walk_pte_level(struct seq_file *m, struct pg_state *st, pmd_t addr,
- 		pte = pte_offset_map(&addr, st->current_address);
- 		prot = pte_flags(*pte);
- 		eff = effective_prot(eff_in, prot);
--		note_page(m, st, __pgprot(prot), eff, 5);
-+		note_page(st, __pgprot(prot), eff, 5);
- 		pte_unmap(pte);
- 	}
- }
-@@ -379,22 +381,20 @@ static void walk_pte_level(struct seq_file *m, struct pg_state *st, pmd_t addr,
-  * us dozens of seconds (minutes for 5-level config) while checking for
-  * W+X mapping or reading kernel_page_tables debugfs file.
-  */
--static inline bool kasan_page_table(struct seq_file *m, struct pg_state *st,
--				void *pt)
-+static inline bool kasan_page_table(struct pg_state *st, void *pt)
- {
- 	if (__pa(pt) == __pa(kasan_early_shadow_pmd) ||
- 	    (pgtable_l5_enabled() &&
- 			__pa(pt) == __pa(kasan_early_shadow_p4d)) ||
- 	    __pa(pt) == __pa(kasan_early_shadow_pud)) {
- 		pgprotval_t prot = pte_flags(kasan_early_shadow_pte[0]);
--		note_page(m, st, __pgprot(prot), 0, 5);
-+		note_page(st, __pgprot(prot), 0, 5);
- 		return true;
- 	}
- 	return false;
- }
- #else
--static inline bool kasan_page_table(struct seq_file *m, struct pg_state *st,
--				void *pt)
-+static inline bool kasan_page_table(struct pg_state *st, void *pt)
- {
- 	return false;
- }
-@@ -402,7 +402,7 @@ static inline bool kasan_page_table(struct seq_file *m, struct pg_state *st,
- 
- #if PTRS_PER_PMD > 1
- 
--static void walk_pmd_level(struct seq_file *m, struct pg_state *st, pud_t addr,
-+static void walk_pmd_level(struct pg_state *st, pud_t addr,
- 			   pgprotval_t eff_in, unsigned long P)
- {
- 	int i;
-@@ -416,27 +416,27 @@ static void walk_pmd_level(struct seq_file *m, struct pg_state *st, pud_t addr,
- 			prot = pmd_flags(*start);
- 			eff = effective_prot(eff_in, prot);
- 			if (pmd_large(*start) || !pmd_present(*start)) {
--				note_page(m, st, __pgprot(prot), eff, 4);
--			} else if (!kasan_page_table(m, st, pmd_start)) {
--				walk_pte_level(m, st, *start, eff,
-+				note_page(st, __pgprot(prot), eff, 4);
-+			} else if (!kasan_page_table(st, pmd_start)) {
-+				walk_pte_level(st, *start, eff,
- 					       P + i * PMD_LEVEL_MULT);
- 			}
- 		} else
--			note_page(m, st, __pgprot(0), 0, 4);
-+			note_page(st, __pgprot(0), 0, 4);
- 		start++;
- 	}
+-	ptdump_walk_pgd_level_core(m, pgd, false, true);
++	ptdump_walk_pgd_level_core(m, mm->pgd, false, true);
  }
  
- #else
--#define walk_pmd_level(m,s,a,e,p) walk_pte_level(m,s,__pmd(pud_val(a)),e,p)
-+#define walk_pmd_level(s,a,e,p) walk_pte_level(s,__pmd(pud_val(a)),e,p)
- #define pud_large(a) pmd_large(__pmd(pud_val(a)))
- #define pud_none(a)  pmd_none(__pmd(pud_val(a)))
+ void ptdump_walk_pgd_level_debugfs(struct seq_file *m, pgd_t *pgd, bool user)
+diff --git a/arch/x86/platform/efi/efi_32.c b/arch/x86/platform/efi/efi_32.c
+index 9959657127f4..1616074075c3 100644
+--- a/arch/x86/platform/efi/efi_32.c
++++ b/arch/x86/platform/efi/efi_32.c
+@@ -49,7 +49,7 @@ void efi_sync_low_kernel_mappings(void) {}
+ void __init efi_dump_pagetable(void)
+ {
+ #ifdef CONFIG_EFI_PGT_DUMP
+-	ptdump_walk_pgd_level(NULL, swapper_pg_dir);
++	ptdump_walk_pgd_level(NULL, &init_mm);
  #endif
- 
- #if PTRS_PER_PUD > 1
- 
--static void walk_pud_level(struct seq_file *m, struct pg_state *st, p4d_t addr,
--			   pgprotval_t eff_in, unsigned long P)
-+static void walk_pud_level(struct pg_state *st, p4d_t addr, pgprotval_t eff_in,
-+			   unsigned long P)
- {
- 	int i;
- 	pud_t *start, *pud_start;
-@@ -450,33 +450,33 @@ static void walk_pud_level(struct seq_file *m, struct pg_state *st, p4d_t addr,
- 			prot = pud_flags(*start);
- 			eff = effective_prot(eff_in, prot);
- 			if (pud_large(*start) || !pud_present(*start)) {
--				note_page(m, st, __pgprot(prot), eff, 3);
--			} else if (!kasan_page_table(m, st, pud_start)) {
--				walk_pmd_level(m, st, *start, eff,
-+				note_page(st, __pgprot(prot), eff, 3);
-+			} else if (!kasan_page_table(st, pud_start)) {
-+				walk_pmd_level(st, *start, eff,
- 					       P + i * PUD_LEVEL_MULT);
- 			}
- 		} else
--			note_page(m, st, __pgprot(0), 0, 3);
-+			note_page(st, __pgprot(0), 0, 3);
- 
- 		start++;
- 	}
  }
  
- #else
--#define walk_pud_level(m,s,a,e,p) walk_pmd_level(m,s,__pud(p4d_val(a)),e,p)
-+#define walk_pud_level(s,a,e,p) walk_pmd_level(s,__pud(p4d_val(a)),e,p)
- #define p4d_large(a) pud_large(__pud(p4d_val(a)))
- #define p4d_none(a)  pud_none(__pud(p4d_val(a)))
- #endif
- 
--static void walk_p4d_level(struct seq_file *m, struct pg_state *st, pgd_t addr,
--			   pgprotval_t eff_in, unsigned long P)
-+static void walk_p4d_level(struct pg_state *st, pgd_t addr, pgprotval_t eff_in,
-+			   unsigned long P)
+diff --git a/arch/x86/platform/efi/efi_64.c b/arch/x86/platform/efi/efi_64.c
+index 08ce8177c3af..3cb63cd369d6 100644
+--- a/arch/x86/platform/efi/efi_64.c
++++ b/arch/x86/platform/efi/efi_64.c
+@@ -614,9 +614,9 @@ void __init efi_dump_pagetable(void)
  {
- 	int i;
- 	p4d_t *start, *p4d_start;
- 	pgprotval_t prot, eff;
- 
- 	if (PTRS_PER_P4D == 1)
--		return walk_pud_level(m, st, __p4d(pgd_val(addr)), eff_in, P);
-+		return walk_pud_level(st, __p4d(pgd_val(addr)), eff_in, P);
- 
- 	p4d_start = start = (p4d_t *)pgd_page_vaddr(addr);
- 
-@@ -486,13 +486,13 @@ static void walk_p4d_level(struct seq_file *m, struct pg_state *st, pgd_t addr,
- 			prot = p4d_flags(*start);
- 			eff = effective_prot(eff_in, prot);
- 			if (p4d_large(*start) || !p4d_present(*start)) {
--				note_page(m, st, __pgprot(prot), eff, 2);
--			} else if (!kasan_page_table(m, st, p4d_start)) {
--				walk_pud_level(m, st, *start, eff,
-+				note_page(st, __pgprot(prot), eff, 2);
-+			} else if (!kasan_page_table(st, p4d_start)) {
-+				walk_pud_level(st, *start, eff,
- 					       P + i * P4D_LEVEL_MULT);
- 			}
- 		} else
--			note_page(m, st, __pgprot(0), 0, 2);
-+			note_page(st, __pgprot(0), 0, 2);
- 
- 		start++;
- 	}
-@@ -529,6 +529,7 @@ static void ptdump_walk_pgd_level_core(struct seq_file *m, pgd_t *pgd,
- 	}
- 
- 	st.check_wx = checkwx;
-+	st.seq = m;
- 	if (checkwx)
- 		st.wx_pages = 0;
- 
-@@ -542,13 +543,13 @@ static void ptdump_walk_pgd_level_core(struct seq_file *m, pgd_t *pgd,
- 			eff = prot;
+ #ifdef CONFIG_EFI_PGT_DUMP
+ 	if (efi_enabled(EFI_OLD_MEMMAP))
+-		ptdump_walk_pgd_level(NULL, swapper_pg_dir);
++		ptdump_walk_pgd_level(NULL, &init_mm);
+ 	else
+-		ptdump_walk_pgd_level(NULL, efi_mm.pgd);
++		ptdump_walk_pgd_level(NULL, &efi_mm);
  #endif
- 			if (pgd_large(*start) || !pgd_present(*start)) {
--				note_page(m, &st, __pgprot(prot), eff, 1);
-+				note_page(&st, __pgprot(prot), eff, 1);
- 			} else {
--				walk_p4d_level(m, &st, *start, eff,
-+				walk_p4d_level(&st, *start, eff,
- 					       i * PGD_LEVEL_MULT);
- 			}
- 		} else
--			note_page(m, &st, __pgprot(0), 0, 1);
-+			note_page(&st, __pgprot(0), 0, 1);
+ }
  
- 		cond_resched();
- 		start++;
-@@ -556,7 +557,7 @@ static void ptdump_walk_pgd_level_core(struct seq_file *m, pgd_t *pgd,
- 
- 	/* Flush out the last page */
- 	st.current_address = normalize_addr(PTRS_PER_PGD*PGD_LEVEL_MULT);
--	note_page(m, &st, __pgprot(0), 0, 0);
-+	note_page(&st, __pgprot(0), 0, 0);
- 	if (!checkwx)
- 		return;
- 	if (st.wx_pages)
 -- 
 2.20.1
 
