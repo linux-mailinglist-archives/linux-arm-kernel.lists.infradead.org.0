@@ -2,67 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DA8FCE856
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 17:53:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D0A1CE85B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 17:54:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gQ7KF1dScPKtqls3FJtsP7AsqBCYCIkTehCZrKRuRe8=; b=cr0mui/fW+ADPW
-	KVGDfmaOF7+cKeW6hKiM4PZAgGGYCvLmWl+3J+fflGNQWOkg2uy2V7wle9eVQV3MB1AumIbG04f3x
-	h/a+Cn0COtrw/1a7y5iofH25mwBw2cSVfDXl+xiXuj3uIL0Eq7ODgR0NHPzmcN598IM6cICGrdOa2
-	ICt0ZKl48u99SVZwRYbYtsqv1wL4+4Q/jzRmCYvKgLT0AzjEqkTNLhloT8D8ovUvLhZ/3hZZSf2Iv
-	gRuRyYWPYpywfs+NY8LdAoZmXup/yohremd5ckJELIpOZhe22WnzDXLYkEM591+f0BnDzKR/YJ0M8
-	8IX1LiEudESNrTMpYenA==;
+	List-Owner; bh=yWyrI3Gj1hIz4M5n3GJF4CoPj6gH9KOghvad7jFqkYA=; b=egGMSjk3fMWZNj
+	QdqElpl1jQINiMJbfunTr/Tg85uHWsM3bJw3v/QfD0HvHs939unRvSF+OGweFd6tv6EeL10rIhGhA
+	ytYD5LFJoQKo9GRaRMc7uFDpNuaNLgDPs0JuWfUYJsI+YaA6JwN0B1Blvzn3rhcdSST9Mx1TlozVC
+	MrHmrvfjllzYGCJPQUE1BxcRfp6KyGajSm93mUCxxdWfeGgwK+I8byACiXaBHTpfgucAvrBNgsLE6
+	HFJxJmXkZRMDSBgAF7MXCw9IxBZUXVZz/5/D0DgmDMNv0SA0Q2jipR8GKTcnbuM7r2EOuLmeZMbZ4
+	P4pRct+WD4kJ2k9HUMdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHVK2-0007hh-J9; Mon, 07 Oct 2019 15:53:18 +0000
+	id 1iHVKv-00081h-7Y; Mon, 07 Oct 2019 15:54:13 +0000
 Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHVJu-0007hF-BC; Mon, 07 Oct 2019 15:53:12 +0000
-Received: by mail-io1-xd44.google.com with SMTP id w12so29580268iol.11;
- Mon, 07 Oct 2019 08:53:09 -0700 (PDT)
+ id 1iHVKo-00081A-FP; Mon, 07 Oct 2019 15:54:07 +0000
+Received: by mail-io1-xd44.google.com with SMTP id q1so29760550ion.1;
+ Mon, 07 Oct 2019 08:54:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Y0+KKOJG+TisZYwANPRDxoGgI9F6Pi0RrxyV+mcRIhQ=;
- b=jFJtBjNcMzZT/dfV5DNd+SYdyhKORKldayK714j3ON/TvF4lEz54VZg0ohvI4G5pqF
- lAWdRi7RPMXntGegumJYq6RIQrmDTg4porBhN27Lbv7Sk/7cJgqCZaCS2KEFkh/DrEaU
- LG9AUPnMp1r3a8dLLYjdd+V1jld8BVZ4BY6JSnKVz+X5a0nXZfoiM5bwiQsJKqde/8BI
- c6rJAW38SVFX+bvt4NqsXXg8Ra1WppUYCjZnx8ruBLTXBoEM9uhU1ezFtSRJV7TsPrkG
- f5rSu/ObEDrsieCcbZrOtmnVt1Yi4ZHZt2KRd5ih6mqMcCroRAGJqtnXERea7kprkZ4t
- JJeg==
+ :cc; bh=oOKcZv1B2M+ysN8LJmTMwi1RT7cbsvdwnRry27TboAA=;
+ b=GIm5xSbRI50sJepzUbwycg7NDvMt3BT+3RYQ1Ak3PHk03MA/wlw9SqTNGY2DfIZkI3
+ vzloLLiQdo1Im+2BoTX2drQ9SytWBxd+eHhHN+oxkN83GrWLEW2lR8fnp2/7fI3yPVJk
+ ZxOm4F1VeDXgpPbLMuAjDt3XlVRxikDPzHve8KYJuOw5hyLbMGGgxDCmn4YkVI3ivd7q
+ +qC9HjO+buQM/o2qZs44GNytFS6dr+QBe4nE9YfUXJ9tYuB3aUliVkTo2PYIw168NusB
+ jYzgE62kDvg5lylYW9+xxyGY9aRNG6dfE/sjjE4tsJNb9Fkc+4mHngnT1fhm2fIWSs2U
+ RT8Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Y0+KKOJG+TisZYwANPRDxoGgI9F6Pi0RrxyV+mcRIhQ=;
- b=mz9e15DH9sDS0N+TwTaHC2/WID4sDj5OXrqCcb9Tz6zVd9CKqr4UBMpsUu9/rpOztE
- Q2jllxr4LxqC4uzOwJzb9dDzqmGLCOakvbQijzVM7Vg4tV6zTQ2wbX+hSmDRl3sjSbKc
- zA9WlJS97CeyHu3XnqeAefoDkoEN0rL+wob3+ifRjD7j3dt2f7t4I0whfzcEqtshXOUz
- ljz5tBEaFq9MIFWAILE5eEB8w4NQMF52y2uTjqKsEPjMxA0/ElSQUxPSsysbQUCZhfRA
- /j18ko0tfqQRR+O/FoBKpv6uMAMpaqnljhSk0ODZty/dptcyEWvbfN9TjhQiV0VTFXWv
- OLqQ==
-X-Gm-Message-State: APjAAAX/FRUmTQWIXd96ENwsYomHYJKnwJ7lgLSqr1yqma5rsBSn1Jwt
- CQpP5dBy7Zj6duK/JS/hZW4wGREkJ7p0fuEQBbk=
-X-Google-Smtp-Source: APXvYqwUmomEUUz3nspO76GFofpEr9Y5lkrzEIBCKloUqkS8g5O/eiwEu29XJ6ktN11Av8YdVnKFAgPHLckXUaGYYDE=
-X-Received: by 2002:a02:245:: with SMTP id 66mr2498022jau.30.1570463588898;
- Mon, 07 Oct 2019 08:53:08 -0700 (PDT)
+ bh=oOKcZv1B2M+ysN8LJmTMwi1RT7cbsvdwnRry27TboAA=;
+ b=TjPmXVGuCV3Pz3VNEwdWCwyG3j1rE3uI0ekSqfcSCpNWnwvXHlE0mmbCx2DKCYmtBB
+ 8SQJnSII2n/o0EMDX2aoUkzkk1Q2i80Q8fz85Nupr7rqRFgabydWP9/dIq+mgrKTd08B
+ LOSMjZ4Az4HavbPA3ZtegbiEe4tp2738zvJFatLOXfsZ35B6doPqDuOT+wvZceH2hna3
+ OZPAyzL71Xg16xOO2/A576l4nW9UHhxji7na1ntCZdbrFBO5YjJWtjKUv9vT+/pDMveW
+ bBByR3Nrz3Q3oSY8EyqsEJ3Fa043yAooEM60jAL0DA3rJ3JfxdmwBrAT0XZHuDbEpoLw
+ HySA==
+X-Gm-Message-State: APjAAAUNrX4kxq4XIouN/1SiHtx94sLMMX5qPVBuT7N2Eliy6RLn0iXz
+ Gi3HaNxAL2yDAVzDNzEv/I3O6eWFION/zjynWBc=
+X-Google-Smtp-Source: APXvYqw9T09ClSC4idvRRaaJZz/xKErgE5SB3WxVYBhzuMFYdqY2HrLZiaXgYCS9faKiSyduxgwe6sfmi9HXu2ybLSY=
+X-Received: by 2002:a02:c983:: with SMTP id b3mr27831643jap.120.1570463645906; 
+ Mon, 07 Oct 2019 08:54:05 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191007131649.1768-1-linux.amoon@gmail.com>
- <20191007131649.1768-6-linux.amoon@gmail.com>
- <74ab98c7-0071-60e9-7613-56d15ad8c0ab@baylibre.com>
-In-Reply-To: <74ab98c7-0071-60e9-7613-56d15ad8c0ab@baylibre.com>
+ <20191007131649.1768-4-linux.amoon@gmail.com>
+ <b73a1302-90ae-f1db-ff43-84d56ca4ba39@baylibre.com>
+In-Reply-To: <b73a1302-90ae-f1db-ff43-84d56ca4ba39@baylibre.com>
 From: Anand Moon <linux.amoon@gmail.com>
-Date: Mon, 7 Oct 2019 21:22:56 +0530
-Message-ID: <CANAwSgRStPUi=naKOw+E=X-b699DnZ0Q0hYAGrUB8VKtN-fFqQ@mail.gmail.com>
-Subject: Re: [RFCv1 5/5] arm64/ARM: configs: Change CONFIG_PWM_MESON from m to
- y
+Date: Mon, 7 Oct 2019 21:23:53 +0530
+Message-ID: <CANAwSgQjKRAKV2wycZ7QFq1CS5jr_ABgvFb+pGMHWTxgFR8wPQ@mail.gmail.com>
+Subject: Re: [RFCv1 3/5] arm64: dts: meson: Add missing regulator linked to
+ VDDAO_3V3 regulator to FLASH_VDD
 To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_085310_410592_0D44F6DD 
-X-CRM114-Status: GOOD (  19.10  )
+X-CRM114-CacheID: sfid-20191007_085406_519004_67607AD7 
+X-CRM114-Status: GOOD (  13.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -109,79 +109,43 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Neil,
 
-On Mon, 7 Oct 2019 at 19:55, Neil Armstrong <narmstrong@baylibre.com> wrote:
+On Mon, 7 Oct 2019 at 19:51, Neil Armstrong <narmstrong@baylibre.com> wrote:
 >
 > On 07/10/2019 15:16, Anand Moon wrote:
-> > Using microSD card we cannot get the mainline kernel to boot
->
-> What's the link with microSD card here ?
-
-Well I thought that the PWM failed stop's booting further on linux kernel.
-But looking into kernelcli.org it seem to be working fine, but not at my end.
-[0] https://storage.kernelci.org/media/master/v5.4-rc1-82-gc0e284ccfeda/arm64/defconfig/gcc-8/lab-baylibre/boot-meson-g12b-odroid-n2.txt
-
->
-> > using mainline u-boot it fails with below logs.
-> > Build PWM_MESSON as build-in solve the issue.
+> > As per schematics add missing VDDAO_3V3 power supply to FLASH_VDD
+> > regulator. Also add TFLASH_VDD_EN signal name to gpio pin.
 > >
-> > [    1.569240] meson-gx-mmc ffe05000.sd: Got CD GPIO
-> > [    1.599227] pwm-regulator regulator-vddcpu-a: Failed to get PWM: -517
-> > [    1.600605] pwm-regulator regulator-vddcpu-b: Failed to get PWM: -517
-> > [    1.607166] pwm-regulator regulator-vddcpu-a: Failed to get PWM: -517
-> > [    1.613273] pwm-regulator regulator-vddcpu-b: Failed to get PWM: -517
-> > [    1.619931] hctosys: unable to open rtc device (rtc0)
-> >
+> > Fixes: c35f6dc5c377 (arm64: dts: meson: Add minimal support for Odroid-N2)
 > > Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 > > Cc: Jerome Brunet <jbrunet@baylibre.com>
 > > Cc: Neil Armstrong <narmstrong@baylibre.com>
 > > Signed-off-by: Anand Moon <linux.amoon@gmail.com>
 > > ---
-> > Odroid N2 Schematics says "GPIOC_6 should not pulled low if GPIOC is not
-> > work as SDCARD"
->
-> Sorry, what's the link with the PWM build-in, and your case ?
->
-
-Sorry I linked two issues with this commit message.
-
-> This comment is linked to the comment in the datasheet:
-> ""
-> If GPIOC is not work as SDIO port, please do not pull CARD_DET(GPIOC_6) low when system booting
-> up, to avoid romcode trying to boot from SD CARD.
-> ""
-> Seems pretty explicit for me.
->
-
-Ok I will recheck this at my end.
-
-> > Is their any other approch to help resolve this issue.
+> >  arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts | 3 +++
+> >  1 file changed, 3 insertions(+)
 > >
-> > Boot log failed with cold boot:
-> > [0] https://pastebin.com/cEtWq2iX
-> > ---
-> >  arch/arm64/configs/defconfig | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+> > index 66262a6ab3fe..6bd23a1e7e1d 100644
+> > --- a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+> > +++ b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+> > @@ -51,9 +51,12 @@
+> >               regulator-min-microvolt = <3300000>;
+> >               regulator-max-microvolt = <3300000>;
 > >
-> > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> > index c9a867ac32d4..72f6a7dca0d6 100644
-> > --- a/arch/arm64/configs/defconfig
-> > +++ b/arch/arm64/configs/defconfig
-> > @@ -774,7 +774,7 @@ CONFIG_MPL3115=m
-> >  CONFIG_PWM=y
-> >  CONFIG_PWM_BCM2835=m
-> >  CONFIG_PWM_CROS_EC=m
-> > -CONFIG_PWM_MESON=m
-> > +CONFIG_PWM_MESON=y
-> >  CONFIG_PWM_RCAR=m
-> >  CONFIG_PWM_ROCKCHIP=y
-> >  CONFIG_PWM_SAMSUNG=y
+> > +             /* TFLASH_VDD_EN */
+> >               gpio = <&gpio_ao GPIOAO_8 GPIO_ACTIVE_HIGH>;
+> >               enable-active-high;
+> >               regulator-always-on;
+> > +             /* U18 FC8731-09VF05NRR */
+> > +             vin-supply = <&vddao_3v3>;
+> >       };
+> >
+> >       tf_io: gpio-regulator-tf_io {
 > >
 >
-> For these changes without the microSD fail description in the commit log :
-> Acked-by: Neil Armstrong <narmstrong@baylibre.com>
+> Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
 
-Thanks. I will rephrase this without linking the microSD card, with
-better commit message.
+Thanks,
 
 Best Regards
 -Anand
