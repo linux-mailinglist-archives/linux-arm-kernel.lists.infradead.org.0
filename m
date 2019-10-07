@@ -2,57 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 197E2CDE09
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 11:12:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CA38CDE27
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 11:22:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Q0H2RgD44Zxl/wULfM0XGu21qSkmFxlcv9uo2Q/Jg20=; b=Ir7Pp+z1BlxTEMldon9MLEgnE
-	9WbDHmUDjU87DU9Qb2x3nZVJqurMgCBYloOP4zZt6gpqGOs1cG3r57MS3bv3BcHyJE0qjgT6eJH0G
-	BeiwPpy44eyx8mUFYqnr1Y0NcxAWyjRKun6/mAuMnQWUJcgaaSWbDUQebjBGiLU6VdVwSN0qesK86
-	36SzChDdmp5iMN7K6+v6K38Qplna7LEvtbVqH7ta9EUvb0Ia7N7V7flNHOq+I1IMVyf7sQgo6ZOyd
-	X4JzyDmxldvcHBZJa+jXzv1xhyxGAgHp7JDbsB7foxWkZjAJRO/UPMtDrani7KYeu88dUhmmc7aHk
-	+I7XAgUYQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZAZUAWeqSaPtiH4thweAqIyOAzB+1x7UlSSlN4p+fu8=; b=mmvuFtWIi6ETH6
+	OHh5NDz7svdhGi3OI2KGvi6qOvIvbEwqK8SrwNdHEZv3wEpMjuInikbGHg54sd7dKOkpEZIaC70Ax
+	tLv83YiUCKx1HHDL7CTA5BlK6bvmMYtAcEd+cj+54pk4IpZ1P28Cqu1lRgGnLoIRxlg9D5RpqrbZV
+	BKzktKW1MOAPb9i5CkykWpaJ3Xj7fZz8RLV0KS7lxOeEFJslXFOXUDTP0KiJQI9QCXR5CFsSgAf+X
+	6qupP7gJ8aRi/x9RW8OIiAB95OJX47x7KTiDNlomwohhZcdsVYPKH3iWNX6qwrCmx9Ux6LNkjSodY
+	f11xEAXXqFGQZFdwPS2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHP3l-0002vG-CU; Mon, 07 Oct 2019 09:12:05 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	id 1iHPDf-0006Mv-TS; Mon, 07 Oct 2019 09:22:19 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHP3c-0002u7-Fz; Mon, 07 Oct 2019 09:11:58 +0000
-X-Originating-IP: 81.185.168.108
-Received: from [192.168.43.237] (108.168.185.81.rev.sfr.net [81.185.168.108])
- (Authenticated sender: alex@ghiti.fr)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id E44E71BF20D;
- Mon,  7 Oct 2019 09:11:35 +0000 (UTC)
-From: Alex Ghiti <alex@ghiti.fr>
-To: Atish Patra <atish.patra@wdc.com>
-Subject: Re: [PATCH v6 14/14] riscv: Make mmap allocation top-down by default
-References: <20190808061756.19712-1-alex@ghiti.fr>
- <20190808061756.19712-15-alex@ghiti.fr>
- <208433f810b5b07b1e679d7eedb028697dff851b.camel@wdc.com>
-Message-ID: <60b52f20-a2c7-dee9-7cf3-a727f07400b9@ghiti.fr>
-Date: Mon, 7 Oct 2019 05:11:34 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iHPDY-0006MV-HN; Mon, 07 Oct 2019 09:22:14 +0000
+X-UUID: 92d6b8b24668422482ece661d18909c1-20191007
+X-UUID: 92d6b8b24668422482ece661d18909c1-20191007
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 638696860; Mon, 07 Oct 2019 01:22:02 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 7 Oct 2019 02:22:04 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 7 Oct 2019 16:51:56 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 7 Oct 2019 16:51:56 +0800
+Message-ID: <1570438317.4686.44.camel@mtksdccf07>
+Subject: Re: [PATCH] kasan: fix the missing underflow in memmove and memcpy
+ with CONFIG_KASAN_GENERIC=y
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Dmitry Vyukov <dvyukov@google.com>
+Date: Mon, 7 Oct 2019 16:51:57 +0800
+In-Reply-To: <CACT4Y+Z6QObZ2fvVxSmvv16YQAu4GswOqfOVQK_1_Ncz0eir_g@mail.gmail.com>
+References: <20190927034338.15813-1-walter-zh.wu@mediatek.com>
+ <CACT4Y+Zxz+R=qQxSMoipXoLjRqyApD3O0eYpK0nyrfGHE4NNPw@mail.gmail.com>
+ <1569594142.9045.24.camel@mtksdccf07>
+ <CACT4Y+YuAxhKtL7ho7jpVAPkjG-JcGyczMXmw8qae2iaZjTh_w@mail.gmail.com>
+ <1569818173.17361.19.camel@mtksdccf07>
+ <1570018513.19702.36.camel@mtksdccf07>
+ <CACT4Y+bbZhvz9ZpHtgL8rCCsV=ybU5jA6zFnJBL7gY2cNXDLyQ@mail.gmail.com>
+ <1570069078.19702.57.camel@mtksdccf07>
+ <CACT4Y+ZwNv2-QBrvuR2JvemovmKPQ9Ggrr=ZkdTg6xy_Ki6UAg@mail.gmail.com>
+ <1570095525.19702.59.camel@mtksdccf07>
+ <1570110681.19702.64.camel@mtksdccf07>
+ <CACT4Y+aKrC8mtcDTVhM-So-TTLjOyFCD7r6jryWFH6i2he1WJA@mail.gmail.com>
+ <1570164140.19702.97.camel@mtksdccf07>
+ <1570176131.19702.105.camel@mtksdccf07>
+ <CACT4Y+ZvhomaeXFKr4za6MJi=fW2SpPaCFP=fk06CMRhNcmFvQ@mail.gmail.com>
+ <1570182257.19702.109.camel@mtksdccf07>
+ <CACT4Y+ZnWPEO-9DkE6C3MX-Wo+8pdS6Gr6-2a8LzqBS=2fe84w@mail.gmail.com>
+ <1570190718.19702.125.camel@mtksdccf07>
+ <CACT4Y+YbkjuW3_WQJ4BB8YHWvxgHJyZYxFbDJpnPzfTMxYs60g@mail.gmail.com>
+ <1570418576.4686.30.camel@mtksdccf07>
+ <CACT4Y+aho7BEvQstd2+a2be-jJ0dEsjGebH7bcUFhYp-PoRDxQ@mail.gmail.com>
+ <1570436289.4686.40.camel@mtksdccf07>
+ <CACT4Y+Z6QObZ2fvVxSmvv16YQAu4GswOqfOVQK_1_Ncz0eir_g@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <208433f810b5b07b1e679d7eedb028697dff851b.camel@wdc.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_021156_804089_0908E025 
-X-CRM114-Status: GOOD (  16.20  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191007_022212_581522_89278E61 
+X-CRM114-Status: GOOD (  31.95  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.201 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,130 +95,299 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "aou@eecs.berkeley.edu" <aou@eecs.berkeley.edu>,
- "keescook@chromium.org" <keescook@chromium.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "palmer@sifive.com" <palmer@sifive.com>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "ralf@linux-mips.org" <ralf@linux-mips.org>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
- "akpm@linux-foundation.org" <akpm@linux-foundation.org>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>,
- "paul.burton@mips.com" <paul.burton@mips.com>,
- "viro@zeniv.linux.org.uk" <viro@zeniv.linux.org.uk>,
- "paul.walmsley@sifive.com" <paul.walmsley@sifive.com>,
- "jhogan@kernel.org" <jhogan@kernel.org>,
- "linux-fsdevel@vger.kernel.org" <linux-fsdevel@vger.kernel.org>,
- "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
- "hch@lst.de" <hch@lst.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "mcgrof@kernel.org" <mcgrof@kernel.org>
+Cc: wsd_upstream <wsd_upstream@mediatek.com>,
+ linux-mediatek@lists.infradead.org, LKML <linux-kernel@vger.kernel.org>,
+ kasan-dev <kasan-dev@googlegroups.com>, Linux-MM <linux-mm@kvack.org>,
+ Alexander Potapenko <glider@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/4/19 10:12 PM, Atish Patra wrote:
-> On Thu, 2019-08-08 at 02:17 -0400, Alexandre Ghiti wrote:
->> In order to avoid wasting user address space by using bottom-up mmap
->> allocation scheme, prefer top-down scheme when possible.
->>
->> Before:
->> root@qemuriscv64:~# cat /proc/self/maps
->> 00010000-00016000 r-xp 00000000 fe:00 6389       /bin/cat.coreutils
->> 00016000-00017000 r--p 00005000 fe:00 6389       /bin/cat.coreutils
->> 00017000-00018000 rw-p 00006000 fe:00 6389       /bin/cat.coreutils
->> 00018000-00039000 rw-p 00000000 00:00 0          [heap]
->> 1555556000-155556d000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
->> 155556d000-155556e000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
->> 155556e000-155556f000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
->> 155556f000-1555570000 rw-p 00000000 00:00 0
->> 1555570000-1555572000 r-xp 00000000 00:00 0      [vdso]
->> 1555574000-1555576000 rw-p 00000000 00:00 0
->> 1555576000-1555674000 r-xp 00000000 fe:00 7187   /lib/libc-2.28.so
->> 1555674000-1555678000 r--p 000fd000 fe:00 7187   /lib/libc-2.28.so
->> 1555678000-155567a000 rw-p 00101000 fe:00 7187   /lib/libc-2.28.so
->> 155567a000-15556a0000 rw-p 00000000 00:00 0
->> 3fffb90000-3fffbb1000 rw-p 00000000 00:00 0      [stack]
->>
->> After:
->> root@qemuriscv64:~# cat /proc/self/maps
->> 00010000-00016000 r-xp 00000000 fe:00 6389       /bin/cat.coreutils
->> 00016000-00017000 r--p 00005000 fe:00 6389       /bin/cat.coreutils
->> 00017000-00018000 rw-p 00006000 fe:00 6389       /bin/cat.coreutils
->> 2de81000-2dea2000 rw-p 00000000 00:00 0          [heap]
->> 3ff7eb6000-3ff7ed8000 rw-p 00000000 00:00 0
->> 3ff7ed8000-3ff7fd6000 r-xp 00000000 fe:00 7187   /lib/libc-2.28.so
->> 3ff7fd6000-3ff7fda000 r--p 000fd000 fe:00 7187   /lib/libc-2.28.so
->> 3ff7fda000-3ff7fdc000 rw-p 00101000 fe:00 7187   /lib/libc-2.28.so
->> 3ff7fdc000-3ff7fe2000 rw-p 00000000 00:00 0
->> 3ff7fe4000-3ff7fe6000 r-xp 00000000 00:00 0      [vdso]
->> 3ff7fe6000-3ff7ffd000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
->> 3ff7ffd000-3ff7ffe000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
->> 3ff7ffe000-3ff7fff000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
->> 3ff7fff000-3ff8000000 rw-p 00000000 00:00 0
->> 3fff888000-3fff8a9000 rw-p 00000000 00:00 0      [stack]
->>
->> Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
->> Acked-by: Paul Walmsley <paul.walmsley@sifive.com>
->> Reviewed-by: Christoph Hellwig <hch@lst.de>
->> Reviewed-by: Kees Cook <keescook@chromium.org>
->> Reviewed-by: Luis Chamberlain <mcgrof@kernel.org>
->> ---
->>   arch/riscv/Kconfig | 12 ++++++++++++
->>   1 file changed, 12 insertions(+)
->>
->> diff --git a/arch/riscv/Kconfig b/arch/riscv/Kconfig
->> index 59a4727ecd6c..87dc5370becb 100644
->> --- a/arch/riscv/Kconfig
->> +++ b/arch/riscv/Kconfig
->> @@ -54,6 +54,18 @@ config RISCV
->>   	select EDAC_SUPPORT
->>   	select ARCH_HAS_GIGANTIC_PAGE
->>   	select ARCH_WANT_HUGE_PMD_SHARE if 64BIT
->> +	select ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT if MMU
->> +	select HAVE_ARCH_MMAP_RND_BITS
->> +
->> +config ARCH_MMAP_RND_BITS_MIN
->> +	default 18 if 64BIT
->> +	default 8
->> +
->> +# max bits determined by the following formula:
->> +#  VA_BITS - PAGE_SHIFT - 3
->> +config ARCH_MMAP_RND_BITS_MAX
->> +	default 24 if 64BIT # SV39 based
->> +	default 17
->>   
->>   config MMU
->>   	def_bool y
-> With this patch, I am not able to boot a Fedora Linux(a Gnome desktop
-> image) on RISC-V hardware (Unleashed + Microsemi Expansion board). The
-> booting gets stuck right after systemd starts.
->
-> https://paste.fedoraproject.org/paste/TOrUMqqKH-pGFX7CnfajDg
->
-> Reverting just this patch allow to boot Fedora successfully on specific
-> RISC-V hardware. I have not root caused the issue but it looks like it
-> might have messed userpsace mapping.
+On Mon, 2019-10-07 at 10:24 +0200, Dmitry Vyukov wrote:
+> On Mon, Oct 7, 2019 at 10:18 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> > The patchsets help to produce KASAN report when size is negative numbers
+> > in memory operation function. It is helpful for programmer to solve the
+> > undefined behavior issue. Patch 1 based on Dmitry's review and
+> > suggestion, patch 2 is a test in order to verify the patch 1.
+> >
+> > [1]https://bugzilla.kernel.org/show_bug.cgi?id=199341
+> > [2]https://lore.kernel.org/linux-arm-kernel/20190927034338.15813-1-walter-zh.wu@mediatek.com/
+> >
+> > Walter Wu (2):
+> > kasan: detect invalid size in memory operation function
+> > kasan: add test for invalid size in memmove
+> >
+> >  lib/test_kasan.c          | 18 ++++++++++++++++++
+> >  mm/kasan/common.c         | 13 ++++++++-----
+> >  mm/kasan/generic.c        |  5 +++++
+> >  mm/kasan/generic_report.c | 12 ++++++++++++
+> >  mm/kasan/tags.c           |  5 +++++
+> >  mm/kasan/tags_report.c    | 12 ++++++++++++
+> >  6 files changed, 60 insertions(+), 5 deletions(-)
+> >
+> >
+> >
+> >
+> > commit 5b3b68660b3d420fd2bd792f2d9fd3ccb8877ef7
+> > Author: Walter-zh Wu <walter-zh.wu@mediatek.com>
+> > Date:   Fri Oct 4 18:38:31 2019 +0800
+> >
+> >     kasan: detect invalid size in memory operation function
+> >
+> >     It is an undefined behavior to pass a negative numbers to
+> > memset()/memcpy()/memmove()
+> >     , so need to be detected by KASAN.
+> >
+> >     If size is negative numbers, then it has two reasons to be defined
+> > as out-of-bounds bug type.
+> >     1) Casting negative numbers to size_t would indeed turn up as a
+> > large
+> >     size_t and its value will be larger than ULONG_MAX/2, so that this
+> > can
+> >     qualify as out-of-bounds.
+> >     2) Don't generate new bug type in order to prevent duplicate reports
+> > by
+> >     some systems, e.g. syzbot.
+> >
+> >     KASAN report:
+> >
+> >      BUG: KASAN: out-of-bounds in kmalloc_memmove_invalid_size+0x70/0xa0
+> >      Read of size 18446744073709551608 at addr ffffff8069660904 by task
+> > cat/72
+> >
+> >      CPU: 2 PID: 72 Comm: cat Not tainted
+> > 5.4.0-rc1-next-20191004ajb-00001-gdb8af2f372b2-dirty #1
+> >      Hardware name: linux,dummy-virt (DT)
+> >      Call trace:
+> >       dump_backtrace+0x0/0x288
+> >       show_stack+0x14/0x20
+> >       dump_stack+0x10c/0x164
+> >       print_address_description.isra.9+0x68/0x378
+> >       __kasan_report+0x164/0x1a0
+> >       kasan_report+0xc/0x18
+> >       check_memory_region+0x174/0x1d0
+> >       memmove+0x34/0x88
+> >       kmalloc_memmove_invalid_size+0x70/0xa0
+> >
+> >     [1] https://bugzilla.kernel.org/show_bug.cgi?id=199341
+> >
+> >     Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+> >     Reported -by: Dmitry Vyukov <dvyukov@google.com>
+> >     Suggested-by: Dmitry Vyukov <dvyukov@google.com>
+> >
+> > diff --git a/mm/kasan/common.c b/mm/kasan/common.c
+> > index 6814d6d6a023..6ef0abd27f06 100644
+> > --- a/mm/kasan/common.c
+> > +++ b/mm/kasan/common.c
+> > @@ -102,7 +102,8 @@ EXPORT_SYMBOL(__kasan_check_write);
+> >  #undef memset
+> >  void *memset(void *addr, int c, size_t len)
+> >  {
+> > -       check_memory_region((unsigned long)addr, len, true, _RET_IP_);
+> > +       if (!check_memory_region((unsigned long)addr, len, true, _RET_IP_))
+> > +               return NULL;
+> >
+> >         return __memset(addr, c, len);
+> >  }
+> > @@ -110,8 +111,9 @@ void *memset(void *addr, int c, size_t len)
+> >  #undef memmove
+> >  void *memmove(void *dest, const void *src, size_t len)
+> >  {
+> > -       check_memory_region((unsigned long)src, len, false, _RET_IP_);
+> > -       check_memory_region((unsigned long)dest, len, true, _RET_IP_);
+> > +       if (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
+> > +       !check_memory_region((unsigned long)dest, len, true, _RET_IP_))
+> > +               return NULL;
+> >
+> >         return __memmove(dest, src, len);
+> >  }
+> > @@ -119,8 +121,9 @@ void *memmove(void *dest, const void *src, size_t
+> > len)
+> >  #undef memcpy
+> >  void *memcpy(void *dest, const void *src, size_t len)
+> >  {
+> > -       check_memory_region((unsigned long)src, len, false, _RET_IP_);
+> > -       check_memory_region((unsigned long)dest, len, true, _RET_IP_);
+> > +       if (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
+> > +       !check_memory_region((unsigned long)dest, len, true, _RET_IP_))
+> > +               return NULL;
+> >
+> >         return __memcpy(dest, src, len);
+> >  }
+> > diff --git a/mm/kasan/generic.c b/mm/kasan/generic.c
+> > index 616f9dd82d12..02148a317d27 100644
+> > --- a/mm/kasan/generic.c
+> > +++ b/mm/kasan/generic.c
+> > @@ -173,6 +173,11 @@ static __always_inline bool
+> > check_memory_region_inline(unsigned long addr,
+> >         if (unlikely(size == 0))
+> >                 return true;
+> >
+> > +       if (unlikely((long)size < 0)) {
+> > +               kasan_report(addr, size, write, ret_ip);
+> > +               return false;
+> > +       }
+> > +
+> >         if (unlikely((void *)addr <
+> >                 kasan_shadow_to_mem((void *)KASAN_SHADOW_START))) {
+> >                 kasan_report(addr, size, write, ret_ip);
+> > diff --git a/mm/kasan/generic_report.c b/mm/kasan/generic_report.c
+> > index 36c645939bc9..ed0eb94cb811 100644
+> > --- a/mm/kasan/generic_report.c
+> > +++ b/mm/kasan/generic_report.c
+> > @@ -107,6 +107,18 @@ static const char *get_wild_bug_type(struct
+> > kasan_access_info *info)
+> >
+> >  const char *get_bug_type(struct kasan_access_info *info)
+> >  {
+> > +       /*
+> > +        * If access_size is negative numbers, then it has two reasons
+> > +        * to be defined as out-of-bounds bug type.
+> > +        * 1) Casting negative numbers to size_t would indeed turn up as
+> > +        * a 'large' size_t and its value will be larger than ULONG_MAX/2,
+> > +        * so that this can qualify as out-of-bounds.
+> > +        * 2) Don't generate new bug type in order to prevent duplicate
+> > reports
+> > +        * by some systems, e.g. syzbot.
+> > +        */
+> > +       if ((long)info->access_size < 0)
+> > +               return "out-of-bounds";
+> 
+> "out-of-bounds" is the _least_ frequent KASAN bug type. It won't
+> prevent duplicates. "heap-out-of-bounds" is the frequent one.
 
-It might have messed userspace mapping but not enough to make userspace 
-completely broken
-as systemd does some things. I would try to boot in legacy layout: if 
-you can try to set sysctl legacy_va_layout
-at boottime, it will map userspace as it was before (bottom-up). If that 
-does not work, the problem could
-be the randomization that is activated by default now.
-Anyway, it's weird since userspace should not depend on how the mapping is.
 
-If you can identify the program that stalls, that would be fantastic :)
+    /*
+     * If access_size is negative numbers, then it has two reasons
+     * to be defined as out-of-bounds bug type.
+     * 1) Casting negative numbers to size_t would indeed turn up as
+     * a  "large" size_t and its value will be larger than ULONG_MAX/2,
+     *    so that this can qualify as out-of-bounds.
+     * 2) Don't generate new bug type in order to prevent duplicate
+reports
+     *    by some systems, e.g. syzbot. "out-of-bounds" is the _least_
+frequent KASAN bug type.
+     *    It won't prevent duplicates. "heap-out-of-bounds" is the
+frequent one.
+     */
 
-As the code is common to mips and arm now and I did not hear from them, 
-I imagine the problem comes
-from us.
+We directly add it into the comment.
 
-Alex
->
+> 
+> >         if (addr_has_shadow(info->access_addr))
+> >                 return get_shadow_bug_type(info);
+> >         return get_wild_bug_type(info);
+> > diff --git a/mm/kasan/tags.c b/mm/kasan/tags.c
+> > index 0e987c9ca052..b829535a3ad7 100644
+> > --- a/mm/kasan/tags.c
+> > +++ b/mm/kasan/tags.c
+> > @@ -86,6 +86,11 @@ bool check_memory_region(unsigned long addr, size_t
+> > size, bool write,
+> >         if (unlikely(size == 0))
+> >                 return true;
+> >
+> > +       if (unlikely((long)size < 0)) {
+> > +               kasan_report(addr, size, write, ret_ip);
+> > +               return false;
+> > +       }
+> > +
+> >         tag = get_tag((const void *)addr);
+> >
+> >         /*
+> > diff --git a/mm/kasan/tags_report.c b/mm/kasan/tags_report.c
+> > index 969ae08f59d7..012fbe3a793f 100644
+> > --- a/mm/kasan/tags_report.c
+> > +++ b/mm/kasan/tags_report.c
+> > @@ -36,6 +36,18 @@
+> >
+> >  const char *get_bug_type(struct kasan_access_info *info)
+> >  {
+> > +       /*
+> > +        * If access_size is negative numbers, then it has two reasons
+> > +        * to be defined as out-of-bounds bug type.
+> > +        * 1) Casting negative numbers to size_t would indeed turn up as
+> > +        * a 'large' size_t and its value will be larger than ULONG_MAX/2,
+> > +        * so that this can qualify as out-of-bounds.
+> > +        * 2) Don't generate new bug type in order to prevent duplicate
+> > reports
+> > +        * by some systems, e.g. syzbot.
+> > +        */
+> > +       if ((long)info->access_size < 0)
+> > +               return "out-of-bounds";
+> > +
+> >  #ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
+> >         struct kasan_alloc_meta *alloc_meta;
+> >         struct kmem_cache *cache;
+> >
+> >
+> >
+> >
+> >
+> >
+> >
+> >
+> > commit fb5cf7bd16e939d1feef229af0211a8616c9ea03
+> > Author: Walter-zh Wu <walter-zh.wu@mediatek.com>
+> > Date:   Fri Oct 4 18:32:03 2019 +0800
+> >
+> >     kasan: add test for invalid size in memmove
+> >
+> >     Test size is negative vaule in memmove in order to verify
+> >     if it correctly get KASAN report.
+> >
+> >     Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+> >
+> > diff --git a/lib/test_kasan.c b/lib/test_kasan.c
+> > index 49cc4d570a40..06942cf585cc 100644
+> > --- a/lib/test_kasan.c
+> > +++ b/lib/test_kasan.c
+> > @@ -283,6 +283,23 @@ static noinline void __init
+> > kmalloc_oob_in_memset(void)
+> >         kfree(ptr);
+> >  }
+> >
+> > +static noinline void __init kmalloc_memmove_invalid_size(void)
+> > +{
+> > +       char *ptr;
+> > +       size_t size = 64;
+> > +
+> > +       pr_info("invalid size in memmove\n");
+> > +       ptr = kmalloc(size, GFP_KERNEL);
+> > +       if (!ptr) {
+> > +               pr_err("Allocation failed\n");
+> > +               return;
+> > +       }
+> > +
+> > +       memset((char *)ptr, 0, 64);
+> > +       memmove((char *)ptr, (char *)ptr + 4, -2);
+> > +       kfree(ptr);
+> > +}
+> > +
+> >  static noinline void __init kmalloc_uaf(void)
+> >  {
+> >         char *ptr;
+> > @@ -773,6 +790,7 @@ static int __init kmalloc_tests_init(void)
+> >         kmalloc_oob_memset_4();
+> >         kmalloc_oob_memset_8();
+> >         kmalloc_oob_memset_16();
+> > +       kmalloc_memmove_invalid_size();
+> >         kmalloc_uaf();
+> >         kmalloc_uaf_memset();
+> >         kmalloc_uaf2();
+> >
+> >
+> >
+> >
+> > --
+> > You received this message because you are subscribed to the Google Groups "kasan-dev" group.
+> > To unsubscribe from this group and stop receiving emails from it, send an email to kasan-dev+unsubscribe@googlegroups.com.
+> > To view this discussion on the web visit https://groups.google.com/d/msgid/kasan-dev/1570436289.4686.40.camel%40mtksdccf07.
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
