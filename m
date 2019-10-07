@@ -2,100 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3A4ECE13F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 14:08:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB306CE168
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 14:18:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9EcU4CYsEKH5kPG5gWvaZRzlJRn9498JC3by9LxTwa0=; b=fdfjJ6SAs69Zby
-	fVlI1V7VQn4IZbF97Fp0KiUF73Fpmf7JmTHphjt+sIsVXolzz2NzUr65Ld6w59S80zrOBTINY2NDC
-	YBnc7uuzs/8HCH5+bRwQoWW7b+zVKATqBdhitl/64xd62+kGOT9Ggy/yF/FLs6Bxy5XUK8/z3JwVB
-	bNXzunwfv4EPv++mnFcbNdiQo0PieEDpbtfWQa6DrYwMLsBOn2FSZ5AoJ7resTmzs7mvIrpQ3hi8a
-	KHPGpSRi5x4G5sEw2pfD03NpxMYetmbKwLDfvwh+7ijKATBCQQXJ1e7C9G940OjGeS3r2qJ/3JWxp
-	ljNbjszBGEgICCoXzbDg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OLKSUlrH2ch08iMLOu7LjozJD+eeUuOI39yNnJVl3Z0=; b=Ek6u60Fo8yhoAa
+	izvv8sNew5Syq26b/vVPkxBbnxMT8dt2fptZZkC9Eb05rNNUvJ4+Toh7WuhuDct8+fss8gOwigzsE
+	U2Zi02c0D/d3bNqUL+weQtJ4OpN84NiO15edWIo0WCAguwkuk9rM45omFHSa8kQMhEtJVUqWnrXtx
+	ZmS0TG/ux1fHkz1mxodjSad5qybe0rfsA18y9/j9f3Ty+TvfwKktTeqRZ4BT0whkCAmcgUJ3M1aUD
+	lcZMVFr2xJ6dtMdNzs9t6gbEvd1jTDh1j2WHjmIqsirF/E8J8mdKnll0fIytVixrzdPpwsOYKG+fh
+	sDzR21lYnuV9e5C720bQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHRok-00055r-Sj; Mon, 07 Oct 2019 12:08:46 +0000
-Received: from out3-smtp.messagingengine.com ([66.111.4.27])
+	id 1iHRyP-0000aT-Qk; Mon, 07 Oct 2019 12:18:45 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHRoc-00054x-Fj
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 12:08:40 +0000
-Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailout.nyi.internal (Postfix) with ESMTP id D421921B74;
- Mon,  7 Oct 2019 08:08:33 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute5.internal (MEProxy); Mon, 07 Oct 2019 08:08:33 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
- subject:to:cc:references:from:message-id:date:mime-version
- :in-reply-to:content-type:content-transfer-encoding; s=fm3; bh=j
- 0BA7cW3BlyI/BnVP4//2CDS/zymIhVMHBQUSMqPWhA=; b=2tdq2mgq2K1eOhx8b
- i6OW7UjwuXnpW/dMThcZ0zG8FFgI+yH0djTC6n4OZV/QzewPZA2AWu1bYgzsU7VZ
- 3JT4pmVihxmh4AplRMneRSJP2lp4LTmBTwAIGJnzk08y4pp3WOtumWexYDAI1bq5
- igPiboT6Un0vLPNVd0haezt34JOfEM6Wn/Pu2MKXWnbDjICDggnU6WVlY20PKSX2
- yahrX3Ji9mYR07bEHnylbJQasWGDrCSPhCHh7qc0s7EYRgfcptEeWxhsoxmLv5we
- +9k9YT7knHUnW2x9gzkv+6i8A2xYYppQUQdDHUK7Z0svs/7vyJQaHUSgVQEIKEbq
- GCgsQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:content-type
- :date:from:in-reply-to:message-id:mime-version:references
- :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
- :x-sasl-enc; s=fm1; bh=j0BA7cW3BlyI/BnVP4//2CDS/zymIhVMHBQUSMqPW
- hA=; b=tQnr7GXwy8TROrHoOc5qffk+yD5hd2czOsNxxuiFccJz21XmVRRsSPt8n
- cEUKXcyKAMfybQ9lc4wYRCmKoTyDvTveHYpo4xEolvZ4ABzCr35uVuSDaS9L1asN
- hn6uc6hlhtRIoe3rODFlmzGq12/R9xEUq8ms6E8LKH4Eo+T/NUnFfAF7q1ve0GsT
- uM/vBmw4M9Jju1eP5cVQL3UMnV3YtY9O9c32ZAH9qRRrXqBgijxvJm9DI37D8Wa7
- +WyOnAIMAub4ikEiPvWweSBCfQgFOGU/6LhD/V7dAccnK8oMiSas/PTGZlqontRR
- +RljymTkn0m71FSP6qZZC0kJUFzmQ==
-X-ME-Sender: <xms:wSqbXffhKneAAD3jRejaHmvsHckxJI1XnVXnkytvJMbIf6-4OKpdCQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrheejgdefhecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefuvfhfhffkffgfgggjtgfgsehtjeertddtfeejnecuhfhrohhmpefurghmuhgv
- lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucfkph
- epjedtrddufeehrddugeekrdduhedunecurfgrrhgrmhepmhgrihhlfhhrohhmpehsrghm
- uhgvlhesshhhohhllhgrnhgurdhorhhgnecuvehluhhsthgvrhfuihiivgeptd
-X-ME-Proxy: <xmx:wSqbXWVj88odH4aydt5bAsQroJKWph-FZ627SiFYOwOkmnZ9P7fP3Q>
- <xmx:wSqbXZfVT_YMCtzLadrUzQnz4qWaLRncK-9oqdSAUpJtmzqErbWWjg>
- <xmx:wSqbXcA_y6XoBdWc0kO9vOk-8lEwKRAJF0gmVHcs6UkckpRE-RVpjA>
- <xmx:wSqbXW3iJ-SC3gmYGi3eZ69b8UEnPfSfF1CWWWtvdHvwMHPr3-f8NA>
-Received: from [192.168.50.162]
- (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
- by mail.messagingengine.com (Postfix) with ESMTPA id 0F46FD60057;
- Mon,  7 Oct 2019 08:08:33 -0400 (EDT)
-Subject: Re: [PATCH] bus: sunxi-rsb: Make interrupt handling more robust
-To: Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- Stephen Boyd <sboyd@chromium.org>
-References: <20190824175013.28840-1-samuel@sholland.org>
-From: Samuel Holland <samuel@sholland.org>
-Message-ID: <8d4415f3-c0d2-d351-2221-2e86bd0d6673@sholland.org>
-Date: Mon, 7 Oct 2019 07:08:32 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1iHRyH-0000Zf-5X; Mon, 07 Oct 2019 12:18:39 +0000
+X-UUID: 9fbb2594c4b54cad8446e07b58898548-20191007
+X-UUID: 9fbb2594c4b54cad8446e07b58898548-20191007
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1358783285; Mon, 07 Oct 2019 04:18:18 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 7 Oct 2019 05:18:25 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 7 Oct 2019 20:03:22 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 7 Oct 2019 20:03:22 +0800
+Message-ID: <1570449804.4686.79.camel@mtksdccf07>
+Subject: Re: [PATCH] kasan: fix the missing underflow in memmove and memcpy
+ with CONFIG_KASAN_GENERIC=y
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Dmitry Vyukov <dvyukov@google.com>
+Date: Mon, 7 Oct 2019 20:03:24 +0800
+In-Reply-To: <CACT4Y+Z0A=Zi4AxEjn4jpHk0xG9+Nh2Q-OYEnOmooW0wN-_vfQ@mail.gmail.com>
+References: <20190927034338.15813-1-walter-zh.wu@mediatek.com>
+ <CACT4Y+Zxz+R=qQxSMoipXoLjRqyApD3O0eYpK0nyrfGHE4NNPw@mail.gmail.com>
+ <1569594142.9045.24.camel@mtksdccf07>
+ <CACT4Y+YuAxhKtL7ho7jpVAPkjG-JcGyczMXmw8qae2iaZjTh_w@mail.gmail.com>
+ <1569818173.17361.19.camel@mtksdccf07>
+ <1570018513.19702.36.camel@mtksdccf07>
+ <CACT4Y+bbZhvz9ZpHtgL8rCCsV=ybU5jA6zFnJBL7gY2cNXDLyQ@mail.gmail.com>
+ <1570069078.19702.57.camel@mtksdccf07>
+ <CACT4Y+ZwNv2-QBrvuR2JvemovmKPQ9Ggrr=ZkdTg6xy_Ki6UAg@mail.gmail.com>
+ <1570095525.19702.59.camel@mtksdccf07>
+ <1570110681.19702.64.camel@mtksdccf07>
+ <CACT4Y+aKrC8mtcDTVhM-So-TTLjOyFCD7r6jryWFH6i2he1WJA@mail.gmail.com>
+ <1570164140.19702.97.camel@mtksdccf07>
+ <1570176131.19702.105.camel@mtksdccf07>
+ <CACT4Y+ZvhomaeXFKr4za6MJi=fW2SpPaCFP=fk06CMRhNcmFvQ@mail.gmail.com>
+ <1570182257.19702.109.camel@mtksdccf07>
+ <CACT4Y+ZnWPEO-9DkE6C3MX-Wo+8pdS6Gr6-2a8LzqBS=2fe84w@mail.gmail.com>
+ <1570190718.19702.125.camel@mtksdccf07>
+ <CACT4Y+YbkjuW3_WQJ4BB8YHWvxgHJyZYxFbDJpnPzfTMxYs60g@mail.gmail.com>
+ <1570418576.4686.30.camel@mtksdccf07>
+ <CACT4Y+aho7BEvQstd2+a2be-jJ0dEsjGebH7bcUFhYp-PoRDxQ@mail.gmail.com>
+ <1570436289.4686.40.camel@mtksdccf07>
+ <CACT4Y+Z6QObZ2fvVxSmvv16YQAu4GswOqfOVQK_1_Ncz0eir_g@mail.gmail.com>
+ <1570438317.4686.44.camel@mtksdccf07>
+ <CACT4Y+Yc86bKxDp4ST8+49rzLOWkTXLkjs0eyFtohCi_uSjmLQ@mail.gmail.com>
+ <1570439032.4686.50.camel@mtksdccf07>
+ <CACT4Y+YL=8jFXrj2LOuQV7ZyDe-am4W8y1WHEDJJ0-mVNJ3_Cw@mail.gmail.com>
+ <1570440492.4686.59.camel@mtksdccf07> <1570441833.4686.66.camel@mtksdccf07>
+ <CACT4Y+Z0A=Zi4AxEjn4jpHk0xG9+Nh2Q-OYEnOmooW0wN-_vfQ@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <20190824175013.28840-1-samuel@sholland.org>
-Content-Language: en-US
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_050838_854091_D1910F10 
-X-CRM114-Status: GOOD (  20.03  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191007_051837_219070_3EF8E78A 
+X-CRM114-Status: GOOD (  33.98  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.27 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,90 +101,239 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: wsd_upstream <wsd_upstream@mediatek.com>,
+ linux-mediatek@lists.infradead.org, LKML <linux-kernel@vger.kernel.org>,
+ kasan-dev <kasan-dev@googlegroups.com>, Linux-MM <linux-mm@kvack.org>,
+ Alexander Potapenko <glider@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+On Mon, 2019-10-07 at 12:51 +0200, Dmitry Vyukov wrote:
+> On Mon, Oct 7, 2019 at 11:50 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> >
+> > On Mon, 2019-10-07 at 17:28 +0800, Walter Wu wrote:
+> > > On Mon, 2019-10-07 at 11:10 +0200, Dmitry Vyukov wrote:
+> > > > On Mon, Oct 7, 2019 at 11:03 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> > > > >
+> > > > > On Mon, 2019-10-07 at 10:54 +0200, Dmitry Vyukov wrote:
+> > > > > > On Mon, Oct 7, 2019 at 10:52 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> > > > > > >
+> > > > > > > On Mon, 2019-10-07 at 10:24 +0200, Dmitry Vyukov wrote:
+> > > > > > > > On Mon, Oct 7, 2019 at 10:18 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> > > > > > > > > The patchsets help to produce KASAN report when size is negative numbers
+> > > > > > > > > in memory operation function. It is helpful for programmer to solve the
+> > > > > > > > > undefined behavior issue. Patch 1 based on Dmitry's review and
+> > > > > > > > > suggestion, patch 2 is a test in order to verify the patch 1.
+> > > > > > > > >
+> > > > > > > > > [1]https://bugzilla.kernel.org/show_bug.cgi?id=199341
+> > > > > > > > > [2]https://lore.kernel.org/linux-arm-kernel/20190927034338.15813-1-walter-zh.wu@mediatek.com/
+> > > > > > > > >
+> > > > > > > > > Walter Wu (2):
+> > > > > > > > > kasan: detect invalid size in memory operation function
+> > > > > > > > > kasan: add test for invalid size in memmove
+> > > > > > > > >
+> > > > > > > > >  lib/test_kasan.c          | 18 ++++++++++++++++++
+> > > > > > > > >  mm/kasan/common.c         | 13 ++++++++-----
+> > > > > > > > >  mm/kasan/generic.c        |  5 +++++
+> > > > > > > > >  mm/kasan/generic_report.c | 12 ++++++++++++
+> > > > > > > > >  mm/kasan/tags.c           |  5 +++++
+> > > > > > > > >  mm/kasan/tags_report.c    | 12 ++++++++++++
+> > > > > > > > >  6 files changed, 60 insertions(+), 5 deletions(-)
+> > > > > > > > >
+> > > > > > > > >
+> > > > > > > > >
+> > > > > > > > >
+> > > > > > > > > commit 5b3b68660b3d420fd2bd792f2d9fd3ccb8877ef7
+> > > > > > > > > Author: Walter-zh Wu <walter-zh.wu@mediatek.com>
+> > > > > > > > > Date:   Fri Oct 4 18:38:31 2019 +0800
+> > > > > > > > >
+> > > > > > > > >     kasan: detect invalid size in memory operation function
+> > > > > > > > >
+> > > > > > > > >     It is an undefined behavior to pass a negative numbers to
+> > > > > > > > > memset()/memcpy()/memmove()
+> > > > > > > > >     , so need to be detected by KASAN.
+> > > > > > > > >
+> > > > > > > > >     If size is negative numbers, then it has two reasons to be defined
+> > > > > > > > > as out-of-bounds bug type.
+> > > > > > > > >     1) Casting negative numbers to size_t would indeed turn up as a
+> > > > > > > > > large
+> > > > > > > > >     size_t and its value will be larger than ULONG_MAX/2, so that this
+> > > > > > > > > can
+> > > > > > > > >     qualify as out-of-bounds.
+> > > > > > > > >     2) Don't generate new bug type in order to prevent duplicate reports
+> > > > > > > > > by
+> > > > > > > > >     some systems, e.g. syzbot.
+> > > > > > > > >
+> > > > > > > > >     KASAN report:
+> > > > > > > > >
+> > > > > > > > >      BUG: KASAN: out-of-bounds in kmalloc_memmove_invalid_size+0x70/0xa0
+> > > > > > > > >      Read of size 18446744073709551608 at addr ffffff8069660904 by task
+> > > > > > > > > cat/72
+> > > > > > > > >
+> > > > > > > > >      CPU: 2 PID: 72 Comm: cat Not tainted
+> > > > > > > > > 5.4.0-rc1-next-20191004ajb-00001-gdb8af2f372b2-dirty #1
+> > > > > > > > >      Hardware name: linux,dummy-virt (DT)
+> > > > > > > > >      Call trace:
+> > > > > > > > >       dump_backtrace+0x0/0x288
+> > > > > > > > >       show_stack+0x14/0x20
+> > > > > > > > >       dump_stack+0x10c/0x164
+> > > > > > > > >       print_address_description.isra.9+0x68/0x378
+> > > > > > > > >       __kasan_report+0x164/0x1a0
+> > > > > > > > >       kasan_report+0xc/0x18
+> > > > > > > > >       check_memory_region+0x174/0x1d0
+> > > > > > > > >       memmove+0x34/0x88
+> > > > > > > > >       kmalloc_memmove_invalid_size+0x70/0xa0
+> > > > > > > > >
+> > > > > > > > >     [1] https://bugzilla.kernel.org/show_bug.cgi?id=199341
+> > > > > > > > >
+> > > > > > > > >     Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+> > > > > > > > >     Reported -by: Dmitry Vyukov <dvyukov@google.com>
+> > > > > > > > >     Suggested-by: Dmitry Vyukov <dvyukov@google.com>
+> > > > > > > > >
+> > > > > > > > > diff --git a/mm/kasan/common.c b/mm/kasan/common.c
+> > > > > > > > > index 6814d6d6a023..6ef0abd27f06 100644
+> > > > > > > > > --- a/mm/kasan/common.c
+> > > > > > > > > +++ b/mm/kasan/common.c
+> > > > > > > > > @@ -102,7 +102,8 @@ EXPORT_SYMBOL(__kasan_check_write);
+> > > > > > > > >  #undef memset
+> > > > > > > > >  void *memset(void *addr, int c, size_t len)
+> > > > > > > > >  {
+> > > > > > > > > -       check_memory_region((unsigned long)addr, len, true, _RET_IP_);
+> > > > > > > > > +       if (!check_memory_region((unsigned long)addr, len, true, _RET_IP_))
+> > > > > > > > > +               return NULL;
+> > > > > > > > >
+> > > > > > > > >         return __memset(addr, c, len);
+> > > > > > > > >  }
+> > > > > > > > > @@ -110,8 +111,9 @@ void *memset(void *addr, int c, size_t len)
+> > > > > > > > >  #undef memmove
+> > > > > > > > >  void *memmove(void *dest, const void *src, size_t len)
+> > > > > > > > >  {
+> > > > > > > > > -       check_memory_region((unsigned long)src, len, false, _RET_IP_);
+> > > > > > > > > -       check_memory_region((unsigned long)dest, len, true, _RET_IP_);
+> > > > > > > > > +       if (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
+> > > > > > > > > +       !check_memory_region((unsigned long)dest, len, true, _RET_IP_))
+> > > > > > > > > +               return NULL;
+> > > > > > > > >
+> > > > > > > > >         return __memmove(dest, src, len);
+> > > > > > > > >  }
+> > > > > > > > > @@ -119,8 +121,9 @@ void *memmove(void *dest, const void *src, size_t
+> > > > > > > > > len)
+> > > > > > > > >  #undef memcpy
+> > > > > > > > >  void *memcpy(void *dest, const void *src, size_t len)
+> > > > > > > > >  {
+> > > > > > > > > -       check_memory_region((unsigned long)src, len, false, _RET_IP_);
+> > > > > > > > > -       check_memory_region((unsigned long)dest, len, true, _RET_IP_);
+> > > > > > > > > +       if (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
+> > > > > > > > > +       !check_memory_region((unsigned long)dest, len, true, _RET_IP_))
+> > > > > > > > > +               return NULL;
+> > > > > > > > >
+> > > > > > > > >         return __memcpy(dest, src, len);
+> > > > > > > > >  }
+> > > > > > > > > diff --git a/mm/kasan/generic.c b/mm/kasan/generic.c
+> > > > > > > > > index 616f9dd82d12..02148a317d27 100644
+> > > > > > > > > --- a/mm/kasan/generic.c
+> > > > > > > > > +++ b/mm/kasan/generic.c
+> > > > > > > > > @@ -173,6 +173,11 @@ static __always_inline bool
+> > > > > > > > > check_memory_region_inline(unsigned long addr,
+> > > > > > > > >         if (unlikely(size == 0))
+> > > > > > > > >                 return true;
+> > > > > > > > >
+> > > > > > > > > +       if (unlikely((long)size < 0)) {
+> > > > > > > > > +               kasan_report(addr, size, write, ret_ip);
+> > > > > > > > > +               return false;
+> > > > > > > > > +       }
+> > > > > > > > > +
+> > > > > > > > >         if (unlikely((void *)addr <
+> > > > > > > > >                 kasan_shadow_to_mem((void *)KASAN_SHADOW_START))) {
+> > > > > > > > >                 kasan_report(addr, size, write, ret_ip);
+> > > > > > > > > diff --git a/mm/kasan/generic_report.c b/mm/kasan/generic_report.c
+> > > > > > > > > index 36c645939bc9..ed0eb94cb811 100644
+> > > > > > > > > --- a/mm/kasan/generic_report.c
+> > > > > > > > > +++ b/mm/kasan/generic_report.c
+> > > > > > > > > @@ -107,6 +107,18 @@ static const char *get_wild_bug_type(struct
+> > > > > > > > > kasan_access_info *info)
+> > > > > > > > >
+> > > > > > > > >  const char *get_bug_type(struct kasan_access_info *info)
+> > > > > > > > >  {
+> > > > > > > > > +       /*
+> > > > > > > > > +        * If access_size is negative numbers, then it has two reasons
+> > > > > > > > > +        * to be defined as out-of-bounds bug type.
+> > > > > > > > > +        * 1) Casting negative numbers to size_t would indeed turn up as
+> > > > > > > > > +        * a 'large' size_t and its value will be larger than ULONG_MAX/2,
+> > > > > > > > > +        * so that this can qualify as out-of-bounds.
+> > > > > > > > > +        * 2) Don't generate new bug type in order to prevent duplicate
+> > > > > > > > > reports
+> > > > > > > > > +        * by some systems, e.g. syzbot.
+> > > > > > > > > +        */
+> > > > > > > > > +       if ((long)info->access_size < 0)
+> > > > > > > > > +               return "out-of-bounds";
+> > > > > > > >
+> > > > > > > > "out-of-bounds" is the _least_ frequent KASAN bug type. It won't
+> > > > > > > > prevent duplicates. "heap-out-of-bounds" is the frequent one.
+> > > > > > >
+> > > > > > >
+> > > > > > >     /*
+> > > > > > >      * If access_size is negative numbers, then it has two reasons
+> > > > > > >      * to be defined as out-of-bounds bug type.
+> > > > > > >      * 1) Casting negative numbers to size_t would indeed turn up as
+> > > > > > >      * a  "large" size_t and its value will be larger than ULONG_MAX/2,
+> > > > > > >      *    so that this can qualify as out-of-bounds.
+> > > > > > >      * 2) Don't generate new bug type in order to prevent duplicate
+> > > > > > > reports
+> > > > > > >      *    by some systems, e.g. syzbot. "out-of-bounds" is the _least_
+> > > > > > > frequent KASAN bug type.
+> > > > > > >      *    It won't prevent duplicates. "heap-out-of-bounds" is the
+> > > > > > > frequent one.
+> > > > > > >      */
+> > > > > > >
+> > > > > > > We directly add it into the comment.
+> > > > > >
+> > > > > >
+> > > > > > OK, let's start from the beginning: why do you return "out-of-bounds" here?
+> > > > > >
+> > > > > Uh, comment 1 and 2 should explain it. :)
+> > > >
+> > > > The comment says it will cause duplicate reports. It does not explain
+> > > > why you want syzbot to produce duplicate reports and spam kernel
+> > > > developers... So why do you want that?
+> > > >
+> > > We don't generate new bug type in order to prevent duplicate by some
+> > > systems, e.g. syzbot. Is it right? If yes, then it should not have
+> > > duplicate report.
+> > >
+> > Sorry, because we don't generate new bug type. it should be duplicate
+> > report(only one report which may be oob or size invlid),
+> > the duplicate report goal is that invalid size is oob issue, too.
+> >
+> > I would not introduce a new bug type.
+> > These are parsed and used by some systems, e.g. syzbot. If size is
+> > user-controllable, then a new bug type for this will mean 2 bug
+> > reports.
+> 
+> To prevent duplicates, the new crash title must not just match _any_
+> crash title that kernel can potentially produce. It must match exactly
+> the crash that kernel produces for this bug on other input data.
+> 
+> Consider, userspace passes size=123, KASAN produces "heap-out-of-bounds in foo".
+> Now userspace passes size=-1 and KASAN produces "invalid-size in foo".
+> This will be a duplicate bug report.
+> Now if KASAN will produce "out-of-bounds in foo", it will also lead to
+> a duplicate report.
+> Only iff KASAN will produce "heap-out-of-bounds in foo" for size=-1,
+> it will not lead to a duplicate report.
 
-On 8/24/19 12:50 PM, Samuel Holland wrote:
-> The RSB controller has two registers for controlling interrupt inputs:
-> RSB_INTE, which has bits for each possible interrupt, and the global
-> interrupt enable bit in RSB_CTRL.
-> 
-> Currently, we enable the bits in RSB_INTE before each transfer, but this
-> is unnecessary because we never disable them. Move the initialization of
-> RSB_INTE so it is done only once.
-> 
-> We also set the global interrupt enable bit before each transfer. Unlike
-> other bits in RSB_CTRL, this bit is cleared by writing a zero. Thus, we
-> clear the bit in the post-timeout cleanup code, so I note that in the
-> comment.
-> 
-> However, if we do receive an interrupt, we do not clear the bit. Nor do
-> we clear interrupt statuses before starting a transfer. Thus, if some
-> other driver uses the RSB bus while Linux is suspended (as both Trusted
-> Firmware and SCP firmware do to control the PMIC), we receive spurious
-> interrupts upon resume. This causes false completion of a transfer, and
-> the next transfer starts prematurely, causing a LOAD_BSY condition. The
-> end result is that some transfers at resume fail with -EBUSY.
-> 
-> With this patch, all transfers reliably succeed during/after resume.
-> 
-> Signed-off-by: Samuel Holland <samuel@sholland.org>
+I think it is not easy to avoid the duplicate report(mentioned above).
+As far as my knowledge is concerned, KASAN is memory corruption detector
+in kernel space, it should only detect memory corruption and don't 
+distinguish whether it is passed by userspace. if we want to do, then we
+may need to parse backtrace to check if it has copy_form_user() or other
+function?
 
-Ping? Any comments?
-
-> ---
->  drivers/bus/sunxi-rsb.c | 10 ++++++++--
->  1 file changed, 8 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/bus/sunxi-rsb.c b/drivers/bus/sunxi-rsb.c
-> index be79d6c6a4e4..b8043b58568a 100644
-> --- a/drivers/bus/sunxi-rsb.c
-> +++ b/drivers/bus/sunxi-rsb.c
-> @@ -274,7 +274,7 @@ static int _sunxi_rsb_run_xfer(struct sunxi_rsb *rsb)
->  	reinit_completion(&rsb->complete);
->  
->  	writel(RSB_INTS_LOAD_BSY | RSB_INTS_TRANS_ERR | RSB_INTS_TRANS_OVER,
-> -	       rsb->regs + RSB_INTE);
-> +	       rsb->regs + RSB_INTS);
->  	writel(RSB_CTRL_START_TRANS | RSB_CTRL_GLOBAL_INT_ENB,
->  	       rsb->regs + RSB_CTRL);
->  
-> @@ -282,7 +282,7 @@ static int _sunxi_rsb_run_xfer(struct sunxi_rsb *rsb)
->  					    msecs_to_jiffies(100))) {
->  		dev_dbg(rsb->dev, "RSB timeout\n");
->  
-> -		/* abort the transfer */
-> +		/* abort the transfer and disable interrupts */
->  		writel(RSB_CTRL_ABORT_TRANS, rsb->regs + RSB_CTRL);
->  
->  		/* clear any interrupt flags */
-> @@ -480,6 +480,9 @@ static irqreturn_t sunxi_rsb_irq(int irq, void *dev_id)
->  	status = readl(rsb->regs + RSB_INTS);
->  	rsb->status = status;
->  
-> +	/* Disable any further interrupts */
-> +	writel(0, rsb->regs + RSB_CTRL);
-> +
->  	/* Clear interrupts */
->  	status &= (RSB_INTS_LOAD_BSY | RSB_INTS_TRANS_ERR |
->  		   RSB_INTS_TRANS_OVER);
-> @@ -718,6 +721,9 @@ static int sunxi_rsb_probe(struct platform_device *pdev)
->  		goto err_reset_assert;
->  	}
->  
-> +	writel(RSB_INTS_LOAD_BSY | RSB_INTS_TRANS_ERR | RSB_INTS_TRANS_OVER,
-> +	       rsb->regs + RSB_INTE);
-> +
->  	/* initialize all devices on the bus into RSB mode */
->  	ret = sunxi_rsb_init_device_mode(rsb);
->  	if (ret)
-> 
 
 
 _______________________________________________
