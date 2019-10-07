@@ -2,65 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37682CEA6B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 19:17:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0A0BCEAAC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 19:30:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EpXtcBnzg17JbCUgpi4MHoDIQGkVL/9DOvVf+eZPxbA=; b=me3/UGvPoB2Yky
-	syfYrGTfsLXPX8Ha66u7RdcU9+27KlzvuXCwLe5LRA1rfmdbJcr4C2CLyYy1L5PeQuxj9d1BnNrXz
-	6eK0D7RByuGrTwW9WIceZpBX1NtW78gx4UfYKNm1ojRh0NedCpY4jZvZtZXb6fAMwizfHHsQQpEM7
-	gwH0k4gud1fYHZPWawOmcQbSCqqCSloREBw6/qzi4MHAXgXv8HseHO8/U76jo0CCUbKT0fXcIqjxx
-	EsWWaK3NIjBvAFL9Mpx3Zibic7Fe1P6206khIn+PQwnqUapv1ZA7r/eO5UWcIvmLU9PbJJJWuoeFf
-	z+McUaJ4x+0DanoDwnMw==;
+	List-Owner; bh=w/vdFgKj4L4x0w1SSkSACCrhgPaUiELssKnMYVLHuAI=; b=oI9h0CntyGax4P
+	/7FPIao9KwbhbC+RaBndDn/ZxefWv8N/FzCMufKsRcQdjWty0YWG0RST8Watu44Gx8STnlomcslhx
+	HB5lyVgbYPEOD7zfwPx8Gp41q1JiAVEELeeKKepeTrdkrMKg9uUfGyA4FJtCMj1Ju3Kl9FqSON3fl
+	rjFIn4Wrpr4zYNopeyjGw6lQ8icCSoGIRNwEeBZdf6OPhqvJsNBJ8aJKxW/3h1yDtQxSgcVyDL+lX
+	t3h/vKP3htLrZ+279OWEq09X87qZiUOr7mKFRLbYA0KOWMYfPpsu5suiAIib2FrF90GtSpYFTCduX
+	4iovZ80vDDBky6TDKEYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHWdt-0000zl-Vc; Mon, 07 Oct 2019 17:17:53 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iHWpv-0005l5-NW; Mon, 07 Oct 2019 17:30:19 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHWdj-0000yr-GC
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 17:17:45 +0000
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why)
- by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
- (Exim 4.80) (envelope-from <maz@kernel.org>)
- id 1iHWdf-0006c7-Lx; Mon, 07 Oct 2019 19:17:39 +0200
-Date: Mon, 7 Oct 2019 18:17:38 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Andrew Murray <andrew.murray@arm.com>
-Subject: Re: [PATCH 3/3] KVM: arm64: pmu: Reset sample period on overflow
- handling
-Message-ID: <20191007181738.1b39ded9@why>
-In-Reply-To: <20191007130457.GZ42880@e119886-lin.cambridge.arm.com>
-References: <20191006104636.11194-1-maz@kernel.org>
- <20191006104636.11194-4-maz@kernel.org>
- <20191007094325.GX42880@e119886-lin.cambridge.arm.com>
- <86sgo4zv9a.wl-maz@kernel.org>
- <20191007130457.GZ42880@e119886-lin.cambridge.arm.com>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1iHWpk-0005Zo-0D; Mon, 07 Oct 2019 17:30:09 +0000
+Received: from mail-lj1-f180.google.com (mail-lj1-f180.google.com
+ [209.85.208.180])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2EA1A218AC;
+ Mon,  7 Oct 2019 17:30:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570469407;
+ bh=7BgONx2fxTCBerkz+kZbipHG1ITh4B74FEdi9hVq484=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=qWQvAQdNF/Y5LcuOkgQNFbrOYyT9zV8nGvQWGIalDCdrCIVR6/XSgL48CyNJqeOpW
+ wkoJhtMz7y3IYD01mP1Wrjl9bN977MFW9mehzUiNsgxus43IHZn6NsBgmCM2nRA94W
+ gP8kq+CEaHsP6v680i7rvL8uFTY1XraSbw5To80E=
+Received: by mail-lj1-f180.google.com with SMTP id a22so14600836ljd.0;
+ Mon, 07 Oct 2019 10:30:07 -0700 (PDT)
+X-Gm-Message-State: APjAAAXUyP2Dw08iixJpiniOVda7zVue9QcN1R9yxW+ZZ/ttFXyPku24
+ CrDwLEx3mLYpAat+aGsuPuUtsLZPzNkWOENSnc8=
+X-Google-Smtp-Source: APXvYqwmBhQ/7r1sccn69bdteEM2oYrlVQ4Im2gzzv/FHBYneH2khccdbHlxPWXIpivEwoFLYEN1637fU1HLJrcElvg=
+X-Received: by 2002:a2e:9159:: with SMTP id q25mr376354ljg.225.1570469405263; 
+ Mon, 07 Oct 2019 10:30:05 -0700 (PDT)
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: andrew.murray@arm.com, mark.rutland@arm.com,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org, julien.thierry.kdev@gmail.com, james.morse@arm.com,
- suzuki.poulose@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+References: <20191004144549.3567-1-krzk@kernel.org> <87sgo4hjii.fsf@intel.com>
+ <CADnq5_MqGehpWwOAxYg0T2x3qXisqmae2uGG5dijQX+Aa4NsoQ@mail.gmail.com>
+In-Reply-To: <CADnq5_MqGehpWwOAxYg0T2x3qXisqmae2uGG5dijQX+Aa4NsoQ@mail.gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Mon, 7 Oct 2019 19:29:54 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPeVFeSDpxPv-rDywCafWbN3mivtcM3UQX_+wZkyPcZwPQ@mail.gmail.com>
+Message-ID: <CAJKOXPeVFeSDpxPv-rDywCafWbN3mivtcM3UQX_+wZkyPcZwPQ@mail.gmail.com>
+Subject: Re: [PATCH TRIVIAL v2] gpu: Fix Kconfig indentation
+To: Alex Deucher <alexdeucher@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_101743_690304_0B8B2D7F 
-X-CRM114-Status: GOOD (  52.07  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191007_103008_077635_4C69325C 
+X-CRM114-Status: GOOD (  13.19  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,201 +83,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: amd-gfx list <amd-gfx@lists.freedesktop.org>,
+ Jiri Kosina <trivial@kernel.org>, lima@lists.freedesktop.org,
+ David Airlie <airlied@linux.ie>, nouveau <nouveau@lists.freedesktop.org>,
+ Maling list - DRI developers <dri-devel@lists.freedesktop.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ LKML <linux-kernel@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ linux-rockchip@lists.infradead.org, Jani Nikula <jani.nikula@linux.intel.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Sean Paul <sean@poorly.run>,
+ Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 7 Oct 2019 14:04:58 +0100
-Andrew Murray <andrew.murray@arm.com> wrote:
+On Mon, 7 Oct 2019 at 18:09, Alex Deucher <alexdeucher@gmail.com> wrote:
+>
+> On Mon, Oct 7, 2019 at 7:39 AM Jani Nikula <jani.nikula@linux.intel.com> wrote:
+> >
+> > On Fri, 04 Oct 2019, Krzysztof Kozlowski <krzk@kernel.org> wrote:
+> > >  drivers/gpu/drm/i915/Kconfig             |  12 +-
+> > >  drivers/gpu/drm/i915/Kconfig.debug       | 144 +++++++++++------------
+> >
+> > Please split these out to a separate patch. Can't speak for others, but
+> > the patch looks like it'll be conflicts galore and a problem to manage
+> > if merged in one big lump.
+>
+> Yes, it would be nice to have the amd patch separate as well.
 
-> On Mon, Oct 07, 2019 at 11:48:33AM +0100, Marc Zyngier wrote:
-> > On Mon, 07 Oct 2019 10:43:27 +0100,
-> > Andrew Murray <andrew.murray@arm.com> wrote:  
-> > > 
-> > > On Sun, Oct 06, 2019 at 11:46:36AM +0100, maz@kernel.org wrote:  
-> > > > From: Marc Zyngier <maz@kernel.org>
-> > > > 
-> > > > The PMU emulation code uses the perf event sample period to trigger
-> > > > the overflow detection. This works fine  for the *first* overflow
-> > > > handling  
-> > > 
-> > > Although, even though the first overflow is timed correctly, the value
-> > > the guest reads may be wrong...
-> > > 
-> > > Assuming a Linux guest with the arm_pmu.c driver, if I recall correctly
-> > > this writes the -remainingperiod to the counter upon stopping/starting.
-> > > In the case of a perf_event that is pinned to a task, this will happen
-> > > upon every context switch of that task. If the counter was getting close
-> > > to overflow before the context switch, then the value written to the
-> > > guest counter will be very high and thus the sample_period written in KVM
-> > > will be very low...
-> > > 
-> > > The best scenario is when the host handles the overflow, the guest
-> > > handles its overflow and rewrites the guest counter (resulting in a new
-> > > host perf_event) - all before the first host perf_event fires again. This
-> > > is clearly the assumption the code makes.
-> > > 
-> > > Or - the host handles its overflow and kicks the guest, but the guest
-> > > doesn't respond in time, so we end up endlessly and pointlessly kicking it
-> > > for each host overflow - thus resulting in the large difference between number
-> > > of interrupts between host and guest. This isn't ideal, because when the
-> > > guest does read its counter, the value isn't correct (because it overflowed
-> > > a zillion times at a value less than the arrchitected max).
-> > > 
-> > > Worse still is when the sample_period is so small, the host doesn't
-> > > even keep up.  
-> > 
-> > Well, there are plenty of ways to make this code go mad. The
-> > overarching reason is that we abuse the notion of sampling period to
-> > generate interrupts, while what we'd really like is something that
-> > says "call be back in that many events", rather than the sampling
-> > period which doesn't match the architecture.
-> > 
-> > Yes, small values will results in large drifts. Nothing we can do
-> > about it.
-> >   
-> > >   
-> > > > , but results in a huge number of interrupts on the host,
-> > > > unrelated to the number of interrupts handled in the guest (a x20
-> > > > factor is pretty common for the cycle counter). On a slow system
-> > > > (such as a SW model), this can result in the guest only making
-> > > > forward progress at a glacial pace.
-> > > > 
-> > > > It turns out that the clue is in the name. The sample period is
-> > > > exactly that: a period. And once the an overflow has occured,
-> > > > the following period should be the full width of the associated
-> > > > counter, instead of whatever the guest had initially programed.
-> > > > 
-> > > > Reset the sample period to the architected value in the overflow
-> > > > handler, which now results in a number of host interrupts that is
-> > > > much closer to the number of interrupts in the guest.  
-> > > 
-> > > This seems a reasonable pragmatic approach - though of course you will end
-> > > up counting slightly slower due to the host interrupt latency. But that's
-> > > better than the status quo.  
-> > 
-> > Slower than what?
-> >   
-> 
-> Slower than the guest should expect. Assuming a cycle counter (with LC) is
-> initially programmed to 0, you'd target a guest interrupt period of 2^64 x cycle
-> period...
+I'll split the AMD and i915 although I am not sure if it is sense to
+split such trivial patch per each driver.
 
-What is exactly what is expected, isn't it?
-
-> But I'm wrong in saying that you end up counting slightly slower - as you're
-> not restarting the perf counter or changing the value so there should be no change
-> in the interrupt period to the guest.
-> 
-> I was considering the case where the kernel perf event is recreated in the
-> overflow handler, in which case unless you consider the time elapsed between the
-> event firing and changing the sample_period then you end up with a larger period.
-
-The only thing that changes is the point at which the next period will
-end, matching the expected overflow.
-
-> > > 
-> > > It may be possible with perf to have a single-fire counter (this mitigates
-> > > against my third scenario but you still end up with a loss of precision) -
-> > > See PERF_EVENT_IOC_REFRESH.  
-> > 
-> > Unfortunately, that's a userspace interface, not something that's
-> > available to the kernel at large...  
-> 
-> The mechanism to change the value of event->event_limit is only available via
-> ioctl, though I was implying that an in-kernel mechansim could be provided.
-> This would be trivial. (But it doesn't help, as I don't think you could create
-> another perf kernel event in that context).
->  
-> >   
-> > > Ideally the PERF_EVENT_IOC_REFRESH type of functionality could be updated
-> > > to reload to a different value after the first hit.  
-> > 
-> > Which is what I was hinting at above. I'd like a way to reload the
-> > next period on each expiration, much like a timer.
-> >   
-> > > 
-> > > This problem also exists on arch/x86/kvm/pmu.c (though I'm not sure what
-> > > their PMU drivers do with respect to the value they write).
-> > >   
-> > > > 
-> > > > Fixes: b02386eb7dac ("arm64: KVM: Add PMU overflow interrupt routing")
-> > > > Signed-off-by: Marc Zyngier <maz@kernel.org>
-> > > > ---
-> > > >  virt/kvm/arm/pmu.c | 12 ++++++++++++
-> > > >  1 file changed, 12 insertions(+)
-> > > > 
-> > > > diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
-> > > > index c30c3a74fc7f..3ca4761fc0f5 100644
-> > > > --- a/virt/kvm/arm/pmu.c
-> > > > +++ b/virt/kvm/arm/pmu.c
-> > > > @@ -444,6 +444,18 @@ static void kvm_pmu_perf_overflow(struct perf_event *perf_event,
-> > > >  	struct kvm_pmc *pmc = perf_event->overflow_handler_context;
-> > > >  	struct kvm_vcpu *vcpu = kvm_pmc_to_vcpu(pmc);
-> > > >  	int idx = pmc->idx;
-> > > > +	u64 val, period;
-> > > > +
-> > > > +	/* Start by resetting the sample period to the architectural limit */
-> > > > +	val = kvm_pmu_get_pair_counter_value(vcpu, pmc);
-> > > > +
-> > > > +	if (kvm_pmu_idx_is_64bit(vcpu, pmc->idx))  
-> > > 
-> > > This is correct, because in this case we *do* care about _PMCR_LC.
-> > >   
-> > > > +		period = (-val) & GENMASK(63, 0);
-> > > > +	else
-> > > > +		period = (-val) & GENMASK(31, 0);
-> > > > +
-> > > > +	pmc->perf_event->attr.sample_period = period;
-> > > > +	pmc->perf_event->hw.sample_period = period;  
-> > > 
-> > > I'm not sure about the above line - does direct manipulation of sample_period
-> > > work on a running perf event? As far as I can tell this is already done in the
-> > > kernel with __perf_event_period - however this also does other stuff (such as
-> > > disable and re-enable the event).  
-> > 
-> > I'm not sure you could do that in the handler, which is run in atomic
-> > context. It doesn't look like anything bad happens when updating the
-> > sample period directly (the whole thing has stopped getting crazy),
-> > but I'd really like someone who understands the perf internals to help
-> > here (hence Mark being on cc).  
-> 
-> I suspect this is working lazily - when you want to change the underlying pmu
-> period, you need to write the new period to the host PMU counters. This is done
-> in armpmu_start. __perf_event_period would normally stop and then start the
-> PMU to achieve this (hence the PERF_EF_RELOAD flag). Your code doesn't do this.
-
-And yet I don't get these extra interrupts, so something must be
-happening.
-
-> However, the perf counter set up in KVM is always pinned to the guest process
-> and thus when switching to/from this task the counter are stopped and started.
-> Therefore I suspect the sample_period you change goes into effect at this point
-> in time. So it probably stops going crazy - but not immediately.
-
-Fair enough. I wonder if we can tell perf to always stop the event
-before calling the handler, and resume it on return from the handler.
-
-> I think the underlying counter also gets reset to the new period just before it
-> calls perf_event_overflow (see armv8pmu_handle_irq) - so worse case you'll wait
-> until it overflows for the second time.
-> 
-> In any case this is still better than the status quo.
-
-Well, I'd still like to have something that is in line with the perf
-usage model... It's been broken forever, so I guess it can wait another
-few weeks to be correctly solved.
-
-Thanks,
-
-	M.
--- 
-Jazz is not dead. It just smells funny...
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
