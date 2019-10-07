@@ -2,47 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A433ACDDA1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 10:48:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31C6ACDDC3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 10:53:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xGdhL7VPDkwyDC8BVE0TeSojVfOGl2ZgcjlojSKhrXU=; b=J92PygsOSOlQvY
-	+skn6pxYnpcbF0QVU0bx9xm8jfBGZvSJgiPFM7kdRZIY4tM1qElVZ3eE1VgiuzexdY9vMaupm80ca
-	GodrOEd2m3Hcr+il4bUVHke1y/KDUaelFc0PjW7krNvMCWRD188M1SyJex4hEzKyv9mGhd3quEoo1
-	qWjf+JudN9GVSimq7emW4opmWaHJ9KumngoA/VM940Na5NuvQzN6eavJFl+dReT4YBDp5BR0rCglQ
-	Y2RtHKgKOngr+YAE6EhfhjZSnmEX0IHATBQ2TcxyNWhODjDav0Fjwo+e3cyzAph46zUhgGWRbi8lp
-	ej28QlaTU9aigXuZ1FcQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tNN7fRMQ2pm4oG/E9oUw0AnOOZHAnatlIaMG8AwivpM=; b=ZlKlQq69qsN9nr
+	KpNgEm069LG/u8j8If+Ri6vO+uHfdFA1ETTMs+vjgh4berZb3d+SrzqKx3qu/567JslFOQgfcFKvg
+	5UWxnjchikNo21+kI+Bi+o3eEe2io3Mb6dSyzXQfljJ+JWG+UwBztXxV2CU8EYBq4xZhSH/1TOM7c
+	duEv9q3vt1zgi3muSKSWVKnBssQDx7/FJa+Rx8pNz5HxOgx+4GOAKF293WcTLDhq+Iwm2/VVwyU4A
+	fvMoyn8BQbDU+YZfmVXF4/ApIu/j38gBf4PfE2QuWU+IYJj49rNJI95628BoPbhBOwrNOZ/Lzdbra
+	I7B5n1KHzQvtP4H7Rd4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHOgd-0001FJ-9A; Mon, 07 Oct 2019 08:48:11 +0000
+	id 1iHOlo-0003F2-GB; Mon, 07 Oct 2019 08:53:32 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHOgX-0001El-17
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 08:48:06 +0000
+ id 1iHOlh-0003ET-BE
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 08:53:26 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A681A1570;
- Mon,  7 Oct 2019 01:48:02 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 29A753F68E;
- Mon,  7 Oct 2019 01:48:02 -0700 (PDT)
-Date: Mon, 7 Oct 2019 09:48:00 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: maz@kernel.org
-Subject: Re: [PATCH 1/3] KVM: arm64: pmu: Fix cycle counter truncation
-Message-ID: <20191007084800.GW42880@e119886-lin.cambridge.arm.com>
-References: <20191006104636.11194-1-maz@kernel.org>
- <20191006104636.11194-2-maz@kernel.org>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CECC71570;
+ Mon,  7 Oct 2019 01:53:21 -0700 (PDT)
+Received: from suzpou01.cambridge.arm.com (unknown [10.1.197.116])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 078203F68E;
+ Mon,  7 Oct 2019 01:53:20 -0700 (PDT)
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: cpufeature: Set the FP/SIMD compat HWCAP bits properly
+Date: Mon,  7 Oct 2019 09:53:12 +0100
+Message-Id: <20191007085312.27912-1-suzuki.poulose@arm.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191006104636.11194-2-maz@kernel.org>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_014805_121154_83F631F8 
-X-CRM114-Status: GOOD (  21.33  )
+X-CRM114-CacheID: sfid-20191007_015325_471740_122D33C3 
+X-CRM114-Status: GOOD (  13.39  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,95 +57,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Oct 06, 2019 at 11:46:34AM +0100, maz@kernel.org wrote:
-> From: Marc Zyngier <maz@kernel.org>
-> 
-> When a counter is disabled, its value is sampled before the event
-> is being disabled, and the value written back in the shadow register.
-> 
-> In that process, the value gets truncated to 32bit, which is adequate
-> for any counter but the cycle counter (defined as a 64bit counter).
-> 
-> This obviously results in a corrupted counter, and things like
-> "perf record -e cycles" not working at all when run in a guest...
-> A similar, but less critical bug exists in kvm_pmu_get_counter_value.
-> 
-> Make the truncation conditional on the counter not being the cycle
-> counter, which results in a minor code reorganisation.
-> 
-> Fixes: 80f393a23be6 ("KVM: arm/arm64: Support chained PMU counters")
-> Cc: Andrew Murray <andrew.murray@arm.com>
-> Reported-by: Julien Thierry <julien.thierry.kdev@gmail.com>
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-> ---
+We set the compat_elf_hwcap bits unconditionally on arm64 to
+include the VFP and NEON support. However, the FP/SIMD unit
+is optional on Arm v8 and thus could be missing. We already
+handle this properly in the kernel, but still advertise to
+the COMPAT applications that the VFP is available. Fix this
+to make sure we only advertise when we really have them.
 
-Reviewed-by: Andrew Murray <andrew.murray@arm.com>
+Fixes: commit 82e0191a1aa11abf ("arm64: Support systems without FP/ASIMD")
+Cc: Will Deacon <will@kernel.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+---
+ arch/arm64/kernel/cpufeature.c | 37 +++++++++++++++++++++++++++++++---
+ 1 file changed, 34 insertions(+), 3 deletions(-)
 
->  virt/kvm/arm/pmu.c | 22 ++++++++++++----------
->  1 file changed, 12 insertions(+), 10 deletions(-)
-> 
-> diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
-> index 362a01886bab..c30c3a74fc7f 100644
-> --- a/virt/kvm/arm/pmu.c
-> +++ b/virt/kvm/arm/pmu.c
-> @@ -146,8 +146,7 @@ u64 kvm_pmu_get_counter_value(struct kvm_vcpu *vcpu, u64 select_idx)
->  	if (kvm_pmu_pmc_is_chained(pmc) &&
->  	    kvm_pmu_idx_is_high_counter(select_idx))
->  		counter = upper_32_bits(counter);
-> -
-> -	else if (!kvm_pmu_idx_is_64bit(vcpu, select_idx))
-> +	else if (select_idx != ARMV8_PMU_CYCLE_IDX)
->  		counter = lower_32_bits(counter);
->  
->  	return counter;
-> @@ -193,7 +192,7 @@ static void kvm_pmu_release_perf_event(struct kvm_pmc *pmc)
->   */
->  static void kvm_pmu_stop_counter(struct kvm_vcpu *vcpu, struct kvm_pmc *pmc)
->  {
-> -	u64 counter, reg;
-> +	u64 counter, reg, val;
->  
->  	pmc = kvm_pmu_get_canonical_pmc(pmc);
->  	if (!pmc->perf_event)
-> @@ -201,16 +200,19 @@ static void kvm_pmu_stop_counter(struct kvm_vcpu *vcpu, struct kvm_pmc *pmc)
->  
->  	counter = kvm_pmu_get_pair_counter_value(vcpu, pmc);
->  
-> -	if (kvm_pmu_pmc_is_chained(pmc)) {
-> -		reg = PMEVCNTR0_EL0 + pmc->idx;
-> -		__vcpu_sys_reg(vcpu, reg) = lower_32_bits(counter);
-> -		__vcpu_sys_reg(vcpu, reg + 1) = upper_32_bits(counter);
-> +	if (pmc->idx == ARMV8_PMU_CYCLE_IDX) {
-> +		reg = PMCCNTR_EL0;
-> +		val = counter;
->  	} else {
-> -		reg = (pmc->idx == ARMV8_PMU_CYCLE_IDX)
-> -		       ? PMCCNTR_EL0 : PMEVCNTR0_EL0 + pmc->idx;
-> -		__vcpu_sys_reg(vcpu, reg) = lower_32_bits(counter);
-> +		reg = PMEVCNTR0_EL0 + pmc->idx;
-> +		val = lower_32_bits(counter);
->  	}
->  
-> +	__vcpu_sys_reg(vcpu, reg) = val;
-> +
-> +	if (kvm_pmu_pmc_is_chained(pmc))
-> +		__vcpu_sys_reg(vcpu, reg + 1) = upper_32_bits(counter);
-> +
->  	kvm_pmu_release_perf_event(pmc);
->  }
->  
-> -- 
-> 2.20.1
-> 
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index 9323bcc40a58..9a28ba10dc03 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -32,9 +32,7 @@ static unsigned long elf_hwcap __read_mostly;
+ #define COMPAT_ELF_HWCAP_DEFAULT	\
+ 				(COMPAT_HWCAP_HALF|COMPAT_HWCAP_THUMB|\
+ 				 COMPAT_HWCAP_FAST_MULT|COMPAT_HWCAP_EDSP|\
+-				 COMPAT_HWCAP_TLS|COMPAT_HWCAP_VFP|\
+-				 COMPAT_HWCAP_VFPv3|COMPAT_HWCAP_VFPv4|\
+-				 COMPAT_HWCAP_NEON|COMPAT_HWCAP_IDIV|\
++				 COMPAT_HWCAP_TLS|COMPAT_HWCAP_IDIV|\
+ 				 COMPAT_HWCAP_LPAE)
+ unsigned int compat_elf_hwcap __read_mostly = COMPAT_ELF_HWCAP_DEFAULT;
+ unsigned int compat_elf_hwcap2 __read_mostly;
+@@ -1589,6 +1587,12 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+ 		.match_list = list,						\
+ 	}
+ 
++#define HWCAP_CAP_MATCH(match, cap_type, cap)					\
++	{									\
++		__HWCAP_CAP(#cap, cap_type, cap)				\
++		.matches = match,						\
++	}
++
+ #ifdef CONFIG_ARM64_PTR_AUTH
+ static const struct arm64_cpu_capabilities ptr_auth_hwcap_addr_matches[] = {
+ 	{
+@@ -1662,8 +1666,35 @@ static const struct arm64_cpu_capabilities arm64_elf_hwcaps[] = {
+ 	{},
+ };
+ 
++#ifdef CONFIG_COMPAT
++static bool compat_has_neon(const struct arm64_cpu_capabilities *cap, int scope)
++{
++	/*
++	 * Check that all of MVFR1_EL1.{SIMDSP, SIMDInt, SIMDLS} are available,
++	 * in line with that of arm32 as in vfp_init(). We make sure that the
++	 * check is future proof, by making sure value is non-zero.
++	 */
++	u32 mvfr1;
++
++	WARN_ON(scope == SCOPE_LOCAL_CPU && preemptible());
++	if (scope == SCOPE_SYSTEM)
++		mvfr1 = read_sanitised_ftr_reg(SYS_MVFR1_EL1);
++	else
++		mvfr1 = read_sysreg_s(SYS_MVFR1_EL1);
++
++	return (mvfr1 & (0xf << MVFR1_SIMDSP_SHIFT)) &&
++		(mvfr1 & (0xf << MVFR1_SIMDINT_SHIFT)) &&
++		(mvfr1 & (0xf << MVFR1_SIMDLS_SHIFT));
++}
++#endif
++
+ static const struct arm64_cpu_capabilities compat_elf_hwcaps[] = {
+ #ifdef CONFIG_COMPAT
++	HWCAP_CAP_MATCH(compat_has_neon, CAP_COMPAT_HWCAP, COMPAT_HWCAP_NEON),
++	HWCAP_CAP(SYS_MVFR1_EL1, MVFR1_SIMDFMAC_SHIFT, FTR_UNSIGNED, 1, CAP_COMPAT_HWCAP, COMPAT_HWCAP_VFPv4),
++	/* Arm v8 mandates MVFR0.FPDP == {0, 2}. So, piggy back on this for the presence of VFP support */
++	HWCAP_CAP(SYS_MVFR0_EL1, MVFR0_FPDP_SHIFT, FTR_UNSIGNED, 2, CAP_COMPAT_HWCAP, COMPAT_HWCAP_VFP),
++	HWCAP_CAP(SYS_MVFR0_EL1, MVFR0_FPDP_SHIFT, FTR_UNSIGNED, 2, CAP_COMPAT_HWCAP, COMPAT_HWCAP_VFPv3),
+ 	HWCAP_CAP(SYS_ID_ISAR5_EL1, ID_ISAR5_AES_SHIFT, FTR_UNSIGNED, 2, CAP_COMPAT_HWCAP2, COMPAT_HWCAP2_PMULL),
+ 	HWCAP_CAP(SYS_ID_ISAR5_EL1, ID_ISAR5_AES_SHIFT, FTR_UNSIGNED, 1, CAP_COMPAT_HWCAP2, COMPAT_HWCAP2_AES),
+ 	HWCAP_CAP(SYS_ID_ISAR5_EL1, ID_ISAR5_SHA1_SHIFT, FTR_UNSIGNED, 1, CAP_COMPAT_HWCAP2, COMPAT_HWCAP2_SHA1),
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
