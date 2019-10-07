@@ -2,61 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 407AECEA10
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 19:05:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7681ACEA1D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 19:08:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3e0pGon5Fm3qk/AD79JlI6z8EC6KHl3zTE4miv4R35I=; b=RHigNRTPNsUEzRvBjIjUTKZsJ
-	/ASJ9CiRhq7olWthaIPGnx26BgWASRzQo5oqufhOCCw6cAG/NRs6yeREF2VkjTG5YgujU8mfLlOzq
-	nt+WP4j7Q4o3Rd/hXFfUiHxDQa64wj6HCC1bWtV9hKpUPWYsKS3aoc3/NGXS4pKw3xtKbCaWR1xLc
-	YvjzlWu9I5Zps2OWrS+WhIO60Bbfs6ClRWE+jn/1s9Kwo4z3ViaIzmGK5ayD6x04QUR4hMQxOCOq/
-	xuQ5pA4gZqkgBc2YPJu7QacK3/5fsp0bbMtyt8BmLhPPohjAom7fsWp9tLHIsuC74qC+rhgK7n0eY
-	kIctT1McA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=afvdKA9yYe3BMrxMeKBToHj3PvafQWv1kMbaQRKiEUU=; b=mSrYuBen+CW3OT
+	rlfrTbtsBsLQ46c4m7Q6h9VbzllaCVhdrEpQfZ+k3bacWBi87GGI4m/TNjTcz72iwtnU39wYq/y3M
+	ysNt4f72P6p6E1lperMdwBtdnYex9WGD9WAxVo4Sdi3JjjA5nGUJVCuQ1EDzNk4VcjU664FtXCBSk
+	qkNOIDjoWMavfE3PuV3a3KN9uY6w8b6gDfVsb3Mf9JprZa2vxjxeGqr3YLGQaeQ2MGK1E5NcdFiNH
+	BYy2ai2SfB5qEIz4L+wzDNsT/scasknX2xsQ8Jl9Etkx9rUWBaVzxgnr64AonJtrD10v15uTNFEcl
+	0tRQe1/GBDkq72F4v9RQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHWRP-000305-8j; Mon, 07 Oct 2019 17:04:59 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iHWUJ-0004nP-VF; Mon, 07 Oct 2019 17:07:59 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHWRH-0002zD-Do
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 17:04:52 +0000
-Received: from earth.universe (dyndsl-037-138-090-170.ewe-ip-backbone.de
- [37.138.90.170])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4FF22206C0;
- Mon,  7 Oct 2019 17:04:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570467889;
- bh=BOSxj+PbQ1BvxlkuWcNqwjbGF5ytNDQBfi3Ioz8A9RQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=dsRX/zC2HcBFZgChcpJyDI+i4gajoUvhCBmhI0kaqlSq24fZGjaMG80cwgJwVvb2j
- BetaNhEyORIuE/5xKMaKtOEaElhGn8xiS56iXu2AQ6zyhgUVS2rsAVdybamTWDxypj
- jpFnpsHHD+tK1HZ4ROhFb928jUi60cHNIQqXi04w=
-Received: by earth.universe (Postfix, from userid 1000)
- id F3A573C0CA1; Mon,  7 Oct 2019 19:04:46 +0200 (CEST)
-Date: Mon, 7 Oct 2019 19:04:46 +0200
-From: Sebastian Reichel <sre@kernel.org>
-To: Andreas Kemnade <andreas@kemnade.info>
-Subject: Re: [PATCH] drm: panels: fix spi aliases of former omap panels
-Message-ID: <20191007170446.yotb24s6jhe6nx3r@earth.universe>
-References: <20191007164130.31534-1-andreas@kemnade.info>
+ id 1iHWU9-0004md-PG
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 17:07:51 +0000
+Received: by mail-qt1-x842.google.com with SMTP id m15so20293476qtq.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 07 Oct 2019 10:07:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=2K7rXlp5X/h8ftzby/KietV7LryoE7u4vg9KSTfQIbs=;
+ b=CKT9ySkTfIiYroy6J96o8UPUxe9+acVcRANOXINUzq+2CkAZkvPJeGXo+CBDeO9dI0
+ oddOFvsguco+H0TeBx3nmOp2HP5Rc3r7TdyB9Mt00WmgxI91B54LmDA7j+ZRXUfE62cY
+ wvWoVdMCX6jS0MV+TAbmr6AEy4++UXAcPsnEI=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=2K7rXlp5X/h8ftzby/KietV7LryoE7u4vg9KSTfQIbs=;
+ b=dPCLHkv43E8dq9rVg9EgK3RXNwLj/kuT10tNFTMxorasM91I2bs616XTbxciGZk5/k
+ VhU6EvIAUV7IWNEh9MJHQrwHFqYLA9FJrl6AaZYLomLLnSQ4FEtgU1p+WVUt0v98Bf/k
+ qfOH3nHazjDaVypxGrythuecrOH9rLLSquF228RXXM+SeYsKGYQoRinWVN2Rqw6EVk1l
+ XUFD9N1sKHkRcEysI/3WebBwVW/oS3RuAEibkcOifnPrXpOGrSU23yzxvRJm0LJE17/c
+ aZy+bAo0uMXh7cTF+E1LpD9iqgI9AoWfmFnHHYHL04Pkwy4DjCy8SH8JhmvNQYptBY9O
+ 9/Iw==
+X-Gm-Message-State: APjAAAXnH1rLLcxNUCJBPBvOPLqAqkHOUt2/xWChLT1jjWmMj8s8Kzys
+ E83XoHWDT92ba4ezw5EDWL6fZ8/K2F1IFf1Wj5U91g==
+X-Google-Smtp-Source: APXvYqyZ2JVdHT9qz9I8PsmKucNM8Is44BfBqxJCxK98WAy+0lfyTExVu/81vESxndFenTE4mepOqqFvEjRyGUIa0aY=
+X-Received: by 2002:a0c:edc2:: with SMTP id i2mr27888828qvr.229.1570468068020; 
+ Mon, 07 Oct 2019 10:07:48 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20191007164130.31534-1-andreas@kemnade.info>
-User-Agent: NeoMutt/20180716
+References: <20190910075907.132200-1-hsinyi@chromium.org>
+In-Reply-To: <20190910075907.132200-1-hsinyi@chromium.org>
+From: Hsin-Yi Wang <hsinyi@chromium.org>
+Date: Mon, 7 Oct 2019 10:07:22 -0700
+Message-ID: <CAJMQK-jawP2+Ba0AkquqU16vVnq_yGJN=Bepk7kLRusp_zdq2A@mail.gmail.com>
+Subject: Re: [PATCH] thermal-generic-adc: Silent error message for EPROBE_DEFER
+To: Eduardo Valentin <edubezval@gmail.com>,
+ Laxman Dewangan <ldewangan@nvidia.com>, 
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_100451_499011_E268E342 
-X-CRM114-Status: GOOD (  16.67  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191007_100749_843386_51344432 
+X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -78,107 +92,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-OMAP <linux-omap@vger.kernel.org>, airlied@linux.ie,
- omi Valkeinen <tomi.valkeinen@ti.com>, Jyri Sarha <jsarha@ti.com>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Tony Lindgren <tony@atomide.com>, thierry.reding@gmail.com,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>, daniel@ffwll.ch,
- Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
- sam@ravnborg.org, linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============4873167116162814778=="
+Cc: Zhang Rui <rui.zhang@intel.com>, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ lkml <linux-kernel@vger.kernel.org>, Jonathan Cameron <jic23@kernel.org>,
+ linux-pm@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============4873167116162814778==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="iql274jatv4mpjov"
-Content-Disposition: inline
-
-
---iql274jatv4mpjov
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-On Mon, Oct 07, 2019 at 06:41:30PM +0200, Andreas Kemnade wrote:
-> When the panels were moved from omap/displays/ to panel/
-> omapdss prefix was stripped, which cause spi modalias
-> to not contain the vendor-prefix anymore.
->=20
-> so we had e.g. in former times:
-> compatible=3Domapdss,tpo,td028ttec1 -> modalias=3Dspi:tpo,td028ttec1
-> now:
-> compatible=3Dtpo,td028ttec1 -> modalias=3Dspi:td028ttec1
->=20
-> This is consistent with other drivers. Tested the td028ttec.c
-> only, but the pattern looks the same for the other ones.
->=20
-> Fixes: 45f16c82db7e8 ("drm/omap: displays: Remove unused panel drivers")
-> Signed-off-by: Andreas Kemnade <andreas@kemnade.info>
+On Tue, Sep 10, 2019 at 12:59 AM Hsin-Yi Wang <hsinyi@chromium.org> wrote:
+>
+> If devm_iio_channel_get() or devm_thermal_zone_of_sensor_register()
+> fail with EPROBE_DEFER, we shouldn't print an error message, as the
+> device will be probed again later.
+>
+> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
 > ---
 
-Patch looks good to me, but you have one false positive.
-
-> [...]
->
-> diff --git a/drivers/gpu/drm/panel/panel-sharp-ls037v7dw01.c b/drivers/gp=
-u/drm/panel/panel-sharp-ls037v7dw01.c
-> index 46cd9a2501298..838d39a263f53 100644
-> --- a/drivers/gpu/drm/panel/panel-sharp-ls037v7dw01.c
-> +++ b/drivers/gpu/drm/panel/panel-sharp-ls037v7dw01.c
-> @@ -204,7 +204,7 @@ static int ls037v7dw01_remove(struct platform_device =
-*pdev)
->  }
-> =20
->  static const struct of_device_id ls037v7dw01_of_match[] =3D {
-> -	{ .compatible =3D "sharp,ls037v7dw01", },
-> +	{ .compatible =3D "ls037v7dw01", },
->  	{ /* sentinel */ },
->  };
-> =20
-
-The DT compatible should have a vendor prefix.
-
-> [...]
-
--- Sebastian
-
---iql274jatv4mpjov
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAl2bcCsACgkQ2O7X88g7
-+pqKSQ/9HclHNhGRa3L+55z5K08PEFcrfqZTjrhBUnQW/JOnaun8CyHC229w9gfF
-cZ8Z3E0HY6xKlIFHP6K3kjdjcPghU58QXAhneBIf8zr0OiChnuleAe3gZ89WAB8f
-Zy/PCAj+tNLWaUzhlwYe0VW+IXkDbXrF5VCkwUIs96QFNAduLraco7wMxpnl1Kcl
-FQScSqD7wEXQD55dqnJwEVrYfi1C3JjdrtTPXTAZj3mBcpKekYLQ0JzVAx7JqpwQ
-PkRXYjCrVwQ7VfO0gXkqxEjXucK+K/gN6dcIz0wj6Evrl+Pj0e3GKl8RPzWZnk0h
-dAtJ/HXclZyh+qlQKLj0dmFuVHebBlWaLO30Kl4WiuKsGXAq2NfpXS9+Nq4ZaRXM
-X/pH730gVRGvA6/nlPkkkHoqL/0p2/APW40uPBdzUoKCWpOUGoFbG1rknKfVR7Ug
-MNCpJXPv7Jgu9U7pd/mkmlLE08Yu76tshniFFZPz8kzkrkkRwrxIimO/65VTIrFr
-hpzDkZPD8DLDb2q287r7UwL3zgccP85jMrPj+l+XPyhZTErWk6HTadm+JRqAWSX3
-c1Bh47Pb3PPdxSoOp6tddkbeYWutsufe9CA+lXG46tH8X0VKYQ7KtIj+BzclQLkd
-NbbAU4Ja6+mExXInkjgnjB1DGIZ/qSZF9TtwmbZUS6Pe5Rp3NEA=
-=vfl2
------END PGP SIGNATURE-----
-
---iql274jatv4mpjov--
-
-
---===============4873167116162814778==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Ping on the thread. Any suggestion for this patch?
+Thanks
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4873167116162814778==--
-
