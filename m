@@ -2,58 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97A83CE2F0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 15:17:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC394CE2F5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 15:17:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ynv9dhZnWnsGtZvFCrRBh6QKlY2RMprk7AHZfP2bk3g=; b=JU25NK75WbBurp
-	jaJhE66GqWJQWnf2pfzln7NZNONjFgO865jhEZJRCIkQhw4om6G71Abj0lJ2f0FSFr/pFRduORG+u
-	LwWpvMujuzxJ97jtQdDLVApFUvlCwYLu/GZGDpamHamI+BWNKSbSzU1RbDNi2ESsKeByJV77uypzY
-	6hGz/BUbHCLPy98eX3qxIYvZSszCOmGMB4MzdOXxEPW9niVhOLVtYfrcz4e6CCPor4f3Zbq3RUwJg
-	29ZGFpdlwYM1xDPFZ2I5BI0z/7ZpLLo4EstVt2kKbwManZ9MybAGgOaexVGnwWEP54sdSD3G8Yrso
-	fq818v5iU7bxE0GoolQw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lLp1kK9wkqh76vCFew1X5l861GNJhlTVCeCqaH5QlVQ=; b=MQx/UCqrzX/IBZ
+	ojUAbkkXTE/i9qb6YWkOQte9DbQou1GDz3h8GG3gEU5sF+q1LB14mSaFzYn2Q9pGjyTgtsFI7+9AM
+	2oXYh/2gJH//6QJblr+WS7c6QO3O34wdyRZPi2FF5OUiQsbRRm8OgbeG8OHDkv3k5pcHtae6TgWQk
+	pgRq2onu/Si3RPQuD4ti5+Bbr6BswACaZWJg5JqBgjJ9HyNCzQlrzG1NOGUyXGfyFtrfjx062DKre
+	Lz8APjz9jVyKBD+zkcsEO7eg+11Ebt6KxcdywJ65PMdOBMYDR7D4zPOWZ16mGRItGVcWfAZMNegbi
+	zqisQskn+jU8VPDRJdlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHSst-00019S-Cq; Mon, 07 Oct 2019 13:17:07 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1iHStJ-0001dH-Nw; Mon, 07 Oct 2019 13:17:33 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHSsl-00018n-Jx; Mon, 07 Oct 2019 13:17:01 +0000
-Received: by mail-pf1-x444.google.com with SMTP id a2so8638585pfo.10;
- Mon, 07 Oct 2019 06:16:58 -0700 (PDT)
+ id 1iHSt1-0001PK-Tk; Mon, 07 Oct 2019 13:17:19 +0000
+Received: by mail-pg1-x544.google.com with SMTP id 23so8218274pgk.3;
+ Mon, 07 Oct 2019 06:17:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=PwiaLPNEero/RDkqXHKNpda6jyXODSLqhlH8GfScxo4=;
- b=U93WlJGywOW4GYdmFpjLSbINCeD5e5GpJ2UlnKRkpeLbKA45F/xZjIQjq0CqmxWaRc
- rYF0hBu+qMVKCBEvYbVAEykbc/A21OMZHembtBRw3nR29KuAVu8WLk1p3euuN3vDw0H9
- h9tzVebTCZgobqlu8/sjCsg9Pq9stdW/1AYzLxTmNBLHnRJ6srFQrpw44A3TgwUHnbwt
- W7YQJpxSa4WvSTanPX6pG+mVVKLdr9OdP5PqhKoVXp8VbPAg2FRoSFb5qRayfQisyMf7
- iEnYEWz46FCUjnTIM1/pUI9OHquzBjIVoNtejSSZckTud93bBGD7/TqoMDuFTzu3QbWI
- ThEw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=aQptgICcCtWSSBgk772ZatoxsYgICaTNG3vZM+tN2JI=;
+ b=fBinECWVUCIqe34f6Zm6eVHxOd/IF8rHVCJXk63l1nCydtUcpyb2geWtuN+s+Ay4gU
+ IYQjoki5Gx0y7dqhznL3n+0H0tkinm2T/CN9NHGCk9vudJJxYJdUrpB0OwWS/qXUivMC
+ xB0CuWqI5T8ka+YYVaSXrrfA/WjJHKvkNImhg79hHxu6RaHhy0FIW0y6uYG1MoVnIbkP
+ 1b2C0xnlTfa8ddknz2jCcTmGEUPTAeITZ6YjXFfbjR/Emrtso122HF7IOeC6DiU9zUFv
+ q30VrZtsw3M1yntt8ev2mhejPd5LRVFYqomJYMnX0ryYMAV8zu2Po9vZJOdttW1LnNHL
+ Mxlw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=PwiaLPNEero/RDkqXHKNpda6jyXODSLqhlH8GfScxo4=;
- b=dt7J6khXCFI7D4ULlV0BbrBLf0sRZVgWTp5jp9js2ivSk5mBUYIbPNVxpB+wYdFqHE
- 57S7KMLxZJZs/ZHo7QsIXdYOyAqyDxbPF5pcMh4OYupM88RCMXIwDT8HG823OUNbh7/W
- 7P+ND6DQurjJ6wq0jO6GX9zSln00Oe/McH+DKHNo4PFvoJMwPSToA+xh/iqUjBGp5bte
- DL1r5CbLmhklIFYPsUWhiyIKBr+6mPY+dGF1M1iempVe3/DAGjiNBleDe69Nr6jkjjrz
- BlnQhQebjghwK9BPoyqzE6CmI8WnPB32S78R6Kih+jqd8ns2zMJKtXXHmkTa38Dw8cqS
- MVLw==
-X-Gm-Message-State: APjAAAUrg9hZz+Ns73/oVX7IK6p8+YjycNf9LxJ3e5tP/gE51R9b8idr
- 2pVibVUfgEbVsz2WBksnW6k=
-X-Google-Smtp-Source: APXvYqyvHEaEyr+JjSbY/h5Ukr9XMbNo6ALxq6sKOkJD/pII8Vb1ifPUfHXL2MqvRnu0ESu3/zKdCA==
-X-Received: by 2002:a62:82c8:: with SMTP id w191mr31574553pfd.99.1570454218199; 
- Mon, 07 Oct 2019 06:16:58 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=aQptgICcCtWSSBgk772ZatoxsYgICaTNG3vZM+tN2JI=;
+ b=VPzOhySXC27zf4yLcw/qHcjp94ZFcC+ZCR/4jH1iHCDw8xt8LZ51B2rJSiZWmnXWD7
+ SW0+0l+KNSP1pPDRUe66U6qoev2qF5FQV6tHJ6gUj8TpdoV/vF7M2vTsrYiodPohlZAv
+ P06/YG7L/zkr1Xv42AQF8nTHr98GQXNn4kw3sPPXCF+JBlkGA5cOtNxEQ7VEkVKfDUEu
+ AX8SAYuypkrVEfZXmzXXo3jqv5XXchC6WaUte3j+5VRL+9MNIFDYbsG2JoGKk9C4NlCX
+ URoGQfUFlykWeCToc7dYOW06JJVzIQiwsaqdHa5cokqV/7ftONRdhK4llP3+zfPEI7Vx
+ 9rdQ==
+X-Gm-Message-State: APjAAAVW/rh/R06B3rk59oWVe/oj0XkzJbae7nRkKFQEpHN3iRoybqh4
+ 5BsD185cwCKBVDnAHIcJbgzpwCUU
+X-Google-Smtp-Source: APXvYqzfY9skP87J/Jepml3CjVgEOVUZCdNt5zbuEYhEafhjGqPWB7v6/VCcFrt0DeUtkWOl/eN25Q==
+X-Received: by 2002:a17:90a:380a:: with SMTP id
+ w10mr33937550pjb.104.1570454232768; 
+ Mon, 07 Oct 2019 06:17:12 -0700 (PDT)
 Received: from localhost.localdomain ([103.51.74.138])
- by smtp.gmail.com with ESMTPSA id r186sm16938650pfr.40.2019.10.07.06.16.54
+ by smtp.gmail.com with ESMTPSA id r186sm16938650pfr.40.2019.10.07.06.17.09
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 07 Oct 2019 06:16:57 -0700 (PDT)
+ Mon, 07 Oct 2019 06:17:12 -0700 (PDT)
 From: Anand Moon <linux.amoon@gmail.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Kevin Hilman <khilman@baylibre.com>,
@@ -61,21 +62,24 @@ To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Jerome Brunet <jbrunet@baylibre.com>,
  Neil Armstrong <narmstrong@baylibre.com>,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
-Subject: [RFCv1 0/5] Odroid N2 failes to boot using upstream kernel & u-boot
-Date: Mon,  7 Oct 2019 13:16:44 +0000
-Message-Id: <20191007131649.1768-1-linux.amoon@gmail.com>
+Subject: [RFCv1 1/5] arm64: dts: meson: Add missing 5V_EN gpio signal for
+ VCC5V regulator
+Date: Mon,  7 Oct 2019 13:16:45 +0000
+Message-Id: <20191007131649.1768-2-linux.amoon@gmail.com>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20191007131649.1768-1-linux.amoon@gmail.com>
+References: <20191007131649.1768-1-linux.amoon@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_061659_652857_6B588446 
-X-CRM114-Status: GOOD (  10.26  )
+X-CRM114-CacheID: sfid-20191007_061716_390047_3A20BFF4 
+X-CRM114-Status: GOOD (  11.58  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,42 +110,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We am trying to build the upstream u-boot and upstream kernel,
-but it fails to pass the initialization of PWM_MESON driver.
-So these patches help boot the kernel on microSD card.
+As per schematics add missing 5V_EN gpio signal to enable
+VCC5V regulator node.
 
-Patchs based on Linux 5.4-rc2
+Fixes: c35f6dc5c377 (arm64: dts: meson: Add minimal support for Odroid-N2)
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Cc: Jerome Brunet <jbrunet@baylibre.com>
+Cc: Neil Armstrong <narmstrong@baylibre.com>
+Signed-off-by: Anand Moon <linux.amoon@gmail.com>
+---
+ arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts | 3 +++
+ 1 file changed, 3 insertions(+)
 
-Boot log failed are shown below.
-[0] https://pastebin.com/cEtWq2iX
-
-[    1.569240] meson-gx-mmc ffe05000.sd: Got CD GPIO
-[    1.599227] pwm-regulator regulator-vddcpu-a: Failed to get PWM: -517
-[    1.600605] pwm-regulator regulator-vddcpu-b: Failed to get PWM: -517
-[    1.607166] pwm-regulator regulator-vddcpu-a: Failed to get PWM: -517
-[    1.613273] pwm-regulator regulator-vddcpu-b: Failed to get PWM: -517
-[    1.619931] hctosys: unable to open rtc device (rtc0)
-
-My guess their is not much issue with eMMC module, if their is
-other approach to resolve this issue, I will give this a try.
-
-Best Regards
--Anand
-
-Anand Moon (5):
-  arm64: dts: meson: Add missing 5V_EN gpio signal for VCC5V regulator
-  arm64: dts: meson: Add missing pwm control gpio signal for
-    pwm-regulator
-  arm64: dts: meson: Add missing regulator linked to VDDAO_3V3 regulator
-    to FLASH_VDD
-  arm64: dts: meson: Add missing regulator linked to VCCV5 regulator to
-    VDDIO_C/TF_IO
-  arm64/ARM: configs: Change CONFIG_PWM_MESON from m to y
-
- .../arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts | 13 +++++++++++++
- arch/arm64/configs/defconfig                        |  2 +-
- 2 files changed, 14 insertions(+), 1 deletion(-)
-
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+index 42f15405750c..a9a661258886 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+@@ -94,6 +94,9 @@
+ 		regulator-max-microvolt = <5000000>;
+ 		regulator-always-on;
+ 		vin-supply = <&main_12v>;
++		/* U12 NB679GD 5V_EN */
++		gpio = <&gpio GPIOH_8 GPIO_OPEN_DRAIN>;
++		enable-active-high;
+ 	};
+ 
+ 	vcc_1v8: regulator-vcc_1v8 {
 -- 
 2.23.0
 
