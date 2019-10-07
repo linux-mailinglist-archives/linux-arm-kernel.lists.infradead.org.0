@@ -2,55 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4317CDED7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 12:11:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16987CDEF2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 12:15:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r0my5MiSahSnq0ZF40Fjp4xzfnTYHmJifQtE2vRnX44=; b=Rg7JbC0XdyBCFX
-	Sb+fM4L/I0jjawFDNpgpYN5kjBmo+JDAp/Z2llhsJ8Qmy6EKIL70K5iPyFt8FE1sBsrVKmhJWixSX
-	/v1AjpU8dhfyeyALlHXlbg3Qv7HjoGqciP3ZVAT7/KHl9zfkNXonek4ViuQOSIIOoAiJK2zsgH52h
-	4RFGprMk9iBapd25kNSsKS9g2slso37gv9Fa5CP81RbXc6oFAPfqxJTc7I6+q4F1M9xZY57wURP8N
-	vQaxrnE0RsTPVuiXesTRiL1pmoyb5o4E8bUVrQk3HOSmtoPadYc1cBfhC8bFx1FvPbD2JCBmfXNUW
-	VgcaVaRPoHHD2C81HOnA==;
+	List-Owner; bh=BYbqVL5pCh/kgQgvfY3R2SGMx2/GKOnbUpetc5Hph7M=; b=qRA74VE/tNHlPK
+	VzjYGAkoOsZQdK3ouI/GK/9Y4oysjGbJfCgOMJZTH1P2he9KeVM75Dj0iiPGmaQNyhpVVHkESd5jB
+	j28E+PFblZW5uaqgz1ZxVCmVEmre3qZt9VKMxPuBl4cjwCwEkKqcusSJLAe+pwsybp3FIXCwDgLNe
+	ORmDTXln/PuSAvvoOXfe9ghCNyR+uV55Ay6hvIZRVL/etIPEMHRLW1x3GYHoVFSxlpfIeiY9g/yQ1
+	E8+DeJF/R2HM2pOInMalxhAPkQkQZo5+TpK02FTDFCwSvMsk0gPgbPllT/Edzu1xXlM2wPOFP8Hnu
+	2QKEtXWUkEmXWJOEU4pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHPyz-0008UI-OF; Mon, 07 Oct 2019 10:11:13 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
+	id 1iHQ3T-0001qs-9I; Mon, 07 Oct 2019 10:15:51 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHPyn-0008Rp-4O; Mon, 07 Oct 2019 10:11:03 +0000
-Received: from localhost
- (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 57274240012;
- Mon,  7 Oct 2019 10:10:37 +0000 (UTC)
-Date: Mon, 7 Oct 2019 12:10:37 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: YueHaibing <yuehaibing@huawei.com>
-Subject: Re: [PATCH -next 00/34] rtc: use devm_platform_ioremap_resource() to
- simplify code
-Message-ID: <20191007101037.GE4254@piout.net>
-References: <20191006102953.57536-1-yuehaibing@huawei.com>
+ id 1iHQ3J-0001p7-U6
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 10:15:43 +0000
+Received: by mail-qt1-x844.google.com with SMTP id m15so18368705qtq.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 07 Oct 2019 03:15:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=TPPLQMuSu6DR9UAe1OhqK+m80xjV6LV1hWWVroNGqFA=;
+ b=yB66vCs9Cik40sq835uj1MsY4wHAqv5W8JjN6PqW7YOH37xxQvXNWCYj41Pho4+PyR
+ Y8DPckhhbr65rHf2nq0tuBTpSkDiSelP9Ho4vmy4RNWO/f36hfoiiAi/rKqbVx4PxHqI
+ /aFTmZqUvm5vBF5P1HQSM4gD+dX0vfNdztWaw1JAzeanpTheKMOhh2JFMEQi13dSplrs
+ qBvxjE7VsF3lNz/2fz/R6DcQQ3QuOmUMKjViFgerYx35CBcfWsCmiBehrtLh7ScyCuAf
+ XhTUPuQvDaHL9Oht8yH+T0z4S7TWsiPlo6KbJQu85g9YSq8FQ5bo5vuxRpBTICJT+Ybn
+ 8Hog==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=TPPLQMuSu6DR9UAe1OhqK+m80xjV6LV1hWWVroNGqFA=;
+ b=fqqiGX5h3RX5C/ikEd9lDe5fQ1Fhr27ZAy7g/sC/ALPh4zATtSa70b/sVsRUKBvMZ4
+ +5Kusnaj4PRMgEM3GSPCKNI1lxxRTbrw54pIOlDNZDYm6JPkgw17mXy3dhJi5vwh2088
+ qinklruV+BvbGJFgH31KHRbOiEju+1PzqZiZzHFdzIJIyZzInY8wUTkXroPRMxn8TxhD
+ olNF8EsE5WhZTb4nCDFPkhYT9+YL0SDzm27rPb1/L9+P0TVWBnMsiIQFb5nRQJk9gBFD
+ RDYIBpZbrTyvg7rNV1JdefLTXO9qEqWCV9QyZN7BnvpKOOKtr5yn35mzWX0lQvefpjfi
+ yEUg==
+X-Gm-Message-State: APjAAAXznxV/IcBKL3M2jSYqaGgrOq6MpIuzjDO3WDnRM+Fo1o0sOg3k
+ tdl1g0fnKOppJuDmrlkSLTbTLO5rxzVSj1HUos1enw==
+X-Google-Smtp-Source: APXvYqyZ4UyJ3t8dKx1SfpG2DFjuSl5vNOC9Zb/ShAXmbBH8Ty9mfsbxI21wvZIfUh7XqPmc4q6jEhWPHz5Zh8JLkxk=
+X-Received: by 2002:aed:2a3b:: with SMTP id c56mr29991747qtd.343.1570443340311; 
+ Mon, 07 Oct 2019 03:15:40 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191006102953.57536-1-yuehaibing@huawei.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+References: <b47ec7088aa4b07458519ab151de92df552a9302.1570101510.git.amit.kucheria@linaro.org>
+ <20191003115154.6f2jgj3dnqsved2y@gilmour>
+ <CAHLCerNoLyQ-e70=1VMPO_J_amA+-2vtHwfoUabo4dhUWj-H0A@mail.gmail.com>
+ <20191007100535.6gp6b3h6ueyeln3b@gilmour>
+In-Reply-To: <20191007100535.6gp6b3h6ueyeln3b@gilmour>
+From: Amit Kucheria <amit.kucheria@linaro.org>
+Date: Mon, 7 Oct 2019 15:45:29 +0530
+Message-ID: <CAP245DXT=HL+m-LqoC25EBnOaPmF1pUW0fEZp6EZB-MdgOJoWw@mail.gmail.com>
+Subject: Re: [PATCH] media: dt-bindings: media: Fixup Allwinner A10 CSI binding
+To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_031101_447823_FD5305B5 
-X-CRM114-Status: UNSURE (   8.19  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191007_031541_972001_4EA8DC7F 
+X-CRM114-Status: GOOD (  15.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,114 +93,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: baruch@tkos.co.il, linux-aspeed@lists.ozlabs.org, linus.walleij@linaro.org,
- patrice.chotard@st.com, paul@crapouillou.net, linux-tegra@vger.kernel.org,
- thierry.reding@gmail.com, michal.simek@xilinx.com, linux-rtc@vger.kernel.org,
- f.fainelli@gmail.com, khilman@baylibre.com, wens@csie.org,
- jonathanh@nvidia.com, ludovic.desroches@microchip.com,
- bcm-kernel-feedback-list@broadcom.com, joel@jms.id.au, slemieux.tyco@gmail.com,
- alexandre.torgue@st.com, sean.wang@mediatek.com, mripard@kernel.org,
- vz@mleia.com, linux-mediatek@lists.infradead.org, gregory.0xf0@gmail.com,
- matthias.bgg@gmail.com, linux-amlogic@lists.infradead.org,
- eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org,
- a.zummo@towertech.it, andrew@aj.id.au,
- linux-stm32@st-md-mailman.stormreply.com, linux-kernel@vger.kernel.org,
- linux@prisktech.co.nz, mcoquelin.stm32@gmail.com, computersforpeace@gmail.com
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, LKML <linux-kernel@vger.kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ lakml <linux-arm-kernel@lists.infradead.org>, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06/10/2019 18:29:19+0800, YueHaibing wrote:
-> devm_platform_ioremap_resource() internally have platform_get_resource()
-> and devm_ioremap_resource() in it. So instead of calling them separately
-> use devm_platform_ioremap_resource() directly.
-> 
-> YueHaibing (34):
->   rtc: asm9260: use devm_platform_ioremap_resource() to simplify code
->   rtc: rtc-aspeed: use devm_platform_ioremap_resource() to simplify code
->   rtc: brcmstb-waketimer: use devm_platform_ioremap_resource() to
->     simplify code
->   rtc: at91sam9: use devm_platform_ioremap_resource() to simplify code
->   rtc: cadence: use devm_platform_ioremap_resource() to simplify code
->   rtc: coh901331: use devm_platform_ioremap_resource() to simplify code
->   rtc: davinci: use devm_platform_ioremap_resource() to simplify code
->   rtc: digicolor: use devm_platform_ioremap_resource() to simplify code
->   rtc: ds1216: use devm_platform_ioremap_resource() to simplify code
->   rtc: ds1511: use devm_platform_ioremap_resource() to simplify code
->   rtc: ds1553: use devm_platform_ioremap_resource() to simplify code
->   rtc: ep93xx: use devm_platform_ioremap_resource() to simplify code
->   rtc: jz4740: use devm_platform_ioremap_resource() to simplify code
->   rtc: lpc24xx: use devm_platform_ioremap_resource() to simplify code
->   rtc: lpc32xx: use devm_platform_ioremap_resource() to simplify code
->   rtc: meson: use devm_platform_ioremap_resource() to simplify code
->   rtc: mt7622: use devm_platform_ioremap_resource() to simplify code
->   rtc: mv: use devm_platform_ioremap_resource() to simplify code
->   rtc: omap: use devm_platform_ioremap_resource() to simplify code
->   rtc: pic32: use devm_platform_ioremap_resource() to simplify code
->   rtc: rtd119x: use devm_platform_ioremap_resource() to simplify code
->   rtc: s3c: use devm_platform_ioremap_resource() to simplify code
->   rtc: sa1100: use devm_platform_ioremap_resource() to simplify code
->   rtc: spear: use devm_platform_ioremap_resource() to simplify code
->   rtc: stk17ta8: use devm_platform_ioremap_resource() to simplify code
->   rtc: ds1286: use devm_platform_ioremap_resource() to simplify code
->   rtc: st-lpc: use devm_platform_ioremap_resource() to simplify code
->   rtc: stm32: use devm_platform_ioremap_resource() to simplify code
->   rtc: sunxi: use devm_platform_ioremap_resource() to simplify code
->   rtc: tegra: use devm_platform_ioremap_resource() to simplify code
->   rtc: tx4939: use devm_platform_ioremap_resource() to simplify code
->   rtc: vt8500: use devm_platform_ioremap_resource() to simplify code
->   rtc: xgene: use devm_platform_ioremap_resource() to simplify code
->   rtc: zynqmp: use devm_platform_ioremap_resource() to simplify code
-> 
->  drivers/rtc/rtc-asm9260.c           | 4 +---
->  drivers/rtc/rtc-aspeed.c            | 4 +---
->  drivers/rtc/rtc-at91sam9.c          | 4 +---
->  drivers/rtc/rtc-brcmstb-waketimer.c | 4 +---
->  drivers/rtc/rtc-cadence.c           | 4 +---
->  drivers/rtc/rtc-coh901331.c         | 4 +---
->  drivers/rtc/rtc-davinci.c           | 4 +---
->  drivers/rtc/rtc-digicolor.c         | 4 +---
->  drivers/rtc/rtc-ds1216.c            | 4 +---
->  drivers/rtc/rtc-ds1286.c            | 4 +---
->  drivers/rtc/rtc-ds1511.c            | 4 +---
->  drivers/rtc/rtc-ds1553.c            | 4 +---
->  drivers/rtc/rtc-ep93xx.c            | 4 +---
->  drivers/rtc/rtc-jz4740.c            | 4 +---
->  drivers/rtc/rtc-lpc24xx.c           | 4 +---
->  drivers/rtc/rtc-lpc32xx.c           | 4 +---
->  drivers/rtc/rtc-meson.c             | 4 +---
->  drivers/rtc/rtc-mt7622.c            | 4 +---
->  drivers/rtc/rtc-mv.c                | 4 +---
->  drivers/rtc/rtc-omap.c              | 4 +---
->  drivers/rtc/rtc-pic32.c             | 4 +---
->  drivers/rtc/rtc-rtd119x.c           | 4 +---
->  drivers/rtc/rtc-s3c.c               | 4 +---
->  drivers/rtc/rtc-sa1100.c            | 4 +---
->  drivers/rtc/rtc-spear.c             | 4 +---
->  drivers/rtc/rtc-st-lpc.c            | 4 +---
->  drivers/rtc/rtc-stk17ta8.c          | 4 +---
->  drivers/rtc/rtc-stm32.c             | 4 +---
->  drivers/rtc/rtc-sunxi.c             | 4 +---
->  drivers/rtc/rtc-tegra.c             | 4 +---
->  drivers/rtc/rtc-tx4939.c            | 4 +---
->  drivers/rtc/rtc-vt8500.c            | 4 +---
->  drivers/rtc/rtc-xgene.c             | 4 +---
->  drivers/rtc/rtc-zynqmp.c            | 5 +----
->  34 files changed, 34 insertions(+), 103 deletions(-)
-> 
+On Mon, Oct 7, 2019 at 3:35 PM Maxime Ripard <mripard@kernel.org> wrote:
+>
+> On Sat, Oct 05, 2019 at 04:15:57PM +0530, Amit Kucheria wrote:
+> > On Thu, Oct 3, 2019 at 5:22 PM Maxime Ripard <mripard@kernel.org> wrote:
+> > >
+> > > Hi,
+> > >
+> > > On Thu, Oct 03, 2019 at 04:52:24PM +0530, Amit Kucheria wrote:
+> > > > This new binding fails dt_binding_check due to a typo. Fix it up.
+> > > >
+> > > > linux.git/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml: $id: path/filename 'arm/allwinner,sun4i-a10-csi.yaml' doesn't match actual filename
+> > > > linux.git/Documentation/devicetree/bindings/Makefile:12: recipe for target 'Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.example.dts' failed
+> > > > make[2]: *** [Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.example.dts] Error 1
+> > > > make[2]: *** Waiting for unfinished jobs....
+> > > > linux.git/Makefile:1284: recipe for target 'dt_binding_check' failed
+> > > > make[1]: *** [dt_binding_check] Error 2
+> > > >
+> > > > Fixes: c5e8f4ccd7750 ("media: dt-bindings: media: Add Allwinner A10 CSI binding")
+> > > > Signed-off-by: Amit Kucheria <amit.kucheria@linaro.org>
+> > >
+> > > Thanks for your patch.
+> > >
+> > > It has already been submitted though:
+> > > https://lore.kernel.org/linux-arm-kernel/1568808060-17516-1-git-send-email-pragnesh.patel@sifive.com/
+> > >
+> > > I'm not sure why it hasn't been applied yet though :/
+> >
+> > Perhaps a Fixes tag will allow more attention to it?
+>
+> I've added a fixes tag and merged it through the sunxi tree.
+>
+> Sorry for the time it took, and thanks for sending that fix!
 
-I've quashed and applied.
-
-> -- 
-> 2.7.4
-> 
-> 
-
--- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+Will it get merged for -rc2?
 
 _______________________________________________
 linux-arm-kernel mailing list
