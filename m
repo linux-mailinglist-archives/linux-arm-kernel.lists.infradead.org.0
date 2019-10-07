@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 380CFCE10C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 13:59:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F5A8CE111
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 13:59:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bsipxatH0q6Si2EXRM2odsvEK9sXjXIPVHTQw0PC9CE=; b=bRWu644QLdlSCu
-	d6iBHEjk6WQMkwG0bttqEeCPmRfP5t+tvt5f2+fr/Du5hI5YBESuxXR8++Xerw7kvyPGE3zvF0QBH
-	catgTTVCw1wkusJrgfU/e5u5jpsTgYNZG4X2hvzIq5iww6O/jjH4531BHN8lQ/K7rZy8oZsEU4ezz
-	oD+cQfdbmEiexG0Hja9z8wl0ZfCjleAifc5AB+7hZW5D0niPjwRgSPMtLssC/fgRgggXheLFSDtez
-	MD8rKZmiG1h40qlQ5X+RftQrfdXb/j0RjN0Xn5DhqtalrPTCLZ3jhwuoQfmc+6KuMDVMfTH+caOIY
-	Wq0KOnPg5mx/sCaMXL9A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=0Gq6b9b9Zz1aPI3C916RTstWqjKGpt+EweVJOdBwVZ0=; b=ZoxdpVfLSRAab+42Qll0dHWY6
+	zl6jhRuyjGhaPfFFBgB4uhKYvqs6z3nE37qMdnszn20xRam3/gex/HY9TOL2mN/454sfU6e4z5NGs
+	VMOuTBDJXcnDhbWGU00/ZORdrtt3RN4wKXEQFnj4j15kk5GD2YOu7lFEhz1XiYyJQ4zOqKZx0IKES
+	knoGKcAw6ckXz1uaZroY5t8FhJ+TidFOIgkg/fTIoxuVQQZc3ouaw66ylKPckrltn3xh4bACB3FI0
+	4/nVXrRmrhngfHEsi5l7LAzBO3xSyrnAP9vZBLVRkdmBRjttU+mkPZzssGBAyab+p1heQWjjNWpQ6
+	ieKNvh9iQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHRfE-0000ka-1c; Mon, 07 Oct 2019 11:58:56 +0000
+	id 1iHRgA-000132-8f; Mon, 07 Oct 2019 11:59:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHRf3-0000ji-5R
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 11:58:46 +0000
-Received: from dragon (li937-157.members.linode.com [45.56.119.157])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 86EB8206C0;
- Mon,  7 Oct 2019 11:58:38 +0000 (UTC)
+ id 1iHRg0-00012h-It
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 11:59:45 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B148D206C0;
+ Mon,  7 Oct 2019 11:59:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570449524;
- bh=GzSOhDMJlVu7OkhBW0yc3aY0l4AKWtm9aeth+tDDsbw=;
+ s=default; t=1570449584;
+ bh=5jiwPkl3ecC5PC4thXvIU8gFWAfwR8hG/EemIoCj5g4=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=reGfga5iHUnq499Iq95gCUW5qoDjH6oOPCpvTembWtg0OQ3dbvFUfEzPKLSZbxDxU
- 5kZkULEjku0e4MIrdWCH12tZb9Fyw8imyQ/WF0l6eFZB3GJFHr+Keb3UCNHv9i2Nzi
- Xk/Jg4TP9bW4GoqCDl/4fStZjaqTr56gU/MQILvM=
-Date: Mon, 7 Oct 2019 19:58:24 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Markus Elfring <Markus.Elfring@web.de>, Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH] ARM: zx: Use devm_platform_ioremap_resource() in
- zx296702_pd_probe()
-Message-ID: <20191007115822.GH7150@dragon>
-References: <30b6c588-6c4b-c8ff-6414-a3fc53867bfe@web.de>
+ b=00DN5m1u+OpR2j7HvOfVHqIseRTMp9+SH7IzGzNwUnxPEVT1j+E0xUjCc5l7eTm7x
+ Gx7frdd95PSPb2j45D5gFNFQqa77rhHn7lLb+ZDGyQExfG7w0YS/+y41odBO4dEx2l
+ GW59SWBe2FL9LX3l+322/QB8nvCEiuq5VgO6q9bM=
+Date: Mon, 7 Oct 2019 13:59:41 +0200
+From: Maxime Ripard <mripard@kernel.org>
+To: Icenowy Zheng <icenowy@aosc.io>
+Subject: Re: [PATCH v2 2/3] drm/sun4i: dsi: fix the overhead of the
+ horizontal front porch
+Message-ID: <20191007115941.psgcn4dl5r5wz7eb@gilmour>
+References: <20191006160303.24413-1-icenowy@aosc.io>
+ <20191006160303.24413-3-icenowy@aosc.io>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <30b6c588-6c4b-c8ff-6414-a3fc53867bfe@web.de>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+In-Reply-To: <20191006160303.24413-3-icenowy@aosc.io>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_045845_219827_FA8268A0 
-X-CRM114-Status: GOOD (  17.56  )
+X-CRM114-CacheID: sfid-20191007_045944_639497_CDCDE0CA 
+X-CRM114-Status: GOOD (  11.22  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,73 +77,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bartosz Golaszewski <brgl@bgdev.pl>, kernel-janitors@vger.kernel.org,
- LKML <linux-kernel@vger.kernel.org>, Russell King <linux@armlinux.org.uk>,
- Himanshu Jha <himanshujha199640@gmail.com>, Jun Nie <jun.nie@linaro.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: David Airlie <airlied@linux.ie>, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Chen-Yu Tsai <wens@csie.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4443430611719547731=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 18, 2019 at 07:57:05AM +0200, Markus Elfring wrote:
-> From: Markus Elfring <elfring@users.sourceforge.net>
-> Date: Wed, 18 Sep 2019 07:40:26 +0200
-> 
-> Simplify this function implementation by using a known wrapper function.
-> 
-> This issue was detected by using the Coccinelle software.
-> 
-> Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
 
-Acked-by: Shawn Guo <shawnguo@kernel.org>
+--===============4443430611719547731==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="5vfde45ofwoem3io"
+Content-Disposition: inline
 
-@Arnd, can you please help apply it to arm-soc tree?
 
-Shawn
+--5vfde45ofwoem3io
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-> ---
->  arch/arm/mach-zx/zx296702-pm-domain.c | 10 +---------
->  1 file changed, 1 insertion(+), 9 deletions(-)
-> 
-> diff --git a/arch/arm/mach-zx/zx296702-pm-domain.c b/arch/arm/mach-zx/zx296702-pm-domain.c
-> index 7a08bf9dd792..ba4f556b7a13 100644
-> --- a/arch/arm/mach-zx/zx296702-pm-domain.c
-> +++ b/arch/arm/mach-zx/zx296702-pm-domain.c
-> @@ -152,7 +152,6 @@ static struct generic_pm_domain *zx296702_pm_domains[] = {
->  static int zx296702_pd_probe(struct platform_device *pdev)
->  {
->  	struct genpd_onecell_data *genpd_data;
-> -	struct resource *res;
->  	int i;
-> 
->  	genpd_data = devm_kzalloc(&pdev->dev, sizeof(*genpd_data), GFP_KERNEL);
-> @@ -161,14 +160,7 @@ static int zx296702_pd_probe(struct platform_device *pdev)
-> 
->  	genpd_data->domains = zx296702_pm_domains;
->  	genpd_data->num_domains = ARRAY_SIZE(zx296702_pm_domains);
-> -
-> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	if (!res) {
-> -		dev_err(&pdev->dev, "no memory resource defined\n");
-> -		return -ENODEV;
-> -	}
-> -
-> -	pcubase = devm_ioremap_resource(&pdev->dev, res);
-> +	pcubase = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(pcubase)) {
->  		dev_err(&pdev->dev, "ioremap fail.\n");
->  		return -EIO;
-> --
-> 2.23.0
-> 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+On Mon, Oct 07, 2019 at 12:03:01AM +0800, Icenowy Zheng wrote:
+> The formula in the BSP kernel indicates that a 16-byte overhead is used
+> when sending the HFP. However, this value is currently set to 6 in the
+> sun6i_mipi_dsi driver, which makes some panels flashing.
+>
+> Fix this overhead value.
+>
+> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+
+Applied, thanks
+
+Maxime
+
+--5vfde45ofwoem3io
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXZsorQAKCRDj7w1vZxhR
+xcP8AP47n6BFMYH1VcgTqWrgGo5/vrIabj3UlEvNbcGcQXgpgQD9GkwZ/EbXI2Dp
+TngzLKib/Ovm7hiqxQLsL6DKkKWGGw0=
+=25Nh
+-----END PGP SIGNATURE-----
+
+--5vfde45ofwoem3io--
+
+
+--===============4443430611719547731==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4443430611719547731==--
+
