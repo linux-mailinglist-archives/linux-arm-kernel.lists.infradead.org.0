@@ -2,65 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5549ECE1BB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 14:31:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9374CCE1BA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 14:30:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zeUbf2zhKjnIXLn1h4YBnP/x3eDf5tbicppQZxh2RrY=; b=RuFe7NtLJAbaC9
-	uFsVZooK96AYAoyAV1qBiDfrgc04fRbDJEZtyMYKNSvVNSc+TQZSa25fC544tgBj/IXadQohxusmy
-	Cfx7Ila3KP3Ot+OmTWEfDOjwX8v35Q6LPvH8k8CHtBDegdhhRozWnv4CLGRJ52upDtZz1/MihaK8d
-	Q9HTqrwELPFS5EH+Omy2lr4AtJ0GdtYf5H3e/juzddfztlhsKsTI2HGZuynQgAcVZdtefT7hgo6nu
-	mF6vWqsYJmYJvBrRBq9HySIYGv7wB40HYh9V8aupG/rbl+YJTgeZOxeuiTZHFF3h5XBZH7xU18QbK
-	B3nK8blKrBq9a3k7cKUQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cLdQyfPaxHp6YItl0P8FQ0diblKKvtiJBCKsDMSMzY0=; b=mylz2CJGVXRUGa
+	vMwBLbyAWTuNcooxeaqV4X1KEVYzKcFLJWMl48HZlNFBIF8Z+OQQSvWGoUHcrDpCY9k2WbrARTnM4
+	SgIG5FIamPbdTULjJsXIVDis2PS10aCm/DQKuOUPmggsCSSLtb9wG8NisnzTnUonTMsNIMrJSAsBd
+	wBVWm0J2x+1gw3B1lSWqUiUELJ9McjJFMKBtatgB41mHEyndKqh/Yf515LQPC/Ea7RMyJooRMw+Qq
+	aJqprJ6QHxEc9EBJOiIdWiSZmEn7j7VUCdbH9jmVHxuzlCBqb2FLfCEFodl8tuISa2ocQtJ6HcJ7Y
+	ah/e6IeUvyEFUyEX0w6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHSAI-0007Nq-FL; Mon, 07 Oct 2019 12:31:02 +0000
+	id 1iHSA3-00077S-QF; Mon, 07 Oct 2019 12:30:47 +0000
 Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHS91-0005Q0-Nt
+ id 1iHS91-0005Q1-8n
  for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 12:29:46 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x97CTaMa092213;
- Mon, 7 Oct 2019 07:29:36 -0500
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x97CTbKe092218;
+ Mon, 7 Oct 2019 07:29:37 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1570451376;
- bh=EKPQGZJtcp0oWSNo23JzQvp0rg1lGwZKndwkOQ5nfFY=;
- h=From:To:CC:Subject:Date;
- b=Giz5aNLe5i0GWwdOzvW4QxrqkXI/6LprSYRtKiJ7cXMmp3y++JGq6le48qKw17L2g
- pVfdcfdUD/yKihRKw+fUEtxE1ExRuEJtg5X+ER67VMp8T3Ts1k46sCL/j8uE7Lfibp
- z1udQY9MtglxvaUZX91xdhOWzrldciPSd0gpR/Cc=
+ s=ti-com-17Q1; t=1570451377;
+ bh=CrweeoqDBqIdn3s+o5LCr5A3MF6tfykZWffRhUe50/g=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=OK4Dc0eUBmyvrqDlw7uFj8IcMEebY8TMr9dWBEwXLAz/CfxdX+7CF7NTtX4x8eZTN
+ SW/lijT6g6/ZKkqDqPsuSXum08+EOKNrgMK5Ugy+D8MOxMsJ8NSuyuxzFOubAt/KxU
+ PVrFemc+rF3lSc9S90B4royxzaVlRsNNddO37U9U=
 Received: from DLEE109.ent.ti.com (dlee109.ent.ti.com [157.170.170.41])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x97CTa6n066816
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x97CTbDL085408
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 7 Oct 2019 07:29:36 -0500
-Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE109.ent.ti.com
+ Mon, 7 Oct 2019 07:29:37 -0500
+Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE109.ent.ti.com
  (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 7 Oct
- 2019 07:29:33 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ 2019 07:29:34 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE101.ent.ti.com
+ (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Mon, 7 Oct 2019 07:29:33 -0500
+ Frontend Transport; Mon, 7 Oct 2019 07:29:34 -0500
 Received: from sokoban.bb.dnainternet.fi (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x97CTYe5066760;
- Mon, 7 Oct 2019 07:29:34 -0500
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x97CTYe6066760;
+ Mon, 7 Oct 2019 07:29:36 -0500
 From: Tero Kristo <t-kristo@ti.com>
 To: <linux-omap@vger.kernel.org>, <tony@atomide.com>
-Subject: [PATCH 0/3] bus: ti-sysc: fix reset sequencing
-Date: Mon, 7 Oct 2019 15:29:28 +0300
-Message-ID: <20191007122931.18668-1-t-kristo@ti.com>
+Subject: [PATCH 1/3] bus: ti-sysc: re-order reset and main clock controls
+Date: Mon, 7 Oct 2019 15:29:29 +0300
+Message-ID: <20191007122931.18668-2-t-kristo@ti.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191007122931.18668-1-t-kristo@ti.com>
+References: <20191007122931.18668-1-t-kristo@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_052943_871049_95B3EA2B 
-X-CRM114-Status: UNSURE (   5.81  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191007_052943_391771_A4EF32FF 
+X-CRM114-Status: GOOD (  13.24  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -95,17 +96,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+The main clocks and reset controls have a hardware level dependency,
+where one can't transition state without the other one transitioning.
+Because we don't have the dependency implemented in software, we must
+ensure the ordering of these two is done properly; they way this is
+handled is that clocks transition on software level without delay,
+and the status is only polled on reset side. Because of this, we must
+re-order the main clock and reset handling on the ti-sysc driver.
 
-These three patches make sure that IOMMU/remoteprocs work across
-all devices with the latest OMAP PRM series for reset support [1].
-The last dangling issues were caused by the removal of the hardlink
-between the reset + clock drivers.
+Signed-off-by: Tero Kristo <t-kristo@ti.com>
+---
+ drivers/bus/ti-sysc.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
--Tero
-
-[1] https://patchwork.kernel.org/cover/11142871/
-
+diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
+index 193d8b23d54d..c9d01e2d3a64 100644
+--- a/drivers/bus/ti-sysc.c
++++ b/drivers/bus/ti-sysc.c
+@@ -1032,8 +1032,6 @@ static int __maybe_unused sysc_runtime_resume_legacy(struct device *dev,
+ 	struct ti_sysc_platform_data *pdata;
+ 	int error;
+ 
+-	reset_control_deassert(ddata->rsts);
+-
+ 	pdata = dev_get_platdata(ddata->dev);
+ 	if (!pdata)
+ 		return 0;
+@@ -1046,6 +1044,8 @@ static int __maybe_unused sysc_runtime_resume_legacy(struct device *dev,
+ 		dev_err(dev, "%s: could not enable: %i\n",
+ 			__func__, error);
+ 
++	reset_control_deassert(ddata->rsts);
++
+ 	return 0;
+ }
+ 
+@@ -1099,8 +1099,6 @@ static int __maybe_unused sysc_runtime_resume(struct device *dev)
+ 
+ 	sysc_clkdm_deny_idle(ddata);
+ 
+-	reset_control_deassert(ddata->rsts);
+-
+ 	if (sysc_opt_clks_needed(ddata)) {
+ 		error = sysc_enable_opt_clocks(ddata);
+ 		if (error)
+@@ -1111,6 +1109,8 @@ static int __maybe_unused sysc_runtime_resume(struct device *dev)
+ 	if (error)
+ 		goto err_opt_clocks;
+ 
++	reset_control_deassert(ddata->rsts);
++
+ 	if (ddata->legacy_mode) {
+ 		error = sysc_runtime_resume_legacy(dev, ddata);
+ 		if (error)
+-- 
+2.17.1
 
 --
 Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
