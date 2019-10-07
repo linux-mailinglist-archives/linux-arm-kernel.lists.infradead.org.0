@@ -2,69 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DFA4CEC60
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 21:00:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68441CEC64
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 21:02:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=gMfgDaOt7ka9EwDvVavymUSkbx2zhG83ux4uKIoSuSA=; b=m4UeyZJ2aJvRyJUEyykIW2SimY
-	jyZEPx2Drq4KjrifwU06x0UntXuOPJXe/vYhWJzjtszflX4InrliCmKWuL96PCHUFWh4lRGmTVCCs
-	qGGVvcffofy1o0kAYgFupscZ2ILnWG/YTTh3zj0vZ/EDbLWwJh7UAEVbdITDP4/9uNbnpQMTKhg2G
-	P9zpDHtGpnV34UTEXTQFpVqM2AaoCW4LZ9M3mgb0OiY8a6F5wetEI0DO+SnGGFwLpSVeQSWfbrStM
-	hex5qypNPDHFrDdH3UO+1dDJVJcLjlj94JPuZTES0aNOaU1O1Z5Hl7s14unccRwl7p1oMGlkAvFSz
-	XLFqIcWA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=P+MED8+lVeE0pM0gdXsk77hPm15CDsqh9GUFmR1YTEg=; b=SqyxXEHmiHyOHhQDgvf/Sbeg/
+	Fz/tah1LaMGYufxa5H0G6I7kgHvqRKS8uoSwwPaqdYUGrMaii8FRsW8Uoeqrx0Ujh0koigs5opaL8
+	A2fQDKhhuVteLuX4mDtprHI60HWmHYCRlC48biBelXuNRc+bnXc5ZcK3LmZjFMdhmYbO1NGLkTO/9
+	7//c/qFLeEZmkaiAu0ZTv/v9aFez9wCMdRmmqyl1HpBg03NPSnBr5EmjLRwsPrLM+nN9+PxWyoLT/
+	0nA/rlQAbT6ZY0sYzMtvX6uDnooYad008HLtdYEwf9U2VXZmt0O4jMF/UhtX5P1N9n8dk0QdAJwQL
+	egQal4QdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHYFB-0005r1-Kw; Mon, 07 Oct 2019 19:00:29 +0000
-Received: from linux.microsoft.com ([13.77.154.182])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHYEf-0004NT-Ap; Mon, 07 Oct 2019 18:59:58 +0000
-Received: from prsriva-Precision-Tower-5810.corp.microsoft.com (unknown
- [167.220.2.18])
- by linux.microsoft.com (Postfix) with ESMTPSA id D7B6220B711B;
- Mon,  7 Oct 2019 11:59:51 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com D7B6220B711B
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.microsoft.com;
- s=default; t=1570474792;
- bh=7P5k7YwpHfvQvOjglsK2XRSZ86bDHXhQgf/q8X1TJq0=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=OFWRzwr8tBCMr/rCIT2e2II20clCP9B1Wp2tHRsfCyKFjNPf++iIAK2IluBsEn+HR
- MqakxTVSoZfLL/etUtFoN/hcrGAFv4mvrjT3OAUuuqQW3qxiNMYHsOOR7A6oLf4337
- b2BcCk67JgdSFbD+UiG03p1O2iqs/oPz7/9ajTmo=
-From: Prakhar Srivastava <prsriva@linux.microsoft.com>
-To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-integrity@vger.kernel.org, kexec@lists.infradead.org
-Subject: [PATCH v2 2/2] update powerpc implementation to call into of_ima*
-Date: Mon,  7 Oct 2019 11:59:43 -0700
-Message-Id: <20191007185943.1828-3-prsriva@linux.microsoft.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191007185943.1828-1-prsriva@linux.microsoft.com>
-References: <20191007185943.1828-1-prsriva@linux.microsoft.com>
+	id 1iHYGV-0006wM-B3; Mon, 07 Oct 2019 19:01:51 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHYFA-0005wD-4C
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 19:00:29 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x97J0K4N123042;
+ Mon, 7 Oct 2019 14:00:20 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1570474820;
+ bh=0vcs8rJ4wLMMAot/YqVdXrTFHozVQXOKjEGPQggiNtA=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=x6uUPj56N0zvOFeyYbLxOa+VcLOYM7KLO1Ih8m9afOoWDqwMxacQLCzQ+8Ru1Iv2g
+ 5k/iGHUUHlFQnNLC0NBnDu/41EISo6wU72Ws/yvwmT7J20f3t3j4btKIWfS8rsxNZz
+ 5vWWm+8h4pq6J2q4y3t6jB1mF3s9O48ZSoZeCIRw=
+Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x97J0Kw6063227
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 7 Oct 2019 14:00:20 -0500
+Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 7 Oct
+ 2019 14:00:16 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE106.ent.ti.com
+ (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Mon, 7 Oct 2019 14:00:18 -0500
+Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x97J0HRM099832;
+ Mon, 7 Oct 2019 14:00:17 -0500
+Subject: Re: [PATCH 0/3] bus: ti-sysc: fix reset sequencing
+To: Tony Lindgren <tony@atomide.com>
+References: <20191007122931.18668-1-t-kristo@ti.com>
+ <20191007163807.GU5610@atomide.com>
+From: Tero Kristo <t-kristo@ti.com>
+Message-ID: <32031606-23da-2e0b-6d75-7225a082eb6b@ti.com>
+Date: Mon, 7 Oct 2019 22:00:16 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <20191007163807.GU5610@atomide.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_115957_418182_F1E4A186 
-X-CRM114-Status: GOOD (  13.09  )
-X-Spam-Score: -15.6 (---------------)
+X-CRM114-CacheID: sfid-20191007_120028_307065_E654BFFF 
+X-CRM114-Status: GOOD (  10.24  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.6 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,286 +92,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, jean-philippe@linaro.org, arnd@arndb.de,
- takahiro.akashi@linaro.org, sboyd@kernel.org, catalin.marinas@arm.com,
- zohar@linux.ibm.com, yamada.masahiro@socionext.com, kristina.martsenko@arm.org,
- duwe@lst.de, bauerman@linux.ibm.com, james.morse@arm.org, tglx@linutronix.de,
- allison@lohutok.net
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-update powerpc ima buffer pass implementationt to call into
-of_ima* for a cross architecture support.
+On 07/10/2019 19:38, Tony Lindgren wrote:
+> * Tero Kristo <t-kristo@ti.com> [191007 12:30]:
+>> Hi,
+>>
+>> These three patches make sure that IOMMU/remoteprocs work across
+>> all devices with the latest OMAP PRM series for reset support [1].
+>> The last dangling issues were caused by the removal of the hardlink
+>> between the reset + clock drivers.
+> 
+> OK. I presume these are safe to wait for v5.5 since we don't
+> have the rstctrl driver yet?
 
-Signed-off-by: Prakhar Srivastava <prsriva@linux.microsoft.com>
----
- arch/powerpc/include/asm/ima.h  |   6 --
- arch/powerpc/kernel/Makefile    |   8 +-
- arch/powerpc/kernel/ima_kexec.c | 170 +++-----------------------------
- 3 files changed, 16 insertions(+), 168 deletions(-)
+Yeah, they are safe to wait.
 
-diff --git a/arch/powerpc/include/asm/ima.h b/arch/powerpc/include/asm/ima.h
-index ead488cf3981..5ecff8896eed 100644
---- a/arch/powerpc/include/asm/ima.h
-+++ b/arch/powerpc/include/asm/ima.h
-@@ -6,12 +6,7 @@ struct kimage;
- 
- int ima_get_kexec_buffer(void **addr, size_t *size);
- int ima_free_kexec_buffer(void);
--
--#ifdef CONFIG_IMA
- void remove_ima_buffer(void *fdt, int chosen_node);
--#else
--static inline void remove_ima_buffer(void *fdt, int chosen_node) {}
--#endif
- 
- #ifdef CONFIG_IMA_KEXEC
- int arch_ima_add_kexec_buffer(struct kimage *image, unsigned long load_addr,
-@@ -26,5 +21,4 @@ static inline int setup_ima_buffer(const struct kimage *image, void *fdt,
- 	return 0;
- }
- #endif /* CONFIG_IMA_KEXEC */
--
- #endif /* _ASM_POWERPC_IMA_H */
-diff --git a/arch/powerpc/kernel/Makefile b/arch/powerpc/kernel/Makefile
-index 56dfa7a2a6f2..6a3d8fd6f1df 100644
---- a/arch/powerpc/kernel/Makefile
-+++ b/arch/powerpc/kernel/Makefile
-@@ -126,12 +126,8 @@ obj-$(CONFIG_PCI)		+= pci_$(BITS).o $(pci64-y) \
- obj-$(CONFIG_PCI_MSI)		+= msi.o
- obj-$(CONFIG_KEXEC_CORE)	+= machine_kexec.o crash.o \
- 				   machine_kexec_$(BITS).o
--obj-$(CONFIG_KEXEC_FILE)	+= machine_kexec_file_$(BITS).o kexec_elf_$(BITS).o
--ifdef CONFIG_HAVE_IMA_KEXEC
--ifdef CONFIG_IMA
--obj-y				+= ima_kexec.o
--endif
--endif
-+obj-$(CONFIG_KEXEC_FILE)	+= machine_kexec_file_$(BITS).o kexec_elf_$(BITS).o \
-+				   ima_kexec.o
- 
- obj-$(CONFIG_AUDIT)		+= audit.o
- obj64-$(CONFIG_AUDIT)		+= compat_audit.o
-diff --git a/arch/powerpc/kernel/ima_kexec.c b/arch/powerpc/kernel/ima_kexec.c
-index 720e50e490b6..41f52297de0c 100644
---- a/arch/powerpc/kernel/ima_kexec.c
-+++ b/arch/powerpc/kernel/ima_kexec.c
-@@ -6,45 +6,21 @@
-  * Thiago Jung Bauermann <bauerman@linux.vnet.ibm.com>
-  */
- 
--#include <linux/slab.h>
- #include <linux/kexec.h>
- #include <linux/of.h>
--#include <linux/memblock.h>
--#include <linux/libfdt.h>
- 
--static int get_addr_size_cells(int *addr_cells, int *size_cells)
-+/**
-+ * remove_ima_buffer - remove the IMA buffer property and reservation from @fdt
-+ *
-+ * The IMA measurement buffer is of no use to a subsequent kernel, so we always
-+ * remove it from the device tree.
-+ */
-+void remove_ima_buffer(void *fdt, int chosen_node)
- {
--	struct device_node *root;
--
--	root = of_find_node_by_path("/");
--	if (!root)
--		return -EINVAL;
--
--	*addr_cells = of_n_addr_cells(root);
--	*size_cells = of_n_size_cells(root);
--
--	of_node_put(root);
--
--	return 0;
-+	fdt_remove_ima_buffer(fdt, chosen_node);
-+	return;
- }
- 
--static int do_get_kexec_buffer(const void *prop, int len, unsigned long *addr,
--			       size_t *size)
--{
--	int ret, addr_cells, size_cells;
--
--	ret = get_addr_size_cells(&addr_cells, &size_cells);
--	if (ret)
--		return ret;
--
--	if (len < 4 * (addr_cells + size_cells))
--		return -ENOENT;
--
--	*addr = of_read_number(prop, addr_cells);
--	*size = of_read_number(prop + 4 * addr_cells, size_cells);
--
--	return 0;
--}
- 
- /**
-  * ima_get_kexec_buffer - get IMA buffer from the previous kernel
-@@ -55,23 +31,7 @@ static int do_get_kexec_buffer(const void *prop, int len, unsigned long *addr,
-  */
- int ima_get_kexec_buffer(void **addr, size_t *size)
- {
--	int ret, len;
--	unsigned long tmp_addr;
--	size_t tmp_size;
--	const void *prop;
--
--	prop = of_get_property(of_chosen, "linux,ima-kexec-buffer", &len);
--	if (!prop)
--		return -ENOENT;
--
--	ret = do_get_kexec_buffer(prop, len, &tmp_addr, &tmp_size);
--	if (ret)
--		return ret;
--
--	*addr = __va(tmp_addr);
--	*size = tmp_size;
--
--	return 0;
-+	return of_get_ima_buffer(addr, size);
- }
- 
- /**
-@@ -79,52 +39,7 @@ int ima_get_kexec_buffer(void **addr, size_t *size)
-  */
- int ima_free_kexec_buffer(void)
- {
--	int ret;
--	unsigned long addr;
--	size_t size;
--	struct property *prop;
--
--	prop = of_find_property(of_chosen, "linux,ima-kexec-buffer", NULL);
--	if (!prop)
--		return -ENOENT;
--
--	ret = do_get_kexec_buffer(prop->value, prop->length, &addr, &size);
--	if (ret)
--		return ret;
--
--	ret = of_remove_property(of_chosen, prop);
--	if (ret)
--		return ret;
--
--	return memblock_free(addr, size);
--
--}
--
--/**
-- * remove_ima_buffer - remove the IMA buffer property and reservation from @fdt
-- *
-- * The IMA measurement buffer is of no use to a subsequent kernel, so we always
-- * remove it from the device tree.
-- */
--void remove_ima_buffer(void *fdt, int chosen_node)
--{
--	int ret, len;
--	unsigned long addr;
--	size_t size;
--	const void *prop;
--
--	prop = fdt_getprop(fdt, chosen_node, "linux,ima-kexec-buffer", &len);
--	if (!prop)
--		return;
--
--	ret = do_get_kexec_buffer(prop, len, &addr, &size);
--	fdt_delprop(fdt, chosen_node, "linux,ima-kexec-buffer");
--	if (ret)
--		return;
--
--	ret = delete_fdt_mem_rsv(fdt, addr, size);
--	if (!ret)
--		pr_debug("Removed old IMA buffer reservation.\n");
-+	return of_remove_ima_buffer();
- }
- 
- #ifdef CONFIG_IMA_KEXEC
-@@ -145,27 +60,6 @@ int arch_ima_add_kexec_buffer(struct kimage *image, unsigned long load_addr,
- 	return 0;
- }
- 
--static int write_number(void *p, u64 value, int cells)
--{
--	if (cells == 1) {
--		u32 tmp;
--
--		if (value > U32_MAX)
--			return -EINVAL;
--
--		tmp = cpu_to_be32(value);
--		memcpy(p, &tmp, sizeof(tmp));
--	} else if (cells == 2) {
--		u64 tmp;
--
--		tmp = cpu_to_be64(value);
--		memcpy(p, &tmp, sizeof(tmp));
--	} else
--		return -EINVAL;
--
--	return 0;
--}
--
- /**
-  * setup_ima_buffer - add IMA buffer information to the fdt
-  * @image:		kexec image being loaded.
-@@ -176,44 +70,8 @@ static int write_number(void *p, u64 value, int cells)
-  */
- int setup_ima_buffer(const struct kimage *image, void *fdt, int chosen_node)
- {
--	int ret, addr_cells, size_cells, entry_size;
--	u8 value[16];
--
--	remove_ima_buffer(fdt, chosen_node);
--	if (!image->arch.ima_buffer_size)
--		return 0;
--
--	ret = get_addr_size_cells(&addr_cells, &size_cells);
--	if (ret)
--		return ret;
--
--	entry_size = 4 * (addr_cells + size_cells);
--
--	if (entry_size > sizeof(value))
--		return -EINVAL;
--
--	ret = write_number(value, image->arch.ima_buffer_addr, addr_cells);
--	if (ret)
--		return ret;
--
--	ret = write_number(value + 4 * addr_cells, image->arch.ima_buffer_size,
--			   size_cells);
--	if (ret)
--		return ret;
--
--	ret = fdt_setprop(fdt, chosen_node, "linux,ima-kexec-buffer", value,
--			  entry_size);
--	if (ret < 0)
--		return -EINVAL;
--
--	ret = fdt_add_mem_rsv(fdt, image->arch.ima_buffer_addr,
--			      image->arch.ima_buffer_size);
--	if (ret)
--		return -EINVAL;
--
--	pr_debug("IMA buffer at 0x%llx, size = 0x%zx\n",
--		 image->arch.ima_buffer_addr, image->arch.ima_buffer_size);
--
--	return 0;
-+	return fdt_setup_ima_buffer(image->arch.ima_buffer_addr,
-+				    image->arch.ima_buffer_size,
-+				    fdt, chosen_node);
- }
- #endif /* CONFIG_IMA_KEXEC */
--- 
-2.17.1
-
+-Tero
+--
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
