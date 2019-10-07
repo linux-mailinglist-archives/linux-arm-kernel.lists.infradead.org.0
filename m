@@ -2,94 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DAE3CE739
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 17:19:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 666C4CE743
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 17:19:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KTsLGF3RVQjbBuWW1rZUWNqCjRkpOunH1mo8KnvmHjs=; b=Tf8teGKmPvJF1F
-	PJHNtvG9c+outYEifLEbQZAegKuCQy404kkdKG0gZeHeR1jwfKUpRViQ2LaWzhB81FrFTxLP87HcX
-	mKno4IB318VY7fa1XHs4r8wl+4Y1Bagw1ewk98ilPcGf1/iRCCgb3xBro0AOoS/4WWP/HD1fxRUtk
-	7ucM+pr1OttPxe5eHMTvfJn4s9HByVtGfqfWvKQbZiAXSTM3gpGjFnRwOa3DOb5/V0At4g8M3/Cjm
-	A2Mb7AEk3Ac5SyZ4O2H6WzDmr51XTS3uQ7Qy0a+inNlr3gAkcDbECfQBd21s250dNPVX9TwDqE0Ue
-	Bp4Q0xS1gCoQbzQRlyVw==;
+	List-Owner; bh=BahBOspEqcZ4Yt0IJ0ExO98ZQ2iZ9sPfKa8UWB3+Q6c=; b=mBKRHSBAQFu0Cs
+	0OBUhK7dNmDwRWUdJL/zZTxcOO9C6mQoP8G5c/UIRxmkK4wd18kKyi1qwQzx8TMxWfWOtDlQky5Av
+	3SyIys4mS2zDYcGAXvu5LlQ2aGQeBv4sK7TS1jqYYlDYnhW7wLTeOQsV4Qw0DtKyZUIyNht7kHRB8
+	TUEwXBjmlyVaxZRboVhm4F+NBBubHF8Ng7P+8eYkkJPQPTR/MpQZBpfT8A+1lcsX/bPqV+iTaftb8
+	NMVH5pAY3mva/mAeI76yVXXbAk77k8C/DjSdg45ZLYF9V68/0JPY+gKVtY31gv/duZVodCYX6fYIV
+	Z7PJpfHSkvhbzFUq229Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHUn6-0000wn-Hq; Mon, 07 Oct 2019 15:19:16 +0000
-Received: from mail-yw1-xc44.google.com ([2607:f8b0:4864:20::c44])
+	id 1iHUne-0001ZT-EV; Mon, 07 Oct 2019 15:19:50 +0000
+Received: from mail-ed1-f68.google.com ([209.85.208.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHUmz-0000wC-82
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 15:19:10 +0000
-Received: by mail-yw1-xc44.google.com with SMTP id x64so5257710ywg.3
+ id 1iHUnE-0001Jh-1J
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 15:19:27 +0000
+Received: by mail-ed1-f68.google.com with SMTP id h2so12833423edn.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 07 Oct 2019 08:19:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=wiNFdskpw4yBMm9nyiqt5ftRnxZo6W3oQSMb5hEf9N0=;
- b=lb4bWWehvLkfbpod5kZF+pZetwwjP/Hl4QHssFZCruTsJ2+da6Y7y2IT76QjtCuIXY
- jcHRPM3UIIntO35bKebInFUzmiuZ2fCLpF9l2UqODiQa1nhnut99+IDTo02WkZee0Lqh
- HaVANCKIYksMAT+SUbHNB3LY2GtLN+X5ySty1pg7Pmm8erKDW95qj3gyiMeA/DPeDzUS
- gc8Ydvc7F24bWkxsLrDXbS6GVid127WHhbmMJ9GrMm/PXNMxymwLPg5f7X4KaMM2N72b
- YxuI3iw/0sU7ng+V57pPA2LWXWEFfEl4atDnE1D+y74Gm0Rpw27+7LS1nUaz/haerXsE
- hF+w==
+ Mon, 07 Oct 2019 08:19:23 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=wiNFdskpw4yBMm9nyiqt5ftRnxZo6W3oQSMb5hEf9N0=;
- b=iVzgCdbCsluEDH2BsgGg+FPHGJhDcUsbt98ZsLByyctOcughZk2oPl2X5+ZNvKn57S
- O36CVsH0aeFQL3CPWdJ2BpLDIWHq6MHqKDAzPHRLPoJQDa+Fingw+j7QCvsEFA6kdtxU
- s5vq7YSuFZno5P519DAUjgTnTUHlRdFKXvmVHBCZmGP0gnfBtVbyHigaYtRBDT1oZy5Z
- j5nEDI+TexYhAQTv61bPLelGyZwfIg7e9TK8tkQh0g7YldffBB3groySTsW0KQ8im44V
- tB1JYbWRSZRM1EPOOlcVky1ZyC3gIf2RPNNR2vvFeA4aSuXtEbdcdCMlyfooYnjxeOdU
- 75hw==
-X-Gm-Message-State: APjAAAXU9qhxExxRqV/pHhflQPYazrhhEVF1kA/cR5B3w8sZOHptTYRy
- wFK2elyiYV02a+Ua35vMhfo=
-X-Google-Smtp-Source: APXvYqzRFRpv7XJTv8PKNwl6Ppt8cG35jqRtYU+F/E4Oee5d9CbO3gFPtNFJXNPBhZtX6QAVzod2Qw==
-X-Received: by 2002:a0d:cccc:: with SMTP id o195mr18912544ywd.44.1570461547530; 
- Mon, 07 Oct 2019 08:19:07 -0700 (PDT)
-Received: from icarus (072-189-084-142.res.spectrum.com. [72.189.84.142])
- by smtp.gmail.com with ESMTPSA id g128sm3727806ywb.13.2019.10.07.08.19.05
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 07 Oct 2019 08:19:06 -0700 (PDT)
-Date: Mon, 7 Oct 2019 11:18:51 -0400
-From: William Breathitt Gray <vilhelm.gray@gmail.com>
-To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Subject: Re: [PATCH v16 01/14] bitops: Introduce the for_each_set_clump8 macro
-Message-ID: <20191007151851.GA3494@icarus>
-References: <cover.1570374078.git.vilhelm.gray@gmail.com>
- <c0830858f19c852f6d124395a32410bc645ecd15.1570374078.git.vilhelm.gray@gmail.com>
- <20191007082156.GL32742@smile.fi.intel.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=U9Eo+vECGc4wLCsE5vOdMoNqc4gaxJEFIE4DZGZkf+Y=;
+ b=n17wSzP9BN6KUbiSJCMEuxyfAPygNkRhPsmATkwxLJVuui7kuZDOfkZKoALRRNnhPc
+ xhDSpJQVzsxdPR6lsleKQ76rYpq3bfudoQ9ieuP38M3MKLCr5f5tZ09IilrKORktFmBu
+ bBhOdWqrW+BqLGGmw4u6CT74ZBhfIV/YrPuHIcEREM2NwI9+LDeVjLlro7xUnIDpicW6
+ p342SaUuGCbeMFDzzPPcG/rpBnpbLEJsVxRhSmUHRWuB3trjLCikthbC3KJcN59QTlJm
+ OBe+O77JsNKibbgHWwhN0szn8nvtR0ipBm7jom1B5vhZPl+Rw5z672aQazZ0dsOxV5xK
+ RzKw==
+X-Gm-Message-State: APjAAAWIAdE4ML+0eDRen8XvhJWS+c8QsHZp5IrNO0n0EXAtFDmdb/fy
+ +Q/xCqiKHUHPbM7OmRSa8TAUFSyDHtU=
+X-Google-Smtp-Source: APXvYqxMGEsEABrUicXWIiKKaC86f792Zb2iMzIko8Da74Rv9mEipeZDDtiHZ/G3ID1DCYLB/zi2vQ==
+X-Received: by 2002:a17:906:1659:: with SMTP id
+ n25mr24656039ejd.258.1570461561128; 
+ Mon, 07 Oct 2019 08:19:21 -0700 (PDT)
+Received: from mail-wm1-f46.google.com (mail-wm1-f46.google.com.
+ [209.85.128.46])
+ by smtp.gmail.com with ESMTPSA id u30sm3349476edd.18.2019.10.07.08.19.20
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 07 Oct 2019 08:19:20 -0700 (PDT)
+Received: by mail-wm1-f46.google.com with SMTP id 3so12793661wmi.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 07 Oct 2019 08:19:20 -0700 (PDT)
+X-Received: by 2002:a7b:c188:: with SMTP id y8mr22266962wmi.51.1570461559776; 
+ Mon, 07 Oct 2019 08:19:19 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191007082156.GL32742@smile.fi.intel.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+References: <20190824175013.28840-1-samuel@sholland.org>
+In-Reply-To: <20190824175013.28840-1-samuel@sholland.org>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Mon, 7 Oct 2019 23:19:06 +0800
+X-Gmail-Original-Message-ID: <CAGb2v67nuMnN_o1Pvz2bEyUVeg5OMfJMVgih9-ZsgYFYDbffGw@mail.gmail.com>
+Message-ID: <CAGb2v67nuMnN_o1Pvz2bEyUVeg5OMfJMVgih9-ZsgYFYDbffGw@mail.gmail.com>
+Subject: Re: [linux-sunxi] [PATCH] bus: sunxi-rsb: Make interrupt handling
+ more robust
+To: Samuel Holland <samuel@sholland.org>, Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_081909_311459_EABB1E5C 
-X-CRM114-Status: GOOD (  19.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191007_081924_110178_40A396D3 
+X-CRM114-Status: GOOD (  28.49  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c44 listed in]
- [list.dnswl.org]
+ no trust [209.85.208.68 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.68 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vilhelm.gray[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ provider (wens213[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (wens213[at]gmail.com)
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,94 +97,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- linux-gpio@vger.kernel.org, yamada.masahiro@socionext.com,
- linus.walleij@linaro.org, linux-pm@vger.kernel.org, linux@rasmusvillemoes.dk,
- linux-kernel@vger.kernel.org, morten.tiljeset@prevas.dk,
- sean.nyekjaer@prevas.dk, bgolaszewski@baylibre.com, lukas@wunner.de,
- geert@linux-m68k.org, akpm@linux-foundation.org, preid@electromag.com.au,
- linux-arm-kernel@lists.infradead.org
+Cc: Stephen Boyd <sboyd@chromium.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 07, 2019 at 11:21:56AM +0300, Andy Shevchenko wrote:
-> On Sun, Oct 06, 2019 at 11:10:58AM -0400, William Breathitt Gray wrote:
-> > This macro iterates for each 8-bit group of bits (clump) with set bits,
-> > within a bitmap memory region. For each iteration, "start" is set to the
-> > bit offset of the found clump, while the respective clump value is
-> > stored to the location pointed by "clump". Additionally, the
-> > bitmap_get_value8 and bitmap_set_value8 functions are introduced to
-> > respectively get and set an 8-bit value in a bitmap memory region.
-> 
-> Very much thank you for an update!
-> I have comments below.
-> 
-> > +/**
-> > + * bitmap_get_value8 - get an 8-bit value within a memory region
-> 
-> Since it's in find.h I would not collide with bitmap namespace.
-> How about
-> 
-> 	find_and_get_value8()
+On Sun, Aug 25, 2019 at 1:50 AM Samuel Holland <samuel@sholland.org> wrote:
+>
+> The RSB controller has two registers for controlling interrupt inputs:
+> RSB_INTE, which has bits for each possible interrupt, and the global
+> interrupt enable bit in RSB_CTRL.
+>
+> Currently, we enable the bits in RSB_INTE before each transfer, but this
+> is unnecessary because we never disable them. Move the initialization of
+> RSB_INTE so it is done only once.
+>
+> We also set the global interrupt enable bit before each transfer. Unlike
+> other bits in RSB_CTRL, this bit is cleared by writing a zero. Thus, we
+> clear the bit in the post-timeout cleanup code, so note that in the
+> comment.
+>
+> However, if we do receive an interrupt, we do not clear the bit. Nor do
+> we clear interrupt statuses before starting a transfer. Thus, if some
+> other driver uses the RSB bus while Linux is suspended (as both Trusted
+> Firmware and SCP firmware do to control the PMIC), we receive spurious
+> interrupts upon resume. This causes false completion of a transfer, and
+> the next transfer starts prematurely, causing a LOAD_BSY condition. The
+> end result is that some transfers at resume fail with -EBUSY.
 
-We modeled the interface for these on the existing bitmap functions, so
-perhaps it would be better to move bitmap_get_value8 and
-bitmap_set_value8 to include/linux/bitmap.h so that they are with the
-rest of the bitmap functions -- afterall, they are operating on bitmaps.
+If we are expecting the hardware to not be in the state we assume to be
+or left it in, then maybe we should also keep setting the interrupt enable
+bits on each transfer?
 
-> > + * @addr: address to the bitmap memory region
-> > + * @start: bit offset of the 8-bit value; must be a multiple of 8
-> > + *
-> > + * Returns the 8-bit value located at the @start bit offset within the @addr
-> > + * memory region.
-> > + */
-> > +static inline unsigned long bitmap_get_value8(const unsigned long *addr,
-> > +					      unsigned long start)
-> > +{
-> > +	const size_t index = BIT_WORD(start);
-> > +	const unsigned long offset = start % BITS_PER_LONG;
-> > +
-> > +	return (addr[index] >> offset) & 0xFF;
-> > +}
-> > +
-> > +/**
-> > + * bitmap_set_value8 - set an 8-bit value within a memory region
-> 
-> 	find_and_set_value8()
-> 
-> ?
-> 
-> > + * @addr: address to the bitmap memory region
-> > + * @value: the 8-bit value; values wider than 8 bits may clobber bitmap
-> > + * @start: bit offset of the 8-bit value; must be a multiple of 8
-> > + */
-> > +static inline void bitmap_set_value8(unsigned long *addr, unsigned long value,
-> > +				     unsigned long start)
-> > +{
-> > +	const size_t index = BIT_WORD(start);
-> > +	const unsigned long offset = start % BITS_PER_LONG;
-> > +
-> > +	addr[index] &= ~(0xFF << offset);
-> > +	addr[index] |= value << offset;
-> > +}
-> 
-> -- 
-> With Best Regards,
-> Andy Shevchenko
+Surely we expect to have exclusive use of the controller most of the time.
+If it's to handle suspend/resume, shouldn't we be adding power management
+callbacks instead? That would reset the controller to a known state when
+the system comes out of suspend, including clearing any pending interrupts.
 
-The find_next_clump8 function can remain exposed via
-include/linux/find.h since it fits in with the rest of the functions
-there.
+Maxime, anything you want to add? (BTW, Maxime switched email addresses.)
 
-The reason I moved the definition to lib/find_bit.c is due to the
-circular dependency that arose from the round_down macro. Should I try
-to move the definition back to include/linux/find.h and reimplement it
-without the round_down macro; or is it best to keep this simpler
-implementation here in lib/find_bit.c?
+ChenYu
 
-William Breathitt Gray
+> With this patch, all transfers reliably succeed during/after resume.
+>
+> Signed-off-by: Samuel Holland <samuel@sholland.org>
+> ---
+>  drivers/bus/sunxi-rsb.c | 10 ++++++++--
+>  1 file changed, 8 insertions(+), 2 deletions(-)
+>
+> diff --git a/drivers/bus/sunxi-rsb.c b/drivers/bus/sunxi-rsb.c
+> index be79d6c6a4e4..b8043b58568a 100644
+> --- a/drivers/bus/sunxi-rsb.c
+> +++ b/drivers/bus/sunxi-rsb.c
+> @@ -274,7 +274,7 @@ static int _sunxi_rsb_run_xfer(struct sunxi_rsb *rsb)
+>         reinit_completion(&rsb->complete);
+>
+>         writel(RSB_INTS_LOAD_BSY | RSB_INTS_TRANS_ERR | RSB_INTS_TRANS_OVER,
+> -              rsb->regs + RSB_INTE);
+> +              rsb->regs + RSB_INTS);
+>         writel(RSB_CTRL_START_TRANS | RSB_CTRL_GLOBAL_INT_ENB,
+>                rsb->regs + RSB_CTRL);
+>
+> @@ -282,7 +282,7 @@ static int _sunxi_rsb_run_xfer(struct sunxi_rsb *rsb)
+>                                             msecs_to_jiffies(100))) {
+>                 dev_dbg(rsb->dev, "RSB timeout\n");
+>
+> -               /* abort the transfer */
+> +               /* abort the transfer and disable interrupts */
+>                 writel(RSB_CTRL_ABORT_TRANS, rsb->regs + RSB_CTRL);
+>
+>                 /* clear any interrupt flags */
+> @@ -480,6 +480,9 @@ static irqreturn_t sunxi_rsb_irq(int irq, void *dev_id)
+>         status = readl(rsb->regs + RSB_INTS);
+>         rsb->status = status;
+>
+> +       /* Disable any further interrupts */
+> +       writel(0, rsb->regs + RSB_CTRL);
+> +
+>         /* Clear interrupts */
+>         status &= (RSB_INTS_LOAD_BSY | RSB_INTS_TRANS_ERR |
+>                    RSB_INTS_TRANS_OVER);
+> @@ -718,6 +721,9 @@ static int sunxi_rsb_probe(struct platform_device *pdev)
+>                 goto err_reset_assert;
+>         }
+>
+> +       writel(RSB_INTS_LOAD_BSY | RSB_INTS_TRANS_ERR | RSB_INTS_TRANS_OVER,
+> +              rsb->regs + RSB_INTE);
+> +
+>         /* initialize all devices on the bus into RSB mode */
+>         ret = sunxi_rsb_init_device_mode(rsb);
+>         if (ret)
+> --
+> 2.21.0
+>
+> --
+> You received this message because you are subscribed to the Google Groups "linux-sunxi" group.
+> To unsubscribe from this group and stop receiving emails from it, send an email to linux-sunxi+unsubscribe@googlegroups.com.
+> To view this discussion on the web, visit https://groups.google.com/d/msgid/linux-sunxi/20190824175013.28840-1-samuel%40sholland.org.
 
 _______________________________________________
 linux-arm-kernel mailing list
