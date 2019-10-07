@@ -2,57 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BFE0CE29E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 15:05:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C6CBCE2A9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 15:06:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W5fVghr24ewcZHuPaUi/26EeCEj0YoNQ9L+HKmZbJfA=; b=BDGo6TczdVs0+K
-	WkeWhPGjnCBafJKvMIry/CJTm1QFdN0GQDQ/S8zAZXTrM8OmdycUlZzixwyorbgm+M7ICHtXT7Iu5
-	OEY+FldKnMdzs9kHGa82Qw3PaYH9ERY5H+hnrFXeVo2LZxvNHaRXfJNbBlC9Vtws3oJ4rAZMQjE3B
-	YFaKJWKok9kxQwOMyk7PLqFJaOKbKVRCOBoWBzuvnwL3B8WcJTd8HwXxFchGwpFQ6/wlSHbGpfJbb
-	Y5HxINsUHPHfhEmrjMUqACAs30HSsrrZu8cOrD8CrV+SSwYVtPn8Yfm8595SojczMb4LoxT8haVLZ
-	S+noKPwDt0dseCbTh/vQ==;
+	List-Owner; bh=0fxmA4trJp0OKhqP+IAgVXePdWNqxj99e9gE/8OgLyQ=; b=mIHMWlBmFxXPTZ
+	KuCumMnEAIBWYDTF1RT1n+XnOJ5f5u16aqrh3MEKh6U9sS/yobttrRuKYiIU42BYG37AOy1dHMI8o
+	svaCy8VZqG2xKTwNdii1lWcR6iYd8nPlajhLwjGsDaOPiuJ/GWmfB3GyqeMdg8s9LoIy2J0oXRAwc
+	JNwhY7JPA4pfccFvHyF+IH69TlbvdosX2S7LYuOiVsvnRurR7kIlR3FNj5jFKhRaQwXkwujytHVg0
+	0ylKa+AOZyn3YVJGuayPtErO59eB5aGM6b0oDZYKcXBvpGfSDQHGcG6NZjH8YxIXHJi+P/2g5V5c6
+	JnD4YTbNRvuYqOHBTbGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHShU-00040f-2Q; Mon, 07 Oct 2019 13:05:20 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHShB-0003gR-Ky
- for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 13:05:03 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8FEB71570;
- Mon,  7 Oct 2019 06:05:00 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 130D13F706;
- Mon,  7 Oct 2019 06:04:59 -0700 (PDT)
-Date: Mon, 7 Oct 2019 14:04:58 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH 3/3] KVM: arm64: pmu: Reset sample period on overflow
- handling
-Message-ID: <20191007130457.GZ42880@e119886-lin.cambridge.arm.com>
-References: <20191006104636.11194-1-maz@kernel.org>
- <20191006104636.11194-4-maz@kernel.org>
- <20191007094325.GX42880@e119886-lin.cambridge.arm.com>
- <86sgo4zv9a.wl-maz@kernel.org>
+	id 1iHSih-0005Hr-2n; Mon, 07 Oct 2019 13:06:35 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHSiV-0005Gw-BN; Mon, 07 Oct 2019 13:06:24 +0000
+Received: by mail-wm1-x341.google.com with SMTP id b24so12237135wmj.5;
+ Mon, 07 Oct 2019 06:06:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=RZE8Cj868kn5EJS/0QY29Orx1bZsg1Fle+VfrZSmgF8=;
+ b=tJAewuqAmBMfjpkJA/1enuzflTjuI48UJZ0Z0fdDtpXMvjWt8JagrRMgnZLLai9UeY
+ mkbErQhWM39j4Hm1s7MX9m/lzVTnkp+OMeG5ZXtiir6jn8BLfHkzXnUShAGoykAHXOnf
+ zYcGSR++z2tbIUzuTH5tpf5m9vIc8eF3O3REAZ36+mr/kHp8w4U5Z+7uVFz79ksG8TIC
+ eqab017gzKxysvQg39onykCPqr4VZgoidG0IKRK7bzgdYmIjLQ14xRLyhnknxrgOj8o1
+ kkqFWIhWiVMX57N1WUPYfE6wABoyQFZVbrbpv3hVtkeFHgU3i9sImWF4xz9fwLCh2ch6
+ oGzA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=RZE8Cj868kn5EJS/0QY29Orx1bZsg1Fle+VfrZSmgF8=;
+ b=elXCk6KtpH1/I/zEsq9nBG4r5WxSo7ksns6EJQYazmv9ijSZaTDTdWZgYBhcqrMjZP
+ kJ4o95dexc1J7fxnY8s8hX29c7edMj19funz3Jlxc8a8CQ5UqXiMojUKHHI5rh2CTAL1
+ Ld/O1gMsR6bkbqZaFWNXjmlybTN41m451FabQZIE8HQtE/gUKAyKjYTYz5YTQkerLkLA
+ iulU6V5TOlSpVvWTr+uDGErBDRP7+RyoVXpY1B3TOaPgqs5nN+iPtd7iBcIdrCu2G+gi
+ nsL6UWrsOqLc77HWA9bLyRkuocNqGcL8TJVo75Hp7JTgqFpO6pJR0Yi/nIaE6VEiXEPc
+ WYiw==
+X-Gm-Message-State: APjAAAXNRU+Udfx/DUcub45uTOm3kNR//gX1dUWTOFnbQ5CXIKc6YCX+
+ ITgfHmIHqFn3Cqqg3uYnjQw=
+X-Google-Smtp-Source: APXvYqwnZjlpL4PUUAvfK5d4pYWeE31TwsXrlSV5mEiGcVQWwRB9VHCMKlpm1WOlkrkBBukHu/Su/w==
+X-Received: by 2002:a1c:7fcc:: with SMTP id a195mr21060937wmd.27.1570453581529; 
+ Mon, 07 Oct 2019 06:06:21 -0700 (PDT)
+Received: from gmail.com (2E8B0CD5.catv.pool.telekom.hu. [46.139.12.213])
+ by smtp.gmail.com with ESMTPSA id l4sm14525979wrw.6.2019.10.07.06.06.19
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 07 Oct 2019 06:06:20 -0700 (PDT)
+Date: Mon, 7 Oct 2019 15:06:17 +0200
+From: Ingo Molnar <mingo@kernel.org>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V4 2/2] mm/pgtable/debug: Add test validating
+ architecture page table helpers
+Message-ID: <20191007130617.GB56546@gmail.com>
+References: <1570427124-21887-1-git-send-email-anshuman.khandual@arm.com>
+ <1570427124-21887-3-git-send-email-anshuman.khandual@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <86sgo4zv9a.wl-maz@kernel.org>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <1570427124-21887-3-git-send-email-anshuman.khandual@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_060501_775955_6ECDE172 
-X-CRM114-Status: GOOD (  49.35  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191007_060623_415379_29B4CCA0 
+X-CRM114-Status: GOOD (  20.17  )
+X-Spam-Score: 1.9 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
+ 1.8 FSL_HELO_FAKE          No description available.
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (mingo.kernel.org[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,189 +102,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ James Hogan <jhogan@kernel.org>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
+ linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 07, 2019 at 11:48:33AM +0100, Marc Zyngier wrote:
-> On Mon, 07 Oct 2019 10:43:27 +0100,
-> Andrew Murray <andrew.murray@arm.com> wrote:
-> > 
-> > On Sun, Oct 06, 2019 at 11:46:36AM +0100, maz@kernel.org wrote:
-> > > From: Marc Zyngier <maz@kernel.org>
-> > > 
-> > > The PMU emulation code uses the perf event sample period to trigger
-> > > the overflow detection. This works fine  for the *first* overflow
-> > > handling
-> > 
-> > Although, even though the first overflow is timed correctly, the value
-> > the guest reads may be wrong...
-> > 
-> > Assuming a Linux guest with the arm_pmu.c driver, if I recall correctly
-> > this writes the -remainingperiod to the counter upon stopping/starting.
-> > In the case of a perf_event that is pinned to a task, this will happen
-> > upon every context switch of that task. If the counter was getting close
-> > to overflow before the context switch, then the value written to the
-> > guest counter will be very high and thus the sample_period written in KVM
-> > will be very low...
-> > 
-> > The best scenario is when the host handles the overflow, the guest
-> > handles its overflow and rewrites the guest counter (resulting in a new
-> > host perf_event) - all before the first host perf_event fires again. This
-> > is clearly the assumption the code makes.
-> > 
-> > Or - the host handles its overflow and kicks the guest, but the guest
-> > doesn't respond in time, so we end up endlessly and pointlessly kicking it
-> > for each host overflow - thus resulting in the large difference between number
-> > of interrupts between host and guest. This isn't ideal, because when the
-> > guest does read its counter, the value isn't correct (because it overflowed
-> > a zillion times at a value less than the arrchitected max).
-> > 
-> > Worse still is when the sample_period is so small, the host doesn't
-> > even keep up.
-> 
-> Well, there are plenty of ways to make this code go mad. The
-> overarching reason is that we abuse the notion of sampling period to
-> generate interrupts, while what we'd really like is something that
-> says "call be back in that many events", rather than the sampling
-> period which doesn't match the architecture.
-> 
-> Yes, small values will results in large drifts. Nothing we can do
-> about it.
-> 
-> > 
-> > > , but results in a huge number of interrupts on the host,
-> > > unrelated to the number of interrupts handled in the guest (a x20
-> > > factor is pretty common for the cycle counter). On a slow system
-> > > (such as a SW model), this can result in the guest only making
-> > > forward progress at a glacial pace.
-> > > 
-> > > It turns out that the clue is in the name. The sample period is
-> > > exactly that: a period. And once the an overflow has occured,
-> > > the following period should be the full width of the associated
-> > > counter, instead of whatever the guest had initially programed.
-> > > 
-> > > Reset the sample period to the architected value in the overflow
-> > > handler, which now results in a number of host interrupts that is
-> > > much closer to the number of interrupts in the guest.
-> > 
-> > This seems a reasonable pragmatic approach - though of course you will end
-> > up counting slightly slower due to the host interrupt latency. But that's
-> > better than the status quo.
-> 
-> Slower than what?
-> 
 
-Slower than the guest should expect. Assuming a cycle counter (with LC) is
-initially programmed to 0, you'd target a guest interrupt period of 2^64 x cycle
-period...
+* Anshuman Khandual <anshuman.khandual@arm.com> wrote:
 
-But I'm wrong in saying that you end up counting slightly slower - as you're
-not restarting the perf counter or changing the value so there should be no change
-in the interrupt period to the guest.
-
-I was considering the case where the kernel perf event is recreated in the
-overflow handler, in which case unless you consider the time elapsed between the
-event firing and changing the sample_period then you end up with a larger period.
-
-> > 
-> > It may be possible with perf to have a single-fire counter (this mitigates
-> > against my third scenario but you still end up with a loss of precision) -
-> > See PERF_EVENT_IOC_REFRESH.
+> This adds a test module which will validate architecture page table helpers
+> and accessors regarding compliance with generic MM semantics expectations.
+> This will help various architectures in validating changes to the existing
+> page table helpers or addition of new ones.
 > 
-> Unfortunately, that's a userspace interface, not something that's
-> available to the kernel at large...
+> Test page table and memory pages creating it's entries at various level are
+> all allocated from system memory with required alignments. If memory pages
+> with required size and alignment could not be allocated, then all depending
+> individual tests are skipped.
 
-The mechanism to change the value of event->event_limit is only available via
-ioctl, though I was implying that an in-kernel mechansim could be provided.
-This would be trivial. (But it doesn't help, as I don't think you could create
-another perf kernel event in that context).
- 
-> 
-> > Ideally the PERF_EVENT_IOC_REFRESH type of functionality could be updated
-> > to reload to a different value after the first hit.
-> 
-> Which is what I was hinting at above. I'd like a way to reload the
-> next period on each expiration, much like a timer.
-> 
-> > 
-> > This problem also exists on arch/x86/kvm/pmu.c (though I'm not sure what
-> > their PMU drivers do with respect to the value they write).
-> > 
-> > > 
-> > > Fixes: b02386eb7dac ("arm64: KVM: Add PMU overflow interrupt routing")
-> > > Signed-off-by: Marc Zyngier <maz@kernel.org>
-> > > ---
-> > >  virt/kvm/arm/pmu.c | 12 ++++++++++++
-> > >  1 file changed, 12 insertions(+)
-> > > 
-> > > diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
-> > > index c30c3a74fc7f..3ca4761fc0f5 100644
-> > > --- a/virt/kvm/arm/pmu.c
-> > > +++ b/virt/kvm/arm/pmu.c
-> > > @@ -444,6 +444,18 @@ static void kvm_pmu_perf_overflow(struct perf_event *perf_event,
-> > >  	struct kvm_pmc *pmc = perf_event->overflow_handler_context;
-> > >  	struct kvm_vcpu *vcpu = kvm_pmc_to_vcpu(pmc);
-> > >  	int idx = pmc->idx;
-> > > +	u64 val, period;
-> > > +
-> > > +	/* Start by resetting the sample period to the architectural limit */
-> > > +	val = kvm_pmu_get_pair_counter_value(vcpu, pmc);
-> > > +
-> > > +	if (kvm_pmu_idx_is_64bit(vcpu, pmc->idx))
-> > 
-> > This is correct, because in this case we *do* care about _PMCR_LC.
-> > 
-> > > +		period = (-val) & GENMASK(63, 0);
-> > > +	else
-> > > +		period = (-val) & GENMASK(31, 0);
-> > > +
-> > > +	pmc->perf_event->attr.sample_period = period;
-> > > +	pmc->perf_event->hw.sample_period = period;
-> > 
-> > I'm not sure about the above line - does direct manipulation of sample_period
-> > work on a running perf event? As far as I can tell this is already done in the
-> > kernel with __perf_event_period - however this also does other stuff (such as
-> > disable and re-enable the event).
-> 
-> I'm not sure you could do that in the handler, which is run in atomic
-> context. It doesn't look like anything bad happens when updating the
-> sample period directly (the whole thing has stopped getting crazy),
-> but I'd really like someone who understands the perf internals to help
-> here (hence Mark being on cc).
+> diff --git a/arch/x86/include/asm/pgtable_64_types.h b/arch/x86/include/asm/pgtable_64_types.h
+> index 52e5f5f2240d..b882792a3999 100644
+> --- a/arch/x86/include/asm/pgtable_64_types.h
+> +++ b/arch/x86/include/asm/pgtable_64_types.h
+> @@ -40,6 +40,8 @@ static inline bool pgtable_l5_enabled(void)
+>  #define pgtable_l5_enabled() 0
+>  #endif /* CONFIG_X86_5LEVEL */
+>  
+> +#define mm_p4d_folded(mm) (!pgtable_l5_enabled())
+> +
+>  extern unsigned int pgdir_shift;
+>  extern unsigned int ptrs_per_p4d;
 
-I suspect this is working lazily - when you want to change the underlying pmu
-period, you need to write the new period to the host PMU counters. This is done
-in armpmu_start. __perf_event_period would normally stop and then start the
-PMU to achieve this (hence the PERF_EF_RELOAD flag). Your code doesn't do this.
+Any deep reason this has to be a macro instead of proper C?
 
-However, the perf counter set up in KVM is always pinned to the guest process
-and thus when switching to/from this task the counter are stopped and started.
-Therefore I suspect the sample_period you change goes into effect at this point
-in time. So it probably stops going crazy - but not immediately.
+> diff --git a/mm/Kconfig.debug b/mm/Kconfig.debug
+> index 327b3ebf23bf..683131b1ee7d 100644
+> --- a/mm/Kconfig.debug
+> +++ b/mm/Kconfig.debug
+> @@ -117,3 +117,18 @@ config DEBUG_RODATA_TEST
+>      depends on STRICT_KERNEL_RWX
+>      ---help---
+>        This option enables a testcase for the setting rodata read-only.
+> +
+> +config DEBUG_ARCH_PGTABLE_TEST
+> +	bool "Test arch page table helpers for semantics compliance"
+> +	depends on MMU
+> +	depends on DEBUG_KERNEL
+> +	depends on !(ARM || IA64)
 
-I think the underlying counter also gets reset to the new period just before it
-calls perf_event_overflow (see armv8pmu_handle_irq) - so worse case you'll wait
-until it overflows for the second time.
+Please add a proper enabling switch for architectures to opt in.
 
-In any case this is still better than the status quo.
+Please also add it to Documentation/features/list-arch.sh so that it's 
+listed as a 'TODO' entry on architectures where the tests are not enabled 
+yet.
+
+> +	help
+> +	  This options provides a kernel module which can be used to test
+> +	  architecture page table helper functions on various platform in
+> +	  verifying if they comply with expected generic MM semantics. This
+> +	  will help architectures code in making sure that any changes or
+> +	  new additions of these helpers will still conform to generic MM
+> +	  expected semantics.
+
+Typos and grammar fixed:
+
+	help
+	  This option provides a kernel module which can be used to test
+	  architecture page table helper functions on various platforms in
+	  verifying if they comply with expected generic MM semantics. This
+	  will help architecture code in making sure that any changes or
+	  new additions of these helpers still conform to expected 
+	  semantics of the generic MM.
+
+Also, more fundamentally: isn't a kernel module too late for such a debug 
+check, should something break due to a core MM change? Have these debug 
+checks caught any bugs or inconsistencies before?
+
+Why not call this as some earlier MM debug check, after enabling paging 
+but before executing user-space binaries or relying on complex MM ops 
+within the kernel, called at a stage when those primitives are all 
+expected to work fine?
+
+It seems to me that arch_pgtable_tests_init) won't even context-switch 
+normally, right?
+
+Finally, instead of inventing yet another randomly named .config debug 
+switch, please fit it into the regular MM debug options which go along 
+the CONFIG_DEBUG_VM* naming scheme.
+
+Might even make sense to enable these new debug checks by default if 
+CONFIG_DEBUG_VM=y, that way we'll get a *lot* more debug coverage than 
+some random module somewhere that few people will know about, let alone 
+run.
 
 Thanks,
 
-Andrew Murray
-
-> 
-> Thanks,
-> 
-> 	M.
-> 
-> -- 
-> Jazz is not dead, it just smells funny.
+	Ingo
 
 _______________________________________________
 linux-arm-kernel mailing list
