@@ -2,75 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43E40CE23D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 14:53:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EBF1CE289
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  7 Oct 2019 15:04:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oYuLwdtdFJDdYaInlnUZr9qWw2RADVihYkgCUVG147w=; b=cFFJH2v5ZE4OFC
-	YUM1zJkN++0HwbkaMi1seePFzZ0vWNhuihZJsQCBw3yypJrWu8TQ+rjd/+yfRGL8BiiNVBsxD+li4
-	/T5VE/MaB4YfjocJgCtdioWcEaknONOf6FiNPcsH0yC0wRntXPJICPNRkdmeOObObwsl/tLZIlhlh
-	X0eHZdkizbhlUjr2XXu5B8dMYSsa/sA2owoeWvehtYs2VosMC3nAZHEUIxOPAbwdZupRnU02O996w
-	Y5l0uNwbxK7xKfaf+8MjJZ8Z6FQfmJyGKQxUoWr+1bH5aG1nwvKqPxyTKOyHqqak21bITtJES5i1V
-	pnJnhgttwz85tc+fMCIw==;
+	List-Owner; bh=Bz+5gIEZO7p+P7HBxGaWLsUuCg1GFiNudNqaInDUbU0=; b=ZX4tnCPEKekaf/
+	WuJtEKZslDAVwACNkaC1gJXdLwZRMNOl+XWOPXGZAgmlpyHASv/Rw3Ola9PZo0LIG/sPFvjbPh5Vk
+	vMaOnf25sgXSYBeIhOHnNdN8JNqlMXxqhnIKzD3YupmWS+95ZfzxUB6CAae3gaT8P5+lx1CQVKSNv
+	zaHERyzTdUNbfFivgZA4geBEXtDm6LGcR5ZD/cBwfWTvjKrMVb3nNLRxros/eN+I6YFs414cfe13k
+	0RhQ5HF+qE/ovFM1PJFwbXKqi7mlvueWmkrKK3gbknlglJ6X88iG3E8jf8tCkGTo32PYmxWv8GKu3
+	k7SAA2XQeOPDkh+MRZYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHSVz-00083r-G6; Mon, 07 Oct 2019 12:53:27 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iHSg4-0003Hq-8Z; Mon, 07 Oct 2019 13:03:52 +0000
+Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHSVs-00083C-AG; Mon, 07 Oct 2019 12:53:21 +0000
-Received: from mail-qk1-f172.google.com (mail-qk1-f172.google.com
- [209.85.222.172])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 98CFC205F4;
- Mon,  7 Oct 2019 12:53:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570452798;
- bh=OcHeLP/qq1aPvsGSRiYbAIE/VJP24hQJgPul4zHU15w=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=JX33LU9cJQALFkkcYviaIM3iBwEAe/CidRD1RIZiJ4l4hgydMuVM+hRcJj4FSWTpN
- E7of9qQYmDsRsBy6+LfexyztiOnt27J7Zc+8NR1W02G1KOry0lpzH6Q0AVfJEyNEhe
- A8DpVEamD2GeSKLceSJlijpdcJ96X0FpBVMSbeJk=
-Received: by mail-qk1-f172.google.com with SMTP id h126so12378390qke.10;
- Mon, 07 Oct 2019 05:53:18 -0700 (PDT)
-X-Gm-Message-State: APjAAAVlKcFNrEbeWdl2MWxi6X2DGaTyGE9IHJdxInV4VQgXUh1WOtYu
- HSpAnLOwLkbaoD2oUZYb0g5bjDAI3g9VYKcMgA==
-X-Google-Smtp-Source: APXvYqwlKfXgpwy3ehPZWxTgG9eiCTZ6s5SoFYAM/1PDHBgNGMa6ZXPufLcYTCelh6Tj9O1lBlYZxD004Ih/FW/sVjg=
-X-Received: by 2002:a37:be87:: with SMTP id
- o129mr23745015qkf.254.1570452797681; 
- Mon, 07 Oct 2019 05:53:17 -0700 (PDT)
+ id 1iHSfu-0003Fu-91
+ for linux-arm-kernel@lists.infradead.org; Mon, 07 Oct 2019 13:03:43 +0000
+Received: by mail-ua1-x944.google.com with SMTP id n63so4010745uan.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 07 Oct 2019 06:03:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Ds8WznLX+NYi3ptkiUX0OCakAHSXETW90blbf1WdtvY=;
+ b=SeFZrK8gMg6fY4PxMOK0NPAoUBk5SKZP6Rm2RpMc1sRZKgJg2NDDLR9yH+ZTkFrojb
+ ECECpc6XwZXZYWrLpY3dkrOp1pLvCwRPEB3LV/Opy8prDkyQaXBI+0Em6seuvBwIpUf3
+ WSFX4glUQS905Oi7/4W2htI0p1s5RzgKNERk4=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Ds8WznLX+NYi3ptkiUX0OCakAHSXETW90blbf1WdtvY=;
+ b=A9semYQz5VkavrzXq4q7bdr+K+Pd8Gb2uY8ZlWrYsTuRF+r21K89XQ9NR1g4qYas08
+ 0r19ZBi7QaLWPfC6wDWAd9P249M/tvVO3s8zd1M8OB+cb6SuczmsrN5YQOzTJfkHrVN4
+ b5Ak0PhsfuAM4HEXFvmfqT3brgT+AU0meJkTDwmIUwf4VJ5tz6Ekc5gVnsjKMRtQIvjK
+ wKdPLC7okPL6gzRYMsaXi6yM4IUIC6lr5XsKkhn3W+MDh4zpVcIy2vSBhW4dlLbek6/L
+ ik+vj8K1FzPvNqZQfu+OYwFfae94L99v8J4XzWwmJ6VPKgiQ/ZaiAOnPHpA2RNP4UM9X
+ 6rNw==
+X-Gm-Message-State: APjAAAUP7kFOz8tjaL47R7635IbZstbZjQ7aWO+nE8wZzzUBnLFJ4vdz
+ kkIj+FWkrKGHKhfOy9kiNlUpFnfREc21p9Ke/FnHlA==
+X-Google-Smtp-Source: APXvYqyXRPLlM1sC+Qh9Y+U2YnUrT41/QnuLEzazUmqup77OPEOS8gKvErJCG8qbHkr6M+W+SZdp07y4EAEUpxg6cwg=
+X-Received: by 2002:a9f:2924:: with SMTP id t33mr11661088uat.69.1570453416905; 
+ Mon, 07 Oct 2019 06:03:36 -0700 (PDT)
 MIME-Version: 1.0
-References: <9037b7edbbb41cbbf699ebe3a511daf22d886e7d.1570444695.git.robin.murphy@arm.com>
-In-Reply-To: <9037b7edbbb41cbbf699ebe3a511daf22d886e7d.1570444695.git.robin.murphy@arm.com>
-From: Rob Herring <robh@kernel.org>
-Date: Mon, 7 Oct 2019 07:53:06 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqKBy+i+=gGyYhBgcMUYsWd_CL_GnEoQqALBb+Gy7Ogb6A@mail.gmail.com>
-Message-ID: <CAL_JsqKBy+i+=gGyYhBgcMUYsWd_CL_GnEoQqALBb+Gy7Ogb6A@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: Add Beelink A1
-To: Robin Murphy <robin.murphy@arm.com>
+References: <20191003041438.194224-1-cychiang@chromium.org>
+ <b8ad03db-b93f-44e0-ccd6-fc8bda1af223@baylibre.com>
+In-Reply-To: <b8ad03db-b93f-44e0-ccd6-fc8bda1af223@baylibre.com>
+From: Cheng-yi Chiang <cychiang@chromium.org>
+Date: Mon, 7 Oct 2019 21:03:10 +0800
+Message-ID: <CAFv8Nw+xfqzKC+x9m-Zd-dmPNayXxqTCeo8JsO7pQn8Uk1Ybsw@mail.gmail.com>
+Subject: Re: [PATCH v2 RESEND] drm/bridge: dw-hdmi: Restore audio when setting
+ a mode
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_055320_394067_0BE485AD 
-X-CRM114-Status: GOOD (  22.46  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191007_060342_342214_6B2A9F0C 
+X-CRM114-Status: GOOD (  24.62  )
+X-Spam-Score: -7.4 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-7.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -83,150 +92,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, "heiko@sntech.de" <heiko@sntech.de>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>,
+ Doug Anderson <dianders@chromium.org>,
+ "moderated list:SOUND - SOC LAYER / DYNAMIC AUDIO POWER MANAGEM..."
+ <alsa-devel@alsa-project.org>, Jonas Karlman <jonas@kwiboo.se>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Tzung-Bi Shih <tzungbi@chromium.org>, Jaroslav Kysela <perex@perex.cz>,
+ Hans Verkuil <hverkuil@xs4all.nl>, linux-rockchip@lists.infradead.org,
+ Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
+ dri-devel@lists.freedesktop.org, Daniel Kurtz <djkurtz@chromium.org>,
+ Yakir Yang <ykk@rock-chips.com>, Dylan Reid <dgreid@chromium.org>,
+ linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 7, 2019 at 6:33 AM Robin Murphy <robin.murphy@arm.com> wrote:
+On Mon, Oct 7, 2019 at 7:57 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
 >
-> Beelink A1 is a TV box implementing the higher-end options of the
-> RK3328 reference design - the DTB from the stock Android firmware is
-> clearly the "rk3328-box-plus" variant from the Rockchip 3.10 BSP with
-> minor modifications to accommodate the USB WiFi module and additional
-> VFD-style LED driver. It features:
+> Hi,
 >
-> - 4GB of 32-bit LPDDR3
-> - 16GB of HS200 eMMC (newer models with 32GB also exist)
-> - Realtek RTL8211F phy for gigabit ethernet
-> - Fn-Link 6221E-UUC module (RealTek RTL8821CU) for 11ac WiFi and Bluetooth 4.2
-> - HDMI and analog A/V
-> - 1x USB 3.0 type A host, 1x USB 2.0 type A OTG, 1x micro SD
-> - IR receiver and a neat little LED clock display.
+> On 03/10/2019 06:14, Cheng-Yi Chiang wrote:
+> > From: Daniel Kurtz <djkurtz@chromium.org>
+> >
+> > When setting a new display mode, dw_hdmi_setup() calls
+> > dw_hdmi_enable_video_path(), which disables all hdmi clocks, including
+> > the audio clock.
+> >
+> > We should only (re-)enable the audio clock if audio was already enabled
+> > when setting the new mode.
+> >
+> > Without this patch, on RK3288, there will be HDMI audio on some monitors
+> > if i2s was played to headphone when the monitor was plugged.
+> > ACER H277HU and ASUS PB278 are two of the monitors showing this issue.
+> >
+> > Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+> > Signed-off-by: Daniel Kurtz <djkurtz@chromium.org>
+> > Signed-off-by: Yakir Yang <ykk@rock-chips.com>
+> > ---
+> >  Change from v1 to v2:
+> >   - Use audio_lock to protect audio clock.
+> >   - Fix the patch title.
+> >
+> >  drivers/gpu/drm/bridge/synopsys/dw-hdmi.c | 13 ++++++++++++-
+> >  1 file changed, 12 insertions(+), 1 deletion(-)
+> >
+> > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> > index aa7efd4da1c8..749d8e4c535b 100644
+> > --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> > +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> > @@ -1982,6 +1982,17 @@ static void hdmi_disable_overflow_interrupts(struct dw_hdmi *hdmi)
+> >                   HDMI_IH_MUTE_FC_STAT2);
+> >  }
+> >
+> > +static void dw_hdmi_audio_restore(struct dw_hdmi *hdmi)
+> > +{
+> > +     unsigned long flags;
+> > +
+> > +     spin_lock_irqsave(&hdmi->audio_lock, flags);
+> > +
+> > +     hdmi_enable_audio_clk(hdmi, hdmi->audio_enable);
+> > +
+> > +     spin_unlock_irqrestore(&hdmi->audio_lock, flags);
 >
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> ---
+> Dumb question, why is this protected by a spinlock ?
 >
-> One question I'm wondering about is whether it's worth pushing the HDMI
-> and analog codec audio cards down into rk3328.dtsi (as with HDMI audio
-> on RK3399), since those audio pipelines are internal to the SoC and the
-> board only really governs whether the outputs are wired up or not.
+> Neil
+>
 
-Seems reasonable. One other candidate below.
+Hi Neil,
+Thanks for the review.
+Good catch. I found that the spinlock audio_lock was introduced in
 
+b90120a96608 drm: bridge/dw_hdmi: introduce interfaces to enable and
+disable audio
+
+to protect N/CTS value.
+Actually it was not used to protect audio clock.
+So we don't need this spinlock.
+
+Hi Daniel Kurtz,
+If this rings any bell in your memory as for why this is protected,
+please let me know.
+I would like to remove this spinlock and simplify this patch in v3.
+
+Thanks!
+
+
+> > +}
+> > +
+> >  static int dw_hdmi_setup(struct dw_hdmi *hdmi, struct drm_display_mode *mode)
+> >  {
+> >       int ret;
+> > @@ -2045,7 +2056,7 @@ static int dw_hdmi_setup(struct dw_hdmi *hdmi, struct drm_display_mode *mode)
+> >
+> >               /* HDMI Initialization Step E - Configure audio */
+> >               hdmi_clk_regenerator_update_pixel_clock(hdmi);
+> > -             hdmi_enable_audio_clk(hdmi, true);
+> > +             dw_hdmi_audio_restore(hdmi);
+> >       }
+> >
+> >       /* not for DVI mode */
+> >
 >
->  .../devicetree/bindings/arm/rockchip.yaml     |   5 +
-
-In the future, please split bindings to a separate patch.
-
->  arch/arm64/boot/dts/rockchip/Makefile         |   1 +
->  arch/arm64/boot/dts/rockchip/rk3328-a1.dts    | 399 ++++++++++++++++++
->  3 files changed, 405 insertions(+)
->  create mode 100644 arch/arm64/boot/dts/rockchip/rk3328-a1.dts
->
-> diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
-> index c82c5e57d44c..f27f7805f57e 100644
-> --- a/Documentation/devicetree/bindings/arm/rockchip.yaml
-> +++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
-> @@ -40,6 +40,11 @@ properties:
->            - const: asus,rk3288-tinker-s
->            - const: rockchip,rk3288
->
-> +      - description: Beelink A1
-> +        items:
-> +          - const: azw,beelink-a1
-> +          - const: rockchip,rk3328
-> +
->        - description: bq Curie 2 tablet
->          items:
->            - const: mundoreader,bq-curie2
-> diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
-> index 1f18a9392d15..a6f250e7cde2 100644
-> --- a/arch/arm64/boot/dts/rockchip/Makefile
-> +++ b/arch/arm64/boot/dts/rockchip/Makefile
-> @@ -1,5 +1,6 @@
->  # SPDX-License-Identifier: GPL-2.0
->  dtb-$(CONFIG_ARCH_ROCKCHIP) += px30-evb.dtb
-> +dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-a1.dtb
->  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-evb.dtb
->  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-rock64.dtb
->  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-roc-cc.dtb
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3328-a1.dts b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
-> new file mode 100644
-> index 000000000000..03ad663ff821
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
-> @@ -0,0 +1,399 @@
-> +// SPDX-License-Identifier: (GPL-2.0-only OR MIT)
-> +// Copyright (c) 2017-2019 Arm Ltd.
-> +
-> +/dts-v1/;
-> +#include "rk3328.dtsi"
-> +
-> +/ {
-> +       model = "Beelink A1";
-> +       compatible = "azw,beelink-a1", "rockchip,rk3328";
-> +
-> +       /*
-> +        * UART pins, as viewed with bottom of case removed:
-> +        *
-> +        *           Front
-> +        *        /-------
-> +        *  L    / o <- Gnd
-> +        *  e   / o <-- Rx
-> +        *  f  / o <--- Tx
-> +        *  t / o <---- +3.3v
-> +        *    |
-> +        */
-> +       chosen {
-> +               stdout-path = "serial2:1500000n8";
-> +       };
-> +
-> +       gmac_clkin: external-gmac-clock {
-> +               compatible = "fixed-clock";
-> +               clock-frequency = <125000000>;
-> +               clock-output-names = "gmac_clkin";
-> +               #clock-cells = <0>;
-> +       };
-> +
-> +       vcc_host_5v: usb3-current-switch {
-> +               compatible = "regulator-fixed";
-> +               enable-active-high;
-> +               gpio = <&gpio0 RK_PA0 GPIO_ACTIVE_HIGH>;
-> +               pinctrl-names = "default";
-> +               pinctrl-0 = <&usb30_host_drv>;
-> +               regulator-name = "vcc_host_5v";
-> +               vin-supply = <&vcc_sys>;
-> +       };
-> +
-> +       vcc_sys: vcc-sys {
-> +               compatible = "regulator-fixed";
-> +               regulator-name = "vcc_sys";
-> +               regulator-min-microvolt = <5000000>;
-> +               regulator-max-microvolt = <5000000>;
-> +       };
-> +
-> +       cpus {
-> +               idle-states {
-> +                       entry-method = "arm,psci";
-> +
-> +                       cpu_sleep: cpu-sleep {
-> +                               compatible = "arm,idle-state";
-> +                               arm,psci-suspend-param = <0x0010000>;
-> +                               local-timer-stop;
-> +                               entry-latency-us = <120>;
-> +                               exit-latency-us = <250>;
-> +                               min-residency-us = <900>;
-
-This doesn't seem like something that's board specific, but I guess
-the regulator could have some influence on these times. If so, the
-board file could always override a default.
-
-Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
