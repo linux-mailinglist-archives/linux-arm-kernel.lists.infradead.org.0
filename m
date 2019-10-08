@@ -2,66 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A558FCF395
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 09:20:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 822C2CF398
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 09:20:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Tw7YBYG0hru9Kjngm0b8u5sdLWI5JQH0Fnv8qn7AQ9A=; b=oZDwaLxbopH4JM
-	HMY+Kp8W8WbRg8vmrCIAZwoMKHrf5ILICBxVAx3ooRi6V9uA5xXQCcSTqpjrz3m1Os1KbgH3HvaK8
-	c4FOWXYBS+e+KpicnX7bAU1efaX+z91XZj1s7jdZYk7AWZBWEabWOulF2sQflaB7m1dTM6xPk/aqE
-	5rTgQqE8LmcyAbx9yrIzF23Ppa/XAgOwjQLMqiqxVMLanYmy8O8okU7N5Rsxfig1EynKJaDjPpS4W
-	efyHFYLwF/20yYagiOpZ/1EH2NC4M4I2PZDbnpoCD/m8bxxllRVQD5S0lxA//1C2dNu3H/DaJ/CYn
-	b1VLtTfZZTkGm95Baabg==;
+	List-Owner; bh=ZDvtSpHRA8vcCduAT85DTxaM816gXaS5TikMfBnJonI=; b=qBD9Uu7hGLoxXP
+	ZJHhOqnOaTxKblpq0xq6zblcp5eypuqd3LCJ9DMGoMLqv0m8xuWA6mjnd2bEvpEJy9b5wqIVhHQMN
+	yhmJuywu29Zx7C/sfRxXby78cRzVBLw2X4MH7eFQP9DoYUiiU+svn6HtFI7GwOA9FSzQiNpu6M0jK
+	9Rwe0bVjYl9Ts/1k00aa6lWZCPbQhFfQp63QJ9wOiKp7vuFKeek5RSGEQXwq0xx1KjQLN+UwxkqcU
+	QbqbmmgLU2lQRBFURP9kqSvze8dYMQjXiXzanGm+CvJDpScBhOQz3B3vJRmUZBbrJNpM9v03xB0TK
+	5xe4EaftkFUw4nSfIiWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHjnF-0000Ba-Mt; Tue, 08 Oct 2019 07:20:25 +0000
+	id 1iHjnR-0000RM-TY; Tue, 08 Oct 2019 07:20:37 +0000
 Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHjmN-0006ne-0W
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 07:19:33 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x987JRB7046353;
- Tue, 8 Oct 2019 02:19:27 -0500
+ id 1iHjmO-0006p1-Hz
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 07:19:35 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x987JUSX046372;
+ Tue, 8 Oct 2019 02:19:30 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1570519167;
- bh=ltl4RRb5Ij9ywqniuPIEH/A6XjJFdhz13S9UtX+wEX0=;
+ s=ti-com-17Q1; t=1570519170;
+ bh=0tln0NRFdBItHIltiQcebxGnUnAgfgYhStbd62D0/jM=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=eyquUaPQmKleNFjiRqAKKjifiPDxUUIBiq6ogyMA3bj4ilnyc8iNPeaoQ4LMqrOOt
- PwjAz6G9JuvJbj0AP7/993VWnORuYeVR0WnSK31SZN8QZbga2gO4pEVc/ZlrPl/LQD
- /UvBcEiv0MMfTZOic+4QSDMuWj9VE7j6FsFd/qc4=
-Received: from DFLE110.ent.ti.com (dfle110.ent.ti.com [10.64.6.31])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id x987JRqc028753;
- Tue, 8 Oct 2019 02:19:27 -0500
-Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE110.ent.ti.com
- (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
+ b=aXoWtyAhavZwrT8Gf172BBkRxLyMdJqLQIVPUehvfwE2xLmALDNtofKTnuFrO+eNp
+ 7t6SYXnH1z51toDF1o3xvxDsBqX0jrjUVPcuDcTeVk1YlUhoiSviFiuNQHXVbmqJPp
+ KBclVYxu/WXwMf7wDVhQ7zkdhmvgP5Mv2EO2H9tA=
+Received: from DFLE113.ent.ti.com (dfle113.ent.ti.com [10.64.6.34])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x987JUe5046135
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 8 Oct 2019 02:19:30 -0500
+Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE113.ent.ti.com
+ (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 8 Oct
- 2019 02:19:25 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE107.ent.ti.com
- (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
+ 2019 02:19:27 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 8 Oct 2019 02:19:23 -0500
+ Frontend Transport; Tue, 8 Oct 2019 02:19:27 -0500
 Received: from sokoban.bb.dnainternet.fi (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x987JJj5027770;
- Tue, 8 Oct 2019 02:19:24 -0500
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x987JJj7027770;
+ Tue, 8 Oct 2019 02:19:28 -0500
 From: Tero Kristo <t-kristo@ti.com>
 To: <linux-omap@vger.kernel.org>, <ssantosh@kernel.org>
-Subject: [PATCHv7 2/9] soc: ti: add initial PRM driver with reset control
- support
-Date: Tue, 8 Oct 2019 10:19:06 +0300
-Message-ID: <20191008071913.28740-3-t-kristo@ti.com>
+Subject: [PATCHv7 4/9] soc: ti: omap-prm: add support for denying idle for
+ reset clockdomain
+Date: Tue, 8 Oct 2019 10:19:08 +0300
+Message-ID: <20191008071913.28740-5-t-kristo@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191008071913.28740-1-t-kristo@ti.com>
 References: <20191008071913.28740-1-t-kristo@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_001931_138825_6E20552F 
-X-CRM114-Status: GOOD (  20.17  )
+X-CRM114-CacheID: sfid-20191008_001932_691124_250AA648 
+X-CRM114-Status: GOOD (  19.50  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -97,308 +98,166 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add initial PRM (Power and Reset Management) driver for TI OMAP class
-SoCs. Initially this driver only supports reset control, but can be
-extended to support rest of the functionality, like powerdomain
-control, PRCM irq support etc.
+TI SoCs hardware reset signals require the parent clockdomain to be
+in force wakeup mode while de-asserting the reset, otherwise it may
+never complete. To support this, add pdata hooks to control the
+clockdomain directly.
 
 Signed-off-by: Tero Kristo <t-kristo@ti.com>
 ---
- arch/arm/mach-omap2/Kconfig |   1 +
- drivers/soc/ti/Makefile     |   1 +
- drivers/soc/ti/omap_prm.c   | 259 ++++++++++++++++++++++++++++++++++++
- 3 files changed, 261 insertions(+)
- create mode 100644 drivers/soc/ti/omap_prm.c
+ drivers/soc/ti/omap_prm.c            | 36 ++++++++++++++++++++++++++--
+ include/linux/platform_data/ti-prm.h | 21 ++++++++++++++++
+ 2 files changed, 55 insertions(+), 2 deletions(-)
+ create mode 100644 include/linux/platform_data/ti-prm.h
 
-diff --git a/arch/arm/mach-omap2/Kconfig b/arch/arm/mach-omap2/Kconfig
-index fdb6743760a2..ad08d470a2ca 100644
---- a/arch/arm/mach-omap2/Kconfig
-+++ b/arch/arm/mach-omap2/Kconfig
-@@ -109,6 +109,7 @@ config ARCH_OMAP2PLUS
- 	select TI_SYSC
- 	select OMAP_IRQCHIP
- 	select CLKSRC_TI_32K
-+	select ARCH_HAS_RESET_CONTROLLER
- 	help
- 	  Systems based on OMAP2, OMAP3, OMAP4 or OMAP5
- 
-diff --git a/drivers/soc/ti/Makefile b/drivers/soc/ti/Makefile
-index b3868d392d4f..788b5cd1e180 100644
---- a/drivers/soc/ti/Makefile
-+++ b/drivers/soc/ti/Makefile
-@@ -6,6 +6,7 @@ obj-$(CONFIG_KEYSTONE_NAVIGATOR_QMSS)	+= knav_qmss.o
- knav_qmss-y := knav_qmss_queue.o knav_qmss_acc.o
- obj-$(CONFIG_KEYSTONE_NAVIGATOR_DMA)	+= knav_dma.o
- obj-$(CONFIG_AMX3_PM)			+= pm33xx.o
-+obj-$(CONFIG_ARCH_OMAP2PLUS)		+= omap_prm.o
- obj-$(CONFIG_WKUP_M3_IPC)		+= wkup_m3_ipc.o
- obj-$(CONFIG_TI_SCI_PM_DOMAINS)		+= ti_sci_pm_domains.o
- obj-$(CONFIG_TI_SCI_INTA_MSI_DOMAIN)	+= ti_sci_inta_msi.o
 diff --git a/drivers/soc/ti/omap_prm.c b/drivers/soc/ti/omap_prm.c
-new file mode 100644
-index 000000000000..ab0b66ad715d
---- /dev/null
+index 96fa2aad9b93..3d9393ff67e3 100644
+--- a/drivers/soc/ti/omap_prm.c
 +++ b/drivers/soc/ti/omap_prm.c
-@@ -0,0 +1,259 @@
-+// SPDX-License-Identifier: GPL-2.0
+@@ -16,6 +16,8 @@
+ #include <linux/reset-controller.h>
+ #include <linux/delay.h>
+ 
++#include <linux/platform_data/ti-prm.h>
++
+ struct omap_rst_map {
+ 	s8 rst;
+ 	s8 st;
+@@ -24,6 +26,7 @@ struct omap_rst_map {
+ struct omap_prm_data {
+ 	u32 base;
+ 	const char *name;
++	const char *clkdm_name;
+ 	u16 rstctrl;
+ 	u16 rstst;
+ 	const struct omap_rst_map *rstmap;
+@@ -40,6 +43,8 @@ struct omap_reset_data {
+ 	struct omap_prm *prm;
+ 	u32 mask;
+ 	spinlock_t lock;
++	struct clockdomain *clkdm;
++	struct device *dev;
+ };
+ 
+ #define to_omap_reset_data(p) container_of((p), struct omap_reset_data, rcdev)
+@@ -49,6 +54,7 @@ struct omap_reset_data {
+ 
+ #define OMAP_PRM_HAS_RSTCTRL	BIT(0)
+ #define OMAP_PRM_HAS_RSTST	BIT(1)
++#define OMAP_PRM_HAS_NO_CLKDM	BIT(2)
+ 
+ #define OMAP_PRM_HAS_RESETS	(OMAP_PRM_HAS_RSTCTRL | OMAP_PRM_HAS_RSTST)
+ 
+@@ -133,6 +139,8 @@ static int omap_reset_deassert(struct reset_controller_dev *rcdev,
+ 	int st_bit;
+ 	bool has_rstst;
+ 	unsigned long flags;
++	struct ti_prm_platform_data *pdata = dev_get_platdata(reset->dev);
++	int ret = 0;
+ 
+ 	has_rstst = reset->prm->data->rstst ||
+ 		(reset->prm->data->flags & OMAP_PRM_HAS_RSTST);
+@@ -146,6 +154,9 @@ static int omap_reset_deassert(struct reset_controller_dev *rcdev,
+ 		writel_relaxed(v, reset->prm->base + reset->prm->data->rstst);
+ 	}
+ 
++	if (reset->clkdm)
++		pdata->clkdm_deny_idle(reset->clkdm);
++
+ 	/* de-assert the reset control line */
+ 	spin_lock_irqsave(&reset->lock, flags);
+ 	v = readl_relaxed(reset->prm->base + reset->prm->data->rstctrl);
+@@ -154,7 +165,7 @@ static int omap_reset_deassert(struct reset_controller_dev *rcdev,
+ 	spin_unlock_irqrestore(&reset->lock, flags);
+ 
+ 	if (!has_rstst)
+-		return 0;
++		goto exit;
+ 
+ 	/* wait for the status to be set */
+ 	ret = readl_relaxed_poll_timeout(reset->prm->base +
+@@ -165,7 +176,11 @@ static int omap_reset_deassert(struct reset_controller_dev *rcdev,
+ 		pr_err("%s: timedout waiting for %s:%lu\n", __func__,
+ 		       reset->prm->data->name, id);
+ 
+-	return 0;
++exit:
++	if (reset->clkdm)
++		pdata->clkdm_allow_idle(reset->clkdm);
++
++	return ret;
+ }
+ 
+ static const struct reset_control_ops omap_reset_ops = {
+@@ -190,6 +205,8 @@ static int omap_prm_reset_init(struct platform_device *pdev,
+ {
+ 	struct omap_reset_data *reset;
+ 	const struct omap_rst_map *map;
++	struct ti_prm_platform_data *pdata = dev_get_platdata(&pdev->dev);
++	char buf[32];
+ 
+ 	/*
+ 	 * Check if we have controllable resets. If either rstctrl is non-zero
+@@ -199,6 +216,11 @@ static int omap_prm_reset_init(struct platform_device *pdev,
+ 	if (!prm->data->rstctrl && !(prm->data->flags & OMAP_PRM_HAS_RSTCTRL))
+ 		return 0;
+ 
++	/* Check if we have the pdata callbacks in place */
++	if (!pdata || !pdata->clkdm_lookup || !pdata->clkdm_deny_idle ||
++	    !pdata->clkdm_allow_idle)
++		return -EINVAL;
++
+ 	map = prm->data->rstmap;
+ 	if (!map)
+ 		return -EINVAL;
+@@ -213,10 +235,20 @@ static int omap_prm_reset_init(struct platform_device *pdev,
+ 	reset->rcdev.nr_resets = OMAP_MAX_RESETS;
+ 	reset->rcdev.of_xlate = omap_prm_reset_xlate;
+ 	reset->rcdev.of_reset_n_cells = 1;
++	reset->dev = &pdev->dev;
+ 	spin_lock_init(&reset->lock);
+ 
+ 	reset->prm = prm;
+ 
++	sprintf(buf, "%s_clkdm", prm->data->clkdm_name ? prm->data->clkdm_name :
++		prm->data->name);
++
++	if (!(prm->data->flags & OMAP_PRM_HAS_NO_CLKDM)) {
++		reset->clkdm = pdata->clkdm_lookup(buf);
++		if (!reset->clkdm)
++			return -EINVAL;
++	}
++
+ 	while (map->rst >= 0) {
+ 		reset->mask |= BIT(map->rst);
+ 		map++;
+diff --git a/include/linux/platform_data/ti-prm.h b/include/linux/platform_data/ti-prm.h
+new file mode 100644
+index 000000000000..28154c3226c2
+--- /dev/null
++++ b/include/linux/platform_data/ti-prm.h
+@@ -0,0 +1,21 @@
++/* SPDX-License-Identifier: GPL-2.0-only */
 +/*
-+ * OMAP2+ PRM driver
++ * TI PRM (Power & Reset Manager) platform data
 + *
-+ * Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com/
-+ *	Tero Kristo <t-kristo@ti.com>
++ * Copyright (C) 2019 Texas Instruments, Inc.
++ *
++ * Tero Kristo <t-kristo@ti.com>
 + */
 +
-+#include <linux/kernel.h>
-+#include <linux/device.h>
-+#include <linux/io.h>
-+#include <linux/iopoll.h>
-+#include <linux/of.h>
-+#include <linux/of_device.h>
-+#include <linux/platform_device.h>
-+#include <linux/reset-controller.h>
-+#include <linux/delay.h>
++#ifndef _LINUX_PLATFORM_DATA_TI_PRM_H
++#define _LINUX_PLATFORM_DATA_TI_PRM_H
 +
-+struct omap_rst_map {
-+	s8 rst;
-+	s8 st;
++struct clockdomain;
++
++struct ti_prm_platform_data {
++	void (*clkdm_deny_idle)(struct clockdomain *clkdm);
++	void (*clkdm_allow_idle)(struct clockdomain *clkdm);
++	struct clockdomain * (*clkdm_lookup)(const char *name);
 +};
 +
-+struct omap_prm_data {
-+	u32 base;
-+	const char *name;
-+	u16 rstctrl;
-+	u16 rstst;
-+	const struct omap_rst_map *rstmap;
-+	u8 flags;
-+};
-+
-+struct omap_prm {
-+	const struct omap_prm_data *data;
-+	void __iomem *base;
-+};
-+
-+struct omap_reset_data {
-+	struct reset_controller_dev rcdev;
-+	struct omap_prm *prm;
-+	u32 mask;
-+	spinlock_t lock;
-+};
-+
-+#define to_omap_reset_data(p) container_of((p), struct omap_reset_data, rcdev)
-+
-+#define OMAP_MAX_RESETS		8
-+#define OMAP_RESET_MAX_WAIT	10000
-+
-+#define OMAP_PRM_HAS_RSTCTRL	BIT(0)
-+#define OMAP_PRM_HAS_RSTST	BIT(1)
-+
-+#define OMAP_PRM_HAS_RESETS	(OMAP_PRM_HAS_RSTCTRL | OMAP_PRM_HAS_RSTST)
-+
-+static const struct of_device_id omap_prm_id_table[] = {
-+	{ },
-+};
-+
-+static bool _is_valid_reset(struct omap_reset_data *reset, unsigned long id)
-+{
-+	if (reset->mask & BIT(id))
-+		return true;
-+
-+	return false;
-+}
-+
-+static int omap_reset_get_st_bit(struct omap_reset_data *reset,
-+				 unsigned long id)
-+{
-+	const struct omap_rst_map *map = reset->prm->data->rstmap;
-+
-+	while (map->rst >= 0) {
-+		if (map->rst == id)
-+			return map->st;
-+
-+		map++;
-+	}
-+
-+	return id;
-+}
-+
-+static int omap_reset_status(struct reset_controller_dev *rcdev,
-+			     unsigned long id)
-+{
-+	struct omap_reset_data *reset = to_omap_reset_data(rcdev);
-+	u32 v;
-+	int st_bit = omap_reset_get_st_bit(reset, id);
-+	bool has_rstst = reset->prm->data->rstst ||
-+		(reset->prm->data->flags & OMAP_PRM_HAS_RSTST);
-+
-+	/* Check if we have rstst */
-+	if (!has_rstst)
-+		return -ENOTSUPP;
-+
-+	/* Check if hw reset line is asserted */
-+	v = readl_relaxed(reset->prm->base + reset->prm->data->rstctrl);
-+	if (v & BIT(id))
-+		return 1;
-+
-+	/*
-+	 * Check reset status, high value means reset sequence has been
-+	 * completed successfully so we can return 0 here (reset deasserted)
-+	 */
-+	v = readl_relaxed(reset->prm->base + reset->prm->data->rstst);
-+	v >>= st_bit;
-+	v &= 1;
-+
-+	return !v;
-+}
-+
-+static int omap_reset_assert(struct reset_controller_dev *rcdev,
-+			     unsigned long id)
-+{
-+	struct omap_reset_data *reset = to_omap_reset_data(rcdev);
-+	u32 v;
-+	unsigned long flags;
-+
-+	/* assert the reset control line */
-+	spin_lock_irqsave(&reset->lock, flags);
-+	v = readl_relaxed(reset->prm->base + reset->prm->data->rstctrl);
-+	v |= 1 << id;
-+	writel_relaxed(v, reset->prm->base + reset->prm->data->rstctrl);
-+	spin_unlock_irqrestore(&reset->lock, flags);
-+
-+	return 0;
-+}
-+
-+static int omap_reset_deassert(struct reset_controller_dev *rcdev,
-+			       unsigned long id)
-+{
-+	struct omap_reset_data *reset = to_omap_reset_data(rcdev);
-+	u32 v;
-+	int st_bit;
-+	bool has_rstst;
-+	unsigned long flags;
-+
-+	has_rstst = reset->prm->data->rstst ||
-+		(reset->prm->data->flags & OMAP_PRM_HAS_RSTST);
-+
-+	if (has_rstst) {
-+		st_bit = omap_reset_get_st_bit(reset, id);
-+
-+		/* Clear the reset status by writing 1 to the status bit */
-+		v = readl_relaxed(reset->prm->base + reset->prm->data->rstst);
-+		v |= 1 << st_bit;
-+		writel_relaxed(v, reset->prm->base + reset->prm->data->rstst);
-+	}
-+
-+	/* de-assert the reset control line */
-+	spin_lock_irqsave(&reset->lock, flags);
-+	v = readl_relaxed(reset->prm->base + reset->prm->data->rstctrl);
-+	v &= ~(1 << id);
-+	writel_relaxed(v, reset->prm->base + reset->prm->data->rstctrl);
-+	spin_unlock_irqrestore(&reset->lock, flags);
-+
-+	return 0;
-+}
-+
-+static const struct reset_control_ops omap_reset_ops = {
-+	.assert		= omap_reset_assert,
-+	.deassert	= omap_reset_deassert,
-+	.status		= omap_reset_status,
-+};
-+
-+static int omap_prm_reset_xlate(struct reset_controller_dev *rcdev,
-+				const struct of_phandle_args *reset_spec)
-+{
-+	struct omap_reset_data *reset = to_omap_reset_data(rcdev);
-+
-+	if (!_is_valid_reset(reset, reset_spec->args[0]))
-+		return -EINVAL;
-+
-+	return reset_spec->args[0];
-+}
-+
-+static int omap_prm_reset_init(struct platform_device *pdev,
-+			       struct omap_prm *prm)
-+{
-+	struct omap_reset_data *reset;
-+	const struct omap_rst_map *map;
-+
-+	/*
-+	 * Check if we have controllable resets. If either rstctrl is non-zero
-+	 * or OMAP_PRM_HAS_RSTCTRL flag is set, we have reset control register
-+	 * for the domain.
-+	 */
-+	if (!prm->data->rstctrl && !(prm->data->flags & OMAP_PRM_HAS_RSTCTRL))
-+		return 0;
-+
-+	map = prm->data->rstmap;
-+	if (!map)
-+		return -EINVAL;
-+
-+	reset = devm_kzalloc(&pdev->dev, sizeof(*reset), GFP_KERNEL);
-+	if (!reset)
-+		return -ENOMEM;
-+
-+	reset->rcdev.owner = THIS_MODULE;
-+	reset->rcdev.ops = &omap_reset_ops;
-+	reset->rcdev.of_node = pdev->dev.of_node;
-+	reset->rcdev.nr_resets = OMAP_MAX_RESETS;
-+	reset->rcdev.of_xlate = omap_prm_reset_xlate;
-+	reset->rcdev.of_reset_n_cells = 1;
-+	spin_lock_init(&reset->lock);
-+
-+	reset->prm = prm;
-+
-+	while (map->rst >= 0) {
-+		reset->mask |= BIT(map->rst);
-+		map++;
-+	}
-+
-+	return devm_reset_controller_register(&pdev->dev, &reset->rcdev);
-+}
-+
-+static int omap_prm_probe(struct platform_device *pdev)
-+{
-+	struct resource *res;
-+	const struct omap_prm_data *data;
-+	struct omap_prm *prm;
-+	const struct of_device_id *match;
-+
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	if (!res)
-+		return -ENODEV;
-+
-+	match = of_match_device(omap_prm_id_table, &pdev->dev);
-+	if (!match)
-+		return -ENOTSUPP;
-+
-+	prm = devm_kzalloc(&pdev->dev, sizeof(*prm), GFP_KERNEL);
-+	if (!prm)
-+		return -ENOMEM;
-+
-+	data = match->data;
-+
-+	while (data->base != res->start) {
-+		if (!data->base)
-+			return -EINVAL;
-+		data++;
-+	}
-+
-+	prm->data = data;
-+
-+	prm->base = devm_ioremap_resource(&pdev->dev, res);
-+	if (!prm->base)
-+		return -ENOMEM;
-+
-+	return omap_prm_reset_init(pdev, prm);
-+}
-+
-+static struct platform_driver omap_prm_driver = {
-+	.probe = omap_prm_probe,
-+	.driver = {
-+		.name		= KBUILD_MODNAME,
-+		.of_match_table	= omap_prm_id_table,
-+	},
-+};
-+builtin_platform_driver(omap_prm_driver);
++#endif /* _LINUX_PLATFORM_DATA_TI_PRM_H */
 -- 
 2.17.1
 
