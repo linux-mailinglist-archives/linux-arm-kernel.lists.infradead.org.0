@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1650FCFA79
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 14:54:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10D59CFA7B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 14:54:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=Oy7LWkZ5+MdbYsOofhdLrNym1zQjfgCbRzo64sYB+Is=; b=idf
-	M5BP9wxeHPiJAjUUw9WOrqrfObglXAekoJuGI5IaYQGG3+kqf+qsCH8liJQQISX6JnvmK7aLfsl0j
-	t9paoFeXDKUqgvsHSuDgb86zF0pOjkbfOxNdGkDzjMT40pPrWA7OjpVzXootS4dg8HHNx5+7iIhZw
-	VSK6De2U3mvpEOFnHO30Es2hcGVO3G6uv0s0ytmbPSNWdmnklPvzp+OVDTPBa8hyJN5kcgjcU9BnO
-	2agOfLWB+6k14CtnApZj0N/Kw5gF9/fkRw9iPqm2CTXmNhAbTvlodded5pX8wKZNxyhEQHdVcWdN/
-	1dWyX2KKBJH+YcyW8apBO6RgVDa9asw==;
+	References:List-Owner; bh=8ZzMb9u0GYwamxgi7PMsdEKpnkNYe8v4ncWidHpf9YU=; b=Q62
+	G7zdQDL6LR2E4q+FYpExDjxHhoAzA6cHy1cBIm8k7goNnqdm1pviR7N0rXoUoekZFYCImG36LBNSA
+	t4fsbiQTYBWz7UJg7eGeUCt3e28pLPV/kPhdFGoSXzFpqxnFu52Tf7wEICwgxUEcVr/JRDQu/SspX
+	/+h3cjxLLNpmQxPiuHz+4D48q98AeGUQXFGxot8RJ5fghRhrVfS8JeFtZPeY6rcLoZ2EVSmwIqJPn
+	SmqfOxNb9deJXPLQXKJd4f/g4gzowca9N/58ssSt/kqzq7/zSeyi8Lct3Fes+n0nC1toF/b7Lp5EY
+	3OLePkquq/MfNhChqgs24Lb4obVSLRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHozt-00036P-8W; Tue, 08 Oct 2019 12:53:49 +0000
+	id 1iHp0E-0003Gp-Lp; Tue, 08 Oct 2019 12:54:10 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHozj-00035L-OQ; Tue, 08 Oct 2019 12:53:41 +0000
+ id 1iHozk-00035c-A1; Tue, 08 Oct 2019 12:53:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=8ZyBzxmPDZ0eyBVDumHL6hLnaIS3O2/wuFjVBskv8A0=; b=GCgkapxY4U32
- 9NmKd3Htg5Cpu644HnC16Ccvdz3q1wX1FFX1Vy9XaLSdkMwCTursu7O6K0dKsMd5bW+iw1AV7NZEl
- hyMkhWGy7zwumga4kqgo8JkpT1hOCDXF+zOZvpNFrgmNDvfCgRF8n6L1M/haxW7KvdXwrOw4DTKtf
- IAGAw=;
+ List-Archive; bh=xN0L1YScEecIyFUIxb8q+rh8vnFHGS6oLYCHYCaipws=; b=vYr26ruWcI++
+ X7bErmRt5OFrwfxpHf231YHSeI1gJAECrzkKK9MXbb3JHfl+ZakZ2sXWL8MItni9DC+4sKnDlVKAm
+ pfWzs3MTKbkDgRfGlQ2LqvXnKRIHkyKGnWDq6BVlPrcwdik5cUuTKj/EXpJD1MyuR3LqQWRk7omfl
+ 4ZqHc=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iHozf-0008Q0-H9; Tue, 08 Oct 2019 12:53:35 +0000
+ id 1iHozf-0008Q4-OU; Tue, 08 Oct 2019 12:53:35 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 00B9F2740D4A; Tue,  8 Oct 2019 13:53:34 +0100 (BST)
+ id 35CED2740D4B; Tue,  8 Oct 2019 13:53:35 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: Jiaxin Yu <jiaxin.yu@mediatek.com>
-Subject: Applied "ASoC: mt8183: fix audio playback slowly after playback
- during bootup" to the asoc tree
-In-Reply-To: <1569580317-21181-5-git-send-email-jiaxin.yu@mediatek.com>
+Subject: Applied "dt-bindings: medaitek: mt8183: add property "resets" &&
+ "reset-names"" to the asoc tree
+In-Reply-To: <1569580317-21181-4-git-send-email-jiaxin.yu@mediatek.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191008125335.00B9F2740D4A@ypsilon.sirena.org.uk>
-Date: Tue,  8 Oct 2019 13:53:34 +0100 (BST)
+Message-Id: <20191008125335.35CED2740D4B@ypsilon.sirena.org.uk>
+Date: Tue,  8 Oct 2019 13:53:35 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_055339_800166_D1AA73E0 
-X-CRM114-Status: GOOD (  14.03  )
+X-CRM114-CacheID: sfid-20191008_055340_343509_44B0354E 
+X-CRM114-Status: GOOD (  11.22  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -90,7 +90,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: mt8183: fix audio playback slowly after playback during bootup
+   dt-bindings: medaitek: mt8183: add property "resets" && "reset-names"
 
 has been applied to the asoc tree at
 
@@ -115,63 +115,46 @@ to this mail.
 Thanks,
 Mark
 
-From 9e985503ee4b23d576c303a17dfe52cfc8f32727 Mon Sep 17 00:00:00 2001
+From 8d6aa1367a7df44bb5939c4bb2727b8d8f7d01b3 Mon Sep 17 00:00:00 2001
 From: Jiaxin Yu <jiaxin.yu@mediatek.com>
-Date: Fri, 27 Sep 2019 18:31:57 +0800
-Subject: [PATCH] ASoC: mt8183: fix audio playback slowly after playback during
- bootup
+Date: Fri, 27 Sep 2019 18:31:56 +0800
+Subject: [PATCH] dt-bindings: medaitek: mt8183: add property "resets" &&
+ "reset-names"
 
-Before regmap_reinit_cache we must reset audio regs as default values.
-So we use reset controller unit(toprgu) to reset audio hw.
+This patch add property "resets" && "reset-names" in examples so that we can
+use reset controller to reset audio domain regs.
 
 Signed-off-by: Jiaxin Yu <jiaxin.yu@mediatek.com>
-Reviewed-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
-Link: https://lore.kernel.org/r/1569580317-21181-5-git-send-email-jiaxin.yu@mediatek.com
+Link: https://lore.kernel.org/r/1569580317-21181-4-git-send-email-jiaxin.yu@mediatek.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/mediatek/mt8183/mt8183-afe-pcm.c | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
+ Documentation/devicetree/bindings/sound/mt8183-afe-pcm.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/sound/soc/mediatek/mt8183/mt8183-afe-pcm.c b/sound/soc/mediatek/mt8183/mt8183-afe-pcm.c
-index 4a31106d3471..721632386a50 100644
---- a/sound/soc/mediatek/mt8183/mt8183-afe-pcm.c
-+++ b/sound/soc/mediatek/mt8183/mt8183-afe-pcm.c
-@@ -11,6 +11,7 @@
- #include <linux/of.h>
- #include <linux/of_address.h>
- #include <linux/pm_runtime.h>
-+#include <linux/reset.h>
- 
- #include "mt8183-afe-common.h"
- #include "mt8183-afe-clk.h"
-@@ -1089,6 +1090,7 @@ static int mt8183_afe_pcm_dev_probe(struct platform_device *pdev)
- 	struct mtk_base_afe *afe;
- 	struct mt8183_afe_private *afe_priv;
- 	struct device *dev;
-+	struct reset_control *rstc;
- 	int i, irq_id, ret;
- 
- 	afe = devm_kzalloc(&pdev->dev, sizeof(*afe), GFP_KERNEL);
-@@ -1126,6 +1128,19 @@ static int mt8183_afe_pcm_dev_probe(struct platform_device *pdev)
- 		return ret;
- 	}
- 
-+	rstc = devm_reset_control_get(dev, "audiosys");
-+	if (IS_ERR(rstc)) {
-+		ret = PTR_ERR(rstc);
-+		dev_err(dev, "could not get audiosys reset:%d\n", ret);
-+		return ret;
-+	}
-+
-+	ret = reset_control_reset(rstc);
-+	if (ret) {
-+		dev_err(dev, "failed to trigger audio reset:%d\n", ret);
-+		return ret;
-+	}
-+
- 	/* enable clock for regcache get default value from hw */
- 	afe_priv->pm_runtime_bypass_reg_ctl = true;
- 	pm_runtime_get_sync(&pdev->dev);
+diff --git a/Documentation/devicetree/bindings/sound/mt8183-afe-pcm.txt b/Documentation/devicetree/bindings/sound/mt8183-afe-pcm.txt
+index 396ba38619f6..1f1cba4152ce 100644
+--- a/Documentation/devicetree/bindings/sound/mt8183-afe-pcm.txt
++++ b/Documentation/devicetree/bindings/sound/mt8183-afe-pcm.txt
+@@ -4,6 +4,10 @@ Required properties:
+ - compatible = "mediatek,mt68183-audio";
+ - reg: register location and size
+ - interrupts: should contain AFE interrupt
++- resets: Must contain an entry for each entry in reset-names
++  See ../reset/reset.txt for details.
++- reset-names: should have these reset names:
++		"audiosys";
+ - power-domains: should define the power domain
+ - clocks: Must contain an entry for each entry in clock-names
+ - clock-names: should have these clock names:
+@@ -20,6 +24,8 @@ Example:
+ 		compatible = "mediatek,mt8183-audio";
+ 		reg = <0 0x11220000 0 0x1000>;
+ 		interrupts = <GIC_SPI 161 IRQ_TYPE_LEVEL_LOW>;
++		resets = <&watchdog MT8183_TOPRGU_AUDIO_SW_RST>;
++		reset-names = "audiosys";
+ 		power-domains = <&scpsys MT8183_POWER_DOMAIN_AUDIO>;
+ 		clocks = <&infrasys CLK_INFRA_AUDIO>,
+ 			 <&infrasys CLK_INFRA_AUDIO_26M_BCLK>,
 -- 
 2.20.1
 
