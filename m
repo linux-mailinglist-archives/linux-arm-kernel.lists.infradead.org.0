@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88AACCF086
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 03:28:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C57CCCF088
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 03:29:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,46 +11,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=HuFm9JMm7maQP93GWBs3/Qa4zf3+a45aHOGsG33nP0Y=; b=bI8wtWPyurYnXj23wNo+79a/fl
-	fgzR3zjw8nbcMeL0jYbTXpXRhtgDZozBNVtf4iy7+OwSdeI9wfuuWWF9Qf6PUBYfWXnVMX+xDDIS0
-	X6Z7xrRqDCsymhrBb5YExVIL8FGHJypxaKk2wcrOcu+lLteShmnGtAVoj4bgnFPYoL8zOS2rBtm30
-	36Ud6PCgxCGGaGwxami60ECcbbHFhyeD9S0FLLolZONTFl2yeSpi3bRnOWLpJc2pig6DK975DHu/I
-	E8RCirdaFPmoImtvC6KoM056IQr3+oGa/RI1y6aABrEbwiPNn4BQmEfrvf9ImAPo8e1ogRB8hkuvV
-	r41wSCfA==;
+	bh=9Nt0UoQF75YGCH5pGP0sWlTkeNvosHs96bcvnDjahPk=; b=C1hqalSwuG1L7Wls6bPxTUajBA
+	gBeex7xuA2abG/idil7ZUhWs0kytm+yPfOPzdXPt8XJzKBA8v2x5fGsSYJrEK+iwy/zeoU0nT4qp5
+	c8FgXjkHjPZzcFr6KaSf5sD+Qeraxz/NoN+vibDCOz9NcogW9vLrdgiHg3eVZGA5oA9OfdW9QwSiC
+	UmgeWFwT6AREUYxqdy0OrNIY0Xd76XtIODYEGXYLC+RowEwOBFZ0V9QEvFGXw0Brc7BEefErDSa3x
+	fHYdG/QyYiForSfS+o5H0Y/e/3O08eQK4xNkR5h7zprCj0Xva77HwxMquaNPCUnbvWND9OUunmYkG
+	IF90vssg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHeIr-0008OA-QA; Tue, 08 Oct 2019 01:28:41 +0000
+	id 1iHeJ3-0000BL-Ky; Tue, 08 Oct 2019 01:28:53 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHeIW-0008DS-BG
+ id 1iHeIW-0008DO-BF
  for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 01:28:21 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3089D1A06BC;
- Tue,  8 Oct 2019 03:28:19 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id EB7CF1A0337;
+ Tue,  8 Oct 2019 03:28:18 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A1D621A0058;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 679261A024E;
  Tue,  8 Oct 2019 03:28:12 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4E73F4031E;
- Tue,  8 Oct 2019 09:28:03 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 9FF3840326;
+ Tue,  8 Oct 2019 09:28:04 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  jun.li@nxp.com, daniel.baluta@nxp.com, ping.bai@nxp.com,
  leonard.crestez@nxp.com, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH V2 2/3] arm64: dts: imx8mm-evk: Add i2c3 support
-Date: Tue,  8 Oct 2019 09:25:54 +0800
-Message-Id: <1570497955-19481-2-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V2 3/3] arm64: dts: imx8mm-evk: Enable pca6416 on i2c3 bus
+Date: Tue,  8 Oct 2019 09:25:55 +0800
+Message-Id: <1570497955-19481-3-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1570497955-19481-1-git-send-email-Anson.Huang@nxp.com>
 References: <1570497955-19481-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_182820_519480_85D01CEC 
-X-CRM114-Status: UNSURE (   8.04  )
+X-CRM114-CacheID: sfid-20191007_182820_520688_AB5286C9 
+X-CRM114-Status: UNSURE (   7.28  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -79,47 +79,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable i2c3 for i.MX8MM EVK board.
+Enable pca6416 on i.MX8MM EVK board's i2c3 bus.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
 No changes.
 ---
- arch/arm64/boot/dts/freescale/imx8mm-evk.dts | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+ arch/arm64/boot/dts/freescale/imx8mm-evk.dts | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-index f6d367c..9624d7d 100644
+index 9624d7d..faefb71 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-@@ -244,6 +244,13 @@
- 	};
+@@ -249,6 +249,13 @@
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_i2c3>;
+ 	status = "okay";
++
++	pca6416: gpio@20 {
++		compatible = "ti,tca6416";
++		reg = <0x20>;
++		gpio-controller;
++		#gpio-cells = <2>;
++	};
  };
  
-+&i2c3 {
-+	clock-frequency = <400000>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_i2c3>;
-+	status = "okay";
-+};
-+
  &sai3 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_sai3>;
-@@ -355,6 +362,13 @@
- 		>;
- 	};
- 
-+	pinctrl_i2c3: i2c3grp {
-+		fsl,pins = <
-+			MX8MM_IOMUXC_I2C3_SCL_I2C3_SCL			0x400001c3
-+			MX8MM_IOMUXC_I2C3_SDA_I2C3_SDA			0x400001c3
-+		>;
-+	};
-+
- 	pinctrl_pmic: pmicirq {
- 		fsl,pins = <
- 			MX8MM_IOMUXC_GPIO1_IO03_GPIO1_IO3		0x41
 -- 
 2.7.4
 
