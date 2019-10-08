@@ -2,72 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECA7ECFABB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 14:58:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E4C1CFAB8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 14:58:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bFrk1bRY5IotK1rsrACqmALB0FH2/kBP6tnoWJ8U1NE=; b=CI4wAcH068UNo8
-	fZZ7NnNmZYh3KD/wyHXd1K3nbmRL3Lhp3g3rRZzYoKpNk/2nk2OTDlfnWlKDzwNqU3JAVV/lBW3vK
-	3fazwtgyJXAi5ZF7nVn/dOoJvmTCAImqNyY1OvPk50/t6IeXaK8exdtOh9Bjzm+ZhQtCzkt9dV3hX
-	FoZZMW7m+QIOojwXt/beQa3Ei8UX6QUIvSuyURbGc1FvIXzgF2RofBYGVZCst8AA2nH6Ex05croUZ
-	Mm9xd09N+KRXqJFgThsfxoV4luZ1ZmF3Z9dUVuppPXbmKTfprfh1rKhojsEavk/k6Vefp+ansv8Ne
-	pVHm3TrCwzkSGPpW+tyA==;
+	List-Owner; bh=CNBtdMtVVPqOAloPcwJbJiAz03oHs2ODUAkx6E3DSQc=; b=KPy9+/QwvErKTr
+	m9OuQ20BsZMwPoDiqrD6xMkQZ2v994L570KhHau4gPSzewT57UcwHkooCVDpDN3bLHy1U+T0l/W95
+	TwMrFU4H1aqc2hoeRlAig51Xchv6rgSHsxVBN0wMp9KVCs3G2Nrlfsl+geMzAMsmi5f0e5VUyolsK
+	Z8heB2T6vbQi1o43kaBRY0hvcpP3gvTvoaWzt9iTBJ2iA5Q1Vd7BE0Gl3CVxzVy/SUQL7XyOydzZj
+	uYydbe/T2mdbYXTMeS7mGH6hU9jmNiQut5h4U3u/1xgV/H7o/e0vxZLcrhpff8yYy5Gd3AynL8dlm
+	dgI9JEkkP6QRocK/5Vdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHp4c-0007cE-K2; Tue, 08 Oct 2019 12:58:42 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1iHp4N-0007Nj-2r; Tue, 08 Oct 2019 12:58:27 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHp27-0005Qt-Hv
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 12:56:09 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x98Cu5Ob126487;
- Tue, 8 Oct 2019 07:56:05 -0500
+ id 1iHp2B-0005TZ-Bi
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 12:56:13 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x98Cu7VX106632;
+ Tue, 8 Oct 2019 07:56:07 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1570539365;
- bh=TLJzFaDGrfR7zYUgMJnTM6uHF4H+5qrJ9lcRIUGwjDw=;
+ s=ti-com-17Q1; t=1570539367;
+ bh=fLZbcw5wepXuSeFrsWtd637NuzfIOkB+KDiZWWlKW2M=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=Ue0LmDXn0OBUGTf+vcnZQZRL6hIUKexFIWVY8VzuLAe7KfkmmXYV6admEWySmOz19
- re10px739QA8nFh4PsC1O5oHs1wGbWeyueVP3CAPI0GjlDLSeZhBmPsNKJ6LMHmPnn
- sRYSJ0ZGyt7gR/G403oDO5FtEnmJ+wQ6UVrMzijo=
-Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id x98Cu4YO104369;
- Tue, 8 Oct 2019 07:56:05 -0500
-Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ b=nKb+EMpl73YpbffPEHXneacRz4aEFgQTaZzLlJGXySP2Kc3BNCpDc1I26w459+atd
+ YldPqahkYbo7s1swE6xc8rzNAnK89CauD66rVjplgWKDv1wMv8Y4d3gk5U1X08zuMA
+ oTVUB8SjVRbD+40S4ay5p54IF4SJHE+9c/Jvo8tI=
+Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x98Cu7LK126820
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 8 Oct 2019 07:56:07 -0500
+Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 8 Oct
- 2019 07:56:02 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
+ 2019 07:56:06 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 8 Oct 2019 07:56:02 -0500
+ Frontend Transport; Tue, 8 Oct 2019 07:56:06 -0500
 Received: from sokoban.bb.dnainternet.fi (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x98Ctk5F046741;
- Tue, 8 Oct 2019 07:56:03 -0500
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x98Ctk5G046741;
+ Tue, 8 Oct 2019 07:56:05 -0500
 From: Tero Kristo <t-kristo@ti.com>
 To: <linux-omap@vger.kernel.org>, <ssantosh@kernel.org>
-Subject: [PATCHv8 8/9] soc: ti: omap-prm: add am4 PRM data
-Date: Tue, 8 Oct 2019 15:55:43 +0300
-Message-ID: <20191008125544.20679-9-t-kristo@ti.com>
+Subject: [PATCHv8 9/9] soc: ti: omap-prm: add omap5 PRM data
+Date: Tue, 8 Oct 2019 15:55:44 +0300
+Message-ID: <20191008125544.20679-10-t-kristo@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191008125544.20679-1-t-kristo@ti.com>
 References: <20191008125544.20679-1-t-kristo@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_055607_707774_62611629 
-X-CRM114-Status: GOOD (  10.30  )
+X-CRM114-CacheID: sfid-20191008_055611_519088_D6D6D843 
+X-CRM114-Status: GOOD (  10.91  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -96,49 +97,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add PRM instance data for am4 family of SoCs. Initially this is just
+Add PRM instance data for omap5 family of SoCs. Initially this is just
 used to provide reset support.
 
 Signed-off-by: Tero Kristo <t-kristo@ti.com>
 ---
- drivers/soc/ti/omap_prm.c | 20 ++++++++++++++++++++
- 1 file changed, 20 insertions(+)
+ drivers/soc/ti/omap_prm.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
 diff --git a/drivers/soc/ti/omap_prm.c b/drivers/soc/ti/omap_prm.c
-index de11ce08ff7b..73ea64896770 100644
+index 73ea64896770..38e8704c51ad 100644
 --- a/drivers/soc/ti/omap_prm.c
 +++ b/drivers/soc/ti/omap_prm.c
-@@ -115,10 +115,30 @@ static const struct omap_prm_data am3_prm_data[] = {
+@@ -84,6 +84,14 @@ static const struct omap_prm_data omap4_prm_data[] = {
  	{ },
  };
  
-+static const struct omap_rst_map am4_per_rst_map[] = {
-+	{ .rst = 1, .st = 0 },
-+	{ .rst = -1 },
-+};
-+
-+static const struct omap_rst_map am4_device_rst_map[] = {
-+	{ .rst = 0, .st = 1 },
-+	{ .rst = 1, .st = 0 },
-+	{ .rst = -1 },
-+};
-+
-+static const struct omap_prm_data am4_prm_data[] = {
-+	{ .name = "gfx", .base = 0x44df0400, .rstctrl = 0x10, .rstst = 0x14, .rstmap = rst_map_0, .clkdm_name = "gfx_l3" },
-+	{ .name = "per", .base = 0x44df0800, .rstctrl = 0x10, .rstst = 0x14, .rstmap = am4_per_rst_map, .clkdm_name = "pruss_ocp" },
-+	{ .name = "wkup", .base = 0x44df2000, .rstctrl = 0x10, .rstst = 0x14, .rstmap = am3_wkup_rst_map, .flags = OMAP_PRM_HAS_NO_CLKDM },
-+	{ .name = "device", .base = 0x44df4000, .rstctrl = 0x0, .rstst = 0x4, .rstmap = am4_device_rst_map, .flags = OMAP_PRM_HAS_RSTCTRL | OMAP_PRM_HAS_NO_CLKDM },
++static const struct omap_prm_data omap5_prm_data[] = {
++	{ .name = "dsp", .base = 0x4ae06400, .rstctrl = 0x10, .rstst = 0x14, .rstmap = rst_map_01 },
++	{ .name = "core", .base = 0x4ae06700, .rstctrl = 0x210, .rstst = 0x214, .clkdm_name = "ipu", .rstmap = rst_map_012 },
++	{ .name = "iva", .base = 0x4ae07200, .rstctrl = 0x10, .rstst = 0x14, .rstmap = rst_map_012 },
++	{ .name = "device", .base = 0x4ae07c00, .rstctrl = 0x0, .rstst = 0x4, .rstmap = rst_map_01, .flags = OMAP_PRM_HAS_RSTCTRL | OMAP_PRM_HAS_NO_CLKDM },
 +	{ },
 +};
 +
+ static const struct omap_prm_data dra7_prm_data[] = {
+ 	{ .name = "dsp1", .base = 0x4ae06400, .rstctrl = 0x10, .rstst = 0x14, .rstmap = rst_map_01 },
+ 	{ .name = "ipu", .base = 0x4ae06500, .rstctrl = 0x10, .rstst = 0x14, .clkdm_name = "ipu1", .rstmap = rst_map_012 },
+@@ -136,6 +144,7 @@ static const struct omap_prm_data am4_prm_data[] = {
+ 
  static const struct of_device_id omap_prm_id_table[] = {
  	{ .compatible = "ti,omap4-prm-inst", .data = omap4_prm_data },
++	{ .compatible = "ti,omap5-prm-inst", .data = omap5_prm_data },
  	{ .compatible = "ti,dra7-prm-inst", .data = dra7_prm_data },
  	{ .compatible = "ti,am3-prm-inst", .data = am3_prm_data },
-+	{ .compatible = "ti,am4-prm-inst", .data = am4_prm_data },
- 	{ },
- };
- 
+ 	{ .compatible = "ti,am4-prm-inst", .data = am4_prm_data },
 -- 
 2.17.1
 
