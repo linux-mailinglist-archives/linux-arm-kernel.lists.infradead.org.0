@@ -2,56 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87BFFCF4CC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 10:16:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D04C9CF4D7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 10:19:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=trkUrxH4z4ZHcKuB2QwwbLymSr1yA+ZdnE9RPhPNZuU=; b=rBYdo/rwZou1Ze
-	XRrcHoMdh+Z7yhNOpD90bcmz3sL/0bzh+TnYsEoxtpMqPE84nWt5Uxtih3svJPAwYcVjKWIQ2SGE/
-	6Ip8AgJnLViVZHOfTPWDtTa83E/u9bGnRCS7/LUlL2HsbZtrRBne/lyqVrtffFLfQKsX0YT+GHWWl
-	mlqAlATkGB5zwbdc8iPMnwfk9wk89zGKRtCpdUpGUmL4Xj7a4VREHK6UNOTk8mZ8y5PBFDA7EOpZr
-	LreuscnT9ijK4ez7HZ4bhWcQIjJhkKGAqHGcchfqXwZDYmVlvVvZ0chJsdEs3mLkgd94yBL8TT873
-	9qY0+6n6zPBfuFaY2xFg==;
+	List-Owner; bh=ZcQPRhiQRtyUEzXaW1Bjtuts37z/8oFQozw/6qbDDRk=; b=eqQnqLReupW4AW
+	UwMsKn00AZx8NujJrpPTyIEoWQz6aTM0vzupKVfPHcImQ87WwjV3bPtcCveK/9uGmRAqXV46a37dR
+	sNjTS+jSUng64QiiCQL6fKvqDLoTud1b/cwWcesSXr0Ogrmbm2VwIj1mk0suDIyPkRKNCbOPAoMVV
+	LT6Zk3vD2REYZ9mM2qS54qya0JT4suApG0E5SkllaR5WZvzQPFbkLOK4LJFFzseGa5nqJpJDSwVE+
+	JtNV3N7nNiwQvlW3ANTNYyIEpTO9SXcKRcw671sXoJiqeyBZb7oEPP+5EYS1TwXGZqm5VXsOcZrq/
+	+TZuxsBDLiMqnM9p/Hjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHkfe-0007Mk-P7; Tue, 08 Oct 2019 08:16:38 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHkfU-0007MP-R6
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 08:16:30 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1EB871570;
- Tue,  8 Oct 2019 01:16:28 -0700 (PDT)
-Received: from localhost (e113682-lin.copenhagen.arm.com [10.32.145.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A69163F6C4;
- Tue,  8 Oct 2019 01:16:27 -0700 (PDT)
-Date: Tue, 8 Oct 2019 10:16:26 +0200
-From: Christoffer Dall <christoffer.dall@arm.com>
-To: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH 1/2] KVM: arm/arm64: Allow reporting non-ISV data aborts
- to userspace
-Message-ID: <20191008081626.GB4153@e113682-lin.lund.arm.com>
-References: <20190909121337.27287-1-christoffer.dall@arm.com>
- <20190909121337.27287-2-christoffer.dall@arm.com>
- <875463bb-caa7-f959-2ffa-7ae8eca04aff@arm.com>
+	id 1iHkhq-00082w-Ty; Tue, 08 Oct 2019 08:18:54 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHkhc-00081g-DO; Tue, 08 Oct 2019 08:18:46 +0000
+X-UUID: fe2c85b2217f4f4fa1b7216afc6934b0-20191008
+X-UUID: fe2c85b2217f4f4fa1b7216afc6934b0-20191008
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <yong.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 122399423; Tue, 08 Oct 2019 00:18:37 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 8 Oct 2019 01:18:35 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N1.mediatek.inc
+ (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Tue, 8 Oct 2019 16:18:33 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 8 Oct 2019 16:18:32 +0800
+Message-ID: <1570522712.19130.42.camel@mhfsdcap03>
+Subject: Re: [PATCH] iommu/mediatek: Move the tlb_sync into tlb_flush
+From: Yong Wu <yong.wu@mediatek.com>
+To: Will Deacon <will@kernel.org>
+Date: Tue, 8 Oct 2019 16:18:32 +0800
+In-Reply-To: <20190930120926.t26ydhgggi2scg3e@willie-the-truck>
+References: <1569822142-14303-1-git-send-email-yong.wu@mediatek.com>
+ <20190930120926.t26ydhgggi2scg3e@willie-the-truck>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <875463bb-caa7-f959-2ffa-7ae8eca04aff@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-TM-SNTS-SMTP: 7D17782CEA9D438245218EEEE6BBEC1C3BB60458E15FE650459FFB65E1DB5FFA2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_011628_967296_5FFAA5A4 
-X-CRM114-Status: GOOD (  31.39  )
+X-CRM114-CacheID: sfid-20191008_011844_051287_141CAF4D 
+X-CRM114-Status: GOOD (  22.13  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,116 +74,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Maydell <peter.maydell@linaro.org>,
- Daniel =?utf-8?B?UC4gQmVycmFuZ8Op?= <berrange@redhat.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
- Alexander Graf <graf@amazon.com>, linux-arm-kernel@lists.infradead.org,
- Stefan Hajnoczi <stefanha@redhat.com>,
- Heinrich Schuchardt <xypron.glpk@gmx.de>, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: youlin.pei@mediatek.com, anan.sun@mediatek.com,
+ Nicolas Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
+ srv_heupstream@mediatek.com, Tomasz Figa <tfiga@google.com>,
+ Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Evan Green <evgreen@chromium.org>,
+ chao.hao@mediatek.com, iommu@lists.linux-foundation.org,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 01, 2019 at 06:21:43PM +0100, James Morse wrote:
-> Hi Christoffer,
-> 
-> On 09/09/2019 13:13, Christoffer Dall wrote:
-> > For a long time, if a guest accessed memory outside of a memslot using
-> > any of the load/store instructions in the architecture which doesn't
-> > supply decoding information in the ESR_EL2 (the ISV bit is not set), the
-> > kernel would print the following message and terminate the VM as a
-> > result of returning -ENOSYS to userspace:
+On Mon, 2019-09-30 at 13:09 +0100, Will Deacon wrote:
+> On Mon, Sep 30, 2019 at 01:42:22PM +0800, Yong Wu wrote:
+> > The commit 4d689b619445 ("iommu/io-pgtable-arm-v7s: Convert to IOMMU API
+> > TLB sync") help move the tlb_sync of unmap from v7s into the iommu
+> > framework. It helps add a new function "mtk_iommu_iotlb_sync", But it
+> > lacked the dom->pgtlock, then it will cause the variable
+> > "tlb_flush_active" may be changed unexpectedly, we could see this warning
+> > log randomly:
 > > 
-> >   load/store instruction decoding not implemented
+> > mtk-iommu 10205000.iommu: Partial TLB flush timed out, falling back to
+> > full flush
 > > 
-> > The reason behind this message is that KVM assumes that all accesses
-> > outside a memslot is an MMIO access which should be handled by
-> > userspace, and we originally expected to eventually implement some sort
-> > of decoding of load/store instructions where the ISV bit was not set.
-> 
-> > However, it turns out that many of the instructions which don't provide
-> > decoding information on abort are not safe to use for MMIO accesses, and
-> > the remaining few that would potentially make sense to use on MMIO
-> > accesses, such as those with register writeback, are not used in
-> > practice.  It also turns out that fetching an instruction from guest
-> > memory can be a pretty horrible affair, involving stopping all CPUs on
-> > SMP systems, handling multiple corner cases of address translation in
-> > software, and more.  It doesn't appear likely that we'll ever implement
-> > this in the kernel.
-> 
-> > What is much more common is that a user has misconfigured his/her guest
-> > and is actually not accessing an MMIO region, but just hitting some
-> > random hole in the IPA space.  In this scenario, the error message above
-> > is almost misleading and has led to a great deal of confusion over the
-> > years.
+> > To fix this issue, we can add dom->pgtlock in the "mtk_iommu_iotlb_sync".
+> > And when checking this issue, we find that __arm_v7s_unmap call
+> > io_pgtable_tlb_add_flush consecutively when it is supersection/largepage,
+> > this also is potential unsafe for us. There is no tlb flush queue in the
+> > MediaTek M4U HW. The HW always expect the tlb_flush/tlb_sync one by one.
+> > If v7s don't always gurarantee the sequence, Thus, In this patch I move
+> > the tlb_sync into tlb_flush(also rename the function deleting "_nosync").
+> > and we don't care if it is leaf, rearrange the callback functions. Also,
+> > the tlb flush/sync was already finished in v7s, then iotlb_sync and
+> > iotlb_sync_all is unnecessary.
 > > 
-> > It is, nevertheless, ABI to userspace, and we therefore need to
-> > introduce a new capability that userspace explicitly enables to change
-> > behavior.
+> > Besides, there are two minor changes:
+> > a) Use writel for the register F_MMU_INV_RANGE which is for triggering the
+> > HW work. We expect all the setting(iova_start/iova_end...) have already
+> > been finished before F_MMU_INV_RANGE.
+> > b) Reduce the tlb timeout value from 100000us to 1000us. the original value
+> > is so long that affect the multimedia performance.
 > > 
-> > This patch introduces KVM_CAP_ARM_NISV_TO_USER (NISV meaning Non-ISV)
-> > which does exactly that, and introduces a new exit reason to report the
-> > event to userspace.  User space can then emulate an exception to the
-> > guest, restart the guest, suspend the guest, or take any other
-> > appropriate action as per the policy of the running system.
+> > Fixes: 4d689b619445 ("iommu/io-pgtable-arm-v7s: Convert to IOMMU API TLB sync")
+> > Signed-off-by: Chao Hao <chao.hao@mediatek.com>
+> > Signed-off-by: Yong Wu <yong.wu@mediatek.com>
+> > ---
+> > This patch looks break the logic for tlb_flush and tlb_sync. I'm not
+> > sure if it
+> > is reasonable. If someone has concern, I could change:
+> > a) Add dom->pgtlock in the mtk_iommu_iotlb_sync
+> > b) Add a io_pgtable_tlb_sync in [1].
 > 
-> 
-> 
-> > diff --git a/Documentation/virt/kvm/api.txt b/Documentation/virt/kvm/api.txt
-> > index 2d067767b617..02501333f746 100644
-> > --- a/Documentation/virt/kvm/api.txt
-> > +++ b/Documentation/virt/kvm/api.txt
-> > @@ -4453,6 +4453,35 @@ Hyper-V SynIC state change. Notification is used to remap SynIC
-> >  event/message pages and to enable/disable SynIC messages/events processing
-> >  in userspace.
-> >  
-> > +		/* KVM_EXIT_ARM_NISV */
-> > +		struct {
-> > +			__u64 esr_iss;
-> > +			__u64 fault_ipa;
-> > +		} arm_nisv;
-> > +
-> > +Used on arm and arm64 systems. If a guest accesses memory not in a memslot,
-> > +KVM will typically return to userspace and ask it to do MMIO emulation on its
-> > +behalf. However, for certain classes of instructions, no instruction decode
-> > +(direction, length of memory access) is provided, and fetching and decoding
-> > +the instruction from the VM is overly complicated to live in the kernel.
-> > +
-> > +Historically, when this situation occurred, KVM would print a warning and kill
-> > +the VM. KVM assumed that if the guest accessed non-memslot memory, it was
-> > +trying to do I/O, which just couldn't be emulated, and the warning message was
-> > +phrased accordingly. However, what happened more often was that a guest bug
-> > +caused access outside the guest memory areas which should lead to a more
-> > +mearningful warning message and an external abort in the guest, if the access
-> > +did not fall within an I/O window.
-> > +
-> > +Userspace implementations can query for KVM_CAP_ARM_NISV_TO_USER, and enable
-> > +this capability at VM creation. Once this is done, these types of errors will
-> > +instead return to userspace with KVM_EXIT_ARM_NISV, with the valid bits from
-> > +the HSR (arm) and ESR_EL2 (arm64) in the esr_iss field, and the faulting IPA
-> > +in the fault_ipa field. Userspace can either fix up the access if it's
-> > +actually an I/O access by decoding the instruction from guest memory (if it's
-> > +very brave) and continue executing the guest, or it can decide to suspend,
-> > +dump, or restart the guest.
-> 
-> Should we document which parts of instruction-emulation the VMM has to do?
-> 
-> For KVM_EXIT_MMIO, kvm looks after updating registers and advancing the PC and SS state
-> machine.
-> 
-> I can't see a kvm_skip_instr() in here, so the VMM has to do all of that stuff, including
-> any register post-increment, which is the reason we need the instruction in the first place.
+> The patch looks ok to me, but please could you split it up so that the
+> timeout and writel are done separately?
 
-I'll clarify that in this case, KVM will not do anything, including not
-advanding the PC.  As for what user space would actually have to do, I'd
-prefer not trying to put that in English here, because chances are that
-I'll be wrong.
+Thanks for the quick review, I will separate them.
 
-Thank,
+> 
+> Thanks,
+> 
+> Will
 
-    Christoffer
+
 
 _______________________________________________
 linux-arm-kernel mailing list
