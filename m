@@ -2,83 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E4C1CFAB8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 14:58:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2EE54CFAC2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 14:59:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CNBtdMtVVPqOAloPcwJbJiAz03oHs2ODUAkx6E3DSQc=; b=KPy9+/QwvErKTr
-	m9OuQ20BsZMwPoDiqrD6xMkQZ2v994L570KhHau4gPSzewT57UcwHkooCVDpDN3bLHy1U+T0l/W95
-	TwMrFU4H1aqc2hoeRlAig51Xchv6rgSHsxVBN0wMp9KVCs3G2Nrlfsl+geMzAMsmi5f0e5VUyolsK
-	Z8heB2T6vbQi1o43kaBRY0hvcpP3gvTvoaWzt9iTBJ2iA5Q1Vd7BE0Gl3CVxzVy/SUQL7XyOydzZj
-	uYydbe/T2mdbYXTMeS7mGH6hU9jmNiQut5h4U3u/1xgV/H7o/e0vxZLcrhpff8yYy5Gd3AynL8dlm
-	dgI9JEkkP6QRocK/5Vdg==;
+	List-Owner; bh=SpMZthXsbH6IXwodK2hoSJT6VfaOXf86bNU+NTnp5Jw=; b=WfBk4DVDm5h0HF
+	JY7qB4B8k7ikshMPg3t4JQa/wYaDd+jFYMkOuLygxJ5Tb+bHCTR370zN9IKCc/baLCvVGLiI5YhBT
+	UKnNJpIzgVGP6SSgM8cv0/am4SIB7WrYAukEGSKc2R3LUA1GJ2wf368vAoLfWzNOCcSHB1AtjZuiR
+	WZxII2ClbvqA5ep5F652L3//317EaFV2Bg1705kpZNasWPaTGBusW0Kd/CX3qA2jFENdc6IDQ1dYB
+	kUr3zE5NJvvwqRWnN/xr0Cc6OOOlp/j7/RP4B1D14Fj4wUD162DYC2GpZ3iwO9bO0O+MYBwWT07wo
+	R9z+d8+WQ5wVXqC6rpmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHp4N-0007Nj-2r; Tue, 08 Oct 2019 12:58:27 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1iHp58-00087U-9R; Tue, 08 Oct 2019 12:59:14 +0000
+Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHp2B-0005TZ-Bi
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 12:56:13 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x98Cu7VX106632;
- Tue, 8 Oct 2019 07:56:07 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1570539367;
- bh=fLZbcw5wepXuSeFrsWtd637NuzfIOkB+KDiZWWlKW2M=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=nKb+EMpl73YpbffPEHXneacRz4aEFgQTaZzLlJGXySP2Kc3BNCpDc1I26w459+atd
- YldPqahkYbo7s1swE6xc8rzNAnK89CauD66rVjplgWKDv1wMv8Y4d3gk5U1X08zuMA
- oTVUB8SjVRbD+40S4ay5p54IF4SJHE+9c/Jvo8tI=
-Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x98Cu7LK126820
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 8 Oct 2019 07:56:07 -0500
-Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 8 Oct
- 2019 07:56:06 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE101.ent.ti.com
- (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 8 Oct 2019 07:56:06 -0500
-Received: from sokoban.bb.dnainternet.fi (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x98Ctk5G046741;
- Tue, 8 Oct 2019 07:56:05 -0500
-From: Tero Kristo <t-kristo@ti.com>
-To: <linux-omap@vger.kernel.org>, <ssantosh@kernel.org>
-Subject: [PATCHv8 9/9] soc: ti: omap-prm: add omap5 PRM data
-Date: Tue, 8 Oct 2019 15:55:44 +0300
-Message-ID: <20191008125544.20679-10-t-kristo@ti.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191008125544.20679-1-t-kristo@ti.com>
-References: <20191008125544.20679-1-t-kristo@ti.com>
+ id 1iHp3d-0006qv-Dm
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 12:57:43 +0000
+Received: from localhost (91.red-2-139-156.staticip.rima-tde.net
+ [2.139.156.91]) (Authenticated sender: gregory.clement@bootlin.com)
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id A0E1D240004;
+ Tue,  8 Oct 2019 12:57:28 +0000 (UTC)
+From: Gregory CLEMENT <gregory.clement@bootlin.com>
+To: Tomasz Maciej Nowak <tmn505@gmail.com>, Jason Cooper <jason@lakedaemon.net>,
+ Andrew Lunn <andrew@lunn.ch>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH v2] arm64: dts: marvell: add ESPRESSObin variants
+In-Reply-To: <87a7abtn0y.fsf@FE-laptop>
+References: <20190603155354.3902-1-tmn505@gmail.com> <87a7abtn0y.fsf@FE-laptop>
+Date: Tue, 08 Oct 2019 14:57:27 +0200
+Message-ID: <877e5ftmx4.fsf@FE-laptop>
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_055611_519088_D6D6D843 
-X-CRM114-Status: GOOD (  10.91  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191008_055741_616144_F1956336 
+X-CRM114-Status: UNSURE (   7.96  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.230 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,53 +62,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tony@atomide.com, devicetree@vger.kernel.org, p.zabel@pengutronix.de,
- linux-arm-kernel@lists.infradead.org
+Cc: Konstantin Porotchkin <kostap@marvell.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add PRM instance data for omap5 family of SoCs. Initially this is just
-used to provide reset support.
+> Hi Tomasz Maciej Nowak,
+>
+>> This commit adds dts for different variants of ESPRESSObin board:
+>>
+>> ESPRESSObin with soldered eMMC,
+>>
+>> ESPRESSObin V7, compared to prior versions some passive elements changed
+>> and ethernet ports labels positions have been reversed,
+>>
+>> ESPRESSObin V7 with soldered eMMC.
+>>
+>> Since most of elements are the same, one common dtsi is created and
+>> referenced in each dts of particular variant.
+>>
+>> Signed-off-by: Tomasz Maciej Nowak <tmn505@gmail.com>
+>
+>
+> Applied on mvebu/dt
 
-Signed-off-by: Tero Kristo <t-kristo@ti.com>
----
- drivers/soc/ti/omap_prm.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
+I meant mvebu/dt64
 
-diff --git a/drivers/soc/ti/omap_prm.c b/drivers/soc/ti/omap_prm.c
-index 73ea64896770..38e8704c51ad 100644
---- a/drivers/soc/ti/omap_prm.c
-+++ b/drivers/soc/ti/omap_prm.c
-@@ -84,6 +84,14 @@ static const struct omap_prm_data omap4_prm_data[] = {
- 	{ },
- };
- 
-+static const struct omap_prm_data omap5_prm_data[] = {
-+	{ .name = "dsp", .base = 0x4ae06400, .rstctrl = 0x10, .rstst = 0x14, .rstmap = rst_map_01 },
-+	{ .name = "core", .base = 0x4ae06700, .rstctrl = 0x210, .rstst = 0x214, .clkdm_name = "ipu", .rstmap = rst_map_012 },
-+	{ .name = "iva", .base = 0x4ae07200, .rstctrl = 0x10, .rstst = 0x14, .rstmap = rst_map_012 },
-+	{ .name = "device", .base = 0x4ae07c00, .rstctrl = 0x0, .rstst = 0x4, .rstmap = rst_map_01, .flags = OMAP_PRM_HAS_RSTCTRL | OMAP_PRM_HAS_NO_CLKDM },
-+	{ },
-+};
-+
- static const struct omap_prm_data dra7_prm_data[] = {
- 	{ .name = "dsp1", .base = 0x4ae06400, .rstctrl = 0x10, .rstst = 0x14, .rstmap = rst_map_01 },
- 	{ .name = "ipu", .base = 0x4ae06500, .rstctrl = 0x10, .rstst = 0x14, .clkdm_name = "ipu1", .rstmap = rst_map_012 },
-@@ -136,6 +144,7 @@ static const struct omap_prm_data am4_prm_data[] = {
- 
- static const struct of_device_id omap_prm_id_table[] = {
- 	{ .compatible = "ti,omap4-prm-inst", .data = omap4_prm_data },
-+	{ .compatible = "ti,omap5-prm-inst", .data = omap5_prm_data },
- 	{ .compatible = "ti,dra7-prm-inst", .data = dra7_prm_data },
- 	{ .compatible = "ti,am3-prm-inst", .data = am3_prm_data },
- 	{ .compatible = "ti,am4-prm-inst", .data = am4_prm_data },
+>
+> Sorry for the delay.
+>
+> Thanks,
+>
+> Gregory
 -- 
-2.17.1
-
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+Gregory Clement, Bootlin
+Embedded Linux and Kernel engineering
+http://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
