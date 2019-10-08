@@ -2,84 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E8B4CFA62
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 14:50:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1650FCFA79
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 14:54:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RA9AlH4e+1PUZFFeKeoMQQ3ydJYggRs1pvcBmGutHkg=; b=UVRAW4q1Ucms7i
-	+DeLLBQkxZklKbKp20BB9u7kFkzqlnQJqYhw5WbbyXnMtfT+s2s2yx+otath76AXD3B81+HdxBVy3
-	+0utTwTgH3o3AgYMYDh/GntYqa2fhvDw8/905z2QMjuXX6oHsmzeCEnhAW4F9P6AMy0aOA3EQyKyp
-	QXTETJVcoL33ikdVPhbXS2jGZOm2+cgWT4C2xV59P/JvnBIQ2PqBUyqdiswx3mWfTMwDw7W8GD6cZ
-	SeqFbBzt48j/RnNsITknLOQK6KsxX7dsulX4BDECwDZRtgO8n7GvZ1bDYNM/r2GxULLzhpluHW8p5
-	iIGgGttuRBHsyCyw1mcg==;
+	References:List-Owner; bh=Oy7LWkZ5+MdbYsOofhdLrNym1zQjfgCbRzo64sYB+Is=; b=idf
+	M5BP9wxeHPiJAjUUw9WOrqrfObglXAekoJuGI5IaYQGG3+kqf+qsCH8liJQQISX6JnvmK7aLfsl0j
+	t9paoFeXDKUqgvsHSuDgb86zF0pOjkbfOxNdGkDzjMT40pPrWA7OjpVzXootS4dg8HHNx5+7iIhZw
+	VSK6De2U3mvpEOFnHO30Es2hcGVO3G6uv0s0ytmbPSNWdmnklPvzp+OVDTPBa8hyJN5kcgjcU9BnO
+	2agOfLWB+6k14CtnApZj0N/Kw5gF9/fkRw9iPqm2CTXmNhAbTvlodded5pX8wKZNxyhEQHdVcWdN/
+	1dWyX2KKBJH+YcyW8apBO6RgVDa9asw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHox3-0002FD-96; Tue, 08 Oct 2019 12:50:53 +0000
-Received: from mail-wm1-f66.google.com ([209.85.128.66])
+	id 1iHozt-00036P-8W; Tue, 08 Oct 2019 12:53:49 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHowv-0002EO-GI
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 12:50:46 +0000
-Received: by mail-wm1-f66.google.com with SMTP id i16so3016673wmd.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 08 Oct 2019 05:50:44 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=bFWMwkdfgSlqbJTIDocqKJvGwcD57UaC11+rFmnz6Kc=;
- b=KMfV7oksswXQRot5E7H5lPzJemN0vWtiQ2e7kHskL2B8qH25vbQVFqKaNQOltPhQX2
- Ece1LT2R2w4Rfa7IdkQMSS35FpLXwvanWukscgQrsW7g4Tg7rbNb735DNQGM8Moq4UWp
- RPbZebVLwb9dfUVP4mPYpp26YwpjAv0Tb60n6g0gKXD5gOLO10m2UaMdafCX1sWZvOcW
- KYr4Cip+JHMhwqsGkPsbV5YR7bgspZY7DmKJHJyMsgMOxMkjNnTzcD0/eQeEvv/vh0v9
- z0WNHNkZrPBZSWbTa+4mK1Rsp3QXcjby9E4DGAmNBNYj1l7Chc47jpeCEPGs7Eml23EV
- sFjQ==
-X-Gm-Message-State: APjAAAUffTb5pKO0BYTxkSwfzOyRR2brVSBN6XgwwQWD6tAoGdnW2Gpp
- gTpnXG4y11tZsfCCDtoasok=
-X-Google-Smtp-Source: APXvYqynsGw67zM/kLC2+YxQ7cWPgz0Fnub1csInHDDTqUjZRtD9OaXw2dWRP/82MQmeVhcp3vQOIg==
-X-Received: by 2002:a7b:cd13:: with SMTP id f19mr3469466wmj.4.1570539043033;
- Tue, 08 Oct 2019 05:50:43 -0700 (PDT)
-Received: from pi3 ([194.230.155.145])
- by smtp.googlemail.com with ESMTPSA id 63sm24153438wri.25.2019.10.08.05.50.41
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 08 Oct 2019 05:50:42 -0700 (PDT)
-Date: Tue, 8 Oct 2019 14:50:38 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Rob Herring <robh+dt@kernel.org>
-Subject: Re: [PATCH 1/3] dt-bindings: arm: samsung: Force clkoutN names to be
- unique in PMU
-Message-ID: <20191008125038.GA2550@pi3>
-References: <20191004151414.8458-1-krzk@kernel.org>
- <CAL_JsqJDTcHu5oXG6zszGHCBhTE6EW94AANUjyMV78SkKcn5yA@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAL_JsqJDTcHu5oXG6zszGHCBhTE6EW94AANUjyMV78SkKcn5yA@mail.gmail.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+ id 1iHozj-00035L-OQ; Tue, 08 Oct 2019 12:53:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=8ZyBzxmPDZ0eyBVDumHL6hLnaIS3O2/wuFjVBskv8A0=; b=GCgkapxY4U32
+ 9NmKd3Htg5Cpu644HnC16Ccvdz3q1wX1FFX1Vy9XaLSdkMwCTursu7O6K0dKsMd5bW+iw1AV7NZEl
+ hyMkhWGy7zwumga4kqgo8JkpT1hOCDXF+zOZvpNFrgmNDvfCgRF8n6L1M/haxW7KvdXwrOw4DTKtf
+ IAGAw=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1iHozf-0008Q0-H9; Tue, 08 Oct 2019 12:53:35 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 00B9F2740D4A; Tue,  8 Oct 2019 13:53:34 +0100 (BST)
+From: Mark Brown <broonie@kernel.org>
+To: Jiaxin Yu <jiaxin.yu@mediatek.com>
+Subject: Applied "ASoC: mt8183: fix audio playback slowly after playback
+ during bootup" to the asoc tree
+In-Reply-To: <1569580317-21181-5-git-send-email-jiaxin.yu@mediatek.com>
+X-Patchwork-Hint: ignore
+Message-Id: <20191008125335.00B9F2740D4A@ypsilon.sirena.org.uk>
+Date: Tue,  8 Oct 2019 13:53:34 +0100 (BST)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_055045_542015_2CB509A9 
-X-CRM114-Status: GOOD (  16.05  )
-X-Spam-Score: 3.8 (+++)
+X-CRM114-CacheID: sfid-20191008_055339_800166_D1AA73E0 
+X-CRM114-Status: GOOD (  14.03  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (3.8 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [194.230.155.145 listed in zen.spamhaus.org]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.66 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
+ no trust [172.104.155.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.66 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,64 +77,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- Maciej Falkowski <m.falkowski@samsung.com>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- David Airlie <airlied@linux.ie>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Kukjin Kim <kgene@kernel.org>,
- Daniel Vetter <daniel@ffwll.ch>, Lee Jones <lee.jones@linaro.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: mark.rutland@arm.com, alsa-devel@alsa-project.org, tzungbi@google.com,
+ yong.liang@mediatek.com, lgirdwood@gmail.com, jiaxin.yu@mediatek.com,
+ perex@perex.cz, robh+dt@kernel.org, Mark Brown <broonie@kernel.org>,
+ linux-mediatek@lists.infradead.org, linux@roeck-us.net, eason.yen@mediatek.com,
+ wim@linux-watchdog.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 08, 2019 at 07:38:14AM -0500, Rob Herring wrote:
-> On Fri, Oct 4, 2019 at 10:14 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> >
-> > The clkoutN names of clocks must be unique because they represent
-> > unique inputs of clock multiplexer.
-> >
-> > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> > ---
-> >  Documentation/devicetree/bindings/arm/samsung/pmu.yaml | 6 ++++--
-> >  1 file changed, 4 insertions(+), 2 deletions(-)
-> >
-> > diff --git a/Documentation/devicetree/bindings/arm/samsung/pmu.yaml b/Documentation/devicetree/bindings/arm/samsung/pmu.yaml
-> > index 73b56fc5bf58..d8e03716f5d2 100644
-> > --- a/Documentation/devicetree/bindings/arm/samsung/pmu.yaml
-> > +++ b/Documentation/devicetree/bindings/arm/samsung/pmu.yaml
-> > @@ -53,8 +53,10 @@ properties:
-> >        List of clock names for particular CLKOUT mux inputs
-> >      minItems: 1
-> >      maxItems: 32
-> > -    items:
-> > -      pattern: '^clkout([0-9]|[12][0-9]|3[0-1])$'
-> > +    allOf:
-> > +      - items:
-> > +          pattern: '^clkout([0-9]|[12][0-9]|3[0-1])$'
-> > +      - uniqueItems: true
-> 
-> You shouldn't need the 'allOf', just add uniqueItems at the same level as items.
+The patch
 
-If you mean something like:
-  56     uniqueItems: true
-  57     items:
-  58       pattern: '^clkout([0-9]|[12][0-9]|3[0-1])$'
+   ASoC: mt8183: fix audio playback slowly after playback during bootup
 
-Then the dt_binding_check fails:
+has been applied to the asoc tree at
 
-dev/linux/Documentation/devicetree/bindings/arm/samsung/pmu.yaml: properties:clock-names:
-'uniqueItems' is not one of ['$ref', 'additionalItems', 'additionalProperties', 'allOf', 'anyOf', 'const', 'contains', 'default', 'dependencies', 'deprecated', 'description', 'else', 'enum', 'items', 'if', 'minItems', 'minimum', 'maxItems', 'maximum', 'not', 'oneOf', 'pattern', 'patternProperties', 'properties', 'required', 'then', 'type', 'typeSize', 'unevaluatedProperties']
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.5
 
-Best regards,
-Krzysztof
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
 
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From 9e985503ee4b23d576c303a17dfe52cfc8f32727 Mon Sep 17 00:00:00 2001
+From: Jiaxin Yu <jiaxin.yu@mediatek.com>
+Date: Fri, 27 Sep 2019 18:31:57 +0800
+Subject: [PATCH] ASoC: mt8183: fix audio playback slowly after playback during
+ bootup
+
+Before regmap_reinit_cache we must reset audio regs as default values.
+So we use reset controller unit(toprgu) to reset audio hw.
+
+Signed-off-by: Jiaxin Yu <jiaxin.yu@mediatek.com>
+Reviewed-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
+Link: https://lore.kernel.org/r/1569580317-21181-5-git-send-email-jiaxin.yu@mediatek.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ sound/soc/mediatek/mt8183/mt8183-afe-pcm.c | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+diff --git a/sound/soc/mediatek/mt8183/mt8183-afe-pcm.c b/sound/soc/mediatek/mt8183/mt8183-afe-pcm.c
+index 4a31106d3471..721632386a50 100644
+--- a/sound/soc/mediatek/mt8183/mt8183-afe-pcm.c
++++ b/sound/soc/mediatek/mt8183/mt8183-afe-pcm.c
+@@ -11,6 +11,7 @@
+ #include <linux/of.h>
+ #include <linux/of_address.h>
+ #include <linux/pm_runtime.h>
++#include <linux/reset.h>
+ 
+ #include "mt8183-afe-common.h"
+ #include "mt8183-afe-clk.h"
+@@ -1089,6 +1090,7 @@ static int mt8183_afe_pcm_dev_probe(struct platform_device *pdev)
+ 	struct mtk_base_afe *afe;
+ 	struct mt8183_afe_private *afe_priv;
+ 	struct device *dev;
++	struct reset_control *rstc;
+ 	int i, irq_id, ret;
+ 
+ 	afe = devm_kzalloc(&pdev->dev, sizeof(*afe), GFP_KERNEL);
+@@ -1126,6 +1128,19 @@ static int mt8183_afe_pcm_dev_probe(struct platform_device *pdev)
+ 		return ret;
+ 	}
+ 
++	rstc = devm_reset_control_get(dev, "audiosys");
++	if (IS_ERR(rstc)) {
++		ret = PTR_ERR(rstc);
++		dev_err(dev, "could not get audiosys reset:%d\n", ret);
++		return ret;
++	}
++
++	ret = reset_control_reset(rstc);
++	if (ret) {
++		dev_err(dev, "failed to trigger audio reset:%d\n", ret);
++		return ret;
++	}
++
+ 	/* enable clock for regcache get default value from hw */
+ 	afe_priv->pm_runtime_bypass_reg_ctl = true;
+ 	pm_runtime_get_sync(&pdev->dev);
+-- 
+2.20.1
 
 
 _______________________________________________
