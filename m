@@ -2,57 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22E68CF844
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 13:32:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C499CF871
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 13:34:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=WbLPbGvwYXqEfJtvae7uWKd+fAB1sKUEd6zGBLjncrU=; b=Q7Bg1k4pNh86edPlpTKDhRFcV
-	PeDjAaXFMZUeqvBYDUom8m17SMcL7SRBO9MSc/liomU4gFgEud4y84NqjzsL927KiOZ36xkPne4gQ
-	SdRJycIv32gUmpL2+6/RNBr9z74kbIFPIjXb2ELorhPy4qYmglSfzTvl5U91P1hsBqOQj60rl/fKe
-	RCcQ4LWkIhvVPJUZrnO/5I/eK6citq2uxwt5jsojTj+MJdE7oJJCEG5DDtOqUdUbQbC0Mu/XKE1ci
-	8pcMQkD6HWLXWOTgaAspbD3VPkCf8FG/CzHpioqWBPPSO1Xe2Ca1x5DvAq1uCjAZejxvOXeclO4gl
-	+AGRJj6yA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=swa4fjvBFU2yJsusoUzJikRRx+Rld8UmPydFwB2G5Ho=; b=J9yaY6BN1/Hfdt
+	tYNDs/quWLdBlP8UTZCBEXsXPOVOFB2gJnqfMVU1aHticeHb7ozbfiB5xXY63Ai926z7wZ5Stysha
+	Jno7teMp4qpEQgV43SH0QuIW0DdA6OEZLvHRnnk4sl0z6gzIc6UNNcVZnsPM9+ROOU38f5PBLIGuZ
+	wDQ8sNLeYpR67QPFvDC/g+6tT3KNqQykG1kT1W3vXU0AXqWjPPc6X/IvpgHqav63jHc4IeO+C/E/f
+	lP3I4XAbVSAz1wrZ9dKVQpNknzckI/3s6l1lxa32PY3IyoT4zWX0ykFRo2E83hQYpw/unTrai0bn+
+	Qm7OtgvZ8h2GCLIKmx2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHnit-0005yD-BM; Tue, 08 Oct 2019 11:32:11 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+	id 1iHnlE-0006Pr-H4; Tue, 08 Oct 2019 11:34:36 +0000
+Received: from out4-smtp.messagingengine.com ([66.111.4.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHnim-0005x1-B4; Tue, 08 Oct 2019 11:32:06 +0000
-X-Originating-IP: 81.185.168.180
-Received: from [192.168.43.237] (180.168.185.81.rev.sfr.net [81.185.168.180])
- (Authenticated sender: alex@ghiti.fr)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 4F5AEFF809;
- Tue,  8 Oct 2019 11:31:43 +0000 (UTC)
-Subject: Re: [PATCH v11 07/22] riscv: mm: Add p?d_leaf() definitions
-To: Steven Price <steven.price@arm.com>, linux-mm@kvack.org
-References: <20191007153822.16518-1-steven.price@arm.com>
- <20191007153822.16518-8-steven.price@arm.com>
-From: Alex Ghiti <alex@ghiti.fr>
-Message-ID: <69a56736-4093-202a-4eaf-feeaaa0216d1@ghiti.fr>
-Date: Tue, 8 Oct 2019 07:31:42 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iHnl5-0006Og-L5
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 11:34:29 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.nyi.internal (Postfix) with ESMTP id 6DA6C20C8D;
+ Tue,  8 Oct 2019 07:34:24 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute4.internal (MEProxy); Tue, 08 Oct 2019 07:34:24 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
+ :to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm3; bh=POMHwN73ao1VX1XVvng87eUIHu
+ egEN2mJo0ATUF+SyY=; b=OXOEf1pIx5XZ0ox5FfAl5t+OYKHLONEym8sqHCQxJ6
+ Vo0oe30Ejx09yZwPsas7W9SqOb8oliFwwoVbWhq+pYt439X3uY3uJwvpbLGfUSxb
+ ta0z4DcQbl6FqenkmpLZ1cskDxIrpxosWLAo2u6R7FNLVdm0a5Ow2evcdK7WRifu
+ SjA1UOXuSm646fZ4jicKeILwaH7fwrD4005YWfhRNRUqFN8ayXObB6dKe4DFTeDF
+ 9pxp/AsnBTQf6WUJmNOvWHfrl/lkbWApPd0l3GZXv/1GkCVwegOuckvhMzz2Ap1c
+ 6krOWgtGtX4vSVOYJRImd9RtOwB/4XPvI50bivyEyNgw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=POMHwN73ao1VX1XVv
+ ng87eUIHuegEN2mJo0ATUF+SyY=; b=NFbew7aNCP9NXA76QE4YKLrHIat/7qMna
+ 3Bl7XmoCuC8RuOugY2EfJ8q1JKXOJuajWtRoZX8Cy9Dl3GnmOoSi0CMwYi2FuH7i
+ pIYMGRn/jcsqS92XFaUqnZ669+hmutHQVUyYRBledc3XvyXd//Est6mIfDdtMsO1
+ ECTBampCoEQ+vGo7D8+kdFlqTSu2xAKBnajrPzf+702AlIsQr759IKWg+KvRWWRZ
+ P7vLiyTXUbGO2KI7nQ5BRvE3ljX/yc6gN5qIgd8xMPDDDsO0Ww2CpQrfhIETYZik
+ VqF5vQHbwv9bajYuMjIiJb12AuvKs3n/Zzs/v0qiCccGSIHr5g4Mg==
+X-ME-Sender: <xms:P3ScXTKx9szxQfYf8k00yQS_d5JWZFBaRQufZzxcl9uxnsRDvZn_KQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrheelgdegfecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffoggfgsedtkeertdertd
+ dtnecuhfhrohhmpeetnhgurhgvficulfgvfhhfvghrhicuoegrnhgurhgvfiesrghjrdhi
+ ugdrrghuqeenucfkphepvddtfedrheejrddvudehrddujeeknecurfgrrhgrmhepmhgrih
+ hlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgvrhfuihiivgep
+ td
+X-ME-Proxy: <xmx:P3ScXZ-iU2Yieq3etzQ-OntBIonjhalisjdnWTwiadUFjNYIU58fCA>
+ <xmx:P3ScXXLxOxTvyDiPHqHN2GT1pYlxbFRzWS7D1iocQ3kd4RTvDz5BGQ>
+ <xmx:P3ScXX_g8RG_akPyo9xQLnqLi30tDmpkf6eBwEfw0DR1NQySwhWRAg>
+ <xmx:QHScXbSDaCra_m8nRs_5Ton2b0jljcgYvhxmGAsJzSorXwzt-vAmvA>
+Received: from mistburn.lan (203-57-215-178.dyn.iinet.net.au [203.57.215.178])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 811BBD6005D;
+ Tue,  8 Oct 2019 07:34:19 -0400 (EDT)
+From: Andrew Jeffery <andrew@aj.id.au>
+To: linux-clk@vger.kernel.org
+Subject: [PATCH 0/2] clk: aspeed: Expose RMII RCLK gate for MACs 1-2 on AST2500
+Date: Tue,  8 Oct 2019 22:05:21 +1030
+Message-Id: <20191008113523.13601-1-andrew@aj.id.au>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20191007153822.16518-8-steven.price@arm.com>
-Content-Language: sv-FI
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_043204_520141_D3DF17CB 
-X-CRM114-Status: GOOD (  16.55  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191008_043427_999212_30AC2EC7 
+X-CRM114-Status: UNSURE (   5.55  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.199 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ low trust [66.111.4.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,93 +100,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, "H. Peter Anvin" <hpa@zytor.com>,
- linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>, "Liang,
- Kan" <kan.liang@linux.intel.com>, x86@kernel.org,
- Ingo Molnar <mingo@redhat.com>, Palmer Dabbelt <palmer@sifive.com>,
- Albert Ou <aou@eecs.berkeley.edu>, Arnd Bergmann <arnd@arndb.de>,
- =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, Andrew Morton <akpm@linux-foundation.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-aspeed@lists.ozlabs.org, sboyd@kernel.org, mturquette@baylibre.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, joel@jms.id.au,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/7/19 11:38 AM, Steven Price wrote:
-> walk_page_range() is going to be allowed to walk page tables other than
-> those of user space. For this it needs to know when it has reached a
-> 'leaf' entry in the page tables. This information is provided by the
-> p?d_leaf() functions/macros.
->
-> For riscv a page is a leaf page when it has a read, write or execute bit
-> set on it.
->
-> CC: Palmer Dabbelt <palmer@sifive.com>
-> CC: Albert Ou <aou@eecs.berkeley.edu>
-> CC: linux-riscv@lists.infradead.org
-> Signed-off-by: Steven Price <steven.price@arm.com>
-> ---
->   arch/riscv/include/asm/pgtable-64.h | 7 +++++++
->   arch/riscv/include/asm/pgtable.h    | 7 +++++++
->   2 files changed, 14 insertions(+)
->
-> diff --git a/arch/riscv/include/asm/pgtable-64.h b/arch/riscv/include/asm/pgtable-64.h
-> index 74630989006d..e88a8e8acbdf 100644
-> --- a/arch/riscv/include/asm/pgtable-64.h
-> +++ b/arch/riscv/include/asm/pgtable-64.h
-> @@ -43,6 +43,13 @@ static inline int pud_bad(pud_t pud)
->   	return !pud_present(pud);
->   }
->   
-> +#define pud_leaf	pud_leaf
-> +static inline int pud_leaf(pud_t pud)
-> +{
-> +	return pud_present(pud)
-> +		&& (pud_val(pud) & (_PAGE_READ | _PAGE_WRITE | _PAGE_EXEC));
-> +}
-> +
->   static inline void set_pud(pud_t *pudp, pud_t pud)
->   {
->   	*pudp = pud;
-> diff --git a/arch/riscv/include/asm/pgtable.h b/arch/riscv/include/asm/pgtable.h
-> index 7255f2d8395b..b9a679153265 100644
-> --- a/arch/riscv/include/asm/pgtable.h
-> +++ b/arch/riscv/include/asm/pgtable.h
-> @@ -130,6 +130,13 @@ static inline int pmd_bad(pmd_t pmd)
->   	return !pmd_present(pmd);
->   }
->   
-> +#define pmd_leaf	pmd_leaf
-> +static inline int pmd_leaf(pmd_t pmd)
-> +{
-> +	return pmd_present(pmd)
-> +		&& (pmd_val(pmd) & (_PAGE_READ | _PAGE_WRITE | _PAGE_EXEC));
-> +}
-> +
->   static inline void set_pmd(pmd_t *pmdp, pmd_t pmd)
->   {
->   	*pmdp = pmd;
+Hello,
 
-Hi Steven,
+This series is two small changes enable kernel support for controlling the RMII
+RCLK gate on AST2500-based systems. Previously the kernel has assumed u-boot
+has ungated RCLK for networking to function.
 
-The way you check leaf entries is correct: we do the same for hugepages. 
-So is
-there a reason you did not use the pmd/pud_huge functions that are 
-defined in
-arch/riscv/mm/hugetlbpage.c ?
+RMII is commonly used for NCSI, which itself is commonly used for BMC-based
+designs to reduce cabling requirements for the platform.
 
-Anyway, FWIW:
+Please review!
 
-Reviewed-by: Alexandre Ghiti <alex@ghiti.fr>
+Andrew
 
-Thanks,
+Andrew Jeffery (2):
+  dt-bindings: clock: Add AST2500 RMII RCLK definitions
+  clk: aspeed: Add RMII RCLK gates for both AST2500 MACs
 
-Alex
+ drivers/clk/clk-aspeed.c                 | 27 +++++++++++++++++++++++-
+ include/dt-bindings/clock/aspeed-clock.h |  2 ++
+ 2 files changed, 28 insertions(+), 1 deletion(-)
+
+-- 
+2.20.1
 
 
 _______________________________________________
