@@ -2,85 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4014CCFA23
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 14:40:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D82A6CFA32
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 14:42:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AzWpYPuYatK6aPJEeWNy4Qe3UTIOEZLjOF+pzMasWb0=; b=rzckmjs7OnE0BY
-	A8RFbIzhKZ/wBH73jfyPJzeC4Z+epod9urAJ8oAT2TSmY3K4g9NhEbwpryUedOezNHUAeKqU60+19
-	nD+Gvl07bP/bUktmVD3zm4iFrruyrT4XCzSOBsqMaF6LQwb4j+CQrmJ2ziLMQ2sk+0JZ45iK4IyK4
-	+4wOPfDZfiY1BCjOqOalZ8tq35Whc0M6OWOwY8OMUjBtDpWBjWkSNO69znhG6bJyQZPswTy8eRWcl
-	pG/upT8pJbfjhNkuIG6zgaqk4xlT5Ed2AIMuwXgtUCPSsmXHxE7NdQv+Tc3ecKpOc0MXCQMwLCUB3
-	zyw0MB832SdkbXT9jpPQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=+zK7QwGBlJfcsXEqB6jh8x8KjMQ2/+KD58FFK/NiWo4=; b=tVzkwhkJOPxIDQD2XCo1EEwZE
+	br5aaVyIpIoUAcq/+KF/MT3xE/Ebx0bpbfHeG5J/blCP1eYgPVvQ4Z4fV1C8FJlI2G46ldWWDsbPD
+	uFnwxwNX5gM2gdBRODLCXXVmfPxmfMOsbeq5g2oHfZTqI7fyZ/UY2tljmksgj2AGPPulk5ZxhCoGb
+	r3ZYLrVmmSgm0mEP/lbt+9q/pHcKuEYYROO35wl2byo8klwxDUiMfLVqXHbSLwd4L3TEOTaarT28N
+	pV9yBlr/JMaYBnclYi+ae+h3GEl9RLQmUWXupc0pL3YS1qlNymSLzudfZsbS0BeJm+yBVxUs7P+Jp
+	NKw87To/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHomu-00062m-BI; Tue, 08 Oct 2019 12:40:24 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1iHooq-0006jd-6H; Tue, 08 Oct 2019 12:42:24 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHomY-0004uW-Er
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 12:40:04 +0000
-Received: by mail-qt1-x843.google.com with SMTP id c4so12308146qtn.10
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 08 Oct 2019 05:40:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=0jJTLY2axsts6GZT3PA6D788BPaMX3GUaWV0Vzd1RXM=;
- b=fydorapLglYueHDm9H8p4AT688wrHVmN/5BLYTckwzJV/hAERlr6H3K4qoiKBtFGyo
- Qqsz931IkrwgOJzNNIHLJ4B3AVscmOsqqQrfmBYgtSP2tKBChMznGpsmEugFmEbcT5KX
- SkpxY/1+OmNS7lpVyQHn1fjYhxCoKBBR8JLvo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=0jJTLY2axsts6GZT3PA6D788BPaMX3GUaWV0Vzd1RXM=;
- b=X+Un7AdDGH/eqhvelq6s2DRIf4XF3SuMh/J5yAvCMHnjaQH8r9pq7TsKQBlI8eb6fO
- CnlSdkrMEkA1DmzZtUwxobc0sFq4+wuOqGBMaeMfQlNVO/H7hj8HKBQnnemzO8mtNY4l
- xGo4AKxytspwmugxaoxBJiNVmw88QEsSGLw4L5/yLvp+5ebCE3bkYVfSXel74SO+SWpU
- AZLUvVb8yK0Q7jDmTXygiBgXInBamzJWlY3AjM6VUFiqsUKzhQrheaYb4NjbaWsGu0Jg
- IuFX54LL7KlB6fzzVN5eOSYkP6v/qvbX+F5G5UoSV4qqvfmg9ZYrTbTioyO+DHz9+aff
- 6nTQ==
-X-Gm-Message-State: APjAAAUO/HWKCP11dIcyShTqa3/IeHXx54SW5v/OGsSu1Y1KEpYegQLO
- b4GeVQz3ss11MbpXk0iIJijZsDWFr2Q+DVazVtI=
-X-Google-Smtp-Source: APXvYqyIRMp1F0ik7vkJep0KVirm5HNPl0oLZUOXJNQc+afvhAryjXpJ1n7wrnxW5Q1z+DRlElhn/MKulVSC3i9vSX0=
-X-Received: by 2002:ac8:2e94:: with SMTP id h20mr36037220qta.234.1570538400593; 
- Tue, 08 Oct 2019 05:40:00 -0700 (PDT)
+ id 1iHooh-0006jC-Ix
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 12:42:17 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x98Cg8Qa125316;
+ Tue, 8 Oct 2019 07:42:08 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1570538528;
+ bh=rM082lErilysa/gP6hHtlnyuYioxvnxSBZCZXIuODTo=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=IQb9ED4rrcr1p2aDB3/I/4YEaMaJ4bE0GzjIkFgdaj1uHKqx3nJyywF6tiCKIStEl
+ ev8ipsFMMSzXcGsH7RdoDYblZeFgcpEdOOVcAax+pztrNp1w1MyoTsv6Cdo3NhOZzU
+ FTwtA5XIdv9Sv7gJCyxv5aXs3aZtQYwXnLwKqSis=
+Received: from DFLE109.ent.ti.com (dfle109.ent.ti.com [10.64.6.30])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x98Cg896108236
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 8 Oct 2019 07:42:08 -0500
+Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 8 Oct
+ 2019 07:42:05 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Tue, 8 Oct 2019 07:42:08 -0500
+Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x98Cg62q019948;
+ Tue, 8 Oct 2019 07:42:06 -0500
+Subject: Re: [PATCHv7 2/9] soc: ti: add initial PRM driver with reset control
+ support
+To: Philipp Zabel <p.zabel@pengutronix.de>, <linux-omap@vger.kernel.org>,
+ <ssantosh@kernel.org>
+References: <20191008071913.28740-1-t-kristo@ti.com>
+ <20191008071913.28740-3-t-kristo@ti.com>
+ <1570534767.18914.1.camel@pengutronix.de>
+From: Tero Kristo <t-kristo@ti.com>
+Message-ID: <5a2833e7-b967-c5fd-f50a-89dbd3ddf1a1@ti.com>
+Date: Tue, 8 Oct 2019 15:42:05 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20191008113553.13662-1-andrew@aj.id.au>
- <20191008113553.13662-3-andrew@aj.id.au>
-In-Reply-To: <20191008113553.13662-3-andrew@aj.id.au>
-From: Joel Stanley <joel@jms.id.au>
-Date: Tue, 8 Oct 2019 12:39:49 +0000
-Message-ID: <CACPK8XfSrKym55eQ91Lhf3wXtzCD5AH7P8t19jow2K-5JRb0ZA@mail.gmail.com>
-Subject: Re: [PATCH 2/2] clk: ast2600: Add RMII RCLK gates for all four MACs
-To: Andrew Jeffery <andrew@aj.id.au>
+In-Reply-To: <1570534767.18914.1.camel@pengutronix.de>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_054002_547547_5F91B653 
-X-CRM114-Status: GOOD (  17.93  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191008_054215_754317_A8ADABBA 
+X-CRM114-Status: GOOD (  23.38  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (joel.stan[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,127 +95,228 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, linux-clk@vger.kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: tony@atomide.com, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 8 Oct 2019 at 11:35, Andrew Jeffery <andrew@aj.id.au> wrote:
->
-> RCLK is a fixed 50MHz clock derived from HPLL/HCLK that is described by a
-> single gate for each MAC.
->
-> Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+On 08/10/2019 14:39, Philipp Zabel wrote:
+> On Tue, 2019-10-08 at 10:19 +0300, Tero Kristo wrote:
+>> Add initial PRM (Power and Reset Management) driver for TI OMAP class
+>> SoCs. Initially this driver only supports reset control, but can be
+>> extended to support rest of the functionality, like powerdomain
+>> control, PRCM irq support etc.
+>>
+>> Signed-off-by: Tero Kristo <t-kristo@ti.com>
+>> ---
+>>   arch/arm/mach-omap2/Kconfig |   1 +
+>>   drivers/soc/ti/Makefile     |   1 +
+>>   drivers/soc/ti/omap_prm.c   | 259 ++++++++++++++++++++++++++++++++++++
+>>   3 files changed, 261 insertions(+)
+>>   create mode 100644 drivers/soc/ti/omap_prm.c
+>>
+>> diff --git a/arch/arm/mach-omap2/Kconfig b/arch/arm/mach-omap2/Kconfig
+>> index fdb6743760a2..ad08d470a2ca 100644
+>> --- a/arch/arm/mach-omap2/Kconfig
+>> +++ b/arch/arm/mach-omap2/Kconfig
+>> @@ -109,6 +109,7 @@ config ARCH_OMAP2PLUS
+>>   	select TI_SYSC
+>>   	select OMAP_IRQCHIP
+>>   	select CLKSRC_TI_32K
+>> +	select ARCH_HAS_RESET_CONTROLLER
+>>   	help
+>>   	  Systems based on OMAP2, OMAP3, OMAP4 or OMAP5
+>>   
+>> diff --git a/drivers/soc/ti/Makefile b/drivers/soc/ti/Makefile
+>> index b3868d392d4f..788b5cd1e180 100644
+>> --- a/drivers/soc/ti/Makefile
+>> +++ b/drivers/soc/ti/Makefile
+>> @@ -6,6 +6,7 @@ obj-$(CONFIG_KEYSTONE_NAVIGATOR_QMSS)	+= knav_qmss.o
+>>   knav_qmss-y := knav_qmss_queue.o knav_qmss_acc.o
+>>   obj-$(CONFIG_KEYSTONE_NAVIGATOR_DMA)	+= knav_dma.o
+>>   obj-$(CONFIG_AMX3_PM)			+= pm33xx.o
+>> +obj-$(CONFIG_ARCH_OMAP2PLUS)		+= omap_prm.o
+>>   obj-$(CONFIG_WKUP_M3_IPC)		+= wkup_m3_ipc.o
+>>   obj-$(CONFIG_TI_SCI_PM_DOMAINS)		+= ti_sci_pm_domains.o
+>>   obj-$(CONFIG_TI_SCI_INTA_MSI_DOMAIN)	+= ti_sci_inta_msi.o
+>> diff --git a/drivers/soc/ti/omap_prm.c b/drivers/soc/ti/omap_prm.c
+>> new file mode 100644
+>> index 000000000000..ab0b66ad715d
+>> --- /dev/null
+>> +++ b/drivers/soc/ti/omap_prm.c
+>> @@ -0,0 +1,259 @@
+>> +// SPDX-License-Identifier: GPL-2.0
+>> +/*
+>> + * OMAP2+ PRM driver
+>> + *
+>> + * Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com/
+>> + *	Tero Kristo <t-kristo@ti.com>
+>> + */
+>> +
+>> +#include <linux/kernel.h>
+>> +#include <linux/device.h>
+>> +#include <linux/io.h>
+>> +#include <linux/iopoll.h>
+>> +#include <linux/of.h>
+>> +#include <linux/of_device.h>
+>> +#include <linux/platform_device.h>
+>> +#include <linux/reset-controller.h>
+>> +#include <linux/delay.h>
+>> +
+>> +struct omap_rst_map {
+>> +	s8 rst;
+>> +	s8 st;
+>> +};
+>> +
+>> +struct omap_prm_data {
+>> +	u32 base;
+>> +	const char *name;
+>> +	u16 rstctrl;
+>> +	u16 rstst;
+>> +	const struct omap_rst_map *rstmap;
+>> +	u8 flags;
+>> +};
+>> +
+>> +struct omap_prm {
+>> +	const struct omap_prm_data *data;
+>> +	void __iomem *base;
+>> +};
+>> +
+>> +struct omap_reset_data {
+>> +	struct reset_controller_dev rcdev;
+>> +	struct omap_prm *prm;
+>> +	u32 mask;
+>> +	spinlock_t lock;
+>> +};
+>> +
+>> +#define to_omap_reset_data(p) container_of((p), struct omap_reset_data, rcdev)
+>> +
+>> +#define OMAP_MAX_RESETS		8
+>> +#define OMAP_RESET_MAX_WAIT	10000
+>> +
+>> +#define OMAP_PRM_HAS_RSTCTRL	BIT(0)
+>> +#define OMAP_PRM_HAS_RSTST	BIT(1)
+>> +
+>> +#define OMAP_PRM_HAS_RESETS	(OMAP_PRM_HAS_RSTCTRL | OMAP_PRM_HAS_RSTST)
+>> +
+>> +static const struct of_device_id omap_prm_id_table[] = {
+>> +	{ },
+>> +};
+>> +
+>> +static bool _is_valid_reset(struct omap_reset_data *reset, unsigned long id)
+>> +{
+>> +	if (reset->mask & BIT(id))
+>> +		return true;
+>> +
+>> +	return false;
+>> +}
+>> +
+>> +static int omap_reset_get_st_bit(struct omap_reset_data *reset,
+>> +				 unsigned long id)
+>> +{
+>> +	const struct omap_rst_map *map = reset->prm->data->rstmap;
+>> +
+>> +	while (map->rst >= 0) {
+>> +		if (map->rst == id)
+>> +			return map->st;
+>> +
+>> +		map++;
+>> +	}
+>> +
+>> +	return id;
+>> +}
+>> +
+>> +static int omap_reset_status(struct reset_controller_dev *rcdev,
+>> +			     unsigned long id)
+>> +{
+>> +	struct omap_reset_data *reset = to_omap_reset_data(rcdev);
+>> +	u32 v;
+>> +	int st_bit = omap_reset_get_st_bit(reset, id);
+>> +	bool has_rstst = reset->prm->data->rstst ||
+>> +		(reset->prm->data->flags & OMAP_PRM_HAS_RSTST);
+>> +
+>> +	/* Check if we have rstst */
+>> +	if (!has_rstst)
+>> +		return -ENOTSUPP;
+>> +
+>> +	/* Check if hw reset line is asserted */
+>> +	v = readl_relaxed(reset->prm->base + reset->prm->data->rstctrl);
+>> +	if (v & BIT(id))
+>> +		return 1;
+>> +
+>> +	/*
+>> +	 * Check reset status, high value means reset sequence has been
+>> +	 * completed successfully so we can return 0 here (reset deasserted)
+>> +	 */
+>> +	v = readl_relaxed(reset->prm->base + reset->prm->data->rstst);
+>> +	v >>= st_bit;
+>> +	v &= 1;
+>> +
+>> +	return !v;
+>> +}
+>> +
+>> +static int omap_reset_assert(struct reset_controller_dev *rcdev,
+>> +			     unsigned long id)
+>> +{
+>> +	struct omap_reset_data *reset = to_omap_reset_data(rcdev);
+>> +	u32 v;
+>> +	unsigned long flags;
+>> +
+>> +	/* assert the reset control line */
+>> +	spin_lock_irqsave(&reset->lock, flags);
+>> +	v = readl_relaxed(reset->prm->base + reset->prm->data->rstctrl);
+>> +	v |= 1 << id;
+>> +	writel_relaxed(v, reset->prm->base + reset->prm->data->rstctrl);
+>> +	spin_unlock_irqrestore(&reset->lock, flags);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static int omap_reset_deassert(struct reset_controller_dev *rcdev,
+>> +			       unsigned long id)
+>> +{
+>> +	struct omap_reset_data *reset = to_omap_reset_data(rcdev);
+>> +	u32 v;
+>> +	int st_bit;
+>> +	bool has_rstst;
+>> +	unsigned long flags;
+>> +
+>> +	has_rstst = reset->prm->data->rstst ||
+>> +		(reset->prm->data->flags & OMAP_PRM_HAS_RSTST);
+>> +
+>> +	if (has_rstst) {
+>> +		st_bit = omap_reset_get_st_bit(reset, id);
+>> +
+>> +		/* Clear the reset status by writing 1 to the status bit */
+>> +		v = readl_relaxed(reset->prm->base + reset->prm->data->rstst);
+>> +		v |= 1 << st_bit;
+>> +		writel_relaxed(v, reset->prm->base + reset->prm->data->rstst);
+> 
+> Could this accidentally clear the bits of other already completed
+> resets? If this is a "write 1 to clear" register, and writing zero bits
+> has no effect, I'd expect this to be just:
+> 
+> 		v = 1 << st_bit;
+> 		writel_relaxed(v, reset->prm->base + reset->prm->data->rstst);
 
-We could have mac12rclk and mac34rclk described in the device tree, as
-was mentioned in previous reviews of the aspeed driver, but I think we
-can defer that
-rework until we rework the rest of the driver. Importantly, that won't
-change the MAC bindings or the code that the drivers need to use.
+You are right, good catch there. Just checked against TRMs and 
+functionality in code and this is true, writing the status bit only as 1 
+suffices.
 
-Reviewed-by: Joel Stanley <joel@jms.id.au>
+Also checked the legacy hwmod based implementation for this, and it 
+seems like this has always been broken, however the reset signals are 
+quite fast to toggle so it hasn't caused any visible problems before...
 
+> With this fixed (or, if I am mistaken, clarified):
+> Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
 
-> ---
->  drivers/clk/clk-ast2600.c | 47 ++++++++++++++++++++++++++++++++++++++-
->  1 file changed, 46 insertions(+), 1 deletion(-)
->
-> diff --git a/drivers/clk/clk-ast2600.c b/drivers/clk/clk-ast2600.c
-> index 1c1bb39bb04e..3d6fc781fee0 100644
-> --- a/drivers/clk/clk-ast2600.c
-> +++ b/drivers/clk/clk-ast2600.c
-> @@ -15,7 +15,7 @@
->
->  #include "clk-aspeed.h"
->
-> -#define ASPEED_G6_NUM_CLKS             67
-> +#define ASPEED_G6_NUM_CLKS             71
->
->  #define ASPEED_G6_SILICON_REV          0x004
->
-> @@ -40,6 +40,9 @@
->
->  #define ASPEED_G6_STRAP1               0x500
->
-> +#define ASPEED_MAC12_CLK_DLY           0x340
-> +#define ASPEED_MAC34_CLK_DLY           0x350
-> +
->  /* Globally visible clocks */
->  static DEFINE_SPINLOCK(aspeed_g6_clk_lock);
->
-> @@ -485,6 +488,11 @@ static int aspeed_g6_clk_probe(struct platform_device *pdev)
->                 return PTR_ERR(hw);
->         aspeed_g6_clk_data->hws[ASPEED_CLK_SDIO] = hw;
->
-> +       /* MAC1/2 RMII 50MHz RCLK */
-> +       hw = clk_hw_register_fixed_rate(dev, "mac12rclk", "hpll", 0, 50000000);
-> +       if (IS_ERR(hw))
-> +               return PTR_ERR(hw);
-> +
->         /* MAC1/2 AHB bus clock divider */
->         hw = clk_hw_register_divider_table(dev, "mac12", "hpll", 0,
->                         scu_g6_base + ASPEED_G6_CLK_SELECTION1, 16, 3, 0,
-> @@ -494,6 +502,27 @@ static int aspeed_g6_clk_probe(struct platform_device *pdev)
->                 return PTR_ERR(hw);
->         aspeed_g6_clk_data->hws[ASPEED_CLK_MAC12] = hw;
->
-> +       /* RMII1 50MHz (RCLK) output enable */
-> +       hw = clk_hw_register_gate(dev, "mac1rclk-gate", "mac12rclk", 0,
-> +                       scu_g6_base + ASPEED_MAC12_CLK_DLY, 29, 0,
-> +                       &aspeed_g6_clk_lock);
-> +       if (IS_ERR(hw))
-> +               return PTR_ERR(hw);
-> +       aspeed_g6_clk_data->hws[ASPEED_CLK_GATE_MAC1RCLK] = hw;
-> +
-> +       /* RMII2 50MHz (RCLK) output enable */
-> +       hw = clk_hw_register_gate(dev, "mac2rclk-gate", "mac12rclk", 0,
-> +                       scu_g6_base + ASPEED_MAC12_CLK_DLY, 30, 0,
-> +                       &aspeed_g6_clk_lock);
-> +       if (IS_ERR(hw))
-> +               return PTR_ERR(hw);
-> +       aspeed_g6_clk_data->hws[ASPEED_CLK_GATE_MAC2RCLK] = hw;
-> +
-> +       /* MAC1/2 RMII 50MHz RCLK */
-> +       hw = clk_hw_register_fixed_rate(dev, "mac34rclk", "hclk", 0, 50000000);
-> +       if (IS_ERR(hw))
-> +               return PTR_ERR(hw);
-> +
->         /* MAC3/4 AHB bus clock divider */
->         hw = clk_hw_register_divider_table(dev, "mac34", "hpll", 0,
->                         scu_g6_base + 0x310, 24, 3, 0,
-> @@ -503,6 +532,22 @@ static int aspeed_g6_clk_probe(struct platform_device *pdev)
->                 return PTR_ERR(hw);
->         aspeed_g6_clk_data->hws[ASPEED_CLK_MAC34] = hw;
->
-> +       /* RMII3 50MHz (RCLK) output enable */
-> +       hw = clk_hw_register_gate(dev, "mac3rclk-gate", "mac34rclk", 0,
-> +                       scu_g6_base + ASPEED_MAC34_CLK_DLY, 29, 0,
-> +                       &aspeed_g6_clk_lock);
-> +       if (IS_ERR(hw))
-> +               return PTR_ERR(hw);
-> +       aspeed_g6_clk_data->hws[ASPEED_CLK_GATE_MAC3RCLK] = hw;
-> +
-> +       /* RMII4 50MHz (RCLK) output enable */
-> +       hw = clk_hw_register_gate(dev, "mac4rclk-gate", "mac34rclk", 0,
-> +                       scu_g6_base + ASPEED_MAC34_CLK_DLY, 30, 0,
-> +                       &aspeed_g6_clk_lock);
-> +       if (IS_ERR(hw))
-> +               return PTR_ERR(hw);
-> +       aspeed_g6_clk_data->hws[ASPEED_CLK_GATE_MAC4RCLK] = hw;
-> +
->         /* LPC Host (LHCLK) clock divider */
->         hw = clk_hw_register_divider_table(dev, "lhclk", "hpll", 0,
->                         scu_g6_base + ASPEED_G6_CLK_SELECTION1, 20, 3, 0,
-> --
-> 2.20.1
->
+Thanks, will post v8 with this fix.
+
+-Tero
+--
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
