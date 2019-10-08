@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48BABCF696
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 11:57:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0205CF697
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 11:57:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=foiBWwv4vycDT/6CXi7GctdBIOr1uxSrYs4Ssj5uXAA=; b=F6ugt8ow2AWpbD
-	1sLpPEifxF1QRG4pYdEPtNYA693fC7u8weaTTpqbmgeJiniU8WnsNmU5S2deI2LRH723Bkc7sVlHJ
-	dxCn/7sVthvTx2IgEW8IUTVlTn5VqDmFqLK7c4gB/Js3jfPM2EjI8QZQ/RXaarq850q6GVirheuLH
-	j/WvnDFQ0d/lUoyYFhx5aY1yFeh7AYZxEUXyObtIas+6lsBTjEJmhAqFMaTyXsnilwNUtqixmuCkA
-	SRheKsG5EWqy4dsyWlGNNuaDiLMU2ychI+g3X8iBz0X/qehM6WRpVlxZ+wJJYg5SZUhp4P4EJEpPZ
-	OmWnO1/YQYhGVIhxk7bw==;
+	List-Owner; bh=sEDxsVlz28v7nBO2J1PGPrUva652YJE6cMKNLiEW6gw=; b=mlDsGmWSR3vwyk
+	tkQ0X6jTph1brUK7725atkBQMHIftC5tOftw688y4U/YcNftvvcT09kvTMK+hPY+tQbubiJUw3lJR
+	QdPUU9i1cvODd2wlDNAE0OVFxcKZvYh67gWLfYOwNYIs2RYQIoo+mFsFP5RwKFD8Uf9G3Q7VFB6fV
+	TxBGBTReYp4UhQRf4VMfzQyIG3m1A+Kq7TFeEnbWVKbdAloa/5HLum1bCt1v74osMKCGCxgVEiPdz
+	+eAmhwY27n+d7wLpF+dNaAULyHCT7dCQT6+IiYmpYa4BVmQg8WXb2F+PWCiaHpT2qp6avX2gk5dVL
+	3jprOK3A1mM+tuJlT3gQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHmEu-00053l-Ve; Tue, 08 Oct 2019 09:57:08 +0000
+	id 1iHmF9-0005I7-4k; Tue, 08 Oct 2019 09:57:23 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHmEF-0004bz-Uz
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 09:56:29 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ id 1iHmEG-0004c8-DG
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 09:56:30 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x989pbJd007847; Tue, 8 Oct 2019 11:56:21 +0200
+ x989oqB2017657; Tue, 8 Oct 2019 11:56:23 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=+WKocQi+fVCxqzWsFLYGJL7udht10qEyhti+mMSoK38=;
- b=pEFTw1bpl0PaZnmFW25tB5LfSMtmfv2CAtArRTPHp6h3iRkMiJwoTYo1JoRlcqTjkcmY
- O0tkKTnXVKqmXSO8WViX7Dr8K67qIkTnyrALRVct1vi1m3q0SwGkKzLYXpSJhTlIcfhj
- rrR2uC5r2u4uhl290I048GdaFbdlFuIN//iwzRhJJqNkeKjSc86crVkp3IjUIpN+rFhr
- 4iamTgdEPJNjy4x5NzzxiXiyIuNvEFnBf4+WI0ntMAXPV5JqmQVTRjIPQzTs3QicrUVI
- zsghJQ9ZjTrT7HasAl97eDx/conjixw9qlYTb43LOW/be4ahHE/ZDHiMU/L/+NCs4Otm OQ== 
+ bh=D1YTtXGlnn9n+wzMgmKua3M6JR/Hf72FY8yVMBQwtWI=;
+ b=wWOV9dlnI7b6wCn4MtpVrTkngtTOGrtkV+7uI304jlygQIo0HZnhy2bmoAAC+rDCaAOi
+ RnoFi1Z75OPIfdl+J8qwKHXWSMnZHf8SqCECwbDvUITf/bKCNqd+FbnegDoUij9cu4B6
+ mf6CJGoLaAA+NqUenNV4QQ/ej5Rd7kkFKW28/ii4HX8tXKcGeBVOiAe1A3UPxT8TjUip
+ VwqaGi56ABUH2z47yR/yB+efUHuIo4B/x5iHd5tH9ImE0rBKhbu3pDIywgE/KquKomIk
+ 1EYE4wuVA1MK4iOKRGcFxngbXaM6sGAdE8K7L9+SKbm2Ewf5EDLYNtZKM6pjqy7n/IBh Ag== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2vegxvqdq3-1
+ by mx07-00178001.pphosted.com with ESMTP id 2vegn0qfsd-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 08 Oct 2019 11:56:21 +0200
+ Tue, 08 Oct 2019 11:56:23 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 273CA100038;
- Tue,  8 Oct 2019 11:56:21 +0200 (CEST)
-Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1AC742B40AD;
- Tue,  8 Oct 2019 11:56:21 +0200 (CEST)
-Received: from SAFEX1HUBCAS23.st.com (10.75.90.46) by Safex1hubcas24.st.com
- (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 8 Oct 2019
- 11:56:21 +0200
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 992D310002A;
+ Tue,  8 Oct 2019 11:56:22 +0200 (CEST)
+Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 8E79A2B40AF;
+ Tue,  8 Oct 2019 11:56:22 +0200 (CEST)
+Received: from SAFEX1HUBCAS23.st.com (10.75.90.46) by Safex1hubcas22.st.com
+ (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 8 Oct 2019
+ 11:56:22 +0200
 Received: from lmecxl0923.lme.st.com (10.48.0.237) by webmail-ga.st.com
  (10.75.90.48) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 8 Oct 2019
- 11:56:20 +0200
+ 11:56:21 +0200
 From: Ludovic Barre <ludovic.Barre@st.com>
 To: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH V7 2/3] mmc: mmci: add busy_complete callback
-Date: Tue, 8 Oct 2019 11:56:03 +0200
-Message-ID: <20191008095604.20675-3-ludovic.Barre@st.com>
+Subject: [PATCH V7 3/3] mmc: mmci: sdmmc: add busy_complete callback
+Date: Tue, 8 Oct 2019 11:56:04 +0200
+Message-ID: <20191008095604.20675-4-ludovic.Barre@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191008095604.20675-1-ludovic.Barre@st.com>
 References: <20191008095604.20675-1-ludovic.Barre@st.com>
@@ -65,8 +65,8 @@ X-Originating-IP: [10.48.0.237]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
  definitions=2019-10-08_03:2019-10-07,2019-10-08 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_025628_291132_DC16C666 
-X-CRM114-Status: GOOD (  23.69  )
+X-CRM114-CacheID: sfid-20191008_025628_735421_31D04A18 
+X-CRM114-Status: GOOD (  19.78  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -106,207 +106,115 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Ludovic Barre <ludovic.barre@st.com>
 
-This patch adds busy_completion callback at mmci_host_ops
-to allow to define a specific busy completion by variant.
+This patch adds a specific busy_complete callback for sdmmc variant.
 
-The legacy code corresponding to busy completion used
-by ux500 variants is moved to ux500_busy_complete function.
+sdmmc has 2 status flags:
+-busyd0: This is a hardware status flag (inverted value of d0 line).
+it does not generate an interrupt.
+-busyd0end: This indicates only end of busy following a CMD response.
+On busy to Not busy changes, an interrupt is generated (if unmask)
+and BUSYD0END status flag is set. Status flag is cleared by writing
+corresponding interrupt clear bit in MMCICLEAR.
+
+The legacy busy completion has no dedicated interrupt for the end
+of busy, so it's must monitor step by step the busy progression.
+On sdmmc variant, this procedure is not needed, it's just need
+to wait the busyd0end interrupt.
 
 Signed-off-by: Ludovic Barre <ludovic.barre@st.com>
 ---
- drivers/mmc/host/mmci.c | 134 +++++++++++++++++++++-------------------
- drivers/mmc/host/mmci.h |   1 +
- 2 files changed, 73 insertions(+), 62 deletions(-)
+ drivers/mmc/host/mmci.c             |  4 +++
+ drivers/mmc/host/mmci.h             |  1 +
+ drivers/mmc/host/mmci_stm32_sdmmc.c | 42 +++++++++++++++++++++++++++++
+ 3 files changed, 47 insertions(+)
 
 diff --git a/drivers/mmc/host/mmci.c b/drivers/mmc/host/mmci.c
-index ed0b40287dea..5e53f9b6d82a 100644
+index 5e53f9b6d82a..40e72c30ea84 100644
 --- a/drivers/mmc/host/mmci.c
 +++ b/drivers/mmc/host/mmci.c
-@@ -44,6 +44,7 @@
- #define DRIVER_NAME "mmci-pl18x"
- 
- static void mmci_variant_init(struct mmci_host *host);
-+static void ux500_variant_init(struct mmci_host *host);
- static void ux500v2_variant_init(struct mmci_host *host);
- 
- static unsigned int fmax = 515633;
-@@ -184,7 +185,7 @@ static struct variant_data variant_ux500 = {
- 	.irq_pio_mask		= MCI_IRQ_PIO_MASK,
- 	.start_err		= MCI_STARTBITERR,
- 	.opendrain		= MCI_OD,
--	.init			= mmci_variant_init,
-+	.init			= ux500_variant_init,
+@@ -262,6 +262,10 @@ static struct variant_data variant_stm32_sdmmc = {
+ 	.datalength_bits	= 25,
+ 	.datactrl_blocksz	= 14,
+ 	.stm32_idmabsize_mask	= GENMASK(12, 5),
++	.busy_timeout		= true,
++	.busy_detect		= true,
++	.busy_detect_flag	= MCI_STM32_BUSYD0,
++	.busy_detect_mask	= MCI_STM32_BUSYD0ENDMASK,
+ 	.init			= sdmmc_variant_init,
  };
  
- static struct variant_data variant_ux500v2 = {
-@@ -610,6 +611,67 @@ static u32 ux500v2_get_dctrl_cfg(struct mmci_host *host)
- 	return MCI_DPSM_ENABLE | (host->data->blksz << 16);
+diff --git a/drivers/mmc/host/mmci.h b/drivers/mmc/host/mmci.h
+index 2a0b98f98c36..158e1231aa23 100644
+--- a/drivers/mmc/host/mmci.h
++++ b/drivers/mmc/host/mmci.h
+@@ -164,6 +164,7 @@
+ #define MCI_ST_CARDBUSY		(1 << 24)
+ /* Extended status bits for the STM32 variants */
+ #define MCI_STM32_BUSYD0	BIT(20)
++#define MCI_STM32_BUSYD0END	BIT(21)
+ 
+ #define MMCICLEAR		0x038
+ #define MCI_CMDCRCFAILCLR	(1 << 0)
+diff --git a/drivers/mmc/host/mmci_stm32_sdmmc.c b/drivers/mmc/host/mmci_stm32_sdmmc.c
+index 8e83ae6920ae..1de855d29ad4 100644
+--- a/drivers/mmc/host/mmci_stm32_sdmmc.c
++++ b/drivers/mmc/host/mmci_stm32_sdmmc.c
+@@ -282,6 +282,47 @@ static u32 sdmmc_get_dctrl_cfg(struct mmci_host *host)
+ 	return datactrl;
  }
  
-+static bool ux500_busy_complete(struct mmci_host *host, u32 status, u32 err_msk)
++static bool sdmmc_busy_complete(struct mmci_host *host, u32 status, u32 err_msk)
 +{
 +	void __iomem *base = host->base;
++	u32 busy_d0, busy_d0end, mask, sdmmc_status;
++
++	mask = readl_relaxed(base + MMCIMASK0);
++	sdmmc_status = readl_relaxed(base + MMCISTATUS);
++	busy_d0end = sdmmc_status & MCI_STM32_BUSYD0END;
++	busy_d0 = sdmmc_status & MCI_STM32_BUSYD0;
++
++	/* complete if there is an error or busy_d0end */
++	if ((status & err_msk) || busy_d0end)
++		goto complete;
 +
 +	/*
-+	 * Before unmasking for the busy end IRQ, confirm that the
-+	 * command was sent successfully. To keep track of having a
-+	 * command in-progress, waiting for busy signaling to end,
-+	 * store the status in host->busy_status.
-+	 *
-+	 * Note that, the card may need a couple of clock cycles before
-+	 * it starts signaling busy on DAT0, hence re-read the
-+	 * MMCISTATUS register here, to allow the busy bit to be set.
-+	 * Potentially we may even need to poll the register for a
-+	 * while, to allow it to be set, but tests indicates that it
-+	 * isn't needed.
++	 * On response the busy signaling is reflected in the BUSYD0 flag.
++	 * if busy_d0 is in-progress we must activate busyd0end interrupt
++	 * to wait this completion. Else this request has no busy step.
 +	 */
-+	if (!host->busy_status && !(status & err_msk) &&
-+	    (readl(base + MMCISTATUS) & host->variant->busy_detect_flag)) {
-+		writel(readl(base + MMCIMASK0) |
-+		       host->variant->busy_detect_mask,
-+		       base + MMCIMASK0);
-+
-+		host->busy_status = status & (MCI_CMDSENT | MCI_CMDRESPEND);
++	if (busy_d0) {
++		if (!host->busy_status) {
++			writel_relaxed(mask | host->variant->busy_detect_mask,
++				       base + MMCIMASK0);
++			host->busy_status = status &
++				(MCI_CMDSENT | MCI_CMDRESPEND);
++		}
 +		return false;
 +	}
 +
-+	/*
-+	 * If there is a command in-progress that has been successfully
-+	 * sent, then bail out if busy status is set and wait for the
-+	 * busy end IRQ.
-+	 *
-+	 * Note that, the HW triggers an IRQ on both edges while
-+	 * monitoring DAT0 for busy completion, but there is only one
-+	 * status bit in MMCISTATUS for the busy state. Therefore
-+	 * both the start and the end interrupts needs to be cleared,
-+	 * one after the other. So, clear the busy start IRQ here.
-+	 */
-+	if (host->busy_status &&
-+	    (status & host->variant->busy_detect_flag)) {
-+		writel(host->variant->busy_detect_mask, base + MMCICLEAR);
-+		return false;
-+	}
-+
-+	/*
-+	 * If there is a command in-progress that has been successfully
-+	 * sent and the busy bit isn't set, it means we have received
-+	 * the busy end IRQ. Clear and mask the IRQ, then continue to
-+	 * process the command.
-+	 */
++complete:
 +	if (host->busy_status) {
-+		writel(host->variant->busy_detect_mask, base + MMCICLEAR);
-+
-+		writel(readl(base + MMCIMASK0) &
-+		       ~host->variant->busy_detect_mask, base + MMCIMASK0);
++		writel_relaxed(mask & ~host->variant->busy_detect_mask,
++			       base + MMCIMASK0);
++		writel_relaxed(host->variant->busy_detect_mask,
++			       base + MMCICLEAR);
 +		host->busy_status = 0;
 +	}
 +
 +	return true;
 +}
 +
- /*
-  * All the DMA operation mode stuff goes inside this ifdef.
-  * This assumes that you have a generic DMA device interface,
-@@ -953,9 +1015,16 @@ static void mmci_variant_init(struct mmci_host *host)
- 	host->ops = &mmci_variant_ops;
- }
- 
-+static void ux500_variant_init(struct mmci_host *host)
-+{
-+	host->ops = &mmci_variant_ops;
-+	host->ops->busy_complete = ux500_busy_complete;
-+}
-+
- static void ux500v2_variant_init(struct mmci_host *host)
- {
- 	host->ops = &mmci_variant_ops;
-+	host->ops->busy_complete = ux500_busy_complete;
- 	host->ops->get_datactrl_cfg = ux500v2_get_dctrl_cfg;
- }
- 
-@@ -1235,68 +1304,9 @@ mmci_cmd_irq(struct mmci_host *host, struct mmc_command *cmd,
- 		return;
- 
- 	/* Handle busy detection on DAT0 if the variant supports it. */
--	if (busy_resp && host->variant->busy_detect) {
--
--		/*
--		 * Before unmasking for the busy end IRQ, confirm that the
--		 * command was sent successfully. To keep track of having a
--		 * command in-progress, waiting for busy signaling to end,
--		 * store the status in host->busy_status.
--		 *
--		 * Note that, the card may need a couple of clock cycles before
--		 * it starts signaling busy on DAT0, hence re-read the
--		 * MMCISTATUS register here, to allow the busy bit to be set.
--		 * Potentially we may even need to poll the register for a
--		 * while, to allow it to be set, but tests indicates that it
--		 * isn't needed.
--		 */
--		if (!host->busy_status && !(status & err_msk) &&
--		    (readl(base + MMCISTATUS) & host->variant->busy_detect_flag)) {
--
--			writel(readl(base + MMCIMASK0) |
--			       host->variant->busy_detect_mask,
--			       base + MMCIMASK0);
--
--			host->busy_status =
--				status & (MCI_CMDSENT|MCI_CMDRESPEND);
--			return;
--		}
--
--		/*
--		 * If there is a command in-progress that has been successfully
--		 * sent, then bail out if busy status is set and wait for the
--		 * busy end IRQ.
--		 *
--		 * Note that, the HW triggers an IRQ on both edges while
--		 * monitoring DAT0 for busy completion, but there is only one
--		 * status bit in MMCISTATUS for the busy state. Therefore
--		 * both the start and the end interrupts needs to be cleared,
--		 * one after the other. So, clear the busy start IRQ here.
--		 */
--		if (host->busy_status &&
--		    (status & host->variant->busy_detect_flag)) {
--			writel(host->variant->busy_detect_mask,
--			       host->base + MMCICLEAR);
-+	if (busy_resp && host->variant->busy_detect)
-+		if (!host->ops->busy_complete(host, status, err_msk))
- 			return;
--		}
--
--		/*
--		 * If there is a command in-progress that has been successfully
--		 * sent and the busy bit isn't set, it means we have received
--		 * the busy end IRQ. Clear and mask the IRQ, then continue to
--		 * process the command.
--		 */
--		if (host->busy_status) {
--
--			writel(host->variant->busy_detect_mask,
--			       host->base + MMCICLEAR);
--
--			writel(readl(base + MMCIMASK0) &
--			       ~host->variant->busy_detect_mask,
--			       base + MMCIMASK0);
--			host->busy_status = 0;
--		}
--	}
- 
- 	host->cmd = NULL;
- 
-diff --git a/drivers/mmc/host/mmci.h b/drivers/mmc/host/mmci.h
-index d8b7f6774e8f..2a0b98f98c36 100644
---- a/drivers/mmc/host/mmci.h
-+++ b/drivers/mmc/host/mmci.h
-@@ -369,6 +369,7 @@ struct mmci_host_ops {
- 	void (*dma_error)(struct mmci_host *host);
- 	void (*set_clkreg)(struct mmci_host *host, unsigned int desired);
- 	void (*set_pwrreg)(struct mmci_host *host, unsigned int pwr);
-+	bool (*busy_complete)(struct mmci_host *host, u32 status, u32 err_msk);
+ static struct mmci_host_ops sdmmc_variant_ops = {
+ 	.validate_data = sdmmc_idma_validate_data,
+ 	.prep_data = sdmmc_idma_prep_data,
+@@ -292,6 +333,7 @@ static struct mmci_host_ops sdmmc_variant_ops = {
+ 	.dma_finalize = sdmmc_idma_finalize,
+ 	.set_clkreg = mmci_sdmmc_set_clkreg,
+ 	.set_pwrreg = mmci_sdmmc_set_pwrreg,
++	.busy_complete = sdmmc_busy_complete,
  };
  
- struct mmci_host {
+ void sdmmc_variant_init(struct mmci_host *host)
 -- 
 2.17.1
 
