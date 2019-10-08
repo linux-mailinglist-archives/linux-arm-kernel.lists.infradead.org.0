@@ -2,39 +2,38 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B87A5CFE6F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 18:02:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 465CACFE69
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 18:02:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ClveRXJL2wijM7TrEQVlPvbhgIlMRqzS7RFyjILjl9k=; b=rOkKpaRehNFsJ6
-	fxOMiMRbT74dCpa9VsLUGWmLRQwbW8MDeWghzOlMukmJdg3Cg0DdalU0pbX3PzqYX9DkExfcddqXF
-	QpQU+6ZVDxjAxuyC+/lTPBEM+is5etYkHAYcy4haF3UwOLAnP6YaldsHYng53sPIa6unayxeTdbn9
-	eAr6pE1wOQvGqNv4Gl3eqFIx8t3LuvwQ8yUFi0RF75lqjsSWwF9nq+t01UTT5M7EO6iv12049pWVa
-	mQFw4iyDVZdeXUQ4QViugzIgvt+VQ4u9EEL3nVE1Hi+nFKXGtsJYAC5TrRWjcz1QyeVSFfx0wKzCv
-	P/OkZyddks00Hr9DuIsA==;
+	List-Owner; bh=2l5rozb5IFMeWdhHmgIz+w+DfOp6HYgirlewWpcAi64=; b=uAW5vnAMqJeucL
+	KrGfXnW1xalB4ghksrNiiyQfiyc09RgN284QclHATwhseJ6ddLvAGWJKBdhblyHNNhQbtVm9R4v/A
+	zXKsj+iMN2qt61S1yuBERoKmO7gddZ4yccR+j2co471Zmtf1j2FHn0Xb5YPoidvIWG77bqruMvsAn
+	SXBnw5BLc1jV4SQ6KiHrEVmrzEWbyeAR6h2w6NPWvt51rDkcLi92+TxuM11iJnOKeP7QusyIfvQoW
+	Botr8NT3OydilCpjgT0ye5fXwEu83FWTotCMVJDC/YkV2nbNEeEu19qViutHFRbQcO4p1MxHRhfut
+	5DsDVZf0qFgrIXi3wG2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHrwr-0002mm-Sq; Tue, 08 Oct 2019 16:02:53 +0000
+	id 1iHrwA-00029p-Mc; Tue, 08 Oct 2019 16:02:10 +0000
 Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHrvw-00027b-VU
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 16:02:00 +0000
+ id 1iHrvw-00027c-VA
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 16:01:58 +0000
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by cheepnis.misterjones.org with esmtpsa
  (TLSv1.2:DHE-RSA-AES128-GCM-SHA256:128) (Exim 4.80)
  (envelope-from <maz@kernel.org>)
- id 1iHrvu-0001rs-3X; Tue, 08 Oct 2019 18:01:54 +0200
+ id 1iHrvu-0001rs-MD; Tue, 08 Oct 2019 18:01:54 +0200
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH v2 3/5] KVM: arm64: pmu: Set the CHAINED attribute before
- creating the in-kernel event
-Date: Tue,  8 Oct 2019 17:01:26 +0100
-Message-Id: <20191008160128.8872-4-maz@kernel.org>
+Subject: [PATCH v2 4/5] arm64: perf: Add reload-on-overflow capability
+Date: Tue,  8 Oct 2019 17:01:27 +0100
+Message-Id: <20191008160128.8872-5-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191008160128.8872-1-maz@kernel.org>
 References: <20191008160128.8872-1-maz@kernel.org>
@@ -48,8 +47,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_090157_162264_75429949 
-X-CRM114-Status: GOOD (  12.85  )
+X-CRM114-CacheID: sfid-20191008_090157_165560_E48B221F 
+X-CRM114-Status: GOOD (  14.93  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -77,41 +76,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The current convention for KVM to request a chained event from the
-host PMU is to set bit[0] in attr.config1 (PERF_ATTR_CFG1_KVM_PMU_CHAINED).
+As KVM uses perf as a way to emulate an ARMv8 PMU, it needs to
+be able to change the sample period as part of the overflow
+handling (once an overflow has taken place, the following
+overflow point is the overflow of the virtual counter).
 
-But as it turns out, this bit gets set *after* we create the kernel
-event that backs our virtual counter, meaning that we never get
-a 64bit counter.
+Deleting and recreating the in-kernel event is difficult, as
+we're in interrupt context. Instead, we can teach the PMU driver
+a new trick, which is to stop the event before the overflow handling,
+and reprogram it once it has been handled. This would give KVM
+the opportunity to adjust the next sample period. This feature
+is gated on a new flag that can get set by KVM in a subsequent
+patch.
 
-Moving the setting to an earlier point solves the problem.
+Whilst we're at it, move the CHAINED flag from the KVM emulation
+to the perf_event.h file and adjust the PMU code accordingly.
 
-Fixes: 80f393a23be6 ("KVM: arm/arm64: Support chained PMU counters")
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- virt/kvm/arm/pmu.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ arch/arm64/include/asm/perf_event.h | 4 ++++
+ arch/arm64/kernel/perf_event.c      | 8 +++++++-
+ virt/kvm/arm/pmu.c                  | 4 +---
+ 3 files changed, 12 insertions(+), 4 deletions(-)
 
+diff --git a/arch/arm64/include/asm/perf_event.h b/arch/arm64/include/asm/perf_event.h
+index 2bdbc79bbd01..8b6b38f2db8e 100644
+--- a/arch/arm64/include/asm/perf_event.h
++++ b/arch/arm64/include/asm/perf_event.h
+@@ -223,4 +223,8 @@ extern unsigned long perf_misc_flags(struct pt_regs *regs);
+ 	(regs)->pstate = PSR_MODE_EL1h;	\
+ }
+ 
++/* Flags used by KVM, among others */
++#define PERF_ATTR_CFG1_CHAINED_EVENT	(1U << 0)
++#define PERF_ATTR_CFG1_RELOAD_EVENT	(1U << 1)
++
+ #endif
+diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
+index a0b4f1bca491..98907c9e5508 100644
+--- a/arch/arm64/kernel/perf_event.c
++++ b/arch/arm64/kernel/perf_event.c
+@@ -322,7 +322,7 @@ PMU_FORMAT_ATTR(long, "config1:0");
+ 
+ static inline bool armv8pmu_event_is_64bit(struct perf_event *event)
+ {
+-	return event->attr.config1 & 0x1;
++	return event->attr.config1 & PERF_ATTR_CFG1_CHAINED_EVENT;
+ }
+ 
+ static struct attribute *armv8_pmuv3_format_attrs[] = {
+@@ -736,8 +736,14 @@ static irqreturn_t armv8pmu_handle_irq(struct arm_pmu *cpu_pmu)
+ 		if (!armpmu_event_set_period(event))
+ 			continue;
+ 
++		if (event->attr.config1 & PERF_ATTR_CFG1_RELOAD_EVENT)
++			cpu_pmu->pmu.stop(event, PERF_EF_RELOAD);
++
+ 		if (perf_event_overflow(event, &data, regs))
+ 			cpu_pmu->disable(event);
++
++		if (event->attr.config1 & PERF_ATTR_CFG1_RELOAD_EVENT)
++			cpu_pmu->pmu.start(event, PERF_EF_RELOAD);
+ 	}
+ 	armv8pmu_start(cpu_pmu);
+ 
 diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
-index c30c3a74fc7f..f291d4ac3519 100644
+index f291d4ac3519..25a483a04beb 100644
 --- a/virt/kvm/arm/pmu.c
 +++ b/virt/kvm/arm/pmu.c
-@@ -569,12 +569,12 @@ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx)
- 		 * high counter.
+@@ -15,8 +15,6 @@
+ 
+ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx);
+ 
+-#define PERF_ATTR_CFG1_KVM_PMU_CHAINED 0x1
+-
+ /**
+  * kvm_pmu_idx_is_64bit - determine if select_idx is a 64bit counter
+  * @vcpu: The vcpu pointer
+@@ -570,7 +568,7 @@ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx)
  		 */
  		attr.sample_period = (-counter) & GENMASK(63, 0);
-+		if (kvm_pmu_counter_is_enabled(vcpu, pmc->idx + 1))
-+			attr.config1 |= PERF_ATTR_CFG1_KVM_PMU_CHAINED;
-+
+ 		if (kvm_pmu_counter_is_enabled(vcpu, pmc->idx + 1))
+-			attr.config1 |= PERF_ATTR_CFG1_KVM_PMU_CHAINED;
++			attr.config1 |= PERF_ATTR_CFG1_CHAINED_EVENT;
+ 
  		event = perf_event_create_kernel_counter(&attr, -1, current,
  							 kvm_pmu_perf_overflow,
- 							 pmc + 1);
--
--		if (kvm_pmu_counter_is_enabled(vcpu, pmc->idx + 1))
--			attr.config1 |= PERF_ATTR_CFG1_KVM_PMU_CHAINED;
- 	} else {
- 		/* The initial sample period (overflow count) of an event. */
- 		if (kvm_pmu_idx_is_64bit(vcpu, pmc->idx))
 -- 
 2.20.1
 
