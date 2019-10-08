@@ -2,80 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BEBCD02D5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 23:27:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7EB5D02E2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 23:34:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
-	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZTTw0okcdew1hxFHe/4h2wncSyPCIxqXymddZedpCw0=; b=NoiDPBR4f+Ac4L
-	EHJdX/Dd/ecmV+mNRFeVqw6o8AJNnxwzs1Fv+uSQkSMkwLDS86RRNkN5TlkWi0ze1EnDnlSYXI/Jn
-	iWwo2NsBERqpYPP5WGNajWWFIqB3/L/MM2B1UadrLSwJQJnkXzlwHMbgQipnTZCk2Z5uNkfAoOaZx
-	IBb5GVuurVgRaOS3W9Q9lNrArsO7POwdn82dVWNXK+pboDeJPf4Ud0RFcVb4s2OGngDJQm3yZO2SU
-	ATq5/jNgonVYyrghfAw8k6LUy5sbmrUAXLVUudvEADxPyo7bwrVW43P4U1VUFhCcecLGTYwr77v+R
-	kRNV6EdCJ0QDYPUaVpvg==;
+	List-Owner; bh=uue3xfd7QqELhrCDwaki+mlY8V/BGN/7D5/Iwzl1RfE=; b=WB6XYihDh/dMha
+	uKEJjsCEzEZRxlmiSLIh40gkKZUq6RDJ2T5IVSfCd+ilxMJdnQPuv7PLb6/8AccH5eGQ67Q4VrFvA
+	L2oQc0vzrhvX/T3PD+orzyTkHkOpHqMYuaXI96vRnK+VEQeQ2dSFcQHhTS2mVWQOnSVKyA4T1qLUS
+	B7VDhS2m9ijWEQDjqA464buCnEZEcdhqjRJZFJDyVzTHRqGjq4Y5mCORld+z0jfxziZnfq2n9Ho1S
+	nlZy1UnTNC9VU4rCCbKievzRbyvnSaQ4vAvHU2tnc8JDsXEYagvX+C2koj4drWNp0KUqYdaeQLjr+
+	WkrAt48dhjs4NFbiMH9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHx1G-0003Sm-30; Tue, 08 Oct 2019 21:27:46 +0000
-Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
+	id 1iHx7N-0005NF-8n; Tue, 08 Oct 2019 21:34:05 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHx17-0003S5-Br
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 21:27:39 +0000
-Received: by mail-pf1-x449.google.com with SMTP id z13so171286pfr.15
+ id 1iHx7F-0005MU-Is
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 21:33:58 +0000
+Received: by mail-io1-xd41.google.com with SMTP id n26so254010ioj.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 08 Oct 2019 14:27:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=Vu2KRhwhy+4sItTgwTH9UKVq29kBFB0coKPMQe9rDjk=;
- b=fg2EBGY+WTC9OKsPTz88qXz1ANPugDvWNILHx9yrYwH/NHIcqOy38EbVTBrXg7Z4LZ
- ZhSmWUG4SHxLNrh3+u+qm3Bx95n4PZ4YhWk1x9Zmu2mZcoji/PC1dDELu6dfZLfoWz83
- vyqdb6bNAFitTNsoGCee5ikWhl2hf7kTjCylktsW+XI0/Dg2FR2bShuk82l62FIFRm6h
- j1p43FUPqmYd0hNYaGdIPHFVuIFJ1DogeY9wKw5PZCwqLwPjZ1P4LFdyepdnOsxEc07c
- HQUX2UG0yyw6/VXjPwNRcsdkIhEi3zSpS3SniakfpkcRbqy34stWBHJbgwgVVoeTGmGJ
- Sbjw==
+ Tue, 08 Oct 2019 14:33:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
+ h=date:from:to:cc:subject:in-reply-to:message-id:references
+ :user-agent:mime-version;
+ bh=ZuBgbJzoXltmhH0lNq67zyda70EYzZtMbVg27O16d4E=;
+ b=hsox7f1O1JhOkCIRKYbrxjgajBPsOSDqi7B1Lgvugxaamtq9i8nHkkuJBUx+fuqpmy
+ BAak+i52MGnX+KzvK730xUE8OgRGhRjWhnGkFA0okRMkJZ8lV6Q62WhiPg+6n0vFgHbL
+ VCEAwKUPWz0rPth4e7crkTcSlit2voXqJ0ejpl9sJAU7dNLLjT4gqcHH0rIgjJllHUEy
+ PhH3RYFcBRHAIgaKfDAF6XcaX/IvuwtFwRKYJ3kZi33kqKQ1pMfAy1jUs6Wj0FZ/F1G3
+ kGyRJLvuLqMwxBTP7vx/7G4QtZd9roGDtY1NKikyRwzKqH8JMU5sTbhDnrBfv3XSNB4G
+ +aQQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:in-reply-to:message-id:mime-version
- :references:subject:from:to:cc;
- bh=Vu2KRhwhy+4sItTgwTH9UKVq29kBFB0coKPMQe9rDjk=;
- b=mP/V934XdO1NvEfYAdRXOJmb7V5nHhlBFCQcMmcEMUesEkJookKByp1293/tiq5Mqn
- +HcWSxyIe7LWB4fsSduYtOK4VLWIsEY4IvJCeeC+BJYqX3jB0xaSmtN5BVTV/AN9vTqV
- 1ECSubzr/wb44tKmdk7CAdNYrQ900x8Ty+zs4kBzPbWLxAd2apswJEnDIfIJpbsCkE7i
- 3Oooy4+3Nehez+Lj1WvQHsEXMefSpe+e/IUEHXZxVsOPONJHev2kDpkkjut2W+hkG5o8
- QAYnoZBxtcGpebhNyRQM3l8qtRsars7nvEpCYX1rZ3VEBupDsLonhuOZmw4aEJfiMfRH
- bPMw==
-X-Gm-Message-State: APjAAAVcXlLieNkI1kSXGQaErE9yaZnLQK1OcxP/sR1blaB16wXJGuby
- Cs1nu4M/ZOund6bw58vkB7rXcekiEw/SMopVEsE=
-X-Google-Smtp-Source: APXvYqzPt3ldGpid8Fc+Tx8AsdquKpOzH6a7IGhyeRz7R/dl4nvnC/XUyucS23pFANasFCfMWwC3bvxJLlS8eVu0UQA=
-X-Received: by 2002:a65:6096:: with SMTP id t22mr465922pgu.409.1570570055904; 
- Tue, 08 Oct 2019 14:27:35 -0700 (PDT)
-Date: Tue,  8 Oct 2019 14:27:30 -0700
-In-Reply-To: <20191007201452.208067-1-samitolvanen@google.com>
-Message-Id: <20191008212730.185532-1-samitolvanen@google.com>
-Mime-Version: 1.0
-References: <20191007201452.208067-1-samitolvanen@google.com>
-X-Mailer: git-send-email 2.23.0.581.g78d2f28ef7-goog
-Subject: [PATCH v2] arm64: lse: fix LSE atomics with LLVM's integrated
- assembler
-From: Sami Tolvanen <samitolvanen@google.com>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>, 
- Andrew Murray <andrew.murray@arm.com>
+ h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
+ :references:user-agent:mime-version;
+ bh=ZuBgbJzoXltmhH0lNq67zyda70EYzZtMbVg27O16d4E=;
+ b=Szshgvqazf2zf9DKNnZjvyqtyrNBSbW5Gj/BVGa0EE/rb0bU1dY6u3ooVrAur2kApw
+ x0sGTCDdLu3Yv6IFbFlVKyUDVoyzy7gFhxWGiZpNw6WOO8qRLs7ZtXv2FRqnTk6ccQH5
+ PZKfUpOPhW00RcJsos8CKIyEwcZSnBVWU/oyRfgfN3xbw0/IswBAxeTXM/8agRj7E4O8
+ PxZh32gif8DALRMpOXknbXSeW5cqOYKpDH0ZUt9hrsOo25Z22Dv+9C0MyS0VzckmUu3L
+ 4MsW8YQelpAHaAW8kpBZqeEzc4Tw1szD5a82StSnrUt8YSie3JfKQzhaWWse139mkaZb
+ 12Qg==
+X-Gm-Message-State: APjAAAUgcmJd1TOaYamyUfmvvvujUkN/utfgjYS6lqXoBxgv69CBM/W/
+ pRmJpPgP7M7Jc8yqTUikUl8rHg==
+X-Google-Smtp-Source: APXvYqzsdLumb009bSD2b+NTzNpdbo2nocSDdqyWA/rpF/UqKzncKB6JaSotk0ttAt3W1vuG0mXL5Q==
+X-Received: by 2002:a6b:c701:: with SMTP id x1mr331218iof.162.1570570436145;
+ Tue, 08 Oct 2019 14:33:56 -0700 (PDT)
+Received: from localhost ([64.62.168.194])
+ by smtp.gmail.com with ESMTPSA id c8sm107904iol.57.2019.10.08.14.33.53
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 08 Oct 2019 14:33:55 -0700 (PDT)
+Date: Tue, 8 Oct 2019 14:33:48 -0700 (PDT)
+From: Paul Walmsley <paul.walmsley@sifive.com>
+X-X-Sender: paulw@viisi.sifive.com
+To: Steven Price <steven.price@arm.com>, alex@ghiti.fr
+Subject: Re: [PATCH v11 07/22] riscv: mm: Add p?d_leaf() definitions
+In-Reply-To: <20191007153822.16518-8-steven.price@arm.com>
+Message-ID: <alpine.DEB.2.21.9999.1910081431310.11044@viisi.sifive.com>
+References: <20191007153822.16518-1-steven.price@arm.com>
+ <20191007153822.16518-8-steven.price@arm.com>
+User-Agent: Alpine 2.21.9999 (DEB 301 2018-08-15)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_142737_432735_EF89016B 
-X-CRM114-Status: GOOD (  12.07  )
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20191008_143357_651657_C558243D 
+X-CRM114-Status: GOOD (  11.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:449 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -83,7 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,225 +98,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- clang-built-linux@googlegroups.com, Sami Tolvanen <samitolvanen@google.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <Mark.Rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, linux-mm@kvack.org,
+ Albert Ou <aou@eecs.berkeley.edu>, "H. Peter Anvin" <hpa@zytor.com>,
+ linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>, "Liang,
+ Kan" <kan.liang@linux.intel.com>, x86@kernel.org,
+ Ingo Molnar <mingo@redhat.com>, Palmer Dabbelt <palmer@sifive.com>,
+ Arnd Bergmann <arnd@arndb.de>,
+ =?ISO-8859-15?Q?J=E9r=F4me_Glisse?= <jglisse@redhat.com>,
+ Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Andrew Morton <akpm@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Unlike gcc, clang considers each inline assembly block to be independent
-and therefore, when using the integrated assembler for inline assembly,
-any preambles that enable features must be repeated in each block.
+On Mon, 7 Oct 2019, Steven Price wrote:
 
-This change defines __LSE_PREAMBLE and adds it to each inline assembly
-block that has LSE instructions, which allows them to be compiled also
-with clang's assembler.
+> walk_page_range() is going to be allowed to walk page tables other than
+> those of user space. For this it needs to know when it has reached a
+> 'leaf' entry in the page tables. This information is provided by the
+> p?d_leaf() functions/macros.
+> 
+> For riscv a page is a leaf page when it has a read, write or execute bit
+> set on it.
+> 
+> CC: Palmer Dabbelt <palmer@sifive.com>
+> CC: Albert Ou <aou@eecs.berkeley.edu>
+> CC: linux-riscv@lists.infradead.org
+> Signed-off-by: Steven Price <steven.price@arm.com>
 
-Link: https://github.com/ClangBuiltLinux/linux/issues/671
-Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
----
-v2:
- - Add a preamble to inline assembly blocks that use LSE instead
-   of allowing the compiler to emit LSE instructions everywhere.
+Acked-by: Paul Walmsley <paul.walmsley@sifive.com> # for arch/riscv  
 
----
- arch/arm64/include/asm/atomic_lse.h | 19 +++++++++++++++++++
- arch/arm64/include/asm/lse.h        |  6 +++---
- 2 files changed, 22 insertions(+), 3 deletions(-)
+Alex has a good point, but probably the right thing to do is to replace 
+the contents of the arch/riscv/mm/hugetlbpage.c p{u,m}d_huge() functions 
+with calls to Steven's new static inline functions.
 
-diff --git a/arch/arm64/include/asm/atomic_lse.h b/arch/arm64/include/asm/atomic_lse.h
-index c6bd87d2915b..3ee600043042 100644
---- a/arch/arm64/include/asm/atomic_lse.h
-+++ b/arch/arm64/include/asm/atomic_lse.h
-@@ -14,6 +14,7 @@
- static inline void __lse_atomic_##op(int i, atomic_t *v)			\
- {									\
- 	asm volatile(							\
-+	__LSE_PREAMBLE							\
- "	" #asm_op "	%w[i], %[v]\n"					\
- 	: [i] "+r" (i), [v] "+Q" (v->counter)				\
- 	: "r" (v));							\
-@@ -30,6 +31,7 @@ ATOMIC_OP(add, stadd)
- static inline int __lse_atomic_fetch_##op##name(int i, atomic_t *v)	\
- {									\
- 	asm volatile(							\
-+	__LSE_PREAMBLE							\
- "	" #asm_op #mb "	%w[i], %w[i], %[v]"				\
- 	: [i] "+r" (i), [v] "+Q" (v->counter)				\
- 	: "r" (v)							\
-@@ -58,6 +60,7 @@ static inline int __lse_atomic_add_return##name(int i, atomic_t *v)	\
- 	u32 tmp;							\
- 									\
- 	asm volatile(							\
-+	__LSE_PREAMBLE							\
- 	"	ldadd" #mb "	%w[i], %w[tmp], %[v]\n"			\
- 	"	add	%w[i], %w[i], %w[tmp]"				\
- 	: [i] "+r" (i), [v] "+Q" (v->counter), [tmp] "=&r" (tmp)	\
-@@ -77,6 +80,7 @@ ATOMIC_OP_ADD_RETURN(        , al, "memory")
- static inline void __lse_atomic_and(int i, atomic_t *v)
- {
- 	asm volatile(
-+	__LSE_PREAMBLE
- 	"	mvn	%w[i], %w[i]\n"
- 	"	stclr	%w[i], %[v]"
- 	: [i] "+&r" (i), [v] "+Q" (v->counter)
-@@ -87,6 +91,7 @@ static inline void __lse_atomic_and(int i, atomic_t *v)
- static inline int __lse_atomic_fetch_and##name(int i, atomic_t *v)	\
- {									\
- 	asm volatile(							\
-+	__LSE_PREAMBLE							\
- 	"	mvn	%w[i], %w[i]\n"					\
- 	"	ldclr" #mb "	%w[i], %w[i], %[v]"			\
- 	: [i] "+&r" (i), [v] "+Q" (v->counter)				\
-@@ -106,6 +111,7 @@ ATOMIC_FETCH_OP_AND(        , al, "memory")
- static inline void __lse_atomic_sub(int i, atomic_t *v)
- {
- 	asm volatile(
-+	__LSE_PREAMBLE
- 	"	neg	%w[i], %w[i]\n"
- 	"	stadd	%w[i], %[v]"
- 	: [i] "+&r" (i), [v] "+Q" (v->counter)
-@@ -118,6 +124,7 @@ static inline int __lse_atomic_sub_return##name(int i, atomic_t *v)	\
- 	u32 tmp;							\
- 									\
- 	asm volatile(							\
-+	__LSE_PREAMBLE							\
- 	"	neg	%w[i], %w[i]\n"					\
- 	"	ldadd" #mb "	%w[i], %w[tmp], %[v]\n"			\
- 	"	add	%w[i], %w[i], %w[tmp]"				\
-@@ -139,6 +146,7 @@ ATOMIC_OP_SUB_RETURN(        , al, "memory")
- static inline int __lse_atomic_fetch_sub##name(int i, atomic_t *v)	\
- {									\
- 	asm volatile(							\
-+	__LSE_PREAMBLE							\
- 	"	neg	%w[i], %w[i]\n"					\
- 	"	ldadd" #mb "	%w[i], %w[i], %[v]"			\
- 	: [i] "+&r" (i), [v] "+Q" (v->counter)				\
-@@ -159,6 +167,7 @@ ATOMIC_FETCH_OP_SUB(        , al, "memory")
- static inline void __lse_atomic64_##op(s64 i, atomic64_t *v)		\
- {									\
- 	asm volatile(							\
-+	__LSE_PREAMBLE							\
- "	" #asm_op "	%[i], %[v]\n"					\
- 	: [i] "+r" (i), [v] "+Q" (v->counter)				\
- 	: "r" (v));							\
-@@ -175,6 +184,7 @@ ATOMIC64_OP(add, stadd)
- static inline long __lse_atomic64_fetch_##op##name(s64 i, atomic64_t *v)\
- {									\
- 	asm volatile(							\
-+	__LSE_PREAMBLE							\
- "	" #asm_op #mb "	%[i], %[i], %[v]"				\
- 	: [i] "+r" (i), [v] "+Q" (v->counter)				\
- 	: "r" (v)							\
-@@ -203,6 +213,7 @@ static inline long __lse_atomic64_add_return##name(s64 i, atomic64_t *v)\
- 	unsigned long tmp;						\
- 									\
- 	asm volatile(							\
-+	__LSE_PREAMBLE							\
- 	"	ldadd" #mb "	%[i], %x[tmp], %[v]\n"			\
- 	"	add	%[i], %[i], %x[tmp]"				\
- 	: [i] "+r" (i), [v] "+Q" (v->counter), [tmp] "=&r" (tmp)	\
-@@ -222,6 +233,7 @@ ATOMIC64_OP_ADD_RETURN(        , al, "memory")
- static inline void __lse_atomic64_and(s64 i, atomic64_t *v)
- {
- 	asm volatile(
-+	__LSE_PREAMBLE
- 	"	mvn	%[i], %[i]\n"
- 	"	stclr	%[i], %[v]"
- 	: [i] "+&r" (i), [v] "+Q" (v->counter)
-@@ -232,6 +244,7 @@ static inline void __lse_atomic64_and(s64 i, atomic64_t *v)
- static inline long __lse_atomic64_fetch_and##name(s64 i, atomic64_t *v)	\
- {									\
- 	asm volatile(							\
-+	__LSE_PREAMBLE							\
- 	"	mvn	%[i], %[i]\n"					\
- 	"	ldclr" #mb "	%[i], %[i], %[v]"			\
- 	: [i] "+&r" (i), [v] "+Q" (v->counter)				\
-@@ -251,6 +264,7 @@ ATOMIC64_FETCH_OP_AND(        , al, "memory")
- static inline void __lse_atomic64_sub(s64 i, atomic64_t *v)
- {
- 	asm volatile(
-+	__LSE_PREAMBLE
- 	"	neg	%[i], %[i]\n"
- 	"	stadd	%[i], %[v]"
- 	: [i] "+&r" (i), [v] "+Q" (v->counter)
-@@ -263,6 +277,7 @@ static inline long __lse_atomic64_sub_return##name(s64 i, atomic64_t *v)	\
- 	unsigned long tmp;						\
- 									\
- 	asm volatile(							\
-+	__LSE_PREAMBLE							\
- 	"	neg	%[i], %[i]\n"					\
- 	"	ldadd" #mb "	%[i], %x[tmp], %[v]\n"			\
- 	"	add	%[i], %[i], %x[tmp]"				\
-@@ -284,6 +299,7 @@ ATOMIC64_OP_SUB_RETURN(        , al, "memory")
- static inline long __lse_atomic64_fetch_sub##name(s64 i, atomic64_t *v)	\
- {									\
- 	asm volatile(							\
-+	__LSE_PREAMBLE							\
- 	"	neg	%[i], %[i]\n"					\
- 	"	ldadd" #mb "	%[i], %[i], %[v]"			\
- 	: [i] "+&r" (i), [v] "+Q" (v->counter)				\
-@@ -305,6 +321,7 @@ static inline s64 __lse_atomic64_dec_if_positive(atomic64_t *v)
- 	unsigned long tmp;
- 
- 	asm volatile(
-+	__LSE_PREAMBLE
- 	"1:	ldr	%x[tmp], %[v]\n"
- 	"	subs	%[ret], %x[tmp], #1\n"
- 	"	b.lt	2f\n"
-@@ -331,6 +348,7 @@ static inline u##sz __lse__cmpxchg_case_##name##sz(volatile void *ptr,	\
- 	unsigned long tmp;						\
- 									\
- 	asm volatile(							\
-+	__LSE_PREAMBLE							\
- 	"	mov	%" #w "[tmp], %" #w "[old]\n"			\
- 	"	cas" #mb #sfx "\t%" #w "[tmp], %" #w "[new], %[v]\n"	\
- 	"	mov	%" #w "[ret], %" #w "[tmp]"			\
-@@ -377,6 +395,7 @@ static inline long __lse__cmpxchg_double##name(unsigned long old1,	\
- 	register unsigned long x4 asm ("x4") = (unsigned long)ptr;	\
- 									\
- 	asm volatile(							\
-+	__LSE_PREAMBLE							\
- 	"	casp" #mb "\t%[old1], %[old2], %[new1], %[new2], %[v]\n"\
- 	"	eor	%[old1], %[old1], %[oldval1]\n"			\
- 	"	eor	%[old2], %[old2], %[oldval2]\n"			\
-diff --git a/arch/arm64/include/asm/lse.h b/arch/arm64/include/asm/lse.h
-index 80b388278149..73834996c4b6 100644
---- a/arch/arm64/include/asm/lse.h
-+++ b/arch/arm64/include/asm/lse.h
-@@ -6,6 +6,8 @@
- 
- #if defined(CONFIG_AS_LSE) && defined(CONFIG_ARM64_LSE_ATOMICS)
- 
-+#define __LSE_PREAMBLE	".arch armv8-a+lse\n"
-+
- #include <linux/compiler_types.h>
- #include <linux/export.h>
- #include <linux/jump_label.h>
-@@ -14,8 +16,6 @@
- #include <asm/atomic_lse.h>
- #include <asm/cpucaps.h>
- 
--__asm__(".arch_extension	lse");
--
- extern struct static_key_false cpu_hwcap_keys[ARM64_NCAPS];
- extern struct static_key_false arm64_const_caps_ready;
- 
-@@ -34,7 +34,7 @@ static inline bool system_uses_lse_atomics(void)
- 
- /* In-line patching at runtime */
- #define ARM64_LSE_ATOMIC_INSN(llsc, lse)				\
--	ALTERNATIVE(llsc, lse, ARM64_HAS_LSE_ATOMICS)
-+	ALTERNATIVE(llsc, __LSE_PREAMBLE lse, ARM64_HAS_LSE_ATOMICS)
- 
- #else	/* CONFIG_AS_LSE && CONFIG_ARM64_LSE_ATOMICS */
- 
--- 
-2.23.0.581.g78d2f28ef7-goog
 
+- Paul
 
 _______________________________________________
 linux-arm-kernel mailing list
