@@ -2,55 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B74DD0381
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 00:42:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88F83D0389
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 00:45:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U5OVF9W1stcpM1+K50rnylnuecN6Y9OfF3wZH98ah2s=; b=LlXQ/2RtrfH9hc
-	4tcJebl0Mv4VXiWUi31Eix7W2PjdRCS2bPAbeV9WZS0YoItoQQ/ulatDjTnL9MWn4ROq8FClqdTyG
-	Cissf49rRZY0GZLGbt3yq1ATQUqVvU6SpKy4mSLbUDsnyerYl0kmMbWd5e4QN8+gn+UXorH/+THVI
-	BARrQ+VAARxLFmyeD7NdwUuYXhtYEnivONdehCKWwlDwFYv/+AeiNH1NiNrHc/8tFj0Jxc2kYCXvz
-	NSRhABdTEFEJaI/4KJR4/BwyApBwDAJN0w65IniAZ01lR9eN2O9nzTTj7re14aulzU7xs/V2toHjV
-	d8QRvJ6Mpr76c/x56I4g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=fnmY1PR/fLnxmrffSZedzvqYtXRN1hlS5QsZwxFNsyM=; b=JevblMKGgMSRLcQsS4lgHGee8
+	ToOjHrUw20OTNPOi8MWNIzfQcJ5jAog0460uV2A7GcNdvqiwqOBjeHRm7Ju0zeLhHhu2A5TnVBwXj
+	Hc0hzv5v1IS6O3Y6Wgw0GrOt7h4aNllwjsYYqy0ZjPaskx9Q4aQPInbbuu/TalNnECpBWyPEWs2kw
+	ahEIqhZ8lAMGcmy07TndohFvELHGLLzwCQDH7auj5MD6rSUR2Tegj5GXv3y5zo+Otzt3uvhD8lrP/
+	k53lVByN2oqinerQ3w0PP6YIr6yA86Gvl/1VrHl2nmHHQF+FaDv7FJDqSGPLCXZVDPx2vM/5kPMET
+	W/o8rZcrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHyBk-0004CS-6L; Tue, 08 Oct 2019 22:42:40 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHyBa-0004Bw-S0
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 22:42:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D4624337;
- Tue,  8 Oct 2019 15:42:24 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 579B13F68E;
- Tue,  8 Oct 2019 15:42:24 -0700 (PDT)
-Date: Tue, 8 Oct 2019 23:42:22 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH v2 5/5] KVM: arm64: pmu: Reset sample period on overflow
- handling
-Message-ID: <20191008224221.GK42880@e119886-lin.cambridge.arm.com>
-References: <20191008160128.8872-1-maz@kernel.org>
- <20191008160128.8872-6-maz@kernel.org>
+	id 1iHyEj-0005oS-BB; Tue, 08 Oct 2019 22:45:45 +0000
+Received: from mga03.intel.com ([134.134.136.65])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHyEY-0005nx-CG
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 22:45:39 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga008.jf.intel.com ([10.7.209.65])
+ by orsmga103.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 08 Oct 2019 15:45:33 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.67,272,1566889200"; d="scan'208";a="187447543"
+Received: from yoojae-mobl1.amr.corp.intel.com (HELO [10.7.153.148])
+ ([10.7.153.148])
+ by orsmga008.jf.intel.com with ESMTP; 08 Oct 2019 15:45:33 -0700
+Subject: Re: [PATCH 3/5] i2c: aspeed: fix master pending state handling
+To: Tao Ren <taoren@fb.com>, Brendan Higgins <brendanhiggins@google.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Joel Stanley <joel@jms.id.au>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Andrew Jeffery <andrew@aj.id.au>
+References: <20191007231313.4700-1-jae.hyun.yoo@linux.intel.com>
+ <20191007231313.4700-4-jae.hyun.yoo@linux.intel.com>
+ <422eea61-7cb9-e471-83fb-3f554ff5e079@fb.com>
+From: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
+Message-ID: <6f280195-eef7-1fe7-ac42-ad6879ca9838@linux.intel.com>
+Date: Tue, 8 Oct 2019 15:45:33 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191008160128.8872-6-maz@kernel.org>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <422eea61-7cb9-e471-83fb-3f554ff5e079@fb.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_154230_993815_4B6CCE35 
-X-CRM114-Status: GOOD (  26.98  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191008_154537_327694_03C5D5C6 
+X-CRM114-Status: GOOD (  18.33  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.65 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,134 +72,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>, James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "openbmc@lists.ozlabs.org" <openbmc@lists.ozlabs.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 08, 2019 at 05:01:28PM +0100, Marc Zyngier wrote:
-> The PMU emulation code uses the perf event sample period to trigger
-> the overflow detection. This works fine  for the *first* overflow
-> handling, but results in a huge number of interrupts on the host,
-> unrelated to the number of interrupts handled in the guest (a x20
-> factor is pretty common for the cycle counter). On a slow system
-> (such as a SW model), this can result in the guest only making
-> forward progress at a glacial pace.
+Hi Tao,
+
+On 10/8/2019 3:00 PM, Tao Ren wrote:
+> On 10/7/19 4:13 PM, Jae Hyun Yoo wrote:
+>> In case of master pending state, it should not trigger the master
+>> command because this H/W is sharing the same data buffer for slave
+>> and master operations, so this commit fixes the issue with making
+>> the master command triggering happen when the state goes to active
+>> state.
+>>
+>> Signed-off-by: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
+>> ---
+>>   drivers/i2c/busses/i2c-aspeed.c | 9 +++++----
+>>   1 file changed, 5 insertions(+), 4 deletions(-)
+>>
+>> diff --git a/drivers/i2c/busses/i2c-aspeed.c b/drivers/i2c/busses/i2c-aspeed.c
+>> index fa66951b05d0..40f6cf98d32e 100644
+>> --- a/drivers/i2c/busses/i2c-aspeed.c
+>> +++ b/drivers/i2c/busses/i2c-aspeed.c
+>> @@ -336,18 +336,19 @@ static void aspeed_i2c_do_start(struct aspeed_i2c_bus *bus)
+>>   	struct i2c_msg *msg = &bus->msgs[bus->msgs_index];
+>>   	u8 slave_addr = i2c_8bit_addr_from_msg(msg);
+>>   
+>> -	bus->master_state = ASPEED_I2C_MASTER_START;
+>> -
+>>   #if IS_ENABLED(CONFIG_I2C_SLAVE)
+>>   	/*
+>>   	 * If it's requested in the middle of a slave session, set the master
+>>   	 * state to 'pending' then H/W will continue handling this master
+>>   	 * command when the bus comes back to the idle state.
+>>   	 */
+>> -	if (bus->slave_state != ASPEED_I2C_SLAVE_INACTIVE)
+>> +	if (bus->slave_state != ASPEED_I2C_SLAVE_INACTIVE) {
+>>   		bus->master_state = ASPEED_I2C_MASTER_PENDING;
+>> +		return;
+>> +	}
+>>   #endif /* CONFIG_I2C_SLAVE */
+>>   
+>> +	bus->master_state = ASPEED_I2C_MASTER_START;
+>>   	bus->buf_index = 0;
+>>   
+>>   	if (msg->flags & I2C_M_RD) {
+>> @@ -432,7 +433,7 @@ static u32 aspeed_i2c_master_irq(struct aspeed_i2c_bus *bus, u32 irq_status)
+>>   		if (bus->slave_state != ASPEED_I2C_SLAVE_INACTIVE)
+>>   			goto out_no_complete;
+>>   
+>> -		bus->master_state = ASPEED_I2C_MASTER_START;
+>> +		aspeed_i2c_do_start(bus);
+>>   	}
 > 
-> It turns out that the clue is in the name. The sample period is
-> exactly that: a period. And once the an overflow has occured,
-> the following period should be the full width of the associated
-> counter, instead of whatever the guest had initially programed.
-> 
-> Reset the sample period to the architected value in the overflow
-> handler, which now results in a number of host interrupts that is
-> much closer to the number of interrupts in the guest.
-> 
-> Fixes: b02386eb7dac ("arm64: KVM: Add PMU overflow interrupt routing")
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-> ---
->  virt/kvm/arm/pmu.c | 15 +++++++++++++++
->  1 file changed, 15 insertions(+)
-> 
-> diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
-> index 25a483a04beb..8b524d74c68a 100644
-> --- a/virt/kvm/arm/pmu.c
-> +++ b/virt/kvm/arm/pmu.c
-> @@ -442,6 +442,20 @@ static void kvm_pmu_perf_overflow(struct perf_event *perf_event,
->  	struct kvm_pmc *pmc = perf_event->overflow_handler_context;
->  	struct kvm_vcpu *vcpu = kvm_pmc_to_vcpu(pmc);
->  	int idx = pmc->idx;
-> +	u64 period;
-> +
-> +	/*
-> +	 * Reset the sample period to the architectural limit,
-> +	 * i.e. the point where the counter overflows.
-> +	 */
-> +	period = -(local64_read(&pmc->perf_event->count));
-> +
-> +	if (!kvm_pmu_idx_is_64bit(vcpu, pmc->idx))
-> +		period &= GENMASK(31, 0);
-> +
-> +	local64_set(&pmc->perf_event->hw.period_left, 0);
-> +	pmc->perf_event->attr.sample_period = period;
-> +	pmc->perf_event->hw.sample_period = period;
+> Shall we move the restart-master logic from master_irq to bus_irq? The reason being:
+> master transaction cannot be restarted when aspeed-i2c is running in slave state and
+> receives STOP interrupt, because aspeed_i2c_master_irq won't be called in this case.
 
-I believe that above, you are reducing the period by the amount period_left
-would have been - they cancel each other out.
+Even in that case, master can be restarted properly because slave_irq
+will be called first because master is in MASTER_PENDING state, so the
+slave_irq handles the STOP interrupt as well, and then master_irq will
+be called with SLAVE_INACTIVE state so the aspeed_i2c_do_start can be
+called eventually.
 
-Given that kvm_pmu_perf_overflow is now always called between a
-cpu_pmu->pmu.stop and a cpu_pmu->pmu.start, it means armpmu_event_update
-has been called prior to this function, and armpmu_event_set_period will
-be called after...
-
-Therefore, I think the above could be reduced to:
-
-+	/*
-+	 * Reset the sample period to the architectural limit,
-+	 * i.e. the point where the counter overflows.
-+	 */
-+	u64 period = GENMASK(63, 0);
-+	if (!kvm_pmu_idx_is_64bit(vcpu, pmc->idx))
-+		period = GENMASK(31, 0);
-+
-+	pmc->perf_event->attr.sample_period = period;
-+	pmc->perf_event->hw.sample_period = period;
-
-This is because armpmu_event_set_period takes into account the overflow
-and the counter wrapping via the "if (unlikely(left <= 0)) {" block.
-
-Though this code confuses me easily, so I may be talking rubbish.
-
->  
->  	__vcpu_sys_reg(vcpu, PMOVSSET_EL0) |= BIT(idx);
->  
-> @@ -557,6 +571,7 @@ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx)
->  	attr.exclude_host = 1; /* Don't count host events */
->  	attr.config = (pmc->idx == ARMV8_PMU_CYCLE_IDX) ?
->  		ARMV8_PMUV3_PERFCTR_CPU_CYCLES : eventsel;
-> +	attr.config1 = PERF_ATTR_CFG1_RELOAD_EVENT;
-
-I'm not sure that this flag, or patch 4 is really needed. As the perf
-events created by KVM are pinned to the task and exclude_(host,hv) are set -
-I think the perf event is not active at this point. Therefore if you change
-the sample period, you can wait until the perf event gets scheduled back in
-(when you return to the guest) where it's call to pmu.start will result in
-armpmu_event_set_period being called. In other words the pmu.start and
-pmu.stop you add in patch 4 is effectively being done for you by perf when
-the KVM task is switched out.
-
-I'd be interested to see if the following works:
-
-+	WARN_ON(pmc->perf_event->state == PERF_EVENT_STATE_ACTIVE)
-+
-+	/*
-+	 * Reset the sample period to the architectural limit,
-+	 * i.e. the point where the counter overflows.
-+	 */
-+	u64 period = GENMASK(63, 0);
-+	if (!kvm_pmu_idx_is_64bit(vcpu, pmc->idx))
-+		period = GENMASK(31, 0);
-+
-+	pmc->perf_event->attr.sample_period = period;
-+	pmc->perf_event->hw.sample_period = period;
-
->  
->  	counter = kvm_pmu_get_pair_counter_value(vcpu, pmc);
->  
-
-What about ARM 32 bit support for this?
+Also, this is right point to call the aspeed_i2c_do_start
+because master state will be changed to MASTER_START by the
+aspeed_i2c_do_start and we have to do remaining handling for the
+MASTER_START in the master_irq by falling through after the call.
 
 Thanks,
 
-Andrew Murray
-
-> -- 
-> 2.20.1
-> 
+Jae
 
 _______________________________________________
 linux-arm-kernel mailing list
