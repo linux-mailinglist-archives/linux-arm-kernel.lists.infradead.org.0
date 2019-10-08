@@ -2,68 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53F62CF250
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 07:58:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC6C8CF264
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 08:05:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=IwPjm+FyZDpPv0KYAU7pX5HXce3BgP6s+3VzRhdAxgM=; b=eqaoeLvbVgYZRqI8a882Q6qD4
-	YTDsO7LiBpGNbjVNm9W9tAWWtMdgS+FRuUQ2lGl30A4kV4a63Qdhd0yOo0lWr6GiN3BI3bvjkk6qv
-	co3dnRW0grYmqtUvI7cJx18a9LGOWZOCBljgI9CjE8ggWx8iZmGKEwAMScDLgPERiSum28wcCEk1h
-	Zx5j8hbakKImOIyLiaZkQ+IQwwg/t4JtbvmEbPqJX0rGBCTPS6n/tgiWPvqFfFMEChlZEEZ1H99nw
-	wSrddE86U7pX/kUkRPjWX/mIA0s1w0qDIcpffTmQ/TCe/zIlKiFH/D12ypYUYxAZBsPzQomg67eZn
-	JDDsZFDIQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ykqQzlInSKaeWQJ/RQYr2KV99ZXidFcJTJjIwXyTyt0=; b=se7zFjQ0XvTLmO
+	3JCP860Llz73W9SVSrQW5bb+K77/Z05pRP/I7UrKap3gSQucxvx38OGbdkKoqLoPpm3H+k613BTSo
+	smY1Y2HJRP/UXtCjQcFIOmy4pGjwjbPrOZ5PGy1lTcGVt+E/m8Rbo43PmI0Q9I97o5S7K0AU2Ipj+
+	oIG0HQb0kMdOxTnV76LRiXdMGIsZauhZGLv8xHYnTRN7xbnNquwEnBxCS5As075caT/jKdxGhhV0G
+	huyINyn+NQdjh4A3A0Vkz7LL6/MGArF21tyZQ9uJ1N1C4d8qo4agaQtYd5Hwe3TtK68bFIsrJLd48
+	pplzFAKfuXC3VztbSlng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHiVn-0000qS-Ot; Tue, 08 Oct 2019 05:58:19 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iHict-0003yL-4h; Tue, 08 Oct 2019 06:05:39 +0000
+Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHiVg-0000pw-RS
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 05:58:14 +0000
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 057DA206BB;
- Tue,  8 Oct 2019 05:58:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570514292;
- bh=OKUgYROz7lxc7E9/7Ur7efZbYs8IQ81R9gApIpjwp9M=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=C7J5cK1mBB5fvQZ0ThE4YCz7Qur4Fw909mYvNTRLpboW6BubXmXiGCIDVT0T+7y+g
- qpfWg9TOv0RucK+/Wve187tlBEXxO4YONvuJdDEAFmh8lbNhSrcoBHyHWPyArcc5v2
- 4/axwyD+PUb+vlHhzw5ryeI4HqtheN6u1Z+gorl8=
-Date: Tue, 8 Oct 2019 07:58:10 +0200
-From: Maxime Ripard <mripard@kernel.org>
-To: megous@megous.com
-Subject: Re: [RESEND PATCH 0/2] Add bluetooth support for Orange Pi 3
-Message-ID: <20191008055810.wqkmoy63ujiagbfe@gilmour>
-References: <20191007203152.3889947-1-megous@megous.com>
+ id 1iHicl-0003xa-OM; Tue, 08 Oct 2019 06:05:33 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 07 Oct 2019 23:05:14 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.67,269,1566889200"; d="scan'208";a="206577319"
+Received: from wpross-mobl.ger.corp.intel.com (HELO localhost) ([10.252.55.86])
+ by fmsmga001.fm.intel.com with ESMTP; 07 Oct 2019 23:05:09 -0700
+From: Jani Nikula <jani.nikula@linux.intel.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>, Alex Deucher <alexdeucher@gmail.com>
+Subject: Re: [PATCH TRIVIAL v2] gpu: Fix Kconfig indentation
+In-Reply-To: <CAJKOXPeVFeSDpxPv-rDywCafWbN3mivtcM3UQX_+wZkyPcZwPQ@mail.gmail.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+References: <20191004144549.3567-1-krzk@kernel.org> <87sgo4hjii.fsf@intel.com>
+ <CADnq5_MqGehpWwOAxYg0T2x3qXisqmae2uGG5dijQX+Aa4NsoQ@mail.gmail.com>
+ <CAJKOXPeVFeSDpxPv-rDywCafWbN3mivtcM3UQX_+wZkyPcZwPQ@mail.gmail.com>
+Date: Tue, 08 Oct 2019 09:05:49 +0300
+Message-ID: <87v9szdb5u.fsf@intel.com>
 MIME-Version: 1.0
-In-Reply-To: <20191007203152.3889947-1-megous@megous.com>
-User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_225812_901322_2555385A 
-X-CRM114-Status: GOOD (  12.68  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191007_230531_802795_7719DD4A 
+X-CRM114-Status: GOOD (  13.11  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ high trust [192.55.52.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,69 +65,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7749427565367595800=="
+Cc: amd-gfx list <amd-gfx@lists.freedesktop.org>,
+ Jiri Kosina <trivial@kernel.org>, lima@lists.freedesktop.org,
+ David Airlie <airlied@linux.ie>, nouveau <nouveau@lists.freedesktop.org>,
+ Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ LKML <linux-kernel@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ linux-rockchip@lists.infradead.org,
+ Maling list - DRI developers <dri-devel@lists.freedesktop.org>,
+ Daniel Vetter <daniel@ffwll.ch>, Sean Paul <sean@poorly.run>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============7749427565367595800==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ert3szapvjumxzbc"
-Content-Disposition: inline
-
-
---ert3szapvjumxzbc
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Mon, Oct 07, 2019 at 10:31:50PM +0200, megous@megous.com wrote:
-> From: Ondrej Jirman <megous@megous.com>
+On Mon, 07 Oct 2019, Krzysztof Kozlowski <krzk@kernel.org> wrote:
+> On Mon, 7 Oct 2019 at 18:09, Alex Deucher <alexdeucher@gmail.com> wrote:
+>>
+>> On Mon, Oct 7, 2019 at 7:39 AM Jani Nikula <jani.nikula@linux.intel.com> wrote:
+>> >
+>> > On Fri, 04 Oct 2019, Krzysztof Kozlowski <krzk@kernel.org> wrote:
+>> > >  drivers/gpu/drm/i915/Kconfig             |  12 +-
+>> > >  drivers/gpu/drm/i915/Kconfig.debug       | 144 +++++++++++------------
+>> >
+>> > Please split these out to a separate patch. Can't speak for others, but
+>> > the patch looks like it'll be conflicts galore and a problem to manage
+>> > if merged in one big lump.
+>>
+>> Yes, it would be nice to have the amd patch separate as well.
 >
-> (Re-send for Maxime, with already applied patches dropped. Nothing new.)
->
-> This series implements bluetooth support for Xunlong Orange Pi 3 board.
->
-> The board uses AP6256 WiFi/BT 5.0 chip.
->
-> Summary of changes:
->
-> - add more delay to let initialize the chip
-> - let the kernel detect firmware file path
-> - add new compatible and update dt-bindings
-> - update Orange Pi 3 / H6 DTS
->
-> Please take a look.
+> I'll split the AMD and i915 although I am not sure if it is sense to
+> split such trivial patch per each driver.
 
-Applied both, thanks!
-Maxime
+Thanks.
 
---ert3szapvjumxzbc
-Content-Type: application/pgp-signature; name="signature.asc"
+See MAINTAINERS, many of the drivers are maintained in the same drm-misc
+repo, and it makes no difference to split those.
 
------BEGIN PGP SIGNATURE-----
+In general it's, well, trivial to split up patches like this per driver
+or repo, but not splitting it up generates extra busywork in managing
+conflicts until some common merge/backmerge happens. We just want to
+apply the patch and forget about it, instead of dealing with a trivial
+whitespace cleanup many times over.
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXZwlcQAKCRDj7w1vZxhR
-xfZYAP9SMxqaZn19ntY7023We3X+5/xContSlxTodlVbXkTQCQEAghM2VObtw49u
-Q9P7kQeTJcnIsIbJNFymmtSCVdx+sA0=
-=ZikW
------END PGP SIGNATURE-----
-
---ert3szapvjumxzbc--
+BR,
+Jani.
 
 
---===============7749427565367595800==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Jani Nikula, Intel Open Source Graphics Center
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7749427565367595800==--
-
