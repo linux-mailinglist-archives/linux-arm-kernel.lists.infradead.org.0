@@ -2,41 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37408CF7DB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 13:11:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E02A1CF7DD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 13:11:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=AoSoxfx85yElYwmrzZ9DZ10yfdDo1KnkT6ymwD+sVtA=; b=dEMh5fMexiu8hT
-	vzP/YCdtMmvR3UBwDYvBRK8KQ7pKD3QtvAEIveQl6zSn/SR8SWhkEeyHUpSJ+2Jt58p81t4gKi/NQ
-	2nee2hY7a+pTjH4R6+wy5T9SmzlNVHBTBSaA4u6ebrDPT252wB/VRQv6hds+82BteTKR6gc3hprp1
-	QEQK33cWJM8SZLbL6C3KmQWg4aRHId46ZyruQgKAf0jKvpxqHnUbtQ0MZPf2l7GP8O8lZxTmzWggn
-	CnneYeH91goOzU4J+6qJId2VymEjq2fWZdBgi5uedDb7Tp4SCcjVKcsGvgdljivA8Cez2sjixugqK
-	W8bs2hwPnVjF547fMDxw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uaENlkKNGJiU7PKC2FhIGOQ8m0sMt0luhK1HZADpNns=; b=ii977TtnC2N+aW
+	q+yLvltAWjaGgb5Be7rIVxw6jI7u1QLNBzSC1cRJI/5saymmnwMvWNmC362OpL+X7YFNv6mTV9RWG
+	kANAnDoZMbk91N1+RfM884D2LdylzZdtRycpOXSyUGqRtc7li4jBtmr8peLDe8SqZ+gyYETIclQ9g
+	5CfoRsPV655U5O5UTA0YzNrRE7lBVMoi5gTa6J69rBoVRrSUapeQoOHW3uIj1IivUonChO2thTI5Y
+	hLMdjc6O6laLX4KHmOuLss2Zm5Ed0lOIUW1qvaL93ZMJ/OafXh9hgDt23RhVtnjz/zw3jJgO61bmc
+	n7O0dlVo9NiQkPN2WcMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHnOU-0006dP-Vo; Tue, 08 Oct 2019 11:11:07 +0000
+	id 1iHnOl-0006s1-Gd; Tue, 08 Oct 2019 11:11:23 +0000
 Received: from mail-sz.amlogic.com ([211.162.65.117])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHnOG-0006b1-Ey; Tue, 08 Oct 2019 11:10:54 +0000
+ id 1iHnOI-0006b1-Km; Tue, 08 Oct 2019 11:10:56 +0000
 Received: from localhost.localdomain (10.28.8.19) by mail-sz.amlogic.com
  (10.28.11.5) with Microsoft SMTP Server id 15.1.1591.10; Tue, 8 Oct 2019
  19:10:38 +0800
 From: Qianggui Song <qianggui.song@amlogic.com>
 To: Linus Walleij <linus.walleij@linaro.org>, <linux-gpio@vger.kernel.org>
-Subject: [PATCH v2 0/3] pinctrl: meson-a1: add pinctrl driver
-Date: Tue, 8 Oct 2019 19:09:56 +0800
-Message-ID: <1570532999-23302-1-git-send-email-qianggui.song@amlogic.com>
+Subject: [PATCH v2 1/3] pinctrl: add compatible for Amlogic Meson A1 pin
+ controller
+Date: Tue, 8 Oct 2019 19:09:57 +0800
+Message-ID: <1570532999-23302-2-git-send-email-qianggui.song@amlogic.com>
 X-Mailer: git-send-email 1.9.1
+In-Reply-To: <1570532999-23302-1-git-send-email-qianggui.song@amlogic.com>
+References: <1570532999-23302-1-git-send-email-qianggui.song@amlogic.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.28.8.19]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_041052_499311_C81AFF52 
-X-CRM114-Status: UNSURE (   8.59  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191008_041054_681153_8EC651EF 
+X-CRM114-Status: GOOD (  11.13  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -70,35 +72,111 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchset adds Pin controller driver support for Meson-A1 Soc
-which shares the same register layout of pinmux with previous
-Meson-G12A, however there is difference for gpio and pin config
-registers in A1.
+Add new compatible name for Amlogic's Meson-A1 pin controller
+add a dt-binding header file which document the detail pin names.
+Note that A1 doesn't need DS bank reg any more, use gpio reg as
+base.
 
-Changes since v1 at [0]:
- - collect Reviewed-by
- - modify commit log
- - add an extra dt parser function for a1
-
-[0] https://lore.kernel.org/linux-amlogic/1568700442-18540-1-git-send-email-qianggui.song@amlogic.com/
-
-Qianggui Song (3):
-  pinctrl: add compatible for Amlogic Meson A1 pin controller
-  pinctrl: meson-a1: add pinctrl driver for Meson A1 Soc
-  arm64: dts: meson: a1: add pinctrl controller support
-
- .../devicetree/bindings/pinctrl/meson,pinctrl.txt  |   1 +
- arch/arm64/boot/dts/amlogic/meson-a1.dtsi          |  18 +
- drivers/pinctrl/meson/Kconfig                      |   6 +
- drivers/pinctrl/meson/Makefile                     |   1 +
- drivers/pinctrl/meson/pinctrl-meson-a1.c           | 942 +++++++++++++++++++++
- drivers/pinctrl/meson/pinctrl-meson.c              |  16 +-
- drivers/pinctrl/meson/pinctrl-meson.h              |   5 +
- include/dt-bindings/gpio/meson-a1-gpio.h           |  73 ++
- 8 files changed, 1061 insertions(+), 1 deletion(-)
- create mode 100644 drivers/pinctrl/meson/pinctrl-meson-a1.c
+Reviewed-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+Signed-off-by: Qianggui Song <qianggui.song@amlogic.com>
+---
+ .../devicetree/bindings/pinctrl/meson,pinctrl.txt  |  1 +
+ include/dt-bindings/gpio/meson-a1-gpio.h           | 73 ++++++++++++++++++++++
+ 2 files changed, 74 insertions(+)
  create mode 100644 include/dt-bindings/gpio/meson-a1-gpio.h
 
+diff --git a/Documentation/devicetree/bindings/pinctrl/meson,pinctrl.txt b/Documentation/devicetree/bindings/pinctrl/meson,pinctrl.txt
+index 10dc4f7176ca..0aff1f28495c 100644
+--- a/Documentation/devicetree/bindings/pinctrl/meson,pinctrl.txt
++++ b/Documentation/devicetree/bindings/pinctrl/meson,pinctrl.txt
+@@ -15,6 +15,7 @@ Required properties for the root node:
+ 		      "amlogic,meson-axg-aobus-pinctrl"
+ 		      "amlogic,meson-g12a-periphs-pinctrl"
+ 		      "amlogic,meson-g12a-aobus-pinctrl"
++		      "amlogic,meson-a1-periphs-pinctrl"
+  - reg: address and size of registers controlling irq functionality
+ 
+ === GPIO sub-nodes ===
+diff --git a/include/dt-bindings/gpio/meson-a1-gpio.h b/include/dt-bindings/gpio/meson-a1-gpio.h
+new file mode 100644
+index 000000000000..40e57a5ff1db
+--- /dev/null
++++ b/include/dt-bindings/gpio/meson-a1-gpio.h
+@@ -0,0 +1,73 @@
++/* SPDX-License-Identifier: (GPL-2.0+ OR MIT) */
++/*
++ * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
++ * Author: Qianggui Song <qianggui.song@amlogic.com>
++ */
++
++#ifndef _DT_BINDINGS_MESON_A1_GPIO_H
++#define _DT_BINDINGS_MESON_A1_GPIO_H
++
++#define GPIOP_0		0
++#define GPIOP_1		1
++#define GPIOP_2		2
++#define GPIOP_3		3
++#define GPIOP_4		4
++#define GPIOP_5		5
++#define GPIOP_6		6
++#define GPIOP_7		7
++#define GPIOP_8		8
++#define GPIOP_9		9
++#define GPIOP_10	10
++#define GPIOP_11	11
++#define GPIOP_12	12
++#define GPIOB_0		13
++#define GPIOB_1		14
++#define GPIOB_2		15
++#define GPIOB_3		16
++#define GPIOB_4		17
++#define GPIOB_5		18
++#define GPIOB_6		19
++#define GPIOX_0		20
++#define GPIOX_1		21
++#define GPIOX_2		22
++#define GPIOX_3		23
++#define GPIOX_4		24
++#define GPIOX_5		25
++#define GPIOX_6		26
++#define GPIOX_7		27
++#define GPIOX_8		28
++#define GPIOX_9		29
++#define GPIOX_10	30
++#define GPIOX_11	31
++#define GPIOX_12	32
++#define GPIOX_13	33
++#define GPIOX_14	34
++#define GPIOX_15	35
++#define GPIOX_16	36
++#define GPIOF_0		37
++#define GPIOF_1		38
++#define GPIOF_2		39
++#define GPIOF_3		40
++#define GPIOF_4		41
++#define GPIOF_5		42
++#define GPIOF_6		43
++#define GPIOF_7		44
++#define GPIOF_8		45
++#define GPIOF_9		46
++#define GPIOF_10	47
++#define GPIOF_11	48
++#define GPIOF_12	49
++#define GPIOA_0		50
++#define GPIOA_1		51
++#define GPIOA_2		52
++#define GPIOA_3		53
++#define GPIOA_4		54
++#define GPIOA_5		55
++#define GPIOA_6		56
++#define GPIOA_7		57
++#define GPIOA_8		58
++#define GPIOA_9		59
++#define GPIOA_10	60
++#define GPIOA_11	61
++
++#endif /* _DT_BINDINGS_MESON_A1_GPIO_H */
 -- 
 1.9.1
 
