@@ -2,87 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F1A6CF3AE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 09:26:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC66ECF42A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 09:46:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LG++VicsDYJuxq+Jm1cvUrAfjcu2I2ZEnF7JjEzEkAw=; b=hYJ+FH5/F0+LKU
-	szYsbNCws7GeniYxR2pohpd2L9FZ8wAGjMLbv1n5+ApbxHFZmug9MVqKsOkWSCwzghCxagoHzVciA
-	G3FADyNImRJtDwh2aHUt+byRHQIYJ0CsHUn74UwZh5vooRSDyXtz+tf0AvKpUpTTMKzjXvCQQPW3K
-	JV1VYr6/DYbgTx3d7SvOnPDewFCYrt3/8JMpaE+v+kSCoadLYE4gF2VFVwAjLR6gJ1+xoShATHW/B
-	oj2pfvK9b19k/IOdTHqsInDHAjo2zWSsfSPfyia4+A2SjT24XxQxRvtJ1/vkkdZ+fiO3XkZV4cLQ5
-	ruOhqirUBgMAi9WWU+bg==;
+	List-Owner; bh=GHic7oNCeRcREW75a56S75Mh3skBh6b6Bw+FLi7FBKM=; b=Sb2zNBEL6Nggi1
+	VLD5a5DXfa9ZqibY2F925/htZomspv5gsknU9H0KyrphHzlufvUJ0+L7N1t3lKL6mPiiXmFbx/OhH
+	mt+Yxerw1VUxngMXzGyJSYXq6zRUVAr4QFzlE8kElVfV4Oit+YLmTOQfRWCTgO2AmVM7Ao7E5hJfQ
+	LFAR+fNO5z4v5bCe0t50dldpmO54ViFLpMHpkbAnAx9Bn8EA6hvgKm/FhzjBHKva4xBe9H+zaAtKq
+	EVrgMsMQb73tDJkaPw26DlZMs2DRHJKmWH2D/t2peKZdX8k/mCyzHp3SXNWye/y7TpzAM9MoSpt0F
+	sLkZJ5BvfaSoPD/zDw3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHjsj-0004AW-Hu; Tue, 08 Oct 2019 07:26:05 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iHkCO-0002Qs-SC; Tue, 08 Oct 2019 07:46:24 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHjsb-00049m-4O
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 07:25:59 +0000
-Received: by mail-wr1-x441.google.com with SMTP id j18so17253705wrq.10
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 08 Oct 2019 00:25:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=4kal6lzen4CHLw+JnccRumaFnnhCb00ynZNLABryreg=;
- b=NKrLehZ/TKt+1PDXDjQmfWItHIAFJHrd9cn7LjgSUerCYGJJJXU3ia1ruT44v1swZP
- 4HDluTnag7GekQh2DrgH4MAU0FK3/+3oe6OSoHjoQU1k9iBbOtDJKO2KKCrKc1v8F8zL
- nXE2SniQOcMm+hoZyfAszTnzS8VnHI8Vj6OrTPMbJMvnUaqbbdg/CdCjp9O0QcHpGU4P
- mJqrhBxWc3JD/DnDoNFI+haZ/iyG9jWTDi7ZTGKvHccmrBpQrYiseuxhucJTOS7uJq+8
- rb3IimCY9i8o1EkJxKQr+L92XDcr4eae8BxNCkrMtY06VF4mnB45BL6UV6K4xl0K4h9R
- l2yw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=4kal6lzen4CHLw+JnccRumaFnnhCb00ynZNLABryreg=;
- b=bl+Hb8MJtqV/8Ypdrdyhc4cj0hLes0pz2UNzl4oXSSHNY2Kcu+o0P9lp3CCcsYo4p5
- caePM9TZFCXf3GLDcsZXjD+uBepbOcMJ5PSXT0IWo4D8Fz+6ajNwEHJFUWmaBI6uvk89
- ErLZjCYFccl5yFTJz8zLSuh6As5QE4IN1LBewreOOi8xIsMiv3sJMyhSkfZ7ETytTHvi
- jVxBmPVVMgN+dJrgRiAUpgBCXb+BtQtBhQIB9QnLhN7WLz3Nt6RII0q+byTyFE5Sv4C6
- Y2ONlGN7UkidqpioxN1KOH9CJiylB4hQ07wFr6vhMpkwlmUZG7OPYLhmIigMy4G2QfpL
- jv6Q==
-X-Gm-Message-State: APjAAAVNn4r+1v48P8WJEP5l2JZin/32rsmVEOPkhqh1+635e6g821n9
- hlzlZLQJM0eoNuTUayUBog9EnecF2AcS5VzI0ak=
-X-Google-Smtp-Source: APXvYqxTIv3FYsobIxPqWB6cREu1LXDS7Puo8zQve+mUHnO0mJm3+k2OON2tEHH3/JBbLM8gt+FzZbcr+b9H3HnBwlU=
-X-Received: by 2002:a5d:630d:: with SMTP id i13mr4533668wru.230.1570519553425; 
- Tue, 08 Oct 2019 00:25:53 -0700 (PDT)
+ id 1iHkCE-0002QI-Gw
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 07:46:16 +0000
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why)
+ by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
+ (Exim 4.80) (envelope-from <maz@kernel.org>)
+ id 1iHkC5-0001oY-Va; Tue, 08 Oct 2019 09:46:06 +0200
+Date: Tue, 8 Oct 2019 08:46:04 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: "Justin He (Arm Technology China)" <Justin.He@arm.com>
+Subject: Re: [PATCH v10 2/3] arm64: mm: implement arch_faults_on_old_pte()
+ on arm64
+Message-ID: <20191008084604.7db2a123@why>
+In-Reply-To: <DB7PR08MB308265EB3ED2465D2471B492F79A0@DB7PR08MB3082.eurprd08.prod.outlook.com>
+References: <20190930015740.84362-1-justin.he@arm.com>
+ <20190930015740.84362-3-justin.he@arm.com>
+ <20191001125031.7ddm5dlwss6m3dth@willie-the-truck>
+ <20191001143219.018281be@why>
+ <DB7PR08MB308265EB3ED2465D2471B492F79A0@DB7PR08MB3082.eurprd08.prod.outlook.com>
+Organization: Approximate
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-References: <1564980742-19124-1-git-send-email-hongxing.zhu@nxp.com>
- <1564980742-19124-5-git-send-email-hongxing.zhu@nxp.com>
- <CAEnQRZBoLw5pfZ10STGMRfmR7=6hFjYNFOmXiMAnbM+-8Q4uLg@mail.gmail.com>
-In-Reply-To: <CAEnQRZBoLw5pfZ10STGMRfmR7=6hFjYNFOmXiMAnbM+-8Q4uLg@mail.gmail.com>
-From: Daniel Baluta <daniel.baluta@gmail.com>
-Date: Tue, 8 Oct 2019 10:25:41 +0300
-Message-ID: <CAEnQRZCkoA-q=C6nU0L_i33W8iTPY2RC4Cvb-aWuExA8VEqM4g@mail.gmail.com>
-Subject: Re: [RESEND PATCH v5 4/4] mailbox: imx: add support for imx v1 mu
-To: Richard Zhu <hongxing.zhu@nxp.com>
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: Justin.He@arm.com, will@kernel.org, Catalin.Marinas@arm.com,
+ Mark.Rutland@arm.com, James.Morse@arm.com, willy@infradead.org,
+ kirill.shutemov@linux.intel.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org, punitagrawal@gmail.com,
+ tglx@linutronix.de, akpm@linux-foundation.org, hejianet@gmail.com,
+ Kaly.Xin@arm.com, nd@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_002557_630892_B6066037 
-X-CRM114-Status: GOOD (  21.68  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191008_004614_711432_45863138 
+X-CRM114-Status: GOOD (  29.60  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (daniel.baluta[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,200 +74,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, jassisinghbrar@gmail.com,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Oleksij Rempel <o.rempel@pengutronix.de>, dl-linux-imx <linux-imx@nxp.com>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <Mark.Rutland@arm.com>, "Kaly Xin \(Arm Technology
+ China\)" <Kaly.Xin@arm.com>, Catalin Marinas <Catalin.Marinas@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Matthew Wilcox <willy@infradead.org>,
+ "linux-mm@kvack.org" <linux-mm@kvack.org>, James Morse <James.Morse@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Punit Agrawal <punitagrawal@gmail.com>,
+ "hejianet@gmail.com" <hejianet@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, nd <nd@arm.com>,
+ Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Richard,
-
-Can you please rebase and resend this patch series?
-
-On Mon, Aug 5, 2019 at 10:21 PM Daniel Baluta <daniel.baluta@gmail.com> wrote:
->
-> On Mon, Aug 5, 2019 at 8:16 AM Richard Zhu <hongxing.zhu@nxp.com> wrote:
-> >
-> > There is a version 1.0 MU on i.MX7ULP platform.
-> > One new version ID register is added, and it's offset is 0.
-> > TRn registers are defined at the offset 0x20 ~ 0x2C.
-> > RRn registers are defined at the offset 0x40 ~ 0x4C.
-> > SR/CR registers are defined at 0x60/0x64.
-> > Extend this driver to support it.
-> >
-> > Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
-> > Suggested-by: Oleksij Rempel <o.rempel@pengutronix.de>
-> > Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
-> > Reviewed-by: Oleksij Rempel <o.rempel@pengutronix.de>
->
-> Very clean solution. Thanks Richard!
->
-> Reviewed-by: Daniel Baluta <daniel.baluta@nxp.com>
->
-> > ---
-> >  drivers/mailbox/imx-mailbox.c | 55 ++++++++++++++++++++++++++++++-------------
-> >  1 file changed, 38 insertions(+), 17 deletions(-)
-> >
-> > diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
-> > index afe625e..2cdcdc5 100644
-> > --- a/drivers/mailbox/imx-mailbox.c
-> > +++ b/drivers/mailbox/imx-mailbox.c
-> > @@ -12,19 +12,11 @@
-> >  #include <linux/of_device.h>
-> >  #include <linux/slab.h>
-> >
-> > -/* Transmit Register */
-> > -#define IMX_MU_xTRn(x)         (0x00 + 4 * (x))
-> > -/* Receive Register */
-> > -#define IMX_MU_xRRn(x)         (0x10 + 4 * (x))
-> > -/* Status Register */
-> > -#define IMX_MU_xSR             0x20
-> >  #define IMX_MU_xSR_GIPn(x)     BIT(28 + (3 - (x)))
-> >  #define IMX_MU_xSR_RFn(x)      BIT(24 + (3 - (x)))
-> >  #define IMX_MU_xSR_TEn(x)      BIT(20 + (3 - (x)))
-> >  #define IMX_MU_xSR_BRDIP       BIT(9)
-> >
-> > -/* Control Register */
-> > -#define IMX_MU_xCR             0x24
-> >  /* General Purpose Interrupt Enable */
-> >  #define IMX_MU_xCR_GIEn(x)     BIT(28 + (3 - (x)))
-> >  /* Receive Interrupt Enable */
-> > @@ -44,6 +36,13 @@ enum imx_mu_chan_type {
-> >         IMX_MU_TYPE_RXDB,       /* Rx doorbell */
-> >  };
-> >
-> > +struct imx_mu_dcfg {
-> > +       u32     xTR[4];         /* Transmit Registers */
-> > +       u32     xRR[4];         /* Receive Registers */
-> > +       u32     xSR;            /* Status Register */
-> > +       u32     xCR;            /* Control Register */
-> > +};
-> > +
-> >  struct imx_mu_con_priv {
-> >         unsigned int            idx;
-> >         char                    irq_desc[IMX_MU_CHAN_NAME_SIZE];
-> > @@ -61,12 +60,27 @@ struct imx_mu_priv {
-> >         struct mbox_chan        mbox_chans[IMX_MU_CHANS];
-> >
-> >         struct imx_mu_con_priv  con_priv[IMX_MU_CHANS];
-> > +       const struct imx_mu_dcfg        *dcfg;
-> >         struct clk              *clk;
-> >         int                     irq;
-> >
-> >         bool                    side_b;
-> >  };
-> >
-> > +static const struct imx_mu_dcfg imx_mu_cfg_imx6sx = {
-> > +       .xTR    = {0x0, 0x4, 0x8, 0xc},
-> > +       .xRR    = {0x10, 0x14, 0x18, 0x1c},
-> > +       .xSR    = 0x20,
-> > +       .xCR    = 0x24,
-> > +};
-> > +
-> > +static const struct imx_mu_dcfg imx_mu_cfg_imx7ulp = {
-> > +       .xTR    = {0x20, 0x24, 0x28, 0x2c},
-> > +       .xRR    = {0x40, 0x44, 0x48, 0x4c},
-> > +       .xSR    = 0x60,
-> > +       .xCR    = 0x64,
-> > +};
-> > +
-> >  static struct imx_mu_priv *to_imx_mu_priv(struct mbox_controller *mbox)
-> >  {
-> >         return container_of(mbox, struct imx_mu_priv, mbox);
-> > @@ -88,10 +102,10 @@ static u32 imx_mu_xcr_rmw(struct imx_mu_priv *priv, u32 set, u32 clr)
-> >         u32 val;
-> >
-> >         spin_lock_irqsave(&priv->xcr_lock, flags);
-> > -       val = imx_mu_read(priv, IMX_MU_xCR);
-> > +       val = imx_mu_read(priv, priv->dcfg->xCR);
-> >         val &= ~clr;
-> >         val |= set;
-> > -       imx_mu_write(priv, val, IMX_MU_xCR);
-> > +       imx_mu_write(priv, val, priv->dcfg->xCR);
-> >         spin_unlock_irqrestore(&priv->xcr_lock, flags);
-> >
-> >         return val;
-> > @@ -111,8 +125,8 @@ static irqreturn_t imx_mu_isr(int irq, void *p)
-> >         struct imx_mu_con_priv *cp = chan->con_priv;
-> >         u32 val, ctrl, dat;
-> >
-> > -       ctrl = imx_mu_read(priv, IMX_MU_xCR);
-> > -       val = imx_mu_read(priv, IMX_MU_xSR);
-> > +       ctrl = imx_mu_read(priv, priv->dcfg->xCR);
-> > +       val = imx_mu_read(priv, priv->dcfg->xSR);
-> >
-> >         switch (cp->type) {
-> >         case IMX_MU_TYPE_TX:
-> > @@ -138,10 +152,10 @@ static irqreturn_t imx_mu_isr(int irq, void *p)
-> >                 imx_mu_xcr_rmw(priv, 0, IMX_MU_xCR_TIEn(cp->idx));
-> >                 mbox_chan_txdone(chan, 0);
-> >         } else if (val == IMX_MU_xSR_RFn(cp->idx)) {
-> > -               dat = imx_mu_read(priv, IMX_MU_xRRn(cp->idx));
-> > +               dat = imx_mu_read(priv, priv->dcfg->xRR[cp->idx]);
-> >                 mbox_chan_received_data(chan, (void *)&dat);
-> >         } else if (val == IMX_MU_xSR_GIPn(cp->idx)) {
-> > -               imx_mu_write(priv, IMX_MU_xSR_GIPn(cp->idx), IMX_MU_xSR);
-> > +               imx_mu_write(priv, IMX_MU_xSR_GIPn(cp->idx), priv->dcfg->xSR);
-> >                 mbox_chan_received_data(chan, NULL);
-> >         } else {
-> >                 dev_warn_ratelimited(priv->dev, "Not handled interrupt\n");
-> > @@ -159,7 +173,7 @@ static int imx_mu_send_data(struct mbox_chan *chan, void *data)
-> >
-> >         switch (cp->type) {
-> >         case IMX_MU_TYPE_TX:
-> > -               imx_mu_write(priv, *arg, IMX_MU_xTRn(cp->idx));
-> > +               imx_mu_write(priv, *arg, priv->dcfg->xTR[cp->idx]);
-> >                 imx_mu_xcr_rmw(priv, IMX_MU_xCR_TIEn(cp->idx), 0);
-> >                 break;
-> >         case IMX_MU_TYPE_TXDB:
-> > @@ -270,7 +284,7 @@ static void imx_mu_init_generic(struct imx_mu_priv *priv)
-> >                 return;
-> >
-> >         /* Set default MU configuration */
-> > -       imx_mu_write(priv, 0, IMX_MU_xCR);
-> > +       imx_mu_write(priv, 0, priv->dcfg->xCR);
-> >  }
-> >
-> >  static int imx_mu_probe(struct platform_device *pdev)
-> > @@ -278,6 +292,7 @@ static int imx_mu_probe(struct platform_device *pdev)
-> >         struct device *dev = &pdev->dev;
-> >         struct device_node *np = dev->of_node;
-> >         struct imx_mu_priv *priv;
-> > +       const struct imx_mu_dcfg *dcfg;
-> >         unsigned int i;
-> >         int ret;
-> >
-> > @@ -295,6 +310,11 @@ static int imx_mu_probe(struct platform_device *pdev)
-> >         if (priv->irq < 0)
-> >                 return priv->irq;
-> >
-> > +       dcfg = of_device_get_match_data(dev);
-> > +       if (!dcfg)
-> > +               return -EINVAL;
-> > +       priv->dcfg = dcfg;
-> > +
-> >         priv->clk = devm_clk_get(dev, NULL);
-> >         if (IS_ERR(priv->clk)) {
-> >                 if (PTR_ERR(priv->clk) != -ENOENT)
-> > @@ -348,7 +368,8 @@ static int imx_mu_remove(struct platform_device *pdev)
-> >  }
-> >
-> >  static const struct of_device_id imx_mu_dt_ids[] = {
-> > -       { .compatible = "fsl,imx6sx-mu" },
-> > +       { .compatible = "fsl,imx7ulp-mu", .data = &imx_mu_cfg_imx7ulp },
-> > +       { .compatible = "fsl,imx6sx-mu", .data = &imx_mu_cfg_imx6sx },
-> >         { },
-> >  };
-> >  MODULE_DEVICE_TABLE(of, imx_mu_dt_ids);
-> > --
-> > 2.7.4
-> >
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCA4IE9jdCAyMDE5IDAxOjU1OjA0ICswMDAwCiJKdXN0aW4gSGUgKEFybSBUZWNobm9s
+b2d5IENoaW5hKSIgPEp1c3Rpbi5IZUBhcm0uY29tPiB3cm90ZToKCj4gSGkgV2lsbCBhbmQgTWFy
+Ywo+IAo+ID4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KPiA+IEZyb206IE1hcmMgWnluZ2ll
+ciA8bWF6QGtlcm5lbC5vcmc+Cj4gPiBTZW50OiAyMDE55bm0MTDmnIgx5pelIDIxOjMyCj4gPiBU
+bzogV2lsbCBEZWFjb24gPHdpbGxAa2VybmVsLm9yZz4KPiA+IENjOiBKdXN0aW4gSGUgKEFybSBU
+ZWNobm9sb2d5IENoaW5hKSA8SnVzdGluLkhlQGFybS5jb20+OyBDYXRhbGluCj4gPiBNYXJpbmFz
+IDxDYXRhbGluLk1hcmluYXNAYXJtLmNvbT47IE1hcmsgUnV0bGFuZAo+ID4gPE1hcmsuUnV0bGFu
+ZEBhcm0uY29tPjsgSmFtZXMgTW9yc2UgPEphbWVzLk1vcnNlQGFybS5jb20+Owo+ID4gTWF0dGhl
+dyBXaWxjb3ggPHdpbGx5QGluZnJhZGVhZC5vcmc+OyBLaXJpbGwgQS4gU2h1dGVtb3YKPiA+IDxr
+aXJpbGwuc2h1dGVtb3ZAbGludXguaW50ZWwuY29tPjsgbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
+bmZyYWRlYWQub3JnOwo+ID4gbGludXgta2VybmVsQHZnZXIua2VybmVsLm9yZzsgbGludXgtbW1A
+a3ZhY2sub3JnOyBQdW5pdCBBZ3Jhd2FsCj4gPiA8cHVuaXRhZ3Jhd2FsQGdtYWlsLmNvbT47IFRo
+b21hcyBHbGVpeG5lciA8dGdseEBsaW51dHJvbml4LmRlPjsKPiA+IEFuZHJldyBNb3J0b24gPGFr
+cG1AbGludXgtZm91bmRhdGlvbi5vcmc+OyBoZWppYW5ldEBnbWFpbC5jb207IEthbHkKPiA+IFhp
+biAoQXJtIFRlY2hub2xvZ3kgQ2hpbmEpIDxLYWx5LlhpbkBhcm0uY29tPgo+ID4gU3ViamVjdDog
+UmU6IFtQQVRDSCB2MTAgMi8zXSBhcm02NDogbW06IGltcGxlbWVudAo+ID4gYXJjaF9mYXVsdHNf
+b25fb2xkX3B0ZSgpIG9uIGFybTY0Cj4gPiAKPiA+IE9uIFR1ZSwgMSBPY3QgMjAxOSAxMzo1MDoz
+MiArMDEwMAo+ID4gV2lsbCBEZWFjb24gPHdpbGxAa2VybmVsLm9yZz4gd3JvdGU6Cj4gPiAgIAo+
+ID4gPiBPbiBNb24sIFNlcCAzMCwgMjAxOSBhdCAwOTo1NzozOUFNICswODAwLCBKaWEgSGUgd3Jv
+dGU6ICAKPiA+ID4gPiBPbiBhcm02NCB3aXRob3V0IGhhcmR3YXJlIEFjY2VzcyBGbGFnLCBjb3B5
+aW5nIGZyb211c2VyIHdpbGwgZmFpbCAgCj4gPiBiZWNhdXNlICAKPiA+ID4gPiB0aGUgcHRlIGlz
+IG9sZCBhbmQgY2Fubm90IGJlIG1hcmtlZCB5b3VuZy4gU28gd2UgYWx3YXlzIGVuZCB1cCB3aXRo
+ICAKPiA+IHplcm9lZCAgCj4gPiA+ID4gcGFnZSBhZnRlciBmb3JrKCkgKyBDb1cgZm9yIHBmbiBt
+YXBwaW5ncy4gd2UgZG9uJ3QgYWx3YXlzIGhhdmUgYQo+ID4gPiA+IGhhcmR3YXJlLW1hbmFnZWQg
+YWNjZXNzIGZsYWcgb24gYXJtNjQuCj4gPiA+ID4KPiA+ID4gPiBIZW5jZSBpbXBsZW1lbnQgYXJj
+aF9mYXVsdHNfb25fb2xkX3B0ZSBvbiBhcm02NCB0byBpbmRpY2F0ZSB0aGF0IGl0ICAKPiA+IG1p
+Z2h0ICAKPiA+ID4gPiBjYXVzZSBwYWdlIGZhdWx0IHdoZW4gYWNjZXNzaW5nIG9sZCBwdGUuCj4g
+PiA+ID4KPiA+ID4gPiBTaWduZWQtb2ZmLWJ5OiBKaWEgSGUgPGp1c3Rpbi5oZUBhcm0uY29tPgo+
+ID4gPiA+IFJldmlld2VkLWJ5OiBDYXRhbGluIE1hcmluYXMgPGNhdGFsaW4ubWFyaW5hc0Bhcm0u
+Y29tPgo+ID4gPiA+IC0tLQo+ID4gPiA+ICBhcmNoL2FybTY0L2luY2x1ZGUvYXNtL3BndGFibGUu
+aCB8IDE0ICsrKysrKysrKysrKysrCj4gPiA+ID4gIDEgZmlsZSBjaGFuZ2VkLCAxNCBpbnNlcnRp
+b25zKCspCj4gPiA+ID4KPiA+ID4gPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9pbmNsdWRlL2Fz
+bS9wZ3RhYmxlLmggIAo+ID4gYi9hcmNoL2FybTY0L2luY2x1ZGUvYXNtL3BndGFibGUuaCAgCj4g
+PiA+ID4gaW5kZXggNzU3NmRmMDBlYjUwLi5lOTZmYjgyZjYyZGUgMTAwNjQ0Cj4gPiA+ID4gLS0t
+IGEvYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9wZ3RhYmxlLmgKPiA+ID4gPiArKysgYi9hcmNoL2Fy
+bTY0L2luY2x1ZGUvYXNtL3BndGFibGUuaAo+ID4gPiA+IEBAIC04ODUsNiArODg1LDIwIEBAIHN0
+YXRpYyBpbmxpbmUgdm9pZCB1cGRhdGVfbW11X2NhY2hlKHN0cnVjdCAgCj4gPiB2bV9hcmVhX3N0
+cnVjdCAqdm1hLCAgCj4gPiA+ID4gICNkZWZpbmUgcGh5c190b190dGJyKGFkZHIpCShhZGRyKQo+
+ID4gPiA+ICAjZW5kaWYKPiA+ID4gPgo+ID4gPiA+ICsvKgo+ID4gPiA+ICsgKiBPbiBhcm02NCB3
+aXRob3V0IGhhcmR3YXJlIEFjY2VzcyBGbGFnLCBjb3B5aW5nIGZyb20gdXNlciB3aWxsIGZhaWwg
+IAo+ID4gYmVjYXVzZSAgCj4gPiA+ID4gKyAqIHRoZSBwdGUgaXMgb2xkIGFuZCBjYW5ub3QgYmUg
+bWFya2VkIHlvdW5nLiBTbyB3ZSBhbHdheXMgZW5kIHVwICAKPiA+IHdpdGggemVyb2VkICAKPiA+
+ID4gPiArICogcGFnZSBhZnRlciBmb3JrKCkgKyBDb1cgZm9yIHBmbiBtYXBwaW5ncy4gV2UgZG9u
+J3QgYWx3YXlzIGhhdmUgYQo+ID4gPiA+ICsgKiBoYXJkd2FyZS1tYW5hZ2VkIGFjY2VzcyBmbGFn
+IG9uIGFybTY0Lgo+ID4gPiA+ICsgKi8KPiA+ID4gPiArc3RhdGljIGlubGluZSBib29sIGFyY2hf
+ZmF1bHRzX29uX29sZF9wdGUodm9pZCkKPiA+ID4gPiArewo+ID4gPiA+ICsJV0FSTl9PTihwcmVl
+bXB0aWJsZSgpKTsKPiA+ID4gPiArCj4gPiA+ID4gKwlyZXR1cm4gIWNwdV9oYXNfaHdfYWYoKTsK
+PiA+ID4gPiArfSAgCj4gPiA+Cj4gPiA+IERvZXMgdGhpcyB3b3JrIGNvcnJlY3RseSBpbiBhIEtW
+TSBndWVzdD8gKGkuZS4gaXMgdGhlIE1NRlIgc2FuaXRpc2VkIGluICAKPiA+IHRoYXQgIAo+ID4g
+PiBjYXNlLCBkZXNwaXRlIG5vdCBiZWluZyB0aGUgY2FzZSBvbiB0aGUgaG9zdD8pICAKPiA+IAo+
+ID4gWXVwLCBhbGwgdGhlIDY0Yml0IE1NRlJzIGFyZSB0cmFwcGVkIChIQ1JfRUwyLlRJRDMgaXMg
+c2V0IGZvciBhbgo+ID4gQUFyY2g2NCBndWVzdCksIGFuZCB3ZSByZXR1cm4gdGhlIHNhbml0aXNl
+ZCB2ZXJzaW9uLiAgCj4gVGhhbmtzIGZvciBNYXJjJ3MgZXhwbGFuYXRpb24uIEkgdmVyaWZpZWQg
+dGhlIHBhdGNoIHNlcmllcyBvbiBhIGt2bSBndWVzdCAoLU0gdmlydCkKPiB3aXRoIHNpbXVsYXRl
+ZCBudmRpbW0gZGV2aWNlIGNyZWF0ZWQgYnkgcWVtdS4gVGhlIGhvc3QgaXMgVGh1bmRlclgyIGFh
+cmNoNjQuCj4gCj4gPiAKPiA+IEJ1dCB0aGF0J3MgYW4gaW50ZXJlc3RpbmcgcmVtYXJrOiB3ZSdy
+ZSBub3cgdHJhZGluZyBhbiBleHRyYSBmYXVsdCBvbgo+ID4gQ1BVcyB0aGF0IGRvIG5vdCBzdXBw
+b3J0IEhXQUZEQlMgZm9yIGEgZ3VhcmFudGVlZCB0cmFwIGZvciBlYWNoIGFuZAo+ID4gZXZlcnkg
+Z3Vlc3QgdW5kZXIgdGhlIHN1biB0aGF0IHdpbGwgaGl0IHRoZSBDT1cgcGF0aC4uLgo+ID4gCj4g
+PiBNeSBndXQgZmVlbGluZyBpcyB0aGF0IHRoaXMgaXMgZ29pbmcgdG8gYmUgcHJldHR5IHZpc2li
+bGUuIEppYSwgZG8geW91Cj4gPiBoYXZlIGFueSBudW1iZXJzIGZvciB0aGlzIGtpbmQgb2YgYmVo
+YXZpb3VyPyAgCj4gSXQgaXMgbm90IGEgY29tbW9uIENPVyBwYXRoLCBidXQgYSBDT1cgZm9yIFBG
+TiBtYXBwaW5nIHBhZ2VzIG9ubHkuCj4gSSBhZGQgYSBnX2NvdW50ZXIgYmVmb3JlIHB0ZV9ta3lv
+dW5nIGluIGZvcmNlX21reW91bmd7fSB3aGVuIHRlc3RpbmcgCj4gdm1tYWxsb2NfZm9yayBhdCBb
+MV0uCj4gCj4gSW4gdGhpcyB0ZXN0IGNhc2UsIGl0IHdpbGwgc3RhcnQgTSBmb3JrIHByb2Nlc3Nl
+cyBhbmQgTiBwdGhyZWFkcy4gVGhlIGRlZmF1bHQgaXMKPiBNPTIsTj00LiB0aGUgZ19jb3VudGVy
+IGlzIGFib3V0IDI0MSwgdGhhdCBpcyBpdCB3aWxsIGhpdCBteSBwYXRjaCBzZXJpZXMgZm9yIDI0
+MQo+IHRpbWVzLgo+IElmIEkgc2V0IE09MjAgYW5kIE49NDAgZm9yIFRFU1QzLCB0aGUgZ19jb3Vu
+dGVyIGlzIGFib3V0IDE0OTIuCgpJIG11c3QgY29uZmVzcyBJJ20gbm90IHNvIG11Y2ggaW50ZXJl
+c3RlZCBpbiByYW5kb20gbWljcm9iZW5jaG1hcmtzLApidXQgbW9yZSBpbiBhY3R1YWwgYXBwbGlj
+YXRpb25zIHRoYXQgY291bGQgcG90ZW50aWFsbHkgYmUgaW1wYWN0ZWQgYnkKdGhpcy4gVGhlIG51
+bWJlcnMgeW91J3JlIHF1b3RpbmcgaGVyZSBzZWVtIHByZXR0eSBzbWFsbCwgd2hpY2ggd291bGQK
+aW5kaWNhdGUgYSBsb3cgb3ZlcmhlYWQsIGJ1dCB0aGF0J3Mgbm90IGluZGljYXRpdmUgb2Ygd2hh
+dCB3b3VsZCBoYXBwZW4KaW4gcmVhbCBsaWZlLgoKSSBndWVzcyB0aGF0IHdlIGNhbiBsZWF2ZSBp
+dCBhdCB0aGF0IGZvciBub3csIGFuZCB0dXJuIGl0IGludG8gYSBDUFUKZmVhdHVyZSAod2l0aCB0
+aGUgYXNzb2NpYXRlZCBzdGF0aWMga2V5KSBpZiB0aGlzIHNob3dzIGFueXdoZXJlLgoKVGhhbmtz
+LAoKCU0uCgoKPiAgIAo+IFsxXSBodHRwczovL2dpdGh1Yi5jb20vcG1lbS9wbWRrL3RyZWUvbWFz
+dGVyL3NyYy90ZXN0L3ZtbWFsbG9jX2ZvcmsKPiAKPiAKPiAtLQo+IENoZWVycywKPiBKdXN0aW4g
+KEppYSBIZSkKPiAKLS0gCkphenogaXMgbm90IGRlYWQuIEl0IGp1c3Qgc21lbGxzIGZ1bm55Li4u
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
