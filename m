@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65B96CF08A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 03:29:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88AACCF086
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 03:28:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ODlUrvUJ57g7AsNjOX1IVlab1e8CsjOtjiZdFkkYfNQ=; b=iaO
-	67nKG5D1GAt8umBiIqYJkXKibyIFMRWJ+IZS1KI2cAVBW3eldLkQlfQE5Xezs7Pj31Q0xz4frVCiK
-	KVPjfXyZKdpDpXKT7wj3Kl75tGLRxfHuZbng8YYr5b5xgzy3PgKMvjInxOLRshzFiWaWRE1RIh1bL
-	nXM7LZPfwFmZkVA/LzTpuLlrMANVo9S7IFPUgdPUfs3MsUGhzN2nITRSFCMDO9wnuxN9J2ayvh0M4
-	4oVzUrGmNyEa648lSzZOr3zbIeLkeHtlU6sK7DUP80k/h2bqMaX0FvH+o6WVn3YAOmk5QPj8af8Fp
-	bbu08d9aCMBs6jM8y525XYSF/ZK0Btw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=HuFm9JMm7maQP93GWBs3/Qa4zf3+a45aHOGsG33nP0Y=; b=bI8wtWPyurYnXj23wNo+79a/fl
+	fgzR3zjw8nbcMeL0jYbTXpXRhtgDZozBNVtf4iy7+OwSdeI9wfuuWWF9Qf6PUBYfWXnVMX+xDDIS0
+	X6Z7xrRqDCsymhrBb5YExVIL8FGHJypxaKk2wcrOcu+lLteShmnGtAVoj4bgnFPYoL8zOS2rBtm30
+	36Ud6PCgxCGGaGwxami60ECcbbHFhyeD9S0FLLolZONTFl2yeSpi3bRnOWLpJc2pig6DK975DHu/I
+	E8RCirdaFPmoImtvC6KoM056IQr3+oGa/RI1y6aABrEbwiPNn4BQmEfrvf9ImAPo8e1ogRB8hkuvV
+	r41wSCfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHeJH-0000O9-BP; Tue, 08 Oct 2019 01:29:07 +0000
+	id 1iHeIr-0008OA-QA; Tue, 08 Oct 2019 01:28:41 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHeIW-0008DR-BG
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 01:28:23 +0000
+ id 1iHeIW-0008DS-BG
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 01:28:21 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 274161A024E;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3089D1A06BC;
  Tue,  8 Oct 2019 03:28:19 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5969E1A01C1;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A1D621A0058;
  Tue,  8 Oct 2019 03:28:12 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id E5C86402DA;
- Tue,  8 Oct 2019 09:28:01 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4E73F4031E;
+ Tue,  8 Oct 2019 09:28:03 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  jun.li@nxp.com, daniel.baluta@nxp.com, ping.bai@nxp.com,
  leonard.crestez@nxp.com, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH V2 1/3] arm64: dts: imx8mm-evk: Adjust i2c nodes following
- alphabetical sort
-Date: Tue,  8 Oct 2019 09:25:53 +0800
-Message-Id: <1570497955-19481-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V2 2/3] arm64: dts: imx8mm-evk: Add i2c3 support
+Date: Tue,  8 Oct 2019 09:25:54 +0800
+Message-Id: <1570497955-19481-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1570497955-19481-1-git-send-email-Anson.Huang@nxp.com>
+References: <1570497955-19481-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_182820_659969_3FC7E5EF 
-X-CRM114-Status: UNSURE (   8.10  )
+X-CRM114-CacheID: sfid-20191007_182820_519480_85D01CEC 
+X-CRM114-Status: UNSURE (   8.04  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,158 +79,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The iomuxc node is being put at end of file because of its huge
-pinctrl data. I2C devices should be placed in alphabetical sort.
+Enable i2c3 for i.MX8MM EVK board.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
-new patch.
+No changes.
 ---
- arch/arm64/boot/dts/freescale/imx8mm-evk.dts | 124 +++++++++++++--------------
- 1 file changed, 62 insertions(+), 62 deletions(-)
+ arch/arm64/boot/dts/freescale/imx8mm-evk.dts | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-index f7a15f3..f6d367c 100644
+index f6d367c..9624d7d 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-@@ -94,68 +94,6 @@
+@@ -244,6 +244,13 @@
  	};
  };
  
--&sai3 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_sai3>;
--	assigned-clocks = <&clk IMX8MM_CLK_SAI3>;
--	assigned-clock-parents = <&clk IMX8MM_AUDIO_PLL1_OUT>;
--	assigned-clock-rates = <24576000>;
--	status = "okay";
--};
--
--&snvs_pwrkey {
--	status = "okay";
--};
--
--&uart2 { /* console */
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_uart2>;
--	status = "okay";
--};
--
--&usbotg1 {
--	dr_mode = "otg";
--	hnp-disable;
--	srp-disable;
--	adp-disable;
--	usb-role-switch;
--	status = "okay";
--
--	port {
--		usb1_drd_sw: endpoint {
--			remote-endpoint = <&typec1_dr_sw>;
--		};
--	};
--};
--
--&usdhc2 {
--	pinctrl-names = "default", "state_100mhz", "state_200mhz";
--	pinctrl-0 = <&pinctrl_usdhc2>, <&pinctrl_usdhc2_gpio>;
--	pinctrl-1 = <&pinctrl_usdhc2_100mhz>, <&pinctrl_usdhc2_gpio>;
--	pinctrl-2 = <&pinctrl_usdhc2_200mhz>, <&pinctrl_usdhc2_gpio>;
--	cd-gpios = <&gpio1 15 GPIO_ACTIVE_LOW>;
--	bus-width = <4>;
--	vmmc-supply = <&reg_usdhc2_vmmc>;
--	status = "okay";
--};
--
--&usdhc3 {
--	pinctrl-names = "default", "state_100mhz", "state_200mhz";
--	pinctrl-0 = <&pinctrl_usdhc3>;
--	pinctrl-1 = <&pinctrl_usdhc3_100mhz>;
--	pinctrl-2 = <&pinctrl_usdhc3_200mhz>;
--	bus-width = <8>;
--	non-removable;
--	status = "okay";
--};
--
--&wdog1 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_wdog>;
--	fsl,ext-reset-output;
--	status = "okay";
--};
--
- &i2c1 {
- 	clock-frequency = <400000>;
++&i2c3 {
++	clock-frequency = <400000>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_i2c3>;
++	status = "okay";
++};
++
+ &sai3 {
  	pinctrl-names = "default";
-@@ -306,6 +244,68 @@
+ 	pinctrl-0 = <&pinctrl_sai3>;
+@@ -355,6 +362,13 @@
+ 		>;
  	};
- };
  
-+&sai3 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_sai3>;
-+	assigned-clocks = <&clk IMX8MM_CLK_SAI3>;
-+	assigned-clock-parents = <&clk IMX8MM_AUDIO_PLL1_OUT>;
-+	assigned-clock-rates = <24576000>;
-+	status = "okay";
-+};
-+
-+&snvs_pwrkey {
-+	status = "okay";
-+};
-+
-+&uart2 { /* console */
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_uart2>;
-+	status = "okay";
-+};
-+
-+&usbotg1 {
-+	dr_mode = "otg";
-+	hnp-disable;
-+	srp-disable;
-+	adp-disable;
-+	usb-role-switch;
-+	status = "okay";
-+
-+	port {
-+		usb1_drd_sw: endpoint {
-+			remote-endpoint = <&typec1_dr_sw>;
-+		};
++	pinctrl_i2c3: i2c3grp {
++		fsl,pins = <
++			MX8MM_IOMUXC_I2C3_SCL_I2C3_SCL			0x400001c3
++			MX8MM_IOMUXC_I2C3_SDA_I2C3_SDA			0x400001c3
++		>;
 +	};
-+};
 +
-+&usdhc2 {
-+	pinctrl-names = "default", "state_100mhz", "state_200mhz";
-+	pinctrl-0 = <&pinctrl_usdhc2>, <&pinctrl_usdhc2_gpio>;
-+	pinctrl-1 = <&pinctrl_usdhc2_100mhz>, <&pinctrl_usdhc2_gpio>;
-+	pinctrl-2 = <&pinctrl_usdhc2_200mhz>, <&pinctrl_usdhc2_gpio>;
-+	cd-gpios = <&gpio1 15 GPIO_ACTIVE_LOW>;
-+	bus-width = <4>;
-+	vmmc-supply = <&reg_usdhc2_vmmc>;
-+	status = "okay";
-+};
-+
-+&usdhc3 {
-+	pinctrl-names = "default", "state_100mhz", "state_200mhz";
-+	pinctrl-0 = <&pinctrl_usdhc3>;
-+	pinctrl-1 = <&pinctrl_usdhc3_100mhz>;
-+	pinctrl-2 = <&pinctrl_usdhc3_200mhz>;
-+	bus-width = <8>;
-+	non-removable;
-+	status = "okay";
-+};
-+
-+&wdog1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_wdog>;
-+	fsl,ext-reset-output;
-+	status = "okay";
-+};
-+
- &iomuxc {
- 	pinctrl-names = "default";
- 
+ 	pinctrl_pmic: pmicirq {
+ 		fsl,pins = <
+ 			MX8MM_IOMUXC_GPIO1_IO03_GPIO1_IO3		0x41
 -- 
 2.7.4
 
