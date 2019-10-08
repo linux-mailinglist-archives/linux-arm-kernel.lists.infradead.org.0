@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2413DCF391
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 09:20:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 542BDCF393
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 09:20:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aDWlm9o6UF4RL0Pn86R4z/gwe4C6L2KvKaHYAOlwd5o=; b=jSbOgOMQ+P+qVh
-	Mgi2GjJg84OHr62dD3W1O+A+y8K9kv72YhSLeNUOSy02YJ/G+JzRyolSFZflw68juHuxwKr4yyF/A
-	YJqOTOYBM7tD4+WNjw7rFUsyzLtkjW+L8ZE311+ry7bf02yjrVsqlH2KlFvU8/bW8PO52+4zYptp4
-	WMxEdj5Z6ziZShv/7pd5X0jerU0ftGY+VwmE7hqWbunizrJlpdbmlDwDr5FKPAg1MQuvMe5TSHwYD
-	g0IVLL8r4YoZSVkX1gUfvJIPZ5J57ATdOeTwdza8N+Pgm9O3QU/oo0ANwJ2fI6ZGcvJXRbmOUGd43
-	TmWs37PX53/zW9JlingA==;
+	List-Owner; bh=u37vC+CZK7clzt425vyAaJ6fOw4hxwWBuz7IPomHau8=; b=W1CsEVW//ZgsH9
+	/KjvHpPx1JYwiU56AAQRZhmRGYvgruN/mR4A4iwm826u6BCXSv4DrdAySVqxoyrLIY8wPuZmSOt/8
+	bYAJTqXPlnEpT1v3xtkmgi5rFvSMP5Y7ZddEEm1xezvXgSjBWhk6qZ4+KnJSAG7UJpGS66raee7sT
+	JJWMks8v3X2w86/f4BMVtwYkrg56eWUqydXzAIK1vUbO9+MgIvjXkIGKPNYibZsT+fAWTbaxP13X/
+	R3Da3Zqvn+v0s6YWuhZax3QSPDSvYBQw3Xr+5WU2gZAuBH934FfggFfB8ac1D3aisb1zhW/3E1+Hn
+	5oMU+1LXnLAmKBRX7imA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHjmo-0006y4-Ok; Tue, 08 Oct 2019 07:19:58 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1iHjn3-0007El-Vw; Tue, 08 Oct 2019 07:20:13 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHjmK-0006mj-Bm
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 07:19:29 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x987JOKG046282;
- Tue, 8 Oct 2019 02:19:24 -0500
+ id 1iHjmM-0006nQ-IL
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 07:19:31 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x987JSWs025151;
+ Tue, 8 Oct 2019 02:19:28 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1570519164;
- bh=5NjhrYu8nXMN27ChfH5ORG8Z1ERJZGAOrQx8/HEKMSw=;
+ s=ti-com-17Q1; t=1570519168;
+ bh=Y7vuHmki0AitevIY4QTjUpFCGHBSgA345LWzYu3kdGg=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=epXn03vZtIrUhAFDrlLkcQdNbgWcClh/3N7cjFxmBi+HcIj7IY6zpC8WitsTOcdm9
- Bw0TIgAeURcnmtX9Ad8u93GKIaKuInORxNw6Jon+Uqi8NObZ405NBEooWlUOd+TPwQ
- BmjmlmZUJJrmM/6lH7/fv8uw6a+b0z60yFtLMP3g=
-Received: from DFLE113.ent.ti.com (dfle113.ent.ti.com [10.64.6.34])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x987JOC5046068
+ b=XxJVogC+ICfus+EQEnqmy4M/NgIF7sViXfL32XYZacWn9Xa0O2q8HGiaNCMhlMPLf
+ ouaNimPomNW63vaSpcr9WxCBJrXvwVmCt/Hzx18a4yv7cqHZGfyvjw/QjyRilrLzO4
+ Lq2TdKLXy4Orr8R6ahaFDOiucPQoAopIJSJiIC/s=
+Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x987JSIw073220
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 8 Oct 2019 02:19:24 -0500
-Received: from DFLE111.ent.ti.com (10.64.6.32) by DFLE113.ent.ti.com
- (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 8 Oct 2019 02:19:28 -0500
+Received: from DFLE100.ent.ti.com (10.64.6.21) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 8 Oct
- 2019 02:19:21 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE111.ent.ti.com
- (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
+ 2019 02:19:25 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 8 Oct 2019 02:19:23 -0500
+ Frontend Transport; Tue, 8 Oct 2019 02:19:25 -0500
 Received: from sokoban.bb.dnainternet.fi (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x987JJj4027770;
- Tue, 8 Oct 2019 02:19:22 -0500
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x987JJj6027770;
+ Tue, 8 Oct 2019 02:19:26 -0500
 From: Tero Kristo <t-kristo@ti.com>
 To: <linux-omap@vger.kernel.org>, <ssantosh@kernel.org>
-Subject: [PATCHv7 1/9] dt-bindings: omap: add new binding for PRM instances
-Date: Tue, 8 Oct 2019 10:19:05 +0300
-Message-ID: <20191008071913.28740-2-t-kristo@ti.com>
+Subject: [PATCHv7 3/9] soc: ti: omap-prm: poll for reset complete during
+ de-assert
+Date: Tue, 8 Oct 2019 10:19:07 +0300
+Message-ID: <20191008071913.28740-4-t-kristo@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191008071913.28740-1-t-kristo@ti.com>
 References: <20191008071913.28740-1-t-kristo@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_001928_481642_3C1F4860 
-X-CRM114-Status: GOOD (  11.77  )
+X-CRM114-CacheID: sfid-20191008_001930_645787_70084266 
+X-CRM114-Status: GOOD (  11.72  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -97,56 +98,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add new binding for OMAP PRM (Power and Reset Manager) instances. Each
-of these will act as a power domain controller and potentially as a reset
-provider.
+Poll for reset completion status during de-assertion of reset, otherwise
+the IP in question might be accessed before it has left reset properly.
 
 Signed-off-by: Tero Kristo <t-kristo@ti.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
-Reviewed-by: Tony Lindgren <tony@atomide.com>
 ---
-v7:
-  - dropped clocks property from example
+ drivers/soc/ti/omap_prm.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
 
- .../devicetree/bindings/arm/omap/prm-inst.txt | 29 +++++++++++++++++++
- 1 file changed, 29 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/arm/omap/prm-inst.txt
-
-diff --git a/Documentation/devicetree/bindings/arm/omap/prm-inst.txt b/Documentation/devicetree/bindings/arm/omap/prm-inst.txt
-new file mode 100644
-index 000000000000..dfe7c7789ca7
---- /dev/null
-+++ b/Documentation/devicetree/bindings/arm/omap/prm-inst.txt
-@@ -0,0 +1,29 @@
-+OMAP PRM instance bindings
+diff --git a/drivers/soc/ti/omap_prm.c b/drivers/soc/ti/omap_prm.c
+index ab0b66ad715d..96fa2aad9b93 100644
+--- a/drivers/soc/ti/omap_prm.c
++++ b/drivers/soc/ti/omap_prm.c
+@@ -153,6 +153,18 @@ static int omap_reset_deassert(struct reset_controller_dev *rcdev,
+ 	writel_relaxed(v, reset->prm->base + reset->prm->data->rstctrl);
+ 	spin_unlock_irqrestore(&reset->lock, flags);
+ 
++	if (!has_rstst)
++		return 0;
 +
-+Power and Reset Manager is an IP block on OMAP family of devices which
-+handle the power domains and their current state, and provide reset
-+handling for the domains and/or separate IP blocks under the power domain
-+hierarchy.
++	/* wait for the status to be set */
++	ret = readl_relaxed_poll_timeout(reset->prm->base +
++					 reset->prm->data->rstst,
++					 v, v & BIT(st_bit), 1,
++					 OMAP_RESET_MAX_WAIT);
++	if (ret)
++		pr_err("%s: timedout waiting for %s:%lu\n", __func__,
++		       reset->prm->data->name, id);
 +
-+Required properties:
-+- compatible:	Must contain one of the following:
-+		"ti,am3-prm-inst"
-+		"ti,am4-prm-inst"
-+		"ti,omap4-prm-inst"
-+		"ti,omap5-prm-inst"
-+		"ti,dra7-prm-inst"
-+		and additionally must contain:
-+		"ti,omap-prm-inst"
-+- reg:		Contains PRM instance register address range
-+		(base address and length)
-+
-+Optional properties:
-+- #reset-cells:	Should be 1 if the PRM instance in question supports resets.
-+
-+Example:
-+
-+prm_dsp2: prm@1b00 {
-+	compatible = "ti,omap-prm-inst", "ti,dra7-prm-inst";
-+	reg = <0x1b00 0x40>;
-+	#reset-cells = <1>;
-+};
+ 	return 0;
+ }
+ 
 -- 
 2.17.1
 
