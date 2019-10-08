@@ -2,92 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04DA4D0347
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 00:16:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B74DD0381
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 00:42:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2RL76JZZ4wP73HphPH+xnVxqVAve9xQThGSG6Zl8KS4=; b=tBqbaHQwFQ479/
-	Fo4xloQQLNrLB1RW2z6f4JTqnQfE3fYK7G+pykJr3gvZAjKJcgLFnGhrIkO2y4+5hAg1NgD6jyDpI
-	HlLZTwvSQHG8eFCi0oZLIMh0TyLtPQ6LyaK5j5I0o9SVeWZzYYZ64opZMv8y3GWBtjevVQVcGvIxk
-	WSMDVSzoAB2kAQ5ocWrnzHxhHQQWVjeQWcGLonGFEP5qcZcmXZsPsxEK28BGeQaXio0O9UhgnScEc
-	6GoFnw/yeK4A0nv9ChAYsbjbtgmTli2u/n241qRGafAP25sj/qfuUqEhrB4BSlXx5GqIlkP9XNg+Z
-	4SLRl2I0lYZRtoTM9KqA==;
+	List-Owner; bh=U5OVF9W1stcpM1+K50rnylnuecN6Y9OfF3wZH98ah2s=; b=LlXQ/2RtrfH9hc
+	4tcJebl0Mv4VXiWUi31Eix7W2PjdRCS2bPAbeV9WZS0YoItoQQ/ulatDjTnL9MWn4ROq8FClqdTyG
+	Cissf49rRZY0GZLGbt3yq1ATQUqVvU6SpKy4mSLbUDsnyerYl0kmMbWd5e4QN8+gn+UXorH/+THVI
+	BARrQ+VAARxLFmyeD7NdwUuYXhtYEnivONdehCKWwlDwFYv/+AeiNH1NiNrHc/8tFj0Jxc2kYCXvz
+	NSRhABdTEFEJaI/4KJR4/BwyApBwDAJN0w65IniAZ01lR9eN2O9nzTTj7re14aulzU7xs/V2toHjV
+	d8QRvJ6Mpr76c/x56I4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHxmC-0003jk-4L; Tue, 08 Oct 2019 22:16:16 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHxm3-0003OT-LK
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 22:16:09 +0000
-Received: by mail-pl1-x642.google.com with SMTP id j11so34090plk.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 08 Oct 2019 15:16:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=NiqFnu89plxZSLedgLcdRBN9DKh7erYv6ytT6fDXTcU=;
- b=RqkR8rc+HYwlFbxqDyeNhe4H9RNIYyu5bNdc5Ia9pOuDgR3X8eQSSrw4D9maee7qyv
- bZJfKUzj5R91DuV/78SkulhLfb2RHBy7pJd7Kz63C5rTPX5GTk0S1NMTLjo107LVzwJv
- OH/jbK72MrLeySR5fMec6E8HardxjZ8MzKuh3vJvAvD6ilm3P2Y2oG04m9QE/GawzASr
- f4IlC2C+BnaXQuC5o8BkEa5EhEw/YP1EnDAx7SaLDU4bC0bzWKtALlkT/eVtMh2MrIKa
- ztcNJqC3AlfYRR3wQ50jfU+ZzRtC8eGnuQq024jE1fOP+Y3YRsnahw0f5hKW5I2ftn+c
- FhGg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=NiqFnu89plxZSLedgLcdRBN9DKh7erYv6ytT6fDXTcU=;
- b=EeSQO7ET7DnG/Hb9wzLN+3TCIDvnIW5j16C3b/jWbXerKF02J+q+PGcn6iQd9h20z/
- Y5uQK1wqbmHJm9W/biZwTiAjbyHCV3DwBsyFEkwLbi2XpSMqB5jcELNyocrEISO+Mvnw
- gZ9c82ukvpLmsLPXOm8W+10Pm0K/5UJbvw6yx5x87AhVcdItqUMX3ClK5asj9Y3QkFZN
- 7dz9i5lF3mrc9MpQOAMVdTNYnFPXRg8ASqS+JBO4OZFv2d32za4FpaOFpfB7jA5pMLO9
- ca9yZSI0JsWycENmA2dFnFkDEoW8FpUiMFnVfg6bWETAbtnHHWW+NmzxPZcv4rUYSxFM
- 05tA==
-X-Gm-Message-State: APjAAAV+n30AUY7HdOxbnalJTL5rbHAceI/ZhbMg0LS29iLGLKJx2sc1
- cGMGKzvxMKyJ4xha3ADN5YsyaxNTeBuLHT5jGUEnbQ==
-X-Google-Smtp-Source: APXvYqy1ETIas/wOJ+uCHs3/XIi5AxYgszeqVZ4Cu5XUmvmIOYIYVGlJMRoEChZ5mREGh0jCfBXazg040OGT3cNArhQ=
-X-Received: by 2002:a17:902:7c08:: with SMTP id
- x8mr35766287pll.119.1570572961517; 
- Tue, 08 Oct 2019 15:16:01 -0700 (PDT)
+	id 1iHyBk-0004CS-6L; Tue, 08 Oct 2019 22:42:40 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHyBa-0004Bw-S0
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 22:42:32 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D4624337;
+ Tue,  8 Oct 2019 15:42:24 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 579B13F68E;
+ Tue,  8 Oct 2019 15:42:24 -0700 (PDT)
+Date: Tue, 8 Oct 2019 23:42:22 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH v2 5/5] KVM: arm64: pmu: Reset sample period on overflow
+ handling
+Message-ID: <20191008224221.GK42880@e119886-lin.cambridge.arm.com>
+References: <20191008160128.8872-1-maz@kernel.org>
+ <20191008160128.8872-6-maz@kernel.org>
 MIME-Version: 1.0
-References: <20191007201452.208067-1-samitolvanen@google.com>
- <20191008212730.185532-1-samitolvanen@google.com>
-In-Reply-To: <20191008212730.185532-1-samitolvanen@google.com>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Tue, 8 Oct 2019 15:15:49 -0700
-Message-ID: <CAKwvOdkG9PjEkNNsi7P4bD2gtVvgPLPpmyAqzOFv4v9PL3uoeg@mail.gmail.com>
-Subject: Re: [PATCH v2] arm64: lse: fix LSE atomics with LLVM's integrated
- assembler
-To: Sami Tolvanen <samitolvanen@google.com>
+Content-Disposition: inline
+In-Reply-To: <20191008160128.8872-6-maz@kernel.org>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_151607_728628_758EB67F 
-X-CRM114-Status: GOOD (  17.09  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191008_154230_993815_4B6CCE35 
+X-CRM114-Status: GOOD (  26.98  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,268 +62,134 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, LKML <linux-kernel@vger.kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Andrew Murray <andrew.murray@arm.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 8, 2019 at 2:27 PM 'Sami Tolvanen' via Clang Built Linux
-<clang-built-linux@googlegroups.com> wrote:
->
-> Unlike gcc, clang considers each inline assembly block to be independent
-> and therefore, when using the integrated assembler for inline assembly,
-> any preambles that enable features must be repeated in each block.
->
-> This change defines __LSE_PREAMBLE and adds it to each inline assembly
-> block that has LSE instructions, which allows them to be compiled also
-> with clang's assembler.
->
-> Link: https://github.com/ClangBuiltLinux/linux/issues/671
-> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-
-
-Thanks, I think this will better limit the assembler to use of these
-instructions, while preventing the C compiler from emitting them.
-$ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make CC=clang AS=clang -j71 clean
-$ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make CC=clang AS=clang
--j71 defconfig
-$ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make CC=clang AS=clang
--j71 fs/ext4/balloc.o
-<error explosion>
-$ git am <patch.eml>
-$ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make CC=clang AS=clang
--j71 fs/ext4/balloc.o
-...
-$ echo $?
-0
-$ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make CC=clang AS=clang -j71 clean
-$ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make CC=clang -j71 defconfig
-$ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make CC=clang -j71
-<builds successfully>
-$ qemu-system-aarch64 -kernel arch/arm64/boot/Image.gz -machine virt
--cpu cortex-a72 -nographic --append "console=ttyAMA0" -m 2048 -initrd
-/android1/buildroot/output/images/rootfs.cpio
-<boots successfully; doesn't appear to regress the case of GAS, though
-I doubt such a compiler directive would>
-
-Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
-Tested-by: Nick Desaulniers <ndesaulniers@google.com>
-
+On Tue, Oct 08, 2019 at 05:01:28PM +0100, Marc Zyngier wrote:
+> The PMU emulation code uses the perf event sample period to trigger
+> the overflow detection. This works fine  for the *first* overflow
+> handling, but results in a huge number of interrupts on the host,
+> unrelated to the number of interrupts handled in the guest (a x20
+> factor is pretty common for the cycle counter). On a slow system
+> (such as a SW model), this can result in the guest only making
+> forward progress at a glacial pace.
+> 
+> It turns out that the clue is in the name. The sample period is
+> exactly that: a period. And once the an overflow has occured,
+> the following period should be the full width of the associated
+> counter, instead of whatever the guest had initially programed.
+> 
+> Reset the sample period to the architected value in the overflow
+> handler, which now results in a number of host interrupts that is
+> much closer to the number of interrupts in the guest.
+> 
+> Fixes: b02386eb7dac ("arm64: KVM: Add PMU overflow interrupt routing")
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
 > ---
-> v2:
->  - Add a preamble to inline assembly blocks that use LSE instead
->    of allowing the compiler to emit LSE instructions everywhere.
->
-> ---
->  arch/arm64/include/asm/atomic_lse.h | 19 +++++++++++++++++++
->  arch/arm64/include/asm/lse.h        |  6 +++---
->  2 files changed, 22 insertions(+), 3 deletions(-)
->
-> diff --git a/arch/arm64/include/asm/atomic_lse.h b/arch/arm64/include/asm/atomic_lse.h
-> index c6bd87d2915b..3ee600043042 100644
-> --- a/arch/arm64/include/asm/atomic_lse.h
-> +++ b/arch/arm64/include/asm/atomic_lse.h
-> @@ -14,6 +14,7 @@
->  static inline void __lse_atomic_##op(int i, atomic_t *v)                       \
->  {                                                                      \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->  "      " #asm_op "     %w[i], %[v]\n"                                  \
->         : [i] "+r" (i), [v] "+Q" (v->counter)                           \
->         : "r" (v));                                                     \
-> @@ -30,6 +31,7 @@ ATOMIC_OP(add, stadd)
->  static inline int __lse_atomic_fetch_##op##name(int i, atomic_t *v)    \
->  {                                                                      \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->  "      " #asm_op #mb " %w[i], %w[i], %[v]"                             \
->         : [i] "+r" (i), [v] "+Q" (v->counter)                           \
->         : "r" (v)                                                       \
-> @@ -58,6 +60,7 @@ static inline int __lse_atomic_add_return##name(int i, atomic_t *v)   \
->         u32 tmp;                                                        \
->                                                                         \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       ldadd" #mb "    %w[i], %w[tmp], %[v]\n"                 \
->         "       add     %w[i], %w[i], %w[tmp]"                          \
->         : [i] "+r" (i), [v] "+Q" (v->counter), [tmp] "=&r" (tmp)        \
-> @@ -77,6 +80,7 @@ ATOMIC_OP_ADD_RETURN(        , al, "memory")
->  static inline void __lse_atomic_and(int i, atomic_t *v)
->  {
->         asm volatile(
-> +       __LSE_PREAMBLE
->         "       mvn     %w[i], %w[i]\n"
->         "       stclr   %w[i], %[v]"
->         : [i] "+&r" (i), [v] "+Q" (v->counter)
-> @@ -87,6 +91,7 @@ static inline void __lse_atomic_and(int i, atomic_t *v)
->  static inline int __lse_atomic_fetch_and##name(int i, atomic_t *v)     \
->  {                                                                      \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       mvn     %w[i], %w[i]\n"                                 \
->         "       ldclr" #mb "    %w[i], %w[i], %[v]"                     \
->         : [i] "+&r" (i), [v] "+Q" (v->counter)                          \
-> @@ -106,6 +111,7 @@ ATOMIC_FETCH_OP_AND(        , al, "memory")
->  static inline void __lse_atomic_sub(int i, atomic_t *v)
->  {
->         asm volatile(
-> +       __LSE_PREAMBLE
->         "       neg     %w[i], %w[i]\n"
->         "       stadd   %w[i], %[v]"
->         : [i] "+&r" (i), [v] "+Q" (v->counter)
-> @@ -118,6 +124,7 @@ static inline int __lse_atomic_sub_return##name(int i, atomic_t *v) \
->         u32 tmp;                                                        \
->                                                                         \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       neg     %w[i], %w[i]\n"                                 \
->         "       ldadd" #mb "    %w[i], %w[tmp], %[v]\n"                 \
->         "       add     %w[i], %w[i], %w[tmp]"                          \
-> @@ -139,6 +146,7 @@ ATOMIC_OP_SUB_RETURN(        , al, "memory")
->  static inline int __lse_atomic_fetch_sub##name(int i, atomic_t *v)     \
->  {                                                                      \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       neg     %w[i], %w[i]\n"                                 \
->         "       ldadd" #mb "    %w[i], %w[i], %[v]"                     \
->         : [i] "+&r" (i), [v] "+Q" (v->counter)                          \
-> @@ -159,6 +167,7 @@ ATOMIC_FETCH_OP_SUB(        , al, "memory")
->  static inline void __lse_atomic64_##op(s64 i, atomic64_t *v)           \
->  {                                                                      \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->  "      " #asm_op "     %[i], %[v]\n"                                   \
->         : [i] "+r" (i), [v] "+Q" (v->counter)                           \
->         : "r" (v));                                                     \
-> @@ -175,6 +184,7 @@ ATOMIC64_OP(add, stadd)
->  static inline long __lse_atomic64_fetch_##op##name(s64 i, atomic64_t *v)\
->  {                                                                      \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->  "      " #asm_op #mb " %[i], %[i], %[v]"                               \
->         : [i] "+r" (i), [v] "+Q" (v->counter)                           \
->         : "r" (v)                                                       \
-> @@ -203,6 +213,7 @@ static inline long __lse_atomic64_add_return##name(s64 i, atomic64_t *v)\
->         unsigned long tmp;                                              \
->                                                                         \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       ldadd" #mb "    %[i], %x[tmp], %[v]\n"                  \
->         "       add     %[i], %[i], %x[tmp]"                            \
->         : [i] "+r" (i), [v] "+Q" (v->counter), [tmp] "=&r" (tmp)        \
-> @@ -222,6 +233,7 @@ ATOMIC64_OP_ADD_RETURN(        , al, "memory")
->  static inline void __lse_atomic64_and(s64 i, atomic64_t *v)
->  {
->         asm volatile(
-> +       __LSE_PREAMBLE
->         "       mvn     %[i], %[i]\n"
->         "       stclr   %[i], %[v]"
->         : [i] "+&r" (i), [v] "+Q" (v->counter)
-> @@ -232,6 +244,7 @@ static inline void __lse_atomic64_and(s64 i, atomic64_t *v)
->  static inline long __lse_atomic64_fetch_and##name(s64 i, atomic64_t *v)        \
->  {                                                                      \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       mvn     %[i], %[i]\n"                                   \
->         "       ldclr" #mb "    %[i], %[i], %[v]"                       \
->         : [i] "+&r" (i), [v] "+Q" (v->counter)                          \
-> @@ -251,6 +264,7 @@ ATOMIC64_FETCH_OP_AND(        , al, "memory")
->  static inline void __lse_atomic64_sub(s64 i, atomic64_t *v)
->  {
->         asm volatile(
-> +       __LSE_PREAMBLE
->         "       neg     %[i], %[i]\n"
->         "       stadd   %[i], %[v]"
->         : [i] "+&r" (i), [v] "+Q" (v->counter)
-> @@ -263,6 +277,7 @@ static inline long __lse_atomic64_sub_return##name(s64 i, atomic64_t *v)    \
->         unsigned long tmp;                                              \
->                                                                         \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       neg     %[i], %[i]\n"                                   \
->         "       ldadd" #mb "    %[i], %x[tmp], %[v]\n"                  \
->         "       add     %[i], %[i], %x[tmp]"                            \
-> @@ -284,6 +299,7 @@ ATOMIC64_OP_SUB_RETURN(        , al, "memory")
->  static inline long __lse_atomic64_fetch_sub##name(s64 i, atomic64_t *v)        \
->  {                                                                      \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       neg     %[i], %[i]\n"                                   \
->         "       ldadd" #mb "    %[i], %[i], %[v]"                       \
->         : [i] "+&r" (i), [v] "+Q" (v->counter)                          \
-> @@ -305,6 +321,7 @@ static inline s64 __lse_atomic64_dec_if_positive(atomic64_t *v)
->         unsigned long tmp;
->
->         asm volatile(
-> +       __LSE_PREAMBLE
->         "1:     ldr     %x[tmp], %[v]\n"
->         "       subs    %[ret], %x[tmp], #1\n"
->         "       b.lt    2f\n"
-> @@ -331,6 +348,7 @@ static inline u##sz __lse__cmpxchg_case_##name##sz(volatile void *ptr,      \
->         unsigned long tmp;                                              \
->                                                                         \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       mov     %" #w "[tmp], %" #w "[old]\n"                   \
->         "       cas" #mb #sfx "\t%" #w "[tmp], %" #w "[new], %[v]\n"    \
->         "       mov     %" #w "[ret], %" #w "[tmp]"                     \
-> @@ -377,6 +395,7 @@ static inline long __lse__cmpxchg_double##name(unsigned long old1,  \
->         register unsigned long x4 asm ("x4") = (unsigned long)ptr;      \
->                                                                         \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       casp" #mb "\t%[old1], %[old2], %[new1], %[new2], %[v]\n"\
->         "       eor     %[old1], %[old1], %[oldval1]\n"                 \
->         "       eor     %[old2], %[old2], %[oldval2]\n"                 \
-> diff --git a/arch/arm64/include/asm/lse.h b/arch/arm64/include/asm/lse.h
-> index 80b388278149..73834996c4b6 100644
-> --- a/arch/arm64/include/asm/lse.h
-> +++ b/arch/arm64/include/asm/lse.h
-> @@ -6,6 +6,8 @@
->
->  #if defined(CONFIG_AS_LSE) && defined(CONFIG_ARM64_LSE_ATOMICS)
->
-> +#define __LSE_PREAMBLE ".arch armv8-a+lse\n"
+>  virt/kvm/arm/pmu.c | 15 +++++++++++++++
+>  1 file changed, 15 insertions(+)
+> 
+> diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
+> index 25a483a04beb..8b524d74c68a 100644
+> --- a/virt/kvm/arm/pmu.c
+> +++ b/virt/kvm/arm/pmu.c
+> @@ -442,6 +442,20 @@ static void kvm_pmu_perf_overflow(struct perf_event *perf_event,
+>  	struct kvm_pmc *pmc = perf_event->overflow_handler_context;
+>  	struct kvm_vcpu *vcpu = kvm_pmc_to_vcpu(pmc);
+>  	int idx = pmc->idx;
+> +	u64 period;
 > +
->  #include <linux/compiler_types.h>
->  #include <linux/export.h>
->  #include <linux/jump_label.h>
-> @@ -14,8 +16,6 @@
->  #include <asm/atomic_lse.h>
->  #include <asm/cpucaps.h>
->
-> -__asm__(".arch_extension       lse");
-> -
->  extern struct static_key_false cpu_hwcap_keys[ARM64_NCAPS];
->  extern struct static_key_false arm64_const_caps_ready;
->
-> @@ -34,7 +34,7 @@ static inline bool system_uses_lse_atomics(void)
->
->  /* In-line patching at runtime */
->  #define ARM64_LSE_ATOMIC_INSN(llsc, lse)                               \
-> -       ALTERNATIVE(llsc, lse, ARM64_HAS_LSE_ATOMICS)
-> +       ALTERNATIVE(llsc, __LSE_PREAMBLE lse, ARM64_HAS_LSE_ATOMICS)
->
->  #else  /* CONFIG_AS_LSE && CONFIG_ARM64_LSE_ATOMICS */
->
-> --
-> 2.23.0.581.g78d2f28ef7-goog
->
-> --
-> You received this message because you are subscribed to the Google Groups "Clang Built Linux" group.
-> To unsubscribe from this group and stop receiving emails from it, send an email to clang-built-linux+unsubscribe@googlegroups.com.
-> To view this discussion on the web visit https://groups.google.com/d/msgid/clang-built-linux/20191008212730.185532-1-samitolvanen%40google.com.
+> +	/*
+> +	 * Reset the sample period to the architectural limit,
+> +	 * i.e. the point where the counter overflows.
+> +	 */
+> +	period = -(local64_read(&pmc->perf_event->count));
+> +
+> +	if (!kvm_pmu_idx_is_64bit(vcpu, pmc->idx))
+> +		period &= GENMASK(31, 0);
+> +
+> +	local64_set(&pmc->perf_event->hw.period_left, 0);
+> +	pmc->perf_event->attr.sample_period = period;
+> +	pmc->perf_event->hw.sample_period = period;
 
+I believe that above, you are reducing the period by the amount period_left
+would have been - they cancel each other out.
 
+Given that kvm_pmu_perf_overflow is now always called between a
+cpu_pmu->pmu.stop and a cpu_pmu->pmu.start, it means armpmu_event_update
+has been called prior to this function, and armpmu_event_set_period will
+be called after...
 
--- 
+Therefore, I think the above could be reduced to:
+
++	/*
++	 * Reset the sample period to the architectural limit,
++	 * i.e. the point where the counter overflows.
++	 */
++	u64 period = GENMASK(63, 0);
++	if (!kvm_pmu_idx_is_64bit(vcpu, pmc->idx))
++		period = GENMASK(31, 0);
++
++	pmc->perf_event->attr.sample_period = period;
++	pmc->perf_event->hw.sample_period = period;
+
+This is because armpmu_event_set_period takes into account the overflow
+and the counter wrapping via the "if (unlikely(left <= 0)) {" block.
+
+Though this code confuses me easily, so I may be talking rubbish.
+
+>  
+>  	__vcpu_sys_reg(vcpu, PMOVSSET_EL0) |= BIT(idx);
+>  
+> @@ -557,6 +571,7 @@ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx)
+>  	attr.exclude_host = 1; /* Don't count host events */
+>  	attr.config = (pmc->idx == ARMV8_PMU_CYCLE_IDX) ?
+>  		ARMV8_PMUV3_PERFCTR_CPU_CYCLES : eventsel;
+> +	attr.config1 = PERF_ATTR_CFG1_RELOAD_EVENT;
+
+I'm not sure that this flag, or patch 4 is really needed. As the perf
+events created by KVM are pinned to the task and exclude_(host,hv) are set -
+I think the perf event is not active at this point. Therefore if you change
+the sample period, you can wait until the perf event gets scheduled back in
+(when you return to the guest) where it's call to pmu.start will result in
+armpmu_event_set_period being called. In other words the pmu.start and
+pmu.stop you add in patch 4 is effectively being done for you by perf when
+the KVM task is switched out.
+
+I'd be interested to see if the following works:
+
++	WARN_ON(pmc->perf_event->state == PERF_EVENT_STATE_ACTIVE)
++
++	/*
++	 * Reset the sample period to the architectural limit,
++	 * i.e. the point where the counter overflows.
++	 */
++	u64 period = GENMASK(63, 0);
++	if (!kvm_pmu_idx_is_64bit(vcpu, pmc->idx))
++		period = GENMASK(31, 0);
++
++	pmc->perf_event->attr.sample_period = period;
++	pmc->perf_event->hw.sample_period = period;
+
+>  
+>  	counter = kvm_pmu_get_pair_counter_value(vcpu, pmc);
+>  
+
+What about ARM 32 bit support for this?
+
 Thanks,
-~Nick Desaulniers
+
+Andrew Murray
+
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
