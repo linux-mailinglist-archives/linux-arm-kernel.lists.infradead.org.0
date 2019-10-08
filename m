@@ -2,75 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16D13CF8BF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 13:43:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A40ACF8BE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 13:43:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:In-Reply-To:References:Message-Id:
+	Date:Subject:Mime-Version:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ppW66R+H0BVNEHWbj+dr0unwT3Tr2hnWBgfIcauW65k=; b=eEXQRUXdCoFT3Q
-	Z+fETvs4FHNaIwPkqU4bZPgGBGCELC/SKtWmbHoONrbHyNpRnyCaM4nuOxPpj2Dy1Cpnm6SA00cNl
-	I+FmFvnF0Hl3ZeDnTKqTX8FPxRxqrtisq/z9tBZK4wNeYExwIvELUHt0mZ+3zTQPN+m1OZSnWDX61
-	Q+pOY0oEYmu3xZYaAfhsDDNrwaTOSbD5NagaljXvyZyaHW2ZFNV87s5xHF6j/BZbo9EXK6pAZ97ht
-	Fve33MXjpf53FMyOym+ognO7YqOThFixBdmp1oMjNLZgrgsdcI2sSCG/gdbofptV9vVO1EGynl+MX
-	Ki0/Q48YeC4spUVvx7NQ==;
+	List-Owner; bh=3VgIS+fKtaoDk3n19ToOu0ffPn7adT7Y8aMMMzcAOLw=; b=GwDhWiCI/JoKvj
+	MYNtuscuHVExtPVXGSMjolpaSdA3bgirpElycr1HJSwdBUTQLhV06ylP+kUQyUB/t1/rZc2q51MZj
+	wGN5fk6mTPSoDBotLaYMdRcMwt9iprp4eMjY6MbhNoxI3rUxjF9wp/4n45yE/iD5UuW+1YYhthdfX
+	SLQq9+hWSi74xbYEGnZybjJtqpbldUf4SnZP0tclEZbf3f4yyGDyor0YnkDd5ITH6hIk4OFAWYAwe
+	LvLhoTnIQpfW0BeSkblBMrsBt8vlZU0wCVbckubGHNCLHQvzf9eH34ea7k0gJ96PpQmBvZURHIC8e
+	L3ipIpaOf1GXHwV8lR3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHntd-0003tg-OI; Tue, 08 Oct 2019 11:43:17 +0000
-Received: from mail-qt1-f195.google.com ([209.85.160.195])
+	id 1iHntN-0003gW-QS; Tue, 08 Oct 2019 11:43:01 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHntO-0003pH-8K
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 11:43:03 +0000
-Received: by mail-qt1-f195.google.com with SMTP id j31so24740001qta.5
+ id 1iHntC-0003em-CN
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 11:42:51 +0000
+Received: by mail-qk1-x742.google.com with SMTP id u184so16347029qkd.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 08 Oct 2019 04:43:01 -0700 (PDT)
+ Tue, 08 Oct 2019 04:42:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
+ h=content-transfer-encoding:from:mime-version:subject:date:message-id
+ :references:cc:in-reply-to:to;
+ bh=3JJSHu9FsmPxAujVouhMDsGNkk6sBiZ/QmGwiiONFB4=;
+ b=ft1ONni5tzPFm7vpcdDKsmvlZcXVOpt9il2RREKA5mDs/iXlDAWt12DMHLjZ40/uLa
+ W67IwIJbw0KNkBqIv4mqZyBbImfLaMu0nTzVSEFCPsLy8grCpjixyboBqo9XE2IH4tVd
+ hGjwfHEsKsBMR5ENiBLo+UUOk6omMbdmasKrLXV3aEjP9VAjG1cdDLfdFo7qNYcJWoed
+ gfSiltjTPQqJJzwlxjca6gnd4c0n7twpHnJ+3DTdcwWAOFKCl2oc0uPUxGLRuRIDyNjK
+ 5dSd5S5fEJI+6sKBBNyzSXaremLmFju9Z/ytR3YTieR9ADzSZj1Br7Zm7qBD0AloT/mj
+ ub5A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=umsIHYk/EdwfY26Vo9wwZW7bO5IW89cNfvlnj/Kaxdg=;
- b=VUzcZcZ7Rl4OxYoktffwCE5/5LNzd2vfI2oKE2vMkO+pMx17g6D0klgEsQa3mYXfm3
- p9x1RHSP6hcWX2WQgRLvSOsZ1JlChKjW6zxOviwQnwG73q1CGAMCW6bbXAVy4izJjsGd
- nIewzrjDnO295Oedgush+j+IBtfnXn7LNerijnNZEFo/qnxYBmeDnjoKvLxPV5Y3UIw7
- rRXicG5apqfUAOHZZYxgIsHAh00La98sXDPsR/GWIYFfHqpJqc6XQDcKO7xNbTpdT7Fq
- dcG8W5/j/Z7ivVbS6xAsUNdKziMgQcqAWXFJyqAUrjIQ24tSby5zU99S55EtclI46WIp
- x9ww==
-X-Gm-Message-State: APjAAAUIZ9ki3gvVnvfYCEzKeuWkVJQFmSED/PpZ4sDziR98JFr+pIUG
- fU97mYCQuRZQAZE+Hfxo390W8lIxtF15LRM87ko=
-X-Google-Smtp-Source: APXvYqz589jJQA/dL++xS/ac2fwbidwcoKs9fK4I++aywFL5vuYSQeuOYY83BGWrAPMLcEhnv9sIUFP5OFW4bk2pvO4=
-X-Received: by 2002:ac8:1a2e:: with SMTP id v43mr35056963qtj.204.1570534980880; 
- Tue, 08 Oct 2019 04:43:00 -0700 (PDT)
-MIME-Version: 1.0
-References: <20191007214439.27891-1-sebastian@breakpoint.cc>
-In-Reply-To: <20191007214439.27891-1-sebastian@breakpoint.cc>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 8 Oct 2019 13:42:43 +0200
-Message-ID: <CAK8P3a13AOKm1epqAtP9329Ai2Bh+H18fOfsqO+deCLTHoYRwA@mail.gmail.com>
-Subject: Re: [RFC PATCH 0/3] Queued spinlocks/RW-locks for ARM
-To: Sebastian Andrzej Siewior <sebastian@breakpoint.cc>
+ h=x-gm-message-state:content-transfer-encoding:from:mime-version
+ :subject:date:message-id:references:cc:in-reply-to:to;
+ bh=3JJSHu9FsmPxAujVouhMDsGNkk6sBiZ/QmGwiiONFB4=;
+ b=piB1BF2KZt7ltW0n65/SMj9VQmwq8XtRJDzp+Ok5gmnog8+Dk8DoGcb+jFfU8xoxjR
+ q4zyIoms9zxyuFapXZdqrNIarkVtq+MPl6sBAxivDPWyR0L1h4GPpKiyGsRZwUl8YRhc
+ BgwLQLDdZfNBBYd9McoPAA39rTPke4tVhNG3gd/IvFJqcaBsntx0JTQ5d+keibKph88R
+ JWlTRKeg/LEWX+6Tts3nevDGMqjlUFuRfTTIHy1sezx+Iip+53e/r+ha7ICza58m7jGa
+ x2uSRrOUjB6OOZvlQXa/HDqxB7H5jnASbXi1YeHJcm93jRKb7QgijPK0hvnoX3dGDV2K
+ Zuag==
+X-Gm-Message-State: APjAAAU1UmmCdxpp9DmxqzY3ZN5cKsKO1KQiad69B9bnCFEIPB1bRwpI
+ o7/fwPrSnPP+h6yNK6N0H1gYmQ==
+X-Google-Smtp-Source: APXvYqyvnmDGXV158zZXzurCCRh8+3D7IL8S9DfULYqcaPIxyxkKvDspSY364oomPYuJWS2qYqpqQA==
+X-Received: by 2002:a37:bec1:: with SMTP id
+ o184mr28322315qkf.479.1570534969079; 
+ Tue, 08 Oct 2019 04:42:49 -0700 (PDT)
+Received: from [192.168.1.183] (pool-71-184-117-43.bstnma.fios.verizon.net.
+ [71.184.117.43])
+ by smtp.gmail.com with ESMTPSA id g19sm11133394qtb.2.2019.10.08.04.42.48
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 08 Oct 2019 04:42:48 -0700 (PDT)
+From: Qian Cai <cai@lca.pw>
+Mime-Version: 1.0 (1.0)
+Subject: Re: [PATCH] kasan: fix the missing underflow in memmove and memcpy
+ with CONFIG_KASAN_GENERIC=y
+Date: Tue, 8 Oct 2019 07:42:47 -0400
+Message-Id: <D2B6D82F-AE5F-4A45-AC0C-BE5DA601FDC3@lca.pw>
+References: <1570532528.4686.102.camel@mtksdccf07>
+In-Reply-To: <1570532528.4686.102.camel@mtksdccf07>
+To: Walter Wu <walter-zh.wu@mediatek.com>
+X-Mailer: iPhone Mail (17A860)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_044302_323017_C7C835A5 
-X-CRM114-Status: GOOD (  19.82  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20191008_044250_416056_CDC86FF8 
+X-CRM114-Status: GOOD (  10.29  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.195 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.195 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,62 +99,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>, Russell King <linux@armlinux.org.uk>,
- Ingo Molnar <mingo@redhat.com>, Waiman Long <longman@redhat.com>,
- Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: wsd_upstream <wsd_upstream@mediatek.com>,
+ linux-mediatek@lists.infradead.org, LKML <linux-kernel@vger.kernel.org>,
+ kasan-dev <kasan-dev@googlegroups.com>, Linux-MM <linux-mm@kvack.org>,
+ Alexander Potapenko <glider@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>, Dmitry Vyukov <dvyukov@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 7, 2019 at 11:45 PM Sebastian Andrzej Siewior
-<sebastian@breakpoint.cc> wrote:
->
-> I added support for queued-RW and -spinlocks for ARM. I wanted to
-> remove the current implementation but this does not work. The CPU_V6
-> kernel config does not have support for xchg() on 2 byte memory address.
-> This is required by q-lock' slowpath. It is possible to create a
-> multi-kernel (with v6+v7+SMP) which then lack the function.
->
-> I tested the q-lock implementation with
->         hackbench -g40 -s 500 -l 500
->
-> The numbers in the table below represent the average runtime of 10
-> invocations. I tested with HZ_100,HZ_250 and the different preemption
-> levels on a IMX6q-board (quad Cortex-A9) and an AM572x board (dual
-> Cortex-A15).
-> "Ticket" means the current implementation on v5.4-rc1, Q-Locks is the
-> switch to queued RW and spinlocks and in Q-locksI the locking
-> instruction is additionally inlined.
 
-This looks nice, and I don't see anything wrong with the implementation,
-but I am slightly worried about switching everything over to a generic
-spinlock while keeping the custom ARM version for an exceptionally
-rare corner case:
 
-The ARM spinlock is now only used when you build an SMP-enabled
-kernel for an ARM1136r0 that is used in OMAP2, i.MX3 and some
-of the least common Integrator/Realview variants. I'm not aware
-of any binary distros with ARMv6+ kernels, so these would run custom
-kernels that are almost always non-SMP as well as no longer getting
-kernel upgrades (almost all have been discontinued years ago, the i.MX35
-chip itself was the last to get EOLd in 2018).
-Raspbian builds an ARMv6K SMP kernel that is not affected by this.
+> On Oct 8, 2019, at 7:02 AM, Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> 
+> I don't know very well in UBSAN, but I try to build ubsan kernel and
+> test a negative number in memset and kmalloc_memmove_invalid_size(), it
+> look like no check.
 
-I wonder if we can do something better here and make the
-asm-generic/qspinlock.h implementation always degrade into an
-equivalent of include/linux/spinlock_up.h when running on uniprocessor
-systems, avoiding both the atomic cmpxchg and the slowpath.
-
-That way, an ARMv6+SMP kernel on UP could share the qspinlock
-implementation but never actually get into the invalid 16-bit xchg() or
-sev()/wfe(). It already shouldn't ever get into the slowpath on a
-non-SMP system if I understand it correctly, but avoiding the cmpxchg()
-entirely would be an added benefit.
-
-       Arnd
-
+It sounds like more important to figure out why the UBSAN is not working in this case rather than duplicating functionality elsewhere.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
