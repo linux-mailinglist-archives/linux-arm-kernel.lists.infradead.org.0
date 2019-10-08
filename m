@@ -2,98 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5DA1CF1EB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 06:43:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A77D4CF20E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 06:55:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a6J4Tr1jVPtkdsxrb7Q1tkJq0AfBeupUgR574re0Oxw=; b=ic/o8fQPDq1ICG
-	9KsCfzoHCNVzOeIpIw6q4F9g0+Ewe5Qo9j3//ox2HkO1335zy4F4izw1gl/pKiMoCPGEje7W9WHNt
-	JE+jmy0nmZc3dwaDpPxVOYcKa1TkV8I7hKhjDGvloxCLKsSkwmauVr3xT8CUgytALhyxreacyOm9G
-	MvoeHiJcGc+JC0FioU1fui1sc9D3CwamotI0kpc9W2DI8UlzU1YR06uiap0mmwq67c/U6TOg18AJz
-	BYimR4jmUQQDYevL+daXBRBBham1LzfHkwLKiNMo5l8P3iQQS2kAPSHregX/6+3vFBXPXzm8qPWAp
-	YQow9u7Taw5TGny9SDmQ==;
+	List-Owner; bh=+k7us5TcoTGP31KTt/SiJd/DK5Xh/+w//+YCYMCgdA0=; b=mIbeeeUs1LRtam
+	V6iIBgXqPIWzZa+/116r9NnChk7OhiaLvf1v7wKJO6/k+83DPs492P9Xc7WnVE+Y9jlLVH2vaPUcQ
+	92pt3s53T6V79qV7cHNEn9ISgLFjEbmJ45DMPB6Ledq0vJu0Nh4rCFDKBYwI31MfeXb5DVf93i7Rs
+	Sqe6IOfNgB8WIhJiFVC31SEeAqDGFSlfUzgc87f4bxnC4xCMjrHPN7+lUYBzseqN3gUrW0SUy/3Rb
+	lYa1eg4FwCyiBht/agZYdbeBo6HUOp27ck/LuJrsrzI/dYUxWe7Ktse4z0MhNiUiMeOps2QABffeT
+	oBLp0El6rgyFO6Vfpuxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHhLU-0000eh-ME; Tue, 08 Oct 2019 04:43:36 +0000
-Received: from new3-smtp.messagingengine.com ([66.111.4.229])
+	id 1iHhWi-0004q0-Sq; Tue, 08 Oct 2019 04:55:12 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHhJk-0007dU-3b
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 04:41:52 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 798A55C3A;
- Tue,  8 Oct 2019 00:41:47 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Tue, 08 Oct 2019 00:41:47 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
- :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=kF31BW0z8uvi3
- pnf0WkiPfYd82ETsdEe/9YmksStdys=; b=XLdd0L7gzS4vrRWpRfk0jdVrYWdqu
- 3I1Bou81XP8FGV0if4ELMKDMXlyUQh5SWw88mrwqfQmXSc26yyIW8hyG0nuF+Pze
- vrWD619t+qvLUR7fE7JlMZXCQEQ1hgzRNPifA8ld8lnyXSEX2KXFKvjuGfTI0hrf
- 7hXczVoc9olrrMPug/p6Xptl+U/H4PSKnBM0iDpYnphNXHiTAABsfs/vhBZj/3Ga
- GnMUpPpL86d13ZgU4nTEgGM013bO92Om2i5TlN2FR1ChAbtHhKs3c8fe1h89FBsP
- hsaxaK/yJVO1SmsZHr0sMF+IZzUSUY+GD7wJWelknE54Z/Lipu4vPDbbQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:date:from
- :in-reply-to:message-id:mime-version:references:subject:to
- :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm1; bh=kF31BW0z8uvi3pnf0WkiPfYd82ETsdEe/9YmksStdys=; b=fAu74A0Q
- B0mTiIdKc9LCdG76bx/aphvUrJ4HxeeKwsWcLDKMTgVuFdQd/cE5QNXpVC9y7jKU
- 1/co6p258CGHjCMmAsxSbNrJnnW1SHHHLn+Uzl6VnqL7tPZ+7PBaZoW+YsTc2FMB
- M6xfc62pj8GefZqQPpcjsCD8H0E5Z3zLYd8AImD9HMcHTgitQ2+D5AC4lahWng0U
- I8hUV6C0jXL4X+pCMQ/QCOePvmv+k+hM9eU63jDeeedHDCGPFVCdJlJ6DvxVYT8c
- P2DQ4M7TIpNQmj7DQP6tHJjW+JS+JQDwX41kbdHsD8pGDTMOzT1i06T5tS/aGfeZ
- h1U7yMNxJw7FjQ==
-X-ME-Sender: <xms:ixOcXXUMhtOUjDd5dptZYSMEpTf--_Nbt6Ksx7lfu-QAiVlmrlXDUQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrheekgdekgecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefhvffufffkofgjfhgggfestdekredtredttdenucfhrhhomheptehnughrvgif
- ucflvghffhgvrhihuceorghnughrvgifsegrjhdrihgurdgruheqnecukfhppedvtddvrd
- ekuddrudekrdeftdenucfrrghrrghmpehmrghilhhfrhhomheprghnughrvgifsegrjhdr
- ihgurdgruhenucevlhhushhtvghrufhiiigvpeei
-X-ME-Proxy: <xmx:ixOcXfv827Pu7SCWQiO5YIKt_EJsfWZap1tXUxNBLtocsubSNTYz0Q>
- <xmx:ixOcXa1NjaLqjxkZz7_kRMuYTxvXCuwVDe-6hu4hlIj6I7e9LLn18w>
- <xmx:ixOcXY4gNnhxSD4y53Da7Vi_fuuDy2KrwNxUOG4Mgkin8ONhZhnmNw>
- <xmx:ixOcXadgxZzo9zqmeT9aQ_ejFF9ng4nfdvTULiYOGpf-MQCfi-Y2xw>
-Received: from mistburn.au.ibm.com (bh02i525f01.au.ibm.com [202.81.18.30])
- by mail.messagingengine.com (Postfix) with ESMTPA id D71C280069;
- Tue,  8 Oct 2019 00:41:43 -0400 (EDT)
-From: Andrew Jeffery <andrew@aj.id.au>
-To: linux-gpio@vger.kernel.org
-Subject: [PATCH 7/7] pinctrl: aspeed-g6: Rename SD3 to EMMC and rework pin
- groups
-Date: Tue,  8 Oct 2019 15:11:53 +1030
-Message-Id: <20191008044153.12734-8-andrew@aj.id.au>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191008044153.12734-1-andrew@aj.id.au>
-References: <20191008044153.12734-1-andrew@aj.id.au>
+ id 1iHhWX-00046U-RG
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 04:55:03 +0000
+Received: by mail-qt1-x841.google.com with SMTP id c21so23137490qtj.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 07 Oct 2019 21:55:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=NuipLPrWDOHTna4R81Ns0ysok+dpoazuekwN/UYksCI=;
+ b=b1UAUxoBcI9azVyX+4fyfcr8QslbKfW+ZNjl72tAkSBp/Jy1YWJ+tFCP3v/iE6uGZo
+ uFsmfF5NevYXiJYD5i7adKbaXEvLAmRipJapvNOvu3mvQmzrlB3fmOhmdHk3VfVgkcIQ
+ vSxJM5Stk3ECN5ymfkv9mvlbQe33hpkkFLtxQ=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=NuipLPrWDOHTna4R81Ns0ysok+dpoazuekwN/UYksCI=;
+ b=YzhVPJXhP6ZRX4XsOUT8xexU4M9nP00hTp7VbVUZIEex+yEBCBoPTJhWgNr0w+wmZZ
+ DC91KjbUsLolGMOmEygL2tYEq2/85fOLMZ3R/UhtcEP+EHNXCURmA0PxvSar+BnpyWAf
+ S22VGm7+1vKE6aH0jYZmm/OlSm4UXFZiwuS28wfrneBa9Fr7Opm8jucx/Zdx2iImrDlv
+ AIw6Go2zoM6nuxlt47Mx5KDnxaF6MFV/9sF5YgfqujVRZ4pih6DGyrMuXSkPwPdwAtLI
+ tKQr3b924hMthDdJ0jEJdVwMtkDzJnCLT5HLZ+w0okMjtxqwX01H37n2LZD4vxWUCDV1
+ GABA==
+X-Gm-Message-State: APjAAAUGTmP3jBIZNwRZOEfRnZOVkShBcOR7uaIAKd2uMm3FRfPWfVRK
+ ornnmU6oYRXg0KThU2X6BWBvTgePbnbtK22R4Kc=
+X-Google-Smtp-Source: APXvYqz5wHXB1nmfXhmlr/qLAPDW3G+ziIzScyrrHSPrhN9j+O+3LkVT/JnM12/t9lcaqiMe59v/oRgpIA9UeoUtEwI=
+X-Received: by 2002:ac8:670c:: with SMTP id e12mr33620565qtp.169.1570510499983; 
+ Mon, 07 Oct 2019 21:54:59 -0700 (PDT)
 MIME-Version: 1.0
+References: <20191008044153.12734-1-andrew@aj.id.au>
+In-Reply-To: <20191008044153.12734-1-andrew@aj.id.au>
+From: Joel Stanley <joel@jms.id.au>
+Date: Tue, 8 Oct 2019 04:54:47 +0000
+Message-ID: <CACPK8XeKx_W0_b6ZLJzVdtQQOL8eZ3FcscB5TZT5NXMwRi4r6g@mail.gmail.com>
+Subject: Re: [PATCH 0/7] pinctrl: Fixes for AST2600 support
+To: Andrew Jeffery <andrew@aj.id.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_214149_494094_1F16A4EA 
-X-CRM114-Status: UNSURE (   9.38  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20191007_215501_949910_728929FE 
+X-CRM114-Status: GOOD (  15.38  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.229 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (joel.stan[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,186 +91,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Johnny Huang <johnny_huang@aspeedtech.com>, linux-aspeed@lists.ozlabs.org,
- linus.walleij@linaro.org, ryanchen.aspeed@gmail.com,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, joel@jms.id.au,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, johnny_huang@aspeedtech.com,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Ryan Chen <ryanchen.aspeed@gmail.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Johnny Huang <johnny_huang@aspeedtech.com>
+On Tue, 8 Oct 2019 at 04:41, Andrew Jeffery <andrew@aj.id.au> wrote:
+>
+> Hello,
+>
+> This series resolves several issues found in testing by Johnny Huang from
+> ASPEED, who also contributed the patches to fix them. We'll have more patches
+> from him in the near future (which I'm pretty happy about).
 
-AST2600 EMMC support 3 types DAT bus sizes (1, 4 and 8-bit),
-corresponding to 3 groups: EMMCG1, EMMCG4 and EMMCG8
+For the series:
 
-Fixes: 58dc52ad00a0 ("pinctrl: aspeed: Add AST2600 pinmux support")
-Signed-off-by: Johnny Huang <johnny_huang@aspeedtech.com>
-Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
----
- drivers/pinctrl/aspeed/pinctrl-aspeed-g6.c | 72 ++++++++++------------
- drivers/pinctrl/aspeed/pinmux-aspeed.h     |  1 +
- 2 files changed, 33 insertions(+), 40 deletions(-)
+Reviewed-by: Joel Stanley <joel@jms.id.au>
 
-diff --git a/drivers/pinctrl/aspeed/pinctrl-aspeed-g6.c b/drivers/pinctrl/aspeed/pinctrl-aspeed-g6.c
-index dc17cf3d3549..c6800d220920 100644
---- a/drivers/pinctrl/aspeed/pinctrl-aspeed-g6.c
-+++ b/drivers/pinctrl/aspeed/pinctrl-aspeed-g6.c
-@@ -1440,74 +1440,72 @@ FUNC_GROUP_DECL(RGMII2, D4, C2, C1, D3, E4, F5, D2, E3, D1, F4, E2, E1);
- FUNC_GROUP_DECL(RMII2, D4, C2, C1, D3, D2, D1, F4, E2, E1);
- 
- #define AB4 232
--SIG_EXPR_LIST_DECL_SESG(AB4, SD3CLK, SD3, SIG_DESC_SET(SCU400, 24));
--PIN_DECL_1(AB4, GPIO18D0, SD3CLK);
-+SIG_EXPR_LIST_DECL_SEMG(AB4, EMMCCLK, EMMCG1, EMMC, SIG_DESC_SET(SCU400, 24));
-+PIN_DECL_1(AB4, GPIO18D0, EMMCCLK);
- 
- #define AA4 233
--SIG_EXPR_LIST_DECL_SESG(AA4, SD3CMD, SD3, SIG_DESC_SET(SCU400, 25));
--PIN_DECL_1(AA4, GPIO18D1, SD3CMD);
-+SIG_EXPR_LIST_DECL_SEMG(AA4, EMMCCMD, EMMCG1, EMMC, SIG_DESC_SET(SCU400, 25));
-+PIN_DECL_1(AA4, GPIO18D1, EMMCCMD);
- 
- #define AC4 234
--SIG_EXPR_LIST_DECL_SESG(AC4, SD3DAT0, SD3, SIG_DESC_SET(SCU400, 26));
--PIN_DECL_1(AC4, GPIO18D2, SD3DAT0);
-+SIG_EXPR_LIST_DECL_SEMG(AC4, EMMCDAT0, EMMCG1, EMMC, SIG_DESC_SET(SCU400, 26));
-+PIN_DECL_1(AC4, GPIO18D2, EMMCDAT0);
- 
- #define AA5 235
--SIG_EXPR_LIST_DECL_SESG(AA5, SD3DAT1, SD3, SIG_DESC_SET(SCU400, 27));
--PIN_DECL_1(AA5, GPIO18D3, SD3DAT1);
-+SIG_EXPR_LIST_DECL_SEMG(AA5, EMMCDAT1, EMMCG4, EMMC, SIG_DESC_SET(SCU400, 27));
-+PIN_DECL_1(AA5, GPIO18D3, EMMCDAT1);
- 
- #define Y5 236
--SIG_EXPR_LIST_DECL_SESG(Y5, SD3DAT2, SD3, SIG_DESC_SET(SCU400, 28));
--PIN_DECL_1(Y5, GPIO18D4, SD3DAT2);
-+SIG_EXPR_LIST_DECL_SEMG(Y5, EMMCDAT2, EMMCG4, EMMC, SIG_DESC_SET(SCU400, 28));
-+PIN_DECL_1(Y5, GPIO18D4, EMMCDAT2);
- 
- #define AB5 237
--SIG_EXPR_LIST_DECL_SESG(AB5, SD3DAT3, SD3, SIG_DESC_SET(SCU400, 29));
--PIN_DECL_1(AB5, GPIO18D5, SD3DAT3);
-+SIG_EXPR_LIST_DECL_SEMG(AB5, EMMCDAT3, EMMCG4, EMMC, SIG_DESC_SET(SCU400, 29));
-+PIN_DECL_1(AB5, GPIO18D5, EMMCDAT3);
- 
- #define AB6 238
--SIG_EXPR_LIST_DECL_SESG(AB6, SD3CD, SD3, SIG_DESC_SET(SCU400, 30));
--PIN_DECL_1(AB6, GPIO18D6, SD3CD);
-+SIG_EXPR_LIST_DECL_SEMG(AB6, EMMCCD, EMMCG1, EMMC, SIG_DESC_SET(SCU400, 30));
-+PIN_DECL_1(AB6, GPIO18D6, EMMCCD);
- 
- #define AC5 239
--SIG_EXPR_LIST_DECL_SESG(AC5, SD3WP, SD3, SIG_DESC_SET(SCU400, 31));
--PIN_DECL_1(AC5, GPIO18D7, SD3WP);
-+SIG_EXPR_LIST_DECL_SEMG(AC5, EMMCWP, EMMCG1, EMMC, SIG_DESC_SET(SCU400, 31));
-+PIN_DECL_1(AC5, GPIO18D7, EMMCWP);
- 
--FUNC_GROUP_DECL(SD3, AB4, AA4, AC4, AA5, Y5, AB5, AB6, AC5);
-+GROUP_DECL(EMMCG1, AB4, AA4, AC4, AB6, AC5);
-+GROUP_DECL(EMMCG4, AB4, AA4, AC4, AA5, Y5, AB5, AB6, AC5);
- 
- #define Y1 240
- SIG_EXPR_LIST_DECL_SEMG(Y1, FWSPIDCS, FWSPID, FWSPID, SIG_DESC_SET(SCU500, 3));
- SIG_EXPR_LIST_DECL_SESG(Y1, VBCS, VB, SIG_DESC_SET(SCU500, 5));
--SIG_EXPR_LIST_DECL_SESG(Y1, SD3DAT4, SD3DAT4, SIG_DESC_SET(SCU404, 0));
--PIN_DECL_3(Y1, GPIO18E0, FWSPIDCS, VBCS, SD3DAT4);
--FUNC_GROUP_DECL(SD3DAT4, Y1);
-+SIG_EXPR_LIST_DECL_SEMG(Y1, EMMCDAT4, EMMCG8, EMMC, SIG_DESC_SET(SCU404, 0));
-+PIN_DECL_3(Y1, GPIO18E0, FWSPIDCS, VBCS, EMMCDAT4);
- 
- #define Y2 241
- SIG_EXPR_LIST_DECL_SEMG(Y2, FWSPIDCK, FWSPID, FWSPID, SIG_DESC_SET(SCU500, 3));
- SIG_EXPR_LIST_DECL_SESG(Y2, VBCK, VB, SIG_DESC_SET(SCU500, 5));
--SIG_EXPR_LIST_DECL_SESG(Y2, SD3DAT5, SD3DAT5, SIG_DESC_SET(SCU404, 1));
--PIN_DECL_3(Y2, GPIO18E1, FWSPIDCK, VBCK, SD3DAT5);
--FUNC_GROUP_DECL(SD3DAT5, Y2);
-+SIG_EXPR_LIST_DECL_SEMG(Y2, EMMCDAT5, EMMCG8, EMMC, SIG_DESC_SET(SCU404, 1));
-+PIN_DECL_3(Y2, GPIO18E1, FWSPIDCK, VBCK, EMMCDAT5);
- 
- #define Y3 242
- SIG_EXPR_LIST_DECL_SEMG(Y3, FWSPIDMOSI, FWSPID, FWSPID,
- 			SIG_DESC_SET(SCU500, 3));
- SIG_EXPR_LIST_DECL_SESG(Y3, VBMOSI, VB, SIG_DESC_SET(SCU500, 5));
--SIG_EXPR_LIST_DECL_SESG(Y3, SD3DAT6, SD3DAT6, SIG_DESC_SET(SCU404, 2));
--PIN_DECL_3(Y3, GPIO18E2, FWSPIDMOSI, VBMOSI, SD3DAT6);
--FUNC_GROUP_DECL(SD3DAT6, Y3);
-+SIG_EXPR_LIST_DECL_SEMG(Y3, EMMCDAT6, EMMCG8, EMMC, SIG_DESC_SET(SCU404, 2));
-+PIN_DECL_3(Y3, GPIO18E2, FWSPIDMOSI, VBMOSI, EMMCDAT6);
- 
- #define Y4 243
- SIG_EXPR_LIST_DECL_SEMG(Y4, FWSPIDMISO, FWSPID, FWSPID,
- 			SIG_DESC_SET(SCU500, 3));
- SIG_EXPR_LIST_DECL_SESG(Y4, VBMISO, VB, SIG_DESC_SET(SCU500, 5));
--SIG_EXPR_LIST_DECL_SESG(Y4, SD3DAT7, SD3DAT7, SIG_DESC_SET(SCU404, 3));
--PIN_DECL_3(Y4, GPIO18E3, FWSPIDMISO, VBMISO, SD3DAT7);
--FUNC_GROUP_DECL(SD3DAT7, Y4);
-+SIG_EXPR_LIST_DECL_SEMG(Y4, EMMCDAT7, EMMCG8, EMMC, SIG_DESC_SET(SCU404, 3));
-+PIN_DECL_3(Y4, GPIO18E3, FWSPIDMISO, VBMISO, EMMCDAT7);
- 
- GROUP_DECL(FWSPID, Y1, Y2, Y3, Y4);
- GROUP_DECL(FWQSPID, Y1, Y2, Y3, Y4, AE12, AF12);
-+GROUP_DECL(EMMCG8, AB4, AA4, AC4, AA5, Y5, AB5, AB6, AC5, Y1, Y2, Y3, Y4);
- FUNC_DECL_2(FWSPID, FWSPID, FWQSPID);
- FUNC_GROUP_DECL(VB, Y1, Y2, Y3, Y4);
--
-+FUNC_DECL_3(EMMC, EMMCG1, EMMCG4, EMMCG8);
- /*
-  * FIXME: Confirm bits and priorities are the right way around for the
-  * following 4 pins
-@@ -1968,11 +1966,9 @@ static const struct aspeed_pin_group aspeed_g6_groups[] = {
- 	ASPEED_PINCTRL_GROUP(SALT9G1),
- 	ASPEED_PINCTRL_GROUP(SD1),
- 	ASPEED_PINCTRL_GROUP(SD2),
--	ASPEED_PINCTRL_GROUP(SD3),
--	ASPEED_PINCTRL_GROUP(SD3DAT4),
--	ASPEED_PINCTRL_GROUP(SD3DAT5),
--	ASPEED_PINCTRL_GROUP(SD3DAT6),
--	ASPEED_PINCTRL_GROUP(SD3DAT7),
-+	ASPEED_PINCTRL_GROUP(EMMCG1),
-+	ASPEED_PINCTRL_GROUP(EMMCG4),
-+	ASPEED_PINCTRL_GROUP(EMMCG8),
- 	ASPEED_PINCTRL_GROUP(SGPM1),
- 	ASPEED_PINCTRL_GROUP(SGPS1),
- 	ASPEED_PINCTRL_GROUP(SIOONCTRL),
-@@ -2051,6 +2047,7 @@ static const struct aspeed_pin_function aspeed_g6_functions[] = {
- 	ASPEED_PINCTRL_FUNC(ADC8),
- 	ASPEED_PINCTRL_FUNC(ADC9),
- 	ASPEED_PINCTRL_FUNC(BMCINT),
-+	ASPEED_PINCTRL_FUNC(EMMC),
- 	ASPEED_PINCTRL_FUNC(ESPI),
- 	ASPEED_PINCTRL_FUNC(ESPIALT),
- 	ASPEED_PINCTRL_FUNC(FSI1),
-@@ -2183,11 +2180,6 @@ static const struct aspeed_pin_function aspeed_g6_functions[] = {
- 	ASPEED_PINCTRL_FUNC(SALT9),
- 	ASPEED_PINCTRL_FUNC(SD1),
- 	ASPEED_PINCTRL_FUNC(SD2),
--	ASPEED_PINCTRL_FUNC(SD3),
--	ASPEED_PINCTRL_FUNC(SD3DAT4),
--	ASPEED_PINCTRL_FUNC(SD3DAT5),
--	ASPEED_PINCTRL_FUNC(SD3DAT6),
--	ASPEED_PINCTRL_FUNC(SD3DAT7),
- 	ASPEED_PINCTRL_FUNC(SGPM1),
- 	ASPEED_PINCTRL_FUNC(SGPS1),
- 	ASPEED_PINCTRL_FUNC(SIOONCTRL),
-diff --git a/drivers/pinctrl/aspeed/pinmux-aspeed.h b/drivers/pinctrl/aspeed/pinmux-aspeed.h
-index d5202241f411..140c5ce9fbc1 100644
---- a/drivers/pinctrl/aspeed/pinmux-aspeed.h
-+++ b/drivers/pinctrl/aspeed/pinmux-aspeed.h
-@@ -738,6 +738,7 @@ struct aspeed_pin_desc {
- 	static const char *FUNC_SYM(func)[] = { __VA_ARGS__ }
- 
- #define FUNC_DECL_2(func, one, two) FUNC_DECL_(func, #one, #two)
-+#define FUNC_DECL_3(func, one, two, three) FUNC_DECL_(func, #one, #two, #three)
- 
- #define FUNC_GROUP_DECL(func, ...) \
- 	GROUP_DECL(func, __VA_ARGS__); \
--- 
-2.20.1
+These patches have been in the OpenBMC tree for a while and look good.
 
+Cheers,
+
+Joel
+
+>
+> The major issue resolved is the way I grouped the eMMC pins. What I had was
+> ugly and I want to get rid of it before the binding is solidified with the 5.4
+> release.
+>
+> The remaining fixes are minor issues that stem from lack of documentation or
+> understanding on my part, and at least one brain-fart.
+>
+> Please review!
+>
+> Andrew
+>
+> Andrew Jeffery (4):
+>   dt-bindings: pinctrl: aspeed-g6: Rework SD3 function and groups
+>   pinctrl: aspeed-g6: Sort pins for sanity
+>   pinctrl: aspeed-g6: Fix I2C14 SDA description
+>   pinctrl: aspeed-g6: Make SIG_DESC_CLEAR() behave intuitively
+>
+> Johnny Huang (3):
+>   pinctrl: aspeed-g6: Fix I3C3/I3C4 pinmux configuration
+>   pinctrl: aspeed-g6: Fix UART13 group pinmux
+>   pinctrl: aspeed-g6: Rename SD3 to EMMC and rework pin groups
+>
+>  .../pinctrl/aspeed,ast2600-pinctrl.yaml       |  86 ++++++------
+>  drivers/pinctrl/aspeed/pinctrl-aspeed-g6.c    | 124 ++++++++----------
+>  drivers/pinctrl/aspeed/pinmux-aspeed.h        |   3 +-
+>  3 files changed, 98 insertions(+), 115 deletions(-)
+>
+> --
+> 2.20.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
