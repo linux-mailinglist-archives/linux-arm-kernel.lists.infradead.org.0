@@ -2,62 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0CFCD0036
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 19:55:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5DE2D003B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 19:57:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9cvwJJjkUGLQfi5FfdqlouzzAhSrkpKQDw4ie/fv69U=; b=qvKqDxJtYHb9IM
-	mXtanrDEIxE+Y+P1nl3IvzavMU4rXhnhsS3kGcAV0+z0/DoEZG1TDiL3t6+bofTjCahux55eQuOrL
-	haGcHEcyd7pYEtxeY3hQ60CcB3rTu457/Aa2TM+Ox3bYX1ixwXDPMjsfYR643l7KXyFKg59uyy0V1
-	SPbcdMh51kO86ZemxeVcS7btR3eWO9Pu8GkrmcUiOq48VFeQbo/qmXV2aEOoPhoAtJVHcEFM49P0y
-	RnKYX2JwcCKqcpPtK4s+HCI2ok6qOCS5og5Y6t75r1qZnrClBoeI2ElrdpLyK3TfPgeGGTuyCDjEZ
-	O+5/ZAtLJogjK88+HfvA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=TCZKIBLbolH48ebSpVSNqndkZS2Epa/7LtvZt7tOXJQ=; b=u90sJLA0IBoiXH2s3smYBJ6rt
+	VUyI4idIqcw6lx2OaQaJV84YSAhItzpbLY6C1xZLpfJGBK8/EG8wV3QgqYr9yFdhAWSZeNCExzlDd
+	5GeQ1omM9tkg2h1GglUZNN3Vn8axETJr7tjNtC0BCS+dMPM7LrqRw2IOO3dl5nDQ8CjSgMvs5e0QT
+	+BqJ7hQiSomRRxyt3wdPqMCvqgr0D81rB7qKdChYgpz0THH5Dr8/fr8BTd69Z8adCjIzAd7j2WWlN
+	Fg1aSi49iAnUZHAJ501SZieGokU3gHlRm9UV7ZpaMpqfN2FoPUSaJsfkS/+xMbX8LET8o909EdjnV
+	4iyh9nb9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHti1-0002YI-PE; Tue, 08 Oct 2019 17:55:41 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iHtjW-0002vV-DA; Tue, 08 Oct 2019 17:57:14 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHthu-0002XY-7a
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 17:55:35 +0000
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why)
- by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
- (Exim 4.80) (envelope-from <maz@kernel.org>)
- id 1iHthr-0003Vi-1f; Tue, 08 Oct 2019 19:55:31 +0200
-Date: Tue, 8 Oct 2019 18:55:29 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-Subject: Re: [PATCH v2 4/5] arm64: perf: Add reload-on-overflow capability
-Message-ID: <20191008185529.75477da0@why>
-In-Reply-To: <20191008160128.8872-5-maz@kernel.org>
-References: <20191008160128.8872-1-maz@kernel.org>
- <20191008160128.8872-5-maz@kernel.org>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1iHtjN-0002v3-Aj
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 17:57:06 +0000
+Received: by mail-pg1-x542.google.com with SMTP id p1so8889177pgi.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 08 Oct 2019 10:57:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=98iK+/CdBsCSShogyL3OIK0oonIPWwP7Gqwnow5m/IY=;
+ b=OgMBRw27JGI83nLf5vpKKY6E3SrhNWr4/oTXa1z9c207GNzUNDbv+P8I0DaCES8uLw
+ DnyJff4l7s4aIqBZTFanqbXifLLLqeAUEHY1H70+arw/lHlqr+SMeVxJHRZjSwPkJsIh
+ wIY76U2RzFcGnXY6DJXaIUc4Q2lXX8DDw7nuQ=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=98iK+/CdBsCSShogyL3OIK0oonIPWwP7Gqwnow5m/IY=;
+ b=k/GXhEpHdDSf7MyWCjrPaIt3n9oHTrHSRYLINXR7Klp4cpYL8uR8nFvNXN+rIpTOWn
+ IVFYTBUp8JTJ6YkZ5HSFKXxzOutold1X7PiK8eJqC8KkeWrZsn9l9rYkQz6pnmWRFls7
+ AtK4IhcQymOcGabUt0wzvWwPzyOYtwWU6UW79hRYRl0nVTAni1aoU3w5M+DWjowTS7Qp
+ Sg5ptjKHwZ0ec5mdW6tV59kAEakbqLN+IYORqmbng/xsUpjTvlP73bwiS/Giuf465ziE
+ EKUPHtzFJk9PF2Uxd+3fNHXb7mfxfZjpRPN997loVbGtwH0OPoIvvftYxXID63HFRVH1
+ 5qgQ==
+X-Gm-Message-State: APjAAAUpU6Xs46/TnOf6I+8+LOWIzVqvow/X4NEF5lUlz6ererMirE2A
+ Mriig0exaab+6Mol1BjNTqw1W+a9qGAp5g==
+X-Google-Smtp-Source: APXvYqyMU6ZvQUU/Lwt1ux+tmnh1Gn1AZwE8a4euWayX4ZX1pCUrxuVSo3aAguQjB/uaSuvwrymHHg==
+X-Received: by 2002:a17:90a:9201:: with SMTP id
+ m1mr7392140pjo.42.1570557424145; 
+ Tue, 08 Oct 2019 10:57:04 -0700 (PDT)
+Received: from [10.136.13.65] ([192.19.228.250])
+ by smtp.gmail.com with ESMTPSA id k65sm9550206pga.94.2019.10.08.10.57.00
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 08 Oct 2019 10:57:03 -0700 (PDT)
+Subject: Re: [PATCH 01/11] ARM: bcm2836: include local platsmp.h for
+ bcm2836_smp_ops
+To: Ben Dooks <ben.dooks@codethink.co.uk>, linux-arm-kernel@lists.infradead.org
+References: <20191008123453.1651-1-ben.dooks@codethink.co.uk>
+From: Scott Branden <scott.branden@broadcom.com>
+Message-ID: <29088760-2551-17b2-3eea-ae0538ef0e54@broadcom.com>
+Date: Tue, 8 Oct 2019 10:56:56 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org, mark.rutland@arm.com,
- suzuki.poulose@arm.com, james.morse@arm.com, andrew.murray@arm.com,
- will@kernel.org, julien.thierry.kdev@gmail.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <20191008123453.1651-1-ben.dooks@codethink.co.uk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_105534_422018_801A62E5 
-X-CRM114-Status: GOOD (  23.33  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191008_105705_374201_73F08603 
+X-CRM114-Status: GOOD (  17.54  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,121 +99,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, James Morse <james.morse@arm.com>,
- Andrew Murray <andrew.murray@arm.com>, Will Deacon <will@kernel.org>,
- Julien Thierry <julien.thierry.kdev@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-kernel@lists.codethink.co.uk, Ray Jui <rjui@broadcom.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, bcm-kernel-feedback-list@broadcom.com,
+ Scott Branden <sbranden@broadcom.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue,  8 Oct 2019 17:01:27 +0100
-Marc Zyngier <maz@kernel.org> wrote:
 
-> As KVM uses perf as a way to emulate an ARMv8 PMU, it needs to
-> be able to change the sample period as part of the overflow
-> handling (once an overflow has taken place, the following
-> overflow point is the overflow of the virtual counter).
-> 
-> Deleting and recreating the in-kernel event is difficult, as
-> we're in interrupt context. Instead, we can teach the PMU driver
-> a new trick, which is to stop the event before the overflow handling,
-> and reprogram it once it has been handled. This would give KVM
-> the opportunity to adjust the next sample period. This feature
-> is gated on a new flag that can get set by KVM in a subsequent
-> patch.
-> 
-> Whilst we're at it, move the CHAINED flag from the KVM emulation
-> to the perf_event.h file and adjust the PMU code accordingly.
-> 
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
+
+On 2019-10-08 5:34 a.m., Ben Dooks wrote:
+> Include platsmp.h for the definition of bcm2836_smp_ops to fix
+> the following warning:
+>
+> arch/arm/mach-bcm/platsmp.c:334:29: warning: symbol 'bcm2836_smp_ops' was not declared. Should it be static?
+>
+> Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
+Acked-by: Scott Branden <scott.branden@broadcom.com>
 > ---
->  arch/arm64/include/asm/perf_event.h | 4 ++++
->  arch/arm64/kernel/perf_event.c      | 8 +++++++-
->  virt/kvm/arm/pmu.c                  | 4 +---
->  3 files changed, 12 insertions(+), 4 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/perf_event.h b/arch/arm64/include/asm/perf_event.h
-> index 2bdbc79bbd01..8b6b38f2db8e 100644
-> --- a/arch/arm64/include/asm/perf_event.h
-> +++ b/arch/arm64/include/asm/perf_event.h
-> @@ -223,4 +223,8 @@ extern unsigned long perf_misc_flags(struct pt_regs *regs);
->  	(regs)->pstate = PSR_MODE_EL1h;	\
->  }
->  
-> +/* Flags used by KVM, among others */
-> +#define PERF_ATTR_CFG1_CHAINED_EVENT	(1U << 0)
-> +#define PERF_ATTR_CFG1_RELOAD_EVENT	(1U << 1)
+> Cc: Florian Fainelli <f.fainelli@gmail.com>
+> Cc: Ray Jui <rjui@broadcom.com>
+> Cc: Scott Branden <sbranden@broadcom.com>
+> Cc: bcm-kernel-feedback-list@broadcom.com
+> ---
+>   arch/arm/mach-bcm/platsmp.c | 2 ++
+>   1 file changed, 2 insertions(+)
+>
+> diff --git a/arch/arm/mach-bcm/platsmp.c b/arch/arm/mach-bcm/platsmp.c
+> index 47f8053d0240..21400b3fa5fe 100644
+> --- a/arch/arm/mach-bcm/platsmp.c
+> +++ b/arch/arm/mach-bcm/platsmp.c
+> @@ -22,6 +22,8 @@
+>   #include <asm/smp_plat.h>
+>   #include <asm/smp_scu.h>
+>   
+> +#include "platsmp.h"
 > +
->  #endif
-> diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
-> index a0b4f1bca491..98907c9e5508 100644
-> --- a/arch/arm64/kernel/perf_event.c
-> +++ b/arch/arm64/kernel/perf_event.c
-> @@ -322,7 +322,7 @@ PMU_FORMAT_ATTR(long, "config1:0");
->  
->  static inline bool armv8pmu_event_is_64bit(struct perf_event *event)
->  {
-> -	return event->attr.config1 & 0x1;
-> +	return event->attr.config1 & PERF_ATTR_CFG1_CHAINED_EVENT;
->  }
->  
->  static struct attribute *armv8_pmuv3_format_attrs[] = {
-> @@ -736,8 +736,14 @@ static irqreturn_t armv8pmu_handle_irq(struct arm_pmu *cpu_pmu)
->  		if (!armpmu_event_set_period(event))
->  			continue;
->  
-> +		if (event->attr.config1 & PERF_ATTR_CFG1_RELOAD_EVENT)
-> +			cpu_pmu->pmu.stop(event, PERF_EF_RELOAD);
-> +
+>   /* Size of mapped Cortex A9 SCU address space */
+>   #define CORTEX_A9_SCU_SIZE	0x58
+>   
 
-Actually, I just realized that there is probably no need for this patch
-as a standalone change. I can perfectly fold the stop() and start()
-calls into the last patch, as part of the overflow handler.
-
-The question is still whether that's a good idea or not.
-
-Thanks,
-
-	M.
-
-
->  		if (perf_event_overflow(event, &data, regs))
->  			cpu_pmu->disable(event);
-> +
-> +		if (event->attr.config1 & PERF_ATTR_CFG1_RELOAD_EVENT)
-> +			cpu_pmu->pmu.start(event, PERF_EF_RELOAD);
->  	}
->  	armv8pmu_start(cpu_pmu);
->  
-> diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
-> index f291d4ac3519..25a483a04beb 100644
-> --- a/virt/kvm/arm/pmu.c
-> +++ b/virt/kvm/arm/pmu.c
-> @@ -15,8 +15,6 @@
->  
->  static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx);
->  
-> -#define PERF_ATTR_CFG1_KVM_PMU_CHAINED 0x1
-> -
->  /**
->   * kvm_pmu_idx_is_64bit - determine if select_idx is a 64bit counter
->   * @vcpu: The vcpu pointer
-> @@ -570,7 +568,7 @@ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx)
->  		 */
->  		attr.sample_period = (-counter) & GENMASK(63, 0);
->  		if (kvm_pmu_counter_is_enabled(vcpu, pmc->idx + 1))
-> -			attr.config1 |= PERF_ATTR_CFG1_KVM_PMU_CHAINED;
-> +			attr.config1 |= PERF_ATTR_CFG1_CHAINED_EVENT;
->  
->  		event = perf_event_create_kernel_counter(&attr, -1, current,
->  							 kvm_pmu_perf_overflow,
-
-
-
--- 
-Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
