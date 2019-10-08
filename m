@@ -2,61 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D40EECFE71
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 18:03:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA657CFE7D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 18:04:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lVuy8nNpcTSVPlGdiVQxVVxNhaVj43Kxn5GxuwXQ5Ek=; b=dOuNxqxOsUlgc8
-	ltUJl47NORlA65/v3AClJ+4KCK7h2jqkt2LREFe+ALCSN8XBsZjxlwd9HNEUFgN0IOHsFvHzST3kC
-	V+FEfPx4MOsG8S+CNrMZ/6LtmwE0YFl7MG1VMteEuiJkDJldXyGlc2IkOJJMf6cj8pYTkf7rglamc
-	aZxOOsjZTcdauuHS8kbd9IUM5Q6cnpuSOA6BlEgsFO38INSH2I6hyTZqJ3LxoMeegqsUofPtVhAd+
-	rcm8YydSiX8F39wBoEKQOLeARVqyb7+QW4LR2XWou4bRlbLW5HPjv/iIllHaxRFh43zl4c1c/ta2z
-	NuxMNgIADRYlIb+WHYXA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7fgBBFVHoZcCZAm8XM2j8m6gjbl0py/cbtZQNmHG+Ao=; b=QHbbBp6J4/1FNH
+	SFUofqC23YOuh4pSu3TMzs4Rka4AN2EOvbQYt0XrJcYSX0y6lQrtPczaLZMWRrL9V7F/g8CnkTBkL
+	WKJDoOWJWrb1/WsnlJWWFmt9QujAHUjfz1hhcE34W5Tw5NDO5e0DKVQ87rYKICTe5PGbHY0OpUyb3
+	fuJX+Ne1xxUmY9pokbvtPqUuIu8Rc5zE7WScn/HyZ6VmnoL11B6sStIXZsjLTYsnaVTmt95uFLbco
+	g+tlukQlTrDSqY7StmCj6pJk6/xkg/KSOH6xr4iLZgtTOi2WBUE4KEcWoNNlJkrsA/Gi62QEnTokw
+	3JpiBaK+0VTsfJHILVLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHrx3-00031V-Ke; Tue, 08 Oct 2019 16:03:05 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iHry4-0003y7-4D; Tue, 08 Oct 2019 16:04:08 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHrvx-00027d-4f
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 16:02:00 +0000
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why.lan) by cheepnis.misterjones.org with esmtpsa
- (TLSv1.2:DHE-RSA-AES128-GCM-SHA256:128) (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1iHrvv-0001rs-7i; Tue, 08 Oct 2019 18:01:55 +0200
-From: Marc Zyngier <maz@kernel.org>
-To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-Subject: [PATCH v2 5/5] KVM: arm64: pmu: Reset sample period on overflow
- handling
-Date: Tue,  8 Oct 2019 17:01:28 +0100
-Message-Id: <20191008160128.8872-6-maz@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191008160128.8872-1-maz@kernel.org>
-References: <20191008160128.8872-1-maz@kernel.org>
-MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org, will@kernel.org,
- mark.rutland@arm.com, james.morse@arm.com, julien.thierry.kdev@gmail.com,
- suzuki.poulose@arm.com, andrew.murray@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+ id 1iHrxh-0003gu-Vl
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 16:03:49 +0000
+Received: from localhost.localdomain (unknown [194.230.155.145])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 635102070B;
+ Tue,  8 Oct 2019 16:03:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570550625;
+ bh=d+bnSj+aUj4AkXaZ4Ba8QnLrU2qyvLx31uOPqtiUmhI=;
+ h=From:To:Subject:Date:From;
+ b=H2xcjj4P9W2tviDzgYjGRTTxuPxOYpcSgIF9pxhrONAgj/21fvrOlOBAu9EZevDa1
+ 7HTk8iy6+edgjN0a98y2RvXdk9Yfi6Iax6chhjUZ2cJC5jsKmRjRnfioXLPQ1N6Ja+
+ eJtv0Qiovj1wieTVz4OVlcniEhwYfQck63F6nc/A=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Russell King <linux@armlinux.org.uk>, Kukjin Kim <kgene@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Olof Johansson <olof@lixom.net>,
+ Simon Horman <horms+renesas@verge.net.au>, Arnd Bergmann <arnd@arndb.de>
+Subject: [PATCH v2 1/2] ARM: multi_v7_defconfig: Enable options for boards
+ with Exynos SoC
+Date: Tue,  8 Oct 2019 18:02:33 +0200
+Message-Id: <20191008160234.3106-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_090157_340287_B9CADB93 
-X-CRM114-Status: GOOD (  13.03  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191008_090346_084797_DAF6D20E 
+X-CRM114-Status: GOOD (  11.83  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [194.230.155.145 listed in zen.spamhaus.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,73 +81,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, James Morse <james.morse@arm.com>,
- Andrew Murray <andrew.murray@arm.com>, Will Deacon <will@kernel.org>,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The PMU emulation code uses the perf event sample period to trigger
-the overflow detection. This works fine  for the *first* overflow
-handling, but results in a huge number of interrupts on the host,
-unrelated to the number of interrupts handled in the guest (a x20
-factor is pretty common for the cycle counter). On a slow system
-(such as a SW model), this can result in the guest only making
-forward progress at a glacial pace.
+Sync with exynos_defconfig and enable following options for Samsung
+Exynos SoC based boards:
+1. NFC_S3FWRN5_I2C (with NFC stack): Samsung S3FWRN5 NCI NFC Controller,
+   used for example on Exynos5433 (if booted in 32-bit mode),
+2. S3C2410_WATCHDOG: watchdog driver used on S3C, S5P and Exynos SoCs,
+3. REGULATOR_S2MPA01: Samsung S2MPA01 regulators driver present on
+   Exynos5260 RexNos REX-RED board,
+4. SND_SOC_ARNDALE: sound support on Arndale boards,
+5. EXYNOS_IOMMU: IOMMU driver used on all Exynos SocS,,
+6. EXTCON_MAX14577, EXTCON_MAX77693 and EXTCON_MAX8997: extcon drivers
+   for handling micro USB on mobile Samsung boards (Trats, Trats2,
+   Rinato),
+7. PHY_EXYNOS5250_SATA: SATA phy for Exynos5250 present on Arndale and
+   SMDK5250 boards.
 
-It turns out that the clue is in the name. The sample period is
-exactly that: a period. And once the an overflow has occured,
-the following period should be the full width of the associated
-counter, instead of whatever the guest had initially programed.
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 
-Reset the sample period to the architected value in the overflow
-handler, which now results in a number of host interrupts that is
-much closer to the number of interrupts in the guest.
-
-Fixes: b02386eb7dac ("arm64: KVM: Add PMU overflow interrupt routing")
-Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- virt/kvm/arm/pmu.c | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
 
-diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
-index 25a483a04beb..8b524d74c68a 100644
---- a/virt/kvm/arm/pmu.c
-+++ b/virt/kvm/arm/pmu.c
-@@ -442,6 +442,20 @@ static void kvm_pmu_perf_overflow(struct perf_event *perf_event,
- 	struct kvm_pmc *pmc = perf_event->overflow_handler_context;
- 	struct kvm_vcpu *vcpu = kvm_pmc_to_vcpu(pmc);
- 	int idx = pmc->idx;
-+	u64 period;
-+
-+	/*
-+	 * Reset the sample period to the architectural limit,
-+	 * i.e. the point where the counter overflows.
-+	 */
-+	period = -(local64_read(&pmc->perf_event->count));
-+
-+	if (!kvm_pmu_idx_is_64bit(vcpu, pmc->idx))
-+		period &= GENMASK(31, 0);
-+
-+	local64_set(&pmc->perf_event->hw.period_left, 0);
-+	pmc->perf_event->attr.sample_period = period;
-+	pmc->perf_event->hw.sample_period = period;
- 
- 	__vcpu_sys_reg(vcpu, PMOVSSET_EL0) |= BIT(idx);
- 
-@@ -557,6 +571,7 @@ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx)
- 	attr.exclude_host = 1; /* Don't count host events */
- 	attr.config = (pmc->idx == ARMV8_PMU_CYCLE_IDX) ?
- 		ARMV8_PMUV3_PERFCTR_CPU_CYCLES : eventsel;
-+	attr.config1 = PERF_ATTR_CFG1_RELOAD_EVENT;
- 
- 	counter = kvm_pmu_get_pair_counter_value(vcpu, pmc);
- 
+SND_SOC_ARNDALE is in progress (patch introducing it was not yet applied)
+
+Changes since v1:
+1. Bring back REMOTEPROC.
+---
+ arch/arm/configs/multi_v7_defconfig | 17 ++++++++++++++++-
+ 1 file changed, 16 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
+index 198de8e36d92..d576845acd6f 100644
+--- a/arch/arm/configs/multi_v7_defconfig
++++ b/arch/arm/configs/multi_v7_defconfig
+@@ -168,6 +168,14 @@ CONFIG_MAC80211=m
+ CONFIG_RFKILL=y
+ CONFIG_RFKILL_INPUT=y
+ CONFIG_RFKILL_GPIO=y
++CONFIG_NFC=m
++CONFIG_NFC_DIGITAL=m
++CONFIG_NFC_NCI=m
++CONFIG_NFC_NCI_SPI=m
++CONFIG_NFC_NCI_UART=m
++CONFIG_NFC_HCI=m
++CONFIG_NFC_SHDLC=y
++CONFIG_NFC_S3FWRN5_I2C=m
+ CONFIG_PCIEPORTBUS=y
+ CONFIG_PCI_MVEBU=y
+ CONFIG_PCI_TEGRA=y
+@@ -491,12 +499,12 @@ CONFIG_BCM2835_THERMAL=m
+ CONFIG_BRCMSTB_THERMAL=m
+ CONFIG_ST_THERMAL_MEMMAP=y
+ CONFIG_UNIPHIER_THERMAL=y
+-CONFIG_WATCHDOG=y
+ CONFIG_DA9063_WATCHDOG=m
+ CONFIG_XILINX_WATCHDOG=y
+ CONFIG_ARM_SP805_WATCHDOG=y
+ CONFIG_AT91SAM9X_WATCHDOG=y
+ CONFIG_SAMA5D4_WATCHDOG=y
++CONFIG_S3C2410_WATCHDOG=m
+ CONFIG_DW_WATCHDOG=y
+ CONFIG_DAVINCI_WATCHDOG=m
+ CONFIG_ORION_WATCHDOG=y
+@@ -581,6 +589,7 @@ CONFIG_REGULATOR_QCOM_RPM=y
+ CONFIG_REGULATOR_QCOM_SMD_RPM=m
+ CONFIG_REGULATOR_RK808=y
+ CONFIG_REGULATOR_RN5T618=y
++CONFIG_REGULATOR_S2MPA01=m
+ CONFIG_REGULATOR_S2MPS11=y
+ CONFIG_REGULATOR_S5M8767=y
+ CONFIG_REGULATOR_STM32_BOOSTER=m
+@@ -711,6 +720,7 @@ CONFIG_SND_SOC_SAMSUNG_SMDK_WM8994=m
+ CONFIG_SND_SOC_SMDK_WM8994_PCM=m
+ CONFIG_SND_SOC_SNOW=m
+ CONFIG_SND_SOC_ODROID=m
++CONFIG_SND_SOC_ARNDALE=m
+ CONFIG_SND_SOC_SH4_FSI=m
+ CONFIG_SND_SOC_RCAR=m
+ CONFIG_SND_SOC_STI=m
+@@ -933,6 +943,7 @@ CONFIG_BCM2835_MBOX=y
+ CONFIG_ROCKCHIP_IOMMU=y
+ CONFIG_TEGRA_IOMMU_GART=y
+ CONFIG_TEGRA_IOMMU_SMMU=y
++CONFIG_EXYNOS_IOMMU=y
+ CONFIG_REMOTEPROC=y
+ CONFIG_ST_REMOTEPROC=m
+ CONFIG_RPMSG_VIRTIO=m
+@@ -968,6 +979,9 @@ CONFIG_ARCH_TEGRA_3x_SOC=y
+ CONFIG_ARCH_TEGRA_114_SOC=y
+ CONFIG_ARCH_TEGRA_124_SOC=y
+ CONFIG_ARM_TEGRA_DEVFREQ=m
++CONFIG_EXTCON_MAX14577=m
++CONFIG_EXTCON_MAX77693=m
++CONFIG_EXTCON_MAX8997=m
+ CONFIG_TI_AEMIF=y
+ CONFIG_IIO=y
+ CONFIG_IIO_SW_TRIGGER=y
+@@ -1026,6 +1040,7 @@ CONFIG_PHY_RCAR_GEN2=m
+ CONFIG_PHY_ROCKCHIP_DP=m
+ CONFIG_PHY_ROCKCHIP_USB=y
+ CONFIG_PHY_SAMSUNG_USB2=m
++CONFIG_PHY_EXYNOS5250_SATA=m
+ CONFIG_PHY_UNIPHIER_USB2=y
+ CONFIG_PHY_UNIPHIER_USB3=y
+ CONFIG_PHY_MIPHY28LP=y
 -- 
-2.20.1
+2.17.1
 
 
 _______________________________________________
