@@ -2,38 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 475FBCF017
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 02:59:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B76D1CF018
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 02:59:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=w61M02b4tNfQYnQuT/Qs5qB+Da+jEaXRnjvyt5W8xo4=; b=b5V
-	DkHmv633MX/kB1Tg70xh1hImOGD9wSuVkO/381FXJ3ZoImxOAkAXMo/WRfkoai+NrwAflfi96aBTm
-	hGpj5KcInI+bOyzoIizMICM1EAvjCA/MWx+soy6FyYTupWHHNQno2wurfiGdKZP0xCMCnMa7frMZc
-	P1WkElpi1WScKip6vdCzmHZ0KARXiI0fvOXeQmJHFF3EMfbvvVkpOzGXbmfor9XTPMye9mlLV7bDO
-	th6XRXD3etBdfv4vC8FFUNdQC89IF9bAoa+Ngbco3gtMFclpU0iivlcW/2fvrOTrP7ph4vRa/PKyz
-	xEZbP7t7seKXuCgHchkraNwv0PWxZTA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=iNdJToYTniIBGSzFwfMi3jEvqV9hc2MvA1ECikHcGO0=; b=uhOnBMXFXx0I60qMbUWDRYgVLW
+	/niNfhcqepiGW1I/kaOelycVm63Rzv5j/vTP1B0gVSXbnYDFUMd3LPrvqq1Jj+HnrdOJ3Abx0DdNl
+	ddnme3XP/GLub+n7FRq282hbIrGsxG2TjfQq3Luhtiyxqx6v7yDnLB2WqyLEoKogNVL1RtFa4HHIP
+	HhoOypn6hUiGeEohnupYxiYvZRr5vVMPQRn9UyYnrQyoA0ftH5BUvBQi9901ZsBiUygOdhX3A5xOr
+	PjErsYh3mbwjve2b/DhOAWXjCdRj8RKp/AyGznywhRrHcarreucsSMijL8sthWq8yl3gD9g5021we
+	No36ubxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHdq7-0003ny-VP; Tue, 08 Oct 2019 00:59:00 +0000
+	id 1iHdqM-000421-FN; Tue, 08 Oct 2019 00:59:14 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHdpS-0003L1-3E
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 00:58:19 +0000
+ id 1iHdpS-0003LH-KD
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 00:58:21 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 42AEE1A06D1;
- Tue,  8 Oct 2019 02:58:13 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0F30F1A0156;
+ Tue,  8 Oct 2019 02:58:15 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C5FFA1A0156;
- Tue,  8 Oct 2019 02:58:03 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 90C2C1A0058;
+ Tue,  8 Oct 2019 02:58:05 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 31E9D402DA;
- Tue,  8 Oct 2019 08:57:52 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 077CD402DF;
+ Tue,  8 Oct 2019 08:57:53 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
@@ -42,15 +43,17 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  l.stach@pengutronix.de, andrew.smirnov@gmail.com, ccaione@baylibre.com,
  angus@akkea.ca, agx@sigxcpu.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH V2 1/3] arm64: dts: imx8mq: Use correct clock for usdhc's ipg
+Subject: [PATCH V2 2/3] arm64: dts: imx8mm: Use correct clock for usdhc's ipg
  clk
-Date: Tue,  8 Oct 2019 08:55:43 +0800
-Message-Id: <1570496145-11053-1-git-send-email-Anson.Huang@nxp.com>
+Date: Tue,  8 Oct 2019 08:55:44 +0800
+Message-Id: <1570496145-11053-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1570496145-11053-1-git-send-email-Anson.Huang@nxp.com>
+References: <1570496145-11053-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_175818_296064_12243D87 
-X-CRM114-Status: UNSURE (   7.98  )
+X-CRM114-CacheID: sfid-20191007_175818_829555_46429482 
+X-CRM114-Status: UNSURE (   9.07  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -79,39 +82,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On i.MX8MQ, usdhc's ipg clock is from IMX8MQ_CLK_IPG_ROOT,
-assign it explicitly instead of using IMX8MQ_CLK_DUMMY.
+On i.MX8MM, usdhc's ipg clock is from IMX8MM_CLK_IPG_ROOT,
+assign it explicitly instead of using IMX8MM_CLK_DUMMY.
 
-Fixes: 748f908cc882 ("arm64: add basic DTS for i.MX8MQ")
+Fixes: a05ea40eb384 ("arm64: dts: imx: Add i.mx8mm dtsi support")
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
 Changes since V1:
 	- Add fixes tag.
 ---
- arch/arm64/boot/dts/freescale/imx8mq.dtsi | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-index 04115ca..55a3d1c 100644
---- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-@@ -850,7 +850,7 @@
- 				             "fsl,imx7d-usdhc";
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+index 7c4dcce..8aafad2 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+@@ -694,7 +694,7 @@
+ 				compatible = "fsl,imx8mm-usdhc", "fsl,imx7d-usdhc";
  				reg = <0x30b40000 0x10000>;
  				interrupts = <GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>;
--				clocks = <&clk IMX8MQ_CLK_DUMMY>,
-+				clocks = <&clk IMX8MQ_CLK_IPG_ROOT>,
- 				         <&clk IMX8MQ_CLK_NAND_USDHC_BUS>,
- 				         <&clk IMX8MQ_CLK_USDHC1_ROOT>;
+-				clocks = <&clk IMX8MM_CLK_DUMMY>,
++				clocks = <&clk IMX8MM_CLK_IPG_ROOT>,
+ 					 <&clk IMX8MM_CLK_NAND_USDHC_BUS>,
+ 					 <&clk IMX8MM_CLK_USDHC1_ROOT>;
  				clock-names = "ipg", "ahb", "per";
-@@ -867,7 +867,7 @@
- 				             "fsl,imx7d-usdhc";
+@@ -710,7 +710,7 @@
+ 				compatible = "fsl,imx8mm-usdhc", "fsl,imx7d-usdhc";
  				reg = <0x30b50000 0x10000>;
  				interrupts = <GIC_SPI 23 IRQ_TYPE_LEVEL_HIGH>;
--				clocks = <&clk IMX8MQ_CLK_DUMMY>,
-+				clocks = <&clk IMX8MQ_CLK_IPG_ROOT>,
- 				         <&clk IMX8MQ_CLK_NAND_USDHC_BUS>,
- 				         <&clk IMX8MQ_CLK_USDHC2_ROOT>;
+-				clocks = <&clk IMX8MM_CLK_DUMMY>,
++				clocks = <&clk IMX8MM_CLK_IPG_ROOT>,
+ 					 <&clk IMX8MM_CLK_NAND_USDHC_BUS>,
+ 					 <&clk IMX8MM_CLK_USDHC2_ROOT>;
+ 				clock-names = "ipg", "ahb", "per";
+@@ -724,7 +724,7 @@
+ 				compatible = "fsl,imx8mm-usdhc", "fsl,imx7d-usdhc";
+ 				reg = <0x30b60000 0x10000>;
+ 				interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
+-				clocks = <&clk IMX8MM_CLK_DUMMY>,
++				clocks = <&clk IMX8MM_CLK_IPG_ROOT>,
+ 					 <&clk IMX8MM_CLK_NAND_USDHC_BUS>,
+ 					 <&clk IMX8MM_CLK_USDHC3_ROOT>;
  				clock-names = "ipg", "ahb", "per";
 -- 
 2.7.4
