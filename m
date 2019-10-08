@@ -2,27 +2,27 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83677CF9EB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 14:35:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F7C3CF9E9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 14:35:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=cLKb6ZQg0vldfZnLQ/H0o1sP9YNRcZ2mDu6T0tv1AUg=; b=VdL6y82F4q2PA2
-	Iy+jjaTTvTOqG+wc/NkjXw89X0d+/5Gsr7Q52ohWo6EabrLiP4ysUTA0UjnXN4OnLk55b2DA50pPw
-	Pnq7g3F7MRP3V9SWyqJ5hHL/S4//2SMq//5Fi7j0ooCfmOIFyGf6hHbJ+C8R9vpsr5K/pesTHjVvI
-	7zzZHyGvi7fIPtefQWbGrgcPiQVaFOzVDovDqVkpSFDNTE+70+O5QnFZCxQ+TdSDVGGfocwlLNyUB
-	bR3j4hw0LmZLlurrQtnXE8qN/m8DJDmXzvba68bI/Dau8eE4pAW6jdqGx/wnRXVMLmqXGfhViXtbN
-	lcTddLWDQYm8DW77j7SQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ru4JtZ/Q1EjtmSi2zsGR3HJSSDFJliwZvcIyjkNCoos=; b=jFWxScmYXzDcB1
+	azsuW5p024bMHy+fJ1UTf3Vt0QXVhukDqaKw/v0pN5rvoqtcuPXAeuOB5SqoNwST9JdXi9bZqOHlE
+	9f6/SM0joHXMhULnUvEy5flG9+NzogzcChEQH9LFL0flGjlV7I9AJ+X9KkVIRuOh4ZEyO0kkrpWO0
+	+fWdNr86XY8OAeJpRy+Z/HkR6eNs4QH5nGLHnFbKlfIO0L25s+mWLUk1kX3r6TwktyGRrZiUzEIRs
+	16lLHM+sepd1VyMfy58ofqv+46QSfqnAXo1lvp0nVqeAzR9XDio6aBiX1M+UnDRA0rZiljhibpCJV
+	Kr4a/Wj8s4o2ij/3bnQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHoi9-0000qw-HL; Tue, 08 Oct 2019 12:35:29 +0000
+	id 1iHohv-0007pO-Ll; Tue, 08 Oct 2019 12:35:15 +0000
 Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHohZ-0007no-Qb
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 12:34:55 +0000
+ id 1iHohV-0007nw-JM
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 12:34:52 +0000
 Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
  Nicolas.Ferre@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
@@ -45,37 +45,38 @@ Authentication-Results: esa6.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Nicolas.Ferre@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: WhkBNvq3jsOp2cyfmV0+lPJQ1VKmrmpaIiaKSptI7W1Ff6RnMsBmfbNQpUBAPc+ovIn+vQnxBS
- 41+4SHKSC6OZwlXR+uw3XZsEMODm3QfSQLtApT7ReFe290q99kHpMn0NhuIFtEI8bBNYVTA9J1
- HEXvSo6HnQinu8CGN5E1jZ006EdJmtpdfoxIk4bPoBhW1Ce+wVZ9UtX6QjHcRPJUH7eyMPRe0l
- 1nPJgLo72x6qtYQMDV+D/CAYpHOJYwlo82+ziBVupWT+hFBW5J1KzoN4XaFSjoivSuYlB3zAEh
- 4uc=
-X-IronPort-AV: E=Sophos;i="5.67,270,1566889200"; d="scan'208";a="49212609"
+IronPort-SDR: FxSCSadRfyOhjmGJ0lq7LzW+WbK63wzhjmw9cb8R/74ZHo7MW1K73CZIBHrOxnJajFj0BaPoKB
+ uv53CT0mlylEXBhYUY2oOoE53N3JtzGeVaqveo6n6pNhLxCjQFO2SBDHzZfAK91pH+ScGp/ZKY
+ B6Qq/xYJA1i9jU6BWGX5qzgSh4Px3p2td819sVi/ji7ngj4iyPmZWFdD8e/RSUU+pQJBtBuzm9
+ Wl2kJO2vZtn+1BXrBGSp7C9bDbhIx7RAj+3mO9OEDDDk4dfuQyZ+Yg6lgQRJdboFRs7csD7gme
+ Qf4=
+X-IronPort-AV: E=Sophos;i="5.67,270,1566889200"; d="scan'208";a="49212619"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 08 Oct 2019 05:34:46 -0700
+ 08 Oct 2019 05:34:48 -0700
 Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 8 Oct 2019 05:34:46 -0700
+ 15.1.1713.5; Tue, 8 Oct 2019 05:34:48 -0700
 Received: from tenerife.corp.atmel.com (10.10.85.251) by
  chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Tue, 8 Oct 2019 05:34:44 -0700
+ 15.1.1713.5 via Frontend Transport; Tue, 8 Oct 2019 05:34:46 -0700
 From: Nicolas Ferre <nicolas.ferre@microchip.com>
 To: Ludovic Desroches <ludovic.desroches@microchip.com>,
  <linux-arm-kernel@lists.infradead.org>, <linux-mmc@vger.kernel.org>,
  <devicetree@vger.kernel.org>, <robh+dt@kernel.org>
-Subject: [PATCH 1/2] dt-bindings: sdhci-of-at91: add the microchip,
- sdcal-inverted property
-Date: Tue, 8 Oct 2019 14:34:31 +0200
-Message-ID: <4d269f30b1122487a2b5c8b48e24f78f2b75a509.1570537903.git.nicolas.ferre@microchip.com>
+Subject: [PATCH 2/2] mmc: sdhci-of-at91: add DT property to enable calibration
+ on full reset
+Date: Tue, 8 Oct 2019 14:34:32 +0200
+Message-ID: <d25c8f909d039938a5696e8de32396cf2aaf54b7.1570537903.git.nicolas.ferre@microchip.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <4d269f30b1122487a2b5c8b48e24f78f2b75a509.1570537903.git.nicolas.ferre@microchip.com>
+References: <4d269f30b1122487a2b5c8b48e24f78f2b75a509.1570537903.git.nicolas.ferre@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_053453_905248_5D32AA48 
-X-CRM114-Status: UNSURE (   8.35  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191008_053449_671273_F8ED4EA7 
+X-CRM114-Status: GOOD (  12.80  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -103,35 +104,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the specific microchip,sdcal-inverted property to at91 sdhci
-device binding.
-This optional property describes how the SoC SDCAL pin is connected.
-It could be handled at SiP, SoM or board level.
+Add a property to keep the analog calibration cell powered.
+This feature is specific to the Microchip SDHCI IP and outside
+of the standard SDHCI register map.
 
-This property read by at91 sdhci driver will allow to put in place a
-software workaround that would reduce power consumption.
+By always keeping it on, after a full reset sequence, we make sure
+that this feature is activated and not disabled.
+
+We expose a hardware property to the DT as this feature can be used
+to adapt SDHCI behavior vs. how the SDCAL SoC pin is connected
+on the board.
+
+Note that managing properly this property would reduce
+power consumption on some SAMA5D2 SiP revisions.
 
 Signed-off-by: Nicolas Ferre <nicolas.ferre@microchip.com>
 ---
- Documentation/devicetree/bindings/mmc/sdhci-atmel.txt | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/mmc/host/sdhci-of-at91.c | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/mmc/sdhci-atmel.txt b/Documentation/devicetree/bindings/mmc/sdhci-atmel.txt
-index 1b662d7171a0..503c6dbac1b2 100644
---- a/Documentation/devicetree/bindings/mmc/sdhci-atmel.txt
-+++ b/Documentation/devicetree/bindings/mmc/sdhci-atmel.txt
-@@ -9,6 +9,11 @@ Required properties:
- - clocks:		Phandlers to the clocks.
- - clock-names:		Must be "hclock", "multclk", "baseclk";
+diff --git a/drivers/mmc/host/sdhci-of-at91.c b/drivers/mmc/host/sdhci-of-at91.c
+index e7d1920729fb..9571c4a882a9 100644
+--- a/drivers/mmc/host/sdhci-of-at91.c
++++ b/drivers/mmc/host/sdhci-of-at91.c
+@@ -27,6 +27,9 @@
+ #define SDMMC_CACR	0x230
+ #define		SDMMC_CACR_CAPWREN	BIT(0)
+ #define		SDMMC_CACR_KEY		(0x46 << 8)
++#define SDMMC_CALCR	0x240
++#define		SDMMC_CALCR_EN		BIT(0)
++#define		SDMMC_CALCR_ALWYSON	BIT(4)
  
-+Optional properties:
-+- microchip,sdcal-inverted: when present, polarity on the SDCAL SoC pin is
-+  inverted. The default polarity for this signal is described in the datasheet.
-+  For instance on SAMA5D2, the pin is usually tied to the GND with a resistor
-+  and a capacitor (see "SDMMC I/O Calibration" chapter).
+ #define SDHCI_AT91_PRESET_COMMON_CONF	0x400 /* drv type B, programmable clock mode */
  
- Example:
+@@ -35,6 +38,7 @@ struct sdhci_at91_priv {
+ 	struct clk *gck;
+ 	struct clk *mainck;
+ 	bool restore_needed;
++	bool cal_always_on;
+ };
  
+ static void sdhci_at91_set_force_card_detect(struct sdhci_host *host)
+@@ -116,10 +120,17 @@ static void sdhci_at91_set_uhs_signaling(struct sdhci_host *host,
+ 
+ static void sdhci_at91_reset(struct sdhci_host *host, u8 mask)
+ {
++	struct sdhci_pltfm_host *pltfm_host = sdhci_priv(host);
++	struct sdhci_at91_priv *priv = sdhci_pltfm_priv(pltfm_host);
++
+ 	sdhci_reset(host, mask);
+ 
+ 	if (host->mmc->caps & MMC_CAP_NONREMOVABLE)
+ 		sdhci_at91_set_force_card_detect(host);
++
++	if (priv->cal_always_on && (mask & SDHCI_RESET_ALL))
++		sdhci_writel(host, SDMMC_CALCR_ALWYSON | SDMMC_CALCR_EN,
++			     SDMMC_CALCR);
+ }
+ 
+ static const struct sdhci_ops sdhci_at91_sama5d2_ops = {
+@@ -345,6 +356,14 @@ static int sdhci_at91_probe(struct platform_device *pdev)
+ 
+ 	priv->restore_needed = false;
+ 
++	/*
++	 * if SDCAL pin is wrongly connected, we must enable
++	 * the analog calibration cell permanently.
++	 */
++	priv->cal_always_on =
++		device_property_read_bool(&pdev->dev,
++					  "microchip,sdcal-inverted");
++
+ 	ret = mmc_of_parse(host->mmc);
+ 	if (ret)
+ 		goto clocks_disable_unprepare;
 -- 
 2.17.1
 
