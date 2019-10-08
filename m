@@ -2,51 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E607CF633
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 11:38:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91A26CF654
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 11:44:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=cGXnibQ0eArWeiy2pi+E7h/QNlPN4KJGGsLh+VCkr8g=; b=izNZubVLbai2lRg10m79ASKf+J
-	3CUgACqUQhSCp92/WJi05kjS60KNrKf1yWvweG/jbZLFF17N4Dyy4LHcUDWYhgWswIGMLw2YdjLhv
-	1GRk9n0daETZI6h1VcYy1wIHoZk3HtXhbjyLTfxudSJuQ0hrHQ8Zgiemo/1FuY6wrc1i5fr8qCaCO
-	w8PNI4E/d+iorbA7ewDOtmbD1/SvuafXVilP2Wp4iDhjeCAwqia9BI6hJC9U/2Usv3pOQyB0EyCzg
-	ZHtZxs7tAoV0YsI33d7R3DhUeGyY7sVsTCrendXkh0G2d+NmG4jOEQE1fyL+3+fHcs9k09XDrEACy
-	hGugTDvQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YPHM6l9StdbpVV1j5R4rlQrJdoH93IlI8QOOFhi8A54=; b=ZbHZ1JAb68+/Go
+	7xxtQZCTf9cooeHLM6mc9hG+PKWSac7fYcd9h1nEfdP++Ciep+Z/0gs+NTx+nm5sMd2OIWXUDVUsC
+	Eq6CVO5+nMyWKQt+p1C6435KVHQIvGF9t8yQFUYlyRfnofo7uLrb1ksUZ1GeRrxD9pCZO5BtycGF6
+	CTL3LBSRcXnRhhKXPzMY2SfQu6OKOJW0XIT9FUh7cAuQYgfGBKvPN8UxTqMI3Cri/vf9BPctgecew
+	v2nTmefRP88jTsU++mLW9OzE2+Hi/oRWWGw1jhAunoWQhx28IU4CepyVbUk4alHyxkzGeHN3YSQbb
+	k/wUvQvFL6E44I17Y35w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHlwK-0005bb-Ms; Tue, 08 Oct 2019 09:37:56 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHlvI-0004VC-IY
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 09:36:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 62E7015A2;
- Tue,  8 Oct 2019 02:36:52 -0700 (PDT)
-Received: from localhost (e113682-lin.copenhagen.arm.com [10.32.145.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EB5593F6C4;
- Tue,  8 Oct 2019 02:36:51 -0700 (PDT)
-From: Christoffer Dall <christoffer.dall@arm.com>
-To: kvmarm@lists.cs.columbia.edu
-Subject: [kvmtool v2 5/5] arm: Inject external data aborts when accessing
- holes in the memory map
-Date: Tue,  8 Oct 2019 11:36:40 +0200
-Message-Id: <20191008093640.26519-6-christoffer.dall@arm.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20191008093640.26519-1-christoffer.dall@arm.com>
-References: <20191008093640.26519-1-christoffer.dall@arm.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_023652_706994_6512F1BF 
-X-CRM114-Status: GOOD (  12.88  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+	id 1iHm2U-0007x8-NL; Tue, 08 Oct 2019 09:44:18 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHm2N-0007x0-97
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 08 Oct 2019 09:44:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Type:MIME-Version:Message-ID:
+ Date:References:In-Reply-To:Subject:Cc:To:From:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=ge/RoAtAn9phY/Ia5b1+Pf0zvmW7c8KIL3PGoKTWAPM=; b=fcNVdy+LGEkE/tSysCvN9EIQ1
+ oi0UG6vhecxSFEK1nIrOi94qbaAu+d08Qx00DPKW6wW2oxfEOrzFaUYxCegqmFUnNNveasMfrMj+G
+ ljRqwXSdrSpR3vhNU0bjtYRTZltzxhhbnrRHOAkZ4SpFs8invtZiO9iHJC0fHEMYAU6tnTM4798IN
+ QSIa3HV1umSHTs2QOb8EGlUM4k4XtlyYl4giqP8CBDQSOSZr7Iicx31C7aH/EytEmvL8ee3ld9bPw
+ luxQLcGENDNJbWAJdXdkF9tylsMnY7sg3LO0PgAdYbeEYzWyqOnV7Ocv9FuXYxKTpQxeZ7SLrFOLH
+ pCqvsrVFw==;
+Received: from relay11.mail.gandi.net ([217.70.178.231])
+ by merlin.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHm2K-0005nR-1n
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 09:44:09 +0000
+Received: from localhost (91.red-2-139-156.staticip.rima-tde.net
+ [2.139.156.91]) (Authenticated sender: gregory.clement@bootlin.com)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id 66C12100006;
+ Tue,  8 Oct 2019 09:43:34 +0000 (UTC)
+From: Gregory CLEMENT <gregory.clement@bootlin.com>
+To: Walter Schweizer <ws.kernel@gmail.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH] ARM: dts: kirkwood: synology: Fix rs5c372 RTC entry
+In-Reply-To: <20190928105344.6788-1-ws.kernel@gmail.com>
+References: <20190928105344.6788-1-ws.kernel@gmail.com>
+Date: Tue, 08 Oct 2019 11:43:33 +0200
+Message-ID: <87lftvtvwa.fsf@FE-laptop>
+MIME-Version: 1.0
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.231 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -60,143 +73,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Maydell <peter.maydell@linaro.org>,
- =?UTF-8?q?Daniel=20P=2E=20Berrang=C3=A9?= <berrange@redhat.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
- Christoffer Dall <christoffer.dall@arm.com>, James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Stefan Hajnoczi <stefanha@redhat.com>,
- Heinrich Schuchardt <xypron.glpk@gmx.de>, Alexander Graf <graf@amazon.com>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Walter Schweizer <ws.kernel@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Occasionally guests will attempt to access parts of the guest memory map
-where there is... nothing at all.  Until now, we've handled this by
-either forcefully killing the guest, or silently (unless a debug option
-was enabled) ignoring the access.  Neither is very helpful to a user,
-who is most likely running either a broken or misconfigured guest.
+Hi Walter,
 
-A more appropriate action is to inject an external abort to the guest.
-Luckily, with KVM_CAP_ARM_INJECT_EXT_DABT, we can use the set event
-mechanism and ask KVM to do this for us.
+> In the rtc-rs5c372.c driver the compatible entry has been renamed
+> from rs5c372 to rs5c372a. Most dts files have been adapted.
+> This patch completes the change.
+>
+> Signed-off-by: Walter Schweizer <ws.kernel@gmail.com>
 
-So we add an architecture specific hook to handle accesses to MMIO
-regions which cannot be found, and allow them to return if the invalid
-access was handled or not.
+Applied on mvebu/dt
 
-Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
----
- arm/include/arm-common/kvm-cpu-arch.h | 16 ++++++++++++++++
- arm/kvm-cpu.c                         |  2 +-
- mips/include/kvm/kvm-cpu-arch.h       |  5 +++++
- mmio.c                                |  3 ++-
- powerpc/include/kvm/kvm-cpu-arch.h    |  5 +++++
- x86/include/kvm/kvm-cpu-arch.h        |  5 +++++
- 6 files changed, 34 insertions(+), 2 deletions(-)
+Thanks,
 
-diff --git a/arm/include/arm-common/kvm-cpu-arch.h b/arm/include/arm-common/kvm-cpu-arch.h
-index 923d2c4..33defa2 100644
---- a/arm/include/arm-common/kvm-cpu-arch.h
-+++ b/arm/include/arm-common/kvm-cpu-arch.h
-@@ -57,6 +57,22 @@ static inline bool kvm_cpu__emulate_mmio(struct kvm_cpu *vcpu, u64 phys_addr,
- 	return kvm__emulate_mmio(vcpu, phys_addr, data, len, is_write);
- }
- 
-+static inline bool kvm_cpu__mmio_not_found(struct kvm_cpu *vcpu, u64 phys_addr)
-+{
-+	struct kvm_vcpu_events events = {
-+		.exception.ext_dabt_pending = 1,
-+	};
-+	int err;
-+
-+	if (!kvm__supports_extension(vcpu->kvm, KVM_CAP_ARM_INJECT_EXT_DABT))
-+		return false;
-+
-+	err = ioctl(vcpu->vcpu_fd, KVM_SET_VCPU_EVENTS, &events);
-+	if (err)
-+		die("failed to inject external abort");
-+	return true;
-+}
-+
- unsigned long kvm_cpu__get_vcpu_mpidr(struct kvm_cpu *vcpu);
- 
- #endif /* ARM_COMMON__KVM_CPU_ARCH_H */
-diff --git a/arm/kvm-cpu.c b/arm/kvm-cpu.c
-index 25bd3ed..321a3e4 100644
---- a/arm/kvm-cpu.c
-+++ b/arm/kvm-cpu.c
-@@ -142,7 +142,7 @@ bool kvm_cpu__handle_exit(struct kvm_cpu *vcpu)
- 
- 		if (!arm_addr_in_ioport_region(phys_addr) &&
- 		    !kvm__mmio_exists(vcpu, phys_addr))
--			die("Guest accessed memory outside RAM and IO ranges");
-+			return kvm_cpu__mmio_not_found(vcpu, phys_addr);
- 
- 		/*
- 		 * We cannot fetch and decode instructions from a KVM guest,
-diff --git a/mips/include/kvm/kvm-cpu-arch.h b/mips/include/kvm/kvm-cpu-arch.h
-index 45e69f6..512ab34 100644
---- a/mips/include/kvm/kvm-cpu-arch.h
-+++ b/mips/include/kvm/kvm-cpu-arch.h
-@@ -40,4 +40,9 @@ static inline bool kvm_cpu__emulate_mmio(struct kvm_cpu *vcpu, u64 phys_addr, u8
- 	return kvm__emulate_mmio(vcpu, phys_addr, data, len, is_write);
- }
- 
-+static inline bool kvm_cpu__mmio_not_found(struct kvm_cpu *vcpu, u64 phys_addr)
-+{
-+	return false;
-+}
-+
- #endif /* KVM__KVM_CPU_ARCH_H */
-diff --git a/mmio.c b/mmio.c
-index 2ab7fa7..d6df303 100644
---- a/mmio.c
-+++ b/mmio.c
-@@ -130,7 +130,8 @@ bool kvm__emulate_mmio(struct kvm_cpu *vcpu, u64 phys_addr, u8 *data, u32 len, u
- 	if (mmio)
- 		mmio->mmio_fn(vcpu, phys_addr, data, len, is_write, mmio->ptr);
- 	else {
--		if (vcpu->kvm->cfg.mmio_debug)
-+		if (!kvm_cpu__mmio_not_found(vcpu, phys_addr) &&
-+		    vcpu->kvm->cfg.mmio_debug)
- 			fprintf(stderr,	"Warning: Ignoring MMIO %s at %016llx (length %u)\n",
- 				to_direction(is_write),
- 				(unsigned long long)phys_addr, len);
-diff --git a/powerpc/include/kvm/kvm-cpu-arch.h b/powerpc/include/kvm/kvm-cpu-arch.h
-index a69e0cc..64b69b1 100644
---- a/powerpc/include/kvm/kvm-cpu-arch.h
-+++ b/powerpc/include/kvm/kvm-cpu-arch.h
-@@ -76,4 +76,9 @@ static inline bool kvm_cpu__emulate_io(struct kvm_cpu *vcpu, u16 port, void *dat
- 
- bool kvm_cpu__emulate_mmio(struct kvm_cpu *vcpu, u64 phys_addr, u8 *data, u32 len, u8 is_write);
- 
-+static inline bool kvm_cpu__mmio_not_found(struct kvm_cpu *vcpu, u64 phys_addr)
-+{
-+	return false;
-+}
-+
- #endif /* KVM__KVM_CPU_ARCH_H */
-diff --git a/x86/include/kvm/kvm-cpu-arch.h b/x86/include/kvm/kvm-cpu-arch.h
-index 05e5bb6..10cbe6e 100644
---- a/x86/include/kvm/kvm-cpu-arch.h
-+++ b/x86/include/kvm/kvm-cpu-arch.h
-@@ -47,4 +47,9 @@ static inline bool kvm_cpu__emulate_mmio(struct kvm_cpu *vcpu, u64 phys_addr, u8
- 	return kvm__emulate_mmio(vcpu, phys_addr, data, len, is_write);
- }
- 
-+static inline bool kvm_cpu__mmio_not_found(struct kvm_cpu *vcpu, u64 phys_addr)
-+{
-+	return false;
-+}
-+
- #endif /* KVM__KVM_CPU_ARCH_H */
+Gregory
+> ---
+>  arch/arm/boot/dts/kirkwood-synology.dtsi | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>
+> diff --git a/arch/arm/boot/dts/kirkwood-synology.dtsi b/arch/arm/boot/dts/kirkwood-synology.dtsi
+> index c97ed29a0a0b..217bd374e52b 100644
+> --- a/arch/arm/boot/dts/kirkwood-synology.dtsi
+> +++ b/arch/arm/boot/dts/kirkwood-synology.dtsi
+> @@ -244,7 +244,7 @@
+>  
+>  			rs5c372: rs5c372@32 {
+>  				status = "disabled";
+> -				compatible = "ricoh,rs5c372";
+> +				compatible = "ricoh,rs5c372a";
+>  				reg = <0x32>;
+>  			};
+>  
+> -- 
+> 2.20.1
+>
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
 -- 
-2.18.0
-
+Gregory Clement, Bootlin
+Embedded Linux and Kernel engineering
+http://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
