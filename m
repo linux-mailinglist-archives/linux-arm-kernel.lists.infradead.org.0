@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A412CF8CE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 13:48:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E12ECF90A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 13:58:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sSu8VBlc0sH1ij+jxzmabbz2TZvss2HbiHFuwCXcG38=; b=fszRJWJQZGHrHj
-	OiDINHBYntx3Z6j/uzA19au21X8YTebAqokUduQGhafMTm0Mk4mMCYqm8DQmJc0uA9RaztQ6ONpJJ
-	Cgpt/1tOD3O1Wqwc7pRbmUqgaJElKrtWffFO08974eHVK2UmiaPlCcCfnOq1V9bXV5h/Fnmh5nWc+
-	IFxLAK08w+HakVTRsXZVdSEv9N9C+7gBHNYiHS0d+V1wy2cr+c+SkGAP+hWbde7SDerdcliIFKmXM
-	pcpX5THBwoEwiWCq/gvP7TvjF1exRwnqCoJFMvoZmYoShwstYcx8+TVCpj2kTf744ueZVNQiEgYdJ
-	GQAFRflAmZ/Pv8Ord/cg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=EW7MHeZpwfOAEoDnhJUjfJkIRDAypAoiI9Mh4Hm5N+Y=; b=KoRZ5ggXiw8oNAzzFLkpatxKo
+	Jka5PG83sTg3u7HbSfxfbaI7tjO1cchdZ6WfO0MCfrHxRIJkOmz4UKf6sg3+LE3iUn2TUIoF4Q2HL
+	ZqFi7V0GdPo+IR/O8/cBgIQvTzaMHquPxc61GZgxqoKvATTM/f5La23NVTWJrG1LqduN6u/ynG5AQ
+	V2UJGCEuRWIOI2Vk2tdLdhitQA4+cqaeQQUbx7KACj1NQzHJjNfaBaKW8grUR3Ty2ax9Jg1iX64u+
+	V5K+nGiHHNjmyk8b30qwwEDlrXlvXRSsrWELXuv2Y3S6ywfvW5ZN1a8gVfR68aOd40rjjVBbAAHzg
+	X0InCl42Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHnyw-0006A2-RH; Tue, 08 Oct 2019 11:48:46 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHnyo-000699-C5
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 11:48:39 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4E0A315BE;
- Tue,  8 Oct 2019 04:48:37 -0700 (PDT)
-Received: from [10.162.40.139] (p8cg001049571a15.blr.arm.com [10.162.40.139])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 5087D3F703; Tue,  8 Oct 2019 04:48:30 -0700 (PDT)
-Subject: Re: [PATCH V8 2/2] arm64/mm: Enable memory hot remove
-To: Catalin Marinas <catalin.marinas@arm.com>
-References: <1569217425-23777-1-git-send-email-anshuman.khandual@arm.com>
- <1569217425-23777-3-git-send-email-anshuman.khandual@arm.com>
- <20191007141738.GA93112@E120351.arm.com>
- <6c277085-a430-eab4-3a4e-99fcfa170c10@arm.com>
- <20191008105520.GA5694@arrakis.emea.arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <a352b560-f7f2-489c-4439-5214afde9ae5@arm.com>
-Date: Tue, 8 Oct 2019 17:18:53 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1iHo8X-0001EL-CQ; Tue, 08 Oct 2019 11:58:41 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHo8O-0001DF-47; Tue, 08 Oct 2019 11:58:34 +0000
+X-Originating-IP: 81.185.168.180
+Received: from [192.168.43.237] (180.168.185.81.rev.sfr.net [81.185.168.180])
+ (Authenticated sender: alex@ghiti.fr)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 2154FC0014;
+ Tue,  8 Oct 2019 11:58:18 +0000 (UTC)
+Subject: Re: [PATCH v6 14/14] riscv: Make mmap allocation top-down by default
+To: Atish Patra <Atish.Patra@wdc.com>
+References: <20190808061756.19712-1-alex@ghiti.fr>
+ <20190808061756.19712-15-alex@ghiti.fr>
+ <208433f810b5b07b1e679d7eedb028697dff851b.camel@wdc.com>
+ <60b52f20-a2c7-dee9-7cf3-a727f07400b9@ghiti.fr>
+ <daeb33415751ef16a717f6ff6a29486110c503d7.camel@wdc.com>
+From: Alex Ghiti <alex@ghiti.fr>
+Message-ID: <9e9a3fea-d8a3-ae62-317a-740773f0725c@ghiti.fr>
+Date: Tue, 8 Oct 2019 07:58:18 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20191008105520.GA5694@arrakis.emea.arm.com>
-Content-Language: en-US
+In-Reply-To: <daeb33415751ef16a717f6ff6a29486110c503d7.camel@wdc.com>
+Content-Language: sv-FI
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_044838_502057_DD5F0A68 
-X-CRM114-Status: GOOD (  24.60  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191008_045832_436480_0D2C52F0 
+X-CRM114-Status: GOOD (  22.92  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.198 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,153 +65,251 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, mhocko@suse.com, david@redhat.com, linux-mm@kvack.org,
- arunks@codeaurora.org, cpandya@codeaurora.org, will@kernel.org,
- ira.weiny@intel.com, steven.price@arm.com, valentin.schneider@arm.com,
- suzuki.poulose@arm.com, Robin.Murphy@arm.com, broonie@kernel.org, cai@lca.pw,
- ard.biesheuvel@arm.com, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org, osalvador@suse.de, steve.capper@arm.com,
- logang@deltatee.com, linux-kernel@vger.kernel.org, akpm@linux-foundation.org,
- mgorman@techsingularity.net
-Content-Type: text/plain; charset="us-ascii"
+Cc: "aou@eecs.berkeley.edu" <aou@eecs.berkeley.edu>,
+ "keescook@chromium.org" <keescook@chromium.org>,
+ "jhogan@kernel.org" <jhogan@kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "palmer@sifive.com" <palmer@sifive.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "ralf@linux-mips.org" <ralf@linux-mips.org>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ "paul.burton@mips.com" <paul.burton@mips.com>,
+ "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
+ "viro@zeniv.linux.org.uk" <viro@zeniv.linux.org.uk>,
+ "paul.walmsley@sifive.com" <paul.walmsley@sifive.com>,
+ "linux-fsdevel@vger.kernel.org" <linux-fsdevel@vger.kernel.org>,
+ "akpm@linux-foundation.org" <akpm@linux-foundation.org>,
+ "hch@lst.de" <hch@lst.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "mcgrof@kernel.org" <mcgrof@kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 10/08/2019 04:25 PM, Catalin Marinas wrote:
-> On Tue, Oct 08, 2019 at 10:06:26AM +0530, Anshuman Khandual wrote:
->> On 10/07/2019 07:47 PM, Catalin Marinas wrote:
->>> On Mon, Sep 23, 2019 at 11:13:45AM +0530, Anshuman Khandual wrote:
->>>> The arch code for hot-remove must tear down portions of the linear map and
->>>> vmemmap corresponding to memory being removed. In both cases the page
->>>> tables mapping these regions must be freed, and when sparse vmemmap is in
->>>> use the memory backing the vmemmap must also be freed.
+On 10/7/19 8:46 PM, Atish Patra wrote:
+> On Mon, 2019-10-07 at 05:11 -0400, Alex Ghiti wrote:
+>> On 10/4/19 10:12 PM, Atish Patra wrote:
+>>> On Thu, 2019-08-08 at 02:17 -0400, Alexandre Ghiti wrote:
+>>>> In order to avoid wasting user address space by using bottom-up
+>>>> mmap
+>>>> allocation scheme, prefer top-down scheme when possible.
 >>>>
->>>> This patch adds unmap_hotplug_range() and free_empty_tables() helpers which
->>>> can be used to tear down either region and calls it from vmemmap_free() and
->>>> ___remove_pgd_mapping(). The sparse_vmap argument determines whether the
->>>> backing memory will be freed.
+>>>> Before:
+>>>> root@qemuriscv64:~# cat /proc/self/maps
+>>>> 00010000-00016000 r-xp 00000000 fe:00
+>>>> 6389       /bin/cat.coreutils
+>>>> 00016000-00017000 r--p 00005000 fe:00
+>>>> 6389       /bin/cat.coreutils
+>>>> 00017000-00018000 rw-p 00006000 fe:00
+>>>> 6389       /bin/cat.coreutils
+>>>> 00018000-00039000 rw-p 00000000 00:00 0          [heap]
+>>>> 1555556000-155556d000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
+>>>> 155556d000-155556e000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
+>>>> 155556e000-155556f000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
+>>>> 155556f000-1555570000 rw-p 00000000 00:00 0
+>>>> 1555570000-1555572000 r-xp 00000000 00:00 0      [vdso]
+>>>> 1555574000-1555576000 rw-p 00000000 00:00 0
+>>>> 1555576000-1555674000 r-xp 00000000 fe:00 7187   /lib/libc-
+>>>> 2.28.so
+>>>> 1555674000-1555678000 r--p 000fd000 fe:00 7187   /lib/libc-
+>>>> 2.28.so
+>>>> 1555678000-155567a000 rw-p 00101000 fe:00 7187   /lib/libc-
+>>>> 2.28.so
+>>>> 155567a000-15556a0000 rw-p 00000000 00:00 0
+>>>> 3fffb90000-3fffbb1000 rw-p 00000000 00:00 0      [stack]
+>>>>
+>>>> After:
+>>>> root@qemuriscv64:~# cat /proc/self/maps
+>>>> 00010000-00016000 r-xp 00000000 fe:00
+>>>> 6389       /bin/cat.coreutils
+>>>> 00016000-00017000 r--p 00005000 fe:00
+>>>> 6389       /bin/cat.coreutils
+>>>> 00017000-00018000 rw-p 00006000 fe:00
+>>>> 6389       /bin/cat.coreutils
+>>>> 2de81000-2dea2000 rw-p 00000000 00:00 0          [heap]
+>>>> 3ff7eb6000-3ff7ed8000 rw-p 00000000 00:00 0
+>>>> 3ff7ed8000-3ff7fd6000 r-xp 00000000 fe:00 7187   /lib/libc-
+>>>> 2.28.so
+>>>> 3ff7fd6000-3ff7fda000 r--p 000fd000 fe:00 7187   /lib/libc-
+>>>> 2.28.so
+>>>> 3ff7fda000-3ff7fdc000 rw-p 00101000 fe:00 7187   /lib/libc-
+>>>> 2.28.so
+>>>> 3ff7fdc000-3ff7fe2000 rw-p 00000000 00:00 0
+>>>> 3ff7fe4000-3ff7fe6000 r-xp 00000000 00:00 0      [vdso]
+>>>> 3ff7fe6000-3ff7ffd000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
+>>>> 3ff7ffd000-3ff7ffe000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
+>>>> 3ff7ffe000-3ff7fff000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
+>>>> 3ff7fff000-3ff8000000 rw-p 00000000 00:00 0
+>>>> 3fff888000-3fff8a9000 rw-p 00000000 00:00 0      [stack]
+>>>>
+>>>> Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
+>>>> Acked-by: Paul Walmsley <paul.walmsley@sifive.com>
+>>>> Reviewed-by: Christoph Hellwig <hch@lst.de>
+>>>> Reviewed-by: Kees Cook <keescook@chromium.org>
+>>>> Reviewed-by: Luis Chamberlain <mcgrof@kernel.org>
+>>>> ---
+>>>>    arch/riscv/Kconfig | 12 ++++++++++++
+>>>>    1 file changed, 12 insertions(+)
+>>>>
+>>>> diff --git a/arch/riscv/Kconfig b/arch/riscv/Kconfig
+>>>> index 59a4727ecd6c..87dc5370becb 100644
+>>>> --- a/arch/riscv/Kconfig
+>>>> +++ b/arch/riscv/Kconfig
+>>>> @@ -54,6 +54,18 @@ config RISCV
+>>>>    	select EDAC_SUPPORT
+>>>>    	select ARCH_HAS_GIGANTIC_PAGE
+>>>>    	select ARCH_WANT_HUGE_PMD_SHARE if 64BIT
+>>>> +	select ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT if MMU
+>>>> +	select HAVE_ARCH_MMAP_RND_BITS
+>>>> +
+>>>> +config ARCH_MMAP_RND_BITS_MIN
+>>>> +	default 18 if 6legacy_va_layout4BIT
+>>>> +	default 8
+>>>> +
+>>>> +# max bits determined by the following formula:
+>>>> +#  VA_BITS - PAGE_SHIFT - 3
+>>>> +config ARCH_MMAP_RND_BITS_MAX
+>>>> +	default 24 if 64BIT # SV39 based
+>>>> +	default 17
+>>>>    
+>>>>    config MMU
+>>>>    	def_bool y
+>>> With this patch, I am not able to boot a Fedora Linux(a Gnome
+>>> desktop
+>>> image) on RISC-V hardware (Unleashed + Microsemi Expansion board).
+>>> The
+>>> booting gets stuck right after systemd starts.
 >>>
->>> Can you change the 'sparse_vmap' name to something more meaningful which
->>> would suggest freeing of the backing memory?
->>
->> free_mapped_mem or free_backed_mem ? Even shorter forms like free_mapped or
->> free_backed might do as well. Do you have a particular preference here ? But
->> yes, sparse_vmap has been very much specific to vmemmap for these functions
->> which are now very generic in nature.
-> 
-> free_mapped would do.
-
-Sure.
-
-> 
->>>> +static void unmap_hotplug_pte_range(pmd_t *pmdp, unsigned long addr,
->>>> +				    unsigned long end, bool sparse_vmap)
->>>> +{
->>>> +	struct page *page;
->>>> +	pte_t *ptep, pte;
->>>> +
->>>> +	do {
->>>> +		ptep = pte_offset_kernel(pmdp, addr);
->>>> +		pte = READ_ONCE(*ptep);
->>>> +		if (pte_none(pte))
->>>> +			continue;
->>>> +
->>>> +		WARN_ON(!pte_present(pte));
->>>> +		page = sparse_vmap ? pte_page(pte) : NULL;
->>>> +		pte_clear(&init_mm, addr, ptep);
->>>> +		flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
->>>> +		if (sparse_vmap)
->>>> +			free_hotplug_page_range(page, PAGE_SIZE);
+>>> https://paste.fedoraproject.org/paste/TOrUMqqKH-pGFX7CnfajDg
 >>>
->>> You could only set 'page' if sparse_vmap (or even drop 'page' entirely).
->>
->> I am afraid 'page' is being used to hold pte_page(pte) extraction which
->> needs to be freed (sparse_vmap) as we are going to clear the ptep entry
->> in the next statement and lose access to it for good.
-> 
-> You clear *ptep, not pte.
+>>> Reverting just this patch allow to boot Fedora successfully on
+>>> specific
+>>> RISC-V hardware. I have not root caused the issue but it looks like
+>>> it
+>>> might have messed userpsace mapping.
+>> It might have messed userspace mapping but not enough to make
+>> userspace
+>> completely broken
+>> as systemd does some things. I would try to boot in legacy layout:
+>> if
+>> you can try to set sysctl legacy_va_layout
+>> at boottime, it will map userspace as it was before (bottom-up). If
+>> that
+>> does not work, the problem could
+>> be the randomization that is activated by default now.
+> Randomization may not be the issue. I just removed
+> ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT from the config and that seems to
+> work. Here is the bottom-up layout with randomization on.
 
-Ahh, missed that. We have already captured the contents with READ_ONCE().
+Oups, sorry for my previous answer, I missed yours that landed in 
+another folder.
 
-> 
->> We will need some
->> where to hold onto pte_page(pte) across pte_clear() as we cannot free it
->> before clearing it's entry and flushing the TLB. Hence wondering how the
->> 'page' can be completely dropped.
->>
->>> The compiler is probably smart enough to optimise it but using a
->>> pointless ternary operator just makes the code harder to follow.
->>
->> Not sure I got this but are you suggesting for an 'if' statement here
->>
->> if (sparse_vmap)
->> 	page = pte_page(pte);
->>
->> instead of the current assignment ?
->>
->> page = sparse_vmap ? pte_page(pte) : NULL;
-> 
-> I suggest:
-> 
-> 	if (sparse_vmap)
-> 		free_hotplug_pgtable_page(pte_page(pte), PAGE_SIZE);
+Removing ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT also removes randomization
+as this config selects ARCH_HAS_ELF_RANDOMIZE.
+You could remove ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT and selects by hand
+ARCH_HAS_ELF_RANDOMIZE but you would have to implement arch_mmap_rnd and
+arch_randomize_brk (elf-randomize.h).
 
-Sure, will do.
+The simplest would be to boot in legacy layout: I did not find a way to 
+set this in kernel
+command line, but you can by modifying it directly in the code:
 
-> 
->>>> +	} while (addr += PAGE_SIZE, addr < end);
->>>> +}
->>> [...]
->>>> +static void free_empty_pte_table(pmd_t *pmdp, unsigned long addr,
->>>> +				 unsigned long end)
->>>> +{
->>>> +	pte_t *ptep, pte;
->>>> +
->>>> +	do {
->>>> +		ptep = pte_offset_kernel(pmdp, addr);
->>>> +		pte = READ_ONCE(*ptep);
->>>> +		WARN_ON(!pte_none(pte));
->>>> +	} while (addr += PAGE_SIZE, addr < end);
->>>> +}
->>>> +
->>>> +static void free_empty_pmd_table(pud_t *pudp, unsigned long addr,
->>>> +				 unsigned long end, unsigned long floor,
->>>> +				 unsigned long ceiling)
->>>> +{
->>>> +	unsigned long next;
->>>> +	pmd_t *pmdp, pmd;
->>>> +
->>>> +	do {
->>>> +		next = pmd_addr_end(addr, end);
->>>> +		pmdp = pmd_offset(pudp, addr);
->>>> +		pmd = READ_ONCE(*pmdp);
->>>> +		if (pmd_none(pmd))
->>>> +			continue;
->>>> +
->>>> +		WARN_ON(!pmd_present(pmd) || !pmd_table(pmd) || pmd_sect(pmd));
->>>> +		free_empty_pte_table(pmdp, addr, next);
->>>> +		free_pte_table(pmdp, addr, next, floor, ceiling);
->>>
->>> Do we need two closely named functions here? Can you not collapse
->>> free_empty_pud_table() and free_pte_table() into a single one? The same
->>> comment for the pmd/pud variants. I just find this confusing.
+https://elixir.bootlin.com/linux/v5.4-rc2/source/kernel/sysctl.c#L269
+
+> [root@fedora-riscv ~]# cat /proc/self/maps
+> 1555556000-1555570000 r-xp 00000000 103:01
+> 280098                        /usr/lib64/ld-2.28.so
+> 1555570000-1555571000 r--p 00019000 103:01
+> 280098                        /usr/lib64/ld-2.28.so
+> 1555571000-1555572000 rw-p 0001a000 103:01
+> 280098                        /usr/lib64/ld-2.28.so
+> 1555572000-1555573000 rw-p 00000000 00:00 0
+> 1555573000-1555575000 r-xp 00000000 00:00
+> 0                              [vdso]
+> 1555575000-1555576000 r--p 00000000 103:01
+> 50936                         /usr/lib/locale/en_US.utf8/LC_IDENTIFICAT
+> ION
+> 1555576000-155557d000 r--s 00000000 103:01
+> 280826                        /usr/lib64/gconv/gconv-modules.cache
+> 155557d000-155557e000 r--p 00000000 103:01
+> 50937                         /usr/lib/locale/en_US.utf8/LC_MEASUREMENT
+> 155557e000-155557f000 r--p 00000000 103:01
+> 50939                         /usr/lib/locale/en_US.utf8/LC_TELEPHONE
+> 155557f000-1555580000 r--p 00000000 103:01
+> 3706                          /usr/lib/locale/en_US.utf8/LC_ADDRESS
+> 1555580000-1555581000 r--p 00000000 103:01
+> 50944                         /usr/lib/locale/en_US.utf8/LC_NAME
+> 1555581000-1555582000 r--p 00000000 103:01
+> 3775                          /usr/lib/locale/en_US.utf8/LC_PAPER
+> 1555582000-1555583000 r--p 00000000 103:01
+> 3758                          /usr/lib/locale/en_US.utf8/LC_MESSAGES/SY
+> S_LC_MESSAGES
+> 1555583000-1555584000 r--p 00000000 103:01
+> 50938                         /usr/lib/locale/en_US.utf8/LC_MONETARY
+> 1555584000-1555585000 r--p 00000000 103:01
+> 50940                         /usr/lib/locale/en_US.utf8/LC_TIME
+> 1555585000-1555586000 r--p 00000000 103:01
+> 50945                         /usr/lib/locale/en_US.utf8/LC_NUMERIC
+> 1555590000-1555592000 rw-p 00000000 00:00 0
+> 1555592000-15556b1000 r-xp 00000000 103:01
+> 280105                        /usr/lib64/libc-2.28.so
+> 15556b1000-15556b5000 r--p 0011e000 103:01
+> 280105                        /usr/lib64/libc-2.28.so
+> 15556b5000-15556b7000 rw-p 00122000 103:01
+> 280105                        /usr/lib64/libc-2.28.so
+> 15556b7000-15556bb000 rw-p 00000000 00:00 0
+> 15556bb000-1555933000 r--p 00000000 103:01
+> 3755                          /usr/lib/locale/en_US.utf8/LC_COLLATE
+> 1555933000-1555986000 r--p 00000000 103:01
+> 50942                         /usr/lib/locale/en_US.utf8/LC_CTYPE
+> 1555986000-15559a8000 rw-p 00000000 00:00 0
+> 2aaaaaa000-2aaaab1000 r-xp 00000000 103:01
+> 283975                        /usr/bin/cat
+> 2aaaab1000-2aaaab2000 r--p 00006000 103:01
+> 283975                        /usr/bin/cat
+> 2aaaab2000-2aaaab3000 rw-p 00007000 103:01
+> 283975                        /usr/bin/cat
+> 2aaaab3000-2aaaad4000 rw-p 00000000 00:00
+> 0                              [heap]
+> 3fffc97000-3fffcb8000 rw-p 00000000 00:00
+> 0                              [stack]
+>
+>
+>> Anyway, it's weird since userspace should not depend on how the
+>> mapping is.
 >>
->> The two functions could be collapsed into a single one. But just wanted to
->> keep free_pxx_table() part which checks floor/ceiling alignment, non-zero
->> entries clear off the actual page table walking.
-> 
-> With the pmd variant, they both take the floor/ceiling argument while
-> the free_empty_pte_table() doesn't even free anything. So not entirely
-> consistent.> 
-> Can you not just copy the free_pgd_range() functions but instead of
-> p*d_free_tlb() just do the TLB invalidation followed by page freeing?
-> That seems to be an easier pattern to follow.
-> 
+>> If you can identify the program that stalls, that would be fantastic
+>> :)
+>>
+> It stucks while booting. So I am not sure how to figure out which
+> program stalls. It is difficult to figure out from boot log as it
+> stucks at different places but soon after systemd starts.
 
-Sure, will follow that pattern.
+If you can attach the running kernel, I would use vmlinux-gdb.py commands
+to figure out which processes are running (lx-ps command in particular could
+give us a hint). You can also add traces directly in the kernel and 
+either use
+lx-dmesg command to print them from gdb or use your standard serial output:
+I would then print task_struct->comm at context switch to see which process
+is stuck.
+To use the python script, you need to recompile with DEBUG_INFO and
+GDB_SCRIPTS enabled.
+
+FYI, I have just booted a custom buildroot image based on kernel 5.4-rc2.
+
+Let me know if I can do anything.
+
+Alex
+
+>> As the code is common to mips and arm now and I did not hear from
+>> them,
+>> I imagine the problem comes
+>> from us.
+>>
+>> Alex
 
 _______________________________________________
 linux-arm-kernel mailing list
