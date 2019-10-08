@@ -2,120 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B1E4CFFEC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 19:31:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9995CFFFE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 19:38:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zCsdur2rFjBjwiSOJSI6eagZtx69/674Y2uLoN+8Ekc=; b=aJhPV8o/2i6Cgd
-	JEteKUXoTnPPdqTJoKSKlV2chlhs8plGtc/hlA5A6ZfsrpFjI6NkJh0nPaNmYoBuUHT9Toe5sfSbD
-	WxJjn+8nhBkOGG6TjcTBuVth489Uowo/35RtE2jJGOvLRzcH0R7FITUyTpeQOmkIi7qYRx/zvgAjZ
-	opfWISMtXna3zoTuexGTKGoJPInC5EqAyG1mCDbecRmgHEVveWvLCaloJ2aMbPTRJBvbStB/iBVyK
-	3jII+CeNuAtpbfDkZIW84cRGQhrWj+9OBgH5oJiqJ75aH/2vo2SAhYlK9zcIOA9dmfyF8ooBJNbM6
-	NHTzGvPvENFzWT7RCMlQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=qBwww61uokmb2aBHzIvqL/ANLtc1o6qOmULXoln54n4=; b=p+N
+	s6AtxfzOarmzgsNTTTaYaRq1mGE4KNzDMtZpCrtHI+x8nIppBboLxADClA/D7Z9PX9HtfYXUdUO2g
+	6TZO4EBnYJ++eKpHivukMr30kMW+JmSUNIuPPpo0BvpMoNz6DQG9hEQ6/NM7sNMnyeKEAqN3Gz0hj
+	5F2SSyxXi4LHQul7c797rzotFc1jZiu7v8qP02fnaCm+1RHJb82jF7ZdhvS2A3U8PeVw5yH2xnGAN
+	hoUubtEvL8EQkyJnRttYLOvq9ADO15+9eTby18xxzjoHEq9sYA+GfftCfH+4O1FX8LmpfOeDqlsCZ
+	KE8qos0JORzos5EdW/PxICSzB1MV1OQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHtKI-00010S-5P; Tue, 08 Oct 2019 17:31:10 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1iHtRO-0002sc-M0; Tue, 08 Oct 2019 17:38:30 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHtK9-0000zk-08
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 17:31:02 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20191008173058euoutp0280ec843a55ddde68027d0f8d6df3a9fb~LvDt8K9vg0092000920euoutp02B
+ id 1iHtRH-0002sC-MS
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 17:38:24 +0000
+Received: by mail-qk1-x743.google.com with SMTP id y144so17543198qkb.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue,  8 Oct 2019 17:30:58 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20191008173058euoutp0280ec843a55ddde68027d0f8d6df3a9fb~LvDt8K9vg0092000920euoutp02B
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1570555858;
- bh=1andqKfOFGQItmqD6T1v34f5NE14TvB9mAiT5Q9ZwA0=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=dUwJpYxOQw1YeUo8xuc9Sf7ZalaUXCcfMj3ZEeyNTB5RMdFE08MZo6vyztCjcVl28
- 5EguX3+oV9SZ0QfmL60AdYYImnPcOfe146NweD8z5djRT9WyNNYjlRNgC4k+j6mi6X
- wrxhiRGI6fG8ftnnBG/4/V2L4BPJ/BSCJyJ28IC0=
-Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20191008173058eucas1p10315dfbb5e10619d614d477de5a1f1c1~LvDtxeo6e0487004870eucas1p1d;
- Tue,  8 Oct 2019 17:30:58 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges2new.samsung.com (EUCPMTA) with SMTP id 68.87.04309.2D7CC9D5; Tue,  8
- Oct 2019 18:30:58 +0100 (BST)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20191008173058eucas1p2545297c2f5920c4e935334cc29d54244~LvDtWJByp2973029730eucas1p2M;
- Tue,  8 Oct 2019 17:30:58 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20191008173058eusmtrp258149df40795bab03dc3a0f10d6bf8df~LvDtVgUe41415214152eusmtrp2M;
- Tue,  8 Oct 2019 17:30:58 +0000 (GMT)
-X-AuditID: cbfec7f4-ae1ff700000010d5-20-5d9cc7d2d877
-Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id 91.9F.04166.1D7CC9D5; Tue,  8
- Oct 2019 18:30:58 +0100 (BST)
-Received: from [106.120.51.75] (unknown [106.120.51.75]) by
- eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20191008173057eusmtip2f0e04e97fc013b33574c6f65da7db2dc~LvDs0YsbP2048920489eusmtip2P;
- Tue,  8 Oct 2019 17:30:57 +0000 (GMT)
-Subject: Re: [PATCH] ARM: dts: s3c64xx: Fix init order of clock providers
-To: Krzysztof Kozlowski <krzk@kernel.org>, Lihua Yao <ylhuajnu@outlook.com>
-From: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Message-ID: <ceede424-e4a2-03f1-3ce0-04f405688721@samsung.com>
-Date: Tue, 8 Oct 2019 19:30:50 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20191008165917.23908-1-krzk@kernel.org>
-Content-Language: en-GB
-X-Brightmail-Tracker: H4sIAAAAAAAAA01SbUhTYRjt3f3Y3WpynYoPVmZLCINcmtWgUAupiQX2IyrD7JY3FZ3Krloz
- KEkz50wkidWcaGa1VprOWKZRodYQI0vTWUmuNBiG/lDDlqbprpL/znnOeZ/zHHgpTHqb8KNS
- 0rNYdTqTJiPFuPWNq3trj80Yv63eHqCo6nhHKLq7G4QKy3A/oehtMZKKm90vBIpvJRVkJKm0
- mLWksqn2krLppxNTTlr8Y/E48Z5ENi0lh1XLw0+Jk12mPiLTSZ43OS1EHuojipGIAjoMRg1a
- rBiJKSltQvC3YA7xZArBHaeL4MkkgorhcXz5ySO7bUm4j6ChpmuJjCForXS4XV50NBQUlGOL
- 2JuOgZbpfHcIRl9F8La3zi2QdAhce12KFrGEDgdtnoNcxDgdCOUDg26PD30MJhztBO/xhM5b
- I+4AEb0DLAWfhYsYo33h8tQDgscb4OmY0R0GdI0QrGbLgkAtkCiof3WUr+AFo7YnQh6vg/ln
- VQLen4+gpPWLkCdlCIZs1Yh37YZ22wf3IowOgsctcn68F34M2Ul+vwcMjHnyN3jAdase48cS
- KCqU8u5AmDHrBTz2A93IPF6GZIYVzQwr2hhWtDH8z61GuBn5stmcKonlQtPZc8Eco+Ky05OC
- z2SoLGjh43TN2aaaUcvs6TZEU0i2RhKZa4yXEkwOp1G1IaAwmbekxrAwkiQymlxWnZGgzk5j
- uTa0lsJlvpILqxwnpHQSk8Wmsmwmq15WBZTILw+FRhUebhT1DMRoM983HpJsl8s1/kE+mw58
- f3nwky424itZWy14OF0OHKszRF+8sbp1dJdu576IP6keyE7MbvwY0MxM373XP2gaLtWvj4oV
- dRZWFj0PS7hycnLkyPH9Ln/9L6c0bsSpCTs7btsc7aqHeXP+TH1n3W+fiTmrRNkhw7lkJmQL
- puaYf9HRWJ40AwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrMIsWRmVeSWpSXmKPExsVy+t/xe7qXjs+JNVi4nNFi/pFzrBbnz29g
- t9j0+BqrxeVdc9gsZpzfx2TxsGc2mwObx6ZVnWwem5fUe2x+/YLZ4/MmuQCWKD2bovzSklSF
- jPziElulaEMLIz1DSws9IxNLPUNj81grI1MlfTublNSczLLUIn27BL2Mnyuusha8YKtY8WIT
- awPjVdYuRk4OCQETiTXXjwPZXBxCAksZJQ6fnsHUxcgBlJCSmN+iBFEjLPHnWhcbRM1rRon5
- cxuZQRLCAp4SLS2TwWwRAW+JXd+bmUGKmAXaGSX63/1hhujoYJS4vuoBG0gVm4ChRO/RPkYQ
- m1fATqKzASLOIqAiMfnGHbBJogIREod3zIKqEZQ4OfMJC4jNKWAqsanlFjuIzSygLvFn3iVm
- CFtcounLSlYIW15i+9s5zBMYhWYhaZ+FpGUWkpZZSFoWMLKsYhRJLS3OTc8tNtQrTswtLs1L
- 10vOz93ECIywbcd+bt7BeGlj8CFGAQ5GJR5eh6o5sUKsiWXFlbmHGCU4mJVEeBfNAgrxpiRW
- VqUW5ccXleakFh9iNAV6biKzlGhyPjD680riDU0NzS0sDc2NzY3NLJTEeTsEDsYICaQnlqRm
- p6YWpBbB9DFxcEo1MEZ4HRNauuDQWXPzt5f3T2gwSNV45xRwU/L3U02nOPXQ7K5XT7PU9U2N
- dywUCxdTlNMWz71/+7eH/irXuOuL0tcFTWiUFfi+4zHnUyXOi4U+XaqfWy/O/BboEeVnnvdF
- jr3CdR7Hyt1JadkvH2Zw7FdVLjNZmRhnzLXZ9wDXedFZXW6/dkg9U2Ipzkg01GIuKk4EAIfK
- gxDGAgAA
-X-CMS-MailID: 20191008173058eucas1p2545297c2f5920c4e935334cc29d54244
-X-Msg-Generator: CA
-X-RootMTR: 20191008165931epcas3p2dd2937d851ed06948dd7746e5a2674b4
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20191008165931epcas3p2dd2937d851ed06948dd7746e5a2674b4
-References: <CGME20191008165931epcas3p2dd2937d851ed06948dd7746e5a2674b4@epcas3p2.samsung.com>
- <20191008165917.23908-1-krzk@kernel.org>
+ Tue, 08 Oct 2019 10:38:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=3qsKg0ZSVScq2K+s/sek8VkbkP6VSfkRjBAF3RzaycA=;
+ b=gLmutSoO/qnV4bvXdlA6cVIwsRATrUs6uRC8YJbAkubPM4GLJQl/Lh4z8BDHnWjbu0
+ rWCf/KXwzpaFEzctmvQhWmZLurxmFMm7rIKONqwYB5yuQYIk/lrMUeFas5xvA/4iSWJu
+ lu0i4EfpOZfgnvHXFgoOwk3c9ug/Fqk1fsREdOoeL7hCpLHmpS0347vrNsnDBAOyVyy3
+ 4PTk5hhMnSxVgHTdRfS8d0nO0b8Abw1A1nihfmeOSlZxUB1nhvG+v7/d7Jjl3lYf5NGi
+ rbQ/USg9DgeHF9yrqnsX/fNNtmLBeQzsVzK3I91F4P618cER7Y5dTXUmJ4AX5F4MQhlN
+ 3eew==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=3qsKg0ZSVScq2K+s/sek8VkbkP6VSfkRjBAF3RzaycA=;
+ b=iQ2ij018dnT/mWU5C7pYNHJd8/72T7lfgzEtevNRuJejyR+HRUXbq+EeeCCPEsObrS
+ 8P/inXPyh9ec0KHlbpsTjF1uil2NzUqqzVJI+UwInk8+5WrDvKAgG8GlWxh6MjexoOrn
+ MMrzv3zO64cysWC9PMRbQmXENPv4EW4W0h3nF0D2mo/85wzLDjfEebs6LdeEj/XYv/gE
+ Myyi1t04JRt+KBcIkeXWXQt9FRCUpmXf6UN9+0I56Nm48moh2w1q6Vp3s02LzTKIbwOD
+ Lvrq6Ie4paVGjGSHLi/42NPP4YzhIQw78TU2LpvBRrCKZqByBd92U67a8R3dObBiRyPk
+ IzBA==
+X-Gm-Message-State: APjAAAV0tgVhBuI9h1UvPds5Racvi1xWKHyfcCCp36a7LnrQt0pc/vdd
+ HesjcmxKexgI9epg+Uai9lc=
+X-Google-Smtp-Source: APXvYqy4uL5ADlIDdCZd/ULPnzSHa4MBmUTn5hjlpOfxwkW/tPzQCmQs7Amgqa5WBfDe/8i8i37yUQ==
+X-Received: by 2002:a37:d52:: with SMTP id 79mr30453306qkn.300.1570556302206; 
+ Tue, 08 Oct 2019 10:38:22 -0700 (PDT)
+Received: from fabio-Latitude-E5450.nxp.com ([177.221.114.206])
+ by smtp.gmail.com with ESMTPSA id f27sm8676296qkh.42.2019.10.08.10.38.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 08 Oct 2019 10:38:21 -0700 (PDT)
+From: Fabio Estevam <festevam@gmail.com>
+To: shawnguo@kernel.org
+Subject: [PATCH v2]  ARM: imx_v6_v7_defconfig: Enable CONFIG_DRM_MSM
+Date: Tue,  8 Oct 2019 14:38:13 -0300
+Message-Id: <20191008173813.24941-1-festevam@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_103101_246181_C0A4F60D 
-X-CRM114-Status: GOOD (  13.05  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191008_103823_753064_D8683FB6 
+X-CRM114-Status: UNSURE (   8.86  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -124,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -136,37 +94,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: jonathan@marek.ca, cphealy@gmail.com, kernel@pengutronix.de,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/8/19 18:59, Krzysztof Kozlowski wrote:
-> From: Lihua Yao <ylhuajnu@outlook.com>
-> 
-> fin_pll is the parent of clock-controller@7e00f000, specify
-> the dependency to ensure proper initialization order of clock
-> providers.
+Since commit 2eba69071b4b ("drm/msm: Remove Kconfig default") the
+CONFIG_DRM_MSM option is no longer selected by default on i.MX5.
 
-> Fixes: 3f6d439f2022 ("clk: reverse default clk provider initialization order in of_clk_init()")
+Explicitly select CONFIG_DRM_MSM so that we can get GPU support
+by default on i.MX51 and i.MX53.
 
-The patch looks good but I'm not sure above tag points to the right commit.
-That commit is just a regression fix for
-1771b10d605d26cc "clk: respect the clock dependencies in of_clk_init"
- 
-How about picking some commit touching the dts files itself, e.g.
-a43736deb47d21bd "ARM: dts: Add dts file for S3C6410-based Mini6410 board" ?
+Fixes: 2eba69071b4b ("drm/msm: Remove Kconfig default")
+Signed-off-by: Fabio Estevam <festevam@gmail.com>
+---
+Changes since v1:
+- Added Fixes tag as this can be seen as functionality regression
+in 5.4, since GPU was enabled by default on 5.2 and 5.3.
 
-> Signed-off-by: Lihua Yao <ylhuajnu@outlook.com>
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+ arch/arm/configs/imx_v6_v7_defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-Reviewed-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
-
+diff --git a/arch/arm/configs/imx_v6_v7_defconfig b/arch/arm/configs/imx_v6_v7_defconfig
+index be2a6946716b..28733b0a7190 100644
+--- a/arch/arm/configs/imx_v6_v7_defconfig
++++ b/arch/arm/configs/imx_v6_v7_defconfig
+@@ -277,6 +277,7 @@ CONFIG_VIDEO_OV5640=m
+ CONFIG_VIDEO_OV5645=m
+ CONFIG_IMX_IPUV3_CORE=y
+ CONFIG_DRM=y
++CONFIG_DRM_MSM=y
+ CONFIG_DRM_PANEL_LVDS=y
+ CONFIG_DRM_PANEL_SIMPLE=y
+ CONFIG_DRM_PANEL_SEIKO_43WVF1G=y
 -- 
-Regards,
-Sylwester
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
