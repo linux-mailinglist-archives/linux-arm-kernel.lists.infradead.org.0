@@ -2,57 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE086CF4FB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 10:24:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F16CCF517
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 10:35:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rc7bXBkZXRbqHBE+zfipZr7MEvmLDnSWkHqq043PVQo=; b=KldPZKDqYelZZ1
-	TCUdup+VluO/lMy0kc98oAEplRK+s1LD3/iaX2LwQ4TurrPyAyfnuFgsBZHLynaHTHPwNHiY7h9My
-	RobKe9K169PWMW4sj/KnE8P6Z0PbWYCRLE3pjOt4KdAUaQxPfOa15gcDbewIG8qjx/BVPQCXmR0OG
-	HCl4QOgE3cS/PToXTq7W7x13H/IqS874NZrxP7tokAfIRvV0EN6L6bHEANEIS6ipg13Ai8Bfv1dci
-	Jx0g8SRHAKxg2nay38hlClOHBd5mYShx0AjZTslv8zJaTPZCqqHJuWalrAPUSFL+yi731VuDt25yp
-	4s5+FWrEyEztLe/ITDuQ==;
+	List-Owner; bh=pWz/+8DUgymWyhhQBcNQ+MNDVgbqBGajPPplwpDPo1Y=; b=AnTymjREIv3qCy
+	65D2WD1oGJXyAfFqC7sRh41xb0PgTuZYotFnXWNMAm2KbkSDzI2kGRtafNfdRvBbAFkX15RpB8DRP
+	jP9LBYJgkuSqLAajKmIgAmqJQjgF53xEsRm+nc6/4c9pReEAAxWKfKSU7CpTRHbkPS81EA7ESbYoD
+	4bC0UBbQzhQzno455y8dU42HKeCcJS/6dPp4kpfsW5ukAytTYgephXOPj4vjARyjt4rjBNEnDXJu0
+	V0UHqO3dyATuUNNkpfdGuGiYXkgoCnNLpwRfavW3XYAVi/1eIHv9JajMT1rTBV3uZ2owvcZxsgt2u
+	7ih+2G9Q6HTrkIKA4QjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHknZ-0001PS-A5; Tue, 08 Oct 2019 08:24:49 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHknP-0001Ox-P2; Tue, 08 Oct 2019 08:24:42 +0000
-X-UUID: d75ebf5fa54b444d8c195b78977668c1-20191008
-X-UUID: d75ebf5fa54b444d8c195b78977668c1-20191008
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <yong.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 905765810; Tue, 08 Oct 2019 00:24:36 -0800
-Received: from MTKMBS32DR.mediatek.inc (172.27.6.104) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 8 Oct 2019 01:24:34 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS32DR.mediatek.inc
- (172.27.6.104) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 8 Oct 2019 16:09:28 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 8 Oct 2019 16:09:27 +0800
-Message-ID: <1570522168.19130.39.camel@mhfsdcap03>
-Subject: Re: [PATCH] iommu/mediatek: Move the tlb_sync into tlb_flush
-From: Yong Wu <yong.wu@mediatek.com>
-To: Robin Murphy <robin.murphy@arm.com>
-Date: Tue, 8 Oct 2019 16:09:28 +0800
-In-Reply-To: <366b0bda-d874-9109-5c83-ff27301f3486@arm.com>
-References: <1569822142-14303-1-git-send-email-yong.wu@mediatek.com>
- <CAAFQd5C+FM3n-Ww4C+qDD1QZOGZrqEYw4EvYECfadGcDH0fmew@mail.gmail.com>
- <366b0bda-d874-9109-5c83-ff27301f3486@arm.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+	id 1iHkxd-00059m-QX; Tue, 08 Oct 2019 08:35:13 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHkxQ-0004jO-KO
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 08:35:03 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4E9FC1570;
+ Tue,  8 Oct 2019 01:34:59 -0700 (PDT)
+Received: from localhost (e113682-lin.copenhagen.arm.com [10.32.145.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D62C43F6C4;
+ Tue,  8 Oct 2019 01:34:58 -0700 (PDT)
+Date: Tue, 8 Oct 2019 10:34:57 +0200
+From: Christoffer Dall <christoffer.dall@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH 2/2] KVM: arm/arm64: Allow user injection of external
+ data aborts
+Message-ID: <20191008083457.GC4153@e113682-lin.lund.arm.com>
+References: <20190909121337.27287-1-christoffer.dall@arm.com>
+ <20190909121337.27287-3-christoffer.dall@arm.com>
+ <35eae9fa-b9f7-e5ca-b95f-d1d14216d6ee@kernel.org>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 3E9F2367AB2AA294B0B502AA0BA1AABDAC92BE66BC543487A09D89709BFE290B2000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <35eae9fa-b9f7-e5ca-b95f-d1d14216d6ee@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_012439_820799_E6E8953A 
-X-CRM114-Status: GOOD (  30.46  )
+X-CRM114-CacheID: sfid-20191008_013500_759951_F1A614F0 
+X-CRM114-Status: GOOD (  34.19  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -60,8 +52,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,113 +63,219 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: youlin.pei@mediatek.com, anan.sun@mediatek.com,
- Nicolas Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
- srv_heupstream <srv_heupstream@mediatek.com>, Joerg Roedel <joro@8bytes.org>,
- Will Deacon <will.deacon@arm.com>, Linux Kernel
- Mailing List <linux-kernel@vger.kernel.org>, Evan Green <evgreen@chromium.org>,
- Tomasz Figa <tfiga@chromium.org>, chao.hao@mediatek.com,
- "list@263.net:IOMMU DRIVERS" <iommu@lists.linux-foundation.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Peter Maydell <peter.maydell@linaro.org>,
+ Daniel =?utf-8?B?UC4gQmVycmFuZ8Op?= <berrange@redhat.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Heinrich Schuchardt <xypron.glpk@gmx.de>, Alexander Graf <graf@amazon.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Stefan Hajnoczi <stefanha@redhat.com>, James Morse <james.morse@arm.com>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-10-02 at 11:35 +0100, Robin Murphy wrote:
-> On 02/10/2019 06:18, Tomasz Figa wrote:
-> > Hi Yong,
+On Thu, Sep 26, 2019 at 03:09:11PM +0100, Marc Zyngier wrote:
+> On 09/09/2019 13:13, Christoffer Dall wrote:
+> > In some scenarios, such as buggy guest or incorrect configuration of the
+> > VMM and firmware description data, userspace will detect a memory access
+> > to a portion of the IPA, which is not mapped to any MMIO region.
 > > 
-> > On Mon, Sep 30, 2019 at 2:42 PM Yong Wu <yong.wu@mediatek.com> wrote:
-> >>
-> >> The commit 4d689b619445 ("iommu/io-pgtable-arm-v7s: Convert to IOMMU API
-> >> TLB sync") help move the tlb_sync of unmap from v7s into the iommu
-> >> framework. It helps add a new function "mtk_iommu_iotlb_sync", But it
-> >> lacked the dom->pgtlock, then it will cause the variable
-> >> "tlb_flush_active" may be changed unexpectedly, we could see this warning
-> >> log randomly:
-> >>
+> > For this purpose, the appropriate action is to inject an external abort
+> > to the guest.  The kernel already has functionality to inject an
+> > external abort, but we need to wire up a signal from user space that
+> > lets user space tell the kernel to do this.
 > > 
-> > Thanks for the patch! Please see my comments inline.
+> > It turns out, we already have the set event functionality which we can
+> > perfectly reuse for this.
 > > 
-> >> mtk-iommu 10205000.iommu: Partial TLB flush timed out, falling back to
-> >> full flush
-> >>
-> >> To fix this issue, we can add dom->pgtlock in the "mtk_iommu_iotlb_sync".
-> >> And when checking this issue, we find that __arm_v7s_unmap call
-> >> io_pgtable_tlb_add_flush consecutively when it is supersection/largepage,
-> >> this also is potential unsafe for us. There is no tlb flush queue in the
-> >> MediaTek M4U HW. The HW always expect the tlb_flush/tlb_sync one by one.
-> >> If v7s don't always gurarantee the sequence, Thus, In this patch I move
-> >> the tlb_sync into tlb_flush(also rename the function deleting "_nosync").
-> >> and we don't care if it is leaf, rearrange the callback functions. Also,
-> >> the tlb flush/sync was already finished in v7s, then iotlb_sync and
-> >> iotlb_sync_all is unnecessary.
+> > Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+> > ---
+> >  Documentation/virt/kvm/api.txt    | 15 ++++++++++++++-
+> >  arch/arm/include/uapi/asm/kvm.h   |  3 ++-
+> >  arch/arm/kvm/guest.c              |  3 +++
+> >  arch/arm64/include/uapi/asm/kvm.h |  3 ++-
+> >  arch/arm64/kvm/guest.c            |  3 +++
+> >  arch/arm64/kvm/inject_fault.c     |  4 ++--
+> >  include/uapi/linux/kvm.h          |  1 +
+> >  virt/kvm/arm/arm.c                |  1 +
+> >  8 files changed, 28 insertions(+), 5 deletions(-)
 > > 
-> > Performance-wise, we could do much better. Instead of synchronously
-> > syncing at the end of mtk_iommu_tlb_add_flush(), we could sync at the
-> > beginning, if there was any previous flush still pending. We would
-> > also have to keep the .iotlb_sync() callback, to take care of waiting
-> > for the last flush. That would allow better pipelining with CPU in
-> > cases like this:
-> > 
-> > for (all pages in range) {
-> >     change page table();
-> >     flush();
-> > }
-> > 
-> > "change page table()" could execute while the IOMMU is flushing the
-> > previous change.
+> > diff --git a/Documentation/virt/kvm/api.txt b/Documentation/virt/kvm/api.txt
+> > index 02501333f746..edd6cdc470ca 100644
+> > --- a/Documentation/virt/kvm/api.txt
+> > +++ b/Documentation/virt/kvm/api.txt
+> > @@ -955,6 +955,8 @@ The following bits are defined in the flags field:
+> >  
+> >  ARM/ARM64:
+> >  
+> > +User space may need to inject several types of events to the guest.
+> > +
+> >  If the guest accesses a device that is being emulated by the host kernel in
+> >  such a way that a real device would generate a physical SError, KVM may make
+> >  a virtual SError pending for that VCPU. This system error interrupt remains
+> > @@ -989,12 +991,23 @@ Specifying exception.has_esr on a system that does not support it will return
+> >  -EINVAL. Setting anything other than the lower 24bits of exception.serror_esr
+> >  will return -EINVAL.
+> >  
+> > +If the guest performed an access to I/O memory which could not be handled by
+> > +user space, for example because of missing instruction syndrome decode
+> > +information or because there is no device mapped at the accessed IPA, then
+> > +user space can ask the kernel to inject an external abort using the address
+> > +from the exiting fault on the VCPU. It is a programming error to set
+> > +ext_dabt_pending at the same time as any of the serror fields, or to set
+> > +ext_dabt_pending on an exit which was not either KVM_EXIT_MMIO or
 > 
-> FWIW, given that the underlying invalidation mechanism is range-based, 
-> this driver would be an ideal candidate for making use of the new 
-> iommu_gather mechanism. As a fix for stable, though, simply ensuring 
-> that add_flush syncs any pending invalidation before issuing a new one 
-> sounds like a good idea (and probably a simpler patch too).
-
-Thanks very much for the confirmation.
-
+> ... on *re-entry from* an exit?
 > 
-> [...]
-> >> @@ -574,8 +539,7 @@ static int mtk_iommu_of_xlate(struct device *dev, struct of_phandle_args *args)
-> >>          .detach_dev     = mtk_iommu_detach_device,
-> >>          .map            = mtk_iommu_map,
-> >>          .unmap          = mtk_iommu_unmap,
-> >> -       .flush_iotlb_all = mtk_iommu_flush_iotlb_all,
+> > +KVM_EXIT_ARM_NISV. This feature is only available if the system supports
+> > +KVM_CAP_ARM_INJECT_EXT_DABT;
+> 
+> s/;/./
+> 
+> Can we add some wording to the fact that this is only a helper for the
+> most common case? Most of the ARM exceptions can otherwise be
+> constructed/injected using the SET_ONE_REG API.
+> 
+> > +
+> >  struct kvm_vcpu_events {
+> >  	struct {
+> >  		__u8 serror_pending;
+> >  		__u8 serror_has_esr;
+> > +		__u8 ext_dabt_pending;
+> >  		/* Align it to 8 bytes */
+> > -		__u8 pad[6];
+> > +		__u8 pad[5];
+> >  		__u64 serror_esr;
+> >  	} exception;
+> >  	__u32 reserved[12];
+> > diff --git a/arch/arm/include/uapi/asm/kvm.h b/arch/arm/include/uapi/asm/kvm.h
+> > index a4217c1a5d01..d2449a5bf8d5 100644
+> > --- a/arch/arm/include/uapi/asm/kvm.h
+> > +++ b/arch/arm/include/uapi/asm/kvm.h
+> > @@ -131,8 +131,9 @@ struct kvm_vcpu_events {
+> >  	struct {
+> >  		__u8 serror_pending;
+> >  		__u8 serror_has_esr;
+> > +		__u8 ext_dabt_pending;
+> >  		/* Align it to 8 bytes */
+> > -		__u8 pad[6];
+> > +		__u8 pad[5];
+> >  		__u64 serror_esr;
+> >  	} exception;
+> >  	__u32 reserved[12];
+> > diff --git a/arch/arm/kvm/guest.c b/arch/arm/kvm/guest.c
+> > index 684cf64b4033..4154c5589501 100644
+> > --- a/arch/arm/kvm/guest.c
+> > +++ b/arch/arm/kvm/guest.c
+> > @@ -263,11 +263,14 @@ int __kvm_arm_vcpu_set_events(struct kvm_vcpu *vcpu,
+> >  {
+> >  	bool serror_pending = events->exception.serror_pending;
+> >  	bool has_esr = events->exception.serror_has_esr;
+> > +	bool has_ext_dabt_pending = events->exception.ext_dabt_pending;
+> >  
+> >  	if (serror_pending && has_esr)
+> >  		return -EINVAL;
+> >  	else if (serror_pending)
+> >  		kvm_inject_vabt(vcpu);
+> > +	else if (has_ext_dabt_pending)
+> > +		kvm_inject_dabt(vcpu, kvm_vcpu_get_hfar(vcpu));
+> >  
+> >  	return 0;
+> >  }
+> > diff --git a/arch/arm64/include/uapi/asm/kvm.h b/arch/arm64/include/uapi/asm/kvm.h
+> > index 9a507716ae2f..7729efdb1c0c 100644
+> > --- a/arch/arm64/include/uapi/asm/kvm.h
+> > +++ b/arch/arm64/include/uapi/asm/kvm.h
+> > @@ -164,8 +164,9 @@ struct kvm_vcpu_events {
+> >  	struct {
+> >  		__u8 serror_pending;
+> >  		__u8 serror_has_esr;
+> > +		__u8 ext_dabt_pending;
+> >  		/* Align it to 8 bytes */
+> > -		__u8 pad[6];
+> > +		__u8 pad[5];
+> >  		__u64 serror_esr;
+> >  	} exception;
+> >  	__u32 reserved[12];
+> > diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
+> > index dfd626447482..10e6e2144dca 100644
+> > --- a/arch/arm64/kvm/guest.c
+> > +++ b/arch/arm64/kvm/guest.c
+> > @@ -720,6 +720,7 @@ int __kvm_arm_vcpu_set_events(struct kvm_vcpu *vcpu,
+> >  {
+> >  	bool serror_pending = events->exception.serror_pending;
+> >  	bool has_esr = events->exception.serror_has_esr;
+> > +	bool has_ext_dabt_pending = events->exception.ext_dabt_pending;
+> >  
+> >  	if (serror_pending && has_esr) {
+> >  		if (!cpus_have_const_cap(ARM64_HAS_RAS_EXTN))
+> > @@ -731,6 +732,8 @@ int __kvm_arm_vcpu_set_events(struct kvm_vcpu *vcpu,
+> >  			return -EINVAL;
+> >  	} else if (serror_pending) {
+> >  		kvm_inject_vabt(vcpu);
+> > +	} else if (has_ext_dabt_pending) {
+> > +		kvm_inject_dabt(vcpu, kvm_vcpu_get_hfar(vcpu));
+> >  	}
+> >  
+> >  	return 0;
+> > diff --git a/arch/arm64/kvm/inject_fault.c b/arch/arm64/kvm/inject_fault.c
+> > index a9d25a305af5..ccdb6a051ab2 100644
+> > --- a/arch/arm64/kvm/inject_fault.c
+> > +++ b/arch/arm64/kvm/inject_fault.c
+> > @@ -109,7 +109,7 @@ static void inject_undef64(struct kvm_vcpu *vcpu)
+> >  
+> >  /**
+> >   * kvm_inject_dabt - inject a data abort into the guest
+> > - * @vcpu: The VCPU to receive the undefined exception
+> > + * @vcpu: The VCPU to receive the data abort
+> >   * @addr: The address to report in the DFAR
+> >   *
+> >   * It is assumed that this code is called from the VCPU thread and that the
+> > @@ -125,7 +125,7 @@ void kvm_inject_dabt(struct kvm_vcpu *vcpu, unsigned long addr)
+> >  
+> >  /**
+> >   * kvm_inject_pabt - inject a prefetch abort into the guest
+> > - * @vcpu: The VCPU to receive the undefined exception
+> > + * @vcpu: The VCPU to receive the prefetch abort
+> >   * @addr: The address to report in the DFAR
+> >   *
+> >   * It is assumed that this code is called from the VCPU thread and that the
+> > diff --git a/include/uapi/linux/kvm.h b/include/uapi/linux/kvm.h
+> > index dd79235b6435..a80ee820e700 100644
+> > --- a/include/uapi/linux/kvm.h
+> > +++ b/include/uapi/linux/kvm.h
+> > @@ -1003,6 +1003,7 @@ struct kvm_ppc_resize_hpt {
+> >  #define KVM_CAP_ARM_PTRAUTH_GENERIC 172
+> >  #define KVM_CAP_PMU_EVENT_FILTER 173
+> >  #define KVM_CAP_ARM_NISV_TO_USER 174
+> > +#define KVM_CAP_ARM_INJECT_EXT_DABT 175
+> >  
+> >  #ifdef KVM_CAP_IRQ_ROUTING
+> >  
+> > diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+> > index 7153504bb106..56a97dd9b292 100644
+> > --- a/virt/kvm/arm/arm.c
+> > +++ b/virt/kvm/arm/arm.c
+> > @@ -217,6 +217,7 @@ int kvm_vm_ioctl_check_extension(struct kvm *kvm, long ext)
+> >  	case KVM_CAP_IMMEDIATE_EXIT:
+> >  	case KVM_CAP_VCPU_EVENTS:
+> >  	case KVM_CAP_ARM_NISV_TO_USER:
+> > +	case KVM_CAP_ARM_INJECT_EXT_DABT:
+> >  		r = 1;
+> >  		break;
+> >  	case KVM_CAP_ARM_SET_DEVICE_ADDR:
 > > 
-> > Don't we still want .flush_iotlb_all()? I think it should be more
-> > efficient in some cases than doing a big number of single flushes.
-> > (That said, the previous implementation didn't do any flush at all. It
-> > just waited for previously queued flushes to happen. Was that
-> > expected?)
 > 
-> Commit 07fdef34d2be ("iommu/arm-smmu-v3: Implement flush_iotlb_all 
-> hook") has an explanation of what the deal was there - similarly, it's 
-> probably worth this driver implementing it properly as well now (but 
-> that's really a separate patch).
-
-Thanks the hint, At the beginning, I noticed that we don't have
-DOMAIN_ATTR_DMA_USE_FLUSH_QUEUE, thus I thought flush_iotlb_all is
-unnecessary.
-
-After grep, iommu_flush_tlb_all also is called in the x_direct_mapping,
-then we still need this.
-
-If putting it in a new patch(switch flush_iotlb_all to
-mtk_iommu_tlb_flush_all), then the Fixes tag(commit id: 4d689b619445) is
-needed?
-
+> Otherwise looks good to me. If you respin the series, and unless anyone
+> shouts, I'll queue it. No hurry though, I'm going to take slow(er) the
+> following two weeks.
 > 
-> Robin.
-> 
-> _______________________________________________
-> Linux-mediatek mailing list
-> Linux-mediatek@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-mediatek
 
+Thanks, I've tried to come with a wording for the above, you can have a
+look in v2.
 
+    Christoffer
 
 _______________________________________________
 linux-arm-kernel mailing list
