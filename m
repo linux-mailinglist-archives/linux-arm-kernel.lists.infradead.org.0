@@ -2,94 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A178ACF606
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 11:28:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB389CF62D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 11:37:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ofYJGt/iWCKXE79UVRscuJSPbdIOpzCTbEM2eIR86Fc=; b=e+hvxezkPn6LSL
-	qG6ohdd0bENInr2j7vm3hQUVnNEqCKkBn3qU66FmNmofqvvSpC7Vjk+CfUNcund3QGCCIX1S111zB
-	enm8oJdLTd5vilUMaPo4ZPQAYDclemp5fDMU/qXte292Xsh1uCT7ydaOOYiwSm9uUqQORaURfJl3D
-	hwxlWW+faYtfICOrhhnBWhjcO5WeKwbHWv0H8XhY8JN8I0yrFQZeKL5KCKTVJvPZWtXgXyoEFZzB6
-	GBfXCpP/s4xyr5Euy3gJGr65ZkiF1TwdtJTgW74PxpRaATnOohyo+TfeCAVCoLFa6/v4xfECEfQWA
-	VIIwAY7WTQvcMEbpDhfQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=fh3tJ48Aopa/gE0eTrptKEbd01F3EieRTYhBdfNHfDs=; b=hhB
+	bL7VB5ymfgis1xUrtVR6/DqsT5oxJAP0qz+JdVq1HHW70zDebSeT/5HBqhZhvZ1QoucCqVpA3g7MW
+	mit3PfDVyi/h9BMtSpATrMbJNXxDxlW0ByuaRiDwXtf+JvI4QjH3Sa5GaaysClnhrlAjZugks1VJz
+	rnGwSpNi234RoEU8cnArD7o5ikH2HyYSMK+WTAUwSeQjFhfEyS6zhJl/ig4FAoMLnMkHh+yGOK/Y4
+	CBc8wwThwtySSmbE80X3d7enK6sEGXtljacSW+1EmzsRXFL5Gab7mWpoKAGCeNspAeL6+xQF02Z6V
+	dfbbXzDjwo7eCIPY9nh/BebCFC+cIqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHlnH-0000U5-S4; Tue, 08 Oct 2019 09:28:35 +0000
-Received: from esa2.microchip.iphmx.com ([68.232.149.84])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHln2-0000QZ-3u
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 09:28:21 +0000
-Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
- Ludovic.Desroches@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="Ludovic.Desroches@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa2.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa2.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: pDzxr0OUpql/p028ANa/qShsuGwVQJ+VlFqqMdoAYI3NgErKPw/kU2uB+3PGIK3tUS8gy6VRkD
- Weq23HT8B2olfafGZccCnOLgf69Q93nz5ojgpkiH50uFyUjnC5HGlvKic/xSR2O+wHsSPk/fDC
- 9+le4PgmTTiJkCI8WO+YNI9TG2IGlRX0UhNfKjHdE2acXwLlEDUF6eP1GTxS5DTvOfvGSGGbWk
- svbwmDuVNGlkJ8xw2NcOUxDu3jHDRPLlO7W3v/Kt+rP7NXSWmmBbs1KpFkj8fpT7gP8VYQGZpl
- a5g=
-X-IronPort-AV: E=Sophos;i="5.67,270,1566889200"; d="scan'208";a="51904800"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 08 Oct 2019 02:28:18 -0700
-Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 8 Oct 2019 02:28:18 -0700
-Received: from localhost (10.10.85.251) by chn-vm-ex04.mchp-main.com
- (10.10.85.152) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
- Transport; Tue, 8 Oct 2019 02:28:17 -0700
-Date: Tue, 8 Oct 2019 11:28:27 +0200
-From: Ludovic Desroches <ludovic.desroches@microchip.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 1/3] dt-bindings: sdhci-of-at91: new compatible string
- and update properties
-Message-ID: <20191008092826.63kbia2wkggeab74@M43218.corp.atmel.com>
-Mail-Followup-To: Rob Herring <robh@kernel.org>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-mmc@vger.kernel.org, ulf.hansson@linaro.org,
- nicolas.ferre@microchip.com, adrian.hunter@intel.com,
- linux-kernel@vger.kernel.org, mark.rutland@arm.com,
- claudiu.beznea@microchip.com
-References: <20190912200908.31318-1-ludovic.desroches@microchip.com>
- <20190930145613.GA11254@bogus>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190930145613.GA11254@bogus>
-User-Agent: NeoMutt/20180716
+	id 1iHlvM-0004V8-5v; Tue, 08 Oct 2019 09:36:56 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHlvA-0004K3-FV
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 09:36:45 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C7D241570;
+ Tue,  8 Oct 2019 02:36:42 -0700 (PDT)
+Received: from localhost (e113682-lin.copenhagen.arm.com [10.32.145.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5AE7C3F6C4;
+ Tue,  8 Oct 2019 02:36:42 -0700 (PDT)
+From: Christoffer Dall <christoffer.dall@arm.com>
+To: kvmarm@lists.cs.columbia.edu
+Subject: [PATCH v2 0/2] Improve handling of stage 2 aborts without instruction
+ decode
+Date: Tue,  8 Oct 2019 11:36:35 +0200
+Message-Id: <20191008093640.26519-1-christoffer.dall@arm.com>
+X-Mailer: git-send-email 2.18.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_022820_220426_284480BB 
-X-CRM114-Status: GOOD (  18.36  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191008_023644_564385_6B1A4362 
+X-CRM114-Status: GOOD (  10.35  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.149.84 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -103,83 +57,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ulf.hansson@linaro.org,
- linux-kernel@vger.kernel.org, linux-mmc@vger.kernel.org,
- adrian.hunter@intel.com, claudiu.beznea@microchip.com,
+Cc: Peter Maydell <peter.maydell@linaro.org>,
+ =?UTF-8?q?Daniel=20P=2E=20Berrang=C3=A9?= <berrange@redhat.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Christoffer Dall <christoffer.dall@arm.com>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Stefan Hajnoczi <stefanha@redhat.com>,
+ Heinrich Schuchardt <xypron.glpk@gmx.de>, Alexander Graf <graf@amazon.com>,
  linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 30, 2019 at 09:56:13AM -0500, Rob Herring wrote:
-> On Thu, Sep 12, 2019 at 10:09:06PM +0200, Ludovic Desroches wrote:
-> > There is a new compatible string for the SAM9X60 sdhci device. It involves
-> > an update of the properties about the clocks stuff.
-> > 
-> > Signed-off-by: Ludovic Desroches <ludovic.desroches@microchip.com>
-> > ---
-> >  .../devicetree/bindings/mmc/sdhci-atmel.txt   | 25 ++++++++++++++++---
-> >  1 file changed, 22 insertions(+), 3 deletions(-)
-> > 
-> > diff --git a/Documentation/devicetree/bindings/mmc/sdhci-atmel.txt b/Documentation/devicetree/bindings/mmc/sdhci-atmel.txt
-> > index 1b662d7171a0..364ceea330b6 100644
-> > --- a/Documentation/devicetree/bindings/mmc/sdhci-atmel.txt
-> > +++ b/Documentation/devicetree/bindings/mmc/sdhci-atmel.txt
-> > @@ -5,12 +5,19 @@ Documentation/devicetree/bindings/mmc/mmc.txt and the properties used by the
-> >  sdhci-of-at91 driver.
-> >  
-> >  Required properties:
-> > -- compatible:		Must be "atmel,sama5d2-sdhci".
-> > +- compatible:		Must be "atmel,sama5d2-sdhci" or "microchip,sam9x60-sdhci".
-> >  - clocks:		Phandlers to the clocks.
-> > -- clock-names:		Must be "hclock", "multclk", "baseclk";
-> > +- clock-names:		Must be "hclock", "multclk", "baseclk" for
-> > +			"atmel,sama5d2-sdhci".
-> > +			Must be "hclock", "multclk" for "microchip,sam9x60-sdhci".
-> >  
-> > +Optional properties:
-> > +- assigned-clocks:	The same with "multclk".
-> > +- assigned-clock-rates	The rate of "multclk" in order to not rely on the
-> > +			gck configuration set by previous components.
-> >  
-> > -Example:
-> > +
-> > +Examples:
-> >  
-> >  sdmmc0: sdio-host@a0000000 {
-> >  	compatible = "atmel,sama5d2-sdhci";
-> > @@ -18,4 +25,16 @@ sdmmc0: sdio-host@a0000000 {
-> >  	interrupts = <31 IRQ_TYPE_LEVEL_HIGH 0>;
-> >  	clocks = <&sdmmc0_hclk>, <&sdmmc0_gclk>, <&main>;
-> >  	clock-names = "hclock", "multclk", "baseclk";
-> > +	assigned-clocks = <&sdmmc0_gclk>;
-> > +	assigned-clock-rates = <480000000>;
-> > +};
-> > +
-> > +sdmmc0: sdio-host@80000000 {
-> 
-> mmc@...
-> 
-> Though I don't see much value in a second example. Examples are not a 
-> complete enumeration of all possible dts entries.
-> 
+When a guest accesses memory outside the memory slots, KVM usually
+bounces the access back to userspace with KVM_EXIT_MMIO.  However, on
+arm/arm64 systems, certain load/store instructions did not provide
+decoding info for the hypervisor to emulate the instruction, and in this
+case KVM has rather rudely returned -ENOSYS and printed a not overly
+helpful error message:
 
-Ok, I'll skip this example.
+  load/store instruction decoding not implemented
 
-Ludovic
+This patch series improves the error message and allows userspace to be
+notified of this event instead of receiving -ENOSYS, and also allows
+userspace to ask KVM to inject an external abort to the guest, which it
+can use for any memory access that it either cannot handle.
 
-> > +	compatible = "microchip,sam9x60-sdhci";
-> > +	reg = <0x80000000 0x300>;
-> > +	interrupts = <12 IRQ_TYPE_LEVEL_HIGH 0>;
-> > +	clocks = <&pmc PMC_TYPE_PERIPHERAL 12>, <&pmc PMC_TYPE_GCK 12>;
-> > +	clock-names = "hclock", "multclk";
-> > +	assigned-clocks = <&pmc PMC_TYPE_GCK 12>;
-> > +	assigned-clock-rates = <100000000>;
-> >  };
-> > -- 
-> > 2.23.0
-> > 
+One remaining case which this patch set does not address is if the guest
+accesses an in-kernel emulated device, such as the VGIC, but using a
+load/store instruction which doesn't provide decode info.  With these
+patches, this will return to userspace for it to handle, but there's no
+way for userspace to return the decoding information to KVM and have KVM
+complete the access to the in-kernel emulated device.  I have no plans
+to address this limitation.
+
+Changes since v1:
+ - Rebased on v5.4-rc2
+ - Fixed some documentation and coding nit in review of v1
+
+Christoffer Dall (2):
+  KVM: arm/arm64: Allow reporting non-ISV data aborts to userspace
+  KVM: arm/arm64: Allow user injection of external data aborts
+
+ Documentation/virt/kvm/api.txt       | 51 +++++++++++++++++++++++++++-
+ arch/arm/include/asm/kvm_arm.h       |  1 +
+ arch/arm/include/asm/kvm_emulate.h   |  5 +++
+ arch/arm/include/asm/kvm_host.h      |  8 +++++
+ arch/arm/include/uapi/asm/kvm.h      |  3 +-
+ arch/arm/kvm/guest.c                 |  3 ++
+ arch/arm64/include/asm/kvm_emulate.h |  5 +++
+ arch/arm64/include/asm/kvm_host.h    |  8 +++++
+ arch/arm64/include/uapi/asm/kvm.h    |  3 +-
+ arch/arm64/kvm/guest.c               |  3 ++
+ arch/arm64/kvm/inject_fault.c        |  4 +--
+ include/uapi/linux/kvm.h             |  8 +++++
+ virt/kvm/arm/arm.c                   | 22 ++++++++++++
+ virt/kvm/arm/mmio.c                  |  9 ++++-
+ 14 files changed, 127 insertions(+), 6 deletions(-)
+
+-- 
+2.18.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
