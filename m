@@ -2,129 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19686CEFFB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 02:46:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D04DDCEFFE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 02:48:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4zveDO4Q7RsAlB/+ChGXbS0hDUG/HYH58IV4K/0MjN8=; b=Up1UzJ2RpPeNVS
-	IgLeYVZJDicHOgSa4GEAD2mufT+gPQuv5ilZMmJoJTR+K6ugpz1G+YuDCQn4dnFXpEjn0T06phzuh
-	/ewghTHS/sj8x31VOUmmaWOQ4AUNwLJt22S+fL2dbSfS/Dcal2pNHZXKBLR2G/l8jBUAohLX9rJU1
-	rK9zkbKR3SF9uBv9UxjtSbIM2Pm7Ouvjs0QUgIb2Cc3RT2qVAR8PYa/SY8muUB0kU72Cdvli1kLCB
-	/4ktvQKe2ZyZV8YnO+uYLTKXMT6UZWOPYNQ9lpt8tkbiV7rZSkLX8EfjK/VZUobwfW5VpW4G1FSsA
-	5WqxqmU3PrVkceSvx/sQ==;
+	List-Owner; bh=dwj+B+3r7EN3t/0vWXVOMWxEzBI/idLwnpQxR6AfLJ0=; b=BgMnysY0I5SyLq
+	YJVVA8pkCpLmFp7eXdiZwRAqQvhKZH6WDYauzGGjZFLNSnuTCIvbOeXtLUxbVPgOiR43/xSeoLxp0
+	Vbluxi3F6iovA9lLojC3DvR+Go5hDO2fLR6UbLYjflteA7VJboJGjVyarltiEx8SSQO030Rm0EInh
+	fZNqDrEBbyRTnU/dYj3JfIo8CA764rsrnsMfMiVSKSkSXdqel/jJbKn6RNpeDtcWaBZx/hvRdygif
+	ThwnndmiI3BQHZPLLhYOe1cQalgr0zvG3iSUZ2/BxHJD+BzjjJ58dqpLfArNaW2FUI2DwWIg3jBLO
+	4ubwB0ViMCh7sIEas8RA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHdds-0008Gz-IQ; Tue, 08 Oct 2019 00:46:20 +0000
-Received: from esa5.hgst.iphmx.com ([216.71.153.144])
+	id 1iHdg6-0000IF-9R; Tue, 08 Oct 2019 00:48:38 +0000
+Received: from mail-he1eur01on060c.outbound.protection.outlook.com
+ ([2a01:111:f400:fe1e::60c]
+ helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHddk-0008GM-F7; Tue, 08 Oct 2019 00:46:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1570495573; x=1602031573;
- h=from:to:cc:subject:date:message-id:references:
- in-reply-to:content-id:content-transfer-encoding: mime-version;
- bh=+iibpsbzKo+2uP86ePikwjKxFNw8o16gqfIuNejW31U=;
- b=KV/Bb5oyaYvRkTmo0cWxo7sxS8yQI4MyjjdiuAKiiFeOU7cNNvTmgJgu
- SHspGNuVEn6BoKM8i5lISb2xLszdJSY0OjkfQhFghYG9Prsc2aBxlgJRd
- ssJ8lInJEbfW0kqw6pq3sNsAeUYCET02Hp1cy3b4aDmdaahmaaE/Kw/XT
- lZfvXKzdT0eo8n9ASQg/BWlh43FQXLX/Sm4FTR2zh7Bjl11V/4CiEJkEa
- fRcL43/rYqilRlNDhk9PQTIP9Dw95IBLUAud2UgcZnfU3KAFuORRlmwgi
- kyNXlM6OM09bdbsWtsDukChytl19AwlmG6FsR04UPX06X93fyAV1/bBvb g==;
-IronPort-SDR: VgLNUBIqb1xhnoecXmVta8eV5eziSES1BIgRoJOIWXENAaW6UKBroYjmWVicg8QJEbHmtlp1Gg
- 21bEd+hNlItCofaINvE/IZW6emId3NsXZTwccGO+Gsqgez3zUFEnOWPOGuoZCYYB9K85JNt/i2
- naYACaR4XOdQAoUu5KyWuLzUgbwveuQYebzgbwAoeg+2/p0LYagfTmuGPCmluE3P2X41WVLM9Z
- gG7ZcCu9T7Tmc39GRpnnX9B2hCeniHRjMYbyybNfdxep9AIi/5apvxk12VyeMruuhqaJW/Jlun
- 6h8=
-X-IronPort-AV: E=Sophos;i="5.67,269,1566835200"; d="scan'208";a="120744742"
-Received: from mail-by2nam03lp2055.outbound.protection.outlook.com (HELO
- NAM03-BY2-obe.outbound.protection.outlook.com) ([104.47.42.55])
- by ob1.hgst.iphmx.com with ESMTP; 08 Oct 2019 08:46:07 +0800
+ id 1iHdfy-0000Gx-IO
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 00:48:32 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=L4g6BJ8rix5iROPyuih+Mf0dj3W6XjRKuxXLhkv+QkHiuZqPzkNgT4fc0kgmeq5/cE5TJqHcYFxd8LmAGbfL471yEjc8tmqoYgKDxUY86Ayn8VJmwl/JnV+kqp2GucH7IvzI0+6LsPk7UdDgBsyaF+crXKfD9pPVcb3EDQmayyAZZLTf0jLiFM9DSv+krZF1xvLjsoLAvghVAhIWO8pYVzEYiJL1ulzsXsdArg8PY8Mq8/ddl1cOKJFAARiROHT7j8OMnODznd35pqMZ1VXyubEkRQitLjNQxS25TCfry1fwWfEeqaGYWX20mxrqrtOfJfIMPxf41Zwvk4MZxS7fYw==
+ b=Hvk20YeFxyAQo4dKHf5OFuiMEz3FRZSmmAlK0SuDjxxj/4i5BLzXT5vA+dZH4nd5JS6VLPJa63zDcINLymIPb2h6rn+ZM6x/RHPYGl33rh5r3Fxg0baspZqr57Oxer8KDoHuHYBI8tpLhFK5YV7QqOHRXkxh8ggPw3f+QVPl2yRf3FGlCNUGg3qq/kgF/zZgT66j3LLwBzBsnrQY87g0efkfrVdQXGHONnfHedns3tQYGcGl+x83q83F1RT4dGdDM08svAuFl4eJRhDSqfmnzRDiQG6wL53zXHFdGGfPjBwnNqXzneaMR+hWHNAD3Aec35sAh2koFT2I/iuO8WfXfQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+iibpsbzKo+2uP86ePikwjKxFNw8o16gqfIuNejW31U=;
- b=YIkv8ljStxf8HPA65QLgU+lqXVNh442WriXMvd8wwxN1wu26yikURwvfse1xOqV1d5E0zH8TlPjr1uAJP5o/uzUizAl7KZGEys2tEwaUUxd1Mcs5VC0BmWKKZVBWsrpiBlIgLp6L9WHv1WO/AvBVQDhLGtqiON2COyYKgSUOwWkbO4jRwMgMqRqrSMPqEx4DN2BxaunfKzy0b2B4hthf+hL4DpPt/1JOYpe3K8M1NiLUenlHnHrhbcu3Kwl8ePlaOvvyxhz2EQbqSBqco2u1XdsUyzfpELo8sX7Wq+iMNs/f8mguCdEetx2sTgcqYKCMBnOK7I774W1OGQPyfH2fhA==
+ bh=VWlhy7Ulay98BBvb22/jVbUVVDCr90rZBWYDSeMv0Kg=;
+ b=je7yMFkwauS06zhhFMaSs518Nw8PH7N2xvAl0UglRW5FlMtf7GfZR3BYpwgTLoGurIFwpv/zqC84L3jRwd7zL86Y9Tlt/wFZ2nlHMnCXckGfEdy4zt3mNi2Q/1uwj7Hdw8oh07bn4Ji9zKpuB6eLS/Svo0Uy4diDG99W4XfLtTyFT3yrmROLvoV7QheWyvpLSn2rMmgEkM9gWQLlt4EkzaV38dOKwR2clRFrPGwrnmPIiFqKwitM7P5YfnJP72+Dd2vlmC1J+Xinf+TgfTTHrcBrAuwu++CdUwrIMD7qF9Lz83Xd4ZWEs6EjZNe0IvfrG+abpgDRgqfyn3gU4LHvog==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
- header.d=wdc.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+iibpsbzKo+2uP86ePikwjKxFNw8o16gqfIuNejW31U=;
- b=WhL5BZaowaPyvlQgg4im8RLXt/xst9R3rq9slHNnAw3SrxYQed+7Rv/EFWoSe3ep6yPdkuG0o1G2eQlHK+FxbqxKC71Ujy9BNClgF82E0uRAPvUKeO8iiUJU2jYJ3bgxKxf7RtKdSUo1Oqrp4IvcNtyAdq4Pyd8w2aOVIl8lDAA=
-Received: from BYAPR04MB3990.namprd04.prod.outlook.com (52.135.215.29) by
- BYAPR04MB4389.namprd04.prod.outlook.com (20.176.248.19) with Microsoft SMTP
+ bh=VWlhy7Ulay98BBvb22/jVbUVVDCr90rZBWYDSeMv0Kg=;
+ b=XAAlKTaMcp/2QJ0sFMtBlY8wqDYUxKdYkcJoxxhoBIbaxKPKXBoLPPRQKqtH1FKwk1GhdWM0VlIXp6NyLb3Z0EiwrlCmHNWwILafea7SAUUFinxkQia4zcZPqiiUhsXFSuKohu+iMvCBt7pNBavgr7ypVYXkgzeE91xuZbEc5zg=
+Received: from AM6PR0402MB3911.eurprd04.prod.outlook.com (52.133.30.10) by
+ AM6PR0402MB3446.eurprd04.prod.outlook.com (52.133.19.27) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2327.24; Tue, 8 Oct 2019 00:46:05 +0000
-Received: from BYAPR04MB3990.namprd04.prod.outlook.com
- ([fe80::51dd:7de9:c4a1:f9f3]) by BYAPR04MB3990.namprd04.prod.outlook.com
- ([fe80::51dd:7de9:c4a1:f9f3%3]) with mapi id 15.20.2327.023; Tue, 8 Oct 2019
- 00:46:05 +0000
-From: Atish Patra <Atish.Patra@wdc.com>
-To: "alex@ghiti.fr" <alex@ghiti.fr>
-Subject: Re: [PATCH v6 14/14] riscv: Make mmap allocation top-down by default
-Thread-Topic: [PATCH v6 14/14] riscv: Make mmap allocation top-down by default
-Thread-Index: AQHVTbNRR2y1x3jR5Uinm4nvlyFP7KdLqT4AgAOZyQCAAQUZAA==
-Date: Tue, 8 Oct 2019 00:46:05 +0000
-Message-ID: <daeb33415751ef16a717f6ff6a29486110c503d7.camel@wdc.com>
-References: <20190808061756.19712-1-alex@ghiti.fr>
- <20190808061756.19712-15-alex@ghiti.fr>
- <208433f810b5b07b1e679d7eedb028697dff851b.camel@wdc.com>
- <60b52f20-a2c7-dee9-7cf3-a727f07400b9@ghiti.fr>
-In-Reply-To: <60b52f20-a2c7-dee9-7cf3-a727f07400b9@ghiti.fr>
+ 15.20.2305.17; Tue, 8 Oct 2019 00:48:24 +0000
+Received: from AM6PR0402MB3911.eurprd04.prod.outlook.com
+ ([fe80::b0c2:4fbb:fae7:991]) by AM6PR0402MB3911.eurprd04.prod.outlook.com
+ ([fe80::b0c2:4fbb:fae7:991%5]) with mapi id 15.20.2327.026; Tue, 8 Oct 2019
+ 00:48:24 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Marco Felsch <m.felsch@pengutronix.de>
+Subject: RE: [PATCH V2] firmware: imx: Skip return value check for some
+ special SCU firmware APIs
+Thread-Topic: [PATCH V2] firmware: imx: Skip return value check for some
+ special SCU firmware APIs
+Thread-Index: AQHVfK0Yhw8grvoW2E2n3r70yUmdBKdO0YaAgAEYy6A=
+Date: Tue, 8 Oct 2019 00:48:24 +0000
+Message-ID: <AM6PR0402MB39118DABDE62496539D7EE6DF59A0@AM6PR0402MB3911.eurprd04.prod.outlook.com>
+References: <1570410959-32563-1-git-send-email-Anson.Huang@nxp.com>
+ <20191007080135.4e5ljhh6z2rbx5bw@pengutronix.de>
+In-Reply-To: <20191007080135.4e5ljhh6z2rbx5bw@pengutronix.de>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Atish.Patra@wdc.com; 
-x-originating-ip: [199.255.44.250]
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 22aa01cd-a6df-4c36-cac6-08d74b88e69a
+x-ms-office365-filtering-correlation-id: 057eeed9-b4f4-4b60-e071-08d74b89398a
 x-ms-office365-filtering-ht: Tenant
-x-ms-traffictypediagnostic: BYAPR04MB4389:
+x-ms-traffictypediagnostic: AM6PR0402MB3446:|AM6PR0402MB3446:
 x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <BYAPR04MB43897DD2483DCF55A88B1230FA9A0@BYAPR04MB4389.namprd04.prod.outlook.com>
-wdcipoutbound: EOP-TRUE
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM6PR0402MB3446F1749864E1B70AC0EACAF59A0@AM6PR0402MB3446.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
 x-forefront-prvs: 01842C458A
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(376002)(346002)(39860400002)(136003)(396003)(366004)(52314003)(189003)(199004)(478600001)(86362001)(11346002)(19627235002)(6116002)(5660300002)(3846002)(14444005)(446003)(256004)(66556008)(64756008)(66476007)(66946007)(66446008)(71190400001)(71200400001)(6916009)(76116006)(2906002)(54906003)(8676002)(81156014)(1730700003)(81166006)(7736002)(316002)(305945005)(7416002)(2501003)(476003)(53546011)(2616005)(99286004)(76176011)(6486002)(66066001)(6512007)(6306002)(26005)(186003)(14454004)(118296001)(5640700003)(102836004)(25786009)(4326008)(6506007)(36756003)(966005)(6246003)(6436002)(486006)(8936002)(229853002)(2351001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BYAPR04MB4389;
- H:BYAPR04MB3990.namprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ SFS:(10009020)(4636009)(346002)(376002)(136003)(366004)(396003)(39860400002)(189003)(199004)(14454004)(26005)(6306002)(66066001)(71190400001)(4326008)(55016002)(71200400001)(229853002)(81166006)(8936002)(81156014)(966005)(6916009)(8676002)(2906002)(86362001)(7736002)(52536014)(6116002)(74316002)(3846002)(305945005)(9686003)(186003)(54906003)(76116006)(5660300002)(446003)(478600001)(316002)(66476007)(66556008)(6436002)(66446008)(66946007)(64756008)(11346002)(6506007)(7696005)(76176011)(53546011)(25786009)(102836004)(476003)(44832011)(256004)(33656002)(45080400002)(99286004)(486006)(6246003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR0402MB3446;
+ H:AM6PR0402MB3911.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: jQcka4iBDzbX8dXjAW6AzZxiJWHkKHluYUhqthlX6xNyBZ4nsGej5/zxxxjAOeVmihL5UzyvUP11HMqMJSvBDywu4YXXH9ULqoNh+tN80hIXy3ybaTZNEdjueAAHKtbaL/eMkrU0oSJvbYa2zOTyYiEoCv8ppU9q05Ec9F5o9GC900Piwf5ZMO1Tk1Eiyz3NUD1WX5n2G3/LWjo4+Y/TeGx1vfKcAiOaZftxcefPsR69ZWSLfEH+7NHjCqhgTTsdTmfh5dzwfbMyx+fGjHU08xnBjemznc+v6BAOplptNa8glJJHK09Z2yLK8qq8TMYM6WtfhGvXw/i0bRrKr+Be956c1xJzb/gZp06FH9Eve7y4arcTlYyNGk8T0SVh2+tQb/FQsqcCEhcv5P8G9RXBTNRXHcS+F0GwnEK3s9TY9qIWFeuiWCcGtcQ0X24IWyYkKpkB9PbLs6+3F+ufoj7z2g==
-x-ms-exchange-transport-forked: True
-Content-ID: <BEE24D9872879F46A08910C44A14742A@namprd04.prod.outlook.com>
+x-microsoft-antispam-message-info: kAfxKOvzP5C/0Ym4qRlEHhOfRVlj/YHJZylYbQzi6B7+I5gG72e5L+s4qHkNA0JHNWfmoMFRwKgM54DW13Mqt528qhFDpd7peCbDBKXrR8iu8kVa0NzuW6gjEm395ckCnzlnC+K+kv/RyfPfHMNmOdhHAcv5ntIY82j6EPf68KemvFhM0nE7MrtqkgFefG0AJRFsTd0K45M8pkB8ZYqxJJ0eebZwMzaxNjM/cW5oxR+vb0ty3g6CTlyFAx4Y2uzuTovd8E6YdVvtol5CVqSpuZyRltDUJy9z9F6IXHl9s5mo09w5eAyP3uJEBNbsaXZOnzSjcD5troADQ2yeonp37LkxgafxYVHuZqRhpVE7ISYwYOzMceHkubBaOeWeMMx4xUNqb9BiStwVe60lsXvYQIb+TkPI2htvvNli6grXmf4=
 MIME-Version: 1.0
-X-OriginatorOrg: wdc.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 22aa01cd-a6df-4c36-cac6-08d74b88e69a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 08 Oct 2019 00:46:05.0995 (UTC)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 057eeed9-b4f4-4b60-e071-08d74b89398a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 08 Oct 2019 00:48:24.3680 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: idp60l09im0u3iGmpbbAMBhVJOfuH3loaNVqujes97ceFsT7+kGzt6vAa75qNMcdKy+4a5JVGFVyBSyBmwelEQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR04MB4389
+X-MS-Exchange-CrossTenant-userprincipalname: RCtNaPTX+M3ESGvT+5xjVoWxRND4OvmR+L+NvGKBTl53i1EgU43iMVdgXxi6CKamhInm2pUN2wLeIWQ8zXKhRw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0402MB3446
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_174612_571971_7671546B 
-X-CRM114-Status: GOOD (  24.37  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191007_174830_688678_661BEA7C 
+X-CRM114-Status: GOOD (  12.68  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.153.144 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:111:f400:fe1e:0:0:0:60c listed in]
+ [list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -132,6 +114,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 1.0 FORGED_SPF_HELO        No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -143,226 +126,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "aou@eecs.berkeley.edu" <aou@eecs.berkeley.edu>,
- "keescook@chromium.org" <keescook@chromium.org>,
- "jhogan@kernel.org" <jhogan@kernel.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "palmer@sifive.com" <palmer@sifive.com>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "ralf@linux-mips.org" <ralf@linux-mips.org>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>,
- "paul.burton@mips.com" <paul.burton@mips.com>,
- "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
- "viro@zeniv.linux.org.uk" <viro@zeniv.linux.org.uk>,
- "paul.walmsley@sifive.com" <paul.walmsley@sifive.com>,
- "linux-fsdevel@vger.kernel.org" <linux-fsdevel@vger.kernel.org>,
- "akpm@linux-foundation.org" <akpm@linux-foundation.org>,
- "hch@lst.de" <hch@lst.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "mcgrof@kernel.org" <mcgrof@kernel.org>
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2019-10-07 at 05:11 -0400, Alex Ghiti wrote:
-> On 10/4/19 10:12 PM, Atish Patra wrote:
-> > On Thu, 2019-08-08 at 02:17 -0400, Alexandre Ghiti wrote:
-> > > In order to avoid wasting user address space by using bottom-up
-> > > mmap
-> > > allocation scheme, prefer top-down scheme when possible.
-> > > 
-> > > Before:
-> > > root@qemuriscv64:~# cat /proc/self/maps
-> > > 00010000-00016000 r-xp 00000000 fe:00
-> > > 6389       /bin/cat.coreutils
-> > > 00016000-00017000 r--p 00005000 fe:00
-> > > 6389       /bin/cat.coreutils
-> > > 00017000-00018000 rw-p 00006000 fe:00
-> > > 6389       /bin/cat.coreutils
-> > > 00018000-00039000 rw-p 00000000 00:00 0          [heap]
-> > > 1555556000-155556d000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
-> > > 155556d000-155556e000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
-> > > 155556e000-155556f000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
-> > > 155556f000-1555570000 rw-p 00000000 00:00 0
-> > > 1555570000-1555572000 r-xp 00000000 00:00 0      [vdso]
-> > > 1555574000-1555576000 rw-p 00000000 00:00 0
-> > > 1555576000-1555674000 r-xp 00000000 fe:00 7187   /lib/libc-
-> > > 2.28.so
-> > > 1555674000-1555678000 r--p 000fd000 fe:00 7187   /lib/libc-
-> > > 2.28.so
-> > > 1555678000-155567a000 rw-p 00101000 fe:00 7187   /lib/libc-
-> > > 2.28.so
-> > > 155567a000-15556a0000 rw-p 00000000 00:00 0
-> > > 3fffb90000-3fffbb1000 rw-p 00000000 00:00 0      [stack]
-> > > 
-> > > After:
-> > > root@qemuriscv64:~# cat /proc/self/maps
-> > > 00010000-00016000 r-xp 00000000 fe:00
-> > > 6389       /bin/cat.coreutils
-> > > 00016000-00017000 r--p 00005000 fe:00
-> > > 6389       /bin/cat.coreutils
-> > > 00017000-00018000 rw-p 00006000 fe:00
-> > > 6389       /bin/cat.coreutils
-> > > 2de81000-2dea2000 rw-p 00000000 00:00 0          [heap]
-> > > 3ff7eb6000-3ff7ed8000 rw-p 00000000 00:00 0
-> > > 3ff7ed8000-3ff7fd6000 r-xp 00000000 fe:00 7187   /lib/libc-
-> > > 2.28.so
-> > > 3ff7fd6000-3ff7fda000 r--p 000fd000 fe:00 7187   /lib/libc-
-> > > 2.28.so
-> > > 3ff7fda000-3ff7fdc000 rw-p 00101000 fe:00 7187   /lib/libc-
-> > > 2.28.so
-> > > 3ff7fdc000-3ff7fe2000 rw-p 00000000 00:00 0
-> > > 3ff7fe4000-3ff7fe6000 r-xp 00000000 00:00 0      [vdso]
-> > > 3ff7fe6000-3ff7ffd000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
-> > > 3ff7ffd000-3ff7ffe000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
-> > > 3ff7ffe000-3ff7fff000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
-> > > 3ff7fff000-3ff8000000 rw-p 00000000 00:00 0
-> > > 3fff888000-3fff8a9000 rw-p 00000000 00:00 0      [stack]
-> > > 
-> > > Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
-> > > Acked-by: Paul Walmsley <paul.walmsley@sifive.com>
-> > > Reviewed-by: Christoph Hellwig <hch@lst.de>
-> > > Reviewed-by: Kees Cook <keescook@chromium.org>
-> > > Reviewed-by: Luis Chamberlain <mcgrof@kernel.org>
-> > > ---
-> > >   arch/riscv/Kconfig | 12 ++++++++++++
-> > >   1 file changed, 12 insertions(+)
-> > > 
-> > > diff --git a/arch/riscv/Kconfig b/arch/riscv/Kconfig
-> > > index 59a4727ecd6c..87dc5370becb 100644
-> > > --- a/arch/riscv/Kconfig
-> > > +++ b/arch/riscv/Kconfig
-> > > @@ -54,6 +54,18 @@ config RISCV
-> > >   	select EDAC_SUPPORT
-> > >   	select ARCH_HAS_GIGANTIC_PAGE
-> > >   	select ARCH_WANT_HUGE_PMD_SHARE if 64BIT
-> > > +	select ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT if MMU
-> > > +	select HAVE_ARCH_MMAP_RND_BITS
-> > > +
-> > > +config ARCH_MMAP_RND_BITS_MIN
-> > > +	default 18 if 6legacy_va_layout4BIT
-> > > +	default 8
-> > > +
-> > > +# max bits determined by the following formula:
-> > > +#  VA_BITS - PAGE_SHIFT - 3
-> > > +config ARCH_MMAP_RND_BITS_MAX
-> > > +	default 24 if 64BIT # SV39 based
-> > > +	default 17
-> > >   
-> > >   config MMU
-> > >   	def_bool y
-> > With this patch, I am not able to boot a Fedora Linux(a Gnome
-> > desktop
-> > image) on RISC-V hardware (Unleashed + Microsemi Expansion board).
-> > The
-> > booting gets stuck right after systemd starts.
-> > 
-> > https://paste.fedoraproject.org/paste/TOrUMqqKH-pGFX7CnfajDg
-> > 
-> > Reverting just this patch allow to boot Fedora successfully on
-> > specific
-> > RISC-V hardware. I have not root caused the issue but it looks like
-> > it
-> > might have messed userpsace mapping.
+Hi, Marco
+
+> On 19-10-07 09:15, Anson Huang wrote:
+> > The SCU firmware does NOT always have return value stored in message
+> > header's function element even the API has response data, those
+> > special APIs are defined as void function in SCU firmware, so they
+> > should be treated as return success always.
+> >
+> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > ---
+> > Changes since V1:
+> > 	- Use direct API check instead of calling another function to check.
+> > 	- This patch is based on
+> > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpatc
+> >
+> hwork.kernel.org%2Fpatch%2F11129553%2F&amp;data=02%7C01%7Canson.
+> huang%
+> >
+> 40nxp.com%7C2de0a6be69b74cc249ad08d74afc9730%7C686ea1d3bc2b4c6f
+> a92cd99
+> >
+> c5c301635%7C0%7C0%7C637060321046247040&amp;sdata=RMFAdLKGKb6
+> mEdhycrzHX
+> > R03E6Qr5pWyRc8Zk6ErlBc%3D&amp;reserved=0
 > 
-> It might have messed userspace mapping but not enough to make
-> userspace 
-> completely broken
-> as systemd does some things. I would try to boot in legacy layout:
-> if 
-> you can try to set sysctl legacy_va_layout
-> at boottime, it will map userspace as it was before (bottom-up). If
-> that 
-> does not work, the problem could
-> be the randomization that is activated by default now.
+> Thanks for this v2. It would be good to change the callers within this series.
 
-Randomization may not be the issue. I just removed
-ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT from the config and that seems to
-work. Here is the bottom-up layout with randomization on.
+NOT quite understand your point, the callers does NOT need to be changed, those
+2 special APIs callers are already following the right way of calling the APIs.
 
-[root@fedora-riscv ~]# cat /proc/self/maps 
-1555556000-1555570000 r-xp 00000000 103:01
-280098                        /usr/lib64/ld-2.28.so
-1555570000-1555571000 r--p 00019000 103:01
-280098                        /usr/lib64/ld-2.28.so
-1555571000-1555572000 rw-p 0001a000 103:01
-280098                        /usr/lib64/ld-2.28.so
-1555572000-1555573000 rw-p 00000000 00:00 0 
-1555573000-1555575000 r-xp 00000000 00:00
-0                              [vdso]
-1555575000-1555576000 r--p 00000000 103:01
-50936                         /usr/lib/locale/en_US.utf8/LC_IDENTIFICAT
-ION
-1555576000-155557d000 r--s 00000000 103:01
-280826                        /usr/lib64/gconv/gconv-modules.cache
-155557d000-155557e000 r--p 00000000 103:01
-50937                         /usr/lib/locale/en_US.utf8/LC_MEASUREMENT
-155557e000-155557f000 r--p 00000000 103:01
-50939                         /usr/lib/locale/en_US.utf8/LC_TELEPHONE
-155557f000-1555580000 r--p 00000000 103:01
-3706                          /usr/lib/locale/en_US.utf8/LC_ADDRESS
-1555580000-1555581000 r--p 00000000 103:01
-50944                         /usr/lib/locale/en_US.utf8/LC_NAME
-1555581000-1555582000 r--p 00000000 103:01
-3775                          /usr/lib/locale/en_US.utf8/LC_PAPER
-1555582000-1555583000 r--p 00000000 103:01
-3758                          /usr/lib/locale/en_US.utf8/LC_MESSAGES/SY
-S_LC_MESSAGES
-1555583000-1555584000 r--p 00000000 103:01
-50938                         /usr/lib/locale/en_US.utf8/LC_MONETARY
-1555584000-1555585000 r--p 00000000 103:01
-50940                         /usr/lib/locale/en_US.utf8/LC_TIME
-1555585000-1555586000 r--p 00000000 103:01
-50945                         /usr/lib/locale/en_US.utf8/LC_NUMERIC
-1555590000-1555592000 rw-p 00000000 00:00 0 
-1555592000-15556b1000 r-xp 00000000 103:01
-280105                        /usr/lib64/libc-2.28.so
-15556b1000-15556b5000 r--p 0011e000 103:01
-280105                        /usr/lib64/libc-2.28.so
-15556b5000-15556b7000 rw-p 00122000 103:01
-280105                        /usr/lib64/libc-2.28.so
-15556b7000-15556bb000 rw-p 00000000 00:00 0 
-15556bb000-1555933000 r--p 00000000 103:01
-3755                          /usr/lib/locale/en_US.utf8/LC_COLLATE
-1555933000-1555986000 r--p 00000000 103:01
-50942                         /usr/lib/locale/en_US.utf8/LC_CTYPE
-1555986000-15559a8000 rw-p 00000000 00:00 0 
-2aaaaaa000-2aaaab1000 r-xp 00000000 103:01
-283975                        /usr/bin/cat
-2aaaab1000-2aaaab2000 r--p 00006000 103:01
-283975                        /usr/bin/cat
-2aaaab2000-2aaaab3000 rw-p 00007000 103:01
-283975                        /usr/bin/cat
-2aaaab3000-2aaaad4000 rw-p 00000000 00:00
-0                              [heap]
-3fffc97000-3fffcb8000 rw-p 00000000 00:00
-0                              [stack]
-
-
-> Anyway, it's weird since userspace should not depend on how the
-> mapping is.
-> 
-> If you can identify the program that stalls, that would be fantastic
-> :)
-> 
-
-It stucks while booting. So I am not sure how to figure out which
-program stalls. It is difficult to figure out from boot log as it
-stucks at different places but soon after systemd starts.
-
-> As the code is common to mips and arm now and I did not hear from
-> them, 
-> I imagine the problem comes
-> from us.
-> 
-> Alex
-
--- 
-Regards,
-Atish
+Anson
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
