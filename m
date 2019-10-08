@@ -2,84 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 822C2CF398
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 09:20:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9428DCF3A6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 09:22:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZDvtSpHRA8vcCduAT85DTxaM816gXaS5TikMfBnJonI=; b=qBD9Uu7hGLoxXP
-	ZJHhOqnOaTxKblpq0xq6zblcp5eypuqd3LCJ9DMGoMLqv0m8xuWA6mjnd2bEvpEJy9b5wqIVhHQMN
-	yhmJuywu29Zx7C/sfRxXby78cRzVBLw2X4MH7eFQP9DoYUiiU+svn6HtFI7GwOA9FSzQiNpu6M0jK
-	9Rwe0bVjYl9Ts/1k00aa6lWZCPbQhFfQp63QJ9wOiKp7vuFKeek5RSGEQXwq0xx1KjQLN+UwxkqcU
-	QbqbmmgLU2lQRBFURP9kqSvze8dYMQjXiXzanGm+CvJDpScBhOQz3B3vJRmUZBbrJNpM9v03xB0TK
-	5xe4EaftkFUw4nSfIiWQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LH7KfXelHLg2h5epHRkWu36Fk0qsnOr/b6SuLq0ghDA=; b=n8C6rsIPDibJQW
+	OVrSFcs9ySBs/DqbBVWtODQ+FwOOqUPXKgKu2KBJCRt8HGnSk/C5M7irPBH0cjPqhZjb6yefDEJ9m
+	79ecJ1LToVtkLyCPR9GYUHhLeBP+EdgtEOa+xM0ZjIPLw3k761Lfxd9usESJs7DDs6KjKi1ZRpfN9
+	N0ZSGNOuvSTcfOag1kKu1KIMGz9KY5y+JM3WVVuwkWYJYEgVP3YEWzxw/wSeKy9risT+Y5umDCAuG
+	MSmCQL3P0KdjGnyn+A2RETw4x1c8B7bqvPES9yKwm+dKZlCB16sZATv1tbRckUwyWyjN5NcAyfE9Y
+	R26kRUSQPROLDgoGCtvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHjnR-0000RM-TY; Tue, 08 Oct 2019 07:20:37 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1iHjp4-0002A0-3N; Tue, 08 Oct 2019 07:22:18 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHjmO-0006p1-Hz
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 07:19:35 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x987JUSX046372;
- Tue, 8 Oct 2019 02:19:30 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1570519170;
- bh=0tln0NRFdBItHIltiQcebxGnUnAgfgYhStbd62D0/jM=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=aXoWtyAhavZwrT8Gf172BBkRxLyMdJqLQIVPUehvfwE2xLmALDNtofKTnuFrO+eNp
- 7t6SYXnH1z51toDF1o3xvxDsBqX0jrjUVPcuDcTeVk1YlUhoiSviFiuNQHXVbmqJPp
- KBclVYxu/WXwMf7wDVhQ7zkdhmvgP5Mv2EO2H9tA=
-Received: from DFLE113.ent.ti.com (dfle113.ent.ti.com [10.64.6.34])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x987JUe5046135
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 8 Oct 2019 02:19:30 -0500
-Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE113.ent.ti.com
- (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 8 Oct
- 2019 02:19:27 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 8 Oct 2019 02:19:27 -0500
-Received: from sokoban.bb.dnainternet.fi (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x987JJj7027770;
- Tue, 8 Oct 2019 02:19:28 -0500
-From: Tero Kristo <t-kristo@ti.com>
-To: <linux-omap@vger.kernel.org>, <ssantosh@kernel.org>
-Subject: [PATCHv7 4/9] soc: ti: omap-prm: add support for denying idle for
- reset clockdomain
-Date: Tue, 8 Oct 2019 10:19:08 +0300
-Message-ID: <20191008071913.28740-5-t-kristo@ti.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191008071913.28740-1-t-kristo@ti.com>
-References: <20191008071913.28740-1-t-kristo@ti.com>
+ id 1iHjnd-0000lk-LE
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 07:20:54 +0000
+Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 95CDCD7D2A18946F4CEF;
+ Tue,  8 Oct 2019 15:20:44 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS413-HUB.china.huawei.com
+ (10.3.19.213) with Microsoft SMTP Server id 14.3.439.0; Tue, 8 Oct 2019
+ 15:20:35 +0800
+From: YueHaibing <yuehaibing@huawei.com>
+To: <mturquette@baylibre.com>, <sboyd@kernel.org>, <shawnguo@kernel.org>,
+ <s.hauer@pengutronix.de>, <kernel@pengutronix.de>, <festevam@gmail.com>,
+ <linux-imx@nxp.com>, <leonard.crestez@nxp.com>, <peng.fan@nxp.com>,
+ <Anson.Huang@nxp.com>, <yuehaibing@huawei.com>, <ping.bai@nxp.com>
+Subject: [PATCH -next] clk: imx: clk-pll14xx: Make two variables static
+Date: Tue, 8 Oct 2019 15:19:08 +0800
+Message-ID: <20191008071908.24568-1-yuehaibing@huawei.com>
+X-Mailer: git-send-email 2.10.2.windows.1
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-Originating-IP: [10.133.213.239]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_001932_691124_250AA648 
-X-CRM114-Status: GOOD (  19.50  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191008_002049_981381_54BB77AF 
+X-CRM114-Status: UNSURE (   8.36  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,178 +65,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tony@atomide.com, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, p.zabel@pengutronix.de
+Cc: linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TI SoCs hardware reset signals require the parent clockdomain to be
-in force wakeup mode while de-asserting the reset, otherwise it may
-never complete. To support this, add pdata hooks to control the
-clockdomain directly.
+Fix sparse warnings:
 
-Signed-off-by: Tero Kristo <t-kristo@ti.com>
+drivers/clk/imx/clk-pll14xx.c:44:37:
+ warning: symbol 'imx_pll1416x_tbl' was not declared. Should it be static?
+drivers/clk/imx/clk-pll14xx.c:57:37:
+ warning: symbol 'imx_pll1443x_tbl' was not declared. Should it be static?
+
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 ---
- drivers/soc/ti/omap_prm.c            | 36 ++++++++++++++++++++++++++--
- include/linux/platform_data/ti-prm.h | 21 ++++++++++++++++
- 2 files changed, 55 insertions(+), 2 deletions(-)
- create mode 100644 include/linux/platform_data/ti-prm.h
+ drivers/clk/imx/clk-pll14xx.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/soc/ti/omap_prm.c b/drivers/soc/ti/omap_prm.c
-index 96fa2aad9b93..3d9393ff67e3 100644
---- a/drivers/soc/ti/omap_prm.c
-+++ b/drivers/soc/ti/omap_prm.c
-@@ -16,6 +16,8 @@
- #include <linux/reset-controller.h>
- #include <linux/delay.h>
+diff --git a/drivers/clk/imx/clk-pll14xx.c b/drivers/clk/imx/clk-pll14xx.c
+index 7faad60..5c45819 100644
+--- a/drivers/clk/imx/clk-pll14xx.c
++++ b/drivers/clk/imx/clk-pll14xx.c
+@@ -41,7 +41,7 @@ struct clk_pll14xx {
  
-+#include <linux/platform_data/ti-prm.h>
-+
- struct omap_rst_map {
- 	s8 rst;
- 	s8 st;
-@@ -24,6 +26,7 @@ struct omap_rst_map {
- struct omap_prm_data {
- 	u32 base;
- 	const char *name;
-+	const char *clkdm_name;
- 	u16 rstctrl;
- 	u16 rstst;
- 	const struct omap_rst_map *rstmap;
-@@ -40,6 +43,8 @@ struct omap_reset_data {
- 	struct omap_prm *prm;
- 	u32 mask;
- 	spinlock_t lock;
-+	struct clockdomain *clkdm;
-+	struct device *dev;
+ #define to_clk_pll14xx(_hw) container_of(_hw, struct clk_pll14xx, hw)
+ 
+-const struct imx_pll14xx_rate_table imx_pll1416x_tbl[] = {
++static const struct imx_pll14xx_rate_table imx_pll1416x_tbl[] = {
+ 	PLL_1416X_RATE(1800000000U, 225, 3, 0),
+ 	PLL_1416X_RATE(1600000000U, 200, 3, 0),
+ 	PLL_1416X_RATE(1500000000U, 375, 3, 1),
+@@ -54,7 +54,7 @@ const struct imx_pll14xx_rate_table imx_pll1416x_tbl[] = {
+ 	PLL_1416X_RATE(600000000U,  300, 3, 2),
  };
  
- #define to_omap_reset_data(p) container_of((p), struct omap_reset_data, rcdev)
-@@ -49,6 +54,7 @@ struct omap_reset_data {
- 
- #define OMAP_PRM_HAS_RSTCTRL	BIT(0)
- #define OMAP_PRM_HAS_RSTST	BIT(1)
-+#define OMAP_PRM_HAS_NO_CLKDM	BIT(2)
- 
- #define OMAP_PRM_HAS_RESETS	(OMAP_PRM_HAS_RSTCTRL | OMAP_PRM_HAS_RSTST)
- 
-@@ -133,6 +139,8 @@ static int omap_reset_deassert(struct reset_controller_dev *rcdev,
- 	int st_bit;
- 	bool has_rstst;
- 	unsigned long flags;
-+	struct ti_prm_platform_data *pdata = dev_get_platdata(reset->dev);
-+	int ret = 0;
- 
- 	has_rstst = reset->prm->data->rstst ||
- 		(reset->prm->data->flags & OMAP_PRM_HAS_RSTST);
-@@ -146,6 +154,9 @@ static int omap_reset_deassert(struct reset_controller_dev *rcdev,
- 		writel_relaxed(v, reset->prm->base + reset->prm->data->rstst);
- 	}
- 
-+	if (reset->clkdm)
-+		pdata->clkdm_deny_idle(reset->clkdm);
-+
- 	/* de-assert the reset control line */
- 	spin_lock_irqsave(&reset->lock, flags);
- 	v = readl_relaxed(reset->prm->base + reset->prm->data->rstctrl);
-@@ -154,7 +165,7 @@ static int omap_reset_deassert(struct reset_controller_dev *rcdev,
- 	spin_unlock_irqrestore(&reset->lock, flags);
- 
- 	if (!has_rstst)
--		return 0;
-+		goto exit;
- 
- 	/* wait for the status to be set */
- 	ret = readl_relaxed_poll_timeout(reset->prm->base +
-@@ -165,7 +176,11 @@ static int omap_reset_deassert(struct reset_controller_dev *rcdev,
- 		pr_err("%s: timedout waiting for %s:%lu\n", __func__,
- 		       reset->prm->data->name, id);
- 
--	return 0;
-+exit:
-+	if (reset->clkdm)
-+		pdata->clkdm_allow_idle(reset->clkdm);
-+
-+	return ret;
- }
- 
- static const struct reset_control_ops omap_reset_ops = {
-@@ -190,6 +205,8 @@ static int omap_prm_reset_init(struct platform_device *pdev,
- {
- 	struct omap_reset_data *reset;
- 	const struct omap_rst_map *map;
-+	struct ti_prm_platform_data *pdata = dev_get_platdata(&pdev->dev);
-+	char buf[32];
- 
- 	/*
- 	 * Check if we have controllable resets. If either rstctrl is non-zero
-@@ -199,6 +216,11 @@ static int omap_prm_reset_init(struct platform_device *pdev,
- 	if (!prm->data->rstctrl && !(prm->data->flags & OMAP_PRM_HAS_RSTCTRL))
- 		return 0;
- 
-+	/* Check if we have the pdata callbacks in place */
-+	if (!pdata || !pdata->clkdm_lookup || !pdata->clkdm_deny_idle ||
-+	    !pdata->clkdm_allow_idle)
-+		return -EINVAL;
-+
- 	map = prm->data->rstmap;
- 	if (!map)
- 		return -EINVAL;
-@@ -213,10 +235,20 @@ static int omap_prm_reset_init(struct platform_device *pdev,
- 	reset->rcdev.nr_resets = OMAP_MAX_RESETS;
- 	reset->rcdev.of_xlate = omap_prm_reset_xlate;
- 	reset->rcdev.of_reset_n_cells = 1;
-+	reset->dev = &pdev->dev;
- 	spin_lock_init(&reset->lock);
- 
- 	reset->prm = prm;
- 
-+	sprintf(buf, "%s_clkdm", prm->data->clkdm_name ? prm->data->clkdm_name :
-+		prm->data->name);
-+
-+	if (!(prm->data->flags & OMAP_PRM_HAS_NO_CLKDM)) {
-+		reset->clkdm = pdata->clkdm_lookup(buf);
-+		if (!reset->clkdm)
-+			return -EINVAL;
-+	}
-+
- 	while (map->rst >= 0) {
- 		reset->mask |= BIT(map->rst);
- 		map++;
-diff --git a/include/linux/platform_data/ti-prm.h b/include/linux/platform_data/ti-prm.h
-new file mode 100644
-index 000000000000..28154c3226c2
---- /dev/null
-+++ b/include/linux/platform_data/ti-prm.h
-@@ -0,0 +1,21 @@
-+/* SPDX-License-Identifier: GPL-2.0-only */
-+/*
-+ * TI PRM (Power & Reset Manager) platform data
-+ *
-+ * Copyright (C) 2019 Texas Instruments, Inc.
-+ *
-+ * Tero Kristo <t-kristo@ti.com>
-+ */
-+
-+#ifndef _LINUX_PLATFORM_DATA_TI_PRM_H
-+#define _LINUX_PLATFORM_DATA_TI_PRM_H
-+
-+struct clockdomain;
-+
-+struct ti_prm_platform_data {
-+	void (*clkdm_deny_idle)(struct clockdomain *clkdm);
-+	void (*clkdm_allow_idle)(struct clockdomain *clkdm);
-+	struct clockdomain * (*clkdm_lookup)(const char *name);
-+};
-+
-+#endif /* _LINUX_PLATFORM_DATA_TI_PRM_H */
+-const struct imx_pll14xx_rate_table imx_pll1443x_tbl[] = {
++static const struct imx_pll14xx_rate_table imx_pll1443x_tbl[] = {
+ 	PLL_1443X_RATE(650000000U, 325, 3, 2, 0),
+ 	PLL_1443X_RATE(594000000U, 198, 2, 2, 0),
+ 	PLL_1443X_RATE(393216000U, 262, 2, 3, 9437),
 -- 
-2.17.1
+2.7.4
 
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+
 
 _______________________________________________
 linux-arm-kernel mailing list
