@@ -2,98 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CA58D0229
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 22:32:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B05B7D023D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 22:38:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u9hSjodRVTq2GNotgI9Ig1alNciJsLaa/OTn4cIAj98=; b=qP0pPhpi31SNyH
-	NtfO7AIQgRydmD7MS5REuMVdCEVBFEvusM+v8yerBmorVcabsZCFgP5P8LdYb8eGOkkMZ7FPyW0W+
-	+9WE7THhPUj58sdWlBf57URKehWAJrDFy/688x8g+tIhj6e78h6qZeiPVFBZoTHqfQDgsj3qY28lU
-	TLsfXXu5E1N98OIxQNExHJwuYtRbazQe/XLi9vtsstqp3JWBzBdjP9W4tclumytJIEPhHI2xPMaEQ
-	a52Myc5Nr+VYR/CrhLQrGqf6Hq4S0HUjiP2T0rKlyx9sKeblhE4ZedFrHyvBqNfP6+tIhKAGO5lBD
-	mAD5BGfz81E1NQOH2wKw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Q7nmhv4elbwGYtAugf+Jx4gKEx9H9caub6K2xuQQT+o=; b=Vrg
+	MQBqpBSLFjAT95pXYoYM/yPRRXpFxk2Pw/WHIfzKdeXTSlvUs+o6xbeRMeG7pmcG5lXJZfE1U/vMJ
+	WpsBuJKRrKv9plCTeuNBWNKYG2m7nVw4zpWEfaSY1khbRfMuUeMEfkVsRjfacSRcDkzQWBx6sNmrR
+	1ytB3RcPTNRIUhyZhrpxhFPchA1uZ277CBgiFMRRxpu7MmaaImjWkcYbHzfGGueHfJGTiliS/n5Ui
+	Qc3ypw/3y6Dh8J7knbWsfeM+qVnZN79CeGFBymdaeY+/gl6DCw9EJMJTx+ZLsVQoqqealbJ1XzXXG
+	i/yPX/kftAcqrKmXCPemVM009eEAgjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHw9T-00005j-Id; Tue, 08 Oct 2019 20:32:11 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iHwFa-0002G1-3o; Tue, 08 Oct 2019 20:38:30 +0000
+Received: from bilbo.ozlabs.org ([203.11.71.1] helo=ozlabs.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHw9M-000056-BN
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 20:32:05 +0000
-Received: by mail-pf1-x441.google.com with SMTP id x127so54737pfb.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 08 Oct 2019 13:32:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=eG3/KTcN+l0J8/6h6CFjDe7V6XOLu3qvlhIP2AFfrys=;
- b=to94oEFRu7pxgY2G1Xez6EtBwR0f3yzChiGgys5tcUAprpjiFizEtLFTEfBhUswbwS
- +b6TW6lVGXl4mLAI4N3auzBq0yZMZCqptNh/Hrja7n2IfTO9vb/N15/IR8y0cnVkil3G
- XHH3y7a5zxQHC3wZYFFvm7Pqh5HXET1swlIRVWpE9Sywk5HGoA2nEoT+d/8bSrhOPgkA
- icePHEWyx6ekqLhZHjFp3fBjzhyj7hLulxxnd8XhpqLUycijtMwDhnxpgAq67FKnWR2y
- vdW6JNefJLtAVnRwzX/hGl9q6hjmdYUGPNbc/S+XjVI42xIfKYKlpbh7fzA40E8l+ekx
- UnTA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=eG3/KTcN+l0J8/6h6CFjDe7V6XOLu3qvlhIP2AFfrys=;
- b=m6skAGNPMuXF9ruC1xb0gLuH7JVI7Kkqr+ZB6nAxa3tfY9LHh4cpwEIZukNHl43EAy
- bKmRoaFsLrxgYtfqmaqQ/FCRKD0Cvv2oFnT8xUOjLS8AU3Io2y78q/ZnVo3rfx331i8p
- uOXkj0x2f+0LLjkxijQ8ShdnXst0wCUEbFko0+7piZF3LGSVndtzeCTC5LambVqTRiAj
- ZHfqiedi8JKQV5df60CRhggcNtYN82lQSCinPt1LeVLQFbzTg2NXxha/gO0nkteR60pi
- M32ooldOxvaSkYzIsGX8OVrvrUyXMnO/Ni66htN+FjRCddq4WnKqypyhzfcs+aA6J0KI
- SLmg==
-X-Gm-Message-State: APjAAAWRyN5r8PY5NCTynovSBPHnZiAo6Bq1M/uLXh6iL0KY+CuyU8Gr
- ljQciEcKa60xScTBWn4vqudAuw==
-X-Google-Smtp-Source: APXvYqzuXMuOJlcRChpjsyL5D5qPR+4R8/wPvf3J5IUiMHTYlcl02d8LMjqeowAKe6J+zFd5NRArUw==
-X-Received: by 2002:a62:e21a:: with SMTP id a26mr6636688pfi.80.1570566723059; 
- Tue, 08 Oct 2019 13:32:03 -0700 (PDT)
-Received: from google.com ([2620:15c:2cb:1:e90c:8e54:c2b4:29e7])
- by smtp.gmail.com with ESMTPSA id r18sm16766pfc.3.2019.10.08.13.32.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 08 Oct 2019 13:32:02 -0700 (PDT)
-Date: Tue, 8 Oct 2019 13:31:57 -0700
-From: Brendan Higgins <brendanhiggins@google.com>
-To: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
-Subject: Re: [PATCH 3/5] i2c: aspeed: fix master pending state handling
-Message-ID: <20191008203157.GA184092@google.com>
-References: <20191007231313.4700-1-jae.hyun.yoo@linux.intel.com>
- <20191007231313.4700-4-jae.hyun.yoo@linux.intel.com>
+ id 1iHwFT-0002Er-Ih
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 20:38:25 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 46nq1N2f5yz9sCJ;
+ Wed,  9 Oct 2019 07:38:16 +1100 (AEDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
+ s=201702; t=1570567099;
+ bh=MrlA8glPOdIlnMDdmhWkEzsJ4Uw18kpN8kq97gWX804=;
+ h=Date:From:To:Cc:Subject:From;
+ b=TADT4mDEYP9VeyEU5hHnVpHW7HEihrCrk1l56tt3aNebVfN34fBKiIbXXiV1GkA9m
+ F88LANLhMK+pbrEb/XjJ16yczM1/WYUiCgGGEZsSdgiRSUwuHoNQHASIR1zyNUvMlQ
+ bgYKURzxuQjvsM2SNwbnkRfQmoL3m55lT2pMPVda19KxzFXDYEntEIzXw9MhqUdQB0
+ MbvsdfVrAtDDgGCWFho3fpiQlR6HBxIWkmuAb9ss0X1Lo54Jpcsa0/ITbT/iHIb23X
+ GUeyT/aur28jO6UJ/YUPifV4mQIQGYoTvQRG6pZLtg9YX7MovRfniO0dM9Ahs0aqZK
+ 0SqmnCB2QHQ3Q==
+Date: Wed, 9 Oct 2019 07:38:03 +1100
+From: Stephen Rothwell <sfr@canb.auug.org.au>
+To: Jason Cooper <jason@lakedaemon.net>, Andrew Lunn <andrew@lunn.ch>,
+ Gregory Clement <gregory.clement@bootlin.com>, ARM
+ <linux-arm-kernel@lists.infradead.org>
+Subject: linux-next: Fixes tags need some work in the mvebu tree
+Message-ID: <20191009073803.633c02b5@canb.auug.org.au>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191007231313.4700-4-jae.hyun.yoo@linux.intel.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_133204_414666_F048DB67 
-X-CRM114-Status: GOOD (  10.30  )
-X-Spam-Score: -13.9 (-------------)
+X-CRM114-CacheID: sfid-20191008_133823_836963_86498C0C 
+X-CRM114-Status: UNSURE (   6.46  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-13.9 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 1.8 FSL_HELO_FAKE          No description available.
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ no trust [203.11.71.1 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,34 +76,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-aspeed@lists.ozlabs.org, Andrew Jeffery <andrew@aj.id.au>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, openbmc@lists.ozlabs.org,
- Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
- Tao Ren <taoren@fb.com>, linux-arm-kernel@lists.infradead.org,
- linux-i2c@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Miquel Raynal <miquel.raynal@bootlin.com>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Marek =?UTF-8?B?QmVow7pu?= <marek.behun@nic.cz>
+Content-Type: multipart/mixed; boundary="===============8132517445940776963=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 07, 2019 at 04:13:11PM -0700, Jae Hyun Yoo wrote:
-> In case of master pending state, it should not trigger the master
-> command because this H/W is sharing the same data buffer for slave
-> and master operations, so this commit fixes the issue with making
-> the master command triggering happen when the state goes to active
-> state.
+--===============8132517445940776963==
+Content-Type: multipart/signed; boundary="Sig_/83NC32yotp61XK8KAkelqst";
+ protocol="application/pgp-signature"; micalg=pgp-sha256
 
-nit: Makes sense, but can you explain what might happen without your
-change?
+--Sig_/83NC32yotp61XK8KAkelqst
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
 
-> Signed-off-by: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
+Hi all,
 
-Reviewed-by: Brendan Higgins <brendanhiggins@google.com>
+In commit
 
-Thanks!
+  69eea31a26da ("arm64: dts: armada-3720-turris-mox: convert usb-phy to phy=
+-supply")
+
+Fixes tag
+
+  Fixes: eb6c2eb6c7fb ("usb: host: xhci-plat: Prevent an abnormally
+
+has these problem(s):
+
+  - Subject has leading but no trailing parentheses
+  - Subject has leading but no trailing quotes
+
+Please do not split Fxes tags across more than one line.
+
+In commit
+
+  46cb29381635 ("arm64: dts: marvell: Add AP806-dual missing CPU clocks")
+
+Fixes tag
+
+  Fixes: e043bbd61e01 ("arm64: dts: marvell: Add cpu clock node on Armada 7=
+K/8K")
+
+has these problem(s):
+
+  - Target SHA1 does not exist
+
+Did you mean
+
+Fixes: c00bc38354cf ("arm64: dts: marvell: Add cpu clock node on Armada 7K/=
+8K")
+
+--=20
+Cheers,
+Stephen Rothwell
+
+--Sig_/83NC32yotp61XK8KAkelqst
+Content-Type: application/pgp-signature
+Content-Description: OpenPGP digital signature
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl2c86sACgkQAVBC80lX
+0Gx6ngf/c4xA1GN4BnVOwkZqXYTiKSh6eCut+R+VYVT/MNfPqNHgnQ66UGIaqYqY
+NSH5O3N5DUY7pBLVFaLzAxrSstrALc3+4JMPW9MRFp/g7uZzqRo0v7/JiybrM/EY
+GuoRe5iNq8sLE3PX42zrVdpp8qTi1ofP3M+kIx3/2Gs40qbVrsBRp2LxKMV8H7Kb
+xyBqdi0v8fL2IAOa1wQYyfLd8JD8vvs+IwL7gl3Gt4JPqS3ZWHZIhz4Lvsr/ErHe
+c2FxX4A0tAnky2hnyrud8j2FsJ2sKmflQywFaQYga7725JjT3imoci8xPU4XuBpx
+oKOum6awQogQG84dJGdpqHFHknvYVw==
+=bBKv
+-----END PGP SIGNATURE-----
+
+--Sig_/83NC32yotp61XK8KAkelqst--
+
+
+--===============8132517445940776963==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8132517445940776963==--
+
