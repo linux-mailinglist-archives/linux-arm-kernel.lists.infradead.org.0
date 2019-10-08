@@ -2,88 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9547CFD27
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 17:06:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA9D5CFD2C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 17:08:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U+pp0LglQEorWWAOuhvk8YYEBW3XSULaWjJwS3+JHDE=; b=PXIvujiwZgWK7n
-	6Vu/4qJ7bW19KiJBCJBbow+HDI+V7h0ysOPhvCe8KzECoHe7IdyP1t7u6PWysiEUHXjvgZKY4yryz
-	cnWdqO69pFDFfKvtuJfyr9motiKhEZJXwvXam3mD576/NW28sfr5XxH7gTe9i8J0Wno6NFVGzcgSf
-	wOtUGOQkjJh1S/Cc3iy2LfxG2yIliRVTmwM8OFG6Vz5qyNNfQHI00+uq2PaU2wmSMOubGjpySxMMS
-	B9JVpIbuka0Y0tu+IvGI6PEFrHXtk+3Y+i0UZXXIwFxqlNH9NCQmTmTyKu9LvagDv6CRWWlOHmRRE
-	msmsdjK9U4XzQQibBXcw==;
+	List-Owner; bh=JfPfY9egKAhG98aY8D+S9nY7y6aDAoCoHErhyqEJUdw=; b=Xi+Nv8SHVGZNEX
+	ca4mCEUg14j4ig9QDG3RAftcka1jnSA5LVIY42RKZv+y4ZvZ6B4oJGBWwak2qhUPhG6UZ5JutJZYg
+	C9GPwqMRbyVnnaqKxrYdbFxULzTIomky1thkFvhHgrjMQ6FWOa7q4c3GSzXzU1bC+4S804QNdabps
+	ngxj5eeRFvCfvozKVsFS11NN+LoA92WzAjAfU2ShXap2sC9WxKUTVBjF6mCzvribg5goUDW0FJ2k2
+	qj8vQ36gSgD7Y8b/DanDOZPbcMwndTMQxMkdljJiETaSJdSN8PE8riflWp8/QswLSQwUnDGEHDMpP
+	TCjbqBwnm2HQsoVJTbOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHr3z-0001i1-O2; Tue, 08 Oct 2019 15:06:11 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHr3o-0001gP-Ti
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 15:06:02 +0000
-Received: by mail-pf1-x443.google.com with SMTP id q5so10895410pfg.13
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 08 Oct 2019 08:06:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=tzsRg9pgEa9ifvg41ObkDkwx5TvwMyRk1wxFJpblvlg=;
- b=G8uczl3RULQcRPZNuuCGSUomb/snylYiJ6arGsUloQ3Wa2+dSUqI/YENI2cilQPHq+
- eA3+zmXi0bCaRtlqrEy+DS9RnTMUiUNxO7mtjIW0Oiv+ayXsEwyO1XyYkZs+MHOgW5wu
- oo7eY39CvJcRKrVWmog/2bO2uGO+77/Ey6dQDwRu2cePnp97SenCamFTlNwEhPwdn30b
- eKObB9wkms+pp9bQfr6USpdBqSs/idPOEUXkd5ziVWpP5BZomIUV9TSOmhWqXpWjNkHv
- 7mqwMZ5Q2KRhss4E0XnwCxFBcGdvFhuBOHQT+4vIwhLu6XPGYqhiiyZVyUyltufgpUw1
- LQNQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=tzsRg9pgEa9ifvg41ObkDkwx5TvwMyRk1wxFJpblvlg=;
- b=Q6dbV37ibH2w4Y7EmINiOmuhmv+o/aVLVjhCmE71AyobaVRPSeO6QvfhcpumVi8THG
- x2U5xQffQ6V+rNGBulXQOz2D8xQ35Z5VFkWQLD9rPDoTTFQsFz8WCa3MzuUTlLos2Jtd
- q0evPKGmsOoCwpzGOGO4V/y9yhQQiuMoDFs2BUTQ35Q8+MCXXtumpgSde7u8TIRuMiRV
- 0f6I6LgMEj1isfCINReQsHQ2C/5aqLuplAmlMexz1jeS77K/LyH4qPuLtyW6P7z/evp+
- SI+X59HFdU39hnT1gpv9pe3bLC/bP3l43OZgiz6EPEhQcxwg1T/cEQ0kMIwgZowuPCaG
- wCOg==
-X-Gm-Message-State: APjAAAUAcfLHfufUU6Y8jXHFjUrMxUuB5rFSBgJrbrGYsGrZCvzZgc+t
- d5Wrk0qyRjOn+OyF9oc3l7LP9g==
-X-Google-Smtp-Source: APXvYqxhixa3F/cEc785OVOZs0F2stbVxXL2Q91Zz8G3dA0FQLAg7s6F+eNuzgo0xQ6EBlfs3p8Uew==
-X-Received: by 2002:a65:48ca:: with SMTP id o10mr7551202pgs.116.1570547160188; 
- Tue, 08 Oct 2019 08:06:00 -0700 (PDT)
-Received: from localhost ([2601:602:9200:a1a5:8d4b:adae:e1eb:fe8e])
- by smtp.gmail.com with ESMTPSA id u3sm17330522pfn.134.2019.10.08.08.05.59
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 08 Oct 2019 08:05:59 -0700 (PDT)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Saurav Girepunje <saurav.girepunje@gmail.com>, balbi@kernel.org,
- gregkh@linuxfoundation.org, linux-usb@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] usb: dwc3: dwc3-meson-g12a.c: use
- devm_platform_ioremap_resource()
-In-Reply-To: <20191008102751.GA10401@saurav>
-References: <20191008102751.GA10401@saurav>
-Date: Tue, 08 Oct 2019 08:05:58 -0700
-Message-ID: <7h7e5f5lbd.fsf@baylibre.com>
+	id 1iHr5b-00024S-Ms; Tue, 08 Oct 2019 15:07:51 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHr5R-00023S-4j
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 15:07:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C79B81570;
+ Tue,  8 Oct 2019 08:07:37 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DB9FA3F68E;
+ Tue,  8 Oct 2019 08:07:36 -0700 (PDT)
+Date: Tue, 8 Oct 2019 16:07:34 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Cristian Marussi <cristian.marussi@arm.com>
+Subject: Re: [PATCH v6 05/11] kselftest: arm64: mangle_pstate_ssbs_regs
+Message-ID: <20191008150732.GW27757@arm.com>
+References: <20190910123111.33478-1-cristian.marussi@arm.com>
+ <20190910123111.33478-6-cristian.marussi@arm.com>
+ <20190917160555.GM27757@arm.com>
+ <022fce81-ac93-5ccf-a19b-83791e6469f1@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <022fce81-ac93-5ccf-a19b-83791e6469f1@arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_080600_955914_DF832C51 
-X-CRM114-Status: GOOD (  13.14  )
+X-CRM114-CacheID: sfid-20191008_080741_267998_5116D5D8 
+X-CRM114-Status: GOOD (  51.18  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,49 +63,343 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: saurav.girepunje@hotmail.com
+Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
+ linux-kselftest@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Saurav Girepunje <saurav.girepunje@gmail.com> writes:
+On Mon, Oct 07, 2019 at 07:23:19PM +0100, Cristian Marussi wrote:
+> Hi
+> 
+> finally back on this series.
+> 
+> On 17/09/2019 17:05, Dave Martin wrote:
+> > On Tue, Sep 10, 2019 at 01:31:05pm +0100, Cristian Marussi wrote:
+> >> Add a simple mangle testcase which messes with the ucontext_t from within
+> >> the signal handler, trying to set the PSTATE SSBS bit and verify that
+> >> SSBS bit set is preserved across sigreturn.
+> >> When available, use MRS SBSS support to set/get SSBS bit, otherwise lookup
+> >> PSTATE.SSBS directly.
+> >>
+> >> Additionally, in order to support this test specific needs:
+> >> - extend signal testing framework to allow the definition of a custom
+> >>   per test initialization function to be run at the end of test setup
+> >>   and before test run routine.
+> >> - introduce a set_regval() helper to set system register values in a
+> >>   toolchain independent way.
+> >> - introduce also a new common utility function: get_current_context()
+> >>   which can be used to grab a ucontext without the help of libc, and
+> >>   detect if such ucontext has been actively used to jump back.
+> >>
+> >> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+> >> ---
+> >> v5 --> v6
+> >> - using SIGTRAP as sig_copyctx for get_current_context()
+> >> - get_current_context() is now __always_inline
+> >> - last minute check for SSBS cleared
+> >> - restore volatile usage, dropping useless DSB
+> >> - output clobber on *dest_uc
+> >> - no abort() on SSSB not cleared
+> >> - refactored/relocated test_init() call to be after test_setup()
+> >>   [to catch early SIGILL while initializing]
+> >> - avoid MRS SSBS when !feats_ok()...use instead PSTATE.SSBS
+> >> - refactored SIG_COPYCTX usage to fit new splitted-by-signal layout
 
-> Use the new helper that wraps the calls to platform_get_resource()
-> and devm_ioremap_resource() together in dwc3_meson_g12a_probe().
+[...]
+
+> >> diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.h b/tools/testing/selftests/arm64/signal/test_signals_utils.h
+
+[...]
+
+> >> +static __always_inline bool get_current_context(struct tdescr *td,
+> >> +						ucontext_t *dest_uc)
+> >> +{
+> >> +	static volatile bool seen_already;
+> >> +
+> >> +	assert(td && dest_uc);
+> >> +	/* it's a genuine invocation..reinit */
+> >> +	seen_already = 0;
+> > 
+> > Nit: can we have "= 0" as an initializer in the declaration above?
+> > 
+> 
+> Not sure if you mean to add a zero initialization to the static
+> declaration or to fold this apparently redundant
+> 
+> >> +	seen_already = 0;
+> 
+> into the above.
+> 
+> If you mean the latter folding I think I cannot for the following reasons:
+> 
+> the static seen_already is placed out of the stack and automatically
+> initialized to 0 once for all at program initialization.
+> 
+> >> +	static volatile bool seen_already;
+> 
+> After that, seen_already is set to 1 after the context has been
+> grabbed using the brk/SIGTRAP trick in order to signify that context
+> has been grabbed successfully.  But is is set to 1 only after having
+> been checked for ZERO in order to detect if we happened to arrive
+> here in the middle of this function as the unexpected result of a
+> fake_sigreturn using this context.
 >
-> Signed-off-by: Saurav Girepunje <saurav.girepunje@gmail.com>
+> >> +	if (seen_already) {
+> >> +		fprintf(stdout,
+> >> +			"Unexpected successful sigreturn detected: live_uc is stale !\n");
+> >> +		return 0;
+> >> +	}
+> >> +	seen_already = 1;
+> 
+> So get_current_context returns 1 on success when a good context has
+> been grabbed, while returns 0 when in fact returning from a sigreturn
+> using a previously grabbed context (in a highly corrupted stack
+> frame...so you'll probably want to exit straight away in the caller
+> at that point.)
+> 
+> Now answering finally your (possible) question about the apparently
+> redundant
+> 
+>  >> seen_already = 0;
+> 
+> what happens if I call regularly two times in sequence this utility
+> function in the same program ?
+> 
+> say at first to grab a context to analyze the PSTATE reported there,
+> and maybe again later to grab another context to put onto the stack,
+> or to recheck the PSTATE ?
+> 
+> I would expect NOT to fail and obtain both times a new valid context,
+> but my understanding is that in order to be able to do so, I'll have
+> to re-initialize to 0 the seen_already flag explicitly on each
+> invocation.
 
-Reviewed-by: Kevin Hilman <khilman@baylibre.com>
+My bad -- I'd confused myself and missed the significance of "static"
+here.  As you point out, seen_already needs to be static for other
+reasons, and reinitialised each time we call this function.
 
-> ---
->  drivers/usb/dwc3/dwc3-meson-g12a.c | 4 +---
->  1 file changed, 1 insertion(+), 3 deletions(-)
->
-> diff --git a/drivers/usb/dwc3/dwc3-meson-g12a.c b/drivers/usb/dwc3/dwc3-meson-g12a.c
-> index bca7e92a10e9..d73ccd9e1366 100644
-> --- a/drivers/usb/dwc3/dwc3-meson-g12a.c
-> +++ b/drivers/usb/dwc3/dwc3-meson-g12a.c
-> @@ -386,7 +386,6 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
->  	struct device		*dev = &pdev->dev;
->  	struct device_node	*np = dev->of_node;
->  	void __iomem *base;
-> -	struct resource *res;
->  	enum phy_mode otg_id;
->  	int ret, i, irq;
->  
-> @@ -394,8 +393,7 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
->  	if (!priv)
->  		return -ENOMEM;
->  
-> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	base = devm_ioremap_resource(dev, res);
-> +	base = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(base))
->  		return PTR_ERR(base);
->  
-> -- 
-> 2.20.1
+So you were right to ignore this nitpick :)
+
+> >> +	td->live_uc_valid = 0;
+> >> +	td->live_sz = sizeof(*dest_uc);
+> >> +	memset(dest_uc, 0x00, td->live_sz);
+> >> +	td->live_uc = dest_uc;
+> >> +	/*
+> >> +	 * Grab ucontext_t triggering a SIGTRAP.
+> >> +	 *
+> >> +	 * Note that:
+> >> +	 * - live_uc_valid is declared volatile sig_atomic_t in
+> >> +	 *   struct tdescr since it will be changed inside the
+> >> +	 *   sig_copyctx handler
+> >> +	 * - the additional 'memory' clobber is there to avoid possible
+> >> +	 *   compiler's assumption on live_uc_valid, seen-already and
+> > 
+> > I could be wrong about this, but I'm not sure that the "memory" clobber
+> > is sufficient for for seen_already, because of the way that variable is
+> > scoped to this function; however, you declare seen_already volatile
+> > anyway which should be sufficient.
+> > 
+> > I suggest you just omit seen_already from this comment.
+> > 
+> 
+> Ok
+> 
+> 
+> >> +	 *   the content pointed by dest_uc, which are all changed inside
+> >> +	 *   the signal handler
+> >> +	 * - BRK causes a debug exception which is handled by the Kernel
+> >> +	 *   and finally causes the SIGTRAP signal to be delivered to this
+> >> +	 *   test thread. Since such delivery happens on the ret_to_user()
+> >> +	 *   /do_notify_resume() debug exception return-path, we are sure
+> >> +	 *   that the registered SIGTRAP handler has been run to completion
+> >> +	 *   before the execution path is restored here: as a consequence
+> >> +	 *   we can be sure that the volatile sig_atomic_t live_uc_valid
+> >> +	 *   carries a meaningful result. Being in a single thread context
+> >> +	 *   we'll also be sure that any access to memory modified by the
+> >> +	 *   handler (namely ucontext_t) will be visible once returned.
+> >> +	 * - note that since we are using a breakpoint instruction here
+> >> +	 *   to cause a SIGTRAP, the ucontext_t grabbed from the signal
+> >> +	 *   handler would naturally contain a PC pointing exactly to this
+> >> +	 *   BRK line, which means that, on return from the signal handler,
+> >> +	 *   or if we place the ucontext_t on the stack to fake a sigreturn,
+> >> +	 *   we'll end up in an infinite loop of BRK-SIGTRAP-handler.
+> >> +	 *   For this reason we take care to artificially move forward the
+> >> +	 *   PC to the next instruction while inside the signal handler.
+> >> +	 */
+> >> +	asm volatile ("brk #666"
+> >> +		      : "=m" (*dest_uc)
+> > 
+> > Make this an input-output argument ("+m")?  The memset() needs to
+> > take effect happen before the asm.
+> > 
+> 
+> Ok
+> 
+> 
+> >> +		      :
+> >> +		      : "memory");
+> >> +
+> >> +	/*
+> >> +	 * If we get here with seen_already==1 it implies the td->live_uc
+> >> +	 * context has been used to get back here....this probably means
+> >> +	 * a test has failed to cause a SEGV...anyway live_uc does not
+> >> +	 * point to a just acquired copy of ucontext_t...so return 0
+> >> +	 */
+> >> +	if (seen_already) {
+> >> +		fprintf(stdout,
+> >> +			"Unexpected successful sigreturn detected: live_uc is stale !\n");
+> >> +		return 0;
+> >> +	}
+> >> +	seen_already = 1;
+> >> +
+> >> +	return td->live_uc_valid;
+> >> +}
+> >>  #endif
+> >> diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c
+> >> new file mode 100644
+> >> index 000000000000..e2b87ea4c11f
+> >> --- /dev/null
+> >> +++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c
+> >> @@ -0,0 +1,88 @@
+> >> +// SPDX-License-Identifier: GPL-2.0
+> >> +/*
+> >> + * Copyright (C) 2019 ARM Limited
+> >> + *
+> >> + * Try to mangle the ucontext from inside a signal handler, setting the
+> >> + * SSBS bit to 1 and veryfing that such modification is preserved.
+> >> + */
+> >> +
+> >> +#include <stdio.h>
+> >> +#include <stdlib.h>
+> >> +#include <signal.h>
+> >> +#include <ucontext.h>
+> >> +
+> >> +#include "test_signals_utils.h"
+> >> +#include "testcases.h"
+> >> +
+> >> +static void mangle_invalid_pstate_ssbs_init(struct tdescr *td)
+> >> +{
+> >> +	if (feats_ok(td)) {
+> >> +		fprintf(stderr, "Clearing SSBS to 0\n");
+> >> +		set_regval(SSBS_SYSREG, 0);
+> >> +	}
+> >> +}
+> >> +
+> >> +static int mangle_invalid_pstate_ssbs_run(struct tdescr *td,
+> >> +					  siginfo_t *si, ucontext_t *uc)
+> >> +{
+> >> +	ASSERT_GOOD_CONTEXT(uc);
+> >> +
+> >> +	/*
+> >> +	 * If HW_SSBS is supported but we weren't able to clear SSBS during
+> >> +	 * test_init, or if something has reset SSBS in the meantime, abort.
+> > 
+> > What is "HW_SSBS" ?
+> > 
+> 
+> HWCAP_SSBS, I'll fix
+> 
+> 
+> >> +	 */
+> >> +	if (feats_ok(td) && (uc->uc_mcontext.pstate & PSR_SSBS_BIT)) {
+> >> +		fprintf(stderr,
+> >> +			"SSBS unexpectedly NOT zeroed ! Something's wrong. Abort\n");
+> >> +		abort();
+> >> +	}
+> >> +
+> >> +	/* set bit value ... should NOT be cleared by Kernel on sigreturn */
+> >> +	uc->uc_mcontext.pstate |= PSR_SSBS_BIT;
+> >> +	fprintf(stderr, "SSBS set to 1 -- PSTATE: 0x%016llX\n",
+> >> +		uc->uc_mcontext.pstate);
+> >> +	/* Save after mangling...it should be preserved */
+> >> +	td->saved_uc = *uc;
+> >> +
+> >> +	return 1;
+> >> +}
+> >> +
+> >> +static void pstate_ssbs_bit_checks(struct tdescr *td)
+> >> +{
+> >> +	uint64_t val = 0;
+> >> +	ucontext_t uc;
+> >> +
+> >> +	/* This check reports some result even if MRS SSBS unsupported */
+> >> +	if (get_current_context(td, &uc))
+> >> +		fprintf(stderr,
+> >> +			"INFO: live_uc - got PSTATE: 0x%016llX -> SSBS %s\n",
+> >> +			uc.uc_mcontext.pstate,
+> >> +			(td->saved_uc.uc_mcontext.pstate & PSR_SSBS_BIT) ==
+> >> +			(uc.uc_mcontext.pstate & PSR_SSBS_BIT) ?
+> >> +			"PRESERVED" : "CLEARED");
+> > 
+> > Don't we subsequently refer to uc even if get_current_context() failed
+> > here?
+> > 
+> 
+> Yes, but in fact in this invocation it cannot fail, it can fail only
+> once a sigreturn with a previously grabbed context uses it and unexpectedly
+> returns.
+> Even though the if is redundant in fact here, it is misleading as used now,
+> I'll fix checking the retvalue and bailing out with abort() in case
+> get_curent_context unexpectedly failed in this conetxt.
+
+OK, that sounds like a cleaner approach, even though I guess you're
+correct that the failure is impossible here.
+> 
+> 
+> >> +	/* Choose check method depending of supported features */
+> >> +	if (feats_ok(td)) {
+> >> +		fprintf(stderr, "Checking with MRS SSBS...\n");
+> >> +		get_regval(SSBS_SYSREG, val);
+> >> +		fprintf(stderr, "INFO: MRS SSBS - got: 0x%016lX\n", val);
+> >> +	} else {
+> >> +		fprintf(stderr, "Checking with PSTATE.SSBS...\n");
+> >> +		val = uc.uc_mcontext.pstate;
+> >> +	}
+> >> +	/* pass when preserved */
+> >> +	td->pass = (val & PSR_SSBS_BIT) ==
+> >> +		   (td->saved_uc.uc_mcontext.pstate & PSR_SSBS_BIT);
+> > 
+> > Does this mean the test fails when SSBS isn't supported at all?  That
+> > doesn't seem right.
+> > 
+> > I think trying to handle both levels of SSBS support within the same
+> > test is complicating things here.  The purpose of this is to check
+> > that sigreturn doesn't mask out the SSBS bit when it shouldn't: we don't
+> > care whether the SSBS architecture feature actually works.
+> > 
+> > So, would it be simpler to drop the MSR/MRS direct access to the SSBS
+> > bit?
+> > 
+> > Instead, we could predicate this test on whether ID_AA64PFR1_EL1.SSBS
+> >> = 1 instead of HWCAP_SSBS, and we could just check that run() can
+> > successfully _toggle_ uc->uc_mcontext.pstate ^= PSR_SSBS_BIT, with the
+> > change checked via a subsequent get_current_context().
+> > 
+> 
+> Ok I'll check on ID_AA64PFR1_EL1.SSBS >= 1 instead of
+> HWCAP_SSBS,since it is all I need to be able to use PSTATE.SSBS (with
+> .SSBS=2 I've got also MRS/MSR which does NOT hurt)
+> 
+> I'll SKIP if support is missing returning KSFT_SKIP (extending
+> test_init related logic for this)
+> 
+> > In other words, we no longer try to initialise SSBS to a particular
+> > value.  Instead, we just check the we can change the bit.
+> > 
+> > Does that make sense?
+> > 
+> 
+> Yes but I'll have anyway to test by setting to SSBS in the ucontext 
+> (only when SSBS supported as said), and verify that is NOT cleared, because
+> if I toggle the bit 1-->0 then I would have nothing to check really.
+> (I made this error already in a previous iteration...)
+
+Hmmm, OK, I'll take a another look when reviewing v7.
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
