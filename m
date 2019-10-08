@@ -2,80 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B69D3D0180
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 21:52:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95CDED0181
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 21:53:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OuGoISNaMvSeLp/eifiKVyfzIEgCVWRdARFYeFSZzLk=; b=m6ZE8DcmPneip4
-	zkd4XepxvJMHjDd35EOuf5FJnJaDtIwNe+/hVLgUU53iF+i1zy3zDcj8il4YI8iEGlGK1rdCU+jTF
-	w05EJmqdk345pEXiNCF/sq8vOisNWcXI/6MfseREzOIzBKBNXF+hvfYdWjfs1nxnZvZStIm+m4FJp
-	B1htforFCJPvecLr1uenzfASE55g1wcgHonf6zLnKR1s3fitT1a12Y4EzJ9maWjCRjiAvMI1l5dvw
-	M6xEAt4mImQJ0lUNwshuE3H0UuABhrP9fXbWJFr/XNyO7TIbBSHHZQLf4agETkVsvYb7JAdsPjALL
-	FDah6hUhviUbl95mMX8A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CtZkcWR0xaZnmSNDa0H3Q4UkSI+tCtAdNnQhwdX0OB0=; b=G4NzrxFSyJrH+o
+	O1wWt4cvU4K5io6BJbBXOK1o2QBD4Hj+o1gn0aAG4Aq4nViX8VOoZ1//K/CvV2j4rwI6fav+ZCiG3
+	sPoCLcNFHYegg1dgj5DdfjjqPQCg/kW/i9UeslbbjhqV1HxwGZGeZ/+6K3IIjKvTDhLBzJJmyRixT
+	sBPdFEoTXUEcBmTFBAgYCMIfmICLuJKlI1tHx0y1VgqEAHKr6XLTAo9ObeUmnyczH2y63ZDnBVAHH
+	/oGemud+aEh777VU9mdDbf31v7fnI7fd7PvOor+a8+p7+Z/uQ6DnxEPabW4ANSJwVrB8sEcJ/h7GB
+	P2eNi4xqD1qS4VN7CS+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHvXR-0002ZR-0p; Tue, 08 Oct 2019 19:52:53 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHvXH-0002YH-Ri
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 19:52:45 +0000
-Received: by mail-oi1-f196.google.com with SMTP id t84so15871905oih.10
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 08 Oct 2019 12:52:42 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=2DpOnxNX3I7+J8dRMWaO+FigaTKEbqHibu1OQL1peJY=;
- b=CNTnl4dGfNJ1d7046mDI4wozUva9mm3qEYO5dDz5DFytBRVBGVfOt4MU7jp0OHMRM/
- xFK78WS0+OEq925INcD8LBiTVsFumfziFsh+YNx98TnyPm7AdZX6p733bxJSojdMo3Zp
- 54K8lIA9f181Xd3eCmi9qRWhCCJ+lbh8Ka21Tm9Mk1sVVlY/6R4iX2OiqQaJLGRwoVpU
- PJo0l0NdI0VmQT+ncLcFNoeitoP+Jc48biScD+h7eqjcxZFUqEe3GoBgmzZVWlwSG0kq
- QxaXMPAR5FkB41NCMb3jRKt4tBIphKmN53zvI0gPPfgIdAu5AQ5hsVH04sFIuGRkcumS
- WwvQ==
-X-Gm-Message-State: APjAAAX893HW6/gzPpXaciAYklt4DSoBBqE1F8CbchbgXSJt5sLGwXDV
- +pA9BNJPdF1OAHmIojmGug==
-X-Google-Smtp-Source: APXvYqx3UCdVEhyicSwZJeq8Uk0rPo4W8xc+pe7UghGarV6P5NA3FcZJ4CC9ipmykIi72BrvPCmPhg==
-X-Received: by 2002:aca:b342:: with SMTP id c63mr5424396oif.91.1570564361631; 
- Tue, 08 Oct 2019 12:52:41 -0700 (PDT)
-Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id z10sm6151032ote.54.2019.10.08.12.52.40
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 08 Oct 2019 12:52:40 -0700 (PDT)
-From: Rob Herring <robh@kernel.org>
-To: devicetree@vger.kernel.org
-Subject: [PATCH v2] of: Make of_dma_get_range() work on bus nodes
-Date: Tue,  8 Oct 2019 14:52:39 -0500
-Message-Id: <20191008195239.12852-1-robh@kernel.org>
-X-Mailer: git-send-email 2.20.1
+	id 1iHvXm-0002nA-Be; Tue, 08 Oct 2019 19:53:14 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHvXQ-0002fN-LT
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 19:52:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C8D1515BE;
+ Tue,  8 Oct 2019 12:52:51 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4C7243F68E;
+ Tue,  8 Oct 2019 12:52:51 -0700 (PDT)
+Date: Tue, 8 Oct 2019 20:52:49 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH v2 4/5] arm64: perf: Add reload-on-overflow capability
+Message-ID: <20191008195248.GJ42880@e119886-lin.cambridge.arm.com>
+References: <20191008160128.8872-1-maz@kernel.org>
+ <20191008160128.8872-5-maz@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191008160128.8872-5-maz@kernel.org>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_125243_895010_4D5B22BC 
-X-CRM114-Status: GOOD (  20.34  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191008_125252_812363_CF62AF5E 
+X-CRM114-Status: GOOD (  25.99  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,144 +61,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>, Arnd Bergmann <arnd@arndb.de>,
- Frank Rowand <frowand.list@gmail.com>, linux-kernel@vger.kernel.org,
- Christoph Hellwig <hch@infradead.org>, Marek Vasut <marek.vasut@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- linux-arm-kernel@lists.infradead.org,
- Simon Horman <horms+renesas@verge.net.au>, Robin Murphy <robin.murphy@arm.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Stefan Wahren <wahrenst@gmx.net>
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Robin Murphy <robin.murphy@arm.com>
+On Tue, Oct 08, 2019 at 05:01:27PM +0100, Marc Zyngier wrote:
+> As KVM uses perf as a way to emulate an ARMv8 PMU, it needs to
+> be able to change the sample period as part of the overflow
+> handling (once an overflow has taken place, the following
+> overflow point is the overflow of the virtual counter).
+> 
+> Deleting and recreating the in-kernel event is difficult, as
+> we're in interrupt context. Instead, we can teach the PMU driver
+> a new trick, which is to stop the event before the overflow handling,
+> and reprogram it once it has been handled. This would give KVM
+> the opportunity to adjust the next sample period. This feature
+> is gated on a new flag that can get set by KVM in a subsequent
+> patch.
+> 
+> Whilst we're at it, move the CHAINED flag from the KVM emulation
+> to the perf_event.h file and adjust the PMU code accordingly.
+> 
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
+> ---
+>  arch/arm64/include/asm/perf_event.h | 4 ++++
+>  arch/arm64/kernel/perf_event.c      | 8 +++++++-
+>  virt/kvm/arm/pmu.c                  | 4 +---
+>  3 files changed, 12 insertions(+), 4 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/perf_event.h b/arch/arm64/include/asm/perf_event.h
+> index 2bdbc79bbd01..8b6b38f2db8e 100644
+> --- a/arch/arm64/include/asm/perf_event.h
+> +++ b/arch/arm64/include/asm/perf_event.h
+> @@ -223,4 +223,8 @@ extern unsigned long perf_misc_flags(struct pt_regs *regs);
+>  	(regs)->pstate = PSR_MODE_EL1h;	\
+>  }
+>  
+> +/* Flags used by KVM, among others */
+> +#define PERF_ATTR_CFG1_CHAINED_EVENT	(1U << 0)
+> +#define PERF_ATTR_CFG1_RELOAD_EVENT	(1U << 1)
+> +
+>  #endif
+> diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
+> index a0b4f1bca491..98907c9e5508 100644
+> --- a/arch/arm64/kernel/perf_event.c
+> +++ b/arch/arm64/kernel/perf_event.c
+> @@ -322,7 +322,7 @@ PMU_FORMAT_ATTR(long, "config1:0");
+>  
+>  static inline bool armv8pmu_event_is_64bit(struct perf_event *event)
+>  {
+> -	return event->attr.config1 & 0x1;
+> +	return event->attr.config1 & PERF_ATTR_CFG1_CHAINED_EVENT;
 
-Since the "dma-ranges" property is only valid for a node representing a
-bus, of_dma_get_range() currently assumes the node passed in is a leaf
-representing a device, and starts the walk from its parent. In cases
-like PCI host controllers on typical FDT systems, however, where the PCI
-endpoints are probed dynamically the initial leaf node represents the
-'bus' itself, and this logic means we fail to consider any "dma-ranges"
-describing the host bridge itself. Rework the logic such that
-of_dma_get_range() also works correctly starting from a bus node
-containing "dma-ranges".
+I'm pleased to see this be replaced with a define, it helps readers see the
+link between this and the KVM driver.
 
-While this does mean "dma-ranges" could incorrectly be in a device leaf
-node, there isn't really any way in this function to ensure that a leaf
-node is or isn't a bus node.
+>  }
+>  
+>  static struct attribute *armv8_pmuv3_format_attrs[] = {
+> @@ -736,8 +736,14 @@ static irqreturn_t armv8pmu_handle_irq(struct arm_pmu *cpu_pmu)
+>  		if (!armpmu_event_set_period(event))
+>  			continue;
+>  
+> +		if (event->attr.config1 & PERF_ATTR_CFG1_RELOAD_EVENT)
+> +			cpu_pmu->pmu.stop(event, PERF_EF_RELOAD);
 
-Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-[robh: Allow for the bus child node to still be passed in]
-Signed-off-by: Rob Herring <robh@kernel.org>
----
-Resending, hit send too quickly.
+I believe PERF_EF_RELOAD is only intended to be used in the stop calls. I'd
+suggest that you replace it with PERF_EF_UPDATE instead, this tells the PMU
+to update the counter with the latest value from the hardware. (Though the
+ARM PMU driver always does this regardless to the flag anyway).
 
-v2:
- - Ensure once we find dma-ranges, every parent has it.
- - Only get the #{size,address}-cells after we find non-empty dma-ranges
- - Add a check on the 'dma-ranges' length
+Thanks,
 
-This is all that remains of the dma-ranges series. I've applied the rest 
-of the series prep and fixes. I dropped "of: Ratify of_dma_configure() 
-interface" as the assertions that the node pointer being the parent only 
-when struct device doesn't have a DT node pointer is not always 
-true.
+Andrew Murray
 
-I didn't include any tested-bys as this has changed a bit. A git branch 
-is here[1].
-
-Rob
-
-[1] git://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git dma-masks-v2
-
- drivers/of/address.c | 44 ++++++++++++++++++--------------------------
- 1 file changed, 18 insertions(+), 26 deletions(-)
-
-diff --git a/drivers/of/address.c b/drivers/of/address.c
-index 5ce69d026584..99c1b8058559 100644
---- a/drivers/of/address.c
-+++ b/drivers/of/address.c
-@@ -930,47 +930,39 @@ int of_dma_get_range(struct device_node *np, u64 *dma_addr, u64 *paddr, u64 *siz
- 	const __be32 *ranges = NULL;
- 	int len, naddr, nsize, pna;
- 	int ret = 0;
-+	bool found_dma_ranges = false;
- 	u64 dmaaddr;
- 
--	if (!node)
--		return -EINVAL;
--
--	while (1) {
--		struct device_node *parent;
--
--		naddr = of_n_addr_cells(node);
--		nsize = of_n_size_cells(node);
--
--		parent = __of_get_dma_parent(node);
--		of_node_put(node);
--
--		node = parent;
--		if (!node)
--			break;
--
-+	while (node) {
- 		ranges = of_get_property(node, "dma-ranges", &len);
- 
- 		/* Ignore empty ranges, they imply no translation required */
- 		if (ranges && len > 0)
- 			break;
- 
--		/*
--		 * At least empty ranges has to be defined for parent node if
--		 * DMA is supported
--		 */
--		if (!ranges)
--			break;
-+		/* Once we find 'dma-ranges', then a missing one is an error */
-+		if (found_dma_ranges && !ranges) {
-+			ret = -ENODEV;
-+			goto out;
-+		}
-+		found_dma_ranges = true;
-+
-+		node = of_get_next_dma_parent(node);
- 	}
- 
--	if (!ranges) {
-+	if (!node || !ranges) {
- 		pr_debug("no dma-ranges found for node(%pOF)\n", np);
- 		ret = -ENODEV;
- 		goto out;
- 	}
- 
--	len /= sizeof(u32);
--
-+	naddr = of_bus_n_addr_cells(node);
-+	nsize = of_bus_n_size_cells(node);
- 	pna = of_n_addr_cells(node);
-+	if ((len / sizeof(__be32)) % (pna + naddr + nsize)) {
-+		ret = -EINVAL;
-+		goto out;
-+	}
- 
- 	/* dma-ranges format:
- 	 * DMA addr	: naddr cells
-@@ -978,7 +970,7 @@ int of_dma_get_range(struct device_node *np, u64 *dma_addr, u64 *paddr, u64 *siz
- 	 * size		: nsize cells
- 	 */
- 	dmaaddr = of_read_number(ranges, naddr);
--	*paddr = of_translate_dma_address(np, ranges);
-+	*paddr = of_translate_dma_address(node, ranges + naddr);
- 	if (*paddr == OF_BAD_ADDR) {
- 		pr_err("translation of DMA address(%llx) to CPU address failed node(%pOF)\n",
- 		       dmaaddr, np);
--- 
-2.20.1
-
+> +
+>  		if (perf_event_overflow(event, &data, regs))
+>  			cpu_pmu->disable(event);
+> +
+> +		if (event->attr.config1 & PERF_ATTR_CFG1_RELOAD_EVENT)
+> +			cpu_pmu->pmu.start(event, PERF_EF_RELOAD);
+>  	}
+>  	armv8pmu_start(cpu_pmu);
+>  
+> diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
+> index f291d4ac3519..25a483a04beb 100644
+> --- a/virt/kvm/arm/pmu.c
+> +++ b/virt/kvm/arm/pmu.c
+> @@ -15,8 +15,6 @@
+>  
+>  static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx);
+>  
+> -#define PERF_ATTR_CFG1_KVM_PMU_CHAINED 0x1
+> -
+>  /**
+>   * kvm_pmu_idx_is_64bit - determine if select_idx is a 64bit counter
+>   * @vcpu: The vcpu pointer
+> @@ -570,7 +568,7 @@ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx)
+>  		 */
+>  		attr.sample_period = (-counter) & GENMASK(63, 0);
+>  		if (kvm_pmu_counter_is_enabled(vcpu, pmc->idx + 1))
+> -			attr.config1 |= PERF_ATTR_CFG1_KVM_PMU_CHAINED;
+> +			attr.config1 |= PERF_ATTR_CFG1_CHAINED_EVENT;
+>  
+>  		event = perf_event_create_kernel_counter(&attr, -1, current,
+>  							 kvm_pmu_perf_overflow,
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
