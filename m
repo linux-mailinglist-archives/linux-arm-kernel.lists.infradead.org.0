@@ -2,84 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBF63CF4B0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 10:12:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2EA09CF4B8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 10:13:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tUh7bZrZDQp7dVVxO6hMYBD/ln6SkjZcPNjFT3XhAO4=; b=NpGSK8m7eIJMeC
-	LBQwTBl/MlRTs7yPP1v3Lg/vJBtsiy9Qmt3YzPl5mpoSthBaZsiNgnw3YHLVmLN077mZ+2d9IDGvX
-	2Z8J/P/FDqjoaBRdmMNzTZk5qp3hbnn4qWQDnqcR2h3uAd6dIgga8ZT9ofiMB7hCFy2nbSkb6pCy2
-	rYHPQ7ISE5pKxugTDlR00Hi4tieTk+VaYbaN0O6AARF3z+Qy8bvkZ6eCUBHeT6XxMLl3NgQNAYWg7
-	cEEDA6O4QkbrTCgDnf9NuSTN2MOTCZ+zl7l4gEgxSg+9fayA726iWCepBtjqoPo9vjUoekumgWCZ4
-	IU5C/HmjuvoRsrGLgNQg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aafwVDEBoMT4FQhWBEEUax5QljI9NWuPOfFpBZt8NmU=; b=KCOEO7IMySkgLS
+	W48j03ODm5iprB8g53hXypra0Y3q4klkkgDptNBRfWlifNRRo7+bU45iPX74+VQ5usYK8T55hYUUk
+	s+hyIq/q2q97oI8gUiPClfn4ihpN73y+XaBwO3O8Xl1mxR49kqR6bWEWa+He+lig3n3bz+y1gMjsH
+	4Ku8mwyP+esdTBhvp4FMahp+vdxFp3IIcECOqYHsoruzwGCUwBky21uwvJmC5XUVM//Pp0npkmCl+
+	t0o1vRYxuzSnGnR/2rGcdSdx1RF1hOMXWbcO9hd78B1JslLST+oJiSsabWFKguHXkxTas+OdTvjNe
+	uKjQkm1I2CUuM1tV9U8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHkbj-0004xf-9c; Tue, 08 Oct 2019 08:12:35 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHkbb-0004xH-2j
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 08:12:28 +0000
-Received: by mail-wm1-x341.google.com with SMTP id 7so2087469wme.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 08 Oct 2019 01:12:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=LAJeWVek9+aLgmvdjAZsqGDmpx8khR8m/1xNdMy/LmU=;
- b=JT3mp/3TimtB5NT7a/4TB3v6kdEb4XQ+j1HLPhK4Z7O68rHiVHHpQg5uJutBtPxOBE
- sb253QTGzy6+4QAAm/9EeNQ6Pcws242VYZ3BNMm2ayjwRuBcFlxPXbVg4fCUh8e9RgSC
- 0Xf0V1REjgVEziSFt0oi4YGEF9O7BYQk5nrBwQ+4DIi29amigZwVCxJVsKH7GZHngps9
- U3S426LYTo++XcY203qaa4WEUP3r9NOmQo4G4Gpowdrek6lHe0FNkGzPLdaKrhrZqbUw
- i5nXX4jbuKdqHh5y/OzjGo2tYvVrutf5Kl+BB7pIJHx7xf+gLxgQWR8CW4OOxBYPD22Y
- DpkQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=LAJeWVek9+aLgmvdjAZsqGDmpx8khR8m/1xNdMy/LmU=;
- b=hhpIy7MtO5XpfTx/rCa+dK/yrewPWYapaXTl9GwqAPYBRc25e/cP9HEGeXeh3hNzMP
- VKaCM94XqtT2TXROXwoP0k5IRok+1X+SoYyHVMotmId0hKbRaniO4numfyNiA7fV0NB4
- FlmMCHJ+VuK7NHhR8jr2Z/kZdulC97SWvO8kaZC2Mg4HvdkS1bJ7TLzUxLkcc2zsa1wg
- pbJZSp/Kx9KHZSjUeOJUiJBD7/WuTx2ZqYeBPTCQWIAQNfBXWVwCYcaTEZxXxBXaB0VT
- YDQjoswKM6n6p2aZC+Ur81NTVg6wph36QtU+LOPGCgLG/S3OZums3gu9LeDjpHLkHK4q
- DFpA==
-X-Gm-Message-State: APjAAAWSQdH+Ow+kEKLC9+VNMlZbhvOZ4LgVklzIURdEPi3e1A/CyFAC
- +TpYMYsAyPYcE5Na/D8EK3rpWuVi51Eb1gNS0EW/VzXwPq8=
-X-Google-Smtp-Source: APXvYqyXmMpR2i5h6dUUJUdvz8OO56fOXDa1KETEEXyh9EsGaf4WcoRY7ba6RnQqN/963beVyzzaJQ+7I2jPBUoWIhU=
-X-Received: by 2002:a1c:a651:: with SMTP id p78mr2710705wme.53.1570522345330; 
- Tue, 08 Oct 2019 01:12:25 -0700 (PDT)
+	id 1iHkcR-0005DR-RY; Tue, 08 Oct 2019 08:13:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHkcK-0005Cu-5j; Tue, 08 Oct 2019 08:13:13 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8C2581570;
+ Tue,  8 Oct 2019 01:13:11 -0700 (PDT)
+Received: from [10.162.40.139] (p8cg001049571a15.blr.arm.com [10.162.40.139])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 28D403F6C4; Tue,  8 Oct 2019 01:12:58 -0700 (PDT)
+Subject: Re: [PATCH V4 2/2] mm/pgtable/debug: Add test validating architecture
+ page table helpers
+To: "Kirill A. Shutemov" <kirill@shutemov.name>, Ingo Molnar <mingo@kernel.org>
+References: <1570427124-21887-1-git-send-email-anshuman.khandual@arm.com>
+ <1570427124-21887-3-git-send-email-anshuman.khandual@arm.com>
+ <20191007130617.GB56546@gmail.com> <20191007132607.4q537nauwfn5thol@box>
+ <20191007135158.GA36360@gmail.com> <20191007140058.um5g44rvxyzyiref@box>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <881796fc-c35e-3790-a1ee-7031c6cdb38d@arm.com>
+Date: Tue, 8 Oct 2019 13:43:22 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-References: <20191004120430.11929-1-ard.biesheuvel@linaro.org>
-In-Reply-To: <20191004120430.11929-1-ard.biesheuvel@linaro.org>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Tue, 8 Oct 2019 10:12:14 +0200
-Message-ID: <CAKv+Gu9sg0kpkHWDTdSO1Gz2iCpi2uKr0STQVOWReqw0UxUM4Q@mail.gmail.com>
-Subject: Re: [RFC/RFT PATCH 00/16] arm64: backport SSBS handling to
- v4.19-stable
-To: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+In-Reply-To: <20191007140058.um5g44rvxyzyiref@box>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_011227_132942_A083D217 
-X-CRM114-Status: GOOD (  10.84  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191008_011312_300546_21D9B19E 
+X-CRM114-Status: GOOD (  19.61  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,39 +64,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Jeremy Linton <jeremy.linton@arm.com>, Andre Przywara <andre.przywara@arm.com>,
- Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ James Hogan <jhogan@kernel.org>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
+ linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
+ Vlastimil Babka <vbabka@suse.cz>, Christophe Leroy <christophe.leroy@c-s.fr>,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 4 Oct 2019 at 14:04, Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
->
-> This is a fairly mechnical backport to v4.19 of the changes needed to support
-> managing the SSBS state, which controls whether Speculative Store Bypass is
-> permitted.
->
-> I have included Jeremy's sysfs changes as well, since they are equally
-> suitable for stable and made for a much cleaner backport, so it made
-> little sense to handle them separately.
->
-> These patches are presented for review, and are not being cc'ed to the
-> -stable maintainers just yet.
->
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Marc Zyngier <maz@kernel.org>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-> Cc: Jeremy Linton <jeremy.linton@arm.com>
-> Cc: Andre Przywara <andre.przywara@arm.com>
->
 
-If nobody has any objections, I'll send these out to -stable end of today.
+
+On 10/07/2019 07:30 PM, Kirill A. Shutemov wrote:
+> On Mon, Oct 07, 2019 at 03:51:58PM +0200, Ingo Molnar wrote:
+>>
+>> * Kirill A. Shutemov <kirill@shutemov.name> wrote:
+>>
+>>> On Mon, Oct 07, 2019 at 03:06:17PM +0200, Ingo Molnar wrote:
+>>>>
+>>>> * Anshuman Khandual <anshuman.khandual@arm.com> wrote:
+>>>>
+>>>>> This adds a test module which will validate architecture page table helpers
+>>>>> and accessors regarding compliance with generic MM semantics expectations.
+>>>>> This will help various architectures in validating changes to the existing
+>>>>> page table helpers or addition of new ones.
+>>>>>
+>>>>> Test page table and memory pages creating it's entries at various level are
+>>>>> all allocated from system memory with required alignments. If memory pages
+>>>>> with required size and alignment could not be allocated, then all depending
+>>>>> individual tests are skipped.
+>>>>
+>>>>> diff --git a/arch/x86/include/asm/pgtable_64_types.h b/arch/x86/include/asm/pgtable_64_types.h
+>>>>> index 52e5f5f2240d..b882792a3999 100644
+>>>>> --- a/arch/x86/include/asm/pgtable_64_types.h
+>>>>> +++ b/arch/x86/include/asm/pgtable_64_types.h
+>>>>> @@ -40,6 +40,8 @@ static inline bool pgtable_l5_enabled(void)
+>>>>>  #define pgtable_l5_enabled() 0
+>>>>>  #endif /* CONFIG_X86_5LEVEL */
+>>>>>  
+>>>>> +#define mm_p4d_folded(mm) (!pgtable_l5_enabled())
+>>>>> +
+>>>>>  extern unsigned int pgdir_shift;
+>>>>>  extern unsigned int ptrs_per_p4d;
+>>>>
+>>>> Any deep reason this has to be a macro instead of proper C?
+>>>
+>>> It's a way to override the generic mm_p4d_folded(). It can be rewritten
+>>> as inline function + define. Something like:
+>>>
+>>> #define mm_p4d_folded mm_p4d_folded
+>>> static inline bool mm_p4d_folded(struct mm_struct *mm)
+>>> {
+>>> 	return !pgtable_l5_enabled();
+>>> }
+>>>
+>>> But I don't see much reason to be more verbose here than needed.
+>>
+>> C type checking? Documentation? Yeah, I know it's just a one-liner, but 
+>> the principle of the death by a thousand cuts applies here.
+> 
+> Okay, if you think it worth it. Anshuman, could you fix it up for the next
+> submission?
+
+Sure, will do.
+
+> 
+> 
+>> BTW., any reason this must be in the low level pgtable_64_types.h type 
+>> header, instead of one of the API level header files?
+> 
+> I defined it next pgtable_l5_enabled(). What is more appropriate place to
+> you? pgtable_64.h? Yeah, it makes sense.
+
+
+Needs to be moved to arch/x86/include/asm/pgtable_64.h as well ?
 
 _______________________________________________
 linux-arm-kernel mailing list
