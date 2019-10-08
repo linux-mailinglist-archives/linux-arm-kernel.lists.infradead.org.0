@@ -2,60 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BDBCCF0D7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 04:34:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07BB3CF0F7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 04:56:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EHEzLEAGJqoZIXn0PnFIHN8Dp6iHJ9tzUDuvWR2G73A=; b=P27AZRMDJCJDB3
-	tYEG4ZhxiAaGu9JtOF3u+cnrT6/qAU0bNTcAM97mhrSCa5+sFOzhumddS8yD01D4/Spw16lZjaXy5
-	gGX/Y9saUrGGYEKamJchng/p2jpu7xJunMeW9MYKRwMBrX2KkiJ0Ut9DxJZd5kvK5w0OQEMyZ1pKW
-	No+k/ykUl+U1+llhWrAZfxViyNFvy5lS8QTtR3xyDDic8VQy17N8HNgHEI6OiINLjLsXvncSh2sPB
-	fhBjLdtMZq3qHU75og6rqUFNXFnusvRO5mLuiJSlzaeSjhFwIfhZwoqG5ubzKtjN5RPmQ61B6jdl9
-	bIkpKXpJBupsy3MnvtqA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=lBLVaILUKUycVJ+3EiLL38tWCs2P2jWDV7fV508qb44=; b=mom
+	dGvdMqK4E9OrqhDsNd7vtHgdeTo92XnT2JNhneBkaxTuM4L5HnGsgcz1mCEksBl/WUCGi2YQqCxAY
+	nCumy+1/qEblvB0Q0iHBFwrgMb1C2IfxL6ztZxwG5QDzDfYhWYpDuEeI1bRxoOYpKyxZMAPJDTi9B
+	7pdymUgkctVqf5R1f6r3wjc0gSiEJKKAaDtWLzd4CslWOscgh8OGHB7prv83eZ3aXMk6bcKCTlcCo
+	gpM4BSZ31AiaXOGrv3gBtfjefIaMvATxXk9VJnsh80hxAUBO+wPTnrnqIUA9WZKQIPX74F8OL0U8H
+	W6v3C8TowQSGiW7ieUZMy7VMMfuvt7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHfKs-0006h0-5n; Tue, 08 Oct 2019 02:34:50 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1iHffN-0006tG-Tf; Tue, 08 Oct 2019 02:56:01 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHfKi-0006gN-SJ
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 02:34:42 +0000
-Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 6D5EA265082CC7F488AD;
- Tue,  8 Oct 2019 10:34:35 +0800 (CST)
-Received: from [127.0.0.1] (10.177.251.225) by DGGEMS407-HUB.china.huawei.com
- (10.3.19.207) with Microsoft SMTP Server id 14.3.439.0;
- Tue, 8 Oct 2019 10:34:31 +0800
-Subject: Re: [PATCH v2] arm64: armv8_deprecated: Checking return value for
- memory allocation
-To: Will Deacon <will@kernel.org>
-References: <bd558d56-18a9-3607-3db0-ad203ab12aa8@huawei.com>
- <20191007153710.7xpx27kgeewz75kt@willie-the-truck>
-From: Yunfeng Ye <yeyunfeng@huawei.com>
-Message-ID: <e58c36f6-23e3-12b2-bd9c-1ef731b5f8fd@huawei.com>
-Date: Tue, 8 Oct 2019 10:33:17 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <20191007153710.7xpx27kgeewz75kt@willie-the-truck>
-Content-Language: en-US
-X-Originating-IP: [10.177.251.225]
-X-CFilter-Loop: Reflected
+ id 1iHffH-0006sk-9e
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 02:55:56 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 8B4E420009D;
+ Tue,  8 Oct 2019 04:55:50 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 473E7200070;
+ Tue,  8 Oct 2019 04:55:45 +0200 (CEST)
+Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 8B495402DF;
+ Tue,  8 Oct 2019 10:55:38 +0800 (SGT)
+From: Yinbo Zhu <yinbo.zhu@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH v3] arm64: dts: enable otg mode for dwc3 usb ip on layerscape
+Date: Tue,  8 Oct 2019 10:56:42 +0800
+Message-Id: <20191008025642.19519-1-yinbo.zhu@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_193441_088778_77870859 
-X-CRM114-Status: GOOD (  18.49  )
+X-CRM114-CacheID: sfid-20191007_195555_477941_32195AF1 
+X-CRM114-Status: UNSURE (   8.15  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,169 +65,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kstewart@linuxfoundation.org, catalin.marinas@arm.com, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, gregkh@linuxfoundation.org, tglx@linutronix.de,
- info@metux.net, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, xiaobo.xie@nxp.com,
+ linux-kernel@vger.kernel.org, jiafei.pan@nxp.com,
+ Ran Wang <ran.wang_1@nxp.com>, yinbo.zhu@nxp.com,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+layerscape otg function should be supported HNP SRP and ADP protocol
+accroing to rm doc, but dwc3 code not realize it and use id pin to
+detect who is host or device(0 is host 1 is device) this patch is to
+enable OTG mode on ls1028ardb ls1088ardb and ls1046ardb in dts
 
+Signed-off-by: Yinbo Zhu <yinbo.zhu@nxp.com>
+---
+Changed in v3:
+		updated the patch title with "arm64: dts"
 
-On 2019/10/7 23:37, Will Deacon wrote:
-> On Mon, Oct 07, 2019 at 06:06:35PM +0800, Yunfeng Ye wrote:
->> There are no return value checking when using kzalloc() and kcalloc() for
->> memory allocation. so add it.
->>
->> Signed-off-by: Yunfeng Ye <yeyunfeng@huawei.com>
->> ---
->> v1 -> v2:
->>  - return error code when memory allocation failure
->>
->>  arch/arm64/kernel/armv8_deprecated.c | 57 +++++++++++++++++++++++++++---------
->>  1 file changed, 43 insertions(+), 14 deletions(-)
->>
->> diff --git a/arch/arm64/kernel/armv8_deprecated.c b/arch/arm64/kernel/armv8_deprecated.c
->> index 2ec09de..2284fcb 100644
->> --- a/arch/arm64/kernel/armv8_deprecated.c
->> +++ b/arch/arm64/kernel/armv8_deprecated.c
->> @@ -168,12 +168,15 @@ static int update_insn_emulation_mode(struct insn_emulation *insn,
->>  	return ret;
->>  }
->>
->> -static void __init register_insn_emulation(struct insn_emulation_ops *ops)
->> +static int __init register_insn_emulation(struct insn_emulation_ops *ops)
->>  {
->>  	unsigned long flags;
->>  	struct insn_emulation *insn;
->>
->>  	insn = kzalloc(sizeof(*insn), GFP_KERNEL);
->> +	if (!insn)
->> +		return -ENOMEM;
->> +
->>  	insn->ops = ops;
->>  	insn->min = INSN_UNDEF;
->>
->> @@ -197,6 +200,7 @@ static void __init register_insn_emulation(struct insn_emulation_ops *ops)
->>
->>  	/* Register any handlers if required */
->>  	update_insn_emulation_mode(insn, INSN_UNDEF);
->> +	return 0;
->>  }
->>
->>  static int emulation_proc_handler(struct ctl_table *table, int write,
->> @@ -224,7 +228,7 @@ static int emulation_proc_handler(struct ctl_table *table, int write,
->>  	return ret;
->>  }
->>
->> -static void __init register_insn_emulation_sysctl(void)
->> +static int __init register_insn_emulation_sysctl(void)
->>  {
->>  	unsigned long flags;
->>  	int i = 0;
->> @@ -233,6 +237,8 @@ static void __init register_insn_emulation_sysctl(void)
->>
->>  	insns_sysctl = kcalloc(nr_insn_emulated + 1, sizeof(*sysctl),
->>  			       GFP_KERNEL);
->> +	if (!insns_sysctl)
->> +		return -ENOMEM;
->>
->>  	raw_spin_lock_irqsave(&insn_emulation_lock, flags);
->>  	list_for_each_entry(insn, &insn_emulation, node) {
->> @@ -251,6 +257,7 @@ static void __init register_insn_emulation_sysctl(void)
->>  	raw_spin_unlock_irqrestore(&insn_emulation_lock, flags);
->>
->>  	register_sysctl("abi", insns_sysctl);
->> +	return 0;
->>  }
->>
->>  /*
->> @@ -617,25 +624,47 @@ static int t16_setend_handler(struct pt_regs *regs, u32 instr)
->>   */
->>  static int __init armv8_deprecated_init(void)
->>  {
->> -	if (IS_ENABLED(CONFIG_SWP_EMULATION))
->> -		register_insn_emulation(&swp_ops);
->> +	int ret = 0;
->> +	int err = 0;
->> +
->> +	if (IS_ENABLED(CONFIG_SWP_EMULATION)) {
->> +		ret = register_insn_emulation(&swp_ops);
->> +		if (ret) {
->> +			pr_err("register insn emulation swp: fail\n");
->> +			err = ret;
->> +		}
->> +	}
-> 
-> Is there much point in continuing here? May as well just return ret, I
-> think. I also don't think you need to print anything, since kmalloc
-> should already have shouted.
-> 
-The registration of each instruction simulation is independent. I think
-that one failure does not affect the registration of other instructions.
-In addition, if return directly, is it need to unregister? Of course,
-the first instruction registration can be directly returned, If the
-following instruction registration fails, is it need unregister operation?
-currently the unregistration of instruction simulation is not be implemented
-yet.
+ arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts | 4 ++++
+ arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts | 4 ++++
+ arch/arm64/boot/dts/freescale/fsl-ls1088a-rdb.dts | 1 +
+ 3 files changed, 9 insertions(+)
 
-The purpose of printing information is to replace the direct return, which
-can distinguish which instruction failed to register. There is no need to print
-information if it returns directly.
-
-thanks.
-
->> -	if (IS_ENABLED(CONFIG_CP15_BARRIER_EMULATION))
->> -		register_insn_emulation(&cp15_barrier_ops);
->> +	if (IS_ENABLED(CONFIG_CP15_BARRIER_EMULATION)) {
->> +		ret = register_insn_emulation(&cp15_barrier_ops);
->> +		if (ret) {
->> +			pr_err("register insn emulation cpu15_barrier: fail\n");
->> +			err = ret;
->> +		}
->> +	}
->>
->>  	if (IS_ENABLED(CONFIG_SETEND_EMULATION)) {
->> -		if(system_supports_mixed_endian_el0())
->> -			register_insn_emulation(&setend_ops);
->> -		else
->> +		if (system_supports_mixed_endian_el0()) {
->> +			ret = register_insn_emulation(&setend_ops);
->> +			if (ret) {
->> +				pr_err("register insn emulation setend: fail\n");
->> +				err = ret;
->> +			}
->> +		} else {
->>  			pr_info("setend instruction emulation is not supported on this system\n");
->> +		}
->>  	}
->>
->> -	cpuhp_setup_state_nocalls(CPUHP_AP_ARM64_ISNDEP_STARTING,
->> -				  "arm64/isndep:starting",
->> -				  run_all_insn_set_hw_mode, NULL);
->> -	register_insn_emulation_sysctl();
->> +	if (nr_insn_emulated) {
->> +		cpuhp_setup_state_nocalls(CPUHP_AP_ARM64_ISNDEP_STARTING,
->> +					  "arm64/isndep:starting",
->> +					  run_all_insn_set_hw_mode, NULL);
->> +		ret = register_insn_emulation_sysctl();
->> +		if (ret)
->> +			err = ret;
->> +	}
-> 
-> I'm dubious about leaving the cpuhp notifier registered if we fail here.
-> Can we simply reorder the logic so that the notifier is registered after
-> successfully calling register_insn_emulation_sysctl()? thanks.
-> 
-ok, I will reorder the logic.
-And the same question: is it need to unregister the instruction emulation
-if register_insn_emulation_sysctl() invoked fail?
-
-> Will
-> 
-> .
-> 
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
+index 9fb9113..076cac6 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
+@@ -171,3 +171,7 @@
+ &sata {
+ 	status = "okay";
+ };
++
++&usb1 {
++	dr_mode = "otg";
++};
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
+index 6a6514d..0c742be 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
+@@ -122,6 +122,10 @@
+ 	};
+ };
+ 
++&usb1 {
++	dr_mode = "otg";
++};
++
+ #include "fsl-ls1046-post.dtsi"
+ 
+ &fman0 {
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1088a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1088a-rdb.dts
+index 8e925df..90b1989 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1088a-rdb.dts
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1088a-rdb.dts
+@@ -95,5 +95,6 @@
+ };
+ 
+ &usb1 {
++	dr_mode = "otg";
+ 	status = "okay";
+ };
+-- 
+2.9.5
 
 
 _______________________________________________
