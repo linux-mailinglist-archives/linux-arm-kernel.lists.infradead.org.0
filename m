@@ -2,84 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9618ECF8B4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 13:42:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16D13CF8BF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 13:43:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=tMrV56ZmssLYDjD/8VHblo8Ag6rvec3fRvP97Sl0PjU=; b=Aw4Zh0dYrj5+nG
-	GwFnSs0OmZzVzKleDYQEHGs+KpSnDnA8s/k0Ajmh2FypUtfr8ZIJBjZBZeQ61/e+RY2Uoky9Qwh0g
-	yZlLc2CsfZhrqxGnCJrJridsUvO8pUabcp438knXae5mHU/TN+e8JqrixyQQO38Cj90wTMrJD80yF
-	QBjkZp6OBwmTbM5FCoH6zf2KGQPKL2aDlftx/P1J1mrzlJcI9shFgwHwTNPv41K/4Jbeq1tcA8NOh
-	HA0KgXjaT1UkAMY6AZj0WY5nM3DpPs38n0xpW8wrXp8tHXY9cHVaNtCYVvFsOQnQ5lHpG2k5s3dRV
-	QgvMq9aKNlP9BEjnFteA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ppW66R+H0BVNEHWbj+dr0unwT3Tr2hnWBgfIcauW65k=; b=eEXQRUXdCoFT3Q
+	Z+fETvs4FHNaIwPkqU4bZPgGBGCELC/SKtWmbHoONrbHyNpRnyCaM4nuOxPpj2Dy1Cpnm6SA00cNl
+	I+FmFvnF0Hl3ZeDnTKqTX8FPxRxqrtisq/z9tBZK4wNeYExwIvELUHt0mZ+3zTQPN+m1OZSnWDX61
+	Q+pOY0oEYmu3xZYaAfhsDDNrwaTOSbD5NagaljXvyZyaHW2ZFNV87s5xHF6j/BZbo9EXK6pAZ97ht
+	Fve33MXjpf53FMyOym+ognO7YqOThFixBdmp1oMjNLZgrgsdcI2sSCG/gdbofptV9vVO1EGynl+MX
+	Ki0/Q48YeC4spUVvx7NQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHnsQ-0003L4-0I; Tue, 08 Oct 2019 11:42:02 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iHntd-0003tg-OI; Tue, 08 Oct 2019 11:43:17 +0000
+Received: from mail-qt1-f195.google.com ([209.85.160.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHnsI-0003Ka-IA
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 11:41:56 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x98BesFt005862; Tue, 8 Oct 2019 13:41:50 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=JZ29o3+ZA5x48x8+yCCPyxRuo1rTg5MroHIYryI/F3c=;
- b=LempFh1Xlla+0GUWqcqrMNqJTOx1DFSj02f0oYlIGwTNiroRG51+Pt80DQ+R8llxMluq
- GRry1sBSVssoH4J4s6U0FzLfcEMwAqAMh08xU+2PdkDlEUt5iPYsgW/fvAgrVlkjpRuo
- 8shy6xDyiign0oIshGl7hQguuuhNHm7O+UIdtEqH4w5VAAZ5FazUCjlPkcMubO01NF3N
- qm60avg/xJmeThj3w2VPhYbWql+x2G2r5MD4ACkkgp0vhkJmrSOshbXd1DHeszEKrccG
- uHdB4htnX4OoWP+f5fsHKPRf2Nv2XIZX1K4jWi8QTRMbYK0OUBf5qyKyMsg0o43/evk7 og== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2vegxvqwq4-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 08 Oct 2019 13:41:50 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 831D710002A;
- Tue,  8 Oct 2019 13:41:47 +0200 (CEST)
-Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 766142B8A64;
- Tue,  8 Oct 2019 13:41:47 +0200 (CEST)
-Received: from SAFEX1HUBCAS23.st.com (10.75.90.46) by SAFEX1HUBCAS21.st.com
- (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 8 Oct 2019
- 13:41:47 +0200
-Received: from localhost (10.48.0.192) by webmail-ga.st.com (10.75.90.48) with
- Microsoft SMTP Server (TLS) id 14.3.439.0;
- Tue, 8 Oct 2019 13:41:46 +0200
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-To: <thierry.reding@gmail.com>, <u.kleine-koenig@pengutronix.de>
-Subject: [PATCH] pwm: stm32: add comment to better describe breakinput feature
-Date: Tue, 8 Oct 2019 13:41:27 +0200
-Message-ID: <1570534887-26181-1-git-send-email-fabrice.gasnier@st.com>
-X-Mailer: git-send-email 2.7.4
+ id 1iHntO-0003pH-8K
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 11:43:03 +0000
+Received: by mail-qt1-f195.google.com with SMTP id j31so24740001qta.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 08 Oct 2019 04:43:01 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=umsIHYk/EdwfY26Vo9wwZW7bO5IW89cNfvlnj/Kaxdg=;
+ b=VUzcZcZ7Rl4OxYoktffwCE5/5LNzd2vfI2oKE2vMkO+pMx17g6D0klgEsQa3mYXfm3
+ p9x1RHSP6hcWX2WQgRLvSOsZ1JlChKjW6zxOviwQnwG73q1CGAMCW6bbXAVy4izJjsGd
+ nIewzrjDnO295Oedgush+j+IBtfnXn7LNerijnNZEFo/qnxYBmeDnjoKvLxPV5Y3UIw7
+ rRXicG5apqfUAOHZZYxgIsHAh00La98sXDPsR/GWIYFfHqpJqc6XQDcKO7xNbTpdT7Fq
+ dcG8W5/j/Z7ivVbS6xAsUNdKziMgQcqAWXFJyqAUrjIQ24tSby5zU99S55EtclI46WIp
+ x9ww==
+X-Gm-Message-State: APjAAAUIZ9ki3gvVnvfYCEzKeuWkVJQFmSED/PpZ4sDziR98JFr+pIUG
+ fU97mYCQuRZQAZE+Hfxo390W8lIxtF15LRM87ko=
+X-Google-Smtp-Source: APXvYqz589jJQA/dL++xS/ac2fwbidwcoKs9fK4I++aywFL5vuYSQeuOYY83BGWrAPMLcEhnv9sIUFP5OFW4bk2pvO4=
+X-Received: by 2002:ac8:1a2e:: with SMTP id v43mr35056963qtj.204.1570534980880; 
+ Tue, 08 Oct 2019 04:43:00 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.48.0.192]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
- definitions=2019-10-08_04:2019-10-08,2019-10-08 signatures=0
+References: <20191007214439.27891-1-sebastian@breakpoint.cc>
+In-Reply-To: <20191007214439.27891-1-sebastian@breakpoint.cc>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Tue, 8 Oct 2019 13:42:43 +0200
+Message-ID: <CAK8P3a13AOKm1epqAtP9329Ai2Bh+H18fOfsqO+deCLTHoYRwA@mail.gmail.com>
+Subject: Re: [RFC PATCH 0/3] Queued spinlocks/RW-locks for ARM
+To: Sebastian Andrzej Siewior <sebastian@breakpoint.cc>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_044155_050755_C6EB7B43 
-X-CRM114-Status: GOOD (  13.71  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191008_044302_323017_C7C835A5 
+X-CRM114-Status: GOOD (  19.82  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.195 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.195 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,49 +82,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, alexandre.torgue@st.com,
- linux-kernel@vger.kernel.org, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- benjamin.gaignard@st.com
+Cc: Peter Zijlstra <peterz@infradead.org>, Russell King <linux@armlinux.org.uk>,
+ Ingo Molnar <mingo@redhat.com>, Waiman Long <longman@redhat.com>,
+ Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a comment to better describe the purpose of breakinput feature that
-can be found on some STM32 timer instances. Briefly comment on the
-characteristics of this input for PWM, and pinmuxing as suggested in [1].
+On Mon, Oct 7, 2019 at 11:45 PM Sebastian Andrzej Siewior
+<sebastian@breakpoint.cc> wrote:
+>
+> I added support for queued-RW and -spinlocks for ARM. I wanted to
+> remove the current implementation but this does not work. The CPU_V6
+> kernel config does not have support for xchg() on 2 byte memory address.
+> This is required by q-lock' slowpath. It is possible to create a
+> multi-kernel (with v6+v7+SMP) which then lack the function.
+>
+> I tested the q-lock implementation with
+>         hackbench -g40 -s 500 -l 500
+>
+> The numbers in the table below represent the average runtime of 10
+> invocations. I tested with HZ_100,HZ_250 and the different preemption
+> levels on a IMX6q-board (quad Cortex-A9) and an AM572x board (dual
+> Cortex-A15).
+> "Ticket" means the current implementation on v5.4-rc1, Q-Locks is the
+> switch to queued RW and spinlocks and in Q-locksI the locking
+> instruction is additionally inlined.
 
-[1] https://lkml.org/lkml/2019/10/1/207
+This looks nice, and I don't see anything wrong with the implementation,
+but I am slightly worried about switching everything over to a generic
+spinlock while keeping the custom ARM version for an exceptionally
+rare corner case:
 
-Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
----
- drivers/pwm/pwm-stm32.c | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
+The ARM spinlock is now only used when you build an SMP-enabled
+kernel for an ARM1136r0 that is used in OMAP2, i.MX3 and some
+of the least common Integrator/Realview variants. I'm not aware
+of any binary distros with ARMv6+ kernels, so these would run custom
+kernels that are almost always non-SMP as well as no longer getting
+kernel upgrades (almost all have been discontinued years ago, the i.MX35
+chip itself was the last to get EOLd in 2018).
+Raspbian builds an ARMv6K SMP kernel that is not affected by this.
 
-diff --git a/drivers/pwm/pwm-stm32.c b/drivers/pwm/pwm-stm32.c
-index 359b085..6406ebb 100644
---- a/drivers/pwm/pwm-stm32.c
-+++ b/drivers/pwm/pwm-stm32.c
-@@ -522,8 +522,14 @@ static int stm32_pwm_apply_breakinputs(struct stm32_pwm *priv,
- 					     sizeof(struct stm32_breakinput));
- 
- 	/*
-+	 * Some timer instances can have BRK input pins (e.g. basically a fault
-+	 * pin from the output power stage). The break feature allows a safe
-+	 * shut-down of the PWM outputs to a predefined state. Further details
-+	 * are available in application note AN4277, "Using STM32 device PWM
-+	 * shut-down features..."
- 	 * Because "st,breakinput" parameter is optional do not make probe
--	 * failed if it doesn't exist.
-+	 * failed if it doesn't exist. The pinctrl handle must hold the BRK
-+	 * pin(s) when using "st,breakinput" property.
- 	 */
- 	if (nb <= 0)
- 		return 0;
--- 
-2.7.4
+I wonder if we can do something better here and make the
+asm-generic/qspinlock.h implementation always degrade into an
+equivalent of include/linux/spinlock_up.h when running on uniprocessor
+systems, avoiding both the atomic cmpxchg and the slowpath.
 
+That way, an ARMv6+SMP kernel on UP could share the qspinlock
+implementation but never actually get into the invalid 16-bit xchg() or
+sev()/wfe(). It already shouldn't ever get into the slowpath on a
+non-SMP system if I understand it correctly, but avoiding the cmpxchg()
+entirely would be an added benefit.
+
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
