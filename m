@@ -2,83 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64CFBCF668
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 11:47:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87E3FCF690
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 11:56:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:In-Reply-To:References:Message-Id:
-	Date:Subject:Mime-Version:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xm51+rDajArUY1Vlmrprg6ct3x+cgBCNkPYf3IHC7cg=; b=G9QJtUafHfwmAk
-	ruID3wTVauXcdI9cO7G4/2QWdJwJWznf3rktvN1K6WRK+gQmVLsavO0LrH+XYKg9b/jwmbArKmDAS
-	AtoXjPmsUaAYwVzDvz/UgCrb0Xad0dqJVKeAY6M1RhujMQ1MadgKPsnv/LRvwWsusBfgO6+bZPgWn
-	tQR8/bVXHb0p7l4T8xL6T2QoZX/P9W6UXum3HepEqIf9nE4k2P++y9VimC0pn1mvnKNTj9qlVbrEk
-	VAHlIGXW+LQsnwiKTSwcZ4+6J2Vf3D8tin7yFP49gMAeZDQHMGKmRJkc4R+DPPDqYRQADyMCHV7eT
-	Dz56xBt7EdN9r0cKjDhw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8l/aJHI1mYAFZTP1l+YRsAnndzCN9IQNmVtygwuaT3E=; b=iYCN7LAP37f7se
+	hs6Wi/An5+icjKRX9UoSh10vhgTTi041sknf4f4kxMN/HjsbgdCZvI94+5IvUWLF/EgPq+kDi1ZS4
+	wkDXFS5Pbe11Tbn+WgPG7iWFVnvT2mHzsNIxLTZl9AMw5pqcvWki3cveoladVc9ppAq+Ou4JMvup/
+	6RSQ68bMRuPXzZr7BwupkGghcdpWYSxuIdK+SW5y/SRuP1CpQ+IUjZn1m20NKu/ezJsrEF5CPFhZL
+	X6o6wnj/hi8pTScPTuZqVmk2OQmSMAPUifkWJOopnkCB/soSrAzOw/p4TRPFHNB5eWHr2mO3zt0o7
+	8+CZp/f3zamuZ/Mi5SQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHm5n-0001OW-85; Tue, 08 Oct 2019 09:47:43 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1iHmEO-0004cm-Pw; Tue, 08 Oct 2019 09:56:36 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHm5d-0001MV-4j
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 09:47:34 +0000
-Received: by mail-qk1-x742.google.com with SMTP id z67so16000371qkb.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 08 Oct 2019 02:47:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
- h=content-transfer-encoding:from:mime-version:subject:date:message-id
- :references:cc:in-reply-to:to;
- bh=qLgfnJa8TF+fqJn6Csm2aNbaRpOd4zDzxzOPf12HbGU=;
- b=cXYZ/yJKZHxhLdFc+J/7aqzW3aWMwrEzbFfkVK6b2STx6QHscvIWH7imnBEe4+5hu8
- /u0EZHWjyQPT1nvtbEF/Q0Kg9i/YqCDMse7zLQQlF9qvnZzDAYO5lv25xZR6t9BXHcuq
- ah+dWBDMRgaikW+rvVfyvyISzE+jZZi8EytVeEJcb33yP6AZXWRPX4ij4dNNh6n//HA4
- ZeX5K7IRgHSrqr/EWrbf7Id2OL3sA+Y9zt+wp0c875bq5Eka/sHOIgqCnKbwSuEhZiRH
- Ywn2sJjbAl32mBITdW2nABbm8slhsaxFggyDU0O6KlXeMgbBlIYIBTgAtq0NFFUY9INh
- Kx7A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:content-transfer-encoding:from:mime-version
- :subject:date:message-id:references:cc:in-reply-to:to;
- bh=qLgfnJa8TF+fqJn6Csm2aNbaRpOd4zDzxzOPf12HbGU=;
- b=A6UsIXCI78dTkoDHy8JTNFlqh9e/gILzJhPRzwk/voTS7XhALLwcngesq9BsaEqYzL
- 9wDL+68Og2NJ2ocPbsSiWSd1UMlnM7ijjKjl+EWsFF/7M35HFiV8mN5dyPUT14dx7s7L
- uVvDFSFeU4VzbsdDhDz/G/luGbo1oDiKvyPhNE3RjKuFR4DwU+AqXldCPHlfwFGZP10+
- TUB/4hesmRx0bmQpOiW1+8H+YbsCOgvYq4WOJ+DCqdI23kTPqM8IBzNqqmuDmL390M7g
- hQksoiGYkUtffSX3Nb3YpdRAxelzZ2WhvDNa25pVUBAvZkqjo1795y9f9PkFcb09qomD
- ZISw==
-X-Gm-Message-State: APjAAAW2/8LBpJZS0cXhmr1mGBsqA+n593gMr6weKvmdjBYvBlbK+H6c
- j1hz8//d9amONLZGtw3uOpdyjQ==
-X-Google-Smtp-Source: APXvYqxfD11gEiq1MLqW9BfGOXUQNepLHs6yxjwdSPwZov/5cEt3QgQYUXTBcN37CEYZ7nm6dUXSjQ==
-X-Received: by 2002:a37:4d4a:: with SMTP id a71mr28591867qkb.327.1570528051524; 
- Tue, 08 Oct 2019 02:47:31 -0700 (PDT)
-Received: from [192.168.1.183] (pool-71-184-117-43.bstnma.fios.verizon.net.
- [71.184.117.43])
- by smtp.gmail.com with ESMTPSA id h68sm8988573qkd.35.2019.10.08.02.47.30
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 08 Oct 2019 02:47:30 -0700 (PDT)
-From: Qian Cai <cai@lca.pw>
-Mime-Version: 1.0 (1.0)
-Subject: Re: [PATCH] kasan: fix the missing underflow in memmove and memcpy
- with CONFIG_KASAN_GENERIC=y
-Date: Tue, 8 Oct 2019 05:47:30 -0400
-Message-Id: <B53A3CC0-CEA6-4E1C-BC38-19315D949F38@lca.pw>
-References: <1570515358.4686.97.camel@mtksdccf07>
-In-Reply-To: <1570515358.4686.97.camel@mtksdccf07>
-To: Walter Wu <walter-zh.wu@mediatek.com>
-X-Mailer: iPhone Mail (17A860)
+ id 1iHmED-0004bA-V1
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 09:56:27 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x989q3T5002806; Tue, 8 Oct 2019 11:56:20 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=lalHdG7UJQKEamzJtgMq1V9aYOha/nksgz4VLZDsBvA=;
+ b=hZGvZF6Um9r+0Rf/q9onqdXuiWZDQ2Ld3rqIJKGOtmpQesJIL5DDvfLnAilxtw5eUtgN
+ nrRhwvD8WdgDBnuC/mdPvdSSAozRuGCO8tN19UbUAPOVN9GwkZ2kD/4TOBH4nXKfN95q
+ UQiLt/Sunt0IS5Nin8Nd7L3uQevCATpcMXrwknjWnxakxKM1W84eWViOnP9e7Rh3X9lX
+ m2Z6c9JxzvlndWH+gLyf25CvFGLjj0mnV3qfTY+7Uv50+zXVpV7EO61dewq5+oH8r0TE
+ 0VF+NrChDfFuOKRDv9CCqDeY2llT494APGo/FwBex9caC3UkjHC4SY9IzrkwQxxgSOwG bg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2vegagyygt-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 08 Oct 2019 11:56:20 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 312A410002A;
+ Tue,  8 Oct 2019 11:56:19 +0200 (CEST)
+Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 21C6D2B40AD;
+ Tue,  8 Oct 2019 11:56:19 +0200 (CEST)
+Received: from SAFEX1HUBCAS23.st.com (10.75.90.46) by Safex1hubcas24.st.com
+ (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 8 Oct 2019
+ 11:56:19 +0200
+Received: from lmecxl0923.lme.st.com (10.48.0.237) by webmail-ga.st.com
+ (10.75.90.48) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 8 Oct 2019
+ 11:56:18 +0200
+From: Ludovic Barre <ludovic.Barre@st.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH V7 0/3] mmc: mmci: add busy detect for stm32 sdmmc variant
+Date: Tue, 8 Oct 2019 11:56:01 +0200
+Message-ID: <20191008095604.20675-1-ludovic.Barre@st.com>
+X-Mailer: git-send-email 2.17.1
+MIME-Version: 1.0
+X-Originating-IP: [10.48.0.237]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
+ definitions=2019-10-08_03:2019-10-07,2019-10-08 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_024733_181579_D7E74F22 
-X-CRM114-Status: UNSURE (   8.16  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191008_025626_357522_3555DB4F 
+X-CRM114-Status: GOOD (  11.93  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -99,23 +92,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream <wsd_upstream@mediatek.com>,
- linux-mediatek@lists.infradead.org, LKML <linux-kernel@vger.kernel.org>,
- kasan-dev <kasan-dev@googlegroups.com>, Linux-MM <linux-mm@kvack.org>,
- Alexander Potapenko <glider@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>, Dmitry Vyukov <dvyukov@google.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ srinivas.kandagatla@linaro.org, Ludovic Barre <ludovic.barre@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Cgo+IE9uIE9jdCA4LCAyMDE5LCBhdCAyOjE2IEFNLCBXYWx0ZXIgV3UgPHdhbHRlci16aC53dUBt
-ZWRpYXRlay5jb20+IHdyb3RlOgo+IAo+IEl0IGlzIGFuIHVuZGVmaW5lZCBiZWhhdmlvciB0byBw
-YXNzIGEgbmVnYXRpdmUgbnVtYmVycyB0bwo+ICAgIG1lbXNldCgpL21lbWNweSgpL21lbW1vdmUo
-KSwgc28gbmVlZCB0byBiZSBkZXRlY3RlZCBieSBLQVNBTi4KCldoeSBjYW7igJl0IHRoaXMgYmUg
-ZGV0ZWN0ZWQgYnkgVUJTQU4/Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+From: Ludovic Barre <ludovic.barre@st.com>
+
+This patch series adds busy detect for stm32 sdmmc variant.
+Some adaptations are required:
+-On sdmmc the data timer is started on data transfert
+and busy state, so we must add hardware busy timeout support.
+-Add busy_complete callback at mmci_host_ops to allow to define
+a specific busy completion by variant.
+-Add sdmmc busy_complete callback.
+
+V7:
+-Patch 1/3: rephrasing like proposed (thx ulf)
+-If busy timeout is undefined => increase to 10s
+-Keep busy_detect.
+-Patch 3/3: rephrasing comment header
+-Avoid twice read of status register
+-Avoid writing in MMCIMASK0 & MMCICLEAR if not modified
+
+V6:
+-mmci_start_command: set datatimer only on rsp_busy flag
+(remove host->mrq->data).
+-move max_busy_timeout in set_ios callback.
+-typo fix: err_msk, clks on one lines.
+
+V5:
+-Replaces !cmd->data to !host->mrq->data to avoid overwrite
+ of datatimer register by the first command (cmd23, without data) of
+ SBC request.
+
+V4:
+-Re-work with busy_complete callback
+-In series, move "mmc: mmci: add hardware busy timeout feature" in
+first to simplify busy_complete prototype with err_msk parameter.
+
+V3:
+-rebase on latest mmc next
+-replace re-read by status parameter. 
+
+V2:
+-mmci_cmd_irq cleanup in separate patch.
+-simplify the busy_detect_flag exclude
+-replace sdmmc specific comment in
+"mmc: mmci: avoid fake busy polling in mmci_irq"
+to focus on common behavior
+
+Ludovic Barre (3):
+  mmc: mmci: add hardware busy timeout feature
+  mmc: mmci: add busy_complete callback
+  mmc: mmci: sdmmc: add busy_complete callback
+
+ drivers/mmc/host/mmci.c             | 178 +++++++++++++++++-----------
+ drivers/mmc/host/mmci.h             |   5 +
+ drivers/mmc/host/mmci_stm32_sdmmc.c |  42 +++++++
+ 3 files changed, 159 insertions(+), 66 deletions(-)
+
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
