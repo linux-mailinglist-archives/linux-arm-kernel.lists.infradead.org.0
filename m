@@ -2,84 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 277E7CFCE8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 16:56:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0305CFD0F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  8 Oct 2019 17:03:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xIMCRKVr/3gUuRYy7Knv48p8FaDKrK7c6bVCt9psQjg=; b=M8Ux2M+E9ENAOr
-	YloiMB0+z2/aFi6vM/gSvoDxlv95BSHHmF4gAwefSE00BTc/i6ekgs5JxAf3hnn/yNM+NFr7rECge
-	rENw8lqUGenfcuWq09vGkAIwxeq/sjHrh92qgckcSV33orLtmeVGoQ9GT4txNmYlnyjgZLlbwf4aL
-	3eFZdaxBuPE5FwEE9WkQzbpaXIdJiNsrrShLXb2ynkeNqeyeMFsPuWD/Ie2AGu8hdt7lYsHaAPoOM
-	26prjrQf/3709cJYUlc54jOJL4cuNYXLsdMNvCNqXFb/o360JvFNumgsf3iQVO3sED8KtMgMTfJ5+
-	71lABPiC2Vj8AaOuf2zg==;
+	List-Owner; bh=jgaRt/MDObf5hFNthcdB/sbOSEXZgnRUYvTDyfP6zio=; b=els3yLtwH83RSH
+	wEFJ7Du4nZzdbo64HAte/Q8KmWtgBWuopSrmnUL+tRhSRUVstzGf0Av7PMZB7mIxgVKisi50aDdhC
+	BeUTobeeIc4WiyOTleP5fLeW72mZB+5C8yK9h5MzSkrqwQilayzatrUaP+DapjV/yPC1Q099w4qVL
+	+MgChu/6M9wxF33osPupAECBy5B95EyarRY6VgaIv3vEhVA4cmH7Fv7M6uKfh0zyZnLl9JpFgyLYg
+	qJoVZdSTfx9WBYK3/TVCmRkxdmYMJHXAaQanFhSrRBYIybm5adaQJYzzwtsLNs8vKietvbzLLeliz
+	kBq0RR3rwkiM2Qqiigew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHquh-0005lS-6h; Tue, 08 Oct 2019 14:56:35 +0000
-Received: from mail-yb1-xb44.google.com ([2607:f8b0:4864:20::b44])
+	id 1iHr16-0007pt-A2; Tue, 08 Oct 2019 15:03:12 +0000
+Received: from mail-yb1-xb43.google.com ([2607:f8b0:4864:20::b43])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHquY-0005kc-LT
- for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 14:56:28 +0000
-Received: by mail-yb1-xb44.google.com with SMTP id q143so4735498ybg.12
+ id 1iHr0w-0007nx-6f
+ for linux-arm-kernel@lists.infradead.org; Tue, 08 Oct 2019 15:03:03 +0000
+Received: by mail-yb1-xb43.google.com with SMTP id h202so5987084ybg.13
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 08 Oct 2019 07:56:25 -0700 (PDT)
+ Tue, 08 Oct 2019 08:02:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=sTRvcWuhsCDYM9nbsR+iqmjU/q191FPit5GKXH0WNCw=;
- b=KMSNlY73MWApM2LnJJ05n+pDdlTTB791f5huU/c6JQNIdCTYwu5MkPWBrSvcjOfwaJ
- RsIQQZmSbuw4lnEfKSiahEq5i1zzbr8exb3K+yZvrB88/MRZRDwfJE0uEVH86Nn9JU+g
- ucOEsnRc6GOLykNYKeJodJazifzD5v45OoQMGMMsy24WgeIvktRE9HHPLT+THzUJ0U56
- +O4i5niWNKzssNdcq0RQ/stQZ1Kg7JjqBeuRW5WjnD35EjEFcTyXJv9nbrvKfwqwnV7d
- u39UXN1UxhENUBpLUdibXVnm0FSA6IKRNt5ICPRuzTXP2yeWSg/vxwUvhUshH2yMywal
- 4VHQ==
+ bh=nZTSIKqLe1Xh/tE/i1buAM4aJM5s7zBbM3sshp8Umhc=;
+ b=dhhnvkQgwFWhCMKQ+XWonnecZzsSaVFVBPrCxe2TMcLGkg5PNZb0wW8wLsONDEKG/Q
+ rWf9Ir2IRavbsOX42BgmynaM/qEn8Yc2zJputvpdjVW9LWkzzHYFFfirCWRbAopX8LR3
+ o3ugcF8CWEoDnsZPD0YhgVQyISOrfeIXK3IPVnVGgbrqr8CEv15mHvpjHW4yG6IDped1
+ kBKP4vmgM+mwB+FUgy5nEQRmPz1iGWJMYeCW9q4MW9WqXOrPbXO2tdQjUSS7XpZZFI2m
+ u4c5UPYbjez2vEFAV0S81/W069RicABkUfiH9j5Ce9Y9XC1138v0KD83LSj/NpnHXOOu
+ Wk6w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=sTRvcWuhsCDYM9nbsR+iqmjU/q191FPit5GKXH0WNCw=;
- b=DGvP9/lwNshitOyS5Ow536xmoxxzeNyCc8D3wre74jaJxoDKhnlBnuRY8i4bBqF/U6
- A6P0F1mTy9Xz5LmUQVXq97EnvsImreKL3IgOB+tDe19/8nA49EKtCo7RqAURexBlg1RK
- dnnPPw025rQ8YmwuE0LCKjOqZVisJrV5V8aZs5RKuJ39KYigSl2bhLb6D7Q3k9QHYn4x
- 1fpJdhIlGXKjj9Dy//SBILSLbMA4pxp4voDwU2FYNFOJRFEOzNlSJrfTj/DggwMbNWFy
- mF1TPGtkJrDkQ+NFgA+DqjyKeYmKwKw4RyC/zqNPp/V0Ctnn+dl/NwgF4XEVxiuH3B4f
- zGBg==
-X-Gm-Message-State: APjAAAUNAMx+w3MiutRtH/+YzCBvPW3ljc8Wm6E9cBKCZv++gM8cI2Vf
- 3yMX7sWJkQ0fu6XrgLac5c0c0g==
-X-Google-Smtp-Source: APXvYqxd3yI0Qoe4+zUlG7M7FCEqmfoW9HKyX9KBsgoGA3ualtp6JoAIN3/M6dE0Jb3/fTE37mcn/g==
-X-Received: by 2002:a25:df87:: with SMTP id
- w129mr15524540ybg.121.1570546584814; 
- Tue, 08 Oct 2019 07:56:24 -0700 (PDT)
+ bh=nZTSIKqLe1Xh/tE/i1buAM4aJM5s7zBbM3sshp8Umhc=;
+ b=fA+m1aAfoFmyfV4qOqsExb0k3rFQERE8se4n0/vbdMZrzMlok5ZGaq0jYJw9k/kAb/
+ P+gN32DOVn5w3awJ8GUuJUt4REzS5PY04DOj51yWWNGOZHTGkRogjhogpItmE374zrMZ
+ pikYeRNHxmCA9Dr8IlcgbgbckPMjj2ev/iSWH9AbbYPcqduX88AaiNs717APs4EFMMRV
+ 9v/clTztSD+jcanjyzsqgaLjFmdoKb5PFg5hCnmtMlCW+7ebWckpQHfxC/VqVQX/0e0z
+ 4Xh8BbZksW/BXNZD7Nhar0C1ZVqSrKu5Sb+opjOlHhizs6yfOB0GtOehsXNQPQBacXV4
+ Vdgw==
+X-Gm-Message-State: APjAAAUhjr3H67NAM6cST3IrGzRw/vbuhURltX0Fu79DNGcC8vLVixy/
+ KLTcCH6Mt44ib6MuMiA0X//Ppg==
+X-Google-Smtp-Source: APXvYqy39p5S3WFZZT7NiYaub1fXy7Bu93rQKzD9kNuqH+MdsdnurfzRi4Ts2yLz/4adcpC4DJClcA==
+X-Received: by 2002:a25:c504:: with SMTP id v4mr14307259ybe.375.1570546978393; 
+ Tue, 08 Oct 2019 08:02:58 -0700 (PDT)
 Received: from localhost ([2620:0:1013:11:89c6:2139:5435:371d])
- by smtp.gmail.com with ESMTPSA id v15sm4644853ywa.39.2019.10.08.07.56.24
+ by smtp.gmail.com with ESMTPSA id g20sm4699956ywe.98.2019.10.08.08.02.57
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 08 Oct 2019 07:56:24 -0700 (PDT)
-Date: Tue, 8 Oct 2019 10:56:23 -0400
+ Tue, 08 Oct 2019 08:02:57 -0700 (PDT)
+Date: Tue, 8 Oct 2019 11:02:57 -0400
 From: Sean Paul <sean@poorly.run>
 To: "dbasehore ." <dbasehore@chromium.org>
-Subject: Re: [PATCH v8 1/4] drm/panel: Add helper for reading DT rotation
-Message-ID: <20191008145623.GA85762@art_vandelay>
-References: <20190925225833.7310-1-dbasehore@chromium.org>
- <20190925225833.7310-2-dbasehore@chromium.org>
- <20191007163822.GA126146@art_vandelay>
- <CAGAzgspJa1b1V06s3Om+OAbPLqWsWSptbVtQApEPAXDA7W-VSQ@mail.gmail.com>
+Subject: Re: [v8,2/4] drm/panel: set display info in panel attach
+Message-ID: <20191008150257.GB85762@art_vandelay>
+References: <20190925225833.7310-3-dbasehore@chromium.org>
+ <20190929052307.GA28304@jamwan02-TSP300>
+ <CAGAzgspEA0mcEHwgxyWWh3Gn-iC+a21g5GUrhsRJrTHQ_OAYqQ@mail.gmail.com>
+ <20191007164441.GB126146@art_vandelay>
+ <CAGAzgsoGNNTeYTmRyC5YNGDHL+SBB2oCFaHFubYa=dnPst=f8Q@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAGAzgspJa1b1V06s3Om+OAbPLqWsWSptbVtQApEPAXDA7W-VSQ@mail.gmail.com>
+In-Reply-To: <CAGAzgsoGNNTeYTmRyC5YNGDHL+SBB2oCFaHFubYa=dnPst=f8Q@mail.gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_075626_730946_D5C9D285 
-X-CRM114-Status: GOOD (  32.47  )
+X-CRM114-CacheID: sfid-20191008_080302_244048_3981E8BA 
+X-CRM114-Status: GOOD (  22.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:b43 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -101,156 +101,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Sam Ravnborg <sam@ravnborg.org>,
- Intel Graphics <intel-gfx@lists.freedesktop.org>,
- Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Jani Nikula <jani.nikula@linux.intel.com>, David Airlie <airlied@linux.ie>,
- Thierry Reding <thierry.reding@gmail.com>,
+Cc: Maxime Ripard <maxime.ripard@bootlin.com>, Sam Ravnborg <sam@ravnborg.org>,
+ "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ David Airlie <airlied@linux.ie>, Thierry Reding <thierry.reding@gmail.com>,
+ "james qian wang \(Arm Technology China\)" <james.qian.wang@arm.com>,
+ Rodrigo Vivi <rodrigo.vivi@intel.com>,
  Matthias Brugger <matthias.bgg@gmail.com>,
- dri-devel <dri-devel@lists.freedesktop.org>, Daniel Vetter <daniel@ffwll.ch>,
- Rodrigo Vivi <rodrigo.vivi@intel.com>, CK Hu <ck.hu@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Sean Paul <sean@poorly.run>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ nd <nd@arm.com>, Sean Paul <sean@poorly.run>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 07, 2019 at 03:12:00PM -0700, dbasehore . wrote:
-> On Mon, Oct 7, 2019 at 9:38 AM Sean Paul <sean@poorly.run> wrote:
-> >
-> > On Wed, Sep 25, 2019 at 03:58:30PM -0700, Derek Basehore wrote:
-> > > This adds a helper function for reading the rotation (panel
-> > > orientation) from the device tree.
+/snip
+
+> > > > > diff --git a/include/drm/drm_panel.h b/include/drm/drm_panel.h
+> > > > > index d16158deacdc..f3587a54b8ac 100644
+> > > > > --- a/include/drm/drm_panel.h
+> > > > > +++ b/include/drm/drm_panel.h
+> > > > > @@ -141,6 +141,56 @@ struct drm_panel {
+> > > > >        */
+> > > > >       const struct drm_panel_funcs *funcs;
+> > > > >
+> > > >
+> > > > All these new added members seems dupliated with drm_display_info,
+> > > > So I think, can we add a new drm_plane_funcs func:
+> > > >
+> > > > int (*set_display_info)(struct drm_panel *panel,
+> > > >                         struct drm_display_info *info);
 > > >
-> > > Signed-off-by: Derek Basehore <dbasehore@chromium.org>
-> > > Reviewed-by: Sam Ravnborg <sam@ravnborg.org>
+> > > I don't disagree personally, since I originally wrote it this way, but
+> > > 2 maintainers, Daniel Vetter and Thierry Reding, requested that it be
+> > > changed. Unless that decision is reversed, I won't be changing this.
+> > >
 > >
-> > The patch LGTM, but I don't see it used anywhere later in the patch? Is there a
-> > panel driver incoming?
+> > Reading back the feedback on v1, I don't think anyone said they were against
+> > storing a drm_display_info struct in drm_panel (no one really weighed in on
+> > it one way or another). IMO duplicating a bunch of fields feels pretty icky.
 > 
-> Yeah, the boe-tv101wum-nl6 panel will use it. It's not in the patch
-> currently sent upstream since I don't want to step on their toes, but
-> I plan on sending a patch to add it as soon as that is merged.
-> 
-> I could hold back on this patch until that panel driver is merged too.
+> Thanks for the review. Should we duplicate the entire struct, or just
+> create a sub-struct, say, physical_properties that will be part of
+> drm_display_info and drm_panel?
 
-Yeah, I think it's probably best. I don't anticipate any changes will be
-required, but it's always best to review the code end-to-end.
-
-I haven't checked in on that review, but if it's close to landing, you can also
-add a patch to this stack that is based on the in-flight patches. That way we can
-get all the review out of the way and then when the panel lands, we can apply
-your add-on with the rest of the series.
+That's a good idea, but I think you can use the entire struct. Everything has
+reasonable default values and I think it might be difficult to draw a line in
+the sand as to which fields will or won't be useful for panels going forward.
+Best for drivers to just treat the info in drm_display_info as best effort and
+have good defaults IMO.
 
 Sean
 
-> Another alternative is to throw this into the generic drm_panel code,
-> but there's no obvious place to put it since DRM seems to leave
-> reading the DTS up to the panel drivers themselves.
 > 
+> >
+> > I think most fields in drm_display_info have pretty reasonable defaults, so I'd
+> > recommend just storing a copy in drm_panel. As Thierry suggests, we can
+> > populate the dt parts in probe (orientation) and then copy over all or a subset
+> > of the struct to connector on attach.
 > >
 > > Sean
 > >
-> > > ---
-> > >  drivers/gpu/drm/drm_panel.c | 43 +++++++++++++++++++++++++++++++++++++
-> > >  include/drm/drm_panel.h     |  9 ++++++++
-> > >  2 files changed, 52 insertions(+)
+> > > >
+> > > > Then in drm_panel_attach(), via this interface the specific panel
+> > > > driver can directly set connector->display_info. like
+> > > >
+> > > >    ...
+> > > >    if (panel->funcs && panel->funcs->set_display_info)
+> > > >                 panel->funcs->unprepare(panel, connector->display_info);
+> > > >    ...
+> > > >
+> > > > Thanks
+> > > > James
+> > > >
+> > > > > +     /**
+> > > > > +      * @width_mm:
+> > > > > +      *
+> > > > > +      * Physical width in mm.
+> > > > > +      */
+> > > > > +     unsigned int width_mm;
+> > > > > +
+> > > > > +     /**
+> > > > > +      * @height_mm:
+> > > > > +      *
+> > > > > +      * Physical height in mm.
+> > > > > +      */
+> > > > > +     unsigned int height_mm;
+> > > > > +
+> > > > > +     /**
+> > > > > +      * @bpc:
+> > > > > +      *
+> > > > > +      * Maximum bits per color channel. Used by HDMI and DP outputs.
+> > > > > +      */
+> > > > > +     unsigned int bpc;
+> > > > > +
+> > > > > +     /**
+> > > > > +      * @orientation
+> > > > > +      *
+> > > > > +      * Installation orientation of the panel with respect to the chassis.
+> > > > > +      */
+> > > > > +     int orientation;
+> > > > > +
+> > > > > +     /**
+> > > > > +      * @bus_formats
+> > > > > +      *
+> > > > > +      * Pixel data format on the wire.
+> > > > > +      */
+> > > > > +     const u32 *bus_formats;
+> > > > > +
+> > > > > +     /**
+> > > > > +      * @num_bus_formats:
+> > > > > +      *
+> > > > > +      * Number of elements pointed to by @bus_formats
+> > > > > +      */
+> > > > > +     unsigned int num_bus_formats;
+> > > > > +
+> > > > > +     /**
+> > > > > +      * @bus_flags:
+> > > > > +      *
+> > > > > +      * Additional information (like pixel signal polarity) for the pixel
+> > > > > +      * data on the bus.
+> > > > > +      */
+> > > > > +     u32 bus_flags;
+> > > > > +
+> > > > >       /**
+> > > > >        * @list:
+> > > > >        *
 > > >
-> > > diff --git a/drivers/gpu/drm/drm_panel.c b/drivers/gpu/drm/drm_panel.c
-> > > index 6b0bf42039cf..0909b53b74e6 100644
-> > > --- a/drivers/gpu/drm/drm_panel.c
-> > > +++ b/drivers/gpu/drm/drm_panel.c
-> > > @@ -264,6 +264,49 @@ struct drm_panel *of_drm_find_panel(const struct device_node *np)
-> > >       return ERR_PTR(-EPROBE_DEFER);
-> > >  }
-> > >  EXPORT_SYMBOL(of_drm_find_panel);
-> > > +
-> > > +/**
-> > > + * of_drm_get_panel_orientation - look up the orientation of the panel through
-> > > + * the "rotation" binding from a device tree node
-> > > + * @np: device tree node of the panel
-> > > + * @orientation: orientation enum to be filled in
-> > > + *
-> > > + * Looks up the rotation of a panel in the device tree. The orientation of the
-> > > + * panel is expressed as a property name "rotation" in the device tree. The
-> > > + * rotation in the device tree is counter clockwise.
-> > > + *
-> > > + * Return: 0 when a valid rotation value (0, 90, 180, or 270) is read or the
-> > > + * rotation property doesn't exist. -EERROR otherwise.
-> > > + */
-> > > +int of_drm_get_panel_orientation(const struct device_node *np,
-> > > +                              enum drm_panel_orientation *orientation)
-> > > +{
-> > > +     int rotation, ret;
-> > > +
-> > > +     ret = of_property_read_u32(np, "rotation", &rotation);
-> > > +     if (ret == -EINVAL) {
-> > > +             /* Don't return an error if there's no rotation property. */
-> > > +             *orientation = DRM_MODE_PANEL_ORIENTATION_UNKNOWN;
-> > > +             return 0;
-> > > +     }
-> > > +
-> > > +     if (ret < 0)
-> > > +             return ret;
-> > > +
-> > > +     if (rotation == 0)
-> > > +             *orientation = DRM_MODE_PANEL_ORIENTATION_NORMAL;
-> > > +     else if (rotation == 90)
-> > > +             *orientation = DRM_MODE_PANEL_ORIENTATION_RIGHT_UP;
-> > > +     else if (rotation == 180)
-> > > +             *orientation = DRM_MODE_PANEL_ORIENTATION_BOTTOM_UP;
-> > > +     else if (rotation == 270)
-> > > +             *orientation = DRM_MODE_PANEL_ORIENTATION_LEFT_UP;
-> > > +     else
-> > > +             return -EINVAL;
-> > > +
-> > > +     return 0;
-> > > +}
-> > > +EXPORT_SYMBOL(of_drm_get_panel_orientation);
-> > >  #endif
-> > >
-> > >  MODULE_AUTHOR("Thierry Reding <treding@nvidia.com>");
-> > > diff --git a/include/drm/drm_panel.h b/include/drm/drm_panel.h
-> > > index 624bd15ecfab..d16158deacdc 100644
-> > > --- a/include/drm/drm_panel.h
-> > > +++ b/include/drm/drm_panel.h
-> > > @@ -34,6 +34,8 @@ struct drm_device;
-> > >  struct drm_panel;
-> > >  struct display_timing;
-> > >
-> > > +enum drm_panel_orientation;
-> > > +
-> > >  /**
-> > >   * struct drm_panel_funcs - perform operations on a given panel
-> > >   *
-> > > @@ -165,11 +167,18 @@ int drm_panel_get_modes(struct drm_panel *panel);
-> > >
-> > >  #if defined(CONFIG_OF) && defined(CONFIG_DRM_PANEL)
-> > >  struct drm_panel *of_drm_find_panel(const struct device_node *np);
-> > > +int of_drm_get_panel_orientation(const struct device_node *np,
-> > > +                              enum drm_panel_orientation *orientation);
-> > >  #else
-> > >  static inline struct drm_panel *of_drm_find_panel(const struct device_node *np)
-> > >  {
-> > >       return ERR_PTR(-ENODEV);
-> > >  }
-> > > +static inline int of_drm_get_panel_orientation(const struct device_node *np,
-> > > +             enum drm_panel_orientation *orientation)
-> > > +{
-> > > +     return -ENODEV;
-> > > +}
-> > >  #endif
-> > >
-> > >  #endif
-> > > --
-> > > 2.23.0.351.gc4317032e6-goog
-> > >
+> > > Thanks for the review
 > >
 > > --
 > > Sean Paul, Software Engineer, Google / Chromium OS
