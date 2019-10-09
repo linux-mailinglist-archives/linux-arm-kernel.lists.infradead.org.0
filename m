@@ -2,96 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45656D0E33
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 14:04:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C528D0E4B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 14:06:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=AnfTZYoddDOVo9GUwnsnla4yr9NwmiZA6qhuT/t2++M=; b=LC87CvL4D2iDH6cit2mn8zSx1B
-	5vjMnX7GYB14NN6llIojsX16yDKJ1Lev6YPYXLf8AAeHHsNzJrGDLF7h0YcnGDtGedfNJd/ydWm/w
-	Qn2BCbBn39vvFiGV0KN9zV1PbsejABHgQi5PMUmzJvQPjFeyp2oatoSy82abG/xNVabWqIhDWD+UV
-	mWtUqa+Jblo3MlzE3MAjY6enMGdhdbv+jfal181zTw4ZDyoqkuOHQDRytRoAHeoQcaOod9PZYtk0S
-	U4oKw6NWTtAXK+04af6xc70dBk/18urWQ2C++0+RZ4vO2Xxhzgc0C3Lm8MBnvg3jKfvYvazE1h4PA
-	7YC7oHMw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Exvf0xwtyWLtY5dOBjcsk1cUgBl9Nmvfeeesz5nIzcA=; b=JeN
+	GbYuoxGOgLd9Tptf+0ee7bRlL9NObU5kchHO7yO93eLvedN7YdIbsK4fy49FunXa06+sN1ufuu+b0
+	sBQvm+SNJiTyq/LFesOSjOBP0GUcYTQ09eyHoR7NF/bEJQffOKj4/PnjNX8xiKQN2RNzHPHsYGekb
+	GNh1WFRfKmLgeH59jtU4cNJ4xlpD5i7JZP8iKfWJH+Yoo4yS62UnOGCIjRX6tUVy5BYw14Hs/1MbS
+	+sTGLIFjBpgDQ9qmgvh+nabP3Fn1TXXIn06xL0a96Kcf9ZRastfAGK/tvLdSHKERgfje9Ex+2cKrG
+	ig7GlEJYLXYzcoQXQdxm3Ur/MsjqNiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIAi6-0006kh-Ci; Wed, 09 Oct 2019 12:04:54 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIAhx-0006jR-3b
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 12:04:47 +0000
-Received: by mail-wr1-x443.google.com with SMTP id z9so2595383wrl.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 09 Oct 2019 05:04:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=JO2boY9XIzvrkHIaKUA5yfCjUYvN4PStHFpOCRTj0IU=;
- b=Sb27QG4zeMrMyblGOWbVXVqhM64b9igT0eyvM0n+yMALY78Hhs/InNJRQZRzEHrM64
- pRRSbkPlsVh28m0q6F6QIgXdusWugNeN1FOB2DtjQlJXIUY0NADoTEyuIutff25FPG/9
- MqhCbG4cznoIHCysiEwXaiKnFRS+GLuZxg11+KHOFAqcCoWd1SOPSKoT4qcEBEcve4vR
- zvPgb2594qAI4ORHz68aXDFY9669SZphZcBQhDSmEmZJz6WmeY9T5p8Uk/bh31aijbZh
- XlNL50zWs3JbKYXeh8/3evsO5gF0Ux6dxAViQ3ZIZ5rlxHHXKi59dr5QhIzUDtoqnWWT
- WCWA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=JO2boY9XIzvrkHIaKUA5yfCjUYvN4PStHFpOCRTj0IU=;
- b=eLDDZhvcuNje0OKbw6ZYkYn9uiRkKOA0Fcy7BDFcQdHzPhnZlMps6EPdP7KifRJWn0
- 0yjTmcMN0iWOWMCsGAd170ItHu1Agl31gNE5TEI5cYtOW5uqr+E7DP1SwYSNyx8PwElM
- cG5/1lx8O178hWYPS6X0itIPh7dCdmI5g5wbVt9IJPZv0nIbKDCEwPqdw9YNPiODqOsf
- X4aTySyeSNywNgr7XNgdQpUoR+Z/tgTrbl9k/OrrT2omKuVHBwwqZQLI79Y8azCSPj2n
- rE51JiXcMJ1E52xu0o1aRuIqEpJYIPcleWvs7hEWaYcIWWiVoJZyie42DjTpzFqJ33yi
- H2tQ==
-X-Gm-Message-State: APjAAAWr80indB6I8r6AScHqQH3Xq9hmq7KFpJwuNty3y/p1TejOmLL+
- b8FkySX4tjDfycIArdQwZ/I57w==
-X-Google-Smtp-Source: APXvYqxfSJCr9n23ZoCYM//W85uSjfZCWYHlQ3vm8HJkbBUb5NQ2yN7Uw43iwcqmki/bK3aM87soog==
-X-Received: by 2002:adf:fa92:: with SMTP id h18mr2616323wrr.220.1570622683443; 
- Wed, 09 Oct 2019 05:04:43 -0700 (PDT)
-Received: from localhost (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id b5sm1890075wmj.18.2019.10.09.05.04.42
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 09 Oct 2019 05:04:42 -0700 (PDT)
-References: <20191007131649.1768-1-linux.amoon@gmail.com>
- <20191007131649.1768-6-linux.amoon@gmail.com>
- <CAFBinCAoJLZj9Kh+SfF4Q+0OCzac2+huon_BU=Q3yE7Fu38U3w@mail.gmail.com>
- <7hsgo4cgeg.fsf@baylibre.com>
- <CANAwSgRfcFa6uBNtpqz6y=9Uwsa4gcp_4tDD+Chhg4SynJCq0Q@mail.gmail.com>
- <CAFBinCA6ZoeR4m4bhj08HF1DqxY1qB5mygpaQCGbo3d8M+Wr9Q@mail.gmail.com>
- <CANAwSgSeYTnUkLnjw-RORw76Fyj3_WT0cdM9D0vFsY8g=9L94Q@mail.gmail.com>
-User-agent: mu4e 1.3.3; emacs 26.2
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Anand Moon <linux.amoon@gmail.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Subject: Re: [RFCv1 5/5] arm64/ARM: configs: Change CONFIG_PWM_MESON from m to
- y
-In-reply-to: <CANAwSgSeYTnUkLnjw-RORw76Fyj3_WT0cdM9D0vFsY8g=9L94Q@mail.gmail.com>
-Date: Wed, 09 Oct 2019 14:04:41 +0200
-Message-ID: <1jwode9lba.fsf@starbuckisacylon.baylibre.com>
-MIME-Version: 1.0
+	id 1iIAjF-0000GP-D8; Wed, 09 Oct 2019 12:06:06 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iIAiM-0007PD-1O
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 12:05:17 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1D5AA28;
+ Wed,  9 Oct 2019 05:05:09 -0700 (PDT)
+Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
+ [10.1.197.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1933D3F703;
+ Wed,  9 Oct 2019 05:05:07 -0700 (PDT)
+From: Cristian Marussi <cristian.marussi@arm.com>
+To: linux-kselftest@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ shuah@kernel.org
+Subject: [PATCH v9 00/12] Add arm64/signal initial kselftest support
+Date: Wed,  9 Oct 2019 13:04:47 +0100
+Message-Id: <20191009120459.21805-1-cristian.marussi@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_050445_214029_74D95605 
-X-CRM114-Status: GOOD (  12.60  )
+X-CRM114-CacheID: sfid-20191009_050510_252277_CD7BD283 
+X-CRM114-Status: GOOD (  17.26  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,55 +58,250 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>,
- Linux Kernel <linux-kernel@vger.kernel.org>, linux-amlogic@lists.infradead.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: amit.kachhap@arm.com, andreyknvl@google.com, dave.martin@arm.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi
 
-On Wed 09 Oct 2019 at 10:48, Anand Moon <linux.amoon@gmail.com> wrote:
->
-> Kernel command line: console=ttyAML0,115200n8
-> root=PARTUUID=45d7d61e-01 rw rootwait
-> earlyprintk=serial,ttyAML0,115200 initcall_debug printk.time=y
->
-> [0] https://pastebin.com/eBgJrSKe
->
->> you can also try the command line parameter "clk_ignore_unused" (it's
->> just a gut feeling: maybe a "critical" clock is being disabled because
->> it's not wired up correctly).
->>
->
-> It look like some clk issue after I added the *clk_ignore_unused* to
-> kernel command line
-> it booted further to login prompt and cpufreq DVFS seem to be loaded.
-> So I could conclude this is clk issue.below is the boot log
->
-> Kernel command line: console=ttyAML0,115200n8
-> root=PARTUUID=45d7d61e-01 rw rootwait
-> earlyprintk=serial,ttyAML0,115200 initcall_debug printk.time=y
-> clk_ignore_unused
->
-> [1] https://pastebin.com/Nsk0wZQJ
->
+this patchset aims to add the initial arch-specific arm64 support to
+kselftest starting with signals-related test-cases.
 
-Next step it to try narrow down the clock causing the issue.
-Remove clk_ignore_unused from the command line and add CLK_INGORE_UNUSED
-to the flag of some clocks your clock controller (g12a I think) until
+This series is based on v5.4-rc2.
 
-The peripheral clock gates already have this flag (something we should
-fix someday) so don't bother looking there.
+A common internal test-case layout is proposed for signal tests and it is
+wired-up to the toplevel kselftest Makefile, so that it should be possible
+at the end to run it on an arm64 target in the usual way with KSFT.
 
-Most likely the source of the pwm is getting disabled between the
-late_init call and the probe of the PWM module. Since the pwm is already
-active (w/o a driver), gating the clock source shuts dowm the power to
-the cores.
+~/linux# make TARGETS=arm64 kselftest
 
-Looking a the possible inputs in pwm driver, I'd bet on fdiv4.
+New KSFT arm64 testcases live inside tools/testing/selftests/arm64 grouped
+by family inside subdirectories: arm64/signal is the first family proposed
+with this series.
+
+This series converts also to this subdirectory scheme the pre-existing
+KSFT arm64 tags tests (already merged in v5.3), moving them into their own
+arm64/tags subdirectory.
+
+Thanks
+
+Cristian
+
+Notes:
+-----
+- further details in the included READMEs
+
+- more tests still to be written (current strategy is going through the
+  related Kernel signal-handling code and write a test for each possible
+  and sensible code-path)
+  A few ideas for more TODO testcases:
+    - mangle_pstate_invalid_ssbs_regs: mess with SSBS bits on every
+      possible configured behavior
+    - fake_sigreturn_unmapped_sp: SP into unmapped addrs
+    - fake_sigreturn_kernelspace_sp: SP into kernel addrs
+    - fake_sigreturn_sve_bad_extra_context: SVE extra context badly formed
+    - fake_sigreturn_misaligned_sp_4: misaligned SP by 4
+      (i.e., __alignof__(struct _aarch64_ctx))
+    - fake_sigreturn_misaligned_sp_8: misaligned SP by 8
+      (i.e., sizeof(struct _aarch64_ctx))
+    - fake_sigreturn_bad_size_non_aligned: a size that doesn't overflow
+      __reserved[], but is not a multiple of 16
+    - fake_sigreturn_bad_size_tiny: a size that is less than 16
+    - fake_sigreturn_bad_size_overflow_tiny: a size that does overflow
+      __reserved[], but by less than 16 bytes?
+    - mangle_sve_invalid_extra_context: SVE extra_context invalid
+
+- SVE signal testcases and special handling will be part of an additional patch
+  still to be released
+
+- KSFT arm64 tags test patch
+  https://lore.kernel.org/linux-arm-kernel/c1e6aad230658bc175b42d92daeff2e30050302a.1563904656.git.andreyknvl@google.com/
+  is relocated into its own directory under tools/testing/selftests/arm64/tags
+
+
+Changes:
+--------
+ v8-->v9:
+ - fixed a couple of misplaced .gitignore
+
+ v7-->v8:
+ - removed SSBS test case
+ - split remnants of SSBS patch (v7 05/11), containing some helpers,
+   into two distinct patches
+
+ v6-->v7:
+ - rebased on v5.4-rc2
+ - renamed SUBTARGETS arm64/ toplevel Makefile ENV to ARM64_SUBTARGETS
+ - fixed fake_sigreturn alignment routines (off by one)
+ - fixed SSBS test: avoid using MRS/MSR as whole and SKIP when SSBS not
+   supported
+ - reporting KSFT_SKIP when needed (usually if test_init(0 fails)
+ - using ID_AA64PFR1_EL1.SSBS to check SSBS support instead of HWCAP_SSBS
+
+ v5-->v6:
+ - added arm64 toplevel Makefile SUBTARGETS env var to be able to selectively
+   build only some arm64/ tests subdirectories
+ - removed unneed toplevel Makefile exports and fixed Copyright
+ - better checks for supported features and features names helpers
+ - converted some run-time critical assert() to abort() to avoid
+   issues when -NDEBUG is set
+ - default_handler() signal handler refactored and split
+ - using SIGTRAP for get_current_context()
+ - use volatile where proper
+ - refactor and relocate test_init() invocation
+ - review usage of MRS SSBS instructions depending on HW_SSBS
+ - cleanup fake_sigreturn trampoline
+ - cleanup get_starting_header helper
+ - avoiding timeout test failures wherever possible (fail immediately
+   if possible)
+
+ v4-->v5:
+ - rebased on arm64/for-next-core merging 01/11 with KSFT tags tests:
+   commit 9ce1263033cd ("selftests, arm64: add a selftest for passing tagged pointers to kernel")
+ - moved .gitignore up on elevel
+ - moved kernel header search mechanism into KSFT arm64 toplevel Makefile
+   so that it can be used easily also by each arm64 KSFT subsystem inside
+   subdirs of arm64
+
+ v3-->v4:
+ - rebased on v5.3-rc6
+ - added test descriptions
+ - fixed commit messages (imperative mood)
+ - added missing includes and removed unneeded ones
+ - added/used new get_starting_head() helper
+ - fixed/simplified signal.S::fakke_sigreturn()
+ - added set_regval() macro and .init initialization func
+ - better synchonization in get_current_context()
+ - macroization of mangle_pstate_invalid_mode_el
+ - split mangle_pstate_invalid_mode_el h/t
+ - removed standalone mode
+ - simplified CPU features checks
+ - fixed/refactored get_header() and validation routines
+ - simplfied docs
+
+ v2-->v3:
+ - rebased on v5.3-rc2
+ - better test result characterization looking for
+   SEGV_ACCERR in si_code on SIGSEGV
+ - using KSFT Framework macros for retvalues
+ - removed SAFE_WRITE()/dump_uc: buggy, un-needed and unused
+ - reviewed generation process of test_arm64_signals.sh runner script
+ - re-added a fixed fake_sigreturn_misaligned_sp testcase and a properly
+   extended fake_sigreturn() helper
+ - added tests' TODO notes
+
+ v1-->v2:
+- rebased on 5.2-rc7
+- various makefile's cleanups
+- mixed READMEs fixes
+- fixed test_arm64_signals.sh runner script
+- cleaned up assembly code in signal.S
+- improved get_current_context() logic
+- fixed SAFE_WRITE()
+- common support code split into more chunks, each one introduced when
+  needed by some new testcases
+- fixed some headers validation routines in testcases.c
+- removed some still broken/immature tests:
+  + fake_sigreturn_misaligned
+  + fake_sigreturn_overflow_reserved
+  + mangle_pc_invalid
+  + mangle_sp_misaligned
+- fixed some other testcases:
+  + mangle_pstate_ssbs_regs: better checks of SSBS bit when feature unsupported
+  + mangle_pstate_invalid_compat_toggle: name fix
+  + mangle_pstate_invalid_mode_el[1-3]: precautionary zeroing PSTATE.MODE
+  + fake_sigreturn_bad_magic, fake_sigreturn_bad_size,
+    fake_sigreturn_bad_size_for_magic0:
+    - accounting for available space...dropping extra when needed
+    - keeping alignent
+- new testcases on FPSMID context:
+  + fake_sigreturn_missing_fpsimd
+  + fake_sigreturn_duplicated_fpsimd
+
+
+Cristian Marussi (12):
+  kselftest: arm64: extend toplevel skeleton Makefile
+  kselftest: arm64: mangle_pstate_invalid_compat_toggle and common utils
+  kselftest: arm64: mangle_pstate_invalid_daif_bits
+  kselftest: arm64: mangle_pstate_invalid_mode_el[123][ht]
+  kselftest: arm64: extend test_init functionalities
+  kselftest: arm64: add helper get_current_context
+  kselftest: arm64: fake_sigreturn_bad_magic
+  kselftest: arm64: fake_sigreturn_bad_size_for_magic0
+  kselftest: arm64: fake_sigreturn_missing_fpsimd
+  kselftest: arm64: fake_sigreturn_duplicated_fpsimd
+  kselftest: arm64: fake_sigreturn_bad_size
+  kselftest: arm64: fake_sigreturn_misaligned_sp
+
+ tools/testing/selftests/Makefile              |   1 +
+ tools/testing/selftests/arm64/Makefile        |  64 +++-
+ tools/testing/selftests/arm64/README          |  25 ++
+ .../testing/selftests/arm64/signal/.gitignore |   3 +
+ tools/testing/selftests/arm64/signal/Makefile |  32 ++
+ tools/testing/selftests/arm64/signal/README   |  59 +++
+ .../testing/selftests/arm64/signal/signals.S  |  64 ++++
+ .../selftests/arm64/signal/test_signals.c     |  29 ++
+ .../selftests/arm64/signal/test_signals.h     | 116 ++++++
+ .../arm64/signal/test_signals_utils.c         | 340 ++++++++++++++++++
+ .../arm64/signal/test_signals_utils.h         | 120 +++++++
+ .../testcases/fake_sigreturn_bad_magic.c      |  52 +++
+ .../testcases/fake_sigreturn_bad_size.c       |  77 ++++
+ .../fake_sigreturn_bad_size_for_magic0.c      |  46 +++
+ .../fake_sigreturn_duplicated_fpsimd.c        |  50 +++
+ .../testcases/fake_sigreturn_misaligned_sp.c  |  37 ++
+ .../testcases/fake_sigreturn_missing_fpsimd.c |  50 +++
+ .../mangle_pstate_invalid_compat_toggle.c     |  31 ++
+ .../mangle_pstate_invalid_daif_bits.c         |  35 ++
+ .../mangle_pstate_invalid_mode_el1h.c         |  15 +
+ .../mangle_pstate_invalid_mode_el1t.c         |  15 +
+ .../mangle_pstate_invalid_mode_el2h.c         |  15 +
+ .../mangle_pstate_invalid_mode_el2t.c         |  15 +
+ .../mangle_pstate_invalid_mode_el3h.c         |  15 +
+ .../mangle_pstate_invalid_mode_el3t.c         |  15 +
+ .../mangle_pstate_invalid_mode_template.h     |  28 ++
+ .../arm64/signal/testcases/testcases.c        | 196 ++++++++++
+ .../arm64/signal/testcases/testcases.h        | 104 ++++++
+ .../selftests/arm64/{ => tags}/.gitignore     |   0
+ tools/testing/selftests/arm64/tags/Makefile   |   7 +
+ .../arm64/{ => tags}/run_tags_test.sh         |   0
+ .../selftests/arm64/{ => tags}/tags_test.c    |   0
+ 32 files changed, 1651 insertions(+), 5 deletions(-)
+ create mode 100644 tools/testing/selftests/arm64/README
+ create mode 100644 tools/testing/selftests/arm64/signal/.gitignore
+ create mode 100644 tools/testing/selftests/arm64/signal/Makefile
+ create mode 100644 tools/testing/selftests/arm64/signal/README
+ create mode 100644 tools/testing/selftests/arm64/signal/signals.S
+ create mode 100644 tools/testing/selftests/arm64/signal/test_signals.c
+ create mode 100644 tools/testing/selftests/arm64/signal/test_signals.h
+ create mode 100644 tools/testing/selftests/arm64/signal/test_signals_utils.c
+ create mode 100644 tools/testing/selftests/arm64/signal/test_signals_utils.h
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_magic.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size_for_magic0.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_duplicated_fpsimd.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_misaligned_sp.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_missing_fpsimd.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_compat_toggle.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_daif_bits.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el1h.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el1t.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el2h.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el2t.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el3h.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el3t.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_template.h
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/testcases.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/testcases.h
+ rename tools/testing/selftests/arm64/{ => tags}/.gitignore (100%)
+ create mode 100644 tools/testing/selftests/arm64/tags/Makefile
+ rename tools/testing/selftests/arm64/{ => tags}/run_tags_test.sh (100%)
+ rename tools/testing/selftests/arm64/{ => tags}/tags_test.c (100%)
+
+-- 
+2.17.1
 
 
 _______________________________________________
