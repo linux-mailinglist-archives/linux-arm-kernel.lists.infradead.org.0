@@ -2,67 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0057DD0B7F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 11:40:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 373DCD0B9B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 11:44:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rhehmvpJ+vbaZ42tss/q8qxEI+rXkr5vWDjdvbIrbIw=; b=BDZL8GoqiLgIh3
-	ZhsgCBqsx/LE3n7H5cxPyuAu9Xd4I3jnJipQfKIWFb7fvJadbpc2PzYU7Xf8Jh55tbMfqqG3lS+xE
-	D9VUBqFPlPFZr7nLjEJgIaBvKvsAs8vhd0tjlWn0uYua8rpH1LjTLaCHc2W6bqBzdhAsZqw4ckjbV
-	poifnQmUv+bgtU5461l/RP1ECMk22UZUGWFibz5k/S+kU6chC5c1D2eFR02p8PKZ+Yxx/4wcleOsT
-	ioZ2Pa1ZpfZClyEGQUgmw9yFTiyQ4Li9Qk+RdU3y0QysXJwqLiFWfIaZChISXD3uA6eOWvQzV6Mop
-	NgP2muoyQXqAD7SQEH6g==;
+	List-Owner; bh=uTavTYlJ98/1cTeqkjD0CAa9TM94zAufFnzHkG4D5Xk=; b=R/aoXIrvZGxEo2
+	Gtep9LkR56Qld5jQ1E91Mu2v8AgfjOtkyqq+mz0iwr42ZhhQjeZK/1hCYsC9xUDgTi6mBM2/64uTr
+	OSC8F2qGpfVFJ+a8DRL6MLJL0gGMruq3NdDZF9TWrEFdGAsC242H3EyLRlDSI98yeaTXi0q1q1rZ5
+	CWJx/uDKhIxvEgGRck19QtT7HGnZkP47SubckFeqqVAFJq4ZSHk1XcAFE+K17T/m/NWdWsenu6mPM
+	5+GKQ0zjvFmmWOdkfpigdAX4HoXF8D9t4krwQRBNz/rqnCjZ+z6CEAwc2vzS/pBJvbrn4cOyBiJ9l
+	DrkX8R7MOsO72GM5oG+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI8SH-00012T-HO; Wed, 09 Oct 2019 09:40:25 +0000
-Received: from mga06.intel.com ([134.134.136.31])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI8S4-0000hk-DI
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 09:40:15 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga006.fm.intel.com ([10.253.24.20])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 09 Oct 2019 02:40:10 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.67,273,1566889200"; d="scan'208";a="394962408"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga006.fm.intel.com with ESMTP; 09 Oct 2019 02:40:06 -0700
-Received: from andy by smile with local (Exim 4.92.2)
- (envelope-from <andriy.shevchenko@intel.com>)
- id 1iI8Rx-0005PC-C4; Wed, 09 Oct 2019 12:40:05 +0300
-Date: Wed, 9 Oct 2019 12:40:05 +0300
-From: Andy Shevchenko <andriy.shevchenko@intel.com>
-To: "Ramuthevar,
- Vadivel MuruganX" <vadivel.muruganx.ramuthevar@linux.intel.com>
-Subject: Re: [PATCH v1 2/2] mmc: sdhci-of-arasan: Add Support for Intel LGM
- SDXC
-Message-ID: <20191009094005.GB32742@smile.fi.intel.com>
-References: <20191003040032.37696-1-vadivel.muruganx.ramuthevar@linux.intel.com>
- <20191003040032.37696-3-vadivel.muruganx.ramuthevar@linux.intel.com>
- <2cbda555-42d2-392c-0887-09cae4a35dce@intel.com>
- <38228535-8d4c-76e9-f568-c0dfdc3994b3@linux.intel.com>
+	id 1iI8WD-0001Y4-UN; Wed, 09 Oct 2019 09:44:29 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iI8W5-0001Wx-4m
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 09:44:22 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B74C628;
+ Wed,  9 Oct 2019 02:44:19 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3B0F13F68E;
+ Wed,  9 Oct 2019 02:44:19 -0700 (PDT)
+Date: Wed, 9 Oct 2019 10:44:17 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Xiaowei Bao <xiaowei.bao@nxp.com>
+Subject: Re: [PATCH 0/6] Add the Mobiveil EP and Layerscape Gen4 EP driver
+ support
+Message-ID: <20191009094416.GO42880@e119886-lin.cambridge.arm.com>
+References: <20190916021742.22844-1-xiaowei.bao@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <38228535-8d4c-76e9-f568-c0dfdc3994b3@linux.intel.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190916021742.22844-1-xiaowei.bao@nxp.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_024012_565919_CCBF3FC3 
-X-CRM114-Status: UNSURE (   8.16  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191009_024421_225952_C8E17DB1 
+X-CRM114-Status: GOOD (  13.79  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -76,35 +61,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ulf.hansson@linaro.org,
- cheol.yong.kim@intel.com, linux-mmc@vger.kernel.org,
- Adrian Hunter <adrian.hunter@intel.com>, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, qi-ming.wu@intel.com, michal.simek@xilinx.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ linux-pci@vger.kernel.org, Zhiqiang.Hou@nxp.com, linux-kernel@vger.kernel.org,
+ leoyang.li@nxp.com, Minghuan.Lian@nxp.com, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org, bhelgaas@google.com, kishon@ti.com,
+ shawnguo@kernel.org, mingkai.hu@nxp.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 09, 2019 at 09:06:16AM +0800, Ramuthevar, Vadivel MuruganX wrot=
-e:
-> Hi Adrian,
-> =
+On Mon, Sep 16, 2019 at 10:17:36AM +0800, Xiaowei Bao wrote:
+> This patch set are for adding Mobiveil EP driver and adding PCIe Gen4
+> EP driver of NXP Layerscape platform.
+> 
+> This patch set depends on:
+> https://patchwork.kernel.org/project/linux-pci/list/?series=159139
+> 
 
-> =A0=A0=A0 Thank you for the Acked-by, will add *Acked-by* in the next-pat=
-ch.
+I've not had any feedback on this earlier series (in your link), I was
+planning to review *this* patchset after that.
 
-Please, stop top-posting.
+Thanks,
 
-Besides that, there is no need for next version if the only comments you got
-are ACKs. Rb:s, etc.
+Andrew Murray
 
--- =
-
-With Best Regards,
-Andy Shevchenko
-
-
+> Xiaowei Bao (6):
+>   PCI: mobiveil: Add the EP driver support
+>   dt-bindings: Add DT binding for PCIE GEN4 EP of the layerscape
+>   PCI: mobiveil: Add PCIe Gen4 EP driver for NXP Layerscape SoCs
+>   PCI: mobiveil: Add workaround for unsupported request error
+>   arm64: dts: lx2160a: Add PCIe EP node
+>   misc: pci_endpoint_test: Add the layerscape PCIe GEN4 EP device
+>     support
+> 
+>  .../bindings/pci/layerscape-pcie-gen4.txt          |  28 +-
+>  MAINTAINERS                                        |   3 +
+>  arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi     |  56 ++
+>  drivers/misc/pci_endpoint_test.c                   |   2 +
+>  drivers/pci/controller/mobiveil/Kconfig            |  22 +-
+>  drivers/pci/controller/mobiveil/Makefile           |   2 +
+>  .../controller/mobiveil/pcie-layerscape-gen4-ep.c  | 169 ++++++
+>  drivers/pci/controller/mobiveil/pcie-mobiveil-ep.c | 568 +++++++++++++++++++++
+>  drivers/pci/controller/mobiveil/pcie-mobiveil.c    |  99 +++-
+>  drivers/pci/controller/mobiveil/pcie-mobiveil.h    |  72 +++
+>  10 files changed, 1009 insertions(+), 12 deletions(-)
+>  create mode 100644 drivers/pci/controller/mobiveil/pcie-layerscape-gen4-ep.c
+>  create mode 100644 drivers/pci/controller/mobiveil/pcie-mobiveil-ep.c
+> 
+> -- 
+> 2.9.5
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
