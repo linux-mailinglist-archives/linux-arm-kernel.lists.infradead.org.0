@@ -2,111 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E6B5D08A6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 09:43:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27047D08BC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 09:47:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NOc/P5eWHJs0rBi2a9+7W5jUDSfLYK0xdx2eQmg85y8=; b=GAB+GaPDROrtJW
-	EfS4UbWKmv3bcKzFmcOdeZwUGJe5qOoE24axn1S/cqWsgtDUEEUaRC9EEuAUDoyNyEASKVbMhxIuM
-	qtVwaF3+qrLa4lM9g24WOyBStiHVMERoMtoCrOW68/Xdpce48fMqSHPbFcxJtf+CjGgYVFkQ+Uzy1
-	E7Lo+9pLHpFhEtoIgCt/wj3bdzhzZIbn4dDCznQYkNKWjIfzaQ3/7rdPaDHratmQQ6vmCHFlEDnez
-	N/MUXEOYw2vLOC3lA+v/Ah+IeEnUBhOBifQL2Ek45/e4gRDJ0vfUgjqg7klb8MjBgtyV8f6ItecmT
-	uTr+wkBAKJsnMWqVzObA==;
+	List-Owner; bh=+641/5DT0W58y6CAOYRiBwENWg+CqeyVjZPxCyUd+ps=; b=nBT3SYngc091yj
+	4dBpd8HKg8fNGMz8rEihBDdiyI8z1ko4hcer7OuIzQj/VANc8rVKfQauiiS0hbbI5oJHwlkBOg/wD
+	rQDOLKXV7iDZQ5vIeyikM9msV6N36GQXhnqssVRkHiMXSzbg2WXE6+oK16jg6QocfmKKBg7s1RZyX
+	pQ1VCn62yY1k774QPz5ebRiHoE1Xh3EM3jVDEirCY78jdTI/ZJINeHKn5yE95GgexTYkBtNUeubt0
+	cBPsnOR31an4oWfgGw7DCofSHicduMY98i8GnL1xughs1CxMPUiXLayKXGzy/31QP1g2MaibLWQ+E
+	ruQHI8TKNSy3l45rGrZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI6dE-0001eD-3S; Wed, 09 Oct 2019 07:43:36 +0000
-Received: from mail-eopbgr150073.outbound.protection.outlook.com
- ([40.107.15.73] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1iI6gh-0003Uz-N8; Wed, 09 Oct 2019 07:47:11 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI6d5-0001dT-7A
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 07:43:28 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=aBITk9laVtxC1yKnZGd7p9nJCBFWX8i2CARu4Cj03s/MPrGzJyccMpr59XmP8B9fj7b4gVWLDjYvRSVBG8EaIKxSyt6bVxtPE03PmmtIVpyodOu1PeTGPe972YADfkns1qMMN14LTik+uWWWFIMrMX42U84MmV8vfJ+mYIzsSU7gyKW1Xerzd4oQQFvcrZppxfrLZ3gE/pgYAXXyhPaENS+21vd1xwmEI0GImf8l2Lzu5kDvtgn2+TIZbe5xKT0xQ5k+OTMUvrGA9ia7e+RV4MxDkizdbseyvlLDGnVcl7dXW90OMDdJZXgtp2YMjGKyEQd2eiWtZ7jCJHFJg+Qfeg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JezFGT7SYnw9AouOO/SQOroJZ5TZ0/9VIIVeY8a11O0=;
- b=gKsIk9vxxftpOTZVSRe84sOxEOR9qjBEyRphciq4h9DnrqHiDM/Nsuz+udWHS7b1uTmTap0FoqtSI+BhduPv9vxdPHm8z/JQhYKwJAOOgIa+OEnnRQW59iPxO11QO8oFhTGM1PbnOKmfkP5dRWFCCyY+HDcTcSxQU69nTx6sBeSqxnx+6l5zNRM0jBoKRXf76pU2hEYJ+RviePQ3mpfVfkOr3HtChGLNvBjMxA9iM9yjG1T8q3oN7JS353Pjc2uz9Pt9xxPYbOx68mZw6Zx/DGLa9ZvAZlOSiC8N2Gpq9Yvj/dAuyvhCDbI10FQBrNo6mzhVRwGi5UAZ8fKrTCbBMg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JezFGT7SYnw9AouOO/SQOroJZ5TZ0/9VIIVeY8a11O0=;
- b=AEIA7XYOLT/hKBKBd39zumDhdZEIXVDgIJ+ZjChYAgqgPwj3nzPKzi+yL+2g4CW8MPdvE26FgOi9i8KkN5ON/9KxmR7QRI9AD3g/cLBl1UGclFUFejTL6sIGDBtepMhQ0xmOnTEW5nw2NYnnmE6s5hpSmiz5Hm3IOX6aDoybBy8=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3836.eurprd04.prod.outlook.com (52.134.71.139) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2347.16; Wed, 9 Oct 2019 07:43:24 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::d469:ad51:2bec:19f0]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::d469:ad51:2bec:19f0%6]) with mapi id 15.20.2347.016; Wed, 9 Oct 2019
- 07:43:24 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: =?utf-8?B?VXdlIEtsZWluZS1Lw7ZuaWc=?= <u.kleine-koenig@pengutronix.de>
-Subject: RE: [PATCH] tty: serial: imx: Only get second/third IRQ when there is
- more than one IRQ
-Thread-Topic: [PATCH] tty: serial: imx: Only get second/third IRQ when there
- is more than one IRQ
-Thread-Index: AQHVfmm1cibywjMA5UifVvn4HL9DWadR35+AgAAA6hCAAATlgIAAAf4ggAAEgICAAADzQA==
-Date: Wed, 9 Oct 2019 07:43:24 +0000
-Message-ID: <DB3PR0402MB391677227A688D5DD56A8417F5950@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1570601911-9162-1-git-send-email-Anson.Huang@nxp.com>
- <20191009065315.wgdvmkv6skteyul4@pengutronix.de>
- <DB3PR0402MB39165F9CE876772F8F94F187F5950@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <20191009071403.ugd2wuac6ue5zsd6@pengutronix.de>
- <DB3PR0402MB39161E02A9D042948B71FDCDF5950@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <20191009073717.qlr2svma5fiaf4ad@pengutronix.de>
-In-Reply-To: <20191009073717.qlr2svma5fiaf4ad@pengutronix.de>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 8a99a174-9d4f-43f3-5116-08d74c8c5d6a
-x-ms-office365-filtering-ht: Tenant
-x-ms-traffictypediagnostic: DB3PR0402MB3836:|DB3PR0402MB3836:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB3836CE4599F507FE3DECBE8BF5950@DB3PR0402MB3836.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
-x-forefront-prvs: 018577E36E
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(396003)(136003)(366004)(39860400002)(376002)(189003)(54094003)(199004)(55016002)(6246003)(305945005)(52536014)(6436002)(66066001)(7736002)(8936002)(74316002)(25786009)(8676002)(76116006)(66946007)(81156014)(4326008)(66446008)(64756008)(81166006)(66556008)(66476007)(6916009)(229853002)(86362001)(14454004)(3846002)(6116002)(256004)(7696005)(76176011)(26005)(2906002)(6506007)(102836004)(7416002)(11346002)(99286004)(446003)(9686003)(478600001)(33656002)(54906003)(486006)(44832011)(316002)(476003)(186003)(71190400001)(71200400001)(5660300002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3836;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: akzimXs4Lk2OKyGVcCP4Yssd4yMA6Iv5ZYqWAT5aghZI7pEqpx9tJskPEWgQTeRXjWtp5eP4ZlYIxwJLqYJ9Jy1zNjFufIA6YTD9PHjYTJP3x0UokF2RajqwEPcaQfPWs2yAi3tbP7golf1VROstTqSFl0wwKqyFSdJfzRZHN4SCxnugHU3Ce3ZzrWH3srlQ5Q12eehwIBNVbZHCP8hCeDm6vv94V5c7zsjDkRuiyggvvMVeaLz/p74INcAtDmpq1DauE40auwNSme2llpWpMl9tfV6WMaPpZsyRRwJaGZbMGkWYRYlsjiczGG9UuU78ZMpnWplSsN8A0BROV01wBeYL2IM1ypi2Ess5HgIFaZBdFmzINJubFY98MzPQvaqwJ4mV9ZOZn58sOox+E9LOzJlOonSst4JusxhBy+raiFo=
+ id 1iI6gC-0003Du-MD
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 07:46:42 +0000
+Received: by mail-lj1-x244.google.com with SMTP id j19so1480926lja.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 09 Oct 2019 00:46:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=hZEfc+r3FkjJNXGg5OrQndZ7EVhjrXvy0Arp8Ba6y3Y=;
+ b=wjvQivs+C+mNfu/kBT+oqZ7KD4q6+IZ5Kth6hhfGFbltlKdqAJ38C7ajvyZ31te4gJ
+ C5EqhO//ZRTNxmVHsnWpL4FPvGmq6RGPaLctgOfRFcn64vZmRPcZzkMMWQJ5TtpYGxOS
+ ++ZFPLLjrWzBCECqMtnDgmicGmA0oWmKIWQeYM/ZOxDhwuAVKbdEN/zSfWvAA3hLQZZq
+ ubaT/P3ZZ59MYBEbi3oE/Ge+OFG+iQYKsWIiR5Ef3yKK7kivB5XTNZls9k74vNap0dO9
+ ytr/crl5hSQEYBvLZjmMXVpBhkzUNMwtOdUVNlFdxRC9uu49L9C1IMRlaxaQ+WnE44XU
+ dFHg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=hZEfc+r3FkjJNXGg5OrQndZ7EVhjrXvy0Arp8Ba6y3Y=;
+ b=f9Iv14M3tE/McpQDHm66hbsNHNtU4rtp7E0jpj3flIhSQBp+lEDVIpla52PFbMC0Mk
+ Lkyuxya5aX6JR0RHiRWY1JQl2txYcAr0IS6iodRrJcIyA8ZgZZiCdneA2C/tFSVqYVcs
+ ojWLcSw9ywb70rt2oq81de+wfOzECFJkgImRTbwMZvKyl8B8glzSi2G0bQmzkrEZbDSL
+ ZOKOcXVW2S61wAexd+YAvyVHArYgtKHUAaNJqQXpSzw1EkeeYG4tfXQ7ZVLQkxO1pwln
+ WQLpg/Z3wwYdOzxODaWaOCrsZUmmOhnpY0z8Q+1BP5PXRxpNlCm8SvmDccjJ5eM3S1UO
+ LaPw==
+X-Gm-Message-State: APjAAAVgaGLqCxqFtrSfGbO4FMRbF8DJMaLBxrGsjS4Ijzue4bYHaRLq
+ stltEWjNTtxKNfolsYQhHbCZJSbxKE2hntyqiCU7ig==
+X-Google-Smtp-Source: APXvYqzKb6yyez5/a7eDQjEjte0+mGMXwCtZbVyeffNWrWYP4x2euviqJJy4ezdD4TVfujVbQ0UR4GcHrwjyGqp8gXQ=
+X-Received: by 2002:a2e:80d1:: with SMTP id r17mr1435527ljg.118.1570607198839; 
+ Wed, 09 Oct 2019 00:46:38 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8a99a174-9d4f-43f3-5116-08d74c8c5d6a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Oct 2019 07:43:24.1826 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: HnHE5edpr8D21Ycgeqh0eCPcrqjV58CtaGDS+lC/zsN/Bcm2oruKeU6vvHEhVAdMr2A4rlTJn7VcfZSlxdfwRQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3836
+References: <20191006102953.57536-1-yuehaibing@huawei.com>
+ <20191006102953.57536-7-yuehaibing@huawei.com>
+In-Reply-To: <20191006102953.57536-7-yuehaibing@huawei.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Wed, 9 Oct 2019 09:46:27 +0200
+Message-ID: <CACRpkdY5x3wG4h6Wm_L5OXWXB7SPqHimUFOQa2jOeqDETWciYg@mail.gmail.com>
+Subject: Re: [PATCH -next 06/34] rtc: coh901331: use
+ devm_platform_ioremap_resource() to simplify code
+To: YueHaibing <yuehaibing@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_004327_266095_1006D507 
-X-CRM114-Status: GOOD (  25.81  )
+X-CRM114-CacheID: sfid-20191009_004640_731170_7227D3BE 
+X-CRM114-Status: GOOD (  10.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.15.73 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -126,67 +92,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "festevam@gmail.com" <festevam@gmail.com>,
- "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "Rafael J.
- Wysocki" <rafael.j.wysocki@intel.com>,
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>, Baruch Siach <baruch@tkos.co.il>,
+ Patrice CHOTARD <patrice.chotard@st.com>, Paul Cercueil <paul@crapouillou.net>,
+ linux-tegra@vger.kernel.org,
+ "thierry.reding@gmail.com" <thierry.reding@gmail.com>,
+ Michal Simek <michal.simek@xilinx.com>, linux-rtc@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>, Kevin Hilman <khilman@baylibre.com>,
+ Chen-Yu Tsai <wens@csie.org>, Jon Hunter <jonathanh@nvidia.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
+ Joel Stanley <joel@jms.id.au>, Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ Alexandre TORGUE <alexandre.torgue@st.com>, Sean Wang <sean.wang@mediatek.com>,
+ Maxime Ripard <mripard@kernel.org>, Vladimir Zapolskiy <vz@mleia.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Gregory Fong <gregory.0xf0@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ huang eddie <eddie.huang@mediatek.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Alessandro Zummo <a.zummo@towertech.it>, Andrew Jeffery <andrew@aj.id.au>,
+ linux-stm32@st-md-mailman.stormreply.com,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>,
- Andy Shevchenko <andy.shevchenko@gmail.com>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "jslaby@suse.com" <jslaby@suse.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ Tony Prisk <linux@prisktech.co.nz>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Brian Norris <computersforpeace@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Uwe
+On Sun, Oct 6, 2019 at 12:32 PM YueHaibing <yuehaibing@huawei.com> wrote:
 
-> On Wed, Oct 09, 2019 at 07:24:57AM +0000, Anson Huang wrote:
-> > > On Wed, Oct 09, 2019 at 06:58:24AM +0000, Anson Huang wrote:
-> > > > > The patch is fine given the changed behaviour of
-> > > > > platform_get_irq. I wonder if it is sensible to introduce a
-> > > > > variant of platform_get_irq (say
-> > > > > platform_get_irq_nowarn) that behaves like __platform_get_irq
-> > > > > does t Then the imx driver would just call
-> > > > > platform_get_irq_nowarn without having to check the number of
-> available irqs first.
-> > > >
-> > > > Agreed, it would be nice if we can fix this from the API level,
-> > > > this is to save many patches from various drivers side, let me
-> > > > know if agreement is reached and I will do the patch.
-> > >
-> > > I wouldn't expect that most callers actually want an error message
-> > > and so these need a different patch (i.e. dropping the error message by
-> the caller).
-> > > This type of patch is fine and the normal load when something is
-> > > consolidated.
-> > >
-> > > Which other drivers do you have on your radar that don't want an
-> > > error message if platform_get_irq() fails?
-> >
-> > I did NOT mean drivers don't want an error when getting irq failed,
-> > but I just agree that introducing another API with nowarn as you
-> > mentioned upper, then i.MX driver can call it. For now, the FEC driver
-> > also have many such error message, we will fix later.
-> >
-> > So if the API with nowarn is added, then I can change the API call in
-> > some i.MX driver instead of getting irq_count first. Do you think I
-> > should add the nowarn API and redo this patch to call it?
-> 
-> Having a patch (or a set of patches) is probably helpful to get forward here,
-> yes. You have my blessing to create a suggestion. (Not that you actually need
-> that :-)
+> Use devm_platform_ioremap_resource() to simplify the code a bit.
+> This is detected by coccinelle.
+>
+> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 
-Thanks, OK, then I will leave this patch as it is for now, and leave others to decide whether
-to add a patch of adding new API of nowarn. Some drivers need to be changed anyway to avoid
-this error message, either getting irq count first or calling new API once it is added.
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
-Thanks,
-Anson
+Yours,
+Linus Walleij
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
