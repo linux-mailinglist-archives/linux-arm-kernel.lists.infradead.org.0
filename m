@@ -2,60 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEB89D0F97
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 15:07:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A57BD0FDB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 15:19:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/S/KlIvYWWEY0RbrcVCSRn6Ii38yfc5yHbQJ37aG5JY=; b=oJtmAqFiSr0Pph+hI0IjGPNyq
-	Ds3b3T9ARLAZZ6buwgh12yHMy9EhaNxxf0ilDWrHV7KBZOfdoUlqQlbfg3Avk6zmywtCm3I9Q9L5R
-	0ZrTK6Kjb7d2R3ObTEyiiHjwVQ1FM4V/x8fyfYVy+Wrk4nBgx3W6uXRp1YxYRtNKxQ25g4+dpFM1h
-	W3DZxUlxHuVpezoIJOMDIsXV8+/TNMQBLEBvz2CdNwOrBqEbbdjmhszyz4F0YK9rEfbr6fGQ81fhD
-	f16V9d9DN0HJIoS1ft91pAP1SgAbHL5DrOgiaV5VBIcL37scufOTJL0UYI3xczFB7z2lCrMS7qI6t
-	HAFPceCfQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=C+eEs9ObctjvIgCOMMbJRxwjkwqpnzM76CAZwedVJH4=; b=kzLawF2TXmCv+l
+	ECyOpAtrhhL5hZox9RJWXv9b4MBW3+hw0PVTqohGH4apuLUpfCwkfxZCPL8RPgh1Og25iApM4jbhv
+	gV3lPHynuTmfdjO4gupAm7s1t12ZTAUP1pfwVgQAb+xBIaTQv6/ms/VA3GDGfe+NKsJZ7r3ORmdlV
+	DLOp02df0iN9FOMSQ7wso9kPkyloKRm58OQHTySqF/e4iPvcdYK91uBh+oGUd+BH6SwVXr2RX3265
+	j7YaN3zmmP99A/iMhXNR38AqpyG4SOPP70uR2EOWg8VT5Qatr4VTu4Ax6mfSB8+SghymIM8FvV7HD
+	T84DewJQ99o6tUWy1NCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIBgE-0008Uq-9P; Wed, 09 Oct 2019 13:07:02 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1iIBsV-00045I-Sw; Wed, 09 Oct 2019 13:19:43 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIBfz-0008QQ-LC
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 13:06:50 +0000
-Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 3FCCB19A5915D8434BA4;
- Wed,  9 Oct 2019 21:06:44 +0800 (CST)
-Received: from [127.0.0.1] (10.133.216.73) by DGGEMS402-HUB.china.huawei.com
- (10.3.19.202) with Microsoft SMTP Server id 14.3.439.0; Wed, 9 Oct 2019
- 21:06:34 +0800
-Subject: Re: [RFC PATCH 07/12] arm/sdei: override qemu_irq handler when
- binding interrupt
-To: Peter Maydell <peter.maydell@linaro.org>
-References: <1569338511-3572-1-git-send-email-guoheyi@huawei.com>
- <1569338511-3572-8-git-send-email-guoheyi@huawei.com>
- <CAFEAcA9ZHs=GdJ-_Ap1PWdgDjSDBnnRqG1UkMGx_FiqCJ5ZyGw@mail.gmail.com>
-From: Guoheyi <guoheyi@huawei.com>
-Message-ID: <0aa6638c-1155-6446-114b-29d335367007@huawei.com>
-Date: Wed, 9 Oct 2019 21:06:33 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.7.1
+ id 1iIBsB-00042h-2u; Wed, 09 Oct 2019 13:19:26 +0000
+X-UUID: 595796d917274957be3fbfd5fbcca7d1-20191009
+X-UUID: 595796d917274957be3fbfd5fbcca7d1-20191009
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <yong.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 639843204; Wed, 09 Oct 2019 05:19:25 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 9 Oct 2019 06:19:14 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 9 Oct 2019 21:19:13 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 9 Oct 2019 21:19:12 +0800
+From: Yong Wu <yong.wu@mediatek.com>
+To: Matthias Brugger <matthias.bgg@gmail.com>, Joerg Roedel <joro@8bytes.org>, 
+ Will Deacon <will.deacon@arm.com>
+Subject: [PATCH v2 2/4] iommu/mediatek: Move the tlb_sync into tlb_flush
+Date: Wed, 9 Oct 2019 21:19:01 +0800
+Message-ID: <1570627143-29441-2-git-send-email-yong.wu@mediatek.com>
+X-Mailer: git-send-email 1.9.1
+In-Reply-To: <1570627143-29441-1-git-send-email-yong.wu@mediatek.com>
+References: <1570627143-29441-1-git-send-email-yong.wu@mediatek.com>
 MIME-Version: 1.0
-In-Reply-To: <CAFEAcA9ZHs=GdJ-_Ap1PWdgDjSDBnnRqG1UkMGx_FiqCJ5ZyGw@mail.gmail.com>
-X-Originating-IP: [10.133.216.73]
-X-CFilter-Loop: Reflected
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_060647_869448_94A25862 
-X-CRM114-Status: GOOD (  14.76  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191009_061923_143937_5800D981 
+X-CRM114-Status: GOOD (  18.41  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,91 +71,175 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
- QEMU Developers <qemu-devel@nongnu.org>, Dave Martin <Dave.Martin@arm.com>,
- qemu-arm <qemu-arm@nongnu.org>, James Morse <james.morse@arm.com>,
- wanghaibin.wang@huawei.com, kvmarm@lists.cs.columbia.edu,
- arm-mail-list <linux-arm-kernel@lists.infradead.org>
+Cc: youlin.pei@mediatek.com, anan.sun@mediatek.com,
+ Nicolas Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
+ srv_heupstream@mediatek.com, chao.hao@mediatek.com,
+ linux-kernel@vger.kernel.org, Evan Green <evgreen@chromium.org>,
+ Tomasz Figa <tfiga@google.com>, iommu@lists.linux-foundation.org,
+ linux-mediatek@lists.infradead.org, yong.wu@mediatek.com,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Peter,
+The commit 4d689b619445 ("iommu/io-pgtable-arm-v7s: Convert to IOMMU API
+TLB sync") help move the tlb_sync of unmap from v7s into the iommu
+framework. It helps add a new function "mtk_iommu_iotlb_sync", But it
+lacked the dom->pgtlock, then it will cause the variable
+"tlb_flush_active" may be changed unexpectedly, we could see this warning
+log randomly:
 
-Thanks for your comments. I will explain SDEI in another mail and please 
-provide your suggestions for such situation.
+mtk-iommu 10205000.iommu: Partial TLB flush timed out, falling back to
+full flush
 
-Heyi
+To fix this issue, we can add dom->pgtlock in the "mtk_iommu_iotlb_sync".
 
+In addition, when checking this issue, we find that __arm_v7s_unmap call
+io_pgtable_tlb_add_flush consecutively when it is supersection/largepage,
+this also is potential unsafe for us. There is no tlb flush queue in the
+MediaTek M4U HW. The HW always expect the tlb_flush/tlb_sync one by one.
+If v7s don't always gurarantee the sequence, Thus, In this patch I move
+the tlb_sync into tlb_flush(also rename the function deleting "_nosync").
+and we don't care if it is leaf, rearrange the callback functions. Also,
+the tlb flush/sync was already finished in v7s, then iotlb_sync is
+unnecessary.
 
-On 2019/9/30 21:19, Peter Maydell wrote:
-> On Tue, 24 Sep 2019 at 16:23, Heyi Guo <guoheyi@huawei.com> wrote:
->> Override qemu_irq handler to support trigger SDEI event transparently
->> after guest binds interrupt to SDEI event. We don't have good way to
->> get GIC device and to guarantee SDEI device is initialized after GIC,
->> so we search GIC in system bus when the first SDEI request happens or
->> in VMSTATE post_load().
->>
->> Signed-off-by: Heyi Guo <guoheyi@huawei.com>
->> Cc: Peter Maydell <peter.maydell@linaro.org>
->> Cc: Dave Martin <Dave.Martin@arm.com>
->> Cc: Marc Zyngier <marc.zyngier@arm.com>
->> Cc: Mark Rutland <mark.rutland@arm.com>
->> Cc: James Morse <james.morse@arm.com>
->
->> +static void override_qemu_irq(QemuSDEState *s, int32_t event, uint32_t intid)
->> +{
->> +    qemu_irq irq;
->> +    QemuSDE *sde;
->> +    CPUState *cs;
->> +    int cpu;
->> +
->> +    /* SPI */
->> +    if (intid >= GIC_INTERNAL) {
->> +        cs = arm_get_cpu_by_id(0);
->> +        irq = qdev_get_gpio_in(s->gic_dev,
->> +                               gic_int_to_irq(s->num_irq, intid, 0));
->> +        if (irq) {
->> +            qemu_irq_intercept_in(&irq, qemu_sdei_irq_handler, 1);
->> +        }
-> I'm not sure what this code is trying to do, but
-> qemu_irq_intercept_in() is a function for internal use
-> by the qtest testing infrastructure, so it shouldn't be
-> used in 'real' QEMU code.
->
->> +        sde = get_sde_no_check(s, event, cs);
->> +        sde->irq = irq;
->> +        put_sde(sde, cs);
->> +        return;
->> +    }
->> @@ -1042,6 +1152,17 @@ void sdei_handle_request(CPUState *cs, struct kvm_run *run)
->>           return;
->>       }
->>
->> +    if (!sde_state->gic_dev) {
->> +        /* Search for ARM GIC device */
->> +        qbus_walk_children(sysbus_get_default(), dev_walkerfn,
->> +                           NULL, NULL, NULL, sde_state);
->> +        if (!sde_state->gic_dev) {
->> +            error_report("Cannot find ARM GIC device!");
->> +            run->hypercall.args[0] = SDEI_NOT_SUPPORTED;
->> +            return;
->> +        }
->> +    }
-> Walking through the qbus tree looking for particular devices
-> isn't really something I'd recommend either.
->
-> thanks
-> -- PMM
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
->
->
+Fixes: 4d689b619445 ("iommu/io-pgtable-arm-v7s: Convert to IOMMU API TLB sync")
+Signed-off-by: Chao Hao <chao.hao@mediatek.com>
+Signed-off-by: Yong Wu <yong.wu@mediatek.com>
+---
+ drivers/iommu/mtk_iommu.c | 63 +++++++++++++----------------------------------
+ drivers/iommu/mtk_iommu.h |  1 -
+ 2 files changed, 17 insertions(+), 47 deletions(-)
 
+diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
+index 76b9388..24a13a6 100644
+--- a/drivers/iommu/mtk_iommu.c
++++ b/drivers/iommu/mtk_iommu.c
+@@ -173,11 +173,12 @@ static void mtk_iommu_tlb_flush_all(void *cookie)
+ 	}
+ }
+ 
+-static void mtk_iommu_tlb_add_flush_nosync(unsigned long iova, size_t size,
+-					   size_t granule, bool leaf,
+-					   void *cookie)
++static void mtk_iommu_tlb_add_flush(unsigned long iova, size_t size,
++				    size_t granule, void *cookie)
+ {
+ 	struct mtk_iommu_data *data = cookie;
++	int ret;
++	u32 tmp;
+ 
+ 	for_each_m4u(data) {
+ 		writel_relaxed(F_INVLD_EN1 | F_INVLD_EN0,
+@@ -188,21 +189,12 @@ static void mtk_iommu_tlb_add_flush_nosync(unsigned long iova, size_t size,
+ 			       data->base + REG_MMU_INVLD_END_A);
+ 		writel_relaxed(F_MMU_INV_RANGE,
+ 			       data->base + REG_MMU_INVALIDATE);
+-		data->tlb_flush_active = true;
+-	}
+-}
+-
+-static void mtk_iommu_tlb_sync(void *cookie)
+-{
+-	struct mtk_iommu_data *data = cookie;
+-	int ret;
+-	u32 tmp;
+-
+-	for_each_m4u(data) {
+-		/* Avoid timing out if there's nothing to wait for */
+-		if (!data->tlb_flush_active)
+-			return;
+ 
++		/*
++		 * There is no tlb flush queue in the HW, the HW always expect
++		 * tlb_flush and tlb_sync in pair strictly. Here tlb_sync always
++		 * follows tlb_flush to avoid break the sequence.
++		 */
+ 		ret = readl_poll_timeout_atomic(data->base + REG_MMU_CPE_DONE,
+ 						tmp, tmp != 0, 10, 100000);
+ 		if (ret) {
+@@ -212,36 +204,21 @@ static void mtk_iommu_tlb_sync(void *cookie)
+ 		}
+ 		/* Clear the CPE status */
+ 		writel_relaxed(0, data->base + REG_MMU_CPE_DONE);
+-		data->tlb_flush_active = false;
+ 	}
+ }
+ 
+-static void mtk_iommu_tlb_flush_walk(unsigned long iova, size_t size,
+-				     size_t granule, void *cookie)
+-{
+-	mtk_iommu_tlb_add_flush_nosync(iova, size, granule, false, cookie);
+-	mtk_iommu_tlb_sync(cookie);
+-}
+-
+-static void mtk_iommu_tlb_flush_leaf(unsigned long iova, size_t size,
+-				     size_t granule, void *cookie)
++static void mtk_iommu_tlb_flush_page(struct iommu_iotlb_gather *gather,
++				     unsigned long iova, size_t granule,
++				     void *cookie)
+ {
+-	mtk_iommu_tlb_add_flush_nosync(iova, size, granule, true, cookie);
+-	mtk_iommu_tlb_sync(cookie);
+-}
+-
+-static void mtk_iommu_tlb_flush_page_nosync(struct iommu_iotlb_gather *gather,
+-					    unsigned long iova, size_t granule,
+-					    void *cookie)
+-{
+-	mtk_iommu_tlb_add_flush_nosync(iova, granule, granule, true, cookie);
++	mtk_iommu_tlb_add_flush(iova, granule, granule, cookie);
+ }
+ 
+ static const struct iommu_flush_ops mtk_iommu_flush_ops = {
+ 	.tlb_flush_all = mtk_iommu_tlb_flush_all,
+-	.tlb_flush_walk = mtk_iommu_tlb_flush_walk,
+-	.tlb_flush_leaf = mtk_iommu_tlb_flush_leaf,
+-	.tlb_add_page = mtk_iommu_tlb_flush_page_nosync,
++	.tlb_flush_walk = mtk_iommu_tlb_add_flush,
++	.tlb_flush_leaf = mtk_iommu_tlb_add_flush,
++	.tlb_add_page = mtk_iommu_tlb_flush_page,
+ };
+ 
+ static irqreturn_t mtk_iommu_isr(int irq, void *dev_id)
+@@ -450,12 +427,6 @@ static void mtk_iommu_flush_iotlb_all(struct iommu_domain *domain)
+ 	mtk_iommu_tlb_flush_all(mtk_iommu_get_m4u_data());
+ }
+ 
+-static void mtk_iommu_iotlb_sync(struct iommu_domain *domain,
+-				 struct iommu_iotlb_gather *gather)
+-{
+-	mtk_iommu_tlb_sync(mtk_iommu_get_m4u_data());
+-}
+-
+ static phys_addr_t mtk_iommu_iova_to_phys(struct iommu_domain *domain,
+ 					  dma_addr_t iova)
+ {
+@@ -558,7 +529,7 @@ static int mtk_iommu_of_xlate(struct device *dev, struct of_phandle_args *args)
+ 	.map		= mtk_iommu_map,
+ 	.unmap		= mtk_iommu_unmap,
+ 	.flush_iotlb_all = mtk_iommu_flush_iotlb_all,
+-	.iotlb_sync	= mtk_iommu_iotlb_sync,
++	/* No iotlb_sync here since the tlb_sync always follows the tlb_flush */
+ 	.iova_to_phys	= mtk_iommu_iova_to_phys,
+ 	.add_device	= mtk_iommu_add_device,
+ 	.remove_device	= mtk_iommu_remove_device,
+diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
+index fc0f16e..24712f5 100644
+--- a/drivers/iommu/mtk_iommu.h
++++ b/drivers/iommu/mtk_iommu.h
+@@ -57,7 +57,6 @@ struct mtk_iommu_data {
+ 	struct mtk_iommu_domain		*m4u_dom;
+ 	struct iommu_group		*m4u_group;
+ 	bool                            enable_4GB;
+-	bool				tlb_flush_active;
+ 
+ 	struct iommu_device		iommu;
+ 	const struct mtk_iommu_plat_data *plat_data;
+-- 
+1.9.1
 
 
 _______________________________________________
