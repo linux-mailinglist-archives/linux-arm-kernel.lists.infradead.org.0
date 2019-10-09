@@ -2,52 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6005AD0E0B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 13:54:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DBE5D0E12
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 13:55:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TnXsP10OSON75k58HoBWp8Ayt1NCCioysUbfdNkGAAE=; b=qzkIuuXKOTtyU/
-	qIK226g3jg74VebfbDLWJYI8BOBmkyAEXr8HmCIHRhWAKkI8CILC6gef1CVgeViCh3LthEhpkIViW
-	qCBhdLaNg3sLzAlBe9hkY7+ZW+WSvixrsrfEKkAZ+ojoa/LKaMnqwStQbb/dDWvNidzDqr/LAT7m3
-	6YMztjiA2oXbpsLbv+nMoLaBCEJ7e1T3O4IDg9gmuDmFkf4Z0NkRAmcg3KotPsxXrlI67PDlhuhsK
-	0R4mJhhwauNaQU9pWz3H/V9xw9eVwS61BNm5Es4Mt8pqU/z2Zolv1A7FMYOiYOpt3rgDysz+A3pLz
-	9RDGl/a3igH0IW+3+Z7A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4dwBVYHXW+K7Cd1EYtk9o01ih43geKVMhFOnSHcPA2s=; b=Jw1EWKzUWtfnhg
+	nDjMG0x+eLEEfGuCZqaAAaHUwLSRKgKz9alKC+aUnMHcUqQjhBCj4ONGMcuUcX2tplEzlhMpsycET
+	jA3BUFLYlym98Xo1e1YQTDIs+pHjQW6Gh0a5Z1qZ5jVSP1DDfgh+z1k0Bl1Ez+g2h7TydYy4b+3h+
+	IiontpHzc1OqiIgcDAZN5sVIDqXa6lIXwHZbF+VKrGx6v7TqB/ibpBxeILMibXSQuAoP0p4IjlJzT
+	OYzxDDMTQk0/tGf1UHSAZ/LxwW2GR7d/p6oSn/+ZyWQebKALLvfG8u+z8ecRkI1OBLuegJJo9JrlZ
+	Mh4JMtlK4kcU5ByIhQ8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIAY7-0001jn-OG; Wed, 09 Oct 2019 11:54:35 +0000
-Received: from imap1.codethink.co.uk ([176.9.8.82])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIAXu-0001ib-TS
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 11:54:24 +0000
-Received: from [167.98.27.226] (helo=rainbowdash.codethink.co.uk)
- by imap1.codethink.co.uk with esmtpsa (Exim 4.84_2 #1 (Debian))
- id 1iIAXo-0004fs-Gw; Wed, 09 Oct 2019 12:54:16 +0100
-Received: from ben by rainbowdash.codethink.co.uk with local (Exim 4.92.2)
- (envelope-from <ben@rainbowdash.codethink.co.uk>)
- id 1iIAXo-00045q-4l; Wed, 09 Oct 2019 12:54:16 +0100
-From: Ben Dooks <ben.dooks@codethink.co.uk>
-To: linux-kernel@lists.codethink.co.uk
-Subject: [PATCH] mmc: mmci: stm32: make sdmmc_idma_validate_data static
-Date: Wed,  9 Oct 2019 12:54:15 +0100
-Message-Id: <20191009115415.15691-1-ben.dooks@codethink.co.uk>
-X-Mailer: git-send-email 2.23.0
+	id 1iIAZF-0003GI-R3; Wed, 09 Oct 2019 11:55:45 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iIAZ6-0003Fk-41
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 11:55:37 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8B79528;
+ Wed,  9 Oct 2019 04:55:35 -0700 (PDT)
+Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BC4D63F703;
+ Wed,  9 Oct 2019 04:55:34 -0700 (PDT)
+Subject: Re: [PATCH v8 02/12] kselftest: arm64:
+ mangle_pstate_invalid_compat_toggle and common utils
+To: Dave Martin <Dave.Martin@arm.com>
+References: <20191009082611.9441-1-cristian.marussi@arm.com>
+ <20191009082611.9441-3-cristian.marussi@arm.com>
+ <20191009111848.GB27757@arm.com>
+From: Cristian Marussi <cristian.marussi@arm.com>
+Message-ID: <38e73559-ad80-d05a-32ca-ac763ee648bb@arm.com>
+Date: Wed, 9 Oct 2019 12:55:33 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <20191009111848.GB27757@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_045423_100129_9C3C1D29 
-X-CRM114-Status: GOOD (  10.04  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191009_045536_202055_FB5A9F59 
+X-CRM114-Status: GOOD (  16.34  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [176.9.8.82 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,50 +64,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-mmc@vger.kernel.org,
- Ben Dooks <ben.dooks@codethink.co.uk>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make sdmmc_idma_validate_data to avoid the following warning
-from sparse:
+On 09/10/2019 12:18, Dave Martin wrote:
+> On Wed, Oct 09, 2019 at 09:26:01AM +0100, Cristian Marussi wrote:
+>> Add some arm64/signal specific boilerplate and utility code to help
+>> further testcases' development.
+>>
+>> Introduce also one simple testcase mangle_pstate_invalid_compat_toggle
+>> and some related helpers: it is a simple mangle testcase which messes
+>> with the ucontext_t from within the signal handler, trying to toggle
+>> PSTATE state bits to switch the system between 32bit/64bit execution
+>> state. Expects SIGSEGV on test PASS.
+>>
+>> Reviewed-by: Dave Martin <Dave.Martin@arm.com>
+>> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+>> ---
+>> v7 --> v8
+>> - removed unused SSBS_SYSREG
+> 
+> [...]
+> 
+>> diff --git a/tools/testing/selftests/arm64/signal/.gitignore b/tools/testing/selftests/arm64/signal/.gitignore
+>> new file mode 100644
+>> index 000000000000..e5aeae45febb
+>> --- /dev/null
+>> +++ b/tools/testing/selftests/arm64/signal/.gitignore
+>> @@ -0,0 +1,3 @@
+>> +!*.[ch]
+>> +mangle_*
+>> +fake_sigreturn_*
+> 
+> I think the !*.[ch] line needs to come last.
+> 
+> Re-including *.[ch] on the first line has no effect because no files
+> have been excluded yet.
+> 
+> (This looks like it was my mistake when I originally suggested using
+> wildcards here -- apologies for that!)
+> 
+> I'm happy for you to keey my Reviewed-by on that change.
+> 
 
-drivers/mmc/host/mmci_stm32_sdmmc.c:28:5: warning: symbol 'sdmmc_idma_validate_data' was not declared. Should it be static?
+Moved to last in v9
 
-Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
----
-Cc: Ulf Hansson <ulf.hansson@linaro.org>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: linux-mmc@vger.kernel.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-arm-kernel@lists.infradead.org
----
- drivers/mmc/host/mmci_stm32_sdmmc.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/mmc/host/mmci_stm32_sdmmc.c b/drivers/mmc/host/mmci_stm32_sdmmc.c
-index 8e83ae6920ae..296be8a060a6 100644
---- a/drivers/mmc/host/mmci_stm32_sdmmc.c
-+++ b/drivers/mmc/host/mmci_stm32_sdmmc.c
-@@ -25,8 +25,8 @@ struct sdmmc_priv {
- 	void *sg_cpu;
- };
- 
--int sdmmc_idma_validate_data(struct mmci_host *host,
--			     struct mmc_data *data)
-+static int sdmmc_idma_validate_data(struct mmci_host *host,
-+				    struct mmc_data *data)
- {
- 	struct scatterlist *sg;
- 	int i;
--- 
-2.23.0
+Cristian
+> [...]
+> 
+> Cheers
+> ---Dave
+> 
 
 
 _______________________________________________
