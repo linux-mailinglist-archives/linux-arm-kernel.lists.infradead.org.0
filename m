@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A419DD12C9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 17:30:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73C79D12CB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 17:31:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DElWf7UNAKSMA/HL0uOcJqIXD5+rxrllhgch2PKAZg0=; b=soBFSOTX5dit9C
-	qku3CtKX2Uo5JoCkR5AIJNQ4wJcRakQAuR6/HhrdpHPEWeapH8tt75rDXVHwOJ6QcYn8eIygRfDMY
-	QdRY7i26uWJfxAGPRH6zmGABFo7gplNEEBlRbkk1RcWJU25K9OLpZYG4YtGM01yMz/93efp2x9+Dh
-	OFmlkvfAEX3p8ubjUs5rf/c1kBqe9jYddf6VULSG2GS1ufIGJRtzpF8qvUg6Vc8yeR5iDj4sb+QVB
-	90/T0/l0M9IjvKxpgXiViHEW6VeDsTpHazVuteDf412HRjxFx8GcD7B1oDo48ko+zAmCcVIj/v/rr
-	ZJbRENtwTiZAbxWR6bUQ==;
+	List-Owner; bh=veeblEL15C0xG+uIGVNTexkTAf3K1h6upWcoTMUmaqc=; b=Za6XSTzYMfTwOS
+	vLceOAutak0dylH5/yr2YWERSCDhV9QU1lO+Fs6W/hqt9s/ndNsgnSAzsJJ9aCj/YaeqfOWIDEEe7
+	XqpR4BKTJ6dmDzvuIJqVZIsBJknsTYBSFNeyTAZ8ZN/0f6to+9gNeEIkmkFfvx5ZlQbFaTo2KyVYz
+	DtCiDEaNRsZUOZ3zdAx0vR1gq7XEOEIpyu/cJkVXIJ3bXRvdkrjWdkKRR7AtWG0egRIC0UZSklLd3
+	oF9Trc3YgullKBTBtU2bEBkU+ypcD49uD0sDmamWdbCu1cS/IpRElT+ZgLXA9Tha/m+50MLTmHOFu
+	nSSWwy4MvCpMyN1DUL6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIDv9-0005ED-19; Wed, 09 Oct 2019 15:30:35 +0000
-Received: from mail-yb1-xb41.google.com ([2607:f8b0:4864:20::b41])
+	id 1iIDvg-0005kD-Kr; Wed, 09 Oct 2019 15:31:08 +0000
+Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIDsW-0001hn-6I
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 15:27:53 +0000
-Received: by mail-yb1-xb41.google.com with SMTP id m1so873902ybm.1
+ id 1iIDsW-0001it-RM
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 15:27:55 +0000
+Received: by mail-yw1-xc41.google.com with SMTP id x64so963865ywg.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 09 Oct 2019 08:27:51 -0700 (PDT)
+ Wed, 09 Oct 2019 08:27:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=mBleGApOd9DY5AB30uyK9JEv+41JBB1+F0GtLYOX3MQ=;
- b=GAaw4kQJZ1t/twSnzYGj1Ye+b2rWZfgSQigTMAkCGXs7faRp9kbxzc+viRchH0iOUw
- jLQduPFHhg85mw9CZKGs3ZHhhcP9FaLFjY7wCSatMrfXGPdGXT9se2sj+/BL99Q2YvBc
- eyDG9o7N4Ton97yqY0ikl+XbQCOVNJW1GjnMWMNz+ysIw1dfIuCgoRxG5vWC6TmUuqjA
- on7aOT8hdds8tMqafPa8Np3qYdKvVkxrARA6ZLjvfnUqUMdn7xzUcrMz8yEoVs6EQA2x
- SbfDGVkowS8BcodygfJLou5vUSTzh7Ua2TWnGZSWh9VyAFMnVaTfPX2A90XPh5J0yFAF
- /rpQ==
+ bh=A2jCX9HgU8ovLftcoHPoUNghHxtBxjaql0cnB+EV6BQ=;
+ b=qahE360uiIlbtDHZddvWm3s+DCPMg0f0FjIx2acAZx6w2aB9a2QbyfW8/W3Uj0ZKW2
+ l4uq1B83GvcTULuaKhVC//MEX6vTsNnABxwhAL4e+k3vDHCXt7G0j3BkxbaCIKWX/QwV
+ aYo66ZUOWtQHUMRMbAB2jYwY++3O9jozzPI724s08fo1Wg31bS6QWQ0c2dekmLiQZG+b
+ VdTvivJlEv8OK0XuNKzUzWWWUXu8WdDNQY75WWMUMPmm/urEG0gvVFmR8fNB8o7Fkzy+
+ noAS8kqZI7J90en1EYFoNjVqDYCyF/EmmZO6bWWZs2spZd4CxHxx6EYpltED8pvbQD7S
+ 6sPQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=mBleGApOd9DY5AB30uyK9JEv+41JBB1+F0GtLYOX3MQ=;
- b=DUtlrXjxXJjg8Xa9HuUWYYy0AGCdpUQC7jmedtUPnAtV90LYQZV3m070u+TNWgOFAY
- 5ASUqdGQjjlGB69EtLv1o+55m5gU7wS5+R3CwXAq+sgDwBNDNiWuj7NmolcD1GMHp6bU
- Dtft0LgkcFB4SitEO57K98i6GIJLQWqY/Nyrgyopn2s8Sk9WMmMkvc9Dn8URQ9F2Za26
- cKwuHOuR1/B8groo4JlvXqM69AjM+WL2wgMtAN7wYgnvVcjwKbLjf3HKd0mmHMb4f++e
- tAbdO6ri2alRdiyJU8r34ZTZfGEXB+T6wOpNzt9fHsbsppYWnIKxORmmwTNe/NGz1mYD
- hfyw==
-X-Gm-Message-State: APjAAAV6+X78Te5rYo4eA0iPF7Z5yRRXgC5bgzaAmD2K7qqMmMwI2jR9
- eoyV2QQ4ohGSi7v6YJBZOSU=
-X-Google-Smtp-Source: APXvYqwYZQffEOxLcR2DnXodNBQuIf2G4FM0ZYog/FMeKsA3x5ZeM6hVk9B5ifb9KwyjltXl8dzmPA==
-X-Received: by 2002:a25:ba84:: with SMTP id s4mr2426092ybg.343.1570634870310; 
- Wed, 09 Oct 2019 08:27:50 -0700 (PDT)
+ bh=A2jCX9HgU8ovLftcoHPoUNghHxtBxjaql0cnB+EV6BQ=;
+ b=fn3sNj3RIs7tdHVV+xjSu5gJCPA7KNekvS7x8bdVPpGZk8vgLil6XKePTPTdoKQV2x
+ FH1GEzRS4IeTbVgc45CmKhCayAZwLqdm2JPvbyrf7xVaXq9t6e/vGI1mUNnwOmw6Vftw
+ Rm9HBhrJXLTngW052Lh9W0NTtOjE1f2pAP7Do6rVx/DaiTnd55ATeGpJoH3u9n0LcIQI
+ bJTWikojwWiCtLcKVAbLfr6e3VZIfJ1HK8qMj/+iEADdtiyhE+0HNy+VhanD88BUPn3a
+ JZ1OORfkM2Wg94a+pPCkgpMLHISsO/N0qbSnrBoHprLnk1nu2IyRHaUytm8nh3oO5bjm
+ 0uiQ==
+X-Gm-Message-State: APjAAAVfoGp/APgUcyfCDtZhykEn4z47oItl1T+NJ9IS2s8QfsOevni2
+ tUVhgXNSwJOZOFClYPZK43k=
+X-Google-Smtp-Source: APXvYqyzRAZCHF/8ARvFvOUXRKfcnL0Fn63nmJwYfOUDFUzK0Ksa8CbCrOtzJly7RODyg9yBZb7Zsg==
+X-Received: by 2002:a81:5ed4:: with SMTP id s203mr3058692ywb.485.1570634872003; 
+ Wed, 09 Oct 2019 08:27:52 -0700 (PDT)
 Received: from localhost.localdomain (072-189-084-142.res.spectrum.com.
  [72.189.84.142])
- by smtp.gmail.com with ESMTPSA id g40sm611863ywk.14.2019.10.09.08.27.48
+ by smtp.gmail.com with ESMTPSA id g40sm611863ywk.14.2019.10.09.08.27.50
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 09 Oct 2019 08:27:49 -0700 (PDT)
+ Wed, 09 Oct 2019 08:27:51 -0700 (PDT)
 From: William Breathitt Gray <vilhelm.gray@gmail.com>
 To: linus.walleij@linaro.org, bgolaszewski@baylibre.com,
  akpm@linux-foundation.org
-Subject: [PATCH v17 10/14] gpio: 74x164: Utilize the for_each_set_clump8 macro
-Date: Wed,  9 Oct 2019 11:27:08 -0400
-Message-Id: <ca28331339e17b7c7e3d802ce68d87ca955be7c5.1570633189.git.vilhelm.gray@gmail.com>
+Subject: [PATCH v17 11/14] thermal: intel: intel_soc_dts_iosf: Utilize
+ for_each_set_clump8 macro
+Date: Wed,  9 Oct 2019 11:27:09 -0400
+Message-Id: <335f1ce6411902dbe492a6b2a51fe479dd0f48a5.1570633189.git.vilhelm.gray@gmail.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <cover.1570633189.git.vilhelm.gray@gmail.com>
 References: <cover.1570633189.git.vilhelm.gray@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_082752_286523_3AAE1C12 
-X-CRM114-Status: GOOD (  12.05  )
+X-CRM114-CacheID: sfid-20191009_082752_943121_A77426D5 
+X-CRM114-Status: GOOD (  14.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (vilhelm.gray[at]gmail.com)
@@ -101,69 +102,140 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-arch@vger.kernel.org, preid@electromag.com.au,
- Geert Uytterhoeven <geert+renesas@glider.be>, yamada.masahiro@socionext.com,
- linux-pm@vger.kernel.org, linux@rasmusvillemoes.dk,
- linux-kernel@vger.kernel.org, morten.tiljeset@prevas.dk,
- sean.nyekjaer@prevas.dk, linux-gpio@vger.kernel.org, lukas@wunner.de,
- geert@linux-m68k.org, William Breathitt Gray <vilhelm.gray@gmail.com>,
+ yamada.masahiro@socionext.com, linux-pm@vger.kernel.org,
+ linux@rasmusvillemoes.dk, linux-kernel@vger.kernel.org,
+ morten.tiljeset@prevas.dk, sean.nyekjaer@prevas.dk, linux-gpio@vger.kernel.org,
+ lukas@wunner.de, geert@linux-m68k.org,
+ William Breathitt Gray <vilhelm.gray@gmail.com>,
  andriy.shevchenko@linux.intel.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Replace verbose implementation in set_multiple callback with
-for_each_set_clump8 macro to simplify code and improve clarity.
+Utilize for_each_set_clump8 macro, and the bitmap_set_value8 and
+bitmap_get_value8 functions, where appropriate. In addition, remove the
+now unnecessary temp_mask and temp_shift members of the
+intel_soc_dts_sensor_entry structure.
 
 Suggested-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>
-Cc: Phil Reid <preid@electromag.com.au>
+Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
 Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
 ---
- drivers/gpio/gpio-74x164.c | 19 +++++++++----------
- 1 file changed, 9 insertions(+), 10 deletions(-)
+ drivers/thermal/intel/intel_soc_dts_iosf.c | 31 +++++++++++++---------
+ drivers/thermal/intel/intel_soc_dts_iosf.h |  2 --
+ 2 files changed, 18 insertions(+), 15 deletions(-)
 
-diff --git a/drivers/gpio/gpio-74x164.c b/drivers/gpio/gpio-74x164.c
-index e81307f9754e..05637d585152 100644
---- a/drivers/gpio/gpio-74x164.c
-+++ b/drivers/gpio/gpio-74x164.c
+diff --git a/drivers/thermal/intel/intel_soc_dts_iosf.c b/drivers/thermal/intel/intel_soc_dts_iosf.c
+index 5716b62e0f73..f75271b669c6 100644
+--- a/drivers/thermal/intel/intel_soc_dts_iosf.c
++++ b/drivers/thermal/intel/intel_soc_dts_iosf.c
 @@ -6,6 +6,7 @@
-  *  Copyright (C) 2010 Miguel Gaio <miguel.gaio@efixo.com>
-  */
+ 
+ #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
  
 +#include <linux/bitops.h>
- #include <linux/gpio/consumer.h>
- #include <linux/gpio/driver.h>
  #include <linux/module.h>
-@@ -72,20 +73,18 @@ static void gen_74x164_set_multiple(struct gpio_chip *gc, unsigned long *mask,
- 				    unsigned long *bits)
+ #include <linux/slab.h>
+ #include <linux/interrupt.h>
+@@ -103,6 +104,7 @@ static int update_trip_temp(struct intel_soc_dts_sensor_entry *dts,
+ 	int status;
+ 	u32 temp_out;
+ 	u32 out;
++	unsigned long update_ptps;
+ 	u32 store_ptps;
+ 	u32 store_ptmc;
+ 	u32 store_te_out;
+@@ -120,8 +122,10 @@ static int update_trip_temp(struct intel_soc_dts_sensor_entry *dts,
+ 	if (status)
+ 		return status;
+ 
+-	out = (store_ptps & ~(0xFF << (thres_index * 8)));
+-	out |= (temp_out & 0xFF) << (thres_index * 8);
++	update_ptps = store_ptps;
++	bitmap_set_value8(&update_ptps, temp_out & 0xFF, thres_index * 8);
++	out = update_ptps;
++
+ 	status = iosf_mbi_write(BT_MBI_UNIT_PMC, MBI_REG_WRITE,
+ 				SOC_DTS_OFFSET_PTPS, out);
+ 	if (status)
+@@ -223,6 +227,7 @@ static int sys_get_curr_temp(struct thermal_zone_device *tzd,
+ 	u32 out;
+ 	struct intel_soc_dts_sensor_entry *dts;
+ 	struct intel_soc_dts_sensors *sensors;
++	unsigned long raw;
+ 
+ 	dts = tzd->devdata;
+ 	sensors = dts->sensors;
+@@ -231,8 +236,8 @@ static int sys_get_curr_temp(struct thermal_zone_device *tzd,
+ 	if (status)
+ 		return status;
+ 
+-	out = (out & dts->temp_mask) >> dts->temp_shift;
+-	out -= SOC_DTS_TJMAX_ENCODING;
++	raw = out;
++	out = bitmap_get_value8(&raw, dts->id * 8) - SOC_DTS_TJMAX_ENCODING;
+ 	*temp = sensors->tj_max - out * 1000;
+ 
+ 	return 0;
+@@ -280,11 +285,14 @@ static int add_dts_thermal_zone(int id, struct intel_soc_dts_sensor_entry *dts,
+ 				int read_only_trip_cnt)
  {
- 	struct gen_74x164_chip *chip = gpiochip_get_data(gc);
--	unsigned int i, idx, shift;
--	u8 bank, bankmask;
-+	unsigned long offset;
-+	unsigned long bankmask;
-+	size_t bank;
-+	unsigned long bitmask;
+ 	char name[10];
++	unsigned long trip;
+ 	int trip_count = 0;
+ 	int trip_mask = 0;
++	int writable_trip_cnt = 0;
++	unsigned long ptps;
+ 	u32 store_ptps;
++	unsigned long i;
+ 	int ret;
+-	int i;
  
- 	mutex_lock(&chip->lock);
--	for (i = 0, bank = chip->registers - 1; i < chip->registers;
--	     i++, bank--) {
--		idx = i / sizeof(*mask);
--		shift = i % sizeof(*mask) * BITS_PER_BYTE;
--		bankmask = mask[idx] >> shift;
--		if (!bankmask)
--			continue;
-+	for_each_set_clump8(offset, bankmask, mask, chip->registers * 8) {
-+		bank = chip->registers - 1 - offset / 8;
-+		bitmask = bitmap_get_value8(bits, offset) & bankmask;
+ 	/* Store status to restor on exit */
+ 	ret = iosf_mbi_read(BT_MBI_UNIT_PMC, MBI_REG_READ,
+@@ -293,11 +301,10 @@ static int add_dts_thermal_zone(int id, struct intel_soc_dts_sensor_entry *dts,
+ 		goto err_ret;
  
- 		chip->buffer[bank] &= ~bankmask;
--		chip->buffer[bank] |= bankmask & (bits[idx] >> shift);
-+		chip->buffer[bank] |= bitmask;
+ 	dts->id = id;
+-	dts->temp_mask = 0x00FF << (id * 8);
+-	dts->temp_shift = id * 8;
+ 	if (notification_support) {
+ 		trip_count = min(SOC_MAX_DTS_TRIPS, trip_cnt);
+-		trip_mask = BIT(trip_count - read_only_trip_cnt) - 1;
++		writable_trip_cnt = trip_count - read_only_trip_cnt;
++		trip_mask = GENMASK(writable_trip_cnt - 1, 0);
  	}
- 	__gen_74x164_write_config(chip);
- 	mutex_unlock(&chip->lock);
+ 
+ 	/* Check if the writable trip we provide is not used by BIOS */
+@@ -306,11 +313,9 @@ static int add_dts_thermal_zone(int id, struct intel_soc_dts_sensor_entry *dts,
+ 	if (ret)
+ 		trip_mask = 0;
+ 	else {
+-		for (i = 0; i < trip_count; ++i) {
+-			if (trip_mask & BIT(i))
+-				if (store_ptps & (0xff << (i * 8)))
+-					trip_mask &= ~BIT(i);
+-		}
++		ptps = store_ptps;
++		for_each_set_clump8(i, trip, &ptps, writable_trip_cnt * 8)
++			trip_mask &= ~BIT(i / 8);
+ 	}
+ 	dts->trip_mask = trip_mask;
+ 	dts->trip_count = trip_count;
+diff --git a/drivers/thermal/intel/intel_soc_dts_iosf.h b/drivers/thermal/intel/intel_soc_dts_iosf.h
+index adfb09af33fc..c54945748200 100644
+--- a/drivers/thermal/intel/intel_soc_dts_iosf.h
++++ b/drivers/thermal/intel/intel_soc_dts_iosf.h
+@@ -24,8 +24,6 @@ struct intel_soc_dts_sensors;
+ 
+ struct intel_soc_dts_sensor_entry {
+ 	int id;
+-	u32 temp_mask;
+-	u32 temp_shift;
+ 	u32 store_status;
+ 	u32 trip_mask;
+ 	u32 trip_count;
 -- 
 2.23.0
 
