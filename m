@@ -2,56 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55219D08D7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 09:52:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77043D08D2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 09:52:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PpM7cPJowY5mkD8ilOVpGU6fLxjzeXiIlJfDiXK5SHo=; b=ajiXbKtS4Sd7Ke
-	H0WAn/a7/gKBJA2ZSFXOMehfc1ICv+gKVbXtNwd7buQ5h0YZ2UdnRKi05vo15DWrxNwE4zi8f07nM
-	XauEohM6/6Sk0CjCSQbfr2aoqwiPKs/R268aG21d2ORieizriWsThOaw7bGfxyt1wHWtugnycIkzd
-	NnFq5U4nFkpVlgVpDyw7Itfhj3o0IEmkIggKwj0c1i2/KuWf4cONGAosoASfOgGm0F3lt7IYMjzUL
-	WAK8RIs0SVMqaVajbKHufcW96hWb7c42BuUfmzNJrH1Wj8EYIQfbyoKMmdgkY6lbsc630WXOxBV/K
-	yOpzCbTRPX71NFCQl0vw==;
+	List-Owner; bh=NpR2o+/ivvxXAfkBUUkMb1LBlidf4xQaHP/JBfvMhX8=; b=M2qCpa4gtiGSrC
+	/LgKBSyoP2GsHjerpK/fhBHfkzgPbByp5hTTR+grTEnEwu9fXR/YIuApAhpY0PQw9gswT2+vTrt7g
+	s6J2ENAIOnwUB3zY5jZUkOBnRi3ZsVbjh8x8+5H77l3w2Wboqw+e2K/LjMxNWBWyEThj6P9PP8Bh7
+	OJV2dsV5Kz7gpDx77/2uXXdvCC2S6nlSzHto7Qo6qvbKuZMyuOLhvp/XR2qccfYT+8ZZzgtr7ZM6a
+	/Y3jmsp2A1vE4vud6j+ZENTMBgNp5IyiulU2Ta5aJULD42JYBLmCnmzp/9RS/rMFvFVH2Bz6mfIJ/
+	0cP+ubXVcPIzmlHQ6Aig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI6lt-0006m5-CF; Wed, 09 Oct 2019 07:52:33 +0000
+	id 1iI6lN-0006DS-9t; Wed, 09 Oct 2019 07:52:01 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI6ke-0005kE-Pa; Wed, 09 Oct 2019 07:51:18 +0000
-X-UUID: 9db0166750b94ec9b6f518501c238d37-20191008
-X-UUID: 9db0166750b94ec9b6f518501c238d37-20191008
+ id 1iI6kd-0005jz-24; Wed, 09 Oct 2019 07:51:16 +0000
+X-UUID: 1cc0b19a780a46cfa81e7abf86dcb1cb-20191008
+X-UUID: 1cc0b19a780a46cfa81e7abf86dcb1cb-20191008
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1072312643; Tue, 08 Oct 2019 23:51:38 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ with ESMTP id 1263087589; Tue, 08 Oct 2019 23:51:38 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 9 Oct 2019 00:41:12 -0700
+ 15.0.1395.4; Wed, 9 Oct 2019 00:41:24 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 9 Oct 2019 15:41:08 +0800
+ MTKMBS31DR.mediatek.inc (172.27.6.102) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 9 Oct 2019 15:41:16 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 9 Oct 2019 15:41:07 +0800
+ Transport; Wed, 9 Oct 2019 15:41:14 +0800
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>
-Subject: [RESEND PATCH v3 05/11] dt-bindings: phy-mtk-tphy: add the properties
- about address mapping
-Date: Wed, 9 Oct 2019 15:40:28 +0800
-Message-ID: <1570606834-5644-5-git-send-email-chunfeng.yun@mediatek.com>
+Subject: [RESEND PATCH v3 08/11] phy: phy-mtk-tphy: make the ref clock optional
+Date: Wed, 9 Oct 2019 15:40:31 +0800
+Message-ID: <1570606834-5644-8-git-send-email-chunfeng.yun@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1570606834-5644-1-git-send-email-chunfeng.yun@mediatek.com>
 References: <1570606834-5644-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: C05F62D1C5E751FB6397A3C160DCD05478728B7C988E223A8B72F79807F3C4242000:8
+X-TM-SNTS-SMTP: 1C65D6FD0659F5550E83F6CC314F1FB4EB89ADE14C21697BE96212FB7A0394692000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_005116_878831_8310F7E3 
-X-CRM114-Status: GOOD (  13.06  )
+X-CRM114-CacheID: sfid-20191009_005115_124257_F628B93C 
+X-CRM114-Status: GOOD (  12.51  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -83,40 +82,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add three required properties about the address mapping, including
-'#address-cells', '#size-cells' and 'ranges'
+Sometimes the reference clock of USB3 PHY comes from oscillator
+directly, and no need refer to a fixed-clock in DTS anymore
+if make it optional.
 
 Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
 ---
-v3: no changes
-
-v2: add Reviewed-by Rob
+v2~3: no changes
 ---
- Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ drivers/phy/mediatek/phy-mtk-tphy.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt b/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt
-index a859b0db4051..dd75b676b71d 100644
---- a/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt
-+++ b/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt
-@@ -14,6 +14,16 @@ Required properties (controller (parent) node):
- 		  make use of "mediatek,generic-tphy-v1" on mt2701 instead and
- 		  "mediatek,generic-tphy-v2" on mt2712 instead.
+diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
+index 4a2dc92f10f5..96c62e3a3300 100644
+--- a/drivers/phy/mediatek/phy-mtk-tphy.c
++++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+@@ -1182,7 +1182,7 @@ static int mtk_tphy_probe(struct platform_device *pdev)
+ 		if (tphy->u3phya_ref)
+ 			continue;
  
-+- #address-cells:	the number of cells used to represent physical
-+		base addresses.
-+- #size-cells:	the number of cells used to represent the size of an address.
-+- ranges:	the address mapping relationship to the parent, defined with
-+		- empty value: if optional 'reg' is used.
-+		- non-empty value: if optional 'reg' is not used. should set
-+			the child's base address to 0, the physical address
-+			within parent's address space, and the length of
-+			the address map.
-+
- Required nodes	: a sub-node is required for each port the controller
- 		  provides. Address range information including the usual
- 		  'reg' property is used inside these nodes to describe
+-		instance->ref_clk = devm_clk_get(&phy->dev, "ref");
++		instance->ref_clk = devm_clk_get_optional(&phy->dev, "ref");
+ 		if (IS_ERR(instance->ref_clk)) {
+ 			dev_err(dev, "failed to get ref_clk(id-%d)\n", port);
+ 			retval = PTR_ERR(instance->ref_clk);
 -- 
 2.23.0
 
