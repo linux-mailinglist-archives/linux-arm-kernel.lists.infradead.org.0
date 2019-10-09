@@ -2,73 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 812F3D10C4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 16:02:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B55DD10D2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 16:06:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7ktugngrRd2bDbiQH48R6XLKANZpfcxawURPyyOuFRs=; b=pf/2Vjr02ErkYm
-	38dwauL15Qwal3l4zBIH0zmnHPBOLV7ZKdY2c1v1Nq8JT78UUQ/SGV6uTAxjgfOCS76270RpodXCa
-	Xx8fpp6o69FwSJGCi+ecIKMoOYCnTsG2gcI66hhgg1/q3VkOlkrhuqWJiVn0mBUxR4pNIGFHZxhDz
-	prZfGLEFzs+9itfjxNEwVJgQxNcsQGQ5aO/dMTMU9a/pezjkPpe9TYKXm502KGVTkjImRqmjP1wrN
-	Lg0INSVizKXMpQcMFUhR16Yw/wHhvruM22GfxLoWcYXBQPSe3T5vjTTs7CEijeGw7dM2VPxLKK2Zl
-	ih33KXyU9ohuqNxtceDg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=igzqCugtOisBmkrfLdpHdY/rfxRhZXYqT/s6IJdlJUk=; b=RIdQic6mpNnscD
+	BWKXA7brw1oYl07sW9ZnXclOrfel3LmVGCnSDtiqJaJjriClyY+AU7TRrrIqn5WG3+bmijmZgsCBx
+	UN37WBrv4M2yc9HwJcIz7tNsdSFMXX8xQKg85EGhJD9Eds/UCXXNIrc9f8rgtIV7WJZedCH6F9XgE
+	3R9D+0VQZENvkXwcm86/6NOdr4dxwEGob3niVjTqkZEzyNA/7leBIWuhJZxyk0BDYEW7vLpJuezfw
+	dBRtoaDkpSv59gXDsao0Tn0RJUwG8d0bVFiJmFk5xMc4rWYx6uy87uUej7V92BHlSunftAhBvS0eW
+	Msl0QFR5I+WTfFmYl7Ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iICY9-0001XT-7k; Wed, 09 Oct 2019 14:02:45 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1iICc5-0003Jq-Fo; Wed, 09 Oct 2019 14:06:49 +0000
+Received: from imap1.codethink.co.uk ([176.9.8.82])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iICY2-0001X6-Ck
- for linux-arm-kernel@bombadil.infradead.org; Wed, 09 Oct 2019 14:02:38 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:To:From:Date:Sender:Reply-To:Cc:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Ow7FKP48u/Nj4L2nnLluYyDI71TFdYMxoRK4Fj73NE8=; b=LhWz/sXH1lnINS4LCmt0yjQKT
- e0rpg1rH/rPOj4W+m1atbCyabHGyKGrZF/rvHGMPqw+PsPHHK/ExgVioTgpkUKD1X2btgDbY2nFQ2
- MqPWbzXSOxyMa4xzJdMytXh3nf0XvXPTx91uhJli/mrIAqyeBULh4qMdxwMiJYAXOWuAbvIiY4GVd
- 2bzt8j0IZQfs1WBHhvbl0Oym2W10/hgalObG8a0/pC1pzjCRA4oomMSRpGITOaOJXm4T1ms83ugcd
- GVmkdFzIDGFEAFxIvztwa1+cCjrT8JQJ2S5HAx2N169GNMJbbC4bV4UiB8pCucrUA9xDTSTGSc9tE
- 7W8ckW2Xg==;
-Received: from relay12.mail.gandi.net ([217.70.178.232])
- by merlin.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iICXy-0003MB-AO
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 14:02:35 +0000
-Received: from localhost
- (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id AA1DB200010;
- Wed,  9 Oct 2019 14:01:45 +0000 (UTC)
-Date: Wed, 9 Oct 2019 16:01:45 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Kamel Bouhara <kamel.bouhara@bootlin.com>,
- Wolfram Sang <wsa@the-dreams.de>, linux-i2c@vger.kernel.org,
- linux-kernel@vger.kernel.org, Nicolas Ferre <nicolas.ferre@microchip.com>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH 2/4] i2c: at91: implement i2c bus recovery
-Message-ID: <20191009140145.GE4254@piout.net>
-References: <20191002144658.7718-1-kamel.bouhara@bootlin.com>
- <20191002144658.7718-3-kamel.bouhara@bootlin.com>
- <20191009135500.ufkxcemccwfcfys7@M43218.corp.atmel.com>
+ id 1iICby-0003JO-MH
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 14:06:44 +0000
+Received: from [167.98.27.226] (helo=rainbowdash.codethink.co.uk)
+ by imap1.codethink.co.uk with esmtpsa (Exim 4.84_2 #1 (Debian))
+ id 1iICbv-0008Pz-1y; Wed, 09 Oct 2019 15:06:39 +0100
+Received: from ben by rainbowdash.codethink.co.uk with local (Exim 4.92.2)
+ (envelope-from <ben@rainbowdash.codethink.co.uk>)
+ id 1iICbu-0003FS-Af; Wed, 09 Oct 2019 15:06:38 +0100
+From: Ben Dooks <ben.dooks@codethink.co.uk>
+To: linux-kernel@lists.codethink.co.uk
+Subject: [PATCH] arm: add kernel/fork.c function definitions
+Date: Wed,  9 Oct 2019 15:06:37 +0100
+Message-Id: <20191009140637.12443-1-ben.dooks@codethink.co.uk>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191009135500.ufkxcemccwfcfys7@M43218.corp.atmel.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191009_070642_876122_2FFF7C4E 
+X-CRM114-Status: UNSURE (   9.27  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 2.5 (++)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [176.9.8.82 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -81,42 +61,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Ben Dooks <ben.dooks@codethink.co.uk>, Russell King <linux@armlinux.org.uk>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 09/10/2019 15:55:00+0200, Ludovic Desroches wrote:
-> On Wed, Oct 02, 2019 at 04:46:56PM +0200, Kamel Bouhara wrote:
-> > External E-Mail
-> > 
-> > 
-> > Implement i2c bus recovery when slaves devices might hold SDA low.
-> > In this case re-assign SCL/SDA to gpios and issue 9 dummy clock pulses
-> > until the slave release SDA.
-> > 
-> 
-> Hi Kamel,
-> 
-> Thanks for adding this new feature. As I see patches only for sama5d3 and
-> sama5d4, I assume it has not been tested with a sama5d2, isn't it?
-> 
+Add the definitions of arch_release_task_struct,
+arch_task_cache_init and arch_dup_task_struct which
+are used in kernel/fork.c but defined in various
+architecture's <asm/thread_info.h>.
 
-I there a point having it on sama5d2 as the controller already supports
-this feature?
+Fixes the following warnings:
 
-> I doubt it works with a sama5d2 because of the pinctrl. I also wonder if it can
-> work if we add .strict = true to pinmux_ops which is something plan for the
-> future...
-> 
+kernel/fork.c:160:13: warning: symbol 'arch_release_task_struct' was not declared. Should it be static?
+kernel/fork.c:752:20: warning: symbol 'arch_task_cache_init' was not declared. Should it be static?
+kernel/fork.c:841:12: warning: symbol 'arch_dup_task_struct' was not declared. Should it be static?
 
-I don't see why it wouldn't work with strict as this is switching muxing
-properly instead of using the pins for two functions at the same time.
+Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
+---
+Cc: Russell King <linux@armlinux.org.uk>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+---
+ arch/arm/include/asm/thread_info.h | 5 +++++
+ 1 file changed, 5 insertions(+)
 
+diff --git a/arch/arm/include/asm/thread_info.h b/arch/arm/include/asm/thread_info.h
+index 0d0d5178e2c3..3d65d152dd19 100644
+--- a/arch/arm/include/asm/thread_info.h
++++ b/arch/arm/include/asm/thread_info.h
+@@ -118,6 +118,11 @@ extern void iwmmxt_task_switch(struct thread_info *);
+ extern void vfp_sync_hwstate(struct thread_info *);
+ extern void vfp_flush_hwstate(struct thread_info *);
+ 
++/* for kernel/fork.c */
++extern void arch_release_task_struct(struct task_struct *tsk);
++extern void arch_task_cache_init(void);
++extern int arch_dup_task_struct(struct task_struct *dst, struct task_struct *src);
++
+ struct user_vfp;
+ struct user_vfp_exc;
+ 
 -- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
