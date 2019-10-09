@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECC5DD0919
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:05:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD2F9D091A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:05:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
 	Date:From:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=c9QFmxz/uZa+iifhLets7FwCmSrxRnBO8i1vn8hJPM0=; b=AxBIFg7CENYHVn
-	M1pztSQjt2RzwTkyVXePMqliJ7efQDt/h0ELMeuPEQ5c1uF1vSWkR/8t4dhCPgysKqhAlJcMiPiKA
-	N0Yg4Bw0EnSxKRGeXbojjAsjm3G3vX5GjNMETIYbpZYI1SbJkV1KM9nKig2k+DZK2jvTJGE3L4M8M
-	EAhHDAyweoClbn/lLnd8JUfUp4/dVXcMZRJZX8W/Lvq0mejDk8/tt9kTQPpou45mjdb5YSRqa5gO2
-	8IM97e/3pTwdM7Qv1i7yn4ZnrdyABtM/mAZyLb3CCc+AHYPwxfB8CdAJ2K4BzepiIOwriqHpLQ98Y
-	WgFD3jaP9aD+VOeD36cQ==;
+	List-Owner; bh=wpP3WadFwpnVM39krslchnZKdbl3RV3NG78McngCmtg=; b=pxVMCBnoaJat4Y
+	nV6V4VDPa34iePzJNSHLmKyfB2UXOTryZgUpzrfikKVnIKGWzEdxh5JsQoIwk5ZLS2Iez8o6epPYc
+	eIC786GWQz679j3AoiS+cAfNAyUJDgiVBPPttVzWqRDeXKPJVTz9tYeWzhHXJsE2pNatDTqutgQfB
+	8stJ+PQqJg2oXPzsdvO2CzfFkFBhWkOz9ZBuzsUrl5T8NK+jnMmzwe2NRVvySGGnnV3cH8VNYiQ2B
+	x+8FJ8yj8j5uJRp1IfV4URIPWw5F9NId+VWDm+qkuyAiG8JKlMNAxbBBn6B5DHaAJIaCHXW+d91wf
+	DtPcFhD3PB27Eu4bZxuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI6yL-0005e6-KN; Wed, 09 Oct 2019 08:05:25 +0000
+	id 1iI6yd-0005qd-4Y; Wed, 09 Oct 2019 08:05:43 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI6xF-0003nB-In
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:04:19 +0000
+ id 1iI6xI-0003pG-Oa
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:04:22 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BED46206B6;
- Wed,  9 Oct 2019 08:04:16 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 608B2206C0;
+ Wed,  9 Oct 2019 08:04:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570608257;
- bh=9N4wjsNwWy5pxA3tMcpNOJ7L31TOL9xMfahEfdOjPOs=;
+ s=default; t=1570608259;
+ bh=aFrWszwHOjyXBn/NkteD4Eke26RRpXCIU5m8xovx0cc=;
  h=Subject:To:Cc:From:Date:In-Reply-To:From;
- b=vcZqrWYR4azgl+pt5tWUj92Iq8c0OzDzmBPI89+IxYvRY1TinxGbO9Epldt2CQZ1f
- fGvZlI/IALuDJaxfpHbFwSNe5AHgprIv43FXWu1tIIq0gvWBUMwS/2TDBPxeXl4Rs1
- WdFr9JuqNQ5x6q/ZPJ4LH3F9GiBSprUiHzdtnBSI=
-Subject: Patch "arm64: add sysfs vulnerability show for speculative store
- bypass" has been added to the 4.19-stable tree
-To: ard.biesheuvel@linaro.org, gregkh@linuxfoundation.org,
- jeremy.linton@arm.com, linux-arm-kernel@lists.infradead.org,
- stefan.wahren@i2se.com, will.deacon@arm.com
+ b=mMgqtLgkPwcd5KRf5r9U3P9pKeN1HSCFIcboXNgWEWtaXjLvnjxJTF4Lz/77Mbc+q
+ 7k+EpJ9F3D1ZXaHLMBK0GgLu9ORsJzhGVwnZ+3puMcOlsAWjJbdxZBL2H9TRguTrco
+ NuuRt6snm45eRodDK7DNKPuQcqhH9mLqaPFDnMNo=
+Subject: Patch "arm64: Always enable spectre-v2 vulnerability detection" has
+ been added to the 4.19-stable tree
+To: andre.przywara@arm.com, ard.biesheuvel@linaro.org, catalin.marinas@arm.com,
+ gregkh@linuxfoundation.org, jeremy.linton@arm.com,
+ linux-arm-kernel@lists.infradead.org, stefan.wahren@i2se.com,
+ will.deacon@arm.com
 From: <gregkh@linuxfoundation.org>
-Date: Wed, 09 Oct 2019 10:04:01 +0200
-In-Reply-To: <20191008153930.15386-15-ard.biesheuvel@linaro.org>
-Message-ID: <157060824188249@kroah.com>
+Date: Wed, 09 Oct 2019 10:04:02 +0200
+In-Reply-To: <20191008153930.15386-13-ard.biesheuvel@linaro.org>
+Message-ID: <157060824287@kroah.com>
 MIME-Version: 1.0
 X-stable: commit
 X-Patchwork-Hint: ignore 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_010417_682370_3971013A 
-X-CRM114-Status: GOOD (  15.18  )
+X-CRM114-CacheID: sfid-20191009_010420_904452_3B012BC1 
+X-CRM114-Status: GOOD (  13.26  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -84,13 +85,13 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 This is a note to let you know that I've just added the patch titled
 
-    arm64: add sysfs vulnerability show for speculative store bypass
+    arm64: Always enable spectre-v2 vulnerability detection
 
 to the 4.19-stable tree which can be found at:
     http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
 
 The filename of the patch is:
-     arm64-add-sysfs-vulnerability-show-for-speculative-store-bypass.patch
+     arm64-always-enable-spectre-v2-vulnerability-detection.patch
 and it can be found in the queue-4.19 subdirectory.
 
 If you, or anyone else, feels it should not be added to the stable tree,
@@ -99,152 +100,97 @@ please let <stable@vger.kernel.org> know about it.
 
 From foo@baz Wed 09 Oct 2019 10:02:11 AM CEST
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Tue,  8 Oct 2019 17:39:28 +0200
-Subject: arm64: add sysfs vulnerability show for speculative store bypass
+Date: Tue,  8 Oct 2019 17:39:26 +0200
+Subject: arm64: Always enable spectre-v2 vulnerability detection
 To: linux-arm-kernel@lists.infradead.org
-Cc: stable@vger.kernel.org, Jeremy Linton <jeremy.linton@arm.com>, Stefan Wahren <stefan.wahren@i2se.com>, Will Deacon <will.deacon@arm.com>
-Message-ID: <20191008153930.15386-15-ard.biesheuvel@linaro.org>
+Cc: stable@vger.kernel.org, Jeremy Linton <jeremy.linton@arm.com>, Andre Przywara <andre.przywara@arm.com>, Catalin Marinas <catalin.marinas@arm.com>, Stefan Wahren <stefan.wahren@i2se.com>, Will Deacon <will.deacon@arm.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Message-ID: <20191008153930.15386-13-ard.biesheuvel@linaro.org>
 
 From: Jeremy Linton <jeremy.linton@arm.com>
 
-[ Upstream commit 526e065dbca6df0b5a130b84b836b8b3c9f54e21 ]
+[ Upstream commit 8c1e3d2bb44cbb998cb28ff9a18f105fee7f1eb3 ]
 
-Return status based on ssbd_state and __ssb_safe. If the
-mitigation is disabled, or the firmware isn't responding then
-return the expected machine state based on a whitelist of known
-good cores.
+Ensure we are always able to detect whether or not the CPU is affected
+by Spectre-v2, so that we can later advertise this to userspace.
 
-Given a heterogeneous machine, the overall machine vulnerability
-defaults to safe but is reset to unsafe when we miss the whitelist
-and the firmware doesn't explicitly tell us the core is safe.
-In order to make that work we delay transitioning to vulnerable
-until we know the firmware isn't responding to avoid a case
-where we miss the whitelist, but the firmware goes ahead and
-reports the core is not vulnerable. If all the cores in the
-machine have SSBS, then __ssb_safe will remain true.
-
-Tested-by: Stefan Wahren <stefan.wahren@i2se.com>
 Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
+Reviewed-by: Andre Przywara <andre.przywara@arm.com>
+Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+Tested-by: Stefan Wahren <stefan.wahren@i2se.com>
 Signed-off-by: Will Deacon <will.deacon@arm.com>
+Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 ---
- arch/arm64/kernel/cpu_errata.c |   42 +++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 42 insertions(+)
+ arch/arm64/kernel/cpu_errata.c |   15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
 
 --- a/arch/arm64/kernel/cpu_errata.c
 +++ b/arch/arm64/kernel/cpu_errata.c
-@@ -233,6 +233,7 @@ static int detect_harden_bp_fw(void)
+@@ -87,7 +87,6 @@ cpu_enable_trap_ctr_access(const struct
+ 
+ atomic_t arm64_el2_vector_last_slot = ATOMIC_INIT(-1);
+ 
+-#ifdef CONFIG_HARDEN_BRANCH_PREDICTOR
+ #include <asm/mmu_context.h>
+ #include <asm/cacheflush.h>
+ 
+@@ -225,11 +224,11 @@ static int detect_harden_bp_fw(void)
+ 	    ((midr & MIDR_CPU_MODEL_MASK) == MIDR_QCOM_FALKOR_V1))
+ 		cb = qcom_link_stack_sanitization;
+ 
+-	install_bp_hardening_cb(cb, smccc_start, smccc_end);
++	if (IS_ENABLED(CONFIG_HARDEN_BRANCH_PREDICTOR))
++		install_bp_hardening_cb(cb, smccc_start, smccc_end);
+ 
+ 	return 1;
+ }
+-#endif	/* CONFIG_HARDEN_BRANCH_PREDICTOR */
+ 
  DEFINE_PER_CPU_READ_MOSTLY(u64, arm64_ssbd_callback_required);
  
- int ssbd_state __read_mostly = ARM64_SSBD_KERNEL;
-+static bool __ssb_safe = true;
- 
- static const struct ssbd_options {
- 	const char	*str;
-@@ -336,6 +337,7 @@ static bool has_ssbd_mitigation(const st
- 	struct arm_smccc_res res;
- 	bool required = true;
- 	s32 val;
-+	bool this_cpu_safe = false;
- 
- 	WARN_ON(scope != SCOPE_LOCAL_CPU || preemptible());
- 
-@@ -344,8 +346,14 @@ static bool has_ssbd_mitigation(const st
- 		goto out_printmsg;
- 	}
- 
-+	/* delay setting __ssb_safe until we get a firmware response */
-+	if (is_midr_in_range_list(read_cpuid_id(), entry->midr_range_list))
-+		this_cpu_safe = true;
-+
- 	if (psci_ops.smccc_version == SMCCC_VERSION_1_0) {
- 		ssbd_state = ARM64_SSBD_UNKNOWN;
-+		if (!this_cpu_safe)
-+			__ssb_safe = false;
- 		return false;
- 	}
- 
-@@ -362,6 +370,8 @@ static bool has_ssbd_mitigation(const st
- 
- 	default:
- 		ssbd_state = ARM64_SSBD_UNKNOWN;
-+		if (!this_cpu_safe)
-+			__ssb_safe = false;
- 		return false;
- 	}
- 
-@@ -370,14 +380,18 @@ static bool has_ssbd_mitigation(const st
- 	switch (val) {
- 	case SMCCC_RET_NOT_SUPPORTED:
- 		ssbd_state = ARM64_SSBD_UNKNOWN;
-+		if (!this_cpu_safe)
-+			__ssb_safe = false;
- 		return false;
- 
-+	/* machines with mixed mitigation requirements must not return this */
- 	case SMCCC_RET_NOT_REQUIRED:
- 		pr_info_once("%s mitigation not required\n", entry->desc);
- 		ssbd_state = ARM64_SSBD_MITIGATED;
- 		return false;
- 
- 	case SMCCC_RET_SUCCESS:
-+		__ssb_safe = false;
- 		required = true;
- 		break;
- 
-@@ -387,6 +401,8 @@ static bool has_ssbd_mitigation(const st
- 
- 	default:
- 		WARN_ON(1);
-+		if (!this_cpu_safe)
-+			__ssb_safe = false;
- 		return false;
- 	}
- 
-@@ -427,6 +443,14 @@ out_printmsg:
- 	return required;
+@@ -513,7 +512,6 @@ multi_entry_cap_cpu_enable(const struct
+ 			caps->cpu_enable(caps);
  }
  
-+/* known invulnerable cores */
-+static const struct midr_range arm64_ssb_cpus[] = {
-+	MIDR_ALL_VERSIONS(MIDR_CORTEX_A35),
-+	MIDR_ALL_VERSIONS(MIDR_CORTEX_A53),
-+	MIDR_ALL_VERSIONS(MIDR_CORTEX_A55),
-+	{},
-+};
-+
- #ifdef CONFIG_ARM64_ERRATUM_1463225
- DEFINE_PER_CPU(int, __in_cortex_a76_erratum_1463225_wa);
+-#ifdef CONFIG_HARDEN_BRANCH_PREDICTOR
+ /*
+  * List of CPUs that do not need any Spectre-v2 mitigation at all.
+  */
+@@ -545,6 +543,12 @@ check_branch_predictor(const struct arm6
+ 	if (!need_wa)
+ 		return false;
  
-@@ -748,6 +772,7 @@ const struct arm64_cpu_capabilities arm6
- 		.capability = ARM64_SSBD,
- 		.type = ARM64_CPUCAP_LOCAL_CPU_ERRATUM,
- 		.matches = has_ssbd_mitigation,
-+		.midr_range_list = arm64_ssb_cpus,
- 	},
- #ifdef CONFIG_ARM64_ERRATUM_1463225
- 	{
-@@ -778,3 +803,20 @@ ssize_t cpu_show_spectre_v2(struct devic
- 
- 	return sprintf(buf, "Vulnerable\n");
- }
-+
-+ssize_t cpu_show_spec_store_bypass(struct device *dev,
-+		struct device_attribute *attr, char *buf)
-+{
-+	if (__ssb_safe)
-+		return sprintf(buf, "Not affected\n");
-+
-+	switch (ssbd_state) {
-+	case ARM64_SSBD_KERNEL:
-+	case ARM64_SSBD_FORCE_ENABLE:
-+		if (IS_ENABLED(CONFIG_ARM64_SSBD))
-+			return sprintf(buf,
-+			    "Mitigation: Speculative Store Bypass disabled via prctl\n");
++	if (!IS_ENABLED(CONFIG_HARDEN_BRANCH_PREDICTOR)) {
++		pr_warn_once("spectrev2 mitigation disabled by kernel configuration\n");
++		__hardenbp_enab = false;
++		return false;
 +	}
 +
-+	return sprintf(buf, "Vulnerable\n");
-+}
+ 	/* forced off */
+ 	if (__nospectre_v2) {
+ 		pr_info_once("spectrev2 mitigation disabled by command line option\n");
+@@ -556,7 +560,6 @@ check_branch_predictor(const struct arm6
+ 
+ 	return (need_wa > 0);
+ }
+-#endif
+ 
+ #ifdef CONFIG_HARDEN_EL2_VECTORS
+ 
+@@ -715,13 +718,11 @@ const struct arm64_cpu_capabilities arm6
+ 		ERRATA_MIDR_ALL_VERSIONS(MIDR_CORTEX_A73),
+ 	},
+ #endif
+-#ifdef CONFIG_HARDEN_BRANCH_PREDICTOR
+ 	{
+ 		.capability = ARM64_HARDEN_BRANCH_PREDICTOR,
+ 		.type = ARM64_CPUCAP_LOCAL_CPU_ERRATUM,
+ 		.matches = check_branch_predictor,
+ 	},
+-#endif
+ #ifdef CONFIG_HARDEN_EL2_VECTORS
+ 	{
+ 		.desc = "EL2 vector hardening",
 
 
 Patches currently in stable-queue which might be from ard.biesheuvel@linaro.org are
