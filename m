@@ -2,57 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 934D4D0BCD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 11:51:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DE9CD0BD4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 11:52:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=91U5zJrtVpgs3/Sg6JTCz2t2AVn3MRUlXA+MzE+Bsp4=; b=kRo0I3sXaPNaOl
-	UdFCanbHzzL2nX3EigySfmEt/oONlBUaIZm1gCtp7aatwDpAXGfVnhmaV+JsnAOEHybKhE9z6yjHt
-	HYCxU2JyYEiajUR9CyvAPb6fmwpyfUqPhYy6hcV7Zjj2D2U1nykejy3Uq6glmORLM0gyaJ37NOY14
-	JVeiNHFxYBwK6spr2uoh4dwapn3Ri+uGB57MoX88wZIkXDeCGfp8iq5gPZNyp0RAY6tP0bObNEkR3
-	i73BAvQDTsNAE4zUT5lB1vZi3loFskw+BWurBVMt0vaNrOoOxYs8/2pkxmikNSXNr0fSHsp7z50vT
-	D9MyGR2tP5ILRWK9Kp+A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=o2Qcf2R04KCm4qhcgNwJowMYbjlqgJgqCpUayB7xkJ0=; b=oakH31UNfiLQUE
+	1/PiPIjW8/I9THZPr6QcD0gURYtbg0ZwQsUanJHu68Q1tg35ZjREpdeOzPEL6fGhU/fMJ8qMMSVjj
+	PzrIat8Hj3IG2plaVLOHlkq36gwd22PBDACDDFfifFzhOjYvoM6uW8cJ/nezKKPfbOH7PkQyfc4VM
+	iec940RkqxIxNXINtKImYSwc6sFU1zq+v5egWkFqniflbBYe54/GBSpZqMd+ycUpY3tEPEmzK5DWI
+	FbsF7TJ3o3CpnNQu6yGEIVU4iVMjUfajSpWpTEkwcmT1x+XPULwsm/XbTn7/QizQtzDY/1EWeEsTp
+	P435zR6v7//V6mztoYfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI8d6-0005CW-SO; Wed, 09 Oct 2019 09:51:37 +0000
+	id 1iI8dj-0005qE-89; Wed, 09 Oct 2019 09:52:15 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI8cs-00059A-6u; Wed, 09 Oct 2019 09:51:24 +0000
-X-UUID: 271d86035e694de3b57fc90fddc380d1-20191009
-X-UUID: 271d86035e694de3b57fc90fddc380d1-20191009
+ id 1iI8cw-00059A-BI; Wed, 09 Oct 2019 09:51:28 +0000
+X-UUID: a29d1c75b4bb402d8309ed121df44ccd-20191009
+X-UUID: a29d1c75b4bb402d8309ed121df44ccd-20191009
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
+ (envelope-from <michael.kao@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1752187281; Wed, 09 Oct 2019 01:51:17 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
+ with ESMTP id 422957187; Wed, 09 Oct 2019 01:51:17 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 9 Oct 2019 02:48:16 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- MTKMBS31N2.mediatek.inc (172.27.4.87) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 9 Oct 2019 17:33:07 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 9 Oct 2019 17:33:07 +0800
-Message-ID: <1570613589.7713.12.camel@mtksdaap41>
-Subject: Re: [PATCH v5, 09/32] drm/mediatek: add mutex sof into ddp private
- data
-From: CK Hu <ck.hu@mediatek.com>
-To: <yongqiang.niu@mediatek.com>
-Date: Wed, 9 Oct 2019 17:33:09 +0800
-In-Reply-To: <1567090254-15566-10-git-send-email-yongqiang.niu@mediatek.com>
-References: <1567090254-15566-1-git-send-email-yongqiang.niu@mediatek.com>
- <1567090254-15566-10-git-send-email-yongqiang.niu@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ 15.0.1395.4; Wed, 9 Oct 2019 02:50:18 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 9 Oct 2019 17:35:04 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Wed, 9 Oct 2019 17:35:04 +0800
+From: <michael.kao@mediatek.com>
+To: <michael.kao@mediatek.com>, Zhang Rui <rui.zhang@intel.com>, "Eduardo
+ Valentin" <edubezval@gmail.com>, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, <hsinyi@chromium.org>
+Subject: [RESEND PATCH] thermal: mediatek: add suspend/resume callback
+Date: Wed, 9 Oct 2019 17:35:04 +0800
+Message-ID: <1570613704-16609-1-git-send-email-michael.kao@mediatek.com>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: C0AA72460010C5BE3943F938EECDB74D9C19DE5296EAE6A11046F9A37BD29F432000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_025122_288054_E0B5C4EE 
-X-CRM114-Status: GOOD (  14.94  )
+X-CRM114-CacheID: sfid-20191009_025126_404562_28397D4B 
+X-CRM114-Status: GOOD (  17.81  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,152 +71,268 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ Louis Yu <louis.yu@mediatek.com>, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Yongqiang:
+From: Louis Yu <louis.yu@mediatek.com>
 
-On Thu, 2019-08-29 at 22:50 +0800, yongqiang.niu@mediatek.com wrote:
-> From: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> 
-> mutex sof will be ddp private data
-> 
+Add suspend/resume callback to disable/enable Mediatek thermal sensor
+respectively. Since thermal power domain is off in suspend, thermal driver
+needs re-initialization during resume.
 
-Applied to mediatek-drm-next-5.5 [1], thanks.
+Signed-off-by: Louis Yu <louis.yu@mediatek.com>
+Signed-off-by: Michael Kao <michael.kao@mediatek.com>
+---
+This patch series base on these patches [1][2].
 
-[1]
-https://github.com/ckhu-mediatek/linux.git-tags/commits/mediatek-drm-next-5.5
+[1]thermal: mediatek: mt8183: fix bank number settings (https://patchwork.kernel.org/patch/10938817/)
+[2]thermal: mediatek: add another get_temp ops for thermal sensors (https://patchwork.kernel.org/patch/10938829/)
 
-Regards,
-CK
+ drivers/thermal/mtk_thermal.c | 134 +++++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 125 insertions(+), 9 deletions(-)
 
-> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> Reviewed-by: CK Hu <ck.hu@mediatek.com>
-> ---
->  drivers/gpu/drm/mediatek/mtk_drm_ddp.c | 43 +++++++++++++++++++++++++++-------
->  1 file changed, 35 insertions(+), 8 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-> index ae22e21..9bdbd8d 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-> @@ -141,8 +141,19 @@ struct mtk_disp_mutex {
->  	bool claimed;
->  };
->  
-> +enum mtk_ddp_mutex_sof_id {
-> +	DDP_MUTEX_SOF_SINGLE_MODE,
-> +	DDP_MUTEX_SOF_DSI0,
-> +	DDP_MUTEX_SOF_DSI1,
-> +	DDP_MUTEX_SOF_DPI0,
-> +	DDP_MUTEX_SOF_DPI1,
-> +	DDP_MUTEX_SOF_DSI2,
-> +	DDP_MUTEX_SOF_DSI3,
-> +};
-> +
->  struct mtk_ddp_data {
->  	const unsigned int *mutex_mod;
-> +	const unsigned int *mutex_sof;
->  	const unsigned int mutex_mod_reg;
->  };
->  
-> @@ -201,18 +212,31 @@ struct mtk_ddp {
->  	[DDP_COMPONENT_WDMA1] = MT8173_MUTEX_MOD_DISP_WDMA1,
->  };
->  
-> +static const unsigned int mt2712_mutex_sof[DDP_MUTEX_SOF_DSI3 + 1] = {
-> +	[DDP_MUTEX_SOF_SINGLE_MODE] = MUTEX_SOF_SINGLE_MODE,
-> +	[DDP_MUTEX_SOF_DSI0] = MUTEX_SOF_DSI0,
-> +	[DDP_MUTEX_SOF_DSI1] = MUTEX_SOF_DSI1,
-> +	[DDP_MUTEX_SOF_DPI0] = MUTEX_SOF_DPI0,
-> +	[DDP_MUTEX_SOF_DPI1] = MUTEX_SOF_DPI1,
-> +	[DDP_MUTEX_SOF_DSI2] = MUTEX_SOF_DSI2,
-> +	[DDP_MUTEX_SOF_DSI3] = MUTEX_SOF_DSI3,
-> +};
-> +
->  static const struct mtk_ddp_data mt2701_ddp_driver_data = {
->  	.mutex_mod = mt2701_mutex_mod,
-> +	.mutex_sof = mt2712_mutex_sof,
->  	.mutex_mod_reg = MT2701_DISP_MUTEX0_MOD0,
->  };
->  
->  static const struct mtk_ddp_data mt2712_ddp_driver_data = {
->  	.mutex_mod = mt2712_mutex_mod,
-> +	.mutex_sof = mt2712_mutex_sof,
->  	.mutex_mod_reg = MT2701_DISP_MUTEX0_MOD0,
->  };
->  
->  static const struct mtk_ddp_data mt8173_ddp_driver_data = {
->  	.mutex_mod = mt8173_mutex_mod,
-> +	.mutex_sof = mt2712_mutex_sof,
->  	.mutex_mod_reg = MT2701_DISP_MUTEX0_MOD0,
->  };
->  
-> @@ -454,28 +478,29 @@ void mtk_disp_mutex_add_comp(struct mtk_disp_mutex *mutex,
->  	struct mtk_ddp *ddp = container_of(mutex, struct mtk_ddp,
->  					   mutex[mutex->id]);
->  	unsigned int reg;
-> +	unsigned int sof_id;
->  	unsigned int offset;
->  
->  	WARN_ON(&ddp->mutex[mutex->id] != mutex);
->  
->  	switch (id) {
->  	case DDP_COMPONENT_DSI0:
-> -		reg = MUTEX_SOF_DSI0;
-> +		sof_id = DDP_MUTEX_SOF_DSI0;
->  		break;
->  	case DDP_COMPONENT_DSI1:
-> -		reg = MUTEX_SOF_DSI0;
-> +		sof_id = DDP_MUTEX_SOF_DSI0;
->  		break;
->  	case DDP_COMPONENT_DSI2:
-> -		reg = MUTEX_SOF_DSI2;
-> +		sof_id = DDP_MUTEX_SOF_DSI2;
->  		break;
->  	case DDP_COMPONENT_DSI3:
-> -		reg = MUTEX_SOF_DSI3;
-> +		sof_id = DDP_MUTEX_SOF_DSI3;
->  		break;
->  	case DDP_COMPONENT_DPI0:
-> -		reg = MUTEX_SOF_DPI0;
-> +		sof_id = DDP_MUTEX_SOF_DPI0;
->  		break;
->  	case DDP_COMPONENT_DPI1:
-> -		reg = MUTEX_SOF_DPI1;
-> +		sof_id = DDP_MUTEX_SOF_DPI1;
->  		break;
->  	default:
->  		if (ddp->data->mutex_mod[id] < 32) {
-> @@ -493,7 +518,8 @@ void mtk_disp_mutex_add_comp(struct mtk_disp_mutex *mutex,
->  		return;
->  	}
->  
-> -	writel_relaxed(reg, ddp->regs + DISP_REG_MUTEX_SOF(mutex->id));
-> +	writel_relaxed(ddp->data->mutex_sof[sof_id],
-> +		       ddp->regs + DISP_REG_MUTEX_SOF(mutex->id));
->  }
->  
->  void mtk_disp_mutex_remove_comp(struct mtk_disp_mutex *mutex,
-> @@ -514,7 +540,8 @@ void mtk_disp_mutex_remove_comp(struct mtk_disp_mutex *mutex,
->  	case DDP_COMPONENT_DPI0:
->  	case DDP_COMPONENT_DPI1:
->  		writel_relaxed(MUTEX_SOF_SINGLE_MODE,
-> -			       ddp->regs + DISP_REG_MUTEX_SOF(mutex->id));
-> +			       ddp->regs +
-> +			       DISP_REG_MUTEX_SOF(mutex->id));
->  		break;
->  	default:
->  		if (ddp->data->mutex_mod[id] < 32) {
-
+diff --git a/drivers/thermal/mtk_thermal.c b/drivers/thermal/mtk_thermal.c
+index 6bdd9c2..22ff2cf 100644
+--- a/drivers/thermal/mtk_thermal.c
++++ b/drivers/thermal/mtk_thermal.c
+@@ -22,6 +22,7 @@
+ #include <linux/thermal.h>
+ #include <linux/reset.h>
+ #include <linux/types.h>
++#include <linux/iopoll.h>
+ 
+ /* AUXADC Registers */
+ #define AUXADC_CON1_SET_V	0x008
+@@ -31,6 +32,8 @@
+ 
+ #define APMIXED_SYS_TS_CON1	0x604
+ 
++#define APMIXED_SYS_TS_CON1_BUFFER_OFF	0x30
++
+ /* Thermal Controller Registers */
+ #define TEMP_MONCTL0		0x000
+ #define TEMP_MONCTL1		0x004
+@@ -38,6 +41,7 @@
+ #define TEMP_MONIDET0		0x014
+ #define TEMP_MONIDET1		0x018
+ #define TEMP_MSRCTL0		0x038
++#define TEMP_MSRCTL1		0x03c
+ #define TEMP_AHBPOLL		0x040
+ #define TEMP_AHBTO		0x044
+ #define TEMP_ADCPNP0		0x048
+@@ -87,6 +91,9 @@
+ #define TEMP_ADCVALIDMASK_VALID_HIGH		BIT(5)
+ #define TEMP_ADCVALIDMASK_VALID_POS(bit)	(bit)
+ 
++#define TEMP_MSRCTL1_BUS_STA	(BIT(0) | BIT(7))
++#define TEMP_MSRCTL1_SENSING_POINTS_PAUSE	0x10E
++
+ /* MT8173 thermal sensors */
+ #define MT8173_TS1	0
+ #define MT8173_TS2	1
+@@ -258,6 +265,10 @@ struct mtk_thermal_data {
+ struct mtk_thermal {
+ 	struct device *dev;
+ 	void __iomem *thermal_base;
++	void __iomem *apmixed_base;
++	void __iomem *auxadc_base;
++	u64 apmixed_phys_base;
++	u64 auxadc_phys_base;
+ 
+ 	struct clk *clk_peri_therm;
+ 	struct clk *clk_auxadc;
+@@ -787,6 +798,42 @@ static void mtk_thermal_init_bank(struct mtk_thermal *mt, int num,
+ 	mtk_thermal_put_bank(bank);
+ }
+ 
++static int mtk_thermal_disable_sensing(struct mtk_thermal *mt, int num)
++{
++	struct mtk_thermal_bank *bank = &mt->banks[num];
++	u32 val;
++	unsigned long timeout;
++	void __iomem *addr;
++	int ret = 0;
++
++	bank->id = num;
++	bank->mt = mt;
++
++	mtk_thermal_get_bank(bank);
++
++	val = readl(mt->thermal_base + TEMP_MSRCTL1);
++	/* pause periodic temperature measurement for sensing points */
++	writel(val | TEMP_MSRCTL1_SENSING_POINTS_PAUSE,
++	       mt->thermal_base + TEMP_MSRCTL1);
++
++	/* wait until temperature measurement bus idle */
++	timeout = jiffies + HZ;
++	addr = mt->thermal_base + TEMP_MSRCTL1;
++
++	ret = readl_poll_timeout(addr, val, (val & TEMP_MSRCTL1_BUS_STA) == 0x0,
++				 0, timeout);
++	if (ret < 0)
++		goto out;
++
++	/* disable periodic temperature meausrement on sensing points */
++	writel(0x0, mt->thermal_base + TEMP_MONCTL0);
++
++out:
++	mtk_thermal_put_bank(bank);
++
++	return ret;
++}
++
+ static u64 of_get_phys_base(struct device_node *np)
+ {
+ 	u64 size64;
+@@ -909,7 +956,6 @@ static int mtk_thermal_probe(struct platform_device *pdev)
+ 	struct device_node *auxadc, *apmixedsys, *np = pdev->dev.of_node;
+ 	struct mtk_thermal *mt;
+ 	struct resource *res;
+-	u64 auxadc_phys_base, apmixed_phys_base;
+ 	struct thermal_zone_device *tzdev;
+ 	struct mtk_thermal_zone *tz;
+ 
+@@ -946,11 +992,11 @@ static int mtk_thermal_probe(struct platform_device *pdev)
+ 		return -ENODEV;
+ 	}
+ 
+-	auxadc_phys_base = of_get_phys_base(auxadc);
++	mt->auxadc_phys_base = of_get_phys_base(auxadc);
+ 
+ 	of_node_put(auxadc);
+ 
+-	if (auxadc_phys_base == OF_BAD_ADDR) {
++	if (mt->auxadc_phys_base == OF_BAD_ADDR) {
+ 		dev_err(&pdev->dev, "Can't get auxadc phys address\n");
+ 		return -EINVAL;
+ 	}
+@@ -961,11 +1007,12 @@ static int mtk_thermal_probe(struct platform_device *pdev)
+ 		return -ENODEV;
+ 	}
+ 
+-	apmixed_phys_base = of_get_phys_base(apmixedsys);
++	mt->apmixed_phys_base = of_get_phys_base(apmixedsys);
++	mt->apmixed_base = of_iomap(apmixedsys, 0);
+ 
+ 	of_node_put(apmixedsys);
+ 
+-	if (apmixed_phys_base == OF_BAD_ADDR) {
++	if (mt->apmixed_phys_base == OF_BAD_ADDR) {
+ 		dev_err(&pdev->dev, "Can't get auxadc phys address\n");
+ 		return -EINVAL;
+ 	}
+@@ -977,19 +1024,19 @@ static int mtk_thermal_probe(struct platform_device *pdev)
+ 	ret = clk_prepare_enable(mt->clk_auxadc);
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "Can't enable auxadc clk: %d\n", ret);
+-		return ret;
++		goto err_disable_clk_auxadc;
+ 	}
+ 
+ 	ret = clk_prepare_enable(mt->clk_peri_therm);
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "Can't enable peri clk: %d\n", ret);
+-		goto err_disable_clk_auxadc;
++		goto err_disable_clk_peri_therm;
+ 	}
+ 
+ 	for (ctrl_id = 0; ctrl_id < mt->conf->num_controller ; ctrl_id++)
+ 		for (i = 0; i < mt->conf->num_banks; i++)
+-			mtk_thermal_init_bank(mt, i, apmixed_phys_base,
+-					      auxadc_phys_base, ctrl_id);
++			mtk_thermal_init_bank(mt, i, mt->apmixed_phys_base,
++					      mt->auxadc_phys_base, ctrl_id);
+ 
+ 	platform_set_drvdata(pdev, mt);
+ 
+@@ -1033,11 +1080,80 @@ static int mtk_thermal_remove(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
++static int __maybe_unused mtk_thermal_suspend(struct device *dev)
++{
++	struct platform_device *pdev = to_platform_device(dev);
++	struct mtk_thermal *mt = platform_get_drvdata(pdev);
++	int i, ret;
++
++	for (i = 0; i < mt->conf->num_banks; i++) {
++		ret = mtk_thermal_disable_sensing(mt, i);
++		if (ret)
++			goto out;
++	}
++
++	/* disable buffer */
++	writel(readl(mt->apmixed_base + APMIXED_SYS_TS_CON1) |
++	       APMIXED_SYS_TS_CON1_BUFFER_OFF,
++	       mt->apmixed_base + APMIXED_SYS_TS_CON1);
++
++	clk_disable_unprepare(mt->clk_peri_therm);
++	clk_disable_unprepare(mt->clk_auxadc);
++
++	return 0;
++
++out:
++	dev_err(&pdev->dev, "Failed to wait until bus idle\n");
++
++	return ret;
++}
++
++static int __maybe_unused mtk_thermal_resume(struct device *dev)
++{
++	struct platform_device *pdev = to_platform_device(dev);
++	struct mtk_thermal *mt = platform_get_drvdata(pdev);
++	int i, ret, ctrl_id;
++
++	ret = device_reset(&pdev->dev);
++	if (ret)
++		return ret;
++
++	ret = clk_prepare_enable(mt->clk_auxadc);
++	if (ret) {
++		dev_err(&pdev->dev, "Can't enable auxadc clk: %d\n", ret);
++		goto err_disable_clk_auxadc;
++	}
++
++	ret = clk_prepare_enable(mt->clk_peri_therm);
++	if (ret) {
++		dev_err(&pdev->dev, "Can't enable peri clk: %d\n", ret);
++		goto err_disable_clk_peri_therm;
++	}
++
++	for (ctrl_id = 0; ctrl_id < mt->conf->num_controller ; ctrl_id++)
++		for (i = 0; i < mt->conf->num_banks; i++)
++			mtk_thermal_init_bank(mt, i, mt->apmixed_phys_base,
++					      mt->auxadc_phys_base, ctrl_id);
++
++	return 0;
++
++err_disable_clk_peri_therm:
++	clk_disable_unprepare(mt->clk_peri_therm);
++err_disable_clk_auxadc:
++	clk_disable_unprepare(mt->clk_auxadc);
++
++	return ret;
++}
++
++static SIMPLE_DEV_PM_OPS(mtk_thermal_pm_ops,
++			 mtk_thermal_suspend, mtk_thermal_resume);
++
+ static struct platform_driver mtk_thermal_driver = {
+ 	.probe = mtk_thermal_probe,
+ 	.remove = mtk_thermal_remove,
+ 	.driver = {
+ 		.name = "mtk-thermal",
++		.pm = &mtk_thermal_pm_ops,
+ 		.of_match_table = mtk_thermal_of_match,
+ 	},
+ };
+-- 
+1.9.1
 
 
 _______________________________________________
