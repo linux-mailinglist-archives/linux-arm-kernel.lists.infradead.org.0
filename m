@@ -2,91 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 816F0D14DB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 19:06:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7433DD14F8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 19:09:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LfZwK+si+arj7pgaG36A/7TKeV2i3cNHRN8KIVrUnmk=; b=DhGlK1MyN025gV
-	HiTkgiJRLc/BqWW7GFFsA5p4UY1JLSaUCi6l2Wx+JdwmeijSrjZkWxjLsBT6soaJ4rhbnT7N0IY47
-	iqXXmMngJ2QTrc4OwLcxeCqg2UUV/fsFjQBY0N8gxafZn5m3XaRnPdXrKwZpPGpOHN/Ff9F888tAh
-	P0heioNEwENRX6Na7ZUPQNMR/+z5VDFDj9SS9tLK8tm3PFr26DUf/Gf1s9Li1KL99pmF3VkvYMGJ1
-	Fs3+BQcGeJGY4Vu1JBA2Eyd8LOfWragyjybVQr2pmPmrRngSRttoDzQdRGEyJ3J1kqsFk0U6DoSUa
-	4xomvhttz2B3JMjysmzg==;
+	List-Owner; bh=DXUYDkQFJ1X1UfELflUQjt7kxBhSDH+JlKiZ4+UDWuw=; b=F0VAbQYV47N2Q/
+	JMUAnskdPhc0zwEkTpK/+7S74axkCznMUY/0q5U3tkOyBIcVyvUuWyPYHED4gK/o57UUouctC8Fek
+	czIw3mJx/+G8oBrstA1Kp5l9aupWF70pjoCRtkQVgIxT25P9JSdNXdlwR2nufleSIPBVJexodW+Tt
+	GBePgc+5nn00pwusdHn1PbTgXEasuqYxOT0OMHK8iiZQm2hyf7iqG+YSaY6bumNWjB5t61eDqxYJO
+	v1DNBZHom2bz/OQ/V8ZUC9b04YnduwbOBhBW/DqU9Uab/f3Kihb3kZdvBvghgay7qklrkkFDKPy2a
+	HBxAwlUYONvS3Ud4QJqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIFPc-0002J9-4W; Wed, 09 Oct 2019 17:06:08 +0000
-Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
+	id 1iIFSz-00031A-U7; Wed, 09 Oct 2019 17:09:37 +0000
+Received: from mga18.intel.com ([134.134.136.126])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIFPT-0002I7-Lz; Wed, 09 Oct 2019 17:06:01 +0000
-Received: by mail-oi1-x244.google.com with SMTP id 83so2412327oii.1;
- Wed, 09 Oct 2019 10:05:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=D2mWDjNiFA8ZmwOSzNfxAaNscOF3X+a/Kjb9sBM4nYM=;
- b=SmKMpQLMdu9zF+nZETtyRyzRFHvqJQM931spdY+ZgtQexKRYWMGEJ/SEMSjPLRwgyX
- sGCfwlBzFBSSOoOzZLbNiPuenj186i0Q7O7o4hyzoB/N1b6hXnlm4oQPBxy0cSQ98bGH
- +x4VPv8LVWtflqbB9+1yalCGMt+xywez2ywORN8R2ErdI0GVP9PpkcGn8eZZ8O2JUM0a
- eD/ZrXd47/tKoNo4ITdNZBi9cgx0HQu6Az30CNCGEEg6kXWwqoRIrbg0h5iH+fCF1bLF
- M1G353WsH6zE4VwfLPFeaGBAVKlGrbU1LWazFwx1S2wB5DtSH+hZg90j0MwtKUYG5/lu
- g2Aw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=D2mWDjNiFA8ZmwOSzNfxAaNscOF3X+a/Kjb9sBM4nYM=;
- b=lrec+RGLnX791nA8NZzcm68ux1tLkLElVfuQqjfFEFCVK/ghNubYDTdyXWtdVWgcUo
- StCnwcQOzYdBk4/gqq7UI6t1GytrAlFr2VLBWZkHL/wvOh22KuDk4+3Aov1WQBbBBPXm
- 8AlaEXckCcVTmQOns5l2apn9h69naEtvr3RGWZD85homoFDKkp1AXk+hQMhmINFC2M5E
- ThQXW2d2QMCZQ/FLMIdzIzjIfnHcE9WIriE0a5eEPUcAkRThdRL+Q3eSHgnyFIv66DR2
- weRGr3gdLwsqUiHbCqtesu7rhYKqMxBSFA3RI3+kcQaizTGGf8HdMTlWnO0DYymAPnTe
- mTlg==
-X-Gm-Message-State: APjAAAVZznw06Gq5MD7eV/Lt3KOEnqCp0W4HCKbpb7lMiiElB/EdFm/v
- qTdoLY64iPHxbk+kURVLs3tSbhCaiv1IpVI3Xns=
-X-Google-Smtp-Source: APXvYqzRkSN7OkK/hbG3KqKLVZ1gB3egs7zTwNvk2ZAefW8rYVwzudrNvLiAtRk9tvfW75gia/FxyzlIvLMQYI7QLR0=
-X-Received: by 2002:aca:d90a:: with SMTP id q10mr3536020oig.129.1570640757567; 
- Wed, 09 Oct 2019 10:05:57 -0700 (PDT)
+ id 1iIFSp-000307-8c
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 17:09:28 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 09 Oct 2019 10:09:23 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.67,277,1566889200"; d="scan'208";a="206918443"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by fmsmga001.fm.intel.com with ESMTP; 09 Oct 2019 10:09:19 -0700
+Received: from andy by smile with local (Exim 4.92.2)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1iIFSf-00036t-U0; Wed, 09 Oct 2019 20:09:17 +0300
+Date: Wed, 9 Oct 2019 20:09:17 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>
+Subject: Re: [PATCH v17 01/14] bitops: Introduce the for_each_set_clump8 macro
+Message-ID: <20191009170917.GG32742@smile.fi.intel.com>
+References: <cover.1570633189.git.vilhelm.gray@gmail.com>
+ <893c3b4f03266c9496137cc98ac2b1bd27f92c73.1570633189.git.vilhelm.gray@gmail.com>
+ <CAK7LNATgW7bXUmqV=3QAaJ0Qu73Kox-TgDCQJb=s0=mwewSCUg@mail.gmail.com>
 MIME-Version: 1.0
-References: <20191007131649.1768-1-linux.amoon@gmail.com>
- <20191007131649.1768-6-linux.amoon@gmail.com>
- <CAFBinCAoJLZj9Kh+SfF4Q+0OCzac2+huon_BU=Q3yE7Fu38U3w@mail.gmail.com>
- <7hsgo4cgeg.fsf@baylibre.com>
- <CANAwSgRfcFa6uBNtpqz6y=9Uwsa4gcp_4tDD+Chhg4SynJCq0Q@mail.gmail.com>
- <CAFBinCA6ZoeR4m4bhj08HF1DqxY1qB5mygpaQCGbo3d8M+Wr9Q@mail.gmail.com>
- <CANAwSgSeYTnUkLnjw-RORw76Fyj3_WT0cdM9D0vFsY8g=9L94Q@mail.gmail.com>
-In-Reply-To: <CANAwSgSeYTnUkLnjw-RORw76Fyj3_WT0cdM9D0vFsY8g=9L94Q@mail.gmail.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Wed, 9 Oct 2019 19:05:46 +0200
-Message-ID: <CAFBinCCHrvjNTruVk7qr+7Y_m7mP2BJ-0HxftJpiPXpvoD=-QQ@mail.gmail.com>
-Subject: Re: [RFCv1 5/5] arm64/ARM: configs: Change CONFIG_PWM_MESON from m to
- y
-To: Anand Moon <linux.amoon@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <CAK7LNATgW7bXUmqV=3QAaJ0Qu73Kox-TgDCQJb=s0=mwewSCUg@mail.gmail.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_100559_728793_A1FA75A2 
-X-CRM114-Status: GOOD (  20.06  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191009_100927_346456_E4FA3952 
+X-CRM114-Status: GOOD (  14.82  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.126 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,79 +72,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>,
- Linux Kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-amlogic@lists.infradead.org,
- Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Jerome Brunet <jbrunet@baylibre.com>
+Cc: linux-arch <linux-arch@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Linux PM mailing list <linux-pm@vger.kernel.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ morten.tiljeset@prevas.dk, William Breathitt Gray <vilhelm.gray@gmail.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Lukas Wunner <lukas@wunner.de>, Geert Uytterhoeven <geert@linux-m68k.org>,
+ sean.nyekjaer@prevas.dk, Andrew Morton <akpm@linux-foundation.org>,
+ preid@electromag.com.au,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Anand,
-
-On Wed, Oct 9, 2019 at 10:49 AM Anand Moon <linux.amoon@gmail.com> wrote:
-[...]
-> > can you please share a boot log with the command line parameter
-> > "initcall_debug" [0]?
-> > from Documentation/admin-guide/kernel-parameters.txt:
-> >  initcall_debug [KNL] Trace initcalls as they are executed.  Useful
-> >  for working out where the kernel is dying during
-> >  startup.
+On Thu, Oct 10, 2019 at 01:28:08AM +0900, Masahiro Yamada wrote:
+> On Thu, Oct 10, 2019 at 12:27 AM William Breathitt Gray
+> <vilhelm.gray@gmail.com> wrote:
 > >
->
-> Well I have tied to add this command  *initcall_debug* to kernel command prompt.
-> Here is the console log,  but I did not see any init kernel timer logs
-I don't remember from the top of my head if any additional Kconfig
-setting is needed
+> > This macro iterates for each 8-bit group of bits (clump) with set bits,
+> > within a bitmap memory region. For each iteration, "start" is set to the
+> > bit offset of the found clump, while the respective clump value is
+> > stored to the location pointed by "clump". Additionally, the
+> > bitmap_get_value8 and bitmap_set_value8 functions are introduced to
+> > respectively get and set an 8-bit value in a bitmap memory region.
 
-> Kernel command line: console=ttyAML0,115200n8
-> root=PARTUUID=45d7d61e-01 rw rootwait
-> earlyprintk=serial,ttyAML0,115200 initcall_debug printk.time=y
->
-> [0] https://pastebin.com/eBgJrSKe
->
-> > you can also try the command line parameter "clk_ignore_unused" (it's
-> > just a gut feeling: maybe a "critical" clock is being disabled because
-> > it's not wired up correctly).
-> >
->
-> It look like some clk issue after I added the *clk_ignore_unused* to
-> kernel command line
-> it booted further to login prompt and cpufreq DVFS seem to be loaded.
-> So I could conclude this is clk issue.below is the boot log
-interesting - as Jerome suggested: the next step is to find out which
-clock is causing problems
-last time I checked there was no debug print in the code which
-disables unused clocks so I had to add that myself
+> Why is the return type "unsigned long" where you know
+> it return the 8-bit value ?
 
-> Kernel command line: console=ttyAML0,115200n8
-> root=PARTUUID=45d7d61e-01 rw rootwait
-> earlyprintk=serial,ttyAML0,115200 initcall_debug printk.time=y
-> clk_ignore_unused
->
-> [1] https://pastebin.com/Nsk0wZQJ
->
-> > back when I was working out the CPU clock tree for the 32-bit SoCs I
-> > had a bad parent clock in one of the muxes which resulted in sporadic
-> > lockups if CPU DVFS was enabled.
-> > you can try to disable CPU DVFS by dropping the OPP table and it's
-> > references from the .dtsi
-> >
->
-> Yep yesterday my focus was to disable PWM feature and get boot up-to
-> login prompt
-> But not I have to look into clk feature.
->
-> *Many thanks for your valuable inputs, I learned a lot of things.*
-you're welcome :-)
+Because bitmap API operates on unsigned long type. This is not only
+consistency, but for sake of flexibility in case we would like to introduce
+more calls like clump16 or so.
+
+Same comment for the rest.
+
+-- 
+With Best Regards,
+Andy Shevchenko
 
 
-Martin
 
 _______________________________________________
 linux-arm-kernel mailing list
