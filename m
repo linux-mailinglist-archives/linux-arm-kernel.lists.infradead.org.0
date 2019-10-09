@@ -2,88 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE5DDD138E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 18:06:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05375D13C7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 18:14:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aIPnsrpe74w84ReYWpR1ZF7quHXXn+5axspRLrDG/HI=; b=oc99suoOzrH2an
-	Zi0BAx0LHluEnFllOykEJ3/tJEETz29v/nf1ZVhDNa/ug1/EE+fiLQH631iymI0rXmPvT+RASTfcN
-	wmVizvNVFkfVCuQny2DtOtC8Cg4BtPMnW+inMRKRjKxdTcq2jxTxT84wh0pjqTAfhAn5Xg5E0eoXH
-	HVQD50ir3vh6WPiz28gklFKvytf+VG5SQ704pR4//jnXTgR7RSHfyRfhRaSONqrwyflTr4WYZPUXp
-	0njYGrAB1QLpxYdtme2egn4F8mHVuw72rPSy8UEdko6AY8TbQ8upqRgK95JB6sW5G1yZ9Z04scYAk
-	1sgnv+TROcvecy1PGYdQ==;
+	List-Owner; bh=pqB/AwLa+vsnBy4mtid8RTF5D6Ie+iTcYmzo4eBOy5I=; b=EKHq4FFdkfNjV3
+	FJGOCIXdeZStXokuVBNdWutnmgMgnl/t5JstWRnml9ganRqzViT9+NOVnk34TTQKjEfa/ww8StVmJ
+	W673n+x8vUIamyDxTO/Hl8ENd7pIr2+F4Ela8zh0GuZ99DhiEGoBSF1U7IU7rboN1T77Wadjiu9e5
+	O+va6mNwUyPaYBO3kHiseQa7wL9YOhSkDwEUhO1Xl0TzwhVbWc2tdKr+/SsYenw9nQFd/ArBARrIR
+	u3F6CD/URkvleobcTlsC8qJUHkD61vdMb1sN6DkBcVaAQ42vGtc6foIKOTm9ZTEoVaZl4t0oLJzdo
+	S2I6z+tSy6UcIdT4IaUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIETJ-00040M-Rx; Wed, 09 Oct 2019 16:05:53 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1iIEbr-0006RL-Jj; Wed, 09 Oct 2019 16:14:43 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIET9-0003zU-Va
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 16:05:45 +0000
-Received: by mail-wm1-x343.google.com with SMTP id r17so5079742wme.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 09 Oct 2019 09:05:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=OcoDswvcpgORUe+MjF3j+myWKBr/y/JxVMKqWxIZdns=;
- b=PlMwn9qd6erojZKwrGuwRQoT3mBFtPJPdxKkIoi+g/d953cHVVQVDyFhTmkAOHq9HS
- VH6Kz+ynJOta/5jpwjQNaOKkCz8EqFOd8eFpwMkcdLBa/lGr9vFX4ZH9Odb0ZasRfZfg
- hL4ixrbd5H9Gn9ce4slb2XkurFpkRA99mVhAJRq0EpElm5jcHAq+hLY5NEFSOcYi8T5c
- XDGKEmdJaOWe6vEv1mdkMetvYaOe5w19Ke0Q6x3RRBcLXohUpsQ+H+tsU7xqCcKjV69C
- oJPkEMkoDqtuEHAJMbrD0RUQcVb80wtCimLZE2tavU+7cfhJGR2bsMlGyBuIYnXcbGRM
- T4sw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=OcoDswvcpgORUe+MjF3j+myWKBr/y/JxVMKqWxIZdns=;
- b=HICiybl2VuXLWJNaERu0HFzjPELA5oDRaDeymo+/itGLVCUQW4Aain8fMO4m8V6YRk
- jmNBwlj1fU7LWVnipRRoykaz/k9uzu4hchGzaJozf1AgBz+h0IhhzKFgetzCdpKlWzgf
- 1POidAvifu3B6Imi497YCciA/vZlSMJ6cJryr5Lv4odhdJmZgbORPEM3bh310oADrVOv
- cuFRSAAA/YCxes4Hs9/CToIJQ5rKKPYkHrxd5rapfvms9jLv/nsYSJ3Z8WVyFmXLOV1B
- lDMFStB1W4Xaca6jKhJ61XLtkemg5xsZLE+8uLrrYV7F+WXzeL5XREAUf70nEaULkz6h
- alRw==
-X-Gm-Message-State: APjAAAWxLVuCEASl+pN3tP2rwLsdYPYdMehk4s4xIqauw9z40PliFbaS
- lyi7f/SF2r8znozE9i4e1Xmn4ha269WHjGWQs8byxw==
-X-Google-Smtp-Source: APXvYqwf2k+wes8U4KHH/Mq/y7m8PrdEQhLEFToIcu4WDfCk10VCZnURO4OVa/kXncgoav9k+nk3ezXxb9qFfCb0MU8=
-X-Received: by 2002:a1c:a8c9:: with SMTP id r192mr3238811wme.152.1570637140793; 
- Wed, 09 Oct 2019 09:05:40 -0700 (PDT)
+ id 1iIEbk-0006QN-Ju
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 16:14:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=UijyCer4OUN5eEElHKm/eMJByc5emA01vxX2Cs2zO/g=; b=JjcNe/0a3WIMrZSOZNK+M8m/i
+ dNNTIIkD771PD5Rc4fqbhSw2jXBpX2MMpN5lLzZEjzWX8pKTQyCjx5AXyuH+2yArTKWTkCg6CvHDM
+ vY0bmLWi4GgkETi6iqWhWi5vT7yoGqwZjltEdpXZoGY1AYXG8iXXzWpbLhy9oJsCDy1BKIfkm8Ag8
+ Y3+zBSb6iQ9XENF2vbntrPzASEMsCgEkWA0VwbM4InKwjVnQzq7I7UsSNX20cECEHI09oH/4sUtmA
+ OTnmHnGf0M+PvKERHfj32Fv/rWOq5Ut+NtEZylL9SoH71daS1kz653VQgYxID+jc7vBXd+x6ZKiE5
+ 2V0cdoRjg==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:42014)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iIEbZ-0002Vj-ET; Wed, 09 Oct 2019 17:14:25 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iIEbY-0007q4-3M; Wed, 09 Oct 2019 17:14:24 +0100
+Date: Wed, 9 Oct 2019 17:14:24 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Ben Dooks <ben.dooks@codethink.co.uk>
+Subject: Re: [PATCH] ARM: OMAP2+: force iomem for omap_interconnect_sync
+Message-ID: <20191009161423.GB1337@shell.armlinux.org.uk>
+References: <20191009133902.28405-1-ben.dooks@codethink.co.uk>
 MIME-Version: 1.0
-References: <20190918080716.64242-1-jianyong.wu@arm.com>
- <20190918080716.64242-5-jianyong.wu@arm.com>
- <83ed7fac-277f-a31e-af37-8ec134f39d26@redhat.com>
- <HE1PR0801MB1676F57B317AE85E3B934B32F48E0@HE1PR0801MB1676.eurprd08.prod.outlook.com>
- <629538ea-13fb-e666-8df6-8ad23f114755@redhat.com>
- <HE1PR0801MB167639E2F025998058A77F86F4890@HE1PR0801MB1676.eurprd08.prod.outlook.com>
- <ef6ab8bd-41ad-88f8-9cfd-dc749ca65310@redhat.com>
- <a1b554b8-4417-5305-3419-fe71a8c50842@kernel.org>
- <56a5b885-62c8-c4ef-e2f8-e945c0eb700e@redhat.com>
- <HE1PR0801MB1676115C248E6DF09F9DD5A6F4950@HE1PR0801MB1676.eurprd08.prod.outlook.com>
- <1cc145ca-1af2-d46f-d530-0ae434005f0b@redhat.com>
- <HE1PR0801MB1676B1AD68544561403C3196F4950@HE1PR0801MB1676.eurprd08.prod.outlook.com>
- <6b8b59b2-a07e-7e33-588c-1da7658e3f1e@redhat.com>
-In-Reply-To: <6b8b59b2-a07e-7e33-588c-1da7658e3f1e@redhat.com>
-From: John Stultz <john.stultz@linaro.org>
-Date: Wed, 9 Oct 2019 09:05:29 -0700
-Message-ID: <CALAqxLVa-BSY0i007GfzKEVU1uak4=eY=TJ3wj6JL_Y-EfY3ng@mail.gmail.com>
-Subject: Re: [RFC PATCH v3 4/6] psci: Add hvc call service for ptp_kvm.
-To: Paolo Bonzini <pbonzini@redhat.com>
+Content-Disposition: inline
+In-Reply-To: <20191009133902.28405-1-ben.dooks@codethink.co.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_090544_024046_EDB71D9D 
-X-CRM114-Status: GOOD (  17.05  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191009_091436_669866_A70DF0CF 
+X-CRM114-Status: GOOD (  19.25  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -102,55 +86,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- "Justin He \(Arm Technology China\)" <Justin.He@arm.com>,
- "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
- Suzuki Poulose <Suzuki.Poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
- "richardcochran@gmail.com" <richardcochran@gmail.com>,
- "Jianyong Wu \(Arm Technology China\)" <Jianyong.Wu@arm.com>,
- Will Deacon <Will.Deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "sean.j.christopherson@intel.com" <sean.j.christopherson@intel.com>,
- "Kaly Xin \(Arm Technology China\)" <Kaly.Xin@arm.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "yangbo.lu@nxp.com" <yangbo.lu@nxp.com>,
- "tglx@linutronix.de" <tglx@linutronix.de>, nd <nd@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Steve Capper <Steve.Capper@arm.com>
+Cc: linux-kernel@lists.codethink.co.uk, Tony Lindgren <tony@atomide.com>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 9, 2019 at 2:13 AM Paolo Bonzini <pbonzini@redhat.com> wrote:
-> On 09/10/19 10:18, Jianyong Wu (Arm Technology China) wrote:
-> >
-> > We must ensure both of the host and guest using the same clocksource.
-> > get_device_system_crosststamp will check the clocksource of guest and we also need check
-> > the clocksource in host, and struct type can't be transferred from host to guest using arm hypercall.
-> > now we lack of a mechanism to check the current clocksource. I think this will be useful if we add one.
->
-> Got it---yes, I think adding a struct clocksource to struct
-> system_time_snapshot would make sense.  Then the hypercall can just use
-> ktime_get_snapshot and fail if the clocksource is not the ARM arch counter.
->
-> John (Stultz), does that sound good to you?  The context is that
-> Jianyong would like to add a hypercall that returns a (cycles,
-> nanoseconds) pair to the guest.  On x86 we're relying on the vclock_mode
-> field that is already there for the vDSO, but being able to just use
-> ktime_get_snapshot would be much nicer.
+On Wed, Oct 09, 2019 at 02:39:02PM +0100, Ben Dooks wrote:
+> Force the type of omap_interconnect_sync to avoid the
+> following sparse warnign:
+> 
+> arch/arm/mach-omap2/omap4-common.c:142:27: warning: incorrect type in assignment (different address spaces)
+> arch/arm/mach-omap2/omap4-common.c:142:27:    expected void [noderef] <asn:2> *static [toplevel] sram_sync
+> arch/arm/mach-omap2/omap4-common.c:142:27:    got void *
+> 
+> Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
+> ---
+> Cc: Tony Lindgren <tony@atomide.com>
+> Cc: Russell King <linux@armlinux.org.uk>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-omap@vger.kernel.org
+> ---
+>  arch/arm/mach-omap2/omap4-common.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm/mach-omap2/omap4-common.c b/arch/arm/mach-omap2/omap4-common.c
+> index 5c3845730dbf..d27c5f61d708 100644
+> --- a/arch/arm/mach-omap2/omap4-common.c
+> +++ b/arch/arm/mach-omap2/omap4-common.c
+> @@ -139,7 +139,7 @@ static int __init omap4_sram_init(void)
+>  		pr_warn("%s:Unable to get sram pool needed to handle errata I688\n",
+>  			__func__);
+>  	else
+> -		sram_sync = (void *)gen_pool_alloc(sram_pool, PAGE_SIZE);
+> +		sram_sync = (void __force __iomem *)gen_pool_alloc(sram_pool, PAGE_SIZE);
 
-I've not really looked at the code closely in awhile, so I'm not sure
-my suggestions will be too useful.
+Not sure about this one - did you check whether the memory returned
+here really is iomem memory?  If it isn't iomem memory, then the
+warning should remain.
 
-My only instinct is maybe to not include the clocksource pointer in
-the system_time_snapshot, as I worry that structure will then be
-abused by the interface users.  If you're just wanting to make sure
-the clocksource is what you're expecting, would instead putting only
-the clocksource name in the structure suffice?
+Never hide a valid sparse warning - to do so goes against the whole
+point of sparse checks.  It isn't "pointing out that a cast is missing,
+we must add a cast", the point of sparse is to find and identify where
+the code is actually incorrect - in other words, MMIO accessors are
+used on memory that is not MMIO, or direct dereferences are used on
+memory that is MMIO.  If we go around merely casting the warnings away,
+it makes sparse completely pointless.
 
-thanks
--john
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
