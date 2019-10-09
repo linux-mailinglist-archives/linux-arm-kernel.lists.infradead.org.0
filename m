@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C69DFD0B19
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 11:27:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 489A2D0AE7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 11:20:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=tmzwpr1Hef6slpO1neaBBxblq3ES/aXZiaoBv1/k2aA=; b=TF4v0kSuXWZA5q
-	+3UIKQGy4H+G0udu8iTvjeJp8ztum2GLCRyKyM1wZuiJMXv9+MMeWrc2Q8v+fb+5dhu67i/nUAF9c
-	K+F9a2DzPjpl3UuZrPZkFIIgMm6Zqm8P5sANoyqv2nxWLyQTk8L/VPz7TKYYamYIOB41UbiZougKA
-	caOysQC3ATkJdQvKJxGWz6HcX0S43eiqVfp2+NP4lqx6qHXBRahnvw7NbQcq+pbeHdwAvoLRpqCR0
-	MexW9N3Zuh2t8UeqQp+QBz5tOedKApgcz8PxWjP67y31L8gPCQ2Jq7bcYWTcWHL3Ct+blFiZFOtg9
-	e6gH3rCEGfesz206WGfA==;
+	List-Owner; bh=rhN1MGInkGKB9n1/W4TZ4eau0Kzf2pZf5WQdvLmwQXg=; b=VIYyaBM2XrfCzt
+	4922D5U97M51A0dJVOWV4r6YSMr+Uy70QknQ5y2LGZr48b3VCz6oAAGtOl/jeHN6rtdp9HL6WMPho
+	BisfG+K1S11/iF9P/tjcEbm+UkKAxQksPiW4M6OO9r1vS7/EfNYI8XnGvhdlf5J0fn3cYLy26ucK2
+	Hj2mG4h8VbES61HG4mS28i6AzhPuQtGaeGJqdOqEIZjcv4FZwva5+ZpcKt6fjsCVxaEh+U0CE7aoe
+	wjUlyGs28ewdE0NYA7Nhw+hNUuXlHlc78Njhs8loYlBvnyB95O3LmW/nHiN+dDeYaiKSLC5NYmV62
+	POWi34TtCS9uDD9mt9Dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI8Fu-0000jB-DG; Wed, 09 Oct 2019 09:27:38 +0000
+	id 1iI88v-0006L1-9C; Wed, 09 Oct 2019 09:20:25 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI8FX-0000Zx-B0; Wed, 09 Oct 2019 09:27:16 +0000
-X-UUID: 102f1ceb4f4c4537a44fead52bbc1622-20191009
-X-UUID: 102f1ceb4f4c4537a44fead52bbc1622-20191009
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <biao.huang@mediatek.com>)
+ id 1iI88o-0006Ka-8G; Wed, 09 Oct 2019 09:20:19 +0000
+X-UUID: 7fb7761674a7438a83d7e0cf86b430cc-20191009
+X-UUID: 7fb7761674a7438a83d7e0cf86b430cc-20191009
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 425478862; Wed, 09 Oct 2019 01:27:08 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ with ESMTP id 1101275733; Wed, 09 Oct 2019 01:20:16 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 9 Oct 2019 02:27:04 -0700
+ 15.0.1395.4; Wed, 9 Oct 2019 02:20:11 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 9 Oct 2019 16:56:52 +0800
+ MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 9 Oct 2019 17:05:04 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 9 Oct 2019 16:56:51 +0800
-From: Biao Huang <biao.huang@mediatek.com>
-To: <davem@davemloft.net>, Jose Abreu <joabreu@synopsys.com>, <andrew@lunn.ch>
-Subject: [PATCH] net: stmmac: disable/enable ptp_ref_clk in suspend/resume flow
-Date: Wed, 9 Oct 2019 16:56:49 +0800
-Message-ID: <20191009085649.6736-1-biao.huang@mediatek.com>
-X-Mailer: git-send-email 2.18.0
+ Transport; Wed, 9 Oct 2019 17:05:03 +0800
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Subject: [PATCH 1/2] usb: mtu3: add a new function to do status stage
+Date: Wed, 9 Oct 2019 17:04:59 +0800
+Message-ID: <1570611900-7112-1-git-send-email-chunfeng.yun@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 78F6DC5777EFE46E7CDDFEAA2B0951DD3B205190962CA1F84679D165410B24462000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_022715_378456_0AA06DD5 
-X-CRM114-Status: UNSURE (   7.95  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191009_022018_298779_B3A94A78 
+X-CRM114-Status: GOOD (  12.01  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,50 +71,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jianguo.zhang@mediatek.com, Alexandre Torgue <alexandre.torgue@st.com>,
- boon.leong.ong@intel.com, biao.huang@mediatek.com, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, yt.shen@mediatek.com,
- linux-mediatek@lists.infradead.org,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Felipe Balbi <felipe.balbi@linux.intel.com>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-disable ptp_ref_clk in suspend flow, and enable it in resume flow.
+Exact a new static function to do status stage
 
-Signed-off-by: Biao Huang <biao.huang@mediatek.com>
+Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ drivers/usb/mtu3/mtu3_gadget_ep0.c | 23 ++++++++++++-----------
+ 1 file changed, 12 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index c7c9e5f162e6..b592aeecc3dd 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -4469,6 +4469,8 @@ int stmmac_suspend(struct device *dev)
- 		stmmac_mac_set(priv, priv->ioaddr, false);
- 		pinctrl_pm_select_sleep_state(priv->device);
- 		/* Disable clock in case of PWM is off */
-+		if (priv->plat->clk_ptp_ref)
-+			clk_disable_unprepare(priv->plat->clk_ptp_ref);
- 		clk_disable(priv->plat->pclk);
- 		clk_disable(priv->plat->stmmac_clk);
+diff --git a/drivers/usb/mtu3/mtu3_gadget_ep0.c b/drivers/usb/mtu3/mtu3_gadget_ep0.c
+index 4da216c99726..df3fd055792f 100644
+--- a/drivers/usb/mtu3/mtu3_gadget_ep0.c
++++ b/drivers/usb/mtu3/mtu3_gadget_ep0.c
+@@ -153,6 +153,15 @@ static void ep0_stall_set(struct mtu3_ep *mep0, bool set, u32 pktrdy)
+ 		set ? "SEND" : "CLEAR", decode_ep0_state(mtu));
+ }
+ 
++static void ep0_do_status_stage(struct mtu3 *mtu)
++{
++	void __iomem *mbase = mtu->mac_base;
++	u32 value;
++
++	value = mtu3_readl(mbase, U3D_EP0CSR) & EP0_W1C_BITS;
++	mtu3_writel(mbase, U3D_EP0CSR, value | EP0_SETUPPKTRDY | EP0_DATAEND);
++}
++
+ static int ep0_queue(struct mtu3_ep *mep0, struct mtu3_request *mreq);
+ 
+ static void ep0_dummy_complete(struct usb_ep *ep, struct usb_request *req)
+@@ -297,8 +306,7 @@ static int handle_test_mode(struct mtu3 *mtu, struct usb_ctrlrequest *setup)
+ 		ep0_load_test_packet(mtu);
+ 
+ 	/* send status before entering test mode. */
+-	value = mtu3_readl(mbase, U3D_EP0CSR) & EP0_W1C_BITS;
+-	mtu3_writel(mbase, U3D_EP0CSR, value | EP0_SETUPPKTRDY | EP0_DATAEND);
++	ep0_do_status_stage(mtu);
+ 
+ 	/* wait for ACK status sent by host */
+ 	readl_poll_timeout_atomic(mbase + U3D_EP0CSR, value,
+@@ -632,7 +640,6 @@ __acquires(mtu->lock)
+ {
+ 	struct usb_ctrlrequest setup;
+ 	struct mtu3_request *mreq;
+-	void __iomem *mbase = mtu->mac_base;
+ 	int handled = 0;
+ 
+ 	ep0_read_setup(mtu, &setup);
+@@ -668,10 +675,7 @@ __acquires(mtu->lock)
+ 		mtu->delayed_status = true;
+ 	} else if (le16_to_cpu(setup.wLength) == 0) { /* no data stage */
+ 
+-		mtu3_writel(mbase, U3D_EP0CSR,
+-			(mtu3_readl(mbase, U3D_EP0CSR) & EP0_W1C_BITS)
+-			| EP0_SETUPPKTRDY | EP0_DATAEND);
+-
++		ep0_do_status_stage(mtu);
+ 		/* complete zlp request directly */
+ 		mreq = next_ep0_request(mtu);
+ 		if (mreq && !mreq->request.length)
+@@ -802,12 +806,9 @@ static int ep0_queue(struct mtu3_ep *mep, struct mtu3_request *mreq)
  	}
-@@ -4535,6 +4537,8 @@ int stmmac_resume(struct device *dev)
- 		/* enable the clk previously disabled */
- 		clk_enable(priv->plat->stmmac_clk);
- 		clk_enable(priv->plat->pclk);
-+		if (priv->plat->clk_ptp_ref)
-+			clk_prepare_enable(priv->plat->clk_ptp_ref);
- 		/* reset the phy so that it's ready */
- 		if (priv->mii)
- 			stmmac_mdio_reset(priv->mii);
+ 
+ 	if (mtu->delayed_status) {
+-		u32 csr;
+ 
+ 		mtu->delayed_status = false;
+-		csr = mtu3_readl(mtu->mac_base, U3D_EP0CSR) & EP0_W1C_BITS;
+-		csr |= EP0_SETUPPKTRDY | EP0_DATAEND;
+-		mtu3_writel(mtu->mac_base, U3D_EP0CSR, csr);
++		ep0_do_status_stage(mtu);
+ 		/* needn't giveback the request for handling delay STATUS */
+ 		return 0;
+ 	}
 -- 
-2.18.0
+2.23.0
 
 
 _______________________________________________
