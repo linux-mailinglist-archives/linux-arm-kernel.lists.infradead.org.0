@@ -2,66 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7265D0858
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 09:34:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20BCED086B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 09:37:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Xlf4FBvAKEKZJyyRv0v4Bg/oqRngI0rJiBSjWhJ70Cs=; b=EFUmt6gXhkpPf4
-	XlsOS9g0vJsaMQBmyIvYR5Fsq5y8ecAkC+vwBkYBz20dKNSiywvNBZRh/UcuFh3G/Iv9RXVaBBrfp
-	IstJ4ad2pVe2Qj2q1eOLo1NjXeCmb+X7ntKThbbblGs/cpm8gIKr+0aH09F2djnI5jXwuke4cTmjP
-	zaMcfrAF3d6dKVWB0oHJhMn4N22ev+s0b5ZcP6janrANIS4iOMmTEz39gfsenQ25td1loYk30phBl
-	QvdM1mosYpE4Tptqd/3reUVQMRsyA/XFOs/f7IF1aRDJW/5/e+OxtpVFoUyIB3ciueXld0dqOeI+A
-	zz305zqg6n2HbITulBAA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=9pHAfULhKEkiiQ7LzLbuCZjq68m0rLYO38N4iYRTBEQ=; b=u8Y3Vl5cA1QLLartWymy6EDMi
+	oXWmo/5I7ZULNeW/WHXfToyi5wnMIjxj035HV0kBUOZeq/5zGvCLVj+833EN82R8bCE9VTFtohMds
+	BNCd3b1B4D3jMon3n0rdnpcCx1FduhFazVpvjYtjXTFaQtLX3inQJWfSydUUGH8DaVuUt33Ikjpf5
+	+UWigwIZToLOB2HEhS2M6SMcafrQqHab65Yiq11n+8KTqmTXRD8l5wcm2jSDjY0i+Eoa27kUA9774
+	RC2Btusv8hVoCOJoMnYDShry1GmHk4wCB1Z71h+s6n/q6Nr5Fz56sSAg1CjW1QJucng7KepfMsEMg
+	E1cnF2dRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI6U1-0004E2-Bk; Wed, 09 Oct 2019 07:34:05 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1iI6XI-0005vw-Gf; Wed, 09 Oct 2019 07:37:28 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI6Tu-0004DX-Dj; Wed, 09 Oct 2019 07:33:59 +0000
-X-UUID: 25e11855815b439e8631aeb7bed31ae9-20191008
-X-UUID: 25e11855815b439e8631aeb7bed31ae9-20191008
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <biao.huang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2037321058; Tue, 08 Oct 2019 23:34:24 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 9 Oct 2019 00:33:50 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 9 Oct 2019 15:33:49 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 9 Oct 2019 15:33:48 +0800
-From: Biao Huang <biao.huang@mediatek.com>
-To: <davem@davemloft.net>, Jose Abreu <joabreu@synopsys.com>, <andrew@lunn.ch>
-Subject: [RESEND,
- PATCH] net: stmmac: dwmac-mediatek: fix wrong delay value issue when
- resume back
-Date: Wed, 9 Oct 2019 15:33:48 +0800
-Message-ID: <20191009073348.5503-1-biao.huang@mediatek.com>
-X-Mailer: git-send-email 2.18.0
+ id 1iI6XA-0005vS-Qn
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 07:37:22 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x997bF5W009620;
+ Wed, 9 Oct 2019 02:37:15 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1570606635;
+ bh=GCItb3o8zhNxqRL1dRRtIRmWKNz8QsnOl1OUx9AOT4I=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=uvYSScH8JQexfEgbwLHmKsT+mxIii8+PYvvzx80wIrWuyzqCrneKqYeRU+c3v5TjR
+ 33258nGN8c2GtCF3hKAtxp+bQMLqGjQpQwxQpuqucOv9w2b9AS4gthrF8nqgz3lx3Z
+ 365eJkW25sexQFudnADgsBKL4aWPCohdphSn5LH4=
+Received: from DFLE110.ent.ti.com (dfle110.ent.ti.com [10.64.6.31])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x997bFWP060657
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 9 Oct 2019 02:37:15 -0500
+Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE110.ent.ti.com
+ (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Wed, 9 Oct
+ 2019 02:37:13 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Wed, 9 Oct 2019 02:37:13 -0500
+Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x997bAx9121069;
+ Wed, 9 Oct 2019 02:37:10 -0500
+Subject: Re: [PATCH v3 04/14] dmaengine: Add metadata_ops for
+ dma_async_tx_descriptor
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>, <vkoul@kernel.org>,
+ <robh+dt@kernel.org>, <nm@ti.com>, <ssantosh@kernel.org>
+References: <20191001061704.2399-1-peter.ujfalusi@ti.com>
+ <20191001061704.2399-5-peter.ujfalusi@ti.com>
+From: Tero Kristo <t-kristo@ti.com>
+Message-ID: <1d4e049b-737c-3904-2bb1-6e058ab69a4d@ti.com>
+Date: Wed, 9 Oct 2019 10:37:09 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20191001061704.2399-5-peter.ujfalusi@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_003358_466166_D5BFCA93 
-X-CRM114-Status: UNSURE (   9.47  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191009_003720_950383_C33A2E0A 
+X-CRM114-Status: GOOD (  21.12  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,80 +94,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jianguo.zhang@mediatek.com, Alexandre Torgue <alexandre.torgue@st.com>,
- boon.leong.ong@intel.com, biao.huang@mediatek.com, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, yt.shen@mediatek.com,
- linux-mediatek@lists.infradead.org,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, grygorii.strashko@ti.com, lokeshvutla@ti.com,
+ j-keerthy@ti.com, linux-kernel@vger.kernel.org, tony@atomide.com,
+ dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-mac_delay value will be divided by 550/170 in mt2712_delay_ps2stage(),
-which is invoked at the beginning of mt2712_set_delay(), and the value
-should be restored at the end of mt2712_set_delay().
-Or, mac_delay will be divided again when invoking mt2712_set_delay()
-when resume back.
-So, add mt2712_delay_stage2ps() to mt2712_set_delay() to recovery the
-original mac_delay value.
+On 01/10/2019 09:16, Peter Ujfalusi wrote:
+> The metadata is best described as side band data or parameters traveling
+> alongside the data DMAd by the DMA engine. It is data
+> which is understood by the peripheral and the peripheral driver only, the
+> DMA engine see it only as data block and it is not interpreting it in any
+> way.
+> 
+> The metadata can be different per descriptor as it is a parameter for the
+> data being transferred.
+> 
+> If the DMA supports per descriptor metadata it can implement the attach,
+> get_ptr/set_len callbacks.
+> 
+> Client drivers must only use either attach or get_ptr/set_len to avoid
+> misconfiguration.
+> 
+> Client driver can check if a given metadata mode is supported by the
+> channel during probe time with
+> dmaengine_is_metadata_mode_supported(chan, DESC_METADATA_CLIENT);
+> dmaengine_is_metadata_mode_supported(chan, DESC_METADATA_ENGINE);
+> 
+> and based on this information can use either mode.
+> 
+> Wrappers are also added for the metadata_ops.
+> 
+> To be used in DESC_METADATA_CLIENT mode:
+> dmaengine_desc_attach_metadata()
+> 
+> To be used in DESC_METADATA_ENGINE mode:
+> dmaengine_desc_get_metadata_ptr()
+> dmaengine_desc_set_metadata_len()
+> 
+> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 
-Signed-off-by: Biao Huang <biao.huang@mediatek.com>
----
- .../ethernet/stmicro/stmmac/dwmac-mediatek.c  | 27 +++++++++++++++++++
- 1 file changed, 27 insertions(+)
+Again couple of typos below, but other than that:
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-mediatek.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-mediatek.c
-index 79f2ee37afed..cea7a0c7ce68 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac-mediatek.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-mediatek.c
-@@ -130,6 +130,31 @@ static void mt2712_delay_ps2stage(struct mediatek_dwmac_plat_data *plat)
- 	}
- }
- 
-+static void mt2712_delay_stage2ps(struct mediatek_dwmac_plat_data *plat)
-+{
-+	struct mac_delay_struct *mac_delay = &plat->mac_delay;
-+
-+	switch (plat->phy_mode) {
-+	case PHY_INTERFACE_MODE_MII:
-+	case PHY_INTERFACE_MODE_RMII:
-+		/* 550ps per stage for MII/RMII */
-+		mac_delay->tx_delay *= 550;
-+		mac_delay->rx_delay *= 550;
-+		break;
-+	case PHY_INTERFACE_MODE_RGMII:
-+	case PHY_INTERFACE_MODE_RGMII_TXID:
-+	case PHY_INTERFACE_MODE_RGMII_RXID:
-+	case PHY_INTERFACE_MODE_RGMII_ID:
-+		/* 170ps per stage for RGMII */
-+		mac_delay->tx_delay *= 170;
-+		mac_delay->rx_delay *= 170;
-+		break;
-+	default:
-+		dev_err(plat->dev, "phy interface not supported\n");
-+		break;
-+	}
-+}
-+
- static int mt2712_set_delay(struct mediatek_dwmac_plat_data *plat)
- {
- 	struct mac_delay_struct *mac_delay = &plat->mac_delay;
-@@ -199,6 +224,8 @@ static int mt2712_set_delay(struct mediatek_dwmac_plat_data *plat)
- 	regmap_write(plat->peri_regmap, PERI_ETH_DLY, delay_val);
- 	regmap_write(plat->peri_regmap, PERI_ETH_DLY_FINE, fine_val);
- 
-+	mt2712_delay_stage2ps(plat);
-+
- 	return 0;
- }
- 
--- 
-2.18.0
+Reviewed-by: Tero Kristo <t-kristo@ti.com>
 
+> ---
+>   drivers/dma/dmaengine.c   |  73 ++++++++++++++++++++++++++
+>   include/linux/dmaengine.h | 108 ++++++++++++++++++++++++++++++++++++++
+
+<snip>
+
+> + * @DESC_METADATA_ENGINE - the metadata buffer is allocated/managed by the DMA
+> + *  driver. The client driver can ask for the pointer, maximum size and the
+> + *  currently used size of the metadata and can directly update or read it.
+> + *  dmaengine_desc_get_metadata_ptr() and dmaengine_desc_set_metadata_len() is
+> + *  provided as helper functions.
+> + *
+> + * Client drivers interested to use this mode can follow:
+> + * - DMA_MEM_TO_DEV / DEV_MEM_TO_MEM:
+> + *   1. prepare the descriptor (dmaengine_prep_*)
+> + *   2. use dmaengine_desc_get_metadata_ptr() to get the pointer to the engine's
+> + *	metadata area
+> + *   3. update the metadata at the pointer
+> + *   4. use dmaengine_desc_set_metadata_len()  to tell the DMA engine the amount
+> + *	of data the client has placed into the metadata buffer
+> + *   5. submit the transfer
+> + * - DMA_DEV_TO_MEM:
+> + *   1. prepare the descriptor (dmaengine_prep_*)
+> + *   2. submit the transfer
+> + *   3. on transfer completion, use dmaengine_desc_get_metadata_ptr() to get the
+> + *	pointer to the engine's metadata are
+
+are = area?
+
+> + *   4. Read out the metadate from the pointer
+
+metadate = metadata?
+
+--
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
