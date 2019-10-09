@@ -2,84 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65E89D108C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 15:49:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 483E0D109C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 15:54:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wgXGTpSiDMSzYpm0wnkrYnqdavs8Hks4icnGQbOetXs=; b=q2mkWT/hk7Xz3E
-	ngkZupi/Q32k7cho/NnuC7BsBdC9T6X0x0lUM2AI/PZLYX/ZsB1N8H+Bwyfv6E6UKdPK7GUTSJD3j
-	5nD4jdqTU/roo8gRrwFZQAPpDvGxu1Goi4LGnqMXHOYuF12Jj/qmcRhLzvwnzAUL1ezzBmBZ9Lvjo
-	53iIjNag1pGjQQ7pFeuFf9C5CqsAWM30psOe2GD+doSNH4jP/59RycKuTINPIa7aiXOG3z0ItOk1N
-	hXHaItfdeW4tRts7F1AMz7+vfu2T5cIf2Dl1+Suo+mZCtprYjhweSDfshGQZLz2pZCxXBru7s2m87
-	/6nGMBnLB2xLd9l7xs7w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ljMRbWYLFeBTtg2h0X1BklWCExdoQwOSR/6HlD41ZBM=; b=Uvh4xiOssO1g+K
+	beIJGzjtDJRq8d/mn1bTI4H+sicSaXL/PJ9UwjfAefEQ3F/0LdrG8OxdXYj/p6jqspiTKuLmCdx42
+	LxIq7ED51vJhSVr59IxL9jrWtQPDrKLrXqJHsq/onRo0m3/jIeb7o0DymZ8uqp6g4g5/aqsfLG6Ur
+	LL5SJDofxjMX2R2RDVzdqzb9P6+7lhnGNg2QLPHftpAQ76Zhn7c01dG6HsbO8I6wvqh7JEJWvdPef
+	Nhxsx1RDf/NpLA1xyEvnJN5QkxFKenHdVPHMW7yMMkDzlH4zzjb7eeOJYlB22YKr6TdbWPKXCuxp5
+	Z7xlndOGjsubVKqBP7Cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iICKt-0002wt-GW; Wed, 09 Oct 2019 13:49:03 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iICPc-0006PA-I7; Wed, 09 Oct 2019 13:53:56 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iICKk-0002vz-OV
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 13:48:57 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x99DkFjD002040; Wed, 9 Oct 2019 15:48:46 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=SzeXX4T9Smreq6AOa2jvBpOacbsjhosjwXdUxXEO0PA=;
- b=0BLfs75UMFf+ATYkn8ppseugj2ielYzq4wi9wZ9Fg403C0aW/jg5w7gVCdF7xDJ4Elxs
- pc/G3Tx21QyfhmKh+DtBc/dyuzCMkP6dBSz6FtN+jav4kay7meXgyEPb5yIeXzd6tO7C
- 38Aj/esllr3hdukG7Y+jwEQ1f6DI+isDaiIoJM0wlRUexWft3kzV8/n9AfEhvhPZu1UX
- W0DIC+XE4CYGXjWyqVWNsJxUZ+Nob+r+0fiEh/MQzJWueZQIrsbdJk9MkPnt8oET/gm8
- /F0DHwUabYSZwomAmKG3tesHkD4t7SlSrSkEfw3Oy1EHIS3SH92vZkop3e1r19a5JoRL 5A== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2vegn0xaqt-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 09 Oct 2019 15:48:46 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 80A8E100034;
- Wed,  9 Oct 2019 15:48:45 +0200 (CEST)
-Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 6F48C21CA92;
- Wed,  9 Oct 2019 15:48:45 +0200 (CEST)
-Received: from SAFEX1HUBCAS23.st.com (10.75.90.46) by Safex1hubcas22.st.com
- (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Wed, 9 Oct 2019
- 15:48:45 +0200
-Received: from localhost (10.48.0.192) by webmail-ga.st.com (10.75.90.48) with
- Microsoft SMTP Server (TLS) id 14.3.439.0;
- Wed, 9 Oct 2019 15:48:44 +0200
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-To: <jic23@kernel.org>
-Subject: [PATCH] iio: dac: stm32: add power management support
-Date: Wed, 9 Oct 2019 15:48:38 +0200
-Message-ID: <1570628918-23474-1-git-send-email-fabrice.gasnier@st.com>
-X-Mailer: git-send-email 2.7.4
+ id 1iICPS-0006O4-6f; Wed, 09 Oct 2019 13:53:48 +0000
+X-UUID: 9641ad5ebd0646cd8cad0fb38942ac0b-20191009
+X-UUID: 9641ad5ebd0646cd8cad0fb38942ac0b-20191009
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <yong.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 371666275; Wed, 09 Oct 2019 05:53:43 -0800
+Received: from MTKMBS32N2.mediatek.inc (172.27.4.72) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 9 Oct 2019 06:53:32 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS32N2.mediatek.inc
+ (172.27.4.72) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Wed, 9 Oct 2019 21:38:24 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 9 Oct 2019 21:38:24 +0800
+Message-ID: <1570628307.19130.53.camel@mhfsdcap03>
+Subject: Re: [PATCH] iommu/mediatek: Move the tlb_sync into tlb_flush
+From: Yong Wu <yong.wu@mediatek.com>
+To: Tomasz Figa <tfiga@chromium.org>
+Date: Wed, 9 Oct 2019 21:38:27 +0800
+In-Reply-To: <CAAFQd5C3U7pZo4SSUJ52Q7E+0FaUoORQFbQC5RhCHBhi=NFYTw@mail.gmail.com>
+References: <1569822142-14303-1-git-send-email-yong.wu@mediatek.com>
+ <CAAFQd5C+FM3n-Ww4C+qDD1QZOGZrqEYw4EvYECfadGcDH0fmew@mail.gmail.com>
+ <1570522162.19130.38.camel@mhfsdcap03>
+ <CAAFQd5C3U7pZo4SSUJ52Q7E+0FaUoORQFbQC5RhCHBhi=NFYTw@mail.gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-Originating-IP: [10.48.0.192]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
- definitions=2019-10-09_06:2019-10-08,2019-10-09 signatures=0
+X-TM-SNTS-SMTP: 9DC8DFD7C36EE50E1052EBAAB997ADF22F64BBEC2A1D9E8D110DA80EEC3D152C2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_064855_189799_17E6D592 
-X-CRM114-Status: GOOD (  21.97  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191009_065346_248462_F47C0EEB 
+X-CRM114-Status: GOOD (  40.18  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,414 +74,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lars@metafoo.de, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
- pmeerw@pmeerw.net, linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- knaack.h@gmx.de, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: youlin.pei@mediatek.com, anan.sun@mediatek.com, Nicolas
+ Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
+ srv_heupstream <srv_heupstream@mediatek.com>, Joerg Roedel <joro@8bytes.org>,
+ Will Deacon <will.deacon@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Evan Green <evgreen@chromium.org>, chao.hao@mediatek.com,
+ "list@263.net:IOMMU DRIVERS
+ <iommu@lists.linux-foundation.org>, Joerg  Roedel <joro@8bytes.org>,
+ " <iommu@lists.linux-foundation.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Robin
+ Murphy <robin.murphy@arm.com>, "list@263.net:IOMMU DRIVERS
+ <iommu@lists.linux-foundation.org>, Joerg  Roedel <joro@8bytes.org>,
+ " <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for runtime PM & sleep.
-Provide pclk to regmap as registers access doesn't need full power
-(e.g. regulator). Always restore HFSEL when resuming. It may get lost
-depending on low power level that has been achieved.
+On Wed, 2019-10-09 at 16:56 +0900, Tomasz Figa wrote:
+> On Tue, Oct 8, 2019 at 5:09 PM Yong Wu <yong.wu@mediatek.com> wrote:
+> >
+> > Hi Tomasz,
+> >
+> > Sorry for reply late.
+> >
+> > On Wed, 2019-10-02 at 14:18 +0900, Tomasz Figa wrote:
+> > > Hi Yong,
+> > >
+> > > On Mon, Sep 30, 2019 at 2:42 PM Yong Wu <yong.wu@mediatek.com> wrote:
+> > > >
+> > > > The commit 4d689b619445 ("iommu/io-pgtable-arm-v7s: Convert to IOMMU API
+> > > > TLB sync") help move the tlb_sync of unmap from v7s into the iommu
+> > > > framework. It helps add a new function "mtk_iommu_iotlb_sync", But it
+> > > > lacked the dom->pgtlock, then it will cause the variable
+> > > > "tlb_flush_active" may be changed unexpectedly, we could see this warning
+> > > > log randomly:
+> > > >
+> > >
+> > > Thanks for the patch! Please see my comments inline.
+> > >
+> > > > mtk-iommu 10205000.iommu: Partial TLB flush timed out, falling back to
+> > > > full flush
+> > > >
+> > > > To fix this issue, we can add dom->pgtlock in the "mtk_iommu_iotlb_sync".
+> > > > And when checking this issue, we find that __arm_v7s_unmap call
+> > > > io_pgtable_tlb_add_flush consecutively when it is supersection/largepage,
+> > > > this also is potential unsafe for us. There is no tlb flush queue in the
+> > > > MediaTek M4U HW. The HW always expect the tlb_flush/tlb_sync one by one.
+> > > > If v7s don't always gurarantee the sequence, Thus, In this patch I move
+> > > > the tlb_sync into tlb_flush(also rename the function deleting "_nosync").
+> > > > and we don't care if it is leaf, rearrange the callback functions. Also,
+> > > > the tlb flush/sync was already finished in v7s, then iotlb_sync and
+> > > > iotlb_sync_all is unnecessary.
+> > >
+> > > Performance-wise, we could do much better. Instead of synchronously
+> > > syncing at the end of mtk_iommu_tlb_add_flush(), we could sync at the
+> > > beginning, if there was any previous flush still pending. We would
+> > > also have to keep the .iotlb_sync() callback, to take care of waiting
+> > > for the last flush. That would allow better pipelining with CPU in
+> > > cases like this:
+> > >
+> > > for (all pages in range) {
+> > >    change page table();
+> > >    flush();
+> > > }
+> > >
+> > > "change page table()" could execute while the IOMMU is flushing the
+> > > previous change.
+> >
+> > Do you mean adding a new tlb_sync before tlb_flush_no_sync, like below:
+> >
+> > mtk_iommu_tlb_add_flush_nosync {
+> >    + mtk_iommu_tlb_sync();
+> >    tlb_flush_no_sync();
+> >    data->tlb_flush_active = true;
+> > }
+> >
+> > mtk_iommu_tlb_sync {
+> >         if (!data->tlb_flush_active)
+> >                 return;
+> >         tlb_sync();
+> >         data->tlb_flush_active = false;
+> > }
+> >
+> > This way look improve the flow, But adjusting the flow is not the root
+> > cause of this issue. the problem is "data->tlb_flush_active" may be
+> > changed from mtk_iommu_iotlb_sync which don't have a dom->pglock.
+> 
+> That was not the only problem with existing code. Existing code also
+> assumed that add_flush and sync always go in pairs, but that's not
+> true.
 
-Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
----
- drivers/iio/dac/stm32-dac-core.c | 138 ++++++++++++++++++++++++++++++---------
- drivers/iio/dac/stm32-dac.c      |  94 +++++++++++++++++++++++++-
- 2 files changed, 199 insertions(+), 33 deletions(-)
+Yes. Thus I put the tlb_flush always followed by tlb_sync to make sure
+they always go in pairs.
 
-diff --git a/drivers/iio/dac/stm32-dac-core.c b/drivers/iio/dac/stm32-dac-core.c
-index d0fb312..9e6b4cd 100644
---- a/drivers/iio/dac/stm32-dac-core.c
-+++ b/drivers/iio/dac/stm32-dac-core.c
-@@ -11,6 +11,7 @@
- #include <linux/delay.h>
- #include <linux/module.h>
- #include <linux/of_platform.h>
-+#include <linux/pm_runtime.h>
- #include <linux/regulator/consumer.h>
- #include <linux/reset.h>
- 
-@@ -50,6 +51,41 @@ static const struct regmap_config stm32_dac_regmap_cfg = {
- 	.max_register = 0x3fc,
- };
- 
-+static int stm32_dac_core_hw_start(struct device *dev)
-+{
-+	struct stm32_dac_common *common = dev_get_drvdata(dev);
-+	struct stm32_dac_priv *priv = to_stm32_dac_priv(common);
-+	int ret;
-+
-+	ret = regulator_enable(priv->vref);
-+	if (ret < 0) {
-+		dev_err(dev, "vref enable failed: %d\n", ret);
-+		return ret;
-+	}
-+
-+	ret = clk_prepare_enable(priv->pclk);
-+	if (ret < 0) {
-+		dev_err(dev, "pclk enable failed: %d\n", ret);
-+		goto err_regulator_disable;
-+	}
-+
-+	return 0;
-+
-+err_regulator_disable:
-+	regulator_disable(priv->vref);
-+
-+	return ret;
-+}
-+
-+static void stm32_dac_core_hw_stop(struct device *dev)
-+{
-+	struct stm32_dac_common *common = dev_get_drvdata(dev);
-+	struct stm32_dac_priv *priv = to_stm32_dac_priv(common);
-+
-+	clk_disable_unprepare(priv->pclk);
-+	regulator_disable(priv->vref);
-+}
-+
- static int stm32_dac_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
-@@ -66,6 +102,8 @@ static int stm32_dac_probe(struct platform_device *pdev)
- 	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
- 	if (!priv)
- 		return -ENOMEM;
-+	platform_set_drvdata(pdev, &priv->common);
-+
- 	cfg = (const struct stm32_dac_cfg *)
- 		of_match_device(dev->driver->of_match_table, dev)->data;
- 
-@@ -74,11 +112,19 @@ static int stm32_dac_probe(struct platform_device *pdev)
- 	if (IS_ERR(mmio))
- 		return PTR_ERR(mmio);
- 
--	regmap = devm_regmap_init_mmio(dev, mmio, &stm32_dac_regmap_cfg);
-+	regmap = devm_regmap_init_mmio_clk(dev, "pclk", mmio,
-+					   &stm32_dac_regmap_cfg);
- 	if (IS_ERR(regmap))
- 		return PTR_ERR(regmap);
- 	priv->common.regmap = regmap;
- 
-+	priv->pclk = devm_clk_get(dev, "pclk");
-+	if (IS_ERR(priv->pclk)) {
-+		ret = PTR_ERR(priv->pclk);
-+		dev_err(dev, "pclk get failed\n");
-+		return ret;
-+	}
-+
- 	priv->vref = devm_regulator_get(dev, "vref");
- 	if (IS_ERR(priv->vref)) {
- 		ret = PTR_ERR(priv->vref);
-@@ -86,33 +132,22 @@ static int stm32_dac_probe(struct platform_device *pdev)
- 		return ret;
- 	}
- 
--	ret = regulator_enable(priv->vref);
--	if (ret < 0) {
--		dev_err(dev, "vref enable failed\n");
--		return ret;
--	}
-+	pm_runtime_get_noresume(dev);
-+	pm_runtime_set_active(dev);
-+	pm_runtime_enable(dev);
-+
-+	ret = stm32_dac_core_hw_start(dev);
-+	if (ret)
-+		goto err_pm_stop;
- 
- 	ret = regulator_get_voltage(priv->vref);
- 	if (ret < 0) {
- 		dev_err(dev, "vref get voltage failed, %d\n", ret);
--		goto err_vref;
-+		goto err_hw_stop;
- 	}
- 	priv->common.vref_mv = ret / 1000;
- 	dev_dbg(dev, "vref+=%dmV\n", priv->common.vref_mv);
- 
--	priv->pclk = devm_clk_get(dev, "pclk");
--	if (IS_ERR(priv->pclk)) {
--		ret = PTR_ERR(priv->pclk);
--		dev_err(dev, "pclk get failed\n");
--		goto err_vref;
--	}
--
--	ret = clk_prepare_enable(priv->pclk);
--	if (ret < 0) {
--		dev_err(dev, "pclk enable failed\n");
--		goto err_vref;
--	}
--
- 	priv->rst = devm_reset_control_get_exclusive(dev, NULL);
- 	if (!IS_ERR(priv->rst)) {
- 		reset_control_assert(priv->rst);
-@@ -128,39 +163,79 @@ static int stm32_dac_probe(struct platform_device *pdev)
- 					 priv->common.hfsel ?
- 					 STM32H7_DAC_CR_HFSEL : 0);
- 		if (ret)
--			goto err_pclk;
-+			goto err_hw_stop;
- 	}
- 
--	platform_set_drvdata(pdev, &priv->common);
- 
- 	ret = of_platform_populate(pdev->dev.of_node, NULL, NULL, dev);
- 	if (ret < 0) {
- 		dev_err(dev, "failed to populate DT children\n");
--		goto err_pclk;
-+		goto err_hw_stop;
- 	}
- 
-+	pm_runtime_put(dev);
-+
- 	return 0;
- 
--err_pclk:
--	clk_disable_unprepare(priv->pclk);
--err_vref:
--	regulator_disable(priv->vref);
-+err_hw_stop:
-+	stm32_dac_core_hw_stop(dev);
-+err_pm_stop:
-+	pm_runtime_disable(dev);
-+	pm_runtime_set_suspended(dev);
-+	pm_runtime_put_noidle(dev);
- 
- 	return ret;
- }
- 
- static int stm32_dac_remove(struct platform_device *pdev)
- {
--	struct stm32_dac_common *common = platform_get_drvdata(pdev);
-+	pm_runtime_get_sync(&pdev->dev);
-+	of_platform_depopulate(&pdev->dev);
-+	stm32_dac_core_hw_stop(&pdev->dev);
-+	pm_runtime_disable(&pdev->dev);
-+	pm_runtime_set_suspended(&pdev->dev);
-+	pm_runtime_put_noidle(&pdev->dev);
-+
-+	return 0;
-+}
-+
-+static int __maybe_unused stm32_dac_core_resume(struct device *dev)
-+{
-+	struct stm32_dac_common *common = dev_get_drvdata(dev);
- 	struct stm32_dac_priv *priv = to_stm32_dac_priv(common);
-+	int ret;
- 
--	of_platform_depopulate(&pdev->dev);
--	clk_disable_unprepare(priv->pclk);
--	regulator_disable(priv->vref);
-+	if (priv->common.hfsel) {
-+		/* restore hfsel (maybe lost under low power state) */
-+		ret = regmap_update_bits(priv->common.regmap, STM32_DAC_CR,
-+					 STM32H7_DAC_CR_HFSEL,
-+					 STM32H7_DAC_CR_HFSEL);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	return pm_runtime_force_resume(dev);
-+}
-+
-+static int __maybe_unused stm32_dac_core_runtime_suspend(struct device *dev)
-+{
-+	stm32_dac_core_hw_stop(dev);
- 
- 	return 0;
- }
- 
-+static int __maybe_unused stm32_dac_core_runtime_resume(struct device *dev)
-+{
-+	return stm32_dac_core_hw_start(dev);
-+}
-+
-+static const struct dev_pm_ops stm32_dac_core_pm_ops = {
-+	SET_SYSTEM_SLEEP_PM_OPS(pm_runtime_force_suspend, stm32_dac_core_resume)
-+	SET_RUNTIME_PM_OPS(stm32_dac_core_runtime_suspend,
-+			   stm32_dac_core_runtime_resume,
-+			   NULL)
-+};
-+
- static const struct stm32_dac_cfg stm32h7_dac_cfg = {
- 	.has_hfsel = true,
- };
-@@ -182,6 +257,7 @@ static struct platform_driver stm32_dac_driver = {
- 	.driver = {
- 		.name = "stm32-dac-core",
- 		.of_match_table = stm32_dac_of_match,
-+		.pm = &stm32_dac_core_pm_ops,
- 	},
- };
- module_platform_driver(stm32_dac_driver);
-diff --git a/drivers/iio/dac/stm32-dac.c b/drivers/iio/dac/stm32-dac.c
-index cce26a3..f22c1d9 100644
---- a/drivers/iio/dac/stm32-dac.c
-+++ b/drivers/iio/dac/stm32-dac.c
-@@ -13,6 +13,7 @@
- #include <linux/kernel.h>
- #include <linux/module.h>
- #include <linux/platform_device.h>
-+#include <linux/pm_runtime.h>
- 
- #include "stm32-dac-core.h"
- 
-@@ -20,6 +21,8 @@
- #define STM32_DAC_CHANNEL_2		2
- #define STM32_DAC_IS_CHAN_1(ch)		((ch) & STM32_DAC_CHANNEL_1)
- 
-+#define STM32_DAC_AUTO_SUSPEND_DELAY_MS	2000
-+
- /**
-  * struct stm32_dac - private data of DAC driver
-  * @common:		reference to DAC common data
-@@ -49,15 +52,34 @@ static int stm32_dac_set_enable_state(struct iio_dev *indio_dev, int ch,
- 				      bool enable)
- {
- 	struct stm32_dac *dac = iio_priv(indio_dev);
-+	struct device *dev = indio_dev->dev.parent;
- 	u32 msk = STM32_DAC_IS_CHAN_1(ch) ? STM32_DAC_CR_EN1 : STM32_DAC_CR_EN2;
- 	u32 en = enable ? msk : 0;
- 	int ret;
- 
-+	/* already enabled / disabled ? */
-+	mutex_lock(&indio_dev->mlock);
-+	ret = stm32_dac_is_enabled(indio_dev, ch);
-+	if (ret < 0 || enable == !!ret) {
-+		mutex_unlock(&indio_dev->mlock);
-+		return ret < 0 ? ret : 0;
-+	}
-+
-+	if (enable) {
-+		ret = pm_runtime_get_sync(dev);
-+		if (ret < 0) {
-+			pm_runtime_put_noidle(dev);
-+			mutex_unlock(&indio_dev->mlock);
-+			return ret;
-+		}
-+	}
-+
- 	ret = regmap_update_bits(dac->common->regmap, STM32_DAC_CR, msk, en);
-+	mutex_unlock(&indio_dev->mlock);
- 	if (ret < 0) {
- 		dev_err(&indio_dev->dev, "%s failed\n", en ?
- 			"Enable" : "Disable");
--		return ret;
-+		goto err_put_pm;
- 	}
- 
- 	/*
-@@ -68,7 +90,20 @@ static int stm32_dac_set_enable_state(struct iio_dev *indio_dev, int ch,
- 	if (en && dac->common->hfsel)
- 		udelay(1);
- 
-+	if (!enable) {
-+		pm_runtime_mark_last_busy(dev);
-+		pm_runtime_put_autosuspend(dev);
-+	}
-+
- 	return 0;
-+
-+err_put_pm:
-+	if (enable) {
-+		pm_runtime_mark_last_busy(dev);
-+		pm_runtime_put_autosuspend(dev);
-+	}
-+
-+	return ret;
- }
- 
- static int stm32_dac_get_value(struct stm32_dac *dac, int channel, int *val)
-@@ -272,6 +307,7 @@ static int stm32_dac_chan_of_init(struct iio_dev *indio_dev)
- static int stm32_dac_probe(struct platform_device *pdev)
- {
- 	struct device_node *np = pdev->dev.of_node;
-+	struct device *dev = &pdev->dev;
- 	struct iio_dev *indio_dev;
- 	struct stm32_dac *dac;
- 	int ret;
-@@ -296,9 +332,61 @@ static int stm32_dac_probe(struct platform_device *pdev)
- 	if (ret < 0)
- 		return ret;
- 
--	return devm_iio_device_register(&pdev->dev, indio_dev);
-+	/* Get stm32-dac-core PM online */
-+	pm_runtime_get_noresume(dev);
-+	pm_runtime_set_active(dev);
-+	pm_runtime_set_autosuspend_delay(dev, STM32_DAC_AUTO_SUSPEND_DELAY_MS);
-+	pm_runtime_use_autosuspend(dev);
-+	pm_runtime_enable(dev);
-+
-+	ret = iio_device_register(indio_dev);
-+	if (ret)
-+		goto err_pm_put;
-+
-+	pm_runtime_mark_last_busy(dev);
-+	pm_runtime_put_autosuspend(dev);
-+
-+	return 0;
-+
-+err_pm_put:
-+	pm_runtime_disable(dev);
-+	pm_runtime_set_suspended(dev);
-+	pm_runtime_put_noidle(dev);
-+
-+	return ret;
- }
- 
-+static int stm32_dac_remove(struct platform_device *pdev)
-+{
-+	struct iio_dev *indio_dev = platform_get_drvdata(pdev);
-+
-+	pm_runtime_get_sync(&pdev->dev);
-+	iio_device_unregister(indio_dev);
-+	pm_runtime_disable(&pdev->dev);
-+	pm_runtime_set_suspended(&pdev->dev);
-+	pm_runtime_put_noidle(&pdev->dev);
-+
-+	return 0;
-+}
-+
-+static int __maybe_unused stm32_dac_suspend(struct device *dev)
-+{
-+	struct iio_dev *indio_dev = dev_get_drvdata(dev);
-+	int channel = indio_dev->channels[0].channel;
-+	int ret;
-+
-+	/* Ensure DAC is disabled before suspend */
-+	ret = stm32_dac_is_enabled(indio_dev, channel);
-+	if (ret)
-+		return ret < 0 ? ret : -EBUSY;
-+
-+	return pm_runtime_force_suspend(dev);
-+}
-+
-+static const struct dev_pm_ops stm32_dac_pm_ops = {
-+	SET_SYSTEM_SLEEP_PM_OPS(stm32_dac_suspend, pm_runtime_force_resume)
-+};
-+
- static const struct of_device_id stm32_dac_of_match[] = {
- 	{ .compatible = "st,stm32-dac", },
- 	{},
-@@ -307,9 +395,11 @@ MODULE_DEVICE_TABLE(of, stm32_dac_of_match);
- 
- static struct platform_driver stm32_dac_driver = {
- 	.probe = stm32_dac_probe,
-+	.remove = stm32_dac_remove,
- 	.driver = {
- 		.name = "stm32-dac",
- 		.of_match_table = stm32_dac_of_match,
-+		.pm = &stm32_dac_pm_ops,
- 	},
- };
- module_platform_driver(stm32_dac_driver);
--- 
-2.7.4
+> 
+> My suggestion is to fix the locking in the driver and keep the sync
+> deferred as much as possible, so that performance is not degraded. I
+
+I really didn't get this timeout warning log in previous kernel(Many
+tlb_flush followed by one tlb_sync), But deferring the sync is not
+suggested by our DE, thus I still would like to fix the sequence in this
+patch with putting them together.
+
+> changed my mind, though. I think we would need to make more changes to
+> the driver to make it implement the flushing efficiently, so let's go
+> with the current simple approach for now and improve incrementally.
+> 
+> >
+> > Currently the synchronisation of the tlb_flush/tlb_sync flow are
+> > controlled by the variable "data->tlb_flush_active".
+> >
+> > In this patch putting the tlb_flush/tlb_sync together looks make
+> > the flow simpler:
+> > a) Don't need the sensitive variable "tlb_flush_active".
+> > b) Remove mtk_iommu_iotlb_sync, Don't need add lock in it.
+> > c) Simplify the tlb_flush_walk/tlb_flush_leaf.
+> > is it ok?
+> >
+> 
+> Okay, let's do so as a first step to fix the issue. Then we can
+> optimize in follow up patches.
+
+Thanks the confirm, I have sent a quick v2.
+
+> 
+> > >
+> > > >
+> > > > Besides, there are two minor changes:
+> > > > a) Use writel for the register F_MMU_INV_RANGE which is for triggering the
+> > > > HW work. We expect all the setting(iova_start/iova_end...) have already
+> > > > been finished before F_MMU_INV_RANGE.
+> > > > b) Reduce the tlb timeout value from 100000us to 1000us. the original value
+> > > > is so long that affect the multimedia performance.
+> > >
+> > > By definition, timeout is something that should not normally happen.
+> > > Too long timeout affecting multimedia performance would suggest that
+> > > the timeout was actually happening, which is the core problem, not the
+> > > length of the timeout. Could you provide more details on this?
+> >
+> > As description above, this issue is because there is no dom->pgtlock in
+> > the mtk_iommu_iotlb_sync. I have tried that the issue will disappear
+> > after adding lock in it.
+> >
+> > Although the issue is fixed after this patch, I still would like to
+> > reduce the timeout value for somehow error happen in the future. 100ms
+> > is unnecessary for us. It looks a minor improvement rather than fixing
+> > the issue. I will use a new patch for it.
+> >
+> 
+> Okay, makes sense.
+> 
+> Best regards,
+> Tomasz
+
 
 
 _______________________________________________
