@@ -2,49 +2,125 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F077D08DD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 09:53:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 368B2D08E1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 09:54:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=aNrzEEeXf+KOLKUMuK3v7fcCOAKDUMubRPPfEDCsw+M=; b=qI4yKtPsYU7djCpJRfTUNcTum
-	kao3CdmTEwp+JXfnWtB3us9bOCsGfxzSc58U+aXrILi9TnC7TfxSXuizTRnp0a5oU6pSybSXxE4LZ
-	3vZ3J0EM9MLWXkNAfvWG8PoxbHYrbM30xhTKARrRdobcPORPIP1LT/5DDkaYgTYSBFeTXlqdCUwqC
-	g1LByjVkARnb1MV9NWuYnnClAsJQLk2QwjK8gzPzcrzK68bwfWp1uM8yY+HyZanvZv8+umJXbC4PX
-	P+GHN6mwI+WPCS/4scvoNShoWwh8FKPGJs49De5MBLqX0CvW6bF0V1XUaMEEwyvNEZOABd8cG/sU8
-	4+L2yBfeg==;
+	 bh=dNbNS+YT/D+trg4MMHHgW3SQuLUZPCwexzTg9NAGKZk=; b=H/IO67x0stiDi3fXprJySj3mV
+	5jUvMy/utjZc4wArTvhjM77Zz8yVomdNrta/Ny/LSgCR+56s+AAT40JWqHqPKnGo1gmWiDmnI8oZ2
+	J8kIdSeiMm2O9dRqb7C2T+Ay1SLGrnogDuJd+ilB8FT1NUj1vUv9EyFy7uUPMR1rA2BU9yutOmBy6
+	ugQ/+vFLhu+YMrg92drGXFj9Nfa1g20S0GTj9jCx9u8kZW9W2NvWFwSJ8tZVVxMEtpfl8L8tGjyYJ
+	tCKnMpj8ucxvNHI7sr2DeW+4QtU4W1Vcqq+FZcRh4VE2ROpdy4Gug4qRhK64D+0qkCnJS0lNBfo7M
+	jAc1CetJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI6mW-0007Ly-8e; Wed, 09 Oct 2019 07:53:12 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI6lQ-0006TI-9i
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 07:52:06 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7F6BC337;
- Wed,  9 Oct 2019 00:52:03 -0700 (PDT)
-Received: from [10.37.8.60] (unknown [10.37.8.60])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7C8893F68E;
- Wed,  9 Oct 2019 00:52:02 -0700 (PDT)
-Subject: Re: [PATCH v7 05/11] kselftest: arm64: mangle_pstate_ssbs_regs
-To: Dave Martin <Dave.Martin@arm.com>
-References: <20191007182954.25730-1-cristian.marussi@arm.com>
- <20191007182954.25730-6-cristian.marussi@arm.com>
- <20191008180112.GY27757@arm.com>
-From: Cristian Marussi <cristian.marussi@arm.com>
-Message-ID: <13183627-4451-f6ee-35b0-2c12108de579@arm.com>
-Date: Wed, 9 Oct 2019 08:52:37 +0100
+	id 1iI6nf-0007si-4K; Wed, 09 Oct 2019 07:54:23 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iI6nY-0007s9-2I
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 07:54:17 +0000
+Received: from gallifrey.ext.pengutronix.de
+ ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mkl@pengutronix.de>)
+ id 1iI6nV-0005vK-JM; Wed, 09 Oct 2019 09:54:13 +0200
+Received: from [IPv6:2a03:f580:87bc:d400:c0ba:f7df:a30d:f61c] (unknown
+ [IPv6:2a03:f580:87bc:d400:c0ba:f7df:a30d:f61c])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits)
+ client-signature RSA-PSS (4096 bits))
+ (Client CN "mkl@blackshift.org",
+ Issuer "StartCom Class 1 Client CA" (not verified))
+ (Authenticated sender: mkl@blackshift.org)
+ by smtp.blackshift.org (Postfix) with ESMTPSA id 0BC54463404;
+ Wed,  9 Oct 2019 07:54:09 +0000 (UTC)
+Subject: Re: [PATCH] net: can: xilinx_can: Fix flags field initialization for
+ axi can
+To: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
+ wg@grandegger.com, davem@davemloft.net, michal.simek@xilinx.com,
+ anssi.hannula@bitwise.fi
+References: <1570606187-30935-1-git-send-email-appana.durga.rao@xilinx.com>
+From: Marc Kleine-Budde <mkl@pengutronix.de>
+Openpgp: preference=signencrypt
+Autocrypt: addr=mkl@pengutronix.de; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <3c2561b8-e000-6806-d8ec-0e3162256884@pengutronix.de>
+Date: Wed, 9 Oct 2019 09:54:05 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191008180112.GY27757@arm.com>
-Content-Language: en-US
+In-Reply-To: <1570606187-30935-1-git-send-email-appana.durga.rao@xilinx.com>
+X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
+X-SA-Exim-Mail-From: mkl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_005204_456349_D679F3D0 
-X-CRM114-Status: GOOD (  26.10  )
+X-CRM114-CacheID: sfid-20191009_005416_271529_2AFA6801 
+X-CRM114-Status: GOOD (  11.09  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,166 +139,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-can@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============2465404676231025263=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============2465404676231025263==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="NbeugTb5NOyzNTbzLQ7ijx5aylvtxlhL7"
+
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--NbeugTb5NOyzNTbzLQ7ijx5aylvtxlhL7
+Content-Type: multipart/mixed; boundary="3DNHAcZaSiHUxGiTGrNdgWkeeEAUazueV";
+ protected-headers="v1"
+From: Marc Kleine-Budde <mkl@pengutronix.de>
+To: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
+ wg@grandegger.com, davem@davemloft.net, michal.simek@xilinx.com,
+ anssi.hannula@bitwise.fi
+Cc: linux-can@vger.kernel.org, netdev@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Message-ID: <3c2561b8-e000-6806-d8ec-0e3162256884@pengutronix.de>
+Subject: Re: [PATCH] net: can: xilinx_can: Fix flags field initialization for
+ axi can
+References: <1570606187-30935-1-git-send-email-appana.durga.rao@xilinx.com>
+In-Reply-To: <1570606187-30935-1-git-send-email-appana.durga.rao@xilinx.com>
+
+--3DNHAcZaSiHUxGiTGrNdgWkeeEAUazueV
+Content-Type: text/plain; charset=utf-8
+Content-Language: de-DE
+Content-Transfer-Encoding: quoted-printable
+
+On 10/9/19 9:29 AM, Appana Durga Kedareswara rao wrote:
+> AXI CANIP doesn't support tx fifo empty interrupt feature(TXFEMP),
+> update the flags filed in the driver for AXI CAN case accordingly.
+>=20
+> Fixes: 3281b380ec9f ("can: xilinx_can: Fix flags field initialization f=
+or axi can and canps")
+> Reported-by: Anssi Hannula <anssi.hannula@bitwise.fi>
+> Signed-off-by: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.co=
+m>
+
+Included in linux-can.
+
+thanks,
+Marc
+
+--=20
+Pengutronix e.K.                  | Marc Kleine-Budde           |
+Industrial Linux Solutions        | Phone: +49-231-2826-924     |
+Vertretung West/Dortmund          | Fax:   +49-5121-206917-5555 |
+Amtsgericht Hildesheim, HRA 2686  | http://www.pengutronix.de   |
 
 
-On 10/8/19 7:01 PM, Dave Martin wrote:
-> On Mon, Oct 07, 2019 at 07:29:48pm +0100, Cristian Marussi wrote:
->> Add a simple mangle testcase which messes with the ucontext_t from within
->> the signal handler, trying to set the PSTATE SSBS bit and verify that
->> SSBS bit set is preserved across sigreturn.
->> Lookup PSTATE.SSBS directly using dedicated helper to grab PSTATE from a
->> live sigframe.
->>
->> Additionally, in order to support this test specific needs:
->> - extend signal testing framework to allow the definition of a custom
->>    per test initialization function to be run at the end of test setup
->>    and before test run routine. This will support also test SKIP.
->> - introduce also a new common utility function: get_current_context()
->>    which can be used to grab a ucontext without the help of libc, and
->>    detect if such ucontext has been actively used to jump back.
->>
->> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
->> ---
->> v6 --> v7
->> - fixed missing header for memcpy
->> - fixed misleading comment in get_current_context()
->> - fixed retvalue checks on get_current_context() invocation
->> - extend test_init()/test_result() and .init to report KSFT_SKIP
->> - SKIP mangle_pstate_ssbs_regs if SSBS not supported at all
->> - check SSBS support looking up ID_AA64PFR1_EL1.SSBS in test_init()
->>    instead of using MRS/MSR
-> 
-> [...]
-> 
->> diff --git a/tools/testing/selftests/arm64/signal/test_signals.c b/tools/testing/selftests/arm64/signal/test_signals.c
->> index cb970346b280..416b1ff43199 100644
->> --- a/tools/testing/selftests/arm64/signal/test_signals.c
->> +++ b/tools/testing/selftests/arm64/signal/test_signals.c
->> @@ -19,11 +19,11 @@ int main(int argc, char *argv[])
->>   	current = &tde;
->>   
->>   	ksft_print_msg("%s :: %s\n", current->name, current->descr);
->> -	if (test_setup(current)) {
->> +	if (test_setup(current) && test_init(current)) {
->>   		test_run(current);
->> -		test_result(current);
->>   		test_cleanup(current);
->>   	}
->> +	test_result(current);
->>   
->> -	return current->pass ? KSFT_PASS : KSFT_FAIL;
->> +	return current->result;
->>   }
->> diff --git a/tools/testing/selftests/arm64/signal/test_signals.h b/tools/testing/selftests/arm64/signal/test_signals.h
->> index f712b5daa10b..ad8175806034 100644
->> --- a/tools/testing/selftests/arm64/signal/test_signals.h
->> +++ b/tools/testing/selftests/arm64/signal/test_signals.h
->> @@ -27,13 +27,25 @@
->>   	: "memory");					\
->>   }
->>   
->> +#define set_regval(regname, in)				\
->> +{							\
->> +	asm volatile("msr " __stringify(regname) ", %0" \
->> +	:						\
->> +	: "r" (in)					\
->> +	: "memory");					\
->> +}
-> 
-> Unused macro?  Now that the test doesn't try to change the SSBS state
-> via MSR, I don't think anything else is using this.
-> 
-> [...]
-> 
+--3DNHAcZaSiHUxGiTGrNdgWkeeEAUazueV--
 
-Removing that in V8 (I left it on purpose since it's general and maybe could
-have been used again for other tests...but now is effectively unused)
+--NbeugTb5NOyzNTbzLQ7ijx5aylvtxlhL7
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
 
->> diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c
->> new file mode 100644
->> index 000000000000..780161dbd7c0
->> --- /dev/null
->> +++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c
->> @@ -0,0 +1,92 @@
->> +// SPDX-License-Identifier: GPL-2.0
->> +/*
->> + * Copyright (C) 2019 ARM Limited
->> + *
->> + * Try to mangle the ucontext from inside a signal handler, setting the
->> + * SSBS bit to 1 and veryfing that such modification is preserved.
->> + */
->> +
->> +#include <stdio.h>
->> +#include <stdlib.h>
->> +#include <signal.h>
->> +#include <ucontext.h>
->> +
->> +#include <kselftest.h>
->> +
->> +#include "test_signals_utils.h"
->> +#include "testcases.h"
->> +
->> +static bool mangle_invalid_pstate_ssbs_init(struct tdescr *td)
->> +{
->> +	bool ret;
->> +
->> +	ret = feats_ok(td);
->> +	if (!ret) {
->> +		fprintf(stderr, "%s: unsupported feature - SKIP.\n", td->name);
->> +		td->result = KSFT_SKIP;
->> +	}
->> +
->> +	return ret;
->> +}
->> +
->> +static int mangle_invalid_pstate_ssbs_run(struct tdescr *td,
->> +					  siginfo_t *si, ucontext_t *uc)
->> +{
->> +	ASSERT_GOOD_CONTEXT(uc);
->> +
->> +	/* set bit value ... should NOT be cleared by Kernel on sigreturn */
->> +	uc->uc_mcontext.pstate |= PSR_SSBS_BIT;
->> +	fprintf(stderr, "SSBS set to 1 -- PSTATE: 0x%016llX\n",
->> +		uc->uc_mcontext.pstate);
->> +	/* Save after mangling...it should be preserved */
->> +	td->saved_uc = *uc;
-> 
-> Hmmm, now I'm wondering about how things like
-> prctl(PR_SET_SPECULATION_CTRL) are supposed to interact with other ways
-> of manipulating PSTATE.SSBS.  Before we've answered this, we don't know
-> what result to expect from this test in various configurations...
-> 
-> To avoid this series depending on answering that question immediately,
-> can we drop this test from the series for now?
-> 
-> To reduce rework effort, maybe keep this patch in its current position
-> in the series, with just the utility code, but drop the testcase.
+-----BEGIN PGP SIGNATURE-----
 
-Ok, but I'll split the remnants of this patch in two distinct patches:
-one containing the get_current_context() and the other containing some test
-initialization improvements that was also part of this patch.
+iQEzBAEBCgAdFiEEmvEkXzgOfc881GuFWsYho5HknSAFAl2dkh0ACgkQWsYho5Hk
+nSAKcgf/R6XDRK7dHqEqpiGyYTWZcVW4jLMda+2jBqiNSf7H0g9JvPApXLNMMJyu
+arWrKcWMDVkYjL31zoqmaeSjbrQ1/KV4OmMAPr5ox937nYGcYYVk4eeJMjeGWYaU
+fysA9cGnOy8l0SJyFL4jUiouury4zd0/ZPQzOmPGBde9SmsSq2cQ2BebpXo7UeIO
+WPT8GO98RR9pMnVGDjXWKzN8FUR+kqhDAOHL+5jJO5nnu+lzWMsjcMgvzcguRGJh
+5FGD6KtAP3rlIiRwxw0p4UAek4qNCizG4dfzi2LPIvb4gYiuB7J9nAy9snEaDh3V
+pkUvLSlwJXLj7HPM7raECUhmJMD/fw==
+=l153
+-----END PGP SIGNATURE-----
 
-Thanks
+--NbeugTb5NOyzNTbzLQ7ijx5aylvtxlhL7--
 
-Cristian
-  
-> 
-> Sorry for the churn -- I didn't think of this issue earlier :(
-> 
-> [...]
-> 
-> Cheers
-> ---Dave
-> 
+
+--===============2465404676231025263==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2465404676231025263==--
+
