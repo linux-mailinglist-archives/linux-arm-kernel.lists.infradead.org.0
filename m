@@ -2,82 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8ABE8D14CB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 19:03:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A581D14D8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 19:05:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fXMHokvjajPQc01h6TTlLhhrMqKVDr16nL3oHhJZQKA=; b=IgLrF9z9rLF+1J
-	4k634veYHGtC+l2db2wwnZ+TCxc4QVYNTR2bcmCQSycNoobKlwqcvn05vmZcFXBrMows2JcoJMs70
-	TBHnEob/p0DG5miN9MgNcFHIb0ChTrrAR1rX0gctT11DNQaYcClcL/akHvilkffirdFOn4j4XTkAI
-	g4KfF/feyvIxxLYXKF6g3G+0TKCbN+YYkCJ5LaiA2vf7zNGY4wfbkDHjJ1zapQOcOD1PwdaFGAytX
-	gijt3KHiUx4AvUz/JocimS+Wm1KNQtOgleWodAdKkMu66QPkTchJs2bAUw79W5iueW0urbKwtBOjh
-	jypPUlTotIZHWdYLBGig==;
+	List-Owner; bh=rJBNl7mhW40+xaD3x/CVYoTA4PLsXC7azlC8Zkl4wRs=; b=qnZnFISx6VK4ap
+	QaPw0wEofd5cbozQzYr1sQjGVdchcwZHs0L4ZgpQnc9wl+F89kZhxeUFKmsDor/QECcbKVMleM47j
+	TfCSmRZ/wi0Tb9VZvgTyeg8sMAEUO4aRpO49tRwjx0sV3pfLkqSesm1OD8Xqak7TlcWIbbE8Appo8
+	75MCht3K5IMrDsD8MiNI4NTpJFwgTZp+uCVlRaZF9Xwxycl+/s7/7C+AOlIuUlGOEJythCa+smXx8
+	JJqxkje+6usAVXEpMHFsed5gdCAPG3tjKKc+O/pMoAaY2w2aMvzcq8ld1tOawWyZ0Z/cUazmLkCvc
+	fkdcQh9XqnOVxC66EDKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIFMg-0000Di-Rz; Wed, 09 Oct 2019 17:03:06 +0000
-Received: from mail-yw1-xc43.google.com ([2607:f8b0:4864:20::c43])
+	id 1iIFOt-00022T-Be; Wed, 09 Oct 2019 17:05:23 +0000
+Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIFMX-0000Cz-SL
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 17:02:59 +0000
-Received: by mail-yw1-xc43.google.com with SMTP id n11so1072976ywn.6
+ id 1iIFOm-00021V-PD
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 17:05:18 +0000
+Received: by mail-yw1-xc41.google.com with SMTP id m13so1063955ywa.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 09 Oct 2019 10:02:57 -0700 (PDT)
+ Wed, 09 Oct 2019 10:05:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=dnZL99JTjxlFGbIIkPg5NnyiKXKoXT11Svd0yN/CwU8=;
- b=X5EfiGl+x8wyhlFGWbMvw90DM6DDHhDPF/5gPzPNCRnzrFO0yt9/jWjlnH2Iy5gy+a
- 9QmS6vt+ZLtP8PzRhnHnZ8zpoOgsnOv6KDKOjgKBDIXEwwtZ6/DOPwMeD6jH8yZOzRhF
- BGH4SIWcOfCasEWCrlm3EQd402/8oVJs/5MB4CD9LNj6prg6MqLUHhRDO1s2NXTi5kzu
- E9T6OVmiKiNgRgbvmNQJ2oA2/smIEAUON0UvuNe1E9xSXJxpVGcDXKVV8Ih4Sg99/n5b
- gX1/RKF0jXJr1Q6PV2OIG/ZZeo+8gPimesWSB13HQRg9OXNr7y/+5Yv5iVJwjp+kBOw0
- a3XQ==
+ bh=cXYEAzqhy4HyxKWCqy6LZ1LbETT8kg39/BhJJ7xImgY=;
+ b=XzVmSlbV54ObweYND+EDGBljHGj8sj2ueCWS95v8Cm859OOOsxIuOqof31AgJZJrgP
+ sYoUG7ZWjf0njqLgiU/hHNjEW3C0MMBKx89WWFO4DlJsMsmXm9jBIVcqPd+ZLd3OohCE
+ KhSVBkByAnQTmF2FGZmUJkgGhHEEaZhRl6B9NyXxJUeV2DGCqJZ0MjYh5FNdExNErUXW
+ GEbdBw/gn5VkXbsjJ7FErGQIO1W5a+kZIEUbAKx6L4oG0gifFpjsyGy6tO64qy7oFvz6
+ 37uGRsoh98fhFqLA7+BGliNL2VfTiKSiDP9UYDDl71wQtxmr3M3OEC59H09+EJL7JJen
+ pD0A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=dnZL99JTjxlFGbIIkPg5NnyiKXKoXT11Svd0yN/CwU8=;
- b=nkqSygaTKZTef+LOaTq7iUGjNfAEP67AQxzgldjTeFu7W1he+Jn56xWbmIN6QJ2yRt
- 6a02P48x/3f2DQERWxygmMAvDNuCmlfgw+sUJmFAUJ/rPS+U4svFZFThgG0+ETvrRjQk
- ie1b3P6ixwHUTwK0G/d2ssUhE2LmHPETAMW1t/87fJRixTUyNb0ZDjuBT9yTEqg1qcPd
- 4QiU/w+M17GHmPcJFRHSeiG+fEiqbQOtw5YqCQ02Sl19o7cxdoC7mHF9g6ZWX0DX1v9V
- emXWH6I1vjLK0P0c8q3HdC19ezBslvSmcMmXayUDgqrmbbc2l/6+qxo1RrvNn5BoP4lu
- GSPQ==
-X-Gm-Message-State: APjAAAWvKhvrzetJ1LGnMr7yAi0/LQ0K+KVJzuGVNxPHK5FeZEpZkSKF
- J9pQwPkvqUfuCPNP1yuNuXM=
-X-Google-Smtp-Source: APXvYqx2fVc37Jf8721/9k+odhIVUj6R9YZYy9mgpcFhtXL3ap9OvdV7k7YmGOGXRyU68K5foqvdxg==
-X-Received: by 2002:a81:b607:: with SMTP id u7mr3541174ywh.77.1570640576499;
- Wed, 09 Oct 2019 10:02:56 -0700 (PDT)
+ bh=cXYEAzqhy4HyxKWCqy6LZ1LbETT8kg39/BhJJ7xImgY=;
+ b=OcgFUef5aNxQLrojt4QsxQScDZW3rl3A0Wk31bDZMLoMMcipRwdnLjnoz2ofxWCuFe
+ YD6cie/8Nb4LFaqGKD46l6CsmSrL4pklM4mIr66EapHVWuzROOAq0QI7oOArxNq/El/A
+ 2ewffmMjRWRFB79z2XPl2yJZBIOC19CLzW0w7mmnK8fR0hQRLh9QAc90IxkvJ6pG9/Ca
+ VBIuvML53BQqfJ1VrVmOKXjkc6qkG0H5bwZGe/JUXLnn3SAS7Q/TiUpbHonfYVf/waXz
+ NN2Agb9Jcaxr/c+PO+xPNXB/XQje0KveoKsBDvPWjMBzZk4t30TK/FbxOu/6bpcy7ZS2
+ wEyQ==
+X-Gm-Message-State: APjAAAVJeXWN0uwi14hLiWEIOee/VvDH2MQ8d2cw129jiuQjYKig+WCk
+ j9GnxZCpagblYiDhNPUrnlY=
+X-Google-Smtp-Source: APXvYqyrAU/nAC3kYzoD94JUe4/RiRHCUfehRJlN8ivjdiAlO4Zf6n0Riga+hkaAtINX8fhZjpe9Nw==
+X-Received: by 2002:a0d:e1c2:: with SMTP id k185mr3552287ywe.103.1570640712141; 
+ Wed, 09 Oct 2019 10:05:12 -0700 (PDT)
 Received: from icarus (072-189-084-142.res.spectrum.com. [72.189.84.142])
- by smtp.gmail.com with ESMTPSA id v8sm698871ywg.91.2019.10.09.10.02.54
+ by smtp.gmail.com with ESMTPSA id u67sm682257ywf.44.2019.10.09.10.05.10
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 09 Oct 2019 10:02:55 -0700 (PDT)
-Date: Wed, 9 Oct 2019 13:02:40 -0400
+ Wed, 09 Oct 2019 10:05:11 -0700 (PDT)
+Date: Wed, 9 Oct 2019 13:05:08 -0400
 From: William Breathitt Gray <vilhelm.gray@gmail.com>
 To: Masahiro Yamada <yamada.masahiro@socionext.com>
-Subject: Re: [PATCH v17 01/14] bitops: Introduce the for_each_set_clump8 macro
-Message-ID: <20191009170240.GA93820@icarus>
+Subject: Re: [PATCH v17 09/14] gpio: uniphier: Utilize for_each_set_clump8
+ macro
+Message-ID: <20191009170508.GB93820@icarus>
 References: <cover.1570633189.git.vilhelm.gray@gmail.com>
- <893c3b4f03266c9496137cc98ac2b1bd27f92c73.1570633189.git.vilhelm.gray@gmail.com>
- <CAK7LNATgW7bXUmqV=3QAaJ0Qu73Kox-TgDCQJb=s0=mwewSCUg@mail.gmail.com>
+ <271a7735b02b6a8b1f54c018e38ea932d1fd299e.1570633189.git.vilhelm.gray@gmail.com>
+ <CAK7LNAQStJsZ4cYTJyAPvjyngWkKs+5y=yzJb6vz3-cco+2-ug@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAK7LNATgW7bXUmqV=3QAaJ0Qu73Kox-TgDCQJb=s0=mwewSCUg@mail.gmail.com>
+In-Reply-To: <CAK7LNAQStJsZ4cYTJyAPvjyngWkKs+5y=yzJb6vz3-cco+2-ug@mail.gmail.com>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_100257_971351_74F0FE65 
-X-CRM114-Status: GOOD (  26.19  )
+X-CRM114-CacheID: sfid-20191009_100516_820033_DEF4FA47 
+X-CRM114-Status: GOOD (  19.85  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (vilhelm.gray[at]gmail.com)
@@ -102,7 +103,6 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-arch <linux-arch@vger.kernel.org>, preid@electromag.com.au,
- Arnd Bergmann <arnd@arndb.de>,
  "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
  Linus Walleij <linus.walleij@linaro.org>,
  Linux PM mailing list <linux-pm@vger.kernel.org>,
@@ -110,8 +110,7 @@ Cc: linux-arch <linux-arch@vger.kernel.org>, preid@electromag.com.au,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  morten.tiljeset@prevas.dk, sean.nyekjaer@prevas.dk,
  Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Andy Shevchenko <andy.shevchenko@gmail.com>, Lukas Wunner <lukas@wunner.de>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
+ Lukas Wunner <lukas@wunner.de>, Geert Uytterhoeven <geert@linux-m68k.org>,
  Andrew Morton <akpm@linux-foundation.org>,
  Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
@@ -120,188 +119,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 10, 2019 at 01:28:08AM +0900, Masahiro Yamada wrote:
+On Thu, Oct 10, 2019 at 01:33:06AM +0900, Masahiro Yamada wrote:
 > On Thu, Oct 10, 2019 at 12:27 AM William Breathitt Gray
 > <vilhelm.gray@gmail.com> wrote:
 > >
-> > This macro iterates for each 8-bit group of bits (clump) with set bits,
-> > within a bitmap memory region. For each iteration, "start" is set to the
-> > bit offset of the found clump, while the respective clump value is
-> > stored to the location pointed by "clump". Additionally, the
-> > bitmap_get_value8 and bitmap_set_value8 functions are introduced to
-> > respectively get and set an 8-bit value in a bitmap memory region.
+> > Replace verbose implementation in set_multiple callback with
+> > for_each_set_clump8 macro to simplify code and improve clarity. An
+> > improvement in this case is that banks that are not masked will now be
+> > skipped.
 > >
-> > Suggested-by: Andy Shevchenko <andy.shevchenko@gmail.com>
-> > Suggested-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-> > Suggested-by: Lukas Wunner <lukas@wunner.de>
-> > Cc: Arnd Bergmann <arnd@arndb.de>
-> > Cc: Andrew Morton <akpm@linux-foundation.org>
-> > Cc: Andy Shevchenko <andy.shevchenko@gmail.com>
-> > Cc: Linus Walleij <linus.walleij@linaro.org>
+> > Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
 > > Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
 > > ---
-> >  include/asm-generic/bitops/find.h | 17 +++++++++++++++
-> >  include/linux/bitmap.h            | 35 +++++++++++++++++++++++++++++++
-> >  include/linux/bitops.h            |  5 +++++
-> >  lib/find_bit.c                    | 14 +++++++++++++
-> >  4 files changed, 71 insertions(+)
+> >  drivers/gpio/gpio-uniphier.c | 16 ++++++----------
+> >  1 file changed, 6 insertions(+), 10 deletions(-)
 > >
-> > diff --git a/include/asm-generic/bitops/find.h b/include/asm-generic/bitops/find.h
-> > index 8a1ee10014de..9fdf21302fdf 100644
-> > --- a/include/asm-generic/bitops/find.h
-> > +++ b/include/asm-generic/bitops/find.h
-> > @@ -80,4 +80,21 @@ extern unsigned long find_first_zero_bit(const unsigned long *addr,
+> > diff --git a/drivers/gpio/gpio-uniphier.c b/drivers/gpio/gpio-uniphier.c
+> > index 93cdcc41e9fb..3e4b15d0231e 100644
+> > --- a/drivers/gpio/gpio-uniphier.c
+> > +++ b/drivers/gpio/gpio-uniphier.c
+> > @@ -15,9 +15,6 @@
+> >  #include <linux/spinlock.h>
+> >  #include <dt-bindings/gpio/uniphier-gpio.h>
 > >
-> >  #endif /* CONFIG_GENERIC_FIND_FIRST_BIT */
+> > -#define UNIPHIER_GPIO_BANK_MASK                \
+> > -                               GENMASK((UNIPHIER_GPIO_LINES_PER_BANK) - 1, 0)
+> > -
+> >  #define UNIPHIER_GPIO_IRQ_MAX_NUM      24
 > >
-> > +/**
-> > + * find_next_clump8 - find next 8-bit clump with set bits in a memory region
-> > + * @clump: location to store copy of found clump
-> > + * @addr: address to base the search on
-> > + * @size: bitmap size in number of bits
-> > + * @offset: bit offset at which to start searching
-> > + *
-> > + * Returns the bit offset for the next set clump; the found clump value is
-> > + * copied to the location pointed by @clump. If no bits are set, returns @size.
-> > + */
-> > +extern unsigned long find_next_clump8(unsigned long *clump,
-> > +                                     const unsigned long *addr,
-> > +                                     unsigned long size, unsigned long offset);
-> > +
-> > +#define find_first_clump8(clump, bits, size) \
-> > +       find_next_clump8((clump), (bits), (size), 0)
-> > +
-> >  #endif /*_ASM_GENERIC_BITOPS_FIND_H_ */
-> > diff --git a/include/linux/bitmap.h b/include/linux/bitmap.h
-> > index 90528f12bdfa..761fab5b60a7 100644
-> > --- a/include/linux/bitmap.h
-> > +++ b/include/linux/bitmap.h
-> > @@ -66,6 +66,8 @@
-> >   *  bitmap_allocate_region(bitmap, pos, order)  Allocate specified bit region
-> >   *  bitmap_from_arr32(dst, buf, nbits)          Copy nbits from u32[] buf to dst
-> >   *  bitmap_to_arr32(buf, src, nbits)            Copy nbits from buf to u32[] dst
-> > + *  bitmap_get_value8(map, start)               Get 8bit value from map at start
-> > + *  bitmap_set_value8(map, value, start)        Set 8bit value to map at start
-> >   *
-> >   * Note, bitmap_zero() and bitmap_fill() operate over the region of
-> >   * unsigned longs, that is, bits behind bitmap till the unsigned long
-> > @@ -488,6 +490,39 @@ static inline void bitmap_from_u64(unsigned long *dst, u64 mask)
-> >                 dst[1] = mask >> 32;
-> >  }
-> >
-> > +/**
-> > + * bitmap_get_value8 - get an 8-bit value within a memory region
-> > + * @map: address to the bitmap memory region
-> > + * @start: bit offset of the 8-bit value; must be a multiple of 8
-> > + *
-> > + * Returns the 8-bit value located at the @start bit offset within the @src
-> > + * memory region.
-> > + */
-> > +static inline unsigned long bitmap_get_value8(const unsigned long *map,
-> > +                                             unsigned long start)
+> >  #define UNIPHIER_GPIO_PORT_DATA                0x0     /* data */
+> > @@ -147,15 +144,14 @@ static void uniphier_gpio_set(struct gpio_chip *chip,
+> >  static void uniphier_gpio_set_multiple(struct gpio_chip *chip,
+> >                                        unsigned long *mask, unsigned long *bits)
+> >  {
+> > -       unsigned int bank, shift, bank_mask, bank_bits;
+> > -       int i;
+> > +       unsigned long i;
+> > +       unsigned long bank_mask;
+> > +       unsigned long bank;
+> > +       unsigned long bank_bits;
 > 
-> Why is the return type "unsigned long" where you know
-> it return the 8-bit value ?
 > 
-> u8?
+> Please do not split it into multiple lines
+> unless you need to do so.
+> 
+> Thanks.
 
-The primary reason is to be consistent with the datatype of the bitmap:
-https://lkml.org/lkml/2019/1/12/26
-
-This should also make it easier to extent to other sizes in the future
-since we won't have to change the interface in order to support 16-bit
-or 32-bit values -- they should easily fit within an unsigned long.
+No problem, I'll update this patch to declare them all on the same line.
 
 William Breathitt Gray
 
-> 
-> 
-> 
-> > +{
-> > +       const size_t index = BIT_WORD(start);
-> > +       const unsigned long offset = start % BITS_PER_LONG;
-> > +
-> > +       return (map[index] >> offset) & 0xFF;
-> > +}
-> > +
-> > +/**
-> > + * bitmap_set_value8 - set an 8-bit value within a memory region
-> > + * @map: address to the bitmap memory region
-> > + * @value: the 8-bit value; values wider than 8 bits may clobber bitmap
-> > + * @start: bit offset of the 8-bit value; must be a multiple of 8
-> > + */
-> > +static inline void bitmap_set_value8(unsigned long *map, unsigned long value,
-> 
-> 
-> Same here,   "u8 value"
-> 
-> 
-> 
-> > +                                    unsigned long start)
-> > +{
-> > +       const size_t index = BIT_WORD(start);
-> > +       const unsigned long offset = start % BITS_PER_LONG;
-> > +
-> > +       map[index] &= ~(0xFF << offset);
-> > +       map[index] |= value << offset;
-> > +}
-> > +
-> >  #endif /* __ASSEMBLY__ */
+> > -       for (i = 0; i < chip->ngpio; i += UNIPHIER_GPIO_LINES_PER_BANK) {
+> > +       for_each_set_clump8(i, bank_mask, mask, chip->ngpio) {
+> >                 bank = i / UNIPHIER_GPIO_LINES_PER_BANK;
+> > -               shift = i % BITS_PER_LONG;
+> > -               bank_mask = (mask[BIT_WORD(i)] >> shift) &
+> > -                                               UNIPHIER_GPIO_BANK_MASK;
+> > -               bank_bits = bits[BIT_WORD(i)] >> shift;
+> > +               bank_bits = bitmap_get_value8(bits, i);
 > >
-> >  #endif /* __LINUX_BITMAP_H */
-> > diff --git a/include/linux/bitops.h b/include/linux/bitops.h
-> > index cf074bce3eb3..fb94a10f7853 100644
-> > --- a/include/linux/bitops.h
-> > +++ b/include/linux/bitops.h
-> > @@ -40,6 +40,11 @@ extern unsigned long __sw_hweight64(__u64 w);
-> >              (bit) < (size);                                    \
-> >              (bit) = find_next_zero_bit((addr), (size), (bit) + 1))
-> >
-> > +#define for_each_set_clump8(start, clump, bits, size) \
-> > +       for ((start) = find_first_clump8(&(clump), (bits), (size)); \
-> > +            (start) < (size); \
-> > +            (start) = find_next_clump8(&(clump), (bits), (size), (start) + 8))
-> > +
-> >  static inline int get_bitmask_order(unsigned int count)
-> >  {
-> >         int order;
-> > diff --git a/lib/find_bit.c b/lib/find_bit.c
-> > index 5c51eb45178a..e35a76b291e6 100644
-> > --- a/lib/find_bit.c
-> > +++ b/lib/find_bit.c
-> > @@ -214,3 +214,17 @@ EXPORT_SYMBOL(find_next_bit_le);
-> >  #endif
-> >
-> >  #endif /* __BIG_ENDIAN */
-> > +
-> > +unsigned long find_next_clump8(unsigned long *clump, const unsigned long *addr,
-> 
-> 
-> Ditto.   "u8 *clump"
-> 
-> 
-> 
-> 
-> > +                              unsigned long size, unsigned long offset)
-> > +{
-> > +       offset = find_next_bit(addr, size, offset);
-> > +       if (offset == size)
-> > +               return size;
-> > +
-> > +       offset = round_down(offset, 8);
-> > +       *clump = bitmap_get_value8(addr, offset);
-> > +
-> > +       return offset;
-> > +}
-> > +EXPORT_SYMBOL(find_next_clump8);
+> >                 uniphier_gpio_bank_write(chip, bank, UNIPHIER_GPIO_PORT_DATA,
+> >                                          bank_mask, bank_bits);
 > > --
 > > 2.23.0
 > >
 > 
 > 
-> --
+> -- 
 > Best Regards
-> 
 > Masahiro Yamada
 
 _______________________________________________
