@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B55C8D1282
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 17:28:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE8FBD12AF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 17:28:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RJ3Z+KBsgRTb0pfENigTx1dKsm5cijLlZ9DFSgABIqw=; b=EbHupypdcYuiq7
-	+79mzR8cEb2EKE0w21H9LOSLCt+oj88q2xUakU234ReML80O0nKiRAwJnEW4Z81nyispxQGnfeqG2
-	17OryZq6EabLGxZrpELjFamj9jiKa8TdN5MlpXpD62lPV1Y+aN6EFjIb5updVY1c4NVHTNQFjR8D4
-	TXtEAt7eNGtv4dkU8UeImcnCn+fG3Mpte3RijGWi9QM//eT2+TzGKIY3sJiILaCjc3XvBHQh5NHp3
-	iUuvvOElqbDJLLR9HuvKQdDJjP7wksG8SBDEXxg0O7yfrvDx4tHodRA55gT1GGsPGoNjR08IGG+Ce
-	iWsGitdP+P3lUL0OPyOQ==;
+	List-Owner; bh=F9EdPRSDWVLfaCJC3L91TcBHMssVi+HPrNseoGAzkSk=; b=G7ZmROk2Mg6e4R
+	KP/XKe8T0PTCQAXAy8B1fs0Oqbh41EhG3gxSw15nBwKseLavKHEXzbtfhJ/0Ek62vxtO/TAq6Pj93
+	pSnHwBHB+UCSNmaionEXF12QL3fOMzB33uR3hQ25/CXzoATWZsicas2NXklUzB6MjQrphlp08ExX4
+	ar4V71nLjlK3tW83eMMYK7WU9mBqlg9dv62I4UwPFyMpjZG6ea6BrviKCz48gdwhuI6lvDjORRxfZ
+	RfpEFUVVQsPQ9hadKKAKsGFvspE2P6hkR5unbqd51PHtsXvy9FrOVRU3ofiC+Efq7WTxWGvOIBEen
+	eV0JsnC8YmB/OOUl50dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIDsn-0001g7-F3; Wed, 09 Oct 2019 15:28:09 +0000
-Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
+	id 1iIDt3-0001ye-Hb; Wed, 09 Oct 2019 15:28:25 +0000
+Received: from mail-yw1-xc43.google.com ([2607:f8b0:4864:20::c43])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIDsE-0001Qm-Mn
+ id 1iIDsF-0001RS-Uq
  for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 15:27:37 +0000
-Received: by mail-yw1-xc42.google.com with SMTP id x64so963468ywg.3
+Received: by mail-yw1-xc43.google.com with SMTP id e205so957373ywc.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 09 Oct 2019 08:27:33 -0700 (PDT)
+ Wed, 09 Oct 2019 08:27:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=qFx5e6sekWj4cSXabcHlK2m6teGcz5rYDUsYdjC+rrw=;
- b=bTW6/4MVkGnys+h/1M9PGSH3rq2UOTzR9XpLFnA+nppipffdZktdKJF4bovmw7p1rJ
- zd6SSZKjL1MbUVeRkGOUx4WykBUUfIaDK8E06cLtt4fTpsI8uGDgmXlO1utF7iTXatLi
- Sq8oQC6fb/mo26oyi0+S6vlsPiuWRj70L6jCxjMrI0RjNez4O7z7Q/kqVZoqNUg7a03m
- dcPDXI+fTxHcxbsWDOhv6IGdo2r7xtkdpPG0l7FbcMOrdGdU3bbtdCKyHjXh3a1qkg77
- wi8vmRM15GZAUIg/BmrgUm4/3J5hSfthYm/saBWqjQGTsryy7LMtEv5NPNxCU0lgZMzU
- +V3Q==
+ bh=BimiSAhIyu/wlnbGZzM5zv98VeK3KGxYKaa4VCWD3vc=;
+ b=XhKVN2b3nsHyExn5g3F5i4nQkLizp/ml0iJ6nyIDo8RaY41ylVOc0vRug0oE+UZAge
+ i7aiVMFgkmpOpjS+c3EgFzlyN1cpWIrthK7jSW3uToSXKlX6Jhrxju0R21SjsGZRuyKp
+ Ga2EQkW+onKg8Z5LYWuREGeksADsfpjrH1z7JxA9BcGLXN0APRwI6mj/NaV9cMwQ5/s7
+ vLz1sfqnQZKxpvaGz8S5aITVxusnXfh4S1dYizvCFDbrftaqF0O+58Ig46PBWrt4xcrC
+ 9uobcnenyu1GareDW34LUr2PUsF4xO+ILnWyjuSck5fNf8YWAoNZs6EPQI4kSCK72LVQ
+ 1Gmg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=qFx5e6sekWj4cSXabcHlK2m6teGcz5rYDUsYdjC+rrw=;
- b=L7kv8zeEfbDSXdTyx0eKgMsqIL9Sc5gDI4UIttcjOd36AlBEnE7bsBElbk6QafxDV9
- UdJhjXlKKBBvzqOWQpEzw5CtSSXNBoDvmg5cyVAwmIM3PQqdRTNV8ASh7Dtajq1m0BsP
- naxDogL02p0fbR6o1prXcfQrkMwz5tOvSv0QsZSyvuSTi2hx3bsFFS7gpt7xlcGJy3tR
- H4U5vFHiGZRq1JmiYGG9zrixB3mRTqlRMVnIogNTFZHiaY220yYSSEByiONNiZCKV9ER
- zHH1BmsF8De4ItN6aScTjwUxMS0J255H9l5NN9uc/YOBiZddPxVqs+uNE8X/mLABfJNm
- xp3Q==
-X-Gm-Message-State: APjAAAUD7Kqi8jFAbe9VlGakLz3IpRPqeMH/uEQXl3znoydfo2dWtfn6
- YIfTaYEw+yI/E7ZNLfw35Lw=
-X-Google-Smtp-Source: APXvYqz+w0i8qp/jDRjY8dr3+pmELBjImXfFAjRX8cRctYt3a8txTqVcd9y4tQiO26/UJW2sh64yyA==
-X-Received: by 2002:a0d:ffc4:: with SMTP id p187mr3071146ywf.453.1570634852896; 
- Wed, 09 Oct 2019 08:27:32 -0700 (PDT)
+ bh=BimiSAhIyu/wlnbGZzM5zv98VeK3KGxYKaa4VCWD3vc=;
+ b=J4VOE7UMhxs0T4W0vcsV9cuHeqddRrppZJZn3s8rFnfmho+wayeZpUDvZrl9822SV2
+ 7JRDBVn6XDmWsMHunCt+Lc2W08AD3qhWWiHxcVG4ToGEFJcoiaKq+DJ9zHpc5qtXm3Yd
+ rY4cTPVO5dsm2JfaG/eZnUerkUNLWJzYx8c5d5ck5vG8eCSbOQoQiNxphqagZvqPB5n5
+ XI9GsV4lrhP5FOm37FdXk9Iy9U7ZpNfrrbcHvQcmxVpn2ugXHsgRhm4gp5Sex3ValbHO
+ /RhdIjTO5nk4snDDxXlS2+pZVROifN/8pa7+F660sXJxdVnoqKhXYSYinSGd/wzAfODi
+ p9jA==
+X-Gm-Message-State: APjAAAXHEn5Owig1bCKzJ5kj/2Iqmfr9iVisQsxT+99wzU3ILYQ/2lGv
+ DrYIbtv2YpAHuUrzkYN6HPM=
+X-Google-Smtp-Source: APXvYqwFyDfey8Cksi+zaDC4bwYRec4uXM/PDJXCjftXpBCynaS44f28FBJDexcQJTmMprUYCuEbow==
+X-Received: by 2002:a81:a303:: with SMTP id a3mr3065880ywh.133.1570634854880; 
+ Wed, 09 Oct 2019 08:27:34 -0700 (PDT)
 Received: from localhost.localdomain (072-189-084-142.res.spectrum.com.
  [72.189.84.142])
- by smtp.gmail.com with ESMTPSA id g40sm611863ywk.14.2019.10.09.08.27.30
+ by smtp.gmail.com with ESMTPSA id g40sm611863ywk.14.2019.10.09.08.27.32
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 09 Oct 2019 08:27:32 -0700 (PDT)
+ Wed, 09 Oct 2019 08:27:33 -0700 (PDT)
 From: William Breathitt Gray <vilhelm.gray@gmail.com>
 To: linus.walleij@linaro.org, bgolaszewski@baylibre.com,
  akpm@linux-foundation.org
-Subject: [PATCH v17 01/14] bitops: Introduce the for_each_set_clump8 macro
-Date: Wed,  9 Oct 2019 11:26:59 -0400
-Message-Id: <893c3b4f03266c9496137cc98ac2b1bd27f92c73.1570633189.git.vilhelm.gray@gmail.com>
+Subject: [PATCH v17 02/14] lib/test_bitmap.c: Add for_each_set_clump8 test
+ cases
+Date: Wed,  9 Oct 2019 11:27:00 -0400
+Message-Id: <febc0fb8151e3e3fdd61c34da9193d1c4d7e6c12.1570633189.git.vilhelm.gray@gmail.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <cover.1570633189.git.vilhelm.gray@gmail.com>
 References: <cover.1570633189.git.vilhelm.gray@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_082734_743710_0B0A0F55 
-X-CRM114-Status: GOOD (  14.03  )
+X-CRM114-CacheID: sfid-20191009_082735_991977_18FEAC83 
+X-CRM114-Status: GOOD (  13.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c43 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (vilhelm.gray[at]gmail.com)
@@ -101,10 +102,9 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-arch@vger.kernel.org, preid@electromag.com.au,
- Arnd Bergmann <arnd@arndb.de>, yamada.masahiro@socionext.com,
- linux-pm@vger.kernel.org, linux@rasmusvillemoes.dk,
- linux-kernel@vger.kernel.org, morten.tiljeset@prevas.dk,
- sean.nyekjaer@prevas.dk, linux-gpio@vger.kernel.org,
+ yamada.masahiro@socionext.com, linux-pm@vger.kernel.org,
+ linux@rasmusvillemoes.dk, linux-kernel@vger.kernel.org,
+ morten.tiljeset@prevas.dk, sean.nyekjaer@prevas.dk, linux-gpio@vger.kernel.org,
  Andy Shevchenko <andy.shevchenko@gmail.com>, lukas@wunner.de,
  geert@linux-m68k.org, William Breathitt Gray <vilhelm.gray@gmail.com>,
  andriy.shevchenko@linux.intel.com, linux-arm-kernel@lists.infradead.org
@@ -113,145 +113,117 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This macro iterates for each 8-bit group of bits (clump) with set bits,
-within a bitmap memory region. For each iteration, "start" is set to the
-bit offset of the found clump, while the respective clump value is
-stored to the location pointed by "clump". Additionally, the
-bitmap_get_value8 and bitmap_set_value8 functions are introduced to
-respectively get and set an 8-bit value in a bitmap memory region.
+The introduction of the for_each_set_clump8 macro warrants test cases to
+verify the implementation. This patch adds test case checks for whether
+an out-of-bounds clump index is returned, a zero clump is returned, or
+the returned clump value differs from the expected clump value.
 
-Suggested-by: Andy Shevchenko <andy.shevchenko@gmail.com>
-Suggested-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-Suggested-by: Lukas Wunner <lukas@wunner.de>
-Cc: Arnd Bergmann <arnd@arndb.de>
-Cc: Andrew Morton <akpm@linux-foundation.org>
-Cc: Andy Shevchenko <andy.shevchenko@gmail.com>
-Cc: Linus Walleij <linus.walleij@linaro.org>
+Cc: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Acked-by: Andrew Morton <akpm@linux-foundation.org>
+Reviewed-by: Andy Shevchenko <andy.shevchenko@gmail.com>
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
 ---
- include/asm-generic/bitops/find.h | 17 +++++++++++++++
- include/linux/bitmap.h            | 35 +++++++++++++++++++++++++++++++
- include/linux/bitops.h            |  5 +++++
- lib/find_bit.c                    | 14 +++++++++++++
- 4 files changed, 71 insertions(+)
+ lib/test_bitmap.c | 65 +++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 65 insertions(+)
 
-diff --git a/include/asm-generic/bitops/find.h b/include/asm-generic/bitops/find.h
-index 8a1ee10014de..9fdf21302fdf 100644
---- a/include/asm-generic/bitops/find.h
-+++ b/include/asm-generic/bitops/find.h
-@@ -80,4 +80,21 @@ extern unsigned long find_first_zero_bit(const unsigned long *addr,
- 
- #endif /* CONFIG_GENERIC_FIND_FIRST_BIT */
- 
-+/**
-+ * find_next_clump8 - find next 8-bit clump with set bits in a memory region
-+ * @clump: location to store copy of found clump
-+ * @addr: address to base the search on
-+ * @size: bitmap size in number of bits
-+ * @offset: bit offset at which to start searching
-+ *
-+ * Returns the bit offset for the next set clump; the found clump value is
-+ * copied to the location pointed by @clump. If no bits are set, returns @size.
-+ */
-+extern unsigned long find_next_clump8(unsigned long *clump,
-+				      const unsigned long *addr,
-+				      unsigned long size, unsigned long offset);
-+
-+#define find_first_clump8(clump, bits, size) \
-+	find_next_clump8((clump), (bits), (size), 0)
-+
- #endif /*_ASM_GENERIC_BITOPS_FIND_H_ */
-diff --git a/include/linux/bitmap.h b/include/linux/bitmap.h
-index 90528f12bdfa..761fab5b60a7 100644
---- a/include/linux/bitmap.h
-+++ b/include/linux/bitmap.h
-@@ -66,6 +66,8 @@
-  *  bitmap_allocate_region(bitmap, pos, order)  Allocate specified bit region
-  *  bitmap_from_arr32(dst, buf, nbits)          Copy nbits from u32[] buf to dst
-  *  bitmap_to_arr32(buf, src, nbits)            Copy nbits from buf to u32[] dst
-+ *  bitmap_get_value8(map, start)               Get 8bit value from map at start
-+ *  bitmap_set_value8(map, value, start)        Set 8bit value to map at start
-  *
-  * Note, bitmap_zero() and bitmap_fill() operate over the region of
-  * unsigned longs, that is, bits behind bitmap till the unsigned long
-@@ -488,6 +490,39 @@ static inline void bitmap_from_u64(unsigned long *dst, u64 mask)
- 		dst[1] = mask >> 32;
+diff --git a/lib/test_bitmap.c b/lib/test_bitmap.c
+index 51a98f7ee79e..dc167c13eb39 100644
+--- a/lib/test_bitmap.c
++++ b/lib/test_bitmap.c
+@@ -92,6 +92,36 @@ __check_eq_u32_array(const char *srcfile, unsigned int line,
+ 	return true;
  }
  
-+/**
-+ * bitmap_get_value8 - get an 8-bit value within a memory region
-+ * @map: address to the bitmap memory region
-+ * @start: bit offset of the 8-bit value; must be a multiple of 8
-+ *
-+ * Returns the 8-bit value located at the @start bit offset within the @src
-+ * memory region.
-+ */
-+static inline unsigned long bitmap_get_value8(const unsigned long *map,
-+					      unsigned long start)
++static bool __init __check_eq_clump8(const char *srcfile, unsigned int line,
++				    const unsigned int offset,
++				    const unsigned int size,
++				    const unsigned char *const clump_exp,
++				    const unsigned long *const clump)
 +{
-+	const size_t index = BIT_WORD(start);
-+	const unsigned long offset = start % BITS_PER_LONG;
++	unsigned long exp;
 +
-+	return (map[index] >> offset) & 0xFF;
++	if (offset >= size) {
++		pr_warn("[%s:%u] bit offset for clump out-of-bounds: expected less than %u, got %u\n",
++			srcfile, line, size, offset);
++		return false;
++	}
++
++	exp = clump_exp[offset / 8];
++	if (!exp) {
++		pr_warn("[%s:%u] bit offset for zero clump: expected nonzero clump, got bit offset %u with clump value 0",
++			srcfile, line, offset);
++		return false;
++	}
++
++	if (*clump != exp) {
++		pr_warn("[%s:%u] expected clump value of 0x%lX, got clump value of 0x%lX",
++			srcfile, line, exp, *clump);
++		return false;
++	}
++
++	return true;
 +}
 +
-+/**
-+ * bitmap_set_value8 - set an 8-bit value within a memory region
-+ * @map: address to the bitmap memory region
-+ * @value: the 8-bit value; values wider than 8 bits may clobber bitmap
-+ * @start: bit offset of the 8-bit value; must be a multiple of 8
-+ */
-+static inline void bitmap_set_value8(unsigned long *map, unsigned long value,
-+				     unsigned long start)
-+{
-+	const size_t index = BIT_WORD(start);
-+	const unsigned long offset = start % BITS_PER_LONG;
-+
-+	map[index] &= ~(0xFF << offset);
-+	map[index] |= value << offset;
-+}
-+
- #endif /* __ASSEMBLY__ */
+ #define __expect_eq(suffix, ...)					\
+ 	({								\
+ 		int result = 0;						\
+@@ -108,6 +138,7 @@ __check_eq_u32_array(const char *srcfile, unsigned int line,
+ #define expect_eq_bitmap(...)		__expect_eq(bitmap, ##__VA_ARGS__)
+ #define expect_eq_pbl(...)		__expect_eq(pbl, ##__VA_ARGS__)
+ #define expect_eq_u32_array(...)	__expect_eq(u32_array, ##__VA_ARGS__)
++#define expect_eq_clump8(...)		__expect_eq(clump8, ##__VA_ARGS__)
  
- #endif /* __LINUX_BITMAP_H */
-diff --git a/include/linux/bitops.h b/include/linux/bitops.h
-index cf074bce3eb3..fb94a10f7853 100644
---- a/include/linux/bitops.h
-+++ b/include/linux/bitops.h
-@@ -40,6 +40,11 @@ extern unsigned long __sw_hweight64(__u64 w);
- 	     (bit) < (size);					\
- 	     (bit) = find_next_zero_bit((addr), (size), (bit) + 1))
- 
-+#define for_each_set_clump8(start, clump, bits, size) \
-+	for ((start) = find_first_clump8(&(clump), (bits), (size)); \
-+	     (start) < (size); \
-+	     (start) = find_next_clump8(&(clump), (bits), (size), (start) + 8))
-+
- static inline int get_bitmask_order(unsigned int count)
+ static void __init test_zero_clear(void)
  {
- 	int order;
-diff --git a/lib/find_bit.c b/lib/find_bit.c
-index 5c51eb45178a..e35a76b291e6 100644
---- a/lib/find_bit.c
-+++ b/lib/find_bit.c
-@@ -214,3 +214,17 @@ EXPORT_SYMBOL(find_next_bit_le);
- #endif
+@@ -404,6 +435,39 @@ static void noinline __init test_mem_optimisations(void)
+ 	}
+ }
  
- #endif /* __BIG_ENDIAN */
++static const unsigned char clump_exp[] __initconst = {
++	0x01,	/* 1 bit set */
++	0x02,	/* non-edge 1 bit set */
++	0x00,	/* zero bits set */
++	0x38,	/* 3 bits set across 4-bit boundary */
++	0x38,	/* Repeated clump */
++	0x0F,	/* 4 bits set */
++	0xFF,	/* all bits set */
++	0x05,	/* non-adjacent 2 bits set */
++};
 +
-+unsigned long find_next_clump8(unsigned long *clump, const unsigned long *addr,
-+			       unsigned long size, unsigned long offset)
++static void __init test_for_each_set_clump8(void)
 +{
-+	offset = find_next_bit(addr, size, offset);
-+	if (offset == size)
-+		return size;
++#define CLUMP_EXP_NUMBITS 64
++	DECLARE_BITMAP(bits, CLUMP_EXP_NUMBITS);
++	unsigned int start;
++	unsigned long clump;
 +
-+	offset = round_down(offset, 8);
-+	*clump = bitmap_get_value8(addr, offset);
++	/* set bitmap to test case */
++	bitmap_zero(bits, CLUMP_EXP_NUMBITS);
++	bitmap_set(bits, 0, 1);		/* 0x01 */
++	bitmap_set(bits, 9, 1);		/* 0x02 */
++	bitmap_set(bits, 27, 3);	/* 0x28 */
++	bitmap_set(bits, 35, 3);	/* 0x28 */
++	bitmap_set(bits, 40, 4);	/* 0x0F */
++	bitmap_set(bits, 48, 8);	/* 0xFF */
++	bitmap_set(bits, 56, 1);	/* 0x05 - part 1 */
++	bitmap_set(bits, 58, 1);	/* 0x05 - part 2 */
 +
-+	return offset;
++	for_each_set_clump8(start, clump, bits, CLUMP_EXP_NUMBITS)
++		expect_eq_clump8(start, CLUMP_EXP_NUMBITS, clump_exp, &clump);
 +}
-+EXPORT_SYMBOL(find_next_clump8);
++
+ static void __init selftest(void)
+ {
+ 	test_zero_clear();
+@@ -413,6 +477,7 @@ static void __init selftest(void)
+ 	test_bitmap_parselist();
+ 	test_bitmap_parselist_user();
+ 	test_mem_optimisations();
++	test_for_each_set_clump8();
+ }
+ 
+ KSTM_MODULE_LOADERS(test_bitmap);
 -- 
 2.23.0
 
