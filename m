@@ -2,58 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B2C1D09E9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:31:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC9E5D0A1A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:47:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JABvQm6fSCjoS0UgCaNB+3yiw1pwy6dJ61ZYiwyamBA=; b=OklXnVr0nR68/3
-	Z6cfozv6SBwCmkmEblsR0K91QfQoL1d61HZ64K5xHrgs6VqmVGTDMhOz7C9C8quQ1rvCtvgFQm4wy
-	wVIaFz7iYHUz8yN/abjKnEcBLDQm3qiPBmNnju7iXazrZd410WdYiMSybRgHnPoiS++J3+oXVFpvC
-	2QrlH0TikWuMSueA0PW7DVs/x4YyP6hF2g7biabBBB+sXwXXxqhVC7stc9f6g3WvO5deeN/gbm/NK
-	l2dcvm4jz8Y85uEspJFn9z2yPYVm73+lW/8NvY6NBvGv8m2DCvIEqQ2kAKqBzRasdoSMOQmR1bkKW
-	GNjmqTh9q3a3QdvHF/+Q==;
+	List-Owner; bh=nq0yaI1oPm+ZXa3nLix4JbTJeMRMOUCUar2yRVpQDOg=; b=hS137NhEleXK58
+	X3y/FEw65infutujNbXMHb+glM9/hB9KM30+y4nMorJnXJAQXAKKGS2et4PJlfXGMwaSBuUEA/BJ9
+	7xTECymVMYdp1Re0OTGqw/g5kXX3D+o8fZsV0mMP7eVdvhTHAIa1egXixf8nMi4kSBCa7VuBfpfOI
+	4Ysdkjr/jtdwmco+/7jSDG15NEicVevtMYCDMmu+dc+F1HgytBDtQUpSn+BPqPStLRmvbwXMGM/D3
+	c6/hmWJ0RyPalFUOVPALnMgdEO4aJ81J/Nv+ZQaiibDYI97eCoVuDZ2chK0qQvUr0iejxB+rZzeYO
+	BcshNzIDxBhWJzOs2gLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI7NF-0008MP-G4; Wed, 09 Oct 2019 08:31:09 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI7LX-0005qQ-D3
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:29:27 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BB02B337;
- Wed,  9 Oct 2019 01:29:22 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3EACF3F68E;
- Wed,  9 Oct 2019 01:29:22 -0700 (PDT)
-Date: Wed, 9 Oct 2019 09:29:20 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Nathan Chancellor <natechancellor@gmail.com>
-Subject: Re: [PATCH v2] arm64: lse: fix LSE atomics with LLVM's integrated
- assembler
-Message-ID: <20191009082920.GM42880@e119886-lin.cambridge.arm.com>
-References: <20191007201452.208067-1-samitolvanen@google.com>
- <20191008212730.185532-1-samitolvanen@google.com>
- <20191008233137.GL42880@e119886-lin.cambridge.arm.com>
- <CABCJKufHzQamE5+JtH0J4TyS05kutkty_7GwJ6w8T-szdCwHvg@mail.gmail.com>
- <20191009000159.GA531859@archlinux-threadripper>
+	id 1iI7cR-0007Hg-Ny; Wed, 09 Oct 2019 08:46:51 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iI7cC-0007GK-PO; Wed, 09 Oct 2019 08:46:38 +0000
+X-UUID: d05195b2a8d744a4bc6fa4bf15181af2-20191009
+X-UUID: d05195b2a8d744a4bc6fa4bf15181af2-20191009
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 686160028; Wed, 09 Oct 2019 00:46:23 -0800
+Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 9 Oct 2019 01:41:35 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ MTKMBS31N2.mediatek.inc (172.27.4.87) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 9 Oct 2019 15:41:11 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 9 Oct 2019 15:41:10 +0800
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>
+Subject: [RESEND PATCH v3 06/11] phy: phy-mtk-tphy: add a property for
+ disconnect threshold
+Date: Wed, 9 Oct 2019 15:40:29 +0800
+Message-ID: <1570606834-5644-6-git-send-email-chunfeng.yun@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
+In-Reply-To: <1570606834-5644-1-git-send-email-chunfeng.yun@mediatek.com>
+References: <1570606834-5644-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191009000159.GA531859@archlinux-threadripper>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+X-TM-SNTS-SMTP: 44482A48D825740E5FA84E828A43136A47E84EB4A7528B5C724E9FF47A996EF82000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_012923_588656_5B04F762 
-X-CRM114-Status: GOOD (  15.20  )
+X-CRM114-CacheID: sfid-20191009_014636_827235_277C86D7 
+X-CRM114-Status: GOOD (  13.19  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,75 +72,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- LKML <linux-kernel@vger.kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Sami Tolvanen <samitolvanen@google.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 08, 2019 at 05:01:59PM -0700, Nathan Chancellor wrote:
-> On Tue, Oct 08, 2019 at 04:59:25PM -0700, 'Sami Tolvanen' via Clang Built Linux wrote:
-> > On Tue, Oct 8, 2019 at 4:31 PM Andrew Murray <andrew.murray@arm.com> wrote:
-> > > This looks good to me. I can build and boot in a model with both Clang
-> > > (9.0.6) and GCC (7.3.1) and boot a guest without anything going bang.
-> > 
-> > Great, thank you for testing this!
-> > 
-> > > Though when I build with AS=clang, e.g.
-> > >
-> > > make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- CC=clang AS=clang Image
-> > 
-> > Note that this patch only fixes issues with inline assembly, which
-> > should at some point allow us to drop -no-integrated-as from clang
-> > builds. I believe there are still other fixes needed before AS=clang
-> > works.
-> > 
-> > > I get errors like this:
-> > >
-> > >   CC      init/main.o
-> > > In file included from init/main.c:17:
-> > > In file included from ./include/linux/module.h:9:
-> > > In file included from ./include/linux/list.h:9:
-> > > In file included from ./include/linux/kernel.h:12:
-> > > In file included from ./include/linux/bitops.h:26:
-> > > In file included from ./arch/arm64/include/asm/bitops.h:26:
-> > > In file included from ./include/asm-generic/bitops/atomic.h:5:
-> > > In file included from ./include/linux/atomic.h:7:
-> > > In file included from ./arch/arm64/include/asm/atomic.h:16:
-> > > In file included from ./arch/arm64/include/asm/cmpxchg.h:14:
-> > > In file included from ./arch/arm64/include/asm/lse.h:13:
-> > > In file included from ./include/linux/jump_label.h:117:
-> > > ./arch/arm64/include/asm/jump_label.h:24:20: error: expected a symbol reference in '.long' directive
-> > >                  "      .align          3                       \n\t"
-> > >                                                                   ^
-> > > <inline asm>:4:21: note: instantiated into assembly here
-> > >                 .long           1b - ., "" - .
-> > >                                            ^
-> > >
-> > > I'm assuming that I'm doing something wrong?
-> > 
-> > No, this particular issue will be fixed in clang 10:
-> > https://github.com/ClangBuiltLinux/linux/issues/500
-> > 
-> > Sami
-> 
-> I believe that it should be fixed with AOSP's Clang 9.0.8 or upstream
-> Clang 9.0.0.
+This is used to tune the threshold of disconnect
 
-OK, understood. You can add:
+Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+---
+v2~3: no changes
+---
+ drivers/phy/mediatek/phy-mtk-tphy.c | 17 +++++++++++++++--
+ 1 file changed, 15 insertions(+), 2 deletions(-)
 
-Reviewed-by: Andrew Murray <andrew.murray@arm.com>
-Tested-by: Andrew Murray <andrew.murray@arm.com>
+diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
+index cb2ed3b25068..5afe33621dbc 100644
+--- a/drivers/phy/mediatek/phy-mtk-tphy.c
++++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+@@ -60,6 +60,8 @@
+ #define U3P_USBPHYACR6		0x018
+ #define PA6_RG_U2_BC11_SW_EN		BIT(23)
+ #define PA6_RG_U2_OTG_VBUSCMP_EN	BIT(20)
++#define PA6_RG_U2_DISCTH		GENMASK(7, 4)
++#define PA6_RG_U2_DISCTH_VAL(x)	((0xf & (x)) << 4)
+ #define PA6_RG_U2_SQTH		GENMASK(3, 0)
+ #define PA6_RG_U2_SQTH_VAL(x)	(0xf & (x))
+ 
+@@ -300,6 +302,7 @@ struct mtk_phy_instance {
+ 	int eye_src;
+ 	int eye_vrt;
+ 	int eye_term;
++	int discth;
+ 	bool bc12_en;
+ };
+ 
+@@ -850,9 +853,12 @@ static void phy_parse_property(struct mtk_tphy *tphy,
+ 				 &instance->eye_vrt);
+ 	device_property_read_u32(dev, "mediatek,eye-term",
+ 				 &instance->eye_term);
+-	dev_dbg(dev, "bc12:%d, src:%d, vrt:%d, term:%d\n",
++	device_property_read_u32(dev, "mediatek,discth",
++				 &instance->discth);
++	dev_dbg(dev, "bc12:%d, src:%d, vrt:%d, term:%d, disc:%d\n",
+ 		instance->bc12_en, instance->eye_src,
+-		instance->eye_vrt, instance->eye_term);
++		instance->eye_vrt, instance->eye_term,
++		instance->discth);
+ }
+ 
+ static void u2_phy_props_set(struct mtk_tphy *tphy,
+@@ -888,6 +894,13 @@ static void u2_phy_props_set(struct mtk_tphy *tphy,
+ 		tmp |= PA1_RG_TERM_SEL_VAL(instance->eye_term);
+ 		writel(tmp, com + U3P_USBPHYACR1);
+ 	}
++
++	if (instance->discth) {
++		tmp = readl(com + U3P_USBPHYACR6);
++		tmp &= ~PA6_RG_U2_DISCTH;
++		tmp |= PA6_RG_U2_DISCTH_VAL(instance->discth);
++		writel(tmp, com + U3P_USBPHYACR6);
++	}
+ }
+ 
+ static int mtk_phy_init(struct phy *phy)
+-- 
+2.23.0
 
-> 
-> Cheers,
-> Nathan
 
 _______________________________________________
 linux-arm-kernel mailing list
