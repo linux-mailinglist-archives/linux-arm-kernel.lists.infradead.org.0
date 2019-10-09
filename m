@@ -2,56 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9ABEBD090C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:04:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECC5DD0919
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:05:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
 	Date:From:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=1DKM2/goVMCx91L70qQpNyVIEfz3nq//1ovB+WCsduk=; b=eWJQFQvhLP+TQP
-	bL3EV0Jkv1yxtUaOVjtNbX3G5T1gq0ct6awQOZxekLyj2jfjO1fBpkohcPTS3iRxejfjQ0bi7aHRS
-	I14m4N6kBEN3qsN6PRHdAtGY1nW68jwvk2weKTj5sjb0O6Dm1zaGXlWZdqYuUdZ2vgUFVeGdAlq+3
-	GS72jObCBfpiOE2xq9ZNL+o3tv9wlE7Tt5Bo2ANnAc/EAwac6253DIcjDSGP8JJLl4FTVyRE8CecO
-	bIs4CjCLN9u5hFXuGyw4aq3Vn+B+JRIMXJ8uuvzbhL43DpC+3Wwj95wAnLYk2TYIRtFgnGD7ZRm1+
-	ApW/63a6PrlzrSOQ+iKw==;
+	List-Owner; bh=c9QFmxz/uZa+iifhLets7FwCmSrxRnBO8i1vn8hJPM0=; b=AxBIFg7CENYHVn
+	M1pztSQjt2RzwTkyVXePMqliJ7efQDt/h0ELMeuPEQ5c1uF1vSWkR/8t4dhCPgysKqhAlJcMiPiKA
+	N0Yg4Bw0EnSxKRGeXbojjAsjm3G3vX5GjNMETIYbpZYI1SbJkV1KM9nKig2k+DZK2jvTJGE3L4M8M
+	EAhHDAyweoClbn/lLnd8JUfUp4/dVXcMZRJZX8W/Lvq0mejDk8/tt9kTQPpou45mjdb5YSRqa5gO2
+	8IM97e/3pTwdM7Qv1i7yn4ZnrdyABtM/mAZyLb3CCc+AHYPwxfB8CdAJ2K4BzepiIOwriqHpLQ98Y
+	WgFD3jaP9aD+VOeD36cQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI6xM-0003i4-1r; Wed, 09 Oct 2019 08:04:24 +0000
+	id 1iI6yL-0005e6-KN; Wed, 09 Oct 2019 08:05:25 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI6x2-0003hV-K6
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:04:09 +0000
+ id 1iI6xF-0003nB-In
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:04:19 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 694B0206B6;
- Wed,  9 Oct 2019 08:04:03 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BED46206B6;
+ Wed,  9 Oct 2019 08:04:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570608243;
- bh=yGlugcxKzatg4rasq07g3PL14/ipljbOqrSMtUaFMls=;
+ s=default; t=1570608257;
+ bh=9N4wjsNwWy5pxA3tMcpNOJ7L31TOL9xMfahEfdOjPOs=;
  h=Subject:To:Cc:From:Date:In-Reply-To:From;
- b=Y8MtN5AdVtInXUNu3+RHa89tcK88TD6i7mZLObc/5/cMGy9iQR/2rCil0CgAxzkYd
- gxnB6uHIN9YOuTHW9xG1FSj1mRFbMIa3E9YIogJT0vl4lNxwckZ9A7IaLsH9Owxhtl
- joNc5zcWttC63YFY/FH3mQR4FA0Vx/SWGR4mUiPY=
-Subject: Patch "arm64: add sysfs vulnerability show for meltdown" has been
- added to the 4.19-stable tree
-To: andre.przywara@arm.com, ard.biesheuvel@linaro.org, catalin.marinas@arm.com,
- gregkh@linuxfoundation.org, jeremy.linton@arm.com,
- linux-arm-kernel@lists.infradead.org, stefan.wahren@i2se.com,
- suzuki.poulose@arm.com, will.deacon@arm.com
+ b=vcZqrWYR4azgl+pt5tWUj92Iq8c0OzDzmBPI89+IxYvRY1TinxGbO9Epldt2CQZ1f
+ fGvZlI/IALuDJaxfpHbFwSNe5AHgprIv43FXWu1tIIq0gvWBUMwS/2TDBPxeXl4Rs1
+ WdFr9JuqNQ5x6q/ZPJ4LH3F9GiBSprUiHzdtnBSI=
+Subject: Patch "arm64: add sysfs vulnerability show for speculative store
+ bypass" has been added to the 4.19-stable tree
+To: ard.biesheuvel@linaro.org, gregkh@linuxfoundation.org,
+ jeremy.linton@arm.com, linux-arm-kernel@lists.infradead.org,
+ stefan.wahren@i2se.com, will.deacon@arm.com
 From: <gregkh@linuxfoundation.org>
 Date: Wed, 09 Oct 2019 10:04:01 +0200
-In-Reply-To: <20191008153930.15386-8-ard.biesheuvel@linaro.org>
-Message-ID: <157060824117478@kroah.com>
+In-Reply-To: <20191008153930.15386-15-ard.biesheuvel@linaro.org>
+Message-ID: <157060824188249@kroah.com>
 MIME-Version: 1.0
 X-stable: commit
 X-Patchwork-Hint: ignore 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_010407_587000_FF47E8DB 
-X-CRM114-Status: GOOD (  16.71  )
+X-CRM114-CacheID: sfid-20191009_010417_682370_3971013A 
+X-CRM114-Status: GOOD (  15.18  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -85,13 +84,13 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 This is a note to let you know that I've just added the patch titled
 
-    arm64: add sysfs vulnerability show for meltdown
+    arm64: add sysfs vulnerability show for speculative store bypass
 
 to the 4.19-stable tree which can be found at:
     http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
 
 The filename of the patch is:
-     arm64-add-sysfs-vulnerability-show-for-meltdown.patch
+     arm64-add-sysfs-vulnerability-show-for-speculative-store-bypass.patch
 and it can be found in the queue-4.19 subdirectory.
 
 If you, or anyone else, feels it should not be added to the stable tree,
@@ -100,150 +99,149 @@ please let <stable@vger.kernel.org> know about it.
 
 From foo@baz Wed 09 Oct 2019 10:02:11 AM CEST
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Tue,  8 Oct 2019 17:39:21 +0200
-Subject: arm64: add sysfs vulnerability show for meltdown
+Date: Tue,  8 Oct 2019 17:39:28 +0200
+Subject: arm64: add sysfs vulnerability show for speculative store bypass
 To: linux-arm-kernel@lists.infradead.org
-Cc: stable@vger.kernel.org, Jeremy Linton <jeremy.linton@arm.com>, Suzuki K Poulose <suzuki.poulose@arm.com>, Andre Przywara <andre.przywara@arm.com>, Catalin Marinas <catalin.marinas@arm.com>, Stefan Wahren <stefan.wahren@i2se.com>, Will Deacon <will.deacon@arm.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Message-ID: <20191008153930.15386-8-ard.biesheuvel@linaro.org>
+Cc: stable@vger.kernel.org, Jeremy Linton <jeremy.linton@arm.com>, Stefan Wahren <stefan.wahren@i2se.com>, Will Deacon <will.deacon@arm.com>
+Message-ID: <20191008153930.15386-15-ard.biesheuvel@linaro.org>
 
 From: Jeremy Linton <jeremy.linton@arm.com>
 
-[ Upstream commit 1b3ccf4be0e7be8c4bd8522066b6cbc92591e912 ]
+[ Upstream commit 526e065dbca6df0b5a130b84b836b8b3c9f54e21 ]
 
-We implement page table isolation as a mitigation for meltdown.
-Report this to userspace via sysfs.
+Return status based on ssbd_state and __ssb_safe. If the
+mitigation is disabled, or the firmware isn't responding then
+return the expected machine state based on a whitelist of known
+good cores.
 
-Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-Reviewed-by: Andre Przywara <andre.przywara@arm.com>
-Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+Given a heterogeneous machine, the overall machine vulnerability
+defaults to safe but is reset to unsafe when we miss the whitelist
+and the firmware doesn't explicitly tell us the core is safe.
+In order to make that work we delay transitioning to vulnerable
+until we know the firmware isn't responding to avoid a case
+where we miss the whitelist, but the firmware goes ahead and
+reports the core is not vulnerable. If all the cores in the
+machine have SSBS, then __ssb_safe will remain true.
+
 Tested-by: Stefan Wahren <stefan.wahren@i2se.com>
+Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
 Signed-off-by: Will Deacon <will.deacon@arm.com>
-Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 ---
- arch/arm64/kernel/cpufeature.c |   58 +++++++++++++++++++++++++++++++----------
- 1 file changed, 44 insertions(+), 14 deletions(-)
+ arch/arm64/kernel/cpu_errata.c |   42 +++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 42 insertions(+)
 
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -889,7 +889,7 @@ static bool has_cache_dic(const struct a
- 	return ctr & BIT(CTR_DIC_SHIFT);
- }
+--- a/arch/arm64/kernel/cpu_errata.c
++++ b/arch/arm64/kernel/cpu_errata.c
+@@ -233,6 +233,7 @@ static int detect_harden_bp_fw(void)
+ DEFINE_PER_CPU_READ_MOSTLY(u64, arm64_ssbd_callback_required);
  
--#ifdef CONFIG_UNMAP_KERNEL_AT_EL0
-+static bool __meltdown_safe = true;
- static int __kpti_forced; /* 0: not forced, >0: forced on, <0: forced off */
+ int ssbd_state __read_mostly = ARM64_SSBD_KERNEL;
++static bool __ssb_safe = true;
  
- static bool unmap_kernel_at_el0(const struct arm64_cpu_capabilities *entry,
-@@ -908,6 +908,16 @@ static bool unmap_kernel_at_el0(const st
- 		{ /* sentinel */ }
- 	};
- 	char const *str = "command line option";
-+	bool meltdown_safe;
-+
-+	meltdown_safe = is_midr_in_range_list(read_cpuid_id(), kpti_safe_list);
-+
-+	/* Defer to CPU feature registers */
-+	if (has_cpuid_feature(entry, scope))
-+		meltdown_safe = true;
-+
-+	if (!meltdown_safe)
-+		__meltdown_safe = false;
+ static const struct ssbd_options {
+ 	const char	*str;
+@@ -336,6 +337,7 @@ static bool has_ssbd_mitigation(const st
+ 	struct arm_smccc_res res;
+ 	bool required = true;
+ 	s32 val;
++	bool this_cpu_safe = false;
  
- 	/*
- 	 * For reasons that aren't entirely clear, enabling KPTI on Cavium
-@@ -919,6 +929,19 @@ static bool unmap_kernel_at_el0(const st
- 		__kpti_forced = -1;
+ 	WARN_ON(scope != SCOPE_LOCAL_CPU || preemptible());
+ 
+@@ -344,8 +346,14 @@ static bool has_ssbd_mitigation(const st
+ 		goto out_printmsg;
  	}
  
-+	/* Useful for KASLR robustness */
-+	if (IS_ENABLED(CONFIG_RANDOMIZE_BASE) && kaslr_offset() > 0) {
-+		if (!__kpti_forced) {
-+			str = "KASLR";
-+			__kpti_forced = 1;
-+		}
-+	}
++	/* delay setting __ssb_safe until we get a firmware response */
++	if (is_midr_in_range_list(read_cpuid_id(), entry->midr_range_list))
++		this_cpu_safe = true;
 +
-+	if (!IS_ENABLED(CONFIG_UNMAP_KERNEL_AT_EL0)) {
-+		pr_info_once("kernel page table isolation disabled by kernel configuration\n");
-+		return false;
-+	}
-+
- 	/* Forced? */
- 	if (__kpti_forced) {
- 		pr_info_once("kernel page table isolation forced %s by %s\n",
-@@ -926,18 +949,10 @@ static bool unmap_kernel_at_el0(const st
- 		return __kpti_forced > 0;
+ 	if (psci_ops.smccc_version == SMCCC_VERSION_1_0) {
+ 		ssbd_state = ARM64_SSBD_UNKNOWN;
++		if (!this_cpu_safe)
++			__ssb_safe = false;
+ 		return false;
  	}
  
--	/* Useful for KASLR robustness */
--	if (IS_ENABLED(CONFIG_RANDOMIZE_BASE))
--		return true;
--
--	/* Don't force KPTI for CPUs that are not vulnerable */
--	if (is_midr_in_range_list(read_cpuid_id(), kpti_safe_list))
--		return false;
--
--	/* Defer to CPU feature registers */
--	return !has_cpuid_feature(entry, scope);
-+	return !meltdown_safe;
+@@ -362,6 +370,8 @@ static bool has_ssbd_mitigation(const st
+ 
+ 	default:
+ 		ssbd_state = ARM64_SSBD_UNKNOWN;
++		if (!this_cpu_safe)
++			__ssb_safe = false;
+ 		return false;
+ 	}
+ 
+@@ -370,14 +380,18 @@ static bool has_ssbd_mitigation(const st
+ 	switch (val) {
+ 	case SMCCC_RET_NOT_SUPPORTED:
+ 		ssbd_state = ARM64_SSBD_UNKNOWN;
++		if (!this_cpu_safe)
++			__ssb_safe = false;
+ 		return false;
+ 
++	/* machines with mixed mitigation requirements must not return this */
+ 	case SMCCC_RET_NOT_REQUIRED:
+ 		pr_info_once("%s mitigation not required\n", entry->desc);
+ 		ssbd_state = ARM64_SSBD_MITIGATED;
+ 		return false;
+ 
+ 	case SMCCC_RET_SUCCESS:
++		__ssb_safe = false;
+ 		required = true;
+ 		break;
+ 
+@@ -387,6 +401,8 @@ static bool has_ssbd_mitigation(const st
+ 
+ 	default:
+ 		WARN_ON(1);
++		if (!this_cpu_safe)
++			__ssb_safe = false;
+ 		return false;
+ 	}
+ 
+@@ -427,6 +443,14 @@ out_printmsg:
+ 	return required;
  }
  
-+#ifdef CONFIG_UNMAP_KERNEL_AT_EL0
- static void
- kpti_install_ng_mappings(const struct arm64_cpu_capabilities *__unused)
- {
-@@ -962,6 +977,12 @@ kpti_install_ng_mappings(const struct ar
++/* known invulnerable cores */
++static const struct midr_range arm64_ssb_cpus[] = {
++	MIDR_ALL_VERSIONS(MIDR_CORTEX_A35),
++	MIDR_ALL_VERSIONS(MIDR_CORTEX_A53),
++	MIDR_ALL_VERSIONS(MIDR_CORTEX_A55),
++	{},
++};
++
+ #ifdef CONFIG_ARM64_ERRATUM_1463225
+ DEFINE_PER_CPU(int, __in_cortex_a76_erratum_1463225_wa);
  
- 	return;
- }
-+#else
-+static void
-+kpti_install_ng_mappings(const struct arm64_cpu_capabilities *__unused)
-+{
-+}
-+#endif	/* CONFIG_UNMAP_KERNEL_AT_EL0 */
- 
- static int __init parse_kpti(char *str)
- {
-@@ -975,7 +996,6 @@ static int __init parse_kpti(char *str)
- 	return 0;
- }
- early_param("kpti", parse_kpti);
--#endif	/* CONFIG_UNMAP_KERNEL_AT_EL0 */
- 
- #ifdef CONFIG_ARM64_HW_AFDBM
- static inline void __cpu_enable_hw_dbm(void)
-@@ -1196,7 +1216,6 @@ static const struct arm64_cpu_capabiliti
- 		.field_pos = ID_AA64PFR0_EL0_SHIFT,
- 		.min_field_value = ID_AA64PFR0_EL0_32BIT_64BIT,
+@@ -748,6 +772,7 @@ const struct arm64_cpu_capabilities arm6
+ 		.capability = ARM64_SSBD,
+ 		.type = ARM64_CPUCAP_LOCAL_CPU_ERRATUM,
+ 		.matches = has_ssbd_mitigation,
++		.midr_range_list = arm64_ssb_cpus,
  	},
--#ifdef CONFIG_UNMAP_KERNEL_AT_EL0
+ #ifdef CONFIG_ARM64_ERRATUM_1463225
  	{
- 		.desc = "Kernel page table isolation (KPTI)",
- 		.capability = ARM64_UNMAP_KERNEL_AT_EL0,
-@@ -1212,7 +1231,6 @@ static const struct arm64_cpu_capabiliti
- 		.matches = unmap_kernel_at_el0,
- 		.cpu_enable = kpti_install_ng_mappings,
- 	},
--#endif
- 	{
- 		/* FP/SIMD is not implemented */
- 		.capability = ARM64_HAS_NO_FPSIMD,
-@@ -1853,3 +1871,15 @@ void cpu_clear_disr(const struct arm64_c
- 	/* Firmware may have left a deferred SError in this register. */
- 	write_sysreg_s(0, SYS_DISR_EL1);
+@@ -778,3 +803,20 @@ ssize_t cpu_show_spectre_v2(struct devic
+ 
+ 	return sprintf(buf, "Vulnerable\n");
  }
 +
-+ssize_t cpu_show_meltdown(struct device *dev, struct device_attribute *attr,
-+			  char *buf)
++ssize_t cpu_show_spec_store_bypass(struct device *dev,
++		struct device_attribute *attr, char *buf)
 +{
-+	if (__meltdown_safe)
++	if (__ssb_safe)
 +		return sprintf(buf, "Not affected\n");
 +
-+	if (arm64_kernel_unmapped_at_el0())
-+		return sprintf(buf, "Mitigation: PTI\n");
++	switch (ssbd_state) {
++	case ARM64_SSBD_KERNEL:
++	case ARM64_SSBD_FORCE_ENABLE:
++		if (IS_ENABLED(CONFIG_ARM64_SSBD))
++			return sprintf(buf,
++			    "Mitigation: Speculative Store Bypass disabled via prctl\n");
++	}
 +
 +	return sprintf(buf, "Vulnerable\n");
 +}
