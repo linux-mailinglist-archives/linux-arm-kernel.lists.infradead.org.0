@@ -2,58 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBBCDD0CD0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 12:29:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 756D3D0CD8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 12:31:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=pqMUfnoDgWUsuLIJd49zQpnjR9nnW+4TIWCwFoi/EcI=; b=Kpo
-	xTOxaT0SG27l7zUi8LuvncOVtgJ1/8yn2Rt3M8d67EuRIaoon9R3PYPlIkZav4tfHk+8lCgtIvagw
-	uxkObkHHQzXb1UBOP9bh8zcoconOh5a9RstL1MMBzHgIM0GnsQL+Qap5BxrfU/BVDsoA0xvUhXYwD
-	aTUOYJFM1Kjlu3Fqhamx/DFH4/dux7+pg8iJXZ+x2wDF42oJSTzJweJjvidWvhTN8bNSvjvPrEN6T
-	RoRk0UmPJUAopaNERVhexwZu0HXT1MejTTwjUe8R4+OU/4qKAD4z9up0RrJmpQCBpwbHkun0G68n+
-	0+LJJf7w5E35gcVLruI8iP+9GM3RE4w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=S/yiYF2QcoU5rZPTSyP9xgL5xCnJfhcD84BSU59h0Dw=; b=nWBEoQ6WLzcF6b
+	H8vs+H0Q0WEH3Uz6+Pb0fkEORZzJlfwCUUodSJsg0U4Hl1ctzEaYWEuzv9EtLAGmv+6g5xbYjGfFw
+	/k4Jc6jDWRe2Eo0PIDHk1A3/JY2iT9SHw43Da8FyCYgbhpngG0zFjVXTbspQpcuQdmIM0iHH3iSCI
+	zygxIqPaS2+C2Ty0U8upBDeG61tQcEQ88zmy+UXFn9fQkJ/bpqrPA47CGZ0ejctp3ZKLotRkP/wCh
+	rq4S0rALuAU3Ee6lpVLZ8dpcLeu8YHlV+LxVIsK4hdMwUScuXWX6NM2yr8ScmlVrj5hJuEMlQk8kw
+	XWUStGWmOzF3J+i4A4Hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI9DR-0003rt-Jc; Wed, 09 Oct 2019 10:29:09 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1iI9G1-0005lf-Ed; Wed, 09 Oct 2019 10:31:49 +0000
+Received: from mail-qk1-f193.google.com ([209.85.222.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI9DK-0003rU-U4
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 10:29:04 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 89F322000C8;
- Wed,  9 Oct 2019 12:29:00 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id EE0E5200114;
- Wed,  9 Oct 2019 12:28:52 +0200 (CEST)
-Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 3193C402DA;
- Wed,  9 Oct 2019 18:28:44 +0800 (SGT)
-From: Biwen Li <biwen.li@nxp.com>
-To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
- festevam@gmail.com, linux-imx@nxp.com, wsa@the-dreams.de,
- leoyang.li@nxp.com, aisheng.dong@nxp.com, xiaoning.wang@nxp.com
-Subject: [RESEND v2] i2c: imx: support slave mode for imx I2C driver
-Date: Wed,  9 Oct 2019 18:18:02 +0800
-Message-Id: <20191009101802.19309-1-biwen.li@nxp.com>
-X-Mailer: git-send-email 2.9.5
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1iI9Fu-0005lJ-1J
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 10:31:43 +0000
+Received: by mail-qk1-f193.google.com with SMTP id 201so1652821qkd.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 09 Oct 2019 03:31:41 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=IynHDBfxMDPyPdpwxI2/CB0VETKSyQYaM4R/82+/Dec=;
+ b=WnPRsXi21UnFsL8oRJtKCiZ3gBk3jxXET0GbmicOJ6lp2FgLMNYJ54mkkL2eB2Jj8p
+ p1Jfyc8KEW4fRnfC4bMQmlTZ0IbvJsozL8UbZCVtgpzwoZ9+vngTr13VhugwwmlXtXbQ
+ HTIKqzlVNdYPMAaLobeTjhs7tleabsON0vZ2/zdUgS2MDBq7L9NOn+ClSbJLD8mYAyi5
+ ExR2M+2UZyKNJihMNpJzJWluwvEFYNwpBH9Rd2fMvtnTpVcRPpQjLEXjjXc0NfdyOBRf
+ 8C0xKyehOh3FuB8RavuIqWXa3QkkMlpETPvM6QZe8I131YpdujfCY5u84j6YNgGPJClz
+ 9+qw==
+X-Gm-Message-State: APjAAAV3Ky2/nP5qYnb8ECCv5LLmIbwuDdQRehStZ7EMx5vEe5/9DT/H
+ FpFlwbBq7W7ZeEdcdxk5S+FjPPbYTyriIrrJhdQ=
+X-Google-Smtp-Source: APXvYqwW9AMGcNVIGrSAOony1Y7+bMUW9dg5qvjU4FTXJfC5Efg8YaK/QfYVLj4G9fYvR5Lk6DkWggHYkve0bU3C5Iw=
+X-Received: by 2002:a05:620a:218f:: with SMTP id
+ g15mr2748609qka.3.1570617100507; 
+ Wed, 09 Oct 2019 03:31:40 -0700 (PDT)
+MIME-Version: 1.0
+References: <20191007214439.27891-1-sebastian@breakpoint.cc>
+ <CAK8P3a13AOKm1epqAtP9329Ai2Bh+H18fOfsqO+deCLTHoYRwA@mail.gmail.com>
+ <56004687-af3e-3b8b-c9b5-21cd653db12b@redhat.com>
+ <CAK8P3a0UH8_pSPbEd7fRjws-TZ=+q-gLQZXvEOtoX9YtZY9tmA@mail.gmail.com>
+ <20191009084610.GG2311@hirez.programming.kicks-ass.net>
+ <CAK8P3a3--khxZgWNa3uH8g5PsP7y8PrgpdktEV49UrOhFCX8jQ@mail.gmail.com>
+ <20191009093118.GJ2328@hirez.programming.kicks-ass.net>
+In-Reply-To: <20191009093118.GJ2328@hirez.programming.kicks-ass.net>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 9 Oct 2019 12:31:24 +0200
+Message-ID: <CAK8P3a0W2+oayv8D=DBqDaeR+dp2QsjhigKevT_D6NLtGPMWxw@mail.gmail.com>
+Subject: Re: [RFC PATCH 0/3] Queued spinlocks/RW-locks for ARM
+To: Peter Zijlstra <peterz@infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_032903_248326_5C4D27AD 
-X-CRM114-Status: GOOD (  12.67  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191009_033142_078219_06484710 
+X-CRM114-Status: GOOD (  14.03  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.222.193 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.193 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,241 +88,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Biwen Li <biwen.li@nxp.com>, xiaobo.xie@nxp.com,
- linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org, jiafei.pan@nxp.com,
- linux-arm-kernel@lists.infradead.org, laurentiu.tudor@nxp.com
-MIME-Version: 1.0
+Cc: Russell King <linux@armlinux.org.uk>,
+ Sebastian Andrzej Siewior <sebastian@breakpoint.cc>,
+ Ingo Molnar <mingo@redhat.com>, Waiman Long <longman@redhat.com>,
+ Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch supports slave mode for imx I2C driver
+On Wed, Oct 9, 2019 at 11:31 AM Peter Zijlstra <peterz@infradead.org> wrote:
+> On Wed, Oct 09, 2019 at 10:57:25AM +0200, Arnd Bergmann wrote:
+> > On Wed, Oct 9, 2019 at 10:46 AM Peter Zijlstra <peterz@infradead.org> wrote:
+> > > Why is this not in __xchg() as a variant for case 2 ?
+> >
+> > ldrexh/strexh are instructions that are only available on SMP-capable
+> > architecture revisions (ARMv6K or higher). When building a kernel
+> > that runs both on pre-K ARMv6 uniprocessor systems and on later
+> > SMP systems, __xchg() can only do 32-bit  ldrex/strex.
+>
+> You can do u16 xchg using a u32 ll/sc, see openrisc's xchg_small().
 
-Signed-off-by: Biwen Li <biwen.li@nxp.com>
----
-Change in v2:
-	- remove MACRO CONFIG_I2C_SLAVE
+Ah, right. That would be much nicer than my smp_xchg16_relaxed()
+hack to get the corner case working, as it avoids the ugly special
+case in qspinlock.h.
 
- drivers/i2c/busses/i2c-imx.c | 180 ++++++++++++++++++++++++++++++++---
- 1 file changed, 166 insertions(+), 14 deletions(-)
+Would this still have comparable performance characteristics?
+I assume the 16-bit xchg_relaxed() in qspinlock.c was meant as
+an optimization for x86 and other cmpxchg based architectures but
+doesn't actually help on ll/sc based architectures that get the
+reservation on the whole cache line anyway?
 
-diff --git a/drivers/i2c/busses/i2c-imx.c b/drivers/i2c/busses/i2c-imx.c
-index a3b61336fe55..d9858bc63656 100644
---- a/drivers/i2c/busses/i2c-imx.c
-+++ b/drivers/i2c/busses/i2c-imx.c
-@@ -203,6 +203,7 @@ struct imx_i2c_struct {
- 	struct pinctrl_state *pinctrl_pins_gpio;
- 
- 	struct imx_i2c_dma	*dma;
-+	struct i2c_client	*slave;
- };
- 
- static const struct imx_i2c_hwdata imx1_i2c_hwdata = {
-@@ -588,23 +589,38 @@ static void i2c_imx_stop(struct imx_i2c_struct *i2c_imx)
- 	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
- }
- 
--static irqreturn_t i2c_imx_isr(int irq, void *dev_id)
-+/* Clear interrupt flag bit */
-+static void i2c_imx_clr_if_bit(struct imx_i2c_struct *i2c_imx)
- {
--	struct imx_i2c_struct *i2c_imx = dev_id;
--	unsigned int temp;
-+	unsigned int status;
- 
--	temp = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
--	if (temp & I2SR_IIF) {
--		/* save status register */
--		i2c_imx->i2csr = temp;
--		temp &= ~I2SR_IIF;
--		temp |= (i2c_imx->hwdata->i2sr_clr_opcode & I2SR_IIF);
--		imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2SR);
--		wake_up(&i2c_imx->queue);
--		return IRQ_HANDLED;
--	}
-+	status = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
-+	status &= ~I2SR_IIF;
-+	status |= (i2c_imx->hwdata->i2sr_clr_opcode & I2SR_IIF);
-+	imx_i2c_write_reg(status, i2c_imx, IMX_I2C_I2SR);
-+}
- 
--	return IRQ_NONE;
-+/* Clear arbitration lost bit */
-+static void i2c_imx_clr_al_bit(struct imx_i2c_struct *i2c_imx)
-+{
-+	unsigned int status;
-+
-+	status = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
-+	status &= ~I2SR_IAL;
-+	imx_i2c_write_reg(status, i2c_imx, IMX_I2C_I2SR);
-+}
-+
-+static irqreturn_t i2c_imx_master_isr(struct imx_i2c_struct *i2c_imx)
-+{
-+	unsigned int status;
-+
-+	/* Save status register */
-+	status = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
-+	i2c_imx->i2csr = status | I2SR_IIF;
-+
-+	wake_up(&i2c_imx->queue);
-+
-+	return IRQ_HANDLED;
- }
- 
- static int i2c_imx_dma_write(struct imx_i2c_struct *i2c_imx,
-@@ -1048,11 +1064,147 @@ static u32 i2c_imx_func(struct i2c_adapter *adapter)
- 		| I2C_FUNC_SMBUS_READ_BLOCK_DATA;
- }
- 
-+static void i2c_imx_slave_init(struct imx_i2c_struct *i2c_imx)
-+{
-+	unsigned int temp;
-+
-+	dev_dbg(&i2c_imx->adapter.dev, "<%s>\n", __func__);
-+
-+	/* Set slave addr. */
-+	imx_i2c_write_reg((i2c_imx->slave->addr << 1), i2c_imx, IMX_I2C_IADR);
-+
-+	/* Disable i2c module */
-+	temp = i2c_imx->hwdata->i2cr_ien_opcode ^ I2CR_IEN;
-+	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
-+
-+	/* Reset status register */
-+	imx_i2c_write_reg(i2c_imx->hwdata->i2sr_clr_opcode, i2c_imx,
-+			  IMX_I2C_I2SR);
-+
-+	/* Enable module and enable interrupt from i2c module */
-+	temp = i2c_imx->hwdata->i2cr_ien_opcode | I2CR_IIEN;
-+	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
-+
-+	/* Wait controller to be stable */
-+	usleep_range(50, 150);
-+}
-+
-+static irqreturn_t i2c_imx_slave_isr(struct imx_i2c_struct *i2c_imx)
-+{
-+	unsigned int status, ctl;
-+	u8 value;
-+
-+	if (!i2c_imx->slave) {
-+		dev_err(&i2c_imx->adapter.dev, "cannot deal with slave irq,i2c_imx->slave is null");
-+		return IRQ_NONE;
-+	}
-+
-+	status = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
-+	ctl = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2CR);
-+	if (status & I2SR_IAL) { /* Arbitration lost */
-+		i2c_imx_clr_al_bit(i2c_imx);
-+	} else if (status & I2SR_IAAS) { /* Addressed as a slave */
-+		if (status & I2SR_SRW) { /* Master wants to read from us*/
-+			dev_dbg(&i2c_imx->adapter.dev, "read requested");
-+			i2c_slave_event(i2c_imx->slave, I2C_SLAVE_READ_REQUESTED, &value);
-+
-+			/* Slave transmit */
-+			ctl |= I2CR_MTX;
-+			imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
-+
-+			/* Send data */
-+			imx_i2c_write_reg(value, i2c_imx, IMX_I2C_I2DR);
-+		} else { /* Master wants to write to us */
-+			dev_dbg(&i2c_imx->adapter.dev, "write requested");
-+			i2c_slave_event(i2c_imx->slave,	I2C_SLAVE_WRITE_REQUESTED, &value);
-+
-+			/* Slave receive */
-+			ctl &= ~I2CR_MTX;
-+			imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
-+			/* Dummy read */
-+			imx_i2c_read_reg(i2c_imx, IMX_I2C_I2DR);
-+		}
-+	} else if (!(ctl & I2CR_MTX)) { /* Receive mode */
-+			if (status & I2SR_IBB) { /* No STOP signal detected */
-+				ctl &= ~I2CR_MTX;
-+				imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
-+
-+				value = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2DR);
-+				i2c_slave_event(i2c_imx->slave,	I2C_SLAVE_WRITE_RECEIVED, &value);
-+			} else { /* STOP signal is detected */
-+				dev_dbg(&i2c_imx->adapter.dev,
-+					"STOP signal detected");
-+				i2c_slave_event(i2c_imx->slave, I2C_SLAVE_STOP, &value);
-+			}
-+	} else if (!(status & I2SR_RXAK)) {	/* Transmit mode received ACK */
-+		ctl |= I2CR_MTX;
-+		imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
-+
-+		i2c_slave_event(i2c_imx->slave,	I2C_SLAVE_READ_PROCESSED, &value);
-+
-+		imx_i2c_write_reg(value, i2c_imx, IMX_I2C_I2DR);
-+	} else { /* Transmit mode received NAK */
-+		ctl &= ~I2CR_MTX;
-+		imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
-+		imx_i2c_read_reg(i2c_imx, IMX_I2C_I2DR);
-+	}
-+	return IRQ_HANDLED;
-+}
-+
-+static int i2c_imx_reg_slave(struct i2c_client *client)
-+{
-+	struct imx_i2c_struct *i2c_imx = i2c_get_adapdata(client->adapter);
-+
-+	if (i2c_imx->slave)
-+		return -EBUSY;
-+
-+	dev_dbg(&i2c_imx->adapter.dev, "<%s>\n", __func__);
-+	i2c_imx->slave = client;
-+
-+	i2c_imx_slave_init(i2c_imx);
-+
-+	return 0;
-+}
-+
-+static int i2c_imx_unreg_slave(struct i2c_client *client)
-+{
-+	struct imx_i2c_struct *i2c_imx = i2c_get_adapdata(client->adapter);
-+
-+	if (!i2c_imx->slave)
-+		return -EINVAL;
-+
-+	i2c_imx->slave = NULL;
-+
-+	return 0;
-+}
-+
- static const struct i2c_algorithm i2c_imx_algo = {
- 	.master_xfer	= i2c_imx_xfer,
- 	.functionality	= i2c_imx_func,
-+	.reg_slave	= i2c_imx_reg_slave,
-+	.unreg_slave	= i2c_imx_unreg_slave,
- };
- 
-+static irqreturn_t i2c_imx_isr(int irq, void *dev_id)
-+{
-+	struct imx_i2c_struct *i2c_imx = dev_id;
-+	unsigned int status, ctl;
-+	irqreturn_t irq_status = IRQ_NONE;
-+
-+	status = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
-+	ctl = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2CR);
-+
-+	if (status & I2SR_IIF) {
-+		i2c_imx_clr_if_bit(i2c_imx);
-+		if (ctl & I2CR_MSTA)
-+			irq_status = i2c_imx_master_isr(i2c_imx);
-+		else
-+			irq_status = i2c_imx_slave_isr(i2c_imx);
-+	}
-+
-+	return irq_status;
-+}
-+
- static int i2c_imx_probe(struct platform_device *pdev)
- {
- 	struct imx_i2c_struct *i2c_imx;
--- 
-2.17.1
-
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
