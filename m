@@ -2,63 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA7DED086D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 09:37:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 248F8D0876
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 09:40:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h2Y7/ocnKpBdZIa1RqNYkRaqrBD0xjPhIYjP77QSp9M=; b=qvdISbJltR0d7i
-	2F7ypaPp16Qea5fPOFWk6nra4ejiUr45O3qL2YR3w6rnRlqp2Y7BflKPQ9+paHIv6duNfMhAc2Occ
-	eihE4tdgv1xDSt+wui5mgWTt59KUKRsTjzQO8M+S8Rh19nNZYA3PK2aVmMnWKcoGG2wjKQrGveiEb
-	FsbRrJq6IDz0mnM4vdYW2bXuOMI4/XanuDtrz8E2dvvyBlV7haypFxkEaqCkTdevvwp14YF2UTycc
-	BIevX8eTVwUfrP2j3Yz2RTlA4S59gnhDYgondzMYYxtBw6S1tR9lnOM0/mwVP0Ig68joLSrhgTZwf
-	XDq2bj98Y0lXndRbkxsw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Vwmx/iRpz2452cAh/OGJAvDm02EFQwhrVOiZGhS/5jU=; b=dUv
+	GRePtrT7757rC3rQ2/SSHSWgS+ObxapQpmCNbblw1ko3tHh3b4LHivUcMI9sxcwP7qly/s+oIQ1l7
+	FcJX8CAD2SB+BE/kbstOsMZryeV1IK1D+8+T8jBACL3IVZzMAhAG4SecpZXstDyE7MZT/MdP2GrX/
+	qf4tTuIpgo7qkY+nfVTWOZCZFoCoC0m4mIq3wifUDelpkr1vTPp3dMx1saEKWhxXUOeYdEYhYpa1o
+	WwkTS6ptu/Nmuu5OQt46lbYR0W7AFixdrm7t0hCbwUCTkgbUUnbv3uLznfFhyfppHPv17zSYWudwc
+	+2QABd+m9IFwh+vKn89rtV2Hvzi+xuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI6XX-000668-N9; Wed, 09 Oct 2019 07:37:43 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iI6a7-0007lw-Gj; Wed, 09 Oct 2019 07:40:23 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI6XF-0005xH-R3
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 07:37:27 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1iI6XB-0003fs-8a; Wed, 09 Oct 2019 09:37:21 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1iI6X7-0004RL-ER; Wed, 09 Oct 2019 09:37:17 +0200
-Date: Wed, 9 Oct 2019 09:37:17 +0200
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Anson Huang <anson.huang@nxp.com>
-Subject: Re: [PATCH] tty: serial: imx: Only get second/third IRQ when there
- is more than one IRQ
-Message-ID: <20191009073717.qlr2svma5fiaf4ad@pengutronix.de>
-References: <1570601911-9162-1-git-send-email-Anson.Huang@nxp.com>
- <20191009065315.wgdvmkv6skteyul4@pengutronix.de>
- <DB3PR0402MB39165F9CE876772F8F94F187F5950@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <20191009071403.ugd2wuac6ue5zsd6@pengutronix.de>
- <DB3PR0402MB39161E02A9D042948B71FDCDF5950@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <DB3PR0402MB39161E02A9D042948B71FDCDF5950@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+ id 1iI6Zw-0007lP-N2
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 07:40:14 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E08CB1A09EF;
+ Wed,  9 Oct 2019 09:40:10 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0E29A1A09F3;
+ Wed,  9 Oct 2019 09:40:06 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id CA114402B1;
+ Wed,  9 Oct 2019 15:39:59 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: wim@linux-watchdog.org, linux@roeck-us.net, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ linux-watchdog@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] watchdog: imx_sc_wdt: Pretimeout should follow SCU firmware
+ format
+Date: Wed,  9 Oct 2019 15:37:47 +0800
+Message-Id: <1570606667-16729-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_003725_887946_3C2ABDD0 
-X-CRM114-Status: GOOD (  21.67  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191009_004012_891697_8CC2F771 
+X-CRM114-Status: UNSURE (   7.30  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -72,76 +69,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "festevam@gmail.com" <festevam@gmail.com>,
- "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>,
- Andy Shevchenko <andy.shevchenko@gmail.com>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "jslaby@suse.com" <jslaby@suse.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 09, 2019 at 07:24:57AM +0000, Anson Huang wrote:
-> > On Wed, Oct 09, 2019 at 06:58:24AM +0000, Anson Huang wrote:
-> > > > The patch is fine given the changed behaviour of platform_get_irq. I
-> > > > wonder if it is sensible to introduce a variant of platform_get_irq=
- (say
-> > > > platform_get_irq_nowarn) that behaves like __platform_get_irq does t
-> > > > Then the imx driver would just call platform_get_irq_nowarn without
-> > > > having to check the number of available irqs first.
-> > >
-> > > Agreed, it would be nice if we can fix this from the API level, this
-> > > is to save many patches from various drivers side, let me know if
-> > > agreement is reached and I will do the patch.
-> > =
+SCU firmware calculates pretimeout based on current time stamp
+instead of watchdog timeout stamp, need to convert the pretimeout
+to SCU firmware's timeout value.
 
-> > I wouldn't expect that most callers actually want an error message and =
-so
-> > these need a different patch (i.e. dropping the error message by the ca=
-ller).
-> > This type of patch is fine and the normal load when something is
-> > consolidated.
-> > =
+Fixes: 15f7d7fc5542 ("watchdog: imx_sc: Add pretimeout support")
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ drivers/watchdog/imx_sc_wdt.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
 
-> > Which other drivers do you have on your radar that don't want an error
-> > message if platform_get_irq() fails?
-> =
+diff --git a/drivers/watchdog/imx_sc_wdt.c b/drivers/watchdog/imx_sc_wdt.c
+index 7ea5cf5..8ed89f0 100644
+--- a/drivers/watchdog/imx_sc_wdt.c
++++ b/drivers/watchdog/imx_sc_wdt.c
+@@ -99,8 +99,14 @@ static int imx_sc_wdt_set_pretimeout(struct watchdog_device *wdog,
+ {
+ 	struct arm_smccc_res res;
+ 
++	/*
++	 * SCU firmware calculates pretimeout based on current time
++	 * stamp instead of watchdog timeout stamp, need to convert
++	 * the pretimeout to SCU firmware's timeout value.
++	 */
+ 	arm_smccc_smc(IMX_SIP_TIMER, IMX_SIP_TIMER_SET_PRETIME_WDOG,
+-		      pretimeout * 1000, 0, 0, 0, 0, 0, &res);
++		      (wdog->timeout - pretimeout) * 1000, 0, 0, 0,
++		      0, 0, &res);
+ 	if (res.a0)
+ 		return -EACCES;
+ 
+-- 
+2.7.4
 
-> I did NOT mean drivers don't want an error when getting irq failed, but I=
- just
-> agree that introducing another API with nowarn as you mentioned upper, th=
-en
-> i.MX driver can call it. For now, the FEC driver also have many such erro=
-r message,
-> we will fix later.
-> =
-
-> So if the API with nowarn is added, then I can change the API call in som=
-e i.MX driver
-> instead of getting irq_count first. Do you think I should add the nowarn =
-API and redo
-> this patch to call it? =
-
-
-Having a patch (or a set of patches) is probably helpful to get forward
-here, yes. You have my blessing to create a suggestion. (Not that you
-actually need that :-)
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
 
 _______________________________________________
 linux-arm-kernel mailing list
