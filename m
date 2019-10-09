@@ -2,85 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA277D07AA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 08:52:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD55FD07AD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 08:53:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4Svjkj28t19g1BBVENAGToKkBz0vJ/FUBo078Duj/ho=; b=mUlz18XlQ027f2mnf9/0+R+cW
-	3h990CPMs3SHgT/FpFlH4egG2bD8ovNw0t09n79AP9tQLQf1YwZ0qJREgDPPHFitMXgsUZYNH/sNG
-	+7Eg8+frVyj5i0YORSmg0zKz67ByNeN8BQADTXydwGD9TYcvvHqFWUbpAJ9B2WL3D3MbXF34u0zAv
-	ymEB1zVFXuVjXo9KOrkZdA7e+sRQp02eFBIjRpR1934l3S1+h5FIquZ1zHM9dc4vCGFLWmodRxkv+
-	gpSmFiL4LmYfsZM8eMLFSM6sUazUj56O+3kqkOwZdT7wjM+nIRIT6v5eECmh0enJ1R/gMB+pVwaLF
-	StzH4vNxQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=VuMhZ2fWsd8S3XWDam7mMN1GLpFlfWyRgsLipsx2s8E=; b=QtLuF12vEoPodI
+	0aYiSkrk7bqd4lrnrCTW7Nh2n33JY8oeGBibV8ydlijrsugCGeyNAE5KG+wUW7eAqlc+Y25E3fORD
+	CXZ080h7jp/pCGTqAt0b+ZR4GpG0Vh7BCZaltPAtkIseDzKpg+QXNRduvO+4wbcY+noIa7ZvhacJ3
+	QzGDZlG7+BAm+tGUPhwBnoh72T9dxSZbZlqv7fJseSQXyPTIDlGEvG48HvUSyITkoAUPVCSa4MuO1
+	kBaXrz+V8gE1juQ64069snCo8EHGkWZHc9hi/5jQiuvSVQfOlUsvONIeTeohkiQSgughNKDnapXxw
+	1YMUvDoApP+nQbuQZidA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI5q8-0002S8-43; Wed, 09 Oct 2019 06:52:52 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1iI5ql-0002hN-Kh; Wed, 09 Oct 2019 06:53:31 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI5q1-0002Re-Ey
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 06:52:46 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x996qf77116209;
- Wed, 9 Oct 2019 01:52:41 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1570603961;
- bh=ELz4phqV0IVr4qbxwKXEXSVLL2qzr2qRxeZLJHyS5tA=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=hmka772CcFmuERw+ck/csUD1tnEodi65nhVIt9Wk1MybE6PthkIYuwCHfh97PPDpP
- eLotFfTk19YypWiZSL9v4uZ/Mk1X8A81eBz3QDXOP5fpNstHKJtMmTN6EIJ6mataUP
- BlBfMMF0iinPdYcK+2pQmo1paQNTXDMKog0l5o20=
-Received: from DLEE112.ent.ti.com (dlee112.ent.ti.com [157.170.170.23])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id x996qfLC034608;
- Wed, 9 Oct 2019 01:52:41 -0500
-Received: from DLEE115.ent.ti.com (157.170.170.26) by DLEE112.ent.ti.com
- (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Wed, 9 Oct
- 2019 01:52:37 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Wed, 9 Oct 2019 01:52:40 -0500
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x996qbmb028779;
- Wed, 9 Oct 2019 01:52:38 -0500
-Subject: Re: [PATCHv8 1/9] dt-bindings: omap: add new binding for PRM instances
-To: Sebastian Reichel <sre@kernel.org>
-References: <20191008125544.20679-1-t-kristo@ti.com>
- <20191008125544.20679-2-t-kristo@ti.com>
- <20191008154655.u34wkbqgmelv3aea@earth.universe>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <115ab938-e025-98fa-3b9e-0b3ced39307d@ti.com>
-Date: Wed, 9 Oct 2019 09:52:37 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iI5qe-0002gZ-RQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 06:53:26 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iI5qZ-0006pi-5k; Wed, 09 Oct 2019 08:53:19 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iI5qV-0002hI-D8; Wed, 09 Oct 2019 08:53:15 +0200
+Date: Wed, 9 Oct 2019 08:53:15 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Anson Huang <Anson.Huang@nxp.com>, Stephen Boyd <swboyd@chromium.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Subject: Re: [PATCH] tty: serial: imx: Only get second/third IRQ when there
+ is more than one IRQ
+Message-ID: <20191009065315.wgdvmkv6skteyul4@pengutronix.de>
 MIME-Version: 1.0
-In-Reply-To: <20191008154655.u34wkbqgmelv3aea@earth.universe>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <1570601911-9162-1-git-send-email-Anson.Huang@nxp.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_235245_586618_5C615CE4 
-X-CRM114-Status: GOOD (  11.59  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191008_235324_884951_4774185A 
+X-CRM114-Status: GOOD (  16.56  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,35 +68,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, tony@atomide.com, p.zabel@pengutronix.de,
- ssantosh@kernel.org, linux-omap@vger.kernel.org,
+Cc: kernel@pengutronix.de, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>, linux-kernel@vger.kernel.org,
+ Andy Shevchenko <andy.shevchenko@gmail.com>, Linux-imx@nxp.com,
+ linux-serial@vger.kernel.org, jslaby@suse.com, festevam@gmail.com,
  linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 08/10/2019 18:46, Sebastian Reichel wrote:
-> Hi,
-> 
-> On Tue, Oct 08, 2019 at 03:55:36PM +0300, Tero Kristo wrote:
->> +Example:
->> +
->> +prm_dsp2: prm@1b00 {
->> +	compatible = "ti,omap-prm-inst", "ti,dra7-prm-inst";
-> 
-> Nit: compatible values are sorted the other way around (most
-> specific first).
+Hello,
 
-Hmm right, I would not like to re-post the whole series just for this 
-seeing all the acks are in place already.
+On Wed, Oct 09, 2019 at 02:18:31PM +0800, Anson Huang wrote:
+> All i.MX SoCs except i.MX1 have ONLY 1 IRQ, so it is better to check
+> the IRQ count before getting second/third IRQ to avoid below error
+> message during probe:
+> =
 
-Santosh, do you want to fix this locally or shall we post a separate 
-patch later on to fix this?
+> [    0.726219] imx-uart 30860000.serial: IRQ index 1 not found
+> [    0.731329] imx-uart 30860000.serial: IRQ index 2 not found
 
--Tero
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+This message was introduced in commit
+7723f4c5ecdb8d832f049f8483beb0d1081cedf6 for 5.4-rc1. I added the
+involved people to the recipents of this mail.
+
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+>  drivers/tty/serial/imx.c | 13 +++++++++++--
+>  1 file changed, 11 insertions(+), 2 deletions(-)
+> =
+
+> diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx.c
+> index 504d81c..081fa82 100644
+> --- a/drivers/tty/serial/imx.c
+> +++ b/drivers/tty/serial/imx.c
+> @@ -2198,6 +2198,7 @@ static int imx_uart_probe(struct platform_device *p=
+dev)
+>  	u32 ucr1;
+>  	struct resource *res;
+>  	int txirq, rxirq, rtsirq;
+> +	int irq_count;
+>  =
+
+>  	sport =3D devm_kzalloc(&pdev->dev, sizeof(*sport), GFP_KERNEL);
+>  	if (!sport)
+> @@ -2220,9 +2221,17 @@ static int imx_uart_probe(struct platform_device *=
+pdev)
+>  	if (IS_ERR(base))
+>  		return PTR_ERR(base);
+>  =
+
+> +	irq_count =3D platform_irq_count(pdev);
+> +	if (irq_count < 0)
+> +		return irq_count;
+> +
+>  	rxirq =3D platform_get_irq(pdev, 0);
+> -	txirq =3D platform_get_irq(pdev, 1);
+> -	rtsirq =3D platform_get_irq(pdev, 2);
+> +	if (irq_count > 1) {
+> +		txirq =3D platform_get_irq(pdev, 1);
+> +		rtsirq =3D platform_get_irq(pdev, 2);
+> +	} else {
+> +		txirq =3D rtsirq =3D -ENXIO;
+> +	}
+
+The patch is fine given the changed behaviour of platform_get_irq. I
+wonder if it is sensible to introduce a variant of platform_get_irq (say
+platform_get_irq_nowarn) that behaves like __platform_get_irq does
+today. Then the imx driver would just call platform_get_irq_nowarn
+without having to check the number of available irqs first.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
 
 _______________________________________________
 linux-arm-kernel mailing list
