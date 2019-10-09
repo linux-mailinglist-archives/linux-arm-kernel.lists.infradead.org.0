@@ -2,83 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 841ECD04AC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 02:14:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D015D04FC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 03:03:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=aBTi9MmM//3LySoZWridmctizkLImGIJ93HsQytzukc=; b=HWB
-	kWl78HwwhdSBj9Hm1TLP66bZc+6+312tJ2Um4aYKECFun4dFhO14RszdKb8y+jdbobA13lyUGDMQ6
-	f8Il2bklIWZu2alb6xetcUmO2kaox3HUZUrxwn80FW9KAbXCPldNY1nqTJpN+ckKOon762IeB/vTk
-	bsLR55uigPC3fRsX9GP1O956btCXjKXWuCVWcP/Db6t7LGi0RZgiyzxt+XEzysAKp/5pM/I3CGsYu
-	xArS9pRtqEqXJBTlIQs/ikSLMl9ruJVaPBALpk6XCaRhN3/cSedDMyPRKr1YnvpKg4COrIxyNkuex
-	nhyUjwu4sz/zX+AR3hdqdcyKCsXp20A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9FystLW4liuPmj1Pts2kvhiQoj5NWWXtG6PTaIXFc6M=; b=h6+SK39SpWsTXP
+	3Vrk4IZHkvPNc6ceH6qo4lLlfnrwpROwbqJuLOVxWapTAdVzO8PZEoRgp8MKgLaLMJJny+WZTE2GT
+	uheZP4s1ncV6apt2uNWxge9LUpFRbFq5vl9ZdI1+gGPEUwqkj0MyhtJfgHxUy6EkNAQzumm3peQP0
+	CZYktyO2Pt/JeamfuBteXDrX3944No9xdLYGAQQTJEMI4SEvgJJQxIOcy4cZFNGSMGVh88MjmVPFs
+	PLxHs+emX+VLazCt+upcUtqj5Ugvb+cXSvtCqXybdTIdfb5vNzDjFhxQKl1F7D5AfNG4Ys2AXr8m7
+	ffuAhiYsTHmN1CSEqK/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHzd1-0004s0-TR; Wed, 09 Oct 2019 00:14:55 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iI0Nz-00022w-6x; Wed, 09 Oct 2019 01:03:27 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHzcv-0004rX-CB
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 00:14:50 +0000
-Received: by mail-pg1-x542.google.com with SMTP id x10so229930pgi.5
+ id 1iI0Ns-00021S-Gc
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 01:03:22 +0000
+Received: from mail-qt1-f180.google.com (mail-qt1-f180.google.com
+ [209.85.160.180])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7F68D206C2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 08 Oct 2019 17:14:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=2daljnqJ+TtRPEyYLJ4e1aRJCyE8bNHOU/f2G9I+p7o=;
- b=gzi+Iqn+b7UyW+Nn5p2dSIEhAAfOdFiPkN+vo4RpC07gdosWLT/KX3vesssNIs1Zi6
- cGPzjR1SNhZm5gov+c5mEkEb7yM3Ub1kxh7Oe3FJC3Pl3By1UgUY8sqqXuXi3lsOmI8m
- DQSd3Fdcpu8+qwy+tS0rVgU391WWmA6aLrcnJS9IPZBH4yVW3L+Dv/3Z1cgOe/YqQSnm
- Cyb82QPumv1lT9O2GRLn/u/Q/MMPvmS4mcDb0X+C6Z3r3O16dkUjJi+y8ot0f1poSCt/
- ZlriLBgN9QW/tXS563BQs3cTeI+MC7Lr55OlDBFudWzjcFij36DsUnPQogs0nxHuTe2L
- U26Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=2daljnqJ+TtRPEyYLJ4e1aRJCyE8bNHOU/f2G9I+p7o=;
- b=BQFr9EwjTdDAyHmWyXfZ0OItUgNblRfR12jRT3Y1KiGVzJtYyxAlTsY559Y8LgLAs8
- Vi5bTwgFR8JITFaBPocAYzRbDuwI9WVaJsllquqWmY8JYV6Ed/fVCO3is9IB+Cpumu+Y
- MtD7SHdjSXHQGafz2TTgRHY1PfQaKVsLZXxpHeySjL3fANSNtrMhA7s5N3ttvlJK32/Y
- mdiN93pnnvp40FWBdYYVgqFyDyGXmOmtKKbn5EK0hyk3vjEjnH03ZOvEVLYQrRWfTsyW
- 0mWKTJUQNBGtOwBALhYhCaax6py3lCf/po7fi47Hv7xEVF67ImzwBgxklhz9x4AZ/uJV
- KCTA==
-X-Gm-Message-State: APjAAAVTpcuHmlcNczDTxck9mHRZ20+EsopgfyECGx2tHANiQsml1Z0T
- 0BCM20SyDMyslI+mauvoSFEViA==
-X-Google-Smtp-Source: APXvYqxXp6F2cO1CIJ92gpJFgWmn49fZlqWDTCkmzg84veYWn8c3Rr5ldjJ0xnGY2Y06Ve/FVc+wWA==
-X-Received: by 2002:a17:90a:2302:: with SMTP id
- f2mr661674pje.132.1570580087804; 
- Tue, 08 Oct 2019 17:14:47 -0700 (PDT)
-Received: from localhost.localdomain
- (104-188-17-28.lightspeed.sndgca.sbcglobal.net. [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id v3sm241289pfn.18.2019.10.08.17.14.46
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 08 Oct 2019 17:14:47 -0700 (PDT)
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>, Olof Johansson <olof@lixom.net>,
- Maxime Ripard <mripard@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Jagan Teki <jagan@amarulasolutions.com>, Anson Huang <Anson.Huang@nxp.com>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- Dinh Nguyen <dinguyen@kernel.org>,
- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>
-Subject: [PATCH] arm64: defconfig: Enable Qualcomm remoteproc dependencies
-Date: Tue,  8 Oct 2019 17:14:42 -0700
-Message-Id: <20191009001442.15719-1-bjorn.andersson@linaro.org>
-X-Mailer: git-send-email 2.18.0
+ Wed,  9 Oct 2019 01:03:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570582995;
+ bh=VLCuRsT/MfVMhiZm4dpxA6L+PvxonwyYTic44/Y8bTk=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=VVdn5FnpZ2LW7gOeC0iXD/4eMjkljyV0uaiMQuEzBESoDaT45DoQVIEfx+T3qvbgZ
+ Nx/M4hs0e17oXxWj4zabjE0GgFI2QwABFO8uYmkjbk4FAY/UMRubyrKsZoCf4YrPsH
+ sU4OR5NoROArKqTPJQE3e8b9NyiiP/Y0G54k6/7k=
+Received: by mail-qt1-f180.google.com with SMTP id m15so1034694qtq.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 08 Oct 2019 18:03:15 -0700 (PDT)
+X-Gm-Message-State: APjAAAX+VjKvLhiZNQOT2gWRRaY9+P4YyxBJxMims8LaPNSW9lYFnoX5
+ Ch8mccrq3n9MIfSbgpGdD1CfH8Jym/pP7HB3fQ==
+X-Google-Smtp-Source: APXvYqwRe4KvCR0oZcnhRteOV94HuZo93EGdhT82sy+BCEmzxu67B5XFk6sBiEIoEiq0xHLNZS9g8EJr+Zb0qOVzX0k=
+X-Received: by 2002:ac8:19f4:: with SMTP id s49mr986458qtk.136.1570582994663; 
+ Tue, 08 Oct 2019 18:03:14 -0700 (PDT)
+MIME-Version: 1.0
+References: <20191008195239.12852-1-robh@kernel.org>
+ <4f6b26f8779a4fd98712b966bff3491dc31e26c2.camel@suse.de>
+In-Reply-To: <4f6b26f8779a4fd98712b966bff3491dc31e26c2.camel@suse.de>
+From: Rob Herring <robh@kernel.org>
+Date: Tue, 8 Oct 2019 20:03:02 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+RjC0b1ZXzgmMdn5Gd1=3zkN62Jdq_QKeZ8-X4pCiDPw@mail.gmail.com>
+Message-ID: <CAL_Jsq+RjC0b1ZXzgmMdn5Gd1=3zkN62Jdq_QKeZ8-X4pCiDPw@mail.gmail.com>
+Subject: Re: [PATCH v2] of: Make of_dma_get_range() work on bus nodes
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_171449_417099_D4561727 
-X-CRM114-Status: GOOD (  10.71  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191008_180320_591328_6DDC97DC 
+X-CRM114-Status: GOOD (  22.69  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -88,6 +72,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,56 +86,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Alex Elder <elder@linaro.org>
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, Arnd Bergmann <arnd@arndb.de>,
+ Robin Murphy <robin.murphy@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Christoph Hellwig <hch@infradead.org>, Marek Vasut <marek.vasut@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Stefan Wahren <wahrenst@gmx.net>, Simon Horman <horms+renesas@verge.net.au>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable the the power domains, reset controllers and remote block device
-memory access drivers necessary to boot the Audio, Compute and Modem
-DSPs on Qualcomm SDM845.
+On Tue, Oct 8, 2019 at 3:52 PM Nicolas Saenz Julienne
+<nsaenzjulienne@suse.de> wrote:
+>
+> Hi Rob/Robin,
+>
+> On Tue, 2019-10-08 at 14:52 -0500, Rob Herring wrote:
+> > From: Robin Murphy <robin.murphy@arm.com>
+> >
+> > Since the "dma-ranges" property is only valid for a node representing a
+> > bus, of_dma_get_range() currently assumes the node passed in is a leaf
+> > representing a device, and starts the walk from its parent. In cases
+> > like PCI host controllers on typical FDT systems, however, where the PCI
+> > endpoints are probed dynamically the initial leaf node represents the
+> > 'bus' itself, and this logic means we fail to consider any "dma-ranges"
+> > describing the host bridge itself. Rework the logic such that
+> > of_dma_get_range() also works correctly starting from a bus node
+> > containing "dma-ranges".
+> >
+> > While this does mean "dma-ranges" could incorrectly be in a device leaf
+> > node, there isn't really any way in this function to ensure that a leaf
+> > node is or isn't a bus node.
+>
+> Sorry, I'm not totally sure if this is what you're pointing out with the last
+> sentence. But, what about the case of a bus configuring a device which also
+> happens to be a memory mapped bus (say a PCI platform device). It'll get it's
+> dma config based on its own dma-ranges which is not what we want.
 
-None of the power domains are system critical, but needs to be builtin
-as the driver core prohibits probe deferal past late initcall.
+What I was trying to say is we just can't tell if we should be looking
+in the current node or the parent. 'dma-ranges' in a leaf node can be
+correct or incorrect.
 
-Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
----
- arch/arm64/configs/defconfig | 5 +++++
- 1 file changed, 5 insertions(+)
+Your example is a bit different. I'm not sure that case is valid or
+can ever work if it is. It's certainly valid that a PCI bridge's
+parent has dma-ranges and now we'll actually handle any translation.
+The bridge itself is not a DMA-capable device, but just passing thru
+DMA. Do we ever need to know the parent's dma-ranges in that case? Or
+to put it another way, is looking at anything other than leaf
+dma-ranges useful?
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index c9a867ac32d4..42f042ba1039 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -732,10 +732,13 @@ CONFIG_RPMSG_QCOM_GLINK_SMEM=m
- CONFIG_RPMSG_QCOM_SMD=y
- CONFIG_RASPBERRYPI_POWER=y
- CONFIG_IMX_SCU_SOC=y
-+CONFIG_QCOM_AOSS_QMP=y
- CONFIG_QCOM_COMMAND_DB=y
- CONFIG_QCOM_GENI_SE=y
- CONFIG_QCOM_GLINK_SSR=m
-+CONFIG_QCOM_RMTFS_MEM=m
- CONFIG_QCOM_RPMH=y
-+CONFIG_QCOM_RPMHPD=y
- CONFIG_QCOM_SMEM=y
- CONFIG_QCOM_SMD_RPM=y
- CONFIG_QCOM_SMP2P=y
-@@ -780,6 +783,8 @@ CONFIG_PWM_ROCKCHIP=y
- CONFIG_PWM_SAMSUNG=y
- CONFIG_PWM_SUN4I=m
- CONFIG_PWM_TEGRA=m
-+CONFIG_RESET_QCOM_AOSS=y
-+CONFIG_RESET_QCOM_PDC=m
- CONFIG_RESET_TI_SCI=y
- CONFIG_PHY_XGENE=y
- CONFIG_PHY_SUN4I_USB=y
--- 
-2.18.0
-
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
