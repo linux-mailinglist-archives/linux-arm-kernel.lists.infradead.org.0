@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94C0ED1561
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 19:18:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22BDBD1562
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 19:18:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7em1ddWZOlS/5X9nXfj9m+NFK0UqTYcyU/y27z+PfSg=; b=BQ6HgiXMYCCDuP
-	Id/Tr2VYRExr84BwuXIXJs92PVcFRKcF4mJYigcfJq7qc5N1jDS29BLJFePbN3M/HOKVgo/9EVN0O
-	AlZkWfnWP+7Tc4FcPGC3QUbTfDPhS2wPjTjHGrZo7WPKTdNmlKK2uvjJd4apusrOomAuyTvJjS9cR
-	M6eadQl6tUXPAdsQCsI1st149y5ldVjJqC+y54Z4XQg1aPVYlngK6XdeZgSvPr2ZEBiZmmrITYZnx
-	YdhHxr8LnvCda1ro14Dg5KgaOJAoEapHe8WsuJ/+77L+MmSCToPPNuYHW0m0CdYqX629RhycuWdG4
-	P8H9x6hqTjv+rkk4Kesg==;
+	List-Owner; bh=Ja24rsCutY+DfvRhsWa3ceDPJWsIJLiRY090PGYzKFc=; b=ZvYF41S3F5d56f
+	7ZBMQ0MRz6ZtqquzUMVMw6tNEsdwR+aZ4HiptwKf6MwbJs70gAAxq6JumY/+PDb8Klup5uRjMEL/m
+	QnUHVEbp9JP7ZkJCOPiGxSFQ1jAfyKpkLp+IKln/cmcRcfnCHezler4t6rixof2bq/FuJ7uLU9vI9
+	GXZsV9n5pvmTr5+/f6Iq0pxZSAxiX4fX/TaLdBcCxrV9gPPnXvu/RDEt2fHHdhh55VtowDp0sUhuJ
+	ApA4OtnqtukdSgDrSiwBwY9Dshvh+py6vPc2XVNUoI4V8I2YjgQnTzK+XBzD/aCTSg6PhRQf78fm4
+	T1/7HgheQeL2uTi4iz0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIFbr-0000xm-0M; Wed, 09 Oct 2019 17:18:47 +0000
-Received: from mail-yb1-xb44.google.com ([2607:f8b0:4864:20::b44])
+	id 1iIFc0-0001Co-5a; Wed, 09 Oct 2019 17:18:56 +0000
+Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIFYi-0006c3-Ci
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 17:15:33 +0000
-Received: by mail-yb1-xb44.google.com with SMTP id y204so973940yby.10
+ id 1iIFYj-0006dW-CH
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 17:15:35 +0000
+Received: by mail-yw1-xc42.google.com with SMTP id d192so1100333ywa.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 09 Oct 2019 10:15:32 -0700 (PDT)
+ Wed, 09 Oct 2019 10:15:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=W+SY6yjQG6ah82xj2QYbshpM9aG1FiA4CAoNvKBotSg=;
- b=hrLusYNvJ1DQpbUkoBMHYE55rFTTPsIggEfElG93+9hHsZ4K0HixUYO8YtR8kz6lZm
- CKS/qJQQn0/+amtUVfJ0vE+dvYvR5c5t/9gLdGfh4hY6LdV+mamSJwqSiiNyKf/r0YlX
- 7ihURWvZLqe8UCDw5CXC0i8bROqdWCiRbIk4GUNT9Bf7PEQ/4N5hqF1FNhktD49xgzgt
- pOtgirxnIkRfCzZGP8CcQq2RXbDaLSUpyasA+99ihYGzDnt9YooU/GaVzG3pcKX0ue5W
- g0IL9l54W4dw24j79wxLKUL/ma998/vwsxBb/mv+Hj9ORYGfaK77WF3Eb88DEIBqiA3V
- qvmg==
+ bh=OQMsvrMqAN5cYMrSu91Pu66B0Sg+HB0aWPXdvZz2KcA=;
+ b=PGJQlbBDuENA6RKdMPrsxNZh6nst1zCDQfAK+p2cso3insZOWY8FJEwOLv8XenLtXO
+ bGBQwd34unyuouDzIG7HmrZIvPHnyWr41NSFvJAL/xOS82fgD1NfhseCwhfw2DikqEu5
+ eVmbp/Vn7KgewV0075KN8zTpeX7qMQSNUokumcZaEeZsJG5VO/PfXYDcOLC9JCZ890KW
+ y0sQAJpfgG+FsGKD3Iys1Y+e55c+N8gknc5iUoa49tq8VWF2un0vL+D3LELYFnV+GDFv
+ gzgYMpXOTFDKPjhHGuCRvpkZSc1A0imSUuHlDqkMGLTgqTAaC53i29PN+CEA9l1XwD0+
+ tT4A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=W+SY6yjQG6ah82xj2QYbshpM9aG1FiA4CAoNvKBotSg=;
- b=fWnkezLBMCVBVuSPUkhGIVxPcmFf3R9/GitDVUVZBGuvPDiqwV/+U2YDNCF03PjaFm
- BcVBOkIgj1vldArr9dwS+abaYtszIYiLeIV+3h34CwKJfMl7uJXCpkdDPbrcl+L8m2p4
- +Dkmgyqu3XSbGkw3+e5urZWU8pii6QCrl1XY6Zym4n4AZ6qZONsRofd/iXGm/QEn06l+
- WXwbZU/dDnKePhwov+S3gcUe/nOATawzE+WLEQD4kgtfQj5RdE42coidhu40N26wU2kU
- SgaV+q2Un7a9yMjXRfztzoRas+R/8kueYraDxv7VznQ4oxuOG01c8j2oei7YaEdx0UAt
- 3U5A==
-X-Gm-Message-State: APjAAAUCoGKx+cP5QXEzLU6QCH3cMplwxBz5lcw3cwPMoYI2hp1L6SkA
- bc9D6JaNwE03TGuwKSb2WlQ=
-X-Google-Smtp-Source: APXvYqwBPQgEIz1iAv+shQVmbFfhgFLw7r/9gS+jQhD5Ska0KC6Zn+TlJD16Y2mvIWdm9qJTJwx0pQ==
-X-Received: by 2002:a25:55c5:: with SMTP id j188mr2791669ybb.5.1570641331036; 
- Wed, 09 Oct 2019 10:15:31 -0700 (PDT)
+ bh=OQMsvrMqAN5cYMrSu91Pu66B0Sg+HB0aWPXdvZz2KcA=;
+ b=b/Q29BBBERGo4tpxnX4LExBnxDgkawkBr50+NVAEa/2yfqzY598gY8LAza7zR+pIY1
+ 4VYNVtkCyPX1Yk4cR3/QnrlKL0NJ5C1YBKRrhnd3/+Tgsm4HgQJTLXqEP9kpz3iJJepN
+ wRNPFsJufMuQiVibtl5wZKyiO5SrT1kRycvQpkGSeolLH17F4TuSOU1BJvsEoEGSrY+y
+ wdTrXcoLmaoP0CQTNn8nn/5ZhekXEsOGc/S5+mH4ODn/2JxjDjmj8gXIBg0/xx4RGES/
+ ETYDeYHl01YCkPbdaKTRu4jjPLVMPGayNjDeO3Q2wKMi2VRHZbn5kK0n1hySJKrMcB/x
+ tbww==
+X-Gm-Message-State: APjAAAUyw2RZA4ugRcvD210vHrG6+LCmLw44XWnYzYa0OuZvars3OO8H
+ aGbGegZmj9ZQMuhuCbp5jck=
+X-Google-Smtp-Source: APXvYqxPf397BWAZAXQxl/ej3ydag60BplqntuCWiFdPKrkxGZDZCFC0ugMw5RZO4Kunw4jd93LwwA==
+X-Received: by 2002:a0d:d042:: with SMTP id s63mr3399648ywd.356.1570641332590; 
+ Wed, 09 Oct 2019 10:15:32 -0700 (PDT)
 Received: from localhost.localdomain (072-189-084-142.res.spectrum.com.
  [72.189.84.142])
- by smtp.gmail.com with ESMTPSA id r63sm743292ywg.36.2019.10.09.10.15.29
+ by smtp.gmail.com with ESMTPSA id r63sm743292ywg.36.2019.10.09.10.15.31
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 09 Oct 2019 10:15:30 -0700 (PDT)
+ Wed, 09 Oct 2019 10:15:31 -0700 (PDT)
 From: William Breathitt Gray <vilhelm.gray@gmail.com>
 To: linus.walleij@linaro.org, bgolaszewski@baylibre.com,
  akpm@linux-foundation.org
-Subject: [PATCH v18 12/14] gpio: pisosr: Utilize the for_each_set_clump8 macro
-Date: Wed,  9 Oct 2019 13:14:48 -0400
-Message-Id: <8a39ee772247d4b7d752b32dbacc06c1cdcb60b5.1570641097.git.vilhelm.gray@gmail.com>
+Subject: [PATCH v18 13/14] gpio: max3191x: Utilize the for_each_set_clump8
+ macro
+Date: Wed,  9 Oct 2019 13:14:49 -0400
+Message-Id: <c2b1ed62caf6fce6e5681809a50c05ce6acdf2a6.1570641097.git.vilhelm.gray@gmail.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <cover.1570641097.git.vilhelm.gray@gmail.com>
 References: <cover.1570641097.git.vilhelm.gray@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_101532_432119_63333C32 
-X-CRM114-Status: GOOD (  10.55  )
+X-CRM114-CacheID: sfid-20191009_101533_430299_9793E142 
+X-CRM114-Status: GOOD (  11.60  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (vilhelm.gray[at]gmail.com)
@@ -100,12 +101,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, preid@electromag.com.au,
- yamada.masahiro@socionext.com, linux-pm@vger.kernel.org,
- linux@rasmusvillemoes.dk, linux-kernel@vger.kernel.org,
- Morten Hein Tiljeset <morten.tiljeset@prevas.dk>,
- William Breathitt Gray <vilhelm.gray@gmail.com>, linux-gpio@vger.kernel.org,
- lukas@wunner.de, geert@linux-m68k.org, Sean Nyekjaer <sean.nyekjaer@prevas.dk>,
+Cc: linux-arch@vger.kernel.org, Mathias Duckeck <m.duckeck@kunbus.de>,
+ preid@electromag.com.au, yamada.masahiro@socionext.com,
+ linux-pm@vger.kernel.org, linux@rasmusvillemoes.dk,
+ linux-kernel@vger.kernel.org, William Breathitt Gray <vilhelm.gray@gmail.com>,
+ linux-gpio@vger.kernel.org, lukas@wunner.de, geert@linux-m68k.org,
  andriy.shevchenko@linux.intel.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -115,40 +115,64 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Replace verbose implementation in get_multiple callback with
 for_each_set_clump8 macro to simplify code and improve clarity.
 
-Cc: Morten Hein Tiljeset <morten.tiljeset@prevas.dk>
-Cc: Sean Nyekjaer <sean.nyekjaer@prevas.dk>
+Cc: Mathias Duckeck <m.duckeck@kunbus.de>
+Cc: Lukas Wunner <lukas@wunner.de>
 Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
 ---
- drivers/gpio/gpio-pisosr.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+ drivers/gpio/gpio-max3191x.c | 19 ++++++++++---------
+ 1 file changed, 10 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/gpio/gpio-pisosr.c b/drivers/gpio/gpio-pisosr.c
-index f809a5a8e9eb..9ab2c044ef52 100644
---- a/drivers/gpio/gpio-pisosr.c
-+++ b/drivers/gpio/gpio-pisosr.c
-@@ -96,16 +96,16 @@ static int pisosr_gpio_get_multiple(struct gpio_chip *chip,
- 				    unsigned long *mask, unsigned long *bits)
+diff --git a/drivers/gpio/gpio-max3191x.c b/drivers/gpio/gpio-max3191x.c
+index 4b4b2ceb82fc..0242c6187bf5 100644
+--- a/drivers/gpio/gpio-max3191x.c
++++ b/drivers/gpio/gpio-max3191x.c
+@@ -31,6 +31,7 @@
+  */
+ 
+ #include <linux/bitmap.h>
++#include <linux/bitops.h>
+ #include <linux/crc8.h>
+ #include <linux/gpio/consumer.h>
+ #include <linux/gpio/driver.h>
+@@ -232,16 +233,20 @@ static int max3191x_get_multiple(struct gpio_chip *gpio, unsigned long *mask,
+ 				 unsigned long *bits)
  {
- 	struct pisosr_gpio *gpio = gpiochip_get_data(chip);
--	unsigned int nbytes = DIV_ROUND_UP(chip->ngpio, 8);
--	unsigned int i, j;
-+	unsigned long offset;
+ 	struct max3191x_chip *max3191x = gpiochip_get_data(gpio);
+-	int ret, bit = 0, wordlen = max3191x_wordlen(max3191x);
++	const unsigned int wordlen = max3191x_wordlen(max3191x);
++	int ret;
++	unsigned long bit;
 +	unsigned long gpio_mask;
-+	unsigned long buffer_state;
++	unsigned long in;
  
- 	pisosr_gpio_refresh(gpio);
+ 	mutex_lock(&max3191x->lock);
+ 	ret = max3191x_readout_locked(max3191x);
+ 	if (ret)
+ 		goto out_unlock;
  
- 	bitmap_zero(bits, chip->ngpio);
--	for (i = 0; i < nbytes; i++) {
--		j = i / sizeof(unsigned long);
--		bits[j] |= ((unsigned long) gpio->buffer[i])
--			   << (8 * (i % sizeof(unsigned long)));
-+	for_each_set_clump8(offset, gpio_mask, mask, chip->ngpio) {
-+		buffer_state = gpio->buffer[offset / 8] & gpio_mask;
-+		bitmap_set_value8(bits, buffer_state, offset);
+-	while ((bit = find_next_bit(mask, gpio->ngpio, bit)) != gpio->ngpio) {
++	bitmap_zero(bits, gpio->ngpio);
++	for_each_set_clump8(bit, gpio_mask, mask, gpio->ngpio) {
+ 		unsigned int chipnum = bit / MAX3191X_NGPIO;
+-		unsigned long in, shift, index;
+ 
+ 		if (max3191x_chip_is_faulting(max3191x, chipnum)) {
+ 			ret = -EIO;
+@@ -249,12 +254,8 @@ static int max3191x_get_multiple(struct gpio_chip *gpio, unsigned long *mask,
+ 		}
+ 
+ 		in = ((u8 *)max3191x->xfer.rx_buf)[chipnum * wordlen];
+-		shift = round_down(bit % BITS_PER_LONG, MAX3191X_NGPIO);
+-		index = bit / BITS_PER_LONG;
+-		bits[index] &= ~(mask[index] & (0xff << shift));
+-		bits[index] |= mask[index] & (in << shift); /* copy bits */
+-
+-		bit = (chipnum + 1) * MAX3191X_NGPIO; /* go to next chip */
++		in &= gpio_mask;
++		bitmap_set_value8(bits, in, bit);
  	}
  
- 	return 0;
+ out_unlock:
 -- 
 2.23.0
 
