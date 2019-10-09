@@ -2,58 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50C01D106A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 15:42:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B7DFD106F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 15:43:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Gx9OLerqaY4Jq9wbKmdTs0XNefihz4lZ0AcsWLpch0A=; b=VQXW5sSmM4KvN4iPBSIRDdkDm
-	EXfHxYP6quhGvHyP/EnCwMv2ONEDPsH8QbyNQpBRn+36k0jE5WqGeUJdnqgcGximHfuKNaYsTpbvp
-	LwmNFnhGqyzyz+I/OvIBEG/GL4VqgC/f++1Ijvs8lEoQ1MOMVyKdcnnx6Zs88HqIAygEZUZIsi471
-	yXR2LHpN9VO+obemyTYowkCSQjwF3s+yowxVkq6WPhb0nsURPWQG7qjc0K6nWheTyMgTTvef/WhXO
-	5zMNX8h/4wW7fFr5Cl+NMDGMrExEGfi/vPEgrk6VRb8TtcagTJMIfHuqKQWAP/6hFDIJLo0Tr6YZF
-	OONQ/QIHg==;
+	 bh=BEZYIH2DLHcqWrSakwbBadbL8ixxBJ2G4hFaIvNVPrw=; b=fhUuMnMJFzrd6Vtgauz4JhO73
+	AYUSfE4gSql6T/mQSQXeXlo10r3lq7YYDPSiTi+DCnTs25zuLl3hSuZzgvinoqiaA3DzLwxRzfGC0
+	i4NzljAR6Nh7bfyLQ3oiGzNc/cEJ3EQZ7z3C5mGSRKIQnCtQz6ZMEiWz0pSl75DoXSIQunlUYT9Zd
+	p0ww2d79SJw8rvIatN0Z+Rn2qlats/sgPOO8pgTqj4oakSuPpmVogOk2SHMl7LwmcF4TcxBlDrrR9
+	YVm9OtiE7zFVYREmqWTI3ZuTjj+S0Ij8j9D/fPJdX7Ww0GaZoith0jiPzqewUC6cAf2hezM/8RWYs
+	kZDNcueQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iICEV-0000tn-5p; Wed, 09 Oct 2019 13:42:27 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1iICFB-0001AY-Ko; Wed, 09 Oct 2019 13:43:09 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iICEM-0000tH-3a
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 13:42:19 +0000
-Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id E295C36A5D818A856480;
- Wed,  9 Oct 2019 21:42:13 +0800 (CST)
-Received: from [127.0.0.1] (10.133.216.73) by DGGEMS402-HUB.china.huawei.com
- (10.3.19.202) with Microsoft SMTP Server id 14.3.439.0; Wed, 9 Oct 2019
- 21:42:03 +0800
-Subject: Re: [RFC PATCH 00/12] Add SDEI support for arm64
-To: Peter Maydell <peter.maydell@linaro.org>
-References: <1569338511-3572-1-git-send-email-guoheyi@huawei.com>
- <CAFEAcA_ztr0_Bu9d__dSr9oH75s2DSd5=6NZvVMrxuDTxf31mw@mail.gmail.com>
-From: Guoheyi <guoheyi@huawei.com>
-Message-ID: <84e1a629-bdd3-faaf-e12f-17930945adf4@huawei.com>
-Date: Wed, 9 Oct 2019 21:42:02 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.7.1
+ id 1iICF3-00019Y-QQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 13:43:03 +0000
+Received: by mail-pl1-x642.google.com with SMTP id d22so1096203pls.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 09 Oct 2019 06:43:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=4Edus/v7OUgnZTtV64pllzP4xpuDmz162zPn+6vHICQ=;
+ b=cQBXV3QOipArjfvZb00WHn16UzyYvh6jngj8uALWcOjMYAGuNVXzGSqLjAdnjKZgRc
+ 77esMF5OqeMlqTlSItkzaLVdUZ+t5i5AxCReElLu3LUcnXQwbB1//fD4xSewcNGd5nJZ
+ DGXKLyR9Dv10AFGxdk5CKKowOqoZ3NqPy2yBDye4sl9+7CcqgDGtKyGc2Kyln8/Uve8W
+ Jf8nFktHv5+egEbVpEVpu3Pu4VKBdnGeF//UdKwN8fzU/amY4hNEGufCxPiPp6Kr/xKU
+ UGRGG0swDhlMsuv2tHFj9VSLMQq6wT5Xiv7s0eQid2cDgGryRbsLkuxq7I5T3ZZf422F
+ RHGw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=4Edus/v7OUgnZTtV64pllzP4xpuDmz162zPn+6vHICQ=;
+ b=JcjVZSEvKZDqJ3E3i3HGQKUronoDdZdzCC2pauKZ7vLLqqImqMKFAdaCABTwkjc2lk
+ Gux7VTXXfOMo6Khyndk3iJHyW84vhUdF6bqbVB8oGlSlZm6xjEOIlUr+hjSLSDL/2vDV
+ VP/1fj3qD+0hk6Bwl6kdnKCEgt7puqcjwV0waUVkBC541msDfo/ON7YJaOZlYL5ugnmu
+ PFJakLqYD6fh9y3Me2zSthGKSHtCdU2C8U7QM4aK5wrxdiziR4Hz3Hl956tmjaJRgM1w
+ PgPOPICcVxYH5Otv4xs/SooH1jri1sp6hReVscX/EqDMyA5oepnk7SzUcvZfmR2JLnsI
+ nUsA==
+X-Gm-Message-State: APjAAAWNfswuVTBkuEHxjFZVJYkdi8qzRZzEQOwMqy2tos7wAG2056sC
+ b3rnkMPaVWk6FBtWG63b77s=
+X-Google-Smtp-Source: APXvYqygUQnSCIshs8yBxJ1/wLFZjClbo1d/vkB6BHYgR00wYGq6lQcP6f2RjgwCoTyL9yixqiYMDg==
+X-Received: by 2002:a17:902:8a96:: with SMTP id
+ p22mr3129837plo.272.1570628580824; 
+ Wed, 09 Oct 2019 06:43:00 -0700 (PDT)
+Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id
+ ep10sm7566436pjb.2.2019.10.09.06.42.58
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 09 Oct 2019 06:42:59 -0700 (PDT)
+Subject: Re: [PATCH] watchdog: imx_sc_wdt: Pretimeout should follow SCU
+ firmware format
+To: Anson Huang <Anson.Huang@nxp.com>, wim@linux-watchdog.org,
+ shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ festevam@gmail.com, linux-watchdog@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <1570606667-16729-1-git-send-email-Anson.Huang@nxp.com>
+From: Guenter Roeck <linux@roeck-us.net>
+Message-ID: <de796993-a973-1b49-05fb-303541da0a77@roeck-us.net>
+Date: Wed, 9 Oct 2019 06:42:58 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <CAFEAcA_ztr0_Bu9d__dSr9oH75s2DSd5=6NZvVMrxuDTxf31mw@mail.gmail.com>
-X-Originating-IP: [10.133.216.73]
-X-CFilter-Loop: Reflected
+In-Reply-To: <1570606667-16729-1-git-send-email-Anson.Huang@nxp.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_064218_312629_EF838BB8 
-X-CRM114-Status: GOOD (  17.81  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191009_064301_861790_8CE8006B 
+X-CRM114-Status: GOOD (  18.07  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (groeck7[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,78 +111,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Marc
- Zyngier <marc.zyngier@arm.com>, QEMU Developers <qemu-devel@nongnu.org>,
- Dave Martin <Dave.Martin@arm.com>, qemu-arm <qemu-arm@nongnu.org>,
- James Morse <james.morse@arm.com>, wanghaibin.wang@huawei.com,
- kvmarm@lists.cs.columbia.edu,
- arm-mail-list <linux-arm-kernel@lists.infradead.org>
+Cc: Linux-imx@nxp.com
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 10/9/19 12:37 AM, Anson Huang wrote:
+> SCU firmware calculates pretimeout based on current time stamp
+> instead of watchdog timeout stamp, need to convert the pretimeout
+> to SCU firmware's timeout value.
+> 
+> Fixes: 15f7d7fc5542 ("watchdog: imx_sc: Add pretimeout support")
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
+Reviewed-by: Guenter Roeck <linux@roeck-us.net>
 
-On 2019/9/30 21:15, Peter Maydell wrote:
-> On Tue, 24 Sep 2019 at 16:23, Heyi Guo <guoheyi@huawei.com> wrote:
->> As promised, this is the first RFC patch set for arm64 SDEI support.
-> Hi; for the benefit of possible reviewers who aren't familiar
-> with every corner of the arm ecosystem, could you provide a
-> summary of:
->   * what is SDEI ?
-SDEI is for ARM "Software Delegated Exception Interface". AS ARM64 
-doesn't have native non-maskable interrupt (NMI), we can rely on higher 
-privileged software to change the pc of lower privileged software on 
-certain events occur, to emulate NMI mechanism, and SDEI is the standard 
-interfaces between the two levels of privileged software. It is based on 
-SMC/HVC calls.
-
-In virtualization situation, guest OS is the lower privileged software 
-and hypervisor is the higher one. Major interfaces provided by SDEI include:
-1. interrupt bind: guest OS can request to bind an interrupt to an SDEI 
-event.
-2. register: guest OS can request to register a handler to an SDEI 
-event, so hypervisor will change pc of guest to this handler when 
-certain event occurs.
-3. complete: guest OS notifies hypervisor that it has completed the 
-event handling, so hypervisor will restore the context of guest when it 
-is interrupted.
->   * what do KVM and QEMU want/need to do with it ?
-KVM is supposed to pass SMC/HVC calls to qemu, and qemu will serve the 
-SDEI requests after parsing SMC/HVC calls. qemu also takes the 
-responsibility to trigger the events. If an interrupt is requested to be 
-bound to an event, qemu should not inject the interrupt to guest any 
-more; instead, it should save the context of VCPU and change the PC to 
-event handler which is registered by guest, and then return to guest.
-
-To make the conversion of interrupt to SDEI event transparent to other 
-modules in qemu, we used qemu_irq and qemu_irq_intercept_in() to 
-override the default irq handler with SDEI event trigger. I saw 
-qemu_irq_intercept_in() should be only used in qemu MST, but it seemed 
-fit to override interrupt injection with event trigger after guest 
-requests to bind interrupt to SDEI event.
->   * what is this patchset trying to solve ?
-This patchset is trying to implement the whole SDEI framework in qemu 
-with KVM enabled, including all SDEI v1.0 interfaces, as well as event 
-trigger conduit from other qemu devices after interrupt binding.
-
-I will also provide the above context in the cover letter of v2 RFC.
-
-Thanks,
-
-Heyi
-
->
-> That would provide some useful context for trying to
-> review the patchset.
->
-> thanks
-> -- PMM
->
-> .
->
-
+> ---
+>   drivers/watchdog/imx_sc_wdt.c | 8 +++++++-
+>   1 file changed, 7 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/watchdog/imx_sc_wdt.c b/drivers/watchdog/imx_sc_wdt.c
+> index 7ea5cf5..8ed89f0 100644
+> --- a/drivers/watchdog/imx_sc_wdt.c
+> +++ b/drivers/watchdog/imx_sc_wdt.c
+> @@ -99,8 +99,14 @@ static int imx_sc_wdt_set_pretimeout(struct watchdog_device *wdog,
+>   {
+>   	struct arm_smccc_res res;
+>   
+> +	/*
+> +	 * SCU firmware calculates pretimeout based on current time
+> +	 * stamp instead of watchdog timeout stamp, need to convert
+> +	 * the pretimeout to SCU firmware's timeout value.
+> +	 */
+>   	arm_smccc_smc(IMX_SIP_TIMER, IMX_SIP_TIMER_SET_PRETIME_WDOG,
+> -		      pretimeout * 1000, 0, 0, 0, 0, 0, &res);
+> +		      (wdog->timeout - pretimeout) * 1000, 0, 0, 0,
+> +		      0, 0, &res);
+>   	if (res.a0)
+>   		return -EACCES;
+>   
+> 
 
 
 _______________________________________________
