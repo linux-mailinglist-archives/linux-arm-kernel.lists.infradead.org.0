@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E279D0E59
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 14:07:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66F81D0E57
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 14:07:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=laZucMUeU/GxiSwrrnpvcwLMJ1U3C3d7xHXwBrvwYUU=; b=u6ofVz3l/L7lg93vreA5GcfepJ
-	6rNpjlJLFhTLZc1quxt+RQ11ufgLljLmriHo694meNJIXTH3b9IaKTOL2XNM4LxUqf0rQce9q9OXk
-	RFazt4HmPwUFv9cGYYhiPJ5EOj7KIL3zr8M+keTHATR2DMyaEq37L7g+GYJJeRzbdd4TZRHuDAcKP
-	rH2/TlCdykzKFyiNMlsOocgnk79GBvIu6KFGzlU+AxLmDgcAUOZ1lptPCxrrPD4Ud3n97tT83Gp/s
-	RBfCheeaaFXX2HD9hdLLYCuwwtXQuyt2VTAwQ071sph/KTVYdAF4rgt7UYsIPtsi39/2rJFWdV90f
-	DpDeefhA==;
+	bh=fdRlvM0dB6C+xL7VT8VK1WJ4d8PaaS4QgYKQex7zXm4=; b=pZXUNxm/80NEr427Qq+t8m86bq
+	NXHSn37CFm62sNvsBFRcOdPBzIeVGlqXGidtgaXQOAVLGJNHwhtOmlUpL+ucqHXUYciPTevDatPsw
+	dtsoomXI67pLz9I6dMjt7GYyvdHGtSmFXnrMORyb4uRLuVDU5RfNwpqtAMMVQ7HYMC457ZiWU9rgK
+	glUCiNuvayI8zzjWwN4mCTqqeagnRWAB/ccAjin+4xxliW4+Vrj+wfAZm2fKl1xTqf4YWnJxe3jR8
+	BCi6phPYeCKrXnPUJQ9g8Zk0Y4sWcapABZydsOKLqpczxiiMjJniuRA/CjrTObSpUSeC1g9FunCbc
+	SpgpfXmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIAkt-0001yI-DK; Wed, 09 Oct 2019 12:07:47 +0000
+	id 1iIAkV-0001XU-1O; Wed, 09 Oct 2019 12:07:23 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIAiU-0008Gy-QH
+ id 1iIAiV-0008I5-U2
  for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 12:05:22 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 47BD828;
- Wed,  9 Oct 2019 05:05:18 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 640FC15BE;
+ Wed,  9 Oct 2019 05:05:19 -0700 (PDT)
 Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
  [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6049F3F703;
- Wed,  9 Oct 2019 05:05:17 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7C3013F703;
+ Wed,  9 Oct 2019 05:05:18 -0700 (PDT)
 From: Cristian Marussi <cristian.marussi@arm.com>
 To: linux-kselftest@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  shuah@kernel.org
-Subject: [PATCH v9 08/12] kselftest: arm64: fake_sigreturn_bad_size_for_magic0
-Date: Wed,  9 Oct 2019 13:04:55 +0100
-Message-Id: <20191009120459.21805-9-cristian.marussi@arm.com>
+Subject: [PATCH v9 09/12] kselftest: arm64: fake_sigreturn_missing_fpsimd
+Date: Wed,  9 Oct 2019 13:04:56 +0100
+Message-Id: <20191009120459.21805-10-cristian.marussi@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191009120459.21805-1-cristian.marussi@arm.com>
 References: <20191009120459.21805-1-cristian.marussi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_050518_938550_58300A79 
-X-CRM114-Status: GOOD (  11.88  )
+X-CRM114-CacheID: sfid-20191009_050520_043488_E19543F5 
+X-CRM114-Status: GOOD (  11.12  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,41 +68,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a simple fake_sigreturn testcase which builds a ucontext_t with a
-badly sized terminator record and place it onto the stack.
+Add a simple fake_sigreturn testcase which builds a ucontext_t without
+the required fpsimd_context and place it onto the stack.
 Expects a SIGSEGV on test PASS.
 
 Reviewed-by: Dave Martin <Dave.Martin@arm.com>
 Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
 ---
-v5 --> v6
-- removed unneeded locals
-- removed unneeded timeout on failure
 v3 --> v4
 - fix commit
-- add signal.h include
-- using new get_starting_head() helper
+- added signal.h
 - added test description
 ---
- .../fake_sigreturn_bad_size_for_magic0.c      | 46 +++++++++++++++++++
- 1 file changed, 46 insertions(+)
- create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size_for_magic0.c
+ .../testcases/fake_sigreturn_missing_fpsimd.c | 50 +++++++++++++++++++
+ 1 file changed, 50 insertions(+)
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_missing_fpsimd.c
 
-diff --git a/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size_for_magic0.c b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size_for_magic0.c
+diff --git a/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_missing_fpsimd.c b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_missing_fpsimd.c
 new file mode 100644
-index 000000000000..a44b88bfc81a
+index 000000000000..08ecd8073a1a
 --- /dev/null
-+++ b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size_for_magic0.c
-@@ -0,0 +1,46 @@
++++ b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_missing_fpsimd.c
+@@ -0,0 +1,50 @@
 +// SPDX-License-Identifier: GPL-2.0
 +/*
 + * Copyright (C) 2019 ARM Limited
 + *
-+ * Place a fake sigframe on the stack including a badly sized terminator
-+ * record: on sigreturn Kernel must spot this attempt and the test case
-+ * is expected to be terminated via SEGV.
++ * Place a fake sigframe on the stack missing the mandatory FPSIMD
++ * record: on sigreturn Kernel must spot this attempt and the test
++ * case is expected to be terminated via SEGV.
 + */
 +
++#include <stdio.h>
 +#include <signal.h>
 +#include <ucontext.h>
 +
@@ -111,34 +108,37 @@ index 000000000000..a44b88bfc81a
 +
 +struct fake_sigframe sf;
 +
-+static int fake_sigreturn_bad_size_for_magic0_run(struct tdescr *td,
-+						  siginfo_t *si, ucontext_t *uc)
++static int fake_sigreturn_missing_fpsimd_run(struct tdescr *td,
++					     siginfo_t *si, ucontext_t *uc)
 +{
-+	struct _aarch64_ctx *shead = GET_SF_RESV_HEAD(sf), *head;
++	size_t resv_sz, offset;
++	struct _aarch64_ctx *head = GET_SF_RESV_HEAD(sf);
 +
 +	/* just to fill the ucontext_t with something real */
 +	if (!get_current_context(td, &sf.uc))
 +		return 1;
 +
-+	/* at least HDR_SZ for the badly sized terminator. */
-+	head = get_starting_head(shead, HDR_SZ, GET_SF_RESV_SIZE(sf), NULL);
-+	if (!head)
-+		return 0;
++	resv_sz = GET_SF_RESV_SIZE(sf);
++	head = get_header(head, FPSIMD_MAGIC, resv_sz, &offset);
++	if (head && resv_sz - offset >= HDR_SZ) {
++		fprintf(stderr, "Mangling template header. Spare space:%zd\n",
++			resv_sz - offset);
++		/* Just overwrite fpsmid_context */
++		write_terminator_record(head);
 +
-+	head->magic = 0;
-+	head->size = HDR_SZ;
-+	ASSERT_BAD_CONTEXT(&sf.uc);
-+	fake_sigreturn(&sf, sizeof(sf), 0);
++		ASSERT_BAD_CONTEXT(&sf.uc);
++		fake_sigreturn(&sf, sizeof(sf), 0);
++	}
 +
 +	return 1;
 +}
 +
 +struct tdescr tde = {
-+		.name = "FAKE_SIGRETURN_BAD_SIZE_FOR_TERMINATOR",
-+		.descr = "Trigger a sigreturn using non-zero size terminator",
++		.name = "FAKE_SIGRETURN_MISSING_FPSIMD",
++		.descr = "Triggers a sigreturn with a missing fpsimd_context",
 +		.sig_ok = SIGSEGV,
 +		.timeout = 3,
-+		.run = fake_sigreturn_bad_size_for_magic0_run,
++		.run = fake_sigreturn_missing_fpsimd_run,
 +};
 -- 
 2.17.1
