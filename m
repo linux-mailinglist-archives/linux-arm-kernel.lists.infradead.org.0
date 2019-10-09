@@ -2,79 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FB1CD0A69
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:57:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C24AD0A6D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:58:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i5VyEc+0VMwZA9zELrG07AZMUk53/xan2DWVf0sUBUE=; b=mO4p1YY1Rfjho9
-	gVUM86mon+dCKHKThTkCkH0Rtvrv/LZ9HZ+aB4JXh/MEAk3OmpRvgGEvsH5Zz346AaYUGoDgW6vrO
-	AROAelxIgScN+4lIDk4wiwkYbpGOhBY3DbDXpVMETf6tFX/9SGGPXJfvoZKqTivsoL2UIJCueQmFV
-	5cTZzujODz//dVxClFF1RMHOQ+Oc3LTznCBNd6g3zcS5ggZglFi3PPIRRYlCufRgiLz04oNTlnfdF
-	ovhKdJANAPzL7wbL6agkGx6wO/hwozvR/5SyApJoD4DkKgenAnjDjimDxC9JeAo2PX6NTaaKkrWqg
-	UP267xWj586JTtah/mtg==;
+	List-Owner; bh=eMQUM9Cvr/NkuZ7J/iSDm+L88+jqF7WN/n4mf6qmo18=; b=sHajEgFWReJIna
+	vjD1JSD0Pgr70Z0o+vEwje0kfWXjNi9zz27hKiGxiJLaqKWFvbnKvOHp+vRq2Ui4mWgPxFLzHv4tT
+	3/3+og9WGnnErQYZ12gl5b1l6zpz1cmgy9Vsgy6tA0WrpHUa8hZvF62w2rWL3lhRZ581h2J8S5Hm0
+	qgONn+f7g+6bdbaJ0cZMdNqI9bAwK35JN2+ywkkgMp0ZcYxyF/Q/Nj6yvnJqrZMxUEpBoJYj0b8/C
+	ehOtAOxJ7Tck3aqAFV/qeS8Sh+0tYvNFR/xM7IusdIKPcywRg48nXLslQCQycPsJajFYaa322u6RN
+	+LRjCuLn1msaqJn9Vz9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI7n5-0003Jt-HE; Wed, 09 Oct 2019 08:57:51 +0000
-Received: from mail-qt1-f195.google.com ([209.85.160.195])
+	id 1iI7nb-0003pD-JH; Wed, 09 Oct 2019 08:58:23 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI7mx-0003JC-6C
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:57:44 +0000
-Received: by mail-qt1-f195.google.com with SMTP id w14so2258383qto.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 09 Oct 2019 01:57:42 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Opx/ROGTjtBNadWFSCJ3z4RUl5WRhmS5Oj7dF/736Bo=;
- b=DbkRXOPIBa6sXx3FC2d+LR1elNlBCBtoOMWFrCoL+KdylQ6o96C9GnmAttI7puwfYe
- X8m7Id/BkkC/LdtF8+OAbocFSahD39hTCzftuTYGn6nOO+R+ARzDH2p6yDOiXywwTA7I
- XQXHklyeVQWCAs38f4kqGvEecIkq7bxl9XB88zJtc7bZREpCxiEb5nPO8MP+opo5dZLr
- PGDUYnlLNC53VcpyBMApeowzAR+U04S+dxvdSdTyuW6YRYIPxR5D2+J4We05iREpch+4
- vjj9bDFmLqqTlqylGOeYdT4ciz2Zj0PTbPv8vq7v4MXxiac5HKkt2pv5T6/L3XuvNSvW
- 3IYA==
-X-Gm-Message-State: APjAAAUGJNiezURbdCtp2r+osLL9nMSnZeTTlBiNyFfq3IXqscZQGaYI
- Mbsy9/J2VSYHGQKacBwF6OsKC2xkSnPQI/lPVzU=
-X-Google-Smtp-Source: APXvYqx2aCroqOM+Svuqn9qFZyVJuZiOBarmXemNtkqAf8sySVJxC5yCTzwAIczpMjnvK7Y57zKf3jLh/q8mskcY1Cg=
-X-Received: by 2002:aed:3c67:: with SMTP id u36mr2455565qte.142.1570611462033; 
- Wed, 09 Oct 2019 01:57:42 -0700 (PDT)
+ id 1iI7nA-0003VR-EC
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:57:59 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1iI7n8-0007JL-1z; Wed, 09 Oct 2019 10:57:54 +0200
+Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1iI7n5-0007Mi-MT; Wed, 09 Oct 2019 10:57:51 +0200
+Date: Wed, 9 Oct 2019 10:57:51 +0200
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Anson Huang <anson.huang@nxp.com>
+Subject: Re: [PATCH V2] firmware: imx: Skip return value check for some
+ special SCU firmware APIs
+Message-ID: <20191009085751.h3voimqz25kj6lh2@pengutronix.de>
+References: <1570410959-32563-1-git-send-email-Anson.Huang@nxp.com>
+ <20191007080135.4e5ljhh6z2rbx5bw@pengutronix.de>
+ <AM6PR0402MB39118DABDE62496539D7EE6DF59A0@AM6PR0402MB3911.eurprd04.prod.outlook.com>
+ <20191009082455.5hqhotkbozsr7mgo@pengutronix.de>
+ <DB3PR0402MB3916CD3B5EC47C023F9D840DF5950@DB3PR0402MB3916.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-References: <20191007214439.27891-1-sebastian@breakpoint.cc>
- <CAK8P3a13AOKm1epqAtP9329Ai2Bh+H18fOfsqO+deCLTHoYRwA@mail.gmail.com>
- <56004687-af3e-3b8b-c9b5-21cd653db12b@redhat.com>
- <CAK8P3a0UH8_pSPbEd7fRjws-TZ=+q-gLQZXvEOtoX9YtZY9tmA@mail.gmail.com>
- <20191009084610.GG2311@hirez.programming.kicks-ass.net>
-In-Reply-To: <20191009084610.GG2311@hirez.programming.kicks-ass.net>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 9 Oct 2019 10:57:25 +0200
-Message-ID: <CAK8P3a3--khxZgWNa3uH8g5PsP7y8PrgpdktEV49UrOhFCX8jQ@mail.gmail.com>
-Subject: Re: [RFC PATCH 0/3] Queued spinlocks/RW-locks for ARM
-To: Peter Zijlstra <peterz@infradead.org>
+Content-Disposition: inline
+In-Reply-To: <DB3PR0402MB3916CD3B5EC47C023F9D840DF5950@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 10:56:52 up 144 days, 15:15, 97 users,  load average: 0.27, 0.09,
+ 0.08
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_015743_227822_F32472B0 
-X-CRM114-Status: GOOD (  14.37  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20191009_015756_773077_E1A8B8F7 
+X-CRM114-Status: GOOD (  18.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.195 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.195 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,59 +79,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Russell King <linux@armlinux.org.uk>,
- Sebastian Andrzej Siewior <sebastian@breakpoint.cc>,
- Ingo Molnar <mingo@redhat.com>, Waiman Long <longman@redhat.com>,
- Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 9, 2019 at 10:46 AM Peter Zijlstra <peterz@infradead.org> wrote:
->
-> On Tue, Oct 08, 2019 at 04:32:27PM +0200, Arnd Bergmann wrote:
-> > diff --git a/arch/arm/include/asm/cmpxchg.h b/arch/arm/include/asm/cmpxchg.h
-> > index 8b701f8e175c..6bf4964c105c 100644
-> > --- a/arch/arm/include/asm/cmpxchg.h
-> > +++ b/arch/arm/include/asm/cmpxchg.h
-> > @@ -114,6 +114,24 @@ static inline unsigned long __xchg(unsigned long
-> > x, volatile void *ptr, int size
-> >         return ret;
-> >  }
-> >
-> > +#ifdef CONFIG_CPU_V6
-> > +static inline unsigned short smp_xchg16_relaxed(volatile unsigned
-> > short *ptr, unsigned short x)
-> > +{
-> > +       unsigned short ret, tmp;
-> > +       asm volatile("@ smp_xchg16_relaxed\n"
-> > +       ".arch armv6k\n"
-> > +       "1:     ldrexh  %0, [%3]\n"
-> > +       "       strexh  %1, %2, [%3]\n"
-> > +       "       teq     %1, #0\n"
-> > +       "       bne     1b"
-> > +               : "=&r" (ret), "=&r" (tmp)
-> > +               : "r" (x), "r" (ptr)
-> > +               : "memory", "cc");
-> > +       return ret;
-> > +}
-> > +#define smp_xchg16_relaxed smp_xchg16_relaxed
-> > +#endif
->
-> Why is this not in __xchg() as a variant for case 2 ?
+On 19-10-09 08:28, Anson Huang wrote:
+> Hi, Marco
+> 
+> > On 19-10-08 00:48, Anson Huang wrote:
+> > > Hi, Marco
+> > >
+> > > > On 19-10-07 09:15, Anson Huang wrote:
+> > > > > The SCU firmware does NOT always have return value stored in
+> > > > > message header's function element even the API has response data,
+> > > > > those special APIs are defined as void function in SCU firmware,
+> > > > > so they should be treated as return success always.
+> > > > >
+> > > > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > > > > ---
+> > > > > Changes since V1:
+> > > > > 	- Use direct API check instead of calling another function to check.
+> > > > > 	- This patch is based on
+> > > > > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2F
+> > > > > patc
+> > > > >
+> > > >
+> > hwork.kernel.org%2Fpatch%2F11129553%2F&amp;data=02%7C01%7Canson.
+> > > > huang%
+> > > > >
+> > > >
+> > 40nxp.com%7C2de0a6be69b74cc249ad08d74afc9730%7C686ea1d3bc2b4c6f
+> > > > a92cd99
+> > > > >
+> > > >
+> > c5c301635%7C0%7C0%7C637060321046247040&amp;sdata=RMFAdLKGKb6
+> > > > mEdhycrzHX
+> > > > > R03E6Qr5pWyRc8Zk6ErlBc%3D&amp;reserved=0
+> > > >
+> > > > Thanks for this v2. It would be good to change the callers within this
+> > series.
+> > >
+> > > NOT quite understand your point, the callers does NOT need to be
+> > > changed, those
+> > > 2 special APIs callers are already following the right way of calling the APIs.
+> > 
+> > Ah okay. I searched the 5.4-rc2 tag and found the soc_uid_show() as only
+> > user but this user sets the have_resp field to false. Is this intended?
+> 
+> I already fixed it and patch applied by Shawn, see below:
+> 
+> https://patchwork.kernel.org/patch/11129497/
 
-ldrexh/strexh are instructions that are only available on SMP-capable
-architecture revisions (ARMv6K or higher). When building a kernel
-that runs both on pre-K ARMv6 uniprocessor systems and on later
-SMP systems, __xchg() can only do 32-bit  ldrex/strex.
+I see :) So one last question, please check the other thread.
 
-The trick of smp_xchg16_relaxed() is to allow the 16-bit atomics
-in code that can is only ever executed on SMP systems but not
-the uniprocessor OMAP2 and i.MX3 chips that would trap.
+Regards,
+  Marco
 
-      Arnd
+> 
+> Anson
+> 
+
+-- 
+Pengutronix e.K.                           |                             |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
