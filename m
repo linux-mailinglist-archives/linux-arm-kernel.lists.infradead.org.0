@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BEA2D0922
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:07:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A00ABD0921
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:06:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
 	Date:From:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=9D4ZTYl4H0nQeoeoArmHKrGmTca1pL4V2OnQ4CUxAnc=; b=QWNv1aJYv8S638
-	hGCz1azMT1x/i/+hXpQv8ytyF1xlRI8PPiN0vPBArdmqg6xIkTSD5haesChHm/TQLZda4pZwydXKM
-	rZWfedwASuM/gQRBn2ByGMUFGVS2PA+1Vrwe99RXaakuJG6upvpnXboTILltvjRBQ+uH3MeZM899y
-	1WlaMrZGMkbkgBeVARSokIN4EG80LRNDKyExd9koxHCr8dZeAi2CUCIm79CjUyNC4Hedl2NAh7KH1
-	+S6BF+Kn3H8S5Hsqavlmll7P6Fgez4kIDRmxqjeRm2IbkcP0HKmlFDkgMs5L8adW0ctj+T+uXeXoY
-	nG28OX/U6kBSuOR2dk3w==;
+	List-Owner; bh=98vsztF5CCAIYNz/ZoSxV1BCK/xZmG6Sb7EYfijcnAk=; b=Or5DAlFqtrEO53
+	973Zi0zH9z+qz+6s6GFZrQBXOMAZbRG8RFdGMHVim9ictdutDzDNGFJ+zQa0gEzolSN0PEGyLZBzq
+	o1aQrIE1DWOz3pNBmjnIjtwugfRvQxbk7XmnGjSikmaiOjPfFP5A/OvMmKDqSLzF2L8Qvr/SMNvy5
+	FEH/Qs8FvYJL3hVOtYaYv8sJm4l0d5UwwK4YDy9bePPL4dAOKlFSYcLf6dvdr1WiFShCjwS5VkTSk
+	C/A8xBazfvd9piPGT9CZZKCB4x0YZ8qVmDyQjTpB6Cf4UVDJRL/iIRQWy795szt8RAtkPhVxoVbSh
+	nLE4VBKUYiJWJocIFHdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI6zy-0007AL-RD; Wed, 09 Oct 2019 08:07:06 +0000
+	id 1iI6zk-0006xl-0i; Wed, 09 Oct 2019 08:06:52 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI6xW-00040Q-Bq
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:04:36 +0000
+ id 1iI6xS-0003yB-Ol
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:04:32 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 788C7206B6;
- Wed,  9 Oct 2019 08:04:32 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DBB18206C0;
+ Wed,  9 Oct 2019 08:04:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570608273;
- bh=z0b53obcgOEyw2suWEi6jQkLR2xp5Sa5Z9+1LD9Ekog=;
+ s=default; t=1570608270;
+ bh=MOEE+uITnDJquoQujCGC/bNISc1V+WOIjRVJlAq8Gww=;
  h=Subject:To:Cc:From:Date:In-Reply-To:From;
- b=GiFcwlVGhiHQgSq6dRytK2TxghACDfuoyUjKHYeaqdy1V6XZ1TA1MhJawlFFUggEu
- DDMRmIZwPcoeb4QSTKuzwy9JxGQDEWKxCTi2xKFLHKxUDnSpSkPo9t4tk2TgeOEHWq
- JPTSOg4wmx0ZVmZj2+yvIr5extkdeqoqpUjRnyTs=
-Subject: Patch "arm64: fix SSBS sanitization" has been added to the
- 4.19-stable tree
-To: ard.biesheuvel@linaro.org, catalin.marinas@arm.com,
- gregkh@linuxfoundation.org, linux-arm-kernel@lists.infradead.org,
- mark.rutland@arm.com, suzuki.poulose@arm.com, will.deacon@arm.com
+ b=X9jKyv6X3LQW9dN6nJnb0jCAqgDUWJ2QcPbf12Z4n3t8d5UNqcDwdwAn70Ep1s4IT
+ GdiEHNZO8PvAkYEg3+C6/7qvmg4oAHlet2SEDhIYinRDBqS3taw4eiVK3u2VHXjsgO
+ e4XPQFiacsYzFR+xm5QMLMls1RR+0S8JT4ErYGDo=
+Subject: Patch "arm64: enable generic CPU vulnerabilites support" has been
+ added to the 4.19-stable tree
+To: andre.przywara@arm.com, ard.biesheuvel@linaro.org, catalin.marinas@arm.com,
+ gregkh@linuxfoundation.org, jeremy.linton@arm.com,
+ linux-arm-kernel@lists.infradead.org, stefan.wahren@i2se.com,
+ will.deacon@arm.com, ykaukab@suse.de
 From: <gregkh@linuxfoundation.org>
 Date: Wed, 09 Oct 2019 10:04:02 +0200
-In-Reply-To: <20191008153930.15386-6-ard.biesheuvel@linaro.org>
-Message-ID: <1570608242229149@kroah.com>
+In-Reply-To: <20191008153930.15386-9-ard.biesheuvel@linaro.org>
+Message-ID: <1570608242222246@kroah.com>
 MIME-Version: 1.0
 X-stable: commit
 X-Patchwork-Hint: ignore 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_010434_540019_C24363E6 
-X-CRM114-Status: GOOD (  12.65  )
+X-CRM114-CacheID: sfid-20191009_010430_858045_3AD73B90 
+X-CRM114-Status: GOOD (  10.30  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -84,13 +85,13 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 This is a note to let you know that I've just added the patch titled
 
-    arm64: fix SSBS sanitization
+    arm64: enable generic CPU vulnerabilites support
 
 to the 4.19-stable tree which can be found at:
     http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
 
 The filename of the patch is:
-     arm64-fix-ssbs-sanitization.patch
+     arm64-enable-generic-cpu-vulnerabilites-support.patch
 and it can be found in the queue-4.19 subdirectory.
 
 If you, or anyone else, feels it should not be added to the stable tree,
@@ -99,75 +100,41 @@ please let <stable@vger.kernel.org> know about it.
 
 From foo@baz Wed 09 Oct 2019 10:02:11 AM CEST
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Tue,  8 Oct 2019 17:39:19 +0200
-Subject: arm64: fix SSBS sanitization
+Date: Tue,  8 Oct 2019 17:39:22 +0200
+Subject: arm64: enable generic CPU vulnerabilites support
 To: linux-arm-kernel@lists.infradead.org
-Cc: stable@vger.kernel.org, Mark Rutland <mark.rutland@arm.com>, Catalin Marinas <catalin.marinas@arm.com>, Suzuki K Poulose <suzuki.poulose@arm.com>, Will Deacon <will.deacon@arm.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Message-ID: <20191008153930.15386-6-ard.biesheuvel@linaro.org>
+Cc: stable@vger.kernel.org, Mian Yousaf Kaukab <ykaukab@suse.de>, Jeremy Linton <jeremy.linton@arm.com>, Andre Przywara <andre.przywara@arm.com>, Catalin Marinas <catalin.marinas@arm.com>, Stefan Wahren <stefan.wahren@i2se.com>, Will Deacon <will.deacon@arm.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Message-ID: <20191008153930.15386-9-ard.biesheuvel@linaro.org>
 
-From: Mark Rutland <mark.rutland@arm.com>
+From: Mian Yousaf Kaukab <ykaukab@suse.de>
 
-[ Upstream commit f54dada8274643e3ff4436df0ea124aeedc43cae ]
+[ Upstream commit 61ae1321f06c4489c724c803e9b8363dea576da3 ]
 
-In valid_user_regs() we treat SSBS as a RES0 bit, and consequently it is
-unexpectedly cleared when we restore a sigframe or fiddle with GPRs via
-ptrace.
+Enable CPU vulnerabilty show functions for spectre_v1, spectre_v2,
+meltdown and store-bypass.
 
-This patch fixes valid_user_regs() to account for this, updating the
-function to refer to the latest ARM ARM (ARM DDI 0487D.a). For AArch32
-tasks, SSBS appears in bit 23 of SPSR_EL1, matching its position in the
-AArch32-native PSR format, and we don't need to translate it as we have
-to for DIT.
-
-There are no other bit assignments that we need to account for today.
-As the recent documentation describes the DIT bit, we can drop our
-comment regarding DIT.
-
-While removing SSBS from the RES0 masks, existing inconsistent
-whitespace is corrected.
-
-Fixes: d71be2b6c0e19180 ("arm64: cpufeature: Detect SSBS and advertise to userspace")
-Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-Cc: Will Deacon <will.deacon@arm.com>
+Signed-off-by: Mian Yousaf Kaukab <ykaukab@suse.de>
+Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
+Reviewed-by: Andre Przywara <andre.przywara@arm.com>
+Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+Tested-by: Stefan Wahren <stefan.wahren@i2se.com>
 Signed-off-by: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 ---
- arch/arm64/kernel/ptrace.c |   15 ++++++++-------
- 1 file changed, 8 insertions(+), 7 deletions(-)
+ arch/arm64/Kconfig |    1 +
+ 1 file changed, 1 insertion(+)
 
---- a/arch/arm64/kernel/ptrace.c
-+++ b/arch/arm64/kernel/ptrace.c
-@@ -1666,19 +1666,20 @@ void syscall_trace_exit(struct pt_regs *
- }
- 
- /*
-- * SPSR_ELx bits which are always architecturally RES0 per ARM DDI 0487C.a
-- * We also take into account DIT (bit 24), which is not yet documented, and
-- * treat PAN and UAO as RES0 bits, as they are meaningless at EL0, and may be
-- * allocated an EL0 meaning in future.
-+ * SPSR_ELx bits which are always architecturally RES0 per ARM DDI 0487D.a.
-+ * We permit userspace to set SSBS (AArch64 bit 12, AArch32 bit 23) which is
-+ * not described in ARM DDI 0487D.a.
-+ * We treat PAN and UAO as RES0 bits, as they are meaningless at EL0, and may
-+ * be allocated an EL0 meaning in future.
-  * Userspace cannot use these until they have an architectural meaning.
-  * Note that this follows the SPSR_ELx format, not the AArch32 PSR format.
-  * We also reserve IL for the kernel; SS is handled dynamically.
-  */
- #define SPSR_EL1_AARCH64_RES0_BITS \
--	(GENMASK_ULL(63,32) | GENMASK_ULL(27, 25) | GENMASK_ULL(23, 22) | \
--	 GENMASK_ULL(20, 10) | GENMASK_ULL(5, 5))
-+	(GENMASK_ULL(63, 32) | GENMASK_ULL(27, 25) | GENMASK_ULL(23, 22) | \
-+	 GENMASK_ULL(20, 13) | GENMASK_ULL(11, 10) | GENMASK_ULL(5, 5))
- #define SPSR_EL1_AARCH32_RES0_BITS \
--	(GENMASK_ULL(63,32) | GENMASK_ULL(23, 22) | GENMASK_ULL(20,20))
-+	(GENMASK_ULL(63, 32) | GENMASK_ULL(22, 22) | GENMASK_ULL(20, 20))
- 
- static int valid_compat_regs(struct user_pt_regs *regs)
- {
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -84,6 +84,7 @@ config ARM64
+ 	select GENERIC_CLOCKEVENTS
+ 	select GENERIC_CLOCKEVENTS_BROADCAST
+ 	select GENERIC_CPU_AUTOPROBE
++	select GENERIC_CPU_VULNERABILITIES
+ 	select GENERIC_EARLY_IOREMAP
+ 	select GENERIC_IDLE_POLL_SETUP
+ 	select GENERIC_IRQ_MULTI_HANDLER
 
 
 Patches currently in stable-queue which might be from ard.biesheuvel@linaro.org are
