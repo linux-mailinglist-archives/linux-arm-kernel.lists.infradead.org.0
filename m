@@ -2,92 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AF50D0738
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 08:30:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 702FAD074B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 08:36:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=6VNAq4HpPsEsjtuS91ZLAswayd9x6yg/r2vq4CUAEuw=; b=qiuFGTDlh/ffjlHBV/WuhkqnZ
-	zfM6jER/D2GxWsWw19/mvffp2FOYpDa4sRIEmtVfDicPa6oaODX492oOexAT20Jn9lNh8rcnJyfEz
-	Bz3GsCnzdeGXrOI9TJzLclvu2y+6L6gTS+75xJ0aFssGMAEBk0BHQTVcuqQ8c25eTJs/CoOUMutZf
-	172+JXdFHYN2n2q072CyLC1/ZF+J4mi9L1MSTAlmJgwvRfPMi92uOqZiMloe/0l2IFivRzWtAeRNW
-	WAcYkURAw5YntjgoskzLb9VEsJvn0nJDI3BxlBT/BAO8yZe/6lghEMS6bEOvlHI4eoFctGCRGFws8
-	8NeorrOhQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EEKEN/KNCWAwhBEOE7WhfbP6gJZMozrZ5AuWgBS2P5A=; b=IKdwzAKmUejZTY
+	Kd3y8GG4C3JgHR0CCSj+pcd+rmPIVMhdV/MB0S/0R0OQ7cbSCLV5eW4YaG4wDkhpsDjWYawhvPVUd
+	cQ0LiEea4xVi5LdQu/LZVd8/XHB5x5L+YC9soELP+8nYEfenwJH7+u3JnqY1bVKr9As5d8Drn8z1W
+	9VKAKxkQkMUuQrRH+qa0YOKPxT0izezWvjPfCzbrK6oz4e9qt7l/ZuoE8D7pxLupHqq02VVxtRrod
+	hZyaM6DaYEHpSO8hkQXKqMjsTO7ZXNyFI0D6QEG0X2lNcUeRspD8gaCEOMo7nFZgr+JxMvy+gLXa2
+	qbxu/WVgLlBXSrft4GvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI5UG-0001pN-Cb; Wed, 09 Oct 2019 06:30:16 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1iI5a6-0005XB-AD; Wed, 09 Oct 2019 06:36:18 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI5U3-0001CI-4L
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 06:30:04 +0000
-Received: by mail-pl1-x643.google.com with SMTP id t10so548879plr.8
+ id 1iI5a0-0005W9-0v
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 06:36:13 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1570602968;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references:openpgp:openpgp;
+ bh=DRp1swJmLGnIlAf7XMxEoZkdOJe88OuGnn8pzjWNfwY=;
+ b=N8bQXPn4HettIkUNNDz5xBGXwt7UnT7OEJmLqYnh5tt0pDRRBbOILhIwucIC9yZGWELWEJ
+ oNgQt5TgyuFLc9HAr+sbZfFUlFybgs0gbgTnysgGD5KvWsjbEUMNtrB5Y/2rrtCFgUOAyE
+ r40LjompiqmFacQLtUwC/zkN5dLT0g4=
+Received: from mail-wr1-f69.google.com (mail-wr1-f69.google.com
+ [209.85.221.69]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-95-wdtFrL4yOdaQxpWy18c0zQ-1; Wed, 09 Oct 2019 02:36:04 -0400
+Received: by mail-wr1-f69.google.com with SMTP id j7so624020wrx.14
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 08 Oct 2019 23:30:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding;
- bh=w68/orlNscWNc/RUeRC/f2rPS8rnm+VfnzeAEKq1oho=;
- b=gCAsZizJ9a3a0D5hVnAfZkm/iL5uzpK6VAqTpzgEYwlxQ+3u652p3Y/VZBqO7FveWB
- Nq7EMGtdS4MC0QctnX0zHCHDvhnZYkGf941vE1ny/Ht9sX3Iq2kywSAR51MHKQWG1Ph4
- BUWNHY6OXqwubIpbWNafpxMIPZKcVg3f5OYwHMQ/rHHrjD0PmvvF6RHNsqXDzXzM65Jn
- XJP6RWKqNo0xUZDdqVVeGkLGlrfNu0pzbx68EYCiGEu6VKlp3PYFn4QdUAiBlwNFwiTM
- ULODzh/thFVYThjDakFi0rHFgulQUW7mX3lqdoGjCH98NZJdvXa/BVPCi7Cj+WAwQW3c
- 6ohw==
+ Tue, 08 Oct 2019 23:36:04 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding;
- bh=w68/orlNscWNc/RUeRC/f2rPS8rnm+VfnzeAEKq1oho=;
- b=blBt+xyXYO9qxr3CVDMnZ/pI8eGGEJrDScb0svfLKHrii+OmHdG3mXofHYVfksO2E1
- jURg1/AdA32kzH2I8oyjJwX5O8mDRjM0RCxmd37fuDEd+cJlCAssN/BT0uYacmVs8s51
- +nwUT1UySYfkyT5ZdO2TaxXc4za1wiHaw0h2g/GK9CwM8ME75vrHKcszRdT4l/3bFsKR
- m3UAh0mnz80ceJWKNjN03ysId0iiH8ukbc9sDDkV4z4fcJsuCSV2Vn5Zvcmydzt+vVsp
- Z+m2USEvWF4Ms6iypveOr1ebGx/moxEVMP6bXHRpfGGJ2AgVu/czQb4ezeoaPwrpwqJG
- OWoQ==
-X-Gm-Message-State: APjAAAUsZBZ971KU2aDJNiMnXfQ3jmVwgkiK38xVn5+/WfqEsK05E1lc
- fLs8tV+Q5EoOeA3mI4qhjso=
-X-Google-Smtp-Source: APXvYqxkfVNDvqvamqZYmknXHRyR5WvVmjl5du1D4+hbKLSxzIltzJwTMLTMlINKS6fH0aPAUAiFVg==
-X-Received: by 2002:a17:902:8d89:: with SMTP id
- v9mr1528070plo.247.1570602602062; 
- Tue, 08 Oct 2019 23:30:02 -0700 (PDT)
-Received: from [0.0.0.0] (104.129.187.94.16clouds.com. [104.129.187.94])
- by smtp.gmail.com with ESMTPSA id f185sm1284523pfb.183.2019.10.08.23.29.48
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 08 Oct 2019 23:30:00 -0700 (PDT)
-Subject: Re: [PATCH v10 1/3] arm64: cpufeature: introduce helper
- cpu_has_hw_af()
-To: Suzuki K Poulose <suzuki.poulose@arm.com>,
- "Justin He (Arm Technology China)" <Justin.He@arm.com>,
- Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>
-References: <20190930015740.84362-1-justin.he@arm.com>
- <20190930015740.84362-2-justin.he@arm.com>
- <20191001125446.gknoofnm7az4wqf5@willie-the-truck>
- <20191001141848.762296bd@why>
- <DB7PR08MB30824EFD975EE9BACAC7FD52F79A0@DB7PR08MB3082.eurprd08.prod.outlook.com>
- <e4fc5be5-8594-121a-198b-17ca7486dd3a@arm.com>
-From: Jia He <hejianet@gmail.com>
-Message-ID: <1b28b20c-bc10-dbf6-aa78-afd985cf8920@gmail.com>
-Date: Wed, 9 Oct 2019 14:29:42 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=DRp1swJmLGnIlAf7XMxEoZkdOJe88OuGnn8pzjWNfwY=;
+ b=SmoXSv7ap5Z/c3cg8rGy69mNCX3P54ChtcFZ9Zqp6fNgnCxIcxMPQwtZBJD/oD/nAN
+ j8mDv4wsDZI6GZJ6qq9aftXmBi/fgRlmyFIwA9CNdl1oqs8g0IrEUY8Zl2JOaIKQ8Et0
+ jfnHBRP0X6da7yrOLCdpKqx9qhci09Yhr5CAxt92G99p0qgBB+5QNHzWEQ4YaDpQAB5D
+ IC2X1lueD5I72npuIwKCQhPrTACcl5o4123xRFlkvDdnOFTkVyeiBCFinK8rMsFVa+ky
+ PCp0FfclaR8rxv6BeuEYkVU9JdM9uLMyVIOjw5jkzc69Jni9nUPEsaiFTx/Ba7wVS9Bs
+ U04Q==
+X-Gm-Message-State: APjAAAWocL5wonua3LkzEhzT7xOwsswyOLE4kUC7H3cyNSdGw1ctpVNg
+ V1VKrKTC0KBrxCr1R9AEtwzZz8Dx5H3nlbb9FDNQPeLCaZZ7vM764FKXY4ne8/PE/YCTaWjDRgH
+ ogfltcFckKKRSm0zepEe2wrQBm/xSmzyn4ag=
+X-Received: by 2002:a5d:5610:: with SMTP id l16mr1515939wrv.143.1570602963414; 
+ Tue, 08 Oct 2019 23:36:03 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqwIwCawDi6R5bC55JQUaG89aKMEczYrGrPl67xVSkSyIT2j1JE6iE4/baYaPJLh4Q90kl9l8Q==
+X-Received: by 2002:a5d:5610:: with SMTP id l16mr1515916wrv.143.1570602963107; 
+ Tue, 08 Oct 2019 23:36:03 -0700 (PDT)
+Received: from ?IPv6:2001:b07:6468:f312:f4b0:55d4:57da:3527?
+ ([2001:b07:6468:f312:f4b0:55d4:57da:3527])
+ by smtp.gmail.com with ESMTPSA id m7sm993787wrv.40.2019.10.08.23.36.01
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 08 Oct 2019 23:36:02 -0700 (PDT)
+Subject: Re: [RFC PATCH v3 4/6] psci: Add hvc call service for ptp_kvm.
+To: "Jianyong Wu (Arm Technology China)" <Jianyong.Wu@arm.com>,
+ Marc Zyngier <maz@kernel.org>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "yangbo.lu@nxp.com" <yangbo.lu@nxp.com>,
+ "john.stultz@linaro.org" <john.stultz@linaro.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "sean.j.christopherson@intel.com" <sean.j.christopherson@intel.com>,
+ "richardcochran@gmail.com" <richardcochran@gmail.com>,
+ Mark Rutland <Mark.Rutland@arm.com>, Will Deacon <Will.Deacon@arm.com>,
+ Suzuki Poulose <Suzuki.Poulose@arm.com>
+References: <20190918080716.64242-1-jianyong.wu@arm.com>
+ <20190918080716.64242-5-jianyong.wu@arm.com>
+ <83ed7fac-277f-a31e-af37-8ec134f39d26@redhat.com>
+ <HE1PR0801MB1676F57B317AE85E3B934B32F48E0@HE1PR0801MB1676.eurprd08.prod.outlook.com>
+ <629538ea-13fb-e666-8df6-8ad23f114755@redhat.com>
+ <HE1PR0801MB167639E2F025998058A77F86F4890@HE1PR0801MB1676.eurprd08.prod.outlook.com>
+ <ef6ab8bd-41ad-88f8-9cfd-dc749ca65310@redhat.com>
+ <a1b554b8-4417-5305-3419-fe71a8c50842@kernel.org>
+ <56a5b885-62c8-c4ef-e2f8-e945c0eb700e@redhat.com>
+ <HE1PR0801MB1676115C248E6DF09F9DD5A6F4950@HE1PR0801MB1676.eurprd08.prod.outlook.com>
+From: Paolo Bonzini <pbonzini@redhat.com>
+Openpgp: preference=signencrypt
+Message-ID: <1cc145ca-1af2-d46f-d530-0ae434005f0b@redhat.com>
+Date: Wed, 9 Oct 2019 08:36:00 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <e4fc5be5-8594-121a-198b-17ca7486dd3a@arm.com>
+In-Reply-To: <HE1PR0801MB1676115C248E6DF09F9DD5A6F4950@HE1PR0801MB1676.eurprd08.prod.outlook.com>
+Content-Language: en-US
+X-MC-Unique: wdtFrL4yOdaQxpWy18c0zQ-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_233003_183604_D3FC47B5 
-X-CRM114-Status: GOOD (  17.88  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191008_233612_149098_A4F88253 
+X-CRM114-Status: GOOD (  11.15  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (hejianet[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [207.211.31.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -108,76 +127,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>,
- Catalin Marinas <Catalin.Marinas@arm.com>,
+Cc: "Justin He \(Arm Technology China\)" <Justin.He@arm.com>,
+ "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
+ Steve Capper <Steve.Capper@arm.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Matthew Wilcox <willy@infradead.org>,
- "Kaly Xin \(Arm Technology China\)" <Kaly.Xin@arm.com>,
- James Morse <James.Morse@arm.com>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>,
- Punit Agrawal <punitagrawal@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
- Andrew Morton <akpm@linux-foundation.org>,
+ "Kaly Xin \(Arm Technology China\)" <Kaly.Xin@arm.com>, nd <nd@arm.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgU3V6dWtpCgpPbiAyMDE5LzEwLzggMjM6MzIsIFN1enVraSBLIFBvdWxvc2Ugd3JvdGU6Cj4K
-Pgo+IE9uIDA4LzEwLzIwMTkgMDI6MTIsIEp1c3RpbiBIZSAoQXJtIFRlY2hub2xvZ3kgQ2hpbmEp
-IHdyb3RlOgo+PiBIaSBXaWxsIGFuZCBNYXJjCj4+IFNvcnJ5IGZvciB0aGUgbGF0ZSByZXNwb25z
-ZSwganVzdCBjYW1lIGJhY2sgZnJvbSBhIHZhY2F0aW9uLgo+Pgo+Pj4gLS0tLS1PcmlnaW5hbCBN
-ZXNzYWdlLS0tLS0KPj4+IEZyb206IE1hcmMgWnluZ2llciA8bWF6QGtlcm5lbC5vcmc+Cj4+PiBT
-ZW50OiAyMDE55bm0MTDmnIgx5pelIDIxOjE5Cj4+PiBUbzogV2lsbCBEZWFjb24gPHdpbGxAa2Vy
-bmVsLm9yZz4KPj4+IENjOiBKdXN0aW4gSGUgKEFybSBUZWNobm9sb2d5IENoaW5hKSA8SnVzdGlu
-LkhlQGFybS5jb20+OyBDYXRhbGluCj4+PiBNYXJpbmFzIDxDYXRhbGluLk1hcmluYXNAYXJtLmNv
-bT47IE1hcmsgUnV0bGFuZAo+Pj4gPE1hcmsuUnV0bGFuZEBhcm0uY29tPjsgSmFtZXMgTW9yc2Ug
-PEphbWVzLk1vcnNlQGFybS5jb20+Owo+Pj4gTWF0dGhldyBXaWxjb3ggPHdpbGx5QGluZnJhZGVh
-ZC5vcmc+OyBLaXJpbGwgQS4gU2h1dGVtb3YKPj4+IDxraXJpbGwuc2h1dGVtb3ZAbGludXguaW50
-ZWwuY29tPjsgbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnOwo+Pj4gbGludXgt
-a2VybmVsQHZnZXIua2VybmVsLm9yZzsgbGludXgtbW1Aa3ZhY2sub3JnOyBQdW5pdCBBZ3Jhd2Fs
-Cj4+PiA8cHVuaXRhZ3Jhd2FsQGdtYWlsLmNvbT47IFRob21hcyBHbGVpeG5lciA8dGdseEBsaW51
-dHJvbml4LmRlPjsKPj4+IEFuZHJldyBNb3J0b24gPGFrcG1AbGludXgtZm91bmRhdGlvbi5vcmc+
-OyBoZWppYW5ldEBnbWFpbC5jb207IEthbHkKPj4+IFhpbiAoQXJtIFRlY2hub2xvZ3kgQ2hpbmEp
-IDxLYWx5LlhpbkBhcm0uY29tPgo+Pj4gU3ViamVjdDogUmU6IFtQQVRDSCB2MTAgMS8zXSBhcm02
-NDogY3B1ZmVhdHVyZTogaW50cm9kdWNlIGhlbHBlcgo+Pj4gY3B1X2hhc19od19hZigpCj4+Pgo+
-Pj4gT24gVHVlLCAxIE9jdCAyMDE5IDEzOjU0OjQ3ICswMTAwCj4+PiBXaWxsIERlYWNvbiA8d2ls
-bEBrZXJuZWwub3JnPiB3cm90ZToKPj4+Cj4+Pj4gT24gTW9uLCBTZXAgMzAsIDIwMTkgYXQgMDk6
-NTc6MzhBTSArMDgwMCwgSmlhIEhlIHdyb3RlOgo+Pj4+PiBXZSB1bmNvbmRpdGlvbmFsbHkgc2V0
-IHRoZSBIV19BRkRCTSBjYXBhYmlsaXR5IGFuZCBvbmx5IGVuYWJsZSBpdCBvbgo+Pj4+PiBDUFVz
-IHdoaWNoIHJlYWxseSBoYXZlIHRoZSBmZWF0dXJlLiBCdXQgc29tZXRpbWVzIHdlIG5lZWQgdG8g
-a25vdwo+Pj4+PiB3aGV0aGVyIHRoaXMgY3B1IGhhcyB0aGUgY2FwYWJpbGl0eSBvZiBIVyBBRi4g
-U28gZGVjb3VwbGUgQUYgZnJvbQo+Pj4+PiBEQk0gYnkgbmV3IGhlbHBlciBjcHVfaGFzX2h3X2Fm
-KCkuCj4+Pj4+Cj4+Pj4+IFNpZ25lZC1vZmYtYnk6IEppYSBIZSA8anVzdGluLmhlQGFybS5jb20+
-Cj4+Pj4+IFN1Z2dlc3RlZC1ieTogU3V6dWtpIFBvdWxvc2UgPFN1enVraS5Qb3Vsb3NlQGFybS5j
-b20+Cj4+Pj4+IFJldmlld2VkLWJ5OiBDYXRhbGluIE1hcmluYXMgPGNhdGFsaW4ubWFyaW5hc0Bh
-cm0uY29tPgo+Pj4+PiAtLS0KPj4+Pj4gwqAgYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9jcHVmZWF0
-dXJlLmggfCAxMCArKysrKysrKysrCj4+Pj4+IMKgIDEgZmlsZSBjaGFuZ2VkLCAxMCBpbnNlcnRp
-b25zKCspCj4+Pj4+Cj4+Pj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2luY2x1ZGUvYXNtL2Nw
-dWZlYXR1cmUuaAo+Pj4gYi9hcmNoL2FybTY0L2luY2x1ZGUvYXNtL2NwdWZlYXR1cmUuaAo+Pj4+
-PiBpbmRleCA5Y2RlNWQyZTc2OGYuLjk0OWJjN2M4NTAzMCAxMDA2NDQKPj4+Pj4gLS0tIGEvYXJj
-aC9hcm02NC9pbmNsdWRlL2FzbS9jcHVmZWF0dXJlLmgKPj4+Pj4gKysrIGIvYXJjaC9hcm02NC9p
-bmNsdWRlL2FzbS9jcHVmZWF0dXJlLmgKPj4+Pj4gQEAgLTY1OSw2ICs2NTksMTYgQEAgc3RhdGlj
-IGlubGluZSB1MzIKPj4+IGlkX2FhNjRtbWZyMF9wYXJhbmdlX3RvX3BoeXNfc2hpZnQoaW50IHBh
-cmFuZ2UpCj4+Pj4+IMKgwqAgZGVmYXVsdDogcmV0dXJuIENPTkZJR19BUk02NF9QQV9CSVRTOwo+
-Pj4+PiDCoMKgIH0KPj4+Pj4gwqAgfQo+Pj4+PiArCj4+Pj4+ICsvKiBDaGVjayB3aGV0aGVyIGhh
-cmR3YXJlIHVwZGF0ZSBvZiB0aGUgQWNjZXNzIGZsYWcgaXMgc3VwcG9ydGVkICovCj4+Pj4+ICtz
-dGF0aWMgaW5saW5lIGJvb2wgY3B1X2hhc19od19hZih2b2lkKQo+Pj4+PiArewo+Pj4+PiArIGlm
-IChJU19FTkFCTEVEKENPTkZJR19BUk02NF9IV19BRkRCTSkpCj4+Pj4+ICvCoMKgwqDCoMKgwqDC
-oMKgIHJldHVybiByZWFkX2NwdWlkKElEX0FBNjRNTUZSMV9FTDEpICYgMHhmOwo+Pj4+Cj4+Pj4g
-MHhmPyBJIHRoaW5rIHdlIHNob3VsZCBoYXZlIGEgbWFzayBpbiBzeXNyZWcuaCBmb3IgdGhpcyBj
-b25zdGFudC4KPj4+Cj4+PiBXZSBkb24ndCBoYXZlIHRoZSBtYXNrLCBidXQgd2UgY2VydGFpbmx5
-IGhhdmUgdGhlIHNoaWZ0Lgo+Pj4KPj4+IEdFTk1BU0soSURfQUE2NE1NRlIxX0hBREJTX1NISUZU
-ICsgMywKPj4+IElEX0FBNjRNTUZSMV9IQURCU19TSElGVCkgaXMgYSBiaXQKPj4+IG9mIGEgbW91
-dGhmdWwgdGhvdWdoLiBJZGVhbGx5LCB3ZSdkIGhhdmUgYSBoZWxwZXIgZm9yIHRoYXQuCj4+Pgo+
-PiBPaywgSSB3aWxsIGltcGxlbWVudCB0aGUgaGVscGVyIGlmIHRoZXJlIGlzbid0IHNvIGZhci4K
-Pj4gQW5kIHRoZW4gcmVwbGFjZSB0aGUgMHhmIHdpdGggaXQuCj4KPiBPciBjb3VsZCB3ZSBzaW1w
-bCByZXVzZSBleGlzdGluZyBjcHVpZF9mZWF0dXJlX2V4dHJhY3RfdW5zaWduZWRfZmllbGQoKSA/
-Cj4KPiB1NjQgbW1mcjEgPSByZWFkX2NwdWlkKElEX0FBNjRNTUZSMV9FTDEpOwo+Cj4gcmV0dXJu
-IGNwdWlkX2ZlYXR1cmVfZXh0cmFjdF91bnNpZ25lZF9maWVsZChtbWZyMSwgSURfQUE2NE1NRlIx
-X0hBREJTX1NISUZUKSA/Cj4KWWVzLCB3ZSBjYW4sIEkgd2lsbCBzZW5kIHRoZSBuZXcgdmVyc2lv
-bgoKLS0tCkNoZWVycywKSnVzdGluIChKaWEgSGUpCgoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
-dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On 09/10/19 07:21, Jianyong Wu (Arm Technology China) wrote:
+> As ptp_kvm clock has fixed to arm arch system counter in patch set
+> v4, we need check if the current clocksource is system counter when
+> return clock cycle in host, so a helper needed to return the current
+> clocksource. Could I add this helper in next patch set?
+
+You don't need a helper.  You need to return the ARM arch counter
+clocksource in the struct system_counterval_t that you return.
+get_device_system_crosststamp will then check that the clocksource
+matches the active one.
+
+Paolo
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
