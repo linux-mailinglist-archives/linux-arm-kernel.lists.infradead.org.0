@@ -2,55 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71F9FD0A6C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:58:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F11E4D0A5D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:57:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=sq1IDJYisr7c7szL8ob4cCb/NtNRJge+FVqjHAkHc1M=; b=YvANX6BeRvdlnY
-	bQHPN19NXlVX52w3uI8Otgs3kKH9v2ZRPUT6D6fGgSxedLx7x7TtGUx33AybPk0uyCWfoIH1eex65
-	WSVTffV71J6Akg56oQJHF6XZclq/7fRueUrGcYFiMGrE2sn65euFrZ8KkAHYkeTgkA9qgJM5Sk4Xz
-	1FFfOR95tul1IlEUjwnWGje/fpszIw9urCkNVH+PlaFbJWUOSpNeWC39mJ6NMWsqan1iyBt23zTX2
-	RCFfAvznRJuiX2/e81oTKjpax11BgDRqpTXmNm3mYyfgPUyUaLUYxLh3PAcypdqvA+wNll29uycWc
-	NnC60qFvK2JVVKMUKJUw==;
+	List-Owner; bh=l/FHASVx95NP3c75uLk7pRE7praZdSVCPdT7wXKVbbs=; b=aSgiAp/hVzEmGZ
+	PmaEIRKivjODyrOLBcLwuIe+foAkeN1oSoD71JNSYdDnWxAO909kfoERKCFCXQ6rlKRmdtWdmyj0J
+	enQCKQ0bE4trTDbRpYEgDVdaaIYwqAtT+giOj0rAJOevOyfil2C80IiPi3ROTfJb8OaBsBCeuGzLf
+	+KOaEKUQ14hawBfx6ZDiYlOvSne5n2TE024lXImuRBDDpX7uimuGijLTGuPxe1f7ZyduqT/yvCuUv
+	5qKLfrfP9Lf4TEd6ClQUA3BC/SqvBo+HD7VEoLr+JLPhLks/beCC8BxEKtFWWjqMhwy6PY4bW5b40
+	FSrEwGhg55PZ2wn78pwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI7nQ-0003YH-AG; Wed, 09 Oct 2019 08:58:12 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1iI7mG-0002o0-4l; Wed, 09 Oct 2019 08:57:00 +0000
+Received: from imap1.codethink.co.uk ([176.9.8.82])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI7n3-0003Jl-Fu
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:57:51 +0000
-Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 7DF0EA200A797F312905;
- Wed,  9 Oct 2019 16:57:43 +0800 (CST)
-Received: from localhost.localdomain (10.67.212.75) by
- DGGEMS409-HUB.china.huawei.com (10.3.19.209) with Microsoft SMTP Server id
- 14.3.439.0; Wed, 9 Oct 2019 16:57:34 +0800
-From: John Garry <john.garry@huawei.com>
-To: <peterz@infradead.org>, <mingo@redhat.com>, <acme@kernel.org>,
- <alexander.shishkin@linux.intel.com>, <jolsa@redhat.com>,
- <namhyung@kernel.org>, <mark.rutland@arm.com>, <will@kernel.org>
-Subject: [PATCH] MAINTAINERS: Add entry for perf tool arm64 pmu-events files
-Date: Wed, 9 Oct 2019 16:54:33 +0800
-Message-ID: <1570611273-108281-1-git-send-email-john.garry@huawei.com>
-X-Mailer: git-send-email 2.8.1
+ id 1iI7m7-0002nE-Jt
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:56:53 +0000
+Received: from [167.98.27.226] (helo=rainbowdash.codethink.co.uk)
+ by imap1.codethink.co.uk with esmtpsa (Exim 4.84_2 #1 (Debian))
+ id 1iI7m4-0008Cl-9s; Wed, 09 Oct 2019 09:56:48 +0100
+Received: from ben by rainbowdash.codethink.co.uk with local (Exim 4.92.2)
+ (envelope-from <ben@rainbowdash.codethink.co.uk>)
+ id 1iI7m3-0005fe-Pt; Wed, 09 Oct 2019 09:56:47 +0100
+From: Ben Dooks <ben.dooks@codethink.co.uk>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 1/2] ARM: OMAP2+: make dra7xx_sha0_hwmod static
+Date: Wed,  9 Oct 2019 09:56:45 +0100
+Message-Id: <20191009085646.21755-1-ben.dooks@codethink.co.uk>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-X-Originating-IP: [10.67.212.75]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_015749_713132_7BB239F5 
-X-CRM114-Status: UNSURE (   6.19  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191009_015651_802176_206792B9 
+X-CRM114-Status: GOOD (  12.78  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [176.9.8.82 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,43 +59,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, John Garry <john.garry@huawei.com>,
- linux-kernel@vger.kernel.org, linuxarm@huawei.com, zhangshaokun@hisilicon.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-kernel@lists.codethink.co.uk, Paul Walmsley <paul@pwsan.com>,
+ Tony Lindgren <tony@atomide.com>, Ben Dooks <ben.dooks@codethink.co.uk>,
+ =?UTF-8?q?Beno=C3=AEt=20Cousson?= <bcousson@baylibre.com>,
+ linux-omap@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Will and I have an interest in reviewing the pmu-events changes related to
-arm64, so add a specific entry for this.
-
-Cc: Will Deacon <will@kernel.org>
-Signed-off-by: John Garry <john.garry@huawei.com>
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 296de2b51c83..6583b02790fe 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -12767,6 +12767,13 @@ F:	arch/*/events/*
- F:	arch/*/events/*/*
- F:	tools/perf/
- 
-+PERFORMANCE EVENTS SUBSYSTEM ARM64 PMU EVENTS
-+R:	John Garry <john.garry@huawei.com>
-+R:	Will Deacon <will@kernel.org>
-+L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
-+S:	Supported
-+F:	tools/perf/pmu-events/arch/arm64/
-+
- PERSONALITY HANDLING
- M:	Christoph Hellwig <hch@infradead.org>
- L:	linux-abi-devel@lists.sourceforge.net
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIGRyYTd4eF9zaGEwX2h3bW9kIG9iamVjdCBpcyBub3QgZXhwb3J0ZWQgb3V0c2lkZSBvZgpv
+bWFwX2h3bW9kXzd4eF9kYXRhLiBzbyBtYWtlIGl0IHN0YXRpYyB0byBhdm9pZCB0aGUKZm9sbG93
+aW5nIHdhcm5pbmc6CgphcmNoL2FybS9tYWNoLW9tYXAyL29tYXBfaHdtb2RfN3h4X2RhdGEuYzo2
+ODY6MTk6IHdhcm5pbmc6IHN5bWJvbCAnZHJhN3h4X3NoYTBfaHdtb2QnIHdhcyBub3QgZGVjbGFy
+ZWQuIFNob3VsZCBpdCBiZSBzdGF0aWM/CgpTaWduZWQtb2ZmLWJ5OiBCZW4gRG9va3MgPGJlbi5k
+b29rc0Bjb2RldGhpbmsuY28udWs+Ci0tLQpDYzogIkJlbm/DrnQgQ291c3NvbiIgPGJjb3Vzc29u
+QGJheWxpYnJlLmNvbT4KQ2M6IFBhdWwgV2FsbXNsZXkgPHBhdWxAcHdzYW4uY29tPgpDYzogVG9u
+eSBMaW5kZ3JlbiA8dG9ueUBhdG9taWRlLmNvbT4KQ2M6IGxpbnV4LW9tYXBAdmdlci5rZXJuZWwu
+b3JnCi0tLQogYXJjaC9hcm0vbWFjaC1vbWFwMi9vbWFwX2h3bW9kXzd4eF9kYXRhLmMgfCAyICst
+CiAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRpb24oLSkKCmRpZmYgLS1n
+aXQgYS9hcmNoL2FybS9tYWNoLW9tYXAyL29tYXBfaHdtb2RfN3h4X2RhdGEuYyBiL2FyY2gvYXJt
+L21hY2gtb21hcDIvb21hcF9od21vZF83eHhfZGF0YS5jCmluZGV4IGU1YmQ1NDlkMmE1ZS4uYmQz
+OTJkNTkzODJiIDEwMDY0NAotLS0gYS9hcmNoL2FybS9tYWNoLW9tYXAyL29tYXBfaHdtb2RfN3h4
+X2RhdGEuYworKysgYi9hcmNoL2FybS9tYWNoLW9tYXAyL29tYXBfaHdtb2RfN3h4X2RhdGEuYwpA
+QCAtNjgzLDcgKzY4Myw3IEBAIHN0YXRpYyBzdHJ1Y3Qgb21hcF9od21vZF9jbGFzcyBkcmE3eHhf
+c2hhMF9od21vZF9jbGFzcyA9IHsKIAkuc3lzYwkJPSAmZHJhN3h4X3NoYTBfc3lzYywKIH07CiAK
+LXN0cnVjdCBvbWFwX2h3bW9kIGRyYTd4eF9zaGEwX2h3bW9kID0geworc3RhdGljIHN0cnVjdCBv
+bWFwX2h3bW9kIGRyYTd4eF9zaGEwX2h3bW9kID0gewogCS5uYW1lCQk9ICJzaGFtIiwKIAkuY2xh
+c3MJCT0gJmRyYTd4eF9zaGEwX2h3bW9kX2NsYXNzLAogCS5jbGtkbV9uYW1lCT0gImw0c2VjX2Ns
+a2RtIiwKLS0gCjIuMjMuMAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
