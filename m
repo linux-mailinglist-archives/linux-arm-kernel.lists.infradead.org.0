@@ -2,454 +2,247 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A68BCD53BB
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 13 Oct 2019 03:45:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A152CD53CE
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 13 Oct 2019 04:37:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U8MJpT+P51CB2ZRCYG9URsHqe3Q4jVTLqQMWVSoMBLQ=; b=SsMDUQAevdw8Dr
-	NmwHGJr6pLiLf1LZs0w7r9bnusbtAt5m41caN/4UwnwwH857VWVJIbVptNttlpLlpOlmeC575FNVz
-	3Du5Vx6dXHV+OCloVKtMaNv3kOyvP2jZc5QeU/TrTXJdngDukRKadaODdZCmbZ/3XpW/buSRXrWzW
-	YG/pL+9+h6a4GGOGbpOEUj88GQe5K+kl7bcuCQUVIKf8GxtvjUO1XuItv0jdCUIuY4bI3mZCkmpys
-	X44InLyitAVFh4tPGyMn62xFBjLOO5b8mtZjE2TBUG8PrlPJekCG/VJkhEDQefIvXHYu1W9m58mif
-	tnZFD2rJU5kIFoOjYw4A==;
+	List-Owner; bh=6YysgGNWUIPGP99nvmV7U0jk6QBjhosA+dYe/GfMr74=; b=EP+qW3AjXLWyLP
+	t0qJg1G1PXXZXnUMfGIVWVItQE5ymMHWvyrxKgB94bOoMaATUxCLRtLjl+spLLp9o6uauuZyWNGAC
+	visCyOYJbZs+jdFnFRtSCT5/LOIjmZxHOHDwlUAzrDTNMxQfqz7Ea3mKqrZBtdXup00/fRR6L2nM1
+	XPZME8RUnM+GLKm3fOOgLwpMGKoIsMnUJ9MSX89UtzDQnG9Pn04s9znigjBHAtmTcLWthRkGAe3qQ
+	HGHkRb7DpkVad5WbJO7MfbzKNKpWNM+vjfE2i4c9cYsO8u23zDuycD6SGt/f1EfRUpZIfLC+cRpto
+	NIqR1VFj8O+Fv/zOh3qA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJSwg-000343-40; Sun, 13 Oct 2019 01:45:18 +0000
+	id 1iJTkn-0002F1-3J; Sun, 13 Oct 2019 02:37:05 +0000
 Received: from listssympa-test.colorado.edu ([128.138.129.156])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJSwL-00033d-MM
- for linux-arm-kernel@lists.infradead.org; Sun, 13 Oct 2019 01:44:59 +0000
+ id 1iJTkd-0002Eb-KM
+ for linux-arm-kernel@lists.infradead.org; Sun, 13 Oct 2019 02:36:57 +0000
 Received: from listssympa-test.colorado.edu (localhost [127.0.0.1])
  by listssympa-test.colorado.edu (8.15.2/8.15.2/MJC-8.0/sympa) with ESMTPS id
- x9D1ik8B001499
+ x9D2aeb0017502
  (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Sat, 12 Oct 2019 19:44:46 -0600
+ Sat, 12 Oct 2019 20:36:40 -0600
 Received: (from root@localhost)
  by listssympa-test.colorado.edu (8.15.2/8.15.2/MJC-8.0/submit) id
- x9D1ikup001491; Sat, 12 Oct 2019 19:44:46 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025; 
- h=from:to:cc:subject:date:message-id:in-reply-to:references 
- :mime-version:content-transfer-encoding;       
- bh=W+SY6yjQG6ah82xj2QYbshpM9aG1FiA4CAoNvKBotSg=;       
- b=YytU7O4Mr0gz7kyPQD4eZtBeA5dJSUNfBOhztctdYxmLpl7HVtMLdxEx20d9wYV02I        
- T7NN/5qhMHUYYJfhzJKA3JVtpElQDrumt6yQPI2mja+XbTCSpl2V8kCJ7DXU20Q7S6NJ        
- hIzCoosqtECV+MMvbIyPyjs7dsKOgCuOlwL+wCOInPovvX5/0/A1aQGBI6vGS0FA2Vy2        
- UcA1uSnuRf7hgNzuaRIpr9Kh9NEIF34qHnRASpyn8OrRGC4EXuEwGBpYr4jB8Vjm9MfE        
- Fg9IIDFjgDMapqezD9Nz+n/lDgAKFhZxNfbRoRZY7miIbYS/CP7zTCTN3gOlk3d53I99        
- liDg==
-Received: from MWHPR03MB2879.namprd03.prod.outlook.com (2603:10b6:a03:60::32)
+ x9D2adGA017455; Sat, 12 Oct 2019 20:36:39 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com; s=dec2015msa;
+ t=1570638527;        bh=zM7dxD3GmLuJA27n7tj6vmU9wclV7umhFu5rYXOd+6c=;       
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;       
+ b=SQPud2h0OWu0HF3XYWYxty13tni/EzU9iRFSRy6Ulcx1nol+bNQtyk6jfN+yVAkj9        
+ h+1IgrHE8gA9JeygREhqo4gg9/wYVIGeKZhCmqsSUE6VXOrLL+ACe9eQZsn4NawO2s        
+ AlEmlOyZcmN613ziPcn6hFKqxpPkhCRc6qGmrQYUaN/7OF+NQB9oJIHQnk0EW9ucMD        
+ Az87WvdwWY3kelGhzYJoMQobsQcGwf1gRZkrRUmeb6p+B7GF/l92EYD0vsO7aPfvCC        
+ 5WvOZTmb6JWM+lY+xsEmT7fmfk1tXwa/EMz5qmVGOJZMNHXRwJd28CPdhWITzNvYTB        
+ jKj3Q/x9Dcqlw==
+Received: from CY4PR03MB2421.namprd03.prod.outlook.com (2603:10b6:a03:1e0::18)
  by BYAPR03MB4376.namprd03.prod.outlook.com with HTTPS via
- BYAPR07CA0055.NAMPRD07.PROD.OUTLOOK.COM; Wed, 9 Oct 2019 18:28:00 +0000
-Received: from BN6PR03CA0077.namprd03.prod.outlook.com (2603:10b6:405:6f::15)
+ BY5PR03CA0008.NAMPRD03.PROD.OUTLOOK.COM; Wed, 9 Oct 2019 18:08:59 +0000
+Received: from BN6PR03CA0061.namprd03.prod.outlook.com (2603:10b6:404:4c::23)
  by
- MWHPR03MB2879.namprd03.prod.outlook.com (2603:10b6:300:120::8) with
+ CY4PR03MB2421.namprd03.prod.outlook.com (2603:10b6:903:3f::10) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2347.17; Wed, 9 Oct
- 2019 17:27:32 +0000
-Received: from SN1NAM01FT004.eop-nam01.prod.protection.outlook.com
- (2a01:111:f400:7e40::209) by BN6PR03CA0077.outlook.office365.com
- (2603:10b6:405:6f::15) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2347.16 via Frontend
- Transport; Wed, 9 Oct 2019 17:27:32 +0000
-Received: from ipmx2.colorado.edu (128.138.128.232) by
- SN1NAM01FT004.mail.protection.outlook.com (10.152.64.188) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384)
- id 15.20.2347.16 via Frontend Transport; Wed, 9 Oct 2019 17:27:31 +0000
-Received: from mx.colorado.edu ([128.138.128.150]) by mx.colorado.edu with
- ESMTP; 09 Oct 2019 10:47:13 -0600
-Received: from mx.colorado.edu ([128.138.128.150]) by mx.colorado.edu with
- ESMTP; 09 Oct 2019 10:16:24 -0600
-Received: from ipmx4.colorado.edu ([128.138.67.75])  by mx.colorado.edu with
- ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Oct 2019 09:57:26 -0600
-Received: from ipmx7.colorado.edu ([128.138.128.233]) by mx.colorado.edu with
- ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Oct 2019 09:50:37 -0600
-Received: from mx.colorado.edu ([128.138.128.150]) by mx.colorado.edu with
- ESMTP; 09 Oct 2019 09:42:05 -0600
-Received: from ipmx4.colorado.edu ([128.138.67.75])  by mx.colorado.edu with
- ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Oct 2019 09:34:51 -0600
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2327.23; Wed, 9 Oct
+ 2019 17:41:25 +0000
+Received: from BY2NAM01FT040.eop-nam01.prod.protection.outlook.com
+ (2a01:111:f400:7e42::200) by BN6PR03CA0061.outlook.office365.com
+ (2603:10b6:404:4c::23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2347.16 via Frontend
+ Transport; Wed, 9 Oct 2019 17:41:25 +0000
+Received: from ipmx8.colorado.edu (128.138.67.85) by
+ BY2NAM01FT040.mail.protection.outlook.com (10.152.68.174) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384)
+ id 15.20.2347.16 via Frontend Transport; Wed, 9 Oct 2019 17:41:23 +0000
 Received: from mx-spsc.colorado.edu (HELO mx.colorado.edu) ([128.138.67.77]) by
  mx.colorado.edu with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Oct 2019
- 09:31:34 -0600
-Received: from mx-spsc.colorado.edu (HELO mx.colorado.edu) ([128.138.67.77]) by
- mx.colorado.edu with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Oct 2019
- 09:29:17 -0600
+ 10:59:11 -0600
 Received: from vger.kernel.org ([209.132.180.67]) by mx.colorado.edu with
- ESMTP; 09 Oct 2019 09:28:09 -0600
+ ESMTP; 09 Oct 2019 10:28:55 -0600
 Received: (majordomo@vger.kernel.org) by vger.kernel.org via listexpand id
- S1731804AbfJIP16 (ORCPT <rfc822; michael.gilroy@colorado.edu>);
- Wed, 9 Oct 2019 11:27:58 -0400
-Received: from mail-yw1-f68.google.com ([209.85.161.68]:36961 "EHLO       
- mail-yw1-f68.google.com" rhost-flags-OK-OK-OK-OK) by vger.kernel.org       
- with ESMTP id S1731785AbfJIP1z (ORCPT       
- <rfc822; linux-kernel@vger.kernel.org>); Wed, 9 Oct 2019 11:27:55 -0400
-Received: by mail-yw1-f68.google.com with SMTP id m7so961733ywe.4; Wed, 09 Oct
- 2019 08:27:54 -0700 (PDT)
-Received: from localhost.localdomain (072-189-084-142.res.spectrum.com.
- [72.189.84.142])        by smtp.gmail.com with ESMTPSA id
- g40sm611863ywk.14.2019.10.09.08.27.52        (version=TLS1_3
- cipher=TLS_AES_256_GCM_SHA384 bits=256/256);        Wed, 09 Oct 2019
- 08:27:53 -0700 (PDT)
-Authentication-Results: spf=none (sender IP is 128.138.128.232)
+ S1731829AbfJIQ2x (ORCPT <rfc822; michael.gilroy@colorado.edu>);
+ Wed, 9 Oct 2019 12:28:53 -0400
+Received: from conssluserg-02.nifty.com ([210.131.2.81]:53370 "EHLO       
+ conssluserg-02.nifty.com" rhost-flags-OK-OK-OK-OK) by vger.kernel.org       
+ with ESMTP id S1729644AbfJIQ2x (ORCPT       
+ <rfc822; linux-kernel@vger.kernel.org>); Wed, 9 Oct 2019 12:28:53 -0400
+Received: from mail-vs1-f51.google.com (mail-vs1-f51.google.com
+ [209.85.217.51])
+ (authenticated)        by conssluserg-02.nifty.com with ESMTP id
+ x99GSjFp013815;        Thu, 10 Oct 2019 01:28:46 +0900
+Received: by mail-vs1-f51.google.com with SMTP id m22so1910937vsl.9;
+ Wed, 09 Oct 2019 09:28:46 -0700 (PDT)
+Authentication-Results: spf=none (sender IP is 128.138.67.85)
  smtp.mailfrom=vger.kernel.org; 
  o365.colorado.edu; dkim=pass (signature was verified)
- header.d=gmail.com;o365.colorado.edu; dmarc=pass action=none
- header.from=gmail.com;
+ header.d=nifty.com;o365.colorado.edu; dmarc=none action=none
+ header.from=socionext.com;
 Received-SPF: None (protection.outlook.com: vger.kernel.org does not designate
  permitted sender hosts)
-IronPort-SDR: w1HYvGFkt6vTYHXN31sO7n1WhiM/07MDzlxhcnddTuWFZ4E3muHdwVdWSaiTVXFfu6aNXJi8+1
- XpObjoo3J/7XpfyNGFkr1hwb+Npr0tfeM=
-IronPort-SDR: cuMNrWAeDRE3MzUWLFsFNH2m/S+SudN1QVhhNxYH7la+4zcngr441Vnbm7MzHAZKpVkmCcyl/q
- 9EnzyH6LTRrvvHXI9XeiA92pJdxecUjk8=
-IronPort-SDR: wJKkY56jXoEA6bfdns21bhYxBaHh5AxkJXugNQmy7y/l4i+ySLKIrb3HTZK/7/og4rIT00UCBw
- TtA/xybDpyqD4QqiSCjCU7dP2CDP59Ipo=
-IronPort-SDR: Wu0vo4722G3rHA519VLv3+OBYY++0YvIK8azplcXygjJIm9xMDg0+T3oTXmVblavnK6XdDi7U3
- A3F3Djadb0jgVpY+v+aeHEVCiYLvYJXzY=
-IronPort-SDR: 7c+HnobKpFI1uJhM04truqdBN9/7lhDjHXNcBUZcvwYN7snkGJqk6P0yUqkNi+p0GnzNvJt1Bg
- vqxrukXvbJLiIDn/o2ADznyyXP54+/C0E=
-IronPort-SDR: nIV1AKwcDjbE7YzNKxLBySlqf5yYlyqKefZqPu/j8hU1Y+AmmOhCLJZUffJSS7087n3K+5Ib5T
- EWR38xP9LZiBmFTiEU4gKoCd72xG1908A=
-IronPort-SDR: QhgLaaB+MKa6VlPk2ArOcVikrBQAse0mBPp6L+tDzMYJ+PdJwGw+tlgb1a5lELKIQ3NXzoDmOy
- mMzoPuWm0ChjQgZl8NqoSfBT8qMcr3sqs=
-IronPort-SDR: Gk4cSCoErzz7N9leN/pxDu+bTVP9b0NpFO/qmozZXuj7lhP5IewrPY+hl7PzqBQyrkd5XFj5fa
- IQQ+FqkY2w1l6kPgHuoXvlkN4JGZ+QBMI=
-IronPort-SDR: 6n3ehVTZ8EgvjCgWimgiz6za8fK//H0GoCGJ1ir2WWVxYUOqnEZ4LbEdvOjGwcozrL14qGJqEV
- 5vz8hHMUH2qVZLg0ooGVcanVtG4vpRBzQ=
-X-IronPort-Outbreak-Status: No, level 0, Unknown - Unknown
-X-IronPort-Outbreak-Status: No, level 0, Unknown - Unknown
-X-IronPort-Outbreak-Status: No, level 0, Unknown - Unknown
-X-IronPort-Outbreak-Status: No, level 0, Unknown - Unknown
-X-IronPort-Outbreak-Status: No, level 0, Unknown - Unknown
-X-IronPort-Outbreak-Status: No, level 0, Unknown - Unknown
-X-IronPort-Outbreak-Status: No, level 0, Unknown - Unknown
-X-IronPort-Outbreak-Status: No, level 0, Unknown - Unknown
-X-IronPort-Outbreak-Status: No, level 0, Unknown - Unknown
-X-Original-Recipients: gasiewsk@o365.colorado.edu
-X-Original-Recipients: gasiewsk@o365.colorado.edu
-X-Original-Recipients: gasiewsk@o365.colorado.edu
-X-Original-Recipients: gasiewsk@o365.colorado.edu
-X-Original-Recipients: gasiewsk@o365.colorado.edu
-X-Original-Recipients: gasiewsk@o365.colorado.edu
-X-Original-Recipients: gasiewsk@o365.colorado.edu
-X-Original-Recipients: migi9492@g.colorado.edu
 Authentication-Results-Original: mx.colorado.edu;
  dkim=pass (signature verified)
- header.i=@gmail.com
-IronPort-PHdr: =?us-ascii?q?9a23=3AP3suWhBmIGKNECxDnrCPUyQJP3V1l5bVG0s49J?=
- =?us-ascii?q?MjlrtSc6OlocS/blKKvKYlhQrTRoye8PJN0beI4OjrDHYN5Z+RvXxFapFIXg?=
- =?us-ascii?q?8IhZZz/URoSIbNQQWzIKvlaiU7GIJJU1o2t2ruaxAMRp+mPQCBxx/6pXZaUl?=
- =?us-ascii?q?23fQogKP7yH9zOiJa83LKp5pfRbg5U1ja0fb4gKRittgzeu4wXjdljLOMrxw?=
- =?us-ascii?q?PNsz5UfLZMyG1lP1+VlBvng6X4tNYru2wY87pz8s9FXODkcr4jTLteXj8hNX?=
- =?us-ascii?q?w44tGuqQPKSxCB62FZX2MdlRZJBQeWiXOyFt+5+mOy/uB9jRbZBvyoXLINdm?=
- =?us-ascii?q?qr7/cxWB2ysRYNLD4h1TDepZVejYsHizumgQJc6YnIW47AZ58cNuuVNZtSDS?=
- =?us-ascii?q?JLC/dASxEeJd+ZddMAHbUCLN5hg9XwlUckoDLjCSuXOcXh4BhIlGP9waELw+?=
- =?us-ascii?q?EFCQWZ/DI8OvYCoFnE9o35Zbgjb7jv7cyqhX2LJ7sekX+11NfuVFd8uPGpfY?=
- =?us-ascii?q?9BQOjfyVsNNCqerGuMsaHhBh+Py+ER7Xmi18s6UOCmyF4tlypKujz1+Jcvoa?=
- =?us-ascii?q?uWqrIokAj9qh4n5qRQR5XwAAYzKZbsWJtxpQqdMJBvXu4JfSJNnTgw66w+qJ?=
- =?us-ascii?q?ygIyQR67Mo7AP4b+OjMJejxTPlbOGPPwclwyoiUeu2vjmY0Ba+5dakeODu7k?=
- =?us-ascii?q?cQy0gN2pGE/jhFn1Tu4eHeV8B7432vhjaA8RLO49tlOVpltqqKDbMA7OVsj7?=
- =?us-ascii?q?oVi234Bj7wyGLstoC9KmgU58W3xM7/U6+6pLXMCY1x2yTwH8FM0oT3Saxwek?=
- =?us-ascii?q?BGcWfK2MWQ+r/s0WjwWKxHnNFntLuattfeCcsyhYC5MR9z3IwZ7CyNPmij0f?=
- =?us-ascii?q?USrEJAB2oaai6ss66yNHbKI6v0UKye0gXJ8n8jj7iOdvWpSpHMAneWxeSpbf?=
- =?us-ascii?q?N88Ula0A0p0ZVF6olJDq1UOPvoQRyr7o7xEwM5Pgqowu3uFNR60MYkVHmSBr?=
- =?us-ascii?q?OCbvyAtE/O7eUrJPOFaIhTtTrgeLAp5P/r2GcwgkRVPbKo0p0edG2iE7x4Ll?=
- =?us-ascii?q?+Yb3vhjpZJEWoDsgckCu2/oFKHWD9XIX21Wq8=3D?=
-IronPort-PHdr: =?us-ascii?q?9a23=3AekNfXROs3eVdlW6a9OYl6mtUO3oLmJTReyML45?=
- =?us-ascii?q?46gq5PdaL9r8mwIhmGtr1k2UXSVMDA6/se1rSF+6u1Q2EE6IaMvDcYfZhFRx?=
- =?us-ascii?q?IJ2qB010RoSIbNQQX3efHvZi0+Ws9FUQwt5CThaRELQZ6kOg63wDX6pXZaUl?=
- =?us-ascii?q?23NV97POPwSJLV3c+8hfuv8Z/eaBkaiDOhbOF3IQ6tpArc88ga04pkb7w80h?=
- =?us-ascii?q?/Y52dPKf5by25yKFSYkg2ZhI/4tNYru2wY86Ak9stNFLv3Zb85SroKBzMgL2?=
- =?us-ascii?q?0z+Ij3rxDFVgWC/D4RVG4RnhtODFugjlmyFt+5+mOyvOoo52qhDJPnT4kbBz?=
- =?us-ascii?q?2iv/17SkXRuS0cNyYcoWj40+Jxpf5wiRWHuT9VxJLvb9TGUZg2NuuVNZtSDW?=
- =?us-ascii?q?AUb9dNanNmXqamN4QdUOkQBd9084TPu3EDhEayJzKRIu3F7T9amnTq0Zwq1s?=
- =?us-ascii?q?A5FV7m4hAFO94enWSO9NmkK5YsCbqUqcuAhX2LJ7sekX/Bt67uNU04odSsYI?=
- =?us-ascii?q?NBU8TR22sMPljnsEmIhIjcEymI0/hTolGjzrBlV+vsu2QbgDpppmKRlsQHqN?=
- =?us-ascii?q?bltr9Pkmmbzntf4uNXbZXwAAYzKZbsELpCnCadLJJqb+gcAERNpiwb24UXu4?=
- =?us-ascii?q?XkcDMp75sM2jnbdNjEbKOvwxTbU/iPEWo/3DVMIbuGqDyTr1aP8bXSf5OKwQ?=
- =?us-ascii?q?wvzGIN2pGE/jhFnyHYw5Gacf1gxEn+2TmpxR3a0MBcOxEXlfv9Br8PmeIptp?=
- =?us-ascii?q?wpmH/bDymmv1/Mo4TKW3U51/eHwfzWeOnkjM+iNYolrw/TV8Zm0oT3Saxwek?=
- =?us-ascii?q?AgUDm62MiS1rLP2EThWbhYoqwQgOrf95T2Ku04iK6LEylb2Lwk0SSOUDKn8d?=
- =?us-ascii?q?4ppj4sFA1XRDm7qdPmHFXNe/ylVtbu0jHO2H8jj7iOdvWpBpThIS2Ww//xOL?=
- =?us-ascii?q?dn7EhEzxAviMpS/I9QFuQZKenoCRWr5vXFEh80NRC1yO/7CdJ7k7kTQn+LHr?=
- =?us-ascii?q?THb/HXoRmD4eYoOeCAY8kYtCuuY/Qm5vu7lXYighddZqim25ILdWq1VuprOU?=
- =?us-ascii?q?SXYHfgw58BHG4GsxB4TbnCh1iLUDoVbHG3Ug=3D=3D?=
-IronPort-PHdr: =?us-ascii?q?9a23=3AqyQWExWpcATMBUm+kiOqniaIJsHV8LGtY1w5yb?=
- =?us-ascii?q?sCzp9Qe6C+9ojjO0qBtag/kgqQDs3Svuhfgq/Ns6m6BDJTqZ3Uqn0GeYxBW1?=
- =?us-ascii?q?gfhMEfjwEsU6vnQQWzZLaiJ2Q2SctHXV5huXq8NBsdA5OkPwSM+yXosG13eF?=
- =?us-ascii?q?23fUI9bqy9GtvclcOyhfy1qZbYMR5Vjjiwaq8gIByqoFfUu9INiIRvb6c9mB?=
- =?us-ascii?q?rP52FFY+BHgH9vd0iekRvm68G78YUGkWwY87ppv4YIGff/fqE1CKJVFi8nNG?=
- =?us-ascii?q?Zn78rtqRTFUU6T/HIaSWsbiF9FBQPC4BD8UcSU0GOy/qI1kGHSN82jcvMPaG?=
- =?us-ascii?q?qz7Z5EFhbo2H0XNWQAwWvMitRV3at0+TygjkBU6onyfqK/M+ZFcfaOGLFSDS?=
- =?us-ascii?q?IJFo4ZHyYUM5KgUtQoU88bZelK8Irsn2Ii8RaMGSOhLb7j6AR1oHHc+q0oz+?=
- =?us-ascii?q?89HTDW2Sg4G40ujmjxiNnlGbdICezk05j2lW/iCpEekX+1oMCAOlgd/teqGu?=
- =?us-ascii?q?9pce/x9HgeNQ3FnHezgNfHAS+N++A0n3KG6vY+RNuXqjQiqQgykjKT7fw0jt?=
- =?us-ascii?q?P31oE+6A/oxRgjmL9qHoOeaisZKZbsWNMY/2nSN6pkacQlWHh0lQ0EiZgjp5?=
- =?us-ascii?q?SabRAbyo94ywX8TPOsbq+M/TagS822ADFAg2x7SO/431GbqEGZ5cfdCNeb6w?=
- =?us-ascii?q?5kh3B7g4Op1DhFn1SbooDPAsZ21x684jCS7Q6M6u5iM109r4vDMc8Cwu8Wu7?=
- =?us-ascii?q?s96hjaPinMsX7unanGUV8e1cP0xtT6T6rJjIetLdN2oFHAMKF/v8KSZIZwek?=
- =?us-ascii?q?BGFyDTsayS2+zC3GHXQrpmq/Qui6TLnMH8N4cd4aqVDCZ2/IYR+zCxBQ2h6u?=
- =?us-ascii?q?YpwnwGDVh0Q1Wst9f7B3ryBqv3KvO82FjxyxY6lpWkdvWpSt2FZjCLlLbNcu?=
- =?us-ascii?q?MouAZMjQspytZH4IhIT6sMO+/3RhrpvcfDXUVjYSWp3+bqDsl83YoCWGWJR5?=
- =?us-ascii?q?WUK77WrUTWubAqM6+HY4sSoj/xLL4o6+O9xXM6mFpIZaCyxtNXc3G3GP16Pl?=
- =?us-ascii?q?+UKWThmNYPEGoG/0I+QeXmhUfEUGt7aHO7XqZ67TY+BQ=3D=3D?=
-IronPort-PHdr: =?us-ascii?q?9a23=3A65wM7BbsrAdNhLf+lfHqp3//LSx+5ufYHS8wr7?=
- =?us-ascii?q?c5grZTe7ii+JK8bBGN+6A03xfACJ/A4rdfi+OM7v6zEWdV+5uFuWAPfNtWWh?=
- =?us-ascii?q?sMmcgazGlCSIbNQQWzZLbmOiM/FcVGElRi+iLzKh0PQJ+gPgWI/y7Xj3ZaUl?=
- =?us-ascii?q?23fUI9JrH7AInX3diwheu5qYbOaQdFjybvbbpuIUezoB7Kv8YbxIpueKc3jw?=
- =?us-ascii?q?HEun9ZPvhRl3llK1+JkhD369zVntYru2wY87ppv5xFUKD3Oro1V6dZCzJ0OG?=
- =?us-ascii?q?cz+MDtqVzfVwKJ/XURSCAblBFPDwnD40KfPN+5+mOy/qI10inPAo7NfO4lWw?=
- =?us-ascii?q?2Nsa5rGEX4in0+BjQi8Hny28Vf1YxaiU6KjhtZ3a3+Z52uO68tG8GVNZtSDS?=
- =?us-ascii?q?IJFswEZj1dP9ybM64VV+UTYuVJl7DR+1Y8sTGzLFSgJtjS7DFioX/kwaYm39?=
- =?us-ascii?q?UxFCXe2FMAIc4rlHjEgcWvbKtDTtGLlPPpqFeLJ7sekX+1oMD0LTYH5qyVXZ?=
- =?us-ascii?q?dQTPvg60cvBSHmpw6yl5D9Ejes+v4QtnTF/tNYdLiqiWdkmwtNiQO3wp0S2o?=
- =?us-ascii?q?ripN05+m2erRwm+9gTB7jaAAYzKZbsWNMYtwCIHIxxWdo+bkpW+wMf1LcnqK?=
- =?us-ascii?q?aqfjNVxI8E4BH0dtuDbKzL/TnEdeCpJilmtC8iIPWW3h+L3mKBlPPTbZGa+Q?=
- =?us-ascii?q?x0v3Ag8JGE/jhFn1SbovWMY6JgxUG84zjQ1w/1+PxNG2Esj/v4K88H758ezc?=
- =?us-ascii?q?YKkUL5NxTuiUOmq7WsWW5419i1xvvISK3XvMOeHd9KiASvF6oD/673Saxwek?=
- =?us-ascii?q?BGFyC19rWd9ZHN/0LVZbxSl/Akvvj/otPcYsA3qYeaLQ9nwqAt4Sy4NQWXj9?=
- =?us-ascii?q?EZvHM2FxVuQE2Vs6PVHQrBB/T7Vvvi2HX9wVIJj7iOdvWpSt2FKnnvn+K0Lv?=
- =?us-ascii?q?5trk9GzwwryspDoohZEawFPKfrU1Tq54aCXDYkLwy5xfrmA9xh14QYHFiCGb?=
- =?us-ascii?q?KdLLiM7g2N9qQkJO2LfoYZv3DwJ+V2r/LtjHpsgVYGZuHpxpoYbnmkA+5ra1?=
- =?us-ascii?q?uUe3vig9oNUC8KswMyQfasiQiqXjtaZnL0VKU56w=3D=3D?=
-IronPort-PHdr: =?us-ascii?q?9a23=3AaazxqRMW5OmHAebVsfwl6mtUO3oLmJTReyML45?=
- =?us-ascii?q?46gq5PdaL9r8mwIhmGtr1k2UXSVMDA6/se1rSF+6u1Q2EE6IaMvDcYfZhFRx?=
- =?us-ascii?q?IJ2qB010RoSIbNQQX3efHvZi0+Ws9FUQwt5CThaRELQZ6kOg63wDX6pXZaUl?=
- =?us-ascii?q?23NV97POPwSJLV3c+8hfuv8Z/eaBkaiDOhbOF3IQ6tpArc88ga04pkb7w80h?=
- =?us-ascii?q?/Y52dPKf5by25yKFSYkg2ZhI/4tNYru2wY86Ak9stNFLv3Zb85SroKBzMgL2?=
- =?us-ascii?q?0z+Ij3rxDFVgWC/D4RVG4RnhtODFugjlmyFt+5+mOyvOoo52qhDJPnT4kbBz?=
- =?us-ascii?q?2iv/17SkXRuS0cNyYcoWj40+Jxpf5wiRWHuT9VxJLvb9TGUZg2NuuVNZtSDW?=
- =?us-ascii?q?AUb9dNanNmXqamN4QdUOkQBd9084TPu3EDhEayJzKRIu3F7T9amnTq0Zwq1s?=
- =?us-ascii?q?A5FV7m4hAFO94enWSO9NmkK5YsCbqUqcuAhX2LJ7sekX/Bt67uNU04odSsYI?=
- =?us-ascii?q?NBU8TR22sMPljnsEmIhIjcEymI0/hTolGjzrBlV+vsu2QbgDpppmKRlsQHqN?=
- =?us-ascii?q?bltr9Pkmmbzntf4uNXbZXwAAYzKZbsELpCnCadLJJqb+gcAERNpiwb24UXu4?=
- =?us-ascii?q?XkcDMp75sM2jnbdNjEbKOvwxTbU/iPEWo/3DVMIbuGqDyTr1aP8bXSf5OKwQ?=
- =?us-ascii?q?wvzGIN2pGE/jhFnyHYw5Gacf1gxEn+2TmpxR3a0MBcOxEXlfv9Br8PmeIptp?=
- =?us-ascii?q?wpmH/bDymmv1/Mo4TKW3U51/eHwfzWeOnkjM+iNYolrw/TV8Zm0oT3Saxwek?=
- =?us-ascii?q?AgUDm62MiS1rLP2EThWbhYoqwQgOrf95T2Ku04iK6LEylb2Lwk0SSOUDKn8d?=
- =?us-ascii?q?4ppj4sFA1XRDm7qdPmHFXNe/ylVtbu0jHO2H8jj7iOdvWpBpThIS2Ww//xOL?=
- =?us-ascii?q?dn7EhEzxAviMpS/I9QFuQZKenoCRWr5vXFEh80NRC1yO/7CdJ7k7kTQn+LHr?=
- =?us-ascii?q?THb/HXoRmD4eYoOeCAY8kYtCuuY/Qm5vu7lXYighddZqim25ILdWq1VuprOU?=
- =?us-ascii?q?SXYHfgw58BHG4GsxB4TbnCh1iLUDoVbHG3Ug=3D=3D?=
-IronPort-PHdr: =?us-ascii?q?9a23=3AlYmyTRYYj7p+OxPIbV27KY//LSx+5ufYHS8wr7?=
- =?us-ascii?q?c5grZTe7ii+JK8bBGN+6A03xfACJ/A4rdfi+OM7v6zEWdV+5uFuWAPfNtWWh?=
- =?us-ascii?q?sMmcgazGlCSIbNQQWzZLbmOiM/FcVGElRi+iLzKh0PQJ+gPgWI/y7Xj3ZaUl?=
- =?us-ascii?q?23fUI9JrH7AInX3diwheu5qYbOaQdFjybvbbpuIUezoB7Kv8YbxIpueKc3jw?=
- =?us-ascii?q?HEun9ZPvhRl3llK1+JkhD369zVntYru2wY87ppv5xFUKD3Oro1V6dZCzJ0OG?=
- =?us-ascii?q?cz+MDtqVzfVwKJ/XURSCAblBFPDwnD40KfPN+5+mOy/qI10inPAo7NfO4lWw?=
- =?us-ascii?q?2Nsa5rGEX4in0+BjQi8Hny28Vf1YxaiU6KjhtZ3a3+Z52uO68tG8GVNZtSDS?=
- =?us-ascii?q?IJFswEZj1dP9ybM64VV+UTYuVJl7DR+1Y8sTGzLFSgJtjS7DFioX/kwaYm39?=
- =?us-ascii?q?UxFCXe2FMAIc4rlHjEgcWvbKtDTtGLlPPpqFeLJ7sekX+1oMD0LTYH5qyVXZ?=
- =?us-ascii?q?dQTPvg60cvBSHmpw6yl5D9Ejes+v4QtnTF/tNYdLiqiWdkmwtNiQO3wp0S2o?=
- =?us-ascii?q?ripN05+m2erRwm+9gTB7jaAAYzKZbsWNMYtwCIHIxxWdo+bkpW+wMf1LcnqK?=
- =?us-ascii?q?aqfjNVxI8E4BH0dtuDbKzL/TnEdeCpJilmtC8iIPWW3h+L3mKBlPPTbZGa+Q?=
- =?us-ascii?q?x0v3Ag8JGE/jhFn1SbovWMY6JgxUG84zjQ1w/1+PxNG2Esj/v4K88H758ezc?=
- =?us-ascii?q?YKkUL5NxTuiUOmq7WsWW5419i1xvvISK3XvMOeHd9KiASvF6oD/673Saxwek?=
- =?us-ascii?q?BGFyC19rWd9ZHN/0LVZbxSl/Akvvj/otPcYsA3qYeaLQ9nwqAt4Sy4NQWXj9?=
- =?us-ascii?q?EZvHM2FxVuQE2Vs6PVHQrBB/T7Vvvi2HX9wVIJj7iOdvWpSt2FKnnvn+K0Lv?=
- =?us-ascii?q?5trk9GzwwryspDoohZEawFPKfrU1Tq54aCXDYkLwy5xfrmA9xh14QYHFiCGb?=
- =?us-ascii?q?KdLLiM7g2N9qQkJO2LfoYZv3DwJ+V2r/LtjHpsgVYGZuHpxpoYbnmkA+5ra1?=
- =?us-ascii?q?uUe3vig9oNUC8KswMyQfasiQiqXjtaZnL0VKU56w=3D=3D?=
+ header.i=@nifty.com
+IronPort-SDR: gpqfVkw/tMyGu4rdMarNwVm7aaVJWgm25N9fxRSpe3ftMRMJAT1r1TWejz8brXgBkzH7t1ZBDj
+ EeGFuhUlvnebHEvwS9jsv224+dJB9JZLw=
+IronPort-SDR: aHdoI2hMdcfGFjGCDIylCs0D0gqyroFWeKYgkiU1vXlbACeSi+0tSB5w5R8hB7ZM5k9WkSHuk0
+ xrTl+oMudRQ0vyTX2EAQqLHTAvcM6twhg=
+IronPort-PHdr: =?us-ascii?q?9a23=3A3ZZN3xasDGhNJJZQtMx/G4n/LSx+5ufYHS8wr7?=
+ =?us-ascii?q?c5grZTe7ii+JK8YBGN+6A03xfACJ/A4rdfi+OM7v6zEWdV+5uFuWAPfNtWWh?=
+ =?us-ascii?q?sMmcgazEQsVciEB1HqavXtan9ffowKHBcttznzKh1ZFc2kPwSPp2a7vnYOT0?=
+ =?us-ascii?q?yialIrfbSoQNGB6qb/n6j6s9WbKw9I0SiYPr9iAE6ZqCHMlOBM3o09NqRv1B?=
+ =?us-ascii?q?7082RDf9oJ2GZoC0/OhSfMwcvzopU2oEEy87ppv4YIGe36Kp41Q7FCATItPn?=
+ =?us-ascii?q?tnxcuujxTbSRrK2nxOfH8Rl0hkChTIvirnVJX8uTeoiu0v8yLIE9fxSONRO3?=
+ =?us-ascii?q?zqp+8jAFeggnI8DgYk/DvX0utPkfp7jkmRliNO05LFOdqJMvs5U7HgLNIga1?=
+ =?us-ascii?q?F7T5hsUydRW4W7a8gFKdMdLOUGrYfb5EowhBi8VGzOTKungncAzje+3e5j8u?=
+ =?us-ascii?q?s7MSyW0yVxPd8fv075rMzyaKgdAKeq/Zfp4jjgXfN93C7m07XlLC4Rhuuoef?=
+ =?us-ascii?q?FZWseAxHAdDAWZqFyPjtb+WlHdnqxF+yDTp6JJUc+qj0k2mQp0hGb2ndUtso?=
+ =?us-ascii?q?LP2II76UnU7R16wK0PLoOhZ0thWO+ZGb0X6Aa0dK1PaJIlYUBIgSA5kpA56I?=
+ =?us-ascii?q?OwWQRvqtxvj1aXI7TPO6Gask3cSuqOHgYjh39hV7KttjS11HGnwPbFXear3g?=
+ =?us-ascii?q?9FlBhGiOPxs30HiQSQwJeoZLx5rx2M6BrXyRv0teh8L14fvs+5Y9ZpivZ43t?=
+ =?us-ascii?q?Jb7HvdOR3KnU+orpCzNUEVufizxuHbPbvjqJzFK79rg0bTF7Zzg8mBLsMaAC?=
+ =?us-ascii?q?0of1ih5sawju3IxUH5f5R2nNsoo5Xz1fKSbYxT7ubxS0dX8YR40lGvXhutyd?=
+ =?us-ascii?q?AHyCxUZEIAeQiAiZDuIU2LOv3jEPOj1kyliyw4naqUF6D9ApjLMnnImavger?=
+ =?us-ascii?q?A40UNH1Q4v1o4AtZdETLoGJPXpU0P28tHUE0xxPw+1xrP/Ac5mnsMFWG2JC7?=
+ =?us-ascii?q?OEKq6ar1KS5+wuLuXNLI8YsTrwMb4kstbojHEliBkWeqyk?=
+IronPort-PHdr: =?us-ascii?q?9a23=3AzwfB/x3wQl4XmEYMsmDT+DJfSgsGnvDZIAcR95?=
+ =?us-ascii?q?M7irVILPj+rYq3ZR+X7KB3l1aMRoXSsa8a2KLd5rrtXWUQ7JrGqn0GeYxBW0?=
+ =?us-ascii?q?xNhZAQngI8EYiODkioSZyiJ2RyVIwKHEQw83ywaxAMRcPlbg6avijrsGFKRE?=
+ =?us-ascii?q?6vaFAqdYGXUsaax4z/n6i4+8jBRlpElBbmTrZWMTef91rX6dUU35VnF/cuwR?=
+ =?us-ascii?q?/3/WZNe8pLmHlZFXWf3Ej3s5TVntYru2wY87pp95t6XKv3Zak+RrFDXhUgdl?=
+ =?us-ascii?q?o4/Mn68CXEHyWV4X5OfmwKn0hzHgLH4RrmDKv24ADx5MRn3yzJWK++Bfh8EX?=
+ =?us-ascii?q?zqp60+cybQlStdN2Yez3yPquIrvJNkkQK9tkUk34jVJ6yHCat/RI3mR8JEeG?=
+ =?us-ascii?q?5KTp9XUCgCCKWFc5oMUegPG6VJkaD+pQprz1P2TUHkTKungj8L3175x40Xg+?=
+ =?us-ascii?q?sIQCPLzQMaMtIXtyjbo4SyK5YscM+475vI5jDadMhr9GnD2K/SVjRiiNqBDL?=
+ =?us-ascii?q?9JQ9HXlW8mCCSflTDy4cStd3vdnqxFmmy26u5HRNCkjkh58lpjowCkwJkspK?=
+ =?us-ascii?q?rQlpotyVDvzy4n2akwP+SJdUddJoGDPth2jgvLMKlXYvokQDlFh3cnwZgq3P?=
+ =?us-ascii?q?zzNGBCgNxvj1b2eazYTJaE/S3SD+WcJRh4lkNHf5eGgBypyEOP1eOlWfOG00?=
+ =?us-ascii?q?xwky9ImIfU9VpS+DKU7pndZ8pRplm6/mmG7w7NwcohQwh83eKTY9ZpiuMPiL?=
+ =?us-ascii?q?0hjUHJQA3JvQbyveyGbWghxrem7urkO6nWuZbbGqpm1xj7DIsJuP6aJ8QICB?=
+ =?us-ascii?q?csUzLL0tyw1ILCwV/fXoR2pJhU2uGR+NiSbYxTpI27WDYSwtcP4A+7EGLzg5?=
+ =?us-ascii?q?wI2HgdK1RdfwibypLkIEzKPKXgBOyk0A72wh522/DLOKHgCZzRL3/F1Y3sZq?=
+ =?us-ascii?q?t591UCl1g23ZZU4JZTELgNJ7T+VlKi/NDbDxpsKwWv2K6nE9Ry0IoCRHiCSr?=
+ =?us-ascii?q?GUKqLcsFKEp6ovLuCAaZVTuWPVLfkr+++ohng8lA=3D=3D?=
 X-IronPort-Anti-Spam-Filtered: true
 X-IronPort-Anti-Spam-Filtered: true
-X-IronPort-Anti-Spam-Filtered: true
-X-IronPort-Anti-Spam-Filtered: true
-X-IronPort-Anti-Spam-Filtered: true
-X-IronPort-Anti-Spam-Filtered: true
-X-IronPort-Anti-Spam-Result: =?us-ascii?q?A0E9AACmBZ5dh0tDioBlHAEBAQEBBwE?=
- =?us-ascii?q?BEQEEBAEBgWcHAQELAYIagUYdEiqMRWCFWoFqiiCFZYQjhSiBPzEUAQEBAQE?=
- =?us-ascii?q?BAQEBBgEBGBUCAQEBAYQ+glIjNAkOAgECCQEBAQMBAQECAQUCAQECAhABAQE?=
- =?us-ascii?q?KCwkIKYU0DINGOzABAQEBAQEBAQEBAQEBAQEBAQEBARUCLVQpAQEZAgEDAQI?=
- =?us-ascii?q?PFQsBDQEbHQEDAgkBAQUQOwMeAhEBBQEcBxIFHYMAgWoBAx2jdYEDPIwlFgU?=
- =?us-ascii?q?BF4J+BYEEgzoKGScNZoE8AgcSgSIBhzSDPIEdgheBRIMdghqCP4VRBK0CQQe?=
- =?us-ascii?q?CJYYmimuECBuNe4tFLY4AijCPBgIKBwYPI4EvghJNI4EBgjtQEBSBT4Nzim9?=
- =?us-ascii?q?YgQUDO5MiAQE?=
-X-IronPort-Anti-Spam-Result: =?us-ascii?q?A0E9AABX/51dh+mAioBlHAEBAQEBBwE?=
- =?us-ascii?q?BEQEEBAEBgWcHAQELAYIagUYdEiqMRWCFWYFqiiCFZYQjhSiBPzEUAQEBAQE?=
- =?us-ascii?q?BAQEBBgEBGBUCAQEBAYQ+glIjNAkOAgECCQEBAQMBAQECAQUCAQECAhABAQE?=
- =?us-ascii?q?KCwkIKYU0DINGOzABAQEBAQEBAQEBAQEBAQEBAQEBARUCLVQpAQEZAgEDAQI?=
- =?us-ascii?q?PFQsBDQEbHQEDAgkBAQUQOwMeAhEBBQEcBxIFHYMAgWoBAx2jZ4EDPIwlFgU?=
- =?us-ascii?q?BF4J+BYEEgzkKGScNZoE8AgcSgSIBhzSDPIEdgheBRIMdghqCP4VRBK0CQQe?=
- =?us-ascii?q?CJYYmimuECBuNe4tFLY4AijCPBgIKBwYPI4EvghJNI4EBgjtQEBSBT4Nzim9?=
- =?us-ascii?q?YgQUDO5MiAQE?=
-X-IronPort-Anti-Spam-Result: =?us-ascii?q?A0E9AADP+51dh0tDioBlHAEBAQEBBwE?=
- =?us-ascii?q?BEQEEBAEBgWcHAQELAYIagUYdEiqMRWCFWYFqiiCFZYQjhSiBPzEUAQEBAQE?=
- =?us-ascii?q?BAQEBBgEBGBUCAQEBAYQ+glIjNAkOAgECCQEBAQMBAQECAQUCAQECAhABAQE?=
- =?us-ascii?q?KCwkIKYU0DINGOzABAQEBAQEBAQEBAQEBAQEBAQEBARUCLVQpAQEZAgEDAQI?=
- =?us-ascii?q?PFQsBDQEbHQEDAgkBAQUQOwMeAhEBBQEcBxIFHYMAgWoBAx2jXYEDPIwlFgU?=
- =?us-ascii?q?BF4J+BYEEgz0KGScNZoE8AgcSgSIBhzSDPIEdgheBRIMdghqCP4VRBK0CQQe?=
- =?us-ascii?q?CJYYmimuECBuNe4tFLY4AijCPBgIKBwYPI4EvghJNI4EBgjtQEBSBT4Nzim9?=
- =?us-ascii?q?YgQUDO5MiAQE?=
-X-IronPort-Anti-Spam-Result: =?us-ascii?q?A0FuAQB4+J1dfU1DioBlgkGCG4FjEo1?=
- =?us-ascii?q?Pm2uFKIE/RQEBAQEBAQEBAQYBAS0CAQEBAYQ+gnU0CQ4DAgkBAQEDAQICAQU?=
- =?us-ascii?q?CAQECAhABAQsUCIVpg0Y7MAEBAQEBAQEBAQEBAQEBAQEBAQEBFQKBASkbBgE?=
- =?us-ascii?q?CDyABDQEbHQEDAgkBAQUQOwMeAhEBBQEcBxIFHYRqAQMdo1GBAzyMOwUBF4J?=
- =?us-ascii?q?+BYEEgzwKGScNZoE8AgcSDohJgzyDNIFEgx2EWYVRrQZBB4IlhiaOcxuNe4t?=
- =?us-ascii?q?FLY4AmTYCCgcGDyOBL4ISTSOBAYMLEBSQMYFdAzuTIgEB?=
-X-IronPort-Anti-Spam-Result: =?us-ascii?q?A0FuAQB4+J1dfU1DioBlgkGCG4FjEo1?=
- =?us-ascii?q?Pm2uFKIE/RQEBAQEBAQEBAQYBAS0CAQEBAYQ+gnU0CQ4DAgkBAQEDAQICAQU?=
- =?us-ascii?q?CAQECAhABAQsUCIVpg0Y7MAEBAQEBAQEBAQEBAQEBAQEBAQEBFQKBASkbBgE?=
- =?us-ascii?q?CDyABDQEbHQEDAgkBAQUQOwMeAhEBBQEcBxIFHYRqAQMdo1GBAzyMOwUBF4J?=
- =?us-ascii?q?+BYEEgzwKGScNZoE8AgcSDohJgzyDNIFEgx2EWYVRrQZBB4IlhiaOcxuNe4t?=
- =?us-ascii?q?FLY4AmTYCCgcGDyOBL4ISTSOBAYMLEBSQMSeBNgM7kyIBAQ?=
-X-IronPort-Anti-Spam-Result: =?us-ascii?q?A0EiAAB4+J1dh0O0hNFlHAEBAQEBBwE?=
- =?us-ascii?q?BEQEEBAEBgWcHAQELAYIagUQxKoxFYIVZgWo5iWeFZYQjhSiBPzEUAQEBAQE?=
- =?us-ascii?q?BAQEBBgEBGBQBAgEBAQGEPoJSIzQJDgIBAgkBAQEDAQEBAgEFAgEBAgIQAQE?=
- =?us-ascii?q?BCgsJCCmFNAyDRjswAQEBAQEBAQEBAQEBAQEBAQEBAQEVAi1UKQEBGQIBAwE?=
- =?us-ascii?q?CDxULAQ0BGx0BAwIJAQEFEDsDHgIRAQUBHAcSBR2DAIFqAQMdo1GBAzyMJRY?=
- =?us-ascii?q?FAReCfgWBBIM8ChknDWaBPAIHEoEiAYc0gzyBHYIXgUSDHYIagj+FUQStAkE?=
- =?us-ascii?q?HgiWGJoprhAgbjXuLRS2OAIowjwYCCgcGDyOBL4ISTSOBAYI7UBAUgU+Dc4p?=
- =?us-ascii?q?vJjKBBQEBATuTIgEB?=
-X-IPAS-Result: =?us-ascii?q?A0E9AACmBZ5dh0tDioBlHAEBAQEBBwEBEQEEBAEBgWcHA?=
- =?us-ascii?q?QELAYIagUYdEiqMRWCFWoFqiiCFZYQjhSiBPzEUAQEBAQEBAQEBBgEBGBUCA?=
- =?us-ascii?q?QEBAYQ+glIjNAkOAgECCQEBAQMBAQECAQUCAQECAhABAQEKCwkIKYU0DINGO?=
- =?us-ascii?q?zABAQEBAQEBAQEBAQEBAQEBAQEBARUCLVQpAQEZAgEDAQIPFQsBDQEbHQEDA?=
- =?us-ascii?q?gkBAQUQOwMeAhEBBQEcBxIFHYMAgWoBAx2jdYEDPIwlFgUBF4J+BYEEgzoKG?=
- =?us-ascii?q?ScNZoE8AgcSgSIBhzSDPIEdgheBRIMdghqCP4VRBK0CQQeCJYYmimuECBuNe?=
- =?us-ascii?q?4tFLY4AijCPBgIKBwYPI4EvghJNI4EBgjtQEBSBT4Nzim9YgQUDO5MiAQE?=
-X-IPAS-Result: =?us-ascii?q?A0E9AABX/51dh+mAioBlHAEBAQEBBwEBEQEEBAEBgWcHA?=
- =?us-ascii?q?QELAYIagUYdEiqMRWCFWYFqiiCFZYQjhSiBPzEUAQEBAQEBAQEBBgEBGBUCA?=
- =?us-ascii?q?QEBAYQ+glIjNAkOAgECCQEBAQMBAQECAQUCAQECAhABAQEKCwkIKYU0DINGO?=
- =?us-ascii?q?zABAQEBAQEBAQEBAQEBAQEBAQEBARUCLVQpAQEZAgEDAQIPFQsBDQEbHQEDA?=
- =?us-ascii?q?gkBAQUQOwMeAhEBBQEcBxIFHYMAgWoBAx2jZ4EDPIwlFgUBF4J+BYEEgzkKG?=
- =?us-ascii?q?ScNZoE8AgcSgSIBhzSDPIEdgheBRIMdghqCP4VRBK0CQQeCJYYmimuECBuNe?=
- =?us-ascii?q?4tFLY4AijCPBgIKBwYPI4EvghJNI4EBgjtQEBSBT4Nzim9YgQUDO5MiAQE?=
-X-IPAS-Result: =?us-ascii?q?A0E9AADP+51dh0tDioBlHAEBAQEBBwEBEQEEBAEBgWcHA?=
- =?us-ascii?q?QELAYIagUYdEiqMRWCFWYFqiiCFZYQjhSiBPzEUAQEBAQEBAQEBBgEBGBUCA?=
- =?us-ascii?q?QEBAYQ+glIjNAkOAgECCQEBAQMBAQECAQUCAQECAhABAQEKCwkIKYU0DINGO?=
- =?us-ascii?q?zABAQEBAQEBAQEBAQEBAQEBAQEBARUCLVQpAQEZAgEDAQIPFQsBDQEbHQEDA?=
- =?us-ascii?q?gkBAQUQOwMeAhEBBQEcBxIFHYMAgWoBAx2jXYEDPIwlFgUBF4J+BYEEgz0KG?=
- =?us-ascii?q?ScNZoE8AgcSgSIBhzSDPIEdgheBRIMdghqCP4VRBK0CQQeCJYYmimuECBuNe?=
- =?us-ascii?q?4tFLY4AijCPBgIKBwYPI4EvghJNI4EBgjtQEBSBT4Nzim9YgQUDO5MiAQE?=
-X-IPAS-Result: =?us-ascii?q?A0FuAQB4+J1dfU1DioBlgkGCG4FjEo1Pm2uFKIE/RQEBA?=
- =?us-ascii?q?QEBAQEBAQYBAS0CAQEBAYQ+gnU0CQ4DAgkBAQEDAQICAQUCAQECAhABAQsUC?=
- =?us-ascii?q?IVpg0Y7MAEBAQEBAQEBAQEBAQEBAQEBAQEBFQKBASkbBgECDyABDQEbHQEDA?=
- =?us-ascii?q?gkBAQUQOwMeAhEBBQEcBxIFHYRqAQMdo1GBAzyMOwUBF4J+BYEEgzwKGScNZ?=
- =?us-ascii?q?oE8AgcSDohJgzyDNIFEgx2EWYVRrQZBB4IlhiaOcxuNe4tFLY4AmTYCCgcGD?=
- =?us-ascii?q?yOBL4ISTSOBAYMLEBSQMYFdAzuTIgEB?=
-X-IPAS-Result: =?us-ascii?q?A0FuAQB4+J1dfU1DioBlgkGCG4FjEo1Pm2uFKIE/RQEBA?=
- =?us-ascii?q?QEBAQEBAQYBAS0CAQEBAYQ+gnU0CQ4DAgkBAQEDAQICAQUCAQECAhABAQsUC?=
- =?us-ascii?q?IVpg0Y7MAEBAQEBAQEBAQEBAQEBAQEBAQEBFQKBASkbBgECDyABDQEbHQEDA?=
- =?us-ascii?q?gkBAQUQOwMeAhEBBQEcBxIFHYRqAQMdo1GBAzyMOwUBF4J+BYEEgzwKGScNZ?=
- =?us-ascii?q?oE8AgcSDohJgzyDNIFEgx2EWYVRrQZBB4IlhiaOcxuNe4tFLY4AmTYCCgcGD?=
- =?us-ascii?q?yOBL4ISTSOBAYMLEBSQMSeBNgM7kyIBAQ?=
-X-IPAS-Result: =?us-ascii?q?A0EiAAB4+J1dh0O0hNFlHAEBAQEBBwEBEQEEBAEBgWcHA?=
- =?us-ascii?q?QELAYIagUQxKoxFYIVZgWo5iWeFZYQjhSiBPzEUAQEBAQEBAQEBBgEBGBQBA?=
- =?us-ascii?q?gEBAQGEPoJSIzQJDgIBAgkBAQEDAQEBAgEFAgEBAgIQAQEBCgsJCCmFNAyDR?=
- =?us-ascii?q?jswAQEBAQEBAQEBAQEBAQEBAQEBAQEVAi1UKQEBGQIBAwECDxULAQ0BGx0BA?=
- =?us-ascii?q?wIJAQEFEDsDHgIRAQUBHAcSBR2DAIFqAQMdo1GBAzyMJRYFAReCfgWBBIM8C?=
- =?us-ascii?q?hknDWaBPAIHEoEiAYc0gzyBHYIXgUSDHYIagj+FUQStAkEHgiWGJoprhAgbj?=
- =?us-ascii?q?XuLRS2OAIowjwYCCgcGDyOBL4ISTSOBAYI7UBAUgU+Dc4pvJjKBBQEBATuTI?=
- =?us-ascii?q?gEB?=
-X-IronPort-AV: E=Sophos; i="5.67,276,1566885600"; d="scan'208"; a="413991890"
-X-IronPort-AV: E=Sophos; i="5.67,276,1566885600"; d="scan'208"; a="369041376"
-X-IronPort-AV: E=Sophos; i="5.67,276,1566885600"; d="scan'208"; a="286779794"
-X-IronPort-AV: E=Sophos; i="5.67,276,1566885600"; d="scan'208"; a="368974758"
-X-IronPort-AV: E=Sophos; i="5.67,276,1566885600"; d="scan'208"; a="368957809"
-X-IronPort-AV: E=Sophos; i="5.67,276,1566885600"; d="scan'208"; a="368954378"
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=1e100.net;
- s=20161025; 
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to        
- :references:mime-version:content-transfer-encoding;       
- bh=W+SY6yjQG6ah82xj2QYbshpM9aG1FiA4CAoNvKBotSg=;       
- b=lPgXpUaJ7U+GKlEwajwdAQ2wdwbeXNx6tpMMQvpn4A9s165mRP8cniWSaV/LJ+m2DR        
- xTHXWtf1EZ3s+8Bb9ztXMw3fgGnEMTMZuRe9R4Fy+NItNWPwNuPllPOCwU4+mUtV3e7v        
- Qq3hig4i0bjD6jPQCUyHmd5CRq1ZGv9h5jJrImFgJ6o7Yc5Fxex0IY+HHp2mFee3wK31        
- XT6aYJjuciY1s34onPjCFU/Jf0BbkUNhOhSMthOiFSIZghku2aZg0anRt/zlOFPpGY+Q        
- tmMCGdGBuyCrHxuAvGQugiXGOJ7TbGXIyfGJfjfv/CE22ON6z9TX5NEPA0dazTQUhtPh        
- oM+w==
-X-Gm-Message-State: APjAAAWipXBJ+LRM2y6gFQ54BROKHAWWUoQokhKcHAnR9K00nDFU5Fpt 
- zL9X+h43s5yUB4WdQwy8jq4=
-X-Google-Smtp-Source: APXvYqz+pLjuNWlBOfyulbj8EF+i7KB1FzRSxzXYbcY2yuK76RkXlB0ER4nJL58X2PbinSF8InFkgA==
-X-Received: by 2002:a0d:d7c2:: with SMTP id z185mr3088421ywd.156.1570634873928; 
- Wed, 09 Oct 2019 08:27:53 -0700 (PDT)
-From: "William Breathitt Gray" <vilhelm.gray@gmail.com>
-To: "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
- "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
- "akpm@linux-foundation.org" <akpm@linux-foundation.org>
-Subject: [PATCH v17 12/14] gpio: pisosr: Utilize the for_each_set_clump8 macro
-Date: Wed,  9 Oct 2019 11:27:10 -0400
-Message-Id: 7a6080c8fb003ae0fb6a40da103faeabcadb0204.1570633189.git.vilhelm.gray@gmail.com
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <cover.1570633189.git.vilhelm.gray@gmail.com>
-References: <cover.1570633189.git.vilhelm.gray@gmail.com>
+X-IronPort-Anti-Spam-Result: =?us-ascii?q?A0FsBgCyGp5dYU1DioBlhFwpgTsShE2?=
+ =?us-ascii?q?JApFTihmGZ0UBAQEBAQEBAQEILQIBAQEBhzM4EwMCCQEBAQMBAgIBBQIBAQI?=
+ =?us-ascii?q?CAxgWBoVrg0Y7MAEBAQEBAQEBAQEBAQEBAQEBAQEBFQKBHicBAgMBAg8RHQE?=
+ =?us-ascii?q?BNwEFCQEBCgsNAgImAgIDHgESAQUBHAYTBR2FRwMtAaN9gQM8iyaBMoJ+AYU?=
+ =?us-ascii?q?LDYIiCSBsixmDNINuNT6HUoJejziHNpV7HUEHgiWCL4lxiHkbdJhMLadPDyO?=
+ =?us-ascii?q?BRoF7MxojgQEGgwUQFJAkNIE5kBMBAQ?=
+X-IronPort-Anti-Spam-Result: =?us-ascii?q?A0FjBADoDJ5dh0O0hNFlHgELHIQWgUQ?=
+ =?us-ascii?q?xKoQjjlyCDxSJVooZhmc0EQEBAQEBAQEBASAUAQIBAQEBhxAjOBMCAQIJAQE?=
+ =?us-ascii?q?BAwEBAQIBBQIBAQICEAEBAQoLCQgphTQMg0Y7MAEBAQEBAQEBAQEBAQEBAQE?=
+ =?us-ascii?q?BAQEBFQJJVScBAQEDAQIPER0BATcBBQkBAQoLDQICJgICAx4BEgEFARwGEwU?=
+ =?us-ascii?q?dgwCBawMcAaQEgQM8ijF1gTKCfQEBBYUIDYIiCYEMKIgbglaBHYIXg241PoI?=
+ =?us-ascii?q?ahTiCWI84hzaVex1BB4Ilgi+JcYRxhAgbdJhMLZgwjx8ygUaBezMaI4EBBoI?=
+ =?us-ascii?q?1UBAUgU8MF4NQimIzMoEGAQGTXQEB?=
+X-IPAS-Result: =?us-ascii?q?A0FsBgCyGp5dYU1DioBlhFwpgTsShE2JApFTihmGZ0UBA?=
+ =?us-ascii?q?QEBAQEBAQEILQIBAQEBhzM4EwMCCQEBAQMBAgIBBQIBAQICAxgWBoVrg0Y7M?=
+ =?us-ascii?q?AEBAQEBAQEBAQEBAQEBAQEBAQEBFQKBHicBAgMBAg8RHQEBNwEFCQEBCgsNA?=
+ =?us-ascii?q?gImAgIDHgESAQUBHAYTBR2FRwMtAaN9gQM8iyaBMoJ+AYULDYIiCSBsixmDN?=
+ =?us-ascii?q?INuNT6HUoJejziHNpV7HUEHgiWCL4lxiHkbdJhMLadPDyOBRoF7MxojgQEGg?=
+ =?us-ascii?q?wUQFJAkNIE5kBMBAQ?=
+X-IPAS-Result: =?us-ascii?q?A0FjBADoDJ5dh0O0hNFlHgELHIQWgUQxKoQjjlyCDxSJV?=
+ =?us-ascii?q?ooZhmc0EQEBAQEBAQEBASAUAQIBAQEBhxAjOBMCAQIJAQEBAwEBAQIBBQIBA?=
+ =?us-ascii?q?QICEAEBAQoLCQgphTQMg0Y7MAEBAQEBAQEBAQEBAQEBAQEBAQEBFQJJVScBA?=
+ =?us-ascii?q?QEDAQIPER0BATcBBQkBAQoLDQICJgICAx4BEgEFARwGEwUdgwCBawMcAaQEg?=
+ =?us-ascii?q?QM8ijF1gTKCfQEBBYUIDYIiCYEMKIgbglaBHYIXg241PoIahTiCWI84hzaVe?=
+ =?us-ascii?q?x1BB4Ilgi+JcYRxhAgbdJhMLZgwjx8ygUaBezMaI4EBBoI1UBAUgU8MF4NQi?=
+ =?us-ascii?q?mIzMoEGAQGTXQEB?=
+X-IronPort-AV: E=Sophos; i="5.67,277,1566885600"; d="scan'208"; a="371466525"
+X-IronPort-AV: E=Sophos; i="5.67,276,1566885600"; d="scan'208"; a="371393294"
+X-IronPort-Outbreak-Status: No, level 0, Unknown - Unknown
+X-IronPort-Outbreak-Status: No, level 0, Unknown - Unknown
+X-Original-Recipients: migi9492@g.colorado.edu
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-02.nifty.com x99GSjFp013815
+X-Nifty-SrcIP: [209.85.217.51]
+X-Gm-Message-State: APjAAAV9TeKYg9gLswCJwGEiVSqpbtKjisMiA2+QcRscDA7Wd1+OiVTF 
+ cLef8Vw7m7fhqQgzglAeGVjFnzeKVDTafYuOWIE=
+X-Google-Smtp-Source: APXvYqzH0lno0Jfiz/rFQhtYHfui45CzQbPKiMY0yhhlnjAVEgFdHdM9+zJ7EOc9vXnfVbLZJAT9ZLaAw0J1HbDFjmA=
+X-Received: by 2002:a67:2e81:: with SMTP id u123mr1224042vsu.155.1570638525039; Wed, 09
+ Oct 2019 09:28:45 -0700 (PDT)
 MIME-Version: 1.0
+References: <cover.1570633189.git.vilhelm.gray@gmail.com>
+ <893c3b4f03266c9496137cc98ac2b1bd27f92c73.1570633189.git.vilhelm.gray@gmail.com>
+In-Reply-To: <893c3b4f03266c9496137cc98ac2b1bd27f92c73.1570633189.git.vilhelm.gray@gmail.com>
+From: "Masahiro Yamada" <yamada.masahiro@socionext.com>
+Date: Thu, 10 Oct 2019 01:28:08 +0900
+X-Gmail-Original-Message-ID: <CAK7LNATgW7bXUmqV=3QAaJ0Qu73Kox-TgDCQJb=s0=mwewSCUg@mail.gmail.com>
+Message-ID: <CAK7LNATgW7bXUmqV=3QAaJ0Qu73Kox-TgDCQJb=s0=mwewSCUg@mail.gmail.com>
+Subject: Re: [PATCH v17 01/14] bitops: Introduce the for_each_set_clump8 macro
+To: "William Breathitt Gray" <vilhelm.gray@gmail.com>
 Precedence: bulk
 X-Mailing-List: linux-kernel@vger.kernel.org
-X-MS-Exchange-Organization-ExpirationStartTime: 09 Oct 2019 17:27:31.8511 (UTC)
+X-MS-Exchange-Organization-ExpirationStartTime: 09 Oct 2019 17:41:24.9889 (UTC)
 X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
 X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
 X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
-X-MS-Exchange-Organization-Network-Message-Id: 110ae54d-0dc9-492d-62f8-08d74cddf768
+X-MS-Exchange-Organization-Network-Message-Id: 735c71fc-2d39-4c88-1fc8-08d74cdfe7ff
 X-EOPAttributedMessage: 0
 X-MS-Exchange-Organization-MessageDirectionality: Originating
-X-Forefront-Antispam-Report: CIP:128.138.128.232; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:SKN; SFS:; DIR:INB; SFP:; SCL:-1; SRVR:MWHPR03MB2879; H:ipmx2.colorado.edu;
+X-Forefront-Antispam-Report: CIP:128.138.67.85; IPV:CAL; CTRY:US; EFV:NLI;
+ SFV:SKN; SFS:; DIR:INB; SFP:; SCL:-1; SRVR:CY4PR03MB2421; H:ipmx8.colorado.edu;
  FPR:; SPF:None; LANG:en; ; SKIP:1; 
-X-MS-Exchange-Organization-AuthSource: SN1NAM01FT004.eop-nam01.prod.protection.outlook.com
+X-MS-Exchange-Organization-AuthSource: BY2NAM01FT040.eop-nam01.prod.protection.outlook.com
 X-MS-Exchange-Organization-AuthAs: Anonymous
 X-OriginatorOrg: colorado.edu
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 110ae54d-0dc9-492d-62f8-08d74cddf768
-X-MS-TrafficTypeDiagnostic: MWHPR03MB2879:|MWHPR03MB2879:
+X-MS-Office365-Filtering-Correlation-Id: 735c71fc-2d39-4c88-1fc8-08d74cdfe7ff
+X-MS-TrafficTypeDiagnostic: CY4PR03MB2421:|CY4PR03MB2421:
 X-MS-Exchange-Organization-SCL: -1
-X-MS-Oob-TLC-OOBClassifiers: OLM:381;
+X-MS-Oob-TLC-OOBClassifiers: OLM:462;
 X-Microsoft-Antispam: BCL:0;
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Oct 2019 17:27:31.6890 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 110ae54d-0dc9-492d-62f8-08d74cddf768
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Oct 2019 17:41:23.3486 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 735c71fc-2d39-4c88-1fc8-08d74cdfe7ff
 X-MS-Exchange-CrossTenant-Id: 3ded8b1b-070d-4629-82e4-c0b019f46057
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3ded8b1b-070d-4629-82e4-c0b019f46057; Ip=[128.138.128.232];
- Helo=[ipmx2.colorado.edu]
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3ded8b1b-070d-4629-82e4-c0b019f46057; Ip=[128.138.67.85];
+ Helo=[ipmx8.colorado.edu]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR03MB2879
-X-MS-Exchange-Transport-EndToEndLatency: 01:00:30.5781652
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR03MB2421
+X-MS-Exchange-Transport-EndToEndLatency: 00:27:37.7165280
 X-MS-Exchange-Processed-By-BccFoldering: 15.20.2347.014
 X-Microsoft-Antispam-Mailbox-Delivery: ucf:0; jmr:0; ex:0; auth:0; dest:I;
  ENG:(750127)(520002050)(944506383)(944626516); 
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?T8l+8BCsD0M/7C8+BENdkfyPftEBYb5HjGsFK66TXlhAZjVleOcNgr/Jznfg?=
- =?us-ascii?Q?cDIq5uIDHzTtwyMOlwJe7bbY8tsk2Z7AmgGpOsHO+MAyODLCU8xDkKNhZqg0?=
- =?us-ascii?Q?FIiE9PXkX85U/Zb8cTY4aAkn7EoHi2Bq/NkErv5l+/YcI5GXHMhs/8cd2S49?=
- =?us-ascii?Q?TLWrUEt234hK5MG2Y30KQgR8CjJNULfdLUn+q8yxCjYElXtCDBQCA2QH1Jlo?=
- =?us-ascii?Q?b3ORjhX9yjmPBnWWMO6bmbXAu4NFJt2QoAt0hyjHknEBrNBk5oAt0c5BkvLG?=
- =?us-ascii?Q?GEOrr4IuPBjtdO3i2+ZMZjkfS+OTYbAVxtwaKQFTn0TBJutWqlWtSYsdEZcD?=
- =?us-ascii?Q?Haacx46dz5XXxI01TM6nFjBsTOyEH7rzAdTC+/04meJ0t7Xhja3uwJP5cZw9?=
- =?us-ascii?Q?JOGDOwBJ5ONRvPlTVtA2IjnQwWHWXAyIjz0HJl5842jy1dhWyeHdqjB0EVhO?=
- =?us-ascii?Q?Mcx0u6C/gX4rkZkrThXwiaLpCG+Rqhx/qfyhmy9i9fGKd4K4dcorEIcqHtHH?=
- =?us-ascii?Q?z3xMa8J1mY7NMOyI/VTr3MHM9OHkB6k1RuBvR0XJ02Lsr0Ew73p0BXIOEEGl?=
- =?us-ascii?Q?WztdqVjuFR0jf+1oreeT2mV1d+A2SGe3jVqwf/AtJmd0lnMWnp/aEnlT37kK?=
- =?us-ascii?Q?23KkHjA/gqPoJtCxhRNIOvK5zdlR8I+krIZYVQ+hSZRU/hH9yVZVfSEmVhMr?=
- =?us-ascii?Q?ecZN6s30GBbRmxxaLD899uZrvY0XubmHwKBRmAwRJMGqVbVIgFzd+StSVh/r?=
- =?us-ascii?Q?3ztqPOyGGJK4Qv1G3YhONeYtqUkM12b3Qrj0A4q12HXFRYTfHvEH1S44Hs8X?=
- =?us-ascii?Q?sDCzKxQTLFUO51C+1jZcMeXse2Uf8QbBzdrd5zaWqT443b1YMGlvhTJkkHN7?=
- =?us-ascii?Q?fnQSJi9ATr3/890lazuy1h/vKsQDJxwl+s8O2krUQg5tFfKORSpvsT7XH0rI?=
- =?us-ascii?Q?nUCegeBKOz/3Q1tfd1zMXAx73qllrwKG0fwInP+bhzJdkFCDd5TsVeeIdwlc?=
- =?us-ascii?Q?REKwydGt9J+p0eKJY2xmQYqxiaeYx/AQWnyc3iL9w8xCGt7mgRi+mo/jWAli?=
- =?us-ascii?Q?fmxwYzesZSVTCpCUUyBzVWEGNteMMuB3j9mGKo+LPb+9FBv/ZNA=3D?=
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?XfehoKoQeoAvf+w2Gf44zxu5Ao084RSHfWPhLC2USsMJr509+MEhqcwMi/XM?=
+ =?us-ascii?Q?R12G3/NhnikI50bd+odDfPJcxjLjxBVt/NSG+hbCoF/eGTOyTxHQeu6shWg7?=
+ =?us-ascii?Q?ak+123SEPbCI8w9HNCi+gydgamQxAL1Rlsb5vTcPEIL/hT1t3irFjlcGObNG?=
+ =?us-ascii?Q?pqF0AT+8kpOlqH+N5ZEo7WQhlBQvurz2Y4bGc/TQuyqk+s/U0HgeFCLvXAby?=
+ =?us-ascii?Q?cf0pMxFU3WdHBaRiMXfylXbXtgUOhTfu58l0CVzHf4edVr9lPsRs1WJDi4aS?=
+ =?us-ascii?Q?ZjOitpChY+toxDVY//ekdpJIQUszxPF7z94mrHmAhUZRN6fV7FtwOEFh+Is7?=
+ =?us-ascii?Q?I1vGJrKxvKSCqGTKJCWKPzJa6SNetAgdkc2tnXuN2ZSekZ2+H8va9iikVhmD?=
+ =?us-ascii?Q?9JDNM/LXTPs5+JouV5uCCYWAMqwdfX8t/2zvOg6fvZ9JiUe3pxlVRXCiwYUf?=
+ =?us-ascii?Q?7bAyigmRcpqmM0H8h7lPg01fM1lgHS5Tu+uIFHMcXfKzCWGWe21YeQW2iINz?=
+ =?us-ascii?Q?KjYCyyi28u5Ys4lX+wujITAzFTt1YO8GEYyn+cANZEDI3jsUQaoCnHr5HRyE?=
+ =?us-ascii?Q?6AaSRim/s+yo7YZKKbOEPVRhXoRvW4mmtChpIS9tfkgHDlhd9IFIVTTUlJra?=
+ =?us-ascii?Q?vYhK/TsW8EjU46Cv51GGB7ES8YmdY5isZ/ic5tK0BXwpASx3ySV7gdlbq7I/?=
+ =?us-ascii?Q?JY1l2KchUuUeTpc1zwf+F8eAK//eM5VALAeltIOH7sS8L90hj1yyWP8aQ0FF?=
+ =?us-ascii?Q?qqgBJXsX+a9AheopRBhAH3uej9zKnBi38zcj1nu7XSop4ZDCqBG6yuVqY8wO?=
+ =?us-ascii?Q?JwfFxPTwB5SbrcTgi0JncGPxSkDgdiJnUGHe17oBHq/KVROM+rHdNUL/MA/s?=
+ =?us-ascii?Q?G98ZL7w1DlZLBkw0NeuUZfdy5LnlsO8sR4wW7riD3kYbgg2+Ud7Dgn60YvL5?=
+ =?us-ascii?Q?U7ZIJGGpQzwYDVvgTGiCsUiA/PMwJOQIVrTdk1dbUn08jWeb2p7rAM9ZsoNj?=
+ =?us-ascii?Q?Cy4krL1/hdCWF3Yor3x8oDYXHHhiEP+f1U2TyGLsFkLGcWX5k/X5hPtdLNT4?=
+ =?us-ascii?Q?QT2S3mMIZMWrhlq9yiJI2bm+xlX6eZseSJFslyxuY2NHgfqUn/52t2eoIVCs?=
+ =?us-ascii?Q?5Q8sOKvuwv1xGuorZur+PUkCGwYkSiAu6w=3D=3D?=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191012_184457_838311_9469CA25 
-X-CRM114-Status: UNSURE (   5.22  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20191012_193655_724226_7ACFCBF5 
+X-CRM114-Status: GOOD (  10.37  )
+X-Spam-Score: -0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vilhelm.gray[at]gmail.com)
- 0.0 DKIM_ADSP_CUSTOM_MED   No valid author signature, adsp_override is
- CUSTOM_MED
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 1.2 INVALID_MSGID          Message-Id is not valid, according to RFC 2822
  -1.0 MAILING_LIST_MULTI     Multiple indicators imply a widely-seen list
  manager
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -462,65 +255,199 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+Cc: linux-arch <linux-arch@vger.kernel.org>,
  "preid@electromag.com.au" <preid@electromag.com.au>,
- "yamada.masahiro@socionext.com" <yamada.masahiro@socionext.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "linux@rasmusvillemoes.dk" <linux@rasmusvillemoes.dk>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Linux PM mailing list <linux-pm@vger.kernel.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>, Linux Kernel
+ Mailing List <linux-kernel@vger.kernel.org>,
  "morten.tiljeset@prevas.dk" <morten.tiljeset@prevas.dk>,
  "sean.nyekjaer@prevas.dk" <sean.nyekjaer@prevas.dk>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- "lukas@wunner.de" <lukas@wunner.de>,
- "geert@linux-m68k.org" <geert@linux-m68k.org>, William Breathitt
- Gray <vilhelm.gray@gmail.com>,
- "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>, Lukas Wunner <lukas@wunner.de>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Replace verbose implementation in get_multiple callback with
-for_each_set_clump8 macro to simplify code and improve clarity.
+On Thu, Oct 10, 2019 at 12:27 AM William Breathitt Gray
+<vilhelm.gray@gmail.com> wrote:
+>
+> This macro iterates for each 8-bit group of bits (clump) with set bits,
+> within a bitmap memory region. For each iteration, "start" is set to the
+> bit offset of the found clump, while the respective clump value is
+> stored to the location pointed by "clump". Additionally, the
+> bitmap_get_value8 and bitmap_set_value8 functions are introduced to
+> respectively get and set an 8-bit value in a bitmap memory region.
+>
+> Suggested-by: Andy Shevchenko <andy.shevchenko@gmail.com>
+> Suggested-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+> Suggested-by: Lukas Wunner <lukas@wunner.de>
+> Cc: Arnd Bergmann <arnd@arndb.de>
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: Andy Shevchenko <andy.shevchenko@gmail.com>
+> Cc: Linus Walleij <linus.walleij@linaro.org>
+> Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
+> ---
+>  include/asm-generic/bitops/find.h | 17 +++++++++++++++
+>  include/linux/bitmap.h            | 35 +++++++++++++++++++++++++++++++
+>  include/linux/bitops.h            |  5 +++++
+>  lib/find_bit.c                    | 14 +++++++++++++
+>  4 files changed, 71 insertions(+)
+>
+> diff --git a/include/asm-generic/bitops/find.h b/include/asm-generic/bitops/find.h
+> index 8a1ee10014de..9fdf21302fdf 100644
+> --- a/include/asm-generic/bitops/find.h
+> +++ b/include/asm-generic/bitops/find.h
+> @@ -80,4 +80,21 @@ extern unsigned long find_first_zero_bit(const unsigned long *addr,
+>
+>  #endif /* CONFIG_GENERIC_FIND_FIRST_BIT */
+>
+> +/**
+> + * find_next_clump8 - find next 8-bit clump with set bits in a memory region
+> + * @clump: location to store copy of found clump
+> + * @addr: address to base the search on
+> + * @size: bitmap size in number of bits
+> + * @offset: bit offset at which to start searching
+> + *
+> + * Returns the bit offset for the next set clump; the found clump value is
+> + * copied to the location pointed by @clump. If no bits are set, returns @size.
+> + */
+> +extern unsigned long find_next_clump8(unsigned long *clump,
+> +                                     const unsigned long *addr,
+> +                                     unsigned long size, unsigned long offset);
+> +
+> +#define find_first_clump8(clump, bits, size) \
+> +       find_next_clump8((clump), (bits), (size), 0)
+> +
+>  #endif /*_ASM_GENERIC_BITOPS_FIND_H_ */
+> diff --git a/include/linux/bitmap.h b/include/linux/bitmap.h
+> index 90528f12bdfa..761fab5b60a7 100644
+> --- a/include/linux/bitmap.h
+> +++ b/include/linux/bitmap.h
+> @@ -66,6 +66,8 @@
+>   *  bitmap_allocate_region(bitmap, pos, order)  Allocate specified bit region
+>   *  bitmap_from_arr32(dst, buf, nbits)          Copy nbits from u32[] buf to dst
+>   *  bitmap_to_arr32(buf, src, nbits)            Copy nbits from buf to u32[] dst
+> + *  bitmap_get_value8(map, start)               Get 8bit value from map at start
+> + *  bitmap_set_value8(map, value, start)        Set 8bit value to map at start
+>   *
+>   * Note, bitmap_zero() and bitmap_fill() operate over the region of
+>   * unsigned longs, that is, bits behind bitmap till the unsigned long
+> @@ -488,6 +490,39 @@ static inline void bitmap_from_u64(unsigned long *dst, u64 mask)
+>                 dst[1] = mask >> 32;
+>  }
+>
+> +/**
+> + * bitmap_get_value8 - get an 8-bit value within a memory region
+> + * @map: address to the bitmap memory region
+> + * @start: bit offset of the 8-bit value; must be a multiple of 8
+> + *
+> + * Returns the 8-bit value located at the @start bit offset within the @src
+> + * memory region.
+> + */
+> +static inline unsigned long bitmap_get_value8(const unsigned long *map,
+> +                                             unsigned long start)
 
-Cc: Morten Hein Tiljeset <morten.tiljeset@prevas.dk>
-Cc: Sean Nyekjaer <sean.nyekjaer@prevas.dk>
-Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
----
- drivers/gpio/gpio-pisosr.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+Why is the return type "unsigned long" where you know
+it return the 8-bit value ?
 
-diff --git a/drivers/gpio/gpio-pisosr.c b/drivers/gpio/gpio-pisosr.c
-index f809a5a8e9eb..9ab2c044ef52 100644
---- a/drivers/gpio/gpio-pisosr.c
-+++ b/drivers/gpio/gpio-pisosr.c
-@@ -96,16 +96,16 @@ static int pisosr_gpio_get_multiple(struct gpio_chip *chip,
- 				    unsigned long *mask, unsigned long *bits)
- {
- 	struct pisosr_gpio *gpio = gpiochip_get_data(chip);
--	unsigned int nbytes = DIV_ROUND_UP(chip->ngpio, 8);
--	unsigned int i, j;
-+	unsigned long offset;
-+	unsigned long gpio_mask;
-+	unsigned long buffer_state;
- 
- 	pisosr_gpio_refresh(gpio);
- 
- 	bitmap_zero(bits, chip->ngpio);
--	for (i = 0; i < nbytes; i++) {
--		j = i / sizeof(unsigned long);
--		bits[j] |= ((unsigned long) gpio->buffer[i])
--			   << (8 * (i % sizeof(unsigned long)));
-+	for_each_set_clump8(offset, gpio_mask, mask, chip->ngpio) {
-+		buffer_state = gpio->buffer[offset / 8] & gpio_mask;
-+		bitmap_set_value8(bits, buffer_state, offset);
- 	}
- 
- 	return 0;
--- 
-2.23.0
+u8?
 
+
+
+> +{
+> +       const size_t index = BIT_WORD(start);
+> +       const unsigned long offset = start % BITS_PER_LONG;
+> +
+> +       return (map[index] >> offset) & 0xFF;
+> +}
+> +
+> +/**
+> + * bitmap_set_value8 - set an 8-bit value within a memory region
+> + * @map: address to the bitmap memory region
+> + * @value: the 8-bit value; values wider than 8 bits may clobber bitmap
+> + * @start: bit offset of the 8-bit value; must be a multiple of 8
+> + */
+> +static inline void bitmap_set_value8(unsigned long *map, unsigned long value,
+
+
+Same here,   "u8 value"
+
+
+
+> +                                    unsigned long start)
+> +{
+> +       const size_t index = BIT_WORD(start);
+> +       const unsigned long offset = start % BITS_PER_LONG;
+> +
+> +       map[index] &= ~(0xFF << offset);
+> +       map[index] |= value << offset;
+> +}
+> +
+>  #endif /* __ASSEMBLY__ */
+>
+>  #endif /* __LINUX_BITMAP_H */
+> diff --git a/include/linux/bitops.h b/include/linux/bitops.h
+> index cf074bce3eb3..fb94a10f7853 100644
+> --- a/include/linux/bitops.h
+> +++ b/include/linux/bitops.h
+> @@ -40,6 +40,11 @@ extern unsigned long __sw_hweight64(__u64 w);
+>              (bit) < (size);                                    \
+>              (bit) = find_next_zero_bit((addr), (size), (bit) + 1))
+>
+> +#define for_each_set_clump8(start, clump, bits, size) \
+> +       for ((start) = find_first_clump8(&(clump), (bits), (size)); \
+> +            (start) < (size); \
+> +            (start) = find_next_clump8(&(clump), (bits), (size), (start) + 8))
+> +
+>  static inline int get_bitmask_order(unsigned int count)
+>  {
+>         int order;
+> diff --git a/lib/find_bit.c b/lib/find_bit.c
+> index 5c51eb45178a..e35a76b291e6 100644
+> --- a/lib/find_bit.c
+> +++ b/lib/find_bit.c
+> @@ -214,3 +214,17 @@ EXPORT_SYMBOL(find_next_bit_le);
+>  #endif
+>
+>  #endif /* __BIG_ENDIAN */
+> +
+> +unsigned long find_next_clump8(unsigned long *clump, const unsigned long *addr,
+
+
+Ditto.   "u8 *clump"
+
+
+
+
+> +                              unsigned long size, unsigned long offset)
+> +{
+> +       offset = find_next_bit(addr, size, offset);
+> +       if (offset == size)
+> +               return size;
+> +
+> +       offset = round_down(offset, 8);
+> +       *clump = bitmap_get_value8(addr, offset);
+> +
+> +       return offset;
+> +}
+> +EXPORT_SYMBOL(find_next_clump8);
+> --
+> 2.23.0
+>
+
+
+--
+Best Regards
+
+Masahiro Yamada
 
 
 _______________________________________________
