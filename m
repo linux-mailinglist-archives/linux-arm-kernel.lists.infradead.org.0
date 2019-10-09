@@ -2,85 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94D2AD0994
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:23:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68F15D0990
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:22:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3Lc1ZDiGyYR8BKURYiPZvPdz0DleneAVKU+dcbRVX/s=; b=gR0r9Hj/DD73Ta
-	4AF5ztpSrllBgcTUd+Q/3ufDjBFDplK6owoxTzZhQjy4HQTZwduRMwgGW4J0CltWhaz4ObDw9YuS4
-	3olxBDztrgEM55ZT72egaQnGDL1ILHJZMeQvtEcpd0jT1ADPPGDSpx7ajImItJnY8j6vUcvY0xpwV
-	Gn6y/N2MVW6Sv8bw8E+0dEjrulfttTd6jTgxWIhGbJh84ImDi3alPgWo14/p5gMIBBM4nJIIATZP0
-	p12ofvHcH7DgtKYWTrwZu6NKsoS7cZPun6eBwnDGLe4MupmzU0f8Yo0rXRklozoFV4zLPTVat23Pn
-	wBuMHRVUs+2t3qw0KoVQ==;
+	List-Owner; bh=JrVWIaNc9Ocscbo7ZmfFITbV1bDvtzOytg4G/sUqG0w=; b=E5cqXH+d3zcMSr
+	5IzZeEaATXwqiGGXfR2cFx3WRjZoBqO7sHGpm9NrseSVKp4N4Ay4Y0FoOMlGdnpuEM0JY+h7pxJvz
+	Hq3I+Crmwk/JYHu9EnVyFzTdhTwHNM1eAn18hdGJpOM/49WP6wBEaaxSsBzdtEl/Z/sSdCW4Gmf3k
+	fYfgGfQQodxLzEXK4TW2RR7hnNL9CZP5WorHYYUa67G/OIUbh4DRTDa/vbcZCiXJw88yQxRXYXWiX
+	IaMimik/ekeqFVD9yxul0wP51WgiwaMaaRp4Mbc0r/CT4fN2JQDP1rroie/mFpLJsjmYMrOH5oh1D
+	B000yCuI6KFgwlJBYBDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI7FF-0001K6-37; Wed, 09 Oct 2019 08:22:53 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI7Ed-0000r7-Ml; Wed, 09 Oct 2019 08:22:17 +0000
-Received: by mail-qk1-x744.google.com with SMTP id u22so1373344qkk.11;
- Wed, 09 Oct 2019 01:22:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=2vS6ftWv38t6sGsCONON8A/FlGoTEEeUhyw2u38Psys=;
- b=Cdi+f4aCoQax6/k08emQ2lJLcJma2WQWPj2sDWaUAIyNxc1z4FKB8BqfKmJ9Z5SarE
- DE3N/4o2O2mNISHES1onvLTvuRpQiyEXHitSlBua8rinA6JART4GoBf7vdEvu+n7rN9U
- XvCz6sm2vxFbnosUIiTDnUCTP07dZZ94GVayWBBS7bbGQdwhuhTe2jwZepH8sWdDtNgP
- G5SCwFbB+xNM+G2nK1s/aU9B2cvG+KpT0+/ggvOzIUE441IEmQK1CKPgRbnFUH/5+41b
- b45CSPFkm3mrlWBB2+nVpXXqESBNOTSmaanoB4L6eg4BXILbn5BcpREj3YdWgO9VnM0i
- 6Obg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=2vS6ftWv38t6sGsCONON8A/FlGoTEEeUhyw2u38Psys=;
- b=gR4CQe+Cw3FU1Syyp1KPJDRuaqFwKHYiZ/JcRNAn4SCZRvyYe2a6N4sGgryJWZbo/d
- YZ3jPcMGGkYYzpvgxdS++3VodU8EE8Xcl9aV+woyqxk8iFGpfvU0JPo+9z7zkfgr/hFA
- xjWiJnikTaQtC9OlosG8Vnuuhs2ThI8gUFCuZHmQ8D8I/WVS7wJ4/zLhdyiuu3cJjv93
- CzGSoEVULc/srvavCQN5GEIcBI7FYuKZsXq20cccvvOAG88pbcUONz0wm4sKTr6fJEmD
- l00YT2Q8Y0ZGOZIaeE/0aEzpKDv3JpaGge6+bEA6myHPPPMNBzPI2sc3PBVMXyPGpfcW
- 8O+w==
-X-Gm-Message-State: APjAAAXJ/nHSLagyPWTRGuYVtbqdA2Sr4Udc6UwYJRppWe5rJiL6IL2h
- XytGzaZuIWePh/B6NnxLpmIFpELSueHZeBatBFc=
-X-Google-Smtp-Source: APXvYqxsOXmemHID6heONiV8vI+KimCDKqoQrtNjmYG58JhuwE01IW+RdWPgGIjDI48XZ9ZREJZcjouZaIm3zI7sOfA=
-X-Received: by 2002:a05:620a:a55:: with SMTP id
- j21mr2361419qka.402.1570609334042; 
- Wed, 09 Oct 2019 01:22:14 -0700 (PDT)
+	id 1iI7Ez-00012v-UL; Wed, 09 Oct 2019 08:22:37 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iI7Ed-0000pa-Sw
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:22:18 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C8015337;
+ Wed,  9 Oct 2019 01:22:12 -0700 (PDT)
+Received: from localhost (e113682-lin.copenhagen.arm.com [10.32.145.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5BE123F68E;
+ Wed,  9 Oct 2019 01:22:12 -0700 (PDT)
+Date: Wed, 9 Oct 2019 10:22:11 +0200
+From: Christoffer Dall <christoffer.dall@arm.com>
+To: Alexander Graf <graf@amazon.com>
+Subject: Re: [PATCH v2 2/2] KVM: arm/arm64: Allow user injection of external
+ data aborts
+Message-ID: <20191009082211.GE4153@e113682-lin.lund.arm.com>
+References: <20191008093640.26519-1-christoffer.dall@arm.com>
+ <20191008093640.26519-3-christoffer.dall@arm.com>
+ <2719f1b2-9e8e-3d70-f5f6-6de3228fa04b@amazon.com>
 MIME-Version: 1.0
-References: <20190925184346.14121-1-heiko@sntech.de>
-In-Reply-To: <20190925184346.14121-1-heiko@sntech.de>
-From: Enric Balletbo Serra <eballetbo@gmail.com>
-Date: Wed, 9 Oct 2019 10:22:02 +0200
-Message-ID: <CAFqH_53xE7fH-Mf0_qokamUCBNDedadSLQa=uxiP_v7TW7DPfw@mail.gmail.com>
-Subject: Re: [PATCH] iommu/rockchip: don't use platform_get_irq to implicitly
- count irqs
-To: Heiko Stuebner <heiko@sntech.de>
+Content-Disposition: inline
+In-Reply-To: <2719f1b2-9e8e-3d70-f5f6-6de3228fa04b@amazon.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_012215_755576_BBECCF67 
-X-CRM114-Status: GOOD (  20.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191009_012216_044155_944229F9 
+X-CRM114-Status: GOOD (  35.46  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (eballetbo[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,122 +63,200 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Joerg Roedel <joro@8bytes.org>, iommu@lists.linux-foundation.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- linux-kernel <linux-kernel@vger.kernel.org>
+Cc: Peter Maydell <peter.maydell@linaro.org>,
+ Daniel =?utf-8?B?UC4gQmVycmFuZ8Op?= <berrange@redhat.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Stefan Hajnoczi <stefanha@redhat.com>,
+ Heinrich Schuchardt <xypron.glpk@gmx.de>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Tue, Oct 08, 2019 at 02:03:07PM +0200, Alexander Graf wrote:
+> 
+> 
+> On 08.10.19 11:36, Christoffer Dall wrote:
+> > In some scenarios, such as buggy guest or incorrect configuration of the
+> > VMM and firmware description data, userspace will detect a memory access
+> > to a portion of the IPA, which is not mapped to any MMIO region.
+> > 
+> > For this purpose, the appropriate action is to inject an external abort
+> > to the guest.  The kernel already has functionality to inject an
+> > external abort, but we need to wire up a signal from user space that
+> > lets user space tell the kernel to do this.
+> > 
+> > It turns out, we already have the set event functionality which we can
+> > perfectly reuse for this.
+> > 
+> > Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+> > ---
+> >   Documentation/virt/kvm/api.txt    | 18 +++++++++++++++++-
+> >   arch/arm/include/uapi/asm/kvm.h   |  3 ++-
+> >   arch/arm/kvm/guest.c              |  3 +++
+> >   arch/arm64/include/uapi/asm/kvm.h |  3 ++-
+> >   arch/arm64/kvm/guest.c            |  3 +++
+> >   arch/arm64/kvm/inject_fault.c     |  4 ++--
+> >   include/uapi/linux/kvm.h          |  1 +
+> >   virt/kvm/arm/arm.c                |  1 +
+> >   8 files changed, 31 insertions(+), 5 deletions(-)
+> > 
+> > diff --git a/Documentation/virt/kvm/api.txt b/Documentation/virt/kvm/api.txt
+> > index 7403f15657c2..10ebe8cfda29 100644
+> > --- a/Documentation/virt/kvm/api.txt
+> > +++ b/Documentation/virt/kvm/api.txt
+> > @@ -968,6 +968,8 @@ The following bits are defined in the flags field:
+> >   ARM/ARM64:
+> > +User space may need to inject several types of events to the guest.
+> > +
+> >   If the guest accesses a device that is being emulated by the host kernel in
+> >   such a way that a real device would generate a physical SError, KVM may make
+> >   a virtual SError pending for that VCPU. This system error interrupt remains
+> > @@ -1002,12 +1004,26 @@ Specifying exception.has_esr on a system that does not support it will return
+> >   -EINVAL. Setting anything other than the lower 24bits of exception.serror_esr
+> >   will return -EINVAL.
+> > +If the guest performed an access to I/O memory which could not be handled by
+> > +userspace, for example because of missing instruction syndrome decode
+> > +information or because there is no device mapped at the accessed IPA, then
+> > +userspace can ask the kernel to inject an external abort using the address
+> > +from the exiting fault on the VCPU. It is a programming error to set
+> > +ext_dabt_pending at the same time as any of the serror fields, or to set
+> > +ext_dabt_pending after an exit which was not either KVM_EXIT_MMIO or
+> > +KVM_EXIT_ARM_NISV. This feature is only available if the system supports
+> > +KVM_CAP_ARM_INJECT_EXT_DABT. This is a helper which provides commonality in
+> > +how userspace reports accesses for the above cases to guests, across different
+> > +userspace implementations. Nevertheless, userspace can still emulate all Arm
+> > +exceptions by manipulating individual registers using the KVM_SET_ONE_REG API.
+> > +
+> >   struct kvm_vcpu_events {
+> >   	struct {
+> >   		__u8 serror_pending;
+> >   		__u8 serror_has_esr;
+> > +		__u8 ext_dabt_pending;
+> >   		/* Align it to 8 bytes */
+> > -		__u8 pad[6];
+> > +		__u8 pad[5];
+> >   		__u64 serror_esr;
+> >   	} exception;
+> >   	__u32 reserved[12];
+> > diff --git a/arch/arm/include/uapi/asm/kvm.h b/arch/arm/include/uapi/asm/kvm.h
+> > index 2769360f195c..03cd7c19a683 100644
+> > --- a/arch/arm/include/uapi/asm/kvm.h
+> > +++ b/arch/arm/include/uapi/asm/kvm.h
+> > @@ -131,8 +131,9 @@ struct kvm_vcpu_events {
+> >   	struct {
+> >   		__u8 serror_pending;
+> >   		__u8 serror_has_esr;
+> > +		__u8 ext_dabt_pending;
+> >   		/* Align it to 8 bytes */
+> > -		__u8 pad[6];
+> > +		__u8 pad[5];
+> >   		__u64 serror_esr;
+> >   	} exception;
+> >   	__u32 reserved[12];
+> > diff --git a/arch/arm/kvm/guest.c b/arch/arm/kvm/guest.c
+> > index 684cf64b4033..4154c5589501 100644
+> > --- a/arch/arm/kvm/guest.c
+> > +++ b/arch/arm/kvm/guest.c
+> > @@ -263,11 +263,14 @@ int __kvm_arm_vcpu_set_events(struct kvm_vcpu *vcpu,
+> >   {
+> >   	bool serror_pending = events->exception.serror_pending;
+> >   	bool has_esr = events->exception.serror_has_esr;
+> > +	bool has_ext_dabt_pending = events->exception.ext_dabt_pending;
+> >   	if (serror_pending && has_esr)
+> >   		return -EINVAL;
+> >   	else if (serror_pending)
+> >   		kvm_inject_vabt(vcpu);
+> > +	else if (has_ext_dabt_pending)
+> > +		kvm_inject_dabt(vcpu, kvm_vcpu_get_hfar(vcpu));
+> >   	return 0;
+> >   }
+> > diff --git a/arch/arm64/include/uapi/asm/kvm.h b/arch/arm64/include/uapi/asm/kvm.h
+> > index 67c21f9bdbad..d49c17a80491 100644
+> > --- a/arch/arm64/include/uapi/asm/kvm.h
+> > +++ b/arch/arm64/include/uapi/asm/kvm.h
+> > @@ -164,8 +164,9 @@ struct kvm_vcpu_events {
+> >   	struct {
+> >   		__u8 serror_pending;
+> >   		__u8 serror_has_esr;
+> > +		__u8 ext_dabt_pending;
+> >   		/* Align it to 8 bytes */
+> > -		__u8 pad[6];
+> > +		__u8 pad[5];
+> >   		__u64 serror_esr;
+> >   	} exception;
+> >   	__u32 reserved[12];
+> > diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
+> > index dfd626447482..10e6e2144dca 100644
+> > --- a/arch/arm64/kvm/guest.c
+> > +++ b/arch/arm64/kvm/guest.c
+> > @@ -720,6 +720,7 @@ int __kvm_arm_vcpu_set_events(struct kvm_vcpu *vcpu,
+> >   {
+> >   	bool serror_pending = events->exception.serror_pending;
+> >   	bool has_esr = events->exception.serror_has_esr;
+> > +	bool has_ext_dabt_pending = events->exception.ext_dabt_pending;
+> 
+> The has_ is inconsistent here (and below in the copies of this function).
 
-Missatge de Heiko Stuebner <heiko@sntech.de> del dia dc., 25 de set.
-2019 a les 20:44:
->
-> Till now the Rockchip iommu driver walked through the irq list via
-> platform_get_irq() until it encountered an ENXIO error. With the
-> recent change to add a central error message, this always results
-> in such an error for each iommu on probe and shutdown.
->
-> To not confuse people, switch to platform_count_irqs() to get the
-> actual number of interrupts before walking through them.
->
-> Fixes: 7723f4c5ecdb ("driver core: platform: Add an error message to platform_get_irq*()")
-> Signed-off-by: Heiko Stuebner <heiko@sntech.de>
-> ---
+True, my bad.
 
-This patch definitely removes the annoying messages on my Samsung
-Chromebook Plus like:
+> 
+> What I'm really curious on is why it's written the way it is though. Why not
+> just make "exception" be a named struct and refer to a pointer of that here?
 
- rk_iommu ff924000.iommu: IRQ index 1 not found
- rk_iommu ff914000.iommu: IRQ index 1 not found
- rk_iommu ff903f00.iommu: IRQ index 1 not found
- rk_iommu ff8f3f00.iommu: IRQ index 1 not found
- rk_iommu ff650800.iommu: IRQ index 1 not found
+I have no idea, but that's beyond this patch.
+> 
+>   struct kvm_arm_exception *e = &events->exception;
+> 
+>   if (e->serror_pending && e->serror_has_esr) {
+>     ...
+>   } else if (e->ext_dabt_pending) {
+>     ...
+>   }
+> 
+> Copying the values into their own local bools looks a bit convoluted to me.
+> In fact, why do we copy u8s into bools in the first place?
+> 
+ I don't know, but probably another version of the if (!!foo)
+ construct.  It could definitely be written differently, but it's easy
+ enough to understand.
 
-FWIW, I sent a similar patch [1] to fix this, but can be rejected in
-favour of the Heiko's patch. So,
+> >   	if (serror_pending && has_esr) {
+> >   		if (!cpus_have_const_cap(ARM64_HAS_RAS_EXTN))
+> > @@ -731,6 +732,8 @@ int __kvm_arm_vcpu_set_events(struct kvm_vcpu *vcpu,
+> >   			return -EINVAL;
+> >   	} else if (serror_pending) {
+> >   		kvm_inject_vabt(vcpu);
+> > +	} else if (has_ext_dabt_pending) {
+> > +		kvm_inject_dabt(vcpu, kvm_vcpu_get_hfar(vcpu));
+> 
+> I'm a bit confused on the else if here. I understand that we probably don't
+> want to inject an serror at the same time as a dabt, but shouldn't the API
+> express that dependency?
 
-Tested-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Interesting point.  Re-reading the general definition of the
+KVM_SET_VCPU_EVENTS api, I actually think the cleanest thing here is to
+allow setting both at the same time.  I can't come up with a valid case
+where the VMM would validly need to do that, but there'd be no harm in
+doing it as far as I can tell.
+
+I'll rework this so that checking
+ext_dabt_pending is orthogonal for the serror stuff.
+> 
+> Do we have guarantees on the value of "serror_pending"? Can we assume it's
+> always either 0 or 1 today given all known user space? Maybe we can create a
+> union and make this an "exception_pending" enum instead which indicates
+> which exception we want to inject?
+
+With the change proposed above, I believe this concern goes away, as the
+two fields are decoupled.
 
 Thanks,
- Enric
 
-[1] https://lkml.org/lkml/2019/10/8/551
-
->  drivers/iommu/rockchip-iommu.c | 19 ++++++++++++++-----
->  1 file changed, 14 insertions(+), 5 deletions(-)
->
-> diff --git a/drivers/iommu/rockchip-iommu.c b/drivers/iommu/rockchip-iommu.c
-> index 26290f310f90..4dcbf68dfda4 100644
-> --- a/drivers/iommu/rockchip-iommu.c
-> +++ b/drivers/iommu/rockchip-iommu.c
-> @@ -100,6 +100,7 @@ struct rk_iommu {
->         struct device *dev;
->         void __iomem **bases;
->         int num_mmu;
-> +       int num_irq;
->         struct clk_bulk_data *clocks;
->         int num_clocks;
->         bool reset_disabled;
-> @@ -1136,7 +1137,7 @@ static int rk_iommu_probe(struct platform_device *pdev)
->         struct rk_iommu *iommu;
->         struct resource *res;
->         int num_res = pdev->num_resources;
-> -       int err, i, irq;
-> +       int err, i;
->
->         iommu = devm_kzalloc(dev, sizeof(*iommu), GFP_KERNEL);
->         if (!iommu)
-> @@ -1163,6 +1164,10 @@ static int rk_iommu_probe(struct platform_device *pdev)
->         if (iommu->num_mmu == 0)
->                 return PTR_ERR(iommu->bases[0]);
->
-> +       iommu->num_irq = platform_irq_count(pdev);
-> +       if (iommu->num_irq < 0)
-> +               return iommu->num_irq;
-> +
->         iommu->reset_disabled = device_property_read_bool(dev,
->                                         "rockchip,disable-mmu-reset");
->
-> @@ -1219,8 +1224,9 @@ static int rk_iommu_probe(struct platform_device *pdev)
->
->         pm_runtime_enable(dev);
->
-> -       i = 0;
-> -       while ((irq = platform_get_irq(pdev, i++)) != -ENXIO) {
-> +       for (i = 0; i < iommu->num_irq; i++) {
-> +               int irq = platform_get_irq(pdev, i);
-> +
->                 if (irq < 0)
->                         return irq;
->
-> @@ -1245,10 +1251,13 @@ static int rk_iommu_probe(struct platform_device *pdev)
->  static void rk_iommu_shutdown(struct platform_device *pdev)
->  {
->         struct rk_iommu *iommu = platform_get_drvdata(pdev);
-> -       int i = 0, irq;
-> +       int i;
-> +
-> +       for (i = 0; i < iommu->num_irq; i++) {
-> +               int irq = platform_get_irq(pdev, i);
->
-> -       while ((irq = platform_get_irq(pdev, i++)) != -ENXIO)
->                 devm_free_irq(iommu->dev, irq, iommu);
-> +       }
->
->         pm_runtime_force_suspend(&pdev->dev);
->  }
-> --
-> 2.23.0
->
->
-> _______________________________________________
-> Linux-rockchip mailing list
-> Linux-rockchip@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-rockchip
+    Christoffer
 
 _______________________________________________
 linux-arm-kernel mailing list
