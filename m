@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5F75D0B68
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 11:38:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E39A2D0B32
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 11:30:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=33qKVrZvB0n/ModfCxPH9MLoBIRIbaPZs11AlwIA8TA=; b=hb5OTadgIFcHVx
-	Pp959ahWrMXLYSSJUobDHqoBjifP3eWZT0a5v3YYbW9peiKraRlDVSMvH+VMy1qANJVPahm4INU6u
-	ZT7uGr1EaJ8FHxtwiKTDUspjRBhwHd29yd4B8wy/paB1AaSFasYdYZI1RXWbkl36nKgjz2TGpbsEz
-	5A2HWG+od9CFHcNlU+9vh+kefMQIKqvWXEB1xqLdPr8iKFT5sWK8+50ciftH5BYOwM9oMOwhODU0I
-	zBC2mHdgsYWDs5YrkdiIyD1/RQ1PHi9FmGvU86rTxF4+FvyrGFwafVyIJGVDFuvplxMCmqa1bgMhb
-	7RnAx68aUKfRVBli7WDA==;
+	List-Owner; bh=vPQ45rOTv0/zDXeUz8e4rBvHmCvegHSRNrpn5PqhaL0=; b=Sels05Xb2lpMyU
+	pceEgHYnssiFtAZc3zaoV9+TdghxSfnpC5089czX+un32leK/NmHz0K13d1FhDBMDgcC2Ikkk8dtB
+	ZcWa26VW5MAa6D6NN7vsAK1Xv6e1MZIMti5O+CZWuAREHvM8ECezApqoBfXc79VQqQ7bOawOOmjcw
+	SqMHR2Ircp6C3h8CkvieHoTPo1h6rCGFdM0gM4JnM8EGnzQIArmlhoYkmLWFR2BmEOW0DBgQ1Juf8
+	7DeQm74zQ3S8TWTG2gVyKXnBHuBh+SFq455eficxT2woJoYQinCjnGFm2bZX+QPAkAIOb45L5fFo2
+	2PPhWEJNZyOs5K9/H8rQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI8Qn-0006ov-QA; Wed, 09 Oct 2019 09:38:53 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iI8IT-0002C3-Bl; Wed, 09 Oct 2019 09:30:17 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI8Qe-0006oN-VK; Wed, 09 Oct 2019 09:38:46 +0000
-X-UUID: e9c4e21c8d30493bbf9158c20ba53e10-20191009
-X-UUID: e9c4e21c8d30493bbf9158c20ba53e10-20191009
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 785403305; Wed, 09 Oct 2019 01:38:41 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 9 Oct 2019 02:35:38 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- MTKMBS31N2.mediatek.inc (172.27.4.87) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 9 Oct 2019 17:20:29 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 9 Oct 2019 17:20:29 +0800
-Message-ID: <1570612831.7713.4.camel@mtksdaap41>
-Subject: Re: [PATCH v5, 19/32] drm/medaitek: add layer_nr for ovl private data
-From: CK Hu <ck.hu@mediatek.com>
-To: <yongqiang.niu@mediatek.com>
-Date: Wed, 9 Oct 2019 17:20:31 +0800
-In-Reply-To: <1567090254-15566-20-git-send-email-yongqiang.niu@mediatek.com>
-References: <1567090254-15566-1-git-send-email-yongqiang.niu@mediatek.com>
- <1567090254-15566-20-git-send-email-yongqiang.niu@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1iI8IF-00026C-SK
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 09:30:05 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iI8IA-00039Q-DI; Wed, 09 Oct 2019 11:29:58 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iI8I6-0000CY-DP; Wed, 09 Oct 2019 11:29:54 +0200
+Date: Wed, 9 Oct 2019 11:29:54 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Andy Shevchenko <andy.shevchenko@gmail.com>
+Subject: Re: [PATCH] tty: serial: imx: Only get second/third IRQ when there
+ is more than one IRQ
+Message-ID: <20191009092954.srlx5wjaqueps7nz@pengutronix.de>
+References: <1570601911-9162-1-git-send-email-Anson.Huang@nxp.com>
+ <20191009065315.wgdvmkv6skteyul4@pengutronix.de>
+ <CAHp75VcWXT+j5cfVzxPL+3YdgR+3uhFSb0qEDRr4YL+WenVKUQ@mail.gmail.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: A5B33E426A6A22AF7CE56AB684BF57B97D9F0F8D5DE9B544F6874FCD68A276BC2000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <CAHp75VcWXT+j5cfVzxPL+3YdgR+3uhFSb0qEDRr4YL+WenVKUQ@mail.gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_023845_012803_86BC8E4D 
-X-CRM114-Status: GOOD (  17.66  )
+X-CRM114-CacheID: sfid-20191009_023003_915606_52841B64 
+X-CRM114-Status: GOOD (  11.61  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -59,8 +59,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,83 +70,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Fabio Estevam <festevam@gmail.com>,
+ "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
+ Anson Huang <Anson.Huang@nxp.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Stephen Boyd <swboyd@chromium.org>, dl-linux-imx <Linux-imx@nxp.com>,
+ Sascha Hauer <kernel@pengutronix.de>, Jiri Slaby <jslaby@suse.com>,
+ Shawn Guo <shawnguo@kernel.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Yongqiang:
+On Wed, Oct 09, 2019 at 11:12:20AM +0300, Andy Shevchenko wrote:
+> On Wed, Oct 9, 2019 at 9:53 AM Uwe Kleine-K=F6nig
+> <u.kleine-koenig@pengutronix.de> wrote:
+> =
 
-On Thu, 2019-08-29 at 22:50 +0800, yongqiang.niu@mediatek.com wrote:
-> From: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> 
-> This patch add layer_nr for ovl private data
-> ovl_2l almost same with with ovl hardware, except the
-> layer number for ovl_2l is 2 and ovl is 4.
-> this patch is a preparation for ovl-2l and
-> ovl share the same driver.
-> 
+> > The patch is fine given the changed behaviour of platform_get_irq. I
+> > wonder if it is sensible to introduce a variant of platform_get_irq (say
+> > platform_get_irq_nowarn) that behaves like __platform_get_irq does
+> > today. Then the imx driver would just call platform_get_irq_nowarn
+> > without having to check the number of available irqs first.
+> =
 
-Applied to mediatek-drm-next-5.5 [1], thanks.
+> It's being discussed in parallel thread about
+> platform_get_irq_optional() which won't issue a warning.
 
-[1]
-https://github.com/ckhu-mediatek/linux.git-tags/commits/mediatek-drm-next-5.5
+This is even already in 5.4-rc1 as
+8973ea47901c81a1912bd05f1577bed9b5b52506.
 
-Regards,
-CK
+Best regards
+Uwe
 
-> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> Reviewed-by: CK Hu <ck.hu@mediatek.com>
-> ---
->  drivers/gpu/drm/mediatek/mtk_disp_ovl.c | 7 ++++++-
->  1 file changed, 6 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> index 82eaefd..baef066 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> @@ -52,6 +52,7 @@
->  struct mtk_disp_ovl_data {
->  	unsigned int addr;
->  	unsigned int gmc_bits;
-> +	unsigned int layer_nr;
->  	bool fmt_rgb565_is_0;
->  };
->  
-> @@ -129,7 +130,9 @@ static void mtk_ovl_config(struct mtk_ddp_comp *comp, unsigned int w,
->  
->  static unsigned int mtk_ovl_layer_nr(struct mtk_ddp_comp *comp)
->  {
-> -	return 4;
-> +	struct mtk_disp_ovl *ovl = comp_to_ovl(comp);
-> +
-> +	return ovl->data->layer_nr;
->  }
->  
->  static void mtk_ovl_layer_on(struct mtk_ddp_comp *comp, unsigned int idx)
-> @@ -334,12 +337,14 @@ static int mtk_disp_ovl_remove(struct platform_device *pdev)
->  static const struct mtk_disp_ovl_data mt2701_ovl_driver_data = {
->  	.addr = DISP_REG_OVL_ADDR_MT2701,
->  	.gmc_bits = 8,
-> +	.layer_nr = 4,
->  	.fmt_rgb565_is_0 = false,
->  };
->  
->  static const struct mtk_disp_ovl_data mt8173_ovl_driver_data = {
->  	.addr = DISP_REG_OVL_ADDR_MT8173,
->  	.gmc_bits = 8,
-> +	.layer_nr = 4,
->  	.fmt_rgb565_is_0 = true,
->  };
->  
+-- =
 
-
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
 
 _______________________________________________
 linux-arm-kernel mailing list
