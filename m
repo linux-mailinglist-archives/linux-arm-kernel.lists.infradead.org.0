@@ -2,103 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD38BD0D12
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 12:47:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE442D0D3D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 12:56:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0pepdpF4VXsdRIWwU2Drh8SnLf+cu1wR5yRlqsoa8hE=; b=U6sGQOK3MWTlb/
-	XxDPb9IDzpWOEI0rW3AQWtjYP1QNQ8mJmcVap+FTggxgJyd34/hCIBY6FBGENR7/3qmfQGDcqO0Ov
-	3DaBMJEJxIjWNJOHSY0l1tjHbYUjtWJZqoWT95G5gpLfd1GLFfbtkhYkbgIG56gPkVJzEBn4pQb2Z
-	SVYP0h+SRYVSU+3rFAzeq0EKglzHe8TCv6s06kggRQW5dKlBj2rXHuCcPKrn5xHliT/TeJaMWiRpk
-	t5W802Ei2n4YlJJcI1o5oS3VcG4vrXx1ltxunFvwjXOBE6XemO14Gvokq/pHuc4cWejdWsj38P3uQ
-	jfiWb3YsIauCDV9yo50Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yltcAdyK7nY39zduRVCzWo+Dck3FNgsCPxjMREWpltk=; b=BAd1LP9tz42gJ2
+	dOQ4HMP1KFIuM1yZhafh1oU4jmLoYxa0C1hDVbPrfFwLTbpcS3/+2sMns9rOvdF7Tos4JpWSO4aDG
+	mffsl8XvcaWQ0qQIxI/ITR0Z4vxknUXGTyU78xWzH3WJBlh7GfYl+BpG5kPwY1gfQJJLEYGtibS+W
+	Yb5eQ/pT929a3ktPPPVS+7EHHLWm4Uxlm6+YXAZvJUestQGOAABK4NZmKR2/E9e/AgpBhn4CQNfGL
+	IE1PTpiLMMGCqORxsTx5geuxSX3FwhWcyyI+vIG8Saq8gxc4vVYPYMwtG/90lcUM+RPaXt2GXs39n
+	OKr0ZTxbBefPvgjGTb7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI9VP-0002rx-Oy; Wed, 09 Oct 2019 10:47:43 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI9VE-0002p5-73
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 10:47:35 +0000
-Received: by mail-ed1-x543.google.com with SMTP id v38so1568168edm.7
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 09 Oct 2019 03:47:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=sender:date:from:to:cc:subject:message-id:mail-followup-to
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=C/f6/fe6l9qpOq8K1lx4cS1L0t1Hq00anJTRcpjdZaY=;
- b=fXBFCO323Bm+FQBU/+LL08XySBNen3E6T9qKA4aIio7ZnVTc1qrmiXWPHfafjaF5OM
- 5+mK5egfmwUECqbtv1EY9REiXUiGHZdUls0/dxznEkib+Mj3bSSpPBFsRkZrfsTEJLTB
- MelIIKF4vIGWv96w8TwbvIWb5b5NsUUnkfhjM=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to:user-agent;
- bh=C/f6/fe6l9qpOq8K1lx4cS1L0t1Hq00anJTRcpjdZaY=;
- b=bIzb01zdJ0sXL+yH+dpkK2O2XDQej7Gskr/FEq1rCKZmg1nnWIsvBl0+eycOItM+6U
- 3QEuF66M282GTetpPLz7ueJjug+qkK65m5UGPcAAtI5o1k0Ra8bK84sv+9VA9Fc1VRz+
- L1RqqudlQ37KJS0MBL+Ij9h8WLRmHOqL2HaAGvzB3rRGLsv5c7TKsmfRw71SGSAOdnhp
- P+UYOywRvDiL4l90pseeKYBKW/citDM9aTXfbv9utH0eEHg7N5M2jCyj/bCsofsYCzB/
- RGlayfjwzZOodGPtLxi86jw3yzU/fota1VVIK3BZf64v33hompbjU6NlwbBz+YM37J4x
- nn0Q==
-X-Gm-Message-State: APjAAAWyvQrjpijOjy509TKuNahlejX5wq5RC39dIM6qOy/nwnJ8O9fy
- dS9kCriue7u9Z0o4nlJv6EDsHg==
-X-Google-Smtp-Source: APXvYqwFKxcsVszGn80rMYG6TMaGo4tkWTwu1HVt5uwb1ZbnJ6lXbxPzQggnmUgneVU6eJIaIg8Pmw==
-X-Received: by 2002:a50:f10a:: with SMTP id w10mr2253640edl.247.1570618050207; 
- Wed, 09 Oct 2019 03:47:30 -0700 (PDT)
-Received: from phenom.ffwll.local (212-51-149-96.fiber7.init7.net.
- [212.51.149.96])
- by smtp.gmail.com with ESMTPSA id dv15sm208287ejb.49.2019.10.09.03.47.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 09 Oct 2019 03:47:29 -0700 (PDT)
-Date: Wed, 9 Oct 2019 12:47:27 +0200
-From: Daniel Vetter <daniel@ffwll.ch>
-To: Jeykumar Sankaran <jsanka@codeaurora.org>
-Subject: Re: [PATCH] drm/meson: fix max mode_config height/width
-Message-ID: <20191009104727.GX16989@phenom.ffwll.local>
-Mail-Followup-To: Jeykumar Sankaran <jsanka@codeaurora.org>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- linux-amlogic@lists.infradead.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>
-References: <1538642563-22465-1-git-send-email-narmstrong@baylibre.com>
- <20181004100958.GI31561@phenom.ffwll.local>
- <0ef7fa13-ce77-f8a5-f5f3-6568be3d6145@baylibre.com>
- <CAKMK7uHxiDF3z19cMBb0o2o4Ev0DFJkhMR7Ny6U2776Ry4oc=A@mail.gmail.com>
- <8e980de4-5a52-8f3d-fba2-734617e40d1b@baylibre.com>
- <CAKMK7uE71OeOdDPb+5-cs9bByD-unYPxBV_R1t+4A0Nb4H6CAw@mail.gmail.com>
- <5dbd6337-7e08-f3f7-6d4a-d6bcaddfd3be@baylibre.com>
- <91cd8a2aebefd4ea3e9bcee5a4ef796a@codeaurora.org>
+	id 1iI9dO-00064G-Uj; Wed, 09 Oct 2019 10:55:58 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iI9dG-00063O-Mp; Wed, 09 Oct 2019 10:55:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8A51628;
+ Wed,  9 Oct 2019 03:55:47 -0700 (PDT)
+Received: from [10.1.196.133] (unknown [10.1.196.133])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9F3443F703;
+ Wed,  9 Oct 2019 03:55:44 -0700 (PDT)
+Subject: Re: [PATCH v11 07/22] riscv: mm: Add p?d_leaf() definitions
+To: Paul Walmsley <paul.walmsley@sifive.com>, alex@ghiti.fr
+References: <20191007153822.16518-1-steven.price@arm.com>
+ <20191007153822.16518-8-steven.price@arm.com>
+ <alpine.DEB.2.21.9999.1910081431310.11044@viisi.sifive.com>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <b0ed95cd-703f-9ac2-a2e8-9a059f4095f9@arm.com>
+Date: Wed, 9 Oct 2019 11:55:43 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <91cd8a2aebefd4ea3e9bcee5a4ef796a@codeaurora.org>
-X-Operating-System: Linux phenom 5.2.0-2-amd64 
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <alpine.DEB.2.21.9999.1910081431310.11044@viisi.sifive.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_034732_257290_BFB1AD2C 
-X-CRM114-Status: GOOD (  31.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191009_035550_790200_034F7D16 
+X-CRM114-Status: GOOD (  15.51  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,216 +62,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Daniel Vetter <daniel@ffwll.ch>,
- linux-amlogic@lists.infradead.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <Mark.Rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, linux-mm@kvack.org,
+ "H. Peter Anvin" <hpa@zytor.com>, linux-riscv@lists.infradead.org,
+ Will Deacon <will@kernel.org>, "Liang, Kan" <kan.liang@linux.intel.com>,
+ x86@kernel.org, Ingo Molnar <mingo@redhat.com>,
+ Palmer Dabbelt <palmer@sifive.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Arnd Bergmann <arnd@arndb.de>,
+ =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
+ Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Andrew Morton <akpm@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 24, 2019 at 10:28:48AM -0700, Jeykumar Sankaran wrote:
-> Reviving this thread from the context of the below conversion:
+On 08/10/2019 22:33, Paul Walmsley wrote:
+> On Mon, 7 Oct 2019, Steven Price wrote:
 > 
-> https://lore.kernel.org/linux-arm-msm/db26145b-3f64-a334-f698-76f972332881@baylibre.com/T/#u
+>> walk_page_range() is going to be allowed to walk page tables other than
+>> those of user space. For this it needs to know when it has reached a
+>> 'leaf' entry in the page tables. This information is provided by the
+>> p?d_leaf() functions/macros.
+>>
+>> For riscv a page is a leaf page when it has a read, write or execute bit
+>> set on it.
+>>
+>> CC: Palmer Dabbelt <palmer@sifive.com>
+>> CC: Albert Ou <aou@eecs.berkeley.edu>
+>> CC: linux-riscv@lists.infradead.org
+>> Signed-off-by: Steven Price <steven.price@arm.com>
 > 
-> On 2018-10-05 01:19, Neil Armstrong wrote:
-> > On 05/10/2018 09:58, Daniel Vetter wrote:
-> > > On Fri, Oct 5, 2018 at 9:39 AM Neil Armstrong
-> > > <narmstrong@baylibre.com> wrote:
-> > > > 
-> > 
-> > [...]
-> > 
-> > > > OK, won't this be enough ?
-> > > > --- a/include/drm/drm_mode_config.h
-> > > > +++ b/include/drm/drm_mode_config.h
-> > > > @@ -333,6 +333,8 @@ struct drm_mode_config_funcs {
-> > > >   * @min_height: minimum fb pixel height on this device
-> > > >   * @max_width: maximum fb pixel width on this device
-> > > >   * @max_height: maximum fb pixel height on this device
-> > > > + * @max_fb_width: maximum fb buffer width if differs from max_width
-> > > > + * @max_fb_height: maximum fb buffer height if differs from
-> > > > max_height
-> > > >   * @funcs: core driver provided mode setting functions
-> > > >   * @fb_base: base address of the framebuffer
-> > > >   * @poll_enabled: track polling support for this device
-> > > > @@ -508,6 +510,7 @@ struct drm_mode_config {
-> > > > 
-> > > >         int min_width, min_height;
-> > > >         int max_width, max_height;
-> > > > +       int max_fb_width, max_fb_height;
-> > > >         const struct drm_mode_config_funcs *funcs;
-> > > >         resource_size_t fb_base;
-> > > > 
-> > > > --- a/drivers/gpu/drm/drm_framebuffer.c
-> > > > +++ b/drivers/gpu/drm/drm_framebuffer.c
-> > > > @@ -283,14 +283,20 @@ drm_internal_framebuffer_create(struct
-> > > > drm_device *dev,
-> > > >                 return ERR_PTR(-EINVAL);
-> > > >         }
-> > > > 
-> > > > -       if ((config->min_width > r->width) || (r->width >
-> > > > config->max_width)) {
-> > > > +       if ((config->min_width > r->width) ||
-> > > > +           (!config->max_fb_width && r->width >
-> > > > config->max_width) ||
-> > > > +           (config->max_fb_width && r->width >
-> > > > config->max_fb_width)) {
-> > > >                 DRM_DEBUG_KMS("bad framebuffer width %d, should
-> > > > be >= %d && <= %d\n",
-> > > > -                         r->width, config->min_width,
-> > > > config->max_width);
-> > > > +                         r->width, config->min_width,
-> > > > config->max_fb_width ?
-> > > > +                         config->max_fb_width : config->max_width);
-> > > >                 return ERR_PTR(-EINVAL);
-> > > >         }
-> > > > -       if ((config->min_height > r->height) || (r->height >
-> > > > config->max_height)) {
-> > > > +       if ((config->min_height > r->height) ||
-> > > > +           (!config->max_fb_height && r->height >
-> > > > config->max_height) ||
-> > > > +           (config->max_fb_height && r->height >
-> > > > config->max_fb_height)) {
-> > > >                 DRM_DEBUG_KMS("bad framebuffer height %d, should
-> > > > be >= %d && <= %d\n",
-> > > > -                         r->height, config->min_height,
-> > > > config->max_height);
-> > > > +                         r->height, config->min_height,
-> > > > config->max_fb_height ?
-> > > > +                         config->max_fb_height :
-> > > > config->max_height);
-> > > >                 return ERR_PTR(-EINVAL);
-> > > >         }
-> > > > 
-> > > > and in the driver :
-> > > > 
-> > > > +       drm->mode_config.max_width = 4096;
-> > > > +       drm->mode_config.max_height = 3840;
-> > > > +       drm->mode_config.max_fb_width = 16384;
-> > > > +       drm->mode_config.max_fb_height = 8192;
-> > > > 
-> > > > With this I leave the mode filtering intact.
-> > > 
-> > > Not enough. See
-> > > https://dri.freedesktop.org/docs/drm/gpu/drm-kms-helpers.html#c.drm_connector_helper_funcs
-> > > and scroll down to mode_valid. You need to filter modes both in the
-> > > detect paths, and the atomic_check paths.
-> > > 
-> > > Detect is explicitly filtered out, but atomic_check was only
-> > > implicitly filtered, through the max fb size checks. Ok, you could
-> > > light up a mode that's bigger than max fb, but in practice, no
-> > > userspace ever did that.
+> Acked-by: Paul Walmsley <paul.walmsley@sifive.com> # for arch/riscv  
 > 
-> Daniel, MSM and few other vendor hardware have upscale blocks where the
-> driver can expose fb sizes smaller than
-> the mode resolution and use h/w upscaling to fill the screen. This would
-> optimize the fetch bandwidth.
-> 
-> But with your code we're missing crucial
-> > > validation now, and userspace could fall over that. What I think we
-> > > need is to add mode filter against mode_config.max_width/height in
-> > > drm_atomic_helper_check_modeset(). Probably best to stuff that into
-> > > the mode_valid() function.
-> > 
-> Agreed! Since the above patch from Niel is taking care of cases where
-> max/min fb values
-> are not set, by checking against the original max/min values, can we
-> separate out this
-> core change from the driver level mode_valid changes? If Niel couldn't find
-> the time, I can
-> repost the above change.
+> Alex has a good point, but probably the right thing to do is to replace 
+> the contents of the arch/riscv/mm/hugetlbpage.c p{u,m}d_huge() functions 
+> with calls to Steven's new static inline functions.
 
-Sure, I think Neil wouldn't mind if you take this over and get it ready
-for merging. Just need to make sure we're not leaving any validation gaps
-in core/helper code.
--Daniel
+The intention is to create new functions that are not dependent on
+hugepage support in user space. hugetlbpage.c is only built if
+CONFIG_HUGETLB_PAGE is defined.
+
+As you say - the p{u,m}d_huge() functions can be reimplemented using the
+new static inline functions if desired.
+
+Thanks for the review.
+
+Steve
 
 > 
-> Thanks and Regards,
-> Jeykumar S.
+> - Paul
 > 
-> > Ok I understood now, thanks for pointer, I'll try to add this.
-> > 
-> > Neil
-> > 
-> > > 
-> > > Cheers, Daniel
-> > > > 
-> > > > Neil
-> > > > 
-> > > > 
-> > > > > -Daniel
-> > > > > 
-> > > > > > 
-> > > > > > Neil
-> > > > > > 
-> > > > > > > 
-> > > > > > > Bunch of igt to make sure we're not missing anything
-> > > > > > > would be sweet on
-> > > > > > > top, e.g. e.g. trying to set a mode over the limit
-> > > > > > > and making sure it
-> > > > > > > fails.
-> > > > > > > 
-> > > > > > > Cheers, Daniel
-> > > > > > > 
-> > > > > > > > ---
-> > > > > > > >  drivers/gpu/drm/meson/meson_drv.c | 4 ++--
-> > > > > > > >  1 file changed, 2 insertions(+), 2 deletions(-)
-> > > > > > > > 
-> > > > > > > > diff --git a/drivers/gpu/drm/meson/meson_drv.c
-> > > > > > > > b/drivers/gpu/drm/meson/meson_drv.c
-> > > > > > > > index d344312..2e29968 100644
-> > > > > > > > --- a/drivers/gpu/drm/meson/meson_drv.c
-> > > > > > > > +++ b/drivers/gpu/drm/meson/meson_drv.c
-> > > > > > > > @@ -243,8 +243,8 @@ static int
-> > > > > > > > meson_drv_bind_master(struct device *dev, bool
-> > > > > > > > has_components)
-> > > > > > > >              goto free_drm;
-> > > > > > > > 
-> > > > > > > >      drm_mode_config_init(drm);
-> > > > > > > > -    drm->mode_config.max_width = 3840;
-> > > > > > > > -    drm->mode_config.max_height = 2160;
-> > > > > > > > +    drm->mode_config.max_width = 16384;
-> > > > > > > > +    drm->mode_config.max_height = 8192;
-> > > > > > > >      drm->mode_config.funcs = &meson_mode_config_funcs;
-> > > > > > > > 
-> > > > > > > >      /* Hardware Initialization */
-> > > > > > > > --
-> > > > > > > > 2.7.4
-> > > > > > > > 
-> > > > > > > > _______________________________________________
-> > > > > > > > dri-devel mailing list
-> > > > > > > > dri-devel@lists.freedesktop.org
-> > > > > > > > https://lists.freedesktop.org/mailman/listinfo/dri-devel
-> > > > > > > 
-> > > > > > 
-> > > > > > _______________________________________________
-> > > > > > dri-devel mailing list
-> > > > > > dri-devel@lists.freedesktop.org
-> > > > > > https://lists.freedesktop.org/mailman/listinfo/dri-devel
-> > > > > 
-> > > > > 
-> > > > > 
-> > > > 
-> > > 
-> > > 
-> > 
-> > _______________________________________________
-> > dri-devel mailing list
-> > dri-devel@lists.freedesktop.org
-> > https://lists.freedesktop.org/mailman/listinfo/dri-devel
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 > 
-> -- 
-> Jeykumar S
 
--- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
 
 _______________________________________________
 linux-arm-kernel mailing list
