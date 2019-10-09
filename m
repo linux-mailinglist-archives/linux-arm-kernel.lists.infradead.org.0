@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22BDBD1562
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 19:18:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E7ACD1563
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 19:19:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ja24rsCutY+DfvRhsWa3ceDPJWsIJLiRY090PGYzKFc=; b=ZvYF41S3F5d56f
-	7ZBMQ0MRz6ZtqquzUMVMw6tNEsdwR+aZ4HiptwKf6MwbJs70gAAxq6JumY/+PDb8Klup5uRjMEL/m
-	QnUHVEbp9JP7ZkJCOPiGxSFQ1jAfyKpkLp+IKln/cmcRcfnCHezler4t6rixof2bq/FuJ7uLU9vI9
-	GXZsV9n5pvmTr5+/f6Iq0pxZSAxiX4fX/TaLdBcCxrV9gPPnXvu/RDEt2fHHdhh55VtowDp0sUhuJ
-	ApA4OtnqtukdSgDrSiwBwY9Dshvh+py6vPc2XVNUoI4V8I2YjgQnTzK+XBzD/aCTSg6PhRQf78fm4
-	T1/7HgheQeL2uTi4iz0w==;
+	List-Owner; bh=L6lxbi+xfpPKAMHdasT23zHn7ixayy6AgVdDl4as0JQ=; b=YSoDvMUbykFReY
+	Lwo8jP4WsiaHUobjY65ATnJUPHud6HN3tXGb+gVQO3Mu265YGZayh2GT879qwfHAkqoD/GFFkGwOd
+	COa66ELCMpLL3w2KnFSkkUWE1MqGpNEbfnquMjHHFL4DIQ6EaRfSpJpylWStwkVHW/t4XcvDhqAC4
+	UTa4FJCAP0lGCaJS+ExJbqZ5Nodj2Z3/Ap8OhF5GxmtihCDoITqEDn0nPvAAMgJ/27+drU1M3Gva4
+	R3y7CNDYLe16k146yRrb3hQWrQeYixGWfYdtsEQEsY4aBPRfakQQhCJ/Uu+/bfpLA7b66TsZO/YXn
+	tJV7zeetstx8exJHpQhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIFc0-0001Co-5a; Wed, 09 Oct 2019 17:18:56 +0000
-Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
+	id 1iIFcE-0001RX-R4; Wed, 09 Oct 2019 17:19:10 +0000
+Received: from mail-yw1-xc44.google.com ([2607:f8b0:4864:20::c44])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIFYj-0006dW-CH
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 17:15:35 +0000
-Received: by mail-yw1-xc42.google.com with SMTP id d192so1100333ywa.1
+ id 1iIFYl-0006fJ-3s
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 17:15:37 +0000
+Received: by mail-yw1-xc44.google.com with SMTP id d192so1100368ywa.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 09 Oct 2019 10:15:33 -0700 (PDT)
+ Wed, 09 Oct 2019 10:15:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=OQMsvrMqAN5cYMrSu91Pu66B0Sg+HB0aWPXdvZz2KcA=;
- b=PGJQlbBDuENA6RKdMPrsxNZh6nst1zCDQfAK+p2cso3insZOWY8FJEwOLv8XenLtXO
- bGBQwd34unyuouDzIG7HmrZIvPHnyWr41NSFvJAL/xOS82fgD1NfhseCwhfw2DikqEu5
- eVmbp/Vn7KgewV0075KN8zTpeX7qMQSNUokumcZaEeZsJG5VO/PfXYDcOLC9JCZ890KW
- y0sQAJpfgG+FsGKD3Iys1Y+e55c+N8gknc5iUoa49tq8VWF2un0vL+D3LELYFnV+GDFv
- gzgYMpXOTFDKPjhHGuCRvpkZSc1A0imSUuHlDqkMGLTgqTAaC53i29PN+CEA9l1XwD0+
- tT4A==
+ bh=+D/uU8MO7mShW9teASkMb7bJZjWkGz/G9NDBF9ekIAA=;
+ b=kdbV1nKBX7QFRZZuqVlE1hddyif21obkYZGvk5fHtWvd6zoj6Pz93eZ+xnzRnwZjgS
+ Nqvjk26iFkR4G8mVxThcXfh8q57/Pmn8tIVhB6h9M3pjsIcqrA2wZ8sJlc1753CAsMLP
+ +JFodP7LOpcyFh9w4MnAX6uCZn7hhYk6rChrZ3eep/OSGHy+P8wGrf+g7RKM8wI9hk0c
+ 5Ko7/NuVNnd8hm/WAN/JQlZamaAA/MKjpFNpkKDDQZyqFRxyXKoXbiXsnuQdMs8VaUbK
+ H91vFRRQYM9IUkULnr7kOYNzEbwx+cC1IQX8UKP+c1wn/Tsjq/ey0WU6Fjvf+w/mhnFs
+ i53w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=OQMsvrMqAN5cYMrSu91Pu66B0Sg+HB0aWPXdvZz2KcA=;
- b=b/Q29BBBERGo4tpxnX4LExBnxDgkawkBr50+NVAEa/2yfqzY598gY8LAza7zR+pIY1
- 4VYNVtkCyPX1Yk4cR3/QnrlKL0NJ5C1YBKRrhnd3/+Tgsm4HgQJTLXqEP9kpz3iJJepN
- wRNPFsJufMuQiVibtl5wZKyiO5SrT1kRycvQpkGSeolLH17F4TuSOU1BJvsEoEGSrY+y
- wdTrXcoLmaoP0CQTNn8nn/5ZhekXEsOGc/S5+mH4ODn/2JxjDjmj8gXIBg0/xx4RGES/
- ETYDeYHl01YCkPbdaKTRu4jjPLVMPGayNjDeO3Q2wKMi2VRHZbn5kK0n1hySJKrMcB/x
- tbww==
-X-Gm-Message-State: APjAAAUyw2RZA4ugRcvD210vHrG6+LCmLw44XWnYzYa0OuZvars3OO8H
- aGbGegZmj9ZQMuhuCbp5jck=
-X-Google-Smtp-Source: APXvYqxPf397BWAZAXQxl/ej3ydag60BplqntuCWiFdPKrkxGZDZCFC0ugMw5RZO4Kunw4jd93LwwA==
-X-Received: by 2002:a0d:d042:: with SMTP id s63mr3399648ywd.356.1570641332590; 
- Wed, 09 Oct 2019 10:15:32 -0700 (PDT)
+ bh=+D/uU8MO7mShW9teASkMb7bJZjWkGz/G9NDBF9ekIAA=;
+ b=dUMZqEvpTg0HZFQhF6tIGWCZD0EkoT6GsDDXdPNemqSeByyEMps9FlH7MSiYfdslas
+ AqxTKtl8/Kc0pRfpbsU8XQn6wigmyFLeTmNfsQUPQVC89mDkoxFlyntpHL/mhcjrX8Iy
+ t/da6E8398J6I4pKHkOdRpQp0ji5/1fATocI4oKArnweXQNjvceo0Qs7UT8BXJlgCvla
+ mMrw/YrskLgdliJU64DMatIK7yBYPTdVsdX/DAFg44B5gPzNSzzvpmHsAusAMP9irzz8
+ bEZahQkEVt0+vEc5RHgkTlFQfH1mQXqlL9hHQ8jUMqUcGUjNzuiU9QapsnT8QkP10hnd
+ wOMw==
+X-Gm-Message-State: APjAAAVVEOhwnw4dL50BHLZXbEBd/JeAJk1CftwHatDAmxd2Y3xi3Uv8
+ gOvYnjRlmwc4OUqiN2qACdk8PKcE
+X-Google-Smtp-Source: APXvYqx1ba26jfo53B5QvO53JIDI7zE0Ohda+kXHonbaNxBT3JWZ4rL68W3mYphHCXVQACx63/JBAw==
+X-Received: by 2002:a0d:d490:: with SMTP id w138mr3761909ywd.139.1570641334354; 
+ Wed, 09 Oct 2019 10:15:34 -0700 (PDT)
 Received: from localhost.localdomain (072-189-084-142.res.spectrum.com.
  [72.189.84.142])
- by smtp.gmail.com with ESMTPSA id r63sm743292ywg.36.2019.10.09.10.15.31
+ by smtp.gmail.com with ESMTPSA id r63sm743292ywg.36.2019.10.09.10.15.32
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 09 Oct 2019 10:15:31 -0700 (PDT)
+ Wed, 09 Oct 2019 10:15:33 -0700 (PDT)
 From: William Breathitt Gray <vilhelm.gray@gmail.com>
 To: linus.walleij@linaro.org, bgolaszewski@baylibre.com,
  akpm@linux-foundation.org
-Subject: [PATCH v18 13/14] gpio: max3191x: Utilize the for_each_set_clump8
- macro
-Date: Wed,  9 Oct 2019 13:14:49 -0400
-Message-Id: <c2b1ed62caf6fce6e5681809a50c05ce6acdf2a6.1570641097.git.vilhelm.gray@gmail.com>
+Subject: [PATCH v18 14/14] gpio: pca953x: Utilize the for_each_set_clump8 macro
+Date: Wed,  9 Oct 2019 13:14:50 -0400
+Message-Id: <3543ffc3668ad4ed4c00e8ebaf14a5559fd6ddf2.1570641097.git.vilhelm.gray@gmail.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <cover.1570641097.git.vilhelm.gray@gmail.com>
 References: <cover.1570641097.git.vilhelm.gray@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_101533_430299_9793E142 
-X-CRM114-Status: GOOD (  11.60  )
+X-CRM114-CacheID: sfid-20191009_101535_173910_BE10BD78 
+X-CRM114-Status: GOOD (  11.33  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c44 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (vilhelm.gray[at]gmail.com)
@@ -101,78 +100,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Mathias Duckeck <m.duckeck@kunbus.de>,
- preid@electromag.com.au, yamada.masahiro@socionext.com,
- linux-pm@vger.kernel.org, linux@rasmusvillemoes.dk,
- linux-kernel@vger.kernel.org, William Breathitt Gray <vilhelm.gray@gmail.com>,
- linux-gpio@vger.kernel.org, lukas@wunner.de, geert@linux-m68k.org,
- andriy.shevchenko@linux.intel.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, preid@electromag.com.au,
+ yamada.masahiro@socionext.com, linux-pm@vger.kernel.org,
+ linux@rasmusvillemoes.dk, linux-kernel@vger.kernel.org,
+ William Breathitt Gray <vilhelm.gray@gmail.com>, linux-gpio@vger.kernel.org,
+ lukas@wunner.de, geert@linux-m68k.org, andriy.shevchenko@linux.intel.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Replace verbose implementation in get_multiple callback with
+Replace verbose implementation in set_multiple callback with
 for_each_set_clump8 macro to simplify code and improve clarity.
 
-Cc: Mathias Duckeck <m.duckeck@kunbus.de>
-Cc: Lukas Wunner <lukas@wunner.de>
+Cc: Phil Reid <preid@electromag.com.au>
 Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
 ---
- drivers/gpio/gpio-max3191x.c | 19 ++++++++++---------
- 1 file changed, 10 insertions(+), 9 deletions(-)
+ drivers/gpio/gpio-pca953x.c | 17 +++++++----------
+ 1 file changed, 7 insertions(+), 10 deletions(-)
 
-diff --git a/drivers/gpio/gpio-max3191x.c b/drivers/gpio/gpio-max3191x.c
-index 4b4b2ceb82fc..0242c6187bf5 100644
---- a/drivers/gpio/gpio-max3191x.c
-+++ b/drivers/gpio/gpio-max3191x.c
-@@ -31,6 +31,7 @@
-  */
+diff --git a/drivers/gpio/gpio-pca953x.c b/drivers/gpio/gpio-pca953x.c
+index de5d1383f28d..10b669b8f27d 100644
+--- a/drivers/gpio/gpio-pca953x.c
++++ b/drivers/gpio/gpio-pca953x.c
+@@ -10,6 +10,7 @@
  
- #include <linux/bitmap.h>
+ #include <linux/acpi.h>
+ #include <linux/bits.h>
 +#include <linux/bitops.h>
- #include <linux/crc8.h>
- #include <linux/gpio/consumer.h>
  #include <linux/gpio/driver.h>
-@@ -232,16 +233,20 @@ static int max3191x_get_multiple(struct gpio_chip *gpio, unsigned long *mask,
- 				 unsigned long *bits)
+ #include <linux/gpio/consumer.h>
+ #include <linux/i2c.h>
+@@ -456,7 +457,8 @@ static void pca953x_gpio_set_multiple(struct gpio_chip *gc,
+ 				      unsigned long *mask, unsigned long *bits)
  {
- 	struct max3191x_chip *max3191x = gpiochip_get_data(gpio);
--	int ret, bit = 0, wordlen = max3191x_wordlen(max3191x);
-+	const unsigned int wordlen = max3191x_wordlen(max3191x);
-+	int ret;
-+	unsigned long bit;
-+	unsigned long gpio_mask;
-+	unsigned long in;
- 
- 	mutex_lock(&max3191x->lock);
- 	ret = max3191x_readout_locked(max3191x);
+ 	struct pca953x_chip *chip = gpiochip_get_data(gc);
+-	unsigned int bank_mask, bank_val;
++	unsigned long offset;
++	unsigned long bank_mask;
+ 	int bank;
+ 	u8 reg_val[MAX_BANK];
+ 	int ret;
+@@ -466,15 +468,10 @@ static void pca953x_gpio_set_multiple(struct gpio_chip *gc,
  	if (ret)
- 		goto out_unlock;
+ 		goto exit;
  
--	while ((bit = find_next_bit(mask, gpio->ngpio, bit)) != gpio->ngpio) {
-+	bitmap_zero(bits, gpio->ngpio);
-+	for_each_set_clump8(bit, gpio_mask, mask, gpio->ngpio) {
- 		unsigned int chipnum = bit / MAX3191X_NGPIO;
--		unsigned long in, shift, index;
- 
- 		if (max3191x_chip_is_faulting(max3191x, chipnum)) {
- 			ret = -EIO;
-@@ -249,12 +254,8 @@ static int max3191x_get_multiple(struct gpio_chip *gpio, unsigned long *mask,
- 		}
- 
- 		in = ((u8 *)max3191x->xfer.rx_buf)[chipnum * wordlen];
--		shift = round_down(bit % BITS_PER_LONG, MAX3191X_NGPIO);
--		index = bit / BITS_PER_LONG;
--		bits[index] &= ~(mask[index] & (0xff << shift));
--		bits[index] |= mask[index] & (in << shift); /* copy bits */
--
--		bit = (chipnum + 1) * MAX3191X_NGPIO; /* go to next chip */
-+		in &= gpio_mask;
-+		bitmap_set_value8(bits, in, bit);
+-	for (bank = 0; bank < NBANK(chip); bank++) {
+-		bank_mask = mask[bank / sizeof(*mask)] >>
+-			   ((bank % sizeof(*mask)) * 8);
+-		if (bank_mask) {
+-			bank_val = bits[bank / sizeof(*bits)] >>
+-				  ((bank % sizeof(*bits)) * 8);
+-			bank_val &= bank_mask;
+-			reg_val[bank] = (reg_val[bank] & ~bank_mask) | bank_val;
+-		}
++	for_each_set_clump8(offset, bank_mask, mask, gc->ngpio) {
++		bank = offset / 8;
++		reg_val[bank] &= ~bank_mask;
++		reg_val[bank] |= bitmap_get_value8(bits, offset) & bank_mask;
  	}
  
- out_unlock:
+ 	pca953x_write_regs(chip, chip->regs->output, reg_val);
 -- 
 2.23.0
 
