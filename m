@@ -2,67 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 483E0D109C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 15:54:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09A4FD1092
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 15:51:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ljMRbWYLFeBTtg2h0X1BklWCExdoQwOSR/6HlD41ZBM=; b=Uvh4xiOssO1g+K
-	beIJGzjtDJRq8d/mn1bTI4H+sicSaXL/PJ9UwjfAefEQ3F/0LdrG8OxdXYj/p6jqspiTKuLmCdx42
-	LxIq7ED51vJhSVr59IxL9jrWtQPDrKLrXqJHsq/onRo0m3/jIeb7o0DymZ8uqp6g4g5/aqsfLG6Ur
-	LL5SJDofxjMX2R2RDVzdqzb9P6+7lhnGNg2QLPHftpAQ76Zhn7c01dG6HsbO8I6wvqh7JEJWvdPef
-	Nhxsx1RDf/NpLA1xyEvnJN5QkxFKenHdVPHMW7yMMkDzlH4zzjb7eeOJYlB22YKr6TdbWPKXCuxp5
-	Z7xlndOGjsubVKqBP7Cw==;
+	List-Owner; bh=ryEXgYenAIek8r2gP8vntaBCqtXGHfYdPz6lmDrcd1M=; b=eOaCd5j9m7HadK
+	BXTIlUqv9VTx9xhNCKjQHa/fCrqjBKJtBmWZTg3K6sm1UTy+n6/ZkT+KSmnq7GYJYYF//FIL6x6e4
+	ItdV9oSZUk1GDQbH3Oz62Glnqo70PrAMCqnhidr6VSphQJs2z26rhIBxSURX0H9484e2+hzFtETiv
+	m3u1ai7YsJJ+m2oaVR9yUjRsFYp7+fpNpYIaGq4yjX6AiTms2mpFUyz8pEM4Zl28B9ofDSPA8IEFW
+	RNRWnBis//GaBJJKt3whwbnbYuJWH0BUM1XLF3YpBZpBtc/DUwi3QfgtmangIJQ97qzk0QCGDgzfJ
+	lrJtVoQ+4TaVrKg0TBsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iICPc-0006PA-I7; Wed, 09 Oct 2019 13:53:56 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iICMe-0005z3-K0; Wed, 09 Oct 2019 13:50:52 +0000
+Received: from mail-qk1-f195.google.com ([209.85.222.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iICPS-0006O4-6f; Wed, 09 Oct 2019 13:53:48 +0000
-X-UUID: 9641ad5ebd0646cd8cad0fb38942ac0b-20191009
-X-UUID: 9641ad5ebd0646cd8cad0fb38942ac0b-20191009
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <yong.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 371666275; Wed, 09 Oct 2019 05:53:43 -0800
-Received: from MTKMBS32N2.mediatek.inc (172.27.4.72) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 9 Oct 2019 06:53:32 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS32N2.mediatek.inc
- (172.27.4.72) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Wed, 9 Oct 2019 21:38:24 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 9 Oct 2019 21:38:24 +0800
-Message-ID: <1570628307.19130.53.camel@mhfsdcap03>
-Subject: Re: [PATCH] iommu/mediatek: Move the tlb_sync into tlb_flush
-From: Yong Wu <yong.wu@mediatek.com>
-To: Tomasz Figa <tfiga@chromium.org>
-Date: Wed, 9 Oct 2019 21:38:27 +0800
-In-Reply-To: <CAAFQd5C3U7pZo4SSUJ52Q7E+0FaUoORQFbQC5RhCHBhi=NFYTw@mail.gmail.com>
-References: <1569822142-14303-1-git-send-email-yong.wu@mediatek.com>
- <CAAFQd5C+FM3n-Ww4C+qDD1QZOGZrqEYw4EvYECfadGcDH0fmew@mail.gmail.com>
- <1570522162.19130.38.camel@mhfsdcap03>
- <CAAFQd5C3U7pZo4SSUJ52Q7E+0FaUoORQFbQC5RhCHBhi=NFYTw@mail.gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1iICMV-0005yi-6k
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 13:50:46 +0000
+Received: by mail-qk1-f195.google.com with SMTP id u186so2270240qkc.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 09 Oct 2019 06:50:42 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=fGblOzYNZ2dGPT7eFBibDbwhvlUd08Nz7CsmX3H+8CM=;
+ b=KUhLsv4pXscTznUbsGtAmvhIZwp6fUEmjR6oR5dS4Ead0TBE+Mj2s/5kLi3Z8G3DeJ
+ Ec374oHR01B4Jkr/bFniOrwyF1nvgwWxXWWSS5Yma5wB/EdIUeTTICKnh0BvQebfJND7
+ 5AFQ0a/G9aP1bpu0NcaQYcjmerxUGkXPXhbYUd2QYvHCxwDrgemM2Tz4IVAnf6ziPTMf
+ WPAJVP8hXdsrXzjzus+Lk8cEWo35n1mKns8PMhNrT/yawxKdnFle65/pWnG7OAcB3B4+
+ cp5+gnkQHygD37Aq6kdXYUZx1+Rbg0J2dSD2bvXUrEgXFxrz79V1s9bthAq71Qrzg7Rw
+ J/Rw==
+X-Gm-Message-State: APjAAAUdCFMqDw7b6KWeyYR1lUxcBmelNdItaqgpQcr/YDzpYP74npn6
+ uS0qaffDdoGbCxm2W2F6F2W0ZoZF5kPT0YfwmE0=
+X-Google-Smtp-Source: APXvYqzWQzuwo4Ye99DzsL3YbPF62co8qA53IocbZP/W7D7npo1Oc9wQr/VhkHA7L9KGU0RfaFrcdSRA0SRKWIUNGgw=
+X-Received: by 2002:a37:9ad4:: with SMTP id c203mr3695572qke.352.1570629041718; 
+ Wed, 09 Oct 2019 06:50:41 -0700 (PDT)
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 9DC8DFD7C36EE50E1052EBAAB997ADF22F64BBEC2A1D9E8D110DA80EEC3D152C2000:8
-X-MTK: N
+References: <20191007214439.27891-1-sebastian@breakpoint.cc>
+ <CAK8P3a13AOKm1epqAtP9329Ai2Bh+H18fOfsqO+deCLTHoYRwA@mail.gmail.com>
+ <56004687-af3e-3b8b-c9b5-21cd653db12b@redhat.com>
+ <CAK8P3a0UH8_pSPbEd7fRjws-TZ=+q-gLQZXvEOtoX9YtZY9tmA@mail.gmail.com>
+ <20191009084610.GG2311@hirez.programming.kicks-ass.net>
+ <CAK8P3a3--khxZgWNa3uH8g5PsP7y8PrgpdktEV49UrOhFCX8jQ@mail.gmail.com>
+ <20191009093118.GJ2328@hirez.programming.kicks-ass.net>
+ <CAK8P3a0W2+oayv8D=DBqDaeR+dp2QsjhigKevT_D6NLtGPMWxw@mail.gmail.com>
+ <20191009105650.GM2328@hirez.programming.kicks-ass.net>
+ <CAK8P3a1CyaqHvx+UC+ZeJYDjU4x52hQ9sKyEMiOc=dKq8NTYKg@mail.gmail.com>
+ <20191009120639.GI2311@hirez.programming.kicks-ass.net>
+In-Reply-To: <20191009120639.GI2311@hirez.programming.kicks-ass.net>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 9 Oct 2019 15:50:24 +0200
+Message-ID: <CAK8P3a1nMjjZCT+do6y07yvm-JLy-HhXCNrcqfDr=sAoAtM9-Q@mail.gmail.com>
+Subject: Re: [RFC PATCH 0/3] Queued spinlocks/RW-locks for ARM
+To: Peter Zijlstra <peterz@infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_065346_248462_F47C0EEB 
-X-CRM114-Status: GOOD (  40.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191009_065044_797671_80CAEB62 
+X-CRM114-Status: GOOD (  17.28  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.222.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.195 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,163 +91,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: youlin.pei@mediatek.com, anan.sun@mediatek.com, Nicolas
- Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
- srv_heupstream <srv_heupstream@mediatek.com>, Joerg Roedel <joro@8bytes.org>,
- Will Deacon <will.deacon@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Evan Green <evgreen@chromium.org>, chao.hao@mediatek.com,
- "list@263.net:IOMMU DRIVERS
- <iommu@lists.linux-foundation.org>, Joerg  Roedel <joro@8bytes.org>,
- " <iommu@lists.linux-foundation.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Robin
- Murphy <robin.murphy@arm.com>, "list@263.net:IOMMU DRIVERS
- <iommu@lists.linux-foundation.org>, Joerg  Roedel <joro@8bytes.org>,
- " <linux-arm-kernel@lists.infradead.org>
+Cc: Russell King <linux@armlinux.org.uk>,
+ Sebastian Andrzej Siewior <sebastian@breakpoint.cc>,
+ Ingo Molnar <mingo@redhat.com>, Waiman Long <longman@redhat.com>,
+ Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-10-09 at 16:56 +0900, Tomasz Figa wrote:
-> On Tue, Oct 8, 2019 at 5:09 PM Yong Wu <yong.wu@mediatek.com> wrote:
-> >
-> > Hi Tomasz,
-> >
-> > Sorry for reply late.
-> >
-> > On Wed, 2019-10-02 at 14:18 +0900, Tomasz Figa wrote:
-> > > Hi Yong,
+On Wed, Oct 9, 2019 at 2:06 PM Peter Zijlstra <peterz@infradead.org> wrote:
+> On Wed, Oct 09, 2019 at 02:00:05PM +0200, Arnd Bergmann wrote:
+> > On Wed, Oct 9, 2019 at 12:57 PM Peter Zijlstra <peterz@infradead.org> wrote:
+> > > On Wed, Oct 09, 2019 at 12:31:24PM +0200, Arnd Bergmann wrote:
+> > > > On Wed, Oct 9, 2019 at 11:31 AM Peter Zijlstra <peterz@infradead.org> wrote:
+> > > > I assume the 16-bit xchg_relaxed() in qspinlock.c was meant as
+> > > > an optimization for x86 and other cmpxchg based architectures but
+> > > > doesn't actually help on ll/sc based architectures that get the
+> > > > reservation on the whole cache line anyway?
 > > >
-> > > On Mon, Sep 30, 2019 at 2:42 PM Yong Wu <yong.wu@mediatek.com> wrote:
-> > > >
-> > > > The commit 4d689b619445 ("iommu/io-pgtable-arm-v7s: Convert to IOMMU API
-> > > > TLB sync") help move the tlb_sync of unmap from v7s into the iommu
-> > > > framework. It helps add a new function "mtk_iommu_iotlb_sync", But it
-> > > > lacked the dom->pgtlock, then it will cause the variable
-> > > > "tlb_flush_active" may be changed unexpectedly, we could see this warning
-> > > > log randomly:
-> > > >
+> > > It does actually help here too, because it allows other operations to be
+> > > regular load/stores.
 > > >
-> > > Thanks for the patch! Please see my comments inline.
-> > >
-> > > > mtk-iommu 10205000.iommu: Partial TLB flush timed out, falling back to
-> > > > full flush
-> > > >
-> > > > To fix this issue, we can add dom->pgtlock in the "mtk_iommu_iotlb_sync".
-> > > > And when checking this issue, we find that __arm_v7s_unmap call
-> > > > io_pgtable_tlb_add_flush consecutively when it is supersection/largepage,
-> > > > this also is potential unsafe for us. There is no tlb flush queue in the
-> > > > MediaTek M4U HW. The HW always expect the tlb_flush/tlb_sync one by one.
-> > > > If v7s don't always gurarantee the sequence, Thus, In this patch I move
-> > > > the tlb_sync into tlb_flush(also rename the function deleting "_nosync").
-> > > > and we don't care if it is leaf, rearrange the callback functions. Also,
-> > > > the tlb flush/sync was already finished in v7s, then iotlb_sync and
-> > > > iotlb_sync_all is unnecessary.
-> > >
-> > > Performance-wise, we could do much better. Instead of synchronously
-> > > syncing at the end of mtk_iommu_tlb_add_flush(), we could sync at the
-> > > beginning, if there was any previous flush still pending. We would
-> > > also have to keep the .iotlb_sync() callback, to take care of waiting
-> > > for the last flush. That would allow better pipelining with CPU in
-> > > cases like this:
-> > >
-> > > for (all pages in range) {
-> > >    change page table();
-> > >    flush();
-> > > }
-> > >
-> > > "change page table()" could execute while the IOMMU is flushing the
-> > > previous change.
+> > > Look at the #if _Q_PENDING_BITS==8 in qspinlock.c, as opposed to the
+> > > #else where they're all atomic_*().
 > >
-> > Do you mean adding a new tlb_sync before tlb_flush_no_sync, like below:
-> >
-> > mtk_iommu_tlb_add_flush_nosync {
-> >    + mtk_iommu_tlb_sync();
-> >    tlb_flush_no_sync();
-> >    data->tlb_flush_active = true;
-> > }
-> >
-> > mtk_iommu_tlb_sync {
-> >         if (!data->tlb_flush_active)
-> >                 return;
-> >         tlb_sync();
-> >         data->tlb_flush_active = false;
-> > }
-> >
-> > This way look improve the flow, But adjusting the flow is not the root
-> > cause of this issue. the problem is "data->tlb_flush_active" may be
-> > changed from mtk_iommu_iotlb_sync which don't have a dom->pglock.
-> 
-> That was not the only problem with existing code. Existing code also
-> assumed that add_flush and sync always go in pairs, but that's not
-> true.
+> > Oh, is that safe with an xchg() implementation that operates on the whole
+> > 32 bit when a concurrent thread can do a simple store to one half of it?
+>
+> It had better be, otherwise LL/SC'd be broken. SC _must_ fail when there
+> is a contending store.
 
-Yes. Thus I put the tlb_flush always followed by tlb_sync to make sure
-they always go in pairs.
+Ok. I looked a bit at the other implementations that do xchg16() through
+cmpxchg32(), and it seems it would be easiest to reuse the superh version,
+which is fully portable by moving arch/sh/include/asm/cmpxchg-xchg.h
+into include/asm-generic/, the same thing would allow us to change a
+number of other architectures to use the generic qspinlock instead of
+their own locks.
 
-> 
-> My suggestion is to fix the locking in the driver and keep the sync
-> deferred as much as possible, so that performance is not degraded. I
+Sebastian, do you want to try doing it that way?
 
-I really didn't get this timeout warning log in previous kernel(Many
-tlb_flush followed by one tlb_sync), But deferring the sync is not
-suggested by our DE, thus I still would like to fix the sequence in this
-patch with putting them together.
-
-> changed my mind, though. I think we would need to make more changes to
-> the driver to make it implement the flushing efficiently, so let's go
-> with the current simple approach for now and improve incrementally.
-> 
-> >
-> > Currently the synchronisation of the tlb_flush/tlb_sync flow are
-> > controlled by the variable "data->tlb_flush_active".
-> >
-> > In this patch putting the tlb_flush/tlb_sync together looks make
-> > the flow simpler:
-> > a) Don't need the sensitive variable "tlb_flush_active".
-> > b) Remove mtk_iommu_iotlb_sync, Don't need add lock in it.
-> > c) Simplify the tlb_flush_walk/tlb_flush_leaf.
-> > is it ok?
-> >
-> 
-> Okay, let's do so as a first step to fix the issue. Then we can
-> optimize in follow up patches.
-
-Thanks the confirm, I have sent a quick v2.
-
-> 
-> > >
-> > > >
-> > > > Besides, there are two minor changes:
-> > > > a) Use writel for the register F_MMU_INV_RANGE which is for triggering the
-> > > > HW work. We expect all the setting(iova_start/iova_end...) have already
-> > > > been finished before F_MMU_INV_RANGE.
-> > > > b) Reduce the tlb timeout value from 100000us to 1000us. the original value
-> > > > is so long that affect the multimedia performance.
-> > >
-> > > By definition, timeout is something that should not normally happen.
-> > > Too long timeout affecting multimedia performance would suggest that
-> > > the timeout was actually happening, which is the core problem, not the
-> > > length of the timeout. Could you provide more details on this?
-> >
-> > As description above, this issue is because there is no dom->pgtlock in
-> > the mtk_iommu_iotlb_sync. I have tried that the issue will disappear
-> > after adding lock in it.
-> >
-> > Although the issue is fixed after this patch, I still would like to
-> > reduce the timeout value for somehow error happen in the future. 100ms
-> > is unnecessary for us. It looks a minor improvement rather than fixing
-> > the issue. I will use a new patch for it.
-> >
-> 
-> Okay, makes sense.
-> 
-> Best regards,
-> Tomasz
-
-
+     Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
