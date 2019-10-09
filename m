@@ -2,65 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC9E5D0A1A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:47:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21F5ED0A08
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:41:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nq0yaI1oPm+ZXa3nLix4JbTJeMRMOUCUar2yRVpQDOg=; b=hS137NhEleXK58
-	X3y/FEw65infutujNbXMHb+glM9/hB9KM30+y4nMorJnXJAQXAKKGS2et4PJlfXGMwaSBuUEA/BJ9
-	7xTECymVMYdp1Re0OTGqw/g5kXX3D+o8fZsV0mMP7eVdvhTHAIa1egXixf8nMi4kSBCa7VuBfpfOI
-	4Ysdkjr/jtdwmco+/7jSDG15NEicVevtMYCDMmu+dc+F1HgytBDtQUpSn+BPqPStLRmvbwXMGM/D3
-	c6/hmWJ0RyPalFUOVPALnMgdEO4aJ81J/Nv+ZQaiibDYI97eCoVuDZ2chK0qQvUr0iejxB+rZzeYO
-	BcshNzIDxBhWJzOs2gLQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=nkr6jHNV4N3WtcrhfUDupOkM/PqAakeDmXPXxoEhsy0=; b=DtM
+	oYKDcLWY3MY0AnLaAu3hbB3pj27KwRoPqE2XNg8630L3zXQN/emdYvuCKGKw4OvNWQZYDFE2xg/DB
+	rZmXUDwTqb8MoBmAsfLi/jT2jYoBalHNVPO6dLYfcKimSBVWLkxHF9bcooWqLAqN+AthYTptDxd1L
+	k6wg/8G5s2eJqYgdqULyPCAaR6Rvu38/0B3vJDwngCgxh7OihgI9QsAkjmXkVudwzS8zkg0YQxsjP
+	+kNdwT4OxHnC87tkdLtrN6q/8fbjido1xjCL/5bdvGUAqwPfe60qL8sYYwoAzMli+dmkcPAQWjZMh
+	OYUc5NS3bgMryHIVCT8Zl4VJzRqTV5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI7cR-0007Hg-Ny; Wed, 09 Oct 2019 08:46:51 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iI7XD-00041W-6Z; Wed, 09 Oct 2019 08:41:27 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI7cC-0007GK-PO; Wed, 09 Oct 2019 08:46:38 +0000
-X-UUID: d05195b2a8d744a4bc6fa4bf15181af2-20191009
-X-UUID: d05195b2a8d744a4bc6fa4bf15181af2-20191009
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 686160028; Wed, 09 Oct 2019 00:46:23 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 9 Oct 2019 01:41:35 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- MTKMBS31N2.mediatek.inc (172.27.4.87) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 9 Oct 2019 15:41:11 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 9 Oct 2019 15:41:10 +0800
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>
-Subject: [RESEND PATCH v3 06/11] phy: phy-mtk-tphy: add a property for
- disconnect threshold
-Date: Wed, 9 Oct 2019 15:40:29 +0800
-Message-ID: <1570606834-5644-6-git-send-email-chunfeng.yun@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
-In-Reply-To: <1570606834-5644-1-git-send-email-chunfeng.yun@mediatek.com>
-References: <1570606834-5644-1-git-send-email-chunfeng.yun@mediatek.com>
-MIME-Version: 1.0
-X-TM-SNTS-SMTP: 44482A48D825740E5FA84E828A43136A47E84EB4A7528B5C724E9FF47A996EF82000:8
-X-MTK: N
+ id 1iI7X4-00040Z-0X
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:41:19 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id D2C1520039E;
+ Wed,  9 Oct 2019 10:41:14 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 50E90200044;
+ Wed,  9 Oct 2019 10:41:09 +0200 (CEST)
+Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 95725402DA;
+ Wed,  9 Oct 2019 16:41:02 +0800 (SGT)
+From: Hui Song <hui.song_1@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>
+Subject: [PATCH v6] gpio/mpc8xxx: change irq handler from chained to normal
+Date: Wed,  9 Oct 2019 16:30:21 +0800
+Message-Id: <20191009083021.33529-1-hui.song_1@nxp.com>
+X-Mailer: git-send-email 2.9.5
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_014636_827235_277C86D7 
-X-CRM114-Status: GOOD (  13.19  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191009_014118_326284_EEBBAF69 
+X-CRM114-Status: GOOD (  12.27  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,76 +66,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Chunfeng Yun <chunfeng.yun@mediatek.com>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Song Hui <hui.song_1@nxp.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-gpio@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is used to tune the threshold of disconnect
+From: Song Hui <hui.song_1@nxp.com>
 
-Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
----
-v2~3: no changes
----
- drivers/phy/mediatek/phy-mtk-tphy.c | 17 +++++++++++++++--
- 1 file changed, 15 insertions(+), 2 deletions(-)
+More than one gpio controllers can share one interrupt, change the
+driver to request shared irq.
 
-diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
-index cb2ed3b25068..5afe33621dbc 100644
---- a/drivers/phy/mediatek/phy-mtk-tphy.c
-+++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-@@ -60,6 +60,8 @@
- #define U3P_USBPHYACR6		0x018
- #define PA6_RG_U2_BC11_SW_EN		BIT(23)
- #define PA6_RG_U2_OTG_VBUSCMP_EN	BIT(20)
-+#define PA6_RG_U2_DISCTH		GENMASK(7, 4)
-+#define PA6_RG_U2_DISCTH_VAL(x)	((0xf & (x)) << 4)
- #define PA6_RG_U2_SQTH		GENMASK(3, 0)
- #define PA6_RG_U2_SQTH_VAL(x)	(0xf & (x))
+While this will work, it will mess up userspace accounting of the number
+of interrupts per second in tools such as vmstat.  The reason is that
+for every GPIO interrupt, /proc/interrupts records the count against GIC
+interrupt 68 or 69, as well as the GPIO itself.  So, for every GPIO
+interrupt, the total number of interrupts that the system has seen
+increments by two
+
+Signed-off-by: Laurentiu Tudor <Laurentiu.Tudor@nxp.com>
+Signed-off-by: Alex Marginean <alexandru.marginean@nxp.com>
+Signed-off-by: Song Hui <hui.song_1@nxp.com>
+---
+ Changes in v6:
+	- change request_irq to devm_request_irq and add commit message.
+ Changes in v5:
+	- add traverse every bit function.
+ Changes in v4:
+	- convert 'pr_err' to 'dev_err'.
+ Changes in v3:
+	- update the patch description.
+ Changes in v2:
+	- delete the compatible of ls1088a.
+
+ drivers/gpio/gpio-mpc8xxx.c | 31 ++++++++++++++++++++-----------
+ 1 file changed, 20 insertions(+), 11 deletions(-)
+
+diff --git a/drivers/gpio/gpio-mpc8xxx.c b/drivers/gpio/gpio-mpc8xxx.c
+index 16a47de..f0be284 100644
+--- a/drivers/gpio/gpio-mpc8xxx.c
++++ b/drivers/gpio/gpio-mpc8xxx.c
+@@ -22,6 +22,7 @@
+ #include <linux/irq.h>
+ #include <linux/gpio/driver.h>
+ #include <linux/bitops.h>
++#include <linux/interrupt.h>
  
-@@ -300,6 +302,7 @@ struct mtk_phy_instance {
- 	int eye_src;
- 	int eye_vrt;
- 	int eye_term;
-+	int discth;
- 	bool bc12_en;
- };
+ #define MPC8XXX_GPIO_PINS	32
  
-@@ -850,9 +853,12 @@ static void phy_parse_property(struct mtk_tphy *tphy,
- 				 &instance->eye_vrt);
- 	device_property_read_u32(dev, "mediatek,eye-term",
- 				 &instance->eye_term);
--	dev_dbg(dev, "bc12:%d, src:%d, vrt:%d, term:%d\n",
-+	device_property_read_u32(dev, "mediatek,discth",
-+				 &instance->discth);
-+	dev_dbg(dev, "bc12:%d, src:%d, vrt:%d, term:%d, disc:%d\n",
- 		instance->bc12_en, instance->eye_src,
--		instance->eye_vrt, instance->eye_term);
-+		instance->eye_vrt, instance->eye_term,
-+		instance->discth);
+@@ -127,20 +128,20 @@ static int mpc8xxx_gpio_to_irq(struct gpio_chip *gc, unsigned offset)
+ 		return -ENXIO;
  }
  
- static void u2_phy_props_set(struct mtk_tphy *tphy,
-@@ -888,6 +894,13 @@ static void u2_phy_props_set(struct mtk_tphy *tphy,
- 		tmp |= PA1_RG_TERM_SEL_VAL(instance->eye_term);
- 		writel(tmp, com + U3P_USBPHYACR1);
- 	}
+-static void mpc8xxx_gpio_irq_cascade(struct irq_desc *desc)
++static irqreturn_t mpc8xxx_gpio_irq_cascade(int irq, void *data)
+ {
+-	struct mpc8xxx_gpio_chip *mpc8xxx_gc = irq_desc_get_handler_data(desc);
+-	struct irq_chip *chip = irq_desc_get_chip(desc);
++	struct mpc8xxx_gpio_chip *mpc8xxx_gc = data;
+ 	struct gpio_chip *gc = &mpc8xxx_gc->gc;
+ 	unsigned int mask;
++	int i;
+ 
+ 	mask = gc->read_reg(mpc8xxx_gc->regs + GPIO_IER)
+ 		& gc->read_reg(mpc8xxx_gc->regs + GPIO_IMR);
+-	if (mask)
++	for_each_set_bit(i, &mask, 32)
+ 		generic_handle_irq(irq_linear_revmap(mpc8xxx_gc->irq,
+-						     32 - ffs(mask)));
+-	if (chip->irq_eoi)
+-		chip->irq_eoi(&desc->irq_data);
++						     31 - i));
 +
-+	if (instance->discth) {
-+		tmp = readl(com + U3P_USBPHYACR6);
-+		tmp &= ~PA6_RG_U2_DISCTH;
-+		tmp |= PA6_RG_U2_DISCTH_VAL(instance->discth);
-+		writel(tmp, com + U3P_USBPHYACR6);
-+	}
++	return IRQ_HANDLED;
  }
  
- static int mtk_phy_init(struct phy *phy)
+ static void mpc8xxx_irq_unmask(struct irq_data *d)
+@@ -388,8 +389,8 @@ static int mpc8xxx_probe(struct platform_device *pdev)
+ 
+ 	ret = gpiochip_add_data(gc, mpc8xxx_gc);
+ 	if (ret) {
+-		pr_err("%pOF: GPIO chip registration failed with status %d\n",
+-		       np, ret);
++		dev_err(&pdev->dev, "%pOF: GPIO chip registration failed with status %d\n",
++			np, ret);
+ 		goto err;
+ 	}
+ 
+@@ -409,8 +410,16 @@ static int mpc8xxx_probe(struct platform_device *pdev)
+ 	if (devtype->gpio_dir_in_init)
+ 		devtype->gpio_dir_in_init(gc);
+ 
+-	irq_set_chained_handler_and_data(mpc8xxx_gc->irqn,
+-					 mpc8xxx_gpio_irq_cascade, mpc8xxx_gc);
++	ret = devm_request_irq(&pdev->dev, mpc8xxx_gc->irqn,
++			       mpc8xxx_gpio_irq_cascade,
++			       IRQF_NO_THREAD | IRQF_SHARED, "gpio-cascade",
++			       mpc8xxx_gc);
++	if (ret) {
++		dev_err(&pdev->dev, "%s: failed to devm_request_irq(%d), ret = %d\n",
++			np->full_name, mpc8xxx_gc->irqn, ret);
++		goto err;
++	}
++
+ 	return 0;
+ err:
+ 	iounmap(mpc8xxx_gc->regs);
 -- 
-2.23.0
+2.9.5
 
 
 _______________________________________________
