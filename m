@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2D04D0B26
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 11:29:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1B4CD0B2C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 11:29:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bxODoALgXXcqpyfVIjn3BJbo9WEkr12dL4nY9Gwkm0I=; b=ODqC6yR5zDtM+Z
-	PluYxS7Mo81m9QKEY2IZyFsVP2AgVu5fKCHvaEaaUL6bKjJHxmY1XDFMP+ib1Of7GqPYKd+A7J10y
-	gabmPmbIRc+JP/2bEoffCMyVEtAtuzbE9U3+Hz9ybIMFu2xOG+t1h/x9c4SpnBZ7dafY6Q2uBO1il
-	bToOhBEGCCewrBDc//2cT85WFfrY3ZOIyOPTVR40QB/dmYKHyAOUSpuKJzFaJsLjYe+DAW42JLRB+
-	Q0hn4GXSWo35IUfkHpIkgxlqKPJvEPn7SOfJXfCesaMa1+Jg/wa8jErAFqGKPGLPxubY8OEemHCpi
-	gGnQjFTbXSViWK6Ghxlg==;
+	List-Owner; bh=uTmV2wBN7QvwavKbZRaJ4TUBW4iX471LQ87tNWNhykg=; b=Vu28yKaDePYAgM
+	xRBG5O7wXZAjjF60s5Rbtbc1RES+PN1Qms6PWytIcJs+xOe+AdYiEo7str5eUSanenJ1SnpcsTts5
+	KB06AjgxzDTD+1HWdqkM0QGLXqoJ3CBON8KeGMBRxdeubrr76mtqPXvOK9v+/9mbYnSv2wdcyk3BZ
+	RIqFXGevHEbJqJg2bfUVymozl/Le0RT5qDmLjq3424yA49JcPB3e9YK24KglUvD8sjZFKLScY25L5
+	DMAXvcSNKMsAsRhLNm1QPo7cR3GNBkqFWKLbW+7qBJ05voGcVx4BtAGzD8lZ322KlnLVVZhIWoQnm
+	IDtagDNHc8ayX2utqlpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI8HI-0001RE-8d; Wed, 09 Oct 2019 09:29:04 +0000
+	id 1iI8Hb-0001jK-UD; Wed, 09 Oct 2019 09:29:23 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI8Go-0001B4-Jn; Wed, 09 Oct 2019 09:28:36 +0000
-X-UUID: 535ead288dc743818f16d76164b5a66f-20191009
-X-UUID: 535ead288dc743818f16d76164b5a66f-20191009
+ id 1iI8Go-0001An-Vd; Wed, 09 Oct 2019 09:28:36 +0000
+X-UUID: db3bde555c4040b5906b37cfe36c1511-20191009
+X-UUID: db3bde555c4040b5906b37cfe36c1511-20191009
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <ck.hu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1050677349; Wed, 09 Oct 2019 01:28:30 -0800
+ with ESMTP id 1177968426; Wed, 09 Oct 2019 01:28:30 -0800
 Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 9 Oct 2019 02:18:26 -0700
+ 15.0.1395.4; Wed, 9 Oct 2019 02:24:15 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
  MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 9 Oct 2019 17:18:23 +0800
+ 15.0.1395.4; Wed, 9 Oct 2019 17:24:10 +0800
 Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 9 Oct 2019 17:18:23 +0800
-Message-ID: <1570612706.7713.2.camel@mtksdaap41>
-Subject: Re: [PATCH v5, 16/32] drm/mediatek: add component OVL_2L1
+ Transport; Wed, 9 Oct 2019 17:24:10 +0800
+Message-ID: <1570613053.7713.5.camel@mtksdaap41>
+Subject: Re: [PATCH v5, 20/32] drm/mediatek: add function to background
+ color input select for ovl/ovl_2l direct link
 From: CK Hu <ck.hu@mediatek.com>
 To: <yongqiang.niu@mediatek.com>
-Date: Wed, 9 Oct 2019 17:18:26 +0800
-In-Reply-To: <1567090254-15566-17-git-send-email-yongqiang.niu@mediatek.com>
+Date: Wed, 9 Oct 2019 17:24:13 +0800
+In-Reply-To: <1567090254-15566-21-git-send-email-yongqiang.niu@mediatek.com>
 References: <1567090254-15566-1-git-send-email-yongqiang.niu@mediatek.com>
- <1567090254-15566-17-git-send-email-yongqiang.niu@mediatek.com>
+ <1567090254-15566-21-git-send-email-yongqiang.niu@mediatek.com>
 X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 366CB8B7A69E315B8B0799225F3142C166BA891FDF40BC99C87ADF8E19ED78182000:8
+X-TM-SNTS-SMTP: C02F2DEEEE6AABDA208B9E85FEC0B8B04756F0B72EEC649302F73955D5D4DFFE2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_022834_656131_732BDC99 
-X-CRM114-Status: GOOD (  13.29  )
+X-CRM114-CacheID: sfid-20191009_022835_023562_D01ED2E7 
+X-CRM114-Status: GOOD (  15.14  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -88,7 +89,10 @@ Hi, Yongqiang:
 On Thu, 2019-08-29 at 22:50 +0800, yongqiang.niu@mediatek.com wrote:
 > From: Yongqiang Niu <yongqiang.niu@mediatek.com>
 > 
-> This patch add component OVL_2L1
+> This patch add function to background color input select for ovl/ovl_2l direct link
+> for ovl/ovl_2l direct link usecase, we need set background color
+> input select for these hardware.
+> this is preparation patch for ovl/ovl_2l usecase
 > 
 
 Applied to mediatek-drm-next-5.5 [1], thanks.
@@ -102,34 +106,41 @@ CK
 > Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
 > Reviewed-by: CK Hu <ck.hu@mediatek.com>
 > ---
->  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 1 +
->  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h | 1 +
->  2 files changed, 2 insertions(+)
+>  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h | 14 ++++++++++++++
+>  1 file changed, 14 insertions(+)
 > 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-> index 4200f89..af8e872 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-> @@ -260,6 +260,7 @@ struct mtk_ddp_comp_match {
->  	[DDP_COMPONENT_OVL0]	= { MTK_DISP_OVL,	0, NULL },
->  	[DDP_COMPONENT_OVL1]	= { MTK_DISP_OVL,	1, NULL },
->  	[DDP_COMPONENT_OVL_2L0]	= { MTK_DISP_OVL_2L,	0, NULL },
-> +	[DDP_COMPONENT_OVL_2L1]	= { MTK_DISP_OVL_2L,	1, NULL },
->  	[DDP_COMPONENT_PWM0]	= { MTK_DISP_PWM,	0, NULL },
->  	[DDP_COMPONENT_PWM1]	= { MTK_DISP_PWM,	1, NULL },
->  	[DDP_COMPONENT_PWM2]	= { MTK_DISP_PWM,	2, NULL },
 > diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-> index 9caec2d..962d14a 100644
+> index 85e096a..268d416 100644
 > --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
 > +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-> @@ -52,6 +52,7 @@ enum mtk_ddp_comp_id {
->  	DDP_COMPONENT_OD1,
->  	DDP_COMPONENT_OVL0,
->  	DDP_COMPONENT_OVL_2L0,
-> +	DDP_COMPONENT_OVL_2L1,
->  	DDP_COMPONENT_OVL1,
->  	DDP_COMPONENT_PWM0,
->  	DDP_COMPONENT_PWM1,
+> @@ -84,6 +84,8 @@ struct mtk_ddp_comp_funcs {
+>  			     struct mtk_plane_state *state);
+>  	void (*gamma_set)(struct mtk_ddp_comp *comp,
+>  			  struct drm_crtc_state *state);
+> +	void (*bgclr_in_on)(struct mtk_ddp_comp *comp);
+> +	void (*bgclr_in_off)(struct mtk_ddp_comp *comp);
+>  };
+>  
+>  struct mtk_ddp_comp {
+> @@ -164,6 +166,18 @@ static inline void mtk_ddp_gamma_set(struct mtk_ddp_comp *comp,
+>  		comp->funcs->gamma_set(comp, state);
+>  }
+>  
+> +static inline void mtk_ddp_comp_bgclr_in_on(struct mtk_ddp_comp *comp)
+> +{
+> +	if (comp->funcs && comp->funcs->bgclr_in_on)
+> +		comp->funcs->bgclr_in_on(comp);
+> +}
+> +
+> +static inline void mtk_ddp_comp_bgclr_in_off(struct mtk_ddp_comp *comp)
+> +{
+> +	if (comp->funcs && comp->funcs->bgclr_in_off)
+> +		comp->funcs->bgclr_in_off(comp);
+> +}
+> +
+>  int mtk_ddp_comp_get_id(struct device_node *node,
+>  			enum mtk_ddp_comp_type comp_type);
+>  int mtk_ddp_comp_init(struct device *dev, struct device_node *comp_node,
 
 
 
