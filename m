@@ -2,69 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FECCD0920
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:06:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DEECD093B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:08:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:From:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=9B4avDfGJWPd9ydHUH9gmO5g3W1+iqxUzfC1csAqLyk=; b=E2GZ2p6ModkOzn
-	5ELGK2H9rQreELDY3Y1/DOsl1E2tssbUvhDNcppIF7KWu18iFslZVF6lJxc07IZM+AVP+Ung+YkkB
-	+AKw/tuI6gcMq5NJyUgnhrw4W+j+MFL3/wfH/cU+T1u5kbeYQjtfi/PnO1o1PXJ89opkYw752X0A9
-	/MqeBVBYBhownjIYaFiTawc5LKT/IgRywOTPE73B3akp3qC26i+j+2C8zwrGWOrAcjy0HFnAhgJcq
-	69b+vgnwlaRmjY9T9FH33WXBD6zyyk9pgGmrZdlz1i/Su8iXVEPQgFCsuXk8TC58YsbyfWGgVk+Js
-	fVkeKO72TstIZF0LpqAQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0BzGETNwJxhHiaLvWRyAECRknYxwwFK4/JykqNVrIrk=; b=rxKmrEJi7TnFQx
+	k9FmhILmqCzcVFJVpvEHHdGOGUw+QA3sEhnlTYZKdpm6OphbRVHlHknP7GqTYtkMc3Bn6JOZwXzkn
+	rMsFKwNaDukYEQkpdsejglM2jU6Zihx+DKHpZzjuBAcHECRF02Fz2v4axa3pYDVW4+p/t+fdObXhJ
+	N/Kx2+fm3H6dj2ADq9nSlsK5kyL1iIWGePhxWbRhLtdlOpvnFNyhgsKMWNpW8UWnycotoexCnFy9g
+	Lg1ZSIYcRTetW0E+wLi8epAjNqM2oBehhMMKTI787m5fAnMZAfESfqy5zgyTr64zAU/fRZIKL62u+
+	GfRtMqKu5Jem4krpQiPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI6zX-0006hb-N2; Wed, 09 Oct 2019 08:06:39 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iI71i-0000FT-B8; Wed, 09 Oct 2019 08:08:54 +0000
+Received: from out2-smtp.messagingengine.com ([66.111.4.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI6xQ-0003w1-6U
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:04:30 +0000
+ id 1iI6xs-0004EQ-Hb
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:04:58 +0000
+Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
+ by mailout.nyi.internal (Postfix) with ESMTP id AAB4F220CF;
+ Wed,  9 Oct 2019 04:04:51 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute6.internal (MEProxy); Wed, 09 Oct 2019 04:04:51 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kroah.com; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=hQ193SL2uijxMsSZZN+E7UbjF6F
+ qcanbIfpsn0ebGWk=; b=reEgUqkjVszHJSqYZVXaDviBOS/Ex3LRnfmaWJAASa8
+ ypReR8lktEClOuhJR1ocG1V4ZZ6Al2tFdetTQzTDFVMIaXmMjsvD4Cx2ye4OaGGf
+ DONdOOMYDenqA27KzTOxsopJ+BouSBOHg5JugvmwNfsMNiS2/0PSAJoVz0g40K+P
+ hY7xl7Fd5GF/SNbBSyeDxNElCooUaYN4mviMNUvFnfyPCsNEYJrsOE9I1rApidFK
+ 8F0DlgwwZnJb1xSRrm48AH0LlbYxL63Sg1iQOltoTdhBeb2W1svO2yjxYbeqL1Ap
+ CbuTMqGNLys5IEILpEysd0QTwqFA5N6LrXsV4CEwIfQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=hQ193S
+ L2uijxMsSZZN+E7UbjF6FqcanbIfpsn0ebGWk=; b=Tn6f6UDUEcdux6cDwIfvvo
+ ecmpqJ0Ry3UQ5Ez5FCpqvGqNj5lgl4wQ4++ghvad5F/0hM9+DtOiK9S2ylzGw9Fq
+ 0nDHboysLF7RgLaKBXiHwyJkAIg+78xgCLA4povEW+z8n4fNVriXwJouMsx4hF2P
+ ywd038mK7s6Kv75UldGI73v7JAePv4IHmlKTy6dp9LqNTjSUtMYf4sQXfzjUKjmR
+ QqoCEeQsG7xAe/OzmAM5ZlLcQg3NdOxWvgiAJCIs7ozZFvsrSr64DiuyZKdfqDr6
+ hk6xRWXf81KJparCSLaZr7uZOTbmDIhREYQ29Ret2Xn1UokKsFTbopNbATVfnilQ
+ ==
+X-ME-Sender: <xms:o5SdXZzGgYdhioi2E_ntiRl1VvsDqC8iXRY2HOZytOHEUW9AFPwTCw>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedriedtgdduvdekucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjfgesthdtredttdervdenucfhrhhomhepifhrvghg
+ ucfmjfcuoehgrhgvgheskhhrohgrhhdrtghomheqnecukfhppeekfedrkeeirdekledrud
+ dtjeenucfrrghrrghmpehmrghilhhfrhhomhepghhrvghgsehkrhhorghhrdgtohhmnecu
+ vehluhhsthgvrhfuihiivgeptd
+X-ME-Proxy: <xmx:o5SdXditpksltbspx072ppxr-YFVc6OXhUTj4ZZ3_UWDypA_xq1bGw>
+ <xmx:o5SdXeUB80ow9YeOWivLJVXiqDexBR7DyiUDH8C5G9vfPSbvx0Jqzg>
+ <xmx:o5SdXf2VRqGvQjdkf-rW7JHc0fyrQXPLYhxFh23BxMPkU48kErOGDw>
+ <xmx:o5SdXQ71JEy00ZlmMp5fk8TNGHSoQ321qdu4uuZHrS6Dr93frR2mRw>
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3EB09206B6;
- Wed,  9 Oct 2019 08:04:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570608267;
- bh=Q6+JpGnZIRk7Co6pj3kzfDf61r4GymaKueLz/t56L+U=;
- h=Subject:To:Cc:From:Date:In-Reply-To:From;
- b=kYgqzoYPyaFSHqXZQoGKczBmeUavF5phXQ7TxultKnE1uTt2ls+oQM3KFf3Zd62Es
- TR65m5atApQtCdvxFdw7PNZtnyjtefILi0YN/E9Ku2mqvOLuI7NNQrP0Ah/7HHOObQ
- Wudoo57mAgHT7ODUOvSo/sUUds2wfmEucQFxLvu0=
-Subject: Patch "arm64: docs: Document SSBS HWCAP" has been added to the
- 4.19-stable tree
-To: ard.biesheuvel@linaro.org, catalin.marinas@arm.com,
- gregkh@linuxfoundation.org, linux-arm-kernel@lists.infradead.org,
- will.deacon@arm.com
-From: <gregkh@linuxfoundation.org>
-Date: Wed, 09 Oct 2019 10:04:02 +0200
-In-Reply-To: <20191008153930.15386-5-ard.biesheuvel@linaro.org>
-Message-ID: <157060824225274@kroah.com>
+ by mail.messagingengine.com (Postfix) with ESMTPA id 2B0F7D60057;
+ Wed,  9 Oct 2019 04:04:51 -0400 (EDT)
+Date: Wed, 9 Oct 2019 10:04:22 +0200
+From: Greg KH <greg@kroah.com>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH for-stable-v4.19 00/16] arm64 spec mitigation backports
+Message-ID: <20191009080422.GA3881278@kroah.com>
+References: <20191008153930.15386-1-ard.biesheuvel@linaro.org>
 MIME-Version: 1.0
-X-stable: commit
-X-Patchwork-Hint: ignore 
+Content-Disposition: inline
+In-Reply-To: <20191008153930.15386-1-ard.biesheuvel@linaro.org>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_010428_322163_EFC047CB 
-X-CRM114-Status: UNSURE (   8.70  )
+X-CRM114-CacheID: sfid-20191009_010457_027161_3AEA8ED4 
+X-CRM114-Status: UNSURE (   9.03  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.0 (-----)
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.26 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,82 +105,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stable-commits@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, stable@vger.kernel.org,
+ Andre Przywara <andre.przywara@arm.com>, Jeremy Linton <jeremy.linton@arm.com>,
+ Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Oct 08, 2019 at 05:39:14PM +0200, Ard Biesheuvel wrote:
+> This is a backport to v4.19 of the arm64 patches that exists in mainline
+> to support CPUs that implement the SSBS capability, which gives the OS
+> and user space control over whether Speculative Store Bypass is
+> permitted in certain contexts. This gives a substantial performance
+> boost on hardware that implements it.
+> 
+> At the same time, this series backports arm64 support for reporting
+> of vulnerabilities via syfs. This is covered by the same series since
+> it produces a much cleaner backport, where none of the patches required
+> any changes beyond some manual mangling of the context to make them apply.
+> 
+> Build tested using a fair number of randconfig builds. Boot tested
+> under KVM and on ThunderX2.
 
-This is a note to let you know that I've just added the patch titled
+All now queued up, thanks.
 
-    arm64: docs: Document SSBS HWCAP
-
-to the 4.19-stable tree which can be found at:
-    http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
-
-The filename of the patch is:
-     arm64-docs-document-ssbs-hwcap.patch
-and it can be found in the queue-4.19 subdirectory.
-
-If you, or anyone else, feels it should not be added to the stable tree,
-please let <stable@vger.kernel.org> know about it.
-
-
-From foo@baz Wed 09 Oct 2019 10:02:11 AM CEST
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Tue,  8 Oct 2019 17:39:18 +0200
-Subject: arm64: docs: Document SSBS HWCAP
-To: linux-arm-kernel@lists.infradead.org
-Cc: stable@vger.kernel.org, Will Deacon <will.deacon@arm.com>, Catalin Marinas <catalin.marinas@arm.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Message-ID: <20191008153930.15386-5-ard.biesheuvel@linaro.org>
-
-From: Will Deacon <will.deacon@arm.com>
-
-[ Upstream commit ee91176120bd584aa10c564e7e9fdcaf397190a1 ]
-
-We advertise the MRS/MSR instructions for toggling SSBS at EL0 using an
-HWCAP, so document it along with the others.
-
-Signed-off-by: Will Deacon <will.deacon@arm.com>
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
----
- Documentation/arm64/elf_hwcaps.txt |    4 ++++
- 1 file changed, 4 insertions(+)
-
---- a/Documentation/arm64/elf_hwcaps.txt
-+++ b/Documentation/arm64/elf_hwcaps.txt
-@@ -178,3 +178,7 @@ HWCAP_ILRCPC
- HWCAP_FLAGM
- 
-     Functionality implied by ID_AA64ISAR0_EL1.TS == 0b0001.
-+
-+HWCAP_SSBS
-+
-+    Functionality implied by ID_AA64PFR1_EL1.SSBS == 0b0010.
-
-
-Patches currently in stable-queue which might be from ard.biesheuvel@linaro.org are
-
-queue-4.19/arm64-add-sysfs-vulnerability-show-for-meltdown.patch
-queue-4.19/arm64-force-ssbs-on-context-switch.patch
-queue-4.19/arm64-enable-generic-cpu-vulnerabilites-support.patch
-queue-4.19/arm64-provide-a-command-line-to-disable-spectre_v2-mitigation.patch
-queue-4.19/arm64-always-enable-spectre-v2-vulnerability-detection.patch
-queue-4.19/arm64-docs-document-ssbs-hwcap.patch
-queue-4.19/arm64-add-sysfs-vulnerability-show-for-spectre-v1.patch
-queue-4.19/arm64-add-sysfs-vulnerability-show-for-speculative-store-bypass.patch
-queue-4.19/kvm-arm64-set-sctlr_el2.dssbs-if-ssbd-is-forcefully-disabled-and-vhe.patch
-queue-4.19/arm64-always-enable-ssb-vulnerability-detection.patch
-queue-4.19/arm64-advertise-mitigation-of-spectre-v2-or-lack-thereof.patch
-queue-4.19/arm64-ssbs-don-t-treat-cpus-with-ssbs-as-unaffected-by-ssb.patch
-queue-4.19/crypto-skcipher-unmap-pages-after-an-external-error.patch
-queue-4.19/arm64-cpufeature-detect-ssbs-and-advertise-to-userspace.patch
-queue-4.19/arm64-ssbd-add-support-for-pstate.ssbs-rather-than-trapping-to-el3.patch
-queue-4.19/arm64-fix-ssbs-sanitization.patch
-queue-4.19/arm64-add-sysfs-vulnerability-show-for-spectre-v2.patch
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
