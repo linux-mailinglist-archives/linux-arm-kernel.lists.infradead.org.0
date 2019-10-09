@@ -2,74 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB19DD0AA2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 11:13:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4FD2D0AA4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 11:13:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O/pWl0+40p4B12hnQwPG48r1W6oAfjHXDbvIc/B/1uE=; b=pulVSZmXXxXPpd
-	a96KVxy6/zERE4PmCDZ7oLa2ChP3e08qnsDm+VHo9WOkRPx+kHWNPaQKpdvXRT3j79CRS0GWb9OuS
-	3j9dE8WkRSCyZ6hNYMDEyPlOY+TeXPwFfQ9UvmylV6zllNulba0+1aUm9e3wiluE45Z+5iY3GD8SR
-	ikXRBDGtD6nlR4+t2waJvH7GiDy/YDY0sgVWhLeyRGKCjRBYh8GmtLkmY00AWP4JlIHEYs2npHUak
-	OzwllPlwHzrfdpELABT4kgKhfH6I/AsV6xd/b/94gMJY2Iou7/lr+UUnnsAIyV3V0VQLhq/VB6xjm
-	P5qwYexeRJMRROq//O7w==;
+	List-Owner; bh=b/2XDfenliAkZEqPypjlxMk6dvbxR+Gf+kqO7UlEWsw=; b=AL3h6A6jTjXK+l
+	SroDbc3e/p7xGrl4xY+EeJdiCh0P89/fEyeudH2eDWbRcxYKL8/o/6T5edN91veqnTgxZzGdwG+vc
+	xUvm9+06m/d2ezMkU6J6i2zgVoIrJSI9hUu9gxkQjRnQDslTsIAM7Kd6U7LR29hbZ7Y8ObqdgK/sx
+	O1EHzB7TpdPBw41bTz0TGgueiHNrs/WcE0OjwwE/1UYirnPLbhUC/kYwUUS73z9WAwOW/RpZe3vMz
+	qzRHxYTt3fmmaNOVwO+HY1zOnuPV6Wp1vxsMFMjgHyJcAGEE9w++IAnPollGSCCoMzWRxe0bpL61g
+	2nTJAp80KJcMXovEDJWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI81r-0001Xa-OD; Wed, 09 Oct 2019 09:13:07 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
+	id 1iI821-0001i1-SP; Wed, 09 Oct 2019 09:13:17 +0000
+Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI81e-0001WF-Pl
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 09:12:56 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id v19so1044297vsv.3
+ id 1iI81g-0001Wa-Ho
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 09:12:57 +0000
+Received: by mail-ua1-x943.google.com with SMTP id l13so533816uap.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 09 Oct 2019 02:12:54 -0700 (PDT)
+ Wed, 09 Oct 2019 02:12:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=DnaMjWPHRTxP2HwHozaEda4iUBnS+Mgb8NeafSlvJXU=;
- b=yKNY9SGcN2UsFvhR61yYb/jrlCVKgel12IYbR40rpV44lcbYSBZBivKCyQa3goz2oi
- wVn3L9kPGJF9gxBuLeJ34zX2+mGkfp28ZbQrzgrGx653cBpNaahPfaGFn/7zIN1RLXzR
- N9d9Glovn5NceLF76IOJ8fuPAyYZHS4PO6Hp6PUO1I/Y5PtLaqHiOpDeqVejYagbTlau
- AOiiySye8tVrQ7tMtrxJ4JTu0nNgQRdmTllW/3qJsQa/aV2UQw8hG9CBM6b6JwfIbyaQ
- MqKF6DODn7ifaUKjsfyiAna4yN7hfctndvK63mGetiRedO0K8Ct7Ym3KXmbe/EroZtSU
- zejQ==
+ :cc; bh=p1GmngvaE0ei9mnU0CMOs2O9a2/80q1j0u6r2u5SeZc=;
+ b=BccNwjKJUEGqADR82Dz9D/6hW+muC5tovZ4TZzhwUcNnNClOKsj/TwIl0wYjsBc6x/
+ k1jtHRsZBJkB5XEBmk3c3UjCkpbbJEm71c44rBeHs/1RinFqBdS/F2PzyJWDllL97ZWq
+ R36grS6Yw8KUikd970xY+zw1tW0efxzzxuwQj++jIOgnM40NPOcZT1j0GIHNir/gUb9D
+ SsbIN4DTBuySQXcqwM56bQmkLUurSE8OGIOQjpx5TF3imZWJgl5h8U/i/wbheVJOR3uU
+ XV1QEGFlVmSwqtsGm4UUlvuHWl+RqT5TEvnUXoXnM54OWXZ+iKW12DFa69CWmIskhgBS
+ w/Aw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=DnaMjWPHRTxP2HwHozaEda4iUBnS+Mgb8NeafSlvJXU=;
- b=KYmAM2iY68CoHHmlXn19XdGLWeqrdlD11atfdDHlTpYnh9mLiLmLjX33AkI1+sXw4R
- LFxvktdwSsjGyCQJeTry0d3y9vwFyJJh58SXyhJ1oI2htHNWmAk1AS9eGhGX9QiCthVn
- 8vkYNkxMSLCI768EwQ15LyJ0t39AHc94x0DFVoJn9IHLvYCdsg9wMFhKpJ7jKvRWmO1E
- JN2QojsZ7QbrZOyST6p6K7E0lCds+BUdgGygmMN0RtkbdOC6xUyMa2zSbbvSpOZZReHs
- ttzSJ+7f6qxN5lFoV2qScEmFFtFlPf2qkNWq0ljg+zgjYKMpUZjBNUt9fvc++A2+EK9U
- vX+A==
-X-Gm-Message-State: APjAAAUnpgA9c9CzXpl7CajF/Dt6AF4RJIlAmfU7eo/ffJN3Wgt+MOkA
- Cji8TzSC04vodnhptxJfQiCEB9H1jLfwjxbcaQif3A==
-X-Google-Smtp-Source: APXvYqwgsztQiejuumwMxLuyf8Ws3mo/ua2qL5BsBkseZLgZ/7p7G5FLcbikY8xut9BZ+djUlLpEqm30PBOLplnZkwU=
-X-Received: by 2002:a05:6102:5e1:: with SMTP id
- w1mr1211701vsf.191.1570612371638; 
- Wed, 09 Oct 2019 02:12:51 -0700 (PDT)
+ bh=p1GmngvaE0ei9mnU0CMOs2O9a2/80q1j0u6r2u5SeZc=;
+ b=UPBZtFUX0E2Nfb/+SzXqx/ivjdp9oe/ID0ZSCu6gJWBp2EiIXpFzOz67Po4vQTFJsN
+ 6kIsCUDmeVdQsuhoZ5VoTjBu8KV/hH8Zjdh+CxDYNerh1YNvWH5zEuiOG/qE/droPSS/
+ w/p3gNb0CasFSyhIIu82Zi94EV2rieX159TiRIzM1OF/W1MQBgGUGpGHLpjmuZHQVbat
+ cMRIvE+T59pFKfVWAGRG+QCYlPIgzQC1NkjU/hXSXskASIrCJxpzUnHBA8YypdyTkqKi
+ qhYDTkm3zIUZNl4FUkmZom9bIbWFyNjOlqIuvG0EEeMuSEMI5d5CCMzBDdaGNm505R0U
+ mcQg==
+X-Gm-Message-State: APjAAAUvJ0GMK/hL7LIVQgdfO380+t6kjEGHVhE4oq+yGJ38xsl9Jc7i
+ FBh/lgu/Vo4RcE5Y9Mwc7rYk6GKbK3NsbAU8Yzr21Q==
+X-Google-Smtp-Source: APXvYqzHUvKtG9TlAFWzdGLKFE3B3LLPRPS/NhDVFx+CEadl3quKcUNTlMODJCYW2p+AVM5OUZYunx3BcWwMwDCc9Ds=
+X-Received: by 2002:ab0:331a:: with SMTP id r26mr1234478uao.104.1570612375253; 
+ Wed, 09 Oct 2019 02:12:55 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191008095604.20675-1-ludovic.Barre@st.com>
-In-Reply-To: <20191008095604.20675-1-ludovic.Barre@st.com>
+References: <20191009012818.32763-1-vadivel.muruganx.ramuthevar@linux.intel.com>
+In-Reply-To: <20191009012818.32763-1-vadivel.muruganx.ramuthevar@linux.intel.com>
 From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Wed, 9 Oct 2019 11:12:14 +0200
-Message-ID: <CAPDyKFrKrV3e6WmrgzUA0OV4VGm0BMXr0=orogAhHQM3nRpxqQ@mail.gmail.com>
-Subject: Re: [PATCH V7 0/3] mmc: mmci: add busy detect for stm32 sdmmc variant
-To: Ludovic Barre <ludovic.Barre@st.com>
+Date: Wed, 9 Oct 2019 11:12:19 +0200
+Message-ID: <CAPDyKFqDB_aOikZYSDEvQKF3PsD=AXq0PZJTj8AUAH0XaGj8Eg@mail.gmail.com>
+Subject: Re: [PATCH v2 0/2] mmc: sdhci-of-arasan: Add Support for Intel LGM
+ SDXC
+To: "Ramuthevar,
+ Vadivel MuruganX" <vadivel.muruganx.ramuthevar@linux.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_021254_864929_74415CA5 
-X-CRM114-Status: GOOD (  11.23  )
+X-CRM114-CacheID: sfid-20191009_021256_589249_5493F0CF 
+X-CRM114-Status: GOOD (  11.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -91,44 +92,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+Cc: cheol.yong.kim@intel.com, DTML <devicetree@vger.kernel.org>,
+ qi-ming.wu@intel.com, "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Michal Simek <michal.simek@xilinx.com>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com,
+ Rob Herring <robh+dt@kernel.org>, Adrian Hunter <adrian.hunter@intel.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 8 Oct 2019 at 11:56, Ludovic Barre <ludovic.Barre@st.com> wrote:
+On Wed, 9 Oct 2019 at 03:28, Ramuthevar,Vadivel MuruganX
+<vadivel.muruganx.ramuthevar@linux.intel.com> wrote:
 >
-> From: Ludovic Barre <ludovic.barre@st.com>
+> The current arasan sdhci PHY configuration isn't compatible
+> with the PHY on Intel's LGM(Lightning Mountain) SoC devices.
 >
-> This patch series adds busy detect for stm32 sdmmc variant.
-> Some adaptations are required:
-> -On sdmmc the data timer is started on data transfert
-> and busy state, so we must add hardware busy timeout support.
-> -Add busy_complete callback at mmci_host_ops to allow to define
-> a specific busy completion by variant.
-> -Add sdmmc busy_complete callback.
+> Therefore, add a new compatible, to adapt the Intel's LGM
+> SDXC PHY with arasan-sdhc controller to configure the PHY.
 >
-> V7:
-> -Patch 1/3: rephrasing like proposed (thx ulf)
-> -If busy timeout is undefined => increase to 10s
-> -Keep busy_detect.
-> -Patch 3/3: rephrasing comment header
-> -Avoid twice read of status register
-> -Avoid writing in MMCIMASK0 & MMCICLEAR if not modified
+> Linux code base : V5.4-rc1
 >
+> Ramuthevar Vadivel Murugan (2):
+>   dt-bindings: mmc: sdhci-of-arasan: Add new compatible for Intel LGM
+>     SDXC
+>   mmc: sdhci-of-arasan: Add Support for Intel LGM SDXC
+>
+> changes from v1:
+>  -  commit message updated
+>  -  Acked-by tag added
+>
+>  Documentation/devicetree/bindings/mmc/arasan,sdhci.txt | 17 +++++++++++++++++
+>  drivers/mmc/host/sdhci-of-arasan.c                     | 15 +++++++++++++++
+>  2 files changed, 32 insertions(+)
 
 Applied for next, thanks!
-
-[...]
 
 Kind regards
 Uffe
