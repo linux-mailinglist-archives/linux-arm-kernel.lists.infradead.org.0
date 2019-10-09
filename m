@@ -2,54 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A63BAD0DBC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 13:33:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81F39D0DD1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 13:40:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LicchPgRpIS/Vn0xMlhPNOkmC8uvI6D86Yn9felxxT4=; b=uzvGbiX7ZlZpvv
-	3/MfHp9b7d02OOZBEC7GNWQ61n+7MR4iPma5RXxndj5lLiNKUe+lIEQlSSW247S5SQc7CaC9D1nN8
-	Ea4Tvrt1gHKf9VHAjHVkT9vtpIk/aGm3QC4XczrBaMUbdP2nf3RLvprW7IIOwx4FZ3Q5bBH+UnwDk
-	MfzTqwwHiFBaBrueAk7Boz5XPMtFDjmPyHPtEfvoqxYWwAc1EYWy2bM5fKRjyTtMunlPVxDCQ3oMt
-	tveWzob2N23bjV1a6xU6gF+dQ3QlHjOopa9B25yQ9waEksxBZJ4GzUXbrCtq0BIH1yGt7GaZN9wUb
-	oTWbi92N5uTNXyOSdORQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4hKN7e2RpoZw2TjpTLNFoUWY5zxe3Ak6sluydXQ7Li0=; b=VVWuBIa3UjJ2aY
+	U/JN+SlecLeJM85csQtAyYCa4xER0AJN311VZUaYBhDywzOlImWs+lpv1YX2ziOCcyHfV3migVyx9
+	l6ELngHQMhTTDYuSFE4D133NmzqOmaCITxAIxfIO3K3OaY5UQLS1xEDvUftUa2blpwpiHOLHlnwFh
+	TdbHQouBAIqeZZVYBLAMSLpCxGwIZkTPtYTqB2X4UfiFFzRGL0nRXPd83b4hShSJX9qbTv+RHqVl+
+	gPaLQafMmflGVr1OIKm/oFk3dpsV3FoLJxB/6RS6aly/yYUQ/yQFFW9ax11lp4R70M3uDWTzIACuT
+	qSRkzhJ3vVozCxagVedg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIADR-0002RQ-Pt; Wed, 09 Oct 2019 11:33:13 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIADE-0002PT-Td
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 11:33:03 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5AAEF28;
- Wed,  9 Oct 2019 04:33:00 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 732CA3F703;
- Wed,  9 Oct 2019 04:32:59 -0700 (PDT)
-Date: Wed, 9 Oct 2019 12:32:57 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Cristian Marussi <cristian.marussi@arm.com>
-Subject: Re: [PATCH v8 06/12] kselftest: arm64: add helper get_current_context
-Message-ID: <20191009113256.GD27757@arm.com>
-References: <20191009082611.9441-1-cristian.marussi@arm.com>
- <20191009082611.9441-7-cristian.marussi@arm.com>
+	id 1iIAKU-000642-Hp; Wed, 09 Oct 2019 11:40:30 +0000
+Received: from imap1.codethink.co.uk ([176.9.8.82])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iIAKK-00062h-3Y
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 11:40:21 +0000
+Received: from [167.98.27.226] (helo=rainbowdash.codethink.co.uk)
+ by imap1.codethink.co.uk with esmtpsa (Exim 4.84_2 #1 (Debian))
+ id 1iIAJZ-0004IN-3h; Wed, 09 Oct 2019 12:39:33 +0100
+Received: from ben by rainbowdash.codethink.co.uk with local (Exim 4.92.2)
+ (envelope-from <ben@rainbowdash.codethink.co.uk>)
+ id 1iIAJY-0003WT-8z; Wed, 09 Oct 2019 12:39:32 +0100
+From: Ben Dooks <ben.dooks@codethink.co.uk>
+To: linux-kernel@lists.codethink.co.uk
+Subject: [PATCH] proc: centralise declaration of cpuinfo_op
+Date: Wed,  9 Oct 2019 12:39:30 +0100
+Message-Id: <20191009113930.13236-1-ben.dooks@codethink.co.uk>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191009082611.9441-7-cristian.marussi@arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_043301_053760_4D2DCA0F 
-X-CRM114-Status: GOOD (  34.17  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191009_044020_300333_BF3591AB 
+X-CRM114-Status: GOOD (  13.55  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [176.9.8.82 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,243 +59,154 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
+Cc: linux-s390@vger.kernel.org, Rich Felker <dalias@libc.org>,
+ linux-c6x-dev@linux-c6x.org, Yoshinori Sato <ysato@users.sourceforge.jp>,
+ linux-sh@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ x86@kernel.org, Aurelien Jacquiot <jacquiot.aurelien@gmail.com>,
+ Ben Dooks <ben.dooks@codethink.co.uk>, Borislav Petkov <bp@alien8.de>,
+ linux-arm-kernel@lists.infradead.org, Mark Salter <msalter@redhat.com>,
+ sparclinux@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
+ Ingo Molnar <mingo@redhat.com>, "David S. Miller" <davem@davemloft.net>,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 09, 2019 at 09:26:05AM +0100, Cristian Marussi wrote:
-> Introduce a new common utility function get_current_context() which can be
-> used to grab a ucontext without the help of libc, and also to detect if
-> such ucontext has been successfully used by placing it on the stack as a
-> fake sigframe.
+When building for arm, cpuinfo_op generates a warning due
+to no declaration. Since this is used in fs/proc/cpuinfo.c
+and inconsitently declared across archiectures move the
+declaration info <linux/seq_file.h>. This means that the
+cpuinfo_op will have a declaration any place it is used.
 
-Reviewed-by: Dave Martin <Dave.Martin@arm.com>
+Removes the following sparse warning:
 
-> 
-> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
-> ---
-> v7 --> v8
-> - added new in v8 (splitted out from v7 05/11)
-> ---
->  .../selftests/arm64/signal/test_signals.h     |  6 +-
->  .../arm64/signal/test_signals_utils.c         | 31 ++++++
->  .../arm64/signal/test_signals_utils.h         | 98 +++++++++++++++++++
->  3 files changed, 134 insertions(+), 1 deletion(-)
-> 
-> diff --git a/tools/testing/selftests/arm64/signal/test_signals.h b/tools/testing/selftests/arm64/signal/test_signals.h
-> index 901521188202..4fd3ba01e3b1 100644
-> --- a/tools/testing/selftests/arm64/signal/test_signals.h
-> +++ b/tools/testing/selftests/arm64/signal/test_signals.h
-> @@ -88,8 +88,12 @@ struct tdescr {
->  	/* optional sa_flags for the installed handler */
->  	int			sa_flags;
->  	ucontext_t		saved_uc;
-> +	/* used by get_current_ctx() */
-> +	size_t			live_sz;
-> +	ucontext_t		*live_uc;
-> +	volatile sig_atomic_t	live_uc_valid;
->  	/* optional test private data */
-> -	void                    *priv;
-> +	void			*priv;
->  
->  	/* a custom setup: called alternatively to default_setup */
->  	int (*setup)(struct tdescr *td);
-> diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.c b/tools/testing/selftests/arm64/signal/test_signals_utils.c
-> index e8bbe36c2660..222148568adf 100644
-> --- a/tools/testing/selftests/arm64/signal/test_signals_utils.c
-> +++ b/tools/testing/selftests/arm64/signal/test_signals_utils.c
-> @@ -11,14 +11,19 @@
->  #include <linux/auxvec.h>
->  #include <ucontext.h>
->  
-> +#include <asm/unistd.h>
-> +
->  #include <kselftest.h>
->  
->  #include "test_signals.h"
->  #include "test_signals_utils.h"
->  #include "testcases/testcases.h"
->  
-> +
->  extern struct tdescr *current;
->  
-> +static int sig_copyctx = SIGTRAP;
-> +
->  static char const *const feats_names[FMAX_END] = {
->  	" SSBS ",
->  	" PAN ",
-> @@ -156,6 +161,20 @@ static bool handle_signal_ok(struct tdescr *td,
->  	return true;
->  }
->  
-> +static bool handle_signal_copyctx(struct tdescr *td,
-> +				  siginfo_t *si, void *uc)
-> +{
-> +	/* Mangling PC to avoid loops on original BRK instr */
-> +	((ucontext_t *)uc)->uc_mcontext.pc += 4;
-> +	memcpy(td->live_uc, uc, td->live_sz);
-> +	ASSERT_GOOD_CONTEXT(td->live_uc);
-> +	td->live_uc_valid = 1;
-> +	fprintf(stderr,
-> +		"GOOD CONTEXT grabbed from sig_copyctx handler\n");
-> +
-> +	return true;
-> +}
-> +
->  static void default_handler(int signum, siginfo_t *si, void *uc)
->  {
->  	if (current->sig_unsupp && signum == current->sig_unsupp &&
-> @@ -167,6 +186,9 @@ static void default_handler(int signum, siginfo_t *si, void *uc)
->  	} else if (current->sig_ok && signum == current->sig_ok &&
->  		   handle_signal_ok(current, si, uc)) {
->  		fprintf(stderr, "Handled SIG_OK\n");
-> +	} else if (signum == sig_copyctx && current->live_uc &&
-> +		   handle_signal_copyctx(current, si, uc)) {
-> +		fprintf(stderr, "Handled SIG_COPYCTX\n");
->  	} else {
->  		if (signum == SIGALRM && current->timeout) {
->  			fprintf(stderr, "-- Timeout !\n");
-> @@ -221,6 +243,15 @@ static inline int default_trigger(struct tdescr *td)
->  
->  int test_init(struct tdescr *td)
->  {
-> +	if (td->sig_trig == sig_copyctx) {
-> +		fprintf(stdout,
-> +			"Signal %d is RESERVED, cannot be used as a trigger. Aborting\n",
-> +			sig_copyctx);
-> +		return 0;
-> +	}
-> +	/* just in case */
-> +	unblock_signal(sig_copyctx);
-> +
->  	td->minsigstksz = getauxval(AT_MINSIGSTKSZ);
->  	if (!td->minsigstksz)
->  		td->minsigstksz = MINSIGSTKSZ;
-> diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.h b/tools/testing/selftests/arm64/signal/test_signals_utils.h
-> index 5e3a2b7aaa8b..fd67b1f23c41 100644
-> --- a/tools/testing/selftests/arm64/signal/test_signals_utils.h
-> +++ b/tools/testing/selftests/arm64/signal/test_signals_utils.h
-> @@ -4,6 +4,10 @@
->  #ifndef __TEST_SIGNALS_UTILS_H__
->  #define __TEST_SIGNALS_UTILS_H__
->  
-> +#include <assert.h>
-> +#include <stdio.h>
-> +#include <string.h>
-> +
->  #include "test_signals.h"
->  
->  int test_init(struct tdescr *td);
-> @@ -17,4 +21,98 @@ static inline bool feats_ok(struct tdescr *td)
->  	return (td->feats_required & td->feats_supported) == td->feats_required;
->  }
->  
-> +/*
-> + * Obtaining a valid and full-blown ucontext_t from userspace is tricky:
-> + * libc getcontext does() not save all the regs and messes with some of
-> + * them (pstate value in particular is not reliable).
-> + *
-> + * Here we use a service signal to grab the ucontext_t from inside a
-> + * dedicated signal handler, since there, it is populated by Kernel
-> + * itself in setup_sigframe(). The grabbed context is then stored and
-> + * made available in td->live_uc.
-> + *
-> + * As service-signal is used a SIGTRAP induced by a 'brk' instruction,
-> + * because here we have to avoid syscalls to trigger the signal since
-> + * they would cause any SVE sigframe content (if any) to be removed.
-> + *
-> + * Anyway this function really serves a dual purpose:
-> + *
-> + * 1. grab a valid sigcontext into td->live_uc for result analysis: in
-> + * such case it returns 1.
-> + *
-> + * 2. detect if, somehow, a previously grabbed live_uc context has been
-> + * used actively with a sigreturn: in such a case the execution would have
-> + * magically resumed in the middle of this function itself (seen_already==1):
-> + * in such a case return 0, since in fact we have not just simply grabbed
-> + * the context.
-> + *
-> + * This latter case is useful to detect when a fake_sigreturn test-case has
-> + * unexpectedly survived without hitting a SEGV.
-> + *
-> + * Note that the case of runtime dynamically sized sigframes (like in SVE
-> + * context) is still NOT addressed: sigframe size is supposed to be fixed
-> + * at sizeof(ucontext_t).
-> + */
-> +static __always_inline bool get_current_context(struct tdescr *td,
-> +						ucontext_t *dest_uc)
-> +{
-> +	static volatile bool seen_already;
-> +
-> +	assert(td && dest_uc);
-> +	/* it's a genuine invocation..reinit */
-> +	seen_already = 0;
-> +	td->live_uc_valid = 0;
-> +	td->live_sz = sizeof(*dest_uc);
-> +	memset(dest_uc, 0x00, td->live_sz);
-> +	td->live_uc = dest_uc;
-> +	/*
-> +	 * Grab ucontext_t triggering a SIGTRAP.
-> +	 *
-> +	 * Note that:
-> +	 * - live_uc_valid is declared volatile sig_atomic_t in
-> +	 *   struct tdescr since it will be changed inside the
-> +	 *   sig_copyctx handler
-> +	 * - the additional 'memory' clobber is there to avoid possible
-> +	 *   compiler's assumption on live_uc_valid and the content
-> +	 *   pointed by dest_uc, which are all changed inside the signal
-> +	 *   handler
-> +	 * - BRK causes a debug exception which is handled by the Kernel
-> +	 *   and finally causes the SIGTRAP signal to be delivered to this
-> +	 *   test thread. Since such delivery happens on the ret_to_user()
-> +	 *   /do_notify_resume() debug exception return-path, we are sure
-> +	 *   that the registered SIGTRAP handler has been run to completion
-> +	 *   before the execution path is restored here: as a consequence
-> +	 *   we can be sure that the volatile sig_atomic_t live_uc_valid
-> +	 *   carries a meaningful result. Being in a single thread context
-> +	 *   we'll also be sure that any access to memory modified by the
-> +	 *   handler (namely ucontext_t) will be visible once returned.
-> +	 * - note that since we are using a breakpoint instruction here
-> +	 *   to cause a SIGTRAP, the ucontext_t grabbed from the signal
-> +	 *   handler would naturally contain a PC pointing exactly to this
-> +	 *   BRK line, which means that, on return from the signal handler,
-> +	 *   or if we place the ucontext_t on the stack to fake a sigreturn,
-> +	 *   we'll end up in an infinite loop of BRK-SIGTRAP-handler.
-> +	 *   For this reason we take care to artificially move forward the
-> +	 *   PC to the next instruction while inside the signal handler.
-> +	 */
-> +	asm volatile ("brk #666"
-> +		      : "+m" (*dest_uc)
-> +		      :
-> +		      : "memory");
-> +
-> +	/*
-> +	 * If we get here with seen_already==1 it implies the td->live_uc
-> +	 * context has been used to get back here....this probably means
-> +	 * a test has failed to cause a SEGV...anyway live_uc does not
-> +	 * point to a just acquired copy of ucontext_t...so return 0
-> +	 */
-> +	if (seen_already) {
-> +		fprintf(stdout,
-> +			"Unexpected successful sigreturn detected: live_uc is stale !\n");
-> +		return 0;
-> +	}
-> +	seen_already = 1;
-> +
-> +	return td->live_uc_valid;
-> +}
->  #endif
-> -- 
-> 2.17.1
-> 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+arch/arm/kernel/setup.c:1320:29: warning: symbol 'cpuinfo_op' was not declared. Should it be static?
+
+Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
+---
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Mark Salter <msalter@redhat.com>
+Cc: Aurelien Jacquiot <jacquiot.aurelien@gmail.com>
+Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
+Cc: Yoshinori Sato <ysato@users.sourceforge.jp>
+Cc: Rich Felker <dalias@libc.org>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: Ingo Molnar <mingo@redhat.com>
+Cc: Borislav Petkov <bp@alien8.de>
+Cc: "H. Peter Anvin" <hpa@zytor.com>
+Cc: x86@kernel.org
+Cc: linux-c6x-dev@linux-c6x.org
+Cc: linux-kernel@vger.kernel.org
+Cc: linux-s390@vger.kernel.org
+Cc: linux-sh@vger.kernel.org
+Cc: sparclinux@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
+---
+ arch/c6x/include/asm/processor.h        | 2 --
+ arch/microblaze/include/asm/processor.h | 3 ---
+ arch/s390/include/asm/processor.h       | 1 -
+ arch/sh/include/asm/processor.h         | 1 -
+ arch/sparc/include/asm/cpudata.h        | 2 --
+ arch/x86/include/asm/processor.h        | 2 --
+ include/linux/seq_file.h                | 2 ++
+ 7 files changed, 2 insertions(+), 11 deletions(-)
+
+diff --git a/arch/c6x/include/asm/processor.h b/arch/c6x/include/asm/processor.h
+index 1456f5e11de3..ecc906854b6a 100644
+--- a/arch/c6x/include/asm/processor.h
++++ b/arch/c6x/include/asm/processor.h
+@@ -100,8 +100,6 @@ extern unsigned long get_wchan(struct task_struct *p);
+ 
+ #define cpu_relax()		do { } while (0)
+ 
+-extern const struct seq_operations cpuinfo_op;
+-
+ /* Reset the board */
+ #define HARD_RESET_NOW()
+ 
+diff --git a/arch/microblaze/include/asm/processor.h b/arch/microblaze/include/asm/processor.h
+index 66b537b8d138..8ab09e94b8ae 100644
+--- a/arch/microblaze/include/asm/processor.h
++++ b/arch/microblaze/include/asm/processor.h
+@@ -18,9 +18,6 @@
+ #include <asm/current.h>
+ 
+ # ifndef __ASSEMBLY__
+-/* from kernel/cpu/mb.c */
+-extern const struct seq_operations cpuinfo_op;
+-
+ # define cpu_relax()		barrier()
+ 
+ #define task_pt_regs(tsk) \
+diff --git a/arch/s390/include/asm/processor.h b/arch/s390/include/asm/processor.h
+index 51a0e4a2dc96..813d2bfc63ac 100644
+--- a/arch/s390/include/asm/processor.h
++++ b/arch/s390/include/asm/processor.h
+@@ -83,7 +83,6 @@ void s390_adjust_jiffies(void);
+ void s390_update_cpu_mhz(void);
+ void cpu_detect_mhz_feature(void);
+ 
+-extern const struct seq_operations cpuinfo_op;
+ extern int sysctl_ieee_emulation_warnings;
+ extern void execve_tail(void);
+ extern void __bpon(void);
+diff --git a/arch/sh/include/asm/processor.h b/arch/sh/include/asm/processor.h
+index 6fbf8c80e498..25ddb34f31d9 100644
+--- a/arch/sh/include/asm/processor.h
++++ b/arch/sh/include/asm/processor.h
+@@ -128,7 +128,6 @@ extern unsigned int mem_init_done;
+ 
+ /* arch/sh/kernel/setup.c */
+ const char *get_cpu_subtype(struct sh_cpuinfo *c);
+-extern const struct seq_operations cpuinfo_op;
+ 
+ /* thread_struct flags */
+ #define SH_THREAD_UAC_NOPRINT	(1 << 0)
+diff --git a/arch/sparc/include/asm/cpudata.h b/arch/sparc/include/asm/cpudata.h
+index d213165ee713..f7e690a7860b 100644
+--- a/arch/sparc/include/asm/cpudata.h
++++ b/arch/sparc/include/asm/cpudata.h
+@@ -7,8 +7,6 @@
+ #include <linux/threads.h>
+ #include <linux/percpu.h>
+ 
+-extern const struct seq_operations cpuinfo_op;
+-
+ #endif /* !(__ASSEMBLY__) */
+ 
+ #if defined(__sparc__) && defined(__arch64__)
+diff --git a/arch/x86/include/asm/processor.h b/arch/x86/include/asm/processor.h
+index 6e0a3b43d027..6f22daf892ea 100644
+--- a/arch/x86/include/asm/processor.h
++++ b/arch/x86/include/asm/processor.h
+@@ -169,8 +169,6 @@ DECLARE_PER_CPU_READ_MOSTLY(struct cpuinfo_x86, cpu_info);
+ #define cpu_data(cpu)		boot_cpu_data
+ #endif
+ 
+-extern const struct seq_operations cpuinfo_op;
+-
+ #define cache_line_size()	(boot_cpu_data.x86_cache_alignment)
+ 
+ extern void cpu_detect(struct cpuinfo_x86 *c);
+diff --git a/include/linux/seq_file.h b/include/linux/seq_file.h
+index 5998e1f4ff06..629b0d8302e8 100644
+--- a/include/linux/seq_file.h
++++ b/include/linux/seq_file.h
+@@ -36,6 +36,8 @@ struct seq_operations {
+ 	int (*show) (struct seq_file *m, void *v);
+ };
+ 
++extern const struct seq_operations cpuinfo_op;
++
+ #define SEQ_SKIP 1
+ 
+ /**
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
