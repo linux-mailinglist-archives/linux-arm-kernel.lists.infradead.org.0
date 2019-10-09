@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8B40D0938
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:08:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48781D091B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:06:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
 	Date:From:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=5mCv2LPRwdsitePd0lEVYaZpcrLlUm9BO+LQ+YPF7xI=; b=IzfG97zIwl7kz1
-	J/jEJfFl0uRXLR7ffm9h3t2LMhbmjDSSeaWAtjrO84WqajBeIuDF9mn+SkQyYwYGgNilchCR5zmjy
-	XKAhbOe9QIJqLiFBTo64N/SAShGt0kh+fP2D5vIoWbRdqDeNX7AyLgFDwioGWRNZIb5UoYPaECR+I
-	s1HiBUs9/NUnNvdaa5ZrOZG9nBXFpesiXfGx6xaBjgUJsahcVeEryKfYJ3oJZ8D809M4jWbV19qlE
-	H5Nq/7WsciPgFCPOMfKYzRCYS6r3QsJ214eVCe4ysckE3gmUjM/+853v+I26xhgOMSGZDQ4KAlIcj
-	Ouh3Q83SiGo9oHDzyLSA==;
+	List-Owner; bh=UdXhWllRMxK3CfFP8rQQjXm8hsJ2nIsDTUXh+8DwZQc=; b=ntyIQGYF/FQIoq
+	WgvNLaYYcZTICeI8FlVgkMPFbG6dhMrF5kV/Z6pIlDgDFgvgj6Osf8pTqFQ0YSgs0VYNmyLMkub+U
+	YRkG3ZWvcZx72k5kdnRvpxgFh8PZJlByByplshrTbBn7YoasNIl8n+eMYxL9oXOvGCPw8vaXte8hj
+	zlc9LHDfL/Cr3e8AFgmJ+MCQdUxQyr40CWTbqEDgCyyF3dWP3ye+AQCRrYcFNRWQWy19VNj/ATYNZ
+	HS8Mfr4O5KW6bxJY+3IlOPjkzb5+vSKoIhWa1U0V/Q7q/CXQ6/3VOTRm/G9DRbyvPvIHHqBHSORKV
+	VcAvlVCa7PxqOYjvsxHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI71F-0008EQ-L6; Wed, 09 Oct 2019 08:08:25 +0000
+	id 1iI6z0-000690-8L; Wed, 09 Oct 2019 08:06:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI6xg-00048G-F5
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:04:47 +0000
+ id 1iI6xL-0003rc-32
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:04:24 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 32365218AC;
- Wed,  9 Oct 2019 08:04:43 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 01255206B6;
+ Wed,  9 Oct 2019 08:04:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570608283;
- bh=tDBAe6i7EQEmgN8pB/HliSUdUFXlI2895cJSJ1DK6rw=;
+ s=default; t=1570608262;
+ bh=hpURi6tpZmnC/zWlPKKkVWDNQ0ZhAalbd5CfrEu6dA8=;
  h=Subject:To:Cc:From:Date:In-Reply-To:From;
- b=w3PjowUKZz+CePc+alw6qVlH1PgrBQreimRWKmElPDbWyafKBPl0OL37BsbJn56M5
- yo421nXvsCuc7cN9Lp9GvQXbff0770FZ+MGRiZLGZRIgH7qnhYZaq0XGCHFYuyFMFh
- QUjv4RuXaC2OSH1SWeTH3qvQW/CNaGFE0wp5UUds=
-Subject: Patch "arm64: ssbs: Don't treat CPUs with SSBS as unaffected by SSB"
- has been added to the 4.19-stable tree
-To: ard.biesheuvel@linaro.org, gregkh@linuxfoundation.org,
+ b=asbxH/6pgKDQ7V+vDwdZYGJKI8ed5mFsfvRBXKyjmDN+s319GpMsDozSdQ7R+1OR0
+ guw4uR0+A44XQjKRc0JMVpm3oGY/IYB6PJEMgLjTCHDSqr60bFy6xyMmCXpjB8FWwt
+ TLsfZlzbpfzTX08up5VpCVVwhoh3ECY599jwO3CU=
+Subject: Patch "KVM: arm64: Set SCTLR_EL2.DSSBS if SSBD is forcefully disabled
+ and !vhe" has been added to the 4.19-stable tree
+To: ard.biesheuvel@linaro.org, catalin.marinas@arm.com,
+ christoffer.dall@arm.com, gregkh@linuxfoundation.org,
  linux-arm-kernel@lists.infradead.org, will.deacon@arm.com
 From: <gregkh@linuxfoundation.org>
 Date: Wed, 09 Oct 2019 10:04:02 +0200
-In-Reply-To: <20191008153930.15386-16-ard.biesheuvel@linaro.org>
-Message-ID: <1570608242113113@kroah.com>
+In-Reply-To: <20191008153930.15386-4-ard.biesheuvel@linaro.org>
+Message-ID: <157060824297191@kroah.com>
 MIME-Version: 1.0
 X-stable: commit
 X-Patchwork-Hint: ignore 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_010444_631001_62A44BA7 
-X-CRM114-Status: GOOD (  13.19  )
+X-CRM114-CacheID: sfid-20191009_010423_188136_043358FD 
+X-CRM114-Status: GOOD (  12.00  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -83,68 +84,88 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 This is a note to let you know that I've just added the patch titled
 
-    arm64: ssbs: Don't treat CPUs with SSBS as unaffected by SSB
+    KVM: arm64: Set SCTLR_EL2.DSSBS if SSBD is forcefully disabled and !vhe
 
 to the 4.19-stable tree which can be found at:
     http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
 
 The filename of the patch is:
-     arm64-ssbs-don-t-treat-cpus-with-ssbs-as-unaffected-by-ssb.patch
+     kvm-arm64-set-sctlr_el2.dssbs-if-ssbd-is-forcefully-disabled-and-vhe.patch
 and it can be found in the queue-4.19 subdirectory.
 
 If you, or anyone else, feels it should not be added to the stable tree,
 please let <stable@vger.kernel.org> know about it.
 
 
-From foo@baz Wed 09 Oct 2019 10:02:12 AM CEST
+From foo@baz Wed 09 Oct 2019 10:02:11 AM CEST
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Tue,  8 Oct 2019 17:39:29 +0200
-Subject: arm64: ssbs: Don't treat CPUs with SSBS as unaffected by SSB
+Date: Tue,  8 Oct 2019 17:39:17 +0200
+Subject: KVM: arm64: Set SCTLR_EL2.DSSBS if SSBD is forcefully disabled and !vhe
 To: linux-arm-kernel@lists.infradead.org
-Cc: stable@vger.kernel.org, Will Deacon <will.deacon@arm.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Message-ID: <20191008153930.15386-16-ard.biesheuvel@linaro.org>
+Cc: stable@vger.kernel.org, Will Deacon <will.deacon@arm.com>, Christoffer Dall <christoffer.dall@arm.com>, Catalin Marinas <catalin.marinas@arm.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Message-ID: <20191008153930.15386-4-ard.biesheuvel@linaro.org>
 
 From: Will Deacon <will.deacon@arm.com>
 
-[ Upstream commit eb337cdfcd5dd3b10522c2f34140a73a4c285c30 ]
+[ Upstream commit 7c36447ae5a090729e7b129f24705bb231a07e0b ]
 
-SSBS provides a relatively cheap mitigation for SSB, but it is still a
-mitigation and its presence does not indicate that the CPU is unaffected
-by the vulnerability.
+When running without VHE, it is necessary to set SCTLR_EL2.DSSBS if SSBD
+has been forcefully disabled on the kernel command-line.
 
-Tweak the mitigation logic so that we report the correct string in sysfs.
-
+Acked-by: Christoffer Dall <christoffer.dall@arm.com>
 Signed-off-by: Will Deacon <will.deacon@arm.com>
+Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 ---
- arch/arm64/kernel/cpu_errata.c |   10 ++++++----
- 1 file changed, 6 insertions(+), 4 deletions(-)
+ arch/arm64/include/asm/kvm_host.h |   11 +++++++++++
+ arch/arm64/kvm/hyp/sysreg-sr.c    |   11 +++++++++++
+ 2 files changed, 22 insertions(+)
 
---- a/arch/arm64/kernel/cpu_errata.c
-+++ b/arch/arm64/kernel/cpu_errata.c
-@@ -341,15 +341,17 @@ static bool has_ssbd_mitigation(const st
+--- a/arch/arm64/include/asm/kvm_host.h
++++ b/arch/arm64/include/asm/kvm_host.h
+@@ -398,6 +398,8 @@ struct kvm_vcpu *kvm_mpidr_to_vcpu(struc
  
- 	WARN_ON(scope != SCOPE_LOCAL_CPU || preemptible());
+ DECLARE_PER_CPU(kvm_cpu_context_t, kvm_host_cpu_state);
  
-+	/* delay setting __ssb_safe until we get a firmware response */
-+	if (is_midr_in_range_list(read_cpuid_id(), entry->midr_range_list))
-+		this_cpu_safe = true;
++void __kvm_enable_ssbs(void);
 +
- 	if (this_cpu_has_cap(ARM64_SSBS)) {
-+		if (!this_cpu_safe)
-+			__ssb_safe = false;
- 		required = false;
- 		goto out_printmsg;
- 	}
+ static inline void __cpu_init_hyp_mode(phys_addr_t pgd_ptr,
+ 				       unsigned long hyp_stack_ptr,
+ 				       unsigned long vector_ptr)
+@@ -418,6 +420,15 @@ static inline void __cpu_init_hyp_mode(p
+ 	 */
+ 	BUG_ON(!static_branch_likely(&arm64_const_caps_ready));
+ 	__kvm_call_hyp((void *)pgd_ptr, hyp_stack_ptr, vector_ptr, tpidr_el2);
++
++	/*
++	 * Disabling SSBD on a non-VHE system requires us to enable SSBS
++	 * at EL2.
++	 */
++	if (!has_vhe() && this_cpu_has_cap(ARM64_SSBS) &&
++	    arm64_get_ssbd_state() == ARM64_SSBD_FORCE_DISABLE) {
++		kvm_call_hyp(__kvm_enable_ssbs);
++	}
+ }
  
--	/* delay setting __ssb_safe until we get a firmware response */
--	if (is_midr_in_range_list(read_cpuid_id(), entry->midr_range_list))
--		this_cpu_safe = true;
--
- 	if (psci_ops.smccc_version == SMCCC_VERSION_1_0) {
- 		ssbd_state = ARM64_SSBD_UNKNOWN;
- 		if (!this_cpu_safe)
+ static inline bool kvm_arch_check_sve_has_vhe(void)
+--- a/arch/arm64/kvm/hyp/sysreg-sr.c
++++ b/arch/arm64/kvm/hyp/sysreg-sr.c
+@@ -293,3 +293,14 @@ void kvm_vcpu_put_sysregs(struct kvm_vcp
+ 
+ 	vcpu->arch.sysregs_loaded_on_cpu = false;
+ }
++
++void __hyp_text __kvm_enable_ssbs(void)
++{
++	u64 tmp;
++
++	asm volatile(
++	"mrs	%0, sctlr_el2\n"
++	"orr	%0, %0, %1\n"
++	"msr	sctlr_el2, %0"
++	: "=&r" (tmp) : "L" (SCTLR_ELx_DSSBS));
++}
 
 
 Patches currently in stable-queue which might be from ard.biesheuvel@linaro.org are
