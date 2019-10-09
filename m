@@ -2,116 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D37BDD0633
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 06:02:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2A68D06B9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 06:47:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1fxhujps36vJW/N1RFByw1OQvVFwFNsfWGJnY5+hM3U=; b=hC011aBYgxHW2H
-	LVZXIKzQ9y2RDuVQlnA0UNzINFLsDEpiO326l3aFmnhHzuIdYKFdrvOnkWZ5xsO5h3feMDeNJ7yay
-	GepTWY4uJYy0mwMdcNiOhyG9aHj5AyRsXARPuTY2LLuOAu080TUhgKKlcOK0Z7ZSjJY3WBF825oOb
-	jo0xa++fZwgD/oYk6SZsdyRnke+ijK/Q0FHmF6UqfXwC02+BgNxOG89mcMoi6FIHWZppapRNGU+5b
-	xC9UPSC3LnPvbvMRgHd+/Jzdm/Ar49x4HOyN+S4ZhB5AEz3HWDenUuxXnZ6UnHkT9JxGeWOJDRrGs
-	QzKQEPPYt9AYvhxS6VvQ==;
+	List-Owner; bh=MHQSJXFNee9aiV4CAbtWq6d5th4T1foDMzHM49q08D8=; b=S0zCiPT4j/mZmO
+	VT9hZap21+/vOfqkq+3lu4rUYiomApbc+XS6vc6hF+5EvVz/wxcJZ3AiQ8ytvtCOuAWBdzIbZLlaq
+	4BaVsxlqVVreH4eCuYjkd6NKbcB5DLWs/nlITvAomGWUSvSq92ipBhpXr3jQF9v6WXrISTNMTsYF5
+	xUbVNsA0wwMdTscRFmt17pL3iBIFpTNGFnEzfJCgjzxSrD4cmVZZlUVB9mmGMZQfHAq/xjRfRJH9a
+	TTV7obaCB76abAnLCX6A2JUfQgEPLx1M7MY2ZfOvtLtIRdvJAH5mP31hBt0kqJH15BDHRzuhOzgzt
+	of3qddwGE7ylaaFtiJ+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI3An-0006vo-P2; Wed, 09 Oct 2019 04:02:01 +0000
-Received: from mail-eopbgr700069.outbound.protection.outlook.com
- ([40.107.70.69] helo=NAM04-SN1-obe.outbound.protection.outlook.com)
+	id 1iI3sj-0003hF-NT; Wed, 09 Oct 2019 04:47:25 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI3Af-0006ua-94
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 04:01:55 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Xz9BOPl6Ew177J9PQnLn8hyH7R3x8gbb9TSBTkLiXoPn1b0YOfve5C8RxAFBTcwXkOVVrk7AiMxs6lafeyG+AoeTrdXGLnIqH0xwjgCBIrTHhtfrelvwm/2rfVoyORQxwoPJiPPIm8wogQ5w5b2uien9QcfeizKBN+Vf9idlbGs3/XBGmAuptkd/raraKX5AcPx4FCOolDjOHo1GakUj11tuMkUU7d+xcQcYmkrTNoBSHIlwvIWOHewYiwo05FNGYVRHqr2ikd5xpEP5++GNnR44iwBfcHz8Og0672CUQSr92cIHPp9sWuKPlC0rpTlABSTmNELTTioiFhy2LNXb6w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ly8G9LcrcvsETdjgjuFC5NZAcfqXX/l7tuhYYBMFK5s=;
- b=CmOMpWhP2QYAIVXXPsY0aLP79VcMhjehqI9fkFwiDXwA7TEl7RauF1uPX+mnSz9ULR/qs4OyAUO+814uF/HZSk+ZZSqZfyP8oPU6c6weYN15pnmBsc2TPnnPxFJOLKHp8CpTktJP6XQI/maB654Vvn+h4AaWvgcbkxssB6F3fub41aH6ybluYdOibuXSAEsoybqlm8RqgognVr6Logexcv92Xwq1Y62DenfxBcsVG2O1cSxHz1Rg9dm9Hp3xp2WpVaQSRrrJki+L8om5vMonXm+4lC1VCVAekDlS3dG1lOVXgXpqZ8GUriOo+yUvSJ2CVBHpzkqjLdLxeX7MZ49DIA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
- dkim=pass header.d=xilinx.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ly8G9LcrcvsETdjgjuFC5NZAcfqXX/l7tuhYYBMFK5s=;
- b=EKnmGtZ0FILycPL4gQmBVBWeaaP1t+WSsH2vV38kCJ/cE8StFp6LCDQo+QDJuiu8E8gvCsrP8T47FiDPHbVqp9mSjtwyWVwhbq3SC4/w887Es90e9eQCyIf/rCxQarcdEu5gFtc/OGynH5HThXgz8FoMaBehRN2iVlfYWpmlSuc=
-Received: from MN2PR02MB6400.namprd02.prod.outlook.com (52.132.173.155) by
- MN2PR02MB6237.namprd02.prod.outlook.com (52.132.175.157) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2327.23; Wed, 9 Oct 2019 04:01:47 +0000
-Received: from MN2PR02MB6400.namprd02.prod.outlook.com
- ([fe80::2490:5890:f2e7:14b3]) by MN2PR02MB6400.namprd02.prod.outlook.com
- ([fe80::2490:5890:f2e7:14b3%7]) with mapi id 15.20.2327.026; Wed, 9 Oct 2019
- 04:01:46 +0000
-From: Appana Durga Kedareswara Rao <appanad@xilinx.com>
-To: Anssi Hannula <anssi.hannula@bitwise.fi>
-Subject: RE: [PATCH 2/6] net: can: xilinx_can: Fix flags field initialization
- for axi can and canps
-Thread-Topic: [PATCH 2/6] net: can: xilinx_can: Fix flags field initialization
- for axi can and canps
-Thread-Index: AQHVesCfvo8HLFt+ZUeAzSH0lYp+g6dRtjlA
-Date: Wed, 9 Oct 2019 04:01:46 +0000
-Message-ID: <MN2PR02MB64004059908C95EB5E16746FDC950@MN2PR02MB6400.namprd02.prod.outlook.com>
-References: <1552908766-26753-1-git-send-email-appana.durga.rao@xilinx.com>
- <1552908766-26753-3-git-send-email-appana.durga.rao@xilinx.com>
- <d1bedb13-f66f-b0fd-bd6d-9f95b64fc405@bitwise.fi>
-In-Reply-To: <d1bedb13-f66f-b0fd-bd6d-9f95b64fc405@bitwise.fi>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=appanad@xilinx.com; 
-x-originating-ip: [149.199.50.133]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: f817d37c-2925-4ae3-d3b8-08d74c6d678d
-x-ms-office365-filtering-ht: Tenant
-x-ms-traffictypediagnostic: MN2PR02MB6237:|MN2PR02MB6237:
-x-ms-exchange-purlcount: 1
-x-ld-processed: 657af505-d5df-48d0-8300-c31994686c5c,ExtAddr
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <MN2PR02MB6237CCE23E1B30DDF6C19AD0DC950@MN2PR02MB6237.namprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 018577E36E
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39850400004)(396003)(366004)(346002)(136003)(376002)(189003)(199004)(316002)(33656002)(3846002)(25786009)(99286004)(66476007)(64756008)(71200400001)(66066001)(66556008)(71190400001)(66446008)(14454004)(76176011)(66946007)(6916009)(7696005)(478600001)(256004)(186003)(9686003)(54906003)(966005)(6116002)(486006)(305945005)(74316002)(2906002)(26005)(6306002)(6436002)(55016002)(229853002)(8936002)(8676002)(5660300002)(11346002)(476003)(7736002)(446003)(86362001)(52536014)(6506007)(81156014)(102836004)(4326008)(6246003)(81166006)(76116006);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR02MB6237;
- H:MN2PR02MB6400.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: xilinx.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: Tdet2NC6j08bD+Ac/zD69NxVPx8IqaOLGYRtifzcbihgiS7znq4vc+6i3A2+K1rZr3Zdy9lbAblMeNS2dJrrh3NxQWeR1ZkSrbh07qAME5iXLTSYVxbnZLzBengxDnSAwp5LR1yjtV/iEPX4HMz35L5iSVASrNMx1Pmd41NrkoGWsWQSOjA50bKIUst+7j9edjW/5v1KjZmU9VPWtR17mnWsPcAIoxa78f8ChFIarUNt0Bgby8S7vQmg5ONHngdTgKY2js3GKy8AkIOFSXI5j2MJHr8RQQCDZ3VXwXNL9VSumY6MxNkoSnq24jTQgT6eG05nGIUQ0MKCUjeMLIV3/klzfCWo+hHjTyTN5IFvsNlQQa9Xkh/VWChjXVR/SRyR4PO0d8w9L7WCHsCFBwTNOsw4eBNWtZ5trSCWurNLBF9K3bGKQTf83pQLJhIot4oWyLPeLuNaDYuxh0DVuwHC4A==
+ id 1iI3sc-0003gW-GW
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 04:47:20 +0000
+Received: by mail-ed1-x544.google.com with SMTP id c4so798838edl.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 08 Oct 2019 21:47:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=mCig5kgLkC+F5fuhEJGg04MH+YglNUctBHKrOOKma9M=;
+ b=S8y8Gz2QhYzsjljUGQOUyUFRPAoMO8uF9ZLL+t8vGZgW5Ml6gm4Im86UTJ5w5cpKTd
+ kNcdzQhH44b6gx7NrfrVHMdzzkYtp9dEc65X/MxihS7s5TvcVuf1ILC4z1eCkqOI6C5z
+ zFbfFbFpQGGlxuPUGeS7XtJI8Gj8i2w/eFtBU=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=mCig5kgLkC+F5fuhEJGg04MH+YglNUctBHKrOOKma9M=;
+ b=Vuz7qKzZmLPPvlfEt1vTZIkkcLv3HI/fRDMvUu8tLzuC3v9sbL7AbCLgtUvFdoAeQM
+ OFbWnoYxQY5BH51Zmkvm5+LKztyyZQ/8gwgc2mF+hY5xsKQxgj22X1P0DDqFzvuRJFcq
+ ELrnx84hhBFS4BMVx/mpRv1uutnwtirZihD3EnXb+GT+nGeSaG2U2HYIeSWeKh1xLbmJ
+ lB86GY6BZq1GGhhj0CltU9w2CtvgmXQPQt7td27XCseC7IHcP0gEQQlIlCLYGsFyNyZN
+ j/o4384PvPclhnv7fcsn+evRtS+10GVVBqkZrL40i6TlGEcY1smjrJKQIkWBNRGr9ieC
+ MvnA==
+X-Gm-Message-State: APjAAAUh32Aw8ovp2vODp1ezFgFnAs2BRH3zkVgRairhRczEdrR+xh5o
+ Wi3qLVk/RO3juzK69LW78IzvbmXn5Q3NAw==
+X-Google-Smtp-Source: APXvYqx1uW0tLl9RhByFqq9KZg/0aAnZEl0ZcWAlr0mwDNggUfPEVghPCPizs85yB5EG20F6U0KmeQ==
+X-Received: by 2002:a05:6402:134e:: with SMTP id
+ y14mr1294935edw.55.1570596436700; 
+ Tue, 08 Oct 2019 21:47:16 -0700 (PDT)
+Received: from mail-wr1-f47.google.com (mail-wr1-f47.google.com.
+ [209.85.221.47])
+ by smtp.gmail.com with ESMTPSA id k22sm106363eja.56.2019.10.08.21.47.16
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 08 Oct 2019 21:47:16 -0700 (PDT)
+Received: by mail-wr1-f47.google.com with SMTP id r5so890507wrm.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 08 Oct 2019 21:47:16 -0700 (PDT)
+X-Received: by 2002:adf:dd8b:: with SMTP id x11mr1053323wrl.113.1570596018449; 
+ Tue, 08 Oct 2019 21:40:18 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f817d37c-2925-4ae3-d3b8-08d74c6d678d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Oct 2019 04:01:46.6080 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: AKLUxWvQmXHFpP/HCAaqg+lGtMUYnKmvsBQXpX5MY3mvAOUGBDjXSdcRCWlv2OJQ3rLFpP5ZhpYpEmYQagG1Gg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR02MB6237
+References: <20190905072142.14606-1-dongchun.zhu@mediatek.com>
+ <20190905072142.14606-3-dongchun.zhu@mediatek.com>
+In-Reply-To: <20190905072142.14606-3-dongchun.zhu@mediatek.com>
+From: Tomasz Figa <tfiga@chromium.org>
+Date: Wed, 9 Oct 2019 13:40:07 +0900
+X-Gmail-Original-Message-ID: <CAAFQd5A9mn+695CZdYoXzuQodQqC=p8dstbdFAkOCCHKMUtg-w@mail.gmail.com>
+Message-ID: <CAAFQd5A9mn+695CZdYoXzuQodQqC=p8dstbdFAkOCCHKMUtg-w@mail.gmail.com>
+Subject: Re: [V2, 2/2] media: i2c: Add DW9768 VCM driver
+To: Dongchun Zhu <dongchun.zhu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_210153_382523_54CF4B4D 
-X-CRM114-Status: GOOD (  18.25  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191008_214718_576830_DFA10D6D 
+X-CRM114-Status: GOOD (  21.95  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.70.69 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,82 +102,180 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-can@vger.kernel.org" <linux-can@vger.kernel.org>,
- Michal Simek <michals@xilinx.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "mkl@pengutronix.de" <mkl@pengutronix.de>,
- "davem@davemloft.net" <davem@davemloft.net>,
- "wg@grandegger.com" <wg@grandegger.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Nicolas Boichat <drinkcat@chromium.org>, andriy.shevchenko@linux.intel.com,
+ srv_heupstream <srv_heupstream@mediatek.com>, devicetree@vger.kernel.org,
+ sam.hung@mediatek.com, shengnan.wang@mediatek.com,
+ Sj Huang <sj.huang@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Cao Bing Bu <bingbu.cao@intel.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Dongchun,
 
-<Snip>
-> On 18.3.2019 13.32, Appana Durga Kedareswara rao wrote:
-> > AXI CAN IP and CANPS IP supports tx fifo empty feature, this patch
-> > updates the flags field for the same.
-> >
-> > Signed-off-by: Appana Durga Kedareswara rao
-> > <appana.durga.rao@xilinx.com>
-> > ---
-> >  drivers/net/can/xilinx_can.c | 2 ++
-> >  1 file changed, 2 insertions(+)
-> >
-> > diff --git a/drivers/net/can/xilinx_can.c
-> > b/drivers/net/can/xilinx_can.c index 2de51ac..22569ef 100644
-> > --- a/drivers/net/can/xilinx_can.c
-> > +++ b/drivers/net/can/xilinx_can.c
-> > @@ -1428,6 +1428,7 @@ static const struct dev_pm_ops xcan_dev_pm_ops
-> =
-> > {  };
-> >
-> >  static const struct xcan_devtype_data xcan_zynq_data = {
-> > +	.flags = XCAN_FLAG_TXFEMP,
-> >  	.bittiming_const = &xcan_bittiming_const,
-> >  	.btr_ts2_shift = XCAN_BTR_TS2_SHIFT,
-> >  	.btr_sjw_shift = XCAN_BTR_SJW_SHIFT,
-> 
-> Thanks for catching this, this line seemed to have been incorrectly removed by
-> my 9e5f1b273e ("can: xilinx_can: add support for Xilinx CAN FD core").
-> 
-> But:
-> 
-> > @@ -1435,6 +1436,7 @@ static const struct xcan_devtype_data
-> > xcan_zynq_data = {  };
-> >
-> >  static const struct xcan_devtype_data xcan_axi_data = {
-> > +	.flags = XCAN_FLAG_TXFEMP,
-> >  	.bittiming_const = &xcan_bittiming_const,
-> >  	.btr_ts2_shift = XCAN_BTR_TS2_SHIFT,
-> >  	.btr_sjw_shift = XCAN_BTR_SJW_SHIFT,
-> 
-> 
-> Are you sure this is right?
-> In the documentation [1] there does not seem to be any TXFEMP interrupt, it
-> would be interrupt bit 14 but AXI CAN 5.0 seems to only go up to 11.
-> 
-> Or maybe it is undocumented or there is a newer version somewhere?
+On Thu, Sep 5, 2019 at 4:22 PM <dongchun.zhu@mediatek.com> wrote:
+>
+> From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+>
+> This patch adds a V4L2 sub-device driver for DW9768 lens voice coil,
+> and provides control to set the desired focus.
+>
+> The DW9768 is a 10 bit DAC with 100mA output current sink capability
+> from Dongwoon, designed for linear control of voice coil motor,
+> and controlled via I2C serial interface.
+>
+> Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> ---
+>  MAINTAINERS                |   1 +
+>  drivers/media/i2c/Kconfig  |  10 ++
+>  drivers/media/i2c/Makefile |   1 +
+>  drivers/media/i2c/dw9768.c | 349 +++++++++++++++++++++++++++++++++++++++++++++
+>  4 files changed, 361 insertions(+)
+>  create mode 100644 drivers/media/i2c/dw9768.c
+>
 
-Sorry for the delay in the reply. 
-Agree TXFEMP interrupt feature is not supported by the Soft IP CAN.
-Since this patch already got applied will send a separate patch to fix this.
+Please see my further comments inline.
 
-Regards,
-Kedar.
+[snip]
+> +struct regval_list {
+> +       unsigned char reg_num;
+> +       unsigned char value;
 
-> 
-> [1]
-> https://www.xilinx.com/support/documentation/ip_documentation/can/v5_0
-> /pg096-can.pdf
-> 
-> --
-> Anssi Hannula / Bitwise Oy
-> +358 503803997
+nit: Since we have strictly sized values here, should we use u8 for
+both fields instead?
+
+> +};
+> +
+> +static struct regval_list dw9768_init_regs[] = {
+> +       {0x02, 0x02},
+> +       {DW9768_CMD_DELAY, DW9768_CMD_DELAY},
+> +       {0x06, 0x41},
+> +       {0x07, 0x39},
+> +       {DW9768_CMD_DELAY, DW9768_CMD_DELAY},
+> +};
+> +
+> +static struct regval_list dw9768_release_regs[] = {
+> +       {0x02, 0x00},
+> +       {DW9768_CMD_DELAY, DW9768_CMD_DELAY},
+> +       {0x01, 0x00},
+> +       {DW9768_CMD_DELAY, DW9768_CMD_DELAY},
+> +};
+> +
+> +static int dw9768_write_smbus(struct dw9768 *dw9768, unsigned char reg,
+> +                             unsigned char value)
+
+Should we use u8 for the last two arguments here as well?
+
+> +{
+> +       struct i2c_client *client = v4l2_get_subdevdata(&dw9768->sd);
+> +       int ret;
+> +
+> +       if (reg == DW9768_CMD_DELAY  && value == DW9768_CMD_DELAY)
+> +               usleep_range(DW9768_CTRL_DELAY_US,
+> +                            DW9768_CTRL_DELAY_US + 100);
+
+ret will be uninitialized if we go this path.
+
+> +       else
+> +               ret = i2c_smbus_write_byte_data(client, reg, value);
+> +       return ret;
+> +}
+> +
+> +static int dw9768_write_array(struct dw9768 *dw9768, struct regval_list *vals,
+> +                             u32 len)
+
+Since len is an array size, should we use size_t instead?
+
+> +{
+> +       unsigned int i;
+
+size_t?
+
+> +       int ret;
+> +
+> +       for (i = 0; i < len; i++) {
+> +               ret = dw9768_write_smbus(dw9768, vals->reg_num, vals->value);
+
+This should refer to vals[i] instead.
+
+> +               if (ret < 0)
+> +                       return ret;
+> +       }
+> +       return 0;
+> +}
+> +
+> +static int dw9768_set_position(struct dw9768 *dw9768, u16 val)
+> +{
+> +       struct i2c_client *client = v4l2_get_subdevdata(&dw9768->sd);
+> +       u8 addr[2];
+> +
+> +       addr[0] = (val >> DW9768_DAC_SHIFT) & DW9768_REG_MASK_MSB;
+> +       addr[1] = val & DW9768_REG_MASK_LSB;
+> +
+> +       return i2c_smbus_write_block_data(client, DW9768_SET_POSITION_ADDR,
+> +                                         ARRAY_SIZE(addr), addr);
+
+As we discovered earlier, i2c_smbus_write_block_data() uses a
+different protocol from what we expected. Please change to
+i2c_smbus_write_word_data(), as per our downstream changes.
+
+> +}
+> +
+> +static int dw9768_release(struct dw9768 *dw9768)
+> +{
+> +       return dw9768_write_array(dw9768, dw9768_release_regs,
+> +                                 ARRAY_SIZE(dw9768_release_regs));
+> +}
+> +
+> +static int dw9768_init(struct dw9768 *dw9768)
+> +{
+> +       return dw9768_write_array(dw9768, dw9768_init_regs,
+> +                                 ARRAY_SIZE(dw9768_init_regs));
+> +}
+> +
+> +/* Power handling */
+> +static int dw9768_power_off(struct dw9768 *dw9768)
+> +{
+> +       struct i2c_client *client = v4l2_get_subdevdata(&dw9768->sd);
+> +       int ret;
+> +
+> +       ret = dw9768_release(dw9768);
+> +       if (ret)
+> +               dev_err(&client->dev, "dw9768 release failed!\n");
+> +
+> +       ret = regulator_disable(dw9768->vin);
+> +       if (ret)
+> +               return ret;
+> +
+> +       return regulator_disable(dw9768->vdd);
+> +}
+> +
+> +static int dw9768_power_on(struct dw9768 *dw9768)
+> +{
+> +       int ret;
+> +
+> +       ret = regulator_enable(dw9768->vin);
+> +       if (ret < 0)
+> +               return ret;
+> +
+> +       ret = regulator_enable(dw9768->vdd);
+> +       if (ret < 0)
+> +               return ret;
+
+There is at least T_opr = 200 us of delay needed here. Would you be
+able to add a comment and a corresponding usleep_range() call? I guess
+the range of (300, 400) would be enough on the safe side.
+
+Best regards,
+Tomasz
 
 _______________________________________________
 linux-arm-kernel mailing list
