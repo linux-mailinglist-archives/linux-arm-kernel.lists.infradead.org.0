@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 692CBD0A13
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:44:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1557D0A14
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 10:44:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,26 +11,26 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=HOCo5nDhjIEQTXBMs2WKoXpjlSJRFAeMBluroylJgfA=; b=un6AhyNf3foth+fdwcWhiHSKPI
-	jTOaVyP8rl+3Ko0+9G2/IcbZJiPjTBdc+90dx8QeicBGS9wW1CySjdwVEtGF8KBCiG28XrFtAeAts
-	zaF9VI43pknJhAknOqeFyTCysFVhgx2UnkBlEdsWfMZZEeDZsiWElYfuMHg2cuTUNmaLVFpV8Trpr
-	wy7d2EluYgo+AUMAElWbyDzV7QBoLT9II9hl15Bbt4RxpplmqalBiYTbtiaa2HrG9sZ+s+jzlCxsR
-	j59aCff7g5hoBhVBkO5o9bP/IKmNuPJanYp5MxhCit+sJ9R4POq0PemtYZGX+d9/hcU84tjXUEHs/
-	YGfJSyBg==;
+	bh=rmeCWT8wgTDHn9M6qGacj+Ey6hiYFdogCfQtN78AOA0=; b=YsgWuTix3dcy6AfoqaM9ae2xCr
+	XcTXxjRaSKa4dk74MGQmGM6omfV5bHbo0E04/DBDXoiEocAIgKf9OJGk9hngL+gK4WAfdPgo3awkC
+	CzU8ugLeoPkYUYHx2AbIgRoYxJLuJHVWWi0DIdmwjQMuUg/Fej0JehXPuKqI/zDaYq5V5yc6BnYK6
+	zYhrU5dLHrHKQoOhgDO5fXofyaBuTkX+vC2VpQrMFhXwzyxvn2NdzSQAXd4nL4NCRcFCWtG5M7k+n
+	4BrgSvVJ2Ix1Cd5fjOf/nZf0F1g7b9NBLFf3xf9QvV7Xyzo65k/GYGWmxh3WkxZ49CSvaA7iPUAFH
+	Up2HITNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI7Zl-0004xJ-73; Wed, 09 Oct 2019 08:44:05 +0000
+	id 1iI7a4-0005Ag-QM; Wed, 09 Oct 2019 08:44:24 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI7Z1-0004Zd-T8
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:43:21 +0000
+ id 1iI7Z7-0004dL-LB
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 08:43:27 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7F60A1570;
- Wed,  9 Oct 2019 01:43:19 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 85D57337;
+ Wed,  9 Oct 2019 01:43:24 -0700 (PDT)
 Received: from localhost.localdomain (entos-thunderx2-02.shanghai.arm.com
  [10.169.40.54])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id E88413F68E;
- Wed,  9 Oct 2019 01:43:14 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id E419C3F68E;
+ Wed,  9 Oct 2019 01:43:19 -0700 (PDT)
 From: Jia He <justin.he@arm.com>
 To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>, James Morse <james.morse@arm.com>,
@@ -40,15 +40,16 @@ To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  linux-mm@kvack.org, Suzuki Poulose <Suzuki.Poulose@arm.com>,
  Borislav Petkov <bp@alien8.de>, "H. Peter Anvin" <hpa@zytor.com>,
  x86@kernel.org
-Subject: [PATCH v11 2/4] arm64: mm: implement arch_faults_on_old_pte() on arm64
-Date: Wed,  9 Oct 2019 16:42:44 +0800
-Message-Id: <20191009084246.123354-3-justin.he@arm.com>
+Subject: [PATCH v11 3/4] x86/mm: implement arch_faults_on_old_pte() stub on x86
+Date: Wed,  9 Oct 2019 16:42:45 +0800
+Message-Id: <20191009084246.123354-4-justin.he@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191009084246.123354-1-justin.he@arm.com>
 References: <20191009084246.123354-1-justin.he@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_014320_063793_75A5BA71 
-X-CRM114-Status: GOOD (  10.35  )
+X-CRM114-CacheID: sfid-20191009_014325_752373_08D74091 
+X-CRM114-Status: UNSURE (   9.29  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -76,45 +77,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On arm64 without hardware Access Flag, copying from user will fail because
-the pte is old and cannot be marked young. So we always end up with zeroed
-page after fork() + CoW for pfn mappings. We don't always have a
-hardware-managed Access Flag on arm64.
-
-Hence implement arch_faults_on_old_pte on arm64 to indicate that it might
-cause page fault when accessing old pte.
+arch_faults_on_old_pte is a helper to indicate that it might cause page
+fault when accessing old pte. But on x86, there is feature to setting
+pte access flag by hardware. Hence implement an overriding stub which
+always returns false.
 
 Signed-off-by: Jia He <justin.he@arm.com>
-Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+Suggested-by: Will Deacon <will@kernel.org>
 ---
- arch/arm64/include/asm/pgtable.h | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+ arch/x86/include/asm/pgtable.h | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-index 7576df00eb50..e96fb82f62de 100644
---- a/arch/arm64/include/asm/pgtable.h
-+++ b/arch/arm64/include/asm/pgtable.h
-@@ -885,6 +885,20 @@ static inline void update_mmu_cache(struct vm_area_struct *vma,
- #define phys_to_ttbr(addr)	(addr)
- #endif
+diff --git a/arch/x86/include/asm/pgtable.h b/arch/x86/include/asm/pgtable.h
+index 0bc530c4eb13..ad97dc155195 100644
+--- a/arch/x86/include/asm/pgtable.h
++++ b/arch/x86/include/asm/pgtable.h
+@@ -1463,6 +1463,12 @@ static inline bool arch_has_pfn_modify_check(void)
+ 	return boot_cpu_has_bug(X86_BUG_L1TF);
+ }
  
-+/*
-+ * On arm64 without hardware Access Flag, copying from user will fail because
-+ * the pte is old and cannot be marked young. So we always end up with zeroed
-+ * page after fork() + CoW for pfn mappings. We don't always have a
-+ * hardware-managed access flag on arm64.
-+ */
++#define arch_faults_on_old_pte arch_faults_on_old_pte
 +static inline bool arch_faults_on_old_pte(void)
 +{
-+	WARN_ON(preemptible());
-+
-+	return !cpu_has_hw_af();
++	return false;
 +}
-+#define arch_faults_on_old_pte arch_faults_on_old_pte
 +
- #endif /* !__ASSEMBLY__ */
+ #include <asm-generic/pgtable.h>
+ #endif	/* __ASSEMBLY__ */
  
- #endif /* __ASM_PGTABLE_H */
 -- 
 2.17.1
 
