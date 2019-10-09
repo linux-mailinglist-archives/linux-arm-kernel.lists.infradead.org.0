@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 289E9D0E56
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 14:07:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB0DED0E53
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 14:07:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=gCEYCMudqWb8nNMuz/aUUjv8afSy9JkQtLZ5IZS1hJw=; b=aMYkGeJOVcmkyaDIIUK67fYNPn
-	lTlNqJRIcKj8VAl7UNdtDESxJVZT3Dm1A+Nd7IUY4tQ6i6UiIES1iTB6LisSasdcm6bnTE334AGQR
-	+XHS9fY/5ToSxEM44DfuuhsNcGCxUjDkrub/BxRZzz8lz92bGPmKbnwkcFz4BzZoQSlmJ8K/p4+NN
-	nJ06gNBo7U+WXKmS3Xa2oUXeluaXiqoPWuiF+lQg46XY/Ng8Xzu6lkAYSAdKf2x25+9DdOiZOVyy4
-	ty0PazZdepobgx3nAWxqKciCls0qmvtczKGvFr8NvBecL6S99m9gkUrZM/mlZLvO+KsHjA8OQADrf
-	gBmqv5yg==;
+	bh=0gNCePfG5Zl9e/0i5TN2UOnxIWKdgJ1uqTK7JRpCn30=; b=piIerkvlE0aBi07zO/CvT3j2JV
+	bwynkzT0v1JY8utgLjN6dVZ8lsWxNMEetGGBPfHm4F/ej78KMfl09EcAreY3Qfni/LZL01nRydcTq
+	5sZT7rVjYcqoCnyfYDnsuKsHWc9HciREc04afKiH59f5c1SZgYj5MvnpMDqo2Xy+pqHhXkU9CpAbh
+	BUJl3OWTfj/tknRJ4CJjzAmhZcqiMy6gNuB4mlfRgsMQB2rtBSkmvQO1XthCN3h5Rw8+itqtOeJyM
+	Nmc+HIOCKHzuqpe+5LIWZ8B4P1jEwYQ1TkSDD1oWeH8MQ1zHVCkliRXyTZ5WtKVFAtGw7fKBg2LgQ
+	0s7C0LCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIAkJ-0001If-Ob; Wed, 09 Oct 2019 12:07:11 +0000
+	id 1iIAk5-00013e-G2; Wed, 09 Oct 2019 12:06:57 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIAiQ-0007mu-En
+ id 1iIAiT-0008AC-9f
  for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 12:05:20 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C5F3015BF;
- Wed,  9 Oct 2019 05:05:13 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E26221650;
+ Wed,  9 Oct 2019 05:05:14 -0700 (PDT)
 Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
  [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DE4AC3F703;
- Wed,  9 Oct 2019 05:05:12 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0679F3F703;
+ Wed,  9 Oct 2019 05:05:13 -0700 (PDT)
 From: Cristian Marussi <cristian.marussi@arm.com>
 To: linux-kselftest@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  shuah@kernel.org
-Subject: [PATCH v9 04/12] kselftest: arm64:
- mangle_pstate_invalid_mode_el[123][ht]
-Date: Wed,  9 Oct 2019 13:04:51 +0100
-Message-Id: <20191009120459.21805-5-cristian.marussi@arm.com>
+Subject: [PATCH v9 05/12] kselftest: arm64: extend test_init functionalities
+Date: Wed,  9 Oct 2019 13:04:52 +0100
+Message-Id: <20191009120459.21805-6-cristian.marussi@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191009120459.21805-1-cristian.marussi@arm.com>
 References: <20191009120459.21805-1-cristian.marussi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_050514_616412_4CF5B906 
-X-CRM114-Status: GOOD (  11.19  )
+X-CRM114-CacheID: sfid-20191009_050517_441147_8F104199 
+X-CRM114-Status: GOOD (  17.22  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,196 +68,173 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add 6 simple mangle testcases that mess with the ucontext_t from within
-the signal handler, trying to toggle PSTATE mode bits to trick the system
-into switching to EL1/EL2/EL3 using both SP_EL0(t) and SP_ELx(h).
-Expects SIGSEGV on test PASS.
+Extend signal testing framework to allow the definition of a custom per
+test initialization function to be run at the end of the common test_init
+after test setup phase has completed and before test-run routine.
+
+This custom per-test initialization function also enables the test writer
+to decide on its own when forcibly skip the test itself using standard KSFT
+mechanism.
 
 Reviewed-by: Dave Martin <Dave.Martin@arm.com>
 Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
 ---
-v3 --> v4
-- fixed commit message
-- macroization
-- splitted into 6 macro-ised testcases to address t/h SP selection modes
-- added test description
+v7 --> v8
+- per test .init() helper added new in v8 (splitted out of v7 05/11)
 ---
- .../mangle_pstate_invalid_mode_el1h.c         | 15 ++++++++++
- .../mangle_pstate_invalid_mode_el1t.c         | 15 ++++++++++
- .../mangle_pstate_invalid_mode_el2h.c         | 15 ++++++++++
- .../mangle_pstate_invalid_mode_el2t.c         | 15 ++++++++++
- .../mangle_pstate_invalid_mode_el3h.c         | 15 ++++++++++
- .../mangle_pstate_invalid_mode_el3t.c         | 15 ++++++++++
- .../mangle_pstate_invalid_mode_template.h     | 28 +++++++++++++++++++
- 7 files changed, 118 insertions(+)
- create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el1h.c
- create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el1t.c
- create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el2h.c
- create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el2t.c
- create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el3h.c
- create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el3t.c
- create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_template.h
+ .../selftests/arm64/signal/test_signals.c     |  6 ++--
+ .../selftests/arm64/signal/test_signals.h     |  7 ++--
+ .../arm64/signal/test_signals_utils.c         | 32 +++++++++++++------
+ .../arm64/signal/test_signals_utils.h         |  1 +
+ 4 files changed, 31 insertions(+), 15 deletions(-)
 
-diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el1h.c b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el1h.c
-new file mode 100644
-index 000000000000..95f821abdf46
---- /dev/null
-+++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el1h.c
-@@ -0,0 +1,15 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2019 ARM Limited
-+ *
-+ * Try to mangle the ucontext from inside a signal handler, toggling
-+ * the mode bit to escalate exception level: this attempt must be spotted
-+ * by Kernel and the test case is expected to be termninated via SEGV.
-+ */
+diff --git a/tools/testing/selftests/arm64/signal/test_signals.c b/tools/testing/selftests/arm64/signal/test_signals.c
+index cb970346b280..416b1ff43199 100644
+--- a/tools/testing/selftests/arm64/signal/test_signals.c
++++ b/tools/testing/selftests/arm64/signal/test_signals.c
+@@ -19,11 +19,11 @@ int main(int argc, char *argv[])
+ 	current = &tde;
+ 
+ 	ksft_print_msg("%s :: %s\n", current->name, current->descr);
+-	if (test_setup(current)) {
++	if (test_setup(current) && test_init(current)) {
+ 		test_run(current);
+-		test_result(current);
+ 		test_cleanup(current);
+ 	}
++	test_result(current);
+ 
+-	return current->pass ? KSFT_PASS : KSFT_FAIL;
++	return current->result;
+ }
+diff --git a/tools/testing/selftests/arm64/signal/test_signals.h b/tools/testing/selftests/arm64/signal/test_signals.h
+index 3fd4499f00bf..901521188202 100644
+--- a/tools/testing/selftests/arm64/signal/test_signals.h
++++ b/tools/testing/selftests/arm64/signal/test_signals.h
+@@ -84,17 +84,20 @@ struct tdescr {
+ 	unsigned int		timeout;
+ 	bool			triggered;
+ 	bool			pass;
++	unsigned int		result;
+ 	/* optional sa_flags for the installed handler */
+ 	int			sa_flags;
+ 	ucontext_t		saved_uc;
+ 	/* optional test private data */
+ 	void                    *priv;
+ 
+-	/* a custom setup function to be called before test starts */
++	/* a custom setup: called alternatively to default_setup */
+ 	int (*setup)(struct tdescr *td);
++	/* a custom init: called by default test init after test_setup */
++	bool (*init)(struct tdescr *td);
+ 	/* a custom cleanup function called before test exits */
+ 	void (*cleanup)(struct tdescr *td);
+-	/* an optional function to be used as a trigger for test starting */
++	/* an optional function to be used as a trigger for starting test */
+ 	int (*trigger)(struct tdescr *td);
+ 	/*
+ 	 * the actual test-core: invoked differently depending on the
+diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.c b/tools/testing/selftests/arm64/signal/test_signals_utils.c
+index ff24db6f9d06..e8bbe36c2660 100644
+--- a/tools/testing/selftests/arm64/signal/test_signals_utils.c
++++ b/tools/testing/selftests/arm64/signal/test_signals_utils.c
+@@ -11,6 +11,8 @@
+ #include <linux/auxvec.h>
+ #include <ucontext.h>
+ 
++#include <kselftest.h>
 +
-+#include "test_signals_utils.h"
-+#include "testcases.h"
+ #include "test_signals.h"
+ #include "test_signals_utils.h"
+ #include "testcases/testcases.h"
+@@ -54,12 +56,18 @@ static void unblock_signal(int signum)
+ 
+ static void default_result(struct tdescr *td, bool force_exit)
+ {
+-	if (td->pass)
++	if (td->result == KSFT_SKIP) {
++		fprintf(stderr, "==>> completed. SKIP.\n");
++	} else if (td->pass) {
+ 		fprintf(stderr, "==>> completed. PASS(1)\n");
+-	else
++		td->result = KSFT_PASS;
++	} else {
+ 		fprintf(stdout, "==>> completed. FAIL(0)\n");
++		td->result = KSFT_FAIL;
++	}
 +
-+#include "mangle_pstate_invalid_mode_template.h"
+ 	if (force_exit)
+-		exit(td->pass ? EXIT_SUCCESS : EXIT_FAILURE);
++		exit(td->result);
+ }
+ 
+ /*
+@@ -211,7 +219,7 @@ static inline int default_trigger(struct tdescr *td)
+ 	return !raise(td->sig_trig);
+ }
+ 
+-static int test_init(struct tdescr *td)
++int test_init(struct tdescr *td)
+ {
+ 	td->minsigstksz = getauxval(AT_MINSIGSTKSZ);
+ 	if (!td->minsigstksz)
+@@ -224,8 +232,6 @@ static int test_init(struct tdescr *td)
+ 		 * Checking for CPU required features using both the
+ 		 * auxval and the arm64 MRS Emulation to read sysregs.
+ 		 */
+-		if (getauxval(AT_HWCAP) & HWCAP_SSBS)
+-			td->feats_supported |= FEAT_SSBS;
+ 		if (getauxval(AT_HWCAP) & HWCAP_CPUID) {
+ 			uint64_t val = 0;
+ 
+@@ -250,7 +256,14 @@ static int test_init(struct tdescr *td)
+ 						~td->feats_supported));
+ 	}
+ 
++	/* Perform test specific additional initialization */
++	if (td->init && !td->init(td)) {
++		fprintf(stderr, "FAILED Testcase initialization.\n");
++		return 0;
++	}
+ 	td->initialized = 1;
++	fprintf(stderr, "Testcase initialized.\n");
 +
-+DEFINE_TESTCASE_MANGLE_PSTATE_INVALID_MODE(1h);
-diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el1t.c b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el1t.c
-new file mode 100644
-index 000000000000..cc222d8a618a
---- /dev/null
-+++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el1t.c
-@@ -0,0 +1,15 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2019 ARM Limited
-+ *
-+ * Try to mangle the ucontext from inside a signal handler, toggling
-+ * the mode bit to escalate exception level: this attempt must be spotted
-+ * by Kernel and the test case is expected to be termninated via SEGV.
-+ */
-+
-+#include "test_signals_utils.h"
-+#include "testcases.h"
-+
-+#include "mangle_pstate_invalid_mode_template.h"
-+
-+DEFINE_TESTCASE_MANGLE_PSTATE_INVALID_MODE(1t);
-diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el2h.c b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el2h.c
-new file mode 100644
-index 000000000000..2188add7d28c
---- /dev/null
-+++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el2h.c
-@@ -0,0 +1,15 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2019 ARM Limited
-+ *
-+ * Try to mangle the ucontext from inside a signal handler, toggling
-+ * the mode bit to escalate exception level: this attempt must be spotted
-+ * by Kernel and the test case is expected to be termninated via SEGV.
-+ */
-+
-+#include "test_signals_utils.h"
-+#include "testcases.h"
-+
-+#include "mangle_pstate_invalid_mode_template.h"
-+
-+DEFINE_TESTCASE_MANGLE_PSTATE_INVALID_MODE(2h);
-diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el2t.c b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el2t.c
-new file mode 100644
-index 000000000000..df32dd5a479c
---- /dev/null
-+++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el2t.c
-@@ -0,0 +1,15 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2019 ARM Limited
-+ *
-+ * Try to mangle the ucontext from inside a signal handler, toggling
-+ * the mode bit to escalate exception level: this attempt must be spotted
-+ * by Kernel and the test case is expected to be termninated via SEGV.
-+ */
-+
-+#include "test_signals_utils.h"
-+#include "testcases.h"
-+
-+#include "mangle_pstate_invalid_mode_template.h"
-+
-+DEFINE_TESTCASE_MANGLE_PSTATE_INVALID_MODE(2t);
-diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el3h.c b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el3h.c
-new file mode 100644
-index 000000000000..9e6829b7e5db
---- /dev/null
-+++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el3h.c
-@@ -0,0 +1,15 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2019 ARM Limited
-+ *
-+ * Try to mangle the ucontext from inside a signal handler, toggling
-+ * the mode bit to escalate exception level: this attempt must be spotted
-+ * by Kernel and the test case is expected to be termninated via SEGV.
-+ */
-+
-+#include "test_signals_utils.h"
-+#include "testcases.h"
-+
-+#include "mangle_pstate_invalid_mode_template.h"
-+
-+DEFINE_TESTCASE_MANGLE_PSTATE_INVALID_MODE(3h);
-diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el3t.c b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el3t.c
-new file mode 100644
-index 000000000000..5685a4f10d06
---- /dev/null
-+++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el3t.c
-@@ -0,0 +1,15 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2019 ARM Limited
-+ *
-+ * Try to mangle the ucontext from inside a signal handler, toggling
-+ * the mode bit to escalate exception level: this attempt must be spotted
-+ * by Kernel and the test case is expected to be termninated via SEGV.
-+ */
-+
-+#include "test_signals_utils.h"
-+#include "testcases.h"
-+
-+#include "mangle_pstate_invalid_mode_template.h"
-+
-+DEFINE_TESTCASE_MANGLE_PSTATE_INVALID_MODE(3t);
-diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_template.h b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_template.h
-new file mode 100644
-index 000000000000..f5bf1804d858
---- /dev/null
-+++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_template.h
-@@ -0,0 +1,28 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (C) 2019 ARM Limited
-+ *
-+ * Utility macro to ease definition of testcases toggling mode EL
-+ */
-+
-+#define DEFINE_TESTCASE_MANGLE_PSTATE_INVALID_MODE(_mode)		\
-+									\
-+static int mangle_invalid_pstate_run(struct tdescr *td, siginfo_t *si,	\
-+				     ucontext_t *uc)			\
-+{									\
-+	ASSERT_GOOD_CONTEXT(uc);					\
-+									\
-+	uc->uc_mcontext.pstate &= ~PSR_MODE_MASK;			\
-+	uc->uc_mcontext.pstate |= PSR_MODE_EL ## _mode;			\
-+									\
-+	return 1;							\
-+}									\
-+									\
-+struct tdescr tde = {							\
-+		.sanity_disabled = true,				\
-+		.name = "MANGLE_PSTATE_INVALID_MODE_EL"#_mode,		\
-+		.descr = "Mangling uc_mcontext INVALID MODE EL"#_mode,	\
-+		.sig_trig = SIGUSR1,					\
-+		.sig_ok = SIGSEGV,					\
-+		.run = mangle_invalid_pstate_run,			\
-+}
+ 	return 1;
+ }
+ 
+@@ -262,9 +275,8 @@ int test_setup(struct tdescr *td)
+ 	assert(td->name);
+ 	assert(td->run);
+ 
+-	if (!test_init(td))
+-		return 0;
+-
++	/* Default result is FAIL if test setup fails */
++	td->result = KSFT_FAIL;
+ 	if (td->setup)
+ 		return td->setup(td);
+ 	else
+@@ -285,7 +297,7 @@ int test_run(struct tdescr *td)
+ 
+ void test_result(struct tdescr *td)
+ {
+-	if (td->check_result)
++	if (td->initialized && td->result != KSFT_SKIP && td->check_result)
+ 		td->check_result(td);
+ 	default_result(td, 0);
+ }
+diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.h b/tools/testing/selftests/arm64/signal/test_signals_utils.h
+index 47a7592b7c53..5e3a2b7aaa8b 100644
+--- a/tools/testing/selftests/arm64/signal/test_signals_utils.h
++++ b/tools/testing/selftests/arm64/signal/test_signals_utils.h
+@@ -6,6 +6,7 @@
+ 
+ #include "test_signals.h"
+ 
++int test_init(struct tdescr *td);
+ int test_setup(struct tdescr *td);
+ void test_cleanup(struct tdescr *td);
+ int test_run(struct tdescr *td);
 -- 
 2.17.1
 
