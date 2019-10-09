@@ -2,117 +2,134 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4BFCD0837
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 09:25:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFCCBD0841
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 09:30:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9so9G4YOlNW+X34azzmfilidhm5cYJ63OXtc/Qw01RI=; b=EJLrOQMpPw3HZ9
-	b7pMWSOZ6CvotSO0e5zMyTxNDyiaKNtM+7Qirfk9SVdog5L/NxU+dffM1OtzHZk7wkl4+lrd7A2lQ
-	fM6sIxPncimmgBCbZrt4rVRuR2zoTztF9FlnAin+Y97hr9ttT0llisKfOvv8WH7kgt7CGIfFpbLnI
-	RKcCL1e2UD0D2RJFlz5cTf9Wg48Aek4K66a2lQdMTbYt4VkyccA9pCKi9sc2/QGdJ/alSsvXRwvQT
-	NDsgVMkG+Uiw1n+xbSZFlC0Mb3E4bmCRZe8yOKbkmSGKpYrLlY1NEQqrCOKN9F9z4usR2krJ5pVZD
-	ThcGzV0cBo494zHcCJnw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Gr1xJ4N85WOEQD/diV8Vzue4px32lfJAEFTFQeOTMfE=; b=T2I7+o/0Jiq39A
+	po53+Z30LkWdeImq2SgbU2xQC+9pHgDMmxhWmhzkFKSYa/30WyJCyu98lsvb/GfhTePLRfLaLldk6
+	nd8qOMrJnRwnKD5xCv+VjzTKtr1h6kqmto6yWZN0rkbMMhLAPFgDdIjYJ+Ua8SYnQMRKj0yZv9tMb
+	FJhXWfpOAZ6afsX+pF5dgUMyhRBwgBYwARauSVBf6iffTyWOoH1SmbXew5j06ghRqXLcyebGgD3g6
+	glpi6lHFdqFHKT9pxBqPUyROQAtohXRh78sT9i7BEv7VfTxjcVc6m4Lt7LtUZDuceLKzTA5beZw+e
+	+uUYEkiMZbKCiXxnvu1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI6LR-0000WT-Qt; Wed, 09 Oct 2019 07:25:13 +0000
-Received: from mail-eopbgr40086.outbound.protection.outlook.com ([40.107.4.86]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1iI6QI-00034W-Ed; Wed, 09 Oct 2019 07:30:14 +0000
+Received: from mail-eopbgr780049.outbound.protection.outlook.com
+ ([40.107.78.49] helo=NAM03-BY2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI6LE-0000E7-SO
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 07:25:02 +0000
+ id 1iI6QA-0002JX-3t
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 07:30:07 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Cr9KWL263gj1td/HAvG7DfIFlvNZKL7of/9qzmMNDqQzQupAHcaFe8zvqaIN/VvFfiNVqXCR/cduemPoywLdYgiUn4U0yBhD2vXslOosL1gH8jc6pBMAQJEAVIg7KHpZ91wsI5kIPUMRnHbjoKtvBn/lKSRT692ZaIKseK1NOFAo6dTPEVxczSEe7sUa/GGVMmiOREQpdyGSYWHZDlrq62qODM1AiWaA0Z8yZXb/v7E0tckMwf0KFpKN63XFho58AU16iD0981TRxbnJREbgu6RgYcYFajTHiKw32RS2oFEzlbLjwgkb+Cr9FkVZNuz9807wmzdDb2lkHayZLvnmUg==
+ b=PWowcD8RCgSWzcYRfvS8Hh3SRIcycaIeJ33BxK2nm/OK/6aGVNyJtPZDe1QB6PC/wvt8UR19t0HETp5ODbqdn3QwDkYfGdiaaHcm4hmKO9adyyAdgt+zWoSTkFgaY89e0hJObaqFORGpYoXiKirI3/ffBJjYMhvSS8fN4BpfG2f1ss7jzHLSiYUmM7nExhB8TkcMmTb99lvPH43y6TFBbSgOAQ9JjvGjUo2HaPaF8rOqzIETI7e8gZWt/XQF77JLK79+JxaTu3fYO186T22tHiOSWxNeQxCYehcByc7Wjuv1o4p2u1IkVz2h2nlnz4vyHD0gc3BV90npVLIxoJQSmQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+D4VemOl8zbTrxjn5xxqR6F9Y/HxysiEFcNy7JlWvm0=;
- b=jYqUoHdYgHOclzGtD1KqwxBcZk/RTiBneoSKt4Xlhsv2eB8MA8qO4Zr2j5R2rYivlFZhDMUy+KhdSLuC3KTr+slDu5scumoCn9j9ptIzLLOehrWtc32YChOMUG1CKqioZvMD01jNyaECQyIxPBc9Wx5fMGQVOi51rYuGCtPtXCMKgVages1HaA5PHkYY8Vzta7LDEE2byFSHPE4cAdypF269GvvQ7VB14UAfXN8Q85PzdGgqcwQef7YZp0xHPXisACJd2eBCk3qJwvoT5RzizyFIe/kUQsURruaaM10V6r426C8PGFv73Ua7MIfXenzDpxuWr7yl3myWD7Axw1Zz0g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ bh=+bZJNYOv4ZWN2g4MNLRnnY+3/fHW4Oofm0sv58wwsZM=;
+ b=FosU3JqIjNYFQsjOPdnL4P1H1m310yn9KXi50ZAc4PatqM5nDtUkDaM281wQCIjJ9otFN0UhVJCLmZ/M6JKgyWizenPj1H+yotN5G/Hc5SHIEy2BkGYmnvcHYr7AkIUjIC2egtTjaZGJ40ssb2F4rrBNFBhN5m3J4Dxj4Vts6KCA9KW0vGhvLx78yq4hGSb02XHXjtv0pAiVx4PvhEJtQ40ytv2HxjGizCnw1EQP4yVVllXAbeUjK7dJqxrOqzGL+0TRpQ0SNEHrrQ9sFovNCP+HBhCywLlmQboLYI6B1jBrS9MdQq9cyOYT40NgV/pxR9OWvv+4yS505MMEJo+XLQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+D4VemOl8zbTrxjn5xxqR6F9Y/HxysiEFcNy7JlWvm0=;
- b=ChQMkiwK7mQaxQeSvy6bs5leTW2ELdolHp7Ix47q5G9a0HsXcE+fK77hrPPhB1oK0rxW0BsthsEoVnBqZdoH2CWQCP3Pa2moZzaDzR9g8h1xfYSm+MjlvCg3HtFlsN7pOCl7n8xcoiIpL/4aq3yuipBmrwR4yZjeHuS9Fh6IuMs=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3692.eurprd04.prod.outlook.com (52.134.65.15) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2347.16; Wed, 9 Oct 2019 07:24:57 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::d469:ad51:2bec:19f0]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::d469:ad51:2bec:19f0%6]) with mapi id 15.20.2347.016; Wed, 9 Oct 2019
- 07:24:57 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: =?utf-8?B?VXdlIEtsZWluZS1Lw7ZuaWc=?= <u.kleine-koenig@pengutronix.de>
-Subject: RE: [PATCH] tty: serial: imx: Only get second/third IRQ when there is
- more than one IRQ
-Thread-Topic: [PATCH] tty: serial: imx: Only get second/third IRQ when there
- is more than one IRQ
-Thread-Index: AQHVfmm1cibywjMA5UifVvn4HL9DWadR35+AgAAA6hCAAATlgIAAAf4g
-Date: Wed, 9 Oct 2019 07:24:57 +0000
-Message-ID: <DB3PR0402MB39161E02A9D042948B71FDCDF5950@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1570601911-9162-1-git-send-email-Anson.Huang@nxp.com>
- <20191009065315.wgdvmkv6skteyul4@pengutronix.de>
- <DB3PR0402MB39165F9CE876772F8F94F187F5950@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <20191009071403.ugd2wuac6ue5zsd6@pengutronix.de>
-In-Reply-To: <20191009071403.ugd2wuac6ue5zsd6@pengutronix.de>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: a3bbfc24-c19a-419e-16dd-08d74c89c9ac
-x-ms-office365-filtering-ht: Tenant
-x-ms-traffictypediagnostic: DB3PR0402MB3692:|DB3PR0402MB3692:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB36929626F0D091ADB3D10C54F5950@DB3PR0402MB3692.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 018577E36E
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(396003)(39860400002)(136003)(376002)(366004)(189003)(199004)(99286004)(5660300002)(14454004)(66066001)(2906002)(66946007)(186003)(66476007)(66556008)(64756008)(478600001)(66446008)(6506007)(71200400001)(76176011)(7696005)(102836004)(6116002)(3846002)(76116006)(54906003)(71190400001)(33656002)(52536014)(316002)(26005)(6916009)(256004)(8676002)(8936002)(81166006)(44832011)(11346002)(476003)(86362001)(81156014)(446003)(6246003)(7736002)(25786009)(229853002)(4326008)(486006)(74316002)(7416002)(9686003)(6436002)(305945005)(55016002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3692;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: TKLWHkE5vK+2V3eeOWj+Y9I6Q9zwY3oDHZou1rh/y6mAf7w6u49y6frOCRL/FLKUDegrnHlE1qauRnZJR5ZF1oPH93sNDH0zgEv4LqFIOEBDA5sj8F2lvNoFIvv1jzLQa0NW8whuIquM03zuY5OMWPcf+80S3KCjP/IGVcN/qbFqY4ZxLajJHi05t8hllR878V/nVs1Erl+GBbyTOqUVT9njouf9VJi/k8NGz1k2iHAe952/xZvc9DhclpRg1MH03gRbmMRI/UrcG80MmI0lzjZCwkzF8q0FAw5DJSEAxrPL0kmts6XeJljxRsPDdFWv4ANCDeL8DOtGSAqfSV+e3MMZEizSNqkOlauLuqB6sPA1lGA5996VZggiXP2f/JlQmutK+w7K4Cq1SzR7+aX288E1gQeZzzfg2zQyK54RH8M=
+ bh=+bZJNYOv4ZWN2g4MNLRnnY+3/fHW4Oofm0sv58wwsZM=;
+ b=SGf2BAV1yQ3pJhHfEN0KyNR7e2uCgD2oP0giXC8wFXyzudAM9uv9T0Jv+J1y2m3HlhC6YdzcKEmOtpTitONOxLeKgUgs/QoIa1coPkqHJXTYxPerzJ8nnCIcH8+skyENYxrNCQLYwY7NOk6AaKHsUtW1xGu4WqkRqyP48MnmV88=
+Received: from SN4PR0201CA0052.namprd02.prod.outlook.com
+ (2603:10b6:803:20::14) by BN6PR02MB2770.namprd02.prod.outlook.com
+ (2603:10b6:404:102::9) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2347.16; Wed, 9 Oct
+ 2019 07:30:02 +0000
+Received: from BL2NAM02FT016.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e46::202) by SN4PR0201CA0052.outlook.office365.com
+ (2603:10b6:803:20::14) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2347.16 via Frontend
+ Transport; Wed, 9 Oct 2019 07:30:02 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
+ header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ BL2NAM02FT016.mail.protection.outlook.com (10.152.77.171) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2327.21
+ via Frontend Transport; Wed, 9 Oct 2019 07:30:01 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
+ (envelope-from <appana.durga.rao@xilinx.com>)
+ id 1iI6Q5-00066D-2e; Wed, 09 Oct 2019 00:30:01 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <appana.durga.rao@xilinx.com>)
+ id 1iI6Pz-0005Um-Vg; Wed, 09 Oct 2019 00:29:56 -0700
+Received: from xsj-pvapsmtp01 (mailhub.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x997TqvY018594; 
+ Wed, 9 Oct 2019 00:29:52 -0700
+Received: from [10.140.6.6] (helo=xhdappanad40.xilinx.com)
+ by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <appana.durga.rao@xilinx.com>)
+ id 1iI6Pv-0005UH-RI; Wed, 09 Oct 2019 00:29:52 -0700
+From: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>
+To: wg@grandegger.com, mkl@pengutronix.de, davem@davemloft.net,
+ michal.simek@xilinx.com, anssi.hannula@bitwise.fi
+Subject: [PATCH] net: can: xilinx_can: Fix flags field initialization for axi
+ can
+Date: Wed,  9 Oct 2019 12:59:47 +0530
+Message-Id: <1570606187-30935-1-git-send-email-appana.durga.rao@xilinx.com>
+X-Mailer: git-send-email 2.7.4
+X-RCIS-Action: ALLOW
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(346002)(376002)(396003)(136003)(199004)(189003)(478600001)(47776003)(16586007)(106002)(51416003)(8676002)(70586007)(7696005)(70206006)(48376002)(2906002)(81166006)(316002)(81156014)(26005)(5660300002)(8936002)(14444005)(36386004)(186003)(50226002)(4744005)(356004)(6666004)(9786002)(2616005)(4326008)(107886003)(50466002)(486006)(305945005)(126002)(36756003)(336012)(426003)(476003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BN6PR02MB2770; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; MX:1; 
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a3bbfc24-c19a-419e-16dd-08d74c89c9ac
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Oct 2019 07:24:57.3123 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 8Ja/5rKDe0atfYpuIYXBh+yS/n/PIkDVtd6T7hTRDDW2/Tc8MOYvRPH3W4udiYFIri2S77k31kHr7FxmyYXstw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3692
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 363b656d-5d7d-4d56-d93c-08d74c8a7f28
+X-MS-TrafficTypeDiagnostic: BN6PR02MB2770:
+X-Microsoft-Antispam-PRVS: <BN6PR02MB2770D55D9A90CA5A52E0A83DDC950@BN6PR02MB2770.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:3513;
+X-Forefront-PRVS: 018577E36E
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: kHclkjCRrwJZM2V9wym+7+IPRhl49at1R8/JP+Bs73f1k6OwiK1l0TmL6qKJhE2dfrwDKx/gAyxMws3NYaVaeGS9Tb0BKbD/EfDmJ2qPo3SPscN22pZMPuWjIq1jKUQJAREoYk4MChGMrpAL4goekVRNpRFcS6iUABhNHb7Qf2qua5caWT1o75K7kiF0AxS1pP3SY24j5jQr7j9lWEK2/bOFLZNvuYbvz1yGqjrdzheVgS8EhfceAMTn0dgk4i3W5vBpVN0uCp4vycJ/f7+tYgor3LKFpMoazqm+CWbDSH2ZLUQ3i6Oj286TVAkV6yMXgD0oXi5kmI8dmd8Rf1XRN2OI5OhNEqd3UTVSqWix7YZvQxDkYoMsPCN0ARWYdRletgaocg1Ge5XLMb1SSRh0j5CMeQSlqgg/gl0ZXp65ko4=
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Oct 2019 07:30:01.7054 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 363b656d-5d7d-4d56-d93c-08d74c8a7f28
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN6PR02MB2770
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_002500_917035_95639738 
-X-CRM114-Status: GOOD (  30.44  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191009_003006_167123_0DA91F83 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 2.4 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.86 listed in list.dnswl.org]
+ no trust [40.107.78.49 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 2.4 AC_FROM_MANY_DOTS      Multiple periods in From user name
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,109 +141,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "festevam@gmail.com" <festevam@gmail.com>,
- "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "Rafael J.
- Wysocki" <rafael.j.wysocki@intel.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>,
- Andy Shevchenko <andy.shevchenko@gmail.com>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "jslaby@suse.com" <jslaby@suse.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: netdev@vger.kernel.org,
+ Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-can@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Uwe
+AXI CANIP doesn't support tx fifo empty interrupt feature(TXFEMP),
+update the flags filed in the driver for AXI CAN case accordingly.
 
-> On Wed, Oct 09, 2019 at 06:58:24AM +0000, Anson Huang wrote:
-> > > On Wed, Oct 09, 2019 at 02:18:31PM +0800, Anson Huang wrote:
-> > > > All i.MX SoCs except i.MX1 have ONLY 1 IRQ, so it is better to
-> > > > check the IRQ count before getting second/third IRQ to avoid below
-> > > > error message during probe:
-> > > >
-> > > > [    0.726219] imx-uart 30860000.serial: IRQ index 1 not found
-> > > > [    0.731329] imx-uart 30860000.serial: IRQ index 2 not found
-> > >
-> > > This message was introduced in commit
-> > > 7723f4c5ecdb8d832f049f8483beb0d1081cedf6 for 5.4-rc1. I added the
-> > > involved people to the recipents of this mail.
-> >
-> > Yes, I noticed this, thanks.
-> >
-> > >
-> > > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > > > ---
-> > > >  drivers/tty/serial/imx.c | 13 +++++++++++--
-> > > >  1 file changed, 11 insertions(+), 2 deletions(-)
-> > > >
-> > > > diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx.c
-> > > > index
-> > > > 504d81c..081fa82 100644
-> > > > --- a/drivers/tty/serial/imx.c
-> > > > +++ b/drivers/tty/serial/imx.c
-> > > > @@ -2198,6 +2198,7 @@ static int imx_uart_probe(struct
-> > > > platform_device
-> > > *pdev)
-> > > >  	u32 ucr1;
-> > > >  	struct resource *res;
-> > > >  	int txirq, rxirq, rtsirq;
-> > > > +	int irq_count;
-> > > >
-> > > >  	sport = devm_kzalloc(&pdev->dev, sizeof(*sport), GFP_KERNEL);
-> > > >  	if (!sport)
-> > > > @@ -2220,9 +2221,17 @@ static int imx_uart_probe(struct
-> > > platform_device *pdev)
-> > > >  	if (IS_ERR(base))
-> > > >  		return PTR_ERR(base);
-> > > >
-> > > > +	irq_count = platform_irq_count(pdev);
-> > > > +	if (irq_count < 0)
-> > > > +		return irq_count;
-> > > > +
-> > > >  	rxirq = platform_get_irq(pdev, 0);
-> > > > -	txirq = platform_get_irq(pdev, 1);
-> > > > -	rtsirq = platform_get_irq(pdev, 2);
-> > > > +	if (irq_count > 1) {
-> > > > +		txirq = platform_get_irq(pdev, 1);
-> > > > +		rtsirq = platform_get_irq(pdev, 2);
-> > > > +	} else {
-> > > > +		txirq = rtsirq = -ENXIO;
-> > > > +	}
-> > >
-> > > The patch is fine given the changed behaviour of platform_get_irq. I
-> > > wonder if it is sensible to introduce a variant of platform_get_irq
-> > > (say
-> > > platform_get_irq_nowarn) that behaves like __platform_get_irq does t
-> > > Then the imx driver would just call platform_get_irq_nowarn without
-> > > having to check the number of available irqs first.
-> >
-> > Agreed, it would be nice if we can fix this from the API level, this
-> > is to save many patches from various drivers side, let me know if
-> > agreement is reached and I will do the patch.
-> 
-> I wouldn't expect that most callers actually want an error message and so
-> these need a different patch (i.e. dropping the error message by the caller).
-> This type of patch is fine and the normal load when something is
-> consolidated.
-> 
-> Which other drivers do you have on your radar that don't want an error
-> message if platform_get_irq() fails?
+Fixes: 3281b380ec9f ("can: xilinx_can: Fix flags field initialization for axi can and canps")
+Reported-by: Anssi Hannula <anssi.hannula@bitwise.fi>
+Signed-off-by: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>
+---
+ drivers/net/can/xilinx_can.c | 1 -
+ 1 file changed, 1 deletion(-)
 
-I did NOT mean drivers don't want an error when getting irq failed, but I just
-agree that introducing another API with nowarn as you mentioned upper, then
-i.MX driver can call it. For now, the FEC driver also have many such error message,
-we will fix later.
+diff --git a/drivers/net/can/xilinx_can.c b/drivers/net/can/xilinx_can.c
+index 911b34316c9d..7c482b2d78d2 100644
+--- a/drivers/net/can/xilinx_can.c
++++ b/drivers/net/can/xilinx_can.c
+@@ -1599,7 +1599,6 @@ static const struct xcan_devtype_data xcan_zynq_data = {
+ 
+ static const struct xcan_devtype_data xcan_axi_data = {
+ 	.cantype = XAXI_CAN,
+-	.flags = XCAN_FLAG_TXFEMP,
+ 	.bittiming_const = &xcan_bittiming_const,
+ 	.btr_ts2_shift = XCAN_BTR_TS2_SHIFT,
+ 	.btr_sjw_shift = XCAN_BTR_SJW_SHIFT,
+-- 
+2.7.4
 
-So if the API with nowarn is added, then I can change the API call in some i.MX driver
-instead of getting irq_count first. Do you think I should add the nowarn API and redo
-this patch to call it? 
 
-Anson
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
