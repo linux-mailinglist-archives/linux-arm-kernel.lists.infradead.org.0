@@ -2,93 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C73DCD08B8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 09:46:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2F37D08BF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  9 Oct 2019 09:47:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qXd9girBxi4JoDTepomh1w5rK9u71JDU+iymCY18OSI=; b=GFfXqfyMaswJpi
-	yIQwSaPvfkZBieGiknnXxadRgSB3F6aJTFqtyK3UqRdKd4oGCAvqrIRvB3+D94Gd3SpgFgH8BCBe7
-	DWIejRbqK/jqgYI/1yZQa6sifRKyHYahX89Rpny2JTSw0YJfL9uvY/gIyuVM3IdPP9O83IBiv9HFP
-	6LTURLnzB23qMM2/4BLc0MgQRfXzHv3QpWqX/TGCVAiUpBZgfs/fZaU7qEhNO2fuTYiZYAHa/UlOM
-	zNCdsFNajwxgwcquEDsNXsbkV28P9csY7HljPq4U5f0uKV9/W6RFzkr0peeIjbADU8TQH0eDJHRlV
-	uSZ73zWKuJFzFF3VAXHA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Q5gx6X3NogeGp5oG0IH1bNgRtaG2ElHFsTSnGDyqPRs=; b=e5IlR7GxZH0pTH/9+JyDGeteh
+	4CBOFk9CPWLSYTQc2DR30sAVNf7yvw02ixS+sfT3rVZGHnlVWiQ1bdbSfFs/2rzVvhvv8YP7PeZNs
+	9A/Xo09Ixkg2peaTWPFWNTvpXAvrV6qyJIFhryvP/na4+wt+f5t1m+yNzlRt7rNOJOn2oVZN3iFd2
+	zBy37g90ns0XQyHD8L57k5F7YGsojq3CuJGOglENW9ywn86oHFlOxHaZiq+0TdWpkQK9t99HXO+hi
+	9er4GfOGT3cqUzsAOvOlAF/rkgPLSMwXvyKO6EvL8dSg/XKJ2dNbPiwoIPbJ0qtDzzxGjbAGLkOs4
+	mx1BeJjiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI6gN-0003FF-SP; Wed, 09 Oct 2019 07:46:51 +0000
-Received: from esa3.microchip.iphmx.com ([68.232.153.233])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI6gA-0003Dd-S9
- for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 07:46:41 +0000
-Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
- Ludovic.Desroches@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="Ludovic.Desroches@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa3.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa3.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: 8v0tdMs3LlvQuSHU7rzAWhRtWIVlotOUQ8ditN56wCSdkOVwSWrpH6xpRpB5o4IFGvwz2oQWnn
- IIj3G65C0gTbgnRV+douGVZvsSs5albruElzTe2OAUWUZNsguLdlc6PBeICA8q2ZCy5PBDKLNx
- 3yOjtw6tAsg6bPGLyfJ2eavi13JhfaL84i8Mm82sgjZXzkv5jwHGouLGCzuHKtkV4ax2cf8mWS
- RojiYrUy9JaS7J+XD+q6QhVZetGADXwhPxHErHQ8eotSGUrP2WfzIOigipksHTLSF+468tjMif
- Xxk=
-X-IronPort-AV: E=Sophos;i="5.67,273,1566889200"; d="scan'208";a="52257068"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 09 Oct 2019 00:46:36 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 9 Oct 2019 00:46:33 -0700
-Received: from localhost (10.10.85.251) by chn-vm-ex03.mchp-main.com
- (10.10.85.151) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
- Transport; Wed, 9 Oct 2019 00:46:33 -0700
-Date: Wed, 9 Oct 2019 09:46:42 +0200
-From: Ludovic Desroches <ludovic.desroches@microchip.com>
-To: Markus Elfring <Markus.Elfring@web.de>
-Subject: Re: [PATCH] dmaengine: at_xdmac: Use
- devm_platform_ioremap_resource() in at_xdmac_probe()
-Message-ID: <20191009074641.taocxbrs2vodvsgm@M43218.corp.atmel.com>
-Mail-Followup-To: Markus Elfring <Markus.Elfring@web.de>,
- dmaengine@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Dan Williams <dan.j.williams@intel.com>,
- Vinod Koul <vkoul@kernel.org>, LKML <linux-kernel@vger.kernel.org>,
- kernel-janitors@vger.kernel.org,
- Nicolas Ferre <nicolas.ferre@atmel.com>
-References: <377247f3-b53a-a9d9-66c7-4b8515de3809@web.de>
+	id 1iI6h3-0003qH-9P; Wed, 09 Oct 2019 07:47:33 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iI6gN-0003K2-3W
+ for linux-arm-kernel@lists.infradead.org; Wed, 09 Oct 2019 07:46:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3383A1000;
+ Wed,  9 Oct 2019 00:46:48 -0700 (PDT)
+Received: from [10.37.8.60] (unknown [10.37.8.60])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2ADE03F68E;
+ Wed,  9 Oct 2019 00:46:47 -0700 (PDT)
+Subject: Re: [PATCH v7 02/11] kselftest: arm64:
+ mangle_pstate_invalid_compat_toggle and common utils
+To: Dave Martin <Dave.Martin@arm.com>
+References: <20191007182954.25730-1-cristian.marussi@arm.com>
+ <20191007182954.25730-3-cristian.marussi@arm.com>
+ <20191008180119.GZ27757@arm.com>
+From: Cristian Marussi <cristian.marussi@arm.com>
+Message-ID: <51cb947d-c477-f378-8457-34b7e807d6cc@arm.com>
+Date: Wed, 9 Oct 2019 08:47:22 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <377247f3-b53a-a9d9-66c7-4b8515de3809@web.de>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <20191008180119.GZ27757@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_004638_915350_339553AC 
-X-CRM114-Status: GOOD (  15.33  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191009_004651_263651_374DD322 
+X-CRM114-Status: GOOD (  14.28  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.153.233 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -102,62 +64,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nicolas Ferre <nicolas.ferre@atmel.com>, kernel-janitors@vger.kernel.org,
- LKML <linux-kernel@vger.kernel.org>, Vinod Koul <vkoul@kernel.org>,
- dmaengine@vger.kernel.org, Dan
- Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Sep 22, 2019 at 10:48:20AM +0200, Markus Elfring wrote:
-> 
-> From: Markus Elfring <elfring@users.sourceforge.net>
-> Date: Sun, 22 Sep 2019 10:37:31 +0200
-> 
-> Simplify this function implementation by using a known wrapper function.
-> 
-> This issue was detected by using the Coccinelle software.
-> 
-> Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
-Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com> 
 
-Thanks
 
-> ---
->  drivers/dma/at_xdmac.c | 7 +------
->  1 file changed, 1 insertion(+), 6 deletions(-)
+On 10/8/19 7:01 PM, Dave Martin wrote:
+> On Mon, Oct 07, 2019 at 07:29:45pm +0100, Cristian Marussi wrote:
+>> Add some arm64/signal specific boilerplate and utility code to help
+>> further testcases' development.
+>>
+>> Introduce also one simple testcase mangle_pstate_invalid_compat_toggle
+>> and some related helpers: it is a simple mangle testcase which messes
+>> with the ucontext_t from within the signal handler, trying to toggle
+>> PSTATE state bits to switch the system between 32bit/64bit execution
+>> state. Expects SIGSEGV on test PASS.
+>>
+>> Reviewed-by: Dave Martin <Dave.Martin@arm.com>
+>> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+>> ---
+>> v6 --> v7
+>> - removed ambiguos fprintf in test_init
+>> - fixed spacing
 > 
-> diff --git a/drivers/dma/at_xdmac.c b/drivers/dma/at_xdmac.c
-> index b58ac720d9a1..f71c9f77d405 100644
-> --- a/drivers/dma/at_xdmac.c
-> +++ b/drivers/dma/at_xdmac.c
-> @@ -1957,21 +1957,16 @@ static int atmel_xdmac_resume(struct device *dev)
+> [...]
 > 
->  static int at_xdmac_probe(struct platform_device *pdev)
->  {
-> -	struct resource	*res;
->  	struct at_xdmac	*atxdmac;
->  	int		irq, size, nr_channels, i, ret;
->  	void __iomem	*base;
->  	u32		reg;
+>> diff --git a/tools/testing/selftests/arm64/signal/test_signals.h b/tools/testing/selftests/arm64/signal/test_signals.h
 > 
-> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	if (!res)
-> -		return -EINVAL;
-> -
->  	irq = platform_get_irq(pdev, 0);
->  	if (irq < 0)
->  		return irq;
+> [...]
 > 
-> -	base = devm_ioremap_resource(&pdev->dev, res);
-> +	base = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(base))
->  		return PTR_ERR(base);
+>> +/* Local Helpers */
+>> +#define ID_AA64MMFR1_EL1_PAN_SUPPORTED(val) \
+>> +	(!!((val) & (0xfUL << ID_AA64MMFR1_PAN_SHIFT)))
+>> +#define ID_AA64MMFR2_EL1_UAO_SUPPORTED(val) \
+>> +	(!!((val) & (0xfUL << ID_AA64MMFR2_UAO_SHIFT)))
+>> +
+>> +#define SSBS_SYSREG		S3_3_C4_C2_6	/* EL0 supported */
 > 
-> --
-> 2.23.0
+> Does anything in the series still use SSBS_SYSREG?
+> 
+> If not, please drop it.  No need to remove my Reviewed-by just for thato
+> change.
+> 
+
+Ok I'll remove all the SSBS refs, even related to capabilities check at
+test init.
+
+Cristian
+> [...]
+> 
+> Cheers
+> ---Dave
 > 
 
 _______________________________________________
