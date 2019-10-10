@@ -2,72 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 805FED322F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 22:39:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 101DDD3226
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 22:35:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tchGaDar5AKrYBrY0eTD46GOsxtxxzbrtxxUUdTXUMU=; b=DQBOHV7PAYNYgI
-	QpTR6Zz+ErwQn20R4KkI+I5G2KJvLglD6gL1AXuw72i2bv+46WEZsKLYRyDGAruKlgvFu++PdUnzP
-	CeLeaegu1HAUqEEMFh3NKEcIqXzqngRybUKDDtfWSErDvKFyplqgUfuwiphLKOFo2Rk0FFdyjC3v8
-	YRbyZ2ZHHVwrXeZkgUqV93vjqCqwzDWkR3ZS+sCw9e9Cow/SqlQMAl01qLZNqFIuxrPwz7+03LIdn
-	nhfIIzC+KXuqzMXhB+Sb4we+aSGEl/xq9CSB/wa4a36ZP+P3q1hpCd/k/LxQwMNbwF2+hATIRJcNj
-	FyK9LBMIPKm+JxSKdRkw==;
+	List-Owner; bh=YcFC2UJnNGAMpoGtJMjCIrJ0eAExPEOKhq7mp6kABg8=; b=qvmABf1ZGafR2E
+	oL58CvbAsLqisNP9qkMEYfPSgWmgijvXF2ciR7jxiHj63upMtT5UN36K7mMIqgpTPq6TNNHWsyygA
+	XnZ4+46bpiYgThNYQskG3bJWQ+x1Xgm9GCQkvGZaviX4quOHpwF9wex7Hnm6XGTiIJzFPgg+A0hTT
+	Q/N/PaouXGwearISm8FWZNeUy6R9TUrzaMgarInzZCEO69ykc01pG5688gHUOS3V722JBFpDJpzEe
+	g79YaXbazswU7FD8PU5eeSxS0C0FUUeHmCmAk4HmIZQNPcvqeXbAoX0lG0cxNHRvSI7yECEvmFJjl
+	sHSW/r0HeTuMJvROf7oA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIfDy-0007U9-8a; Thu, 10 Oct 2019 20:39:50 +0000
-Received: from mout.kundenserver.de ([212.227.126.133])
+	id 1iIf9d-0004nO-PU; Thu, 10 Oct 2019 20:35:21 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIfDn-0007TR-DI
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 20:39:41 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue012 [212.227.15.129]) with ESMTPA (Nemesis) id
- 1MEUaQ-1iKKzT1KnK-00FzQO; Thu, 10 Oct 2019 22:39:37 +0200
-From: Arnd Bergmann <arnd@arndb.de>
-To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Andi Shyti <andi@etezian.org>, Mark Brown <broonie@kernel.org>
-Subject: [PATCH 13/36] ARM: s3c: move regs-spi.h into spi driver
-Date: Thu, 10 Oct 2019 22:29:57 +0200
-Message-Id: <20191010203043.1241612-13-arnd@arndb.de>
-X-Mailer: git-send-email 2.20.0
-In-Reply-To: <20191010203043.1241612-1-arnd@arndb.de>
-References: <20191010202802.1132272-1-arnd@arndb.de>
- <20191010203043.1241612-1-arnd@arndb.de>
+ id 1iIf9T-0004Hf-M2
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 20:35:13 +0000
+Received: by mail-io1-xd43.google.com with SMTP id z19so16841451ior.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 10 Oct 2019 13:35:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=W1/9QJG4pjVBrrn3zHe8qFCFDPZRCmy94luAnBpQV9c=;
+ b=h8OGTc/IGyySJsfvXmqllpfwmMYHYPGG+nnyaFtoSyNDvPyi19WroPBitkYqnYMWTK
+ g23tq5iF2ebYjkDhQtdlxVzKDKu2INp0AGh/7vIgNZg+ixG72pd+Xz5q53s15OHlCV8/
+ Scr36dNxJ5eE12Bl49+TqiPj1rt0eolpawMFeOBCwNGZLja0nAqhzDdbK9v8fiAw19sM
+ BLKXIKVFBv6S9cN6trIpb8OUgAznsrBPt9wu4mFZgIyBvI19pOjpZcPwiRRV7oEK2ex4
+ y1ieM8l8CbkV9Fz2yJW2rw2rb7gKNPAOqZwMKt29I4aXI6uyqHMHU/2WRIE6qqo2vK6P
+ rivA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=W1/9QJG4pjVBrrn3zHe8qFCFDPZRCmy94luAnBpQV9c=;
+ b=qM5cBDPCtS7nHvKJ76OvjOYNfuHXNmW39Kj7e5mCtsEkwY4vaw20qZhexMXDN7fAbD
+ +OgBu+KUh7xmdT5iqYSO0uX62WK4w8XC4IykCQ/NMoovYGGgtUmK3RRMXVhZAYKVv8Zi
+ 9PIqUNpkxqz5g1ayJ26VkUOk2wDthKXNaiAB44yIm4fRiHbM/KQ0a55HqD2yUhU7EI6u
+ UJDSeVMTX1TDUxtmS2ypc8cYUMG17hb36/cj6T6m8IDan/y5F2xkaJAzXSanHAWZVA3a
+ nlQ500dTD1eVOPtPji9kMcnMUih8h+SukzOCgxf9mxQWjSm+ISb7FQPiEgnoxmJ0oPoX
+ RsbQ==
+X-Gm-Message-State: APjAAAWJGLV/NXqJhYyoeRKz8NNvDJH7bsdofNFQfGnADNRhf6icM10v
+ gL+NZNqkl9r0N/x+Hal3MMSXmtYT95oraCYWxfo=
+X-Google-Smtp-Source: APXvYqzkJQd4Q/HEey3fIfopOt/LsnyxBwczRy7hM1m344Mws4LFrOvQHrz77JH+OsM6Wh1qFlk6mVPOx1Dd3PduACo=
+X-Received: by 2002:a5d:904e:: with SMTP id v14mr12245048ioq.33.1570739710182; 
+ Thu, 10 Oct 2019 13:35:10 -0700 (PDT)
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:3w1t9KxRpboazCGFbUHHyRTgq8anB+CB4R77jmnunv3b/xUCHB4
- q6DgNwffa+vbuyjv196/F+Tm4Xg7oOWOO704mQ9rv1LSA39GWM20GfooqrVAYwAuO4hxESt
- DnhdUneq160nDqisp9FQkSUE4x8mw9aJZUv/WkZ2HjFJp47SwG33/0dfw5rF5NMZnlAERre
- lLAQaHwWHBUzD2nFdeb+w==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:D2Xpu3hJhjQ=:UlYrBdqu61lE6ufO+d561Q
- Bfw1XUpkKtAj070fPyGOPGjL7n7thPkZvxlq6FJqHfGBuMWhNQtVlNK3qQCxx7TIJpxXGBO55
- S2tSfftKBXA1zvPo9DVrSkPn14yvUwhRNoMJHVhmf1dNTyiYMYBPK8YIu2JgDVKbE6ueZRFyP
- CwNwZXKQb4SgL8zCdYvI2KdOV5FdySqN0yhnDhzwKkVPwOzpzyh3BG36SfQ5HDDhdOneDmK7b
- LHe3+SbLc/mHgIE5Gncs+lYo98vEQJ04siZUWGEyqKNT6am1gI5xHZYMo/vdgaCwhGj8hceQI
- 0StPryl7h1jIKdThg3Pj2XiDEdzhdM+1vAivgH2i6aDk7+v+petjoJfLjTIfLupqjUE5BeSU5
- jroS8Pu/PuUyzqHGYtfCLw6/Gd7X3AkSpgBX0EQX2qSGW4dgYFfRmqj8LIbNb6WPo1gxS5IFn
- D4jXIyXnrTRYnOv1j466yYllfqSQI/PDaOUXrZfd4Fmmzr9ACHb6ufFNT8ZK7zJ8fVFpliHR4
- bDy8ACybE/Xy77m5qD03tsZQ0ow+oYUtvLZI5FxC+7Z07LwDR291mk5MOczTNtaP9laPz7xF/
- xI1WcX7OJLa52/KgWZKTwireyfx73pbanE43U6sJ7mNgLwCS79xQysGOylpMoUGOC6FZPi4Qt
- O/F/Rue9E4yI5q1nn97/HVXh20N/LBU4xVXHavk0J8mwmpD/UedJkT3MvV2nxwjATmI1tlu3w
- 3dt2fUlJP1wsblfsMHy8Yt4BPMG2Zb29XzZ3C1gAsEVVMOGGhfdo+BvcWofCSDocCn2Q162Z/
- ijP/Ek03rpUSCYREBVJ3vU8Jm7E1a7EQsqeYKVMp8KH/dTm0Je+BDd/amA3vTRFE5GlhsIA7x
- I1a+2suH/zaEx0hJqmfg==
+References: <20191010125300.2822-1-festevam@gmail.com>
+In-Reply-To: <20191010125300.2822-1-festevam@gmail.com>
+From: Andrey Smirnov <andrew.smirnov@gmail.com>
+Date: Thu, 10 Oct 2019 13:34:51 -0700
+Message-ID: <CAHQ1cqEVuf7yBM5fTyRUezJSARuSBG2ohyisufAxy=ME0-p=OA@mail.gmail.com>
+Subject: Re: [PATCH] ARM: dts: imx6qdl-zii-rdu2: Fix accelerometer
+ interrupt-names
+To: Fabio Estevam <festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_133939_739737_E4E88B6A 
-X-CRM114-Status: GOOD (  12.64  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191010_133511_723115_04FBC608 
+X-CRM114-Status: GOOD (  13.21  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.133 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (andrew.smirnov[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,120 +93,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- linus.walleij@linaro.org, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Shawn Guo <shawnguo@kernel.org>, Chris Healy <cphealy@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The file is mostly specific to the driver, the few bits that
-are actually used by the platform code get moved to mach/map.h
-instead.
+On Thu, Oct 10, 2019 at 5:53 AM Fabio Estevam <festevam@gmail.com> wrote:
+>
+> According to Documentation/devicetree/bindings/iio/accel/mma8452.txt,
+> the correct interrupt-names are "INT1" and "INT2", so fix them
+> accordingly.
+>
+> Signed-off-by: Fabio Estevam <festevam@gmail.com>
+> ---
+> Hi Lucas/Andrey,
+>
+> I don't have access to this board, so please test it if you
+> have a chance.
 
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- arch/arm/mach-s3c24xx/include/mach/map.h                      | 2 ++
- arch/arm/mach-s3c24xx/s3c2412.c                               | 1 -
- arch/arm/plat-samsung/devs.c                                  | 1 -
- drivers/spi/spi-s3c24xx-fiq.S                                 | 4 +++-
- .../include/plat/regs-spi.h => drivers/spi/spi-s3c24xx-regs.h | 3 ---
- drivers/spi/spi-s3c24xx.c                                     | 3 +--
- 6 files changed, 6 insertions(+), 8 deletions(-)
- rename arch/arm/plat-samsung/include/plat/regs-spi.h => drivers/spi/spi-s3c24xx-regs.h (95%)
+Will do. The binding documentation is actually a bit misleading since
+it makes it sounds like configuring both interrupts is a meaningful
+option, whereas in reality the driver will always use only one line.
+I've been meaning to submit a patch to re-word the documentation,
+maybe this is a good reminder that I need to do so. Do you mind if I
+re-spin a v2 of this patch and modify it to specify only a single IRQ
+line?
 
-diff --git a/arch/arm/mach-s3c24xx/include/mach/map.h b/arch/arm/mach-s3c24xx/include/mach/map.h
-index bca93112f57d..a20c9fd0d855 100644
---- a/arch/arm/mach-s3c24xx/include/mach/map.h
-+++ b/arch/arm/mach-s3c24xx/include/mach/map.h
-@@ -86,6 +86,8 @@
- #define S3C2410_PA_SPI	   (0x59000000)
- #define S3C2443_PA_SPI0		(0x52000000)
- #define S3C2443_PA_SPI1		S3C2410_PA_SPI
-+#define S3C2410_SPI1		(0x20)
-+#define S3C2412_SPI1		(0x100)
- 
- /* SDI */
- #define S3C2410_PA_SDI	   (0x5A000000)
-diff --git a/arch/arm/mach-s3c24xx/s3c2412.c b/arch/arm/mach-s3c24xx/s3c2412.c
-index 8fe4d4670dcb..c3fb3e6c0dd8 100644
---- a/arch/arm/mach-s3c24xx/s3c2412.c
-+++ b/arch/arm/mach-s3c24xx/s3c2412.c
-@@ -37,7 +37,6 @@
- #include <plat/cpu-freq.h>
- #include <plat/devs.h>
- #include <plat/pm.h>
--#include <plat/regs-spi.h>
- 
- #include "common.h"
- #include "nand-core.h"
-diff --git a/arch/arm/plat-samsung/devs.c b/arch/arm/plat-samsung/devs.c
-index 6e4c1cb07104..fd94a35e22f8 100644
---- a/arch/arm/plat-samsung/devs.c
-+++ b/arch/arm/plat-samsung/devs.c
-@@ -59,7 +59,6 @@
- #include <linux/platform_data/usb-s3c2410_udc.h>
- #include <linux/platform_data/usb-ohci-s3c2410.h>
- #include <plat/usb-phy.h>
--#include <plat/regs-spi.h>
- #include <linux/platform_data/asoc-s3c.h>
- #include <linux/platform_data/spi-s3c64xx.h>
- 
-diff --git a/drivers/spi/spi-s3c24xx-fiq.S b/drivers/spi/spi-s3c24xx-fiq.S
-index e95d6282109e..9d5f8f1e5e81 100644
---- a/drivers/spi/spi-s3c24xx-fiq.S
-+++ b/drivers/spi/spi-s3c24xx-fiq.S
-@@ -12,10 +12,12 @@
- 
- #include <mach/map.h>
- #include <mach/regs-irq.h>
--#include <plat/regs-spi.h>
- 
- #include "spi-s3c24xx-fiq.h"
- 
-+#define S3C2410_SPTDAT           (0x10)
-+#define S3C2410_SPRDAT           (0x14)
-+
- 	.text
- 
- 	@ entry to these routines is as follows, with the register names
-diff --git a/arch/arm/plat-samsung/include/plat/regs-spi.h b/drivers/spi/spi-s3c24xx-regs.h
-similarity index 95%
-rename from arch/arm/plat-samsung/include/plat/regs-spi.h
-rename to drivers/spi/spi-s3c24xx-regs.h
-index 607844311566..37b93ff7c7fe 100644
---- a/arch/arm/plat-samsung/include/plat/regs-spi.h
-+++ b/drivers/spi/spi-s3c24xx-regs.h
-@@ -8,9 +8,6 @@
- #ifndef __ASM_ARCH_REGS_SPI_H
- #define __ASM_ARCH_REGS_SPI_H
- 
--#define S3C2410_SPI1		(0x20)
--#define S3C2412_SPI1		(0x100)
--
- #define S3C2410_SPCON		(0x00)
- 
- #define S3C2410_SPCON_SMOD_DMA	(2 << 5)	/* DMA mode */
-diff --git a/drivers/spi/spi-s3c24xx.c b/drivers/spi/spi-s3c24xx.c
-index 2d6e37f25e2d..2f395e4861f6 100644
---- a/drivers/spi/spi-s3c24xx.c
-+++ b/drivers/spi/spi-s3c24xx.c
-@@ -21,10 +21,9 @@
- #include <linux/spi/s3c24xx.h>
- #include <linux/module.h>
- 
--#include <plat/regs-spi.h>
--
- #include <asm/fiq.h>
- 
-+#include "spi-s3c24xx-regs.h"
- #include "spi-s3c24xx-fiq.h"
- 
- /**
--- 
-2.20.0
-
+Thanks,
+Andrey Smirnov
 
 _______________________________________________
 linux-arm-kernel mailing list
