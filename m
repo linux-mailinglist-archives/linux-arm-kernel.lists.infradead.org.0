@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E058D315A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 21:26:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 570E1D315B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 21:26:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Ergp3fzRBkG2agy1pdCg6litZHl92642yMoSS2Qk6Qw=; b=BDQ7Jc9trYtHFf
-	N8D/JtUOdjxA9eE3kcHZbjYXDgIz4+Zbz4TXkqRS4zFHlrFH/7RitaiNB1F+QtrXFpX+IvDy0P4zw
-	m/Q3InEIm5rq1Jl1nH1vnNR0j2CETUDFbzIfyRhe/OZDN7KfR4N+nWjSE7rplLrjdjn3fMeDAX7p6
-	k5/Uiw8yQLFMG9/n7VfJup5A5ruzMleOQ1fh34pVNge+91d9sXqDoXYvSmFJG4OGFWf1Hf9OzsqOH
-	idiumhFQgfo5oVwrPBddc/+n7V7ZXSoodzZtjdvvaAAiYVABANCl8W2w122V79o9bDjmITahge5a9
-	ynL8dB74whxFQZj/OX5Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EaF/MkFJJEwZFwT9BGPqYBNJAzST9Vgk75d+IZYA1h4=; b=Q4Y6get0TZVXaK
+	npmNZ0g27K7neLKyr21RmRhMf+QbPTGUfYjM5rX8osSaYURJEDGQkVY85yzLLyFGZj9P2PX3wObZ7
+	mbnapy6ZkASPDOvx4O5Ih6hdWjlcwnIASWF0xSqXXa+CJXqZQUw8FwQ462gaaldmkMR5udHn0fFPd
+	mr2h1xrFbSbm1NtsKCZZRaHltncS/nOR3zCTmcRgZMKAYRiI6V679IACCbOUDgy46MgHlVPa8Whw4
+	nr1dSMnPhUKZCRCb2/pK3HywPExaFdFG9qy+ZpM2dm6bLi35D5D8sXmUPwJ15918mxBlqObU4CjeI
+	fKt0td7OI9bvfP07otxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIe4w-0007mk-7L; Thu, 10 Oct 2019 19:26:26 +0000
+	id 1iIe5H-0007up-6D; Thu, 10 Oct 2019 19:26:47 +0000
 Received: from mail.andi.de1.cc ([2a01:238:4321:8900:456f:ecd6:43e:202c])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIe4m-0007lK-Nv
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 19:26:18 +0000
+ id 1iIe4o-0007le-6N
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 19:26:19 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=kemnade.info; s=20180802; h=Content-Transfer-Encoding:MIME-Version:
- Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=wJEqH4NrrjSb9vl8KVNZW+HaMMj7tZUwG3p49NSaKKg=; b=YKdpMlKc8u3Gja5oVaR6Zuf3uN
- yEFIG2abAmtmQ1KNg3+tm95tqvam2VOFhTpEVnt+ite45WWUAyBjQobGhGeT0oY+FhK3Y+NdaLzxC
- tPCkU+H5Q5Aod1Zc3NYF8xRTLmsnB6iqHk5gCEAC2etdvsySswxAwOW2BLyOy9+/EV88=;
+ References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=MwcU21sAN23PMIeSNVMb6B47OMp0NvPmhAUVkc8gq7A=; b=BC6mxSZ+07ih/TCqbztKjoZMwa
+ UnrV2G1fRGkXOawuew8re13gyJPntX9QOIrUcqpKCw4Ct+y8df+wjsoBPTdu67N3neUXpVtGCSDUy
+ /YPSwWU33jYTZZ/3JxX/UK8SOmypQtuSknxNvO5LemeUgyiaKj8XLCTT8CcOzNs3pWGM=;
 Received: from p200300ccff13bb001a3da2fffebfd33a.dip0.t-ipconnect.de
  ([2003:cc:ff13:bb00:1a3d:a2ff:febf:d33a] helo=aktux)
  by mail.andi.de1.cc with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <andreas@kemnade.info>)
- id 1iIe4Z-0007Jj-Ci; Thu, 10 Oct 2019 21:26:03 +0200
+ id 1iIe4e-0007Jq-Ec; Thu, 10 Oct 2019 21:26:11 +0200
 Received: from andi by aktux with local (Exim 4.92)
  (envelope-from <andreas@kemnade.info>)
- id 1iIe4Y-0007GV-M4; Thu, 10 Oct 2019 21:26:02 +0200
+ id 1iIe4e-0007GY-3y; Thu, 10 Oct 2019 21:26:08 +0200
 From: Andreas Kemnade <andreas@kemnade.info>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
@@ -49,15 +49,19 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  linux-arm-kernel@lists.infradead.org, j.neuschaefer@gmx.net,
  Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
  Marco Felsch <m.felsch@pengutronix.de>
-Subject: [PATCH v3 0/3] dts: ARM: add Kobo Clara HD eBook reader
-Date: Thu, 10 Oct 2019 21:23:54 +0200
-Message-Id: <20191010192357.27884-1-andreas@kemnade.info>
+Subject: [PATCH v3 1/3] dt-bindings: arm: fsl: add compatible string for Kobo
+ Clara HD
+Date: Thu, 10 Oct 2019 21:23:55 +0200
+Message-Id: <20191010192357.27884-2-andreas@kemnade.info>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191010192357.27884-1-andreas@kemnade.info>
+References: <20191010192357.27884-1-andreas@kemnade.info>
 MIME-Version: 1.0
 X-Spam-Score: -1.0 (-)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_122616_929714_B02528E9 
-X-CRM114-Status: GOOD (  10.43  )
+X-CRM114-CacheID: sfid-20191010_122618_381249_3D87F4D6 
+X-CRM114-Status: UNSURE (   8.12  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -89,44 +93,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds a device tree for the Kobo Clara HD eBook reader.
-Name on mainboard is: 37NB-E60K00+4A4
-Serials start with: E60K02 (a number also seen in
-vendor kernel sources)
-These boards are also found in the Tolino Shine 3 reader
-but equipped with a i.MX6SL processor. Support for that
-device is planned to be added in a later patch series.
-To prepare for that the device tree is split up into
-a board file containing SoC-independent stuff and a
-file containing the SoC-dependent stuff.
+This adds a compatible string for the Kobo Clara HD eBook reader.
 
-Work is based on code from the vendor kernel at
-https://github.com/kobolabs/Kobo-Reader/blob/master/hw/imx6sll-clara/kernel.tar.bz2
-but things need to be heavily reworked due to
-incompatible bindings and to prepare for Tolino Shine 3
+Signed-off-by: Andreas Kemnade <andreas@kemnade.info>
+---
+Changes in v2: reordered, was 2/3
+ Documentation/devicetree/bindings/arm/fsl.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-Changes in v2:
-- reordered patches
-- various cleanups as suggested by Marco Felsch
-
-Changes in v3:
-- correct memory size
-- better name for led
-- comments about missing i2c devices
-
-Andreas Kemnade (3):
-  dt-bindings: arm: fsl: add compatible string for Kobo Clara HD
-  ARM: dts: add Netronix E60K02 board common file
-  ARM: dts: imx: add devicetree for Kobo Clara HD
-
- .../devicetree/bindings/arm/fsl.yaml          |   1 +
- arch/arm/boot/dts/Makefile                    |   3 +-
- arch/arm/boot/dts/e60k02.dtsi                 | 337 ++++++++++++++++++
- arch/arm/boot/dts/imx6sll-kobo-clarahd.dts    | 279 +++++++++++++++
- 4 files changed, 619 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm/boot/dts/e60k02.dtsi
- create mode 100644 arch/arm/boot/dts/imx6sll-kobo-clarahd.dts
-
+diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
+index 7294ac36f4c0b..afa3bfeca0c08 100644
+--- a/Documentation/devicetree/bindings/arm/fsl.yaml
++++ b/Documentation/devicetree/bindings/arm/fsl.yaml
+@@ -148,6 +148,7 @@ properties:
+         items:
+           - enum:
+               - fsl,imx6sll-evk
++              - kobo,clarahd
+           - const: fsl,imx6sll
+ 
+       - description: i.MX6SX based Boards
 -- 
 2.20.1
 
