@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C742D32A7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 22:46:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FF65D32A9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 22:46:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6+pasXIUhZY26/7HvU+YYdIo5QruMmuSDSvvcM6ahzQ=; b=RKnv1FUolzSid+
-	Rm2tvUpw6TvO3FjaHNc1ihdFW89ARQynByR3xRUmWRPPvFhBZhk/PGIzTxW6x2uExOrYPC+RxKI4t
-	intQCLaY5K4j4XC1Fv3pmzglenkAtXMrWZ+L4ZseilN+r81sTYeJbcfvb9VsdPoZUyuWjse6W0drA
-	ov0RzhSNq0nw8EMhv92/3jX7hM3t5q+dgBKhzvXxU89zUmTjBrTok7CBrDGJsUt9do5YPsEdxmcGr
-	DnsjxxoAYiBo+U7tMcGof/ZINmIp5rqgEyskOGUzaXNS76QJpMs7pGKrDjGbhW68sy2qzHeYlt9mH
-	mZq/1X6GrWPySA3sksXw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fPPWFUVUl00E4GJf7+XHxKPOwHAWqnbx0GjT6svRoxs=; b=F2eRGByBdj0Ihz
+	vhope53gYGgewf4QWuHQ4CMsOyw+ute87nlkEbnIHCh0jabHBUXVpuMlVHGbcwEvjUOL/Cs7jjvTH
+	MPsggpox/GUf0k5qRByUt6QN59nIhKOqFmfv8y4M0Vnl2TUjDHzc+vnQhOUHlfGUtv5wt0GbYY8iZ
+	GbWLC3VDZnZtbJZu3liPfmrbbLSecGWtkv8sVHP68hbLFPoIvhb+4VAnSzSgzDaMuyFDijgDLJtu1
+	XWHEfKnhE1eVkgRiOz4Q8GoS3p6/Pjwvh1nu48uaylY+Gf2HVNV27gqvhXIQQ4+ixkjM48daCWswl
+	VoKX70fixCfYWoZOVxGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIfKB-0004Dg-Oy; Thu, 10 Oct 2019 20:46:15 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+	id 1iIfKP-0004Tk-3z; Thu, 10 Oct 2019 20:46:29 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIfJj-00043A-I7
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 20:45:49 +0000
+ id 1iIfK7-0004NS-EW
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 20:46:12 +0000
 X-Originating-IP: 86.202.229.42
 Received: from localhost (lfbn-lyo-1-146-42.w86-202.abo.wanadoo.fr
  [86.202.229.42])
  (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 507D0FF807;
- Thu, 10 Oct 2019 20:45:35 +0000 (UTC)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 36D9DC000E;
+ Thu, 10 Oct 2019 20:46:09 +0000 (UTC)
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 To: "David S . Miller" <davem@davemloft.net>
-Subject: [PATCH 2/2] net: lpc_eth: parse phy nodes from device tree
-Date: Thu, 10 Oct 2019 22:45:30 +0200
-Message-Id: <20191010204530.15150-2-alexandre.belloni@bootlin.com>
+Subject: [PATCH] net: lpc_eth: avoid resetting twice
+Date: Thu, 10 Oct 2019 22:46:06 +0200
+Message-Id: <20191010204606.15279-1-alexandre.belloni@bootlin.com>
 X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20191010204530.15150-1-alexandre.belloni@bootlin.com>
-References: <20191010204530.15150-1-alexandre.belloni@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_134547_868483_C22D9110 
-X-CRM114-Status: GOOD (  15.86  )
+X-CRM114-CacheID: sfid-20191010_134611_645972_3EC0588F 
+X-CRM114-Status: UNSURE (   8.54  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
+ low trust [217.70.183.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -70,94 +69,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When connected to a micrel phy, phy_find_first doesn't work properly
-because the first phy found is on address 0, the broadcast address but, the
-first thing the phy driver is doing is disabling this broadcast address.
-The phy is then available only on address 1 but the mdio driver doesn't
-know about it.
-
-Instead, register the mdio bus using of_mdiobus_register and try to find
-the phy description in device tree before falling back to phy_find_first.
-
-This ultimately also allows to describe the interrupt the phy is connected
-to.
+__lpc_eth_shutdown is called after __lpc_eth_reset but it is already
+calling __lpc_eth_reset. Avoid resetting the IP twice.
 
 Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 ---
- drivers/net/ethernet/nxp/lpc_eth.c | 24 ++++++++++++++++--------
- 1 file changed, 16 insertions(+), 8 deletions(-)
+ drivers/net/ethernet/nxp/lpc_eth.c | 3 ---
+ 1 file changed, 3 deletions(-)
 
 diff --git a/drivers/net/ethernet/nxp/lpc_eth.c b/drivers/net/ethernet/nxp/lpc_eth.c
-index 141571e2ec11..fdcaf70151d4 100644
+index fdcaf70151d4..e766a3e34d14 100644
 --- a/drivers/net/ethernet/nxp/lpc_eth.c
 +++ b/drivers/net/ethernet/nxp/lpc_eth.c
-@@ -15,6 +15,7 @@
- #include <linux/etherdevice.h>
- #include <linux/module.h>
- #include <linux/of.h>
-+#include <linux/of_mdio.h>
- #include <linux/of_net.h>
- #include <linux/phy.h>
- #include <linux/platform_device.h>
-@@ -391,6 +392,7 @@ struct rx_status_t {
- struct netdata_local {
- 	struct platform_device	*pdev;
- 	struct net_device	*ndev;
-+	struct device_node	*phy_node;
- 	spinlock_t		lock;
- 	void __iomem		*net_base;
- 	u32			msg_enable;
-@@ -749,22 +751,26 @@ static void lpc_handle_link_change(struct net_device *ndev)
- static int lpc_mii_probe(struct net_device *ndev)
- {
- 	struct netdata_local *pldat = netdev_priv(ndev);
--	struct phy_device *phydev = phy_find_first(pldat->mii_bus);
+@@ -1364,9 +1364,6 @@ static int lpc_eth_drv_probe(struct platform_device *pdev)
+ 	if (!is_valid_ether_addr(ndev->dev_addr))
+ 		eth_hw_addr_random(ndev);
+ 
+-	/* Reset the ethernet controller */
+-	__lpc_eth_reset(pldat);
 -
--	if (!phydev) {
--		netdev_err(ndev, "no PHY found\n");
--		return -ENODEV;
--	}
-+	struct phy_device *phydev;
- 
- 	/* Attach to the PHY */
- 	if (lpc_phy_interface_mode(&pldat->pdev->dev) == PHY_INTERFACE_MODE_MII)
- 		netdev_info(ndev, "using MII interface\n");
- 	else
- 		netdev_info(ndev, "using RMII interface\n");
-+
-+	if (pldat->phy_node)
-+		phydev =  of_phy_find_device(pldat->phy_node);
-+	else
-+		phydev = phy_find_first(pldat->mii_bus);
-+	if (!phydev) {
-+		netdev_err(ndev, "no PHY found\n");
-+		return -ENODEV;
-+	}
-+
- 	phydev = phy_connect(ndev, phydev_name(phydev),
- 			     &lpc_handle_link_change,
- 			     lpc_phy_interface_mode(&pldat->pdev->dev));
--
- 	if (IS_ERR(phydev)) {
- 		netdev_err(ndev, "Could not attach to PHY\n");
- 		return PTR_ERR(phydev);
-@@ -812,7 +818,7 @@ static int lpc_mii_init(struct netdata_local *pldat)
- 
- 	platform_set_drvdata(pldat->pdev, pldat->mii_bus);
- 
--	if (mdiobus_register(pldat->mii_bus))
-+	if (of_mdiobus_register(pldat->mii_bus, pldat->pdev->dev.of_node))
- 		goto err_out_unregister_bus;
- 
- 	if (lpc_mii_probe(pldat->ndev) != 0)
-@@ -1345,6 +1351,8 @@ static int lpc_eth_drv_probe(struct platform_device *pdev)
- 	netdev_dbg(ndev, "DMA buffer V address :0x%p\n",
- 			pldat->dma_buff_base_v);
- 
-+	pldat->phy_node = of_parse_phandle(np, "phy-handle", 0);
-+
- 	/* Get MAC address from current HW setting (POR state is all zeros) */
- 	__lpc_get_mac(pldat, ndev->dev_addr);
+ 	/* then shut everything down to save power */
+ 	__lpc_eth_shutdown(pldat);
  
 -- 
 2.21.0
