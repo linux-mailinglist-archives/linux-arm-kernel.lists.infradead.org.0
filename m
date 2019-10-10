@@ -2,89 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6728CD33A4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 23:53:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84145D33BD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 00:04:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ixNRMpMmcYcAofHQ03IxsAIPiPOV93l1R3KejddQVco=; b=fgB/tianAE8pws
-	k5152A3ejUajnt2cyqsQiQ7ijUi2YfzaleQzyi/39AAjEFFsheQtO3m2lRFUNjT9uaBVZw7o7Roq9
-	JUisvGtb1X3mYv5vV/AJgBe6doDOBQ2tU6qCvHb6ELyatxfVyWzq4I9fwBQiGPZiB7M6+hGMuj7BJ
-	l95n7kwjq/yLBLGgE5hIsxUpjySLLquSD9DGkSlX41r/10CFatn6C3CF+vfdzA41jvrv4lCkCLsIy
-	DK5QZ+np60K4G4o1pgPV+6dQel7HPcOfOnU0vJQUDuYRgdDWKrIS/9uxgKUgkwQpDLXQwHenyOhL6
-	jmJ6QR/spRn5oBebFf0g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Cqdv0RqpwHPxjO1P+kzxhl2c3g4Iqa5OIv12Oy+XGiA=; b=YZXJQ8O+G6I1GnVCblVOyZ8KM
+	5YezBKuqWIPDSeSihdgCAG2vBwhT9DUaelKSw3P+7VDqyv8GlTCocCgTaFaFQwY7yJFLsDUXtm0ds
+	Gzh72lUW7bjnP9WpsQpvlaIefckqVEZSW7DXnflcgqbaC3Hdt0C2cqHr4GJRkpEMb+JCWExTqhmJz
+	wgdo8l/+GySyxEFoVPzyemzIBT9Whb/GGY9dNIvAzW8eEKr12uBvEF3q8PO62D1RF7rid4W7ms09B
+	CczPN1I+oXrEst+A2cQGm1YHgwZXiVSb/1/3Y/9BbC+RkQCNkkLVKXKMahiWXK+Unidpqc4OExFVn
+	a+FUZM46w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIgNK-0003Qk-DG; Thu, 10 Oct 2019 21:53:34 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1iIgXZ-0007Id-Tn; Thu, 10 Oct 2019 22:04:09 +0000
+Received: from mga06.intel.com ([134.134.136.31])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIgND-0003Q7-9f
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 21:53:28 +0000
-Received: by mail-pl1-x643.google.com with SMTP id e5so3434895pls.9
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 10 Oct 2019 14:53:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=eZ5a1UrQhKc0eFrayHNWPPaPzIDNm8Pl4fc7UtzEcwI=;
- b=C2jVvEnjI3cDO6vB/Rft3tcJex85MLNmn0DKywgUaA+JqHl5XVj8PXi/cisN6F6y3c
- jEyND9KgFacuQi0DUApP9FWNA9RdjSaH2p6/y3f9VUjJTyU7C7G4tqBJKEoaMJdm2xc7
- cC3Xwkvz83wYVon/M1YaWoXbhEZ1L27sCVrzM=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=eZ5a1UrQhKc0eFrayHNWPPaPzIDNm8Pl4fc7UtzEcwI=;
- b=RtS3Wpj9AHD1SjxOmF+pUqovAzRY/dayoDxjXqF6je40gmgnfeD9dJvQvwao67C3Jq
- aif/AmrJT81DIaAUaughUFVxCG5Gj8qt0TFVl1dI9O46UVHpVEf1z+4dEAzGxLoFhuGP
- uFROkKn62q4OkUl7tPswLkD2Nwl9pbw92xGfboixHOXOO53oQUcjjsQ0g2iVlefQijKX
- ZJjTaqwTtyfwzebbPVyP3g811H/PrzwyiJtkgkM07nqxFnGy1glRA4L2sHlyGYwiGMAJ
- 6J5XQ+bJlC28qvUv6ZlNz6fto6GtqmnEbyJlHv+gsFz8rQfbEPk4XtTLLCNZW+giAXA4
- sK6Q==
-X-Gm-Message-State: APjAAAX/K9+fpYoRSLIFrCzAnTk5yJUGEG+ZLD6LBznxQxV47NcpZ5UF
- XTG5UIOx5MF/EHzzpKeUY53SAw==
-X-Google-Smtp-Source: APXvYqzvP9DPNQm4eEFwpmDjtjMePiabTkC2OLVsNO4cce1OJAtguBuNxerHNmLTKublc5lHaVGkBg==
-X-Received: by 2002:a17:902:8bc4:: with SMTP id
- r4mr11153280plo.341.1570744406496; 
- Thu, 10 Oct 2019 14:53:26 -0700 (PDT)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id y4sm23629pfr.118.2019.10.10.14.53.25
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 10 Oct 2019 14:53:25 -0700 (PDT)
-Date: Thu, 10 Oct 2019 14:53:24 -0700
-From: Kees Cook <keescook@chromium.org>
-To: Christian Brauner <christian.brauner@ubuntu.com>
-Subject: Re: [PATCH v1] seccomp: simplify secure_computing()
-Message-ID: <201910101450.0B13B7F@keescook>
-References: <20190920131907.6886-1-christian.brauner@ubuntu.com>
- <20190924064420.6353-1-christian.brauner@ubuntu.com>
+ id 1iIgXS-0007I3-I9
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 22:04:03 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga007.jf.intel.com ([10.7.209.58])
+ by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 10 Oct 2019 15:04:01 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.67,281,1566889200"; d="scan'208";a="184560498"
+Received: from yoojae-mobl1.amr.corp.intel.com (HELO [10.7.153.148])
+ ([10.7.153.148])
+ by orsmga007.jf.intel.com with ESMTP; 10 Oct 2019 15:04:00 -0700
+Subject: Re: [PATCH] i2c: aspeed: fix master pending state handling
+To: Tao Ren <taoren@fb.com>, Brendan Higgins <brendanhiggins@google.com>,
+ Wolfram Sang <wsa@the-dreams.de>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Joel Stanley <joel@jms.id.au>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Andrew Jeffery <andrew@aj.id.au>,
+ Cedric Le Goater <clg@kaod.org>
+References: <20191009212034.20325-1-jae.hyun.yoo@linux.intel.com>
+ <3ea1c0d5-47f1-bf8c-6b2d-2ea8d3f93471@fb.com>
+From: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
+Message-ID: <637d4b8b-5113-b07b-f99f-ce66dbe6948c@linux.intel.com>
+Date: Thu, 10 Oct 2019 15:04:00 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190924064420.6353-1-christian.brauner@ubuntu.com>
+In-Reply-To: <3ea1c0d5-47f1-bf8c-6b2d-2ea8d3f93471@fb.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_145327_361632_15727581 
-X-CRM114-Status: GOOD (  14.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191010_150402_643843_252E30C3 
+X-CRM114-Status: GOOD (  16.32  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.31 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,53 +73,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, wad@chromium.org, linux-parisc@vger.kernel.org,
- x86@kernel.org, linux-um@lists.infradead.org, linux-kernel@vger.kernel.org,
- oleg@redhat.com, Borislav Petkov <bp@alien8.de>, luto@kernel.org,
- tglx@linutronix.de, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "openbmc@lists.ozlabs.org" <openbmc@lists.ozlabs.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 24, 2019 at 08:44:20AM +0200, Christian Brauner wrote:
-> Afaict, the struct seccomp_data argument to secure_computing() is unused
-> by all current callers. So let's remove it.
-> The argument was added in [1]. It was added because having the arch
-> supply the syscall arguments used to be faster than having it done by
-> secure_computing() (cf. Andy's comment in [2]). This is not true anymore
-> though.
+On 10/10/2019 2:20 PM, Tao Ren wrote:
+> On 10/9/19 2:20 PM, Jae Hyun Yoo wrote:
+[...]
+>>   		/*
+>>   		 * If a peer master starts a xfer immediately after it queues a
+>> -		 * master command, change its state to 'pending' then H/W will
+>> -		 * continue the queued master xfer just after completing the
+>> -		 * slave mode session.
+>> +		 * master command, clear the queued master command and change
+>> +		 * its state to 'pending'. To simplify handling of pending
+>> +		 * cases, it uses S/W solution instead of H/W command queue
+>> +		 * handling.
+>>   		 */
+>>   		if (unlikely(irq_status & ASPEED_I2CD_INTR_SLAVE_MATCH)) {
+>> +			writel(readl(bus->base + ASPEED_I2C_CMD_REG) &
+>> +				~ASPEED_I2CD_MASTER_CMDS_MASK,
+>> +			       bus->base + ASPEED_I2C_CMD_REG);
+> 
+> Sorry for the late comments (just noticed this line while testing the patch):
+> 
+> I assume this line is aimed at stopping the running master commands, but as per
+> AST2500 datasheet, it's NOP to write 0 to MASTER_STOP/MASTER_RX/MASTER_TX bits.
+> Maybe all we need is writing 1 to MASTER_STOP field?
 
-Yes; thanks for cleaning this up!
+There could be two pending cases:
+1. Master goes to pending before it triggers a command if a slave
+    operation is already initiated.
+2. Master goes to pending after it triggered a command if a peer
+    master immediately sends something just after the master command
+    triggering.
 
-> diff --git a/arch/s390/kernel/ptrace.c b/arch/s390/kernel/ptrace.c
-> index ad71132374f0..ed80bdfbf5fe 100644
-> --- a/arch/s390/kernel/ptrace.c
-> +++ b/arch/s390/kernel/ptrace.c
-> @@ -439,7 +439,7 @@ static int poke_user(struct task_struct *child, addr_t addr, addr_t data)
->  long arch_ptrace(struct task_struct *child, long request,
->  		 unsigned long addr, unsigned long data)
->  {
-> -	ptrace_area parea; 
-> +	ptrace_area parea;
->  	int copied, ret;
->  
->  	switch (request) {
+Above code is for the latter case. H/W handles the case priority based
+so the slave event will be handled first, and then the master command
+will be handled when the slave operation is completed. Problem is,
+this H/W shares the same buffer for master and slave operations so
+it's unreliable. Above code just removes the master command from the
+command register to prevent this H/W command handling of pending events.
+Instead, it restarts the master command using a call of 
+aspeed_i2c_do_start when the slave operation is completed.
 
-If this were whitespace cleanup in kernel/seccomp.c, I'd take it without
-flinching. As this is only tangentially related and in an arch
-directory, I've dropped this hunk out of a cowardly fear of causing
-(a likely very unlikely) merge conflict.
+Thanks,
 
-I'd rather we globally clean up trailing whitespace at the end of -rc1
-and ask Linus to run some crazy script. :)
-
-So, with that hunk removed, I've applied this to for-next/seccomp. :)
-
-Thanks!
-
--- 
-Kees Cook
+Jae
 
 _______________________________________________
 linux-arm-kernel mailing list
