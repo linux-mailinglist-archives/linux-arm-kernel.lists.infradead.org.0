@@ -2,98 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D908BD2119
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 08:54:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E80E1D211B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 08:54:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KSIBNMBFnqY8120kdXDlElnt+hLKk9IKgaaLfRcL/3s=; b=JO3clesu4X/xtG
-	X5bHHT+UlWLEGdwuszYeyfRxbh4bgghNDZSmH0g+5eGqGUBQdKU7haUnmfyUhQcugcgSltl4lxFWX
-	yDxTL99PJkmFIyvIDQm8/8Mjj8amDkbpUnvNpTGb/JISsnvePpjk6KZdia9Sl1hsqDlXhHTTeodvg
-	k4idsZQWRfxUmKssj/48pBfO5+pcghZSwMAbevJ9PcCAThLHJUpGRXSdpzgq8+0V7mfbBfox2MMnq
-	ArNfRUdnCo4ySLfm791h4vnJjTPIKHH4FVAFnHlwFepB1WTy4kpM3N+eqtdoDpL8ZeQoly0dpwJXc
-	OfigQ0giBlB8ZspcHHJQ==;
+	List-Owner; bh=+vo5ZrXy4XVHJHTUQJ/KZGs7BMpDwHay2ld8j6Z06iQ=; b=nS6RhnYbZhXJOq
+	sPigm4mKr0XWmRMkHW538aazQVWB7xKplU7VUhkpaFaraBRzQJ3mj4PleNaGmnMAuAxGITa0oZmcE
+	7PtY6G9a4EU9JGPEqDtXGLNB6ilxqpMdU6rEPF466tiupNJEWVXBMAoVyYfbT+FM++hHXThHUnwHd
+	6HsS584Wdi0dPaWob9h7xxUctS2Lm2BQUHS3BUur7C2GZa8d57zc3cK7JeIalTRT0ymS0rCK02MuI
+	Ek+9mI34Ppt1/CFzY4wyI8OvomlIaNi6/mpY7lspbFBkB2VnCUzHmhZTlDCkBMj3guN13bINMT6Mg
+	713yjv6fILabobIVXpTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iISLG-00024P-Nw; Thu, 10 Oct 2019 06:54:30 +0000
-Received: from esa4.microchip.iphmx.com ([68.232.154.123])
+	id 1iISLa-0002JQ-Qc; Thu, 10 Oct 2019 06:54:50 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iISL2-00023b-0D
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 06:54:19 +0000
-Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
- Ludovic.Desroches@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="Ludovic.Desroches@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa4.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa4.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: 56/nY0LiIN/XQ6ARaaD2NWSw2YJpxUgWH2WdPoN9k70jvh2TFLojEBQX4o6320lmoKeMed9Rpe
- GeAzg7PgNmmOPPDAkT0gn0+f18qBXoPv6L+HihKLNKChx3uswal27XjEq/ER5bwYgVQsAch3tZ
- Ga/xMHtPXCwrCtNIyHaeaS69ozV8Mk3/zF2sICBzVXRq/Im/JhvVuFwKJuqrOUu/7V+hD4Ec7h
- lwXsg7VHR2nQzdImqDFhhzh2DLsvBf76It9ZV6JTJcrfGfMbCqOo10VD00cYKVwgsrVfTcMQ9O
- pzY=
-X-IronPort-AV: E=Sophos;i="5.67,279,1566889200"; d="scan'208";a="51112714"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 09 Oct 2019 23:54:10 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
- chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 9 Oct 2019 23:54:10 -0700
-Received: from localhost (10.10.85.251) by chn-vm-ex02.mchp-main.com
- (10.10.85.144) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
- Transport; Wed, 9 Oct 2019 23:54:09 -0700
-Date: Thu, 10 Oct 2019 08:54:09 +0200
-From: Ludovic Desroches <ludovic.desroches@microchip.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH 2/4] i2c: at91: implement i2c bus recovery
-Message-ID: <20191010065408.y7i7aywdztgixv47@M43218.corp.atmel.com>
-Mail-Followup-To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Kamel Bouhara <kamel.bouhara@bootlin.com>,
- Wolfram Sang <wsa@the-dreams.de>, linux-i2c@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-References: <20191002144658.7718-1-kamel.bouhara@bootlin.com>
- <20191002144658.7718-3-kamel.bouhara@bootlin.com>
- <20191009135500.ufkxcemccwfcfys7@M43218.corp.atmel.com>
- <20191009140145.GE4254@piout.net>
+ id 1iISLP-0002Ib-Vm; Thu, 10 Oct 2019 06:54:41 +0000
+Received: from dhcp-172-31-174-146.wireless.concordia.ca (unknown
+ [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested) (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 111722905BC;
+ Thu, 10 Oct 2019 07:54:38 +0100 (BST)
+Date: Thu, 10 Oct 2019 08:54:35 +0200
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: <Tudor.Ambarus@microchip.com>
+Subject: Re: [PATCH v2 03/22] mtd: spi-nor: cadence-quadspi: Fix
+ cqspi_command_read() definition
+Message-ID: <20191010085435.67b08ab5@dhcp-172-31-174-146.wireless.concordia.ca>
+In-Reply-To: <20190924074533.6618-4-tudor.ambarus@microchip.com>
+References: <20190924074533.6618-1-tudor.ambarus@microchip.com>
+ <20190924074533.6618-4-tudor.ambarus@microchip.com>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191009140145.GE4254@piout.net>
-User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_235418_271081_E246FF1D 
-X-CRM114-Status: GOOD (  14.21  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191009_235440_296153_E83D24EB 
+X-CRM114-Status: GOOD (  15.11  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.154.123 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,52 +63,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kamel Bouhara <kamel.bouhara@bootlin.com>, Wolfram Sang <wsa@the-dreams.de>,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- linux-i2c@vger.kernel.org, Thomas
- Petazzoni <thomas.petazzoni@bootlin.com>, linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org, vigneshr@ti.com,
+ geert+renesas@glider.be, andrew@aj.id.au, richard@nod.at,
+ linux-kernel@vger.kernel.org, vz@mleia.com, marek.vasut@gmail.com,
+ jonas@norrbonn.se, linux-mtd@lists.infradead.org, joel@jms.id.au,
+ miquel.raynal@bootlin.com, matthias.bgg@gmail.com,
+ linux-mediatek@lists.infradead.org, computersforpeace@gmail.com,
+ dwmw2@infradead.org, linux-aspeed@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 09, 2019 at 04:01:47PM +0200, Alexandre Belloni wrote:
-> 
-> On 09/10/2019 15:55:00+0200, Ludovic Desroches wrote:
-> > On Wed, Oct 02, 2019 at 04:46:56PM +0200, Kamel Bouhara wrote:
-> > > External E-Mail
-> > > 
-> > > 
-> > > Implement i2c bus recovery when slaves devices might hold SDA low.
-> > > In this case re-assign SCL/SDA to gpios and issue 9 dummy clock pulses
-> > > until the slave release SDA.
-> > > 
-> > 
-> > Hi Kamel,
-> > 
-> > Thanks for adding this new feature. As I see patches only for sama5d3 and
-> > sama5d4, I assume it has not been tested with a sama5d2, isn't it?
-> > 
-> 
-> I there a point having it on sama5d2 as the controller already supports
-> this feature?
-> 
+On Tue, 24 Sep 2019 07:45:58 +0000
+<Tudor.Ambarus@microchip.com> wrote:
 
-Right, I was focused on pinctrl and forget we have this feature
-supported by the IP.
-
-> > I doubt it works with a sama5d2 because of the pinctrl. I also wonder if it can
-> > work if we add .strict = true to pinmux_ops which is something plan for the
-> > future...
-> > 
+> From: Tudor Ambarus <tudor.ambarus@microchip.com>
 > 
-> I don't see why it wouldn't work with strict as this is switching muxing
-> properly instead of using the pins for two functions at the same time.
+> n_tx was never used, drop it. Replace 'const u8 *txbuf' with 'u8 opcode',
+> to comply with the SPI NOR int (*read_reg)() method. The 'const'
+> qualifier has no meaning for parameters passed by value, drop it.
+> Going furher, the opcode was passed to cqspi_calc_rdreg() and never used,
+> drop it.
 > 
+> Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
 
-Not sure devm_gpiod_get won't fail with strict.
+Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
 
-Ludovic
+> ---
+>  drivers/mtd/spi-nor/cadence-quadspi.c | 15 +++++++--------
+>  1 file changed, 7 insertions(+), 8 deletions(-)
+> 
+> diff --git a/drivers/mtd/spi-nor/cadence-quadspi.c b/drivers/mtd/spi-nor/cadence-quadspi.c
+> index ebda612641a4..22008fecd326 100644
+> --- a/drivers/mtd/spi-nor/cadence-quadspi.c
+> +++ b/drivers/mtd/spi-nor/cadence-quadspi.c
+> @@ -285,7 +285,7 @@ static irqreturn_t cqspi_irq_handler(int this_irq, void *dev)
+>  	return IRQ_HANDLED;
+>  }
+>  
+> -static unsigned int cqspi_calc_rdreg(struct spi_nor *nor, const u8 opcode)
+> +static unsigned int cqspi_calc_rdreg(struct spi_nor *nor)
+>  {
+>  	struct cqspi_flash_pdata *f_pdata = nor->priv;
+>  	u32 rdreg = 0;
+> @@ -354,8 +354,7 @@ static int cqspi_exec_flash_cmd(struct cqspi_st *cqspi, unsigned int reg)
+>  	return cqspi_wait_idle(cqspi);
+>  }
+>  
+> -static int cqspi_command_read(struct spi_nor *nor,
+> -			      const u8 *txbuf, const unsigned n_tx,
+> +static int cqspi_command_read(struct spi_nor *nor, u8 opcode,
+>  			      u8 *rxbuf, size_t n_rx)
+>  {
+>  	struct cqspi_flash_pdata *f_pdata = nor->priv;
+> @@ -373,9 +372,9 @@ static int cqspi_command_read(struct spi_nor *nor,
+>  		return -EINVAL;
+>  	}
+>  
+> -	reg = txbuf[0] << CQSPI_REG_CMDCTRL_OPCODE_LSB;
+> +	reg = opcode << CQSPI_REG_CMDCTRL_OPCODE_LSB;
+>  
+> -	rdreg = cqspi_calc_rdreg(nor, txbuf[0]);
+> +	rdreg = cqspi_calc_rdreg(nor);
+>  	writel(rdreg, reg_base + CQSPI_REG_RD_INSTR);
+>  
+>  	reg |= (0x1 << CQSPI_REG_CMDCTRL_RD_EN_LSB);
+> @@ -471,7 +470,7 @@ static int cqspi_read_setup(struct spi_nor *nor)
+>  	unsigned int reg;
+>  
+>  	reg = nor->read_opcode << CQSPI_REG_RD_INSTR_OPCODE_LSB;
+> -	reg |= cqspi_calc_rdreg(nor, nor->read_opcode);
+> +	reg |= cqspi_calc_rdreg(nor);
+>  
+>  	/* Setup dummy clock cycles */
+>  	dummy_clk = nor->read_dummy;
+> @@ -604,7 +603,7 @@ static int cqspi_write_setup(struct spi_nor *nor)
+>  	/* Set opcode. */
+>  	reg = nor->program_opcode << CQSPI_REG_WR_INSTR_OPCODE_LSB;
+>  	writel(reg, reg_base + CQSPI_REG_WR_INSTR);
+> -	reg = cqspi_calc_rdreg(nor, nor->program_opcode);
+> +	reg = cqspi_calc_rdreg(nor);
+>  	writel(reg, reg_base + CQSPI_REG_RD_INSTR);
+>  
+>  	reg = readl(reg_base + CQSPI_REG_SIZE);
+> @@ -1087,7 +1086,7 @@ static int cqspi_read_reg(struct spi_nor *nor, u8 opcode, u8 *buf, size_t len)
+>  
+>  	ret = cqspi_set_protocol(nor, 0);
+>  	if (!ret)
+> -		ret = cqspi_command_read(nor, &opcode, 1, buf, len);
+> +		ret = cqspi_command_read(nor, opcode, buf, len);
+>  
+>  	return ret;
+>  }
+
 
 _______________________________________________
 linux-arm-kernel mailing list
