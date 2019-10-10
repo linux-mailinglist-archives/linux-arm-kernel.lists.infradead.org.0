@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60079D3232
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 22:40:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76D92D3233
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 22:42:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YmFChg0HAlKrzpPlHwMdtigMKqwzFVb/WAR9m3GCxEM=; b=pWAiZMcBt+R5wv
-	IRYb+mArxtj1xAJ57bTRNm5d9p9bx6kXqx1HHUuTgH4iFDjrTGnT3eWyJSBF1Q/f3EL+K3yOwL6jO
-	s4S2Vcz0mFvebYFOSkmV/QE5mb16olC8Y91f+kS1f6yTz9jvEDvWxXijsLxmRxBxLqpCsDoXgMBpe
-	OgHQtDO5WsT5vLR7qhlp9uc9WnIVdyB/YaSQ1S/UVmqaJf/2cyvQ6krdTPHo+71p0IRPAw1gSAZR1
-	40wSeta+TUcGFIB3PXcJ5z1rSgK4VaGHoj+xMFOvkZOijvyXOZORg6ZueQEA6stNRS/6blM58FbTV
-	JOg/wV3PczfQ16PTV8ZQ==;
+	List-Owner; bh=IJSJARbd/ZzoA0YzJ+Ow5ThJQ/q/KmlpSIpW+QtZqXs=; b=Xyz/vCrVkDWBrR
+	nvR1W4/L+uwO0uVwjXEZIcQTj7bgPz/fEFuqF6jBHeBjjbXIiZk7d5PsJE/HOkwvwTz2ND+SYiLkn
+	Kw+q4Pg3i5Gjgun6jUCbGnFXYCJ72gQltkX9A8zCDF6mp1Op265JZ3WAXYzqz44e7ZF69g0pz65CK
+	g8m4Tn75fz9QBRG2GrFZlzXzVM41PYARhZ0R0PFKiXZItKAx8IpbpXb7exD/kK0UTPQE7BWzQDoQC
+	u24uLIY7uFqaQhIZteFWTIe57+RQIJeAlO1p2rx4yPBSH/tLEPUqN8LGcGILeHz4jvo+fevXZaK7v
+	j4us+nueR0A3s2FtCAeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIfEf-0000c3-Lj; Thu, 10 Oct 2019 20:40:33 +0000
-Received: from mout.kundenserver.de ([212.227.126.187])
+	id 1iIfGC-0000uU-Rt; Thu, 10 Oct 2019 20:42:08 +0000
+Received: from mout.kundenserver.de ([212.227.126.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIfEX-0000bd-PR
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 20:40:27 +0000
+ id 1iIfG5-0000u3-2s
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 20:42:02 +0000
 Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
  (mreue012 [212.227.15.129]) with ESMTPA (Nemesis) id
- 1M1JJC-1iFv8y1hxS-002m0W; Thu, 10 Oct 2019 22:40:18 +0200
+ 1M1JJC-1iFv9w3tso-002m0W; Thu, 10 Oct 2019 22:41:35 +0200
 From: Arnd Bergmann <arnd@arndb.de>
 To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>,
- Marc Zyngier <maz@kernel.org>
-Subject: [PATCH 14/36] ARM: s3c: move irqchip driver back into platform
-Date: Thu, 10 Oct 2019 22:29:58 +0200
-Message-Id: <20191010203043.1241612-14-arnd@arndb.de>
+ Jean Delvare <jdelvare@suse.com>, Guenter Roeck <linux@roeck-us.net>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Sebastian Reichel <sre@kernel.org>
+Subject: [PATCH 15/36] ARM: s3c: adc: move header to linux/soc/samsung
+Date: Thu, 10 Oct 2019 22:29:59 +0200
+Message-Id: <20191010203043.1241612-15-arnd@arndb.de>
 X-Mailer: git-send-email 2.20.0
 In-Reply-To: <20191010203043.1241612-1-arnd@arndb.de>
 References: <20191010202802.1132272-1-arnd@arndb.de>
  <20191010203043.1241612-1-arnd@arndb.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:tpUU70kK2mbi+5FuJ7O/HDHJNvQ8Wxs2kgX7rE8BR+L60lBoHF3
- wudUVfEaPZ9r7AlBGTwQ0IxuvapY4pSNPE0QBHfF+o50E83eu4tVD1qYwE6XUbr46E4S4CB
- PLET0g3wo0KgjbRE2wat355k7aL1MgVVW0+pgArdBYfiF+X0dI8YgaMNmtJufHX+aYCzOCC
- HLscEytGGJ2sXXgaVEk4Q==
+X-Provags-ID: V03:K1:FpoNJIc3itWORZoaPFv25Myx/M15oG1YjGqTAt4YFRfspCrSprG
+ guybCXrWrn5DkwrIim8Muc6xFZJqDY8H2WUkjdhc2hKBJD/HhrV3FJR1cK/+F3/MY3xZDRs
+ sLAxAWd2nFXpNgUgLIyTuHVUUPRKsEDCtc0q2yZyjUrS/S5ERXfJlNHDAk1BCZNchhX2tMr
+ VdmRUNgNJjoIWO3yrlYVA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Q6XMjTeUzfA=:kDFlER7V334bXhY74s+aIR
- u3ogHMtNrh4V/IPMBwdJUxAYexjVtwtYWli4YpVUT7eNc94Edi1n6HlrJIT3Uks3xzHL/Aiio
- sD8r5yaB2audjRtGokFlBjtEuOm7dgB557Hm/0scEcKcwYGcwCiavuJnuDBDQzoZdIse5+HNM
- wUZdOy6PjZNPA9SktuBKQElsVX3i8z+G5zu60ry63tPG2frH28OPRI68mi7dXmF0kS73Bs/5V
- WG9oUYkTlVkbTjccpzyGqxfx/VNO64NkG/byVmT+q65qidyLadkd6N/Jxk3onG5nYu7RwYW5R
- 0wh+OpcUzPA9UcyHIyAgtQko0pOgGhh0HoK7cN/hshmtbympJdYcnThHxrLRCkGYRVMCvaCSU
- TRjDydkbrRcIfpLkmHkzsnp2/xB0Y0OzqPaYELfgNmeDK2ffk+/fTLv/TTjPxjrfi+7qGtV85
- 5tZyZP2zRKeXl2v2WSuFI1MEteHrEAMvcbZxUnczyfgifZAmGCs0lJInkdsUHUFgO4gNihHFw
- LrCLW2UIBcGQilEpQwTdEVuIs9l2G4qMXEWEU4MO3/eKTz2fJ9VDyPTaD+Co0sajf0G79Nhna
- gaY2z0GpLjtT3mBAc5ZoNW2+gTqZyq3f6yxcHVV36U3mrTpVuDwMfO4PNLdzaf+zbyRL+UV3j
- GXpPl0v4G4zeFjWXEz3Tk74cp2kX54MIv8VU5t1Ya9geXNK21FwDWVFVPMYm6ROCBCP9id4fv
- Kfi/qwP3bzpB1PPfNq4j22rsXokzBVv5L/hJ4+RDaaJNYMPkgF9R44FmHBoP5iAb5i8g58ysk
- 2mU0CR+ieJGPiyJVIxXINQfBSh6Ta/XGRX+d92EOigqJWVxAgawm0txOak/khOmw1qmLpnWNm
- 1G2OwpElH6YpJGzp7AAA==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:igCCi1hi5O0=:wNKDceOyAM1WB1Zn34ZQdp
+ UV1jKwBqIyc07z3xcE54DHVZTJrjbNxuq9Wh6mXT7OPklWo5AsZZpwWUr1PBXXV2UNnsWjzKO
+ iocaE4sRUw7Wj96sYq42ZUDaTwg7yz9EvTP69XjPWlq/nKQ0or/Qdl4kBSOMsnP01th8K0nYK
+ o08NO8CoQYu+R3Dai6Qp5OYMZwtXTTFqOrzt1EJaqgiklhpo8qjtFX1Q7HYGUGJM/G/8o/3Hg
+ LUqnqldNtFfJoCnvzAqDO8UVCMhn30shQkkeayOhuNFoUKUP43WQc1xIp7ihGh9siOksCUWii
+ Z5OBhbPZgD31M/uWKFc1R0PSt/PVft+8ZOtg5g2hVKdGOiKYLr7+gANz/Ebu5xnbKpDxv497U
+ lgsAh4Nrt/qM9ftwTomvyy9Hgw1HG1WAV69mbeEhEYhsK+4Ni1ebdK/oLuqCnohzB/A9OAC8b
+ aMDuTwhTxhAvWWCokFOdJWU7L2I78HqpSu8UyHPe8oNL2fQp+K0D3yqyX938WW5rFliEtFpns
+ l1naLMQ2E//wqeXx5yqwDL4odxqHMmpTb0mChd1QgreLoDjz+Mxott7V1d/WQT41oO8Z3qJzR
+ hLb8qJBXwNKflHRNnM0fgJOiObczYpZ89ILnWmBXUPNhp3/337ATFa/Xv0Te3Y7Blrxu5Jd1e
+ js0U6/loxVpWvJpsO2/JtJkKzZkBDyteKlvqOBGt99tHFxoh3jcHTLYdgFw6eb7vSun3aj3zH
+ BtkwI/fjKp5crny1NjvJrvtcWAotPweYvE7lyZZ7zbG4Tpgc5PoauHz2zFqhYp8ibatk6ab2P
+ muAkM5IsSkjN8KRxIUHt+pSzTp+5ze6DjRTINrzW4wP6OiL/wuffsPo/3I3XDyaLYPsDYJKSp
+ SfP5kAzgidVrbZI3DnNw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_134026_122212_CB8B9B9F 
-X-CRM114-Status: GOOD (  12.23  )
+X-CRM114-CacheID: sfid-20191010_134201_421058_E7CF1B04 
+X-CRM114-Status: GOOD (  11.72  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.187 listed in list.dnswl.org]
+ no trust [212.227.126.130 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,55 +81,196 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linus.walleij@linaro.org, linux-samsung-soc@vger.kernel.org,
- Arnd Bergmann <arnd@arndb.de>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: linux-hwmon@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-pm@vger.kernel.org,
+ linus.walleij@linaro.org, linux-kernel@vger.kernel.org,
+ linux-input@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It was a good idea to move it out at first, but the irqchip code
-is still tightly connected to the s3c24xx platform code and uses
-multiple internal header files, so just move it back for the
-time being to avoid those dependencies.
+There are multiple drivers using the private adc interface.
+It seems unlikely that they would ever get converted to iio,
+so make the current state official by making the header file
+global.
+
+The s3c2410_ts driver needs a couple of register definitions
+as well.
 
 Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 ---
- arch/arm/mach-s3c24xx/Makefile                           | 1 +
- {drivers/irqchip => arch/arm/mach-s3c24xx}/irq-s3c24xx.c | 0
- drivers/irqchip/Makefile                                 | 1 -
- 3 files changed, 1 insertion(+), 1 deletion(-)
- rename {drivers/irqchip => arch/arm/mach-s3c24xx}/irq-s3c24xx.c (100%)
+ arch/arm/mach-s3c64xx/mach-crag6410.c         |  2 +-
+ arch/arm/mach-s3c64xx/mach-mini6410.c         |  2 +-
+ arch/arm/mach-s3c64xx/mach-real6410.c         |  2 +-
+ arch/arm/mach-s3c64xx/mach-smdk6410.c         |  2 +-
+ arch/arm/plat-samsung/adc.c                   |  2 +-
+ arch/arm/plat-samsung/devs.c                  |  2 +-
+ drivers/hwmon/s3c-hwmon.c                     |  2 +-
+ drivers/input/touchscreen/s3c2410_ts.c        | 37 ++++++++++++++++++-
+ drivers/power/supply/s3c_adc_battery.c        |  2 +-
+ .../linux/soc/samsung/s3c-adc.h               |  0
+ 10 files changed, 43 insertions(+), 10 deletions(-)
+ rename arch/arm/plat-samsung/include/plat/adc.h => include/linux/soc/samsung/s3c-adc.h (100%)
 
-diff --git a/arch/arm/mach-s3c24xx/Makefile b/arch/arm/mach-s3c24xx/Makefile
-index 6692f2de71b2..8c31f84f8c97 100644
---- a/arch/arm/mach-s3c24xx/Makefile
-+++ b/arch/arm/mach-s3c24xx/Makefile
-@@ -8,6 +8,7 @@
- # core
+diff --git a/arch/arm/mach-s3c64xx/mach-crag6410.c b/arch/arm/mach-s3c64xx/mach-crag6410.c
+index da5b50981a14..133453562d23 100644
+--- a/arch/arm/mach-s3c64xx/mach-crag6410.c
++++ b/arch/arm/mach-s3c64xx/mach-crag6410.c
+@@ -57,7 +57,7 @@
+ #include <plat/keypad.h>
+ #include <plat/devs.h>
+ #include <plat/cpu.h>
+-#include <plat/adc.h>
++#include <linux/soc/samsung/s3c-adc.h>
+ #include <linux/platform_data/i2c-s3c2410.h>
+ #include <plat/pm.h>
+ #include <plat/samsung-time.h>
+diff --git a/arch/arm/mach-s3c64xx/mach-mini6410.c b/arch/arm/mach-s3c64xx/mach-mini6410.c
+index 0dd36ae49e6a..c7140300bd3f 100644
+--- a/arch/arm/mach-s3c64xx/mach-mini6410.c
++++ b/arch/arm/mach-s3c64xx/mach-mini6410.c
+@@ -27,7 +27,7 @@
+ #include <mach/regs-gpio.h>
+ #include <mach/gpio-samsung.h>
  
- obj-y				+= common.o
-+obj-y				+= irq-s3c24xx.o
+-#include <plat/adc.h>
++#include <linux/soc/samsung/s3c-adc.h>
+ #include <plat/cpu.h>
+ #include <plat/devs.h>
+ #include <plat/fb.h>
+diff --git a/arch/arm/mach-s3c64xx/mach-real6410.c b/arch/arm/mach-s3c64xx/mach-real6410.c
+index 0ff88b6859c4..f55097fde94c 100644
+--- a/arch/arm/mach-s3c64xx/mach-real6410.c
++++ b/arch/arm/mach-s3c64xx/mach-real6410.c
+@@ -29,7 +29,7 @@
+ #include <mach/gpio-samsung.h>
+ #include <mach/irqs.h>
  
- obj-$(CONFIG_CPU_S3C2410)	+= s3c2410.o
- obj-$(CONFIG_S3C2410_PLL)	+= pll-s3c2410.o
-diff --git a/drivers/irqchip/irq-s3c24xx.c b/arch/arm/mach-s3c24xx/irq-s3c24xx.c
+-#include <plat/adc.h>
++#include <linux/soc/samsung/s3c-adc.h>
+ #include <plat/cpu.h>
+ #include <plat/devs.h>
+ #include <plat/fb.h>
+diff --git a/arch/arm/mach-s3c64xx/mach-smdk6410.c b/arch/arm/mach-s3c64xx/mach-smdk6410.c
+index 95bdcfe95a53..3042f6cbffd9 100644
+--- a/arch/arm/mach-s3c64xx/mach-smdk6410.c
++++ b/arch/arm/mach-s3c64xx/mach-smdk6410.c
+@@ -60,7 +60,7 @@
+ 
+ #include <plat/devs.h>
+ #include <plat/cpu.h>
+-#include <plat/adc.h>
++#include <linux/soc/samsung/s3c-adc.h>
+ #include <linux/platform_data/touchscreen-s3c2410.h>
+ #include <plat/keypad.h>
+ #include <plat/samsung-time.h>
+diff --git a/arch/arm/plat-samsung/adc.c b/arch/arm/plat-samsung/adc.c
+index ee3d5c989a76..623a9774cc52 100644
+--- a/arch/arm/plat-samsung/adc.c
++++ b/arch/arm/plat-samsung/adc.c
+@@ -20,7 +20,7 @@
+ #include <linux/regulator/consumer.h>
+ 
+ #include <plat/regs-adc.h>
+-#include <plat/adc.h>
++#include <linux/soc/samsung/s3c-adc.h>
+ 
+ /* This driver is designed to control the usage of the ADC block between
+  * the touchscreen and any other drivers that may need to use it, such as
+diff --git a/arch/arm/plat-samsung/devs.c b/arch/arm/plat-samsung/devs.c
+index fd94a35e22f8..ddd90f0bb380 100644
+--- a/arch/arm/plat-samsung/devs.c
++++ b/arch/arm/plat-samsung/devs.c
+@@ -44,7 +44,7 @@
+ 
+ #include <plat/cpu.h>
+ #include <plat/devs.h>
+-#include <plat/adc.h>
++#include <linux/soc/samsung/s3c-adc.h>
+ #include <linux/platform_data/ata-samsung_cf.h>
+ #include <plat/fb.h>
+ #include <plat/fb-s3c2410.h>
+diff --git a/drivers/hwmon/s3c-hwmon.c b/drivers/hwmon/s3c-hwmon.c
+index b490fe3d2ee8..f2703c5460d0 100644
+--- a/drivers/hwmon/s3c-hwmon.c
++++ b/drivers/hwmon/s3c-hwmon.c
+@@ -20,7 +20,7 @@
+ #include <linux/hwmon.h>
+ #include <linux/hwmon-sysfs.h>
+ 
+-#include <plat/adc.h>
++#include <linux/soc/samsung/s3c-adc.h>
+ #include <linux/platform_data/hwmon-s3c.h>
+ 
+ struct s3c_hwmon_attr {
+diff --git a/drivers/input/touchscreen/s3c2410_ts.c b/drivers/input/touchscreen/s3c2410_ts.c
+index b346e7cafd62..1a5a178ea286 100644
+--- a/drivers/input/touchscreen/s3c2410_ts.c
++++ b/drivers/input/touchscreen/s3c2410_ts.c
+@@ -21,10 +21,43 @@
+ #include <linux/clk.h>
+ #include <linux/io.h>
+ 
+-#include <plat/adc.h>
+-#include <plat/regs-adc.h>
++#include <linux/soc/samsung/s3c-adc.h>
+ #include <linux/platform_data/touchscreen-s3c2410.h>
+ 
++#define	S3C2410_ADCCON			(0x00)
++#define	S3C2410_ADCTSC			(0x04)
++#define	S3C2410_ADCDLY			(0x08)
++#define	S3C2410_ADCDAT0			(0x0C)
++#define	S3C2410_ADCDAT1			(0x10)
++#define	S3C64XX_ADCUPDN			(0x14)
++#define	S3C2443_ADCMUX			(0x18)
++#define	S3C64XX_ADCCLRINT		(0x18)
++#define	S5P_ADCMUX			(0x1C)
++#define	S3C64XX_ADCCLRINTPNDNUP		(0x20)
++
++/* ADCTSC Register Bits */
++#define S3C2443_ADCTSC_UD_SEN		(1 << 8)
++#define S3C2410_ADCTSC_YM_SEN		(1<<7)
++#define S3C2410_ADCTSC_YP_SEN		(1<<6)
++#define S3C2410_ADCTSC_XM_SEN		(1<<5)
++#define S3C2410_ADCTSC_XP_SEN		(1<<4)
++#define S3C2410_ADCTSC_PULL_UP_DISABLE	(1<<3)
++#define S3C2410_ADCTSC_AUTO_PST		(1<<2)
++#define S3C2410_ADCTSC_XY_PST(x)	(((x)&0x3)<<0)
++
++/* ADCDAT0 Bits */
++#define S3C2410_ADCDAT0_UPDOWN		(1<<15)
++#define S3C2410_ADCDAT0_AUTO_PST	(1<<14)
++#define S3C2410_ADCDAT0_XY_PST		(0x3<<12)
++#define S3C2410_ADCDAT0_XPDATA_MASK	(0x03FF)
++
++/* ADCDAT1 Bits */
++#define S3C2410_ADCDAT1_UPDOWN		(1<<15)
++#define S3C2410_ADCDAT1_AUTO_PST	(1<<14)
++#define S3C2410_ADCDAT1_XY_PST		(0x3<<12)
++#define S3C2410_ADCDAT1_YPDATA_MASK	(0x03FF)
++
++
+ #define TSC_SLEEP  (S3C2410_ADCTSC_PULL_UP_DISABLE | S3C2410_ADCTSC_XY_PST(0))
+ 
+ #define INT_DOWN	(0)
+diff --git a/drivers/power/supply/s3c_adc_battery.c b/drivers/power/supply/s3c_adc_battery.c
+index 3d00b35cafc9..60b7f41ab063 100644
+--- a/drivers/power/supply/s3c_adc_battery.c
++++ b/drivers/power/supply/s3c_adc_battery.c
+@@ -22,7 +22,7 @@
+ #include <linux/init.h>
+ #include <linux/module.h>
+ 
+-#include <plat/adc.h>
++#include <linux/soc/samsung/s3c-adc.h>
+ 
+ #define BAT_POLL_INTERVAL		10000 /* ms */
+ #define JITTER_DELAY			500 /* ms */
+diff --git a/arch/arm/plat-samsung/include/plat/adc.h b/include/linux/soc/samsung/s3c-adc.h
 similarity index 100%
-rename from drivers/irqchip/irq-s3c24xx.c
-rename to arch/arm/mach-s3c24xx/irq-s3c24xx.c
-diff --git a/drivers/irqchip/Makefile b/drivers/irqchip/Makefile
-index cc7c43932f16..92864e496251 100644
---- a/drivers/irqchip/Makefile
-+++ b/drivers/irqchip/Makefile
-@@ -16,7 +16,6 @@ obj-$(CONFIG_ARCH_LPC32XX)		+= irq-lpc32xx.o
- obj-$(CONFIG_ARCH_MMP)			+= irq-mmp.o
- obj-$(CONFIG_IRQ_MXS)			+= irq-mxs.o
- obj-$(CONFIG_ARCH_TEGRA)		+= irq-tegra.o
--obj-$(CONFIG_ARCH_S3C24XX)		+= irq-s3c24xx.o
- obj-$(CONFIG_DW_APB_ICTL)		+= irq-dw-apb-ictl.o
- obj-$(CONFIG_CLPS711X_IRQCHIP)		+= irq-clps711x.o
- obj-$(CONFIG_OMPIC)			+= irq-ompic.o
+rename from arch/arm/plat-samsung/include/plat/adc.h
+rename to include/linux/soc/samsung/s3c-adc.h
 -- 
 2.20.0
 
