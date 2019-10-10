@@ -2,65 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B202D3472
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 01:40:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3981D3478
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 01:42:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rIgDus8lVohp0r/qJc3rNmzTjwNVgdhDbOUd/rtHcMo=; b=LjVLS70AjuaS+p
-	y+wibEaX5BN+qFM9LCBcH9R/ODCqLvVWg74WJCEeISrZdotlwSEWlCwyHTUgzku46sLxfpaTBXCmi
-	R4B68eGQRrqzM1csKj3YbYeniDdggYlShRbERWq/t5pcjpj7/1c1BJrCXnVRDV8bAk3eDaaApgv5l
-	7iUxUqFwFvxuh/DCdLUgB+iNyaU2kfNk2f9YqpOBYAyFVEzsV7Nr+0EpetcgW3mcrh6hXbDQeThgW
-	x84+gkuo/mvzpZNKmkP4LNO8eU1cTGaqZF7MU+1j9NRIqV0LRtm6e8dkwXk5FUlvijL2HvPAzZBAW
-	xL47NGyhk+uBmo/j7NMQ==;
+	List-Owner; bh=4hUJALRyber6caIkalZDS6UzAQ/UjK9574hos6ungX0=; b=oPHjkhkbVL/O0Y
+	md1HdnaZwINmRKj4VF7qIgNsvJh3WgM0Dc7+Y423lu35xseFX8e22oVsuJWS45EY8cSvUuC7p1KBx
+	5xILr4uq7Qyk2vuqn2pzAnhxGskzX8jOChJftOdQVHhkD7nyo3ZckdMJ74pydWVfSU6OstIotvChq
+	q/puH5kk8oOyXclChxm4VPeeNXcMAFzANTfO6u+p7mXrFY+tYod6V2i3maiEH4wCcnbe18uPNxV71
+	OwwDRhP5IVaGNnFeE++P7OyaHUVzU71GaRYD8Huj5+CJFvaCNoXv+HNep7iXmGUj+7XVsVpUNw0tP
+	1Z+5B8GKyEhukajrwXuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIi2Y-0006J6-Jg; Thu, 10 Oct 2019 23:40:14 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1iIi4G-00071h-Po; Thu, 10 Oct 2019 23:42:00 +0000
+Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIi2N-0005fP-Kf
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 23:40:04 +0000
-Received: by mail-qk1-x741.google.com with SMTP id w2so7289624qkf.2
+ id 1iIi45-00071G-6g
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 23:41:50 +0000
+Received: by mail-qk1-x744.google.com with SMTP id u22so7229976qkk.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 10 Oct 2019 16:40:03 -0700 (PDT)
+ Thu, 10 Oct 2019 16:41:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=qzY2GiRsLdKkNjOULOmOY2uh2S6GFNejWSTG+vyFaHU=;
- b=BAVg1aEQqMRenewRVbfHesEnWeY+3OjzO2is/qAbM5snBow68FC34L2LRa1QaZ3eR5
- 9Hk1wAjLnBY22hsxQRBsMj4hM26tHiYTXepbuzNl9+eRSSK3tvAvBTPCqWCj6HZbftgd
- F3oFG0waiCp5yvWHjy7xElgo8yxABrzwKmroA=
+ :cc; bh=qJAWywHBsS6HezKNK9ZjvcaTD5FSbDwrNVdcNRgDm5o=;
+ b=KE2L3z+yLugM41vE7B7L/+3dd9xTaYJgrmfANqDmI8fbCFLsh0UujCnqd9/8GWOH8B
+ UfhgN3vbEZ/X88jSoXyYh5P+uZ43u7Nm3c5BhOIAsmbyXB7guZN7BVxGP4lhE+Tuq9pR
+ TMhy5BL1/1QjqdjMRFYvuws7J7g7sEDgr0q4o=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=qzY2GiRsLdKkNjOULOmOY2uh2S6GFNejWSTG+vyFaHU=;
- b=Nh2nMj11BHOWGI0/5pasGwJ09OQKQFc0tNkmu7OjvbUbVz2ZZf/LprZ/Esp/tJXc+a
- DUfY0AWavwWcKok+2d4KvXcsJGWwd5Oe8mBz5Mg2pLaUS/IgXkYd0cCLQbAGlnAr9mCT
- 8GzIZ+mFjqYtQPkrilQ1U+RuDSZBx5Gg6CD2/JTfxOXFSKUuPB+FNCUOj2fdK7oSkUNO
- hGM4vhgpMQVomnbkalNZZLjCPVYYAPlAueDe0z6CX4YIdaV2RrYLJdqS+6vaThavVu5u
- aLLGDmVbj/ZpvDe53M/tlN18tbbZ96WDSk4clnIrB2kQpJacumcOK1F8pdKyz3RF5oCY
- deTw==
-X-Gm-Message-State: APjAAAVMaWa2jK89gv1ybs7vTweFcBd82mlRr5uHQklywl23f1Mac/xN
- GbBvdh4Yy2p270EbGnhBxTldIb79kAkYLes0i+A=
-X-Google-Smtp-Source: APXvYqx12wus94E93QLNJZDQFKcLjtUWJadRRN6O4zaoD5brzLAp2CQYDAJzj7qrNBW2/PzPYUcsc4tkO6fvhiMuSlM=
-X-Received: by 2002:a37:8d1:: with SMTP id 200mr12927454qki.330.1570750802156; 
- Thu, 10 Oct 2019 16:40:02 -0700 (PDT)
+ bh=qJAWywHBsS6HezKNK9ZjvcaTD5FSbDwrNVdcNRgDm5o=;
+ b=X3VokuGEDJ0ixxCyBgWdcn/kDETHtn7MInVP2ipdOZLmuWyGT5iLyXCnlSwcYofWtp
+ jtjoxMIy2oimTA9xomHhO5wZSEYkOkoWBjoIKQYYjSjAPCeCOiDp08xwRIrjU+zbugNz
+ Aueb09hDuKcwjhLJ/DoSzhotku3F9z5VF2EzjQJ+3n+u9O69sbxVPJLg89XAS0RLycBG
+ cfGcDl2CJHuMbiQBssPmwHPz+NMtfv8sajg7xSgxnIgbmsDZG0vt6ZEIq5eEZYCPKBd9
+ zMKF0Kul0tZTsTb5Ce1nGGQGsDWcRHbCvFPe9mKTATOm5lpKFuRcd0mbkmMZjxpOM0aH
+ F2KA==
+X-Gm-Message-State: APjAAAWg7D6sQn5DHK3geZljXX5lYhl+bmwzVHRjQ7wveMJX0/hxeCuU
+ /BmVtYD2rbz57qo3cq04pbbfyREzqxNXnb19+NeYsRlT8h4=
+X-Google-Smtp-Source: APXvYqzF4Bybt3eQo1Tnv/6kiOrhu88uAqhznHPcGo14GIAGi4u2VEbpqF+T4r85m7xuYjknEB0C6RBGaWMOJSajbhc=
+X-Received: by 2002:a37:4dca:: with SMTP id
+ a193mr12683477qkb.292.1570750908045; 
+ Thu, 10 Oct 2019 16:41:48 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191010020655.3776-1-andrew@aj.id.au>
- <20191010020655.3776-2-andrew@aj.id.au>
-In-Reply-To: <20191010020655.3776-2-andrew@aj.id.au>
+ <20191010020655.3776-3-andrew@aj.id.au>
+In-Reply-To: <20191010020655.3776-3-andrew@aj.id.au>
 From: Joel Stanley <joel@jms.id.au>
-Date: Thu, 10 Oct 2019 23:39:49 +0000
-Message-ID: <CACPK8Xc2mibu+Pqi7ejGT_M24oprgoOik3Z8=fP6NVgEQeZYZQ@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] dt-bindings: clock: Add AST2500 RMII RCLK
- definitions
+Date: Thu, 10 Oct 2019 23:41:35 +0000
+Message-ID: <CACPK8Xcrc_2itUcGw6caa8Fp3sJE8oHBO5LJgBtqScwmVAuHJw@mail.gmail.com>
+Subject: Re: [PATCH v2 2/2] clk: aspeed: Add RMII RCLK gates for both AST2500
+ MACs
 To: Andrew Jeffery <andrew@aj.id.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_164003_736704_782BFABD 
-X-CRM114-Status: UNSURE (   8.40  )
+X-CRM114-CacheID: sfid-20191010_164149_246646_7EC09A9F 
+X-CRM114-Status: UNSURE (   8.51  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -68,7 +69,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -106,10 +107,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 10 Oct 2019 at 02:05, Andrew Jeffery <andrew@aj.id.au> wrote:
+On Thu, 10 Oct 2019 at 02:06, Andrew Jeffery <andrew@aj.id.au> wrote:
 >
-> The AST2500 has an explicit gate for the RMII RCLK for each of the two
-> MACs.
+> RCLK is a fixed 50MHz clock derived from HPLL that is described by a
+> single gate for each MAC.
 >
 > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
 
