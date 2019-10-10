@@ -2,55 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A397D223F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 10:06:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EE89D2244
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 10:08:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=R7WvLsEuu6KjfKYNk5erW5j/cj3gNvN1xWOmv8FZttk=; b=uJN/dDQVd0z0ATnDyxuEdZBy8
-	fBBO5NpM/IrnsA4MT4owLbhRtALo+CaNwUCBdGQcLxuYU7Z9bGCHczJZgTTZYjcYX4R+THcfC1+v0
-	9DXI/SvjiwwufuxiF/QX5OrlBTG6b17PSakllPOvmy5FgfP9twOBaPX2DCFBOwnf7Gm/CjwLpOvsE
-	P5nzIsdkDpVXTziJBYYQRiVFxQVMSl3z/7Yne2lu0I0B8yndqBQQr7e8sY3oXLaHvN9BxlvMjoCho
-	34Rx9yIOTkIHl7wAPo2g8PeP+mtIhiBUUNZ+oHsID6ct+P2jgnLOUzyFB6QbP9/+Kp2xX5/8tHPve
-	5IcVaeBdg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cyjZfwOaCAVdiS3l6JBPjOFuipycPyHgLrZqF0tEewg=; b=QY+g4H5tfsXnRp
+	Zbv35xR1RB7mhe6TqcmkJt77DOHAv7s508n5n5on6ZKQGApKV6ZtJM8+5U/iEgTekEHxPvXth4lNV
+	pVzW6szdYna7QZL05nK597UC/U7giG4C02flHkIam6Z0zTa8rf4/IVVX1zb3K1Sm7mnAg/w+qXDyC
+	30BqLWs3wQ4owhpSfoob6kzT5P8siQ1kpvGDVAtfhVh6ykktI6uRpS9GYcY6Gk03i1GIaTgkTt55c
+	IxNkI06RqxrCDK0qjtLDWK8V3yMKOJNmmxZVSjn4HA4qP2BIMHd/0poLhVQqtyrMc6rWZCOjYM7iR
+	yuABPuQW1taxtsVyozSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iITSp-000825-N6; Thu, 10 Oct 2019 08:06:23 +0000
-Received: from imap1.codethink.co.uk ([176.9.8.82])
+	id 1iITUU-0008O4-Fc; Thu, 10 Oct 2019 08:08:06 +0000
+Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iITSe-000816-RI
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 08:06:15 +0000
-Received: from [167.98.27.226] (helo=[10.35.6.110])
- by imap1.codethink.co.uk with esmtpsa (Exim 4.84_2 #1 (Debian))
- id 1iITSb-0002Ne-2z; Thu, 10 Oct 2019 09:06:09 +0100
-Subject: Re: [PATCH] zImage: atags_to_fdt: fix __be32 and __be64 types
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-References: <20191009160153.6298-1-ben.dooks@codethink.co.uk>
- <20191009162417.GG25745@shell.armlinux.org.uk>
-From: Ben Dooks <ben.dooks@codethink.co.uk>
-Organization: Codethink Limited.
-Message-ID: <eb1b4255-3225-1cff-d572-8b45558ac23a@codethink.co.uk>
-Date: Thu, 10 Oct 2019 09:06:08 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iITUM-0008Na-M8
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 08:08:00 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from orsmga003.jf.intel.com ([10.7.209.27])
+ by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 10 Oct 2019 01:07:57 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.67,279,1566889200"; d="scan'208";a="197171942"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by orsmga003.jf.intel.com with ESMTP; 10 Oct 2019 01:07:53 -0700
+Received: from andy by smile with local (Exim 4.92.2)
+ (envelope-from <andy.shevchenko@gmail.com>)
+ id 1iITUE-0002L7-QG; Thu, 10 Oct 2019 11:07:50 +0300
+Date: Thu, 10 Oct 2019 11:07:50 +0300
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Subject: Re: [PATCH v17 01/14] bitops: Introduce the for_each_set_clump8 macro
+Message-ID: <20191010080750.GN32742@smile.fi.intel.com>
+References: <cover.1570633189.git.vilhelm.gray@gmail.com>
+ <893c3b4f03266c9496137cc98ac2b1bd27f92c73.1570633189.git.vilhelm.gray@gmail.com>
+ <CAK7LNATgW7bXUmqV=3QAaJ0Qu73Kox-TgDCQJb=s0=mwewSCUg@mail.gmail.com>
+ <20191009170917.GG32742@smile.fi.intel.com>
+ <CAMuHMdXyyrL4ibKvjMV6r8TuxpmK73=JxsWNEfcRk1NjwsnOjA@mail.gmail.com>
+ <CAK7LNASVdqU_6+_iinWStb9ALqLw494pnZKr46fLW+WJ9nUo6A@mail.gmail.com>
+ <CAHp75VeLkfNZkqhD8tedJdav81L+VA3Z50Kwcd9h4R7zMwjtvA@mail.gmail.com>
+ <CAMuHMdVs=PgET6=-fKgznETOye_Bxqt6h16Ok0nu6J2vXG-r_w@mail.gmail.com>
+ <CAHp75Vc8HX=hs2F2R_wOaFM7cFjaX0k_kENybdxSh742PpVkjw@mail.gmail.com>
+ <CAMuHMdVrQyt=VJ8outiGEXW78-cY=YUWyeVXN-_MFg75erJ=Yg@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20191009162417.GG25745@shell.armlinux.org.uk>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <CAMuHMdVrQyt=VJ8outiGEXW78-cY=YUWyeVXN-_MFg75erJ=Yg@mail.gmail.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_010613_033780_A8C589F4 
-X-CRM114-Status: GOOD (  19.22  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191010_010758_731365_9C305280 
+X-CRM114-Status: GOOD (  23.27  )
+X-Spam-Score: 0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [176.9.8.82 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.151 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (andy.shevchenko[at]gmail.com)
+ 0.0 DKIM_ADSP_CUSTOM_MED   No valid author signature, adsp_override is
+ CUSTOM_MED
+ 1.0 FORGED_GMAIL_RCVD      'From' gmail.com does not match 'Received'
+ headers
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 1.2 NML_ADSP_CUSTOM_MED    ADSP custom_med hit, and not from a mailing
+ list
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,120 +87,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@lists.codethink.co.uk, linux-arm-kernel@lists.infradead.org
+Cc: linux-arch <linux-arch@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Linux PM mailing list <linux-pm@vger.kernel.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ William Breathitt Gray <vilhelm.gray@gmail.com>, morten.tiljeset@prevas.dk,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Lukas Wunner <lukas@wunner.de>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Phil Reid <preid@electromag.com.au>,
+ sean.nyekjaer@prevas.dk,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 09/10/2019 17:24, Russell King - ARM Linux admin wrote:
-> On Wed, Oct 09, 2019 at 05:01:53PM +0100, Ben Dooks wrote:
->> Change types of some the uint32_t to __be32 or __be64 to
->> avoid the following sparse warnings:
->>
->> arch/arm/boot/compressed/atags_to_fdt.c:66:29: warning: cast to restricted __be32
->> arch/arm/boot/compressed/atags_to_fdt.c:66:29: warning: cast to restricted __be32
->> arch/arm/boot/compressed/atags_to_fdt.c:66:29: warning: cast to restricted __be32
->> arch/arm/boot/compressed/atags_to_fdt.c:66:29: warning: cast to restricted __be32
->> arch/arm/boot/compressed/atags_to_fdt.c:66:29: warning: cast to restricted __be32
->> arch/arm/boot/compressed/atags_to_fdt.c:66:29: warning: cast to restricted __be32
->> arch/arm/boot/compressed/atags_to_fdt.c:182:60: warning: incorrect type in assignment (different base types)
->> arch/arm/boot/compressed/atags_to_fdt.c:182:60:    expected unsigned long long [usertype]
->> arch/arm/boot/compressed/atags_to_fdt.c:182:60:    got restricted __be64 [usertype]
->> arch/arm/boot/compressed/atags_to_fdt.c:184:60: warning: incorrect type in assignment (different base types)
->> arch/arm/boot/compressed/atags_to_fdt.c:184:60:    expected unsigned long long [usertype]
->> arch/arm/boot/compressed/atags_to_fdt.c:184:60:    got restricted __be64 [usertype]
->> arch/arm/boot/compressed/atags_to_fdt.c:187:62: warning: incorrect type in assignment (different base types)
->> arch/arm/boot/compressed/atags_to_fdt.c:187:62:    expected unsigned int
->> arch/arm/boot/compressed/atags_to_fdt.c:187:62:    got restricted __be32 [usertype]
->> arch/arm/boot/compressed/atags_to_fdt.c:189:62: warning: incorrect type in assignment (different base types)
->> arch/arm/boot/compressed/atags_to_fdt.c:189:62:    expected unsigned int
->> arch/arm/boot/compressed/atags_to_fdt.c:189:62:    got restricted __be32 [usertype]
->>
->> Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
->> ---
->> Cc: Russell King <linux@armlinux.org.uk>
->> Cc: linux-arm-kernel@lists.infradead.org
->> ---
->>   arch/arm/boot/compressed/atags_to_fdt.c | 12 ++++++------
->>   1 file changed, 6 insertions(+), 6 deletions(-)
->>
->> diff --git a/arch/arm/boot/compressed/atags_to_fdt.c b/arch/arm/boot/compressed/atags_to_fdt.c
->> index 330cd3c2eae5..13407d0243b9 100644
->> --- a/arch/arm/boot/compressed/atags_to_fdt.c
->> +++ b/arch/arm/boot/compressed/atags_to_fdt.c
->> @@ -60,7 +60,7 @@ static uint32_t get_cell_size(const void *fdt)
->>   {
->>   	int len;
->>   	uint32_t cell_size = 1;
->> -	const uint32_t *size_len =  getprop(fdt, "/", "#size-cells", &len);
->> +	const __be32 *size_len =  getprop(fdt, "/", "#size-cells", &len);
->>   
->>   	if (size_len)
->>   		cell_size = fdt32_to_cpu(*size_len);
->> @@ -129,7 +129,7 @@ int atags_to_fdt(void *atag_list, void *fdt, int total_space)
->>   	struct tag *atag = atag_list;
->>   	/* In the case of 64 bits memory size, need to reserve 2 cells for
->>   	 * address and size for each bank */
->> -	uint32_t mem_reg_property[2 * 2 * NR_BANKS];
->> +	__be32 mem_reg_property[2 * 2 * NR_BANKS];
->>   	int memcount = 0;
->>   	int ret, memsize;
->>   
->> @@ -138,7 +138,7 @@ int atags_to_fdt(void *atag_list, void *fdt, int total_space)
->>   		return 1;
->>   
->>   	/* if we get a DTB here we're done already */
->> -	if (*(u32 *)atag_list == fdt32_to_cpu(FDT_MAGIC))
->> +	if (*(u32 *)atag_list == fdt32_to_cpu((fdt32_t)FDT_MAGIC))
->>   	       return 0;
->>   
->>   	/* validate the ATAG */
->> @@ -177,8 +177,8 @@ int atags_to_fdt(void *atag_list, void *fdt, int total_space)
->>   				/* if memsize is 2, that means that
->>   				 * each data needs 2 cells of 32 bits,
->>   				 * so the data are 64 bits */
->> -				uint64_t *mem_reg_prop64 =
->> -					(uint64_t *)mem_reg_property;
->> +				__be64 *mem_reg_prop64 =
->> +					(__be64 *)mem_reg_property;
->>   				mem_reg_prop64[memcount++] =
->>   					cpu_to_fdt64(atag->u.mem.start);
->>   				mem_reg_prop64[memcount++] =
->> @@ -207,7 +207,7 @@ int atags_to_fdt(void *atag_list, void *fdt, int total_space)
->>   	}
->>   
->>   	if (memcount) {
->> -		setprop(fdt, "/memory", "reg", mem_reg_property,
->> +		setprop(fdt, "/memory", "reg", (uint32_t *)mem_reg_property,
-> 
-> I'm not sure this is an improvement.
-> 
-> fdt_setprop() takes a const void pointer as its 4th argument:
-> 
-> int fdt_setprop(void *fdt, int nodeoffset, const char *name,
->                  const void *val, int len)
-> 		
-> setprop() could also do the same, since setprop() is just as flexible
-> as fdt_setprop() itself.  Then you don't need this cast.
+On Thu, Oct 10, 2019 at 09:49:51AM +0200, Geert Uytterhoeven wrote:
+> On Thu, Oct 10, 2019 at 9:42 AM Andy Shevchenko
+> <andy.shevchenko@gmail.com> wrote:
+> > On Thu, Oct 10, 2019 at 9:29 AM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
+> > > On Thu, Oct 10, 2019 at 7:49 AM Andy Shevchenko
+> > > <andy.shevchenko@gmail.com> wrote:
+> > > > On Thu, Oct 10, 2019 at 5:31 AM Masahiro Yamada
+> > > > <yamada.masahiro@socionext.com> wrote:
+> > > > > On Thu, Oct 10, 2019 at 3:54 AM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
+> > > > > > On Wed, Oct 9, 2019 at 7:09 PM Andy Shevchenko
+> > > > > > <andriy.shevchenko@linux.intel.com> wrote:
+> > > > > > > On Thu, Oct 10, 2019 at 01:28:08AM +0900, Masahiro Yamada wrote:
+> > > > > > > > On Thu, Oct 10, 2019 at 12:27 AM William Breathitt Gray
+> > > > > > > > <vilhelm.gray@gmail.com> wrote:
 
-ok, thank you for pointing this out, I will go and sort this out.
-
->>   			4 * memcount * memsize);
->>   	}
->>   
->> -- 
->> 2.23.0
->>
->>
+> > > > > > > > Why is the return type "unsigned long" where you know
+> > > > > > > > it return the 8-bit value ?
+> > > > > > >
+> > > > > > > Because bitmap API operates on unsigned long type. This is not only
+> > > > > > > consistency, but for sake of flexibility in case we would like to introduce
+> > > > > > > more calls like clump16 or so.
+> > > > > >
+> > > > > > TBH, that doesn't convince me: those functions explicitly take/return an
+> > > > > > 8-bit value, and have "8" in their name.  The 8-bit value is never
+> > > > > > really related to, retrieved from, or stored in a full "unsigned long"
+> > > > > > element of a bitmap, only to/from/in a part (byte) of it.
+> > > > > >
+> > > > > > Following your rationale, all of iowrite{8,16,32,64}*() should take an
+> > > > > > "unsigned long" value, too.
+> > > > >
+> > > > > Using u8/u16/u32/u64 looks more consistent with other bitmap helpers.
+> > > > >
+> > > > > void bitmap_from_arr32(unsigned long *bitmap, const u32 *buf, unsigned
+> > > > > int nbits);
+> > > > > void bitmap_to_arr32(u32 *buf, const unsigned long *bitmap, unsigned int nbits);
+> > > > > static inline void bitmap_from_u64(unsigned long *dst, u64 mask);
+> > > > >
+> > > > > If you want to see more examples from other parts,
+> > > >
+> > > > Geert's and yours examples both are not related. They are about
+> > > > fixed-width properies when we know that is the part of protocol.
+> > > > Here we have no protocol which stricts us to the mentioned fixed-width types.
+> > >
+> > > Yes you have: they are functions to store/retrieve an 8-bit value from
+> > > the middle of the bitmap, which is reflected in their names ("clump8",
+> > > "value8").
+> > > The input/output value is clearly separated from the actual bitmap,
+> > > which is referenced by the "unsigned long *".
+> > >
+> > > If you add new "value16" functions, they will be intended to store/retrieve
+> > > 16-bit values.
+> >
+> > And if I add 4-bit, 12-bit or 24-bit values, what should I use?
 > 
+> Whatever is needed to store that?
+> I agree "unsigned long" is appropriate for a generic function to extract a
+> bit field of 1 to BITS_PER_LONG bits.
+> 
+> > > Besides, if retrieving an 8-bit value requires passing an
+> > > "unsigned long *", the caller needs two variables: one unsigned long to
+> > > pass the address of, and one u8 to copy the returned value into.
+> >
+> > Why do you need a temporary variable? In some cases it might make
+> > sense, but in general simple cases I don't see what you may achieve
+> > with it.
+> 
+> Because find_next_clump8() takes a pointer to store the output value.
 
+So does regmap_read().
+
+8 appeared there during review when it has been proposed to optimize to 8-bit
+clumps as most of the current users utilize it. The initial idea was to be
+bit-width agnostic. And with current API it's possible to easy convert to other
+formats later if we need.
+
+> > I looked at bitmap.h and see few functions may have benefited of
+> > actually eliminating a use of long -> u8 -> long conversion.
+> >
+> > Here is the question what we are mostly doing after we got a clump out
+> > of bitmap.
+> 
+> If I call find_next_clump8() to extract a byte, I guess I want to process an u8
+> aftwerwards?
+
+Some functions may expect a width-(semi-)dependent types, like regmap_write().
+Yes, it's possible to supply u8 there and have an implicit type cast.
 
 -- 
-Ben Dooks				http://www.codethink.co.uk/
-Senior Engineer				Codethink - Providing Genius
+With Best Regards,
+Andy Shevchenko
 
-https://www.codethink.co.uk/privacy.html
+
 
 _______________________________________________
 linux-arm-kernel mailing list
