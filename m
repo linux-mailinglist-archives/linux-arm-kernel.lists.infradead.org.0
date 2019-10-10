@@ -2,67 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B59A2D297C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 14:29:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4D5FD29E4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 14:46:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XmYpEvAMZtumG3QIpZ85EmVt63O4+tvYhGrSm6WiKgY=; b=I4dFsIhj7hF18d
-	CWjjSd/UXcv4S4g6rSkqQwjRmj0MBYG/lUOFx474ZJ3F+BfwKp3lIWgWol2HZZ58Tw2RhfWyKeCG9
-	Ug22kGLrBcndQT27AmY4DiZKI8BrjbFsaVmMI35pa0v+UvQy47ju+IEV6Eb6x+vyLJ2CycyNMChTX
-	FJpagTGJ26CBRdd029JutPNqGwvVSjcB9kXV1EwPYYfFKmdwWOqejaBOGUPYS2w2YIlm9OQeHtcKF
-	61oMne/YfmvJ/tZQNiDc7KfA/E+j3dCoaeGICdXlw/ZgVNfuGHmaVpL5l841BfXZerHlLDoX3TNDW
-	mdLTr5XzYSDv0qaMVtQg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=kD2IBOukKpkMdaPD0KNhUWnPI0UhuYq93gHhh9zEN00=; b=GTv9Jk1pNcjRXEYiykaF1TFWv
+	gmjpUns6GFo/IJ4LsVHS/5mk9c5Mu5UhRKxXwA/HXgSZBTUT6D7Lwnq5ujUCnMhy05nFKVVlpLVW+
+	oQ5Ep/ajr4to15Cf4fmSyoHtlOb5/QesUODh1KYJKLgUsEggXkbaaBUYvo/KIluESH/KipTUDtl5H
+	NYUaKZOI1v38gXIJcpr8VdDk/zr0fJWwnN5ZfRAv32xFdqj0CznTIqhx+f7ayA8jeYcPVF903BH9m
+	YhHdP8aQZagpevvqYR+LVu71cizFjuPjbBCaN99r1XrEYdcTOnnibu+pmKJsk50mrE2MKStaqiFRs
+	X78TZrU+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIXZV-0006Fg-A9; Thu, 10 Oct 2019 12:29:33 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIXZN-0006Ew-9P
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 12:29:26 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 16F6B208C3;
- Thu, 10 Oct 2019 12:29:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570710564;
- bh=C8VqkU7v3wAzEbcXleNkpsJR4ud+QMo6al7Q+MPKvkE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=N/F/KjOV6cASJn2JD5k48WsHyhSM8QESdwogYeixXTZ7i94kLb1vHHW3FEGf0SuVP
- fykEj5TpaZsDvsF5ja6wNiE6HcNHwb9WuAGyWjzgfNhQF+31u4pQrfFJ38PkMMWUqb
- QEbGi2GvR7GaAaD1ok2/GbLClzscHgatZ4nHauJg=
-Date: Thu, 10 Oct 2019 14:29:22 +0200
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
+	id 1iIXpz-0004h6-Qq; Thu, 10 Oct 2019 12:46:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iIXps-0004fn-G1
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 12:46:29 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6795128;
+ Thu, 10 Oct 2019 05:46:23 -0700 (PDT)
+Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 936CF3F68E;
+ Thu, 10 Oct 2019 05:46:22 -0700 (PDT)
 Subject: Re: [PATCH] arm64: cpufeature: Fix truncating a feature value
-Message-ID: <20191010122922.GA720144@kroah.com>
+To: Greg KH <gregkh@linuxfoundation.org>
 References: <20191010110856.4376-1-suzuki.poulose@arm.com>
  <ca77dec7-b29b-5a3b-0c01-047a06d1854d@arm.com>
+ <20191010122922.GA720144@kroah.com>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <295cfb9e-ac7b-73e7-bc80-8b9150f4a626@arm.com>
+Date: Thu, 10 Oct 2019 13:46:21 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ca77dec7-b29b-5a3b-0c01-047a06d1854d@arm.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+In-Reply-To: <20191010122922.GA720144@kroah.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_052925_352513_5B679DCA 
-X-CRM114-Status: GOOD (  12.83  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191010_054628_576968_D2CA7836 
+X-CRM114-Status: GOOD (  15.55  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,36 +65,44 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: mark.rutland@arm.com, catalin.marinas@arm.com, will@kernel.org,
  linux-arm-kernel@lists.infradead.org, stable@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 10, 2019 at 12:12:01PM +0100, Suzuki K Poulose wrote:
-> All,
+
+
+On 10/10/2019 13:29, Greg KH wrote:
+> On Thu, Oct 10, 2019 at 12:12:01PM +0100, Suzuki K Poulose wrote:
+>> All,
+>>
+>> On 10/10/2019 12:08, Suzuki K Poulose wrote:
+>>> A signed feature value is truncated to turn to an unsigned value
+>>> causing bad state in the system wide infrastructure. This affects
+>>> the discovery of FP/ASIMD support on arm64. Fix this by making sure
+>>> we cast it properly.
+>>>
+>>> Fixes: 4f0a606bce5ec ("arm64: cpufeature: Track unsigned fields")
+>>> Cc: stable@vger.kernel.org # v4.4
+>>
+>> Please note that this patch is only applicable for stable 4.4 tree.
+>> I should have removed the Fixes tag.
 > 
-> On 10/10/2019 12:08, Suzuki K Poulose wrote:
-> > A signed feature value is truncated to turn to an unsigned value
-> > causing bad state in the system wide infrastructure. This affects
-> > the discovery of FP/ASIMD support on arm64. Fix this by making sure
-> > we cast it properly.
-> > 
-> > Fixes: 4f0a606bce5ec ("arm64: cpufeature: Track unsigned fields")
-> > Cc: stable@vger.kernel.org # v4.4
+> Why is it only for 4.4?  That needs to be documented really really
+
+This was fixed later in v4.6 onwards with commit 28c5dcb22f90113dea
+("arm64: Rename cpuid_feature field extract routines") rather inadvertently.
+
+> really well in the changelog as to why this is a one-off patch, and why
+> we can't just take the relevant patches that are in Linus's tree
+> instead.
 > 
-> Please note that this patch is only applicable for stable 4.4 tree.
-> I should have removed the Fixes tag.
+> Please fix up and resend.
 
-Why is it only for 4.4?  That needs to be documented really really
-really well in the changelog as to why this is a one-off patch, and why
-we can't just take the relevant patches that are in Linus's tree
-instead.
+I can resend the patch with the above information included if you like.
 
-Please fix up and resend.
-
-thanks,
-
-greg k-h
+Cheers
+Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
