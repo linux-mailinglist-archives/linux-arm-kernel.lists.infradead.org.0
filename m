@@ -2,42 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D4F3D1D45
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 02:14:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07B27D1D47
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 02:14:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yg62dSCDUNOAfy8gHyeMdf5SUh698yjS1pn4m9v9hVE=; b=pVZzMLH1kZxXPW
-	wU4jRYY5simoxTamRUCSf57hKTRBFyrjDVNk1QRsPLGAaLfAO/ZTX5hN/Cct++3V/MVQB35W3dMyl
-	0xWe8SJnpizcPSy2DDTzSc7pEfxqYd5EO8ssDG0PMo408gVyiXTF93V9NLVkgHYp/c/2ptaJamms/
-	TQwT61y1elQ+nD+0YowN1HfBufmHgUVJdeVFvEP1mOmUfajGC5EIcr9Ugf5h/MzPVXPYd7FUVIWGF
-	pZWerfwdn2CZhlgIFjkzgVcogmBe9j/WDRWX27SO8xxDx4S15Jkje4ilrtJrmMvGYiatfX1dI/lE/
-	tkvXvkT03o4g7LjM2kZg==;
+	List-Owner; bh=daRFJaWORpMuJpXstr4j/PTBksFYAtjB/zagphSAKOg=; b=e2vQBjGxcBqPY8
+	k4c/jia/SKdSpMoeAm2uSzWRK2O88/FXWP67z6lfzjkms0mfZeICtrMo8pckDuXpd+amiqnv+3gk/
+	cUJWwH3P6nxEnUVZg+KyZWLycy8CjvgIUPVOitj323st96Siq1RTZ/Mo2mzOv703u0Fsf0R4UdZys
+	59UkQ1BjScgGsKZItjcEfGO/flXU8md+SWwzkLZIJBpf8Jkg/B2dpRE4yQBUvAPjqVsP7WsI0QvoB
+	kosXMflZLDZekMCVw6wlTFot7anYzi/MByn7cPPjBYaA2S3hvNNd8D92gglWC4iTdYPyz1/Ag9FqA
+	/FV312nmZddpn8+LqMXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIM6A-0000Jy-R9; Thu, 10 Oct 2019 00:14:30 +0000
+	id 1iIM6R-0000Ws-Eb; Thu, 10 Oct 2019 00:14:47 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIM4M-0007HR-06
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 00:12:39 +0000
+ id 1iIM4N-0007J6-E2
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 00:12:40 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 593B78162;
- Thu, 10 Oct 2019 00:13:11 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id A28A68140;
+ Thu, 10 Oct 2019 00:13:12 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 7/8] ARM: OMAP2+: Allow core oswr for omap4
-Date: Wed,  9 Oct 2019 17:12:23 -0700
-Message-Id: <20191010001224.41826-8-tony@atomide.com>
+Subject: [PATCH 8/8] ARM: OMAP2+: Initialize voltage controller for omap4
+Date: Wed,  9 Oct 2019 17:12:24 -0700
+Message-Id: <20191010001224.41826-9-tony@atomide.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191010001224.41826-1-tony@atomide.com>
 References: <20191010001224.41826-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_171238_091804_0C5C6B80 
-X-CRM114-Status: GOOD (  10.09  )
+X-CRM114-CacheID: sfid-20191009_171239_522260_EBE8F909 
+X-CRM114-Status: UNSURE (   9.63  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,47 +66,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Commit f74297dd9354 ("ARM: OMAP2+: Make sure LOGICRETSTATE bits are not
-cleared") disabled oswr (open switch retention) for per and core domains
-as various GPIO related issues were noticed if the bootloader had
-configured the bits for LOGICRETSTATE for per and core domains.
+We're missing initializing the PRM_VOLTCTRL register for voltage
+controller. Let's add omap4_vc_init_pmic_signaling() similar to what we
+have for omap3 and enable voltage control for retention.
 
-With the recent gpio-omap fixes, mostly related to commit e6818d29ea15
-("gpio: gpio-omap: configure edge detection for level IRQs for idle
-wakeup"), things now behave for enabling core oswr for omap4.
+This brings down droid4 power consumption with mainline kernel to somewhere
+between 40 and 50mW from about 70 to 80 mW for the whole device when running
+idle with LCD and backlight off, WLAN connected, and USB and modem modules
+unloaded.
+
+Mostly just rmmod of omap2430, ohci-platform and phy-mapphone-mdm6600 are
+needed to idle USB and shut down the modem. And after that measuring idle
+power consumption can be done with reading sysfs entry every ten seconds for
+/sys/class/power_supply/battery/power_avg. Then rmmod of phy-cpcap-usb will
+save few more mW, but will disable the debug UART.
+
+Note that sometimes CM_L4PER_UART1_CLKCTRL at 0x4a009540 does not idle
+properly after unloading of phy-mapphone-mdm6600.
 
 Cc: Merlijn Wajer <merlijn@wizzup.org>
 Cc: Pavel Machek <pavel@ucw.cz>
 Cc: Sebastian Reichel <sre@kernel.org>
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- arch/arm/mach-omap2/pm44xx.c | 14 ++------------
- 1 file changed, 2 insertions(+), 12 deletions(-)
+ arch/arm/mach-omap2/vc.c | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
 
-diff --git a/arch/arm/mach-omap2/pm44xx.c b/arch/arm/mach-omap2/pm44xx.c
---- a/arch/arm/mach-omap2/pm44xx.c
-+++ b/arch/arm/mach-omap2/pm44xx.c
-@@ -128,18 +128,8 @@ static int __init pwrdms_setup(struct powerdomain *pwrdm, void *unused)
- 		return 0;
- 	}
+diff --git a/arch/arm/mach-omap2/vc.c b/arch/arm/mach-omap2/vc.c
+--- a/arch/arm/mach-omap2/vc.c
++++ b/arch/arm/mach-omap2/vc.c
+@@ -26,6 +26,16 @@
+ #include "scrm44xx.h"
+ #include "control.h"
  
--	/*
--	 * Bootloader or kexec boot may have LOGICRETSTATE cleared
--	 * for some domains. This is the case when kexec booting from
--	 * Android kernels that support off mode for example.
--	 * Make sure it's set at least for core and per, otherwise
--	 * we currently will see lost GPIO interrupts for wlcore and
--	 * smsc911x at least if per hits retention during idle.
--	 */
--	if (!strncmp(pwrdm->name, "core", 4)
--		pwrdm_set_logic_retst(pwrdm, PWRDM_POWER_RET);
--
--	if (!strncmp(pwrdm->name, "l4per", 5)
-+	if (!strncmp(pwrdm->name, "core", 4) ||
-+	    !strncmp(pwrdm->name, "l4per", 5))
- 		pwrdm_set_logic_retst(pwrdm, PWRDM_POWER_OFF);
++#define OMAP4430_AUTO_CTRL_VDD_IVA(x)		((x) << 4)
++#define OMAP4430_AUTO_CTRL_VDD_MPU(x)		((x) << 2)
++#define OMAP4430_AUTO_CTRL_VDD_CORE(x)		((x) << 0)
++#define OMAP4430_AUTO_CTRL_VDD_RET		2
++
++#define OMAP4_VDD_DEFAULT_VAL	\
++	(OMAP4430_AUTO_CTRL_VDD_IVA(OMAP4430_AUTO_CTRL_VDD_RET) | \
++	 OMAP4430_AUTO_CTRL_VDD_MPU(OMAP4430_AUTO_CTRL_VDD_RET) | \
++	 OMAP4430_AUTO_CTRL_VDD_CORE(OMAP4430_AUTO_CTRL_VDD_RET))
++
+ /**
+  * struct omap_vc_channel_cfg - describe the cfg_channel bitfield
+  * @sa: bit for slave address
+@@ -542,9 +552,19 @@ static void omap4_set_timings(struct voltagedomain *voltdm, bool off_mode)
+ 	writel_relaxed(val, OMAP4_SCRM_CLKSETUPTIME);
+ }
  
- 	pwrst = kmalloc(sizeof(struct power_state), GFP_ATOMIC);
++static void __init omap4_vc_init_pmic_signaling(struct voltagedomain *voltdm)
++{
++	if (vc.vd)
++		return;
++
++	vc.vd = voltdm;
++	voltdm->write(OMAP4_VDD_DEFAULT_VAL, OMAP4_PRM_VOLTCTRL_OFFSET);
++}
++
+ /* OMAP4 specific voltage init functions */
+ static void __init omap4_vc_init_channel(struct voltagedomain *voltdm)
+ {
++	omap4_vc_init_pmic_signaling(voltdm);
+ 	omap4_set_timings(voltdm, true);
+ 	omap4_set_timings(voltdm, false);
+ }
 -- 
 2.23.0
 
