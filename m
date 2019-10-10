@@ -2,89 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44F31D216F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 09:14:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D222D2170
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 09:14:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cl3JeNhXsgGJhfoHHhKeHo0uv3I+TQ1q4yQr5x+P9XY=; b=uaD3ynq9o2z1iaYfOBfT4enuw
-	QzrHg/VNJVHNHiO7cCl6HE2LKs4pSKmbNSasNx604Nhje/jHCdT3VWValZxi/bzLlph4Wm4cwhfDJ
-	FeehpmQZSDpkTvdWDevJQtjOFppPivI5bJqG0YvtdTyC6EFaNmDU9oMyCAVIZ9/5+EwSffN/rCb4a
-	+KRUWtY/NX+jzVOIL8ABVgTB1n1RcrYBjMRFj30d7JGjU9ibE2MaEKX8HLLEwha+6KsFOV1nz6QHb
-	3fXBn678sN7OmUsKUGMqvt+DFQaTCIBOk8IsDabAZEd5o+QxPJ0FNCbV/vGoVIHnStUj2AzoaeIHz
-	wBKYO6rEw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=v19vfVjf0SLZP0bHUo8MXNHmFa9zpXbCOcK+/bGWVF4=; b=UxCum/quwvx3yd
+	0exli7iYPUNXvRmKhnBeB/2uiVnn2NXMFEMWNl+TLZgmo+OcKeMcduY+eKHHaLC27LBlRhDks0Zsp
+	HPXYQnZp1aDAz8cyo3x3sEpZMAhlh1m4uEwWdDLrFZdMaep35RwoDHVsyq6j1BBEFwlvXyQwgI89R
+	HnOeIvpoMBqQbAJxa96s/ub1POMnEN0YttHXz5jfaKUkkjKu2+jFcIC9kErGgDrXKGez6dwUDSL6j
+	yvRUSQ3i9H4J+KbKnOektuzpnWhjsefuNwJ+snOASBXiAkVpdhTeT5glM5TYqolqfVszWvyWNjhaT
+	tOeedOnqZkzFe62SfTQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iISeL-00023i-5J; Thu, 10 Oct 2019 07:14:13 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1iISeW-0002E1-Jq; Thu, 10 Oct 2019 07:14:24 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iISe6-000234-UR
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 07:14:00 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x9A7DqTR083661;
- Thu, 10 Oct 2019 02:13:52 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1570691632;
- bh=Igz9/V9k1PMM6aDmmF606+31uSx46fazy4qUkrGadDA=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=wehcdvPRmkEeSFaZQAOXAzuNNCNGADesihvUrY429jDGaQKSqzy6+eDrTYS8562gv
- o8AT3QBPnot9VFZvKZRvtUATgiIibBjCvlMUVPbaChFxqaI6H5qstEd9O1ebr8y2aK
- ZaNknGroLRMOYoGHQi1Wm+Uffr+kfn9agrBagBo8=
-Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x9A7DpZk001188
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 10 Oct 2019 02:13:51 -0500
-Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 10
- Oct 2019 02:13:50 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE110.ent.ti.com
- (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 10 Oct 2019 02:13:50 -0500
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x9A7Dmtv113245;
- Thu, 10 Oct 2019 02:13:49 -0500
-Subject: Re: [PATCHv8 1/9] dt-bindings: omap: add new binding for PRM instances
-To: "santosh.shilimkar@oracle.com" <santosh.shilimkar@oracle.com>, Sebastian
- Reichel <sre@kernel.org>
-References: <20191008125544.20679-1-t-kristo@ti.com>
- <20191008125544.20679-2-t-kristo@ti.com>
- <20191008154655.u34wkbqgmelv3aea@earth.universe>
- <115ab938-e025-98fa-3b9e-0b3ced39307d@ti.com>
- <dc2a9659-8593-e5d0-54b2-44d827e76759@oracle.com>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <95642d2d-af8e-061c-ef6a-7b615222f360@ti.com>
-Date: Thu, 10 Oct 2019 10:13:47 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iISe9-00023U-DG; Thu, 10 Oct 2019 07:14:03 +0000
+Received: from dhcp-172-31-174-146.wireless.concordia.ca (unknown
+ [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested) (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 979B1290767;
+ Thu, 10 Oct 2019 08:13:59 +0100 (BST)
+Date: Thu, 10 Oct 2019 09:13:56 +0200
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: <Tudor.Ambarus@microchip.com>
+Subject: Re: [PATCH v2 05/22] mtd: spi-nor: Rework read_sr()
+Message-ID: <20191010091356.5d9a4e44@dhcp-172-31-174-146.wireless.concordia.ca>
+In-Reply-To: <20190924074533.6618-6-tudor.ambarus@microchip.com>
+References: <20190924074533.6618-1-tudor.ambarus@microchip.com>
+ <20190924074533.6618-6-tudor.ambarus@microchip.com>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <dc2a9659-8593-e5d0-54b2-44d827e76759@oracle.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_001359_084675_C3915B83 
-X-CRM114-Status: GOOD (  12.30  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191010_001401_706349_131E57EF 
+X-CRM114-Status: GOOD (  20.46  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,54 +60,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, tony@atomide.com, p.zabel@pengutronix.de,
- ssantosh@kernel.org, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset="windows-1252"; Format="flowed"
+Cc: linux-arm-kernel@lists.infradead.org, vigneshr@ti.com,
+ geert+renesas@glider.be, andrew@aj.id.au, richard@nod.at,
+ linux-kernel@vger.kernel.org, vz@mleia.com, marek.vasut@gmail.com,
+ jonas@norrbonn.se, linux-mtd@lists.infradead.org, joel@jms.id.au,
+ miquel.raynal@bootlin.com, matthias.bgg@gmail.com,
+ linux-mediatek@lists.infradead.org, computersforpeace@gmail.com,
+ dwmw2@infradead.org, linux-aspeed@lists.ozlabs.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 09/10/2019 18:59, santosh.shilimkar@oracle.com wrote:
-> =
+On Tue, 24 Sep 2019 07:46:08 +0000
+<Tudor.Ambarus@microchip.com> wrote:
 
-> =
+> From: Tudor Ambarus <tudor.ambarus@microchip.com>
+> 
+> static int read_sr(struct spi_nor *nor)
+> becomes
+> static int spi_nor_read_sr(struct spi_nor *nor, u8 *sr)
+> 
+> The new function returns 0 on success and -errno otherwise.
+> We let the callers pass the pointer to the buffer where the
+> value of the Status Register will be written. This way we avoid
+> the casts between int and u8, which can be confusing.
+> 
+> Prepend spi_nor_ to the function name, all functions should begin
+> with that.
+> 
+> S/pr_err/dev_err and drop duplicated dev_err in callers, in case the
+> function returns error.
 
-> On 10/8/19 11:52 PM, Tero Kristo wrote:
->> On 08/10/2019 18:46, Sebastian Reichel wrote:
->>> Hi,
->>>
->>> On Tue, Oct 08, 2019 at 03:55:36PM +0300, Tero Kristo wrote:
->>>> +Example:
->>>> +
->>>> +prm_dsp2: prm@1b00 {
->>>> +=A0=A0=A0 compatible =3D "ti,omap-prm-inst", "ti,dra7-prm-inst";
->>>
->>> Nit: compatible values are sorted the other way around (most
->>> specific first).
->>
->> Hmm right, I would not like to re-post the whole series just for this =
+Too many things done in a single patch, can you split that please?
 
->> seeing all the acks are in place already.
->>
->> Santosh, do you want to fix this locally or shall we post a separate =
+> 
+> Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
+> ---
+>  drivers/mtd/spi-nor/spi-nor.c | 131 +++++++++++++++++++++---------------------
+>  1 file changed, 65 insertions(+), 66 deletions(-)
+> 
+> diff --git a/drivers/mtd/spi-nor/spi-nor.c b/drivers/mtd/spi-nor/spi-nor.c
+> index 7d0c1b598250..a23783641146 100644
+> --- a/drivers/mtd/spi-nor/spi-nor.c
+> +++ b/drivers/mtd/spi-nor/spi-nor.c
+> @@ -388,12 +388,14 @@ static ssize_t spi_nor_write_data(struct spi_nor *nor, loff_t to, size_t len,
+>  	return nor->controller_ops->write(nor, to, len, buf);
+>  }
+>  
+> -/*
+> - * Read the status register, returning its value in the location
+> - * Return the status register value.
+> - * Returns negative if error occurred.
+> +/**
+> + * spi_nor_read_sr() - Read the Status Register.
+> + * @nor:        pointer to 'struct spi_nor'
+> + * @sr:		buffer where the value of the Status Register will be written.
 
->> patch later on to fix this?
->>
-> No need. I fixed it up. Pls check.
-> =
+You should definitely mention that this sr pointer has to be DMA-safe.
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git=
- for_5.5/driver-soc =
+> + *
+> + * Return: 0 on success, -errno otherwise.
+>   */
+> -static int read_sr(struct spi_nor *nor)
+> +static int spi_nor_read_sr(struct spi_nor *nor, u8 *sr)
+>  {
+>  	int ret;
+>  
+> @@ -402,20 +404,17 @@ static int read_sr(struct spi_nor *nor)
+>  			SPI_MEM_OP(SPI_MEM_OP_CMD(SPINOR_OP_RDSR, 1),
+>  				   SPI_MEM_OP_NO_ADDR,
+>  				   SPI_MEM_OP_NO_DUMMY,
+> -				   SPI_MEM_OP_DATA_IN(1, nor->bouncebuf, 1));
+> +				   SPI_MEM_OP_DATA_IN(1, sr, 1));
+>  
+>  		ret = spi_mem_exec_op(nor->spimem, &op);
+>  	} else {
+> -		ret = nor->controller_ops->read_reg(nor, SPINOR_OP_RDSR,
+> -						    nor->bouncebuf, 1);
+> +		ret = nor->controller_ops->read_reg(nor, SPINOR_OP_RDSR, sr, 1);
+>  	}
+>  
+> -	if (ret < 0) {
+> -		pr_err("error %d reading SR\n", (int) ret);
+> -		return ret;
+> -	}
+> +	if (ret)
+> +		dev_err(nor->dev, "error %d reading SR\n", ret);
+>  
+> -	return nor->bouncebuf[0];
+> +	return ret;
+>  }
 
-
-Yeah, looks fine to me.
-
-Thanks,
-Tero
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Bu=
-siness ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
