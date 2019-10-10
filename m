@@ -2,98 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39861D1D70
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 02:32:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DBB8D1D96
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 02:44:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eyAEBvVNSVTnZWBMrzVNvpbblGsOjRwd0CjJbThpHnM=; b=fSud5n9K0aDH+z
-	hT1wXKIKlS9GTGj/jqic+37ByNUBuTwx4UZU1vWs2tsNuFmTdHbtPlRGWhAs5VDQx7SdXon/Ci3pL
-	LiRZ0s2RU01+BL0bOFpTj15mXIY7cChicRSbaH93AdopmifFQqHqyNqiappFoJEFch1Zf+/lpZX2F
-	+oovZRKuZDYil9e6q7H4AhmP+VHujxegrldUm1LrJXLAneF3gyjpBS3s1QGq0jdyYPrdNFnPfAz8p
-	yinSfDZ4Yf8K2MyoQOjpOt5sTc/62IyPoizTEd1LzwLGLTDsj99xGoHUmyChl454/tuaFjy0IOVH9
-	kEADj3EiZ8Y0h2XWIEEw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/QOlIQKpa/yvdpnE7bq9TaUJLl3F2myxdD+ic0tQojE=; b=G/fUlbCqyHVKky
+	3mFNa6NFA9KiWuXpA58kvWWvi2SktqpyBaYy1sVV8cx7FYiH5jqIBpr2M6vGfpOW0JYmetYPXXy5F
+	ffga1c6cJNDz8VXvwpLgT9OnOTziRXc+ojCQ1DYGy+kptdyvzo5HW78U9zdaf4GfJ+Bm9uKnVd3WS
+	sXctr7xECtoQ8tgvnlPfsghaHwzMPEpSuNyUh54QzeuBB02idGxYSQk4lqfF9IxdmT1dm3kVlH8gA
+	iMKfL9fJreT5/rfxu8lhl4av0xL4JtqYzvRjkEceoXXSMfkP/HMp+bPvgsT0jq3+hBtoldWR2ovBU
+	0Lw3zDg2JxRItKwkjglA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIMNz-0007dy-GH; Thu, 10 Oct 2019 00:32:55 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iIMZ7-0002aW-J0; Thu, 10 Oct 2019 00:44:25 +0000
+Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIMNn-0007dK-Qb
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 00:32:45 +0000
-Received: by mail-pg1-x543.google.com with SMTP id t3so2493832pga.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 09 Oct 2019 17:32:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=hwafwgLNngUMlC4oWHtYvT1ITO5nzOsFkBcAKdpZxJc=;
- b=oCo2UZzh1NJar1FOnQunNDg7VGAZRVDrc8ixlgCW/wcPpqcbAY+3tTJEQztNa0qPbd
- 2y6WZSQVkkY9AtGM+aPEqp3HF94vyeeFo6nEc2Eg3kwHaArGISKn/W1xFejrdf/UreTI
- +V1HOuSBWAdHe6al6wCyEhEU8Hp5TtUpOYlEJenBdOZaZFKjD8piSgFSp7Vicj6JIm3n
- MtJSH5prCSzllusqZ9hfVtYeGF92muQuRKFP3Uo3C00cHu0xR2EnTt8xiX2t7FrAhGA0
- 9BlPDzcGsvaSvdONG0rW01PNl+JJFWFO5SW4IM69F+etf4MEFkP7Hp95k2XNdrahCJsa
- svIA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=hwafwgLNngUMlC4oWHtYvT1ITO5nzOsFkBcAKdpZxJc=;
- b=UWb/IGw67bscvKAKiYpbN3eN86GSsXV/XwB6JOXhpeJwExmDpvtqAIaL7L467KSHLR
- AIoivtlTfl6cG1NIwG/38JOPNcXJ3zDwZLNGjqRQEwSOXk6hLXeLZgpFErWQphodFZYV
- DL9IbeQS4G6fOVW86ooXYEEYyvxccEvjHtcm3ahjkhBTwEBaerOcnV+caDMFHlr5X5w/
- u3uEEyFETJmCQWZn6Rqfj2cuyvoyRD9eIWKzWggUc/sEJBWRW6XBBAVERYK57oihRbVn
- wAJ+IcBFjVY5mgXHQ1Bnu4eQFrGiTwRQUNQ6TPk20fLTi2JiK45rUq9MMKwnIhskvn+7
- XZDg==
-X-Gm-Message-State: APjAAAVLAk7c6lBto3yYN0CGD42UJnUsrhznFnuYeJAbknujr24GK6G4
- ubBBUZKJE7jBp20w7MGbgfqSOA==
-X-Google-Smtp-Source: APXvYqy44rmUKloIJITmQv3fmo4qusdRi2qGuLDOcOb1+z5L9mdE9mmEgbP0UrkPP86MCtd6AwIPJw==
-X-Received: by 2002:a17:90a:2142:: with SMTP id
- a60mr7497811pje.8.1570667559681; 
- Wed, 09 Oct 2019 17:32:39 -0700 (PDT)
-Received: from google.com ([2620:15c:2cb:1:e90c:8e54:c2b4:29e7])
- by smtp.gmail.com with ESMTPSA id f128sm3743411pfg.143.2019.10.09.17.32.38
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 09 Oct 2019 17:32:39 -0700 (PDT)
-Date: Wed, 9 Oct 2019 17:32:34 -0700
-From: Brendan Higgins <brendanhiggins@google.com>
-To: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
-Subject: Re: [PATCH] i2c: aspeed: fix master pending state handling
-Message-ID: <20191010003234.GA12710@google.com>
-References: <20191009212034.20325-1-jae.hyun.yoo@linux.intel.com>
+ id 1iIMYy-0002a2-Oa
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 00:44:18 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga005.fm.intel.com ([10.253.24.32])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 09 Oct 2019 17:44:14 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.67,278,1566889200"; d="scan'208";a="393863029"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by fmsmga005.fm.intel.com with ESMTP; 09 Oct 2019 17:44:13 -0700
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1iIMYv-000DGa-1j; Thu, 10 Oct 2019 08:44:13 +0800
+Date: Thu, 10 Oct 2019 08:44:10 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+Subject: [arm:cex7 10/41]
+ drivers/pci/controller/mobiveil/pcie-mobiveil.c:44:49: sparse: sparse:
+ incorrect type in return expression (different address spaces)
+Message-ID: <201910100807.s230bnQA%lkp@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191009212034.20325-1-jae.hyun.yoo@linux.intel.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Patchwork-Hint: ignore
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_173243_888469_422A8DFB 
-X-CRM114-Status: GOOD (  12.43  )
-X-Spam-Score: -13.9 (-------------)
+X-CRM114-CacheID: sfid-20191009_174417_357740_92ECE882 
+X-CRM114-Status: GOOD (  10.93  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-13.9 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- 1.8 FSL_HELO_FAKE          No description available.
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.93 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,38 +70,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-aspeed@lists.ozlabs.org, Wolfram Sang <wsa@the-dreams.de>,
- Andrew Jeffery <andrew@aj.id.au>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, openbmc@lists.ozlabs.org,
- linux-i2c@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Joel Stanley <joel@jms.id.au>, Tao Ren <taoren@fb.com>,
- linux-arm-kernel@lists.infradead.org, Cedric Le Goater <clg@kaod.org>
+Cc: Minghuan Lian <Minghuan.Lian@nxp.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ Subrahmanya Lingappa <l.subrahmanya@mobiveil.co.in>, kbuild-all@01.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 09, 2019 at 02:20:34PM -0700, Jae Hyun Yoo wrote:
-> In case of master pending state, it should not trigger a master
-> command, otherwise data could be corrupted because this H/W shares
-> the same data buffer for slave and master operations. It also means
-> that H/W command queue handling is unreliable because of the buffer
-> sharing issue. To fix this issue, it clears command queue if a
-> master command is queued in pending state to use S/W solution
-> instead of H/W command queue handling. Also, it refines restarting
-> mechanism of the pending master command.
-> 
-> Fixes: 2e57b7cebb98 ("i2c: aspeed: Add multi-master use case support")
-> Signed-off-by: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
+tree:   git://git.armlinux.org.uk/~rmk/linux-arm.git cex7
+head:   9de8c9294924dc903e79ca03162cbd208a834330
+commit: 2729e9ee9e99b04171a1cddddcd3027dd350dbde [10/41] PCI: mobiveil: Refactor Mobiveil PCIe Host Bridge IP driver
+reproduce:
+        # apt-get install sparse
+        # sparse version: v0.6.1-rc1-42-g38eda53-dirty
+        git checkout 2729e9ee9e99b04171a1cddddcd3027dd350dbde
+        make ARCH=x86_64 allmodconfig
+        make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
 
-Reviewed-by: Brendan Higgins <brendanhiggins@google.com>
+If you fix the issue, kindly add following tag
+Reported-by: kbuild test robot <lkp@intel.com>
 
-We don't have any multi-master setups, can we get a Tested-by?
 
-Wolfram, since this is a bugfix, can we get this in 5.4?
+sparse warnings: (new ones prefixed by >>)
 
-Thanks!
+>> drivers/pci/controller/mobiveil/pcie-mobiveil.c:44:49: sparse: sparse: incorrect type in return expression (different address spaces) @@    expected void * @@    got void [noderef] <asvoid * @@
+>> drivers/pci/controller/mobiveil/pcie-mobiveil.c:44:49: sparse:    expected void *
+>> drivers/pci/controller/mobiveil/pcie-mobiveil.c:44:49: sparse:    got void [noderef] <asn:2> *
+   drivers/pci/controller/mobiveil/pcie-mobiveil.c:48:41: sparse: sparse: incorrect type in return expression (different address spaces) @@    expected void * @@    got void [noderef] <asvoid * @@
+   drivers/pci/controller/mobiveil/pcie-mobiveil.c:48:41: sparse:    expected void *
+   drivers/pci/controller/mobiveil/pcie-mobiveil.c:48:41: sparse:    got void [noderef] <asn:2> *
+>> drivers/pci/controller/mobiveil/pcie-mobiveil.c:106:34: sparse: sparse: incorrect type in argument 1 (different address spaces) @@    expected void [noderef] <asn:2> *addr @@    got oderef] <asn:2> *addr @@
+>> drivers/pci/controller/mobiveil/pcie-mobiveil.c:106:34: sparse:    expected void [noderef] <asn:2> *addr
+>> drivers/pci/controller/mobiveil/pcie-mobiveil.c:106:34: sparse:    got void *[assigned] addr
+   drivers/pci/controller/mobiveil/pcie-mobiveil.c:120:35: sparse: sparse: incorrect type in argument 1 (different address spaces) @@    expected void [noderef] <asn:2> *addr @@    got oderef] <asn:2> *addr @@
+   drivers/pci/controller/mobiveil/pcie-mobiveil.c:120:35: sparse:    expected void [noderef] <asn:2> *addr
+   drivers/pci/controller/mobiveil/pcie-mobiveil.c:120:35: sparse:    got void *[assigned] addr
+
+vim +44 drivers/pci/controller/mobiveil/pcie-mobiveil.c
+
+    38	
+    39	static void *mobiveil_pcie_comp_addr(struct mobiveil_pcie *pcie, u32 off)
+    40	{
+    41		if (off < PAGED_ADDR_BNDRY) {
+    42			/* For directly accessed registers, clear the pg_sel field */
+    43			mobiveil_pcie_sel_page(pcie, 0);
+  > 44			return pcie->csr_axi_slave_base + off;
+    45		}
+    46	
+    47		mobiveil_pcie_sel_page(pcie, OFFSET_TO_PAGE_IDX(off));
+    48		return pcie->csr_axi_slave_base + OFFSET_TO_PAGE_ADDR(off);
+    49	}
+    50	
+    51	static int mobiveil_pcie_read(void __iomem *addr, int size, u32 *val)
+    52	{
+    53		if ((uintptr_t)addr & (size - 1)) {
+    54			*val = 0;
+    55			return PCIBIOS_BAD_REGISTER_NUMBER;
+    56		}
+    57	
+    58		switch (size) {
+    59		case 4:
+    60			*val = readl(addr);
+    61			break;
+    62		case 2:
+    63			*val = readw(addr);
+    64			break;
+    65		case 1:
+    66			*val = readb(addr);
+    67			break;
+    68		default:
+    69			*val = 0;
+    70			return PCIBIOS_BAD_REGISTER_NUMBER;
+    71		}
+    72	
+    73		return PCIBIOS_SUCCESSFUL;
+    74	}
+    75	
+    76	static int mobiveil_pcie_write(void __iomem *addr, int size, u32 val)
+    77	{
+    78		if ((uintptr_t)addr & (size - 1))
+    79			return PCIBIOS_BAD_REGISTER_NUMBER;
+    80	
+    81		switch (size) {
+    82		case 4:
+    83			writel(val, addr);
+    84			break;
+    85		case 2:
+    86			writew(val, addr);
+    87			break;
+    88		case 1:
+    89			writeb(val, addr);
+    90			break;
+    91		default:
+    92			return PCIBIOS_BAD_REGISTER_NUMBER;
+    93		}
+    94	
+    95		return PCIBIOS_SUCCESSFUL;
+    96	}
+    97	
+    98	u32 csr_read(struct mobiveil_pcie *pcie, u32 off, size_t size)
+    99	{
+   100		void *addr;
+   101		u32 val;
+   102		int ret;
+   103	
+   104		addr = mobiveil_pcie_comp_addr(pcie, off);
+   105	
+ > 106		ret = mobiveil_pcie_read(addr, size, &val);
+   107		if (ret)
+   108			dev_err(&pcie->pdev->dev, "read CSR address failed\n");
+   109	
+   110		return val;
+   111	}
+   112	
+
+---
+0-DAY kernel test infrastructure                Open Source Technology Center
+https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
 
 _______________________________________________
 linux-arm-kernel mailing list
