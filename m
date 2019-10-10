@@ -2,40 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 533AAD1D37
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 02:12:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F81ED1D3E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 02:13:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7uXQWFI+SZ6WKS0rmEcaG5/qeKy3+x0MD2CMcVX/Ivk=; b=IzIxaPWau95FNF
-	OWWR5Jf4h+kuYrlTF1FfYI06pQ9EcT7ikI8y/cFvkRpPzFwJvijfqwQ+jdFODmsYOGEtVV4oFrVG3
-	i0vNeiwB1Q3AYw+yKr7r1zmM8ouxGMZ7c6wzJbJAbaYXNMJ0WzJJlOtWBC1HXcBqATt3Wu0at/fwZ
-	KBewN0Ql7bNf6OamloN33EcA3ernrjBaOmgMRo/iFo8g064+yL1Ca7XipLYSAMS4HufLmJf9/Nox7
-	0sKTtlOYIcOMq8VHybqpWeRY0fdaYGtUxoAjRLx6DtG6mdaY8dyXteWdm0qxdG58pK71uwrpHi6pG
-	iytc9pg94hup8PU3ZnwA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=i0ToYV6kw8ZMP/+4XKAzaSNfQlT18MVLAofrIXCgUQ8=; b=EWA5kXvuDbqENL
+	Lze1dpAZdHAGSr1x5XRcTg0JnffB+2DnL3XP0iIdAMYeWimuz+rxV20PZ/j6f+SR6UAB2pHJpgedM
+	ACsVk9yYrJ2z1puxuAqKbAQn/3CqWTlgNhi4ODaS9xv7IDBYNa6HTNgTGMH9/E1lhF7HEhcxVY7IR
+	2NWalw28WgZxbyNmoHQfuwEH6IduhICPFLGpjlMKVADELLs9qy1vE9GLdd94foCxPtRarNIQwEm+5
+	9ABtGlfGqEmq3Mu3Axp0NYWb5+3L35ezjrIBuZy2kiLDjSxOnSo7+4PSVjQxjGKgF+/2SqWfo/24X
+	T/l5KHYRm9HnXOu8SPpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIM4N-0007Cu-R0; Thu, 10 Oct 2019 00:12:39 +0000
+	id 1iIM4l-0007LB-Od; Thu, 10 Oct 2019 00:13:03 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIM4E-0007BP-Ti
+ id 1iIM4E-0007BQ-Tj
  for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 00:12:32 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 74BBD8140;
- Thu, 10 Oct 2019 00:13:01 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 9C4348162;
+ Thu, 10 Oct 2019 00:13:02 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 0/8] Improve PM for omap4 devices
-Date: Wed,  9 Oct 2019 17:12:16 -0700
-Message-Id: <20191010001224.41826-1-tony@atomide.com>
+Subject: [PATCH 1/8] ARM: OMAP2+: Remove unused wakeup_cpu
+Date: Wed,  9 Oct 2019 17:12:17 -0700
+Message-Id: <20191010001224.41826-2-tony@atomide.com>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20191010001224.41826-1-tony@atomide.com>
+References: <20191010001224.41826-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_171230_997109_B23B3E93 
-X-CRM114-Status: UNSURE (   8.76  )
+X-CRM114-CacheID: sfid-20191009_171230_997111_BA77454F 
+X-CRM114-Status: UNSURE (   9.09  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -64,47 +66,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+After commit 32d174ed1bd7 ("ARM: OMAP4: MPUSS PM: remove unnecessary
+shim functions for powerdomain control") this is no longer used.
 
-We've had core oswr (open switch retention) disabled for a while now for
-omap4 devices because of all kind of GPIO issues it caused with bootloaders
-that configured per and core LOGICRETSTATE bits.
+The code continues execution after context restore on the same CPU,
+so we can just use pm_info->pwrdm.
 
-With all the recent GPIO fixes, these issues are now gone, and we can enable
-per and core oswr again.
+Cc: Merlijn Wajer <merlijn@wizzup.org>
+Cc: Pavel Machek <pavel@ucw.cz>
+Cc: Sebastian Reichel <sre@kernel.org>
+Signed-off-by: Tony Lindgren <tony@atomide.com>
+---
+ arch/arm/mach-omap2/omap-mpuss-lowpower.c | 2 --
+ 1 file changed, 2 deletions(-)
 
-By adding the voltage controller data for droid4, we can get it idle at
-something like 40 to 50 mW for the whole device with LCD blanked, and USB and
-modem shut down.
-
-Regards,
-
-Tony
-
-
-Tony Lindgren (8):
-  ARM: OMAP2+: Remove unused wakeup_cpu
-  ARM: OMAP2+: Drop bogus wkup domain oswr setting
-  ARM: OMAP2+: Remove bogus warnings for machines without twl PMIC
-  ARM: OMAP2+: Update 4430 voltage controller operating points
-  ARM: OMAP2+: Configure voltage controller for cpcap
-  ARM: OMAP2+: Allow per oswr for omap4
-  ARM: OMAP2+: Allow core oswr for omap4
-  ARM: OMAP2+: Initialize voltage controller for omap4
-
- arch/arm/mach-omap2/Makefile              |   5 +
- arch/arm/mach-omap2/control.h             |   1 +
- arch/arm/mach-omap2/omap-mpuss-lowpower.c |   2 -
- arch/arm/mach-omap2/omap_twl.c            |   8 +-
- arch/arm/mach-omap2/opp4xxx_data.c        |  16 +-
- arch/arm/mach-omap2/pm.c                  |   1 +
- arch/arm/mach-omap2/pm.h                  |  14 ++
- arch/arm/mach-omap2/pm44xx.c              |  13 +-
- arch/arm/mach-omap2/pmic-cpcap.c          | 265 ++++++++++++++++++++++
- arch/arm/mach-omap2/vc.c                  |  20 ++
- 10 files changed, 319 insertions(+), 26 deletions(-)
- create mode 100644 arch/arm/mach-omap2/pmic-cpcap.c
-
+diff --git a/arch/arm/mach-omap2/omap-mpuss-lowpower.c b/arch/arm/mach-omap2/omap-mpuss-lowpower.c
+--- a/arch/arm/mach-omap2/omap-mpuss-lowpower.c
++++ b/arch/arm/mach-omap2/omap-mpuss-lowpower.c
+@@ -227,7 +227,6 @@ int omap4_enter_lowpower(unsigned int cpu, unsigned int power_state)
+ {
+ 	struct omap4_cpu_pm_info *pm_info = &per_cpu(omap4_pm_info, cpu);
+ 	unsigned int save_state = 0, cpu_logic_state = PWRDM_POWER_RET;
+-	unsigned int wakeup_cpu;
+ 
+ 	if (omap_rev() == OMAP4430_REV_ES1_0)
+ 		return -ENXIO;
+@@ -292,7 +291,6 @@ int omap4_enter_lowpower(unsigned int cpu, unsigned int power_state)
+ 	 * secure devices, CPUx does WFI which can result in
+ 	 * domain transition
+ 	 */
+-	wakeup_cpu = smp_processor_id();
+ 	pwrdm_set_next_pwrst(pm_info->pwrdm, PWRDM_POWER_ON);
+ 
+ 	pwrdm_post_transition(NULL);
 -- 
 2.23.0
 
