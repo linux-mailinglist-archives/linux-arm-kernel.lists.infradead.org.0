@@ -2,83 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 101DDD3226
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 22:35:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50E59D3227
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 22:35:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YcFC2UJnNGAMpoGtJMjCIrJ0eAExPEOKhq7mp6kABg8=; b=qvmABf1ZGafR2E
-	oL58CvbAsLqisNP9qkMEYfPSgWmgijvXF2ciR7jxiHj63upMtT5UN36K7mMIqgpTPq6TNNHWsyygA
-	XnZ4+46bpiYgThNYQskG3bJWQ+x1Xgm9GCQkvGZaviX4quOHpwF9wex7Hnm6XGTiIJzFPgg+A0hTT
-	Q/N/PaouXGwearISm8FWZNeUy6R9TUrzaMgarInzZCEO69ykc01pG5688gHUOS3V722JBFpDJpzEe
-	g79YaXbazswU7FD8PU5eeSxS0C0FUUeHmCmAk4HmIZQNPcvqeXbAoX0lG0cxNHRvSI7yECEvmFJjl
-	sHSW/r0HeTuMJvROf7oA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=jwiJi0ITYWfmWoQHSD4OXq4M6ilmRr4YoqaoBVP+ZWM=; b=SKHPAyskFNWr+2pC5QevHMItA
+	IST3AeqypDCY/oUhNcDKqFfmmI8AYfuZLDJcPQNTpAM6i4tn/DD7/G1gI1P+SVs+sl9hLJOVe0kkZ
+	UrX11H6QiT54qvKUcpFDIsLRebJLuV6kfUSe3VguOy1S332XPP1PQ6orkft+PElcL6XomMyW/U045
+	IUbCJNFSwoEe89Y3FaTzkqgarTVG7d5Iuf1o7S9oDI1VsoYNx9CfzLa1Xr2Ehdp88d0rhJsG/XiDq
+	3GJraMs+g6zwR6BWJ5JQBDwizwF5KAF/EybYI/KciHi2Gq4ZLoER/6GzfbwnKvuH1q9akmi4LjXNM
+	mw2cFKQeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIf9d-0004nO-PU; Thu, 10 Oct 2019 20:35:21 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1iIf9t-0005B7-82; Thu, 10 Oct 2019 20:35:37 +0000
+Received: from bilbo.ozlabs.org ([203.11.71.1] helo=ozlabs.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIf9T-0004Hf-M2
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 20:35:13 +0000
-Received: by mail-io1-xd43.google.com with SMTP id z19so16841451ior.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 10 Oct 2019 13:35:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=W1/9QJG4pjVBrrn3zHe8qFCFDPZRCmy94luAnBpQV9c=;
- b=h8OGTc/IGyySJsfvXmqllpfwmMYHYPGG+nnyaFtoSyNDvPyi19WroPBitkYqnYMWTK
- g23tq5iF2ebYjkDhQtdlxVzKDKu2INp0AGh/7vIgNZg+ixG72pd+Xz5q53s15OHlCV8/
- Scr36dNxJ5eE12Bl49+TqiPj1rt0eolpawMFeOBCwNGZLja0nAqhzDdbK9v8fiAw19sM
- BLKXIKVFBv6S9cN6trIpb8OUgAznsrBPt9wu4mFZgIyBvI19pOjpZcPwiRRV7oEK2ex4
- y1ieM8l8CbkV9Fz2yJW2rw2rb7gKNPAOqZwMKt29I4aXI6uyqHMHU/2WRIE6qqo2vK6P
- rivA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=W1/9QJG4pjVBrrn3zHe8qFCFDPZRCmy94luAnBpQV9c=;
- b=qM5cBDPCtS7nHvKJ76OvjOYNfuHXNmW39Kj7e5mCtsEkwY4vaw20qZhexMXDN7fAbD
- +OgBu+KUh7xmdT5iqYSO0uX62WK4w8XC4IykCQ/NMoovYGGgtUmK3RRMXVhZAYKVv8Zi
- 9PIqUNpkxqz5g1ayJ26VkUOk2wDthKXNaiAB44yIm4fRiHbM/KQ0a55HqD2yUhU7EI6u
- UJDSeVMTX1TDUxtmS2ypc8cYUMG17hb36/cj6T6m8IDan/y5F2xkaJAzXSanHAWZVA3a
- nlQ500dTD1eVOPtPji9kMcnMUih8h+SukzOCgxf9mxQWjSm+ISb7FQPiEgnoxmJ0oPoX
- RsbQ==
-X-Gm-Message-State: APjAAAWJGLV/NXqJhYyoeRKz8NNvDJH7bsdofNFQfGnADNRhf6icM10v
- gL+NZNqkl9r0N/x+Hal3MMSXmtYT95oraCYWxfo=
-X-Google-Smtp-Source: APXvYqzkJQd4Q/HEey3fIfopOt/LsnyxBwczRy7hM1m344Mws4LFrOvQHrz77JH+OsM6Wh1qFlk6mVPOx1Dd3PduACo=
-X-Received: by 2002:a5d:904e:: with SMTP id v14mr12245048ioq.33.1570739710182; 
- Thu, 10 Oct 2019 13:35:10 -0700 (PDT)
+ id 1iIf9l-00057r-Ij
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 20:35:31 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 46q2s74MH7z9s7T;
+ Fri, 11 Oct 2019 07:35:22 +1100 (AEDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
+ s=201702; t=1570739724;
+ bh=2iGd5ROkda3Y6J2MmH/+8mopajYGf+t5o0Gi5NzAir4=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=GAZBtPvkT4x2lVX1/F51NL9iqh/G9zECJz1ThPyE3Am9vWs6VtkB2cz5EMm++Ld0b
+ XDtvZC8nUDjsxxp8CG/eg29+6KhKCBXBOSwBH9tDMHmEFok+UVzPLqWDSwWnIbrJob
+ ZzN0+IqBWa/+9ANOsYUeW3Lux87vC0OLmcpukWZluhKaC5SQQwIw/oy01qshO0ji2P
+ Y5aL1/DeLKNGHifZ75bJ5FSdTDaeOOPpYvOi8t/dR/hvjFc4LCGbhsI4I94sppyZeX
+ 3MSrYMyJB1zUt7fG7zFASr8SfxqKHmognaHXWbsQXK6O6O2WDtqqZ+HupiFSv2LO3p
+ vM3fjivBa2P3A==
+Date: Fri, 11 Oct 2019 07:35:15 +1100
+From: Stephen Rothwell <sfr@canb.auug.org.au>
+To: Geert Uytterhoeven <geert+renesas@glider.be>
+Subject: Re: [PATCH] MAINTAINERS: Remove Simon as Renesas SoC Co-Maintainer
+Message-ID: <20191011073515.2933918c@canb.auug.org.au>
+In-Reply-To: <20191010123046.15291-1-geert+renesas@glider.be>
+References: <20191010123046.15291-1-geert+renesas@glider.be>
 MIME-Version: 1.0
-References: <20191010125300.2822-1-festevam@gmail.com>
-In-Reply-To: <20191010125300.2822-1-festevam@gmail.com>
-From: Andrey Smirnov <andrew.smirnov@gmail.com>
-Date: Thu, 10 Oct 2019 13:34:51 -0700
-Message-ID: <CAHQ1cqEVuf7yBM5fTyRUezJSARuSBG2ohyisufAxy=ME0-p=OA@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: imx6qdl-zii-rdu2: Fix accelerometer
- interrupt-names
-To: Fabio Estevam <festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_133511_723115_04FBC608 
-X-CRM114-Status: GOOD (  13.21  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191010_133529_886501_02B48823 
+X-CRM114-Status: GOOD (  10.12  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (andrew.smirnov[at]gmail.com)
+ no trust [203.11.71.1 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -93,39 +75,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Guo <shawnguo@kernel.org>, Chris Healy <cphealy@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Lucas Stach <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Arnd Bergmann <arnd@arndb.de>, Kevin Hilman <khilman@kernel.org>,
+ Magnus Damm <magnus.damm@gmail.com>, linux-kernel@vger.kernel.org,
+ linux-renesas-soc@vger.kernel.org, Simon Horman <horms@verge.net.au>,
+ Olof Johansson <olof@lixom.net>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6364634113133375172=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 10, 2019 at 5:53 AM Fabio Estevam <festevam@gmail.com> wrote:
->
-> According to Documentation/devicetree/bindings/iio/accel/mma8452.txt,
-> the correct interrupt-names are "INT1" and "INT2", so fix them
-> accordingly.
->
-> Signed-off-by: Fabio Estevam <festevam@gmail.com>
-> ---
-> Hi Lucas/Andrey,
->
-> I don't have access to this board, so please test it if you
-> have a chance.
+--===============6364634113133375172==
+Content-Type: multipart/signed; boundary="Sig_/V3S_2M9Xo6krU8dWBzoccDj";
+ protocol="application/pgp-signature"; micalg=pgp-sha256
 
-Will do. The binding documentation is actually a bit misleading since
-it makes it sounds like configuring both interrupts is a meaningful
-option, whereas in reality the driver will always use only one line.
-I've been meaning to submit a patch to re-word the documentation,
-maybe this is a good reminder that I need to do so. Do you mind if I
-re-spin a v2 of this patch and modify it to specify only a single IRQ
-line?
+--Sig_/V3S_2M9Xo6krU8dWBzoccDj
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
 
-Thanks,
-Andrey Smirnov
+Hi Geert,
+
+On Thu, 10 Oct 2019 14:30:46 +0200 Geert Uytterhoeven <geert+renesas@glider=
+.be> wrote:
+>
+> At the end of the v5.3 upstream kernel development cycle, Simon stepped
+> down from his role as Renesas SoC maintainer.
+>=20
+> Remove his maintainership, git repository, and branch from the
+> MAINTAINERS file, and add an entry to the CREDITS file to honor his
+> work.
+>=20
+> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+
+So, I will remove Simon's Renesas tree from linux-next and rename the
+renesas-geert tree to be renesas, OK?
+
+--=20
+Cheers,
+Stephen Rothwell
+
+--Sig_/V3S_2M9Xo6krU8dWBzoccDj
+Content-Type: application/pgp-signature
+Content-Description: OpenPGP digital signature
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl2flgMACgkQAVBC80lX
+0Gz6jggAkWH/aV4Ww6HxXnXq0XbwNVDhJTIfgpJ61ST9eggCpm1c3p4KHKvkd9s0
+JLpzxz4Z/Yx9WkuDbHmRgnIoWu5U7AoJt6OfU0N3S8sciHM7OhuS5CbtZDusADXh
+oFKDnFgnu+/c1onbP5to9IHSHzRtQm9cX72LfHJilKcgN94th7E6aRo/iouS9VMB
+K0XFx+YHgqlKglpzvcT52G1jT10r+nfi30g/FqGMWB91PfPEoZDWTqg9ldcwMJiq
+NpTqOMO+QGCe0rsZbvj/n9JI4kvIVrk4E9lFK1oStJfkqfDWAyPHlqTCWWxuLvxJ
+ccioAcApaMOtA+AjwEMyv+nIFfr0mw==
+=qwbp
+-----END PGP SIGNATURE-----
+
+--Sig_/V3S_2M9Xo6krU8dWBzoccDj--
+
+
+--===============6364634113133375172==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6364634113133375172==--
+
