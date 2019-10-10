@@ -2,77 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E2B2D2672
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 11:33:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C675D2688
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 11:38:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=M0BAnvFVzMeLe8avBgYwx0G66u3Fjr09NHuUf4B2/L8=; b=urPzRMcVFiapNdXxk+oqL7EhS
-	HCpC7Nrq/cOHTWcLqRCbZLWl8JlsjXjNy3eNapXqSd3DReh2Vm7vkE+bWo/dWYufJqZSt75Ow5DZO
-	DhYA6vHOo3+Ln//5rpt8ZbpyE5NcUElgtwEZNgC1x8ezo2kV+r+HY/NbaHiJlUhTiVDUkKWhAZkfQ
-	ZkBtw1ufxsION5OvKxqLQ/V2/Y8RaAuUfOsLNNgFH0CgOAyrJioADXQZE+9gyt7DHsGGrrJf2Hfyx
-	uZLHm0nnnghrUbbdmtQadkYWVwYLB8rMUbB9mKmtarECE+tU+pqBzb9wtf9FPTuMoyyZxxJU3oWqb
-	Vyh16O/6w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=755GohgfVwCuOSLDw0wN3WDngxPS70lKV5vdy64Ace0=; b=qv61rPa7cNb+6/
+	3TzAGEZxJXLfAu+knZoqBeLAsW6sm9QxOmrQMEcl7c+yoUhMlznSP+CnAyu+0UxkBfHAeGpA+LBHl
+	NjTGr38iOutF2TNYh2kTwI0/yBzPl4Jiu2FmPjavAzQlQvhSucKjirNUJNJck+mXM5NOrvMOqz1Mo
+	Z/PjgBWPSv6iUvEbdyw0FdcWkmrieSq63zXeP0KfBbnnkrBmxcG6144Bul5/hnoLGFFPr3j6EqXKW
+	V8yTpNIbVBD0nZJI+wpbKZAIYDcIGlppmCd7bJKqSab/cZtBSx59EvknHpHmtrJTGkoo5tL6K07TX
+	MUXPLI5kp1n6KJZhEPpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIUos-0001u1-JR; Thu, 10 Oct 2019 09:33:14 +0000
-Received: from regular1.263xmail.com ([211.150.70.199])
+	id 1iIUtQ-0003hS-5i; Thu, 10 Oct 2019 09:37:56 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIUoj-0001sm-6w; Thu, 10 Oct 2019 09:33:06 +0000
-Received: from localhost (unknown [192.168.167.225])
- by regular1.263xmail.com (Postfix) with ESMTP id C04F33FA;
- Thu, 10 Oct 2019 17:32:57 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-SKE-CHECKED: 1
-X-ABS-CHECKED: 1
-Received: from [192.168.60.65] (unknown [103.29.142.67])
- by smtp.263.net (postfix) whith ESMTP id
- P30352T139712782128896S1570699970516291_; 
- Thu, 10 Oct 2019 17:32:57 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <0bc8cce9b6576d0427695f1204c0bf3e>
-X-RL-SENDER: kever.yang@rock-chips.com
-X-SENDER: yk@rock-chips.com
-X-LOGIN-NAME: kever.yang@rock-chips.com
-X-FST-TO: linux-arm-kernel@lists.infradead.org
-X-SENDER-IP: 103.29.142.67
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-Subject: Re: CPUfreq fail on rk3399-firefly
-To: Kevin Hilman <khilman@baylibre.com>, Heiko Stuebner <heiko@sntech.de>
-References: <5d3057c8.1c69fb81.c6489.8ad2@mx.google.com>
- <20190718162005.GF5761@sirena.org.uk> <7hmugdynmk.fsf@baylibre.com>
- <2314814.WbdfqDVNqK@phil> <7hv9uq9wfe.fsf@baylibre.com>
- <c973d3fa-5f0d-c277-7c83-6227942a671a@rock-chips.com>
- <7hd0gvzuvw.fsf@baylibre.com> <7h8srjzuen.fsf@baylibre.com>
- <7hh84yisd3.fsf@baylibre.com>
-From: Kever Yang <kever.yang@rock-chips.com>
-Message-ID: <3ed325e9-c958-c329-66b7-6eee8da06fde@rock-chips.com>
-Date: Thu, 10 Oct 2019 17:32:48 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iIUtH-0003fn-16
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 09:37:48 +0000
+Received: by mail-qk1-x742.google.com with SMTP id 4so4971815qki.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 10 Oct 2019 02:37:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=iUv/jKfs8Rt7LwQGuq/GRhqieGvZNRkwMu6pNwIodkk=;
+ b=bhpLcCfYPyvX52+BUSSL7Yzj8Et2GDMmcum+9PP4vVeDEy1RxLq7mlfVJHrpQs/nmF
+ HOudTuYY/jkMU9E1AxwCRYLr+GWnGHiNVIzjxkwJ8cWvxVnAHNGdpcCMyDIO+S93hPRq
+ ys4nlW+3Gvhq+0lkrLZpM8YlHGVH0iTLqn/7k=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=iUv/jKfs8Rt7LwQGuq/GRhqieGvZNRkwMu6pNwIodkk=;
+ b=tfTk4YN4bS+14ABSiTDRxAHRYu87hIRD9Z7jwTYhh9EEf72HzGxciKCkHhsJU7vwMm
+ h38Ag51uKwaIkuaut1SuemP9ZhNsHW60s7OXy5blM5eg314kWqKnzZtpy6OXCKCYpKv3
+ nFzZKrV5uS+9rtqpry4MMOfeTP25Rw4Q3pnbpj8yEu4WovG5EGqNvDDWq5Jlb3NgTQVW
+ sU+XqRrjCYM3n6tnKAo1/VuJS90KlzN0RQAW3Ucx7GMgHqPKoAE7YHbIFFbwrUZ30V4C
+ Eaeo7dXa//Cf06YxThWDbSzKc2kYgt/GQkJrlcN1436/Jpdp4NtnPy8SW8mWp/QzW235
+ iDuw==
+X-Gm-Message-State: APjAAAWr2T6F7uxl0x7pFPMpAkvYvtzm8bV8l24QdlB5LPE14zi5u67l
+ JmEJpZ621V8A+STTtSqnUS/+8zLV2gQRSJ8AWf+0VA==
+X-Google-Smtp-Source: APXvYqz1ByFsQhFtmGcxPoAP+STAxSloJOQ2YgPIk3bIqO0LpHl3D7BNY8rPw6h+2MKJfwf36tyi5ff7jmIJfUURLg0=
+X-Received: by 2002:a37:2fc1:: with SMTP id v184mr8788836qkh.18.1570700265436; 
+ Thu, 10 Oct 2019 02:37:45 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <7hh84yisd3.fsf@baylibre.com>
-Content-Language: en-US
+References: <20191010075004.192818-1-tfiga@chromium.org>
+ <CANMq1KAA+nqcOqiE_g=vA8DC=_t=FqSRtR5kk=1XqSsgZGj+_A@mail.gmail.com>
+ <CAAFQd5DazVnFGmNENnxT_FHed2Jx30hLT29HyEjxY7xeqLnGCg@mail.gmail.com>
+In-Reply-To: <CAAFQd5DazVnFGmNENnxT_FHed2Jx30hLT29HyEjxY7xeqLnGCg@mail.gmail.com>
+From: Nicolas Boichat <drinkcat@chromium.org>
+Date: Thu, 10 Oct 2019 17:37:34 +0800
+Message-ID: <CANMq1KA7pKqJDhFvkuBfEWtr81NUhyRpUE9ZZeTNCCc5Fphoyw@mail.gmail.com>
+Subject: Re: [PATCH] usb: mtk-xhci: Set the XHCI_NO_64BIT_SUPPORT quirk
+To: Tomasz Figa <tfiga@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_023305_407807_81E0E545 
-X-CRM114-Status: UNSURE (   8.11  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191010_023747_068709_C7152889 
+X-CRM114-Status: GOOD (  23.25  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.199 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,22 +90,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-build-reports@lists.linaro.org, linux-rockchip@lists.infradead.org,
- linux-next@vger.kernel.org, =?UTF-8?B?6Zer5a2d5Yab?= <andy.yan@rock-chips.com>,
- =?UTF-8?B?5byg5pm0?= <elaine.zhang@rock-chips.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Changqi Hu <Changqi.Hu@mediatek.com>,
+ Mathias Nyman <mathias.nyman@intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ open list <linux-kernel@vger.kernel.org>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Shik Chen <shik@chromium.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ "moderated list:ARM/Mediatek SoC support"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgS2V2aW4sCgogwqDCoMKgIEkgd2lsbCBzZW5kIHlvdSBhIEZpcmVmbHktcmszMzk5IGJvYXJk
-IHRvIHlvdS4KCgpUaGFua3MsCgotIEtldmVyCgpPbiAyMDE5LzkvMjcg5LiK5Y2INjo1MSwgS2V2
-aW4gSGlsbWFuIHdyb3RlOgo+IFRoaXMgaXMgbm93IGZhaWxpbmcgaW4gdGhlIHY1LjIgc3RhYmxl
-IHRyZWUuCj4KPiBBbnkgc3VnZ2VzdGlvbnMgb24gd2hhdCB0byBkbz8gIG90aGVyd2lzZSwgSSds
-bCBqdXN0IG5lZWQgdG8gZGlzYWJsZQo+IHRoaXMgYm9hcmQuCj4KPiBPciwgaWYgc29tZW9uZSB3
-YW50cyB0byBkb25hdGUgYSBuZXcgcmszMzk5LWZpcmVmbHkgZm9yIG15IGxhYiwgSSdkIGJlCj4g
-Z2xhZCB0byB0cnkgcmVwbGFjaW5nIGl0Lgo+Cj4gS2V2aW4KCgoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
-c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Thu, Oct 10, 2019 at 5:11 PM Tomasz Figa <tfiga@chromium.org> wrote:
+>
+> On Thu, Oct 10, 2019 at 6:08 PM Nicolas Boichat <drinkcat@chromium.org> wrote:
+> >
+> > On Thu, Oct 10, 2019 at 3:50 PM Tomasz Figa <tfiga@chromium.org> wrote:
+> > >
+> > > MediaTek XHCI host controller does not support 64-bit addressing despite
+> > > the AC64 bit of HCCPARAMS1 register being set. The platform-specific
+> > > glue sets the DMA mask to 32 bits on its own, but it has no effect,
+> > > because xhci_gen_setup() overrides it according to hardware
+> > > capabilities.
+> > >
+> > > Use the XHCI_NO_64BIT_SUPPORT quirk to tell the XHCI core to force
+> > > 32-bit DMA mask instead.
+> > >
+> > > Signed-off-by: Tomasz Figa <tfiga@chromium.org>
+> >
+> > Can we add a Fixes: tag for stable backports?
+> > (after addressing the other comments of course)
+> >
+>
+> The problem with Fixes: is that this patch depends on the quirk being
+> there, but the offending code was merged earlier. Do you know how to
+> handle such cases?
+
+Oh, interesting. I think this is documented here:
+https://github.com/torvalds/linux/blob/master/Documentation/process/stable-kernel-rules.rst
+
+Something like this:
+Cc: <stable@vger.kernel.org> # 3.3.x: a1f84a3: sched: Check for idle
+Cc: <stable@vger.kernel.org> # 3.3.x
+
+(Where 3.3.x is the first release that contains the commit indicated
+in the Fixes tag)
+
+Try that, worst case you'll get automated emails from stable
+maintainers asking you how to fix the issue.
+
+>
+> >
+> > > ---
+> > >  drivers/usb/host/xhci-mtk.c | 10 +++++-----
+> > >  1 file changed, 5 insertions(+), 5 deletions(-)
+> > >
+> > > diff --git a/drivers/usb/host/xhci-mtk.c b/drivers/usb/host/xhci-mtk.c
+> > > index b18a6baef204a..4d101d52cc11b 100644
+> > > --- a/drivers/usb/host/xhci-mtk.c
+> > > +++ b/drivers/usb/host/xhci-mtk.c
+> > > @@ -395,6 +395,11 @@ static void xhci_mtk_quirks(struct device *dev, struct xhci_hcd *xhci)
+> > >         xhci->quirks |= XHCI_SPURIOUS_SUCCESS;
+> > >         if (mtk->lpm_support)
+> > >                 xhci->quirks |= XHCI_LPM_SUPPORT;
+> > > +       /*
+> > > +        * MTK host controller does not support 64-bit addressing, despite
+> > > +        * having the AC64 bit of the HCCPARAMS1 register set.
+> > > +        */
+> > > +       xhci->quirks |= XHCI_NO_64BIT_SUPPORT;
+> > >  }
+> > >
+> > >  /* called during probe() after chip reset completes */
+> > > @@ -488,11 +493,6 @@ static int xhci_mtk_probe(struct platform_device *pdev)
+> > >                 goto disable_clk;
+> > >         }
+> > >
+> > > -       /* Initialize dma_mask and coherent_dma_mask to 32-bits */
+> > > -       ret = dma_set_mask_and_coherent(dev, DMA_BIT_MASK(32));
+> > > -       if (ret)
+> > > -               goto disable_clk;
+> > > -
+> > >         hcd = usb_create_hcd(driver, dev, dev_name(dev));
+> > >         if (!hcd) {
+> > >                 ret = -ENOMEM;
+> > > --
+> > > 2.23.0.581.g78d2f28ef7-goog
+> > >
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
