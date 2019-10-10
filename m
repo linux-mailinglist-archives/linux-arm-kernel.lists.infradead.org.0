@@ -2,74 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 318D8D340E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 00:44:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C129D3422
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 01:01:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rZSVVTDqY7ClQ+tOPcplU1YgBchR6hP9UoKTH+NSHnA=; b=YyHhuneLHNWN4tOt5CjJWvirt
-	Tf2wnhGn04FVLgj4K76Rg6bv3AWeesG9zqgxXQj5diIJ1UyBxFQ/5FYzBUp8mNE8P4AOfInetPzW5
-	NkHX+Z+b8KnCs8zt8AsDrVjN2INeFSrvXnt/1NAoaVbvcK7uLGWsEmz/lOYGpvoU73hmFvES9IzYN
-	HPQTTeLYUKnVGv5qt7wc9A4rdwnSFi1QhVWl7ytPVZGhN381EGf9AfsVxpQly6FX7hP8vILyuaCze
-	LZjtUZ0bCLLH6kCcMW5jbaugoZmBdJJSOwagbkxsnP+vd2mb+UgfVMabtJNiihxG/9fYzu1JuSmoC
-	vPjel1glw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CSgWdQFmmipRfkbY0mKNVIILPZLc1g0Mx2salmPKNEs=; b=c41ajAptKV6/cp
+	rizTS1bu3DcVsKCgTZw4airQ4uPFE/QDl5mqfXxhLhmHG/ceZR6RxFBqDg5UQcD8WQrMhuk331DFR
+	PKRWC/tUH9J//QiP+Ln375TUT6WC5cYEpEQBdzHmfR0t1Ywlsp3bBBGgz5KrVu5XW/gHt5/bkqIbq
+	gffSVLj6KUacFPHM6YpqHes0J1DzSxx8KuRGiZX7Q2m4Uihk0aJghMkmforN3iW9Jn5idlS2/UPbe
+	ejcFcz9JZXh+fcHYQrO6WsBtFkwze2A4RePYJkt7jAI61xYJzjHsJKMmzDNB/v9BPdKHPo9annXdn
+	BXdjHSVigxvOlNjCvk+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIhAu-0003lN-Uv; Thu, 10 Oct 2019 22:44:48 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iIhR4-0001f9-DS; Thu, 10 Oct 2019 23:01:30 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIhAm-0003kj-Jk
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 22:44:42 +0000
-Received: from earth.universe (unknown [185.62.205.105])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8ECE82067B;
- Thu, 10 Oct 2019 22:44:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570747479;
- bh=aUY+2G6kw97wxWvRNj1wmuIasli7uRNKLfj987xjrJs=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=t2wzh37US8FDUoIZ+weJd1nfSJpeQ6euxNPQpUSQ8xARX4Z6GRdippaRKdLUgC/r6
- inne3V2YM0oNlAQ3zkqvVccRTdpgVSPkEgQMDSRAK2FFuWJ/f+OKMC8m+qed6Wmv3w
- rUBHZji9sEdCAyQZkPg+66BMXFjpxS1aLIBfQEeY=
-Received: by earth.universe (Postfix, from userid 1000)
- id 586633C0CA1; Fri, 11 Oct 2019 00:44:36 +0200 (CEST)
-Date: Fri, 11 Oct 2019 00:44:36 +0200
-From: Sebastian Reichel <sre@kernel.org>
-To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-Subject: Re: [PATCH 15/36] ARM: s3c: adc: move header to linux/soc/samsung
-Message-ID: <20191010224436.t6gwb5fassr2dymp@earth.universe>
-References: <20191010202802.1132272-1-arnd@arndb.de>
- <20191010203043.1241612-1-arnd@arndb.de>
- <20191010203043.1241612-15-arnd@arndb.de>
- <da32e8a3-cbb3-ea08-1c55-55980b3dc53e@roeck-us.net>
- <20191010222955.GB229325@dtor-ws>
+ id 1iIhQv-0001eJ-FB
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 23:01:22 +0000
+Received: by mail-qt1-x841.google.com with SMTP id u40so11134143qth.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 10 Oct 2019 16:01:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=netronome-com.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:in-reply-to:references
+ :organization:mime-version:content-transfer-encoding;
+ bh=hKb1hJiJoZr7sDzi9awmt+z6YG7rgK/yyFTSM1pIHvc=;
+ b=rBl0cx6+eIElwhvMYT30TfWDTrbVzMZqR9vc1u08+8UkgRFWwsWJItiHPlbIz75bbO
+ yjErSPaO+d+mOXOukCkpOiBJnqGmHKu50/Uyz9FW/epJCtKe8478nPgRPB6CcvAY1a1I
+ Ceuu7vL7cH8gJEFTgdiOM8xNWMPqzJ4hpm14bppd6CQU3FROOOIgnoJhKh5GJ4rvJ7G7
+ trLU5f3s1a3fEC2JtQtzqks393lZwdH9IdblrWwCQZ01vQ7JRdlrHsiigbRxkJSzRSvm
+ +LnPGfJbwjrZh5kS1fHLpLjgKlFwoFNpuGaKfGkNdVIg8LEUr2UFHovhiakkDrFMacbh
+ yd9A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
+ :references:organization:mime-version:content-transfer-encoding;
+ bh=hKb1hJiJoZr7sDzi9awmt+z6YG7rgK/yyFTSM1pIHvc=;
+ b=PN500sZUxxLJPDToaLMxk3gjykUYUD03U4teFcuapC+1H0sNg06hiXWb8c4RtEmWE+
+ LW4RmywKf/xoZB1X7i9FDOobmBWwuXBqZA1wBVDIoIZ8ylWYiXqaHuC6TpGiTwllSQ9l
+ aIvsoWjPchVtSOBd7AAd+I4CokfszBSeijdsK1LArItpzsdCChMH/VjrkR8aZwjqwc0e
+ cGEx9h9x8q9XOJPRx6fwbliIETKjL0XNV+MQNiv+8vNNed1HQD5CdpBKp9IYSsuqlQic
+ Caox1nreqvz1NdpGN+468DlIue36GCzIzRFUWsJoNPo1uBICVWznhzUHp4lwE8auuHb5
+ 8J4g==
+X-Gm-Message-State: APjAAAXlh6s+HlfLfKO5xaWzSUliD8DD0OkkHnFIEJTSjmqfgBzmhohv
+ GOzClOEfBvhnr8j6WV10fWNLLA==
+X-Google-Smtp-Source: APXvYqzlvVcUTrNNKzaif/kXN8GZwkAMecaGfYJIaGrr9Y2IjFLnQDpHQHTA/hY/Sd8K4BincCEN3w==
+X-Received: by 2002:a0c:f8cd:: with SMTP id h13mr12808457qvo.53.1570748480202; 
+ Thu, 10 Oct 2019 16:01:20 -0700 (PDT)
+Received: from cakuba.netronome.com ([66.60.152.14])
+ by smtp.gmail.com with ESMTPSA id 64sm3058098qkk.63.2019.10.10.16.01.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 10 Oct 2019 16:01:20 -0700 (PDT)
+Date: Thu, 10 Oct 2019 16:01:03 -0700
+From: Jakub Kicinski <jakub.kicinski@netronome.com>
+To: Biao Huang <biao.huang@mediatek.com>
+Subject: Re: [PATCH] net: stmmac: disable/enable ptp_ref_clk in
+ suspend/resume flow
+Message-ID: <20191010160103.63c3c0ed@cakuba.netronome.com>
+In-Reply-To: <20191009085649.6736-1-biao.huang@mediatek.com>
+References: <20191009085649.6736-1-biao.huang@mediatek.com>
+Organization: Netronome Systems, Ltd.
 MIME-Version: 1.0
-In-Reply-To: <20191010222955.GB229325@dtor-ws>
-User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_154440_694506_264EBD9D 
-X-CRM114-Status: GOOD (  19.16  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191010_160121_572679_23B4056A 
+X-CRM114-Status: GOOD (  15.03  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,268 +94,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- linux-pm@vger.kernel.org, linus.walleij@linaro.org,
- linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
- Jean Delvare <jdelvare@suse.com>, Kukjin Kim <kgene@kernel.org>,
- linux-input@vger.kernel.org, Guenter Roeck <linux@roeck-us.net>
-Content-Type: multipart/mixed; boundary="===============1761450439335636980=="
+Cc: andrew@lunn.ch, jianguo.zhang@mediatek.com,
+ Alexandre Torgue <alexandre.torgue@st.com>, boon.leong.ong@intel.com,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, yt.shen@mediatek.com,
+ Jose Abreu <joabreu@synopsys.com>, linux-mediatek@lists.infradead.org,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, 9 Oct 2019 16:56:49 +0800, Biao Huang wrote:
+> disable ptp_ref_clk in suspend flow, and enable it in resume flow.
+> 
+> Signed-off-by: Biao Huang <biao.huang@mediatek.com>
+> ---
+>  drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 4 ++++
+>  1 file changed, 4 insertions(+)
+> 
+> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+> index c7c9e5f162e6..b592aeecc3dd 100644
+> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+> @@ -4469,6 +4469,8 @@ int stmmac_suspend(struct device *dev)
+>  		stmmac_mac_set(priv, priv->ioaddr, false);
+>  		pinctrl_pm_select_sleep_state(priv->device);
+>  		/* Disable clock in case of PWM is off */
+> +		if (priv->plat->clk_ptp_ref)
+> +			clk_disable_unprepare(priv->plat->clk_ptp_ref);
 
---===============1761450439335636980==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="mopqc6x4c2h7s3hb"
-Content-Disposition: inline
+I don't know much embedded, but it seems like this should perhaps just
+be clk_disable() without the unprepare? stmmac_hw_teardown() is called
+when driver is removed so it needs to unprepare as well.
 
+Please feel free to explain to me why this needs to be
+clk_disable_unprepare(), as I said - not an expert.
 
---mopqc6x4c2h7s3hb
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Also - if this is a bug fix and you'd like to have it backported to
+older releases you need to add a Fixes tag.
 
-Hi,
+Thanks!
 
-On Thu, Oct 10, 2019 at 03:29:55PM -0700, Dmitry Torokhov wrote:
-> On Thu, Oct 10, 2019 at 03:20:32PM -0700, Guenter Roeck wrote:
-> > On 10/10/19 1:29 PM, Arnd Bergmann wrote:
-> > > There are multiple drivers using the private adc interface.
-> > > It seems unlikely that they would ever get converted to iio,
-> > > so make the current state official by making the header file
-> > > global.
-> > >=20
-> > > The s3c2410_ts driver needs a couple of register definitions
-> > > as well.
-> > >=20
-> > > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> >=20
-> > For hwmon:
-> >=20
-> > Acked-by: Guenter Roeck <linux@roeck-us.net>
->=20
-> For input:
->=20
-> Acked-by: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+>  		clk_disable(priv->plat->pclk);
+>  		clk_disable(priv->plat->stmmac_clk);
+>  	}
+> @@ -4535,6 +4537,8 @@ int stmmac_resume(struct device *dev)
+>  		/* enable the clk previously disabled */
+>  		clk_enable(priv->plat->stmmac_clk);
+>  		clk_enable(priv->plat->pclk);
+> +		if (priv->plat->clk_ptp_ref)
+> +			clk_prepare_enable(priv->plat->clk_ptp_ref);
+>  		/* reset the phy so that it's ready */
+>  		if (priv->mii)
+>  			stmmac_mdio_reset(priv->mii);
 
-For power-supply:
-
-Acked-by: Sebastian Reichel <sre@kernel.org>
-
--- Sebastian
-
-> > > ---
-> > >   arch/arm/mach-s3c64xx/mach-crag6410.c         |  2 +-
-> > >   arch/arm/mach-s3c64xx/mach-mini6410.c         |  2 +-
-> > >   arch/arm/mach-s3c64xx/mach-real6410.c         |  2 +-
-> > >   arch/arm/mach-s3c64xx/mach-smdk6410.c         |  2 +-
-> > >   arch/arm/plat-samsung/adc.c                   |  2 +-
-> > >   arch/arm/plat-samsung/devs.c                  |  2 +-
-> > >   drivers/hwmon/s3c-hwmon.c                     |  2 +-
-> > >   drivers/input/touchscreen/s3c2410_ts.c        | 37 ++++++++++++++++=
-++-
-> > >   drivers/power/supply/s3c_adc_battery.c        |  2 +-
-> > >   .../linux/soc/samsung/s3c-adc.h               |  0
-> > >   10 files changed, 43 insertions(+), 10 deletions(-)
-> > >   rename arch/arm/plat-samsung/include/plat/adc.h =3D> include/linux/=
-soc/samsung/s3c-adc.h (100%)
-> > >=20
-> > > diff --git a/arch/arm/mach-s3c64xx/mach-crag6410.c b/arch/arm/mach-s3=
-c64xx/mach-crag6410.c
-> > > index da5b50981a14..133453562d23 100644
-> > > --- a/arch/arm/mach-s3c64xx/mach-crag6410.c
-> > > +++ b/arch/arm/mach-s3c64xx/mach-crag6410.c
-> > > @@ -57,7 +57,7 @@
-> > >   #include <plat/keypad.h>
-> > >   #include <plat/devs.h>
-> > >   #include <plat/cpu.h>
-> > > -#include <plat/adc.h>
-> > > +#include <linux/soc/samsung/s3c-adc.h>
-> > >   #include <linux/platform_data/i2c-s3c2410.h>
-> > >   #include <plat/pm.h>
-> > >   #include <plat/samsung-time.h>
-> > > diff --git a/arch/arm/mach-s3c64xx/mach-mini6410.c b/arch/arm/mach-s3=
-c64xx/mach-mini6410.c
-> > > index 0dd36ae49e6a..c7140300bd3f 100644
-> > > --- a/arch/arm/mach-s3c64xx/mach-mini6410.c
-> > > +++ b/arch/arm/mach-s3c64xx/mach-mini6410.c
-> > > @@ -27,7 +27,7 @@
-> > >   #include <mach/regs-gpio.h>
-> > >   #include <mach/gpio-samsung.h>
-> > > -#include <plat/adc.h>
-> > > +#include <linux/soc/samsung/s3c-adc.h>
-> > >   #include <plat/cpu.h>
-> > >   #include <plat/devs.h>
-> > >   #include <plat/fb.h>
-> > > diff --git a/arch/arm/mach-s3c64xx/mach-real6410.c b/arch/arm/mach-s3=
-c64xx/mach-real6410.c
-> > > index 0ff88b6859c4..f55097fde94c 100644
-> > > --- a/arch/arm/mach-s3c64xx/mach-real6410.c
-> > > +++ b/arch/arm/mach-s3c64xx/mach-real6410.c
-> > > @@ -29,7 +29,7 @@
-> > >   #include <mach/gpio-samsung.h>
-> > >   #include <mach/irqs.h>
-> > > -#include <plat/adc.h>
-> > > +#include <linux/soc/samsung/s3c-adc.h>
-> > >   #include <plat/cpu.h>
-> > >   #include <plat/devs.h>
-> > >   #include <plat/fb.h>
-> > > diff --git a/arch/arm/mach-s3c64xx/mach-smdk6410.c b/arch/arm/mach-s3=
-c64xx/mach-smdk6410.c
-> > > index 95bdcfe95a53..3042f6cbffd9 100644
-> > > --- a/arch/arm/mach-s3c64xx/mach-smdk6410.c
-> > > +++ b/arch/arm/mach-s3c64xx/mach-smdk6410.c
-> > > @@ -60,7 +60,7 @@
-> > >   #include <plat/devs.h>
-> > >   #include <plat/cpu.h>
-> > > -#include <plat/adc.h>
-> > > +#include <linux/soc/samsung/s3c-adc.h>
-> > >   #include <linux/platform_data/touchscreen-s3c2410.h>
-> > >   #include <plat/keypad.h>
-> > >   #include <plat/samsung-time.h>
-> > > diff --git a/arch/arm/plat-samsung/adc.c b/arch/arm/plat-samsung/adc.c
-> > > index ee3d5c989a76..623a9774cc52 100644
-> > > --- a/arch/arm/plat-samsung/adc.c
-> > > +++ b/arch/arm/plat-samsung/adc.c
-> > > @@ -20,7 +20,7 @@
-> > >   #include <linux/regulator/consumer.h>
-> > >   #include <plat/regs-adc.h>
-> > > -#include <plat/adc.h>
-> > > +#include <linux/soc/samsung/s3c-adc.h>
-> > >   /* This driver is designed to control the usage of the ADC block be=
-tween
-> > >    * the touchscreen and any other drivers that may need to use it, s=
-uch as
-> > > diff --git a/arch/arm/plat-samsung/devs.c b/arch/arm/plat-samsung/dev=
-s.c
-> > > index fd94a35e22f8..ddd90f0bb380 100644
-> > > --- a/arch/arm/plat-samsung/devs.c
-> > > +++ b/arch/arm/plat-samsung/devs.c
-> > > @@ -44,7 +44,7 @@
-> > >   #include <plat/cpu.h>
-> > >   #include <plat/devs.h>
-> > > -#include <plat/adc.h>
-> > > +#include <linux/soc/samsung/s3c-adc.h>
-> > >   #include <linux/platform_data/ata-samsung_cf.h>
-> > >   #include <plat/fb.h>
-> > >   #include <plat/fb-s3c2410.h>
-> > > diff --git a/drivers/hwmon/s3c-hwmon.c b/drivers/hwmon/s3c-hwmon.c
-> > > index b490fe3d2ee8..f2703c5460d0 100644
-> > > --- a/drivers/hwmon/s3c-hwmon.c
-> > > +++ b/drivers/hwmon/s3c-hwmon.c
-> > > @@ -20,7 +20,7 @@
-> > >   #include <linux/hwmon.h>
-> > >   #include <linux/hwmon-sysfs.h>
-> > > -#include <plat/adc.h>
-> > > +#include <linux/soc/samsung/s3c-adc.h>
-> > >   #include <linux/platform_data/hwmon-s3c.h>
-> > >   struct s3c_hwmon_attr {
-> > > diff --git a/drivers/input/touchscreen/s3c2410_ts.c b/drivers/input/t=
-ouchscreen/s3c2410_ts.c
-> > > index b346e7cafd62..1a5a178ea286 100644
-> > > --- a/drivers/input/touchscreen/s3c2410_ts.c
-> > > +++ b/drivers/input/touchscreen/s3c2410_ts.c
-> > > @@ -21,10 +21,43 @@
-> > >   #include <linux/clk.h>
-> > >   #include <linux/io.h>
-> > > -#include <plat/adc.h>
-> > > -#include <plat/regs-adc.h>
-> > > +#include <linux/soc/samsung/s3c-adc.h>
-> > >   #include <linux/platform_data/touchscreen-s3c2410.h>
-> > > +#define	S3C2410_ADCCON			(0x00)
-> > > +#define	S3C2410_ADCTSC			(0x04)
-> > > +#define	S3C2410_ADCDLY			(0x08)
-> > > +#define	S3C2410_ADCDAT0			(0x0C)
-> > > +#define	S3C2410_ADCDAT1			(0x10)
-> > > +#define	S3C64XX_ADCUPDN			(0x14)
-> > > +#define	S3C2443_ADCMUX			(0x18)
-> > > +#define	S3C64XX_ADCCLRINT		(0x18)
-> > > +#define	S5P_ADCMUX			(0x1C)
-> > > +#define	S3C64XX_ADCCLRINTPNDNUP		(0x20)
-> > > +
-> > > +/* ADCTSC Register Bits */
-> > > +#define S3C2443_ADCTSC_UD_SEN		(1 << 8)
-> > > +#define S3C2410_ADCTSC_YM_SEN		(1<<7)
-> > > +#define S3C2410_ADCTSC_YP_SEN		(1<<6)
-> > > +#define S3C2410_ADCTSC_XM_SEN		(1<<5)
-> > > +#define S3C2410_ADCTSC_XP_SEN		(1<<4)
-> > > +#define S3C2410_ADCTSC_PULL_UP_DISABLE	(1<<3)
-> > > +#define S3C2410_ADCTSC_AUTO_PST		(1<<2)
-> > > +#define S3C2410_ADCTSC_XY_PST(x)	(((x)&0x3)<<0)
-> > > +
-> > > +/* ADCDAT0 Bits */
-> > > +#define S3C2410_ADCDAT0_UPDOWN		(1<<15)
-> > > +#define S3C2410_ADCDAT0_AUTO_PST	(1<<14)
-> > > +#define S3C2410_ADCDAT0_XY_PST		(0x3<<12)
-> > > +#define S3C2410_ADCDAT0_XPDATA_MASK	(0x03FF)
-> > > +
-> > > +/* ADCDAT1 Bits */
-> > > +#define S3C2410_ADCDAT1_UPDOWN		(1<<15)
-> > > +#define S3C2410_ADCDAT1_AUTO_PST	(1<<14)
-> > > +#define S3C2410_ADCDAT1_XY_PST		(0x3<<12)
-> > > +#define S3C2410_ADCDAT1_YPDATA_MASK	(0x03FF)
-> > > +
-> > > +
-> > >   #define TSC_SLEEP  (S3C2410_ADCTSC_PULL_UP_DISABLE | S3C2410_ADCTSC=
-_XY_PST(0))
-> > >   #define INT_DOWN	(0)
-> > > diff --git a/drivers/power/supply/s3c_adc_battery.c b/drivers/power/s=
-upply/s3c_adc_battery.c
-> > > index 3d00b35cafc9..60b7f41ab063 100644
-> > > --- a/drivers/power/supply/s3c_adc_battery.c
-> > > +++ b/drivers/power/supply/s3c_adc_battery.c
-> > > @@ -22,7 +22,7 @@
-> > >   #include <linux/init.h>
-> > >   #include <linux/module.h>
-> > > -#include <plat/adc.h>
-> > > +#include <linux/soc/samsung/s3c-adc.h>
-> > >   #define BAT_POLL_INTERVAL		10000 /* ms */
-> > >   #define JITTER_DELAY			500 /* ms */
-> > > diff --git a/arch/arm/plat-samsung/include/plat/adc.h b/include/linux=
-/soc/samsung/s3c-adc.h
-> > > similarity index 100%
-> > > rename from arch/arm/plat-samsung/include/plat/adc.h
-> > > rename to include/linux/soc/samsung/s3c-adc.h
-> > >=20
-> >=20
->=20
-> --=20
-> Dmitry
-
---mopqc6x4c2h7s3hb
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAl2ftFAACgkQ2O7X88g7
-+ppCxxAAn15YlBwsqaGwUaYchBuBq14qU4EobExBzZbw8oYHQL4I5oAbH2t+3oOa
-UrhNrvHnWWftmlq/2ycEzWRk4NOQ8ZES1AD/4r7q56i4QxyV/zk/cRiAjRjcCm5w
-IRJEAVVSxyADbMTxK0omr0GW2cIqUlJcRmW5JyqQvXKC5wOXVz3+0C613tQCm0o2
-JBSC+HqZkoDAlcBF/6IDcDfy1K+3FEhCEYkvFTPNeh+7I48u7qdLFS6Xf66+kLPW
-ccKaSTBw6WV9KLrwf4+sEukRP5QfA0ehVuaV447SiH2n1uzSQlju4w5pRleAwlps
-umOd1n1rFcrxBf+TEQS0XsRJ7Oa/h11DXkkLWPtCtA84FXO1IvHGLmkSx3yxRxSz
-JIszIsYHyTWwJJNKorhB2PjpSGZoaciwgOE/lt8mgPc5I64MZXvHosV2nlAMsFhJ
-LMKyxh69aShi8ylCFBy+ukiC8yXM4CzRNh1chazvB2cjNNB1p6BS/4zAxlTmIvGo
-9lUxde12J325Z9peeP6OInu1h1/v+fRfrg2wxsblwCQmdC6eQoWTPTynH9t+WADr
-ka6XkZvcoAEoaPji8fyGfY6DUkhiRwSkDpn3bk1zg7nmm5jAlH1MCoMBVrUOKylv
-Xp2bULDZLS6KD5LBn+s3bsZ1hatAJpU2746uE4Afal2lgcAnqb4=
-=0aUK
------END PGP SIGNATURE-----
-
---mopqc6x4c2h7s3hb--
-
-
---===============1761450439335636980==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1761450439335636980==--
-
