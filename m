@@ -2,53 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16AC6D2866
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 13:51:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A0A8D289D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 14:03:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-ID:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=rcKqpYpbC2ENd6/pv6720eU+etkuaMUg2ByY5qaU1RA=; b=iSirVRhO3RHsZ8YxIzSM6iz2fe
-	dRi1e8Zxd7thupJhbr3R3xiuS2dorQNGkTzb7+v7ZjzmA+AhzDZdPxYyCA+0h9ebvV/5AW3NV8GqI
-	UKfQLYfrtFcQxA/q8f00VS3iEIL65Cdw77fEwxLUEMcboSpN5ELgF0XTLgoDgExvVgbNxsuV52HWE
-	TecSBjSAJkJob9gjNIj9POjENB7IOWrooJB3kEJXnxAj5KzS5haLfuxyqie01ohF/3S6UVQW6rgzA
-	pfOfNGckwY1ghNTeLfZLvQLIElMfVw2JXA0eHBAzwOczMnIomZL7+SzFJHG+jmglniHDIMFAXqqOX
-	50mPxZkg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MICR/quAH9KAz/k7lZT6dIcE5jHgQKFGGzQo4kcgfPQ=; b=DYjdM6VdUGA0PS
+	wunpZnufvJfbbEPmJtbHNkJORO+5hf1gSwUpsaGeAPzlGO6AV9Iu5ZitxwyYiwqDv603ao1iJTCyL
+	D0Hfql6mrsMVjtQJAwN9HROZ4y3UCOfFBTiyw/q4kJFcCqZ0gnedQQpxe7BvpGgy3PGp5q5z54ST6
+	UuqHkL57eplJXa3i5bDPye72HCpH+4dSsf8ydakwXH3FiP+rl51GXoV1Mcj8H5z2wn0iCw/oXGzVI
+	UguprJy1qS6smqA/o9LJwjExwZS98tKe/HB53lwvOnw/sImOA2gqovSOjh28BImk2i1IAUb7irfGd
+	UU1vyoUScMIvyG5TU2ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIWyF-00025S-Se; Thu, 10 Oct 2019 11:51:03 +0000
-Received: from mail.thorsis.com ([92.198.35.195])
+	id 1iIX9p-0005qH-1m; Thu, 10 Oct 2019 12:03:01 +0000
+Received: from mail-sz.amlogic.com ([211.162.65.117])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIWy7-00024E-5R
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 11:50:56 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.thorsis.com (Postfix) with ESMTP id 8C7B44800
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 10 Oct 2019 13:51:21 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at mail.thorsis.com
-Received: from mail.thorsis.com ([127.0.0.1])
- by localhost (mail.thorsis.com [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id j1LFrksY4Apl for <linux-arm-kernel@lists.infradead.org>;
- Thu, 10 Oct 2019 13:51:17 +0200 (CEST)
-Received: by mail.thorsis.com (Postfix, from userid 109)
- id E086F468F; Thu, 10 Oct 2019 13:51:17 +0200 (CEST)
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.9 required=5.0 tests=BAYES_00,NO_RECEIVED,
- NO_RELAYS,URIBL_BLOCKED autolearn=unavailable autolearn_force=no
- version=3.4.2
-From: Alexander Dahl <ada@thorsis.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH] ARM: configs: at91: unselect PIT
-Date: Thu, 10 Oct 2019 13:50:43 +0200
-Message-ID: <1920271.Hgx7Y6QaZs@ada>
-In-Reply-To: <20191009194814.15034-1-alexandre.belloni@bootlin.com>
-References: <20191009194814.15034-1-alexandre.belloni@bootlin.com>
+ id 1iIX9c-0005om-4n; Thu, 10 Oct 2019 12:02:49 +0000
+Received: from [10.28.18.45] (10.28.18.45) by mail-sz.amlogic.com (10.28.11.5)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Thu, 10 Oct
+ 2019 20:02:43 +0800
+Subject: Re: [PATCH v2 2/3] pinctrl: meson-a1: add pinctrl driver for Meson A1
+ Soc
+To: Neil Armstrong <narmstrong@baylibre.com>, Linus Walleij
+ <linus.walleij@linaro.org>, <linux-gpio@vger.kernel.org>
+References: <1570532999-23302-1-git-send-email-qianggui.song@amlogic.com>
+ <1570532999-23302-3-git-send-email-qianggui.song@amlogic.com>
+ <cca24aa5-07dc-f2d6-885a-09bc8e20b3b6@baylibre.com>
+From: Qianggui Song <qianggui.song@amlogic.com>
+Message-ID: <a41f0685-a42c-b21c-d0be-e0e1c3ae7c8f@amlogic.com>
+Date: Thu, 10 Oct 2019 20:02:42 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <cca24aa5-07dc-f2d6-885a-09bc8e20b3b6@baylibre.com>
+Content-Language: en-US
+X-Originating-IP: [10.28.18.45]
+X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
+ (10.28.11.5)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_045055_373006_164EF9ED 
-X-CRM114-Status: GOOD (  12.85  )
+X-CRM114-CacheID: sfid-20191010_050248_190791_B04A522F 
+X-CRM114-Status: GOOD (  17.64  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,56 +65,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Hanjie Lin <hanjie.lin@amlogic.com>,
+ Jianxin Pan <jianxin.pan@amlogic.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Carlo Caione <carlo@caione.org>, linux-amlogic@lists.infradead.org,
+ Xingyu Chen <xingyu.chen@amlogic.com>, Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Mittwoch, 9. Oktober 2019, 21:48:14 CEST schrieb Alexandre Belloni:
-> The PIT is not required anymore to successfully boot and may actually harm
-> in case preempt-rt is used because the PIT interrupt is shared.
-> Disable it so the TCB clocksource is used.
+Hi,Neil
+
+On 2019/10/8 21:07, Neil Armstrong wrote:
+> Hi,
 > 
-> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-
-Acked-by: Alexander Dahl <ada@thorsis.com>
-
-> ---
->  arch/arm/configs/at91_dt_defconfig | 1 +
->  arch/arm/configs/sama5_defconfig   | 1 +
->  2 files changed, 2 insertions(+)
+> On 08/10/2019 13:09, Qianggui Song wrote:
+>> Add pinctrl driver for Meson A1 Soc which share the same register layout of
+>> pinmux with previous Meson-G12A, however there is difference for gpio
+>> and pin config register in A1.The main difference is that registers before A1
+>> are grouped by function while those of A1 are by bank. The new register layout
+>> is as below:
+>>
+>> /* first bank */	      /* addr */
+>> - P_PADCTRL_GPIOP_I         base + 0x00 << 2
+>> - P_PADCTRL_GPIOP_O         base + 0x01 << 2
+>> - P_PADCTRL_GPIOP_OEN       base + 0x02 << 2
+>> - P_PADCTRL_GPIOP_PULL_EN   base + 0x03 << 2
+>> - P_PADCTRL_GPIOP_PULL_UP   base + 0x04 << 2
+>> - P_PADCTRL_GPIOP_DS        base + 0x05 << 2
+>>
+>> /* second bank */
+>> - P_PADCTRL_GPIOB_I         base + 0x10 << 2
+>> - P_PADCTRL_GPIOB_O         base + 0x11 << 2
+>> - P_PADCTRL_GPIOB_OEN       base + 0x12 << 2
+>> - P_PADCTRL_GPIOB_PULL_EN   base + 0x13 << 2
+>> - P_PADCTRL_GPIOB_PULL_UP   base + 0x14 << 2
+>> - P_PADCTRL_GPIOB_DS        base + 0x15 << 2
+>>
+>> Each bank contains at least 6 registers to be configured, if one bank has
+>> more than 16 gpios, an extra P_PADCTRL_GPIO[X]_DS_EXT is included. Between
+>> two adjacent P_PADCTRL_GPIO[X]_I, there is an offset 0x10, that is to say,
+>> for third bank, the offsets will be 0x20,0x21,0x22,0x23,0x24,0x25 according
+>> to above register layout.For privous chips, registers are grouped
+>> according to their functions while registers of A1 are according to bank.
+>>
+>> Current Meson pinctrl driver can cover such change by using base address of
+>> GPIO as that of drive-strength. While simply giving reg_ds = reg_pullen
+>> make wrong value to reg_ds for Socs that do not support drive-strength like
+>> AXG.To make things simple, add an extra dt parser function for a1 or later chip
+>> and remain the old dt parser function for old Socs.
+>>
+>> Also note that there is no AO bank in A1.
+>>
+>> Signed-off-by: Qianggui Song <qianggui.song@amlogic.com>
+>> ---
+>>  drivers/pinctrl/meson/Kconfig            |   6 +
+>>  drivers/pinctrl/meson/Makefile           |   1 +
+>>  drivers/pinctrl/meson/pinctrl-meson-a1.c | 942 +++++++++++++++++++++++++++++++
+>>  drivers/pinctrl/meson/pinctrl-meson.c    |  16 +-
+>>  drivers/pinctrl/meson/pinctrl-meson.h    |   5 +
+>>  5 files changed, 969 insertions(+), 1 deletion(-)
+>>  create mode 100644 drivers/pinctrl/meson/pinctrl-meson-a1.c
+>>
 > 
-> diff --git a/arch/arm/configs/at91_dt_defconfig
-> b/arch/arm/configs/at91_dt_defconfig index 63d09e61b6dc..7e5ffdab47da
-> 100644
-> --- a/arch/arm/configs/at91_dt_defconfig
-> +++ b/arch/arm/configs/at91_dt_defconfig
-> @@ -18,6 +18,7 @@ CONFIG_ARCH_MULTI_V5=y
->  CONFIG_ARCH_AT91=y
->  CONFIG_SOC_AT91RM9200=y
->  CONFIG_SOC_AT91SAM9=y
-> +# CONFIG_ATMEL_CLOCKSOURCE_PIT is not set
->  CONFIG_AEABI=y
->  CONFIG_UACCESS_WITH_MEMCPY=y
->  CONFIG_ZBOOT_ROM_TEXT=0x0
-> diff --git a/arch/arm/configs/sama5_defconfig
-> b/arch/arm/configs/sama5_defconfig index 7255709d46ea..ee7db6cedaa6 100644
-> --- a/arch/arm/configs/sama5_defconfig
-> +++ b/arch/arm/configs/sama5_defconfig
-> @@ -20,6 +20,7 @@ CONFIG_ARCH_AT91=y
->  CONFIG_SOC_SAMA5D2=y
->  CONFIG_SOC_SAMA5D3=y
->  CONFIG_SOC_SAMA5D4=y
-> +# CONFIG_ATMEL_CLOCKSOURCE_PIT is not set
->  CONFIG_AEABI=y
->  CONFIG_UACCESS_WITH_MEMCPY=y
->  CONFIG_ZBOOT_ROM_TEXT=0x0
-
-
+> [...]
+> 
+>> --- a/drivers/pinctrl/meson/pinctrl-meson.c
+>> +++ b/drivers/pinctrl/meson/pinctrl-meson.c
+>> @@ -695,6 +695,17 @@ static int meson_pinctrl_parse_dt(struct meson_pinctrl *pc,
+>>  	return 0;
+>>  }
+>>  
+>> +int meson_pinctrl_parse_dt_extra(struct meson_pinctrl *pc,
+>> +				 struct device_node *node)
+>> +{
+>> +	int ret;
+>> +
+>> +	ret = meson_pinctrl_parse_dt(pc, node);
+>> +	pc->reg_ds = pc->reg_pullen;
+>> +
+>> +	return ret;
+>> +}
+>> +
+>>  int meson_pinctrl_probe(struct platform_device *pdev)
+>>  {
+>>  	struct device *dev = &pdev->dev;
+>> @@ -708,7 +719,10 @@ int meson_pinctrl_probe(struct platform_device *pdev)
+>>  	pc->dev = dev;
+>>  	pc->data = (struct meson_pinctrl_data *) of_device_get_match_data(dev);
+>>  
+>> -	ret = meson_pinctrl_parse_dt(pc, dev->of_node);
+>> +	if (pc->data->parse_dt)
+>> +		ret = pc->data->parse_dt(pc, dev->of_node);
+>> +	else
+>> +		ret = meson_pinctrl_parse_dt(pc, dev->of_node);
+>>  	if (ret)
+>>  		return ret;
+>>  
+>> diff --git a/drivers/pinctrl/meson/pinctrl-meson.h b/drivers/pinctrl/meson/pinctrl-meson.h
+>> index c696f3241a36..ca29efd90aac 100644
+>> --- a/drivers/pinctrl/meson/pinctrl-meson.h
+>> +++ b/drivers/pinctrl/meson/pinctrl-meson.h
+>> @@ -11,6 +11,7 @@
+>>  #include <linux/regmap.h>
+>>  #include <linux/types.h>
+>>  
+>> +struct meson_pinctrl;
+>>  /**
+>>   * struct meson_pmx_group - a pinmux group
+>>   *
+>> @@ -114,6 +115,7 @@ struct meson_pinctrl_data {
+>>  	unsigned int num_banks;
+>>  	const struct pinmux_ops *pmx_ops;
+>>  	void *pmx_data;
+>> +	int (*parse_dt) (struct meson_pinctrl *pc, struct device_node *node);
+>>  };
+>>  
+>>  struct meson_pinctrl {
+>> @@ -171,3 +173,6 @@ int meson_pmx_get_groups(struct pinctrl_dev *pcdev,
+>>  
+>>  /* Common probe function */
+>>  int meson_pinctrl_probe(struct platform_device *pdev);
+>> +/* Extra dt parser function for register layout grouped by bank */
+>> +int meson_pinctrl_parse_dt_extra(struct meson_pinctrl *pc,
+>> +				 struct device_node *node);
+>>
+> 
+> I think you should add this parse_dt callback in a separate patch.
+> 
+> Neil
+> 
+> .
+> 
+OK, will do it in the next patch set.
 
 _______________________________________________
 linux-arm-kernel mailing list
