@@ -2,57 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2ACDD1EEE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 05:32:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBCB0D2001
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 07:29:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dsV+n0TzsZxnXdx52VWPOP3BmmcQa1EvLwua3Hs6UnE=; b=rZQK+lfAlqlR6R
-	NW0/8ONH4Ef0xrVQWnXm2IhTM9yB1+RXQas0k358ylJuYDHNec3b79sZQvBE6ASPvMS5RfIvTQz/B
-	LRKBH+Lg5yCDhte7cZboRDZhVTHeOUS+KghKDV7VHt3sy2dwbf0T2k1hEm1I5dfWrGiUC3ZDdRDOI
-	T1rxyWnKrNIw5eNCq0X2ypOurM/SkH7lXEvC4/zHYxJnprl9p/URIWrE9N+uLPNPsZM0wMVy2cy07
-	AsugI7Rbbw/DLxcmwqpy6Sy5NTqsirSFQnIRHwRt1hz2v1AAt9b/c+B+DDwA17VGE/8TGhRBvyILI
-	Ea5uqWlsvlUl4ObFyWgg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ALWImHhf82u+9BuwYarEt/mcoZkjQXdwDuJInMvlsLY=; b=Zy7iqTyDwymeSD
+	DcQkri0jSt1V/FCHgcWyIKSYo7yobpxCXuzLMcGRrPJ60296Zt0OXx6u0oxfcSfLisiGJ5sl9K9XW
+	mqrGKRl6gWqkl7RIRweslPVOCt5Mlmn8sNY0DcmeVH+E2WZH32I9vU0s0ZtCv9xeM7rYv2uUYF5D2
+	HBL33LtYSgrdPyi3/4ZgTdzObDe0VbYsrQ1TFhb0ZvRAIiLJQMd7ToipnmPoHRTXr3GbT9gEPBna0
+	rxZTOBLiJGC7N5KOnkZA31KgYq3st0bSxQE/ROugDNiJSlofU8KNAwhydrSbZMb2ekwua+u/J+4AU
+	bftSz4pkb+BcfjkW3qJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIPBE-0003XY-P2; Thu, 10 Oct 2019 03:31:56 +0000
-Received: from mail-sh.amlogic.com ([58.32.228.43])
+	id 1iIR0U-0004Tg-St; Thu, 10 Oct 2019 05:28:58 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIPB6-0003Wy-HY; Thu, 10 Oct 2019 03:31:50 +0000
-Received: from [10.18.29.227] (10.18.29.227) by mail-sh.amlogic.com
- (10.18.11.5) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Thu, 10 Oct
- 2019 11:31:39 +0800
-Subject: Re: [PATCH 1/3] dt-bindings: power: add Amlogic secure power domains
- bindings
-To: Rob Herring <robh@kernel.org>
-References: <1568895064-4116-1-git-send-email-jianxin.pan@amlogic.com>
- <1568895064-4116-2-git-send-email-jianxin.pan@amlogic.com>
- <5d93ce88.1c69fb81.aec64.6b1b@mx.google.com>
-From: Jianxin Pan <jianxin.pan@amlogic.com>
-Message-ID: <3152a4ac-5059-502b-3bf3-71f7e2d8118a@amlogic.com>
-Date: Thu, 10 Oct 2019 11:31:39 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iIR0E-0004TE-J7
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 05:28:44 +0000
+Received: by mail-qk1-x741.google.com with SMTP id y144so4485430qkb.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 09 Oct 2019 22:28:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=r6Hep4iY8u0yDM4dyep+02jvirG1WxfZPi0UCSgzEPA=;
+ b=mgx7nbirD+B+qWsSDYrOWzbCFx0K9ERikuPVhs/EhHAJrKz+tDqgfmUgXGWGRSBrbo
+ UryoiU6AXZ6g1zlqeWA+/eHChgkS7xn/ksIRDyTXhZHZZI91skLOoYs5Y6Z3ls60l2+j
+ NN8svFecFJkunpLR7aajvO1GIMk04+rGWimLs=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=r6Hep4iY8u0yDM4dyep+02jvirG1WxfZPi0UCSgzEPA=;
+ b=bSM0LW0jYGjfLvCZU0k3Zo0xV52QLZMyOHwuQahemRbAwR2CL5V3+LP0qsCRpjJUB3
+ iGrvHMfB50fyKFgDfOic6dTttnlaNfnCTITrMDXe8TvHoJqY8GBUYDc9TPNz1fgV/aCs
+ PeHALhy4XJ7FQ15cewBiQIB4uNyO+mXkRpD8SkpZ+n+Kx42VRpRuoUb43oO+KvfWKaij
+ P/Xss01IDRenIV8Yw2K8c8t3YZ5580G+DXw/n4oJ5ggHApg6oE+Ylo1b+GeVZf3dIU5/
+ 8kHEzl+4e9bbaHOuoFJjKJVJ54CEUwQBkEprJpaxmUya4jFKvFyTEdLPI5HG3ObbIt1h
+ Nerw==
+X-Gm-Message-State: APjAAAUAsmqvf6NEX37QENIfR36FsWuJ+dA8Bz5ZbVsgz040rDygbFYt
+ 0xVHXgrQOsY+rHZ9BVGM5iwr7FYHFVDvZnjQ7Iw=
+X-Google-Smtp-Source: APXvYqwH0HMFFELFCxD2oINqI+YV0TL764wqxPt4fBPtvmrISd7LnBC85T0wCOC+E1zA48qshusCVPt0cVV1W/T+8QY=
+X-Received: by 2002:a37:4dca:: with SMTP id a193mr7795691qkb.292.1570685318745; 
+ Wed, 09 Oct 2019 22:28:38 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <5d93ce88.1c69fb81.aec64.6b1b@mx.google.com>
-Content-Language: en-US
-X-Originating-IP: [10.18.29.227]
-X-ClientProxiedBy: mail-sh.amlogic.com (10.18.11.5) To mail-sh.amlogic.com
- (10.18.11.5)
+References: <20191007231313.4700-1-jae.hyun.yoo@linux.intel.com>
+ <20191007231313.4700-4-jae.hyun.yoo@linux.intel.com>
+ <20191008203157.GA184092@google.com>
+ <ac256b3f-2a06-6fa5-72ab-d8f8014d253e@linux.intel.com>
+ <CAFd5g47vLN6NyZR73+EqOqfOPnM7CkGGsCwEn3udnJt99d8KCg@mail.gmail.com>
+In-Reply-To: <CAFd5g47vLN6NyZR73+EqOqfOPnM7CkGGsCwEn3udnJt99d8KCg@mail.gmail.com>
+From: Joel Stanley <joel@jms.id.au>
+Date: Thu, 10 Oct 2019 05:28:26 +0000
+Message-ID: <CACPK8Xc4JCNDwVfJ4zzsaZvoSmtqgMZwhYO8sv76aRnPiQwK_A@mail.gmail.com>
+Subject: Re: [PATCH 3/5] i2c: aspeed: fix master pending state handling
+To: Brendan Higgins <brendanhiggins@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_203148_584644_50C136AE 
-X-CRM114-Status: GOOD (  15.39  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191009_222842_786912_4713315D 
+X-CRM114-Status: GOOD (  17.33  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (joel.stan[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,82 +95,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
- Victor Wan <victor.wan@amlogic.com>, Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Zhiqiang Liang <zhiqiang.liang@amlogic.com>,
- Jian Hu <jian.hu@amlogic.com>, Xingyu Chen <xingyu.chen@amlogic.com>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Jerome Brunet <jbrunet@baylibre.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>, Wolfram Sang <wsa@the-dreams.de>,
+ Andrew Jeffery <andrew@aj.id.au>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-i2c@vger.kernel.org, Tao Ren <taoren@fb.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgUm9i77yMCgpUaGFua3MgZm9yIHlvdXIgcmV2aWV3LgoKSSdtIHNvcnJ5IHRvIHJlcGx5IHNv
-IGxhdGUsIGZvciBJJ3ZlIGJlZW4gb24gdmFjYXRpb24gaW4gdGhlIGxhc3Qgd2Vlay4KCk9uIDIw
-MTkvMTAvMiA2OjA5LCBSb2IgSGVycmluZyB3cm90ZToKPiBPbiBUaHUsIFNlcCAxOSwgMjAxOSBh
-dCAwODoxMTowMkFNIC0wNDAwLCBKaWFueGluIFBhbiB3cm90ZToKPj4gQWRkIHRoZSBiaW5kaW5n
-cyBmb3IgdGhlIEFtbG9naWMgU2VjdXJlIHBvd2VyIGRvbWFpbnMsIGNvbnRyb2xsaW5nIHRoZQo+
-PiBzZWN1cmUgcG93ZXIgZG9tYWlucy4KPj4KPj4gVGhlIGJpbmRpbmdzIHRhcmdldHMgdGhlIEFt
-bG9naWMgQTEgYW5kIEMxIGNvbXBhdGlibGUgU29DcywgaW4gd2hpY2ggdGhlCj4+IHBvd2VyIGRv
-bWFpbiByZWdpc3RlcnMgYXJlIGluIHNlY3VyZSB3b3JsZC4KPj4KPj4gU2lnbmVkLW9mZi1ieTog
-SmlhbnhpbiBQYW4gPGppYW54aW4ucGFuQGFtbG9naWMuY29tPgo+PiBTaWduZWQtb2ZmLWJ5OiBa
-aGlxaWFuZyBMaWFuZyA8emhpcWlhbmcubGlhbmdAYW1sb2dpYy5jb20+Cj4+IC0tLQo+PiAgLi4u
-L2JpbmRpbmdzL3Bvd2VyL2FtbG9naWMsbWVzb24tc2VjLXB3cmMueWFtbCAgICAgfCAzMiArKysr
-KysrKysrKysrKysrKysrKysrCj4+ICBpbmNsdWRlL2R0LWJpbmRpbmdzL3Bvd2VyL21lc29uLWEx
-LXBvd2VyLmggICAgICAgICB8IDMyICsrKysrKysrKysrKysrKysrKysrKysKPj4gIDIgZmlsZXMg
-Y2hhbmdlZCwgNjQgaW5zZXJ0aW9ucygrKQo+PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IERvY3VtZW50
-YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9wb3dlci9hbWxvZ2ljLG1lc29uLXNlYy1wd3JjLnlh
-bWwKPj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBpbmNsdWRlL2R0LWJpbmRpbmdzL3Bvd2VyL21lc29u
-LWExLXBvd2VyLmgKPj4KPj4gZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9i
-aW5kaW5ncy9wb3dlci9hbWxvZ2ljLG1lc29uLXNlYy1wd3JjLnlhbWwgYi9Eb2N1bWVudGF0aW9u
-L2RldmljZXRyZWUvYmluZGluZ3MvcG93ZXIvYW1sb2dpYyxtZXNvbi1zZWMtcHdyYy55YW1sCj4+
-IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4+IGluZGV4IDAwMDAwMDAwLi4zMjdlMGQ5Cj4+IC0tLSAv
-ZGV2L251bGwKPj4gKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3Bvd2Vy
-L2FtbG9naWMsbWVzb24tc2VjLXB3cmMueWFtbAo+PiBAQCAtMCwwICsxLDMyIEBACj4+ICsjIFNQ
-RFgtTGljZW5zZS1JZGVudGlmaWVyOiAoR1BMLTIuMCsgT1IgTUlUKQo+PiArIyBDb3B5cmlnaHQg
-KGMpIDIwMTkgQW1sb2dpYywgSW5jCj4+ICsjIEF1dGhvcjogSmlhbnhpbiBQYW4gPGppYW54aW4u
-cGFuQGFtbG9naWMuY29tPgo+PiArJVlBTUwgMS4yCj4+ICstLS0KPj4gKyRpZDogImh0dHA6Ly9k
-ZXZpY2V0cmVlLm9yZy9zY2hlbWFzL3Bvd2VyL2FtbG9naWMsbWVzb24tc2VjLXB3cmMueWFtbCMi
-Cj4+ICskc2NoZW1hOiAiaHR0cDovL2RldmljZXRyZWUub3JnL21ldGEtc2NoZW1hcy9jb3JlLnlh
-bWwjIgo+PiArCj4+ICt0aXRsZTogQW1sb2dpYyBNZXNvbiBTZWN1cmUgUG93ZXIgRG9tYWlucwo+
-PiArCj4+ICttYWludGFpbmVyczoKPj4gKyAgLSBKaWFueGluIFBhbiA8amlhbnhpbi5wYW5AYW1s
-b2dpYy5jb20+Cj4+ICsKPj4gK2Rlc2NyaXB0aW9uOiB8Kwo+PiArICBBMS9DMSBzZXJpZXMgVGhl
-IFNlY3VyZSBQb3dlciBEb21haW5zIG5vZGUgc2hvdWxkIGJlIHRoZSBjaGlsZCBvZiBhIHN5c2Nv
-bgo+PiArICBub2RlIHdpdGggdGhlIHJlcXVpcmVkIHByb3BlcnR5Lgo+IAo+ICdhIHN5c2NvbiBu
-b2RlJyBpcyBub3Qgc3BlY2lmaWMgZW5vdWdoLiBJdCBtdXN0IGJlIGEgc3BlY2lmaWMgbm9kZS4K
-PiAKSSB3aWxsIGZpeCB0aGlzLgpJbiBBMS9DMSwgcG93ZXIgY29udHJvbCBpcyBpbiBzZWN1cmUg
-ZG9tYWluLCBhbmQgc3lzY29uIHBhcmVudCBpcyBub3QgbmVlZGVkLgo+PiArCj4+ICtwcm9wZXJ0
-aWVzOgo+PiArICBjb21wYXRpYmxlOgo+PiArICAgIGVudW06Cj4+ICsgICAgICAtIGFtbG9naWMs
-bWVzb24tYTEtcHdyYwo+PiArCj4+ICtyZXF1aXJlZDoKPj4gKyAgLSBjb21wYXRpYmxlCj4+ICsK
-Pj4gK2V4YW1wbGVzOgo+PiArICAtIHwKPj4gKyAgICBwd3JjOiBwb3dlci1jb250cm9sbGVyIHsK
-Pj4gKyAgICAgICAgICBjb21wYXRpYmxlID0gImFtbG9naWMsbWVzb24tYTEtcHdyYyI7Cj4gCj4g
-QnV0IHdoeSBkbyB5b3UgbmVlZCB0aGlzIG5vZGU/IEl0IGhhcyBubyByZXNvdXJjZXMuCj4gCj4g
-I3Bvd2VyLWRvbWFpbi1jZWxscyBuZWVkZWQ/Ckkgd2lsbCBhZGQgI3Bvd2VyLWRvbWFpbi1jZWxs
-cyBhbmQgc2VjdXJlLW1vbml0b3IgaGVyZS4KVGhhbmsgeW91IGZvciB0aGUgcmV2aWV3Lgo+IAo+
-PiArICAgIH07Cj4+ICsKPj4gKwo+PiBkaWZmIC0tZ2l0IGEvaW5jbHVkZS9kdC1iaW5kaW5ncy9w
-b3dlci9tZXNvbi1hMS1wb3dlci5oIGIvaW5jbHVkZS9kdC1iaW5kaW5ncy9wb3dlci9tZXNvbi1h
-MS1wb3dlci5oCj4+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4+IGluZGV4IDAwMDAwMDAwLi42Y2Y1
-MGJmCj4+IC0tLSAvZGV2L251bGwKPj4gKysrIGIvaW5jbHVkZS9kdC1iaW5kaW5ncy9wb3dlci9t
-ZXNvbi1hMS1wb3dlci5oCj4+IEBAIC0wLDAgKzEsMzIgQEAKPj4gKy8qIFNQRFgtTGljZW5zZS1J
-ZGVudGlmaWVyOiAoR1BMLTIuMCsgb3IgTUlUKSAqLwo+PiArLyoKPj4gKyAqIENvcHlyaWdodCAo
-YykgMjAxOSBBbWxvZ2ljLCBJbmMuCj4+ICsgKiBBdXRob3I6IEppYW54aW4gUGFuIDxqaWFueGlu
-LnBhbkBhbWxvZ2ljLmNvbT4KPj4gKyAqLwo+PiArCj4+ICsjaWZuZGVmIF9EVF9CSU5ESU5HU19N
-RVNPTl9BMV9QT1dFUl9ICj4+ICsjZGVmaW5lIF9EVF9CSU5ESU5HU19NRVNPTl9BMV9QT1dFUl9I
-Cj4+ICsKPj4gKyNkZWZpbmUgUFdSQ19EU1BBX0lECTgKPj4gKyNkZWZpbmUgUFdSQ19EU1BCX0lE
-CTkKPj4gKyNkZWZpbmUgUFdSQ19VQVJUX0lECTEwCj4+ICsjZGVmaW5lIFBXUkNfRE1DX0lECTEx
-Cj4+ICsjZGVmaW5lIFBXUkNfSTJDX0lECTEyCj4+ICsjZGVmaW5lIFBXUkNfUFNSQU1fSUQJMTMK
-Pj4gKyNkZWZpbmUgUFdSQ19BQ09ERUNfSUQJMTQKPj4gKyNkZWZpbmUgUFdSQ19BVURJT19JRAkx
-NQo+PiArI2RlZmluZSBQV1JDX09UUF9JRAkxNgo+PiArI2RlZmluZSBQV1JDX0RNQV9JRAkxNwo+
-PiArI2RlZmluZSBQV1JDX1NEX0VNTUNfSUQJMTgKPj4gKyNkZWZpbmUgUFdSQ19SQU1BX0lECTE5
-Cj4+ICsjZGVmaW5lIFBXUkNfUkFNQl9JRAkyMAo+PiArI2RlZmluZSBQV1JDX0lSX0lECTIxCj4+
-ICsjZGVmaW5lIFBXUkNfU1BJQ0NfSUQJMjIKPj4gKyNkZWZpbmUgUFdSQ19TUElGQ19JRAkyMwo+
-PiArI2RlZmluZSBQV1JDX1VTQl9JRAkyNAo+PiArI2RlZmluZSBQV1JDX05JQ19JRAkyNQo+PiAr
-I2RlZmluZSBQV1JDX1BETUlOX0lECTI2Cj4+ICsjZGVmaW5lIFBXUkNfUlNBX0lECTI3Cj4+ICsj
-ZGVmaW5lIFBXUkNfTUFYX0lECTI4Cj4+ICsKPj4gKyNlbmRpZgo+PiAtLSAKPj4gMi43LjQKPj4K
-PiAKPiAuCj4gCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo=
+On Tue, 8 Oct 2019 at 21:54, Brendan Higgins <brendanhiggins@google.com> wrote:
+>
+> On Tue, Oct 8, 2019 at 2:13 PM Jae Hyun Yoo
+> <jae.hyun.yoo@linux.intel.com> wrote:
+> >
+> > On 10/8/2019 1:31 PM, Brendan Higgins wrote:
+> > > On Mon, Oct 07, 2019 at 04:13:11PM -0700, Jae Hyun Yoo wrote:
+> > >> In case of master pending state, it should not trigger the master
+> > >> command because this H/W is sharing the same data buffer for slave
+> > >> and master operations, so this commit fixes the issue with making
+> > >> the master command triggering happen when the state goes to active
+> > >> state.
+> > >
+> > > nit: Makes sense, but can you explain what might happen without your
+> > > change?
+> >
+> > If we don't use this fix, a master command could corrupt data in the
+> > shared buffer if H/W is still on processing slave operation at the
+> > timing.
+>
+> Right, can you add that to the commit message?
+>
+> Is this trivially reproducible? We might want to submit this
+> separately as a bugfix.
+>
+> Actually yeah, can you send this separately as a bugfix? I think we
+> might want to include this in 5.4.
+>
+> Wolfram and Joel, what do you think?
+
+Yes, good suggestion. A corruption fix should be merged I think.
+
+Always send bug fixes upstream with Fixes tags so they land in the
+stable tree. This is preferable to sending them separately to the
+openbmc for inclusion in that tree, and potentially reaches a wider
+audience.
+
+Cheers,
+
+Joel
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
