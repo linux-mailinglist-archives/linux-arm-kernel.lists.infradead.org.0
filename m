@@ -2,88 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 533E6D2648
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 11:27:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E711AD2666
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 11:32:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g6P62ccxUlfjTRwIeaNEUh+yCtOjeltrPYK99/b7cqo=; b=KJLkTLe9DUbvaR
-	dUeLqY37L8MqTrsiEuDQudyr4Lc1flMoPfPOZfSUapsWUa3oIS0jMuaiNeTHtXIlMDup/jDdNPIZV
-	JP+uTvgOFxCI7xw+VI6TMGcGTclO7z0u8deDmEmi9pqUI1ejDceQOalQYC6H+HesCWqafuWMl0c4h
-	qkqAQCuRJM6IDTe1n7w3lj97SsgVcas9WYpLvxoSy+4+b2HHCQjVJY/sRL0hC4UWDbt2CX2ZqpTNs
-	J70aHh0S1ryJsRJMy/cFej34NOGXrsExbx2JHum6qjvC8Oda1IwSirce7errkLa6O8kzirYeAODp2
-	tWNTFbZP3vTdDO+ohsmA==;
+	List-Owner; bh=/sSyRQKedu/y56AgZ5+Ej4VbB80jFz1EBztkPuJU7hE=; b=DGQWCsr9ucyK4W
+	XFzEyGoFx9EfN0hCfeB3lqOSjrHFmobEYKo2XQxXbialPh0YpqAb9ftg7FBdgs/ko2LVl8ISmGYUN
+	cUAuxL3yz8bj5ErjD594bXPd1pAdMwaoYz3SBxwrgTteG5nCIy2SrqxAGq4jVY0zEv0YtQ/duizSP
+	b2ypzLJPpwBvvweTDmbCBNu+Z1G9hFSL9Ixq7ZqNFWyMNooVeTGxJgIc2ZU4YXGoIAIyUmYhf7jGs
+	5TqjbHr6k82ElLAcRGf6iY6LUwDrghPlCCxM18mO0aXlmUBIU8ObRfg/IfITdl/d0MT5FNVR9ijOu
+	x2e+Harv3ET2KCOp2kHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIUjF-0007f9-JI; Thu, 10 Oct 2019 09:27:25 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iIUoF-0001YD-Qq; Thu, 10 Oct 2019 09:32:35 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIUhU-000615-TM
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 09:25:43 +0000
-Received: by mail-wm1-x342.google.com with SMTP id v17so5964551wml.4
+ id 1iIUo8-0001XX-Ju
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 09:32:30 +0000
+Received: by mail-lf1-x141.google.com with SMTP id w67so3848000lff.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 10 Oct 2019 02:25:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=EiSsjXYdZZOyYEr4Sge65wETKP2xlBLGlhOiCPBSXkE=;
- b=ait9xnBMAOrsRdMi5CeL3NzDmgSZD2mVAD1mIfGugZMYn1LWUCbSMLxvX7m+O9sj8j
- MizCi7lUiBstoNe4tB/ksuELUrMzaVoT1PMfZsznDKFUZdOg9U9IKLZ3nvIvhGLzp0Fl
- xsJJnbQqkv7raoZb9wjJqlOO0iJV/SvhEkzSzm2WpS0iy8uCjlRETj0ZWhr4isYKbc53
- f472PSfqZ6syHo52gpBCORvtO+lQELs0Dj2XdsVF+QlC+dQsqunyDw+MddP4LbctGHSf
- frufH6kgbjBEspcvyq9q0SsZTNTR1U2Qxqfd2L7G76Tq3MRehl+04/GkAg73dEFSNKa3
- daYw==
+ Thu, 10 Oct 2019 02:32:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=C/wkh/GnDCqsZNIodlB9tNbqA2+NzVOROU2ZLiYiw8c=;
+ b=OSvqdGd/HH6LNxUtzlPkUEUmkHKnfJuBpTU/F2JyAocadOJvBk5t0cXMz76yLL4go6
+ q8m/7SsAuhyIDIVwgqaReMcIBjgl4nokwNaxHKB3Inyr+4Tdx+9B59EIbEJHwa01MSbo
+ fbIs1WZOlrgRXsMwy4NdS17VYdPXkHiPE3qgk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=EiSsjXYdZZOyYEr4Sge65wETKP2xlBLGlhOiCPBSXkE=;
- b=KEiP5V3eir4GdhKTUutEPtrk11xboXE7szQWmKyaQiUltR53gSwfwFkryrxvV8oNIL
- J6QeVkpmrzGmXeBZmZGhc6Cjgud9XyGfVjd5jgNoC1EckQB4ESi8BSo0zaoRhJzMXpU8
- 9dTn1bvy2R441LVUDz88653yxuf7Vo5Ws9FR/T/GqjyH5LseV8e8bOcUsu9TtVPZQpoJ
- gN2WT7x7Fnz4E0lMcdhl53yyUtM+Hez5vFz0ub3BkS4LXYkMNo9gjAaHhnpYVMAX8CRB
- sywxgLiZbVXeZ5n6x6uX/7WtEVYaAE4cAyIY4v96P0xK7cHQ3Na1W+pocRuQj4E9w1xR
- Yuww==
-X-Gm-Message-State: APjAAAXrVFAEPQrzEvGfNOmhSo/nFeK0cm1w+p8m2F0OCTUxcttXAgr5
- c8KRBI5avXUqDznJX+fEyn53lEs/ju3Bmw==
-X-Google-Smtp-Source: APXvYqyBVoajlP5vjix/c17dx4moWvI5EYXInH/3U4U3nugr56QHYjHvFE4nqRv5CRTh3wdaMlLlxQ==
-X-Received: by 2002:a05:600c:22d7:: with SMTP id
- 23mr6633492wmg.31.1570699535221; 
- Thu, 10 Oct 2019 02:25:35 -0700 (PDT)
-Received: from bender.baylibre.local
- (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id s10sm8373770wmf.48.2019.10.10.02.25.33
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 10 Oct 2019 02:25:34 -0700 (PDT)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: dri-devel@lists.freedesktop.org
-Subject: [PATCH 7/7] drm/meson: crtc: add OSD1 plane AFBC commit
-Date: Thu, 10 Oct 2019 11:25:26 +0200
-Message-Id: <20191010092526.10419-8-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20191010092526.10419-1-narmstrong@baylibre.com>
-References: <20191010092526.10419-1-narmstrong@baylibre.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=C/wkh/GnDCqsZNIodlB9tNbqA2+NzVOROU2ZLiYiw8c=;
+ b=KR9I1nyotli+y7hRlYoiCmWNnBRcuPAPMrnQbsl2GwunCoqr5hIZqNb6iTruRuw3go
+ Tg/AWaDnxmCAcql+pyqgOlShcq5Oz3M2uaK3Y64wDNKDG6clDmEXyYP9HrPjQ8MV+eye
+ Wtw0quAss6Gx1TPqI+fo59k2pljXdyCb+cdIt01ndI2ql7fBViMXna5xE2i0KBDnRTQq
+ 1nY2k78+4zQ287X4Ma4haQDBxAbWx8vv1LZKB/6ejcYWDtK4WrtBjy7YbSrvm6jNpVu3
+ BUdK/fIqnGHD0/8KeoZYk8OUBTw0+c3YA1kAA34VCOvn+V87wT67hf+qeD4SSpigGS/w
+ cfUA==
+X-Gm-Message-State: APjAAAV4p2jEiYYbH4NZ7eus8HFIGaX6mEbpeXJQW1moXHr0wgMs9fMa
+ R5TNtl4SWaSV9Dt++PngKfEalHptcHH8a/gyf3zB8w==
+X-Google-Smtp-Source: APXvYqx9u+tBp+tunckOnU4ovHq/Lwxq2h7DFjTIyiy3FX+VTE6GQYYQgqljs/51buL58PMOEZjAGOIA3WDm2xfSISc=
+X-Received: by 2002:a19:23cc:: with SMTP id j195mr5332104lfj.91.1570699944121; 
+ Thu, 10 Oct 2019 02:32:24 -0700 (PDT)
 MIME-Version: 1.0
+References: <1569825869-30640-1-git-send-email-rayagonda.kokatanur@broadcom.com>
+In-Reply-To: <1569825869-30640-1-git-send-email-rayagonda.kokatanur@broadcom.com>
+From: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
+Date: Thu, 10 Oct 2019 15:02:13 +0530
+Message-ID: <CAHO=5PFSTomeNm4vAKyPmRZXNPBKGT4ck3mB8uOY395uwuVdNg@mail.gmail.com>
+Subject: Re: [PATCH v2 1/1] i2c: iproc: Add i2c repeated start capability
+To: Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>, 
+ BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>,
+ Wolfram Sang <wsa@the-dreams.de>, Michael Cheng <ccheng@broadcom.com>, 
+ Shreesha Rajashekar <shreesha.rajashekar@broadcom.com>,
+ Lori Hikichi <lori.hikichi@broadcom.com>, 
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_022537_019036_E1AD89FE 
-X-CRM114-Status: GOOD (  15.02  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191010_023228_660961_8CDBA73D 
+X-CRM114-Status: GOOD (  29.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,185 +94,189 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: khilman@baylibre.com, linux-amlogic@lists.infradead.org,
- ayan.halder@arm.com, linux-arm-kernel@lists.infradead.org,
- Neil Armstrong <narmstrong@baylibre.com>
+Cc: Icarus Chau <icarus.chau@broadcom.com>,
+ Shivaraj Shetty <sshetty1@broadcom.com>, Ray Jui <ray.jui@broadcom.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Finally, setup the VIU registers and start the AFBC decoder at each
-vsync IRQ to support displaying AFBC encoded buffers on Amlogic GXM
-and G12A SoCs.
+Hi Wolfram,
 
-Since the DRM core will stop the vsync IRQ after a few interrupts,
-we need to keep the IRQ enabled while using the AFBC decoder.
+Did you get a chance to review this patch.
 
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
- drivers/gpu/drm/meson/meson_crtc.c | 79 ++++++++++++++++++++++++++++--
- 1 file changed, 74 insertions(+), 5 deletions(-)
+Best regards,
+Rayagonda
 
-diff --git a/drivers/gpu/drm/meson/meson_crtc.c b/drivers/gpu/drm/meson/meson_crtc.c
-index d478fa232951..d28efd0dbf11 100644
---- a/drivers/gpu/drm/meson/meson_crtc.c
-+++ b/drivers/gpu/drm/meson/meson_crtc.c
-@@ -24,6 +24,7 @@
- #include "meson_venc.h"
- #include "meson_viu.h"
- #include "meson_vpp.h"
-+#include "meson_osd_afbcd.h"
- 
- #define MESON_G12A_VIU_OFFSET	0x5ec0
- 
-@@ -35,7 +36,11 @@ struct meson_crtc {
- 	struct meson_drm *priv;
- 	void (*enable_osd1)(struct meson_drm *priv);
- 	void (*enable_vd1)(struct meson_drm *priv);
-+	void (*enable_osd1_afbc)(struct meson_drm *priv);
-+	void (*disable_osd1_afbc)(struct meson_drm *priv);
- 	unsigned int viu_offset;
-+	bool vsync_forced;
-+	bool vsync_disabled;
- };
- #define to_meson_crtc(x) container_of(x, struct meson_crtc, base)
- 
-@@ -46,6 +51,7 @@ static int meson_crtc_enable_vblank(struct drm_crtc *crtc)
- 	struct meson_crtc *meson_crtc = to_meson_crtc(crtc);
- 	struct meson_drm *priv = meson_crtc->priv;
- 
-+	meson_crtc->vsync_disabled = false;
- 	meson_venc_enable_vsync(priv);
- 
- 	return 0;
-@@ -56,7 +62,10 @@ static void meson_crtc_disable_vblank(struct drm_crtc *crtc)
- 	struct meson_crtc *meson_crtc = to_meson_crtc(crtc);
- 	struct meson_drm *priv = meson_crtc->priv;
- 
--	meson_venc_disable_vsync(priv);
-+	if (!meson_crtc->vsync_forced) {
-+		meson_crtc->vsync_disabled = true;
-+		meson_venc_disable_vsync(priv);
-+	}
- }
- 
- static const struct drm_crtc_funcs meson_crtc_funcs = {
-@@ -236,6 +245,26 @@ static void meson_crtc_enable_osd1(struct meson_drm *priv)
- 			    priv->io_base + _REG(VPP_MISC));
- }
- 
-+static void meson_crtc_g12a_enable_osd1_afbc(struct meson_drm *priv)
-+{
-+	writel_relaxed(priv->viu.osd1_blk2_cfg4,
-+		       priv->io_base + _REG(VIU_OSD1_BLK2_CFG_W4));
-+
-+	writel_bits_relaxed(OSD_MEM_LINEAR_ADDR, OSD_MEM_LINEAR_ADDR,
-+			    priv->io_base + _REG(VIU_OSD1_CTRL_STAT));
-+
-+	writel_relaxed(priv->viu.osd1_blk1_cfg4,
-+		       priv->io_base + _REG(VIU_OSD1_BLK1_CFG_W4));
-+
-+	meson_viu_g12a_enable_osd1_afbc(priv);
-+
-+	writel_bits_relaxed(OSD_MEM_LINEAR_ADDR, OSD_MEM_LINEAR_ADDR,
-+			    priv->io_base + _REG(VIU_OSD1_CTRL_STAT));
-+
-+	writel_bits_relaxed(OSD_MALI_SRC_EN, OSD_MALI_SRC_EN,
-+			    priv->io_base + _REG(VIU_OSD1_BLK0_CFG_W0));
-+}
-+
- static void meson_g12a_crtc_enable_osd1(struct meson_drm *priv)
- {
- 	writel_relaxed(priv->viu.osd_blend_din0_scope_h,
-@@ -293,6 +322,19 @@ void meson_crtc_irq(struct meson_drm *priv)
- 				priv->io_base + _REG(VIU_OSD1_BLK0_CFG_W3));
- 		writel_relaxed(priv->viu.osd1_blk0_cfg[4],
- 				priv->io_base + _REG(VIU_OSD1_BLK0_CFG_W4));
-+
-+		if (priv->viu.osd1_afbcd) {
-+			if (meson_crtc->enable_osd1_afbc)
-+				meson_crtc->enable_osd1_afbc(priv);
-+		} else {
-+			if (meson_crtc->disable_osd1_afbc)
-+				meson_crtc->disable_osd1_afbc(priv);
-+			if (priv->afbcd.ops) {
-+				priv->afbcd.ops->reset(priv);
-+				priv->afbcd.ops->disable(priv);
-+			}
-+		}
-+
- 		writel_relaxed(priv->viu.osd_sc_ctrl0,
- 				priv->io_base + _REG(VPP_OSD_SC_CTRL0));
- 		writel_relaxed(priv->viu.osd_sc_i_wh_m1,
-@@ -314,15 +356,23 @@ void meson_crtc_irq(struct meson_drm *priv)
- 		writel_relaxed(priv->viu.osd_sc_v_ctrl0,
- 				priv->io_base + _REG(VPP_OSD_VSC_CTRL0));
- 
--		meson_canvas_config(priv->canvas, priv->canvas_id_osd1,
--				priv->viu.osd1_addr, priv->viu.osd1_stride,
--				priv->viu.osd1_height, MESON_CANVAS_WRAP_NONE,
--				MESON_CANVAS_BLKMODE_LINEAR, 0);
-+		if (!priv->viu.osd1_afbcd)
-+			meson_canvas_config(priv->canvas, priv->canvas_id_osd1,
-+					    priv->viu.osd1_addr,
-+					    priv->viu.osd1_stride,
-+					    priv->viu.osd1_height,
-+					    MESON_CANVAS_WRAP_NONE,
-+					    MESON_CANVAS_BLKMODE_LINEAR, 0);
- 
- 		/* Enable OSD1 */
- 		if (meson_crtc->enable_osd1)
- 			meson_crtc->enable_osd1(priv);
- 
-+		if (priv->viu.osd1_afbcd)
-+			meson_crtc->vsync_forced = true;
-+		else
-+			meson_crtc->vsync_forced = false;
-+
- 		priv->viu.osd1_commit = false;
- 	}
- 
-@@ -545,6 +595,15 @@ void meson_crtc_irq(struct meson_drm *priv)
- 		priv->viu.vd1_commit = false;
- 	}
- 
-+	if (meson_crtc->vsync_forced && priv->viu.osd1_afbcd) {
-+		priv->afbcd.ops->reset(priv);
-+		priv->afbcd.ops->setup(priv);
-+		priv->afbcd.ops->enable(priv);
-+	}
-+
-+	if (meson_crtc->vsync_disabled)
-+		return;
-+
- 	drm_crtc_handle_vblank(priv->crtc);
- 
- 	spin_lock_irqsave(&priv->drm->event_lock, flags);
-@@ -581,10 +640,20 @@ int meson_crtc_create(struct meson_drm *priv)
- 		meson_crtc->enable_osd1 = meson_g12a_crtc_enable_osd1;
- 		meson_crtc->enable_vd1 = meson_g12a_crtc_enable_vd1;
- 		meson_crtc->viu_offset = MESON_G12A_VIU_OFFSET;
-+		meson_crtc->enable_osd1_afbc =
-+					meson_crtc_g12a_enable_osd1_afbc;
-+		meson_crtc->disable_osd1_afbc =
-+					meson_viu_g12a_disable_osd1_afbc;
- 		drm_crtc_helper_add(crtc, &meson_g12a_crtc_helper_funcs);
- 	} else {
- 		meson_crtc->enable_osd1 = meson_crtc_enable_osd1;
- 		meson_crtc->enable_vd1 = meson_crtc_enable_vd1;
-+		if (meson_vpu_is_compatible(priv, VPU_COMPATIBLE_GXM)) {
-+			meson_crtc->enable_osd1_afbc =
-+					meson_viu_gxm_enable_osd1_afbc;
-+			meson_crtc->disable_osd1_afbc =
-+					meson_viu_gxm_disable_osd1_afbc;
-+		}
- 		drm_crtc_helper_add(crtc, &meson_crtc_helper_funcs);
- 	}
- 
--- 
-2.22.0
 
+On Mon, Sep 30, 2019 at 12:19 PM Rayagonda Kokatanur
+<rayagonda.kokatanur@broadcom.com> wrote:
+>
+> From: Lori Hikichi <lori.hikichi@broadcom.com>
+>
+> Enable handling of i2c repeated start. The current code
+> handles a multi msg i2c transfer as separate i2c bus
+> transactions. This change will now handle this case
+> using the i2c repeated start protocol. The number of msgs
+> in a transfer is limited to two, and must be a write
+> followed by a read.
+>
+> Signed-off-by: Lori Hikichi <lori.hikichi@broadcom.com>
+> Signed-off-by: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
+> Signed-off-by: Icarus Chau <icarus.chau@broadcom.com>
+> Signed-off-by: Ray Jui <ray.jui@broadcom.com>
+> Signed-off-by: Shivaraj Shetty <sshetty1@broadcom.com>
+> ---
+> changes from v1:
+>  - Address following review comments from Wolfarm Sang,
+>    Use i2c_8bit_addr_from_msg() api instead of decoding i2c_msg struct and
+>    remove check against number of i2c message as it will be taken care
+>    by core using quirks flags.
+>
+>  drivers/i2c/busses/i2c-bcm-iproc.c | 63 ++++++++++++++++++++++++++++++--------
+>  1 file changed, 50 insertions(+), 13 deletions(-)
+>
+> diff --git a/drivers/i2c/busses/i2c-bcm-iproc.c b/drivers/i2c/busses/i2c-bcm-iproc.c
+> index d7fd76b..e478db7 100644
+> --- a/drivers/i2c/busses/i2c-bcm-iproc.c
+> +++ b/drivers/i2c/busses/i2c-bcm-iproc.c
+> @@ -81,6 +81,7 @@
+>  #define M_CMD_PROTOCOL_MASK          0xf
+>  #define M_CMD_PROTOCOL_BLK_WR        0x7
+>  #define M_CMD_PROTOCOL_BLK_RD        0x8
+> +#define M_CMD_PROTOCOL_PROCESS       0xa
+>  #define M_CMD_PEC_SHIFT              8
+>  #define M_CMD_RD_CNT_SHIFT           0
+>  #define M_CMD_RD_CNT_MASK            0xff
+> @@ -675,13 +676,20 @@ static int bcm_iproc_i2c_xfer_wait(struct bcm_iproc_i2c_dev *iproc_i2c,
+>         return 0;
+>  }
+>
+> -static int bcm_iproc_i2c_xfer_single_msg(struct bcm_iproc_i2c_dev *iproc_i2c,
+> -                                        struct i2c_msg *msg)
+> +/*
+> + * If 'process_call' is true, then this is a multi-msg transfer that requires
+> + * a repeated start between the messages.
+> + * More specifically, it must be a write (reg) followed by a read (data).
+> + * The i2c quirks are set to enforce this rule.
+> + */
+> +static int bcm_iproc_i2c_xfer_internal(struct bcm_iproc_i2c_dev *iproc_i2c,
+> +                                       struct i2c_msg *msgs, bool process_call)
+>  {
+>         int i;
+>         u8 addr;
+>         u32 val, tmp, val_intr_en;
+>         unsigned int tx_bytes;
+> +       struct i2c_msg *msg = &msgs[0];
+>
+>         /* check if bus is busy */
+>         if (!!(iproc_i2c_rd_reg(iproc_i2c,
+> @@ -707,14 +715,29 @@ static int bcm_iproc_i2c_xfer_single_msg(struct bcm_iproc_i2c_dev *iproc_i2c,
+>                         val = msg->buf[i];
+>
+>                         /* mark the last byte */
+> -                       if (i == msg->len - 1)
+> -                               val |= BIT(M_TX_WR_STATUS_SHIFT);
+> +                       if (!process_call && (i == msg->len - 1))
+> +                               val |= 1 << M_TX_WR_STATUS_SHIFT;
+>
+>                         iproc_i2c_wr_reg(iproc_i2c, M_TX_OFFSET, val);
+>                 }
+>                 iproc_i2c->tx_bytes = tx_bytes;
+>         }
+>
+> +       /* Process the read message if this is process call */
+> +       if (process_call) {
+> +               msg++;
+> +               iproc_i2c->msg = msg;  /* point to second msg */
+> +
+> +               /*
+> +                * The last byte to be sent out should be a slave
+> +                * address with read operation
+> +                */
+> +               addr = i2c_8bit_addr_from_msg(msg);
+> +               /* mark it the last byte out */
+> +               val = addr | (1 << M_TX_WR_STATUS_SHIFT);
+> +               iproc_i2c_wr_reg(iproc_i2c, M_TX_OFFSET, val);
+> +       }
+> +
+>         /* mark as incomplete before starting the transaction */
+>         if (iproc_i2c->irq)
+>                 reinit_completion(&iproc_i2c->done);
+> @@ -733,7 +756,7 @@ static int bcm_iproc_i2c_xfer_single_msg(struct bcm_iproc_i2c_dev *iproc_i2c,
+>          * underrun interrupt, which will be triggerred when the TX FIFO is
+>          * empty. When that happens we can then pump more data into the FIFO
+>          */
+> -       if (!(msg->flags & I2C_M_RD) &&
+> +       if (!process_call && !(msg->flags & I2C_M_RD) &&
+>             msg->len > iproc_i2c->tx_bytes)
+>                 val_intr_en |= BIT(IE_M_TX_UNDERRUN_SHIFT);
+>
+> @@ -743,6 +766,8 @@ static int bcm_iproc_i2c_xfer_single_msg(struct bcm_iproc_i2c_dev *iproc_i2c,
+>          */
+>         val = BIT(M_CMD_START_BUSY_SHIFT);
+>         if (msg->flags & I2C_M_RD) {
+> +               u32 protocol;
+> +
+>                 iproc_i2c->rx_bytes = 0;
+>                 if (msg->len > M_RX_FIFO_MAX_THLD_VALUE)
+>                         iproc_i2c->thld_bytes = M_RX_FIFO_THLD_VALUE;
+> @@ -758,7 +783,10 @@ static int bcm_iproc_i2c_xfer_single_msg(struct bcm_iproc_i2c_dev *iproc_i2c,
+>                 /* enable the RX threshold interrupt */
+>                 val_intr_en |= BIT(IE_M_RX_THLD_SHIFT);
+>
+> -               val |= (M_CMD_PROTOCOL_BLK_RD << M_CMD_PROTOCOL_SHIFT) |
+> +               protocol = process_call ?
+> +                               M_CMD_PROTOCOL_PROCESS : M_CMD_PROTOCOL_BLK_RD;
+> +
+> +               val |= (protocol << M_CMD_PROTOCOL_SHIFT) |
+>                        (msg->len << M_CMD_RD_CNT_SHIFT);
+>         } else {
+>                 val |= (M_CMD_PROTOCOL_BLK_WR << M_CMD_PROTOCOL_SHIFT);
+> @@ -774,17 +802,24 @@ static int bcm_iproc_i2c_xfer(struct i2c_adapter *adapter,
+>                               struct i2c_msg msgs[], int num)
+>  {
+>         struct bcm_iproc_i2c_dev *iproc_i2c = i2c_get_adapdata(adapter);
+> -       int ret, i;
+> +       bool process_call = false;
+> +       int ret;
+>
+> -       /* go through all messages */
+> -       for (i = 0; i < num; i++) {
+> -               ret = bcm_iproc_i2c_xfer_single_msg(iproc_i2c, &msgs[i]);
+> -               if (ret) {
+> -                       dev_dbg(iproc_i2c->device, "xfer failed\n");
+> -                       return ret;
+> +       if (num == 2) {
+> +               /* Repeated start, use process call */
+> +               process_call = true;
+> +               if (msgs[1].flags & I2C_M_NOSTART) {
+> +                       dev_err(iproc_i2c->device, "Invalid repeated start\n");
+> +                       return -EOPNOTSUPP;
+>                 }
+>         }
+>
+> +       ret = bcm_iproc_i2c_xfer_internal(iproc_i2c, msgs, process_call);
+> +       if (ret) {
+> +               dev_dbg(iproc_i2c->device, "xfer failed\n");
+> +               return ret;
+> +       }
+> +
+>         return num;
+>  }
+>
+> @@ -806,6 +841,8 @@ static uint32_t bcm_iproc_i2c_functionality(struct i2c_adapter *adap)
+>  };
+>
+>  static struct i2c_adapter_quirks bcm_iproc_i2c_quirks = {
+> +       .flags = I2C_AQ_COMB_WRITE_THEN_READ,
+> +       .max_comb_1st_msg_len = M_TX_RX_FIFO_SIZE,
+>         .max_read_len = M_RX_MAX_READ_LEN,
+>  };
+>
+> --
+> 1.9.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
