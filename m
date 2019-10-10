@@ -2,71 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B602BD2EDA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 18:49:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9508CD2EEC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 18:52:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=OtY4gJBXOAmr7Pw4Y2XaDjbmXb4Me4uAjZP3fhKPwrQ=; b=D3Rcr52tP6nQ7RTWfv7uz0b79
-	00sEmfUpn4EdYIzLI9QAjcmoIcwjIthqFjqHimoDfqtiMNsIYzzuiVKhhRfobNd5lcLAbNCvaBS/k
-	jpKZXkfhIWI3+5YTxY7b5MLPivsXYsn9F4sbPBRiTIrK2n1agJIAJq7tyLoYEopkFEx/SfEg4iyEn
-	ebB6dwMZIJ4d9isHse9PBRyBkYrjq2RcL28KIhb6F7JshGTDE/pnjRXkRlqo9Wyfk1i1Vy+CWGje1
-	TC1wtZk7602YRlWyqKTzfM3ggsdheF5lm2rmTeANrxfbz+iIPZtA7j2U2ksNZgmAY9bmixpSlEUrg
-	XiF6KwsBw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=BZ9G9o1MdEUAvpudZP67cI3S13kvfmilGyr32ThRmjc=; b=bR3gqkp1Ifv9kK
+	Wdw71QzmTFteH2o9NXvy8RM29sYXZMmQSyt8/2FFltNoH4gZ9WFbeozqvGROoripG4LKtakGAJVtd
+	1oN2lH8xNF4fwQIpkLpiOLdWvphuFrvP8kZv5J4oOluKbisqKBDShlYgUY2MqJ/6urr17EVnOTBMX
+	2+1+d7SdF12HTsGavM4k8dTU89TtGSUvHBnerQDkKREVXZQMTb65kbrcpqi9fc2szJLmlaLfTHsqv
+	+suhKNlP6W6sR6/SyMmRzm3s8EK9eHKDQuqWkKAvlvoN83Mdpsj4DdHk9mK5emv57YKumICDvvSH9
+	VTQYA3rMm59LlkZcuRpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIbcc-0002eE-GO; Thu, 10 Oct 2019 16:49:02 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iIbgP-0004eK-3Q; Thu, 10 Oct 2019 16:52:57 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIbcS-0002dp-L1
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 16:48:54 +0000
-Received: from earth.universe (tmo-080-106.customers.d1-online.com
- [80.187.80.106])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 92BF6218AC;
- Thu, 10 Oct 2019 16:48:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570726131;
- bh=CIYAHbrsHehDhmC0lEz5QCXbhpUiDbqLb2gCs6WSC9s=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=WPr9a1pE8sZmfRWug8YooAsGNOcCWMRytUoxhQwNsZE29Jef4wv1zF90wnJ7kuIQx
- iWMsPt3LLGLLjt/K4MV65uLw4ajdEuIHa5S6wKZbThMUII5ERwnhrMLnbBzgw2bT2b
- pDfQXm/V146Zqxin4fVe3wjvoVzW+bqg8q8LXHwc=
-Received: by earth.universe (Postfix, from userid 1000)
- id 57D1D3C0CA2; Thu, 10 Oct 2019 18:48:47 +0200 (CEST)
-Date: Thu, 10 Oct 2019 18:48:47 +0200
-From: Sebastian Reichel <sre@kernel.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH 1/4] dt-bindings: samsung: Indent examples with four spaces
-Message-ID: <20191010164847.ntbhecap6pbesvk7@earth.universe>
-References: <20191002160744.11307-1-krzk@kernel.org>
+ id 1iIbg1-0004Rk-AU
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 16:52:35 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0C2831A04B2;
+ Thu, 10 Oct 2019 18:52:29 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id F2FF41A0492;
+ Thu, 10 Oct 2019 18:52:28 +0200 (CEST)
+Received: from fsr-ub1664-026.ea.freescale.net
+ (fsr-ub1664-026.ea.freescale.net [10.171.81.59])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 56A922060B;
+ Thu, 10 Oct 2019 18:52:28 +0200 (CEST)
+From: Stefan-Gabriel Mirea <stefan-gabriel.mirea@nxp.com>
+To: corbet@lwn.net, robh+dt@kernel.org, mark.rutland@arm.com,
+ gregkh@linuxfoundation.org, catalin.marinas@arm.com, will@kernel.org,
+ shawnguo@kernel.org, leoyang.li@nxp.com
+Subject: [PATCH v6 0/5] Add initial support for S32V234-EVB
+Date: Thu, 10 Oct 2019 19:52:23 +0300
+Message-Id: <1570726348-6420-1-git-send-email-stefan-gabriel.mirea@nxp.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-In-Reply-To: <20191002160744.11307-1-krzk@kernel.org>
-User-Agent: NeoMutt/20180716
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_094852_737067_0C332851 
-X-CRM114-Status: GOOD (  19.50  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191010_095233_643132_55A3CAC5 
+X-CRM114-Status: GOOD (  14.31  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,240 +67,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Lars-Peter Clausen <lars@metafoo.de>, devicetree@vger.kernel.org,
- linux-iio@vger.kernel.org, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
- linux-rtc@vger.kernel.org, Jonathan Cameron <jic23@kernel.org>,
+Cc: devicetree@vger.kernel.org, linux-doc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-serial@vger.kernel.org, jslaby@suse.com,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4953035610773789420=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============4953035610773789420==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="us5fnkoji2afabie"
-Content-Disposition: inline
-
-
---us5fnkoji2afabie
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-On Wed, Oct 02, 2019 at 06:07:41PM +0200, Krzysztof Kozlowski wrote:
-> Change the indentation of examples used in json-schema bindings from two
-> to four spaces as this makes the code easier to read and seems to be
-> preferred in other files.
->=20
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-
-Acked-by: Sebastian Reichel <sre@kernel.org> # for power/reset
-
--- Sebastian
-
-> ---
->  .../bindings/arm/samsung/exynos-chipid.yaml   |  4 +-
->  .../bindings/iio/adc/samsung,exynos-adc.yaml  | 64 +++++++++----------
->  .../bindings/power/reset/syscon-poweroff.yaml |  8 +--
->  .../bindings/power/reset/syscon-reboot.yaml   |  8 +--
->  .../devicetree/bindings/rtc/s3c-rtc.yaml      | 12 ++--
->  5 files changed, 48 insertions(+), 48 deletions(-)
->=20
-> diff --git a/Documentation/devicetree/bindings/arm/samsung/exynos-chipid.=
-yaml b/Documentation/devicetree/bindings/arm/samsung/exynos-chipid.yaml
-> index 9c573ad7dc7d..ce40adabb4e8 100644
-> --- a/Documentation/devicetree/bindings/arm/samsung/exynos-chipid.yaml
-> +++ b/Documentation/devicetree/bindings/arm/samsung/exynos-chipid.yaml
-> @@ -20,6 +20,6 @@ properties:
->  examples:
->    - |
->      chipid@10000000 {
-> -      compatible =3D "samsung,exynos4210-chipid";
-> -      reg =3D <0x10000000 0x100>;
-> +        compatible =3D "samsung,exynos4210-chipid";
-> +        reg =3D <0x10000000 0x100>;
->      };
-> diff --git a/Documentation/devicetree/bindings/iio/adc/samsung,exynos-adc=
-=2Eyaml b/Documentation/devicetree/bindings/iio/adc/samsung,exynos-adc.yaml
-> index b4c6c26681d9..a0a9b909ac40 100644
-> --- a/Documentation/devicetree/bindings/iio/adc/samsung,exynos-adc.yaml
-> +++ b/Documentation/devicetree/bindings/iio/adc/samsung,exynos-adc.yaml
-> @@ -112,40 +112,40 @@ allOf:
->  examples:
->    - |
->      adc: adc@12d10000 {
-> -      compatible =3D "samsung,exynos-adc-v1";
-> -      reg =3D <0x12d10000 0x100>;
-> -      interrupts =3D <0 106 0>;
-> -      #io-channel-cells =3D <1>;
-> -      io-channel-ranges;
-> -
-> -      clocks =3D <&clock 303>;
-> -      clock-names =3D "adc";
-> -
-> -      vdd-supply =3D <&buck5_reg>;
-> -      samsung,syscon-phandle =3D <&pmu_system_controller>;
-> -
-> -      /* NTC thermistor is a hwmon device */
-> -      ncp15wb473@0 {
-> -        compatible =3D "murata,ncp15wb473";
-> -        pullup-uv =3D <1800000>;
-> -        pullup-ohm =3D <47000>;
-> -        pulldown-ohm =3D <0>;
-> -        io-channels =3D <&adc 4>;
-> -      };
-> +        compatible =3D "samsung,exynos-adc-v1";
-> +        reg =3D <0x12d10000 0x100>;
-> +        interrupts =3D <0 106 0>;
-> +        #io-channel-cells =3D <1>;
-> +        io-channel-ranges;
-> +
-> +        clocks =3D <&clock 303>;
-> +        clock-names =3D "adc";
-> +
-> +        vdd-supply =3D <&buck5_reg>;
-> +        samsung,syscon-phandle =3D <&pmu_system_controller>;
-> +
-> +        /* NTC thermistor is a hwmon device */
-> +        ncp15wb473@0 {
-> +            compatible =3D "murata,ncp15wb473";
-> +            pullup-uv =3D <1800000>;
-> +            pullup-ohm =3D <47000>;
-> +            pulldown-ohm =3D <0>;
-> +            io-channels =3D <&adc 4>;
-> +          };
->      };
-> =20
->    - |
->      adc@126c0000 {
-> -      compatible =3D "samsung,exynos3250-adc";
-> -      reg =3D <0x126C0000 0x100>;
-> -      interrupts =3D <0 137 0>;
-> -      #io-channel-cells =3D <1>;
-> -      io-channel-ranges;
-> -
-> -      clocks =3D <&cmu 0>, // CLK_TSADC
-> -               <&cmu 1>; // CLK_SCLK_TSADC
-> -      clock-names =3D "adc", "sclk";
-> -
-> -      vdd-supply =3D <&buck5_reg>;
-> -      samsung,syscon-phandle =3D <&pmu_system_controller>;
-> +        compatible =3D "samsung,exynos3250-adc";
-> +        reg =3D <0x126C0000 0x100>;
-> +        interrupts =3D <0 137 0>;
-> +        #io-channel-cells =3D <1>;
-> +        io-channel-ranges;
-> +
-> +        clocks =3D <&cmu 0>, // CLK_TSADC
-> +                 <&cmu 1>; // CLK_SCLK_TSADC
-> +        clock-names =3D "adc", "sclk";
-> +
-> +        vdd-supply =3D <&buck5_reg>;
-> +        samsung,syscon-phandle =3D <&pmu_system_controller>;
->      };
-> diff --git a/Documentation/devicetree/bindings/power/reset/syscon-powerof=
-f.yaml b/Documentation/devicetree/bindings/power/reset/syscon-poweroff.yaml
-> index fb812937b534..520e07e6f21b 100644
-> --- a/Documentation/devicetree/bindings/power/reset/syscon-poweroff.yaml
-> +++ b/Documentation/devicetree/bindings/power/reset/syscon-poweroff.yaml
-> @@ -53,8 +53,8 @@ allOf:
->  examples:
->    - |
->      poweroff {
-> -      compatible =3D "syscon-poweroff";
-> -      regmap =3D <&regmapnode>;
-> -      offset =3D <0x0>;
-> -      mask =3D <0x7a>;
-> +        compatible =3D "syscon-poweroff";
-> +        regmap =3D <&regmapnode>;
-> +        offset =3D <0x0>;
-> +        mask =3D <0x7a>;
->      };
-> diff --git a/Documentation/devicetree/bindings/power/reset/syscon-reboot.=
-yaml b/Documentation/devicetree/bindings/power/reset/syscon-reboot.yaml
-> index a7920f5eef79..d38006b1f1f4 100644
-> --- a/Documentation/devicetree/bindings/power/reset/syscon-reboot.yaml
-> +++ b/Documentation/devicetree/bindings/power/reset/syscon-reboot.yaml
-> @@ -53,8 +53,8 @@ allOf:
->  examples:
->    - |
->      reboot {
-> -      compatible =3D "syscon-reboot";
-> -      regmap =3D <&regmapnode>;
-> -      offset =3D <0x0>;
-> -      mask =3D <0x1>;
-> +        compatible =3D "syscon-reboot";
-> +        regmap =3D <&regmapnode>;
-> +        offset =3D <0x0>;
-> +        mask =3D <0x1>;
->      };
-> diff --git a/Documentation/devicetree/bindings/rtc/s3c-rtc.yaml b/Documen=
-tation/devicetree/bindings/rtc/s3c-rtc.yaml
-> index 951a6a485709..95570d7e19eb 100644
-> --- a/Documentation/devicetree/bindings/rtc/s3c-rtc.yaml
-> +++ b/Documentation/devicetree/bindings/rtc/s3c-rtc.yaml
-> @@ -76,10 +76,10 @@ allOf:
->  examples:
->    - |
->      rtc@10070000 {
-> -      compatible =3D "samsung,s3c6410-rtc";
-> -      reg =3D <0x10070000 0x100>;
-> -      interrupts =3D <0 44 4>, <0 45 4>;
-> -      clocks =3D <&clock 0>, // CLK_RTC
-> -               <&s2mps11_osc 0>; // S2MPS11_CLK_AP
-> -      clock-names =3D "rtc", "rtc_src";
-> +        compatible =3D "samsung,s3c6410-rtc";
-> +        reg =3D <0x10070000 0x100>;
-> +        interrupts =3D <0 44 4>, <0 45 4>;
-> +        clocks =3D <&clock 0>, // CLK_RTC
-> +                 <&s2mps11_osc 0>; // S2MPS11_CLK_AP
-> +        clock-names =3D "rtc", "rtc_src";
->      };
-> --=20
-> 2.17.1
->=20
-
---us5fnkoji2afabie
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAl2fYOwACgkQ2O7X88g7
-+ppSrg//bVatCCeRxdy3A8zBUf1L3vjwbU/1yfhQsQDeUnYJ+HvG3pebohHnDXXj
-VGg/bTCDnD8PT9wRFI78GC2GDhYhi3XQpntuKVvtCuwGWoI4FqFZDyJ8X1A6kRSi
-PtQHqaYLaBaq4glfLaXmmJfbYq+lnMAZzJzJfPYSBfe3dAvj7YwMM7C+i6VLD68c
-hyDKiCqqHb2JqH9C6j3i8eiLfmmodhYapdfCace5V1xCO3Usd52gxta+XxDf+YBm
-dc3DVL8qg+8GRlGinNWXhpv5GrKV4CTJuJYpHydE2P85PY5/Q3gnLGn/I1lHaxH5
-/pd9HAoRnIF26bX5hwrH4kI0wt3QAr83sttQo5GRljN09BkGyCgmJOdoq/d/ar8H
-2UKKGFPeERuBkii6jQoCx12oKHjnOw9PMEPa9o7Yvs1Y7qjDVujLPojonG7k9+JU
-cU1LfJP482TWwtWBOjy2RlslEWKWzwswuPpk2y05ufwxXE32CCjyXYudOLcBOQPU
-Ucio2laTAkwAIkKRav9HILRm1ihrAp6SHQMpcALQWf/a8aZYe8MLWo/axy4gLna2
-jh/COFBA+feof+MBzlAqoVVtzriiuK6ehlX8PcuIzMYFfbxCaGX1oO3zDXecLezb
-5Oahbja8sKKws7/GufvZtbhr/aOkK34qZErnLyGas/Mm/CpChmI=
-=xmZh
------END PGP SIGNATURE-----
-
---us5fnkoji2afabie--
-
-
---===============4953035610773789420==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4953035610773789420==--
-
+SGVsbG8sCgpOWFAncyBTMzJWMjM0WzFdICgiVHJlZXJ1bm5lciIpIHZpc2lvbiBtaWNyb3Byb2Nl
+c3NvcnMgYXJlIHRhcmdldGVkIGZvcgpoaWdoLXBlcmZvcm1hbmNlLCBjb21wdXRhdGlvbmFsbHkg
+aW50ZW5zaXZlIHZpc2lvbiBhbmQgc2Vuc29yIGZ1c2lvbgphcHBsaWNhdGlvbnMgdGhhdCByZXF1
+aXJlIGF1dG9tb3RpdmUgc2FmZXR5IGxldmVscy4gVGhleSBpbmNsdWRlIGxlYWRpbmcKZWRnZSBD
+YW1lcmEgVmlzaW9uIG1vZHVsZXMgbGlrZSBBUEVYLTIsIElTUCBhbmQgR1BVLiBUaGUgUzMyVjIz
+NC1FVkIgYW5kClMzMlYyMzQtU0JDIGJvYXJkcyBhcmUgYXZhaWxhYmxlIGZvciBjdXN0b21lciBl
+dmFsdWF0aW9uLgoKVGhlIGZvbGxvd2luZyBwYXRjaCBzZXJpZXMgaW50cm9kdWNlcyBtaW5pbWFs
+IGVuYWJsZW1lbnQgc3VwcG9ydCBmb3IgdGhlCk5YUCBTMzJWMjM0LUVWQjJbMl0gYm9hcmQsIHdo
+aWNoIGxldmVyYWdlcyBtb3N0IG9mIHRoZSBTb0MgY2FwYWJpbGl0aWVzLgpVcCB0byB2MiwgdGhp
+cyBzZXJpZXMgYWxzbyBpbmNsdWRlZCB0aGUgZnNsX2xpbmZsZXh1YXJ0IGRyaXZlciwgd2hpY2gg
+aGFzCmJlZW4gaW5jbHVkZWQgaW4gTGludXggNS40LXJjMVszXS4KCkluIHRoZSBmdXR1cmUsIHdl
+IGFpbSB0byBzdWJtaXQgbXVsdGlwbGUgZHJpdmVycyB1cHN0cmVhbSwgd2hpY2ggY2FuIGJlCmZv
+dW5kIGluIHRoZSBrZXJuZWwgb2Ygb3VyIEF1dG8gTGludXggQlNQWzRdICgiQUxCIiksIHN0YXJ0
+aW5nIHdpdGggYmFzaWMKcGlubXV4aW5nLCBjbG9jayBhbmQgdVNESEMgZHJpdmVycy4KCkZvciB2
+YWxpZGF0aW9uLCB5b3UgY2FuIHVzZSB0aGUgVS1Cb290IGJvb3Rsb2FkZXIgaW4gdGhlIEFMQls1
+XSwgd2hpY2ggd2UKYnVpbGQgYW5kIHRlc3Qgd2l0aCBvdXIgcGF0Y2hlZCB2ZXJzaW9uIG9mIHRo
+ZSBMaW5hcm8gR0NDIDYuMy4xIDIwMTcuMDUKdG9vbGNoYWluIGZvciBBUk0gNjQtYml0LCB3aXRo
+IHNvdXJjZXMgYXZhaWxhYmxlIG9uIFs2XS4KCkNoYW5nZXMgaW4gdjY6CiogSW4gdGhlIHBhdGNo
+ICdzZXJpYWw6IGZzbF9saW5mbGV4dWFydDogQmUgY29uc2lzdGVudCB3aXRoIHRoZSBuYW1lJywK
+ICBhdm9pZCB1cGRhdGluZyB0aGUgZGVmaW5pdGlvbiBQT1JUX0xJTkZMRVhVQVJUOyB0aGF0IHdh
+cyBhbiBpbmRlcGVuZGVudAogIGZpeCB3aGljaCBoYXMgYmVlbiBzdWJtaXR0ZWQgYW5kIGFjY2Vw
+dGVkWzldIHNlcGFyYXRlbHk7CiogQXZvaWQgdXNpbmcgJ2Jhc2U2NCcgYXMgJ0NvbnRlbnQtVHJh
+bnNmZXItRW5jb2RpbmcnLgoKQ2hhbmdlcyBpbiB2NToKKiBSZW1vdmUgdGhlIHBhdGNoICdkdC1i
+aW5kaW5nczogc2VyaWFsOiBEb2N1bWVudCBGcmVlc2NhbGUgTElORmxleEQgVUFSVCcKICBmb2xs
+b3dpbmcgaXRzIGFjY2VwdGFuY2UgaW4gTGludXggNS40LXJjMVs4XTsKKiBSZWJhc2UgdGhlIG90
+aGVyIHBhdGNoZXMgb24gdjUuNC1yYzEuCgpDaGFuZ2VzIGluIHY0OgoqIFJlbW92ZSB0aGUgcGF0
+Y2ggJ3NlcmlhbDogZnNsX2xpbmZsZXh1YXJ0OiBVcGRhdGUgY29tcGF0aWJsZSBzdHJpbmcnCiAg
+Zm9sbG93aW5nIGl0cyBhY2NlcHRhbmNlWzddOwoqIFJlYmFzZSB0aGUgcGF0Y2ggJ3NlcmlhbDog
+ZnNsX2xpbmZsZXh1YXJ0OiBCZSBjb25zaXN0ZW50IHdpdGggdGhlIG5hbWUnCiAgb24gdGhlIHR0
+eS1uZXh0IGJyYW5jaCBpbiBHcmVnJ3MgdHR5IGdpdCB0cmVlLgoKQ2hhbmdlcyBpbiB2MzoKKiBS
+ZW1vdmUgdGhlIHBhdGNoICd0dHk6IHNlcmlhbDogQWRkIGxpbmZsZXh1YXJ0IGRyaXZlciBmb3Ig
+UzMyVjIzNCcKICBmb2xsb3dpbmcgaXRzIGFjY2VwdGFuY2VbM107CiogUmVwbGFjZSAnRnJlZXNj
+YWxlJyB3aXRoICdOWFAnIGluIHRoZSBBUkNIX1MzMiBjb25maWcgZGVmaW5pdGlvbiBhbmQgdGhl
+CiAgJ21vZGVsJyBwcm9wZXJ0eSBmcm9tIHRoZSBkZXZpY2UgdHJlZTsKKiBSZW1vdmUgdGhlICdm
+c2wtJyBwcmVmaXhlcyBmcm9tIHRoZSBkdHNpIGFuZCBkdHMgZmlsZSBuYW1lczsKKiBNb3ZlIHRo
+ZSAnbW9kZWwnIHByb3BlcnR5IGZyb20gKGZzbC0pczMydjIzNC5kdHNpIHRvIHMzMnYyMzQtZXZi
+LmR0czsKKiBBZGQgbmV3bGluZXMgYmV0d2VlbiB0aGUgY3B1IG5vZGVzIGluIHMzMnYyMzQuZHRz
+aTsKKiBNYWtlIHVzZSBvZiBHSUNfU1BJLCBHSUNfUFBJLCBHSUNfQ1BVX01BU0tfU0lNUExFIGFu
+ZCBJUlFfVFlQRV8qIGluIHRoZQogICdpbnRlcnJ1cHRzJyB0dXBsZXM7CiogTW92ZSB0aGUgJ3Rp
+bWVyJyBhbmQgJ2ludGVycnVwdC1jb250cm9sbGVyJyBub2RlcyBiZWZvcmUgJ3NvYycgaW4KICBz
+MzJ2MjM0LmR0c2k7CiogQmUgY29uc2lzdGVudCB3aXRoIHRoZSAnTElORmxleEQnIHNwZWxsaW5n
+IGluIGRvY3VtZW50YXRpb24sIHN0cmluZ3MgYW5kCiAgY29tbWVudHM7IGFkZCBuZXcgcGF0Y2gg
+J3NlcmlhbDogZnNsX2xpbmZsZXh1YXJ0OiBCZSBjb25zaXN0ZW50IHdpdGggdGhlCiAgbmFtZScg
+dG8gdXBkYXRlIHRoZSBMSU5GbGV4RCBkcml2ZXIgYXMgd2VsbDsKKiBSZW1vdmUgZnJvbSBmc2ws
+czMyLWxpbmZsZXh1YXJ0LnR4dCBhIHN0YXRlbWVudCByZWdhcmRpbmcgdGhlIGxpbWl0YXRpb24K
+ICB0byBVQVJUIG1vZGU7CiogTWFrZSB0aGUgY29tcGF0aWJsZSBzdHJpbmcgU29DIHNwZWNpZmlj
+ICgiZnNsLHMzMnYyMzQtbGluZmxleHVhcnQiKTsgYWRkCiAgbmV3IHBhdGNoICdzZXJpYWw6IGZz
+bF9saW5mbGV4dWFydDogVXBkYXRlIGNvbXBhdGlibGUgc3RyaW5nJyB0byB1cGRhdGUKICB0aGUg
+TElORmxleEQgZHJpdmVyIGFzIHdlbGw7CiogSW4gdGhlIExJTkZsZXhEIGJpbmRpbmcgZG9jdW1l
+bnRhdGlvbiwgaW5zZXJ0IGEgc3BhY2UgYmV0d2VlbiBsYWJlbCBhbmQKICBub2RlIG5hbWUgYW5k
+IHJlbW92ZSB0aGUgJ3N0YXR1cycgcHJvcGVydHkuCgpDaGFuZ2VzIGluIHYyOgoqIFVwZGF0ZSB0
+aGUgZW50cnkgaW4gZnNsLnlhbWwgdG8gYXBwbHkgdG8gYWxsIFMzMlYyMzQgYmFzZWQgYm9hcmRz
+OwoqIEFkZCBjaG9zZW4gbm9kZSB0byBkdHMsIHdpdGggYSAnc3Rkb3V0LXBhdGgnIHByb3BlcnR5
+IGZvciBlYXJseWNvbjsKKiBSZW1vdmUgbGluZmxleF92ZXJpZnlfcG9ydCgpLCBiZWNhdXNlIGl0
+IHdhcyBvbmx5IGNhbGxlZCBmcm9tCiAgdWFydF9zZXRfaW5mbygpLCB3aGljaCB3YXMgZ29pbmcg
+dG8gYWx3YXlzIGZhaWwgYXQgdGhlICJiYXVkX2Jhc2UgPCA5NjAwIgogIGNoZWNrLCBhcyB3ZSBh
+cmUgbm90IHVzaW5nIHVhcnRjbGsgZnJvbSB1YXJ0X3BvcnQgeWV0OwoqIEZpeCBjb21wYXRpYmxl
+IHN0cmluZyB1c2VkIGluIE9GX0VBUkxZQ09OX0RFQ0xBUkUuCgpbMV0gaHR0cHM6Ly93d3cubnhw
+LmNvbS9wcm9kdWN0cy9wcm9jZXNzb3JzLWFuZC1taWNyb2NvbnRyb2xsZXJzL2FybS1iYXNlZC1w
+cm9jZXNzb3JzLWFuZC1tY3VzL3MzMi1hdXRvbW90aXZlLXBsYXRmb3JtL3Zpc2lvbi1wcm9jZXNz
+b3ItZm9yLWZyb250LWFuZC1zdXJyb3VuZC12aWV3LWNhbWVyYS1tYWNoaW5lLWxlYXJuaW5nLWFu
+ZC1zZW5zb3ItZnVzaW9uOlMzMlYyMzQKWzJdIGh0dHBzOi8vd3d3Lm54cC5jb20vc3VwcG9ydC9k
+ZXZlbG9wZXItcmVzb3VyY2VzL2V2YWx1YXRpb24tYW5kLWRldmVsb3BtZW50LWJvYXJkcy91bHRy
+YS1yZWxpYWJsZS1kZXYtcGxhdGZvcm1zL3MzMnYtbXB1cy1wbGF0Zm9ybXMvczMydi12aXNpb24t
+YW5kLXNlbnNvci1mdXNpb24tZXZhbHVhdGlvbi1zeXN0ZW06UzMyVjIzNEVWQgpbM10gaHR0cHM6
+Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvdG9ydmFsZHMvbGludXgu
+Z2l0L2NvbW1pdC8/aWQ9MDk4NjRjMWNkZjVjNTM3YmQwMWJmZjQ1MTgxNDA2ZTQyMmVhOTg4Ywpb
+NF0gaHR0cHM6Ly9zb3VyY2UuY29kZWF1cm9yYS5vcmcvZXh0ZXJuYWwvYXV0b2JzcHMzMi9saW51
+eC8KWzVdIGh0dHBzOi8vc291cmNlLmNvZGVhdXJvcmEub3JnL2V4dGVybmFsL2F1dG9ic3BzMzIv
+dS1ib290LwpbNl0gaHR0cHM6Ly9zb3VyY2UuY29kZWF1cm9yYS5vcmcvZXh0ZXJuYWwvczMyZHMv
+Y29tcGlsZXIvZ2NjLwpbN10gaHR0cHM6Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tl
+cm5lbC9naXQvdG9ydmFsZHMvbGludXguZ2l0L2NvbW1pdC8/aWQ9MmJkMzY2MWVhMGViMjA1Njg1
+MmNiYzU4YzVkOTZiYjRkZjJmMTY0ZgpbOF0gaHR0cHM6Ly9naXQua2VybmVsLm9yZy9wdWIvc2Nt
+L2xpbnV4L2tlcm5lbC9naXQvdG9ydmFsZHMvbGludXguZ2l0L2NvbW1pdC8/aWQ9MGUxNmZlYWI2
+Y2NlMmI5MWQyOTk2ZDRiYzRlZmYwMWVjZTU3N2M0YQpbOV0gaHR0cHM6Ly9naXQua2VybmVsLm9y
+Zy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvZ3JlZ2toL3R0eS5naXQvY29tbWl0Lz9oPXR0eS1s
+aW51cyZpZD00NzkzNGVmN2YxODgzMjA5MTIwNzgxYjU5ZDc4ZWFmOGI4M2UyZmI3CgpFZGR5IFBl
+dHJpyJlvciAoMSk6CiAgZHQtYmluZGluZ3M6IGFybTogZnNsOiBBZGQgdGhlIFMzMlYyMzQtRVZC
+IGJvYXJkCgpNaWhhZWxhIE1hcnRpbmFzICgyKToKICBhcm02NDogSW50cm9kdWNlIGNvbmZpZyBm
+b3IgUzMyCiAgYXJtNjQ6IGRlZmNvbmZpZzogRW5hYmxlIGNvbmZpZ3MgZm9yIFMzMlYyMzQKClN0
+ZWZhbi1HYWJyaWVsIE1pcmVhICgxKToKICBzZXJpYWw6IGZzbF9saW5mbGV4dWFydDogQmUgY29u
+c2lzdGVudCB3aXRoIHRoZSBuYW1lCgpTdG9pY2EgQ29zbWluLVN0ZWZhbiAoMSk6CiAgYXJtNjQ6
+IGR0czogZnNsOiBBZGQgZGV2aWNlIHRyZWUgZm9yIFMzMlYyMzQtRVZCCgogLi4uL2FkbWluLWd1
+aWRlL2tlcm5lbC1wYXJhbWV0ZXJzLnR4dCAgICAgICAgIHwgICAyICstCiAuLi4vZGV2aWNldHJl
+ZS9iaW5kaW5ncy9hcm0vZnNsLnlhbWwgICAgICAgICAgfCAgIDYgKwogYXJjaC9hcm02NC9LY29u
+ZmlnLnBsYXRmb3JtcyAgICAgICAgICAgICAgICAgIHwgICA1ICsKIGFyY2gvYXJtNjQvYm9vdC9k
+dHMvZnJlZXNjYWxlL01ha2VmaWxlICAgICAgICB8ICAgMiArCiBhcmNoL2FybTY0L2Jvb3QvZHRz
+L2ZyZWVzY2FsZS9zMzJ2MjM0LWV2Yi5kdHMgfCAgMjUgKysrKwogYXJjaC9hcm02NC9ib290L2R0
+cy9mcmVlc2NhbGUvczMydjIzNC5kdHNpICAgIHwgMTM5ICsrKysrKysrKysrKysrKysrKwogYXJj
+aC9hcm02NC9jb25maWdzL2RlZmNvbmZpZyAgICAgICAgICAgICAgICAgIHwgICAzICsKIGRyaXZl
+cnMvdHR5L3NlcmlhbC9LY29uZmlnICAgICAgICAgICAgICAgICAgICB8ICAgOCArLQogZHJpdmVy
+cy90dHkvc2VyaWFsL2ZzbF9saW5mbGV4dWFydC5jICAgICAgICAgIHwgICA0ICstCiBpbmNsdWRl
+L3VhcGkvbGludXgvc2VyaWFsX2NvcmUuaCAgICAgICAgICAgICAgfCAgIDIgKy0KIDEwIGZpbGVz
+IGNoYW5nZWQsIDE4OCBpbnNlcnRpb25zKCspLCA4IGRlbGV0aW9ucygtKQogY3JlYXRlIG1vZGUg
+MTAwNjQ0IGFyY2gvYXJtNjQvYm9vdC9kdHMvZnJlZXNjYWxlL3MzMnYyMzQtZXZiLmR0cwogY3Jl
+YXRlIG1vZGUgMTAwNjQ0IGFyY2gvYXJtNjQvYm9vdC9kdHMvZnJlZXNjYWxlL3MzMnYyMzQuZHRz
+aQoKLS0gCjIuMjIuMAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LWFybS1rZXJuZWwK
