@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D222D2170
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 09:14:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CE07D217F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 09:15:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v19vfVjf0SLZP0bHUo8MXNHmFa9zpXbCOcK+/bGWVF4=; b=UxCum/quwvx3yd
-	0exli7iYPUNXvRmKhnBeB/2uiVnn2NXMFEMWNl+TLZgmo+OcKeMcduY+eKHHaLC27LBlRhDks0Zsp
-	HPXYQnZp1aDAz8cyo3x3sEpZMAhlh1m4uEwWdDLrFZdMaep35RwoDHVsyq6j1BBEFwlvXyQwgI89R
-	HnOeIvpoMBqQbAJxa96s/ub1POMnEN0YttHXz5jfaKUkkjKu2+jFcIC9kErGgDrXKGez6dwUDSL6j
-	yvRUSQ3i9H4J+KbKnOektuzpnWhjsefuNwJ+snOASBXiAkVpdhTeT5glM5TYqolqfVszWvyWNjhaT
-	tOeedOnqZkzFe62SfTQg==;
+	List-Owner; bh=rh93vv8MSllaCgm0qRH9JiyGVw4uEYW2zCg0DyQdR+E=; b=i3QCtomUAZX6nR
+	WOFcB3ukRdUIBc9XAowmwBgO+MqeDNfrYnAnfXFhKCPllHbW+wByLWJfiPKkJ93YvP7kYvEbAhZcR
+	RWCogyoF/pFky0WJFNvI7xFHcomiOBZdAj9YFeCJ9xf/2tynycuoVwNXoywURQWbRwhU7taoXKDeN
+	pDrq/sj+8Q8SsW6tx5+XlP2QVBEc/QjoB1exSd5xN9xVOFZ0eSqLCLepMe5dVo4lPftst9LeS/Zia
+	xdMnF7oHjPVOnKQKfWE4PeUUxcPxe/Lz1oXWbHKmzpER3bzQrhtnafk9JaWNeCUC74jeArZ4kcY0B
+	BhJzmHJGvESSzQtoSNyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iISeW-0002E1-Jq; Thu, 10 Oct 2019 07:14:24 +0000
+	id 1iISfK-0002kB-Na; Thu, 10 Oct 2019 07:15:14 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iISe9-00023U-DG; Thu, 10 Oct 2019 07:14:03 +0000
+ id 1iISet-0002fQ-W8; Thu, 10 Oct 2019 07:14:49 +0000
 Received: from dhcp-172-31-174-146.wireless.concordia.ca (unknown
  [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested) (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 979B1290767;
- Thu, 10 Oct 2019 08:13:59 +0100 (BST)
-Date: Thu, 10 Oct 2019 09:13:56 +0200
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 2F573290694;
+ Thu, 10 Oct 2019 08:14:45 +0100 (BST)
+Date: Thu, 10 Oct 2019 09:14:42 +0200
 From: Boris Brezillon <boris.brezillon@collabora.com>
 To: <Tudor.Ambarus@microchip.com>
-Subject: Re: [PATCH v2 05/22] mtd: spi-nor: Rework read_sr()
-Message-ID: <20191010091356.5d9a4e44@dhcp-172-31-174-146.wireless.concordia.ca>
-In-Reply-To: <20190924074533.6618-6-tudor.ambarus@microchip.com>
+Subject: Re: [PATCH v2 06/22] mtd: spi-nor: Rework read_fsr()
+Message-ID: <20191010091433.2977865a@dhcp-172-31-174-146.wireless.concordia.ca>
+In-Reply-To: <20190924074533.6618-7-tudor.ambarus@microchip.com>
 References: <20190924074533.6618-1-tudor.ambarus@microchip.com>
- <20190924074533.6618-6-tudor.ambarus@microchip.com>
+ <20190924074533.6618-7-tudor.ambarus@microchip.com>
 Organization: Collabora
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_001401_706349_131E57EF 
-X-CRM114-Status: GOOD (  20.46  )
+X-CRM114-CacheID: sfid-20191010_001448_178707_CD142E82 
+X-CRM114-Status: GOOD (  10.80  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -72,19 +72,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 24 Sep 2019 07:46:08 +0000
+On Tue, 24 Sep 2019 07:46:12 +0000
 <Tudor.Ambarus@microchip.com> wrote:
 
 > From: Tudor Ambarus <tudor.ambarus@microchip.com>
 > 
-> static int read_sr(struct spi_nor *nor)
+> static int read_fsr(struct spi_nor *nor)
 > becomes
-> static int spi_nor_read_sr(struct spi_nor *nor, u8 *sr)
+> static int spi_nor_read_fsr(struct spi_nor *nor, u8 *fsr)
 > 
 > The new function returns 0 on success and -errno otherwise.
 > We let the callers pass the pointer to the buffer where the
-> value of the Status Register will be written. This way we avoid
-> the casts between int and u8, which can be confusing.
+> value of the Flag Status Register will be written. This way
+> we avoid the casts between int and u8, which can be confusing.
 > 
 > Prepend spi_nor_ to the function name, all functions should begin
 > with that.
@@ -92,66 +92,7 @@ On Tue, 24 Sep 2019 07:46:08 +0000
 > S/pr_err/dev_err and drop duplicated dev_err in callers, in case the
 > function returns error.
 
-Too many things done in a single patch, can you split that please?
-
-> 
-> Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
-> ---
->  drivers/mtd/spi-nor/spi-nor.c | 131 +++++++++++++++++++++---------------------
->  1 file changed, 65 insertions(+), 66 deletions(-)
-> 
-> diff --git a/drivers/mtd/spi-nor/spi-nor.c b/drivers/mtd/spi-nor/spi-nor.c
-> index 7d0c1b598250..a23783641146 100644
-> --- a/drivers/mtd/spi-nor/spi-nor.c
-> +++ b/drivers/mtd/spi-nor/spi-nor.c
-> @@ -388,12 +388,14 @@ static ssize_t spi_nor_write_data(struct spi_nor *nor, loff_t to, size_t len,
->  	return nor->controller_ops->write(nor, to, len, buf);
->  }
->  
-> -/*
-> - * Read the status register, returning its value in the location
-> - * Return the status register value.
-> - * Returns negative if error occurred.
-> +/**
-> + * spi_nor_read_sr() - Read the Status Register.
-> + * @nor:        pointer to 'struct spi_nor'
-> + * @sr:		buffer where the value of the Status Register will be written.
-
-You should definitely mention that this sr pointer has to be DMA-safe.
-
-> + *
-> + * Return: 0 on success, -errno otherwise.
->   */
-> -static int read_sr(struct spi_nor *nor)
-> +static int spi_nor_read_sr(struct spi_nor *nor, u8 *sr)
->  {
->  	int ret;
->  
-> @@ -402,20 +404,17 @@ static int read_sr(struct spi_nor *nor)
->  			SPI_MEM_OP(SPI_MEM_OP_CMD(SPINOR_OP_RDSR, 1),
->  				   SPI_MEM_OP_NO_ADDR,
->  				   SPI_MEM_OP_NO_DUMMY,
-> -				   SPI_MEM_OP_DATA_IN(1, nor->bouncebuf, 1));
-> +				   SPI_MEM_OP_DATA_IN(1, sr, 1));
->  
->  		ret = spi_mem_exec_op(nor->spimem, &op);
->  	} else {
-> -		ret = nor->controller_ops->read_reg(nor, SPINOR_OP_RDSR,
-> -						    nor->bouncebuf, 1);
-> +		ret = nor->controller_ops->read_reg(nor, SPINOR_OP_RDSR, sr, 1);
->  	}
->  
-> -	if (ret < 0) {
-> -		pr_err("error %d reading SR\n", (int) ret);
-> -		return ret;
-> -	}
-> +	if (ret)
-> +		dev_err(nor->dev, "error %d reading SR\n", ret);
->  
-> -	return nor->bouncebuf[0];
-> +	return ret;
->  }
-
+Same comments as for patch 5.
 
 _______________________________________________
 linux-arm-kernel mailing list
