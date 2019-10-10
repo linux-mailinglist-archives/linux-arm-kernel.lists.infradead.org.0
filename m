@@ -2,45 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D20F3D2F6A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 19:16:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 821C3D2F6C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 19:16:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eotH6bFxEufIIHgvzem2B+PgI1mF/zGHK6dpF1bfXNs=; b=Fpp1LG8JLxGpiQ
-	DtE/ml7mMQyS7KzLkcswQ7YkZTO0ioxU3FlqAyMXLUrFebV2srN0+svRq6D8/9xaE1+WzR2/pBR39
-	r+q5Bobvb+zeSqCBCVPwaUEVdzb4M7D8x44cAJsqWWG3kqXDi/o8stH/QvbI/InvRZvvwAFrOlt5k
-	ZSljTAtMeOxUDvWxyKBTl2thPQKy1tkZOI42kQFZQQHsC5BlFhdGcmFm0aS3QXBPrgroKh7XE86Ng
-	oSQF8yGNR7px85xj/+ef8Wx/7C45A+icn0BHqHNQYJ0phvazWR5kFIne+bZnJjsG31S5DMZPoaMhU
-	pgPutZWuJnAj6BfyxVuw==;
+	List-Owner; bh=IUGIZcirVPlIRqs2rAwiuq4/sHhVpP8ZBSfXgLQZ1N4=; b=NNb4UZsLjMWKU1
+	br0d/PoKvdpAHy1a6CJadpisbBar7nUpWw+bhrjxHtyCZJBHVHq8JKU+Zyjkqu+r6BkoHHPQa7eVB
+	6hLCHKhjvpV6TNxbXhwuT7yo6pd6+s1eQ5gHO7ONPL2OL5xbnx8oC0yWDx0X8JDOWmxIE3f5o9cxs
+	pDtIwaPn3UXzZW5EcHVWd5aFcl7pXm10C/GciVAENDNr7JXsXwDo6qeAkDPpDspRCUOJBWOfX7pmy
+	kHGV5k/VSj5j4XXgMF0Oa9m/1+vp/X4yl9n2SgQbpnpD65vcjMqjrYIFfNOSLbCai/n75/qzPfimf
+	X86W82+d10wQ9cW2u42Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIc2j-0007eG-Ll; Thu, 10 Oct 2019 17:16:01 +0000
+	id 1iIc2z-0007yF-4s; Thu, 10 Oct 2019 17:16:17 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIc2K-0007UD-1R
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 17:15:37 +0000
+ id 1iIc2L-0007Ud-8Z
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 17:15:38 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 76E4C1000;
- Thu, 10 Oct 2019 10:15:35 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AC89C1570;
+ Thu, 10 Oct 2019 10:15:36 -0700 (PDT)
 Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 74C4B3F71A;
- Thu, 10 Oct 2019 10:15:34 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id AA6B13F71A;
+ Thu, 10 Oct 2019 10:15:35 -0700 (PDT)
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/3] arm64: cpufeature: Fix the type of no FP/SIMD capability
-Date: Thu, 10 Oct 2019 18:15:15 +0100
-Message-Id: <20191010171517.28782-2-suzuki.poulose@arm.com>
+Subject: [PATCH 2/3] arm64: nofpsmid: Clear TIF_FOREIGN_FPSTATE flag for early
+ tasks
+Date: Thu, 10 Oct 2019 18:15:16 +0100
+Message-Id: <20191010171517.28782-3-suzuki.poulose@arm.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20191010171517.28782-1-suzuki.poulose@arm.com>
 References: <20191010171517.28782-1-suzuki.poulose@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_101536_122835_B459E527 
-X-CRM114-Status: GOOD (  14.25  )
+X-CRM114-CacheID: sfid-20191010_101537_341629_801C6E34 
+X-CRM114-Status: GOOD (  12.71  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,17 +68,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The NO_FPSIMD capability is defined with scope SYSTEM, which implies
-that the "absence" of FP/SIMD on at least one CPU is detected only
-after all the SMP CPUs are brought up. However, we use the status
-of this capability for every context switch. So, let us change
-the scop to LOCAL_CPU to allow the detection of this capability
-as and when the first CPU without FP is brought up.
+We detect the absence of FP/SIMD after we boot the SMP CPUs, and by then
+we have kernel threads running already with TIF_FOREIGN_FPSTATE set which
+could be inherited by early userspace applications (e.g, modprobe triggered
+from initramfs). This could end up in the applications stuck in
+do_nofity_resume() as we never clear the TIF flag, once we now know that
+we don't support FP.
 
-Also, the current type allows hotplugged CPU to be brought up without
-FP/SIMD when all the current CPUs have FP/SIMD and we have the userspace
-up. Fix both of these issues by changing the capability to
-BOOT_RESTRICTED_LOCAL_CPU_FEATURE.
+Fix this by making sure that we clear the TIF_FOREIGN_FPSTATE flag
+for tasks which may have them set, as we would have done in the normal
+case, but avoiding touching the hardware state (since we don't support any).
 
 Fixes: 82e0191a1aa11abf ("arm64: Support systems without FP/ASIMD")
 Cc: Will Deacon <will@kernel.org>
@@ -85,22 +85,60 @@ Cc: Mark Rutland <mark.rutland@arm.com>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 ---
- arch/arm64/kernel/cpufeature.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/kernel/fpsimd.c | 26 ++++++++++++++++----------
+ 1 file changed, 16 insertions(+), 10 deletions(-)
 
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 9323bcc40a58..0f9eace6c64b 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -1361,7 +1361,7 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
- 	{
- 		/* FP/SIMD is not implemented */
- 		.capability = ARM64_HAS_NO_FPSIMD,
--		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
-+		.type = ARM64_CPUCAP_BOOT_RESTRICTED_CPU_LOCAL_FEATURE,
- 		.min_field_value = 0,
- 		.matches = has_no_fpsimd,
- 	},
+diff --git a/arch/arm64/kernel/fpsimd.c b/arch/arm64/kernel/fpsimd.c
+index 37d3912cfe06..dfcdd077aeca 100644
+--- a/arch/arm64/kernel/fpsimd.c
++++ b/arch/arm64/kernel/fpsimd.c
+@@ -1128,12 +1128,19 @@ void fpsimd_bind_state_to_cpu(struct user_fpsimd_state *st, void *sve_state,
+  */
+ void fpsimd_restore_current_state(void)
+ {
+-	if (!system_supports_fpsimd())
+-		return;
+-
+ 	get_cpu_fpsimd_context();
+-
+-	if (test_and_clear_thread_flag(TIF_FOREIGN_FPSTATE)) {
++	/*
++	 * For the tasks that were created before we detected the absence of
++	 * FP/SIMD, the TIF_FOREIGN_FPSTATE could be set via fpsimd_thread_switch()
++	 * and/or could be inherited from the parent(init_task has this set). Even
++	 * though userspace has not run yet, this could be inherited by the
++	 * processes forked from one of those tasks (e.g, modprobe from initramfs).
++	 * If the system doesn't support FP/SIMD, we must clear the flag for the
++	 * tasks mentioned above, to indicate that the FPSTATE is clean (as we
++	 * can't have one) to avoid looping for ever to clear the flag.
++	 */
++	if (test_and_clear_thread_flag(TIF_FOREIGN_FPSTATE) &&
++	    system_supports_fpsimd()) {
+ 		task_fpsimd_load();
+ 		fpsimd_bind_task_to_cpu();
+ 	}
+@@ -1148,17 +1155,16 @@ void fpsimd_restore_current_state(void)
+  */
+ void fpsimd_update_current_state(struct user_fpsimd_state const *state)
+ {
+-	if (!system_supports_fpsimd())
+-		return;
+-
+ 	get_cpu_fpsimd_context();
+ 
+ 	current->thread.uw.fpsimd_state = *state;
+ 	if (system_supports_sve() && test_thread_flag(TIF_SVE))
+ 		fpsimd_to_sve(current);
+ 
+-	task_fpsimd_load();
+-	fpsimd_bind_task_to_cpu();
++	if (system_supports_fpsimd()) {
++		task_fpsimd_load();
++		fpsimd_bind_task_to_cpu();
++	}
+ 
+ 	clear_thread_flag(TIF_FOREIGN_FPSTATE);
+ 
 -- 
 2.21.0
 
