@@ -2,104 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15B63D2D7B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 17:16:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69F86D2D83
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 17:19:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wyr7vdvtPAPtKmhYdbw84vDYYUTKcBiEyJ9VV6LXvJE=; b=nwkY+6AirWL/Qi
-	U/dOlaBZo36M2hWPzmAt3fUafrkOZ4Ln3besnkcMoDUJqIMWxfsb+Bh9km/6PySKcn31GV+dAyTxA
-	21VcEf/q+Vc5Mw3I1UdXDu17ZQznkaOoLajFwGlj2UXnOMf/nf6xwyHgDLgdnZDeAhsXHJKkyrcDs
-	FIvLaIRKn88NNpQmZxFRAvHd71wMLccs4eDUIzNLkVrE7h17wSrkpr0fMPauKp1113qWixnn4gTXe
-	f4/UEu2ULPS5UlC6/l7iLCeKRvIaYbTDXELFz+zQqJAifjVqX8NTneraNjU26Mt3Vnx/bqh20fzmB
-	aa2AlabY6WsOD5Kd6l4g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=h4Z1l0T8ISY1arjej+pTZY3HDeR7k2Z2Zl6ByXJg7OI=; b=u8P
+	k71ef4hx5/opCODQZ7htnEGZEzkJk+hXAhj0gly0KDELBkIGhUKY6lEkk7E+m7Hl5NLTXuC1ubPXe
+	ceuYmJYXCk5WaM+/7qCYBkf3c3lbP7S9457ouAzzmC1l67vsuAmvhVX8I9QGp/1YBZgeNKJ+KLt5A
+	E/yTbsTu86RiKJb0myBS0YZvGRAFxlYrtQdbAjcWGH3S/8Jvm+Glx9k6yfrE8Vayf0FYgOO6ORbE7
+	WqmltoJm8rp5EsmDObpXn/+S4kUJPKIcmjVeuExb9Pl7TluTUBrfflZ8gKOp3KlOxtS7wbHorfqmZ
+	yjFvfjFE7i4IWsOVGSxmnu9yd1PjMVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIaBM-0000p5-Qq; Thu, 10 Oct 2019 15:16:48 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iIaDm-0001Kp-BG; Thu, 10 Oct 2019 15:19:18 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIaBD-0000nl-1G
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 15:16:40 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x9AFBKhQ025036; Thu, 10 Oct 2019 17:16:20 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type :
- content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=WdF442jlxXHtW99D7VXviowbwCBFKKqETJKUfQQ750w=;
- b=mm2aIehas26Nib8HsLOMFdpsO23R7o8VnUJ+GWdEZjSLZR9ZOFAHky36iI4Br1lxJ3Sk
- avwn9mmM/xIpqctgJhEm9dhtDoAAVur2AUA24mzmir1bc7GfdSSENlTsoxZSjM1Hwdhc
- Y9/ElLzy6dDdBMiJdyB5L0mLKFzGbnEPa5jMvbKMsKX5r6+Bfg/UXc6AmbV6JqTQO4AY
- 8Jklj38blZDBAAgFPOruDqxcjSdUcSJEi4/Uo81ZOOIsbQpsCxarYtqW4GV0lYAl2b/e
- mDwA9H2Ajdi8ApxoA9I0ppL9aM69bXJCPv2By43adSY7PAYuJiqsDgbVSOi3MgUE7bl7 3g== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2vej2pmt2t-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 10 Oct 2019 17:16:20 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 40B5A10002A;
- Thu, 10 Oct 2019 17:16:19 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag7node2.st.com [10.75.127.20])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 9391E2B433F;
- Thu, 10 Oct 2019 17:16:19 +0200 (CEST)
-Received: from SFHDAG5NODE3.st.com (10.75.127.15) by SFHDAG7NODE2.st.com
- (10.75.127.20) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 10 Oct
- 2019 17:16:19 +0200
-Received: from SFHDAG5NODE3.st.com ([fe80::7c09:5d6b:d2c7:5f47]) by
- SFHDAG5NODE3.st.com ([fe80::7c09:5d6b:d2c7:5f47%20]) with mapi id
- 15.00.1473.003; Thu, 10 Oct 2019 17:16:19 +0200
-From: Fabien DESSENNE <fabien.dessenne@st.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre TORGUE
- <alexandre.torgue@st.com>, Ohad Ben-Cohen <ohad@wizery.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>, "linux-remoteproc@vger.kernel.org"
- <linux-remoteproc@vger.kernel.org>
-Subject: RE: [PATCH 0/2] remoteproc: stm32: allow wdg irq to be a wakeup source
-Thread-Topic: [PATCH 0/2] remoteproc: stm32: allow wdg irq to be a wakeup
- source
-Thread-Index: AQHVXCRbzfqre7GQVUu6MRQERXnqfqdUQtwQ
-Date: Thu, 10 Oct 2019 15:16:19 +0000
-Message-ID: <1bef12295e864dfa90edfa495803167f@SFHDAG5NODE3.st.com>
-References: <1566833923-16718-1-git-send-email-fabien.dessenne@st.com>
-In-Reply-To: <1566833923-16718-1-git-send-email-fabien.dessenne@st.com>
-Accept-Language: fr-FR, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.51]
-MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
- definitions=2019-10-10_05:2019-10-10,2019-10-10 signatures=0
+ id 1iIaDf-0001KF-O6
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 15:19:13 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 89A941A0840;
+ Thu, 10 Oct 2019 17:19:08 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7D1FD1A04BD;
+ Thu, 10 Oct 2019 17:19:08 +0200 (CEST)
+Received: from fsr-ub1864-112.ea.freescale.net
+ (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 04A2A2060B;
+ Thu, 10 Oct 2019 17:19:07 +0200 (CEST)
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>,
+ Shawn Guo <shawnguo@kernel.org>
+Subject: [PATCH] soc: imx8mq: Read SOC revision from TF-A
+Date: Thu, 10 Oct 2019 18:19:03 +0300
+Message-Id: <c4f9d238a08b5c8de6c14e86cfbe3fe8b8a55f4f.1570720648.git.leonard.crestez@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_081639_529296_14B4885F 
-X-CRM114-Status: GOOD (  15.41  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191010_081911_921832_B99AB877 
+X-CRM114-Status: GOOD (  10.99  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,55 +65,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnaud POULIQUEN <arnaud.pouliquen@st.com>,
- Loic PALLARDY <loic.pallardy@st.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
+ Anson Huang <Anson.Huang@nxp.com>, linux-imx@nxp.com, kernel@pengutronix.de,
+ Fabio Estevam <fabio.estevam@nxp.com>, Lucas Stach <l.stach@pengutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Abel Vesa <abel.vesa@nxp.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi
+SOC revision on older imx8mq is not available in fuses so on anything
+other than B1 current code just reports "unknown".
 
-I Got Rob's Reviewed-by for the bindings. Any further comments for the driv=
-er part?
+TF-A already handles this by parsing the ROM and exposes the value
+through a SMC call. Call this instead of reimplementing the workaround
+in the kernel itself.
 
-Fabien
+Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 
-> -----Original Message-----
-> From: Fabien DESSENNE <fabien.dessenne@st.com>
-> Sent: lundi 26 ao=FBt 2019 17:39
-> To: Rob Herring <robh+dt@kernel.org>; Mark Rutland <mark.rutland@arm.com>;
-> Maxime Coquelin <mcoquelin.stm32@gmail.com>; Alexandre TORGUE
-> <alexandre.torgue@st.com>; Ohad Ben-Cohen <ohad@wizery.com>; Bjorn
-> Andersson <bjorn.andersson@linaro.org>; devicetree@vger.kernel.org; linux-
-> stm32@st-md-mailman.stormreply.com; linux-arm-kernel@lists.infradead.org;
-> linux-kernel@vger.kernel.org; linux-remoteproc@vger.kernel.org
-> Cc: Fabien DESSENNE <fabien.dessenne@st.com>; Loic PALLARDY
-> <loic.pallardy@st.com>; Arnaud POULIQUEN <arnaud.pouliquen@st.com>
-> Subject: [PATCH 0/2] remoteproc: stm32: allow wdg irq to be a wakeup sour=
-ce
-> =
+---
+This was discussed previously and but nothing was merged. I'm having
+trouble finding email archive links but here's one:
 
-> The watchdog IRQ which notifies the remote processor crash is used by the
-> remoteproc framework to perform a recovery procedure.
-> Since this IRQ may be fired when the Linux system is suspended, this IRQ =
-may
-> be configured to wake up the system.
-> =
+https://patchwork.kernel.org/patch/10935599/
 
-> Fabien Dessenne (2):
->   dt-bindings: remoteproc: stm32: add wakeup-source
->   remoteproc: stm32: wakeup the system by wdg irq
-> =
+NXP vendor tree always used TF-A for this and from previous discussion
+it is reasonable to rely on firmware for workarounds.
 
->  .../devicetree/bindings/remoteproc/stm32-rproc.txt |  3 ++
->  drivers/remoteproc/stm32_rproc.c                   | 47 ++++++++++++++++=
-++++++
->  2 files changed, 50 insertions(+)
-> =
+The SMC call has been in TF-A upstream for a while.
 
-> --
-> 2.7.4
+ drivers/soc/imx/soc-imx8.c | 28 +++++++++++++++++++++++++---
+ 1 file changed, 25 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
+index b9831576dd25..20af442a247a 100644
+--- a/drivers/soc/imx/soc-imx8.c
++++ b/drivers/soc/imx/soc-imx8.c
+@@ -7,17 +7,20 @@
+ #include <linux/io.h>
+ #include <linux/of_address.h>
+ #include <linux/slab.h>
+ #include <linux/sys_soc.h>
+ #include <linux/platform_device.h>
++#include <linux/arm-smccc.h>
+ #include <linux/of.h>
+ 
+ #define REV_B1				0x21
+ 
+ #define IMX8MQ_SW_INFO_B1		0x40
+ #define IMX8MQ_SW_MAGIC_B1		0xff0055aa
+ 
++#define IMX_SIP_GET_SOC_INFO		0xc2000006
++
+ #define OCOTP_UID_LOW			0x410
+ #define OCOTP_UID_HIGH			0x420
+ 
+ /* Same as ANADIG_DIGPROG_IMX7D */
+ #define ANADIG_DIGPROG_IMX8MM	0x800
+@@ -35,10 +38,22 @@ static ssize_t soc_uid_show(struct device *dev,
+ 	return sprintf(buf, "%016llX\n", soc_uid);
+ }
+ 
+ static DEVICE_ATTR_RO(soc_uid);
+ 
++static u32 imx8mq_soc_revision_from_atf(void)
++{
++	struct arm_smccc_res res;
++
++	arm_smccc_smc(IMX_SIP_GET_SOC_INFO, 0, 0, 0, 0, 0, 0, 0, &res);
++
++	if (res.a0 == SMCCC_RET_NOT_SUPPORTED)
++		return 0;
++	else
++		return res.a0 & 0xff;
++}
++
+ static u32 __init imx8mq_soc_revision(void)
+ {
+ 	struct device_node *np;
+ 	void __iomem *ocotp_base;
+ 	u32 magic;
+@@ -49,13 +64,20 @@ static u32 __init imx8mq_soc_revision(void)
+ 		goto out;
+ 
+ 	ocotp_base = of_iomap(np, 0);
+ 	WARN_ON(!ocotp_base);
+ 
+-	magic = readl_relaxed(ocotp_base + IMX8MQ_SW_INFO_B1);
+-	if (magic == IMX8MQ_SW_MAGIC_B1)
+-		rev = REV_B1;
++	/*
++	 * SOC revision on older imx8mq is not available in fuses so query
++	 * the value from ATF instead.
++	 */
++	rev = imx8mq_soc_revision_from_atf();
++	if (!rev) {
++		magic = readl_relaxed(ocotp_base + IMX8MQ_SW_INFO_B1);
++		if (magic == IMX8MQ_SW_MAGIC_B1)
++			rev = REV_B1;
++	}
+ 
+ 	soc_uid = readl_relaxed(ocotp_base + OCOTP_UID_HIGH);
+ 	soc_uid <<= 32;
+ 	soc_uid |= readl_relaxed(ocotp_base + OCOTP_UID_LOW);
+ 
+-- 
+2.17.1
 
 
 _______________________________________________
