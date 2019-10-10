@@ -2,85 +2,156 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80389D3493
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 01:48:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47503D349C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 01:50:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vlJE8keV2F4EzHe3uJK1XEYxpdXCiGtBruQa34TlS7k=; b=E6x2s0DhVYSAzM
-	cvx7sMYVRL0AWCjBykdx3XkBl8H+klsiy0dPrNvAtZxvEmIttwKHuzZAUt/Reg/Sh0rEa/Lg+eGXO
-	qNxK7yxZu+aMMS/nso/rfEf2JCZTSZmyWDnR9gEyXFge7Q1g6TRJxtb42mgD/+f6OVTD9+8ZrBfd0
-	1D5SdY9brl23Vy3JevUcHKsuzr3TuiqDVMEsQMMOjOW6CTxHX3QaFIccwhlvsTjgZZ4RCMeR6Liz+
-	c7OUUg9o+3KEIlhwLdpBrR/4yQlGirYjbq6OCPbjvgn9DllUkYWnVN17VkvSQoV4YkP+R/utXs+fT
-	ElAvAEviPfSoPFq9wSUw==;
+	List-Owner; bh=CBLBXB6vCLeox9pOCcu8mYoNPh35zTP9UKLL9wohpdA=; b=FVpRbf75vfAN98
+	h9jzHSSB+c4oj4dA1pxbIm84U7K9F4U8yxaaBtlS1ELdSAcuQXFihiGfKieHuEyXD6Bgr17KbSDUn
+	YpyxL/uPqanZkrmCn2tpYmyXab7BgmD89CGkwkSoh98qUgVZoLr2kB13/vvRs0u/w3LJvfUEOO2lE
+	81t63Ygy4LAOg2/tWTNIKDHel3usAWTHhGT8sUBepJskV9fFfpO+i+Q32faviqA+NTWqV/RYq0la5
+	lCoQw1SyCTRSj/NN2nkw7/exFIBn1vW+wPg4xltgrrBTQFIGoITKAMhj6y4atExvUOGTGffpe9VNT
+	/C34/vbz1Zb1cpGtZcXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIiAS-0001MW-Pq; Thu, 10 Oct 2019 23:48:24 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1iIiCM-000333-2n; Thu, 10 Oct 2019 23:50:22 +0000
+Received: from mx0b-00082601.pphosted.com ([67.231.153.30])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIiA2-0001Ct-5G; Thu, 10 Oct 2019 23:47:59 +0000
-Received: by mail-qk1-x743.google.com with SMTP id y189so7297639qkc.3;
- Thu, 10 Oct 2019 16:47:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=VOfBNfcbIIkZoZr/JsJgcwA46NAWvjDA5yLgk2p3Qs4=;
- b=EDUt7LdV6VNgqNyLlHw7iBGgTCVUCFcGML1XAofYuTyAjIYOkd2pYJh2Ks9Y2dhgpO
- MI/NUcqTO2rn+88NuysO1fVKxXLU4fPJ8RO3SKW6qsZc+xfi0Dmy9vW0yjv9vKTge+bu
- 03tTV/hw2MnCGpkVyC2/t+P6v2uGB+A4EA/n4=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=VOfBNfcbIIkZoZr/JsJgcwA46NAWvjDA5yLgk2p3Qs4=;
- b=M5Ks5gg95ST/7zIIohXxJji6VMCHCj2pUNyAHXrExKNS/apgKoB8y07BpRgu7NDhEx
- omtvfUeL0RU13tYec3exfgGoBUIp/z+ixuT5/ow20/oXlnDbkNWG6N5p8A0Rmr3YrkTb
- 7U50zxJnNf3uaJlXeB+jaB3puOq4ia7IMKvvvnmZE9viGzZf3eLShtwotU+zg0mXGqoi
- W1NmfTGpCcAPIF/pDdfhDi4ACQh3o7O2f9CY773kb1gq5biC16BEOERpjddvvdX5VUUJ
- PTSVixznSaBltyxfpv9rfkahA94JLtrfk+lFOLxMEDA+L/BISaAJOukT9y+uw7vT3NRR
- wljA==
-X-Gm-Message-State: APjAAAUSvJErx7WwlIydNx+/qb5eSfTY+tUjcnrq4IZxdGDKqEBSWsK8
- x69bLdHCuQKMwLtTBGOCh90/lIsx2KlMrgZozeg=
-X-Google-Smtp-Source: APXvYqxoqIE5UuZnpgZoeTxKPAd5ePSRS1KXmPevRfEYsZ/g9e8t/yRQ3AWtpqZI2CmDKgIWa7L3/HE1GEcsFn4V1tE=
-X-Received: by 2002:a37:4dca:: with SMTP id
- a193mr12705697qkb.292.1570751276858; 
- Thu, 10 Oct 2019 16:47:56 -0700 (PDT)
+ id 1iIiC7-0002Wl-Rv
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 23:50:10 +0000
+Received: from pps.filterd (m0109331.ppops.net [127.0.0.1])
+ by mx0a-00082601.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x9ANmggV006589; Thu, 10 Oct 2019 16:49:45 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=facebook;
+ bh=iFAHsVfn3pUeDUQPqNvFrqJImlpOxx1bkt5LLzdbhjM=;
+ b=K12C3ZqTRx6olDBEYGm6tNOhgORDhHn+ffKWh5Yk0gyDzmB0d7K69tgnqxbGmCpO5D/g
+ Uvl986s6HGzQiu+5S+KYWDCKMhDD5T/XMnEvmHWqXnNHW0KcG4ZJQUsqbPWTWR1KXiFw
+ uws8rbAL8xegKhf9BRzZiYj4wHv99mdUVNI= 
+Received: from mail.thefacebook.com (mailout.thefacebook.com [199.201.64.23])
+ by mx0a-00082601.pphosted.com with ESMTP id 2vhm0uf3mj-6
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
+ Thu, 10 Oct 2019 16:49:44 -0700
+Received: from prn-hub04.TheFacebook.com (2620:10d:c081:35::128) by
+ prn-hub04.TheFacebook.com (2620:10d:c081:35::128) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.1.1713.5; Thu, 10 Oct 2019 16:29:05 -0700
+Received: from NAM01-BY2-obe.outbound.protection.outlook.com (192.168.54.28)
+ by o365-in.thefacebook.com (192.168.16.28) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.1.1713.5
+ via Frontend Transport; Thu, 10 Oct 2019 16:29:05 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=jhHGkY5Wt4aaYJS3jxoe22DeTAmFfMcyeXYZF22JSA/dCY/7p+GiTwL8o5pGJNm9w5tn4X8fS928Iov44inM5T0ywnMXjyYHJ+Zpa6+vhSSBaPViuOYZFb/pvmBNCEjXkotaW4WrA1Wj7DOBoAsBLn3Z5dYAOH1HREgFZGLKhBwXjjGUADCDIbMHuia8v6Xc6tz2o6wYukvXwg4P9IfT1uI8muaKaXZv0K3QLleAiuUsYnlayPiIW82UXkZDZpblz0QlN5D3mFU9XZ8F5dVnIUD4G7xrBeHJ0kZLRzLmNFjhUNWTnd2WCME644XB6LRqw2r5iIcDdJnotwmwLR35tw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=iFAHsVfn3pUeDUQPqNvFrqJImlpOxx1bkt5LLzdbhjM=;
+ b=hxjFyIFHVpvlq98QqPfzte8FF4/xWDkU0BsRq8qCzDpsY3zI6VLJMlgfuyieC807IEd5pw4kNc4kl/hKKLXudJRq2ziUP9WBNJJTWZ5S3LNeKo66UK7uYUsPH+6DSo55qQT6afoQFzAxhgKE1aUAbRm/wLA7R779Uyv2i7WZw43AbBiAVIpfgtr6PkT2piXj74WYvOKeLMPUJrxEHJWjUN+an1xunsRJd83Olp6AIR/QHMMF6F8qCJCTrlWgE0dx2g8qjD8mZ0shnNztNcnkLJSRdz8VAReLtJCfUfusGhq+SG14X4d5kiMEi6gNzKTYcXZxA858Rvb2mV1tSpYljw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=fb.com; dmarc=pass action=none header.from=fb.com; dkim=pass
+ header.d=fb.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.onmicrosoft.com;
+ s=selector2-fb-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=iFAHsVfn3pUeDUQPqNvFrqJImlpOxx1bkt5LLzdbhjM=;
+ b=DilQiDbCak4E2vB+PRC/ZFOS+rJ7GzadiqsAliwcpBrWp9Q7yNRSgxT7yE6y/hUsFAfQJtv+WsHXJ1PUsgeP9x4vyx4hs3pXrctvbnWmvp4rPgMd5wi3qPi3O5BkKaQ0m1HnFx/9ZvrwSZVh9XvoCL2k54kBNZallcU7KJrKUYY=
+Received: from MWHPR15MB1216.namprd15.prod.outlook.com (10.175.2.17) by
+ MWHPR15MB1534.namprd15.prod.outlook.com (10.173.235.148) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2347.18; Thu, 10 Oct 2019 23:29:04 +0000
+Received: from MWHPR15MB1216.namprd15.prod.outlook.com
+ ([fe80::24c9:a1ce:eeeb:9246]) by MWHPR15MB1216.namprd15.prod.outlook.com
+ ([fe80::24c9:a1ce:eeeb:9246%10]) with mapi id 15.20.2347.016; Thu, 10 Oct
+ 2019 23:29:04 +0000
+From: Tao Ren <taoren@fb.com>
+To: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>, Brendan Higgins
+ <brendanhiggins@google.com>, Wolfram Sang <wsa@the-dreams.de>, "Benjamin
+ Herrenschmidt" <benh@kernel.crashing.org>,
+ Joel Stanley <joel@jms.id.au>, "Rob Herring" <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ "Andrew Jeffery" <andrew@aj.id.au>, Cedric Le Goater <clg@kaod.org>
+Subject: Re: [PATCH] i2c: aspeed: fix master pending state handling
+Thread-Topic: [PATCH] i2c: aspeed: fix master pending state handling
+Thread-Index: AQHVfud35WuTlVbA0UqacW6NAtrttKdUhy+A
+Date: Thu, 10 Oct 2019 23:29:04 +0000
+Message-ID: <49244d71-cbc3-f2ae-97ac-74b5f68a4816@fb.com>
+References: <20191009212034.20325-1-jae.hyun.yoo@linux.intel.com>
+In-Reply-To: <20191009212034.20325-1-jae.hyun.yoo@linux.intel.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: MW2PR16CA0035.namprd16.prod.outlook.com (2603:10b6:907::48)
+ To MWHPR15MB1216.namprd15.prod.outlook.com
+ (2603:10b6:320:22::17)
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [2620:10d:c090:200::1:a83d]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: f0395ed9-026b-473f-6209-08d74dd9a346
+x-ms-traffictypediagnostic: MWHPR15MB1534:
+x-microsoft-antispam-prvs: <MWHPR15MB15343EA3E2DDAF6F1E5DBBF9B2940@MWHPR15MB1534.namprd15.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 018632C080
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(39860400002)(136003)(346002)(376002)(366004)(396003)(199004)(189003)(71190400001)(305945005)(7736002)(71200400001)(478600001)(58126008)(6116002)(8676002)(54906003)(110136005)(316002)(6246003)(2906002)(7416002)(25786009)(4744005)(64756008)(66446008)(186003)(66946007)(66476007)(66556008)(6436002)(229853002)(86362001)(52116002)(5660300002)(6506007)(53546011)(386003)(11346002)(102836004)(8936002)(2616005)(486006)(446003)(76176011)(6486002)(4326008)(476003)(31696002)(6512007)(99286004)(36756003)(256004)(14444005)(14454004)(31686004)(81156014)(81166006)(65806001)(46003)(65956001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:MWHPR15MB1534;
+ H:MWHPR15MB1216.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: fb.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: jY8KYe3q0A3gQPdrrLbuIwTEJykHlpUie1bIwbAv4qe2zLmjW3xag+mcrfHf+JtXr4wkyadGoWtycgj2VIGkL6eXSX5GRYqtk6xZuiCL34IJOuCmv4255fJc3aU1Q9Vje0yA+6XVFlUbu2XP4YnuhNSTm/kjd/gDRAyfXRdEoqKypsJmtuoRMfHhmbIhEDlmSE4H5rpIcPMh5l8qsum5nqMXPz96ekxdDOCfIbF+Qabqtpm0NCuS9+6fviE/leUOftEpC8i28m9zVqrlrv8b6625F4sYHh1aCYUNVngk+Y5T7QZIBlldK5e4p6ol1qGXijfS7QT/m5VPeTWI4cNpqE0XvxVxZtu02efYZdFG4PvxQ0lpEfFGez3iCMuhhmaQTzJzUulik5hLJ7tgKyWZoXAQA8BARnbq9hfHPJykUnM=
+x-ms-exchange-transport-forked: True
+Content-ID: <E79784B537921D40A3923439E52E2764@namprd15.prod.outlook.com>
 MIME-Version: 1.0
-References: <20191004115919.20788-1-clg@kaod.org>
- <20191009225555.67622339@dhcp-172-31-174-146.wireless.concordia.ca>
-In-Reply-To: <20191009225555.67622339@dhcp-172-31-174-146.wireless.concordia.ca>
-From: Joel Stanley <joel@jms.id.au>
-Date: Thu, 10 Oct 2019 23:47:45 +0000
-Message-ID: <CACPK8Xe__AYvrh40vqjwoM=XKJfp5MeqrMARpFUDGWCyJK6jXQ@mail.gmail.com>
-Subject: Re: [PATCH 00/16] mtd: spi-nor: aspeed: AST2600 support and extensions
-To: Boris Brezillon <boris.brezillon@collabora.com>
+X-MS-Exchange-CrossTenant-Network-Message-Id: f0395ed9-026b-473f-6209-08d74dd9a346
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Oct 2019 23:29:04.2453 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 8ae927fe-1255-47a7-a2af-5f3a069daaa2
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: pU+wJUFfFWbGgcBeQe9YNVr50DCi4SnTGo2WSeWh8RI7O0+vzO16f15U9UDcaJVz
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR15MB1534
+X-OriginatorOrg: fb.com
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
+ definitions=2019-10-10_09:2019-10-10,2019-10-10 signatures=0
+X-Proofpoint-Spam-Details: rule=fb_default_notspam policy=fb_default score=0
+ malwarescore=0
+ phishscore=0 clxscore=1015 bulkscore=0 impostorscore=0 mlxscore=0
+ suspectscore=0 mlxlogscore=999 lowpriorityscore=0 adultscore=0 spamscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1908290000 definitions=main-1910100209
+X-FB-Internal: deliver
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_164758_202994_BCC0423A 
-X-CRM114-Status: GOOD (  25.21  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191010_165008_123288_56F5F7FB 
+X-CRM114-Status: GOOD (  15.95  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [67.231.153.30 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (joel.stan[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [67.231.153.30 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,79 +163,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Vignesh Raghavendra <vigneshr@ti.com>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>,
- Tudor Ambarus <tudor.ambarus@microchip.com>, Andrew Jeffery <andrew@aj.id.au>,
- Richard Weinberger <richard@nod.at>, Marek Vasut <marek.vasut@gmail.com>,
- linux-mtd@lists.infradead.org,
- =?UTF-8?Q?C=C3=A9dric_Le_Goater?= <clg@kaod.org>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Brian Norris <computersforpeace@gmail.com>,
- David Woodhouse <dwmw2@infradead.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "openbmc@lists.ozlabs.org" <openbmc@lists.ozlabs.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCA5IE9jdCAyMDE5IGF0IDIwOjU2LCBCb3JpcyBCcmV6aWxsb24KPGJvcmlzLmJyZXpp
-bGxvbkBjb2xsYWJvcmEuY29tPiB3cm90ZToKPgo+IEhpIENlZHJpYywKPgo+IE9uIEZyaSwgIDQg
-T2N0IDIwMTkgMTM6NTk6MDMgKzAyMDAKPiBDw6lkcmljIExlIEdvYXRlciA8Y2xnQGthb2Qub3Jn
-PiB3cm90ZToKPgo+ID4gSGVsbG8sCj4gPgo+ID4gVGhpcyBzZXJpZXMgZmlyc3QgZXh0ZW5kcyB0
-aGUgc3VwcG9ydCBmb3IgdGhlIEFzcGVlZCBBU1QyNTAwIGFuZAo+ID4gQVNUMjQwMCBTTUMgZHJp
-dmVyLiBJdCBhZGRzIER1YWwgRGF0YSBzdXBwb3J0IGFuZCByZWFkIHRyYWluaW5nIGdpdmluZwo+
-ID4gdGhlIGJlc3QgcmVhZCBzZXR0aW5ncyBmb3IgYSBnaXZlbiBjaGlwLiBTdXBwb3J0IGZvciB0
-aGUgbmV3IEFTVDI2MDAKPiA+IFNvQyBpcyBhZGRlZCBhdCB0aGUgZW5kLgo+ID4KPiA+IEkgdW5k
-ZXJzdGFuZCB0aGF0IGEgbmV3IHNwaV9tZW0gZnJhbWV3b3JrIGV4aXN0cyBhbmQgSSBkbyBoYXZl
-IGFuCj4gPiBleHBlcmltZW50YWwgZHJpdmVyIHVzaW5nIGl0LiBCdXQgdW5mb3J0dW5hdGVseSwg
-aXQgaXMgZGlmZmljdWx0IHRvCj4gPiBpbnRlZ3JhdGUgdGhlIHJlYWQgdHJhaW5pbmcuIFRoZSBB
-c3BlZWQgY29uc3RyYWludHMgYXJlIG5vdCBjb21wYXRpYmxlCj4gPiBhbmQgaSBoYXZlbid0IGhh
-ZCB0aGUgdGltZSB0byBleHRlbmQgdGhlIGN1cnJlbnQgZnJhbWV3b3JrLgo+Cj4gSG0sIEkgZG9u
-J3QgdGhpbmsgdGhhdCdzIGEgZ29vZCByZWFzb24gdG8gcHVzaCBuZXcgZmVhdHVyZXMgdG8gdGhl
-Cj4gZXhpc3RpbmcgZHJpdmVyLCBlc3BlY2lhbGx5IHNpbmNlIEkgYXNrZWQgb3RoZXJzIHRvIG1p
-Z3JhdGUgdGhlaXIKPiBkcml2ZXJzIHRvIHNwaS1tZW0gaW4gdGhlIHBhc3QuIEkgZG8gdW5kZXJz
-dGFuZCB5b3VyIGNvbmNlcm5zLCBhbmQgSSdsbAo+IGxldCB0aGUgU1BJIE5PUi9NVEQgbWFpbnRh
-aW5lcnMgbWFrZSB0aGUgZmluYWwgY2FsbCwgYnV0IEkgdGhpbmsgaXQnZAo+IGJlIGJldHRlciBm
-b3IgdGhlIFNQSSBNRU0gZWNvc3lzdGVtIHRvIHRoaW5rIGFib3V0IHRoaXMgbGluay10cmFpbmlu
-Zwo+IEFQSSAoVmlnbmVzaCBuZWVkcyBpdCBmb3IgdGhlIENhZGVuY2UgZHJpdmVyIElJUkMpIHJh
-dGhlciB0aGFuIHB1c2hpbmcKPiB0aGlzIGtpbmQgb2YgZmVhdHVyZSB0byBzcGktbm9yIGNvbnRy
-b2xsZXIgZHJpdmVycy4KCkFzIENlZHJpYyBtZW50aW9uZWQsIHRoZSBPcGVuQk1DIHByb2plY3Qg
-aGFzIGJlZW4gc2hpcHBpbmcgdGhlIHJlYWQKdHJhaW5pbmcgY29kZSBmb3IgdGhlIGFzdDI0MDAv
-YXN0MjQwMCBmb3Igc2V2ZXJhbCB5ZWFycyBub3cuIEl0IHdvdWxkCmJlIGdyZWF0IHRvIHNlZSBp
-dCBpbiBtYWlubGluZS4KCkkgdGhpbmsgaXQncyByZWFzb25hYmxlIHRvIGFzayBmb3IgdGhlIGRy
-aXZlciB0byBiZSBtb3ZlZCB0byB0aGUKc3BpLW1lbSBzdWJzeXN0ZW0gb25jZSBpdCBoYXMgdGhl
-IHJlcXVpcmVkIEFQSXMuCgpDaGVlcnMsCgpKb2VsCgoKPgo+ID4KPiA+IFRoaXMgcGF0Y2hzZXQg
-aGFzIGJlZW4gaW4gdXNlIGZvciBzb21lIHRpbWUgaW4gdGhlIE9wZW5CTUMga2VybmVsIG9uCj4g
-PiB0aGVzZSBzeXN0ZW1zIDoKPiA+Cj4gPiAgKiBPcGVuUE9XRVIgUGFsbWV0dG8gKEFTVDI0MDAp
-Cj4gPiAgKiBFdmFsdWF0aW9uIGJvYXJkIChBU1QyNTAwKQo+ID4gICogT3BlblBPV0VSIFdpdGhl
-cnNwb29uIChBU1QyNTAwKQo+ID4gICogT3BlblBPV0VSIFJvbXVsdXMgKEFTVDI1MDApCj4gPiAg
-KiBPcGVuUE9XRVIgWmFpdXMgKEFTVDI1MDApCj4gPiAgICBhbmQgbWFueSBvdGhlcnMKPiA+Cj4g
-PiBhbmQgaXQgaXMgbm93IGluIHVzZSBvbiB0aGVzZSBib2FyZHMgd2l0aCB0aGUgbmV3IFNvQyA6
-Cj4gPgo+ID4gICogRXZhbHVhdGlvbiBib2FyZCAoQVNUMjYwMCkKPiA+ICAqIFRhY29tYSBib2Fy
-ZCAoQVNUMjYwMCkKPiA+Cj4gPiBUaGFua3MsCj4gPgo+ID4gQy4KPiA+Cj4gPiBBbGV4YW5kZXIg
-U29sZGF0b3YgKDEpOgo+ID4gICBtdGQ6IHNwaS1ub3I6IGZpeCBvcHRpb25zIGZvciBteDY2bDUx
-MjM1Zgo+ID4KPiA+IEPDqWRyaWMgTGUgR29hdGVyICgxNSk6Cj4gPiAgIG10ZDogc3BpLW5vcjog
-YXNwZWVkOiBVc2UgY29tbWFuZCBtb2RlIGZvciByZWFkcwo+ID4gICBtdGQ6IHNwaS1ub3I6IGFz
-cGVlZDogQWRkIHN1cHBvcnQgZm9yIFNQSSBkdWFsIElPIHJlYWQgbW9kZQo+ID4gICBtdGQ6IHNw
-aS1ub3I6IGFzcGVlZDogTGluayBjb250cm9sbGVyIHdpdGggdGhlIGFoYiBjbG9jawo+ID4gICBt
-dGQ6IHNwaS1ub3I6IGFzcGVlZDogQWRkIHJlYWQgdHJhaW5pbmcKPiA+ICAgbXRkOiBzcGktbm9y
-OiBhc3BlZWQ6IExpbWl0IHRoZSBtYXhpbXVtIFNQSSBmcmVxdWVuY3kKPiA+ICAgbXRkOiBzcGkt
-bm9yOiBhc3BlZWQ6IEFkZCBzdXBwb3J0IGZvciB0aGUgNEIgb3Bjb2Rlcwo+ID4gICBtdGQ6IHNw
-aS1ub3I6IEFkZCBzdXBwb3J0IGZvciB3MjVxNTEyanYKPiA+ICAgbXRkOiBzcGktbm9yOiBhc3Bl
-ZWQ6IEludHJvZHVjZSBhIGZpZWxkIGZvciB0aGUgQUhCIHBoeXNpY2FsIGFkZHJlc3MKPiA+ICAg
-bXRkOiBzcGktbm9yOiBhc3BlZWQ6IEludHJvZHVjZSBzZWdtZW50IG9wZXJhdGlvbnMKPiA+ICAg
-ZHQtYmluZGluZ3M6IG10ZDogYXNwZWVkLXNtYzogQWRkIG5ldyBjb21wdGF0aWJsZSBmb3IgQVNU
-MjYwMAo+ID4gICBtdGQ6IHNwaS1ub3I6IGFzcGVlZDogQWRkIGluaXRpYWwgc3VwcG9ydCBmb3Ig
-dGhlIEFTVDI2MDAKPiA+ICAgbXRkOiBzcGktbm9yOiBhc3BlZWQ6IENoZWNrIGZvciBkaXNhYmxl
-ZCBzZWdtZW50cyBvbiB0aGUgQVNUMjYwMAo+ID4gICBtdGQ6IHNwaS1ub3I6IGFzcGVlZDogSW50
-cm9kdWNlIHRyYWluaW5nIG9wZXJhdGlvbnMgcGVyIHBsYXRmb3JtCj4gPiAgIG10ZDogc3BpLW5v
-cjogYXNwZWVkOiBJbnRyb2R1Y2UgYSBIQ0xLIG1hc2sgZm9yIHRyYWluaW5nCj4gPiAgIG10ZDog
-c3BpLW5vcjogYXNwZWVkOiBBZGQgcmVhZCB0cmFpbmluZyBzdXBwb3J0IGZvciB0aGUgQVNUMjYw
-MAo+ID4KPiA+ICBkcml2ZXJzL210ZC9zcGktbm9yL2FzcGVlZC1zbWMuYyAgICAgICAgICAgICAg
-fCA1OTMgKysrKysrKysrKysrKysrKy0tCj4gPiAgZHJpdmVycy9tdGQvc3BpLW5vci9zcGktbm9y
-LmMgICAgICAgICAgICAgICAgIHwgICA1ICstCj4gPiAgLi4uL2RldmljZXRyZWUvYmluZGluZ3Mv
-bXRkL2FzcGVlZC1zbWMudHh0ICAgIHwgICAyICsKPiA+ICAzIGZpbGVzIGNoYW5nZWQsIDU1MSBp
-bnNlcnRpb25zKCspLCA0OSBkZWxldGlvbnMoLSkKPiA+Cj4KCl9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
-CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
-ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On 10/9/19 2:20 PM, Jae Hyun Yoo wrote:
+> In case of master pending state, it should not trigger a master
+> command, otherwise data could be corrupted because this H/W shares
+> the same data buffer for slave and master operations. It also means
+> that H/W command queue handling is unreliable because of the buffer
+> sharing issue. To fix this issue, it clears command queue if a
+> master command is queued in pending state to use S/W solution
+> instead of H/W command queue handling. Also, it refines restarting
+> mechanism of the pending master command.
+> 
+> Fixes: 2e57b7cebb98 ("i2c: aspeed: Add multi-master use case support")
+> Signed-off-by: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
+
+Tested-by: Tao Ren <taoren@fb.com>
+
+Tested the patch on Facebook Minipack BMC (multi-master i2c-0 environment) and
+everything looks good to me.
+
+
+Cheers,
+
+Tao
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
