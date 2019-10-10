@@ -2,88 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C518D33F4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 00:30:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5BE6D33F8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 00:31:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tnxbxM/9k2YmtRCOaPGJ0urK2DSeW1IdJz4jeXBVyvI=; b=qowDkfP/sNpGQe
-	B2ASXIlQn6TNvxGEdfJh1VcwwGdEnby4Uct/S/LSNTnEfCjh4e4vdBxvwuvsB0A5RGn8E80/TRgwa
-	2CMIl1Sg6UhYTlt/r1KThRyHX8/Vhga4FU7r9ZbC/Ur45i7NE3SLBnvzqvtzRZlnkQOYapNQvL7xM
-	Ae2WCUdWFQYGp3CNym0THW2jzxAdPN9a+oDF2OQtD/vKCPrFdGqxJzdbkJe9FFSnfGW54ztbvqFlY
-	AKcRREWqVSoal7rW+zUV60MBMO3HswdxCSSnQ0t4nVatr6gnSfzzWUjkd15YtF5NMXLW0tW4kiWT/
-	uyAe1VKG3Kohdmv8Zwjw==;
+	List-Owner; bh=Z8uxHsxT67eVhefyM34qFGfa26yKNecQ/2p4DB7W5/0=; b=Fhh2BDvTdJfCh4
+	Nky2Y81PKUxrKdYFKpFhT4YYdqshTCy3f6e5ktiXtbOML6Vsj61sMjS42AfwhU0MpZVp0dyewj5mm
+	OZzx1VSvpGm8oCvEZxfycgF4n2nWWCAWA4J8YdemNcq5mFikgjmNwGmDQwG7VAaW1BwuNKjgLRCz+
+	nFqUVONAb3X1dxup2cA88tajFfDTHsBOJRGhKVLiOSky9cx2LsTfBiiOYmLT/Bg4BVxAdLdRdJMc8
+	jPpbC0qXjdagKOSMJ3CZCDsZFAYYJXwylVTvEPKZb5wKlGhhdd9XV6q1tR5ULTwMQ0uP5pHlDyRNB
+	QZAus4fKrVenvzeljXWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIgwm-0007is-PE; Thu, 10 Oct 2019 22:30:12 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1iIgy4-0000Sz-B1; Thu, 10 Oct 2019 22:31:32 +0000
+Received: from mail-eopbgr70072.outbound.protection.outlook.com ([40.107.7.72]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIgwZ-0007Lr-VV
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 22:30:02 +0000
-Received: by mail-pl1-x642.google.com with SMTP id q15so3472631pll.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 10 Oct 2019 15:29:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=+Rq5CoTE2b9CRlBzcczaJbDgzRspVbnY0jyqvQtXOLk=;
- b=F0TXQ8XOSIFR3LftRORcvg6zYvgwuWjXU/vMmsRqPOPJbp6sOmBg8cT/WR2SO4+7n7
- YmoVnNKu6N76Qt8+eZ88+5IydI3fL1sL0ojTwUSN0V50JeV8uqQE7Dpd3/jGR6CUj6dO
- padyHY857EaLkA/6Js8ckRa0uRB6sYPuUvwYdfEQcI/pXCscm9U/3CCyonjBjvAcXloj
- bC8Jcip2EX3aXc7IC7deq7maBynlc80ExvuSzBctzGoHDk6PoErrk56bK+n1e+HWpWHJ
- DOdQQ945k1KQEG58m1UH5ATl38u5n/seJtzaFJugIOauRY7IObLwvl+fBP2dm+XicFy+
- RdRw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=+Rq5CoTE2b9CRlBzcczaJbDgzRspVbnY0jyqvQtXOLk=;
- b=FN4rOuh3iGr+rKqDJA0Fk5ds+S5u7Rdz+uczz4DngnTLEwMIebyF5/IHgSSNw5llzv
- vAz4ai/d5pst6db/RHWvZfjWRkz3pqNvzHFuGbhx3Gv8oxu9z+a6QunxgldTcp766FTF
- WP7jaPAilKNBxZxb870qv1LpW3MixZ1Ene9huWH6ZilOVHgomWaNcKcyBoVdqH3gazzn
- cfk+mVwdwKeCN3jq08KO4ot+HoDB0+8M3G+3xJDynj1bUNOeycso4RpQQ/m2r9uRnLKK
- GIpemiw1xlehXixTocjvKC52SfDYshHlbM0OdGk07H6FODZ6w2Ul/UXjo7LVdEi3ex43
- IQpA==
-X-Gm-Message-State: APjAAAUyHZkA9xpFhAmx7eQYjIBZMHjv/Q1IQ00IkuaDgR9bhpxukL6v
- rjvsooCe6KRQHRJLdEEcFKs=
-X-Google-Smtp-Source: APXvYqyTxO9tIPDRTcjUxp64SziEtWMojxOT65LeO0UkvFHvXqwvgTyLxurGAOgkGXCJxq2hsDxzSg==
-X-Received: by 2002:a17:902:6b06:: with SMTP id
- o6mr12111867plk.154.1570746598284; 
- Thu, 10 Oct 2019 15:29:58 -0700 (PDT)
-Received: from dtor-ws ([2620:15c:202:201:3adc:b08c:7acc:b325])
- by smtp.gmail.com with ESMTPSA id h70sm6222740pgc.48.2019.10.10.15.29.56
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 10 Oct 2019 15:29:57 -0700 (PDT)
-Date: Thu, 10 Oct 2019 15:29:55 -0700
-From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-To: Guenter Roeck <linux@roeck-us.net>
-Subject: Re: [PATCH 15/36] ARM: s3c: adc: move header to linux/soc/samsung
-Message-ID: <20191010222955.GB229325@dtor-ws>
-References: <20191010202802.1132272-1-arnd@arndb.de>
- <20191010203043.1241612-1-arnd@arndb.de>
- <20191010203043.1241612-15-arnd@arndb.de>
- <da32e8a3-cbb3-ea08-1c55-55980b3dc53e@roeck-us.net>
+ id 1iIgxu-0000Rk-Ah
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 22:31:23 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=AewdmOUQ0tSDNLZYYFm4STu1CbIVIAHhlfQH+R8V5S4UxK7FbhweS3LOZqdlRA30bA6kOUvzmXfTr2nw88CjmiiXzVEGJpoH4X2Bxn1krhg5fLotshaEfnqsFMJvqPeRRCGEl1ob2PiQRejdf+bbMTZ3Rd4zhRhPZkoTAFqtECd9/Xctrm+nXN05GI7lEOc38efGmicgp8e/xujfb+ZJ5lYCK6189SfetijJd6XdAcPSbu+mA2rXjADezCafdQuqw8/YkKjWLoAXCxaLGNIgjEzshYh9ffdWMPZds0gCexBk7xC4sEtkJJ3p2MYQYcpgHlTGjDR4PtXqcc1hTAdztA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=JnN/7CJrC76VnTCk66pmfUbRG8pLOyVhaJQYFwMrhNE=;
+ b=KrtkhNoLP0NJBDtKDwKy7XfNtq2nOVkd/wEgJPw65x0lPx0CVwwLWWVhqmV70Im17lYnaDec9GIZ+FA37tbiHPuxtchlZ1Lic62jxkRYvstK5FKm5c7PC9hgU7cxZfaSTr5sLmuB+KMb+9Sq9OjQfdyF4h479LfudlrRbSGoTX2PLgO8L/iyUeM5Sdmo58uwDptWvTlOMWzXikpFwmtR0lyooF80WBeu6Zv5Zb98SnvuGO/DrvHQPm0aosAB94ehuB9OLmjH9AuW0p5ZKFAAmRUbm6Zf9guWL+o+sUTl6XtImRz+isGdsBR/pYpsqhxITl+zU5YnSYIrAZuV2CK6YQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=JnN/7CJrC76VnTCk66pmfUbRG8pLOyVhaJQYFwMrhNE=;
+ b=MRUNDfqm1vDpKcpAj8DLJo77YCEDGFkn8OkIphgg9Q9JqP7yIFGpMDvT4r/jDmYvS3tSUbNSyBM0FOD1ubPNmJ1p3qmf+N90G3om1keQi9p4nuzrEvxrWz3X50h27JLH90fxjpO6MQQTxyT47X3O06ZKtfrRCCmchPIDAIly8uY=
+Received: from VE1PR04MB6687.eurprd04.prod.outlook.com (20.179.234.30) by
+ VE1PR04MB6639.eurprd04.prod.outlook.com (10.255.118.11) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2347.21; Thu, 10 Oct 2019 22:31:16 +0000
+Received: from VE1PR04MB6687.eurprd04.prod.outlook.com
+ ([fe80::c93:c279:545b:b6b6]) by VE1PR04MB6687.eurprd04.prod.outlook.com
+ ([fe80::c93:c279:545b:b6b6%3]) with mapi id 15.20.2347.016; Thu, 10 Oct 2019
+ 22:31:16 +0000
+From: Leo Li <leoyang.li@nxp.com>
+To: Andy Tang <andy.tang@nxp.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>
+Subject: RE: [PATCH v2] arm64: dts: ls1028a: fix a compatible issue
+Thread-Topic: [PATCH v2] arm64: dts: ls1028a: fix a compatible issue
+Thread-Index: AQHVf0brHYC8TgXW1EGDttx7++luRKdUdjcw
+Date: Thu, 10 Oct 2019 22:31:16 +0000
+Message-ID: <VE1PR04MB6687C0E8739C82D1DAFC71D58F940@VE1PR04MB6687.eurprd04.prod.outlook.com>
+References: <20191010083334.7037-1-andy.tang@nxp.com>
+In-Reply-To: <20191010083334.7037-1-andy.tang@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leoyang.li@nxp.com; 
+x-originating-ip: [64.157.242.222]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: b802e09c-64b9-48ed-a286-08d74dd190c3
+x-ms-office365-filtering-ht: Tenant
+x-ms-traffictypediagnostic: VE1PR04MB6639:|VE1PR04MB6639:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VE1PR04MB6639E67272C69A7001D208DC8F940@VE1PR04MB6639.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1284;
+x-forefront-prvs: 018632C080
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(366004)(396003)(346002)(376002)(39860400002)(13464003)(189003)(199004)(55016002)(8936002)(8676002)(9686003)(6436002)(7736002)(6116002)(11346002)(25786009)(446003)(486006)(476003)(66066001)(6246003)(81156014)(4326008)(86362001)(26005)(14444005)(66446008)(3846002)(71190400001)(71200400001)(81166006)(256004)(14454004)(66946007)(186003)(76116006)(5660300002)(102836004)(64756008)(66556008)(66476007)(2906002)(6506007)(53546011)(2501003)(110136005)(54906003)(74316002)(52536014)(99286004)(229853002)(305945005)(478600001)(33656002)(316002)(76176011)(7696005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6639;
+ H:VE1PR04MB6687.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 4ZqcARqLaMF5Hte8a3gstWR7f33ki+MMV+X4Gn4zqP7u1bZOXYRYgxHV8I4Cam9yozZFK8ADs8rZHPYQFY8cw4suQpLb3kuIfwBDvv5089U7MdO6MN7gGM7bqXYcYHyIAr2ANrlN6dmj3xBF7kby6MizVI3MR+Rlf+Q+vtD4d/h+Rq/gBkZ6VmAP5EVK62svka01nTL8utftZGMEg0hNCg6EW/+oGA/iMleG9ORIaDstR9kwEEHPrifPLWK1DMGIGK6ciWXkyp/TWRZ0ZxqSHt/xg88O6p59YtO+xjln5oNHm28zdlQ3SPcMTpdMUYeK9vvFJ+I3BpJWY/zDUAQ9W3n+gt434zBOGcwe8Be28nW8fQ883a6kr0isZS0A4dReUShyJkLYb4X84nLqiKzdujcf5J/cevvDKozo26mGvtQ=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <da32e8a3-cbb3-ea08-1c55-55980b3dc53e@roeck-us.net>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b802e09c-64b9-48ed-a286-08d74dd190c3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Oct 2019 22:31:16.6489 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: bu858TigHGrFGhBTyL6okp9rIxeQQxBVTnapFT0u1TV5A72uWD1b0HpDS82BLHIy0is2Y6c5nsafkgRk7Q/hew==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6639
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_153000_042096_55967D2D 
-X-CRM114-Status: GOOD (  17.71  )
+X-CRM114-CacheID: sfid-20191010_153122_525293_979846E6 
+X-CRM114-Status: GOOD (  14.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dmitry.torokhov[at]gmail.com)
+ no trust [40.107.7.72 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -103,203 +119,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-hwmon@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- Arnd Bergmann <arnd@arndb.de>, linux-pm@vger.kernel.org,
- linus.walleij@linaro.org, Sebastian Reichel <sre@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, linux-kernel@vger.kernel.org,
- Jean Delvare <jdelvare@suse.com>, Kukjin Kim <kgene@kernel.org>,
- linux-input@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Andy Tang <andy.tang@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 10, 2019 at 03:20:32PM -0700, Guenter Roeck wrote:
-> On 10/10/19 1:29 PM, Arnd Bergmann wrote:
-> > There are multiple drivers using the private adc interface.
-> > It seems unlikely that they would ever get converted to iio,
-> > so make the current state official by making the header file
-> > global.
-> > 
-> > The s3c2410_ts driver needs a couple of register definitions
-> > as well.
-> > 
-> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+
+
+> -----Original Message-----
+> From: Yuantian Tang <andy.tang@nxp.com>
+> Sent: Thursday, October 10, 2019 3:34 AM
+> To: shawnguo@kernel.org
+> Cc: Leo Li <leoyang.li@nxp.com>; robh+dt@kernel.org;
+> mark.rutland@arm.com; linux-arm-kernel@lists.infradead.org;
+> devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; Andy Tang
+> <andy.tang@nxp.com>
+> Subject: [PATCH v2] arm64: dts: ls1028a: fix a compatible issue
 > 
-> For hwmon:
+> The I2C multiplexer used on ls1028aqds is PCA9547, not PCA9847.
+> If the wrong compatible was used, this chip will not be able to be probed
+> correctly and hence fail to work.
 > 
-> Acked-by: Guenter Roeck <linux@roeck-us.net>
+> Signed-off-by: Yuantian Tang <andy.tang@nxp.com>
 
-For input:
+Acked-by: Li Yang <leoyang.li@nxp.com>
 
-Acked-by: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-
-
+> ---
+> v2:
+> 	- refine the description
+>  arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> > ---
-> >   arch/arm/mach-s3c64xx/mach-crag6410.c         |  2 +-
-> >   arch/arm/mach-s3c64xx/mach-mini6410.c         |  2 +-
-> >   arch/arm/mach-s3c64xx/mach-real6410.c         |  2 +-
-> >   arch/arm/mach-s3c64xx/mach-smdk6410.c         |  2 +-
-> >   arch/arm/plat-samsung/adc.c                   |  2 +-
-> >   arch/arm/plat-samsung/devs.c                  |  2 +-
-> >   drivers/hwmon/s3c-hwmon.c                     |  2 +-
-> >   drivers/input/touchscreen/s3c2410_ts.c        | 37 ++++++++++++++++++-
-> >   drivers/power/supply/s3c_adc_battery.c        |  2 +-
-> >   .../linux/soc/samsung/s3c-adc.h               |  0
-> >   10 files changed, 43 insertions(+), 10 deletions(-)
-> >   rename arch/arm/plat-samsung/include/plat/adc.h => include/linux/soc/samsung/s3c-adc.h (100%)
-> > 
-> > diff --git a/arch/arm/mach-s3c64xx/mach-crag6410.c b/arch/arm/mach-s3c64xx/mach-crag6410.c
-> > index da5b50981a14..133453562d23 100644
-> > --- a/arch/arm/mach-s3c64xx/mach-crag6410.c
-> > +++ b/arch/arm/mach-s3c64xx/mach-crag6410.c
-> > @@ -57,7 +57,7 @@
-> >   #include <plat/keypad.h>
-> >   #include <plat/devs.h>
-> >   #include <plat/cpu.h>
-> > -#include <plat/adc.h>
-> > +#include <linux/soc/samsung/s3c-adc.h>
-> >   #include <linux/platform_data/i2c-s3c2410.h>
-> >   #include <plat/pm.h>
-> >   #include <plat/samsung-time.h>
-> > diff --git a/arch/arm/mach-s3c64xx/mach-mini6410.c b/arch/arm/mach-s3c64xx/mach-mini6410.c
-> > index 0dd36ae49e6a..c7140300bd3f 100644
-> > --- a/arch/arm/mach-s3c64xx/mach-mini6410.c
-> > +++ b/arch/arm/mach-s3c64xx/mach-mini6410.c
-> > @@ -27,7 +27,7 @@
-> >   #include <mach/regs-gpio.h>
-> >   #include <mach/gpio-samsung.h>
-> > -#include <plat/adc.h>
-> > +#include <linux/soc/samsung/s3c-adc.h>
-> >   #include <plat/cpu.h>
-> >   #include <plat/devs.h>
-> >   #include <plat/fb.h>
-> > diff --git a/arch/arm/mach-s3c64xx/mach-real6410.c b/arch/arm/mach-s3c64xx/mach-real6410.c
-> > index 0ff88b6859c4..f55097fde94c 100644
-> > --- a/arch/arm/mach-s3c64xx/mach-real6410.c
-> > +++ b/arch/arm/mach-s3c64xx/mach-real6410.c
-> > @@ -29,7 +29,7 @@
-> >   #include <mach/gpio-samsung.h>
-> >   #include <mach/irqs.h>
-> > -#include <plat/adc.h>
-> > +#include <linux/soc/samsung/s3c-adc.h>
-> >   #include <plat/cpu.h>
-> >   #include <plat/devs.h>
-> >   #include <plat/fb.h>
-> > diff --git a/arch/arm/mach-s3c64xx/mach-smdk6410.c b/arch/arm/mach-s3c64xx/mach-smdk6410.c
-> > index 95bdcfe95a53..3042f6cbffd9 100644
-> > --- a/arch/arm/mach-s3c64xx/mach-smdk6410.c
-> > +++ b/arch/arm/mach-s3c64xx/mach-smdk6410.c
-> > @@ -60,7 +60,7 @@
-> >   #include <plat/devs.h>
-> >   #include <plat/cpu.h>
-> > -#include <plat/adc.h>
-> > +#include <linux/soc/samsung/s3c-adc.h>
-> >   #include <linux/platform_data/touchscreen-s3c2410.h>
-> >   #include <plat/keypad.h>
-> >   #include <plat/samsung-time.h>
-> > diff --git a/arch/arm/plat-samsung/adc.c b/arch/arm/plat-samsung/adc.c
-> > index ee3d5c989a76..623a9774cc52 100644
-> > --- a/arch/arm/plat-samsung/adc.c
-> > +++ b/arch/arm/plat-samsung/adc.c
-> > @@ -20,7 +20,7 @@
-> >   #include <linux/regulator/consumer.h>
-> >   #include <plat/regs-adc.h>
-> > -#include <plat/adc.h>
-> > +#include <linux/soc/samsung/s3c-adc.h>
-> >   /* This driver is designed to control the usage of the ADC block between
-> >    * the touchscreen and any other drivers that may need to use it, such as
-> > diff --git a/arch/arm/plat-samsung/devs.c b/arch/arm/plat-samsung/devs.c
-> > index fd94a35e22f8..ddd90f0bb380 100644
-> > --- a/arch/arm/plat-samsung/devs.c
-> > +++ b/arch/arm/plat-samsung/devs.c
-> > @@ -44,7 +44,7 @@
-> >   #include <plat/cpu.h>
-> >   #include <plat/devs.h>
-> > -#include <plat/adc.h>
-> > +#include <linux/soc/samsung/s3c-adc.h>
-> >   #include <linux/platform_data/ata-samsung_cf.h>
-> >   #include <plat/fb.h>
-> >   #include <plat/fb-s3c2410.h>
-> > diff --git a/drivers/hwmon/s3c-hwmon.c b/drivers/hwmon/s3c-hwmon.c
-> > index b490fe3d2ee8..f2703c5460d0 100644
-> > --- a/drivers/hwmon/s3c-hwmon.c
-> > +++ b/drivers/hwmon/s3c-hwmon.c
-> > @@ -20,7 +20,7 @@
-> >   #include <linux/hwmon.h>
-> >   #include <linux/hwmon-sysfs.h>
-> > -#include <plat/adc.h>
-> > +#include <linux/soc/samsung/s3c-adc.h>
-> >   #include <linux/platform_data/hwmon-s3c.h>
-> >   struct s3c_hwmon_attr {
-> > diff --git a/drivers/input/touchscreen/s3c2410_ts.c b/drivers/input/touchscreen/s3c2410_ts.c
-> > index b346e7cafd62..1a5a178ea286 100644
-> > --- a/drivers/input/touchscreen/s3c2410_ts.c
-> > +++ b/drivers/input/touchscreen/s3c2410_ts.c
-> > @@ -21,10 +21,43 @@
-> >   #include <linux/clk.h>
-> >   #include <linux/io.h>
-> > -#include <plat/adc.h>
-> > -#include <plat/regs-adc.h>
-> > +#include <linux/soc/samsung/s3c-adc.h>
-> >   #include <linux/platform_data/touchscreen-s3c2410.h>
-> > +#define	S3C2410_ADCCON			(0x00)
-> > +#define	S3C2410_ADCTSC			(0x04)
-> > +#define	S3C2410_ADCDLY			(0x08)
-> > +#define	S3C2410_ADCDAT0			(0x0C)
-> > +#define	S3C2410_ADCDAT1			(0x10)
-> > +#define	S3C64XX_ADCUPDN			(0x14)
-> > +#define	S3C2443_ADCMUX			(0x18)
-> > +#define	S3C64XX_ADCCLRINT		(0x18)
-> > +#define	S5P_ADCMUX			(0x1C)
-> > +#define	S3C64XX_ADCCLRINTPNDNUP		(0x20)
-> > +
-> > +/* ADCTSC Register Bits */
-> > +#define S3C2443_ADCTSC_UD_SEN		(1 << 8)
-> > +#define S3C2410_ADCTSC_YM_SEN		(1<<7)
-> > +#define S3C2410_ADCTSC_YP_SEN		(1<<6)
-> > +#define S3C2410_ADCTSC_XM_SEN		(1<<5)
-> > +#define S3C2410_ADCTSC_XP_SEN		(1<<4)
-> > +#define S3C2410_ADCTSC_PULL_UP_DISABLE	(1<<3)
-> > +#define S3C2410_ADCTSC_AUTO_PST		(1<<2)
-> > +#define S3C2410_ADCTSC_XY_PST(x)	(((x)&0x3)<<0)
-> > +
-> > +/* ADCDAT0 Bits */
-> > +#define S3C2410_ADCDAT0_UPDOWN		(1<<15)
-> > +#define S3C2410_ADCDAT0_AUTO_PST	(1<<14)
-> > +#define S3C2410_ADCDAT0_XY_PST		(0x3<<12)
-> > +#define S3C2410_ADCDAT0_XPDATA_MASK	(0x03FF)
-> > +
-> > +/* ADCDAT1 Bits */
-> > +#define S3C2410_ADCDAT1_UPDOWN		(1<<15)
-> > +#define S3C2410_ADCDAT1_AUTO_PST	(1<<14)
-> > +#define S3C2410_ADCDAT1_XY_PST		(0x3<<12)
-> > +#define S3C2410_ADCDAT1_YPDATA_MASK	(0x03FF)
-> > +
-> > +
-> >   #define TSC_SLEEP  (S3C2410_ADCTSC_PULL_UP_DISABLE | S3C2410_ADCTSC_XY_PST(0))
-> >   #define INT_DOWN	(0)
-> > diff --git a/drivers/power/supply/s3c_adc_battery.c b/drivers/power/supply/s3c_adc_battery.c
-> > index 3d00b35cafc9..60b7f41ab063 100644
-> > --- a/drivers/power/supply/s3c_adc_battery.c
-> > +++ b/drivers/power/supply/s3c_adc_battery.c
-> > @@ -22,7 +22,7 @@
-> >   #include <linux/init.h>
-> >   #include <linux/module.h>
-> > -#include <plat/adc.h>
-> > +#include <linux/soc/samsung/s3c-adc.h>
-> >   #define BAT_POLL_INTERVAL		10000 /* ms */
-> >   #define JITTER_DELAY			500 /* ms */
-> > diff --git a/arch/arm/plat-samsung/include/plat/adc.h b/include/linux/soc/samsung/s3c-adc.h
-> > similarity index 100%
-> > rename from arch/arm/plat-samsung/include/plat/adc.h
-> > rename to include/linux/soc/samsung/s3c-adc.h
-> > 
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
+> b/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
+> index 5e14e5a19744..f5da9e8b0d9d 100644
+> --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
+> @@ -107,7 +107,7 @@
+>  	status = "okay";
 > 
+>  	i2c-mux@77 {
+> -		compatible = "nxp,pca9847";
+> +		compatible = "nxp,pca9547";
+>  		reg = <0x77>;
+>  		#address-cells = <1>;
+>  		#size-cells = <0>;
+> --
+> 2.17.1
 
--- 
-Dmitry
 
 _______________________________________________
 linux-arm-kernel mailing list
