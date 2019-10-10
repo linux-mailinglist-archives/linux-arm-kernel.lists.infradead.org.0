@@ -2,81 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BD92D1E76
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 04:30:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E646D1E9B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 04:43:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ocIT2bHhUbbKK86kQ/BUdxpdo4gUjbzC5YeT2d4dpyk=; b=aR1aXTojx0JRRK
-	I87tG6MBQy9f8r9dRBoqL7SFH3YcoZFvw1uff4k+sZjzg3MVgGbkMOZzDFSy3VtCfGVYktO6I5sdo
-	b6vr9aCMJ8jqivgWDoPqYlETWiemF4ZBo9ggrI4acXBWr8v7PCRY7e9H7bBfWrFXhLyEA+pU+70Nk
-	E4LLc+FiPfoBV/fNQZAS/pUsiWiBZQM10QjvtVRnhiRyFK63Ac+hdrfugxucd/C7E4gjfbfMrYGq2
-	BoobKttz7um4qpGGErOyr7WNdazSdNeBXI+UpEDn87KsUmZ35FSb1q8csijWCMGw1knh4u67Z7//k
-	Q9Da5RtzAORVqiHonzlQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=32qRxVzlWAv8/vhc3P3qQJoOUmLoIYGmDnZYzrHCZh0=; b=JZR
+	9BYnyHvBX8MxJhPJ8iby0g77NJ/oo8ozs2F3+umCKKoXj4TuayYg9jaz9dmN21neXaCHbLH7BQK0c
+	8dB0R3K7+yvRirdztyS1UYKp5qKUaQaPTxx2JghAnG2tsPbYVXonD6Ww05rV6XkhNdFdgBaWNK1im
+	TrEKcA19UWBtQ2Aaoq3enY+QkyLYokI6AoLcA976uov2mHz6deloqpPaiwq7SvdEPR/WLBZQFt7QL
+	SZDIFROJrCRVdNV3vYEL7ERiYYZDY2B8OiejR5Y6mePzp70hukqxtWgCB7gdPCdZT3KTjSHzFvsfK
+	MTSCRvS054y7Qqw9ESKR38ga42lOgnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIODZ-0006IE-EI; Thu, 10 Oct 2019 02:30:17 +0000
-Received: from conssluserg-01.nifty.com ([210.131.2.80])
+	id 1iIOQ1-00039N-KY; Thu, 10 Oct 2019 02:43:09 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIODI-0006Gr-QA
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 02:30:02 +0000
-Received: from mail-ua1-f49.google.com (mail-ua1-f49.google.com
- [209.85.222.49]) (authenticated)
- by conssluserg-01.nifty.com with ESMTP id x9A2TQQH000485
- for <linux-arm-kernel@lists.infradead.org>; Thu, 10 Oct 2019 11:29:27 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-01.nifty.com x9A2TQQH000485
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1570674567;
- bh=Q7utFN6RzuE8eM4XqhBr6De112exitRV2SZcLvRw+/Y=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=lfR7F1noQwk6SX0ADbu5hKqkv67oZZhkBR8M6ERsWbkWf/LBefvJB7MvjzmMX3W0Q
- 7L83VrJkxM1N+VrTTE4fgeC7YZcwg+yEC6YHciTFMF7TegJxQpPGoMoz8PmTaVxIyr
- +M8Zy5Fu94jMJYGO9Xv//G91R47IMsjmMAXaGmxZnLQq64JxF9yZfADZo5HMTn1OJp
- 7V5g5Gy99M56A5Z0VFjxSkNCpDWYaB86VII91VcMNjRcvyhn9NikZboIxHeEYyL/q1
- XSK4qnIPuNqb61MSha+vSHUboZB28OxPNNruQmr1ebGCD2Zat3JKE5DWtAFja4OVoa
- WHnGEk3JR445Q==
-X-Nifty-SrcIP: [209.85.222.49]
-Received: by mail-ua1-f49.google.com with SMTP id l13so1442654uap.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 09 Oct 2019 19:29:27 -0700 (PDT)
-X-Gm-Message-State: APjAAAWsry7+C2aGljchYirIrk4z+8+2v7r8B6ufiPFXDVIYtSiIlCFq
- tQPBJ36crVDisjUWSMubN+PxeO4sSGG1o9gAY48=
-X-Google-Smtp-Source: APXvYqxJHdHRSk8iJK5J8OgjOjbFblWwYJs3YgddSOljJ0wgWwB7NP2b6e2SsoVqJmZZ8fJTYDM1o8iI6Lmnx9UQtLs=
-X-Received: by 2002:a9f:31c5:: with SMTP id w5mr3361388uad.40.1570674566294;
- Wed, 09 Oct 2019 19:29:26 -0700 (PDT)
-MIME-Version: 1.0
-References: <cover.1570633189.git.vilhelm.gray@gmail.com>
- <893c3b4f03266c9496137cc98ac2b1bd27f92c73.1570633189.git.vilhelm.gray@gmail.com>
- <CAK7LNATgW7bXUmqV=3QAaJ0Qu73Kox-TgDCQJb=s0=mwewSCUg@mail.gmail.com>
- <20191009170917.GG32742@smile.fi.intel.com>
- <CAMuHMdXyyrL4ibKvjMV6r8TuxpmK73=JxsWNEfcRk1NjwsnOjA@mail.gmail.com>
-In-Reply-To: <CAMuHMdXyyrL4ibKvjMV6r8TuxpmK73=JxsWNEfcRk1NjwsnOjA@mail.gmail.com>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Thu, 10 Oct 2019 11:28:50 +0900
-X-Gmail-Original-Message-ID: <CAK7LNASVdqU_6+_iinWStb9ALqLw494pnZKr46fLW+WJ9nUo6A@mail.gmail.com>
-Message-ID: <CAK7LNASVdqU_6+_iinWStb9ALqLw494pnZKr46fLW+WJ9nUo6A@mail.gmail.com>
-Subject: Re: [PATCH v17 01/14] bitops: Introduce the for_each_set_clump8 macro
-To: Geert Uytterhoeven <geert@linux-m68k.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- William Breathitt Gray <vilhelm.gray@gmail.com>
+ id 1iIOPt-00038i-8g
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 02:43:02 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id D228F200432;
+ Thu, 10 Oct 2019 04:42:57 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 8F2C3200048;
+ Thu, 10 Oct 2019 04:42:52 +0200 (CEST)
+Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4DC24402DA;
+ Thu, 10 Oct 2019 10:42:46 +0800 (SGT)
+From: Hui Song <hui.song_1@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>
+Subject: [PATCH v7] gpio/mpc8xxx: change irq handler from chained to normal
+Date: Thu, 10 Oct 2019 10:32:05 +0800
+Message-Id: <20191010023205.8071-1-hui.song_1@nxp.com>
+X-Mailer: git-send-email 2.9.5
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_193001_061904_35B81AB3 
-X-CRM114-Status: GOOD (  16.25  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191009_194301_582353_93D9377D 
+X-CRM114-Status: GOOD (  12.73  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.80 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,82 +66,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch <linux-arch@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Linux PM mailing list <linux-pm@vger.kernel.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- morten.tiljeset@prevas.dk, sean.nyekjaer@prevas.dk,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Lukas Wunner <lukas@wunner.de>, Andrew Morton <akpm@linux-foundation.org>,
- Phil Reid <preid@electromag.com.au>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Song Hui <hui.song_1@nxp.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-gpio@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 10, 2019 at 3:54 AM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
->
-> Hi Andy,
->
-> On Wed, Oct 9, 2019 at 7:09 PM Andy Shevchenko
-> <andriy.shevchenko@linux.intel.com> wrote:
-> > On Thu, Oct 10, 2019 at 01:28:08AM +0900, Masahiro Yamada wrote:
-> > > On Thu, Oct 10, 2019 at 12:27 AM William Breathitt Gray
-> > > <vilhelm.gray@gmail.com> wrote:
-> > > >
-> > > > This macro iterates for each 8-bit group of bits (clump) with set bits,
-> > > > within a bitmap memory region. For each iteration, "start" is set to the
-> > > > bit offset of the found clump, while the respective clump value is
-> > > > stored to the location pointed by "clump". Additionally, the
-> > > > bitmap_get_value8 and bitmap_set_value8 functions are introduced to
-> > > > respectively get and set an 8-bit value in a bitmap memory region.
-> >
-> > > Why is the return type "unsigned long" where you know
-> > > it return the 8-bit value ?
-> >
-> > Because bitmap API operates on unsigned long type. This is not only
-> > consistency, but for sake of flexibility in case we would like to introduce
-> > more calls like clump16 or so.
->
-> TBH, that doesn't convince me: those functions explicitly take/return an
-> 8-bit value, and have "8" in their name.  The 8-bit value is never
-> really related to, retrieved from, or stored in a full "unsigned long"
-> element of a bitmap, only to/from/in a part (byte) of it.
->
-> Following your rationale, all of iowrite{8,16,32,64}*() should take an
-> "unsigned long" value, too.
->
+From: Song Hui <hui.song_1@nxp.com>
 
-+1
+More than one gpio controllers can share one interrupt, change the
+driver to request shared irq.
 
-Using u8/u16/u32/u64 looks more consistent with other bitmap helpers.
+While this will work, it will mess up userspace accounting of the number
+of interrupts per second in tools such as vmstat.  The reason is that
+for every GPIO interrupt, /proc/interrupts records the count against GIC
+interrupt 68 or 69, as well as the GPIO itself.  So, for every GPIO
+interrupt, the total number of interrupts that the system has seen
+increments by two.
 
-void bitmap_from_arr32(unsigned long *bitmap, const u32 *buf, unsigned
-int nbits);
-void bitmap_to_arr32(u32 *buf, const unsigned long *bitmap, unsigned int nbits);
-static inline void bitmap_from_u64(unsigned long *dst, u64 mask);
+Signed-off-by: Laurentiu Tudor <Laurentiu.Tudor@nxp.com>
+Signed-off-by: Alex Marginean <alexandru.marginean@nxp.com>
+Signed-off-by: Song Hui <hui.song_1@nxp.com>
+---
+Changes in v7:
+	- make unsigned int convert to unsigned long.
+Changes in v6:
+	- change request_irq to devm_request_irq and add commit message.
+Changes in v5:
+	- add traverse every bit function.
+Changes in v4:
+	- convert 'pr_err' to 'dev_err'.
+Changes in v3:
+	- update the patch description.
+Changes in v2:
+	- delete the compatible of ls1088a.
+ drivers/gpio/gpio-mpc8xxx.c | 29 +++++++++++++++++++----------
+ 1 file changed, 19 insertions(+), 10 deletions(-)
 
-
-
-If you want to see more examples from other parts,
-
-
-int of_property_read_u8(const struct device_node *np,
-                        const char *propname,
-                        u8 *out_value)
-
-
-int of_property_read_u16(const struct device_node *np,
-                         const char *propname,
-                         u16 *out_value)
-
-
+diff --git a/drivers/gpio/gpio-mpc8xxx.c b/drivers/gpio/gpio-mpc8xxx.c
+index 16a47de..5a0f030 100644
+--- a/drivers/gpio/gpio-mpc8xxx.c
++++ b/drivers/gpio/gpio-mpc8xxx.c
+@@ -22,6 +22,7 @@
+ #include <linux/irq.h>
+ #include <linux/gpio/driver.h>
+ #include <linux/bitops.h>
++#include <linux/interrupt.h>
+ 
+ #define MPC8XXX_GPIO_PINS	32
+ 
+@@ -127,20 +128,20 @@ static int mpc8xxx_gpio_to_irq(struct gpio_chip *gc, unsigned offset)
+ 		return -ENXIO;
+ }
+ 
+-static void mpc8xxx_gpio_irq_cascade(struct irq_desc *desc)
++static irqreturn_t mpc8xxx_gpio_irq_cascade(int irq, void *data)
+ {
+-	struct mpc8xxx_gpio_chip *mpc8xxx_gc = irq_desc_get_handler_data(desc);
+-	struct irq_chip *chip = irq_desc_get_chip(desc);
++	struct mpc8xxx_gpio_chip *mpc8xxx_gc = data;
+ 	struct gpio_chip *gc = &mpc8xxx_gc->gc;
+-	unsigned int mask;
++	unsigned long mask;
++	int i;
+ 
+ 	mask = gc->read_reg(mpc8xxx_gc->regs + GPIO_IER)
+ 		& gc->read_reg(mpc8xxx_gc->regs + GPIO_IMR);
+-	if (mask)
++	for_each_set_bit(i, &mask, 32)
+ 		generic_handle_irq(irq_linear_revmap(mpc8xxx_gc->irq,
+-						     32 - ffs(mask)));
+-	if (chip->irq_eoi)
+-		chip->irq_eoi(&desc->irq_data);
++						     31 - i));
++
++	return IRQ_HANDLED;
+ }
+ 
+ static void mpc8xxx_irq_unmask(struct irq_data *d)
+@@ -409,8 +410,16 @@ static int mpc8xxx_probe(struct platform_device *pdev)
+ 	if (devtype->gpio_dir_in_init)
+ 		devtype->gpio_dir_in_init(gc);
+ 
+-	irq_set_chained_handler_and_data(mpc8xxx_gc->irqn,
+-					 mpc8xxx_gpio_irq_cascade, mpc8xxx_gc);
++	ret = devm_request_irq(&pdev->dev, mpc8xxx_gc->irqn,
++			       mpc8xxx_gpio_irq_cascade,
++			       IRQF_NO_THREAD | IRQF_SHARED, "gpio-cascade",
++			       mpc8xxx_gc);
++	if (ret) {
++		dev_err(&pdev->dev, "%s: failed to devm_request_irq(%d), ret = %d\n",
++			np->full_name, mpc8xxx_gc->irqn, ret);
++		goto err;
++	}
++
+ 	return 0;
+ err:
+ 	iounmap(mpc8xxx_gc->regs);
 -- 
-Best Regards
-Masahiro Yamada
+2.9.5
+
 
 _______________________________________________
 linux-arm-kernel mailing list
