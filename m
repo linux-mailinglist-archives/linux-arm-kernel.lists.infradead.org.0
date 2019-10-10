@@ -2,81 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C09E1D3304
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 22:59:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30AB8D3306
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 23:02:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ztK1Gb0OCtvDXdB0UofniPzl8JBJHLR1np8MMsNdZ+c=; b=D5n65xcZPVBtPu
-	tPL/2OukPgKuCiFM2xZc5qq2nfOjzGBL4rH4Dn/4kzZ7094pGiC6f7+nwrQut+xgzfu93rgnRk93d
-	7Bbm4YAB+eLG13nLnzjtF8nSBHwZ3UObexNKwgtoRlhkqqVLgwUdhfDx6QPc18riRAETrgmr5G9Sh
-	YwZB4qmp5RkD1L77M396CeI4bwGNj/YEUM6+aaktxJcNDYBhYpdeZh+zcTIQQ0mP1GDKrVYU1hNmQ
-	pp3tfOK2ltcG6RxIyd3pUc/Rryoew5Q/hBOv+ZVTghwm3H84/u9DbuOzFMn+H9YplXt0znL7+pUnl
-	AklJGDhk/zx8YcsL/C5g==;
+	List-Owner; bh=pYgOA7mn06u0WpcdaS9lc3QT8UMyLGYJLJq+Fnu9w0A=; b=SHLEWIO+ImE8Fb
+	plqI0wHoP7Hb5ex6XEuJFW4fJoNCxp34cfoy9akFrUmiPSNAZdCLMY8k7GZQNRqyvzVpsc4XbMJxz
+	qw2ORVJf0mlAaJCRCK4UKzxsHI5olqXwGJ08/AlYfylL+EZRDFFuyTaO7pRJrQRv6j0JBY7jVi94k
+	P6lstxkgnlIobiiQzYqaPxUg9Zug1Ql6TcM3waQGPPvbgoJhH0wCsKWnipxRSmvWjp/Lu5bYl35Yl
+	LoP/pq1aSReoDzSfNTDJ1g8/gzkLcC/biAnp5SSIc64c8qfIiZ9bG2QcM9FypUNm3V3BnQXbdWM4U
+	b08kk4f4wSokqtVN6i4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIfXG-0003Zm-CE; Thu, 10 Oct 2019 20:59:46 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iIfa9-0005g3-Me; Thu, 10 Oct 2019 21:02:45 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIfX6-0003ZQ-I2
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 20:59:38 +0000
-Received: by mail-pg1-x543.google.com with SMTP id x10so4428475pgi.5
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 10 Oct 2019 13:59:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=1k9sybljldf+1YSx8TQi5Eii2zqWsdz104QWmAyi4uE=;
- b=DBXLdLLdAtUTtKW/EcAqw994k0Ct8lzCc79qjrK2bhdv4BqNIe7KK41duQBs60Iyva
- 6OcJu8Rkb8vl1/Y461ss7D3O+XKubwqK85wr2dgurxFFaMVKGu5SHJg61aNXnMrRGXo3
- X3IcAJT6PK9VOFMOwlNGFKfV85WMLJHLG+C+8=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=1k9sybljldf+1YSx8TQi5Eii2zqWsdz104QWmAyi4uE=;
- b=pDoLRQLIAdVgR7CljYPd2UbFLTsekQrBTHxlcZmfOVJdXczWp5ZUHokS/P49CE+IET
- /chcL33WbpD7OA6BXjR6RqgeMwCkpiFrFhFB2cgg6ccFej3ANlsODgnKSfpp4MyF7R8p
- ebtS9//4Yvx7U0UwgEDtS8x/nQm2zXz8ONfMJi2J4ihllEPgyPJ3Ca2g6W1BDRnVFSJq
- dDHfb5WFBJCxZxg4jNVa5hC4JL/pLVNR0KmWlZJGmY0m7REOxzq5iwJwz7cPefRzIEDv
- 17PXuAW2DQDnhf1SiESGVYa+RIY1OMWbabH2O4RjF1wPtwWrcCGuyPEKteV7xcpQ3Fkl
- e73A==
-X-Gm-Message-State: APjAAAWPGReiej7g3oh/STJIPoomVEsqtTYKdOZmOwbh8sHsyzbUDfQ0
- S1HfJE9DiWxupWhT+jOLZFVuNQ==
-X-Google-Smtp-Source: APXvYqz6NbvEpZ7Ik3oIhwdyqvxRyjW6rOFv7muACZXODLHhr7XVoM3R5BIR8pI8ZP7KatwuYrQD7w==
-X-Received: by 2002:aa7:8e16:: with SMTP id c22mr12577390pfr.116.1570741175468; 
- Thu, 10 Oct 2019 13:59:35 -0700 (PDT)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id w134sm6441178pfd.4.2019.10.10.13.59.33
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 10 Oct 2019 13:59:34 -0700 (PDT)
-Date: Thu, 10 Oct 2019 13:59:33 -0700
-From: Kees Cook <keescook@chromium.org>
-To: Sami Tolvanen <samitolvanen@google.com>
-Subject: Re: [PATCH v2] arm64: lse: fix LSE atomics with LLVM's integrated
- assembler
-Message-ID: <201910101358.2F9CF63529@keescook>
-References: <20191007201452.208067-1-samitolvanen@google.com>
- <20191008212730.185532-1-samitolvanen@google.com>
+ id 1iIfZy-0005em-NY
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 21:02:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=GOvsSXPX5WtsXHeYWNOuRtlXQ9QuSoefn1nZ0F/ehbA=; b=OwiduhoVYCBq+kBw6BNGb52t+
+ k3WKuzfH+gk4cG4kW/cdwhUynmWiiU9pnNCTqIEucGpzVNDm+EcmC1bfjocV4gUjcMYl04y+je9kn
+ wkjLfxhJYXP6RZE5q/ynoNZd6aM0u8yuj27EpNgYMtKdVmG2OoC8DmfXsntI+lB+/Q9oeWjsg1tX2
+ UFED/3mQ44z4s5uPIhecp9t17UF9VrhIYVHKopdBsYyKiRIcQhHEZYehrwr02ve3xCyqD6xx4k2Ll
+ orq9N+jC9bxwQSbywwfmlE9FaDneC+9Ol6dCuuWZwk8kqIls72YQXPKWMqkWsVgI7TQiVxnoxmdYR
+ dg3c5rjnQ==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:42498)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iIfZc-0001FP-0J; Thu, 10 Oct 2019 22:02:12 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iIfZZ-0000WS-0V; Thu, 10 Oct 2019 22:02:09 +0100
+Date: Thu, 10 Oct 2019 22:02:08 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH 34/36] ARM: s3c: stop including mach/hardware.h from
+ mach/io.h
+Message-ID: <20191010210208.GK25745@shell.armlinux.org.uk>
+References: <20191010202802.1132272-1-arnd@arndb.de>
+ <20191010203043.1241612-1-arnd@arndb.de>
+ <20191010203043.1241612-34-arnd@arndb.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191008212730.185532-1-samitolvanen@google.com>
+In-Reply-To: <20191010203043.1241612-34-arnd@arndb.de>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_135936_622637_E0AC5D5D 
-X-CRM114-Status: GOOD (  17.06  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191010_140237_288224_E12F4EFF 
+X-CRM114-Status: GOOD (  19.00  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -84,7 +78,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,237 +89,389 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- clang-built-linux@googlegroups.com, Andrew Murray <andrew.murray@arm.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Felipe Balbi <balbi@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linus.walleij@linaro.org,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>, linux-spi@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ Andi Shyti <andi@etezian.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 08, 2019 at 02:27:30PM -0700, Sami Tolvanen wrote:
-> Unlike gcc, clang considers each inline assembly block to be independent
-> and therefore, when using the integrated assembler for inline assembly,
-> any preambles that enable features must be repeated in each block.
+On Thu, Oct 10, 2019 at 10:30:18PM +0200, Arnd Bergmann wrote:
+> A number of other files rely on mach/map.h to be indirectly
+> included from mach/io.h through mach/hardware.h.
 > 
-> This change defines __LSE_PREAMBLE and adds it to each inline assembly
-> block that has LSE instructions, which allows them to be compiled also
-> with clang's assembler.
+> Reduce this to the minimal plat/map-base.h and add explicit
+> includes everywhere else.
 > 
-> Link: https://github.com/ClangBuiltLinux/linux/issues/671
-> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-
-FWIW, my arm64 builds remain happy with this too.
-
-Tested-by: Kees Cook <keescook@chromium.org>
-Reviewed-by: Kees Cook <keescook@chromium.org>
-
--Kees
-
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 > ---
-> v2:
->  - Add a preamble to inline assembly blocks that use LSE instead
->    of allowing the compiler to emit LSE instructions everywhere.
+>  arch/arm/mach-s3c24xx/common.c                          | 1 +
+>  arch/arm/mach-s3c24xx/include/mach/gpio-samsung.h       | 2 ++
+>  arch/arm/mach-s3c24xx/include/mach/hardware.h           | 7 -------
+>  arch/arm/mach-s3c24xx/include/mach/io.h                 | 3 +--
+>  arch/arm/mach-s3c24xx/include/mach/regs-clock.h         | 2 ++
+>  arch/arm/mach-s3c24xx/include/mach/regs-gpio.h          | 2 ++
+>  arch/arm/mach-s3c24xx/include/mach/regs-irq.h           | 2 ++
+>  arch/arm/mach-s3c24xx/include/mach/regs-s3c2443-clock.h | 1 +
+>  arch/arm/mach-s3c24xx/include/mach/s3c2412.h            | 2 ++
+>  arch/arm/mach-s3c24xx/mach-h1940.c                      | 1 +
+>  arch/arm/mach-s3c24xx/mach-jive.c                       | 1 +
+>  arch/arm/mach-s3c24xx/mach-rx1950.c                     | 1 +
+>  arch/arm/mach-s3c24xx/pm-h1940.S                        | 1 -
+>  arch/arm/mach-s3c24xx/regs-mem.h                        | 2 ++
+>  arch/arm/mach-s3c24xx/s3c2410.c                         | 2 +-
+>  arch/arm/mach-s3c24xx/s3c2412.c                         | 2 +-
+>  arch/arm/mach-s3c24xx/s3c2416.c                         | 2 +-
+>  arch/arm/mach-s3c24xx/s3c2443.c                         | 2 +-
+>  arch/arm/mach-s3c24xx/s3c244x.c                         | 2 +-
+>  arch/arm/mach-s3c24xx/sleep-s3c2410.S                   | 1 -
+>  arch/arm/mach-s3c24xx/sleep-s3c2412.S                   | 1 -
+>  arch/arm/mach-s3c24xx/sleep.S                           | 1 -
+>  drivers/spi/spi-s3c24xx-regs.h                          | 2 ++
+>  drivers/usb/gadget/udc/s3c2410_udc_regs.h               | 2 ++
+>  24 files changed, 27 insertions(+), 18 deletions(-)
 > 
-> ---
->  arch/arm64/include/asm/atomic_lse.h | 19 +++++++++++++++++++
->  arch/arm64/include/asm/lse.h        |  6 +++---
->  2 files changed, 22 insertions(+), 3 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/atomic_lse.h b/arch/arm64/include/asm/atomic_lse.h
-> index c6bd87d2915b..3ee600043042 100644
-> --- a/arch/arm64/include/asm/atomic_lse.h
-> +++ b/arch/arm64/include/asm/atomic_lse.h
-> @@ -14,6 +14,7 @@
->  static inline void __lse_atomic_##op(int i, atomic_t *v)			\
->  {									\
->  	asm volatile(							\
-> +	__LSE_PREAMBLE							\
->  "	" #asm_op "	%w[i], %[v]\n"					\
->  	: [i] "+r" (i), [v] "+Q" (v->counter)				\
->  	: "r" (v));							\
-> @@ -30,6 +31,7 @@ ATOMIC_OP(add, stadd)
->  static inline int __lse_atomic_fetch_##op##name(int i, atomic_t *v)	\
->  {									\
->  	asm volatile(							\
-> +	__LSE_PREAMBLE							\
->  "	" #asm_op #mb "	%w[i], %w[i], %[v]"				\
->  	: [i] "+r" (i), [v] "+Q" (v->counter)				\
->  	: "r" (v)							\
-> @@ -58,6 +60,7 @@ static inline int __lse_atomic_add_return##name(int i, atomic_t *v)	\
->  	u32 tmp;							\
->  									\
->  	asm volatile(							\
-> +	__LSE_PREAMBLE							\
->  	"	ldadd" #mb "	%w[i], %w[tmp], %[v]\n"			\
->  	"	add	%w[i], %w[i], %w[tmp]"				\
->  	: [i] "+r" (i), [v] "+Q" (v->counter), [tmp] "=&r" (tmp)	\
-> @@ -77,6 +80,7 @@ ATOMIC_OP_ADD_RETURN(        , al, "memory")
->  static inline void __lse_atomic_and(int i, atomic_t *v)
->  {
->  	asm volatile(
-> +	__LSE_PREAMBLE
->  	"	mvn	%w[i], %w[i]\n"
->  	"	stclr	%w[i], %[v]"
->  	: [i] "+&r" (i), [v] "+Q" (v->counter)
-> @@ -87,6 +91,7 @@ static inline void __lse_atomic_and(int i, atomic_t *v)
->  static inline int __lse_atomic_fetch_and##name(int i, atomic_t *v)	\
->  {									\
->  	asm volatile(							\
-> +	__LSE_PREAMBLE							\
->  	"	mvn	%w[i], %w[i]\n"					\
->  	"	ldclr" #mb "	%w[i], %w[i], %[v]"			\
->  	: [i] "+&r" (i), [v] "+Q" (v->counter)				\
-> @@ -106,6 +111,7 @@ ATOMIC_FETCH_OP_AND(        , al, "memory")
->  static inline void __lse_atomic_sub(int i, atomic_t *v)
->  {
->  	asm volatile(
-> +	__LSE_PREAMBLE
->  	"	neg	%w[i], %w[i]\n"
->  	"	stadd	%w[i], %[v]"
->  	: [i] "+&r" (i), [v] "+Q" (v->counter)
-> @@ -118,6 +124,7 @@ static inline int __lse_atomic_sub_return##name(int i, atomic_t *v)	\
->  	u32 tmp;							\
->  									\
->  	asm volatile(							\
-> +	__LSE_PREAMBLE							\
->  	"	neg	%w[i], %w[i]\n"					\
->  	"	ldadd" #mb "	%w[i], %w[tmp], %[v]\n"			\
->  	"	add	%w[i], %w[i], %w[tmp]"				\
-> @@ -139,6 +146,7 @@ ATOMIC_OP_SUB_RETURN(        , al, "memory")
->  static inline int __lse_atomic_fetch_sub##name(int i, atomic_t *v)	\
->  {									\
->  	asm volatile(							\
-> +	__LSE_PREAMBLE							\
->  	"	neg	%w[i], %w[i]\n"					\
->  	"	ldadd" #mb "	%w[i], %w[i], %[v]"			\
->  	: [i] "+&r" (i), [v] "+Q" (v->counter)				\
-> @@ -159,6 +167,7 @@ ATOMIC_FETCH_OP_SUB(        , al, "memory")
->  static inline void __lse_atomic64_##op(s64 i, atomic64_t *v)		\
->  {									\
->  	asm volatile(							\
-> +	__LSE_PREAMBLE							\
->  "	" #asm_op "	%[i], %[v]\n"					\
->  	: [i] "+r" (i), [v] "+Q" (v->counter)				\
->  	: "r" (v));							\
-> @@ -175,6 +184,7 @@ ATOMIC64_OP(add, stadd)
->  static inline long __lse_atomic64_fetch_##op##name(s64 i, atomic64_t *v)\
->  {									\
->  	asm volatile(							\
-> +	__LSE_PREAMBLE							\
->  "	" #asm_op #mb "	%[i], %[i], %[v]"				\
->  	: [i] "+r" (i), [v] "+Q" (v->counter)				\
->  	: "r" (v)							\
-> @@ -203,6 +213,7 @@ static inline long __lse_atomic64_add_return##name(s64 i, atomic64_t *v)\
->  	unsigned long tmp;						\
->  									\
->  	asm volatile(							\
-> +	__LSE_PREAMBLE							\
->  	"	ldadd" #mb "	%[i], %x[tmp], %[v]\n"			\
->  	"	add	%[i], %[i], %x[tmp]"				\
->  	: [i] "+r" (i), [v] "+Q" (v->counter), [tmp] "=&r" (tmp)	\
-> @@ -222,6 +233,7 @@ ATOMIC64_OP_ADD_RETURN(        , al, "memory")
->  static inline void __lse_atomic64_and(s64 i, atomic64_t *v)
->  {
->  	asm volatile(
-> +	__LSE_PREAMBLE
->  	"	mvn	%[i], %[i]\n"
->  	"	stclr	%[i], %[v]"
->  	: [i] "+&r" (i), [v] "+Q" (v->counter)
-> @@ -232,6 +244,7 @@ static inline void __lse_atomic64_and(s64 i, atomic64_t *v)
->  static inline long __lse_atomic64_fetch_and##name(s64 i, atomic64_t *v)	\
->  {									\
->  	asm volatile(							\
-> +	__LSE_PREAMBLE							\
->  	"	mvn	%[i], %[i]\n"					\
->  	"	ldclr" #mb "	%[i], %[i], %[v]"			\
->  	: [i] "+&r" (i), [v] "+Q" (v->counter)				\
-> @@ -251,6 +264,7 @@ ATOMIC64_FETCH_OP_AND(        , al, "memory")
->  static inline void __lse_atomic64_sub(s64 i, atomic64_t *v)
->  {
->  	asm volatile(
-> +	__LSE_PREAMBLE
->  	"	neg	%[i], %[i]\n"
->  	"	stadd	%[i], %[v]"
->  	: [i] "+&r" (i), [v] "+Q" (v->counter)
-> @@ -263,6 +277,7 @@ static inline long __lse_atomic64_sub_return##name(s64 i, atomic64_t *v)	\
->  	unsigned long tmp;						\
->  									\
->  	asm volatile(							\
-> +	__LSE_PREAMBLE							\
->  	"	neg	%[i], %[i]\n"					\
->  	"	ldadd" #mb "	%[i], %x[tmp], %[v]\n"			\
->  	"	add	%[i], %[i], %x[tmp]"				\
-> @@ -284,6 +299,7 @@ ATOMIC64_OP_SUB_RETURN(        , al, "memory")
->  static inline long __lse_atomic64_fetch_sub##name(s64 i, atomic64_t *v)	\
->  {									\
->  	asm volatile(							\
-> +	__LSE_PREAMBLE							\
->  	"	neg	%[i], %[i]\n"					\
->  	"	ldadd" #mb "	%[i], %[i], %[v]"			\
->  	: [i] "+&r" (i), [v] "+Q" (v->counter)				\
-> @@ -305,6 +321,7 @@ static inline s64 __lse_atomic64_dec_if_positive(atomic64_t *v)
->  	unsigned long tmp;
+> diff --git a/arch/arm/mach-s3c24xx/common.c b/arch/arm/mach-s3c24xx/common.c
+> index d16a164df6c4..42d828f48345 100644
+> --- a/arch/arm/mach-s3c24xx/common.c
+> +++ b/arch/arm/mach-s3c24xx/common.c
+> @@ -21,6 +21,7 @@
+>  #include <linux/dmaengine.h>
 >  
->  	asm volatile(
-> +	__LSE_PREAMBLE
->  	"1:	ldr	%x[tmp], %[v]\n"
->  	"	subs	%[ret], %x[tmp], #1\n"
->  	"	b.lt	2f\n"
-> @@ -331,6 +348,7 @@ static inline u##sz __lse__cmpxchg_case_##name##sz(volatile void *ptr,	\
->  	unsigned long tmp;						\
->  									\
->  	asm volatile(							\
-> +	__LSE_PREAMBLE							\
->  	"	mov	%" #w "[tmp], %" #w "[old]\n"			\
->  	"	cas" #mb #sfx "\t%" #w "[tmp], %" #w "[new], %[v]\n"	\
->  	"	mov	%" #w "[ret], %" #w "[tmp]"			\
-> @@ -377,6 +395,7 @@ static inline long __lse__cmpxchg_double##name(unsigned long old1,	\
->  	register unsigned long x4 asm ("x4") = (unsigned long)ptr;	\
->  									\
->  	asm volatile(							\
-> +	__LSE_PREAMBLE							\
->  	"	casp" #mb "\t%[old1], %[old2], %[new1], %[new2], %[v]\n"\
->  	"	eor	%[old1], %[old1], %[oldval1]\n"			\
->  	"	eor	%[old2], %[old2], %[oldval2]\n"			\
-> diff --git a/arch/arm64/include/asm/lse.h b/arch/arm64/include/asm/lse.h
-> index 80b388278149..73834996c4b6 100644
-> --- a/arch/arm64/include/asm/lse.h
-> +++ b/arch/arm64/include/asm/lse.h
-> @@ -6,6 +6,8 @@
+>  #include <mach/hardware.h>
+> +#include <mach/map.h>
+>  #include <mach/regs-clock.h>
+>  #include <asm/irq.h>
+>  #include <asm/cacheflush.h>
+> diff --git a/arch/arm/mach-s3c24xx/include/mach/gpio-samsung.h b/arch/arm/mach-s3c24xx/include/mach/gpio-samsung.h
+> index 2ad22b2d459b..f8a114891f16 100644
+> --- a/arch/arm/mach-s3c24xx/include/mach/gpio-samsung.h
+> +++ b/arch/arm/mach-s3c24xx/include/mach/gpio-samsung.h
+> @@ -14,6 +14,8 @@
+>  #ifndef GPIO_SAMSUNG_S3C24XX_H
+>  #define GPIO_SAMSUNG_S3C24XX_H
 >  
->  #if defined(CONFIG_AS_LSE) && defined(CONFIG_ARM64_LSE_ATOMICS)
->  
-> +#define __LSE_PREAMBLE	".arch armv8-a+lse\n"
+> +#include <mach/map.h>
 > +
->  #include <linux/compiler_types.h>
->  #include <linux/export.h>
->  #include <linux/jump_label.h>
-> @@ -14,8 +16,6 @@
->  #include <asm/atomic_lse.h>
->  #include <asm/cpucaps.h>
+
+Why?  Nothing in this file uses anything from mach/map.h
+
+>  /*
+>   * GPIO sizes for various SoCs:
+>   *
+> diff --git a/arch/arm/mach-s3c24xx/include/mach/hardware.h b/arch/arm/mach-s3c24xx/include/mach/hardware.h
+> index f28ac6c78d82..c732ea54984c 100644
+> --- a/arch/arm/mach-s3c24xx/include/mach/hardware.h
+> +++ b/arch/arm/mach-s3c24xx/include/mach/hardware.h
+> @@ -9,13 +9,6 @@
+>  #ifndef __ASM_ARCH_HARDWARE_H
+>  #define __ASM_ARCH_HARDWARE_H
 >  
-> -__asm__(".arch_extension	lse");
+> -#ifndef __ASSEMBLY__
 > -
->  extern struct static_key_false cpu_hwcap_keys[ARM64_NCAPS];
->  extern struct static_key_false arm64_const_caps_ready;
+>  extern unsigned int s3c2410_modify_misccr(unsigned int clr, unsigned int chg);
 >  
-> @@ -34,7 +34,7 @@ static inline bool system_uses_lse_atomics(void)
+> -#endif /* __ASSEMBLY__ */
+> -
+> -#include <linux/sizes.h>
+> -#include <mach/map.h>
+> -
+>  #endif /* __ASM_ARCH_HARDWARE_H */
+> diff --git a/arch/arm/mach-s3c24xx/include/mach/io.h b/arch/arm/mach-s3c24xx/include/mach/io.h
+> index 3e8bff26cdd5..bcddf615adb6 100644
+> --- a/arch/arm/mach-s3c24xx/include/mach/io.h
+> +++ b/arch/arm/mach-s3c24xx/include/mach/io.h
+> @@ -10,8 +10,7 @@
+>  #ifndef __ASM_ARM_ARCH_IO_H
+>  #define __ASM_ARM_ARCH_IO_H
 >  
->  /* In-line patching at runtime */
->  #define ARM64_LSE_ATOMIC_INSN(llsc, lse)				\
-> -	ALTERNATIVE(llsc, lse, ARM64_HAS_LSE_ATOMICS)
-> +	ALTERNATIVE(llsc, __LSE_PREAMBLE lse, ARM64_HAS_LSE_ATOMICS)
+> -#include <mach/hardware.h>
+> -
+> +#include <plat/map-base.h>
 >  
->  #else	/* CONFIG_AS_LSE && CONFIG_ARM64_LSE_ATOMICS */
+>  /*
+>   * ISA style IO, for each machine to sort out mappings for,
+> diff --git a/arch/arm/mach-s3c24xx/include/mach/regs-clock.h b/arch/arm/mach-s3c24xx/include/mach/regs-clock.h
+> index 7ca3dd4f13c0..da4e7b3aeba6 100644
+> --- a/arch/arm/mach-s3c24xx/include/mach/regs-clock.h
+> +++ b/arch/arm/mach-s3c24xx/include/mach/regs-clock.h
+> @@ -9,6 +9,8 @@
+>  #ifndef __ASM_ARM_REGS_CLOCK
+>  #define __ASM_ARM_REGS_CLOCK
 >  
+> +#include <mach/map.h>
+> +
+
+Why?  Nothing in this file uses anything from mach/map.h
+
+>  #define S3C2410_CLKREG(x) ((x) + S3C24XX_VA_CLKPWR)
+>  
+>  #define S3C2410_PLLVAL(_m,_p,_s) ((_m) << 12 | ((_p) << 4) | ((_s)))
+> diff --git a/arch/arm/mach-s3c24xx/include/mach/regs-gpio.h b/arch/arm/mach-s3c24xx/include/mach/regs-gpio.h
+> index 594e967c0673..51827d5577b6 100644
+> --- a/arch/arm/mach-s3c24xx/include/mach/regs-gpio.h
+> +++ b/arch/arm/mach-s3c24xx/include/mach/regs-gpio.h
+> @@ -10,6 +10,8 @@
+>  #ifndef __ASM_ARCH_REGS_GPIO_H
+>  #define __ASM_ARCH_REGS_GPIO_H
+>  
+> +#include <plat/map-s3c.h>
+> +
+>  #define S3C24XX_MISCCR		S3C24XX_GPIOREG2(0x80)
+>  
+>  /* general configuration options */
+> diff --git a/arch/arm/mach-s3c24xx/include/mach/regs-irq.h b/arch/arm/mach-s3c24xx/include/mach/regs-irq.h
+> index 8d8e669e3903..2921b48c56b2 100644
+> --- a/arch/arm/mach-s3c24xx/include/mach/regs-irq.h
+> +++ b/arch/arm/mach-s3c24xx/include/mach/regs-irq.h
+> @@ -8,6 +8,8 @@
+>  #ifndef ___ASM_ARCH_REGS_IRQ_H
+>  #define ___ASM_ARCH_REGS_IRQ_H
+>  
+> +#include <plat/map-s3c.h>
+> +
+>  /* interrupt controller */
+>  
+>  #define S3C2410_IRQREG(x)   ((x) + S3C24XX_VA_IRQ)
+> diff --git a/arch/arm/mach-s3c24xx/include/mach/regs-s3c2443-clock.h b/arch/arm/mach-s3c24xx/include/mach/regs-s3c2443-clock.h
+> index 682759549e63..fefef7233f4b 100644
+> --- a/arch/arm/mach-s3c24xx/include/mach/regs-s3c2443-clock.h
+> +++ b/arch/arm/mach-s3c24xx/include/mach/regs-s3c2443-clock.h
+> @@ -11,6 +11,7 @@
+>  #define __ASM_ARM_REGS_S3C2443_CLOCK
+>  
+>  #include <linux/delay.h>
+> +#include <plat/map-s3c.h>
+>  
+>  #define S3C2443_CLKREG(x)		((x) + S3C24XX_VA_CLKPWR)
+>  
+> diff --git a/arch/arm/mach-s3c24xx/include/mach/s3c2412.h b/arch/arm/mach-s3c24xx/include/mach/s3c2412.h
+> index 4ff83f956cfb..1ae369c81beb 100644
+> --- a/arch/arm/mach-s3c24xx/include/mach/s3c2412.h
+> +++ b/arch/arm/mach-s3c24xx/include/mach/s3c2412.h
+> @@ -8,6 +8,8 @@
+>  #ifndef __ARCH_ARM_MACH_S3C24XX_S3C2412_H
+>  #define __ARCH_ARM_MACH_S3C24XX_S3C2412_H __FILE__
+>  
+> +#include <plat/map-s3c.h>
+> +
+>  #define S3C2412_MEMREG(x)		(S3C24XX_VA_MEMCTRL + (x))
+>  #define S3C2412_EBIREG(x)		(S3C2412_VA_EBI + (x))
+>  
+> diff --git a/arch/arm/mach-s3c24xx/mach-h1940.c b/arch/arm/mach-s3c24xx/mach-h1940.c
+> index d56e3befa459..287e42fc1665 100644
+> --- a/arch/arm/mach-s3c24xx/mach-h1940.c
+> +++ b/arch/arm/mach-s3c24xx/mach-h1940.c
+> @@ -48,6 +48,7 @@
+>  #include <sound/uda1380.h>
+>  
+>  #include <linux/platform_data/fb-s3c2410.h>
+> +#include <mach/map.h>
+>  #include <mach/hardware.h>
+>  #include <mach/regs-clock.h>
+>  #include <mach/regs-gpio.h>
+> diff --git a/arch/arm/mach-s3c24xx/mach-jive.c b/arch/arm/mach-s3c24xx/mach-jive.c
+> index 3b33132b2334..8012c34bddd9 100644
+> --- a/arch/arm/mach-s3c24xx/mach-jive.c
+> +++ b/arch/arm/mach-s3c24xx/mach-jive.c
+> @@ -31,6 +31,7 @@
+>  #include <linux/platform_data/mtd-nand-s3c2410.h>
+>  #include <linux/platform_data/i2c-s3c2410.h>
+>  
+> +#include <mach/hardware.h>
+>  #include <mach/regs-gpio.h>
+>  #include <linux/platform_data/fb-s3c2410.h>
+>  #include <mach/gpio-samsung.h>
+> diff --git a/arch/arm/mach-s3c24xx/mach-rx1950.c b/arch/arm/mach-s3c24xx/mach-rx1950.c
+> index ee4a0992339f..f94884090fbe 100644
+> --- a/arch/arm/mach-s3c24xx/mach-rx1950.c
+> +++ b/arch/arm/mach-s3c24xx/mach-rx1950.c
+> @@ -46,6 +46,7 @@
+>  
+>  #include <sound/uda1380.h>
+>  
+> +#include <mach/hardware.h>
+>  #include <mach/regs-gpio.h>
+>  #include <mach/gpio-samsung.h>
+>  
+> diff --git a/arch/arm/mach-s3c24xx/pm-h1940.S b/arch/arm/mach-s3c24xx/pm-h1940.S
+> index a7bbe336ac6b..f9ee515e1cbe 100644
+> --- a/arch/arm/mach-s3c24xx/pm-h1940.S
+> +++ b/arch/arm/mach-s3c24xx/pm-h1940.S
+> @@ -7,7 +7,6 @@
+>  
+>  #include <linux/linkage.h>
+>  #include <asm/assembler.h>
+> -#include <mach/hardware.h>
+>  #include <mach/map.h>
+>  
+>  #include <mach/regs-gpio.h>
+> diff --git a/arch/arm/mach-s3c24xx/regs-mem.h b/arch/arm/mach-s3c24xx/regs-mem.h
+> index 2f3bc48b5890..5048ab8f06c2 100644
+> --- a/arch/arm/mach-s3c24xx/regs-mem.h
+> +++ b/arch/arm/mach-s3c24xx/regs-mem.h
+> @@ -9,6 +9,8 @@
+>  #ifndef __ARCH_ARM_MACH_S3C24XX_REGS_MEM_H
+>  #define __ARCH_ARM_MACH_S3C24XX_REGS_MEM_H __FILE__
+>  
+> +#include <plat/map-s3c.h>
+> +
+>  #define S3C2410_MEMREG(x)		(S3C24XX_VA_MEMCTRL + (x))
+>  
+>  #define S3C2410_BWSCON			S3C2410_MEMREG(0x00)
+> diff --git a/arch/arm/mach-s3c24xx/s3c2410.c b/arch/arm/mach-s3c24xx/s3c2410.c
+> index 8427c150dd22..44bf3e1e77f1 100644
+> --- a/arch/arm/mach-s3c24xx/s3c2410.c
+> +++ b/arch/arm/mach-s3c24xx/s3c2410.c
+> @@ -25,7 +25,7 @@
+>  #include <asm/mach/map.h>
+>  #include <asm/mach/irq.h>
+>  
+> -#include <mach/hardware.h>
+> +#include <mach/map.h>
+>  #include <mach/gpio-samsung.h>
+>  #include <asm/irq.h>
+>  #include <asm/system_misc.h>
+> diff --git a/arch/arm/mach-s3c24xx/s3c2412.c b/arch/arm/mach-s3c24xx/s3c2412.c
+> index 209f952a6c98..75648dcc2c1d 100644
+> --- a/arch/arm/mach-s3c24xx/s3c2412.c
+> +++ b/arch/arm/mach-s3c24xx/s3c2412.c
+> @@ -29,7 +29,7 @@
+>  #include <asm/irq.h>
+>  #include <asm/system_misc.h>
+>  
+> -#include <mach/hardware.h>
+> +#include <mach/map.h>
+>  #include <mach/regs-clock.h>
+>  #include <mach/regs-gpio.h>
+>  
+> diff --git a/arch/arm/mach-s3c24xx/s3c2416.c b/arch/arm/mach-s3c24xx/s3c2416.c
+> index 1cdb7bd3e713..ef2eace605e6 100644
+> --- a/arch/arm/mach-s3c24xx/s3c2416.c
+> +++ b/arch/arm/mach-s3c24xx/s3c2416.c
+> @@ -26,7 +26,7 @@
+>  #include <asm/mach/map.h>
+>  #include <asm/mach/irq.h>
+>  
+> -#include <mach/hardware.h>
+> +#include <mach/map.h>
+>  #include <mach/gpio-samsung.h>
+>  #include <asm/proc-fns.h>
+>  #include <asm/irq.h>
+> diff --git a/arch/arm/mach-s3c24xx/s3c2443.c b/arch/arm/mach-s3c24xx/s3c2443.c
+> index f404ecac4baf..00318ad994ff 100644
+> --- a/arch/arm/mach-s3c24xx/s3c2443.c
+> +++ b/arch/arm/mach-s3c24xx/s3c2443.c
+> @@ -23,7 +23,7 @@
+>  #include <asm/mach/map.h>
+>  #include <asm/mach/irq.h>
+>  
+> -#include <mach/hardware.h>
+> +#include <mach/map.h>
+>  #include <mach/gpio-samsung.h>
+>  #include <mach/irqs.h>
+>  #include <asm/irq.h>
+> diff --git a/arch/arm/mach-s3c24xx/s3c244x.c b/arch/arm/mach-s3c24xx/s3c244x.c
+> index f5bd489bac85..0ca188d0ffe5 100644
+> --- a/arch/arm/mach-s3c24xx/s3c244x.c
+> +++ b/arch/arm/mach-s3c24xx/s3c244x.c
+> @@ -25,7 +25,7 @@
+>  #include <asm/mach/map.h>
+>  #include <asm/mach/irq.h>
+>  
+> -#include <mach/hardware.h>
+> +#include <mach/map.h>
+>  #include <asm/irq.h>
+>  
+>  #include <mach/regs-clock.h>
+> diff --git a/arch/arm/mach-s3c24xx/sleep-s3c2410.S b/arch/arm/mach-s3c24xx/sleep-s3c2410.S
+> index 659f9eff9de2..e4f6f64e7826 100644
+> --- a/arch/arm/mach-s3c24xx/sleep-s3c2410.S
+> +++ b/arch/arm/mach-s3c24xx/sleep-s3c2410.S
+> @@ -13,7 +13,6 @@
+>  #include <linux/linkage.h>
+>  #include <linux/serial_s3c.h>
+>  #include <asm/assembler.h>
+> -#include <mach/hardware.h>
+>  #include <mach/map.h>
+>  
+>  #include <mach/regs-gpio.h>
+> diff --git a/arch/arm/mach-s3c24xx/sleep-s3c2412.S b/arch/arm/mach-s3c24xx/sleep-s3c2412.S
+> index c373f1ca862b..434f5082b2ed 100644
+> --- a/arch/arm/mach-s3c24xx/sleep-s3c2412.S
+> +++ b/arch/arm/mach-s3c24xx/sleep-s3c2412.S
+> @@ -8,7 +8,6 @@
+>  
+>  #include <linux/linkage.h>
+>  #include <asm/assembler.h>
+> -#include <mach/hardware.h>
+>  #include <mach/map.h>
+>  
+>  #include <mach/regs-irq.h>
+> diff --git a/arch/arm/mach-s3c24xx/sleep.S b/arch/arm/mach-s3c24xx/sleep.S
+> index f0f11ad60c52..4bda4a413584 100644
+> --- a/arch/arm/mach-s3c24xx/sleep.S
+> +++ b/arch/arm/mach-s3c24xx/sleep.S
+> @@ -13,7 +13,6 @@
+>  #include <linux/linkage.h>
+>  #include <linux/serial_s3c.h>
+>  #include <asm/assembler.h>
+> -#include <mach/hardware.h>
+>  #include <mach/map.h>
+>  
+>  #include <mach/regs-gpio.h>
+> diff --git a/drivers/spi/spi-s3c24xx-regs.h b/drivers/spi/spi-s3c24xx-regs.h
+> index 37b93ff7c7fe..b76d591eba8c 100644
+> --- a/drivers/spi/spi-s3c24xx-regs.h
+> +++ b/drivers/spi/spi-s3c24xx-regs.h
+> @@ -8,6 +8,8 @@
+>  #ifndef __ASM_ARCH_REGS_SPI_H
+>  #define __ASM_ARCH_REGS_SPI_H
+>  
+> +#include <mach/map.h>
+> +
+
+If this is outside of arch/arm, it shouldn't need anything from
+mach/map.h - mach/map.h is not for driver use.
+
+>  #define S3C2410_SPCON		(0x00)
+>  
+>  #define S3C2410_SPCON_SMOD_DMA	(2 << 5)	/* DMA mode */
+> diff --git a/drivers/usb/gadget/udc/s3c2410_udc_regs.h b/drivers/usb/gadget/udc/s3c2410_udc_regs.h
+> index d8d2eeaca088..4df279342cdd 100644
+> --- a/drivers/usb/gadget/udc/s3c2410_udc_regs.h
+> +++ b/drivers/usb/gadget/udc/s3c2410_udc_regs.h
+> @@ -6,6 +6,8 @@
+>  #ifndef __ASM_ARCH_REGS_UDC_H
+>  #define __ASM_ARCH_REGS_UDC_H
+>  
+> +#include <mach/map.h>
+> +
+
+If this is outside of arch/arm, it shouldn't need anything from
+mach/map.h - mach/map.h is not for driver use.
+
+>  #define S3C2410_USBDREG(x) (x)
+>  
+>  #define S3C2410_UDC_FUNC_ADDR_REG	S3C2410_USBDREG(0x0140)
 > -- 
-> 2.23.0.581.g78d2f28ef7-goog
+> 2.20.0
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 > 
 
 -- 
-Kees Cook
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
