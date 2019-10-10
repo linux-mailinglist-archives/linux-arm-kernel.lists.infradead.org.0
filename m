@@ -2,70 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90339D322E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 22:39:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 805FED322F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 22:39:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VBpHGxMu1OoI37yVv1j5guq1BM1BYiQJ0vo8K9kpQsE=; b=NgIdGZDTD8/CRG
-	2Z28waEAt3otmstjTXUy+ox1bYUKP12UPL3CguJ6ANi+USq4WK/sP0+tEtANhlGwtF5ddP2Il6p4R
-	jiB/k7XafEPURfHzEywu53iFFr3a8ErkOQ94oAN/fvvpqiwNXM+vqn3COhH7yh+QcvNdpDagmlOZk
-	9Cp652G9qMr3y+kgT2Vv+VJiKXO+acDAWr2KAYGAZhPD46Joekpt6COkfyYFTfKu2/tCYp55oNtUp
-	Zhmw6tFHR8IKi7kWzIW5P75ahj0wq4oQY8mVTB2eHvMGj7j+n0P3fAFCXh5EaUhWQzyLyEVJwdjN5
-	+C7AXoWKA7LpXWm5e4aA==;
+	List-Owner; bh=tchGaDar5AKrYBrY0eTD46GOsxtxxzbrtxxUUdTXUMU=; b=DQBOHV7PAYNYgI
+	QpTR6Zz+ErwQn20R4KkI+I5G2KJvLglD6gL1AXuw72i2bv+46WEZsKLYRyDGAruKlgvFu++PdUnzP
+	CeLeaegu1HAUqEEMFh3NKEcIqXzqngRybUKDDtfWSErDvKFyplqgUfuwiphLKOFo2Rk0FFdyjC3v8
+	YRbyZ2ZHHVwrXeZkgUqV93vjqCqwzDWkR3ZS+sCw9e9Cow/SqlQMAl01qLZNqFIuxrPwz7+03LIdn
+	nhfIIzC+KXuqzMXhB+Sb4we+aSGEl/xq9CSB/wa4a36ZP+P3q1hpCd/k/LxQwMNbwF2+hATIRJcNj
+	FyK9LBMIPKm+JxSKdRkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIfDM-000756-No; Thu, 10 Oct 2019 20:39:12 +0000
-Received: from mout.kundenserver.de ([212.227.126.134])
+	id 1iIfDy-0007U9-8a; Thu, 10 Oct 2019 20:39:50 +0000
+Received: from mout.kundenserver.de ([212.227.126.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIfD8-00072D-Bv
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 20:39:00 +0000
+ id 1iIfDn-0007TR-DI
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 20:39:41 +0000
 Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
  (mreue012 [212.227.15.129]) with ESMTPA (Nemesis) id
- 1MlL5x-1hoan32nCH-00llHL; Thu, 10 Oct 2019 22:38:52 +0200
+ 1MEUaQ-1iKKzT1KnK-00FzQO; Thu, 10 Oct 2019 22:39:37 +0200
 From: Arnd Bergmann <arnd@arndb.de>
-To: Kukjin Kim <kgene@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>
-Subject: [PATCH 12/36] ARM: s3c64xx: remove mach/hardware.h
-Date: Thu, 10 Oct 2019 22:29:56 +0200
-Message-Id: <20191010203043.1241612-12-arnd@arndb.de>
+To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Andi Shyti <andi@etezian.org>, Mark Brown <broonie@kernel.org>
+Subject: [PATCH 13/36] ARM: s3c: move regs-spi.h into spi driver
+Date: Thu, 10 Oct 2019 22:29:57 +0200
+Message-Id: <20191010203043.1241612-13-arnd@arndb.de>
 X-Mailer: git-send-email 2.20.0
 In-Reply-To: <20191010203043.1241612-1-arnd@arndb.de>
 References: <20191010202802.1132272-1-arnd@arndb.de>
  <20191010203043.1241612-1-arnd@arndb.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:OXe9QnfIOm2QB7E89P7eHTIAVvdAUR8mNrxxSaX9vBslXNpzA9w
- Lg+aJ+KE73cm6jXF7a1hIijERFXs9Yq/KzYJQAoVZk3PGgnOkaO+oS0kOazRYUFMvsVN9xI
- 6zys/ptdflbTnlNoqYrjnMzd98Fn8RfCEglT6NWiG7Sl1sqH3/wb3uRbAh1P6NiYtYrDFH3
- 9IImxelmRSj0RdAu1eiWw==
+X-Provags-ID: V03:K1:3w1t9KxRpboazCGFbUHHyRTgq8anB+CB4R77jmnunv3b/xUCHB4
+ q6DgNwffa+vbuyjv196/F+Tm4Xg7oOWOO704mQ9rv1LSA39GWM20GfooqrVAYwAuO4hxESt
+ DnhdUneq160nDqisp9FQkSUE4x8mw9aJZUv/WkZ2HjFJp47SwG33/0dfw5rF5NMZnlAERre
+ lLAQaHwWHBUzD2nFdeb+w==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:hs2OK14Huk4=:UoqLsaEEin+XUyqgAC0Bbu
- 8DzXYBz0uUZcngn/LCWTOPtv5gd/AuAugN8yEUtvb9+uUz7f/QThRZ2vwWIVx0QGnXhDbvhZQ
- eYNUfVHgkHtL6QlL6RhucARKyWVZaxCPLhiTZ0cHWJBkI4w4DSzSqx9+fWw8WxaNeHRFurbDS
- 28cqGO7FjkfeXVE4l1d7JW2VE2hxlHo4zIWT0KJfzJ6cXjkSDWeF3Cn5tjqdSc+IoEeUYt/KT
- xmLJNHI4KEsaKyMxOS0/TA2Uw+1vJUXeo4ERg6jOSyTqbyotKO4Rf0EJ9HoJ6CPJqHZ80sdOp
- GU8oW68vcNDeuPXFhzd0zHYMIrLHdP1SjJ3id0pDfZWxcnGBA/6cXwjEKVcmxitXXGTTIcEDW
- hOY/xlpijCx2UxAK+aTDa6q9NSL5gPsB1gEOci5+aLt+ZAqBD/qJRwNWiNVWdtl7cpyoM1Rnt
- uCKH7VnmuqTN3hJ3SoqLEw0LmvsTLiwwcjeJyYBXQ60/bDTgcoF0zAPN7zpUiWimGOFeVMhub
- usP/44lqKL7GGu7hG8pTR2BjN8XwJ98RM0plbqpuW3oi/gmnbvSBg3gRjtWfnUfKB464nizoC
- j4rCFQgt1ffip5sIusR2xYZfSoAmVHofEI4MClDtefSLRUUpfr8VRet5kP1EiZ3/hbyIIRp3m
- 85+nUPPm5CHyQZt9b8bfol/8I5BmlDY2XP8ZA9j7VlPePzR0mp3gkn3s/niVv8ndNX93H5yDR
- aE8EgdUvHpF3Q1cLO33KutOMplv/n/61Eg3cBwRbxOiRukZamUlLgQvFW7+yJRZxzac15zSgx
- JJ0ax0++Xvua5WXN1PdKowbvMAlgYNR/6W/9opEZrtYwgGpirLvRFSzWrRDl8bAgk4uksHdeD
- 92rdQipwb7tiSo0bheMQ==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:D2Xpu3hJhjQ=:UlYrBdqu61lE6ufO+d561Q
+ Bfw1XUpkKtAj070fPyGOPGjL7n7thPkZvxlq6FJqHfGBuMWhNQtVlNK3qQCxx7TIJpxXGBO55
+ S2tSfftKBXA1zvPo9DVrSkPn14yvUwhRNoMJHVhmf1dNTyiYMYBPK8YIu2JgDVKbE6ueZRFyP
+ CwNwZXKQb4SgL8zCdYvI2KdOV5FdySqN0yhnDhzwKkVPwOzpzyh3BG36SfQ5HDDhdOneDmK7b
+ LHe3+SbLc/mHgIE5Gncs+lYo98vEQJ04siZUWGEyqKNT6am1gI5xHZYMo/vdgaCwhGj8hceQI
+ 0StPryl7h1jIKdThg3Pj2XiDEdzhdM+1vAivgH2i6aDk7+v+petjoJfLjTIfLupqjUE5BeSU5
+ jroS8Pu/PuUyzqHGYtfCLw6/Gd7X3AkSpgBX0EQX2qSGW4dgYFfRmqj8LIbNb6WPo1gxS5IFn
+ D4jXIyXnrTRYnOv1j466yYllfqSQI/PDaOUXrZfd4Fmmzr9ACHb6ufFNT8ZK7zJ8fVFpliHR4
+ bDy8ACybE/Xy77m5qD03tsZQ0ow+oYUtvLZI5FxC+7Z07LwDR291mk5MOczTNtaP9laPz7xF/
+ xI1WcX7OJLa52/KgWZKTwireyfx73pbanE43U6sJ7mNgLwCS79xQysGOylpMoUGOC6FZPi4Qt
+ O/F/Rue9E4yI5q1nn97/HVXh20N/LBU4xVXHavk0J8mwmpD/UedJkT3MvV2nxwjATmI1tlu3w
+ 3dt2fUlJP1wsblfsMHy8Yt4BPMG2Zb29XzZ3C1gAsEVVMOGGhfdo+BvcWofCSDocCn2Q162Z/
+ ijP/Ek03rpUSCYREBVJ3vU8Jm7E1a7EQsqeYKVMp8KH/dTm0Je+BDd/amA3vTRFE5GlhsIA7x
+ I1a+2suH/zaEx0hJqmfg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_133858_714490_FDDA0B35 
-X-CRM114-Status: GOOD (  11.24  )
+X-CRM114-CacheID: sfid-20191010_133939_739737_E4E88B6A 
+X-CRM114-Status: GOOD (  12.64  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.134 listed in list.dnswl.org]
+ no trust [212.227.126.133 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -79,177 +79,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org,
- Charles Keepax <ckeepax@opensource.cirrus.com>, Arnd Bergmann <arnd@arndb.de>,
+Cc: linux-samsung-soc@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
  linus.walleij@linaro.org, linux-kernel@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+ linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This header is empty and conflicts with the s3c24xx version
-of the same file when we merge the two, so stop including it.
+The file is mostly specific to the driver, the few bits that
+are actually used by the platform code get moved to mach/map.h
+instead.
 
 Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 ---
- arch/arm/mach-s3c64xx/common.c                |  1 -
- arch/arm/mach-s3c64xx/dev-uart.c              |  1 -
- arch/arm/mach-s3c64xx/include/mach/hardware.h | 17 -----------------
- arch/arm/mach-s3c64xx/mach-anw6410.c          |  1 -
- arch/arm/mach-s3c64xx/mach-crag6410.c         |  1 -
- arch/arm/mach-s3c64xx/mach-hmt.c              |  1 -
- arch/arm/mach-s3c64xx/mach-ncp.c              |  1 -
- arch/arm/mach-s3c64xx/mach-smdk6400.c         |  1 -
- arch/arm/mach-s3c64xx/mach-smdk6410.c         |  1 -
- arch/arm/mach-s3c64xx/s3c6400.c               |  1 -
- arch/arm/mach-s3c64xx/s3c6410.c               |  1 -
- 11 files changed, 27 deletions(-)
- delete mode 100644 arch/arm/mach-s3c64xx/include/mach/hardware.h
+ arch/arm/mach-s3c24xx/include/mach/map.h                      | 2 ++
+ arch/arm/mach-s3c24xx/s3c2412.c                               | 1 -
+ arch/arm/plat-samsung/devs.c                                  | 1 -
+ drivers/spi/spi-s3c24xx-fiq.S                                 | 4 +++-
+ .../include/plat/regs-spi.h => drivers/spi/spi-s3c24xx-regs.h | 3 ---
+ drivers/spi/spi-s3c24xx.c                                     | 3 +--
+ 6 files changed, 6 insertions(+), 8 deletions(-)
+ rename arch/arm/plat-samsung/include/plat/regs-spi.h => drivers/spi/spi-s3c24xx-regs.h (95%)
 
-diff --git a/arch/arm/mach-s3c64xx/common.c b/arch/arm/mach-s3c64xx/common.c
-index 13e91074308a..19d544f6808a 100644
---- a/arch/arm/mach-s3c64xx/common.c
-+++ b/arch/arm/mach-s3c64xx/common.c
-@@ -36,7 +36,6 @@
+diff --git a/arch/arm/mach-s3c24xx/include/mach/map.h b/arch/arm/mach-s3c24xx/include/mach/map.h
+index bca93112f57d..a20c9fd0d855 100644
+--- a/arch/arm/mach-s3c24xx/include/mach/map.h
++++ b/arch/arm/mach-s3c24xx/include/mach/map.h
+@@ -86,6 +86,8 @@
+ #define S3C2410_PA_SPI	   (0x59000000)
+ #define S3C2443_PA_SPI0		(0x52000000)
+ #define S3C2443_PA_SPI1		S3C2410_PA_SPI
++#define S3C2410_SPI1		(0x20)
++#define S3C2412_SPI1		(0x100)
  
- #include <mach/map.h>
- #include <mach/irqs.h>
--#include <mach/hardware.h>
- #include <mach/regs-gpio.h>
- #include <mach/gpio-samsung.h>
- 
-diff --git a/arch/arm/mach-s3c64xx/dev-uart.c b/arch/arm/mach-s3c64xx/dev-uart.c
-index 5fb59ad30008..021a2b7926fa 100644
---- a/arch/arm/mach-s3c64xx/dev-uart.c
-+++ b/arch/arm/mach-s3c64xx/dev-uart.c
-@@ -15,7 +15,6 @@
- 
- #include <asm/mach/arch.h>
- #include <asm/mach/irq.h>
--#include <mach/hardware.h>
- #include <mach/map.h>
- #include <mach/irqs.h>
- 
-diff --git a/arch/arm/mach-s3c64xx/include/mach/hardware.h b/arch/arm/mach-s3c64xx/include/mach/hardware.h
-deleted file mode 100644
-index c4ed359474de..000000000000
---- a/arch/arm/mach-s3c64xx/include/mach/hardware.h
-+++ /dev/null
-@@ -1,17 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0 */
--/* linux/arch/arm/mach-s3c6400/include/mach/hardware.h
-- *
-- * Copyright 2008 Openmoko, Inc.
-- * Copyright 2008 Simtec Electronics
-- *      Ben Dooks <ben@simtec.co.uk>
-- *      http://armlinux.simtec.co.uk/
-- *
-- * S3C6400 - Hardware support
-- */
--
--#ifndef __ASM_ARCH_HARDWARE_H
--#define __ASM_ARCH_HARDWARE_H __FILE__
--
--/* currently nothing here, placeholder */
--
--#endif /* __ASM_ARCH_IRQ_H */
-diff --git a/arch/arm/mach-s3c64xx/mach-anw6410.c b/arch/arm/mach-s3c64xx/mach-anw6410.c
-index 0d3d5befb806..44858c5aea5d 100644
---- a/arch/arm/mach-s3c64xx/mach-anw6410.c
-+++ b/arch/arm/mach-s3c64xx/mach-anw6410.c
-@@ -30,7 +30,6 @@
- #include <asm/mach/map.h>
- #include <asm/mach/irq.h>
- 
--#include <mach/hardware.h>
- #include <mach/map.h>
- 
- #include <asm/irq.h>
-diff --git a/arch/arm/mach-s3c64xx/mach-crag6410.c b/arch/arm/mach-s3c64xx/mach-crag6410.c
-index 8ec6a4f5eb05..da5b50981a14 100644
---- a/arch/arm/mach-s3c64xx/mach-crag6410.c
-+++ b/arch/arm/mach-s3c64xx/mach-crag6410.c
-@@ -44,7 +44,6 @@
- #include <asm/mach-types.h>
- 
- #include <video/samsung_fimd.h>
--#include <mach/hardware.h>
- #include <mach/map.h>
- #include <mach/regs-gpio.h>
- #include <mach/gpio-samsung.h>
-diff --git a/arch/arm/mach-s3c64xx/mach-hmt.c b/arch/arm/mach-s3c64xx/mach-hmt.c
-index bfe9881d12cc..a6634fd9e6c4 100644
---- a/arch/arm/mach-s3c64xx/mach-hmt.c
-+++ b/arch/arm/mach-s3c64xx/mach-hmt.c
-@@ -25,7 +25,6 @@
- #include <asm/mach/irq.h>
- 
- #include <video/samsung_fimd.h>
--#include <mach/hardware.h>
- #include <mach/map.h>
- #include <mach/irqs.h>
- 
-diff --git a/arch/arm/mach-s3c64xx/mach-ncp.c b/arch/arm/mach-s3c64xx/mach-ncp.c
-index 13fea5c86ca3..34a00b33fae9 100644
---- a/arch/arm/mach-s3c64xx/mach-ncp.c
-+++ b/arch/arm/mach-s3c64xx/mach-ncp.c
-@@ -25,7 +25,6 @@
- #include <asm/mach/irq.h>
- 
- #include <mach/irqs.h>
--#include <mach/hardware.h>
- #include <mach/map.h>
- 
- #include <asm/irq.h>
-diff --git a/arch/arm/mach-s3c64xx/mach-smdk6400.c b/arch/arm/mach-s3c64xx/mach-smdk6400.c
-index cbd16843c7d1..885158f0a304 100644
---- a/arch/arm/mach-s3c64xx/mach-smdk6400.c
-+++ b/arch/arm/mach-s3c64xx/mach-smdk6400.c
-@@ -23,7 +23,6 @@
- #include <asm/mach/irq.h>
- 
- #include <mach/irqs.h>
--#include <mach/hardware.h>
- #include <mach/map.h>
- 
+ /* SDI */
+ #define S3C2410_PA_SDI	   (0x5A000000)
+diff --git a/arch/arm/mach-s3c24xx/s3c2412.c b/arch/arm/mach-s3c24xx/s3c2412.c
+index 8fe4d4670dcb..c3fb3e6c0dd8 100644
+--- a/arch/arm/mach-s3c24xx/s3c2412.c
++++ b/arch/arm/mach-s3c24xx/s3c2412.c
+@@ -37,7 +37,6 @@
+ #include <plat/cpu-freq.h>
  #include <plat/devs.h>
-diff --git a/arch/arm/mach-s3c64xx/mach-smdk6410.c b/arch/arm/mach-s3c64xx/mach-smdk6410.c
-index 908e5aa831c8..95bdcfe95a53 100644
---- a/arch/arm/mach-s3c64xx/mach-smdk6410.c
-+++ b/arch/arm/mach-s3c64xx/mach-smdk6410.c
-@@ -45,7 +45,6 @@
- #include <asm/mach/map.h>
- #include <asm/mach/irq.h>
+ #include <plat/pm.h>
+-#include <plat/regs-spi.h>
  
--#include <mach/hardware.h>
- #include <mach/irqs.h>
+ #include "common.h"
+ #include "nand-core.h"
+diff --git a/arch/arm/plat-samsung/devs.c b/arch/arm/plat-samsung/devs.c
+index 6e4c1cb07104..fd94a35e22f8 100644
+--- a/arch/arm/plat-samsung/devs.c
++++ b/arch/arm/plat-samsung/devs.c
+@@ -59,7 +59,6 @@
+ #include <linux/platform_data/usb-s3c2410_udc.h>
+ #include <linux/platform_data/usb-ohci-s3c2410.h>
+ #include <plat/usb-phy.h>
+-#include <plat/regs-spi.h>
+ #include <linux/platform_data/asoc-s3c.h>
+ #include <linux/platform_data/spi-s3c64xx.h>
+ 
+diff --git a/drivers/spi/spi-s3c24xx-fiq.S b/drivers/spi/spi-s3c24xx-fiq.S
+index e95d6282109e..9d5f8f1e5e81 100644
+--- a/drivers/spi/spi-s3c24xx-fiq.S
++++ b/drivers/spi/spi-s3c24xx-fiq.S
+@@ -12,10 +12,12 @@
+ 
  #include <mach/map.h>
+ #include <mach/regs-irq.h>
+-#include <plat/regs-spi.h>
  
-diff --git a/arch/arm/mach-s3c64xx/s3c6400.c b/arch/arm/mach-s3c64xx/s3c6400.c
-index 545eea716db8..81233495d548 100644
---- a/arch/arm/mach-s3c64xx/s3c6400.c
-+++ b/arch/arm/mach-s3c64xx/s3c6400.c
-@@ -26,7 +26,6 @@
- #include <asm/mach/map.h>
- #include <asm/mach/irq.h>
+ #include "spi-s3c24xx-fiq.h"
  
--#include <mach/hardware.h>
- #include <asm/irq.h>
++#define S3C2410_SPTDAT           (0x10)
++#define S3C2410_SPRDAT           (0x14)
++
+ 	.text
  
- #include <plat/cpu-freq.h>
-diff --git a/arch/arm/mach-s3c64xx/s3c6410.c b/arch/arm/mach-s3c64xx/s3c6410.c
-index 47e04e019624..9465a6e0f068 100644
---- a/arch/arm/mach-s3c64xx/s3c6410.c
-+++ b/arch/arm/mach-s3c64xx/s3c6410.c
-@@ -27,7 +27,6 @@
- #include <asm/mach/map.h>
- #include <asm/mach/irq.h>
+ 	@ entry to these routines is as follows, with the register names
+diff --git a/arch/arm/plat-samsung/include/plat/regs-spi.h b/drivers/spi/spi-s3c24xx-regs.h
+similarity index 95%
+rename from arch/arm/plat-samsung/include/plat/regs-spi.h
+rename to drivers/spi/spi-s3c24xx-regs.h
+index 607844311566..37b93ff7c7fe 100644
+--- a/arch/arm/plat-samsung/include/plat/regs-spi.h
++++ b/drivers/spi/spi-s3c24xx-regs.h
+@@ -8,9 +8,6 @@
+ #ifndef __ASM_ARCH_REGS_SPI_H
+ #define __ASM_ARCH_REGS_SPI_H
  
--#include <mach/hardware.h>
- #include <asm/irq.h>
+-#define S3C2410_SPI1		(0x20)
+-#define S3C2412_SPI1		(0x100)
+-
+ #define S3C2410_SPCON		(0x00)
  
- #include <plat/cpu-freq.h>
+ #define S3C2410_SPCON_SMOD_DMA	(2 << 5)	/* DMA mode */
+diff --git a/drivers/spi/spi-s3c24xx.c b/drivers/spi/spi-s3c24xx.c
+index 2d6e37f25e2d..2f395e4861f6 100644
+--- a/drivers/spi/spi-s3c24xx.c
++++ b/drivers/spi/spi-s3c24xx.c
+@@ -21,10 +21,9 @@
+ #include <linux/spi/s3c24xx.h>
+ #include <linux/module.h>
+ 
+-#include <plat/regs-spi.h>
+-
+ #include <asm/fiq.h>
+ 
++#include "spi-s3c24xx-regs.h"
+ #include "spi-s3c24xx-fiq.h"
+ 
+ /**
 -- 
 2.20.0
 
