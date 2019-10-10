@@ -2,79 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C51CD1E2A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 04:06:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2488D1E2C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 04:07:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rrdu0YeTLYxZEO9xhzmde2ETRpPT+YnX+47A0x7lPRk=; b=qShQNO4hEgCUVe
-	VC+wpZDDMO9Xy1zndVFfFEN/KDwns8WABtP93k1PLqAxTwRLvtVEyc/C9CxPPo2bHXZKNpDIBN1c3
-	SzmOM4mzDzbMJUKHxlai5x7o2zFOA7atN1g93f9lk0bJhXsoREp+05eKlzeAtmeghruBJT3WbOU99
-	H4YenNhjNCQeHrhW2St+Q4q3GwdwCwDK1c2qrgEj7mp/MW2vY/awppFCflnqGQVXIwZ2yzISygUWd
-	SzWi26mGIr08dWRAeLgUaAGdJT9oy7IttIJjN/3U8IuDTAPbZuMPfoUvFnEni3YBHSS3ge8U59ZOj
-	024L7mYfpon//DnoX3NA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Zy1D4DTFui2fbCdybc+YsLMj/IAhurYS9jh0b6DiWkU=; b=DZouqOdp8iv29b
+	7PqsBiA+cGbmfJ3BVTsafHpMsFLJxosvg66JNi568bktE03OdN4E7QFcoZGzwq0sYt866ySXY2RmY
+	dXb6KI6XQpDHLsnjWiDoZ9cyUnmp3zrEuw0sqzDSs/Dok8bZSmEoRK4R+AmvYiO9hNawe0gc+lfpQ
+	QCRkgtJxVgcL16m7pSyAzWmt8qkxPWsQHSc2D9o1tiJ5vadTCH4bxx8q1bpKndoz9SxLrFl6eY/Li
+	0mwlmc3vahu7T/90npEmouCtCJ2Qrh6WWFNinj/8tVwcojTXSJA2W4q0ao38KNyt9AjaZN3sBg1AC
+	Gevum3iIwnxggvHoK6Uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iINqt-0006WW-Nm; Thu, 10 Oct 2019 02:06:51 +0000
+	id 1iINrA-0006lS-MC; Thu, 10 Oct 2019 02:07:08 +0000
 Received: from out2-smtp.messagingengine.com ([66.111.4.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iINq4-00064n-DU
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 02:06:01 +0000
+ id 1iINqQ-0006LC-Ez
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 02:06:24 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id C3C5221F69;
- Wed,  9 Oct 2019 22:05:59 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Wed, 09 Oct 2019 22:05:59 -0400
+ by mailout.nyi.internal (Postfix) with ESMTP id 80EF421E90;
+ Wed,  9 Oct 2019 22:06:21 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Wed, 09 Oct 2019 22:06:21 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
- :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=8kdG9zhIR956q
- GWhaPFWlTIP80VwjVLkxKENfTlDMS4=; b=T9pFEC/haKQdt6yfBtJSBGMvDidCG
- Wc7V7ru+eoWGwPQn9EL6H04eoPP74i1b32ctbp3u0h9y60Zmd5ldEpfc8WQArat1
- Kf9iWKdCsd1D/HqChep8+PaEr89/OEtOpfVGAoDNU/0l2XcwIQ3gyZDvXTrs1X+9
- 3Gn8vDUaWohBPvVMfDX4egdTosQ8pBNGSLa6NhblaqSL/B8ymITsLFrXeawbzi03
- JTjXenIw1CA0knSIEo7aytt5ULQpvDFKjQ4YQKhA9eKpeykHXsfaeEP2CqhRQlKv
- a3Zfc0Ny07H3/5Tf8O7MOmC40ylwMfg645fOLJnC7ade1fef4l+7QsV/g==
+ :to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm3; bh=BbKe8lAB6aLlCjfJZgxJtnIxN4
+ 5+vPNsWUwa92cPHoM=; b=IkjsmFJDTlGNZMhcdiYMZUiNjofp+H76r88IYAzXiN
+ WuTBqVVhfNGstxu50I3HT4g3wnANmqXqGnHN7lMrjfRe6QZOj6UqI8vA/N/CDJlT
+ /9KQfZ37JV1y92ZVwV51YzXAF2EKohI3H/PGpsexi2NNQEoYPQsDrXM4W0m26B+h
+ P8z2Jws7+5JFGcahZGYX9KNUe6XJtH94F2+B7hoQTfswArnzbBnVmzg1mc4Q8pdR
+ bsFyXaZ4yw+Nxqkaep0r7JoWva0TrUL0V3ihhpKGXSIQi7JVIVsW/TrTNvr/Z/nm
+ EQfR4cC//S5UvMj5T2FHWFypJtQw/6B9UESI+yMj8m4A==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
- :in-reply-to:message-id:mime-version:references:subject:to
- :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm1; bh=8kdG9zhIR956qGWhaPFWlTIP80VwjVLkxKENfTlDMS4=; b=vzmGa8Jl
- jmeLM7E89olc4fD/vvKJqaLXhB2HqLvceEvp27OauGTtDr8ADbFJQXv0TJEnzI5z
- kXEVTQhT2FAaqHJj4m+r8zVI1vrNJbrvQ8BT7PLFpb6xG8WenmSBDolYhMe0O4y5
- Mvqdauh2BjWfR2/92zJjXQVrsoi+boEGtTFocmatoQXA4HiTjwrv/qOzJ6lNgVN4
- bLXwRPsPW2EOIdZZpfnXSPykpNC3jh0ofL+40eAQV3vd9QctjgX7jxtmz9F0vyxD
- taiL15tudBLMe+/2aRBeLlfE+BsRS0bRVYrJeYrT5qf0i+soBdvUIobq6jlb0SZ8
- /fT93ZVW0FPmKA==
-X-ME-Sender: <xms:B5KeXbVxFuO3-aitgcQhhs2p5qBvkrkRGH-ql_ViIfaTrJGwv2C29g>
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=BbKe8lAB6aLlCjfJZ
+ gxJtnIxN45+vPNsWUwa92cPHoM=; b=xopbKxbvIBWIRZ2xt2xLRt6jYHaIeBghS
+ uxIRxQk+aXuQIzqAqNbEgpy1mtAuUH3vRP21B2tC3O3YXUSdIFoIBDr+ATx5OAM7
+ s0ur2yMDmvuhfCN0tuMsJjGkRpfJ9O1kd9WJX2/Q2XZqu2KTegLI2MBlOpHk6pT5
+ +hJs8pCPEzjrvVgQzO5YaNsvD2V9DaztoJ9/FefK/Qc6jlWGuI5CfOIgEKya8nWw
+ PTt2kRHj1Kq18+5PBIFtYxSc6iUhz6sG/nwSA5nJMSEexiej/knNZ2IaLXcUAixS
+ 1jfOFdrpl9dTftpXayl4ynrGqhjZyFXlvXofJVv42LqoPpCt6fUrA==
+X-ME-Sender: <xms:HZKeXQII42Z69vCLC3eQl4QskYdZGdvDyYSNlH8kP8f6mr2Cih8c7A>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedriedvgdehjecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffojghfggfgsedtkeertd
- ertddtnecuhfhrohhmpeetnhgurhgvficulfgvfhhfvghrhicuoegrnhgurhgvfiesrghj
- rdhiugdrrghuqeenucfkphepvddtvddrkedurddukedrfedtnecurfgrrhgrmhepmhgrih
- hlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgvrhfuihiivgep
- td
-X-ME-Proxy: <xmx:B5KeXX39t0TUd5lmpFzMwU5YYATuC3t1ttl8lJkkisjHxuS_WtELMw>
- <xmx:B5KeXSYp_GaDcMGXCKEj9syTWGDZgCdZ_ed_FUm0HiIedyvkNQRyLw>
- <xmx:B5KeXaqyXFgQU-E10YIONlatb1Z7Mg5rHlZuN2UKHFtmBRwoNTJo5Q>
- <xmx:B5KeXWeYjp2gYpH70wSoy-OvAMz9B8GQdbfoWPt7vjJ2OahhZU12Tg>
+ uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffoggfgsedtkeertdertd
+ dtnecuhfhrohhmpeetnhgurhgvficulfgvfhhfvghrhicuoegrnhgurhgvfiesrghjrdhi
+ ugdrrghuqeenucffohhmrghinhepkhgvrhhnvghlrdhorhhgnecukfhppedvtddvrdekud
+ drudekrdeftdenucfrrghrrghmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgu
+ rdgruhenucevlhhushhtvghrufhiiigvpedu
+X-ME-Proxy: <xmx:HZKeXatCnlPNFR-ESBZ4AC0xo6CjE9-Q-CtPma4Z6E1NciFDbKvWBA>
+ <xmx:HZKeXdQSDGMF0a4wjnCwi5-NKVucxhimWnp-RD3cB_lvE_4-To8-Fg>
+ <xmx:HZKeXQOyv-U6SiPDk-1uTm6J8yuVjUuooDJdNCCdOeyB4ACqj-GwSA>
+ <xmx:HZKeXVzii6CfDaNDRUM0xX_ObCob9TA4uzy6bETopK6S16Y8g5R5-w>
 Received: from mistburn.au.ibm.com (bh02i525f01.au.ibm.com [202.81.18.30])
- by mail.messagingengine.com (Postfix) with ESMTPA id 6CA8FD6005D;
- Wed,  9 Oct 2019 22:05:56 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 02CF580061;
+ Wed,  9 Oct 2019 22:06:17 -0400 (EDT)
 From: Andrew Jeffery <andrew@aj.id.au>
 To: linux-clk@vger.kernel.org
-Subject: [PATCH v2 2/2] clk: aspeed: Add RMII RCLK gates for both AST2500 MACs
-Date: Thu, 10 Oct 2019 12:36:55 +1030
-Message-Id: <20191010020655.3776-3-andrew@aj.id.au>
+Subject: [PATCH v2 0/2] clk: ast2600: Expose RMII RCLK for MACs 1-4
+Date: Thu, 10 Oct 2019 12:37:23 +1030
+Message-Id: <20191010020725.3990-1-andrew@aj.id.au>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191010020655.3776-1-andrew@aj.id.au>
-References: <20191010020655.3776-1-andrew@aj.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_190600_651563_BC5A818E 
-X-CRM114-Status: UNSURE (   9.72  )
+X-CRM114-CacheID: sfid-20191009_190622_859652_1D4B918F 
+X-CRM114-Status: UNSURE (   8.43  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -112,68 +109,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RCLK is a fixed 50MHz clock derived from HPLL that is described by a
-single gate for each MAC.
+Hello,
 
-Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
----
-v2: Drop "-gate" from clock names
+This series is similar to that for the AST2500 but I've split the patches out
+as the AST2600 driver is new for 5.4 and I'm hoping we have a chance of
+slipping them in. Maybe we can get both series in, but I thought decoupling
+them might make it more manageable if not.
 
- drivers/clk/clk-aspeed.c | 27 ++++++++++++++++++++++++++-
- 1 file changed, 26 insertions(+), 1 deletion(-)
+Regardless, the blurb:
 
-diff --git a/drivers/clk/clk-aspeed.c b/drivers/clk/clk-aspeed.c
-index abf06fb6453e..411ff5fb2c07 100644
---- a/drivers/clk/clk-aspeed.c
-+++ b/drivers/clk/clk-aspeed.c
-@@ -14,7 +14,7 @@
- 
- #include "clk-aspeed.h"
- 
--#define ASPEED_NUM_CLKS		36
-+#define ASPEED_NUM_CLKS		38
- 
- #define ASPEED_RESET2_OFFSET	32
- 
-@@ -28,6 +28,7 @@
- #define  AST2400_HPLL_BYPASS_EN	BIT(17)
- #define ASPEED_MISC_CTRL	0x2c
- #define  UART_DIV13_EN		BIT(12)
-+#define ASPEED_MAC_CLK_DLY	0x48
- #define ASPEED_STRAP		0x70
- #define  CLKIN_25MHZ_EN		BIT(23)
- #define  AST2400_CLK_SOURCE_SEL	BIT(18)
-@@ -462,6 +463,30 @@ static int aspeed_clk_probe(struct platform_device *pdev)
- 		return PTR_ERR(hw);
- 	aspeed_clk_data->hws[ASPEED_CLK_MAC] = hw;
- 
-+	if (of_device_is_compatible(pdev->dev.of_node, "aspeed,ast2500-scu")) {
-+		/* RMII 50MHz RCLK */
-+		hw = clk_hw_register_fixed_rate(dev, "mac12rclk", "hpll", 0,
-+						50000000);
-+		if (IS_ERR(hw))
-+			return PTR_ERR(hw);
-+
-+		/* RMII1 50MHz (RCLK) output enable */
-+		hw = clk_hw_register_gate(dev, "mac1rclk", "mac12rclk", 0,
-+				scu_base + ASPEED_MAC_CLK_DLY, 29, 0,
-+				&aspeed_clk_lock);
-+		if (IS_ERR(hw))
-+			return PTR_ERR(hw);
-+		aspeed_clk_data->hws[ASPEED_CLK_MAC1RCLK] = hw;
-+
-+		/* RMII2 50MHz (RCLK) output enable */
-+		hw = clk_hw_register_gate(dev, "mac2rclk", "mac12rclk", 0,
-+				scu_base + ASPEED_MAC_CLK_DLY, 30, 0,
-+				&aspeed_clk_lock);
-+		if (IS_ERR(hw))
-+			return PTR_ERR(hw);
-+		aspeed_clk_data->hws[ASPEED_CLK_MAC2RCLK] = hw;
-+	}
-+
- 	/* LPC Host (LHCLK) clock divider */
- 	hw = clk_hw_register_divider_table(dev, "lhclk", "hpll", 0,
- 			scu_base + ASPEED_CLK_SELECTION, 20, 3, 0,
+This series is two small changes enable kernel support for controlling the RMII
+RCLK gate on AST2600-based systems. RMII is commonly used for NCSI, which
+itself is commonly used for BMC-based designs to reduce cabling requirements
+for the platform. NCSI support for the AST2600 is not yet implemented in
+u-boot and so unlike the AST2500 the kernel can't rely on RCLK already being
+ungated.
+
+v2: Rename some macros and clocks based on feedback from Joel
+
+v1 can be found here: https://lore.kernel.org/linux-clk/20191008113553.13662-1-andrew@aj.id.au/
+
+Please review!
+
+Andrew
+
+Andrew Jeffery (2):
+  dt-bindings: clock: Add AST2600 RMII RCLK gate definitions
+  clk: ast2600: Add RMII RCLK gates for all four MACs
+
+ drivers/clk/clk-ast2600.c                 | 47 ++++++++++++++++++++++-
+ include/dt-bindings/clock/ast2600-clock.h |  4 ++
+ 2 files changed, 50 insertions(+), 1 deletion(-)
+
 -- 
 2.20.1
 
