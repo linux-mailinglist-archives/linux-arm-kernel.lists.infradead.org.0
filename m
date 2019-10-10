@@ -2,76 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18D8CD3056
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 20:26:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FC0BD305E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 20:27:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OQLd/pOs8xeefhYyT+Gqke/nr2hTO1KABBth7LGG6uY=; b=GLqTqa+htOgps/
-	8ZiqWLmgJ2Hv8sAN/4RTAiMLfmid9N7M75YixHXXFL3BFYt6WdzmWRn/ThaFiPjTISO+M0J6UfmOT
-	wcHsIWwE2E8n5hXrYbEW4uIsQFa9hC635EAPnpqjeDv+hy3DnNOIqjevXGmk+zO2YLtO9eeva/0Dw
-	WbYSdG+01t7u9HI8XH92+4hygLm2q9qLlZSINiXkPn54dEWXnbbi2N0LstXD91kLbTdSPgVIMtfmS
-	upMLxGHvq8ldd7UB0esuVtwmwvve+9iAZ7z+L9mcUDqMfMWemedZSMoDS5TL9llce7YGslRJbMyMB
-	AL9Eg+978RqIPEKPgPzQ==;
+	List-Owner; bh=j1NMdXL10TsonNgCbI8WjI/lLzvdRBfKaEKr1+G0m1Y=; b=dn5MdBleWIIhRJ
+	NuKa9LGALfT0dNY1x72CJZLlTHkCCrDGwcQJt8nO5XVDOxIrqTDmf1GcfJn8lyzOt+uFbbAf+AptL
+	2EFTlpGKJzqBR8in8a6RurO2HDS6kcaynKmAg4Ix6VQ7WelLu4YXopgdhagTyZvYh6M2+z+c7fs+G
+	z98gMeVnZ1FBd+ZKWrxG8PTVTiBQBbmayTaHp/XANtFzGATfG0RpxMDlIBb2/g499RlUy7v9N94mG
+	+Vs7NhyHfAwfV1orIZyCFq36iboeBZnD/SZVZf0vib/XvWLGdpI8fXr4w4aA8P31rFD/BIR592M22
+	nRAohgMehDDDrcylancQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iId8Z-0005hg-A8; Thu, 10 Oct 2019 18:26:07 +0000
+	id 1iId9R-0006Tw-MZ; Thu, 10 Oct 2019 18:27:01 +0000
 Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iId6c-0002jJ-W5
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 18:24:08 +0000
-Received: by mail-wr1-x443.google.com with SMTP id w12so9061451wro.5
+ id 1iId6h-0002om-Fz
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 18:24:13 +0000
+Received: by mail-wr1-x443.google.com with SMTP id b9so9103041wrs.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 10 Oct 2019 11:24:06 -0700 (PDT)
+ Thu, 10 Oct 2019 11:24:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=zV4+mJumjqZCVRf0c568eaULYg2KEJ/Mri+qUnmNENE=;
- b=SNnzUgCShqB91rBQPYgw+55+tDlJug8viZ2Uop8snJh+mtOTwMXXgYhs+gZGRxMoQA
- n8/fstbe5hw+a/htzu6rTNddjF2aBagVRxwDDUhHxVxvU40ku96OBLTeapvzMJxLtkOG
- UO6augPEEOj85WasZdSPBpv9NsbNplolHwpA2M3h7FtXUEzsmqKOsIVPMdVlhPm+IrJJ
- yCjQouzRduft0Pmp7zzmRpYbr32cvy60Ha30jpjijErMjamReU/Vype6zxk70HHPVTVl
- 2Zp1FAGEoI6hZWVLfSzdHzRkPp/bTbajMdHw28EaRpSNDqoRoxAAVTHEthQgQsPYoXRn
- VtDg==
+ bh=rYi1VSAulK4JfPFywnxCiz/tj4/4Gu/YnXW7odKIbWU=;
+ b=Kr8hUZA75c1Bnf/XsiOtbPU0uR36AeEFj/LojWcMhcPK0PTEKY5Mk/Z/fe19InSyTl
+ XfNFzKHocC9RsOGeC4k2ydCDBO5nZtWu2RXNN3MW21uLPAb2udgcoqc3Olgy0MnTvojO
+ 9no0tm0g37RlurDNA1JSCCxgrTFYblyVbsU1x9bAd5FnP+txB67ICOyFCfNAIXrJP/KP
+ JvH2h+R5F4jewjvg08955UsdCdr+BUvUnZUuyOPV/EN1R+G+b7Z2ukroUKP+0yKdXLCC
+ 9QXsK2AVRbFS8wFFKF/pnpaGaceWzAx9GDZwxI23NqAo2vsERZsJsvplbtabukotAn+f
+ R6ww==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=zV4+mJumjqZCVRf0c568eaULYg2KEJ/Mri+qUnmNENE=;
- b=EfxRwuQa1EzR6BFXwKj5UL/gtIztNK9IePJJxWR6LTLJ0h8X5RoVQaW7FyefD1YE+i
- P2h95GUWY2GJcLOAXLgkGz4ZK49csCgYKTtf7VGGoMgLsTVsh4QLLi3oNGCkU7YBF6+Y
- CodZ7dmOn07yq9jFpPnAiK7K2y2xAh81JHQMiIlodnzqp/sGxVlPomFKHKyZ01P4P9qk
- B6u+vXesS1GoGAphXX2pYD8UGH1Dt8hIgH59TAb/HnmLbjgLY8W89grxxR4RC9B1pMlJ
- xYspvkllPI0VCgIwrFJpRUb5pxcpP6DX//Zj0JC+1q0qlLeiXUW3+v8ehPUs9i2dG2cu
- EI9Q==
-X-Gm-Message-State: APjAAAVY9nt3/MFR7LeyecuoEtseTY+Hh7OmMNoN67YExnGWleOP5dCt
- muv/89iI3P/nfVSe7Zz4RZY=
-X-Google-Smtp-Source: APXvYqzR3Cg6cSaHOhXgTL2hKg0UmDmZ5ktaekLPxs/QO7iDoyUifkfMyP7Bo4y2lIxgPjOmMzNudg==
-X-Received: by 2002:a05:6000:12cd:: with SMTP id
- l13mr9559404wrx.344.1570731845261; 
- Thu, 10 Oct 2019 11:24:05 -0700 (PDT)
+ bh=rYi1VSAulK4JfPFywnxCiz/tj4/4Gu/YnXW7odKIbWU=;
+ b=Su3VdikZmJMPGcA858Zloughb9+X+umFlqJhx1KcFP5joh4UTg7W4lC30skKBwA6ES
+ XtFpMpEgiCf5y7RjKM2e0N29TcfDYa1brDg2Mxi8NxZJoS20E4vkEEJO0cqrRVohI2Vh
+ uGeuqpyRSR95zEQC1LarsZijDGATCDdUL8fgB5Re6kh3en9YfoEv7V9VFCofULr9paRQ
+ ofU/TUr0skyG06zyWYKDImgy3soloZmUldwix/1PSuipz4tkT8lQCpti8FDQOM/8xDZ/
+ xum3Z9kr/QQ9GXCQq+tQ3nFQogpvLNxVxIkjZj8wKpdY4WqruDmI/1vHcHctFJhmPmzQ
+ gYJg==
+X-Gm-Message-State: APjAAAVSCElx64HinP2XCofOOeYzp1Rnb2TtRMxJVGcN0+entlfGARpA
+ DT3sKHVIgk3E4Uvobi61fOyXFfmi
+X-Google-Smtp-Source: APXvYqwP53ZvChovIvqkdm1RA2MyQqS2h1Qym7zVKohHbFRKdqrev/tdPed99iIgdJQF05D1SS7O4A==
+X-Received: by 2002:a5d:428c:: with SMTP id k12mr9800113wrq.184.1570731850062; 
+ Thu, 10 Oct 2019 11:24:10 -0700 (PDT)
 Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
  by smtp.googlemail.com with ESMTPSA id
- y186sm11367664wmb.41.2019.10.10.11.24.04
+ y186sm11367664wmb.41.2019.10.10.11.24.05
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 10 Oct 2019 11:24:04 -0700 (PDT)
+ Thu, 10 Oct 2019 11:24:09 -0700 (PDT)
 From: Corentin Labbe <clabbe.montjoie@gmail.com>
 To: catalin.marinas@arm.com, davem@davemloft.net, herbert@gondor.apana.org.au,
  linux@armlinux.org.uk, mark.rutland@arm.com, mripard@kernel.org,
  robh+dt@kernel.org, wens@csie.org, will@kernel.org
-Subject: [PATCH v3 09/11] sunxi_defconfig: add new Allwinner crypto options
-Date: Thu, 10 Oct 2019 20:23:26 +0200
-Message-Id: <20191010182328.15826-10-clabbe.montjoie@gmail.com>
+Subject: [PATCH v3 10/11] arm64: defconfig: add new Allwinner crypto options
+Date: Thu, 10 Oct 2019 20:23:27 +0200
+Message-Id: <20191010182328.15826-11-clabbe.montjoie@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20191010182328.15826-1-clabbe.montjoie@gmail.com>
 References: <20191010182328.15826-1-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_112407_048635_F09637CB 
-X-CRM114-Status: GOOD (  10.67  )
+X-CRM114-CacheID: sfid-20191010_112411_655891_9CFAE28A 
+X-CRM114-Status: GOOD (  10.78  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -110,24 +109,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds the new Allwinner crypto configs to sunxi_defconfig
+This patch adds the new allwinner crypto configs to ARM64 defconfig
 
 Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
 ---
- arch/arm/configs/sunxi_defconfig | 2 ++
+ arch/arm64/configs/defconfig | 2 ++
  1 file changed, 2 insertions(+)
 
-diff --git a/arch/arm/configs/sunxi_defconfig b/arch/arm/configs/sunxi_defconfig
-index df433abfcb02..d0ab8ba7710a 100644
---- a/arch/arm/configs/sunxi_defconfig
-+++ b/arch/arm/configs/sunxi_defconfig
-@@ -150,4 +150,6 @@ CONFIG_NLS_CODEPAGE_437=y
- CONFIG_NLS_ISO8859_1=y
- CONFIG_PRINTK_TIME=y
- CONFIG_DEBUG_FS=y
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index c9adae41bac0..c45fb6822e4a 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -114,6 +114,8 @@ CONFIG_CRYPTO_AES_ARM64_CE_CCM=y
+ CONFIG_CRYPTO_AES_ARM64_CE_BLK=y
+ CONFIG_CRYPTO_CHACHA20_NEON=m
+ CONFIG_CRYPTO_AES_ARM64_BS=m
 +CONFIG_CRYPTO_DEV_ALLWINNER=y
-+CONFIG_CRYPTO_DEV_SUN8I_CE=y
- CONFIG_CRYPTO_DEV_SUN4I_SS=y
++CONFIG_CRYPTO_DEV_SUN8I_CE=m
+ CONFIG_JUMP_LABEL=y
+ CONFIG_MODULES=y
+ CONFIG_MODULE_UNLOAD=y
 -- 
 2.21.0
 
