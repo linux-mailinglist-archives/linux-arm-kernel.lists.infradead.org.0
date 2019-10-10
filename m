@@ -2,63 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DBB8D1D96
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 02:44:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92019D1DB4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 02:51:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/QOlIQKpa/yvdpnE7bq9TaUJLl3F2myxdD+ic0tQojE=; b=G/fUlbCqyHVKky
-	3mFNa6NFA9KiWuXpA58kvWWvi2SktqpyBaYy1sVV8cx7FYiH5jqIBpr2M6vGfpOW0JYmetYPXXy5F
-	ffga1c6cJNDz8VXvwpLgT9OnOTziRXc+ojCQ1DYGy+kptdyvzo5HW78U9zdaf4GfJ+Bm9uKnVd3WS
-	sXctr7xECtoQ8tgvnlPfsghaHwzMPEpSuNyUh54QzeuBB02idGxYSQk4lqfF9IxdmT1dm3kVlH8gA
-	iMKfL9fJreT5/rfxu8lhl4av0xL4JtqYzvRjkEceoXXSMfkP/HMp+bPvgsT0jq3+hBtoldWR2ovBU
-	0Lw3zDg2JxRItKwkjglA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lPZB0dOAayfR9qExq0vb8xLN/WCylESNiOWPeQ8yMo8=; b=JXKa8sQ0NWa4ji
+	T0rLECEmy8JsgOwFtOqI4L/SH8csQLJxa/93/PNSLW1LiEnaYILFMUvaCtP4s9aEiLxj3mafOPRc4
+	cXR5yCcLlJ5YOYcbINRRvMZVUcIPsse1op+lVVjgXcLP8tcy7FOB+hnKDu/RvVb2vahU14Q8qrSlA
+	htLQ09ttrEBWBgV4hM3QzYUg4Y7T2qE2pcqktY35CHhuCPx6tP2B413g79HTZ5PjGh8o+EEzRN3Ip
+	AXTIiIJO65wZkFyAQem0ft253H5I8diFbz9YUtMrAp0rHEa7483YZM3pSfq2lE5FoEAMN2OAPpi69
+	lspnEfcNstNcp7xdhDIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIMZ7-0002aW-J0; Thu, 10 Oct 2019 00:44:25 +0000
-Received: from mga11.intel.com ([192.55.52.93])
+	id 1iIMgC-00005I-P5; Thu, 10 Oct 2019 00:51:44 +0000
+Received: from out2-smtp.messagingengine.com ([66.111.4.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIMYy-0002a2-Oa
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 00:44:18 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga005.fm.intel.com ([10.253.24.32])
- by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 09 Oct 2019 17:44:14 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.67,278,1566889200"; d="scan'208";a="393863029"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga005.fm.intel.com with ESMTP; 09 Oct 2019 17:44:13 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1iIMYv-000DGa-1j; Thu, 10 Oct 2019 08:44:13 +0800
-Date: Thu, 10 Oct 2019 08:44:10 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
-Subject: [arm:cex7 10/41]
- drivers/pci/controller/mobiveil/pcie-mobiveil.c:44:49: sparse: sparse:
- incorrect type in return expression (different address spaces)
-Message-ID: <201910100807.s230bnQA%lkp@intel.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-X-Patchwork-Hint: ignore
-User-Agent: NeoMutt/20170113 (1.7.2)
+ id 1iIMg4-0008Vv-6t
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 00:51:37 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.nyi.internal (Postfix) with ESMTP id 2CAB221FAD;
+ Wed,  9 Oct 2019 20:51:27 -0400 (EDT)
+Received: from imap2 ([10.202.2.52])
+ by compute4.internal (MEProxy); Wed, 09 Oct 2019 20:51:27 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type; s=fm3; bh=UBrk70WdLG+JMj8YlDV4YajtdEG1xvL
+ hcNqIGJ2cU8M=; b=MYi2/m18XdE1IFiJ483sVOzoqKIuhhhEDG0ZJjF8vk8hT1K
+ b3eMQqpoJeEGSOvYsq8ndGbjaTeZmJwJ6S5rolWplxp/l7IXjyOQbpeyBHGD17kn
+ ps9cs7ABl+sz+pqgMNR10cl4w2eGuVaCD2Wi+AUxGlyfblfAFOizIlwrJtqwLHru
+ r/h54Mjd4AfYQ2luKjUPMfE7GljihTw9opQnvgRXWck5nW7bD3U51zjRVur/SIMt
+ Dcl9Ggd1PGb20DE201wgncIjv1VlDeKaKbzI4PU67ltqQf+nedcHp56r/QWzXFW3
+ uJIzsrfJL4VtFokPiyTLBpwOIhW7gB1zbT3Vy3g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=UBrk70
+ WdLG+JMj8YlDV4YajtdEG1xvLhcNqIGJ2cU8M=; b=bM3KysDsqBtVG/t5opV5qx
+ Tku4sVJM6oQMimYpCGEZtegj+ccBY0/bqS3UAKZB5cI7cc9ygRfvuf2a7jPKdtF7
+ eKDbutSMjDuPIXT/Mjt0IVcaoj2fnoo86YyZWPEFMdzZx3KCRJIiWf6bivKFFN0I
+ wgQc9fz0tkv+fjOkkSNo5kq+LeTztKM4WHR4UeF7Ni9CxeMH/5O5RdLxhHt8Msik
+ /CU1IM6Y0rdVlswupIp+DtlzCEyVqj/L3VAeVqaFIsEj0H0AREvV1hfi/1UiRlp4
+ 7HiWrhEBwzHDtGVG0DUtc+jP5yBOTzIMwqCKP2e667mXkAKSc0ZmGr24j0r45vuw
+ ==
+X-ME-Sender: <xms:ioCeXTfMK69pJcqR31UQBEg9o0azGJNd_7TiiDeOybGWAhpF7oeyhQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedriedvgdegudcutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
+ vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrghrrg
+ hmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghr
+ ufhiiigvpedt
+X-ME-Proxy: <xmx:ioCeXQR9hntBcHDqRh5_K13d9TkiKroTP8DF9AFq4pX9oU9xNOrOng>
+ <xmx:ioCeXU-y__TtOOsuh1-wa24vDLnyi3z2FdA0P90dx8ATi_VzWgnHpg>
+ <xmx:ioCeXQHpF9k3An-OzTrTTg-0k1iTmoCX6-CMkOU9uMdDfALE2DFjQQ>
+ <xmx:j4CeXTzSNEw__hM1x0fDSms-_4K20lFN8xyD0Dix1UptTfTj_5YhdA>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id 9F2D1E00A5; Wed,  9 Oct 2019 20:51:22 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.7-360-g7dda896-fmstable-20191004v2
+Mime-Version: 1.0
+Message-Id: <18ac98e1-82b6-4782-bdfb-56765653e6df@www.fastmail.com>
+In-Reply-To: <CACPK8Xf-f-r4S02GoxYdBYOJi5NGYMCOr6XGVza4vEGAsqzR9w@mail.gmail.com>
+References: <20191008113523.13601-1-andrew@aj.id.au>
+ <20191008113523.13601-2-andrew@aj.id.au>
+ <CACPK8Xf-f-r4S02GoxYdBYOJi5NGYMCOr6XGVza4vEGAsqzR9w@mail.gmail.com>
+Date: Thu, 10 Oct 2019 11:22:17 +1030
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Joel Stanley" <joel@jms.id.au>
+Subject: Re: [PATCH 1/2] dt-bindings: clock: Add AST2500 RMII RCLK definitions
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_174417_357740_92ECE882 
-X-CRM114-Status: GOOD (  10.93  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191009_175136_400446_BDD7C8E3 
+X-CRM114-Status: GOOD (  14.43  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.26 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.93 listed in list.dnswl.org]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,125 +104,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Minghuan Lian <Minghuan.Lian@nxp.com>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- Subrahmanya Lingappa <l.subrahmanya@mobiveil.co.in>, kbuild-all@01.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-clk@vger.kernel.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree:   git://git.armlinux.org.uk/~rmk/linux-arm.git cex7
-head:   9de8c9294924dc903e79ca03162cbd208a834330
-commit: 2729e9ee9e99b04171a1cddddcd3027dd350dbde [10/41] PCI: mobiveil: Refactor Mobiveil PCIe Host Bridge IP driver
-reproduce:
-        # apt-get install sparse
-        # sparse version: v0.6.1-rc1-42-g38eda53-dirty
-        git checkout 2729e9ee9e99b04171a1cddddcd3027dd350dbde
-        make ARCH=x86_64 allmodconfig
-        make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
-
-If you fix the issue, kindly add following tag
-Reported-by: kbuild test robot <lkp@intel.com>
 
 
-sparse warnings: (new ones prefixed by >>)
+On Tue, 8 Oct 2019, at 23:07, Joel Stanley wrote:
+> On Tue, 8 Oct 2019 at 11:34, Andrew Jeffery <andrew@aj.id.au> wrote:
+> >
+> > The AST2500 has an explicit gate for the RMII RCLK for each of the two
+> > MACs.
+> >
+> > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+> > ---
+> >  include/dt-bindings/clock/aspeed-clock.h | 2 ++
+> >  1 file changed, 2 insertions(+)
+> >
+> > diff --git a/include/dt-bindings/clock/aspeed-clock.h b/include/dt-bindings/clock/aspeed-clock.h
+> > index f43738607d77..64e245fb113f 100644
+> > --- a/include/dt-bindings/clock/aspeed-clock.h
+> > +++ b/include/dt-bindings/clock/aspeed-clock.h
+> > @@ -39,6 +39,8 @@
+> >  #define ASPEED_CLK_BCLK                        33
+> >  #define ASPEED_CLK_MPLL                        34
+> >  #define ASPEED_CLK_24M                 35
+> > +#define ASPEED_CLK_GATE_MAC1RCLK       36
+> > +#define ASPEED_CLK_GATE_MAC2RCLK       37
+> 
+> Calling these ASPEED_CLK_GATE breaks the pattern the rest of the
+> driver has in using that name for the clocks that are registered as
+> struct aspeed_clk_gate clocks.
+> 
+> Do you think we should drop the GATE_ to match the existing clocks?
 
->> drivers/pci/controller/mobiveil/pcie-mobiveil.c:44:49: sparse: sparse: incorrect type in return expression (different address spaces) @@    expected void * @@    got void [noderef] <asvoid * @@
->> drivers/pci/controller/mobiveil/pcie-mobiveil.c:44:49: sparse:    expected void *
->> drivers/pci/controller/mobiveil/pcie-mobiveil.c:44:49: sparse:    got void [noderef] <asn:2> *
-   drivers/pci/controller/mobiveil/pcie-mobiveil.c:48:41: sparse: sparse: incorrect type in return expression (different address spaces) @@    expected void * @@    got void [noderef] <asvoid * @@
-   drivers/pci/controller/mobiveil/pcie-mobiveil.c:48:41: sparse:    expected void *
-   drivers/pci/controller/mobiveil/pcie-mobiveil.c:48:41: sparse:    got void [noderef] <asn:2> *
->> drivers/pci/controller/mobiveil/pcie-mobiveil.c:106:34: sparse: sparse: incorrect type in argument 1 (different address spaces) @@    expected void [noderef] <asn:2> *addr @@    got oderef] <asn:2> *addr @@
->> drivers/pci/controller/mobiveil/pcie-mobiveil.c:106:34: sparse:    expected void [noderef] <asn:2> *addr
->> drivers/pci/controller/mobiveil/pcie-mobiveil.c:106:34: sparse:    got void *[assigned] addr
-   drivers/pci/controller/mobiveil/pcie-mobiveil.c:120:35: sparse: sparse: incorrect type in argument 1 (different address spaces) @@    expected void [noderef] <asn:2> *addr @@    got oderef] <asn:2> *addr @@
-   drivers/pci/controller/mobiveil/pcie-mobiveil.c:120:35: sparse:    expected void [noderef] <asn:2> *addr
-   drivers/pci/controller/mobiveil/pcie-mobiveil.c:120:35: sparse:    got void *[assigned] addr
+I named them that way because the bits in question do just gate the
+clocks, but I've renamed them to keep the pattern. Will send a v2.
 
-vim +44 drivers/pci/controller/mobiveil/pcie-mobiveil.c
-
-    38	
-    39	static void *mobiveil_pcie_comp_addr(struct mobiveil_pcie *pcie, u32 off)
-    40	{
-    41		if (off < PAGED_ADDR_BNDRY) {
-    42			/* For directly accessed registers, clear the pg_sel field */
-    43			mobiveil_pcie_sel_page(pcie, 0);
-  > 44			return pcie->csr_axi_slave_base + off;
-    45		}
-    46	
-    47		mobiveil_pcie_sel_page(pcie, OFFSET_TO_PAGE_IDX(off));
-    48		return pcie->csr_axi_slave_base + OFFSET_TO_PAGE_ADDR(off);
-    49	}
-    50	
-    51	static int mobiveil_pcie_read(void __iomem *addr, int size, u32 *val)
-    52	{
-    53		if ((uintptr_t)addr & (size - 1)) {
-    54			*val = 0;
-    55			return PCIBIOS_BAD_REGISTER_NUMBER;
-    56		}
-    57	
-    58		switch (size) {
-    59		case 4:
-    60			*val = readl(addr);
-    61			break;
-    62		case 2:
-    63			*val = readw(addr);
-    64			break;
-    65		case 1:
-    66			*val = readb(addr);
-    67			break;
-    68		default:
-    69			*val = 0;
-    70			return PCIBIOS_BAD_REGISTER_NUMBER;
-    71		}
-    72	
-    73		return PCIBIOS_SUCCESSFUL;
-    74	}
-    75	
-    76	static int mobiveil_pcie_write(void __iomem *addr, int size, u32 val)
-    77	{
-    78		if ((uintptr_t)addr & (size - 1))
-    79			return PCIBIOS_BAD_REGISTER_NUMBER;
-    80	
-    81		switch (size) {
-    82		case 4:
-    83			writel(val, addr);
-    84			break;
-    85		case 2:
-    86			writew(val, addr);
-    87			break;
-    88		case 1:
-    89			writeb(val, addr);
-    90			break;
-    91		default:
-    92			return PCIBIOS_BAD_REGISTER_NUMBER;
-    93		}
-    94	
-    95		return PCIBIOS_SUCCESSFUL;
-    96	}
-    97	
-    98	u32 csr_read(struct mobiveil_pcie *pcie, u32 off, size_t size)
-    99	{
-   100		void *addr;
-   101		u32 val;
-   102		int ret;
-   103	
-   104		addr = mobiveil_pcie_comp_addr(pcie, off);
-   105	
- > 106		ret = mobiveil_pcie_read(addr, size, &val);
-   107		if (ret)
-   108			dev_err(&pcie->pdev->dev, "read CSR address failed\n");
-   109	
-   110		return val;
-   111	}
-   112	
-
----
-0-DAY kernel test infrastructure                Open Source Technology Center
-https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
+Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
