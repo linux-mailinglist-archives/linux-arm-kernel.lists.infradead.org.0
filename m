@@ -2,82 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F950D2167
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 09:10:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44F31D216F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 09:14:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cOLIN3BW6bJwxilmQFVXpoC4maPxlM0rc+egiP3SMO0=; b=kWGMDldEGIHMgp
-	1K1W8fcQ4fRXadejbKcJ3AtnUUf2cHvh7n/ppCjnps9B3JF6PUXGUdzVibANcLF3tB/v+QmX5GnTn
-	uBZqT8TFA7NBM3/5ndwhHvZZ3BNWpRaImFdmq38IAiCwhdQlTkztKGrTqKLQNUEsHEOjNsVQ6K82Y
-	kUgomt1bbel2llNgLOXlG0wkwiZuddAynUTcanLGnHaTRlXZ9K+ZkPGEPQxi9KStubyLSSBITgD/x
-	K5fENvrlDRI/NgtIvjwCnJs/gEhQggmdUJefiN1Gdp/jxxSsjflt9GJnwGoYT/L3VQjH3zzxWpdcx
-	9REb786pBrcEMEPMO7rA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=cl3JeNhXsgGJhfoHHhKeHo0uv3I+TQ1q4yQr5x+P9XY=; b=uaD3ynq9o2z1iaYfOBfT4enuw
+	QzrHg/VNJVHNHiO7cCl6HE2LKs4pSKmbNSasNx604Nhje/jHCdT3VWValZxi/bzLlph4Wm4cwhfDJ
+	FeehpmQZSDpkTvdWDevJQtjOFppPivI5bJqG0YvtdTyC6EFaNmDU9oMyCAVIZ9/5+EwSffN/rCb4a
+	+KRUWtY/NX+jzVOIL8ABVgTB1n1RcrYBjMRFj30d7JGjU9ibE2MaEKX8HLLEwha+6KsFOV1nz6QHb
+	3fXBn678sN7OmUsKUGMqvt+DFQaTCIBOk8IsDabAZEd5o+QxPJ0FNCbV/vGoVIHnStUj2AzoaeIHz
+	wBKYO6rEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iISaT-0001HF-JT; Thu, 10 Oct 2019 07:10:13 +0000
-Received: from mout.kundenserver.de ([212.227.126.187])
+	id 1iISeL-00023i-5J; Thu, 10 Oct 2019 07:14:13 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iISaL-00007k-0i
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 07:10:07 +0000
-Received: from [192.168.178.81] ([109.104.52.46]) by mrelayeu.kundenserver.de
- (mreue010 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1MS43X-1igLEY0XON-00TU2J; Thu, 10 Oct 2019 09:09:53 +0200
-Subject: Re: [PATCH] Revert "ARM: bcm283x: Switch V3D over to using the PM
- driver instead of firmware."
-To: Florian Fainelli <f.fainelli@gmail.com>, Stefan Wahren
- <wahrenst@gmx.net>, Eric Anholt <eric@anholt.net>,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- boris.brezillon@bootlin.com
-References: <1567957493-4567-1-git-send-email-wahrenst@gmx.net>
- <26e101ad-8b5b-edef-4437-778bc57ae81f@gmail.com>
- <077547f9-e0ec-29a6-6264-0281dac6b8c8@gmx.net>
- <877621f0-2fbc-55d1-391e-b2ffbce186ac@gmail.com>
-From: Stefan Wahren <stefan.wahren@i2se.com>
-Message-ID: <c04a47e7-595c-84e3-fd6f-643d7ba1d0ea@i2se.com>
-Date: Thu, 10 Oct 2019 09:09:51 +0200
+ id 1iISe6-000234-UR
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 07:14:00 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x9A7DqTR083661;
+ Thu, 10 Oct 2019 02:13:52 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1570691632;
+ bh=Igz9/V9k1PMM6aDmmF606+31uSx46fazy4qUkrGadDA=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=wehcdvPRmkEeSFaZQAOXAzuNNCNGADesihvUrY429jDGaQKSqzy6+eDrTYS8562gv
+ o8AT3QBPnot9VFZvKZRvtUATgiIibBjCvlMUVPbaChFxqaI6H5qstEd9O1ebr8y2aK
+ ZaNknGroLRMOYoGHQi1Wm+Uffr+kfn9agrBagBo8=
+Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x9A7DpZk001188
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 10 Oct 2019 02:13:51 -0500
+Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 10
+ Oct 2019 02:13:50 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE110.ent.ti.com
+ (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Thu, 10 Oct 2019 02:13:50 -0500
+Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x9A7Dmtv113245;
+ Thu, 10 Oct 2019 02:13:49 -0500
+Subject: Re: [PATCHv8 1/9] dt-bindings: omap: add new binding for PRM instances
+To: "santosh.shilimkar@oracle.com" <santosh.shilimkar@oracle.com>, Sebastian
+ Reichel <sre@kernel.org>
+References: <20191008125544.20679-1-t-kristo@ti.com>
+ <20191008125544.20679-2-t-kristo@ti.com>
+ <20191008154655.u34wkbqgmelv3aea@earth.universe>
+ <115ab938-e025-98fa-3b9e-0b3ced39307d@ti.com>
+ <dc2a9659-8593-e5d0-54b2-44d827e76759@oracle.com>
+From: Tero Kristo <t-kristo@ti.com>
+Message-ID: <95642d2d-af8e-061c-ef6a-7b615222f360@ti.com>
+Date: Thu, 10 Oct 2019 10:13:47 +0300
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <877621f0-2fbc-55d1-391e-b2ffbce186ac@gmail.com>
+In-Reply-To: <dc2a9659-8593-e5d0-54b2-44d827e76759@oracle.com>
 Content-Language: en-US
-X-Provags-ID: V03:K1:dFSrV1FQvE8GWsU/a/9mLHzLdpVgmO4UByoReHz1faXVC53OIqX
- 1FWCfjxvLu65Gnodjy0OINHZdbE2EDJZJlPUT52eiMQbL53KZ1LbHdPh3RT1IBNHffYqd81
- SnnjPsbZHRbz+aDBEBWoECjzflrKrm6J3Gzz99sqIP4jLMKWeQbOk5I63iOiwgd7A4QvGdc
- 2+zJvg40xtzJsbjFfw30A==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:CFT9lENnkyw=:gNNeIOF782sk/pcmwo0miO
- 5MZTOer6ZI4qX/rPYUz6mngnlrHHsV7Zx+FnHGDkwYuMNldv4p+GeiCmPUFLCoIXLjmqhz+Jn
- YnzbfMKlLQ04JlWzA0PV+rG13RgGTKq27AOVRS3xFr85t6xBd0M876qTSIYNqyU5hjk4ukFfW
- sBknDentp8o6AUBOH40xIMPZFpicR3hchjXo0FpoGplzH0+VjzmmhCu1y3N5knJnF2gGqHbBe
- aIU+EIf5kzpB4KlEHjli0eq/TdmNcp0TuHHYtQxooCqfdZaXRSiJZDIzWxoApGYI8Y8E4Gnr9
- w1hT3zcp8128kMeGywIpgsr60MwgFERJ9e4d6wf8wHGb/k2zeNX3u8xw/NJVavcloC8VJatUh
- AV30+JYR5NKA7adS4yOL0vsP7JPbgrsvG7JtyNqDpDkqloyegcSKFfVnARv+dtZuPqc3Q94KJ
- vUM9LzElI5HK8XsOLvTy0hnEPCZL1EovAFE0CJUNlgnMslwTrhhwOZHmKA2Zj4146FATDDQet
- t5TD2oO22UQzdxKb0oLmx9mLG96TJSWfHvV26VinFGUCFv7VqhgD9ZXEnbhFdgHh8VcK260tb
- BkpaSODz+6bMHlOFIlJpnto/+iR3hu90bs3rKUKMlj1XNoImAR56z9uJvfQImHwUHBKvsbwkk
- mB6N0wWpYBpl65vMzROeDjFmnFneMc59LOWIUPmDttlp4ubmUlqnNYqsXzd4zskrlimkQoeEu
- M9+wl8aFTliduwPCF3e9Qi8qbVf5x+XZVSoWyOt+NRQ9K8lDPc8w+kWU/+jBzWrw6XpZSfYaH
- f7IAsmAParMn/LGo12jhhBx+m1gGT5luv+A/RdrFxVQfat2fTb9uPBOQtP3RCLq6GDJcxxbF1
- Vj1gisSCMoZMRDR91P3E1aU/bLqBlZcuz2oKgJKZA=
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_001005_364042_D87E1895 
-X-CRM114-Status: GOOD (  17.12  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191010_001359_084675_C3915B83 
+X-CRM114-Status: GOOD (  12.30  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.187 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,52 +96,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org,
- dri-devel@lists.freedesktop.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, tony@atomide.com, p.zabel@pengutronix.de,
+ ssantosh@kernel.org, linux-omap@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="windows-1252"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 09.10.19 23:42, Florian Fainelli wrote:
-> On 10/9/19 2:33 PM, Stefan Wahren wrote:
->> Hi Florian,
+On 09/10/2019 18:59, santosh.shilimkar@oracle.com wrote:
+> =
+
+> =
+
+> On 10/8/19 11:52 PM, Tero Kristo wrote:
+>> On 08/10/2019 18:46, Sebastian Reichel wrote:
+>>> Hi,
+>>>
+>>> On Tue, Oct 08, 2019 at 03:55:36PM +0300, Tero Kristo wrote:
+>>>> +Example:
+>>>> +
+>>>> +prm_dsp2: prm@1b00 {
+>>>> +=A0=A0=A0 compatible =3D "ti,omap-prm-inst", "ti,dra7-prm-inst";
+>>>
+>>> Nit: compatible values are sorted the other way around (most
+>>> specific first).
 >>
->> Am 23.09.19 um 20:56 schrieb Florian Fainelli:
->>> On 9/8/2019 8:44 AM, Stefan Wahren wrote:
->>>> Since release of the new BCM2835 PM driver there has been several reports
->>>> of V3D probing issues. This is caused by timeouts during powering-up the
->>>> GRAFX PM domain:
->>>>
->>>>   bcm2835-power: Timeout waiting for grafx power OK
->>>>
->>>> I was able to reproduce this reliable on my Raspberry Pi 3B+ after setting
->>>> force_turbo=1 in the firmware configuration. Since there are no issues
->>>> using the firmware PM driver with the same setup, there must be an issue
->>>> in the BCM2835 PM driver.
->>>>
->>>> Unfortunately there hasn't been much progress in identifying the root cause
->>>> since June (mostly in the lack of documentation), so i decided to switch
->>>> back until the issue in the BCM2835 PM driver is fixed.
->>>>
->>>> Link: https://github.com/raspberrypi/linux/issues/3046
->>>> Fixes: e1dc2b2e1bef (" ARM: bcm283x: Switch V3D over to using the PM driver instead of firmware.")
->>>> Cc: stable@vger.kernel.org
->>>> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
->>> Applied to devicetree/fixes, thanks!
->> i noticed that X hangs with recent Raspbian and Linux 5.4-rc2 after this
->> revert has been applied.
+>> Hmm right, I would not like to re-post the whole series just for this =
+
+>> seeing all the acks are in place already.
 >>
->> Is there a chance to drop the revert?
-> I have not sent anything yet as I wanted to get some testing done on
-> other platforms, so yes, I can definitively drop that particular changes
-> from devicetree/fixes and not send it for a 5.4-rc3 pull request. Does
-> that work for you?
+>> Santosh, do you want to fix this locally or shall we post a separate =
 
-Yes, definitely
+>> patch later on to fix this?
+>>
+> No need. I fixed it up. Pls check.
+> =
 
-Thanks Stefan
+> git://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git=
+ for_5.5/driver-soc =
 
+
+Yeah, looks fine to me.
+
+Thanks,
+Tero
+--
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Bu=
+siness ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
