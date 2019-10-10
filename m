@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F29AD305C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 20:26:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC500D305D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 20:26:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bvgouBog3D8QofazrQJTwZKk6f66+MLo1tP+Lvqr1cw=; b=NfAdnbEWtGTkhf
-	Fn0sFnoeHIBXj1jUj7IHtX1P3VDRQB48bLwK8MmSOry0zYy+BUPwPP4tUFYuirUKClcjHMGf0Khog
-	v0Z+CNUFGi7cnR9gOZNe2oUIh/agt24mB9Jg74Ol8ubEDUNMIQiSxUcVVy8EBKPe5Dmf/1qJPe4xp
-	JlXzGFdsIYjL5Os7UNVBSIY+AvLvij76V/w38APBu/qTWrFxVPff7C/kBtbN8XOhMNBSh3QvCn+A5
-	L04j/5wsVdjzdz0LFqUxUdJt1y6mhomRrLkg+KwWOsYBNzoI3AmArkHNB8OHAgkx024Rh1iR6tMt7
-	13XCm7HL+c9VGdveDrLw==;
+	List-Owner; bh=Mqzt5qU5CdYn5SFe9bgFURNFiLS9HE1DmZBTqMjOcu4=; b=Lrwma7jxp3cJZK
+	v16t9DJ6hPbus9weJE945f6yF9LBGj8JPRHFuQQK4VU2yY1mgYRWZzuizrjhue2O8idAzTzPO3Hvs
+	H/shMx9C8FKFNlnnGAv7gkYz9BHoQnteTB8cZ+UP8mylKk6zczcXK28GkJxT26QXJNh+9JhqSoX45
+	pOIIqv4QdEa662sItfbYXugecB9cFV7lCnluGb03w/eqlZ/vLHC4WjIbWYrSKYT3ArSFyPCzPMB/4
+	D0tIBMLnJLOX3J2DnY9ePdypnCf9C8+PGsHG9mmjlZOH+KSi7w68/UQ1AwsiW6lMEPXhDKjd7uWyz
+	YmIGUnc2SHnU/qRJpChQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iId8s-0005yT-Jo; Thu, 10 Oct 2019 18:26:26 +0000
+	id 1iId9A-0006DW-5P; Thu, 10 Oct 2019 18:26:44 +0000
 Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iId6a-0002gQ-7z
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 18:24:05 +0000
-Received: by mail-wr1-x444.google.com with SMTP id n14so9030671wrw.9
+ id 1iId6b-0002he-6d
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 18:24:07 +0000
+Received: by mail-wr1-x444.google.com with SMTP id o18so9016726wrv.13
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 10 Oct 2019 11:24:03 -0700 (PDT)
+ Thu, 10 Oct 2019 11:24:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=eFc0TnCiV39kO57Nf4fDfCRzWyhpgpmUwtiQu+sgq4c=;
- b=QD/aYw94NN50dr3SkQZk39lkA1R6HaVNO9ts2BoKVuEyXjCc5JDlaf/G2JLf49Ftxy
- YMwnp9f9ww1kkZrxyyjuE+YmqXpruZZrxuGyAsG5QGfP+He29tqq0/86lqkHMBBf3NB5
- RGNbfx+elt3Ih+HFGtp8Bowi0d9m42nz5PcqV3J7Tv/bvG0rbrOpMZrUVVeXh+rTYlji
- df0jFwhxxiuQqW2IDIHhAmuCEOIWtQseF6rOPtXYzey0ohvMNC9z6ICRaYMJcI5kV/Ro
- yuA3joShoS9OYZ3RCit6SAxa6pYp1MG5OnljH20RrLz1//jCdKKOmqq8U6LNfJ2nInr5
- T84g==
+ bh=LKdxoiXO2qcL2j7u49KVkFwVEXUyQJUfWzDkZKrEpxA=;
+ b=JbWgnsDuMhLpVCjb+YdJezFjZG8aXtqnOKnJXXWeKs7moUL5bxI6rQpxAQ7KEawMWh
+ sPtpY6fMpMZIJLHl99Z0xBpbzmjsMnI4twZIUMajJ+QVKz1pHi3I0wv+u28p+18X/Ab8
+ mQhU0Z8IBU/kHkULCMgYxZYcFdLgzBYRDD2oynFkHbgBq6cyPMDQQT/b0pXWo3PQV8S2
+ WcNI2/uaDmFEo7l1GIusjX3GYEYu2We6fd0uFKuAVZuA7IyCwYjcrj3RSvpuBbBXRztg
+ 3fgzz+50Jk4oFOoAc/7iHdNucBVVI5zInrZ7lj5WObSsD8XI1Rd7CDLTCJFiXgXP9V1q
+ 0hnw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=eFc0TnCiV39kO57Nf4fDfCRzWyhpgpmUwtiQu+sgq4c=;
- b=XjF8NqVj6WtriO/MxTsXAoO4SoU65YMUCzM8TLMda/ROaUJcyb2obmKh/79uopBC6H
- ye2URzlhVKhzoX54A9uFhnDggcP5h6mrZTIqFtUm2Y/Zv7VLS/omtwto5sRBKQVvUJUR
- 2TU1fr66DMGpNEKienLvZFtunuv0rakwIzVm1AiCJe0uUDoWu4g6Mj1du+pXu1p3PLf9
- +F7c6r0zuCJM3kdFR30fGqmxZGfCzgey26VNRCO8xqM985uW+NJSieKb5UYmNjX++G44
- mzbRm85N4VsNC/LPx5Jj1D2virEm2BYMEklw+OiqhTuLYhbm4sbrDEPpDtPkaCuftQpk
- txQg==
-X-Gm-Message-State: APjAAAXe2DuNN1ojddY62u4trfcV7B0451r6sYhnspHPzvIFy19H8beU
- /63GYZCDd+Lpl+KCfpMXjQo=
-X-Google-Smtp-Source: APXvYqwyzjQcMH1nDbxHHzVakeW/SPThMO2JRlkBJmeSqdWeh0kAxIStHqWAB4eDL7mGeVBDNEsRFw==
-X-Received: by 2002:adf:8385:: with SMTP id 5mr9934134wre.267.1570731842613;
- Thu, 10 Oct 2019 11:24:02 -0700 (PDT)
+ bh=LKdxoiXO2qcL2j7u49KVkFwVEXUyQJUfWzDkZKrEpxA=;
+ b=IUIMD338bqjiOuplUfF4pat4YtkbAPiB1rfHEuyb1n+LS5guKoZXHM/quR201Kqb1b
+ LuJLaS9UsTrScCdV8S1JPgSZLPbIIxaffvfr6zL3I6rIBSwYAKUvyOxQ5qZgBOJnky93
+ jvDYFaf+PxFz13GhNAijEgXEMlQQtd0jwnrRqeJ5NfGeS4Wz0vlT7boBHdbvpvOaQyck
+ +yRNWIDABxwZcm2JPIKkAvdo4L4uWMbWsqbXQfEj96h8EegJEcmcLMA9DV+orWz4sdzQ
+ zU+31jln6nU3JbHdt5TOc+XgIUbaweQoP/B6uu8xLjOvLDEb89ug/tFNeRMXVjG6GIge
+ hfDg==
+X-Gm-Message-State: APjAAAUngskpYN7zINs6XioRe79ZlqiLZjB3ygiYZ8UflZoFvvj+ckwy
+ T0ip8myt2VMDpqCMF8FNzxs=
+X-Google-Smtp-Source: APXvYqz3MCgqtkhNoSBxMkDnoDYLi2oXfF1XS84vQAfiTka5MhJvT1m4xOCTpFmxMe4HuKqops47tQ==
+X-Received: by 2002:adf:f90d:: with SMTP id b13mr9538028wrr.316.1570731843957; 
+ Thu, 10 Oct 2019 11:24:03 -0700 (PDT)
 Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
  by smtp.googlemail.com with ESMTPSA id
- y186sm11367664wmb.41.2019.10.10.11.24.01
+ y186sm11367664wmb.41.2019.10.10.11.24.02
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 10 Oct 2019 11:24:02 -0700 (PDT)
+ Thu, 10 Oct 2019 11:24:03 -0700 (PDT)
 From: Corentin Labbe <clabbe.montjoie@gmail.com>
 To: catalin.marinas@arm.com, davem@davemloft.net, herbert@gondor.apana.org.au,
  linux@armlinux.org.uk, mark.rutland@arm.com, mripard@kernel.org,
  robh+dt@kernel.org, wens@csie.org, will@kernel.org
-Subject: [PATCH v3 07/11] ARM64: dts: allwinner: sun50i: Add crypto engine
- node on H5
-Date: Thu, 10 Oct 2019 20:23:24 +0200
-Message-Id: <20191010182328.15826-8-clabbe.montjoie@gmail.com>
+Subject: [PATCH v3 08/11] ARM64: dts: allwinner: sun50i: Add Crypto Engine
+ node on H6
+Date: Thu, 10 Oct 2019 20:23:25 +0200
+Message-Id: <20191010182328.15826-9-clabbe.montjoie@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20191010182328.15826-1-clabbe.montjoie@gmail.com>
 References: <20191010182328.15826-1-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_112404_313524_11821D86 
-X-CRM114-Status: GOOD (  13.33  )
+X-CRM114-CacheID: sfid-20191010_112405_382142_C630CB26 
+X-CRM114-Status: GOOD (  12.55  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -112,36 +112,35 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The Crypto Engine is a hardware cryptographic accelerator that supports
 many algorithms.
-It could be found on most Allwinner SoCs.
 
-This patch enables the Crypto Engine on the Allwinner H5 SoC Device-tree.
+This patch enables the Crypto Engine on the Allwinner H6 SoC Device-tree.
 
 Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
 ---
- arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi | 10 ++++++++++
+ arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi | 10 ++++++++++
  1 file changed, 10 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
-index f002a496d7cb..14cf29539aab 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
-@@ -127,6 +127,16 @@
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
+index 5d7ab540b950..68697cef8e5f 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
+@@ -149,6 +149,16 @@
  			allwinner,sram = <&ve_sram 1>;
  		};
  
-+		crypto: crypto@1c15000 {
-+			compatible = "allwinner,sun50i-h5-crypto";
-+			reg = <0x01c15000 0x1000>;
-+			interrupts = <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_CE>, <&ccu CLK_CE>;
-+			clock-names = "bus", "mod";
++		crypto: crypto@1904000 {
++			compatible = "allwinner,sun50i-h6-crypto";
++			reg = <0x01904000 0x1000>;
++			interrupts = <GIC_SPI 87 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&ccu CLK_BUS_CE>, <&ccu CLK_CE>, <&ccu CLK_MBUS_CE>;
++			clock-names = "bus", "mod", "ram";
 +			resets = <&ccu RST_BUS_CE>;
 +			reset-names = "bus";
 +		};
 +
- 		mali: gpu@1e80000 {
- 			compatible = "allwinner,sun50i-h5-mali", "arm,mali-450";
- 			reg = <0x01e80000 0x30000>;
+ 		syscon: syscon@3000000 {
+ 			compatible = "allwinner,sun50i-h6-system-control",
+ 				     "allwinner,sun50i-a64-system-control";
 -- 
 2.21.0
 
