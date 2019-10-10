@@ -2,66 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84145D33BD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 00:04:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 658B3D33DD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 00:20:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Cqdv0RqpwHPxjO1P+kzxhl2c3g4Iqa5OIv12Oy+XGiA=; b=YZXJQ8O+G6I1GnVCblVOyZ8KM
-	5YezBKuqWIPDSeSihdgCAG2vBwhT9DUaelKSw3P+7VDqyv8GlTCocCgTaFaFQwY7yJFLsDUXtm0ds
-	Gzh72lUW7bjnP9WpsQpvlaIefckqVEZSW7DXnflcgqbaC3Hdt0C2cqHr4GJRkpEMb+JCWExTqhmJz
-	wgdo8l/+GySyxEFoVPzyemzIBT9Whb/GGY9dNIvAzW8eEKr12uBvEF3q8PO62D1RF7rid4W7ms09B
-	CczPN1I+oXrEst+A2cQGm1YHgwZXiVSb/1/3Y/9BbC+RkQCNkkLVKXKMahiWXK+Unidpqc4OExFVn
-	a+FUZM46w==;
+	 bh=DSToPvKh8Br/X2qpgrkYTJ7/+M7jO43FqqT2OJI1qjE=; b=J9G1wQsgmWTIqxvxsLmAigRyD
+	/MqwqqTpCjHF59ZhCjtfHJp2NQRKec5+xRsstOC0SKtUoERlcH6JBRp5VzPSljHHZyeTpfqzLqy1L
+	bni5yVY+qLvN6nAD8sz9yC3w6zv15C87Y/OArYTMEcmKFDFpplVUB5rgr9wcvZ68elMxAXJ+YQARA
+	JucQwliUHyLcHrG2UmK4guILA6rt3XrRpmPL4BbgP0n8QgE7seYdwribmBiiXxyMdotsU+fcOxCNZ
+	T+Zx6NgcSM63BfHJAfGyk6ziXvx2eR+BU0NceT5YLFL6ua9GM+gjLD4SkriUekPnpmSrBrmHU93d+
+	TNOKBfDTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIgXZ-0007Id-Tn; Thu, 10 Oct 2019 22:04:09 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1iIgnd-0005Le-Pi; Thu, 10 Oct 2019 22:20:45 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIgXS-0007I3-I9
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 22:04:03 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga007.jf.intel.com ([10.7.209.58])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 10 Oct 2019 15:04:01 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.67,281,1566889200"; d="scan'208";a="184560498"
-Received: from yoojae-mobl1.amr.corp.intel.com (HELO [10.7.153.148])
- ([10.7.153.148])
- by orsmga007.jf.intel.com with ESMTP; 10 Oct 2019 15:04:00 -0700
-Subject: Re: [PATCH] i2c: aspeed: fix master pending state handling
-To: Tao Ren <taoren@fb.com>, Brendan Higgins <brendanhiggins@google.com>,
- Wolfram Sang <wsa@the-dreams.de>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Joel Stanley <joel@jms.id.au>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>, Andrew Jeffery <andrew@aj.id.au>,
- Cedric Le Goater <clg@kaod.org>
-References: <20191009212034.20325-1-jae.hyun.yoo@linux.intel.com>
- <3ea1c0d5-47f1-bf8c-6b2d-2ea8d3f93471@fb.com>
-From: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
-Message-ID: <637d4b8b-5113-b07b-f99f-ce66dbe6948c@linux.intel.com>
-Date: Thu, 10 Oct 2019 15:04:00 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iIgnV-0005KG-Vb
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 22:20:39 +0000
+Received: by mail-pl1-x641.google.com with SMTP id q24so3457032plr.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 10 Oct 2019 15:20:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=W3mGTs7MOyLjtpnj0PJB9+Bxqcbq+qsvgn2CFvFNE9o=;
+ b=vO3NnEQYc9E8PG1a8ibC12yEWFQFOB1Hx8hGQVef2QBix8XnuHV72vGqiqfBByDX1B
+ GB+RXlzi1AgV2HLPIJOxN5OEUrNN1gMc6B+upAOBwjnOFaybpjU2MNBFlpCcCVOGVi34
+ Bf6J1QQrOp1pBonMzqpVzSZEKhB48Skt12qivYXo9agFB3h/z3YoYoEanyOXvX4+IV0N
+ +vsR5ie1bipkap+s8HO1W/rkb8UOmSt4cT41+D8ayYPw5gSVvww3Yd9sdBrCiRcUCAJQ
+ rpk2/At5z7IegYM6MLvNuOvrogHp6udXgni3zdPgfxyAPd31wwzen4UN1i9pSZ5MVqTJ
+ /JEw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=W3mGTs7MOyLjtpnj0PJB9+Bxqcbq+qsvgn2CFvFNE9o=;
+ b=L7jU1JFQ9/Anb/srXuyPAZLVIIQFrR2LDh8/DoPjQ1IaWug/AZUr2QO6Tawl/AOHFL
+ qReO8jWwcBEwJPjy33bC5S/in0OI/NC924pLulbEuUQbY/nmPX+o6INKaqmylAI7y8SI
+ joH7dcbkA+dt/bPNAJBi3HsOUXRS/9p348q09gvea6nrZE97k9JCyM+1guJb0Nt/ofPL
+ w+mNqGY8vcMF/AkJ5TRn9cecs+yyAtzZEp3Zwmkes1hmKwcrRbL0NnDb7CNkQD6fhAe5
+ 4ADiYoyYBHPMh4dMNNoorURfwpibl96HNuyOvgfqP/Zq1ZdK3+/VqHzPlzhrNfY3QiRx
+ e8gQ==
+X-Gm-Message-State: APjAAAUafFOLbuatDMI8F/7FQedGFSXBCg4HwYgRR8q9WIg36v2E7zkn
+ CmsGgYLg935DnTsP2wvEYlQOrT+B
+X-Google-Smtp-Source: APXvYqxhaE1iUzipXQlVGVyDvINWacWoHayHW9CYbbNozw8zmvHGLekFyPQMOcyuxIEYoAhqKGzqbg==
+X-Received: by 2002:a17:902:bf0a:: with SMTP id
+ bi10mr12162507plb.56.1570746033896; 
+ Thu, 10 Oct 2019 15:20:33 -0700 (PDT)
+Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id
+ 11sm6805064pgd.0.2019.10.10.15.20.32
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 10 Oct 2019 15:20:33 -0700 (PDT)
+Subject: Re: [PATCH 15/36] ARM: s3c: adc: move header to linux/soc/samsung
+To: Arnd Bergmann <arnd@arndb.de>, Kukjin Kim <kgene@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Jean Delvare <jdelvare@suse.com>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Sebastian Reichel <sre@kernel.org>
+References: <20191010202802.1132272-1-arnd@arndb.de>
+ <20191010203043.1241612-1-arnd@arndb.de>
+ <20191010203043.1241612-15-arnd@arndb.de>
+From: Guenter Roeck <linux@roeck-us.net>
+Message-ID: <da32e8a3-cbb3-ea08-1c55-55980b3dc53e@roeck-us.net>
+Date: Thu, 10 Oct 2019 15:20:32 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <3ea1c0d5-47f1-bf8c-6b2d-2ea8d3f93471@fb.com>
+In-Reply-To: <20191010203043.1241612-15-arnd@arndb.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_150402_643843_252E30C3 
-X-CRM114-Status: GOOD (  16.32  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191010_152038_022687_47BCE6B5 
+X-CRM114-Status: GOOD (  18.92  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (groeck7[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,59 +112,204 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
- "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "openbmc@lists.ozlabs.org" <openbmc@lists.ozlabs.org>
+Cc: linux-hwmon@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-pm@vger.kernel.org, linus.walleij@linaro.org,
+ linux-kernel@vger.kernel.org, linux-input@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/10/2019 2:20 PM, Tao Ren wrote:
-> On 10/9/19 2:20 PM, Jae Hyun Yoo wrote:
-[...]
->>   		/*
->>   		 * If a peer master starts a xfer immediately after it queues a
->> -		 * master command, change its state to 'pending' then H/W will
->> -		 * continue the queued master xfer just after completing the
->> -		 * slave mode session.
->> +		 * master command, clear the queued master command and change
->> +		 * its state to 'pending'. To simplify handling of pending
->> +		 * cases, it uses S/W solution instead of H/W command queue
->> +		 * handling.
->>   		 */
->>   		if (unlikely(irq_status & ASPEED_I2CD_INTR_SLAVE_MATCH)) {
->> +			writel(readl(bus->base + ASPEED_I2C_CMD_REG) &
->> +				~ASPEED_I2CD_MASTER_CMDS_MASK,
->> +			       bus->base + ASPEED_I2C_CMD_REG);
+On 10/10/19 1:29 PM, Arnd Bergmann wrote:
+> There are multiple drivers using the private adc interface.
+> It seems unlikely that they would ever get converted to iio,
+> so make the current state official by making the header file
+> global.
 > 
-> Sorry for the late comments (just noticed this line while testing the patch):
+> The s3c2410_ts driver needs a couple of register definitions
+> as well.
 > 
-> I assume this line is aimed at stopping the running master commands, but as per
-> AST2500 datasheet, it's NOP to write 0 to MASTER_STOP/MASTER_RX/MASTER_TX bits.
-> Maybe all we need is writing 1 to MASTER_STOP field?
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 
-There could be two pending cases:
-1. Master goes to pending before it triggers a command if a slave
-    operation is already initiated.
-2. Master goes to pending after it triggered a command if a peer
-    master immediately sends something just after the master command
-    triggering.
+For hwmon:
 
-Above code is for the latter case. H/W handles the case priority based
-so the slave event will be handled first, and then the master command
-will be handled when the slave operation is completed. Problem is,
-this H/W shares the same buffer for master and slave operations so
-it's unreliable. Above code just removes the master command from the
-command register to prevent this H/W command handling of pending events.
-Instead, it restarts the master command using a call of 
-aspeed_i2c_do_start when the slave operation is completed.
+Acked-by: Guenter Roeck <linux@roeck-us.net>
 
-Thanks,
+> ---
+>   arch/arm/mach-s3c64xx/mach-crag6410.c         |  2 +-
+>   arch/arm/mach-s3c64xx/mach-mini6410.c         |  2 +-
+>   arch/arm/mach-s3c64xx/mach-real6410.c         |  2 +-
+>   arch/arm/mach-s3c64xx/mach-smdk6410.c         |  2 +-
+>   arch/arm/plat-samsung/adc.c                   |  2 +-
+>   arch/arm/plat-samsung/devs.c                  |  2 +-
+>   drivers/hwmon/s3c-hwmon.c                     |  2 +-
+>   drivers/input/touchscreen/s3c2410_ts.c        | 37 ++++++++++++++++++-
+>   drivers/power/supply/s3c_adc_battery.c        |  2 +-
+>   .../linux/soc/samsung/s3c-adc.h               |  0
+>   10 files changed, 43 insertions(+), 10 deletions(-)
+>   rename arch/arm/plat-samsung/include/plat/adc.h => include/linux/soc/samsung/s3c-adc.h (100%)
+> 
+> diff --git a/arch/arm/mach-s3c64xx/mach-crag6410.c b/arch/arm/mach-s3c64xx/mach-crag6410.c
+> index da5b50981a14..133453562d23 100644
+> --- a/arch/arm/mach-s3c64xx/mach-crag6410.c
+> +++ b/arch/arm/mach-s3c64xx/mach-crag6410.c
+> @@ -57,7 +57,7 @@
+>   #include <plat/keypad.h>
+>   #include <plat/devs.h>
+>   #include <plat/cpu.h>
+> -#include <plat/adc.h>
+> +#include <linux/soc/samsung/s3c-adc.h>
+>   #include <linux/platform_data/i2c-s3c2410.h>
+>   #include <plat/pm.h>
+>   #include <plat/samsung-time.h>
+> diff --git a/arch/arm/mach-s3c64xx/mach-mini6410.c b/arch/arm/mach-s3c64xx/mach-mini6410.c
+> index 0dd36ae49e6a..c7140300bd3f 100644
+> --- a/arch/arm/mach-s3c64xx/mach-mini6410.c
+> +++ b/arch/arm/mach-s3c64xx/mach-mini6410.c
+> @@ -27,7 +27,7 @@
+>   #include <mach/regs-gpio.h>
+>   #include <mach/gpio-samsung.h>
+>   
+> -#include <plat/adc.h>
+> +#include <linux/soc/samsung/s3c-adc.h>
+>   #include <plat/cpu.h>
+>   #include <plat/devs.h>
+>   #include <plat/fb.h>
+> diff --git a/arch/arm/mach-s3c64xx/mach-real6410.c b/arch/arm/mach-s3c64xx/mach-real6410.c
+> index 0ff88b6859c4..f55097fde94c 100644
+> --- a/arch/arm/mach-s3c64xx/mach-real6410.c
+> +++ b/arch/arm/mach-s3c64xx/mach-real6410.c
+> @@ -29,7 +29,7 @@
+>   #include <mach/gpio-samsung.h>
+>   #include <mach/irqs.h>
+>   
+> -#include <plat/adc.h>
+> +#include <linux/soc/samsung/s3c-adc.h>
+>   #include <plat/cpu.h>
+>   #include <plat/devs.h>
+>   #include <plat/fb.h>
+> diff --git a/arch/arm/mach-s3c64xx/mach-smdk6410.c b/arch/arm/mach-s3c64xx/mach-smdk6410.c
+> index 95bdcfe95a53..3042f6cbffd9 100644
+> --- a/arch/arm/mach-s3c64xx/mach-smdk6410.c
+> +++ b/arch/arm/mach-s3c64xx/mach-smdk6410.c
+> @@ -60,7 +60,7 @@
+>   
+>   #include <plat/devs.h>
+>   #include <plat/cpu.h>
+> -#include <plat/adc.h>
+> +#include <linux/soc/samsung/s3c-adc.h>
+>   #include <linux/platform_data/touchscreen-s3c2410.h>
+>   #include <plat/keypad.h>
+>   #include <plat/samsung-time.h>
+> diff --git a/arch/arm/plat-samsung/adc.c b/arch/arm/plat-samsung/adc.c
+> index ee3d5c989a76..623a9774cc52 100644
+> --- a/arch/arm/plat-samsung/adc.c
+> +++ b/arch/arm/plat-samsung/adc.c
+> @@ -20,7 +20,7 @@
+>   #include <linux/regulator/consumer.h>
+>   
+>   #include <plat/regs-adc.h>
+> -#include <plat/adc.h>
+> +#include <linux/soc/samsung/s3c-adc.h>
+>   
+>   /* This driver is designed to control the usage of the ADC block between
+>    * the touchscreen and any other drivers that may need to use it, such as
+> diff --git a/arch/arm/plat-samsung/devs.c b/arch/arm/plat-samsung/devs.c
+> index fd94a35e22f8..ddd90f0bb380 100644
+> --- a/arch/arm/plat-samsung/devs.c
+> +++ b/arch/arm/plat-samsung/devs.c
+> @@ -44,7 +44,7 @@
+>   
+>   #include <plat/cpu.h>
+>   #include <plat/devs.h>
+> -#include <plat/adc.h>
+> +#include <linux/soc/samsung/s3c-adc.h>
+>   #include <linux/platform_data/ata-samsung_cf.h>
+>   #include <plat/fb.h>
+>   #include <plat/fb-s3c2410.h>
+> diff --git a/drivers/hwmon/s3c-hwmon.c b/drivers/hwmon/s3c-hwmon.c
+> index b490fe3d2ee8..f2703c5460d0 100644
+> --- a/drivers/hwmon/s3c-hwmon.c
+> +++ b/drivers/hwmon/s3c-hwmon.c
+> @@ -20,7 +20,7 @@
+>   #include <linux/hwmon.h>
+>   #include <linux/hwmon-sysfs.h>
+>   
+> -#include <plat/adc.h>
+> +#include <linux/soc/samsung/s3c-adc.h>
+>   #include <linux/platform_data/hwmon-s3c.h>
+>   
+>   struct s3c_hwmon_attr {
+> diff --git a/drivers/input/touchscreen/s3c2410_ts.c b/drivers/input/touchscreen/s3c2410_ts.c
+> index b346e7cafd62..1a5a178ea286 100644
+> --- a/drivers/input/touchscreen/s3c2410_ts.c
+> +++ b/drivers/input/touchscreen/s3c2410_ts.c
+> @@ -21,10 +21,43 @@
+>   #include <linux/clk.h>
+>   #include <linux/io.h>
+>   
+> -#include <plat/adc.h>
+> -#include <plat/regs-adc.h>
+> +#include <linux/soc/samsung/s3c-adc.h>
+>   #include <linux/platform_data/touchscreen-s3c2410.h>
+>   
+> +#define	S3C2410_ADCCON			(0x00)
+> +#define	S3C2410_ADCTSC			(0x04)
+> +#define	S3C2410_ADCDLY			(0x08)
+> +#define	S3C2410_ADCDAT0			(0x0C)
+> +#define	S3C2410_ADCDAT1			(0x10)
+> +#define	S3C64XX_ADCUPDN			(0x14)
+> +#define	S3C2443_ADCMUX			(0x18)
+> +#define	S3C64XX_ADCCLRINT		(0x18)
+> +#define	S5P_ADCMUX			(0x1C)
+> +#define	S3C64XX_ADCCLRINTPNDNUP		(0x20)
+> +
+> +/* ADCTSC Register Bits */
+> +#define S3C2443_ADCTSC_UD_SEN		(1 << 8)
+> +#define S3C2410_ADCTSC_YM_SEN		(1<<7)
+> +#define S3C2410_ADCTSC_YP_SEN		(1<<6)
+> +#define S3C2410_ADCTSC_XM_SEN		(1<<5)
+> +#define S3C2410_ADCTSC_XP_SEN		(1<<4)
+> +#define S3C2410_ADCTSC_PULL_UP_DISABLE	(1<<3)
+> +#define S3C2410_ADCTSC_AUTO_PST		(1<<2)
+> +#define S3C2410_ADCTSC_XY_PST(x)	(((x)&0x3)<<0)
+> +
+> +/* ADCDAT0 Bits */
+> +#define S3C2410_ADCDAT0_UPDOWN		(1<<15)
+> +#define S3C2410_ADCDAT0_AUTO_PST	(1<<14)
+> +#define S3C2410_ADCDAT0_XY_PST		(0x3<<12)
+> +#define S3C2410_ADCDAT0_XPDATA_MASK	(0x03FF)
+> +
+> +/* ADCDAT1 Bits */
+> +#define S3C2410_ADCDAT1_UPDOWN		(1<<15)
+> +#define S3C2410_ADCDAT1_AUTO_PST	(1<<14)
+> +#define S3C2410_ADCDAT1_XY_PST		(0x3<<12)
+> +#define S3C2410_ADCDAT1_YPDATA_MASK	(0x03FF)
+> +
+> +
+>   #define TSC_SLEEP  (S3C2410_ADCTSC_PULL_UP_DISABLE | S3C2410_ADCTSC_XY_PST(0))
+>   
+>   #define INT_DOWN	(0)
+> diff --git a/drivers/power/supply/s3c_adc_battery.c b/drivers/power/supply/s3c_adc_battery.c
+> index 3d00b35cafc9..60b7f41ab063 100644
+> --- a/drivers/power/supply/s3c_adc_battery.c
+> +++ b/drivers/power/supply/s3c_adc_battery.c
+> @@ -22,7 +22,7 @@
+>   #include <linux/init.h>
+>   #include <linux/module.h>
+>   
+> -#include <plat/adc.h>
+> +#include <linux/soc/samsung/s3c-adc.h>
+>   
+>   #define BAT_POLL_INTERVAL		10000 /* ms */
+>   #define JITTER_DELAY			500 /* ms */
+> diff --git a/arch/arm/plat-samsung/include/plat/adc.h b/include/linux/soc/samsung/s3c-adc.h
+> similarity index 100%
+> rename from arch/arm/plat-samsung/include/plat/adc.h
+> rename to include/linux/soc/samsung/s3c-adc.h
+> 
 
-Jae
 
 _______________________________________________
 linux-arm-kernel mailing list
