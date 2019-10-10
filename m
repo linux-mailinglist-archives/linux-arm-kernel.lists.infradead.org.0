@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B33FD2442
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 10:51:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8949D2444
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 10:51:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oDWh995XZ1MnRTVWuKjuKhBn/75hKXFqOSTJxixTXcY=; b=Sl8iHbLDpxYRyq
-	zxV05lVO3OXgnMbHyMqPZAaBGzTW8RRmx0i6/XP76X0zKcGeV5hzQtIewTIhbqN1vx9Jsx0DrWfih
-	y/dKKw9XMbOADUnGc5kCDG4+TUpYGeCDBKLau7M5+0kByQWjUB3SUN3mT3Q2wNQU5lM4Wt5otY1H8
-	daXbVMPlT4uhnF7bUksBDupx6ZKR79Xcem5e2LneZM0A/VcEhUTI393aWmglMHDOzoPWXt1jFOQje
-	MpHHz7zn4c59B+FDSVzzMfkevI889CDjaXGrJ9zNnirNc5DZ+IKeoleIvwt8R3gpv0IABbXGKyU8E
-	bMBjIYdYvnmeRvxfSkGA==;
+	List-Owner; bh=oTteguxaKoWk/1EhsgMD01+hKz3MXPJy4l4ywfpG8Vk=; b=mLH7H1VpXUmBnq
+	hoxaTb6R2hWoWLFJoBEXhZKdEuCNA4CWGNbGeEd44xdfT060GiKhukosm5nIn0mT1js70j7mTZ2yc
+	C3+yKDqjo00Hc7uZhOcqmYcUTmLM1RQb/kNSfXazf8IvpJUVirtxEYy5/GhXRC1wq5XH6B5HE866Z
+	NpWRnsp85XZceX3iiCSRXUxGo7ZlZU9Gi1ar0Zb9x1SFZYQPABT7Cf9vEX5zwUZyEAPuJoTq0uNsW
+	kLDaobL7mlSL3BWgdNfmHNPtFCAMwvxkt39a2Q1Snb5zs3PvsMnIx1TA67F339Mpr3I5cJdQaD6pP
+	8vhi0ZHDgQfSaG86G4oQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIUAL-0007zE-Jg; Thu, 10 Oct 2019 08:51:21 +0000
+	id 1iIUAa-0008Gk-E7; Thu, 10 Oct 2019 08:51:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIU7r-0004BW-CK
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 08:48:49 +0000
+ id 1iIU7x-0004Gi-Os
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 08:48:55 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2FF84218AC;
- Thu, 10 Oct 2019 08:48:46 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A0871218AC;
+ Thu, 10 Oct 2019 08:48:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570697326;
- bh=T4FbpQKPhy3l01rC+LQL19O6vxjqjUvvNx+JZt0oe/w=;
+ s=default; t=1570697332;
+ bh=xCPrH/diVEoglFjDTV/JzAWK6WNrbC+4JHj+gxzkQF0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=DvVzJZlH6/y+iqSowPXJUyKW6711tKRPd8A/IO2hKjo9IljHTvX6ypUPBYo9+0QAU
- qNpJl0h3ijLl6zJxeIM1sDL0KR2AWYa06ykcGhDPS2rVWkgVzWc1aLLJjScRrXkO3o
- pmZPJzJKw49tyrdXgI/L2eGsE897D52X1KxCeAAE=
+ b=U0FkIhGs5R4JgpGlpZNFnGrFJ5jMaeS1a88CzrzKuUuZDcHAHpIhIXmkDm7d4V4iV
+ daTcbwqCa2z4BdM2EYvGDcJL1t/uAzOcB05/SB1necZJVbxrI5Qu446HEQ+fDiUYYJ
+ fXqfbBcJRx+kWCyMpA5NwNx15oYAUNb5d8V+tFH8=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 4.19 102/114] arm64: ssbs: Dont treat CPUs with SSBS as
- unaffected by SSB
-Date: Thu, 10 Oct 2019 10:36:49 +0200
-Message-Id: <20191010083613.611304454@linuxfoundation.org>
+Subject: [PATCH 4.19 103/114] arm64: Force SSBS on context switch
+Date: Thu, 10 Oct 2019 10:36:50 +0200
+Message-Id: <20191010083613.664531794@linuxfoundation.org>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191010083544.711104709@linuxfoundation.org>
 References: <20191010083544.711104709@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_014847_587025_50FA6626 
-X-CRM114-Status: GOOD (  11.32  )
+X-CRM114-CacheID: sfid-20191010_014854_096872_C9D2AD2C 
+X-CRM114-Status: GOOD (  13.29  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -75,55 +74,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Will Deacon <will.deacon@arm.com>, stable@vger.kernel.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: Marc Zyngier <marc.zyngier@arm.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Will Deacon <will@kernel.org>,
+ stable@vger.kernel.org, Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Will Deacon <will.deacon@arm.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
 
-[ Upstream commit eb337cdfcd5dd3b10522c2f34140a73a4c285c30 ]
+[ Upstream commit cbdf8a189a66001c36007bf0f5c975d0376c5c3a ]
 
-SSBS provides a relatively cheap mitigation for SSB, but it is still a
-mitigation and its presence does not indicate that the CPU is unaffected
-by the vulnerability.
+On a CPU that doesn't support SSBS, PSTATE[12] is RES0.  In a system
+where only some of the CPUs implement SSBS, we end-up losing track of
+the SSBS bit across task migration.
 
-Tweak the mitigation logic so that we report the correct string in sysfs.
+To address this issue, let's force the SSBS bit on context switch.
 
-Signed-off-by: Will Deacon <will.deacon@arm.com>
+Fixes: 8f04e8e6e29c ("arm64: ssbd: Add support for PSTATE.SSBS rather than trapping to EL3")
+Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+[will: inverted logic and added comments]
+Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 ---
- arch/arm64/kernel/cpu_errata.c |   10 ++++++----
- 1 file changed, 6 insertions(+), 4 deletions(-)
+ arch/arm64/include/asm/processor.h |   14 ++++++++++++--
+ arch/arm64/kernel/process.c        |   29 ++++++++++++++++++++++++++++-
+ 2 files changed, 40 insertions(+), 3 deletions(-)
 
---- a/arch/arm64/kernel/cpu_errata.c
-+++ b/arch/arm64/kernel/cpu_errata.c
-@@ -341,15 +341,17 @@ static bool has_ssbd_mitigation(const st
+--- a/arch/arm64/include/asm/processor.h
++++ b/arch/arm64/include/asm/processor.h
+@@ -177,6 +177,16 @@ static inline void start_thread_common(s
+ 	regs->pc = pc;
+ }
  
- 	WARN_ON(scope != SCOPE_LOCAL_CPU || preemptible());
- 
-+	/* delay setting __ssb_safe until we get a firmware response */
-+	if (is_midr_in_range_list(read_cpuid_id(), entry->midr_range_list))
-+		this_cpu_safe = true;
++static inline void set_ssbs_bit(struct pt_regs *regs)
++{
++	regs->pstate |= PSR_SSBS_BIT;
++}
 +
- 	if (this_cpu_has_cap(ARM64_SSBS)) {
-+		if (!this_cpu_safe)
-+			__ssb_safe = false;
- 		required = false;
- 		goto out_printmsg;
- 	}
++static inline void set_compat_ssbs_bit(struct pt_regs *regs)
++{
++	regs->pstate |= PSR_AA32_SSBS_BIT;
++}
++
+ static inline void start_thread(struct pt_regs *regs, unsigned long pc,
+ 				unsigned long sp)
+ {
+@@ -184,7 +194,7 @@ static inline void start_thread(struct p
+ 	regs->pstate = PSR_MODE_EL0t;
  
--	/* delay setting __ssb_safe until we get a firmware response */
--	if (is_midr_in_range_list(read_cpuid_id(), entry->midr_range_list))
--		this_cpu_safe = true;
--
- 	if (psci_ops.smccc_version == SMCCC_VERSION_1_0) {
- 		ssbd_state = ARM64_SSBD_UNKNOWN;
- 		if (!this_cpu_safe)
+ 	if (arm64_get_ssbd_state() != ARM64_SSBD_FORCE_ENABLE)
+-		regs->pstate |= PSR_SSBS_BIT;
++		set_ssbs_bit(regs);
+ 
+ 	regs->sp = sp;
+ }
+@@ -203,7 +213,7 @@ static inline void compat_start_thread(s
+ #endif
+ 
+ 	if (arm64_get_ssbd_state() != ARM64_SSBD_FORCE_ENABLE)
+-		regs->pstate |= PSR_AA32_SSBS_BIT;
++		set_compat_ssbs_bit(regs);
+ 
+ 	regs->compat_sp = sp;
+ }
+--- a/arch/arm64/kernel/process.c
++++ b/arch/arm64/kernel/process.c
+@@ -360,7 +360,7 @@ int copy_thread(unsigned long clone_flag
+ 			childregs->pstate |= PSR_UAO_BIT;
+ 
+ 		if (arm64_get_ssbd_state() == ARM64_SSBD_FORCE_DISABLE)
+-			childregs->pstate |= PSR_SSBS_BIT;
++			set_ssbs_bit(childregs);
+ 
+ 		p->thread.cpu_context.x19 = stack_start;
+ 		p->thread.cpu_context.x20 = stk_sz;
+@@ -402,6 +402,32 @@ void uao_thread_switch(struct task_struc
+ }
+ 
+ /*
++ * Force SSBS state on context-switch, since it may be lost after migrating
++ * from a CPU which treats the bit as RES0 in a heterogeneous system.
++ */
++static void ssbs_thread_switch(struct task_struct *next)
++{
++	struct pt_regs *regs = task_pt_regs(next);
++
++	/*
++	 * Nothing to do for kernel threads, but 'regs' may be junk
++	 * (e.g. idle task) so check the flags and bail early.
++	 */
++	if (unlikely(next->flags & PF_KTHREAD))
++		return;
++
++	/* If the mitigation is enabled, then we leave SSBS clear. */
++	if ((arm64_get_ssbd_state() == ARM64_SSBD_FORCE_ENABLE) ||
++	    test_tsk_thread_flag(next, TIF_SSBD))
++		return;
++
++	if (compat_user_mode(regs))
++		set_compat_ssbs_bit(regs);
++	else if (user_mode(regs))
++		set_ssbs_bit(regs);
++}
++
++/*
+  * We store our current task in sp_el0, which is clobbered by userspace. Keep a
+  * shadow copy so that we can restore this upon entry from userspace.
+  *
+@@ -429,6 +455,7 @@ __notrace_funcgraph struct task_struct *
+ 	contextidr_thread_switch(next);
+ 	entry_task_switch(next);
+ 	uao_thread_switch(next);
++	ssbs_thread_switch(next);
+ 
+ 	/*
+ 	 * Complete any pending TLB or cache maintenance on this CPU in case
 
 
 
