@@ -2,42 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BA92D1D3F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 02:13:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26D7DD1D42
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 02:13:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4r5+p/SFW9k2if4vnn1EZ6As4uHdResMQX4h6pXU6dc=; b=oMKdMxf+SiwzTC
-	Z2Tz7mOGEqu07p1g4131udPxZN4LMMiCIT2sRryUBAqbDGPzibyg4l2R4TdNWOwPnxqzZOw6hEhKI
-	3aLT/LvobVLBMZW6LtPC90dLJZFmmN3q/hGuSaVaVU4nBNsPvoivDl62cMeLbAZuF1EaJEB/G8zB9
-	VaccD4xaqGv38WdqelMgoMS04WgcCoIeP5gDzcc/pGIGxA6957mjBK7WswUVrAzqeZaMVZhHTBU2Q
-	xk1tXteIvo+fekZtI1x+RAjZ4QmIpU0OOhDPxunTDvu+3Ds6kvY9b32KqBUbGsZn1dCRBBxNZsRRd
-	nOKypdfNDyDLTvg9TEkg==;
+	List-Owner; bh=TPdjvO4547UxIawGdwDrwtGxXUCbMqt2NBrCoPkWEkQ=; b=lidS4Amhh+vLOv
+	oxhh7o9Pa93P33/C/5vF0nj5oaMMeYSicEV0FGln/8deoi4VgikwV+u2ODAx5jOg0SuJcttF8nKYs
+	tskLXxDjqyYPoeZWiyN9KK5BPwjtCMvLPVKcJVN1TZenvyMJtHOj9MR2+wZwyiOWTmd9lBLqGOEaL
+	pOo+KCm6ezaWsFXCO0E/XCOhyFgsKKl4WXvTHlp07YhxNvc6GCajfs0ZhaRKii1uKArlQE3SgtD4M
+	5Cp11VSLZjeCMwPH8cLQdI25UugGmUEl5iUn1eryVbY5FotlvxMcCO9dT/eFWWIpvnhU7aP2B2pWB
+	FS+fKlQChwJkas7V4ijw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIM51-0007dX-Lv; Thu, 10 Oct 2019 00:13:19 +0000
+	id 1iIM5E-0007so-Gj; Thu, 10 Oct 2019 00:13:32 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIM4E-0007BW-Th
+ id 1iIM4F-0007CB-ET
  for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 00:12:33 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id C091381CA;
- Thu, 10 Oct 2019 00:13:03 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id E935781D5;
+ Thu, 10 Oct 2019 00:13:04 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 2/8] ARM: OMAP2+: Drop bogus wkup domain oswr setting
-Date: Wed,  9 Oct 2019 17:12:18 -0700
-Message-Id: <20191010001224.41826-3-tony@atomide.com>
+Subject: [PATCH 3/8] ARM: OMAP2+: Remove bogus warnings for machines without
+ twl PMIC
+Date: Wed,  9 Oct 2019 17:12:19 -0700
+Message-Id: <20191010001224.41826-4-tony@atomide.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191010001224.41826-1-tony@atomide.com>
 References: <20191010001224.41826-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_171230_998538_AF0D2C63 
-X-CRM114-Status: GOOD (  10.20  )
+X-CRM114-CacheID: sfid-20191009_171231_519825_03AD2555 
+X-CRM114-Status: UNSURE (   9.73  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,31 +67,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The wkup domain is always on and does not have logic off setting. This
-got accidentally added by commit f74297dd9354 ("ARM: OMAP2+: Make sure
-LOGICRETSTATE bits are not cleared") but is harmless.
+In general we want to see a quiet dmesg output with no errors or warnings
+unless something is really wrong and needs attention. We currently see
+these bogus warnings on boot:
+
+twl: not initialized
+twl6030_uv_to_vsel:OUT OF RANGE! non mapped vsel for 1375000 Vs max 1316660
+twl6030_uv_to_vsel:OUT OF RANGE! non mapped vsel for 1375000 Vs max 1316660
+twl6030_uv_to_vsel:OUT OF RANGE! non mapped vsel for 1375000 Vs max 1316660
+twl6030_uv_to_vsel:OUT OF RANGE! non mapped vsel for 1375000 Vs max 1316660
+...
+
+Let's avoid these by checking if a device tree node for cpcap PMIC exists.
 
 Cc: Merlijn Wajer <merlijn@wizzup.org>
 Cc: Pavel Machek <pavel@ucw.cz>
 Cc: Sebastian Reichel <sre@kernel.org>
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- arch/arm/mach-omap2/pm44xx.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ arch/arm/mach-omap2/omap_twl.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/mach-omap2/pm44xx.c b/arch/arm/mach-omap2/pm44xx.c
---- a/arch/arm/mach-omap2/pm44xx.c
-+++ b/arch/arm/mach-omap2/pm44xx.c
-@@ -137,8 +137,7 @@ static int __init pwrdms_setup(struct powerdomain *pwrdm, void *unused)
- 	 * smsc911x at least if per hits retention during idle.
- 	 */
- 	if (!strncmp(pwrdm->name, "core", 4) ||
--	    !strncmp(pwrdm->name, "l4per", 5) ||
--	    !strncmp(pwrdm->name, "wkup", 4))
-+	    !strncmp(pwrdm->name, "l4per", 5))
- 		pwrdm_set_logic_retst(pwrdm, PWRDM_POWER_RET);
+diff --git a/arch/arm/mach-omap2/omap_twl.c b/arch/arm/mach-omap2/omap_twl.c
+--- a/arch/arm/mach-omap2/omap_twl.c
++++ b/arch/arm/mach-omap2/omap_twl.c
+@@ -219,7 +219,8 @@ int __init omap4_twl_init(void)
+ {
+ 	struct voltagedomain *voltdm;
  
- 	pwrst = kmalloc(sizeof(struct power_state), GFP_ATOMIC);
+-	if (!cpu_is_omap44xx())
++	if (!cpu_is_omap44xx() ||
++	    of_find_compatible_node(NULL, NULL, "motorola,cpcap"))
+ 		return -ENODEV;
+ 
+ 	voltdm = voltdm_lookup("mpu");
 -- 
 2.23.0
 
