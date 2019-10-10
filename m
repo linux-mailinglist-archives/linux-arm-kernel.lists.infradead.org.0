@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42D40D336E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 23:30:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2603FD3371
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 23:31:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xVKrWlG7MKVNe/ngZ5Kho8iUTIJbMdyCEal02yKSAfE=; b=e98xECv2ECnNHx
-	tSui1yOu1iurzzS4ttwiDDos+lvtktmcfVzb7iLikCX1S8z7v1eLmE8s6TTeHERROqGGavi6AybWk
-	/D9HQTkmCoHPr6CBQ1rRwJN+FAnsgIlK/5B+0hESYGdFD8LBXHbfVE1DHAmJXveC5FrLpzurA0p2N
-	JmfD9yEUcox/a65ZpVTmMVs5BQAHQG4IAIws/y1a9XxKY5okS81bXBnvOBGyCL6Y2cVOEGTXwvhDb
-	j2XJHo1Xq4Rt4i0ELFlwHKEdtzcMZ7waPy96Dx9GvTNO/Xn4t0PJ4+y3yaQf13IOuWjWi8+ubG//S
-	UyLtuay1GIeQ9n/3cdYQ==;
+	List-Owner; bh=S1a71QPBX1INLJVe9YuPQhFLAa9szSkB/IFYLcyudpc=; b=lNYQbehOrRmyaV
+	JEHA5U6v2f59BAGOy5kApPKa9vZ3KI28DNIdyDixPE0FgDwH/jwwknz+GrnOjkPgywtoZVc/XLTvM
+	Fu/MLpVH+wrPqmZfRMbSsbvSGQNAdPWSyQZGEP7Ylb7h+L1IJrAeYrBFpWwjpm9HhbaXCSTFzNrAz
+	3CmG5G9dVDe8+UfYsMD2+GNO7VOH0Zx+9RYZ1YyON5v4WncONAaUUEnrx+8upd8aJXlegsJZ9hIFm
+	akJ0Tdf4hoQuNQm4cNC+s0MM1P/MymDIZW1CXyDwcUdDGtTlfyNbWUCXDYXc0zHwZwWXPYFOOJV9b
+	FS5O+yZc9qOQTRQ5dakw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIg18-0000fq-Pd; Thu, 10 Oct 2019 21:30:38 +0000
+	id 1iIg1i-0001Jx-5d; Thu, 10 Oct 2019 21:31:14 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIg0y-0000eo-4Q; Thu, 10 Oct 2019 21:30:29 +0000
+ id 1iIg1Y-0001DC-Uc; Thu, 10 Oct 2019 21:31:06 +0000
 Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
  helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iIg0w-0007BZ-RA; Thu, 10 Oct 2019 23:30:26 +0200
+ id 1iIg1S-0007Bv-HL; Thu, 10 Oct 2019 23:30:58 +0200
 From: Heiko Stuebner <heiko@sntech.de>
-To: Soeren Moch <smoch@web.de>
-Subject: Re: [PATCH v2] arm64: dts: rockchip: fix RockPro64 sdmmc settings
-Date: Thu, 10 Oct 2019 23:30:26 +0200
-Message-ID: <2055831.6uBfQfHlXk@phil>
-In-Reply-To: <20191004203213.4995-1-smoch@web.de>
-References: <20191004203213.4995-1-smoch@web.de>
+To: Vivek Unune <npcomplete13@gmail.com>
+Subject: Re: [PATCH] arm64: dts: rockchip: Fix usb-c on Hugsun X99 TV Box
+Date: Thu, 10 Oct 2019 23:30:57 +0200
+Message-ID: <1594003.l3tWjkc0Ga@phil>
+In-Reply-To: <20190929032230.24628-1-npcomplete13@gmail.com>
+References: <20190929032230.24628-1-npcomplete13@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_143028_323024_023870D2 
-X-CRM114-Status: UNSURE (   9.24  )
+X-CRM114-CacheID: sfid-20191010_143105_140144_C4FCC57A 
+X-CRM114-Status: UNSURE (   8.36  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -57,22 +57,19 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, vicencb@gmail.com,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, akash@openedev.com,
+ ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Freitag, 4. Oktober 2019, 22:32:13 CEST schrieb Soeren Moch:
-> According to the RockPro64 schematic [1] the rk3399 sdmmc controller is
-> connected to a microSD (TF card) slot. Remove the cap-mmc-highspeed
-> property of the sdmmc controller, since no mmc card can be connected here.
+Am Sonntag, 29. September 2019, 05:22:30 CEST schrieb Vivek Unune:
+> Fix usb-c on X99 TV Box. Tested with armbian w/ kernel 5.3
 > 
-> [1] http://files.pine64.org/doc/rockpro64/rockpro64_v21-SCH.pdf
-> 
-> Fixes: e4f3fb490967 ("arm64: dts: rockchip: add initial dts support for Rockpro64")
-> Signed-off-by: Soeren Moch <smoch@web.de>
+> Signed-off-by: Vivek Unune <npcomplete13@gmail.com>
 
 applied as fix for 5.4
 
