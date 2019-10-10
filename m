@@ -2,84 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A57E7D2100
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 08:48:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9EB4CD2106
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 08:50:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rc5NZSDjIrBKax+ddTzB61+KiNNOSj/HXgv0Fiv8/7w=; b=Ubnvv12+Dg8qiW
-	6xEW4RF1iL7c2/hXp0c4630ewgitK20pS1lUfvIyVARDOZxAMLU0DTdmNFp8qN1VuUrwmi3jLpkLl
-	MH/tTC/s9N8X3Jh61CzMgJDvc+3HCr/yA25K/ikMIqaWxpU/MOgP8I6kgrSOZQ8BkRXMrv83CF1CK
-	oxehN2WdgtRBIdJAJyLqV6LgnEfXitExOJEoHs6lSkIo6TaQeQZuQgCJ7TLNY6dMVwRy/juMWi1fe
-	uXlTnJTDhRPg73tmSJimWn4kxott1lgjhTdQoWUhLRFGJZRL13Au1JcH+zdcYlJ0LMTDKbopZpU/5
-	PL8pCQ5af07DW3Ap7xcw==;
+	List-Owner; bh=BDGPIfpa8jlV/AodBDBsgny8Ig9iZ0TIxOgLtlPhHP8=; b=kcoAb7kSJBOqJv
+	5DfydGUP2Re7RoNUJuHzIuabwQW73/7b05sstTeZ5Bvv5g2W5PkC6uK60f7+9uUP/RVkFbqWiGhA/
+	UY6GPX9L8LAriGk2EL9/4HdPnVRsDkt900q5KshHiFJ2mOW12eQ8t5vTOe2CwcM2IjcgQAsXc6f0c
+	6cOUA90obkPKZ1SVUKWU4iS6vBBmwhcKbuRZWbXkrJeYs2uNkuD4IIfGNAOasPDtuDHakt5qN9Cw1
+	scpTlKKoU5zAG+kCaKIRMWE9sxaQR2xE2GihfuU00F1uDKIuSlly811b6MFpVdGUI7mO1kR+B7+/N
+	aJ87/p/DCxYjHkLLSE+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iISFZ-0007dK-K6; Thu, 10 Oct 2019 06:48:37 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1iISGu-0007zg-3d; Thu, 10 Oct 2019 06:50:00 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iISFS-0007cg-Cz
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 06:48:31 +0000
-Received: by mail-qk1-x742.google.com with SMTP id y189so4643751qkc.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 09 Oct 2019 23:48:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=HfYimyj7XnI5kt+t6lECNj+HcYUo8K48jVJvvrvxJwU=;
- b=CHzh5/CMtBcl4mAy48yu0PywrvQ0pK9mWsdimHH8jgdHSBLl9cNKhCrpdvO4L0Zaaj
- VwAXU+VhkNVrUCrU3RuyIejzaWyqSWwSxMKr7W1whgRO8OpDt4vjoJVGtbQeBkgKQDGh
- vCtjQzVdaFc0D6pK3nDqrBDXTRMmwVcc0T0PI=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=HfYimyj7XnI5kt+t6lECNj+HcYUo8K48jVJvvrvxJwU=;
- b=OwXTFV/LjeJSMkaVcwht2yPdQ04eXmyEkAc+2Mul2jMFrDiR6cV7uymjWiZ3m10lSu
- K4fmBiHpF39T72ZE063z0WeEkGlLfv8/hjiZaUq6iO1i+54XQ23KeJMGUa9lKtojrpuq
- H3dGkvXzJa4oppB8rE0rAuEYGEXkKHJaUV2hO4MUXNwQQyXIE1yaqvK1wUhIZLqr+h23
- nG6ldUpNoAeb9VNt1sVYp0gRepaxwLgO2RFoVniBKdW/OONReiZbbr7WFsDdwtKojyqL
- qL/XDo5CR+r52dyy7t5aQwBGfsQMKmyDkILhWuUzlXpFwhYz+sBHYjyPd/AQgJNFjzeY
- OYVA==
-X-Gm-Message-State: APjAAAV35wPPig6QgYUzFFp17qtlwgciCaqxir56y8mArfoN8+P354+4
- OfBJyMyRz0czwwTQZWyajEKFS+tMR89p0hx1jWM=
-X-Google-Smtp-Source: APXvYqwoWtsEFPJ7Ma76eSNtW4TPaTGucXelYXNVmcWl2X/aPwSWHNNk6gYfy+Y0OlvgYSg2H1snmH4FDyZYbyorRFg=
-X-Received: by 2002:a37:4dca:: with SMTP id a193mr8086400qkb.292.1570690107291; 
- Wed, 09 Oct 2019 23:48:27 -0700 (PDT)
+ id 1iISGm-0007yq-1i; Thu, 10 Oct 2019 06:49:53 +0000
+Received: from dhcp-172-31-174-146.wireless.concordia.ca (unknown
+ [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested) (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 676422905B3;
+ Thu, 10 Oct 2019 07:49:49 +0100 (BST)
+Date: Thu, 10 Oct 2019 08:49:46 +0200
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: <Tudor.Ambarus@microchip.com>
+Subject: Re: [PATCH v2 01/22] mtd: spi-nor: hisi-sfc: Drop nor->erase NULL
+ assignment
+Message-ID: <20191010084946.62fb8449@dhcp-172-31-174-146.wireless.concordia.ca>
+In-Reply-To: <20190924074533.6618-2-tudor.ambarus@microchip.com>
+References: <20190924074533.6618-1-tudor.ambarus@microchip.com>
+ <20190924074533.6618-2-tudor.ambarus@microchip.com>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-References: <20191009212034.20325-1-jae.hyun.yoo@linux.intel.com>
-In-Reply-To: <20191009212034.20325-1-jae.hyun.yoo@linux.intel.com>
-From: Joel Stanley <joel@jms.id.au>
-Date: Thu, 10 Oct 2019 06:48:15 +0000
-Message-ID: <CACPK8XfKCSNsQJa2J2jKZJ7LGZh3zXAOfBYnp5X0w=TH4JfSpQ@mail.gmail.com>
-Subject: Re: [PATCH] i2c: aspeed: fix master pending state handling
-To: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_234830_668185_BCD14584 
-X-CRM114-Status: GOOD (  11.17  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191009_234952_218329_A2D9A254 
+X-CRM114-Status: GOOD (  13.50  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (joel.stan[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,39 +61,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>, Wolfram Sang <wsa@the-dreams.de>,
- Andrew Jeffery <andrew@aj.id.au>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- OpenBMC Maillist <openbmc@lists.ozlabs.org>,
- Brendan Higgins <brendanhiggins@google.com>, Rob Herring <robh+dt@kernel.org>,
- Cedric Le Goater <clg@kaod.org>, Tao Ren <taoren@fb.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-i2c@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org, vigneshr@ti.com,
+ geert+renesas@glider.be, andrew@aj.id.au, richard@nod.at,
+ linux-kernel@vger.kernel.org, vz@mleia.com, marek.vasut@gmail.com,
+ jonas@norrbonn.se, linux-mtd@lists.infradead.org, joel@jms.id.au,
+ miquel.raynal@bootlin.com, matthias.bgg@gmail.com,
+ linux-mediatek@lists.infradead.org, computersforpeace@gmail.com,
+ dwmw2@infradead.org, linux-aspeed@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 9 Oct 2019 at 21:20, Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com> wrote:
->
-> In case of master pending state, it should not trigger a master
-> command, otherwise data could be corrupted because this H/W shares
-> the same data buffer for slave and master operations. It also means
-> that H/W command queue handling is unreliable because of the buffer
-> sharing issue. To fix this issue, it clears command queue if a
-> master command is queued in pending state to use S/W solution
-> instead of H/W command queue handling. Also, it refines restarting
-> mechanism of the pending master command.
->
-> Fixes: 2e57b7cebb98 ("i2c: aspeed: Add multi-master use case support")
-> Signed-off-by: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
+On Tue, 24 Sep 2019 07:45:50 +0000
+<Tudor.Ambarus@microchip.com> wrote:
 
-Acked-by: Joel Stanley <joel@jms.id.au>
+> From: Tudor Ambarus <tudor.ambarus@microchip.com>
+> 
+> The pointer to 'struct spi_nor' is kzalloc'ed above in the code.
+> 
+> Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
 
-While reviewing I was concerned about the locking in
-aspeed_i2c_master_xfer. It's a bit hairy, and I am not convinced it is
-without bugs.
+Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
+
+> ---
+>  drivers/mtd/spi-nor/hisi-sfc.c | 1 -
+>  1 file changed, 1 deletion(-)
+> 
+> diff --git a/drivers/mtd/spi-nor/hisi-sfc.c b/drivers/mtd/spi-nor/hisi-sfc.c
+> index 6dac9dd8bf42..c99ed9cdbf9c 100644
+> --- a/drivers/mtd/spi-nor/hisi-sfc.c
+> +++ b/drivers/mtd/spi-nor/hisi-sfc.c
+> @@ -364,7 +364,6 @@ static int hisi_spi_nor_register(struct device_node *np,
+>  	nor->write_reg = hisi_spi_nor_write_reg;
+>  	nor->read = hisi_spi_nor_read;
+>  	nor->write = hisi_spi_nor_write;
+> -	nor->erase = NULL;
+>  	ret = spi_nor_scan(nor, NULL, &hwcaps);
+>  	if (ret)
+>  		return ret;
+
 
 _______________________________________________
 linux-arm-kernel mailing list
