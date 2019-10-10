@@ -2,60 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1C39D2720
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 12:25:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67CFCD276F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 12:45:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NGd4k7Wu5hKmx4NI3x6nfGBQOuQ1wwrfpTuls+1u4jQ=; b=PkO3Zkt/loGmPhptEli95EbXl
-	gYEqaHvVcIzfjG65vcC9ABwmR0CSgyiZ+Jz0zhVB+i6CZRdlwH2rtkIFE0RaPvkv89rPCOz+uELZ3
-	aphZxIadPJRY/YV7iK2F1UphjLUm6eGh2cySIqPvvwxALnqD2wPm/626YeKlNZgQbyZDTuS1+ldl5
-	cvyEVTmk/NQVTnx249hYhTnFknpyLFTTW/2plxOH+EVgrguMNxgN1SgtLbOqAKe3esvjfqlUNZg1f
-	ImmPUQmvmPOlxGozSecWF4F1jw1+2tZya8aWHCLe1Xt9AkqAz0bmj6kPZ2gocYQy2GZgnl7Dp3MbM
-	Uo3bZH+aw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JvyUhGmdFoTO/VqC6K64M4ZHgIZYYrEeT7Fx7vKlKkw=; b=NRDkJBYGBf3G3x
+	0Kt4tv9dshS1p5isFn4vOwNu6zUCPSBPCd3sLk+dLWNOKITLpDynNpEmi6Js2WCBoGGxSjJXpgTue
+	a30CzhFlmn+qVLayTnAZacYHd0f5dVq8k9DV000TYFWUFFO6fn5C6Iff9eWEZE6Nqxcd8B//yN6Ul
+	Vw6tGHARegZZPHOqWRa0hJ2eSJEb1+ElzqPwBLaz2Ao+Nl3o+HqAmxNGU5DJCHQkNrzasuyJONlJo
+	UxsvsEhRYzgAeXc9eNFXM+HaK7uc4/FuClLu089BWcy3xlDmuYvCB83pirnZGPGGjLUDV0vsW8nBn
+	5G7Z0XuTI02p2GHUs4hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIVdF-0004Kh-PT; Thu, 10 Oct 2019 10:25:17 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIVcy-00048K-Am
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 10:25:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CD1D128;
- Thu, 10 Oct 2019 03:24:56 -0700 (PDT)
-Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4175B3F68E;
- Thu, 10 Oct 2019 03:24:56 -0700 (PDT)
-Subject: Re: [PATCH v2 2/2] arm64: Don't use KPTI where we have E0PD
-To: Mark Brown <broonie@kernel.org>
-References: <20190814183103.33707-1-broonie@kernel.org>
- <20190814183103.33707-3-broonie@kernel.org>
- <20190815163541.yngqvjmehpuf74ye@willie-the-truck>
- <20190816102424.GA28874@arrakis.emea.arm.com>
- <20190816121005.GB4039@sirena.co.uk>
- <6834da7b-553c-2ad3-9b05-25ca982252e9@arm.com>
- <20191009175205.GN2036@sirena.org.uk>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <2d53ed87-34f3-33e1-5501-77895662c47a@arm.com>
-Date: Thu, 10 Oct 2019 11:24:55 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.0
+	id 1iIVwt-00079w-O5; Thu, 10 Oct 2019 10:45:35 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iIVwm-00078y-LB
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 10:45:29 +0000
+Received: by mail-pf1-x442.google.com with SMTP id q7so3630300pfh.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 10 Oct 2019 03:45:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=YeFYhKm4PJo5d1ZlY/G1oQFiqY2ifkLQAS5VyiJD2kA=;
+ b=cG3q9551YC42aPOxOY7I1S4iCUNQ+FiNULJWSzr2B6bjMy036gzBA007+gLvAx5def
+ X2UCn8VpNQkf5PrY1dSf/jLn9ogdqFQ05qumhkMbpH0aXYl/3zaFCkbBWWsx/m9EcTJN
+ EGPWiespyxve8xlsh9sSSV0IC3TnlyP2SHIz++ugv6fir6w4NoPrYuJN5eiHRl9Pq0jU
+ 6q1jsNvySYH+umo3d7rqbZPwL4Z7qbGyQiZ2va1gssLuCcIlCVWy/qRkR1M7XkimuCKF
+ H155NqnphhFljtBZEkZGQ2DM7KWh+8rYmfRFXVzFCmdy+vLllLmQEdfJc/kvo1u+9+0P
+ ZVwg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=YeFYhKm4PJo5d1ZlY/G1oQFiqY2ifkLQAS5VyiJD2kA=;
+ b=bBRTh2ZgwLYKlss8CCnlmH456WwUWult1R/ZwydRPySTzoaIUFvdnrNgLBsqc5UoR8
+ cH1garcM5w14ggwv3SXh2Yu2Tp2Siz6fkDFHdKBRe1mGsg3KaZ6Gx8xJ2s8AsDkwOXTL
+ slVcqi5EuCg6Z2s6QX6kFWgQQu6+/3YV/NZz/Dgw5MyzfZOXSPMmGoDbEkpARQcEpBso
+ UarInfHeE6UYopVvvnYxFiUCWQWdaA6y/ZpKCPXFjVuH1EB8RXFr+qV0dbXqqess6dWR
+ 88Sd9e39twV26kegi/MS0CBoG/MTUnhR6s0uq4EfUh6DjEcIV39hdSkWTitjcdE/xhZj
+ aBgg==
+X-Gm-Message-State: APjAAAU4k90gBQrOlm42EJJmIqIUsXc2Ae7fX8Q245c1Eo30tAj+27NH
+ Z8EybBeyTgRlUKqcZem2vL9doA==
+X-Google-Smtp-Source: APXvYqwYM9M/m3MClMu4Z8S007xBWdkHJrU/NyiZs+nhmdbjrvkkM8AQQUaF3lEebzVejNsXRxT5JA==
+X-Received: by 2002:a17:90a:c383:: with SMTP id
+ h3mr10552761pjt.122.1570704323312; 
+ Thu, 10 Oct 2019 03:45:23 -0700 (PDT)
+Received: from localhost ([122.172.151.112])
+ by smtp.gmail.com with ESMTPSA id z13sm6824122pfq.121.2019.10.10.03.45.22
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 10 Oct 2019 03:45:22 -0700 (PDT)
+Date: Thu, 10 Oct 2019 16:15:20 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: "H. Nikolaus Schaller" <hns@goldelico.com>
+Subject: Re: [PATCH v3 0/8] OMAP3: convert opp-v1 to opp-v2 and read speed
+ binned / 720MHz grade bits
+Message-ID: <20191010104520.n77wxxyxvyeo2i4u@vireshk-i7>
+References: <cover.1568224032.git.hns@goldelico.com>
 MIME-Version: 1.0
-In-Reply-To: <20191009175205.GN2036@sirena.org.uk>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <cover.1568224032.git.hns@goldelico.com>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_032500_416898_63F9F004 
-X-CRM114-Status: GOOD (  19.00  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191010_034528_694016_B83DA378 
+X-CRM114-Status: UNSURE (   9.82  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,56 +100,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ letux-kernel@openphoenux.org, linux-pm@vger.kernel.org,
+ Tony Lindgren <tony@atomide.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ linux-kernel@vger.kernel.org, Enric Balletbo i Serra <eballetbo@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ =?utf-8?B?QW5kcsOp?= Roth <neolynx@gmail.com>,
+ =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
+ kernel@pyra-handheld.com, Teresa Remmet <t.remmet@phytec.de>,
+ Javier Martinez Canillas <javier@dowhile0.org>, linux-omap@vger.kernel.org,
+ Adam Ford <aford173@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Roger Quadros <rogerq@ti.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark
+On 11-09-19, 19:47, H. Nikolaus Schaller wrote:
+> CHANGES V3:
+> * make omap36xx control the abb-ldo and properly switch mode
+>   (suggested by Adam Ford <aford173@gmail.com>)
+> * add a note about enabling the turbo-mode OPPs
 
-On 09/10/2019 18:52, Mark Brown wrote:
-> On Tue, Sep 24, 2019 at 10:13:18AM +0100, Suzuki K Poulose wrote:
->> On 16/08/2019 13:10, Mark Brown wrote:
-> 
->>> We definitely need some variable I think, and I think you're right that
->>> making the decision on the boot CPU would simplify things a lot.  The
-> 
->> relocating the kernel. So, we may be able to perform "raw cpuid check" on
->> the boot CPU with MMU turned on, before we re-write the pagetables for KASLR
->> displacement and nG if that is needed (by maybe updating SWWAPPER_MMU_FLAGS) for
->> the boot CPU and store this information somewhere. Thus we may be able to
->> avoid another re-write of the pagetables after we have booted the secondaries.
-> 
-> The boot CPU is straightforward, there is only an issue on the
-> secondaries where IIRC the rewrite code needs some updates as we
-> get left with non-global mappings lying around.
-> 
->> Discussing this with Catalin, he suggests to use a variable for the status
->> of "nG" flag for PTE/PMD_MAYBE_NG, to avoid calling the helper function
->> all the time. By using the per-CPU check we can make sure the flag is uptodate.
-> 
-> That was the discussion about the variable above.  We need one
-> for non-optimization reasons anyway since we can't rely on
-> checking the state on the current CPU.
-> 
->> Also, we can continue to fail the hotplugged CPUs if we detect that the
->> pagetables are Global and the new CPU requires nG (for heterogeneous
->> systems).
-> 
-> There's no continuing to reject those CPUs unfortunately, we
-> don't reject anything currently.  Any such systems would
+Applied the series to cpufreq/arm tree.
 
-In fact we do reject the hotplugged CPUs, after we have finalised
-the capabilities for KPTI. So, I don't see how the behavior is different.
+Also shared a branch for you Tony: cpufreq/ti/oppv2.
 
-Cheers
-Suzuki
-
-
-> experience a regression when moving to a kernel where E0PD is
-> enabled which doesn't seem ideal.
+-- 
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
