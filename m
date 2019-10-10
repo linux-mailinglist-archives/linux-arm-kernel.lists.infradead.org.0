@@ -2,97 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A489D26F1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 12:09:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1C39D2720
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 12:25:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=83p9OkskVv8LTJswqBz51ZJSRGo23TqEMjhb4KYHjLc=; b=BDOCQwB8d8hDNA
-	9M/08qFf9Ib5AIOPcc+WZTEcNR2PMk2nMLXFlL/IxWjCPrFGNLklAQXUSwOIJAqaJtL8WU6g5u2Ht
-	0ijo4dQJNZPcUIdyxb1lMrV0Eeq5W52xIhsFjUFDMJHTRD9QdHpt/pMm3BE1B7ps0ygZ2vdq2ng9g
-	2hXXhuUCh7kDzJMd6+U14JNR/FWjCEHQ84D9838gI8B2VyqAwylyOdCkf0kcKaPMrdmPvKn62JEEg
-	SzoqTYeYXJaqcA7iGKnk5smB967p4PvXa8UwB+6itkmJAfFUuvMihmUJMRvH9x6Qo6JSv2zMfRGLt
-	zKVzfkPY0hZWsHq1sQLw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NGd4k7Wu5hKmx4NI3x6nfGBQOuQ1wwrfpTuls+1u4jQ=; b=PkO3Zkt/loGmPhptEli95EbXl
+	gYEqaHvVcIzfjG65vcC9ABwmR0CSgyiZ+Jz0zhVB+i6CZRdlwH2rtkIFE0RaPvkv89rPCOz+uELZ3
+	aphZxIadPJRY/YV7iK2F1UphjLUm6eGh2cySIqPvvwxALnqD2wPm/626YeKlNZgQbyZDTuS1+ldl5
+	cvyEVTmk/NQVTnx249hYhTnFknpyLFTTW/2plxOH+EVgrguMNxgN1SgtLbOqAKe3esvjfqlUNZg1f
+	ImmPUQmvmPOlxGozSecWF4F1jw1+2tZya8aWHCLe1Xt9AkqAz0bmj6kPZ2gocYQy2GZgnl7Dp3MbM
+	Uo3bZH+aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
-	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIVO3-0006yF-8g; Thu, 10 Oct 2019 10:09:35 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIVNs-0006wP-AO
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 10:09:25 +0000
-Received: by mail-ed1-x541.google.com with SMTP id r16so4894736edq.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 10 Oct 2019 03:09:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=vBN/g7icYkS/AmLkTr95uIthk9ZmG2qQFolljRp0WMk=;
- b=Qzjl5XP3gY1S8P95T06xre3Rfh0XgcTj0Hb5LBLMatyyGelv6QhZqxTNAwYwagYrM0
- PDIgesmF0xt/RYeXsachoBoIxdRO/Vzs0AeoZQen9rM9IJZwjBY5UAG/3FN4W9dFqMxa
- y7RW8ty64z8J96LC/ZWehDgzeKJROAjwMFe1c=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=vBN/g7icYkS/AmLkTr95uIthk9ZmG2qQFolljRp0WMk=;
- b=FIOo4fUnKpnrmCHJyqQZYrvg9L2l03u5OEQibbVWzRDJb4De4B38REBgvfce0OhrA9
- blIwDktyuX2CI5qV5KHW+jtO+GlplLRW7261r8W8ZV2OTBaIcNFEmfRc+M8b5CTWJPvc
- Ut9+qygCI5GWdqCq3KBTIFupShX3clliCP+TwchkT+M+wYvTkDepyhHKStMWjBrYKqGe
- GXcvYlE0KNuRJH18OsSXEgqJN2sHVdBh4vg/MABI5QEzPGE4a5uxAGSgc4E/wDl5Dw12
- V/keEGbOZlPuw1zuHxM97JvGjmkHGFT7bv2oFFxQW38U1r4l6JY5uMOcGfaLnike10m4
- Ep6w==
-X-Gm-Message-State: APjAAAX1REbkgMYg08xobEmj27a/26zSadoTyNxBuWK00W3AAI+A9ABJ
- 4OL2fYoqir0hoByUEhctl04QM8fd5TJ3Fw==
-X-Google-Smtp-Source: APXvYqxIFEE26i0t+DAuvHc2AFGO1cNxehTYXdXktx0cvUnRC4xb/mrfXYqCy2Y6LBbyQ5Z4SAXE0g==
-X-Received: by 2002:a17:906:3385:: with SMTP id
- v5mr7264885eja.154.1570702162299; 
- Thu, 10 Oct 2019 03:09:22 -0700 (PDT)
-Received: from mail-wr1-f51.google.com (mail-wr1-f51.google.com.
- [209.85.221.51])
- by smtp.gmail.com with ESMTPSA id nk2sm610140ejb.28.2019.10.10.03.09.19
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 10 Oct 2019 03:09:20 -0700 (PDT)
-Received: by mail-wr1-f51.google.com with SMTP id y19so7134134wrd.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 10 Oct 2019 03:09:19 -0700 (PDT)
-X-Received: by 2002:adf:fc42:: with SMTP id e2mr8275718wrs.100.1570702158960; 
- Thu, 10 Oct 2019 03:09:18 -0700 (PDT)
+	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+	id 1iIVdF-0004Kh-PT; Thu, 10 Oct 2019 10:25:17 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iIVcy-00048K-Am
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 10:25:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CD1D128;
+ Thu, 10 Oct 2019 03:24:56 -0700 (PDT)
+Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4175B3F68E;
+ Thu, 10 Oct 2019 03:24:56 -0700 (PDT)
+Subject: Re: [PATCH v2 2/2] arm64: Don't use KPTI where we have E0PD
+To: Mark Brown <broonie@kernel.org>
+References: <20190814183103.33707-1-broonie@kernel.org>
+ <20190814183103.33707-3-broonie@kernel.org>
+ <20190815163541.yngqvjmehpuf74ye@willie-the-truck>
+ <20190816102424.GA28874@arrakis.emea.arm.com>
+ <20190816121005.GB4039@sirena.co.uk>
+ <6834da7b-553c-2ad3-9b05-25ca982252e9@arm.com>
+ <20191009175205.GN2036@sirena.org.uk>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <2d53ed87-34f3-33e1-5501-77895662c47a@arm.com>
+Date: Thu, 10 Oct 2019 11:24:55 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.0
 MIME-Version: 1.0
-References: <20191010075004.192818-1-tfiga@chromium.org>
- <CANMq1KAA+nqcOqiE_g=vA8DC=_t=FqSRtR5kk=1XqSsgZGj+_A@mail.gmail.com>
- <CAAFQd5DazVnFGmNENnxT_FHed2Jx30hLT29HyEjxY7xeqLnGCg@mail.gmail.com>
- <CANMq1KA7pKqJDhFvkuBfEWtr81NUhyRpUE9ZZeTNCCc5Fphoyw@mail.gmail.com>
-In-Reply-To: <CANMq1KA7pKqJDhFvkuBfEWtr81NUhyRpUE9ZZeTNCCc5Fphoyw@mail.gmail.com>
-From: Tomasz Figa <tfiga@chromium.org>
-Date: Thu, 10 Oct 2019 19:09:06 +0900
-X-Gmail-Original-Message-ID: <CAAFQd5AZjiMuwaMTjy_1ftop+=E6_G7OGAs0+tD5SdJeW0AOLA@mail.gmail.com>
-Message-ID: <CAAFQd5AZjiMuwaMTjy_1ftop+=E6_G7OGAs0+tD5SdJeW0AOLA@mail.gmail.com>
-Subject: Re: [PATCH] usb: mtk-xhci: Set the XHCI_NO_64BIT_SUPPORT quirk
-To: Nicolas Boichat <drinkcat@chromium.org>
+In-Reply-To: <20191009175205.GN2036@sirena.org.uk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_030924_354366_80CA2B4C 
-X-CRM114-Status: GOOD (  25.89  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191010_032500_416898_63F9F004 
+X-CRM114-Status: GOOD (  19.00  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,103 +67,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Changqi Hu <Changqi.Hu@mediatek.com>,
- Mathias Nyman <mathias.nyman@intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- open list <linux-kernel@vger.kernel.org>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>, Shik Chen <shik@chromium.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/Mediatek SoC support"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 10, 2019 at 6:37 PM Nicolas Boichat <drinkcat@chromium.org> wrote:
->
-> On Thu, Oct 10, 2019 at 5:11 PM Tomasz Figa <tfiga@chromium.org> wrote:
-> >
-> > On Thu, Oct 10, 2019 at 6:08 PM Nicolas Boichat <drinkcat@chromium.org> wrote:
-> > >
-> > > On Thu, Oct 10, 2019 at 3:50 PM Tomasz Figa <tfiga@chromium.org> wrote:
-> > > >
-> > > > MediaTek XHCI host controller does not support 64-bit addressing despite
-> > > > the AC64 bit of HCCPARAMS1 register being set. The platform-specific
-> > > > glue sets the DMA mask to 32 bits on its own, but it has no effect,
-> > > > because xhci_gen_setup() overrides it according to hardware
-> > > > capabilities.
-> > > >
-> > > > Use the XHCI_NO_64BIT_SUPPORT quirk to tell the XHCI core to force
-> > > > 32-bit DMA mask instead.
-> > > >
-> > > > Signed-off-by: Tomasz Figa <tfiga@chromium.org>
-> > >
-> > > Can we add a Fixes: tag for stable backports?
-> > > (after addressing the other comments of course)
-> > >
-> >
-> > The problem with Fixes: is that this patch depends on the quirk being
-> > there, but the offending code was merged earlier. Do you know how to
-> > handle such cases?
->
-> Oh, interesting. I think this is documented here:
-> https://github.com/torvalds/linux/blob/master/Documentation/process/stable-kernel-rules.rst
->
-> Something like this:
-> Cc: <stable@vger.kernel.org> # 3.3.x: a1f84a3: sched: Check for idle
-> Cc: <stable@vger.kernel.org> # 3.3.x
->
-> (Where 3.3.x is the first release that contains the commit indicated
-> in the Fixes tag)
->
-> Try that, worst case you'll get automated emails from stable
-> maintainers asking you how to fix the issue.
->
+Hi Mark
 
-Oh, great, thanks a lot!
+On 09/10/2019 18:52, Mark Brown wrote:
+> On Tue, Sep 24, 2019 at 10:13:18AM +0100, Suzuki K Poulose wrote:
+>> On 16/08/2019 13:10, Mark Brown wrote:
+> 
+>>> We definitely need some variable I think, and I think you're right that
+>>> making the decision on the boot CPU would simplify things a lot.  The
+> 
+>> relocating the kernel. So, we may be able to perform "raw cpuid check" on
+>> the boot CPU with MMU turned on, before we re-write the pagetables for KASLR
+>> displacement and nG if that is needed (by maybe updating SWWAPPER_MMU_FLAGS) for
+>> the boot CPU and store this information somewhere. Thus we may be able to
+>> avoid another re-write of the pagetables after we have booted the secondaries.
+> 
+> The boot CPU is straightforward, there is only an issue on the
+> secondaries where IIRC the rewrite code needs some updates as we
+> get left with non-global mappings lying around.
+> 
+>> Discussing this with Catalin, he suggests to use a variable for the status
+>> of "nG" flag for PTE/PMD_MAYBE_NG, to avoid calling the helper function
+>> all the time. By using the per-CPU check we can make sure the flag is uptodate.
+> 
+> That was the discussion about the variable above.  We need one
+> for non-optimization reasons anyway since we can't rely on
+> checking the state on the current CPU.
+> 
+>> Also, we can continue to fail the hotplugged CPUs if we detect that the
+>> pagetables are Global and the new CPU requires nG (for heterogeneous
+>> systems).
+> 
+> There's no continuing to reject those CPUs unfortunately, we
+> don't reject anything currently.  Any such systems would
 
-Best regards,
-Tomasz
+In fact we do reject the hotplugged CPUs, after we have finalised
+the capabilities for KPTI. So, I don't see how the behavior is different.
 
-> >
-> > >
-> > > > ---
-> > > >  drivers/usb/host/xhci-mtk.c | 10 +++++-----
-> > > >  1 file changed, 5 insertions(+), 5 deletions(-)
-> > > >
-> > > > diff --git a/drivers/usb/host/xhci-mtk.c b/drivers/usb/host/xhci-mtk.c
-> > > > index b18a6baef204a..4d101d52cc11b 100644
-> > > > --- a/drivers/usb/host/xhci-mtk.c
-> > > > +++ b/drivers/usb/host/xhci-mtk.c
-> > > > @@ -395,6 +395,11 @@ static void xhci_mtk_quirks(struct device *dev, struct xhci_hcd *xhci)
-> > > >         xhci->quirks |= XHCI_SPURIOUS_SUCCESS;
-> > > >         if (mtk->lpm_support)
-> > > >                 xhci->quirks |= XHCI_LPM_SUPPORT;
-> > > > +       /*
-> > > > +        * MTK host controller does not support 64-bit addressing, despite
-> > > > +        * having the AC64 bit of the HCCPARAMS1 register set.
-> > > > +        */
-> > > > +       xhci->quirks |= XHCI_NO_64BIT_SUPPORT;
-> > > >  }
-> > > >
-> > > >  /* called during probe() after chip reset completes */
-> > > > @@ -488,11 +493,6 @@ static int xhci_mtk_probe(struct platform_device *pdev)
-> > > >                 goto disable_clk;
-> > > >         }
-> > > >
-> > > > -       /* Initialize dma_mask and coherent_dma_mask to 32-bits */
-> > > > -       ret = dma_set_mask_and_coherent(dev, DMA_BIT_MASK(32));
-> > > > -       if (ret)
-> > > > -               goto disable_clk;
-> > > > -
-> > > >         hcd = usb_create_hcd(driver, dev, dev_name(dev));
-> > > >         if (!hcd) {
-> > > >                 ret = -ENOMEM;
-> > > > --
-> > > > 2.23.0.581.g78d2f28ef7-goog
-> > > >
+Cheers
+Suzuki
+
+
+> experience a regression when moving to a kernel where E0PD is
+> enabled which doesn't seem ideal.
 
 _______________________________________________
 linux-arm-kernel mailing list
