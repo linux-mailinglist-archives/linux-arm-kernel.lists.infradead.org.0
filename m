@@ -2,53 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25843D218C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 09:17:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 135BDD2192
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 09:21:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yZzv0fs6sh26/ATYzu45sxEQCAVU0y48cJoDjoSZGX4=; b=jajrTpO/9rCuMg
-	jnhsqVTRAQQVPj+31NW71rdY4u/Wsh6NqkosRogb8xSVWTdfZ2NJBV5iSQnaPrJzpuX6ABowNxINC
-	9HTlSCeGjZSPCxxnXbIPgzuV6erNqRPYTsjFuTgwyzuvu3cGKjYSKa6UV5RSNUNuSSW6vtkwA6CvC
-	LaIi1O9V1QZC22CeC2yvo/j4cM/r/p0muSrUyvxbevRjjErZQ5DjwlypXWsVtFlca6gxvnc+ddQy8
-	dee9SkQuhF54ir3G2NfkhUW7aJR2I5stulLEL2+KDq92LOr4FAq7fMOnEa5vWxs3uCM7JVCYirOGa
-	85kNPhUFDxoa9bp9I5sg==;
+	List-Owner; bh=eQrjFFKgmWRXl5Qni6W5DoXerVYNOeTG5FVjFBeQmhA=; b=sJsiFU4ddqTGGf
+	8UkucNS+gX4UdogQ0/k6CgZeYqg/LgVbW/KnJOP/qtP+c484rCvITxhxWNjvtjfcb5joDHGTMy/kU
+	iB8W141LIKaMzRHrjC9UttLvp7KjQGZnp6AziapysjwLTZQfknBYhOtOx1iMJJQp7ZVMeQOnsOiCg
+	APd96H8FkAA9NyJXgDQJ6EV5hVZAMUPGvhdUD26QsrSpPyAg3belXsm6mUYsxWLRZwNkxCqqpI8ZQ
+	1fEqFNxh7ICloQUaNBZRogpqUycJ89MP3or3peGfqeVXbMkoPGrVaR0cHRFSVdSJneIwGqDoDlFoq
+	+3OPwoRsLKAkmrp5uVMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIShW-00054I-6u; Thu, 10 Oct 2019 07:17:30 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1iISlO-000726-Mw; Thu, 10 Oct 2019 07:21:30 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iISh1-0004ih-SH; Thu, 10 Oct 2019 07:17:01 +0000
+ id 1iISlG-00071X-4K; Thu, 10 Oct 2019 07:21:23 +0000
 Received: from dhcp-172-31-174-146.wireless.concordia.ca (unknown
  [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested) (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id AEEFF290694;
- Thu, 10 Oct 2019 08:16:57 +0100 (BST)
-Date: Thu, 10 Oct 2019 09:16:54 +0200
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 46710290786;
+ Thu, 10 Oct 2019 08:21:20 +0100 (BST)
+Date: Thu, 10 Oct 2019 09:21:17 +0200
 From: Boris Brezillon <boris.brezillon@collabora.com>
 To: <Tudor.Ambarus@microchip.com>
-Subject: Re: [PATCH v2 07/22] mtd: spi-nor: Rework read_cr()
-Message-ID: <20191010091648.10d9a993@dhcp-172-31-174-146.wireless.concordia.ca>
-In-Reply-To: <20190924074533.6618-8-tudor.ambarus@microchip.com>
+Subject: Re: [PATCH v2 08/22] mtd: spi-nor: Rework write_enable/disable()
+Message-ID: <20191010092117.4c5018a8@dhcp-172-31-174-146.wireless.concordia.ca>
+In-Reply-To: <20190924074533.6618-9-tudor.ambarus@microchip.com>
 References: <20190924074533.6618-1-tudor.ambarus@microchip.com>
- <20190924074533.6618-8-tudor.ambarus@microchip.com>
+ <20190924074533.6618-9-tudor.ambarus@microchip.com>
 Organization: Collabora
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_001700_454206_E32D6CF8 
-X-CRM114-Status: GOOD (  12.01  )
+X-CRM114-CacheID: sfid-20191010_002122_301828_4A0E3F7B 
+X-CRM114-Status: GOOD (  18.44  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -74,35 +72,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 24 Sep 2019 07:46:15 +0000
+On Tue, 24 Sep 2019 07:46:18 +0000
 <Tudor.Ambarus@microchip.com> wrote:
 
 > From: Tudor Ambarus <tudor.ambarus@microchip.com>
 > 
-> static int read_cr(struct spi_nor *nor)
-> becomes
-> static int spi_nor_read_cr(struct spi_nor *nor, u8 *cr)
+> static int write_enable(struct spi_nor *nor)
+> static int write_disable(struct spi_nor *nor)
+> become
+> static int spi_nor_write_enable(struct spi_nor *nor)
+> static int spi_nor_write_disable(struct spi_nor *nor)
 > 
-> The new function returns 0 on success and -errno otherwise.
-> We let the callers pass the pointer to the buffer where the
-> value of the Configuration Register will be written. This way
-> we avoid the casts between int and u8, which can be confusing.
+> Check for errors after each call to them. Move them up in the
+> file as the first SPI NOR Register Operations, to avoid further
+> forward declarations.
+
+Same here, split that in 3 patches please.
+
 > 
-> Prepend spi_nor_ to the function name, all functions should begin
-> with that.
+> Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
+> ---
+>  drivers/mtd/spi-nor/spi-nor.c | 175 +++++++++++++++++++++++++++++-------------
+>  1 file changed, 120 insertions(+), 55 deletions(-)
 > 
+> diff --git a/drivers/mtd/spi-nor/spi-nor.c b/drivers/mtd/spi-nor/spi-nor.c
+> index 0fb124bd2e77..0aee068a5835 100644
+> --- a/drivers/mtd/spi-nor/spi-nor.c
+> +++ b/drivers/mtd/spi-nor/spi-nor.c
+> @@ -389,6 +389,64 @@ static ssize_t spi_nor_write_data(struct spi_nor *nor, loff_t to, size_t len,
+>  }
+>  
+>  /**
+> + * spi_nor_write_enable() - Set write enable latch with Write Enable command.
+> + * @nor:        pointer to 'struct spi_nor'
+> + *
+> + * Return: 0 on success, -errno otherwise.
+> + */
+> +static int spi_nor_write_enable(struct spi_nor *nor)
+> +{
+> +	int ret;
+> +
+> +	if (nor->spimem) {
+> +		struct spi_mem_op op =
+> +			SPI_MEM_OP(SPI_MEM_OP_CMD(SPINOR_OP_WREN, 1),
+> +				   SPI_MEM_OP_NO_ADDR,
+> +				   SPI_MEM_OP_NO_DUMMY,
+> +				   SPI_MEM_OP_NO_DATA);
+> +
+> +		ret = spi_mem_exec_op(nor->spimem, &op);
+> +	} else {
+> +		ret = nor->controller_ops->write_reg(nor, SPINOR_OP_WREN,
+> +						     NULL, 0);
+> +	}
+> +
+> +	if (ret)
+> +		dev_err(nor->dev, "error %d on Write Enable\n", ret);
 
-Same as for patch 5, this should be split in several patches.
+Do we really need these error messages? I mean, if there's an error it
+should be propagated to the upper layer, so maybe we should use
+dev_dbg() here.
 
-> Vendors are using both the "Configuration Register" and the
-> "Status Register 2" terminology when referring to the second byte
-> of the Status Register. Indicate in the description of the function
-> that we use the SPINOR_OP_RDCR (35h) command to interrogate the
-
-						  ^query
-
-> Configuration Register.
-> 
+> +
+> +	return ret;
+> +}
+> +
 
 _______________________________________________
 linux-arm-kernel mailing list
