@@ -2,72 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1A4FD229B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 10:22:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D691ED229E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 10 Oct 2019 10:22:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OSVFPiLrfB+wyx4VpBSU9l7SeuicQ+IJ8o1tPBbsQkA=; b=Zy1I9UJcknI6mo
-	8Ldyw7lXcJPH25n9UkDUU6ZLXSoG3x1s5QC2uZ8eMjJFNsfnGvh5R72q9UQgU89+fZiGosojG8Row
-	mLFYK/DTGXEtJzRugVtIQYFfeNkyeIdmiQE6+uCVMsBh+ZK/nJvfVki1+yMAEQKrx9ksLJ8VY0/Ce
-	otTfNmkjQqu6RpTTfwa+Lfw7Q4PDRO6ozg2YxznVtrycUv43T/wR45suSwsFi7FT7zwz7kT6ib1j5
-	P7RdHfVL/Vc2w6nWQ43SSNM8bTswAUtZsDrm/fgTPhkacV1VEONlx7ezrPZbsNH9Uhzy1RX63dpD6
-	6zUczNIgpwapvd79TOpg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jvmaOtxsJ1TBJtA5pBPNXspVnP8TJ8kBI1ZE3v4+o/A=; b=OS2mA9mH4pzZ/h
+	RqOYXX5p8ySxNwRUbJ5oeOHC6nXQ2VThNzYH3avuJATS8qV0bMTWQb5A23HLQFidoOmPGmjHxIlGi
+	4Or6MYYcRnxuq5+9zDJG/xnjaSgcQNFAGRh37M1VK4zrdpNpjNQIvJLwWDQzUEn8n+09Aq+oJeU/a
+	5gWNqBkL8T+xgxSw+wUnRIPGkkNBQTf2yitoyYcHdWOqSKxODVHYGIZvWnPfzvn9uouPxodQiNSL6
+	qCMxRK5s6KnpQWGpP1lGgrHMHRCobrW0JYh6Ulvvh5togp93PGX4Lml8iWl56furdWRePKG7vs+ZC
+	iXY7euxAIfH4WucJt/bQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIThp-0006oV-Nx; Thu, 10 Oct 2019 08:21:53 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1iITiE-0007JG-6o; Thu, 10 Oct 2019 08:22:18 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIThH-0006VV-Qa
- for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 08:21:21 +0000
+ id 1iIThI-0006Vq-49
+ for linux-arm-kernel@lists.infradead.org; Thu, 10 Oct 2019 08:21:23 +0000
 Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x9A8LDlK124177;
- Thu, 10 Oct 2019 03:21:13 -0500
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x9A8LECl101667;
+ Thu, 10 Oct 2019 03:21:14 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1570695673;
- bh=v+aHyvI5bQJgIm9EBPSgjVf4wn8nsgL9LdT/0uGlq6I=;
- h=From:To:CC:Subject:Date;
- b=B4+V8GfgZ3hy79Dqd0Ug2HplVejMcgcjUiC7E+AEjKdwCtdF++ZperGDOvYTjette
- ohwHf8ZqSuTWz9GcX92UXfNDbZCF/eJymuyIh6gE8ytSknzeCXVCBB7U3bBdqvYa/Z
- VPwbcJWGzC8YJrUvSd/z/dKs1h2+Yu+gI20nugbU=
-Received: from DFLE113.ent.ti.com (dfle113.ent.ti.com [10.64.6.34])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x9A8LDIv104139
+ s=ti-com-17Q1; t=1570695674;
+ bh=tu0nnpfGzidXSw6/IM0hH5/1VmGSmGFdGSiEQ/tREe8=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=n+ePALqMLDuo0IqsY2eoEQTS4ujCu6x1HIllAvfIx2ZjerFTxA/tCVAiItUS1qUjv
+ yFGRQYj+YnG9CrzUJGrhgI4jSCHgcC4ERK84B9DGl1xb69MYUBG2ksnjwiHwxD72Ry
+ eyjoygOoyhTx5xsGqdTQNjSj6I3RXkdT9a8XFk6s=
+Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x9A8LEBn104160
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 10 Oct 2019 03:21:13 -0500
-Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE113.ent.ti.com
- (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
+ Thu, 10 Oct 2019 03:21:14 -0500
+Received: from DFLE105.ent.ti.com (10.64.6.26) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 10
- Oct 2019 03:21:09 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE106.ent.ti.com
- (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
+ Oct 2019 03:21:10 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 10 Oct 2019 03:21:12 -0500
+ Frontend Transport; Thu, 10 Oct 2019 03:21:13 -0500
 Received: from sokoban.bb.dnainternet.fi (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x9A8LAtA012630;
- Thu, 10 Oct 2019 03:21:11 -0500
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x9A8LAtB012630;
+ Thu, 10 Oct 2019 03:21:12 -0500
 From: Tero Kristo <t-kristo@ti.com>
 To: <linux-omap@vger.kernel.org>, <tony@atomide.com>
-Subject: [PATCH 0/5] ARM: dts: omap4+: Add PRM nodes for reset support
-Date: Thu, 10 Oct 2019 11:21:03 +0300
-Message-ID: <20191010082108.15448-1-t-kristo@ti.com>
+Subject: [PATCH 1/5] ARM: dts: dra7: add PRM nodes
+Date: Thu, 10 Oct 2019 11:21:04 +0300
+Message-ID: <20191010082108.15448-2-t-kristo@ti.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191010082108.15448-1-t-kristo@ti.com>
+References: <20191010082108.15448-1-t-kristo@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_012119_944549_A08DA9FD 
-X-CRM114-Status: UNSURE (   6.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191010_012120_247507_894C2F89 
+X-CRM114-Status: GOOD (  12.27  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -95,16 +96,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tony,
+Add PRM nodes for dra7 series of SoCs. These are initially used to
+support reset control for some of the nodes, but will be extended
+later to add powerdomain control and support for PRCM irqs among
+other things.
 
-This series adds the OMAP PRM nodes for reset support for am3, am4,
-omap4, omap5 and dra7 SoCs. The driver support has been queued up by
-Santosh [1].
+Signed-off-by: Tero Kristo <t-kristo@ti.com>
+---
+ arch/arm/boot/dts/dra7.dtsi | 55 +++++++++++++++++++++++++++++++++++++
+ 1 file changed, 55 insertions(+)
 
--Tero
-
-[1] https://patchwork.kernel.org/cover/11179573/
-
+diff --git a/arch/arm/boot/dts/dra7.dtsi b/arch/arm/boot/dts/dra7.dtsi
+index 953f0ffce2a9..f4c73cca6354 100644
+--- a/arch/arm/boot/dts/dra7.dtsi
++++ b/arch/arm/boot/dts/dra7.dtsi
+@@ -763,3 +763,54 @@
+ 
+ #include "dra7-l4.dtsi"
+ #include "dra7xx-clocks.dtsi"
++
++&prm {
++	prm_dsp1: prm@400 {
++		compatible = "ti,dra7-prm-inst", "ti,omap-prm-inst";
++		reg = <0x400 0x100>;
++		#reset-cells = <1>;
++	};
++
++	prm_ipu: prm@500 {
++		compatible = "ti,dra7-prm-inst", "ti,omap-prm-inst";
++		reg = <0x500 0x100>;
++		#reset-cells = <1>;
++	};
++
++	prm_core: prm@700 {
++		compatible = "ti,dra7-prm-inst", "ti,omap-prm-inst";
++		reg = <0x700 0x100>;
++		#reset-cells = <1>;
++	};
++
++	prm_iva: prm@f00 {
++		compatible = "ti,dra7-prm-inst", "ti,omap-prm-inst";
++		reg = <0xf00 0x100>;
++	};
++
++	prm_dsp2: prm@1b00 {
++		compatible = "ti,dra7-prm-inst", "ti,omap-prm-inst";
++		reg = <0x1b00 0x40>;
++		#reset-cells = <1>;
++	};
++
++	prm_eve1: prm@1b40 {
++		compatible = "ti,dra7-prm-inst", "ti,omap-prm-inst";
++		reg = <0x1b40 0x40>;
++	};
++
++	prm_eve2: prm@1b80 {
++		compatible = "ti,dra7-prm-inst", "ti,omap-prm-inst";
++		reg = <0x1b80 0x40>;
++	};
++
++	prm_eve3: prm@1bc0 {
++		compatible = "ti,dra7-prm-inst", "ti,omap-prm-inst";
++		reg = <0x1bc0 0x40>;
++	};
++
++	prm_eve4: prm@1c00 {
++		compatible = "ti,dra7-prm-inst", "ti,omap-prm-inst";
++		reg = <0x1c00 0x60>;
++	};
++};
+-- 
+2.17.1
 
 --
 Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
