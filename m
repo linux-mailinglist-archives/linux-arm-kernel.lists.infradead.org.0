@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A79BD424D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 16:07:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 376F4D424A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 16:07:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gAINTAwmgf37i4GSWOgVS639kPSyKVovnKX2Elp0orM=; b=IJqxyiJKf1bVGK
-	d8o5AM51mJt4ocWSfvUHBMxM5uH8pVKaCZO0yh9SiqOZCq24EatzgBYHFpCz8y7rUgc9eTIShkQb0
-	/m5jSqKfhdJ+MIzLZRPMu7duEtx0iipTS5oQjTk4gX6On3sVAIW/HjZVmmep989LWTbw+jc3+HLGI
-	rKEXG2l5K2kM4ap8mPs12iMHl1BZ3VxnGPgbxtjEkYzroHWVOHtESq2q+GEEQBcMpcqRCwTW+oXQn
-	MvPTMprENvCvQ5Ynf/RVUuXvJnfIRO9P6xdjqTEkBOWUCDljrA0f1BqFi99jB4tfk/L5Tib26NO0c
-	YUAdezJ7xv0XaxzzXGiQ==;
+	List-Owner; bh=y0MXpdbkhO+TAi2xaW5wqRRSqTvZUk+NG29m2CFPIYs=; b=edczDdTUTj1e6c
+	rIx+da9bbmNncEf3n7iWPBF6LGnep+z/5Rkg3xSEGXWgb661K/LMMjrQCGkscxqPj1/nqrpuzK8Ls
+	uK9nfNwetQoDHGP2WCNLlJ5Q8KU/rH3WxIkI6i6TSa9W69uWi9xREWDvLHfv1iuCZDKwpk/JTYSBz
+	0sKypqXplB7JB/JNkNOvU9Ls/QWUQGzIJjh+ylQ7pCzcjjOFHtbSr8q23tbvJ0CEUOcGe1SdyLfhl
+	oA74L7JB5AJS5gQrDA4vhl6qr5SvHXd7LH6C8Nj2EtXW0+6PJS6fwkgMMQ6lTblnrx6HgvvEQKg4A
+	9fzJtjK+L7f1Pku+DALg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIvZg-0004ZA-Fv; Fri, 11 Oct 2019 14:07:20 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iIvZQ-0004Le-G9; Fri, 11 Oct 2019 14:07:04 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIvYB-0003Me-UT
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 14:05:49 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x9BE149M032059; Fri, 11 Oct 2019 16:05:39 +0200
+ id 1iIvYC-0003MK-AH
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 14:05:50 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x9BDuPXA008339; Fri, 11 Oct 2019 16:05:40 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=qvG5tHTLBfgJy2cVG8araZL9QxN9PV13AmMFSSV98WA=;
- b=GnXa2m+aBPMioX4V8sEPYum1RCAMQk88Mb+waGPqZdSxLN5/PkjjA7Nz+IXVbftr5FYS
- f3mPuQh+Trn/n9eAZvM/QKBfiYHJnD96sAt66gR+cFqkY3sMTHMsaNXuakMn01kuiIdr
- dNAW/mgaPGoMM1lwFw9RbUGXCb2b1VvtWCvMicKG9eXQfu28LVfkvCk1235NA7tiunZD
- Hz2aoKfrQct6+5pzN88RZsNZ3SDrWZl5LZtcJAlx35FFO/nyKgSAf6XhWWGrDIVRX/0p
- WuHXXJKs7JmWHQZ8NP/hgp5x5K8ESNPolM94HrlDZ8KfQQ7Nr+E5ul7/FX5g8N2EGL3V 6A== 
+ bh=sJG8MaYnwfDRxmyqoTNYkAIqphDRMJYtb+/EZI6/TlQ=;
+ b=HMhRXdHStNLLhkEM6L/nkWZ0NFWvq++HTlOO3ejYGF+e/UmP4vWUDhq2ZTU6Wd2UYUv9
+ SqTMowd4Nm8RlMoIhKDEPK4enHOevx7Sssov+B0bVR1FYlhNvtDW3T6Xpri3ZcLP/Nwu
+ Oyyyw0AzpxOfp5I4YguSc5nxCu1eGXscJJXbkGLt/0zI0s35R/pUmvUBe9rOD2WCWVQE
+ B6cmn1NN96aOOu7IKMB+KmbDF1YokRxx7EfEbT6xZKoLvKSCJbsxmlnhtitBvU7F20PX
+ /dZJP4SJr6demMj6bKaJB6TfuCiRSRo3/L5R5rw4cczidobfZ15sC7/WtGhq4GnX/x7L 8g== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2vej2ptnwy-1
+ by mx07-00178001.pphosted.com with ESMTP id 2vegn1a8qy-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 11 Oct 2019 16:05:39 +0200
+ Fri, 11 Oct 2019 16:05:40 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 60D43100038;
- Fri, 11 Oct 2019 16:05:39 +0200 (CEST)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3559C10002A;
+ Fri, 11 Oct 2019 16:05:40 +0200 (CEST)
 Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 565DB2AD70B;
- Fri, 11 Oct 2019 16:05:39 +0200 (CEST)
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 292932AD739;
+ Fri, 11 Oct 2019 16:05:40 +0200 (CEST)
 Received: from localhost (10.75.127.50) by SFHDAG6NODE2.st.com (10.75.127.17)
  with Microsoft SMTP Server (TLS) id 15.0.1347.2;
- Fri, 11 Oct 2019 16:05:38 +0200
+ Fri, 11 Oct 2019 16:05:39 +0200
 From: Pascal Paillet <p.paillet@st.com>
 To: <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>,
  <robh+dt@kernel.org>, <mark.rutland@arm.com>,
  <linux-stm32@st-md-mailman.stormreply.com>,
  <linux-arm-kernel@lists.infradead.org>, <devicetree@vger.kernel.org>,
  <linux-kernel@vger.kernel.org>
-Subject: [PATCH 2/4] ARM: dts: stm32: change default minimal buck1 value on
- stm32mp157
-Date: Fri, 11 Oct 2019 16:05:31 +0200
-Message-ID: <20191011140533.32619-3-p.paillet@st.com>
+Subject: [PATCH 3/4] ARM: dts: stm32: Fix active discharge usage on stm32mp157
+Date: Fri, 11 Oct 2019 16:05:32 +0200
+Message-ID: <20191011140533.32619-4-p.paillet@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191011140533.32619-1-p.paillet@st.com>
 References: <20191011140533.32619-1-p.paillet@st.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.75.127.50]
-X-ClientProxiedBy: SFHDAG4NODE3.st.com (10.75.127.12) To SFHDAG6NODE2.st.com
+X-ClientProxiedBy: SFHDAG4NODE1.st.com (10.75.127.10) To SFHDAG6NODE2.st.com
  (10.75.127.17)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
  definitions=2019-10-11_08:2019-10-10,2019-10-11 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_070548_301867_89EE81D9 
-X-CRM114-Status: GOOD (  13.21  )
+X-CRM114-CacheID: sfid-20191011_070548_678545_DBF12F76 
+X-CRM114-Status: GOOD (  13.60  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -105,41 +103,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Minimal value is the value set during boot or before suspend.
-We must ensure that the value is a functional value to boot.
+Active discharge is a uint32 not a boolean.
 
 Signed-off-by: Pascal Paillet <p.paillet@st.com>
 ---
- arch/arm/boot/dts/stm32mp157a-dk1.dts | 2 +-
- arch/arm/boot/dts/stm32mp157c-ed1.dts | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
+ arch/arm/boot/dts/stm32mp157a-avenger96.dts | 4 ++--
+ arch/arm/boot/dts/stm32mp157a-dk1.dts       | 2 +-
+ arch/arm/boot/dts/stm32mp157c-ed1.dts       | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
 
+diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+index 5f35b0146017..d1cc42a92d3f 100644
+--- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
++++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+@@ -252,14 +252,14 @@
+ 				regulator-name = "vbus_otg";
+ 				interrupts = <IT_OCP_OTG 0>;
+ 				interrupt-parent = <&pmic>;
+-				regulator-active-discharge;
++				regulator-active-discharge = <1>;
+ 			};
+ 
+ 			vbus_sw: pwr_sw2 {
+ 				regulator-name = "vbus_sw";
+ 				interrupts = <IT_OCP_SWOUT 0>;
+ 				interrupt-parent = <&pmic>;
+-				regulator-active-discharge;
++				regulator-active-discharge = <1>;
+ 			};
+ 		};
+ 
 diff --git a/arch/arm/boot/dts/stm32mp157a-dk1.dts b/arch/arm/boot/dts/stm32mp157a-dk1.dts
-index 26fb7c77092c..efeefb3d25b0 100644
+index efeefb3d25b0..0e80f8da28d4 100644
 --- a/arch/arm/boot/dts/stm32mp157a-dk1.dts
 +++ b/arch/arm/boot/dts/stm32mp157a-dk1.dts
-@@ -250,7 +250,7 @@
+@@ -351,7 +351,7 @@
+ 			 vbus_sw: pwr_sw2 {
+ 				regulator-name = "vbus_sw";
+ 				interrupts = <IT_OCP_SWOUT 0>;
+-				regulator-active-discharge;
++				regulator-active-discharge = <1>;
+ 			 };
+ 		};
  
- 			vddcore: buck1 {
- 				regulator-name = "vddcore";
--				regulator-min-microvolt = <800000>;
-+				regulator-min-microvolt = <1200000>;
- 				regulator-max-microvolt = <1350000>;
- 				regulator-always-on;
- 				regulator-initial-mode = <0>;
 diff --git a/arch/arm/boot/dts/stm32mp157c-ed1.dts b/arch/arm/boot/dts/stm32mp157c-ed1.dts
-index 1dbcc580e43c..15afa8f1a36f 100644
+index 15afa8f1a36f..108612b523de 100644
 --- a/arch/arm/boot/dts/stm32mp157c-ed1.dts
 +++ b/arch/arm/boot/dts/stm32mp157c-ed1.dts
-@@ -127,7 +127,7 @@
+@@ -225,7 +225,7 @@
+ 			 vbus_sw: pwr_sw2 {
+ 				regulator-name = "vbus_sw";
+ 				interrupts = <IT_OCP_SWOUT 0>;
+-				regulator-active-discharge;
++				regulator-active-discharge = <1>;
+ 			 };
+ 		};
  
- 			vddcore: buck1 {
- 				regulator-name = "vddcore";
--				regulator-min-microvolt = <800000>;
-+				regulator-min-microvolt = <1200000>;
- 				regulator-max-microvolt = <1350000>;
- 				regulator-always-on;
- 				regulator-initial-mode = <0>;
 -- 
 2.17.1
 
