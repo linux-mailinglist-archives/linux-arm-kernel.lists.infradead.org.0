@@ -2,82 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F55AD4A76
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 00:48:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE894D4ACB
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 01:15:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qoOU3tsBMGmLbKzebfxYm4tDoFkNnqdpD+hV0kRu3AA=; b=Aeo4aNND2awHfK
-	4V5vsg2QcKMzt88PybPvGtH6T7Q3rH1s2gRFFc+SZDL3yAFYLBWwn1Oj8aejd/YlTj/2aC7iHmYsC
-	CkfsRPAzzOigpKmPY5in8W4SrZPcwy2BUYt0d8lqZ6XGD1rSo/bGGAApQHB7emj7mbRCc4/JjGTIF
-	cMgte/s0u0piXeZRXmJDhbq9Mk10h4UsLd8veuxgm2cDgx0XnnwYFCDzfHuoRD438El6WinDZ8vxa
-	54pebJSDHum+IxWxfIW46Z74sYSDSyW+5/Xwt0ceR4wSP8BA4g+stcDd6BBv8BCiH8JfHZsIGZKap
-	V8o5F63ML27Uouzd/XrQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SxfPYQsfurhWKhAfZSle2xbqSrkgeB0PhYy98RwLowA=; b=Q5u6MF45sw/4CM
+	LuhtT6ihST7OW+Z+It3/xwRC1G/6em95r8Fw9JATowhYsiHSh/wBS1F9wXOkzt5p0StND7Foxc+nw
+	XPl5gs+uLZ40qS2t5/nogTZu2cRxB/R4WIJ11Ne8n6gz8lQM3kbwz6BcOirYdB54DDhQL/nCF/4Uq
+	AWPjai+uhzQB9XLFxFIK8yZmTKaZhp5iLFxlxSnYUa5kI1Z45aY4BiYxPq/0FTUbZ9HSZI4YUMStE
+	PEVwpdnfmJ+VM44eDOZqa+VwOIeoF9XL9/Ynz6+Bsqv6xfwYChUWfx3xcl4Sz/SO3Zr3gbb3+p8oo
+	C6LpIsBNDrDy8DyE6mZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJ3hl-00063x-9i; Fri, 11 Oct 2019 22:48:13 +0000
-Received: from mail-qk1-f193.google.com ([209.85.222.193])
+	id 1iJ481-0006tD-IL; Fri, 11 Oct 2019 23:15:21 +0000
+Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJ3hc-00063Q-6u
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 22:48:05 +0000
-Received: by mail-qk1-f193.google.com with SMTP id x4so6449034qkx.5
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 11 Oct 2019 15:48:02 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=SOKIN9Nyp1JbsZ7BUkjibIlWkzxw3BXcx3Hv1FQA6jE=;
- b=iLlULnD6hrNLzzOVKkk9UPPuOo0RWzIz/LzAZFhH5K9//KuKnU7EqSQ2Reehj2Q5SW
- 2Bk31IO2D1OMumebDA2mzAs9c5jI8bkXw+bdClvmZupxkMISdke1BEnBjr3KOjDk2E5A
- OplHH1PnSEYHNhneAASgxgipA60R7k67RxHKy7sTZO6QUxFk+k9gxOsYwVW2jmUIqX29
- qyOt7QLkf4xGUen45XKhLKeFWsOyeFX1GiPIu5O3tSBIcnIII6tZ1ANb0DP33LKRcrWM
- qWZgpkjhPMQeDkqSTrfUY7h27OyF3OTKoiQwlSM1/lsDeGJ0mICitncxpEikv2cpYKjE
- vhWw==
-X-Gm-Message-State: APjAAAVEVfLb+tceM3HMi0zmKocd6lD/8TStNM65pU/HJ46g6M+yJfUV
- RcFQ2J2exc7LA7z+iQzuI2VafGCZOXzeuNf1GUg=
-X-Google-Smtp-Source: APXvYqwY0ItApn6Ic7IwoO2WjxHjjLQlid2e5HLIE2yCMJII+3/pFE7ZZeN+anW8mmfuckghY9tUfC0lFrSLy9QTGz0=
-X-Received: by 2002:a05:620a:218f:: with SMTP id
- g15mr17971150qka.3.1570834081941; 
- Fri, 11 Oct 2019 15:48:01 -0700 (PDT)
+ id 1iJ47s-0006Is-Kk; Fri, 11 Oct 2019 23:15:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1570835365;
+ bh=5gB1OCM/eHUoF4+pE9h4tGD6did33KyXZQ7I6/0pCLU=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=I/GOFBvsXIboHGynN2mYSVXzwdIBKfSeUNMbgC3ZmtGfkTIJdQ6Zy84OQojyywLxf
+ 7eM0YTeCPKP1MEwJY1l+TsumTlgikYB/1d8ntKmy57Jb1TrtezT+djMB13d8BjrS3o
+ cyGseQy18NpYsE96j3LAP4l51sQ2RyF9MDbRKy+Y=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.162] ([37.4.249.112]) by mail.gmx.com (mrgmx005
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 1M72oH-1iR33i0RZv-008cZL; Sat, 12
+ Oct 2019 01:09:25 +0200
+Subject: Re: [PATCH v1 3/3] ARM: dts: bcm2711: Enable GENET support for the
+ RPi4
+To: matthias.bgg@kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>
+References: <20191011184822.866-1-matthias.bgg@kernel.org>
+ <20191011184822.866-4-matthias.bgg@kernel.org>
+From: Stefan Wahren <wahrenst@gmx.net>
+Message-ID: <dfe9062b-1960-f67b-2a9e-864c0680f5d3@gmx.net>
+Date: Sat, 12 Oct 2019 01:09:19 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20190926193030.5843-1-anders.roxell@linaro.org>
- <20190926193030.5843-5-anders.roxell@linaro.org>
- <bf5db3a5-96da-752c-49ea-d0de899882d5@huawei.com>
- <CADYN=9LB9RHgRkQj=HcKDz1x9jqmT464Kseh2wZU5VvcLit+bQ@mail.gmail.com>
- <d978673e-cbd1-5ab5-b2a4-cdb407d0f98c@huawei.com>
- <CAK8P3a0kBz1-i-3miCo1vMuoM39ivXa3oxOE9VnCqDO-nfNOxw@mail.gmail.com>
- <20191011102747.lpbaur2e4nqyf7sw@willie-the-truck>
- <20191011103342.GL25745@shell.armlinux.org.uk>
-In-Reply-To: <20191011103342.GL25745@shell.armlinux.org.uk>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Sat, 12 Oct 2019 00:47:45 +0200
-Message-ID: <CAK8P3a1ADTc0woWWNjpeqYEtgb=snj264P4QNWOj7ZRMDv8WNg@mail.gmail.com>
-Subject: Re: [PATCH 3/3] arm64: configs: unset CPU_BIG_ENDIAN
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+In-Reply-To: <20191011184822.866-4-matthias.bgg@kernel.org>
+Content-Language: en-US
+X-Provags-ID: V03:K1:hXCsfi0YzRPmoFypWyfnvbO4N7BdVxoeOYAzqfPcBP1vircEceh
+ 5/gp4HUDZbiVzRFNAraPoYeULEiS7pg/NXBuAyRCOMdrkpXK0OQ4Stl6pf8E52jOsx2fc5u
+ qQmvIDtmTSod/RhKuofbxsYfY1Z80h4EbuwqHZFOosz8q3Cr4WkqG08p9zxoXvmye5G59jM
+ Pko4MF7b2PlzF2rWIrfmg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:hioaaoAal40=:B4AdG8yOarUZYruTvKzKW9
+ O6NhUfcFJuvBB6mewzVfICNLAu2JaVBVynV1qeVUxIlbZ753ObmgpRtOPMgt8eThT0m02EyR+
+ 3yFmPVLKK73vR5RuVxSz4/RaFIph129QOk+XbZk3nS3cB8VfIjtdEQBdnLRlj+DWq95AsRS5M
+ JE8yhLb5koUbSkaVFzr1j7TiOekkJqXdujFGg5J41jfPufT0hC4duVn4V5sgVnVRBBffvXAVv
+ Li4tHsSziRkTqQkLwRgJQCNZsKBfN1G2p9iNB3QOTFucCBUlJ8KyRiChJpEhsXIu34TCuI47V
+ NebesUtHLbV2z/6pZTa9kufjyV6fNgDt7L6Z76Gp9ly5XFXoVGpkDqy0GkFOoH6shacPOm3Uq
+ rY8oX2NFt5Our/vUqhO8UJd6Nlb7lVuX1I1ZQvRX5efkPyIMK4MeXZOWYNFd/49fHM6WOu1zr
+ jWwJJli4OuJqeTzHxXAjDYXp54pCVVFCJFkoutjoUCJAyuIxoT/pqgje9/jcKywv+UdUpgbYK
+ ud7Kql66eDPRukrt5JpZYwUzeOjVyrAkYPsSY0E0u+/glVi2BE0yuI+Lrxt/BpdLZMhVC8ckp
+ MBYbrpQTFnn5pdXqQ1aw0R6OcCQPSNM41z/1xpIuKbEVRfFqZuJPssQgXy+rq+VJ0F18b5IOn
+ cstZHafaMYsqYylJrOheFRum7c46HvfA+xZhFpFKheFIMHNOefFM90DIKwECxwjnRCJc+A1P5
+ hFWlGLh7W27xXLJfkqAWtTec4Bj6tpo0aZ7hfon9/NFLoSWuDC5gTDVcdBeqsUOiKfSVbhfhn
+ N+ByNpUvsAgjIXyQ8uow044WCrdAoNMuTUcvXhVfCp6pAZ9RdZhx/XXxNmWEFIWmkyKuIYynB
+ m/43Tfr7JqlNYwqtoMcuUGEOK+j4e6aJiXDkNmbpHP3aic2rI5krd/fv3tr6BJAsQS0nquGKA
+ v2KGo75smbnL31aNACNvedR8XumobvIoh+YqFDkj9R+KaM1D3HdpqqSXm1Ejt0svl3VgUnv+m
+ jc9YWHX+JM0al4G3uyVHqQDZXxCW7fQ0mSWo8LSL8K/eN+9/3v0gyiJID/zMcLlDYOqSMmyMT
+ lh1ZcMDGoUXwIpBY5IiaD/fB5tGQs2vJiX4+P5dRyenHg4GITUfq7v9BPMnOz0U2qSyx7Ag2b
+ Yi0UneKJUl0KAfeEbGVZUR9vHEW1aSZ0gyCLnYv4B0AstLu4+F0u5q56ceOTgL3FUdXVJGPkR
+ zxhRo3oUMEIT18dZOZgN8O7FD44USQk3dfla4R14H0Jtwe2yZN2pEn6NHwrA=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_154804_250751_E543B487 
-X-CRM114-Status: GOOD (  14.87  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191011_161513_022699_E4B4BE1B 
+X-CRM114-Status: GOOD (  10.41  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.193 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.193 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
+ provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,62 +101,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anders Roxell <anders.roxell@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, John Garry <john.garry@huawei.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Chunrong Guo <chunrong.guo@nxp.com>, Olof Johansson <olof@lixom.net>,
- Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Matthias Brugger <mbrugger@suse.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-kernel@vger.kernel.org,
+ Eric Anholt <eric@anholt.net>, Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 11, 2019 at 12:33 PM Russell King - ARM Linux admin
-<linux@armlinux.org.uk> wrote:
+Am 11.10.19 um 20:48 schrieb matthias.bgg@kernel.org:
+> From: Matthias Brugger <mbrugger@suse.com>
 >
-> On Fri, Oct 11, 2019 at 11:27:48AM +0100, Will Deacon wrote:
-> > Does anybody use BIG_ENDIAN? If we're not even building it then maybe we
-> > should get rid of it altogether on arm64. I don't know of any supported
-> > userspace that supports it or any CPUs that are unable to run little-endian
-> > binaries.
+> Enable Gigabit Ethernet support on the Raspberry Pi 4
+> Model B.
 
-So far, all 'allmodconfig' builds are big-endian and have been that way
-since the option was first added, so build coverage is something we
-have plenty of. It's also covered by randconfig testing, regardless of
-the default endianess.
+I asked some questions about genet to the RPi guys [1] which are
+relevant to this patch (missing clocks and interrupt, MAC address
+assignment) but i didn't get an answer yet.
 
-> 32-bit ARM experience is that telco class users really like big
-> endian.
+During my tests with a similiar patch series i noticed that the driver
+won't probe without a MAC address.
 
-Right, basically anyone with a large code base migrated over from a
-big-endian MIPS or PowerPC legacy that found it cheaper to change
-the rest of the world than to fix their own code. The only other example
-of this I heard of besides networking was from banking, where they
-looked at moving from AIX on PowerPC to Linux on something cheaper,
-but IIRC they ended up going with LE after all because of the lack
-of distro support.
+How does it get into DT (via U-Boot)?
 
-Whether any users remain in use at this time, I don't know. As most
-of the larger machines require UEFI to boot, they are currently limited
-to little-endian for all practical purposes, and smaller embedded
-machines tend to have a smaller amount of legacy code and are
-easier to move over to little-endian.
+[1] -
+https://github.com/raspberrypi/linux/issues/3101#issuecomment-534665860
 
-One recent reference I could find is specifically for the NXP
-Layerscape LS1043 in
-https://www.nxp.com/docs/en/application-note/AN5129.pdf
-which apparently has some support in their codewarrior tools
-for big-endian binaries.
-
-There are also some recent openembedded bugfixes for
-big-endian arm64 from NXP:
-https://www.mail-archive.com/meta-freescale@yoctoproject.org/msg22378.html
-
-Adding Chungrong Guo to Cc for additional insight on whether
-they expect any notable big-endian users in the future.
-
-      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
