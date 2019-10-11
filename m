@@ -2,55 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92795D467C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 19:20:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 695DED4690
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 19:25:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NoIyF/g99FDDRWyeryvKAmCKVxk99FbHo59zZJQwLmk=; b=q6+/kKHmWgqiX1
-	Kta6kkyJY8r1SDiUpSoaA3kfwyaSprd67Kz5VRfRx3cwxN7mdQMi5kG6Atj7CNi61szrNlyV3DGY6
-	aUikm4q5MxouLQ5aDb7yaGiT3A9IQAQIrD51wdYLWOvO/F7nuCSGbuivEDb7QC/xzIITNkXHJy+5j
-	835YhtDJ8aonfhh8LBBo6gwGWNuTtbWn3HhFErPiGgk2IcEhNnHwyJoP5sd1mELea0R/o9NzQlsfF
-	ipbB/8ofcckENROxVpTkR0UJY+rM+FWTgfNnWxF72LW5XFZjsCzPVUh7Q2fcgEFsXbfw5wenZjKz6
-	A+lnagTGYSziGQdSsOCg==;
+	List-Owner; bh=ghxnJMSyLB7rpeehMSTxtbCSCAnd0ykDYwMoTL7Z9vo=; b=QHMEO/ZNGVW7Fu
+	JFft6HGQ8ZJspZe4m4P9aYw38IISUwHgPWW74Uo7mvkimMcUNLPm101aMUabxlhKYVrn38KUrL85W
+	7CT/bNwPEeHg91ObVosumvetb/n8cK3N4AiUYzf8p6yQeglqXmYZZuo6nf/nyPfsP0YbbMmWjTWHR
+	rYfmUyasWbTqDoMTOh5XcdHqLbcvIqwnxOJQGqn1i5M8PFgUS9+CXBGX/DQ9IXnJAW5zRCMAzBpIf
+	Sf0ZgPY6zVgn+ufTol8qkRaHof1j2vWu+45RrP0jSNw0StIRyndicv5zqui9wAx/SVJccneypW9x9
+	Lu/E4hbX6WFPQyn8L7mA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIyad-0002Yt-7S; Fri, 11 Oct 2019 17:20:31 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIyaU-0002Xu-3n
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 17:20:23 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id ADD8628;
- Fri, 11 Oct 2019 10:20:20 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C68FE3F703;
- Fri, 11 Oct 2019 10:20:17 -0700 (PDT)
-Date: Fri, 11 Oct 2019 18:20:15 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH v2 05/12] arm64: Basic Branch Target Identification support
-Message-ID: <20191011172013.GQ27757@arm.com>
-References: <1570733080-21015-1-git-send-email-Dave.Martin@arm.com>
- <1570733080-21015-6-git-send-email-Dave.Martin@arm.com>
- <20191011151028.GE33537@lakrids.cambridge.arm.com>
+	id 1iIyfM-0004Zp-O4; Fri, 11 Oct 2019 17:25:24 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iIyfC-0004YF-49
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 17:25:15 +0000
+Received: by mail-ot1-x342.google.com with SMTP id 89so8591544oth.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 11 Oct 2019 10:25:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=odWazgo9+n3Ch+thWJ0an87IwtkMdZ6ngV5ze1k18zE=;
+ b=H0nofUIFEeA4klPEIMnfI+5qb9TMGr9a4DwMCKL+XpuFlPUXR63MhqtsFUn3npznu2
+ TjHCnbuvrMRlkbr3TbwlhCpAb90LfZnwYdwbrq4dDYY82811VeiymGb3mcz2AigV1fFh
+ BhpVMkiBV1NRDPdiNHl2mNhGp/pbvZoP0/ucc=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=odWazgo9+n3Ch+thWJ0an87IwtkMdZ6ngV5ze1k18zE=;
+ b=udgBoCICrmOzxN3yEMe3ytw2iiJdOvl2ZtFz9tIj2xgJvXRVEwmVKwo/r+e1sBp6GU
+ DiPwzpFOCiXLRnOhPwHOEuobfw4Q519fnsSbB7/90ucYSC8Yo5lHTkovisRZFQApTR1n
+ apr3uwllydfWOWtlr7tkkYZiBO7a53pn6UoJ4xBP+0WjOdZKen2ZC7V9nuSlBCUtVoG4
+ yOtAWFVayjlu+qho6nvgmC3aJ1vDEi/yzhpxSToGLhlty9d+7SJMhwosZOxivA+kZ1TS
+ itXejt66yhky64KNGcGeHWHcxmtO8zIyVyN1XCzVsuEjpZ/9WcFs1fPhct6YbMDPR+AH
+ G26w==
+X-Gm-Message-State: APjAAAU637zVuUYNknLgRDd7xLw+BgsI6gStwgkqxeb4EgPJ3mDmM2OC
+ JjP/VNCKNTQ9SFJfD2niasUT38etjS+6t3bacYjhmQ==
+X-Google-Smtp-Source: APXvYqzwmfvrl3WVBOL9MDA8ra+rkX7wVoQ99gh1LuWUxtlKyXDnDXBFO05EmzaYllZzwhYPHQbvH20Ibu4HYvdtQdQ=
+X-Received: by 2002:a9d:6284:: with SMTP id x4mr4886452otk.281.1570814713062; 
+ Fri, 11 Oct 2019 10:25:13 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191011151028.GE33537@lakrids.cambridge.arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+References: <20191010092526.10419-1-narmstrong@baylibre.com>
+ <20191010092526.10419-5-narmstrong@baylibre.com>
+ <20191010132601.GA10110@arm.com>
+ <44f1771f-d640-f23d-995f-7bfcadd213bc@baylibre.com>
+ <20191011084108.i7lfh2d7asfmcdk4@DESKTOP-E1NTVVP.localdomain>
+ <c9d4f840-a3da-0f40-3a1c-c4aa522daf0f@baylibre.com>
+ <20191011105559.clttghy52wfdmb34@DESKTOP-E1NTVVP.localdomain>
+In-Reply-To: <20191011105559.clttghy52wfdmb34@DESKTOP-E1NTVVP.localdomain>
+From: Daniel Vetter <daniel@ffwll.ch>
+Date: Fri, 11 Oct 2019 19:25:02 +0200
+Message-ID: <CAKMK7uHEWQiXYE7RE7TffHEHMys=LTYcNeK+iAX3qiS-c2PNjQ@mail.gmail.com>
+Subject: Re: [PATCH 4/7] drm/meson: plane: add support for AFBC mode for OSD1
+ plane
+To: Brian Starkey <Brian.Starkey@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_102022_244355_F006B043 
-X-CRM114-Status: GOOD (  37.88  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191011_102514_229468_0B803D08 
+X-CRM114-Status: GOOD (  16.60  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,189 +94,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
- Eugene Syromiatnikov <esyr@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- "H.J. Lu" <hjl.tools@gmail.com>, Yu-cheng Yu <yu-cheng.yu@intel.com>,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
- Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
- Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
- linux-kernel@vger.kernel.org, Sudakshina Das <sudi.das@arm.com>
+Cc: nd <nd@arm.com>, Neil Armstrong <narmstrong@baylibre.com>,
+ "khilman@baylibre.com" <khilman@baylibre.com>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "linux-amlogic@lists.infradead.org" <linux-amlogic@lists.infradead.org>,
+ Ayan Halder <Ayan.Halder@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 11, 2019 at 04:10:29PM +0100, Mark Rutland wrote:
-> On Thu, Oct 10, 2019 at 07:44:33PM +0100, Dave Martin wrote:
-> > This patch adds the bare minimum required to expose the ARMv8.5
-> > Branch Target Identification feature to userspace.
-> > 
-> > By itself, this does _not_ automatically enable BTI for any initial
-> > executable pages mapped by execve().  This will come later, but for
-> > now it should be possible to enable BTI manually on those pages by
-> > using mprotect() from within the target process.
-> > 
-> > Other arches already using the generic mman.h are already using
-> > 0x10 for arch-specific prot flags, so we use that for PROT_BTI
-> > here.
-> > 
-> > For consistency, signal handler entry points in BTI guarded pages
-> > are required to be annotated as such, just like any other function.
-> > This blocks a relatively minor attack vector, but comforming
-> > userspace will have the annotations anyway, so we may as well
-> > enforce them.
-> > 
-> > Signed-off-by: Dave Martin <Dave.Martin@arm.com>
-> > 
-> > ---
-> > 
-> > Changes since v1:
-> > 
-> >  * Configure SCTLR_EL1.BTx to disallow BR onto a PACIxSP instruction
-> >    (except via X16/X17):
-> > 
-> >    The AArch64 procedure call standard requires binaries marked with
-> >    GNU_PROPERTY_AARCH64_FEATURE_1_BTI to use X16/X17 in trampolines
-> >    and tail calls, so it makes no sense to be permissive.
-> > 
-> >  * Rename PROT_BTI_GUARDED to PROT_BTI.
-> > 
-> >  * Rename VM_ARM64_GP to VM_ARM64_BTI:
-> > 
-> >    Although the architectural name for the BTI page table bit is "GP",
-> >    BTI is nonetheless the feature it controls.  So avoid introducing
-> >    the "GP" naming just for this -- it's just an unecessary extra
-> >    source of confusion.
-> > 
-> >  * Tidy up masking with ~PSR_BTYPE_MASK.
-> > 
-> >  * Drop masking out of BTYPE on SVC, with a comment outlining why.
-> > 
-> >  * Split PSR_BTYPE_SHIFT definition into this patch.  It's not
-> >    useful yet, but it makes sense to define PSR_BTYPE_* using this
-> >    from the outset.
-> > 
-> >  * Migrate to ct_user_exit_irqoff in entry.S:el0_bti.
-> 
-> [...]
-> 
-> > diff --git a/arch/arm64/include/asm/mman.h b/arch/arm64/include/asm/mman.h
-> > new file mode 100644
-> > index 0000000..cbfe3238
-> > --- /dev/null
-> > +++ b/arch/arm64/include/asm/mman.h
-> > @@ -0,0 +1,33 @@
-> > +/* SPDX-License-Identifier: GPL-2.0 */
-> > +#ifndef __ASM_MMAN_H__
-> > +#define __ASM_MMAN_H__
-> > +
-> > +#include <uapi/asm/mman.h>
-> > +
-> > +#define arch_calc_vm_prot_bits(prot, pkey) arm64_calc_vm_prot_bits(prot)
-> > +static inline unsigned long arm64_calc_vm_prot_bits(unsigned long prot)
-> > +{
-> > +	if (system_supports_bti() && (prot & PROT_BTI))
-> > +		return VM_ARM64_BTI;
-> > +
-> > +	return 0;
-> > +}
-> 
-> Can we call this arch_calc_vm_prot_bits() directly, with all the
-> arguments:
-> 
-> static inline unsigned long arch_calc_vm_prot_bits(unsigned long prot,
-> 						   unsigned long pkey)
-> {
-> 	...
-> }
-> #define arch_calc_vm_prot_bits arch_calc_vm_prot_bits
-> 
-> ... as that makes it a bit easier to match definition with use, and just
-> definign the name makes it a bit clearer that that's probably for the
-> benefit of some ifdeffery.
-> 
-> Likewise for the other functions here.
-> 
-> > +#define arch_vm_get_page_prot(vm_flags) arm64_vm_get_page_prot(vm_flags)
-> > +static inline pgprot_t arm64_vm_get_page_prot(unsigned long vm_flags)
-> > +{
-> > +	return (vm_flags & VM_ARM64_BTI) ? __pgprot(PTE_GP) : __pgprot(0);
-> > +}
-> > +
-> > +#define arch_validate_prot(prot, addr) arm64_validate_prot(prot, addr)
-> > +static inline int arm64_validate_prot(unsigned long prot, unsigned long addr)
+On Fri, Oct 11, 2019 at 12:56 PM Brian Starkey <Brian.Starkey@arm.com> wrote:
+>
+> Hi,
+>
+> On Fri, Oct 11, 2019 at 11:14:43AM +0200, Neil Armstrong wrote:
+> > Hi Brian,
+> >
+> > On 11/10/2019 10:41, Brian Starkey wrote:
 
-Can do, though it looks like a used sparc as a template, and that has a
-sparc_ prefix.
+> > > Are you sure the GPU supports other orders? I think any Arm driver
+> > > will only be producing DRM_FORMATs with "BGR" order e.g. ABGR888>
+> > > I'm not convinced the GPU HW actually supports any other order, but
+> > > it's all rather confusing with texture swizzling. What I can tell you
+> > > for sure is that it _does_ support BGR order (in DRM naming
+> > > convention).
+> >
+> > Well, since the Bifrost Mali blobs are closed-source and delivered
+> > by licensees, it's hard to define what is supported from a closed
+> > GPU HW, closed SW implementation to a closed pixel format implementation.
+> >
+>
+> I hear you. IMO the only way to make any of this clear is to publish
+> reference data and tests which make sure implementations match each
+> other. It's something I'm trying to make happen.
 
-powerpc uses the generic name, as does x86 ... in its UAPI headers.
-Odd.
+*cough* igt test with crc/writeback validation *cough*
 
-I can change the names here, though I'm not sure it adds a lot of value.
+And you don't even need anything that actually compresses. All you
+need is the minimal enough AFBC knowledge to set up the metadata that
+everything is uncompressed. We're doing that for our intel compression
+formats already, and it works great in making sure that we have
+end-to-end agreement on all the bits and ordering and everything. Ofc
+it doesn't validate the decoder, but that's not really igts job.
+Should be possible to convince ARM to release that (as open source, in
+igt), since it would be fairly valuable for the entire ecosystem here
+...
+-Daniel
 
-If you feel strongly I can do it.
-
-> > +{
-> > +	unsigned long supported = PROT_READ | PROT_WRITE | PROT_EXEC | PROT_SEM;
-> > +
-> > +	if (system_supports_bti())
-> > +		supported |= PROT_BTI;
-> > +
-> > +	return (prot & ~supported) == 0;
-> > +}
-> 
-> If we have this check, can we ever get into arm64_calc_vm_prot_bits()
-> with PROT_BIT but !system_supports_bti()?
-> 
-> ... or can that become:
-> 
-> 	return (prot & PROT_BTI) ? VM_ARM64_BTI : 0;
-
-We can reach this via mmap() and friends IIUC.
-
-Since this function only gets called once-ish per vma I have a weak
-preference for keeping the check here to avoid code fragility.
-
-
-It does feel like arch_validate_prot() is supposed to be a generic gate
-for prot flags coming into the kernel via any route though, but only the
-mprotect() path actually uses it.
-
-This function originally landed in v2.6.27 as part of the powerpc strong
-access ordering support (PROT_SAO):
-
-b845f313d78e ("mm: Allow architectures to define additional protection bits")
-ef3d3246a0d0 ("powerpc/mm: Add Strong Access Ordering support")
-
-where the mmap() path uses arch_calc_vm_prot_bits() without
-arch_validate_prot(), just as in the current code.  powerpc's original
-arch_calc_vm_prot_bits() does no obvious policing.
-
-
-This might be a bug.  I can draft a patch to add it for the mmap() path
-for people to comment on ... I can't figure out yet whether or not the
-difference is intentional or there's some subtlety that I'm missed.
-
-mmap( ... prot = -1 ... ) succeeds with effective rwx permissions and no
-apparent ill effects on my random x86 box, but mprotect(..., -1) fails
-with -EINVAL.
-
-This is at least strange.
-
-Theoretically, tightening this would be an ABI break, though I'd say
-this behaviour is not intentional.
-
-Thoughts?
-
-[...]
-
-Cheers
----Dave
+-- 
+Daniel Vetter
+Software Engineer, Intel Corporation
++41 (0) 79 365 57 48 - http://blog.ffwll.ch
 
 _______________________________________________
 linux-arm-kernel mailing list
