@@ -2,63 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E67CD415D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 15:34:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BC56D415F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 15:34:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aKAh0iCAz5sk/0x1Z8uJAETLwkwAT1Y6Heck4i+0y4U=; b=uICuxm3V6yKm9K
-	oUSqS9iTAOpVaFx6oqXOPGrjWCB9eiyol5uajMxqco3YVgr0FtSU0IT6oLyRiYtil/lg9+T6u0Ph0
-	SAFYxBfFEVumBcqXCPlmYoUR6a7H8LyPkpAhKmKR9PX9d1R1TK+HJaQJaKKT+hlvi9dzt5SmOT7LH
-	BtZjZ8Abn66rCjIFYFCP7xt2UN2NwlHXkmUoxShg1LGdKc/W/dHkXMlfAkigG2xWSQoYF3rIApU13
-	hz8sC5IoIB/+Co60umNH31V7C8p1SloRDB/TpZteGY4YIV6TDPL9O38S/g4WGZVXolzD6Sp/R4EwM
-	GofC9WRlasGeGJ1yo+Eg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=xLoz5UTpxlrtUUqJM6e4SukcFlWkY0BROrchHemrD44=; b=XcTxFXeNE71ADJThzBOHtyPww
+	OOtdmf1foMw33tpCx7fSSfJLTDzpz5D/h4LPkG/ZHn5KC5QbG3JUlkDBamfYZMrQWXocKHHp8Upv6
+	7jSOXwx5N6Nk2SPMb4bcmzfL4ALoV5aLosnlDnY8MtvaMFPlutavaJIehmjXTsgrvRj36OgODLXtb
+	JjNxwnUh/5Sg5/ogv3bDRLPex++hNopF1mT+pCkSVBBR1v9PMNCb45XpBr7t1E8IBzKv5s92hF26Z
+	6Qn9AbSSq+JMaLh20NTnqfkC9ATZOVZxXQk5aQmpWHfkK5RtxEgn8iw5tooPtf5ucPYOzyRqjXEhX
+	zc+jZW35Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIv3Q-0004ku-9G; Fri, 11 Oct 2019 13:34:00 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iIv3h-0004yE-NO; Fri, 11 Oct 2019 13:34:17 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIv3H-0004jx-9c
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 13:33:52 +0000
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why)
- by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
- (Exim 4.80) (envelope-from <maz@kernel.org>)
- id 1iIv3A-000788-Pa; Fri, 11 Oct 2019 15:33:44 +0200
-Date: Fri, 11 Oct 2019 14:33:43 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>
+ id 1iIv3V-0004vz-BX; Fri, 11 Oct 2019 13:34:06 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id 5C9CE611BF; Fri, 11 Oct 2019 13:34:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1570800844;
+ bh=qV7mshgmsk+PA+0O8tFTuDWkquelMqFFIB66c0mtXvw=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=dbIlhjcv6KxYGpqa29K92bYNsnKxAHwOBp0XO9RQchrEs3WDNesdKXRuLJIE8lVd/
+ FvtNPf7HJLbZj+0EM8HG4Uv4KIducbN01O9CNS359iN2o5vBskJXi83LKuaL9uVStG
+ 66P8+Jw5tvfffhxNGbfo42qyxodS9XVYsdRJQAxU=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED autolearn=no autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ by smtp.codeaurora.org (Postfix) with ESMTP id 16D1261197;
+ Fri, 11 Oct 2019 13:33:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1570800839;
+ bh=qV7mshgmsk+PA+0O8tFTuDWkquelMqFFIB66c0mtXvw=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=DTe4ww8/Rj9UiVNqQ42aZF8hpaoSQgx/h5/neY7Ej2tjWAudV7pUqcK+NbO4M8q7f
+ SvRvgGK+f2en3oE67UQ81aAsMgvJlvRB8AE4x3DdFbh0j6Vw6w0DGAXRxmuJyxaw2o
+ zOL10H3tgjCyZkjlAazwa0jLMwumpydq57bekATE=
+MIME-Version: 1.0
+Date: Fri, 11 Oct 2019 19:03:58 +0530
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Marc Gonzalez <marc.w.gonzalez@free.fr>
 Subject: Re: Relax CPU features sanity checking on heterogeneous architectures
-Message-ID: <20191011143343.541da66c@why>
-In-Reply-To: <20191011105010.GA29364@lakrids.cambridge.arm.com>
+In-Reply-To: <a86e9be2-fc82-afea-5e94-b15d7eef1b84@free.fr>
 References: <b3606e76af42f7ecf65b1bfc2a5ed30a@codeaurora.org>
  <20191011105010.GA29364@lakrids.cambridge.arm.com>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: mark.rutland@arm.com, saiprakash.ranjan@codeaurora.org,
- rnayak@codeaurora.org, suzuki.poulose@arm.com, catalin.marinas@arm.com,
- linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
- bjorn.andersson@linaro.org, linux-arm-msm@vger.kernel.org,
- andrew.murray@arm.com, will@kernel.org, Dave.Martin@arm.com,
- linux-arm-kernel@lists.infradead.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+ <a86e9be2-fc82-afea-5e94-b15d7eef1b84@free.fr>
+X-Priority: 1 (Highest)
+Message-ID: <8fb6dce8dcda42a14c1347295a812a0f@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.2.5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_063351_484903_35FDADC7 
-X-CRM114-Status: GOOD (  10.45  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191011_063405_413651_B0B8C201 
+X-CRM114-Status: UNSURE (   8.75  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,51 +90,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
- rnayak@codeaurora.org, suzuki.poulose@arm.com, catalin.marinas@arm.com,
- linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
- bjorn.andersson@linaro.org, linux-arm-msm@vger.kernel.org,
- andrew.murray@arm.com, will@kernel.org, Dave.Martin@arm.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ MSM <linux-arm-msm@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel-bounces@lists.infradead.org>,
+ "Suzuki K. Poulose" <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 11 Oct 2019 11:50:11 +0100
-Mark Rutland <mark.rutland@arm.com> wrote:
+On 2019-10-11 16:39, Marc Gonzalez wrote:
+> On 11/10/2019 12:50, Mark Rutland wrote:
+> 
+>> Before we make any changes, we need to check whether we do actually
+>> handle this variation in a safe way, and we need to consider what this
+>> means w.r.t. late CPU hotplug.
+>> 
+>> Even if we can handle variation at boot time, once we've determined 
+>> the
+>> set of system-wide features we cannot allow those to regress, and I
+>> believe we'll need new code to enforce that. I don't think it's
+>> sufficient to mark these as NONSTRICT, though we might do that with
+>> other changes.
+>> 
+>> We shouldn't look at the part number at all here. We care about
+>> variation across CPUs regardless of whether this is big.LITTLE or some
+>> variation in tie-offs, etc.
+> 
+> See also the "Unexpected variation in SYS_ID_AA64MMFR0_EL1" thread
+> from a year ago: (that was on msm8998)
+> 
+> 	https://www.spinics.net/lists/arm-kernel/msg691242.html
+> 
 
-> Hi,
-> 
-> On Fri, Oct 11, 2019 at 11:19:00AM +0530, Sai Prakash Ranjan wrote:
-> > On latest QCOM SoCs like SM8150 and SC7180 with big.LITTLE arch, below
-> > warnings are observed during bootup of big cpu cores.  
-> 
-> For reference, which CPUs are in those SoCs?
-> 
-> > SM8150:
-> > 
-> > [    0.271177] CPU features: SANITY CHECK: Unexpected variation in
-> > SYS_ID_AA64PFR0_EL1. Boot CPU: 0x00000011112222, CPU4: 0x00000011111112  
-> 
-> The differing fields are EL3, EL2, and EL1: the boot CPU supports
-> AArch64 and AArch32 at those exception levels, while the secondary only
-> supports AArch64.
-> 
-> Do we handle this variation in KVM?
+I think, it was fixed by commit: 5717fe5ab38f ("arm64: cpufeature: Don't 
+treat granule sizes as strict")
 
-We do, at least at vcpu creation time (see kvm_reset_vcpu). But if one
-of the !AArch32 CPU comes in late in the game (after we've started a
-guest), all bets are off (we'll schedule the 32bit guest on that CPU,
-enter the guest, immediately take an Illegal Exception Return, and
-return to userspace with KVM_EXIT_FAIL_ENTRY).
+Thanks,
+Sai
 
-Not sure we could do better, given the HW. My preference would be to
-fail these CPUs if they aren't present at boot time.
-
-	M.
 -- 
-Jazz is not dead. It just smells funny...
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
+member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
