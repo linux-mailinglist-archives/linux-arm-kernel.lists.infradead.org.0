@@ -2,62 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4F04D3697
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 02:54:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B35B9D36B5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 03:08:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=14vH8C8rX3Lf7IdQBDpqct3kk9aEPzMR5R+JFvYzp30=; b=V5BTJc3+DtpqPu
-	vDsUpxxVf0CnaUm5oWeo9FIk9fK8FbA9WrTlUz0efAAYyrKWY6ast922qIQYQCzvRkUQwuJ/5f72/
-	CQlf2vmZJ/SGon0pYrKeWX5hugkXgeVgPJ4GYTrh6yndl1bmgzOryjt6C5pDxvq6FG1JDNbhLIaN6
-	Q/jwZvvQMtMT4rPYPMxR7uhPNKGtjVQ4i1Ngvucoxi85FTy7PiQagceHatIj2w8rLiLF420kl68Zt
-	8EEnytJkqG/Eyz5aahsEn9MZNHmJVhCLsUMhJO/uqZkucPaepSch52s7XNoVi7Q8jXTdBX6DViTN7
-	F1MLJao3l4W9XosdrLsQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=mqsPKP9c9FYOCxsrCECu4lqyYHFttf9XhPwuhlEYfn0=; b=M2b
+	0YfCt/jG99xK5MZKqASN5a1++cUykDEUb09+hTDhmgvd2nVH2Mp6U6yJZYYOu2xtk2xpztMT/hByW
+	qJuP9FIvlnfnJpY+ft09zaykqi6v1bcATDcrtAE7Xwh/B1Aq6KaxqK+OhEVVVLGCUiK8wnkRz8VdF
+	Ft1lj289A9/IN/I6EDUcHNwCUiwiFNk4ZVROA7tvKc8H4YBVcRSb/JcCvFJJWmL+pUtr8ESi0Y5RX
+	6XJm3UHvmrL4V7N3WvwxJgg5RIlL93doYcFSKtYovG9Lc5yCxzfUm4GXtDN+xq1F5dzViMaXIQogf
+	advUQGSoLFtNjugZsXCWPdL6SygZx7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIjCB-0001Zy-UW; Fri, 11 Oct 2019 00:54:15 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1iIjPN-00069k-Nj; Fri, 11 Oct 2019 01:07:53 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIjC4-0001YR-L2
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 00:54:10 +0000
-Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id DAD81C24DE4D932AB452;
- Fri, 11 Oct 2019 08:53:57 +0800 (CST)
-Received: from [127.0.0.1] (10.177.223.23) by DGGEMS405-HUB.china.huawei.com
- (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Fri, 11 Oct 2019
- 08:53:50 +0800
-Subject: Re: [RFC PATCH 0/3] ACPI, arm64: Backport for ACPI PPTT 6.3 thread
- flag for stable 4.19.x
-To: John Garry <john.garry@huawei.com>, <catalin.marinas@arm.com>,
- <will@kernel.org>, <rjw@rjwysocki.net>, <lenb@kernel.org>,
- <robert.moore@intel.com>, <erik.schmauss@intel.com>, <sudeep.holla@arm.com>,
- <rrichter@marvell.com>, <jeremy.linton@arm.com>
-References: <1570714192-236724-1-git-send-email-john.garry@huawei.com>
-From: Hanjun Guo <guohanjun@huawei.com>
-Message-ID: <ed2ce119-dd68-131c-72e9-e95fc8fc6465@huawei.com>
-Date: Fri, 11 Oct 2019 08:53:32 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
- Thunderbird/52.5.0
-MIME-Version: 1.0
-In-Reply-To: <1570714192-236724-1-git-send-email-john.garry@huawei.com>
-Content-Language: en-US
-X-Originating-IP: [10.177.223.23]
-X-CFilter-Loop: Reflected
+ id 1iIjPD-00068Z-TC
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 01:07:46 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 830A51A04A8;
+ Fri, 11 Oct 2019 03:07:37 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 690811A01F0;
+ Fri, 11 Oct 2019 03:07:32 +0200 (CEST)
+Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id DCE9340299;
+ Fri, 11 Oct 2019 09:07:25 +0800 (SGT)
+From: Hui Song <hui.song_1@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>
+Subject: [PATCH v8] gpio/mpc8xxx: change irq handler from chained to normal
+Date: Fri, 11 Oct 2019 08:56:43 +0800
+Message-Id: <20191011005643.41007-1-hui.song_1@nxp.com>
+X-Mailer: git-send-email 2.9.5
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_175408_862162_2623AFCD 
-X-CRM114-Status: GOOD (  16.46  )
+X-CRM114-CacheID: sfid-20191010_180744_220655_32A99EE1 
+X-CRM114-Status: GOOD (  11.69  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,49 +66,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
- linuxarm@huawei.com, linux-acpi@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, wanghuiqiang@huawei.com
+Cc: devicetree@vger.kernel.org, Song Hui <hui.song_1@nxp.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-gpio@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi John,
+From: Song Hui <hui.song_1@nxp.com>
 
-On 2019/10/10 21:29, John Garry wrote:
-> This series is a backport of the ACPI PPTT 6.3 thread flag feature for
-> supporting arm64 systems.
-> 
-> The background is that some arm64 implementations are broken, in that they
-> incorrectly advertise that a CPU is mutli-threaded, when it is not - the
-> HiSilicon Taishanv110 rev 2, aka tsv110, being an example.
-> 
-> This leads to the system topology being incorrect. The reason being that
-> arm64 topology code uses a combination of ACPI PPTT (Processor Properties
-> Topology Table) and the system MPIDR (Multiprocessor Affinity Register) MT
-> bit to determine the topology.
-> 
-> Until ACPI 6.3, the PPTT did not have any method to determine whether
-> a CPU was multi-threaded, so only the MT bit is used - hence the
-> broken topology for some systems.
-> 
-> In ACPI 6.3, a PPTT thread flag was introduced, which - when supported -
-> would be used by the kernel to determine really if a CPU is multi-threaded
-> or not, so that we don't get incorrect topology.
+More than one gpio controllers can share one interrupt, change the
+driver to request shared irq.
 
-Thanks for doing this, and this patch set fix my CPU topology issue
-in 4.19 kernel with updated firmware.
+While this will work, it will mess up userspace accounting of the number
+of interrupts per second in tools such as vmstat.  The reason is that
+for every GPIO interrupt, /proc/interrupts records the count against GIC
+interrupt 68 or 69, as well as the GPIO itself.  So, for every GPIO
+interrupt, the total number of interrupts that the system has seen
+increments by two.
 
-> 
-> Note: I'm sending this as an RFC before sending to stable proper. I also
-> have a 5.2 and 5.3 backport which are almost the same, and only
-> significant change being that the ACPICA patch is not required.
+Signed-off-by: Laurentiu Tudor <Laurentiu.Tudor@nxp.com>
+Signed-off-by: Alex Marginean <alexandru.marginean@nxp.com>
+Signed-off-by: Song Hui <hui.song_1@nxp.com>
+---
+Changes in v8:
+        - merge two lines as one line to fit 80 characters.
+Changes in v7:
+	- make unsigned int convert to unsigned long.
+Changes in v6:
+        - change request_irq to devm_request_irq and add commit message.
+Changes in v5:
+        - add traverse every bit function.
+Changes in v4:
+        - convert 'pr_err' to 'dev_err'.
+Changes in v3:
+        - update the patch description.
+Changes in v2:
+        - delete the compatible of ls1088a.
+ drivers/gpio/gpio-mpc8xxx.c | 30 +++++++++++++++++++-----------
+ 1 file changed, 19 insertions(+), 11 deletions(-)
 
-5.2 stable was end of life, so only 4.19 and 5.3 are needed I think.
-
-Thanks
-Hanjun
+diff --git a/drivers/gpio/gpio-mpc8xxx.c b/drivers/gpio/gpio-mpc8xxx.c
+index 16a47de..58ff372 100644
+--- a/drivers/gpio/gpio-mpc8xxx.c
++++ b/drivers/gpio/gpio-mpc8xxx.c
+@@ -22,6 +22,7 @@
+ #include <linux/irq.h>
+ #include <linux/gpio/driver.h>
+ #include <linux/bitops.h>
++#include <linux/interrupt.h>
+ 
+ #define MPC8XXX_GPIO_PINS	32
+ 
+@@ -127,20 +128,19 @@ static int mpc8xxx_gpio_to_irq(struct gpio_chip *gc, unsigned offset)
+ 		return -ENXIO;
+ }
+ 
+-static void mpc8xxx_gpio_irq_cascade(struct irq_desc *desc)
++static irqreturn_t mpc8xxx_gpio_irq_cascade(int irq, void *data)
+ {
+-	struct mpc8xxx_gpio_chip *mpc8xxx_gc = irq_desc_get_handler_data(desc);
+-	struct irq_chip *chip = irq_desc_get_chip(desc);
++	struct mpc8xxx_gpio_chip *mpc8xxx_gc = data;
+ 	struct gpio_chip *gc = &mpc8xxx_gc->gc;
+-	unsigned int mask;
++	unsigned long mask;
++	int i;
+ 
+ 	mask = gc->read_reg(mpc8xxx_gc->regs + GPIO_IER)
+ 		& gc->read_reg(mpc8xxx_gc->regs + GPIO_IMR);
+-	if (mask)
+-		generic_handle_irq(irq_linear_revmap(mpc8xxx_gc->irq,
+-						     32 - ffs(mask)));
+-	if (chip->irq_eoi)
+-		chip->irq_eoi(&desc->irq_data);
++	for_each_set_bit(i, &mask, 32)
++		generic_handle_irq(irq_linear_revmap(mpc8xxx_gc->irq, 31 - i));
++
++	return IRQ_HANDLED;
+ }
+ 
+ static void mpc8xxx_irq_unmask(struct irq_data *d)
+@@ -409,8 +409,16 @@ static int mpc8xxx_probe(struct platform_device *pdev)
+ 	if (devtype->gpio_dir_in_init)
+ 		devtype->gpio_dir_in_init(gc);
+ 
+-	irq_set_chained_handler_and_data(mpc8xxx_gc->irqn,
+-					 mpc8xxx_gpio_irq_cascade, mpc8xxx_gc);
++	ret = devm_request_irq(&pdev->dev, mpc8xxx_gc->irqn,
++			       mpc8xxx_gpio_irq_cascade,
++			       IRQF_NO_THREAD | IRQF_SHARED, "gpio-cascade",
++			       mpc8xxx_gc);
++	if (ret) {
++		dev_err(&pdev->dev, "%s: failed to devm_request_irq(%d), ret = %d\n",
++			np->full_name, mpc8xxx_gc->irqn, ret);
++		goto err;
++	}
++
+ 	return 0;
+ err:
+ 	iounmap(mpc8xxx_gc->regs);
+-- 
+2.9.5
 
 
 _______________________________________________
