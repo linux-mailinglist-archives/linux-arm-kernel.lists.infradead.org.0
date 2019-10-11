@@ -2,82 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A1F3D3CDE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 11:57:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44844D3CF7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 12:05:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=YxJkASYi1LxDby+YjLw6kgtNmiWVGNkApVwYgYo0zKU=; b=GKxSCCcVua/iZNxQoQ+jR4fvh
-	BP1TbxvVcJjsjT3lKaD/t6EdmGTNW2V6hUDo31Tgs7PpWEay0HANcAZ3SW5UtgvV74Ff8hnZd6Kpk
-	f8GHq0tTPSnCiWTpQh5GOD21RXP6ByaXP5sQ+0cH8jBxa/ruEOtRyUUBKzf+YPxOECkakMkhRVcw/
-	dTJeiAW6loX8APJpeueu4mEMQJSAcxKXyok7G8roHOm4NWk+D1ozuRPn9uYfoLN29EkriHvAuP3yd
-	SOvwAC3RhhG3Dzn4bApfUmpCuBbqpphqzcePvRrtKDW+LpoWyAIz+WF7TW9qVKeHR/4cMV6ZTnlv6
-	38RLeRwqQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XFedLyl6SkSIVU6tnR3GM1q4arF2RLGRQwPZZ7j0qx0=; b=GS/ubSMy3TZfYw
+	ObD2MaDP2tBXd1Onvpd+VfHRSHg6E3x0bXJmYlZ99kmmmtCxnMYcUNNuVCAUqOLkF9nYmJJwd1r67
+	CTYMOIHXhOeAL7NNZFhdevsG7XEm8Zki+6F5Q5jiDsEJVYRN4Auu0cyYFclJ/vQrdO7jfMwoyATAz
+	vCTV8G3d38FQvqImedXvG9KLuIXiFwGkciDtrXtYiK3Tu96EuMG1yh6PP2CWIAjxzAYrbvesEHKJE
+	mMbqtFng3iKHPgKqH/sP6NtpfqDFX5BHH9cGrqq8IjCdSoqoFlv2vCrlL+vQNKETm4jw5AfQoPNQl
+	ixT6U+C4kVhW3p8EaWow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIrfc-0003ml-Hf; Fri, 11 Oct 2019 09:57:12 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIrfU-0003mT-MH
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 09:57:05 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 16E5D60AD9; Fri, 11 Oct 2019 09:57:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1570787824;
- bh=JnjS0PdaYuZxMyImVfzpB6v+YK0lSs7Qjj6zZ8mu5ug=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=hc0lJNRUgrNzZizxunvQjZftL+LGDTpvzwJ3Kfn0MqDtmkVV+Z6k+Q4U8HNnerJpg
- 2dPhoWYMBlZ/VcSNeHaDLBp+l5y5bfQO8MSk6caGAgTK/hjNKx8Uwo0LhHI37XYzEH
- Z6tuQRpXiamfeHEV9ilvOnwLruTmjTzGtVsU+L2k=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED autolearn=no autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- by smtp.codeaurora.org (Postfix) with ESMTP id AF32E60AA3;
- Fri, 11 Oct 2019 09:57:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1570787823;
- bh=JnjS0PdaYuZxMyImVfzpB6v+YK0lSs7Qjj6zZ8mu5ug=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=ijIRGjZI1IRbXk6ygbmghvcWn8XIDXzXMI0VFzRO4FispR9/KRRj5urp3SjXmgDKE
- pjxDxpfPO+GMFpKrXbgBSpw39yIKCTUT1EaIpwHeqmr1fKqeDieBhIf9N22hMEVTWY
- 2FguLdRCWdQlFgD6YMtZQIyPRvxlsdPxdveWBc0Y=
+	id 1iIro1-0007E4-CR; Fri, 11 Oct 2019 10:05:53 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iIrnt-0007DE-Kz
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 10:05:47 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D4EAF337;
+ Fri, 11 Oct 2019 03:05:41 -0700 (PDT)
+Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B43803F703;
+ Fri, 11 Oct 2019 03:05:40 -0700 (PDT)
+Date: Fri, 11 Oct 2019 11:05:31 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Marek Szyprowski <m.szyprowski@samsung.com>
+Subject: Re: ARM Juno r1 + CONFIG_PROVE_LOCKING=y => boot failure
+Message-ID: <20191011100521.GA5122@bogus>
+References: <CGME20191011092604eucas1p1ca11ab9c4c7508776914b0eb4f35e69b@eucas1p1.samsung.com>
+ <33a83dce-e9f0-7814-923b-763d33e70257@samsung.com>
 MIME-Version: 1.0
-Date: Fri, 11 Oct 2019 15:27:03 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Subject: Re: Relax CPU features sanity checking on heterogeneous architectures
-In-Reply-To: <7ef16e2a-b35c-0807-67be-c56dadb6fa66@free.fr>
-References: <b3606e76af42f7ecf65b1bfc2a5ed30a@codeaurora.org>
- <7ef16e2a-b35c-0807-67be-c56dadb6fa66@free.fr>
-Message-ID: <b5f2cd1c2e34a3440e7f456bff36ea3d@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.2.5
+Content-Disposition: inline
+In-Reply-To: <33a83dce-e9f0-7814-923b-763d33e70257@samsung.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_025704_752036_96C69063 
-X-CRM114-Status: UNSURE (   6.73  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191011_030545_731918_6B61D024 
+X-CRM114-Status: GOOD (  15.04  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,37 +61,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: MSM <linux-arm-msm@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
+ LKML <linux-kernel@vger.kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+Hi Marek,
 
-On 2019-10-11 14:49, Marc Gonzalez wrote:
-> 
-> Hello Sai,
-> 
-> Could you configure your webmail client to not wrap "long" lines?
-> 
-> Wrapping might break the patch, and the kernel logs would look better
-> in their original form.
-> 
+On Fri, Oct 11, 2019 at 11:26:04AM +0200, Marek Szyprowski wrote:
+> Hi
+>
+> Recently I've got access to ARM Juno R1 board and did some tests with
+> current mainline kernel on it. I'm a bit surprised that enabling
+> CONFIG_PROVE_LOCKING causes a boot failure on this board. After enabling
+> this Kconfig option, I get no single message from the kernel, although I
+> have earlycon enabled.
+>
 
-Oh right, sorry did not see that. I use git send-email for patches, so 
-no problem of wrapping in those cases.
-Here I just used my webmail to compose the message and just pasted the 
-diff, will take care of it in future.
+I don't have Juno R1 but I tried defconfig + CONFIG_PROVE_LOCKING and
+it boots fine.
 
-Thanks,
-Sai
+So if you disable CONFIG_PROVE_LOCKING(i.e. defconfig) boots fine ?
+Are you using DTB from the mainline ?
 
--- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
-member
-of Code Aurora Forum, hosted by The Linux Foundation
+> I've did my test with default defconfig and current linux-next,
+> v5.4-rc1, v5.3 and v4.19. In all cases the result is the same. I'm
+> booting kernel using a precompiled uboot from Linaro release and TFTP
+> download.
+>
+
+OK, I use UEFI+GRUB but I don't think that should cause any issue.
+
+> Is this a known issue? Other ARM64 boards I have access to (Samsung TM2e
+> and RaspberryPi3) boots fine with the same kernel image.
+>
+
+Not that I am aware of. If you could send me the bootlog with defconfig
+I can take a look and see if I get any clue.
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
