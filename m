@@ -2,86 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A702D431E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 16:41:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F973D432A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 16:43:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bl+JYgEWvN+NGRpB5/F+d0V6uYwTZbHidJr1MY7NLLw=; b=gMODO3tlAsXzPB
-	JVnfMHS2OHHzVfNTc0kLftrEVfScLyG1FxDQsVPyHsiZgC66asfFcmH5R0iV8LCtD4/8pXh0ZRBhJ
-	8PUHDoUlLlOoOp7BVkuU3RRVnjUciLjgKSBUYtes8LaNRTiiOy1La/5QbAVoRxNWePFfqi8URlLjT
-	zDOkbbzpM5K9g5SdLyueOifuKKJ4wR5vU4Rq2vN4e8DWdEUjN5r94BCfXI2VH9I2PFsspmVlKa3EI
-	CYeXj6pQr7GtsGVfuEHibenQxLfw70wZN2HxynqBZXsUOuTmO9alDfdQCRJuG/l56WcVDUV9l0LUx
-	wPLkabjNLP4oAl6NRRAQ==;
+	List-Owner; bh=pkvVrol0uxp7A78g7b2zhurXafwXIr2k96vqizEdgGw=; b=CufY6pZ007aqWu
+	EJxCimK/xjEI8kqFJ+Dm8itk/k+AmH3MTztpf7B0Xqt+5tPvGvGAB2XrtiM746cw4mROsudRppIUO
+	SxVO3P3dKB2MPiUkL8Xe0eLSa28nHnig4vIUX4Duyw1dn9ZIo6ZgV2xVtsWV/bbfU+OBZqjV4qpRo
+	Bb5pN6kkyOoPNDStMYGXR3ykF07Lo6odiZEtkJQIay/FKMDMOwHpqTRSV0GBxvrvE/VaEmzfJeBbl
+	BCBPiw+15VS/3H+MFHVDznUEUAPjTfaQVhtmAGPwqf5TghMKISHTnd8sCopjgIkb0uCmjJLrljO6+
+	XxQ5sUzSivnI/0r6aZJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIw6u-0006wF-V4; Fri, 11 Oct 2019 14:41:40 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIw6k-0006vm-Ix
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 14:41:32 +0000
-Received: by mail-ot1-f66.google.com with SMTP id c10so8151483otd.9
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 11 Oct 2019 07:41:30 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=TKLBwidlY8Z3JTq5wxCnvHpvRsZmPGpUIR8JC3vLZ08=;
- b=KlEQNpKYlXx2k0kOkGWc+5zpJFtcHkmZ74xCzOUzeV5cerrLMBzvigcqSl3/AHiD8M
- /pB1dbr2RmY+Kl9UsiTYGqZZmt8N5zWowYzC5Hm9RlfssBDTPqGeEbHrSK5Ek0VpwZ98
- f5JBksm1kdebQzfIXew6rRX6sIMmSpPDB3pns3dm9m5InHP97NVp4lQ0ElvzueNJ+bvJ
- BTCvtUmBg+7XNdo6D8IRzAHH7zgofHrD21upm2B0LtvvRhBrg0O3EoQIJzi2PspxElRy
- LjKsdHYkjgxXtkdQTJ6/Tg1pib+D09rkJ/X/AZVi/1ZO8TSukwA9yETLbVpne6fwhtpQ
- qd5w==
-X-Gm-Message-State: APjAAAXNq715O/GD5Wq/eEh0dKFJMrHFaWCixVp6lwF54P2UcNNLDWCd
- Ijy2RWRuSD+NEcDmENhtfA==
-X-Google-Smtp-Source: APXvYqzPDmMOHoPxKw0K4wdBgFxJQJ0ExuW4XED8tlQ8I9P4txCzqKFc3qva5tX8kT2AJFqdUPh2mQ==
-X-Received: by 2002:a9d:6d11:: with SMTP id o17mr9430840otp.333.1570804889780; 
- Fri, 11 Oct 2019 07:41:29 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id r3sm2642930otk.31.2019.10.11.07.41.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 11 Oct 2019 07:41:29 -0700 (PDT)
-Date: Fri, 11 Oct 2019 09:41:28 -0500
-From: Rob Herring <robh@kernel.org>
-To: Jernej Skrabec <jernej.skrabec@siol.net>
-Subject: Re: [PATCH v2 4/6] dt-bindings: media: Add Allwinner H3 Deinterlace
- binding
-Message-ID: <20191011144128.GA24245@bogus>
-References: <20190929161653.160158-1-jernej.skrabec@siol.net>
- <20190929161653.160158-5-jernej.skrabec@siol.net>
+	id 1iIw84-0007ES-AR; Fri, 11 Oct 2019 14:42:52 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iIw7t-0007Di-NE
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 14:42:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7DC51142F;
+ Fri, 11 Oct 2019 07:42:40 -0700 (PDT)
+Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5F2DC3F68E;
+ Fri, 11 Oct 2019 07:42:39 -0700 (PDT)
+Date: Fri, 11 Oct 2019 15:42:33 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Marek Szyprowski <m.szyprowski@samsung.com>
+Subject: Re: ARM Juno r1 + CONFIG_PROVE_LOCKING=y => boot failure
+Message-ID: <20191011144233.GA2438@bogus>
+References: <CGME20191011092604eucas1p1ca11ab9c4c7508776914b0eb4f35e69b@eucas1p1.samsung.com>
+ <33a83dce-e9f0-7814-923b-763d33e70257@samsung.com>
+ <20191011100521.GA5122@bogus>
+ <7655fb41-cd13-0bc4-e656-040e0875bab8@arm.com>
+ <2bf88cd2-9c4f-11dc-4b70-f717de891cff@samsung.com>
+ <20191011131058.GA26061@bogus>
+ <0b02b15f-38be-7a63-14cc-eabd288782eb@samsung.com>
+ <20191011134354.GA31516@bogus>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190929161653.160158-5-jernej.skrabec@siol.net>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191011134354.GA31516@bogus>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_074130_625718_59534BCB 
-X-CRM114-Status: GOOD (  18.06  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191011_074241_802962_3D233821 
+X-CRM114-Status: GOOD (  19.83  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,120 +67,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org, mripard@kernel.org,
- hverkuil@xs4all.nl, wens@csie.org, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
+ LKML <linux-kernel@vger.kernel.org>, James Morse <james.morse@arm.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Sep 29, 2019 at 06:16:51PM +0200, Jernej Skrabec wrote:
-> Allwinner H3 Deinterlace core is used for deinterlacing interlaced video
-> content. Core can also be found on some later SoCs, like H5 and R40.
-> 
-> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> ---
->  .../media/allwinner,sun8i-h3-deinterlace.yaml | 75 +++++++++++++++++++
->  1 file changed, 75 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun8i-h3-deinterlace.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/media/allwinner,sun8i-h3-deinterlace.yaml b/Documentation/devicetree/bindings/media/allwinner,sun8i-h3-deinterlace.yaml
-> new file mode 100644
-> index 000000000000..55a5d4e4f0f9
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/allwinner,sun8i-h3-deinterlace.yaml
-> @@ -0,0 +1,75 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/arm/allwinner,sun8i-h3-deinterlace.yaml#
+On Fri, Oct 11, 2019 at 02:43:54PM +0100, Sudeep Holla wrote:
+> On Fri, Oct 11, 2019 at 03:15:32PM +0200, Marek Szyprowski wrote:
+> > Hi Sudeep
+> >
+> > On 11.10.2019 15:10, Sudeep Holla wrote:
+> > > On Fri, Oct 11, 2019 at 03:02:42PM +0200, Marek Szyprowski wrote:
+> > >> Hi James,
+> > >>
+> > >> On 11.10.2019 12:38, James Morse wrote:
+> > >>> Hi guys,
+> > >>>
+> > >>> On 11/10/2019 11:05, Sudeep Holla wrote:
+> > >>>> On Fri, Oct 11, 2019 at 11:26:04AM +0200, Marek Szyprowski wrote:
+> > >>>>> Recently I've got access to ARM Juno R1 board and did some tests with
+> > >>>>> current mainline kernel on it. I'm a bit surprised that enabling
+> > >>>>> CONFIG_PROVE_LOCKING causes a boot failure on this board. After enabling
+> > >>>>> this Kconfig option, I get no single message from the kernel, although I
+> > >>>>> have earlycon enabled.
+> > >>>> I don't have Juno R1 but I tried defconfig + CONFIG_PROVE_LOCKING and
+> > >>>> it boots fine.
+> > >>> I just tried this on my r1, v5.4-rc1 with this configuration worked just fine.
+> > >>>
+> > >>> My cmdline is:
+> > >>> | root=/dev/sda6 loglevel=9 earlycon=pl011,0x7ff80000 hugepagesz=2M hugepages=512
+> > >>> | crashkernel=1G console=ttyAMA0 resume=/dev/sda2 no_console_suspend efi=debug
+> > >>>
+> > >> That is a bit strange. Here is a boot log from v5.4-rc1 with pure
+> > >> defconfig: https://paste.debian.net/1105851/
+> > >>
+> > > I see from the boot log that both Image.gz and dtb being loaded at the
+> > > same address 0x82000000, will u-boot uncompress it elsewhere after loading
+> > > it ? Just for my understanding.
+> >
+> > tftp downloads Image.gz to 0x82000000, then decompress it to
+> > $kernel_addr to save transfer time
+> >
+> > my bootcmd is:
+> >
+> > tftp ${fdt_addr} juno/Image.gz; unzip ${fdt_addr} ${kernel_addr}; tftp
+> > ${fdt_addr} juno/juno-r1.dtb; booti ${kernel_addr} - ${fdt_addr};
+> >
 
-Documentation/devicetree/bindings/media/allwinner,sun8i-h3-deinterlace.yaml: $id: path/filename 'arm/allwinner,sun8i-h3-deinterlace.yaml' doesn't match actual filename
-Documentation/devicetree/bindings/Makefile:12: recipe for target 'Documentation/devicetree/bindings/media/allwinner,sun8i-h3-deinterlace.example.dts' failed
-make[1]: *** [Documentation/devicetree/bindings/media/allwinner,sun8i-h3-deinterlace.example.dts] Error 1
-Makefile:1282: recipe for target 'dt_binding_check' failed
-make: *** [dt_binding_check] Error 2
+If your ${kernel_addr}=0x80000000 or within first 32MB, then it will override
+DTB with the image size I had(35MB). Even if kernel fits 32MB, there is a
+chance that .bss lies beyond 32MB and it will be cleared during boot resulting
+in DTB corruption(Andre P reminded me this)
 
-With that fixed,
+Can you try setting $${fdt_addr} to 0x84000000 to begin with ?
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+--
+Regards,
+Sudeep
 
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Allwinner H3 Deinterlace Device Tree Bindings
-> +
-> +maintainers:
-> +  - Chen-Yu Tsai <wens@csie.org>
-> +  - Maxime Ripard <mripard@kernel.org>
-> +
-> +description: |-
-> +  The Allwinner H3 and later has a deinterlace core used for
-> +  deinterlacing interlaced video content.
-> +
-> +properties:
-> +  compatible:
-> +    const: allwinner,sun8i-h3-deinterlace
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: Deinterlace interface clock
-> +      - description: Deinterlace module clock
-> +      - description: Deinterlace DRAM clock
-> +
-> +  clock-names:
-> +    items:
-> +      - const: bus
-> +      - const: mod
-> +      - const: ram
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +  interconnects:
-> +    maxItems: 1
-> +
-> +  interconnect-names:
-> +    const: dma-mem
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - clocks
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/clock/sun8i-h3-ccu.h>
-> +    #include <dt-bindings/reset/sun8i-h3-ccu.h>
-> +
-> +    deinterlace: deinterlace@1400000 {
-> +        compatible = "allwinner,sun8i-h3-deinterlace";
-> +        reg = <0x01400000 0x20000>;
-> +        clocks = <&ccu CLK_BUS_DEINTERLACE>,
-> +                 <&ccu CLK_DEINTERLACE>,
-> +                 <&ccu CLK_DRAM_DEINTERLACE>;
-> +        clock-names = "bus", "mod", "ram";
-> +        resets = <&ccu RST_BUS_DEINTERLACE>;
-> +        interrupts = <GIC_SPI 93 IRQ_TYPE_LEVEL_HIGH>;
-> +        interconnects = <&mbus 9>;
-> +        interconnect-names = "dma-mem";
-> +    };
-> +
-> +...
-> -- 
-> 2.23.0
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
