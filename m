@@ -2,86 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32E9CD3E3D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 13:21:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B88AD3E6D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 13:27:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VFZpsUQ1DEUdg2LF8VIMxd3cOf9c+y/tdOAmwPUQ3gI=; b=bQYMTc2+Ia3JU5
-	tWIZBKQS3qnjv7aHRcPAtlXkvdwN8w/7QozEmjFuAGn/W88RQEFp6eiqlGsYz+RLLnSTpVOCMRKcu
-	vSYlkyATvrYRi459OE1Zon9UiKfkXsc9QUFql5A/0+DZFFxByPWy21ZWmqOA3X/lLHrGpvYvxF0NZ
-	ecdRSo3wvM6S1byVU7bW8MHUO8vUL4P4kZ9wIi0/PkmBxk05sxwKWTTEm70d21p+DD1RTajCgv0rp
-	QjSB1MSFLO1FjQmCeLkGgQKIEUROnxRs/jKTUw+N9WT4BXHX+8juElUbFDILs6KwADv0f47/8z6lP
-	9l9fJbiG7aiywkm+QIlQ==;
+	List-Owner; bh=INI7GC62gcya5arIaw0ZDo9myqMJ+9vu9C43M3p6MGI=; b=ngBhaJhJJnT0Zi
+	seChtIIujIJV4GLAoI2QRkIiSS9XUoxqQ0wRTlIIYq0WHvCgGLuv9gUN9b5FMFcqPeSBiMbUROWI+
+	PPl0uYgbPH0Jo4n3H3OvPMQs1a5sBC85FG0Tb57Bi+bRrlsN1Ct+lBkWWJ0xmfSyOUiCRDytzHaIq
+	CQyK52IjNl3qbJt4KtdGm2wryDZaays5Fq7XaSK3VC+Gn+iWyM+31H06vEBfRtsy9N5rbDNz6bOCH
+	yJ8MyEEX8rBAUWwhjRMuQ3wNZpT5sHnrzD2o+ui22iPVPuRYnet+kMJPJKsbKcG7xoClD7avstfk5
+	RjnlVJ7x5mI02B93lJ/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIsym-0008AP-UY; Fri, 11 Oct 2019 11:21:04 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIsyc-00089V-9x
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 11:20:59 +0000
-Received: by mail-lj1-x241.google.com with SMTP id q64so9402503ljb.12
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 11 Oct 2019 04:20:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=EtNnfZSNIM+FE/Ouxm1KBXCTSzFBGzlbFpsvpsa6fzI=;
- b=D2OqE7PnNRoUmWNbgTg4s/KS8g6W7Ej8Lz/BB12Px1dRFIkn9T/mePVU+H/hIHV56J
- 64v5oYuvA2yBVwR0KjYpdXT/oXajCzphVepm43ADpOGt2tkvfG7g+ZFrAf7vUYqBiwfu
- EjGV7zGmT3Co3lrzt/KGm2dHBVc8id1bTLHciUJIAOh8xvd9figVUKdPFEFHeguDB88M
- MtLMtaaxHw6QUzwR1PJNwwgfViWo4DK6326sFZVy7QzQuw4tbK0TeUnOf345R0Q4EuZa
- CAzVC4ECxAv5aVbB5KLueckmLSFulPvJYY6CEPwIjImSvxfmQszWMcLYYEHWMSGewiS8
- AtEA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=EtNnfZSNIM+FE/Ouxm1KBXCTSzFBGzlbFpsvpsa6fzI=;
- b=Zs+fj0t3uWEHQ8S2CukvDDtb3lDmmeJVOQ1fr9nKAmEsM/NGVYUL9qK6LzRFaFyDk8
- M6Ird+2d9U75s0c/pygoIfxcXdxO0+VHWPZpUf0lIT+jpQJ2YFjqipnlx0RUQkDEynIp
- 7ap1tIb/MHSorMLJ/uPmTy1gxYoABGluwEZ2afPowxb5NWYuTxiOqVJlNeQUJygaCy6x
- DAAZejFClIZVvuE3xpkk+ieIGi5eNfTq/4KiDLo0eukdQ64biebDkTzxUhcv6FAuN5BC
- Xw1TafLoLvEBQysiClThNN2nu5DicgbsRm/Hv/Qymg1E4kJO3x5F+kbOy+mv7cHdWB2y
- RYAQ==
-X-Gm-Message-State: APjAAAXaAYlicLLA09h4BoLa1PQ8zX745M+T94cA3cjGwGfqoj6RFVXq
- 5AAFHKO4sjKLC+BCnvCEZdElaa/OSipg67Sc5+c=
-X-Google-Smtp-Source: APXvYqzE/zVDPjPyTom42qRHj6q37hTnXXPuz3aalIoov7655nQZiN5T5dR7/JP1C+tRL0z2N/CI/hjBxsug7ERVx48=
-X-Received: by 2002:a2e:42d6:: with SMTP id h83mr8801587ljf.21.1570792852255; 
- Fri, 11 Oct 2019 04:20:52 -0700 (PDT)
+	id 1iIt4U-0002Bk-0t; Fri, 11 Oct 2019 11:26:58 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iIt4K-0002B0-48
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 11:26:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 559B828;
+ Fri, 11 Oct 2019 04:26:47 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6B85E3F703;
+ Fri, 11 Oct 2019 04:26:46 -0700 (PDT)
+Date: Fri, 11 Oct 2019 12:26:44 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH 2/3] arm64: nofpsmid: Clear TIF_FOREIGN_FPSTATE flag for
+ early tasks
+Message-ID: <20191011112642.GF27757@arm.com>
+References: <20191010171517.28782-1-suzuki.poulose@arm.com>
+ <20191010171517.28782-3-suzuki.poulose@arm.com>
 MIME-Version: 1.0
-References: <1570784940-5965-1-git-send-email-Anson.Huang@nxp.com>
-In-Reply-To: <1570784940-5965-1-git-send-email-Anson.Huang@nxp.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Fri, 11 Oct 2019 08:20:43 -0300
-Message-ID: <CAOMZO5D_Yxzq83zKGM=qUbBjP3c4UB9_GRBAAcMDEvzTYMuyfA@mail.gmail.com>
-Subject: Re: [PATCH] clk: imx7ulp: Correct DDR clock mux options
-To: Anson Huang <Anson.Huang@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <20191010171517.28782-3-suzuki.poulose@arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_042057_736247_85B0970D 
-X-CRM114-Status: UNSURE (   8.51  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191011_042648_255686_F6D84854 
+X-CRM114-Status: GOOD (  27.41  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,30 +62,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>,
- "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>, NXP Linux Team <Linux-imx@nxp.com>,
- Sascha Hauer <kernel@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, will@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 11, 2019 at 6:11 AM Anson Huang <Anson.Huang@nxp.com> wrote:
->
-> In the latest reference manual Rev.0,06/2019, the DDR clock mux
-> is extended to 2 bits, and the clock options are also changed,
-> correct them accordingly.
->
-> Fixes: b1260067ac3d ("clk: imx: add imx7ulp clk driver")
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+On Thu, Oct 10, 2019 at 06:15:16PM +0100, Suzuki K Poulose wrote:
+> We detect the absence of FP/SIMD after we boot the SMP CPUs, and by then
+> we have kernel threads running already with TIF_FOREIGN_FPSTATE set which
+> could be inherited by early userspace applications (e.g, modprobe triggered
+> from initramfs). This could end up in the applications stuck in
+> do_nofity_resume() as we never clear the TIF flag, once we now know that
+> we don't support FP.
+> 
+> Fix this by making sure that we clear the TIF_FOREIGN_FPSTATE flag
+> for tasks which may have them set, as we would have done in the normal
+> case, but avoiding touching the hardware state (since we don't support any).
+> 
+> Fixes: 82e0191a1aa11abf ("arm64: Support systems without FP/ASIMD")
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> ---
+>  arch/arm64/kernel/fpsimd.c | 26 ++++++++++++++++----------
+>  1 file changed, 16 insertions(+), 10 deletions(-)
+> 
+> diff --git a/arch/arm64/kernel/fpsimd.c b/arch/arm64/kernel/fpsimd.c
+> index 37d3912cfe06..dfcdd077aeca 100644
+> --- a/arch/arm64/kernel/fpsimd.c
+> +++ b/arch/arm64/kernel/fpsimd.c
+> @@ -1128,12 +1128,19 @@ void fpsimd_bind_state_to_cpu(struct user_fpsimd_state *st, void *sve_state,
+>   */
+>  void fpsimd_restore_current_state(void)
+>  {
+> -	if (!system_supports_fpsimd())
+> -		return;
+> -
+>  	get_cpu_fpsimd_context();
+> -
+> -	if (test_and_clear_thread_flag(TIF_FOREIGN_FPSTATE)) {
+> +	/*
+> +	 * For the tasks that were created before we detected the absence of
+> +	 * FP/SIMD, the TIF_FOREIGN_FPSTATE could be set via fpsimd_thread_switch()
+> +	 * and/or could be inherited from the parent(init_task has this set). Even
+> +	 * though userspace has not run yet, this could be inherited by the
+> +	 * processes forked from one of those tasks (e.g, modprobe from initramfs).
+> +	 * If the system doesn't support FP/SIMD, we must clear the flag for the
+> +	 * tasks mentioned above, to indicate that the FPSTATE is clean (as we
+> +	 * can't have one) to avoid looping for ever to clear the flag.
+> +	 */
+> +	if (test_and_clear_thread_flag(TIF_FOREIGN_FPSTATE) &&
+> +	    system_supports_fpsimd()) {
 
-Reviewed-by: Fabio Estevam <festevam@gmail.com>
+I'm not too keen on this approach: elsewhere we just stub out all the
+FPSIMD handling logic if !system_supports_fpsimd() -- I think we should
+be using this test everywhere rather than relying on TIF_FOREIGN_FPSTATE.
+
+Rather, I feel that TIF_FOREIGN_FPSTATE means "if this is a user task
+and this task is current() and the system supports FPSIMD at all, this
+task's FPSIMD state is not loaded in the cpu".
+
+I think we should ensure that any check on TIF_FOREIGN_FPSTATE is
+shadowed by a check on system_supports_fpsimd() somewhere.  This already
+exists in many places -- we just need to fill in the missing ones.
+
+fpsimd_save() is a backend function that should only be called if
+system_supports_fpsimd(), so that should not need any check internally,
+but we should make sure that calls to this function are appropriately
+protected with in if (system_supports_fpsimd()).
+
+For other maintenance functions intended for outside callers:
+
+ * fpsimd_bind_task_to_cpu()
+ * fpsimd_bind_state_to_cpu()
+ * fpsimd_flush_task_state()
+ * fpsimd_save_and_flush_cpu_state()
+
+the situation is less clear.  Does is make sense to call these at all
+if !system_supports_fpsimd()?  I'm not currently sure.  We could at
+least drop some WARN_ON() into these to check, after revieweing their
+callsites.
+
+>  		task_fpsimd_load();
+>  		fpsimd_bind_task_to_cpu();
+>  	}
+> @@ -1148,17 +1155,16 @@ void fpsimd_restore_current_state(void)
+>   */
+>  void fpsimd_update_current_state(struct user_fpsimd_state const *state)
+>  {
+> -	if (!system_supports_fpsimd())
+> -		return;
+> -
+>  	get_cpu_fpsimd_context();
+>  
+>  	current->thread.uw.fpsimd_state = *state;
+>  	if (system_supports_sve() && test_thread_flag(TIF_SVE))
+>  		fpsimd_to_sve(current);
+
+Why should we do this stuff on a system that doesn't support FP?
+
+> -	task_fpsimd_load();
+> -	fpsimd_bind_task_to_cpu();
+> +	if (system_supports_fpsimd()) {
+> +		task_fpsimd_load();
+> +		fpsimd_bind_task_to_cpu();
+> +	}
+>  
+>  	clear_thread_flag(TIF_FOREIGN_FPSTATE);
+
+[...]
+
+Not in scope for a stable fix, but:
+
+It would be interesting to try to strip out TIF_FOREIGN_FPSTATE
+entirely and do some benchmarks and irq latency measurements:
+
+TIF_FOREIGN_FPSTATE is just a cached copy of the wrong_task || wrong_cpu
+condition defined in fpsimd_thread_switch() --
+
+That means we have to do maintenance on it all over the place to keep
+it in sync with the condition it represents -- this has proven to be
+a source of complexity and subtle bugs, as well as making the code
+fragile to maintain.
+
+The only point of all this is so that there is a thread flag for
+do_notify_resume() to check.  Now that do_notify_resume() is C it would
+be trivial to check the real condition -- there would be a cost
+increase and interrupt latency increase here, but maybe not that much.
+
+This wouldn't solve the whole problem, but it might remove a layer of
+complexity.
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
