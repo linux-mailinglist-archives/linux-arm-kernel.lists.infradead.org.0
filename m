@@ -2,39 +2,41 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A692BD3FC1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 14:40:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6ECDFD3FC8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 14:41:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VeLx83W68OL/aAU+w7xfHdo+yj7Y0m0+vJL63Bvi04I=; b=BCn3N/hg75QKOW
-	pw1FCfDaaN3jc3LJYEYmvkYatmkxw39oFDWlANaKwpmdB8AzsovLlU2sxbn0wXu73AnHsaywZ1nrv
-	wb4zbvrBviWPy2tjGHMUfW6Kyx/Fq/rAksgNXuzb7rXnL8erFEu00XhrNXC4vf8CUHT9T6zV2oMtc
-	HGW9NsAw+hNNBO8Z8jxqWRCfCjU1dDuR0iN1IGvD+P/w+8r//4tQRZFpFhYgQMUEfrCW6PSxIbpvJ
-	Nuj9C4FJ8GK7kiX0pHX6CAmXgogCBSWAX/OQBv3g/7uufYFWpKEDt9jEID/FimA0pltG3U2hInPSF
-	9HTBekp8JeDi28IVTRrQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=40zcnFFbir1v3moGXGN0q/y6jeXJ9VzZUqCNTPOhEDg=; b=C3xRSlopWbgt/Q
+	K/t1D9+oFH86NBn3Zi2NjoKTCxGRC6kvYRSYTLgSgSEjcvQVZECpHaVNnvkmRU4oYHLYt1xhSoqtX
+	r2S+ZvgqAH9fiw0HXotKa/+mpMsrCGJDvjQIp451wGY3KYZxP+/4dEuI0gHiUaYcObc8hQEmv30pm
+	E+13giMwUnLt+kWhShYK1c7pxYhxfV14Z3hDfU0Qei6jSBGkk7iboh1kWGEPLatOCkZUHIIPi0J9o
+	+6SuHr4uflShuq0X/zEtnKvszHmqkZAl2x2ACfz8ku1lUyFd2UtFG1jVMsM6oMFKS/qiyd9gb4vOf
+	Oirzw5ANI0hwvbryt8DQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIuDu-0006qx-AA; Fri, 11 Oct 2019 12:40:46 +0000
+	id 1iIuEZ-0007ib-Ml; Fri, 11 Oct 2019 12:41:27 +0000
 Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIuDV-0006fp-G2
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 12:40:23 +0000
+ id 1iIuDV-0006fo-Fz
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 12:40:24 +0000
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by cheepnis.misterjones.org with esmtpsa
  (TLSv1.2:DHE-RSA-AES128-GCM-SHA256:128) (Exim 4.80)
  (envelope-from <maz@kernel.org>)
- id 1iIuDO-00062U-Br; Fri, 11 Oct 2019 14:40:14 +0200
+ id 1iIuDO-00062U-Tv; Fri, 11 Oct 2019 14:40:15 +0200
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH v3 0/4] KVM: arm64: Assorted PMU emulation fixes
-Date: Fri, 11 Oct 2019 13:39:50 +0100
-Message-Id: <20191011123954.31378-1-maz@kernel.org>
+Subject: [PATCH v3 1/4] KVM: arm64: pmu: Fix cycle counter truncation
+Date: Fri, 11 Oct 2019 13:39:51 +0100
+Message-Id: <20191011123954.31378-2-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191011123954.31378-1-maz@kernel.org>
+References: <20191011123954.31378-1-maz@kernel.org>
 MIME-Version: 1.0
 X-SA-Exim-Connect-IP: 62.31.163.78
 X-SA-Exim-Rcpt-To: linux-arm-kernel@lists.infradead.org,
@@ -45,9 +47,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_054021_694682_D1312ECA 
-X-CRM114-Status: UNSURE (   9.24  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191011_054021_701283_F202DD1D 
+X-CRM114-Status: GOOD (  13.53  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -75,38 +76,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-I recently came across a number of PMU emulation bugs, all which can
-result in unexpected behaviours in an unsuspecting guest. The first
-two patches already have been discussed on the list, but I'm including
-them here as part of a slightly longer series.
+When a counter is disabled, its value is sampled before the event
+is being disabled, and the value written back in the shadow register.
 
-The third patch is new as of v2, and fixes a bug preventing chained
-events from ever being used.
+In that process, the value gets truncated to 32bit, which is adequate
+for any counter but the cycle counter (defined as a 64bit counter).
 
-The last patch fixes an issue that has been here from day one, where
-we confuse architectural overflow of a counter and perf sampling
-period, and uses a terrible hack^W^W creative way to interact with the
-underlying PMU driver so that we can reload the period when handling
-the overflow.
+This obviously results in a corrupted counter, and things like
+"perf record -e cycles" not working at all when run in a guest...
+A similar, but less critical bug exists in kvm_pmu_get_counter_value.
 
-* From v2 [1]
-  - Dropped PMUv3 patch and moved the logic into the KVM code
-  - Properly use UPDATE/RELOAD
-  - Collected Andrew's RB
+Make the truncation conditional on the counter not being the cycle
+counter, which results in a minor code reorganisation.
 
-[1] https://lore.kernel.org/kvmarm/20191008160128.8872-1-maz@kernel.org/
+Fixes: 80f393a23be6 ("KVM: arm/arm64: Support chained PMU counters")
+Reviewed-by: Andrew Murray <andrew.murray@arm.com>
+Reported-by: Julien Thierry <julien.thierry.kdev@gmail.com>
+Signed-off-by: Marc Zyngier <maz@kernel.org>
+---
+ virt/kvm/arm/pmu.c | 22 ++++++++++++----------
+ 1 file changed, 12 insertions(+), 10 deletions(-)
 
-Marc Zyngier (4):
-  KVM: arm64: pmu: Fix cycle counter truncation
-  arm64: KVM: Handle PMCR_EL0.LC as RES1 on pure AArch64 systems
-  KVM: arm64: pmu: Set the CHAINED attribute before creating the
-    in-kernel event
-  KVM: arm64: pmu: Reset sample period on overflow handling
-
- arch/arm64/kvm/sys_regs.c |  4 ++++
- virt/kvm/arm/pmu.c        | 48 ++++++++++++++++++++++++++++-----------
- 2 files changed, 39 insertions(+), 13 deletions(-)
-
+diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
+index 362a01886bab..c30c3a74fc7f 100644
+--- a/virt/kvm/arm/pmu.c
++++ b/virt/kvm/arm/pmu.c
+@@ -146,8 +146,7 @@ u64 kvm_pmu_get_counter_value(struct kvm_vcpu *vcpu, u64 select_idx)
+ 	if (kvm_pmu_pmc_is_chained(pmc) &&
+ 	    kvm_pmu_idx_is_high_counter(select_idx))
+ 		counter = upper_32_bits(counter);
+-
+-	else if (!kvm_pmu_idx_is_64bit(vcpu, select_idx))
++	else if (select_idx != ARMV8_PMU_CYCLE_IDX)
+ 		counter = lower_32_bits(counter);
+ 
+ 	return counter;
+@@ -193,7 +192,7 @@ static void kvm_pmu_release_perf_event(struct kvm_pmc *pmc)
+  */
+ static void kvm_pmu_stop_counter(struct kvm_vcpu *vcpu, struct kvm_pmc *pmc)
+ {
+-	u64 counter, reg;
++	u64 counter, reg, val;
+ 
+ 	pmc = kvm_pmu_get_canonical_pmc(pmc);
+ 	if (!pmc->perf_event)
+@@ -201,16 +200,19 @@ static void kvm_pmu_stop_counter(struct kvm_vcpu *vcpu, struct kvm_pmc *pmc)
+ 
+ 	counter = kvm_pmu_get_pair_counter_value(vcpu, pmc);
+ 
+-	if (kvm_pmu_pmc_is_chained(pmc)) {
+-		reg = PMEVCNTR0_EL0 + pmc->idx;
+-		__vcpu_sys_reg(vcpu, reg) = lower_32_bits(counter);
+-		__vcpu_sys_reg(vcpu, reg + 1) = upper_32_bits(counter);
++	if (pmc->idx == ARMV8_PMU_CYCLE_IDX) {
++		reg = PMCCNTR_EL0;
++		val = counter;
+ 	} else {
+-		reg = (pmc->idx == ARMV8_PMU_CYCLE_IDX)
+-		       ? PMCCNTR_EL0 : PMEVCNTR0_EL0 + pmc->idx;
+-		__vcpu_sys_reg(vcpu, reg) = lower_32_bits(counter);
++		reg = PMEVCNTR0_EL0 + pmc->idx;
++		val = lower_32_bits(counter);
+ 	}
+ 
++	__vcpu_sys_reg(vcpu, reg) = val;
++
++	if (kvm_pmu_pmc_is_chained(pmc))
++		__vcpu_sys_reg(vcpu, reg + 1) = upper_32_bits(counter);
++
+ 	kvm_pmu_release_perf_event(pmc);
+ }
+ 
 -- 
 2.20.1
 
