@@ -2,143 +2,134 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F167D4AC0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 01:12:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56E68D4AE1
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 01:21:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lNYZIyPVByT63RUcIp4S0uaWrl+dKeakB1J9ofHTrGQ=; b=DUJzaextBivBto
-	OokrBS2CXBGicfIjU6SvOMdkLdxOLIc68+JgsD0SzPZLD34EpjN5p58TUgTgeaDeQY82YoWcrPa7B
-	viBawv0GcB9OVeKIr8K2pM/aLt2sTigfZ1ywgisMFH1YLFqwYVzY1cvAJ/BohiW5cwqyTXnZnv1wf
-	1CNLsXmgf/Px6HKNZTAh3xHTu9EiUDqRHSUCpyJxOACtLsTbfekpP8fA5rJWrEmDMSZ6ISSobN+qk
-	cTSRhWWPIDSsITauDny7HV2J9GLfhgpnbsShDRzYOyIXnL6xoIdf4muFbFcHWH4qjrDRKgcg9vTbA
-	ndtGMa7yiqojTfoojsaQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Gm01Ywtvziq0OSoPFoGLykaspEhHRIMTmJx4oQ0ZPV4=; b=h88Lp4BI2tzwxh
+	5NtqnB0A9+8Balys+vFer7uRPKDTigmy9tIWHNlzhaXY3Ib6XLtxeY1I5vsc+qQrsl/oXXXApCXNv
+	kQBxdeIfm1yx6huQTCV56lNyEkToQs81xlm0y4O419icUKpbd4gJqC/1QtbanFVaIdqdWu/umte/W
+	PUt8OZ8opcqXNpHBsL7esEAYfe+sL5TWfQl4ZLdEFEmFGeP4uCANNjXBV7Azf3qy53Drgd+zDJXNL
+	q2HzjjZX+0iVsxIwGiavRFHLRIrsAMJm/GZItU3iyVtMmN7sXVAYlWA5iMYYU4ISPpQGMLEXzm7ih
+	sW9AGN+xwkLpmHwihXwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJ44m-0005I3-0d; Fri, 11 Oct 2019 23:12:00 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1iJ4DX-0001I6-Vk; Fri, 11 Oct 2019 23:21:03 +0000
+Received: from mx0b-0016f401.pphosted.com ([67.231.156.173])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJ44c-0005He-IW; Fri, 11 Oct 2019 23:11:52 +0000
-Received: by mail-wm1-x343.google.com with SMTP id r19so11874319wmh.2;
- Fri, 11 Oct 2019 16:11:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=efzChAjcMaur2djFBEkzDqpom0P+h83judE3v1QU4iE=;
- b=lrIhgvC+pK3qA2WuAMziOUN1IkKa3wseK8E/+LSHYj8E/9F1VYPZLrAIZWmO5q7IT8
- JdEsa52gLUW3AJh2jupXhfitY21Sfc8lvLiM6pAdiz1BcasMewlLJL9sUy6BmKyGj2nL
- +yN9YlTCVAzhGA6JyCq5pJtgsfc27kB/Pe+vc8RaYOWdb9Ao4Oy6brN6EWnVbg8wuxD+
- KnnthSjC6EhicNSpOo3ijU5HtIOXmGor1f8FzGcqmnAW1KkA8eU/SRwRWtbxM7/oU2wK
- ANs9JOEiIEGTfUIs9E3k1iXVKL5YEbyupmOE//lnVbDWBaBR0EN0NQF4mW4rctIPxv8I
- 0qLw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=efzChAjcMaur2djFBEkzDqpom0P+h83judE3v1QU4iE=;
- b=BnqvCi/gck0ixaXIMHE/7Zx59Eg3Bmqjyhx1RxTqlLOaKVkmA3115R8XU4gKN21NHe
- /qVABPE0lt4/FqNlUcvKeNLeghZIZau3XqqfmW6DMUkAM+bu1taIz/b9Aval4QO/7/ko
- uV6NZjHQKuHpY0bLLPvwIKeNlb9HZCVJV57vbeTlQMfWRUqASGfcZ8dud1f8BYFQ86j8
- laL8l7RWgXuFr9MICONmfoTd/sFAkasAeEBbAKJKd9eesaHaSZJWn2rzn3SNjvjKlymE
- rw4HNDiQZgOWMGIEMfiBrtSlT2t0cQpHBU5Zc4muxPqkiTnZOFdlSpvNHrVAvlUdTIgm
- 9mkw==
-X-Gm-Message-State: APjAAAX/gX3zn0zHU++4mYHTtIvV1zzeHXfeEIXuxD6f6Afw6e5IH85O
- 8XcUmGL3yWoH0cyytZeMt1Q=
-X-Google-Smtp-Source: APXvYqwAWs6X8rDrgVPqyTjuyuiXiGYXu199wVSHYh9nHhjDLkdvVbEfciz8EBLe8DkZjRTCtXscSw==
-X-Received: by 2002:a05:600c:2214:: with SMTP id
- z20mr5177277wml.10.1570835508326; 
- Fri, 11 Oct 2019 16:11:48 -0700 (PDT)
-Received: from [10.67.50.53] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id h17sm8297602wmb.33.2019.10.11.16.11.44
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 11 Oct 2019 16:11:47 -0700 (PDT)
-Subject: Re: [PATCH v1 3/3] ARM: dts: bcm2711: Enable GENET support for the
- RPi4
-To: Stefan Wahren <wahrenst@gmx.net>, matthias.bgg@kernel.org,
- Florian Fainelli <f.fainelli@gmail.com>,
- "David S . Miller" <davem@davemloft.net>
-References: <20191011184822.866-1-matthias.bgg@kernel.org>
- <20191011184822.866-4-matthias.bgg@kernel.org>
- <dfe9062b-1960-f67b-2a9e-864c0680f5d3@gmx.net>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <40970bd1-f461-ddde-aa51-346ad04240c9@gmail.com>
-Date: Fri, 11 Oct 2019 16:11:36 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <dfe9062b-1960-f67b-2a9e-864c0680f5d3@gmx.net>
+ id 1iJ4DP-0001HS-9j
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 23:20:57 +0000
+Received: from pps.filterd (m0045851.ppops.net [127.0.0.1])
+ by mx0b-0016f401.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x9BNFOs1004069; Fri, 11 Oct 2019 16:20:44 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
+ h=from : to : cc :
+ subject : date : message-id : references : in-reply-to : content-type :
+ content-id : content-transfer-encoding : mime-version; s=pfpt0818;
+ bh=9vllEG0H9R5sECqHUAeaiZZCiAY7+VTkpraJnjiQ1U0=;
+ b=ZyNTtrw6PCHW3kS4w6TxisjPoBFRo2XPCtzLutJhpTrxFk4hkn8X/HSsttO8CFKChG2f
+ yG4dy4sCS/PImO5UUE1hZWah5NeCjPNQdL9oymmVtY5dz07oJT5y6BCiEyq69PobJ8+A
+ u7dzseAwmWIrhPDjNElfWIHFrwd1xrnuzLPyCaj+jFEtIUdB5Uff7war265kta0BGW3I
+ noAc/iHm0PxTsYR4BCmkPXYP3KDOFEaAeAsiggdisdV6oGDI2o5/bAkQFYGkEZ78bQes
+ DeAPEqBEFIfm084+q+qzjEX8tMdi6ShRvxZ5mQFxpd948Hiv9B8tMJXnIdxAa5ukypLo GA== 
+Received: from sc-exch04.marvell.com ([199.233.58.184])
+ by mx0b-0016f401.pphosted.com with ESMTP id 2vhdxc3t3e-3
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
+ Fri, 11 Oct 2019 16:20:44 -0700
+Received: from SC-EXCH03.marvell.com (10.93.176.83) by SC-EXCH04.marvell.com
+ (10.93.176.84) with Microsoft SMTP Server (TLS) id 15.0.1367.3; Fri, 11 Oct
+ 2019 16:20:43 -0700
+Received: from NAM05-CO1-obe.outbound.protection.outlook.com (104.47.48.53) by
+ SC-EXCH03.marvell.com (10.93.176.83) with Microsoft SMTP Server
+ (TLS) id
+ 15.0.1367.3 via Frontend Transport; Fri, 11 Oct 2019 16:20:43 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=R9ctJWPjknorMcI/iOJCmUK/Gtvi2EUH5+BaW8GRIit5Y5svz/QTy94cGJ+7W0NYmphRsmg/z9pg8OgqclU7Jq8aGpcVkseEOdAyBdBiZOP8d6Fh5/YpWJG876/mjXJrLTDGn4fLjJJ/tglXdKiqERZ2veYezC68QPfe92pA3X4ZOTPFJjTyo2uwG9lW7RtTBlarDx+TvWZHEr7CjbnI69GVY4YowxFRAZjCIAMiwgLzDqjDm4YBlYRJwbQh5stEhZ5fJosjWxjffmQ0coALYqgYOPCpWXZv99IxEOS4VCoASqXWL5ST2jmVSoBpSjuub6avy1dSTUAYLMFqCc/UyA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=9vllEG0H9R5sECqHUAeaiZZCiAY7+VTkpraJnjiQ1U0=;
+ b=DG4x3zoaH7nxT6XNvzTq/2ccPUSnzRwnPAyjk5VAs7SnxMPfGC5VrrKJCeW2n171XOqhpYUWSpm60yHs1e5LTwlQOggmElV1mVMh+R1qxg4KlbaEtPYl+Jy/x/7yuwTdXVuQ9XOuo3Xp4l/sS7CYMVxyCHeSq51lLrXap9pwIxOqlAfFKIzE3gQD7xyLt8E4AlOXeJQEzhRMfMCT6rqVcKIGRUfvobpI7WSr2r2EdA0d+9Qmr0LSfkkGIWm7Y22WLWi1JaxbZygy26f9inGFaVrVk3/G8WVwZ4NzcOnDtQFbTMlMtfX7FDJz56kCMhUZQxE+ZSbyecut5iIbyNnHTA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=marvell.com; dmarc=pass action=none header.from=marvell.com;
+ dkim=pass header.d=marvell.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=marvell.onmicrosoft.com; s=selector2-marvell-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=9vllEG0H9R5sECqHUAeaiZZCiAY7+VTkpraJnjiQ1U0=;
+ b=GKd3wuchE3SN+4zNNw61lRDerhUAJFEQz/NNjWKII4xwFZXOH620U78UfHB8jvaT0jRZi4ind/k6v4xlkcMehF+kZfQ3s2rdjOTyiJuGiAg1yzBII7YrDbCyku/YqyuuS2GAM17eJ+SKq+bgHjKSvYPURHNR5mGoZBpIrAp+SrQ=
+Received: from CY4PR1801MB1895.namprd18.prod.outlook.com (10.171.254.153) by
+ CY4PR1801MB1879.namprd18.prod.outlook.com (10.165.90.15) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2347.16; Fri, 11 Oct 2019 23:20:41 +0000
+Received: from CY4PR1801MB1895.namprd18.prod.outlook.com
+ ([fe80::95d8:1a9a:a3b4:616b]) by CY4PR1801MB1895.namprd18.prod.outlook.com
+ ([fe80::95d8:1a9a:a3b4:616b%7]) with mapi id 15.20.2347.016; Fri, 11 Oct 2019
+ 23:20:41 +0000
+From: Jayachandran Chandrasekharan Nair <jnair@marvell.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH 0/2] Workaround for Cavium ThunderX2 erratum 219
+Thread-Topic: [PATCH 0/2] Workaround for Cavium ThunderX2 erratum 219
+Thread-Index: AQHVgIp//cHqDQ8PcECADgUsIEdQXA==
+Date: Fri, 11 Oct 2019 23:20:41 +0000
+Message-ID: <20191011232031.GA29752@dc5-eodlnx05.marvell.com>
+References: <1570790105-31829-1-git-send-email-jnair@marvell.com>
+ <20191011104454.d7dplgyjcnpfi5p3@willie-the-truck>
+In-Reply-To: <20191011104454.d7dplgyjcnpfi5p3@willie-the-truck>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: BYAPR11CA0041.namprd11.prod.outlook.com
+ (2603:10b6:a03:80::18) To CY4PR1801MB1895.namprd18.prod.outlook.com
+ (2603:10b6:910:79::25)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [199.233.59.128]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 7bf52eca-51a6-4db9-6175-08d74ea1a240
+x-ms-traffictypediagnostic: CY4PR1801MB1879:
+x-ms-exchange-purlcount: 1
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <CY4PR1801MB1879E84DC22FD0571D54CBE0A6970@CY4PR1801MB1879.namprd18.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 0187F3EA14
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(346002)(376002)(39860400002)(366004)(396003)(199004)(189003)(256004)(486006)(26005)(71200400001)(71190400001)(386003)(3846002)(6116002)(86362001)(5660300002)(14444005)(25786009)(476003)(76176011)(54906003)(33656002)(186003)(52116002)(102836004)(6506007)(11346002)(446003)(99286004)(7736002)(316002)(305945005)(2906002)(6512007)(6436002)(6306002)(6486002)(229853002)(66946007)(6916009)(66556008)(66476007)(4326008)(66066001)(478600001)(81156014)(81166006)(8676002)(8936002)(14454004)(6246003)(1076003)(966005)(64756008)(66446008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CY4PR1801MB1879;
+ H:CY4PR1801MB1895.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: marvell.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: s2xRvm39SOW7jl94zHtns+XIZhhW5vidBo49ju/2hyGgIR4cqgwq8pGPft7wnCfjHCfyJpz1dhaaEPBXQobRsOfkNdS49EQqBsQLfr45KokdnoKhjk9xJEm12xqfgi650Hm3MjOQWTTtdXYkxXclKSgBn3dD+2/nBEW/iqcVKuQIwxG0WgfkcZYngFxgujlV7LmdTjDVe/eXZmUR/foO8Jy6LDh7j0Z0SN/heL4Yc2i7OLT8CEffSRDiFIhtHSJFjmpFyD2ke8WZ01oM5UwjwZ7o9XzWE7K3JTVDyw4jbXfH1WcNVPUH3t5TaaIN63yPrZY3L7MIZ+GMQNQV5TvTQqYPLdd3TrDTRP3ouDBnCaj1FDQURitKxUdK95LMNByZhK2AOAf3BLMD29X1oGnYxNeW3d814ITNsSWJ+azYfuV2d68Pft0nFqwKGWmg9yKSUTa+ZqKWIVsW4wJ0+vTkGg==
+Content-ID: <81776BB37715494A909F6FB2F3F79DB1@namprd18.prod.outlook.com>
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7bf52eca-51a6-4db9-6175-08d74ea1a240
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Oct 2019 23:20:41.6653 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: +xMjnRxTtTbTrRhVvXMNvcNOuVn241PwWl9l1ia1ur0e+3XZbMwVO/o/FfFIo2xjfWEJDQum3FsDjYVEpeBQ0Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR1801MB1879
+X-OriginatorOrg: marvell.com
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
+ definitions=2019-10-11_11:2019-10-10,2019-10-11 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_161150_614316_D8AE2C07 
-X-CRM114-Status: GOOD (  15.75  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191011_162055_536420_E7AB32C4 
+X-CRM114-Status: GOOD (  28.11  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [67.231.156.173 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -147,9 +138,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -161,44 +149,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Matthias Brugger <mbrugger@suse.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-kernel@vger.kernel.org,
- Eric Anholt <eric@anholt.net>, Rob Herring <robh+dt@kernel.org>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Tomasz Nowicki <tnowicki@marvell.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Robert Richter <rrichter@marvell.com>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, Marc Zyngier <maz@kernel.org>,
+ "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/11/19 4:09 PM, Stefan Wahren wrote:
-> Am 11.10.19 um 20:48 schrieb matthias.bgg@kernel.org:
->> From: Matthias Brugger <mbrugger@suse.com>
->>
->> Enable Gigabit Ethernet support on the Raspberry Pi 4
->> Model B.
+On Fri, Oct 11, 2019 at 11:44:55AM +0100, Will Deacon wrote:
+> Hi JC,
 > 
-> I asked some questions about genet to the RPi guys [1] which are
-> relevant to this patch (missing clocks and interrupt, MAC address
-> assignment) but i didn't get an answer yet.
+> Thanks for posting this.
 > 
-> During my tests with a similiar patch series i noticed that the driver
-> won't probe without a MAC address.
+> On Fri, Oct 11, 2019 at 10:35:21AM +0000, Jayachandran Chandrasekharan Nair wrote:
+> > These two patches are based on the work by Marc Zyngier and addresses
+> > Cavium ThunderX2 erratum 219.
+> > 
+> > This erratum (originally reported by ARM folks) is from an interesting
+> > use of the prefetch instruction in the KPTI patchset. The prefetch
+> > was done between a TTBR change and the corresponding ISB, and this
+> > occasionally caused a crash on ThunderX2.
+> > 
+> > The first patch removes the troublesome prefetch for ThunderX2.
+> > The second patch addresses the case where the issue can be triggered
+> > from a guest kernel. The workaround in this case is to trap TTBR
+> > accesses by setting HCR_EL2.TVM for guests and doing the system
+> > register update from EL2 in a fast path.
+> 
+> FWIW, I was already planning to send the following to Linus:
+> 
+> https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/log/?h=errata/tx2-219
+> 
+> so please base any changes on top of that branch.
 
-Yes, that is true, we have an internal patch for that that we just
-recently did, let me submit it so this does not block you.
+Please consider taking my patchset as is, if you don't have
+issues with patches.
 
+> > Due to the nature of the erratum, the trap-and-emulate is only
+> > needed when SMT is enabled.
+> > 
+> > The overhead of trap-and-emulate is expected to be negligible on most
+> > workloads. A command line option kvm-arm.vm_msr_trap has been
+> > provided to override trapping on guest TTBR updates.  This is to
+> > address a very limited case where a user wants to run SMT enabled,
+> > with a trustworthy guest kernel, and wants to avoid the performance
+> > overhead associated with emulating the address translation register
+> > changes.
 > 
-> How does it get into DT (via U-Boot)?
-> 
-> [1] -
-> https://github.com/raspberrypi/linux/issues/3101#issuecomment-534665860
-> 
+> Do you have any performance data to show the impact of the workaround on
+> non-kpti guests? I don't think we can justify the inclusion of a cmdline
+> option for this without figures showing that it's really necessary.
+> Otherwise, the "very limited case" really is a niche scenario where the
+> CONFIG option can simply be disabled.
 
+In my view, you are switching the responsibility here. Even one use
+case should be enough reason not to force a performance regression
+that cannot be opted out of. You are expected to leave as much policy
+as reasonable to the user with safe (and least astonishing) defaults.
 
--- 
-Florian
+A class of guest usecases involve running stock images (linux or
+non-linux). The arm64 server ecosystem is still in development, so
+we should allow someone evaluating a server system to turn off or
+on options as much as possible without forcing a re-compile.
+
+Also, the run-time option is generic enough that it can be switched
+on/off for any platform, not just the one affected by this erratum.
+
+So, I disagree with the queued patchset - but I will leave you to make
+your call on which way to go.
+
+JC
 
 _______________________________________________
 linux-arm-kernel mailing list
