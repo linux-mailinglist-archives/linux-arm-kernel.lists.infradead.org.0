@@ -2,62 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81A31D3C24
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 11:20:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0FB3DD3C2C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 11:20:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6ydZmbHtR4HDa00wJsha8cgj0Ez2dShsY2w2/dsd34A=; b=FQ4gVz7/fkbLjd
-	leTO4UxHWPa4a8W/qJoq4I1bd/2qNIQlWaQdZx9ZobwZmMu/TQw2dvddw0VgWL0Ic4eCwc51l6qXs
-	+PXhpagUjB948ILqqLmWyfot6xqBr7UWoeOlP3Bn7fhd9h9N1OO+vcBuSctbt7IM45qFoLrFkdC9i
-	4dOAcbjhVR74lfcQ0hePDFut24UIrN2/7HaIGjh2tj0HJUHACxHEaeOpynDZcPyA1jBLzfM90ZU8G
-	xS2Ip2EprH7OQfhZQPFUV3/7WH7e9wR6Ak1Nu9wp3NfpqyAimghTyMiaABdxLZDkoVAFmPWoX7O0n
-	JuHhDFafO0MRWYV3zrlg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cUAUkJvAvpO3lrX+s0rOxnTmpyo9irtTP7KJ1pp+uZg=; b=DAHr4P4/AShjrr
+	xBg8uJ5Je/2GnXReOEfzbSu2pzXBUx79DrMu1wy/xC0Besy8DYZxpA6HbxwS+Rn91w8v1urodCRIl
+	OOdH8jnkXhs+edJ2q6TmKN5v0GaDXMgcfnf6hmsgauP6RbWTNLBeYZlOVRx4gKowkURBQvyhp3Xnm
+	YrxRRD+bP5zQoaNG6uY3fd2bmvoMNCJ9HKQ57YEJ8B9QRrEzkQqZVCYzA9o10HuoemxvuaY4O2TS2
+	Hgzih4qG76PDbm9DQkSbeyokvFvcJFB9exgeb91TIjXLhebZ542ErKmyDKnHAkpvzbQoSmtD77A7r
+	Tnkyfnkx0I39tWgFyJKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIr5U-00038I-FI; Fri, 11 Oct 2019 09:19:52 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1iIr5w-0003OH-Ro; Fri, 11 Oct 2019 09:20:20 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIr5H-00037T-93
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 09:19:40 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 2CEE92058F;
- Fri, 11 Oct 2019 11:19:34 +0200 (CEST)
-Received: from [192.168.108.37] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id 15A5A204C8;
- Fri, 11 Oct 2019 11:19:34 +0200 (CEST)
-Subject: Re: Relax CPU features sanity checking on heterogeneous architectures
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-References: <b3606e76af42f7ecf65b1bfc2a5ed30a@codeaurora.org>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <7ef16e2a-b35c-0807-67be-c56dadb6fa66@free.fr>
-Date: Fri, 11 Oct 2019 11:19:33 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iIr5L-00038d-QK
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 09:19:45 +0000
+Received: by mail-ot1-f68.google.com with SMTP id y39so7376422ota.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 11 Oct 2019 02:19:43 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=2T/zHCiz5lRoZLCCsEBaHrm43xLEtwr/JLAYUvgdwzE=;
+ b=ftK8hfIwdkW+s0NdyDpDliS/Tl7CpR0tMX5R3dcWM/sYXDE8ZRelvDL4Da+evvY8bj
+ 7XJPK+DbGFM5OL+XjhjbRjMMiqCzAD14XyJFVtGCVEaj9N1HfmubASqjMStG+SL7qHpw
+ S7HgcniNIi53dlKRz7RoAwGCU1eE81WVAuQ5Jp+yydq9YTBvr8mkWAfCCe+DqSJMtm1Z
+ rz/bO8VqKO1EYYGM7R9y/7sqSgNl84Kni5EVO+FjnKuBIWSNrqudEmIXPsaNJZojrzXA
+ nA9wfolgCJRj1gMue7fiHDeaCyKv5ThzO4MS1n5T58oRKDmNZ/nIFVPb+hfqAwozHIhC
+ aPtQ==
+X-Gm-Message-State: APjAAAWorew3SLuWcBk/I7tQ5KRQ/rKLwNkcaNnbZf0+9dttgRLWM1bX
+ sukgtb/YTZVJuL/ZnUQHi0AT/isaAGPBWjWpfBI39ddb
+X-Google-Smtp-Source: APXvYqzLdkyO6uQN8+aYqrrf0f1ZoJ5UC4uoBKWGKBUzVnWDCeCgMeWJjJBH6Q06m328j8fpzF+F7jTX6lgsPrk7ois=
+X-Received: by 2002:a05:6830:1685:: with SMTP id
+ k5mr11530897otr.250.1570785582416; 
+ Fri, 11 Oct 2019 02:19:42 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <b3606e76af42f7ecf65b1bfc2a5ed30a@codeaurora.org>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Fri Oct 11 11:19:34 2019 +0200 (CEST)
+References: <20191010123046.15291-1-geert+renesas@glider.be>
+ <20191011073515.2933918c@canb.auug.org.au>
+ <fc7ec17b-c61b-842e-13d9-1e154ce2a654@cogentembedded.com>
+In-Reply-To: <fc7ec17b-c61b-842e-13d9-1e154ce2a654@cogentembedded.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Fri, 11 Oct 2019 11:19:30 +0200
+Message-ID: <CAMuHMdVurk2akpKFAGKoNN2YxPMBMx2VrvUfTfCX-AiUaFAcxQ@mail.gmail.com>
+Subject: Re: [PATCH] MAINTAINERS: Remove Simon as Renesas SoC Co-Maintainer
+To: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_021939_472354_083C92E5 
-X-CRM114-Status: UNSURE (   9.97  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.5 (-)
+X-CRM114-CacheID: sfid-20191011_021943_864866_2ADC0F4D 
+X-CRM114-Status: GOOD (  13.65  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.5 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
+ provider (geert.uytterhoeven[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,69 +85,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: MSM <linux-arm-msm@vger.kernel.org>,
+Cc: Stephen Rothwell <sfr@canb.auug.org.au>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, Arnd Bergmann <arnd@arndb.de>,
+ Kevin Hilman <khilman@kernel.org>, Magnus Damm <magnus.damm@gmail.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Simon Horman <horms@verge.net.au>, Olof Johansson <olof@lixom.net>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/10/2019 07:49, Sai Prakash Ranjan wrote:
+Hi Sergei,
 
-> diff --git a/arch/arm64/kernel/cpufeature.c 
-> b/arch/arm64/kernel/cpufeature.c
-> index cabebf1a7976..207197692caa 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -164,8 +164,8 @@ static const struct arm64_ftr_bits ftr_id_aa64pfr0[] 
-> = {
->          S_ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, 
-> ID_AA64PFR0_FP_SHIFT, 4, ID_AA64PFR0_FP_NI),
->          /* Linux doesn't care about the EL3 */
->          ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, 
-> ID_AA64PFR0_EL3_SHIFT, 4, 0),
-> -       ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 
-> ID_AA64PFR0_EL2_SHIFT, 4, 0),
-> -       ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 
-> ID_AA64PFR0_EL1_SHIFT, 4, ID_AA64PFR0_EL1_64BIT_ONLY),
-> +       ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, 
-> ID_AA64PFR0_EL2_SHIFT, 4, 0),
-> +       ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, 
-> ID_AA64PFR0_EL1_SHIFT, 4, ID_AA64PFR0_EL1_64BIT_ONLY),
->          ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 
-> ID_AA64PFR0_EL0_SHIFT, 4, ID_AA64PFR0_EL0_64BIT_ONLY),
->          ARM64_FTR_END,
->   };
-> @@ -345,10 +345,10 @@ static const struct arm64_ftr_bits 
-> ftr_generic_32bits[] = {
->          ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 24, 4, 
-> 0),
->          ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 20, 4, 
-> 0),
->          ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 16, 4, 
-> 0),
-> -       ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 12, 4, 
-> 0),
-> +       ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, 12, 4, 
-> 0),
->          ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 8, 4, 0),
-> -       ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 4, 4, 0),
-> -       ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 0, 4, 0),
-> +       ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, 4, 4, 
-> 0),
-> +       ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, 0, 4, 
-> 0),
->          ARM64_FTR_END,
->   };
+On Fri, Oct 11, 2019 at 11:00 AM Sergei Shtylyov
+<sergei.shtylyov@cogentembedded.com> wrote:
+> On 10.10.2019 23:35, Stephen Rothwell wrote:
+> >> At the end of the v5.3 upstream kernel development cycle, Simon stepped
+> >> down from his role as Renesas SoC maintainer.
+> >>
+> >> Remove his maintainership, git repository, and branch from the
+> >> MAINTAINERS file, and add an entry to the CREDITS file to honor his
+> >> work.
+> >>
+> >> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> >
+> > So, I will remove Simon's Renesas tree from linux-next and rename the
+> > renesas-geert tree to be renesas, OK?
+>
+>     I thought Geert's new repo is called renesas-devel?
 
-Hello Sai,
+The repository is called "renesas-devel".
+The branch Stephen pulls is "next" (colloquially called "renesas-next" ;-)
+The linux-next-specific handle Stephen uses is called "renesas".
 
-Could you configure your webmail client to not wrap "long" lines?
+Cfr. "git show next-20191011:Next/Trees | grep renesas".
 
-Wrapping might break the patch, and the kernel logs would look better
-in their original form.
+I hope this clears up the confusion...
 
-Regards.
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
