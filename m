@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AADCD4249
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 16:07:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A79BD424D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 16:07:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R5fAbncw6vs8oUk0GFRWp51jG4DA2AiTWGo60AhdI7w=; b=kbz+LIBPp8rZi8
-	s2A0t3OMkagv6kUV8VzHz6NlizwZRP90QipvzSgoyGIBz0Aao2nFLPZavyp43mujWGtLhDMv6zQxc
-	ujzkutCFK9zZtF1vB07p2ye45iBLx51hejjE2D4so1bIs8B/BFqpYIyZYx8vXWiDVKiKCUnJ0YDXE
-	ufvzdFP2H10dMTIzpPVdkFBOpQJ8rOjpdO2qzxHxCyMfX50XFM6/Gd/9Hu0s9yMbK5U+RnU6E006/
-	kj5owfUiQ4/GtuxnUDixY7pQJ6Bu8N2CDi8cmhMHfCHk51lI51uqMQqpI42zMcjeIO/t3wKanAwyT
-	ZVnA5oYEJ11WXOJy9H7A==;
+	List-Owner; bh=gAINTAwmgf37i4GSWOgVS639kPSyKVovnKX2Elp0orM=; b=IJqxyiJKf1bVGK
+	d8o5AM51mJt4ocWSfvUHBMxM5uH8pVKaCZO0yh9SiqOZCq24EatzgBYHFpCz8y7rUgc9eTIShkQb0
+	/m5jSqKfhdJ+MIzLZRPMu7duEtx0iipTS5oQjTk4gX6On3sVAIW/HjZVmmep989LWTbw+jc3+HLGI
+	rKEXG2l5K2kM4ap8mPs12iMHl1BZ3VxnGPgbxtjEkYzroHWVOHtESq2q+GEEQBcMpcqRCwTW+oXQn
+	MvPTMprENvCvQ5Ynf/RVUuXvJnfIRO9P6xdjqTEkBOWUCDljrA0f1BqFi99jB4tfk/L5Tib26NO0c
+	YUAdezJ7xv0XaxzzXGiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIvZB-00044t-GE; Fri, 11 Oct 2019 14:06:49 +0000
+	id 1iIvZg-0004ZA-Fv; Fri, 11 Oct 2019 14:07:20 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIvY8-0003Im-Ot
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 14:05:47 +0000
+ id 1iIvYB-0003Me-UT
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 14:05:49 +0000
 Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
  by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x9BE0xxA032015; Fri, 11 Oct 2019 16:05:39 +0200
+ x9BE149M032059; Fri, 11 Oct 2019 16:05:39 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=iXQdHQC1Vzt4u1oBwlG3Nk7u0ghc+s1kyGaXxrAG8kI=;
- b=HI0KpiazPlN017QQYkGcLGamTHqLBa7xNYi36utUAwhus/rXvR2SkXvNuQ7zFcBoNFas
- B0p76kVctaKjemBCGqo9xtSm2W15VfdfDG5ykIraQmvYFqbRO7/uI7ABWlodMMN3jMbQ
- IUxTRj5yeiowoqUUJQKT+X3Mk7qjYrzrYiZ6s5fRFA54ETJ4s2Nojbnvs7zOvBwmNS0z
- NVGMUq4BBb+qbaPJ7wtUVVX4WDAyZu/rSOgccpd1Ukejd8iCF2lnnNVssGf90GMDaUjQ
- 3wEjHqowlqXhM4JOvCl/+2hqA1JpkfK2Wg4MzUwbl4m+ChwqO3LegMLBDQ62tYb4wh2G Rg== 
+ bh=qvG5tHTLBfgJy2cVG8araZL9QxN9PV13AmMFSSV98WA=;
+ b=GnXa2m+aBPMioX4V8sEPYum1RCAMQk88Mb+waGPqZdSxLN5/PkjjA7Nz+IXVbftr5FYS
+ f3mPuQh+Trn/n9eAZvM/QKBfiYHJnD96sAt66gR+cFqkY3sMTHMsaNXuakMn01kuiIdr
+ dNAW/mgaPGoMM1lwFw9RbUGXCb2b1VvtWCvMicKG9eXQfu28LVfkvCk1235NA7tiunZD
+ Hz2aoKfrQct6+5pzN88RZsNZ3SDrWZl5LZtcJAlx35FFO/nyKgSAf6XhWWGrDIVRX/0p
+ WuHXXJKs7JmWHQZ8NP/hgp5x5K8ESNPolM94HrlDZ8KfQQ7Nr+E5ul7/FX5g8N2EGL3V 6A== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2vej2ptnww-1
+ by mx08-00178001.pphosted.com with ESMTP id 2vej2ptnwy-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 11 Oct 2019 16:05:38 +0200
+ Fri, 11 Oct 2019 16:05:39 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6752910002A;
- Fri, 11 Oct 2019 16:05:38 +0200 (CEST)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 60D43100038;
+ Fri, 11 Oct 2019 16:05:39 +0200 (CEST)
 Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 5CC562AB8AF;
- Fri, 11 Oct 2019 16:05:38 +0200 (CEST)
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 565DB2AD70B;
+ Fri, 11 Oct 2019 16:05:39 +0200 (CEST)
 Received: from localhost (10.75.127.50) by SFHDAG6NODE2.st.com (10.75.127.17)
  with Microsoft SMTP Server (TLS) id 15.0.1347.2;
- Fri, 11 Oct 2019 16:05:37 +0200
+ Fri, 11 Oct 2019 16:05:38 +0200
 From: Pascal Paillet <p.paillet@st.com>
 To: <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>,
  <robh+dt@kernel.org>, <mark.rutland@arm.com>,
  <linux-stm32@st-md-mailman.stormreply.com>,
  <linux-arm-kernel@lists.infradead.org>, <devicetree@vger.kernel.org>,
  <linux-kernel@vger.kernel.org>
-Subject: [PATCH 1/4] ARM: dts: stm32: add PWR regulators support on stm32mp157
-Date: Fri, 11 Oct 2019 16:05:30 +0200
-Message-ID: <20191011140533.32619-2-p.paillet@st.com>
+Subject: [PATCH 2/4] ARM: dts: stm32: change default minimal buck1 value on
+ stm32mp157
+Date: Fri, 11 Oct 2019 16:05:31 +0200
+Message-ID: <20191011140533.32619-3-p.paillet@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191011140533.32619-1-p.paillet@st.com>
 References: <20191011140533.32619-1-p.paillet@st.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.75.127.50]
-X-ClientProxiedBy: SFHDAG3NODE2.st.com (10.75.127.8) To SFHDAG6NODE2.st.com
+X-ClientProxiedBy: SFHDAG4NODE3.st.com (10.75.127.12) To SFHDAG6NODE2.st.com
  (10.75.127.17)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
  definitions=2019-10-11_08:2019-10-10,2019-10-11 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_070545_109824_B23C39D6 
-X-CRM114-Status: GOOD (  14.51  )
+X-CRM114-CacheID: sfid-20191011_070548_301867_89EE81D9 
+X-CRM114-Status: GOOD (  13.21  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -104,143 +105,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds support of STM32 PWR regulators on
-stm32mp157c. This replace dummy fixed regulators on
-stm32mp157c-ed1 and stm32mp157c-dk2.
+Minimal value is the value set during boot or before suspend.
+We must ensure that the value is a functional value to boot.
 
 Signed-off-by: Pascal Paillet <p.paillet@st.com>
 ---
- arch/arm/boot/dts/stm32mp157a-avenger96.dts |  5 +++++
- arch/arm/boot/dts/stm32mp157a-dk1.dts       |  5 +++++
- arch/arm/boot/dts/stm32mp157c-dk2.dts       |  8 -------
- arch/arm/boot/dts/stm32mp157c-ed1.dts       | 21 +++++--------------
- arch/arm/boot/dts/stm32mp157c.dtsi          | 23 +++++++++++++++++++++
- 5 files changed, 38 insertions(+), 24 deletions(-)
+ arch/arm/boot/dts/stm32mp157a-dk1.dts | 2 +-
+ arch/arm/boot/dts/stm32mp157c-ed1.dts | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-index 2e4742c53d04..5f35b0146017 100644
---- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-+++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-@@ -282,6 +282,11 @@
- 	status = "okay";
- };
- 
-+&pwr_regulators {
-+	vdd-supply = <&vdd>;
-+	vdd_3v3_usbfs-supply = <&vdd_usb>;
-+};
-+
- &rng1 {
- 	status = "okay";
- };
 diff --git a/arch/arm/boot/dts/stm32mp157a-dk1.dts b/arch/arm/boot/dts/stm32mp157a-dk1.dts
-index 5ad4cef9e971..26fb7c77092c 100644
+index 26fb7c77092c..efeefb3d25b0 100644
 --- a/arch/arm/boot/dts/stm32mp157a-dk1.dts
 +++ b/arch/arm/boot/dts/stm32mp157a-dk1.dts
-@@ -406,6 +406,11 @@
- 	status = "okay";
- };
+@@ -250,7 +250,7 @@
  
-+&pwr_regulators {
-+	vdd-supply = <&vdd>;
-+	vdd_3v3_usbfs-supply = <&vdd_usb>;
-+};
-+
- &rng1 {
- 	status = "okay";
- };
-diff --git a/arch/arm/boot/dts/stm32mp157c-dk2.dts b/arch/arm/boot/dts/stm32mp157c-dk2.dts
-index d44a7c6c2e20..d26adcbeba33 100644
---- a/arch/arm/boot/dts/stm32mp157c-dk2.dts
-+++ b/arch/arm/boot/dts/stm32mp157c-dk2.dts
-@@ -11,14 +11,6 @@
- / {
- 	model = "STMicroelectronics STM32MP157C-DK2 Discovery Board";
- 	compatible = "st,stm32mp157c-dk2", "st,stm32mp157";
--
--	reg18: reg18 {
--		compatible = "regulator-fixed";
--		regulator-name = "reg18";
--		regulator-min-microvolt = <1800000>;
--		regulator-max-microvolt = <1800000>;
--		regulator-always-on;
--	};
- };
- 
- &dsi {
+ 			vddcore: buck1 {
+ 				regulator-name = "vddcore";
+-				regulator-min-microvolt = <800000>;
++				regulator-min-microvolt = <1200000>;
+ 				regulator-max-microvolt = <1350000>;
+ 				regulator-always-on;
+ 				regulator-initial-mode = <0>;
 diff --git a/arch/arm/boot/dts/stm32mp157c-ed1.dts b/arch/arm/boot/dts/stm32mp157c-ed1.dts
-index 1d426ea8bdaf..1dbcc580e43c 100644
+index 1dbcc580e43c..15afa8f1a36f 100644
 --- a/arch/arm/boot/dts/stm32mp157c-ed1.dts
 +++ b/arch/arm/boot/dts/stm32mp157c-ed1.dts
-@@ -74,22 +74,6 @@
- 		serial0 = &uart4;
- 	};
+@@ -127,7 +127,7 @@
  
--	reg11: reg11 {
--		compatible = "regulator-fixed";
--		regulator-name = "reg11";
--		regulator-min-microvolt = <1100000>;
--		regulator-max-microvolt = <1100000>;
--		regulator-always-on;
--	};
--
--	reg18: reg18 {
--		compatible = "regulator-fixed";
--		regulator-name = "reg18";
--		regulator-min-microvolt = <1800000>;
--		regulator-max-microvolt = <1800000>;
--		regulator-always-on;
--	};
--
- 	sd_switch: regulator-sd_switch {
- 		compatible = "regulator-gpio";
- 		regulator-name = "sd_switch";
-@@ -279,6 +263,11 @@
- 	status = "okay";
- };
- 
-+&pwr_regulators {
-+	vdd-supply = <&vdd>;
-+	vdd_3v3_usbfs-supply = <&vdd_usb>;
-+};
-+
- &rng1 {
- 	status = "okay";
- };
-diff --git a/arch/arm/boot/dts/stm32mp157c.dtsi b/arch/arm/boot/dts/stm32mp157c.dtsi
-index 9b11654a0a39..e0f3d4c62b4f 100644
---- a/arch/arm/boot/dts/stm32mp157c.dtsi
-+++ b/arch/arm/boot/dts/stm32mp157c.dtsi
-@@ -1079,6 +1079,29 @@
- 			#reset-cells = <1>;
- 		};
- 
-+		pwr_regulators: pwr@50001000 {
-+			compatible = "st,stm32mp1,pwr-reg";
-+			reg = <0x50001000 0x10>;
-+
-+			reg11: reg11 {
-+				regulator-name = "reg11";
-+				regulator-min-microvolt = <1100000>;
-+				regulator-max-microvolt = <1100000>;
-+			};
-+
-+			reg18: reg18 {
-+				regulator-name = "reg18";
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <1800000>;
-+			};
-+
-+			usb33: usb33 {
-+				regulator-name = "usb33";
-+				regulator-min-microvolt = <3300000>;
-+				regulator-max-microvolt = <3300000>;
-+			};
-+		};
-+
- 		exti: interrupt-controller@5000d000 {
- 			compatible = "st,stm32mp1-exti", "syscon";
- 			interrupt-controller;
+ 			vddcore: buck1 {
+ 				regulator-name = "vddcore";
+-				regulator-min-microvolt = <800000>;
++				regulator-min-microvolt = <1200000>;
+ 				regulator-max-microvolt = <1350000>;
+ 				regulator-always-on;
+ 				regulator-initial-mode = <0>;
 -- 
 2.17.1
 
