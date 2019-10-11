@@ -2,70 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0838D45A8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 18:43:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B16B1D45D8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 18:54:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JJ/31Xwted1dmbOohrb/8teUlLeP9ftmWX9Fkv15p5c=; b=ofSjddMGS3Cekt
-	40G2JdKeDi2tKqwvCAsbseQkCitBmMlTwVNWg+QpRBNlBpfJYY3ppZvYv1fxDnrlwoH1uvKKZthFg
-	F+lUbUjcU8bHZ5SyMYKAmFoN39gJzvInPoicFsXi99ZwSuwLVX0kEtScEEF3yoNS5T+YFkUM6fyZD
-	94RpBjt3T6wWnME5CAKW3ei1OaJK0OzC6tEcOlKdxH9xgON97JUyR+TVgDDQpHdllDUJ17q321aNy
-	mUjBviKJewxhqH4KsP6DozgVodmnzgFQsIWZaz19Y/H6fyIZgLpTiIUFwMTCNPQuX2Ttdtm1h6TNm
-	vyUYgfg9cJjE3o+cmpJQ==;
+	List-Owner; bh=llFCtYUavLDothJmR1Pzvy4nUqy60uJUoyv5ggDOomg=; b=oVZzCiyNcAjprM
+	oIrnkp2GqK4w20Q0NH5wlLxhNDwDXG5AvQSpBRP2KoANKL52BwMKcG8cqYiyOTN2J5a7dyN2c8yBc
+	QNFrloXx5hp3/6TCJZv10KibqiJyiyMyOnA+gBwrFumCRgyJGpS02xX0EaCVaxueOhNnGi2kAFmOx
+	U/y3XsXSoTxr7CLXbQEXPeL3Jyt2URUGEeqVaxSFInbjYs4zfu9TCV83k3Wf4fktL8xT4PjyTF05F
+	RzP/LylpP0xFsOLOqEzg82KPcYDfSobgajdDnJKnHz4PG90Umtef1ile5MK8hPWyt6XoU5+iXrf9u
+	7zmndjau2n63LTu3Oqxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIy0s-0004dA-1T; Fri, 11 Oct 2019 16:43:34 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iIyAx-0007sr-H5; Fri, 11 Oct 2019 16:53:59 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIy0h-0004ce-Mg
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 16:43:25 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 610472089F;
- Fri, 11 Oct 2019 16:43:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570812203;
- bh=1h3qain3eXPpQepsaq86h8dH0WgBOqiHsC+GQUWU3jc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=0rPAFv32q98S+p+CmnLkOALxiZP1+SlhBCy+I+SkWhavMqNH84K4tjmsx4QkfJw+D
- b7p2m9sNPQWBUgAryIILE3xViIl5r435daf8r71mJqrhYtyw1f0WEpr+Uielm5wFD3
- j1RLsVFnG25MXv1aeen53pwgmKOQQMXtbZI0Dmss=
-Date: Fri, 11 Oct 2019 17:43:19 +0100
-From: Will Deacon <will@kernel.org>
-To: wangxu <wangxu72@huawei.com>
-Subject: Re: [PATCH] ARM/hw_breakpoint: modify dead code for
- breakpoint_handler()
-Message-ID: <20191011164319.2on7snv65jdbz3sb@willie-the-truck>
-References: <1570613220-59533-1-git-send-email-wangxu72@huawei.com>
+ id 1iIyAo-0007sI-CZ
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 16:53:51 +0000
+Received: by mail-oi1-f195.google.com with SMTP id k9so8568584oib.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 11 Oct 2019 09:53:49 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=+XKxoI9VpM0Y86gFJFH44QIdHz4jpQag2jQU1HryGoI=;
+ b=ujdyi3QZGN9vxapD1homWMkTHnIjZhTRD+swUUJKhwVKyqL5EpZbC2uyKimbd/T3a+
+ ZVkCiTTiSqP0ICTcC8dV0aNsDMKtlwCPYrZ/ZAwBsN7brn3Rp3B0RT3QZbVUpyzALu0h
+ 4Yv1XITQq8uZpHatyozi24kfQoqeMrZ9qXFhOBBFP7nN1tN+uhL6Ngfbc80Nqazg5MV6
+ y2/yhQgsvKvCELGKAgWqmzRIHxGZtCl8F5OCWbL20VGyVAFOcpDDtCEszWdHetmAFd5I
+ 9b75/0mZZGjlh7A2DORqOGQ3B+9OfPLWpwhuqvHasVsubn0bgDRUiJzRaczHSSN6UBQQ
+ /0yA==
+X-Gm-Message-State: APjAAAWE8j/u0PGIYYfyuMqR2BfFK1DZo9OEPddMeOpwU6sxbcIoXi6S
+ CteyddQQjrdTe58L+k7ANQ==
+X-Google-Smtp-Source: APXvYqyYET1+fTjJYIyVH/pXbQ1FdDUKmjrg95oxGL5k6oWwgKL6dHqyCHb3/OZD4qwDDFHOQLnKwg==
+X-Received: by 2002:aca:490f:: with SMTP id w15mr13254293oia.159.1570812829223; 
+ Fri, 11 Oct 2019 09:53:49 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id 17sm2673691oiz.3.2019.10.11.09.53.48
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 11 Oct 2019 09:53:48 -0700 (PDT)
+Date: Fri, 11 Oct 2019 11:53:47 -0500
+From: Rob Herring <robh@kernel.org>
+To: Jolly Shah <jolly.shah@xilinx.com>
+Subject: Re: [PATCH v2 1/2] dt-bindings: firmware: Add bindings for Versal
+ firmware
+Message-ID: <20191011165347.GA4114@bogus>
+References: <1570474343-21524-1-git-send-email-jolly.shah@xilinx.com>
+ <1570474343-21524-2-git-send-email-jolly.shah@xilinx.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1570613220-59533-1-git-send-email-wangxu72@huawei.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <1570474343-21524-2-git-send-email-jolly.shah@xilinx.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_094323_759547_EA8AF23D 
-X-CRM114-Status: GOOD (  17.05  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191011_095350_426584_A975438E 
+X-CRM114-Status: UNSURE (   8.77  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.195 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,50 +93,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, linux@armlinux.org.uk,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, keescook@chromium.org,
+ ard.biesheuvel@linaro.org, matt@codeblueprint.co.uk,
+ gregkh@linuxfoundation.org, dmitry.torokhov@gmail.com, michal.simek@xilinx.com,
+ linux-kernel@vger.kernel.org, rajanv@xilinx.com, robh+dt@kernel.org,
+ sudeep.holla@arm.com, Jolly Shah <jolly.shah@xilinx.com>, mingo@kernel.org,
+ linux-arm-kernel@lists.infradead.org, hkallweit1@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 09, 2019 at 05:27:00PM +0800, wangxu wrote:
-> From: Wang Xu <wangxu72@huawei.com>
+On Mon,  7 Oct 2019 11:52:22 -0700, Jolly Shah wrote:
+> ZynqMP firmware driver can be used for versal also.
+> Add versal compatible string to zynqmp firmware driver
+> doc.
 > 
-> In perf_event_alloc(), event->overflow_handler is initialized to a
-> non-null value, which makes enable_single_step(bp, addr) in
-> breakpoint_handler() never be executed.
-> 
-> As a matter of fact, the branch condition has been updated to
-> is_default_overflow_handler().
-> 
-> Signed-off-by: Wang Xu <wangxu72@huawei.com>
+> Signed-off-by: Jolly Shah <jolly.shah@xilinx.com>
 > ---
->  arch/arm/kernel/hw_breakpoint.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  .../bindings/firmware/xilinx/xlnx,zynqmp-firmware.txt    | 16 +++++++++++++++-
+>  1 file changed, 15 insertions(+), 1 deletion(-)
 > 
-> diff --git a/arch/arm/kernel/hw_breakpoint.c b/arch/arm/kernel/hw_breakpoint.c
-> index b0c195e..586a587 100644
-> --- a/arch/arm/kernel/hw_breakpoint.c
-> +++ b/arch/arm/kernel/hw_breakpoint.c
-> @@ -822,7 +822,7 @@ static void breakpoint_handler(unsigned long unknown, struct pt_regs *regs)
->  			info->trigger = addr;
->  			pr_debug("breakpoint fired: address = 0x%x\n", addr);
->  			perf_bp_event(bp, regs);
-> -			if (!bp->overflow_handler)
-> +			if (is_default_overflow_handler(bp))
->  				enable_single_step(bp, addr);
->  			goto unlock;
 
-Seems to match what we do on arm64, so:
-
-Acked-by: Will Deacon <will@kernel.org>
-
-You'll need to put this into rmk's patch system [1].
-
-Will
-
-[1] https://www.arm.linux.org.uk/developer/
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
