@@ -2,55 +2,130 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9C66D3D16
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 12:14:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0821AD3D39
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 12:21:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=APBujpTz/DHhcIUzKBXmiyx4U0tqZQfn46gae5ggxSU=; b=Hux/ie//x2Y7H0QkGMvVoPYM2H
-	AcmTxbsVv6xzobrUX5cJm9JWAtRN4KkliC28IaaJebJfdgUyXq2ZxGPafGOjAkT9R1fFAHWW87lXX
-	VgB2hnIZQOK/bHovbJRl+vdsv6+7n76stCYc6UG0yWlj6QFruFP42JKoSTSU19a9TkZefJj5JGmvM
-	mGkjkuWqOR5nWJU9ZdBVOi20zMX02LGevcyiU1fWPmqi0cREBB+LekpaJ6FdIeHj+x1IiN3JK2j8i
-	ohnx2ghgOBrgF/Sm5cVhGKc3kSR00XFuz7RMj3OYGXAyINlDynXZgMgktWaEMvtesAKCSDkEpz1hK
-	hmUjIwWw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=y0zErkqi2vyWCKnj53DeoY9FsrBjx+7hGiw6qJta+4U=; b=mX3MlMQiyyZWgX
+	cNaw4qpze2QClGrAMJjZUgKf5tFvhdMSoqsvvHrl6+T3e513YTUt6d6/lbkqedygcx2xYNPROwHZ/
+	VfH4fzBdeYBE0CBxCRJ/UTGy6kfzOZASbEBJTiBpIRerIrgMcDvtg+CHvyD5ZAskNEwsGwXpfxx8U
+	y6qCIJ/+CRQCj+PSBPt354xlK0yD/5CL0Ci3jaSmVDInI1WZq7T+NMx97vBlG5aml6a3dFaK23cWv
+	pm6jla3DsQ9x4MSk+lLixOiluRvtJF2vQAmPw5KFfJs9E8Rrm3alEF45cNCVKtHbzugAy6HLsYaLI
+	DPFZBoQGhiACXPRf182Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIrwQ-0001Sg-T0; Fri, 11 Oct 2019 10:14:34 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIrw6-0001Hs-N0
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 10:14:17 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E5D591570;
- Fri, 11 Oct 2019 03:14:13 -0700 (PDT)
-Received: from p8cg001049571a15.blr.arm.com (p8cg001049571a15.blr.arm.com
- [10.162.41.129])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7A1933F703;
- Fri, 11 Oct 2019 03:14:07 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-mm@kvack.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, akpm@linux-foundation.org,
- catalin.marinas@arm.com, will@kernel.org
-Subject: [PATCH V10 2/2] arm64/mm: Enable memory hot remove
-Date: Fri, 11 Oct 2019 15:44:12 +0530
-Message-Id: <1570788852-12402-3-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1570788852-12402-1-git-send-email-anshuman.khandual@arm.com>
-References: <1570788852-12402-1-git-send-email-anshuman.khandual@arm.com>
+	id 1iIs3D-0004sy-PH; Fri, 11 Oct 2019 10:21:35 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iIs34-0004sV-OV
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 10:21:28 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20191011102124euoutp022e15a78239ef48702021c1d0ba8db8f4~MkIgx_nsT2095320953euoutp02g
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 11 Oct 2019 10:21:24 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20191011102124euoutp022e15a78239ef48702021c1d0ba8db8f4~MkIgx_nsT2095320953euoutp02g
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1570789284;
+ bh=vVluA6MQRK9yUL5rBCxrD+n/jRYq/J0faE1HgkGlrk8=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=rxqOcm44PxjnpQuDef5U8r83h/gyBHHw+aE48N4sAWh8aI+wqBP59nik/n3dbyUnK
+ mCjsqRXxvtXOnXWWxVbexc9yYo/0+WtxLRLn41h6Xb56bT/akThw+dg7o7QKW9Chku
+ gAorYT7/kz4KO28tLDLQMfxLv9JxyeiaS099X57A=
+Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20191011102124eucas1p28bb3916d080b23951a5a6b7bcb367b36~MkIgfttOp1532615326eucas1p2i;
+ Fri, 11 Oct 2019 10:21:24 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id 51.5A.04469.4A750AD5; Fri, 11
+ Oct 2019 11:21:24 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20191011102124eucas1p27ebfadf5b16d0b943471129d242728b8~MkIgNOw0e1532715327eucas1p2Y;
+ Fri, 11 Oct 2019 10:21:24 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20191011102124eusmtrp231ae2a1dd472626b67267c1f6b5d6b6a~MkIgMhQMc2631826318eusmtrp2q;
+ Fri, 11 Oct 2019 10:21:24 +0000 (GMT)
+X-AuditID: cbfec7f2-569ff70000001175-24-5da057a40cfc
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id D5.DA.04117.3A750AD5; Fri, 11
+ Oct 2019 11:21:24 +0100 (BST)
+Received: from [106.120.51.15] (unknown [106.120.51.15]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20191011102123eusmtip1ed8d0f667874a637501b5a8d051fe715~MkIf0QRUX1950619506eusmtip1G;
+ Fri, 11 Oct 2019 10:21:23 +0000 (GMT)
+Subject: Re: ARM Juno r1 + CONFIG_PROVE_LOCKING=y => boot failure
+To: Sudeep Holla <sudeep.holla@arm.com>
+From: Marek Szyprowski <m.szyprowski@samsung.com>
+Message-ID: <d315d99c-ef5d-eae0-86e0-a6d71355ffc1@samsung.com>
+Date: Fri, 11 Oct 2019 12:21:23 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <20191011100521.GA5122@bogus>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrKKsWRmVeSWpSXmKPExsWy7djPc7pLwhfEGjz7I2LxflkPo8Wmx9dY
+ LS7vmsNmcWBpO4vFm98v2C2Wn9rBYtFyx9SB3WPNvDWMHptWdbJ5bF5S7/F5k1wASxSXTUpq
+ TmZZapG+XQJXxpt1LxkLvnBXnL+yiqWBcQNnFyMnh4SAicSah23sXYxcHEICKxglvnZ9YIZw
+ vjBKHN62iw3C+cwo0bq4nQ2mZcnq/SwgtpDAckaJ3Q+zIYreMkpsa3oPViQs4CjRMP0WM4gt
+ IqAuseTsFkaQImaB94wSH9q+soIk2AQMJbredoE18ArYScyevw1sKouAqkTfltdMILaoQKzE
+ vR/HmSFqBCVOznwCVsMpoCWxZfc8MJtZQF5i+9s5zBC2uMStJ/OZQJZJCCxjl/h/vZUF4mwX
+ ic7ePewQtrDEq+NboGwZif87YRqaGSUenlvLDuH0MEpcbprBCFFlLXH4+EWgszmAVmhKrN+l
+ DxF2lJh78AQTSFhCgE/ixltBiCP4JCZtm84MEeaV6GgTgqhWk5h1fB3c2oMXLjFPYFSaheS1
+ WUjemYXknVkIexcwsqxiFE8tLc5NTy02zEst1ytOzC0uzUvXS87P3cQITDyn/x3/tIPx66Wk
+ Q4wCHIxKPLwz5OfHCrEmlhVX5h5ilOBgVhLhXTRrTqwQb0piZVVqUX58UWlOavEhRmkOFiVx
+ 3mqGB9FCAumJJanZqakFqUUwWSYOTqkGRlbXI6dMuyaUKthw6npIcK+0OLXqqu5qs+Dd86Q8
+ rSxc3v62Lk76KnLi/JR35xjFeiJM5P35FY4fLZdUftrcI7VbTO3u4k8CDNmskU2ztWy3u//2
+ 75VN84tsEzlY+9L9qrpp0pRZWzoOXmpIYcncOvl3xOVavn87irYUOf8KaojQuDp342RTJZbi
+ jERDLeai4kQAgbnZZjgDAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrKIsWRmVeSWpSXmKPExsVy+t/xu7pLwhfEGkzUt3i/rIfRYtPja6wW
+ l3fNYbM4sLSdxeLN7xfsFstP7WCxaLlj6sDusWbeGkaPTas62Tw2L6n3+LxJLoAlSs+mKL+0
+ JFUhI7+4xFYp2tDCSM/Q0kLPyMRSz9DYPNbKyFRJ384mJTUnsyy1SN8uQS/jzbqXjAVfuCvO
+ X1nF0sC4gbOLkZNDQsBEYsnq/SxdjFwcQgJLGSXeXgVxQBIyEienNbBC2MISf651sUEUvWaU
+ 6D56ACwhLOAo0TD9FjOILSKgLrHk7BZGEJtZ4D2jxLt7khANmxglvh2+BTaVTcBQoustyCRO
+ Dl4BO4nZ87eBxVkEVCX6trxm6mLk4BAViJXYtNcMokRQ4uTMJ2AlnAJaElt2z2OBmG8mMW/z
+ Q2YIW15i+9s5ULa4xK0n85kmMArNQtI+C0nLLCQts5C0LGBkWcUoklpanJueW2ykV5yYW1ya
+ l66XnJ+7iREYZduO/dyyg7HrXfAhRgEORiUe3hny82OFWBPLiitzDzFKcDArifAumjUnVog3
+ JbGyKrUoP76oNCe1+BCjKdBvE5mlRJPzgQkgryTe0NTQ3MLS0NzY3NjMQkmct0PgYIyQQHpi
+ SWp2ampBahFMHxMHp1QDo2JV3ERZrbqsF8YGywVuxcw5ZZI8w2sGZ4LXhwPbq/YIq8pXB/+5
+ ncXp53L1w2u+g8F7w1448S+SWn02aXZd5rZ3Kj6Zup8DvlaWq7x1cvqxoS5dyPXCf6Gu3oLW
+ A4YayxbV9Z67zvZZZ8PtJfc5epMiTgf3vzW//qtduXat+sbjF/44bUwPUGIpzkg01GIuKk4E
+ APyqN8TIAgAA
+X-CMS-MailID: 20191011102124eucas1p27ebfadf5b16d0b943471129d242728b8
+X-Msg-Generator: CA
+X-RootMTR: 20191011092604eucas1p1ca11ab9c4c7508776914b0eb4f35e69b
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20191011092604eucas1p1ca11ab9c4c7508776914b0eb4f35e69b
+References: <CGME20191011092604eucas1p1ca11ab9c4c7508776914b0eb4f35e69b@eucas1p1.samsung.com>
+ <33a83dce-e9f0-7814-923b-763d33e70257@samsung.com>
+ <20191011100521.GA5122@bogus>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_031414_898350_ECF110A2 
-X-CRM114-Status: GOOD (  20.59  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191011_032127_005228_818DCB8D 
+X-CRM114-Status: GOOD (  17.19  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,438 +137,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, ira.weiny@intel.com, david@redhat.com,
- mgorman@techsingularity.net, steve.capper@arm.com, Robin.Murphy@arm.com,
- steven.price@arm.com, broonie@kernel.org, cai@lca.pw, ard.biesheuvel@arm.com,
- cpandya@codeaurora.org, arunks@codeaurora.org, dan.j.williams@intel.com,
- logang@deltatee.com, valentin.schneider@arm.com, suzuki.poulose@arm.com,
- osalvador@suse.de
-MIME-Version: 1.0
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
+ LKML <linux-kernel@vger.kernel.org>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The arch code for hot-remove must tear down portions of the linear map and
-vmemmap corresponding to memory being removed. In both cases the page
-tables mapping these regions must be freed, and when sparse vmemmap is in
-use the memory backing the vmemmap must also be freed.
+Hi Sudeep,
 
-This patch adds unmap_hotplug_range() and free_empty_tables() helpers which
-can be used to tear down either region and calls it from vmemmap_free() and
-___remove_pgd_mapping(). The free_mapped argument determines whether the
-backing memory will be freed.
+On 11.10.2019 12:05, Sudeep Holla wrote:
+> Hi Marek,
+>
+> On Fri, Oct 11, 2019 at 11:26:04AM +0200, Marek Szyprowski wrote:
+>> Hi
+>>
+>> Recently I've got access to ARM Juno R1 board and did some tests with
+>> current mainline kernel on it. I'm a bit surprised that enabling
+>> CONFIG_PROVE_LOCKING causes a boot failure on this board. After enabling
+>> this Kconfig option, I get no single message from the kernel, although I
+>> have earlycon enabled.
+>>
+> I don't have Juno R1 but I tried defconfig + CONFIG_PROVE_LOCKING and
+> it boots fine.
+>
+> So if you disable CONFIG_PROVE_LOCKING(i.e. defconfig) boots fine ?
+> Are you using DTB from the mainline ?
 
-It makes two distinct passes over the kernel page table. In the first pass
-with unmap_hotplug_range() it unmaps, invalidates applicable TLB cache and
-frees backing memory if required (vmemmap) for each mapped leaf entry. In
-the second pass with free_empty_tables() it looks for empty page table
-sections whose page table page can be unmapped, TLB invalidated and freed.
+Yes, ARM Juno r1 boots fine with pure defconfig and mainline dtb. 
+However a few minutes ago I found that it boots with 
+v4.14+PROVE_LOCKING, so I will bisect it and share the results.
 
-While freeing intermediate level page table pages bail out if any of its
-entries are still valid. This can happen for partially filled kernel page
-table either from a previously attempted failed memory hot add or while
-removing an address range which does not span the entire page table page
-range.
-
-The vmemmap region may share levels of table with the vmalloc region.
-There can be conflicts between hot remove freeing page table pages with
-a concurrent vmalloc() walking the kernel page table. This conflict can
-not just be solved by taking the init_mm ptl because of existing locking
-scheme in vmalloc(). So free_empty_tables() implements a floor and ceiling
-method which is borrowed from user page table tear with free_pgd_range()
-which skips freeing page table pages if intermediate address range is not
-aligned or maximum floor-ceiling might not own the entire page table page.
-
-While here update arch_add_memory() to handle __add_pages() failures by
-just unmapping recently added kernel linear mapping. Now enable memory hot
-remove on arm64 platforms by default with ARCH_ENABLE_MEMORY_HOTREMOVE.
-
-This implementation is overall inspired from kernel page table tear down
-procedure on X86 architecture and user page table tear down method.
-
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
-Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
----
- arch/arm64/Kconfig              |   3 +
- arch/arm64/include/asm/memory.h |   1 +
- arch/arm64/mm/mmu.c             | 303 ++++++++++++++++++++++++++++++++++++++--
- 3 files changed, 298 insertions(+), 9 deletions(-)
-
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 950a56b..c9a3c02 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -273,6 +273,9 @@ config ZONE_DMA32
- config ARCH_ENABLE_MEMORY_HOTPLUG
- 	def_bool y
- 
-+config ARCH_ENABLE_MEMORY_HOTREMOVE
-+	def_bool y
-+
- config SMP
- 	def_bool y
- 
-diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
-index b61b50b..615dcd0 100644
---- a/arch/arm64/include/asm/memory.h
-+++ b/arch/arm64/include/asm/memory.h
-@@ -54,6 +54,7 @@
- #define MODULES_VADDR		(BPF_JIT_REGION_END)
- #define MODULES_VSIZE		(SZ_128M)
- #define VMEMMAP_START		(-VMEMMAP_SIZE - SZ_2M)
-+#define VMEMMAP_END		(VMEMMAP_START + VMEMMAP_SIZE)
- #define PCI_IO_END		(VMEMMAP_START - SZ_2M)
- #define PCI_IO_START		(PCI_IO_END - PCI_IO_SIZE)
- #define FIXADDR_TOP		(PCI_IO_START - SZ_2M)
-diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-index d10247f..66ef63e 100644
---- a/arch/arm64/mm/mmu.c
-+++ b/arch/arm64/mm/mmu.c
-@@ -725,6 +725,275 @@ int kern_addr_valid(unsigned long addr)
- 
- 	return pfn_valid(pte_pfn(pte));
- }
-+
-+#ifdef CONFIG_MEMORY_HOTPLUG
-+static void free_hotplug_page_range(struct page *page, size_t size)
-+{
-+	WARN_ON(PageReserved(page));
-+	free_pages((unsigned long)page_address(page), get_order(size));
-+}
-+
-+static void free_hotplug_pgtable_page(struct page *page)
-+{
-+	free_hotplug_page_range(page, PAGE_SIZE);
-+}
-+
-+static bool pgtable_range_aligned(unsigned long start, unsigned long end,
-+				  unsigned long floor, unsigned long ceiling,
-+				  unsigned long mask)
-+{
-+	start &= mask;
-+	if (start < floor)
-+		return false;
-+
-+	if (ceiling) {
-+		ceiling &= mask;
-+		if (!ceiling)
-+			return false;
-+	}
-+
-+	if (end - 1 > ceiling - 1)
-+		return false;
-+	return true;
-+}
-+
-+static void unmap_hotplug_pte_range(pmd_t *pmdp, unsigned long addr,
-+				    unsigned long end, bool free_mapped)
-+{
-+	pte_t *ptep, pte;
-+
-+	do {
-+		ptep = pte_offset_kernel(pmdp, addr);
-+		pte = READ_ONCE(*ptep);
-+		if (pte_none(pte))
-+			continue;
-+
-+		WARN_ON(!pte_present(pte));
-+		pte_clear(&init_mm, addr, ptep);
-+		flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
-+		if (free_mapped)
-+			free_hotplug_page_range(pte_page(pte), PAGE_SIZE);
-+	} while (addr += PAGE_SIZE, addr < end);
-+}
-+
-+static void unmap_hotplug_pmd_range(pud_t *pudp, unsigned long addr,
-+				    unsigned long end, bool free_mapped)
-+{
-+	unsigned long next;
-+	pmd_t *pmdp, pmd;
-+
-+	do {
-+		next = pmd_addr_end(addr, end);
-+		pmdp = pmd_offset(pudp, addr);
-+		pmd = READ_ONCE(*pmdp);
-+		if (pmd_none(pmd))
-+			continue;
-+
-+		WARN_ON(!pmd_present(pmd));
-+		if (pmd_sect(pmd)) {
-+			pmd_clear(pmdp);
-+
-+			/*
-+			 * One TLBI should be sufficient here as the PMD_SIZE
-+			 * range is mapped with a single block entry.
-+			 */
-+			flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
-+			if (free_mapped)
-+				free_hotplug_page_range(pmd_page(pmd),
-+							PMD_SIZE);
-+			continue;
-+		}
-+		WARN_ON(!pmd_table(pmd));
-+		unmap_hotplug_pte_range(pmdp, addr, next, free_mapped);
-+	} while (addr = next, addr < end);
-+}
-+
-+static void unmap_hotplug_pud_range(pgd_t *pgdp, unsigned long addr,
-+				    unsigned long end, bool free_mapped)
-+{
-+	unsigned long next;
-+	pud_t *pudp, pud;
-+
-+	do {
-+		next = pud_addr_end(addr, end);
-+		pudp = pud_offset(pgdp, addr);
-+		pud = READ_ONCE(*pudp);
-+		if (pud_none(pud))
-+			continue;
-+
-+		WARN_ON(!pud_present(pud));
-+		if (pud_sect(pud)) {
-+			pud_clear(pudp);
-+
-+			/*
-+			 * One TLBI should be sufficient here as the PUD_SIZE
-+			 * range is mapped with a single block entry.
-+			 */
-+			flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
-+			if (free_mapped)
-+				free_hotplug_page_range(pud_page(pud),
-+							PUD_SIZE);
-+			continue;
-+		}
-+		WARN_ON(!pud_table(pud));
-+		unmap_hotplug_pmd_range(pudp, addr, next, free_mapped);
-+	} while (addr = next, addr < end);
-+}
-+
-+static void unmap_hotplug_range(unsigned long addr, unsigned long end,
-+				bool free_mapped)
-+{
-+	unsigned long next;
-+	pgd_t *pgdp, pgd;
-+
-+	do {
-+		next = pgd_addr_end(addr, end);
-+		pgdp = pgd_offset_k(addr);
-+		pgd = READ_ONCE(*pgdp);
-+		if (pgd_none(pgd))
-+			continue;
-+
-+		WARN_ON(!pgd_present(pgd));
-+		unmap_hotplug_pud_range(pgdp, addr, next, free_mapped);
-+	} while (addr = next, addr < end);
-+}
-+
-+static void free_empty_pte_table(pmd_t *pmdp, unsigned long addr,
-+				 unsigned long end, unsigned long floor,
-+				 unsigned long ceiling)
-+{
-+	pte_t *ptep, pte;
-+	unsigned long i, start = addr;
-+
-+	do {
-+		ptep = pte_offset_kernel(pmdp, addr);
-+		pte = READ_ONCE(*ptep);
-+
-+		/*
-+		 * This is just a sanity check here which verifies that
-+		 * pte clearing has been done by earlier unmap loops.
-+		 */
-+		WARN_ON(!pte_none(pte));
-+	} while (addr += PAGE_SIZE, addr < end);
-+
-+	if (!pgtable_range_aligned(start, end, floor, ceiling, PMD_MASK))
-+		return;
-+
-+	/*
-+	 * Check whether we can free the pte page if the rest of the
-+	 * entries are empty. Overlap with other regions have been
-+	 * handled by the floor/ceiling check.
-+	 */
-+	ptep = pte_offset_kernel(pmdp, 0UL);
-+	for (i = 0; i < PTRS_PER_PTE; i++) {
-+		if (!pte_none(READ_ONCE(ptep[i])))
-+			return;
-+	}
-+
-+	pmd_clear(pmdp);
-+	__flush_tlb_kernel_pgtable(start);
-+	free_hotplug_pgtable_page(virt_to_page(ptep));
-+}
-+
-+static void free_empty_pmd_table(pud_t *pudp, unsigned long addr,
-+				 unsigned long end, unsigned long floor,
-+				 unsigned long ceiling)
-+{
-+	pmd_t *pmdp, pmd;
-+	unsigned long i, next, start = addr;
-+
-+	do {
-+		next = pmd_addr_end(addr, end);
-+		pmdp = pmd_offset(pudp, addr);
-+		pmd = READ_ONCE(*pmdp);
-+		if (pmd_none(pmd))
-+			continue;
-+
-+		WARN_ON(!pmd_present(pmd) || !pmd_table(pmd) || pmd_sect(pmd));
-+		free_empty_pte_table(pmdp, addr, next, floor, ceiling);
-+	} while (addr = next, addr < end);
-+
-+	if (CONFIG_PGTABLE_LEVELS <= 2)
-+		return;
-+
-+	if (!pgtable_range_aligned(start, end, floor, ceiling, PUD_MASK))
-+		return;
-+
-+	/*
-+	 * Check whether we can free the pmd page if the rest of the
-+	 * entries are empty. Overlap with other regions have been
-+	 * handled by the floor/ceiling check.
-+	 */
-+	pmdp = pmd_offset(pudp, 0UL);
-+	for (i = 0; i < PTRS_PER_PMD; i++) {
-+		if (!pmd_none(READ_ONCE(pmdp[i])))
-+			return;
-+	}
-+
-+	pud_clear(pudp);
-+	__flush_tlb_kernel_pgtable(start);
-+	free_hotplug_pgtable_page(virt_to_page(pmdp));
-+}
-+
-+static void free_empty_pud_table(pgd_t *pgdp, unsigned long addr,
-+				 unsigned long end, unsigned long floor,
-+				 unsigned long ceiling)
-+{
-+	pud_t *pudp, pud;
-+	unsigned long i, next, start = addr;
-+
-+	do {
-+		next = pud_addr_end(addr, end);
-+		pudp = pud_offset(pgdp, addr);
-+		pud = READ_ONCE(*pudp);
-+		if (pud_none(pud))
-+			continue;
-+
-+		WARN_ON(!pud_present(pud) || !pud_table(pud) || pud_sect(pud));
-+		free_empty_pmd_table(pudp, addr, next, floor, ceiling);
-+	} while (addr = next, addr < end);
-+
-+	if (CONFIG_PGTABLE_LEVELS <= 3)
-+		return;
-+
-+	if (!pgtable_range_aligned(start, end, floor, ceiling, PGDIR_MASK))
-+		return;
-+
-+	/*
-+	 * Check whether we can free the pud page if the rest of the
-+	 * entries are empty. Overlap with other regions have been
-+	 * handled by the floor/ceiling check.
-+	 */
-+	pudp = pud_offset(pgdp, 0UL);
-+	for (i = 0; i < PTRS_PER_PUD; i++) {
-+		if (!pud_none(READ_ONCE(pudp[i])))
-+			return;
-+	}
-+
-+	pgd_clear(pgdp);
-+	__flush_tlb_kernel_pgtable(start);
-+	free_hotplug_pgtable_page(virt_to_page(pudp));
-+}
-+
-+static void free_empty_tables(unsigned long addr, unsigned long end,
-+			      unsigned long floor, unsigned long ceiling)
-+{
-+	unsigned long next;
-+	pgd_t *pgdp, pgd;
-+
-+	do {
-+		next = pgd_addr_end(addr, end);
-+		pgdp = pgd_offset_k(addr);
-+		pgd = READ_ONCE(*pgdp);
-+		if (pgd_none(pgd))
-+			continue;
-+
-+		WARN_ON(!pgd_present(pgd));
-+		free_empty_pud_table(pgdp, addr, next, floor, ceiling);
-+	} while (addr = next, addr < end);
-+}
-+#endif
-+
- #ifdef CONFIG_SPARSEMEM_VMEMMAP
- #if !ARM64_SWAPPER_USES_SECTION_MAPS
- int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
-@@ -772,6 +1041,12 @@ int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
- void vmemmap_free(unsigned long start, unsigned long end,
- 		struct vmem_altmap *altmap)
- {
-+#ifdef CONFIG_MEMORY_HOTPLUG
-+	WARN_ON((start < VMEMMAP_START) || (end > VMEMMAP_END));
-+
-+	unmap_hotplug_range(start, end, true);
-+	free_empty_tables(start, end, VMEMMAP_START, VMEMMAP_END);
-+#endif
- }
- #endif	/* CONFIG_SPARSEMEM_VMEMMAP */
- 
-@@ -1050,10 +1325,21 @@ int p4d_free_pud_page(p4d_t *p4d, unsigned long addr)
- }
- 
- #ifdef CONFIG_MEMORY_HOTPLUG
-+static void __remove_pgd_mapping(pgd_t *pgdir, unsigned long start, u64 size)
-+{
-+	unsigned long end = start + size;
-+
-+	WARN_ON(pgdir != init_mm.pgd);
-+	WARN_ON((start < PAGE_OFFSET) || (end > PAGE_END));
-+
-+	unmap_hotplug_range(start, end, false);
-+	free_empty_tables(start, end, PAGE_OFFSET, PAGE_END);
-+}
-+
- int arch_add_memory(int nid, u64 start, u64 size,
- 			struct mhp_restrictions *restrictions)
- {
--	int flags = 0;
-+	int ret, flags = 0;
- 
- 	if (rodata_full || debug_pagealloc_enabled())
- 		flags = NO_BLOCK_MAPPINGS | NO_CONT_MAPPINGS;
-@@ -1061,22 +1347,21 @@ int arch_add_memory(int nid, u64 start, u64 size,
- 	__create_pgd_mapping(swapper_pg_dir, start, __phys_to_virt(start),
- 			     size, PAGE_KERNEL, __pgd_pgtable_alloc, flags);
- 
--	return __add_pages(nid, start >> PAGE_SHIFT, size >> PAGE_SHIFT,
-+	ret = __add_pages(nid, start >> PAGE_SHIFT, size >> PAGE_SHIFT,
- 			   restrictions);
-+	if (ret)
-+		__remove_pgd_mapping(swapper_pg_dir,
-+				     __phys_to_virt(start), size);
-+	return ret;
- }
-+
- void arch_remove_memory(int nid, u64 start, u64 size,
- 			struct vmem_altmap *altmap)
- {
- 	unsigned long start_pfn = start >> PAGE_SHIFT;
- 	unsigned long nr_pages = size >> PAGE_SHIFT;
- 
--	/*
--	 * FIXME: Cleanup page tables (also in arch_add_memory() in case
--	 * adding fails). Until then, this function should only be used
--	 * during memory hotplug (adding memory), not for memory
--	 * unplug. ARCH_ENABLE_MEMORY_HOTREMOVE must not be
--	 * unlocked yet.
--	 */
- 	__remove_pages(start_pfn, nr_pages, altmap);
-+	__remove_pgd_mapping(swapper_pg_dir, __phys_to_virt(start), size);
- }
- #endif
+>> I've did my test with default defconfig and current linux-next,
+>> v5.4-rc1, v5.3 and v4.19. In all cases the result is the same. I'm
+>> booting kernel using a precompiled uboot from Linaro release and TFTP
+>> download.
+>>
+> OK, I use UEFI+GRUB but I don't think that should cause any issue.
+>
+>> Is this a known issue? Other ARM64 boards I have access to (Samsung TM2e
+>> and RaspberryPi3) boots fine with the same kernel image.
+>>
+> Not that I am aware of. If you could send me the bootlog with defconfig
+> I can take a look and see if I get any clue.
+>
+Best regards
 -- 
-2.7.4
+Marek Szyprowski, PhD
+Samsung R&D Institute Poland
 
 
 _______________________________________________
