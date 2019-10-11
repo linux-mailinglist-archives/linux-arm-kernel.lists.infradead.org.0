@@ -2,54 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBA42D43CE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 17:08:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5126FD43DE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 17:10:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=wAwr1eC3oQaTUN/KQbFqUs6PzAMqiIbJcW9jDGVDqik=; b=ExFVO75bzYyHAy+vONfPQ+DeMH
-	ANalNbt5ru4B/OxJrWJvY9C/X4ba9aKKL/LH5uhHn0tOsSPCn26MH6nWZn1O4DyrfyChupidZb58q
-	DWPECso/wXMBvXlFcYKFvTZ+YlZf4jnHumpfrwdI4NZqJaHy/a8H+yEpdVpgluu+8Ewk0igvA3cKR
-	kukRv5q7LNc1MiOTV7L3WM4DtL1rpRFXHwGaO5rxjY6uQY1srPp/82AMlQhj2ND/Upx7joZXbRKz+
-	3mPYvO9xKSl/ikE5N3BHxnqTO/v9+kZGSCFAySI9M06/StG/EhK3t53xHAf+laFOhMpz4NHVFEOWd
-	sQVbAAdQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xCFdE8n911WjD3zemnjMLmSAeKMgXNH1FxD1Ux2WJmk=; b=Wr6HEE7juo8z2u
+	w8DRRK/qpOk3Lp/CdTdTeRyy4PWyVFpN1OmbPYspfnfsABJKFhv/kQBO1SCK71pgsX024HqDvYOlh
+	rEjcTVPa2EXpQMcQW+mA+zfVQPexYf1pEOc6/4SBplE/YQdLg2LmlohCnRtUDQeWTvkzrOHsnCGnt
+	Q1k/82RHmCtYweodWaTfPotp5UaGFvtgZeM8MrQ28sxkpG0HxtbgNp07SoaGAuR6dHvirdpuOnz2I
+	PySfDM6TXgbNcZA13LVO+f2oc+n237L/cgZDitrn7XtuGOZNdKuuPXfg20CYoZCnJvgMmUWhSdOan
+	JNX03zFWMXd/+d4ehgzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIwWH-00017E-6i; Fri, 11 Oct 2019 15:07:53 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIwVn-0000sk-7J
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 15:07:25 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D54291570;
- Fri, 11 Oct 2019 08:07:22 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id EDF4D3F68E;
- Fri, 11 Oct 2019 08:07:19 -0700 (PDT)
-From: Dave Martin <Dave.Martin@arm.com>
-To: linux-kernel@vger.kernel.org
-Subject: [FIXUP 2/2] squash! arm64: Basic Branch Target Identification support
-Date: Fri, 11 Oct 2019 16:06:29 +0100
-Message-Id: <1570806389-16014-3-git-send-email-Dave.Martin@arm.com>
-X-Mailer: git-send-email 2.1.4
-In-Reply-To: <1570806389-16014-1-git-send-email-Dave.Martin@arm.com>
-References: <1570733080-21015-6-git-send-email-Dave.Martin@arm.com>
- <1570806389-16014-1-git-send-email-Dave.Martin@arm.com>
+	id 1iIwYj-0002pj-Qx; Fri, 11 Oct 2019 15:10:25 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iIwYc-0002ou-1E
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 15:10:19 +0000
+Received: by mail-ot1-f67.google.com with SMTP id z6so8256583otb.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 11 Oct 2019 08:10:15 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=AYqY8ptTKV39xxtFZyc1+8jrTs0a76lcIovZ+BLPMag=;
+ b=mUawJ0xebtldpboxcagRVTkwrl9HTV9DADnSBSPD/vxAeQ8R7ao4kBe/gkB7Ujnk57
+ jDZEiuYc3UOvEMRNXjpmmz6WEKtGRSg88F6FM0UqYYDVFSL+oTqtoMBnBEFVQWAygHuw
+ kyvRmeXl6/KalHQdJGnxFe0pKkDPkgETRIWFU9CSQAaRKshEvS+nOZ3y0d1weVq7gecI
+ cNa/u9QroJQseGzmJSVcbfIVDbvJoAV1xXfrwG3OVowNRdCLMQAhG+JBZt/DoMsdicbe
+ 3YGCPX3pJMVxDCGNISWgQtFp3coVrNqlzqOdh0PQsoykV50E4wK49Rq2qY/+wwuqU1cB
+ b9jA==
+X-Gm-Message-State: APjAAAWeCGQpknIGenzYDd/W8xorWcgLBwHOJNUWYHdNUcy+mB69x1N9
+ Mtv5OEOaGNk2Q8WKob513Q==
+X-Google-Smtp-Source: APXvYqwkpn2Rm6NPxteihd3r7HUcq/7kBVqTZFOHHnjYbh6GQJSC3s6NgoJrW3CK0nueqj8fb335Cg==
+X-Received: by 2002:a9d:7345:: with SMTP id l5mr3406363otk.39.1570806615029;
+ Fri, 11 Oct 2019 08:10:15 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id k2sm2719648oih.38.2019.10.11.08.10.14
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 11 Oct 2019 08:10:14 -0700 (PDT)
+Date: Fri, 11 Oct 2019 10:10:13 -0500
+From: Rob Herring <robh@kernel.org>
+To: Fabrice Gasnier <fabrice.gasnier@st.com>
+Subject: Re: [PATCH v2 1/3] dt-bindings: pwm-stm32: document pinctrl sleep
+ state
+Message-ID: <20191011151013.GA12791@bogus>
+References: <1570193633-6600-1-git-send-email-fabrice.gasnier@st.com>
+ <1570193633-6600-2-git-send-email-fabrice.gasnier@st.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1570193633-6600-2-git-send-email-fabrice.gasnier@st.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_080723_365505_D903575D 
-X-CRM114-Status: GOOD (  13.38  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191011_081018_071610_854DDB34 
+X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,115 +94,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Yu-cheng Yu <yu-cheng.yu@intel.com>,
- Amit Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
- Suzuki Poulose <suzuki.poulose@arm.com>,
- Eugene Syromiatnikov <esyr@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- "H.J. Lu" <hjl.tools@gmail.com>, Andrew Jones <drjones@redhat.com>,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
- =?UTF-8?q?Kristina=20Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
- Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
- Sudakshina Das <sudi.das@arm.com>
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
+ linux-pwm@vger.kernel.org, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ thierry.reding@gmail.com, mcoquelin.stm32@gmail.com,
+ u.kleine-koenig@pengutronix.de, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ benjamin.gaignard@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[Add Kconfig dependency on CONFIG_ARM64_PTR_AUTH]
+On Fri, 4 Oct 2019 14:53:51 +0200, Fabrice Gasnier wrote:
+> Add documentation for pinctrl sleep state that can be used by
+> STM32 timers PWM.
+> 
+> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+> ---
+>  Documentation/devicetree/bindings/pwm/pwm-stm32.txt | 8 +++++---
+>  1 file changed, 5 insertions(+), 3 deletions(-)
+> 
 
-Signed-off-by: Dave Martin <Dave.Martin@arm.com>
-
----
-
-This one could use some discussion.
-
-Two conforming hardware implementations containing BTI could nonetheless
-have incompatible Pointer auth implementations, meaning that we expose
-BTI to userspace but not Pointer auth.
-
-That's stupid hardware design, but the architecture doesn't forbid it
-today.  We _could_ detect this and hide BTI from userspace too, but
-if a big.LITTLE system contains Pointer auth implementations with
-mismatched IMP DEF algorithms, we lose -- we have no direct way to
-detect that.
-
-Since BTI still provides some limited value without Pointer auth,
-disabling it unnecessarily might be regarded as too heavy-handed.
-
-Changes since v2:
-
- * Depend on CONFIG_ARM64_PTR_AUTH=y.
-
-   During test hacking, I observed that there are situations where
-   userspace should be entitled to assume that Pointer auth is present
-   if BTI is present.
-
-   Although the kernel BTI support doesn't require any aspect of
-   Pointer authentication, there are architectural dependencies:
-
-    * ARMv8.5 requires BTI to be implemented. [1]
-    * BTI requires ARMv8.4-A to be implemented. [1], [2]
-    * ARMv8.4 requires ARMv8.3 to be implemented. [3]
-    * ARMv8.3 requires Pointer authentication to be implemented. [4]
-
-   i.e., an implementation that supports BTI but not Pointer auth is
-   broken.
-
-   BTI is also designed to be complementary to Pointer authentication:
-   without Pointer auth, BTI would offer no protection for function
-   returns, seriously undermining the value of the feature.
-
-   See ARM ARM for ARMv8-A (ARM DDI 0487E.a) Sections:
-
-   [1] A2.8.1, "Architectural features added by ARMv8.5"
-
-   [2] A2.2.1, "Permitted implementation of subsets of ARMv8.x and
-       ARMv8.(x+1) architectural features"
-
-   [3] A2.6.1, "Architectural features added by Armv8.3"
-
-   [4] A2.6, "The Armv8.3 architecture extension"
----
- arch/arm64/Kconfig | 9 +++++++--
- 1 file changed, 7 insertions(+), 2 deletions(-)
-
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 6e26b72..a64d91d 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -1418,16 +1418,21 @@ menu "ARMv8.5 architectural features"
- config ARM64_BTI
- 	bool "Branch Target Identification support"
- 	default y
-+	depends on ARM64_PTR_AUTH
- 	help
- 	  Branch Target Identification (part of the ARMv8.5 Extensions)
- 	  provides a mechanism to limit the set of locations to which computed
- 	  branch instructions such as BR or BLR can jump.
- 
--	  This is intended to provide complementary protection to other control
-+	  To make use of BTI on CPUs that support it, say Y.
-+
-+	  BTI is intended to provide complementary protection to other control
- 	  flow integrity protection mechanisms, such as the Pointer
- 	  authentication mechanism provided as part of the ARMv8.3 Extensions.
-+	  For this reason, it does not make sense to enable this option without
-+	  also enabling support for Pointer authentication.
- 
--	  To make use of BTI on CPUs that support it, say Y.
-+	  Thus, to enable this option you also need to select ARM64_PTR_AUTH=y.
- 
- 	  Userspace binaries must also be specifically compiled to make use of
- 	  this mechanism.  If you say N here or the hardware does not support
--- 
-2.1.4
-
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
