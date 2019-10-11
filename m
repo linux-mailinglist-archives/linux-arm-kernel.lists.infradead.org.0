@@ -2,55 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2446D3D3B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 12:22:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E25C6D3D49
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 12:26:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Lc9I3oJP0arUtL9W0VUUNBdDsy24vJ7g+Is0R3nLfs0=; b=pUDYcpruYxtvF8zWI1waL5Nxj
-	pzLbzChePuwXOxiQ9GCUwQETUsFeg0h6G5XXh4pvXpE8Yguz2zKVb4c7qzX/4em2MGx8B+yV65HlQ
-	yfYva9sNLj8M0liZyvKKuRoLajqCBI1ZeHWoaRLAPv9gm7ibmCFwvyXicwowV3c0DcH+BFkZgBhNL
-	j4U85YKouVxe8Lr1WRUh89izeU57ySLkTWkXAX2w7pTOW15nmeO+b54/rEoi6z5gm8GfHPvFJzyNC
-	gp4s649aDPB47pLlgxyvBOmw7y7VAfEwHzFtMIMV/M+eYhH2+2pyrwwVIDZGLrL3azYD1mOfWqMVw
-	OBcwHYTdw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SMUKLGpJlsq5US5WetM3HMjj7a7uHDt30Lxlw60R+pw=; b=qyZknnuPmr6Hlf
+	tnM1ET8uEJzaJGfhHOOqFY+lxxaIrCQEvbwHWS/iq9ti3xdpTrkAEsjto5YocZTcTyhudC6dBtqK6
+	SxqRPxXZw2UU/lpnT9niot+D7pQZwdblvhvsK08Q2JBq0mwmlMEgXfiDZK2iW9UeLlGVZWWvnlg7p
+	QsHa8RricTTTtB3y5ZI1EDzrf0Zptr/+HPSfcVgOxzs/wfeG+ePlsbs/m+Rl6WUe8ujUEcgeD/9Tj
+	URKRsXZWFzk8Kopa8zwfAOdqxB4JOiDCJg+lcDzIDpuCRXnMiacTj87ju+8BTP+rcaVYNtXoHchiG
+	8ZELXWWxqymn34UD0J5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIs3d-00059H-9U; Fri, 11 Oct 2019 10:22:01 +0000
-Received: from imap1.codethink.co.uk ([176.9.8.82])
+	id 1iIs7T-0006pY-GY; Fri, 11 Oct 2019 10:25:59 +0000
+Received: from mail-qt1-f194.google.com ([209.85.160.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIs3S-00057m-5e
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 10:21:52 +0000
-Received: from [167.98.27.226] (helo=[10.35.5.173])
- by imap1.codethink.co.uk with esmtpsa (Exim 4.84_2 #1 (Debian))
- id 1iIs3N-0000D3-Pv; Fri, 11 Oct 2019 11:21:45 +0100
-Subject: Re: [PATCH] zImage: atags_to_fdt: fix __be32 and __be64 types
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-References: <20191010105357.7205-1-ben.dooks@codethink.co.uk>
- <20191010162104.GJ25745@shell.armlinux.org.uk>
-From: Ben Dooks <ben.dooks@codethink.co.uk>
-Organization: Codethink Limited.
-Message-ID: <49492058-d3b8-f3c1-dccc-4d42b3c5e66e@codethink.co.uk>
-Date: Fri, 11 Oct 2019 11:21:45 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iIs7L-0006oI-1C
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 10:25:52 +0000
+Received: by mail-qt1-f194.google.com with SMTP id u22so13059423qtq.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 11 Oct 2019 03:25:48 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=t/rs8Xp1pdPpdAkD8nGvsvdxNs69qOBQmbpI4r5piqI=;
+ b=GP57X33xmqbv1/6N9OaiiCpR16jGKsvylSr2xlq1fpQa+4l3IaUvj3J2PdIGnal469
+ bakqVKTLRXJyfnj7sVWgxIsZrwjG2BLdb8YK+VUc3qKshYd3mKZIkeEmsBjW836IYIby
+ j1vkzBWpX2WSVbZcrz+lIkqp7VbO/ZdZQuwrilpc84NpD6Xkh4/QQt7iSrYm7df10Ugu
+ ngbzyOELfCbcfYFMNMitUsW8AruWx/QT1YixrPj/oEqiD1gQkT/VYMIk4m28RNzWTFU+
+ 49PVxy1okM7Topn206YtRigTxB9W/tFms2kUY1bpNOhtfXFYE9w8YDYGS5D1FcdCp5j6
+ +4Ug==
+X-Gm-Message-State: APjAAAUiQgDuOaFWYQnLMjNnWXHpPNKQqxZ1o/VInwViUK2TAJxYHAKL
+ kLQdiNKNVKRjwq/3ZtNJ95gEwF5LxMuspiJMosw=
+X-Google-Smtp-Source: APXvYqwjulTSV7kS+w6qp4MRoCgoWGqaIzzGWNbblq62PsnCyHSrbBi44lgcajzslUmbSED4Th05TzD/0I+F9s+Wedk=
+X-Received: by 2002:a0c:fde8:: with SMTP id m8mr15279083qvu.4.1570789545038;
+ Fri, 11 Oct 2019 03:25:45 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20191010162104.GJ25745@shell.armlinux.org.uk>
-Content-Language: en-GB
+References: <20190926193030.5843-1-anders.roxell@linaro.org>
+ <20190926193030.5843-5-anders.roxell@linaro.org>
+ <bf5db3a5-96da-752c-49ea-d0de899882d5@huawei.com>
+ <CADYN=9LB9RHgRkQj=HcKDz1x9jqmT464Kseh2wZU5VvcLit+bQ@mail.gmail.com>
+ <d978673e-cbd1-5ab5-b2a4-cdb407d0f98c@huawei.com>
+In-Reply-To: <d978673e-cbd1-5ab5-b2a4-cdb407d0f98c@huawei.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 11 Oct 2019 12:25:29 +0200
+Message-ID: <CAK8P3a0kBz1-i-3miCo1vMuoM39ivXa3oxOE9VnCqDO-nfNOxw@mail.gmail.com>
+Subject: Re: [PATCH 3/3] arm64: configs: unset CPU_BIG_ENDIAN
+To: John Garry <john.garry@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_032150_357090_C35A0C79 
-X-CRM114-Status: GOOD (  17.78  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191011_032551_076135_6373B2F3 
+X-CRM114-Status: GOOD (  20.52  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [176.9.8.82 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [209.85.160.194 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.194 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,130 +86,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@lists.codethink.co.uk, linux-arm-kernel@lists.infradead.org
+Cc: Anders Roxell <anders.roxell@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Olof Johansson <olof@lixom.net>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/10/2019 17:21, Russell King - ARM Linux admin wrote:
-> On Thu, Oct 10, 2019 at 11:53:57AM +0100, Ben Dooks wrote:
->> There are some sparse warnings about type conversion in
->> the atags_to_fdt.c code, due to __be32 and __be64, so
->> fix the following:
->>
->> - Change _be32 and __be64 where appropriate
->> - Change setprop() to take a 'void *'
->> - Change incorrect fdt32_to_cpu() on FDT_MAGIC
->>
->> Fixes the following sparse warnings:
->>
->> arch/arm/boot/compressed/atags_to_fdt.c:66:29: warning: cast to restricted __be32
->> arch/arm/boot/compressed/atags_to_fdt.c:66:29: warning: cast to restricted __be32
->> arch/arm/boot/compressed/atags_to_fdt.c:66:29: warning: cast to restricted __be32
->> arch/arm/boot/compressed/atags_to_fdt.c:66:29: warning: cast to restricted __be32
->> arch/arm/boot/compressed/atags_to_fdt.c:66:29: warning: cast to restricted __be32
->> arch/arm/boot/compressed/atags_to_fdt.c:66:29: warning: cast to restricted __be32
->> arch/arm/boot/compressed/atags_to_fdt.c:141:34: warning: cast to restricted __be32
->> arch/arm/boot/compressed/atags_to_fdt.c:141:34: warning: cast to restricted __be32
->> arch/arm/boot/compressed/atags_to_fdt.c:141:34: warning: cast to restricted __be32
->> arch/arm/boot/compressed/atags_to_fdt.c:141:34: warning: cast to restricted __be32
->> arch/arm/boot/compressed/atags_to_fdt.c:141:34: warning: cast to restricted __be32
->> arch/arm/boot/compressed/atags_to_fdt.c:141:34: warning: cast to restricted __be32
->> arch/arm/boot/compressed/atags_to_fdt.c:182:60: warning: incorrect type in assignment (different base types)
->> arch/arm/boot/compressed/atags_to_fdt.c:182:60:    expected unsigned long long [usertype]
->> arch/arm/boot/compressed/atags_to_fdt.c:182:60:    got restricted __be64 [usertype]
->> arch/arm/boot/compressed/atags_to_fdt.c:184:60: warning: incorrect type in assignment (different base types)
->> arch/arm/boot/compressed/atags_to_fdt.c:184:60:    expected unsigned long long [usertype]
->> arch/arm/boot/compressed/atags_to_fdt.c:184:60:    got restricted __be64 [usertype]
->> arch/arm/boot/compressed/atags_to_fdt.c:187:62: warning: incorrect type in assignment (different base types)
->> arch/arm/boot/compressed/atags_to_fdt.c:187:62:    expected unsigned int
->> arch/arm/boot/compressed/atags_to_fdt.c:187:62:    got restricted __be32 [usertype]
->> arch/arm/boot/compressed/atags_to_fdt.c:189:62: warning: incorrect type in assignment (different base types)
->> arch/arm/boot/compressed/atags_to_fdt.c:189:62:    expected unsigned int
->> arch/arm/boot/compressed/atags_to_fdt.c:189:62:    got restricted __be32 [usertype]
->>
->> Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
->> ---
->> KernelVersion: 5.4-rc2
->> ---
->> Cc: Russell King <linux@armlinux.org.uk>
->> Cc: linux-arm-kernel@lists.infradead.org
->>
->> Changes since v1:
->> - Fix setprop() type to void *
->> - Fix ftd32_to_cpu on FDT_MAGIC
->> ---
->>   arch/arm/boot/compressed/atags_to_fdt.c | 14 +++++++-------
->>   1 file changed, 7 insertions(+), 7 deletions(-)
->>
->> diff --git a/arch/arm/boot/compressed/atags_to_fdt.c b/arch/arm/boot/compressed/atags_to_fdt.c
->> index 330cd3c2eae5..cd889f19c8a3 100644
->> --- a/arch/arm/boot/compressed/atags_to_fdt.c
->> +++ b/arch/arm/boot/compressed/atags_to_fdt.c
->> @@ -19,7 +19,7 @@ static int node_offset(void *fdt, const char *node_path)
->>   }
->>   
->>   static int setprop(void *fdt, const char *node_path, const char *property,
->> -		   uint32_t *val_array, int size)
->> +		   void *val_array, int size)
->>   {
->>   	int offset = node_offset(fdt, node_path);
->>   	if (offset < 0)
->> @@ -60,7 +60,7 @@ static uint32_t get_cell_size(const void *fdt)
->>   {
->>   	int len;
->>   	uint32_t cell_size = 1;
->> -	const uint32_t *size_len =  getprop(fdt, "/", "#size-cells", &len);
->> +	const __be32 *size_len =  getprop(fdt, "/", "#size-cells", &len);
->>   
->>   	if (size_len)
->>   		cell_size = fdt32_to_cpu(*size_len);
->> @@ -129,7 +129,7 @@ int atags_to_fdt(void *atag_list, void *fdt, int total_space)
->>   	struct tag *atag = atag_list;
->>   	/* In the case of 64 bits memory size, need to reserve 2 cells for
->>   	 * address and size for each bank */
->> -	uint32_t mem_reg_property[2 * 2 * NR_BANKS];
->> +	__be32 mem_reg_property[2 * 2 * NR_BANKS];
->>   	int memcount = 0;
->>   	int ret, memsize;
->>   
->> @@ -138,7 +138,7 @@ int atags_to_fdt(void *atag_list, void *fdt, int total_space)
->>   		return 1;
->>   
->>   	/* if we get a DTB here we're done already */
->> -	if (*(u32 *)atag_list == fdt32_to_cpu(FDT_MAGIC))
->> +	if (*(__be32 *)atag_list == cpu_to_fdt32(FDT_MAGIC))
->>   	       return 0;
->>   
->>   	/* validate the ATAG */
->> @@ -177,8 +177,8 @@ int atags_to_fdt(void *atag_list, void *fdt, int total_space)
->>   				/* if memsize is 2, that means that
->>   				 * each data needs 2 cells of 32 bits,
->>   				 * so the data are 64 bits */
->> -				uint64_t *mem_reg_prop64 =
->> -					(uint64_t *)mem_reg_property;
->> +				__be64 *mem_reg_prop64 =
->> +					(__be64 *)mem_reg_property;
->>   				mem_reg_prop64[memcount++] =
->>   					cpu_to_fdt64(atag->u.mem.start);
->>   				mem_reg_prop64[memcount++] =
->> @@ -207,7 +207,7 @@ int atags_to_fdt(void *atag_list, void *fdt, int total_space)
->>   	}
->>   
->>   	if (memcount) {
->> -		setprop(fdt, "/memory", "reg", mem_reg_property,
->> +		setprop(fdt, "/memory", "reg", (uint32_t *)mem_reg_property,
-> 
-> As setprop() now takes a void pointer argument, do you need this cast?
+On Thu, Oct 3, 2019 at 1:15 PM John Garry <john.garry@huawei.com> wrote:
+> On 03/10/2019 08:40, Anders Roxell wrote:
+> > On Tue, 1 Oct 2019 at 16:04, John Garry <john.garry@huawei.com> wrote:
+> >> On 26/09/2019 20:30, Anders Roxell wrote:
+> >>> it doesn't get enabled when building allmodconfig kernels. When doing a
+> >>> 'make savedefconfig' CONFIG_CPU_BIG_ENDIAN will be dropped.
+> >>
+> >> So without having to pass KCONFIG_ALLCONFIG or do anything else, what
+> >> about a config for CONFIG_CPU_LITTLE_ENDIAN instead? I'm not sure if
+> >> that was omitted for a specific reason.
+> >
+> > Oh, I tried to elaborate on the idea in the cover letter, that using
+> > the defconfig
+> > as base and then configure the rest as modules is to get a bootable kernel
+> > that have as many features turned on as possible. That will make it possible
+> > to run as wide a range of testsuites as possible on a single kernel.
+> >
+> > Does that make it clearer ?
+>
+> Hi Anders,
+>
+> Yeah, I got the idea.
+>
+> So when you say "'make savedefconfig' CONFIG_CPU_BIG_ENDIAN will be
+> dropped", I don't know what the rules are in terms of resyncing the
+> common defconfig (I was under the impression that it's done per release
+> cycle by the arm soc maintainers, but can't find evidence as such), but
+> your change may be easily lost in this way.
 
-Yes, sorry noticed this just after I sent the v2 so fixed v3.
+We don't do it every release, but occasionally someone sends a patch
+with a refresh, and this might easily get missed.
 
--- 
-Ben Dooks				http://www.codethink.co.uk/
-Senior Engineer				Codethink - Providing Genius
+We could force the allmodconfig kernel to be little-endian by default,
+using a choice statement to pick endianess like arch/mips and arch/sh
+do, the effect would be that an allmodconfig kernel gains a few more
+options that depend on !BIG_ENDIAN, but we would no longer catch
+a class of endianess bugs in drivers that we otherwise get warnings
+for. No idea what is better here.
 
-https://www.codethink.co.uk/privacy.html
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
