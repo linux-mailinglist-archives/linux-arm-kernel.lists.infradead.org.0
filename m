@@ -2,77 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0D0CD3A36
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 09:44:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88DE3D3A3B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 09:46:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eqQp09cc3JeVsdR/Ti6CSpGaFlhYahBK7oHGf+PEW7w=; b=TaXt+0o6/HYB6/
-	1i1bC7B31rENIkZEfu9VjHVBUQ8uBx5k7zokMADLcCoTuYvK51JA61OcfuHB+l4rHRiMpp1yJ0jO0
-	5wcfwieannpY1fyvABRgSlkOIqRoYKETWXz2e+6tlEP5mePC3PDpxd6BzZJb51q9DDD/kyio46mda
-	KfpdbCb4aSzK9kqXdRFU0R2hse/GSmHjiBimGkCaBYcNMPr3ACVzou9gkm83d4CY8ONsBPocrlJ+J
-	DD/NlCCptkJSiFMNXXe8byRC/nxAcx7o0r2Tl2s8VcTWSlScO8nmgy7znEPgedjPKgn+lKmWz8RPT
-	te84li+mMv6WHzdUgtXw==;
+	List-Owner; bh=GgMaxjqEvmpYBuXDPzfWp/nVndlltU43gn8ApTbodIw=; b=ar+m83v9KmXz2U
+	2fdPBd5CP32uLZ/5k/2lH1jtmrjX0XDalapATV3Q0RXNvyYlcf8DAGKBlnyFfiDiZTHX9vtKNOrPi
+	APtT4Hf5zmhHVjSRzrg66oxc2rJMbwPKIuhPBsDSFm+ah1b6YS4JkkX43I64YlUq8hXatabHwaBcB
+	PDwYlE3rWqmFjjdaI9OXnTFnhliezZeG4M3cTsLN861rgbYzHwupHWv7o6iFI96XbHP/z5a7X63zI
+	TuIdfwapCH3nIbM2bph90tQQROU9kqKmajZkNE4Y4fkUY1RWvPgIm/HfGSrjBfghhJAIi2tQnhGMb
+	K4zlI0pvt+CoMigOqiYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIpac-0004vc-0q; Fri, 11 Oct 2019 07:43:54 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1iIpd4-0006UP-KO; Fri, 11 Oct 2019 07:46:26 +0000
+Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIpaP-0004ux-A5
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 07:43:43 +0000
-Received: by mail-lj1-x242.google.com with SMTP id y23so8795662lje.9
+ id 1iIpct-0006SF-LR
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 07:46:17 +0000
+Received: by mail-ot1-x344.google.com with SMTP id z6so7198983otb.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 11 Oct 2019 00:43:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ Fri, 11 Oct 2019 00:46:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=75drn0EC3pVb7nMu4OqJSjfSZVRc5lsrjDDKVXKY+D0=;
- b=OBn9GSt506Ru+vELjcSjxQOpMzJfkCdPlvbD0WJ1HTwia637wVf8cVY+QtfZfMjsAy
- MKsl7AwGeBNWTrJSBp/xxSeRew0knY1BkeJqeyn6U21EJdTZ54ayyEz1lE3QpdD/DXOI
- UL1kh6U0kgRGA5bI4Ud8OnNkJPUUbeUcU0+4eMOQF8/kDGEMZZ7bJincQ7XO+t/C/xzQ
- 5YxjfhNGiO+IN1wc5PSbPWtJiCdQEZoMl+yr/Zvgx2qnWFL2xj+YYWWl0qk01fhIiXSQ
- X3oNGXs8ZWja1aOVQkJsQz8kzrvCgd4aDtAKtbdmYcSLnhdfZoHy0NTvSTdpzfNo6gUK
- gffQ==
+ :cc; bh=VEdXx/unhoAspyNdeypuQARVF7GT/IGCOOxAclfE3Po=;
+ b=GQCcebgv1Nezt0gLnYs64Uhq+XOoDiF9pgVupYddY2agJ0jwl1ZHPfH/WeCiyfgoXQ
+ iq5NPP/1CWQiH97hdzTJ6vTvSyAg4tgU65ARu5hmxrJ7dEVZdFk7iGE/I2ue4EwaicLc
+ GBbKD2yqe2mVK/XqieE25Uq0SnEhfspbsXaJo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=75drn0EC3pVb7nMu4OqJSjfSZVRc5lsrjDDKVXKY+D0=;
- b=NXwtZywY2qyHpoFNI9z3rp5KgfQ3eQHprUp8sim1TOth/qJaZ2DtuekgeDQizAJ5cp
- aYFHBASV5XqCkVYzJ6hIwafaEwmecaGBqvNqQXdlYvKMauCzBSQIRbFqfJ/nRCAiVrr0
- saRmJASJBOAArOtaYSf3jZYHyD0xD+07JI2V2GDSL+UNGwOrEf7r471hY7tsydjtEG1k
- REfkgabUphxmpF2apEds/OQ7RnQ2DEqOBr0BIIj/fKDuOK0BcFo2myJwulDngyEjST5H
- oubN7NW5BIZ+S9q/Tk+nATVcmst/D8OcyHOfR6ahrECPCTobTr4FFCB6mDwWX7yX8Zfc
- g0Vg==
-X-Gm-Message-State: APjAAAV0szg8UW5R+OM/6WIlzVseF/1jWoGMBYUu/SCfBfS/ydeSoPb8
- 4DW+uKwVpMcxF6RXeFgjVULihF/yXqZDMzCUZ54KQw==
-X-Google-Smtp-Source: APXvYqwsrIaguR6gc+cn7lI3kvBjYYwMw83TKOjdKm1xRk5zZloQNbY9/z0V77KhG/9cVgtk4Qsd8iMAjnc/LwmtG4E=
-X-Received: by 2002:a2e:81cf:: with SMTP id s15mr7434961ljg.99.1570779819412; 
- Fri, 11 Oct 2019 00:43:39 -0700 (PDT)
+ bh=VEdXx/unhoAspyNdeypuQARVF7GT/IGCOOxAclfE3Po=;
+ b=KVn3P7AVB6cpQGS9pOwCFvYETEmbOEDdRmJ83EUY57lLl1E+h3gZQUhqqO/D3B/16H
+ OSSQU7DNfhf7UQGW937lzE0arrdy5938mmMZegTXvwg3G81toZLoEhmLbw1Pv8uX0sCa
+ V8vi8RuI+SpUE3eZA7Y9JzwkG9iYBtM/gud3qnk2fnIgtZVQv7LMZBqrQC5TMjpiKiog
+ gmj6tzlO+8d8lkOYxU0+gN3HMG2ULaKGzY4uaTHkGKUAsRHtHCN+1MGWbwyyHxARutvB
+ mLLH1frKy0HJaWnYI6bcyV6uzboQsChdjaABAdhplygMTPU/TZtCm51xO9rXmmfOWISX
+ GepQ==
+X-Gm-Message-State: APjAAAWI8t2oUldq5SZLQDLYBE0n6XT/aCi5hjeIDbqMVgxKxi2xsJan
+ 1x8FmVZCyXYL7RT3SxMPy7g8IprR6pYKn8kH/saLTRSc
+X-Google-Smtp-Source: APXvYqznhgLkah+3wRJ+x7D/C6vgv26plF47/dWiTEoYReVvMDPnUxM+auZwl5KrDTECXewJPmnw9etfbD3TKtVLmg0=
+X-Received: by 2002:a9d:6b0a:: with SMTP id g10mr11180447otp.303.1570779973032; 
+ Fri, 11 Oct 2019 00:46:13 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191004012525.26647-1-chris.packham@alliedtelesis.co.nz>
- <20191004012525.26647-3-chris.packham@alliedtelesis.co.nz>
-In-Reply-To: <20191004012525.26647-3-chris.packham@alliedtelesis.co.nz>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 11 Oct 2019 09:43:28 +0200
-Message-ID: <CACRpkdYWLTjiSQo_VTeReL1CfEO3h_8ONbdCk=PD1x+oc2ggCg@mail.gmail.com>
-Subject: Re: [PATCH 2/2] gpio: Add xgs-iproc driver
-To: Chris Packham <chris.packham@alliedtelesis.co.nz>
+References: <20191010092526.10419-1-narmstrong@baylibre.com>
+ <20191010092526.10419-5-narmstrong@baylibre.com>
+ <20191010132601.GA10110@arm.com>
+ <44f1771f-d640-f23d-995f-7bfcadd213bc@baylibre.com>
+ <20191010173152.GA575@arm.com>
+In-Reply-To: <20191010173152.GA575@arm.com>
+From: Daniel Vetter <daniel@ffwll.ch>
+Date: Fri, 11 Oct 2019 09:46:01 +0200
+Message-ID: <CAKMK7uE2p_VbJB5PfS1DJ5AzOm60p22c+YOJ18FtD4_ec61LwQ@mail.gmail.com>
+Subject: Re: [PATCH 4/7] drm/meson: plane: add support for AFBC mode for OSD1
+ plane
+To: Ayan Halder <Ayan.Halder@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_004341_355572_EBD64D87 
-X-CRM114-Status: GOOD (  24.56  )
+X-CRM114-CacheID: sfid-20191011_004615_704243_36464B06 
+X-CRM114-Status: GOOD (  34.62  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -91,258 +92,328 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- Scott Branden <sbranden@broadcom.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Ray Jui <rjui@broadcom.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- richard.laing@alliedtelesis.co.nz,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Rob Herring <robh+dt@kernel.org>,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ "khilman@baylibre.com" <khilman@baylibre.com>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "linux-amlogic@lists.infradead.org" <linux-amlogic@lists.infradead.org>,
+ nd <nd@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Chris!
-
-Thanks for your patch!
-
-On Fri, Oct 4, 2019 at 3:25 AM Chris Packham
-<chris.packham@alliedtelesis.co.nz> wrote:
-
-> This driver supports the Chip Common A GPIO controller present on a
-> number of Broadcom switch ASICs with integrated SoCs. The controller is
-> similar to the pinctrl-nsp-gpio and pinctrl-iproc-gpio blocks but
-> different enough that a separate driver is required.
+On Thu, Oct 10, 2019 at 7:32 PM Ayan Halder <Ayan.Halder@arm.com> wrote:
 >
-> This has been ported from Broadcom's XLDK 5.0.3 retaining only the CCA
-> support (pinctrl-iproc-gpio covers CCB).
+> On Thu, Oct 10, 2019 at 03:41:15PM +0200, Neil Armstrong wrote:
+> > Hi Ayan,
+> >
+> > On 10/10/2019 15:26, Ayan Halder wrote:
+> > > On Thu, Oct 10, 2019 at 11:25:23AM +0200, Neil Armstrong wrote:
+> > >> This adds all the OSD configuration plumbing to support the AFBC decoders
+> > >> path to display of the OSD1 plane.
+> > >>
+> > >> The Amlogic GXM and G12A AFBC decoders are integrated very differently.
+> > >>
+> > >> The Amlogic GXM has a direct output path to the OSD1 VIU pixel input,
+> > >> because the GXM AFBC decoder seem to be a custom IP developed by Amlogic.
+> > >>
+> > >> On the other side, the Amlogic G12A AFBC decoder seems to be an external
+> > >> IP that emit pixels on an AXI master hooked to a "Mali Unpack" block
+> > >> feeding the OSD1 VIU pixel input.
+> > >> This uses a weird "0x1000000" internal HW physical address on both
+> > >> sides to transfer the pixels.
+> > >>
+> > >> For Amlogic GXM, the supported pixel formats are the same as the normal
+> > >> linear OSD1 mode.
+> > >>
+> > >> On the other side, Amlogic added support for all AFBC v1.2 formats for
+> > >> the G12A AFBC integration.
+> > >>
+> > >> For simplicity, we stick to the already supported formats for now.
+> > >>
+> > >> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> > >> ---
+> > >>  drivers/gpu/drm/meson/meson_crtc.c  |   2 +
+> > >>  drivers/gpu/drm/meson/meson_drv.h   |   4 +
+> > >>  drivers/gpu/drm/meson/meson_plane.c | 215 ++++++++++++++++++++++++----
+> > >>  3 files changed, 190 insertions(+), 31 deletions(-)
+> > >>
+> > >> diff --git a/drivers/gpu/drm/meson/meson_crtc.c b/drivers/gpu/drm/meson/meson_crtc.c
+> > >> index 57ae1c13d1e6..d478fa232951 100644
+> > >> --- a/drivers/gpu/drm/meson/meson_crtc.c
+> > >> +++ b/drivers/gpu/drm/meson/meson_crtc.c
+> > >> @@ -281,6 +281,8 @@ void meson_crtc_irq(struct meson_drm *priv)
+> > >>    if (priv->viu.osd1_enabled && priv->viu.osd1_commit) {
+> > >>            writel_relaxed(priv->viu.osd1_ctrl_stat,
+> > >>                            priv->io_base + _REG(VIU_OSD1_CTRL_STAT));
+> > >> +          writel_relaxed(priv->viu.osd1_ctrl_stat2,
+> > >> +                          priv->io_base + _REG(VIU_OSD1_CTRL_STAT2));
+> > >>            writel_relaxed(priv->viu.osd1_blk0_cfg[0],
+> > >>                            priv->io_base + _REG(VIU_OSD1_BLK0_CFG_W0));
+> > >>            writel_relaxed(priv->viu.osd1_blk0_cfg[1],
+> > >> diff --git a/drivers/gpu/drm/meson/meson_drv.h b/drivers/gpu/drm/meson/meson_drv.h
+> > >> index 60f13c6f34e5..de25349be8aa 100644
+> > >> --- a/drivers/gpu/drm/meson/meson_drv.h
+> > >> +++ b/drivers/gpu/drm/meson/meson_drv.h
+> > >> @@ -53,8 +53,12 @@ struct meson_drm {
+> > >>            bool osd1_enabled;
+> > >>            bool osd1_interlace;
+> > >>            bool osd1_commit;
+> > >> +          bool osd1_afbcd;
+> > >>            uint32_t osd1_ctrl_stat;
+> > >> +          uint32_t osd1_ctrl_stat2;
+> > >>            uint32_t osd1_blk0_cfg[5];
+> > >> +          uint32_t osd1_blk1_cfg4;
+> > >> +          uint32_t osd1_blk2_cfg4;
+> > >>            uint32_t osd1_addr;
+> > >>            uint32_t osd1_stride;
+> > >>            uint32_t osd1_height;
+> > >> diff --git a/drivers/gpu/drm/meson/meson_plane.c b/drivers/gpu/drm/meson/meson_plane.c
+> > >> index 5e798c276037..412941aa8402 100644
+> > >> --- a/drivers/gpu/drm/meson/meson_plane.c
+> > >> +++ b/drivers/gpu/drm/meson/meson_plane.c
+> > >> @@ -23,6 +23,7 @@
+> > >>  #include "meson_plane.h"
+> > >>  #include "meson_registers.h"
+> > >>  #include "meson_viu.h"
+> > >> +#include "meson_osd_afbcd.h"
+> > >>
+> > >>  /* OSD_SCI_WH_M1 */
+> > >>  #define SCI_WH_M1_W(w)                    FIELD_PREP(GENMASK(28, 16), w)
+> > >> @@ -92,12 +93,38 @@ static int meson_plane_atomic_check(struct drm_plane *plane,
+> > >>                                               false, true);
+> > >>  }
+> > >>
+> > >> +#define MESON_MOD_AFBC_VALID_BITS (AFBC_FORMAT_MOD_BLOCK_SIZE_16x16 |     \
+> > >> +                             AFBC_FORMAT_MOD_BLOCK_SIZE_32x8 |    \
+> > >> +                             AFBC_FORMAT_MOD_YTR |                \
+> > >> +                             AFBC_FORMAT_MOD_SPARSE |             \
+> > >> +                             AFBC_FORMAT_MOD_SPLIT)
+> > >> +
+> > >>  /* Takes a fixed 16.16 number and converts it to integer. */
+> > >>  static inline int64_t fixed16_to_int(int64_t value)
+> > >>  {
+> > >>    return value >> 16;
+> > >>  }
+> > >>
+> > >> +static u32 meson_g12a_afbcd_line_stride(struct meson_drm *priv)
+> > >> +{
+> > >> +  u32 line_stride = 0;
+> > >> +
+> > >> +  switch (priv->afbcd.format) {
+> > >> +  case DRM_FORMAT_RGB565:
+> > >> +          line_stride = ((priv->viu.osd1_width << 4) + 127) >> 7;
+> > >> +          break;
+> > >> +  case DRM_FORMAT_RGB888:
+> > >> +  case DRM_FORMAT_XRGB8888:
+> > >> +  case DRM_FORMAT_ARGB8888:
+> > >> +  case DRM_FORMAT_XBGR8888:
+> > >> +  case DRM_FORMAT_ABGR8888:
+> > > Please have a look at
+> > > https://www.kernel.org/doc/html/latest/gpu/afbc.html for our
+> > > recommendation. We suggest that *X* formats are avoided.
+> > >
+> > > Also, for interoperability and maximum compression efficiency (with
+> > > AFBC_FORMAT_MOD_YTR), we suggest the following order :-
+> > >
+> > >         Component 0: R
+> > >         Component 1: G
+> > >         Component 2: B
+> > >         Component 3: A (if available)
+> >
+> >
+> > Sorry I don't understand, you ask me to limit AFBC to ABGR8888 ?
 >
-> Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+> Apologies for the confusion, as per the link, the formats which are
+> suggested with AFBC_FORMAT_MOD_YTR are the BGR/ABGR formats (as
+> listed in the 'AFBC formats' table)
+>
+> Thus, any other permutation of the components might make it incompatible
+> with some other AFBC producers/consumers.
 
-(...)
+Uh, that's not how this is supposed to be used. Drivers are meant to
+expose _everything_ they support (bonus if you roughly sort it in
+preference order). Userspace then computes the intersection of
+modifiers/formats supported by all devices it needs to share a buffer
+with. Allowing that was the entire point of modifiers, if we
+artificially limit to the common denominator we're back "only linear
+works everywhere".
+-Daniel
 
-> +config GPIO_XGS_IPROC
-> +       tristate "BRCM XGS iProc GPIO support"
-> +       depends on OF_GPIO && (ARCH_BCM_IPROC || COMPILE_TEST)
-> +       select GPIO_GENERIC
-> +       select GPIOLIB_IRQCHIP
+>
+> >
+> > But why if the HW (GPU and DPU) is capable of ?
+> >
+> > Isn't it an userspace choice ? I understand XRGB8888 is a waste
+> > of memory space and compression efficiency, but this is not the
+> > kernel driver's to decide this, right ?
+> It is a reccomendation by the AFBC spec. As far as I understand, it
+> depends upon the implementor of the AFBC spec(ie dpu, gpu, vpu, etc)
+> to allow/disallow *X* formats for AFBC encoding/decoding.
+>
+> >
+> > For interoperability I'll understand recommending a minimal set
+> > of modifiers and formats. But here, each platform is also limited
+> > by it's GPU capabilites aswell.
+> Agreed
+>
+> >
+> > Limiting to ABGR8888 would discard like every non-Android renderers,
+> > using AFBC, I'm not sure it's the kernels driver's responsibility.
+> I am not familiar with non-Android renderers.
+> >
+> > >
+> > > Thus, DRM_FORMAT_ABGR, DRM_FORMAT_BGR should only be allowed.
+> > >> +          line_stride = ((priv->viu.osd1_width << 5) + 127) >> 7;
+> > >> +          break;
+> > >> +  }
+> > >> +
+> > >> +  return ((line_stride + 1) >> 1) << 1;
+> > >> +}
+> > >> +
+> > >>  static void meson_plane_atomic_update(struct drm_plane *plane,
+> > >>                                  struct drm_plane_state *old_state)
+> > >>  {
+> >
+> > [...]
+> >
+> > >>
+> > >> +static bool meson_plane_format_mod_supported(struct drm_plane *plane,
+> > >> +                                       u32 format, u64 modifier)
+> > >> +{
+> > >> +  struct meson_plane *meson_plane = to_meson_plane(plane);
+> > >> +  struct meson_drm *priv = meson_plane->priv;
+> > >> +  int i;
+> > >> +
+> > >> +  if (modifier == DRM_FORMAT_MOD_INVALID)
+> > >> +          return false;
+> > >> +
+> > >> +  if (modifier == DRM_FORMAT_MOD_LINEAR)
+> > >> +          return true;
+> > >> +
+> > >> +  if (!meson_vpu_is_compatible(priv, VPU_COMPATIBLE_GXM) &&
+> > >> +      !meson_vpu_is_compatible(priv, VPU_COMPATIBLE_G12A))
+> > >> +          return false;
+> > >> +
+> > >> +  if (modifier & ~DRM_FORMAT_MOD_ARM_AFBC(MESON_MOD_AFBC_VALID_BITS))
+> > >> +          return false;
+> > >> +
+> > >> +  for (i = 0 ; i < plane->modifier_count ; ++i)
+> > >> +          if (plane->modifiers[i] == modifier)
+> > >> +                  break;
+> > >> +
+> > >> +  if (i == plane->modifier_count) {
+> > >> +          DRM_DEBUG_KMS("Unsupported modifier\n");
+> > >> +          return false;
+> > >> +  }
+> >
+> > I can add a warn_once here, would it be enough ?
+> >
+> > >> +
+> > >> +  if (priv->afbcd.ops && priv->afbcd.ops->supported_fmt)
+> > >> +          return priv->afbcd.ops->supported_fmt(modifier, format);
+> > >> +
+> > >> +  DRM_DEBUG_KMS("AFBC Unsupported\n");
+> > >> +  return false;
+> > >> +}
+> > >> +
+> > >>  static const struct drm_plane_funcs meson_plane_funcs = {
+> > >>    .update_plane           = drm_atomic_helper_update_plane,
+> > >>    .disable_plane          = drm_atomic_helper_disable_plane,
+> > >> @@ -353,6 +457,7 @@ static const struct drm_plane_funcs meson_plane_funcs = {
+> > >>    .reset                  = drm_atomic_helper_plane_reset,
+> > >>    .atomic_duplicate_state = drm_atomic_helper_plane_duplicate_state,
+> > >>    .atomic_destroy_state   = drm_atomic_helper_plane_destroy_state,
+> > >> +  .format_mod_supported   = meson_plane_format_mod_supported,
+> > >>  };
+> > >>
+> > >>  static const uint32_t supported_drm_formats[] = {
+> > >> @@ -364,10 +469,53 @@ static const uint32_t supported_drm_formats[] = {
+> > >>    DRM_FORMAT_RGB565,
+> > >>  };
+> > >>
+> > >> +static const uint64_t format_modifiers_afbc_gxm[] = {
+> > >> +  DRM_FORMAT_MOD_ARM_AFBC(AFBC_FORMAT_MOD_BLOCK_SIZE_16x16 |
+> > >> +                          AFBC_FORMAT_MOD_SPARSE |
+> > >> +                          AFBC_FORMAT_MOD_YTR),
+> > >> +  /* SPLIT mandates SPARSE, RGB modes mandates YTR */
+> > >> +  DRM_FORMAT_MOD_ARM_AFBC(AFBC_FORMAT_MOD_BLOCK_SIZE_16x16 |
+> > >> +                          AFBC_FORMAT_MOD_YTR |
+> > >> +                          AFBC_FORMAT_MOD_SPARSE |
+> > >> +                          AFBC_FORMAT_MOD_SPLIT),
+> > >> +  DRM_FORMAT_MOD_LINEAR,
+> > >> +  DRM_FORMAT_MOD_INVALID,
+> > >> +};
+> > >> +
+> > >> +static const uint64_t format_modifiers_afbc_g12a[] = {
+> > >> +  /*
+> > >> +   * - TOFIX Support AFBC modifiers for YUV formats (16x16 + TILED)
+> > >> +   * - AFBC_FORMAT_MOD_YTR is mandatory since we only support RGB
+> > >> +   * - SPLIT is mandatory for performances reasons when in 16x16
+> > >> +   *   block size
+> > >> +   * - 32x8 block size + SPLIT is mandatory with 4K frame size
+> > >> +   *   for performances reasons
+> > >> +   */
+> > >> +  DRM_FORMAT_MOD_ARM_AFBC(AFBC_FORMAT_MOD_BLOCK_SIZE_16x16 |
+> > >> +                          AFBC_FORMAT_MOD_YTR |
+> > >> +                          AFBC_FORMAT_MOD_SPARSE |
+> > >> +                          AFBC_FORMAT_MOD_SPLIT),
+> > >> +  DRM_FORMAT_MOD_ARM_AFBC(AFBC_FORMAT_MOD_BLOCK_SIZE_32x8 |
+> > >> +                          AFBC_FORMAT_MOD_YTR |
+> > >> +                          AFBC_FORMAT_MOD_SPARSE),
+> > >> +  DRM_FORMAT_MOD_ARM_AFBC(AFBC_FORMAT_MOD_BLOCK_SIZE_32x8 |
+> > >> +                          AFBC_FORMAT_MOD_YTR |
+> > >> +                          AFBC_FORMAT_MOD_SPARSE |
+> > >> +                          AFBC_FORMAT_MOD_SPLIT),
+> > >> +  DRM_FORMAT_MOD_LINEAR,
+> > >> +  DRM_FORMAT_MOD_INVALID,
+> > >> +};
+> > >> +
+> > >> +static const uint64_t format_modifiers_default[] = {
+> > >> +  DRM_FORMAT_MOD_LINEAR,
+> > >> +  DRM_FORMAT_MOD_INVALID,
+> > >> +};
+> > >> +
+> > >>  int meson_plane_create(struct meson_drm *priv)
+> > >>  {
+> > >>    struct meson_plane *meson_plane;
+> > >>    struct drm_plane *plane;
+> > >> +  const uint64_t *format_modifiers = format_modifiers_default;
+> > >>
+> > >>    meson_plane = devm_kzalloc(priv->drm->dev, sizeof(*meson_plane),
+> > >>                               GFP_KERNEL);
+> > >> @@ -377,11 +525,16 @@ int meson_plane_create(struct meson_drm *priv)
+> > >>    meson_plane->priv = priv;
+> > >>    plane = &meson_plane->base;
+> > >>
+> > >> +  if (meson_vpu_is_compatible(priv, VPU_COMPATIBLE_GXM))
+> > >> +          format_modifiers = format_modifiers_afbc_gxm;
+> > >> +  else if (meson_vpu_is_compatible(priv, VPU_COMPATIBLE_G12A))
+> > >> +          format_modifiers = format_modifiers_afbc_g12a;
+> > >> +
+> > >>    drm_universal_plane_init(priv->drm, plane, 0xFF,
+> > >>                             &meson_plane_funcs,
+> > >>                             supported_drm_formats,
+> > >>                             ARRAY_SIZE(supported_drm_formats),
+> > >> -                           NULL,
+> > >> +                           format_modifiers,
+> > >>                             DRM_PLANE_TYPE_PRIMARY, "meson_primary_plane");
+> > >>
+> > >>    drm_plane_helper_add(plane, &meson_plane_helper_funcs);
+> > >> --
+> > >> 2.22.0
+> _______________________________________________
+> dri-devel mailing list
+> dri-devel@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/dri-devel
 
-Nice reuse of abstractions.
 
-> +static u32 iproc_gpio_readl(struct iproc_gpio_chip *chip, int reg)
-> +{
-> +       return readl(chip->base + reg);
-> +}
-> +
-> +static void iproc_gpio_writel(struct iproc_gpio_chip *chip, u32 val, int reg)
-> +{
-> +       writel(val, chip->base + reg);
-> +}
 
-These wrappers don't really add anything do they? Just inline the
-direct readl()/writel() to base + reg everywhere instead.
-
-> +/* returns the corresponding gpio register bit */
-> +static int iproc_irq_to_gpio(struct iproc_gpio_chip *chip, u32 irq)
-> +{
-> +       struct irq_data *data = irq_domain_get_irq_data(chip->irq_domain, irq);
-> +
-> +       return data->hwirq;
-> +}
-
-I would name it something clearer since "gpio" is pretty ambigous.
-
-Like iproc_irq_to_gpio_offset()
-
-Maybe this is also a bit of unnecessary wrapper?
-
-> +static irqreturn_t iproc_gpio_irq_handler(int irq, void *data)
-> +{
-> +       struct iproc_gpio_chip *chip = (struct iproc_gpio_chip *)data;
-> +       struct gpio_chip gc = chip->gc;
-> +       int bit;
-> +       unsigned long int_bits = 0;
-> +       u32 int_status;
-> +
-> +       /* go through the entire GPIOs and handle all interrupts */
-> +       int_status = readl(chip->intr + CCA_INT_STS);
-> +       if (int_status & CCA_INT_F_GPIOINT) {
-> +               u32 event, level;
-> +
-> +               /* Get level and edge interrupts */
-> +               event = readl(chip->base + GPIO_CCA_INT_EVENT_MASK);
-> +               event &= readl(chip->base + GPIO_CCA_INT_EVENT);
-> +               level = readl(chip->base + GPIO_CCA_DIN);
-> +               level ^= readl(chip->base + GPIO_CCA_INT_LEVEL);
-> +               level &= readl(chip->base + GPIO_CCA_INT_LEVEL_MASK);
-> +               int_bits = level | event;
-> +
-> +               for_each_set_bit(bit, &int_bits, gc.ngpio)
-> +                       generic_handle_irq(
-> +                               irq_linear_revmap(chip->irq_domain, bit));
-> +       }
-> +
-> +       return  int_bits ? IRQ_HANDLED : IRQ_NONE;
-> +}
-
-I think this should be a chained interrupt handler (see below how to
-register it).
-
-See e.g. drivers/gpio/gpio-ftgpio010.c for an example:
-change function prototype, no return value, use
-chained_irq_enter/exit(irqchip, desc); etc.
-
-> +static int iproc_gpiolib_input(struct gpio_chip *gc, u32 gpio)
-> +static int iproc_gpiolib_output(struct gpio_chip *gc, u32 gpio, int value)
-> +static void iproc_gpiolib_set(struct gpio_chip *gc, u32 gpio, int value)
-> +static int iproc_gpiolib_get(struct gpio_chip *gc, u32 gpio)
-
-These callbacks seems to reimplement parts of GPIO_GENERIC
-that you should already be using.
-
-Again look at drivers/gpio/gpio-ftgpio010.c() use bgpio_init()
-to set up the library callbacks, look in
-drivers/gpio/gpio-mmio.c for kerneldoc on the function.
-
-> +static int iproc_gpiolib_to_irq(struct gpio_chip *gc, u32 offset)
-> +{
-> +       struct iproc_gpio_chip *chip = gpiochip_get_data(gc);
-> +
-> +       return irq_linear_revmap(chip->irq_domain, offset);
-> +}
-
-GPIOLIB_IRQCHIP provides a .to_irq() implementation
-so drop this and let the library handle this.
-
-> +static int iproc_gpio_probe(struct platform_device *pdev)
-> +{
-> +       struct device *dev = &pdev->dev;
-> +       struct device_node *dn = pdev->dev.of_node;
-> +       struct iproc_gpio_chip *chip;
-> +       u32 num_gpios;
-> +       int irq, ret;
-> +
-> +       chip = devm_kzalloc(dev, sizeof(*chip), GFP_KERNEL);
-> +       if (!chip)
-> +               return -ENOMEM;
-> +
-> +       chip->dev = dev;
-> +       platform_set_drvdata(pdev, chip);
-> +
-> +       chip->gc.label = dev_name(dev);
-> +
-> +       chip->base = devm_platform_ioremap_resource(pdev, 0);
-> +       if (IS_ERR(chip->base))
-> +               return PTR_ERR(chip->base);
-> +
-> +       /* Get number of GPIO pin */
-> +       if (of_property_read_u32(dn, "ngpios", &num_gpios)) {
-> +               dev_err(dev, "missing ngpios DT property\n");
-> +               return -EINVAL;
-> +       }
-
-Maybe provide a sensible default?
-
-> +       chip->gc.ngpio = num_gpios;
-> +       chip->gc.parent = dev;
-> +       chip->gc.of_node = dn;
-> +       chip->gc.direction_input = iproc_gpiolib_input;
-> +       chip->gc.direction_output = iproc_gpiolib_output;
-> +       chip->gc.set = iproc_gpiolib_set;
-> +       chip->gc.get = iproc_gpiolib_get;
-
-Drop this and call bgpio_init() to set up the callbacks
-instead. However, set up .ngpio *after* calling
-bgpio_init() so users can't access the nonexisting
-gpios.
-
-> +       chip->gc.to_irq = iproc_gpiolib_to_irq;
-
-Drop this and use the GPIOLIB_IRQCHIP.
-
-> +       ret = gpiochip_add_data(&chip->gc, chip);
-> +       if (ret) {
-> +               dev_err(dev, "unable to add GPIO chip\n");
-> +               return ret;
-> +       }
-
-Why not use devm_gpiochip_add_data()?
-
-> +       irq = platform_get_irq(pdev, 0);
-> +       if (irq > 0) {
-> +               u32 val, count;
-> +               struct irq_chip *irqc;
-> +
-> +               irqc = &chip->irqchip;
-> +               irqc->name = dev_name(dev);
-> +               irqc->irq_ack = iproc_gpio_irq_ack;
-> +               irqc->irq_mask = iproc_gpio_irq_mask;
-> +               irqc->irq_unmask = iproc_gpio_irq_unmask;
-> +               irqc->irq_set_type = iproc_gpio_irq_set_type;
-> +               irqc->irq_enable = iproc_gpio_irq_unmask;
-> +               irqc->irq_disable = iproc_gpio_irq_mask;
-> +               chip->intr = devm_platform_ioremap_resource(pdev, 1);
-> +               if (IS_ERR(chip->intr))
-> +                       return PTR_ERR(chip->intr);
-
-Move all this above the [devm_]gpiochip_add_data()
-call and add:
-
-struct gpio_irq_chip *girq;
-
-girq = &chip->gc.irq;
-girq->chip = irqc;
-
-etc follow the pattern from other drivers like the
-mentioned ftgpio010.c.
-
-> +               /* Create irq domain */
-> +               chip->irq_domain = irq_domain_add_linear(dn, num_gpios,
-> +                               &irq_domain_simple_ops, chip);
-> +
-> +               if (!chip->irq_domain) {
-> +                       dev_err(dev, "Couldn't allocate IRQ domain\n");
-> +                       ret = -ENODEV;
-> +                       goto err_irq_domain;
-> +               }
-> +
-> +               /* Map each gpio pin to an IRQ and set the handler */
-> +               for (count = 0; count < num_gpios; count++) {
-> +                       int irq;
-> +
-> +                       irq = irq_create_mapping(chip->irq_domain, count);
-> +                       irq_set_chip_and_handler(irq, irqc, handle_simple_irq);
-> +                       irq_set_chip_data(irq, chip);
-> +               }
-
-Drop this and let the generic GPIO irqchip handle
-the domain.
-
-> +               /* Enable GPIO interrupts for CCA GPIO */
-> +               val = readl(chip->intr + CCA_INT_MASK);
-> +               val |= CCA_INT_F_GPIOINT;
-> +               writel(val, chip->intr + CCA_INT_MASK);
-
-Move this before registering the chip.
-
-> +               /* Install ISR for this GPIO controller */
-> +               ret = devm_request_irq(dev, irq, iproc_gpio_irq_handler,
-> +                                      IRQF_SHARED, chip->gc.label, chip);
-> +               if (ret) {
-> +                       dev_err(dev, "Fail to request IRQ%d: %d\n", irq, ret);
-> +                       goto err_irq_request;
-> +               }
-
-Drop this and use the gpiolib irqchip library.
-
-Yours,
-Linus Walleij
+-- 
+Daniel Vetter
+Software Engineer, Intel Corporation
++41 (0) 79 365 57 48 - http://blog.ffwll.ch
 
 _______________________________________________
 linux-arm-kernel mailing list
