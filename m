@@ -2,73 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10177D45E7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 18:57:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05DA7D460E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 19:01:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YhGpaPBGWNfXR91X8kQgEDADtd71wBcvrR3bLbHl9es=; b=nyUhJF7ITh+RR3
-	zp00JnG/Q55r24cAvLVabMXzDG0ekWju0Fs397/E/0hskqdlhgfUvXH2q5aVBbzmH9DdRgsYvwSfM
-	0j4twsDsFlAf6oKSs0JWYn49Dd6gY3ACMe8l6OOkezmWZk5mGeJhyqAW5U+BfxXOyCELQpHCBEDTV
-	tvJVaXlQ3f5iGvE3DknhSZMb89rpu4nuFrG0v4S8RXMK5iHZp3wbQbw6ok0Ft7knvcB2hVYvblQy5
-	2px4imgq/1Ny0rphVLSIN1hDit4tfW/5rPqKodJvjUlb71AadIRRb2ee34UQVpaeM+S/tnMELTEFD
-	EcDg5CjpfzSKedQZggwg==;
+	List-Owner; bh=N6ELIEkE7IWY74eYn/9/1LR/HdghEi71gdOb+qmtOAA=; b=pJ/QvcYD6hrsuq
+	TG7uA5XYkic8ZyPR0/lQi8TlQQzfE7y0C6mb/Wr8OsGJ9v1Bn2oQ5VRue75HA7wIf2swDxt7SqXkV
+	1ra9sEQx839YeDKSb6LMmVM0UNEj98WV5gVjWC4R5M/ZONjM0UTFf4WFh8Vf/hxlQ1SO0kwl+LJJW
+	kXyiTfxkqODeK+P9eFtz7cIbdqXrCsnbkcwr2wvCaXNRrrNQ3U+ok2gYf3R+fvmiiWOP7Vf3xfAAp
+	624lyk811BLYr5rKXAR+YZfhZ2nmdRFo73x7bgTI2gT88f3q5z9poPMewfzyuIht1jBmEtUk/CycF
+	xmInkf/4VDqL3ookIHRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIyDs-0001RV-Jj; Fri, 11 Oct 2019 16:57:00 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iIyHz-0003Ae-Hk; Fri, 11 Oct 2019 17:01:15 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIyDk-0001Qd-QN
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 16:56:54 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1iIyDW-00056W-7D; Fri, 11 Oct 2019 18:56:38 +0200
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1iIyDR-0007Kv-OH; Fri, 11 Oct 2019 18:56:33 +0200
-Date: Fri, 11 Oct 2019 18:56:33 +0200
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Andreas Kemnade <andreas@kemnade.info>
-Subject: Re: [PATCH v3 2/3] ARM: dts: add Netronix E60K02 board common file
-Message-ID: <20191011165633.5ty3yux4ljrcycux@pengutronix.de>
-References: <20191010192357.27884-1-andreas@kemnade.info>
- <20191010192357.27884-3-andreas@kemnade.info>
- <20191011065609.6irap7elicatmsgg@pengutronix.de>
- <20191011094148.1376430e@aktux> <20191011142927.GA11490@bogus>
- <20191011170147.1b3c4b25@kemnade.info>
- <20191011152214.v6lq6itwf5lp6j7q@pengutronix.de>
- <20191011181938.185f2a00@kemnade.info>
+ id 1iIyHq-00039X-Vl
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 17:01:08 +0000
+Received: by mail-ot1-f68.google.com with SMTP id z6so8567190otb.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 11 Oct 2019 10:01:05 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=39fE6RD4L7ek9/ZP7eb4uAgC4lVSQDHBffdSIup/Xc0=;
+ b=WMdtlL58YW5pZhHURY9Eu95HHyHB35CnQ9j8Xh0CqntQIW8ROl0/8iAuKT7OC31O1k
+ izKIf+AFSFYzD1x4gGKodtffD2Vqt4SzU1dz1VkBOlgHHDrIdspnt+J5QVldwzXNkBtR
+ duAs3Qb7mQwcvvp4DRFbOK8nZUlqAlemKtW50wXi6fMfPQKW1bIBwVjomKq1M6Det+fk
+ N0XBIgF/ArwPPHGxNfgPnOyW2GnISgKrex98r2KoDdtgjaoAzvsAEwcJ3Ou0f/uMd/C7
+ gGpPS9AufQBfLSFlU95Awd9IuFzj5xRBtiTCRnWMz3Y2vcfoo2YL02L6JRsTmXKlv2H6
+ mb2A==
+X-Gm-Message-State: APjAAAU/RqYQCTxpmcrLNicnzhPVgwO5kriyiCXqfW1EbThQnXRN93rL
+ V6RXRWsS6ZOnZlVzZz9uPg==
+X-Google-Smtp-Source: APXvYqwqGqT7uiHwhdBc7sqpGqwD6vjshKpmaDTSjaMTHJz7K2u/gcWBWDVEgXQTXZ2+vioVbwWrOg==
+X-Received: by 2002:a05:6830:119a:: with SMTP id
+ u26mr13662087otq.166.1570813265021; 
+ Fri, 11 Oct 2019 10:01:05 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id 91sm2915769otn.36.2019.10.11.10.01.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 11 Oct 2019 10:01:04 -0700 (PDT)
+Date: Fri, 11 Oct 2019 12:01:03 -0500
+From: Rob Herring <robh@kernel.org>
+To: Andrew Jeffery <andrew@aj.id.au>
+Subject: Re: [PATCH v2 1/2] dt-bindings: clock: Add AST2500 RMII RCLK
+ definitions
+Message-ID: <20191011170103.GA14903@bogus>
+References: <20191010020655.3776-1-andrew@aj.id.au>
+ <20191010020655.3776-2-andrew@aj.id.au>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191011181938.185f2a00@kemnade.info>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 18:54:48 up 146 days, 23:12, 97 users,  load average: 0.08, 0.10,
- 0.02
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20191010020655.3776-2-andrew@aj.id.au>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_095652_851710_8063E905 
-X-CRM114-Status: GOOD (  24.94  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191011_100107_021249_4358BFC4 
+X-CRM114-Status: UNSURE (   8.71  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,118 +95,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Rob Herring <robh@kernel.org>, marex@denx.de,
- devicetree@vger.kernel.org, andrew.smirnov@gmail.com, festevam@gmail.com,
- s.hauer@pengutronix.de, angus@akkea.ca, linux-kernel@vger.kernel.org,
- j.neuschaefer@gmx.net, linux-imx@nxp.com, kernel@pengutronix.de,
- manivannan.sadhasivam@linaro.org,
- Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
- shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-aspeed@lists.ozlabs.org, sboyd@kernel.org, mturquette@baylibre.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, joel@jms.id.au,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-10-11 18:19, Andreas Kemnade wrote:
-> On Fri, 11 Oct 2019 17:22:14 +0200
-> Marco Felsch <m.felsch@pengutronix.de> wrote:
+On Thu, 10 Oct 2019 12:36:54 +1030, Andrew Jeffery wrote:
+> The AST2500 has an explicit gate for the RMII RCLK for each of the two
+> MACs.
 > 
-> > On 19-10-11 17:05, Andreas Kemnade wrote:
-> > > On Fri, 11 Oct 2019 09:29:27 -0500
-> > > Rob Herring <robh@kernel.org> wrote:
-> > >   
-> > > > On Fri, Oct 11, 2019 at 09:41:48AM +0200, Andreas Kemnade wrote:  
-> > > > > On Fri, 11 Oct 2019 08:56:09 +0200
-> > > > > Marco Felsch <m.felsch@pengutronix.de> wrote:
-> > > > >     
-> > > > > > Hi Andreas,
-> > > > > > 
-> > > > > > On 19-10-10 21:23, Andreas Kemnade wrote:    
-> > > > > > > The Netronix board E60K02 can be found some several Ebook-Readers,
-> > > > > > > at least the Kobo Clara HD and the Tolino Shine 3. The board
-> > > > > > > is equipped with different SoCs requiring different pinmuxes.
-> > > > > > > 
-> > > > > > > For now the following peripherals are included:
-> > > > > > > - LED
-> > > > > > > - Power Key
-> > > > > > > - Cover (gpio via hall sensor)
-> > > > > > > - RC5T619 PMIC (the kernel misses support for rtc and charger
-> > > > > > >   subdevices).
-> > > > > > > - Backlight via lm3630a
-> > > > > > > - Wifi sdio chip detection (mmc-powerseq and stuff)
-> > > > > > > 
-> > > > > > > It is based on vendor kernel but heavily reworked due to many
-> > > > > > > changed bindings.
-> > > > > > > 
-> > > > > > > Signed-off-by: Andreas Kemnade <andreas@kemnade.info>
-> > > > > > > ---
-> > > > > > > Changes in v3:
-> > > > > > > - better led name
-> > > > > > > - correct memory size
-> > > > > > > - comments about missing devices
-> > > > > > > 
-> > > > > > > Changes in v2:
-> > > > > > > - reordered, was 1/3
-> > > > > > > - moved pinmuxes to their actual users, not the parents
-> > > > > > >   of them
-> > > > > > > - removed some already-disabled stuff
-> > > > > > > - minor cleanups      
-> > > > > > 
-> > > > > > You won't change the muxing, so a this dtsi can be self contained?
-> > > > > >     
-> > > > > So you want me to put a big 
-> > > > > #if defined(MX6SLL)     
-> > > > 
-> > > > Not sure what the comment meant, but no, don't do this. C defines in dts 
-> > > > files are for symbolic names for numbers and assembling bitfields and 
-> > > > that's it.  
-> > > 
-> > > yes, that is also my opinion. For now, there is only one user
-> > > of this .dtsi, but I have another one in preparation. That is the
-> > > reason for splitting things between .dts and .dtsi to avoid such ugly
-> > > ifdefs  
-> > 
-> > Then IMHO the pnictrl-* entries shouldn't appear in the dsti.
-> > 
-> hmm, maybe now I understand your idea:
-> You do not want only to have
+> Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+> ---
+> v2: Drop "_GATE" from symbol names
 > 
->   pinctrl_lm3630a_bl_gpio: lm3630a_bl_gpio_grp {
->                         fsl,pins = <
->                                 MX6SLL_PAD_EPDC_PWR_CTRL3__GPIO2_IO10   0x10059 /* HWEN */
->                         >;
->                 };
-> in dts, but also  do not have these in .dtsi:
+>  include/dt-bindings/clock/aspeed-clock.h | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
->                 pinctrl-names = "default";
->                 pinctrl-0 = <&pinctrl_lm3630a_bl_gpio>;
-> 
-> and instead have in dts:
-> &lm3630a {
->  	pinctrl-names = "default";
->         pinctrl-0 = <&pinctrl_lm3630a_bl_gpio>;
-> 	
-> };
-> 
-> 
-> just to make sure I get it right before doing the restructuring work. That way of structuring things did not come to my mind, but then the .dtsi is self-contained.
 
-That is what I mean but wait for Shawn's comments. It's just my opinion
-that .dtsi and .dts files should be self-contained.
-
-Regards,
-  Marco
-
-> Regards,
-> Andreas
-
-
-
--- 
-Pengutronix e.K.                           |                             |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
