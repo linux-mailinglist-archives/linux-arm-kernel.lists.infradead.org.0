@@ -2,56 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7276D37A0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 04:56:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2496D37F9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 05:47:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U29odGhvyXYWyo9PYaRU9rbJ3PXZgkKoWze35Uf3n9I=; b=XX9Xn3Wzm0pRct
-	Vl7HoSt0g1cnJp5fvPjC4YxY/P915tYW07+tvs+tei11UYnzXhv4dM7GLARTIMvyoB69z7bDHu5im
-	T+DInOXJwl8s4PAN4bxPbMtiTufo8hbrbR7AJoqo3wamqI5FY5GJuBjwiDwP5huhE9ROIpaHxNYvx
-	TA3hdQkOXX7QP1qNN4U5RUlqEm6hOiwus+7vmWWdNJBNBak7p1TcSfhQJgOMOEF2zgd9bC5ejrYae
-	EFOfSwhY5M47XWgS0mDwq3bhpHWGXmqDL2lymaKcGOKc+yIqPDM62O9YIfufbhIldX802SriXYdm3
-	1sHdVsgkD42xWaZg59/A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=YpyjnkUACrjO3KtIrJLB8TkTNE24GB1kHomZutLVFeM=; b=sS3
+	j1v6TjDEv/YwkjHLhAk29R0Q/KZMQxu3mT/+XkyXE1/Ouh421HiwMqMkWNx1vt0/YBeSlzWJ3ClOm
+	7Ty7TL//tHQ9PEnDO0J9ToqitrYSNd35bLTowG2GDiuYchWQna75oGOIBdMG2dszKEbR24NRzc9WA
+	YiH9NQhB7yoRqEbo6CU3Rhi2Ucb3LYgJGF6P6V2znAH7IIu8K0rUPPD20RR9GEfKNbe6goayWmbdf
+	aeix5aOZ1i4y9Uss1UIpRk7NLR3T9b3+y/1zthzu6hwVKxZHLsGh8b2b5ii/veYv6DPDTBngpP/AF
+	KYP7Rbaa0G8SPymP6Z1XsYjemzYUEmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIl6c-00063W-8h; Fri, 11 Oct 2019 02:56:38 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIl6U-00061u-QA
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 02:56:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 52B0028;
- Thu, 10 Oct 2019 19:56:16 -0700 (PDT)
-Received: from [10.162.41.129] (p8cg001049571a15.blr.arm.com [10.162.41.129])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 4AD603F71A; Thu, 10 Oct 2019 19:56:09 -0700 (PDT)
-Subject: Re: [PATCH V9 2/2] arm64/mm: Enable memory hot remove
-To: Catalin Marinas <catalin.marinas@arm.com>
-References: <1570609308-15697-1-git-send-email-anshuman.khandual@arm.com>
- <1570609308-15697-3-git-send-email-anshuman.khandual@arm.com>
- <20191010113433.GI28269@mbp>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <f51cdb20-ddc4-4fb7-6c45-791d2e1e690c@arm.com>
-Date: Fri, 11 Oct 2019 08:26:32 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
-MIME-Version: 1.0
-In-Reply-To: <20191010113433.GI28269@mbp>
-Content-Language: en-US
+	id 1iIltp-0005Kv-9G; Fri, 11 Oct 2019 03:47:29 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iIlte-0005J0-5O
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 03:47:19 +0000
+Received: by mail-pl1-x643.google.com with SMTP id u12so3788477pls.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 10 Oct 2019 20:47:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=lwaGexEIk4Tlv5FRwTaoLvYkPu+sAPH7np80Oye+n20=;
+ b=Tv2D/j9IhiVwpOomkMei9mX/yftFh3M+jMXDqPObnbTzNhkl3Vbwz8nfJt804LsPWh
+ IciDobUmz3EIfjwukLWZxWxft7TKG+lQlr1HIcNDIM95T5GmFnxBh0PykfqcZUF7nGuJ
+ st/oFLIiOnlYOIsi/QPu+nMU9JawJsEhsXlo7oBSWtOMGGgZplUJRBzKreEHEFhxtKnF
+ kIENpylMwCncC7haXNujmrB+OKFJ0oMJFyyhOZW+jCRvJpupe0S8Wr3g0q9X106g2d15
+ vGR81cJiKSNy/G4YPrbEaW/YduaOG9S5kuIaOYGcKC5oHBox9NzEtg9IAVveiZnhtEAT
+ HDKA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=lwaGexEIk4Tlv5FRwTaoLvYkPu+sAPH7np80Oye+n20=;
+ b=Tm15Sd7MtTOOCLFFiFW5EwY0wPHXmD2J6Tkmx0ivSSTvaSypZasms7SPU+nAF/lfOO
+ iARWQfHeiagBwtf7heC0/OrZ5F1VPS+AHtvEFeMFOPRWFZMnOoP9ai/sffJd8sKFl9iI
+ d54OjQEPoo4f+hoQgX7H90X3ZnAA6w4ese9HFPDQSQpMIYSUVXYWV3PbtLxJCwzMmt2x
+ KZNEkVPL/1eMooII5HrdT1z9/tT9IaPdM1qa2Nlw8BjtJnwIjXxRwbAasXDBCd5mGXf7
+ 83diHGfCtalffDHgskX91sonuoU6xzNfvHyF4jWsXKnj7Q1+lz828f2udwv9z8ZyGNxG
+ nKLQ==
+X-Gm-Message-State: APjAAAWtIqJYg9oICsbx1Fhb40zbxKzdI4bESJboKs/eDSBz4J6o1FNb
+ XUH1p5suAPlhX5nau4vCDAY=
+X-Google-Smtp-Source: APXvYqyR1rmTzHQKhSUn3T3BkL6TnScR8FJqXArtRUVHc2yY16j/jZMdOqQe/IiJJA8w+1/i2ZTwMg==
+X-Received: by 2002:a17:902:ba95:: with SMTP id
+ k21mr4891378pls.49.1570765634586; 
+ Thu, 10 Oct 2019 20:47:14 -0700 (PDT)
+Received: from Asurada-Nvidia.nvidia.com (thunderhill.nvidia.com.
+ [216.228.112.22])
+ by smtp.gmail.com with ESMTPSA id u3sm7493267pfn.134.2019.10.10.20.47.13
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 10 Oct 2019 20:47:13 -0700 (PDT)
+From: Nicolin Chen <nicoleotsuka@gmail.com>
+To: joro@8bytes.org, robh+dt@kernel.org, mark.rutland@arm.com, will@kernel.org,
+ robin.murphy@arm.com
+Subject: [PATCH 0/2] iommu/arm-smmu: Add an optional "input-address-size"
+ property
+Date: Thu, 10 Oct 2019 20:46:07 -0700
+Message-Id: <20191011034609.13319-1-nicoleotsuka@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_195630_936678_A46C2254 
-X-CRM114-Status: GOOD (  22.29  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191010_204718_228964_0FDFEC67 
+X-CRM114-Status: UNSURE (   8.15  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (nicoleotsuka[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,152 +98,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, david@redhat.com, linux-mm@kvack.org,
- arunks@codeaurora.org, cpandya@codeaurora.org, ira.weiny@intel.com,
- will@kernel.org, steven.price@arm.com, valentin.schneider@arm.com,
- suzuki.poulose@arm.com, Robin.Murphy@arm.com, broonie@kernel.org, cai@lca.pw,
- ard.biesheuvel@arm.com, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org, osalvador@suse.de, steve.capper@arm.com,
- logang@deltatee.com, linux-kernel@vger.kernel.org, akpm@linux-foundation.org,
- mgorman@techsingularity.net
+Cc: devicetree@vger.kernel.org, iommu@lists.linux-foundation.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/10/2019 05:04 PM, Catalin Marinas wrote:
-> Hi Anshuman,
-> 
-> On Wed, Oct 09, 2019 at 01:51:48PM +0530, Anshuman Khandual wrote:
->> +static void unmap_hotplug_pmd_range(pud_t *pudp, unsigned long addr,
->> +				    unsigned long end, bool free_mapped)
->> +{
->> +	unsigned long next;
->> +	pmd_t *pmdp, pmd;
->> +
->> +	do {
->> +		next = pmd_addr_end(addr, end);
->> +		pmdp = pmd_offset(pudp, addr);
->> +		pmd = READ_ONCE(*pmdp);
->> +		if (pmd_none(pmd))
->> +			continue;
->> +
->> +		WARN_ON(!pmd_present(pmd));
->> +		if (pmd_sect(pmd)) {
->> +			pmd_clear(pmdp);
->> +			flush_tlb_kernel_range(addr, next);
-> 
-> The range here could be a whole PMD_SIZE. Since we are invalidating a
-> single block entry, one TLBI should be sufficient:
-> 
-> 			flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
+This series of patches add an optional DT property to allow an SoC to
+specify how many bits being physically connected to its SMMU instance,
+depending on the SoC design.
 
-Sure, will change.
+Nicolin Chen (2):
+  dt-bindings: arm-smmu: Add an optional "input-address-size" property
+  iommu/arm-smmu: Read optional "input-address-size" property
 
-> 
->> +			if (free_mapped)
->> +				free_hotplug_page_range(pmd_page(pmd),
->> +							PMD_SIZE);
->> +			continue;
->> +		}
->> +		WARN_ON(!pmd_table(pmd));
->> +		unmap_hotplug_pte_range(pmdp, addr, next, free_mapped);
->> +	} while (addr = next, addr < end);
->> +}
->> +
->> +static void unmap_hotplug_pud_range(pgd_t *pgdp, unsigned long addr,
->> +				    unsigned long end, bool free_mapped)
->> +{
->> +	unsigned long next;
->> +	pud_t *pudp, pud;
->> +
->> +	do {
->> +		next = pud_addr_end(addr, end);
->> +		pudp = pud_offset(pgdp, addr);
->> +		pud = READ_ONCE(*pudp);
->> +		if (pud_none(pud))
->> +			continue;
->> +
->> +		WARN_ON(!pud_present(pud));
->> +		if (pud_sect(pud)) {
->> +			pud_clear(pudp);
->> +			flush_tlb_kernel_range(addr, next);
-> 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-> 			flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
+ Documentation/devicetree/bindings/iommu/arm,smmu.txt |  7 +++++++
+ drivers/iommu/arm-smmu.c                             | 10 ++++++++--
+ 2 files changed, 15 insertions(+), 2 deletions(-)
 
-Will change.
+-- 
+2.17.1
 
-> 
-> [...]
->> +static void free_empty_pte_table(pmd_t *pmdp, unsigned long addr,
->> +				 unsigned long end, unsigned long floor,
->> +				 unsigned long ceiling)
->> +{
->> +	pte_t *ptep, pte;
->> +	unsigned long i, start = addr;
->> +
->> +	do {
->> +		ptep = pte_offset_kernel(pmdp, addr);
->> +		pte = READ_ONCE(*ptep);
->> +		WARN_ON(!pte_none(pte));
->> +	} while (addr += PAGE_SIZE, addr < end);
-> 
-> So this loop is just a sanity check (pte clearing having been done by
-> the unmap loops). That's fine, maybe a comment for future reference.
-
-Sure, will add.
-> 
->> +
->> +	if (!pgtable_range_aligned(start, end, floor, ceiling, PMD_MASK))
->> +		return;
->> +
->> +	ptep = pte_offset_kernel(pmdp, 0UL);
->> +	for (i = 0; i < PTRS_PER_PTE; i++) {
->> +		if (!pte_none(READ_ONCE(ptep[i])))
->> +			return;
->> +	}
-> 
-> We could do with a comment for this loop along the lines of:
-> 
-> 	Check whether we can free the pte page if the rest of the
-> 	entries are empty. Overlap with other regions have been handled
-> 	by the floor/ceiling check.
-
-Sure, will add.
-
-> 
-> Apart from the comments above, the rest of the patch looks fine. Once
-> fixed:
-> 
-> Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
-> 
-> Mark Rutland mentioned at some point that, as a preparatory patch to
-> this series, we'd need to make sure we don't hot-remove memory already
-> given to the kernel at boot. Any plans here?
-
-Hmm, this series just enables platform memory hot remove as required from
-generic memory hotplug framework. The path here is triggered either from
-remove_memory() or __remove_memory() which takes physical memory range
-arguments like (nid, start, size) and do the needful. arch_remove_memory()
-should never be required to test given memory range for anything including
-being part of the boot memory.
-
-IIUC boot memory added to system with memblock_add() lose all it's identity
-after the system is up and running. In order to reject any attempt to hot
-remove boot memory, platform needs to remember all those memory that came
-early in the boot and then scan through it during arch_remove_memory().
-
-Ideally, it is the responsibility of [_]remove_memory() callers like ACPI
-driver, DAX etc to make sure they never attempt to hot remove a memory
-range, which never got hot added by them in the first place. Also, unlike
-/sys/devices/system/memory/probe there is no 'unprobe' interface where the
-user can just trigger boot memory removal. Hence, unless there is a bug in
-ACPI, DAX or other callers, there should never be any attempt to hot remove
-boot memory in the first place.
-
-> 
-> Thanks.
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
