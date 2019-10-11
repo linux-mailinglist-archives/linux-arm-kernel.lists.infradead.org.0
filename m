@@ -2,48 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89B3ED4483
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 17:37:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72622D4497
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 17:41:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OypZ13Kn4XMfLV8OCZUDD9Uik0qLhoyLfEl5ldMx4g8=; b=SWRTUbA6v73ONR
-	sN185m3jYF5L6OFIN/RYaeG7GjFcRKjvuvHryoWjqmd3fkPl4E7i66ysN99xcQwvrO9JWimhtFYQA
-	AfPAvY9mhU/phHLCNt83P/oiTSjgMLDMokC7A9mCfbViGl05DGhh19CVOE0QwvRdKP8iDmbbEQepx
-	MU9r8qc1EbbE27bVbMDCY1NeEGPHJzIZTaFQ74J2UlPmCoe5OHv22SONDWgx8FW3f1dxNwjHIQayD
-	uetr+veUxC8owEnDospthWiGzZydr8reDykkUsnGZrwDgf8J1Ga09GVB5xZE0trBmexpiWa1grR4e
-	ALIDu/1g5fqsh729JCBQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=w3UN/si+Z60AFI3NzDCuPQYQ2ic+fVwYudKLtl7KthE=; b=ZDRinWhiFhrrvQ
+	go1NecMj9opvruSQwx9B+8hdEuiXvaqXeffHOEeP8n2NCOldGriM/bCrT3e1KUlT4omrWRY5ufsmP
+	4UO4NwYxfgJfTq8NT8zgHQo0d+KCnSAyCmD7EnK03pGnlaZR7Ml+g1iKlzzEZFgX8s5IGec0utE4O
+	JGRePR4EhpSEtuTrBXvx1O/mavkFzO/S1cMrORIFBN5sOPe2065obA1UpXg9dSmagb/2dnh9cFtUk
+	T950V2/va4Bp1Nvx4mOlowJ0yShkFyTGgzrlkRNLer8RIhlF29j1GDFgvmG1toOXuUejyMEX0FJbc
+	lde+4BSPkiD+u5Wa3zkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIwz0-0005Q8-JJ; Fri, 11 Oct 2019 15:37:34 +0000
+	id 1iIx2J-00074I-Iz; Fri, 11 Oct 2019 15:40:59 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIwyr-0005Pm-Oh
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 15:37:27 +0000
+ id 1iIx29-00073r-Hg
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 15:40:51 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B14E0142F;
- Fri, 11 Oct 2019 08:37:24 -0700 (PDT)
-Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0A4923F68E;
- Fri, 11 Oct 2019 08:37:23 -0700 (PDT)
-Subject: Re: [PATCH v2] arm64: fix kcore macros 52-bit va fallout
-To: Chris von Recklinghausen <crecklin@redhat.com>,
- linux-arm-kernel@lists.infradead.org
-References: <20191010172247.19033-1-crecklin@redhat.com>
-From: James Morse <james.morse@arm.com>
-Message-ID: <6bd46fde-1004-5661-eee5-a584ecdd084e@arm.com>
-Date: Fri, 11 Oct 2019 16:37:22 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9B135142F;
+ Fri, 11 Oct 2019 08:40:48 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B05D43F68E;
+ Fri, 11 Oct 2019 08:40:45 -0700 (PDT)
+Date: Fri, 11 Oct 2019 16:40:43 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH v2 05/12] arm64: Basic Branch Target Identification support
+Message-ID: <20191011154043.GG33537@lakrids.cambridge.arm.com>
+References: <1570733080-21015-1-git-send-email-Dave.Martin@arm.com>
+ <1570733080-21015-6-git-send-email-Dave.Martin@arm.com>
+ <20191011151028.GE33537@lakrids.cambridge.arm.com>
+ <4e09ca54-f353-9448-64ed-4ba1e38c6ebc@linaro.org>
+ <20191011153225.GL27757@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20191010172247.19033-1-crecklin@redhat.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20191011153225.GL27757@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_083725_849147_7D5EA38F 
-X-CRM114-Status: GOOD (  13.92  )
+X-CRM114-CacheID: sfid-20191011_084049_673343_125BCAEA 
+X-CRM114-Status: GOOD (  21.97  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,51 +65,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will@kernel.org, steve.capper@arm.com
+Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
+ Eugene Syromiatnikov <esyr@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ "H.J. Lu" <hjl.tools@gmail.com>, Yu-cheng Yu <yu-cheng.yu@intel.com>,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
+ linux-kernel@vger.kernel.org, Sudakshina Das <sudi.das@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Chris,
+On Fri, Oct 11, 2019 at 04:32:26PM +0100, Dave Martin wrote:
+> On Fri, Oct 11, 2019 at 11:25:33AM -0400, Richard Henderson wrote:
+> > On 10/11/19 11:10 AM, Mark Rutland wrote:
+> > > On Thu, Oct 10, 2019 at 07:44:33PM +0100, Dave Martin wrote:
+> > >> @@ -730,6 +730,11 @@ static void setup_return
+> > >>  	regs->regs[29] = (unsigned long)&user->next_frame->fp;
+> > >>  	regs->pc = (unsigned long)ka->sa.sa_handler;
+> > >>  
+> > >> +	if (system_supports_bti()) {
+> > >> +		regs->pstate &= ~PSR_BTYPE_MASK;
+> > >> +		regs->pstate |= PSR_BTYPE_CALL;
+> > >> +	}
+> > >> +
+> > > 
+> > > I think we might need a comment as to what we're trying to ensure here.
+> > > 
+> > > I was under the (perhaps mistaken) impression that we'd generate a
+> > > pristine pstate for a signal handler, and it's not clear to me that we
+> > > must ensure the first instruction is a target instruction.
+> > 
+> > I think it makes sense to treat entry into a signal handler as a call.  Code
+> > that has been compiled for BTI, and whose page has been marked with PROT_BTI,
+> > will already have the pauth/bti markup at the beginning of the signal handler
+> > function; we might as well verify that.
+> > 
+> > Otherwise sigaction becomes a hole by which an attacker can force execution to
+> > start at any arbitrary address.
+> 
+> Ack, that's the intended rationale -- I also outlined this in the commit
+> message.
 
-On 10/10/2019 18:22, Chris von Recklinghausen wrote:
-> We export the entire kernel address space (i.e. the whole of the TTBR1
-> address range) via /proc/kcore. The kc_vaddr_to_offset() and
-> kc_offset_to_vaddr() macros are intended to convert between a kernel
-> virtual address and its offset relative to the start of the TTBR1
-> address space.
-> 
-> Prior to commit:
-> 
->   14c127c957c1c607 ("arm64: mm: Flip kernel VA space")
-> 
-> ... the offset was calculated relative to VA_START, which at the time
-> was the start of the TTBR1 address space. At this time, PAGE_OFFSET
-> pointed to the high half of the TTBR1 address space where arm64's
-> linear map lived.
-> 
-> That commit swapped the position of VA_START and PAGE_OFFSET, but
-> failed to update kc_vaddr_to_offset() or kc_offset_to_vaddr(), so
-> since then the two macros behave incorrectly.
-> 
-> Note that VA_START was subsequently renamed to PAGE_END in commit:
-> 
->   77ad4ce69321abbe ("arm64: memory: rename VA_START to PAGE_END")
-> 
-> As the generic implementations of the two macros calculate the offset
-> relative to PAGE_OFFSET (which is now the start of the TTBR1 address
-> space), we can delete the arm64 implementation and use those.
+Ah, sorry. I evidently did not read that thoroughly enough.
 
-Reviewed-by: James Morse <james.morse@arm.com>
+> Does this sound reasonable?
+> 
+> 
+> Either way, I feel we should do this: any function in a PROT_BTI page
+> should have a suitable landing pad.  There's no reason I can see why
+> a protection given to any other callback function should be omitted
+> for a signal handler.
+> 
+> Note, if the signal handler isn't in a PROT_BTI page then overriding
+> BTYPE here will not trigger a Branch Target exception.
+> 
+> I'm happy to drop a brief comment into the code also, once we're
+> agreed on what the code should be doing.
 
-I think you can pick up Mark's R-B tag too:
-https://lore.kernel.org/r/20191010165537.GA27584@lakrids.cambridge.arm.com
-
+So long as there's a comment as to why, I have no strong feelings here.
+:)
 
 Thanks,
-
-James
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
