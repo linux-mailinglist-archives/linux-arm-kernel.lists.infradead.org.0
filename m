@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA63AD47EC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 20:49:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC3A0D47F1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 20:49:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uyKajnSNE8nLPsZUPa4moj8nsv3pZk0AwXxepvfBJJI=; b=nMMDsmfVInQ3yZ
-	8xRnRAad92hVdX+Ks0xpbe58V0CD4b6jCd98fbrf4swfFYXkbCGRyv/daBlG2HXYW/50Sw/pHMh9a
-	lKQUv+HH3sajzcsIAv6CJQFEV+BC78bgMJGuoF93U5hP5QrU34TQgyFE4TfakTZdxHXINGde8Srxy
-	LOZtS0JkxvO6B8V7PcGbu/F6JHR9WYkEOLc7SFuhe5faY38yR07oEiTcL4+WlVjTKNyuGL2acKa8Y
-	NhEq5u3wKmAOj0vLSmCruCsalA/8l7rVBo1dBNiq/UzN0nFG4G84AKP5BSpLwbRoNL07JmdapSjYy
-	tcr4HDGqvHz1PpGUGQhw==;
+	List-Owner; bh=c124Y+Ita6WsWD3GR75ATFXHcnkxGy28pUNZCNv8ivA=; b=dQwQNm558Fs8Qr
+	NrrikCDBJDsiw4HwwRkHJJz9ZtjJxtTF7ydeCuJPlSXqS5yVvg+Ui9pgaCJh/UBMk5JYeKTcl1uy1
+	4I8NW1Q/wITGUBu+VnMCZxjbUguYKOiTzJKSYimXKfsyeetwqK/fQ6Hc7gUjYN429aLY5OLp4nT0z
+	K2PkxbdS6PvGnXVDfKbilkjAZONjopAz7xeTR0IeEBbwlHzR0NyKTptiZlx3H6itPW04qY2SZF0/S
+	OHZprBzKSgEHfvUcOS0RQNgnC+CF3cAKO3drAZnjuLguaqLL0ThE4jZTtejQxu9DoG/QPEl8QC8wK
+	OqgimYZGRf860zlYMCVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIzyV-0002Ch-6X; Fri, 11 Oct 2019 18:49:15 +0000
+	id 1iIzyk-0002Rq-5W; Fri, 11 Oct 2019 18:49:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIzxr-0001pO-M3; Fri, 11 Oct 2019 18:48:37 +0000
+ id 1iIzxv-0001sy-RX; Fri, 11 Oct 2019 18:48:41 +0000
 Received: from ziggy.de (unknown [37.223.145.112])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0677D21D7D;
- Fri, 11 Oct 2019 18:48:32 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id EEBEF2190F;
+ Fri, 11 Oct 2019 18:48:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570819715;
- bh=OTgrNLS53g8Rccfn5K0Ut7tIZlmbMatndfizupjVyyk=;
+ s=default; t=1570819718;
+ bh=m+vq97srCtSAkMQJp5pj1AGqRJNlXFC1HTKheGMdwMw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=g05iTO8bqc9Hw/bPhfJPhqHd2S/Wm/rU7uVAmBZFK7XabPCoP46nZvxGqaQ78Pc+y
- 5WEMsFah3lJ+B40CYJYv56CgIRYNrrV/6OgUyGj2854IFl/WPJo9l4AfdwbaqluUH6
- 6cdx7SJ3NZcTCZpowHc531St/uRnbnjTZeogUH5M=
+ b=ofrxxdcFTleX+rEmnybr+Wk0kFjoyRBSwGegV1iuF09a25k2yfXoc5pbf1bQIZ13c
+ ChWvNAKUYUcR2u3ObdEcRq+Eup0U4zyDQ2W75C4CdpPYZ970ouTaUxRHs0qePr3L4V
+ 2DhSaDBf9wRXVW1llOyPf9iIGVX5Emq1/oDFnh4c=
 From: matthias.bgg@kernel.org
 To: Florian Fainelli <f.fainelli@gmail.com>,
  "David S . Miller" <davem@davemloft.net>
-Subject: [PATCH v1 2/3] net: bcmgenet: use optional max DMA burst size property
-Date: Fri, 11 Oct 2019 20:48:20 +0200
-Message-Id: <20191011184822.866-3-matthias.bgg@kernel.org>
+Subject: [PATCH v1 3/3] ARM: dts: bcm2711: Enable GENET support for the RPi4
+Date: Fri, 11 Oct 2019 20:48:21 +0200
+Message-Id: <20191011184822.866-4-matthias.bgg@kernel.org>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191011184822.866-1-matthias.bgg@kernel.org>
 References: <20191011184822.866-1-matthias.bgg@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_114835_800602_334A28DB 
-X-CRM114-Status: GOOD (  13.26  )
+X-CRM114-CacheID: sfid-20191011_114840_008776_58759B32 
+X-CRM114-Status: GOOD (  12.18  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -75,9 +75,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Matthias Brugger <mbrugger@suse.com>, netdev@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Matthias Brugger <mbrugger@suse.com>, Eric Anholt <eric@anholt.net>,
  linux-kernel@vger.kernel.org, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Doug Berger <opendmb@gmail.com>, bcm-kernel-feedback-list@broadcom.com,
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
  Stefan Wahren <wahrenst@gmx.net>, Matthias Brugger <matthias.bgg@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -87,68 +88,79 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Matthias Brugger <mbrugger@suse.com>
 
-Depending on the HW, the maximal usable DMA burst size can vary.
-If not set accordingly a timeout in the transmit queue happens and no
-package can be sent. Read to optional max-burst-sz property, if not
-present, fallback to the standard value.
+Enable Gigabit Ethernet support on the Raspberry Pi 4
+Model B.
 
 Signed-off-by: Matthias Brugger <mbrugger@suse.com>
+
 ---
 
- drivers/net/ethernet/broadcom/genet/bcmgenet.c | 13 +++++++++++--
- drivers/net/ethernet/broadcom/genet/bcmgenet.h |  1 +
- 2 files changed, 12 insertions(+), 2 deletions(-)
+ arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 22 ++++++++++++++++++++++
+ arch/arm/boot/dts/bcm2711.dtsi        | 18 ++++++++++++++++++
+ 2 files changed, 40 insertions(+)
 
-diff --git a/drivers/net/ethernet/broadcom/genet/bcmgenet.c b/drivers/net/ethernet/broadcom/genet/bcmgenet.c
-index 12cb77ef1081..a7bb822a6d83 100644
---- a/drivers/net/ethernet/broadcom/genet/bcmgenet.c
-+++ b/drivers/net/ethernet/broadcom/genet/bcmgenet.c
-@@ -2576,7 +2576,8 @@ static int bcmgenet_init_dma(struct bcmgenet_priv *priv)
- 	}
+diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
+index cccc1ccd19be..958553d62670 100644
+--- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
++++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
+@@ -97,6 +97,28 @@
+ 	status = "okay";
+ };
  
- 	/* Init rDma */
--	bcmgenet_rdma_writel(priv, DMA_MAX_BURST_LENGTH, DMA_SCB_BURST_SIZE);
-+	bcmgenet_rdma_writel(priv, priv->dma_max_burst_length,
-+			     DMA_SCB_BURST_SIZE);
- 
- 	/* Initialize Rx queues */
- 	ret = bcmgenet_init_rx_queues(priv->dev);
-@@ -2589,7 +2590,8 @@ static int bcmgenet_init_dma(struct bcmgenet_priv *priv)
- 	}
- 
- 	/* Init tDma */
--	bcmgenet_tdma_writel(priv, DMA_MAX_BURST_LENGTH, DMA_SCB_BURST_SIZE);
-+	bcmgenet_tdma_writel(priv, priv->dma_max_burst_length,
-+			     DMA_SCB_BURST_SIZE);
- 
- 	/* Initialize Tx queues */
- 	bcmgenet_init_tx_queues(priv->dev);
-@@ -3522,6 +3524,13 @@ static int bcmgenet_probe(struct platform_device *pdev)
- 
- 	clk_prepare_enable(priv->clk);
- 
-+	if (dn) {
-+		of_property_read_u32(dn, "dma-burst-sz",
-+				     &priv->dma_max_burst_length);
-+	} else {
-+		priv->dma_max_burst_length = DMA_MAX_BURST_LENGTH;
-+	}
++&genet {
++	phy-handle = <&phy1>;
++	phy-mode = "rgmii";
++	status = "okay";
++	dma-burst-sz = <0x08>;
 +
- 	bcmgenet_set_hw_params(priv);
++	mdio@e14 {
++		compatible = "brcm,genet-mdio-v5";
++		reg = <0xe14 0x8>;
++		reg-names = "mdio";
++		#address-cells = <0x0>;
++		#size-cells = <0x1>;
++
++		phy1: ethernet-phy@1 {
++			compatible = "ethernet-phy-ieee802.3-c22";
++			/* No PHY interrupt */
++			max-speed = <1000>;
++			reg = <0x1>;
++		};
++	};
++};
++
+ /* uart0 communicates with the BT module */
+ &uart0 {
+ 	pinctrl-names = "default";
+diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711.dtsi
+index ac83dac2e6ba..e2e837fcad59 100644
+--- a/arch/arm/boot/dts/bcm2711.dtsi
++++ b/arch/arm/boot/dts/bcm2711.dtsi
+@@ -305,6 +305,24 @@
+ 			cpu-release-addr = <0x0 0x000000f0>;
+ 		};
+ 	};
++
++	scb {
++		compatible = "simple-bus";
++		#address-cells = <2>;
++		#size-cells = <1>;
++
++		ranges = <0x0 0x7c000000  0x0 0xfc000000  0x03800000>;
++
++		genet: ethernet@7d580000 {
++			compatible = "brcm,genet-v5";
++			reg = <0x0 0x7d580000 0x10000>;
++			#address-cells = <0x1>;
++			#size-cells = <0x1>;
++			interrupts = <GIC_SPI 157 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 158 IRQ_TYPE_LEVEL_HIGH>;
++			status = "disabled";
++		};
++	};
+ };
  
- 	/* Mii wait queue */
-diff --git a/drivers/net/ethernet/broadcom/genet/bcmgenet.h b/drivers/net/ethernet/broadcom/genet/bcmgenet.h
-index 4a8fc03d82fd..897f356eb376 100644
---- a/drivers/net/ethernet/broadcom/genet/bcmgenet.h
-+++ b/drivers/net/ethernet/broadcom/genet/bcmgenet.h
-@@ -663,6 +663,7 @@ struct bcmgenet_priv {
- 	bool crc_fwd_en;
- 
- 	unsigned int dma_rx_chk_bit;
-+	unsigned int dma_max_burst_length;
- 
- 	u32 msg_enable;
- 
+ &clk_osc {
 -- 
 2.23.0
 
