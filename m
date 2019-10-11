@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE5ACD3800
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 05:47:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 36AD8D3801
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 05:48:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=64+Q0E5pl2nwmBU4wL6I14qt9GCbk9lWw1w7CHMEi8c=; b=PYj0cP7OPUuZJZqID3t3Ovg9Xz
-	3b6B61J0UOKw7ktynX0uqBF8JDJ5BpWTzPQMHPNgJxiNST8EOtZvML/RxJUJeZFWCc741HMTHXxHH
-	UFbJ1+Et2jG4/RAqOjI3LpM7WI/wM6zbu8oYTRwNunUm2vTnYlfGH61xGBJkMVyxd6pDDkAvVIiLi
-	dVECgGHlbPhqZ1mqfF6sSx+iYm2f/5zBQtXaHoIR4SkjMkB1eebSJ+PA/9G1D62xtWo2hMa7kU80p
-	m+T+x3yfk/cV5ltN8v77i6qr9Ef8D6UeSAxQ7FJjCatFm2aF8tQyuMLQSCwXXuvz/1GmkRuHlYwk2
-	DPQtcUeg==;
+	bh=Ej67np3yfSyEAnLF4VjDPGPhDz1dKiZC5yVDKDZTzaE=; b=kUx2yCno9FdndT5HNva3sop75U
+	AS75ohZKPtDwPVHzhPI/3VomKq5RW13LDpn00RarjjavyQrF7S64B8DBbaubrp7dfG5F5PhQWQVZb
+	fkXpAeR2kUP/VjbIBZa+sUdYTkZY+wZb4hY8h/qLjRzLaaOscyzUguCLJR2Tkf9saNjC/1decjU3a
+	mxlQ8ZMkxItRbGZswsQP75slaHyJa4kqOGucfvIhseMGOM6Wr+jv1IuhRCuC6s4liPcfD0lPp/dNh
+	F/SYTtYRRJMmuHJoIbhNaSeL9wwCS+4yd27X4wUF1Oa6IwhFiT0fvHwKT/vK7IYasscDoFmdWfU3y
+	A2mx5SbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIlu3-0005Tx-Vx; Fri, 11 Oct 2019 03:47:43 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1iIluQ-0005ma-IL; Fri, 11 Oct 2019 03:48:06 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIlte-0005J1-7K
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 03:47:19 +0000
-Received: by mail-pf1-x443.google.com with SMTP id q21so5209241pfn.11
+ id 1iIlte-0005J3-8M
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 03:47:21 +0000
+Received: by mail-pl1-x642.google.com with SMTP id u20so3811102plq.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 10 Oct 2019 20:47:16 -0700 (PDT)
+ Thu, 10 Oct 2019 20:47:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=BFpgtLfpcuYnuHOZcClguxk/FizlRVOUrFmBGFft3Zc=;
- b=QLcqMomL195A0XFbz+6bmeHusd3RisVyozm1U6ZbnH9aFniTaqdqnyKC7dNvxtJX3x
- HK19zjIgzOfgQwXQDNp4IHbkwrsqsctxL6VgdOBZlTalLA2CQQ3Z2SNxkRz2MQRggiYJ
- NRZ1UL1syb8XfJPFupZoV2toUR6AkkJ8C0DBd/YD1fUE8Yxd6B5rImdVcmvNtywWA7W/
- IbkxT69IsFJZUiOq4I9WJnKe/WtK5ZYoSSxCWFOx97vfJkCjc4FBe0ln+hcfS9BVyEEp
- TuSgX62DRBym5hMIe0/UW0IU+w6vLpMK4gk2xFaDb5/UF3mI70O0MoAGDHqJwQd0oLO/
- W2Gg==
+ bh=JdptEyYfrrVWOU3k4HBsHHiS/OxBHfbh3xSJxXoFOXg=;
+ b=i5EHwYs/CszsgLgBqVaJ2rCHwBUm8/t6StaUxrR+WK1K3elXfzXSp5NiLQkk3nUJp/
+ 4oMKE4l/wd4Nc3pLvXzaf6wJQoCyOobPN/HfU1guzjPZsW3VmHpBnGHdb3CM2jYB2Wu0
+ XQDL7Lu9aLPIZqrBHm/u23rG9xXJtCQzGmhsg42twwkb0pkN9CXo+2LFSMMXSPGda6kS
+ hhgFZ40mIpkqVTb5PBrsRxakHxQ1b9OA1qzxchzU8er9OrhxIRLNWBKcfO3qMhR/g2ZD
+ F00814nx3FnVZLdEPKScSSOtHsocSROA6S/JeStl8/3KoPS2Jtyw4X9/np2wn6o1A/2u
+ 7cSQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=BFpgtLfpcuYnuHOZcClguxk/FizlRVOUrFmBGFft3Zc=;
- b=BBKubJWc1Et31qMIYtPRr3NRChDELlPOjaqdpF2arA9noPvyODz53lqEelP7Hpgk6f
- xs0BCXb27aiN1c3Wx1x5VjvFYb8Uv0SJToTTJryt4B33nB/IEhJFoRMEgk21Ssut07kt
- 6VWk+/Vsx+pLx+ngWfINexvPISDqb398W96FeoZApioqXB5jnOh8zwT7zmO82Hpl2vQC
- 7EgyDOv+8v6D90qldrrXl4x3X/8NwKSlx7c6yeE1KfmoTQq++CXZ5BpBc0YRuMGjWdBT
- QswecEAyaMGAjg5jvd60SCvXzdU8o+Bz6pjvBAHoanECQft/MhqSBJ48AZzbU2YOMuG0
- kjpw==
-X-Gm-Message-State: APjAAAVipyUj3/U0SalKIw0/eroazcsCVX3TM9mHiziExxq8qNEnfJdZ
- zhB+qor82tWy8wmm+0XA1qMBpeYzMYk=
-X-Google-Smtp-Source: APXvYqxmaqxpu7ohA7yHdWnf/4vQ5UFS1d9Fe43rR+v7KPX4qiC0Xq8qwegGxBu2z0qBDzrtwmo3WQ==
-X-Received: by 2002:a65:53c4:: with SMTP id z4mr14216342pgr.155.1570765635475; 
- Thu, 10 Oct 2019 20:47:15 -0700 (PDT)
+ bh=JdptEyYfrrVWOU3k4HBsHHiS/OxBHfbh3xSJxXoFOXg=;
+ b=deiVRmTcmxMKH2lrYuaAZ7MpBzG6ittxwMkM8eq9AmEMiXgGVXAf69z4JMAw+jOPme
+ 4p8wBh51s+//FNhGtf0Leo3S8W51WQxftFetdXG1aT9yfu66Yuj5FzSKZIv/07lMl2OH
+ aTLVUVhlKD6JAqf/QspeeqDQM/3nDppPMTi/IEIbRgKrCGesQWMQktmZFvYTyRG/7AJ0
+ xgODZ0EgHJZsfCOLoqd8/WQrtGrqmyFIbUhXpriRuJ/KfTxDvWsLX0olGD9NIAhkE0cD
+ A1V9pNac1Oz+1u24ZavBo16d5XpwO0bXevToQl/QDsU3seR9j987ohO9S4eA0oaDGQT4
+ LLNA==
+X-Gm-Message-State: APjAAAUZw9b9f5022heRWPH3nfX9WX2WjfCB+eFkjNibCoh9cWqPhuU1
+ zTTMEjnpScMKcSYKkGsO4as=
+X-Google-Smtp-Source: APXvYqwN0/l64V8pBpT3gRAc/OW6eNRZqdFuJPu6MfrrbbPyWTZph1XrL7MD9euTm+lbzWqRsdkvvA==
+X-Received: by 2002:a17:902:fe86:: with SMTP id
+ x6mr13108364plm.320.1570765636491; 
+ Thu, 10 Oct 2019 20:47:16 -0700 (PDT)
 Received: from Asurada-Nvidia.nvidia.com (thunderhill.nvidia.com.
  [216.228.112.22])
- by smtp.gmail.com with ESMTPSA id u3sm7493267pfn.134.2019.10.10.20.47.14
+ by smtp.gmail.com with ESMTPSA id u3sm7493267pfn.134.2019.10.10.20.47.15
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
  Thu, 10 Oct 2019 20:47:15 -0700 (PDT)
 From: Nicolin Chen <nicoleotsuka@gmail.com>
 To: joro@8bytes.org, robh+dt@kernel.org, mark.rutland@arm.com, will@kernel.org,
  robin.murphy@arm.com
-Subject: [PATCH 1/2] dt-bindings: arm-smmu: Add an optional
- "input-address-size" property
-Date: Thu, 10 Oct 2019 20:46:08 -0700
-Message-Id: <20191011034609.13319-2-nicoleotsuka@gmail.com>
+Subject: [PATCH 2/2] iommu/arm-smmu: Read optional "input-address-size"
+ property
+Date: Thu, 10 Oct 2019 20:46:09 -0700
+Message-Id: <20191011034609.13319-3-nicoleotsuka@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191011034609.13319-1-nicoleotsuka@gmail.com>
 References: <20191011034609.13319-1-nicoleotsuka@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_204718_258668_2F14BFE0 
-X-CRM114-Status: GOOD (  11.55  )
+X-CRM114-CacheID: sfid-20191010_204718_290862_7A5D6004 
+X-CRM114-Status: GOOD (  14.36  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -113,32 +114,53 @@ but drive some upper address bits to logical zero, depending on their
 SoC designs. Some of them even connect only 39 bits that is not in the
 list of IAS/OAS from SMMU internal IDR registers.
 
-Since this can be an SoC design decision, this patch adds an optional
-property to specify how many input bits being physically connected.
+After the "input-address-size" property is added to DT bindings, this
+patch reads and applies to va_size as an input virtual address width.
 
 Signed-off-by: Nicolin Chen <nicoleotsuka@gmail.com>
 ---
- Documentation/devicetree/bindings/iommu/arm,smmu.txt | 7 +++++++
- 1 file changed, 7 insertions(+)
+ drivers/iommu/arm-smmu.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/iommu/arm,smmu.txt b/Documentation/devicetree/bindings/iommu/arm,smmu.txt
-index 3133f3ba7567..a9373a2964a3 100644
---- a/Documentation/devicetree/bindings/iommu/arm,smmu.txt
-+++ b/Documentation/devicetree/bindings/iommu/arm,smmu.txt
-@@ -97,6 +97,13 @@ conditions.
- - power-domains:  Specifiers for power domains required to be powered on for
-                   the SMMU to operate, as per generic power domain bindings.
+diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+index b18aac4c105e..b80a869de45b 100644
+--- a/drivers/iommu/arm-smmu.c
++++ b/drivers/iommu/arm-smmu.c
+@@ -1805,12 +1805,14 @@ static int arm_smmu_device_cfg_probe(struct arm_smmu_device *smmu)
+ 			 "failed to set DMA mask for table walker\n");
  
-+- input-address-size: Number of address bits being physically connected to an
-+                  SMMU instance, as the input virtual address width. SoC might
-+                  tie some upper address bits to logical zero inside the SMMU
-+                  wrapper, so SMMU would only support a virtual address input
-+                  size, corresponding to physically connected bits, instead of
-+                  the reading from register.
+ 	if (smmu->version < ARM_SMMU_V2) {
+-		smmu->va_size = smmu->ipa_size;
++		if (!smmu->va_size)
++			smmu->va_size = smmu->ipa_size;
+ 		if (smmu->version == ARM_SMMU_V1_64K)
+ 			smmu->features |= ARM_SMMU_FEAT_FMT_AARCH64_64K;
+ 	} else {
+ 		size = FIELD_GET(ID2_UBS, id);
+-		smmu->va_size = arm_smmu_id_size_to_bits(size);
++		if (!smmu->va_size)
++			smmu->va_size = arm_smmu_id_size_to_bits(size);
+ 		if (id & ID2_PTFS_4K)
+ 			smmu->features |= ARM_SMMU_FEAT_FMT_AARCH64_4K;
+ 		if (id & ID2_PTFS_16K)
+@@ -1950,6 +1952,7 @@ static int arm_smmu_device_dt_probe(struct platform_device *pdev,
+ 	const struct arm_smmu_match_data *data;
+ 	struct device *dev = &pdev->dev;
+ 	bool legacy_binding;
++	u32 va_size;
+ 
+ 	if (of_property_read_u32(dev->of_node, "#global-interrupts",
+ 				 &smmu->num_global_irqs)) {
+@@ -1976,6 +1979,9 @@ static int arm_smmu_device_dt_probe(struct platform_device *pdev,
+ 	if (of_dma_is_coherent(dev->of_node))
+ 		smmu->features |= ARM_SMMU_FEAT_COHERENT_WALK;
+ 
++	if (!of_property_read_u32(dev->of_node, "input-address-size", &va_size))
++		smmu->va_size = va_size;
 +
- ** Deprecated properties:
+ 	return 0;
+ }
  
- - mmu-masters (deprecated in favour of the generic "iommus" binding) :
 -- 
 2.17.1
 
