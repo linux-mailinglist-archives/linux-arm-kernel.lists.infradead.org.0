@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 576BFD476F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 20:20:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9EC1D477C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 20:22:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k1RuFRQD1s77GRF4jY+fRIbsWSUyXz/a9K1exA9fEQQ=; b=aQ4Jli4fxyll2i
-	OBdwxaFYUil18NSNgqS8Wn+7g9V1MQAvNMGnEF0FMiX8kgRKVv4tShMrU4KvKdwGVhplXtRvA55hR
-	Nf5bXAZkR6BfopX1Pn17gjfLJkvmh1f0cX9SoTU1e15U5gZf9SvDdm79ZBHfjJ13hrZPWMZSo/nT1
-	oUHg9WTk0dhYChiQ4M9f1Ckndh+vEzowpBUzWSnljQGGilKKKyasRsMtNPjTgDIszCd/BNVlPSmxo
-	AgiOUze+TsH/xEL51o/ZN3bjciJz0AA7K9ulL4UdOU1IcGbDS05H3hFSlj1ifsTIw4Sg/LDYfg7VZ
-	HS9uUejQFddiABELStSw==;
+	List-Owner; bh=itvbpB4XF1SmXZQcpMkBwwSNMC2RlmBQN5vVSS7CVow=; b=O8pkFSuFyITXvt
+	3Ib1or117NKWwGSICFtD8Bpnxu42w1xO08Hlor8LrFttJd0vKXmnlEkKSmfbXV7gAU73ggOkTWpkV
+	S7fnOY/k7PvVxA087iaqJRZv9yoSu2D/tXYd2lQLbPcvVAPw77iGxHPkZvZPMClWrE/jB7kaTo6eX
+	gZEndoAwY23CB70ROIffyWYMDDKcI6C/KM5ng2fHjXiFIcJuWYOHUQ2apCtnnllwFrdgG8XvO86Fm
+	fltKELR70VXMPl1/RAqVJreFjBqRFWR1OqS71lsuIaRLWQgPUOdcnbcoRGeftebdZ+MBoLwkwRf6w
+	k1zclVtTKdeUmuerxLNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIzWV-0007uI-2X; Fri, 11 Oct 2019 18:20:19 +0000
+	id 1iIzYR-0000L8-Ty; Fri, 11 Oct 2019 18:22:19 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIzWE-0007BY-Kc; Fri, 11 Oct 2019 18:20:04 +0000
+ id 1iIzYC-0000Jf-Dp; Fri, 11 Oct 2019 18:22:06 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A63BB142F;
- Fri, 11 Oct 2019 11:20:01 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4F316142F;
+ Fri, 11 Oct 2019 11:22:02 -0700 (PDT)
 Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5A5C63F703;
- Fri, 11 Oct 2019 11:19:59 -0700 (PDT)
-Subject: Re: [PATCH v6 15/17] arm64: kexec: add expandable argument to
- relocation function
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8BFB23F703;
+ Fri, 11 Oct 2019 11:21:59 -0700 (PDT)
+Subject: Re: [PATCH v6 16/17] arm64: kexec: configure trans_pgd page table for
+ kexec
 To: Pavel Tatashin <pasha.tatashin@soleen.com>
 References: <20191004185234.31471-1-pasha.tatashin@soleen.com>
- <20191004185234.31471-16-pasha.tatashin@soleen.com>
+ <20191004185234.31471-17-pasha.tatashin@soleen.com>
 From: James Morse <james.morse@arm.com>
-Message-ID: <fe5a4aae-fae3-f30f-db15-f3eced229a6e@arm.com>
-Date: Fri, 11 Oct 2019 19:19:58 +0100
+Message-ID: <45a2f0b8-5bac-8b5d-d595-f92e9acb27ad@arm.com>
+Date: Fri, 11 Oct 2019 19:21:58 +0100
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191004185234.31471-16-pasha.tatashin@soleen.com>
+In-Reply-To: <20191004185234.31471-17-pasha.tatashin@soleen.com>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_112002_809905_0682B274 
-X-CRM114-Status: GOOD (  26.54  )
+X-CRM114-CacheID: sfid-20191011_112204_555655_090B87DE 
+X-CRM114-Status: GOOD (  28.11  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -75,282 +75,199 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi Pavel,
 
 On 04/10/2019 19:52, Pavel Tatashin wrote:
-> Currently, kexec relocation function (arm64_relocate_new_kernel) accepts
-> the following arguments:
+> Configure a page table located in kexec-safe memory that has
+> the following mappings:
 > 
-> head:		start of array that contains relocation information.
-> entry:		entry point for new kernel or purgatory.
-> dtb_mem:	first and only argument to entry.
+> 1. identity mapping for text of relocation function with executable
+>    permission.
+> 2. identity mapping for argument for relocation function.
+> 3. linear mappings for all source ranges
+> 4. linear mappings for all destination ranges.
 > 
-> The number of arguments cannot be easily expended, because this
-> function is also called from HVC_SOFT_RESTART, which preserves only
-> three arguments. And, also arm64_relocate_new_kernel is written in
-> assembly but called without stack, thus no place to move extra
-> arguments to free registers.
-> 
-> Soon, we will need to pass more arguments: once we enable MMU we
-> will need to pass information about page tables.
-
-
-> Another benefit of allowing this function to accept more arguments, is that
-> kernel can actually accept up to 4 arguments (x0-x3), however currently
-> only one is used, but if in the future we will need for more (for example,
-> pass information about when previous kernel exited to have a precise
-> measurement in time spent in purgatory), we won't be easilty do that
-> if arm64_relocate_new_kernel can't accept more arguments.
-
-(That is just a little niche)
-
-
-> So, add a new struct: kern_reloc_arg, and place it in kexec safe page (i.e
-> memory that is not overwritten during relocation).
-> Thus, make arm64_relocate_new_kernel to only take one argument, that
-> contains all the needed information.
+> Also, configure el2_vector, that is used to jump to new kernel from EL2 on
+> non-VHE kernels.
 
 
 > diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
-> index d15ca1ca1e83..d5b79d4c7fae 100644
+> index d5b79d4c7fae..450d8440f597 100644
 > --- a/arch/arm64/include/asm/kexec.h
 > +++ b/arch/arm64/include/asm/kexec.h
-> @@ -90,12 +90,30 @@ static inline void crash_prepare_suspend(void) {}
+> @@ -90,6 +90,23 @@ static inline void crash_prepare_suspend(void) {}
 >  static inline void crash_post_resume(void) {}
 >  #endif
 >  
+> +#if defined(CONFIG_KEXEC_CORE)
+> +/* Global variables for the arm64_relocate_new_kernel routine. */
+> +extern const unsigned char arm64_relocate_new_kernel[];
+> +extern const unsigned long arm64_relocate_new_kernel_size;
+> +
+> +/* Body of the vector for escalating to EL2 from relocation routine */
+> +extern const unsigned char kexec_el1_sync[];
+> +extern const unsigned long kexec_el1_sync_size;
+
+> +#define KEXEC_EL2_VECTOR_TABLE_SIZE	2048
+
+
+> +#define KEXEC_EL2_SYNC_OFFSET		(KEXEC_EL2_VECTOR_TABLE_SIZE / 2)
+
+Yuck.
+
+Please don't generate one-off vectors like this. Create _all_ of them, and have the ones
+that should never happen spin round a branch. Someone will hit one eventually, its a lot
+easier to work out what happened if it stops on the first fault, instead of executing junk
+and flying off into the weeds.
+
+git grep invalid_vector
+
+Having the vectors at a known offset in the page that does the relocation means you have a
+fair idea what happened from just the PC.
+
+
+> diff --git a/arch/arm64/kernel/machine_kexec.c b/arch/arm64/kernel/machine_kexec.c
+> index fb6138a1c9ff..71479013dd24 100644
+> --- a/arch/arm64/kernel/machine_kexec.c
+> +++ b/arch/arm64/kernel/machine_kexec.c
+> @@ -74,15 +71,124 @@ static void *kexec_page_alloc(void *arg)
+
 > +/*
-> + * kern_reloc_arg is passed to kernel relocation function as an argument.
-> + * head		kimage->head, allows to traverse through relocation segments.
-> + * entry_addr	kimage->start, where to jump from relocation function (new
-> + *		kernel, or purgatory entry address).
-> + * kern_arg0	first argument to kernel is its dtb address. The other
-> + *		arguments are currently unused, and must be set to 0
+> + * Map source segments starting from KEXEC_SRC_START, and map destination
+> + * segments starting from KEXEC_DST_START, and return size of copy in
+> + * *copy_len argument.
+> + * Relocation function essentially needs to do:
+> + * memcpy(KEXEC_DST_START, KEXEC_SRC_START, copy_len);
 > + */
-> +struct kern_reloc_arg {
-> +	unsigned long	head;
-> +	unsigned long	entry_addr;
-> +	unsigned long	kern_arg0;
-> +	unsigned long	kern_arg1;
-> +	unsigned long	kern_arg2;
-> +	unsigned long	kern_arg3;
+> +static int map_segments(struct kimage *kimage, pgd_t *pgdp,
+> +			struct trans_pgd_info *info,
+> +			unsigned long *copy_len)
+> +{
+> +	unsigned long *ptr = 0;
+> +	unsigned long dest = 0;
+> +	unsigned long src_va = KEXEC_SRC_START;
+> +	unsigned long dst_va = KEXEC_DST_START;
+> +	unsigned long len = 0;
+> +	unsigned long entry, addr;
+> +	int rc;
+> +
+> +	for (entry = kimage->head; !(entry & IND_DONE); entry = *ptr++) {
+> +		addr = entry & PAGE_MASK;
+> +
+> +		switch (entry & IND_FLAGS) {
+> +		case IND_DESTINATION:
+> +			dest = addr;
+> +			break;
+> +		case IND_INDIRECTION:
+> +			ptr = __va(addr);
+> +			if (rc)
+> +				return rc;
+> +			break;
 
-... at least one of these should by phys_addr_t!
+> +		case IND_SOURCE:
+> +			rc = trans_pgd_map_page(info, pgdp, __va(addr),
+> +						src_va, PAGE_KERNEL);
+> +			if (rc)
+> +				return rc;
+> +			rc = trans_pgd_map_page(info, pgdp, __va(dest),
+> +						dst_va, PAGE_KERNEL);
+> +			if (rc)
+> +				return rc;
+> +			dest += PAGE_SIZE;
+> +			src_va += PAGE_SIZE;
+> +			dst_va += PAGE_SIZE;
+> +			len += PAGE_SIZE;
+> +		}
 
-While the sizes are the same on arm64, this reminds the reader what kind of address this
-is, and lets the compiler warn you if you make a mistake.
+It looks like you're building a swiss cheese.
+
+If you disable RODATA_FULL_DEFAULT_ENABLED, the kernel will use block mappings for the
+linear map. This dramatically reduces the amount of memory in use. On Juno running with
+39bit/4K, there is typically 6G of contiguous memory with no firmware/uefi holes in it.
+This is mapped by 6 1G block mappings, which take up no additional memory.
+
+For the first go at supporting this in mainline please keep as close as possible to the
+existing hibernate code. Please use the helpers that copy the linear map.
+(if you cant do pa->va in the relocation assembly you'd need to generate a virtually
+addressed structure, which could then use hibernate's relocation assembly)
+
+If all this extra code turns out to be a significant performance improvement, I'd like to
+see the numbers. We can come back to it after we've got the simplest way of running
+kexec's relocation with the MMU on merged.
 
 
-> +};
+> +static int mmu_relocate_setup(struct kimage *kimage, unsigned long kern_reloc,
+> +			      struct kern_reloc_arg *kern_reloc_arg)
+> +{
+> +	struct trans_pgd_info info = {
+> +		.trans_alloc_page	= kexec_page_alloc,
+> +		.trans_alloc_arg	= kimage,
+> +	};
+> +
+> +	pgd_t *trans_ttbr0 = kexec_page_alloc(kimage);
+> +	pgd_t *trans_ttbr1 = kexec_page_alloc(kimage);
+> +	int rc;
+> +
+> +	if (!trans_ttbr0 || !trans_ttbr1)
+> +		return -ENOMEM;
+> +
+> +	rc = map_segments(kimage, trans_ttbr1, &info,
+> +			  &kern_reloc_arg->copy_len);
+> +	if (rc)
+> +		return rc;
+> +
+> +	/* Map relocation function va == pa */
+> +	rc = trans_pgd_map_page(&info, trans_ttbr0,  __va(kern_reloc),
+> +				kern_reloc, PAGE_KERNEL_EXEC);
+> +	if (rc)
+> +		return rc;
 
-> diff --git a/arch/arm64/kernel/asm-offsets.c b/arch/arm64/kernel/asm-offsets.c
-> index 214685760e1c..900394907fd8 100644
-> --- a/arch/arm64/kernel/asm-offsets.c
-> +++ b/arch/arm64/kernel/asm-offsets.c
-> @@ -23,6 +23,7 @@
->  #include <asm/suspend.h>
->  #include <linux/kbuild.h>
->  #include <linux/arm-smccc.h>
-> +#include <linux/kexec.h>
->  
->  int main(void)
+You can't do this with the page table helpers. We support platforms with no memory in
+range of TTBR0's VA space. See dd006da21646f
+
+You will need some idmapped memory to turn the MMU off on a system that booted at EL1.
+This will need to be in a set of page tables that the helpers can't easily touch - so it
+should only be a single page. (like the arch code's existing idmap - although that may
+have been overwritten).
+
+(I have a machine where this is a problem, if I get the time I will have a stab at making
+hibernate's safe page idmaped).
+
+
+>  int machine_kexec_post_load(struct kimage *kimage)
 >  {
-> @@ -126,6 +127,14 @@ int main(void)
->  #ifdef CONFIG_ARM_SDE_INTERFACE
->    DEFINE(SDEI_EVENT_INTREGS,	offsetof(struct sdei_registered_event, interrupted_regs));
->    DEFINE(SDEI_EVENT_PRIORITY,	offsetof(struct sdei_registered_event, priority));
-> +#endif
-> +#ifdef CONFIG_KEXEC_CORE
-> +  DEFINE(KRELOC_HEAD,		offsetof(struct kern_reloc_arg, head));
-> +  DEFINE(KRELOC_ENTRY_ADDR,	offsetof(struct kern_reloc_arg, entry_addr));
-> +  DEFINE(KRELOC_KERN_ARG0,	offsetof(struct kern_reloc_arg, kern_arg0));
-> +  DEFINE(KRELOC_KERN_ARG1,	offsetof(struct kern_reloc_arg, kern_arg1));
-> +  DEFINE(KRELOC_KERN_ARG2,	offsetof(struct kern_reloc_arg, kern_arg2));
-> +  DEFINE(KRELOC_KERN_ARG3,	offsetof(struct kern_reloc_arg, kern_arg3));
+> +	unsigned long el2_vector = 0;
+>  	unsigned long kern_reloc;
+>  	struct kern_reloc_arg *kern_reloc_arg;
+> +	int rc = 0;
+> +
+> +	/*
+> +	 * Sanity check that relocation function + el2_vector fit into one
+> +	 * page.
+> +	 */
+> +	if (arm64_relocate_new_kernel_size > KEXEC_EL2_VECTOR_TABLE_SIZE) {
+> +		pr_err("can't fit relocation function and el2_vector in one page");
+> +		return -ENOMEM;
+> +	}
 
-Please use kexec as the prefix. The kernel also applies relocations during early boot.
-These are global values, and in isolation doesn't imply kexec.
+If you need them to fit in one page, why are the separate?
+hibernate does this as a compile time check.
 
 
->  #endif
->    return 0;
->  }
-
-> diff --git a/arch/arm64/kernel/cpu-reset.h b/arch/arm64/kernel/cpu-reset.h
-> index ed50e9587ad8..7a8720ff186f 100644
-> --- a/arch/arm64/kernel/cpu-reset.h
-> +++ b/arch/arm64/kernel/cpu-reset.h
-> @@ -11,12 +11,10 @@
->  #include <asm/virt.h>
 >  
->  void __cpu_soft_restart(unsigned long el2_switch, unsigned long entry,
-> -	unsigned long arg0, unsigned long arg1, unsigned long arg2);
-> +			unsigned long arg);
-
-phys_addr_t
-
-
->  static inline void __noreturn cpu_soft_restart(unsigned long entry,
-> -					       unsigned long arg0,
-> -					       unsigned long arg1,
-> -					       unsigned long arg2)
-> +					       unsigned long arg)
-
-phys_addr_t
-
-
->  {
->  	typeof(__cpu_soft_restart) *restart;
+>  	kern_reloc = page_to_phys(kimage->control_code_page);
+>  	memcpy(__va(kern_reloc), arm64_relocate_new_kernel,
+>  	       arm64_relocate_new_kernel_size);
 >  
+> +	/* Setup vector table only when EL2 is available, but no VHE */
+> +	if (is_hyp_mode_available() && !is_kernel_in_hyp_mode()) {
+> +		el2_vector = kern_reloc + KEXEC_EL2_VECTOR_TABLE_SIZE;
+> +		memcpy(__va(el2_vector + KEXEC_EL2_SYNC_OFFSET), kexec_el1_sync,
+> +		       kexec_el1_sync_size);
+> +	}
+> +
+>  	kern_reloc_arg = kexec_page_alloc(kimage);
+>  	if (!kern_reloc_arg)
+>  		return -ENOMEM;
 
-> diff --git a/arch/arm64/kernel/relocate_kernel.S b/arch/arm64/kernel/relocate_kernel.S
-> index c1d7db71a726..d352faf7cbe6 100644
-> --- a/arch/arm64/kernel/relocate_kernel.S
-> +++ b/arch/arm64/kernel/relocate_kernel.S
-
-> @@ -17,86 +17,58 @@
->  /*
->   * arm64_relocate_new_kernel - Put a 2nd stage image in place and boot it.
->   *
-> - * The memory that the old kernel occupies may be overwritten when coping the
-> + * The memory that the old kernel occupies may be overwritten when copying the
->   * new image to its final location.  To assure that the
->   * arm64_relocate_new_kernel routine which does that copy is not overwritten,
->   * all code and data needed by arm64_relocate_new_kernel must be between the
->   * symbols arm64_relocate_new_kernel and arm64_relocate_new_kernel_end.  The
->   * machine_kexec() routine will copy arm64_relocate_new_kernel to the kexec
-> - * control_code_page, a special page which has been set up to be preserved
-> - * during the copy operation.
-> + * safe memory that has been set up to be preserved during the copy operation.
->   */
->  ENTRY(arm64_relocate_new_kernel)
-> -
-> -	/* Setup the list loop variables. */
-> -	mov	x18, x2				/* x18 = dtb address */
-> -	mov	x17, x1				/* x17 = kimage_start */
-> -	mov	x16, x0				/* x16 = kimage_head */
-> -	raw_dcache_line_size x15, x0		/* x15 = dcache line size */
-> -	mov	x14, xzr			/* x14 = entry ptr */
-> -	mov	x13, xzr			/* x13 = copy dest */
-> -
->  	/* Clear the sctlr_el2 flags. */
-> -	mrs	x0, CurrentEL
-> -	cmp	x0, #CurrentEL_EL2
-> +	mrs	x2, CurrentEL
-> +	cmp	x2, #CurrentEL_EL2
->  	b.ne	1f
-> -	mrs	x0, sctlr_el2
-> +	mrs	x2, sctlr_el2
->  	ldr	x1, =SCTLR_ELx_FLAGS
-> -	bic	x0, x0, x1
-> +	bic	x2, x2, x1
->  	pre_disable_mmu_workaround
-> -	msr	sctlr_el2, x0
-> +	msr	sctlr_el2, x2
->  	isb
-> -1:
-> -
-> -	/* Check if the new image needs relocation. */
-> +1:	/* Check if the new image needs relocation. */
-> +	ldr	x16, [x0, #KRELOC_HEAD]		/* x16 = kimage_head */
->  	tbnz	x16, IND_DONE_BIT, .Ldone
-> -
-> +	raw_dcache_line_size x15, x1		/* x15 = dcache line size */
->  .Lloop:
->  	and	x12, x16, PAGE_MASK		/* x12 = addr */
-> -
->  	/* Test the entry flags. */
->  .Ltest_source:
->  	tbz	x16, IND_SOURCE_BIT, .Ltest_indirection
->  
->  	/* Invalidate dest page to PoC. */
-> -	mov     x0, x13
-> -	add     x20, x0, #PAGE_SIZE
-> +	mov     x2, x13
-> +	add     x20, x2, #PAGE_SIZE
->  	sub     x1, x15, #1
-> -	bic     x0, x0, x1
-> -2:	dc      ivac, x0
-> -	add     x0, x0, x15
-> -	cmp     x0, x20
-> +	bic     x2, x2, x1
-> +2:	dc      ivac, x2
-> +	add     x2, x2, x15
-> +	cmp     x2, x20
->  	b.lo    2b
->  	dsb     sy
->  
-> -	mov x20, x13
-> -	mov x21, x12
-> -	copy_page x20, x21, x0, x1, x2, x3, x4, x5, x6, x7
-> -
-> -	/* dest += PAGE_SIZE */
-> -	add	x13, x13, PAGE_SIZE
-> +	copy_page x13, x12, x1, x2, x3, x4, x5, x6, x7, x8
->  	b	.Lnext
-> -
->  .Ltest_indirection:
->  	tbz	x16, IND_INDIRECTION_BIT, .Ltest_destination
-> -
-> -	/* ptr = addr */
-> -	mov	x14, x12
-> +	mov	x14, x12			/* ptr = addr */
->  	b	.Lnext
-> -
->  .Ltest_destination:
->  	tbz	x16, IND_DESTINATION_BIT, .Lnext
-> -
-> -	/* dest = addr */
-> -	mov	x13, x12
-> -
-> +	mov	x13, x12			/* dest = addr */
->  .Lnext:
-> -	/* entry = *ptr++ */
-> -	ldr	x16, [x14], #8
-> -
-> -	/* while (!(entry & DONE)) */
-> -	tbz	x16, IND_DONE_BIT, .Lloop
-> -
-> +	ldr	x16, [x14], #8			/* entry = *ptr++ */
-> +	tbz	x16, IND_DONE_BIT, .Lloop	/* while (!(entry & DONE)) */
->  .Ldone:
->  	/* wait for writes from copy_page to finish */
->  	dsb	nsh
-> @@ -105,18 +77,16 @@ ENTRY(arm64_relocate_new_kernel)
->  	isb
->  
->  	/* Start new image. */
-> -	mov	x0, x18
-> -	mov	x1, xzr
-> -	mov	x2, xzr
-> -	mov	x3, xzr
-> -	br	x17
-> -
-> -ENDPROC(arm64_relocate_new_kernel)
-> +	ldr	x4, [x0, #KRELOC_ENTRY_ADDR]	/* x4 = kimage_start */
-> +	ldr	x3, [x0, #KRELOC_KERN_ARG3]
-> +	ldr	x2, [x0, #KRELOC_KERN_ARG2]
-> +	ldr	x1, [x0, #KRELOC_KERN_ARG1]
-> +	ldr	x0, [x0, #KRELOC_KERN_ARG0]	/* x0 = dtb address */
-> +	br	x4
-> +END(arm64_relocate_new_kernel)
->  
->  .ltorg
-> -
->  .align 3	/* To keep the 64-bit values below naturally aligned. */
-> -
->  .Lcopy_end:
->  .org	KEXEC_CONTROL_PAGE_SIZE
->  
-
-My eyes!
-
-Please don't make unnecessary changes. Its hard enough to read the assembly, moving
-whitespace, comments and re-allocating the register guarantees that no-one can work out
-what is happening.
-
-If something needs cleaning up to make the change obvious, it needs doing as a previous
-patch. Mechanical changes are fairly easy to review.
-Functional changes behind a whirlwind of mechanical changes will cause the reviewer to
-give up.
-
+Thanks,
 
 James
 
