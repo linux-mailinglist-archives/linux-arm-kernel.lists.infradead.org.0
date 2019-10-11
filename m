@@ -2,55 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FA78D3F81
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 14:28:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB10DD3F98
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 14:36:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SXQyluBAR0k+sGyIbj+UTQ3yL2OLSSofnWzq5UU8FAc=; b=U8nqxSpifDfJrz
-	c5yf5ZXU0pfKmXpl6SmO4iEXfV50yi1zlLsjmcohTA3lqQQhBbRD7vTWiiiGatjkkgqGfMtOyickI
-	YTam2sw4QZScP1A1RDJIbLFFEnCslyci0QpUsP4MBvJ3CwvbNV9BjtfUKgiKQXFAvT4fp+pKJ2L0a
-	CF7QYkZlB3tLLY8LH87RXXu1nu30x7wVv5AYaGJKEBhJuXZ1v65wqR8khcYgWVvMcV1xDSUPLTZNa
-	MgUD7sfmhVF217QxnCcweddURRCZJVrsSpduqhBog5dzdZ8B5365GY8IB7W1Vth7cagceDUaE9v7D
-	6856kPBK9NMv1oxTUrrQ==;
+	List-Owner; bh=wCeOjotmrmbJU9aHMWsUls9ROsjvBqhW1VslDta46uM=; b=GRh2894FAftT52
+	Wne2LHQBnfNTXsl9oSssPByJaR6Di05QryjQSBeKbIftjUoJML5VbKACK/60qX02Lf9ERjpMyR/0M
+	xb/z08Fz2ou5/C6YouNEybl/bCzEn+/HOhaFMWBWFw2uzPtJu6jEFZnGpWEQySzhYLCO7rWaXCtly
+	c0RKowOifzxbUt/smR38JcWjj0cPGLWugcbCp7gpiqz+vf2aFtMqy0sJ9T4zAwhvXkviNCSxvcsCi
+	euZFDEaW0M6vnDB5dLwoKWK1zKQpmdOlZXqG0nvIdUmS2sfidHpTdlt8e8MxuMhv0xrRwumdGYrS8
+	GXZ0jLrfYncXogIVksKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIu1t-0000r1-M2; Fri, 11 Oct 2019 12:28:21 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1iIu9G-0004Em-8d; Fri, 11 Oct 2019 12:35:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIu1k-0000qB-3V; Fri, 11 Oct 2019 12:28:14 +0000
-Received: from dhcp-172-31-174-146.wireless.concordia.ca (unknown
- [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested) (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 3C474290EF4;
- Fri, 11 Oct 2019 13:28:08 +0100 (BST)
-Date: Fri, 11 Oct 2019 14:28:05 +0200
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: =?UTF-8?B?Q8OpZHJpYw==?= Le Goater <clg@kaod.org>
-Subject: Re: [PATCH 04/16] mtd: spi-nor: aspeed: Add read training
-Message-ID: <20191011142805.6cc3905c@dhcp-172-31-174-146.wireless.concordia.ca>
-In-Reply-To: <20191004115919.20788-5-clg@kaod.org>
-References: <20191004115919.20788-1-clg@kaod.org>
- <20191004115919.20788-5-clg@kaod.org>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ id 1iIu97-0004EC-1T
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 12:35:50 +0000
+Received: from mail-qt1-f175.google.com (mail-qt1-f175.google.com
+ [209.85.160.175])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9755E206A1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 11 Oct 2019 12:35:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570797348;
+ bh=VNgydY1ynFilVs3+OYEfBMfTmvBOmjLQ3dKDPAsRGJk=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=ebAStlb6ubOzdbNbYRAVygtpjFLr4okk4rxF/Lpg17JMqyoumehNIPoLFtLGLLo2n
+ s5UKLrYfdkyy0+L0988pgbQ8OY722qLzYrkCj5wSnQss5JSQOPMyMIsc4k0hQrA/sY
+ 9ZVZaBJysaaLkUyIzlKv/NzHGQFUt3EGc73zZMvU=
+Received: by mail-qt1-f175.google.com with SMTP id n7so13589112qtb.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 11 Oct 2019 05:35:48 -0700 (PDT)
+X-Gm-Message-State: APjAAAV9qhC74fdhbFAbK0AEtqgTZ9BpCCWWM3rh8ANN1w5mxqioqslL
+ NNkGDieVSGXI4pF4mn3TuTj02NlhtkjiRT7+yA==
+X-Google-Smtp-Source: APXvYqxPjHzWRhCEa77RLK5XieEQ5KWLu1XccZ9gxrD6cMKqUVp2wpc3H9eDAX5iDitxTvNlqnuBjyFuEMYz2Q5ML9o=
+X-Received: by 2002:a0c:ed4f:: with SMTP id v15mr765035qvq.136.1570797347661; 
+ Fri, 11 Oct 2019 05:35:47 -0700 (PDT)
 MIME-Version: 1.0
+References: <20191002151442.15428-1-benjamin.gaignard@st.com>
+In-Reply-To: <20191002151442.15428-1-benjamin.gaignard@st.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Fri, 11 Oct 2019 07:35:36 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqKW91A96NXy8kwPp2mdgiifaqJyCQ0n5Mc=zZzoU4VzDg@mail.gmail.com>
+Message-ID: <CAL_JsqKW91A96NXy8kwPp2mdgiifaqJyCQ0n5Mc=zZzoU4VzDg@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: media: Convert stm32 dcmi bindings to
+ json-schema
+To: Benjamin Gaignard <benjamin.gaignard@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_052812_417485_AFFA1FAD 
-X-CRM114-Status: GOOD (  17.51  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191011_053549_121305_D2F03F8A 
+X-CRM114-Status: GOOD (  24.87  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,80 +86,212 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Vignesh Raghavendra <vigneshr@ti.com>,
- linux-aspeed@lists.ozlabs.org, Tudor Ambarus <tudor.ambarus@microchip.com>,
- Andrew Jeffery <andrew@aj.id.au>, Richard Weinberger <richard@nod.at>,
- Marek Vasut <marek.vasut@gmail.com>, linux-mtd@lists.infradead.org,
- Joel Stanley <joel@jms.id.au>, Miquel Raynal <miquel.raynal@bootlin.com>,
- Brian Norris <computersforpeace@gmail.com>,
- David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Hugues Fruchet <hugues.fruchet@st.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCAgNCBPY3QgMjAxOSAxMzo1OTowNyArMDIwMApDw6lkcmljIExlIEdvYXRlciA8Y2xn
-QGthb2Qub3JnPiB3cm90ZToKCj4gKyNkZWZpbmUgQVNQRUVEX1NNQ19IQ0xLX0RJVihpKSBcCj4g
-KwkoYXNwZWVkX3NtY19oY2xrX2RpdnNbKGkpIC0gMV0gPDwgQ09OVFJPTF9DTE9DS19GUkVRX1NF
-TF9TSElGVCkKPiArCj4gK3N0YXRpYyB1MzIgYXNwZWVkX3NtY19kZWZhdWx0X3JlYWQoc3RydWN0
-IGFzcGVlZF9zbWNfY2hpcCAqY2hpcCkKPiArewo+ICsJLyoKPiArCSAqIEtlZXAgdGhlIDRCeXRl
-IGFkZHJlc3MgbW9kZSBvbiB0aGUgQVNUMjQwMCBTUEkgY29udHJvbGxlci4KPiArCSAqIE90aGVy
-IGNvbnRyb2xsZXJzIHNldCB0aGUgNEJ5dGUgbW9kZSBpbiB0aGUgQ0UgQ29udHJvbAo+ICsJICog
-UmVnaXN0ZXIKPiArCSAqLwo+ICsJdTMyIGN0bF9tYXNrID0gY2hpcC0+Y29udHJvbGxlci0+aW5m
-byA9PSAmc3BpXzI0MDBfaW5mbyA/Cj4gKwkJIENPTlRST0xfSU9fQUREUkVTU180QiA6IDA7Cj4g
-Kwo+ICsJcmV0dXJuIChjaGlwLT5jdGxfdmFsW3NtY19yZWFkXSAmIGN0bF9tYXNrKSB8Cj4gKwkJ
-KDB4MDAgPDwgMjgpIHwgLyogU2luZ2xlIGJpdCAqLwo+ICsJCSgweDAwIDw8IDI0KSB8IC8qIENF
-IyBtYXggKi8KPiArCQkoMHgwMyA8PCAxNikgfCAvKiB1c2Ugbm9ybWFsIHJlYWRzICovCj4gKwkJ
-KDB4MDAgPDwgIDgpIHwgLyogSENMSy8xNiAqLwo+ICsJCSgweDAwIDw8ICA2KSB8IC8qIG5vIGR1
-bW15IGN5Y2xlICovCj4gKwkJKDB4MDApOyAgICAgICAgLyogbm9ybWFsIG1vZGUgKi8KCklJVUMs
-IHlvdSdyZSB1c2luZyBhIFNQSU5PUl9PUF9SRUFEIG9wZXJhdGlvbiB0byByZWFkIHRoZSBnb2xk
-ZW4KYnVmZmVyLCBhbmQgaWYgSSdtIHJpZ2h0LCB5b3Ugc3RhcnQgcmVhZGluZyBhdCBvZmZzZXQg
-MCBvZiB0aGUgZGlybWFwCndpbmRvdyAob2Zmc2V0IDAgaW4gdGhlIGZsYXNoKSwgc28gYmFzaWNh
-bGx5IHRoZSBmaXJzdCBibG9jayBpbiB0aGUgTk9SLgpXaGF0IGhhcHBlbnMgaWYgdGhpcyBibG9j
-ayBpcyBlcmFzZWQ/IEluIHRoYXQgY2FzZSB5b3VyIGdvbGRlbiBidWYgd2lsbApjb250YWluIG9u
-bHkgMHhmZiB2YWx1ZXMsIGFuZCB0aGUgcmVhZCBjYWxpYnJhdGlvbiBpcyBsaWtlbHkgdG8gYmUK
-dXNlbGVzcyAoaG93IGNhbiB5b3UgZGV0ZXJtaW5lIGlmIHRpbWluZ3MgYXJlIGdvb2Qgd2hlbiBJ
-TyBwaW5zIGFsd2F5cwpzdGF5IGhpZ2gpLiBEb24ndCB3ZSBoYXZlIGEgY29tbWFuZCB0aGF0IHJl
-dHVybiBub24tZmYvbm9uLTAgZGF0YSB3aGlsZQpzdGlsbCBiZWluZyBwcmVkaWN0YWJsZSBhbmQg
-aW1tdXRhYmxlPyBEbyB5b3UgZXhwZWN0IHVzZXJzIHRvIGFsd2F5cwpmbGFzaCBhIHBhdHRlcm4g
-dGhhdCBoZWxwcyBjYWxpYnJhdGluZyB0aG9zZSBkZWxheXM/Cgo+ICt9Cj4gKwo+ICtzdGF0aWMg
-aW50IGFzcGVlZF9zbWNfb3B0aW1pemVfcmVhZChzdHJ1Y3QgYXNwZWVkX3NtY19jaGlwICpjaGlw
-LAo+ICsJCQkJICAgIHUzMiBtYXhfZnJlcSkKPiArewo+ICsJdTggKmdvbGRlbl9idWYsICp0ZXN0
-X2J1ZjsKPiArCWludCBpLCByYywgYmVzdF9kaXYgPSAtMTsKPiArCXUzMiBzYXZlX3JlYWRfdmFs
-ID0gY2hpcC0+Y3RsX3ZhbFtzbWNfcmVhZF07Cj4gKwl1MzIgYWhiX2ZyZXEgPSBjaGlwLT5jb250
-cm9sbGVyLT5jbGtfZnJlcXVlbmN5Owo+ICsKPiArCWRldl9kYmcoY2hpcC0+bm9yLmRldiwgIkFI
-QiBmcmVxdWVuY3k6ICVkIE1IeiIsIGFoYl9mcmVxIC8gMTAwMDAwMCk7Cj4gKwo+ICsJdGVzdF9i
-dWYgPSBrbWFsbG9jKENBTElCUkFURV9CVUZfU0laRSAqIDIsIEdGUF9LRVJORUwpOwo+ICsJZ29s
-ZGVuX2J1ZiA9IHRlc3RfYnVmICsgQ0FMSUJSQVRFX0JVRl9TSVpFOwo+ICsKPiArCS8qIFdlIHN0
-YXJ0IHdpdGggdGhlIGR1bWJlc3Qgc2V0dGluZyAoa2VlcCA0Qnl0ZSBiaXQpIGFuZCByZWFkCj4g
-KwkgKiBzb21lIGRhdGEKPiArCSAqLwo+ICsJY2hpcC0+Y3RsX3ZhbFtzbWNfcmVhZF0gPSBhc3Bl
-ZWRfc21jX2RlZmF1bHRfcmVhZChjaGlwKTsKPiArCj4gKwl3cml0ZWwoY2hpcC0+Y3RsX3ZhbFtz
-bWNfcmVhZF0sIGNoaXAtPmN0bCk7Cj4gKwo+ICsJbWVtY3B5X2Zyb21pbyhnb2xkZW5fYnVmLCBj
-aGlwLT5haGJfYmFzZSwgQ0FMSUJSQVRFX0JVRl9TSVpFKTsKPiArCj4gKwkvKiBFc3RhYmxpc2gg
-b3VyIHJlYWQgbW9kZSB3aXRoIGZyZXEgZmllbGQgc2V0IHRvIDAgKEhDTEsvMTYpICovCj4gKwlj
-aGlwLT5jdGxfdmFsW3NtY19yZWFkXSA9IHNhdmVfcmVhZF92YWwgJiAweGZmZmZmMGZmOwo+ICsK
-PiArCS8qIENoZWNrIGlmIGNhbGlicmF0aW9uIGRhdGEgaXMgc3VpdGFibGUgKi8KPiArCWlmICgh
-YXNwZWVkX3NtY19jaGVja19jYWxpYl9kYXRhKGdvbGRlbl9idWYsIENBTElCUkFURV9CVUZfU0la
-RSkpIHsKPiArCQlkZXZfaW5mbyhjaGlwLT5ub3IuZGV2LAo+ICsJCQkgIkNhbGlicmF0aW9uIGFy
-ZWEgdG9vIHVuaWZvcm0sIHVzaW5nIGxvdyBzcGVlZCIpOwo+ICsJCXdyaXRlbChjaGlwLT5jdGxf
-dmFsW3NtY19yZWFkXSwgY2hpcC0+Y3RsKTsKPiArCQlrZnJlZSh0ZXN0X2J1Zik7Cj4gKwkJcmV0
-dXJuIDA7Cj4gKwl9Cj4gKwo+ICsJLyogTm93IHdlIGl0ZXJhdGUgdGhlIEhDTEsgZGl2aWRlcnMg
-dW50aWwgd2UgZmluZCBvdXIgYnJlYWtpbmcgcG9pbnQgKi8KPiArCWZvciAoaSA9IEFSUkFZX1NJ
-WkUoYXNwZWVkX3NtY19oY2xrX2RpdnMpOyBpID4gMDsgaS0tKSB7Cj4gKwkJdTMyIHR2LCBmcmVx
-Owo+ICsKPiArCQkvKiBDb21wYXJlIHRpbWluZyB0byBtYXggKi8KPiArCQlmcmVxID0gYWhiX2Zy
-ZXEgLyBpOwo+ICsJCWlmIChmcmVxID4gbWF4X2ZyZXEpCj4gKwkJCWNvbnRpbnVlOwo+ICsKPiAr
-CQkvKiBTZXQgdGhlIHRpbWluZyAqLwo+ICsJCXR2ID0gY2hpcC0+Y3RsX3ZhbFtzbWNfcmVhZF0g
-fCBBU1BFRURfU01DX0hDTEtfRElWKGkpOwo+ICsJCXdyaXRlbCh0diwgY2hpcC0+Y3RsKTsKPiAr
-CQlkZXZfZGJnKGNoaXAtPm5vci5kZXYsICJUcnlpbmcgSENMSy8lZC4uLiIsIGkpOwo+ICsJCXJj
-ID0gYXNwZWVkX3NtY19jYWxpYnJhdGVfcmVhZHMoY2hpcCwgaSwgZ29sZGVuX2J1ZiwgdGVzdF9i
-dWYpOwo+ICsJCWlmIChyYyA9PSAwKQo+ICsJCQliZXN0X2RpdiA9IGk7Cj4gKwl9Cj4gKwlrZnJl
-ZSh0ZXN0X2J1Zik7Cj4gKwo+ICsJLyogTm90aGluZyBmb3VuZCA/ICovCj4gKwlpZiAoYmVzdF9k
-aXYgPCAwKSB7Cj4gKwkJZGV2X3dhcm4oY2hpcC0+bm9yLmRldiwgIk5vIGdvb2QgZnJlcXVlbmN5
-LCB1c2luZyBkdW1iIHNsb3ciKTsKPiArCX0gZWxzZSB7Cj4gKwkJZGV2X2RiZyhjaGlwLT5ub3Iu
-ZGV2LCAiRm91bmQgZ29vZCByZWFkIHRpbWluZ3MgYXQgSENMSy8lZCIsCj4gKwkJCWJlc3RfZGl2
-KTsKPiArCQljaGlwLT5jdGxfdmFsW3NtY19yZWFkXSB8PSBBU1BFRURfU01DX0hDTEtfRElWKGJl
-c3RfZGl2KTsKPiArCX0KPiArCj4gKwl3cml0ZWwoY2hpcC0+Y3RsX3ZhbFtzbWNfcmVhZF0sIGNo
-aXAtPmN0bCk7Cj4gKwlyZXR1cm4gMDsKPiArfQoKCgpfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
-eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Wed, Oct 2, 2019 at 10:14 AM Benjamin Gaignard
+<benjamin.gaignard@st.com> wrote:
+>
+> Convert the STM32 dcmi binding to DT schema format using json-schema
+>
+> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+> ---
+>  .../devicetree/bindings/media/st,stm32-dcmi.txt    | 45 ----------
+>  .../devicetree/bindings/media/st,stm32-dcmi.yaml   | 97 ++++++++++++++++++++++
+>  2 files changed, 97 insertions(+), 45 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/media/st,stm32-dcmi.txt
+>  create mode 100644 Documentation/devicetree/bindings/media/st,stm32-dcmi.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/media/st,stm32-dcmi.txt b/Documentation/devicetree/bindings/media/st,stm32-dcmi.txt
+> deleted file mode 100644
+> index 3122ded82eb4..000000000000
+> --- a/Documentation/devicetree/bindings/media/st,stm32-dcmi.txt
+> +++ /dev/null
+> @@ -1,45 +0,0 @@
+> -STMicroelectronics STM32 Digital Camera Memory Interface (DCMI)
+> -
+> -Required properties:
+> -- compatible: "st,stm32-dcmi"
+> -- reg: physical base address and length of the registers set for the device
+> -- interrupts: should contain IRQ line for the DCMI
+> -- resets: reference to a reset controller,
+> -          see Documentation/devicetree/bindings/reset/st,stm32-rcc.txt
+> -- clocks: list of clock specifiers, corresponding to entries in
+> -          the clock-names property
+> -- clock-names: must contain "mclk", which is the DCMI peripherial clock
+> -- pinctrl: the pincontrol settings to configure muxing properly
+> -           for pins that connect to DCMI device.
+> -           See Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml.
+> -- dmas: phandle to DMA controller node,
+> -        see Documentation/devicetree/bindings/dma/stm32-dma.txt
+> -- dma-names: must contain "tx", which is the transmit channel from DCMI to DMA
+> -
+> -DCMI supports a single port node with parallel bus. It should contain one
+> -'port' child node with child 'endpoint' node. Please refer to the bindings
+> -defined in Documentation/devicetree/bindings/media/video-interfaces.txt.
+> -
+> -Example:
+> -
+> -       dcmi: dcmi@50050000 {
+> -               compatible = "st,stm32-dcmi";
+> -               reg = <0x50050000 0x400>;
+> -               interrupts = <78>;
+> -               resets = <&rcc STM32F4_AHB2_RESET(DCMI)>;
+> -               clocks = <&rcc 0 STM32F4_AHB2_CLOCK(DCMI)>;
+> -               clock-names = "mclk";
+> -               pinctrl-names = "default";
+> -               pinctrl-0 = <&dcmi_pins>;
+> -               dmas = <&dma2 1 1 0x414 0x3>;
+> -               dma-names = "tx";
+> -               port {
+> -                       dcmi_0: endpoint {
+> -                               remote-endpoint = <...>;
+> -                               bus-width = <8>;
+> -                               hsync-active = <0>;
+> -                               vsync-active = <0>;
+> -                               pclk-sample = <1>;
+> -                       };
+> -               };
+> -       };
+> diff --git a/Documentation/devicetree/bindings/media/st,stm32-dcmi.yaml b/Documentation/devicetree/bindings/media/st,stm32-dcmi.yaml
+> new file mode 100644
+> index 000000000000..50e8cfed06f3
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/media/st,stm32-dcmi.yaml
+> @@ -0,0 +1,97 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/media/st,stm32-dcmi.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: STMicroelectronics STM32 Digital Camera Memory Interface (DCMI) binding
+> +
+> +maintainers:
+> +  - Hugues Fruchet <hugues.fruchet@st.com>
+> +
+> +properties:
+> +  compatible:
+> +    const: st,stm32-dcmi
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: Module Clock
+
+'maxItems: 1' is sufficient here as the description doesn't add anything.
+
+> +
+> +  clock-names:
+> +    items:
+> +      - const: mclk
+> +
+> +  pinctrl-names: true
+
+This gets added automatically.
+
+> +
+> +  dmas:
+> +    description:
+> +      One DMA channel specifier following the convention outlined
+> +      in bindings/dma/dma.txt
+
+Drop this.
+
+> +    maxItems: 1
+> +
+> +  dma-names:
+> +    description:
+> +      There must be one channel named "tx" for transmit
+
+The schema says all this already.
+
+> +    maxItems: 1
+
+This is implied.
+
+> +    additionalItems: true
+
+This is wrong. You can't have more items because you set the max to 1.
+
+> +    items:
+> +      - const: tx
+> +
+> +  resets:
+> +        maxItems: 1
+
+Inconsistent indentation.
+
+> +
+> +  port:
+> +    type: object
+> +    description:
+> +      DCMI supports a single port node with parallel bus. It should contain
+> +      one 'port' child node with child 'endpoint' node. Please refer to the
+> +      bindings defined in
+> +      Documentation/devicetree/bindings/media/video-interfaces.txt.
+> +
+> +patternProperties:
+> +  "^pinctrl-[0-9]+$": true
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - resets
+> +  - dmas
+> +  - dma-names
+> +  - port
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/clock/stm32mp1-clks.h>
+> +    #include <dt-bindings/reset/stm32mp1-resets.h>
+> +    dcmi: dcmi@4c006000 {
+> +        compatible = "st,stm32-dcmi";
+> +        reg = <0x4c006000 0x400>;
+> +        interrupts = <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>;
+> +        resets = <&rcc CAMITF_R>;
+> +        clocks = <&rcc DCMI>;
+> +        clock-names = "mclk";
+> +        dmas = <&dmamux1 75 0x400 0x0d>;
+> +        dma-names = "tx";
+> +
+> +        port {
+> +             dcmi_0: endpoint {
+> +                   remote-endpoint = <&ov5640_0>;
+> +                   bus-width = <8>;
+> +                   hsync-active = <0>;
+> +                   vsync-active = <0>;
+> +                   pclk-sample = <1>;
+> +             };
+> +        };
+> +    };
+> +
+> +...
+> --
+> 2.15.0
+>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
