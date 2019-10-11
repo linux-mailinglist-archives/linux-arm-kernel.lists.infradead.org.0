@@ -2,142 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E316D4878
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 21:32:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 963D7D48C9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 22:00:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FkZFSRUv1Re+EbPP1IDXuYT/yOESaMN21jZt054fM+g=; b=JkN8LsJBihtgO4
-	igGMgBf7D6WxllvhW/Lquv4gqofHNIqAlwFHJQsb/89jPzquVPeOnsa4G0v3EqqZPGcVrxBZbcDdB
-	cSA2CW/h7CU/hqky2xqF0rK4QcO2Vg5ddoelDk1q8Cy9WX5eYQsS0M4TYYUIwQoZWb/g/QXu2uXGY
-	mERM7TSXDos5xKJXgPMcv58CvMtasSXfuugbudwv3xLEMM0uBDNkHHLg0wIO3B5c4JwnRp9weLcFk
-	q8en6nnYGFaIEl8KLNO/W3HOMn4nQi778tG39RyxyBeGXXKbwLOC+yvF5yjHpw42Q6ssLq1PK5UTc
-	WkC8HsaBviWcnkYU+yHQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Fd2ycC2+/Zvqr6Mt5E+DE52puOTADrFJNLBnqMNLBiQ=; b=szOZVeCXdaPFRZ
+	e3AjQea/npkFb2CKHEUDAw0m8Sqmvc4uQ7IBA9HZaHT1+HkkP3qaCYocxL7dscaF3+G46qhXPyy+0
+	GCn0iz2lLhMboKkiPC7cXjNOI/4VZs7lD5PS6mAxPD8pyoun9ao6vu/NXS96X20mWG60HwSX7xHYF
+	xwM7EIZtcNSjtZa5MtotLs4TBDT5keunebNCIRCfxJGsDo8IeAnj/AfdkRPPCeAbRpmU3uKaJ2Gr6
+	ASVrP8F9+s60xnOKmELLTFtO/HhFQAlvk8vhD0lyRbfpyKNAFMOljt6LmxrbI9vtdMLYb+fa54ogD
+	QBfajC2d5CfN6n/aj5pQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJ0e4-0001QR-EV; Fri, 11 Oct 2019 19:32:12 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1iJ14l-0001Y8-2x; Fri, 11 Oct 2019 19:59:47 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJ0dx-0001Pq-5Q; Fri, 11 Oct 2019 19:32:06 +0000
-Received: by mail-wm1-x343.google.com with SMTP id b24so11229440wmj.5;
- Fri, 11 Oct 2019 12:32:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=xNDVK9TyAA51ckf4xAhOr2nF5U4UlXiPAbngVF+6Sd4=;
- b=hQJinV+w9al+oI6Wx6wM7bXz/IoxiJwhlefrZl2wZEx5xNtTmwLLVH/l8qetJm34CR
- L9mUiofCV2kXtmTPh3mMEJcyOfv0LZiM/+IAKNM7MeinY/gGWzbQfpQl81xK7ANT0iz9
- 5raUnVd2ai8KO8at5tPnFrMC3lUvqh3NHcNyUxwJd6eJtTwzbpc/7iE0hMWte+NzEzGv
- UmfdkMgFsC7f7VBr5mox9QxiLHpnJwUKusjrNms9BzKtLLtkJ8s+wl0R7i1qKQo3Ib1Q
- H73Z3SRTvfsyg+oqTzTDwRGVexLAw8qaPMYEDhmTFAqAe96+tMvyt58WOffOB9DT5Nwa
- oWKQ==
+ id 1iJ14Y-0001XP-Ov
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 19:59:36 +0000
+Received: by mail-pl1-x642.google.com with SMTP id q24so4921987plr.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 11 Oct 2019 12:59:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=k6afyqkADDxzCqdL1Z9t7tFq6tPUrGqNVvG+bqx/tL8=;
+ b=sMeHCjXa86igWl2Il1mMfxFcQx9vzIadTmlxHGTv1pXq+lSMZkZ5/mD93OKn6zt5q8
+ bK7BlobRwylUgRNcIHPOlRePif6gMvXeKhT+hXMTva8OeQ7q4oJaWOveQfcAmA2g7iAY
+ fFUqADJDb3lf49Iyxack5K6WF3A593ez4NsfpjzmgSqmMIIPSfp6l95zKrRmRWFmyRHD
+ K6ikUq7J6qaQpIcvqIycPIF/DnOkJNBXP8aypz6ZQ/+P7LD+HhyLdx6tPKrctdnRjYpe
+ 6bExI+yR4rtB4ZEEqbADI8TDTMI44+OLwlyiiu1ehIywzpFezKt2npeQ7fHnxYQ6pubd
+ 64XQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=xNDVK9TyAA51ckf4xAhOr2nF5U4UlXiPAbngVF+6Sd4=;
- b=WmBCW/Cm3ye5uhb2l9HlGdvwf8wg09JHsFAWi6NXczk02CqKt4WPjokvuod+mxID5Q
- TSJTNX28nl8MuWx20xVkPPhL2LHciZsQoo66umAb/ePBTfEREqU++AqIuwww9Gnlqz7l
- fNihGAIUNgt+AqMQugHEie3/WPsv6gkYHVjxs8nn0Q19YBkJxxAwpIW7I9zoB36SXVT0
- 9hHc1KQ8m8JGd75ByB8/C92gjX+1ae5B+/frIFaz1d498/OJO3WRW/Jtl3VrWag1rL+f
- LRxUYyFeBW5hq59QEaTKprUKi52Kx4u54afpxzuGaS6BrEEZRSEKvszEz78C3bMmiKS5
- OY+w==
-X-Gm-Message-State: APjAAAXjikbkO24Hl8/vVW61l1gH5b0LBBdVpgCfJK6HiurFnBzpCfxB
- y4wh9ck+6R9VLNw4U5H06QM=
-X-Google-Smtp-Source: APXvYqymJ6IV9kNRVh0kejwWi4hNlkBKPED8/53vlTyaTz/5JQMoqGYr7H2cpYQIRJWNZLdNR0mNDw==
-X-Received: by 2002:a1c:a651:: with SMTP id p78mr4509397wme.53.1570822323750; 
- Fri, 11 Oct 2019 12:32:03 -0700 (PDT)
-Received: from [10.67.50.53] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id r27sm24287048wrc.55.2019.10.11.12.31.54
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 11 Oct 2019 12:32:01 -0700 (PDT)
-Subject: Re: [PATCH v1 3/3] ARM: dts: bcm2711: Enable GENET support for the
- RPi4
-To: matthias.bgg@kernel.org, "David S . Miller" <davem@davemloft.net>
-References: <20191011184822.866-1-matthias.bgg@kernel.org>
- <20191011184822.866-4-matthias.bgg@kernel.org>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <a514751e-e82a-b5ea-34d3-46468c851a80@gmail.com>
-Date: Fri, 11 Oct 2019 12:31:46 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=k6afyqkADDxzCqdL1Z9t7tFq6tPUrGqNVvG+bqx/tL8=;
+ b=R8xXIBnCd9brJ1GoY9vDq7v/F0QvdvmTYP2u/gxfpE/8ZTOVdheHx4cBNCaj2exdin
+ TBfbbg6lf+ddLa8V7R4x8gk5JrJUAs6b6Amm8ENS/dRs3VBsnzUXvDto79yULuV3pS3o
+ RqPSekRVVjRlOf7E9lzIQUvhXxxQQ04bUqqLavFR/fN/nxXh5ttNlDx2+9qII5br1D0j
+ FeOESUO9alHRiOByfhAUQ/2uAWS3paeQZyUcoevB+g95gARj59s2bu3xevvbY1fM6jVP
+ 79b7x9mJe/dDasW/nJvy2ya6dL3B1v7SN2m50afgmswWoi/BX10ERJrCTAKsQ61tNnNQ
+ yXug==
+X-Gm-Message-State: APjAAAV/CsG0/dEgumcecMWft9LKZbODjad9uklcarEWAqU3JV0CrFI/
+ tElhWAQagXjmyAcHrMHqscNCiM/0eTU=
+X-Google-Smtp-Source: APXvYqylwsJ9d2J6HlfZZitGB6aiBmOAV9bPlM9K1LmuILw5/+QvA9b6nghIV3JOTXZA3Kp1fcK0hw==
+X-Received: by 2002:a17:902:9008:: with SMTP id
+ a8mr16960423plp.218.1570823970966; 
+ Fri, 11 Oct 2019 12:59:30 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id z2sm12447287pfq.58.2019.10.11.12.59.29
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 11 Oct 2019 12:59:30 -0700 (PDT)
+Date: Fri, 11 Oct 2019 13:59:28 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Leo Yan <leo.yan@linaro.org>
+Subject: Re: [PATCH v3 5/6] perf cs-etm: Support callchain for instruction
+ sample
+Message-ID: <20191011195928.GB13688@xps15>
+References: <20191005091614.11635-1-leo.yan@linaro.org>
+ <20191005091614.11635-6-leo.yan@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20191011184822.866-4-matthias.bgg@kernel.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191005091614.11635-6-leo.yan@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_123205_234293_0300BB5F 
-X-CRM114-Status: GOOD (  22.62  )
+X-CRM114-CacheID: sfid-20191011_125934_875256_45D35340 
+X-CRM114-Status: GOOD (  19.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -157,104 +100,183 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Matthias Brugger <mbrugger@suse.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-kernel@vger.kernel.org,
- Eric Anholt <eric@anholt.net>, Rob Herring <robh+dt@kernel.org>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Stefan Wahren <wahrenst@gmx.net>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Coresight ML <coresight@lists.linaro.org>, linux-kernel@vger.kernel.org,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>, Ingo Molnar <mingo@redhat.com>,
+ Namhyung Kim <namhyung@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
+ linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/11/19 11:48 AM, matthias.bgg@kernel.org wrote:
-> From: Matthias Brugger <mbrugger@suse.com>
+On Sat, Oct 05, 2019 at 05:16:13PM +0800, Leo Yan wrote:
+> Now CoreSight has supported the thread stack; based on the thread stack
+> we can synthesize call chain for the instruction sample; the call chain
+> can be injected by option '--itrace=g'.
 > 
-> Enable Gigabit Ethernet support on the Raspberry Pi 4
-> Model B.
+> Before:
 > 
-> Signed-off-by: Matthias Brugger <mbrugger@suse.com>
+>   # perf script --itrace=g16l64i100
+>             main  1579        100      instructions:  ffff0000102137f0 group_sched_in+0xb0 ([kernel.kallsyms])
+>             main  1579        100      instructions:  ffff000010213b78 flexible_sched_in+0xf0 ([kernel.kallsyms])
+>             main  1579        100      instructions:  ffff0000102135ac event_sched_in.isra.57+0x74 ([kernel.kallsyms])
+>             main  1579        100      instructions:  ffff000010219344 perf_swevent_add+0x6c ([kernel.kallsyms])
+>             main  1579        100      instructions:  ffff000010214854 perf_event_update_userpage+0x4c ([kernel.kallsyms])
+>   [...]
 > 
+> After:
+> 
+>   # perf script --itrace=g16l64i100
+> 
+>   main  1579        100      instructions:
+>           ffff000010213b78 flexible_sched_in+0xf0 ([kernel.kallsyms])
+>           ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
+> 
+>   main  1579        100      instructions:
+>           ffff0000102135ac event_sched_in.isra.57+0x74 ([kernel.kallsyms])
+>           ffff0000102137a0 group_sched_in+0x60 ([kernel.kallsyms])
+>           ffff000010213b84 flexible_sched_in+0xfc ([kernel.kallsyms])
+>           ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
+> 
+>   main  1579        100      instructions:
+>           ffff000010219344 perf_swevent_add+0x6c ([kernel.kallsyms])
+>           ffff0000102135f4 event_sched_in.isra.57+0xbc ([kernel.kallsyms])
+>           ffff0000102137a0 group_sched_in+0x60 ([kernel.kallsyms])
+>           ffff000010213b84 flexible_sched_in+0xfc ([kernel.kallsyms])
+>           ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
+>   [...]
+> 
+> Signed-off-by: Leo Yan <leo.yan@linaro.org>
 > ---
+>  tools/perf/util/cs-etm.c | 35 +++++++++++++++++++++++++++++++++--
+>  1 file changed, 33 insertions(+), 2 deletions(-)
 > 
->  arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 22 ++++++++++++++++++++++
->  arch/arm/boot/dts/bcm2711.dtsi        | 18 ++++++++++++++++++
->  2 files changed, 40 insertions(+)
-> 
-> diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-> index cccc1ccd19be..958553d62670 100644
-> --- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-> +++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-> @@ -97,6 +97,28 @@
->  	status = "okay";
->  };
+> diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
+> index 4b42f9c9bd34..56e501cd2f5f 100644
+> --- a/tools/perf/util/cs-etm.c
+> +++ b/tools/perf/util/cs-etm.c
+> @@ -17,6 +17,7 @@
+>  #include <stdlib.h>
 >  
-> +&genet {
-> +	phy-handle = <&phy1>;
-> +	phy-mode = "rgmii";
-
-Can you check that things still work against David Miller's net-next?
-Tree, in particular the BCM54213PE PHY might be matched by the BCM54210E
-entry in drivers/net/phy/broadcom.c and I just fixed an issue in how
-RGMII delays were configured:
-
-https://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git/commit/?id=fea7fda7f50a6059220f83251e70709e45cc8040
-
-This might require you to change the 'phy-mode' property to what is
-appropriate.
-
-> +	status = "okay";
-> +	dma-burst-sz = <0x08>;
+>  #include "auxtrace.h"
+> +#include "callchain.h"
+>  #include "color.h"
+>  #include "cs-etm.h"
+>  #include "cs-etm-decoder/cs-etm-decoder.h"
+> @@ -74,6 +75,7 @@ struct cs_etm_traceid_queue {
+>  	size_t last_branch_pos;
+>  	union perf_event *event_buf;
+>  	struct thread *thread;
+> +	struct ip_callchain *chain;
+>  	struct branch_stack *last_branch;
+>  	struct branch_stack *last_branch_rb;
+>  	struct cs_etm_packet *prev_packet;
+> @@ -251,6 +253,16 @@ static int cs_etm__init_traceid_queue(struct cs_etm_queue *etmq,
+>  	if (!tidq->prev_packet)
+>  		goto out_free;
+>  
+> +	if (etm->synth_opts.callchain) {
+> +		size_t sz = sizeof(struct ip_callchain);
 > +
-> +	mdio@e14 {
-> +		compatible = "brcm,genet-mdio-v5";
-> +		reg = <0xe14 0x8>;
-> +		reg-names = "mdio";
-> +		#address-cells = <0x0>;
-> +		#size-cells = <0x1>;
+> +		/* Add 1 to callchain_sz for callchain context */
+> +		sz += (etm->synth_opts.callchain_sz + 1) * sizeof(u64);
+> +		tidq->chain = zalloc(sz);
+> +		if (!tidq->chain)
+> +			goto out_free;
+> +	}
 > +
-> +		phy1: ethernet-phy@1 {
-> +			compatible = "ethernet-phy-ieee802.3-c22";
+>  	if (etm->synth_opts.last_branch) {
+>  		size_t sz = sizeof(struct branch_stack);
+>  
+> @@ -275,6 +287,7 @@ static int cs_etm__init_traceid_queue(struct cs_etm_queue *etmq,
+>  	zfree(&tidq->last_branch);
+>  	zfree(&tidq->prev_packet);
+>  	zfree(&tidq->packet);
+> +	zfree(&tidq->chain);
 
-This does not hurt, but this compatibility string is not required.
+Theoretically this should go two lines up, i.e just below
+zfree(&tidq->prev_packet).  If you agree with the comment I did in 3/6 then it
+is worth doing the above change, otherwise it can stay that way.
 
-> +			/* No PHY interrupt */
-> +			max-speed = <1000>;
+>  out:
+>  	return rc;
+>  }
+> @@ -546,6 +559,7 @@ static void cs_etm__free_traceid_queues(struct cs_etm_queue *etmq)
+>  		zfree(&tidq->last_branch_rb);
+>  		zfree(&tidq->prev_packet);
+>  		zfree(&tidq->packet);
+> +		zfree(&tidq->chain);
 
-And this property is not required either, since the PHY library will
-determine the PHY's capabilities.
+Same comment as above.  The rest looks good to me.
 
-Other than those patches, I believe you also need something like this
-(inspired by the Rpi downstream patch):
+Mathieu
 
-diff --git a/drivers/net/ethernet/broadcom/genet/bcmmii.c
-b/drivers/net/ethernet/broadcom/genet/bcmmii.c
-index 970e478a9017..94d1dd5d56bf 100644
---- a/drivers/net/ethernet/broadcom/genet/bcmmii.c
-+++ b/drivers/net/ethernet/broadcom/genet/bcmmii.c
-@@ -273,11 +273,12 @@ int bcmgenet_mii_probe(struct net_device *dev)
-        struct bcmgenet_priv *priv = netdev_priv(dev);
-        struct device_node *dn = priv->pdev->dev.of_node;
-        struct phy_device *phydev;
--       u32 phy_flags;
-+       u32 phy_flags = 0;
-        int ret;
-
-        /* Communicate the integrated PHY revision */
--       phy_flags = priv->gphy_rev;
-+       if (priv->internal_phy)
-+               phy_flags = priv->gphy_rev;
-
-        /* Initialize link state variables that bcmgenet_mii_setup() uses */
-        priv->old_link = -1;
-
-to prevent the internal PHY revision, which we stick into
-phydev->dev_flags from incorrectly setting bits in
-drivers/net/phy/broadcom.c. I will probably send this as a fix in the
-next few hours.
--- 
-Florian
+>  		zfree(&tidq);
+>  
+>  		/*
+> @@ -1126,7 +1140,7 @@ static void cs_etm__add_stack_event(struct cs_etm_queue *etmq,
+>  	int insn_len;
+>  	u64 from_ip, to_ip;
+>  
+> -	if (etm->synth_opts.thread_stack) {
+> +	if (etm->synth_opts.callchain || etm->synth_opts.thread_stack) {
+>  		from_ip = cs_etm__last_executed_instr(tidq->prev_packet);
+>  		to_ip = cs_etm__first_executed_instr(tidq->packet);
+>  
+> @@ -1182,6 +1196,14 @@ static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
+>  
+>  	cs_etm__copy_insn(etmq, tidq->trace_chan_id, tidq->packet, &sample);
+>  
+> +	if (etm->synth_opts.callchain) {
+> +		thread_stack__sample(tidq->thread, tidq->packet->cpu,
+> +				     tidq->chain,
+> +				     etm->synth_opts.callchain_sz + 1,
+> +				     sample.ip, etm->kernel_start);
+> +		sample.callchain = tidq->chain;
+> +	}
+> +
+>  	if (etm->synth_opts.last_branch) {
+>  		cs_etm__copy_last_branch_rb(etmq, tidq);
+>  		sample.branch_stack = tidq->last_branch;
+> @@ -1369,6 +1391,8 @@ static int cs_etm__synth_events(struct cs_etm_auxtrace *etm,
+>  		attr.sample_type &= ~(u64)PERF_SAMPLE_ADDR;
+>  	}
+>  
+> +	if (etm->synth_opts.callchain)
+> +		attr.sample_type |= PERF_SAMPLE_CALLCHAIN;
+>  	if (etm->synth_opts.last_branch)
+>  		attr.sample_type |= PERF_SAMPLE_BRANCH_STACK;
+>  
+> @@ -2639,7 +2663,6 @@ int cs_etm__process_auxtrace_info(union perf_event *event,
+>  	} else {
+>  		itrace_synth_opts__set_default(&etm->synth_opts,
+>  				session->itrace_synth_opts->default_no_sample);
+> -		etm->synth_opts.callchain = false;
+>  		etm->synth_opts.thread_stack =
+>  				session->itrace_synth_opts->thread_stack;
+>  	}
+> @@ -2651,6 +2674,14 @@ int cs_etm__process_auxtrace_info(union perf_event *event,
+>  		etm->branches_filter |= PERF_IP_FLAG_RETURN |
+>  					PERF_IP_FLAG_TRACE_BEGIN;
+>  
+> +	if (etm->synth_opts.callchain && !symbol_conf.use_callchain) {
+> +		symbol_conf.use_callchain = true;
+> +		if (callchain_register_param(&callchain_param) < 0) {
+> +			symbol_conf.use_callchain = false;
+> +			etm->synth_opts.callchain = false;
+> +		}
+> +	}
+> +
+>  	err = cs_etm__synth_events(etm, session);
+>  	if (err)
+>  		goto err_delete_thread;
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
