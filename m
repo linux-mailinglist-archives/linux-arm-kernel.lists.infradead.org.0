@@ -2,137 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 283E4D428B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 16:16:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5C4AD429A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 16:19:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5D2RG7QmW6WA/0BE8AEsLlhYuikU8YbMYoAg5kKt54E=; b=IoIT08zfz+YEqJ
-	UQzbbW7saaJKJA77cOQqfRCUOSJj7A7aJD7EpK/3gpujNca5S4Mu+d2+hOFVEQTDr3gTV+9iNn/bj
-	qAw7x1+S8rAHfL3bl+7SrO9CvtcIJHqlEmOKVybiHQnrZO1PCAO+C5HVGZYFeynY5Y8mOoM8DWGq7
-	YPo1k7AKV1nxwkHBEScQxxkxGaEt9q5TE1mJJLJcaOZ5rTU2yULY9uuCoFVmTbZAWBYuh+TQjq0cP
-	5dU354UKSYTlVzELkMEbmoIFEA+bPkscETXJ6J+yZ8dlpd2r7bDRB6cOXttT+RdZBbEjXUSL86ayN
-	aIQKSPpLQAJPeVYPWL2Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qf/Zp4NDYr7zM/I9y3Joy7BDiPbSHK/8wtA4XrCG11o=; b=b0GQJi+FBNABJ6
+	64vMd9gwFPMP2qyQk0cA+2cv+WO0dfiAos9sY1Qwv8ja+xuhRPHnqzwCb7xvCURoSv6daJ08wztps
+	nW569e2GYjZMdV0njB2c9I5Ykldx/JaxeA4iD4/8zVtbaosspJe5C1ZxoYC1IsbJL1jCm00o8hJxq
+	QRT0K78PCihBUJ7dkFOwvOWc+woZT9Afj+htMkZuBExkluavcVrsbH1xvs+TrUV0YtP58zDt6ciSE
+	KTMEEOpKxLspa6OA9Ex1R8ArDwb8hkZ0b4UZm+oZJX7xMJFwcN9d67xv00bXpf8imZcysdSIYJenH
+	kpyjGl+2wqaLTGFXBs9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIvil-00023Z-G7; Fri, 11 Oct 2019 14:16:43 +0000
-Received: from mout.web.de ([212.227.17.11])
+	id 1iIvlM-0002X7-NC; Fri, 11 Oct 2019 14:19:24 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIvib-00022e-Gj; Fri, 11 Oct 2019 14:16:35 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1570803376;
- bh=0DEX5VKWVD9x0e8Dn9x3ribmYstuDtlwcI1P1OnQ6rU=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=i1AIlfALDwep6ZQaOUtsSBpdZ1qDGsP6XdYvANP1aNC71Qs1pUctRrbsFeFMgk5l1
- MQPwMkVEecrz8GKQsLtgkglDBNSb7hAkF35oFyH+Ua8S1kdvgCw/kpw/TolKXfgTlH
- sbkwu/UdrwCkCKF8bFt6PuI45JFLPw6lEcuFr6to=
-X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from [192.168.43.108] ([89.204.138.232]) by smtp.web.de (mrweb103
- [213.165.67.124]) with ESMTPSA (Nemesis) id 0MPHKO-1iNLYe1XyC-004PiP; Fri, 11
- Oct 2019 16:16:16 +0200
-Subject: Re: [PATCH 3/3] arm64: dts: rockchip: fix RockPro64 sdmmc settings
-To: Robin Murphy <robin.murphy@arm.com>, Jonas Karlman <jonas@kwiboo.se>,
- Shawn Lin <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>
-References: <20191003215036.15023-1-smoch@web.de>
- <20191003215036.15023-3-smoch@web.de>
- <31181f3c-20ec-e717-1f7e-8b35cd54d96d@arm.com>
- <a8b20c45-0426-ee42-4efc-52e56ea6bb20@web.de>
- <120e2dbc-55eb-2205-b00f-7e50928ec706@rock-chips.com>
- <1c452b8b-853f-8f58-5f3a-0bbecbe20557@web.de>
- <fc7dce53-ad39-26e3-7c19-ab60ff4cc332@arm.com>
- <0c6fdb65-be2a-68e3-a686-14ce9b0a00a4@rock-chips.com>
- <e4aaddc2-441b-b835-380e-374a3d935474@web.de>
- <HE1PR06MB40115FDF385886FDDE122CD6AC970@HE1PR06MB4011.eurprd06.prod.outlook.com>
- <13064e01-9472-fc4d-2c7f-c186fa2a9a91@web.de>
- <64a7d056-28d0-b6d8-6148-b98b58265c08@arm.com>
-From: Soeren Moch <smoch@web.de>
-Openpgp: preference=signencrypt
-Autocrypt: addr=smoch@web.de; prefer-encrypt=mutual; keydata=
- mQMuBFF1CvoRCADuPSewZ3cFP42zIHDvyXJuBIqMfjbKsx27T97oRza/j12Cz1aJ9qIfjOt5
- 9cHpi+NeCo5n5Pchlb11IGMjrd70NAByx87PwGL2MO5k/kMNucbYgN8Haas4Y3ECgrURFrZK
- vvTMqFNQM/djQgjxUlEIej9wlnUO2xe7uF8rB+sQ+MqzMFwesCsoWgl+gRui7AhjxDJ2+nmy
- Ec8ZtuTrWcTNJDsPMehLRBTf84RVg+4pkv4zH7ICzb4AWJxuTFDfQsSxfLuPmYtG0z7Jvjnt
- iDaaa3p9+gmZYEWaIAn9W7XTLn0jEpgK35sMtW1qJ4XKuBXzDYyN6RSId/RfkPG5X6tXAQDH
- KCd0I2P2dBVbSWfKP5nOaBH6Fph7nxFFayuFEUNcuQgAlO7L2bW8nRNKlBbBVozIekqpyCU7
- mCdqdJBj29gm2oRcWTDB9/ARAT2z56q34BmHieY/luIGsWN54axeALlNgpNQEcKmTE4WuPaa
- YztGF3z18/lKDmYBbokIha+jw5gdunzXXtj5JGiwD6+qxUxoptsBooD678XxqxxhBuNPVPZ0
- rncSqYrumNYqcrMXo4F58T+bly2NUSqmDHBROn30BuW2CAcmfQtequGiESNHgyJLCaBWRs5R
- bm/u6OlBST2KeAMPUfGvL6lWyvNzoJCWfUdVVxjgh56/s6Rp6gCHAO5q9ItsPJ5xvSWnX4hE
- bAq8Bckrv2E8F0Bg/qJmbZ53FQf9GEytLQe0xhYCe/vEO8oRfsZRTMsGxFH1DMvfZ7f/MrPW
- CTyPQ3KnwJxi9Mot2AtP1V1kfjiJ/jtuVTk021x45b6K9mw0/lX7lQ+dycrjTm6ccu98UiW1
- OGw4rApMgHJR9pA59N7FAtI0bHsGVKlSzWVMdVNUCtF9R4VXUNxMZz84/ZcZ9hTK59KnrJb/
- ft/IEAIEpdY7IOVI7mso060k3IFFV/HbWI/erjAGPaXR3Cccf0aH28nKIIVREfWd/7BU050G
- P0RTccOxtYp9KHCF3W6bC9raJXlIoktbpYYJJgHUfIrPXrnnmKkWy6AgbkPh/Xi49c5oGolN
- aNGeFuvYWbQaU29lcmVuIE1vY2ggPHNtb2NoQHdlYi5kZT6IegQTEQgAIgUCUXUK+gIbAwYL
- CQgHAwIGFQgCCQoLBBYCAwECHgECF4AACgkQANCJ0qFZnBAmcQEAkMwkC8NpkNTFQ+wc1j0C
- D1zWXsI3BE+elCcGlzcK8d0A/04iWXt16ussH2x+LzceaJlUJUOs6c4khyCRzWWXKK1HuQIN
- BFF1CvoQCADVUJEklP4MK6yoxlb+/fFsPw2YBNfpstx6TB8EC7TefHY1vIe/O4i4Vf4YfR+E
- dbFRfEc1uStvd/NBOZmEZYOwXgKuckwKSEGKCDz5IBhiI84e0Je4ZkHP3poljJenZEtdfiSG
- ZKtEjWJUv34EQGbkal7oJ2FLdlicquDmSq/WSjFenfVuGKx4Cx4jb3D0RP8A0lCGMHY6qhlq
- fA4SgtjbFiSPXolTCCWGJr3L5CYnPaxg4r0G5FWt+4FZsUmvdUTWB1lZV7LGk1dBjdnPv6UT
- X9VtL2dWl1GJHajKBJp9yz8OmkptxHLY1ZeqZRv9zEognqiE2VGiKTZe1Ajs55+HAAMFB/4g
- FrF01xxygoi4x5zFzTB0VGmKIYK/rsnDxJFJoaR/S9iSycSZPTxECCy955fIFLy+GEF5J3Mb
- G1ETO4ue2wjBMRMJZejEbD42oFgsT1qV+h8TZYWLZNoc/B/hArl5cUMa+tqz8Ih2+EUXr9wn
- lYqqw/ita/7yP3ScDL9NGtZ+D4rp4h08FZKKKJq8lpy7pTmd/Nt5rnwPuWxagWM0C2nMnjtm
- GL2tWQL0AmGIbapr0uMkvw6XsQ9NRYYyKyftP1YhgIvTiF2pAJRlmn/RZL6ZuCSJRZFMLT/v
- 3wqJe3ZMlKtufQP8iemqsUSKhJJVIwAKloCX08K8RJ6JRjga/41HiGEEGBEIAAkFAlF1CvoC
- GwwACgkQANCJ0qFZnBD/XQEAgRNZehpq0lRRtZkevVooDWftWF34jFgxigwqep7EtBwBAIlW
- iHJPk0kAK21A1fmcp11cd6t8Jgfn1ciPuc0fqaRb
-Message-ID: <6c2e6523-dc0a-1ad6-ffd3-7ef63c6f7df9@web.de>
-Date: Fri, 11 Oct 2019 16:16:12 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1iIvlB-0002Vs-Lq; Fri, 11 Oct 2019 14:19:15 +0000
+Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1iIvl8-0002aN-FF; Fri, 11 Oct 2019 16:19:10 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH] arm64: dts: rockchip: Add Beelink A1
+Date: Fri, 11 Oct 2019 16:19:09 +0200
+Message-ID: <5779329.sYoq9m6zvk@diego>
+In-Reply-To: <4c490e48-7a85-4ef9-771c-165defde39cc@arm.com>
+References: <9037b7edbbb41cbbf699ebe3a511daf22d886e7d.1570444695.git.robin.murphy@arm.com>
+ <CAL_JsqKBy+i+=gGyYhBgcMUYsWd_CL_GnEoQqALBb+Gy7Ogb6A@mail.gmail.com>
+ <4c490e48-7a85-4ef9-771c-165defde39cc@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <64a7d056-28d0-b6d8-6148-b98b58265c08@arm.com>
-Content-Language: en-GB
-X-Provags-ID: V03:K1:ZQUTbzEI4Q5cpX8IwRbTN8abRrd/bc+5Mj+9i+H0ysvZ6N964S5
- xt6UFDf8NpiC2NjlADMVOWeSpE6f3FUlyDed+SRBGoKnQ+m8Gto1Aj8smtYFxkk0cOY+K4t
- htC04GE/PwkdsmBBKPBI27lFS3cpQEtfEzyBLTteAMxEc5952zJUrZSfu+RHXuur2K3s0AN
- 8ex1cWDOdPqQ6x8oeNCow==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:yjAgu2sz3ZE=:dxY8g2JmlpjdGOlBabf7Wt
- 1ZO4GbucEpmTjHJg6qt0uol5KjXipm2sIkqAfiDJNw3PI2joaXYM3r1EaK8uKed4cVp2c+FFC
- 9teAXPQDB/IdmTYdnobxIftyo1LxCC1vIM09pWfgSeo4Z9C7T8Osk7WOx6tawy04KsXnpGVhD
- gywzKa3zzaJJ2U2ftQcehxP77IoT0+dLBG2hUeyBahpwBquApAksDwwkURVXaE6/VAOL960Z1
- c4Gs7/cksMyxXZFC9r6BO/R07yz9XJblQQU1AO3YUN02XbaZ0SWZeIG9IANt/O9X9dztQ1Hxw
- SXFyCUPG71tLhgPc0Ez/m9N8298DOfvZXVZaFydCR4qntOmAqykqWQyQVVhEV+w+jrUG6m8dy
- 0WJEd+Be2Qw0Go8s7W1SBNJTIXsbTF3hZkSYMnwmHfE8anUy+6/r0BODHEeEsvvnghtWkcAze
- HQFyCqdzWCZWma6KhHQL8uaGC+zo2RS550dprwTwo4nt5yI3/mK77CqmY6Biqfd3G/lTM/8Bv
- +J1U4l3sRqA5jcOeBojvI7sTfr+8348AttU7JrQkD8IgLckE9ORxvqakpIIYwU9xaLUdKfLkD
- R0Sv7tMqT+N2aONkrZwBDcwDLfiiEsxObBSEr4ls6VS+kpCfW3HSjgnMA1nQklBXJHspcdhjD
- Kg5uONFNr4AROTyUPtsrAL9npJZHhhGQ++N5vSMSe6jbBrUYl0IU5jvPiXsmudtZ5kE7aqz+0
- gmcUgIKW3EpEaRZuBowrNsAENZmMYI3j618aVj2fYJCpYyEudy99168SAHhIPYYiLpZgaygFK
- IUUvW4lhb2E7sxD5SQdJwcHFPQdwMk4E2TqgBlPbQJflfSHcArU6Klu9YlI3uJ9NpZQ/CvggN
- W3whHTHWadG3INX/MmlKvPux9vFYh+F94xFvf2q+EoeYs6F16T1pEfXO+K1VCdMgJWbzWXphU
- Z456j7GxHEG0jhjWoCK452MRtAcsq0fL+yzRw4S/bq/ma3yCmL9ywRMA/AAS8W6bj1nQ7ci0d
- tbyubmCpdPbs2xI5215MYWNR9d3twTiPK3TMqS7cP3PQslH51qCqzuf+1pdwrebeLPgaZKuue
- Ec+NuP5wTRbPE63o8t5m1UrgxDHMkKDSk1J8IP6gTenEEwG2ddyhl1lcZM4lpqq9tT/Fo7xeY
- JqCzmrD+33vZHCzNWl4xkzj2xj2XHqy8hTx1KLMlrsN8Npy7VAShV1/WVnfFXTgN/xpjpxpOI
- 8n9GBan8+a+j/sa3mAm9xiDpHa1kI/oNRdKaOTQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_071633_857103_5E3EF0F1 
-X-CRM114-Status: GOOD (  28.09  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191011_071913_864759_EFD70EF2 
+X-CRM114-Status: GOOD (  26.61  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.11 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (smoch[at]web.de)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -144,173 +58,182 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Rob Herring <robh@kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, devicetree@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMTEuMTAuMTkgMTU6MDAsIFJvYmluIE11cnBoeSB3cm90ZToKPiBPbiAxMS8xMC8yMDE5IDEy
-OjQwLCBTb2VyZW4gTW9jaCB3cm90ZToKPj4gT24gMTEuMTAuMTkgMTA6MjIsIEpvbmFzIEthcmxt
-YW4gd3JvdGU6Cj4+PiBPbiAyMDE5LTEwLTA0IDE5OjI0LCBTw7ZyZW4gTW9jaCB3cm90ZToKPj4+
-PiBPbiAwNC4xMC4xOSAxNzozMywgU2hhd24gTGluIHdyb3RlOgo+Pj4+PiBPbiAyMDE5LzEwLzQg
-MjI6MjAsIFJvYmluIE11cnBoeSB3cm90ZToKPj4+Pj4+IE9uIDA0LzEwLzIwMTkgMDQ6MzksIFNv
-ZXJlbiBNb2NoIHdyb3RlOgo+Pj4+Pj4+IE9uIDA0LjEwLjE5IDA0OjEzLCBTaGF3biBMaW4gd3Jv
-dGU6Cj4+Pj4+Pj4+IE9uIDIwMTkvMTAvNCA4OjUzLCBTb2VyZW4gTW9jaCB3cm90ZToKPj4+Pj4+
-Pj4+IE9uIDA0LjEwLjE5IDAyOjAxLCBSb2JpbiBNdXJwaHkgd3JvdGU6Cj4+Pj4+Pj4+Pj4gT24g
-MjAxOS0xMC0wMyAxMDo1MCBwbSwgU29lcmVuIE1vY2ggd3JvdGU6Cj4+Pj4+Pj4+Pj4+IEFjY29y
-ZGluZyB0byB0aGUgUm9ja1BybzY0IHNjaGVtYXRpYyBbMV0gdGhlIHJrMzM5OSBzZG1tYwo+Pj4+
-Pj4+Pj4+PiBjb250cm9sbGVyIGlzCj4+Pj4+Pj4+Pj4+IGNvbm5lY3RlZCB0byBhIG1pY3JvU0Qg
-KFRGIGNhcmQpIHNsb3QsIHdoaWNoIGNhbm5vdCBiZQo+Pj4+Pj4+Pj4+PiBzd2l0Y2hlZCB0bwo+
-Pj4+Pj4+Pj4+PiAxLjhWLgo+Pj4+Pj4+Pj4+IFJlYWxseT8gQUZBSUNTIHRoZSBTRE1NQzAgd2ly
-aW5nIGxvb2tzIHByZXR0eSBtdWNoIGlkZW50aWNhbAo+Pj4+Pj4+Pj4+IHRvIHRoZQo+Pj4+Pj4+
-Pj4+IE5hbm9QQy1UNCBzY2hlbWF0aWMgKGl0J3MgdGhlIHNhbWUgcmVmZXJlbmNlIGRlc2lnbiwg
-YWZ0ZXIgYWxsKSwKPj4+Pj4+Pj4+PiBhbmQgSQo+Pj4+Pj4+Pj4+IGtub3cgdGhhdCBib2FyZCBj
-YW4gaGFwcGlseSBkcml2ZSBhIFVIUy1JIG1pY3JvU0QgY2FyZCB3aXRoIDEuOHYKPj4+Pj4+Pj4+
-PiBJL09zLAo+Pj4+Pj4+Pj4+IGJlY2F1c2UgbWluZSdzIGRvaW5nIHNvIHJpZ2h0IG5vdy4KPj4+
-Pj4+Pj4+Pgo+Pj4+Pj4+Pj4+IFJvYmluLgo+Pj4+Pj4+Pj4gT0ssIHRoZSBSb2NrUHJvNjQgZG9l
-cyBub3QgYWxsb3cgYSBjYXJkIHJlc2V0IChwb3dlciBjeWNsZSkgc2luY2UKPj4+Pj4+Pj4+IFZD
-QzNWMF9TRCBpcyBkaXJlY3RseSBjb25uZWN0ZWQgdG8gVkNDM1YzX1NZUyAodmlhIFI4OTU1NSks
-IHRoZQo+Pj4+Pj4+Pj4gU0RNTUMwX1BXSF9IIHNpZ25hbCBpcyBub3QgY29ubmVjdGVkLiBTbyB0
-aGUgY2FyZCBmYWlscyB0bwo+Pj4+Pj4+Pj4gaWRlbnRpZnkKPj4+Pj4+Pj4+IGl0c2VsZiBhZnRl
-ciBzdXNwZW5kIG9yIHJlYm9vdCB3aGVuIHN3aXRjaGVkIHRvIDEuOFYgb3BlcmF0aW9uLgo+Pj4+
-Pj4gQWgsIHRoYW5rcyBmb3IgY2xhcmlmeWluZyAtIEkgZGlkIG92ZXJsb29rIHRoZSBzdWJ0bGV0
-eSB0aGF0IFUxMiBhbmQKPj4+Pj4+IGZyaWVuZHMgaGF2ZSAiTkMiIGFzIGFsdGVybmF0aXZlIHBh
-cnQgbnVtYmVycywgZXZlbiB0aG91Z2ggdGhleQo+Pj4+Pj4gYXJlbid0IGFjdHVhbGx5IG1hcmtl
-ZCBhcyBETlAuIFNvIGl0J3Mgc3RpbGwgbm90IHNvIG11Y2ggImNhbm5vdCBiZQo+Pj4+Pj4gc3dp
-dGNoZWQiIGFzICJzd2l0Y2hpbmcgY2FuIGxlYWQgdG8gb3RoZXIgcHJvYmxlbXMiLgo+Pj4+Pj4K
-Pj4+Pj4+Pj4gSSBiZWxpZXZlIHdlIGFkZHJlc3NlZCB0aGlzIGlzc3VlIGxvbmcgdGltZSBhZ28s
-IHBsZWFzZSBjaGVjazoKPj4+Pj4+Pj4KPj4+Pj4+Pj4gaHR0cHM6Ly9naXQua2VybmVsLm9yZy9w
-dWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvdG9ydmFsZHMvbGludXguZ2l0L2NvbW1pdC8/aWQ9NmEx
-MWZjNDdmMTc1YzhkODcwMThlODljYjU4ZTJkMzZjNjY1MzRjYgo+Pj4+Pj4+Pgo+Pj4+Pj4+Pgo+
-Pj4+Pj4+Pgo+Pj4+Pj4+IFRoYW5rcyBmb3IgdGhlIHBvaW50ZXIuCj4+Pj4+Pj4gSW4gdGhpcyBj
-YXNlIEkgZ3Vlc3MgSSBzaG91bGQgdXNlIGZvbGxvd2luZyBwYXRjaCBpbnN0ZWFkOgo+Pj4+Pj4+
-Cj4+Pj4+Pj4gLS0tIHJrMzM5OS1yb2NrcHJvNjQuZHRzLmJhayDCoMKgIDIwMTktMTAtMDMgMjI6
-MTQ6MDAuMDY3NzQ1Nzk5ICswMjAwCj4+Pj4+Pj4gKysrIHJrMzM5OS1yb2NrcHJvNjQuZHRzwqDC
-oMKgIDIwMTktMTAtMDQgMDA6MDI6NTAuMDQ3ODkyMzY2ICswMjAwCj4+Pj4+Pj4gQEAgLTYxOSw2
-ICs2MTksOCBAQAo+Pj4+Pj4+IMKgwqDCoMKgwqDCoCBtYXgtZnJlcXVlbmN5ID0gPDE1MDAwMDAw
-MD47Cj4+Pj4+Pj4gwqDCoMKgwqDCoMKgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+Pj4+
-Pj4gwqDCoMKgwqDCoMKgIHBpbmN0cmwtMCA9IDwmc2RtbWNfY2xrICZzZG1tY19jbWQgJnNkbW1j
-X2J1czQ+Owo+Pj4+Pj4+ICvCoMKgwqAgc2QtdWhzLXNkcjEwNDsKPj4+Pj4+PiArwqDCoMKgIHZx
-bW1jLXN1cHBseSA9IDwmdmNjX3NkaW8+Owo+Pj4+Pj4+IMKgwqDCoMKgwqDCoCBzdGF0dXMgPSAi
-b2theSI7Cj4+Pj4+Pj4gwqDCoMKgfTsKPj4+Pj4+PiBXaGVuIEkgZG8gc28sIHRoZSBzZCBjYXJk
-IGlzIGRldGVjdGVkIGFzIFNEUjEwNCwgYnV0IGEgcmVib290Cj4+Pj4+Pj4gaGFuZ3M6Cj4+Pj4+
-Pj4KPj4+Pj4+PiBCb290MTogMjAxOC0wNi0yNiwgdmVyc2lvbjogMS4xNAo+Pj4+Pj4+IENQVUlk
-ID0gMHgwCj4+Pj4+Pj4gQ2hpcFR5cGUgPSAweDEwLCAyODYKPj4+Pj4+PiBTcGlfQ2hpcElkID0g
-Yzg0MDE4Cj4+Pj4+Pj4gbm8gZmluZCBya3BhcnRpdGlvbgo+Pj4+Pj4+IFNwaUJvb3RJbml0OmZm
-ZmZmZmZmCj4+Pj4+Pj4gbW1jOiBFUlJPUjogU0RIQ0kgRVJSOmNtZDoweDEwMixzdGF0OjB4MTgw
-MDAKPj4+Pj4+PiBtbWM6IEVSUk9SOiBDYXJkIGRpZCBub3QgcmVzcG9uZCB0byB2b2x0YWdlIHNl
-bGVjdCEKPj4+Pj4+PiBlbW1jIHJlaW5pdAo+Pj4+Pj4+IG1tYzogRVJST1I6IFNESENJIEVSUjpj
-bWQ6MHgxMDIsc3RhdDoweDE4MDAwCj4+Pj4+Pj4gbW1jOiBFUlJPUjogQ2FyZCBkaWQgbm90IHJl
-c3BvbmQgdG8gdm9sdGFnZSBzZWxlY3QhCj4+Pj4+Pj4gZW1tYyByZWluaXQKPj4+Pj4+PiBtbWM6
-IEVSUk9SOiBTREhDSSBFUlI6Y21kOjB4MTAyLHN0YXQ6MHgxODAwMAo+Pj4+Pj4+IG1tYzogRVJS
-T1I6IENhcmQgZGlkIG5vdCByZXNwb25kIHRvIHZvbHRhZ2Ugc2VsZWN0IQo+Pj4+Pj4+IFNkbW1j
-SW5pdD0yIDEKPj4+Pj4+PiBtbWMwOmNtZDUsMzIKPj4+Pj4+PiBtbWMwOmNtZDcsMzIKPj4+Pj4+
-PiBtbWMwOmNtZDUsMzIKPj4+Pj4+PiBtbWMwOmNtZDcsMzIKPj4+Pj4+PiBtbWMwOmNtZDUsMzIK
-Pj4+Pj4+PiBtbWMwOmNtZDcsMzIKPj4+Pj4+PiBTZG1tY0luaXQ9MCAxCj4+Pj4+Pj4KPj4+Pj4+
-PiBTbyBJIGd1ZXNzIEkgc2hvdWxkIHVzZSBhIGRpZmZlcmVudCBtaW5pbG9hZGVyIGZvciB0aGlz
-IHJlYm9vdCB0bwo+Pj4+Pj4+IHdvcmshPwo+Pj4+Pj4+IE9yIHdoYXQgZWxzZSBjb3VsZCBiZSB3
-cm9uZyBoZXJlPwo+Pj4+Pj4gSG1tLCBJIGd1ZXNzIHRoaXMgaXMgInRoZSBUaW5rZXJib2FyZCBw
-cm9ibGVtIiBhZ2FpbiAtIHRoZSBwYXRjaAo+Pj4+Pj4gYWJvdmUgd291bGQgYmUgT0sgaWYgd2Ug
-Y291bGQgZ2V0IGFzIGZhciBhcyB0aGUga2VybmVsLCBidXQgY2FuJ3QKPj4+Pj4+IGhlbHAgaWYg
-dGhlCj4+Pj4+IEkgZGlkbid0IHJlYWxpemUgdGhhdCBTRCB3YXMgdXNlZCBhcyBib290IG1lZGl1
-bSBmb3IgUm9ja1BybzY0LCBidXQgSQo+Pj4+PiBkaWQgcGF0Y2ggdGhlIHZlbmRvciB0cmVlIHRv
-IHNvbHZlIHRoZSBpc3N1ZSBmb3IgVGlua2VyYm9hcmQsIHNlZQo+Pj4+PiBodHRwczovL2dpdGh1
-Yi5jb20vcm9ja2NoaXAtbGludXgva2VybmVsL2NvbW1pdC9hNGNjZGUyMWY1YTlmMDRmOTk2ZmIw
-MjQ3OWNiOWYxNmQzZGM4ZGMwCj4+Pj4+Cj4+Pj4+Cj4+Pj4+Cj4+Pj4+IE15IGluaXRpYWwgcGxh
-biB3YXMgdG8gcGF0Y2hpbmcgdXBzdHJlYW0ga2VybmVsIGJ5IGFkZGluZwo+Pj4+PiAtPnNodXRk
-b3duLGJ1dAo+Pj4+PiBuZXZlciBmaW5pc2ggaXQuCj4+Pj4+Cj4+Pj4+PiBvZmZlbmRpbmcgY2Fy
-ZCBpcyBpdHNlbGYgdGhlIGJvb3QgbWVkaXVtLiBUaGVyZSB3YXMgYSBwcm9wb3NhbCBoZXJlOgo+
-Pj4+Pj4KPj4+Pj4+IGh0dHBzOi8vcGF0Y2h3b3JrLmtlcm5lbC5vcmcvcGF0Y2gvMTA4MTcyMTcv
-Cj4+Pj4+IFRoaXMgUkZDIGFsc28gbG9va3MgZ29vZCB0byBtZSwgYnV0IHNlZW1zIGl0IG5lZWRz
-IHZvbHVudGVlcnMKPj4+Pj4gdG8gcHVzaCBpdCBhZ2Fpbi4KPj4+PiBPaCwgSSB0aGluayB0aGlz
-IGlzIGEgdG90YWxseSB3cm9uZyB3YXkuCj4+Pj4KPj4+PiBXaGlsZSB0aGlzIG1pZ2h0IHdvcmsg
-Zm9yIHNvbWUgY2FyZHMsIHNldHRpbmcgdGhlIGNvbnRyb2xsZXIncyBpL28KPj4+PiB2b2x0YWdl
-IHRvIDMuM1Ygd2hpbGUgbGVhdmluZyB0aGUgY2FyZCBhdCAxLjhWIGNvbmZpZ3VyYXRpb24gaXMK
-Pj4+PiB0b3RhbGx5Cj4+Pj4gYWdhaW5zdCB0aGUgc3BlY2lmaWNhdGlvbiwgY2FuIGxlYWQgdG8g
-YWxsIGtpbmRzIG9mIHN0cmFuZ2UgYmVoYXZpb3VyCj4+Pj4gYW5kIGV2ZW4gY2F1c2UgaGFyZHdh
-cmUgZGFtYWdlLiBJdCBhbHNvIHdvdWxkIGFjdGl2ZWx5IGRlZmVuZCB0aGUKPj4+PiBwdXJwb3Nl
-IG9mIHRoZSBhYm92ZSBtZW50aW9uZWQgcGF0Y2ggKDZhMTFmYzQpIHdoZXJlIHRoZSBrZXJuZWwK
-Pj4+PiBndWVzc2VzCj4+Pj4gdGhlIGkvbyB2b2x0YWdlIGZyb20gdGhlIGNhcmQgY29uZmlndXJh
-dGlvbiBhbmQgc3dpdGNoZXMgdGhlCj4+Pj4gY29udHJvbGxlcgo+Pj4+IGFjY29yZGluZ2x5LiBX
-ZSB3b3VsZCBlbmQgdXAgd2l0aCBhIDEuOFYgY2FyZCBhbmQgY29udHJvbGxlcgo+Pj4+IGNvbmZp
-Z3VyYXRpb24gYW5kIGEgcmVndWxhdG9yIHZvbHRhZ2Ugb2YgMy4zVi4gVGhpcyB3b3VsZCBvbmx5
-IHdvcmsKPj4+PiB3aXRoCj4+Pj4gZ29vZCBsdWNrLiBFdmVuIGlmIHRoZSBrZXJuZWwgZHJpdmVy
-IHdvdWxkIHN3aXRjaCB0aGUgcmVndWxhdG9yCj4+Pj4gYmFjayB0bwo+Pj4+IDEuOFYgaW4gdGhp
-cyBjYXNlLCB0aGUgdm9sdGFnZSBtaXNtYXRjaCByZW1haW5zIGluIHRoZSBib290bG9hZGVyIHdo
-ZW4KPj4+PiB0aGlzIGNhcmQgY29udGFpbnMgdGhlIGJvb3QgaW1hZ2UuCj4+Pj4KPj4+PiBUaGUg
-b25seSBzYW5lIHdheSBJIHNlZSB0byBoYW5kbGUgdGhpcyBpcyBpbXBsZW1lbnRpbmcgdGhlIHNh
-bWUKPj4+PiB3b3JrYXJvdW5kIChtb2RlIGd1ZXNzaW5nKSBhbHNvIGluIHRoZSBib290bG9hZGVy
-IChyb2NrY2hpcCBtaW5pbG9hZGVyCj4+Pj4gYW5kIHUtYm9vdCBTUEwgc2luY2UgYm90aCBib290
-bG9hZGVyIGNoYWlucyBhcmUgc3VwcG9ydGVkIGZvciB0aGlzCj4+Pj4gYm9hcmQpLgo+Pj4+Cj4+
-Pj4gT3IgbWF5YmUgSSBtaXNzIHNvbWV0aGluZz8KPj4+IFRoYW5rcyBmb3IgeW91ciBpbnB1dCwg
-SSBoYXZlIG1hZGUgYSBuZXcgc2VyaWVzIFsxXSB3aXRoIGEgc2ltaWxhcgo+Pj4gYXBwcm9hY2gg
-YnV0IGlzIGxpbWl0ZWQgdG8gZHdfbW1jLXJvY2tjaGlwCj4+PiBhbmQgb25seSBjaGFuZ2VzIHRo
-ZSByZWd1bGF0b3IgYXQgcG93ZXJfb2ZmIGFmdGVyIHRoZSByZWd1bGF0b3IgaGFzCj4+PiBiZWVu
-IGRpc2FibGVkICh0aGUgdnFtbWMgcmVndWxhdG9yIGluIGFmZmVjdGVkIGRldmljZXMgaXMgYWx3
-YXlzLW9uKS4KPj4gVGhhbmtzIGZvciB5b3VyIHdvcmsgb24gdGhpcy4gVW5mb3J0dW5hdGVseSBJ
-IHN0aWxsIHRoaW5rIHRoYXQgdGhpcyBpcwo+PiB0aGUgd3JvbmcgYXBwcm9hY2guCj4+IEkgc2Vl
-IHNldmVyYWwgcHJvYmxlbXMgaW4geW91ciBwYXRjaCBzZXJpZXM6Cj4+IC0gWW91IGludHJvZHVj
-ZWQgR1BJTzBfUEExIGFzIHJlZ3VsYXRvciBlbmFibGUgZm9yIFJvY2tQcm82NC4KPj4gVW5mb3J0
-dW5hdGVseSBQaW5lNjQgZGVjaWRlZCB0byBkaXNhYmxlIHRoaXMgcmVndWxhdG9yIG9uIEJvYXJk
-IFZlcnNpb24KPj4gMi4xIChyZWFsIHByb2R1Y3QgdmVyc2lvbiksIHNlZSBhYm92ZS4gSSBoYXZl
-IG5vIGlkZWEgd2h5IHRoZXkgZGlkIHRoaXMuCj4+IC0gWW91IGNoYW5nZWQgdGhlIGkvbyB2b2x0
-YWdlIGZyb20gMy4wViB0byAzLjNWLiBUaGlzIGlzIG5vdCBhbGxvd2VkIG9uCj4+IFJLMzM5OSBJ
-L08gYmFuayBGLgo+Pgo+PiBDaGFuZ2luZyB0aGUgaS9vIHZvbHRhZ2UgdG8gMy4wVi8zLjNWIHdo
-aWxlIHRoZSBzZCBjYXJkIGlzIGNvbmZpZ3VyZWQKPj4gZm9yIDEuOFYgaXMgYWdhaW5zdCB0aGUg
-c3BlY2lmaWNhdGlvbiBhbmQgZGFuZ2Vyb3VzLiBXaGlsZSBleHBlcmltZW50aW5nCj4+IHdpdGgg
-ZGlmZmVyZW50IGltYWdlcyAoYXl1ZmFuLCBhcm1iaWFuKSBmb3IgbXkgbmV3bHkgYm91Z2h0IFJv
-Y2tQcm82NCBJCj4+IGtpbGxlZCBhIFNEIGNhcmQgKDMyR0IgU2Ftc3VuZyBVSFMtSSkuIEkgY2Fu
-bm90IHJlY29uc3RydWN0IHRoZSBleGFjdAo+PiBjaXJjdW1zdGFuY2VzLCBidXQgSSdtIHByZXR0
-eSBzdXJlIHRoaXMgaGFwcGVuZWQgZHVlIHRvIHRoZSB2b2x0YWdlCj4+IG1pc21hdGNoLiBPZiBj
-b3Vyc2UgSSdtIG5vdCBrZWVuIHRvIGV4cGVyaW1lbnQgZnVydGhlciB3aXRoIHRoaXMgYW5kCj4+
-IGtpbGwgbW9yZSBzZCBjYXJkcy4gVGhpcyBpcyBub3QganVzdCBhbiB0aGVvcmV0aWNhbCBpc3N1
-ZS4KPj4+IFRvIG15IGtub3dsZWRnZSB0aGUgcHJvYmxlbSBpcyBub3Qgd2l0aCB0aGUgcm9ja2No
-aXAgbWluaWxvYWRlciBvcgo+Pj4gdS1ib290IFNQTCwgaXQgaXMgdGhlIGluaXRpYWwgYm9vdCBy
-b20gdGhhdCB0cmllcyB0byBsb2FkCj4+PiB0aGUgbWluaWxvYWRlci9TUEwgZnJvbSBhIFNELWNh
-cmQsIHNvIG5vdGhpbmcgdGhhdCBjYW4gYmUgdXBkYXRlZC4KPj4gV2hhdCBJIG9ic2VydmVkIG9u
-IG15IFJvY2tQcm82NDoKPj4gVGhlIFJPTSBib290bG9hZGVyIGFsd2F5cyB3YXMgYWJsZSB0byBs
-b2FkIHRoZSBuZXh0IHN0YWdlLCBtYXliZSBkdWUgdG8KPj4gdGhlIGxvdyBpbml0aWFsIGNsb2Nr
-IG9mIDQwMGtIej8gQWxzbyB0aGUgUk9NIGJvb3Rsb2FkZXIgY2Fubm90IGNoYW5nZQo+PiB2b2x0
-YWdlIHJlZ3VsYXRvciBzZXR0aW5ncy4gU28gaWYgdGhlIGkvbyB2b2x0YWdlIHN0aWxsIGlzIGF0
-IDEuOFYgYW5kCj4+IG1hdGNoaW5nIHRoZSBzZCBjYXJkIHNldHRpbmcsIHRoZXJlIGlzIG5vIHBy
-b2JsZW0gZm9yIHRoZSBST00KPj4gYm9vdGxvYWRlci4KPgo+IEhtbSwgdGhhdCBtYWtlcyBtZSB3
-b25kZXIgaWYgdGhlIHByb2JsZW0gbWlnaHQgYmUgbm90IHNvIG11Y2ggdGhhdCB0aGUKPiBsZXZl
-bCBvZiBTRE1NQzBfVkREIGl0c2VsZiBzdGF5cyBhdCAxLjhWLCBidXQgdGhhdCBhdCBzb21lIHBv
-aW50IGFmdGVyCj4gdGhlIGJvb3Ryb20gdGhlIEdSRl9JT19WU0VMIGJpdCBnZXRzIHJlc2V0IHNv
-IHRoZSBjb250cm9sbGVyIGp1c3QKPiBzdG9wcyBiZWluZyBhYmxlIHRvIHJlYWQgYW55dGhpbmcg
-YXMgbG9naWMtaGlnaC4KV291bGQgYmUgZ3JlYXQgaWYgc29tZW9uZSBmcm9tIFJvY2tjaGlwIGNv
-dWxkIGdpdmUgc29tZSBpbnNpZ2h0cyB3aGV0aGVyCmFuZCB3aGVuIGR1cmluZyByZWJvb3QgR1JG
-X0lPX1ZTRUwgaXMgcmVzZXQgKEFURiBiZWZvcmUgcmVib290LCBzb21lIFNvQwpzb2Z0LXJlc2V0
-LCBST00gYm9vdGxvYWRlciwgcmttaW5pbG9hZGVyLCBzb21ldGhpbmcgZGlmZmVyZW50KSwgU2hh
-d24/Ck9yIGdldHMgdGhpcyBWU0VMIGNoYW5nZWQgb25seSB3aGVuIHN3aXRjaGluZyB0aGUgdm9s
-dGFnZSByZWd1bGF0b3IgKHZpYQppb19kb21haW5zLHNkbW1jLXN1cHBseSk/CgpTb2VyZW4KPgo+
-IFJvYmluLgo+Cj4+IFNvIEkgdGhpbmsgdGhlIG5vcm1hbCByZWJvb3QgaGFuZGxpbmcgc2hvdWxk
-IGJlOgo+PiBJZiB0aGUgc2QgY2FyZCBjYW4gYmUgc3dpdGNoZWQgb2ZmIChwcmVmZXJyZWQgc29s
-dXRpb24pLCBkbyBzbyBhbmQgcmVzZXQKPj4gdGhlIGNvbnRyb2xsZXIgaS9vIHZvbHRhZ2UgdG8g
-My4wVi8zLjNWLgo+PiBJZiB0aGUgc2QgY2FyZCBjYW4gbm90IGJlIHN3aXRjaGVkIG9mZiwgbWFr
-ZSBzdXJlIHRvIGxlYXZlIHRoZQo+PiBjb250cm9sbGVyIGkvbyB2b2x0YWdlIGF0IHRoZSBjdXJy
-ZW50IHNldHRpbmcuIE1ha2Ugc3VyZSBpbiBsYXRlciBib290Cj4+IHN0YWdlcyB0byBub3QgY2hh
-bmdlIHRoZSBjb250cm9sbGVyIGkvbyB2b2x0YWdlIHRvIDMuMFYvMy4zViB3aGVuIHRoZQo+PiBj
-YXJkIGlzIGNvbmZpZ3VyZWQgZm9yIDEuOFYuIEFjY29yZGluZyB0byB0aGUgcGF0Y2ggbWVudGlv
-bmVkIGFib3ZlIHRoaXMKPj4gYmVoYXZpb3VyIGFscmVhZHkgaXMgaW1wbGVtZW50ZWQgaW4gbGlu
-dXgsIHdlIGFsc28gbmVlZCB0aGlzIGZvciB0aGUKPj4gYm9vdGxvYWRlcnMuCj4+Cj4+IFJlZ2Fy
-ZHMsCj4+IFNvZXJlbgo+Pj4KPj4+IEkgaGF2ZSBvYnNlcnZlZCB0aGlzIGlzc3VlIG9uIHRoZSBm
-b2xsb3dpbmcgZGV2aWNlcywgYW5kIHRoZSBwYXRjaGVzCj4+PiBhdCBbMV0gbWFrZXMgaXQgcG9z
-c2libGUgdG8gcmVib290IGZyb20gU0QtY2FyZCBhZnRlciBVSFMgaGFzIGJlZW4KPj4+IGVuYWJs
-ZWQuCj4+PiAtIEFzdXMgVGlua2VyIEJvYXJkIChSSzMyODgpCj4+PiAtIFJvY2tjaGlwIFNhcHBo
-aXJlIEJvYXJkIChSSzMzOTkpCj4+PiAtIFJhZHhhIFJvY2sgUGkgNCAoUkszMzk5KQo+Pj4gLSBQ
-aW5lNjQgUm9ja1BybzY0IChSSzMzOTkpCj4+PiBBbGwgb2YgdGhlIGFib3ZlIHNlZW0gdG8gdXNl
-IHRoZSBSSzgwOCByZWd1bGF0b3IgZm9yIHNkIGlvIHZvbHRhZ2UuCj4+Pgo+Pj4gVGhlIFJPQy1S
-SzMzMjgtQ0MgZGlkIG5vdCBoYXZlIHRoaXMgaXNzdWUgYW5kIHNlZW0gdG8gYXV0b21hdGljYWxs
-eQo+Pj4gcmVzZXQgdG8gMy4zdi4KPj4+Cj4+PiBbMV0KPj4+IGh0dHBzOi8vZ2l0aHViLmNvbS9L
-d2lib28vbGludXgtcm9ja2NoaXAvY29tcGFyZS9uZXh0LTIwMTkxMDExLi4ubmV4dC0yMDE5MTAx
-MS1tbWMKPj4+Cj4+PiBSZWdhcmRzLAo+Pj4gSm9uYXMKPj4+Cj4+Pj4gU29lcmVuCj4+Pj4KPj4+
-Pgo+Pj4+Pj4gYWx0aG91Z2ggSSdtIG5vdCBzdXJlIHdoYXQgaWYgYW55IHByb2dyZXNzIGhhcyBi
-ZWVuIG1hZGUgc2luY2UgdGhlbi4KPj4+Pj4+Cj4+Pj4+PiBSb2Jpbi4KPj4+Pj4+Cj4+Cj4+CgoK
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
-bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
-ZXJuZWwK
+Am Freitag, 11. Oktober 2019, 14:20:38 CEST schrieb Robin Murphy:
+> On 07/10/2019 13:53, Rob Herring wrote:
+> > On Mon, Oct 7, 2019 at 6:33 AM Robin Murphy <robin.murphy@arm.com> wrote:
+> >>
+> >> Beelink A1 is a TV box implementing the higher-end options of the
+> >> RK3328 reference design - the DTB from the stock Android firmware is
+> >> clearly the "rk3328-box-plus" variant from the Rockchip 3.10 BSP with
+> >> minor modifications to accommodate the USB WiFi module and additional
+> >> VFD-style LED driver. It features:
+> >>
+> >> - 4GB of 32-bit LPDDR3
+> >> - 16GB of HS200 eMMC (newer models with 32GB also exist)
+> >> - Realtek RTL8211F phy for gigabit ethernet
+> >> - Fn-Link 6221E-UUC module (RealTek RTL8821CU) for 11ac WiFi and Bluetooth 4.2
+> >> - HDMI and analog A/V
+> >> - 1x USB 3.0 type A host, 1x USB 2.0 type A OTG, 1x micro SD
+> >> - IR receiver and a neat little LED clock display.
+> >>
+> >> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> >> ---
+> >>
+> >> One question I'm wondering about is whether it's worth pushing the HDMI
+> >> and analog codec audio cards down into rk3328.dtsi (as with HDMI audio
+> >> on RK3399), since those audio pipelines are internal to the SoC and the
+> >> board only really governs whether the outputs are wired up or not.
+> > 
+> > Seems reasonable. One other candidate below.
+> > 
+> >>
+> >>   .../devicetree/bindings/arm/rockchip.yaml     |   5 +
+> > 
+> > In the future, please split bindings to a separate patch.
+> 
+> Ha, busted! I thought this might be trivial enough to slip through, but 
+> I'll split it out if you prefer.
+> 
+> >>   arch/arm64/boot/dts/rockchip/Makefile         |   1 +
+> >>   arch/arm64/boot/dts/rockchip/rk3328-a1.dts    | 399 ++++++++++++++++++
+> >>   3 files changed, 405 insertions(+)
+> >>   create mode 100644 arch/arm64/boot/dts/rockchip/rk3328-a1.dts
+> >>
+> >> diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
+> >> index c82c5e57d44c..f27f7805f57e 100644
+> >> --- a/Documentation/devicetree/bindings/arm/rockchip.yaml
+> >> +++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
+> >> @@ -40,6 +40,11 @@ properties:
+> >>             - const: asus,rk3288-tinker-s
+> >>             - const: rockchip,rk3288
+> >>
+> >> +      - description: Beelink A1
+> >> +        items:
+> >> +          - const: azw,beelink-a1
+> >> +          - const: rockchip,rk3328
+> >> +
+> >>         - description: bq Curie 2 tablet
+> >>           items:
+> >>             - const: mundoreader,bq-curie2
+> >> diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
+> >> index 1f18a9392d15..a6f250e7cde2 100644
+> >> --- a/arch/arm64/boot/dts/rockchip/Makefile
+> >> +++ b/arch/arm64/boot/dts/rockchip/Makefile
+> >> @@ -1,5 +1,6 @@
+> >>   # SPDX-License-Identifier: GPL-2.0
+> >>   dtb-$(CONFIG_ARCH_ROCKCHIP) += px30-evb.dtb
+> >> +dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-a1.dtb
+> >>   dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-evb.dtb
+> >>   dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-rock64.dtb
+> >>   dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-roc-cc.dtb
+> >> diff --git a/arch/arm64/boot/dts/rockchip/rk3328-a1.dts b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
+> >> new file mode 100644
+> >> index 000000000000..03ad663ff821
+> >> --- /dev/null
+> >> +++ b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
+> >> @@ -0,0 +1,399 @@
+> >> +// SPDX-License-Identifier: (GPL-2.0-only OR MIT)
+> >> +// Copyright (c) 2017-2019 Arm Ltd.
+> >> +
+> >> +/dts-v1/;
+> >> +#include "rk3328.dtsi"
+> >> +
+> >> +/ {
+> >> +       model = "Beelink A1";
+> >> +       compatible = "azw,beelink-a1", "rockchip,rk3328";
+> >> +
+> >> +       /*
+> >> +        * UART pins, as viewed with bottom of case removed:
+> >> +        *
+> >> +        *           Front
+> >> +        *        /-------
+> >> +        *  L    / o <- Gnd
+> >> +        *  e   / o <-- Rx
+> >> +        *  f  / o <--- Tx
+> >> +        *  t / o <---- +3.3v
+> >> +        *    |
+> >> +        */
+> >> +       chosen {
+> >> +               stdout-path = "serial2:1500000n8";
+> >> +       };
+> >> +
+> >> +       gmac_clkin: external-gmac-clock {
+> >> +               compatible = "fixed-clock";
+> >> +               clock-frequency = <125000000>;
+> >> +               clock-output-names = "gmac_clkin";
+> >> +               #clock-cells = <0>;
+> >> +       };
+> >> +
+> >> +       vcc_host_5v: usb3-current-switch {
+> >> +               compatible = "regulator-fixed";
+> >> +               enable-active-high;
+> >> +               gpio = <&gpio0 RK_PA0 GPIO_ACTIVE_HIGH>;
+> >> +               pinctrl-names = "default";
+> >> +               pinctrl-0 = <&usb30_host_drv>;
+> >> +               regulator-name = "vcc_host_5v";
+> >> +               vin-supply = <&vcc_sys>;
+> >> +       };
+> >> +
+> >> +       vcc_sys: vcc-sys {
+> >> +               compatible = "regulator-fixed";
+> >> +               regulator-name = "vcc_sys";
+> >> +               regulator-min-microvolt = <5000000>;
+> >> +               regulator-max-microvolt = <5000000>;
+> >> +       };
+> >> +
+> >> +       cpus {
+> >> +               idle-states {
+> >> +                       entry-method = "arm,psci";
+> >> +
+> >> +                       cpu_sleep: cpu-sleep {
+> >> +                               compatible = "arm,idle-state";
+> >> +                               arm,psci-suspend-param = <0x0010000>;
+> >> +                               local-timer-stop;
+> >> +                               entry-latency-us = <120>;
+> >> +                               exit-latency-us = <250>;
+> >> +                               min-residency-us = <900>;
+> > 
+> > This doesn't seem like something that's board specific, but I guess
+> > the regulator could have some influence on these times. If so, the
+> > board file could always override a default.
+> 
+> True, this is traceable back to the Rockchip Android BSP where it's 
+> actually applied to the entire SoC family[1]. I don't know if there's 
+> likely to be any difference between the downstream "RKTRUST" firmware 
+> binaries (which this nominally represents) and upstream ATF in terms of 
+> their PSCI implementation/performance.
+> 
+> I've not got round to properly tinkering with suspend/resume and power 
+> management stuff yet, so I guess another option would be to just forget 
+> about this part for now - Heiko, any opinions?
+
+I think nobody actually knows what goes on in Rockchip's binary ATF
+variant, which is the reason I dislike it so much ;-) .
+
+What's in the upstream sources should always take precedent. Looking
+at rk3399 as an example where they had oversight from ChromeOS people
+there are idle-states in rk3399.dtsi and I guess there should be a
+counterpart int ATF.
+
+The idle-state values also match rk3399's cpu-sleep, so seem pretty
+standard. So should just go into rk3328.dtsi after someone could verify
+that this works with upstream ATF.
+
+Heiko
+
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
