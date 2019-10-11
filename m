@@ -2,56 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5169ED436D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 16:52:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7EC18D43B0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 17:03:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V6lTJXB/vALJE86WNGMviFxRg0Thi8lj51yqbPttrwM=; b=DUHs8ZUkJdITya
-	mdmY4Ng/a6QKUWGrS6tvmkeut1sPlJPR6xC5cpDlvT5/GYVSQLyHP2/acL6nv4PDpdTobf4Nr0M+7
-	+/El8sBgcQHQC5mboifKOu+H3hHlXadPnYQeBG1bLuz5KugJ/pd8l+KH8OaU2vhDX8juNQhojlWy1
-	CY3kwJhgha0CTDKnp31OHDNPJnC9TD7ggl4mW3Zr43/PHpwbp433Ad0an0IdAOULev4SpavXtTxKE
-	15dJEiAh+IYM3dB7wSwFf7YhCKVhtj9MevXZhX/xSCWTGn1pyj4JyzkAUtIhkG9cmXYp+ZrhLSs0t
-	7708RcX45upny7sovUIw==;
+	List-Owner; bh=xvf9OhEPYMFXZ1J74Hb9bycTLrmNBU0bqabhXwE6yF8=; b=aRKgh466Avj5TQ
+	hLvuohloGeZ2ueTguVkoLWffTgo/IhmS2W/ZY5pbm9JNupkrEWqzm0REoH2+YU5V5sg10tT2eBCKP
+	oLqVepB1Kae2a3EPQNiAlLBRB7DTN5BHwqpSsl5p8izmCW1/hhgIkvBRoSAGxXU5wmmyLGReGB98P
+	rTtRfXOi3BYW8hs6zOHkKlZk7fsLZtPsO9xmiO/zPv5DmvHKLgpGGdGQYqINVa4bpyfFW7w05hfLg
+	fU9okf7roHmQgUvPSNJ/3cv46JZYhI3nFvx6Wzw5LBeZ/gvDjPeL/YFa/xNWAJXpIuYM4x3ok5IKx
+	2vL65b3UkfJ5cpisE21g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIwGx-0003Dt-8O; Fri, 11 Oct 2019 14:52:03 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIwGq-0003Cq-2W
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 14:51:57 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 614DB142F;
- Fri, 11 Oct 2019 07:51:54 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 607CF3F68E;
- Fri, 11 Oct 2019 07:51:51 -0700 (PDT)
-Date: Fri, 11 Oct 2019 15:51:49 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Alex =?iso-8859-1?Q?Benn=E9e?= <alex.bennee@linaro.org>
-Subject: Re: [PATCH v2 04/12] arm64: docs: cpu-feature-registers: Document
- ID_AA64PFR1_EL1
-Message-ID: <20191011145148.GK27757@arm.com>
-References: <1570733080-21015-1-git-send-email-Dave.Martin@arm.com>
- <1570733080-21015-5-git-send-email-Dave.Martin@arm.com>
- <87zhi7l8qz.fsf@linaro.org>
+	id 1iIwSO-0006t9-Q7; Fri, 11 Oct 2019 15:03:52 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iIwSF-0006sO-HD; Fri, 11 Oct 2019 15:03:45 +0000
+Received: by mail-oi1-f195.google.com with SMTP id t84so8245827oih.10;
+ Fri, 11 Oct 2019 08:03:43 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=zf/wVL1pxkzfv+aCf542wtXl7xxXSJSAoS259hxFzdU=;
+ b=rmDRYMw+ascsLYJiozvcI28ZFryJbnatbXL/aY229SOm/s/3QhjYwK84v13rR4FOik
+ LRIH84od4mBnpfSMKupemzo5IO66RnEZ/SNcscIu8M5jYw1OPFW0GXRIAnzt/9um+G+P
+ p+yqHzjokhfYviE2+ZyJJxR0Q5PW1aghTLYrXq58FLqO7lC2dsj5j3MCNIu/PoKJ0hVU
+ 4lh2iNDAhCk6PB+dKMdQGNFDL5LwX/x7ddHZqP6SrJuw0q/ld9R865BoUKHk41L9TLZC
+ ttWIds2hFQXua8gtnjYMECj3zZdIFLKiS3ZWR9LshdQqMd/mX6sO39qODuWKMYRctVm6
+ 6rgA==
+X-Gm-Message-State: APjAAAUhdQFf2Youun61nEh8Y7Zpji2cJJMzSYTN/dlqrn30HJqETgQ9
+ 8u5u1DbMeJ8mA59UVFNaAQ==
+X-Google-Smtp-Source: APXvYqyV76Nvy442IRIoZov+TB1OwfgmfaBvOSHiGvU7dcH19CN5WjOOfWxDjsuT1iB1kLR3NqyaCA==
+X-Received: by 2002:aca:5786:: with SMTP id l128mr12933151oib.34.1570806222672; 
+ Fri, 11 Oct 2019 08:03:42 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id l47sm2791691ota.56.2019.10.11.08.03.39
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 11 Oct 2019 08:03:39 -0700 (PDT)
+Date: Fri, 11 Oct 2019 10:03:39 -0500
+From: Rob Herring <robh@kernel.org>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v2 1/3] dt-bindings: power: Convert Generic Power Domain
+ bindings to json-schema
+Message-ID: <20191011150339.GA16245@bogus>
+References: <20191002160632.11140-1-krzk@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <87zhi7l8qz.fsf@linaro.org>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <20191002160632.11140-1-krzk@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_075156_204780_45C5ADBE 
-X-CRM114-Status: GOOD (  22.93  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191011_080343_572458_A17EE134 
+X-CRM114-Status: GOOD (  18.83  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,99 +89,201 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
- Suzuki Poulose <suzuki.poulose@arm.com>,
- Eugene Syromiatnikov <esyr@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- "H.J. Lu" <hjl.tools@gmail.com>, Yu-cheng Yu <yu-cheng.yu@intel.com>,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
- Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
- Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
- linux-kernel@vger.kernel.org, Sudakshina Das <sudi.das@arm.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ linux-pci@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
+ dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, Kevin Hilman <khilman@baylibre.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, etnaviv@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
+ linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Stephen Boyd <sboyd@kernel.org>,
+ linux-usb@vger.kernel.org, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ linux-kernel@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
+ freedreno@lists.freedesktop.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 11, 2019 at 02:19:48PM +0100, Alex Benn=E9e wrote:
-> =
+On Wed, Oct 02, 2019 at 06:06:30PM +0200, Krzysztof Kozlowski wrote:
+> Convert Generic Power Domain bindings to DT schema format using
+> json-schema.  The consumer bindings are split to separate file.
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+> 
+> ---
+> 
+> Changes since v1:
+> 1. Select all nodes for consumers,
+> 2. Remove from consumers duplicated properties with dt-schema,
+> 3. Fix power domain pattern,
+> 4. Remove unneeded types.
+> ---
+>  .../devicetree/bindings/arm/arm,scmi.txt      |   2 +-
+>  .../devicetree/bindings/arm/arm,scpi.txt      |   2 +-
+>  .../bindings/arm/freescale/fsl,scu.txt        |   2 +-
+>  .../bindings/clock/clk-exynos-audss.txt       |   2 +-
+>  .../bindings/clock/exynos5433-clock.txt       |   4 +-
+>  .../bindings/clock/renesas,cpg-mssr.txt       |   2 +-
+>  .../clock/renesas,r8a7778-cpg-clocks.txt      |   2 +-
+>  .../clock/renesas,r8a7779-cpg-clocks.txt      |   2 +-
+>  .../clock/renesas,rcar-gen2-cpg-clocks.txt    |   2 +-
+>  .../bindings/clock/renesas,rz-cpg-clocks.txt  |   2 +-
+>  .../bindings/clock/ti/davinci/psc.txt         |   2 +-
+>  .../bindings/display/etnaviv/etnaviv-drm.txt  |   2 +-
+>  .../devicetree/bindings/display/msm/dpu.txt   |   2 +-
+>  .../devicetree/bindings/display/msm/mdp5.txt  |   2 +-
+>  .../devicetree/bindings/dsp/fsl,dsp.yaml      |   2 +-
+>  .../firmware/nvidia,tegra186-bpmp.txt         |   2 +-
+>  .../bindings/media/imx7-mipi-csi2.txt         |   3 +-
+>  .../bindings/media/mediatek-jpeg-decoder.txt  |   3 +-
+>  .../bindings/media/mediatek-mdp.txt           |   3 +-
+>  .../bindings/opp/qcom-nvmem-cpufreq.txt       |   2 +-
+>  .../devicetree/bindings/pci/pci-keystone.txt  |   2 +-
+>  .../bindings/phy/ti,phy-am654-serdes.txt      |   2 +-
+>  .../bindings/power/amlogic,meson-gx-pwrc.txt  |   2 +-
+>  .../devicetree/bindings/power/fsl,imx-gpc.txt |   2 +-
+>  .../bindings/power/fsl,imx-gpcv2.txt          |   2 +-
+>  .../power/power-domain-consumers.yaml         | 105 +++++++++
+>  .../bindings/power/power-domain.yaml          | 134 ++++++++++++
+>  .../bindings/power/power_domain.txt           | 205 ------------------
+>  .../devicetree/bindings/power/qcom,rpmpd.txt  |   2 +-
+>  .../bindings/power/renesas,rcar-sysc.txt      |   2 +-
+>  .../bindings/power/renesas,sysc-rmobile.txt   |   2 +-
+>  .../bindings/power/xlnx,zynqmp-genpd.txt      |   2 +-
+>  .../bindings/soc/bcm/brcm,bcm2835-pm.txt      |   2 +-
+>  .../bindings/soc/mediatek/scpsys.txt          |   2 +-
+>  .../bindings/soc/ti/sci-pm-domain.txt         |   2 +-
+>  .../bindings/usb/nvidia,tegra124-xusb.txt     |   4 +-
+>  MAINTAINERS                                   |   2 +-
+>  37 files changed, 278 insertions(+), 241 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/power/power-domain-consumers.yaml
+>  create mode 100644 Documentation/devicetree/bindings/power/power-domain.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/power/power_domain.txt
 
-> Dave Martin <Dave.Martin@arm.com> writes:
-> =
 
-> > Commit d71be2b6c0e1 ("arm64: cpufeature: Detect SSBS and advertise
-> > to userspace") exposes ID_AA64PFR1_EL1 to userspace, but didn't
-> > update the documentation to match.
-> >
-> > Add it.
-> >
-> > Signed-off-by: Dave Martin <Dave.Martin@arm.com>
-> >
-> > ---
-> >
-> > Note to maintainers:
-> >
-> >  * This patch has been racing with various other attempts to fix
-> >    the same documentation in the meantime.
-> >
-> >    Since this patch only fixes the documenting for pre-existing
-> >    features, it can safely be dropped if appropriate.
-> >
-> >    The _new_ documentation relating to BTI feature reporting
-> >    is in a subsequent patch, and needs to be retained.
-> > ---
-> >  Documentation/arm64/cpu-feature-registers.rst | 15 +++++++++++----
-> >  1 file changed, 11 insertions(+), 4 deletions(-)
-> >
-> > diff --git a/Documentation/arm64/cpu-feature-registers.rst b/Documentat=
-ion/arm64/cpu-feature-registers.rst
-> > index 2955287..b86828f 100644
-> > --- a/Documentation/arm64/cpu-feature-registers.rst
-> > +++ b/Documentation/arm64/cpu-feature-registers.rst
-> > @@ -168,8 +168,15 @@ infrastructure:
-> >       +------------------------------+---------+---------+
-> >
-> >
-> > -  3) MIDR_EL1 - Main ID Register
-> > +  3) ID_AA64PFR1_EL1 - Processor Feature Register 1
-> > +     +------------------------------+---------+---------+
-> > +     | Name                         |  bits   | visible |
-> > +     +------------------------------+---------+---------+
-> > +     | SSBS                         | [7-4]   |    y    |
-> > +     +------------------------------+---------+---------+
-> > +
-> >
-> > +  4) MIDR_EL1 - Main ID Register
-> >       +------------------------------+---------+---------+
-> >       | Name                         |  bits   | visible |
-> >       +------------------------------+---------+---------+
-> > @@ -188,7 +195,7 @@ infrastructure:
-> >     as available on the CPU where it is fetched and is not a system
-> >     wide safe value.
-> >
-> > -  4) ID_AA64ISAR1_EL1 - Instruction set attribute register 1
-> > +  5) ID_AA64ISAR1_EL1 - Instruction set attribute register 1
-> =
+> diff --git a/Documentation/devicetree/bindings/power/power-domain-consumers.yaml b/Documentation/devicetree/bindings/power/power-domain-consumers.yaml
+> new file mode 100644
+> index 000000000000..f65078e1260e
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/power/power-domain-consumers.yaml
+> @@ -0,0 +1,105 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/power/power-domain-consumers.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: PM domain consumers
+> +
+> +maintainers:
+> +  - Rafael J. Wysocki <rjw@rjwysocki.net>
+> +  - Kevin Hilman <khilman@kernel.org>
+> +  - Ulf Hansson <ulf.hansson@linaro.org>
+> +
+> +description: |+
+> +  See power-domain.yaml
+> +
+> +select: true
+> +
+> +allOf:
+> +  - $ref: /schemas/power-domain/power-domain-consumer.yaml
 
-> If I'm not mistaken .rst has support for auto-enumeration if the #
-> character is used. That might reduce the pain of re-numbering in future.
+I don't like this split. We should move the contents of this file to the 
+above file.
 
-Ack, though it would be good to go one better and generate this document
-from the cpufeature.c tables (or from some common source).  The numbers
-are relatively easy to maintain -- remembering to update the document
-at all seems the bigger maintenance headache right now.
+I checked the authorship of the relevant lines and they are all except 
+for a small number of lines from Linaro authors (Viresh and Ulf). I have 
+permission from Linaro to dual license Linaro authored bindings, so it's 
+not a problem to move this. I can do that and you can just drop this file.
 
-I think this particular patch is superseded by similar fixes from other
-people, just not in torvalds/master yet.
-
-[...]
-
-Cheers
----Dave
+> +
+> +properties:
+> +  required-opps:
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+> +    description:
+> +      This contains phandle to an OPP node in another device's OPP table.
+> +      It may contain an array of phandles, where each phandle points to an OPP
+> +      of a different device. It should not contain multiple phandles to the OPP
+> +      nodes in the same OPP table. This specifies the minimum required OPP
+> +      of the device(s), whose OPP's phandle is present in this property,
+> +      for the functioning of the current device at the current OPP (where this
+> +      property is present).
+> +
+> +examples:
+> +  - |
+> +    leaky-device@12350000 {
+> +      compatible = "foo,i-leak-current";
+> +      reg = <0x12350000 0x1000>;
+> +      power-domains = <&power 0>;
+> +      power-domain-names = "io";
+> +    };
+> +
+> +    leaky-device@12351000 {
+> +      compatible = "foo,i-leak-current";
+> +      reg = <0x12351000 0x1000>;
+> +      power-domains = <&power 0>, <&power 1> ;
+> +      power-domain-names = "io", "clk";
+> +    };
+> +
+> +    // The first example above defines a typical PM domain consumer device, which is
+> +    // located inside a PM domain with index 0 of a power controller represented by a
+> +    // node with the label "power".
+> +    // In the second example the consumer device are partitioned across two PM domains,
+> +    // the first with index 0 and the second with index 1, of a power controller that
+> +    // is represented by a node with the label "power".
+> +
+> +  - |
+> +    // Example with  OPP table for domain provider that provides two domains:
+> +
+> +    domain0_opp_table: opp-table0 {
+> +      compatible = "operating-points-v2";
+> +
+> +      domain0_opp_0: opp-1000000000 {
+> +        opp-hz = /bits/ 64 <1000000000>;
+> +        opp-microvolt = <975000 970000 985000>;
+> +      };
+> +      domain0_opp_1: opp-1100000000 {
+> +        opp-hz = /bits/ 64 <1100000000>;
+> +        opp-microvolt = <1000000 980000 1010000>;
+> +      };
+> +    };
+> +
+> +    domain1_opp_table: opp-table1 {
+> +      compatible = "operating-points-v2";
+> +
+> +      domain1_opp_0: opp-1200000000 {
+> +        opp-hz = /bits/ 64 <1200000000>;
+> +        opp-microvolt = <975000 970000 985000>;
+> +      };
+> +      domain1_opp_1: opp-1300000000 {
+> +        opp-hz = /bits/ 64 <1300000000>;
+> +        opp-microvolt = <1000000 980000 1010000>;
+> +      };
+> +    };
+> +
+> +    power: power-controller@12340000 {
+> +      compatible = "foo,power-controller";
+> +      reg = <0x12340000 0x1000>;
+> +      #power-domain-cells = <1>;
+> +      operating-points-v2 = <&domain0_opp_table>, <&domain1_opp_table>;
+> +    };
+> +
+> +    leaky-device0@12350000 {
+> +      compatible = "foo,i-leak-current";
+> +      reg = <0x12350000 0x1000>;
+> +      power-domains = <&power 0>;
+> +      required-opps = <&domain0_opp_0>;
+> +    };
+> +
+> +    leaky-device1@12350000 {
+> +      compatible = "foo,i-leak-current";
+> +      reg = <0x12350000 0x1000>;
+> +      power-domains = <&power 1>;
+> +      required-opps = <&domain1_opp_1>;
+> +    };
 
 _______________________________________________
 linux-arm-kernel mailing list
