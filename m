@@ -2,59 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C25CD4567
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 18:26:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8339D456F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 18:30:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Mime-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r4RKYftH7rY3bK/9SWnLWc4c+k/JM1cewvK+WvL2bSo=; b=fWLusbc/iPKwxn
-	guQ3AfYaluvQCdj9rT4UQWQ0ei4kXqza/l2/JSrMaN5EzCZjcydIaJY0qHWZC3HTpjGJIhaXfZ6oC
-	QNiQ6aD56XrMHMi/b/RWnwmRKlKpaQ0RJWH7vToruy1M78ZUUp3RdwAKAY3icw5xrmPQ5ZEPwwRCu
-	rV4PCvoTqaKH0KgoAs+orN4gjQ987YYTVI/zgQjkSWZWTnzx5xSCamd8uzn7sYcKgx1wXP+LDl5z6
-	85AtHHgXq1dgvSL57ZkHxe1yD39SyNpJCWyhC0+HVijrAkXBRlp8jq944qKaizCxU7UZltjLvaRMV
-	HvweHBbYVkFHkhfUpUkA==;
+	List-Owner; bh=wSDKNJxEVy6ix1/haSM7jKdF5qL/j7Ln98RZLv6hZPM=; b=B9PyPnBBXsA6//
+	agskoOvcKk0fW5OcetEQW7AzwOWPmnajztJpEHiU1QJI//qfXfba6YMrLFPLwDeTqGfRBijqX8OKt
+	0mtBWceIgX5MPndbBkd+HPID23OPbGMFrzA0GxRGdYNXltgM3m5sHGtrSKaGKflwn5V4YTJkQJ+8Q
+	6YcmviviS2/k3fa4u9eutJuMBRqOi1IRbtiCmwbqpKNDfDcIBKPOThD0sqwXEhwQ004HfCrBv3Ku1
+	WbCm5NQ7GZFHkdPz3gAYIJh+q/dIsQtKBGZTTOs7fVkMHGzr9W65udQ7QSXZ0UGtIggGLDrV3eHUd
+	OyzODnrBSUFnmWbtlIIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIxkb-0006mM-Ln; Fri, 11 Oct 2019 16:26:45 +0000
-Received: from gate.crashing.org ([63.228.1.57])
+	id 1iIxnz-0007fi-6L; Fri, 11 Oct 2019 16:30:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIxkO-0006l1-RB
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 16:26:35 +0000
-Received: from gate.crashing.org (localhost.localdomain [127.0.0.1])
- by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x9BGPsfd001460;
- Fri, 11 Oct 2019 11:25:54 -0500
-Received: (from segher@localhost)
- by gate.crashing.org (8.14.1/8.14.1/Submit) id x9BGPqOV001459;
- Fri, 11 Oct 2019 11:25:52 -0500
-X-Authentication-Warning: gate.crashing.org: segher set sender to
- segher@kernel.crashing.org using -f
-Date: Fri, 11 Oct 2019 11:25:52 -0500
-From: Segher Boessenkool <segher@kernel.crashing.org>
-To: Kees Cook <keescook@chromium.org>
-Subject: Re: [PATCH v2 01/29] powerpc: Rename "notes" PT_NOTE to "note"
-Message-ID: <20191011162552.GK9749@gate.crashing.org>
-References: <20191011000609.29728-1-keescook@chromium.org>
- <20191011000609.29728-2-keescook@chromium.org>
- <20191011082519.GI9749@gate.crashing.org> <201910110910.48270FC97@keescook>
-Mime-Version: 1.0
+ id 1iIxnh-0007dP-Le; Fri, 11 Oct 2019 16:30:00 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7B46B206A1;
+ Fri, 11 Oct 2019 16:29:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570811397;
+ bh=fnuGUPlEYnveHJBCoFm6BNlgI5r2U57EfCBDivju0X0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=OomCe3cnkNKTi9sl0Vi5Ay7Kjv8WBCQ1b6XD1IwK/cm0Z+poV3hmYgh7RkrBqwCoM
+ pjntqLBD5FtPdil6R7y2/5GQGrCBGjJDN/rnwS1X4L1SuTDzWaZMxCS07pnlNkO1A9
+ MsvzOVh7vA25gXMtLUEaPzD9qiGr3zcnOdprfiRU=
+Date: Fri, 11 Oct 2019 17:29:51 +0100
+From: Will Deacon <will@kernel.org>
+To: Yong Wu <yong.wu@mediatek.com>
+Subject: Re: [PATCH v2 3/4] iommu/mediatek: Use writel for TLB range
+ invalidation
+Message-ID: <20191011162950.yg4o77mlaicacne5@willie-the-truck>
+References: <1570627143-29441-1-git-send-email-yong.wu@mediatek.com>
+ <1570627143-29441-3-git-send-email-yong.wu@mediatek.com>
+MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <201910110910.48270FC97@keescook>
-User-Agent: Mutt/1.4.2.3i
+In-Reply-To: <1570627143-29441-3-git-send-email-yong.wu@mediatek.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_092633_049098_01D1891E 
-X-CRM114-Status: GOOD (  10.72  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191011_092957_728256_A383B7C0 
+X-CRM114-Status: GOOD (  15.07  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.228.1.57 listed in list.dnswl.org]
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,54 +77,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Michal Simek <monstr@monstr.eu>, Dave Hansen <dave.hansen@linux.intel.com>,
- linux-ia64@vger.kernel.org, Yoshinori Sato <ysato@users.sourceforge.jp>,
- Arnd Bergmann <arnd@arndb.de>, linux-xtensa@linux-xtensa.org,
- Will Deacon <will@kernel.org>, x86@kernel.org,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-kernel@vger.kernel.org,
- Borislav Petkov <bp@alien8.de>, linux-parisc@vger.kernel.org,
- Andy Lutomirski <luto@kernel.org>, linux-alpha@vger.kernel.org,
- Rick Edgecombe <rick.p.edgecombe@intel.com>, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org, linux-c6x-dev@linux-c6x.org
+Cc: youlin.pei@mediatek.com, anan.sun@mediatek.com,
+ Nicolas Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
+ srv_heupstream@mediatek.com, chao.hao@mediatek.com,
+ Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Evan Green <evgreen@chromium.org>,
+ Tomasz Figa <tfiga@google.com>, iommu@lists.linux-foundation.org,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 11, 2019 at 09:11:43AM -0700, Kees Cook wrote:
-> On Fri, Oct 11, 2019 at 03:25:19AM -0500, Segher Boessenkool wrote:
-> > On Thu, Oct 10, 2019 at 05:05:41PM -0700, Kees Cook wrote:
-> > > The Program Header identifiers are internal to the linker scripts. In
-> > > preparation for moving the NOTES segment declaration into RO_DATA,
-> > > standardize the identifier for the PT_NOTE entry to "note" as used by
-> > > all other architectures that emit PT_NOTE.
-> > 
-> > All other archs are wrong, and "notes" is a much better name.  This
-> > segment does not contain a single "note", but multiple "notes".
+On Wed, Oct 09, 2019 at 09:19:02PM +0800, Yong Wu wrote:
+> Use writel for the register F_MMU_INV_RANGE which is for triggering the
+> HW work. We expect all the setting(iova_start/iova_end...) have already
+> been finished before F_MMU_INV_RANGE.
 > 
-> True, but the naming appears to be based off the Program Header name of
-> "PT_NOTE".
+> Signed-off-by: Anan.Sun <anan.sun@mediatek.com>
+> Signed-off-by: Yong Wu <yong.wu@mediatek.com>
+> ---
+> This is a improvement rather than fixing a issue.
+> ---
+>  drivers/iommu/mtk_iommu.c | 3 +--
+>  1 file changed, 1 insertion(+), 2 deletions(-)
+> 
+> diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
+> index 24a13a6..607f92c 100644
+> --- a/drivers/iommu/mtk_iommu.c
+> +++ b/drivers/iommu/mtk_iommu.c
+> @@ -187,8 +187,7 @@ static void mtk_iommu_tlb_add_flush(unsigned long iova, size_t size,
+>  		writel_relaxed(iova, data->base + REG_MMU_INVLD_START_A);
+>  		writel_relaxed(iova + size - 1,
+>  			       data->base + REG_MMU_INVLD_END_A);
+> -		writel_relaxed(F_MMU_INV_RANGE,
+> -			       data->base + REG_MMU_INVALIDATE);
+> +		writel(F_MMU_INV_RANGE, data->base + REG_MMU_INVALIDATE);
 
-Ah, so that's why the kernel segment (which isn't text btw, it's rwx) is
-called "load" :-P
+I don't understand this change.
 
-(Not convinced.  Some arch just got it wrong, and many others blindly
-copied it?  That sounds a lot more likely imo.)
+Why is it an "improvement" and which accesses are you ordering with the
+writel?
 
-> Regardless, it is an entirely internal-to-the-linker-script
-> identifier, so I am just consolidating on a common name with the least
-> number of collateral changes.
-
-Yes, that's what I'm complaining about.
-
-Names *matter*, internal names doubly so.  So why replace a good name with
-a worse name?  Because it is slightly less work for you?
-
-
-Segher
-
-p.s. Thanks for doing this, removing the powerpc workaround etc. :-)
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
