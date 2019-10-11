@@ -2,83 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BF88D46F7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 19:54:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8148D4712
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 19:59:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V0/0gWeMaSg0F1gqz31ETBlRUiA/F1kRLpztN8iyDb4=; b=rdGlpBGRoWxYm2
-	rHOMd/hfddDQHB3c6nSifxyFF2qgHgZndXA5BSQ0Sw9Y1K9CSg+WN8v/0gcGgcmAPYX3qyuf9FBFJ
-	PQ2N+/baYKsjFf0dmZQJCfVWnlcJWGfFikVpU5Vfz0aw7IskUEeXj5shTIPIWhzi2176VLsgGtIc7
-	xsH6G0zt3awZ7k040tsvzLe4zqEBLGpZO2anStLgiO5Ipnwjj+dnxAyZrBN0lRYUORZY+Zh9NClAw
-	uAlyWqW9d9G5ttf2w4ps3qMDWK5PwvtG3UQs0zshmjRkAt83k6KpD7gFmnbBBPOsxjBujrFy5PTc0
-	Urr8frYUac9oxN+BaDAA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=GPIG5vY4qfYEsAhQ3Y4/+pRA97ygUhMTiZVo9aXjbxg=; b=RgJkdUETLdCxmRwJXWY9fGWrs
+	cuxhHbG0M31xkAlWqYDv2h7N+4ZtdRswVL7xv+2mI3E6HoekROl/mdvsLFHQTb2OR2T43yKFsktgC
+	M2Lgqczb9XFxL4IJnqNuroHmk6Fpg4u2R6uHjsKLjrrS3CoidS7xVPoQ7f0kcgdwMQYDmdsI4q1io
+	tjyWP6TgmZ5/ehBP3FbNSZs6FZLzx6x6u+r11wbGhX51+au7b9aalAMb5yOCqgKznvHdZFYCPbsE/
+	yNoAVxteMQxtWq/8QGxcaaxucH5BMC5Vhs9LSchpHJj6ivuKInrty8lZ4JWY/3x3h6zUrVSh43dxf
+	DdncXB6Ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIz79-0004jt-Qw; Fri, 11 Oct 2019 17:54:07 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1iIzCI-000754-Qe; Fri, 11 Oct 2019 17:59:26 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIz70-0004jO-Jj
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 17:54:00 +0000
-Received: by mail-pl1-x642.google.com with SMTP id t10so4796923plr.8
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 11 Oct 2019 10:53:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=qgzfqj6sxvLl+nWKisyq4PH5jXle+OPHl08Pk/Xlhsw=;
- b=XFAmu9vxP7eFOCLOKNj/NHpDOwxfNt71RntEp2l7ofcGL52eyVuwXsCIe8ZERMlkfQ
- BGtkhO//mpmTcmlEzHJyXNui8FBxQl9p1yvwiEI5NDFlYn2fGOQ6n1kPknpZ0hMdWjuG
- pMFTXnvP8tPLmV5lthtkug0clYn9CHVij7ElmoSNCfFFZq3A8P4Mu8byVBpkZQlw0lpZ
- f20FWuVGBJirlRVIwfk+bMPm2rilNqHPMi4wDuV64/JJBBvdfmcw6kMff/oCfTGYKupr
- FD2EsPNy3KBqn+BIZWN342L8v1Lwd62u49kB66L3gN4+5keoOFBZfkOWLa3rnnJJ0Yju
- X0WQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=qgzfqj6sxvLl+nWKisyq4PH5jXle+OPHl08Pk/Xlhsw=;
- b=o6yvlo1t9M8i2/pc9tgqR5FSV1RfeMeyH8qw9oTNGnRFFZurlsakYahXdb2Nkdrhwo
- f2Dk/BkqW4JCOY8kKT+J+jZjRsz2tryy6vPT4orslVLXeChSSTo5UYXnEFrTMXKRsp+m
- /38YOZh/7LDEUIjLHkZWZIRRWgQPJvbvsqmzN3Q9J2O++1bd60ejSu4iv+7LxHE14vnK
- /fu1wmnik/z+DznI/72KmaMauLhcgSfGwCU2EbtAOeZg+Zvj0hv44kXHaGOYQ4Nzjj5r
- Zma23/jcGnM0XaV/uXkMa+W61eEFOGk/7NVXiWCTptDwYVsR5e4+7kWzyRWwD8cTCFMD
- BFJw==
-X-Gm-Message-State: APjAAAUoCNSFBrd8fKz2Ml9EY74M3F/pJBRzUlc2Vb3rk8CptXfjOBoE
- pM17BUgXoGrdfUgyoYIefQiMLg==
-X-Google-Smtp-Source: APXvYqwXraISadvG5/9oA2Hw4IVHCd6smGm+dh76RTLray/g6iCvl+deoh/FyzRpWEFCwmXB3EjjUw==
-X-Received: by 2002:a17:902:8642:: with SMTP id
- y2mr15426654plt.187.1570816436891; 
- Fri, 11 Oct 2019 10:53:56 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id s97sm13598540pjc.4.2019.10.11.10.53.55
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 11 Oct 2019 10:53:56 -0700 (PDT)
-Date: Fri, 11 Oct 2019 11:53:53 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Leo Yan <leo.yan@linaro.org>
-Subject: Re: [PATCH v3 3/6] perf cs-etm: Support thread stack
-Message-ID: <20191011175353.GA13688@xps15>
-References: <20191005091614.11635-1-leo.yan@linaro.org>
- <20191005091614.11635-4-leo.yan@linaro.org>
+ id 1iIzC5-000733-V4; Fri, 11 Oct 2019 17:59:16 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id 1E83A60AA8; Fri, 11 Oct 2019 17:59:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1570816753;
+ bh=dEIHNtPJMeVe0/U1DX6bBGn/UKV/780n6No7ph7w8yw=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=Ykg12PFZxT3nlVFtqTIhn/ikrDlmLyXYQarYtasJm3LbVyNw1Fz57B12hB+1YPDM9
+ 6LJGerahP2a6tl7FZJHSWwMkodCM0qAt/hwJxmR+DthNHoGHCAuw2tg2L5ZsqP4E/Q
+ 6wPXvWTDQ399qJ7dp/et0vHhzJTHV5V3MkzPxiPw=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED autolearn=no autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ by smtp.codeaurora.org (Postfix) with ESMTP id C154460AA8;
+ Fri, 11 Oct 2019 17:59:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1570816751;
+ bh=dEIHNtPJMeVe0/U1DX6bBGn/UKV/780n6No7ph7w8yw=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=erwjxUldW6GlHm6A6jcnS4u/PE5qvU7lC+CFWLChnB2fTSNBAayRrlR3yr02FrHtL
+ j9sbYg75buj9H5hd5WKvylgrlxFaYqV9WhnuGQok/00O3pJmTuhNuBDbeVPav3XpNk
+ NLLhdJFUZEa6OwgZ9YkDGijCyM85w2BdKE5zuUVw=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191005091614.11635-4-leo.yan@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+Date: Fri, 11 Oct 2019 10:59:11 -0700
+From: Jeykumar Sankaran <jsanka@codeaurora.org>
+To: Daniel Vetter <daniel@ffwll.ch>
+Subject: Re: [PATCH] drm/meson: fix max mode_config height/width
+In-Reply-To: <20191009104727.GX16989@phenom.ffwll.local>
+References: <1538642563-22465-1-git-send-email-narmstrong@baylibre.com>
+ <20181004100958.GI31561@phenom.ffwll.local>
+ <0ef7fa13-ce77-f8a5-f5f3-6568be3d6145@baylibre.com>
+ <CAKMK7uHxiDF3z19cMBb0o2o4Ev0DFJkhMR7Ny6U2776Ry4oc=A@mail.gmail.com>
+ <8e980de4-5a52-8f3d-fba2-734617e40d1b@baylibre.com>
+ <CAKMK7uE71OeOdDPb+5-cs9bByD-unYPxBV_R1t+4A0Nb4H6CAw@mail.gmail.com>
+ <5dbd6337-7e08-f3f7-6d4a-d6bcaddfd3be@baylibre.com>
+ <91cd8a2aebefd4ea3e9bcee5a4ef796a@codeaurora.org>
+ <20191009104727.GX16989@phenom.ffwll.local>
+Message-ID: <27976f3eca6bd96dcea071db97c229b1@codeaurora.org>
+X-Sender: jsanka@codeaurora.org
+User-Agent: Roundcube Webmail/1.2.5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_105358_712975_936D8C85 
-X-CRM114-Status: GOOD (  21.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191011_105914_044908_A856E86E 
+X-CRM114-Status: GOOD (  29.74  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -99,133 +94,238 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Coresight ML <coresight@lists.linaro.org>, linux-kernel@vger.kernel.org,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- Peter Zijlstra <peterz@infradead.org>, Ingo Molnar <mingo@redhat.com>,
- Namhyung Kim <namhyung@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Daniel Vetter <daniel.vetter@ffwll.ch>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, linux-amlogic@lists.infradead.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Oct 05, 2019 at 05:16:11PM +0800, Leo Yan wrote:
-> Since Arm CoreSight doesn't support thread stack, the decoding cannot
-> display symbols with indented spaces to reflect the stack depth.
+On 2019-10-09 03:47, Daniel Vetter wrote:
+> On Tue, Sep 24, 2019 at 10:28:48AM -0700, Jeykumar Sankaran wrote:
+>> Reviving this thread from the context of the below conversion:
+>> 
+>> 
+> https://lore.kernel.org/linux-arm-msm/db26145b-3f64-a334-f698-76f972332881
+> @baylibre.com/T/#u
+>> 
+>> On 2018-10-05 01:19, Neil Armstrong wrote:
+>> > On 05/10/2018 09:58, Daniel Vetter wrote:
+>> > > On Fri, Oct 5, 2018 at 9:39 AM Neil Armstrong
+>> > > <narmstrong@baylibre.com> wrote:
+>> > > >
+>> >
+>> > [...]
+>> >
+>> > > > OK, won't this be enough ?
+>> > > > --- a/include/drm/drm_mode_config.h
+>> > > > +++ b/include/drm/drm_mode_config.h
+>> > > > @@ -333,6 +333,8 @@ struct drm_mode_config_funcs {
+>> > > >   * @min_height: minimum fb pixel height on this device
+>> > > >   * @max_width: maximum fb pixel width on this device
+>> > > >   * @max_height: maximum fb pixel height on this device
+>> > > > + * @max_fb_width: maximum fb buffer width if differs from
+> max_width
+>> > > > + * @max_fb_height: maximum fb buffer height if differs from
+>> > > > max_height
+>> > > >   * @funcs: core driver provided mode setting functions
+>> > > >   * @fb_base: base address of the framebuffer
+>> > > >   * @poll_enabled: track polling support for this device
+>> > > > @@ -508,6 +510,7 @@ struct drm_mode_config {
+>> > > >
+>> > > >         int min_width, min_height;
+>> > > >         int max_width, max_height;
+>> > > > +       int max_fb_width, max_fb_height;
+>> > > >         const struct drm_mode_config_funcs *funcs;
+>> > > >         resource_size_t fb_base;
+>> > > >
+>> > > > --- a/drivers/gpu/drm/drm_framebuffer.c
+>> > > > +++ b/drivers/gpu/drm/drm_framebuffer.c
+>> > > > @@ -283,14 +283,20 @@ drm_internal_framebuffer_create(struct
+>> > > > drm_device *dev,
+>> > > >                 return ERR_PTR(-EINVAL);
+>> > > >         }
+>> > > >
+>> > > > -       if ((config->min_width > r->width) || (r->width >
+>> > > > config->max_width)) {
+>> > > > +       if ((config->min_width > r->width) ||
+>> > > > +           (!config->max_fb_width && r->width >
+>> > > > config->max_width) ||
+>> > > > +           (config->max_fb_width && r->width >
+>> > > > config->max_fb_width)) {
+>> > > >                 DRM_DEBUG_KMS("bad framebuffer width %d, should
+>> > > > be >= %d && <= %d\n",
+>> > > > -                         r->width, config->min_width,
+>> > > > config->max_width);
+>> > > > +                         r->width, config->min_width,
+>> > > > config->max_fb_width ?
+>> > > > +                         config->max_fb_width :
+> config->max_width);
+>> > > >                 return ERR_PTR(-EINVAL);
+>> > > >         }
+>> > > > -       if ((config->min_height > r->height) || (r->height >
+>> > > > config->max_height)) {
+>> > > > +       if ((config->min_height > r->height) ||
+>> > > > +           (!config->max_fb_height && r->height >
+>> > > > config->max_height) ||
+>> > > > +           (config->max_fb_height && r->height >
+>> > > > config->max_fb_height)) {
+>> > > >                 DRM_DEBUG_KMS("bad framebuffer height %d, should
+>> > > > be >= %d && <= %d\n",
+>> > > > -                         r->height, config->min_height,
+>> > > > config->max_height);
+>> > > > +                         r->height, config->min_height,
+>> > > > config->max_fb_height ?
+>> > > > +                         config->max_fb_height :
+>> > > > config->max_height);
+>> > > >                 return ERR_PTR(-EINVAL);
+>> > > >         }
+>> > > >
+>> > > > and in the driver :
+>> > > >
+>> > > > +       drm->mode_config.max_width = 4096;
+>> > > > +       drm->mode_config.max_height = 3840;
+>> > > > +       drm->mode_config.max_fb_width = 16384;
+>> > > > +       drm->mode_config.max_fb_height = 8192;
+>> > > >
+>> > > > With this I leave the mode filtering intact.
+>> > >
+>> > > Not enough. See
+>> > >
+> https://dri.freedesktop.org/docs/drm/gpu/drm-kms-helpers.html#c.drm_connec
+> tor_helper_funcs
+>> > > and scroll down to mode_valid. You need to filter modes both in the
+>> > > detect paths, and the atomic_check paths.
+>> > >
+>> > > Detect is explicitly filtered out, but atomic_check was only
+>> > > implicitly filtered, through the max fb size checks. Ok, you could
+>> > > light up a mode that's bigger than max fb, but in practice, no
+>> > > userspace ever did that.
+>> 
+>> Daniel, MSM and few other vendor hardware have upscale blocks where 
+>> the
+>> driver can expose fb sizes smaller than
+>> the mode resolution and use h/w upscaling to fill the screen. This 
+>> would
+>> optimize the fetch bandwidth.
+>> 
+>> But with your code we're missing crucial
+>> > > validation now, and userspace could fall over that. What I think we
+>> > > need is to add mode filter against mode_config.max_width/height in
+>> > > drm_atomic_helper_check_modeset(). Probably best to stuff that into
+>> > > the mode_valid() function.
+>> >
+>> Agreed! Since the above patch from Niel is taking care of cases where
+>> max/min fb values
+>> are not set, by checking against the original max/min values, can we
+>> separate out this
+>> core change from the driver level mode_valid changes? If Niel couldn't
+> find
+>> the time, I can
+>> repost the above change.
 > 
-> This patch adds support thread stack for Arm CoreSight, this allows
-> 'perf script' to display properly for option '-F,+callindent'.
+> Sure, I think Neil wouldn't mind if you take this over and get it ready
+> for merging. Just need to make sure we're not leaving any validation 
+> gaps
+> in core/helper code.
+> -Daniel
 > 
-> Before:
-> 
->   # perf script -F,+callindent
->             main  2808          1          branches: coresight_test1                      ffff8634f5c8 coresight_test1+0x3c (/root/coresight_test/libcstest.so)
->             main  2808          1          branches: printf@plt                           aaaaba8d37ec main+0x28 (/root/coresight_test/main)
->             main  2808          1          branches: printf@plt                           aaaaba8d36bc printf@plt+0xc (/root/coresight_test/main)
->             main  2808          1          branches: _init                                aaaaba8d3650 _init+0x30 (/root/coresight_test/main)
->             main  2808          1          branches: _dl_fixup                            ffff86373b4c _dl_runtime_resolve+0x40 (/lib/aarch64-linux-gnu/ld-2.28.so)
->             main  2808          1          branches: _dl_lookup_symbol_x                  ffff8636e078 _dl_fixup+0xb8 (/lib/aarch64-linux-gnu/ld-2.28.so)
->   [...]
-> 
-> After:
-> 
->   # perf script -F,+callindent
->             main  2808          1          branches:                 coresight_test1                                      ffff8634f5c8 coresight_test1+0x3c (/root/coresight_test/libcstest.so)
->             main  2808          1          branches:                 printf@plt                                           aaaaba8d37ec main+0x28 (/root/coresight_test/main)
->             main  2808          1          branches:                     printf@plt                                       aaaaba8d36bc printf@plt+0xc (/root/coresight_test/main)
->             main  2808          1          branches:                     _init                                            aaaaba8d3650 _init+0x30 (/root/coresight_test/main)
->             main  2808          1          branches:                     _dl_fixup                                        ffff86373b4c _dl_runtime_resolve+0x40 (/lib/aarch64-linux-gnu/ld-2.28.s
->             main  2808          1          branches:                         _dl_lookup_symbol_x                          ffff8636e078 _dl_fixup+0xb8 (/lib/aarch64-linux-gnu/ld-2.28.so)
->   [...]
-> 
-> Signed-off-by: Leo Yan <leo.yan@linaro.org>
-> ---
->  tools/perf/util/cs-etm.c | 44 ++++++++++++++++++++++++++++++++++++++++
->  1 file changed, 44 insertions(+)
-> 
-> diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-> index 58ceba7b91d5..780abbfd1833 100644
-> --- a/tools/perf/util/cs-etm.c
-> +++ b/tools/perf/util/cs-etm.c
-> @@ -1117,6 +1117,45 @@ static void cs_etm__copy_insn(struct cs_etm_queue *etmq,
->  			   sample->insn_len, (void *)sample->insn);
->  }
->  
-> +static void cs_etm__add_stack_event(struct cs_etm_queue *etmq,
-> +				    struct cs_etm_traceid_queue *tidq)
-> +{
-> +	struct cs_etm_auxtrace *etm = etmq->etm;
-> +	u8 trace_chan_id = tidq->trace_chan_id;
-> +	int insn_len;
-> +	u64 from_ip, to_ip;
-> +
-> +	if (etm->synth_opts.thread_stack) {
-> +		from_ip = cs_etm__last_executed_instr(tidq->prev_packet);
-> +		to_ip = cs_etm__first_executed_instr(tidq->packet);
-> +
-> +		insn_len = cs_etm__instr_size(etmq, trace_chan_id,
-> +					      tidq->prev_packet->isa, from_ip);
-> +
-> +		/*
-> +		 * Create thread stacks by keeping track of calls and returns;
-> +		 * any call pushes thread stack, return pops the stack, and
-> +		 * flush stack when the trace is discontinuous.
-> +		 */
-> +		thread_stack__event(tidq->thread, tidq->prev_packet->cpu,
-> +				    tidq->prev_packet->flags,
-> +				    from_ip, to_ip, insn_len,
-> +				    etmq->buffer->buffer_nr);
+I guess you are a bit late for the party!
 
-Details are a little fuzzy in my head but I'm pretty sure
-we want trace_chan_id here.  
+I did post the patch on the forum. The latest on the thread can be found 
+here: https://lkml.org/lkml/2019/10/2/369
 
+The basic concern is if FB limits are different (especially smaller) 
+than the display (mode) limits, it
+will break the existing user space, who are creating unscaled FB's out 
+of exposed mode limits.
 
-> +	} else {
-> +		/*
-> +		 * The thread stack can be output via thread_stack__process();
-> +		 * thus the detailed information about paired calls and returns
-> +		 * will be facilitated by Python script for the db-export.
-> +		 *
-> +		 * Need to set trace buffer number and flush thread stack if the
-> +		 * trace buffer number has been alternate.
-> +		 */
-> +		thread_stack__set_trace_nr(tidq->thread,
-> +					   tidq->prev_packet->cpu,
-> +					   etmq->buffer->buffer_nr);
+Thanks and Regards,
+Jeykumar S.
 
-Same here.
+>> 
+>> Thanks and Regards,
+>> Jeykumar S.
+>> 
+>> > Ok I understood now, thanks for pointer, I'll try to add this.
+>> >
+>> > Neil
+>> >
+>> > >
+>> > > Cheers, Daniel
+>> > > >
+>> > > > Neil
+>> > > >
+>> > > >
+>> > > > > -Daniel
+>> > > > >
+>> > > > > >
+>> > > > > > Neil
+>> > > > > >
+>> > > > > > >
+>> > > > > > > Bunch of igt to make sure we're not missing anything
+>> > > > > > > would be sweet on
+>> > > > > > > top, e.g. e.g. trying to set a mode over the limit
+>> > > > > > > and making sure it
+>> > > > > > > fails.
+>> > > > > > >
+>> > > > > > > Cheers, Daniel
+>> > > > > > >
+>> > > > > > > > ---
+>> > > > > > > >  drivers/gpu/drm/meson/meson_drv.c | 4 ++--
+>> > > > > > > >  1 file changed, 2 insertions(+), 2 deletions(-)
+>> > > > > > > >
+>> > > > > > > > diff --git a/drivers/gpu/drm/meson/meson_drv.c
+>> > > > > > > > b/drivers/gpu/drm/meson/meson_drv.c
+>> > > > > > > > index d344312..2e29968 100644
+>> > > > > > > > --- a/drivers/gpu/drm/meson/meson_drv.c
+>> > > > > > > > +++ b/drivers/gpu/drm/meson/meson_drv.c
+>> > > > > > > > @@ -243,8 +243,8 @@ static int
+>> > > > > > > > meson_drv_bind_master(struct device *dev, bool
+>> > > > > > > > has_components)
+>> > > > > > > >              goto free_drm;
+>> > > > > > > >
+>> > > > > > > >      drm_mode_config_init(drm);
+>> > > > > > > > -    drm->mode_config.max_width = 3840;
+>> > > > > > > > -    drm->mode_config.max_height = 2160;
+>> > > > > > > > +    drm->mode_config.max_width = 16384;
+>> > > > > > > > +    drm->mode_config.max_height = 8192;
+>> > > > > > > >      drm->mode_config.funcs = &meson_mode_config_funcs;
+>> > > > > > > >
+>> > > > > > > >      /* Hardware Initialization */
+>> > > > > > > > --
+>> > > > > > > > 2.7.4
+>> > > > > > > >
+>> > > > > > > > _______________________________________________
+>> > > > > > > > dri-devel mailing list
+>> > > > > > > > dri-devel@lists.freedesktop.org
+>> > > > > > > > https://lists.freedesktop.org/mailman/listinfo/dri-devel
+>> > > > > > >
+>> > > > > >
+>> > > > > > _______________________________________________
+>> > > > > > dri-devel mailing list
+>> > > > > > dri-devel@lists.freedesktop.org
+>> > > > > > https://lists.freedesktop.org/mailman/listinfo/dri-devel
+>> > > > >
+>> > > > >
+>> > > > >
+>> > > >
+>> > >
+>> > >
+>> >
+>> > _______________________________________________
+>> > dri-devel mailing list
+>> > dri-devel@lists.freedesktop.org
+>> > https://lists.freedesktop.org/mailman/listinfo/dri-devel
+>> 
+>> --
+>> Jeykumar S
 
-> +	}
-> +}
-> +
->  static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
->  					    struct cs_etm_traceid_queue *tidq,
->  					    u64 addr, u64 period)
-> @@ -1393,6 +1432,9 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
->  		tidq->period_instructions = instrs_over;
->  	}
->  
-> +	if (tidq->prev_packet->last_instr_taken_branch)
-> +		cs_etm__add_stack_event(etmq, tidq);
-> +
->  	if (etm->sample_branches) {
->  		bool generate_sample = false;
->  
-> @@ -2593,6 +2635,8 @@ int cs_etm__process_auxtrace_info(union perf_event *event,
->  		itrace_synth_opts__set_default(&etm->synth_opts,
->  				session->itrace_synth_opts->default_no_sample);
->  		etm->synth_opts.callchain = false;
-> +		etm->synth_opts.thread_stack =
-> +				session->itrace_synth_opts->thread_stack;
->  	}
->  
->  	err = cs_etm__synth_events(etm, session);
-> -- 
-> 2.17.1
-> 
+-- 
+Jeykumar S
 
 _______________________________________________
 linux-arm-kernel mailing list
