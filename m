@@ -2,80 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B2CED3FCC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 14:41:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33275D3FCD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 14:42:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HArfcRymxSZXNfapp3TJzckR92RsQztx+2D4S6k1iLo=; b=TuhB+2BUUsztIk
-	LNFh1Mx8fTM0MB848z7Xeb3HX4iALB1TcyPmBHjfQh7AMFLuk7WyCQ7A1aW1aIhB+JK5xVyd7G5JK
-	YZKgkCmwUAglxIArC/zme1g0towU479vTfwwzih9NvQYMdonkC1bgD12pdNPsAFXNQEG0balX2JDd
-	1LNmnxjwenAV4mBlzymYUnoWM0Ayq6UDTlDPmWGK9BvINm1pJdQBmFWqYWzd4XnsiY+BpomyE6zeE
-	gbYEPLl8/Se8IHPBFqLIIk3wzzUWX4RVIGGvUifaHzhamKCw22BE8xPfkOo94Upeqm+E/8J87KUhC
-	OMCk0IIJH3o+WAw4DlJw==;
+	List-Owner; bh=JUikcuFyiVp4Bc/XXURn52fy1yK8JFKxPTJ8d9m8z6o=; b=LBF9481F3rCf55
+	0NPmJ2u5UPUvT9rqBXctZ5Yu/DtCoYSULt6j/9ShH+PHdZx2q6bgyF+gYZs/nsOUn1H7IES8GfI1p
+	iGspJtYp+8VQl4t8nNsLq/n1IpRvovHnCj0PfqHVU6OzqvmDl26mONEbgMBX5SaHjhTmnCWFOtF4W
+	4Px3kaxZv4TZFPSlaMlfRBJ/GvH6WzHBGKcrEmnafEwruREXHqSHxdKgzsIGKGDe/nV5czKTkmGnD
+	5HeU+ulQTZQMUzI0n3nxgvXdJTRUapHkhavem7khcm0FqycFRQj3LJbErUtSzZ4ZsObFArn1omORp
+	SXR7TdULMQx9HnF4kvdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIuEu-0008K7-TK; Fri, 11 Oct 2019 12:41:48 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iIuF6-00005l-K4; Fri, 11 Oct 2019 12:42:00 +0000
+Received: from esa4.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIuEV-00083b-RO
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 12:41:25 +0000
-Received: from mail-qk1-f173.google.com (mail-qk1-f173.google.com
- [209.85.222.173])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D5A9B222BE
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 11 Oct 2019 12:41:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570797683;
- bh=0ntoZW7nIQaS0RptBTqn8yRQKbcwYPW6mrTC+nExxQQ=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=dR100AmRHlPwX27kUrp1Lauf3ohIZVPT1aokTFmN/cMb52PIZCHr7cnR8lnpbjLqj
- dicgfF0TpW4nEd2mwFBiZJjqOSCarxIGU+A6CE1Bvzn5Lxu1fFt6mtmei+4dyZVSSl
- CSrZCRsYHokj3EuztdAzqWaGGTOBWJxfSIjVmNCk=
-Received: by mail-qk1-f173.google.com with SMTP id x134so8742832qkb.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 11 Oct 2019 05:41:22 -0700 (PDT)
-X-Gm-Message-State: APjAAAWpLbj5i7rgXJJr7WQL1nYxR6kuVxQtDBgzi8G5R+vFCBNTDlcF
- 0MtkNIYg5XPZms18YcSvUQq0VjkpzIa950WxTQ==
-X-Google-Smtp-Source: APXvYqxSOLHC3OhXJjaOJaRAYwJ7GF4/t7229zQiP9PqqmGtuF/Yddz3rOt3p/MLumF2OTaUmi8AujpP8UblZE39o8w=
-X-Received: by 2002:a05:620a:12f1:: with SMTP id
- f17mr15407013qkl.152.1570797681944; 
- Fri, 11 Oct 2019 05:41:21 -0700 (PDT)
+ id 1iIuEX-00089U-Lk
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 12:41:28 +0000
+Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
+ Ludovic.Desroches@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="Ludovic.Desroches@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa4.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa4.microchip.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: A8xT/E/CVKbbleRDp0WY8b2d2QofEf8hYYdpccP6Q+ZwmJV4ZxIoEKj/2RBL7uGK34Eqe9S82e
+ hsPTIsZWPDbX/WfSMIp2P9fxbWwhXaND8GlHmAvFj4Jp3YlNjKdk3oZx/XbDHkDiY82XZBSp8y
+ +2e+lWXld7lUhJG/5e7gfCpSWZzkxw3ExOmVJ3rgy8jW1K92LdM/SFAb5lWM7IDpVWEcrQcXzf
+ p+MbQt8XC9p1jQlmk9KSCWZG7Zwl3mUAOgycp25b6EazWaScty6b7tEkyFs/flZG2VSA7Ex8yU
+ ap8=
+X-IronPort-AV: E=Sophos;i="5.67,284,1566889200"; d="scan'208";a="51296468"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 11 Oct 2019 05:41:22 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Fri, 11 Oct 2019 05:41:17 -0700
+Received: from localhost (10.10.85.251) by chn-vm-ex01.mchp-main.com
+ (10.10.85.143) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
+ Transport; Fri, 11 Oct 2019 05:41:17 -0700
+Date: Fri, 11 Oct 2019 14:41:16 +0200
+From: Ludovic Desroches <ludovic.desroches@microchip.com>
+To: Nicolas Ferre <nicolas.ferre@microchip.com>
+Subject: Re: [PATCH 2/2] mmc: sdhci-of-at91: add DT property to enable
+ calibration on full reset
+Message-ID: <20191011124115.a3qqkhxri6aaydcl@M43218.corp.atmel.com>
+Mail-Followup-To: Nicolas Ferre <nicolas.ferre@microchip.com>,
+ linux-arm-kernel@lists.infradead.org, linux-mmc@vger.kernel.org,
+ devicetree@vger.kernel.org, robh+dt@kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-kernel@vger.kernel.org, ulf.hansson@linaro.org,
+ adrian.hunter@intel.com
+References: <4d269f30b1122487a2b5c8b48e24f78f2b75a509.1570537903.git.nicolas.ferre@microchip.com>
+ <d25c8f909d039938a5696e8de32396cf2aaf54b7.1570537903.git.nicolas.ferre@microchip.com>
 MIME-Version: 1.0
-References: <20191002151907.15986-1-benjamin.gaignard@st.com>
-In-Reply-To: <20191002151907.15986-1-benjamin.gaignard@st.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 11 Oct 2019 07:41:10 -0500
-X-Gmail-Original-Message-ID: <CAL_Jsq+p6rYun-zOwK49=QSfuJGMpiXj5UfASdXhjmOX1cudWQ@mail.gmail.com>
-Message-ID: <CAL_Jsq+p6rYun-zOwK49=QSfuJGMpiXj5UfASdXhjmOX1cudWQ@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: hwlock: Convert stm32 hwspinlock bindings to
- json-schema
-To: Benjamin Gaignard <benjamin.gaignard@st.com>
+Content-Disposition: inline
+In-Reply-To: <d25c8f909d039938a5696e8de32396cf2aaf54b7.1570537903.git.nicolas.ferre@microchip.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_054123_949343_24016EBE 
-X-CRM114-Status: GOOD (  19.16  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191011_054125_767862_BF5A5164 
+X-CRM114-Status: GOOD (  20.48  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.154.123 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,132 +103,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ohad Ben-Cohen <ohad@wizery.com>, devicetree@vger.kernel.org,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "open list:REMOTE PROCESSOR \(REMOTEPROC\) SUBSYSTEM"
- <linux-remoteproc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- linux-stm32@st-md-mailman.stormreply.com,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-mmc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, adrian.hunter@intel.com, robh+dt@kernel.org,
+ ulf.hansson@linaro.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 2, 2019 at 10:19 AM Benjamin Gaignard
-<benjamin.gaignard@st.com> wrote:
->
-> Convert the STM32 hwspinlock binding to DT schema format using json-schema
->
-> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+On Tue, Oct 08, 2019 at 02:34:32PM +0200, Nicolas Ferre wrote:
+> Add a property to keep the analog calibration cell powered.
+> This feature is specific to the Microchip SDHCI IP and outside
+> of the standard SDHCI register map.
+> 
+> By always keeping it on, after a full reset sequence, we make sure
+> that this feature is activated and not disabled.
+> 
+> We expose a hardware property to the DT as this feature can be used
+> to adapt SDHCI behavior vs. how the SDCAL SoC pin is connected
+> on the board.
+> 
+> Note that managing properly this property would reduce
+> power consumption on some SAMA5D2 SiP revisions.
+> 
+> Signed-off-by: Nicolas Ferre <nicolas.ferre@microchip.com>
+Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
+
+Thanks
+
+Ludovic
+
 > ---
->  .../bindings/hwlock/st,stm32-hwspinlock.txt        | 23 -----------
->  .../bindings/hwlock/st,stm32-hwspinlock.yaml       | 48 ++++++++++++++++++++++
->  2 files changed, 48 insertions(+), 23 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.txt
->  create mode 100644 Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.yaml
->
-> diff --git a/Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.txt b/Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.txt
-> deleted file mode 100644
-> index adf4f000ea3d..000000000000
-> --- a/Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.txt
-> +++ /dev/null
-> @@ -1,23 +0,0 @@
-> -STM32 Hardware Spinlock Device Binding
-> --------------------------------------
-> -
-> -Required properties :
-> -- compatible : should be "st,stm32-hwspinlock".
-> -- reg : the register address of hwspinlock.
-> -- #hwlock-cells : hwlock users only use the hwlock id to represent a specific
-> -       hwlock, so the number of cells should be <1> here.
-> -- clock-names : Must contain "hsem".
-> -- clocks : Must contain a phandle entry for the clock in clock-names, see the
-> -       common clock bindings.
-> -
-> -Please look at the generic hwlock binding for usage information for consumers,
-> -"Documentation/devicetree/bindings/hwlock/hwlock.txt"
-> -
-> -Example of hwlock provider:
-> -       hwspinlock@4c000000 {
-> -               compatible = "st,stm32-hwspinlock";
-> -               #hwlock-cells = <1>;
-> -               reg = <0x4c000000 0x400>;
-> -               clocks = <&rcc HSEM>;
-> -               clock-names = "hsem";
-> -       };
-> diff --git a/Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.yaml b/Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.yaml
-> new file mode 100644
-> index 000000000000..64e169702515
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.yaml
-> @@ -0,0 +1,48 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/hwlock/st,stm32-hwspinlock.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>  drivers/mmc/host/sdhci-of-at91.c | 19 +++++++++++++++++++
+>  1 file changed, 19 insertions(+)
+> 
+> diff --git a/drivers/mmc/host/sdhci-of-at91.c b/drivers/mmc/host/sdhci-of-at91.c
+> index e7d1920729fb..9571c4a882a9 100644
+> --- a/drivers/mmc/host/sdhci-of-at91.c
+> +++ b/drivers/mmc/host/sdhci-of-at91.c
+> @@ -27,6 +27,9 @@
+>  #define SDMMC_CACR	0x230
+>  #define		SDMMC_CACR_CAPWREN	BIT(0)
+>  #define		SDMMC_CACR_KEY		(0x46 << 8)
+> +#define SDMMC_CALCR	0x240
+> +#define		SDMMC_CALCR_EN		BIT(0)
+> +#define		SDMMC_CALCR_ALWYSON	BIT(4)
+>  
+>  #define SDHCI_AT91_PRESET_COMMON_CONF	0x400 /* drv type B, programmable clock mode */
+>  
+> @@ -35,6 +38,7 @@ struct sdhci_at91_priv {
+>  	struct clk *gck;
+>  	struct clk *mainck;
+>  	bool restore_needed;
+> +	bool cal_always_on;
+>  };
+>  
+>  static void sdhci_at91_set_force_card_detect(struct sdhci_host *host)
+> @@ -116,10 +120,17 @@ static void sdhci_at91_set_uhs_signaling(struct sdhci_host *host,
+>  
+>  static void sdhci_at91_reset(struct sdhci_host *host, u8 mask)
+>  {
+> +	struct sdhci_pltfm_host *pltfm_host = sdhci_priv(host);
+> +	struct sdhci_at91_priv *priv = sdhci_pltfm_priv(pltfm_host);
 > +
-> +title: STMicroelectronics STM32 Hardware Spinlock bindings
+>  	sdhci_reset(host, mask);
+>  
+>  	if (host->mmc->caps & MMC_CAP_NONREMOVABLE)
+>  		sdhci_at91_set_force_card_detect(host);
 > +
-> +maintainers:
-> +  - Benjamin Gaignard <benjamin.gaignard@st.com>
-> +  - Fabien Dessenne <fabien.dessenne@st.com>
+> +	if (priv->cal_always_on && (mask & SDHCI_RESET_ALL))
+> +		sdhci_writel(host, SDMMC_CALCR_ALWYSON | SDMMC_CALCR_EN,
+> +			     SDMMC_CALCR);
+>  }
+>  
+>  static const struct sdhci_ops sdhci_at91_sama5d2_ops = {
+> @@ -345,6 +356,14 @@ static int sdhci_at91_probe(struct platform_device *pdev)
+>  
+>  	priv->restore_needed = false;
+>  
+> +	/*
+> +	 * if SDCAL pin is wrongly connected, we must enable
+> +	 * the analog calibration cell permanently.
+> +	 */
+> +	priv->cal_always_on =
+> +		device_property_read_bool(&pdev->dev,
+> +					  "microchip,sdcal-inverted");
 > +
-> +properties:
-> +  "#hwlock-cells": true
-
-const: 1
-
-> +
-> +  compatible:
-> +    const: st,stm32-hwspinlock
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: Module Clock
-
-Don't need a description for a single item.
-
-maxItems: 1
-
-> +
-> +  clock-names:
-> +    items:
-> +      - const: hsem
-> +
-> +required:
-> +  - "#hwlock-cells"
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-
-Add a:
-
-additionalProperties: false
-
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/stm32mp1-clks.h>
-> +    hwspinlock@4c000000 {
-> +        compatible = "st,stm32-hwspinlock";
-> +        #hwlock-cells = <1>;
-> +        reg = <0x4c000000 0x400>;
-> +        clocks = <&rcc HSEM>;
-> +        clock-names = "hsem";
-> +    };
-> +
-> +...
-> --
-> 2.15.0
->
+>  	ret = mmc_of_parse(host->mmc);
+>  	if (ret)
+>  		goto clocks_disable_unprepare;
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
