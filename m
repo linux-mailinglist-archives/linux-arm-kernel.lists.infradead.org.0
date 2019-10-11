@@ -2,54 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88A76D4199
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 15:43:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C86BD419B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 15:44:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3/uNIC2IGl1BobXFrFUrvVfFHn0z5luaDSUlEjiOsj8=; b=LzMX/p0/8rHA2KXuzKnZXXTLY
-	kyNHfgoe4ZK7GQkMO9yrCrfCKV4CEoScJC1eJavNPzlTbr7urM9HsRLq27Tg+IdA7Ily9RWtFdLPP
-	shMlCgWATFmadLIMUNPU6cW26WN6SrJZ9bPUX2iYJrfkUKtoLAhKfV+MsgmtlWjEmUISOa1MPu7HU
-	VV2b/zxWgBfin1nRM6zYk0LB/gZmindS7qe4A6Dpr0Xfl0ydibeSUqsdOC6zQF+aDqnUBscbB8yqg
-	bLHn+9QSNqmcgmpqqPHd4H6uPhvzn+Vi1Jf6MMJdnAIqedY/dr5XBgs8qsk8kIZbf4tkL9BVkNADG
-	zS6/nyjLQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YxsdO6Pm75Huvs6rv0JP3ABFWYhYaIrUDLlGxLFJlYw=; b=ZnVDzvaC2kI36e
+	Uv6UAnq8M4V6+XO7oroWlwLrcfyxP+6fHUqf/HCj0GqGBG0izZPfl8h0SB3tfoxNxPeP15QFI/edh
+	99CPiZbjG2pau6JD5l9MqvGUcP7A+RZRomIzZ1VGGzqVONf75IJW42fuevgziWSW4rkJ8BW/GV+At
+	QGSPs7hIFFwF/5kMSGxAG57oGNcMiES3C/9YkmQeg+/+OMqsulXfIH93NesSrKsqg1+q0u5KNPuGq
+	znEh8xI/8JPZi02g324IEJ3fV7vTy4hICasajHegE8ehxYYPB1ju57CVGGzurfg5tHC1d01TATWOm
+	LQ9LOQTDfQF+kk8EMkEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIvCu-0000cH-J0; Fri, 11 Oct 2019 13:43:48 +0000
-Received: from imap1.codethink.co.uk ([176.9.8.82])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIvCk-0000bu-Jf
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 13:43:40 +0000
-Received: from [167.98.27.226] (helo=[10.35.5.173])
- by imap1.codethink.co.uk with esmtpsa (Exim 4.84_2 #1 (Debian))
- id 1iIvCf-0005ik-SM; Fri, 11 Oct 2019 14:43:34 +0100
-Subject: Re: [PATCH] proc: centralise declaration of cpuinfo_op
-To: Christoph Hellwig <hch@infradead.org>
-References: <20191009113930.13236-1-ben.dooks@codethink.co.uk>
- <20191009175149.GA28540@infradead.org>
-From: Ben Dooks <ben.dooks@codethink.co.uk>
-Organization: Codethink Limited.
-Message-ID: <5c4ad594-55a3-a9c5-1674-e85665422aa1@codethink.co.uk>
-Date: Fri, 11 Oct 2019 14:43:32 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iIvDM-0000ru-6H; Fri, 11 Oct 2019 13:44:16 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iIvD8-0000qr-Ix
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 13:44:06 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0B1A6337;
+ Fri, 11 Oct 2019 06:44:02 -0700 (PDT)
+Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C62613F68E;
+ Fri, 11 Oct 2019 06:44:00 -0700 (PDT)
+Date: Fri, 11 Oct 2019 14:43:54 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Marek Szyprowski <m.szyprowski@samsung.com>
+Subject: Re: ARM Juno r1 + CONFIG_PROVE_LOCKING=y => boot failure
+Message-ID: <20191011134354.GA31516@bogus>
+References: <CGME20191011092604eucas1p1ca11ab9c4c7508776914b0eb4f35e69b@eucas1p1.samsung.com>
+ <33a83dce-e9f0-7814-923b-763d33e70257@samsung.com>
+ <20191011100521.GA5122@bogus>
+ <7655fb41-cd13-0bc4-e656-040e0875bab8@arm.com>
+ <2bf88cd2-9c4f-11dc-4b70-f717de891cff@samsung.com>
+ <20191011131058.GA26061@bogus>
+ <0b02b15f-38be-7a63-14cc-eabd288782eb@samsung.com>
 MIME-Version: 1.0
-In-Reply-To: <20191009175149.GA28540@infradead.org>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <0b02b15f-38be-7a63-14cc-eabd288782eb@samsung.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_064338_797849_8FB8DCC1 
-X-CRM114-Status: GOOD (  15.18  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191011_064402_681333_E5BCBF35 
+X-CRM114-Status: GOOD (  18.66  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [176.9.8.82 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -62,47 +66,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@lists.codethink.co.uk, linux-s390@vger.kernel.org,
- Rich Felker <dalias@libc.org>, linux-c6x-dev@linux-c6x.org,
- Yoshinori Sato <ysato@users.sourceforge.jp>, linux-sh@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "H. Peter Anvin" <hpa@zytor.com>, Heiko Carstens <heiko.carstens@de.ibm.com>,
- x86@kernel.org, Aurelien Jacquiot <jacquiot.aurelien@gmail.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- linux-arm-kernel@lists.infradead.org, Mark Salter <msalter@redhat.com>,
- sparclinux@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
- "David S. Miller" <davem@davemloft.net>, linux-kernel@vger.kernel.org
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
+ LKML <linux-kernel@vger.kernel.org>, James Morse <james.morse@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 09/10/2019 18:51, Christoph Hellwig wrote:
-> On Wed, Oct 09, 2019 at 12:39:30PM +0100, Ben Dooks wrote:
->> When building for arm, cpuinfo_op generates a warning due
->> to no declaration. Since this is used in fs/proc/cpuinfo.c
->> and inconsitently declared across archiectures move the
->> declaration info <linux/seq_file.h>. This means that the
->> cpuinfo_op will have a declaration any place it is used.
->>
->> Removes the following sparse warning:
->>
->> arch/arm/kernel/setup.c:1320:29: warning: symbol 'cpuinfo_op' was not declared. Should it be static?
-> 
-> I like the consolidation, but I don't think seq_file.h is the right
-> place.  A procfs or cpu topology related header seems like the better
-> choice.
+On Fri, Oct 11, 2019 at 03:15:32PM +0200, Marek Szyprowski wrote:
+> Hi Sudeep
+>
+> On 11.10.2019 15:10, Sudeep Holla wrote:
+> > On Fri, Oct 11, 2019 at 03:02:42PM +0200, Marek Szyprowski wrote:
+> >> Hi James,
+> >>
+> >> On 11.10.2019 12:38, James Morse wrote:
+> >>> Hi guys,
+> >>>
+> >>> On 11/10/2019 11:05, Sudeep Holla wrote:
+> >>>> On Fri, Oct 11, 2019 at 11:26:04AM +0200, Marek Szyprowski wrote:
+> >>>>> Recently I've got access to ARM Juno R1 board and did some tests with
+> >>>>> current mainline kernel on it. I'm a bit surprised that enabling
+> >>>>> CONFIG_PROVE_LOCKING causes a boot failure on this board. After enabling
+> >>>>> this Kconfig option, I get no single message from the kernel, although I
+> >>>>> have earlycon enabled.
+> >>>> I don't have Juno R1 but I tried defconfig + CONFIG_PROVE_LOCKING and
+> >>>> it boots fine.
+> >>> I just tried this on my r1, v5.4-rc1 with this configuration worked just fine.
+> >>>
+> >>> My cmdline is:
+> >>> | root=/dev/sda6 loglevel=9 earlycon=pl011,0x7ff80000 hugepagesz=2M hugepages=512
+> >>> | crashkernel=1G console=ttyAMA0 resume=/dev/sda2 no_console_suspend efi=debug
+> >>>
+> >> That is a bit strange. Here is a boot log from v5.4-rc1 with pure
+> >> defconfig: https://paste.debian.net/1105851/
+> >>
+> > I see from the boot log that both Image.gz and dtb being loaded at the
+> > same address 0x82000000, will u-boot uncompress it elsewhere after loading
+> > it ? Just for my understanding.
+>
+> tftp downloads Image.gz to 0x82000000, then decompress it to
+> $kernel_addr to save transfer time
+>
+> my bootcmd is:
+>
+> tftp ${fdt_addr} juno/Image.gz; unzip ${fdt_addr} ${kernel_addr}; tftp
+> ${fdt_addr} juno/juno-r1.dtb; booti ${kernel_addr} - ${fdt_addr};
+>
 
-Ok, thanks.
+Thanks for the info. I got hold of R1 board(not the one James has ;))
+and it works fine on that too.
 
-I'll have a look at where else it could go, but I'm not sure if I have
-the resources to build /all/ kernels that this would effect.
+Further, with reference to the commit you mentioned make sure defconfig
+works with that as it's a commit in the middle of merge window.
 
--- 
-Ben Dooks				http://www.codethink.co.uk/
-Senior Engineer				Codethink - Providing Genius
+I am using gcc7 and I noticed yours is gcc6 not sure if that makes any
+difference. Just listing the differences.
 
-https://www.codethink.co.uk/privacy.html
+I will see if I can grab the exact linaro binaries.
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
