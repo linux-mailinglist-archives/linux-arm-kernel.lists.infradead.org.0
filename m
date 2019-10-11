@@ -2,62 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56B6FD47A9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 20:35:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D49B1D47B0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 20:36:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6LQnBSNDnTAv/pZw6t7KItEHnAB3U3JQYb/VjqhrM2E=; b=sJSDn3Z5e2CbhJ
-	ByWUzQOfdkqVxvzdk5BNbK5R/GnMvRI67/Ng6RS1UVoz6q6wBELU/+1Nd8zngNoJoywU7aj9jMXTR
-	VyMXCHTAbABhyJAwQvUnNYp1g1cLjg45q2kmDh2QpHHP2cFWyvdMYWFjz8NyDzK0ODH66J9d5TbIY
-	F1jsKPhoUYb1DnWksM76U10Rw8c2KEcSnWnI8eoWiy1mV15h+NLusWfHT5lQ9IqNe3wVVowwu+arV
-	JE2yG0VVuZLqqZ24i6g596UmAgo8BMGo7544cr+zeVGFK+8DdYEjxqeXif6CNdSzSYurY/yHb7zyu
-	bzTcy95hwj6alj5qISYw==;
+	List-Owner; bh=yy4FPWtpYlXy5evmFLwnFCYDEQd/OuYy/idN0lYx2JY=; b=GxTXgXCIRMXMgG
+	hrSjcbUaguQ2icZsiJI33I2PAPCdG4W8NMrdkco8l+jxplwmw8o+ofPIUSvaX7NoqNAweomDwmCQW
+	Jq8oIweF9zNSPhsZ2Yq5IBGklZhBnlRMuZw712ZHR0XiyHrwRLbCBdT5jnaTBKKODQSRiJbXS5aMP
+	s7XF/GpYAosQZZGi3vtVbaIChSURoTFJtITDsfPC9gz5XpY6MW6ycMfMyIA8uomHO8UX5ofPgnv75
+	N2CfgRzg5++yHpqowxd9hyhT1ULq4DH7Gb0VoKpvEqPZkr6bEI+VM/ufuMrH6bdjnkGkic8vRXP3q
+	VEBFHss2Z5LunflKChKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIzkx-0006FF-CO; Fri, 11 Oct 2019 18:35:15 +0000
+	id 1iIzlk-0006Vh-C9; Fri, 11 Oct 2019 18:36:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIzkp-0005zx-9z
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 18:35:08 +0000
-Received: from mail-qt1-f180.google.com (mail-qt1-f180.google.com
- [209.85.160.180])
+ id 1iIzlW-0006VH-CV
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 18:35:51 +0000
+Received: from mail-qk1-f173.google.com (mail-qk1-f173.google.com
+ [209.85.222.173])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BF94E21A4A
+ by mail.kernel.org (Postfix) with ESMTPSA id EE25E21A4A
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 11 Oct 2019 18:35:06 +0000 (UTC)
+ Fri, 11 Oct 2019 18:35:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570818906;
- bh=VrIjCjeCJtSwwOFvAswWO8zYeoA6k350yygwzNFOqds=;
+ s=default; t=1570818950;
+ bh=A5YOLiudlL0Gvx464VUE58c30d6rI4J9IqV4RnnkINE=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Uf+6ZDO1znTClCJfgItB3zWCf/PrHoKnUZNzgxU7bq9CV74H3xLyxry5prNwCD90E
- cHV2PbrAT47N65ENH7+SeQzgduJrVnf8TYw0r1URPqCvvRBGijV2L/z0agwDzqlCmM
- tK4yIyp6asvn0ngHMlsN083OpACx/m0LgG52TtvU=
-Received: by mail-qt1-f180.google.com with SMTP id 3so15294932qta.1
+ b=j2Jx140EfZQIJRX0dYyL3J6GOIkXmJ368acn55TvtSBODydawj8Y0KD0mlX9UzyTK
+ 7ffpydWRR1A5SxdNtOZTgttoO9TXOQzK8iGZHBDpF+Y9kEwnkG7coNzNpYE99dsd+E
+ RIGMEiT/MBcLwi6f/XX4XzYcYyotPgnNrmas27OY=
+Received: by mail-qk1-f173.google.com with SMTP id z67so9751550qkb.12
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 11 Oct 2019 11:35:06 -0700 (PDT)
-X-Gm-Message-State: APjAAAVpZOcRGkIuwbfLVp1aqiHNqrEftWWBM3PzKyZjTEgHIbPR16pU
- CacuU8hBQEqFtN2+DH+Uxpm9aOJ2w00yYlur5w==
-X-Google-Smtp-Source: APXvYqxXNZXqhjX1vv0yrBQ2zPizCbCr6wZ3R6Kbqa0L34qgtUc+z3yI5+jQD/V1ZY3gsinMlNgwXR23TqSfelUsfUs=
-X-Received: by 2002:ac8:293b:: with SMTP id y56mr18601675qty.224.1570818905926; 
- Fri, 11 Oct 2019 11:35:05 -0700 (PDT)
+ Fri, 11 Oct 2019 11:35:49 -0700 (PDT)
+X-Gm-Message-State: APjAAAUOr4PDAsDchzJjWd2CDdVgYeMPvu+trfq1b5coHXwZfkY6CDsy
+ CWGpVs+3wRgttstK0A1lecBy/w5oR72/+emQxQ==
+X-Google-Smtp-Source: APXvYqwlcinnHLXWLenq8pR6e91BSf9cbUBSFPZzD4ss00JlOJSDW7Rcbsj1Vl/qGAwEzfHWNc9WXzuxsF5qr3W+Uc0=
+X-Received: by 2002:a05:620a:136e:: with SMTP id
+ d14mr16942465qkl.393.1570818949084; 
+ Fri, 11 Oct 2019 11:35:49 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191011131018.24035-1-benjamin.gaignard@st.com>
-In-Reply-To: <20191011131018.24035-1-benjamin.gaignard@st.com>
+References: <20191002152253.16393-1-benjamin.gaignard@st.com>
+In-Reply-To: <20191002152253.16393-1-benjamin.gaignard@st.com>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 11 Oct 2019 13:34:54 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqKboUPGFcz5SPA46WDxTa7aYSF7FN8LHhi4SFOz1PvrfQ@mail.gmail.com>
-Message-ID: <CAL_JsqKboUPGFcz5SPA46WDxTa7aYSF7FN8LHhi4SFOz1PvrfQ@mail.gmail.com>
-Subject: Re: [PATCH v2] dt-bindings: hwlock: Convert stm32 hwspinlock bindings
- to json-schema
+Date: Fri, 11 Oct 2019 13:35:38 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqKcvPNAL69WRgFbbRmLLyVpeCOarcnMY=wJR-hgVD06GA@mail.gmail.com>
+Message-ID: <CAL_JsqKcvPNAL69WRgFbbRmLLyVpeCOarcnMY=wJR-hgVD06GA@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: timer: Convert stm32 timer bindings to
+ json-schema
 To: Benjamin Gaignard <benjamin.gaignard@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_113507_382228_CEED311D 
-X-CRM114-Status: GOOD (  11.56  )
+X-CRM114-CacheID: sfid-20191011_113550_445867_CC33F7A5 
+X-CRM114-Status: GOOD (  11.33  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,13 +87,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ohad Ben-Cohen <ohad@wizery.com>, Mark Rutland <mark.rutland@arm.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, devicetree@vger.kernel.org,
- "open list:REMOTE PROCESSOR \(REMOTEPROC\) SUBSYSTEM"
- <linux-remoteproc@vger.kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- linux-stm32@st-md-mailman.stormreply.com,
+ Thomas Gleixner <tglx@linutronix.de>, linux-stm32@st-md-mailman.stormreply.com,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -100,26 +99,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 11, 2019 at 8:10 AM Benjamin Gaignard
+On Wed, Oct 2, 2019 at 10:23 AM Benjamin Gaignard
 <benjamin.gaignard@st.com> wrote:
 >
-> Convert the STM32 hwspinlock binding to DT schema format using json-schema
+> Convert the STM32 timer binding to DT schema format using json-schema
 >
 > Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 > ---
-> change in v2:
-> - use BSD-2-Clause license
+>  .../devicetree/bindings/timer/st,stm32-timer.txt   | 22 -----------
+>  .../devicetree/bindings/timer/st,stm32-timer.yaml  | 46 ++++++++++++++++++++++
+>  2 files changed, 46 insertions(+), 22 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/timer/st,stm32-timer.txt
+>  create mode 100644 Documentation/devicetree/bindings/timer/st,stm32-timer.yaml
 
-I asked for dual license: (GPL-2.0-only OR BSD-2-Clause)
-
-> - use const for #hwlock-cells
-> - add additionalProperties: false
->
->  .../bindings/hwlock/st,stm32-hwspinlock.txt        | 23 ----------
->  .../bindings/hwlock/st,stm32-hwspinlock.yaml       | 50 ++++++++++++++++++++++
->  2 files changed, 50 insertions(+), 23 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.txt
->  create mode 100644 Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.yaml
+Same comments on other conversions apply here.
 
 _______________________________________________
 linux-arm-kernel mailing list
