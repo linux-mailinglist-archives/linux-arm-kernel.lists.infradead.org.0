@@ -2,50 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FDACD42A7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 16:21:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64CC2D42AD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 16:22:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CT3M3+Ca+nj2BuTrXBQf7e9nDifMWHISoCsL63X5gdM=; b=lT05Y/RaYBfElU
-	vb7U1tasyJZI6qY1NTVFGjO3Qar4u9yUObDk5poX4bBXHinLVGrsAgyetTj0QgdlCeyKEY5e/c8Mw
-	GPW8RBeBY2m03eC6BhzDgFG6BurSXcOVJzdRWs1YjbNW49Df11t1RnTSuLHA67bvGHsxaT5P0yi/U
-	sAye0hvOJa4FldqG9uKV/+80kqoukoj8+e3l9i743KhHq2Ctw6syuLgjqAy7tQ1lRxTx1tMv+IRBx
-	g88oCABvlVgM1uhmrYZEbFA9Hj9DwOTqwJnA7S0wrHHuTVQjvySsBnE9jcwNx8T+jYlLsKJXQ5za4
-	T18Yie/PFvmXTqyRd3Vw==;
+	List-Owner; bh=6tWtiRP2CXtwTz0NaknC5OsYrq+rvwKYfgBkHPbJyZA=; b=tIh7sPPnxhr/Ve
+	zsfgfDdPuabfXlZuiMQw568roTAs+bHYPIgfWMIhm9VTK5cAEOoPjPY/ucZBummyhqZV8bv1WKdtJ
+	Ic2xvaV4urRPwaG7eUFtgUfoJ3MfaTZ40+nieR/z/dVTHqq2KAWClkEFBbPbNVmgpDB+p868yll4E
+	/x/g5BahSmuTf8YSOGEtU5O+3OoglDbspHPPNd2HGFGIBF6GuB5jlR2giASk7ehBic1y/nfbUkBwX
+	nj9/PIpdS7Fyo2zTsg0Au3dcfowFBC9rFOXAjEKhlw/cnAbxZPIeDk1SCaea+/AYaN5+1fhHGYwW+
+	QdvaSddZ5eTFqdAcpjQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIvnj-0004pU-Df; Fri, 11 Oct 2019 14:21:51 +0000
+	id 1iIvo5-000546-Mi; Fri, 11 Oct 2019 14:22:13 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIvnZ-0004p8-Pw
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 14:21:43 +0000
+ id 1iIvnv-00053N-PZ
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 14:22:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2AA3E142F;
- Fri, 11 Oct 2019 07:21:41 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 43A133F68E;
- Fri, 11 Oct 2019 07:21:40 -0700 (PDT)
-Date: Fri, 11 Oct 2019 15:21:38 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
-Subject: Re: [PATCH 1/3] arm64: cpufeature: Fix the type of no FP/SIMD
- capability
-Message-ID: <20191011142137.GH27757@arm.com>
-References: <20191010171517.28782-1-suzuki.poulose@arm.com>
- <20191010171517.28782-2-suzuki.poulose@arm.com>
- <20191011113620.GG27757@arm.com>
- <4ba5c423-4e2a-d810-cd36-32a16ad42c91@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3816F142F;
+ Fri, 11 Oct 2019 07:22:03 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 51D463F68E;
+ Fri, 11 Oct 2019 07:22:00 -0700 (PDT)
+Date: Fri, 11 Oct 2019 15:21:58 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH v2 11/12] arm64: BTI: Reset BTYPE when skipping emulated
+ instructions
+Message-ID: <20191011142157.GC33537@lakrids.cambridge.arm.com>
+References: <1570733080-21015-1-git-send-email-Dave.Martin@arm.com>
+ <1570733080-21015-12-git-send-email-Dave.Martin@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <4ba5c423-4e2a-d810-cd36-32a16ad42c91@arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <1570733080-21015-12-git-send-email-Dave.Martin@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_072141_930751_C5A95460 
-X-CRM114-Status: GOOD (  24.85  )
+X-CRM114-CacheID: sfid-20191011_072203_913650_0591E166 
+X-CRM114-Status: GOOD (  15.88  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,90 +63,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, will@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Yu-cheng Yu <yu-cheng.yu@intel.com>, Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
+ Eugene Syromiatnikov <esyr@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ "H.J. Lu" <hjl.tools@gmail.com>, Andrew Jones <drjones@redhat.com>,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
+ linux-kernel@vger.kernel.org, Sudakshina Das <sudi.das@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 11, 2019 at 01:13:18PM +0100, Suzuki K Poulose wrote: > Hi Dave
+On Thu, Oct 10, 2019 at 07:44:39PM +0100, Dave Martin wrote:
+> Since normal execution of any non-branch instruction resets the
+> PSTATE BTYPE field to 0, so do the same thing when emulating a
+> trapped instruction.
 > 
-> On 11/10/2019 12:36, Dave Martin wrote:
-> >On Thu, Oct 10, 2019 at 06:15:15PM +0100, Suzuki K Poulose wrote:
-> >>The NO_FPSIMD capability is defined with scope SYSTEM, which implies
-> >>that the "absence" of FP/SIMD on at least one CPU is detected only
-> >>after all the SMP CPUs are brought up. However, we use the status
-> >>of this capability for every context switch. So, let us change
-> >>the scop to LOCAL_CPU to allow the detection of this capability
-> >>as and when the first CPU without FP is brought up.
-> >>
-> >>Also, the current type allows hotplugged CPU to be brought up without
-> >>FP/SIMD when all the current CPUs have FP/SIMD and we have the userspace
-> >>up. Fix both of these issues by changing the capability to
-> >>BOOT_RESTRICTED_LOCAL_CPU_FEATURE.
-> >>
-> >>Fixes: 82e0191a1aa11abf ("arm64: Support systems without FP/ASIMD")
-> >>Cc: Will Deacon <will@kernel.org>
-> >>Cc: Mark Rutland <mark.rutland@arm.com>
-> >>Cc: Catalin Marinas <catalin.marinas@arm.com>
-> >>Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> >>---
-> >>  arch/arm64/kernel/cpufeature.c | 2 +-
-> >>  1 file changed, 1 insertion(+), 1 deletion(-)
-> >>
-> >>diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> >>index 9323bcc40a58..0f9eace6c64b 100644
-> >>--- a/arch/arm64/kernel/cpufeature.c
-> >>+++ b/arch/arm64/kernel/cpufeature.c
-> >>@@ -1361,7 +1361,7 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
-> >>  	{
-> >>  		/* FP/SIMD is not implemented */
-> >>  		.capability = ARM64_HAS_NO_FPSIMD,
-> >>-		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
-> >>+		.type = ARM64_CPUCAP_BOOT_RESTRICTED_CPU_LOCAL_FEATURE,
-> >
-> >ARM64_HAS_NO_FPSIMD is really a disability, not a capability.
-> >
-> >Although we have other things that smell like this (CPU errata for
-> >example), I wonder whether inverting the meaning in the case would
-> >make the situation easier to understand.
+> Branches don't trap directly, so we should never need to assign a
+> non-zero value to BTYPE here.
 > 
-> Yes, it is indeed a disability, more on that below.
+> Signed-off-by: Dave Martin <Dave.Martin@arm.com>
+> ---
+>  arch/arm64/kernel/traps.c | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
-> >
-> >So, we'd have ARM64_HAS_FPSIMD, with a minimum (signed) feature field
-> >value of 0.  Then this just looks like an ARM64_CPUCAP_SYSTEM_FEATURE
-> >IIUC.  We'd just need to invert the sense of the check in
-> >system_supports_fpsimd().
-> 
-> This is particularly something we want to avoid with this patch. We want
-> to make sure that we have the up-to-date status of the disability right
-> when it happens. i.e, a CPU without FP/SIMD is brought up. With SYSTEM_FEATURE
-> you have to wait until we bring all the CPUs up. Also, for HAS_FPSIMD,
-> you must wait until all the CPUs are up, unlike the negated capability.
+> diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
+> index 3af2768..4d8ce50 100644
+> --- a/arch/arm64/kernel/traps.c
+> +++ b/arch/arm64/kernel/traps.c
+> @@ -331,6 +331,8 @@ void arm64_skip_faulting_instruction(struct pt_regs *regs, unsigned long size)
+>  
+>  	if (regs->pstate & PSR_MODE32_BIT)
+>  		advance_itstate(regs);
+> +	else
+> +		regs->pstate &= ~(u64)PSR_BTYPE_MASK;
 
-I don't see why waiting for the random defective early CPU to come up is
-better than waiting for all the early CPUs to come up and then deciding.
+This looks good to me, with one nit below.
 
-Kernel-mode NEON aside, the status of this cap should not matter until
-we enter userspace for the first time.
+We don't (currently) need the u64 cast here, and it's inconsistent with
+what we do elsewhere. If the upper 32-bit of pstate get allocated, we'll
+need to fix up all the other masking we do:
 
-The only issue is if e.g., crypto drivers that can use kernel-mode NEON
-probe for it before all early CPUs are up, and so cache the wrong
-decision.  The current approach doesn't cope with that anyway AFAICT.
+[mark@lakrids:~/src/linux]% git grep 'pstate &= ~'
+arch/arm64/kernel/armv8_deprecated.c:           regs->pstate &= ~PSR_AA32_E_BIT;
+arch/arm64/kernel/cpufeature.c:         regs->pstate &= ~PSR_SSBS_BIT;
+arch/arm64/kernel/debug-monitors.c:     regs->pstate &= ~DBG_SPSR_SS;
+arch/arm64/kernel/insn.c:       pstate &= ~(pstate >> 1);       /* PSR_C_BIT &= ~PSR_Z_BIT */
+arch/arm64/kernel/insn.c:       pstate &= ~(pstate >> 1);       /* PSR_C_BIT &= ~PSR_Z_BIT */
+arch/arm64/kernel/probes/kprobes.c:     regs->pstate &= ~PSR_D_BIT;
+arch/arm64/kernel/probes/kprobes.c:     regs->pstate &= ~DAIF_MASK;
+arch/arm64/kernel/ptrace.c:     regs->pstate &= ~SPSR_EL1_AARCH32_RES0_BITS;
+arch/arm64/kernel/ptrace.c:                     regs->pstate &= ~PSR_AA32_E_BIT;
+arch/arm64/kernel/ptrace.c:     regs->pstate &= ~SPSR_EL1_AARCH64_RES0_BITS;
+arch/arm64/kernel/ptrace.c:             regs->pstate &= ~DBG_SPSR_SS;
+arch/arm64/kernel/ssbd.c:       task_pt_regs(task)->pstate &= ~val;
+arch/arm64/kernel/traps.c:      regs->pstate &= ~PSR_AA32_IT_MASK;
 
-> >>  		.min_field_value = 0,
-> >
-> >(Does .min_field_value == 0 make sense, or is it even used?  I thought
-> >only the default has_cpuid_feature() match logic uses that.)
-> 
-> True, it is not used for this particular case.
+... and at that point I'd suggest we should just ensure the bit
+definitions are all defined as unsigned long in the first place since
+adding casts to each use is error-prone.
 
-Ok, just wondering.
-
-Cheers
----Dave
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
