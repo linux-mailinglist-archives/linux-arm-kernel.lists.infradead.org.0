@@ -2,57 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F7CBD40AD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 15:11:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B89ED40B2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 15:12:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cIEZ/kNWoAYZftVgXUsWI+25C66+I0lc8CH0vAjUbgE=; b=u8n4zWlXXu1qWD
-	j4PySi0g6IMupdZowId+y0F1aoLbC04yR3h8Nc3+JWU7elhC0+hlFq/rBntqumUxgcE7TRsgU6lUi
-	4cm/Xx03m7JZzkKNSvGFrQ7Y+gyOeV02USqMts7oaCoZsvoqjoWUCUoWIhPPtdEbNTFiBqQERD86y
-	ubip7ERW/DcLzCHLuoY8TSO5NJB9WtbI7AqgCXBq/q1s7AYMQFT6YOvWyDLwhI4HUuQJbKkIjSzOG
-	XOuzCjQdia9CDlbSEEUTOtiD6DdyxuOzmGy1k6xX4lWvRYT9wF50ygjhiUqB/lXx7TzBfT/q3vGz5
-	yVq/TStUb9tHfbGflX5w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9S91bENTk5qsn+PldwlIJXCRTc6/mTxhXpitkdkVNrI=; b=ts610x5ieVJ3K9
+	jm0d+c2WDJb1PBshJj1t7pMvEa+V9vYNdru7+R/iNKAy7gzTRZZDMTkutgCuQRals1ANiGQcAgvTY
+	uD5In35ogocWeUgiARhJvZvDNNiGAt9SXF090NB7dFRLFg8fuv1pjB1fJMwJu/qPmwonNftn+KboL
+	f9WOJmuFCgzewrd6Wvp9HK9cH3ECJznyMp8HQmSvgUiOAcJHQY4YzH4izKu1C9DOeEiqcmvxxb18Y
+	IkZyDuSsQ/SFTb3UuRxIr4SI6Zzbvz6wA+QbujYsMaM87rb15FY0BXJyCQHX64GYEs+Hl+wyNiARE
+	WTMxVRbxFfo0sK2+hAgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIuhO-0003QX-Es; Fri, 11 Oct 2019 13:11:14 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIuhG-0003Pr-H3
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 13:11:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7DF4E28;
- Fri, 11 Oct 2019 06:11:05 -0700 (PDT)
-Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5F2A93F6C4;
- Fri, 11 Oct 2019 06:11:04 -0700 (PDT)
-Date: Fri, 11 Oct 2019 14:10:58 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Marek Szyprowski <m.szyprowski@samsung.com>
-Subject: Re: ARM Juno r1 + CONFIG_PROVE_LOCKING=y => boot failure
-Message-ID: <20191011131058.GA26061@bogus>
-References: <CGME20191011092604eucas1p1ca11ab9c4c7508776914b0eb4f35e69b@eucas1p1.samsung.com>
- <33a83dce-e9f0-7814-923b-763d33e70257@samsung.com>
- <20191011100521.GA5122@bogus>
- <7655fb41-cd13-0bc4-e656-040e0875bab8@arm.com>
- <2bf88cd2-9c4f-11dc-4b70-f717de891cff@samsung.com>
+	id 1iIuj0-0003o0-9P; Fri, 11 Oct 2019 13:12:54 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iIuip-0003nM-PV
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 13:12:45 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x9BD6HRY025650; Fri, 11 Oct 2019 15:12:38 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=PWduPs3pmXgoDQ3rhQPq+MwH5Bty4MTM7xJsS5IAIeM=;
+ b=ejGC399U6Tnz8nmHJ9yJotwtZtlPXZUDPGRyrPGLzyYfIRdlGjCTsGimeyuXs77gDxoJ
+ xdtGKejSWEYJnO3R7v2aue1+oP5r2/jPkyI9kAg+PkQB1QnAYthQTYH5uyvfKGTFAtSl
+ ypSuaQ/92dVytI8/bJ9EzDWPljmexR+Pg+9agla8XHPMZfKJ4rt8rj8cBAYpdujAyqTe
+ pZ2FJH68iPBc1eIJiQ6WZQayre4WZuuyOz13zNHW1AR5lK9dEmd94eOzLmLKftoqtszi
+ jySfOAh//e2UM5L+fvw07VqRHEem7jpswLb2zrhdXKA77uN2NnjoIEKU69ZYDGKGZOH9 3g== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2vej2ptd96-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 11 Oct 2019 15:12:38 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id EBDFF10002A;
+ Fri, 11 Oct 2019 15:12:37 +0200 (CEST)
+Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B8EF02BEC5E;
+ Fri, 11 Oct 2019 15:12:37 +0200 (CEST)
+Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by Safex1hubcas22.st.com
+ (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 11 Oct
+ 2019 15:12:37 +0200
+Received: from localhost (10.201.20.122) by webmail-ga.st.com (10.75.90.48)
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 11 Oct 2019 15:12:37
+ +0200
+From: Benjamin Gaignard <benjamin.gaignard@st.com>
+To: <mchehab@kernel.org>, <robh+dt@kernel.org>, <mark.rutland@arm.com>,
+ <alexandre.torgue@st.com>, <hverkuil-cisco@xs4all.nl>,
+ <hugues.fruchet@st.com>
+Subject: [PATCH v2] dt-bindings: media: Convert stm32 cec bindings to
+ json-schema
+Date: Fri, 11 Oct 2019 15:12:33 +0200
+Message-ID: <20191011131234.24290-1-benjamin.gaignard@st.com>
+X-Mailer: git-send-email 2.15.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2bf88cd2-9c4f-11dc-4b70-f717de891cff@samsung.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Originating-IP: [10.201.20.122]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
+ definitions=2019-10-11_08:2019-10-10,2019-10-11 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_061106_606003_1AB1E9CA 
-X-CRM114-Status: GOOD (  15.16  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191011_061244_133715_C4C5BE6D 
+X-CRM114-Status: GOOD (  15.14  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,47 +95,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
- LKML <linux-kernel@vger.kernel.org>, James Morse <james.morse@arm.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Benjamin Gaignard <benjamin.gaignard@st.com>,
+ linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 11, 2019 at 03:02:42PM +0200, Marek Szyprowski wrote:
-> Hi James,
->
-> On 11.10.2019 12:38, James Morse wrote:
-> > Hi guys,
-> >
-> > On 11/10/2019 11:05, Sudeep Holla wrote:
-> >> On Fri, Oct 11, 2019 at 11:26:04AM +0200, Marek Szyprowski wrote:
-> >>> Recently I've got access to ARM Juno R1 board and did some tests with
-> >>> current mainline kernel on it. I'm a bit surprised that enabling
-> >>> CONFIG_PROVE_LOCKING causes a boot failure on this board. After enabling
-> >>> this Kconfig option, I get no single message from the kernel, although I
-> >>> have earlycon enabled.
-> >> I don't have Juno R1 but I tried defconfig + CONFIG_PROVE_LOCKING and
-> >> it boots fine.
-> > I just tried this on my r1, v5.4-rc1 with this configuration worked just fine.
-> >
-> > My cmdline is:
-> > | root=/dev/sda6 loglevel=9 earlycon=pl011,0x7ff80000 hugepagesz=2M hugepages=512
-> > | crashkernel=1G console=ttyAMA0 resume=/dev/sda2 no_console_suspend efi=debug
-> >
-> That is a bit strange. Here is a boot log from v5.4-rc1 with pure
-> defconfig: https://paste.debian.net/1105851/
->
+Convert the STM32 cec binding to DT schema format using json-schema
 
-I see from the boot log that both Image.gz and dtb being loaded at the
-same address 0x82000000, will u-boot uncompress it elsewhere after loading
-it ? Just for my understanding.
+Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+---
+changes in v2:
+- use BSD-2-Clause license
+- add additionalProperties: false
+- remove pinctrl-names and pinctrl-[0-9]
 
---
-Regards,
-Sudeep
+ .../devicetree/bindings/media/st,stm32-cec.txt     | 19 --------
+ .../devicetree/bindings/media/st,stm32-cec.yaml    | 54 ++++++++++++++++++++++
+ 2 files changed, 54 insertions(+), 19 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/media/st,stm32-cec.txt
+ create mode 100644 Documentation/devicetree/bindings/media/st,stm32-cec.yaml
+
+diff --git a/Documentation/devicetree/bindings/media/st,stm32-cec.txt b/Documentation/devicetree/bindings/media/st,stm32-cec.txt
+deleted file mode 100644
+index 6be2381c180d..000000000000
+--- a/Documentation/devicetree/bindings/media/st,stm32-cec.txt
++++ /dev/null
+@@ -1,19 +0,0 @@
+-STMicroelectronics STM32 CEC driver
+-
+-Required properties:
+- - compatible : value should be "st,stm32-cec"
+- - reg : Physical base address of the IP registers and length of memory
+-	 mapped region.
+- - clocks : from common clock binding: handle to CEC clocks
+- - clock-names : from common clock binding: must be "cec" and "hdmi-cec".
+- - interrupts : CEC interrupt number to the CPU.
+-
+-Example for stm32f746:
+-
+-cec: cec@40006c00 {
+-	compatible = "st,stm32-cec";
+-	reg = <0x40006C00 0x400>;
+-	interrupts = <94>;
+-	clocks = <&rcc 0 STM32F7_APB1_CLOCK(CEC)>, <&rcc 1 CLK_HDMI_CEC>;
+-	clock-names = "cec", "hdmi-cec";
+-};
+diff --git a/Documentation/devicetree/bindings/media/st,stm32-cec.yaml b/Documentation/devicetree/bindings/media/st,stm32-cec.yaml
+new file mode 100644
+index 000000000000..e3ff7b077ff6
+--- /dev/null
++++ b/Documentation/devicetree/bindings/media/st,stm32-cec.yaml
+@@ -0,0 +1,54 @@
++# SPDX-License-Identifier: BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/media/st,stm32-cec.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: STMicroelectronics STM32 CEC bindings
++
++maintainers:
++  - Benjamin Gaignard <benjamin.gaignard@st.com>
++  - Yannick Fertre <yannick.fertre@st.com>
++
++properties:
++  compatible:
++    const: st,stm32-cec
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: Module Clock
++      - description: Bus Clock
++
++  clock-names:
++    items:
++      - const: cec
++      - const: hdmi-cec
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/clock/stm32mp1-clks.h>
++    cec: cec@40006c00 {
++        compatible = "st,stm32-cec";
++        reg = <0x40006c00 0x400>;
++        interrupts = <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>;
++        clocks = <&rcc CEC_K>, <&clk_lse>;
++        clock-names = "cec", "hdmi-cec";
++    };
++
++...
+-- 
+2.15.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
