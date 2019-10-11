@@ -2,59 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC3A0D47F1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 20:49:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 353D2D4811
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 21:00:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c124Y+Ita6WsWD3GR75ATFXHcnkxGy28pUNZCNv8ivA=; b=dQwQNm558Fs8Qr
-	NrrikCDBJDsiw4HwwRkHJJz9ZtjJxtTF7ydeCuJPlSXqS5yVvg+Ui9pgaCJh/UBMk5JYeKTcl1uy1
-	4I8NW1Q/wITGUBu+VnMCZxjbUguYKOiTzJKSYimXKfsyeetwqK/fQ6Hc7gUjYN429aLY5OLp4nT0z
-	K2PkxbdS6PvGnXVDfKbilkjAZONjopAz7xeTR0IeEBbwlHzR0NyKTptiZlx3H6itPW04qY2SZF0/S
-	OHZprBzKSgEHfvUcOS0RQNgnC+CF3cAKO3drAZnjuLguaqLL0ThE4jZTtejQxu9DoG/QPEl8QC8wK
-	OqgimYZGRf860zlYMCVA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qK5arUDLTjjmGjoh305mXJ9/MBpqaAE4K9fDrMxT2U8=; b=qX45T8PnK9GeaT
+	Yq9rnvNEGbMT+xfyNMTQbMgEZsIenNEqBPurZjZqyqmlx3c2rLDsqhaRhwsqGQQIpe8bbvHh/Cn1m
+	XmTe6bOr4tk/2kFg7ApQwHBUo4d12f4dy6RrYG9uLWj6w/nt0nUhy+3xPQQ2nVVzUh4d6A/R/9Pwh
+	74LCca9rSxehnegpcTM5716JeM8dPX9vubNP1O3Z/OZKABkwt5uKYUdeOQEic0H+eUcb/B+Dyfh7c
+	ArQTRmvSlY73Ci6B5Mdq/1WnLw9/0e3PLSRwKfMb8ECUNcnQ6MCtusYXc1nl/o43ghuaFDwm5TyGx
+	6LqQJ996uklriAaZh5aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIzyk-0002Rq-5W; Fri, 11 Oct 2019 18:49:30 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iJ09U-0007XO-Cm; Fri, 11 Oct 2019 19:00:36 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIzxv-0001sy-RX; Fri, 11 Oct 2019 18:48:41 +0000
-Received: from ziggy.de (unknown [37.223.145.112])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EEBEF2190F;
- Fri, 11 Oct 2019 18:48:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570819718;
- bh=m+vq97srCtSAkMQJp5pj1AGqRJNlXFC1HTKheGMdwMw=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ofrxxdcFTleX+rEmnybr+Wk0kFjoyRBSwGegV1iuF09a25k2yfXoc5pbf1bQIZ13c
- ChWvNAKUYUcR2u3ObdEcRq+Eup0U4zyDQ2W75C4CdpPYZ970ouTaUxRHs0qePr3L4V
- 2DhSaDBf9wRXVW1llOyPf9iIGVX5Emq1/oDFnh4c=
-From: matthias.bgg@kernel.org
-To: Florian Fainelli <f.fainelli@gmail.com>,
- "David S . Miller" <davem@davemloft.net>
-Subject: [PATCH v1 3/3] ARM: dts: bcm2711: Enable GENET support for the RPi4
-Date: Fri, 11 Oct 2019 20:48:21 +0200
-Message-Id: <20191011184822.866-4-matthias.bgg@kernel.org>
+ id 1iJ098-0007NT-NN
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 19:00:16 +0000
+Received: by mail-ot1-x343.google.com with SMTP id 89so8830647oth.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 11 Oct 2019 12:00:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=XVzDAbcWZXdsDHTskHlN8zvp0OFOMZiiZvVTqyfK5oQ=;
+ b=REQ9n4XT5uYJfOAt1+orGDMyhg6WGHfDuJEeLvDDO4/MDCtIqfiE5UKnIbXTkSUIdo
+ wTDvve84sMTKhuPtVZIVJF6cPXzRQB36Wbcf4w90zEsN57NoO7CjmH1S7wcREdGz1BlV
+ GmCUGScx8p0Da3hcjC+Hempl1kr+Q6DjJ7TC2HOX20FMVHqe7zCjqpOI3HK6JXB/FTp1
+ pjEIdCJ8apXKars5B1BRIvZCqOT6bSvcov7k9JTtKuGS7wNzygFKR4ppaOo2BALgYYYC
+ aIZf3KZ6MJxQEvO1HUPxl+L7ZxYoy2BgduTWbr/oVb5PfEyUvGE8xnAqXAc79Wpp+PZ2
+ b0ug==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=XVzDAbcWZXdsDHTskHlN8zvp0OFOMZiiZvVTqyfK5oQ=;
+ b=JL7DS1K8DZsL1xr43lzwHETYm/i95t/YzB7yrYlo13t2dltrtoyj7+6sZFDvjTF6uZ
+ D3zgVypgMDYwGOWOK1ZXoIKKPg+getjYwUvjr3uxeJAkWtYXs8jjkdnb3iliv2QzWtSY
+ clyiUq+rU3f7i4DTNzfCR9nXTJvflmit7eYJ3og8lHKdkkmurfeL8q+WWX5/LWWmHJbg
+ RycRxsoDIcnwzMdu4k3rUX1rnu0yW+SLkZSNt7r9C/lh7MsROpdIzhLJvp8jjAeDUqq6
+ h4PwDqiKNeI4fY88RWgO1D329b6mRp5ha7eyrGKbbC2onWPGDB7ecetCzRJU5lHQMjGy
+ yYTg==
+X-Gm-Message-State: APjAAAUXYieu6PYOg3CKQNYmxq1ky8UADD5nesGDJ7RWf0ZToYk57Xfa
+ IIm8birAhYL8pm1qZCAEwlU=
+X-Google-Smtp-Source: APXvYqxS4oNRrteuzDW9YVSqdV0G2YAQXYVv2QQCjhlTgH68PPgJwN8VSyesKZWAz5+MV66mdeQ9iA==
+X-Received: by 2002:a9d:67d7:: with SMTP id c23mr14470404otn.0.1570820413034; 
+ Fri, 11 Oct 2019 12:00:13 -0700 (PDT)
+Received: from localhost.localdomain ([2604:1380:4111:8b00::1])
+ by smtp.gmail.com with ESMTPSA id 67sm3037688otq.34.2019.10.11.12.00.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 11 Oct 2019 12:00:12 -0700 (PDT)
+From: Nathan Chancellor <natechancellor@gmail.com>
+To: Alan Stern <stern@rowland.harvard.edu>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Subject: [PATCH] USB: host: ohci-at91: Remove unused variable regs in
+ at91_stop_hc
+Date: Fri, 11 Oct 2019 11:59:50 -0700
+Message-Id: <20191011185950.1470-1-natechancellor@gmail.com>
 X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191011184822.866-1-matthias.bgg@kernel.org>
-References: <20191011184822.866-1-matthias.bgg@kernel.org>
 MIME-Version: 1.0
+X-Patchwork-Bot: notify
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_114840_008776_58759B32 
-X-CRM114-Status: GOOD (  12.18  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191011_120014_821274_914E2171 
+X-CRM114-Status: UNSURE (   8.71  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (natechancellor[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -63,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,92 +100,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Matthias Brugger <mbrugger@suse.com>, Eric Anholt <eric@anholt.net>,
- linux-kernel@vger.kernel.org, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- Stefan Wahren <wahrenst@gmx.net>, Matthias Brugger <matthias.bgg@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Cc: Nathan Chancellor <natechancellor@gmail.com>, linux-usb@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Matthias Brugger <mbrugger@suse.com>
+drivers/usb/host/ohci-at91.c:118:28: warning: unused variable 'regs'
+[-Wunused-variable]
+        struct ohci_regs __iomem *regs = hcd->regs;
+                                  ^
+1 warning generated.
 
-Enable Gigabit Ethernet support on the Raspberry Pi 4
-Model B.
-
-Signed-off-by: Matthias Brugger <mbrugger@suse.com>
-
+Fixes: 9c4567fa0a44 ("USB: host: ohci-at91: completely shutdown the controller in at91_stop_hc()")
+Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
 ---
+ drivers/usb/host/ohci-at91.c | 1 -
+ 1 file changed, 1 deletion(-)
 
- arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 22 ++++++++++++++++++++++
- arch/arm/boot/dts/bcm2711.dtsi        | 18 ++++++++++++++++++
- 2 files changed, 40 insertions(+)
-
-diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-index cccc1ccd19be..958553d62670 100644
---- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-+++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-@@ -97,6 +97,28 @@
- 	status = "okay";
- };
+diff --git a/drivers/usb/host/ohci-at91.c b/drivers/usb/host/ohci-at91.c
+index 513e48397743..b635c6a1b1a9 100644
+--- a/drivers/usb/host/ohci-at91.c
++++ b/drivers/usb/host/ohci-at91.c
+@@ -115,7 +115,6 @@ static void at91_start_hc(struct platform_device *pdev)
+ static void at91_stop_hc(struct platform_device *pdev)
+ {
+ 	struct usb_hcd *hcd = platform_get_drvdata(pdev);
+-	struct ohci_regs __iomem *regs = hcd->regs;
+ 	struct ohci_at91_priv *ohci_at91 = hcd_to_ohci_at91_priv(hcd);
  
-+&genet {
-+	phy-handle = <&phy1>;
-+	phy-mode = "rgmii";
-+	status = "okay";
-+	dma-burst-sz = <0x08>;
-+
-+	mdio@e14 {
-+		compatible = "brcm,genet-mdio-v5";
-+		reg = <0xe14 0x8>;
-+		reg-names = "mdio";
-+		#address-cells = <0x0>;
-+		#size-cells = <0x1>;
-+
-+		phy1: ethernet-phy@1 {
-+			compatible = "ethernet-phy-ieee802.3-c22";
-+			/* No PHY interrupt */
-+			max-speed = <1000>;
-+			reg = <0x1>;
-+		};
-+	};
-+};
-+
- /* uart0 communicates with the BT module */
- &uart0 {
- 	pinctrl-names = "default";
-diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711.dtsi
-index ac83dac2e6ba..e2e837fcad59 100644
---- a/arch/arm/boot/dts/bcm2711.dtsi
-+++ b/arch/arm/boot/dts/bcm2711.dtsi
-@@ -305,6 +305,24 @@
- 			cpu-release-addr = <0x0 0x000000f0>;
- 		};
- 	};
-+
-+	scb {
-+		compatible = "simple-bus";
-+		#address-cells = <2>;
-+		#size-cells = <1>;
-+
-+		ranges = <0x0 0x7c000000  0x0 0xfc000000  0x03800000>;
-+
-+		genet: ethernet@7d580000 {
-+			compatible = "brcm,genet-v5";
-+			reg = <0x0 0x7d580000 0x10000>;
-+			#address-cells = <0x1>;
-+			#size-cells = <0x1>;
-+			interrupts = <GIC_SPI 157 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 158 IRQ_TYPE_LEVEL_HIGH>;
-+			status = "disabled";
-+		};
-+	};
- };
- 
- &clk_osc {
+ 	dev_dbg(&pdev->dev, "stop\n");
 -- 
 2.23.0
 
