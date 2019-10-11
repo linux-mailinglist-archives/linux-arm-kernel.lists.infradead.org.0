@@ -2,61 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BCB2D3FC3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 14:41:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B2CED3FCC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 14:41:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZE7pe0V0xSrR7nvLqdbi9zYv76WoK+uxhhkZ8gaHY40=; b=Opv4EwJaJal1M3
-	aWe75bh/2P6dElhqLf47SYU1W03qXVc5bg8w89yTRJvlzVK/iVir20K6zlfD7imdPbFCiBzYmcCXj
-	EpyXpKFd+aq0nymi6YGJgRKX2OeV7y5Q8TxyD5EzBu8RB2foitl7MoS4S1P8o2cSwanbq+XNgWB6S
-	UA2grOt2O7ZOzEYtRd35uRClPfrUCSkjYftJqN70SB4CCZNzwp9nR01RkOFC30dAH6vgieYsw2cJG
-	1Zrm/+9/++QT6Nd4Rq8TF3ktJNtnco+25r6eQqahroh2dQYI4Yo2OdKWtvxphC6hPq0QEkHxZdcrA
-	BYumjJ0Bf3JRe6GTCIbg==;
+	List-Owner; bh=HArfcRymxSZXNfapp3TJzckR92RsQztx+2D4S6k1iLo=; b=TuhB+2BUUsztIk
+	LNFh1Mx8fTM0MB848z7Xeb3HX4iALB1TcyPmBHjfQh7AMFLuk7WyCQ7A1aW1aIhB+JK5xVyd7G5JK
+	YZKgkCmwUAglxIArC/zme1g0towU479vTfwwzih9NvQYMdonkC1bgD12pdNPsAFXNQEG0balX2JDd
+	1LNmnxjwenAV4mBlzymYUnoWM0Ayq6UDTlDPmWGK9BvINm1pJdQBmFWqYWzd4XnsiY+BpomyE6zeE
+	gbYEPLl8/Se8IHPBFqLIIk3wzzUWX4RVIGGvUifaHzhamKCw22BE8xPfkOo94Upeqm+E/8J87KUhC
+	OMCk0IIJH3o+WAw4DlJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIuEJ-0007LH-HW; Fri, 11 Oct 2019 12:41:11 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iIuEu-0008K7-TK; Fri, 11 Oct 2019 12:41:48 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIuDV-0006g3-G0
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 12:40:24 +0000
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why.lan) by cheepnis.misterjones.org with esmtpsa
- (TLSv1.2:DHE-RSA-AES128-GCM-SHA256:128) (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1iIuDQ-00062U-LF; Fri, 11 Oct 2019 14:40:16 +0200
-From: Marc Zyngier <maz@kernel.org>
-To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-Subject: [PATCH v3 4/4] KVM: arm64: pmu: Reset sample period on overflow
- handling
-Date: Fri, 11 Oct 2019 13:39:54 +0100
-Message-Id: <20191011123954.31378-5-maz@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191011123954.31378-1-maz@kernel.org>
-References: <20191011123954.31378-1-maz@kernel.org>
+ id 1iIuEV-00083b-RO
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 12:41:25 +0000
+Received: from mail-qk1-f173.google.com (mail-qk1-f173.google.com
+ [209.85.222.173])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D5A9B222BE
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 11 Oct 2019 12:41:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570797683;
+ bh=0ntoZW7nIQaS0RptBTqn8yRQKbcwYPW6mrTC+nExxQQ=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=dR100AmRHlPwX27kUrp1Lauf3ohIZVPT1aokTFmN/cMb52PIZCHr7cnR8lnpbjLqj
+ dicgfF0TpW4nEd2mwFBiZJjqOSCarxIGU+A6CE1Bvzn5Lxu1fFt6mtmei+4dyZVSSl
+ CSrZCRsYHokj3EuztdAzqWaGGTOBWJxfSIjVmNCk=
+Received: by mail-qk1-f173.google.com with SMTP id x134so8742832qkb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 11 Oct 2019 05:41:22 -0700 (PDT)
+X-Gm-Message-State: APjAAAWpLbj5i7rgXJJr7WQL1nYxR6kuVxQtDBgzi8G5R+vFCBNTDlcF
+ 0MtkNIYg5XPZms18YcSvUQq0VjkpzIa950WxTQ==
+X-Google-Smtp-Source: APXvYqxSOLHC3OhXJjaOJaRAYwJ7GF4/t7229zQiP9PqqmGtuF/Yddz3rOt3p/MLumF2OTaUmi8AujpP8UblZE39o8w=
+X-Received: by 2002:a05:620a:12f1:: with SMTP id
+ f17mr15407013qkl.152.1570797681944; 
+ Fri, 11 Oct 2019 05:41:21 -0700 (PDT)
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org, will@kernel.org,
- mark.rutland@arm.com, james.morse@arm.com, julien.thierry.kdev@gmail.com,
- suzuki.poulose@arm.com, andrew.murray@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+References: <20191002151907.15986-1-benjamin.gaignard@st.com>
+In-Reply-To: <20191002151907.15986-1-benjamin.gaignard@st.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Fri, 11 Oct 2019 07:41:10 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+p6rYun-zOwK49=QSfuJGMpiXj5UfASdXhjmOX1cudWQ@mail.gmail.com>
+Message-ID: <CAL_Jsq+p6rYun-zOwK49=QSfuJGMpiXj5UfASdXhjmOX1cudWQ@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: hwlock: Convert stm32 hwspinlock bindings to
+ json-schema
+To: Benjamin Gaignard <benjamin.gaignard@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_054021_702293_E14FFF56 
-X-CRM114-Status: GOOD (  13.82  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191011_054123_949343_24016EBE 
+X-CRM114-Status: GOOD (  19.16  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,88 +87,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, James Morse <james.morse@arm.com>,
- Andrew Murray <andrew.murray@arm.com>, Will Deacon <will@kernel.org>,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Ohad Ben-Cohen <ohad@wizery.com>, devicetree@vger.kernel.org,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ "open list:REMOTE PROCESSOR \(REMOTEPROC\) SUBSYSTEM"
+ <linux-remoteproc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The PMU emulation code uses the perf event sample period to trigger
-the overflow detection. This works fine  for the *first* overflow
-handling, but results in a huge number of interrupts on the host,
-unrelated to the number of interrupts handled in the guest (a x20
-factor is pretty common for the cycle counter). On a slow system
-(such as a SW model), this can result in the guest only making
-forward progress at a glacial pace.
+On Wed, Oct 2, 2019 at 10:19 AM Benjamin Gaignard
+<benjamin.gaignard@st.com> wrote:
+>
+> Convert the STM32 hwspinlock binding to DT schema format using json-schema
+>
+> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+> ---
+>  .../bindings/hwlock/st,stm32-hwspinlock.txt        | 23 -----------
+>  .../bindings/hwlock/st,stm32-hwspinlock.yaml       | 48 ++++++++++++++++++++++
+>  2 files changed, 48 insertions(+), 23 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.txt
+>  create mode 100644 Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.txt b/Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.txt
+> deleted file mode 100644
+> index adf4f000ea3d..000000000000
+> --- a/Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.txt
+> +++ /dev/null
+> @@ -1,23 +0,0 @@
+> -STM32 Hardware Spinlock Device Binding
+> --------------------------------------
+> -
+> -Required properties :
+> -- compatible : should be "st,stm32-hwspinlock".
+> -- reg : the register address of hwspinlock.
+> -- #hwlock-cells : hwlock users only use the hwlock id to represent a specific
+> -       hwlock, so the number of cells should be <1> here.
+> -- clock-names : Must contain "hsem".
+> -- clocks : Must contain a phandle entry for the clock in clock-names, see the
+> -       common clock bindings.
+> -
+> -Please look at the generic hwlock binding for usage information for consumers,
+> -"Documentation/devicetree/bindings/hwlock/hwlock.txt"
+> -
+> -Example of hwlock provider:
+> -       hwspinlock@4c000000 {
+> -               compatible = "st,stm32-hwspinlock";
+> -               #hwlock-cells = <1>;
+> -               reg = <0x4c000000 0x400>;
+> -               clocks = <&rcc HSEM>;
+> -               clock-names = "hsem";
+> -       };
+> diff --git a/Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.yaml b/Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.yaml
+> new file mode 100644
+> index 000000000000..64e169702515
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/hwlock/st,stm32-hwspinlock.yaml
+> @@ -0,0 +1,48 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/hwlock/st,stm32-hwspinlock.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: STMicroelectronics STM32 Hardware Spinlock bindings
+> +
+> +maintainers:
+> +  - Benjamin Gaignard <benjamin.gaignard@st.com>
+> +  - Fabien Dessenne <fabien.dessenne@st.com>
+> +
+> +properties:
+> +  "#hwlock-cells": true
 
-It turns out that the clue is in the name. The sample period is
-exactly that: a period. And once the an overflow has occured,
-the following period should be the full width of the associated
-counter, instead of whatever the guest had initially programed.
+const: 1
 
-Reset the sample period to the architected value in the overflow
-handler, which now results in a number of host interrupts that is
-much closer to the number of interrupts in the guest.
+> +
+> +  compatible:
+> +    const: st,stm32-hwspinlock
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: Module Clock
 
-Fixes: b02386eb7dac ("arm64: KVM: Add PMU overflow interrupt routing")
-Signed-off-by: Marc Zyngier <maz@kernel.org>
----
- virt/kvm/arm/pmu.c | 20 ++++++++++++++++++++
- 1 file changed, 20 insertions(+)
+Don't need a description for a single item.
 
-diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
-index f291d4ac3519..8731dfeced8b 100644
---- a/virt/kvm/arm/pmu.c
-+++ b/virt/kvm/arm/pmu.c
-@@ -8,6 +8,7 @@
- #include <linux/kvm.h>
- #include <linux/kvm_host.h>
- #include <linux/perf_event.h>
-+#include <linux/perf/arm_pmu.h>
- #include <linux/uaccess.h>
- #include <asm/kvm_emulate.h>
- #include <kvm/arm_pmu.h>
-@@ -442,8 +443,25 @@ static void kvm_pmu_perf_overflow(struct perf_event *perf_event,
- 				  struct pt_regs *regs)
- {
- 	struct kvm_pmc *pmc = perf_event->overflow_handler_context;
-+	struct arm_pmu *cpu_pmu = to_arm_pmu(perf_event->pmu);
- 	struct kvm_vcpu *vcpu = kvm_pmc_to_vcpu(pmc);
- 	int idx = pmc->idx;
-+	u64 period;
-+
-+	cpu_pmu->pmu.stop(perf_event, PERF_EF_UPDATE);
-+
-+	/*
-+	 * Reset the sample period to the architectural limit,
-+	 * i.e. the point where the counter overflows.
-+	 */
-+	period = -(local64_read(&perf_event->count));
-+
-+	if (!kvm_pmu_idx_is_64bit(vcpu, pmc->idx))
-+		period &= GENMASK(31, 0);
-+
-+	local64_set(&perf_event->hw.period_left, 0);
-+	perf_event->attr.sample_period = period;
-+	perf_event->hw.sample_period = period;
- 
- 	__vcpu_sys_reg(vcpu, PMOVSSET_EL0) |= BIT(idx);
- 
-@@ -451,6 +469,8 @@ static void kvm_pmu_perf_overflow(struct perf_event *perf_event,
- 		kvm_make_request(KVM_REQ_IRQ_PENDING, vcpu);
- 		kvm_vcpu_kick(vcpu);
- 	}
-+
-+	cpu_pmu->pmu.start(perf_event, PERF_EF_RELOAD);
- }
- 
- /**
--- 
-2.20.1
+maxItems: 1
 
+> +
+> +  clock-names:
+> +    items:
+> +      - const: hsem
+> +
+> +required:
+> +  - "#hwlock-cells"
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - clock-names
+
+Add a:
+
+additionalProperties: false
+
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/stm32mp1-clks.h>
+> +    hwspinlock@4c000000 {
+> +        compatible = "st,stm32-hwspinlock";
+> +        #hwlock-cells = <1>;
+> +        reg = <0x4c000000 0x400>;
+> +        clocks = <&rcc HSEM>;
+> +        clock-names = "hsem";
+> +    };
+> +
+> +...
+> --
+> 2.15.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
