@@ -2,85 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76395D48E9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 22:18:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74563D49C3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 23:17:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xm8UM6fj1nk0SLCIybYZvXDFpyU3yB7xgLwzK3u8Ai4=; b=Ti9xARBdqSmabr
-	l+9ZwC7ikFiuTVPlzoAc8jIUV1khao0svOjXtZSdSE6+oFyOnw3MaaY31NBRiI56Gclj/xl4eVWM/
-	3ZmWblFlsgR3Z/xn5sH7Lz6RbSGdlAhmlItPYTczmYB34YNcELdtiivqxyJnkMiPx0QKkD9wSkjK7
-	g9mxHojMVlFQLO6FgnznjA9356fhzQ0f/D6SWUZ8Tjk0gxHjsWwruPmMQUNbTPZYVSXzjmx9w8ES+
-	0QyKkzAbasmjOQdAaBVEJTM1sXbycIF1RF43byJBPfjOxz5WrZPCuMf1QpIQtrQwMQMgNgon+Z6iT
-	Bwx2VShGaBuChTNCuGeQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=p5R3EgAWA+Kj8MB2V1GUVlQDOauOEAVD2s2yywYbd9Y=; b=JgLKJdyKX8G+ZI
+	gTLkLmfjL+UB0om5t7DcCbZdeqIliobfEX3JOng28GAnX+Uu5RstDZW8vg9r0x2pTi1OcfLiX1rqQ
+	Wm2McGzXoDuv5keZCKFdCj/5vvEYRdyFyKAW6i3fZctoHQ+B3fCvaIirRP8eFB/+1L2BrUIbUHTl8
+	WKnB0JH4fCgEN1I7xpIeG3SRXB2G1Ke232b/pTrvPChPwRELWeRojLYbWcC4k7+Rxja16kkE0mEmM
+	ZgwNu8gIU2YrmrtA5JnGWyELMqyIh76b/ai3PK6V0EAMjWp8x8S4E6Fpfmdln9UePkWu14xt/JArC
+	07fRB+n+hW8jhtrPySbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJ1MS-0000QR-06; Fri, 11 Oct 2019 20:18:04 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iJ2Hq-0002W5-5w; Fri, 11 Oct 2019 21:17:22 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJ1MI-0000PH-8g
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 20:17:56 +0000
-Received: by mail-pg1-x543.google.com with SMTP id f14so1291611pgi.9
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 11 Oct 2019 13:17:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=urKtgcUqAkGp8KZBc5+oZtHTmWIcz82tEFRNTfuvdn4=;
- b=AXmpi7kejzX23jX+27pOe3agKp/6or0QiTrtZTRQk8imHTwVDIPlt7zAlpLwHTDmuM
- WcAdOnI30lpOnV/urS4PpjaIT4siN4pVPGVW9CMRtzjT1g1A2gepjSRffqI+FCRphsWm
- dZSPAUK+NPEgFsvkDPV2yCTh8mAFw/G++hRzIU/bu5REGQW9JRIS3mp/dELwY5++Q8tb
- oMPdMuFGBhDhl6LtGzArcMzLzVIJpfeYHiCONqiYz1jXhquUFROPQpLtkSikFAuax+50
- SF6uPoFyJ5awRs+H+rCfPJ3wysh4NOF5TO7VVo7LwYT8ALPeMEuijne7GVDpmPOluO7L
- pm+Q==
+ id 1iJ2He-0002V6-GZ; Fri, 11 Oct 2019 21:17:16 +0000
+Received: by mail-wm1-x341.google.com with SMTP id a6so11689187wma.5;
+ Fri, 11 Oct 2019 14:17:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=LG3n9bP9kGhQ7SFk9OxCo0gPqdU2gHnkRjsbnMNvlpY=;
+ b=dBJnWFOoIb19dqOC0j3JvCCdRfPc4OHL3xsyrufrdm7gBPTGnMnrAJ7Th95lKJlV+3
+ wrMoLQWul2U+Cq1vwvMLQ202arVVEaOUx7L6I9ehm3vPeCkqa9MDuiaciVxs7PVAbT6R
+ tOfegMjBnURzNKAMtrYiLB4ybuPKUXIq9PPnf56Isisv9H8gh6Mhmc1BG1Cnj5onhjgO
+ MFDxSNzk2+sJpHb4zfDFjl+fszrvHf6aVQJubTaMYRCjeBEjf7gtB++7ZWK6n7ql0IEJ
+ /VtPYb5cTW6aHS1MMuuxNNBmGqqhR30g3wQFGRz92BHUeTRqiCIFIy2eZUDbaThcs9/9
+ MHSQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=urKtgcUqAkGp8KZBc5+oZtHTmWIcz82tEFRNTfuvdn4=;
- b=KLcWbMXbaPG8TQciPy8+7dL6s5BWR3YRQVs9HLV1gBR6y4TVszJU6VfScDqW1nbApS
- +Urc1ZNB5+HsRD4J00yCIWzf1ROkMN8ufzKkr8FJUO0lBO32dAyA+hNUCEVv+HC/bZMV
- Ywnjki94CJ4bKksl9UMqiHbw+BSKAT2EEa5h0Xo7gDxA7rIWIS0Cxjhm393Z/Ai6eXvq
- 7h08R9JztYtItuArw3TlqLASq9bji1h94oxSPjgZhlD8Yw/1EV68tIKY5xigVIg0gko+
- vTD5CV3zuOLMNf+c5U0pQF5NHcMRAp0fPPRaRDACJOPXy4gwJiS9vzhvkSkWBT1Nd3+4
- 6AcQ==
-X-Gm-Message-State: APjAAAVRoOKhbV65df5W8e1+i22sQZw/3RoOcDq0A1yznabWtfEixAPJ
- +TrYkS4n3xwdma74yh4b7GiCXw==
-X-Google-Smtp-Source: APXvYqy38uKd8VmnBen9hFXQxvk0j0GYq4h83Htd1vNyCXJhBgpeD8RsBQrvhqjAymF9cy+J3yvh8g==
-X-Received: by 2002:a17:90a:9306:: with SMTP id
- p6mr19281294pjo.68.1570825073251; 
- Fri, 11 Oct 2019 13:17:53 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id z13sm11344787pfg.172.2019.10.11.13.17.52
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 11 Oct 2019 13:17:52 -0700 (PDT)
-Date: Fri, 11 Oct 2019 14:17:50 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Leo Yan <leo.yan@linaro.org>
-Subject: Re: [PATCH v3 6/6] perf cs-etm: Synchronize instruction sample with
- the thread stack
-Message-ID: <20191011201750.GD13688@xps15>
-References: <20191005091614.11635-1-leo.yan@linaro.org>
- <20191005091614.11635-7-leo.yan@linaro.org>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=LG3n9bP9kGhQ7SFk9OxCo0gPqdU2gHnkRjsbnMNvlpY=;
+ b=c1uTi34pE7eRjKu3GsS3FWs214RhU17FWMoG4X/2vTRuh+UbPG8FfrFL0eseNsTRl9
+ 1FM4vu2AW6IFOQnOjHZPPEC2bGznH9PLOGTRQkrOfVEUedy3lXIklwzYpVBuJtVP0WRz
+ zNamW3c0avticA1yBcaAVyZOW8S9zlQZGEUFP00A1bJFLmWmDM1vMy0yov/lKKMdf1bl
+ 7Nl7OzvXOgS53it44gn22coWttKTWp7S6j17dW+kaTJ/z8x0zUIpGfmDp8f6lrmjHcrD
+ sTchmBMCTqJFb/29VT7rUHOJ4W8eVpvfRRoOCRR4lgHkZCjIMWAEE0nsshtxZo6sHgJH
+ j46A==
+X-Gm-Message-State: APjAAAWuodNtaBToV/SEQiu62Gvs8/xk0y0mhFOF4nAgKeonoulwipY2
+ Dk5ylaTLUNIKfTfJd8EBKQ==
+X-Google-Smtp-Source: APXvYqzBEVoefm0CTUlolawtZvE6I4DhOB8xVnHB4RcOwNng51oNe+T3twGd+mg4euQzW/lVWuwUFA==
+X-Received: by 2002:a7b:c387:: with SMTP id s7mr4391784wmj.110.1570828628423; 
+ Fri, 11 Oct 2019 14:17:08 -0700 (PDT)
+Received: from ninjahub.lan (host-2-102-13-201.as13285.net. [2.102.13.201])
+ by smtp.googlemail.com with ESMTPSA id u2sm3265117wml.44.2019.10.11.14.17.07
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 11 Oct 2019 14:17:07 -0700 (PDT)
+From: Jules Irenge <jbi.octave@gmail.com>
+To: outreachy-kernel@googlegroups.com
+Subject: [PATCH] staging: vc04_services: fix warnings of lines should not end
+ with open parenthesis
+Date: Fri, 11 Oct 2019 22:16:37 +0100
+Message-Id: <20191011211637.19311-1-jbi.octave@gmail.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191005091614.11635-7-leo.yan@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_131754_311098_A375E3A0 
-X-CRM114-Status: GOOD (  22.35  )
+X-CRM114-CacheID: sfid-20191011_141714_817870_88BA523B 
+X-CRM114-Status: GOOD (  10.06  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jbi.octave[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -100,103 +95,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Coresight ML <coresight@lists.linaro.org>, linux-kernel@vger.kernel.org,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- Peter Zijlstra <peterz@infradead.org>, Ingo Molnar <mingo@redhat.com>,
- Namhyung Kim <namhyung@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
+Cc: devel@driverdev.osuosl.org, Jules Irenge <jbi.octave@gmail.com>,
+ f.fainelli@gmail.com, sbranden@broadcom.com, mchehab+samsung@kernel.org,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, eric@anholt.net,
+ daniela.mormocea@gmail.com, bcm-kernel-feedback-list@broadcom.com,
+ wahrenst@gmx.net, dave.stevenson@raspberrypi.org, rjui@broadcom.com,
+ hverkuil-cisco@xs4all.nl, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Oct 05, 2019 at 05:16:14PM +0800, Leo Yan wrote:
-> The synthesized flow use 'tidq->packet' for instruction samples; on the
-> other hand, 'tidp->prev_packet' is used to generate the thread stack and
-> the branch samples, this results in the instruction samples using one
-> packet ahead than thread stack and branch samples ('tidp->prev_packet'
-> vs 'tidq->packet').
-> 
-> This leads to an instruction's callchain error as shows in below
-> example:
-> 
->   main  1579        100      instructions:
->   	ffff000010214854 perf_event_update_userpage+0x4c ([kernel.kallsyms])
->   	ffff000010214850 perf_event_update_userpage+0x48 ([kernel.kallsyms])
->   	ffff000010219360 perf_swevent_add+0x88 ([kernel.kallsyms])
->   	ffff0000102135f4 event_sched_in.isra.57+0xbc ([kernel.kallsyms])
->   	ffff0000102137a0 group_sched_in+0x60 ([kernel.kallsyms])
->   	ffff000010213b84 flexible_sched_in+0xfc ([kernel.kallsyms])
->   	ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
-> 
-> In the callchain log, for the two continuous lines the up line contains
-> one child function info and the followed line contains the caller
-> function info, and so forth.  So the first two lines are:
-> 
->   perf_event_update_userpage+0x4c  => the sampled instruction
->   perf_event_update_userpage+0x48  => the parent function's calling
-> 
-> The child function and parent function both are the same function
-> perf_event_update_userpage(), but this isn't a recursive function, thus
-> the sequence for perf_event_update_userpage() calling itself shouldn't
-> never happen.  This callchain error is caused by the instruction sample
-> using an ahead packet than the thread stack, the thread stack is deferred
-> to process the new packet and misses to pop stack if it is just a return
-> packet.
-> 
-> To fix this issue, we can simply change to use 'tidq->prev_packet' to
-> generate the instruction samples, this allows the thread stack to push
-> and pop synchronously with instruction sample.  Finally, the callchain
-> can be displayed correctly as below:
-> 
->   main  1579        100      instructions:
-> 	ffff000010214854 perf_event_update_userpage+0x4c ([kernel.kallsyms])
-> 	ffff000010219360 perf_swevent_add+0x88 ([kernel.kallsyms])
-> 	ffff0000102135f4 event_sched_in.isra.57+0xbc ([kernel.kallsyms])
-> 	ffff0000102137a0 group_sched_in+0x60 ([kernel.kallsyms])
-> 	ffff000010213b84 flexible_sched_in+0xfc ([kernel.kallsyms])
-> 	ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
-> 
-> Signed-off-by: Leo Yan <leo.yan@linaro.org>
-> ---
->  tools/perf/util/cs-etm.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
-> 
-> diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-> index 56e501cd2f5f..fa969dcb45d2 100644
-> --- a/tools/perf/util/cs-etm.c
-> +++ b/tools/perf/util/cs-etm.c
-> @@ -1419,7 +1419,7 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
->  	struct cs_etm_packet *tmp;
->  	int ret;
->  	u8 trace_chan_id = tidq->trace_chan_id;
-> -	u64 instrs_executed = tidq->packet->instr_count;
-> +	u64 instrs_executed = tidq->prev_packet->instr_count;
->  
->  	tidq->period_instructions += instrs_executed;
->  
-> @@ -1450,7 +1450,7 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
->  		 */
->  		s64 offset = (instrs_executed - instrs_over - 1);
->  		u64 addr = cs_etm__instr_addr(etmq, trace_chan_id,
-> -					      tidq->packet, offset);
-> +					      tidq->prev_packet, offset);
+Fix warning of lines should not end with open parenthesis.
+Issue detected by checkpatch tool.
 
-I have tested this set in --per-thread mode and things are working as
-advertised. Did you see how things look like in CPU-wide scenarios?
+Signed-off-by: Jules Irenge <jbi.octave@gmail.com>
+---
+ .../bcm2835-camera/bcm2835-camera.c           | 38 ++++++++-----------
+ 1 file changed, 16 insertions(+), 22 deletions(-)
 
-Thanks,
-Mathieu
+diff --git a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
+index d4d1e44b16b2..c7bb6e3f529c 100644
+--- a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
++++ b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
+@@ -337,9 +337,8 @@ static void buffer_cb(struct vchiq_mmal_instance *instance,
+ 			if (is_capturing(dev)) {
+ 				v4l2_dbg(1, bcm2835_v4l2_debug, &dev->v4l2_dev,
+ 					 "Grab another frame");
+-				vchiq_mmal_port_parameter_set(
+-					instance,
+-					dev->capture.camera_port,
++			vchiq_mmal_port_parameter_set(instance,
++						      dev->capture.camera_port,
+ 					MMAL_PARAMETER_CAPTURE,
+ 					&dev->capture.frame_count,
+ 					sizeof(dev->capture.frame_count));
+@@ -392,9 +391,8 @@ static void buffer_cb(struct vchiq_mmal_instance *instance,
+ 	    is_capturing(dev)) {
+ 		v4l2_dbg(1, bcm2835_v4l2_debug, &dev->v4l2_dev,
+ 			 "Grab another frame as buffer has EOS");
+-		vchiq_mmal_port_parameter_set(
+-			instance,
+-			dev->capture.camera_port,
++		vchiq_mmal_port_parameter_set(instance,
++					      dev->capture.camera_port,
+ 			MMAL_PARAMETER_CAPTURE,
+ 			&dev->capture.frame_count,
+ 			sizeof(dev->capture.frame_count));
+@@ -1124,9 +1122,8 @@ static int mmal_setup_components(struct bm2835_mmal_dev *dev,
+ 					  dev->capture.timeperframe.numerator;
+ 		ret = vchiq_mmal_port_set_format(dev->instance, preview_port);
+ 		if (overlay_enabled) {
+-			ret = vchiq_mmal_port_connect_tunnel(
+-				dev->instance,
+-				preview_port,
++			ret = vchiq_mmal_port_connect_tunnel(dev->instance,
++							     preview_port,
+ 				&dev->component[COMP_PREVIEW]->input[0]);
+ 			if (!ret)
+ 				ret = vchiq_mmal_port_enable(dev->instance,
+@@ -1154,9 +1151,8 @@ static int mmal_setup_components(struct bm2835_mmal_dev *dev,
+ 			    camera_port->recommended_buffer.num;
+ 
+ 			ret =
+-			    vchiq_mmal_port_connect_tunnel(
+-					dev->instance,
+-					camera_port,
++			    vchiq_mmal_port_connect_tunnel(dev->instance,
++							   camera_port,
+ 					&encode_component->input[0]);
+ 			if (ret) {
+ 				v4l2_dbg(1, bcm2835_v4l2_debug,
+@@ -1655,8 +1651,8 @@ static int mmal_init(struct bm2835_mmal_dev *dev)
+ 	dev->capture.enc_level = V4L2_MPEG_VIDEO_H264_LEVEL_4_0;
+ 
+ 	/* get the preview component ready */
+-	ret = vchiq_mmal_component_init(
+-			dev->instance, "ril.video_render",
++	ret = vchiq_mmal_component_init(dev->instance,
++					"ril.video_render",
+ 			&dev->component[COMP_PREVIEW]);
+ 	if (ret < 0)
+ 		goto unreg_camera;
+@@ -1669,8 +1665,8 @@ static int mmal_init(struct bm2835_mmal_dev *dev)
+ 	}
+ 
+ 	/* get the image encoder component ready */
+-	ret = vchiq_mmal_component_init(
+-		dev->instance, "ril.image_encode",
++	ret = vchiq_mmal_component_init(dev->instance,
++					"ril.image_encode",
+ 		&dev->component[COMP_IMAGE_ENCODE]);
+ 	if (ret < 0)
+ 		goto unreg_preview;
+@@ -1731,15 +1727,13 @@ static int mmal_init(struct bm2835_mmal_dev *dev)
+ 
+ unreg_vid_encoder:
+ 	pr_err("Cleanup: Destroy video encoder\n");
+-	vchiq_mmal_component_finalise(
+-		dev->instance,
+-		dev->component[COMP_VIDEO_ENCODE]);
++	vchiq_mmal_component_finalise(dev->instance,
++				      dev->component[COMP_VIDEO_ENCODE]);
+ 
+ unreg_image_encoder:
+ 	pr_err("Cleanup: Destroy image encoder\n");
+-	vchiq_mmal_component_finalise(
+-		dev->instance,
+-		dev->component[COMP_IMAGE_ENCODE]);
++	vchiq_mmal_component_finalise(dev->instance,
++				      dev->component[COMP_IMAGE_ENCODE]);
+ 
+ unreg_preview:
+ 	pr_err("Cleanup: Destroy video render\n");
+-- 
+2.21.0
 
->  
->  		ret = cs_etm__synth_instruction_sample(
->  			etmq, tidq, addr, etm->instructions_sample_period);
-> -- 
-> 2.17.1
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
