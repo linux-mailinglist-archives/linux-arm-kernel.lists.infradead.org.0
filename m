@@ -2,47 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44844D3CF7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 12:05:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92EA4D3D13
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 12:14:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XFedLyl6SkSIVU6tnR3GM1q4arF2RLGRQwPZZ7j0qx0=; b=GS/ubSMy3TZfYw
-	ObD2MaDP2tBXd1Onvpd+VfHRSHg6E3x0bXJmYlZ99kmmmtCxnMYcUNNuVCAUqOLkF9nYmJJwd1r67
-	CTYMOIHXhOeAL7NNZFhdevsG7XEm8Zki+6F5Q5jiDsEJVYRN4Auu0cyYFclJ/vQrdO7jfMwoyATAz
-	vCTV8G3d38FQvqImedXvG9KLuIXiFwGkciDtrXtYiK3Tu96EuMG1yh6PP2CWIAjxzAYrbvesEHKJE
-	mMbqtFng3iKHPgKqH/sP6NtpfqDFX5BHH9cGrqq8IjCdSoqoFlv2vCrlL+vQNKETm4jw5AfQoPNQl
-	ixT6U+C4kVhW3p8EaWow==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=1TgmaxZ0Oh/KqfpP8xvp+mrEojxiFN/i9JsZc9ZEeMY=; b=tyT
+	7saZpA8dD4tTgFHZIJlmPq/NO9MezRpPRAEXZBhu/Hmr3bBLesYyrNCr8kNm7UYenXsm7WriBmfmK
+	JbARIjIEHUQ1iB5Tl0xBykhNMZcHPRx1qTdt3KD1i2DhqPciGc7MeZDXgblxtwrsuQKRT6BkvDDMP
+	tPuDh+wEPGWklGVoScdBUij2nqMfn4aMqgTeouOgVVBtQu1frJMZJ2xYmK4V/MfU1Eio70/2fxJd3
+	2x1kByVAm2pNVJg15/rymdVVITJ/sksCkQtGLow6MoBILN+Kanhd+b+Jk4b5Wi3Uo9Zp92GguMwr/
+	W1ZYA1G1OJUEvvwI1WupXzbrknRbvBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIro1-0007E4-CR; Fri, 11 Oct 2019 10:05:53 +0000
+	id 1iIrw0-00013e-6j; Fri, 11 Oct 2019 10:14:08 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIrnt-0007DE-Kz
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 10:05:47 +0000
+ id 1iIrvr-00012R-T9
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 10:14:01 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D4EAF337;
- Fri, 11 Oct 2019 03:05:41 -0700 (PDT)
-Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B43803F703;
- Fri, 11 Oct 2019 03:05:40 -0700 (PDT)
-Date: Fri, 11 Oct 2019 11:05:31 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Marek Szyprowski <m.szyprowski@samsung.com>
-Subject: Re: ARM Juno r1 + CONFIG_PROVE_LOCKING=y => boot failure
-Message-ID: <20191011100521.GA5122@bogus>
-References: <CGME20191011092604eucas1p1ca11ab9c4c7508776914b0eb4f35e69b@eucas1p1.samsung.com>
- <33a83dce-e9f0-7814-923b-763d33e70257@samsung.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <33a83dce-e9f0-7814-923b-763d33e70257@samsung.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C6E0A28;
+ Fri, 11 Oct 2019 03:13:58 -0700 (PDT)
+Received: from p8cg001049571a15.blr.arm.com (p8cg001049571a15.blr.arm.com
+ [10.162.41.129])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 78FB23F703;
+ Fri, 11 Oct 2019 03:13:51 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+To: linux-mm@kvack.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, akpm@linux-foundation.org,
+ catalin.marinas@arm.com, will@kernel.org
+Subject: [PATCH V10 0/2] arm64/mm: Enable memory hot remove
+Date: Fri, 11 Oct 2019 15:44:10 +0530
+Message-Id: <1570788852-12402-1-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_030545_731918_6B61D024 
-X-CRM114-Status: GOOD (  15.04  )
+X-CRM114-CacheID: sfid-20191011_031400_029956_91B7F099 
+X-CRM114-Status: GOOD (  16.97  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,51 +59,171 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
- LKML <linux-kernel@vger.kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, ira.weiny@intel.com, david@redhat.com,
+ mgorman@techsingularity.net, steve.capper@arm.com, Robin.Murphy@arm.com,
+ steven.price@arm.com, broonie@kernel.org, cai@lca.pw, ard.biesheuvel@arm.com,
+ cpandya@codeaurora.org, arunks@codeaurora.org, dan.j.williams@intel.com,
+ logang@deltatee.com, valentin.schneider@arm.com, suzuki.poulose@arm.com,
+ osalvador@suse.de
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marek,
+This series enables memory hot remove on arm64 after fixing a possible arm64
+platform specific kernel page table race condition. This series is based on
+linux-next (next-20191011).
 
-On Fri, Oct 11, 2019 at 11:26:04AM +0200, Marek Szyprowski wrote:
-> Hi
->
-> Recently I've got access to ARM Juno R1 board and did some tests with
-> current mainline kernel on it. I'm a bit surprised that enabling
-> CONFIG_PROVE_LOCKING causes a boot failure on this board. After enabling
-> this Kconfig option, I get no single message from the kernel, although I
-> have earlycon enabled.
->
+Concurrent vmalloc() and hot-remove conflict:
 
-I don't have Juno R1 but I tried defconfig + CONFIG_PROVE_LOCKING and
-it boots fine.
+As pointed out earlier on the v5 thread [2] there can be potential conflict
+between concurrent vmalloc() and memory hot-remove operation. The problem here
+is caused by inadequate locking in vmalloc() which protects installation of a
+page table page but not the walk or the leaf entry modification.
 
-So if you disable CONFIG_PROVE_LOCKING(i.e. defconfig) boots fine ?
-Are you using DTB from the mainline ?
+Now free_empty_tables() and it's children functions take into account a maximum
+possible range on which it operates as a floor-ceiling boundary. This makes sure
+that no page table page is freed unless its fully within the maximum possible
+range as decided by the caller.
 
-> I've did my test with default defconfig and current linux-next,
-> v5.4-rc1, v5.3 and v4.19. In all cases the result is the same. I'm
-> booting kernel using a precompiled uboot from Linaro release and TFTP
-> download.
->
+Testing:
 
-OK, I use UEFI+GRUB but I don't think that should cause any issue.
+Memory hot remove has been tested on arm64 for 4K, 16K, 64K page config
+options with all possible CONFIG_ARM64_VA_BITS and CONFIG_PGTABLE_LEVELS
+combinations.
 
-> Is this a known issue? Other ARM64 boards I have access to (Samsung TM2e
-> and RaspberryPi3) boots fine with the same kernel image.
->
+Changes in V10:
 
-Not that I am aware of. If you could send me the bootlog with defconfig
-I can take a look and see if I get any clue.
+- Perform just single TLBI invalidation for PMD or PUD block mappings per Catalin
+- Added comment in free_empty_pte_table() while validating PTE level clears per Catalin
+- Added comments in free_empty_pxx_table() while checking for non-clear entries per Catalin
 
---
-Regards,
-Sudeep
+Changes in V9: (https://lkml.org/lkml/2019/10/9/131)
+
+- Dropped ACK tags from Steve and David as this series has changed since
+- Dropped WARN(!page) in free_hotplug_page_range() per Matthew Wilcox
+- Replaced pxx_page() with virt_to_page() in free_pxx_table() per Catalin
+- Dropped page and call virt_to_page() in free_hotplug_pgtable_page()
+- Replaced sparse_vmap with free_mapped per Catalin
+- Dropped ternary operators in all unmap_hotplug_pxx_range() per Catalin
+- Collapsed all free_pxx_table() into free_empty_pxx_table() per Catalin
+
+Changes in V8: (https://lkml.org/lkml/2019/9/23/22)
+
+- Dropped the first patch (memblock_[free|remove] reorder) from the series which
+  is no longer needed for arm64 hot-remove enablement and was posted separately
+  as (https://patchwork.kernel.org/patch/11146361/)
+- Dropped vmalloc-vmemmap detection and subsequent skipping of free_empty_tables()
+- Changed free_empty_[pxx]_tables() functions which now accepts a possible maximum
+  floor-ceiling address range on which it operates. Also changed free_pxx_table()
+  functions to check against required alignment as well as maximum floor-ceiling
+  range as another prerequisite before freeing the page table page.
+- Dropped remove_pagetable(), instead call it's constituent functions directly
+
+Changes in V7: (https://lkml.org/lkml/2019/9/3/326)
+
+- vmalloc_vmemmap_overlap gets evaluated early during boot for a given config
+- free_empty_tables() gets conditionally called based on vmalloc_vmemmap_overlap
+
+Changes in V6: (https://lkml.org/lkml/2019/7/15/36)
+
+- Implemented most of the suggestions from Mark Rutland
+- Added <linux/memory_hotplug.h> in ptdump
+- remove_pagetable() now has two distinct passes over the kernel page table
+- First pass unmap_hotplug_range() removes leaf level entries at all level
+- Second pass free_empty_tables() removes empty page table pages
+- Kernel page table lock has been dropped completely
+- vmemmap_free() does not call freee_empty_tables() to avoid conflict with vmalloc()
+- All address range scanning are converted to do {} while() loop
+- Added 'unsigned long end' in __remove_pgd_mapping()
+- Callers need not provide starting pointer argument to free_[pte|pmd|pud]_table() 
+- Drop the starting pointer argument from free_[pte|pmd|pud]_table() functions
+- Fetching pxxp[i] in free_[pte|pmd|pud]_table() is wrapped around in READ_ONCE()
+- free_[pte|pmd|pud]_table() now computes starting pointer inside the function
+- Fixed TLB handling while freeing huge page section mappings at PMD or PUD level
+- Added WARN_ON(!page) in free_hotplug_page_range()
+- Added WARN_ON(![pm|pud]_table(pud|pmd)) when there is no section mapping
+
+- [PATCH 1/3] mm/hotplug: Reorder memblock_[free|remove]() calls in try_remove_memory()
+- Request earlier for separate merger (https://patchwork.kernel.org/patch/10986599/)
+- s/__remove_memory/try_remove_memory in the subject line
+- s/arch_remove_memory/memblock_[free|remove] in the subject line
+- A small change in the commit message as re-order happens now for memblock remove
+  functions not for arch_remove_memory()
+
+Changes in V5: (https://lkml.org/lkml/2019/5/29/218)
+
+- Have some agreement [1] over using memory_hotplug_lock for arm64 ptdump
+- Change 7ba36eccb3f8 ("arm64/mm: Inhibit huge-vmap with ptdump") already merged
+- Dropped the above patch from this series
+- Fixed indentation problem in arch_[add|remove]_memory() as per David
+- Collected all new Acked-by tags
+ 
+Changes in V4: (https://lkml.org/lkml/2019/5/20/19)
+
+- Implemented most of the suggestions from Mark Rutland
+- Interchanged patch [PATCH 2/4] <---> [PATCH 3/4] and updated commit message
+- Moved CONFIG_PGTABLE_LEVELS inside free_[pud|pmd]_table()
+- Used READ_ONCE() in missing instances while accessing page table entries
+- s/p???_present()/p???_none() for checking valid kernel page table entries
+- WARN_ON() when an entry is !p???_none() and !p???_present() at the same time
+- Updated memory hot-remove commit message with additional details as suggested
+- Rebased the series on 5.2-rc1 with hotplug changes from David and Michal Hocko
+- Collected all new Acked-by tags
+
+Changes in V3: (https://lkml.org/lkml/2019/5/14/197)
+ 
+- Implemented most of the suggestions from Mark Rutland for remove_pagetable()
+- Fixed applicable PGTABLE_LEVEL wrappers around pgtable page freeing functions
+- Replaced 'direct' with 'sparse_vmap' in remove_pagetable() with inverted polarity
+- Changed pointer names ('p' at end) and removed tmp from iterations
+- Perform intermediate TLB invalidation while clearing pgtable entries
+- Dropped flush_tlb_kernel_range() in remove_pagetable()
+- Added flush_tlb_kernel_range() in remove_pte_table() instead
+- Renamed page freeing functions for pgtable page and mapped pages
+- Used page range size instead of order while freeing mapped or pgtable pages
+- Removed all PageReserved() handling while freeing mapped or pgtable pages
+- Replaced XXX_index() with XXX_offset() while walking the kernel page table
+- Used READ_ONCE() while fetching individual pgtable entries
+- Taken overall init_mm.page_table_lock instead of just while changing an entry
+- Dropped previously added [pmd|pud]_index() which are not required anymore
+- Added a new patch to protect kernel page table race condition for ptdump
+- Added a new patch from Mark Rutland to prevent huge-vmap with ptdump
+
+Changes in V2: (https://lkml.org/lkml/2019/4/14/5)
+
+- Added all received review and ack tags
+- Split the series from ZONE_DEVICE enablement for better review
+- Moved memblock re-order patch to the front as per Robin Murphy
+- Updated commit message on memblock re-order patch per Michal Hocko
+- Dropped [pmd|pud]_large() definitions
+- Used existing [pmd|pud]_sect() instead of earlier [pmd|pud]_large()
+- Removed __meminit and __ref tags as per Oscar Salvador
+- Dropped unnecessary 'ret' init in arch_add_memory() per Robin Murphy
+- Skipped calling into pgtable_page_dtor() for linear mapping page table
+  pages and updated all relevant functions
+
+Changes in V1: (https://lkml.org/lkml/2019/4/3/28)
+
+References:
+
+[1] https://lkml.org/lkml/2019/5/28/584
+[2] https://lkml.org/lkml/2019/6/11/709
+
+Anshuman Khandual (2):
+  arm64/mm: Hold memory hotplug lock while walking for kernel page table dump
+  arm64/mm: Enable memory hot remove
+
+ arch/arm64/Kconfig              |   3 +
+ arch/arm64/include/asm/memory.h |   1 +
+ arch/arm64/mm/mmu.c             | 303 ++++++++++++++++++++++++++++++++++++++--
+ arch/arm64/mm/ptdump_debugfs.c  |   4 +
+ 4 files changed, 302 insertions(+), 9 deletions(-)
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
