@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E827D3596
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 02:13:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC3D2D35A8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 02:15:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,66 +11,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=9dsSs8HTCxMjNBnbaFsGfz3ypmW+7+8t8a6R0/rYhRo=; b=LOGs2yBdMXQ+UrRaDYQMVxTPMZ
-	s17PJoBgGXK9amRIOzuJZyC9DRE+uGIFj6c1cDrTL/gG28eZeFReEyPtY6Mp+23FZsZvoJeSnlfdz
-	+rdm7O5TQCOQLY9g2rZ7I2tP2NME7fN9qEivPi3WrD0GlRBveJWC488JAbKcB2orbnVHmNOag9hLN
-	dY04keVmvpL24dpyYT0fFJnkRvqIXv7b7zbfDpXm/TGxZ41hgedN2899kuCkywmXWWnaaEOQrjhxB
-	LHX96ug87YokxQNLcJ9NjllIEh5kp7CT18g2tBGZIU8xx1o8sGOsdcmKnF5SRfgltQuQpBpWYpUpF
-	xc9/EnBw==;
+	bh=JxgXuscmNjUx+3W4Kt8O3fBFelUfO6Yk8d6Cjaqy1UI=; b=J9HRIz0A0+kLab9F2gopqnnPqh
+	Cxw3ksyeIGYKMveVzAbi6XFyUw7KzsduFXCQJ3u7Q4mvYBhv2QmK5oVhiODaEL8hCGgy5DmKbIz9k
+	+OeWaR2vgwxWIFgKkofozTtEsLVtOYadaRoKRsCRkS9mnhF7bwoozNhBuK75RIHgCCnEverPBMjLS
+	FRBpglI1aFxQ2fb4vDht6DvSckQvPJNTEjfrNJ4EPIXLFPHuFQ5y/xiAI9d4OwGDyuX069f5OpBjG
+	RqgUiQXhZMwC/uVG00ZoVUQLe4Ef2yI7Fg0NQxC3Q/WqSRs77Pjl/ML6pKLLgvGY8C58YRRnwi/B1
+	eb3HPsNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIiYu-00024t-6S; Fri, 11 Oct 2019 00:13:40 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iIiax-0005Bb-AD; Fri, 11 Oct 2019 00:15:47 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIiYA-0001Xu-U8
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 00:12:56 +0000
-Received: by mail-pg1-x541.google.com with SMTP id i76so4712574pgc.0
+ id 1iIiYJ-0001hX-CI
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 00:13:05 +0000
+Received: by mail-pf1-x444.google.com with SMTP id q10so4967623pfl.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 10 Oct 2019 17:12:54 -0700 (PDT)
+ Thu, 10 Oct 2019 17:13:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=MdMMErkL0TaCB+AMS9GPl9j3KdOjHrVPYKwcXQnru9o=;
- b=H+PGC98bol8nQLCHGKVMnumPCpE3rZsdeAzu/63Zl+MVbbl4Sn0Xj0/MJ8+SrojoRq
- PDLZ+DEdfwhU0nbRPNgAZmDKGI8JIpf0k65nc/pgyy9bqCoX2oIyxBmx8SkXP421+0dD
- CN9qS2yDtmYN+7Q+QtAoazHu9DvsNkSQPOn/k=
+ bh=OvLPSIr20MO1GrkJ0OvwvGngd4/e51+GSaoElj9X+Gc=;
+ b=Vo/YkX68H3JSVeYxOg0wgKZHM0DDpLq1uGIDRlC9At7IoYDSFTbfrL3kzgv//JSf1l
+ wfMMq2ZZ1sw3ulG7OB/Al6Lb7yhUEHFwVbMy0hx6CDWOUEDVNEPAVOGo2TBJff56wZsX
+ 1wJpR43jEKVUBiVd5MS1y8q4VLWL+t/un7fCg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=MdMMErkL0TaCB+AMS9GPl9j3KdOjHrVPYKwcXQnru9o=;
- b=AyTrBLeEP0GNDnL0h2vDxfAnrCb/IKKqIYIL6rR+yf3sq5uHGqIBw/SCnxLU/Pc/PZ
- yqIFl94CdotkuG7WZtcPaCsfwnn+1XiDamp6aoE7WSnrB9Ize5gU8G6GVUTwU0+XMLN0
- UVdafZXFGO4SsLG7JjyrI68h1qLFxUQ4EeT/uYEF1qCdXE4PmyKrw4Sa0tUm5LJhO9Fm
- LgjYujFVxeFEWR0zmZcDJ4AEsh+fbGctYnSgjeUu9gwXzsdSxSezLvvSKgkE3VlUiw17
- gt+nhYZkb4Ocsyz3GlmGpNEVrqfotbksTPEd9hA0F1MRJQ432RC28npyoW7DOJ6qMFjl
- M9rg==
-X-Gm-Message-State: APjAAAUvDRWSAD4EFmnS6mk4gVkqz2M/V1zQWTXurj/1VXet/UMpUb1M
- C5huynT0T1JCVoT8J62xyy2UpA==
-X-Google-Smtp-Source: APXvYqxGtnvXMUJ3pY0jopkR+VKX/LuW1ntTFWY/1XeIzuIP03PlTUnb++z5MjVk9/9/m40WTFaCbw==
-X-Received: by 2002:a63:1201:: with SMTP id h1mr14569419pgl.340.1570752774490; 
- Thu, 10 Oct 2019 17:12:54 -0700 (PDT)
+ bh=OvLPSIr20MO1GrkJ0OvwvGngd4/e51+GSaoElj9X+Gc=;
+ b=FbJg5ODzWqTtBZAY8we5AFzFm9efH3s8QakzdGrOlHGnY6yp2BbfT9YUo213I34t5f
+ kmxNkxiDpBwERQBpiSMJDPD0s7L7viKITTpkOYrPAIsqEoFxg8+Nt0iFORO+Ug4j30z4
+ EYCpa08mVdJTHbXrR4ce6RzwR7h44ljpelBOuZHk4eAv86p07c3/dXCDdSPBfj6qJU+f
+ 24EmX0hkOUUIfjbZn1m7Sb9kmSeycO2WxQLGKIP3US4d8TRsDIX0D9tEpzolsfiu6KYY
+ 1/pkyhvanY+vHpb52EI3+5QyrfrJGjXWGbeP1uPVCaKKE9/Ug+Se7fTQamn2koXlKntB
+ e0vw==
+X-Gm-Message-State: APjAAAVkZSAgj0bfZ1MZm5Wk0eQ3F1FPCMZOnla5MZ9263e2viKin7P8
+ 4tAG8LnW/P77oLQEVGH/i9MhAQ==
+X-Google-Smtp-Source: APXvYqwcXL9IUcA1NwWjkBG6ihgZ1mTQNQKZY+myfeizvcbcy9RQ9+vXBtLYoNyG3c9FkCNmz89Vqw==
+X-Received: by 2002:a63:4383:: with SMTP id
+ q125mr13830250pga.373.1570752781928; 
+ Thu, 10 Oct 2019 17:13:01 -0700 (PDT)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id l22sm6398506pgj.4.2019.10.10.17.12.52
+ by smtp.gmail.com with ESMTPSA id v68sm8097683pfv.47.2019.10.10.17.12.55
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 10 Oct 2019 17:12:52 -0700 (PDT)
+ Thu, 10 Oct 2019 17:12:56 -0700 (PDT)
 From: Kees Cook <keescook@chromium.org>
 To: Borislav Petkov <bp@alien8.de>
-Subject: [PATCH v2 23/29] parisc: Move EXCEPTION_TABLE to RO_DATA segment
-Date: Thu, 10 Oct 2019 17:06:03 -0700
-Message-Id: <20191011000609.29728-24-keescook@chromium.org>
+Subject: [PATCH v2 24/29] powerpc: Move EXCEPTION_TABLE to RO_DATA segment
+Date: Thu, 10 Oct 2019 17:06:04 -0700
+Message-Id: <20191011000609.29728-25-keescook@chromium.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191011000609.29728-1-keescook@chromium.org>
 References: <20191011000609.29728-1-keescook@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_171254_966207_BE5473ED 
-X-CRM114-Status: GOOD (  11.58  )
+X-CRM114-CacheID: sfid-20191010_171303_473348_BD4EB695 
+X-CRM114-Status: GOOD (  12.12  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -114,31 +115,29 @@ Since the EXCEPTION_TABLE is read-only, collapse it into RO_DATA.
 
 Signed-off-by: Kees Cook <keescook@chromium.org>
 ---
- arch/parisc/kernel/vmlinux.lds.S | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ arch/powerpc/kernel/vmlinux.lds.S | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/parisc/kernel/vmlinux.lds.S b/arch/parisc/kernel/vmlinux.lds.S
-index 12b3d7d5e9e4..53e29d88f99c 100644
---- a/arch/parisc/kernel/vmlinux.lds.S
-+++ b/arch/parisc/kernel/vmlinux.lds.S
-@@ -19,6 +19,7 @@
- 				*(.data..vm0.pte)
+diff --git a/arch/powerpc/kernel/vmlinux.lds.S b/arch/powerpc/kernel/vmlinux.lds.S
+index 4e7cec088c8b..8834220036a5 100644
+--- a/arch/powerpc/kernel/vmlinux.lds.S
++++ b/arch/powerpc/kernel/vmlinux.lds.S
+@@ -7,6 +7,7 @@
  
- #define CC_USING_PATCHABLE_FUNCTION_ENTRY
-+#define RO_EXCEPTION_TABLE_ALIGN	8
+ #define BSS_FIRST_SECTIONS *(.bss.prominit)
+ #define EMITS_PT_NOTE
++#define RO_EXCEPTION_TABLE_ALIGN	0
  
+ #include <asm/page.h>
  #include <asm-generic/vmlinux.lds.h>
+@@ -162,7 +163,6 @@ SECTIONS
+ 		__stop__btb_flush_fixup = .;
+ 	}
+ #endif
+-	EXCEPTION_TABLE(0)
  
-@@ -129,9 +130,6 @@ SECTIONS
- 
- 	RO_DATA(8)
- 
--	/* RO because of BUILDTIME_EXTABLE_SORT */
--	EXCEPTION_TABLE(8)
--
- 	/* unwind info */
- 	.PARISC.unwind : {
- 		__start___unwind = .;
+ /*
+  * Init sections discarded at runtime
 -- 
 2.17.1
 
