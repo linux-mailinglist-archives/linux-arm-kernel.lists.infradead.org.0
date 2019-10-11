@@ -2,123 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A78BBD40CF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 15:15:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAAEBD40E2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 15:18:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GGdhsYsFB1T1qKVJapl2uFVwKKNPeeuaTmfj6yZuhGE=; b=SGSD+LabdtP/lG
-	g+lo31Ty10fOp1nFJSGcSV4qaOAQ/byvG/0oBd43bnuuDwakIMlrUP56NED6q76UFD91s5o7gKwoF
-	cqMpzU6f218yJEXtjJI2h9wL1L1nLtL0m2onIPeOluPRe9aAmUpJKiyR4Z94ppbwhiFVSV5A2i+mZ
-	80fLE6yTdsIMPpTHO9ELbfkdr4P9jEFdTZR7eJ/kFgGbXSYmKN0NGcSz3ItRTJfNoGbx1noLCXzXV
-	LuGt+L8pF6sR0ZKnVJV9dbRjgLvYCqDWeejSttV168bWNB3V3eM2n5vyDUrhOGPbt28ZQ+etHajae
-	jMll8hdaLm0XoZ5rOsUw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ihj3RR2cQFwKNSPMKD+cHDk+jVp6r0ErAgWqetpbSR4=; b=fGqelCnPhANhOLRvh2/HYtK1F
+	UdZ6C+cIBuOH17+Jphk29e3y5cOY6fBvOjJZgCEx5W5g32gaw6O7azPd8iD1yY/HbG1HwOethJJ2u
+	NQXOXHbKxWx8Ms+6S5kaZza9U0NyNAduHAbM2xi0Og3jEUNODf45I6F2Rn5vuQVfG7pbPPO2tUwB0
+	JG7Ej5VCOXgYOpXZLXSGQ4nX06LGiL035e2Zdo+q0jTvWynwWRf7CmXOdJS2RvU72/NKuCq1IrbEs
+	ktQy/zrAKCpVhA0m98v8fZggzdIpUecq6PUO8qJQDkw18J6syzRtak/RZZvYAcl8b3nQD8QOKPE83
+	Bz+8AfAUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIulq-0006Ng-Gz; Fri, 11 Oct 2019 13:15:50 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1iIuny-0007Wx-28; Fri, 11 Oct 2019 13:18:02 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIulb-0006M3-Fl
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 13:15:37 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20191011131533euoutp015b0be65f3d1133fabd8674618e231156~Mmgj78-nM2714627146euoutp01v
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 11 Oct 2019 13:15:33 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20191011131533euoutp015b0be65f3d1133fabd8674618e231156~Mmgj78-nM2714627146euoutp01v
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1570799733;
- bh=GguMI2QjBcToBDJHA5HvNypfh1Vjz8JzyzEooSQs1XI=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=M6fIX8rOgnCFM3Jmz/y5s6d+YaBorq+jbjm6XyNbsBg96eT5oFTs7SJiuxnxDkj+E
- y+/wECvyK7Mj+0B8VjSHfq40tcKS71N2q54/phlS/VcAMy337lC1U8nRFHDP8pDeD/
- QhP9JhvJYO33vxGdv/WgJJyge+TmBkyv5j/kBRI4=
-Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20191011131533eucas1p13c19e3c1aa6e9050e33ce8b796d50ed2~MmgjtiSgn0162401624eucas1p1D;
- Fri, 11 Oct 2019 13:15:33 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges2new.samsung.com (EUCPMTA) with SMTP id 1D.1F.04309.57080AD5; Fri, 11
- Oct 2019 14:15:33 +0100 (BST)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20191011131532eucas1p16d4005b62e440e076bdfd5131cd073af~MmgjaerHw0161501615eucas1p1B;
- Fri, 11 Oct 2019 13:15:32 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20191011131532eusmtrp231341720fc6ab008d3afb5ae859a4332~MmgjT_xhO0632606326eusmtrp2p;
- Fri, 11 Oct 2019 13:15:32 +0000 (GMT)
-X-AuditID: cbfec7f4-afbff700000010d5-fd-5da080751e7f
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id AA.70.04117.47080AD5; Fri, 11
- Oct 2019 14:15:32 +0100 (BST)
-Received: from [106.120.51.15] (unknown [106.120.51.15]) by
- eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20191011131532eusmtip1881cdbbf5bfd8dc63ac5edc7a3b30492~Mmgi8cxdg0053300533eusmtip1e;
- Fri, 11 Oct 2019 13:15:32 +0000 (GMT)
-Subject: Re: ARM Juno r1 + CONFIG_PROVE_LOCKING=y => boot failure
-To: Sudeep Holla <sudeep.holla@arm.com>
-From: Marek Szyprowski <m.szyprowski@samsung.com>
-Message-ID: <0b02b15f-38be-7a63-14cc-eabd288782eb@samsung.com>
-Date: Fri, 11 Oct 2019 15:15:32 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iIunh-0007WE-BF; Fri, 11 Oct 2019 13:17:46 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id DB36361A77; Fri, 11 Oct 2019 13:17:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1570799864;
+ bh=ApcidzUpaRnePiIu2HzOkqsyS7w6fPauS8WsJ34U4WE=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=GV4vk4R3opnvjFafz4HVpuYfdP6l2CbY96iUGy1FEqpRbsyPHN+mKQ30L/yQC814e
+ pALgMsm1OLh7oOPcgqV43/b47p1Wkm7IHz4ppq8cI9lOChGVQ9R0ecmYJHb91xDpWg
+ PojnFzxyuUEggn5jBE3RK+85HhuiuoB07cLbuvPg=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED autolearn=no autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ by smtp.codeaurora.org (Postfix) with ESMTP id D8CC660CEC;
+ Fri, 11 Oct 2019 13:17:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1570799860;
+ bh=ApcidzUpaRnePiIu2HzOkqsyS7w6fPauS8WsJ34U4WE=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=KI/k2pT/FxwgM6kFOq8NKcpwtXVF4QTFXdOFrFwDDNaimvmq+jb+a3dEkoLHuAIhM
+ hJuNn/FrDmusw94bBcaz3vmC4NYU5LbAdM0ulx1/scyki9pvdZMoCTUZkqHemy1oZF
+ RhSoQ+CpMrXAPyNX4TNi4hnQoaqgTSmcvmV+s7Yo=
 MIME-Version: 1.0
-In-Reply-To: <20191011131058.GA26061@bogus>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrJKsWRmVeSWpSXmKPExsWy7djP87qlDQtiDVbcYrN4v6yH0eL+vuVM
- FpseX2O1uLxrDpvFgaXtLBZvfr9gt1h+ageLRcsdUwcOjzXz1jB6bFrVyeaxeUm9x+dNcgEs
- UVw2Kak5mWWpRfp2CVwZv9+2sxbM5a24+mc9YwPjc64uRk4OCQETiff9b5hAbCGBFYwST/uS
- uhi5gOwvjBLfNi9ghUh8BnJOycA0dG87ygRRtJxR4uCH41DOW0aJoxc/soBUCQs4SjRMv8UM
- YosIqEssObuFEaSIWWASk0Tv1r9gRWwChhJdb7vYQGxeATuJk69fgtksAqoSS/ZMB2sWFYiV
- uPfjODNEjaDEyZlPwHo5BbQlrv8+yw5iMwvIS2x/O4cZwhaXuPVkPthFEgKb2CXezn/CCnG3
- i8S3P2tYIGxhiVfHt7BD2DIS/3fCNDQzSjw8t5YdwulhlLjcNIMRospa4vDxi0CTOIBWaEqs
- 36UPEXaUmHvwBBNIWEKAT+LGW0GII/gkJm0DeQAkzCvR0SYEUa0mMev4Ori1By9cYp7AqDQL
- yWuzkLwzC8k7sxD2LmBkWcUonlpanJueWmyUl1quV5yYW1yal66XnJ+7iRGYgE7/O/5lB+Ou
- P0mHGAU4GJV4eGfIz48VYk0sK67MPcQowcGsJMK7aNacWCHelMTKqtSi/Pii0pzU4kOM0hws
- SuK81QwPooUE0hNLUrNTUwtSi2CyTBycUg2M69OyNrq2RzEtLp3UYT73/9tJ5zvv9euvlP4v
- /GjBh86FeWunXF+uYH2pkPWzY7ZF6mT2Dfprv7lUi9xXy5Ex/WJ3wS2qc+Ofvaz3NubVLu4+
- YPuoqb2C7V/syfOhuiXujxtXbu+dHhSefT9XxzvM8mV0ZF21XIAs155OAfFJPHf4L2ppz1mp
- xFKckWioxVxUnAgAsfz+NjwDAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrDIsWRmVeSWpSXmKPExsVy+t/xu7olDQtiDX616Fq8X9bDaHF/33Im
- i02Pr7FaXN41h83iwNJ2Fos3v1+wWyw/tYPFouWOqQOHx5p5axg9Nq3qZPPYvKTe4/MmuQCW
- KD2bovzSklSFjPziElulaEMLIz1DSws9IxNLPUNj81grI1MlfTublNSczLLUIn27BL2M32/b
- WQvm8lZc/bOesYHxOVcXIyeHhICJRPe2o0xdjFwcQgJLGSXm3WlnhkjISJyc1sAKYQtL/LnW
- xQZR9JpR4tnM1WAJYQFHiYbpt8AaRATUJZac3cIIUsQsMIVJYvfmblaIju1MEv83z2AEqWIT
- MJToegsyipODV8BO4uTrl2A2i4CqxJI904EmcXCICsRKbNprBlEiKHFy5hMWEJtTQFvi+u+z
- 7CA2s4CZxLzND5khbHmJ7W/nQNniEreezGeawCg0C0n7LCQts5C0zELSsoCRZRWjSGppcW56
- brGRXnFibnFpXrpecn7uJkZgzG079nPLDsaud8GHGAU4GJV4eGfIz48VYk0sK67MPcQowcGs
- JMK7aNacWCHelMTKqtSi/Pii0pzU4kOMpkC/TWSWEk3OB6aDvJJ4Q1NDcwtLQ3Njc2MzCyVx
- 3g6BgzFCAumJJanZqakFqUUwfUwcnFINjFELGr9odc9NfVRydq7p2ifscXuiuGYeVqwwZ/z6
- 0OO95PuOv8pFKzKP7dBQOJGzheHUin+OBk7JWmvFbc1Djr6u1vCX6L2X/lN8lbv7PrsJJ271
- b6w44cNSKvPezaxXxuBleP97/vDyve9EK1dtZjsm88ag3jPU5MKkxiluJ5p7rr00in16WYml
- OCPRUIu5qDgRAB5LqwrPAgAA
-X-CMS-MailID: 20191011131532eucas1p16d4005b62e440e076bdfd5131cd073af
-X-Msg-Generator: CA
-X-RootMTR: 20191011092604eucas1p1ca11ab9c4c7508776914b0eb4f35e69b
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20191011092604eucas1p1ca11ab9c4c7508776914b0eb4f35e69b
-References: <CGME20191011092604eucas1p1ca11ab9c4c7508776914b0eb4f35e69b@eucas1p1.samsung.com>
- <33a83dce-e9f0-7814-923b-763d33e70257@samsung.com>
- <20191011100521.GA5122@bogus> <7655fb41-cd13-0bc4-e656-040e0875bab8@arm.com>
- <2bf88cd2-9c4f-11dc-4b70-f717de891cff@samsung.com>
- <20191011131058.GA26061@bogus>
+Date: Fri, 11 Oct 2019 18:47:39 +0530
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: Relax CPU features sanity checking on heterogeneous architectures
+In-Reply-To: <20191011105010.GA29364@lakrids.cambridge.arm.com>
+References: <b3606e76af42f7ecf65b1bfc2a5ed30a@codeaurora.org>
+ <20191011105010.GA29364@lakrids.cambridge.arm.com>
+X-Priority: 1 (Highest)
+Message-ID: <7910f428bd96834c15fb56262f3c10f8@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.2.5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_061535_732679_1D8B1498 
-X-CRM114-Status: GOOD (  13.83  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191011_061745_432756_55A95E93 
+X-CRM114-Status: GOOD (  20.74  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -127,7 +77,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -139,60 +88,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
- LKML <linux-kernel@vger.kernel.org>, James Morse <james.morse@arm.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: rnayak@codeaurora.org, suzuki.poulose@arm.com, catalin.marinas@arm.com,
+ linux-arm-kernel <linux-arm-kernel-bounces@lists.infradead.org>,
+ linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
+ bjorn.andersson@linaro.org, linux-arm-msm@vger.kernel.org,
+ andrew.murray@arm.com, will@kernel.org, Dave.Martin@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sudeep
+Hi Mark,
 
-On 11.10.2019 15:10, Sudeep Holla wrote:
-> On Fri, Oct 11, 2019 at 03:02:42PM +0200, Marek Szyprowski wrote:
->> Hi James,
->>
->> On 11.10.2019 12:38, James Morse wrote:
->>> Hi guys,
->>>
->>> On 11/10/2019 11:05, Sudeep Holla wrote:
->>>> On Fri, Oct 11, 2019 at 11:26:04AM +0200, Marek Szyprowski wrote:
->>>>> Recently I've got access to ARM Juno R1 board and did some tests with
->>>>> current mainline kernel on it. I'm a bit surprised that enabling
->>>>> CONFIG_PROVE_LOCKING causes a boot failure on this board. After enabling
->>>>> this Kconfig option, I get no single message from the kernel, although I
->>>>> have earlycon enabled.
->>>> I don't have Juno R1 but I tried defconfig + CONFIG_PROVE_LOCKING and
->>>> it boots fine.
->>> I just tried this on my r1, v5.4-rc1 with this configuration worked just fine.
->>>
->>> My cmdline is:
->>> | root=/dev/sda6 loglevel=9 earlycon=pl011,0x7ff80000 hugepagesz=2M hugepages=512
->>> | crashkernel=1G console=ttyAMA0 resume=/dev/sda2 no_console_suspend efi=debug
->>>
->> That is a bit strange. Here is a boot log from v5.4-rc1 with pure
->> defconfig: https://paste.debian.net/1105851/
->>
-> I see from the boot log that both Image.gz and dtb being loaded at the
-> same address 0x82000000, will u-boot uncompress it elsewhere after loading
-> it ? Just for my understanding.
+Thanks a lot for the detailed explanations, I did have a look at all the 
+variations before posting this.
 
-tftp downloads Image.gz to 0x82000000, then decompress it to 
-$kernel_addr to save transfer time
+On 2019-10-11 16:20, Mark Rutland wrote:
+> Hi,
+> 
+> On Fri, Oct 11, 2019 at 11:19:00AM +0530, Sai Prakash Ranjan wrote:
+>> On latest QCOM SoCs like SM8150 and SC7180 with big.LITTLE arch, below
+>> warnings are observed during bootup of big cpu cores.
+> 
+> For reference, which CPUs are in those SoCs?
+> 
 
-my bootcmd is:
+SM8150 is based on Cortex-A55(little cores) and Cortex-A76(big cores). 
+I'm afraid I cannot give details about SC7180 yet.
 
-tftp ${fdt_addr} juno/Image.gz; unzip ${fdt_addr} ${kernel_addr}; tftp 
-${fdt_addr} juno/juno-r1.dtb; booti ${kernel_addr} - ${fdt_addr};
+>> SM8150:
+>> 
+>> [    0.271177] CPU features: SANITY CHECK: Unexpected variation in
+>> SYS_ID_AA64PFR0_EL1. Boot CPU: 0x00000011112222, CPU4: 
+>> 0x00000011111112
+> 
+> The differing fields are EL3, EL2, and EL1: the boot CPU supports
+> AArch64 and AArch32 at those exception levels, while the secondary only
+> supports AArch64.
+> 
+> Do we handle this variation in KVM?
 
+We do not support KVM.
 
-Best regards
+> 
+>> [    0.271184] CPU features: SANITY CHECK: Unexpected variation in
+>> SYS_ID_ISAR4_EL1. Boot CPU: 0x00000000011142, CPU4: 0x00000000010142
+> 
+> The differing field is (AArch32) SMC: present on the boot CPU, but
+> missing on the secondary CPU.
+> 
+> This is mandated to be zero when AArch32 isn' implemented at EL1.
+> 
+
+So this need not be strict?
+
+>> [    0.271189] CPU features: SANITY CHECK: Unexpected variation in
+>> SYS_ID_PFR1_EL1. Boot CPU: 0x00000010011011, CPU4: 0x00000010010000
+> 
+> The differing fields are (AArch32) Virtualization, Security, and
+> ProgMod: all present on the boot CPU, but missing on the secondary
+> CPU.
+> 
+> All mandated to be zero when AArch32 isn' implemented at EL1.
+> 
+
+Same here, this need not be strict?
+
+>> SC7180:
+>> 
+>> [    0.812770] CPU features: SANITY CHECK: Unexpected variation in
+>> SYS_CTR_EL0. Boot CPU: 0x00000084448004, CPU6: 0x0000009444c004
+> 
+> The differing fields are:
+> 
+> * IDC: present only on the secondary CPU. This is a worrying mismatch
+>   because it could mean that required cache maintenance is missed in
+>   some cases. Does the secondary CPU definitely broadcast PoU
+>   maintenance to the boot CPU that requires it?
+> 
+
+I will get some more details from internal cpu team about this one.
+
+> * L1Ip: VIPT on the boot CPU, PIPT on the secondary CPU.
+> 
+>> [    0.812838] CPU features: SANITY CHECK: Unexpected variation in
+>> SYS_ID_AA64MMFR2_EL1. Boot CPU: 0x00000000001011, CPU6: 
+>> 0x00000000000011
+> 
+> The differing field is IESB: presend on the boot CPU, missing on the
+> secondary CPU.
+> 
+>> [    0.812876] CPU features: SANITY CHECK: Unexpected variation in
+>> SYS_ID_AA64PFR0_EL1. Boot CPU: 0x00000011112222, CPU6:
+> 0x1100000011111112
+>> [    0.812924] CPU features: SANITY CHECK: Unexpected variation in
+>> SYS_ID_ISAR4_EL1. Boot CPU: 0x00000000011142, CPU6: 0x00000000010142
+>> [    0.812950] CPU features: SANITY CHECK: Unexpected variation in
+>> SYS_ID_PFR0_EL1. Boot CPU: 0x00000010000131, CPU6: 0x00000010010131
+>> [    0.812977] CPU features: SANITY CHECK: Unexpected variation in
+>> SYS_ID_PFR1_EL1. Boot CPU: 0x00000010011011, CPU6: 0x00000010010000
+> 
+> These are the same story as for SM8150.
+> 
+>> Can we relax some sanity checking for these by making it FTR_NONSTRICT
+> or by
+>> some other means? I just tried below roughly for SM8150 but I guess 
+>> this
+> is
+>> not correct,
+>> maybe for ftr_generic_32bits we should be checking bootcpu and nonboot
+> cpu
+>> partnum(to identify big.LITTLE) and then make it nonstrict?
+>> These are all my wild assumptions, please correct me if I am wrong.
+> 
+> Before we make any changes, we need to check whether we do actually
+> handle this variation in a safe way, and we need to consider what this
+> means w.r.t. late CPU hotplug.
+> 
+> Even if we can handle variation at boot time, once we've determined the
+> set of system-wide features we cannot allow those to regress, and I
+> believe we'll need new code to enforce that. I don't think it's
+> sufficient to mark these as NONSTRICT, though we might do that with
+> other changes.
+> 
+> We shouldn't look at the part number at all here. We care about
+> variation across CPUs regardless of whether this is big.LITTLE or some
+> variation in tie-offs, etc.
+> 
+
+Thanks,
+Sai
+
 -- 
-Marek Szyprowski, PhD
-Samsung R&D Institute Poland
-
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
+member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
