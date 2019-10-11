@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8CA4D3D89
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 12:38:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84E08D3D8E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 12:39:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T5ybb4GdShV90ynAazCN8VtS47aEIpPbYJGMTNON5xI=; b=VKf2tQphT7t1DG
-	E/MlknYq+ijnHmueTbfVmE1MTfkFVbQquCwVJgBY4bwFCn26CiYNzIy9l4gpnilD+WXV7BQDSYsWi
-	U0b9UPL63zQOYDm2HxszGZbLc4HpVe1z7ex9UTTEEu42IZmlHIqE0BzsmitpKnTjk76eQ8snPgKMw
-	MXUU0M4i6A4n7MYcjQCegnbdshsVZFnIwsaGHEnH73MtBO9LbbGwHlo2PDGDVE84T3y4ZIyGGxHJ7
-	jTeAQFeRWTCW9ZC4rkKdUOdwkOSkVi5S56AxEUdG1tT8H53wA/5YD5bJV+CwQob0l+tB4yDfOTUYw
-	foUmIr4J1qxf4G/cDw4Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YPFdMxa8+hZsPPkY17JC4ngKdjGagSU1mlbZBy6ZpgA=; b=uzGmsfRhzuOjuk
+	vO3PKFJwX+2k7SkMnIL25rVVWqrU0Ca1Q+fJ2+5+Jb9nxgIOAALQZT4L8riuv7sGKcnuFhM98aoeA
+	j4Ajfd9eM6LY6VGtjBFNNit/p0VEZlokzbX0HXXGAkDvS/dxWEwMSj4rcz5BCySZlbJzCHQEbNaV7
+	mRhwZTFWSHyBs53BwpEp4r2KYobD9H7muKcFVT6G/Pu4IDljZbnCwMvhIkISc5a1ussvrhQG95o1V
+	3jxaezbTEgHqiChZOVIY2AukEtq0jQC5Iu/S3ae5Nkj8ZV44YXMmWYQAxYv0aV6ZMpaG3ru4pDMjI
+	4Y/WK8yQ2vncn+LPOBFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIsJd-0004vU-OQ; Fri, 11 Oct 2019 10:38:33 +0000
+	id 1iIsKJ-0005Bo-F7; Fri, 11 Oct 2019 10:39:15 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIsJR-0004v2-7o
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 10:38:22 +0000
+ id 1iIsK7-0005B8-TW
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 10:39:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 68AA228;
- Fri, 11 Oct 2019 03:38:20 -0700 (PDT)
-Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 288213F703;
- Fri, 11 Oct 2019 03:38:19 -0700 (PDT)
-Subject: Re: ARM Juno r1 + CONFIG_PROVE_LOCKING=y => boot failure
-To: Sudeep Holla <sudeep.holla@arm.com>,
- Marek Szyprowski <m.szyprowski@samsung.com>
-References: <CGME20191011092604eucas1p1ca11ab9c4c7508776914b0eb4f35e69b@eucas1p1.samsung.com>
- <33a83dce-e9f0-7814-923b-763d33e70257@samsung.com>
- <20191011100521.GA5122@bogus>
-From: James Morse <james.morse@arm.com>
-Message-ID: <7655fb41-cd13-0bc4-e656-040e0875bab8@arm.com>
-Date: Fri, 11 Oct 2019 11:38:17 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4536F28;
+ Fri, 11 Oct 2019 03:39:03 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.49])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ E26D63F703; Fri, 11 Oct 2019 03:39:00 -0700 (PDT)
+Date: Fri, 11 Oct 2019 11:38:58 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: "Justin He (Arm Technology China)" <Justin.He@arm.com>
+Subject: Re: [PATCH v11 1/4] arm64: cpufeature: introduce helper
+ cpu_has_hw_af()
+Message-ID: <20191011103857.GB54842@arrakis.emea.arm.com>
+References: <20191009084246.123354-1-justin.he@arm.com>
+ <20191009084246.123354-2-justin.he@arm.com>
+ <20191010164312.GB40923@arrakis.emea.arm.com>
+ <DB7PR08MB3082E71F1FF5FE8462F88B8BF7970@DB7PR08MB3082.eurprd08.prod.outlook.com>
 MIME-Version: 1.0
-In-Reply-To: <20191011100521.GA5122@bogus>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <DB7PR08MB3082E71F1FF5FE8462F88B8BF7970@DB7PR08MB3082.eurprd08.prod.outlook.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_033821_319314_4C90EC83 
-X-CRM114-Status: GOOD (  14.66  )
+X-CRM114-CacheID: sfid-20191011_033903_999642_7722980B 
+X-CRM114-Status: GOOD (  12.37  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,51 +64,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
- LKML <linux-kernel@vger.kernel.org>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <Mark.Rutland@arm.com>,
+ "Kaly Xin \(Arm Technology China\)" <Kaly.Xin@arm.com>,
+ Suzuki Poulose <Suzuki.Poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ "x86@kernel.org" <x86@kernel.org>, "hejianet@gmail.com" <hejianet@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Matthew Wilcox <willy@infradead.org>,
+ "linux-mm@kvack.org" <linux-mm@kvack.org>, James Morse <James.Morse@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, Borislav Petkov <bp@alien8.de>,
+ Thomas Gleixner <tglx@linutronix.de>, nd <nd@arm.com>,
+ Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi guys,
+On Fri, Oct 11, 2019 at 01:16:36AM +0000, Justin He (Arm Technology China) wrote:
+> From: Catalin Marinas <catalin.marinas@arm.com>
+> > On Wed, Oct 09, 2019 at 04:42:43PM +0800, Jia He wrote:
+> > > +		u64 mmfr1 = read_cpuid(ID_AA64MMFR1_EL1);
+> > > +
+> > > +		return !!cpuid_feature_extract_unsigned_field(mmfr1,
+> > > +
+> > 	ID_AA64MMFR1_HADBS_SHIFT);
+> > 
+> > No need for !!, the return type is a bool already.
+> 
+> But cpuid_feature_extract_unsigned_field has the return type "unsigned int" [1]
+> 
+> [1] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/arm64/include/asm/cpufeature.h#n444
 
-On 11/10/2019 11:05, Sudeep Holla wrote:
-> On Fri, Oct 11, 2019 at 11:26:04AM +0200, Marek Szyprowski wrote:
->> Recently I've got access to ARM Juno R1 board and did some tests with
->> current mainline kernel on it. I'm a bit surprised that enabling
->> CONFIG_PROVE_LOCKING causes a boot failure on this board. After enabling
->> this Kconfig option, I get no single message from the kernel, although I
->> have earlycon enabled.
+And the C language gives you the automatic conversion from unsigned int
+to bool without the need for !!. The reason we use !! in some places is
+for converting long to int (not bool) and losing the top 32-bit. See
+commit 84fe6826c28f ("arm64: mm: Add double logical invert to pte
+accessors") for an explanation.
 
-> I don't have Juno R1 but I tried defconfig + CONFIG_PROVE_LOCKING and
-> it boots fine.
-
-I just tried this on my r1, v5.4-rc1 with this configuration worked just fine.
-
-My cmdline is:
-| root=/dev/sda6 loglevel=9 earlycon=pl011,0x7ff80000 hugepagesz=2M hugepages=512
-| crashkernel=1G console=ttyAMA0 resume=/dev/sda2 no_console_suspend efi=debug
-
-
->> I've did my test with default defconfig and current linux-next,
->> v5.4-rc1, v5.3 and v4.19. In all cases the result is the same. I'm
->> booting kernel using a precompiled uboot from Linaro release and TFTP
->> download.
-
-> OK, I use UEFI+GRUB but I don't think that should cause any issue.
-
-... same ... this uboot binary looks like the main difference.
-Is it using u-boots UEFI support? Is it possible to turn that off?
-
-It may that lockdep is just perturbing the size of the binary. It adds an extra 4MB for me.
-
-
-Thanks,
-
-James
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
