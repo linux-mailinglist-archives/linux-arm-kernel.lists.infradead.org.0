@@ -2,86 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B61E3D42FC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 16:34:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E3BAD4304
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 11 Oct 2019 16:37:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qMh8EmxKppfJ2UJZ9juFmzc4YSuoUC8OcC+4ozIQFZM=; b=djkWBsijwYg4JM
-	3aUu85tBJp1RR2Q9IELda7XvvM0VlMwEIZYCrRJ0gxZLZ3LR5VBAh0YGEsEcicHy6NDWwIubyNgs4
-	jXJ/o5ohOi/YHhNS/iePaNhDk4f+06STDHjEp8Xg1V8zunlUWFThO2yXDyWdiVe9KHDjty+bNgmMg
-	iHovyZsilslTEbNUREB+WPj4a59dMxVRegeaZC7nA1lnKoz5LApLZ4NRKoypjxdecV5dicUKyv1b+
-	6UM6x9OXGjeJrWp6hIaegME9WiUj68gGhZ9DcqHpHDh2bGwkX+TLJR9uiPYhmToWpWgHXUebJs0H2
-	GKJu6412bJOqR2amC1KA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=k4R1nobQdHxuGy59nUys3bWQq5IjEEiEnffRLbK0GwU=; b=hhndxIlXXV2oyJ
+	kw4/vsD5XMhrf0s9S8p1yyekxvDXrnOhPqYjWJQElnp4UaM3LHsm4aqxq76Y5KqoV1OpX8DwqvxXn
+	Ujj3wBPcIvndCmzFV1BsAxR/JhluM2CabR6L0GCmMmjISqA2Sm2kfrxL3MZvg0wFthFxUbkfOs3Ye
+	vLhlYeApnrUqCl6COUDlcTUfsayIk8PY49W0GG0l2+K6aW12K+dQ6KIQ/8NISTfqBbPxuGpHBkfJr
+	83wb+V7wHAdnt+ahgsk8TStwAj2e1tG/mMpeWdi1UAzfi2E9I+3s89GbOoKZ1+klQHXsYxRaK6kP1
+	VcMezsvHecfbybYlJrMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIw0I-0002bq-8Z; Fri, 11 Oct 2019 14:34:50 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1iIw2s-0004Ij-Q8; Fri, 11 Oct 2019 14:37:30 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIw09-0002bL-17
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 14:34:42 +0000
-Received: by mail-ot1-f66.google.com with SMTP id e11so8130787otl.5
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 11 Oct 2019 07:34:40 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=eiwBs2aJ/mxnZiUA2T54VE8T9eC0Arc2KX94A7JP/5U=;
- b=FfPJcqi1+7MjibK2zh6Mf+OFDYR0cB86fyain7x5V0P1ydktnR3pxwH5cIRhquTj3l
- T0fflbD7yRHBeztW1UeQjzUOq+SMvp/AiryxZ9dNMu5wMRQLW+sRUe2I+T4l7vwIRdIG
- nNybJ9N8ZUQG3p4lbLARq+yPihMghaZAHzCSk1D2t3pS3+OKJexDtotqkbR+ZrsiJ4vo
- 2yTzXGb3iue4YG0J8xFD1YSgGel/yDuO8gRoIgZ7jtooLNqUj9eYnjjY7nRnHuQjKCDy
- 6DQTMhp03dE/Kaun/6J5AoIRETjXaG51jqiWcYow20jNlABGIRPWh+m/mNCYKt9cIJIl
- eHvg==
-X-Gm-Message-State: APjAAAV9JHUDIo4E0powddrCQTuRwEGZ/6ejg/o25xqlwqb6puFpvHOM
- F8Ia3VtLOaHbNAUgjvtzeQ==
-X-Google-Smtp-Source: APXvYqwfFLJ2vEbDguubnzCO2vBMLOijjMMqSQQJyn3yDzXCWnF6G0GmEZ9o9LSY6OLxopwzgwi1TA==
-X-Received: by 2002:a05:6830:2001:: with SMTP id
- e1mr12633047otp.69.1570804480323; 
- Fri, 11 Oct 2019 07:34:40 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id k24sm2576532oic.29.2019.10.11.07.34.39
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 11 Oct 2019 07:34:39 -0700 (PDT)
-Date: Fri, 11 Oct 2019 09:34:39 -0500
-From: Rob Herring <robh@kernel.org>
-To: Jernej Skrabec <jernej.skrabec@siol.net>
-Subject: Re: [PATCH v2 2/6] clk: sunxi-ng: h3: Export MBUS clock
-Message-ID: <20191011143439.GA24106@bogus>
-References: <20190929161653.160158-1-jernej.skrabec@siol.net>
- <20190929161653.160158-3-jernej.skrabec@siol.net>
+ id 1iIw2W-00048w-6J
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 14:37:10 +0000
+Received: from dude02.hi.pengutronix.de ([2001:67c:670:100:1d::28]
+ helo=dude02.pengutronix.de.)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1iIw2P-0007EF-Ri; Fri, 11 Oct 2019 16:37:01 +0200
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Shawn Guo <shawnguo@kernel.org>
+Subject: [PATCH 1/3] ARM: dts: imx6qdl: add TQMa6{S,Q,QP} SoM
+Date: Fri, 11 Oct 2019 16:36:49 +0200
+Message-Id: <20191011143651.6424-1-p.zabel@pengutronix.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190929161653.160158-3-jernej.skrabec@siol.net>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::28
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_073441_069047_43445F28 
-X-CRM114-Status: GOOD (  10.89  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191011_073708_389062_BFBDCA1B 
+X-CRM114-Status: GOOD (  14.57  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,28 +61,449 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org, mripard@kernel.org,
- hverkuil@xs4all.nl, wens@csie.org, robh+dt@kernel.org, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, kernel@pengutronix.de,
+ Markus Niebel <Markus.Niebel@tq-group.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 29 Sep 2019 18:16:49 +0200, Jernej Skrabec wrote:
-> MBUS clock will be referenced in MBUS controller node.
->
-> Export it.
->
-> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> ---
->  drivers/clk/sunxi-ng/ccu-sun8i-h3.h      | 4 ----
->  include/dt-bindings/clock/sun8i-h3-ccu.h | 2 +-
->  2 files changed, 1 insertion(+), 5 deletions(-)
->
+From: Markus Niebel <Markus.Niebel@tq-group.com>
 
-Acked-by: Rob Herring <robh@kernel.org>
+Add device trees for TQMa6S, TQMa6Q, and TQMa6QP embedded modules.
+The A and B SoM variants are for hardware revisions that differ in
+how the I2C devices are connected. For details, see [1].
+
+This is a combination of the patches
+  "arm: dt: imx6qdl: add tqma6[qdl] som on mba6 mainboard",
+  "arm: dt: tqma6: add spi with spi nor flash on SOM",
+  "arm: dt: add basic support for tqma6qp on mba6", and
+  "arm: dt: imx6qdl-tqma6: use generic jedec,spi-nor"
+from the TQMa6x BSP, with the MBa6 specific parts removed.
+
+[1] https://support.tq-group.com/en/arm/tqma6x/linux/ptxdist/overview
+
+Signed-off-by: Markus Niebel <Markus.Niebel@tq-group.com>
+[p.zabel@pengutronix.de: merged patches from TQMa6x BSP REV.0114,
+ separated MBa6 DTs, fixed checkpatch and dtbs_check warnings,
+ added no-sd(io) properties to eMMC, added SPDX license identifiers
+ and commit message]
+Signed-off-by: Philipp Zabel <p.zabel@pengutronix.de>
+---
+ arch/arm/boot/dts/imx6dl-tqma6a.dtsi  |  17 +++
+ arch/arm/boot/dts/imx6dl-tqma6b.dtsi  |  17 +++
+ arch/arm/boot/dts/imx6q-tqma6a.dtsi   |  17 +++
+ arch/arm/boot/dts/imx6q-tqma6b.dtsi   |  16 ++
+ arch/arm/boot/dts/imx6qdl-tqma6.dtsi  | 202 ++++++++++++++++++++++++++
+ arch/arm/boot/dts/imx6qdl-tqma6a.dtsi |  29 ++++
+ arch/arm/boot/dts/imx6qdl-tqma6b.dtsi |  29 ++++
+ arch/arm/boot/dts/imx6qp-tqma6b.dtsi  |  17 +++
+ 8 files changed, 344 insertions(+)
+ create mode 100644 arch/arm/boot/dts/imx6dl-tqma6a.dtsi
+ create mode 100644 arch/arm/boot/dts/imx6dl-tqma6b.dtsi
+ create mode 100644 arch/arm/boot/dts/imx6q-tqma6a.dtsi
+ create mode 100644 arch/arm/boot/dts/imx6q-tqma6b.dtsi
+ create mode 100644 arch/arm/boot/dts/imx6qdl-tqma6.dtsi
+ create mode 100644 arch/arm/boot/dts/imx6qdl-tqma6a.dtsi
+ create mode 100644 arch/arm/boot/dts/imx6qdl-tqma6b.dtsi
+ create mode 100644 arch/arm/boot/dts/imx6qp-tqma6b.dtsi
+
+diff --git a/arch/arm/boot/dts/imx6dl-tqma6a.dtsi b/arch/arm/boot/dts/imx6dl-tqma6a.dtsi
+new file mode 100644
+index 000000000000..b45ab3325dc4
+--- /dev/null
++++ b/arch/arm/boot/dts/imx6dl-tqma6a.dtsi
+@@ -0,0 +1,17 @@
++// SPDX-License-Identifier: GPL-2.0-or-later
++/*
++ * Copyright 2013 Sascha Hauer, Pengutronix
++ * Copyright 2013-2017 Markus Niebel <Markus.Niebel@tq-group.com>
++ */
++
++#include "imx6dl.dtsi"
++#include "imx6qdl-tqma6a.dtsi"
++#include "imx6qdl-tqma6.dtsi"
++
++/ {
++	memory@10000000 {
++		device_type = "memory";
++		reg = <0x10000000 0x20000000>;
++	};
++};
++
+diff --git a/arch/arm/boot/dts/imx6dl-tqma6b.dtsi b/arch/arm/boot/dts/imx6dl-tqma6b.dtsi
+new file mode 100644
+index 000000000000..4b0e6b22466a
+--- /dev/null
++++ b/arch/arm/boot/dts/imx6dl-tqma6b.dtsi
+@@ -0,0 +1,17 @@
++// SPDX-License-Identifier: GPL-2.0-or-later
++/*
++ * Copyright 2013 Sascha Hauer, Pengutronix
++ * Copyright 2013-2017 Markus Niebel <Markus.Niebel@tq-group.com>
++ */
++
++#include "imx6dl.dtsi"
++#include "imx6qdl-tqma6b.dtsi"
++#include "imx6qdl-tqma6.dtsi"
++
++/ {
++	memory@10000000 {
++		device_type = "memory";
++		reg = <0x10000000 0x20000000>;
++	};
++};
++
+diff --git a/arch/arm/boot/dts/imx6q-tqma6a.dtsi b/arch/arm/boot/dts/imx6q-tqma6a.dtsi
+new file mode 100644
+index 000000000000..d22eaeda9863
+--- /dev/null
++++ b/arch/arm/boot/dts/imx6q-tqma6a.dtsi
+@@ -0,0 +1,17 @@
++// SPDX-License-Identifier: GPL-2.0-or-later
++/*
++ * Copyright 2013 Sascha Hauer, Pengutronix
++ * Copyright 2013-2017 Markus Niebel <Markus.Niebel@tq-group.com>
++ */
++
++#include "imx6q.dtsi"
++#include "imx6qdl-tqma6a.dtsi"
++#include "imx6qdl-tqma6.dtsi"
++
++/ {
++	memory@10000000 {
++		device_type = "memory";
++		reg = <0x10000000 0x40000000>;
++	};
++};
++
+diff --git a/arch/arm/boot/dts/imx6q-tqma6b.dtsi b/arch/arm/boot/dts/imx6q-tqma6b.dtsi
+new file mode 100644
+index 000000000000..da6d406b5e89
+--- /dev/null
++++ b/arch/arm/boot/dts/imx6q-tqma6b.dtsi
+@@ -0,0 +1,16 @@
++// SPDX-License-Identifier: GPL-2.0-or-later
++/*
++ * Copyright 2013 Sascha Hauer, Pengutronix
++ */
++
++#include "imx6q.dtsi"
++#include "imx6qdl-tqma6b.dtsi"
++#include "imx6qdl-tqma6.dtsi"
++
++/ {
++	memory@10000000 {
++		device_type = "memory";
++		reg = <0x10000000 0x40000000>;
++	};
++};
++
+diff --git a/arch/arm/boot/dts/imx6qdl-tqma6.dtsi b/arch/arm/boot/dts/imx6qdl-tqma6.dtsi
+new file mode 100644
+index 000000000000..c0e2a03624f9
+--- /dev/null
++++ b/arch/arm/boot/dts/imx6qdl-tqma6.dtsi
+@@ -0,0 +1,202 @@
++// SPDX-License-Identifier: GPL-2.0-or-later
++/*
++ * Copyright 2013 Sascha Hauer, Pengutronix
++ * Copyright 2013-2017 Markus Niebel <Markus.Niebel@tq-group.com>
++ */
++
++/ {
++	reg_3p3v: regulator-3p3v {
++		compatible = "regulator-fixed";
++		regulator-name = "supply-3p3v";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		regulator-always-on;
++	};
++};
++
++&ecspi1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_ecspi1>;
++	fsl,spi-num-chipselects = <1>;
++	cs-gpios = <&gpio3 19 0>;
++	status = "okay";
++
++	flash: m25p80@0 {
++		status = "okay";
++		compatible = "jedec,spi-nor";
++		spi-max-frequency = <50000000>;
++		reg = <0>;
++		#address-cells = <1>;
++		#size-cells = <1>;
++		m25p,fast-read;
++	};
++};
++
++&iomuxc {
++	tqma6 {
++		pinctrl_ecspi1: ecspi1grp {
++			fsl,pins = <
++				/* HYS, SPEED = MED, 100k up, DSE = 011, SRE_FAST */
++				MX6QDL_PAD_EIM_D17__ECSPI1_MISO 0x1b099
++				MX6QDL_PAD_EIM_D18__ECSPI1_MOSI 0xb099
++				MX6QDL_PAD_EIM_D16__ECSPI1_SCLK 0xb099
++				 /* eCSPI1 SS1 */
++				MX6QDL_PAD_EIM_D19__GPIO3_IO19 0xb099
++			>;
++		};
++
++		pinctrl_i2c1_tqma6: i2c1-tqma6grp {
++			fsl,pins = <
++				MX6QDL_PAD_CSI0_DAT8__I2C1_SDA 0x4001b899
++				MX6QDL_PAD_CSI0_DAT9__I2C1_SCL 0x4001b899
++			>;
++		};
++
++		pinctrl_i2c3_tqma6: i2c3-tqma6grp {
++			fsl,pins = <
++				MX6QDL_PAD_GPIO_5__I2C3_SCL 0x4001b899
++				MX6QDL_PAD_GPIO_6__I2C3_SDA 0x4001b899
++			>;
++		};
++
++		pinctrl_pmic: pmicgrp {
++			fsl,pins = <
++				MX6QDL_PAD_NANDF_RB0__GPIO6_IO10 0x1b099 /* PMIC irq */
++			>;
++		};
++
++		pinctrl_usdhc3: usdhc3grp {
++			fsl,pins = <
++				MX6QDL_PAD_SD3_CMD__SD3_CMD    0x17059
++				MX6QDL_PAD_SD3_CLK__SD3_CLK    0x10059
++				MX6QDL_PAD_SD3_DAT0__SD3_DATA0 0x17059
++				MX6QDL_PAD_SD3_DAT1__SD3_DATA1 0x17059
++				MX6QDL_PAD_SD3_DAT2__SD3_DATA2 0x17059
++				MX6QDL_PAD_SD3_DAT3__SD3_DATA3 0x17059
++				MX6QDL_PAD_SD3_DAT4__SD3_DATA4 0x17059
++				MX6QDL_PAD_SD3_DAT5__SD3_DATA5 0x17059
++				MX6QDL_PAD_SD3_DAT6__SD3_DATA6 0x17059
++				MX6QDL_PAD_SD3_DAT7__SD3_DATA7 0x17059
++			>;
++		};
++	};
++};
++
++&pmic {
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_pmic>;
++		interrupt-parent = <&gpio6>;
++		interrupts = <10 8>;
++
++		regulators {
++			reg_vddcore: sw1ab {
++				regulator-min-microvolt = <300000>;
++				regulator-max-microvolt = <1875000>;
++				regulator-always-on;
++			};
++
++			reg_vddsoc: sw1c {
++				regulator-min-microvolt = <300000>;
++				regulator-max-microvolt = <1875000>;
++				regulator-always-on;
++			};
++
++			reg_gen_3v3: sw2 {
++				regulator-min-microvolt = <800000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-always-on;
++			};
++
++			reg_ddr_1v5a: sw3a {
++				regulator-min-microvolt = <400000>;
++				regulator-max-microvolt = <1975000>;
++				regulator-always-on;
++			};
++
++			reg_ddr_1v5b: sw3b {
++				regulator-min-microvolt = <400000>;
++				regulator-max-microvolt = <1975000>;
++				regulator-always-on;
++			};
++
++			sw4_reg: sw4 {
++				regulator-min-microvolt = <800000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-always-on;
++			};
++
++			reg_5v_600mA: swbst {
++				regulator-min-microvolt = <5000000>;
++				regulator-max-microvolt = <5150000>;
++				regulator-always-on;
++			};
++
++			reg_snvs_3v: vsnvs {
++				regulator-min-microvolt = <1500000>;
++				regulator-max-microvolt = <3000000>;
++				regulator-always-on;
++			};
++
++			reg_vrefddr: vrefddr {
++				regulator-boot-on;
++				regulator-always-on;
++			};
++
++			reg_vgen1_1v5: vgen1 {
++				regulator-min-microvolt = <800000>;
++				regulator-max-microvolt = <1550000>;
++				/* not used */
++			};
++
++			reg_vgen2_1v2_eth: vgen2 {
++				regulator-min-microvolt = <800000>;
++				regulator-max-microvolt = <1550000>;
++				regulator-always-on;
++			};
++
++			reg_vgen3_2v8: vgen3 {
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-always-on;
++			};
++
++			reg_vgen4_1v8: vgen4 {
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-always-on;
++			};
++
++			reg_vgen5_1v8_eth: vgen5 {
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-always-on;
++			};
++
++			reg_vgen6_3v3: vgen6 {
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-always-on;
++			};
++		};
++};
++
++/* eMMC */
++&usdhc3 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_usdhc3>;
++	vmmc-supply = <&reg_3p3v>;
++	non-removable;
++	disable-wp;
++	no-sd;
++	no-sdio;
++	bus-width = <8>;
++	#address-cells = <1>;
++	#size-cells = <0>;
++	status = "okay";
++
++	mmccard: mmccard@0 {
++		reg = <0>;
++		compatible = "mmc-card";
++		broken-hpi;
++	};
++};
+diff --git a/arch/arm/boot/dts/imx6qdl-tqma6a.dtsi b/arch/arm/boot/dts/imx6qdl-tqma6a.dtsi
+new file mode 100644
+index 000000000000..a31bf04884d2
+--- /dev/null
++++ b/arch/arm/boot/dts/imx6qdl-tqma6a.dtsi
+@@ -0,0 +1,29 @@
++// SPDX-License-Identifier: GPL-2.0-or-later
++/*
++ * Copyright 2013 Sascha Hauer, Pengutronix
++ * Copyright 2013-2017 Markus Niebel <Markus.Niebel@tq-group.com>
++ */
++
++&i2c1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_i2c1_tqma6>;
++	clock-frequency = <100000>;
++	status = "okay";
++
++	pmic: pf0100@8 {
++		compatible = "fsl,pfuze100";
++		reg = <0x08>;
++	};
++
++	sensor0: lm75@48 {
++		compatible = "lm75";
++		reg = <0x48>;
++	};
++
++	eeprom0: m24c64@50 {
++		compatible = "st,24c64", "atmel,24c64";
++		reg = <0x50>;
++		pagesize = <32>;
++	};
++};
++
+diff --git a/arch/arm/boot/dts/imx6qdl-tqma6b.dtsi b/arch/arm/boot/dts/imx6qdl-tqma6b.dtsi
+new file mode 100644
+index 000000000000..9a7c8d21cec2
+--- /dev/null
++++ b/arch/arm/boot/dts/imx6qdl-tqma6b.dtsi
+@@ -0,0 +1,29 @@
++// SPDX-License-Identifier: GPL-2.0-or-later
++/*
++ * Copyright 2013 Sascha Hauer, Pengutronix
++ * Copyright 2013-2017 Markus Niebel <Markus.Niebel@tq-group.com>
++ */
++
++&i2c3 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_i2c3_tqma6>;
++	clock-frequency = <100000>;
++	status = "okay";
++
++	pmic: pf0100@8 {
++		compatible = "fsl,pfuze100";
++		reg = <0x08>;
++	};
++
++	sensor0: lm75@48 {
++		compatible = "lm75";
++		reg = <0x48>;
++	};
++
++	eeprom0: m24c64@50 {
++		compatible = "st,24c64", "atmel,24c64";
++		reg = <0x50>;
++		pagesize = <32>;
++	};
++};
++
+diff --git a/arch/arm/boot/dts/imx6qp-tqma6b.dtsi b/arch/arm/boot/dts/imx6qp-tqma6b.dtsi
+new file mode 100644
+index 000000000000..4e7e7050da43
+--- /dev/null
++++ b/arch/arm/boot/dts/imx6qp-tqma6b.dtsi
+@@ -0,0 +1,17 @@
++// SPDX-License-Identifier: GPL-2.0-or-later
++/*
++ * Copyright 2013 Sascha Hauer, Pengutronix
++ */
++
++#include "imx6q.dtsi"
++#include "imx6qp.dtsi"
++#include "imx6qdl-tqma6b.dtsi"
++#include "imx6qdl-tqma6.dtsi"
++
++/ {
++	memory@10000000 {
++		device_type = "memory";
++		reg = <0x10000000 0x40000000>;
++	};
++};
++
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
