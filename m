@@ -2,86 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9DB6D4B20
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 01:44:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2B1FD4B2F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 01:48:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=aWdtRoLcT7ypMzemLcxw7u51cqwltyeFi2O6MCUh+nQ=; b=ODvKa64Y/a5TsK
-	tbgHS3AGsFb84mXiOs+6NhQ7O65FkoNAiPzY8fzCVMJCzXzXvBXEHnhjfwWYTIJqFi+rJJsVYZyM5
-	5Op5VdM+6F9+3g1Fcwy7+Vd/MetwbhICTDyK+BjLWvh7ROg2pOBtNWwGFvTJ7a5fuupcX4jzYKPr8
-	Of6IwlUx1LcZPiatYDvwR1a75IXvAFfUAh9vMK8ORCnZekfQEVIujDSRzvdURzzOolBOVnmH9wvDH
-	vY14rgtUBTyjZPRKCg0TEtlVaIk3/Cp14VL0WCJs1qT3Y/Fd0s1JWTFCRl7Zn3iLK5UIJjylv7dAk
-	qoemx3+9pesJv9hrHLGw==;
+	List-Owner; bh=XMnfE9td51+11jlHVWI2X4u3zIjCmM+b881Hc324wEI=; b=SKJqjY+Kf/o6D4
+	QwcJukWIkD7aDSlsarz1d0F6MlSwcLnkzGQvwmxIWP4Nd7hucsM5pp9Sc+VljD49Jhe4Iidk9cf9A
+	dfHq5y7enF7EBiXRlOzcgEOSECUKMLXzNoSSgUXdKgZLfeYZFjupfqOfqv5Xzra5s+fnVidHlJ9te
+	4WiTq1flO778TYkUuT2MvIkkNdhK7EPl+3dZj49+KRb6/2IhEt7JoyzU0maz2dPNE9mYcYGc+hHej
+	gcZRg1VoPqnd5QrGFC2UP8sm4Y12Mg97O6B1AST8I7BxGJWt6woQTDcdMb2XMOKSUUdVrBnuTUdI+
+	l7gy/jZf0ZrnDpI6M4xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJ4a0-0008JZ-ST; Fri, 11 Oct 2019 23:44:16 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iJ4eG-0001WR-Ga; Fri, 11 Oct 2019 23:48:40 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJ4Zt-0008J1-LL
- for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 23:44:11 +0000
-Received: by mail-pg1-x543.google.com with SMTP id i32so6635960pgl.10
+ id 1iJ4e9-0001W3-Jd
+ for linux-arm-kernel@lists.infradead.org; Fri, 11 Oct 2019 23:48:34 +0000
+Received: by mail-pg1-x542.google.com with SMTP id i76so6661424pgc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 11 Oct 2019 16:44:07 -0700 (PDT)
+ Fri, 11 Oct 2019 16:48:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=8eY4wo42WtOKmlH068hhmD7B1nLmX1zbEw5wgAbsjlQ=;
- b=eLpfoF0wE61FQRBmPO00nr4+AnxnTlXQ2ao2dwJB9LOttMcQVHs9oWsivwHKUTPGly
- TPAXI9vZRGYzbtPRPD8PC45YeUKVaOuvrdQcpTzSGR/NvQNJT6/WCxv13ZGXgJ1frJyw
- NlBcYWTxskSfXttkB+f7Kv7+DeMqZujE1PZZysCyuAz4XRtnaffRWOXVI+TplbLfHImj
- BIZ08dOmjmuqiy3jA0XWeKcDMK6955aNInAVdxA50YLlmCWCEKb9U+b4gS57H2swLGKg
- FhkmTWTr/N8kZajZUIgdyxy1tofrw60zgHGwg7c5kEih+b0p/53FoYT5VATXI7fGuGAp
- NpCg==
+ bh=AmsaWR6UIYQFsskmsBUdb3fnHuvmiQm3ZQiAWL6V5Qc=;
+ b=jllI4sbRj/cCNWxGttqdKesUD1HiYXaKIvs794DXXkc+PoCdkcM6erto6iQpJ2rVud
+ 8x8uYDcnaphLecfMmemcLRSW39ZOAsiY1fpX57AgoFA76OdqMj/YC0hmd4h+OiH4iynt
+ jy7YCSb1g1byOhT7+4nEcBeBc9rVr9YUKFpTFGTtrTxVmTOlwQDIvcSmMdvAyNLBEniY
+ zsaFaa8R6uL7KmJQMdTWGJv6LsPDDGctdIyqL7lENT9fX9FmOIFJyFBpld8huwIfhQDb
+ LqKAHiLoKH5XlxH+7NG4g7NzAeUnTviUWArEsPTKSF7qeUbLlSAEJWfBAp78UEmB30Ps
+ 8Tqw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=8eY4wo42WtOKmlH068hhmD7B1nLmX1zbEw5wgAbsjlQ=;
- b=R2pA0VHSeVbJnWM9LAD2XopM9+ephvZGhsvX5lJF46wkUFmDzm+0T+r7aQVpNaY/tF
- qcp6c+tCGsivJe39E9Db1i0cCtJt0CKL8N+uC7FAjJQ0nNX9LDK8XWbsvBcXoVPOmvfS
- xU1CCPGIupuIkeCHYrhoerSdFyJgFVPTdfDtM/HQzMjZ6E55Pn4TzhSuJAX3scZ+Ll2M
- pz861HGD9vCkv54Ec1vH0jWKJqJa5sYkZiXly09maqq2vL9rY/X+FAP3xOv/pOg/5DIA
- 1mCvxzlmv80r+X4qvDZlvt2DSxWB6yHfv4A9RB97a8a5Da9gzLGBvKtWmtzWKw/9qL/5
- 8rFQ==
-X-Gm-Message-State: APjAAAXJA/F7NjRnUZR9HYFDDecyPaFzbpCPzeyMxiyh+iuxehU4cFFb
- j3U1dYbI3L6S2B+2/PmV0kVO1Q==
-X-Google-Smtp-Source: APXvYqzXusObm4NkLuSv7bqxR3WbrsWyP6ALbO3rVDrXKGNaw9fy9O32fAWsRG1xQpCh5bH97voZkg==
-X-Received: by 2002:a63:8dc2:: with SMTP id
- z185mr19553539pgd.228.1570837447240; 
- Fri, 11 Oct 2019 16:44:07 -0700 (PDT)
+ bh=AmsaWR6UIYQFsskmsBUdb3fnHuvmiQm3ZQiAWL6V5Qc=;
+ b=P0wvmIZtBfvgKD419LR5Dt0GO/n0GtCPardoeBQJKVcR3IqiRyxBOmNvz8b+1jdAS/
+ lVHaAeKyXwF+0OYIy8cAiU+v4bKoeSOKVuSIxjmFpct/LLfrWYhqwvSvHnrFx/oDIZjE
+ KGa6YMXt6KgmYMiKGdsMfzc21EGIyKYBFrX3e0GpQjcLGW4twEVJHI+v18l9WzTW7omg
+ 4GVF/cfARYfUhDeZFMuZj2FX+v1TBNBxpv+BsrqWYzttj4M9uosSjW3kfTQKBhfo9bFl
+ yzAYt0teeM5zPTJcW+y2OCPW64nVFMMqaXMkr4oKVxq0z5zZiSHjIHcqzEoX94XTrNiy
+ dlKA==
+X-Gm-Message-State: APjAAAUQJgzc8TDzQ7qsDjeJUTxOa3XxRLP98/Zv0IsZ7/+FLJSRQpbU
+ gz97ex/bhPE+VrpIaCya/SH/Ig==
+X-Google-Smtp-Source: APXvYqzQQMfZB/vfwkNtGeT6aWfRdgIU/ygvDWyu2BePS2QK+kJUi1HassUgKqK1qK042mIzuwELyg==
+X-Received: by 2002:a17:90a:d793:: with SMTP id
+ z19mr20089752pju.140.1570837711757; 
+ Fri, 11 Oct 2019 16:48:31 -0700 (PDT)
 Received: from localhost.localdomain
  (104-188-17-28.lightspeed.sndgca.sbcglobal.net. [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id 62sm11011253pfg.164.2019.10.11.16.44.05
+ by smtp.gmail.com with ESMTPSA id m102sm8477015pje.5.2019.10.11.16.48.30
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 11 Oct 2019 16:44:06 -0700 (PDT)
+ Fri, 11 Oct 2019 16:48:31 -0700 (PDT)
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
 To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  Shawn Guo <shawnguo@kernel.org>, Olof Johansson <olof@lixom.net>,
  Bjorn Andersson <bjorn.andersson@linaro.org>,
- Maxime Ripard <mripard@kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
  Jagan Teki <jagan@amarulasolutions.com>, Anson Huang <Anson.Huang@nxp.com>,
  Leonard Crestez <leonard.crestez@nxp.com>,
  Dinh Nguyen <dinguyen@kernel.org>,
  Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>
-Subject: [PATCH] arm64: defconfig: Enable Qualcomm CPUfreq HW driver
-Date: Fri, 11 Oct 2019 16:44:02 -0700
-Message-Id: <20191011234402.374271-1-bjorn.andersson@linaro.org>
+Subject: [PATCH] arm64: defconfig: Enable Qualcomm socinfo driver
+Date: Fri, 11 Oct 2019 16:48:28 -0700
+Message-Id: <20191011234828.374419-1-bjorn.andersson@linaro.org>
 X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_164409_727412_C4B09E6C 
-X-CRM114-Status: GOOD (  10.45  )
+X-CRM114-CacheID: sfid-20191011_164833_650903_42725E0A 
+X-CRM114-Status: GOOD (  10.53  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,9 +110,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Qualcomm CPUfreq HW provides CPU voltage and frequency scaling on
-many modern Qualcomm SoCs. Enable the driver for this hardware block to
-enable this functionality on the SDM845 platform.
+The Qualcomm socinfo driver provides SoC information to userspace using
+the standard soc interface as well as a number of debugfs entries.
+
+Enable this to allow certain user space tools to acquire this
+information, as well as getting developers access to the information in
+debugfs that is useful when reporting bugs.
 
 Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 ---
@@ -120,17 +123,17 @@ Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
  1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index dea051a64257..45e55dfe1ee4 100644
+index 45e55dfe1ee4..a5953b0b382d 100644
 --- a/arch/arm64/configs/defconfig
 +++ b/arch/arm64/configs/defconfig
-@@ -85,6 +85,7 @@ CONFIG_ACPI_CPPC_CPUFREQ=m
- CONFIG_ARM_ARMADA_37XX_CPUFREQ=y
- CONFIG_ARM_SCPI_CPUFREQ=y
- CONFIG_ARM_IMX_CPUFREQ_DT=m
-+CONFIG_ARM_QCOM_CPUFREQ_HW=y
- CONFIG_ARM_RASPBERRYPI_CPUFREQ=m
- CONFIG_ARM_TEGRA186_CPUFREQ=y
- CONFIG_ARM_SCPI_PROTOCOL=y
+@@ -744,6 +744,7 @@ CONFIG_QCOM_SMEM=y
+ CONFIG_QCOM_SMD_RPM=y
+ CONFIG_QCOM_SMP2P=y
+ CONFIG_QCOM_SMSM=y
++CONFIG_QCOM_SOCINFO=m
+ CONFIG_ARCH_R8A774A1=y
+ CONFIG_ARCH_R8A774C0=y
+ CONFIG_ARCH_R8A7795=y
 -- 
 2.23.0
 
