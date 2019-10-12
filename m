@@ -2,69 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12381D4E58
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 10:58:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5801FD4E5A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 10:59:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7MWusNNfz7fUa93Vwq2IBBuxx3HuoLoIu4JzzL7AtO0=; b=b/UNRQTMB7lSoe
-	Iya71rAOZLCy08KvcunfR1TV2L6A9+O+PkyMzbSZu6oM2nTtYGuHFlxMtbYfran62LRj6mKgvYjcG
-	BP3crXlbjTiel/u2L/UrKZJ60i6qDG+CW9J4WRA53Gtgz64Aq0ADe722yFuPPItea+EVWWlAozFBS
-	/4RQ3m0v2KsscYSF3P8GTezj2fTlzAgB8dNQfAcTWTjfT8Uza5QwVS+/8RJRh+TbjGy91FWntApng
-	v/L940vQlOths5uTZjlwIIhC2ircoFayMcEteo2MJMaSVZS4sU3Medzf/JzXHB57nAi+JqrAkICP9
-	NGHksG/1Ka0WbGAM/DTw==;
+	List-Owner; bh=dbxUqwdCbLb8KAR7oVZWWCHNlzLxf47pnNDPpLfzQLY=; b=LCQdgOmdHjmjT8
+	rrr4w5zTg31hlvuLn2OlBAKAXDLq83KOLI084NzKf9SooYEQV32ab4nKdEcYM8x6j2MrR8kxqGhoE
+	9Volk/jWqlgqfR4GCtjBz56rqNLbYsHyKfkpve+/q+jjN1kR5cM82MpG/vXsHD8XnHuK59UBFND+A
+	EaIRWRtky8eSxJZO9CAc16Xur4iMD97q6IWKIvr6ER65CKzdK6fdJNXOKkRyGABEzgbXRcNUrTPEL
+	Fw0WeqsmHiGr5xrLnVrPZvB7uRoPRODUpdJKgeR2dPYSjfbP0tpaGDDVID63h3QVe0nqQq6e7Xv6c
+	07enpr1t5/BWiUoZ8gwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJDDv-0004W9-Ov; Sat, 12 Oct 2019 08:58:03 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iJDEn-0004rj-Uy; Sat, 12 Oct 2019 08:58:57 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJDDo-0004Vl-9Z
- for linux-arm-kernel@lists.infradead.org; Sat, 12 Oct 2019 08:57:58 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A07F72087E;
- Sat, 12 Oct 2019 08:57:50 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570870673;
- bh=RipfHWEIkpJnWKib5xTZIXJ4ltV45KJyDOOq5i6WXYI=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=kE80NsZp3Qh2HX060okbKBFlCpOuRbMfdC8w9N5gFd1SkkIhi44aL3IofPGP/zM+X
- qf85aFaZ2WOR/GQ6Gmg3BDSaD+pzwmfBfeoqjkeB+A9QjMV0amkvO/3nYz5xVB1LyZ
- ZsL50oNyO2WVqiXHokANhgx13JveFtxeJ28zMtPM=
-Date: Sat, 12 Oct 2019 09:57:47 +0100
-From: Jonathan Cameron <jic23@kernel.org>
-To: Olivier Moysan <olivier.moysan@st.com>
-Subject: Re: [PATCH][RFC] iio: core: add a class hierarchy on iio device lock
-Message-ID: <20191012095747.3acd95e6@archlinux>
-In-Reply-To: <20191011151314.5365-1-olivier.moysan@st.com>
-References: <20191011151314.5365-1-olivier.moysan@st.com>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1iJDEf-0004qW-D9; Sat, 12 Oct 2019 08:58:50 +0000
+Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1iJDES-0006Xs-Sy; Sat, 12 Oct 2019 10:58:36 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Jianqun Xu <jay.xu@rock-chips.com>
+Subject: Re: [PATCH 0/2] pinctrl: rockchip: support rk3308 SoC
+Date: Sat, 12 Oct 2019 10:58:36 +0200
+Message-ID: <11066785.VItf2zBqlU@diego>
+In-Reply-To: <20191012061528.27821-1-jay.xu@rock-chips.com>
+References: <20191012061528.27821-1-jay.xu@rock-chips.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191012_015756_381014_AF5E967F 
-X-CRM114-Status: GOOD (  26.60  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191012_015849_597012_5690E86A 
+X-CRM114-Status: UNSURE (   6.65  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,225 +57,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lars@metafoo.de, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
- pmeerw@pmeerw.net, linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- knaack.h@gmx.de, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- benjamin.gaignard@st.com
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, linus.walleij@linaro.org,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 11 Oct 2019 17:13:14 +0200
-Olivier Moysan <olivier.moysan@st.com> wrote:
-
-> The aim of this patch is to correct a recursive locking warning,
-> detected when setting CONFIG_PROVE_LOCKING flag (as shown in message below).
-> This message was initially triggered by the following call sequence
-> in stm32-dfsdm-adc.c driver, when using IIO hardware consumer interface.
+Am Samstag, 12. Oktober 2019, 08:15:26 CEST schrieb Jianqun Xu:
+> Add support for rk3308 SoC from rockchip.
 > 
-> in stm32_dfsdm_read_raw()
-> 	iio_device_claim_direct_mode
-> 		mutex_lock(&indio_dev->mlock);			-> lock on dfsdm device
-> 	iio_hw_consumer_enable
-> 		iio_update_buffers
-> 			mutex_lock(&indio_dev->mlock);		-> lock on hw consumer device
-Hmm.  I'm not sure I follow the logic.  That lock is
-for one thing and one thing only, preventing access
-to the iio device that are unsafe when it is running
-in a buffered mode.  We shouldn't be in a position where
-we both say don't do this if we are in buffered mode, + enter
-buffered mode whilst doing this, or we need special functions
-for entering buffering mode if in this state.  We are in
-some sense combining internal driver logic with overall
-IIO states.  IIO shouldn't care that the device is using
-the same methods under the hood for buffered and non
-buffered operations.
+> Jianqun Xu (2):
+>   dt-bindings: pinctrl: rockchip: add rk3308 SoC support
+>   pinctrl: rockchip: add rk3308 SoC support
 
-I can't really recall how this driver works.   Is it actually
-possible to have multiple hw_consumers at the same time?
+both patches
+Reviewed-by: Heiko Stuebner <heiko@sntech.de>
 
-So do we end up with multiple buffers registered and have
-to demux out to the read_raw + the actual buffered path?
-Given we have a bit of code saying grab one sample, I'm
-going to guess we don't...
-
-If so, the vast majority of the buffer setup code in IIO
-is irrelevant here and we just need to call a few of
-the callbacks from this driver directly... (I think
-though I haven't chased through every corner.
-
-I'd rather avoid introducing this nesting for a corner
-case that makes no 'semantic' sense in IIO as it leaves us
-in two separate states at the same time that the driver
-is trying to make mutually exclusive.  We can't both
-not be in buffered mode, and in buffered mode.
-
-Thanks and good luck with this nasty corner!
-
-Jonathan
-
-
-
-> 
-> Here two instances of the same lock class are requested
-> on two different objects.
-> The locking validator needs to be informed of the nesting level
-> of each lock to avoid a false positive.
-> 
-> This patch introduces a class hierarchy in iio device lock,
-> assuming that hardware consumer is at a lower level than iio device.
-> 
-> [   52.086174]
-> [   52.086223] ============================================
-> [   52.091516] WARNING: possible recursive locking detected
-> [   52.096825] 4.19.49 #162 Not tainted
-> [   52.100384] --------------------------------------------
-> [   52.105691] cat/823 is trying to acquire lock:
-> [   52.110132] 37acb703 (&dev->mlock){+.+.}, at: iio_update_buffers+0x3c/0xd0
-> [   52.116995]
-> [   52.116995] but task is already holding lock:
-> [   52.122821] 368bb908 (&dev->mlock){+.+.}, at: iio_device_claim_direct_mode+0x18/0x34
-> [   52.130560]
-> [   52.130560] other info that might help us debug this:
-> [   52.137083]  Possible unsafe locking scenario:
-> [   52.137083]
-> [   52.142995]        CPU0
-> [   52.145430]        ----
-> [   52.147864]   lock(&dev->mlock);
-> [   52.151082]   lock(&dev->mlock);
-> [   52.154301]
-> [   52.154301]  * DEADLOCK *
-> [   52.154301]
-> [   52.160215]  May be due to missing lock nesting notation
-> [   52.160215]
-> [   52.167000] 5 locks held by cat/823:
-> [   52.170563]  #0: 96d6554b (&p->lock){+.+.}, at: seq_read+0x34/0x51c
-> [   52.176824]  #1: 3cf6739a (&of->mutex){+.+.}, at: kernfs_seq_start+0x1c/0x8c
-> [   52.183866]  #2: a6090e0a (kn->count#29){.+.+}, at: kernfs_seq_start+0x24/0x8c
-> [   52.191083]  #3: 368bb908 (&dev->mlock){+.+.}, at: iio_device_claim_direct_mode+0x18/0x34
-> [   52.199257]  #4: 77e2bcfe (&dev->info_exist_lock){+.+.}, at: iio_update_buffers+0x30/0xd0
-> [   52.207431]
-> [   52.207431] stack backtrace:
-> [   52.211787] CPU: 0 PID: 823 Comm: cat Not tainted 4.19.49 #162
-> [   52.217606] Hardware name: STM32 (Device Tree Support)
-> [   52.222756] [<c0112420>] (unwind_backtrace) from [<c010df5c>] (show_stack+0x10/0x14)
-> [   52.230487] [<c010df5c>] (show_stack) from [<c0af5c88>] (dump_stack+0xc4/0xf0)
-> [   52.237703] [<c0af5c88>] (dump_stack) from [<c01865bc>] (__lock_acquire+0x874/0x1344)
-> [   52.245525] [<c01865bc>] (__lock_acquire) from [<c0187be8>] (lock_acquire+0xd8/0x268)
-> [   52.253353] [<c0187be8>] (lock_acquire) from [<c0b0dcf8>] (__mutex_lock+0x70/0xab0)
-> [   52.261005] [<c0b0dcf8>] (__mutex_lock) from [<c0b0e754>] (mutex_lock_nested+0x1c/0x24)
-> [   52.269001] [<c0b0e754>] (mutex_lock_nested) from [<c09282b8>] (iio_update_buffers+0x3c/0xd0)
-> [   52.277523] [<c09282b8>] (iio_update_buffers) from [<c09329cc>] (iio_hw_consumer_enable+0x34/0x70)
-> [   52.286476] [<c09329cc>] (iio_hw_consumer_enable) from [<c0932134>] (stm32_dfsdm_read_raw+0xf4/0x3fc)
-> [   52.295695] [<c0932134>] (stm32_dfsdm_read_raw) from [<c0922eb4>] (iio_read_channel_info+0xa8/0xb0)
-> [   52.304738] [<c0922eb4>] (iio_read_channel_info) from [<c067a7fc>] (dev_attr_show+0x1c/0x48)
-> [   52.313170] [<c067a7fc>] (dev_attr_show) from [<c03724a4>] (sysfs_kf_seq_show+0x84/0xec)
-> [   52.321256] [<c03724a4>] (sysfs_kf_seq_show) from [<c0312afc>] (seq_read+0x154/0x51c)
-> [   52.329082] [<c0312afc>] (seq_read) from [<c02e7a00>] (__vfs_read+0x2c/0x15c)
-> [   52.336209] [<c02e7a00>] (__vfs_read) from [<c02e7bc0>] (vfs_read+0x90/0x15c)
-> [   52.343339] [<c02e7bc0>] (vfs_read) from [<c02e81ac>] (ksys_read+0x5c/0xdc)
-> [   52.350296] [<c02e81ac>] (ksys_read) from [<c0101000>] (ret_fast_syscall+0x0/0x28)
-> [   52.357852] Exception stack(0xe5761fa8 to 0xe5761ff0)
-> [   52.362904] 1fa0:                   0000006c 7ff00000 00000003 b6e06000 00020000 00000000
-> [   52.371077] 1fc0: 0000006c 7ff00000 00020000 00000003 00000003 00000000 00020000 00000000
-> [   52.379245] 1fe0: 00000003 beb6e790 b6eb17b7 b6e3e6c6
-> 
-> Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-> ---
->  drivers/iio/buffer/industrialio-hw-consumer.c | 9 ++++++++-
->  drivers/iio/industrialio-buffer.c             | 2 +-
->  drivers/iio/industrialio-core.c               | 3 ++-
->  include/linux/iio/iio.h                       | 6 ++++++
->  4 files changed, 17 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/iio/buffer/industrialio-hw-consumer.c b/drivers/iio/buffer/industrialio-hw-consumer.c
-> index 95165697d8ae..652ce31b4b5f 100644
-> --- a/drivers/iio/buffer/industrialio-hw-consumer.c
-> +++ b/drivers/iio/buffer/industrialio-hw-consumer.c
-> @@ -101,6 +101,7 @@ struct iio_hw_consumer *iio_hw_consumer_alloc(struct device *dev)
->  
->  	chan = &hwc->channels[0];
->  	while (chan->indio_dev) {
-> +		chan->indio_dev->mutex_class = IIO_MUTEX_HWC;
->  		buf = iio_hw_consumer_get_buffer(hwc, chan->indio_dev);
->  		if (!buf) {
->  			ret = -ENOMEM;
-> @@ -129,8 +130,14 @@ EXPORT_SYMBOL_GPL(iio_hw_consumer_alloc);
->  void iio_hw_consumer_free(struct iio_hw_consumer *hwc)
->  {
->  	struct hw_consumer_buffer *buf, *n;
-> +	struct iio_channel *chan = &hwc->channels[0];
-> +
-> +	while (chan->indio_dev) {
-> +		chan->indio_dev->mutex_class = IIO_MUTEX_NORMAL;
-> +		iio_channel_release(chan);
-> +		chan++;
-> +	}
->  
-> -	iio_channel_release_all(hwc->channels);
->  	list_for_each_entry_safe(buf, n, &hwc->buffers, head)
->  		iio_buffer_put(&buf->buffer);
->  	kfree(hwc);
-> diff --git a/drivers/iio/industrialio-buffer.c b/drivers/iio/industrialio-buffer.c
-> index c193d64e5217..d1df04167978 100644
-> --- a/drivers/iio/industrialio-buffer.c
-> +++ b/drivers/iio/industrialio-buffer.c
-> @@ -1077,7 +1077,7 @@ int iio_update_buffers(struct iio_dev *indio_dev,
->  		return 0;
->  
->  	mutex_lock(&indio_dev->info_exist_lock);
-> -	mutex_lock(&indio_dev->mlock);
-> +	mutex_lock_nested(&indio_dev->mlock, indio_dev->mutex_class);
->  
->  	if (insert_buffer && iio_buffer_is_active(insert_buffer))
->  		insert_buffer = NULL;
-> diff --git a/drivers/iio/industrialio-core.c b/drivers/iio/industrialio-core.c
-> index f72c2dc5f703..b14ba42559a3 100644
-> --- a/drivers/iio/industrialio-core.c
-> +++ b/drivers/iio/industrialio-core.c
-> @@ -1454,6 +1454,7 @@ struct iio_dev *iio_device_alloc(int sizeof_priv)
->  		dev->dev.groups = dev->groups;
->  		dev->dev.type = &iio_device_type;
->  		dev->dev.bus = &iio_bus_type;
-> +		dev->mutex_class = IIO_MUTEX_NORMAL;
->  		device_initialize(&dev->dev);
->  		dev_set_drvdata(&dev->dev, (void *)dev);
->  		mutex_init(&dev->mlock);
-> @@ -1805,7 +1806,7 @@ EXPORT_SYMBOL_GPL(devm_iio_device_unregister);
->   */
->  int iio_device_claim_direct_mode(struct iio_dev *indio_dev)
->  {
-> -	mutex_lock(&indio_dev->mlock);
-> +	mutex_lock_nested(&indio_dev->mlock, indio_dev->mutex_class);
->  
->  	if (iio_buffer_enabled(indio_dev)) {
->  		mutex_unlock(&indio_dev->mlock);
-> diff --git a/include/linux/iio/iio.h b/include/linux/iio/iio.h
-> index 862ce0019eba..1192eca124f4 100644
-> --- a/include/linux/iio/iio.h
-> +++ b/include/linux/iio/iio.h
-> @@ -17,6 +17,11 @@
->   * Currently assumes nano seconds.
->   */
->  
-> +enum iio_mutex_lock_class {
-> +	IIO_MUTEX_NORMAL,
-> +	IIO_MUTEX_HWC,
-> +};
-> +
->  enum iio_shared_by {
->  	IIO_SEPARATE,
->  	IIO_SHARED_BY_TYPE,
-> @@ -537,6 +542,7 @@ struct iio_dev {
->  	struct list_head		buffer_list;
->  	int				scan_bytes;
->  	struct mutex			mlock;
-> +	int				mutex_class;
->  
->  	const unsigned long		*available_scan_masks;
->  	unsigned			masklength;
 
 
 _______________________________________________
