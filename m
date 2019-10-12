@@ -2,88 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9327D521B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 21:24:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8915CD521D
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 21:24:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UZcgE1i5q0PvPfORpb6ZSuDinc6FGK1qtp2RTfR1JSA=; b=kdpUxYpG71PASr
-	rEiiGfyqJvQdNtPtMFSaGoJEwlFs08meEl0ukCGP1DYnmCmBI9lHLIIDUbcBGe3Itlby5lQDvHqlj
-	c2NAkWPDGFeqNF/69Ww2Q43seGaFgEH7BSP/nv/mY2d+ed5aT7E33kcYusMuNZ4wi6wRLesI2plBT
-	mbDKBUZQGW/gOkgX8v1phjmLgQdPy2qUZY0GT4mvZzYk3dkwJsckp+j5ueBBwpDOSl4o2rDqsw/nE
-	5nxAC+CLy7NDLLKSvG20OV3DzY5ZSKU03QouCbFpFeU5fYw3yQ83HooU0ZlCnleCu+KG+SFufLpTE
-	VdipVUISmchHdCEZ2m7g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	MIME-Version:References:Message-ID:In-Reply-To:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vugHMFS7cDaQdoK45M+GcDeFDv7UIhnQ36yS2xDnQeI=; b=TncyoMHg5BkNjAJYJ0vE4xyxn
+	Gjw8alllJ+/XdUPJ8eZWkBS+iJ2jJkSq7Rki6m7e/KG/xCljSpVRmaPurnoHywwmn1gB38PYamojg
+	M5OV6JU1mcbQWTup+IL4A6Swafb2G17aizct7cFdvJ9aTQrsfh8Q3gLiDc8BdZsQG+GE7QurKVptR
+	oQO2oYNkw9h/rCIGyWcTjyeeCscL9iskd+oopLHIvdl4BO1hOGOifweu9Odw/K0KLnnoAf7W39sV3
+	yal3709C1BjUwCKZOWgFIBgN10IKzy8Mkr64FwElNV31r1aTUQcAEC+jHz6k4fMkxeQ6t8h9Bz5ar
+	UCKN7aJNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJMyO-0000GQ-7j; Sat, 12 Oct 2019 19:22:40 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1iJN0G-0000f3-Bs; Sat, 12 Oct 2019 19:24:36 +0000
+Received: from mail3-relais-sop.national.inria.fr ([192.134.164.104])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJMyE-0000Ez-KZ
- for linux-arm-kernel@lists.infradead.org; Sat, 12 Oct 2019 19:22:32 +0000
-Received: by mail-io1-xd43.google.com with SMTP id u8so28513601iom.5
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 12 Oct 2019 12:22:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=HQJU3/LoSPot9T+dJMRPqRv4aXw0MOIpjtfyaywm/aQ=;
- b=ctY1dTvKbUjja1n+HmJ/0QdJo4l9dAMkFi10eQfrFjsqgOWit80kgCnq30q0OeiWfa
- /aUwSbUbZJTKgMLaQRHrc735ma+8k8xg3+RuKcs08/Y27Bvp2HmB3VCXVh53JIpeepH1
- Ex6BkyIFuWyhgQ4hj3IvriacAVaZFw7DIOvS0t56h7sEO7TnQ2FbSzJDxvuUFfVYZfpm
- 8i8ceDDgjqJO4QPLbUuA7rjn5ssg3y1AC1+0v+G8txow0cuyM+hhZA63VbZBlCaXGXA2
- Cp4ZiJNXwdEapBQhk8X9d8hv+/l895BVSFvmchGs1gyzKBV8A4NRrRo6EFq1qAYA7zW9
- Z1YA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=HQJU3/LoSPot9T+dJMRPqRv4aXw0MOIpjtfyaywm/aQ=;
- b=Y77hNagg4HY6zwiIHX5sgf538e03ta3c8L0OMZ5KPGfbga2X9TuHvV6ygSnwTkbMNL
- y+q7CexAnlIio5PieiTBQneplpO6wA/3qkLaZ87bi3OJyreSzcZf4AsJpKQ4l5gIbZMU
- 76DPh36iykf1CCJeaA3wYfRG6KZseuvUc0T5xCljPZzp69zkbAfDn05XD/HGIhv+DzSm
- 0YVh1CPAwXRj4YmL9TZXh3+OoVdtMuoFDXwqK94ck1mD7GY50QgASoNbMVX7yOOucKv+
- CHLpUV7VljSv+CDHLeRHNQRCwM6MKlRDnPfNynGMKlwRAElppl/ixVZP1cdzZ3tIERkU
- a+2A==
-X-Gm-Message-State: APjAAAXarAoyg+4KCJAnYg1avEq9JaGZN5EFlybH2FLMoMro8DTMfbcV
- ew/3FdnNoeKbU5QBFdQ7WVpTLvLzZHvKBbueJfo=
-X-Google-Smtp-Source: APXvYqyJteMzDjNIWw8MOM6EkZMsiXv/drPcqPJn3dGo9FtbSnM6zKB7jm0eZ0l/nvmkFQFosHWse+jWfLyMEYAymH0=
-X-Received: by 2002:a02:7b0d:: with SMTP id q13mr25703029jac.114.1570908149253; 
- Sat, 12 Oct 2019 12:22:29 -0700 (PDT)
-MIME-Version: 1.0
+ id 1iJN06-0000bz-LS
+ for linux-arm-kernel@lists.infradead.org; Sat, 12 Oct 2019 19:24:28 +0000
+X-IronPort-AV: E=Sophos;i="5.67,289,1566856800"; d="scan'208";a="322500714"
+Received: from 81-65-53-202.rev.numericable.fr (HELO hadrien) ([81.65.53.202])
+ by mail3-relais-sop.national.inria.fr with
+ ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384; 12 Oct 2019 21:24:19 +0200
+Date: Sat, 12 Oct 2019 21:24:19 +0200 (CEST)
+From: Julia Lawall <julia.lawall@lip6.fr>
+X-X-Sender: jll@hadrien
+To: Navid Emamdoost <navid.emamdoost@gmail.com>
+Subject: Re: [PATCH 1/2] drm/imx: Fix error handling for a kmemdup() call in
+ imx_pd_bind()
+In-Reply-To: <CAEkB2ERCGJ6abNXfPNX7nbwkwD7qYTPYjYsNGzZwynn5CbPCzg@mail.gmail.com>
+Message-ID: <alpine.DEB.2.21.1910122122370.3049@hadrien>
 References: <20191004190938.15353-1-navid.emamdoost@gmail.com>
- <027fde47-86b3-35c8-85e6-ea7c191e772c@web.de>
- <f90d7b4a-c4af-eac1-f326-211e932dbd22@web.de>
-In-Reply-To: <f90d7b4a-c4af-eac1-f326-211e932dbd22@web.de>
-From: Navid Emamdoost <navid.emamdoost@gmail.com>
-Date: Sat, 12 Oct 2019 14:22:18 -0500
-Message-ID: <CAEkB2EQUrHpfCXDQ9HV9_hw7Ke5DmX3SvKWJd+wSwXB1Uqaf5g@mail.gmail.com>
-Subject: Re: [PATCH] drm/imx: fix memory leak in imx_pd_bind
-To: Markus Elfring <Markus.Elfring@web.de>
+ <540321eb-7699-1d51-59d5-dde5ffcb8fc4@web.de>
+ <CAEkB2ETtVwtmkpup65D3wqyLn=84ZHt0QRo0dJK5GsV=-L=qVw@mail.gmail.com>
+ <2abf545b-023b-853a-95ef-ce99e1896a5d@web.de>
+ <3fd6aa8b-2529-7ff5-3e19-05267101b2a4@web.de>
+ <CAEkB2ERCGJ6abNXfPNX7nbwkwD7qYTPYjYsNGzZwynn5CbPCzg@mail.gmail.com>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="8323329-2018450889-1570908260=:3049"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191012_122230_698161_60D9E4CE 
-X-CRM114-Status: GOOD (  11.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191012_122426_999095_6EE61E6E 
+X-CRM114-Status: GOOD (  21.60  )
+X-Spam-Score: -4.3 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-4.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.134.164.104 listed in list.dnswl.org]
+ 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (navid.emamdoost[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,35 +67,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
+Cc: Thierry Reding <thierry.reding@gmail.com>, Rob Herring <robh@kernel.org>,
+ kernel-janitors@vger.kernel.org,
+ Peter Senna Tschudin <peter.senna@collabora.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
  David Airlie <airlied@linux.ie>, Shawn Guo <shawnguo@kernel.org>,
  Sascha Hauer <s.hauer@pengutronix.de>, Kangjie Lu <kjlu@umn.edu>,
  LKML <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
- Navid Emamdoost <emamd001@umn.edu>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Navid Emamdoost <emamd001@umn.edu>, Markus Elfring <Markus.Elfring@web.de>,
+ NXP Linux Team <linux-imx@nxp.com>, Daniel Vetter <daniel@ffwll.ch>,
  Stephen McCamant <smccaman@umn.edu>, Philipp Zabel <p.zabel@pengutronix.de>,
  Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Tm8sIHRoYXQgaXMgbm90IGNvcnJlY3QhIFlvdSBzaG91bGQgbm90IHRyeSB0byBmcmVlIGlteHBk
-IGhlcmUgYXMgaXQKaXMgYSByZXNvdXJjZS1tYW5hZ2VkIGFsbG9jYXRpb24gdmlhIGRldm1fa3ph
-bGxvYygpLiBJdCBtZWFucyBtZW1vcnkKYWxsb2NhdGVkIHdpdGggdGhpcyBmdW5jdGlvbiBpcyBh
-dXRvbWF0aWNhbGx5IGZyZWVkIG9uIGRyaXZlciBkZXRhY2guClNvLCB0aGlzIHBhdGNoIGludHJv
-ZHVjZXMgYSBkb3VibGUtZnJlZS4KCk9uIFNhdCwgT2N0IDEyLCAyMDE5IGF0IDY6NTQgQU0gTWFy
-a3VzIEVsZnJpbmcgPE1hcmt1cy5FbGZyaW5nQHdlYi5kZT4gd3JvdGU6Cj4KPiA+ICtmcmVlX2Vk
-aWQ6Cj4gPiArICAgICBrZnJlZShpbXhwZC0+ZWRpZCk7Cj4gPiArICAgICByZXR1cm4gcmV0Owo+
-Cj4gSSBoYXZlIHRha2VuIGFub3RoZXIgbG9vayBhdCB0aGlzIGNoYW5nZSBpZGVhLgo+IENhbiB0
-aGUgZnVuY3Rpb24gY2FsbCDigJxkZXZtX2tmcmVlKGRldiwgaW14cGQp4oCdIGJlY29tZSByZWxl
-dmFudAo+IGFsc28gYXQgdGhpcyBwbGFjZT8KPgo+IFdvdWxkIHlvdSBsaWtlIHRvIGNvbWJpbmUg
-aXQgd2l0aCB0aGUgdXBkYXRlIHN1Z2dlc3Rpb24KPiDigJxGaXggZXJyb3IgaGFuZGxpbmcgZm9y
-IGEga21lbWR1cCgpIGNhbGwgaW4gaW14X3BkX2JpbmQoKeKAnT8KPiBodHRwczovL2xvcmUua2Vy
-bmVsLm9yZy9yLzNmZDZhYThiLTI1MjktN2ZmNS0zZTE5LTA1MjY3MTAxYjJhNEB3ZWIuZGUvCj4g
-aHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvcGF0Y2h3b3JrL3BhdGNoLzExMzg5MTIvCj4gaHR0cHM6
-Ly9sa21sLm9yZy9sa21sLzIwMTkvMTAvMTIvODcKPgo+IFJlZ2FyZHMsCj4gTWFya3VzCgoKCi0t
-IApOYXZpZC4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+  This message is in MIME format.  The first part should be readable text,
+  while the remaining parts are likely unreadable without MIME-aware tools.
+
+--8323329-2018450889-1570908260=:3049
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8BIT
+
+
+
+On Sat, 12 Oct 2019, Navid Emamdoost wrote:
+
+> On Sat, Oct 12, 2019 at 4:07 AM Markus Elfring <Markus.Elfring@web.de> wrote:
+> >
+> > From: Markus Elfring <elfring@users.sourceforge.net>
+> > Date: Sat, 12 Oct 2019 10:30:21 +0200
+> >
+> > The return value from a call of the function “kmemdup” was not checked
+> > in this function implementation. Thus add the corresponding error handling.
+> >
+> > Fixes: 19022aaae677dfa171a719e9d1ff04823ce65a65 ("staging: drm/imx: Add parallel display support")
+> > Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
+> > ---
+> >  drivers/gpu/drm/imx/parallel-display.c | 7 ++++++-
+> >  1 file changed, 6 insertions(+), 1 deletion(-)
+> >
+> > diff --git a/drivers/gpu/drm/imx/parallel-display.c b/drivers/gpu/drm/imx/parallel-display.c
+> > index 35518e5de356..39c4798f56b6 100644
+> > --- a/drivers/gpu/drm/imx/parallel-display.c
+> > +++ b/drivers/gpu/drm/imx/parallel-display.c
+> > @@ -210,8 +210,13 @@ static int imx_pd_bind(struct device *dev, struct device *master, void *data)
+> >                 return -ENOMEM;
+> >
+> >         edidp = of_get_property(np, "edid", &imxpd->edid_len);
+> > -       if (edidp)
+> > +       if (edidp) {
+> >                 imxpd->edid = kmemdup(edidp, imxpd->edid_len, GFP_KERNEL);
+> > +               if (!imxpd->edid) {
+> > +                       devm_kfree(dev, imxpd);
+>
+> You should not try to free imxpd here as it is a resource-managed
+> allocation via devm_kzalloc(). It means memory allocated with this
+> function is
+>  automatically freed on driver detach. So, this patch introduces a double-free.
+
+No, it's not double freed since the proposed code frees it with a devm
+function, removing it from the list of things to free later.  One can
+wonder why the free has to be made apparent, though.
+
+julia
+
+>
+> > +                       return -ENOMEM;
+> > +               }
+> > +       }
+> >
+> >         ret = of_property_read_string(np, "interface-pix-fmt", &fmt);
+> >         if (!ret) {
+> > --
+> > 2.23.0
+> >
+>
+>
+> --
+> Navid.
+>
+--8323329-2018450889-1570908260=:3049
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--8323329-2018450889-1570908260=:3049--
+
